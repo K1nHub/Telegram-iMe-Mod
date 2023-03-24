@@ -14,7 +14,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nCryptoLocalWalletRepositoryImpl.kt\nKotlin\n*S Kotlin\n*F\n+ 1 CryptoLocalWalletRepositoryImpl.kt\ncom/smedialink/storage/data/repository/crypto/CryptoLocalWalletRepositoryImpl\n+ 2 ObservableExt.kt\ncom/smedialink/storage/domain/utils/extentions/ObservableExtKt\n+ 3 RxExt.kt\ncom/smedialink/storage/data/utils/extentions/RxExtKt\n+ 4 _Arrays.kt\nkotlin/collections/ArraysKt___ArraysKt\n+ 5 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 6 ResultExt.kt\ncom/smedialink/storage/domain/utils/extentions/ResultExtKt\n*L\n1#1,131:1\n27#2:132\n27#2:134\n27#2:143\n15#2:144\n27#2:145\n26#3:133\n26#3:135\n26#3:146\n3792#4:136\n4307#4,2:137\n1549#5:139\n1620#5,3:140\n8#6:147\n*S KotlinDebug\n*F\n+ 1 CryptoLocalWalletRepositoryImpl.kt\ncom/smedialink/storage/data/repository/crypto/CryptoLocalWalletRepositoryImpl\n*L\n32#1:132\n49#1:134\n72#1:143\n109#1:144\n121#1:145\n38#1:133\n55#1:135\n127#1:146\n59#1:136\n59#1:137,2\n62#1:139\n62#1:140,3\n100#1:147\n*E\n"
+    value = "SMAP\nCryptoLocalWalletRepositoryImpl.kt\nKotlin\n*S Kotlin\n*F\n+ 1 CryptoLocalWalletRepositoryImpl.kt\ncom/smedialink/storage/data/repository/crypto/CryptoLocalWalletRepositoryImpl\n+ 2 ObservableExt.kt\ncom/smedialink/storage/domain/utils/extentions/ObservableExtKt\n+ 3 RxExt.kt\ncom/smedialink/storage/data/utils/extentions/RxExtKt\n+ 4 _Arrays.kt\nkotlin/collections/ArraysKt___ArraysKt\n+ 5 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 6 ResultExt.kt\ncom/smedialink/storage/domain/utils/extentions/ResultExtKt\n*L\n1#1,131:1\n27#2:132\n27#2:134\n27#2:143\n15#2:144\n27#2:145\n26#3:133\n26#3:135\n26#3:146\n3792#4:136\n4307#4,2:137\n1549#5:139\n1620#5,3:140\n9#6:147\n*S KotlinDebug\n*F\n+ 1 CryptoLocalWalletRepositoryImpl.kt\ncom/smedialink/storage/data/repository/crypto/CryptoLocalWalletRepositoryImpl\n*L\n32#1:132\n49#1:134\n72#1:143\n109#1:144\n121#1:145\n38#1:133\n55#1:135\n127#1:146\n59#1:136\n59#1:137,2\n62#1:139\n62#1:140,3\n100#1:147\n*E\n"
 .end annotation
 
 
@@ -167,7 +167,7 @@
 
     move-result-object p0
 
-    .line 8
+    .line 9
     sget-object v0, Lcom/smedialink/storage/domain/model/Result;->Companion:Lcom/smedialink/storage/domain/model/Result$Companion;
 
     invoke-virtual {v0, p0}, Lcom/smedialink/storage/domain/model/Result$Companion;->success(Ljava/lang/Object;)Lcom/smedialink/storage/domain/model/Result;
@@ -615,6 +615,10 @@
     if-eq v0, v1, :cond_1
 
     const/4 v1, 0x2
+
+    if-eq v0, v1, :cond_1
+
+    const/4 v1, 0x3
 
     if-ne v0, v1, :cond_0
 

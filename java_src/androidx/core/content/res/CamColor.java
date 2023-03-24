@@ -155,25 +155,25 @@ public class CamColor {
         if (f2 < 1.0d || Math.round(f3) <= 0.0d || Math.round(f3) >= 100.0d) {
             return CamUtils.intFromLStar(f3);
         }
-        float min = f < BitmapDescriptorFactory.HUE_RED ? BitmapDescriptorFactory.HUE_RED : Math.min(360.0f, f);
-        float f4 = f2;
+        float min = f < BitmapDescriptorFactory.HUE_RED ? 0.0f : Math.min(360.0f, f);
         CamColor camColor = null;
-        float f5 = BitmapDescriptorFactory.HUE_RED;
         boolean z = true;
-        while (Math.abs(f5 - f2) >= 0.4f) {
-            CamColor findCamByJ = findCamByJ(min, f4, f3);
+        float f4 = 0.0f;
+        float f5 = f2;
+        while (Math.abs(f4 - f2) >= 0.4f) {
+            CamColor findCamByJ = findCamByJ(min, f5, f3);
             if (z) {
                 if (findCamByJ != null) {
                     return findCamByJ.viewed(viewingConditions);
                 }
                 z = false;
             } else if (findCamByJ == null) {
-                f2 = f4;
+                f2 = f5;
             } else {
-                f5 = f4;
+                f4 = f5;
                 camColor = findCamByJ;
             }
-            f4 = ((f2 - f5) / 2.0f) + f5;
+            f5 = ((f2 - f4) / 2.0f) + f4;
         }
         if (camColor == null) {
             return CamUtils.intFromLStar(f3);
@@ -183,12 +183,12 @@ public class CamColor {
 
     private static CamColor findCamByJ(float f, float f2, float f3) {
         float f4 = 1000.0f;
+        float f5 = 0.0f;
         CamColor camColor = null;
-        float f5 = 1000.0f;
         float f6 = 100.0f;
-        float f7 = BitmapDescriptorFactory.HUE_RED;
-        while (Math.abs(f7 - f6) > 0.01f) {
-            float f8 = ((f6 - f7) / 2.0f) + f7;
+        float f7 = 1000.0f;
+        while (Math.abs(f5 - f6) > 0.01f) {
+            float f8 = ((f6 - f5) / 2.0f) + f5;
             int viewedInSrgb = fromJch(f8, f2, f).viewedInSrgb();
             float lStarFromInt = CamUtils.lStarFromInt(viewedInSrgb);
             float abs = Math.abs(f3 - lStarFromInt);
@@ -198,13 +198,13 @@ public class CamColor {
                 if (distance <= 1.0f) {
                     camColor = fromColor;
                     f4 = abs;
-                    f5 = distance;
+                    f7 = distance;
                 }
             }
-            if (f4 == BitmapDescriptorFactory.HUE_RED && f5 == BitmapDescriptorFactory.HUE_RED) {
+            if (f4 == BitmapDescriptorFactory.HUE_RED && f7 == BitmapDescriptorFactory.HUE_RED) {
                 break;
             } else if (lStarFromInt < f3) {
-                f7 = f8;
+                f5 = f8;
             } else {
                 f6 = f8;
             }

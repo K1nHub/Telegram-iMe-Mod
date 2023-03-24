@@ -26,6 +26,10 @@
 
 .field public receipt:Ljava/lang/String;
 
+.field public reset_available_period:I
+
+.field public reset_pending_date:I
+
 .field public url:Ljava/lang/String;
 
 
@@ -33,7 +37,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 6832
+    .line 6831
     invoke-direct {p0}, Lorg/telegram/tgnet/TLObject;-><init>()V
 
     return-void
@@ -48,31 +52,31 @@
 
     goto :goto_0
 
-    .line 6857
+    .line 6855
     :sswitch_0
-    new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_auth_sentCodeTypeEmailCode;
-
-    invoke-direct {v0}, Lorg/telegram/tgnet/TLRPC$TL_auth_sentCodeTypeEmailCode;-><init>()V
-
-    goto :goto_0
-
-    .line 6854
-    :sswitch_1
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_auth_sentCodeTypeCall;
 
     invoke-direct {v0}, Lorg/telegram/tgnet/TLRPC$TL_auth_sentCodeTypeCall;-><init>()V
 
     goto :goto_0
 
-    .line 6851
-    :sswitch_2
+    .line 6852
+    :sswitch_1
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_auth_sentCodeTypeApp;
 
     invoke-direct {v0}, Lorg/telegram/tgnet/TLRPC$TL_auth_sentCodeTypeApp;-><init>()V
 
     goto :goto_0
 
-    .line 6875
+    .line 6858
+    :sswitch_2
+    new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_auth_sentCodeTypeEmailCode;
+
+    invoke-direct {v0}, Lorg/telegram/tgnet/TLRPC$TL_auth_sentCodeTypeEmailCode;-><init>()V
+
+    goto :goto_0
+
+    .line 6876
     :sswitch_3
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_auth_sentCodeTypeFirebaseSms;
 
@@ -80,7 +84,7 @@
 
     goto :goto_0
 
-    .line 6872
+    .line 6873
     :sswitch_4
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_auth_sentCodeTypeFragmentSms;
 
@@ -88,7 +92,7 @@
 
     goto :goto_0
 
-    .line 6869
+    .line 6870
     :sswitch_5
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_auth_sentCodeTypeSms;
 
@@ -96,7 +100,7 @@
 
     goto :goto_0
 
-    .line 6863
+    .line 6864
     :sswitch_6
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_auth_sentCodeTypeFlashCall;
 
@@ -104,7 +108,7 @@
 
     goto :goto_0
 
-    .line 6860
+    .line 6861
     :sswitch_7
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_auth_sentCodeTypeSetUpEmailRequired;
 
@@ -112,7 +116,7 @@
 
     goto :goto_0
 
-    .line 6866
+    .line 6867
     :sswitch_8
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_auth_sentCodeTypeMissedCall;
 
@@ -125,7 +129,7 @@
 
     goto :goto_1
 
-    .line 6879
+    .line 6880
     :cond_0
     new-instance p0, Ljava/lang/RuntimeException;
 
@@ -155,7 +159,7 @@
     :goto_1
     if-eqz v0, :cond_2
 
-    .line 6882
+    .line 6883
     invoke-virtual {v0, p0, p2}, Lorg/telegram/tgnet/TLObject;->readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
 
     :cond_2
@@ -171,8 +175,8 @@
         -0x3fff445e -> :sswitch_5
         -0x26a9a3c7 -> :sswitch_4
         -0x1a84ebce -> :sswitch_3
-        0x3dbb5986 -> :sswitch_2
-        0x5353e5a7 -> :sswitch_1
-        0x5a159841 -> :sswitch_0
+        -0xbaf0a65 -> :sswitch_2
+        0x3dbb5986 -> :sswitch_1
+        0x5353e5a7 -> :sswitch_0
     .end sparse-switch
 .end method

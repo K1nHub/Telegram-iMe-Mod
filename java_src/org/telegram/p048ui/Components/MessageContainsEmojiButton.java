@@ -1,31 +1,19 @@
 package org.telegram.p048ui.Components;
 
 import android.animation.ValueAnimator;
-import android.content.Context;
 import android.graphics.Canvas;
-import android.graphics.Paint;
 import android.graphics.Rect;
 import android.text.Layout;
-import android.text.SpannableString;
-import android.text.SpannableStringBuilder;
 import android.text.StaticLayout;
 import android.text.TextPaint;
 import android.text.style.CharacterStyle;
 import android.view.View;
 import android.widget.FrameLayout;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
-import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3286R;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MediaDataController;
-import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.p048ui.ActionBar.Theme;
-import org.telegram.tgnet.TLRPC$Document;
 import org.telegram.tgnet.TLRPC$InputStickerSet;
-import org.telegram.tgnet.TLRPC$StickerSet;
-import org.telegram.tgnet.TLRPC$TL_messages_stickerSet;
 /* renamed from: org.telegram.ui.Components.MessageContainsEmojiButton */
 /* loaded from: classes6.dex */
 public class MessageContainsEmojiButton extends FrameLayout implements NotificationCenter.NotificationCenterDelegate {
@@ -71,106 +59,19 @@ public class MessageContainsEmojiButton extends FrameLayout implements Notificat
         }
     }
 
-    public MessageContainsEmojiButton(int i, Context context, Theme.ResourcesProvider resourcesProvider, ArrayList<TLRPC$InputStickerSet> arrayList, int i2) {
-        super(context);
-        String string;
-        String str;
-        TLRPC$Document tLRPC$Document;
-        TLRPC$TL_messages_stickerSet stickerSet;
-        TLRPC$StickerSet tLRPC$StickerSet;
-        ArrayList<TLRPC$Document> arrayList2;
-        String formatPluralString;
-        this.emojiDrawableBounds = new Rect();
-        this.loadingDrawableBoundsSet = false;
-        this.lastWidth = -1;
-        this.checkWidth = true;
-        this.loadT = BitmapDescriptorFactory.HUE_RED;
-        this.currentAccount = i;
-        setBackground(Theme.createRadSelectorDrawable(Theme.getColor("listSelectorSDK21", resourcesProvider), 0, 6));
-        TextPaint textPaint = new TextPaint(1);
-        this.textPaint = textPaint;
-        textPaint.setTextSize(AndroidUtilities.m50dp(13));
-        this.textPaint.setColor(Theme.getColor("actionBarDefaultSubmenuItem", resourcesProvider));
-        if (arrayList.size() > 1) {
-            if (i2 == 0) {
-                formatPluralString = LocaleController.formatPluralString("MessageContainsEmojiPacks", arrayList.size(), new Object[0]);
-            } else {
-                formatPluralString = LocaleController.formatPluralString("MessageContainsReactionsPacks", arrayList.size(), new Object[0]);
-            }
-            SpannableStringBuilder replaceTags = AndroidUtilities.replaceTags(formatPluralString);
-            this.mainText = replaceTags;
-            SpannableStringBuilder spannableStringBuilder = replaceTags;
-            TypefaceSpan[] typefaceSpanArr = (TypefaceSpan[]) spannableStringBuilder.getSpans(0, replaceTags.length(), TypefaceSpan.class);
-            for (int i3 = 0; typefaceSpanArr != null && i3 < typefaceSpanArr.length; i3++) {
-                int spanStart = spannableStringBuilder.getSpanStart(typefaceSpanArr[i3]);
-                int spanEnd = spannableStringBuilder.getSpanEnd(typefaceSpanArr[i3]);
-                spannableStringBuilder.removeSpan(typefaceSpanArr[i3]);
-                spannableStringBuilder.setSpan(new BoldAndAccent(), spanStart, spanEnd, 33);
-            }
-        } else if (arrayList.size() == 1) {
-            if (i2 == 0) {
-                string = LocaleController.getString("MessageContainsEmojiPack", C3286R.string.MessageContainsEmojiPack);
-            } else {
-                string = LocaleController.getString("MessageContainsReactionsPack", C3286R.string.MessageContainsReactionsPack);
-            }
-            String[] split = string.split("%s");
-            if (split.length <= 1) {
-                this.mainText = string;
-                return;
-            }
-            TLRPC$InputStickerSet tLRPC$InputStickerSet = arrayList.get(0);
-            this.inputStickerSet = tLRPC$InputStickerSet;
-            if (tLRPC$InputStickerSet == null || (stickerSet = MediaDataController.getInstance(i).getStickerSet(this.inputStickerSet, false)) == null || (tLRPC$StickerSet = stickerSet.set) == null) {
-                str = null;
-                tLRPC$Document = null;
-            } else {
-                str = tLRPC$StickerSet.title;
-                int i4 = 0;
-                while (true) {
-                    ArrayList<TLRPC$Document> arrayList3 = stickerSet.documents;
-                    if (arrayList3 == null || i4 >= arrayList3.size()) {
-                        break;
-                    } else if (stickerSet.documents.get(i4).f1507id == stickerSet.set.thumb_document_id) {
-                        tLRPC$Document = stickerSet.documents.get(i4);
-                        break;
-                    } else {
-                        i4++;
-                    }
-                }
-                tLRPC$Document = null;
-                if (tLRPC$Document == null && (arrayList2 = stickerSet.documents) != null && arrayList2.size() > 0) {
-                    tLRPC$Document = stickerSet.documents.get(0);
-                }
-            }
-            if (str != null && tLRPC$Document != null) {
-                SpannableString spannableString = new SpannableString(MessageObject.findAnimatedEmojiEmoticon(tLRPC$Document));
-                spannableString.setSpan(new AnimatedEmojiSpan(tLRPC$Document, this.textPaint.getFontMetricsInt()) { // from class: org.telegram.ui.Components.MessageContainsEmojiButton.1
-                    @Override // org.telegram.p048ui.Components.AnimatedEmojiSpan, android.text.style.ReplacementSpan
-                    public void draw(Canvas canvas, CharSequence charSequence, int i5, int i6, float f, int i7, int i8, int i9, Paint paint) {
-                        int i10 = i9 + i7;
-                        int i11 = this.measuredSize;
-                        MessageContainsEmojiButton.this.emojiDrawableBounds.set((int) f, (i10 - i11) / 2, (int) (f + i11), (i10 + i11) / 2);
-                    }
-                }, 0, spannableString.length(), 33);
-                AnimatedEmojiDrawable make = AnimatedEmojiDrawable.make(i, 0, tLRPC$Document);
-                this.emojiDrawable = make;
-                make.setColorFilter(Theme.chat_animatedEmojiTextColorFilter);
-                this.emojiDrawable.addView(this);
-                SpannableString spannableString2 = new SpannableString(str);
-                spannableString2.setSpan(new BoldAndAccent(), 0, spannableString2.length(), 33);
-                this.mainText = new SpannableStringBuilder().append((CharSequence) split[0]).append((CharSequence) spannableString).append(' ').append((CharSequence) spannableString2).append((CharSequence) split[1]);
-                this.loadT = 1.0f;
-                this.inputStickerSet = null;
-                return;
-            }
-            this.mainText = split[0];
-            this.endText = split[1];
-            LoadingDrawable loadingDrawable = new LoadingDrawable(resourcesProvider);
-            this.loadingDrawable = loadingDrawable;
-            loadingDrawable.colorKey1 = "actionBarDefaultSubmenuBackground";
-            loadingDrawable.colorKey2 = "listSelectorSDK21";
-            loadingDrawable.setRadiiDp(4.0f);
-        }
+    /* JADX WARN: Code restructure failed: missing block: B:35:0x0107, code lost:
+        r5 = null;
+     */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+        To view partially-correct add '--show-bad-code' argument
+    */
+    public MessageContainsEmojiButton(int r11, android.content.Context r12, org.telegram.p048ui.ActionBar.Theme.ResourcesProvider r13, java.util.ArrayList<org.telegram.tgnet.TLRPC$InputStickerSet> r14, int r15) {
+        /*
+            Method dump skipped, instructions count: 419
+            To view this dump add '--comments-level debug' option
+        */
+        throw new UnsupportedOperationException("Method not decompiled: org.telegram.p048ui.Components.MessageContainsEmojiButton.<init>(int, android.content.Context, org.telegram.ui.ActionBar.Theme$ResourcesProvider, java.util.ArrayList, int):void");
     }
 
     private int updateLayout(int i, boolean z) {

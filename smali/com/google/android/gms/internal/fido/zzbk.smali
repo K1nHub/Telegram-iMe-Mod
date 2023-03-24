@@ -37,13 +37,13 @@
     goto :goto_0
 
     :cond_0
-    const/4 p1, 0x0
+    move p1, v0
 
     goto :goto_1
 
     :cond_1
     :goto_0
-    const/4 p1, 0x1
+    move p1, v1
 
     :goto_1
     if-eqz p1, :cond_2
@@ -290,7 +290,7 @@
 
     move-result p1
 
-    mul-int v1, v1, p1
+    mul-int/2addr v1, p1
 
     return v1
 .end method
@@ -323,7 +323,7 @@
     goto :goto_0
 
     :cond_0
-    const/4 v0, 0x0
+    move v0, v1
 
     .line 2
     :goto_0
@@ -331,7 +331,7 @@
 
     const-wide/16 v2, 0x0
 
-    const/4 v0, 0x0
+    move v0, v1
 
     :goto_1
     const/16 v4, 0x8
@@ -358,7 +358,7 @@
     :cond_1
     add-int/lit8 p2, p4, 0x1
 
-    mul-int/lit8 p2, p2, 0x8
+    mul-int/2addr p2, v4
 
     iget-object p3, p0, Lcom/google/android/gms/internal/fido/zzbk;->zzb:Lcom/google/android/gms/internal/fido/zzbh;
 
@@ -379,9 +379,9 @@
 
     iget v0, p3, Lcom/google/android/gms/internal/fido/zzbh;->zza:I
 
-    long-to-int v6, v5
+    long-to-int v5, v5
 
-    and-int/2addr v0, v6
+    and-int/2addr v0, v5
 
     .line 4
     invoke-virtual {p3, v0}, Lcom/google/android/gms/internal/fido/zzbh;->zza(I)C
@@ -408,7 +408,7 @@
 
     iget p2, p2, Lcom/google/android/gms/internal/fido/zzbh;->zzd:I
 
-    mul-int/lit8 p2, p2, 0x8
+    mul-int/2addr p2, v4
 
     if-ge v1, p2, :cond_3
 

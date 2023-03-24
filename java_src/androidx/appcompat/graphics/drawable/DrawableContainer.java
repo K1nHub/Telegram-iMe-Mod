@@ -446,26 +446,26 @@ public class DrawableContainer extends Drawable implements Drawable.Callback {
             r9.mCurIndex = r10
         L5a:
             long r0 = r9.mEnterAnimationEnd
-            r10 = 1
-            int r2 = (r0 > r5 ? 1 : (r0 == r5 ? 0 : -1))
-            if (r2 != 0) goto L67
-            long r0 = r9.mExitAnimationEnd
-            int r2 = (r0 > r5 ? 1 : (r0 == r5 ? 0 : -1))
-            if (r2 == 0) goto L79
+            int r10 = (r0 > r5 ? 1 : (r0 == r5 ? 0 : -1))
+            r0 = 1
+            if (r10 != 0) goto L67
+            long r1 = r9.mExitAnimationEnd
+            int r10 = (r1 > r5 ? 1 : (r1 == r5 ? 0 : -1))
+            if (r10 == 0) goto L79
         L67:
-            java.lang.Runnable r0 = r9.mAnimationRunnable
-            if (r0 != 0) goto L73
-            androidx.appcompat.graphics.drawable.DrawableContainer$1 r0 = new androidx.appcompat.graphics.drawable.DrawableContainer$1
-            r0.<init>()
-            r9.mAnimationRunnable = r0
+            java.lang.Runnable r10 = r9.mAnimationRunnable
+            if (r10 != 0) goto L73
+            androidx.appcompat.graphics.drawable.DrawableContainer$1 r10 = new androidx.appcompat.graphics.drawable.DrawableContainer$1
+            r10.<init>()
+            r9.mAnimationRunnable = r10
             goto L76
         L73:
-            r9.unscheduleSelf(r0)
+            r9.unscheduleSelf(r10)
         L76:
-            r9.animate(r10)
+            r9.animate(r0)
         L79:
             r9.invalidateSelf()
-            return r10
+            return r0
         */
         throw new UnsupportedOperationException("Method not decompiled: androidx.appcompat.graphics.drawable.DrawableContainer.selectDrawable(int):boolean");
     }
@@ -512,9 +512,9 @@ public class DrawableContainer extends Drawable implements Drawable.Callback {
         }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:14:0x003f  */
-    /* JADX WARN: Removed duplicated region for block: B:20:0x0065  */
-    /* JADX WARN: Removed duplicated region for block: B:23:0x006a A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:14:0x003d  */
+    /* JADX WARN: Removed duplicated region for block: B:20:0x0061  */
+    /* JADX WARN: Removed duplicated region for block: B:23:0x0066 A[ADDED_TO_REGION] */
     /* JADX WARN: Removed duplicated region for block: B:26:? A[ADDED_TO_REGION, RETURN, SYNTHETIC] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -530,48 +530,48 @@ public class DrawableContainer extends Drawable implements Drawable.Callback {
             r4 = 255(0xff, double:1.26E-321)
             r6 = 0
             r7 = 0
-            if (r3 == 0) goto L38
+            if (r3 == 0) goto L36
             long r9 = r13.mEnterAnimationEnd
             int r11 = (r9 > r7 ? 1 : (r9 == r7 ? 0 : -1))
-            if (r11 == 0) goto L3a
+            if (r11 == 0) goto L38
             int r11 = (r9 > r1 ? 1 : (r9 == r1 ? 0 : -1))
             if (r11 > 0) goto L22
             int r9 = r13.mAlpha
             r3.setAlpha(r9)
             r13.mEnterAnimationEnd = r7
-            goto L3a
+            goto L38
         L22:
             long r9 = r9 - r1
             long r9 = r9 * r4
-            int r10 = (int) r9
-            androidx.appcompat.graphics.drawable.DrawableContainer$DrawableContainerState r9 = r13.mDrawableContainerState
-            int r9 = r9.mEnterFadeDuration
-            int r10 = r10 / r9
-            int r9 = 255 - r10
+            int r9 = (int) r9
+            androidx.appcompat.graphics.drawable.DrawableContainer$DrawableContainerState r10 = r13.mDrawableContainerState
+            int r10 = r10.mEnterFadeDuration
+            int r9 = r9 / r10
+            int r9 = 255 - r9
             int r10 = r13.mAlpha
             int r9 = r9 * r10
             int r9 = r9 / 255
             r3.setAlpha(r9)
-            r3 = 1
-            goto L3b
-        L38:
+            r3 = r0
+            goto L39
+        L36:
             r13.mEnterAnimationEnd = r7
-        L3a:
-            r3 = 0
-        L3b:
+        L38:
+            r3 = r6
+        L39:
             android.graphics.drawable.Drawable r9 = r13.mLastDrawable
-            if (r9 == 0) goto L65
+            if (r9 == 0) goto L61
             long r10 = r13.mExitAnimationEnd
             int r12 = (r10 > r7 ? 1 : (r10 == r7 ? 0 : -1))
-            if (r12 == 0) goto L67
+            if (r12 == 0) goto L63
             int r12 = (r10 > r1 ? 1 : (r10 == r1 ? 0 : -1))
-            if (r12 > 0) goto L52
+            if (r12 > 0) goto L50
             r9.setVisible(r6, r6)
             r0 = 0
             r13.mLastDrawable = r0
             r13.mExitAnimationEnd = r7
-            goto L67
-        L52:
+            goto L63
+        L50:
             long r10 = r10 - r1
             long r10 = r10 * r4
             int r3 = (int) r10
@@ -582,19 +582,19 @@ public class DrawableContainer extends Drawable implements Drawable.Callback {
             int r3 = r3 * r4
             int r3 = r3 / 255
             r9.setAlpha(r3)
-            goto L68
-        L65:
+            goto L64
+        L61:
             r13.mExitAnimationEnd = r7
-        L67:
+        L63:
             r0 = r3
-        L68:
-            if (r14 == 0) goto L74
-            if (r0 == 0) goto L74
+        L64:
+            if (r14 == 0) goto L70
+            if (r0 == 0) goto L70
             java.lang.Runnable r14 = r13.mAnimationRunnable
             r3 = 16
             long r1 = r1 + r3
             r13.scheduleSelf(r14, r1)
-        L74:
+        L70:
             return
         */
         throw new UnsupportedOperationException("Method not decompiled: androidx.appcompat.graphics.drawable.DrawableContainer.animate(boolean):void");

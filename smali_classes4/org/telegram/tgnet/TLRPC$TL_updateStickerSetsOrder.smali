@@ -35,10 +35,10 @@
 .method public constructor <init>()V
     .locals 1
 
-    .line 33638
+    .line 33648
     invoke-direct {p0}, Lorg/telegram/tgnet/TLRPC$Update;-><init>()V
 
-    .line 33644
+    .line 33654
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
@@ -53,7 +53,7 @@
 .method public readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
     .locals 5
 
-    .line 33647
+    .line 33657
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
@@ -68,14 +68,14 @@
 
     if-eqz v1, :cond_0
 
-    const/4 v1, 0x1
+    move v1, v3
 
     goto :goto_0
 
     :cond_0
-    const/4 v1, 0x0
+    move v1, v2
 
-    .line 33648
+    .line 33658
     :goto_0
     iput-boolean v1, p0, Lorg/telegram/tgnet/TLRPC$TL_updateStickerSetsOrder;->masks:Z
 
@@ -83,18 +83,18 @@
 
     if-eqz v0, :cond_1
 
-    const/4 v0, 0x1
+    move v0, v3
 
     goto :goto_1
 
     :cond_1
-    const/4 v0, 0x0
+    move v0, v2
 
-    .line 33649
+    .line 33659
     :goto_1
     iput-boolean v0, p0, Lorg/telegram/tgnet/TLRPC$TL_updateStickerSetsOrder;->emojis:Z
 
-    .line 33650
+    .line 33660
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
@@ -107,7 +107,7 @@
 
     return-void
 
-    .line 33653
+    .line 33663
     :cond_2
     new-instance p1, Ljava/lang/RuntimeException;
 
@@ -129,7 +129,7 @@
 
     throw p1
 
-    .line 33657
+    .line 33667
     :cond_3
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
@@ -138,7 +138,7 @@
     :goto_2
     if-ge v2, v0, :cond_4
 
-    .line 33659
+    .line 33669
     iget-object v1, p0, Lorg/telegram/tgnet/TLRPC$TL_updateStickerSetsOrder;->order:Ljava/util/ArrayList;
 
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt64(Z)J
@@ -162,12 +162,12 @@
 .method public serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
     .locals 4
 
-    .line 33664
+    .line 33674
     sget v0, Lorg/telegram/tgnet/TLRPC$TL_updateStickerSetsOrder;->constructor:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 33665
+    .line 33675
     iget-boolean v0, p0, Lorg/telegram/tgnet/TLRPC$TL_updateStickerSetsOrder;->masks:Z
 
     if-eqz v0, :cond_0
@@ -186,7 +186,7 @@
     :goto_0
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$TL_updateStickerSetsOrder;->flags:I
 
-    .line 33666
+    .line 33676
     iget-boolean v1, p0, Lorg/telegram/tgnet/TLRPC$TL_updateStickerSetsOrder;->emojis:Z
 
     if-eqz v1, :cond_1
@@ -201,22 +201,22 @@
     :goto_1
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$TL_updateStickerSetsOrder;->flags:I
 
-    .line 33667
+    .line 33677
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
     const v0, 0x1cb5c415
 
-    .line 33668
+    .line 33678
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 33669
+    .line 33679
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$TL_updateStickerSetsOrder;->order:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
     move-result v0
 
-    .line 33670
+    .line 33680
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
     const/4 v1, 0x0
@@ -224,7 +224,7 @@
     :goto_2
     if-ge v1, v0, :cond_2
 
-    .line 33672
+    .line 33682
     iget-object v2, p0, Lorg/telegram/tgnet/TLRPC$TL_updateStickerSetsOrder;->order:Ljava/util/ArrayList;
 
     invoke-virtual {v2, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;

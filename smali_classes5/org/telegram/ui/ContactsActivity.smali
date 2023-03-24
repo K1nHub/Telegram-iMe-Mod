@@ -1572,7 +1572,7 @@
     goto :goto_0
 
     :cond_1
-    const/4 v6, 0x0
+    move v6, v7
 
     :goto_0
     int-to-float v6, v6
@@ -1622,7 +1622,7 @@
     goto :goto_0
 
     :cond_0
-    const/4 v1, 0x0
+    move v1, v0
 
     .line 1342
     :goto_0
@@ -1864,9 +1864,9 @@
 
     move-result-wide v0
 
-    cmp-long v2, p2, v0
+    cmp-long p2, p2, v0
 
-    if-nez v2, :cond_3
+    if-nez p2, :cond_3
 
     return-void
 
@@ -2168,7 +2168,7 @@
 
     if-eqz p1, :cond_10
 
-    const/4 v4, 0x1
+    move v4, v5
 
     :cond_10
     move v5, v4
@@ -2218,9 +2218,9 @@
 
     const-wide/16 v0, 0x0
 
-    cmp-long v2, p2, v0
+    cmp-long v0, p2, v0
 
-    if-eqz v2, :cond_14
+    if-eqz v0, :cond_14
 
     goto :goto_1
 
@@ -2786,7 +2786,7 @@
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_0
     if-ge v2, v0, :cond_2
@@ -2854,7 +2854,7 @@
 
     int-to-float p2, p2
 
-    mul-float p2, p2, p0
+    mul-float/2addr p2, p0
 
     invoke-virtual {p1, p2}, Landroid/view/ViewGroup;->setTranslationX(F)V
 
@@ -2972,7 +2972,7 @@
 
     if-eqz p2, :cond_7
 
-    const/4 v11, 0x0
+    move v11, v7
 
     :goto_1
     const/4 v12, 0x6
@@ -3050,7 +3050,7 @@
 
     const v3, 0x3e02b931
 
-    mul-float v3, v3, v2
+    mul-float/2addr v3, v2
 
     float-to-long v13, v3
 
@@ -3131,7 +3131,7 @@
 
     const v3, 0x3eb93105
 
-    mul-float v3, v3, v2
+    mul-float/2addr v3, v2
 
     float-to-long v13, v3
 
@@ -3212,7 +3212,7 @@
 
     const v3, 0x3e59df52
 
-    mul-float v3, v3, v2
+    mul-float/2addr v3, v2
 
     float-to-long v13, v3
 
@@ -3453,7 +3453,7 @@
 
     const v3, 0x3dae4c41
 
-    mul-float v3, v3, v2
+    mul-float/2addr v3, v2
 
     float-to-long v13, v3
 
@@ -3490,7 +3490,7 @@
     goto/16 :goto_1
 
     :cond_7
-    const/4 v3, 0x0
+    move v3, v7
 
     :goto_3
     const/4 v11, 0x5
@@ -3568,7 +3568,7 @@
     .line 1681
     invoke-virtual {v11, v13}, Landroid/animation/AnimatorSet;->playTogether([Landroid/animation/Animator;)V
 
-    mul-float v12, v12, v2
+    mul-float/2addr v12, v2
 
     float-to-long v12, v12
 
@@ -3656,7 +3656,7 @@
 
     const v8, 0x3e638e39
 
-    mul-float v8, v8, v2
+    mul-float/2addr v8, v2
 
     float-to-long v12, v8
 
@@ -3737,7 +3737,7 @@
     .line 1699
     invoke-virtual {v11, v13}, Landroid/animation/AnimatorSet;->playTogether([Landroid/animation/Animator;)V
 
-    mul-float v12, v12, v2
+    mul-float/2addr v12, v2
 
     float-to-long v12, v12
 
@@ -3820,7 +3820,7 @@
 
     const/high16 v8, 0x3e800000    # 0.25f
 
-    mul-float v8, v8, v2
+    mul-float/2addr v8, v2
 
     float-to-long v12, v8
 
@@ -4292,7 +4292,7 @@
     goto :goto_0
 
     :cond_0
-    const/4 v1, 0x0
+    move v1, v0
 
     .line 1290
     :goto_0
@@ -4558,7 +4558,7 @@
 
     const/4 v4, 0x0
 
-    const/4 v5, 0x0
+    move v5, v4
 
     .line 399
     :goto_0
@@ -4633,12 +4633,12 @@
 
     if-ne v8, v9, :cond_1
 
-    const/4 v8, 0x1
+    move v8, v3
 
     goto :goto_1
 
     :cond_1
-    const/4 v8, 0x0
+    move v8, v4
 
     :goto_1
     invoke-virtual {v6, v7, v8}, Lorg/telegram/ui/Cells/RadioColorCell;->setTextAndValue(Ljava/lang/CharSequence;Z)V
@@ -4748,7 +4748,7 @@
 
     if-gez v2, :cond_1
 
-    const/4 v2, 0x1
+    move v2, v3
 
     goto :goto_0
 
@@ -5478,13 +5478,13 @@
 
     const-wide/16 v2, 0x0
 
+    cmp-long v0, v0, v2
+
     const/4 v8, 0x3
 
     const/4 v9, 0x2
 
-    cmp-long v4, v0, v2
-
-    if-eqz v4, :cond_7
+    if-eqz v0, :cond_7
 
     .line 764
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getMessagesController()Lorg/telegram/messenger/MessagesController;
@@ -5515,9 +5515,9 @@
     :cond_7
     iget-wide v0, v11, Lorg/telegram/ui/ContactsActivity;->channelId:J
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-eqz v4, :cond_9
+    if-eqz v0, :cond_9
 
     .line 767
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getMessagesController()Lorg/telegram/messenger/MessagesController;
@@ -5547,17 +5547,17 @@
 
     if-nez v0, :cond_8
 
-    const/4 v0, 0x2
+    move v0, v9
 
     goto :goto_3
 
     :cond_8
-    const/4 v0, 0x0
+    move v0, v13
 
     goto :goto_3
 
     :cond_9
-    const/4 v10, 0x0
+    move v10, v13
 
     .line 773
     :goto_4
@@ -5681,17 +5681,17 @@
 
     if-eqz v1, :cond_c
 
-    const/4 v1, 0x1
+    move v1, v14
 
     goto :goto_7
 
     :cond_c
-    const/4 v1, 0x2
+    move v1, v9
 
     goto :goto_7
 
     :cond_d
-    const/4 v1, 0x0
+    move v1, v13
 
     :goto_7
     invoke-virtual {v0, v1, v13}, Lorg/telegram/ui/Adapters/ContactsAdapter;->setSortType(IZ)V
@@ -5904,7 +5904,7 @@
 
     if-lt v2, v4, :cond_10
 
-    const/16 v6, 0x38
+    move v6, v5
 
     goto :goto_8
 
@@ -5916,7 +5916,7 @@
 
     if-lt v2, v4, :cond_11
 
-    const/16 v6, 0x38
+    move v6, v5
 
     goto :goto_9
 
@@ -5942,24 +5942,24 @@
 
     if-eqz v6, :cond_13
 
-    const/16 v18, 0x4
+    move/from16 v18, v7
 
     goto :goto_b
 
     :cond_13
-    const/16 v18, 0x0
+    move/from16 v18, v13
 
     :goto_b
     const/16 v19, 0x0
 
     if-eqz v6, :cond_14
 
-    const/16 v20, 0x0
+    move/from16 v20, v13
 
     goto :goto_c
 
     :cond_14
-    const/16 v20, 0x4
+    move/from16 v20, v7
 
     :goto_c
     const/16 v21, 0x0
@@ -6266,7 +6266,7 @@
 
     if-lt v2, v3, :cond_1a
 
-    const/16 v14, 0x38
+    move v14, v5
 
     goto :goto_10
 
@@ -6276,7 +6276,7 @@
     :goto_10
     if-lt v2, v3, :cond_1b
 
-    const/16 v15, 0x38
+    move v15, v5
 
     goto :goto_11
 
@@ -8567,7 +8567,7 @@
 
     if-ne p1, v2, :cond_5
 
-    const/4 p1, 0x0
+    move p1, v1
 
     .line 1388
     :goto_0
@@ -8641,9 +8641,9 @@
 
     const-wide/16 v1, 0xc8
 
-    cmp-long p3, p1, v1
+    cmp-long p1, p1, v1
 
-    if-gez p3, :cond_5
+    if-gez p1, :cond_5
 
     .line 1399
     :try_start_0

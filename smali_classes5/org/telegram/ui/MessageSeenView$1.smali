@@ -55,7 +55,7 @@
 
     move-result v2
 
-    mul-int v1, v1, v2
+    mul-int/2addr v1, v2
 
     add-int/2addr v0, v1
 

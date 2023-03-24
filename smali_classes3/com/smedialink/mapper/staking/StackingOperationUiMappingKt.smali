@@ -87,17 +87,15 @@
 
     move-result v1
 
-    move v11, v1
-
     goto :goto_1
 
     :cond_1
     const/4 v1, 0x0
 
-    const/4 v11, 0x0
+    :goto_1
+    move v11, v1
 
     .line 21
-    :goto_1
     sget-object v1, Lcom/smedialink/storage/domain/model/wallet/token/TokenInfo;->Companion:Lcom/smedialink/storage/domain/model/wallet/token/TokenInfo$Companion;
 
     invoke-virtual {p0}, Lcom/smedialink/storage/domain/model/staking/StakingOperation;->getToken()Ljava/lang/String;

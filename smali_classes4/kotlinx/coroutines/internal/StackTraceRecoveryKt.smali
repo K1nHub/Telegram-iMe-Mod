@@ -199,7 +199,7 @@
     .line 220
     array-length v3, v2
 
-    const/4 v4, 0x0
+    move v4, v1
 
     :goto_0
     if-ge v4, v3, :cond_1
@@ -223,7 +223,7 @@
     goto :goto_0
 
     :cond_1
-    const/4 v3, 0x0
+    move v3, v1
 
     :goto_1
     if-eqz v3, :cond_2
@@ -327,7 +327,7 @@
 
     if-lez v0, :cond_2
 
-    const/4 v3, 0x0
+    move v3, v1
 
     :goto_0
     add-int/lit8 v4, v3, 0x1
@@ -793,7 +793,7 @@
 
     const/4 v3, 0x0
 
-    const/4 v4, 0x0
+    move v4, v3
 
     :goto_0
     if-ge v4, v2, :cond_2

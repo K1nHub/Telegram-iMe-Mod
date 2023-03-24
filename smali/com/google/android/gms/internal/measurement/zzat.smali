@@ -1970,9 +1970,9 @@
 
     move-result-wide v3
 
-    cmpl-double v5, v1, v3
+    cmpl-double v3, v1, v3
 
-    if-nez v5, :cond_20
+    if-nez v3, :cond_20
 
     double-to-int v1, v1
 

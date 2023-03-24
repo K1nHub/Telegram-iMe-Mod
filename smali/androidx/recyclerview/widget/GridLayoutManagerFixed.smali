@@ -88,7 +88,7 @@
 
     int-to-float v2, p3
 
-    mul-float v1, v1, v2
+    mul-float/2addr v1, v2
 
     float-to-double v1, v1
 
@@ -155,12 +155,12 @@
 
     if-ne v0, v13, :cond_0
 
-    const/4 v14, 0x1
+    move v14, v13
 
     goto :goto_0
 
     :cond_0
-    const/4 v14, 0x0
+    move v14, v12
 
     .line 119
     :goto_0
@@ -286,7 +286,7 @@
     iput v1, v9, Landroidx/recyclerview/widget/LinearLayoutManager$LayoutState;->mCurrentPosition:I
 
     :cond_5
-    const/4 v0, 0x1
+    move v0, v13
 
     :goto_4
     if-eqz v0, :cond_23
@@ -305,7 +305,7 @@
 
     move/from16 v16, v1
 
-    const/4 v5, 0x0
+    move v5, v12
 
     .line 155
     :cond_6
@@ -401,7 +401,7 @@
 
     if-eqz v1, :cond_6
 
-    const/16 v16, 0x1
+    move/from16 v16, v13
 
     goto :goto_5
 
@@ -420,9 +420,9 @@
     .line 190
     invoke-virtual {v6, v7, v8, v5, v14}, Landroidx/recyclerview/widget/GridLayoutManager;->assignSpans(Landroidx/recyclerview/widget/RecyclerView$Recycler;Landroidx/recyclerview/widget/RecyclerView$State;IZ)V
 
-    const/4 v1, 0x0
+    move v1, v12
 
-    const/4 v4, 0x0
+    move v4, v1
 
     :goto_8
     if-ge v1, v5, :cond_11
@@ -523,7 +523,7 @@
     goto :goto_8
 
     :cond_11
-    const/4 v0, 0x0
+    move v0, v12
 
     :goto_a
     if-ge v0, v5, :cond_13
@@ -615,21 +615,21 @@
     goto :goto_b
 
     :cond_12
-    const/4 v7, 0x0
+    move v7, v12
 
     :goto_b
     add-int/lit8 v0, v0, 0x1
 
-    move-object/from16 v7, p1
-
-    const/4 v12, 0x0
+    move v12, v7
 
     const/4 v13, 0x1
+
+    move-object/from16 v7, p1
 
     goto :goto_a
 
     :cond_13
-    const/4 v7, 0x0
+    move v7, v12
 
     .line 240
     iget-object v0, v6, Landroidx/recyclerview/widget/GridLayoutManager;->mSet:[Landroid/view/View;
@@ -682,7 +682,7 @@
 
     move v13, v1
 
-    const/4 v2, 0x0
+    move v2, v7
 
     goto :goto_d
 
@@ -868,10 +868,10 @@
 
     move v13, v1
 
-    const/4 v2, 0x0
+    move v2, v7
 
     :goto_10
-    const/4 v15, 0x0
+    move v15, v7
 
     :goto_11
     if-ge v15, v5, :cond_22
@@ -1010,15 +1010,15 @@
 
     invoke-static {v2, v3}, Ljava/util/Arrays;->fill([Ljava/lang/Object;Ljava/lang/Object;)V
 
-    move-object/from16 v7, p1
+    move v13, v0
+
+    move v15, v1
+
+    move v12, v7
 
     move/from16 v0, v16
 
-    const/4 v12, 0x0
-
-    const/4 v13, 0x1
-
-    const/4 v15, -0x1
+    move-object/from16 v7, p1
 
     goto/16 :goto_4
 
@@ -1188,7 +1188,7 @@
     :cond_3
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    move v1, v0
 
     :goto_2
     if-ge v1, p3, :cond_6

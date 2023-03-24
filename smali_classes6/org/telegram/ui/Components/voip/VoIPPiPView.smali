@@ -173,7 +173,7 @@
 
     const v1, 0x3ecccccd    # 0.4f
 
-    mul-float p3, p3, v1
+    mul-float/2addr p3, v1
 
     const v2, 0x3f866666    # 1.05f
 
@@ -190,9 +190,9 @@
 
     int-to-float p2, p2
 
-    mul-float p2, p2, v1
+    mul-float/2addr p2, v1
 
-    mul-float v2, v2, p2
+    mul-float/2addr v2, p2
 
     sub-float/2addr v2, p2
 
@@ -652,9 +652,9 @@
 
     int-to-float p1, p1
 
-    mul-float v1, v1, p1
+    mul-float/2addr v1, p1
 
-    mul-float v3, v3, v1
+    mul-float/2addr v3, v1
 
     sub-float/2addr v3, v1
 
@@ -663,7 +663,7 @@
     .line 187
     div-int/lit8 v1, v1, 0x2
 
-    mul-float p2, p2, p3
+    mul-float/2addr p2, p3
 
     mul-int/lit8 v2, v2, 0x2
 
@@ -676,7 +676,7 @@
     .line 189
     iput p2, v0, Landroid/view/WindowManager$LayoutParams;->height:I
 
-    mul-float p1, p1, p3
+    mul-float/2addr p1, p3
 
     mul-int/lit8 v1, v1, 0x2
 
@@ -1140,14 +1140,14 @@
 
     const/high16 v7, 0x3e800000    # 0.25f
 
-    mul-float v6, v6, v7
+    mul-float/2addr v6, v7
 
     .line 253
     iget v8, p0, Lorg/telegram/ui/Components/voip/VoIPPiPView;->parentHeight:I
 
     int-to-float v8, v8
 
-    mul-float v8, v8, v7
+    mul-float/2addr v8, v7
 
     .line 255
     iget-object v7, p0, Lorg/telegram/ui/Components/voip/VoIPPiPView;->floatingView:Lorg/telegram/ui/Components/voip/VoIPPiPView$FloatingView;
@@ -1200,7 +1200,7 @@
 
     sub-float/2addr v1, v6
 
-    mul-float p1, p1, v1
+    mul-float/2addr p1, v1
 
     iget v1, p0, Lorg/telegram/ui/Components/voip/VoIPPiPView;->xOffset:I
 
@@ -1220,7 +1220,7 @@
 
     sub-float/2addr v0, v8
 
-    mul-float p2, p2, v0
+    mul-float/2addr p2, v0
 
     .line 259
     iget p1, p0, Lorg/telegram/ui/Components/voip/VoIPPiPView;->yOffset:I
@@ -1541,12 +1541,12 @@
 
     if-eqz v0, :cond_0
 
-    const/4 v0, 0x1
+    move v0, v1
 
     goto :goto_0
 
     :cond_0
-    const/4 v0, 0x0
+    move v0, v2
 
     .line 444
     :goto_0
@@ -1570,12 +1570,12 @@
 
     if-ne v7, v6, :cond_1
 
-    const/4 v7, 0x1
+    move v7, v1
 
     goto :goto_1
 
     :cond_1
-    const/4 v7, 0x0
+    move v7, v2
 
     :goto_1
     iput-boolean v7, p0, Lorg/telegram/ui/Components/voip/VoIPPiPView;->callingUserIsVideo:Z
@@ -1596,13 +1596,13 @@
     goto :goto_2
 
     :cond_2
-    const/4 v7, 0x0
+    move v7, v2
 
     goto :goto_3
 
     :cond_3
     :goto_2
-    const/4 v7, 0x1
+    move v7, v1
 
     :goto_3
     iput-boolean v7, p0, Lorg/telegram/ui/Components/voip/VoIPPiPView;->currentUserIsVideo:Z
@@ -1645,7 +1645,7 @@
     goto :goto_4
 
     :cond_5
-    const/4 v5, 0x0
+    move v5, v4
 
     :goto_4
     iput v5, p0, Lorg/telegram/ui/Components/voip/VoIPPiPView;->progressToCameraMini:F
@@ -1681,7 +1681,7 @@
     goto :goto_5
 
     :cond_8
-    const/4 v5, 0x0
+    move v5, v4
 
     :goto_5
     aput v5, v0, v1

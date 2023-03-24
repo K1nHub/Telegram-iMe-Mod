@@ -439,9 +439,9 @@
 
     if-lez v2, :cond_2
 
-    cmp-long v2, p0, v0
+    cmp-long v0, p0, v0
 
-    if-ltz v2, :cond_0
+    if-ltz v0, :cond_0
 
     rem-long/2addr p0, p4
 
@@ -465,9 +465,9 @@
     rem-long p0, v2, p4
 
     :goto_0
-    cmp-long p4, p0, p2
+    cmp-long p0, p0, p2
 
-    if-gez p4, :cond_1
+    if-gez p0, :cond_1
 
     goto :goto_1
 
@@ -600,7 +600,7 @@
     goto :goto_0
 
     :cond_0
-    const/4 p1, 0x0
+    move p1, v2
 
     :goto_0
     sget-object v3, Lcom/google/android/gms/internal/clearcut/zzp;->zzaw:Lcom/google/android/gms/internal/clearcut/zzae;

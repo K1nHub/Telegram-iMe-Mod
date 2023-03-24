@@ -62,7 +62,7 @@
 .end method
 
 .method public final invoke()Ljava/util/ArrayList;
-    .locals 9
+    .locals 8
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -114,9 +114,9 @@
 
     move-result-wide v6
 
-    cmp-long v8, v4, v6
+    cmp-long v4, v4, v6
 
-    if-eqz v8, :cond_1
+    if-eqz v4, :cond_1
 
     const/4 v4, 0x1
 

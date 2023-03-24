@@ -13,14 +13,14 @@ import org.bouncycastle.util.encoders.Hex;
 public class SecP224K1Curve extends ECCurve.AbstractFp {
 
     /* renamed from: q */
-    public static final BigInteger f1344q = new BigInteger(1, Hex.decode("FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEFFFFE56D"));
+    public static final BigInteger f1345q = new BigInteger(1, Hex.decode("FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEFFFFE56D"));
     protected SecP224K1Point infinity;
 
     public SecP224K1Curve() {
-        super(f1344q);
+        super(f1345q);
         this.infinity = new SecP224K1Point(this, null, null);
-        this.f1307a = fromBigInteger(ECConstants.ZERO);
-        this.f1308b = fromBigInteger(BigInteger.valueOf(5L));
+        this.f1308a = fromBigInteger(ECConstants.ZERO);
+        this.f1309b = fromBigInteger(BigInteger.valueOf(5L));
         this.order = new BigInteger(1, Hex.decode("010000000000000000000000000001DCE8D2EC6184CAF0A971769FB1F7"));
         this.cofactor = BigInteger.valueOf(1L);
         this.coord = 2;
@@ -37,9 +37,9 @@ public class SecP224K1Curve extends ECCurve.AbstractFp {
         int i3 = 0;
         for (int i4 = 0; i4 < i2; i4++) {
             ECPoint eCPoint = eCPointArr[i + i4];
-            Nat224.copy(((SecP224K1FieldElement) eCPoint.getRawXCoord()).f1347x, 0, iArr, i3);
+            Nat224.copy(((SecP224K1FieldElement) eCPoint.getRawXCoord()).f1348x, 0, iArr, i3);
             int i5 = i3 + 7;
-            Nat224.copy(((SecP224K1FieldElement) eCPoint.getRawYCoord()).f1347x, 0, iArr, i5);
+            Nat224.copy(((SecP224K1FieldElement) eCPoint.getRawYCoord()).f1348x, 0, iArr, i5);
             i3 = i5 + 7;
         }
         return new ECLookupTable() { // from class: org.bouncycastle.math.ec.custom.sec.SecP224K1Curve.1
@@ -87,7 +87,7 @@ public class SecP224K1Curve extends ECCurve.AbstractFp {
 
     @Override // org.bouncycastle.math.p043ec.ECCurve
     public int getFieldSize() {
-        return f1344q.bitLength();
+        return f1345q.bitLength();
     }
 
     @Override // org.bouncycastle.math.p043ec.ECCurve

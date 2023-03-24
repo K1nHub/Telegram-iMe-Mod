@@ -126,11 +126,11 @@
 
     move-result p1
 
-    const/4 v0, 0x1
+    const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    cmpl-float p1, p1, v0
 
-    cmpl-float p1, p1, v1
+    const/4 v1, 0x1
 
     if-eqz p1, :cond_1
 
@@ -229,7 +229,7 @@
 
     aput v4, v2, v3
 
-    aput v1, v2, v0
+    aput v0, v2, v1
 
     invoke-static {v2}, Landroid/animation/ValueAnimator;->ofFloat([F)Landroid/animation/ValueAnimator;
 
@@ -284,7 +284,7 @@
     .line 1329
     iget-object p1, p0, Lorg/telegram/ui/Components/ShareAlert$16;->this$0:Lorg/telegram/ui/Components/ShareAlert;
 
-    invoke-static {p1, v1}, Lorg/telegram/ui/Components/ShareAlert;->access$8602(Lorg/telegram/ui/Components/ShareAlert;F)F
+    invoke-static {p1, v0}, Lorg/telegram/ui/Components/ShareAlert;->access$8602(Lorg/telegram/ui/Components/ShareAlert;F)F
 
     .line 1331
     :cond_1
@@ -298,9 +298,9 @@
 
     move-result p1
 
-    const/16 v1, 0x30
+    const/16 v0, 0x30
 
-    invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v2
 
@@ -316,7 +316,7 @@
 
     sub-float/2addr v2, v3
 
-    mul-float p1, p1, v2
+    mul-float/2addr p1, v2
 
     .line 1332
     iget-object v2, p0, Lorg/telegram/ui/Components/ShareAlert$16;->this$0:Lorg/telegram/ui/Components/ShareAlert;
@@ -325,7 +325,7 @@
 
     move-result-object v2
 
-    aget-object v0, v2, v0
+    aget-object v1, v2, v1
 
     iget-object v2, p0, Lorg/telegram/ui/Components/ShareAlert$16;->this$0:Lorg/telegram/ui/Components/ShareAlert;
 
@@ -337,15 +337,15 @@
 
     move-result v2
 
-    invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
-    move-result v1
+    move-result v0
 
-    sub-int/2addr v2, v1
+    sub-int/2addr v2, v0
 
-    neg-int v1, v2
+    neg-int v0, v2
 
-    int-to-float v1, v1
+    int-to-float v0, v0
 
     iget-object v2, p0, Lorg/telegram/ui/Components/ShareAlert$16;->this$0:Lorg/telegram/ui/Components/ShareAlert;
 
@@ -353,7 +353,7 @@
 
     move-result v2
 
-    add-float/2addr v1, v2
+    add-float/2addr v0, v2
 
     iget-object v2, p0, Lorg/telegram/ui/Components/ShareAlert$16;->this$0:Lorg/telegram/ui/Components/ShareAlert;
 
@@ -361,11 +361,11 @@
 
     move-result v2
 
-    add-float/2addr v1, v2
+    add-float/2addr v0, v2
 
-    add-float/2addr v1, p1
+    add-float/2addr v0, p1
 
-    invoke-virtual {v0, v1}, Landroid/view/View;->setTranslationY(F)V
+    invoke-virtual {v1, v0}, Landroid/view/View;->setTranslationY(F)V
 
     return-void
 .end method

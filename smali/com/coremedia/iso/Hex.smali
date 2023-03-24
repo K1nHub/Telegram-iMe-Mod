@@ -74,14 +74,14 @@
     goto :goto_0
 
     :cond_0
-    const/4 v3, 0x0
+    move v3, v2
 
     :goto_0
     add-int/2addr v1, v3
 
     new-array v1, v1, [C
 
-    const/4 v3, 0x0
+    move v3, v2
 
     :goto_1
     if-lt v2, v0, :cond_1

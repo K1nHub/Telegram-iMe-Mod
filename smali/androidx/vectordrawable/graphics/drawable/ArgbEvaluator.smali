@@ -181,29 +181,29 @@
 
     sub-float/2addr v4, v0
 
-    mul-float v4, v4, p1
+    mul-float/2addr v4, p1
 
     add-float/2addr v0, v4
 
     sub-float/2addr v5, v2
 
-    mul-float v5, v5, p1
+    mul-float/2addr v5, p1
 
     add-float/2addr v2, v5
 
     sub-float/2addr v6, v3
 
-    mul-float v6, v6, p1
+    mul-float/2addr v6, p1
 
     add-float/2addr v3, v6
 
     sub-float/2addr p3, p2
 
-    mul-float p1, p1, p3
+    mul-float/2addr p1, p3
 
     add-float/2addr p2, p1
 
-    mul-float v0, v0, v1
+    mul-float/2addr v0, v1
 
     float-to-double v4, v2
 
@@ -216,7 +216,7 @@
 
     double-to-float p1, v4
 
-    mul-float p1, p1, v1
+    mul-float/2addr p1, v1
 
     float-to-double v2, v3
 
@@ -227,7 +227,7 @@
 
     double-to-float p3, v2
 
-    mul-float p3, p3, v1
+    mul-float/2addr p3, v1
 
     float-to-double v2, p2
 
@@ -238,7 +238,7 @@
 
     double-to-float p2, v2
 
-    mul-float p2, p2, v1
+    mul-float/2addr p2, v1
 
     .line 97
     invoke-static {v0}, Ljava/lang/Math;->round(F)I

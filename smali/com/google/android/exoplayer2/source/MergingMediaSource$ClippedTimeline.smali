@@ -58,7 +58,7 @@
 
     const/4 v2, 0x0
 
-    const/4 v3, 0x0
+    move v3, v2
 
     :goto_0
     if-ge v3, v0, :cond_0
@@ -126,9 +126,9 @@
 
     const-wide/high16 v6, -0x8000000000000000L
 
-    cmp-long v8, v3, v6
+    cmp-long v6, v3, v6
 
-    if-eqz v8, :cond_1
+    if-eqz v6, :cond_1
 
     goto :goto_2
 
@@ -144,9 +144,9 @@
 
     const-wide v6, -0x7fffffffffffffffL    # -4.9E-324
 
-    cmp-long v8, v3, v6
+    cmp-long v6, v3, v6
 
-    if-eqz v8, :cond_2
+    if-eqz v6, :cond_2
 
     .line 332
     iget-object v6, p0, Lcom/google/android/exoplayer2/source/MergingMediaSource$ClippedTimeline;->windowDurationsUs:[J

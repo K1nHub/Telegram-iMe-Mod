@@ -99,7 +99,7 @@ public class OutlineTextContainerView extends FrameLayout {
         int color2 = Theme.getColor("windowBackgroundWhiteValueText");
         boolean z = this.forceUseCenter;
         float f = BitmapDescriptorFactory.HUE_RED;
-        this.textPaint.setColor(ColorUtils.blendARGB(ColorUtils.blendARGB(color, color2, z ? BitmapDescriptorFactory.HUE_RED : this.selectionProgress), Theme.getColor("dialogTextRed"), this.errorProgress));
+        this.textPaint.setColor(ColorUtils.blendARGB(ColorUtils.blendARGB(color, color2, z ? 0.0f : this.selectionProgress), Theme.getColor("dialogTextRed"), this.errorProgress));
         int color3 = Theme.getColor("windowBackgroundWhiteInputField");
         int color4 = Theme.getColor("windowBackgroundWhiteInputFieldActivated");
         if (!this.forceUseCenter) {

@@ -51,7 +51,7 @@
     goto :goto_0
 
     :cond_0
-    const/4 v1, 0x0
+    move v1, v0
 
     :goto_0
     add-int/lit8 v1, v1, 0x20
@@ -88,7 +88,7 @@
     goto :goto_1
 
     :cond_2
-    const/4 v1, 0x0
+    move v1, v0
 
     .line 60
     :goto_1

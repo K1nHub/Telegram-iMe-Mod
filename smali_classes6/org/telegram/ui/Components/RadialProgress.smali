@@ -265,7 +265,7 @@
 
     float-to-int v6, v6
 
-    mul-int/lit8 v1, v1, 0x2
+    mul-int/2addr v1, v0
 
     add-int/2addr v6, v1
 
@@ -281,321 +281,319 @@
 .end method
 
 .method private updateAnimation(Z)V
-    .locals 17
-
-    move-object/from16 v0, p0
+    .locals 14
 
     .line 176
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
-    move-result-wide v1
+    move-result-wide v0
 
     .line 177
-    iget-wide v3, v0, Lorg/telegram/ui/Components/RadialProgress;->lastUpdateTime:J
+    iget-wide v2, p0, Lorg/telegram/ui/Components/RadialProgress;->lastUpdateTime:J
 
-    sub-long v3, v1, v3
+    sub-long v2, v0, v2
 
     .line 178
-    iput-wide v1, v0, Lorg/telegram/ui/Components/RadialProgress;->lastUpdateTime:J
+    iput-wide v0, p0, Lorg/telegram/ui/Components/RadialProgress;->lastUpdateTime:J
 
     .line 179
-    iget-object v1, v0, Lorg/telegram/ui/Components/RadialProgress;->checkBackgroundDrawable:Landroid/graphics/drawable/Drawable;
+    iget-object v0, p0, Lorg/telegram/ui/Components/RadialProgress;->checkBackgroundDrawable:Landroid/graphics/drawable/Drawable;
 
-    const/4 v2, 0x0
+    const/4 v1, 0x0
 
-    if-eqz v1, :cond_1
+    if-eqz v0, :cond_1
 
-    iget-object v5, v0, Lorg/telegram/ui/Components/RadialProgress;->currentDrawable:Landroid/graphics/drawable/Drawable;
+    iget-object v4, p0, Lorg/telegram/ui/Components/RadialProgress;->currentDrawable:Landroid/graphics/drawable/Drawable;
 
-    if-eq v5, v1, :cond_0
+    if-eq v4, v0, :cond_0
 
-    iget-object v5, v0, Lorg/telegram/ui/Components/RadialProgress;->previousDrawable:Landroid/graphics/drawable/Drawable;
+    iget-object v4, p0, Lorg/telegram/ui/Components/RadialProgress;->previousDrawable:Landroid/graphics/drawable/Drawable;
 
-    if-eq v5, v1, :cond_0
+    if-eq v4, v0, :cond_0
 
     goto :goto_0
 
     .line 180
     :cond_0
-    throw v2
+    throw v1
 
     :cond_1
     :goto_0
-    const/4 v1, 0x1
+    const/4 v0, 0x1
 
-    const/4 v5, 0x0
+    const/4 v4, 0x0
 
-    const/high16 v6, 0x43480000    # 200.0f
+    const/high16 v5, 0x43480000    # 200.0f
 
-    const/4 v7, 0x0
+    const/4 v6, 0x0
 
     if-eqz p1, :cond_9
 
     .line 186
-    iget v8, v0, Lorg/telegram/ui/Components/RadialProgress;->animatedProgressValue:F
+    iget p1, p0, Lorg/telegram/ui/Components/RadialProgress;->animatedProgressValue:F
 
-    const/high16 v9, 0x3f800000    # 1.0f
+    const/high16 v7, 0x3f800000    # 1.0f
 
-    cmpl-float v8, v8, v9
+    cmpl-float p1, p1, v7
 
-    if-eqz v8, :cond_4
+    if-eqz p1, :cond_4
 
     .line 187
-    iget v8, v0, Lorg/telegram/ui/Components/RadialProgress;->radOffset:F
+    iget p1, p0, Lorg/telegram/ui/Components/RadialProgress;->radOffset:F
 
-    const-wide/16 v10, 0x168
+    const-wide/16 v8, 0x168
 
-    mul-long v10, v10, v3
+    mul-long/2addr v8, v2
 
-    long-to-float v10, v10
+    long-to-float v8, v8
 
-    const v11, 0x453b8000    # 3000.0f
+    const v9, 0x453b8000    # 3000.0f
 
-    div-float/2addr v10, v11
+    div-float/2addr v8, v9
 
-    add-float/2addr v8, v10
+    add-float/2addr p1, v8
 
-    iput v8, v0, Lorg/telegram/ui/Components/RadialProgress;->radOffset:F
+    iput p1, p0, Lorg/telegram/ui/Components/RadialProgress;->radOffset:F
 
     .line 188
-    iget v8, v0, Lorg/telegram/ui/Components/RadialProgress;->currentProgress:F
+    iget p1, p0, Lorg/telegram/ui/Components/RadialProgress;->currentProgress:F
 
-    iget v10, v0, Lorg/telegram/ui/Components/RadialProgress;->animationProgressStart:F
+    iget v8, p0, Lorg/telegram/ui/Components/RadialProgress;->animationProgressStart:F
 
-    sub-float v11, v8, v10
+    sub-float v9, p1, v8
 
-    cmpl-float v12, v11, v7
+    cmpl-float v10, v9, v6
 
-    if-lez v12, :cond_3
+    if-lez v10, :cond_3
 
     .line 190
-    iget-wide v12, v0, Lorg/telegram/ui/Components/RadialProgress;->currentProgressTime:J
+    iget-wide v10, p0, Lorg/telegram/ui/Components/RadialProgress;->currentProgressTime:J
 
-    add-long/2addr v12, v3
+    add-long/2addr v10, v2
 
-    iput-wide v12, v0, Lorg/telegram/ui/Components/RadialProgress;->currentProgressTime:J
+    iput-wide v10, p0, Lorg/telegram/ui/Components/RadialProgress;->currentProgressTime:J
 
-    const-wide/16 v14, 0x12c
+    const-wide/16 v12, 0x12c
 
-    cmp-long v16, v12, v14
+    cmp-long v12, v10, v12
 
-    if-ltz v16, :cond_2
+    if-ltz v12, :cond_2
 
     .line 192
-    iput v8, v0, Lorg/telegram/ui/Components/RadialProgress;->animatedProgressValue:F
+    iput p1, p0, Lorg/telegram/ui/Components/RadialProgress;->animatedProgressValue:F
 
     .line 193
-    iput v8, v0, Lorg/telegram/ui/Components/RadialProgress;->animationProgressStart:F
+    iput p1, p0, Lorg/telegram/ui/Components/RadialProgress;->animationProgressStart:F
 
-    const-wide/16 v10, 0x0
+    const-wide/16 v8, 0x0
 
     .line 194
-    iput-wide v10, v0, Lorg/telegram/ui/Components/RadialProgress;->currentProgressTime:J
+    iput-wide v8, p0, Lorg/telegram/ui/Components/RadialProgress;->currentProgressTime:J
 
     goto :goto_1
 
     .line 196
     :cond_2
-    sget-object v8, Lorg/telegram/ui/Components/RadialProgress;->decelerateInterpolator:Landroid/view/animation/DecelerateInterpolator;
+    sget-object p1, Lorg/telegram/ui/Components/RadialProgress;->decelerateInterpolator:Landroid/view/animation/DecelerateInterpolator;
 
-    long-to-float v12, v12
+    long-to-float v10, v10
 
-    const/high16 v13, 0x43960000    # 300.0f
+    const/high16 v11, 0x43960000    # 300.0f
 
-    div-float/2addr v12, v13
+    div-float/2addr v10, v11
 
-    invoke-virtual {v8, v12}, Landroid/view/animation/DecelerateInterpolator;->getInterpolation(F)F
+    invoke-virtual {p1, v10}, Landroid/view/animation/DecelerateInterpolator;->getInterpolation(F)F
 
-    move-result v8
+    move-result p1
 
-    mul-float v11, v11, v8
+    mul-float/2addr v9, p1
 
-    add-float/2addr v10, v11
+    add-float/2addr v8, v9
 
-    iput v10, v0, Lorg/telegram/ui/Components/RadialProgress;->animatedProgressValue:F
+    iput v8, p0, Lorg/telegram/ui/Components/RadialProgress;->animatedProgressValue:F
 
     .line 199
     :cond_3
     :goto_1
-    invoke-direct/range {p0 .. p0}, Lorg/telegram/ui/Components/RadialProgress;->invalidateParent()V
+    invoke-direct {p0}, Lorg/telegram/ui/Components/RadialProgress;->invalidateParent()V
 
     .line 201
     :cond_4
-    iget-boolean v8, v0, Lorg/telegram/ui/Components/RadialProgress;->drawMiniProgress:Z
+    iget-boolean p1, p0, Lorg/telegram/ui/Components/RadialProgress;->drawMiniProgress:Z
 
-    if-eqz v8, :cond_7
+    if-eqz p1, :cond_7
 
     .line 202
-    iget v8, v0, Lorg/telegram/ui/Components/RadialProgress;->animatedProgressValue:F
+    iget p1, p0, Lorg/telegram/ui/Components/RadialProgress;->animatedProgressValue:F
 
-    cmpl-float v8, v8, v9
+    cmpl-float p1, p1, v7
 
-    if-ltz v8, :cond_e
+    if-ltz p1, :cond_e
 
-    iget-object v8, v0, Lorg/telegram/ui/Components/RadialProgress;->previousMiniDrawable:Landroid/graphics/drawable/Drawable;
+    iget-object p1, p0, Lorg/telegram/ui/Components/RadialProgress;->previousMiniDrawable:Landroid/graphics/drawable/Drawable;
 
-    if-eqz v8, :cond_e
+    if-eqz p1, :cond_e
 
     .line 203
-    iget v8, v0, Lorg/telegram/ui/Components/RadialProgress;->animatedAlphaValue:F
+    iget p1, p0, Lorg/telegram/ui/Components/RadialProgress;->animatedAlphaValue:F
 
-    long-to-float v3, v3
+    long-to-float v2, v2
 
-    div-float/2addr v3, v6
+    div-float/2addr v2, v5
 
-    sub-float/2addr v8, v3
+    sub-float/2addr p1, v2
 
-    iput v8, v0, Lorg/telegram/ui/Components/RadialProgress;->animatedAlphaValue:F
+    iput p1, p0, Lorg/telegram/ui/Components/RadialProgress;->animatedAlphaValue:F
 
-    cmpg-float v3, v8, v7
+    cmpg-float p1, p1, v6
 
-    if-gtz v3, :cond_6
+    if-gtz p1, :cond_6
 
     .line 205
-    iput v7, v0, Lorg/telegram/ui/Components/RadialProgress;->animatedAlphaValue:F
+    iput v6, p0, Lorg/telegram/ui/Components/RadialProgress;->animatedAlphaValue:F
 
     .line 206
-    iput-object v2, v0, Lorg/telegram/ui/Components/RadialProgress;->previousMiniDrawable:Landroid/graphics/drawable/Drawable;
+    iput-object v1, p0, Lorg/telegram/ui/Components/RadialProgress;->previousMiniDrawable:Landroid/graphics/drawable/Drawable;
 
     .line 207
-    iget-object v2, v0, Lorg/telegram/ui/Components/RadialProgress;->currentMiniDrawable:Landroid/graphics/drawable/Drawable;
+    iget-object p1, p0, Lorg/telegram/ui/Components/RadialProgress;->currentMiniDrawable:Landroid/graphics/drawable/Drawable;
 
-    if-eqz v2, :cond_5
+    if-eqz p1, :cond_5
 
     goto :goto_2
 
     :cond_5
-    const/4 v1, 0x0
+    move v0, v4
 
     :goto_2
-    iput-boolean v1, v0, Lorg/telegram/ui/Components/RadialProgress;->drawMiniProgress:Z
+    iput-boolean v0, p0, Lorg/telegram/ui/Components/RadialProgress;->drawMiniProgress:Z
 
     .line 209
     :cond_6
-    invoke-direct/range {p0 .. p0}, Lorg/telegram/ui/Components/RadialProgress;->invalidateParent()V
+    invoke-direct {p0}, Lorg/telegram/ui/Components/RadialProgress;->invalidateParent()V
 
     goto :goto_4
 
     .line 212
     :cond_7
-    iget v1, v0, Lorg/telegram/ui/Components/RadialProgress;->animatedProgressValue:F
+    iget p1, p0, Lorg/telegram/ui/Components/RadialProgress;->animatedProgressValue:F
 
-    cmpl-float v1, v1, v9
+    cmpl-float p1, p1, v7
 
-    if-ltz v1, :cond_e
+    if-ltz p1, :cond_e
 
-    iget-object v1, v0, Lorg/telegram/ui/Components/RadialProgress;->previousDrawable:Landroid/graphics/drawable/Drawable;
+    iget-object p1, p0, Lorg/telegram/ui/Components/RadialProgress;->previousDrawable:Landroid/graphics/drawable/Drawable;
 
-    if-eqz v1, :cond_e
+    if-eqz p1, :cond_e
 
     .line 213
-    iget v1, v0, Lorg/telegram/ui/Components/RadialProgress;->animatedAlphaValue:F
+    iget p1, p0, Lorg/telegram/ui/Components/RadialProgress;->animatedAlphaValue:F
 
-    long-to-float v3, v3
+    long-to-float v0, v2
 
-    div-float/2addr v3, v6
+    div-float/2addr v0, v5
 
-    sub-float/2addr v1, v3
+    sub-float/2addr p1, v0
 
-    iput v1, v0, Lorg/telegram/ui/Components/RadialProgress;->animatedAlphaValue:F
+    iput p1, p0, Lorg/telegram/ui/Components/RadialProgress;->animatedAlphaValue:F
 
-    cmpg-float v1, v1, v7
+    cmpg-float p1, p1, v6
 
-    if-gtz v1, :cond_8
+    if-gtz p1, :cond_8
 
     .line 215
-    iput v7, v0, Lorg/telegram/ui/Components/RadialProgress;->animatedAlphaValue:F
+    iput v6, p0, Lorg/telegram/ui/Components/RadialProgress;->animatedAlphaValue:F
 
     .line 216
-    iput-object v2, v0, Lorg/telegram/ui/Components/RadialProgress;->previousDrawable:Landroid/graphics/drawable/Drawable;
+    iput-object v1, p0, Lorg/telegram/ui/Components/RadialProgress;->previousDrawable:Landroid/graphics/drawable/Drawable;
 
     .line 218
     :cond_8
-    invoke-direct/range {p0 .. p0}, Lorg/telegram/ui/Components/RadialProgress;->invalidateParent()V
+    invoke-direct {p0}, Lorg/telegram/ui/Components/RadialProgress;->invalidateParent()V
 
     goto :goto_4
 
     .line 222
     :cond_9
-    iget-boolean v8, v0, Lorg/telegram/ui/Components/RadialProgress;->drawMiniProgress:Z
+    iget-boolean p1, p0, Lorg/telegram/ui/Components/RadialProgress;->drawMiniProgress:Z
 
-    if-eqz v8, :cond_c
+    if-eqz p1, :cond_c
 
     .line 223
-    iget-object v8, v0, Lorg/telegram/ui/Components/RadialProgress;->previousMiniDrawable:Landroid/graphics/drawable/Drawable;
+    iget-object p1, p0, Lorg/telegram/ui/Components/RadialProgress;->previousMiniDrawable:Landroid/graphics/drawable/Drawable;
 
-    if-eqz v8, :cond_e
+    if-eqz p1, :cond_e
 
     .line 224
-    iget v8, v0, Lorg/telegram/ui/Components/RadialProgress;->animatedAlphaValue:F
+    iget p1, p0, Lorg/telegram/ui/Components/RadialProgress;->animatedAlphaValue:F
 
-    long-to-float v3, v3
+    long-to-float v2, v2
 
-    div-float/2addr v3, v6
+    div-float/2addr v2, v5
 
-    sub-float/2addr v8, v3
+    sub-float/2addr p1, v2
 
-    iput v8, v0, Lorg/telegram/ui/Components/RadialProgress;->animatedAlphaValue:F
+    iput p1, p0, Lorg/telegram/ui/Components/RadialProgress;->animatedAlphaValue:F
 
-    cmpg-float v3, v8, v7
+    cmpg-float p1, p1, v6
 
-    if-gtz v3, :cond_b
+    if-gtz p1, :cond_b
 
     .line 226
-    iput v7, v0, Lorg/telegram/ui/Components/RadialProgress;->animatedAlphaValue:F
+    iput v6, p0, Lorg/telegram/ui/Components/RadialProgress;->animatedAlphaValue:F
 
     .line 227
-    iput-object v2, v0, Lorg/telegram/ui/Components/RadialProgress;->previousMiniDrawable:Landroid/graphics/drawable/Drawable;
+    iput-object v1, p0, Lorg/telegram/ui/Components/RadialProgress;->previousMiniDrawable:Landroid/graphics/drawable/Drawable;
 
     .line 228
-    iget-object v2, v0, Lorg/telegram/ui/Components/RadialProgress;->currentMiniDrawable:Landroid/graphics/drawable/Drawable;
+    iget-object p1, p0, Lorg/telegram/ui/Components/RadialProgress;->currentMiniDrawable:Landroid/graphics/drawable/Drawable;
 
-    if-eqz v2, :cond_a
+    if-eqz p1, :cond_a
 
     goto :goto_3
 
     :cond_a
-    const/4 v1, 0x0
+    move v0, v4
 
     :goto_3
-    iput-boolean v1, v0, Lorg/telegram/ui/Components/RadialProgress;->drawMiniProgress:Z
+    iput-boolean v0, p0, Lorg/telegram/ui/Components/RadialProgress;->drawMiniProgress:Z
 
     .line 230
     :cond_b
-    invoke-direct/range {p0 .. p0}, Lorg/telegram/ui/Components/RadialProgress;->invalidateParent()V
+    invoke-direct {p0}, Lorg/telegram/ui/Components/RadialProgress;->invalidateParent()V
 
     goto :goto_4
 
     .line 233
     :cond_c
-    iget-object v1, v0, Lorg/telegram/ui/Components/RadialProgress;->previousDrawable:Landroid/graphics/drawable/Drawable;
+    iget-object p1, p0, Lorg/telegram/ui/Components/RadialProgress;->previousDrawable:Landroid/graphics/drawable/Drawable;
 
-    if-eqz v1, :cond_e
+    if-eqz p1, :cond_e
 
     .line 234
-    iget v1, v0, Lorg/telegram/ui/Components/RadialProgress;->animatedAlphaValue:F
+    iget p1, p0, Lorg/telegram/ui/Components/RadialProgress;->animatedAlphaValue:F
 
-    long-to-float v3, v3
+    long-to-float v0, v2
 
-    div-float/2addr v3, v6
+    div-float/2addr v0, v5
 
-    sub-float/2addr v1, v3
+    sub-float/2addr p1, v0
 
-    iput v1, v0, Lorg/telegram/ui/Components/RadialProgress;->animatedAlphaValue:F
+    iput p1, p0, Lorg/telegram/ui/Components/RadialProgress;->animatedAlphaValue:F
 
-    cmpg-float v1, v1, v7
+    cmpg-float p1, p1, v6
 
-    if-gtz v1, :cond_d
+    if-gtz p1, :cond_d
 
     .line 236
-    iput v7, v0, Lorg/telegram/ui/Components/RadialProgress;->animatedAlphaValue:F
+    iput v6, p0, Lorg/telegram/ui/Components/RadialProgress;->animatedAlphaValue:F
 
     .line 237
-    iput-object v2, v0, Lorg/telegram/ui/Components/RadialProgress;->previousDrawable:Landroid/graphics/drawable/Drawable;
+    iput-object v1, p0, Lorg/telegram/ui/Components/RadialProgress;->previousDrawable:Landroid/graphics/drawable/Drawable;
 
     .line 239
     :cond_d
-    invoke-direct/range {p0 .. p0}, Lorg/telegram/ui/Components/RadialProgress;->invalidateParent()V
+    invoke-direct {p0}, Lorg/telegram/ui/Components/RadialProgress;->invalidateParent()V
 
     :cond_e
     :goto_4
@@ -644,7 +642,7 @@
 
     iget v10, v0, Lorg/telegram/ui/Components/RadialProgress;->overrideAlpha:F
 
-    mul-float v10, v10, v9
+    mul-float/2addr v10, v9
 
     float-to-int v10, v10
 
@@ -738,22 +736,22 @@
 
     sget v10, Lorg/telegram/messenger/AndroidUtilities;->density:F
 
-    const/16 v11, 0x12
-
-    const/4 v12, 0x2
-
     cmpg-float v2, v2, v10
+
+    const/16 v10, 0x12
+
+    const/4 v11, 0x2
 
     if-gez v2, :cond_2
 
     const/16 v2, 0x14
 
     .line 407
-    iget-object v10, v0, Lorg/telegram/ui/Components/RadialProgress;->progressRect:Landroid/graphics/RectF;
+    iget-object v12, v0, Lorg/telegram/ui/Components/RadialProgress;->progressRect:Landroid/graphics/RectF;
 
-    invoke-virtual {v10}, Landroid/graphics/RectF;->centerX()F
+    invoke-virtual {v12}, Landroid/graphics/RectF;->centerX()F
 
-    move-result v10
+    move-result v12
 
     const/16 v13, 0x10
 
@@ -763,7 +761,7 @@
 
     int-to-float v14, v14
 
-    add-float/2addr v10, v14
+    add-float/2addr v12, v14
 
     .line 408
     iget-object v14, v0, Lorg/telegram/ui/Components/RadialProgress;->progressRect:Landroid/graphics/RectF;
@@ -780,7 +778,7 @@
 
     add-float/2addr v14, v13
 
-    const/4 v13, 0x0
+    move v13, v8
 
     goto :goto_1
 
@@ -788,19 +786,19 @@
     const/16 v2, 0x16
 
     .line 412
-    iget-object v10, v0, Lorg/telegram/ui/Components/RadialProgress;->progressRect:Landroid/graphics/RectF;
+    iget-object v12, v0, Lorg/telegram/ui/Components/RadialProgress;->progressRect:Landroid/graphics/RectF;
 
-    invoke-virtual {v10}, Landroid/graphics/RectF;->centerX()F
+    invoke-virtual {v12}, Landroid/graphics/RectF;->centerX()F
 
-    move-result v10
+    move-result v12
 
-    invoke-static {v11}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    invoke-static {v10}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v13
 
     int-to-float v13, v13
 
-    add-float/2addr v10, v13
+    add-float/2addr v12, v13
 
     .line 413
     iget-object v13, v0, Lorg/telegram/ui/Components/RadialProgress;->progressRect:Landroid/graphics/RectF;
@@ -809,7 +807,7 @@
 
     move-result v13
 
-    invoke-static {v11}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    invoke-static {v10}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v14
 
@@ -817,7 +815,7 @@
 
     add-float/2addr v14, v13
 
-    const/4 v13, 0x2
+    move v13, v11
 
     .line 415
     :goto_1
@@ -837,12 +835,12 @@
 
     iget v4, v0, Lorg/telegram/ui/Components/RadialProgress;->overrideAlpha:F
 
-    mul-float v7, v7, v4
+    mul-float/2addr v7, v4
 
     goto :goto_2
 
     :cond_3
-    const/high16 v7, 0x3f800000    # 1.0f
+    move v7, v6
 
     .line 422
     :goto_2
@@ -850,16 +848,16 @@
 
     if-eqz v4, :cond_4
 
-    add-int/2addr v2, v11
+    add-int/2addr v2, v10
 
     add-int/2addr v2, v13
 
     .line 423
     invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
-    move-result v11
+    move-result v10
 
-    int-to-float v11, v11
+    int-to-float v10, v10
 
     invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
@@ -875,11 +873,11 @@
 
     int-to-float v13, v13
 
-    mul-float v13, v13, v7
+    mul-float/2addr v13, v7
 
     sget-object v3, Lorg/telegram/ui/ActionBar/Theme;->checkboxSquare_eraserPaint:Landroid/graphics/Paint;
 
-    invoke-virtual {v4, v11, v2, v13, v3}, Landroid/graphics/Canvas;->drawCircle(FFFLandroid/graphics/Paint;)V
+    invoke-virtual {v4, v10, v2, v13, v3}, Landroid/graphics/Canvas;->drawCircle(FFFLandroid/graphics/Paint;)V
 
     goto :goto_4
 
@@ -905,11 +903,11 @@
 
     iget v3, v0, Lorg/telegram/ui/Components/RadialProgress;->animatedAlphaValue:F
 
-    mul-float v3, v3, v9
+    mul-float/2addr v3, v9
 
     iget v4, v0, Lorg/telegram/ui/Components/RadialProgress;->overrideAlpha:F
 
-    mul-float v3, v3, v4
+    mul-float/2addr v3, v4
 
     float-to-int v3, v3
 
@@ -937,7 +935,7 @@
 
     iget-object v3, v0, Lorg/telegram/ui/Components/RadialProgress;->miniProgressBackgroundPaint:Landroid/graphics/Paint;
 
-    invoke-virtual {v1, v10, v14, v2, v3}, Landroid/graphics/Canvas;->drawCircle(FFFLandroid/graphics/Paint;)V
+    invoke-virtual {v1, v12, v14, v2, v3}, Landroid/graphics/Canvas;->drawCircle(FFFLandroid/graphics/Paint;)V
 
     .line 434
     :goto_4
@@ -962,9 +960,9 @@
 
     int-to-float v3, v3
 
-    const/4 v11, 0x0
+    const/4 v10, 0x0
 
-    invoke-virtual {v1, v2, v4, v3, v11}, Landroid/graphics/Canvas;->drawBitmap(Landroid/graphics/Bitmap;FFLandroid/graphics/Paint;)V
+    invoke-virtual {v1, v2, v4, v3, v10}, Landroid/graphics/Canvas;->drawBitmap(Landroid/graphics/Bitmap;FFLandroid/graphics/Paint;)V
 
     .line 438
     :cond_6
@@ -980,11 +978,11 @@
     .line 440
     iget v3, v0, Lorg/telegram/ui/Components/RadialProgress;->animatedAlphaValue:F
 
-    mul-float v3, v3, v9
+    mul-float/2addr v3, v9
 
     iget v4, v0, Lorg/telegram/ui/Components/RadialProgress;->overrideAlpha:F
 
-    mul-float v3, v3, v4
+    mul-float/2addr v3, v4
 
     float-to-int v3, v3
 
@@ -996,7 +994,7 @@
     :cond_7
     iget v3, v0, Lorg/telegram/ui/Components/RadialProgress;->overrideAlpha:F
 
-    mul-float v3, v3, v9
+    mul-float/2addr v3, v9
 
     float-to-int v3, v3
 
@@ -1012,9 +1010,9 @@
 
     int-to-float v3, v3
 
-    mul-float v3, v3, v7
+    mul-float/2addr v3, v7
 
-    sub-float v3, v10, v3
+    sub-float v3, v12, v3
 
     float-to-int v3, v3
 
@@ -1024,7 +1022,7 @@
 
     int-to-float v4, v4
 
-    mul-float v4, v4, v7
+    mul-float/2addr v4, v7
 
     sub-float v4, v14, v4
 
@@ -1032,15 +1030,15 @@
 
     invoke-static {v15}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
-    move-result v11
+    move-result v10
 
-    int-to-float v11, v11
+    int-to-float v10, v10
 
-    mul-float v11, v11, v7
+    mul-float/2addr v10, v7
 
-    add-float/2addr v11, v10
+    add-float/2addr v10, v12
 
-    float-to-int v11, v11
+    float-to-int v10, v10
 
     invoke-static {v15}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
@@ -1048,13 +1046,13 @@
 
     int-to-float v13, v13
 
-    mul-float v13, v13, v7
+    mul-float/2addr v13, v7
 
     add-float/2addr v13, v14
 
     float-to-int v13, v13
 
-    invoke-virtual {v2, v3, v4, v11, v13}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
+    invoke-virtual {v2, v3, v4, v10, v13}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
 
     .line 445
     iget-object v2, v0, Lorg/telegram/ui/Components/RadialProgress;->previousMiniDrawable:Landroid/graphics/drawable/Drawable;
@@ -1081,11 +1079,11 @@
 
     sub-float/2addr v6, v3
 
-    mul-float v6, v6, v9
+    mul-float/2addr v6, v9
 
     iget v3, v0, Lorg/telegram/ui/Components/RadialProgress;->overrideAlpha:F
 
-    mul-float v6, v6, v3
+    mul-float/2addr v6, v3
 
     float-to-int v3, v6
 
@@ -1097,7 +1095,7 @@
     :cond_9
     iget v3, v0, Lorg/telegram/ui/Components/RadialProgress;->overrideAlpha:F
 
-    mul-float v3, v3, v9
+    mul-float/2addr v3, v9
 
     float-to-int v3, v3
 
@@ -1113,7 +1111,7 @@
 
     int-to-float v3, v3
 
-    sub-float v3, v10, v3
+    sub-float v3, v12, v3
 
     float-to-int v3, v3
 
@@ -1133,21 +1131,21 @@
 
     int-to-float v6, v6
 
-    add-float/2addr v6, v10
+    add-float/2addr v6, v12
 
     float-to-int v6, v6
 
     invoke-static {v15}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
-    move-result v11
+    move-result v10
 
-    int-to-float v11, v11
+    int-to-float v10, v10
 
-    add-float/2addr v11, v14
+    add-float/2addr v10, v14
 
-    float-to-int v11, v11
+    float-to-int v10, v10
 
-    invoke-virtual {v2, v3, v4, v6, v11}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
+    invoke-virtual {v2, v3, v4, v6, v10}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
 
     .line 455
     iget-object v2, v0, Lorg/telegram/ui/Components/RadialProgress;->currentMiniDrawable:Landroid/graphics/drawable/Drawable;
@@ -1191,11 +1189,11 @@
 
     iget v3, v0, Lorg/telegram/ui/Components/RadialProgress;->animatedAlphaValue:F
 
-    mul-float v3, v3, v9
+    mul-float/2addr v3, v9
 
     iget v4, v0, Lorg/telegram/ui/Components/RadialProgress;->overrideAlpha:F
 
-    mul-float v3, v3, v4
+    mul-float/2addr v3, v4
 
     float-to-int v3, v3
 
@@ -1209,7 +1207,7 @@
 
     iget v3, v0, Lorg/telegram/ui/Components/RadialProgress;->overrideAlpha:F
 
-    mul-float v3, v3, v9
+    mul-float/2addr v3, v9
 
     float-to-int v3, v3
 
@@ -1219,7 +1217,7 @@
     :goto_8
     iget-object v2, v0, Lorg/telegram/ui/Components/RadialProgress;->cicleRect:Landroid/graphics/RectF;
 
-    sub-int/2addr v15, v12
+    sub-int/2addr v15, v11
 
     invoke-static {v15}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
@@ -1227,9 +1225,9 @@
 
     int-to-float v3, v3
 
-    mul-float v3, v3, v7
+    mul-float/2addr v3, v7
 
-    sub-float v3, v10, v3
+    sub-float v3, v12, v3
 
     invoke-static {v15}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
@@ -1237,7 +1235,7 @@
 
     int-to-float v4, v4
 
-    mul-float v4, v4, v7
+    mul-float/2addr v4, v7
 
     sub-float v4, v14, v4
 
@@ -1247,9 +1245,9 @@
 
     int-to-float v6, v6
 
-    mul-float v6, v6, v7
+    mul-float/2addr v6, v7
 
-    add-float/2addr v10, v6
+    add-float/2addr v12, v6
 
     invoke-static {v15}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
@@ -1257,11 +1255,11 @@
 
     int-to-float v6, v6
 
-    mul-float v6, v6, v7
+    mul-float/2addr v6, v7
 
     add-float/2addr v14, v6
 
-    invoke-virtual {v2, v3, v4, v10, v14}, Landroid/graphics/RectF;->set(FFFF)V
+    invoke-virtual {v2, v3, v4, v12, v14}, Landroid/graphics/RectF;->set(FFFF)V
 
     .line 466
     iget-object v2, v0, Lorg/telegram/ui/Components/RadialProgress;->cicleRect:Landroid/graphics/RectF;
@@ -1274,7 +1272,7 @@
 
     const/high16 v5, 0x43b40000    # 360.0f
 
-    mul-float v4, v4, v5
+    mul-float/2addr v4, v5
 
     const/high16 v5, 0x40800000    # 4.0f
 
@@ -1311,11 +1309,11 @@
     .line 474
     iget v3, v0, Lorg/telegram/ui/Components/RadialProgress;->animatedAlphaValue:F
 
-    mul-float v3, v3, v9
+    mul-float/2addr v3, v9
 
     iget v4, v0, Lorg/telegram/ui/Components/RadialProgress;->overrideAlpha:F
 
-    mul-float v3, v3, v4
+    mul-float/2addr v3, v4
 
     float-to-int v3, v3
 
@@ -1327,7 +1325,7 @@
     :cond_f
     iget v3, v0, Lorg/telegram/ui/Components/RadialProgress;->overrideAlpha:F
 
-    mul-float v3, v3, v9
+    mul-float/2addr v3, v9
 
     float-to-int v3, v3
 
@@ -1382,11 +1380,11 @@
 
     sub-float/2addr v6, v3
 
-    mul-float v6, v6, v9
+    mul-float/2addr v6, v9
 
     iget v3, v0, Lorg/telegram/ui/Components/RadialProgress;->overrideAlpha:F
 
-    mul-float v6, v6, v3
+    mul-float/2addr v6, v3
 
     float-to-int v3, v6
 
@@ -1398,7 +1396,7 @@
     :cond_11
     iget v3, v0, Lorg/telegram/ui/Components/RadialProgress;->overrideAlpha:F
 
-    mul-float v3, v3, v9
+    mul-float/2addr v3, v9
 
     float-to-int v3, v3
 
@@ -1470,11 +1468,11 @@
 
     iget v3, v0, Lorg/telegram/ui/Components/RadialProgress;->animatedAlphaValue:F
 
-    mul-float v3, v3, v9
+    mul-float/2addr v3, v9
 
     iget v4, v0, Lorg/telegram/ui/Components/RadialProgress;->overrideAlpha:F
 
-    mul-float v3, v3, v4
+    mul-float/2addr v3, v4
 
     float-to-int v3, v3
 
@@ -1488,7 +1486,7 @@
 
     iget v3, v0, Lorg/telegram/ui/Components/RadialProgress;->overrideAlpha:F
 
-    mul-float v3, v3, v9
+    mul-float/2addr v3, v9
 
     float-to-int v3, v3
 
@@ -1539,7 +1537,7 @@
 
     const/high16 v5, 0x43b40000    # 360.0f
 
-    mul-float v4, v4, v5
+    mul-float/2addr v4, v5
 
     const/high16 v5, 0x40800000    # 4.0f
 

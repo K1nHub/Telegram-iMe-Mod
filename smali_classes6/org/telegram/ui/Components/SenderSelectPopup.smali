@@ -310,7 +310,7 @@
 
     const/high16 v3, 0x3f400000    # 0.75f
 
-    mul-float v2, v2, v3
+    mul-float/2addr v2, v3
 
     float-to-int v4, v2
 
@@ -736,12 +736,7 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_0
-
     :catch_0
-    nop
-
-    :goto_0
     const-string p1, "window"
 
     .line 230
@@ -1449,7 +1444,7 @@
     goto :goto_1
 
     :cond_1
-    const/4 v8, 0x0
+    move v8, v5
 
     :goto_1
     iput-boolean v8, p0, Lorg/telegram/ui/Components/SenderSelectPopup;->runningCustomSprings:Z
@@ -1507,7 +1502,7 @@
 .end method
 
 .method public startShowAnimation()V
-    .locals 18
+    .locals 17
 
     move-object/from16 v0, p0
 
@@ -1620,7 +1615,7 @@
 
     move-result v9
 
-    mul-int v9, v9, v8
+    mul-int/2addr v9, v8
 
     const/4 v10, 0x0
 
@@ -1652,9 +1647,9 @@
 
     iget-wide v6, v3, Lorg/telegram/tgnet/TLRPC$Peer;->channel_id:J
 
-    cmp-long v17, v12, v6
+    cmp-long v6, v12, v6
 
-    if-eqz v17, :cond_4
+    if-eqz v6, :cond_4
 
     :cond_2
     iget-wide v6, v11, Lorg/telegram/tgnet/TLRPC$Peer;->user_id:J
@@ -1665,9 +1660,9 @@
 
     iget-wide v12, v3, Lorg/telegram/tgnet/TLRPC$Peer;->user_id:J
 
-    cmp-long v17, v6, v12
+    cmp-long v6, v6, v12
 
-    if-eqz v17, :cond_4
+    if-eqz v6, :cond_4
 
     :cond_3
     iget-wide v6, v11, Lorg/telegram/tgnet/TLRPC$Peer;->chat_id:J
@@ -1678,9 +1673,9 @@
 
     iget-wide v11, v3, Lorg/telegram/tgnet/TLRPC$Peer;->chat_id:J
 
-    cmp-long v13, v6, v11
+    cmp-long v6, v6, v11
 
-    if-nez v13, :cond_6
+    if-nez v6, :cond_6
 
     .line 371
     :cond_4
@@ -1732,7 +1727,7 @@
 
     sub-int/2addr v1, v4
 
-    mul-int v1, v1, v8
+    mul-int/2addr v1, v8
 
     sub-int/2addr v9, v1
 

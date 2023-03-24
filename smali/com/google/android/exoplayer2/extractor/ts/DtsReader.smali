@@ -165,7 +165,7 @@
 
     int-to-long v3, v0
 
-    mul-long v3, v3, v1
+    mul-long/2addr v3, v1
 
     iget-object v0, p0, Lcom/google/android/exoplayer2/extractor/ts/DtsReader;->format:Lcom/google/android/exoplayer2/Format;
 
@@ -354,9 +354,9 @@
 
     const-wide v0, -0x7fffffffffffffffL    # -4.9E-324
 
-    cmp-long v3, v4, v0
+    cmp-long v0, v4, v0
 
-    if-eqz v3, :cond_1
+    if-eqz v0, :cond_1
 
     .line 119
     iget-object v3, p0, Lcom/google/android/exoplayer2/extractor/ts/DtsReader;->output:Lcom/google/android/exoplayer2/extractor/TrackOutput;

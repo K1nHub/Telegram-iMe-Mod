@@ -233,7 +233,7 @@
 
     invoke-static {v7, v8}, Lorg/telegram/ui/PremiumPreviewFragment;->fillPremiumFeaturesList(Ljava/util/ArrayList;I)V
 
-    const/4 v7, 0x0
+    move v7, v4
 
     .line 118
     :goto_0
@@ -266,7 +266,7 @@
     goto :goto_0
 
     :cond_1
-    const/4 v7, 0x0
+    move v7, v4
 
     :goto_1
     if-eqz v3, :cond_2
@@ -290,7 +290,7 @@
 
     invoke-virtual {v7, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    const/4 v7, 0x0
+    move v7, v4
 
     .line 137
     :cond_2
@@ -929,7 +929,7 @@
 .end method
 
 .method private isLightStatusBar()Z
-    .locals 5
+    .locals 4
 
     const-string v0, "dialogBackground"
 
@@ -944,9 +944,9 @@
 
     const-wide v2, 0x3fe6666660000000L    # 0.699999988079071
 
-    cmpl-double v4, v0, v2
+    cmpl-double v0, v0, v2
 
-    if-lez v4, :cond_0
+    if-lez v0, :cond_0
 
     const/4 v0, 0x1
 
@@ -1264,7 +1264,7 @@
 
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    move v1, v0
 
     .line 705
     :goto_0
@@ -1314,7 +1314,7 @@
     if-nez v1, :cond_0
 
     :goto_1
-    const/4 v1, 0x0
+    move v1, v0
 
     goto :goto_2
 
@@ -1347,7 +1347,7 @@
     .line 722
     iget v3, p0, Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet;->progressToFullscreenView:F
 
-    mul-float v1, v1, v3
+    mul-float/2addr v1, v3
 
     iget v4, p0, Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet;->topGlobalOffset:I
 
@@ -1355,7 +1355,7 @@
 
     sub-float v3, v2, v3
 
-    mul-float v4, v4, v3
+    mul-float/2addr v4, v3
 
     add-float/2addr v1, v4
 
@@ -1411,7 +1411,7 @@
 
     iget v5, p0, Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet;->progressToFullscreenView:F
 
-    mul-float v4, v4, v5
+    mul-float/2addr v4, v5
 
     invoke-virtual {v3, v4}, Landroid/widget/FrameLayout;->setTranslationX(F)V
 
@@ -1423,7 +1423,7 @@
     .line 734
     iput v1, p0, Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet;->topCurrentOffset:I
 
-    const/4 v1, 0x0
+    move v1, v0
 
     .line 735
     :goto_5
@@ -1503,7 +1503,7 @@
 
     if-ge v1, v3, :cond_8
 
-    const/4 v0, 0x1
+    move v0, v4
 
     .line 745
     :cond_8

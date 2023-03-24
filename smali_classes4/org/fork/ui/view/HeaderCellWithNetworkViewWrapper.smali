@@ -106,7 +106,7 @@
     goto :goto_2
 
     :cond_2
-    const/4 v1, 0x0
+    move v1, v4
 
     :goto_2
     int-to-float v1, v1
@@ -121,7 +121,7 @@
     goto :goto_3
 
     :cond_3
-    const/4 v6, 0x0
+    move v6, v4
 
     :goto_3
     const/4 v7, 0x0
@@ -131,7 +131,7 @@
 
     if-eqz v1, :cond_4
 
-    const/4 v8, 0x0
+    move v8, v4
 
     goto :goto_4
 

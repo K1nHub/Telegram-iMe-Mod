@@ -44,14 +44,9 @@
 
     const/4 p5, 0x0
 
-    const/4 v5, 0x0
-
-    goto :goto_0
-
     :cond_0
     move v5, p5
 
-    :goto_0
     move-object v0, p0
 
     move-object v1, p1
@@ -305,12 +300,12 @@
 
     if-nez v1, :cond_0
 
-    const/4 v1, 0x1
+    move v1, v2
 
     goto :goto_0
 
     :cond_0
-    const/4 v1, 0x0
+    move v1, v3
 
     :goto_0
     if-nez v1, :cond_1

@@ -33,7 +33,7 @@ final class zzbi extends zzbk {
             r5 = 1
             goto L24
         L23:
-            r5 = 0
+            r5 = r0
         L24:
             com.google.android.gms.internal.fido.zzas.zzc(r5)
         L27:

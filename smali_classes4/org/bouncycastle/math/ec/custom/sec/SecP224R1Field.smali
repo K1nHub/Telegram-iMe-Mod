@@ -235,9 +235,9 @@
 
     shr-long v0, v1, v0
 
-    cmp-long v2, v0, v7
+    cmp-long v0, v0, v7
 
-    if-eqz v2, :cond_1
+    if-eqz v0, :cond_1
 
     const/4 v0, 0x7
 
@@ -636,9 +636,9 @@
 
     shr-long v1, v10, v16
 
-    cmp-long v3, v1, v21
+    cmp-long v1, v1, v21
 
-    if-eqz v3, :cond_1
+    if-eqz v1, :cond_1
 
     const/4 v1, 0x7
 
@@ -922,9 +922,9 @@
 
     shr-long v0, v1, v0
 
-    cmp-long v2, v0, v7
+    cmp-long v0, v0, v7
 
-    if-eqz v2, :cond_1
+    if-eqz v0, :cond_1
 
     const/4 v0, 0x7
 

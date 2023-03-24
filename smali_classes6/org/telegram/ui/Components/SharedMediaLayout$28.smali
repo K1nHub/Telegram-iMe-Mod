@@ -158,7 +158,7 @@
 
     invoke-direct {v1}, Landroid/animation/AnimatorSet;-><init>()V
 
-    const/4 v7, 0x0
+    move v7, v6
 
     :goto_0
     if-ge v7, v0, :cond_3
@@ -222,7 +222,7 @@
 
     div-float/2addr v9, v10
 
-    mul-float v9, v9, v2
+    mul-float/2addr v9, v2
 
     float-to-int v9, v9
 
@@ -341,7 +341,7 @@
 
     move-result v0
 
-    const/4 v1, 0x0
+    move v1, v6
 
     :goto_2
     if-ge v1, v0, :cond_6
@@ -439,7 +439,7 @@
 
     div-float/2addr v7, v8
 
-    mul-float v7, v7, v2
+    mul-float/2addr v7, v2
 
     float-to-int v7, v7
 

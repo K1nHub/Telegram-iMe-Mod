@@ -180,7 +180,7 @@
     goto :goto_0
 
     :cond_0
-    const/4 v5, 0x0
+    move v5, v3
 
     :goto_0
     iput v5, v4, Landroid/widget/FrameLayout$LayoutParams;->topMargin:I

@@ -161,7 +161,7 @@
     goto :goto_1
 
     :cond_2
-    const/4 v0, 0x0
+    move v0, v2
 
     :goto_1
     return v0
@@ -237,14 +237,14 @@
 
     xor-int/2addr v0, v1
 
-    mul-int v0, v0, v1
+    mul-int/2addr v0, v1
 
     .line 103
     iget v2, p0, Lcom/google/firebase/crashlytics/internal/model/AutoValue_CrashlyticsReport_Session_Event_Device;->batteryVelocity:I
 
     xor-int/2addr v0, v2
 
-    mul-int v0, v0, v1
+    mul-int/2addr v0, v1
 
     .line 105
     iget-boolean v2, p0, Lcom/google/firebase/crashlytics/internal/model/AutoValue_CrashlyticsReport_Session_Event_Device;->proximityOn:Z
@@ -261,14 +261,14 @@
     :goto_1
     xor-int/2addr v0, v2
 
-    mul-int v0, v0, v1
+    mul-int/2addr v0, v1
 
     .line 107
     iget v2, p0, Lcom/google/firebase/crashlytics/internal/model/AutoValue_CrashlyticsReport_Session_Event_Device;->orientation:I
 
     xor-int/2addr v0, v2
 
-    mul-int v0, v0, v1
+    mul-int/2addr v0, v1
 
     .line 109
     iget-wide v2, p0, Lcom/google/firebase/crashlytics/internal/model/AutoValue_CrashlyticsReport_Session_Event_Device;->ramUsed:J
@@ -279,11 +279,11 @@
 
     xor-long/2addr v2, v5
 
-    long-to-int v3, v2
+    long-to-int v2, v2
 
-    xor-int/2addr v0, v3
+    xor-int/2addr v0, v2
 
-    mul-int v0, v0, v1
+    mul-int/2addr v0, v1
 
     .line 111
     iget-wide v1, p0, Lcom/google/firebase/crashlytics/internal/model/AutoValue_CrashlyticsReport_Session_Event_Device;->diskUsed:J
@@ -292,9 +292,9 @@
 
     xor-long/2addr v1, v3
 
-    long-to-int v2, v1
+    long-to-int v1, v1
 
-    xor-int/2addr v0, v2
+    xor-int/2addr v0, v1
 
     return v0
 .end method

@@ -3,7 +3,7 @@ package com.smedialink.utils.extentions.model.wallet;
 import com.smedialink.storage.domain.model.billing.CryptoProduct;
 import kotlin.NoWhenBranchMatchedException;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.messenger.C3286R;
+import org.telegram.messenger.C3301R;
 /* compiled from: CryptoProductExt.kt */
 /* loaded from: classes3.dex */
 public final class CryptoProductExtKt {
@@ -47,17 +47,17 @@ public final class CryptoProductExtKt {
         Intrinsics.checkNotNullParameter(cryptoProduct, "<this>");
         switch (WhenMappings.$EnumSwitchMapping$0[cryptoProduct.ordinal()]) {
             case 1:
-                return C3286R.C3287color.crypto_product_100;
+                return C3301R.C3302color.crypto_product_100;
             case 2:
-                return C3286R.C3287color.crypto_product_250;
+                return C3301R.C3302color.crypto_product_250;
             case 3:
-                return C3286R.C3287color.crypto_product_500;
+                return C3301R.C3302color.crypto_product_500;
             case 4:
-                return C3286R.C3287color.crypto_product_1000;
+                return C3301R.C3302color.crypto_product_1000;
             case 5:
-                return C3286R.C3287color.crypto_product_1500;
+                return C3301R.C3302color.crypto_product_1500;
             case 6:
-                return C3286R.C3287color.crypto_product_custom;
+                return C3301R.C3302color.crypto_product_custom;
             default:
                 throw new NoWhenBranchMatchedException();
         }

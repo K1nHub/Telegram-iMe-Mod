@@ -78,12 +78,12 @@
 
     if-ne p2, p1, :cond_1
 
-    const/4 p1, 0x1
+    move p1, v3
 
     goto :goto_0
 
     :cond_1
-    const/4 p1, 0x0
+    move p1, v4
 
     :goto_0
     and-int/lit8 p2, v0, 0x1
@@ -110,7 +110,7 @@
     goto :goto_1
 
     :cond_3
-    const/4 v3, 0x0
+    move v3, v4
 
     :cond_4
     :goto_1

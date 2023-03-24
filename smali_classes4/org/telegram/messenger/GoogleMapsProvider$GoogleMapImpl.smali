@@ -138,7 +138,7 @@
     goto :goto_0
 
     :cond_0
-    const/4 v0, 0x2
+    move v0, v1
 
     .line 150
     :cond_1

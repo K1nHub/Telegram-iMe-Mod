@@ -236,7 +236,7 @@
 .end method
 
 .method private static canMergeSegments(Lcom/google/android/exoplayer2/upstream/DataSpec;Lcom/google/android/exoplayer2/upstream/DataSpec;)Z
-    .locals 5
+    .locals 4
 
     .line 445
     iget-object v0, p0, Lcom/google/android/exoplayer2/upstream/DataSpec;->uri:Landroid/net/Uri;
@@ -253,9 +253,9 @@
 
     const-wide/16 v2, -0x1
 
-    cmp-long v4, v0, v2
+    cmp-long v2, v0, v2
 
-    if-eqz v4, :cond_0
+    if-eqz v2, :cond_0
 
     iget-wide v2, p0, Lcom/google/android/exoplayer2/upstream/DataSpec;->position:J
 
@@ -263,9 +263,9 @@
 
     iget-wide v0, p1, Lcom/google/android/exoplayer2/upstream/DataSpec;->position:J
 
-    cmp-long v4, v2, v0
+    cmp-long v0, v2, v0
 
-    if-nez v4, :cond_0
+    if-nez v0, :cond_0
 
     iget-object v0, p0, Lcom/google/android/exoplayer2/upstream/DataSpec;->key:Ljava/lang/String;
 
@@ -357,7 +357,7 @@
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     .line 419
     :goto_0
@@ -418,9 +418,9 @@
 
     add-long/2addr v9, v11
 
-    cmp-long v11, v7, v9
+    cmp-long v7, v7, v9
 
-    if-gtz v11, :cond_3
+    if-gtz v7, :cond_3
 
     iget-object v7, v6, Lcom/google/android/exoplayer2/offline/SegmentDownloader$Segment;->dataSpec:Lcom/google/android/exoplayer2/upstream/DataSpec;
 
@@ -742,11 +742,11 @@
 
     const-wide/16 v8, 0x0
 
+    move v15, v5
+
     move-wide v10, v8
 
     move-wide v13, v10
-
-    const/4 v15, 0x0
 
     :goto_0
     if-ltz v7, :cond_6
@@ -831,9 +831,9 @@
 
     if-eqz v4, :cond_4
 
-    cmp-long v4, v5, v1
+    cmp-long v1, v5, v1
 
-    if-nez v4, :cond_3
+    if-nez v1, :cond_3
 
     add-int/lit8 v15, v15, 0x1
 

@@ -39,14 +39,14 @@ public final class Ac4Util {
         return new Format.Builder().setId(str).setSampleMimeType(MimeTypes.AUDIO_AC4).setChannelCount(2).setSampleRate(((parsableByteArray.readUnsignedByte() & 32) >> 5) == 1 ? OpusUtil.SAMPLE_RATE : 44100).setDrmInitData(drmInitData).setLanguage(str2).build();
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:38:0x0086, code lost:
-        if (r10 != 11) goto L39;
+    /* JADX WARN: Code restructure failed: missing block: B:38:0x0082, code lost:
+        if (r10 != 11) goto L43;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:41:0x008b, code lost:
-        if (r10 != 11) goto L39;
+    /* JADX WARN: Code restructure failed: missing block: B:41:0x0087, code lost:
+        if (r10 != 11) goto L43;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:44:0x0090, code lost:
-        if (r10 != 8) goto L39;
+    /* JADX WARN: Code restructure failed: missing block: B:44:0x008c, code lost:
+        if (r10 != 8) goto L43;
      */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -65,7 +65,7 @@ public final class Ac4Util {
             r3 = 7
             goto L19
         L18:
-            r3 = 4
+            r3 = r2
         L19:
             int r0 = r0 + r3
             r3 = 44097(0xac41, float:6.1793E-41)
@@ -92,58 +92,54 @@ public final class Ac4Util {
             boolean r5 = r10.readBit()
             r6 = 48000(0xbb80, float:6.7262E-41)
             r8 = 44100(0xac44, float:6.1797E-41)
-            if (r5 == 0) goto L55
-            r9 = 48000(0xbb80, float:6.7262E-41)
-            goto L58
-        L55:
-            r9 = 44100(0xac44, float:6.1797E-41)
-        L58:
+            if (r5 == 0) goto L53
+            r9 = r6
+            goto L54
+        L53:
+            r9 = r8
+        L54:
             int r10 = r10.readBits(r2)
             r5 = 0
-            if (r9 != r8) goto L69
+            if (r9 != r8) goto L65
             r8 = 13
-            if (r10 != r8) goto L69
+            if (r10 != r8) goto L65
             int[] r0 = com.google.android.exoplayer2.audio.Ac4Util.SAMPLE_COUNT
             r10 = r0[r10]
             r8 = r10
-            goto L99
-        L69:
-            if (r9 != r6) goto L98
+            goto L91
+        L65:
+            if (r9 != r6) goto L90
             int[] r6 = com.google.android.exoplayer2.audio.Ac4Util.SAMPLE_COUNT
             int r8 = r6.length
-            if (r10 >= r8) goto L98
+            if (r10 >= r8) goto L90
             r5 = r6[r10]
             int r1 = r1 % 5
             r6 = 8
             r8 = 1
-            if (r1 == r8) goto L8e
+            if (r1 == r8) goto L8a
             r8 = 11
-            if (r1 == r0) goto L89
-            if (r1 == r3) goto L8e
-            if (r1 == r2) goto L82
-            goto L93
-        L82:
-            if (r10 == r3) goto L95
-            if (r10 == r6) goto L95
-            if (r10 != r8) goto L93
-            goto L95
+            if (r1 == r0) goto L85
+            if (r1 == r3) goto L8a
+            if (r1 == r2) goto L7e
+            goto L90
+        L7e:
+            if (r10 == r3) goto L8e
+            if (r10 == r6) goto L8e
+            if (r10 != r8) goto L90
+            goto L89
+        L85:
+            if (r10 == r6) goto L8e
+            if (r10 != r8) goto L90
         L89:
-            if (r10 == r6) goto L95
-            if (r10 != r8) goto L93
-            goto L95
+            goto L8e
+        L8a:
+            if (r10 == r3) goto L8e
+            if (r10 != r6) goto L90
         L8e:
-            if (r10 == r3) goto L95
-            if (r10 != r6) goto L93
-            goto L95
-        L93:
-            r8 = r5
-            goto L99
-        L95:
             int r5 = r5 + 1
-            goto L93
-        L98:
-            r8 = 0
-        L99:
+        L90:
+            r8 = r5
+        L91:
             com.google.android.exoplayer2.audio.Ac4Util$SyncFrameInfo r10 = new com.google.android.exoplayer2.audio.Ac4Util$SyncFrameInfo
             r5 = 2
             r0 = 0

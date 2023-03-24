@@ -25,12 +25,12 @@ public final class C1456x2414b84e extends Lambda implements Function1<Result<? e
 
     @Override // kotlin.jvm.functions.Function1
     public /* bridge */ /* synthetic */ Unit invoke(Result<? extends BinanceTransaction> result) {
-        m1153invoke(result);
+        m1165invoke(result);
         return Unit.INSTANCE;
     }
 
     /* renamed from: invoke  reason: collision with other method in class */
-    public final void m1153invoke(Result<? extends BinanceTransaction> it) {
+    public final void m1165invoke(Result<? extends BinanceTransaction> it) {
         BinancePayProcessView viewState;
         ResourceManager resourceManager;
         Intrinsics.checkNotNullExpressionValue(it, "it");

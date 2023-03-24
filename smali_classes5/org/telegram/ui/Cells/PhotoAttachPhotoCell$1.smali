@@ -282,7 +282,7 @@
 
     move-result v6
 
-    mul-float v5, v5, v6
+    mul-float/2addr v5, v6
 
     sget-object v6, Landroid/graphics/Path$Direction;->CW:Landroid/graphics/Path$Direction;
 
@@ -389,7 +389,7 @@
 
     const/high16 v4, 0x437f0000    # 255.0f
 
-    mul-float v2, v2, v4
+    mul-float/2addr v2, v4
 
     float-to-int v2, v2
 

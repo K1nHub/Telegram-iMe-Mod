@@ -85,7 +85,7 @@
 .end method
 
 .method public next()Lcom/google/firebase/database/collection/RBTreeSortedMap$Builder$BooleanChunk;
-    .locals 7
+    .locals 6
 
     .line 268
     iget-object v0, p0, Lcom/google/firebase/database/collection/RBTreeSortedMap$Builder$Base1_2$1;->this$0:Lcom/google/firebase/database/collection/RBTreeSortedMap$Builder$Base1_2;
@@ -111,11 +111,11 @@
 
     const-wide/16 v4, 0x0
 
-    cmp-long v6, v0, v4
+    cmp-long v0, v0, v4
 
-    if-nez v6, :cond_0
+    if-nez v0, :cond_0
 
-    const/4 v0, 0x1
+    move v0, v3
 
     goto :goto_0
 

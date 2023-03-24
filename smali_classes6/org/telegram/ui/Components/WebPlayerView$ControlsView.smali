@@ -416,12 +416,12 @@
 
     if-eqz v8, :cond_3
 
-    const/4 v8, 0x6
+    move v8, v5
 
     goto :goto_0
 
     :cond_3
-    const/16 v8, 0xa
+    move v8, v6
 
     :goto_0
     add-int/2addr v8, v4
@@ -473,7 +473,7 @@
     goto :goto_1
 
     :cond_5
-    const/16 v5, 0xa
+    move v5, v6
 
     :goto_1
     add-int/2addr v5, v4
@@ -538,7 +538,7 @@
 
     move v12, v3
 
-    const/4 v13, 0x0
+    move v13, v5
 
     goto :goto_3
 
@@ -590,17 +590,7 @@
 
     move-result v4
 
-    sub-int/2addr v2, v4
-
-    move v10, v1
-
-    move v11, v2
-
-    move v12, v3
-
-    move v13, v5
-
-    goto :goto_3
+    goto :goto_2
 
     :cond_8
     const/16 v3, 0xd
@@ -679,7 +669,7 @@
 
     div-float/2addr v2, v3
 
-    mul-float v1, v1, v2
+    mul-float/2addr v1, v2
 
     float-to-int v1, v1
 
@@ -711,7 +701,7 @@
 
     div-float/2addr v1, v2
 
-    mul-float v5, v5, v1
+    mul-float/2addr v5, v1
 
     add-float/2addr v5, v3
 
@@ -932,7 +922,7 @@
 
     sub-int v3, v0, v3
 
-    const/4 v0, 0x0
+    move v0, v1
 
     .line 1393
     :goto_0
@@ -952,14 +942,14 @@
 
     div-float/2addr v6, v4
 
-    mul-float v5, v5, v6
+    mul-float/2addr v5, v6
 
     float-to-int v4, v5
 
     goto :goto_1
 
     :cond_1
-    const/4 v4, 0x0
+    move v4, v1
 
     :goto_1
     add-int/2addr v4, v0
@@ -1170,7 +1160,7 @@
 
     div-float/2addr v3, v0
 
-    mul-float v1, v1, v3
+    mul-float/2addr v1, v3
 
     float-to-int v0, v1
 
@@ -1246,7 +1236,7 @@
 
     div-float/2addr v3, v0
 
-    mul-float v1, v1, v3
+    mul-float/2addr v1, v3
 
     float-to-int v0, v1
 
@@ -1265,7 +1255,7 @@
 
     const-wide/16 v3, 0x3e8
 
-    mul-long v1, v1, v3
+    mul-long/2addr v1, v3
 
     invoke-virtual {v0, v1, v2}, Lorg/telegram/ui/Components/VideoPlayer;->seekTo(J)V
 

@@ -74,7 +74,7 @@
 
     const/high16 v5, -0x80000000
 
-    const/4 v3, 0x1
+    move v3, v6
 
     goto :goto_0
 
@@ -83,7 +83,7 @@
 
     if-ne v3, v4, :cond_3
 
-    const/4 v3, 0x0
+    move v3, v2
 
     goto :goto_0
 
@@ -91,14 +91,14 @@
     return-object v1
 
     :cond_4
-    const/4 v3, 0x0
+    move v3, v2
 
-    const/4 v6, 0x0
+    move v6, v3
 
     :goto_0
     const v4, -0x38e38e3
 
-    const v7, -0x38e38e3
+    move v7, v4
 
     :goto_1
     if-ge v6, v0, :cond_9
@@ -130,7 +130,7 @@
     return-object v1
 
     :cond_7
-    mul-int v2, v2, p1
+    mul-int/2addr v2, p1
 
     add-int v9, v5, v8
 
@@ -184,7 +184,7 @@
 .end method
 
 .method public static final toLongOrNull(Ljava/lang/String;I)Ljava/lang/Long;
-    .locals 18
+    .locals 19
 
     move-object/from16 v0, p0
 
@@ -240,16 +240,20 @@
 
     const-wide/high16 v7, -0x8000000000000000L
 
-    const/4 v4, 0x1
+    move v4, v9
 
-    goto :goto_1
+    goto :goto_0
 
     :cond_2
     const/16 v6, 0x2b
 
     if-ne v5, v6, :cond_3
 
-    const/4 v4, 0x1
+    move/from16 v18, v9
+
+    move v9, v4
+
+    move/from16 v4, v18
 
     goto :goto_0
 
@@ -257,17 +261,16 @@
     return-object v3
 
     :cond_4
-    :goto_0
-    const/4 v9, 0x0
+    move v9, v4
 
-    :goto_1
+    :goto_0
     const-wide v5, -0x38e38e38e38e38eL    # -2.772000429909333E291
 
     const-wide/16 v10, 0x0
 
     move-wide v12, v5
 
-    :goto_2
+    :goto_1
     if-ge v4, v2, :cond_9
 
     .line 177
@@ -288,9 +291,9 @@
 
     if-gez v15, :cond_7
 
-    cmp-long v15, v12, v5
+    cmp-long v12, v12, v5
 
-    if-nez v15, :cond_6
+    if-nez v12, :cond_6
 
     int-to-long v12, v1
 
@@ -307,7 +310,7 @@
     :cond_7
     int-to-long v5, v1
 
-    mul-long v10, v10, v5
+    mul-long/2addr v10, v5
 
     int-to-long v5, v14
 
@@ -326,7 +329,7 @@
 
     const-wide v5, -0x38e38e38e38e38eL    # -2.772000429909333E291
 
-    goto :goto_2
+    goto :goto_1
 
     :cond_9
     if-eqz v9, :cond_a
@@ -336,7 +339,7 @@
 
     move-result-object v0
 
-    goto :goto_3
+    goto :goto_2
 
     :cond_a
     neg-long v0, v10
@@ -345,6 +348,6 @@
 
     move-result-object v0
 
-    :goto_3
+    :goto_2
     return-object v0
 .end method

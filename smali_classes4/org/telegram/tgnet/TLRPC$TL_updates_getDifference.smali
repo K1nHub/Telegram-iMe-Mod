@@ -29,7 +29,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 52681
+    .line 52708
     invoke-direct {p0}, Lorg/telegram/tgnet/TLObject;-><init>()V
 
     return-void
@@ -40,7 +40,7 @@
 .method public deserializeResponse(Lorg/telegram/tgnet/AbstractSerializedData;IZ)Lorg/telegram/tgnet/TLObject;
     .locals 0
 
-    .line 52691
+    .line 52718
     invoke-static {p1, p2, p3}, Lorg/telegram/tgnet/TLRPC$updates_Difference;->TLdeserialize(Lorg/telegram/tgnet/AbstractSerializedData;IZ)Lorg/telegram/tgnet/TLRPC$updates_Difference;
 
     move-result-object p1
@@ -51,40 +51,40 @@
 .method public serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
     .locals 1
 
-    .line 52695
+    .line 52722
     sget v0, Lorg/telegram/tgnet/TLRPC$TL_updates_getDifference;->constructor:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 52696
+    .line 52723
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$TL_updates_getDifference;->flags:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 52697
+    .line 52724
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$TL_updates_getDifference;->pts:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 52698
+    .line 52725
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$TL_updates_getDifference;->flags:I
 
     and-int/lit8 v0, v0, 0x1
 
     if-eqz v0, :cond_0
 
-    .line 52699
+    .line 52726
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$TL_updates_getDifference;->pts_total_limit:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 52701
+    .line 52728
     :cond_0
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$TL_updates_getDifference;->date:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 52702
+    .line 52729
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$TL_updates_getDifference;->qts:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V

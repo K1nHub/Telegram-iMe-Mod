@@ -7,7 +7,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 5618
+    .line 5617
     invoke-direct {p0}, Lorg/telegram/tgnet/TLObject;-><init>()V
 
     return-void
@@ -22,7 +22,7 @@
 
     goto :goto_0
 
-    .line 5642
+    .line 5641
     :sswitch_0
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_privacyKeyForwards;
 
@@ -30,7 +30,7 @@
 
     goto :goto_0
 
-    .line 5630
+    .line 5629
     :sswitch_1
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_privacyKeyChatInvite;
 
@@ -38,7 +38,7 @@
 
     goto :goto_0
 
-    .line 5633
+    .line 5632
     :sswitch_2
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_privacyKeyAddedByPhone;
 
@@ -46,7 +46,7 @@
 
     goto :goto_0
 
-    .line 5639
+    .line 5638
     :sswitch_3
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_privacyKeyPhoneCall;
 
@@ -54,7 +54,7 @@
 
     goto :goto_0
 
-    .line 5627
+    .line 5626
     :sswitch_4
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_privacyKeyPhoneP2P;
 
@@ -62,7 +62,7 @@
 
     goto :goto_0
 
-    .line 5636
+    .line 5635
     :sswitch_5
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_privacyKeyVoiceMessages;
 
@@ -70,7 +70,7 @@
 
     goto :goto_0
 
-    .line 5645
+    .line 5644
     :sswitch_6
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_privacyKeyPhoneNumber;
 
@@ -78,7 +78,7 @@
 
     goto :goto_0
 
-    .line 5624
+    .line 5623
     :sswitch_7
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_privacyKeyStatusTimestamp;
 
@@ -86,7 +86,7 @@
 
     goto :goto_0
 
-    .line 5648
+    .line 5647
     :sswitch_8
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_privacyKeyProfilePhoto;
 
@@ -99,7 +99,7 @@
 
     goto :goto_1
 
-    .line 5652
+    .line 5651
     :cond_0
     new-instance p0, Ljava/lang/RuntimeException;
 
@@ -129,7 +129,7 @@
     :goto_1
     if-eqz v0, :cond_2
 
-    .line 5655
+    .line 5654
     invoke-virtual {v0, p0, p2}, Lorg/telegram/tgnet/TLObject;->readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
 
     :cond_2

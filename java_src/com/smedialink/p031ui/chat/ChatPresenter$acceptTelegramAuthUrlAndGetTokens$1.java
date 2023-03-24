@@ -37,7 +37,7 @@ public final class ChatPresenter$acceptTelegramAuthUrlAndGetTokens$1 extends Lam
         if (this.$buttonReq != null) {
             telegramApi = this.this$0.telegramApi;
             Observable<String> acceptUrlAuth = telegramApi.acceptUrlAuth(this.$url, this.$buttonReq);
-            final C19051 c19051 = new C19051(this.this$0);
+            final C19191 c19191 = new C19191(this.this$0);
             return acceptUrlAuth.flatMap(new Function() { // from class: com.smedialink.ui.chat.ChatPresenter$acceptTelegramAuthUrlAndGetTokens$1$$ExternalSyntheticLambda0
                 @Override // io.reactivex.functions.Function
                 public final Object apply(Object obj) {
@@ -55,11 +55,11 @@ public final class ChatPresenter$acceptTelegramAuthUrlAndGetTokens$1 extends Lam
     /* compiled from: ChatPresenter.kt */
     /* renamed from: com.smedialink.ui.chat.ChatPresenter$acceptTelegramAuthUrlAndGetTokens$1$1 */
     /* loaded from: classes3.dex */
-    public static final class C19051 extends Lambda implements Function1<String, ObservableSource<? extends Result<? extends SessionTokens>>> {
+    public static final class C19191 extends Lambda implements Function1<String, ObservableSource<? extends Result<? extends SessionTokens>>> {
         final /* synthetic */ ChatPresenter this$0;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        C19051(ChatPresenter chatPresenter) {
+        C19191(ChatPresenter chatPresenter) {
             super(1);
             this.this$0 = chatPresenter;
         }

@@ -417,8 +417,15 @@ public final class DownloadManager {
     }
 
     static Download mergeRequest(Download download, DownloadRequest downloadRequest, int i, long j) {
-        int i2 = download.state;
-        return new Download(download.request.copyWithMergedRequest(downloadRequest), (i2 == 5 || i2 == 7) ? 7 : i != 0 ? 1 : 0, (i2 == 5 || download.isTerminalState()) ? j : download.startTimeMs, j, -1L, i, 0);
+        int i2;
+        int i3 = download.state;
+        long j2 = (i3 == 5 || download.isTerminalState()) ? j : download.startTimeMs;
+        if (i3 == 5 || i3 == 7) {
+            i2 = 7;
+        } else {
+            i2 = i != 0 ? 1 : 0;
+        }
+        return new Download(download.request.copyWithMergedRequest(downloadRequest), i2, j2, j, -1L, i, 0);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -575,7 +582,10 @@ public final class DownloadManager {
                 }
             } else if (i != download.stopReason) {
                 int i2 = download.state;
-                putDownload(new Download(download.request, (i2 == 0 || i2 == 2) ? 1 : 1, download.startTimeMs, System.currentTimeMillis(), download.contentLength, i, 0, download.progress));
+                if (i2 == 0 || i2 == 2) {
+                    i2 = 1;
+                }
+                putDownload(new Download(download.request, i2, download.startTimeMs, System.currentTimeMillis(), download.contentLength, i, 0, download.progress));
             }
         }
 
@@ -594,7 +604,7 @@ public final class DownloadManager {
             if (download != null) {
                 putDownload(DownloadManager.mergeRequest(download, downloadRequest, i, currentTimeMillis));
             } else {
-                putDownload(new Download(downloadRequest, i != 0 ? 1 : 0, currentTimeMillis, currentTimeMillis, -1L, i, 0));
+                putDownload(new Download(downloadRequest, i == 0 ? 0 : 1, currentTimeMillis, currentTimeMillis, -1L, i, 0));
             }
             syncTasks();
         }
@@ -934,8 +944,8 @@ public final class DownloadManager {
                             if (!this.isCanceled) {
                                 long j2 = this.downloadProgress.bytesDownloaded;
                                 if (j2 != j) {
-                                    j = j2;
                                     i = 0;
+                                    j = j2;
                                 }
                                 i++;
                                 if (i > this.minRetryCount) {

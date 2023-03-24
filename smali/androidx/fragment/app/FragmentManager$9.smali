@@ -100,7 +100,7 @@
 
     new-array p1, p1, [I
 
-    const/4 v3, 0x0
+    move v3, v1
 
     .line 2658
     :goto_0
@@ -123,7 +123,7 @@
 
     if-eqz v4, :cond_0
 
-    const/4 v4, 0x0
+    move v4, v1
 
     goto :goto_1
 

@@ -247,17 +247,15 @@
 
     const/4 v6, 0x1
 
-    const/4 v9, 0x1
-
     goto :goto_1
 
     :cond_0
     const/4 v6, 0x0
 
-    const/4 v9, 0x0
+    :goto_1
+    move v9, v6
 
     .line 257
-    :goto_1
     invoke-interface {p0, v3}, Landroid/database/Cursor;->getInt(I)I
 
     move-result v10
@@ -1115,7 +1113,7 @@
     goto :goto_0
 
     :cond_0
-    const/4 v0, 0x0
+    move v0, v1
 
     :goto_0
     mul-int/lit8 v0, v0, 0x1f
@@ -1132,7 +1130,7 @@
     goto :goto_1
 
     :cond_1
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_1
     add-int/2addr v0, v2

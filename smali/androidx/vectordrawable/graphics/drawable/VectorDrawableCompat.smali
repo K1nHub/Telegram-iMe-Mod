@@ -159,7 +159,7 @@
 
     int-to-float v0, v0
 
-    mul-float v0, v0, p1
+    mul-float/2addr v0, p1
 
     float-to-int p1, v0
 
@@ -340,7 +340,7 @@
 
     add-int/2addr v4, v5
 
-    const/4 v6, 0x1
+    move v6, v5
 
     :goto_0
     if-eq v3, v5, :cond_8
@@ -601,7 +601,7 @@
 
     if-ne v0, v2, :cond_0
 
-    const/4 v1, 0x1
+    move v1, v2
 
     :cond_0
     return v1
@@ -1068,22 +1068,22 @@
 
     move-result v5
 
-    const/high16 v6, 0x3f800000    # 1.0f
+    const/4 v6, 0x0
 
-    const/4 v7, 0x0
+    cmpl-float v4, v4, v6
 
-    cmpl-float v4, v4, v7
+    const/high16 v7, 0x3f800000    # 1.0f
 
     if-nez v4, :cond_3
 
-    cmpl-float v4, v5, v7
+    cmpl-float v4, v5, v6
 
     if-eqz v4, :cond_4
 
     :cond_3
-    const/high16 v1, 0x3f800000    # 1.0f
+    move v1, v7
 
-    const/high16 v3, 0x3f800000    # 1.0f
+    move v3, v1
 
     .line 393
     :cond_4
@@ -1095,7 +1095,7 @@
 
     int-to-float v4, v4
 
-    mul-float v4, v4, v1
+    mul-float/2addr v4, v1
 
     float-to-int v1, v4
 
@@ -1108,7 +1108,7 @@
 
     int-to-float v4, v4
 
-    mul-float v4, v4, v3
+    mul-float/2addr v4, v3
 
     float-to-int v3, v4
 
@@ -1165,12 +1165,12 @@
 
     int-to-float v5, v5
 
-    invoke-virtual {p1, v5, v7}, Landroid/graphics/Canvas;->translate(FF)V
+    invoke-virtual {p1, v5, v6}, Landroid/graphics/Canvas;->translate(FF)V
 
     const/high16 v5, -0x40800000    # -1.0f
 
     .line 409
-    invoke-virtual {p1, v5, v6}, Landroid/graphics/Canvas;->scale(FF)V
+    invoke-virtual {p1, v5, v7}, Landroid/graphics/Canvas;->scale(FF)V
 
     .line 415
     :cond_6
@@ -1762,7 +1762,7 @@
     .line 547
     invoke-virtual {p0}, Landroidx/vectordrawable/graphics/drawable/VectorDrawableCompat;->invalidateSelf()V
 
-    const/4 v0, 0x1
+    move v0, v3
 
     .line 550
     :cond_1

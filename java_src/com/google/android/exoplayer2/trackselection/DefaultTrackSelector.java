@@ -1752,15 +1752,15 @@ public class DefaultTrackSelector extends MappingTrackSelector {
             r3 = 1
             r0 = 0
             if (r6 <= r7) goto L8
-            r1 = 1
+            r1 = r3
             goto L9
         L8:
-            r1 = 0
+            r1 = r0
         L9:
             if (r4 <= r5) goto Lc
             goto Ld
         Lc:
-            r3 = 0
+            r3 = r0
         Ld:
             if (r1 == r3) goto L10
             goto L13
@@ -2050,8 +2050,8 @@ public class DefaultTrackSelector extends MappingTrackSelector {
             while (true) {
                 i4 = Integer.MAX_VALUE;
                 if (i7 >= parameters.preferredAudioLanguages.size()) {
-                    i7 = Integer.MAX_VALUE;
                     i5 = 0;
+                    i7 = Integer.MAX_VALUE;
                     break;
                 }
                 i5 = DefaultTrackSelector.getFormatLanguageScore(this.format, parameters.preferredAudioLanguages.get(i7), false);
@@ -2077,8 +2077,8 @@ public class DefaultTrackSelector extends MappingTrackSelector {
             int i11 = 0;
             while (true) {
                 if (i11 >= systemLanguageCodes.length) {
-                    i11 = Integer.MAX_VALUE;
                     i6 = 0;
+                    i11 = Integer.MAX_VALUE;
                     break;
                 }
                 i6 = DefaultTrackSelector.getFormatLanguageScore(this.format, systemLanguageCodes[i11], false);

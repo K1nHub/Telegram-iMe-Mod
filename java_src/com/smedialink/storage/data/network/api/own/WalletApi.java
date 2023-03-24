@@ -7,7 +7,7 @@ import com.smedialink.storage.data.network.model.request.wallet.GetWalletTransac
 import com.smedialink.storage.data.network.model.request.wallet.RefreshTokenRequest;
 import com.smedialink.storage.data.network.model.request.wallet.SessionTokensRequest;
 import com.smedialink.storage.data.network.model.response.base.ApiBaseResponse;
-import com.smedialink.storage.data.network.model.response.crypto.wallet.DataForCryptoTransferResponse;
+import com.smedialink.storage.data.network.model.response.crypto.wallet.CryptoTransferDataResponse;
 import com.smedialink.storage.data.network.model.response.wallet.SessionTokensResponse;
 import com.smedialink.storage.data.network.model.response.wallet.WalletBalancesResponse;
 import com.smedialink.storage.data.network.model.response.wallet.WalletTransactionsResponse;
@@ -24,7 +24,10 @@ public interface WalletApi {
     Observable<ApiBaseResponse<SessionTokensResponse>> getAuthTokensByTelegramLoginData(@Body SessionTokensRequest sessionTokensRequest);
 
     @POST("getParamsForCryptoTransfer")
-    Observable<ApiBaseResponse<DataForCryptoTransferResponse>> getDataForCryptoTransfer(@Body GetDataForCryptoTransferRequest getDataForCryptoTransferRequest);
+    Observable<ApiBaseResponse<CryptoTransferDataResponse.EVM>> getEVMCryptoTransferData(@Body GetDataForCryptoTransferRequest getDataForCryptoTransferRequest);
+
+    @POST("tron/getParamsForCryptoTransfer")
+    Observable<ApiBaseResponse<CryptoTransferDataResponse.TRON>> getTRONCryptoTransferData(@Body GetDataForCryptoTransferRequest getDataForCryptoTransferRequest);
 
     @POST("getWalletBalance")
     Observable<ApiBaseResponse<WalletBalancesResponse>> getWalletTokensBalance(@Body GetTokensBalanceRequest getTokensBalanceRequest);

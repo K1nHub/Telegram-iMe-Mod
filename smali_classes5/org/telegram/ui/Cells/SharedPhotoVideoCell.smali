@@ -214,7 +214,7 @@
 
     move-result v1
 
-    mul-int v2, v2, v1
+    mul-int/2addr v2, v1
 
     sub-int/2addr v0, v2
 
@@ -234,7 +234,7 @@
 
     move-result v1
 
-    mul-int v2, v2, v1
+    mul-int/2addr v2, v1
 
     sub-int/2addr v0, v2
 
@@ -450,7 +450,7 @@
 
     move-result v3
 
-    mul-int v2, v2, v3
+    mul-int/2addr v2, v3
 
     sub-int/2addr p2, v2
 
@@ -474,7 +474,7 @@
 
     const/4 v2, 0x0
 
-    const/4 v3, 0x0
+    move v3, v2
 
     .line 401
     :goto_1
@@ -498,7 +498,7 @@
 
     if-eqz v5, :cond_1
 
-    const/4 v5, 0x0
+    move v5, v2
 
     goto :goto_2
 
@@ -517,7 +517,7 @@
 
     add-int/2addr v5, p2
 
-    mul-int v5, v5, v3
+    mul-int/2addr v5, v3
 
     iput v5, v4, Landroid/widget/FrameLayout$LayoutParams;->leftMargin:I
 
@@ -552,7 +552,7 @@
 
     add-int/2addr v7, p2
 
-    mul-int v6, v6, v7
+    mul-int/2addr v6, v7
 
     sub-int/2addr v5, v6
 
@@ -576,7 +576,7 @@
 
     add-int/2addr v7, p2
 
-    mul-int v6, v6, v7
+    mul-int/2addr v6, v7
 
     sub-int/2addr v5, v6
 
@@ -752,7 +752,7 @@
 
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    move v1, v0
 
     .line 326
     :goto_0
@@ -774,7 +774,7 @@
 
     if-ge v1, p1, :cond_0
 
-    const/4 v3, 0x0
+    move v3, v0
 
     goto :goto_1
 

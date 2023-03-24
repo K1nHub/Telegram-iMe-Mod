@@ -42,7 +42,7 @@
 
 # virtual methods
 .method public run()V
-    .locals 7
+    .locals 6
 
     .line 268
     iget-object v0, p0, Lorg/telegram/ui/Components/Premium/GLIcon/GLIconTextureView$RenderThread;->this$0:Lorg/telegram/ui/Components/Premium/GLIcon/GLIconTextureView;
@@ -65,6 +65,7 @@
     move-result-wide v0
 
     .line 275
+    :catch_0
     :cond_0
     :goto_0
     iget-object v2, p0, Lorg/telegram/ui/Components/Premium/GLIcon/GLIconTextureView$RenderThread;->this$0:Lorg/telegram/ui/Components/Premium/GLIcon/GLIconTextureView;
@@ -74,6 +75,7 @@
     if-eqz v2, :cond_5
 
     .line 276
+    :catch_1
     :goto_1
     iget-object v2, p0, Lorg/telegram/ui/Components/Premium/GLIcon/GLIconTextureView$RenderThread;->this$0:Lorg/telegram/ui/Components/Premium/GLIcon/GLIconTextureView;
 
@@ -87,12 +89,7 @@
     :try_start_0
     invoke-static {v4, v5}, Ljava/lang/Thread;->sleep(J)V
     :try_end_0
-    .catch Ljava/lang/InterruptedException; {:try_start_0 .. :try_end_0} :catch_0
-
-    goto :goto_1
-
-    :catch_0
-    nop
+    .catch Ljava/lang/InterruptedException; {:try_start_0 .. :try_end_0} :catch_1
 
     goto :goto_1
 
@@ -172,26 +169,21 @@
 
     int-to-long v4, v4
 
-    cmp-long v6, v2, v4
+    cmp-long v2, v2, v4
 
-    if-gez v6, :cond_0
+    if-gez v2, :cond_0
 
     .line 301
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v2
     :try_end_1
-    .catch Ljava/lang/InterruptedException; {:try_start_1 .. :try_end_1} :catch_1
+    .catch Ljava/lang/InterruptedException; {:try_start_1 .. :try_end_1} :catch_0
 
     :goto_3
     sub-long/2addr v2, v0
 
     goto :goto_2
-
-    :catch_1
-    nop
-
-    goto :goto_0
 
     :cond_5
     return-void

@@ -24,7 +24,7 @@ import androidx.core.content.ContextCompat;
 import androidx.core.graphics.ColorUtils;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3286R;
+import org.telegram.messenger.C3301R;
 import org.telegram.p048ui.Components.CubicBezierInterpolator;
 /* renamed from: org.telegram.ui.Components.voip.VoIPFloatingLayout */
 /* loaded from: classes6.dex */
@@ -124,23 +124,30 @@ public class VoIPFloatingLayout extends FrameLayout {
             setOutlineProvider(new ViewOutlineProvider() { // from class: org.telegram.ui.Components.voip.VoIPFloatingLayout.2
                 @Override // android.view.ViewOutlineProvider
                 public void getOutline(View view, Outline outline) {
-                    if (VoIPFloatingLayout.this.overrideCornerRadius >= BitmapDescriptorFactory.HUE_RED) {
+                    float f = VoIPFloatingLayout.this.overrideCornerRadius;
+                    float f2 = BitmapDescriptorFactory.HUE_RED;
+                    if (f >= BitmapDescriptorFactory.HUE_RED) {
                         if (VoIPFloatingLayout.this.overrideCornerRadius >= 1.0f) {
                             outline.setRoundRect(0, 0, view.getMeasuredWidth(), view.getMeasuredHeight(), VoIPFloatingLayout.this.overrideCornerRadius);
                         } else {
                             outline.setRect(0, 0, view.getMeasuredWidth(), view.getMeasuredHeight());
                         }
-                    } else if (VoIPFloatingLayout.this.floatingMode) {
-                        outline.setRoundRect(0, 0, view.getMeasuredWidth(), view.getMeasuredHeight(), VoIPFloatingLayout.this.floatingMode ? AndroidUtilities.m50dp(4) : BitmapDescriptorFactory.HUE_RED);
-                    } else {
+                    } else if (!VoIPFloatingLayout.this.floatingMode) {
                         outline.setRect(0, 0, view.getMeasuredWidth(), view.getMeasuredHeight());
+                    } else {
+                        int measuredWidth = view.getMeasuredWidth();
+                        int measuredHeight = view.getMeasuredHeight();
+                        if (VoIPFloatingLayout.this.floatingMode) {
+                            f2 = AndroidUtilities.m50dp(4);
+                        }
+                        outline.setRoundRect(0, 0, measuredWidth, measuredHeight, f2);
                     }
                 }
             });
             setClipToOutline(true);
         }
         this.mutedPaint.setColor(ColorUtils.setAlphaComponent(-16777216, 102));
-        this.mutedDrawable = ContextCompat.getDrawable(context, C3286R.C3288drawable.calls_mute_mini);
+        this.mutedDrawable = ContextCompat.getDrawable(context, C3301R.C3303drawable.calls_mute_mini);
     }
 
     @Override // android.widget.FrameLayout, android.view.View
@@ -193,7 +200,7 @@ public class VoIPFloatingLayout extends FrameLayout {
     */
     public boolean onTouchEvent(android.view.MotionEvent r10) {
         /*
-            Method dump skipped, instructions count: 437
+            Method dump skipped, instructions count: 436
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: org.telegram.p048ui.Components.voip.VoIPFloatingLayout.onTouchEvent(android.view.MotionEvent):boolean");
@@ -279,7 +286,7 @@ public class VoIPFloatingLayout extends FrameLayout {
         }
         int i3 = Build.VERSION.SDK_INT;
         float f3 = BitmapDescriptorFactory.HUE_RED;
-        float systemWindowInsetTop = (i3 < 20 || (windowInsets2 = this.lastInsets) == null) ? BitmapDescriptorFactory.HUE_RED : windowInsets2.getSystemWindowInsetTop() + this.topPadding;
+        float systemWindowInsetTop = (i3 < 20 || (windowInsets2 = this.lastInsets) == null) ? 0.0f : windowInsets2.getSystemWindowInsetTop() + this.topPadding;
         if (i3 >= 20 && (windowInsets = this.lastInsets) != null) {
             f3 = this.bottomPadding + windowInsets.getSystemWindowInsetBottom();
         }
@@ -302,11 +309,14 @@ public class VoIPFloatingLayout extends FrameLayout {
     }
 
     public void setFloatingMode(boolean z, boolean z2) {
-        if (!((getMeasuredWidth() <= 0 || getVisibility() != 0) ? false : false)) {
+        if (getMeasuredWidth() <= 0 || getVisibility() != 0) {
+            z2 = false;
+        }
+        if (!z2) {
             if (this.floatingMode != z) {
                 this.floatingMode = z;
                 this.setedFloatingMode = z;
-                this.toFloatingModeProgress = z ? 1.0f : BitmapDescriptorFactory.HUE_RED;
+                this.toFloatingModeProgress = z ? 1.0f : 0.0f;
                 requestLayout();
                 if (Build.VERSION.SDK_INT >= 21) {
                     invalidateOutline();
@@ -398,7 +408,7 @@ public class VoIPFloatingLayout extends FrameLayout {
                 }
             });
         } else {
-            this.toFloatingModeProgress = this.floatingMode ? 1.0f : BitmapDescriptorFactory.HUE_RED;
+            this.toFloatingModeProgress = this.floatingMode ? 1.0f : 0.0f;
             this.floatingMode = z;
             this.setedFloatingMode = z;
             requestLayout();
@@ -411,7 +421,7 @@ public class VoIPFloatingLayout extends FrameLayout {
             if (valueAnimator != null) {
                 valueAnimator.cancel();
             }
-            this.mutedProgress = z ? 1.0f : BitmapDescriptorFactory.HUE_RED;
+            this.mutedProgress = z ? 1.0f : 0.0f;
             invalidate();
             return;
         }
@@ -421,7 +431,7 @@ public class VoIPFloatingLayout extends FrameLayout {
         }
         float[] fArr = new float[2];
         fArr[0] = this.mutedProgress;
-        fArr[1] = z ? 1.0f : BitmapDescriptorFactory.HUE_RED;
+        fArr[1] = z ? 1.0f : 0.0f;
         ValueAnimator ofFloat = ValueAnimator.ofFloat(fArr);
         this.mutedAnimator = ofFloat;
         ofFloat.addUpdateListener(this.mutedUpdateListener);
@@ -448,9 +458,9 @@ public class VoIPFloatingLayout extends FrameLayout {
             return;
         }
         int i = Build.VERSION.SDK_INT;
-        float systemWindowInsetTop = (i < 20 || (windowInsets2 = this.lastInsets) == null) ? BitmapDescriptorFactory.HUE_RED : windowInsets2.getSystemWindowInsetTop() + this.topPadding;
+        float systemWindowInsetTop = (i < 20 || (windowInsets2 = this.lastInsets) == null) ? 0.0f : windowInsets2.getSystemWindowInsetTop() + this.topPadding;
         View view = (View) parent;
-        setRelativePosition(Math.min(1.0f, Math.max((float) BitmapDescriptorFactory.HUE_RED, (voIPFloatingLayout.getTranslationX() - this.leftPadding) / (((view.getMeasuredWidth() - this.leftPadding) - this.rightPadding) - voIPFloatingLayout.getMeasuredWidth()))), Math.min(1.0f, Math.max((float) BitmapDescriptorFactory.HUE_RED, (voIPFloatingLayout.getTranslationY() - systemWindowInsetTop) / (((view.getMeasuredHeight() - ((i < 20 || (windowInsets = this.lastInsets) == null) ? BitmapDescriptorFactory.HUE_RED : windowInsets.getSystemWindowInsetBottom() + this.bottomPadding)) - systemWindowInsetTop) - voIPFloatingLayout.getMeasuredHeight()))));
+        setRelativePosition(Math.min(1.0f, Math.max((float) BitmapDescriptorFactory.HUE_RED, (voIPFloatingLayout.getTranslationX() - this.leftPadding) / (((view.getMeasuredWidth() - this.leftPadding) - this.rightPadding) - voIPFloatingLayout.getMeasuredWidth()))), Math.min(1.0f, Math.max((float) BitmapDescriptorFactory.HUE_RED, (voIPFloatingLayout.getTranslationY() - systemWindowInsetTop) / (((view.getMeasuredHeight() - ((i < 20 || (windowInsets = this.lastInsets) == null) ? 0.0f : windowInsets.getSystemWindowInsetBottom() + this.bottomPadding)) - systemWindowInsetTop) - voIPFloatingLayout.getMeasuredHeight()))));
     }
 
     public void setIsActive(boolean z) {
@@ -466,8 +476,8 @@ public class VoIPFloatingLayout extends FrameLayout {
                 return;
             }
             int i = Build.VERSION.SDK_INT;
-            float systemWindowInsetTop = (i < 20 || (windowInsets2 = this.lastInsets) == null) ? BitmapDescriptorFactory.HUE_RED : windowInsets2.getSystemWindowInsetTop() + this.topPadding;
-            float systemWindowInsetBottom = (i < 20 || (windowInsets = this.lastInsets) == null) ? BitmapDescriptorFactory.HUE_RED : windowInsets.getSystemWindowInsetBottom() + this.bottomPadding;
+            float systemWindowInsetTop = (i < 20 || (windowInsets2 = this.lastInsets) == null) ? 0.0f : windowInsets2.getSystemWindowInsetTop() + this.topPadding;
+            float systemWindowInsetBottom = (i < 20 || (windowInsets = this.lastInsets) == null) ? 0.0f : windowInsets.getSystemWindowInsetBottom() + this.bottomPadding;
             View view = (View) parent;
             this.savedRelativePositionX = (getTranslationX() - this.leftPadding) / (((view.getMeasuredWidth() - this.leftPadding) - this.rightPadding) - getMeasuredWidth());
             this.savedRelativePositionY = (getTranslationY() - systemWindowInsetTop) / (((view.getMeasuredHeight() - systemWindowInsetBottom) - systemWindowInsetTop) - getMeasuredHeight());

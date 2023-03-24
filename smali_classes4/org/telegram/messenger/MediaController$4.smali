@@ -30,7 +30,7 @@
 .method constructor <init>(Lorg/telegram/messenger/MediaController;)V
     .locals 0
 
-    .line 997
+    .line 998
     iput-object p1, p0, Lorg/telegram/messenger/MediaController$4;->this$0:Lorg/telegram/messenger/MediaController;
 
     invoke-direct {p0}, Landroid/telephony/PhoneStateListener;-><init>()V
@@ -49,7 +49,7 @@
 
     if-ne p1, v2, :cond_4
 
-    .line 1002
+    .line 1003
     iget-object p1, p0, Lorg/telegram/messenger/MediaController$4;->this$0:Lorg/telegram/messenger/MediaController;
 
     invoke-static {p1}, Lorg/telegram/messenger/MediaController;->access$000(Lorg/telegram/messenger/MediaController;)Lorg/telegram/messenger/MessageObject;
@@ -70,7 +70,7 @@
 
     if-nez p1, :cond_0
 
-    .line 1003
+    .line 1004
     iget-object p1, p0, Lorg/telegram/messenger/MediaController$4;->this$0:Lorg/telegram/messenger/MediaController;
 
     invoke-static {p1}, Lorg/telegram/messenger/MediaController;->access$000(Lorg/telegram/messenger/MediaController;)Lorg/telegram/messenger/MessageObject;
@@ -81,7 +81,7 @@
 
     goto :goto_0
 
-    .line 1004
+    .line 1005
     :cond_0
     iget-object p1, p0, Lorg/telegram/messenger/MediaController$4;->this$0:Lorg/telegram/messenger/MediaController;
 
@@ -99,7 +99,7 @@
 
     if-eqz p1, :cond_2
 
-    .line 1005
+    .line 1006
     :cond_1
     iget-object p1, p0, Lorg/telegram/messenger/MediaController$4;->this$0:Lorg/telegram/messenger/MediaController;
 
@@ -107,7 +107,7 @@
 
     invoke-virtual {p1, v0, v1, v1, v3}, Lorg/telegram/messenger/MediaController;->stopRecording(IZILjava/lang/String;)V
 
-    .line 1007
+    .line 1008
     :cond_2
     :goto_0
     invoke-static {}, Lorg/telegram/ui/Components/EmbedBottomSheet;->getInstance()Lorg/telegram/ui/Components/EmbedBottomSheet;
@@ -116,10 +116,10 @@
 
     if-eqz p1, :cond_3
 
-    .line 1009
+    .line 1010
     invoke-virtual {p1}, Lorg/telegram/ui/Components/EmbedBottomSheet;->pause()V
 
-    .line 1011
+    .line 1012
     :cond_3
     iget-object p1, p0, Lorg/telegram/messenger/MediaController$4;->this$0:Lorg/telegram/messenger/MediaController;
 
@@ -130,7 +130,7 @@
     :cond_4
     if-nez p1, :cond_5
 
-    .line 1013
+    .line 1014
     iget-object p1, p0, Lorg/telegram/messenger/MediaController$4;->this$0:Lorg/telegram/messenger/MediaController;
 
     invoke-static {p1, v1}, Lorg/telegram/messenger/MediaController;->access$5502(Lorg/telegram/messenger/MediaController;Z)Z
@@ -140,17 +140,17 @@
     :cond_5
     if-ne p1, v0, :cond_7
 
-    .line 1015
+    .line 1016
     invoke-static {}, Lorg/telegram/ui/Components/EmbedBottomSheet;->getInstance()Lorg/telegram/ui/Components/EmbedBottomSheet;
 
     move-result-object p1
 
     if-eqz p1, :cond_6
 
-    .line 1017
+    .line 1018
     invoke-virtual {p1}, Lorg/telegram/ui/Components/EmbedBottomSheet;->pause()V
 
-    .line 1019
+    .line 1020
     :cond_6
     iget-object p1, p0, Lorg/telegram/messenger/MediaController$4;->this$0:Lorg/telegram/messenger/MediaController;
 
@@ -166,7 +166,7 @@
 .method public onCallStateChanged(ILjava/lang/String;)V
     .locals 0
 
-    .line 1000
+    .line 1001
     new-instance p2, Lorg/telegram/messenger/MediaController$4$$ExternalSyntheticLambda0;
 
     invoke-direct {p2, p0, p1}, Lorg/telegram/messenger/MediaController$4$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/messenger/MediaController$4;I)V

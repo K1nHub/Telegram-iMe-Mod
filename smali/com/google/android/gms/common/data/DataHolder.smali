@@ -229,7 +229,7 @@
     goto :goto_0
 
     :cond_0
-    const/4 v3, 0x0
+    move v3, v5
 
     :goto_0
     if-ge v3, v2, :cond_3
@@ -581,9 +581,9 @@
 
     invoke-virtual {v2, v4}, Landroid/database/CursorWindow;->setNumColumns(I)Z
 
-    const/4 v4, 0x0
+    move v4, v0
 
-    const/4 v5, 0x0
+    move v5, v4
 
     :goto_0
     if-ge v4, v1, :cond_f
@@ -682,9 +682,9 @@
 
     const/4 v8, 0x1
 
-    const/4 v9, 0x0
+    move v9, v0
 
-    const/4 v10, 0x1
+    move v10, v8
 
     .line 16
     :goto_1
@@ -898,7 +898,7 @@
     :cond_b
     if-eqz v10, :cond_c
 
-    const/4 v5, 0x0
+    move v5, v0
 
     goto :goto_4
 
@@ -952,7 +952,7 @@
 
     add-int/lit8 v4, v4, -0x1
 
-    const/4 v5, 0x1
+    move v5, v8
 
     :goto_4
     add-int/2addr v4, v8
@@ -1178,9 +1178,9 @@
 
     const-wide/16 v0, 0x1
 
-    cmp-long p3, p1, v0
+    cmp-long p1, p1, v0
 
-    if-nez p3, :cond_0
+    if-nez p1, :cond_0
 
     const/4 p1, 0x1
 
@@ -1345,7 +1345,7 @@
     goto :goto_0
 
     :cond_0
-    const/4 v1, 0x0
+    move v1, v0
 
     :goto_0
     invoke-static {v1}, Lcom/google/android/gms/common/internal/Preconditions;->checkState(Z)V
@@ -1594,7 +1594,7 @@
 
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    move v1, v0
 
     :goto_0
     iget-object v2, p0, Lcom/google/android/gms/common/data/DataHolder;->zag:[Ljava/lang/String;
@@ -1625,7 +1625,7 @@
 
     iput-object v1, p0, Lcom/google/android/gms/common/data/DataHolder;->zac:[I
 
-    const/4 v1, 0x0
+    move v1, v0
 
     :goto_1
     iget-object v2, p0, Lcom/google/android/gms/common/data/DataHolder;->zah:[Landroid/database/CursorWindow;

@@ -37,7 +37,7 @@
 
     if-nez v0, :cond_0
 
-    const/16 p2, 0x1e
+    move p2, v1
 
     .line 26
     :cond_0
@@ -46,7 +46,7 @@
     .line 28
     iget p1, p0, Lorg/webrtc/BaseBitrateAdjuster;->targetBitrateBps:I
 
-    mul-int/lit8 p1, p1, 0x1e
+    mul-int/2addr p1, v1
 
     iget p2, p0, Lorg/webrtc/BaseBitrateAdjuster;->targetFps:I
 

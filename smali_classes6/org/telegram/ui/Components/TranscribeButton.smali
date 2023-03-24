@@ -407,7 +407,7 @@
 
     if-eqz p2, :cond_0
 
-    const/4 v0, 0x1
+    move v0, v1
 
     :cond_0
     iput-boolean v0, p0, Lorg/telegram/ui/Components/TranscribeButton;->premium:Z
@@ -573,11 +573,11 @@
 
     const/high16 p4, 0x42b40000    # 90.0f
 
-    mul-float p6, p6, p4
+    mul-float/2addr p6, p4
 
     add-float/2addr p3, p6
 
-    mul-float p7, p7, p4
+    mul-float/2addr p7, p4
 
     invoke-virtual {p1, p2, p3, p7}, Landroid/graphics/Path;->addArc(Landroid/graphics/RectF;FF)V
 
@@ -961,12 +961,12 @@
 
     if-nez p3, :cond_4
 
-    const/4 v7, 0x1
+    move v7, v8
 
     goto :goto_1
 
     :cond_4
-    const/4 v7, 0x0
+    move v7, v1
 
     :goto_1
     if-nez v7, :cond_5
@@ -1042,7 +1042,7 @@
 
     const-wide/16 v1, 0x5f0
 
-    mul-long v1, v1, p1
+    mul-long/2addr v1, p1
 
     long-to-float v1, v1
 
@@ -1063,7 +1063,7 @@
     .line 404
     aput v1, v0, v2
 
-    const/4 v0, 0x0
+    move v0, v3
 
     :goto_0
     const/4 v1, 0x4
@@ -1095,7 +1095,7 @@
 
     const/high16 v7, 0x437a0000    # 250.0f
 
-    mul-float v5, v5, v7
+    mul-float/2addr v5, v7
 
     add-float/2addr v4, v5
 
@@ -1122,7 +1122,7 @@
 
     move-result v5
 
-    mul-float v5, v5, v7
+    mul-float/2addr v5, v7
 
     add-float/2addr v4, v5
 
@@ -1535,7 +1535,7 @@
     :cond_3
     move-wide v13, v4
 
-    const/4 v1, 0x1
+    move v1, v6
 
     .line 665
     :goto_1
@@ -2264,12 +2264,12 @@
 
     if-eqz v1, :cond_4
 
-    const/high16 v1, 0x3f800000    # 1.0f
+    move v1, v3
 
     goto :goto_1
 
     :cond_4
-    const/4 v1, 0x0
+    move v1, v2
 
     :goto_1
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/AnimatedFloat;->set(F)F
@@ -2293,7 +2293,7 @@
 
     const/high16 v4, 0x3f400000    # 0.75f
 
-    mul-float v1, v1, v4
+    mul-float/2addr v1, v4
 
     float-to-long v4, v1
 
@@ -2322,7 +2322,7 @@
     :goto_2
     const/high16 v4, 0x42200000    # 40.0f
 
-    mul-float v4, v4, v0
+    mul-float/2addr v4, v0
 
     const/4 v5, 0x1
 
@@ -2344,20 +2344,20 @@
 
     sub-float v5, v3, v0
 
-    mul-float v5, v5, v4
+    mul-float/2addr v5, v4
 
     iget-boolean v6, v10, Lorg/telegram/ui/Components/TranscribeButton;->loading:Z
 
     if-eqz v6, :cond_6
 
-    const/4 v3, 0x0
+    move v3, v2
 
     :cond_6
-    mul-float v5, v5, v3
+    mul-float/2addr v5, v3
 
     add-float/2addr v1, v5
 
-    mul-float v4, v4, v0
+    mul-float/2addr v4, v0
 
     add-float/2addr v4, v1
 
@@ -2894,7 +2894,7 @@
     .line 230
     invoke-virtual {p0, p1, v2}, Lorg/telegram/ui/Components/TranscribeButton;->setLoading(ZZ)V
 
-    const/4 v0, 0x1
+    move v0, v2
 
     .line 232
     :cond_2
@@ -3139,7 +3139,7 @@
 
     const-wide v13, 0x4066800000000000L    # 180.0
 
-    mul-double v11, v11, v13
+    mul-double/2addr v11, v13
 
     const-wide v15, 0x400921fb54442d18L    # Math.PI
 
@@ -3160,7 +3160,7 @@
 
     move-result-wide v6
 
-    mul-double v6, v6, v13
+    mul-double/2addr v6, v13
 
     div-double/2addr v6, v15
 
@@ -3211,12 +3211,12 @@
 
     if-eq p2, p1, :cond_0
 
-    const/4 p2, 0x1
+    move p2, p3
 
     goto :goto_0
 
     :cond_0
-    const/4 p2, 0x0
+    move p2, v0
 
     .line 262
     :goto_0
@@ -3233,7 +3233,7 @@
 
     const v2, 0x3e1fbe77    # 0.156f
 
-    mul-float v1, v1, v2
+    mul-float/2addr v1, v2
 
     float-to-int v1, v1
 
@@ -3267,7 +3267,7 @@
     const v3, 0x3e4ccccd    # 0.2f
 
     :goto_1
-    mul-float v2, v2, v3
+    mul-float/2addr v2, v3
 
     float-to-int v2, v2
 
@@ -3314,7 +3314,7 @@
 
     sub-float/2addr v3, p4
 
-    mul-float v2, v2, v3
+    mul-float/2addr v2, v3
 
     float-to-int p4, v2
 

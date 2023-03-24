@@ -245,7 +245,7 @@
 
     new-instance p3, Lcom/google/android/gms/internal/measurement/zzah;
 
-    mul-double v0, v0, p1
+    mul-double/2addr v0, p1
 
     .line 19
     invoke-static {v0, v1}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
@@ -628,8 +628,6 @@
 
     :goto_2
     return-object p3
-
-    nop
 
     :pswitch_data_0
     .packed-switch 0x2c

@@ -468,9 +468,9 @@
     .line 49
     check-cast p3, Lcom/google/android/gms/internal/measurement/zzae;
 
-    const/4 v1, 0x0
+    move v1, v4
 
-    const/4 v2, 0x0
+    move v2, v1
 
     .line 50
     :goto_1
@@ -500,7 +500,7 @@
     goto :goto_2
 
     :cond_3
-    const/4 v2, 0x0
+    move v2, v4
 
     goto :goto_3
 
@@ -542,7 +542,7 @@
     return-object p1
 
     :cond_5
-    const/4 v2, 0x1
+    move v2, v3
 
     :goto_3
     add-int/lit8 v1, v1, 0x1

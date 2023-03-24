@@ -431,7 +431,7 @@
 
     invoke-virtual {v0, v2, v7}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    const/4 v2, 0x0
+    move v2, v4
 
     .line 233
     :goto_1
@@ -1391,14 +1391,14 @@
     .line 317
     iget v1, p0, Lorg/telegram/ui/Components/voip/PrivateVideoPreviewDialog;->pageOffset:F
 
-    mul-float v0, v0, v1
+    mul-float/2addr v0, v1
 
     sub-float/2addr v2, v0
 
     :cond_1
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    move v1, v0
 
     .line 319
     :goto_1
@@ -1435,11 +1435,11 @@
     .line 326
     iget v4, p0, Lorg/telegram/ui/Components/voip/PrivateVideoPreviewDialog;->pageOffset:F
 
-    mul-float v9, v9, v4
+    mul-float/2addr v9, v4
 
     sub-float v7, v5, v9
 
-    mul-float v4, v4, v8
+    mul-float/2addr v4, v8
 
     sub-float v6, v5, v4
 
@@ -1449,11 +1449,11 @@
     :cond_3
     iget v4, p0, Lorg/telegram/ui/Components/voip/PrivateVideoPreviewDialog;->pageOffset:F
 
-    mul-float v9, v9, v4
+    mul-float/2addr v9, v4
 
     add-float/2addr v7, v9
 
-    mul-float v4, v4, v8
+    mul-float/2addr v4, v8
 
     add-float/2addr v6, v4
 
@@ -1551,7 +1551,7 @@
 
     int-to-float v2, v2
 
-    mul-float v1, v1, v2
+    mul-float/2addr v1, v2
 
     invoke-virtual {v0, v1}, Landroid/widget/FrameLayout;->setTranslationX(F)V
 
@@ -1571,7 +1571,7 @@
 
     int-to-float v1, v1
 
-    mul-float v5, v5, v1
+    mul-float/2addr v5, v1
 
     invoke-virtual {v0, v5}, Landroid/widget/FrameLayout;->setTranslationX(F)V
 
@@ -1665,11 +1665,11 @@
 
     sub-float/2addr v3, v2
 
-    mul-float v1, v1, v3
+    mul-float/2addr v1, v3
 
     const/high16 v2, 0x437f0000    # 255.0f
 
-    mul-float v1, v1, v2
+    mul-float/2addr v1, v2
 
     float-to-int v1, v1
 
@@ -1836,7 +1836,7 @@
     goto :goto_0
 
     :cond_0
-    const/4 v0, 0x0
+    move v0, v2
 
     .line 459
     :goto_0

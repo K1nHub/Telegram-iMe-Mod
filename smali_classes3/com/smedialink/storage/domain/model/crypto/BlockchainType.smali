@@ -28,6 +28,8 @@
 
 .field public static final enum TON:Lcom/smedialink/storage/domain/model/crypto/BlockchainType;
 
+.field public static final enum TRON:Lcom/smedialink/storage/domain/model/crypto/BlockchainType;
+
 
 # instance fields
 .field private final backendName:Ljava/lang/String;
@@ -43,7 +45,7 @@
 .method private static final synthetic $values()[Lcom/smedialink/storage/domain/model/crypto/BlockchainType;
     .locals 3
 
-    const/4 v0, 0x2
+    const/4 v0, 0x3
 
     new-array v0, v0, [Lcom/smedialink/storage/domain/model/crypto/BlockchainType;
 
@@ -53,9 +55,15 @@
 
     aput-object v1, v0, v2
 
-    sget-object v1, Lcom/smedialink/storage/domain/model/crypto/BlockchainType;->TON:Lcom/smedialink/storage/domain/model/crypto/BlockchainType;
+    sget-object v1, Lcom/smedialink/storage/domain/model/crypto/BlockchainType;->TRON:Lcom/smedialink/storage/domain/model/crypto/BlockchainType;
 
     const/4 v2, 0x1
+
+    aput-object v1, v0, v2
+
+    sget-object v1, Lcom/smedialink/storage/domain/model/crypto/BlockchainType;->TON:Lcom/smedialink/storage/domain/model/crypto/BlockchainType;
+
+    const/4 v2, 0x2
 
     aput-object v1, v0, v2
 
@@ -94,24 +102,49 @@
     new-instance v0, Lcom/smedialink/storage/domain/model/crypto/BlockchainType;
 
     .line 21
-    sget v12, Lcom/smedialink/storage/R$drawable;->fork_ic_ton_58:I
+    sget v12, Lcom/smedialink/storage/R$drawable;->fork_ic_tron_logo:I
 
     .line 22
-    sget v13, Lcom/smedialink/storage/R$string;->wallet_crypto_blockchains_ton_title:I
+    sget v13, Lcom/smedialink/storage/R$string;->wallet_crypto_blockchains_tron_title:I
 
     .line 23
-    sget v14, Lcom/smedialink/storage/R$string;->wallet_crypto_blockchains_ton_subtitle:I
+    sget v14, Lcom/smedialink/storage/R$string;->wallet_crypto_blockchains_tron_subtitle:I
 
-    const-string v9, "TON"
+    const-string v9, "TRON"
 
     const/4 v10, 0x1
 
-    const-string v11, "TON_VM"
+    const-string v11, "TRON_VM"
 
     move-object v8, v0
 
     .line 19
     invoke-direct/range {v8 .. v14}, Lcom/smedialink/storage/domain/model/crypto/BlockchainType;-><init>(Ljava/lang/String;ILjava/lang/String;III)V
+
+    sput-object v0, Lcom/smedialink/storage/domain/model/crypto/BlockchainType;->TRON:Lcom/smedialink/storage/domain/model/crypto/BlockchainType;
+
+    .line 25
+    new-instance v0, Lcom/smedialink/storage/domain/model/crypto/BlockchainType;
+
+    .line 27
+    sget v5, Lcom/smedialink/storage/R$drawable;->fork_ic_ton_logo:I
+
+    .line 28
+    sget v6, Lcom/smedialink/storage/R$string;->wallet_crypto_blockchains_ton_title:I
+
+    .line 29
+    sget v7, Lcom/smedialink/storage/R$string;->wallet_crypto_blockchains_ton_subtitle:I
+
+    const-string v2, "TON"
+
+    const/4 v3, 0x2
+
+    const-string v4, "TON_VM"
+
+    move-object v1, v0
+
+    .line 25
+    invoke-direct/range {v1 .. v7}, Lcom/smedialink/storage/domain/model/crypto/BlockchainType;-><init>(Ljava/lang/String;ILjava/lang/String;III)V
 
     sput-object v0, Lcom/smedialink/storage/domain/model/crypto/BlockchainType;->TON:Lcom/smedialink/storage/domain/model/crypto/BlockchainType;
 
@@ -234,6 +267,23 @@
 
     .line 10
     iget v0, p0, Lcom/smedialink/storage/domain/model/crypto/BlockchainType;->titleResId:I
+
+    return v0
+.end method
+
+.method public final isBip39PhraseBased()Z
+    .locals 1
+
+    .line 32
+    sget-object v0, Lcom/smedialink/storage/domain/model/crypto/BlockchainType;->Companion:Lcom/smedialink/storage/domain/model/crypto/BlockchainType$Companion;
+
+    invoke-virtual {v0}, Lcom/smedialink/storage/domain/model/crypto/BlockchainType$Companion;->getBip39PhraseBasedBlockchains()Ljava/util/List;
+
+    move-result-object v0
+
+    invoke-interface {v0, p0}, Ljava/util/List;->contains(Ljava/lang/Object;)Z
+
+    move-result v0
 
     return v0
 .end method

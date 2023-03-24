@@ -3,7 +3,6 @@ package com.google.firebase.p021ml.vision.automl.internal;
 import android.os.Parcel;
 import android.os.Parcelable;
 import com.google.android.gms.common.internal.safeparcel.SafeParcelReader;
-import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 /* renamed from: com.google.firebase.ml.vision.automl.internal.zze */
 /* loaded from: classes3.dex */
 public final class zze implements Parcelable.Creator<zzf> {
@@ -16,8 +15,8 @@ public final class zze implements Parcelable.Creator<zzf> {
     public final /* synthetic */ zzf createFromParcel(Parcel parcel) {
         int validateObjectHeader = SafeParcelReader.validateObjectHeader(parcel);
         String str = null;
+        float f = 0.0f;
         String str2 = null;
-        float f = BitmapDescriptorFactory.HUE_RED;
         while (parcel.dataPosition() < validateObjectHeader) {
             int readHeader = SafeParcelReader.readHeader(parcel);
             int fieldId = SafeParcelReader.getFieldId(readHeader);

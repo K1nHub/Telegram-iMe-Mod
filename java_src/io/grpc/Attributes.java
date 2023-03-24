@@ -4,7 +4,7 @@ import com.google.common.base.Objects;
 import java.util.Collections;
 import java.util.IdentityHashMap;
 import java.util.Map;
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public final class Attributes {
     public static final Attributes EMPTY = new Attributes(Collections.emptyMap());
     private final Map<Key<?>, Object> data;
@@ -25,7 +25,7 @@ public final class Attributes {
         return new Builder();
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes.dex */
     public static final class Key<T> {
         private final String debugString;
 
@@ -110,7 +110,7 @@ public final class Attributes {
         return i;
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes.dex */
     public static final class Builder {
         private Attributes base;
         private Map<Key<?>, Object> newdata;

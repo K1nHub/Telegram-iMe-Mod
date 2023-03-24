@@ -389,50 +389,50 @@
     .line 169
     iget v4, p0, Lorg/telegram/ui/Components/GroupCreateCheckBox;->progress:F
 
-    const/high16 v5, 0x3f800000    # 1.0f
+    const/high16 v5, 0x3f000000    # 0.5f
 
-    const/high16 v6, 0x3f000000    # 0.5f
-
-    cmpl-float v7, v4, v6
-
-    if-ltz v7, :cond_1
+    cmpl-float v6, v4, v5
 
     const/high16 v7, 0x3f800000    # 1.0f
+
+    if-ltz v6, :cond_1
+
+    move v6, v7
 
     goto :goto_0
 
     :cond_1
-    div-float v7, v4, v6
+    div-float v6, v4, v5
 
     :goto_0
-    cmpg-float v8, v4, v6
+    cmpg-float v8, v4, v5
 
     if-gez v8, :cond_2
 
-    const/4 v8, 0x0
+    move v8, v1
 
     goto :goto_1
 
     :cond_2
-    sub-float v8, v4, v6
+    sub-float v8, v4, v5
 
-    div-float/2addr v8, v6
+    div-float/2addr v8, v5
 
     .line 172
     :goto_1
-    iget-boolean v6, p0, Lorg/telegram/ui/Components/GroupCreateCheckBox;->isCheckAnimation:Z
+    iget-boolean v5, p0, Lorg/telegram/ui/Components/GroupCreateCheckBox;->isCheckAnimation:Z
 
-    if-eqz v6, :cond_3
+    if-eqz v5, :cond_3
 
     goto :goto_2
 
     :cond_3
-    sub-float v4, v5, v4
+    sub-float v4, v7, v4
 
     :goto_2
-    const v6, 0x3e4ccccd    # 0.2f
+    const v5, 0x3e4ccccd    # 0.2f
 
-    cmpg-float v9, v4, v6
+    cmpg-float v9, v4, v5
 
     if-gez v9, :cond_4
 
@@ -443,9 +443,9 @@
 
     int-to-float v9, v9
 
-    mul-float v9, v9, v4
+    mul-float/2addr v9, v4
 
-    div-float/2addr v9, v6
+    div-float/2addr v9, v5
 
     goto :goto_3
 
@@ -469,18 +469,18 @@
 
     int-to-float v10, v10
 
-    sub-float/2addr v4, v6
+    sub-float/2addr v4, v5
 
-    mul-float v10, v10, v4
+    mul-float/2addr v10, v4
 
-    div-float/2addr v10, v6
+    div-float/2addr v10, v5
 
     sub-float/2addr v9, v10
 
     goto :goto_3
 
     :cond_5
-    const/4 v9, 0x0
+    move v9, v1
 
     :goto_3
     cmpl-float v4, v8, v1
@@ -489,7 +489,7 @@
 
     int-to-float v4, v0
 
-    int-to-float v6, v3
+    int-to-float v5, v3
 
     .line 183
     invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
@@ -506,7 +506,7 @@
 
     int-to-float v2, v2
 
-    mul-float v2, v2, v8
+    mul-float/2addr v2, v8
 
     add-float/2addr v10, v2
 
@@ -514,7 +514,7 @@
 
     iget-object v2, p0, Lorg/telegram/ui/Components/GroupCreateCheckBox;->backgroundPaint:Landroid/graphics/Paint;
 
-    invoke-virtual {p1, v4, v6, v10, v2}, Landroid/graphics/Canvas;->drawCircle(FFFLandroid/graphics/Paint;)V
+    invoke-virtual {p1, v4, v5, v10, v2}, Landroid/graphics/Canvas;->drawCircle(FFFLandroid/graphics/Paint;)V
 
     .line 186
     :cond_6
@@ -529,24 +529,24 @@
     .line 187
     iget-object v4, p0, Lorg/telegram/ui/Components/GroupCreateCheckBox;->bitmapCanvas:Landroid/graphics/Canvas;
 
-    int-to-float v6, v0
+    int-to-float v5, v0
 
     int-to-float v9, v3
 
     iget-object v10, p0, Lorg/telegram/ui/Components/GroupCreateCheckBox;->backgroundInnerPaint:Landroid/graphics/Paint;
 
-    invoke-virtual {v4, v6, v9, v2, v10}, Landroid/graphics/Canvas;->drawCircle(FFFLandroid/graphics/Paint;)V
+    invoke-virtual {v4, v5, v9, v2, v10}, Landroid/graphics/Canvas;->drawCircle(FFFLandroid/graphics/Paint;)V
 
     .line 188
     iget-object v4, p0, Lorg/telegram/ui/Components/GroupCreateCheckBox;->bitmapCanvas:Landroid/graphics/Canvas;
 
-    sub-float/2addr v5, v7
+    sub-float/2addr v7, v6
 
-    mul-float v2, v2, v5
+    mul-float/2addr v2, v7
 
-    sget-object v5, Lorg/telegram/ui/Components/GroupCreateCheckBox;->eraser:Landroid/graphics/Paint;
+    sget-object v6, Lorg/telegram/ui/Components/GroupCreateCheckBox;->eraser:Landroid/graphics/Paint;
 
-    invoke-virtual {v4, v6, v9, v2, v5}, Landroid/graphics/Canvas;->drawCircle(FFFLandroid/graphics/Paint;)V
+    invoke-virtual {v4, v5, v9, v2, v6}, Landroid/graphics/Canvas;->drawCircle(FFFLandroid/graphics/Paint;)V
 
     .line 189
     iget-object v2, p0, Lorg/telegram/ui/Components/GroupCreateCheckBox;->drawBitmap:Landroid/graphics/Bitmap;
@@ -564,11 +564,11 @@
 
     int-to-float v1, v1
 
-    mul-float v1, v1, v8
+    mul-float/2addr v1, v8
 
     iget v2, p0, Lorg/telegram/ui/Components/GroupCreateCheckBox;->checkScale:F
 
-    mul-float v1, v1, v2
+    mul-float/2addr v1, v2
 
     const/4 v2, 0x5
 
@@ -579,11 +579,11 @@
 
     int-to-float v2, v2
 
-    mul-float v2, v2, v8
+    mul-float/2addr v2, v8
 
     iget v4, p0, Lorg/telegram/ui/Components/GroupCreateCheckBox;->checkScale:F
 
-    mul-float v2, v2, v4
+    mul-float/2addr v2, v4
 
     const/4 v4, 0x1
 
@@ -603,7 +603,7 @@
 
     add-int/2addr v3, v4
 
-    mul-float v2, v2, v2
+    mul-float/2addr v2, v2
 
     const/high16 v4, 0x40000000    # 2.0f
 
@@ -635,7 +635,7 @@
 
     invoke-virtual/range {v5 .. v10}, Landroid/graphics/Canvas;->drawLine(FFFFLandroid/graphics/Paint;)V
 
-    mul-float v1, v1, v1
+    mul-float/2addr v1, v1
 
     div-float/2addr v1, v4
 

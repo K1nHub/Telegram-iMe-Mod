@@ -412,7 +412,7 @@
     .line 3532
     check-cast p2, Lorg/telegram/tgnet/TLRPC$messages_Messages;
 
-    const/4 v2, 0x0
+    move v2, v1
 
     .line 3534
     :goto_0
@@ -479,7 +479,7 @@
 
     if-nez p1, :cond_1
 
-    const/4 v1, 0x1
+    move v1, v3
 
     :cond_1
     iput-boolean v1, p0, Lorg/telegram/ui/TopicsFragment$MessagesSearchContainer;->canLoadMore:Z
@@ -598,7 +598,7 @@
 
     const/4 v2, 0x0
 
-    const/4 v3, 0x0
+    move v3, v2
 
     .line 3473
     :goto_0
@@ -1345,7 +1345,7 @@
 .end method
 
 .method public isSelected(Lorg/telegram/ui/FilteredSearchView$MessageHashId;)Z
-    .locals 7
+    .locals 6
 
     const/4 v0, 0x0
 
@@ -1354,7 +1354,7 @@
     return v0
 
     :cond_0
-    const/4 v1, 0x0
+    move v1, v0
 
     .line 3401
     :goto_0
@@ -1392,9 +1392,9 @@
 
     iget-wide v4, p1, Lorg/telegram/ui/FilteredSearchView$MessageHashId;->dialogId:J
 
-    cmp-long v6, v2, v4
+    cmp-long v2, v2, v4
 
-    if-nez v6, :cond_1
+    if-nez v2, :cond_1
 
     const/4 p1, 0x1
 

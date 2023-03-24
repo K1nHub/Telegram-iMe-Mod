@@ -171,10 +171,10 @@
     goto :goto_0
 
     :cond_1
-    const/4 v0, 0x0
+    move v0, v6
 
     :goto_0
-    const/4 v7, 0x0
+    move v7, v6
 
     :goto_1
     const/4 v8, 0x5
@@ -517,7 +517,7 @@
 
     const/high16 v3, 0x40000000    # 2.0f
 
-    mul-float v2, v2, v3
+    mul-float/2addr v2, v3
 
     sub-float/2addr v1, v2
 
@@ -531,7 +531,7 @@
 
     aget v4, v4, v8
 
-    mul-float v4, v4, v3
+    mul-float/2addr v4, v3
 
     sub-float/2addr v2, v4
 
@@ -624,7 +624,7 @@
     goto :goto_5
 
     :cond_c
-    const/4 v1, 0x0
+    move v1, v3
 
     :goto_5
     iget-object v2, p0, Lorg/telegram/ui/Cells/ChatMessageCell$7;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;

@@ -6,13 +6,13 @@ import java.math.BigInteger;
 class ZTauElement {
 
     /* renamed from: u */
-    public final BigInteger f1313u;
+    public final BigInteger f1314u;
 
     /* renamed from: v */
-    public final BigInteger f1314v;
+    public final BigInteger f1315v;
 
     public ZTauElement(BigInteger bigInteger, BigInteger bigInteger2) {
-        this.f1313u = bigInteger;
-        this.f1314v = bigInteger2;
+        this.f1314u = bigInteger;
+        this.f1315v = bigInteger2;
     }
 }

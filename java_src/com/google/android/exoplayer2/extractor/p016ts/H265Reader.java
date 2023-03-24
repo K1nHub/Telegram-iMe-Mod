@@ -404,7 +404,10 @@ public final class H265Reader implements ElementaryStreamReader {
             }
             boolean z3 = i2 >= 16 && i2 <= 21;
             this.nalUnitHasKeyframeData = z3;
-            this.lookingForFirstSliceFlag = (z3 || i2 <= 9) ? true : true;
+            if (z3 || i2 <= 9) {
+                z2 = true;
+            }
+            this.lookingForFirstSliceFlag = z2;
         }
 
         public void readNalUnitData(byte[] bArr, int i, int i2) {

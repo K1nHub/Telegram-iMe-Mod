@@ -113,7 +113,7 @@
 
     const/4 p1, 0x0
 
-    const/4 v4, 0x0
+    move v4, p1
 
     :goto_0
     const/4 v5, 0x2
@@ -135,7 +135,7 @@
     goto :goto_1
 
     :cond_0
-    const/4 v5, 0x0
+    move v5, p1
 
     :goto_1
     add-int/2addr v5, v6
@@ -145,7 +145,7 @@
 
     invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
 
-    const/4 v8, 0x0
+    move v8, p1
 
     :cond_1
     :goto_2
@@ -153,7 +153,7 @@
 
     if-nez v4, :cond_2
 
-    const/4 v9, 0x0
+    move v9, p1
 
     goto :goto_3
 

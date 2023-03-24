@@ -76,9 +76,9 @@ public final class SwapMappingKt {
                     String value = cryptoTokenApprovalQuote.getValue();
                     String contractAddress = cryptoTokenApprovalQuote.getContractAddress();
                     String spenderContractAddress = cryptoTokenApprovalQuote.getSpenderContractAddress();
-                    TransactionParamsResponse transactionParams = cryptoTokenApprovalQuote.getTransactionParams();
+                    TransactionParamsResponse.EVM transactionParams = cryptoTokenApprovalQuote.getTransactionParams();
                     Intrinsics.checkNotNull(transactionParams);
-                    TransactionParams mapToDomain = CryptoWalletMappingKt.mapToDomain(transactionParams);
+                    TransactionParams.Ether mapToDomain = CryptoWalletMappingKt.mapToDomain(transactionParams);
                     String lastErrorMessage = cryptoTokenApprovalQuote.getLastErrorMessage();
                     if (lastErrorMessage == null) {
                         lastErrorMessage = "";
@@ -94,7 +94,7 @@ public final class SwapMappingKt {
                     String value2 = cryptoTokenApprovalQuote.getValue();
                     String contractAddress2 = cryptoTokenApprovalQuote.getContractAddress();
                     String spenderContractAddress2 = cryptoTokenApprovalQuote.getSpenderContractAddress();
-                    TransactionParamsResponse transactionParams2 = cryptoTokenApprovalQuote.getTransactionParams();
+                    TransactionParamsResponse.EVM transactionParams2 = cryptoTokenApprovalQuote.getTransactionParams();
                     Intrinsics.checkNotNull(transactionParams2);
                     cryptoTokenApproveMetadata = new CryptoTokenApproveMetadata.NeedApprove.NotAllowed(map3, map, value2, CryptoWalletMappingKt.mapToDomain(transactionParams2), contractAddress2, spenderContractAddress2, companion2.map(cryptoTokenApprovalQuote.getFeeTokenCode()));
                 }
@@ -119,8 +119,8 @@ public final class SwapMappingKt {
             r1 = r17
             kotlin.jvm.internal.Intrinsics.checkNotNullParameter(r1, r0)
             java.lang.String r2 = r17.getQuoteId()
-            com.smedialink.storage.data.network.model.response.crypto.wallet.TransactionParamsResponse r0 = r17.getTransactionParams()
-            com.smedialink.storage.domain.model.crypto.TransactionParams r3 = com.smedialink.storage.data.mapper.crypto.CryptoWalletMappingKt.mapToDomain(r0)
+            com.smedialink.storage.data.network.model.response.crypto.wallet.TransactionParamsResponse$EVM r0 = r17.getTransactionParams()
+            com.smedialink.storage.domain.model.crypto.TransactionParams$Ether r3 = com.smedialink.storage.data.mapper.crypto.CryptoWalletMappingKt.mapToDomain(r0)
             java.lang.String r0 = r17.getSpenderContractAddress()
             java.lang.String r4 = ""
             if (r0 != 0) goto L1d

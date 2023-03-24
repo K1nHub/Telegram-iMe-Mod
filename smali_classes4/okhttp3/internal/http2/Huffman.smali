@@ -707,40 +707,40 @@
 
     move-wide v3, v2
 
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_0
-    const/16 v5, 0xff
+    cmp-long v5, v3, p2
 
-    cmp-long v6, v3, p2
+    const/16 v6, 0xff
 
-    if-gez v6, :cond_2
+    if-gez v5, :cond_2
 
     .line 128
     invoke-interface {p1}, Lokio/BufferedSource;->readByte()B
 
-    move-result v6
+    move-result v5
 
-    invoke-static {v6, v5}, Lokhttp3/internal/Util;->and(BI)I
+    invoke-static {v5, v6}, Lokhttp3/internal/Util;->and(BI)I
 
-    move-result v6
+    move-result v5
 
     shl-int/lit8 v1, v1, 0x8
 
-    or-int/2addr v1, v6
+    or-int/2addr v1, v5
 
     add-int/lit8 v2, v2, 0x8
 
     :goto_1
-    const/16 v6, 0x8
+    const/16 v5, 0x8
 
-    if-lt v2, v6, :cond_1
+    if-lt v2, v5, :cond_1
 
-    add-int/lit8 v6, v2, -0x8
+    add-int/lit8 v5, v2, -0x8
 
-    ushr-int v7, v1, v6
+    ushr-int v7, v1, v5
 
-    and-int/2addr v7, v5
+    and-int/2addr v7, v6
 
     .line 133
     invoke-virtual {v0}, Lokhttp3/internal/http2/Huffman$Node;->getChildren()[Lokhttp3/internal/http2/Huffman$Node;
@@ -763,9 +763,9 @@
     .line 136
     invoke-virtual {v0}, Lokhttp3/internal/http2/Huffman$Node;->getSymbol()I
 
-    move-result v6
+    move-result v5
 
-    invoke-interface {p4, v6}, Lokio/BufferedSink;->writeByte(I)Lokio/BufferedSink;
+    invoke-interface {p4, v5}, Lokio/BufferedSink;->writeByte(I)Lokio/BufferedSink;
 
     .line 137
     invoke-virtual {v0}, Lokhttp3/internal/http2/Huffman$Node;->getTerminalBitCount()I
@@ -780,7 +780,7 @@
     goto :goto_1
 
     :cond_0
-    move v2, v6
+    move v2, v5
 
     goto :goto_1
 
@@ -799,7 +799,7 @@
 
     shl-int p1, v1, p1
 
-    and-int/2addr p1, v5
+    and-int/2addr p1, v6
 
     .line 148
     invoke-virtual {v0}, Lokhttp3/internal/http2/Huffman$Node;->getChildren()[Lokhttp3/internal/http2/Huffman$Node;
@@ -879,7 +879,7 @@
 
     move-wide v3, v2
 
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_0
     if-ge v1, v0, :cond_1
@@ -922,10 +922,10 @@
 
     shr-long v5, v3, v2
 
-    long-to-int v6, v5
+    long-to-int v5, v5
 
     .line 101
-    invoke-interface {p2, v6}, Lokio/BufferedSink;->writeByte(I)Lokio/BufferedSink;
+    invoke-interface {p2, v5}, Lokio/BufferedSink;->writeByte(I)Lokio/BufferedSink;
 
     goto :goto_1
 

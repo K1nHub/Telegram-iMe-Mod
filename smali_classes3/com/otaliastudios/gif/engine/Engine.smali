@@ -194,9 +194,9 @@
 
     const-wide/16 v4, 0x0
 
-    cmp-long v6, v2, v4
+    cmp-long v4, v2, v4
 
-    if-nez v6, :cond_0
+    if-nez v4, :cond_0
 
     const-wide/16 v2, 0x1
 
@@ -691,9 +691,9 @@
 
     const-wide/16 v2, 0x0
 
-    move-wide v4, v2
+    move v0, v1
 
-    const/4 v0, 0x0
+    move-wide v4, v2
 
     :goto_1
     if-nez v0, :cond_5
@@ -744,7 +744,7 @@
     goto :goto_2
 
     :cond_1
-    const/4 v7, 0x0
+    move v7, v1
 
     :goto_2
     const-wide/16 v8, 0x1
@@ -756,9 +756,9 @@
     .line 237
     rem-long v10, v4, v8
 
-    cmp-long v12, v10, v2
+    cmp-long v10, v10, v2
 
-    if-nez v12, :cond_2
+    if-nez v10, :cond_2
 
     .line 238
     invoke-direct {p0}, Lcom/otaliastudios/gif/engine/Engine;->computeProgress()D

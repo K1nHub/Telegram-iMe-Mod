@@ -416,7 +416,7 @@
 
     if-le v5, v4, :cond_1
 
-    const/4 v4, 0x1
+    move v4, v6
 
     goto :goto_0
 
@@ -504,7 +504,7 @@
     goto :goto_2
 
     :cond_6
-    const/4 v3, 0x5
+    move v3, v5
 
     .line 3278
     :goto_2
@@ -565,7 +565,7 @@
 
     move-result p1
 
-    mul-int p1, p1, v0
+    mul-int/2addr p1, v0
 
     sub-int/2addr p2, p1
 
@@ -806,7 +806,7 @@
 
     sub-float/2addr p3, p1
 
-    mul-float p2, p2, p3
+    mul-float/2addr p2, p3
 
     invoke-static {p2}, Ljava/lang/Math;->round(F)I
 
@@ -873,7 +873,7 @@
 
     int-to-float p1, p1
 
-    mul-float p1, p1, p3
+    mul-float/2addr p1, p3
 
     div-float/2addr p1, p2
 
@@ -884,7 +884,7 @@
 
     neg-float p2, p2
 
-    mul-float p3, p3, p2
+    mul-float/2addr p3, p2
 
     goto :goto_3
 
@@ -983,7 +983,7 @@
 
     const/high16 v5, 0x42fe0000    # 127.0f
 
-    mul-float v4, v4, v5
+    mul-float/2addr v4, v5
 
     float-to-int v4, v4
 
@@ -1150,12 +1150,12 @@
 
     if-nez v5, :cond_0
 
-    const/4 v5, 0x1
+    move v5, v3
 
     goto :goto_0
 
     :cond_0
-    const/4 v5, 0x0
+    move v5, v4
 
     :goto_0
     if-nez v0, :cond_1
@@ -1164,12 +1164,12 @@
 
     if-nez v6, :cond_1
 
-    const/4 v6, 0x1
+    move v6, v3
 
     goto :goto_1
 
     :cond_1
-    const/4 v6, 0x0
+    move v6, v4
 
     :goto_1
     if-nez v5, :cond_5
@@ -1215,7 +1215,7 @@
     goto :goto_2
 
     :cond_2
-    const/4 v6, 0x0
+    move v6, v4
 
     :goto_2
     invoke-static {}, Lorg/telegram/ui/ActionBar/ActionBar;->getCurrentActionBarHeight()I
@@ -1277,22 +1277,22 @@
 
     if-le v7, v0, :cond_3
 
-    const/4 v6, 0x1
+    move v6, v3
 
     goto :goto_3
 
     :cond_3
-    const/4 v6, 0x0
+    move v6, v4
 
     :goto_3
     if-le v7, v5, :cond_4
 
-    const/4 v5, 0x1
+    move v5, v3
 
     goto :goto_4
 
     :cond_4
-    const/4 v5, 0x0
+    move v5, v4
 
     .line 3459
     :cond_5
@@ -1474,7 +1474,7 @@
 
     if-eqz v5, :cond_8
 
-    const/high16 v2, 0x3f800000    # 1.0f
+    move v2, v1
 
     :cond_8
     invoke-virtual {v0, v7, v2, v3}, Lorg/telegram/ui/PhotoViewer$PhotoProgressView;->setIndexedAlpha(IFZ)V

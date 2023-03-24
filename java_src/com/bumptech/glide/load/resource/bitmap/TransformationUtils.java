@@ -84,7 +84,7 @@ public final class TransformationUtils {
         if (width2 > height2) {
             width = i2 / bitmap.getHeight();
             f = (i - (bitmap.getWidth() * width)) * 0.5f;
-            height = BitmapDescriptorFactory.HUE_RED;
+            height = 0.0f;
         } else {
             width = i / bitmap.getWidth();
             height = (i2 - (bitmap.getHeight() * width)) * 0.5f;

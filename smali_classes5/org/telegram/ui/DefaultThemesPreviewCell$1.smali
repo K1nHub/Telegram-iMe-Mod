@@ -232,16 +232,14 @@
 
     const/high16 v0, 0x42480000    # 50.0f
 
-    const/high16 v3, 0x42480000    # 50.0f
-
     goto :goto_2
 
     :cond_3
     const/high16 v0, 0x43480000    # 200.0f
 
-    const/high16 v3, 0x43480000    # 200.0f
-
     :goto_2
+    move v3, v0
+
     const/high16 v4, 0x43160000    # 150.0f
 
     const/high16 v2, 0x43af0000    # 350.0f
@@ -354,6 +352,8 @@
     invoke-static/range {p5 .. p5}, Lorg/telegram/ui/ActionBar/Theme;->turnOffAutoNight(Lorg/telegram/ui/ActionBar/BaseFragment;)V
 
     return-void
+
+    nop
 
     :array_0
     .array-data 4
@@ -557,7 +557,7 @@
     goto :goto_2
 
     :cond_9
-    const/4 v1, 0x0
+    move v1, v7
 
     :goto_2
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/RLottieDrawable;->setCustomEndFrame(I)Z

@@ -121,7 +121,7 @@
 
     if-ne v2, p1, :cond_2
 
-    const/4 v0, 0x1
+    move v0, v1
 
     :cond_2
     return v0

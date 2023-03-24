@@ -15,7 +15,7 @@
 
     const-wide v1, -0xae502812aa7333L
 
-    mul-long p0, p0, v1
+    mul-long/2addr p0, v1
 
     ushr-long v1, p0, v0
 
@@ -23,7 +23,7 @@
 
     const-wide v1, -0x3b314601e57a13adL    # -2.902039044684214E23
 
-    mul-long p0, p0, v1
+    mul-long/2addr p0, v1
 
     ushr-long v0, p0, v0
 

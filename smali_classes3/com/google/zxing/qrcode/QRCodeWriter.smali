@@ -239,12 +239,12 @@
 
     if-nez v0, :cond_0
 
-    const/4 v12, 0x1
+    move v12, v11
 
     goto :goto_0
 
     :cond_0
-    const/4 v12, 0x0
+    move v12, v1
 
     .line 232
     :goto_0
@@ -263,7 +263,7 @@
 
     invoke-direct {v14}, Landroid/graphics/RectF;-><init>()V
 
-    const/4 v15, 0x0
+    move v15, v1
 
     :goto_1
     const/4 v0, 0x3
@@ -625,7 +625,7 @@
 
     if-ne p1, v0, :cond_4
 
-    const/4 v1, 0x1
+    move v1, v0
 
     :cond_4
     return v1
@@ -814,7 +814,7 @@
 
     const/4 v10, 0x0
 
-    const/4 v3, 0x0
+    move v3, v10
 
     :goto_1
     const/4 v9, 0x1
@@ -971,7 +971,7 @@
 
     iput v10, v0, Lcom/google/zxing/qrcode/QRCodeWriter;->imageBlockX:I
 
-    mul-int v2, v2, v8
+    mul-int/2addr v2, v8
 
     add-int/lit8 v2, v2, -0x18
 
@@ -1034,7 +1034,7 @@
 
     move/from16 v8, p6
 
-    const/16 v25, 0x1
+    move/from16 v25, v9
 
     move-object/from16 v9, v20
 
@@ -1065,9 +1065,9 @@
 
     move/from16 v21, v8
 
-    move/from16 v20, v14
+    move/from16 v25, v9
 
-    const/16 v25, 0x1
+    move/from16 v20, v14
 
     move v14, v11
 
@@ -1079,7 +1079,7 @@
 
     if-nez v1, :cond_7
 
-    const/4 v10, 0x1
+    move/from16 v10, v25
 
     goto :goto_5
 
@@ -1093,16 +1093,16 @@
 
     mul-float v3, v3, p6
 
-    const/4 v1, 0x0
+    move/from16 v2, v17
 
-    const/16 v2, 0x10
+    const/4 v1, 0x0
 
     :goto_6
     if-ge v1, v14, :cond_13
 
-    const/4 v4, 0x0
+    move/from16 v5, v17
 
-    const/16 v5, 0x10
+    const/4 v4, 0x0
 
     :goto_7
     if-ge v4, v15, :cond_12
@@ -1297,12 +1297,12 @@
 
     aput v3, v11, v9
 
-    const/4 v11, 0x1
+    move/from16 v11, v25
 
     goto :goto_9
 
     :cond_d
-    const/4 v11, 0x0
+    move v11, v9
 
     :goto_9
     add-int/lit8 v9, v4, 0x1
@@ -1335,7 +1335,7 @@
 
     aput v3, v8, v16
 
-    const/4 v11, 0x1
+    move/from16 v11, v25
 
     :cond_e
     add-int/lit8 v8, v1, 0x1
@@ -1370,7 +1370,7 @@
 
     aput v3, v7, v11
 
-    const/4 v11, 0x1
+    move/from16 v11, v25
 
     .line 197
     :cond_f
@@ -1403,7 +1403,7 @@
 
     aput v3, v7, v8
 
-    const/4 v9, 0x1
+    move/from16 v9, v25
 
     goto :goto_a
 

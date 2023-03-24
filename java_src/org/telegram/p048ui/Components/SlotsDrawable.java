@@ -79,8 +79,8 @@ public class SlotsDrawable extends RLottieDrawable {
         if (this.backgroundBitmap != null) {
             try {
                 if (this.isDice == 1) {
-                    int i = 0;
                     frame = -1;
+                    int i = 0;
                     while (true) {
                         long[] jArr = this.nativePtrs;
                         if (i >= jArr.length) {

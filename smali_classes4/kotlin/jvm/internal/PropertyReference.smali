@@ -25,16 +25,14 @@
 
     if-ne p5, v0, :cond_0
 
-    const/4 v6, 0x1
-
     goto :goto_0
 
     :cond_0
     const/4 v0, 0x0
 
-    const/4 v6, 0x0
-
     :goto_0
+    move v6, v0
+
     move-object v1, p0
 
     move-object v2, p1
@@ -136,7 +134,7 @@
     goto :goto_0
 
     :cond_1
-    const/4 v0, 0x0
+    move v0, v2
 
     :goto_0
     return v0

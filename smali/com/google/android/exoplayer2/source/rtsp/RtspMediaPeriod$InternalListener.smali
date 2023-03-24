@@ -134,7 +134,7 @@
 .end method
 
 .method public onLoadCompleted(Lcom/google/android/exoplayer2/source/rtsp/RtpDataLoadable;JJ)V
-    .locals 1
+    .locals 0
 
     .line 513
     iget-object p2, p0, Lcom/google/android/exoplayer2/source/rtsp/RtspMediaPeriod$InternalListener;->this$0:Lcom/google/android/exoplayer2/source/rtsp/RtspMediaPeriod;
@@ -145,9 +145,9 @@
 
     const-wide/16 p4, 0x0
 
-    cmp-long v0, p2, p4
+    cmp-long p2, p2, p4
 
-    if-nez v0, :cond_1
+    if-nez p2, :cond_1
 
     .line 514
     iget-object p1, p0, Lcom/google/android/exoplayer2/source/rtsp/RtspMediaPeriod$InternalListener;->this$0:Lcom/google/android/exoplayer2/source/rtsp/RtspMediaPeriod;
@@ -357,7 +357,7 @@
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     .line 593
     :goto_0
@@ -393,7 +393,7 @@
     goto :goto_0
 
     :cond_0
-    const/4 v2, 0x0
+    move v2, v1
 
     .line 596
     :goto_1
@@ -583,9 +583,9 @@
 
     move-result-wide v0
 
-    cmp-long p3, p1, v0
+    cmp-long p1, p1, v0
 
-    if-nez p3, :cond_6
+    if-nez p1, :cond_6
 
     .line 630
     iget-object p1, p0, Lcom/google/android/exoplayer2/source/rtsp/RtspMediaPeriod$InternalListener;->this$0:Lcom/google/android/exoplayer2/source/rtsp/RtspMediaPeriod;
@@ -624,9 +624,9 @@
 
     move-result-wide p1
 
-    cmp-long p3, p1, v4
+    cmp-long p1, p1, v4
 
-    if-eqz p3, :cond_8
+    if-eqz p1, :cond_8
 
     iget-object p1, p0, Lcom/google/android/exoplayer2/source/rtsp/RtspMediaPeriod$InternalListener;->this$0:Lcom/google/android/exoplayer2/source/rtsp/RtspMediaPeriod;
 
@@ -656,7 +656,7 @@
 .end method
 
 .method public onRtspSetupCompleted()V
-    .locals 5
+    .locals 4
 
     .line 578
     iget-object v0, p0, Lcom/google/android/exoplayer2/source/rtsp/RtspMediaPeriod$InternalListener;->this$0:Lcom/google/android/exoplayer2/source/rtsp/RtspMediaPeriod;
@@ -667,9 +667,9 @@
 
     const-wide v2, -0x7fffffffffffffffL    # -4.9E-324
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-eqz v4, :cond_0
+    if-eqz v0, :cond_0
 
     .line 579
     iget-object v0, p0, Lcom/google/android/exoplayer2/source/rtsp/RtspMediaPeriod$InternalListener;->this$0:Lcom/google/android/exoplayer2/source/rtsp/RtspMediaPeriod;
@@ -692,9 +692,9 @@
 
     move-result-wide v0
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-eqz v4, :cond_1
+    if-eqz v0, :cond_1
 
     .line 581
     iget-object v0, p0, Lcom/google/android/exoplayer2/source/rtsp/RtspMediaPeriod$InternalListener;->this$0:Lcom/google/android/exoplayer2/source/rtsp/RtspMediaPeriod;

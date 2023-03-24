@@ -36,16 +36,16 @@
 .end method
 
 .method private checkDataChannelExists()V
-    .locals 5
+    .locals 4
 
     .line 182
     iget-wide v0, p0, Lorg/webrtc/DataChannel;->nativeDataChannel:J
 
     const-wide/16 v2, 0x0
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-eqz v4, :cond_0
+    if-eqz v0, :cond_0
 
     return-void
 
@@ -171,7 +171,7 @@
 .end method
 
 .method public registerObserver(Lorg/webrtc/DataChannel$Observer;)V
-    .locals 5
+    .locals 4
 
     .line 115
     invoke-direct {p0}, Lorg/webrtc/DataChannel;->checkDataChannelExists()V
@@ -181,9 +181,9 @@
 
     const-wide/16 v2, 0x0
 
-    cmp-long v4, v0, v2
+    cmp-long v2, v0, v2
 
-    if-eqz v4, :cond_0
+    if-eqz v2, :cond_0
 
     .line 117
     invoke-direct {p0, v0, v1}, Lorg/webrtc/DataChannel;->nativeUnregisterObserver(J)V

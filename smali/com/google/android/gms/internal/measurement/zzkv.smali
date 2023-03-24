@@ -432,7 +432,7 @@
     :cond_2
     iget-object p1, p1, Lcom/google/android/gms/internal/measurement/zzkv;->zzb:[J
 
-    const/4 v1, 0x0
+    move v1, v3
 
     :goto_0
     iget v2, p0, Lcom/google/android/gms/internal/measurement/zzkv;->zzc:I

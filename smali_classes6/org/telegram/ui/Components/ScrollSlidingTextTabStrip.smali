@@ -476,12 +476,12 @@
 
     if-ge v1, v0, :cond_2
 
-    const/4 v4, 0x1
+    move v4, v2
 
     goto :goto_0
 
     :cond_2
-    const/4 v4, 0x0
+    move v4, v3
 
     :goto_0
     const/4 v5, -0x1
@@ -605,14 +605,14 @@
 
     int-to-float p1, p1
 
-    mul-float p1, p1, p3
+    mul-float/2addr p1, p3
 
     .line 481
     iput p1, p0, Lorg/telegram/ui/Components/ScrollSlidingTextTabStrip;->indicatorXAnimationDx:F
 
     int-to-float p1, p2
 
-    mul-float p1, p1, p3
+    mul-float/2addr p1, p3
 
     .line 482
     iput p1, p0, Lorg/telegram/ui/Components/ScrollSlidingTextTabStrip;->indicatorWidthAnimationDx:F
@@ -1208,7 +1208,7 @@
 
     move-result v1
 
-    mul-float v1, v1, v0
+    mul-float/2addr v1, v0
 
     float-to-int v0, v1
 
@@ -1272,7 +1272,7 @@
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_0
     if-ge v2, v0, :cond_4
@@ -1338,7 +1338,7 @@
     goto :goto_3
 
     :cond_2
-    const/4 v4, 0x0
+    move v4, v1
 
     :goto_3
     iput v4, v3, Landroid/view/ViewGroup$LayoutParams;->width:I
@@ -1413,7 +1413,7 @@
     goto :goto_0
 
     :cond_0
-    const/4 p1, -0x1
+    move p1, v2
 
     :goto_0
     add-int/2addr v1, p1
@@ -1697,7 +1697,7 @@
 
     const/4 v2, 0x0
 
-    const/4 v3, 0x0
+    move v3, v2
 
     :goto_0
     const/high16 v4, 0x3f800000    # 1.0f
@@ -1782,7 +1782,7 @@
 
     int-to-float v5, v5
 
-    mul-float v4, v4, v5
+    mul-float/2addr v4, v5
 
     iput v4, v7, Landroid/widget/LinearLayout$LayoutParams;->weight:F
 
@@ -1860,7 +1860,7 @@
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     .line 243
     :goto_0
@@ -1948,48 +1948,48 @@
     :cond_0
     const/4 v1, 0x0
 
-    const/high16 v2, 0x3f800000    # 1.0f
+    cmpg-float v2, p2, v1
 
-    cmpg-float v3, p2, v1
+    const/high16 v3, 0x3f800000    # 1.0f
 
-    if-gez v3, :cond_1
+    if-gez v2, :cond_1
 
-    const/4 p2, 0x0
+    move p2, v1
 
     goto :goto_0
 
     :cond_1
-    cmpl-float v1, p2, v2
+    cmpl-float v1, p2, v3
 
     if-lez v1, :cond_2
 
-    const/high16 p2, 0x3f800000    # 1.0f
+    move p2, v3
 
     .line 521
     :cond_2
     :goto_0
     iget-object v1, p0, Lorg/telegram/ui/Components/ScrollSlidingTextTabStrip;->tabsContainer:Landroid/widget/LinearLayout;
 
-    iget v3, p0, Lorg/telegram/ui/Components/ScrollSlidingTextTabStrip;->currentPosition:I
+    iget v2, p0, Lorg/telegram/ui/Components/ScrollSlidingTextTabStrip;->currentPosition:I
 
-    invoke-virtual {v1, v3}, Landroid/widget/LinearLayout;->getChildAt(I)Landroid/view/View;
+    invoke-virtual {v1, v2}, Landroid/widget/LinearLayout;->getChildAt(I)Landroid/view/View;
 
     move-result-object v1
 
     check-cast v1, Landroid/widget/TextView;
 
     .line 522
-    iget-object v3, p0, Lorg/telegram/ui/Components/ScrollSlidingTextTabStrip;->tabsContainer:Landroid/widget/LinearLayout;
+    iget-object v2, p0, Lorg/telegram/ui/Components/ScrollSlidingTextTabStrip;->tabsContainer:Landroid/widget/LinearLayout;
 
-    invoke-virtual {v3, v0}, Landroid/widget/LinearLayout;->getChildAt(I)Landroid/view/View;
+    invoke-virtual {v2, v0}, Landroid/widget/LinearLayout;->getChildAt(I)Landroid/view/View;
 
-    move-result-object v3
+    move-result-object v2
 
-    check-cast v3, Landroid/widget/TextView;
+    check-cast v2, Landroid/widget/TextView;
 
     if-eqz v1, :cond_4
 
-    if-eqz v3, :cond_4
+    if-eqz v2, :cond_4
 
     .line 524
     invoke-direct {p0, v1}, Lorg/telegram/ui/Components/ScrollSlidingTextTabStrip;->getChildWidth(Landroid/widget/TextView;)I
@@ -2018,18 +2018,18 @@
     iput v4, p0, Lorg/telegram/ui/Components/ScrollSlidingTextTabStrip;->animateIndicatorStartX:I
 
     .line 526
-    invoke-direct {p0, v3}, Lorg/telegram/ui/Components/ScrollSlidingTextTabStrip;->getChildWidth(Landroid/widget/TextView;)I
+    invoke-direct {p0, v2}, Lorg/telegram/ui/Components/ScrollSlidingTextTabStrip;->getChildWidth(Landroid/widget/TextView;)I
 
     move-result v4
 
     iput v4, p0, Lorg/telegram/ui/Components/ScrollSlidingTextTabStrip;->animateIndicatorToWidth:I
 
     .line 527
-    invoke-virtual {v3}, Landroid/widget/TextView;->getLeft()I
+    invoke-virtual {v2}, Landroid/widget/TextView;->getLeft()I
 
     move-result v4
 
-    invoke-virtual {v3}, Landroid/widget/TextView;->getMeasuredWidth()I
+    invoke-virtual {v2}, Landroid/widget/TextView;->getMeasuredWidth()I
 
     move-result v5
 
@@ -2044,9 +2044,9 @@
     iput v4, p0, Lorg/telegram/ui/Components/ScrollSlidingTextTabStrip;->animateIndicatorToX:I
 
     .line 528
-    invoke-direct {p0, v3, v1, p2}, Lorg/telegram/ui/Components/ScrollSlidingTextTabStrip;->setAnimationProgressInernal(Landroid/widget/TextView;Landroid/widget/TextView;F)V
+    invoke-direct {p0, v2, v1, p2}, Lorg/telegram/ui/Components/ScrollSlidingTextTabStrip;->setAnimationProgressInernal(Landroid/widget/TextView;Landroid/widget/TextView;F)V
 
-    cmpl-float v4, p2, v2
+    cmpl-float v4, p2, v3
 
     if-ltz v4, :cond_3
 
@@ -2058,20 +2058,20 @@
     .line 531
     iget-object v1, p0, Lorg/telegram/ui/Components/ScrollSlidingTextTabStrip;->activeTextColorKey:Ljava/lang/String;
 
-    invoke-virtual {v3, v1}, Landroid/widget/TextView;->setTag(Ljava/lang/Object;)V
+    invoke-virtual {v2, v1}, Landroid/widget/TextView;->setTag(Ljava/lang/Object;)V
 
     .line 533
     :cond_3
     iget-object v1, p0, Lorg/telegram/ui/Components/ScrollSlidingTextTabStrip;->tabsContainer:Landroid/widget/LinearLayout;
 
-    invoke-virtual {v1, v3}, Landroid/widget/LinearLayout;->indexOfChild(Landroid/view/View;)I
+    invoke-virtual {v1, v2}, Landroid/widget/LinearLayout;->indexOfChild(Landroid/view/View;)I
 
     move-result v1
 
     invoke-direct {p0, v1}, Lorg/telegram/ui/Components/ScrollSlidingTextTabStrip;->scrollToChild(I)V
 
     :cond_4
-    cmpl-float p2, p2, v2
+    cmpl-float p2, p2, v3
 
     if-ltz p2, :cond_6
 

@@ -267,7 +267,7 @@
 
     if-eq v3, v5, :cond_2
 
-    const/4 v4, 0x1
+    move v4, v9
 
     :cond_2
     if-eqz v4, :cond_3
@@ -338,12 +338,12 @@
 
     if-ne v5, v3, :cond_5
 
-    const/4 v15, 0x1
+    move v15, v9
 
     goto :goto_0
 
     :cond_5
-    const/4 v15, 0x0
+    move v15, v4
 
     :goto_0
     move-object v10, v1
@@ -383,9 +383,9 @@
 
     const-wide/16 v5, 0x0
 
-    cmp-long v8, v3, v5
+    cmp-long v3, v3, v5
 
-    if-gtz v8, :cond_6
+    if-gtz v3, :cond_6
 
     goto :goto_1
 
@@ -441,12 +441,12 @@
 
     if-eq v3, v5, :cond_9
 
-    const/4 v3, 0x1
+    move v3, v9
 
     goto :goto_2
 
     :cond_9
-    const/4 v3, 0x0
+    move v3, v4
 
     :goto_2
     add-int/lit8 v5, p2, 0x1
@@ -482,7 +482,7 @@
 
     if-eq v5, v6, :cond_a
 
-    const/4 v4, 0x1
+    move v4, v9
 
     :cond_a
     if-eqz v3, :cond_b

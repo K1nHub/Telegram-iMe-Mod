@@ -773,11 +773,11 @@
 
     move-result v6
 
-    const/4 v7, 0x0
+    move v7, v5
 
-    const/4 v8, 0x0
+    move v8, v7
 
-    const/4 v9, 0x0
+    move v9, v8
 
     :goto_0
     if-ge v7, v4, :cond_5
@@ -808,12 +808,12 @@
 
     if-ge v11, v6, :cond_2
 
-    const/4 v11, 0x1
+    move v11, v12
 
     goto :goto_1
 
     :cond_2
-    const/4 v11, 0x0
+    move v11, v5
 
     .line 771
     :goto_1
@@ -823,7 +823,7 @@
 
     if-eq v11, v13, :cond_3
 
-    const/4 v12, -0x1
+    move v12, v14
 
     :cond_3
     if-ne v12, v14, :cond_4
@@ -1015,7 +1015,7 @@
 
     const/4 p2, 0x0
 
-    const/4 p3, 0x0
+    move p3, p2
 
     :goto_0
     if-ge p3, v0, :cond_8
@@ -1309,7 +1309,7 @@
     if-ge p1, p2, :cond_5
 
     :cond_4
-    const/4 v1, 0x1
+    move v1, v2
 
     :cond_5
     if-eqz v1, :cond_7
@@ -1605,19 +1605,19 @@
 
     if-ge v2, p1, :cond_9
 
-    const/4 p1, 0x1
+    move p1, v0
 
     goto :goto_2
 
     :cond_9
-    const/4 p1, 0x0
+    move p1, v1
 
     :goto_2
     iget-boolean v2, p0, Landroidx/recyclerview/widget/LinearLayoutManager;->mPendingScrollPositionBottom:Z
 
     if-ne p1, v2, :cond_a
 
-    const/4 v1, 0x1
+    move v1, v0
 
     :cond_a
     iput-boolean v1, p2, Landroidx/recyclerview/widget/LinearLayoutManager$AnchorInfo;->mLayoutFromEnd:Z
@@ -1782,7 +1782,7 @@
 
     if-ne p1, v2, :cond_0
 
-    const/4 v1, 0x1
+    move v1, v2
 
     .line 1256
     :cond_0
@@ -1838,7 +1838,7 @@
 
     if-eqz v1, :cond_3
 
-    const/4 v2, -0x1
+    move v2, p4
 
     .line 1265
     :cond_3
@@ -1915,7 +1915,7 @@
     goto :goto_2
 
     :cond_5
-    const/4 v2, -0x1
+    move v2, p4
 
     .line 1276
     :goto_2
@@ -2011,7 +2011,7 @@
     goto :goto_0
 
     :cond_0
-    const/4 v1, 0x1
+    move v1, v2
 
     .line 1024
     :goto_0
@@ -2080,7 +2080,7 @@
     goto :goto_0
 
     :cond_0
-    const/4 p1, -0x1
+    move p1, v1
 
     .line 1039
     :goto_0
@@ -2149,14 +2149,14 @@
 
     if-ne v0, v2, :cond_0
 
-    const/4 v0, 0x0
+    move v0, v1
 
     goto :goto_0
 
     :cond_0
     move v0, p1
 
-    const/4 p1, 0x0
+    move p1, v1
 
     .line 496
     :goto_0
@@ -2249,7 +2249,7 @@
 
     if-lez p1, :cond_2
 
-    const/4 v0, 0x1
+    move v0, p2
 
     goto :goto_1
 
@@ -2322,7 +2322,7 @@
     goto :goto_0
 
     :cond_1
-    const/4 v0, 0x0
+    move v0, v2
 
     :cond_2
     :goto_0
@@ -2334,7 +2334,7 @@
     const/4 v1, 0x1
 
     :goto_1
-    const/4 v3, 0x0
+    move v3, v2
 
     .line 1325
     :goto_2
@@ -2452,7 +2452,7 @@
 
     if-ge p1, v1, :cond_1
 
-    const/4 v0, 0x1
+    move v0, v2
 
     .line 515
     :cond_1
@@ -2565,7 +2565,7 @@
     goto :goto_0
 
     :cond_1
-    const/high16 v1, -0x80000000
+    move v1, v3
 
     :goto_0
     return v1
@@ -2579,7 +2579,7 @@
     goto :goto_1
 
     :cond_3
-    const/high16 v1, -0x80000000
+    move v1, v3
 
     :goto_1
     return v1
@@ -2593,7 +2593,7 @@
     goto :goto_2
 
     :cond_5
-    const/high16 v0, -0x80000000
+    move v0, v3
 
     :goto_2
     return v0
@@ -2607,7 +2607,7 @@
     goto :goto_3
 
     :cond_7
-    const/high16 v0, -0x80000000
+    move v0, v3
 
     :goto_3
     return v0
@@ -2756,7 +2756,7 @@
 
     iget v6, p2, Landroidx/recyclerview/widget/LinearLayoutManager$LayoutState;->mLayoutDirection:I
 
-    mul-int v5, v5, v6
+    mul-int/2addr v5, v6
 
     add-int/2addr v4, v5
 
@@ -3149,7 +3149,7 @@
     goto :goto_0
 
     :cond_0
-    const/16 p3, 0x140
+    move p3, v0
 
     :goto_0
     if-eqz p4, :cond_1
@@ -3521,12 +3521,12 @@
 
     if-ne v3, v1, :cond_1
 
-    const/4 v3, 0x1
+    move v3, p2
 
     goto :goto_0
 
     :cond_1
-    const/4 v3, 0x0
+    move v3, v2
 
     :goto_0
     if-ne v0, v3, :cond_2
@@ -3550,12 +3550,12 @@
 
     if-ne v3, v1, :cond_4
 
-    const/4 v3, 0x1
+    move v3, p2
 
     goto :goto_1
 
     :cond_4
-    const/4 v3, 0x0
+    move v3, v2
 
     :goto_1
     if-ne v0, v3, :cond_5
@@ -3832,7 +3832,7 @@
 
     int-to-float v2, v2
 
-    mul-float v2, v2, v1
+    mul-float/2addr v2, v1
 
     float-to-int v1, v2
 
@@ -4101,12 +4101,12 @@
 
     if-ltz v3, :cond_7
 
-    const/4 v3, 0x1
+    move v3, v5
 
     goto :goto_2
 
     :cond_7
-    const/4 v3, -0x1
+    move v3, v1
 
     .line 586
     :goto_2
@@ -4256,7 +4256,7 @@
     if-eqz v6, :cond_d
 
     :cond_b
-    const/4 v1, 0x1
+    move v1, v5
 
     goto :goto_5
 
@@ -4741,12 +4741,12 @@
 
     if-ge p3, p4, :cond_0
 
-    const/4 p3, 0x1
+    move p3, v0
 
     goto :goto_0
 
     :cond_0
-    const/4 p3, -0x1
+    move p3, v1
 
     .line 2206
     :goto_0
@@ -4972,7 +4972,7 @@
     :cond_4
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    move v1, v0
 
     :goto_2
     if-ge v1, p3, :cond_8
@@ -5098,7 +5098,7 @@
 
     if-lez p1, :cond_1
 
-    const/4 v0, 0x1
+    move v0, v2
 
     goto :goto_0
 

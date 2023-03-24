@@ -10,11 +10,11 @@ public final class GetBoostTransactionDataResponse {
     private final String feeTokenCode;
     private final String networkType;
     private final TransactionMethodParamsResponse oldTransactionData;
-    private final TransactionParamsResponse transactionParams;
+    private final TransactionParamsResponse.EVM transactionParams;
 
-    public static /* synthetic */ GetBoostTransactionDataResponse copy$default(GetBoostTransactionDataResponse getBoostTransactionDataResponse, TransactionParamsResponse transactionParamsResponse, TransactionMethodParamsResponse transactionMethodParamsResponse, String str, String str2, int i, Object obj) {
+    public static /* synthetic */ GetBoostTransactionDataResponse copy$default(GetBoostTransactionDataResponse getBoostTransactionDataResponse, TransactionParamsResponse.EVM evm, TransactionMethodParamsResponse transactionMethodParamsResponse, String str, String str2, int i, Object obj) {
         if ((i & 1) != 0) {
-            transactionParamsResponse = getBoostTransactionDataResponse.transactionParams;
+            evm = getBoostTransactionDataResponse.transactionParams;
         }
         if ((i & 2) != 0) {
             transactionMethodParamsResponse = getBoostTransactionDataResponse.oldTransactionData;
@@ -25,10 +25,10 @@ public final class GetBoostTransactionDataResponse {
         if ((i & 8) != 0) {
             str2 = getBoostTransactionDataResponse.networkType;
         }
-        return getBoostTransactionDataResponse.copy(transactionParamsResponse, transactionMethodParamsResponse, str, str2);
+        return getBoostTransactionDataResponse.copy(evm, transactionMethodParamsResponse, str, str2);
     }
 
-    public final TransactionParamsResponse component1() {
+    public final TransactionParamsResponse.EVM component1() {
         return this.transactionParams;
     }
 
@@ -44,7 +44,7 @@ public final class GetBoostTransactionDataResponse {
         return this.networkType;
     }
 
-    public final GetBoostTransactionDataResponse copy(TransactionParamsResponse transactionParams, TransactionMethodParamsResponse oldTransactionData, String feeTokenCode, String networkType) {
+    public final GetBoostTransactionDataResponse copy(TransactionParamsResponse.EVM transactionParams, TransactionMethodParamsResponse oldTransactionData, String feeTokenCode, String networkType) {
         Intrinsics.checkNotNullParameter(transactionParams, "transactionParams");
         Intrinsics.checkNotNullParameter(oldTransactionData, "oldTransactionData");
         Intrinsics.checkNotNullParameter(feeTokenCode, "feeTokenCode");
@@ -71,7 +71,7 @@ public final class GetBoostTransactionDataResponse {
         return "GetBoostTransactionDataResponse(transactionParams=" + this.transactionParams + ", oldTransactionData=" + this.oldTransactionData + ", feeTokenCode=" + this.feeTokenCode + ", networkType=" + this.networkType + ')';
     }
 
-    public GetBoostTransactionDataResponse(TransactionParamsResponse transactionParams, TransactionMethodParamsResponse oldTransactionData, String feeTokenCode, String networkType) {
+    public GetBoostTransactionDataResponse(TransactionParamsResponse.EVM transactionParams, TransactionMethodParamsResponse oldTransactionData, String feeTokenCode, String networkType) {
         Intrinsics.checkNotNullParameter(transactionParams, "transactionParams");
         Intrinsics.checkNotNullParameter(oldTransactionData, "oldTransactionData");
         Intrinsics.checkNotNullParameter(feeTokenCode, "feeTokenCode");
@@ -82,7 +82,7 @@ public final class GetBoostTransactionDataResponse {
         this.networkType = networkType;
     }
 
-    public final TransactionParamsResponse getTransactionParams() {
+    public final TransactionParamsResponse.EVM getTransactionParams() {
         return this.transactionParams;
     }
 
@@ -303,7 +303,7 @@ public final class GetBoostTransactionDataResponse {
             private final List<String> path;
             private final String quoteId;
             private final String swapMethod;
-            private final TransactionParamsResponse transactionParams;
+            private final TransactionParamsResponse.EVM transactionParams;
             private final String uniswapContractAddress;
             private final String value;
 
@@ -331,7 +331,7 @@ public final class GetBoostTransactionDataResponse {
                 return this.callData;
             }
 
-            public final TransactionParamsResponse component2() {
+            public final TransactionParamsResponse.EVM component2() {
                 return this.transactionParams;
             }
 
@@ -363,7 +363,7 @@ public final class GetBoostTransactionDataResponse {
                 return this.amountBound;
             }
 
-            public final SwapMethodParamsResponse copy(String quoteId, TransactionParamsResponse transactionParams, String inputCryptoTokenCode, String outputCryptoTokenCode, String swapMethod, String uniswapContractAddress, String amountIn, String amountOut, String amountBound, List<String> path, BigDecimal executionPrice, int i, String str, String str2) {
+            public final SwapMethodParamsResponse copy(String quoteId, TransactionParamsResponse.EVM transactionParams, String inputCryptoTokenCode, String outputCryptoTokenCode, String swapMethod, String uniswapContractAddress, String amountIn, String amountOut, String amountBound, List<String> path, BigDecimal executionPrice, int i, String str, String str2) {
                 Intrinsics.checkNotNullParameter(quoteId, "quoteId");
                 Intrinsics.checkNotNullParameter(transactionParams, "transactionParams");
                 Intrinsics.checkNotNullParameter(inputCryptoTokenCode, "inputCryptoTokenCode");
@@ -401,7 +401,7 @@ public final class GetBoostTransactionDataResponse {
                 return "SwapMethodParamsResponse(quoteId=" + this.quoteId + ", transactionParams=" + this.transactionParams + ", inputCryptoTokenCode=" + this.inputCryptoTokenCode + ", outputCryptoTokenCode=" + this.outputCryptoTokenCode + ", swapMethod=" + this.swapMethod + ", uniswapContractAddress=" + this.uniswapContractAddress + ", amountIn=" + this.amountIn + ", amountOut=" + this.amountOut + ", amountBound=" + this.amountBound + ", path=" + this.path + ", executionPrice=" + this.executionPrice + ", deadlineMinutes=" + this.deadlineMinutes + ", value=" + this.value + ", callData=" + this.callData + ')';
             }
 
-            public SwapMethodParamsResponse(String quoteId, TransactionParamsResponse transactionParams, String inputCryptoTokenCode, String outputCryptoTokenCode, String swapMethod, String uniswapContractAddress, String amountIn, String amountOut, String amountBound, List<String> path, BigDecimal executionPrice, int i, String str, String str2) {
+            public SwapMethodParamsResponse(String quoteId, TransactionParamsResponse.EVM transactionParams, String inputCryptoTokenCode, String outputCryptoTokenCode, String swapMethod, String uniswapContractAddress, String amountIn, String amountOut, String amountBound, List<String> path, BigDecimal executionPrice, int i, String str, String str2) {
                 Intrinsics.checkNotNullParameter(quoteId, "quoteId");
                 Intrinsics.checkNotNullParameter(transactionParams, "transactionParams");
                 Intrinsics.checkNotNullParameter(inputCryptoTokenCode, "inputCryptoTokenCode");
@@ -433,7 +433,7 @@ public final class GetBoostTransactionDataResponse {
                 return this.quoteId;
             }
 
-            public final TransactionParamsResponse getTransactionParams() {
+            public final TransactionParamsResponse.EVM getTransactionParams() {
                 return this.transactionParams;
             }
 

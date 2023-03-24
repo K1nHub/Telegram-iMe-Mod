@@ -171,9 +171,9 @@
 
     const v7, 0x3c23d70a    # 0.01f
 
-    const/4 v8, 0x0
-
     cmpg-float v6, v6, v7
+
+    const/4 v7, 0x0
 
     if-gtz v6, :cond_1
 
@@ -182,7 +182,7 @@
 
     iget p2, p0, Lcom/google/android/exoplayer2/ui/AspectRatioFrameLayout;->videoAspectRatio:F
 
-    invoke-virtual {p1, p2, v3, v8}, Lcom/google/android/exoplayer2/ui/AspectRatioFrameLayout$AspectRatioUpdateDispatcher;->scheduleUpdate(FFZ)V
+    invoke-virtual {p1, p2, v3, v7}, Lcom/google/android/exoplayer2/ui/AspectRatioFrameLayout$AspectRatioUpdateDispatcher;->scheduleUpdate(FFZ)V
 
     return-void
 
@@ -190,7 +190,7 @@
     :cond_1
     iget v6, p0, Lcom/google/android/exoplayer2/ui/AspectRatioFrameLayout;->resizeMode:I
 
-    const/4 v7, 0x2
+    const/4 v8, 0x2
 
     const/4 v9, 0x1
 
@@ -198,7 +198,7 @@
 
     if-eq v6, v9, :cond_7
 
-    if-eq v6, v7, :cond_6
+    if-eq v6, v8, :cond_6
 
     const/4 v10, 0x3
 
@@ -247,7 +247,7 @@
     iget p1, p0, Lcom/google/android/exoplayer2/ui/AspectRatioFrameLayout;->videoAspectRatio:F
 
     :goto_0
-    mul-float v2, v2, p1
+    mul-float/2addr v2, p1
 
     float-to-int p1, v2
 
@@ -307,10 +307,10 @@
     move-result p1
 
     :goto_3
-    if-ge v8, p1, :cond_d
+    if-ge v7, p1, :cond_d
 
     .line 227
-    invoke-virtual {p0, v8}, Landroid/widget/FrameLayout;->getChildAt(I)Landroid/view/View;
+    invoke-virtual {p0, v7}, Landroid/widget/FrameLayout;->getChildAt(I)Landroid/view/View;
 
     move-result-object p2
 
@@ -329,14 +329,14 @@
 
     move-result p1
 
-    div-int/2addr p1, v7
+    div-int/2addr p1, v8
 
     .line 231
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getHeight()I
 
     move-result v0
 
-    div-int/2addr v0, v7
+    div-int/2addr v0, v8
 
     .line 232
     iget-object v1, p0, Lcom/google/android/exoplayer2/ui/AspectRatioFrameLayout;->matrix:Landroid/graphics/Matrix;
@@ -396,7 +396,7 @@
     goto :goto_4
 
     :cond_c
-    add-int/lit8 v8, v8, 0x1
+    add-int/lit8 v7, v7, 0x1
 
     goto :goto_3
 

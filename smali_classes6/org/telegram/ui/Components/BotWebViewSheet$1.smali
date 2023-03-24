@@ -76,7 +76,7 @@
 
     if-gez v0, :cond_1
 
-    const/4 v0, 0x0
+    move v0, v1
 
     .line 184
     :cond_1
@@ -148,7 +148,7 @@
 
     const v0, 0x3f4ccccd    # 0.8f
 
-    mul-float p1, p1, v0
+    mul-float/2addr p1, v0
 
     float-to-int p1, p1
 

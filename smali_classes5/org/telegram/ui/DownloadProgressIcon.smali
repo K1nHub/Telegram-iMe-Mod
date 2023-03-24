@@ -271,7 +271,7 @@
 
     const/4 v2, 0x0
 
-    const/4 v3, 0x0
+    move v3, v2
 
     .line 147
     :goto_0
@@ -715,7 +715,7 @@
 
     const/high16 v6, 0x40000000    # 2.0f
 
-    mul-float v6, v6, v4
+    mul-float/2addr v6, v4
 
     sub-float/2addr v5, v6
 
@@ -746,7 +746,7 @@
     .line 101
     iget v8, p0, Lorg/telegram/ui/DownloadProgressIcon;->currentProgress:F
 
-    mul-float v5, v5, v8
+    mul-float/2addr v5, v8
 
     add-float/2addr v5, v4
 
@@ -772,9 +772,9 @@
     .line 106
     iget v0, p0, Lorg/telegram/ui/DownloadProgressIcon;->progress:F
 
-    const/4 v1, 0x0
-
     cmpl-float v0, v0, v2
+
+    const/4 v1, 0x0
 
     if-eqz v0, :cond_5
 
@@ -980,23 +980,23 @@
     goto :goto_0
 
     :cond_0
-    const/high16 v2, 0x3f800000    # 1.0f
+    cmp-long v0, v3, v0
 
-    cmp-long v7, v3, v0
+    const/high16 v1, 0x3f800000    # 1.0f
 
-    if-nez v7, :cond_1
+    if-nez v0, :cond_1
 
     .line 178
-    iput v2, p0, Lorg/telegram/ui/DownloadProgressIcon;->progress:F
+    iput v1, p0, Lorg/telegram/ui/DownloadProgressIcon;->progress:F
 
     goto :goto_1
 
     :cond_1
     long-to-float v0, v5
 
-    long-to-float v1, v3
+    long-to-float v2, v3
 
-    div-float/2addr v0, v1
+    div-float/2addr v0, v2
 
     .line 180
     iput v0, p0, Lorg/telegram/ui/DownloadProgressIcon;->progress:F
@@ -1005,12 +1005,12 @@
     :goto_1
     iget v0, p0, Lorg/telegram/ui/DownloadProgressIcon;->progress:F
 
-    cmpl-float v1, v0, v2
+    cmpl-float v2, v0, v1
 
-    if-lez v1, :cond_2
+    if-lez v2, :cond_2
 
     .line 183
-    iput v2, p0, Lorg/telegram/ui/DownloadProgressIcon;->progress:F
+    iput v1, p0, Lorg/telegram/ui/DownloadProgressIcon;->progress:F
 
     goto :goto_2
 
@@ -1035,7 +1035,7 @@
 
     const/high16 v1, 0x41800000    # 16.0f
 
-    mul-float v0, v0, v1
+    mul-float/2addr v0, v1
 
     const/high16 v1, 0x43160000    # 150.0f
 

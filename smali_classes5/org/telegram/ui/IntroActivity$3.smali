@@ -68,7 +68,7 @@
 
     move-result v1
 
-    mul-int v0, v0, v1
+    mul-int/2addr v0, v1
 
     invoke-static {p1, v0}, Lorg/telegram/ui/IntroActivity;->access$1402(Lorg/telegram/ui/IntroActivity;I)I
 
@@ -177,7 +177,7 @@
     :cond_0
     int-to-float p1, p1
 
-    mul-float p1, p1, p2
+    mul-float/2addr p1, p2
 
     int-to-float p3, p3
 
@@ -192,7 +192,7 @@
 
     int-to-float p3, p3
 
-    mul-float p3, p3, p2
+    mul-float/2addr p3, p2
 
     sub-float/2addr p1, p3
 

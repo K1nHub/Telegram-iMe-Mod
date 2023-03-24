@@ -41,15 +41,15 @@
 
     const/4 v2, 0x0
 
-    const/4 v4, 0x0
+    move v4, v1
 
-    const/4 v5, 0x0
+    move v5, v4
 
-    const/4 v6, 0x0
+    move v6, v5
 
-    const/4 v7, 0x0
+    move v7, v6
 
-    const/4 v8, 0x0
+    move v8, v2
 
     .line 13
     :goto_0

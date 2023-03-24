@@ -45,24 +45,24 @@
 
     if-nez v1, :cond_0
 
-    const/4 v1, 0x0
+    move v1, v2
 
     goto :goto_0
 
     :cond_0
-    const/4 v1, 0x1
+    move v1, v3
 
     :goto_0
     iget-object v4, v0, Lcom/google/android/gms/wallet/CreateWalletObjectsRequest;->zza:Lcom/google/android/gms/wallet/LoyaltyWalletObject;
 
     if-nez v4, :cond_1
 
-    const/4 v4, 0x0
+    move v4, v2
 
     goto :goto_1
 
     :cond_1
-    const/4 v4, 0x1
+    move v4, v3
 
     :goto_1
     add-int/2addr v1, v4
@@ -71,19 +71,19 @@
 
     if-nez v0, :cond_2
 
-    const/4 v0, 0x0
+    move v0, v2
 
     goto :goto_2
 
     :cond_2
-    const/4 v0, 0x1
+    move v0, v3
 
     :goto_2
     add-int/2addr v1, v0
 
     if-ne v1, v3, :cond_3
 
-    const/4 v2, 0x1
+    move v2, v3
 
     :cond_3
     const-string v0, "CreateWalletObjectsRequest must have exactly one Wallet Object"

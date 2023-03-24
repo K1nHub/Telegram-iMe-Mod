@@ -1,6 +1,5 @@
 package com.google.protobuf;
 
-import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.measurement.api.AppMeasurementSdk;
 import com.google.protobuf.GeneratedMessageLite;
 import java.lang.reflect.Method;
@@ -96,9 +95,9 @@ public final class MessageLiteToString {
         if (obj instanceof Integer) {
             return ((Integer) obj).intValue() == 0;
         } else if (obj instanceof Float) {
-            return ((Float) obj).floatValue() == BitmapDescriptorFactory.HUE_RED;
+            return Float.floatToRawIntBits(((Float) obj).floatValue()) == 0;
         } else if (obj instanceof Double) {
-            return ((Double) obj).doubleValue() == 0.0d;
+            return Double.doubleToRawLongBits(((Double) obj).doubleValue()) == 0;
         } else if (obj instanceof String) {
             return obj.equals("");
         } else {
@@ -157,7 +156,7 @@ public final class MessageLiteToString {
                 sb.append("}");
             } else {
                 sb.append(": ");
-                sb.append(obj.toString());
+                sb.append(obj);
             }
         }
     }

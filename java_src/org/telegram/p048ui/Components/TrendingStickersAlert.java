@@ -325,7 +325,7 @@ public class TrendingStickersAlert extends BottomSheet {
                     if (valueAnimator2 == null) {
                         float[] fArr = new float[2];
                         fArr[0] = this.statusBarAlpha;
-                        fArr[1] = z ? 1.0f : BitmapDescriptorFactory.HUE_RED;
+                        fArr[1] = z ? 1.0f : 0.0f;
                         ValueAnimator ofFloat = ValueAnimator.ofFloat(fArr);
                         this.statusBarAnimator = ofFloat;
                         ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.TrendingStickersAlert$AlertContainerView$$ExternalSyntheticLambda0
@@ -338,13 +338,13 @@ public class TrendingStickersAlert extends BottomSheet {
                     } else {
                         float[] fArr2 = new float[2];
                         fArr2[0] = this.statusBarAlpha;
-                        fArr2[1] = z ? 1.0f : BitmapDescriptorFactory.HUE_RED;
+                        fArr2[1] = z ? 1.0f : 0.0f;
                         valueAnimator2.setFloatValues(fArr2);
                     }
                     this.statusBarAnimator.start();
                     return;
                 }
-                this.statusBarAlpha = z ? 1.0f : BitmapDescriptorFactory.HUE_RED;
+                this.statusBarAlpha = z ? 1.0f : 0.0f;
                 invalidate();
             }
         }

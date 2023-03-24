@@ -156,7 +156,7 @@
     goto :goto_0
 
     :cond_0
-    const/4 v0, 0x0
+    move v0, v3
 
     :goto_0
     const-string v2, "Create a OpenGL context first or run the GL methods on an OpenGL thread."
@@ -870,13 +870,13 @@
 
     const/4 v1, 0x4
 
-    mul-int/lit8 v0, v0, 0x4
+    mul-int/2addr v0, v1
 
     new-array v0, v0, [F
 
     const/4 v2, 0x0
 
-    const/4 v3, 0x0
+    move v3, v2
 
     .line 132
     :goto_0

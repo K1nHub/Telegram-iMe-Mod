@@ -395,7 +395,7 @@ public class ViewDragHelper {
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:49:0x00dd, code lost:
-        if (r12 != r11) goto L57;
+        if (r12 != r11) goto L58;
      */
     /*
         Code decompiled incorrectly, please refer to instructions dump.

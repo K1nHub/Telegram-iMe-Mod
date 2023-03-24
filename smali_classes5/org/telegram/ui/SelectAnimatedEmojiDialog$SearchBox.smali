@@ -722,9 +722,19 @@
 
     move-result v0
 
-    const/4 v1, 0x1
+    const/4 v1, 0x2
 
-    const/4 v2, 0x4
+    const/4 v2, 0x1
+
+    const/4 v3, 0x4
+
+    if-eq v0, v2, :cond_1
+
+    iget-object v0, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$SearchBox;->this$0:Lorg/telegram/ui/SelectAnimatedEmojiDialog;
+
+    invoke-static {v0}, Lorg/telegram/ui/SelectAnimatedEmojiDialog;->access$4400(Lorg/telegram/ui/SelectAnimatedEmojiDialog;)I
+
+    move-result v0
 
     if-eq v0, v1, :cond_1
 
@@ -742,7 +752,7 @@
 
     move-result v0
 
-    if-eq v0, v2, :cond_1
+    if-eq v0, v3, :cond_1
 
     return-void
 
@@ -754,16 +764,16 @@
 
     move-result v0
 
-    if-eqz v0, :cond_3
+    if-eqz v0, :cond_2
 
-    if-eq v0, v2, :cond_2
+    if-eq v0, v3, :cond_3
 
     const/4 v1, 0x0
 
     goto :goto_0
 
     :cond_2
-    const/4 v1, 0x2
+    move v1, v2
 
     .line 4174
     :cond_3
@@ -772,7 +782,7 @@
 
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getContext()Landroid/content/Context;
 
-    move-result-object v3
+    move-result-object v2
 
     iget-object v4, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$SearchBox;->this$0:Lorg/telegram/ui/SelectAnimatedEmojiDialog;
 
@@ -780,7 +790,7 @@
 
     move-result-object v4
 
-    invoke-direct {v0, p0, v3, v1, v4}, Lorg/telegram/ui/SelectAnimatedEmojiDialog$SearchBox$5;-><init>(Lorg/telegram/ui/SelectAnimatedEmojiDialog$SearchBox;Landroid/content/Context;ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
+    invoke-direct {v0, p0, v2, v1, v4}, Lorg/telegram/ui/SelectAnimatedEmojiDialog$SearchBox$5;-><init>(Lorg/telegram/ui/SelectAnimatedEmojiDialog$SearchBox;Landroid/content/Context;ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
     iput-object v0, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$SearchBox;->categoriesListView:Lorg/telegram/ui/Components/StickerCategoriesListView;
 
@@ -791,7 +801,7 @@
 
     move-result v1
 
-    if-ne v1, v2, :cond_4
+    if-ne v1, v3, :cond_4
 
     const/high16 v1, 0x40d00000    # 6.5f
 

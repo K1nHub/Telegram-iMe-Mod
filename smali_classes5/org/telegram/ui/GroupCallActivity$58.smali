@@ -510,12 +510,12 @@
 
     int-to-long v3, v0
 
-    cmp-long v0, p1, v3
+    cmp-long p1, p1, v3
 
-    if-nez v0, :cond_d
+    if-nez p1, :cond_d
 
     :cond_c
-    const/4 v1, 0x1
+    move v1, v2
 
     :cond_d
     return v1

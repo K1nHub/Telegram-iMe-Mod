@@ -140,6 +140,9 @@
 .method public abstract isQuotationsVisible()Z
 .end method
 
+.method public abstract resetAllTokensSettings()V
+.end method
+
 .method public abstract resetBinanceAccount()V
 .end method
 
@@ -149,7 +152,10 @@
 .method public abstract resetOldWalletData()V
 .end method
 
-.method public abstract resetTokensSettings()V
+.method public abstract resetTokensSettingsByBlockchainType(Lcom/smedialink/storage/domain/model/crypto/BlockchainType;)V
+.end method
+
+.method public abstract resetTokensSettingsByNetwork(Lcom/smedialink/storage/domain/model/crypto/NetworkType;)V
 .end method
 
 .method public abstract saveTokensSettings(Lcom/smedialink/storage/data/locale/prefs/model/WalletCryptoTokensSettingsMetadata;Lcom/smedialink/storage/domain/model/crypto/NetworkType;)V

@@ -22,10 +22,10 @@ import kotlin.jvm.internal.Reflection;
 import kotlin.reflect.KProperty;
 import org.fork.controller.NeuroBotsController;
 import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.C3286R;
+import org.telegram.messenger.C3301R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.NotificationCenter;
-import org.telegram.p048ui.ActionBar.C3351ActionBar;
+import org.telegram.p048ui.ActionBar.C3366ActionBar;
 import org.telegram.p048ui.ActionBar.Theme;
 import org.telegram.p048ui.ActionBar.ThemeDescription;
 import org.telegram.p048ui.Cells.HeaderCell;
@@ -93,12 +93,12 @@ public final class BotSettingsActivity extends MvpFragment {
     }
 
     private final void setupActionBar() {
-        C3351ActionBar c3351ActionBar = this.actionBar;
-        c3351ActionBar.setBackButtonImage(C3286R.C3288drawable.ic_ab_back);
-        c3351ActionBar.setAllowOverlayTitle(true);
-        c3351ActionBar.setTitle(LocaleController.getInternalString(C3286R.string.neurobots_settings_screen_title));
-        c3351ActionBar.setActionBarMenuOnItemClick(new C3351ActionBar.ActionBarMenuOnItemClick() { // from class: com.smedialink.ui.shop.BotSettingsActivity$setupActionBar$1$1
-            @Override // org.telegram.p048ui.ActionBar.C3351ActionBar.ActionBarMenuOnItemClick
+        C3366ActionBar c3366ActionBar = this.actionBar;
+        c3366ActionBar.setBackButtonImage(C3301R.C3303drawable.ic_ab_back);
+        c3366ActionBar.setAllowOverlayTitle(true);
+        c3366ActionBar.setTitle(LocaleController.getInternalString(C3301R.string.neurobots_settings_screen_title));
+        c3366ActionBar.setActionBarMenuOnItemClick(new C3366ActionBar.ActionBarMenuOnItemClick() { // from class: com.smedialink.ui.shop.BotSettingsActivity$setupActionBar$1$1
+            @Override // org.telegram.p048ui.ActionBar.C3366ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i) {
                 if (i == -1) {
                     BotSettingsActivity.this.finishFragment();
@@ -245,16 +245,16 @@ public final class BotSettingsActivity extends MvpFragment {
             View view = holder.itemView;
             Intrinsics.checkNotNullExpressionValue(view, "holder.itemView");
             if (itemViewType == IdFabric$ViewTypes.HEADER && (view instanceof HeaderCell)) {
-                ((HeaderCell) view).setText(LocaleController.getInternalString(C3286R.string.neurobots_settings_automatic_response_header));
+                ((HeaderCell) view).setText(LocaleController.getInternalString(C3301R.string.neurobots_settings_automatic_response_header));
             } else if (itemViewType == IdFabric$ViewTypes.TEXT_CHECK && (view instanceof TextCheckCell)) {
                 if (i == BotSettingsActivity.this.enableBotsRow) {
-                    ((TextCheckCell) view).setTextAndCheck(LocaleController.getInternalString(C3286R.string.neurobots_settings_enable_item_title), BotSettingsActivity.this.getNeuroBotsController().isNeuroBotsEnabled(), z);
+                    ((TextCheckCell) view).setTextAndCheck(LocaleController.getInternalString(C3301R.string.neurobots_settings_enable_item_title), BotSettingsActivity.this.getNeuroBotsController().isNeuroBotsEnabled(), z);
                 } else if (i == BotSettingsActivity.this.autoBotsInPersonalChatsRow) {
-                    ((TextCheckCell) view).setTextAndCheck(LocaleController.getInternalString(C3286R.string.neurobots_settings_chats_automatic_response_enable_item_title), BotSettingsActivity.this.getNeuroBotsController().isNeuroBotsAutoEnabledInPersonalChats(), z);
+                    ((TextCheckCell) view).setTextAndCheck(LocaleController.getInternalString(C3301R.string.neurobots_settings_chats_automatic_response_enable_item_title), BotSettingsActivity.this.getNeuroBotsController().isNeuroBotsAutoEnabledInPersonalChats(), z);
                 } else if (i == BotSettingsActivity.this.autoBotsInGroupsRow) {
-                    ((TextCheckCell) view).setTextAndCheck(LocaleController.getInternalString(C3286R.string.neurobots_settings_groups_automatic_response_enable_item_title), BotSettingsActivity.this.getNeuroBotsController().isNeuroBotsAutoEnabledInGroups(), z);
+                    ((TextCheckCell) view).setTextAndCheck(LocaleController.getInternalString(C3301R.string.neurobots_settings_groups_automatic_response_enable_item_title), BotSettingsActivity.this.getNeuroBotsController().isNeuroBotsAutoEnabledInGroups(), z);
                 } else if (i == BotSettingsActivity.this.showOftenUsedRow) {
-                    ((TextCheckCell) view).setTextAndCheck(LocaleController.getInternalString(C3286R.string.neurobots_settings_often_used_enable_item_title), BotSettingsActivity.this.getNeuroBotsController().isShowOftenUsedNeuroBotsEnabled(), z);
+                    ((TextCheckCell) view).setTextAndCheck(LocaleController.getInternalString(C3301R.string.neurobots_settings_often_used_enable_item_title), BotSettingsActivity.this.getNeuroBotsController().isShowOftenUsedNeuroBotsEnabled(), z);
                 }
             }
         }

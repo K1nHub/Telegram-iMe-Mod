@@ -120,7 +120,7 @@
 
     sub-float v4, v0, v4
 
-    mul-float v4, v4, p2
+    mul-float/2addr v4, p2
 
     const v6, 0x3f19999a    # 0.6f
 
@@ -133,7 +133,7 @@
 
     if-eqz v7, :cond_0
 
-    const/high16 v4, 0x3f800000    # 1.0f
+    move v4, v0
 
     .line 426
     :cond_0
@@ -208,7 +208,7 @@
 
     sub-float p1, v0, p1
 
-    mul-float p1, p1, p2
+    mul-float/2addr p1, p2
 
     add-float/2addr p1, v6
 
@@ -219,7 +219,7 @@
 
     if-eqz p2, :cond_1
 
-    const/high16 p1, 0x3f800000    # 1.0f
+    move p1, v0
 
     .line 435
     :cond_1
@@ -228,7 +228,7 @@
     invoke-static {p2, v3, p1}, Lorg/telegram/ui/Components/ReactionsContainerLayout;->access$1400(Lorg/telegram/ui/Components/ReactionsContainerLayout;Landroid/view/View;F)V
 
     :cond_2
-    const/4 p1, 0x1
+    move p1, p3
 
     .line 437
     :goto_0

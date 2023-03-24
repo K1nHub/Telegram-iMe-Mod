@@ -58,7 +58,7 @@
     goto :goto_0
 
     :cond_0
-    const/high16 v0, 0x3f800000    # 1.0f
+    move v0, v1
 
     :goto_0
     invoke-virtual {p2, v0}, Landroid/view/ViewPropertyAnimator;->alpha(F)Landroid/view/ViewPropertyAnimator;
@@ -91,7 +91,7 @@
     goto :goto_1
 
     :cond_2
-    const/high16 v0, 0x3f800000    # 1.0f
+    move v0, v1
 
     :goto_1
     invoke-virtual {p2, v0}, Landroid/widget/TextView;->setAlpha(F)V

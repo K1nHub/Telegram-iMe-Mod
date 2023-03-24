@@ -120,7 +120,7 @@
 
     :cond_5
     :goto_0
-    const/4 v0, -0x1
+    move v0, v2
 
     :cond_6
     :goto_1
@@ -457,7 +457,7 @@
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_0
     if-ge v2, v0, :cond_0
@@ -629,7 +629,7 @@
     .line 2
     new-array p2, p2, [C
 
-    const/4 v1, 0x0
+    move v1, v2
 
     :goto_0
     if-ge p1, v0, :cond_1

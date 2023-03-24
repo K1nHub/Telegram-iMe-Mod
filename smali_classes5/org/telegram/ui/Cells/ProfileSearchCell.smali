@@ -1551,15 +1551,15 @@
 
     const-wide/32 v12, 0x514c8
 
-    cmp-long v14, v10, v12
+    cmp-long v12, v10, v12
 
-    if-eqz v14, :cond_2c
+    if-eqz v12, :cond_2c
 
     const-wide/32 v12, 0xbdb28
 
-    cmp-long v14, v10, v12
+    cmp-long v10, v10, v12
 
-    if-nez v14, :cond_28
+    if-nez v10, :cond_28
 
     goto :goto_10
 
@@ -1615,9 +1615,9 @@
 
     move-result-wide v11
 
-    cmp-long v13, v9, v11
+    cmp-long v9, v9, v11
 
-    if-eqz v13, :cond_2b
+    if-eqz v9, :cond_2b
 
     iget-object v9, v0, Lorg/telegram/ui/Cells/ProfileSearchCell;->user:Lorg/telegram/tgnet/TLRPC$User;
 
@@ -1887,9 +1887,9 @@
 
     int-to-double v6, v2
 
-    cmpg-double v9, v4, v6
+    cmpg-double v6, v4, v6
 
-    if-gez v9, :cond_33
+    if-gez v6, :cond_33
 
     .line 562
     iget v6, v0, Lorg/telegram/ui/Cells/ProfileSearchCell;->nameLeft:I
@@ -2007,9 +2007,9 @@
 
     int-to-double v5, v4
 
-    cmpg-double v7, v2, v5
+    cmpg-double v5, v2, v5
 
-    if-gez v7, :cond_35
+    if-gez v5, :cond_35
 
     .line 581
     iget v5, v0, Lorg/telegram/ui/Cells/ProfileSearchCell;->nameLeft:I
@@ -2628,7 +2628,7 @@
 
     mul-float v7, v5, v6
 
-    mul-float v5, v5, v6
+    mul-float/2addr v5, v6
 
     iget v6, p0, Lorg/telegram/ui/Cells/ProfileSearchCell;->currentAccount:I
 
@@ -3642,9 +3642,9 @@
 
     iget-wide v7, v3, Lorg/telegram/tgnet/TLRPC$FileLocation;->volume_id:J
 
-    cmp-long v9, v5, v7
+    cmp-long v5, v5, v7
 
-    if-nez v9, :cond_e
+    if-nez v5, :cond_e
 
     iget v2, v2, Lorg/telegram/tgnet/TLRPC$FileLocation;->local_id:I
 
@@ -3653,12 +3653,12 @@
     if-eq v2, v5, :cond_f
 
     :cond_e
-    const/4 v2, 0x1
+    move v2, v4
 
     goto :goto_4
 
     :cond_f
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_4
     if-nez v2, :cond_11
@@ -3685,7 +3685,7 @@
     goto :goto_5
 
     :cond_10
-    const/4 v5, 0x0
+    move v5, v1
 
     .line 677
     :goto_5
@@ -3693,7 +3693,7 @@
 
     if-eq v5, v6, :cond_11
 
-    const/4 v2, 0x1
+    move v2, v4
 
     :cond_11
     if-nez v2, :cond_12
@@ -3784,7 +3784,7 @@
 
     if-nez v5, :cond_16
 
-    const/4 v2, 0x1
+    move v2, v4
 
     :cond_16
     if-nez v2, :cond_17
@@ -4002,9 +4002,9 @@
 
     div-long/2addr v2, v4
 
-    long-to-int v3, v2
+    long-to-int v2, v2
 
-    if-le p1, v3, :cond_1
+    if-le p1, v2, :cond_1
 
     .line 606
     iget-object p1, p0, Lorg/telegram/ui/Cells/ProfileSearchCell;->statusDrawable:Lorg/telegram/ui/Components/AnimatedEmojiDrawable$SwapAnimatedEmojiDrawable;

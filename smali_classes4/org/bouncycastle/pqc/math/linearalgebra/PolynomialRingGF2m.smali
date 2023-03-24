@@ -86,7 +86,7 @@
     :cond_1
     const/4 v2, 0x0
 
-    const/4 v3, 0x0
+    move v3, v2
 
     :goto_2
     if-ge v3, v0, :cond_8
@@ -101,7 +101,7 @@
 
     add-int/lit8 v4, v3, 0x1
 
-    const/4 v5, 0x0
+    move v5, v2
 
     :goto_3
     if-ge v4, v0, :cond_3
@@ -124,7 +124,7 @@
 
     move v4, v0
 
-    const/4 v5, 0x1
+    move v5, v7
 
     :cond_2
     add-int/2addr v4, v7
@@ -169,7 +169,7 @@
 
     invoke-virtual {v5, v4}, Lorg/bouncycastle/pqc/math/linearalgebra/PolynomialGF2mSmallM;->multThisWithElement(I)V
 
-    const/4 v4, 0x0
+    move v4, v2
 
     :goto_5
     if-ge v4, v0, :cond_7

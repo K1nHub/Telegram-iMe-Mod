@@ -48,7 +48,7 @@ public final class ArrayValue extends GeneratedMessageLite<ArrayValue, Builder> 
     /* JADX INFO: Access modifiers changed from: private */
     public void addAllValues(Iterable<? extends Value> iterable) {
         ensureValuesIsMutable();
-        AbstractMessageLite.addAll(iterable, this.values_);
+        AbstractMessageLite.addAll((Iterable) iterable, (List) this.values_);
     }
 
     /* JADX INFO: Access modifiers changed from: private */

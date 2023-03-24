@@ -207,9 +207,9 @@
 
     move-result v0
 
-    const/4 v1, 0x0
-
     cmpl-float v0, v0, v5
+
+    const/4 v1, 0x0
 
     if-nez v0, :cond_1
 
@@ -694,13 +694,13 @@
     goto :goto_0
 
     :cond_0
-    const/4 v5, 0x0
+    move v5, v2
 
     goto :goto_1
 
     :cond_1
     :goto_0
-    const/4 v5, 0x1
+    move v5, v4
 
     :goto_1
     invoke-static {v1, v5}, Lorg/telegram/ui/Components/PhotoViewerWebView;->access$002(Lorg/telegram/ui/Components/PhotoViewerWebView;Z)Z
@@ -725,22 +725,22 @@
     goto :goto_2
 
     :cond_2
-    const/4 v2, 0x1
+    move v2, v4
 
-    const/4 v4, 0x2
+    move v4, v1
 
     goto :goto_2
 
     :cond_3
-    const/4 v2, 0x1
+    move v2, v4
 
     :cond_4
-    const/4 v4, 0x3
+    move v4, v3
 
     goto :goto_2
 
     :cond_5
-    const/4 v4, 0x4
+    move v4, v0
 
     :goto_2
     if-ne v4, v3, :cond_6

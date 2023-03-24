@@ -97,31 +97,31 @@
 
     if-eqz v5, :cond_1
 
-    const/4 v6, 0x5
+    move v6, v10
 
     goto :goto_0
 
     :cond_1
-    const/4 v6, 0x3
+    move v6, v11
 
     :goto_0
     or-int/lit8 v6, v6, 0x10
 
     if-eqz v5, :cond_2
 
-    const/4 v7, 0x0
+    move v7, v0
 
     goto :goto_1
 
     :cond_2
-    const/16 v7, 0x14
+    move v7, v2
 
     :goto_1
     const/4 v8, 0x0
 
     if-eqz v5, :cond_3
 
-    const/16 v0, 0x14
+    move v0, v2
 
     :cond_3
     const/4 v9, 0x0
@@ -184,12 +184,12 @@
 
     if-eqz v1, :cond_4
 
-    const/4 v1, 0x5
+    move v1, v10
 
     goto :goto_2
 
     :cond_4
-    const/4 v1, 0x3
+    move v1, v11
 
     :goto_2
     or-int/lit8 v1, v1, 0x10
@@ -207,12 +207,12 @@
 
     if-eqz v1, :cond_5
 
-    const/4 v5, 0x5
+    move v5, v10
 
     goto :goto_3
 
     :cond_5
-    const/4 v5, 0x3
+    move v5, v11
 
     :goto_3
     or-int/lit8 v5, v5, 0x30
@@ -291,12 +291,12 @@
 
     if-eqz v0, :cond_8
 
-    const/4 v0, 0x5
+    move v0, v10
 
     goto :goto_6
 
     :cond_8
-    const/4 v0, 0x3
+    move v0, v11
 
     :goto_6
     or-int/lit8 v0, v0, 0x10
@@ -317,7 +317,7 @@
     goto :goto_7
 
     :cond_9
-    const/4 v10, 0x3
+    move v10, v11
 
     :goto_7
     or-int/lit8 v3, v10, 0x30
@@ -393,8 +393,6 @@
 
     const/4 v0, 0x0
 
-    const/4 v2, 0x0
-
     goto :goto_0
 
     :cond_0
@@ -408,9 +406,9 @@
 
     int-to-float v0, v0
 
+    :goto_0
     move v2, v0
 
-    :goto_0
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredHeight()I
 
     move-result v0

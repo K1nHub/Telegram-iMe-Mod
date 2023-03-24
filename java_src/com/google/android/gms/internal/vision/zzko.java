@@ -59,15 +59,15 @@ public final class zzko<T> implements zzlc<T> {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* JADX WARN: Removed duplicated region for block: B:163:0x033a  */
-    /* JADX WARN: Removed duplicated region for block: B:180:0x039c  */
+    /* JADX WARN: Removed duplicated region for block: B:163:0x0338  */
+    /* JADX WARN: Removed duplicated region for block: B:180:0x0397  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct add '--show-bad-code' argument
     */
     public static <T> com.google.android.gms.internal.vision.zzko<T> zza(java.lang.Class<T> r33, com.google.android.gms.internal.vision.zzki r34, com.google.android.gms.internal.vision.zzks r35, com.google.android.gms.internal.vision.zzju r36, com.google.android.gms.internal.vision.zzlu<?, ?> r37, com.google.android.gms.internal.vision.zziq<?> r38, com.google.android.gms.internal.vision.zzkh r39) {
         /*
-            Method dump skipped, instructions count: 1052
+            Method dump skipped, instructions count: 1045
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: com.google.android.gms.internal.vision.zzko.zza(java.lang.Class, com.google.android.gms.internal.vision.zzki, com.google.android.gms.internal.vision.zzks, com.google.android.gms.internal.vision.zzju, com.google.android.gms.internal.vision.zzlu, com.google.android.gms.internal.vision.zziq, com.google.android.gms.internal.vision.zzkh):com.google.android.gms.internal.vision.zzko");
@@ -745,6 +745,8 @@ public final class zzko<T> implements zzlc<T> {
     @Override // com.google.android.gms.internal.vision.zzlc
     public final int zzb(T t) {
         int i;
+        int i2;
+        int i3;
         long j;
         int zzd;
         int zzb2;
@@ -757,1270 +759,1480 @@ public final class zzko<T> implements zzlc<T> {
         int zzi2;
         int zze2;
         int zzg2;
-        int i2 = 267386880;
-        int i3 = 1048575;
-        int i4 = 1;
+        int i4 = 267386880;
+        int i5 = 1048575;
+        int i6 = 1;
+        int i7 = 0;
         if (this.zzj) {
             Unsafe unsafe = zzb;
-            int i5 = 0;
-            int i6 = 0;
-            while (i5 < this.zzc.length) {
-                int zzd2 = zzd(i5);
-                int i7 = (zzd2 & i2) >>> 20;
-                int i8 = this.zzc[i5];
+            int i8 = 0;
+            int i9 = 0;
+            while (i8 < this.zzc.length) {
+                int zzd2 = zzd(i8);
+                int i10 = (zzd2 & i4) >>> 20;
+                int i11 = this.zzc[i8];
                 long j2 = zzd2 & 1048575;
-                if (i7 >= zziv.zza.zza() && i7 <= zziv.zzb.zza()) {
-                    int i9 = this.zzc[i5 + 2];
+                if (i10 >= zziv.zza.zza() && i10 <= zziv.zzb.zza()) {
+                    int i12 = this.zzc[i8 + 2];
                 }
-                switch (i7) {
+                switch (i10) {
                     case 0:
-                        if (zza((zzko<T>) t, i5)) {
-                            zzb3 = zzii.zzb(i8, 0.0d);
+                        if (zza((zzko<T>) t, i8)) {
+                            zzb3 = zzii.zzb(i11, 0.0d);
                             break;
                         } else {
                             continue;
-                            i5 += 3;
-                            i2 = 267386880;
+                            i8 += 3;
+                            i4 = 267386880;
                         }
                     case 1:
-                        if (zza((zzko<T>) t, i5)) {
-                            zzb3 = zzii.zzb(i8, (float) BitmapDescriptorFactory.HUE_RED);
+                        if (zza((zzko<T>) t, i8)) {
+                            zzb3 = zzii.zzb(i11, (float) BitmapDescriptorFactory.HUE_RED);
                             break;
                         } else {
                             continue;
-                            i5 += 3;
-                            i2 = 267386880;
+                            i8 += 3;
+                            i4 = 267386880;
                         }
                     case 2:
-                        if (zza((zzko<T>) t, i5)) {
-                            zzb3 = zzii.zzd(i8, zzma.zzb(t, j2));
+                        if (zza((zzko<T>) t, i8)) {
+                            zzb3 = zzii.zzd(i11, zzma.zzb(t, j2));
                             break;
                         } else {
                             continue;
-                            i5 += 3;
-                            i2 = 267386880;
+                            i8 += 3;
+                            i4 = 267386880;
                         }
                     case 3:
-                        if (zza((zzko<T>) t, i5)) {
-                            zzb3 = zzii.zze(i8, zzma.zzb(t, j2));
+                        if (zza((zzko<T>) t, i8)) {
+                            zzb3 = zzii.zze(i11, zzma.zzb(t, j2));
                             break;
                         } else {
                             continue;
-                            i5 += 3;
-                            i2 = 267386880;
+                            i8 += 3;
+                            i4 = 267386880;
                         }
                     case 4:
-                        if (zza((zzko<T>) t, i5)) {
-                            zzb3 = zzii.zzf(i8, zzma.zza(t, j2));
+                        if (zza((zzko<T>) t, i8)) {
+                            zzb3 = zzii.zzf(i11, zzma.zza(t, j2));
                             break;
                         } else {
                             continue;
-                            i5 += 3;
-                            i2 = 267386880;
+                            i8 += 3;
+                            i4 = 267386880;
                         }
                     case 5:
-                        if (zza((zzko<T>) t, i5)) {
-                            zzb3 = zzii.zzg(i8, 0L);
+                        if (zza((zzko<T>) t, i8)) {
+                            zzb3 = zzii.zzg(i11, 0L);
                             break;
                         } else {
                             continue;
-                            i5 += 3;
-                            i2 = 267386880;
+                            i8 += 3;
+                            i4 = 267386880;
                         }
                     case 6:
-                        if (zza((zzko<T>) t, i5)) {
-                            zzb3 = zzii.zzi(i8, 0);
+                        if (zza((zzko<T>) t, i8)) {
+                            zzb3 = zzii.zzi(i11, 0);
                             break;
                         } else {
                             continue;
-                            i5 += 3;
-                            i2 = 267386880;
+                            i8 += 3;
+                            i4 = 267386880;
                         }
                     case 7:
-                        if (zza((zzko<T>) t, i5)) {
-                            zzb3 = zzii.zzb(i8, true);
+                        if (zza((zzko<T>) t, i8)) {
+                            zzb3 = zzii.zzb(i11, true);
                             break;
                         } else {
                             continue;
-                            i5 += 3;
-                            i2 = 267386880;
+                            i8 += 3;
+                            i4 = 267386880;
                         }
                     case 8:
-                        if (zza((zzko<T>) t, i5)) {
+                        if (zza((zzko<T>) t, i8)) {
                             Object zzf = zzma.zzf(t, j2);
                             if (zzf instanceof zzht) {
-                                zzb3 = zzii.zzc(i8, (zzht) zzf);
+                                zzb3 = zzii.zzc(i11, (zzht) zzf);
                                 break;
                             } else {
-                                zzb3 = zzii.zzb(i8, (String) zzf);
+                                zzb3 = zzii.zzb(i11, (String) zzf);
                                 break;
                             }
                         } else {
                             continue;
-                            i5 += 3;
-                            i2 = 267386880;
+                            i8 += 3;
+                            i4 = 267386880;
                         }
                     case 9:
-                        if (zza((zzko<T>) t, i5)) {
-                            zzb3 = zzle.zza(i8, zzma.zzf(t, j2), zza(i5));
+                        if (zza((zzko<T>) t, i8)) {
+                            zzb3 = zzle.zza(i11, zzma.zzf(t, j2), zza(i8));
                             break;
                         } else {
                             continue;
-                            i5 += 3;
-                            i2 = 267386880;
+                            i8 += 3;
+                            i4 = 267386880;
                         }
                     case 10:
-                        if (zza((zzko<T>) t, i5)) {
-                            zzb3 = zzii.zzc(i8, (zzht) zzma.zzf(t, j2));
+                        if (zza((zzko<T>) t, i8)) {
+                            zzb3 = zzii.zzc(i11, (zzht) zzma.zzf(t, j2));
                             break;
                         } else {
                             continue;
-                            i5 += 3;
-                            i2 = 267386880;
+                            i8 += 3;
+                            i4 = 267386880;
                         }
                     case 11:
-                        if (zza((zzko<T>) t, i5)) {
-                            zzb3 = zzii.zzg(i8, zzma.zza(t, j2));
+                        if (zza((zzko<T>) t, i8)) {
+                            zzb3 = zzii.zzg(i11, zzma.zza(t, j2));
                             break;
                         } else {
                             continue;
-                            i5 += 3;
-                            i2 = 267386880;
+                            i8 += 3;
+                            i4 = 267386880;
                         }
                     case 12:
-                        if (zza((zzko<T>) t, i5)) {
-                            zzb3 = zzii.zzk(i8, zzma.zza(t, j2));
+                        if (zza((zzko<T>) t, i8)) {
+                            zzb3 = zzii.zzk(i11, zzma.zza(t, j2));
                             break;
                         } else {
                             continue;
-                            i5 += 3;
-                            i2 = 267386880;
+                            i8 += 3;
+                            i4 = 267386880;
                         }
                     case 13:
-                        if (zza((zzko<T>) t, i5)) {
-                            zzb3 = zzii.zzj(i8, 0);
+                        if (zza((zzko<T>) t, i8)) {
+                            zzb3 = zzii.zzj(i11, 0);
                             break;
                         } else {
                             continue;
-                            i5 += 3;
-                            i2 = 267386880;
+                            i8 += 3;
+                            i4 = 267386880;
                         }
                     case 14:
-                        if (zza((zzko<T>) t, i5)) {
-                            zzb3 = zzii.zzh(i8, 0L);
+                        if (zza((zzko<T>) t, i8)) {
+                            zzb3 = zzii.zzh(i11, 0L);
                             break;
                         } else {
                             continue;
-                            i5 += 3;
-                            i2 = 267386880;
+                            i8 += 3;
+                            i4 = 267386880;
                         }
                     case 15:
-                        if (zza((zzko<T>) t, i5)) {
-                            zzb3 = zzii.zzh(i8, zzma.zza(t, j2));
+                        if (zza((zzko<T>) t, i8)) {
+                            zzb3 = zzii.zzh(i11, zzma.zza(t, j2));
                             break;
                         } else {
                             continue;
-                            i5 += 3;
-                            i2 = 267386880;
+                            i8 += 3;
+                            i4 = 267386880;
                         }
                     case 16:
-                        if (zza((zzko<T>) t, i5)) {
-                            zzb3 = zzii.zzf(i8, zzma.zzb(t, j2));
+                        if (zza((zzko<T>) t, i8)) {
+                            zzb3 = zzii.zzf(i11, zzma.zzb(t, j2));
                             break;
                         } else {
                             continue;
-                            i5 += 3;
-                            i2 = 267386880;
+                            i8 += 3;
+                            i4 = 267386880;
                         }
                     case 17:
-                        if (zza((zzko<T>) t, i5)) {
-                            zzb3 = zzii.zzc(i8, (zzkk) zzma.zzf(t, j2), zza(i5));
+                        if (zza((zzko<T>) t, i8)) {
+                            zzb3 = zzii.zzc(i11, (zzkk) zzma.zzf(t, j2), zza(i8));
                             break;
                         } else {
                             continue;
-                            i5 += 3;
-                            i2 = 267386880;
+                            i8 += 3;
+                            i4 = 267386880;
                         }
                     case 18:
-                        zzb3 = zzle.zzi(i8, zza(t, j2), false);
+                        zzb3 = zzle.zzi(i11, zza(t, j2), false);
                         break;
                     case 19:
-                        zzb3 = zzle.zzh(i8, zza(t, j2), false);
+                        zzb3 = zzle.zzh(i11, zza(t, j2), false);
                         break;
                     case 20:
-                        zzb3 = zzle.zza(i8, (List<Long>) zza(t, j2), false);
+                        zzb3 = zzle.zza(i11, (List<Long>) zza(t, j2), false);
                         break;
                     case 21:
-                        zzb3 = zzle.zzb(i8, (List<Long>) zza(t, j2), false);
+                        zzb3 = zzle.zzb(i11, (List<Long>) zza(t, j2), false);
                         break;
                     case 22:
-                        zzb3 = zzle.zze(i8, zza(t, j2), false);
+                        zzb3 = zzle.zze(i11, zza(t, j2), false);
                         break;
                     case 23:
-                        zzb3 = zzle.zzi(i8, zza(t, j2), false);
+                        zzb3 = zzle.zzi(i11, zza(t, j2), false);
                         break;
                     case 24:
-                        zzb3 = zzle.zzh(i8, zza(t, j2), false);
+                        zzb3 = zzle.zzh(i11, zza(t, j2), false);
                         break;
                     case 25:
-                        zzb3 = zzle.zzj(i8, zza(t, j2), false);
+                        zzb3 = zzle.zzj(i11, zza(t, j2), false);
                         break;
                     case 26:
-                        zzb3 = zzle.zza(i8, zza(t, j2));
+                        zzb3 = zzle.zza(i11, zza(t, j2));
                         break;
                     case 27:
-                        zzb3 = zzle.zza(i8, zza(t, j2), zza(i5));
+                        zzb3 = zzle.zza(i11, zza(t, j2), zza(i8));
                         break;
                     case 28:
-                        zzb3 = zzle.zzb(i8, zza(t, j2));
+                        zzb3 = zzle.zzb(i11, zza(t, j2));
                         break;
                     case 29:
-                        zzb3 = zzle.zzf(i8, zza(t, j2), false);
+                        zzb3 = zzle.zzf(i11, zza(t, j2), false);
                         break;
                     case 30:
-                        zzb3 = zzle.zzd(i8, zza(t, j2), false);
+                        zzb3 = zzle.zzd(i11, zza(t, j2), false);
                         break;
                     case 31:
-                        zzb3 = zzle.zzh(i8, zza(t, j2), false);
+                        zzb3 = zzle.zzh(i11, zza(t, j2), false);
                         break;
                     case 32:
-                        zzb3 = zzle.zzi(i8, zza(t, j2), false);
+                        zzb3 = zzle.zzi(i11, zza(t, j2), false);
                         break;
                     case 33:
-                        zzb3 = zzle.zzg(i8, zza(t, j2), false);
+                        zzb3 = zzle.zzg(i11, zza(t, j2), false);
                         break;
                     case 34:
-                        zzb3 = zzle.zzc(i8, zza(t, j2), false);
+                        zzb3 = zzle.zzc(i11, zza(t, j2), false);
                         break;
                     case 35:
                         zzi2 = zzle.zzi((List) unsafe.getObject(t, j2));
                         if (zzi2 > 0) {
-                            zze2 = zzii.zze(i8);
+                            zze2 = zzii.zze(i11);
                             zzg2 = zzii.zzg(zzi2);
                             zzb3 = zze2 + zzg2 + zzi2;
                             break;
                         } else {
                             continue;
-                            i5 += 3;
-                            i2 = 267386880;
+                            i8 += 3;
+                            i4 = 267386880;
                         }
                     case 36:
                         zzi2 = zzle.zzh((List) unsafe.getObject(t, j2));
                         if (zzi2 > 0) {
-                            zze2 = zzii.zze(i8);
+                            zze2 = zzii.zze(i11);
                             zzg2 = zzii.zzg(zzi2);
                             zzb3 = zze2 + zzg2 + zzi2;
                             break;
                         } else {
                             continue;
-                            i5 += 3;
-                            i2 = 267386880;
+                            i8 += 3;
+                            i4 = 267386880;
                         }
                     case 37:
                         zzi2 = zzle.zza((List) unsafe.getObject(t, j2));
                         if (zzi2 > 0) {
-                            zze2 = zzii.zze(i8);
+                            zze2 = zzii.zze(i11);
                             zzg2 = zzii.zzg(zzi2);
                             zzb3 = zze2 + zzg2 + zzi2;
                             break;
                         } else {
                             continue;
-                            i5 += 3;
-                            i2 = 267386880;
+                            i8 += 3;
+                            i4 = 267386880;
                         }
                     case 38:
                         zzi2 = zzle.zzb((List) unsafe.getObject(t, j2));
                         if (zzi2 > 0) {
-                            zze2 = zzii.zze(i8);
+                            zze2 = zzii.zze(i11);
                             zzg2 = zzii.zzg(zzi2);
                             zzb3 = zze2 + zzg2 + zzi2;
                             break;
                         } else {
                             continue;
-                            i5 += 3;
-                            i2 = 267386880;
+                            i8 += 3;
+                            i4 = 267386880;
                         }
                     case 39:
                         zzi2 = zzle.zze((List) unsafe.getObject(t, j2));
                         if (zzi2 > 0) {
-                            zze2 = zzii.zze(i8);
+                            zze2 = zzii.zze(i11);
                             zzg2 = zzii.zzg(zzi2);
                             zzb3 = zze2 + zzg2 + zzi2;
                             break;
                         } else {
                             continue;
-                            i5 += 3;
-                            i2 = 267386880;
+                            i8 += 3;
+                            i4 = 267386880;
                         }
                     case 40:
                         zzi2 = zzle.zzi((List) unsafe.getObject(t, j2));
                         if (zzi2 > 0) {
-                            zze2 = zzii.zze(i8);
+                            zze2 = zzii.zze(i11);
                             zzg2 = zzii.zzg(zzi2);
                             zzb3 = zze2 + zzg2 + zzi2;
                             break;
                         } else {
                             continue;
-                            i5 += 3;
-                            i2 = 267386880;
+                            i8 += 3;
+                            i4 = 267386880;
                         }
                     case 41:
                         zzi2 = zzle.zzh((List) unsafe.getObject(t, j2));
                         if (zzi2 > 0) {
-                            zze2 = zzii.zze(i8);
+                            zze2 = zzii.zze(i11);
                             zzg2 = zzii.zzg(zzi2);
                             zzb3 = zze2 + zzg2 + zzi2;
                             break;
                         } else {
                             continue;
-                            i5 += 3;
-                            i2 = 267386880;
+                            i8 += 3;
+                            i4 = 267386880;
                         }
                     case 42:
                         zzi2 = zzle.zzj((List) unsafe.getObject(t, j2));
                         if (zzi2 > 0) {
-                            zze2 = zzii.zze(i8);
+                            zze2 = zzii.zze(i11);
                             zzg2 = zzii.zzg(zzi2);
                             zzb3 = zze2 + zzg2 + zzi2;
                             break;
                         } else {
                             continue;
-                            i5 += 3;
-                            i2 = 267386880;
+                            i8 += 3;
+                            i4 = 267386880;
                         }
                     case 43:
                         zzi2 = zzle.zzf((List) unsafe.getObject(t, j2));
                         if (zzi2 > 0) {
-                            zze2 = zzii.zze(i8);
+                            zze2 = zzii.zze(i11);
                             zzg2 = zzii.zzg(zzi2);
                             zzb3 = zze2 + zzg2 + zzi2;
                             break;
                         } else {
                             continue;
-                            i5 += 3;
-                            i2 = 267386880;
+                            i8 += 3;
+                            i4 = 267386880;
                         }
                     case 44:
                         zzi2 = zzle.zzd((List) unsafe.getObject(t, j2));
                         if (zzi2 > 0) {
-                            zze2 = zzii.zze(i8);
+                            zze2 = zzii.zze(i11);
                             zzg2 = zzii.zzg(zzi2);
                             zzb3 = zze2 + zzg2 + zzi2;
                             break;
                         } else {
                             continue;
-                            i5 += 3;
-                            i2 = 267386880;
+                            i8 += 3;
+                            i4 = 267386880;
                         }
                     case 45:
                         zzi2 = zzle.zzh((List) unsafe.getObject(t, j2));
                         if (zzi2 > 0) {
-                            zze2 = zzii.zze(i8);
+                            zze2 = zzii.zze(i11);
                             zzg2 = zzii.zzg(zzi2);
                             zzb3 = zze2 + zzg2 + zzi2;
                             break;
                         } else {
                             continue;
-                            i5 += 3;
-                            i2 = 267386880;
+                            i8 += 3;
+                            i4 = 267386880;
                         }
                     case 46:
                         zzi2 = zzle.zzi((List) unsafe.getObject(t, j2));
                         if (zzi2 > 0) {
-                            zze2 = zzii.zze(i8);
+                            zze2 = zzii.zze(i11);
                             zzg2 = zzii.zzg(zzi2);
                             zzb3 = zze2 + zzg2 + zzi2;
                             break;
                         } else {
                             continue;
-                            i5 += 3;
-                            i2 = 267386880;
+                            i8 += 3;
+                            i4 = 267386880;
                         }
                     case 47:
                         zzi2 = zzle.zzg((List) unsafe.getObject(t, j2));
                         if (zzi2 > 0) {
-                            zze2 = zzii.zze(i8);
+                            zze2 = zzii.zze(i11);
                             zzg2 = zzii.zzg(zzi2);
                             zzb3 = zze2 + zzg2 + zzi2;
                             break;
                         } else {
                             continue;
-                            i5 += 3;
-                            i2 = 267386880;
+                            i8 += 3;
+                            i4 = 267386880;
                         }
                     case 48:
                         zzi2 = zzle.zzc((List) unsafe.getObject(t, j2));
                         if (zzi2 > 0) {
-                            zze2 = zzii.zze(i8);
+                            zze2 = zzii.zze(i11);
                             zzg2 = zzii.zzg(zzi2);
                             zzb3 = zze2 + zzg2 + zzi2;
                             break;
                         } else {
                             continue;
-                            i5 += 3;
-                            i2 = 267386880;
+                            i8 += 3;
+                            i4 = 267386880;
                         }
                     case 49:
-                        zzb3 = zzle.zzb(i8, (List<zzkk>) zza(t, j2), zza(i5));
+                        zzb3 = zzle.zzb(i11, (List<zzkk>) zza(t, j2), zza(i8));
                         break;
                     case 50:
-                        zzb3 = this.zzs.zza(i8, zzma.zzf(t, j2), zzb(i5));
+                        zzb3 = this.zzs.zza(i11, zzma.zzf(t, j2), zzb(i8));
                         break;
                     case 51:
-                        if (zza((zzko<T>) t, i8, i5)) {
-                            zzb3 = zzii.zzb(i8, 0.0d);
+                        if (zza((zzko<T>) t, i11, i8)) {
+                            zzb3 = zzii.zzb(i11, 0.0d);
                             break;
                         } else {
                             continue;
-                            i5 += 3;
-                            i2 = 267386880;
+                            i8 += 3;
+                            i4 = 267386880;
                         }
                     case 52:
-                        if (zza((zzko<T>) t, i8, i5)) {
-                            zzb3 = zzii.zzb(i8, (float) BitmapDescriptorFactory.HUE_RED);
+                        if (zza((zzko<T>) t, i11, i8)) {
+                            zzb3 = zzii.zzb(i11, (float) BitmapDescriptorFactory.HUE_RED);
                             break;
                         } else {
                             continue;
-                            i5 += 3;
-                            i2 = 267386880;
+                            i8 += 3;
+                            i4 = 267386880;
                         }
                     case 53:
-                        if (zza((zzko<T>) t, i8, i5)) {
-                            zzb3 = zzii.zzd(i8, zze(t, j2));
+                        if (zza((zzko<T>) t, i11, i8)) {
+                            zzb3 = zzii.zzd(i11, zze(t, j2));
                             break;
                         } else {
                             continue;
-                            i5 += 3;
-                            i2 = 267386880;
+                            i8 += 3;
+                            i4 = 267386880;
                         }
                     case 54:
-                        if (zza((zzko<T>) t, i8, i5)) {
-                            zzb3 = zzii.zze(i8, zze(t, j2));
+                        if (zza((zzko<T>) t, i11, i8)) {
+                            zzb3 = zzii.zze(i11, zze(t, j2));
                             break;
                         } else {
                             continue;
-                            i5 += 3;
-                            i2 = 267386880;
+                            i8 += 3;
+                            i4 = 267386880;
                         }
                     case 55:
-                        if (zza((zzko<T>) t, i8, i5)) {
-                            zzb3 = zzii.zzf(i8, zzd(t, j2));
+                        if (zza((zzko<T>) t, i11, i8)) {
+                            zzb3 = zzii.zzf(i11, zzd(t, j2));
                             break;
                         } else {
                             continue;
-                            i5 += 3;
-                            i2 = 267386880;
+                            i8 += 3;
+                            i4 = 267386880;
                         }
                     case 56:
-                        if (zza((zzko<T>) t, i8, i5)) {
-                            zzb3 = zzii.zzg(i8, 0L);
+                        if (zza((zzko<T>) t, i11, i8)) {
+                            zzb3 = zzii.zzg(i11, 0L);
                             break;
                         } else {
                             continue;
-                            i5 += 3;
-                            i2 = 267386880;
+                            i8 += 3;
+                            i4 = 267386880;
                         }
                     case 57:
-                        if (zza((zzko<T>) t, i8, i5)) {
-                            zzb3 = zzii.zzi(i8, 0);
+                        if (zza((zzko<T>) t, i11, i8)) {
+                            zzb3 = zzii.zzi(i11, 0);
                             break;
                         } else {
                             continue;
-                            i5 += 3;
-                            i2 = 267386880;
+                            i8 += 3;
+                            i4 = 267386880;
                         }
                     case 58:
-                        if (zza((zzko<T>) t, i8, i5)) {
-                            zzb3 = zzii.zzb(i8, true);
+                        if (zza((zzko<T>) t, i11, i8)) {
+                            zzb3 = zzii.zzb(i11, true);
                             break;
                         } else {
                             continue;
-                            i5 += 3;
-                            i2 = 267386880;
+                            i8 += 3;
+                            i4 = 267386880;
                         }
                     case 59:
-                        if (zza((zzko<T>) t, i8, i5)) {
+                        if (zza((zzko<T>) t, i11, i8)) {
                             Object zzf2 = zzma.zzf(t, j2);
                             if (zzf2 instanceof zzht) {
-                                zzb3 = zzii.zzc(i8, (zzht) zzf2);
+                                zzb3 = zzii.zzc(i11, (zzht) zzf2);
                                 break;
                             } else {
-                                zzb3 = zzii.zzb(i8, (String) zzf2);
+                                zzb3 = zzii.zzb(i11, (String) zzf2);
                                 break;
                             }
                         } else {
                             continue;
-                            i5 += 3;
-                            i2 = 267386880;
+                            i8 += 3;
+                            i4 = 267386880;
                         }
                     case 60:
-                        if (zza((zzko<T>) t, i8, i5)) {
-                            zzb3 = zzle.zza(i8, zzma.zzf(t, j2), zza(i5));
+                        if (zza((zzko<T>) t, i11, i8)) {
+                            zzb3 = zzle.zza(i11, zzma.zzf(t, j2), zza(i8));
                             break;
                         } else {
                             continue;
-                            i5 += 3;
-                            i2 = 267386880;
+                            i8 += 3;
+                            i4 = 267386880;
                         }
                     case 61:
-                        if (zza((zzko<T>) t, i8, i5)) {
-                            zzb3 = zzii.zzc(i8, (zzht) zzma.zzf(t, j2));
+                        if (zza((zzko<T>) t, i11, i8)) {
+                            zzb3 = zzii.zzc(i11, (zzht) zzma.zzf(t, j2));
                             break;
                         } else {
                             continue;
-                            i5 += 3;
-                            i2 = 267386880;
+                            i8 += 3;
+                            i4 = 267386880;
                         }
                     case 62:
-                        if (zza((zzko<T>) t, i8, i5)) {
-                            zzb3 = zzii.zzg(i8, zzd(t, j2));
+                        if (zza((zzko<T>) t, i11, i8)) {
+                            zzb3 = zzii.zzg(i11, zzd(t, j2));
                             break;
                         } else {
                             continue;
-                            i5 += 3;
-                            i2 = 267386880;
+                            i8 += 3;
+                            i4 = 267386880;
                         }
                     case 63:
-                        if (zza((zzko<T>) t, i8, i5)) {
-                            zzb3 = zzii.zzk(i8, zzd(t, j2));
+                        if (zza((zzko<T>) t, i11, i8)) {
+                            zzb3 = zzii.zzk(i11, zzd(t, j2));
                             break;
                         } else {
                             continue;
-                            i5 += 3;
-                            i2 = 267386880;
+                            i8 += 3;
+                            i4 = 267386880;
                         }
                     case 64:
-                        if (zza((zzko<T>) t, i8, i5)) {
-                            zzb3 = zzii.zzj(i8, 0);
+                        if (zza((zzko<T>) t, i11, i8)) {
+                            zzb3 = zzii.zzj(i11, 0);
                             break;
                         } else {
                             continue;
-                            i5 += 3;
-                            i2 = 267386880;
+                            i8 += 3;
+                            i4 = 267386880;
                         }
                     case 65:
-                        if (zza((zzko<T>) t, i8, i5)) {
-                            zzb3 = zzii.zzh(i8, 0L);
+                        if (zza((zzko<T>) t, i11, i8)) {
+                            zzb3 = zzii.zzh(i11, 0L);
                             break;
                         } else {
                             continue;
-                            i5 += 3;
-                            i2 = 267386880;
+                            i8 += 3;
+                            i4 = 267386880;
                         }
                     case 66:
-                        if (zza((zzko<T>) t, i8, i5)) {
-                            zzb3 = zzii.zzh(i8, zzd(t, j2));
+                        if (zza((zzko<T>) t, i11, i8)) {
+                            zzb3 = zzii.zzh(i11, zzd(t, j2));
                             break;
                         } else {
                             continue;
-                            i5 += 3;
-                            i2 = 267386880;
+                            i8 += 3;
+                            i4 = 267386880;
                         }
                     case 67:
-                        if (zza((zzko<T>) t, i8, i5)) {
-                            zzb3 = zzii.zzf(i8, zze(t, j2));
+                        if (zza((zzko<T>) t, i11, i8)) {
+                            zzb3 = zzii.zzf(i11, zze(t, j2));
                             break;
                         } else {
                             continue;
-                            i5 += 3;
-                            i2 = 267386880;
+                            i8 += 3;
+                            i4 = 267386880;
                         }
                     case 68:
-                        if (zza((zzko<T>) t, i8, i5)) {
-                            zzb3 = zzii.zzc(i8, (zzkk) zzma.zzf(t, j2), zza(i5));
+                        if (zza((zzko<T>) t, i11, i8)) {
+                            zzb3 = zzii.zzc(i11, (zzkk) zzma.zzf(t, j2), zza(i8));
                             break;
                         } else {
                             continue;
-                            i5 += 3;
-                            i2 = 267386880;
+                            i8 += 3;
+                            i4 = 267386880;
                         }
                     default:
-                        i5 += 3;
-                        i2 = 267386880;
+                        i8 += 3;
+                        i4 = 267386880;
                 }
-                i6 += zzb3;
-                i5 += 3;
-                i2 = 267386880;
+                i9 += zzb3;
+                i8 += 3;
+                i4 = 267386880;
             }
-            return i6 + zza((zzlu) this.zzq, (Object) t);
+            return i9 + zza((zzlu) this.zzq, (Object) t);
         }
         Unsafe unsafe2 = zzb;
-        int i10 = 0;
-        int i11 = 0;
-        int i12 = 1048575;
-        int i13 = 0;
-        while (i10 < this.zzc.length) {
-            int zzd3 = zzd(i10);
+        int i13 = 1048575;
+        int i14 = 0;
+        int i15 = 0;
+        int i16 = 0;
+        while (i14 < this.zzc.length) {
+            int zzd3 = zzd(i14);
             int[] iArr = this.zzc;
-            int i14 = iArr[i10];
-            int i15 = (zzd3 & 267386880) >>> 20;
-            if (i15 <= 17) {
-                int i16 = iArr[i10 + 2];
-                int i17 = i16 & i3;
-                i = i4 << (i16 >>> 20);
-                if (i17 != i12) {
-                    i13 = unsafe2.getInt(t, i17);
-                    i12 = i17;
+            int i17 = iArr[i14];
+            int i18 = (zzd3 & 267386880) >>> 20;
+            if (i18 <= 17) {
+                int i19 = iArr[i14 + 2];
+                int i20 = i19 & i5;
+                i = i6 << (i19 >>> 20);
+                if (i20 != i13) {
+                    i16 = unsafe2.getInt(t, i20);
+                    i13 = i20;
                 }
             } else {
                 i = 0;
             }
-            long j3 = zzd3 & i3;
-            switch (i15) {
+            long j3 = zzd3 & i5;
+            switch (i18) {
                 case 0:
+                    i2 = 1;
+                    i3 = 0;
                     j = 0;
-                    if ((i13 & i) != 0) {
-                        i11 += zzii.zzb(i14, 0.0d);
+                    if ((i16 & i) != 0) {
+                        i15 += zzii.zzb(i17, 0.0d);
                         continue;
-                        i10 += 3;
-                        i3 = 1048575;
-                        i4 = 1;
+                        i14 += 3;
+                        i6 = i2;
+                        i7 = i3;
+                        i5 = 1048575;
                     }
                     break;
                 case 1:
+                    i2 = 1;
+                    i3 = 0;
                     j = 0;
-                    if ((i13 & i) != 0) {
-                        i11 += zzii.zzb(i14, (float) BitmapDescriptorFactory.HUE_RED);
+                    if ((i16 & i) != 0) {
+                        i15 += zzii.zzb(i17, (float) BitmapDescriptorFactory.HUE_RED);
                         break;
                     }
                     break;
                 case 2:
+                    i2 = 1;
+                    i3 = 0;
                     j = 0;
-                    if ((i & i13) != 0) {
-                        zzd = zzii.zzd(i14, unsafe2.getLong(t, j3));
-                        i11 += zzd;
+                    if ((i & i16) != 0) {
+                        zzd = zzii.zzd(i17, unsafe2.getLong(t, j3));
+                        i15 += zzd;
                         break;
                     }
                     break;
                 case 3:
+                    i2 = 1;
+                    i3 = 0;
                     j = 0;
-                    if ((i & i13) != 0) {
-                        zzd = zzii.zze(i14, unsafe2.getLong(t, j3));
-                        i11 += zzd;
+                    if ((i & i16) != 0) {
+                        zzd = zzii.zze(i17, unsafe2.getLong(t, j3));
+                        i15 += zzd;
                         break;
                     }
                     break;
                 case 4:
+                    i2 = 1;
+                    i3 = 0;
                     j = 0;
-                    if ((i & i13) != 0) {
-                        zzd = zzii.zzf(i14, unsafe2.getInt(t, j3));
-                        i11 += zzd;
+                    if ((i & i16) != 0) {
+                        zzd = zzii.zzf(i17, unsafe2.getInt(t, j3));
+                        i15 += zzd;
                         break;
                     }
                     break;
                 case 5:
+                    i2 = 1;
+                    i3 = 0;
                     j = 0;
-                    if ((i13 & i) != 0) {
-                        zzd = zzii.zzg(i14, 0L);
-                        i11 += zzd;
+                    if ((i16 & i) != 0) {
+                        zzd = zzii.zzg(i17, 0L);
+                        i15 += zzd;
                         break;
                     }
                     break;
                 case 6:
-                    if ((i13 & i) != 0) {
-                        i11 += zzii.zzi(i14, 0);
+                    i2 = 1;
+                    i3 = 0;
+                    if ((i16 & i) != 0) {
+                        i15 += zzii.zzi(i17, 0);
                     }
                     j = 0;
-                    i10 += 3;
-                    i3 = 1048575;
-                    i4 = 1;
+                    i14 += 3;
+                    i6 = i2;
+                    i7 = i3;
+                    i5 = 1048575;
                 case 7:
-                    if ((i13 & i) != 0) {
-                        i11 += zzii.zzb(i14, true);
+                    if ((i16 & i) != 0) {
+                        i2 = 1;
+                        i15 += zzii.zzb(i17, true);
+                        i3 = 0;
                         j = 0;
-                        i10 += 3;
-                        i3 = 1048575;
-                        i4 = 1;
+                        i14 += 3;
+                        i6 = i2;
+                        i7 = i3;
+                        i5 = 1048575;
                     }
+                    i2 = 1;
+                    i3 = 0;
                     j = 0;
-                    i10 += 3;
-                    i3 = 1048575;
-                    i4 = 1;
+                    i14 += 3;
+                    i6 = i2;
+                    i7 = i3;
+                    i5 = 1048575;
                 case 8:
-                    if ((i13 & i) != 0) {
+                    if ((i16 & i) != 0) {
                         Object object = unsafe2.getObject(t, j3);
                         if (object instanceof zzht) {
-                            zzb2 = zzii.zzc(i14, (zzht) object);
+                            zzb2 = zzii.zzc(i17, (zzht) object);
                         } else {
-                            zzb2 = zzii.zzb(i14, (String) object);
+                            zzb2 = zzii.zzb(i17, (String) object);
                         }
-                        i11 += zzb2;
+                        i15 += zzb2;
                     }
+                    i2 = 1;
+                    i3 = 0;
                     j = 0;
-                    i10 += 3;
-                    i3 = 1048575;
-                    i4 = 1;
+                    i14 += 3;
+                    i6 = i2;
+                    i7 = i3;
+                    i5 = 1048575;
                 case 9:
-                    if ((i13 & i) != 0) {
-                        zzb2 = zzle.zza(i14, unsafe2.getObject(t, j3), zza(i10));
-                        i11 += zzb2;
+                    if ((i16 & i) != 0) {
+                        zzb2 = zzle.zza(i17, unsafe2.getObject(t, j3), zza(i14));
+                        i15 += zzb2;
                     }
+                    i2 = 1;
+                    i3 = 0;
                     j = 0;
-                    i10 += 3;
-                    i3 = 1048575;
-                    i4 = 1;
+                    i14 += 3;
+                    i6 = i2;
+                    i7 = i3;
+                    i5 = 1048575;
                 case 10:
-                    if ((i13 & i) != 0) {
-                        zzb2 = zzii.zzc(i14, (zzht) unsafe2.getObject(t, j3));
-                        i11 += zzb2;
+                    if ((i16 & i) != 0) {
+                        zzb2 = zzii.zzc(i17, (zzht) unsafe2.getObject(t, j3));
+                        i15 += zzb2;
                     }
+                    i2 = 1;
+                    i3 = 0;
                     j = 0;
-                    i10 += 3;
-                    i3 = 1048575;
-                    i4 = 1;
+                    i14 += 3;
+                    i6 = i2;
+                    i7 = i3;
+                    i5 = 1048575;
                 case 11:
-                    if ((i13 & i) != 0) {
-                        zzb2 = zzii.zzg(i14, unsafe2.getInt(t, j3));
-                        i11 += zzb2;
+                    if ((i16 & i) != 0) {
+                        zzb2 = zzii.zzg(i17, unsafe2.getInt(t, j3));
+                        i15 += zzb2;
                     }
+                    i2 = 1;
+                    i3 = 0;
                     j = 0;
-                    i10 += 3;
-                    i3 = 1048575;
-                    i4 = 1;
+                    i14 += 3;
+                    i6 = i2;
+                    i7 = i3;
+                    i5 = 1048575;
                 case 12:
-                    if ((i13 & i) != 0) {
-                        zzb2 = zzii.zzk(i14, unsafe2.getInt(t, j3));
-                        i11 += zzb2;
+                    if ((i16 & i) != 0) {
+                        zzb2 = zzii.zzk(i17, unsafe2.getInt(t, j3));
+                        i15 += zzb2;
                     }
+                    i2 = 1;
+                    i3 = 0;
                     j = 0;
-                    i10 += 3;
-                    i3 = 1048575;
-                    i4 = 1;
+                    i14 += 3;
+                    i6 = i2;
+                    i7 = i3;
+                    i5 = 1048575;
                 case 13:
-                    if ((i13 & i) != 0) {
-                        zzj = zzii.zzj(i14, 0);
-                        i11 += zzj;
+                    if ((i16 & i) != 0) {
+                        zzj = zzii.zzj(i17, 0);
+                        i15 += zzj;
                     }
+                    i2 = 1;
+                    i3 = 0;
                     j = 0;
-                    i10 += 3;
-                    i3 = 1048575;
-                    i4 = 1;
+                    i14 += 3;
+                    i6 = i2;
+                    i7 = i3;
+                    i5 = 1048575;
                 case 14:
-                    if ((i13 & i) != 0) {
-                        zzb2 = zzii.zzh(i14, 0L);
-                        i11 += zzb2;
+                    if ((i16 & i) != 0) {
+                        zzb2 = zzii.zzh(i17, 0L);
+                        i15 += zzb2;
                     }
+                    i2 = 1;
+                    i3 = 0;
                     j = 0;
-                    i10 += 3;
-                    i3 = 1048575;
-                    i4 = 1;
+                    i14 += 3;
+                    i6 = i2;
+                    i7 = i3;
+                    i5 = 1048575;
                 case 15:
-                    if ((i13 & i) != 0) {
-                        zzb2 = zzii.zzh(i14, unsafe2.getInt(t, j3));
-                        i11 += zzb2;
+                    if ((i16 & i) != 0) {
+                        zzb2 = zzii.zzh(i17, unsafe2.getInt(t, j3));
+                        i15 += zzb2;
                     }
+                    i2 = 1;
+                    i3 = 0;
                     j = 0;
-                    i10 += 3;
-                    i3 = 1048575;
-                    i4 = 1;
+                    i14 += 3;
+                    i6 = i2;
+                    i7 = i3;
+                    i5 = 1048575;
                 case 16:
-                    if ((i13 & i) != 0) {
-                        zzb2 = zzii.zzf(i14, unsafe2.getLong(t, j3));
-                        i11 += zzb2;
+                    if ((i16 & i) != 0) {
+                        zzb2 = zzii.zzf(i17, unsafe2.getLong(t, j3));
+                        i15 += zzb2;
                     }
+                    i2 = 1;
+                    i3 = 0;
                     j = 0;
-                    i10 += 3;
-                    i3 = 1048575;
-                    i4 = 1;
+                    i14 += 3;
+                    i6 = i2;
+                    i7 = i3;
+                    i5 = 1048575;
                 case 17:
-                    if ((i13 & i) != 0) {
-                        zzb2 = zzii.zzc(i14, (zzkk) unsafe2.getObject(t, j3), zza(i10));
-                        i11 += zzb2;
+                    if ((i16 & i) != 0) {
+                        zzb2 = zzii.zzc(i17, (zzkk) unsafe2.getObject(t, j3), zza(i14));
+                        i15 += zzb2;
                     }
+                    i2 = 1;
+                    i3 = 0;
                     j = 0;
-                    i10 += 3;
-                    i3 = 1048575;
-                    i4 = 1;
+                    i14 += 3;
+                    i6 = i2;
+                    i7 = i3;
+                    i5 = 1048575;
                 case 18:
-                    zzb2 = zzle.zzi(i14, (List) unsafe2.getObject(t, j3), false);
-                    i11 += zzb2;
+                    zzb2 = zzle.zzi(i17, (List) unsafe2.getObject(t, j3), false);
+                    i15 += zzb2;
+                    i2 = 1;
+                    i3 = 0;
                     j = 0;
-                    i10 += 3;
-                    i3 = 1048575;
-                    i4 = 1;
+                    i14 += 3;
+                    i6 = i2;
+                    i7 = i3;
+                    i5 = 1048575;
                 case 19:
-                    zzh = zzle.zzh(i14, (List) unsafe2.getObject(t, j3), false);
-                    i11 += zzh;
+                    i3 = 0;
+                    zzh = zzle.zzh(i17, (List) unsafe2.getObject(t, j3), false);
+                    i15 += zzh;
+                    i2 = 1;
                     j = 0;
-                    i10 += 3;
-                    i3 = 1048575;
-                    i4 = 1;
+                    i14 += 3;
+                    i6 = i2;
+                    i7 = i3;
+                    i5 = 1048575;
                 case 20:
-                    zzh = zzle.zza(i14, (List<Long>) unsafe2.getObject(t, j3), false);
-                    i11 += zzh;
+                    i3 = 0;
+                    zzh = zzle.zza(i17, (List<Long>) unsafe2.getObject(t, j3), false);
+                    i15 += zzh;
+                    i2 = 1;
                     j = 0;
-                    i10 += 3;
-                    i3 = 1048575;
-                    i4 = 1;
+                    i14 += 3;
+                    i6 = i2;
+                    i7 = i3;
+                    i5 = 1048575;
                 case 21:
-                    zzh = zzle.zzb(i14, (List<Long>) unsafe2.getObject(t, j3), false);
-                    i11 += zzh;
+                    i3 = 0;
+                    zzh = zzle.zzb(i17, (List<Long>) unsafe2.getObject(t, j3), false);
+                    i15 += zzh;
+                    i2 = 1;
                     j = 0;
-                    i10 += 3;
-                    i3 = 1048575;
-                    i4 = 1;
+                    i14 += 3;
+                    i6 = i2;
+                    i7 = i3;
+                    i5 = 1048575;
                 case 22:
-                    zzh = zzle.zze(i14, (List) unsafe2.getObject(t, j3), false);
-                    i11 += zzh;
+                    i3 = 0;
+                    zzh = zzle.zze(i17, (List) unsafe2.getObject(t, j3), false);
+                    i15 += zzh;
+                    i2 = 1;
                     j = 0;
-                    i10 += 3;
-                    i3 = 1048575;
-                    i4 = 1;
+                    i14 += 3;
+                    i6 = i2;
+                    i7 = i3;
+                    i5 = 1048575;
                 case 23:
-                    zzh = zzle.zzi(i14, (List) unsafe2.getObject(t, j3), false);
-                    i11 += zzh;
+                    i3 = 0;
+                    zzh = zzle.zzi(i17, (List) unsafe2.getObject(t, j3), false);
+                    i15 += zzh;
+                    i2 = 1;
                     j = 0;
-                    i10 += 3;
-                    i3 = 1048575;
-                    i4 = 1;
+                    i14 += 3;
+                    i6 = i2;
+                    i7 = i3;
+                    i5 = 1048575;
                 case 24:
-                    zzh = zzle.zzh(i14, (List) unsafe2.getObject(t, j3), false);
-                    i11 += zzh;
+                    i3 = 0;
+                    zzh = zzle.zzh(i17, (List) unsafe2.getObject(t, j3), false);
+                    i15 += zzh;
+                    i2 = 1;
                     j = 0;
-                    i10 += 3;
-                    i3 = 1048575;
-                    i4 = 1;
+                    i14 += 3;
+                    i6 = i2;
+                    i7 = i3;
+                    i5 = 1048575;
                 case 25:
-                    zzh = zzle.zzj(i14, (List) unsafe2.getObject(t, j3), false);
-                    i11 += zzh;
+                    i3 = 0;
+                    zzh = zzle.zzj(i17, (List) unsafe2.getObject(t, j3), false);
+                    i15 += zzh;
+                    i2 = 1;
                     j = 0;
-                    i10 += 3;
-                    i3 = 1048575;
-                    i4 = 1;
+                    i14 += 3;
+                    i6 = i2;
+                    i7 = i3;
+                    i5 = 1048575;
                 case 26:
-                    zzb2 = zzle.zza(i14, (List) unsafe2.getObject(t, j3));
-                    i11 += zzb2;
+                    zzb2 = zzle.zza(i17, (List) unsafe2.getObject(t, j3));
+                    i15 += zzb2;
+                    i2 = 1;
+                    i3 = 0;
                     j = 0;
-                    i10 += 3;
-                    i3 = 1048575;
-                    i4 = 1;
+                    i14 += 3;
+                    i6 = i2;
+                    i7 = i3;
+                    i5 = 1048575;
                 case 27:
-                    zzb2 = zzle.zza(i14, (List<?>) unsafe2.getObject(t, j3), zza(i10));
-                    i11 += zzb2;
+                    zzb2 = zzle.zza(i17, (List<?>) unsafe2.getObject(t, j3), zza(i14));
+                    i15 += zzb2;
+                    i2 = 1;
+                    i3 = 0;
                     j = 0;
-                    i10 += 3;
-                    i3 = 1048575;
-                    i4 = 1;
+                    i14 += 3;
+                    i6 = i2;
+                    i7 = i3;
+                    i5 = 1048575;
                 case 28:
-                    zzb2 = zzle.zzb(i14, (List) unsafe2.getObject(t, j3));
-                    i11 += zzb2;
+                    zzb2 = zzle.zzb(i17, (List) unsafe2.getObject(t, j3));
+                    i15 += zzb2;
+                    i2 = 1;
+                    i3 = 0;
                     j = 0;
-                    i10 += 3;
-                    i3 = 1048575;
-                    i4 = 1;
+                    i14 += 3;
+                    i6 = i2;
+                    i7 = i3;
+                    i5 = 1048575;
                 case 29:
-                    zzb2 = zzle.zzf(i14, (List) unsafe2.getObject(t, j3), false);
-                    i11 += zzb2;
+                    zzb2 = zzle.zzf(i17, (List) unsafe2.getObject(t, j3), false);
+                    i15 += zzb2;
+                    i2 = 1;
+                    i3 = 0;
                     j = 0;
-                    i10 += 3;
-                    i3 = 1048575;
-                    i4 = 1;
+                    i14 += 3;
+                    i6 = i2;
+                    i7 = i3;
+                    i5 = 1048575;
                 case 30:
-                    zzh = zzle.zzd(i14, (List) unsafe2.getObject(t, j3), false);
-                    i11 += zzh;
+                    i3 = 0;
+                    zzh = zzle.zzd(i17, (List) unsafe2.getObject(t, j3), false);
+                    i15 += zzh;
+                    i2 = 1;
                     j = 0;
-                    i10 += 3;
-                    i3 = 1048575;
-                    i4 = 1;
+                    i14 += 3;
+                    i6 = i2;
+                    i7 = i3;
+                    i5 = 1048575;
                 case 31:
-                    zzh = zzle.zzh(i14, (List) unsafe2.getObject(t, j3), false);
-                    i11 += zzh;
+                    i3 = 0;
+                    zzh = zzle.zzh(i17, (List) unsafe2.getObject(t, j3), false);
+                    i15 += zzh;
+                    i2 = 1;
                     j = 0;
-                    i10 += 3;
-                    i3 = 1048575;
-                    i4 = 1;
+                    i14 += 3;
+                    i6 = i2;
+                    i7 = i3;
+                    i5 = 1048575;
                 case 32:
-                    zzh = zzle.zzi(i14, (List) unsafe2.getObject(t, j3), false);
-                    i11 += zzh;
+                    i3 = 0;
+                    zzh = zzle.zzi(i17, (List) unsafe2.getObject(t, j3), false);
+                    i15 += zzh;
+                    i2 = 1;
                     j = 0;
-                    i10 += 3;
-                    i3 = 1048575;
-                    i4 = 1;
+                    i14 += 3;
+                    i6 = i2;
+                    i7 = i3;
+                    i5 = 1048575;
                 case 33:
-                    zzh = zzle.zzg(i14, (List) unsafe2.getObject(t, j3), false);
-                    i11 += zzh;
+                    i3 = 0;
+                    zzh = zzle.zzg(i17, (List) unsafe2.getObject(t, j3), false);
+                    i15 += zzh;
+                    i2 = 1;
                     j = 0;
-                    i10 += 3;
-                    i3 = 1048575;
-                    i4 = 1;
+                    i14 += 3;
+                    i6 = i2;
+                    i7 = i3;
+                    i5 = 1048575;
                 case 34:
-                    zzh = zzle.zzc(i14, (List) unsafe2.getObject(t, j3), false);
-                    i11 += zzh;
+                    i3 = 0;
+                    zzh = zzle.zzc(i17, (List) unsafe2.getObject(t, j3), false);
+                    i15 += zzh;
+                    i2 = 1;
                     j = 0;
-                    i10 += 3;
-                    i3 = 1048575;
-                    i4 = 1;
+                    i14 += 3;
+                    i6 = i2;
+                    i7 = i3;
+                    i5 = 1048575;
                 case 35:
                     zzi = zzle.zzi((List) unsafe2.getObject(t, j3));
                     if (zzi > 0) {
-                        zze = zzii.zze(i14);
+                        zze = zzii.zze(i17);
                         zzg = zzii.zzg(zzi);
                         zzj = zze + zzg + zzi;
-                        i11 += zzj;
+                        i15 += zzj;
                     }
+                    i2 = 1;
+                    i3 = 0;
                     j = 0;
-                    i10 += 3;
-                    i3 = 1048575;
-                    i4 = 1;
+                    i14 += 3;
+                    i6 = i2;
+                    i7 = i3;
+                    i5 = 1048575;
                 case 36:
                     zzi = zzle.zzh((List) unsafe2.getObject(t, j3));
                     if (zzi > 0) {
-                        zze = zzii.zze(i14);
+                        zze = zzii.zze(i17);
                         zzg = zzii.zzg(zzi);
                         zzj = zze + zzg + zzi;
-                        i11 += zzj;
+                        i15 += zzj;
                     }
+                    i2 = 1;
+                    i3 = 0;
                     j = 0;
-                    i10 += 3;
-                    i3 = 1048575;
-                    i4 = 1;
+                    i14 += 3;
+                    i6 = i2;
+                    i7 = i3;
+                    i5 = 1048575;
                 case 37:
                     zzi = zzle.zza((List) unsafe2.getObject(t, j3));
                     if (zzi > 0) {
-                        zze = zzii.zze(i14);
+                        zze = zzii.zze(i17);
                         zzg = zzii.zzg(zzi);
                         zzj = zze + zzg + zzi;
-                        i11 += zzj;
+                        i15 += zzj;
                     }
+                    i2 = 1;
+                    i3 = 0;
                     j = 0;
-                    i10 += 3;
-                    i3 = 1048575;
-                    i4 = 1;
+                    i14 += 3;
+                    i6 = i2;
+                    i7 = i3;
+                    i5 = 1048575;
                 case 38:
                     zzi = zzle.zzb((List) unsafe2.getObject(t, j3));
                     if (zzi > 0) {
-                        zze = zzii.zze(i14);
+                        zze = zzii.zze(i17);
                         zzg = zzii.zzg(zzi);
                         zzj = zze + zzg + zzi;
-                        i11 += zzj;
+                        i15 += zzj;
                     }
+                    i2 = 1;
+                    i3 = 0;
                     j = 0;
-                    i10 += 3;
-                    i3 = 1048575;
-                    i4 = 1;
+                    i14 += 3;
+                    i6 = i2;
+                    i7 = i3;
+                    i5 = 1048575;
                 case 39:
                     zzi = zzle.zze((List) unsafe2.getObject(t, j3));
                     if (zzi > 0) {
-                        zze = zzii.zze(i14);
+                        zze = zzii.zze(i17);
                         zzg = zzii.zzg(zzi);
                         zzj = zze + zzg + zzi;
-                        i11 += zzj;
+                        i15 += zzj;
                     }
+                    i2 = 1;
+                    i3 = 0;
                     j = 0;
-                    i10 += 3;
-                    i3 = 1048575;
-                    i4 = 1;
+                    i14 += 3;
+                    i6 = i2;
+                    i7 = i3;
+                    i5 = 1048575;
                 case 40:
                     zzi = zzle.zzi((List) unsafe2.getObject(t, j3));
                     if (zzi > 0) {
-                        zze = zzii.zze(i14);
+                        zze = zzii.zze(i17);
                         zzg = zzii.zzg(zzi);
                         zzj = zze + zzg + zzi;
-                        i11 += zzj;
+                        i15 += zzj;
                     }
+                    i2 = 1;
+                    i3 = 0;
                     j = 0;
-                    i10 += 3;
-                    i3 = 1048575;
-                    i4 = 1;
+                    i14 += 3;
+                    i6 = i2;
+                    i7 = i3;
+                    i5 = 1048575;
                 case 41:
                     zzi = zzle.zzh((List) unsafe2.getObject(t, j3));
                     if (zzi > 0) {
-                        zze = zzii.zze(i14);
+                        zze = zzii.zze(i17);
                         zzg = zzii.zzg(zzi);
                         zzj = zze + zzg + zzi;
-                        i11 += zzj;
+                        i15 += zzj;
                     }
+                    i2 = 1;
+                    i3 = 0;
                     j = 0;
-                    i10 += 3;
-                    i3 = 1048575;
-                    i4 = 1;
+                    i14 += 3;
+                    i6 = i2;
+                    i7 = i3;
+                    i5 = 1048575;
                 case 42:
                     zzi = zzle.zzj((List) unsafe2.getObject(t, j3));
                     if (zzi > 0) {
-                        zze = zzii.zze(i14);
+                        zze = zzii.zze(i17);
                         zzg = zzii.zzg(zzi);
                         zzj = zze + zzg + zzi;
-                        i11 += zzj;
+                        i15 += zzj;
                     }
+                    i2 = 1;
+                    i3 = 0;
                     j = 0;
-                    i10 += 3;
-                    i3 = 1048575;
-                    i4 = 1;
+                    i14 += 3;
+                    i6 = i2;
+                    i7 = i3;
+                    i5 = 1048575;
                 case 43:
                     zzi = zzle.zzf((List) unsafe2.getObject(t, j3));
                     if (zzi > 0) {
-                        zze = zzii.zze(i14);
+                        zze = zzii.zze(i17);
                         zzg = zzii.zzg(zzi);
                         zzj = zze + zzg + zzi;
-                        i11 += zzj;
+                        i15 += zzj;
                     }
+                    i2 = 1;
+                    i3 = 0;
                     j = 0;
-                    i10 += 3;
-                    i3 = 1048575;
-                    i4 = 1;
+                    i14 += 3;
+                    i6 = i2;
+                    i7 = i3;
+                    i5 = 1048575;
                 case 44:
                     zzi = zzle.zzd((List) unsafe2.getObject(t, j3));
                     if (zzi > 0) {
-                        zze = zzii.zze(i14);
+                        zze = zzii.zze(i17);
                         zzg = zzii.zzg(zzi);
                         zzj = zze + zzg + zzi;
-                        i11 += zzj;
+                        i15 += zzj;
                     }
+                    i2 = 1;
+                    i3 = 0;
                     j = 0;
-                    i10 += 3;
-                    i3 = 1048575;
-                    i4 = 1;
+                    i14 += 3;
+                    i6 = i2;
+                    i7 = i3;
+                    i5 = 1048575;
                 case 45:
                     zzi = zzle.zzh((List) unsafe2.getObject(t, j3));
                     if (zzi > 0) {
-                        zze = zzii.zze(i14);
+                        zze = zzii.zze(i17);
                         zzg = zzii.zzg(zzi);
                         zzj = zze + zzg + zzi;
-                        i11 += zzj;
+                        i15 += zzj;
                     }
+                    i2 = 1;
+                    i3 = 0;
                     j = 0;
-                    i10 += 3;
-                    i3 = 1048575;
-                    i4 = 1;
+                    i14 += 3;
+                    i6 = i2;
+                    i7 = i3;
+                    i5 = 1048575;
                 case 46:
                     zzi = zzle.zzi((List) unsafe2.getObject(t, j3));
                     if (zzi > 0) {
-                        zze = zzii.zze(i14);
+                        zze = zzii.zze(i17);
                         zzg = zzii.zzg(zzi);
                         zzj = zze + zzg + zzi;
-                        i11 += zzj;
+                        i15 += zzj;
                     }
+                    i2 = 1;
+                    i3 = 0;
                     j = 0;
-                    i10 += 3;
-                    i3 = 1048575;
-                    i4 = 1;
+                    i14 += 3;
+                    i6 = i2;
+                    i7 = i3;
+                    i5 = 1048575;
                 case 47:
                     zzi = zzle.zzg((List) unsafe2.getObject(t, j3));
                     if (zzi > 0) {
-                        zze = zzii.zze(i14);
+                        zze = zzii.zze(i17);
                         zzg = zzii.zzg(zzi);
                         zzj = zze + zzg + zzi;
-                        i11 += zzj;
+                        i15 += zzj;
                     }
+                    i2 = 1;
+                    i3 = 0;
                     j = 0;
-                    i10 += 3;
-                    i3 = 1048575;
-                    i4 = 1;
+                    i14 += 3;
+                    i6 = i2;
+                    i7 = i3;
+                    i5 = 1048575;
                 case 48:
                     zzi = zzle.zzc((List) unsafe2.getObject(t, j3));
                     if (zzi > 0) {
-                        zze = zzii.zze(i14);
+                        zze = zzii.zze(i17);
                         zzg = zzii.zzg(zzi);
                         zzj = zze + zzg + zzi;
-                        i11 += zzj;
+                        i15 += zzj;
                     }
+                    i2 = 1;
+                    i3 = 0;
                     j = 0;
-                    i10 += 3;
-                    i3 = 1048575;
-                    i4 = 1;
+                    i14 += 3;
+                    i6 = i2;
+                    i7 = i3;
+                    i5 = 1048575;
                 case 49:
-                    zzb2 = zzle.zzb(i14, (List) unsafe2.getObject(t, j3), zza(i10));
-                    i11 += zzb2;
+                    zzb2 = zzle.zzb(i17, (List) unsafe2.getObject(t, j3), zza(i14));
+                    i15 += zzb2;
+                    i2 = 1;
+                    i3 = 0;
                     j = 0;
-                    i10 += 3;
-                    i3 = 1048575;
-                    i4 = 1;
+                    i14 += 3;
+                    i6 = i2;
+                    i7 = i3;
+                    i5 = 1048575;
                 case 50:
-                    zzb2 = this.zzs.zza(i14, unsafe2.getObject(t, j3), zzb(i10));
-                    i11 += zzb2;
+                    zzb2 = this.zzs.zza(i17, unsafe2.getObject(t, j3), zzb(i14));
+                    i15 += zzb2;
+                    i2 = 1;
+                    i3 = 0;
                     j = 0;
-                    i10 += 3;
-                    i3 = 1048575;
-                    i4 = 1;
+                    i14 += 3;
+                    i6 = i2;
+                    i7 = i3;
+                    i5 = 1048575;
                 case 51:
-                    if (zza((zzko<T>) t, i14, i10)) {
-                        zzb2 = zzii.zzb(i14, 0.0d);
-                        i11 += zzb2;
+                    if (zza((zzko<T>) t, i17, i14)) {
+                        zzb2 = zzii.zzb(i17, 0.0d);
+                        i15 += zzb2;
                     }
+                    i2 = 1;
+                    i3 = 0;
                     j = 0;
-                    i10 += 3;
-                    i3 = 1048575;
-                    i4 = 1;
+                    i14 += 3;
+                    i6 = i2;
+                    i7 = i3;
+                    i5 = 1048575;
                 case 52:
-                    if (zza((zzko<T>) t, i14, i10)) {
-                        zzj = zzii.zzb(i14, (float) BitmapDescriptorFactory.HUE_RED);
-                        i11 += zzj;
+                    if (zza((zzko<T>) t, i17, i14)) {
+                        zzj = zzii.zzb(i17, (float) BitmapDescriptorFactory.HUE_RED);
+                        i15 += zzj;
                     }
+                    i2 = 1;
+                    i3 = 0;
                     j = 0;
-                    i10 += 3;
-                    i3 = 1048575;
-                    i4 = 1;
+                    i14 += 3;
+                    i6 = i2;
+                    i7 = i3;
+                    i5 = 1048575;
                 case 53:
-                    if (zza((zzko<T>) t, i14, i10)) {
-                        zzb2 = zzii.zzd(i14, zze(t, j3));
-                        i11 += zzb2;
+                    if (zza((zzko<T>) t, i17, i14)) {
+                        zzb2 = zzii.zzd(i17, zze(t, j3));
+                        i15 += zzb2;
                     }
+                    i2 = 1;
+                    i3 = 0;
                     j = 0;
-                    i10 += 3;
-                    i3 = 1048575;
-                    i4 = 1;
+                    i14 += 3;
+                    i6 = i2;
+                    i7 = i3;
+                    i5 = 1048575;
                 case 54:
-                    if (zza((zzko<T>) t, i14, i10)) {
-                        zzb2 = zzii.zze(i14, zze(t, j3));
-                        i11 += zzb2;
+                    if (zza((zzko<T>) t, i17, i14)) {
+                        zzb2 = zzii.zze(i17, zze(t, j3));
+                        i15 += zzb2;
                     }
+                    i2 = 1;
+                    i3 = 0;
                     j = 0;
-                    i10 += 3;
-                    i3 = 1048575;
-                    i4 = 1;
+                    i14 += 3;
+                    i6 = i2;
+                    i7 = i3;
+                    i5 = 1048575;
                 case 55:
-                    if (zza((zzko<T>) t, i14, i10)) {
-                        zzb2 = zzii.zzf(i14, zzd(t, j3));
-                        i11 += zzb2;
+                    if (zza((zzko<T>) t, i17, i14)) {
+                        zzb2 = zzii.zzf(i17, zzd(t, j3));
+                        i15 += zzb2;
                     }
+                    i2 = 1;
+                    i3 = 0;
                     j = 0;
-                    i10 += 3;
-                    i3 = 1048575;
-                    i4 = 1;
+                    i14 += 3;
+                    i6 = i2;
+                    i7 = i3;
+                    i5 = 1048575;
                 case 56:
-                    if (zza((zzko<T>) t, i14, i10)) {
-                        zzb2 = zzii.zzg(i14, 0L);
-                        i11 += zzb2;
+                    if (zza((zzko<T>) t, i17, i14)) {
+                        zzb2 = zzii.zzg(i17, 0L);
+                        i15 += zzb2;
                     }
+                    i2 = 1;
+                    i3 = 0;
                     j = 0;
-                    i10 += 3;
-                    i3 = 1048575;
-                    i4 = 1;
+                    i14 += 3;
+                    i6 = i2;
+                    i7 = i3;
+                    i5 = 1048575;
                 case 57:
-                    if (zza((zzko<T>) t, i14, i10)) {
-                        zzj = zzii.zzi(i14, 0);
-                        i11 += zzj;
+                    if (zza((zzko<T>) t, i17, i14)) {
+                        zzj = zzii.zzi(i17, 0);
+                        i15 += zzj;
                     }
+                    i2 = 1;
+                    i3 = 0;
                     j = 0;
-                    i10 += 3;
-                    i3 = 1048575;
-                    i4 = 1;
+                    i14 += 3;
+                    i6 = i2;
+                    i7 = i3;
+                    i5 = 1048575;
                 case 58:
-                    if (zza((zzko<T>) t, i14, i10)) {
-                        zzj = zzii.zzb(i14, true);
-                        i11 += zzj;
+                    if (zza((zzko<T>) t, i17, i14)) {
+                        zzj = zzii.zzb(i17, true);
+                        i15 += zzj;
                     }
+                    i2 = 1;
+                    i3 = 0;
                     j = 0;
-                    i10 += 3;
-                    i3 = 1048575;
-                    i4 = 1;
+                    i14 += 3;
+                    i6 = i2;
+                    i7 = i3;
+                    i5 = 1048575;
                 case 59:
-                    if (zza((zzko<T>) t, i14, i10)) {
+                    if (zza((zzko<T>) t, i17, i14)) {
                         Object object2 = unsafe2.getObject(t, j3);
                         if (object2 instanceof zzht) {
-                            zzb2 = zzii.zzc(i14, (zzht) object2);
+                            zzb2 = zzii.zzc(i17, (zzht) object2);
                         } else {
-                            zzb2 = zzii.zzb(i14, (String) object2);
+                            zzb2 = zzii.zzb(i17, (String) object2);
                         }
-                        i11 += zzb2;
+                        i15 += zzb2;
                     }
+                    i2 = 1;
+                    i3 = 0;
                     j = 0;
-                    i10 += 3;
-                    i3 = 1048575;
-                    i4 = 1;
+                    i14 += 3;
+                    i6 = i2;
+                    i7 = i3;
+                    i5 = 1048575;
                 case 60:
-                    if (zza((zzko<T>) t, i14, i10)) {
-                        zzb2 = zzle.zza(i14, unsafe2.getObject(t, j3), zza(i10));
-                        i11 += zzb2;
+                    if (zza((zzko<T>) t, i17, i14)) {
+                        zzb2 = zzle.zza(i17, unsafe2.getObject(t, j3), zza(i14));
+                        i15 += zzb2;
                     }
+                    i2 = 1;
+                    i3 = 0;
                     j = 0;
-                    i10 += 3;
-                    i3 = 1048575;
-                    i4 = 1;
+                    i14 += 3;
+                    i6 = i2;
+                    i7 = i3;
+                    i5 = 1048575;
                 case 61:
-                    if (zza((zzko<T>) t, i14, i10)) {
-                        zzb2 = zzii.zzc(i14, (zzht) unsafe2.getObject(t, j3));
-                        i11 += zzb2;
+                    if (zza((zzko<T>) t, i17, i14)) {
+                        zzb2 = zzii.zzc(i17, (zzht) unsafe2.getObject(t, j3));
+                        i15 += zzb2;
                     }
+                    i2 = 1;
+                    i3 = 0;
                     j = 0;
-                    i10 += 3;
-                    i3 = 1048575;
-                    i4 = 1;
+                    i14 += 3;
+                    i6 = i2;
+                    i7 = i3;
+                    i5 = 1048575;
                 case 62:
-                    if (zza((zzko<T>) t, i14, i10)) {
-                        zzb2 = zzii.zzg(i14, zzd(t, j3));
-                        i11 += zzb2;
+                    if (zza((zzko<T>) t, i17, i14)) {
+                        zzb2 = zzii.zzg(i17, zzd(t, j3));
+                        i15 += zzb2;
                     }
+                    i2 = 1;
+                    i3 = 0;
                     j = 0;
-                    i10 += 3;
-                    i3 = 1048575;
-                    i4 = 1;
+                    i14 += 3;
+                    i6 = i2;
+                    i7 = i3;
+                    i5 = 1048575;
                 case 63:
-                    if (zza((zzko<T>) t, i14, i10)) {
-                        zzb2 = zzii.zzk(i14, zzd(t, j3));
-                        i11 += zzb2;
+                    if (zza((zzko<T>) t, i17, i14)) {
+                        zzb2 = zzii.zzk(i17, zzd(t, j3));
+                        i15 += zzb2;
                     }
+                    i2 = 1;
+                    i3 = 0;
                     j = 0;
-                    i10 += 3;
-                    i3 = 1048575;
-                    i4 = 1;
+                    i14 += 3;
+                    i6 = i2;
+                    i7 = i3;
+                    i5 = 1048575;
                 case 64:
-                    if (zza((zzko<T>) t, i14, i10)) {
-                        zzj = zzii.zzj(i14, 0);
-                        i11 += zzj;
+                    if (zza((zzko<T>) t, i17, i14)) {
+                        zzj = zzii.zzj(i17, 0);
+                        i15 += zzj;
                     }
+                    i2 = 1;
+                    i3 = 0;
                     j = 0;
-                    i10 += 3;
-                    i3 = 1048575;
-                    i4 = 1;
+                    i14 += 3;
+                    i6 = i2;
+                    i7 = i3;
+                    i5 = 1048575;
                 case 65:
-                    if (zza((zzko<T>) t, i14, i10)) {
-                        zzb2 = zzii.zzh(i14, 0L);
-                        i11 += zzb2;
+                    if (zza((zzko<T>) t, i17, i14)) {
+                        zzb2 = zzii.zzh(i17, 0L);
+                        i15 += zzb2;
                     }
+                    i2 = 1;
+                    i3 = 0;
                     j = 0;
-                    i10 += 3;
-                    i3 = 1048575;
-                    i4 = 1;
+                    i14 += 3;
+                    i6 = i2;
+                    i7 = i3;
+                    i5 = 1048575;
                 case 66:
-                    if (zza((zzko<T>) t, i14, i10)) {
-                        zzb2 = zzii.zzh(i14, zzd(t, j3));
-                        i11 += zzb2;
+                    if (zza((zzko<T>) t, i17, i14)) {
+                        zzb2 = zzii.zzh(i17, zzd(t, j3));
+                        i15 += zzb2;
                     }
+                    i2 = 1;
+                    i3 = 0;
                     j = 0;
-                    i10 += 3;
-                    i3 = 1048575;
-                    i4 = 1;
+                    i14 += 3;
+                    i6 = i2;
+                    i7 = i3;
+                    i5 = 1048575;
                 case 67:
-                    if (zza((zzko<T>) t, i14, i10)) {
-                        zzb2 = zzii.zzf(i14, zze(t, j3));
-                        i11 += zzb2;
+                    if (zza((zzko<T>) t, i17, i14)) {
+                        zzb2 = zzii.zzf(i17, zze(t, j3));
+                        i15 += zzb2;
                     }
+                    i2 = 1;
+                    i3 = 0;
                     j = 0;
-                    i10 += 3;
-                    i3 = 1048575;
-                    i4 = 1;
+                    i14 += 3;
+                    i6 = i2;
+                    i7 = i3;
+                    i5 = 1048575;
                 case 68:
-                    if (zza((zzko<T>) t, i14, i10)) {
-                        zzb2 = zzii.zzc(i14, (zzkk) unsafe2.getObject(t, j3), zza(i10));
-                        i11 += zzb2;
+                    if (zza((zzko<T>) t, i17, i14)) {
+                        zzb2 = zzii.zzc(i17, (zzkk) unsafe2.getObject(t, j3), zza(i14));
+                        i15 += zzb2;
                     }
+                    i2 = 1;
+                    i3 = 0;
                     j = 0;
-                    i10 += 3;
-                    i3 = 1048575;
-                    i4 = 1;
+                    i14 += 3;
+                    i6 = i2;
+                    i7 = i3;
+                    i5 = 1048575;
                 default:
+                    i2 = 1;
+                    i3 = 0;
                     j = 0;
-                    i10 += 3;
-                    i3 = 1048575;
-                    i4 = 1;
+                    i14 += 3;
+                    i6 = i2;
+                    i7 = i3;
+                    i5 = 1048575;
             }
-            i10 += 3;
-            i3 = 1048575;
-            i4 = 1;
+            i14 += 3;
+            i6 = i2;
+            i7 = i3;
+            i5 = 1048575;
         }
-        int i18 = 0;
-        int zza2 = i11 + zza((zzlu) this.zzq, (Object) t);
+        int i21 = i7;
+        int zza2 = i15 + zza((zzlu) this.zzq, (Object) t);
         if (this.zzh) {
             zziu<?> zza3 = this.zzr.zza(t);
-            for (int i19 = 0; i19 < zza3.zza.zzc(); i19++) {
-                Map.Entry<?, Object> zzb4 = zza3.zza.zzb(i19);
-                i18 += zziu.zzc((zziw) zzb4.getKey(), zzb4.getValue());
+            for (int i22 = i21; i22 < zza3.zza.zzc(); i22++) {
+                Map.Entry<?, Object> zzb4 = zza3.zza.zzb(i22);
+                i21 += zziu.zzc((zziw) zzb4.getKey(), zzb4.getValue());
             }
             for (Map.Entry<?, Object> entry : zza3.zza.zzd()) {
-                i18 += zziu.zzc((zziw) entry.getKey(), entry.getValue());
+                i21 += zziu.zzc((zziw) entry.getKey(), entry.getValue());
             }
-            return zza2 + i18;
+            return zza2 + i21;
         }
         return zza2;
     }
@@ -2050,15 +2262,16 @@ public final class zzko<T> implements zzlc<T> {
         throw new UnsupportedOperationException("Method not decompiled: com.google.android.gms.internal.vision.zzko.zza(java.lang.Object, com.google.android.gms.internal.vision.zzmr):void");
     }
 
+    /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
     /* JADX WARN: Removed duplicated region for block: B:10:0x0031  */
-    /* JADX WARN: Removed duplicated region for block: B:170:0x0491  */
+    /* JADX WARN: Removed duplicated region for block: B:171:0x048b  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct add '--show-bad-code' argument
     */
     private final void zzb(T r18, com.google.android.gms.internal.vision.zzmr r19) throws java.io.IOException {
         /*
-            Method dump skipped, instructions count: 1338
+            Method dump skipped, instructions count: 1332
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: com.google.android.gms.internal.vision.zzko.zzb(java.lang.Object, com.google.android.gms.internal.vision.zzmr):void");
@@ -2781,8 +2994,8 @@ public final class zzko<T> implements zzlc<T> {
         int i10;
         int i11;
         int i12;
-        boolean z;
         int i13;
+        boolean z;
         T t3;
         byte[] bArr2;
         zzhn zzhnVar2;
@@ -2795,6 +3008,7 @@ public final class zzko<T> implements zzlc<T> {
         int i17;
         int i18;
         int i19;
+        boolean z2;
         int zzb2;
         int zze;
         T t4;
@@ -2808,10 +3022,10 @@ public final class zzko<T> implements zzlc<T> {
         zzhn zzhnVar3 = zzhnVar;
         Unsafe unsafe2 = zzb;
         int i24 = i;
-        int i25 = -1;
+        int i25 = 0;
         int i26 = 0;
         int i27 = 0;
-        int i28 = 0;
+        int i28 = -1;
         int i29 = 1048575;
         while (true) {
             Object obj2 = null;
@@ -2827,8 +3041,8 @@ public final class zzko<T> implements zzlc<T> {
                 }
                 int i31 = b >>> 3;
                 int i32 = b & 7;
-                if (i31 > i25) {
-                    zzg = zzkoVar2.zza(i31, i26 / 3);
+                if (i31 > i28) {
+                    zzg = zzkoVar2.zza(i31, i25 / 3);
                 } else {
                     zzg = zzkoVar2.zzg(i31);
                 }
@@ -2837,11 +3051,11 @@ public final class zzko<T> implements zzlc<T> {
                     i8 = i31;
                     i9 = i30;
                     i10 = b;
-                    i11 = i28;
+                    i11 = i27;
                     unsafe = unsafe2;
                     i12 = i23;
-                    z = true;
                     i13 = 0;
+                    z = true;
                 } else {
                     int[] iArr = zzkoVar2.zzc;
                     int i34 = iArr[i33 + 1];
@@ -2857,19 +3071,19 @@ public final class zzko<T> implements zzlc<T> {
                                 long j3 = i29;
                                 t4 = t;
                                 j = j2;
-                                unsafe2.putInt(t4, j3, i28);
+                                unsafe2.putInt(t4, j3, i27);
                             } else {
                                 t4 = t;
                                 j = j2;
                             }
-                            i28 = unsafe2.getInt(t4, i39);
+                            i27 = unsafe2.getInt(t4, i39);
                             t5 = t4;
                         } else {
                             t5 = t;
                             j = j2;
                             i39 = i29;
                         }
-                        int i40 = i28;
+                        int i40 = i27;
                         switch (i35) {
                             case 0:
                                 i16 = i31;
@@ -2878,26 +3092,27 @@ public final class zzko<T> implements zzlc<T> {
                                 i18 = i39;
                                 i19 = i36;
                                 long j4 = j;
+                                z2 = true;
                                 if (i32 == 1) {
                                     zzma.zza(t5, j4, zzhl.zzc(bArr3, i30));
                                     i24 = i30 + 8;
-                                    i28 = i11 | i38;
+                                    i27 = i11 | i38;
                                     i29 = i18;
-                                    i27 = i19;
-                                    i26 = i17;
-                                    i25 = i16;
+                                    i26 = i19;
+                                    i25 = i17;
+                                    i28 = i16;
                                     i22 = i2;
                                     i23 = i3;
                                     break;
                                 } else {
                                     i29 = i18;
                                     i12 = i3;
+                                    z = z2;
                                     i9 = i30;
                                     i10 = i19;
                                     unsafe = unsafe2;
                                     i13 = i17;
                                     i8 = i16;
-                                    z = true;
                                     break;
                                 }
                             case 1:
@@ -2910,23 +3125,24 @@ public final class zzko<T> implements zzlc<T> {
                                 if (i32 == 5) {
                                     zzma.zza((Object) t5, j5, zzhl.zzd(bArr3, i30));
                                     i24 = i30 + 4;
-                                    i28 = i11 | i38;
+                                    i27 = i11 | i38;
                                     i29 = i18;
-                                    i27 = i19;
-                                    i26 = i17;
-                                    i25 = i16;
+                                    i26 = i19;
+                                    i25 = i17;
+                                    i28 = i16;
                                     i22 = i2;
                                     i23 = i3;
                                     break;
                                 } else {
+                                    z2 = true;
                                     i29 = i18;
                                     i12 = i3;
+                                    z = z2;
                                     i9 = i30;
                                     i10 = i19;
                                     unsafe = unsafe2;
                                     i13 = i17;
                                     i8 = i16;
-                                    z = true;
                                     break;
                                 }
                             case 2:
@@ -2940,24 +3156,25 @@ public final class zzko<T> implements zzlc<T> {
                                 if (i32 == 0) {
                                     zzb2 = zzhl.zzb(bArr3, i30, zzhnVar3);
                                     unsafe2.putLong(t, j6, zzhnVar3.zzb);
-                                    i28 = i11 | i38;
+                                    i27 = i11 | i38;
                                     i29 = i18;
                                     i24 = zzb2;
-                                    i27 = i19;
-                                    i26 = i17;
-                                    i25 = i16;
+                                    i26 = i19;
+                                    i25 = i17;
+                                    i28 = i16;
                                     i22 = i2;
                                     i23 = i3;
                                     break;
                                 } else {
+                                    z2 = true;
                                     i29 = i18;
                                     i12 = i3;
+                                    z = z2;
                                     i9 = i30;
                                     i10 = i19;
                                     unsafe = unsafe2;
                                     i13 = i17;
                                     i8 = i16;
-                                    z = true;
                                     break;
                                 }
                             case 4:
@@ -2971,23 +3188,24 @@ public final class zzko<T> implements zzlc<T> {
                                 if (i32 == 0) {
                                     i24 = zzhl.zza(bArr3, i30, zzhnVar3);
                                     unsafe2.putInt(t5, j7, zzhnVar3.zza);
-                                    i28 = i11 | i38;
+                                    i27 = i11 | i38;
                                     i29 = i18;
-                                    i27 = i19;
-                                    i26 = i17;
-                                    i25 = i16;
+                                    i26 = i19;
+                                    i25 = i17;
+                                    i28 = i16;
                                     i22 = i2;
                                     i23 = i3;
                                     break;
                                 } else {
+                                    z2 = true;
                                     i29 = i18;
                                     i12 = i3;
+                                    z = z2;
                                     i9 = i30;
                                     i10 = i19;
                                     unsafe = unsafe2;
                                     i13 = i17;
                                     i8 = i16;
-                                    z = true;
                                     break;
                                 }
                             case 5:
@@ -3001,23 +3219,24 @@ public final class zzko<T> implements zzlc<T> {
                                 if (i32 == 1) {
                                     unsafe2.putLong(t, j8, zzhl.zzb(bArr3, i30));
                                     i24 = i30 + 8;
-                                    i28 = i11 | i38;
+                                    i27 = i11 | i38;
                                     i29 = i18;
-                                    i27 = i19;
-                                    i26 = i17;
-                                    i25 = i16;
+                                    i26 = i19;
+                                    i25 = i17;
+                                    i28 = i16;
                                     i22 = i2;
                                     i23 = i3;
                                     break;
                                 } else {
+                                    z2 = true;
                                     i29 = i18;
                                     i12 = i3;
+                                    z = z2;
                                     i9 = i30;
                                     i10 = i19;
                                     unsafe = unsafe2;
                                     i13 = i17;
                                     i8 = i16;
-                                    z = true;
                                     break;
                                 }
                             case 6:
@@ -3031,23 +3250,24 @@ public final class zzko<T> implements zzlc<T> {
                                 if (i32 == 5) {
                                     unsafe2.putInt(t5, j9, zzhl.zza(bArr3, i30));
                                     i24 = i30 + 4;
-                                    i28 = i11 | i38;
+                                    i27 = i11 | i38;
                                     i29 = i18;
-                                    i27 = i19;
-                                    i26 = i17;
-                                    i25 = i16;
+                                    i26 = i19;
+                                    i25 = i17;
+                                    i28 = i16;
                                     i22 = i2;
                                     i23 = i3;
                                     break;
                                 } else {
+                                    z2 = true;
                                     i29 = i18;
                                     i12 = i3;
+                                    z = z2;
                                     i9 = i30;
                                     i10 = i19;
                                     unsafe = unsafe2;
                                     i13 = i17;
                                     i8 = i16;
-                                    z = true;
                                     break;
                                 }
                             case 7:
@@ -3060,23 +3280,24 @@ public final class zzko<T> implements zzlc<T> {
                                 if (i32 == 0) {
                                     i24 = zzhl.zzb(bArr3, i30, zzhnVar3);
                                     zzma.zza(t5, j10, zzhnVar3.zzb != 0);
-                                    i28 = i11 | i38;
+                                    i27 = i11 | i38;
                                     i29 = i18;
-                                    i27 = i19;
-                                    i26 = i17;
-                                    i25 = i16;
+                                    i26 = i19;
+                                    i25 = i17;
+                                    i28 = i16;
                                     i22 = i2;
                                     i23 = i3;
                                     break;
                                 } else {
+                                    z2 = true;
                                     i29 = i18;
                                     i12 = i3;
+                                    z = z2;
                                     i9 = i30;
                                     i10 = i19;
                                     unsafe = unsafe2;
                                     i13 = i17;
                                     i8 = i16;
-                                    z = true;
                                     break;
                                 }
                             case 8:
@@ -3093,23 +3314,24 @@ public final class zzko<T> implements zzlc<T> {
                                         i24 = zzhl.zzd(bArr3, i30, zzhnVar3);
                                     }
                                     unsafe2.putObject(t5, j11, zzhnVar3.zzc);
-                                    i28 = i11 | i38;
+                                    i27 = i11 | i38;
                                     i29 = i18;
-                                    i27 = i19;
-                                    i26 = i17;
-                                    i25 = i16;
+                                    i26 = i19;
+                                    i25 = i17;
+                                    i28 = i16;
                                     i22 = i2;
                                     i23 = i3;
                                     break;
                                 } else {
+                                    z2 = true;
                                     i29 = i18;
                                     i12 = i3;
+                                    z = z2;
                                     i9 = i30;
                                     i10 = i19;
                                     unsafe = unsafe2;
                                     i13 = i17;
                                     i8 = i16;
-                                    z = true;
                                     break;
                                 }
                             case 9:
@@ -3127,24 +3349,25 @@ public final class zzko<T> implements zzlc<T> {
                                     }
                                     int i41 = i40 | i38;
                                     i29 = i18;
-                                    i27 = i19;
-                                    i25 = i16;
+                                    i26 = i19;
+                                    i28 = i16;
                                     i22 = i2;
-                                    i28 = i41;
+                                    i27 = i41;
                                     i24 = zza4;
-                                    i26 = i17;
+                                    i25 = i17;
                                     i23 = i3;
                                     break;
                                 } else {
                                     i11 = i40;
+                                    z2 = true;
                                     i29 = i18;
                                     i12 = i3;
+                                    z = z2;
                                     i9 = i30;
                                     i10 = i19;
                                     unsafe = unsafe2;
                                     i13 = i17;
                                     i8 = i16;
-                                    z = true;
                                     break;
                                 }
                             case 10:
@@ -3156,25 +3379,26 @@ public final class zzko<T> implements zzlc<T> {
                                 if (i32 == 2) {
                                     zze = zzhl.zze(bArr3, i30, zzhnVar3);
                                     unsafe2.putObject(t5, j13, zzhnVar3.zzc);
-                                    i28 = i40 | i38;
+                                    i27 = i40 | i38;
                                     i29 = i18;
                                     i24 = zze;
-                                    i27 = i19;
-                                    i26 = i17;
-                                    i25 = i16;
+                                    i26 = i19;
+                                    i25 = i17;
+                                    i28 = i16;
                                     i22 = i2;
                                     i23 = i3;
                                     break;
                                 } else {
                                     i11 = i40;
+                                    z2 = true;
                                     i29 = i18;
                                     i12 = i3;
+                                    z = z2;
                                     i9 = i30;
                                     i10 = i19;
                                     unsafe = unsafe2;
                                     i13 = i17;
                                     i8 = i16;
-                                    z = true;
                                     break;
                                 }
                             case 12:
@@ -3185,14 +3409,15 @@ public final class zzko<T> implements zzlc<T> {
                                 long j14 = j;
                                 if (i32 != 0) {
                                     i11 = i40;
+                                    z2 = true;
                                     i29 = i18;
                                     i12 = i3;
+                                    z = z2;
                                     i9 = i30;
                                     i10 = i19;
                                     unsafe = unsafe2;
                                     i13 = i17;
                                     i8 = i16;
-                                    z = true;
                                     break;
                                 } else {
                                     zze = zzhl.zza(bArr3, i30, zzhnVar3);
@@ -3200,22 +3425,22 @@ public final class zzko<T> implements zzlc<T> {
                                     zzjg zzc = zzkoVar2.zzc(i17);
                                     if (zzc == null || zzc.zza(i42)) {
                                         unsafe2.putInt(t5, j14, i42);
-                                        i28 = i40 | i38;
+                                        i27 = i40 | i38;
                                         i29 = i18;
                                         i24 = zze;
-                                        i27 = i19;
-                                        i26 = i17;
-                                        i25 = i16;
+                                        i26 = i19;
+                                        i25 = i17;
+                                        i28 = i16;
                                         i22 = i2;
                                         i23 = i3;
                                         break;
                                     } else {
                                         zze(t).zza(i19, Long.valueOf(i42));
                                         i24 = zze;
-                                        i28 = i40;
-                                        i27 = i19;
-                                        i26 = i17;
-                                        i25 = i16;
+                                        i27 = i40;
+                                        i26 = i19;
+                                        i25 = i17;
+                                        i28 = i16;
                                         i29 = i18;
                                         i22 = i2;
                                         i23 = i3;
@@ -3231,25 +3456,26 @@ public final class zzko<T> implements zzlc<T> {
                                 if (i32 == 0) {
                                     zze = zzhl.zza(bArr3, i30, zzhnVar3);
                                     unsafe2.putInt(t5, j15, zzif.zze(zzhnVar3.zza));
-                                    i28 = i40 | i38;
+                                    i27 = i40 | i38;
                                     i29 = i18;
                                     i24 = zze;
-                                    i27 = i19;
-                                    i26 = i17;
-                                    i25 = i16;
+                                    i26 = i19;
+                                    i25 = i17;
+                                    i28 = i16;
                                     i22 = i2;
                                     i23 = i3;
                                     break;
                                 } else {
                                     i11 = i40;
+                                    z2 = true;
                                     i29 = i18;
                                     i12 = i3;
+                                    z = z2;
                                     i9 = i30;
                                     i10 = i19;
                                     unsafe = unsafe2;
                                     i13 = i17;
                                     i8 = i16;
-                                    z = true;
                                     break;
                                 }
                             case 16:
@@ -3261,12 +3487,12 @@ public final class zzko<T> implements zzlc<T> {
                                     i18 = i39;
                                     i19 = i36;
                                     unsafe2.putLong(t, j16, zzif.zza(zzhnVar3.zzb));
-                                    i28 = i40 | i38;
+                                    i27 = i40 | i38;
                                     i29 = i18;
                                     i24 = zzb2;
-                                    i27 = i19;
-                                    i26 = i17;
-                                    i25 = i16;
+                                    i26 = i19;
+                                    i25 = i17;
+                                    i28 = i16;
                                     i22 = i2;
                                     i23 = i3;
                                     break;
@@ -3274,14 +3500,15 @@ public final class zzko<T> implements zzlc<T> {
                                     i18 = i39;
                                     i19 = i36;
                                     i11 = i40;
+                                    z2 = true;
                                     i29 = i18;
                                     i12 = i3;
+                                    z = z2;
                                     i9 = i30;
                                     i10 = i19;
                                     unsafe = unsafe2;
                                     i13 = i17;
                                     i8 = i16;
-                                    z = true;
                                     break;
                                 }
                             case 17:
@@ -3295,11 +3522,11 @@ public final class zzko<T> implements zzlc<T> {
                                         long j17 = j;
                                         unsafe2.putObject(t5, j17, zzjf.zza(unsafe2.getObject(t5, j17), zzhnVar3.zzc));
                                     }
-                                    i28 = i40 | i38;
-                                    i27 = i36;
+                                    i27 = i40 | i38;
+                                    i26 = i36;
                                     i29 = i39;
-                                    i26 = i17;
-                                    i25 = i16;
+                                    i25 = i17;
+                                    i28 = i16;
                                     i22 = i2;
                                     i23 = i3;
                                     break;
@@ -3309,14 +3536,15 @@ public final class zzko<T> implements zzlc<T> {
                                     i11 = i40;
                                     i18 = i39;
                                     i19 = i36;
+                                    z2 = true;
                                     i29 = i18;
                                     i12 = i3;
+                                    z = z2;
                                     i9 = i30;
                                     i10 = i19;
                                     unsafe = unsafe2;
                                     i13 = i17;
                                     i8 = i16;
-                                    z = true;
                                     break;
                                 }
                             default:
@@ -3325,18 +3553,19 @@ public final class zzko<T> implements zzlc<T> {
                                 i11 = i40;
                                 i18 = i39;
                                 i19 = i36;
+                                z2 = true;
                                 i29 = i18;
                                 i12 = i3;
+                                z = z2;
                                 i9 = i30;
                                 i10 = i19;
                                 unsafe = unsafe2;
                                 i13 = i17;
                                 i8 = i16;
-                                z = true;
                                 break;
                         }
                     } else {
-                        i11 = i28;
+                        i11 = i27;
                         int i43 = i29;
                         t5 = t;
                         if (i35 != 27) {
@@ -3357,11 +3586,11 @@ public final class zzko<T> implements zzlc<T> {
                                     i22 = i2;
                                     zzhnVar3 = zzhnVar;
                                     i23 = i12;
-                                    i27 = i21;
+                                    i26 = i21;
                                     i29 = i43;
-                                    i28 = i11;
-                                    i26 = i13;
-                                    i25 = i8;
+                                    i27 = i11;
+                                    i25 = i13;
+                                    i28 = i8;
                                     unsafe2 = unsafe;
                                     zzkoVar2 = this;
                                 }
@@ -3379,12 +3608,12 @@ public final class zzko<T> implements zzlc<T> {
                                         bArr3 = bArr;
                                         i22 = i2;
                                         zzhnVar3 = zzhnVar;
-                                        i27 = i21;
+                                        i26 = i21;
                                         i23 = i12;
                                         i29 = i43;
-                                        i28 = i11;
-                                        i26 = i13;
-                                        i25 = i8;
+                                        i27 = i11;
+                                        i25 = i13;
+                                        i28 = i8;
                                         unsafe2 = unsafe;
                                         zzkoVar2 = this;
                                     }
@@ -3396,11 +3625,11 @@ public final class zzko<T> implements zzlc<T> {
                                         i22 = i2;
                                         zzhnVar3 = zzhnVar;
                                         i23 = i12;
-                                        i27 = i21;
+                                        i26 = i21;
                                         i29 = i43;
-                                        i28 = i11;
-                                        i26 = i13;
-                                        i25 = i8;
+                                        i27 = i11;
+                                        i25 = i13;
+                                        i28 = i8;
                                         unsafe2 = unsafe;
                                         zzkoVar2 = this;
                                     }
@@ -3418,11 +3647,11 @@ public final class zzko<T> implements zzlc<T> {
                             }
                             i24 = zzhl.zza(zzkoVar2.zza(i33), i36, bArr, i30, i2, zzjlVar, zzhnVar);
                             i23 = i3;
-                            i27 = i36;
-                            i25 = i31;
+                            i26 = i36;
+                            i28 = i31;
                             i29 = i43;
-                            i28 = i11;
-                            i26 = i33;
+                            i27 = i11;
+                            i25 = i33;
                             i22 = i2;
                         } else {
                             i13 = i33;
@@ -3458,7 +3687,7 @@ public final class zzko<T> implements zzlc<T> {
                                 zzcVar.zza();
                                 zziu<zzjb.zzf> zziuVar = zzcVar.zzc;
                                 zzjb.zzf zzfVar = zza5.zzd;
-                                boolean z2 = zzfVar.zzd;
+                                boolean z3 = zzfVar.zzd;
                                 zzml zzmlVar = zzfVar.zzc;
                                 if (zzmlVar == zzml.zzn) {
                                     zzhl.zza(bArr, i9, zzhnVar2);
@@ -3609,13 +3838,13 @@ public final class zzko<T> implements zzlc<T> {
                                 }
                                 i24 = i9;
                             }
-                            i27 = i10;
+                            i26 = i10;
                             zzkoVar2 = this;
                             bArr3 = bArr2;
                             t5 = t3;
-                            i28 = i11;
-                            i26 = i13;
-                            i25 = i8;
+                            i27 = i11;
+                            i25 = i13;
+                            i28 = i8;
                             i22 = i15;
                             i23 = i45;
                             zzhnVar3 = zzhnVar2;
@@ -3633,13 +3862,13 @@ public final class zzko<T> implements zzlc<T> {
                     i14 = i29;
                     i15 = i2;
                     i24 = zzhl.zza(i10, bArr, i9, i2, zze(t), zzhnVar);
-                    i27 = i10;
+                    i26 = i10;
                     zzkoVar2 = this;
                     bArr3 = bArr2;
                     t5 = t3;
-                    i28 = i11;
-                    i26 = i13;
-                    i25 = i8;
+                    i27 = i11;
+                    i25 = i13;
+                    i28 = i8;
                     i22 = i15;
                     i23 = i45;
                     zzhnVar3 = zzhnVar2;
@@ -3650,9 +3879,9 @@ public final class zzko<T> implements zzlc<T> {
                     t2 = t;
                     i24 = i9;
                     i6 = i29;
-                    i27 = i10;
+                    i26 = i10;
                     i4 = i12;
-                    i28 = i11;
+                    i27 = i11;
                     i7 = 1048575;
                     i5 = i2;
                 }
@@ -3668,7 +3897,7 @@ public final class zzko<T> implements zzlc<T> {
             }
         }
         if (i6 != i7) {
-            unsafe.putInt(t2, i6, i28);
+            unsafe.putInt(t2, i6, i27);
         }
         zzlx zzlxVar = null;
         for (int i50 = zzkoVar.zzm; i50 < zzkoVar.zzn; i50++) {
@@ -3681,33 +3910,34 @@ public final class zzko<T> implements zzlc<T> {
             if (i24 != i5) {
                 throw zzjk.zzg();
             }
-        } else if (i24 > i5 || i27 != i4) {
+        } else if (i24 > i5 || i26 != i4) {
             throw zzjk.zzg();
         }
         return i24;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:102:0x02dc, code lost:
-        if (r0 == r5) goto L108;
+    /* JADX WARN: Code restructure failed: missing block: B:101:0x02d1, code lost:
+        if (r0 == r5) goto L136;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:104:0x02e0, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:103:0x02d5, code lost:
         r15 = r30;
         r14 = r31;
         r12 = r32;
         r13 = r34;
         r11 = r35;
         r2 = r18;
+        r10 = r20;
         r1 = r25;
         r6 = r27;
         r7 = r28;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:110:0x0323, code lost:
-        if (r0 == r15) goto L108;
+    /* JADX WARN: Code restructure failed: missing block: B:109:0x031a, code lost:
+        if (r0 == r15) goto L136;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:115:0x0346, code lost:
-        if (r0 == r15) goto L108;
+    /* JADX WARN: Code restructure failed: missing block: B:114:0x033d, code lost:
+        if (r0 == r15) goto L136;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:116:0x0348, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:115:0x033f, code lost:
         r2 = r0;
      */
     /* JADX WARN: Multi-variable type inference failed */
@@ -3719,7 +3949,7 @@ public final class zzko<T> implements zzlc<T> {
     */
     public final void zza(T r31, byte[] r32, int r33, int r34, com.google.android.gms.internal.vision.zzhn r35) throws java.io.IOException {
         /*
-            Method dump skipped, instructions count: 966
+            Method dump skipped, instructions count: 956
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: com.google.android.gms.internal.vision.zzko.zza(java.lang.Object, byte[], int, int, com.google.android.gms.internal.vision.zzhn):void");

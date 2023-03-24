@@ -75,7 +75,7 @@
 
     const-wide/16 v3, 0x64
 
-    mul-long v1, v1, v3
+    mul-long/2addr v1, v3
 
     int-to-long v3, v0
 
@@ -131,7 +131,7 @@
     goto :goto_0
 
     :cond_1
-    const/4 p2, 0x0
+    move p2, v3
 
     .line 495
     :goto_0

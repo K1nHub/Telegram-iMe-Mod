@@ -306,7 +306,7 @@
 
     const v0, 0x3ef1463b
 
-    mul-float p0, p0, v0
+    mul-float/2addr p0, v0
 
     float-to-double v0, p0
 
@@ -546,11 +546,11 @@
 
     mul-float v1, p0, p0
 
-    mul-float v1, v1, p0
+    mul-float/2addr v1, p0
 
-    mul-float v1, v1, p0
+    mul-float/2addr v1, p0
 
-    mul-float v1, v1, p0
+    mul-float/2addr v1, p0
 
     add-float/2addr v1, v0
 
@@ -643,7 +643,7 @@
 
     if-eqz p2, :cond_4
 
-    const/4 v2, 0x1
+    move v2, v1
 
     goto :goto_0
 
@@ -1065,12 +1065,12 @@
     :cond_1
     if-lez p1, :cond_2
 
-    const/4 p1, 0x1
+    move p1, v2
 
     goto :goto_0
 
     :cond_2
-    const/4 p1, 0x0
+    move p1, v0
 
     :goto_0
     if-nez p1, :cond_3
@@ -1170,10 +1170,10 @@
 
     if-eqz v4, :cond_0
 
-    const/4 v2, 0x1
+    move v2, v5
 
     :cond_0
-    mul-int v0, v0, v2
+    mul-int/2addr v0, v2
 
     int-to-float v0, v0
 
@@ -1217,10 +1217,10 @@
     goto :goto_0
 
     :cond_2
-    const/4 v2, 0x1
+    move v2, v5
 
     :goto_0
-    mul-int v0, v0, v2
+    mul-int/2addr v0, v2
 
     int-to-float v0, v0
 
@@ -1241,7 +1241,7 @@
     goto :goto_1
 
     :cond_3
-    const/4 v5, 0x0
+    move v5, v1
 
     :cond_4
     :goto_1
@@ -1348,7 +1348,7 @@
 
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    move v1, v0
 
     .line 1825
     :goto_0
@@ -1382,7 +1382,7 @@
 
     if-eqz v2, :cond_1
 
-    const/4 v3, 0x0
+    move v3, v0
 
     .line 1829
     :goto_1
@@ -2118,12 +2118,12 @@
     :cond_d
     if-gez v3, :cond_e
 
-    const/4 v7, 0x1
+    move v7, v2
 
     goto :goto_2
 
     :cond_e
-    const/4 v7, 0x0
+    move v7, v1
 
     .line 397
     :goto_2
@@ -2237,12 +2237,12 @@
 
     if-gez v3, :cond_12
 
-    const/4 v0, 0x1
+    move v0, v2
 
     goto :goto_4
 
     :cond_12
-    const/4 v0, 0x0
+    move v0, v1
 
     .line 412
     :goto_4
@@ -2465,12 +2465,12 @@
 
     if-gez v7, :cond_1a
 
-    const/4 v7, 0x1
+    move v7, v2
 
     goto :goto_6
 
     :cond_1a
-    const/4 v7, 0x0
+    move v7, v1
 
     .line 443
     :goto_6
@@ -2479,9 +2479,9 @@
     goto :goto_7
 
     :cond_1b
-    const/4 v4, 0x0
+    move v4, v0
 
-    const/4 v6, 0x0
+    move v6, v4
 
     .line 450
     :cond_1c
@@ -2541,12 +2541,12 @@
     if-gez v6, :cond_1e
 
     :goto_8
-    const/4 v6, 0x1
+    move v6, v2
 
     goto :goto_9
 
     :cond_1e
-    const/4 v6, 0x0
+    move v6, v1
 
     :goto_9
     iput-boolean v6, p0, Lorg/telegram/ui/Components/ViewPagerFixed;->backAnimation:Z
@@ -2589,12 +2589,12 @@
 
     if-lez v6, :cond_20
 
-    const/4 v6, 0x1
+    move v6, v2
 
     goto :goto_a
 
     :cond_20
-    const/4 v6, 0x0
+    move v6, v1
 
     :goto_a
     iput-boolean v6, p0, Lorg/telegram/ui/Components/ViewPagerFixed;->backAnimation:Z
@@ -2633,12 +2633,12 @@
 
     if-gez v6, :cond_23
 
-    const/4 v6, 0x1
+    move v6, v2
 
     goto :goto_b
 
     :cond_23
-    const/4 v6, 0x0
+    move v6, v1
 
     :goto_b
     iput-boolean v6, p0, Lorg/telegram/ui/Components/ViewPagerFixed;->backAnimation:Z
@@ -2692,12 +2692,12 @@
     if-gez v6, :cond_26
 
     :cond_25
-    const/4 v6, 0x1
+    move v6, v2
 
     goto :goto_c
 
     :cond_26
-    const/4 v6, 0x0
+    move v6, v1
 
     :goto_c
     iput-boolean v6, p0, Lorg/telegram/ui/Components/ViewPagerFixed;->backAnimation:Z
@@ -2997,7 +2997,7 @@
     goto :goto_e
 
     :cond_2a
-    const/4 p1, 0x0
+    move p1, v0
 
     .line 499
     :cond_2b
@@ -3017,12 +3017,12 @@
 
     if-eqz v7, :cond_2c
 
-    const/4 v7, 0x0
+    move v7, v0
 
     goto :goto_f
 
     :cond_2c
-    const/high16 v7, 0x3f800000    # 1.0f
+    move v7, v5
 
     :goto_f
     aput v7, v6, v2
@@ -3104,7 +3104,7 @@
 
     move-result v3
 
-    mul-float v3, v3, v6
+    mul-float/2addr v3, v6
 
     add-float/2addr v6, v3
 
@@ -3126,7 +3126,7 @@
 
     move-result v0
 
-    mul-float v0, v0, p1
+    mul-float/2addr v0, p1
 
     invoke-static {v0}, Ljava/lang/Math;->round(F)I
 
@@ -3150,7 +3150,7 @@
 
     const/high16 v0, 0x42c80000    # 100.0f
 
-    mul-float p1, p1, v0
+    mul-float/2addr p1, v0
 
     float-to-int p1, p1
 
@@ -3236,7 +3236,7 @@
     if-eqz p1, :cond_33
 
     :cond_32
-    const/4 v1, 0x1
+    move v1, v2
 
     :cond_33
     return v1
@@ -3269,7 +3269,7 @@
 
     if-nez v1, :cond_0
 
-    const/4 p1, 0x0
+    move p1, v2
 
     .line 662
     :cond_0
@@ -3345,7 +3345,7 @@
 
     :cond_4
     :goto_0
-    const/4 v1, 0x0
+    move v1, v2
 
     .line 674
     :goto_1
@@ -3498,7 +3498,7 @@
 
     if-nez v4, :cond_a
 
-    const/4 v4, 0x0
+    move v4, v2
 
     goto :goto_2
 
@@ -3520,7 +3520,7 @@
     :goto_2
     if-ne v4, v1, :cond_b
 
-    const/4 p1, 0x0
+    move p1, v2
 
     :cond_b
     if-eqz p1, :cond_c

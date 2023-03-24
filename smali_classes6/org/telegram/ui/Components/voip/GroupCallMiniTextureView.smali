@@ -624,7 +624,7 @@
 
     move-object/from16 v29, v3
 
-    const/16 v20, 0x0
+    move/from16 v20, v28
 
     move/from16 v3, v19
 
@@ -1685,40 +1685,40 @@
 
     move-result p1
 
-    const/high16 v0, 0x3f800000    # 1.0f
+    const/high16 v0, 0x3f000000    # 0.5f
 
-    const/4 v1, 0x1
+    cmpg-float v0, p1, v0
 
-    const/high16 v2, 0x3f000000    # 0.5f
+    const/high16 v1, 0x3f800000    # 1.0f
 
-    cmpg-float v2, p1, v2
+    const/4 v2, 0x1
 
-    if-gez v2, :cond_0
+    if-gez v0, :cond_0
 
-    const/4 v2, 0x0
+    const/4 v0, 0x0
 
     goto :goto_0
 
     :cond_0
-    sub-float/2addr p1, v0
+    sub-float/2addr p1, v1
 
-    const/4 v2, 0x1
+    move v0, v2
 
     :goto_0
-    if-eqz v2, :cond_1
+    if-eqz v0, :cond_1
 
     .line 1839
-    iget-boolean v2, p0, Lorg/telegram/ui/Components/voip/GroupCallMiniTextureView;->flipHalfReached:Z
+    iget-boolean v0, p0, Lorg/telegram/ui/Components/voip/GroupCallMiniTextureView;->flipHalfReached:Z
 
-    if-nez v2, :cond_1
+    if-nez v0, :cond_1
 
     .line 1840
-    iget-object v2, p0, Lorg/telegram/ui/Components/voip/GroupCallMiniTextureView;->blurredFlippingStub:Landroid/widget/ImageView;
+    iget-object v0, p0, Lorg/telegram/ui/Components/voip/GroupCallMiniTextureView;->blurredFlippingStub:Landroid/widget/ImageView;
 
-    invoke-virtual {v2, v0}, Landroid/widget/ImageView;->setAlpha(F)V
+    invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setAlpha(F)V
 
     .line 1841
-    iput-boolean v1, p0, Lorg/telegram/ui/Components/voip/GroupCallMiniTextureView;->flipHalfReached:Z
+    iput-boolean v2, p0, Lorg/telegram/ui/Components/voip/GroupCallMiniTextureView;->flipHalfReached:Z
 
     .line 1842
     iget-object v0, p0, Lorg/telegram/ui/Components/voip/GroupCallMiniTextureView;->textureView:Lorg/telegram/ui/Components/voip/VoIPTextureView;
@@ -1730,7 +1730,7 @@
     :cond_1
     const/high16 v0, 0x43340000    # 180.0f
 
-    mul-float p1, p1, v0
+    mul-float/2addr p1, v0
 
     .line 1846
     iget-object v0, p0, Lorg/telegram/ui/Components/voip/GroupCallMiniTextureView;->blurredFlippingStub:Landroid/widget/ImageView;
@@ -1837,7 +1837,7 @@
 .end method
 
 .method private loadThumb()V
-    .locals 19
+    .locals 18
 
     move-object/from16 v0, p0
 
@@ -1938,23 +1938,23 @@
     :cond_2
     const-wide/16 v3, 0x0
 
-    const v5, 0x3ecccccd    # 0.4f
+    cmp-long v3, v1, v3
 
-    const/4 v6, 0x0
+    const v4, 0x3ecccccd    # 0.4f
 
-    const/4 v7, 0x2
+    const/4 v5, 0x0
 
-    const/4 v8, -0x1
+    const/4 v6, 0x2
 
-    const v9, 0x3e4ccccd    # 0.2f
+    const/4 v7, -0x1
 
-    const/4 v10, 0x1
+    const v8, 0x3e4ccccd    # 0.2f
 
-    const/high16 v11, -0x1000000
+    const/4 v9, 0x1
 
-    cmp-long v12, v1, v3
+    const/high16 v10, -0x1000000
 
-    if-lez v12, :cond_4
+    if-lez v3, :cond_4
 
     .line 1235
     iget v3, v0, Lorg/telegram/ui/Components/voip/GroupCallMiniTextureView;->currentAccount:I
@@ -1972,9 +1972,9 @@
     move-result-object v1
 
     .line 1236
-    invoke-static {v1, v10}, Lorg/telegram/messenger/ImageLocation;->getForUser(Lorg/telegram/tgnet/TLRPC$User;I)Lorg/telegram/messenger/ImageLocation;
+    invoke-static {v1, v9}, Lorg/telegram/messenger/ImageLocation;->getForUser(Lorg/telegram/tgnet/TLRPC$User;I)Lorg/telegram/messenger/ImageLocation;
 
-    move-result-object v13
+    move-result-object v12
 
     if-eqz v1, :cond_3
 
@@ -1988,44 +1988,44 @@
     goto :goto_1
 
     :cond_3
-    invoke-static {v11, v8, v9}, Landroidx/core/graphics/ColorUtils;->blendARGB(IIF)I
+    invoke-static {v10, v7, v8}, Landroidx/core/graphics/ColorUtils;->blendARGB(IIF)I
 
     move-result v2
 
     .line 1238
     :goto_1
-    new-instance v15, Landroid/graphics/drawable/GradientDrawable;
+    new-instance v14, Landroid/graphics/drawable/GradientDrawable;
 
     sget-object v3, Landroid/graphics/drawable/GradientDrawable$Orientation;->BOTTOM_TOP:Landroid/graphics/drawable/GradientDrawable$Orientation;
 
-    new-array v4, v7, [I
+    new-array v6, v6, [I
 
-    invoke-static {v2, v11, v9}, Landroidx/core/graphics/ColorUtils;->blendARGB(IIF)I
+    invoke-static {v2, v10, v8}, Landroidx/core/graphics/ColorUtils;->blendARGB(IIF)I
 
     move-result v7
 
-    aput v7, v4, v6
+    aput v7, v6, v5
 
-    invoke-static {v2, v11, v5}, Landroidx/core/graphics/ColorUtils;->blendARGB(IIF)I
+    invoke-static {v2, v10, v4}, Landroidx/core/graphics/ColorUtils;->blendARGB(IIF)I
 
     move-result v2
 
-    aput v2, v4, v10
+    aput v2, v6, v9
 
-    invoke-direct {v15, v3, v4}, Landroid/graphics/drawable/GradientDrawable;-><init>(Landroid/graphics/drawable/GradientDrawable$Orientation;[I)V
+    invoke-direct {v14, v3, v6}, Landroid/graphics/drawable/GradientDrawable;-><init>(Landroid/graphics/drawable/GradientDrawable$Orientation;[I)V
 
     .line 1239
-    iget-object v12, v0, Lorg/telegram/ui/Components/voip/GroupCallMiniTextureView;->imageReceiver:Lorg/telegram/messenger/ImageReceiver;
+    iget-object v11, v0, Lorg/telegram/ui/Components/voip/GroupCallMiniTextureView;->imageReceiver:Lorg/telegram/messenger/ImageReceiver;
 
-    const/16 v16, 0x0
+    const/4 v15, 0x0
 
-    const/16 v18, 0x0
+    const/16 v17, 0x0
 
-    const-string v14, "50_50_b"
+    const-string v13, "50_50_b"
 
-    move-object/from16 v17, v1
+    move-object/from16 v16, v1
 
-    invoke-virtual/range {v12 .. v18}, Lorg/telegram/messenger/ImageReceiver;->setImage(Lorg/telegram/messenger/ImageLocation;Ljava/lang/String;Landroid/graphics/drawable/Drawable;Ljava/lang/String;Ljava/lang/Object;I)V
+    invoke-virtual/range {v11 .. v17}, Lorg/telegram/messenger/ImageReceiver;->setImage(Lorg/telegram/messenger/ImageLocation;Ljava/lang/String;Landroid/graphics/drawable/Drawable;Ljava/lang/String;Ljava/lang/Object;I)V
 
     goto :goto_3
 
@@ -2048,9 +2048,9 @@
     move-result-object v1
 
     .line 1242
-    invoke-static {v1, v10}, Lorg/telegram/messenger/ImageLocation;->getForChat(Lorg/telegram/tgnet/TLRPC$Chat;I)Lorg/telegram/messenger/ImageLocation;
+    invoke-static {v1, v9}, Lorg/telegram/messenger/ImageLocation;->getForChat(Lorg/telegram/tgnet/TLRPC$Chat;I)Lorg/telegram/messenger/ImageLocation;
 
-    move-result-object v13
+    move-result-object v12
 
     if-eqz v1, :cond_5
 
@@ -2064,44 +2064,44 @@
     goto :goto_2
 
     :cond_5
-    invoke-static {v11, v8, v9}, Landroidx/core/graphics/ColorUtils;->blendARGB(IIF)I
+    invoke-static {v10, v7, v8}, Landroidx/core/graphics/ColorUtils;->blendARGB(IIF)I
 
     move-result v2
 
     .line 1244
     :goto_2
-    new-instance v15, Landroid/graphics/drawable/GradientDrawable;
+    new-instance v14, Landroid/graphics/drawable/GradientDrawable;
 
     sget-object v3, Landroid/graphics/drawable/GradientDrawable$Orientation;->BOTTOM_TOP:Landroid/graphics/drawable/GradientDrawable$Orientation;
 
-    new-array v4, v7, [I
+    new-array v6, v6, [I
 
-    invoke-static {v2, v11, v9}, Landroidx/core/graphics/ColorUtils;->blendARGB(IIF)I
+    invoke-static {v2, v10, v8}, Landroidx/core/graphics/ColorUtils;->blendARGB(IIF)I
 
     move-result v7
 
-    aput v7, v4, v6
+    aput v7, v6, v5
 
-    invoke-static {v2, v11, v5}, Landroidx/core/graphics/ColorUtils;->blendARGB(IIF)I
+    invoke-static {v2, v10, v4}, Landroidx/core/graphics/ColorUtils;->blendARGB(IIF)I
 
     move-result v2
 
-    aput v2, v4, v10
+    aput v2, v6, v9
 
-    invoke-direct {v15, v3, v4}, Landroid/graphics/drawable/GradientDrawable;-><init>(Landroid/graphics/drawable/GradientDrawable$Orientation;[I)V
+    invoke-direct {v14, v3, v6}, Landroid/graphics/drawable/GradientDrawable;-><init>(Landroid/graphics/drawable/GradientDrawable$Orientation;[I)V
 
     .line 1245
-    iget-object v12, v0, Lorg/telegram/ui/Components/voip/GroupCallMiniTextureView;->imageReceiver:Lorg/telegram/messenger/ImageReceiver;
+    iget-object v11, v0, Lorg/telegram/ui/Components/voip/GroupCallMiniTextureView;->imageReceiver:Lorg/telegram/messenger/ImageReceiver;
 
-    const/16 v16, 0x0
+    const/4 v15, 0x0
 
-    const/16 v18, 0x0
+    const/16 v17, 0x0
 
-    const-string v14, "50_50_b"
+    const-string v13, "50_50_b"
 
-    move-object/from16 v17, v1
+    move-object/from16 v16, v1
 
-    invoke-virtual/range {v12 .. v18}, Lorg/telegram/messenger/ImageReceiver;->setImage(Lorg/telegram/messenger/ImageLocation;Ljava/lang/String;Landroid/graphics/drawable/Drawable;Ljava/lang/String;Ljava/lang/Object;I)V
+    invoke-virtual/range {v11 .. v17}, Lorg/telegram/messenger/ImageReceiver;->setImage(Lorg/telegram/messenger/ImageLocation;Ljava/lang/String;Landroid/graphics/drawable/Drawable;Ljava/lang/String;Ljava/lang/Object;I)V
 
     :cond_6
     :goto_3
@@ -2109,7 +2109,7 @@
 .end method
 
 .method private updateIconColor(Z)V
-    .locals 9
+    .locals 10
 
     .line 1502
     iget-object v0, p0, Lorg/telegram/ui/Components/voip/GroupCallMiniTextureView;->statusIcon:Lorg/telegram/ui/Components/voip/GroupCallStatusIcon;
@@ -2165,9 +2165,11 @@
 
     const/4 v1, -0x1
 
+    move v9, v1
+
     move v1, v0
 
-    const/4 v0, -0x1
+    move v0, v9
 
     .line 1516
     :goto_1
@@ -2257,6 +2259,8 @@
 
     :goto_2
     return-void
+
+    nop
 
     :array_0
     .array-data 4
@@ -2407,13 +2411,13 @@
 
     iget v5, v4, Lorg/telegram/ui/Components/voip/GroupCallRenderersContainer;->progressToFullscreenMode:F
 
-    mul-float v3, v3, v5
+    mul-float/2addr v3, v5
 
     iget v4, v4, Lorg/telegram/ui/Components/voip/GroupCallRenderersContainer;->progressToHideUi:F
 
     sub-float v4, v2, v4
 
-    mul-float v3, v3, v4
+    mul-float/2addr v3, v4
 
     sub-float/2addr v0, v3
 
@@ -2538,7 +2542,7 @@
 
     iget v7, v7, Lorg/telegram/ui/Components/voip/VoIPTextureView;->currentClipHorizontal:F
 
-    mul-float v7, v7, v6
+    mul-float/2addr v7, v6
 
     sub-float/2addr v5, v7
 
@@ -2599,7 +2603,7 @@
 
     if-eqz v3, :cond_9
 
-    const/4 v3, 0x0
+    move v3, v1
 
     goto :goto_5
 
@@ -2616,7 +2620,7 @@
 
     iget v4, v4, Lorg/telegram/ui/Components/voip/GroupCallRenderersContainer;->progressToFullscreenMode:F
 
-    mul-float v3, v3, v4
+    mul-float/2addr v3, v4
 
     :goto_5
     invoke-virtual {v0, v3}, Landroid/widget/FrameLayout;->setTranslationX(F)V
@@ -2707,13 +2711,13 @@
 
     sub-float v4, v2, v4
 
-    mul-float v4, v4, v0
+    mul-float/2addr v4, v0
 
     iget v3, v3, Lorg/telegram/ui/Components/voip/GroupCallRenderersContainer;->progressToScrimView:F
 
     sub-float v3, v2, v3
 
-    mul-float v4, v4, v3
+    mul-float/2addr v4, v3
 
     cmpl-float v0, v0, v1
 
@@ -2724,7 +2728,7 @@
 
     const/high16 v3, 0x437f0000    # 255.0f
 
-    mul-float v4, v4, v3
+    mul-float/2addr v4, v3
 
     float-to-int v3, v4
 
@@ -2757,7 +2761,7 @@
 
     move-result v2
 
-    mul-float v2, v2, v3
+    mul-float/2addr v2, v3
 
     add-float/2addr v2, v0
 
@@ -2911,7 +2915,7 @@
 
     move-result v2
 
-    mul-float v2, v2, v1
+    mul-float/2addr v2, v1
 
     add-float/2addr v2, v0
 
@@ -3430,12 +3434,12 @@
 
     if-eqz v2, :cond_0
 
-    const/4 v2, 0x0
+    move v2, v3
 
     goto :goto_0
 
     :cond_0
-    const/high16 v2, 0x3f800000    # 1.0f
+    move v2, v4
 
     .line 684
     :goto_0
@@ -3736,7 +3740,7 @@
 
     move-result v2
 
-    mul-int/lit8 v2, v2, 0x2
+    mul-int/2addr v2, v5
 
     sub-int/2addr v1, v2
 
@@ -3790,7 +3794,7 @@
     goto :goto_2
 
     :cond_a
-    const/4 v4, 0x2
+    move v4, v5
 
     .line 742
     :goto_2
@@ -3841,7 +3845,7 @@
 
     move-result v9
 
-    mul-int/lit8 v9, v9, 0x2
+    mul-int/2addr v9, v5
 
     sub-int/2addr v2, v9
 
@@ -3870,7 +3874,7 @@
 
     div-float/2addr v2, v4
 
-    mul-float v2, v2, v1
+    mul-float/2addr v2, v1
 
     .line 751
     iget-object v4, v0, Lorg/telegram/ui/Components/voip/GroupCallMiniTextureView;->tabletGridView:Lorg/telegram/ui/Components/voip/GroupCallGridCell;
@@ -3923,7 +3927,7 @@
     goto :goto_6
 
     :cond_10
-    const/4 v4, 0x2
+    move v4, v5
 
     :goto_6
     int-to-float v4, v4
@@ -3982,7 +3986,7 @@
     .line 768
     iget v9, v4, Landroid/widget/FrameLayout$LayoutParams;->leftMargin:I
 
-    mul-int/lit8 v9, v9, 0x2
+    mul-int/2addr v9, v5
 
     int-to-float v5, v9
 
@@ -4881,12 +4885,12 @@
 
     if-nez v1, :cond_7
 
-    const/4 v1, 0x1
+    move v1, v10
 
     goto :goto_2
 
     :cond_7
-    const/4 v1, 0x0
+    move v1, v2
 
     .line 872
     :goto_2
@@ -4927,7 +4931,7 @@
     if-eq v12, v11, :cond_9
 
     :cond_8
-    const/4 v1, 0x1
+    move v1, v10
 
     :cond_9
     if-nez v1, :cond_a
@@ -5214,12 +5218,12 @@
     if-ne v1, v4, :cond_15
 
     :goto_7
-    const/4 v1, 0x1
+    move v1, v10
 
     goto :goto_8
 
     :cond_15
-    const/4 v1, 0x0
+    move v1, v2
 
     goto :goto_8
 
@@ -5292,7 +5296,7 @@
 
     if-eqz v1, :cond_1a
 
-    const/4 v1, 0x0
+    move v1, v2
 
     .line 942
     :goto_9
@@ -5544,7 +5548,7 @@
 
     if-nez v6, :cond_1e
 
-    const/4 v6, 0x0
+    move v6, v2
 
     goto :goto_c
 
@@ -5554,9 +5558,9 @@
     :goto_c
     invoke-virtual {v1, v6}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    const/4 v1, 0x0
+    move v1, v2
 
-    const/4 v6, 0x1
+    move v6, v10
 
     goto :goto_e
 
@@ -5564,7 +5568,7 @@
     :goto_d
     move/from16 v1, p1
 
-    const/4 v6, 0x0
+    move v6, v2
 
     .line 994
     :goto_e
@@ -5646,12 +5650,12 @@
     if-nez v11, :cond_23
 
     :cond_22
-    const/4 v11, 0x1
+    move v11, v10
 
     goto :goto_10
 
     :cond_23
-    const/4 v11, 0x0
+    move v11, v2
 
     .line 1013
     :goto_10
@@ -5662,16 +5666,16 @@
     if-eqz v12, :cond_24
 
     :goto_11
-    const/4 v5, -0x1
+    move v12, v2
+
+    move v14, v12
+
+    move v11, v9
 
     :goto_12
-    const/high16 v11, 0x3f800000    # 1.0f
+    move v5, v13
 
-    const/4 v12, 0x0
-
-    const/4 v14, 0x0
-
-    goto/16 :goto_13
+    goto/16 :goto_15
 
     .line 1015
     :cond_24
@@ -5690,9 +5694,16 @@
     if-nez v14, :cond_26
 
     :cond_25
-    const/4 v5, 0x0
+    move v5, v2
 
-    goto :goto_12
+    move v12, v5
+
+    :goto_13
+    move v14, v12
+
+    move v11, v9
+
+    goto :goto_15
 
     .line 1017
     :cond_26
@@ -5717,7 +5728,10 @@
 
     move-result v5
 
-    goto :goto_12
+    :goto_14
+    move v12, v2
+
+    goto :goto_13
 
     .line 1021
     :cond_28
@@ -5741,15 +5755,13 @@
 
     move-result v11
 
-    move v12, v11
+    move v14, v10
 
-    const/4 v14, 0x1
+    move v12, v11
 
     move v11, v5
 
-    const/4 v5, -0x1
-
-    goto :goto_13
+    goto :goto_12
 
     .line 1028
     :cond_29
@@ -5757,7 +5769,7 @@
 
     move-result v5
 
-    goto :goto_12
+    goto :goto_14
 
     .line 1030
     :cond_2a
@@ -5780,15 +5792,13 @@
 
     int-to-float v5, v5
 
+    move v12, v2
+
     move v11, v5
 
-    const/4 v5, -0x1
+    move v14, v10
 
-    const/4 v12, 0x0
-
-    const/4 v14, 0x1
-
-    goto :goto_13
+    goto :goto_12
 
     .line 1036
     :cond_2d
@@ -5796,7 +5806,7 @@
 
     move-result v5
 
-    goto :goto_12
+    goto :goto_14
 
     :cond_2e
     if-eqz v11, :cond_25
@@ -5806,10 +5816,10 @@
 
     move-result v5
 
-    goto :goto_12
+    goto :goto_14
 
     .line 1043
-    :goto_13
+    :goto_15
     invoke-virtual/range {p0 .. p0}, Landroid/widget/FrameLayout;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v15
@@ -5848,13 +5858,13 @@
 
     if-eqz v14, :cond_31
 
-    goto :goto_14
+    goto :goto_16
 
     :cond_31
     move v13, v5
 
     .line 1046
-    :goto_14
+    :goto_16
     iput v13, v15, Landroid/view/ViewGroup$MarginLayoutParams;->width:I
 
     .line 1047
@@ -5876,7 +5886,7 @@
     .line 1052
     iput-boolean v10, v0, Lorg/telegram/ui/Components/voip/GroupCallMiniTextureView;->updateNextLayoutAnimated:Z
 
-    goto :goto_15
+    goto :goto_17
 
     .line 1054
     :cond_32
@@ -5885,7 +5895,7 @@
     invoke-virtual {v3}, Lorg/telegram/ui/Components/voip/VoIPTextureView;->requestLayout()V
 
     .line 1056
-    :goto_15
+    :goto_17
     new-instance v3, Lorg/telegram/ui/Components/voip/GroupCallMiniTextureView$$ExternalSyntheticLambda4;
 
     invoke-direct {v3, v0}, Lorg/telegram/ui/Components/voip/GroupCallMiniTextureView$$ExternalSyntheticLambda4;-><init>(Lorg/telegram/ui/Components/voip/GroupCallMiniTextureView;)V
@@ -5949,7 +5959,7 @@
 
     invoke-virtual {v3, v10}, Lorg/webrtc/TextureViewRenderer;->setUseCameraRotation(Z)V
 
-    goto :goto_16
+    goto :goto_18
 
     .line 1066
     :cond_34
@@ -5974,7 +5984,7 @@
     invoke-virtual {v3, v2}, Lorg/webrtc/TextureViewRenderer;->setUseCameraRotation(Z)V
 
     .line 1070
-    :goto_16
+    :goto_18
     iget-object v3, v0, Lorg/telegram/ui/Components/voip/GroupCallMiniTextureView;->textureView:Lorg/telegram/ui/Components/voip/VoIPTextureView;
 
     invoke-virtual {v3}, Lorg/telegram/ui/Components/voip/VoIPTextureView;->updateRotation()V
@@ -5997,7 +6007,7 @@
 
     invoke-virtual {v3, v5}, Lorg/webrtc/TextureViewRenderer;->setMaxTextureSize(I)V
 
-    goto :goto_17
+    goto :goto_19
 
     .line 1075
     :cond_35
@@ -6008,7 +6018,7 @@
     invoke-virtual {v3, v2}, Lorg/webrtc/TextureViewRenderer;->setMaxTextureSize(I)V
 
     .line 1080
-    :goto_17
+    :goto_19
     iget-object v3, v0, Lorg/telegram/ui/Components/voip/GroupCallMiniTextureView;->participant:Lorg/telegram/messenger/ChatObject$VideoParticipant;
 
     iget-object v5, v3, Lorg/telegram/messenger/ChatObject$VideoParticipant;->participant:Lorg/telegram/tgnet/TLRPC$TL_groupCallParticipant;
@@ -6035,16 +6045,16 @@
 
     if-eq v5, v3, :cond_36
 
-    goto :goto_18
+    goto :goto_1a
 
     :cond_36
-    const/4 v3, 0x1
+    move v3, v10
 
-    goto/16 :goto_1b
+    goto/16 :goto_1d
 
     .line 1081
     :cond_37
-    :goto_18
+    :goto_1a
     iget-object v3, v0, Lorg/telegram/ui/Components/voip/GroupCallMiniTextureView;->noVideoStubLayout:Lorg/telegram/ui/Components/voip/GroupCallMiniTextureView$NoVideoStubLayout;
 
     iget-object v3, v3, Lorg/telegram/ui/Components/voip/GroupCallMiniTextureView$NoVideoStubLayout;->avatarImageReceiver:Lorg/telegram/messenger/ImageReceiver;
@@ -6107,7 +6117,7 @@
 
     move-result-object v6
 
-    goto :goto_19
+    goto :goto_1b
 
     .line 1093
     :cond_38
@@ -6149,7 +6159,7 @@
     move-result-object v6
 
     .line 1100
-    :goto_19
+    :goto_1b
     iget-object v11, v0, Lorg/telegram/ui/Components/voip/GroupCallMiniTextureView;->noVideoStubLayout:Lorg/telegram/ui/Components/voip/GroupCallMiniTextureView$NoVideoStubLayout;
 
     iget-object v11, v11, Lorg/telegram/ui/Components/voip/GroupCallMiniTextureView$NoVideoStubLayout;->avatarDrawable:Lorg/telegram/ui/Components/AvatarDrawable;
@@ -6173,13 +6183,13 @@
 
     move-object/from16 v19, v6
 
-    goto :goto_1a
+    goto :goto_1c
 
     :cond_39
     move-object/from16 v19, v11
 
     .line 1107
-    :goto_1a
+    :goto_1c
     iget-object v6, v0, Lorg/telegram/ui/Components/voip/GroupCallMiniTextureView;->noVideoStubLayout:Lorg/telegram/ui/Components/voip/GroupCallMiniTextureView$NoVideoStubLayout;
 
     iget-object v6, v6, Lorg/telegram/ui/Components/voip/GroupCallMiniTextureView$NoVideoStubLayout;->avatarImageReceiver:Lorg/telegram/messenger/ImageReceiver;
@@ -6221,9 +6231,9 @@
 
     invoke-virtual/range {v16 .. v22}, Lorg/telegram/messenger/ImageReceiver;->setImage(Lorg/telegram/messenger/ImageLocation;Ljava/lang/String;Landroid/graphics/drawable/Drawable;Ljava/lang/String;Ljava/lang/Object;I)V
 
-    const/4 v3, 0x0
+    move v3, v2
 
-    :goto_1b
+    :goto_1d
     if-eqz v1, :cond_3a
 
     .line 1112
@@ -6237,15 +6247,15 @@
 
     if-nez v3, :cond_3a
 
-    const/4 v5, 0x1
+    move v5, v10
 
-    goto :goto_1c
+    goto :goto_1e
 
     :cond_3a
-    const/4 v5, 0x0
+    move v5, v2
 
     .line 1114
-    :goto_1c
+    :goto_1e
     iget-boolean v6, v0, Lorg/telegram/ui/Components/voip/GroupCallMiniTextureView;->hasVideo:Z
 
     if-eq v3, v6, :cond_41
@@ -6306,14 +6316,14 @@
 
     if-eqz v4, :cond_3d
 
-    const/4 v4, 0x0
+    move v4, v8
 
-    goto :goto_1d
+    goto :goto_1f
 
     :cond_3d
-    const/high16 v4, 0x3f800000    # 1.0f
+    move v4, v9
 
-    :goto_1d
+    :goto_1f
     aput v4, v3, v10
 
     invoke-static {v3}, Landroid/animation/ValueAnimator;->ofFloat([F)Landroid/animation/ValueAnimator;
@@ -6343,7 +6353,7 @@
 
     invoke-virtual {v3}, Landroid/animation/ValueAnimator;->start()V
 
-    goto :goto_20
+    goto :goto_22
 
     .line 1143
     :cond_3e
@@ -6351,14 +6361,14 @@
 
     if-eqz v3, :cond_3f
 
-    const/4 v4, 0x0
+    move v4, v8
 
-    goto :goto_1e
+    goto :goto_20
 
     :cond_3f
-    const/high16 v4, 0x3f800000    # 1.0f
+    move v4, v9
 
-    :goto_1e
+    :goto_20
     iput v4, v0, Lorg/telegram/ui/Components/voip/GroupCallMiniTextureView;->progressToNoVideoStub:F
 
     .line 1144
@@ -6368,12 +6378,12 @@
 
     const/16 v3, 0x8
 
-    goto :goto_1f
+    goto :goto_21
 
     :cond_40
-    const/4 v3, 0x0
+    move v3, v2
 
-    :goto_1f
+    :goto_21
     invoke-virtual {v4, v3}, Landroid/view/View;->setVisibility(I)V
 
     .line 1145
@@ -6389,7 +6399,7 @@
     invoke-virtual {v3}, Landroid/widget/FrameLayout;->invalidate()V
 
     .line 1149
-    :goto_20
+    :goto_22
     iget-boolean v3, v0, Lorg/telegram/ui/Components/voip/GroupCallMiniTextureView;->hasVideo:Z
 
     if-eqz v3, :cond_41
@@ -6473,7 +6483,7 @@
 
     if-eqz v1, :cond_45
 
-    goto :goto_21
+    goto :goto_23
 
     .line 1169
     :cond_44
@@ -6487,8 +6497,8 @@
 
     if-eqz v1, :cond_45
 
-    :goto_21
-    const/4 v2, 0x1
+    :goto_23
+    move v2, v10
 
     .line 1173
     :cond_45
@@ -6512,7 +6522,7 @@
 
     if-eqz v2, :cond_46
 
-    const/4 v9, 0x0
+    move v9, v8
 
     :cond_46
     invoke-virtual {v1, v9}, Landroid/view/ViewPropertyAnimator;->alpha(F)Landroid/view/ViewPropertyAnimator;
@@ -6542,7 +6552,7 @@
 
     if-nez v1, :cond_48
 
-    goto/16 :goto_22
+    goto/16 :goto_24
 
     .line 1195
     :cond_48
@@ -6591,7 +6601,7 @@
 
     invoke-virtual {v1, v2, v3}, Lorg/telegram/messenger/voip/VoIPService;->setLocalSink(Lorg/webrtc/VideoSink;Z)V
 
-    goto/16 :goto_24
+    goto/16 :goto_26
 
     .line 1202
     :cond_4a
@@ -6671,11 +6681,11 @@
     .line 1209
     iput-boolean v10, v0, Lorg/telegram/ui/Components/voip/GroupCallMiniTextureView;->postedNoRtmpStreamCallback:Z
 
-    goto :goto_24
+    goto :goto_26
 
     .line 1180
     :cond_4b
-    :goto_22
+    :goto_24
     iget-object v1, v0, Lorg/telegram/ui/Components/voip/GroupCallMiniTextureView;->participant:Lorg/telegram/messenger/ChatObject$VideoParticipant;
 
     iget-object v1, v1, Lorg/telegram/messenger/ChatObject$VideoParticipant;->participant:Lorg/telegram/tgnet/TLRPC$TL_groupCallParticipant;
@@ -6702,7 +6712,7 @@
 
     invoke-virtual {v1, v7, v2}, Lorg/telegram/messenger/voip/VoIPService;->setLocalSink(Lorg/webrtc/VideoSink;Z)V
 
-    goto :goto_23
+    goto :goto_25
 
     .line 1184
     :cond_4c
@@ -6740,7 +6750,7 @@
 
     .line 1188
     :cond_4d
-    :goto_23
+    :goto_25
     sget-boolean v1, Lorg/telegram/ui/GroupCallActivity;->paused:Z
 
     if-eqz v1, :cond_4e
@@ -6781,7 +6791,7 @@
 
     .line 1215
     :cond_4e
-    :goto_24
+    :goto_26
     invoke-direct {v0, v10}, Lorg/telegram/ui/Components/voip/GroupCallMiniTextureView;->updateIconColor(Z)V
 
     .line 1218
@@ -6977,7 +6987,7 @@
 
     invoke-virtual {p1, v1}, Lorg/telegram/ui/Components/GroupCallFullscreenAdapter$GroupCallUserCell;->setAlpha(F)V
 
-    const/high16 v1, 0x3f800000    # 1.0f
+    move v1, v5
 
     goto :goto_0
 
@@ -7033,7 +7043,7 @@
 
     sub-float/2addr v5, v1
 
-    mul-float p1, p1, v5
+    mul-float/2addr p1, v5
 
     iget-object p2, p0, Lorg/telegram/ui/Components/voip/GroupCallMiniTextureView;->secondaryView:Lorg/telegram/ui/Components/GroupCallFullscreenAdapter$GroupCallUserCell;
 
@@ -7070,7 +7080,7 @@
 
     int-to-float p2, p2
 
-    mul-float p2, p2, v1
+    mul-float/2addr p2, v1
 
     invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
@@ -7078,7 +7088,7 @@
 
     int-to-float p3, p3
 
-    mul-float p3, p3, v5
+    mul-float/2addr p3, v5
 
     add-float/2addr p2, p3
 
@@ -7117,7 +7127,7 @@
 
     if-nez v7, :cond_8
 
-    const/4 v0, 0x1
+    move v0, v6
 
     :cond_8
     if-eqz v0, :cond_9
@@ -7245,7 +7255,7 @@
 
     move-result p1
 
-    mul-float v5, v5, p1
+    mul-float/2addr v5, p1
 
     invoke-virtual {p0, v5}, Landroid/widget/FrameLayout;->setAlpha(F)V
 
@@ -7266,7 +7276,7 @@
 
     move-result p1
 
-    mul-float v1, v1, p1
+    mul-float/2addr v1, p1
 
     invoke-virtual {p0, v1}, Landroid/widget/FrameLayout;->setAlpha(F)V
 
@@ -7375,16 +7385,16 @@
 
     sub-float p1, v5, v1
 
-    mul-float p2, p2, p1
+    mul-float/2addr p2, p1
 
-    mul-float v0, v0, v1
+    mul-float/2addr v0, v1
 
     add-float/2addr p2, v0
 
     .line 1293
     invoke-virtual {p0, p2}, Landroid/widget/FrameLayout;->setTranslationX(F)V
 
-    mul-float p3, p3, p1
+    mul-float/2addr p3, p1
 
     add-float/2addr p3, v0
 

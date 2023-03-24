@@ -2,13 +2,14 @@ package com.google.protobuf;
 
 import com.google.protobuf.ByteString;
 import java.io.IOException;
-import java.io.InputStream;
+import java.nio.ByteBuffer;
 import java.nio.charset.Charset;
 import java.util.ArrayDeque;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Iterator;
+import java.util.List;
 import java.util.NoSuchElementException;
-import java.util.Objects;
 import p034j$.util.Iterator;
 import p034j$.util.function.Consumer;
 /* JADX INFO: Access modifiers changed from: package-private */
@@ -180,6 +181,20 @@ public final class RopeByteString extends ByteString {
         }
     }
 
+    @Override // com.google.protobuf.ByteString
+    public ByteBuffer asReadOnlyByteBuffer() {
+        return ByteBuffer.wrap(toByteArray()).asReadOnlyBuffer();
+    }
+
+    public List<ByteBuffer> asReadOnlyByteBufferList() {
+        ArrayList arrayList = new ArrayList();
+        PieceIterator pieceIterator = new PieceIterator(this);
+        while (pieceIterator.hasNext()) {
+            arrayList.add(pieceIterator.next().asReadOnlyByteBuffer());
+        }
+        return arrayList;
+    }
+
     /* JADX INFO: Access modifiers changed from: package-private */
     @Override // com.google.protobuf.ByteString
     public void writeTo(ByteOutput byteOutput) throws IOException {
@@ -299,7 +314,7 @@ public final class RopeByteString extends ByteString {
 
     @Override // com.google.protobuf.ByteString
     public CodedInputStream newCodedInput() {
-        return CodedInputStream.newInstance(new RopeInputStream());
+        return CodedInputStream.newInstance((Iterable<ByteBuffer>) asReadOnlyByteBufferList(), true);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -425,131 +440,6 @@ public final class RopeByteString extends ByteString {
         @Override // java.util.Iterator, p034j$.util.Iterator
         public void remove() {
             throw new UnsupportedOperationException();
-        }
-    }
-
-    /* loaded from: classes3.dex */
-    private class RopeInputStream extends InputStream {
-        private ByteString.LeafByteString currentPiece;
-        private int currentPieceIndex;
-        private int currentPieceOffsetInRope;
-        private int currentPieceSize;
-        private int mark;
-        private PieceIterator pieceIterator;
-
-        @Override // java.io.InputStream
-        public boolean markSupported() {
-            return true;
-        }
-
-        public RopeInputStream() {
-            initialize();
-        }
-
-        @Override // java.io.InputStream
-        public int read(byte[] bArr, int i, int i2) {
-            Objects.requireNonNull(bArr);
-            if (i < 0 || i2 < 0 || i2 > bArr.length - i) {
-                throw new IndexOutOfBoundsException();
-            }
-            int readSkipInternal = readSkipInternal(bArr, i, i2);
-            if (readSkipInternal == 0) {
-                if (i2 > 0 || availableInternal() == 0) {
-                    return -1;
-                }
-                return readSkipInternal;
-            }
-            return readSkipInternal;
-        }
-
-        @Override // java.io.InputStream
-        public long skip(long j) {
-            if (j < 0) {
-                throw new IndexOutOfBoundsException();
-            }
-            if (j > 2147483647L) {
-                j = 2147483647L;
-            }
-            return readSkipInternal(null, 0, (int) j);
-        }
-
-        private int readSkipInternal(byte[] bArr, int i, int i2) {
-            int i3 = i2;
-            while (i3 > 0) {
-                advanceIfCurrentPieceFullyRead();
-                if (this.currentPiece == null) {
-                    break;
-                }
-                int min = Math.min(this.currentPieceSize - this.currentPieceIndex, i3);
-                if (bArr != null) {
-                    this.currentPiece.copyTo(bArr, this.currentPieceIndex, i, min);
-                    i += min;
-                }
-                this.currentPieceIndex += min;
-                i3 -= min;
-            }
-            return i2 - i3;
-        }
-
-        @Override // java.io.InputStream
-        public int read() throws IOException {
-            advanceIfCurrentPieceFullyRead();
-            ByteString.LeafByteString leafByteString = this.currentPiece;
-            if (leafByteString == null) {
-                return -1;
-            }
-            int i = this.currentPieceIndex;
-            this.currentPieceIndex = i + 1;
-            return leafByteString.byteAt(i) & 255;
-        }
-
-        @Override // java.io.InputStream
-        public int available() throws IOException {
-            return availableInternal();
-        }
-
-        @Override // java.io.InputStream
-        public void mark(int i) {
-            this.mark = this.currentPieceOffsetInRope + this.currentPieceIndex;
-        }
-
-        @Override // java.io.InputStream
-        public synchronized void reset() {
-            initialize();
-            readSkipInternal(null, 0, this.mark);
-        }
-
-        private void initialize() {
-            PieceIterator pieceIterator = new PieceIterator(RopeByteString.this);
-            this.pieceIterator = pieceIterator;
-            ByteString.LeafByteString next = pieceIterator.next();
-            this.currentPiece = next;
-            this.currentPieceSize = next.size();
-            this.currentPieceIndex = 0;
-            this.currentPieceOffsetInRope = 0;
-        }
-
-        private void advanceIfCurrentPieceFullyRead() {
-            if (this.currentPiece != null) {
-                int i = this.currentPieceIndex;
-                int i2 = this.currentPieceSize;
-                if (i == i2) {
-                    this.currentPieceOffsetInRope += i2;
-                    this.currentPieceIndex = 0;
-                    if (this.pieceIterator.hasNext()) {
-                        ByteString.LeafByteString next = this.pieceIterator.next();
-                        this.currentPiece = next;
-                        this.currentPieceSize = next.size();
-                        return;
-                    }
-                    this.currentPiece = null;
-                    this.currentPieceSize = 0;
-                }
-            }
-        }
-
-        private int availableInternal() {
-            return RopeByteString.this.size() - (this.currentPieceOffsetInRope + this.currentPieceIndex);
         }
     }
 }

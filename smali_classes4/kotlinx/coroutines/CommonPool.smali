@@ -336,13 +336,8 @@
 
     move-object v0, v1
 
-    goto :goto_4
-
     :catchall_2
-    nop
-
     :cond_7
-    :goto_4
     if-nez v0, :cond_8
 
     .line 73
@@ -404,7 +399,7 @@
 
     if-lez v1, :cond_0
 
-    const/4 v1, 0x1
+    move v1, v2
 
     goto :goto_0
 
@@ -556,13 +551,8 @@
 
     move-object v0, p1
 
-    goto :goto_0
-
     :catchall_0
-    nop
-
     :cond_0
-    :goto_0
     if-nez v0, :cond_1
 
     return v1
@@ -576,7 +566,7 @@
 
     if-lt p1, p2, :cond_2
 
-    const/4 v1, 0x1
+    move v1, p2
 
     :cond_2
     return v1

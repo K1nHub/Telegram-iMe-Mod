@@ -1310,7 +1310,7 @@
 .end method
 
 .method private static final setupListeners$lambda$10$lambda$9(Lcom/smedialink/ui/topics/TopicsAlert;Landroid/view/View;I)V
-    .locals 5
+    .locals 4
 
     const-string p1, "this$0"
 
@@ -1410,9 +1410,9 @@
 
     move-result-wide v2
 
-    cmp-long v4, v2, v0
+    cmp-long v0, v2, v0
 
-    if-nez v4, :cond_2
+    if-nez v0, :cond_2
 
     .line 182
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BottomSheet;->dismiss()V

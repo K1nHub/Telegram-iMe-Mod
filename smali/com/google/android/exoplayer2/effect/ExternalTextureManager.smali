@@ -156,7 +156,7 @@
 .end method
 
 .method private maybeQueueFrameToExternalTextureProcessor()V
-    .locals 10
+    .locals 9
 
     .line 148
     iget-object v0, p0, Lcom/google/android/exoplayer2/effect/ExternalTextureManager;->externalTextureProcessorInputCapacity:Ljava/util/concurrent/atomic/AtomicInteger;
@@ -251,9 +251,9 @@
 
     const-wide v7, -0x7fffffffffffffffL    # -4.9E-324
 
-    cmp-long v9, v5, v7
+    cmp-long v5, v5, v7
 
-    if-eqz v9, :cond_1
+    if-eqz v5, :cond_1
 
     .line 166
     iget-object v5, p0, Lcom/google/android/exoplayer2/effect/ExternalTextureManager;->externalTextureProcessor:Lcom/google/android/exoplayer2/effect/ExternalTextureProcessor;

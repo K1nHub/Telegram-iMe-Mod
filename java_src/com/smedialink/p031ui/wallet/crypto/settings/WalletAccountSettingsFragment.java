@@ -34,9 +34,9 @@ import kotlin.reflect.KProperty;
 import moxy.MvpDelegate;
 import moxy.ktx.MoxyKtxDelegate;
 import org.koin.p047mp.KoinPlatformTools;
-import org.telegram.messenger.C3286R;
+import org.telegram.messenger.C3301R;
 import org.telegram.messenger.databinding.ForkFragmentWalletEthSettingsBinding;
-import org.telegram.p048ui.ActionBar.C3351ActionBar;
+import org.telegram.p048ui.ActionBar.C3366ActionBar;
 import org.telegram.p048ui.ActionBar.Theme;
 import org.telegram.p048ui.ActionBar.ThemeDescription;
 import org.telegram.p048ui.PasscodeActivity;
@@ -142,13 +142,13 @@ public final class WalletAccountSettingsFragment extends WalletAuthFragment impl
     }
 
     private final void setupActionBar() {
-        C3351ActionBar c3351ActionBar = this.actionBar;
-        c3351ActionBar.setCastShadows(false);
-        c3351ActionBar.setBackButtonImage(C3286R.C3288drawable.ic_ab_back);
-        c3351ActionBar.setAllowOverlayTitle(true);
-        c3351ActionBar.setTitle(getResourceManager().getString(C3286R.string.wallet_eth_account_settings_toolbar_title));
-        c3351ActionBar.setActionBarMenuOnItemClick(new C3351ActionBar.ActionBarMenuOnItemClick() { // from class: com.smedialink.ui.wallet.crypto.settings.WalletAccountSettingsFragment$setupActionBar$1$1
-            @Override // org.telegram.p048ui.ActionBar.C3351ActionBar.ActionBarMenuOnItemClick
+        C3366ActionBar c3366ActionBar = this.actionBar;
+        c3366ActionBar.setCastShadows(false);
+        c3366ActionBar.setBackButtonImage(C3301R.C3303drawable.ic_ab_back);
+        c3366ActionBar.setAllowOverlayTitle(true);
+        c3366ActionBar.setTitle(getResourceManager().getString(C3301R.string.wallet_eth_account_settings_toolbar_title));
+        c3366ActionBar.setActionBarMenuOnItemClick(new C3366ActionBar.ActionBarMenuOnItemClick() { // from class: com.smedialink.ui.wallet.crypto.settings.WalletAccountSettingsFragment$setupActionBar$1$1
+            @Override // org.telegram.p048ui.ActionBar.C3366ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i) {
                 if (i == -1) {
                     WalletAccountSettingsFragment.this.finishFragment();
@@ -175,9 +175,9 @@ public final class WalletAccountSettingsFragment extends WalletAuthFragment impl
             }
         });
         RxEventBus rxEventBus = getRxEventBus();
-        Observable observeOn = rxEventBus.getPublisher().ofType(DomainRxEvents.class).observeOn(rxEventBus.getSchedulersProvider().mo707ui());
+        Observable observeOn = rxEventBus.getPublisher().ofType(DomainRxEvents.class).observeOn(rxEventBus.getSchedulersProvider().mo706ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "publisher\n              …(schedulersProvider.ui())");
-        Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2077xdd3a1942(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2078xdd3a1943(null)));
+        Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2091xdd3a1942(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2092xdd3a1943(null)));
         Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…  onError.invoke()\n    })");
         autoDispose(subscribe);
     }

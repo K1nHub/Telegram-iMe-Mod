@@ -296,7 +296,7 @@
 
     const/4 v4, 0x7
 
-    mul-int/lit8 v3, v3, 0x7
+    mul-int/2addr v3, v4
 
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
@@ -311,11 +311,11 @@
 
     const v10, 0x3ecccccd    # 0.4f
 
-    const/4 v11, 0x0
+    cmpl-float v11, v6, v10
 
-    cmpl-float v12, v6, v10
+    const/4 v12, 0x0
 
-    if-lez v12, :cond_0
+    if-lez v11, :cond_0
 
     sub-float/2addr v6, v10
 
@@ -326,7 +326,7 @@
     goto :goto_0
 
     :cond_0
-    const/4 v6, 0x0
+    move v6, v12
 
     :goto_0
     invoke-virtual {v5, v6}, Lorg/telegram/ui/Components/CubicBezierInterpolator;->getInterpolation(F)F
@@ -338,15 +338,15 @@
 
     const/high16 v10, 0x3f800000    # 1.0f
 
-    sub-float v12, v10, v5
+    sub-float v11, v10, v5
 
-    mul-float v6, v6, v12
+    mul-float/2addr v6, v11
 
-    iget v12, v0, Lorg/telegram/ui/Components/SharedMediaFastScrollTooltip$TooltipDrawableView;->toProgress:F
+    iget v11, v0, Lorg/telegram/ui/Components/SharedMediaFastScrollTooltip$TooltipDrawableView;->toProgress:F
 
-    mul-float v12, v12, v5
+    mul-float/2addr v11, v5
 
-    add-float/2addr v12, v6
+    add-float/2addr v11, v6
 
     .line 86
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->save()I
@@ -370,9 +370,9 @@
 
     int-to-float v3, v3
 
-    mul-float v3, v3, v12
+    mul-float/2addr v3, v11
 
-    invoke-virtual {v8, v11, v3}, Landroid/graphics/Canvas;->translate(FF)V
+    invoke-virtual {v8, v12, v3}, Landroid/graphics/Canvas;->translate(FF)V
 
     const/4 v3, 0x0
 
@@ -390,7 +390,7 @@
 
     add-int/2addr v6, v9
 
-    mul-int v6, v6, v3
+    mul-int/2addr v6, v3
 
     add-int/2addr v5, v6
 
@@ -405,7 +405,7 @@
 
     int-to-float v5, v5
 
-    invoke-virtual {v6, v11, v14, v15, v5}, Landroid/graphics/RectF;->set(FFFF)V
+    invoke-virtual {v6, v12, v14, v15, v5}, Landroid/graphics/RectF;->set(FFFF)V
 
     .line 91
     invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
@@ -510,7 +510,7 @@
 
     int-to-float v1, v1
 
-    invoke-virtual {v8, v11, v1}, Landroid/graphics/Canvas;->translate(FF)V
+    invoke-virtual {v8, v12, v1}, Landroid/graphics/Canvas;->translate(FF)V
 
     const/4 v2, 0x0
 
@@ -557,7 +557,7 @@
 
     int-to-float v2, v2
 
-    mul-float v2, v2, v12
+    mul-float/2addr v2, v11
 
     add-float/2addr v1, v2
 
@@ -727,9 +727,9 @@
     .line 115
     iget v2, v0, Lorg/telegram/ui/Components/SharedMediaFastScrollTooltip$TooltipDrawableView;->fromProgress:F
 
-    const v3, 0x3e99999a    # 0.3f
-
     cmpl-float v2, v1, v2
+
+    const v3, 0x3e99999a    # 0.3f
 
     if-lez v2, :cond_2
 
@@ -756,14 +756,14 @@
 
     move-result v1
 
-    invoke-static {v11, v1}, Ljava/lang/Math;->max(FF)F
+    invoke-static {v12, v1}, Ljava/lang/Math;->max(FF)F
 
     move-result v1
 
     iput v1, v0, Lorg/telegram/ui/Components/SharedMediaFastScrollTooltip$TooltipDrawableView;->toProgress:F
 
     .line 121
-    iput v11, v0, Lorg/telegram/ui/Components/SharedMediaFastScrollTooltip$TooltipDrawableView;->progress:F
+    iput v12, v0, Lorg/telegram/ui/Components/SharedMediaFastScrollTooltip$TooltipDrawableView;->progress:F
 
     .line 123
     :cond_3

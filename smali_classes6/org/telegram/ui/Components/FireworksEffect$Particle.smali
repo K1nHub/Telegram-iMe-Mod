@@ -102,7 +102,7 @@
 
     iget v2, p0, Lorg/telegram/ui/Components/FireworksEffect$Particle;->scale:F
 
-    mul-float v1, v1, v2
+    mul-float/2addr v1, v2
 
     invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setStrokeWidth(F)V
 
@@ -117,7 +117,7 @@
 
     iget v2, p0, Lorg/telegram/ui/Components/FireworksEffect$Particle;->alpha:F
 
-    mul-float v2, v2, v1
+    mul-float/2addr v2, v1
 
     float-to-int v1, v2
 

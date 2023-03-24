@@ -27,7 +27,7 @@
 .method static constructor <clinit>()V
     .locals 1
 
-    .line 45
+    .line 46
     new-instance v0, Lcom/google/protobuf/Protobuf;
 
     invoke-direct {v0}, Lcom/google/protobuf/Protobuf;-><init>()V
@@ -40,17 +40,17 @@
 .method private constructor <init>()V
     .locals 1
 
-    .line 136
+    .line 138
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 50
+    .line 51
     new-instance v0, Lj$/util/concurrent/ConcurrentHashMap;
 
     invoke-direct {v0}, Lj$/util/concurrent/ConcurrentHashMap;-><init>()V
 
     iput-object v0, p0, Lcom/google/protobuf/Protobuf;->schemaCache:Ljava/util/concurrent/ConcurrentMap;
 
-    .line 137
+    .line 139
     new-instance v0, Lcom/google/protobuf/ManifestSchemaFactory;
 
     invoke-direct {v0}, Lcom/google/protobuf/ManifestSchemaFactory;-><init>()V
@@ -63,7 +63,7 @@
 .method public static getInstance()Lcom/google/protobuf/Protobuf;
     .locals 1
 
-    .line 55
+    .line 56
     sget-object v0, Lcom/google/protobuf/Protobuf;->INSTANCE:Lcom/google/protobuf/Protobuf;
 
     return-object v0
@@ -90,7 +90,7 @@
         }
     .end annotation
 
-    .line 71
+    .line 72
     invoke-virtual {p0, p1}, Lcom/google/protobuf/Protobuf;->schemaFor(Ljava/lang/Object;)Lcom/google/protobuf/Schema;
 
     move-result-object v0
@@ -116,15 +116,15 @@
 
     const-string v0, "messageType"
 
-    .line 116
+    .line 117
     invoke-static {p1, v0}, Lcom/google/protobuf/Internal;->checkNotNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
     const-string v0, "schema"
 
-    .line 117
+    .line 118
     invoke-static {p2, v0}, Lcom/google/protobuf/Internal;->checkNotNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
-    .line 118
+    .line 119
     iget-object v0, p0, Lcom/google/protobuf/Protobuf;->schemaCache:Ljava/util/concurrent/ConcurrentMap;
 
     invoke-interface {v0, p1, p2}, Ljava/util/concurrent/ConcurrentMap;->putIfAbsent(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
@@ -152,10 +152,10 @@
 
     const-string v0, "messageType"
 
-    .line 86
+    .line 87
     invoke-static {p1, v0}, Lcom/google/protobuf/Internal;->checkNotNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
-    .line 88
+    .line 89
     iget-object v0, p0, Lcom/google/protobuf/Protobuf;->schemaCache:Ljava/util/concurrent/ConcurrentMap;
 
     invoke-interface {v0, p1}, Ljava/util/concurrent/ConcurrentMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -166,14 +166,14 @@
 
     if-nez v0, :cond_0
 
-    .line 90
+    .line 91
     iget-object v0, p0, Lcom/google/protobuf/Protobuf;->schemaFactory:Lcom/google/protobuf/SchemaFactory;
 
     invoke-interface {v0, p1}, Lcom/google/protobuf/SchemaFactory;->createSchema(Ljava/lang/Class;)Lcom/google/protobuf/Schema;
 
     move-result-object v0
 
-    .line 92
+    .line 93
     invoke-virtual {p0, p1, v0}, Lcom/google/protobuf/Protobuf;->registerSchema(Ljava/lang/Class;Lcom/google/protobuf/Schema;)Lcom/google/protobuf/Schema;
 
     move-result-object p1
@@ -198,7 +198,7 @@
         }
     .end annotation
 
-    .line 104
+    .line 105
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     move-result-object p1

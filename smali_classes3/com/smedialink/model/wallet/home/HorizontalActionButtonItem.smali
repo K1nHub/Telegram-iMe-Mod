@@ -4,7 +4,7 @@
 
 
 # instance fields
-.field private final iconRes:I
+.field private final iconResId:I
 
 .field private final isEnabled:Z
 
@@ -18,44 +18,50 @@
     .end annotation
 .end field
 
-.field private final textRes:I
+.field private final text:Ljava/lang/String;
 
 
 # direct methods
-.method public constructor <init>(IIZLkotlin/jvm/functions/Function0;)V
+.method public constructor <init>(ILjava/lang/String;ZLkotlin/jvm/functions/Function0;)V
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "(IIZ",
+            "(I",
+            "Ljava/lang/String;",
+            "Z",
             "Lkotlin/jvm/functions/Function0<",
             "Lkotlin/Unit;",
             ">;)V"
         }
     .end annotation
 
+    const-string v0, "text"
+
+    invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
     const-string v0, "onClickAction"
 
     invoke-static {p4, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 7
+    .line 6
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 7
+    iput p1, p0, Lcom/smedialink/model/wallet/home/HorizontalActionButtonItem;->iconResId:I
+
     .line 8
-    iput p1, p0, Lcom/smedialink/model/wallet/home/HorizontalActionButtonItem;->iconRes:I
+    iput-object p2, p0, Lcom/smedialink/model/wallet/home/HorizontalActionButtonItem;->text:Ljava/lang/String;
 
     .line 9
-    iput p2, p0, Lcom/smedialink/model/wallet/home/HorizontalActionButtonItem;->textRes:I
-
-    .line 10
     iput-boolean p3, p0, Lcom/smedialink/model/wallet/home/HorizontalActionButtonItem;->isEnabled:Z
 
-    .line 11
+    .line 10
     iput-object p4, p0, Lcom/smedialink/model/wallet/home/HorizontalActionButtonItem;->onClickAction:Lkotlin/jvm/functions/Function0;
 
     return-void
 .end method
 
-.method public synthetic constructor <init>(IIZLkotlin/jvm/functions/Function0;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+.method public synthetic constructor <init>(ILjava/lang/String;ZLkotlin/jvm/functions/Function0;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
     .locals 0
 
     and-int/lit8 p5, p5, 0x4
@@ -64,28 +70,28 @@
 
     const/4 p3, 0x1
 
-    .line 7
+    .line 6
     :cond_0
-    invoke-direct {p0, p1, p2, p3, p4}, Lcom/smedialink/model/wallet/home/HorizontalActionButtonItem;-><init>(IIZLkotlin/jvm/functions/Function0;)V
+    invoke-direct {p0, p1, p2, p3, p4}, Lcom/smedialink/model/wallet/home/HorizontalActionButtonItem;-><init>(ILjava/lang/String;ZLkotlin/jvm/functions/Function0;)V
 
     return-void
 .end method
 
-.method public static synthetic copy$default(Lcom/smedialink/model/wallet/home/HorizontalActionButtonItem;IIZLkotlin/jvm/functions/Function0;ILjava/lang/Object;)Lcom/smedialink/model/wallet/home/HorizontalActionButtonItem;
+.method public static synthetic copy$default(Lcom/smedialink/model/wallet/home/HorizontalActionButtonItem;ILjava/lang/String;ZLkotlin/jvm/functions/Function0;ILjava/lang/Object;)Lcom/smedialink/model/wallet/home/HorizontalActionButtonItem;
     .locals 0
 
     and-int/lit8 p6, p5, 0x1
 
     if-eqz p6, :cond_0
 
-    iget p1, p0, Lcom/smedialink/model/wallet/home/HorizontalActionButtonItem;->iconRes:I
+    iget p1, p0, Lcom/smedialink/model/wallet/home/HorizontalActionButtonItem;->iconResId:I
 
     :cond_0
     and-int/lit8 p6, p5, 0x2
 
     if-eqz p6, :cond_1
 
-    iget p2, p0, Lcom/smedialink/model/wallet/home/HorizontalActionButtonItem;->textRes:I
+    iget-object p2, p0, Lcom/smedialink/model/wallet/home/HorizontalActionButtonItem;->text:Ljava/lang/String;
 
     :cond_1
     and-int/lit8 p6, p5, 0x4
@@ -102,7 +108,7 @@
     iget-object p4, p0, Lcom/smedialink/model/wallet/home/HorizontalActionButtonItem;->onClickAction:Lkotlin/jvm/functions/Function0;
 
     :cond_3
-    invoke-virtual {p0, p1, p2, p3, p4}, Lcom/smedialink/model/wallet/home/HorizontalActionButtonItem;->copy(IIZLkotlin/jvm/functions/Function0;)Lcom/smedialink/model/wallet/home/HorizontalActionButtonItem;
+    invoke-virtual {p0, p1, p2, p3, p4}, Lcom/smedialink/model/wallet/home/HorizontalActionButtonItem;->copy(ILjava/lang/String;ZLkotlin/jvm/functions/Function0;)Lcom/smedialink/model/wallet/home/HorizontalActionButtonItem;
 
     move-result-object p0
 
@@ -114,17 +120,17 @@
 .method public final component1()I
     .locals 1
 
-    iget v0, p0, Lcom/smedialink/model/wallet/home/HorizontalActionButtonItem;->iconRes:I
+    iget v0, p0, Lcom/smedialink/model/wallet/home/HorizontalActionButtonItem;->iconResId:I
 
     return v0
 .end method
 
-.method public final component2()I
+.method public final component2()Ljava/lang/String;
     .locals 1
 
-    iget v0, p0, Lcom/smedialink/model/wallet/home/HorizontalActionButtonItem;->textRes:I
+    iget-object v0, p0, Lcom/smedialink/model/wallet/home/HorizontalActionButtonItem;->text:Ljava/lang/String;
 
-    return v0
+    return-object v0
 .end method
 
 .method public final component3()Z
@@ -151,11 +157,13 @@
     return-object v0
 .end method
 
-.method public final copy(IIZLkotlin/jvm/functions/Function0;)Lcom/smedialink/model/wallet/home/HorizontalActionButtonItem;
+.method public final copy(ILjava/lang/String;ZLkotlin/jvm/functions/Function0;)Lcom/smedialink/model/wallet/home/HorizontalActionButtonItem;
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "(IIZ",
+            "(I",
+            "Ljava/lang/String;",
+            "Z",
             "Lkotlin/jvm/functions/Function0<",
             "Lkotlin/Unit;",
             ">;)",
@@ -163,13 +171,17 @@
         }
     .end annotation
 
+    const-string v0, "text"
+
+    invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
     const-string v0, "onClickAction"
 
     invoke-static {p4, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     new-instance v0, Lcom/smedialink/model/wallet/home/HorizontalActionButtonItem;
 
-    invoke-direct {v0, p1, p2, p3, p4}, Lcom/smedialink/model/wallet/home/HorizontalActionButtonItem;-><init>(IIZLkotlin/jvm/functions/Function0;)V
+    invoke-direct {v0, p1, p2, p3, p4}, Lcom/smedialink/model/wallet/home/HorizontalActionButtonItem;-><init>(ILjava/lang/String;ZLkotlin/jvm/functions/Function0;)V
 
     return-object v0
 .end method
@@ -183,7 +195,7 @@
 
     return v0
 
-    .line 18
+    .line 17
     :cond_0
     const-class v1, Lcom/smedialink/model/wallet/home/HorizontalActionButtonItem;
 
@@ -212,23 +224,27 @@
     :cond_2
     const-string v1, "null cannot be cast to non-null type com.smedialink.model.wallet.home.HorizontalActionButtonItem"
 
-    .line 19
+    .line 18
     invoke-static {p1, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;Ljava/lang/String;)V
 
     check-cast p1, Lcom/smedialink/model/wallet/home/HorizontalActionButtonItem;
 
-    .line 20
-    iget v1, p0, Lcom/smedialink/model/wallet/home/HorizontalActionButtonItem;->iconRes:I
+    .line 19
+    iget v1, p0, Lcom/smedialink/model/wallet/home/HorizontalActionButtonItem;->iconResId:I
 
-    iget v3, p1, Lcom/smedialink/model/wallet/home/HorizontalActionButtonItem;->iconRes:I
-
-    if-ne v1, v3, :cond_3
-
-    iget v1, p0, Lcom/smedialink/model/wallet/home/HorizontalActionButtonItem;->textRes:I
-
-    iget v3, p1, Lcom/smedialink/model/wallet/home/HorizontalActionButtonItem;->textRes:I
+    iget v3, p1, Lcom/smedialink/model/wallet/home/HorizontalActionButtonItem;->iconResId:I
 
     if-ne v1, v3, :cond_3
+
+    iget-object v1, p0, Lcom/smedialink/model/wallet/home/HorizontalActionButtonItem;->text:Ljava/lang/String;
+
+    iget-object v3, p1, Lcom/smedialink/model/wallet/home/HorizontalActionButtonItem;->text:Ljava/lang/String;
+
+    invoke-static {v1, v3}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_3
 
     iget-boolean v1, p0, Lcom/smedialink/model/wallet/home/HorizontalActionButtonItem;->isEnabled:Z
 
@@ -239,17 +255,17 @@
     goto :goto_1
 
     :cond_3
-    const/4 v0, 0x0
+    move v0, v2
 
     :goto_1
     return v0
 .end method
 
-.method public final getIconRes()I
+.method public final getIconResId()I
     .locals 1
 
-    .line 8
-    iget v0, p0, Lcom/smedialink/model/wallet/home/HorizontalActionButtonItem;->iconRes:I
+    .line 7
+    iget v0, p0, Lcom/smedialink/model/wallet/home/HorizontalActionButtonItem;->iconResId:I
 
     return v0
 .end method
@@ -265,19 +281,19 @@
         }
     .end annotation
 
-    .line 11
+    .line 10
     iget-object v0, p0, Lcom/smedialink/model/wallet/home/HorizontalActionButtonItem;->onClickAction:Lkotlin/jvm/functions/Function0;
 
     return-object v0
 .end method
 
-.method public final getTextRes()I
+.method public final getText()Ljava/lang/String;
     .locals 1
 
-    .line 9
-    iget v0, p0, Lcom/smedialink/model/wallet/home/HorizontalActionButtonItem;->textRes:I
+    .line 8
+    iget-object v0, p0, Lcom/smedialink/model/wallet/home/HorizontalActionButtonItem;->text:Ljava/lang/String;
 
-    return v0
+    return-object v0
 .end method
 
 .method public hashCode()I
@@ -287,8 +303,8 @@
 
     new-array v0, v0, [Ljava/lang/Object;
 
-    .line 23
-    iget v1, p0, Lcom/smedialink/model/wallet/home/HorizontalActionButtonItem;->iconRes:I
+    .line 22
+    iget v1, p0, Lcom/smedialink/model/wallet/home/HorizontalActionButtonItem;->iconResId:I
 
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -298,11 +314,7 @@
 
     aput-object v1, v0, v2
 
-    iget v1, p0, Lcom/smedialink/model/wallet/home/HorizontalActionButtonItem;->textRes:I
-
-    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v1
+    iget-object v1, p0, Lcom/smedialink/model/wallet/home/HorizontalActionButtonItem;->text:Ljava/lang/String;
 
     const/4 v2, 0x1
 
@@ -328,7 +340,7 @@
 .method public final isEnabled()Z
     .locals 1
 
-    .line 10
+    .line 9
     iget-boolean v0, p0, Lcom/smedialink/model/wallet/home/HorizontalActionButtonItem;->isEnabled:Z
 
     return v0
@@ -341,21 +353,21 @@
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v1, "HorizontalActionButtonItem(iconRes="
+    const-string v1, "HorizontalActionButtonItem(iconResId="
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget v1, p0, Lcom/smedialink/model/wallet/home/HorizontalActionButtonItem;->iconRes:I
+    iget v1, p0, Lcom/smedialink/model/wallet/home/HorizontalActionButtonItem;->iconResId:I
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    const-string v1, ", textRes="
+    const-string v1, ", text="
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget v1, p0, Lcom/smedialink/model/wallet/home/HorizontalActionButtonItem;->textRes:I
+    iget-object v1, p0, Lcom/smedialink/model/wallet/home/HorizontalActionButtonItem;->text:Ljava/lang/String;
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     const-string v1, ", isEnabled="
 

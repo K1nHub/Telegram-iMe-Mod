@@ -281,7 +281,7 @@ public class TextureRenderer {
                     if (f >= mediaEntity.metadata[0]) {
                         mediaEntity.currentFrame = BitmapDescriptorFactory.HUE_RED;
                     }
-                    drawTexture(false, this.stickerTexture[0], mediaEntity.f1476x, mediaEntity.f1477y, mediaEntity.width, mediaEntity.height, mediaEntity.rotation, (mediaEntity.subType & 2) != 0);
+                    drawTexture(false, this.stickerTexture[0], mediaEntity.f1477x, mediaEntity.f1478y, mediaEntity.width, mediaEntity.height, mediaEntity.rotation, (mediaEntity.subType & 2) != 0);
                 } else if (mediaEntity.animatedFileDrawable != null) {
                     float f2 = mediaEntity.currentFrame;
                     int i7 = (int) f2;
@@ -305,7 +305,7 @@ public class TextureRenderer {
                             applyRoundRadius(mediaEntity, this.stickerBitmap);
                             GLES20.glBindTexture(3553, this.stickerTexture[0]);
                             GLUtils.texImage2D(3553, 0, this.stickerBitmap, 0);
-                            drawTexture(false, this.stickerTexture[0], mediaEntity.f1476x, mediaEntity.f1477y, mediaEntity.width, mediaEntity.height, mediaEntity.rotation, (mediaEntity.subType & 2) != 0);
+                            drawTexture(false, this.stickerTexture[0], mediaEntity.f1477x, mediaEntity.f1478y, mediaEntity.width, mediaEntity.height, mediaEntity.rotation, (mediaEntity.subType & 2) != 0);
                         }
                     }
                 } else if (mediaEntity.view != null && mediaEntity.canvas != null && (bitmap = mediaEntity.bitmap) != null) {
@@ -319,11 +319,11 @@ public class TextureRenderer {
                     applyRoundRadius(mediaEntity, mediaEntity.bitmap);
                     GLES20.glBindTexture(3553, this.stickerTexture[0]);
                     GLUtils.texImage2D(3553, 0, mediaEntity.bitmap, 0);
-                    drawTexture(false, this.stickerTexture[0], mediaEntity.f1476x, mediaEntity.f1477y, mediaEntity.width, mediaEntity.height, mediaEntity.rotation, (mediaEntity.subType & 2) != 0);
+                    drawTexture(false, this.stickerTexture[0], mediaEntity.f1477x, mediaEntity.f1478y, mediaEntity.width, mediaEntity.height, mediaEntity.rotation, (mediaEntity.subType & 2) != 0);
                 } else if (mediaEntity.bitmap != null) {
                     GLES20.glBindTexture(3553, this.stickerTexture[0]);
                     GLUtils.texImage2D(3553, 0, mediaEntity.bitmap, 0);
-                    drawTexture(false, this.stickerTexture[0], mediaEntity.f1476x, mediaEntity.f1477y, mediaEntity.width, mediaEntity.height, mediaEntity.rotation, (mediaEntity.subType & 2) != 0);
+                    drawTexture(false, this.stickerTexture[0], mediaEntity.f1477x, mediaEntity.f1478y, mediaEntity.width, mediaEntity.height, mediaEntity.rotation, (mediaEntity.subType & 2) != 0);
                 }
             }
         }
@@ -426,18 +426,18 @@ public class TextureRenderer {
         editTextOutline.setBreakStrategy(0);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:124:0x0424, code lost:
-        if (org.telegram.messenger.LocaleController.isRTL != false) goto L83;
+    /* JADX WARN: Code restructure failed: missing block: B:125:0x0422, code lost:
+        if (org.telegram.messenger.LocaleController.isRTL != false) goto L84;
      */
-    /* JADX WARN: Removed duplicated region for block: B:170:0x0205 A[SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:59:0x0166  */
+    /* JADX WARN: Removed duplicated region for block: B:172:0x0203 A[SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:59:0x0164  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct add '--show-bad-code' argument
     */
     public void surfaceCreated() {
         /*
-            Method dump skipped, instructions count: 1250
+            Method dump skipped, instructions count: 1248
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: org.telegram.messenger.video.TextureRenderer.surfaceCreated():void");

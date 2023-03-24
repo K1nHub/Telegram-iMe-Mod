@@ -45,7 +45,7 @@ public final class LockedSectionsController extends BaseController {
     public LockedSectionsController(int i) {
         super(i);
         Map<LockedSection, SectionPasscodeData> mutableMapOf;
-        mutableMapOf = MapsKt__MapsKt.mutableMapOf(TuplesKt.m100to(LockedSection.ARCHIVE, new SectionPasscodeData(null, false, 0, null, 0L, 0L, null, null, false, 511, null)), TuplesKt.m100to(LockedSection.CLOUD, new SectionPasscodeData(null, false, 0, null, 0L, 0L, null, null, false, 511, null)));
+        mutableMapOf = MapsKt__MapsKt.mutableMapOf(TuplesKt.m99to(LockedSection.ARCHIVE, new SectionPasscodeData(null, false, 0, null, 0L, 0L, null, null, false, 511, null)), TuplesKt.m99to(LockedSection.CLOUD, new SectionPasscodeData(null, false, 0, null, 0L, 0L, null, null, false, 511, null)));
         this.sectionsPasscodeData = mutableMapOf;
     }
 
@@ -116,7 +116,7 @@ public final class LockedSectionsController extends BaseController {
         LockedSection[] values = LockedSection.values();
         ArrayList arrayList = new ArrayList(values.length);
         for (LockedSection lockedSection : values) {
-            arrayList.add(TuplesKt.m100to(lockedSection, new SectionPasscodeData(null, false, 0, null, 0L, 0L, null, null, false, 511, null)));
+            arrayList.add(TuplesKt.m99to(lockedSection, new SectionPasscodeData(null, false, 0, null, 0L, 0L, null, null, false, 511, null)));
         }
         MapsKt.toMap(arrayList, this.sectionsPasscodeData);
     }

@@ -761,13 +761,13 @@
     goto :goto_0
 
     :cond_1
-    const/4 v4, 0x0
+    move v4, v0
 
-    const/4 v5, 0x0
+    move v5, v4
 
-    const/4 v6, 0x0
+    move v6, v5
 
-    const/4 v9, 0x0
+    move v9, v6
 
     :goto_0
     if-eqz v4, :cond_2
@@ -1103,7 +1103,7 @@
 .end method
 
 .method private synthetic lambda$setItem$0(JLorg/telegram/ui/Components/ChatThemeBottomSheet$ChatThemeItem;ILandroid/util/Pair;)V
-    .locals 3
+    .locals 2
 
     if-eqz p5, :cond_2
 
@@ -1116,9 +1116,9 @@
 
     move-result-wide v0
 
-    cmp-long v2, v0, p1
+    cmp-long p1, v0, p1
 
-    if-nez v2, :cond_2
+    if-nez p1, :cond_2
 
     .line 216
     iget-object p1, p3, Lorg/telegram/ui/Components/ChatThemeBottomSheet$ChatThemeItem;->previewDrawable:Landroid/graphics/drawable/Drawable;
@@ -1408,7 +1408,7 @@
 
     int-to-float v1, v1
 
-    mul-float v1, v1, v0
+    mul-float/2addr v1, v0
 
     float-to-int v1, v1
 
@@ -1419,7 +1419,7 @@
 
     int-to-float v2, v2
 
-    mul-float v2, v2, v0
+    mul-float/2addr v2, v0
 
     float-to-int v0, v2
 
@@ -1661,7 +1661,7 @@
 
     const v0, 0x3f99999a    # 1.2f
 
-    mul-float p2, p2, v0
+    mul-float/2addr p2, v0
 
     float-to-int p2, p2
 
@@ -1697,7 +1697,7 @@
 
     const v0, 0x3faccccd    # 1.35f
 
-    mul-float p2, p2, v0
+    mul-float/2addr p2, v0
 
     float-to-int p2, p2
 
@@ -1955,12 +1955,12 @@
 
     if-eq v0, p1, :cond_0
 
-    const/4 v0, 0x1
+    move v0, v1
 
     goto :goto_0
 
     :cond_0
-    const/4 v0, 0x0
+    move v0, v2
 
     .line 169
     :goto_0
@@ -1973,7 +1973,7 @@
     goto :goto_1
 
     :cond_1
-    const/4 v1, 0x0
+    move v1, v2
 
     .line 170
     :goto_1
@@ -2325,7 +2325,7 @@
 
     const/high16 v1, 0x42c80000    # 100.0f
 
-    mul-float v0, v0, v1
+    mul-float/2addr v0, v1
 
     float-to-int v0, v0
 
@@ -2485,7 +2485,7 @@
     goto :goto_0
 
     :cond_1
-    const/4 v0, 0x0
+    move v0, v1
 
     .line 305
     :goto_0
@@ -2529,7 +2529,7 @@
     goto :goto_1
 
     :cond_4
-    const/4 v0, 0x0
+    move v0, v1
 
     :goto_1
     aput v0, v2, p2

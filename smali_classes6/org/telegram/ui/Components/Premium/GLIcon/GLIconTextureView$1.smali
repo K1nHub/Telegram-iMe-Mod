@@ -410,7 +410,7 @@
 
     const/high16 v0, 0x3f000000    # 0.5f
 
-    mul-float p3, p3, v0
+    mul-float/2addr p3, v0
 
     add-float/2addr p2, p3
 
@@ -421,7 +421,7 @@
 
     const p3, 0x3d4ccccd    # 0.05f
 
-    mul-float p4, p4, p3
+    mul-float/2addr p4, p3
 
     add-float/2addr p2, p4
 
@@ -473,7 +473,7 @@
 
     sub-float v3, v0, v3
 
-    mul-float v1, v1, v3
+    mul-float/2addr v1, v3
 
     div-float/2addr v1, v0
 
@@ -494,7 +494,7 @@
 
     sub-float p1, v0, p1
 
-    mul-float v2, v2, p1
+    mul-float/2addr v2, p1
 
     div-float/2addr v2, v0
 

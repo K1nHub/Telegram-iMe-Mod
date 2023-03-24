@@ -29,7 +29,7 @@ public class LazyStringArrayList extends AbstractProtobufList<String> implements
         this.list = arrayList;
     }
 
-    @Override // com.google.protobuf.Internal.ProtobufList
+    @Override // com.google.protobuf.Internal.ProtobufList, com.google.protobuf.Internal.BooleanList
     public LazyStringArrayList mutableCopyWithCapacity(int i) {
         if (i < size()) {
             throw new IllegalArgumentException();

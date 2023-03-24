@@ -76,7 +76,7 @@ public class FloatingDebugController {
         final CharSequence title;
 
         /* renamed from: to */
-        float f1721to;
+        float f1722to;
         final DebugItemType type;
 
         public DebugItem(CharSequence charSequence, Runnable runnable) {
@@ -94,7 +94,7 @@ public class FloatingDebugController {
             this.type = DebugItemType.SEEKBAR;
             this.title = charSequence;
             this.from = f;
-            this.f1721to = f2;
+            this.f1722to = f2;
             this.floatProperty = floatProperty;
         }
     }

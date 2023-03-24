@@ -40,7 +40,7 @@
 
     move-result-object v1
 
-    const/4 v0, 0x1
+    move v0, v3
 
     :cond_0
     instance-of v2, v1, Lorg/bouncycastle/asn1/ASN1Integer;

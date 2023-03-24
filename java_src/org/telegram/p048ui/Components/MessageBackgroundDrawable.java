@@ -7,7 +7,6 @@ import android.graphics.drawable.Drawable;
 import android.os.SystemClock;
 import android.view.View;
 import android.view.ViewGroup;
-import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 /* renamed from: org.telegram.ui.Components.MessageBackgroundDrawable */
 /* loaded from: classes6.dex */
 public class MessageBackgroundDrawable extends Drawable {
@@ -47,7 +46,7 @@ public class MessageBackgroundDrawable extends Drawable {
             if (this.animationInProgress == z2 || z2) {
                 return;
             }
-            this.currentAnimationProgress = z ? 1.0f : BitmapDescriptorFactory.HUE_RED;
+            this.currentAnimationProgress = z ? 1.0f : 0.0f;
             this.animationInProgress = false;
             return;
         }
@@ -56,7 +55,7 @@ public class MessageBackgroundDrawable extends Drawable {
         if (z2) {
             this.lastAnimationTime = SystemClock.elapsedRealtime();
         } else {
-            this.currentAnimationProgress = z ? 1.0f : BitmapDescriptorFactory.HUE_RED;
+            this.currentAnimationProgress = z ? 1.0f : 0.0f;
         }
         calcRadius();
         invalidate();
@@ -141,9 +140,9 @@ public class MessageBackgroundDrawable extends Drawable {
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct add '--show-bad-code' argument
     */
-    public void draw(android.graphics.Canvas r10) {
+    public void draw(android.graphics.Canvas r11) {
         /*
-            Method dump skipped, instructions count: 192
+            Method dump skipped, instructions count: 189
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: org.telegram.p048ui.Components.MessageBackgroundDrawable.draw(android.graphics.Canvas):void");

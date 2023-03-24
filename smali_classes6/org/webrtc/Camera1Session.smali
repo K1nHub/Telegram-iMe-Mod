@@ -455,7 +455,7 @@
 
     move-result v3
 
-    const/4 v4, 0x0
+    move v4, v2
 
     :goto_0
     const/4 v5, 0x3
@@ -765,7 +765,7 @@
     goto :goto_0
 
     :cond_2
-    const/4 v1, 0x0
+    move v1, v4
 
     .line 275
     :goto_0
@@ -1097,12 +1097,12 @@
 
     move-result-wide v0
 
-    long-to-int v1, v0
+    long-to-int v0, v0
 
     .line 191
-    sget-object v0, Lorg/webrtc/Camera1Session;->camera1StopTimeMsHistogram:Lorg/webrtc/Histogram;
+    sget-object v1, Lorg/webrtc/Camera1Session;->camera1StopTimeMsHistogram:Lorg/webrtc/Histogram;
 
-    invoke-virtual {v0, v1}, Lorg/webrtc/Histogram;->addSample(I)V
+    invoke-virtual {v1, v0}, Lorg/webrtc/Histogram;->addSample(I)V
 
     :cond_0
     return-void

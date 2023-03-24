@@ -109,7 +109,7 @@
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_0
     if-ge v2, v0, :cond_1
@@ -158,7 +158,7 @@
 
     array-length v7, v3
 
-    const/4 v8, 0x0
+    move v8, v1
 
     :goto_1
     if-ge v8, v7, :cond_0

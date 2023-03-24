@@ -33,6 +33,10 @@
 
     const/4 v5, 0x0
 
+    move v9, v2
+
+    move v13, v9
+
     move-wide v7, v3
 
     move-wide v15, v7
@@ -46,10 +50,6 @@
     move-object v14, v12
 
     move-object/from16 v17, v14
-
-    const/4 v9, 0x0
-
-    const/4 v13, 0x0
 
     .line 2
     :goto_0

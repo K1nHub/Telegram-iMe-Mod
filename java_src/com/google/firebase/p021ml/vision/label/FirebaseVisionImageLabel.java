@@ -34,7 +34,7 @@ public class FirebaseVisionImageLabel {
         this.text = str == null ? "" : str;
         this.entityId = str2;
         if (Float.compare(f, BitmapDescriptorFactory.HUE_RED) < 0) {
-            f = BitmapDescriptorFactory.HUE_RED;
+            f = 0.0f;
         } else if (Float.compare(f, 1.0f) > 0) {
             f = 1.0f;
         }

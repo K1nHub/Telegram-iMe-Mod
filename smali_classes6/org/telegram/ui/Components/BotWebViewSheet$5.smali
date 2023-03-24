@@ -79,7 +79,7 @@
 
     const v1, 0x3dcccccd    # 0.1f
 
-    mul-float v0, v0, v1
+    mul-float/2addr v0, v1
 
     add-float/2addr p2, v0
 

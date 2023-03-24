@@ -868,7 +868,7 @@
 .end method
 
 .method private onPauseResponseReceived()V
-    .locals 5
+    .locals 4
 
     .line 725
     iget-object v0, p0, Lcom/google/android/exoplayer2/source/rtsp/RtspClient$MessageListener;->this$0:Lcom/google/android/exoplayer2/source/rtsp/RtspClient;
@@ -885,12 +885,12 @@
 
     if-ne v0, v3, :cond_0
 
-    const/4 v0, 0x1
+    move v0, v1
 
     goto :goto_0
 
     :cond_0
-    const/4 v0, 0x0
+    move v0, v2
 
     :goto_0
     invoke-static {v0}, Lcom/google/android/exoplayer2/util/Assertions;->checkState(Z)V
@@ -914,9 +914,9 @@
 
     const-wide v2, -0x7fffffffffffffffL    # -4.9E-324
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-eqz v4, :cond_1
+    if-eqz v0, :cond_1
 
     .line 730
     iget-object v0, p0, Lcom/google/android/exoplayer2/source/rtsp/RtspClient$MessageListener;->this$0:Lcom/google/android/exoplayer2/source/rtsp/RtspClient;
@@ -1041,7 +1041,7 @@
 
     if-eq v0, v2, :cond_0
 
-    const/4 v0, 0x1
+    move v0, v1
 
     goto :goto_0
 

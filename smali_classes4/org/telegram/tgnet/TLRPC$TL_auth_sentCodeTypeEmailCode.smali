@@ -4,7 +4,7 @@
 
 
 # static fields
-.field public static constructor:I = 0x5a159841
+.field public static constructor:I = -0xbaf0a65
 
 
 # direct methods
@@ -17,7 +17,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 6916
+    .line 6917
     invoke-direct {p0}, Lorg/telegram/tgnet/TLRPC$auth_SentCodeType;-><init>()V
 
     return-void
@@ -28,7 +28,7 @@
 .method public readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
     .locals 4
 
-    .line 6921
+    .line 6922
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
@@ -43,14 +43,14 @@
 
     if-eqz v1, :cond_0
 
-    const/4 v1, 0x1
+    move v1, v3
 
     goto :goto_0
 
     :cond_0
-    const/4 v1, 0x0
+    move v1, v2
 
-    .line 6922
+    .line 6923
     :goto_0
     iput-boolean v1, p0, Lorg/telegram/tgnet/TLRPC$auth_SentCodeType;->apple_signin_allowed:Z
 
@@ -58,53 +58,68 @@
 
     if-eqz v0, :cond_1
 
-    const/4 v2, 0x1
+    move v2, v3
 
-    .line 6923
+    .line 6924
     :cond_1
     iput-boolean v2, p0, Lorg/telegram/tgnet/TLRPC$auth_SentCodeType;->google_signin_allowed:Z
 
-    .line 6924
+    .line 6925
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readString(Z)Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, p0, Lorg/telegram/tgnet/TLRPC$auth_SentCodeType;->email_pattern:Ljava/lang/String;
 
-    .line 6925
+    .line 6926
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
 
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$auth_SentCodeType;->length:I
 
-    .line 6926
+    .line 6927
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$auth_SentCodeType;->flags:I
 
-    and-int/lit8 v0, v0, 0x4
+    and-int/lit8 v0, v0, 0x8
 
     if-eqz v0, :cond_2
 
-    .line 6927
+    .line 6928
+    invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
+
+    move-result v0
+
+    iput v0, p0, Lorg/telegram/tgnet/TLRPC$auth_SentCodeType;->reset_available_period:I
+
+    .line 6930
+    :cond_2
+    iget v0, p0, Lorg/telegram/tgnet/TLRPC$auth_SentCodeType;->flags:I
+
+    and-int/lit8 v0, v0, 0x10
+
+    if-eqz v0, :cond_3
+
+    .line 6931
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result p1
 
-    iput p1, p0, Lorg/telegram/tgnet/TLRPC$auth_SentCodeType;->next_phone_login_date:I
+    iput p1, p0, Lorg/telegram/tgnet/TLRPC$auth_SentCodeType;->reset_pending_date:I
 
-    :cond_2
+    :cond_3
     return-void
 .end method
 
 .method public serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
     .locals 2
 
-    .line 6932
+    .line 6936
     sget v0, Lorg/telegram/tgnet/TLRPC$TL_auth_sentCodeTypeEmailCode;->constructor:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 6933
+    .line 6937
     iget-boolean v0, p0, Lorg/telegram/tgnet/TLRPC$auth_SentCodeType;->apple_signin_allowed:Z
 
     if-eqz v0, :cond_0
@@ -123,7 +138,7 @@
     :goto_0
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$auth_SentCodeType;->flags:I
 
-    .line 6934
+    .line 6938
     iget-boolean v1, p0, Lorg/telegram/tgnet/TLRPC$auth_SentCodeType;->google_signin_allowed:Z
 
     if-eqz v1, :cond_1
@@ -138,31 +153,44 @@
     :goto_1
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$auth_SentCodeType;->flags:I
 
-    .line 6935
+    .line 6939
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 6936
+    .line 6940
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$auth_SentCodeType;->email_pattern:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeString(Ljava/lang/String;)V
 
-    .line 6937
+    .line 6941
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$auth_SentCodeType;->length:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 6938
+    .line 6942
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$auth_SentCodeType;->flags:I
 
-    and-int/lit8 v0, v0, 0x4
+    and-int/lit8 v0, v0, 0x8
 
     if-eqz v0, :cond_2
 
-    .line 6939
-    iget v0, p0, Lorg/telegram/tgnet/TLRPC$auth_SentCodeType;->next_phone_login_date:I
+    .line 6943
+    iget v0, p0, Lorg/telegram/tgnet/TLRPC$auth_SentCodeType;->reset_available_period:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
+    .line 6945
     :cond_2
+    iget v0, p0, Lorg/telegram/tgnet/TLRPC$auth_SentCodeType;->flags:I
+
+    and-int/lit8 v0, v0, 0x10
+
+    if-eqz v0, :cond_3
+
+    .line 6946
+    iget v0, p0, Lorg/telegram/tgnet/TLRPC$auth_SentCodeType;->reset_pending_date:I
+
+    invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
+
+    :cond_3
     return-void
 .end method

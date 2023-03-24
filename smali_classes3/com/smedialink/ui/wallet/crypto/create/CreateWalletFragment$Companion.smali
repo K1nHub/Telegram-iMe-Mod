@@ -18,7 +18,7 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 1377
+    .line 1353
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -34,17 +34,17 @@
 
 
 # virtual methods
-.method public final newInstance(Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment$ScreenType;)Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment;
+.method public final newInstance(Lcom/smedialink/model/wallet/crypto/create/CreateWalletScreenType;)Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment;
     .locals 1
 
     const-string v0, "currentType"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 1385
+    .line 1361
     new-instance v0, Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment;
 
-    invoke-direct {v0, p1}, Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment;-><init>(Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment$ScreenType;)V
+    invoke-direct {v0, p1}, Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment;-><init>(Lcom/smedialink/model/wallet/crypto/create/CreateWalletScreenType;)V
 
     return-object v0
 .end method

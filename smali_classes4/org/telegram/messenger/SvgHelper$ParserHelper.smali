@@ -188,7 +188,7 @@
 
     aget-wide v2, p1, p2
 
-    mul-double v0, v0, v2
+    mul-double/2addr v0, v2
 
     goto :goto_1
 
@@ -246,17 +246,17 @@
 
     if-eq v0, v1, :cond_0
 
-    const/4 v0, 0x1
+    move v0, v3
 
     goto :goto_1
 
     :cond_0
-    const/4 v0, 0x0
+    move v0, v4
 
     goto :goto_0
 
     :cond_1
-    const/4 v0, 0x1
+    move v0, v3
 
     .line 1582
     :goto_0
@@ -306,11 +306,11 @@
     return v10
 
     :pswitch_2
-    const/4 v5, 0x0
+    move v5, v4
 
-    const/4 v11, 0x0
+    move v11, v5
 
-    const/4 v12, 0x0
+    move v12, v11
 
     :pswitch_3
     if-ge v5, v9, :cond_2
@@ -341,31 +341,32 @@
 
     packed-switch v13, :pswitch_data_2
 
+    move v13, v3
+
     goto :goto_3
 
     :cond_3
-    const/4 v5, 0x0
+    move v13, v3
 
-    const/4 v11, 0x0
+    move v5, v4
 
-    const/4 v12, 0x0
+    move v11, v5
 
-    :goto_3
-    const/4 v13, 0x1
+    move v12, v11
 
-    goto :goto_4
+    goto :goto_3
 
     :pswitch_4
-    const/4 v5, 0x0
+    move v5, v4
 
-    const/4 v11, 0x0
+    move v11, v5
 
-    const/4 v12, 0x0
+    move v12, v11
 
-    const/4 v13, 0x0
+    move v13, v12
 
     .line 1655
-    :goto_4
+    :goto_3
     iget-char v14, p0, Lorg/telegram/messenger/SvgHelper$ParserHelper;->current:C
 
     if-ne v14, v8, :cond_6
@@ -440,7 +441,7 @@
 
     if-eq v5, v6, :cond_7
 
-    goto :goto_5
+    goto :goto_4
 
     .line 1732
     :cond_7
@@ -462,7 +463,7 @@
     return v10
 
     :cond_8
-    const/4 v3, 0x0
+    move v3, v4
 
     .line 1740
     :cond_9
@@ -485,7 +486,7 @@
 
     packed-switch v1, :pswitch_data_8
 
-    goto :goto_5
+    goto :goto_4
 
     .line 1773
     :pswitch_9
@@ -497,10 +498,10 @@
 
     packed-switch v1, :pswitch_data_9
 
-    goto :goto_5
+    goto :goto_4
 
     :pswitch_a
-    const/4 v1, 0x0
+    move v1, v4
 
     :pswitch_b
     const/4 v2, 0x3
@@ -530,7 +531,7 @@
 
     move v4, v1
 
-    :goto_5
+    :goto_4
     if-nez v3, :cond_b
 
     neg-int v4, v4
@@ -549,6 +550,8 @@
     move-result v0
 
     return v0
+
+    nop
 
     :pswitch_data_0
     .packed-switch 0x2e

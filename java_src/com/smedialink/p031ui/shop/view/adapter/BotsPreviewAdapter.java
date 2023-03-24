@@ -120,7 +120,7 @@ public final class BotsPreviewAdapter extends RecyclerListView.ViewBindingSelect
             if (r0 == 0) goto La6
             goto La8
         La6:
-            r0 = 0
+            r0 = r2
             goto La9
         La8:
             r0 = 1

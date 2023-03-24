@@ -10,18 +10,18 @@ public final class zzd implements Parcelable.Creator {
     @Override // android.os.Parcelable.Creator
     public final /* bridge */ /* synthetic */ Object createFromParcel(Parcel parcel) {
         int validateObjectHeader = SafeParcelReader.validateObjectHeader(parcel);
+        boolean z = false;
+        boolean z2 = false;
         IBinder iBinder = null;
         LatLng latLng = null;
         LatLngBounds latLngBounds = null;
-        float f = BitmapDescriptorFactory.HUE_RED;
-        float f2 = BitmapDescriptorFactory.HUE_RED;
-        float f3 = BitmapDescriptorFactory.HUE_RED;
-        float f4 = BitmapDescriptorFactory.HUE_RED;
-        boolean z = false;
-        float f5 = BitmapDescriptorFactory.HUE_RED;
-        float f6 = BitmapDescriptorFactory.HUE_RED;
-        float f7 = BitmapDescriptorFactory.HUE_RED;
-        boolean z2 = false;
+        float f = 0.0f;
+        float f2 = 0.0f;
+        float f3 = 0.0f;
+        float f4 = 0.0f;
+        float f5 = 0.0f;
+        float f6 = 0.0f;
+        float f7 = 0.0f;
         while (parcel.dataPosition() < validateObjectHeader) {
             int readHeader = SafeParcelReader.readHeader(parcel);
             switch (SafeParcelReader.getFieldId(readHeader)) {

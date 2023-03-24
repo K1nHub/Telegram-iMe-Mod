@@ -1,6 +1,6 @@
 package com.smedialink.storage.data.manager.wallet_connect;
 
-import com.smedialink.storage.data.utils.crypto.CryptoWalletUtils;
+import com.smedialink.storage.data.utils.crypto.CryptoEVMUtils;
 import com.smedialink.storage.domain.manager.crypto.CryptoAccessManager;
 import com.smedialink.storage.domain.model.crypto.BlockchainType;
 import com.smedialink.storage.domain.model.crypto.Wallet;
@@ -35,15 +35,15 @@ final class WalletConnectManagerImpl$approveSign$1 extends Lambda implements Fun
     /* renamed from: invoke  reason: avoid collision after fix types in other method */
     public final void invoke2() {
         CryptoAccessManager cryptoAccessManager;
-        Wallet.EVM wallet;
+        Wallet.EVM wallet2;
         cryptoAccessManager = this.this$0.cryptoAccessManager;
         if (cryptoAccessManager.isWalletCreated(BlockchainType.EVM)) {
-            CryptoWalletUtils cryptoWalletUtils = CryptoWalletUtils.INSTANCE;
-            wallet = this.this$0.getWallet();
-            if (wallet == null) {
+            CryptoEVMUtils cryptoEVMUtils = CryptoEVMUtils.INSTANCE;
+            wallet2 = this.this$0.getWallet();
+            if (wallet2 == null) {
                 return;
             }
-            this.this$0.approveRequest(this.$sessionKey, this.$requestId, cryptoWalletUtils.signMessage(wallet, this.$message.getData(), this.$message.getType()));
+            this.this$0.approveRequest(this.$sessionKey, this.$requestId, cryptoEVMUtils.signMessage(wallet2, this.$message.getData(), this.$message.getType()));
         }
     }
 }

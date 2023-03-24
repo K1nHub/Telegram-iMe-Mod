@@ -494,7 +494,7 @@
 
     new-array v6, v6, [F
 
-    mul-float v8, v8, v2
+    mul-float/2addr v8, v2
 
     mul-float v8, v8, p9
 
@@ -513,7 +513,7 @@
 
     div-float/2addr v2, v10
 
-    mul-float v8, v8, v2
+    mul-float/2addr v8, v2
 
     const/4 v2, 0x0
 
@@ -522,7 +522,7 @@
 
     move-result v10
 
-    const/4 v11, 0x0
+    move v11, v4
 
     :goto_2
     if-ge v11, v10, :cond_8
@@ -543,7 +543,7 @@
 
     int-to-float v14, v14
 
-    mul-float v13, v13, v14
+    mul-float/2addr v13, v14
 
     iget v14, v12, Lorg/telegram/messenger/VideoEditedInfo$MediaEntity;->viewWidth:I
 
@@ -551,7 +551,7 @@
 
     iget v15, v12, Lorg/telegram/messenger/VideoEditedInfo$MediaEntity;->scale:F
 
-    mul-float v14, v14, v15
+    mul-float/2addr v14, v15
 
     const/high16 v15, 0x40000000    # 2.0f
 
@@ -570,7 +570,7 @@
 
     int-to-float v14, v14
 
-    mul-float v13, v13, v14
+    mul-float/2addr v13, v14
 
     iget v14, v12, Lorg/telegram/messenger/VideoEditedInfo$MediaEntity;->viewHeight:I
 
@@ -578,7 +578,7 @@
 
     iget v4, v12, Lorg/telegram/messenger/VideoEditedInfo$MediaEntity;->scale:F
 
-    mul-float v14, v14, v4
+    mul-float/2addr v14, v4
 
     div-float/2addr v14, v15
 
@@ -597,7 +597,7 @@
 
     int-to-float v14, v14
 
-    mul-float v13, v13, v14
+    mul-float/2addr v13, v14
 
     aput v13, v6, v9
 
@@ -610,7 +610,7 @@
 
     int-to-float v14, v14
 
-    mul-float v13, v13, v14
+    mul-float/2addr v13, v14
 
     const/4 v14, 0x3
 
@@ -770,7 +770,7 @@
     :goto_4
     iget v0, v12, Lorg/telegram/messenger/VideoEditedInfo$MediaEntity;->scale:F
 
-    mul-float v0, v0, v8
+    mul-float/2addr v0, v8
 
     iput v0, v12, Lorg/telegram/messenger/VideoEditedInfo$MediaEntity;->scale:F
 
@@ -783,7 +783,7 @@
 
     int-to-float v13, v13
 
-    mul-float v13, v13, v0
+    mul-float/2addr v13, v0
 
     const/high16 v0, 0x40000000    # 2.0f
 
@@ -812,7 +812,7 @@
 
     iget v13, v12, Lorg/telegram/messenger/VideoEditedInfo$MediaEntity;->scale:F
 
-    mul-float v9, v9, v13
+    mul-float/2addr v9, v13
 
     const/high16 v13, 0x40000000    # 2.0f
 
@@ -867,7 +867,7 @@
 
     iget v13, v12, Lorg/telegram/messenger/VideoEditedInfo$MediaEntity;->scale:F
 
-    mul-float v9, v9, v13
+    mul-float/2addr v9, v13
 
     invoke-virtual/range {p4 .. p4}, Landroid/graphics/Bitmap;->getWidth()I
 
@@ -886,7 +886,7 @@
 
     iget v13, v12, Lorg/telegram/messenger/VideoEditedInfo$MediaEntity;->scale:F
 
-    mul-float v9, v9, v13
+    mul-float/2addr v9, v13
 
     invoke-virtual/range {p4 .. p4}, Landroid/graphics/Bitmap;->getHeight()I
 
@@ -939,7 +939,7 @@
 
     const-wide v15, 0x3f91df46a2529d39L    # 0.017453292519943295
 
-    mul-double v0, v0, v15
+    mul-double/2addr v0, v15
 
     sub-double/2addr v13, v0
 
@@ -1022,7 +1022,7 @@
 
     move-result v2
 
-    mul-float v2, v2, v0
+    mul-float/2addr v2, v0
 
     const/high16 v4, 0x41f00000    # 30.0f
 
@@ -1039,16 +1039,16 @@
 
     div-float/2addr v4, v0
 
-    move v2, v4
+    move v6, p2
 
-    const/4 v6, 0x1
+    move v2, v4
 
     goto :goto_0
 
     :cond_0
     move v2, v0
 
-    const/4 v6, 0x0
+    move v6, v1
 
     .line 485
     :goto_0
@@ -1100,7 +1100,7 @@
 
     move-result v4
 
-    mul-float v4, v4, v1
+    mul-float/2addr v4, v1
 
     .line 488
     invoke-virtual {p1}, Landroid/graphics/RectF;->centerY()F
@@ -1493,7 +1493,7 @@
 
     move-result v3
 
-    mul-float v3, v3, v1
+    mul-float/2addr v3, v1
 
     .line 653
     iget v4, v6, Lorg/telegram/ui/Components/Crop/CropView;->rotationStartScale:F
@@ -1502,7 +1502,7 @@
 
     if-gez v3, :cond_4
 
-    const/high16 v1, 0x3f800000    # 1.0f
+    move v1, v2
 
     .line 656
     :cond_4
@@ -1700,14 +1700,14 @@
 
     move-result v0
 
-    mul-float v0, v0, p3
+    mul-float/2addr v0, p3
 
     .line 515
     invoke-virtual {p1}, Landroid/graphics/RectF;->height()F
 
     move-result v1
 
-    mul-float v1, v1, p3
+    mul-float/2addr v1, p3
 
     .line 517
     invoke-virtual {p1}, Landroid/graphics/RectF;->width()F
@@ -1748,7 +1748,7 @@
 
     invoke-virtual {p1, v5, v7, v3, v6}, Landroid/graphics/RectF;->set(FFFF)V
 
-    mul-float p2, p2, p3
+    mul-float/2addr p2, p3
 
     return p2
 .end method
@@ -1865,7 +1865,7 @@
 
     float-to-double p1, p1
 
-    mul-double v7, v7, p1
+    mul-double/2addr v7, p1
 
     double-to-float p4, v7
 
@@ -1874,7 +1874,7 @@
 
     move-result-wide v5
 
-    mul-double v5, v5, p1
+    mul-double/2addr v5, p1
 
     double-to-float p1, v5
 
@@ -1887,7 +1887,7 @@
 
     float-to-double v5, v0
 
-    mul-double v3, v3, v5
+    mul-double/2addr v3, v5
 
     double-to-float p2, v3
 
@@ -1896,7 +1896,7 @@
 
     move-result-wide v0
 
-    mul-double v0, v0, v5
+    mul-double/2addr v0, v5
 
     double-to-float v0, v0
 
@@ -2095,7 +2095,7 @@
 
     sub-float/2addr p1, v0
 
-    mul-float p1, p1, p5
+    mul-float/2addr p1, p5
 
     add-float/2addr p1, v0
 
@@ -2109,7 +2109,7 @@
     .line 497
     aget v0, p2, p5
 
-    mul-float v0, v0, p1
+    mul-float/2addr v0, p1
 
     aput v0, p2, p5
 
@@ -2138,7 +2138,7 @@
 
     move-result p5
 
-    mul-float p1, p1, p5
+    mul-float/2addr p1, p5
 
     const/4 v0, 0x1
 
@@ -2154,7 +2154,7 @@
 
     aput v1, p2, v0
 
-    mul-float p3, p3, p5
+    mul-float/2addr p3, p5
 
     const/4 v0, 0x2
 
@@ -2177,11 +2177,11 @@
 
     aget v2, p2, v1
 
-    mul-float p1, p1, v2
+    mul-float/2addr p1, v2
 
     aget v2, p2, v1
 
-    mul-float p3, p3, v2
+    mul-float/2addr p3, v2
 
     invoke-static {v0, p1, p3}, Lorg/telegram/ui/Components/Crop/CropView$CropState;->access$800(Lorg/telegram/ui/Components/Crop/CropView$CropState;FF)V
 
@@ -2189,7 +2189,7 @@
 
     sub-float/2addr p4, p1
 
-    mul-float p4, p4, p5
+    mul-float/2addr p4, p5
 
     add-float/2addr p4, p1
 
@@ -2201,7 +2201,7 @@
     .line 687
     aget p1, p2, v1
 
-    mul-float p1, p1, p4
+    mul-float/2addr p1, p4
 
     aput p1, p2, v1
 
@@ -2251,21 +2251,21 @@
 
     sub-float/2addr v0, p8
 
-    mul-float p3, p3, v0
+    mul-float/2addr p3, v0
 
     sub-float/2addr p2, p3
 
     .line 778
     iget p3, p1, Lorg/telegram/ui/Components/Crop/CropView$CropState;->y:F
 
-    mul-float p4, p4, v0
+    mul-float/2addr p4, v0
 
     sub-float/2addr p3, p4
 
     .line 779
     iget p1, p1, Lorg/telegram/ui/Components/Crop/CropView$CropState;->rotation:F
 
-    mul-float p5, p5, v0
+    mul-float/2addr p5, v0
 
     sub-float/2addr p1, p5
 
@@ -2616,7 +2616,7 @@
 
     iget v5, v4, Lorg/telegram/ui/Components/Crop/CropView$CropState;->minimumScale:F
 
-    mul-float v5, v5, v2
+    mul-float/2addr v5, v2
 
     .line 1074
     invoke-static {v4}, Lorg/telegram/ui/Components/Crop/CropView$CropState;->access$1300(Lorg/telegram/ui/Components/Crop/CropView$CropState;)I
@@ -2690,7 +2690,7 @@
 
     int-to-float v2, v2
 
-    mul-float v5, v5, v2
+    mul-float/2addr v5, v2
 
     float-to-double v8, v5
 
@@ -2872,17 +2872,15 @@
     :cond_7
     const/4 v1, 0x0
 
-    const/4 v6, 0x0
-
     goto :goto_5
 
     :cond_8
     :goto_4
     const/4 v1, 0x1
 
-    const/4 v6, 0x1
-
     :goto_5
+    move v6, v1
+
     iget-object v1, v0, Lorg/telegram/ui/Components/Crop/CropView;->state:Lorg/telegram/ui/Components/Crop/CropView$CropState;
 
     invoke-static {v1}, Lorg/telegram/ui/Components/Crop/CropView$CropState;->access$1300(Lorg/telegram/ui/Components/Crop/CropView$CropState;)I
@@ -3415,7 +3413,7 @@
 
     iget v6, v5, Lorg/telegram/ui/Components/Crop/CropView$CropState;->minimumScale:F
 
-    mul-float v6, v6, v3
+    mul-float/2addr v6, v3
 
     .line 1168
     iget-object v7, v1, Lorg/telegram/messenger/MediaController$MediaEditState;->cropState:Lorg/telegram/messenger/MediaController$CropState;
@@ -3533,7 +3531,7 @@
 
     int-to-float v7, v7
 
-    mul-float v6, v6, v7
+    mul-float/2addr v6, v7
 
     float-to-double v11, v6
 
@@ -3616,7 +3614,7 @@
 
     move-result v9
 
-    mul-float v6, v6, v9
+    mul-float/2addr v6, v9
 
     iput v6, v5, Lorg/telegram/messenger/MediaController$CropState;->cropScale:F
 
@@ -3774,7 +3772,7 @@
 
     if-nez v2, :cond_2
 
-    const/high16 v0, 0x3f800000    # 1.0f
+    move v0, v3
 
     .line 761
     :cond_2
@@ -3791,7 +3789,7 @@
 
     if-eqz v2, :cond_3
 
-    const/4 v3, 0x0
+    move v3, v1
 
     :cond_3
     invoke-virtual {v0, v3}, Lorg/telegram/ui/Components/Crop/CropAreaView;->setLockedAspectRatio(F)V
@@ -3919,8 +3917,6 @@
 
     :goto_1
     return-void
-
-    nop
 
     :array_0
     .array-data 4
@@ -4263,7 +4259,7 @@
 
     move-result v0
 
-    mul-float v0, v0, p1
+    mul-float/2addr v0, p1
 
     const/high16 v1, 0x41f00000    # 30.0f
 
@@ -4329,7 +4325,7 @@
 
     move-result v1
 
-    mul-float p2, p2, v1
+    mul-float/2addr p2, v1
 
     .line 945
     iget-object v1, p0, Lorg/telegram/ui/Components/Crop/CropView;->imageView:Landroid/widget/ImageView;
@@ -4366,7 +4362,7 @@
 
     move-result v0
 
-    mul-float p3, p3, v0
+    mul-float/2addr p3, v0
 
     .line 947
     iget-object v0, p0, Lorg/telegram/ui/Components/Crop/CropView;->state:Lorg/telegram/ui/Components/Crop/CropView$CropState;
@@ -4569,22 +4565,22 @@
 
     rem-float/2addr v3, v4
 
-    const/4 v4, 0x1
+    const/4 v4, 0x0
 
-    const/4 v5, 0x0
+    cmpl-float v3, v3, v4
+
+    const/4 v5, 0x1
 
     const/4 v6, 0x0
 
-    cmpl-float v3, v3, v6
-
     if-eqz v3, :cond_0
 
-    const/4 v3, 0x1
+    move v3, v5
 
     goto :goto_0
 
     :cond_0
-    const/4 v3, 0x0
+    move v3, v6
 
     :goto_0
     iget-boolean v7, p0, Lorg/telegram/ui/Components/Crop/CropView;->freeform:Z
@@ -4598,7 +4594,7 @@
 
     if-eqz v1, :cond_1
 
-    const/4 v1, 0x0
+    move v1, v4
 
     goto :goto_1
 
@@ -4615,12 +4611,12 @@
 
     iget-boolean v2, p0, Lorg/telegram/ui/Components/Crop/CropView;->freeform:Z
 
-    invoke-static {v0, v1, v6, v2}, Lorg/telegram/ui/Components/Crop/CropView$CropState;->access$600(Lorg/telegram/ui/Components/Crop/CropView$CropState;Lorg/telegram/ui/Components/Crop/CropAreaView;FZ)V
+    invoke-static {v0, v1, v4, v2}, Lorg/telegram/ui/Components/Crop/CropView$CropState;->access$600(Lorg/telegram/ui/Components/Crop/CropView$CropState;Lorg/telegram/ui/Components/Crop/CropAreaView;FZ)V
 
     .line 437
     iget-object v0, p0, Lorg/telegram/ui/Components/Crop/CropView;->state:Lorg/telegram/ui/Components/Crop/CropView$CropState;
 
-    iput-boolean v5, v0, Lorg/telegram/ui/Components/Crop/CropView$CropState;->mirrored:Z
+    iput-boolean v6, v0, Lorg/telegram/ui/Components/Crop/CropView$CropState;->mirrored:Z
 
     .line 438
     iget-object v0, p0, Lorg/telegram/ui/Components/Crop/CropView;->areaView:Lorg/telegram/ui/Components/Crop/CropAreaView;
@@ -4641,12 +4637,12 @@
     if-eqz p1, :cond_2
 
     .line 444
-    invoke-interface {p1, v4}, Lorg/telegram/ui/Components/Crop/CropView$CropViewListener;->onChange(Z)V
+    invoke-interface {p1, v5}, Lorg/telegram/ui/Components/Crop/CropView$CropViewListener;->onChange(Z)V
 
     .line 445
     iget-object p1, p0, Lorg/telegram/ui/Components/Crop/CropView;->listener:Lorg/telegram/ui/Components/Crop/CropView$CropViewListener;
 
-    invoke-interface {p1, v5}, Lorg/telegram/ui/Components/Crop/CropView$CropViewListener;->onAspectLock(Z)V
+    invoke-interface {p1, v6}, Lorg/telegram/ui/Components/Crop/CropView$CropViewListener;->onAspectLock(Z)V
 
     :cond_2
     return-void
@@ -4736,7 +4732,7 @@
 
     invoke-virtual {p1, v4}, Lorg/telegram/ui/Components/Crop/CropAreaView;->setActualRect(F)V
 
-    const/4 p1, 0x0
+    move p1, v1
 
     goto :goto_1
 
@@ -4768,12 +4764,12 @@
 
     if-eqz v7, :cond_2
 
-    const/4 v7, 0x1
+    move v7, v2
 
     goto :goto_0
 
     :cond_2
-    const/4 v7, 0x0
+    move v7, v1
 
     :goto_0
     iget-boolean v8, p0, Lorg/telegram/ui/Components/Crop/CropView;->freeform:Z
@@ -4820,12 +4816,12 @@
 
     if-nez v0, :cond_3
 
-    const/4 v0, 0x1
+    move v0, v2
 
     goto :goto_2
 
     :cond_3
-    const/4 v0, 0x0
+    move v0, v1
 
     :goto_2
     invoke-interface {p1, v0}, Lorg/telegram/ui/Components/Crop/CropView$CropViewListener;->onChange(Z)V
@@ -4840,7 +4836,7 @@
 
     if-eqz p1, :cond_5
 
-    const/4 v1, 0x1
+    move v1, v2
 
     :cond_5
     return v1
@@ -4859,7 +4855,7 @@
 
     move-result v1
 
-    mul-float v1, v1, v0
+    mul-float/2addr v1, v0
 
     invoke-virtual {p1}, Landroid/graphics/RectF;->width()F
 
@@ -4894,7 +4890,7 @@
 
     move-result v0
 
-    mul-float p2, p2, v0
+    mul-float/2addr p2, v0
 
     invoke-virtual {p1}, Landroid/graphics/RectF;->height()F
 
@@ -5324,9 +5320,9 @@
 
     aput-object v5, v1, v0
 
-    const/4 v5, 0x0
+    move v6, v4
 
-    const/4 v6, 0x2
+    move v5, v8
 
     :goto_0
     if-ge v5, v2, :cond_3
@@ -5343,24 +5339,24 @@
 
     const/high16 v10, 0x3f800000    # 1.0f
 
-    const-string v11, "%d:%d"
-
     cmpl-float v9, v9, v10
+
+    const-string v10, "%d:%d"
 
     if-lez v9, :cond_2
 
     new-array v9, v4, [Ljava/lang/Object;
 
     .line 1258
-    aget-object v10, v7, v8
+    aget-object v11, v7, v8
 
-    aput-object v10, v9, v8
+    aput-object v11, v9, v8
 
     aget-object v7, v7, v0
 
     aput-object v7, v9, v0
 
-    invoke-static {v11, v9}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {v10, v9}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v7
 
@@ -5372,15 +5368,15 @@
     new-array v9, v4, [Ljava/lang/Object;
 
     .line 1260
-    aget-object v10, v7, v0
+    aget-object v11, v7, v0
 
-    aput-object v10, v9, v8
+    aput-object v11, v9, v8
 
     aget-object v7, v7, v8
 
     aput-object v7, v9, v0
 
-    invoke-static {v11, v9}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {v10, v9}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v7
 
@@ -5549,9 +5545,9 @@
 
     const/high16 v1, 0x42b40000    # 90.0f
 
-    const/high16 v2, 0x40000000    # 2.0f
-
     cmpl-float v0, v0, v1
+
+    const/high16 v1, 0x40000000    # 2.0f
 
     if-eqz v0, :cond_2
 
@@ -5561,9 +5557,9 @@
 
     move-result v0
 
-    const/high16 v1, 0x43870000    # 270.0f
+    const/high16 v2, 0x43870000    # 270.0f
 
-    cmpl-float v0, v0, v1
+    cmpl-float v0, v0, v2
 
     if-nez v0, :cond_1
 
@@ -5573,15 +5569,15 @@
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/Components/Crop/CropView;->overlayMatrix:Landroid/graphics/Matrix;
 
-    iget-object v1, p0, Lorg/telegram/ui/Components/Crop/CropView;->state:Lorg/telegram/ui/Components/Crop/CropView$CropState;
+    iget-object v2, p0, Lorg/telegram/ui/Components/Crop/CropView;->state:Lorg/telegram/ui/Components/Crop/CropView$CropState;
 
-    invoke-static {v1}, Lorg/telegram/ui/Components/Crop/CropView$CropState;->access$1200(Lorg/telegram/ui/Components/Crop/CropView$CropState;)F
+    invoke-static {v2}, Lorg/telegram/ui/Components/Crop/CropView$CropState;->access$1200(Lorg/telegram/ui/Components/Crop/CropView$CropState;)F
 
-    move-result v1
+    move-result v2
 
-    neg-float v1, v1
+    neg-float v2, v2
 
-    div-float/2addr v1, v2
+    div-float/2addr v2, v1
 
     iget-object v3, p0, Lorg/telegram/ui/Components/Crop/CropView;->state:Lorg/telegram/ui/Components/Crop/CropView$CropState;
 
@@ -5591,9 +5587,9 @@
 
     neg-float v3, v3
 
-    div-float/2addr v3, v2
+    div-float/2addr v3, v1
 
-    invoke-virtual {v0, v1, v3}, Landroid/graphics/Matrix;->postTranslate(FF)Z
+    invoke-virtual {v0, v2, v3}, Landroid/graphics/Matrix;->postTranslate(FF)Z
 
     goto :goto_1
 
@@ -5602,15 +5598,15 @@
     :goto_0
     iget-object v0, p0, Lorg/telegram/ui/Components/Crop/CropView;->overlayMatrix:Landroid/graphics/Matrix;
 
-    iget-object v1, p0, Lorg/telegram/ui/Components/Crop/CropView;->state:Lorg/telegram/ui/Components/Crop/CropView$CropState;
+    iget-object v2, p0, Lorg/telegram/ui/Components/Crop/CropView;->state:Lorg/telegram/ui/Components/Crop/CropView$CropState;
 
-    invoke-static {v1}, Lorg/telegram/ui/Components/Crop/CropView$CropState;->access$1100(Lorg/telegram/ui/Components/Crop/CropView$CropState;)F
+    invoke-static {v2}, Lorg/telegram/ui/Components/Crop/CropView$CropState;->access$1100(Lorg/telegram/ui/Components/Crop/CropView$CropState;)F
 
-    move-result v1
+    move-result v2
 
-    neg-float v1, v1
+    neg-float v2, v2
 
-    div-float/2addr v1, v2
+    div-float/2addr v2, v1
 
     iget-object v3, p0, Lorg/telegram/ui/Components/Crop/CropView;->state:Lorg/telegram/ui/Components/Crop/CropView$CropState;
 
@@ -5620,9 +5616,9 @@
 
     neg-float v3, v3
 
-    div-float/2addr v3, v2
+    div-float/2addr v3, v1
 
-    invoke-virtual {v0, v1, v3}, Landroid/graphics/Matrix;->postTranslate(FF)Z
+    invoke-virtual {v0, v2, v3}, Landroid/graphics/Matrix;->postTranslate(FF)Z
 
     .line 465
     :goto_1

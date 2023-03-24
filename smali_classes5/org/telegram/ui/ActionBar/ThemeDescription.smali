@@ -553,7 +553,7 @@
 
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    move v1, v0
 
     .line 547
     :goto_0
@@ -601,7 +601,7 @@
     goto :goto_1
 
     :cond_0
-    const/4 v2, 0x0
+    move v2, v0
 
     goto/16 :goto_7
 
@@ -700,12 +700,12 @@
 
     if-eqz v6, :cond_5
 
-    const/4 v6, 0x1
+    move v6, v5
 
     goto :goto_2
 
     :cond_5
-    const/4 v6, 0x0
+    move v6, v0
 
     :goto_2
     invoke-static {v2, p2, v6}, Lorg/telegram/ui/ActionBar/Theme;->setSelectorDrawableColor(Landroid/graphics/drawable/Drawable;IZ)V
@@ -766,7 +766,7 @@
 
     if-eqz v2, :cond_f
 
-    const/4 v2, 0x0
+    move v2, v0
 
     :goto_4
     if-ge v2, v4, :cond_f
@@ -844,7 +844,7 @@
 
     :cond_f
     :goto_6
-    const/4 v2, 0x1
+    move v2, v5
 
     .line 596
     :goto_7
@@ -1187,7 +1187,7 @@
 
     if-eqz v2, :cond_48
 
-    const/4 v3, 0x0
+    move v3, v0
 
     .line 658
     :goto_8
@@ -1278,7 +1278,7 @@
 
     if-lez v3, :cond_48
 
-    const/4 v3, 0x0
+    move v3, v0
 
     .line 672
     :goto_9
@@ -1611,7 +1611,7 @@
     goto :goto_b
 
     :cond_31
-    const/4 v5, 0x0
+    move v5, v0
 
     :goto_b
     invoke-static {v8, p2, v5}, Lorg/telegram/ui/ActionBar/Theme;->setSelectorDrawableColor(Landroid/graphics/drawable/Drawable;IZ)V
@@ -1856,7 +1856,7 @@
 
     if-eqz v3, :cond_43
 
-    const/4 v2, 0x0
+    move v2, v0
 
     :goto_c
     if-ge v2, v4, :cond_48
@@ -1920,7 +1920,7 @@
 
     if-lez v5, :cond_42
 
-    const/4 v5, 0x0
+    move v5, v0
 
     .line 777
     :goto_e
@@ -1970,7 +1970,7 @@
     if-eqz v2, :cond_48
 
     :cond_44
-    const/4 v2, 0x0
+    move v2, v0
 
     :goto_f
     if-ge v2, v4, :cond_48
@@ -2037,7 +2037,7 @@
 
     if-lez v5, :cond_46
 
-    const/4 v5, 0x0
+    move v5, v0
 
     .line 794
     :goto_11
@@ -2252,7 +2252,7 @@
 
     if-eqz p2, :cond_3
 
-    const/4 p2, 0x0
+    move p2, p3
 
     .line 272
     :goto_0
@@ -2303,7 +2303,7 @@
 
     if-eqz p2, :cond_d
 
-    const/4 p2, 0x0
+    move p2, p3
 
     .line 281
     :goto_2
@@ -2705,12 +2705,12 @@
 
     if-eqz v2, :cond_17
 
-    const/4 v2, 0x1
+    move v2, v1
 
     goto :goto_7
 
     :cond_17
-    const/4 v2, 0x0
+    move v2, p3
 
     :goto_7
     invoke-static {p2, p1, v2}, Lorg/telegram/ui/ActionBar/Theme;->setSelectorDrawableColor(Landroid/graphics/drawable/Drawable;IZ)V
@@ -2912,12 +2912,12 @@
 
     if-eqz p2, :cond_23
 
-    const/4 p2, 0x1
+    move p2, v1
 
     goto :goto_9
 
     :cond_23
-    const/4 p2, 0x0
+    move p2, p3
 
     :goto_9
     invoke-virtual {v2, p1, p2, p3}, Lorg/telegram/ui/ActionBar/ActionBar;->setPopupItemsColor(IZZ)V
@@ -3284,12 +3284,12 @@
 
     if-eqz v0, :cond_38
 
-    const/4 v0, 0x1
+    move v0, v1
 
     goto :goto_e
 
     :cond_38
-    const/4 v0, 0x0
+    move v0, p3
 
     :goto_e
     invoke-static {p2, p1, v0}, Lorg/telegram/ui/ActionBar/Theme;->setSelectorDrawableColor(Landroid/graphics/drawable/Drawable;IZ)V
@@ -3347,7 +3347,7 @@
 
     if-eqz p2, :cond_3e
 
-    const/4 v0, 0x0
+    move v0, p3
 
     .line 457
     :goto_f
@@ -3487,7 +3487,7 @@
 
     if-eqz v0, :cond_44
 
-    const/4 v1, 0x0
+    move v1, p3
 
     .line 490
     :goto_11
@@ -3518,7 +3518,7 @@
 
     if-eqz v0, :cond_45
 
-    const/4 v1, 0x0
+    move v1, p3
 
     .line 496
     :goto_12
@@ -3629,7 +3629,7 @@
 
     move-result v0
 
-    const/4 v1, 0x0
+    move v1, p3
 
     :goto_14
     if-ge v1, v0, :cond_4a
@@ -3651,7 +3651,7 @@
 
     move-result v0
 
-    const/4 v1, 0x0
+    move v1, p3
 
     :goto_15
     if-ge v1, v0, :cond_4b
@@ -3673,7 +3673,7 @@
 
     move-result v0
 
-    const/4 v1, 0x0
+    move v1, p3
 
     :goto_16
     if-ge v1, v0, :cond_4c

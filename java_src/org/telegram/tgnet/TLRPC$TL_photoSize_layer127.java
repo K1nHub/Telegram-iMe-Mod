@@ -7,8 +7,8 @@ public class TLRPC$TL_photoSize_layer127 extends TLRPC$TL_photoSize {
     public void readParams(AbstractSerializedData abstractSerializedData, boolean z) {
         this.type = abstractSerializedData.readString(z);
         this.location = TLRPC$FileLocation.TLdeserialize(abstractSerializedData, abstractSerializedData.readInt32(z), z);
-        this.f1530w = abstractSerializedData.readInt32(z);
-        this.f1529h = abstractSerializedData.readInt32(z);
+        this.f1531w = abstractSerializedData.readInt32(z);
+        this.f1530h = abstractSerializedData.readInt32(z);
         this.size = abstractSerializedData.readInt32(z);
     }
 
@@ -17,8 +17,8 @@ public class TLRPC$TL_photoSize_layer127 extends TLRPC$TL_photoSize {
         abstractSerializedData.writeInt32(constructor);
         abstractSerializedData.writeString(this.type);
         this.location.serializeToStream(abstractSerializedData);
-        abstractSerializedData.writeInt32(this.f1530w);
-        abstractSerializedData.writeInt32(this.f1529h);
+        abstractSerializedData.writeInt32(this.f1531w);
+        abstractSerializedData.writeInt32(this.f1530h);
         abstractSerializedData.writeInt32(this.size);
     }
 }

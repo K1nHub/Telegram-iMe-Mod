@@ -48,7 +48,7 @@
 .method public bridge synthetic invoke()Ljava/lang/Object;
     .locals 1
 
-    .line 151
+    .line 155
     invoke-virtual {p0}, Lcom/smedialink/ui/twitter/TwitterFragment$setupRecycleView$1$1$1$1;->invoke()V
 
     sget-object v0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
@@ -59,7 +59,7 @@
 .method public final invoke()V
     .locals 1
 
-    .line 151
+    .line 155
     iget-object v0, p0, Lcom/smedialink/ui/twitter/TwitterFragment$setupRecycleView$1$1$1$1;->this$0:Lcom/smedialink/ui/twitter/TwitterFragment;
 
     invoke-static {v0}, Lcom/smedialink/ui/twitter/TwitterFragment;->access$getPresenter(Lcom/smedialink/ui/twitter/TwitterFragment;)Lcom/smedialink/ui/twitter/TwitterPresenter;

@@ -859,7 +859,7 @@
 .end method
 
 .method private synthetic lambda$new$2(Landroid/view/View;)V
-    .locals 10
+    .locals 9
 
     .line 4590
     iget-object p1, p0, Lorg/telegram/ui/Components/EmojiView$EmojiPackHeader;->pack:Lorg/telegram/ui/Components/EmojiView$EmojiPack;
@@ -918,7 +918,7 @@
 
     const/4 p1, 0x0
 
-    const/4 v0, 0x0
+    move v0, p1
 
     .line 4600
     :goto_0
@@ -1045,20 +1045,20 @@
 
     iget-wide v6, v6, Lorg/telegram/tgnet/TLRPC$StickerSet;->id:J
 
-    cmp-long v8, v4, v6
+    cmp-long v4, v4, v6
 
-    if-nez v8, :cond_2
+    if-nez v4, :cond_2
 
     .line 4610
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v0
 
-    move-object v9, v3
+    move-object v8, v3
 
     move-object v3, v0
 
-    move-object v0, v9
+    move-object v0, v8
 
     goto :goto_1
 
@@ -1799,12 +1799,12 @@
 
     if-nez v1, :cond_0
 
-    const/4 v4, 0x1
+    move v4, v3
 
     goto :goto_0
 
     :cond_0
-    const/4 v4, 0x0
+    move v4, v2
 
     .line 4835
     :goto_0
@@ -1812,12 +1812,12 @@
 
     if-nez v5, :cond_1
 
-    const/4 v5, 0x1
+    move v5, v3
 
     goto :goto_1
 
     :cond_1
-    const/4 v5, 0x0
+    move v5, v2
 
     :goto_1
     if-eq v4, v5, :cond_2
@@ -1848,12 +1848,12 @@
 
     if-ne v1, v3, :cond_4
 
-    const/4 v5, 0x1
+    move v5, v3
 
     goto :goto_2
 
     :cond_4
-    const/4 v5, 0x0
+    move v5, v2
 
     :goto_2
     invoke-virtual {v4, v5}, Lorg/telegram/ui/Components/Premium/PremiumButtonView;->setEnabled(Z)V
@@ -1865,12 +1865,12 @@
 
     if-ne v1, v5, :cond_5
 
-    const/4 v6, 0x1
+    move v6, v3
 
     goto :goto_3
 
     :cond_5
-    const/4 v6, 0x0
+    move v6, v2
 
     :goto_3
     invoke-virtual {v4, v6}, Landroid/widget/TextView;->setEnabled(Z)V
@@ -1882,12 +1882,12 @@
 
     if-ne v1, v6, :cond_6
 
-    const/4 v7, 0x1
+    move v7, v3
 
     goto :goto_4
 
     :cond_6
-    const/4 v7, 0x0
+    move v7, v2
 
     :goto_4
     invoke-virtual {v4, v7}, Landroid/widget/TextView;->setEnabled(Z)V
@@ -1922,7 +1922,7 @@
 
     if-ne v1, v3, :cond_7
 
-    const/4 v8, 0x0
+    move v8, v9
 
     goto :goto_5
 
@@ -1953,12 +1953,12 @@
 
     if-ne v1, v3, :cond_8
 
-    const/high16 v15, 0x3f800000    # 1.0f
+    move v15, v10
 
     goto :goto_6
 
     :cond_8
-    const/4 v15, 0x0
+    move v15, v9
 
     :goto_6
     aput v15, v14, v2
@@ -1988,7 +1988,7 @@
     goto :goto_7
 
     :cond_9
-    const/4 v7, 0x0
+    move v7, v9
 
     :goto_7
     aput v7, v14, v2
@@ -2007,12 +2007,12 @@
 
     if-ne v1, v3, :cond_a
 
-    const/high16 v14, 0x3f800000    # 1.0f
+    move v14, v10
 
     goto :goto_8
 
     :cond_a
-    const/4 v14, 0x0
+    move v14, v9
 
     :goto_8
     aput v14, v13, v2
@@ -2034,7 +2034,7 @@
 
     if-ne v1, v3, :cond_b
 
-    const/high16 v15, 0x3f800000    # 1.0f
+    move v15, v10
 
     goto :goto_9
 
@@ -2061,7 +2061,7 @@
 
     if-ne v1, v3, :cond_c
 
-    const/high16 v15, 0x3f800000    # 1.0f
+    move v15, v10
 
     goto :goto_a
 
@@ -2088,12 +2088,12 @@
 
     if-ne v1, v5, :cond_d
 
-    const/high16 v15, 0x3f800000    # 1.0f
+    move v15, v10
 
     goto :goto_b
 
     :cond_d
-    const/4 v15, 0x0
+    move v15, v9
 
     :goto_b
     aput v15, v14, v2
@@ -2115,7 +2115,7 @@
 
     if-ne v1, v5, :cond_e
 
-    const/high16 v15, 0x3f800000    # 1.0f
+    move v15, v10
 
     goto :goto_c
 
@@ -2140,7 +2140,7 @@
 
     if-ne v1, v5, :cond_f
 
-    const/high16 v5, 0x3f800000    # 1.0f
+    move v5, v10
 
     goto :goto_d
 
@@ -2167,7 +2167,7 @@
 
     if-ne v1, v6, :cond_10
 
-    const/high16 v9, 0x3f800000    # 1.0f
+    move v9, v10
 
     :cond_10
     aput v9, v8, v2
@@ -2189,7 +2189,7 @@
 
     if-ne v1, v6, :cond_11
 
-    const/high16 v9, 0x3f800000    # 1.0f
+    move v9, v10
 
     goto :goto_e
 
@@ -2216,7 +2216,7 @@
 
     if-ne v1, v6, :cond_12
 
-    const/high16 v8, 0x3f800000    # 1.0f
+    move v8, v10
 
     goto :goto_f
 
@@ -2276,12 +2276,12 @@
 
     if-ne v1, v3, :cond_14
 
-    const/high16 v11, 0x3f800000    # 1.0f
+    move v11, v10
 
     goto :goto_10
 
     :cond_14
-    const/4 v11, 0x0
+    move v11, v9
 
     :goto_10
     invoke-virtual {v8, v11}, Landroid/widget/ImageView;->setAlpha(F)V
@@ -2291,7 +2291,7 @@
 
     if-ne v1, v3, :cond_15
 
-    const/4 v11, 0x0
+    move v11, v9
 
     goto :goto_11
 
@@ -2321,7 +2321,7 @@
     goto :goto_12
 
     :cond_16
-    const/4 v7, 0x0
+    move v7, v9
 
     :goto_12
     invoke-virtual {v8, v7}, Landroid/view/View;->setTranslationX(F)V
@@ -2331,12 +2331,12 @@
 
     if-ne v1, v3, :cond_17
 
-    const/high16 v8, 0x3f800000    # 1.0f
+    move v8, v10
 
     goto :goto_13
 
     :cond_17
-    const/4 v8, 0x0
+    move v8, v9
 
     :goto_13
     invoke-virtual {v7, v8}, Landroid/widget/FrameLayout;->setAlpha(F)V
@@ -2346,7 +2346,7 @@
 
     if-ne v1, v3, :cond_18
 
-    const/high16 v8, 0x3f800000    # 1.0f
+    move v8, v10
 
     goto :goto_14
 
@@ -2361,7 +2361,7 @@
 
     if-ne v1, v3, :cond_19
 
-    const/high16 v8, 0x3f800000    # 1.0f
+    move v8, v10
 
     goto :goto_15
 
@@ -2376,12 +2376,12 @@
 
     if-ne v1, v3, :cond_1a
 
-    const/4 v3, 0x0
+    move v3, v2
 
     goto :goto_16
 
     :cond_1a
-    const/16 v3, 0x8
+    move v3, v4
 
     :goto_16
     invoke-virtual {v7, v3}, Landroid/widget/FrameLayout;->setVisibility(I)V
@@ -2391,12 +2391,12 @@
 
     if-ne v1, v5, :cond_1b
 
-    const/high16 v7, 0x3f800000    # 1.0f
+    move v7, v10
 
     goto :goto_17
 
     :cond_1b
-    const/4 v7, 0x0
+    move v7, v9
 
     :goto_17
     invoke-virtual {v3, v7}, Landroid/widget/TextView;->setAlpha(F)V
@@ -2406,7 +2406,7 @@
 
     if-ne v1, v5, :cond_1c
 
-    const/high16 v7, 0x3f800000    # 1.0f
+    move v7, v10
 
     goto :goto_18
 
@@ -2421,7 +2421,7 @@
 
     if-ne v1, v5, :cond_1d
 
-    const/high16 v7, 0x3f800000    # 1.0f
+    move v7, v10
 
     goto :goto_19
 
@@ -2436,12 +2436,12 @@
 
     if-ne v1, v5, :cond_1e
 
-    const/4 v5, 0x0
+    move v5, v2
 
     goto :goto_1a
 
     :cond_1e
-    const/16 v5, 0x8
+    move v5, v4
 
     :goto_1a
     invoke-virtual {v3, v5}, Landroid/widget/TextView;->setVisibility(I)V
@@ -2451,7 +2451,7 @@
 
     if-ne v1, v6, :cond_1f
 
-    const/high16 v9, 0x3f800000    # 1.0f
+    move v9, v10
 
     :cond_1f
     invoke-virtual {v3, v9}, Landroid/widget/TextView;->setAlpha(F)V
@@ -2461,7 +2461,7 @@
 
     if-ne v1, v6, :cond_20
 
-    const/high16 v5, 0x3f800000    # 1.0f
+    move v5, v10
 
     goto :goto_1b
 
@@ -2476,7 +2476,7 @@
 
     if-ne v1, v6, :cond_21
 
-    const/high16 v8, 0x3f800000    # 1.0f
+    move v8, v10
 
     goto :goto_1c
 
@@ -2494,7 +2494,7 @@
     goto :goto_1d
 
     :cond_22
-    const/16 v2, 0x8
+    move v2, v4
 
     :goto_1d
     invoke-virtual {v3, v2}, Landroid/widget/TextView;->setVisibility(I)V
@@ -2544,13 +2544,13 @@
     goto :goto_0
 
     :cond_1
-    const/4 v0, 0x0
+    move v0, v3
 
     goto :goto_1
 
     :cond_2
     :goto_0
-    const/4 v0, 0x1
+    move v0, v2
 
     .line 4815
     :goto_1
@@ -2604,7 +2604,7 @@
     goto :goto_2
 
     :cond_5
-    const/4 v2, 0x0
+    move v2, v3
 
     .line 4824
     :goto_2

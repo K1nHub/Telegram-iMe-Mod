@@ -116,7 +116,7 @@
     goto :goto_1
 
     :cond_3
-    const/4 v0, 0x0
+    move v0, v2
 
     :goto_1
     return v0
@@ -153,7 +153,7 @@
 
     if-nez v0, :cond_0
 
-    const/4 v0, 0x0
+    move v0, v1
 
     goto :goto_0
 
@@ -167,7 +167,7 @@
 
     xor-int/2addr v0, v2
 
-    mul-int v0, v0, v2
+    mul-int/2addr v0, v2
 
     .line 60
     iget-object v2, p0, Lcom/google/android/datatransport/cct/internal/AutoValue_ClientInfo;->androidClientInfo:Lcom/google/android/datatransport/cct/internal/AndroidClientInfo;

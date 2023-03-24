@@ -53,6 +53,6 @@ public final class WalletConnectSwitchNetworkPresenter extends BasePresenter<Wal
     @Override // moxy.MvpPresenter
     public void onFirstViewAttach() {
         WalletConnectSessionItem walletConnectSessionItem = this.sessionItem;
-        ((WalletConnectSwitchNetworkView) getViewState()).setupScreenWithData(walletConnectSessionItem.getPeerIconUrl(), walletConnectSessionItem.getPeerName(), walletConnectSessionItem.getPeerUrl(), this.networkType.getLogo(), this.resourceManager.getString(this.networkType.getTitle()));
+        ((WalletConnectSwitchNetworkView) getViewState()).setupScreenWithData(walletConnectSessionItem.getPeerIconUrl(), walletConnectSessionItem.getPeerName(), walletConnectSessionItem.getPeerUrl(), this.networkType.getLogo(), this.resourceManager.getString(this.networkType.getTitleResId()));
     }
 }

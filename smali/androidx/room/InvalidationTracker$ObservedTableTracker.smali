@@ -89,7 +89,7 @@
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_0
     const/4 v3, 0x1
@@ -107,12 +107,12 @@
 
     if-lez v4, :cond_1
 
-    const/4 v4, 0x1
+    move v4, v3
 
     goto :goto_1
 
     :cond_1
-    const/4 v4, 0x0
+    move v4, v1
 
     .line 869
     :goto_1
@@ -197,7 +197,7 @@
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_0
     if-ge v1, v0, :cond_1
@@ -218,16 +218,16 @@
 
     const-wide/16 v3, 0x0
 
-    const/4 v7, 0x1
+    cmp-long v3, v5, v3
 
-    cmp-long v8, v5, v3
+    const/4 v4, 0x1
 
-    if-nez v8, :cond_0
+    if-nez v3, :cond_0
 
     .line 817
-    iput-boolean v7, p0, Landroidx/room/InvalidationTracker$ObservedTableTracker;->mNeedsSync:Z
+    iput-boolean v4, p0, Landroidx/room/InvalidationTracker$ObservedTableTracker;->mNeedsSync:Z
 
-    const/4 v2, 0x1
+    move v2, v4
 
     :cond_0
     add-int/lit8 v1, v1, 0x1
@@ -262,7 +262,7 @@
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_0
     if-ge v1, v0, :cond_1
@@ -281,16 +281,16 @@
     .line 833
     aput-wide v9, v4, v3
 
-    const/4 v3, 0x1
+    cmp-long v3, v5, v7
 
-    cmp-long v4, v5, v7
+    const/4 v4, 0x1
 
-    if-nez v4, :cond_0
+    if-nez v3, :cond_0
 
     .line 835
-    iput-boolean v3, p0, Landroidx/room/InvalidationTracker$ObservedTableTracker;->mNeedsSync:Z
+    iput-boolean v4, p0, Landroidx/room/InvalidationTracker$ObservedTableTracker;->mNeedsSync:Z
 
-    const/4 v2, 0x1
+    move v2, v4
 
     :cond_0
     add-int/lit8 v1, v1, 0x1

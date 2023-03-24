@@ -824,7 +824,7 @@
 
     if-eq p2, v2, :cond_c
 
-    const/4 v3, 0x1
+    move v3, v4
 
     :cond_c
     invoke-virtual {p1, v0, v1, v3}, Lorg/telegram/ui/Cells/TextCell;->setTextAndIcon(Ljava/lang/String;IZ)V
@@ -865,7 +865,7 @@
 
     if-eq p2, v5, :cond_e
 
-    const/4 v3, 0x1
+    move v3, v4
 
     :cond_e
     invoke-virtual {p1, v0, v2, v3}, Lorg/telegram/ui/Cells/TextCell;->setTextAndIcon(Ljava/lang/String;IZ)V
@@ -1001,7 +1001,7 @@
     goto :goto_1
 
     :cond_12
-    const/4 v4, 0x0
+    move v4, v3
 
     :cond_13
     :goto_1
@@ -1312,7 +1312,7 @@
 
     if-eq p2, v0, :cond_1d
 
-    const/4 v3, 0x1
+    move v3, v4
 
     :cond_1d
     const-string p2, "contacts"
@@ -1356,7 +1356,7 @@
 
     if-eq p2, v0, :cond_1f
 
-    const/4 v3, 0x1
+    move v3, v4
 
     :cond_1f
     const-string p2, "non_contacts"
@@ -1393,7 +1393,7 @@
 
     if-eq p2, v0, :cond_21
 
-    const/4 v3, 0x1
+    move v3, v4
 
     :cond_21
     const-string p2, "groups"
@@ -1430,7 +1430,7 @@
 
     if-eq p2, v0, :cond_23
 
-    const/4 v3, 0x1
+    move v3, v4
 
     :cond_23
     const-string p2, "channels"
@@ -1467,7 +1467,7 @@
 
     if-eq p2, v0, :cond_25
 
-    const/4 v3, 0x1
+    move v3, v4
 
     :cond_25
     const-string p2, "bots"
@@ -1504,7 +1504,7 @@
 
     if-eq p2, v0, :cond_27
 
-    const/4 v3, 0x1
+    move v3, v4
 
     :cond_27
     const-string p2, "muted"
@@ -1541,7 +1541,7 @@
 
     if-eq p2, v0, :cond_29
 
-    const/4 v3, 0x1
+    move v3, v4
 
     :cond_29
     const-string p2, "read"
@@ -1569,7 +1569,7 @@
 
     if-eq p2, v0, :cond_2b
 
-    const/4 v3, 0x1
+    move v3, v4
 
     :cond_2b
     const-string p2, "archived"

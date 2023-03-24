@@ -55,7 +55,7 @@
 
     if-eqz v0, :cond_0
 
-    const/4 v2, 0x1
+    move v2, v1
 
     goto :goto_0
 

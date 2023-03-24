@@ -74,20 +74,20 @@ public class FastParser<T extends FastJsonResponse> {
             r10.setLength(r0)
             int r1 = r9.length
             r8.mark(r1)
-            r1 = 0
-            r2 = 0
+            r1 = r0
+            r2 = r1
         La:
             int r3 = r8.read(r9)
             r4 = -1
             if (r3 == r4) goto L68
-            r4 = 0
+            r4 = r0
         L12:
             if (r4 >= r3) goto L60
             char r5 = r9[r4]
             boolean r6 = java.lang.Character.isISOControl(r5)
             if (r6 == 0) goto L31
             if (r11 == 0) goto L29
-            r6 = 0
+            r6 = r0
         L1f:
             if (r6 > 0) goto L29
             char r7 = r11[r6]
@@ -123,10 +123,10 @@ public class FastParser<T extends FastJsonResponse> {
             if (r5 != r6) goto L5c
             r1 = r2 ^ 1
             r2 = r1
-            r1 = 1
+            r1 = r7
             goto L5d
         L5c:
-            r2 = 0
+            r2 = r0
         L5d:
             int r4 = r4 + 1
             goto L12
@@ -185,39 +185,39 @@ public class FastParser<T extends FastJsonResponse> {
             int i3 = c == '-' ? Integer.MIN_VALUE : C0468C.RATE_UNSET_INT;
             int i4 = c == '-' ? 1 : 0;
             if (i4 < zam2) {
-                i = i4 + 1;
+                i2 = i4 + 1;
                 int digit = Character.digit(cArr[i4], 10);
                 if (digit < 0) {
                     throw new ParseException("Unexpected non-digit character");
                 }
-                i2 = -digit;
+                i = -digit;
             } else {
-                i = i4;
-                i2 = 0;
+                i = 0;
+                i2 = i4;
             }
-            while (i < zam2) {
-                int i5 = i + 1;
-                int digit2 = Character.digit(cArr[i], 10);
+            while (i2 < zam2) {
+                int i5 = i2 + 1;
+                int digit2 = Character.digit(cArr[i2], 10);
                 if (digit2 < 0) {
                     throw new ParseException("Unexpected non-digit character");
                 }
-                if (i2 < -214748364) {
+                if (i < -214748364) {
                     throw new ParseException("Number too large");
                 }
-                int i6 = i2 * 10;
+                int i6 = i * 10;
                 if (i6 < i3 + digit2) {
                     throw new ParseException("Number too large");
                 }
-                i2 = i6 - digit2;
-                i = i5;
+                i = i6 - digit2;
+                i2 = i5;
             }
             if (i4 != 0) {
-                if (i > 1) {
-                    return i2;
+                if (i2 > 1) {
+                    return i;
                 }
                 throw new ParseException("No digits to parse");
             }
-            return -i2;
+            return -i;
         }
         throw new ParseException("No number to parse");
     }
@@ -311,11 +311,13 @@ public class FastParser<T extends FastJsonResponse> {
                     throw new ParseException("Number too large");
                 }
                 long j3 = j * 10;
+                int i4 = zam2;
                 long j4 = digit2;
                 if (j3 < j2 + j4) {
                     throw new ParseException("Number too large");
                 }
                 j = j3 - j4;
+                zam2 = i4;
                 i = i3;
             }
             if (i2 != 0) {
@@ -406,39 +408,34 @@ public class FastParser<T extends FastJsonResponse> {
                 } else {
                     bufferedReader.reset();
                     boolean z2 = false;
-                    loop1: while (true) {
-                        boolean z3 = false;
-                        while (i > 0) {
-                            char zai3 = zai(bufferedReader);
-                            if (zai3 != 0) {
-                                if (Character.isISOControl(zai3)) {
-                                    throw new ParseException("Unexpected control character while reading array");
-                                }
-                                if (zai3 == '\"') {
-                                    if (!z3) {
-                                        z2 = !z2;
-                                    }
-                                    zai3 = '\"';
-                                }
-                                if (zai3 == '[') {
-                                    if (!z2) {
-                                        i++;
-                                    }
-                                    zai3 = '[';
-                                }
-                                if (zai3 == ']' && !z2) {
-                                    i--;
-                                }
-                                if (zai3 == '\\' && z2) {
-                                    z3 = !z3;
-                                }
-                            } else {
-                                throw new ParseException("Unexpected EOF while parsing array");
+                    boolean z3 = false;
+                    while (i > 0) {
+                        char zai3 = zai(bufferedReader);
+                        if (zai3 != 0) {
+                            if (Character.isISOControl(zai3)) {
+                                throw new ParseException("Unexpected control character while reading array");
                             }
+                            if (zai3 == '\"') {
+                                if (!z3) {
+                                    z2 = !z2;
+                                }
+                                zai3 = '\"';
+                            }
+                            if (zai3 == '[') {
+                                if (!z2) {
+                                    i++;
+                                }
+                                zai3 = '[';
+                            }
+                            if (zai3 == ']' && !z2) {
+                                i--;
+                            }
+                            z3 = (zai3 == '\\' && z2) ? !z3 : false;
+                        } else {
+                            throw new ParseException("Unexpected EOF while parsing array");
                         }
-                        zaw(5);
-                        break loop1;
                     }
+                    zaw(5);
                 }
             } else if (zai2 == '{') {
                 this.zat.push(1);
@@ -622,6 +619,7 @@ public class FastParser<T extends FastJsonResponse> {
 
     /* JADX WARN: Multi-variable type inference failed */
     private final boolean zaz(BufferedReader bufferedReader, FastJsonResponse fastJsonResponse) throws ParseException, IOException {
+        int i;
         HashMap hashMap;
         Map<String, FastJsonResponse.Field<?, ?>> fieldMappings = fastJsonResponse.getFieldMappings();
         String zaq = zaq(bufferedReader);
@@ -632,77 +630,79 @@ public class FastParser<T extends FastJsonResponse> {
                     zaq = zar(bufferedReader);
                 } else {
                     this.zat.push(4);
-                    int i = field.zaa;
-                    switch (i) {
+                    int i2 = field.zaa;
+                    switch (i2) {
                         case 0:
                             if (field.zab) {
                                 fastJsonResponse.zav(field, zau(bufferedReader, zag));
-                                break;
                             } else {
                                 fastJsonResponse.zau(field, zal(bufferedReader));
-                                break;
                             }
+                            i = 4;
+                            break;
                         case 1:
                             if (field.zab) {
                                 fastJsonResponse.zag(field, zau(bufferedReader, zam));
-                                break;
                             } else {
                                 fastJsonResponse.zae(field, zat(bufferedReader));
-                                break;
                             }
+                            i = 4;
+                            break;
                         case 2:
                             if (field.zab) {
                                 fastJsonResponse.zay(field, zau(bufferedReader, zah));
-                                break;
                             } else {
                                 fastJsonResponse.zax(field, zan(bufferedReader));
-                                break;
                             }
+                            i = 4;
+                            break;
                         case 3:
                             if (field.zab) {
                                 fastJsonResponse.zas(field, zau(bufferedReader, zai));
-                                break;
                             } else {
                                 fastJsonResponse.zaq(field, zak(bufferedReader));
-                                break;
                             }
+                            i = 4;
+                            break;
                         case 4:
                             if (field.zab) {
                                 fastJsonResponse.zao(field, zau(bufferedReader, zaj));
-                                break;
                             } else {
                                 fastJsonResponse.zam(field, zaj(bufferedReader));
-                                break;
                             }
+                            i = 4;
+                            break;
                         case 5:
                             if (field.zab) {
                                 fastJsonResponse.zac(field, zau(bufferedReader, zan));
-                                break;
                             } else {
                                 fastJsonResponse.zaa(field, zas(bufferedReader));
-                                break;
                             }
+                            i = 4;
+                            break;
                         case 6:
                             if (field.zab) {
                                 fastJsonResponse.zaj(field, zau(bufferedReader, zak));
-                                break;
                             } else {
                                 fastJsonResponse.zai(field, zay(bufferedReader, false));
-                                break;
                             }
+                            i = 4;
+                            break;
                         case 7:
                             if (field.zab) {
                                 fastJsonResponse.zaC(field, zau(bufferedReader, zal));
-                                break;
                             } else {
                                 fastJsonResponse.zaA(field, zao(bufferedReader));
-                                break;
                             }
+                            i = 4;
+                            break;
                         case 8:
                             fastJsonResponse.zal(field, Base64Utils.decode(zap(bufferedReader, this.zaq, this.zas, zaf)));
+                            i = 4;
                             break;
                         case 9:
                             fastJsonResponse.zal(field, Base64Utils.decodeUrlSafe(zap(bufferedReader, this.zaq, this.zas, zaf)));
+                            i = 4;
                             break;
                         case 10:
                             char zai2 = zai(bufferedReader);
@@ -714,49 +714,50 @@ public class FastParser<T extends FastJsonResponse> {
                                 hashMap = new HashMap();
                                 while (true) {
                                     char zai3 = zai(bufferedReader);
-                                    if (zai3 == 0) {
-                                        throw new ParseException("Unexpected EOF");
-                                    }
-                                    if (zai3 == '\"') {
-                                        String zaA = zaA(bufferedReader, this.zap, this.zar, null);
-                                        if (zai(bufferedReader) == ':') {
-                                            if (zai(bufferedReader) == '\"') {
-                                                hashMap.put(zaA, zaA(bufferedReader, this.zap, this.zar, null));
-                                                char zai4 = zai(bufferedReader);
-                                                if (zai4 != ',') {
-                                                    if (zai4 == '}') {
-                                                        zaw(1);
-                                                    } else {
-                                                        throw new ParseException("Unexpected character while parsing string map: " + zai4);
+                                    if (zai3 != 0) {
+                                        if (zai3 == '\"') {
+                                            String zaA = zaA(bufferedReader, this.zap, this.zar, null);
+                                            if (zai(bufferedReader) == ':') {
+                                                if (zai(bufferedReader) == '\"') {
+                                                    hashMap.put(zaA, zaA(bufferedReader, this.zap, this.zar, null));
+                                                    char zai4 = zai(bufferedReader);
+                                                    if (zai4 != ',') {
+                                                        if (zai4 == '}') {
+                                                            zaw(1);
+                                                        } else {
+                                                            throw new ParseException("Unexpected character while parsing string map: " + zai4);
+                                                        }
                                                     }
+                                                } else {
+                                                    throw new ParseException("Expected String value for key ".concat(String.valueOf(zaA)));
                                                 }
                                             } else {
-                                                throw new ParseException("Expected String value for key ".concat(String.valueOf(zaA)));
+                                                throw new ParseException("No map value found for key ".concat(String.valueOf(zaA)));
                                             }
-                                        } else {
-                                            throw new ParseException("No map value found for key ".concat(String.valueOf(zaA)));
+                                        } else if (zai3 == '}') {
+                                            zaw(1);
                                         }
-                                    } else if (zai3 == '}') {
-                                        zaw(1);
+                                        i = 4;
+                                        break;
+                                    } else {
+                                        throw new ParseException("Unexpected EOF");
                                     }
                                 }
                             } else {
                                 throw new ParseException("Expected start of a map object");
                             }
                             fastJsonResponse.zaB(field, hashMap);
-                            break;
+                            i = 4;
                         case 11:
                             if (field.zab) {
                                 char zai5 = zai(bufferedReader);
                                 if (zai5 == 'n') {
                                     zax(bufferedReader, zaa);
                                     fastJsonResponse.addConcreteTypeArrayInternal(field, field.zae, null);
-                                    break;
                                 } else {
                                     this.zat.push(5);
                                     if (zai5 == '[') {
                                         fastJsonResponse.addConcreteTypeArrayInternal(field, field.zae, zav(bufferedReader, field));
-                                        break;
                                     } else {
                                         throw new ParseException("Expected array start");
                                     }
@@ -766,7 +767,6 @@ public class FastParser<T extends FastJsonResponse> {
                                 if (zai6 == 'n') {
                                     zax(bufferedReader, zaa);
                                     fastJsonResponse.addConcreteTypeInternal(field, field.zae, null);
-                                    break;
                                 } else {
                                     this.zat.push(1);
                                     if (zai6 == '{') {
@@ -774,7 +774,6 @@ public class FastParser<T extends FastJsonResponse> {
                                             FastJsonResponse zad2 = field.zad();
                                             zaz(bufferedReader, zad2);
                                             fastJsonResponse.addConcreteTypeInternal(field, field.zae, zad2);
-                                            break;
                                         } catch (IllegalAccessException e) {
                                             throw new ParseException("Error instantiating inner object", e);
                                         } catch (InstantiationException e2) {
@@ -785,10 +784,12 @@ public class FastParser<T extends FastJsonResponse> {
                                     }
                                 }
                             }
+                            i = 4;
+                            break;
                         default:
-                            throw new ParseException("Invalid field type " + i);
+                            throw new ParseException("Invalid field type " + i2);
                     }
-                    zaw(4);
+                    zaw(i);
                     zaw(2);
                     char zai7 = zai(bufferedReader);
                     if (zai7 == ',') {

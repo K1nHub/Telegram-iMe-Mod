@@ -830,9 +830,9 @@
 
     int-to-float v5, v5
 
-    const/4 v6, 0x0
-
     cmpg-float v4, v4, v5
+
+    const/4 v5, 0x0
 
     if-gez v4, :cond_0
 
@@ -844,11 +844,11 @@
     .line 1643
     invoke-virtual/range {p1 .. p2}, Landroid/text/StaticLayout;->getLineBottom(I)I
 
-    move-result v5
+    move-result v6
 
-    sub-int/2addr v5, v4
+    sub-int/2addr v6, v4
 
-    int-to-float v5, v5
+    int-to-float v6, v6
 
     .line 1645
     iget-object v7, v0, Lorg/telegram/ui/Cells/TextSelectionHelper;->tempPath2:Lorg/telegram/ui/Cells/TextSelectionHelper$ScalablePath;
@@ -859,14 +859,14 @@
 
     sub-float/2addr v7, v4
 
-    div-float/2addr v5, v7
+    div-float/2addr v6, v7
 
     goto :goto_0
 
     :cond_0
-    const/high16 v5, 0x3f800000    # 1.0f
+    const/high16 v6, 0x3f800000    # 1.0f
 
-    const/4 v4, 0x0
+    move v4, v5
 
     :goto_0
     const/4 v7, 0x0
@@ -909,7 +909,7 @@
     goto :goto_2
 
     :cond_1
-    const/4 v11, 0x0
+    move v11, v5
 
     :goto_2
     sub-float/2addr v10, v11
@@ -922,7 +922,7 @@
 
     sub-float/2addr v11, v4
 
-    mul-float v11, v11, v5
+    mul-float/2addr v11, v6
 
     add-float/2addr v11, v4
 
@@ -942,7 +942,7 @@
     goto :goto_3
 
     :cond_2
-    const/4 v13, 0x0
+    move v13, v5
 
     :goto_3
     add-float/2addr v12, v13
@@ -955,7 +955,7 @@
 
     sub-float/2addr v12, v4
 
-    mul-float v12, v12, v5
+    mul-float/2addr v12, v6
 
     add-float/2addr v12, v4
 
@@ -1929,7 +1929,7 @@
     if-gez v2, :cond_7
 
     :cond_6
-    const/4 v2, 0x0
+    move v2, v8
 
     .line 597
     :cond_7
@@ -2239,18 +2239,18 @@
 
     iget v0, p0, Lorg/telegram/ui/Cells/TextSelectionHelper;->magnifierY:F
 
-    const/high16 v1, 0x41800000    # 16.0f
+    cmpl-float v1, p1, v0
 
-    cmpl-float v3, p1, v0
+    const/high16 v3, 0x41800000    # 16.0f
 
-    if-eqz v3, :cond_9
+    if-eqz v1, :cond_9
 
     .line 449
-    iget v3, p0, Lorg/telegram/ui/Cells/TextSelectionHelper;->magnifierDy:F
+    iget v1, p0, Lorg/telegram/ui/Cells/TextSelectionHelper;->magnifierDy:F
 
-    mul-float v3, v3, v1
+    mul-float/2addr v1, v3
 
-    add-float/2addr p1, v3
+    add-float/2addr p1, v1
 
     iput p1, p0, Lorg/telegram/ui/Cells/TextSelectionHelper;->magnifierYanimated:F
 
@@ -2258,9 +2258,9 @@
     :cond_9
     iget p1, p0, Lorg/telegram/ui/Cells/TextSelectionHelper;->magnifierDy:F
 
-    const/4 v3, 0x0
+    const/4 v1, 0x0
 
-    cmpl-float v5, p1, v3
+    cmpl-float v5, p1, v1
 
     if-lez v5, :cond_a
 
@@ -2276,7 +2276,7 @@
     goto :goto_3
 
     :cond_a
-    cmpg-float p1, p1, v3
+    cmpg-float p1, p1, v1
 
     if-gez p1, :cond_b
 
@@ -2304,7 +2304,7 @@
     .line 459
     iget v5, p0, Lorg/telegram/ui/Cells/TextSelectionHelper;->magnifierDx:F
 
-    mul-float v5, v5, v1
+    mul-float/2addr v5, v3
 
     add-float/2addr p1, v5
 
@@ -2314,15 +2314,15 @@
     :cond_c
     iget p1, p0, Lorg/telegram/ui/Cells/TextSelectionHelper;->magnifierDx:F
 
-    cmpl-float v1, p1, v3
+    cmpl-float v3, p1, v1
 
-    if-lez v1, :cond_d
+    if-lez v3, :cond_d
 
-    iget v1, p0, Lorg/telegram/ui/Cells/TextSelectionHelper;->magnifierXanimated:F
+    iget v3, p0, Lorg/telegram/ui/Cells/TextSelectionHelper;->magnifierXanimated:F
 
-    cmpl-float v1, v1, v0
+    cmpl-float v3, v3, v0
 
-    if-lez v1, :cond_d
+    if-lez v3, :cond_d
 
     .line 463
     iput v0, p0, Lorg/telegram/ui/Cells/TextSelectionHelper;->magnifierXanimated:F
@@ -2330,7 +2330,7 @@
     goto :goto_4
 
     :cond_d
-    cmpg-float p1, p1, v3
+    cmpg-float p1, p1, v1
 
     if-gez p1, :cond_e
 
@@ -2357,7 +2357,7 @@
 
     const/high16 v3, 0x3fc00000    # 1.5f
 
-    mul-float v2, v2, v3
+    mul-float/2addr v2, v3
 
     add-float/2addr v1, v2
 
@@ -3684,7 +3684,7 @@
 
     sub-int/2addr v2, v0
 
-    mul-int v3, v3, v2
+    mul-int/2addr v3, v2
 
     iget v0, p0, Lorg/telegram/ui/Cells/TextSelectionHelper;->capturedX:I
 
@@ -3692,7 +3692,7 @@
 
     sub-int/2addr v0, p1
 
-    mul-int v2, v2, v0
+    mul-int/2addr v2, v0
 
     add-int/2addr v3, v2
 
@@ -4144,7 +4144,7 @@
 
     const/high16 v2, 0x437a0000    # 250.0f
 
-    mul-float v1, v1, v2
+    mul-float/2addr v1, v2
 
     float-to-long v1, v1
 

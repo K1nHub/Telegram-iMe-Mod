@@ -122,7 +122,7 @@ public class MaterialButton extends AppCompatButton implements Checkable, Shapea
             r8.setCompoundDrawablePadding(r10)
             android.graphics.drawable.Drawable r10 = r8.icon
             if (r10 == 0) goto L84
-            r9 = 1
+            r9 = r2
         L84:
             r8.updateIcon(r9)
             return

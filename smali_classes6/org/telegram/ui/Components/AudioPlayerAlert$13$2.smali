@@ -49,15 +49,15 @@
 
     const-wide/16 v2, 0x0
 
-    cmp-long v4, v0, v2
+    cmp-long v2, v0, v2
 
-    if-eqz v4, :cond_9
+    if-eqz v2, :cond_9
 
     const-wide v2, -0x7fffffffffffffffL    # -4.9E-324
 
-    cmp-long v4, v0, v2
+    cmp-long v2, v0, v2
 
-    if-nez v4, :cond_0
+    if-nez v2, :cond_0
 
     goto/16 :goto_3
 
@@ -99,7 +99,7 @@
     const-wide/16 v10, 0x3
 
     :goto_0
-    mul-long v6, v6, v10
+    mul-long/2addr v6, v10
 
     goto :goto_1
 
@@ -120,7 +120,7 @@
     :goto_1
     long-to-float v0, v0
 
-    mul-float v2, v2, v0
+    mul-float/2addr v2, v0
 
     long-to-float v1, v6
 
@@ -138,7 +138,7 @@
 
     if-gez v2, :cond_3
 
-    const/4 v1, 0x0
+    move v1, v0
 
     .line 924
     :cond_3
@@ -189,9 +189,9 @@
 
     const-wide/16 v6, 0xc8
 
-    cmp-long v10, v8, v6
+    cmp-long v6, v8, v6
 
-    if-gtz v10, :cond_5
+    if-gtz v6, :cond_5
 
     .line 930
     iget v6, v5, Lorg/telegram/ui/Components/AudioPlayerAlert;->rewindingProgress:F

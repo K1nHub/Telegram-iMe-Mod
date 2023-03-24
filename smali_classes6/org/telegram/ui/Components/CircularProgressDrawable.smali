@@ -178,7 +178,7 @@
 
     const/high16 v0, 0x44be0000    # 1520.0f
 
-    mul-float v0, v0, p0
+    mul-float/2addr v0, p0
 
     const v1, 0x45a8c000    # 5400.0f
 
@@ -204,7 +204,7 @@
     .line 45
     aput v0, p1, v1
 
-    const/4 v0, 0x0
+    move v0, v2
 
     :goto_0
     const/4 v3, 0x4
@@ -232,7 +232,7 @@
 
     const/high16 v8, 0x437a0000    # 250.0f
 
-    mul-float v6, v6, v8
+    mul-float/2addr v6, v8
 
     add-float/2addr v3, v6
 
@@ -253,7 +253,7 @@
 
     move-result v4
 
-    mul-float v4, v4, v8
+    mul-float/2addr v4, v8
 
     add-float/2addr v3, v4
 
@@ -304,9 +304,9 @@
 
     const-wide/16 v2, 0x0
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-gez v4, :cond_0
+    if-gez v0, :cond_0
 
     .line 62
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J

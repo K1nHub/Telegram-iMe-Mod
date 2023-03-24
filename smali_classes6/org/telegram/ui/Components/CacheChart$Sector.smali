@@ -355,9 +355,9 @@
 
     const-wide/16 v8, 0x0
 
-    cmp-long v10, v6, v8
+    cmp-long v6, v6, v8
 
-    if-gez v10, :cond_1
+    if-gez v6, :cond_1
 
     .line 258
     invoke-static {v3, v4}, Lorg/telegram/ui/Components/CacheChart;->access$302(J)J
@@ -432,7 +432,7 @@
 
     int-to-float v11, v10
 
-    mul-float v11, v11, v8
+    mul-float/2addr v11, v8
 
     const/high16 v12, 0x42c80000    # 100.0f
 
@@ -442,7 +442,7 @@
 
     const/high16 v14, 0x44fa0000    # 2000.0f
 
-    mul-float v14, v14, v11
+    mul-float/2addr v14, v11
 
     float-to-double v14, v14
 
@@ -461,7 +461,7 @@
 
     add-double v14, v14, v16
 
-    mul-double v12, v12, v14
+    mul-double/2addr v12, v14
 
     rem-double v12, v12, v16
 
@@ -499,7 +499,7 @@
 
     move-result-wide v13
 
-    mul-double v13, v13, v2
+    mul-double/2addr v13, v2
 
     add-double/2addr v8, v13
 
@@ -522,7 +522,7 @@
 
     move-result-wide v9
 
-    mul-double v2, v2, v9
+    mul-double/2addr v2, v9
 
     add-double/2addr v13, v2
 
@@ -543,19 +543,19 @@
 
     move-result v10
 
-    mul-float v10, v10, v9
+    mul-float/2addr v10, v9
 
     const/high16 v9, 0x3f800000    # 1.0f
 
     add-float/2addr v10, v9
 
-    mul-float v3, v3, v10
+    mul-float/2addr v3, v10
 
     float-to-double v12, v12
 
     const-wide v14, 0x400921fb54442d18L    # Math.PI
 
-    mul-double v12, v12, v14
+    mul-double/2addr v12, v14
 
     .line 287
     invoke-static {v12, v13}, Ljava/lang/Math;->sin(D)D
@@ -568,11 +568,11 @@
 
     const/high16 v14, 0x3e800000    # 0.25f
 
-    mul-float v10, v10, v14
+    mul-float/2addr v10, v14
 
     add-float/2addr v10, v9
 
-    mul-float v3, v3, v10
+    mul-float/2addr v3, v10
 
     move/from16 v10, p4
 
@@ -603,7 +603,7 @@
 
     move-result v14
 
-    mul-float v3, v3, v14
+    mul-float/2addr v3, v14
 
     .line 289
     invoke-static {v9, v3}, Ljava/lang/Math;->min(FF)F
@@ -640,11 +640,11 @@
 
     const/high16 v13, 0x3e800000    # 0.25f
 
-    mul-float v12, v12, v13
+    mul-float/2addr v12, v13
 
     add-float/2addr v12, v9
 
-    mul-float v12, v12, v3
+    mul-float/2addr v12, v3
 
     float-to-double v12, v12
 
@@ -662,11 +662,11 @@
 
     add-double v9, v9, v23
 
-    mul-double v12, v12, v9
+    mul-double/2addr v12, v9
 
     double-to-float v3, v12
 
-    mul-float v3, v3, v6
+    mul-float/2addr v3, v6
 
     .line 294
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->save()I
@@ -773,7 +773,7 @@
 
     const-wide v7, 0x400921fb54442d18L    # Math.PI
 
-    mul-double v5, v5, v7
+    mul-double/2addr v5, v7
 
     .line 160
     invoke-virtual/range {p2 .. p2}, Landroid/graphics/RectF;->width()F
@@ -786,7 +786,7 @@
 
     float-to-double v11, v9
 
-    mul-double v5, v5, v11
+    mul-double/2addr v5, v11
 
     double-to-float v5, v5
 
@@ -907,13 +907,13 @@
 
     const/4 v6, 0x0
 
-    const/4 v9, 0x1
-
     cmpl-float v6, v3, v6
+
+    const/4 v9, 0x1
 
     if-lez v6, :cond_1
 
-    const/4 v6, 0x1
+    move v6, v9
 
     goto :goto_0
 
@@ -932,7 +932,7 @@
 
     float-to-double v14, v11
 
-    mul-double v14, v14, v7
+    mul-double/2addr v14, v7
 
     double-to-float v11, v14
 
@@ -951,13 +951,13 @@
 
     float-to-double v11, v11
 
-    mul-double v11, v11, v7
+    mul-double/2addr v11, v7
 
     double-to-float v7, v11
 
     div-float v7, v3, v7
 
-    mul-float v7, v7, v13
+    mul-float/2addr v7, v13
 
     const/high16 v8, 0x432f0000    # 175.0f
 
@@ -972,7 +972,7 @@
 
     const/high16 v8, 0x3f000000    # 0.5f
 
-    mul-float v2, v2, v8
+    mul-float/2addr v2, v8
 
     add-float/2addr v7, v2
 
@@ -1041,7 +1041,7 @@
 
     move-result-wide v8
 
-    mul-double v8, v8, v14
+    mul-double/2addr v8, v14
 
     add-double/2addr v12, v8
 
@@ -1064,7 +1064,7 @@
 
     move-result-wide v10
 
-    mul-double v14, v14, v10
+    mul-double/2addr v14, v10
 
     add-double/2addr v14, v8
 
@@ -1146,7 +1146,7 @@
 
     move-result-wide v14
 
-    mul-double v14, v14, v12
+    mul-double/2addr v14, v12
 
     add-double/2addr v9, v14
 
@@ -1169,7 +1169,7 @@
 
     move-result-wide v4
 
-    mul-double v12, v12, v4
+    mul-double/2addr v12, v4
 
     add-double/2addr v14, v12
 
@@ -1226,7 +1226,7 @@
 
     move-result-wide v14
 
-    mul-double v14, v14, v12
+    mul-double/2addr v14, v12
 
     add-double/2addr v4, v14
 
@@ -1247,7 +1247,7 @@
 
     move-result-wide v8
 
-    mul-double v12, v12, v8
+    mul-double/2addr v12, v8
 
     add-double/2addr v14, v12
 
@@ -1327,7 +1327,7 @@
 
     move-result-wide v6
 
-    mul-double v6, v6, v8
+    mul-double/2addr v6, v8
 
     add-double v12, v1, v6
 
@@ -1348,7 +1348,7 @@
 
     move-result-wide v5
 
-    mul-double v8, v8, v5
+    mul-double/2addr v8, v5
 
     add-double v14, v1, v8
 
@@ -1414,12 +1414,12 @@
 
     if-eqz v1, :cond_0
 
-    const/high16 v1, 0x3f800000    # 1.0f
+    move v1, v14
 
     goto :goto_0
 
     :cond_0
-    const/4 v1, 0x0
+    move v1, v15
 
     :goto_0
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/AnimatedFloat;->set(F)F
@@ -1446,7 +1446,7 @@
 
     int-to-float v3, v3
 
-    mul-float v3, v3, v0
+    mul-float/2addr v3, v0
 
     invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
@@ -1456,7 +1456,7 @@
 
     int-to-float v2, v2
 
-    mul-float v0, v0, v2
+    mul-float/2addr v0, v2
 
     invoke-virtual {v1, v3, v0}, Landroid/graphics/RectF;->inset(FF)V
 
@@ -1493,7 +1493,7 @@
 
     float-to-double v4, v4
 
-    mul-double v2, v2, v4
+    mul-double/2addr v2, v4
 
     const-wide/high16 v4, 0x4010000000000000L    # 4.0
 
@@ -1536,7 +1536,7 @@
 
     float-to-double v8, v8
 
-    mul-double v2, v2, v8
+    mul-double/2addr v2, v8
 
     div-double/2addr v2, v4
 
@@ -1583,13 +1583,13 @@
 
     const v1, 0x43b38000    # 359.0f
 
+    cmpl-float v0, v0, v1
+
     const/16 v9, 0x1f
 
     const/16 v5, 0xff
 
     const/high16 v19, 0x3f400000    # 0.75f
-
-    cmpl-float v0, v0, v1
 
     if-ltz v0, :cond_1
 
@@ -1733,7 +1733,7 @@
 
     move/from16 v4, p5
 
-    const/16 v10, 0xff
+    move v10, v5
 
     move/from16 v5, p6
 

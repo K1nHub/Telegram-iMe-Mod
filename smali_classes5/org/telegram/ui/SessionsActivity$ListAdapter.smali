@@ -1061,7 +1061,7 @@
     goto :goto_0
 
     :cond_1
-    const/4 v1, 0x0
+    move v1, v2
 
     :cond_2
     :goto_0
@@ -1121,7 +1121,7 @@
     goto :goto_1
 
     :cond_4
-    const/4 v1, 0x0
+    move v1, v2
 
     :goto_1
     invoke-virtual {p1, v0, v1}, Lorg/telegram/ui/Cells/SessionCell;->setSession(Lorg/telegram/tgnet/TLObject;Z)V
@@ -1180,7 +1180,7 @@
     goto :goto_2
 
     :cond_6
-    const/4 v1, 0x0
+    move v1, v2
 
     :goto_2
     invoke-virtual {p1, v0, v1}, Lorg/telegram/ui/Cells/SessionCell;->setSession(Lorg/telegram/tgnet/TLObject;Z)V

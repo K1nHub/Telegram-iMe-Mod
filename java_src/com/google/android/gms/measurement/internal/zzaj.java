@@ -557,7 +557,7 @@ public final class zzaj extends zzki {
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Not initialized variable reg: 4, insn: 0x0231: MOVE  (r3 I:??[OBJECT, ARRAY]) = (r4 I:??[OBJECT, ARRAY]), block:B:99:0x0231 */
+    /* JADX WARN: Not initialized variable reg: 4, insn: 0x0233: MOVE  (r3 I:??[OBJECT, ARRAY]) = (r4 I:??[OBJECT, ARRAY]), block:B:98:0x0233 */
     /* JADX WARN: Type inference failed for: r4v0 */
     /* JADX WARN: Type inference failed for: r4v12 */
     /* JADX WARN: Type inference failed for: r4v15 */
@@ -569,6 +569,7 @@ public final class zzaj extends zzki {
         String str2;
         Cursor rawQuery;
         String string;
+        int i;
         String str3;
         String[] strArr;
         Preconditions.checkNotNull(zzkrVar);
@@ -584,9 +585,9 @@ public final class zzaj extends zzki {
                 r4 = TextUtils.isEmpty(null);
                 try {
                     if (r4 != 0) {
-                        int i = (j2 > (-1L) ? 1 : (j2 == (-1L) ? 0 : -1));
-                        String[] strArr2 = i != 0 ? new String[]{String.valueOf(j2), String.valueOf(j)} : new String[]{String.valueOf(j)};
-                        str2 = i != 0 ? "rowid <= ? and " : "";
+                        int i2 = (j2 > (-1L) ? 1 : (j2 == (-1L) ? 0 : -1));
+                        String[] strArr2 = i2 != 0 ? new String[]{String.valueOf(j2), String.valueOf(j)} : new String[]{String.valueOf(j)};
+                        str2 = i2 != 0 ? "rowid <= ? and " : "";
                         StringBuilder sb = new StringBuilder(str2.length() + 148);
                         sb.append("select app_id, metadata_fingerprint from raw_events where ");
                         sb.append(str2);
@@ -600,9 +601,9 @@ public final class zzaj extends zzki {
                         string = rawQuery.getString(1);
                         rawQuery.close();
                     } else {
-                        int i2 = (j2 > (-1L) ? 1 : (j2 == (-1L) ? 0 : -1));
-                        String[] strArr3 = i2 != 0 ? new String[]{null, String.valueOf(j2)} : new String[]{null};
-                        str2 = i2 != 0 ? " and rowid <= ?" : "";
+                        int i3 = (j2 > (-1L) ? 1 : (j2 == (-1L) ? 0 : -1));
+                        String[] strArr3 = i3 != 0 ? new String[]{null, String.valueOf(j2)} : new String[]{null};
+                        str2 = i3 != 0 ? " and rowid <= ?" : "";
                         StringBuilder sb2 = new StringBuilder(str2.length() + 84);
                         sb2.append("select metadata_fingerprint from raw_events where app_id = ?");
                         sb2.append(str2);
@@ -636,9 +637,11 @@ public final class zzaj extends zzki {
                                     Preconditions.checkNotNull(zzaA);
                                     zzkrVar.zza = zzaA;
                                     if (j2 != -1) {
+                                        i = 1;
                                         str3 = "app_id = ? and metadata_fingerprint = ? and rowid <= ?";
                                         strArr = new String[]{str4, str5, String.valueOf(j2)};
                                     } else {
+                                        i = 1;
                                         str3 = "app_id = ? and metadata_fingerprint = ?";
                                         strArr = new String[]{str4, str5};
                                     }
@@ -652,7 +655,7 @@ public final class zzaj extends zzki {
                                         long j3 = query2.getLong(0);
                                         try {
                                             com.google.android.gms.internal.measurement.zzfn zzfnVar = (com.google.android.gms.internal.measurement.zzfn) zzku.zzl(com.google.android.gms.internal.measurement.zzfo.zze(), query2.getBlob(3));
-                                            zzfnVar.zzi(query2.getString(1));
+                                            zzfnVar.zzi(query2.getString(i));
                                             zzfnVar.zzm(query2.getLong(2));
                                             if (!zzkrVar.zza(j3, zzfnVar.zzaA())) {
                                                 query2.close();
@@ -669,14 +672,14 @@ public final class zzaj extends zzki {
                                 }
                             } catch (SQLiteException e3) {
                                 e = e3;
-                                r4 = query;
+                                r4 = str5;
                                 this.zzs.zzay().zzd().zzc("Data loss. Error selecting raw event. appId", zzel.zzn(str4), e);
                                 if (r4 != 0) {
                                     r4.close();
                                 }
                             } catch (Throwable th) {
                                 th = th;
-                                cursor2 = query;
+                                cursor2 = str5;
                                 if (cursor2 != null) {
                                     cursor2.close();
                                 }
@@ -684,8 +687,10 @@ public final class zzaj extends zzki {
                             }
                         } catch (SQLiteException e4) {
                             e = e4;
+                            str5 = query;
                         } catch (Throwable th2) {
                             th = th2;
+                            str5 = query;
                         }
                     } catch (SQLiteException e5) {
                         e = e5;
@@ -730,52 +735,52 @@ public final class zzaj extends zzki {
     /* JADX INFO: Access modifiers changed from: protected */
     @VisibleForTesting
     public final long zzc(String str, String str2) {
-        long zzac;
+        long j;
+        SQLiteException e;
+        ContentValues contentValues;
         Preconditions.checkNotEmpty(str);
         Preconditions.checkNotEmpty("first_open_count");
         zzg();
         zzY();
         SQLiteDatabase zzh2 = zzh();
         zzh2.beginTransaction();
-        long j = 0;
         try {
             try {
                 StringBuilder sb = new StringBuilder(48);
                 sb.append("select ");
                 sb.append("first_open_count");
                 sb.append(" from app2 where app_id=?");
-                zzac = zzac(sb.toString(), new String[]{str}, -1L);
-                if (zzac == -1) {
-                    ContentValues contentValues = new ContentValues();
-                    contentValues.put("app_id", str);
-                    contentValues.put("first_open_count", (Integer) 0);
-                    contentValues.put("previous_install_count", (Integer) 0);
-                    if (zzh2.insertWithOnConflict("app2", null, contentValues, 5) == -1) {
+                j = zzac(sb.toString(), new String[]{str}, -1L);
+                if (j == -1) {
+                    ContentValues contentValues2 = new ContentValues();
+                    contentValues2.put("app_id", str);
+                    contentValues2.put("first_open_count", (Integer) 0);
+                    contentValues2.put("previous_install_count", (Integer) 0);
+                    if (zzh2.insertWithOnConflict("app2", null, contentValues2, 5) == -1) {
                         this.zzs.zzay().zzd().zzc("Failed to insert column (got -1). appId", zzel.zzn(str), "first_open_count");
                         return -1L;
                     }
-                    zzac = 0;
+                    j = 0;
                 }
-            } catch (SQLiteException e) {
-                e = e;
+            } catch (SQLiteException e2) {
+                j = 0;
+                e = e2;
             }
             try {
-                ContentValues contentValues2 = new ContentValues();
-                contentValues2.put("app_id", str);
-                contentValues2.put("first_open_count", Long.valueOf(1 + zzac));
-                if (zzh2.update("app2", contentValues2, "app_id = ?", new String[]{str}) == 0) {
-                    this.zzs.zzay().zzd().zzc("Failed to update column (got 0). appId", zzel.zzn(str), "first_open_count");
-                    return -1L;
-                }
-                zzh2.setTransactionSuccessful();
-                return zzac;
-            } catch (SQLiteException e2) {
-                e = e2;
-                j = zzac;
+                contentValues = new ContentValues();
+                contentValues.put("app_id", str);
+                contentValues.put("first_open_count", Long.valueOf(1 + j));
+            } catch (SQLiteException e3) {
+                e = e3;
                 this.zzs.zzay().zzd().zzd("Error inserting column. appId", zzel.zzn(str), "first_open_count", e);
-                zzh2.endTransaction();
                 return j;
             }
+            if (zzh2.update("app2", contentValues, "app_id = ?", new String[]{str}) == 0) {
+                this.zzs.zzay().zzd().zzc("Failed to update column (got 0). appId", zzel.zzn(str), "first_open_count");
+                return -1L;
+            }
+            zzh2.setTransactionSuccessful();
+            return j;
         } finally {
             zzh2.endTransaction();
         }

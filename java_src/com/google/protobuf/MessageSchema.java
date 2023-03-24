@@ -82,21 +82,21 @@ public final class MessageSchema<T> implements Schema<T> {
         return newSchemaForMessageInfo((StructuralMessageInfo) messageInfo, newInstanceSchema, listFieldSchema, unknownFieldSchema, extensionSchema, mapFieldSchema);
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:122:0x024d  */
-    /* JADX WARN: Removed duplicated region for block: B:123:0x0250  */
-    /* JADX WARN: Removed duplicated region for block: B:126:0x0268  */
-    /* JADX WARN: Removed duplicated region for block: B:127:0x026b  */
+    /* JADX WARN: Removed duplicated region for block: B:122:0x024e  */
+    /* JADX WARN: Removed duplicated region for block: B:123:0x0251  */
+    /* JADX WARN: Removed duplicated region for block: B:126:0x0269  */
+    /* JADX WARN: Removed duplicated region for block: B:127:0x026c  */
     /* JADX WARN: Removed duplicated region for block: B:161:0x031a  */
-    /* JADX WARN: Removed duplicated region for block: B:162:0x031c  */
-    /* JADX WARN: Removed duplicated region for block: B:164:0x031f  */
-    /* JADX WARN: Removed duplicated region for block: B:182:0x037c  */
+    /* JADX WARN: Removed duplicated region for block: B:162:0x031d  */
+    /* JADX WARN: Removed duplicated region for block: B:164:0x0320  */
+    /* JADX WARN: Removed duplicated region for block: B:182:0x037a  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct add '--show-bad-code' argument
     */
     static <T> com.google.protobuf.MessageSchema<T> newSchemaForRawMessageInfo(com.google.protobuf.RawMessageInfo r34, com.google.protobuf.NewInstanceSchema r35, com.google.protobuf.ListFieldSchema r36, com.google.protobuf.UnknownFieldSchema<?, ?> r37, com.google.protobuf.ExtensionSchema<?> r38, com.google.protobuf.MapFieldSchema r39) {
         /*
-            Method dump skipped, instructions count: 999
+            Method dump skipped, instructions count: 996
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: com.google.protobuf.MessageSchema.newSchemaForRawMessageInfo(com.google.protobuf.RawMessageInfo, com.google.protobuf.NewInstanceSchema, com.google.protobuf.ListFieldSchema, com.google.protobuf.UnknownFieldSchema, com.google.protobuf.ExtensionSchema, com.google.protobuf.MapFieldSchema):com.google.protobuf.MessageSchema");
@@ -838,29 +838,31 @@ public final class MessageSchema<T> implements Schema<T> {
         int computeDoubleSize;
         int computeBoolSize;
         int computeSFixed32Size;
+        boolean z;
+        int computeSizeFixed32List;
         int computeSizeFixed64ListNoTag;
         int computeTagSize;
         int computeUInt32SizeNoTag;
         Unsafe unsafe = UNSAFE;
         int i3 = 1048575;
-        int i4 = 0;
+        int i4 = 1048575;
         int i5 = 0;
-        int i6 = 1048575;
+        int i6 = 0;
         int i7 = 0;
-        while (i4 < this.buffer.length) {
-            int typeAndOffsetAt = typeAndOffsetAt(i4);
-            int numberAt = numberAt(i4);
+        while (i5 < this.buffer.length) {
+            int typeAndOffsetAt = typeAndOffsetAt(i5);
+            int numberAt = numberAt(i5);
             int type = type(typeAndOffsetAt);
             if (type <= 17) {
-                i = this.buffer[i4 + 2];
+                i = this.buffer[i5 + 2];
                 int i8 = i & i3;
                 i2 = 1 << (i >>> 20);
-                if (i8 != i6) {
+                if (i8 != i4) {
                     i7 = unsafe.getInt(t, i8);
-                    i6 = i8;
+                    i4 = i8;
                 }
             } else {
-                i = (!this.useCachedSizeField || type < FieldType.DOUBLE_LIST_PACKED.m717id() || type > FieldType.SINT64_LIST_PACKED.m717id()) ? 0 : this.buffer[i4 + 2] & i3;
+                i = (!this.useCachedSizeField || type < FieldType.DOUBLE_LIST_PACKED.m717id() || type > FieldType.SINT64_LIST_PACKED.m717id()) ? 0 : this.buffer[i5 + 2] & i3;
                 i2 = 0;
             }
             long offset = offset(typeAndOffsetAt);
@@ -870,7 +872,7 @@ public final class MessageSchema<T> implements Schema<T> {
                         break;
                     } else {
                         computeDoubleSize = CodedOutputStream.computeDoubleSize(numberAt, 0.0d);
-                        i5 += computeDoubleSize;
+                        i6 += computeDoubleSize;
                         break;
                     }
                 case 1:
@@ -878,7 +880,7 @@ public final class MessageSchema<T> implements Schema<T> {
                         break;
                     } else {
                         computeDoubleSize = CodedOutputStream.computeFloatSize(numberAt, BitmapDescriptorFactory.HUE_RED);
-                        i5 += computeDoubleSize;
+                        i6 += computeDoubleSize;
                         break;
                     }
                 case 2:
@@ -886,7 +888,7 @@ public final class MessageSchema<T> implements Schema<T> {
                         break;
                     } else {
                         computeDoubleSize = CodedOutputStream.computeInt64Size(numberAt, unsafe.getLong(t, offset));
-                        i5 += computeDoubleSize;
+                        i6 += computeDoubleSize;
                         break;
                     }
                 case 3:
@@ -894,7 +896,7 @@ public final class MessageSchema<T> implements Schema<T> {
                         break;
                     } else {
                         computeDoubleSize = CodedOutputStream.computeUInt64Size(numberAt, unsafe.getLong(t, offset));
-                        i5 += computeDoubleSize;
+                        i6 += computeDoubleSize;
                         break;
                     }
                 case 4:
@@ -902,7 +904,7 @@ public final class MessageSchema<T> implements Schema<T> {
                         break;
                     } else {
                         computeDoubleSize = CodedOutputStream.computeInt32Size(numberAt, unsafe.getInt(t, offset));
-                        i5 += computeDoubleSize;
+                        i6 += computeDoubleSize;
                         break;
                     }
                 case 5:
@@ -910,20 +912,20 @@ public final class MessageSchema<T> implements Schema<T> {
                         break;
                     } else {
                         computeDoubleSize = CodedOutputStream.computeFixed64Size(numberAt, 0L);
-                        i5 += computeDoubleSize;
+                        i6 += computeDoubleSize;
                         break;
                     }
                 case 6:
                     if ((i7 & i2) != 0) {
                         computeDoubleSize = CodedOutputStream.computeFixed32Size(numberAt, 0);
-                        i5 += computeDoubleSize;
+                        i6 += computeDoubleSize;
                         break;
                     }
                     break;
                 case 7:
                     if ((i7 & i2) != 0) {
                         computeBoolSize = CodedOutputStream.computeBoolSize(numberAt, true);
-                        i5 += computeBoolSize;
+                        i6 += computeBoolSize;
                     }
                     break;
                 case 8:
@@ -934,130 +936,142 @@ public final class MessageSchema<T> implements Schema<T> {
                         } else {
                             computeBoolSize = CodedOutputStream.computeStringSize(numberAt, (String) object);
                         }
-                        i5 += computeBoolSize;
+                        i6 += computeBoolSize;
                     }
                     break;
                 case 9:
                     if ((i7 & i2) != 0) {
-                        computeBoolSize = SchemaUtil.computeSizeMessage(numberAt, unsafe.getObject(t, offset), getMessageFieldSchema(i4));
-                        i5 += computeBoolSize;
+                        computeBoolSize = SchemaUtil.computeSizeMessage(numberAt, unsafe.getObject(t, offset), getMessageFieldSchema(i5));
+                        i6 += computeBoolSize;
                     }
                     break;
                 case 10:
                     if ((i7 & i2) != 0) {
                         computeBoolSize = CodedOutputStream.computeBytesSize(numberAt, (ByteString) unsafe.getObject(t, offset));
-                        i5 += computeBoolSize;
+                        i6 += computeBoolSize;
                     }
                     break;
                 case 11:
                     if ((i7 & i2) != 0) {
                         computeBoolSize = CodedOutputStream.computeUInt32Size(numberAt, unsafe.getInt(t, offset));
-                        i5 += computeBoolSize;
+                        i6 += computeBoolSize;
                     }
                     break;
                 case 12:
                     if ((i7 & i2) != 0) {
                         computeBoolSize = CodedOutputStream.computeEnumSize(numberAt, unsafe.getInt(t, offset));
-                        i5 += computeBoolSize;
+                        i6 += computeBoolSize;
                     }
                     break;
                 case 13:
                     if ((i7 & i2) != 0) {
                         computeSFixed32Size = CodedOutputStream.computeSFixed32Size(numberAt, 0);
-                        i5 += computeSFixed32Size;
+                        i6 += computeSFixed32Size;
                     }
                     break;
                 case 14:
                     if ((i7 & i2) != 0) {
                         computeBoolSize = CodedOutputStream.computeSFixed64Size(numberAt, 0L);
-                        i5 += computeBoolSize;
+                        i6 += computeBoolSize;
                     }
                     break;
                 case 15:
                     if ((i7 & i2) != 0) {
                         computeBoolSize = CodedOutputStream.computeSInt32Size(numberAt, unsafe.getInt(t, offset));
-                        i5 += computeBoolSize;
+                        i6 += computeBoolSize;
                     }
                     break;
                 case 16:
                     if ((i7 & i2) != 0) {
                         computeBoolSize = CodedOutputStream.computeSInt64Size(numberAt, unsafe.getLong(t, offset));
-                        i5 += computeBoolSize;
+                        i6 += computeBoolSize;
                     }
                     break;
                 case 17:
                     if ((i7 & i2) != 0) {
-                        computeBoolSize = CodedOutputStream.computeGroupSize(numberAt, (MessageLite) unsafe.getObject(t, offset), getMessageFieldSchema(i4));
-                        i5 += computeBoolSize;
+                        computeBoolSize = CodedOutputStream.computeGroupSize(numberAt, (MessageLite) unsafe.getObject(t, offset), getMessageFieldSchema(i5));
+                        i6 += computeBoolSize;
                     }
                     break;
                 case 18:
                     computeBoolSize = SchemaUtil.computeSizeFixed64List(numberAt, (List) unsafe.getObject(t, offset), false);
-                    i5 += computeBoolSize;
+                    i6 += computeBoolSize;
                     break;
                 case 19:
-                    computeBoolSize = SchemaUtil.computeSizeFixed32List(numberAt, (List) unsafe.getObject(t, offset), false);
-                    i5 += computeBoolSize;
+                    z = false;
+                    computeSizeFixed32List = SchemaUtil.computeSizeFixed32List(numberAt, (List) unsafe.getObject(t, offset), false);
+                    i6 += computeSizeFixed32List;
                     break;
                 case 20:
-                    computeBoolSize = SchemaUtil.computeSizeInt64List(numberAt, (List) unsafe.getObject(t, offset), false);
-                    i5 += computeBoolSize;
+                    z = false;
+                    computeSizeFixed32List = SchemaUtil.computeSizeInt64List(numberAt, (List) unsafe.getObject(t, offset), false);
+                    i6 += computeSizeFixed32List;
                     break;
                 case 21:
-                    computeBoolSize = SchemaUtil.computeSizeUInt64List(numberAt, (List) unsafe.getObject(t, offset), false);
-                    i5 += computeBoolSize;
+                    z = false;
+                    computeSizeFixed32List = SchemaUtil.computeSizeUInt64List(numberAt, (List) unsafe.getObject(t, offset), false);
+                    i6 += computeSizeFixed32List;
                     break;
                 case 22:
-                    computeBoolSize = SchemaUtil.computeSizeInt32List(numberAt, (List) unsafe.getObject(t, offset), false);
-                    i5 += computeBoolSize;
+                    z = false;
+                    computeSizeFixed32List = SchemaUtil.computeSizeInt32List(numberAt, (List) unsafe.getObject(t, offset), false);
+                    i6 += computeSizeFixed32List;
                     break;
                 case 23:
-                    computeBoolSize = SchemaUtil.computeSizeFixed64List(numberAt, (List) unsafe.getObject(t, offset), false);
-                    i5 += computeBoolSize;
+                    z = false;
+                    computeSizeFixed32List = SchemaUtil.computeSizeFixed64List(numberAt, (List) unsafe.getObject(t, offset), false);
+                    i6 += computeSizeFixed32List;
                     break;
                 case 24:
-                    computeBoolSize = SchemaUtil.computeSizeFixed32List(numberAt, (List) unsafe.getObject(t, offset), false);
-                    i5 += computeBoolSize;
+                    z = false;
+                    computeSizeFixed32List = SchemaUtil.computeSizeFixed32List(numberAt, (List) unsafe.getObject(t, offset), false);
+                    i6 += computeSizeFixed32List;
                     break;
                 case 25:
-                    computeBoolSize = SchemaUtil.computeSizeBoolList(numberAt, (List) unsafe.getObject(t, offset), false);
-                    i5 += computeBoolSize;
+                    z = false;
+                    computeSizeFixed32List = SchemaUtil.computeSizeBoolList(numberAt, (List) unsafe.getObject(t, offset), false);
+                    i6 += computeSizeFixed32List;
                     break;
                 case 26:
                     computeBoolSize = SchemaUtil.computeSizeStringList(numberAt, (List) unsafe.getObject(t, offset));
-                    i5 += computeBoolSize;
+                    i6 += computeBoolSize;
                     break;
                 case 27:
-                    computeBoolSize = SchemaUtil.computeSizeMessageList(numberAt, (List) unsafe.getObject(t, offset), getMessageFieldSchema(i4));
-                    i5 += computeBoolSize;
+                    computeBoolSize = SchemaUtil.computeSizeMessageList(numberAt, (List) unsafe.getObject(t, offset), getMessageFieldSchema(i5));
+                    i6 += computeBoolSize;
                     break;
                 case 28:
                     computeBoolSize = SchemaUtil.computeSizeByteStringList(numberAt, (List) unsafe.getObject(t, offset));
-                    i5 += computeBoolSize;
+                    i6 += computeBoolSize;
                     break;
                 case 29:
                     computeBoolSize = SchemaUtil.computeSizeUInt32List(numberAt, (List) unsafe.getObject(t, offset), false);
-                    i5 += computeBoolSize;
+                    i6 += computeBoolSize;
                     break;
                 case 30:
-                    computeBoolSize = SchemaUtil.computeSizeEnumList(numberAt, (List) unsafe.getObject(t, offset), false);
-                    i5 += computeBoolSize;
+                    z = false;
+                    computeSizeFixed32List = SchemaUtil.computeSizeEnumList(numberAt, (List) unsafe.getObject(t, offset), false);
+                    i6 += computeSizeFixed32List;
                     break;
                 case 31:
-                    computeBoolSize = SchemaUtil.computeSizeFixed32List(numberAt, (List) unsafe.getObject(t, offset), false);
-                    i5 += computeBoolSize;
+                    z = false;
+                    computeSizeFixed32List = SchemaUtil.computeSizeFixed32List(numberAt, (List) unsafe.getObject(t, offset), false);
+                    i6 += computeSizeFixed32List;
                     break;
                 case 32:
-                    computeBoolSize = SchemaUtil.computeSizeFixed64List(numberAt, (List) unsafe.getObject(t, offset), false);
-                    i5 += computeBoolSize;
+                    z = false;
+                    computeSizeFixed32List = SchemaUtil.computeSizeFixed64List(numberAt, (List) unsafe.getObject(t, offset), false);
+                    i6 += computeSizeFixed32List;
                     break;
                 case 33:
-                    computeBoolSize = SchemaUtil.computeSizeSInt32List(numberAt, (List) unsafe.getObject(t, offset), false);
-                    i5 += computeBoolSize;
+                    z = false;
+                    computeSizeFixed32List = SchemaUtil.computeSizeSInt32List(numberAt, (List) unsafe.getObject(t, offset), false);
+                    i6 += computeSizeFixed32List;
                     break;
                 case 34:
-                    computeBoolSize = SchemaUtil.computeSizeSInt64List(numberAt, (List) unsafe.getObject(t, offset), false);
-                    i5 += computeBoolSize;
+                    z = false;
+                    computeSizeFixed32List = SchemaUtil.computeSizeSInt64List(numberAt, (List) unsafe.getObject(t, offset), false);
+                    i6 += computeSizeFixed32List;
                     break;
                 case 35:
                     computeSizeFixed64ListNoTag = SchemaUtil.computeSizeFixed64ListNoTag((List) unsafe.getObject(t, offset));
@@ -1068,7 +1082,7 @@ public final class MessageSchema<T> implements Schema<T> {
                         computeTagSize = CodedOutputStream.computeTagSize(numberAt);
                         computeUInt32SizeNoTag = CodedOutputStream.computeUInt32SizeNoTag(computeSizeFixed64ListNoTag);
                         computeSFixed32Size = computeTagSize + computeUInt32SizeNoTag + computeSizeFixed64ListNoTag;
-                        i5 += computeSFixed32Size;
+                        i6 += computeSFixed32Size;
                     }
                     break;
                 case 36:
@@ -1080,7 +1094,7 @@ public final class MessageSchema<T> implements Schema<T> {
                         computeTagSize = CodedOutputStream.computeTagSize(numberAt);
                         computeUInt32SizeNoTag = CodedOutputStream.computeUInt32SizeNoTag(computeSizeFixed64ListNoTag);
                         computeSFixed32Size = computeTagSize + computeUInt32SizeNoTag + computeSizeFixed64ListNoTag;
-                        i5 += computeSFixed32Size;
+                        i6 += computeSFixed32Size;
                     }
                     break;
                 case 37:
@@ -1092,7 +1106,7 @@ public final class MessageSchema<T> implements Schema<T> {
                         computeTagSize = CodedOutputStream.computeTagSize(numberAt);
                         computeUInt32SizeNoTag = CodedOutputStream.computeUInt32SizeNoTag(computeSizeFixed64ListNoTag);
                         computeSFixed32Size = computeTagSize + computeUInt32SizeNoTag + computeSizeFixed64ListNoTag;
-                        i5 += computeSFixed32Size;
+                        i6 += computeSFixed32Size;
                     }
                     break;
                 case 38:
@@ -1104,7 +1118,7 @@ public final class MessageSchema<T> implements Schema<T> {
                         computeTagSize = CodedOutputStream.computeTagSize(numberAt);
                         computeUInt32SizeNoTag = CodedOutputStream.computeUInt32SizeNoTag(computeSizeFixed64ListNoTag);
                         computeSFixed32Size = computeTagSize + computeUInt32SizeNoTag + computeSizeFixed64ListNoTag;
-                        i5 += computeSFixed32Size;
+                        i6 += computeSFixed32Size;
                     }
                     break;
                 case 39:
@@ -1116,7 +1130,7 @@ public final class MessageSchema<T> implements Schema<T> {
                         computeTagSize = CodedOutputStream.computeTagSize(numberAt);
                         computeUInt32SizeNoTag = CodedOutputStream.computeUInt32SizeNoTag(computeSizeFixed64ListNoTag);
                         computeSFixed32Size = computeTagSize + computeUInt32SizeNoTag + computeSizeFixed64ListNoTag;
-                        i5 += computeSFixed32Size;
+                        i6 += computeSFixed32Size;
                     }
                     break;
                 case 40:
@@ -1128,7 +1142,7 @@ public final class MessageSchema<T> implements Schema<T> {
                         computeTagSize = CodedOutputStream.computeTagSize(numberAt);
                         computeUInt32SizeNoTag = CodedOutputStream.computeUInt32SizeNoTag(computeSizeFixed64ListNoTag);
                         computeSFixed32Size = computeTagSize + computeUInt32SizeNoTag + computeSizeFixed64ListNoTag;
-                        i5 += computeSFixed32Size;
+                        i6 += computeSFixed32Size;
                     }
                     break;
                 case 41:
@@ -1140,7 +1154,7 @@ public final class MessageSchema<T> implements Schema<T> {
                         computeTagSize = CodedOutputStream.computeTagSize(numberAt);
                         computeUInt32SizeNoTag = CodedOutputStream.computeUInt32SizeNoTag(computeSizeFixed64ListNoTag);
                         computeSFixed32Size = computeTagSize + computeUInt32SizeNoTag + computeSizeFixed64ListNoTag;
-                        i5 += computeSFixed32Size;
+                        i6 += computeSFixed32Size;
                     }
                     break;
                 case 42:
@@ -1152,7 +1166,7 @@ public final class MessageSchema<T> implements Schema<T> {
                         computeTagSize = CodedOutputStream.computeTagSize(numberAt);
                         computeUInt32SizeNoTag = CodedOutputStream.computeUInt32SizeNoTag(computeSizeFixed64ListNoTag);
                         computeSFixed32Size = computeTagSize + computeUInt32SizeNoTag + computeSizeFixed64ListNoTag;
-                        i5 += computeSFixed32Size;
+                        i6 += computeSFixed32Size;
                     }
                     break;
                 case 43:
@@ -1164,7 +1178,7 @@ public final class MessageSchema<T> implements Schema<T> {
                         computeTagSize = CodedOutputStream.computeTagSize(numberAt);
                         computeUInt32SizeNoTag = CodedOutputStream.computeUInt32SizeNoTag(computeSizeFixed64ListNoTag);
                         computeSFixed32Size = computeTagSize + computeUInt32SizeNoTag + computeSizeFixed64ListNoTag;
-                        i5 += computeSFixed32Size;
+                        i6 += computeSFixed32Size;
                     }
                     break;
                 case 44:
@@ -1176,7 +1190,7 @@ public final class MessageSchema<T> implements Schema<T> {
                         computeTagSize = CodedOutputStream.computeTagSize(numberAt);
                         computeUInt32SizeNoTag = CodedOutputStream.computeUInt32SizeNoTag(computeSizeFixed64ListNoTag);
                         computeSFixed32Size = computeTagSize + computeUInt32SizeNoTag + computeSizeFixed64ListNoTag;
-                        i5 += computeSFixed32Size;
+                        i6 += computeSFixed32Size;
                     }
                     break;
                 case 45:
@@ -1188,7 +1202,7 @@ public final class MessageSchema<T> implements Schema<T> {
                         computeTagSize = CodedOutputStream.computeTagSize(numberAt);
                         computeUInt32SizeNoTag = CodedOutputStream.computeUInt32SizeNoTag(computeSizeFixed64ListNoTag);
                         computeSFixed32Size = computeTagSize + computeUInt32SizeNoTag + computeSizeFixed64ListNoTag;
-                        i5 += computeSFixed32Size;
+                        i6 += computeSFixed32Size;
                     }
                     break;
                 case 46:
@@ -1200,7 +1214,7 @@ public final class MessageSchema<T> implements Schema<T> {
                         computeTagSize = CodedOutputStream.computeTagSize(numberAt);
                         computeUInt32SizeNoTag = CodedOutputStream.computeUInt32SizeNoTag(computeSizeFixed64ListNoTag);
                         computeSFixed32Size = computeTagSize + computeUInt32SizeNoTag + computeSizeFixed64ListNoTag;
-                        i5 += computeSFixed32Size;
+                        i6 += computeSFixed32Size;
                     }
                     break;
                 case 47:
@@ -1212,7 +1226,7 @@ public final class MessageSchema<T> implements Schema<T> {
                         computeTagSize = CodedOutputStream.computeTagSize(numberAt);
                         computeUInt32SizeNoTag = CodedOutputStream.computeUInt32SizeNoTag(computeSizeFixed64ListNoTag);
                         computeSFixed32Size = computeTagSize + computeUInt32SizeNoTag + computeSizeFixed64ListNoTag;
-                        i5 += computeSFixed32Size;
+                        i6 += computeSFixed32Size;
                     }
                     break;
                 case 48:
@@ -1224,135 +1238,135 @@ public final class MessageSchema<T> implements Schema<T> {
                         computeTagSize = CodedOutputStream.computeTagSize(numberAt);
                         computeUInt32SizeNoTag = CodedOutputStream.computeUInt32SizeNoTag(computeSizeFixed64ListNoTag);
                         computeSFixed32Size = computeTagSize + computeUInt32SizeNoTag + computeSizeFixed64ListNoTag;
-                        i5 += computeSFixed32Size;
+                        i6 += computeSFixed32Size;
                     }
                     break;
                 case 49:
-                    computeBoolSize = SchemaUtil.computeSizeGroupList(numberAt, (List) unsafe.getObject(t, offset), getMessageFieldSchema(i4));
-                    i5 += computeBoolSize;
+                    computeBoolSize = SchemaUtil.computeSizeGroupList(numberAt, (List) unsafe.getObject(t, offset), getMessageFieldSchema(i5));
+                    i6 += computeBoolSize;
                     break;
                 case 50:
-                    computeBoolSize = this.mapFieldSchema.getSerializedSize(numberAt, unsafe.getObject(t, offset), getMapFieldDefaultEntry(i4));
-                    i5 += computeBoolSize;
+                    computeBoolSize = this.mapFieldSchema.getSerializedSize(numberAt, unsafe.getObject(t, offset), getMapFieldDefaultEntry(i5));
+                    i6 += computeBoolSize;
                     break;
                 case 51:
-                    if (isOneofPresent(t, numberAt, i4)) {
+                    if (isOneofPresent(t, numberAt, i5)) {
                         computeBoolSize = CodedOutputStream.computeDoubleSize(numberAt, 0.0d);
-                        i5 += computeBoolSize;
+                        i6 += computeBoolSize;
                     }
                     break;
                 case 52:
-                    if (isOneofPresent(t, numberAt, i4)) {
+                    if (isOneofPresent(t, numberAt, i5)) {
                         computeBoolSize = CodedOutputStream.computeFloatSize(numberAt, BitmapDescriptorFactory.HUE_RED);
-                        i5 += computeBoolSize;
+                        i6 += computeBoolSize;
                     }
                     break;
                 case 53:
-                    if (isOneofPresent(t, numberAt, i4)) {
+                    if (isOneofPresent(t, numberAt, i5)) {
                         computeBoolSize = CodedOutputStream.computeInt64Size(numberAt, oneofLongAt(t, offset));
-                        i5 += computeBoolSize;
+                        i6 += computeBoolSize;
                     }
                     break;
                 case 54:
-                    if (isOneofPresent(t, numberAt, i4)) {
+                    if (isOneofPresent(t, numberAt, i5)) {
                         computeBoolSize = CodedOutputStream.computeUInt64Size(numberAt, oneofLongAt(t, offset));
-                        i5 += computeBoolSize;
+                        i6 += computeBoolSize;
                     }
                     break;
                 case 55:
-                    if (isOneofPresent(t, numberAt, i4)) {
+                    if (isOneofPresent(t, numberAt, i5)) {
                         computeBoolSize = CodedOutputStream.computeInt32Size(numberAt, oneofIntAt(t, offset));
-                        i5 += computeBoolSize;
+                        i6 += computeBoolSize;
                     }
                     break;
                 case 56:
-                    if (isOneofPresent(t, numberAt, i4)) {
+                    if (isOneofPresent(t, numberAt, i5)) {
                         computeBoolSize = CodedOutputStream.computeFixed64Size(numberAt, 0L);
-                        i5 += computeBoolSize;
+                        i6 += computeBoolSize;
                     }
                     break;
                 case 57:
-                    if (isOneofPresent(t, numberAt, i4)) {
+                    if (isOneofPresent(t, numberAt, i5)) {
                         computeSFixed32Size = CodedOutputStream.computeFixed32Size(numberAt, 0);
-                        i5 += computeSFixed32Size;
+                        i6 += computeSFixed32Size;
                     }
                     break;
                 case 58:
-                    if (isOneofPresent(t, numberAt, i4)) {
+                    if (isOneofPresent(t, numberAt, i5)) {
                         computeBoolSize = CodedOutputStream.computeBoolSize(numberAt, true);
-                        i5 += computeBoolSize;
+                        i6 += computeBoolSize;
                     }
                     break;
                 case 59:
-                    if (isOneofPresent(t, numberAt, i4)) {
+                    if (isOneofPresent(t, numberAt, i5)) {
                         Object object2 = unsafe.getObject(t, offset);
                         if (object2 instanceof ByteString) {
                             computeBoolSize = CodedOutputStream.computeBytesSize(numberAt, (ByteString) object2);
                         } else {
                             computeBoolSize = CodedOutputStream.computeStringSize(numberAt, (String) object2);
                         }
-                        i5 += computeBoolSize;
+                        i6 += computeBoolSize;
                     }
                     break;
                 case 60:
-                    if (isOneofPresent(t, numberAt, i4)) {
-                        computeBoolSize = SchemaUtil.computeSizeMessage(numberAt, unsafe.getObject(t, offset), getMessageFieldSchema(i4));
-                        i5 += computeBoolSize;
+                    if (isOneofPresent(t, numberAt, i5)) {
+                        computeBoolSize = SchemaUtil.computeSizeMessage(numberAt, unsafe.getObject(t, offset), getMessageFieldSchema(i5));
+                        i6 += computeBoolSize;
                     }
                     break;
                 case 61:
-                    if (isOneofPresent(t, numberAt, i4)) {
+                    if (isOneofPresent(t, numberAt, i5)) {
                         computeBoolSize = CodedOutputStream.computeBytesSize(numberAt, (ByteString) unsafe.getObject(t, offset));
-                        i5 += computeBoolSize;
+                        i6 += computeBoolSize;
                     }
                     break;
                 case 62:
-                    if (isOneofPresent(t, numberAt, i4)) {
+                    if (isOneofPresent(t, numberAt, i5)) {
                         computeBoolSize = CodedOutputStream.computeUInt32Size(numberAt, oneofIntAt(t, offset));
-                        i5 += computeBoolSize;
+                        i6 += computeBoolSize;
                     }
                     break;
                 case 63:
-                    if (isOneofPresent(t, numberAt, i4)) {
+                    if (isOneofPresent(t, numberAt, i5)) {
                         computeBoolSize = CodedOutputStream.computeEnumSize(numberAt, oneofIntAt(t, offset));
-                        i5 += computeBoolSize;
+                        i6 += computeBoolSize;
                     }
                     break;
                 case 64:
-                    if (isOneofPresent(t, numberAt, i4)) {
+                    if (isOneofPresent(t, numberAt, i5)) {
                         computeSFixed32Size = CodedOutputStream.computeSFixed32Size(numberAt, 0);
-                        i5 += computeSFixed32Size;
+                        i6 += computeSFixed32Size;
                     }
                     break;
                 case 65:
-                    if (isOneofPresent(t, numberAt, i4)) {
+                    if (isOneofPresent(t, numberAt, i5)) {
                         computeBoolSize = CodedOutputStream.computeSFixed64Size(numberAt, 0L);
-                        i5 += computeBoolSize;
+                        i6 += computeBoolSize;
                     }
                     break;
                 case 66:
-                    if (isOneofPresent(t, numberAt, i4)) {
+                    if (isOneofPresent(t, numberAt, i5)) {
                         computeBoolSize = CodedOutputStream.computeSInt32Size(numberAt, oneofIntAt(t, offset));
-                        i5 += computeBoolSize;
+                        i6 += computeBoolSize;
                     }
                     break;
                 case 67:
-                    if (isOneofPresent(t, numberAt, i4)) {
+                    if (isOneofPresent(t, numberAt, i5)) {
                         computeBoolSize = CodedOutputStream.computeSInt64Size(numberAt, oneofLongAt(t, offset));
-                        i5 += computeBoolSize;
+                        i6 += computeBoolSize;
                     }
                     break;
                 case 68:
-                    if (isOneofPresent(t, numberAt, i4)) {
-                        computeBoolSize = CodedOutputStream.computeGroupSize(numberAt, (MessageLite) unsafe.getObject(t, offset), getMessageFieldSchema(i4));
-                        i5 += computeBoolSize;
+                    if (isOneofPresent(t, numberAt, i5)) {
+                        computeBoolSize = CodedOutputStream.computeGroupSize(numberAt, (MessageLite) unsafe.getObject(t, offset), getMessageFieldSchema(i5));
+                        i6 += computeBoolSize;
                     }
                     break;
             }
-            i4 += 3;
+            i5 += 3;
             i3 = 1048575;
         }
-        int unknownFieldsSerializedSize = i5 + getUnknownFieldsSerializedSize(this.unknownFieldSchema, t);
+        int unknownFieldsSerializedSize = i6 + getUnknownFieldsSerializedSize(this.unknownFieldSchema, t);
         return this.hasExtensions ? unknownFieldsSerializedSize + this.extensionSchema.getExtensions(t).getSerializedSize() : unknownFieldsSerializedSize;
     }
 
@@ -1899,15 +1913,15 @@ public final class MessageSchema<T> implements Schema<T> {
         }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:10:0x0032  */
-    /* JADX WARN: Removed duplicated region for block: B:170:0x0491  */
+    /* JADX WARN: Removed duplicated region for block: B:10:0x0030  */
+    /* JADX WARN: Removed duplicated region for block: B:170:0x048f  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct add '--show-bad-code' argument
     */
     private void writeFieldsInAscendingOrderProto2(T r18, com.google.protobuf.Writer r19) throws java.io.IOException {
         /*
-            Method dump skipped, instructions count: 1338
+            Method dump skipped, instructions count: 1336
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: com.google.protobuf.MessageSchema.writeFieldsInAscendingOrderProto2(java.lang.Object, com.google.protobuf.Writer):void");
@@ -2540,10 +2554,10 @@ public final class MessageSchema<T> implements Schema<T> {
         ArrayDecoders.Registers registers2 = registers;
         Unsafe unsafe2 = UNSAFE;
         int i19 = i;
-        int i20 = -1;
+        int i20 = 0;
         int i21 = 0;
         int i22 = 0;
-        int i23 = 0;
+        int i23 = -1;
         int i24 = 1048575;
         while (true) {
             if (i19 < i17) {
@@ -2558,8 +2572,8 @@ public final class MessageSchema<T> implements Schema<T> {
                 }
                 int i26 = b >>> 3;
                 int i27 = b & 7;
-                if (i26 > i20) {
-                    positionForFieldNumber = messageSchema2.positionForFieldNumber(i26, i21 / 3);
+                if (i26 > i23) {
+                    positionForFieldNumber = messageSchema2.positionForFieldNumber(i26, i20 / 3);
                 } else {
                     positionForFieldNumber = messageSchema2.positionForFieldNumber(i26);
                 }
@@ -2568,7 +2582,7 @@ public final class MessageSchema<T> implements Schema<T> {
                     i6 = i26;
                     i7 = i25;
                     i8 = b;
-                    i9 = i23;
+                    i9 = i22;
                     i10 = i24;
                     unsafe = unsafe2;
                     i4 = i18;
@@ -2584,30 +2598,30 @@ public final class MessageSchema<T> implements Schema<T> {
                         int i33 = i31 & 1048575;
                         if (i33 != i24) {
                             if (i24 != 1048575) {
-                                unsafe2.putInt(t6, i24, i23);
+                                unsafe2.putInt(t6, i24, i22);
                             }
-                            i23 = unsafe2.getInt(t6, i33);
+                            i22 = unsafe2.getInt(t6, i33);
                             i10 = i33;
                         } else {
                             i10 = i24;
                         }
-                        int i34 = i23;
+                        int i34 = i22;
                         switch (type) {
                             case 0:
                                 t3 = t6;
                                 i12 = i28;
                                 i6 = i26;
-                                i13 = i30;
                                 bArr2 = bArr;
+                                i13 = i30;
                                 if (i27 == 1) {
                                     UnsafeUtil.putDouble(t3, offset, ArrayDecoders.decodeDouble(bArr2, i25));
                                     i19 = i25 + 8;
-                                    i23 = i34 | i32;
+                                    i22 = i34 | i32;
                                     i17 = i2;
                                     t6 = t3;
-                                    i21 = i12;
-                                    i22 = i13;
-                                    i20 = i6;
+                                    i20 = i12;
+                                    i21 = i13;
+                                    i23 = i6;
                                     i24 = i10;
                                     i18 = i3;
                                     break;
@@ -2624,17 +2638,17 @@ public final class MessageSchema<T> implements Schema<T> {
                                 t3 = t6;
                                 i12 = i28;
                                 i6 = i26;
-                                i13 = i30;
                                 bArr2 = bArr;
+                                i13 = i30;
                                 if (i27 == 5) {
                                     UnsafeUtil.putFloat(t3, offset, ArrayDecoders.decodeFloat(bArr2, i25));
                                     i19 = i25 + 4;
-                                    i23 = i34 | i32;
+                                    i22 = i34 | i32;
                                     i17 = i2;
                                     t6 = t3;
-                                    i21 = i12;
-                                    i22 = i13;
-                                    i20 = i6;
+                                    i20 = i12;
+                                    i21 = i13;
+                                    i23 = i6;
                                     i24 = i10;
                                     i18 = i3;
                                     break;
@@ -2652,18 +2666,18 @@ public final class MessageSchema<T> implements Schema<T> {
                                 T t7 = t6;
                                 i12 = i28;
                                 i6 = i26;
-                                i13 = i30;
                                 bArr2 = bArr;
+                                i13 = i30;
                                 if (i27 == 0) {
                                     int decodeVarint64 = ArrayDecoders.decodeVarint64(bArr2, i25, registers2);
                                     t4 = t7;
                                     unsafe2.putLong(t, offset, registers2.long1);
-                                    i23 = i34 | i32;
+                                    i22 = i34 | i32;
                                     i19 = decodeVarint64;
-                                    i21 = i12;
-                                    i22 = i13;
+                                    i20 = i12;
+                                    i21 = i13;
                                     t6 = t4;
-                                    i20 = i6;
+                                    i23 = i6;
                                     i24 = i10;
                                     i17 = i2;
                                     i18 = i3;
@@ -2682,17 +2696,17 @@ public final class MessageSchema<T> implements Schema<T> {
                                 t3 = t6;
                                 i12 = i28;
                                 i6 = i26;
-                                i13 = i30;
                                 bArr2 = bArr;
+                                i13 = i30;
                                 if (i27 == 0) {
                                     i19 = ArrayDecoders.decodeVarint32(bArr2, i25, registers2);
                                     unsafe2.putInt(t3, offset, registers2.int1);
-                                    i23 = i34 | i32;
+                                    i22 = i34 | i32;
                                     i17 = i2;
                                     t6 = t3;
-                                    i21 = i12;
-                                    i22 = i13;
-                                    i20 = i6;
+                                    i20 = i12;
+                                    i21 = i13;
+                                    i23 = i6;
                                     i24 = i10;
                                     i18 = i3;
                                     break;
@@ -2710,17 +2724,17 @@ public final class MessageSchema<T> implements Schema<T> {
                                 T t8 = t6;
                                 i12 = i28;
                                 i6 = i26;
-                                i13 = i30;
                                 bArr2 = bArr;
+                                i13 = i30;
                                 if (i27 == 1) {
                                     t4 = t8;
                                     unsafe2.putLong(t, offset, ArrayDecoders.decodeFixed64(bArr2, i25));
                                     i19 = i25 + 8;
-                                    i23 = i34 | i32;
-                                    i21 = i12;
-                                    i22 = i13;
+                                    i22 = i34 | i32;
+                                    i20 = i12;
+                                    i21 = i13;
                                     t6 = t4;
-                                    i20 = i6;
+                                    i23 = i6;
                                     i24 = i10;
                                     i17 = i2;
                                     i18 = i3;
@@ -2740,20 +2754,20 @@ public final class MessageSchema<T> implements Schema<T> {
                                 t5 = t6;
                                 i12 = i28;
                                 i6 = i26;
-                                i13 = i30;
                                 bArr2 = bArr;
+                                i13 = i30;
                                 if (i27 == 5) {
                                     unsafe2.putInt(t5, offset, ArrayDecoders.decodeFixed32(bArr2, i25));
                                     i19 = i25 + 4;
                                     int i35 = i34 | i32;
                                     t6 = t5;
                                     i17 = i14;
-                                    i21 = i12;
-                                    i22 = i13;
+                                    i20 = i12;
+                                    i21 = i13;
                                     i24 = i10;
                                     i18 = i3;
-                                    i23 = i35;
-                                    i20 = i6;
+                                    i22 = i35;
+                                    i23 = i6;
                                     break;
                                 } else {
                                     i7 = i25;
@@ -2769,20 +2783,20 @@ public final class MessageSchema<T> implements Schema<T> {
                                 t5 = t6;
                                 i12 = i28;
                                 i6 = i26;
-                                i13 = i30;
                                 bArr2 = bArr;
+                                i13 = i30;
                                 if (i27 == 0) {
                                     i19 = ArrayDecoders.decodeVarint64(bArr2, i25, registers2);
                                     UnsafeUtil.putBoolean(t5, offset, registers2.long1 != 0);
                                     int i352 = i34 | i32;
                                     t6 = t5;
                                     i17 = i14;
-                                    i21 = i12;
-                                    i22 = i13;
+                                    i20 = i12;
+                                    i21 = i13;
                                     i24 = i10;
                                     i18 = i3;
-                                    i23 = i352;
-                                    i20 = i6;
+                                    i22 = i352;
+                                    i23 = i6;
                                     break;
                                 } else {
                                     i7 = i25;
@@ -2798,8 +2812,8 @@ public final class MessageSchema<T> implements Schema<T> {
                                 t5 = t6;
                                 i12 = i28;
                                 i6 = i26;
-                                i13 = i30;
                                 bArr2 = bArr;
+                                i13 = i30;
                                 if (i27 == 2) {
                                     if ((i29 & 536870912) == 0) {
                                         i19 = ArrayDecoders.decodeString(bArr2, i25, registers2);
@@ -2810,12 +2824,12 @@ public final class MessageSchema<T> implements Schema<T> {
                                     int i3522 = i34 | i32;
                                     t6 = t5;
                                     i17 = i14;
-                                    i21 = i12;
-                                    i22 = i13;
+                                    i20 = i12;
+                                    i21 = i13;
                                     i24 = i10;
                                     i18 = i3;
-                                    i23 = i3522;
-                                    i20 = i6;
+                                    i22 = i3522;
+                                    i23 = i6;
                                     break;
                                 } else {
                                     i7 = i25;
@@ -2843,12 +2857,12 @@ public final class MessageSchema<T> implements Schema<T> {
                                     int i35222 = i34 | i32;
                                     t6 = t5;
                                     i17 = i14;
-                                    i21 = i12;
-                                    i22 = i13;
+                                    i20 = i12;
+                                    i21 = i13;
                                     i24 = i10;
                                     i18 = i3;
-                                    i23 = i35222;
-                                    i20 = i6;
+                                    i22 = i35222;
+                                    i23 = i6;
                                     break;
                                 } else {
                                     i7 = i25;
@@ -2868,12 +2882,12 @@ public final class MessageSchema<T> implements Schema<T> {
                                 if (i27 == 2) {
                                     i19 = ArrayDecoders.decodeBytes(bArr2, i25, registers2);
                                     unsafe2.putObject(t3, offset, registers2.object1);
-                                    i23 = i34 | i32;
+                                    i22 = i34 | i32;
                                     i17 = i2;
                                     t6 = t3;
-                                    i21 = i12;
-                                    i22 = i13;
-                                    i20 = i6;
+                                    i20 = i12;
+                                    i21 = i13;
+                                    i23 = i6;
                                     i24 = i10;
                                     i18 = i3;
                                     break;
@@ -2906,12 +2920,12 @@ public final class MessageSchema<T> implements Schema<T> {
                                     Internal.EnumVerifier enumFieldVerifier = messageSchema2.getEnumFieldVerifier(i12);
                                     if (enumFieldVerifier == null || enumFieldVerifier.isInRange(i36)) {
                                         unsafe2.putInt(t3, offset, i36);
-                                        i23 = i34 | i32;
+                                        i22 = i34 | i32;
                                         i17 = i2;
                                         t6 = t3;
-                                        i21 = i12;
-                                        i22 = i13;
-                                        i20 = i6;
+                                        i20 = i12;
+                                        i21 = i13;
+                                        i23 = i6;
                                         i24 = i10;
                                         i18 = i3;
                                         break;
@@ -2919,10 +2933,10 @@ public final class MessageSchema<T> implements Schema<T> {
                                         getMutableUnknownFields(t).storeField(i13, Long.valueOf(i36));
                                         i17 = i2;
                                         t6 = t3;
-                                        i23 = i34;
-                                        i21 = i12;
-                                        i22 = i13;
-                                        i20 = i6;
+                                        i22 = i34;
+                                        i20 = i12;
+                                        i21 = i13;
+                                        i23 = i6;
                                         i24 = i10;
                                         i18 = i3;
                                     }
@@ -2937,12 +2951,12 @@ public final class MessageSchema<T> implements Schema<T> {
                                     i19 = ArrayDecoders.decodeVarint32(bArr2, i25, registers2);
                                     t3 = t;
                                     unsafe2.putInt(t3, offset, CodedInputStream.decodeZigZag32(registers2.int1));
-                                    i23 = i34 | i32;
+                                    i22 = i34 | i32;
                                     i17 = i2;
                                     t6 = t3;
-                                    i21 = i12;
-                                    i22 = i13;
-                                    i20 = i6;
+                                    i20 = i12;
+                                    i21 = i13;
+                                    i23 = i6;
                                     i24 = i10;
                                     i18 = i3;
                                     break;
@@ -2963,13 +2977,13 @@ public final class MessageSchema<T> implements Schema<T> {
                                     int decodeVarint642 = ArrayDecoders.decodeVarint64(bArr2, i25, registers2);
                                     i13 = i30;
                                     unsafe2.putLong(t, offset, CodedInputStream.decodeZigZag64(registers2.long1));
-                                    i23 = i34 | i32;
+                                    i22 = i34 | i32;
                                     t6 = t;
                                     i17 = i2;
                                     i19 = decodeVarint642;
-                                    i21 = i12;
-                                    i22 = i13;
-                                    i20 = i6;
+                                    i20 = i12;
+                                    i21 = i13;
+                                    i23 = i6;
                                     i24 = i10;
                                     i18 = i3;
                                     break;
@@ -2991,13 +3005,13 @@ public final class MessageSchema<T> implements Schema<T> {
                                     } else {
                                         unsafe2.putObject(t6, offset, Internal.mergeMessage(unsafe2.getObject(t6, offset), registers2.object1));
                                     }
-                                    i23 = i34 | i32;
+                                    i22 = i34 | i32;
                                     bArr2 = bArr;
                                     i17 = i2;
                                     i18 = i3;
-                                    i22 = i30;
-                                    i21 = i28;
-                                    i20 = i26;
+                                    i21 = i30;
+                                    i20 = i28;
+                                    i23 = i26;
                                     i24 = i10;
                                     break;
                                 } else {
@@ -3030,7 +3044,7 @@ public final class MessageSchema<T> implements Schema<T> {
                         bArr2 = bArr;
                         if (type != 27) {
                             i11 = i28;
-                            i9 = i23;
+                            i9 = i22;
                             i10 = i24;
                             if (type <= 49) {
                                 int i37 = i25;
@@ -3044,10 +3058,10 @@ public final class MessageSchema<T> implements Schema<T> {
                                     i17 = i2;
                                     i18 = i3;
                                     registers2 = registers;
-                                    i20 = i6;
-                                    i22 = i16;
-                                    i21 = i11;
-                                    i23 = i9;
+                                    i23 = i6;
+                                    i21 = i16;
+                                    i20 = i11;
+                                    i22 = i9;
                                     i24 = i10;
                                     unsafe2 = unsafe;
                                 } else {
@@ -3068,10 +3082,10 @@ public final class MessageSchema<T> implements Schema<T> {
                                         i17 = i2;
                                         i18 = i3;
                                         registers2 = registers;
-                                        i20 = i6;
-                                        i22 = i16;
-                                        i21 = i11;
-                                        i23 = i9;
+                                        i23 = i6;
+                                        i21 = i16;
+                                        i20 = i11;
+                                        i22 = i9;
                                         i24 = i10;
                                         unsafe2 = unsafe;
                                     } else {
@@ -3088,10 +3102,10 @@ public final class MessageSchema<T> implements Schema<T> {
                                         i17 = i2;
                                         i18 = i3;
                                         registers2 = registers;
-                                        i20 = i6;
-                                        i22 = i16;
-                                        i21 = i11;
-                                        i23 = i9;
+                                        i23 = i6;
+                                        i21 = i16;
+                                        i20 = i11;
+                                        i22 = i9;
                                         i24 = i10;
                                         unsafe2 = unsafe;
                                     } else {
@@ -3112,15 +3126,15 @@ public final class MessageSchema<T> implements Schema<T> {
                             i19 = ArrayDecoders.decodeMessageList(messageSchema2.getMessageFieldSchema(i28), i30, bArr, i25, i2, protobufList, registers);
                             t6 = t;
                             i17 = i2;
-                            i22 = i30;
-                            i20 = i6;
-                            i21 = i28;
-                            i23 = i23;
+                            i21 = i30;
+                            i23 = i6;
+                            i20 = i28;
+                            i22 = i22;
                             i24 = i10;
                             i18 = i3;
                         } else {
                             i11 = i28;
-                            i9 = i23;
+                            i9 = i22;
                             i10 = i24;
                             i15 = i25;
                             unsafe = unsafe2;
@@ -3140,12 +3154,12 @@ public final class MessageSchema<T> implements Schema<T> {
                     t6 = t;
                     bArr2 = bArr;
                     i17 = i2;
-                    i22 = i8;
+                    i21 = i8;
                     messageSchema2 = this;
                     registers2 = registers;
-                    i20 = i6;
-                    i21 = i11;
-                    i23 = i9;
+                    i23 = i6;
+                    i20 = i11;
+                    i22 = i9;
                     i24 = i10;
                     unsafe2 = unsafe;
                     i18 = i4;
@@ -3153,8 +3167,8 @@ public final class MessageSchema<T> implements Schema<T> {
                     i5 = 1048575;
                     messageSchema = this;
                     i19 = i7;
-                    i22 = i8;
-                    i23 = i9;
+                    i21 = i8;
+                    i22 = i9;
                     i24 = i10;
                 }
             } else {
@@ -3166,7 +3180,7 @@ public final class MessageSchema<T> implements Schema<T> {
         }
         if (i24 != i5) {
             t2 = t;
-            unsafe.putInt(t2, i24, i23);
+            unsafe.putInt(t2, i24, i22);
         } else {
             t2 = t;
         }
@@ -3181,33 +3195,34 @@ public final class MessageSchema<T> implements Schema<T> {
             if (i19 != i2) {
                 throw InvalidProtocolBufferException.parseFailure();
             }
-        } else if (i19 > i2 || i22 != i4) {
+        } else if (i19 > i2 || i21 != i4) {
             throw InvalidProtocolBufferException.parseFailure();
         }
         return i19;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:103:0x0296, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:103:0x028e, code lost:
         if (r0 != r15) goto L151;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:104:0x0298, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:104:0x0290, code lost:
         r15 = r30;
         r14 = r31;
         r12 = r32;
         r13 = r34;
         r11 = r35;
+        r10 = r18;
         r1 = r19;
         r2 = r20;
         r6 = r24;
         r7 = r25;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:110:0x02dd, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:110:0x02d7, code lost:
         if (r0 != r15) goto L151;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:115:0x0300, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:115:0x02fa, code lost:
         if (r0 != r15) goto L151;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:117:0x0303, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:117:0x02fd, code lost:
         r2 = r0;
      */
     /* JADX WARN: Multi-variable type inference failed */
@@ -3218,7 +3233,7 @@ public final class MessageSchema<T> implements Schema<T> {
     */
     private int parseProto3Message(T r31, byte[] r32, int r33, int r34, com.google.protobuf.ArrayDecoders.Registers r35) throws java.io.IOException {
         /*
-            Method dump skipped, instructions count: 876
+            Method dump skipped, instructions count: 870
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: com.google.protobuf.MessageSchema.parseProto3Message(java.lang.Object, byte[], int, int, com.google.protobuf.ArrayDecoders$Registers):int");
@@ -3512,9 +3527,9 @@ public final class MessageSchema<T> implements Schema<T> {
         long offset = offset(typeAndOffsetAt);
         switch (type(typeAndOffsetAt)) {
             case 0:
-                return UnsafeUtil.getDouble(t, offset) != 0.0d;
+                return Double.doubleToRawLongBits(UnsafeUtil.getDouble(t, offset)) != 0;
             case 1:
-                return UnsafeUtil.getFloat(t, offset) != BitmapDescriptorFactory.HUE_RED;
+                return Float.floatToRawIntBits(UnsafeUtil.getFloat(t, offset)) != 0;
             case 2:
                 return UnsafeUtil.getLong(t, offset) != 0;
             case 3:

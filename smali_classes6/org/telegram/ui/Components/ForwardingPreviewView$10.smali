@@ -76,14 +76,14 @@
 
     const/high16 v2, 0x3f000000    # 0.5f
 
-    mul-float v1, v1, v2
+    mul-float/2addr v1, v2
 
     .line 581
     invoke-virtual {p2}, Lorg/telegram/ui/Cells/ChatMessageCell;->getExtraInsetHeight()I
 
     move-result p2
 
-    const/4 v2, 0x0
+    move v2, p3
 
     .line 582
     :goto_0
@@ -96,7 +96,7 @@
     .line 583
     aget v3, v3, v2
 
-    mul-float v3, v3, v1
+    mul-float/2addr v3, v1
 
     float-to-double v3, v3
 
@@ -124,13 +124,13 @@
 
     sget v4, Lorg/telegram/messenger/AndroidUtilities;->density:F
 
-    mul-float v4, v4, v3
+    mul-float/2addr v4, v3
 
     invoke-static {v4}, Ljava/lang/Math;->round(F)I
 
     move-result v3
 
-    mul-int v2, v2, v3
+    mul-int/2addr v2, v3
 
     add-int/2addr p2, v2
 
@@ -188,7 +188,7 @@
     .line 593
     iget p3, v3, Lorg/telegram/messenger/MessageObject$GroupedMessagePosition;->ph:F
 
-    mul-float v1, v1, p3
+    mul-float/2addr v1, p3
 
     float-to-double p3, v1
 

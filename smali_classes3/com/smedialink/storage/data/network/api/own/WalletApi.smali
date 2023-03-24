@@ -48,7 +48,7 @@
     .end annotation
 .end method
 
-.method public abstract getDataForCryptoTransfer(Lcom/smedialink/storage/data/network/model/request/crypto/wallet/GetDataForCryptoTransferRequest;)Lio/reactivex/Observable;
+.method public abstract getEVMCryptoTransferData(Lcom/smedialink/storage/data/network/model/request/crypto/wallet/GetDataForCryptoTransferRequest;)Lio/reactivex/Observable;
     .param p1    # Lcom/smedialink/storage/data/network/model/request/crypto/wallet/GetDataForCryptoTransferRequest;
         .annotation runtime Lretrofit2/http/Body;
         .end annotation
@@ -60,13 +60,35 @@
             ")",
             "Lio/reactivex/Observable<",
             "Lcom/smedialink/storage/data/network/model/response/base/ApiBaseResponse<",
-            "Lcom/smedialink/storage/data/network/model/response/crypto/wallet/DataForCryptoTransferResponse;",
+            "Lcom/smedialink/storage/data/network/model/response/crypto/wallet/CryptoTransferDataResponse$EVM;",
             ">;>;"
         }
     .end annotation
 
     .annotation runtime Lretrofit2/http/POST;
         value = "getParamsForCryptoTransfer"
+    .end annotation
+.end method
+
+.method public abstract getTRONCryptoTransferData(Lcom/smedialink/storage/data/network/model/request/crypto/wallet/GetDataForCryptoTransferRequest;)Lio/reactivex/Observable;
+    .param p1    # Lcom/smedialink/storage/data/network/model/request/crypto/wallet/GetDataForCryptoTransferRequest;
+        .annotation runtime Lretrofit2/http/Body;
+        .end annotation
+    .end param
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lcom/smedialink/storage/data/network/model/request/crypto/wallet/GetDataForCryptoTransferRequest;",
+            ")",
+            "Lio/reactivex/Observable<",
+            "Lcom/smedialink/storage/data/network/model/response/base/ApiBaseResponse<",
+            "Lcom/smedialink/storage/data/network/model/response/crypto/wallet/CryptoTransferDataResponse$TRON;",
+            ">;>;"
+        }
+    .end annotation
+
+    .annotation runtime Lretrofit2/http/POST;
+        value = "tron/getParamsForCryptoTransfer"
     .end annotation
 .end method
 

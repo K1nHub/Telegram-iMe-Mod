@@ -279,7 +279,7 @@
 
     const v1, 0x469c4000    # 20000.0f
 
-    mul-float v0, v0, v1
+    mul-float/2addr v0, v1
 
     invoke-virtual {p1}, Lcom/smedialink/storage/domain/model/crypto/simplex/BuyingCryptoQuote;->getFiatMoneyAmount()F
 
@@ -294,7 +294,7 @@
 
     const/high16 v3, 0x42480000    # 50.0f
 
-    mul-float v2, v2, v3
+    mul-float/2addr v2, v3
 
     invoke-virtual {p1}, Lcom/smedialink/storage/domain/model/crypto/simplex/BuyingCryptoQuote;->getFiatMoneyAmount()F
 
@@ -580,7 +580,7 @@
     goto :goto_0
 
     :cond_1
-    const/4 v1, 0x0
+    move v1, v2
 
     :goto_0
     return v1

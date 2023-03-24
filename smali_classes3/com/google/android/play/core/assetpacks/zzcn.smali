@@ -100,15 +100,15 @@
 
     const-wide/16 v2, 0x0
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-nez v4, :cond_4
+    if-nez v0, :cond_4
 
     iget-wide v0, p0, Lcom/google/android/play/core/assetpacks/zzcn;->zze:J
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-nez v4, :cond_4
+    if-nez v0, :cond_4
 
     iget-object v0, p0, Lcom/google/android/play/core/assetpacks/zzcn;->zza:Lcom/google/android/play/core/assetpacks/zzds;
 
@@ -325,7 +325,7 @@
 
     iput-wide v0, p0, Lcom/google/android/play/core/assetpacks/zzcn;->zze:J
 
-    move v1, p3
+    move v0, p3
 
     goto :goto_3
 
@@ -348,29 +348,29 @@
 
     move-result-wide v0
 
-    long-to-int v1, v0
+    long-to-int v0, v0
 
-    iget-object v0, p0, Lcom/google/android/play/core/assetpacks/zzcn;->zzf:Ljava/io/FileOutputStream;
+    iget-object v1, p0, Lcom/google/android/play/core/assetpacks/zzcn;->zzf:Ljava/io/FileOutputStream;
 
     .line 26
-    invoke-virtual {v0, p1, p2, v1}, Ljava/io/FileOutputStream;->write([BII)V
+    invoke-virtual {v1, p1, p2, v0}, Ljava/io/FileOutputStream;->write([BII)V
 
     iget-wide v4, p0, Lcom/google/android/play/core/assetpacks/zzcn;->zzd:J
 
-    int-to-long v6, v1
+    int-to-long v6, v0
 
     sub-long/2addr v4, v6
 
     iput-wide v4, p0, Lcom/google/android/play/core/assetpacks/zzcn;->zzd:J
 
-    cmp-long v0, v4, v2
+    cmp-long v1, v4, v2
 
-    if-nez v0, :cond_8
+    if-nez v1, :cond_8
 
-    iget-object v0, p0, Lcom/google/android/play/core/assetpacks/zzcn;->zzf:Ljava/io/FileOutputStream;
+    iget-object v1, p0, Lcom/google/android/play/core/assetpacks/zzcn;->zzf:Ljava/io/FileOutputStream;
 
     .line 27
-    invoke-virtual {v0}, Ljava/io/FileOutputStream;->close()V
+    invoke-virtual {v1}, Ljava/io/FileOutputStream;->close()V
 
     goto :goto_3
 
@@ -384,16 +384,16 @@
 
     move-result-wide v0
 
-    long-to-int v1, v0
+    long-to-int v0, v0
 
-    iget-object v0, p0, Lcom/google/android/play/core/assetpacks/zzcn;->zzg:Lcom/google/android/play/core/assetpacks/zzet;
+    iget-object v1, p0, Lcom/google/android/play/core/assetpacks/zzcn;->zzg:Lcom/google/android/play/core/assetpacks/zzet;
 
     .line 23
-    invoke-virtual {v0}, Lcom/google/android/play/core/assetpacks/zzet;->zzf()[B
+    invoke-virtual {v1}, Lcom/google/android/play/core/assetpacks/zzet;->zzf()[B
 
-    move-result-object v0
+    move-result-object v1
 
-    array-length v0, v0
+    array-length v1, v1
 
     iget-object v2, p0, Lcom/google/android/play/core/assetpacks/zzcn;->zzg:Lcom/google/android/play/core/assetpacks/zzet;
 
@@ -405,38 +405,38 @@
 
     iget-object v6, p0, Lcom/google/android/play/core/assetpacks/zzcn;->zzc:Lcom/google/android/play/core/assetpacks/zzen;
 
-    int-to-long v7, v0
+    int-to-long v7, v1
 
     add-long/2addr v7, v2
 
-    sub-long v2, v7, v4
+    sub-long v1, v7, v4
 
     move-object v4, v6
 
-    move-wide v5, v2
+    move-wide v5, v1
 
     move-object v7, p1
 
     move v8, p2
 
-    move v9, v1
+    move v9, v0
 
     .line 24
     invoke-virtual/range {v4 .. v9}, Lcom/google/android/play/core/assetpacks/zzen;->zze(J[BII)V
 
-    iget-wide v2, p0, Lcom/google/android/play/core/assetpacks/zzcn;->zzd:J
+    iget-wide v1, p0, Lcom/google/android/play/core/assetpacks/zzcn;->zzd:J
 
-    int-to-long v4, v1
+    int-to-long v3, v0
 
-    sub-long/2addr v2, v4
+    sub-long/2addr v1, v3
 
-    iput-wide v2, p0, Lcom/google/android/play/core/assetpacks/zzcn;->zzd:J
+    iput-wide v1, p0, Lcom/google/android/play/core/assetpacks/zzcn;->zzd:J
 
     :cond_8
     :goto_3
-    add-int/2addr p2, v1
+    add-int/2addr p2, v0
 
-    sub-int/2addr p3, v1
+    sub-int/2addr p3, v0
 
     goto/16 :goto_0
 

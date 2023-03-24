@@ -298,7 +298,7 @@
 
     move-result-object v10
 
-    const/4 v11, 0x0
+    move v11, v7
 
     :goto_0
     invoke-interface {v10}, Ljava/util/Iterator;->hasNext()Z
@@ -456,18 +456,18 @@
 
     invoke-virtual {v8, v13, v7}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    const/4 v5, 0x1
-
-    move-object/from16 v3, p0
+    move v7, v5
 
     move/from16 v11, v16
 
-    const/4 v7, 0x0
+    move v5, v3
+
+    move-object/from16 v3, p0
 
     goto/16 :goto_0
 
     :cond_2
-    const/4 v5, 0x0
+    move v5, v7
 
     new-array v3, v5, [Lorg/telegram/ui/Components/StorageDiagramView$ClearViewData;
 
@@ -651,14 +651,9 @@
 
     const/4 p2, -0x1
 
-    const/4 v2, -0x1
-
-    goto :goto_0
-
     :cond_0
     move v2, p2
 
-    :goto_0
     and-int/lit8 p2, p7, 0x20
 
     if-eqz p2, :cond_1
@@ -1379,7 +1374,7 @@
     invoke-virtual {v5, v6, v6}, Lorg/telegram/ui/Cells/RadioColorCell;->setCheckColor(II)V
 
     .line 360
-    invoke-virtual {v3}, Lcom/smedialink/storage/domain/model/crypto/NetworkType;->getTitle()I
+    invoke-virtual {v3}, Lcom/smedialink/storage/domain/model/crypto/NetworkType;->getTitleResId()I
 
     move-result v6
 
@@ -1389,12 +1384,12 @@
 
     if-ne v3, p2, :cond_0
 
-    const/4 v7, 0x1
+    move v7, v2
 
     goto :goto_1
 
     :cond_0
-    const/4 v7, 0x0
+    move v7, v8
 
     :goto_1
     invoke-virtual {v5, v6, v7}, Lorg/telegram/ui/Cells/RadioColorCell;->setTextAndValue(Ljava/lang/CharSequence;Z)V
@@ -1696,7 +1691,7 @@
 
     const/4 v7, 0x0
 
-    const/4 v8, 0x0
+    move v8, v7
 
     :goto_0
     invoke-interface {v4}, Ljava/util/Iterator;->hasNext()Z
@@ -1762,12 +1757,12 @@
 
     if-ne v8, v12, :cond_1
 
-    const/4 v8, 0x1
+    move v8, v6
 
     goto :goto_1
 
     :cond_1
-    const/4 v8, 0x0
+    move v8, v7
 
     .line 280
     :goto_1
@@ -2143,7 +2138,7 @@
 
     const/4 v8, 0x0
 
-    const/4 v9, 0x0
+    move v9, v8
 
     :goto_0
     invoke-interface {v5}, Ljava/util/Iterator;->hasNext()Z
@@ -2207,12 +2202,12 @@
 
     if-ne v9, v14, :cond_1
 
-    const/4 v9, 0x1
+    move v9, v7
 
     goto :goto_1
 
     :cond_1
-    const/4 v9, 0x0
+    move v9, v8
 
     :goto_1
     invoke-virtual {v12, v13, v10, v8, v9}, Lorg/telegram/ui/Cells/RadioButtonCell;->setTextAndValue(Ljava/lang/String;Ljava/lang/String;ZZ)V
@@ -2661,7 +2656,7 @@
 
     const/4 v6, 0x0
 
-    const/4 v7, 0x0
+    move v7, v6
 
     :goto_0
     if-ge v7, v5, :cond_1
@@ -2686,7 +2681,7 @@
     goto :goto_1
 
     :cond_0
-    const/4 v8, 0x0
+    move v8, v6
 
     :goto_1
     invoke-static {v8}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;

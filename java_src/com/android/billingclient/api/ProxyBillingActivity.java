@@ -79,10 +79,10 @@ public class ProxyBillingActivity extends Activity {
             r5 = -1
             if (r9 != r5) goto L54
             if (r4 == 0) goto L52
-            r9 = -1
+            r9 = r5
             goto L54
         L52:
-            r4 = 0
+            r4 = r1
             goto L70
         L54:
             java.lang.StringBuilder r5 = new java.lang.StringBuilder
@@ -150,8 +150,9 @@ public class ProxyBillingActivity extends Activity {
 
     @Override // android.app.Activity
     protected void onCreate(Bundle bundle) {
-        PendingIntent pendingIntent;
         int i;
+        PendingIntent pendingIntent;
+        int i2;
         super.onCreate(bundle);
         if (bundle == null) {
             zzb.zzn("ProxyBillingActivity", "Launching Play Store billing flow");
@@ -159,21 +160,22 @@ public class ProxyBillingActivity extends Activity {
                 pendingIntent = (PendingIntent) getIntent().getParcelableExtra("BUY_INTENT");
                 if (getIntent().hasExtra("IS_FLOW_FROM_FIRST_PARTY_CLIENT") && getIntent().getBooleanExtra("IS_FLOW_FROM_FIRST_PARTY_CLIENT", false)) {
                     this.isFlowFromFirstPartyClient = true;
-                    i = 110;
+                    i2 = 110;
+                    i = i2;
                 }
                 i = 100;
+            } else if (getIntent().hasExtra("SUBS_MANAGEMENT_INTENT")) {
+                pendingIntent = (PendingIntent) getIntent().getParcelableExtra("SUBS_MANAGEMENT_INTENT");
+                this.priceChangeResultReceiver = (ResultReceiver) getIntent().getParcelableExtra("result_receiver");
+                i = 100;
+            } else if (getIntent().hasExtra("IN_APP_MESSAGE_INTENT")) {
+                pendingIntent = (PendingIntent) getIntent().getParcelableExtra("IN_APP_MESSAGE_INTENT");
+                this.inAppMessageResultReceiver = (ResultReceiver) getIntent().getParcelableExtra("in_app_message_result_receiver");
+                i2 = 101;
+                i = i2;
             } else {
-                if (getIntent().hasExtra("SUBS_MANAGEMENT_INTENT")) {
-                    pendingIntent = (PendingIntent) getIntent().getParcelableExtra("SUBS_MANAGEMENT_INTENT");
-                    this.priceChangeResultReceiver = (ResultReceiver) getIntent().getParcelableExtra("result_receiver");
-                } else if (getIntent().hasExtra("IN_APP_MESSAGE_INTENT")) {
-                    pendingIntent = (PendingIntent) getIntent().getParcelableExtra("IN_APP_MESSAGE_INTENT");
-                    this.inAppMessageResultReceiver = (ResultReceiver) getIntent().getParcelableExtra("in_app_message_result_receiver");
-                    i = 101;
-                } else {
-                    pendingIntent = null;
-                }
                 i = 100;
+                pendingIntent = null;
             }
             try {
                 this.sendCancelledBroadcastIfFinished = true;

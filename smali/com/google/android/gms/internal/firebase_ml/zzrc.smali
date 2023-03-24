@@ -260,11 +260,11 @@
 
     move-object v3, v4
 
+    move v4, v5
+
     move-object/from16 v23, v6
 
-    const/4 v4, 0x1
-
-    goto/16 :goto_13
+    goto/16 :goto_12
 
     .line 15
     :cond_2
@@ -343,7 +343,7 @@
 
     check-cast v4, Lcom/google/android/gms/internal/firebase_ml/zzjz;
 
-    if-eqz v4, :cond_13
+    if-eqz v4, :cond_14
 
     const-string v5, "Input Word can not be null"
 
@@ -464,7 +464,7 @@
     invoke-direct {v6, v5, v2, v3, v8}, Lcom/google/firebase/ml/vision/text/FirebaseVisionText$Element;-><init>(Ljava/lang/String;Landroid/graphics/Rect;Ljava/util/List;Ljava/lang/Float;)V
 
     :goto_6
-    if-eqz v6, :cond_14
+    if-eqz v6, :cond_13
 
     .line 47
     invoke-interface {v12, v6}, Ljava/util/List;->add(Ljava/lang/Object;)Z
@@ -800,19 +800,23 @@
 
     move-object v15, v3
 
-    const/16 v16, 0x0
+    move/from16 v16, v8
 
     goto :goto_10
 
     :cond_13
+    const/4 v4, 0x1
+
+    goto/16 :goto_a
+
+    :cond_14
     move-object/from16 v22, v3
+
+    move v4, v5
 
     move-object/from16 v23, v6
 
     move-object/from16 v24, v8
-
-    :cond_14
-    const/4 v4, 0x1
 
     goto/16 :goto_a
 
@@ -821,38 +825,37 @@
 
     move-object/from16 v2, p0
 
+    move v5, v4
+
     move-object/from16 v3, v22
 
     move-object/from16 v6, v23
 
     move-object/from16 v8, v24
 
-    const/4 v5, 0x1
-
     goto/16 :goto_3
 
     :cond_15
     move-object/from16 v22, v3
 
+    move v4, v5
+
     move-object/from16 v23, v6
 
     move-object/from16 v24, v8
 
-    const/4 v4, 0x1
-
     .line 103
     invoke-interface {v13, v11}, Ljava/util/List;->addAll(Ljava/util/Collection;)Z
 
+    move-object/from16 v2, p0
+
     const/4 v4, 0x0
 
-    const/4 v5, 0x1
-
-    goto :goto_11
+    goto/16 :goto_2
 
     :cond_16
     const/4 v4, 0x0
 
-    :goto_11
     move-object/from16 v2, p0
 
     goto/16 :goto_2
@@ -860,9 +863,9 @@
     :cond_17
     move-object/from16 v22, v3
 
-    move-object/from16 v23, v6
+    move v4, v5
 
-    const/4 v4, 0x1
+    move-object/from16 v23, v6
 
     .line 105
     invoke-interface {v13}, Ljava/util/List;->isEmpty()Z
@@ -873,7 +876,7 @@
 
     const/4 v3, 0x0
 
-    goto :goto_13
+    goto :goto_12
 
     .line 107
     :cond_18
@@ -888,7 +891,7 @@
 
     const/4 v10, 0x0
 
-    :goto_12
+    :goto_11
     if-ge v10, v3, :cond_19
 
     invoke-virtual {v13, v10}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -910,7 +913,7 @@
 
     invoke-virtual {v2, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    goto :goto_12
+    goto :goto_11
 
     .line 111
     :cond_19
@@ -948,22 +951,22 @@
 
     invoke-direct/range {v9 .. v14}, Lcom/google/firebase/ml/vision/text/FirebaseVisionText$TextBlock;-><init>(Ljava/lang/String;Landroid/graphics/Rect;Ljava/util/List;Ljava/util/List;Ljava/lang/Float;)V
 
-    :goto_13
+    :goto_12
     if-eqz v3, :cond_1a
 
     .line 118
     invoke-interface {v1, v3}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     :cond_1a
+    move-object/from16 v2, p0
+
+    move v5, v4
+
     move-object/from16 v3, v22
 
     move-object/from16 v6, v23
 
     const/4 v4, 0x0
-
-    const/4 v5, 0x1
-
-    move-object/from16 v2, p0
 
     goto/16 :goto_1
 

@@ -984,7 +984,7 @@
     .line 401
     iget v1, p0, Lorg/telegram/ui/Components/VideoTimelineView;->progressLeft:F
 
-    mul-float v1, v1, v0
+    mul-float/2addr v1, v0
 
     float-to-int v1, v1
 
@@ -999,7 +999,7 @@
     .line 402
     iget v1, p0, Lorg/telegram/ui/Components/VideoTimelineView;->progressRight:F
 
-    mul-float v0, v0, v1
+    mul-float/2addr v0, v1
 
     float-to-int v0, v0
 
@@ -1083,7 +1083,7 @@
     invoke-virtual/range {v0 .. v5}, Landroid/graphics/Canvas;->drawRect(FFFFLandroid/graphics/Paint;)V
 
     :cond_1
-    const/4 v0, 0x0
+    move v0, v10
 
     .line 414
     :goto_0
@@ -1116,7 +1116,7 @@
     div-int/lit8 v3, v3, 0x2
 
     :cond_2
-    mul-int v3, v3, v0
+    mul-int/2addr v3, v0
 
     const/4 v4, 0x0
 
@@ -1372,7 +1372,7 @@
     .line 142
     iget v6, p0, Lorg/telegram/ui/Components/VideoTimelineView;->progressLeft:F
 
-    mul-float v6, v6, v5
+    mul-float/2addr v6, v5
 
     float-to-int v6, v6
 
@@ -1387,7 +1387,7 @@
     .line 143
     iget v8, p0, Lorg/telegram/ui/Components/VideoTimelineView;->progressRight:F
 
-    mul-float v8, v8, v5
+    mul-float/2addr v8, v5
 
     float-to-int v8, v8
 
@@ -1497,7 +1497,7 @@
 
     iget v1, p0, Lorg/telegram/ui/Components/VideoTimelineView;->progressLeft:F
 
-    mul-float v0, v0, v1
+    mul-float/2addr v0, v1
 
     float-to-int v0, v0
 
@@ -1598,7 +1598,7 @@
 
     iget v1, p0, Lorg/telegram/ui/Components/VideoTimelineView;->progressRight:F
 
-    mul-float v0, v0, v1
+    mul-float/2addr v0, v1
 
     float-to-int v0, v0
 
@@ -1772,7 +1772,7 @@
 
     iget v0, p0, Lorg/telegram/ui/Components/VideoTimelineView;->progressLeft:F
 
-    mul-float v5, v5, v0
+    mul-float/2addr v5, v0
 
     invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dpf2(F)F
 
@@ -1809,7 +1809,7 @@
 
     iget v1, p0, Lorg/telegram/ui/Components/VideoTimelineView;->progressLeft:F
 
-    mul-float v0, v0, v1
+    mul-float/2addr v0, v1
 
     float-to-int v0, v0
 
@@ -1942,7 +1942,7 @@
 
     iget v0, p0, Lorg/telegram/ui/Components/VideoTimelineView;->progressRight:F
 
-    mul-float v5, v5, v0
+    mul-float/2addr v5, v0
 
     invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dpf2(F)F
 
@@ -1984,7 +1984,7 @@
 
     iget v1, p0, Lorg/telegram/ui/Components/VideoTimelineView;->progressRight:F
 
-    mul-float v0, v0, v1
+    mul-float/2addr v0, v1
 
     float-to-int v0, v0
 

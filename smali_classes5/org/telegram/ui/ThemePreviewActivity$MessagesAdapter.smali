@@ -66,12 +66,12 @@
 
     if-gt v2, v4, :cond_0
 
-    const/4 v2, 0x1
+    move v2, v4
 
     goto :goto_0
 
     :cond_0
-    const/4 v2, 0x0
+    move v2, v3
 
     :goto_0
     iput-boolean v2, v0, Lorg/telegram/ui/ThemePreviewActivity$MessagesAdapter;->showSecretMessages:Z
@@ -2514,12 +2514,12 @@
 
     if-gt v3, v8, :cond_1
 
-    const/4 v3, 0x1
+    move v3, v5
 
     goto :goto_0
 
     :cond_1
-    const/4 v3, 0x0
+    move v3, v2
 
     .line 4480
     :goto_0
@@ -2581,7 +2581,7 @@
 
     if-gt p1, v8, :cond_2
 
-    const/4 v2, 0x1
+    move v2, v5
 
     .line 4486
     :cond_2

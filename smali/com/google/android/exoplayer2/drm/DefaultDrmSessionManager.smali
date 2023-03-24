@@ -853,7 +853,7 @@
     goto :goto_1
 
     :cond_4
-    const/4 v1, 0x0
+    move v1, v2
 
     :goto_1
     return v1
@@ -977,9 +977,9 @@
 
     const-wide v4, -0x7fffffffffffffffL    # -4.9E-324
 
-    cmp-long v6, v2, v4
+    cmp-long v2, v2, v4
 
-    if-eqz v6, :cond_0
+    if-eqz v2, :cond_0
 
     const/4 v2, 0x0
 
@@ -1105,7 +1105,7 @@
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     .line 831
     :goto_0
@@ -1145,7 +1145,7 @@
     goto :goto_1
 
     :cond_0
-    const/4 v4, 0x0
+    move v4, v1
 
     goto :goto_2
 
@@ -1261,7 +1261,7 @@
 
     if-eqz v1, :cond_0
 
-    const/4 v1, 0x1
+    move v1, v2
 
     goto :goto_0
 
@@ -1517,7 +1517,7 @@
 
     if-lez v0, :cond_0
 
-    const/4 v0, 0x1
+    move v0, v1
 
     goto :goto_0
 
@@ -1725,7 +1725,7 @@
 .end method
 
 .method public final release()V
-    .locals 5
+    .locals 4
 
     .line 487
     iget v0, p0, Lcom/google/android/exoplayer2/drm/DefaultDrmSessionManager;->prepareCallsCount:I
@@ -1744,9 +1744,9 @@
 
     const-wide v2, -0x7fffffffffffffffL    # -4.9E-324
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-eqz v4, :cond_1
+    if-eqz v0, :cond_1
 
     .line 494
     new-instance v0, Ljava/util/ArrayList;

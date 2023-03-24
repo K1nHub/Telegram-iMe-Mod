@@ -119,7 +119,7 @@
 .end method
 
 .method public addTargetData(Lcom/google/firebase/firestore/local/TargetData;)V
-    .locals 5
+    .locals 4
 
     .line 90
     iget-object v0, p0, Lcom/google/firebase/firestore/local/MemoryTargetCache;->targets:Ljava/util/Map;
@@ -151,9 +151,9 @@
 
     iget-wide v2, p0, Lcom/google/firebase/firestore/local/MemoryTargetCache;->highestSequenceNumber:J
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-lez v4, :cond_1
+    if-lez v0, :cond_1
 
     .line 96
     invoke-virtual {p1}, Lcom/google/firebase/firestore/local/TargetData;->getSequenceNumber()J

@@ -162,9 +162,9 @@ public class MediaCodecVideoRenderer extends MediaCodecRenderer {
             for (int i2 = 1; i2 < decoderInfos.size(); i2++) {
                 MediaCodecInfo mediaCodecInfo2 = decoderInfos.get(i2);
                 if (mediaCodecInfo2.isFormatSupported(format)) {
-                    mediaCodecInfo = mediaCodecInfo2;
                     z = false;
                     isFormatSupported = true;
+                    mediaCodecInfo = mediaCodecInfo2;
                     break;
                 }
             }
@@ -481,7 +481,7 @@ public class MediaCodecVideoRenderer extends MediaCodecRenderer {
     */
     public static int getCodecMaxInputSize(com.google.android.exoplayer2.mediacodec.MediaCodecInfo r9, com.google.android.exoplayer2.Format r10) {
         /*
-            Method dump skipped, instructions count: 278
+            Method dump skipped, instructions count: 272
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: com.google.android.exoplayer2.video.MediaCodecVideoRenderer.getCodecMaxInputSize(com.google.android.exoplayer2.mediacodec.MediaCodecInfo, com.google.android.exoplayer2.Format):int");
@@ -612,8 +612,8 @@ public class MediaCodecVideoRenderer extends MediaCodecRenderer {
 
     @Override // com.google.android.exoplayer2.mediacodec.MediaCodecRenderer
     protected boolean processOutputBuffer(long j, long j2, MediaCodecAdapter mediaCodecAdapter, ByteBuffer byteBuffer, int i, int i2, int i3, long j3, boolean z, boolean z2, Format format) throws ExoPlaybackException {
-        long j4;
         boolean z3;
+        long j4;
         Assertions.checkNotNull(mediaCodecAdapter);
         if (this.initialPositionUs == C0468C.TIME_UNSET) {
             this.initialPositionUs = j;
@@ -648,8 +648,8 @@ public class MediaCodecVideoRenderer extends MediaCodecRenderer {
             j4 = j7;
             z3 = false;
         } else {
-            j4 = j7;
             z3 = true;
+            j4 = j7;
         }
         if (this.joiningDeadlineMs == C0468C.TIME_UNSET && j >= outputStreamOffsetUs && (z3 || (z4 && shouldForceRenderOutputBuffer(j6, j4)))) {
             long nanoTime = System.nanoTime();
@@ -1098,7 +1098,7 @@ public class MediaCodecVideoRenderer extends MediaCodecRenderer {
     }
 
     /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
-    /* JADX WARN: Code restructure failed: missing block: B:537:0x0723, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:537:0x0722, code lost:
         if (r0.equals("ELUGA_Ray_X") == false) goto L46;
      */
     /*
@@ -1107,7 +1107,7 @@ public class MediaCodecVideoRenderer extends MediaCodecRenderer {
     */
     private static boolean evaluateDeviceNeedsSetOutputSurfaceWorkaround() {
         /*
-            Method dump skipped, instructions count: 3184
+            Method dump skipped, instructions count: 3180
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: com.google.android.exoplayer2.video.MediaCodecVideoRenderer.evaluateDeviceNeedsSetOutputSurfaceWorkaround():boolean");

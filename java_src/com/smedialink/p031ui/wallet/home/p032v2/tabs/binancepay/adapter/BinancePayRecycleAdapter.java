@@ -24,7 +24,7 @@ import com.smedialink.utils.extentions.common.BaseQuickAdapterExtKt;
 import java.util.Iterator;
 import java.util.List;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.messenger.C3286R;
+import org.telegram.messenger.C3301R;
 /* compiled from: BinancePayRecycleAdapter.kt */
 /* renamed from: com.smedialink.ui.wallet.home.v2.tabs.binancepay.adapter.BinancePayRecycleAdapter */
 /* loaded from: classes3.dex */
@@ -53,7 +53,7 @@ public final class BinancePayRecycleAdapter extends BaseNodeAdapter<BaseNode> {
         Intrinsics.checkNotNullParameter(globalStateProvider, "globalStateProvider");
         this.bannerProvider = bannerProvider;
         this.binanceAccountProvider = binanceAccountProvider;
-        addChildClickViewIds(C3286R.C3289id.image_wallet_crypto_eye, C3286R.C3289id.image_wallet_crypto_tokens_settings, C3286R.C3289id.image_wallet_order_tokens, C3286R.C3289id.image_copy);
+        addChildClickViewIds(C3301R.C3304id.image_wallet_crypto_eye, C3301R.C3304id.image_wallet_crypto_tokens_settings, C3301R.C3304id.image_wallet_order_tokens, C3301R.C3304id.image_copy);
         addItemProvider(BaseQuickAdapterExtKt.asItem(bannerProvider));
         addItemProvider(BaseQuickAdapterExtKt.asItem(binanceAccountProvider));
         addItemProvider(BaseQuickAdapterExtKt.asItem(cardButtonProvider));

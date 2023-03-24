@@ -83,6 +83,9 @@ public enum TokenCode {
     FTM,
     PPM,
     SIN,
+    TRX,
+    TUSD,
+    HT,
     INTERNAL,
     USD,
     UNKNOWN;
@@ -129,12 +132,16 @@ public enum TokenCode {
         return Companion.getFantomCodes().contains(this);
     }
 
+    public final boolean isTronTokens() {
+        return Companion.getTronCodes().contains(this);
+    }
+
     public final boolean isTonTokens() {
         return Companion.getTonCodes().contains(this);
     }
 
     public final boolean isCryptoTokens() {
-        return isBscTokens() || isEthAndTokens() || isPolygonTokens() || isFantomTokens() || isTonTokens();
+        return isBscTokens() || isEthAndTokens() || isPolygonTokens() || isFantomTokens() || isTronTokens() || isTonTokens();
     }
 
     /* compiled from: TokenCode.kt */
@@ -165,8 +172,12 @@ public enum TokenCode {
                 } catch (NoSuchFieldError unused4) {
                 }
                 try {
-                    iArr[NetworkType.THE_OPEN_NETWORK.ordinal()] = 5;
+                    iArr[NetworkType.TRON.ordinal()] = 5;
                 } catch (NoSuchFieldError unused5) {
+                }
+                try {
+                    iArr[NetworkType.THE_OPEN_NETWORK.ordinal()] = 6;
+                } catch (NoSuchFieldError unused6) {
                 }
                 $EnumSwitchMapping$0 = iArr;
             }
@@ -200,7 +211,7 @@ public enum TokenCode {
         }
 
         public final List<TokenCode> getEthereumCodes() {
-            return CollectionsKt.listOf((Object[]) new TokenCode[]{TokenCode.ETHER, TokenCode.LIME, TokenCode.USDT, TokenCode.OLCF, TokenCode.BNB, TokenCode.BUSD, TokenCode.LINK, TokenCode.WBTC, TokenCode.MATIC, TokenCode.OKB, TokenCode.GT, TokenCode.LIT, TokenCode.PRQ, TokenCode.UFT, TokenCode.TRU, TokenCode.HAPI, TokenCode.TARA, TokenCode.BCUG, TokenCode.PCNT, TokenCode.SIG, TokenCode.UFI, TokenCode.DHV, TokenCode.ATD, TokenCode.DEGO, TokenCode.PRE, TokenCode.EQX, TokenCode.LSS, TokenCode.GAINS, TokenCode.UNN, TokenCode.DEXT, TokenCode.TOMOE, TokenCode.FLURRY, TokenCode.FRM, TokenCode.DOP, TokenCode.GFX, TokenCode.D11, TokenCode.DVD, TokenCode.METIS, TokenCode.CTSI, TokenCode.SAITO, TokenCode.ZCX, TokenCode.CEEK, TokenCode.XEND, TokenCode.SHR, TokenCode.BOSON, TokenCode.KONO, TokenCode.KFT, TokenCode.OM, TokenCode.ROYA, TokenCode.CVR, TokenCode.FUSE, TokenCode.TON, TokenCode.SHIB});
+            return CollectionsKt.listOf((Object[]) new TokenCode[]{TokenCode.ETHER, TokenCode.LIME, TokenCode.USDT, TokenCode.OLCF, TokenCode.BNB, TokenCode.BUSD, TokenCode.LINK, TokenCode.WBTC, TokenCode.MATIC, TokenCode.OKB, TokenCode.GT, TokenCode.LIT, TokenCode.PRQ, TokenCode.UFT, TokenCode.TRU, TokenCode.HAPI, TokenCode.TARA, TokenCode.BCUG, TokenCode.PCNT, TokenCode.SIG, TokenCode.UFI, TokenCode.DHV, TokenCode.ATD, TokenCode.DEGO, TokenCode.PRE, TokenCode.EQX, TokenCode.LSS, TokenCode.GAINS, TokenCode.UNN, TokenCode.DEXT, TokenCode.TOMOE, TokenCode.FLURRY, TokenCode.FRM, TokenCode.DOP, TokenCode.GFX, TokenCode.D11, TokenCode.DVD, TokenCode.METIS, TokenCode.CTSI, TokenCode.SAITO, TokenCode.ZCX, TokenCode.CEEK, TokenCode.XEND, TokenCode.SHR, TokenCode.BOSON, TokenCode.KONO, TokenCode.KFT, TokenCode.OM, TokenCode.ROYA, TokenCode.CVR, TokenCode.FUSE, TokenCode.TON, TokenCode.SHIB, TokenCode.HT});
         }
 
         public final List<TokenCode> getBSCCodes() {
@@ -215,29 +226,32 @@ public enum TokenCode {
             return CollectionsKt.listOf(TokenCode.FTM);
         }
 
+        public final List<TokenCode> getTronCodes() {
+            return CollectionsKt.listOf((Object[]) new TokenCode[]{TokenCode.TRX, TokenCode.USDT, TokenCode.ETHER, TokenCode.USDC, TokenCode.TUSD, TokenCode.HT});
+        }
+
         public final List<TokenCode> getTonCodes() {
             return CollectionsKt.listOf(TokenCode.TON);
         }
 
         public final List<TokenCode> getTokensByNetwork(NetworkType networkType) {
             Intrinsics.checkNotNullParameter(networkType, "networkType");
-            int i = WhenMappings.$EnumSwitchMapping$0[networkType.ordinal()];
-            if (i != 1) {
-                if (i != 2) {
-                    if (i != 3) {
-                        if (i != 4) {
-                            if (i == 5) {
-                                return getTonCodes();
-                            }
-                            throw new NoWhenBranchMatchedException();
-                        }
-                        return getFantomCodes();
-                    }
+            switch (WhenMappings.$EnumSwitchMapping$0[networkType.ordinal()]) {
+                case 1:
+                    return getEthereumCodes();
+                case 2:
+                    return getBSCCodes();
+                case 3:
                     return getPolygonCodes();
-                }
-                return getBSCCodes();
+                case 4:
+                    return getFantomCodes();
+                case 5:
+                    return getTronCodes();
+                case 6:
+                    return getTonCodes();
+                default:
+                    throw new NoWhenBranchMatchedException();
             }
-            return getEthereumCodes();
         }
 
         public final List<TokenCode> getCryptoCodes() {

@@ -89,7 +89,7 @@
     :goto_0
     int-to-long v11, v4
 
-    mul-long v9, v9, v11
+    mul-long/2addr v9, v11
 
     int-to-long v11, v6
 
@@ -231,7 +231,7 @@
 
     int-to-long v13, v10
 
-    mul-long v8, v8, v13
+    mul-long/2addr v8, v13
 
     add-long/2addr v11, v8
 
@@ -256,9 +256,9 @@
 
     const-wide/16 v2, -0x1
 
-    cmp-long v4, v0, v2
+    cmp-long v2, v0, v2
 
-    if-eqz v4, :cond_7
+    if-eqz v2, :cond_7
 
     cmp-long v2, v0, v11
 
@@ -352,9 +352,9 @@
     .line 121
     iget-wide v3, v2, Lcom/google/android/exoplayer2/extractor/SeekPoint;->timeUs:J
 
-    cmp-long v5, v3, p1
+    cmp-long p1, v3, p1
 
-    if-gez v5, :cond_1
+    if-gez p1, :cond_1
 
     iget-object p1, p0, Lcom/google/android/exoplayer2/extractor/mp3/VbriSeeker;->timesUs:[J
 

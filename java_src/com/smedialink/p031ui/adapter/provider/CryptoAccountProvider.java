@@ -13,7 +13,7 @@ import java.util.List;
 import kotlin.Unit;
 import kotlin.jvm.internal.Intrinsics;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3286R;
+import org.telegram.messenger.C3301R;
 import org.telegram.p048ui.ActionBar.ActionBarMenuItem;
 import org.telegram.p048ui.Cells.CheckBoxCell;
 /* compiled from: CryptoAccountProvider.kt */
@@ -34,7 +34,7 @@ public final class CryptoAccountProvider extends BaseNodeProvider<CryptoAccountI
         Intrinsics.checkNotNullParameter(resourceManager, "resourceManager");
         this.resourceManager = resourceManager;
         this.itemViewType = IdFabric$ViewTypes.CRYPTO_ACCOUNT;
-        this.layoutId = C3286R.layout.fork_recycle_item_wallet_account;
+        this.layoutId = C3301R.layout.fork_recycle_item_wallet_account;
     }
 
     public final ActionBarMenuItem.ActionBarMenuItemDelegate getActionBarMenuItemDelegate() {
@@ -59,20 +59,20 @@ public final class CryptoAccountProvider extends BaseNodeProvider<CryptoAccountI
     public void convert(BaseViewHolder helper, CryptoAccountItem item) {
         Intrinsics.checkNotNullParameter(helper, "helper");
         Intrinsics.checkNotNullParameter(item, "item");
-        BaseViewHolder themedCardBackground = BaseQuickAdapterExtKt.setThemedCardBackground(helper, C3286R.C3289id.card_crypto_account, "windowBackgroundWhite");
-        int i = C3286R.C3289id.text_account_id;
+        BaseViewHolder themedCardBackground = BaseQuickAdapterExtKt.setThemedCardBackground(helper, C3301R.C3304id.card_crypto_account, "windowBackgroundWhite");
+        int i = C3301R.C3304id.text_account_id;
         BaseViewHolder themedTextColor = BaseQuickAdapterExtKt.setThemedTextColor(themedCardBackground, i, "chat_messagePanelText");
-        int i2 = C3286R.C3289id.text_account_name;
+        int i2 = C3301R.C3304id.text_account_name;
         BaseViewHolder themedTextColor2 = BaseQuickAdapterExtKt.setThemedTextColor(themedTextColor, i2, "chats_actionBackground");
-        int i3 = C3286R.C3289id.image_copy;
-        BaseQuickAdapterExtKt.applyForView(BaseQuickAdapterExtKt.applyForView(BaseQuickAdapterExtKt.applyForView(BaseQuickAdapterExtKt.setCircleRippleBackground(BaseQuickAdapterExtKt.setThemedImageColor(themedTextColor2, i3, "dialogIcon"), i3).setText(i2, this.resourceManager.getString(C3286R.string.wallet_home_crypto_account_telegram_id, Long.valueOf(item.getUser().f1639id))).setText(i, StringExtKt.shortened$default(item.getAddress(), 0, 1, null)), C3286R.C3289id.item_more_options, new CryptoAccountProvider$convert$1(this, item)), C3286R.C3289id.image_account_avatar, new CryptoAccountProvider$convert$2(item)), C3286R.C3289id.horizontal_action_buttons, new CryptoAccountProvider$convert$3(item));
+        int i3 = C3301R.C3304id.image_copy;
+        BaseQuickAdapterExtKt.applyForView(BaseQuickAdapterExtKt.applyForView(BaseQuickAdapterExtKt.applyForView(BaseQuickAdapterExtKt.setCircleRippleBackground(BaseQuickAdapterExtKt.setThemedImageColor(themedTextColor2, i3, "dialogIcon"), i3).setText(i2, this.resourceManager.getString(C3301R.string.wallet_home_crypto_account_telegram_id, Long.valueOf(item.getUser().f1640id))).setText(i, StringExtKt.shortened$default(item.getAddress(), 0, 1, null)), C3301R.C3304id.item_more_options, new CryptoAccountProvider$convert$1(this, item)), C3301R.C3304id.image_account_avatar, new CryptoAccountProvider$convert$2(item)), C3301R.C3304id.horizontal_action_buttons, new CryptoAccountProvider$convert$3(item));
     }
 
     public void convert(BaseViewHolder helper, CryptoAccountItem item, List<? extends Object> payloads) {
         Intrinsics.checkNotNullParameter(helper, "helper");
         Intrinsics.checkNotNullParameter(item, "item");
         Intrinsics.checkNotNullParameter(payloads, "payloads");
-        BaseQuickAdapterExtKt.applyForView(helper.setText(C3286R.C3289id.text_account_id, StringExtKt.shortened$default(item.getAddress(), 0, 1, null)), C3286R.C3289id.item_more_options, new CryptoAccountProvider$convert$4(this, item));
+        BaseQuickAdapterExtKt.applyForView(helper.setText(C3301R.C3304id.text_account_id, StringExtKt.shortened$default(item.getAddress(), 0, 1, null)), C3301R.C3304id.item_more_options, new CryptoAccountProvider$convert$4(this, item));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -81,13 +81,13 @@ public final class CryptoAccountProvider extends BaseNodeProvider<CryptoAccountI
         if (networkType == NetworkType.THE_OPEN_NETWORK) {
             int i = IdFabric$Menu.TON_ADDRESS_V3R2;
             CheckBoxCell checkBoxCell = new CheckBoxCell(actionBarMenuItem.getContext(), IdFabric$ViewTypes.TON_ADDRESS_VERSION);
-            checkBoxCell.setText(this.resourceManager.getString(C3286R.string.wallet_ton_address_v3r2) + ' ', StringExtKt.shortened(str, 4), true, false);
+            checkBoxCell.setText(this.resourceManager.getString(C3301R.string.wallet_ton_address_v3r2) + ' ', StringExtKt.shortened(str, 4), true, false);
             Unit unit = Unit.INSTANCE;
             actionBarMenuItem.addSubItem(i, checkBoxCell, AndroidUtilities.m50dp(225), AndroidUtilities.m50dp(50));
         }
         int i2 = IdFabric$Menu.SCAN_ADDRESS;
         int scannerIcon = networkType.getScannerIcon();
         ResourceManager resourceManager = this.resourceManager;
-        actionBarMenuItem.addSubItem(i2, scannerIcon, resourceManager.getString(C3286R.string.wallet_transaction_details_action_open_etherscan, resourceManager.getString(networkType.getScannerName())));
+        actionBarMenuItem.addSubItem(i2, scannerIcon, resourceManager.getString(C3301R.string.wallet_transaction_details_action_open_etherscan, resourceManager.getString(networkType.getScannerName())));
     }
 }

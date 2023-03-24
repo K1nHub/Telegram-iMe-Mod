@@ -324,9 +324,9 @@
 
     move-result-wide p1
 
-    long-to-int p2, p1
+    long-to-int p1, p1
 
-    invoke-interface {p0, p2}, Lorg/telegram/ui/Components/BotCommandsMenuView$BotCommandsAdapter$TemplatesDelegate;->didPressGoToMessage(I)V
+    invoke-interface {p0, p1}, Lorg/telegram/ui/Components/BotCommandsMenuView$BotCommandsAdapter$TemplatesDelegate;->didPressGoToMessage(I)V
 
     return-void
 .end method
@@ -781,12 +781,12 @@
     goto :goto_0
 
     :cond_0
-    const/4 v1, 0x0
+    move v1, v2
 
     :goto_0
     if-eqz v1, :cond_1
 
-    const/4 v1, 0x0
+    move v1, v2
 
     goto :goto_1
 

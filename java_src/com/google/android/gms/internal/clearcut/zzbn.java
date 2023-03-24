@@ -818,34 +818,32 @@ public abstract class zzbn extends zzba {
 
         @Override // com.google.android.gms.internal.clearcut.zzbn
         public final void zzb(long j) throws IOException {
-            long j2;
             if (this.zzgi <= this.zzgh) {
-                while (true) {
-                    int i = ((j & (-128)) > 0L ? 1 : ((j & (-128)) == 0L ? 0 : -1));
-                    j2 = this.zzgi;
-                    if (i == 0) {
-                        break;
-                    }
+                while ((j & (-128)) != 0) {
+                    long j2 = this.zzgi;
                     this.zzgi = j2 + 1;
                     zzfd.zza(j2, (byte) ((((int) j) & 127) | 128));
                     j >>>= 7;
                 }
-            } else {
-                while (true) {
-                    j2 = this.zzgi;
-                    if (j2 >= this.zzgg) {
-                        throw new zzc(String.format("Pos: %d, limit: %d, len: %d", Long.valueOf(this.zzgi), Long.valueOf(this.zzgg), 1));
-                    }
-                    if ((j & (-128)) == 0) {
-                        break;
-                    }
-                    this.zzgi = j2 + 1;
-                    zzfd.zza(j2, (byte) ((((int) j) & 127) | 128));
-                    j >>>= 7;
-                }
+                long j3 = this.zzgi;
+                this.zzgi = 1 + j3;
+                zzfd.zza(j3, (byte) j);
+                return;
             }
-            this.zzgi = 1 + j2;
-            zzfd.zza(j2, (byte) j);
+            while (true) {
+                long j4 = this.zzgi;
+                if (j4 >= this.zzgg) {
+                    throw new zzc(String.format("Pos: %d, limit: %d, len: %d", Long.valueOf(this.zzgi), Long.valueOf(this.zzgg), 1));
+                }
+                if ((j & (-128)) == 0) {
+                    this.zzgi = 1 + j4;
+                    zzfd.zza(j4, (byte) j);
+                    return;
+                }
+                this.zzgi = j4 + 1;
+                zzfd.zza(j4, (byte) ((((int) j) & 127) | 128));
+                j >>>= 7;
+            }
         }
 
         @Override // com.google.android.gms.internal.clearcut.zzbn
@@ -934,13 +932,16 @@ public abstract class zzbn extends zzba {
         public final void zzo(int i) throws IOException {
             long j;
             if (this.zzgi <= this.zzgh) {
-                while ((i & (-128)) != 0) {
-                    long j2 = this.zzgi;
-                    this.zzgi = j2 + 1;
-                    zzfd.zza(j2, (byte) ((i & 127) | 128));
+                while (true) {
+                    int i2 = i & (-128);
+                    j = this.zzgi;
+                    if (i2 == 0) {
+                        break;
+                    }
+                    this.zzgi = j + 1;
+                    zzfd.zza(j, (byte) ((i & 127) | 128));
                     i >>>= 7;
                 }
-                j = this.zzgi;
             } else {
                 while (true) {
                     j = this.zzgi;

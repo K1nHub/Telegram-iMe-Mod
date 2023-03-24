@@ -41,9 +41,9 @@ public class Curve25519Point extends ECPoint.AbstractFp {
             return twice();
         }
         ECCurve curve = getCurve();
-        Curve25519FieldElement curve25519FieldElement = (Curve25519FieldElement) this.f1310x;
-        Curve25519FieldElement curve25519FieldElement2 = (Curve25519FieldElement) this.f1311y;
-        Curve25519FieldElement curve25519FieldElement3 = (Curve25519FieldElement) this.f1312zs[0];
+        Curve25519FieldElement curve25519FieldElement = (Curve25519FieldElement) this.f1311x;
+        Curve25519FieldElement curve25519FieldElement2 = (Curve25519FieldElement) this.f1312y;
+        Curve25519FieldElement curve25519FieldElement3 = (Curve25519FieldElement) this.f1313zs[0];
         Curve25519FieldElement curve25519FieldElement4 = (Curve25519FieldElement) eCPoint.getXCoord();
         Curve25519FieldElement curve25519FieldElement5 = (Curve25519FieldElement) eCPoint.getYCoord();
         Curve25519FieldElement curve25519FieldElement6 = (Curve25519FieldElement) eCPoint.getZCoord(0);
@@ -53,25 +53,25 @@ public class Curve25519Point extends ECPoint.AbstractFp {
         int[] create3 = Nat256.create();
         boolean isOne = curve25519FieldElement3.isOne();
         if (isOne) {
-            iArr = curve25519FieldElement4.f1318x;
-            iArr2 = curve25519FieldElement5.f1318x;
+            iArr = curve25519FieldElement4.f1319x;
+            iArr2 = curve25519FieldElement5.f1319x;
         } else {
-            Curve25519Field.square(curve25519FieldElement3.f1318x, create2);
-            Curve25519Field.multiply(create2, curve25519FieldElement4.f1318x, create);
-            Curve25519Field.multiply(create2, curve25519FieldElement3.f1318x, create2);
-            Curve25519Field.multiply(create2, curve25519FieldElement5.f1318x, create2);
+            Curve25519Field.square(curve25519FieldElement3.f1319x, create2);
+            Curve25519Field.multiply(create2, curve25519FieldElement4.f1319x, create);
+            Curve25519Field.multiply(create2, curve25519FieldElement3.f1319x, create2);
+            Curve25519Field.multiply(create2, curve25519FieldElement5.f1319x, create2);
             iArr = create;
             iArr2 = create2;
         }
         boolean isOne2 = curve25519FieldElement6.isOne();
         if (isOne2) {
-            iArr3 = curve25519FieldElement.f1318x;
-            iArr4 = curve25519FieldElement2.f1318x;
+            iArr3 = curve25519FieldElement.f1319x;
+            iArr4 = curve25519FieldElement2.f1319x;
         } else {
-            Curve25519Field.square(curve25519FieldElement6.f1318x, create3);
-            Curve25519Field.multiply(create3, curve25519FieldElement.f1318x, createExt);
-            Curve25519Field.multiply(create3, curve25519FieldElement6.f1318x, create3);
-            Curve25519Field.multiply(create3, curve25519FieldElement2.f1318x, create3);
+            Curve25519Field.square(curve25519FieldElement6.f1319x, create3);
+            Curve25519Field.multiply(create3, curve25519FieldElement.f1319x, createExt);
+            Curve25519Field.multiply(create3, curve25519FieldElement6.f1319x, create3);
+            Curve25519Field.multiply(create3, curve25519FieldElement2.f1319x, create3);
             iArr3 = createExt;
             iArr4 = create3;
         }
@@ -90,21 +90,21 @@ public class Curve25519Point extends ECPoint.AbstractFp {
         Nat256.mul(iArr4, create6, createExt);
         Curve25519Field.reduce27(Nat256.addBothTo(create2, create2, create6), create6);
         Curve25519FieldElement curve25519FieldElement7 = new Curve25519FieldElement(create3);
-        Curve25519Field.square(create, curve25519FieldElement7.f1318x);
-        int[] iArr5 = curve25519FieldElement7.f1318x;
+        Curve25519Field.square(create, curve25519FieldElement7.f1319x);
+        int[] iArr5 = curve25519FieldElement7.f1319x;
         Curve25519Field.subtract(iArr5, create6, iArr5);
         Curve25519FieldElement curve25519FieldElement8 = new Curve25519FieldElement(create6);
-        Curve25519Field.subtract(create2, curve25519FieldElement7.f1318x, curve25519FieldElement8.f1318x);
-        Curve25519Field.multiplyAddToExt(curve25519FieldElement8.f1318x, create, createExt);
-        Curve25519Field.reduce(createExt, curve25519FieldElement8.f1318x);
+        Curve25519Field.subtract(create2, curve25519FieldElement7.f1319x, curve25519FieldElement8.f1319x);
+        Curve25519Field.multiplyAddToExt(curve25519FieldElement8.f1319x, create, createExt);
+        Curve25519Field.reduce(createExt, curve25519FieldElement8.f1319x);
         Curve25519FieldElement curve25519FieldElement9 = new Curve25519FieldElement(create4);
         if (!isOne) {
-            int[] iArr6 = curve25519FieldElement9.f1318x;
-            Curve25519Field.multiply(iArr6, curve25519FieldElement3.f1318x, iArr6);
+            int[] iArr6 = curve25519FieldElement9.f1319x;
+            Curve25519Field.multiply(iArr6, curve25519FieldElement3.f1319x, iArr6);
         }
         if (!isOne2) {
-            int[] iArr7 = curve25519FieldElement9.f1318x;
-            Curve25519Field.multiply(iArr7, curve25519FieldElement6.f1318x, iArr7);
+            int[] iArr7 = curve25519FieldElement9.f1319x;
+            Curve25519Field.multiply(iArr7, curve25519FieldElement6.f1319x, iArr7);
         }
         return new Curve25519Point(curve, curve25519FieldElement7, curve25519FieldElement8, new ECFieldElement[]{curve25519FieldElement9, calculateJacobianModifiedW(curve25519FieldElement9, (isOne && isOne2) ? null : null)}, this.withCompression);
     }
@@ -116,17 +116,17 @@ public class Curve25519Point extends ECPoint.AbstractFp {
         }
         Curve25519FieldElement curve25519FieldElement3 = new Curve25519FieldElement();
         if (iArr == null) {
-            iArr = curve25519FieldElement3.f1318x;
-            Curve25519Field.square(curve25519FieldElement.f1318x, iArr);
+            iArr = curve25519FieldElement3.f1319x;
+            Curve25519Field.square(curve25519FieldElement.f1319x, iArr);
         }
-        Curve25519Field.square(iArr, curve25519FieldElement3.f1318x);
-        int[] iArr2 = curve25519FieldElement3.f1318x;
-        Curve25519Field.multiply(iArr2, curve25519FieldElement2.f1318x, iArr2);
+        Curve25519Field.square(iArr, curve25519FieldElement3.f1319x);
+        int[] iArr2 = curve25519FieldElement3.f1319x;
+        Curve25519Field.multiply(iArr2, curve25519FieldElement2.f1319x, iArr2);
         return curve25519FieldElement3;
     }
 
     protected Curve25519FieldElement getJacobianModifiedW() {
-        ECFieldElement[] eCFieldElementArr = this.f1312zs;
+        ECFieldElement[] eCFieldElementArr = this.f1313zs;
         Curve25519FieldElement curve25519FieldElement = (Curve25519FieldElement) eCFieldElementArr[1];
         if (curve25519FieldElement == null) {
             Curve25519FieldElement calculateJacobianModifiedW = calculateJacobianModifiedW((Curve25519FieldElement) eCFieldElementArr[0], null);
@@ -143,12 +143,12 @@ public class Curve25519Point extends ECPoint.AbstractFp {
 
     @Override // org.bouncycastle.math.p043ec.ECPoint
     public ECPoint negate() {
-        return isInfinity() ? this : new Curve25519Point(getCurve(), this.f1310x, this.f1311y.negate(), this.f1312zs, this.withCompression);
+        return isInfinity() ? this : new Curve25519Point(getCurve(), this.f1311x, this.f1312y.negate(), this.f1313zs, this.withCompression);
     }
 
     @Override // org.bouncycastle.math.p043ec.ECPoint
     public ECPoint threeTimes() {
-        return (isInfinity() || this.f1311y.isZero()) ? this : twiceJacobianModified(false).add(this);
+        return (isInfinity() || this.f1312y.isZero()) ? this : twiceJacobianModified(false).add(this);
     }
 
     @Override // org.bouncycastle.math.p043ec.ECPoint
@@ -156,50 +156,50 @@ public class Curve25519Point extends ECPoint.AbstractFp {
         if (isInfinity()) {
             return this;
         }
-        return this.f1311y.isZero() ? getCurve().getInfinity() : twiceJacobianModified(true);
+        return this.f1312y.isZero() ? getCurve().getInfinity() : twiceJacobianModified(true);
     }
 
     protected Curve25519Point twiceJacobianModified(boolean z) {
-        Curve25519FieldElement curve25519FieldElement = (Curve25519FieldElement) this.f1310x;
-        Curve25519FieldElement curve25519FieldElement2 = (Curve25519FieldElement) this.f1311y;
-        Curve25519FieldElement curve25519FieldElement3 = (Curve25519FieldElement) this.f1312zs[0];
+        Curve25519FieldElement curve25519FieldElement = (Curve25519FieldElement) this.f1311x;
+        Curve25519FieldElement curve25519FieldElement2 = (Curve25519FieldElement) this.f1312y;
+        Curve25519FieldElement curve25519FieldElement3 = (Curve25519FieldElement) this.f1313zs[0];
         Curve25519FieldElement jacobianModifiedW = getJacobianModifiedW();
         int[] create = Nat256.create();
-        Curve25519Field.square(curve25519FieldElement.f1318x, create);
-        Curve25519Field.reduce27(Nat256.addBothTo(create, create, create) + Nat256.addTo(jacobianModifiedW.f1318x, create), create);
+        Curve25519Field.square(curve25519FieldElement.f1319x, create);
+        Curve25519Field.reduce27(Nat256.addBothTo(create, create, create) + Nat256.addTo(jacobianModifiedW.f1319x, create), create);
         int[] create2 = Nat256.create();
-        Curve25519Field.twice(curve25519FieldElement2.f1318x, create2);
+        Curve25519Field.twice(curve25519FieldElement2.f1319x, create2);
         int[] create3 = Nat256.create();
-        Curve25519Field.multiply(create2, curve25519FieldElement2.f1318x, create3);
+        Curve25519Field.multiply(create2, curve25519FieldElement2.f1319x, create3);
         int[] create4 = Nat256.create();
-        Curve25519Field.multiply(create3, curve25519FieldElement.f1318x, create4);
+        Curve25519Field.multiply(create3, curve25519FieldElement.f1319x, create4);
         Curve25519Field.twice(create4, create4);
         int[] create5 = Nat256.create();
         Curve25519Field.square(create3, create5);
         Curve25519Field.twice(create5, create5);
         Curve25519FieldElement curve25519FieldElement4 = new Curve25519FieldElement(create3);
-        Curve25519Field.square(create, curve25519FieldElement4.f1318x);
-        int[] iArr = curve25519FieldElement4.f1318x;
+        Curve25519Field.square(create, curve25519FieldElement4.f1319x);
+        int[] iArr = curve25519FieldElement4.f1319x;
         Curve25519Field.subtract(iArr, create4, iArr);
-        int[] iArr2 = curve25519FieldElement4.f1318x;
+        int[] iArr2 = curve25519FieldElement4.f1319x;
         Curve25519Field.subtract(iArr2, create4, iArr2);
         Curve25519FieldElement curve25519FieldElement5 = new Curve25519FieldElement(create4);
-        Curve25519Field.subtract(create4, curve25519FieldElement4.f1318x, curve25519FieldElement5.f1318x);
-        int[] iArr3 = curve25519FieldElement5.f1318x;
+        Curve25519Field.subtract(create4, curve25519FieldElement4.f1319x, curve25519FieldElement5.f1319x);
+        int[] iArr3 = curve25519FieldElement5.f1319x;
         Curve25519Field.multiply(iArr3, create, iArr3);
-        int[] iArr4 = curve25519FieldElement5.f1318x;
+        int[] iArr4 = curve25519FieldElement5.f1319x;
         Curve25519Field.subtract(iArr4, create5, iArr4);
         Curve25519FieldElement curve25519FieldElement6 = new Curve25519FieldElement(create2);
-        if (!Nat256.isOne(curve25519FieldElement3.f1318x)) {
-            int[] iArr5 = curve25519FieldElement6.f1318x;
-            Curve25519Field.multiply(iArr5, curve25519FieldElement3.f1318x, iArr5);
+        if (!Nat256.isOne(curve25519FieldElement3.f1319x)) {
+            int[] iArr5 = curve25519FieldElement6.f1319x;
+            Curve25519Field.multiply(iArr5, curve25519FieldElement3.f1319x, iArr5);
         }
         Curve25519FieldElement curve25519FieldElement7 = null;
         if (z) {
             curve25519FieldElement7 = new Curve25519FieldElement(create5);
-            int[] iArr6 = curve25519FieldElement7.f1318x;
-            Curve25519Field.multiply(iArr6, jacobianModifiedW.f1318x, iArr6);
-            int[] iArr7 = curve25519FieldElement7.f1318x;
+            int[] iArr6 = curve25519FieldElement7.f1319x;
+            Curve25519Field.multiply(iArr6, jacobianModifiedW.f1319x, iArr6);
+            int[] iArr7 = curve25519FieldElement7.f1319x;
             Curve25519Field.twice(iArr7, iArr7);
         }
         return new Curve25519Point(getCurve(), curve25519FieldElement4, curve25519FieldElement5, new ECFieldElement[]{curve25519FieldElement6, curve25519FieldElement7}, this.withCompression);
@@ -207,6 +207,6 @@ public class Curve25519Point extends ECPoint.AbstractFp {
 
     @Override // org.bouncycastle.math.p043ec.ECPoint
     public ECPoint twicePlus(ECPoint eCPoint) {
-        return this == eCPoint ? threeTimes() : isInfinity() ? eCPoint : eCPoint.isInfinity() ? twice() : this.f1311y.isZero() ? eCPoint : twiceJacobianModified(false).add(eCPoint);
+        return this == eCPoint ? threeTimes() : isInfinity() ? eCPoint : eCPoint.isInfinity() ? twice() : this.f1312y.isZero() ? eCPoint : twiceJacobianModified(false).add(eCPoint);
     }
 }

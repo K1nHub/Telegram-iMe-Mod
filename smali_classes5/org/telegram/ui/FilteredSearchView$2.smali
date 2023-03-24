@@ -54,7 +54,7 @@
 
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    move v1, v0
 
     :goto_0
     if-ge v1, p4, :cond_d
@@ -80,7 +80,7 @@
 
     move-object v6, p2
 
-    const/4 v5, 0x0
+    move v5, v0
 
     :goto_1
     const/4 v7, 0x6
@@ -241,7 +241,7 @@
 
     if-lt v4, v5, :cond_7
 
-    const/4 v4, 0x0
+    move v4, v0
 
     goto :goto_3
 
@@ -327,7 +327,7 @@
     goto :goto_4
 
     :cond_8
-    const/4 p4, 0x0
+    move p4, v0
 
     .line 224
     :goto_4
@@ -405,7 +405,23 @@
 .method public getSubtitleFor(I)Ljava/lang/CharSequence;
     .locals 2
 
-    .line 252
+    if-ltz p1, :cond_1
+
+    .line 258
+    iget-object v0, p0, Lorg/telegram/ui/FilteredSearchView$2;->this$0:Lorg/telegram/ui/FilteredSearchView;
+
+    iget-object v0, v0, Lorg/telegram/ui/FilteredSearchView;->messages:Ljava/util/ArrayList;
+
+    invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
+
+    move-result v0
+
+    if-lt p1, v0, :cond_0
+
+    goto :goto_0
+
+    .line 262
+    :cond_0
     iget-object v0, p0, Lorg/telegram/ui/FilteredSearchView$2;->this$0:Lorg/telegram/ui/FilteredSearchView;
 
     iget-object v0, v0, Lorg/telegram/ui/FilteredSearchView;->messages:Ljava/util/ArrayList;
@@ -429,12 +445,34 @@
     move-result-object p1
 
     return-object p1
+
+    :cond_1
+    :goto_0
+    const/4 p1, 0x0
+
+    return-object p1
 .end method
 
 .method public getTitleFor(I)Ljava/lang/CharSequence;
     .locals 1
 
-    .line 247
+    if-ltz p1, :cond_1
+
+    .line 248
+    iget-object v0, p0, Lorg/telegram/ui/FilteredSearchView$2;->this$0:Lorg/telegram/ui/FilteredSearchView;
+
+    iget-object v0, v0, Lorg/telegram/ui/FilteredSearchView;->messages:Ljava/util/ArrayList;
+
+    invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
+
+    move-result v0
+
+    if-lt p1, v0, :cond_0
+
+    goto :goto_0
+
+    .line 252
+    :cond_0
     iget-object v0, p0, Lorg/telegram/ui/FilteredSearchView$2;->this$0:Lorg/telegram/ui/FilteredSearchView;
 
     iget-object v0, v0, Lorg/telegram/ui/FilteredSearchView;->messages:Ljava/util/ArrayList;
@@ -448,6 +486,12 @@
     invoke-static {p1}, Lorg/telegram/ui/FilteredSearchView;->createFromInfoString(Lorg/telegram/messenger/MessageObject;)Ljava/lang/CharSequence;
 
     move-result-object p1
+
+    return-object p1
+
+    :cond_1
+    :goto_0
+    const/4 p1, 0x0
 
     return-object p1
 .end method

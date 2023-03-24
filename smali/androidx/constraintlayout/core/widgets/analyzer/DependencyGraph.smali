@@ -514,9 +514,9 @@
 
     const/high16 v11, 0x3f800000    # 1.0f
 
-    const/4 v7, 0x2
-
     cmpg-float v6, v6, v11
+
+    const/4 v7, 0x2
 
     if-gez v6, :cond_2
 
@@ -550,9 +550,9 @@
 
     const/4 v8, 0x0
 
-    const/4 v9, 0x3
-
     cmpl-float v6, v6, v8
+
+    const/4 v8, 0x3
 
     if-lez v6, :cond_9
 
@@ -561,17 +561,17 @@
 
     if-ne v5, v6, :cond_5
 
-    sget-object v8, Landroidx/constraintlayout/core/widgets/ConstraintWidget$DimensionBehaviour;->WRAP_CONTENT:Landroidx/constraintlayout/core/widgets/ConstraintWidget$DimensionBehaviour;
+    sget-object v9, Landroidx/constraintlayout/core/widgets/ConstraintWidget$DimensionBehaviour;->WRAP_CONTENT:Landroidx/constraintlayout/core/widgets/ConstraintWidget$DimensionBehaviour;
 
-    if-eq v4, v8, :cond_4
+    if-eq v4, v9, :cond_4
 
-    sget-object v8, Landroidx/constraintlayout/core/widgets/ConstraintWidget$DimensionBehaviour;->FIXED:Landroidx/constraintlayout/core/widgets/ConstraintWidget$DimensionBehaviour;
+    sget-object v9, Landroidx/constraintlayout/core/widgets/ConstraintWidget$DimensionBehaviour;->FIXED:Landroidx/constraintlayout/core/widgets/ConstraintWidget$DimensionBehaviour;
 
-    if-ne v4, v8, :cond_5
+    if-ne v4, v9, :cond_5
 
     .line 407
     :cond_4
-    iput v9, v2, Landroidx/constraintlayout/core/widgets/ConstraintWidget;->mMatchConstraintDefaultWidth:I
+    iput v8, v2, Landroidx/constraintlayout/core/widgets/ConstraintWidget;->mMatchConstraintDefaultWidth:I
 
     goto :goto_1
 
@@ -579,17 +579,17 @@
     if-ne v4, v6, :cond_7
 
     .line 408
-    sget-object v8, Landroidx/constraintlayout/core/widgets/ConstraintWidget$DimensionBehaviour;->WRAP_CONTENT:Landroidx/constraintlayout/core/widgets/ConstraintWidget$DimensionBehaviour;
+    sget-object v9, Landroidx/constraintlayout/core/widgets/ConstraintWidget$DimensionBehaviour;->WRAP_CONTENT:Landroidx/constraintlayout/core/widgets/ConstraintWidget$DimensionBehaviour;
 
-    if-eq v5, v8, :cond_6
+    if-eq v5, v9, :cond_6
 
-    sget-object v8, Landroidx/constraintlayout/core/widgets/ConstraintWidget$DimensionBehaviour;->FIXED:Landroidx/constraintlayout/core/widgets/ConstraintWidget$DimensionBehaviour;
+    sget-object v9, Landroidx/constraintlayout/core/widgets/ConstraintWidget$DimensionBehaviour;->FIXED:Landroidx/constraintlayout/core/widgets/ConstraintWidget$DimensionBehaviour;
 
-    if-ne v5, v8, :cond_7
+    if-ne v5, v9, :cond_7
 
     .line 409
     :cond_6
-    iput v9, v2, Landroidx/constraintlayout/core/widgets/ConstraintWidget;->mMatchConstraintDefaultHeight:I
+    iput v8, v2, Landroidx/constraintlayout/core/widgets/ConstraintWidget;->mMatchConstraintDefaultHeight:I
 
     goto :goto_1
 
@@ -604,7 +604,7 @@
     if-nez v6, :cond_8
 
     .line 412
-    iput v9, v2, Landroidx/constraintlayout/core/widgets/ConstraintWidget;->mMatchConstraintDefaultWidth:I
+    iput v8, v2, Landroidx/constraintlayout/core/widgets/ConstraintWidget;->mMatchConstraintDefaultWidth:I
 
     .line 414
     :cond_8
@@ -613,7 +613,7 @@
     if-nez v6, :cond_9
 
     .line 415
-    iput v9, v2, Landroidx/constraintlayout/core/widgets/ConstraintWidget;->mMatchConstraintDefaultHeight:I
+    iput v8, v2, Landroidx/constraintlayout/core/widgets/ConstraintWidget;->mMatchConstraintDefaultHeight:I
 
     .line 420
     :cond_9
@@ -622,29 +622,29 @@
 
     if-ne v5, v6, :cond_b
 
-    iget v8, v2, Landroidx/constraintlayout/core/widgets/ConstraintWidget;->mMatchConstraintDefaultWidth:I
+    iget v9, v2, Landroidx/constraintlayout/core/widgets/ConstraintWidget;->mMatchConstraintDefaultWidth:I
 
-    if-ne v8, v10, :cond_b
+    if-ne v9, v10, :cond_b
 
     .line 421
-    iget-object v8, v2, Landroidx/constraintlayout/core/widgets/ConstraintWidget;->mLeft:Landroidx/constraintlayout/core/widgets/ConstraintAnchor;
+    iget-object v9, v2, Landroidx/constraintlayout/core/widgets/ConstraintWidget;->mLeft:Landroidx/constraintlayout/core/widgets/ConstraintAnchor;
 
-    iget-object v8, v8, Landroidx/constraintlayout/core/widgets/ConstraintAnchor;->mTarget:Landroidx/constraintlayout/core/widgets/ConstraintAnchor;
+    iget-object v9, v9, Landroidx/constraintlayout/core/widgets/ConstraintAnchor;->mTarget:Landroidx/constraintlayout/core/widgets/ConstraintAnchor;
 
-    if-eqz v8, :cond_a
+    if-eqz v9, :cond_a
 
-    iget-object v8, v2, Landroidx/constraintlayout/core/widgets/ConstraintWidget;->mRight:Landroidx/constraintlayout/core/widgets/ConstraintAnchor;
+    iget-object v9, v2, Landroidx/constraintlayout/core/widgets/ConstraintWidget;->mRight:Landroidx/constraintlayout/core/widgets/ConstraintAnchor;
 
-    iget-object v8, v8, Landroidx/constraintlayout/core/widgets/ConstraintAnchor;->mTarget:Landroidx/constraintlayout/core/widgets/ConstraintAnchor;
+    iget-object v9, v9, Landroidx/constraintlayout/core/widgets/ConstraintAnchor;->mTarget:Landroidx/constraintlayout/core/widgets/ConstraintAnchor;
 
-    if-nez v8, :cond_b
+    if-nez v9, :cond_b
 
     .line 422
     :cond_a
     sget-object v5, Landroidx/constraintlayout/core/widgets/ConstraintWidget$DimensionBehaviour;->WRAP_CONTENT:Landroidx/constraintlayout/core/widgets/ConstraintWidget$DimensionBehaviour;
 
     :cond_b
-    move-object v8, v5
+    move-object v9, v5
 
     if-ne v4, v6, :cond_d
 
@@ -676,7 +676,7 @@
     .line 431
     iget-object v4, v2, Landroidx/constraintlayout/core/widgets/ConstraintWidget;->horizontalRun:Landroidx/constraintlayout/core/widgets/analyzer/HorizontalWidgetRun;
 
-    iput-object v8, v4, Landroidx/constraintlayout/core/widgets/analyzer/WidgetRun;->dimensionBehavior:Landroidx/constraintlayout/core/widgets/ConstraintWidget$DimensionBehaviour;
+    iput-object v9, v4, Landroidx/constraintlayout/core/widgets/analyzer/WidgetRun;->dimensionBehavior:Landroidx/constraintlayout/core/widgets/ConstraintWidget$DimensionBehaviour;
 
     .line 432
     iget v5, v2, Landroidx/constraintlayout/core/widgets/ConstraintWidget;->mMatchConstraintDefaultWidth:I
@@ -696,15 +696,15 @@
     .line 436
     sget-object v4, Landroidx/constraintlayout/core/widgets/ConstraintWidget$DimensionBehaviour;->MATCH_PARENT:Landroidx/constraintlayout/core/widgets/ConstraintWidget$DimensionBehaviour;
 
-    if-eq v8, v4, :cond_e
+    if-eq v9, v4, :cond_e
 
     sget-object v14, Landroidx/constraintlayout/core/widgets/ConstraintWidget$DimensionBehaviour;->FIXED:Landroidx/constraintlayout/core/widgets/ConstraintWidget$DimensionBehaviour;
 
-    if-eq v8, v14, :cond_e
+    if-eq v9, v14, :cond_e
 
     sget-object v14, Landroidx/constraintlayout/core/widgets/ConstraintWidget$DimensionBehaviour;->WRAP_CONTENT:Landroidx/constraintlayout/core/widgets/ConstraintWidget$DimensionBehaviour;
 
-    if-ne v8, v14, :cond_f
+    if-ne v9, v14, :cond_f
 
     :cond_e
     if-eq v12, v4, :cond_23
@@ -722,7 +722,7 @@
     :cond_f
     const/high16 v14, 0x3f000000    # 0.5f
 
-    if-ne v8, v6, :cond_17
+    if-ne v9, v6, :cond_17
 
     .line 455
     sget-object v15, Landroidx/constraintlayout/core/widgets/ConstraintWidget$DimensionBehaviour;->WRAP_CONTENT:Landroidx/constraintlayout/core/widgets/ConstraintWidget$DimensionBehaviour;
@@ -734,7 +734,7 @@
     if-ne v12, v11, :cond_17
 
     :cond_10
-    if-ne v5, v9, :cond_12
+    if-ne v5, v8, :cond_12
 
     if-ne v12, v15, :cond_11
 
@@ -764,7 +764,7 @@
     .line 461
     iget v4, v2, Landroidx/constraintlayout/core/widgets/ConstraintWidget;->mDimensionRatio:F
 
-    mul-float v3, v3, v4
+    mul-float/2addr v3, v4
 
     add-float/2addr v3, v14
 
@@ -866,7 +866,7 @@
 
     int-to-float v4, v4
 
-    mul-float v3, v3, v4
+    mul-float/2addr v3, v4
 
     add-float/2addr v3, v14
 
@@ -982,16 +982,16 @@
     .line 495
     sget-object v11, Landroidx/constraintlayout/core/widgets/ConstraintWidget$DimensionBehaviour;->WRAP_CONTENT:Landroidx/constraintlayout/core/widgets/ConstraintWidget$DimensionBehaviour;
 
-    if-eq v8, v11, :cond_18
+    if-eq v9, v11, :cond_18
 
     sget-object v7, Landroidx/constraintlayout/core/widgets/ConstraintWidget$DimensionBehaviour;->FIXED:Landroidx/constraintlayout/core/widgets/ConstraintWidget$DimensionBehaviour;
 
-    if-ne v8, v7, :cond_20
+    if-ne v9, v7, :cond_20
 
     :cond_18
-    if-ne v13, v9, :cond_1b
+    if-ne v13, v8, :cond_1b
 
-    if-ne v8, v11, :cond_19
+    if-ne v9, v11, :cond_19
 
     const/4 v7, 0x0
 
@@ -1033,7 +1033,7 @@
     :cond_1a
     int-to-float v4, v7
 
-    mul-float v4, v4, v3
+    mul-float/2addr v4, v3
 
     add-float/2addr v4, v14
 
@@ -1082,15 +1082,17 @@
 
     const/4 v7, 0x0
 
-    const/4 v9, 0x0
+    const/4 v3, 0x0
 
     move-object/from16 v4, p0
 
     move-object v5, v2
 
-    move-object v6, v8
+    move-object v6, v9
 
     move-object v8, v11
+
+    move v9, v3
 
     .line 513
     invoke-direct/range {v4 .. v9}, Landroidx/constraintlayout/core/widgets/analyzer/DependencyGraph;->measure(Landroidx/constraintlayout/core/widgets/ConstraintWidget;Landroidx/constraintlayout/core/widgets/ConstraintWidget$DimensionBehaviour;ILandroidx/constraintlayout/core/widgets/ConstraintWidget$DimensionBehaviour;I)V
@@ -1116,11 +1118,11 @@
     .line 517
     iget-object v7, v0, Landroidx/constraintlayout/core/widgets/ConstraintWidget;->mListDimensionBehaviors:[Landroidx/constraintlayout/core/widgets/ConstraintWidget$DimensionBehaviour;
 
-    aget-object v9, v7, v10
+    aget-object v8, v7, v10
 
     sget-object v11, Landroidx/constraintlayout/core/widgets/ConstraintWidget$DimensionBehaviour;->FIXED:Landroidx/constraintlayout/core/widgets/ConstraintWidget$DimensionBehaviour;
 
-    if-eq v9, v11, :cond_1d
+    if-eq v8, v11, :cond_1d
 
     aget-object v7, v7, v10
 
@@ -1142,19 +1144,21 @@
 
     int-to-float v4, v4
 
-    mul-float v3, v3, v4
+    mul-float/2addr v3, v4
 
     add-float/2addr v3, v14
 
-    float-to-int v9, v3
+    float-to-int v3, v3
 
     move-object/from16 v4, p0
 
     move-object v5, v2
 
-    move-object v6, v8
+    move-object v6, v9
 
     move-object v8, v11
+
+    move v9, v3
 
     .line 522
     invoke-direct/range {v4 .. v9}, Landroidx/constraintlayout/core/widgets/analyzer/DependencyGraph;->measure(Landroidx/constraintlayout/core/widgets/ConstraintWidget;Landroidx/constraintlayout/core/widgets/ConstraintWidget$DimensionBehaviour;ILandroidx/constraintlayout/core/widgets/ConstraintWidget$DimensionBehaviour;I)V
@@ -1198,7 +1202,7 @@
 
     if-eqz v7, :cond_1f
 
-    aget-object v4, v4, v9
+    aget-object v4, v4, v8
 
     iget-object v4, v4, Landroidx/constraintlayout/core/widgets/ConstraintAnchor;->mTarget:Landroidx/constraintlayout/core/widgets/ConstraintAnchor;
 
@@ -1248,7 +1252,7 @@
     goto/16 :goto_0
 
     :cond_20
-    if-ne v8, v6, :cond_0
+    if-ne v9, v6, :cond_0
 
     if-ne v12, v6, :cond_0
 
@@ -1291,7 +1295,7 @@
 
     int-to-float v5, v5
 
-    mul-float v3, v3, v5
+    mul-float/2addr v3, v5
 
     add-float/2addr v3, v14
 
@@ -1304,7 +1308,7 @@
 
     int-to-float v3, v3
 
-    mul-float v4, v4, v3
+    mul-float/2addr v4, v3
 
     add-float/2addr v4, v14
 
@@ -1394,7 +1398,7 @@
 
     move-result v3
 
-    if-ne v8, v4, :cond_24
+    if-ne v9, v4, :cond_24
 
     .line 440
     invoke-virtual/range {p1 .. p1}, Landroidx/constraintlayout/core/widgets/ConstraintWidget;->getWidth()I
@@ -1425,7 +1429,7 @@
     :cond_24
     move v7, v3
 
-    move-object v6, v8
+    move-object v6, v9
 
     .line 443
     :goto_4
@@ -2336,7 +2340,7 @@
 
     if-nez v7, :cond_6
 
-    const/4 p1, 0x0
+    move p1, v2
 
     :cond_7
     if-eqz p1, :cond_8
@@ -2433,7 +2437,7 @@
     goto :goto_1
 
     :cond_a
-    const/4 p1, 0x0
+    move p1, v2
 
     goto :goto_2
 
@@ -2516,7 +2520,7 @@
     :cond_d
     invoke-virtual {p0}, Landroidx/constraintlayout/core/widgets/analyzer/DependencyGraph;->measureWidgets()V
 
-    const/4 p1, 0x1
+    move p1, v0
 
     .line 200
     :goto_2
@@ -2600,7 +2604,7 @@
     if-nez v6, :cond_12
 
     :goto_5
-    const/4 v0, 0x0
+    move v0, v2
 
     goto :goto_6
 
@@ -2884,7 +2888,7 @@
 
     if-nez v7, :cond_1
 
-    const/4 p1, 0x0
+    move p1, v2
 
     :cond_2
     if-nez p2, :cond_3
@@ -3036,7 +3040,7 @@
     goto :goto_1
 
     :cond_7
-    const/4 p1, 0x0
+    move p1, v2
 
     goto :goto_3
 
@@ -3070,7 +3074,7 @@
     invoke-virtual {v4, p1}, Landroidx/constraintlayout/core/widgets/analyzer/DimensionDependency;->resolve(I)V
 
     :goto_2
-    const/4 p1, 0x1
+    move p1, v0
 
     .line 323
     :goto_3
@@ -3173,7 +3177,7 @@
     if-nez v6, :cond_f
 
     :goto_6
-    const/4 v0, 0x0
+    move v0, v2
 
     goto :goto_7
 
@@ -3304,13 +3308,13 @@
     goto :goto_1
 
     :cond_2
-    const/4 v2, 0x0
+    move v2, v3
 
     goto :goto_2
 
     :cond_3
     :goto_1
-    const/4 v2, 0x1
+    move v2, v9
 
     :goto_2
     if-eq v10, v6, :cond_4
@@ -3323,7 +3327,7 @@
     if-ne v4, v9, :cond_5
 
     :cond_4
-    const/4 v3, 0x1
+    move v3, v9
 
     .line 580
     :cond_5

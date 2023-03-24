@@ -285,30 +285,30 @@
     .line 89
     iget v1, v0, Lorg/telegram/ui/Components/PlayingGameDrawable;->progress:F
 
-    const/high16 v2, 0x3f800000    # 1.0f
+    const/high16 v2, 0x3f000000    # 0.5f
 
-    const/high16 v3, 0x420c0000    # 35.0f
+    cmpg-float v3, v1, v2
 
-    const/high16 v4, 0x3f000000    # 0.5f
+    const/high16 v4, 0x3f800000    # 1.0f
 
-    cmpg-float v5, v1, v4
+    const/high16 v5, 0x420c0000    # 35.0f
 
-    if-gez v5, :cond_2
+    if-gez v3, :cond_2
 
-    div-float/2addr v1, v4
+    div-float/2addr v1, v2
 
-    sub-float v1, v2, v1
+    sub-float v1, v4, v1
 
-    mul-float v1, v1, v3
+    mul-float/2addr v1, v5
 
     goto :goto_2
 
     :cond_2
-    sub-float/2addr v1, v4
+    sub-float/2addr v1, v2
 
-    mul-float v1, v1, v3
+    mul-float/2addr v1, v5
 
-    div-float/2addr v1, v4
+    div-float/2addr v1, v2
 
     :goto_2
     float-to-int v1, v1
@@ -329,7 +329,7 @@
 
     move-result v12
 
-    mul-int v12, v12, v3
+    mul-int/2addr v12, v3
 
     const v13, 0x41133333    # 9.2f
 
@@ -349,7 +349,7 @@
 
     iget v13, v0, Lorg/telegram/ui/Components/PlayingGameDrawable;->progress:F
 
-    mul-float v5, v5, v13
+    mul-float/2addr v5, v13
 
     sub-float/2addr v12, v5
 
@@ -360,9 +360,9 @@
     .line 97
     iget-object v14, v0, Lorg/telegram/ui/Components/PlayingGameDrawable;->paint:Landroid/graphics/Paint;
 
-    mul-float v13, v13, v5
+    mul-float/2addr v13, v5
 
-    div-float/2addr v13, v4
+    div-float/2addr v13, v2
 
     float-to-int v5, v13
 
@@ -377,20 +377,20 @@
     :cond_3
     if-nez v3, :cond_5
 
-    cmpl-float v14, v13, v4
+    cmpl-float v14, v13, v2
 
     if-lez v14, :cond_4
 
     .line 100
     iget-object v6, v0, Lorg/telegram/ui/Components/PlayingGameDrawable;->paint:Landroid/graphics/Paint;
 
-    sub-float/2addr v13, v4
+    sub-float/2addr v13, v2
 
-    div-float/2addr v13, v4
+    div-float/2addr v13, v2
 
-    sub-float v13, v2, v13
+    sub-float v13, v4, v13
 
-    mul-float v13, v13, v5
+    mul-float/2addr v13, v5
 
     float-to-int v5, v13
 
@@ -447,7 +447,7 @@
 
     int-to-float v3, v1
 
-    mul-int/lit8 v1, v1, 0x2
+    mul-int/2addr v1, v9
 
     rsub-int v1, v1, 0x168
 

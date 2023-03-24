@@ -149,12 +149,12 @@
 
     if-ne v0, v2, :cond_2
 
-    const/4 v0, 0x1
+    move v0, v2
 
     goto :goto_0
 
     :cond_2
-    const/4 v0, 0x0
+    move v0, v1
 
     :goto_0
     iput-boolean v0, p0, Landroidx/recyclerview/widget/StaggeredGridLayoutManager$SavedState;->mReverseLayout:Z
@@ -166,12 +166,12 @@
 
     if-ne v0, v2, :cond_3
 
-    const/4 v0, 0x1
+    move v0, v2
 
     goto :goto_1
 
     :cond_3
-    const/4 v0, 0x0
+    move v0, v1
 
     :goto_1
     iput-boolean v0, p0, Landroidx/recyclerview/widget/StaggeredGridLayoutManager$SavedState;->mAnchorLayoutFromEnd:Z
@@ -183,7 +183,7 @@
 
     if-ne v0, v2, :cond_4
 
-    const/4 v1, 0x1
+    move v1, v2
 
     :cond_4
     iput-boolean v1, p0, Landroidx/recyclerview/widget/StaggeredGridLayoutManager$SavedState;->mLastLayoutRTL:Z

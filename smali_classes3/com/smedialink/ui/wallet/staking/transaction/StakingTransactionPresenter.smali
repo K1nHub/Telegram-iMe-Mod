@@ -255,7 +255,7 @@
     goto :goto_2
 
     :cond_3
-    const/4 p8, 0x0
+    move p8, p7
 
     .line 61
     :goto_2
@@ -1310,7 +1310,7 @@
 .end method
 
 .method private final getSafeWithdrawalDurationText()Ljava/lang/String;
-    .locals 7
+    .locals 6
 
     .line 464
     iget-object v0, p0, Lcom/smedialink/ui/wallet/staking/transaction/StakingTransactionPresenter;->stakingDetails:Lcom/smedialink/model/staking/StakingDetailsItem;
@@ -1344,9 +1344,9 @@
 
     const-wide/16 v4, 0x1
 
-    cmp-long v6, v2, v4
+    cmp-long v4, v2, v4
 
-    if-ltz v6, :cond_1
+    if-ltz v4, :cond_1
 
     long-to-int v0, v2
 
@@ -1369,10 +1369,10 @@
     goto :goto_1
 
     :cond_1
-    long-to-int v1, v0
+    long-to-int v0, v0
 
     .line 469
-    invoke-static {v1}, Lorg/telegram/messenger/LocaleController;->formatDuration(I)Ljava/lang/String;
+    invoke-static {v0}, Lorg/telegram/messenger/LocaleController;->formatDuration(I)Ljava/lang/String;
 
     move-result-object v0
 

@@ -95,9 +95,9 @@
 
     const/4 p2, 0x0
 
-    const/4 p3, 0x0
+    move p3, p2
 
-    const/4 v0, 0x0
+    move v0, p3
 
     :goto_0
     invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z

@@ -176,12 +176,12 @@
 
     if-nez v2, :cond_3
 
-    const/4 v2, 0x1
+    move v2, v4
 
     goto :goto_1
 
     :cond_3
-    const/4 v2, 0x0
+    move v2, p1
 
     :goto_1
     if-eqz v2, :cond_4
@@ -246,7 +246,7 @@
 
     if-ltz p3, :cond_7
 
-    const/4 v0, 0x0
+    move v0, p1
 
     .line 106
     :goto_2

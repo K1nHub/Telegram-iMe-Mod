@@ -215,9 +215,9 @@
 
     move-result-wide v2
 
-    cmp-long v0, v2, p2
+    cmp-long p2, v2, p2
 
-    if-gez v0, :cond_1
+    if-gez p2, :cond_1
 
     .line 176
     iget-object p2, p0, Landroidx/dynamicanimation/animation/AnimationHandler;->mDelayedCallbackStartTime:Landroidx/collection/SimpleArrayMap;
@@ -271,9 +271,9 @@
     :cond_1
     const-wide/16 v0, 0x0
 
-    cmp-long v2, p2, v0
+    cmp-long v0, p2, v0
 
-    if-lez v2, :cond_2
+    if-lez v0, :cond_2
 
     .line 133
     iget-object v0, p0, Landroidx/dynamicanimation/animation/AnimationHandler;->mDelayedCallbackStartTime:Landroidx/collection/SimpleArrayMap;

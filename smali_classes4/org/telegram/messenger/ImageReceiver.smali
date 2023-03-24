@@ -882,7 +882,7 @@
     .line 1151
     iget v1, p0, Lorg/telegram/messenger/ImageReceiver;->pressedProgress:F
 
-    mul-float v0, v0, v1
+    mul-float/2addr v0, v1
 
     float-to-int v3, v0
 
@@ -2256,7 +2256,7 @@
     goto :goto_0
 
     :cond_1
-    const/16 v22, 0x0
+    move/from16 v22, v21
 
     :goto_0
     if-eqz v22, :cond_2
@@ -2478,7 +2478,7 @@
     goto :goto_1
 
     :cond_5
-    const/16 v23, 0x0
+    move/from16 v23, v21
 
     :goto_1
     move-object/from16 v24, v5
@@ -2710,6 +2710,8 @@
 
     move v14, v1
 
+    move/from16 v7, v21
+
     move-object/from16 v1, v26
 
     move-object/from16 v12, v32
@@ -2719,8 +2721,6 @@
     move-object/from16 v15, v34
 
     move-object/from16 v13, v36
-
-    const/4 v7, 0x0
 
     move-object/from16 v26, v25
 
@@ -2810,11 +2810,11 @@
     goto :goto_5
 
     :cond_11
+    move/from16 v14, v21
+
     move-object/from16 v1, v26
 
     move/from16 v7, v28
-
-    const/4 v14, 0x0
 
     const/4 v15, 0x0
 
@@ -2826,15 +2826,15 @@
 
     const/16 v16, 0x0
 
-    const/high16 v6, 0x3f800000    # 1.0f
-
     cmpl-float v3, v2, v16
+
+    const/high16 v6, 0x3f800000    # 1.0f
 
     move/from16 v5, v31
 
     if-lez v3, :cond_12
 
-    mul-float v2, v2, v5
+    mul-float/2addr v2, v5
 
     add-float/2addr v2, v5
 
@@ -2913,7 +2913,7 @@
 
     move-object/from16 v5, v19
 
-    const/high16 v20, 0x3f800000    # 1.0f
+    move/from16 v20, v6
 
     move v6, v14
 
@@ -2937,12 +2937,16 @@
 
     move/from16 v40, v5
 
+    move/from16 v20, v6
+
     move-object/from16 v35, v8
 
     goto :goto_7
 
     :cond_16
     move/from16 v40, v5
+
+    move/from16 v20, v6
 
     move-object/from16 v35, v8
 
@@ -2951,8 +2955,6 @@
     move-object/from16 v0, v37
 
     :goto_7
-    const/high16 v20, 0x3f800000    # 1.0f
-
     move v8, v7
 
     .line 1889
@@ -3181,9 +3183,9 @@
 
     invoke-virtual {v0, v1, v2, v3, v4}, Landroid/graphics/RectF;->set(FFFF)V
 
-    move-object/from16 v3, v35
+    move/from16 v0, v21
 
-    const/4 v0, 0x0
+    move-object/from16 v3, v35
 
     .line 1944
     :goto_10
@@ -3250,7 +3252,7 @@
 
     sub-float v6, v20, v1
 
-    mul-float v0, v0, v6
+    mul-float/2addr v0, v6
 
     add-float v0, v0, v20
 
@@ -3272,7 +3274,7 @@
     :cond_24
     move-object/from16 v10, p1
 
-    const/4 v13, 0x0
+    move/from16 v13, v21
 
     :goto_11
     mul-float v23, v23, v17
@@ -3345,7 +3347,7 @@
     :cond_27
     move-object/from16 v0, p2
 
-    const/4 v13, 0x0
+    move/from16 v13, v21
 
     :goto_13
     invoke-direct {v9, v13, v0}, Lorg/telegram/messenger/ImageReceiver;->checkAlphaAnimation(ZLorg/telegram/messenger/ImageReceiver$BackgroundThreadDrawHolder;)V
@@ -3643,7 +3645,7 @@
 
     if-eqz v3, :cond_6
 
-    const/4 v3, 0x1
+    move v3, v0
 
     goto :goto_4
 
@@ -3879,7 +3881,7 @@
 
     if-nez v25, :cond_16
 
-    const/high16 v2, 0x3f800000    # 1.0f
+    move/from16 v2, v16
 
     goto :goto_d
 
@@ -3895,7 +3897,7 @@
 
     if-nez v26, :cond_17
 
-    const/high16 v14, 0x3f800000    # 1.0f
+    move/from16 v14, v16
 
     goto :goto_e
 
@@ -4636,7 +4638,7 @@
 
     if-nez v25, :cond_28
 
-    const/high16 v4, 0x3f800000    # 1.0f
+    move/from16 v4, v16
 
     goto :goto_15
 
@@ -4648,7 +4650,7 @@
     :goto_15
     if-nez v26, :cond_29
 
-    const/high16 v5, 0x3f800000    # 1.0f
+    move/from16 v5, v16
 
     goto :goto_16
 
@@ -4739,7 +4741,7 @@
     :goto_17
     if-nez v25, :cond_2c
 
-    const/high16 v0, 0x3f800000    # 1.0f
+    move/from16 v0, v16
 
     goto :goto_18
 
@@ -4751,7 +4753,7 @@
     :goto_18
     if-nez v26, :cond_2d
 
-    const/high16 v2, 0x3f800000    # 1.0f
+    move/from16 v2, v16
 
     goto :goto_19
 
@@ -5822,7 +5824,7 @@
 
     if-nez v14, :cond_55
 
-    const/high16 v14, 0x3f800000    # 1.0f
+    move/from16 v14, v16
 
     goto :goto_29
 
@@ -5836,8 +5838,6 @@
 
     if-nez v12, :cond_56
 
-    const/high16 v7, 0x3f800000    # 1.0f
-
     goto :goto_2a
 
     :cond_56
@@ -5845,10 +5845,10 @@
 
     div-float v16, v12, v7
 
+    :goto_2a
     move/from16 v7, v16
 
     .line 1580
-    :goto_2a
     invoke-static {v14, v7}, Ljava/lang/Math;->max(FF)F
 
     move-result v7
@@ -8829,7 +8829,7 @@
 
     const/4 p2, 0x0
 
-    const/4 v0, 0x0
+    move v0, p2
 
     :goto_0
     const/4 v1, 0x4
@@ -9087,12 +9087,12 @@
 
     if-eqz v7, :cond_1
 
-    const/4 v7, 0x1
+    move v7, v2
 
     goto :goto_1
 
     :cond_1
-    const/4 v7, 0x0
+    move v7, v5
 
     :goto_1
     if-ne v1, v14, :cond_3
@@ -9357,12 +9357,12 @@
 
     if-eqz v3, :cond_d
 
-    const/4 v3, 0x1
+    move v3, v2
 
     goto :goto_8
 
     :cond_d
-    const/4 v3, 0x0
+    move v3, v5
 
     :goto_8
     move-object v9, v4
@@ -9376,7 +9376,7 @@
 
     move-object v9, v7
 
-    const/4 v3, 0x0
+    move v3, v5
 
     :goto_9
     if-eqz v9, :cond_f
@@ -9836,7 +9836,7 @@
 .end method
 
 .method public setImage(Lorg/telegram/messenger/ImageLocation;Ljava/lang/String;Lorg/telegram/messenger/ImageLocation;Ljava/lang/String;Lorg/telegram/messenger/ImageLocation;Ljava/lang/String;Landroid/graphics/drawable/Drawable;JLjava/lang/String;Ljava/lang/Object;I)V
-    .locals 20
+    .locals 19
 
     move-object/from16 v0, p0
 
@@ -9972,7 +9972,7 @@
 
     if-nez v1, :cond_c
 
-    const/4 v1, 0x0
+    move v1, v15
 
     :goto_0
     const/4 v2, 0x4
@@ -10138,13 +10138,13 @@
     goto :goto_1
 
     :cond_8
-    const/4 v3, 0x0
+    move v3, v15
 
     goto :goto_2
 
     :cond_9
     :goto_1
-    const/4 v3, 0x1
+    move v3, v14
 
     :goto_2
     if-nez v2, :cond_a
@@ -10156,7 +10156,7 @@
     goto :goto_3
 
     :cond_a
-    const/4 v14, 0x0
+    move v14, v15
 
     :goto_3
     invoke-interface {v1, v0, v3, v14, v15}, Lorg/telegram/messenger/ImageReceiver$ImageReceiverDelegate;->didSetImage(Lorg/telegram/messenger/ImageReceiver;ZZZ)V
@@ -10243,9 +10243,9 @@
 
     const-wide/16 v17, 0x0
 
-    cmp-long v19, v14, v17
+    cmp-long v14, v14, v17
 
-    if-eqz v19, :cond_11
+    if-eqz v14, :cond_11
 
     .line 571
     new-instance v14, Ljava/lang/StringBuilder;
@@ -11009,7 +11009,7 @@
 
     :cond_2f
     :goto_f
-    const/4 v12, 0x1
+    move v12, v9
 
     :goto_10
     if-nez v2, :cond_30
@@ -11018,7 +11018,7 @@
 
     if-nez v2, :cond_30
 
-    const/4 v2, 0x1
+    move v2, v9
 
     goto :goto_11
 
@@ -11054,12 +11054,12 @@
 
     if-eqz v1, :cond_32
 
-    const/4 v14, 0x1
+    move v14, v9
 
     goto :goto_13
 
     :cond_32
-    const/4 v14, 0x0
+    move v14, v3
 
     :goto_13
     iput-boolean v14, v0, Lorg/telegram/messenger/ImageReceiver;->isRoundVideo:Z
@@ -11220,7 +11220,7 @@
     goto :goto_2
 
     :cond_2
-    const/4 v0, 0x0
+    move v0, v3
 
     :goto_0
     if-ge v0, v2, :cond_3
@@ -11239,7 +11239,7 @@
     goto :goto_2
 
     :cond_4
-    const/4 v0, 0x0
+    move v0, v3
 
     :goto_1
     if-ge v0, v2, :cond_5
@@ -11303,13 +11303,13 @@
     goto :goto_3
 
     :cond_8
-    const/4 v2, 0x0
+    move v2, v3
 
     goto :goto_4
 
     :cond_9
     :goto_3
-    const/4 v2, 0x1
+    move v2, v1
 
     :goto_4
     invoke-virtual {v0, v2}, Lorg/telegram/ui/Components/AnimatedFileDrawable;->setUseSharedQueue(Z)V
@@ -11522,13 +11522,13 @@
     goto :goto_6
 
     :cond_14
-    const/4 v0, 0x0
+    move v0, v3
 
     goto :goto_7
 
     :cond_15
     :goto_6
-    const/4 v0, 0x1
+    move v0, v1
 
     :goto_7
     invoke-interface {p1, p0, v0, v1, v3}, Lorg/telegram/messenger/ImageReceiver$ImageReceiverDelegate;->didSetImage(Lorg/telegram/messenger/ImageReceiver;ZZZ)V
@@ -11574,7 +11574,7 @@
     goto :goto_8
 
     :cond_17
-    const/4 v1, 0x0
+    move v1, v3
 
     :cond_18
     :goto_8
@@ -11654,7 +11654,7 @@
     goto :goto_0
 
     :cond_2
-    const/4 p2, 0x0
+    move p2, v0
 
     goto :goto_1
 
@@ -11702,7 +11702,7 @@
 
     :cond_5
     :goto_0
-    const/4 p2, 0x1
+    move p2, v2
 
     .line 2631
     :goto_1
@@ -11768,7 +11768,7 @@
 
     :cond_9
     :goto_2
-    const/4 p2, 0x0
+    move p2, v0
 
     goto :goto_3
 
@@ -11814,7 +11814,7 @@
     if-eqz p2, :cond_9
 
     :cond_c
-    const/4 p2, 0x1
+    move p2, v2
 
     :goto_3
     if-eqz p2, :cond_2c
@@ -11878,13 +11878,13 @@
     goto :goto_5
 
     :cond_f
-    const/4 p2, 0x0
+    move p2, v0
 
     goto :goto_6
 
     :cond_10
     :goto_5
-    const/4 p2, 0x1
+    move p2, v2
 
     :goto_6
     iput-boolean p2, p0, Lorg/telegram/messenger/ImageReceiver;->crossfadeWithThumb:Z
@@ -12089,13 +12089,13 @@
     goto :goto_9
 
     :cond_1e
-    const/4 p2, 0x0
+    move p2, v0
 
     goto :goto_a
 
     :cond_1f
     :goto_9
-    const/4 p2, 0x1
+    move p2, v2
 
     :goto_a
     iput-boolean p2, p0, Lorg/telegram/messenger/ImageReceiver;->crossfadeWithThumb:Z
@@ -12271,12 +12271,12 @@
 
     if-eqz p2, :cond_2a
 
-    const/4 p2, 0x1
+    move p2, v2
 
     goto :goto_b
 
     :cond_2a
-    const/4 p2, 0x0
+    move p2, v0
 
     :goto_b
     iput-boolean p2, p0, Lorg/telegram/messenger/ImageReceiver;->crossfadeWithThumb:Z
@@ -12317,13 +12317,13 @@
     goto :goto_d
 
     :cond_2d
-    const/4 p5, 0x0
+    move p5, v0
 
     goto :goto_e
 
     :cond_2e
     :goto_d
-    const/4 p5, 0x1
+    move p5, v2
 
     :goto_e
     if-nez p3, :cond_2f
@@ -12332,12 +12332,12 @@
 
     if-nez p3, :cond_2f
 
-    const/4 p3, 0x1
+    move p3, v2
 
     goto :goto_f
 
     :cond_2f
-    const/4 p3, 0x0
+    move p3, v0
 
     :goto_f
     invoke-interface {p2, p0, p5, p3, p4}, Lorg/telegram/messenger/ImageReceiver$ImageReceiverDelegate;->didSetImage(Lorg/telegram/messenger/ImageReceiver;ZZZ)V
@@ -12801,9 +12801,9 @@
     .line 2389
     iput-boolean v2, p0, Lorg/telegram/messenger/ImageReceiver;->isRoundRect:Z
 
-    const/4 v3, 0x0
+    move v3, v0
 
-    const/4 v4, 0x0
+    move v4, v3
 
     .line 2390
     :goto_0
@@ -12820,7 +12820,7 @@
 
     if-eq v6, v7, :cond_0
 
-    const/4 v4, 0x1
+    move v4, v2
 
     .line 2394
     :cond_0

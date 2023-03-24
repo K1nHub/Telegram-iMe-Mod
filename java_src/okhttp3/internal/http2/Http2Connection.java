@@ -256,7 +256,7 @@ public final class Http2Connection implements Closeable {
             r13 = 0
             goto L42
         L41:
-            r13 = 1
+            r13 = r0
         L42:
             boolean r1 = r9.isOpen()     // Catch: java.lang.Throwable -> L81
             if (r1 == 0) goto L51
@@ -314,8 +314,8 @@ public final class Http2Connection implements Closeable {
         throw new java.io.IOException("stream closed");
      */
     /* JADX WARN: Code restructure failed: missing block: B:58:0x0033, code lost:
-        r3 = java.lang.Math.min((int) java.lang.Math.min(r12, r5 - r3), r8.writer.maxDataLength());
-        r6 = r3;
+        r2 = java.lang.Math.min((int) java.lang.Math.min(r12, r6 - r4), r8.writer.maxDataLength());
+        r6 = r2;
         r8.writeBytesTotal += r6;
         r4 = kotlin.Unit.INSTANCE;
      */
@@ -327,25 +327,25 @@ public final class Http2Connection implements Closeable {
         /*
             r8 = this;
             r0 = 0
-            r1 = 0
-            int r3 = (r12 > r1 ? 1 : (r12 == r1 ? 0 : -1))
-            if (r3 != 0) goto Ld
+            int r2 = (r12 > r0 ? 1 : (r12 == r0 ? 0 : -1))
+            r3 = 0
+            if (r2 != 0) goto Ld
             okhttp3.internal.http2.Http2Writer r12 = r8.writer
-            r12.data(r10, r9, r11, r0)
+            r12.data(r10, r9, r11, r3)
             return
         Ld:
-            int r3 = (r12 > r1 ? 1 : (r12 == r1 ? 0 : -1))
-            if (r3 <= 0) goto L6c
+            int r2 = (r12 > r0 ? 1 : (r12 == r0 ? 0 : -1))
+            if (r2 <= 0) goto L6c
             monitor-enter(r8)
         L12:
-            long r3 = r8.writeBytesTotal     // Catch: java.lang.Throwable -> L5b java.lang.InterruptedException -> L5d
-            long r5 = r8.writeBytesMaximum     // Catch: java.lang.Throwable -> L5b java.lang.InterruptedException -> L5d
-            int r7 = (r3 > r5 ? 1 : (r3 == r5 ? 0 : -1))
-            if (r7 < 0) goto L32
-            java.util.Map<java.lang.Integer, okhttp3.internal.http2.Http2Stream> r3 = r8.streams     // Catch: java.lang.Throwable -> L5b java.lang.InterruptedException -> L5d
+            long r4 = r8.writeBytesTotal     // Catch: java.lang.Throwable -> L5b java.lang.InterruptedException -> L5d
+            long r6 = r8.writeBytesMaximum     // Catch: java.lang.Throwable -> L5b java.lang.InterruptedException -> L5d
+            int r2 = (r4 > r6 ? 1 : (r4 == r6 ? 0 : -1))
+            if (r2 < 0) goto L32
+            java.util.Map<java.lang.Integer, okhttp3.internal.http2.Http2Stream> r2 = r8.streams     // Catch: java.lang.Throwable -> L5b java.lang.InterruptedException -> L5d
             java.lang.Integer r4 = java.lang.Integer.valueOf(r9)     // Catch: java.lang.Throwable -> L5b java.lang.InterruptedException -> L5d
-            boolean r3 = r3.containsKey(r4)     // Catch: java.lang.Throwable -> L5b java.lang.InterruptedException -> L5d
-            if (r3 == 0) goto L2a
+            boolean r2 = r2.containsKey(r4)     // Catch: java.lang.Throwable -> L5b java.lang.InterruptedException -> L5d
+            if (r2 == 0) goto L2a
             r8.wait()     // Catch: java.lang.Throwable -> L5b java.lang.InterruptedException -> L5d
             goto L12
         L2a:
@@ -354,14 +354,14 @@ public final class Http2Connection implements Closeable {
             r9.<init>(r10)     // Catch: java.lang.Throwable -> L5b java.lang.InterruptedException -> L5d
             throw r9     // Catch: java.lang.Throwable -> L5b java.lang.InterruptedException -> L5d
         L32:
-            long r5 = r5 - r3
-            long r3 = java.lang.Math.min(r12, r5)     // Catch: java.lang.Throwable -> L5b
-            int r4 = (int) r3     // Catch: java.lang.Throwable -> L5b
-            okhttp3.internal.http2.Http2Writer r3 = r8.writer     // Catch: java.lang.Throwable -> L5b
-            int r3 = r3.maxDataLength()     // Catch: java.lang.Throwable -> L5b
-            int r3 = java.lang.Math.min(r4, r3)     // Catch: java.lang.Throwable -> L5b
+            long r6 = r6 - r4
+            long r4 = java.lang.Math.min(r12, r6)     // Catch: java.lang.Throwable -> L5b
+            int r2 = (int) r4     // Catch: java.lang.Throwable -> L5b
+            okhttp3.internal.http2.Http2Writer r4 = r8.writer     // Catch: java.lang.Throwable -> L5b
+            int r4 = r4.maxDataLength()     // Catch: java.lang.Throwable -> L5b
+            int r2 = java.lang.Math.min(r2, r4)     // Catch: java.lang.Throwable -> L5b
             long r4 = r8.writeBytesTotal     // Catch: java.lang.Throwable -> L5b
-            long r6 = (long) r3     // Catch: java.lang.Throwable -> L5b
+            long r6 = (long) r2     // Catch: java.lang.Throwable -> L5b
             long r4 = r4 + r6
             r8.writeBytesTotal = r4     // Catch: java.lang.Throwable -> L5b
             kotlin.Unit r4 = kotlin.Unit.INSTANCE     // Catch: java.lang.Throwable -> L5b
@@ -369,14 +369,14 @@ public final class Http2Connection implements Closeable {
             long r12 = r12 - r6
             okhttp3.internal.http2.Http2Writer r4 = r8.writer
             if (r10 == 0) goto L56
-            int r5 = (r12 > r1 ? 1 : (r12 == r1 ? 0 : -1))
+            int r5 = (r12 > r0 ? 1 : (r12 == r0 ? 0 : -1))
             if (r5 != 0) goto L56
             r5 = 1
             goto L57
         L56:
-            r5 = 0
+            r5 = r3
         L57:
-            r4.data(r5, r9, r11, r3)
+            r4.data(r5, r9, r11, r2)
             goto Ld
         L5b:
             r9 = move-exception
@@ -883,7 +883,7 @@ public final class Http2Connection implements Closeable {
         */
         public final void applyAndAckSettings(boolean r22, okhttp3.internal.http2.Settings r23) {
             /*
-                Method dump skipped, instructions count: 269
+                Method dump skipped, instructions count: 270
                 To view this dump add '--comments-level debug' option
             */
             throw new UnsupportedOperationException("Method not decompiled: okhttp3.internal.http2.Http2Connection.ReaderRunnable.applyAndAckSettings(boolean, okhttp3.internal.http2.Settings):void");

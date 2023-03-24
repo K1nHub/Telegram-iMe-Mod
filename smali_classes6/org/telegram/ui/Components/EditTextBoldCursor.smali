@@ -378,12 +378,12 @@
     if-lez v0, :cond_1
 
     :cond_0
-    const/4 v0, 0x1
+    move v0, v1
 
     goto :goto_0
 
     :cond_1
-    const/4 v0, 0x0
+    move v0, v2
 
     .line 603
     :goto_0
@@ -430,7 +430,7 @@
     goto :goto_1
 
     :cond_3
-    const/4 v3, 0x0
+    move v3, v4
 
     :goto_1
     aput v3, v1, v2
@@ -473,7 +473,7 @@
     goto :goto_2
 
     :cond_5
-    const/4 v3, 0x0
+    move v3, v4
 
     .line 616
     :goto_2
@@ -1750,18 +1750,18 @@
 
     const-wide/16 v11, 0x0
 
-    const-wide/16 v13, 0x11
-
     cmp-long v0, v6, v11
+
+    const-wide/16 v11, 0x11
 
     if-ltz v0, :cond_4
 
-    cmp-long v0, v6, v13
+    cmp-long v0, v6, v11
 
     if-lez v0, :cond_5
 
     :cond_4
-    move-wide v6, v13
+    move-wide v6, v11
 
     .line 693
     :cond_5
@@ -1856,7 +1856,7 @@
     goto :goto_1
 
     :cond_9
-    const/4 v7, 0x0
+    move v7, v3
 
     .line 716
     :goto_1
@@ -1959,7 +1959,7 @@
     .line 723
     iget v11, v1, Lorg/telegram/ui/Components/EditTextBoldCursor;->headerAnimationProgress:F
 
-    mul-float v11, v11, v7
+    mul-float/2addr v11, v7
 
     sub-float v7, v9, v11
 
@@ -1988,7 +1988,7 @@
 
     sub-float v5, v9, v7
 
-    mul-float v4, v4, v5
+    mul-float/2addr v4, v5
 
     .line 728
     invoke-virtual {v8, v4, v10}, Landroid/graphics/Canvas;->translate(FF)V
@@ -2011,7 +2011,7 @@
 
     iget v5, v1, Lorg/telegram/ui/Components/EditTextBoldCursor;->headerAnimationProgress:F
 
-    mul-float v4, v4, v5
+    mul-float/2addr v4, v5
 
     invoke-virtual {v8, v10, v4}, Landroid/graphics/Canvas;->translate(FF)V
 
@@ -2053,7 +2053,7 @@
 
     const/high16 v6, 0x437f0000    # 255.0f
 
-    mul-float v5, v5, v6
+    mul-float/2addr v5, v6
 
     iget v7, v1, Lorg/telegram/ui/Components/EditTextBoldCursor;->hintColor:I
 
@@ -2065,7 +2065,7 @@
 
     div-float/2addr v7, v6
 
-    mul-float v5, v5, v7
+    mul-float/2addr v5, v7
 
     float-to-int v5, v5
 
@@ -2310,12 +2310,12 @@
 
     if-eqz v0, :cond_13
 
-    const/4 v0, 0x1
+    move v0, v6
 
     goto :goto_9
 
     :cond_13
-    const/4 v0, 0x0
+    move v0, v3
 
     goto :goto_9
 
@@ -2396,7 +2396,7 @@
     goto :goto_a
 
     :cond_16
-    const/4 v0, 0x0
+    move v0, v3
 
     .line 808
     :goto_a
@@ -2624,7 +2624,7 @@
     goto :goto_b
 
     :cond_1b
-    const/4 v0, 0x0
+    move v0, v3
 
     .line 846
     :goto_b
@@ -2921,12 +2921,12 @@
 
     if-eqz v6, :cond_24
 
-    const/high16 v6, 0x3f800000    # 1.0f
+    move v6, v9
 
     goto :goto_e
 
     :cond_24
-    const/4 v6, 0x0
+    move v6, v10
 
     :goto_e
     invoke-static {v9, v4}, Ljava/lang/Math;->min(FF)F
@@ -2956,7 +2956,7 @@
 
     if-nez v2, :cond_26
 
-    const/4 v2, 0x0
+    move v2, v3
 
     goto :goto_f
 
@@ -3106,7 +3106,7 @@
 
     int-to-float v3, v14
 
-    mul-float v3, v3, v0
+    mul-float/2addr v3, v0
 
     .line 907
     iput v3, v1, Lorg/telegram/ui/Components/EditTextBoldCursor;->activeLineWidth:F
@@ -3127,7 +3127,7 @@
 
     int-to-float v0, v0
 
-    mul-float v9, v9, v0
+    mul-float/2addr v9, v0
 
     float-to-int v0, v9
 

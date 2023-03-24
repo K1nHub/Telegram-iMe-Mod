@@ -275,7 +275,7 @@
 .end method
 
 .method public onInitializeAccessibilityNodeInfo(Landroid/view/accessibility/AccessibilityNodeInfo;)V
-    .locals 6
+    .locals 5
 
     .line 144
     invoke-super {p0, p1}, Landroid/widget/FrameLayout;->onInitializeAccessibilityNodeInfo(Landroid/view/accessibility/AccessibilityNodeInfo;)V
@@ -297,9 +297,9 @@
 
     const-wide/high16 v3, 0x3fe0000000000000L    # 0.5
 
-    cmpl-double v5, v1, v3
+    cmpl-double v1, v1, v3
 
-    if-lez v5, :cond_0
+    if-lez v1, :cond_0
 
     .line 148
     invoke-virtual {p1, v0}, Landroid/view/accessibility/AccessibilityNodeInfo;->setSelected(Z)V
@@ -619,32 +619,32 @@
 
     invoke-virtual {v0, v4}, Landroid/graphics/drawable/Drawable;->setColorFilter(Landroid/graphics/ColorFilter;)V
 
-    const/16 v0, 0x4c
+    const/high16 v0, 0x3f800000    # 1.0f
 
-    const/4 v3, 0x0
+    cmpl-float v0, p1, v0
 
-    const/high16 v4, 0x3f800000    # 1.0f
+    const/16 v3, 0x4c
 
-    cmpl-float v4, p1, v4
+    const/4 v4, 0x0
 
-    if-nez v4, :cond_0
+    if-nez v0, :cond_0
 
     .line 93
     iget-object p1, p0, Lorg/telegram/ui/Components/ReactionTabHolderView;->overlaySelectorView:Landroid/view/View;
 
-    iget v1, p0, Lorg/telegram/ui/Components/ReactionTabHolderView;->radius:F
+    iget v0, p0, Lorg/telegram/ui/Components/ReactionTabHolderView;->radius:F
 
-    float-to-int v1, v1
+    float-to-int v0, v0
 
     invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
 
-    move-result v2
+    move-result v1
 
-    invoke-static {v2, v0}, Landroidx/core/graphics/ColorUtils;->setAlphaComponent(II)I
+    invoke-static {v1, v3}, Landroidx/core/graphics/ColorUtils;->setAlphaComponent(II)I
 
-    move-result v0
+    move-result v1
 
-    invoke-static {v1, v3, v0}, Lorg/telegram/ui/ActionBar/Theme;->createSimpleSelectorRoundRectDrawable(III)Landroid/graphics/drawable/Drawable;
+    invoke-static {v0, v4, v1}, Lorg/telegram/ui/ActionBar/Theme;->createSimpleSelectorRoundRectDrawable(III)Landroid/graphics/drawable/Drawable;
 
     move-result-object v0
 
@@ -653,24 +653,24 @@
     goto :goto_0
 
     :cond_0
-    const/4 v2, 0x0
+    const/4 v0, 0x0
 
-    cmpl-float p1, p1, v2
+    cmpl-float p1, p1, v0
 
     if-nez p1, :cond_1
 
     .line 95
     iget-object p1, p0, Lorg/telegram/ui/Components/ReactionTabHolderView;->overlaySelectorView:Landroid/view/View;
 
-    iget v2, p0, Lorg/telegram/ui/Components/ReactionTabHolderView;->radius:F
+    iget v0, p0, Lorg/telegram/ui/Components/ReactionTabHolderView;->radius:F
 
-    float-to-int v2, v2
+    float-to-int v0, v0
 
-    invoke-static {v1, v0}, Landroidx/core/graphics/ColorUtils;->setAlphaComponent(II)I
+    invoke-static {v1, v3}, Landroidx/core/graphics/ColorUtils;->setAlphaComponent(II)I
 
-    move-result v0
+    move-result v1
 
-    invoke-static {v2, v3, v0}, Lorg/telegram/ui/ActionBar/Theme;->createSimpleSelectorRoundRectDrawable(III)Landroid/graphics/drawable/Drawable;
+    invoke-static {v0, v4, v1}, Lorg/telegram/ui/ActionBar/Theme;->createSimpleSelectorRoundRectDrawable(III)Landroid/graphics/drawable/Drawable;
 
     move-result-object v0
 

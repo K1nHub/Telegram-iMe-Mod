@@ -210,9 +210,9 @@
     .line 466
     rem-long/2addr p0, v0
 
-    long-to-int p1, p0
+    long-to-int p0, p0
 
-    return p1
+    return p0
 .end method
 
 .method private static getChildPeriodUid(Ljava/lang/Object;)Ljava/lang/Object;
@@ -231,7 +231,7 @@
 
     int-to-long v0, p2
 
-    mul-long p0, p0, v0
+    mul-long/2addr p0, v0
 
     int-to-long p2, p3
 
@@ -284,7 +284,7 @@
 .end method
 
 .method private maybeCreateConcatenatedTimeline()Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource2$ConcatenatedTimeline;
-    .locals 30
+    .locals 29
 
     move-object/from16 v0, p0
 
@@ -315,17 +315,17 @@
 
     const/4 v10, 0x1
 
-    const/4 v11, 0x0
+    move v12, v10
 
-    const/4 v12, 0x1
+    move/from16 v17, v12
+
+    const/4 v11, 0x0
 
     const/4 v13, 0x0
 
     const/4 v14, 0x0
 
     const-wide/16 v15, 0x0
-
-    const/16 v17, 0x1
 
     const/16 v18, 0x0
 
@@ -397,7 +397,7 @@
 
     move-result v10
 
-    const-wide v26, -0x7fffffffffffffffL    # -4.9E-324
+    const-wide v25, -0x7fffffffffffffffL    # -4.9E-324
 
     if-ge v8, v10, :cond_7
 
@@ -426,14 +426,14 @@
 
     if-eqz v10, :cond_1
 
-    move-object/from16 v28, v7
+    move-object/from16 v27, v7
 
     const/4 v12, 0x1
 
     goto :goto_2
 
     :cond_1
-    move-object/from16 v28, v7
+    move-object/from16 v27, v7
 
     const/4 v12, 0x0
 
@@ -441,16 +441,16 @@
     :goto_2
     iget-wide v6, v1, Lcom/google/android/exoplayer2/Timeline$Window;->durationUs:J
 
-    cmp-long v29, v6, v26
+    cmp-long v28, v6, v25
 
-    if-nez v29, :cond_2
+    if-nez v28, :cond_2
 
     .line 389
     iget-wide v6, v9, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource2$MediaSourceHolder;->initialPlaceholderDurationUs:J
 
-    cmp-long v29, v6, v26
+    cmp-long v25, v6, v25
 
-    if-nez v29, :cond_2
+    if-nez v25, :cond_2
 
     const/4 v10, 0x0
 
@@ -471,7 +471,7 @@
     .line 397
     iget-wide v6, v1, Lcom/google/android/exoplayer2/Timeline$Window;->defaultPositionUs:J
 
-    move/from16 v29, v11
+    move/from16 v28, v11
 
     .line 398
     iget-wide v10, v1, Lcom/google/android/exoplayer2/Timeline$Window;->positionInFirstPeriodUs:J
@@ -487,16 +487,16 @@
     goto :goto_4
 
     :cond_3
-    move/from16 v29, v11
+    move/from16 v28, v11
 
     .line 400
     iget-wide v6, v1, Lcom/google/android/exoplayer2/Timeline$Window;->positionInFirstPeriodUs:J
 
     const-wide/16 v10, 0x0
 
-    cmp-long v24, v6, v10
+    cmp-long v6, v6, v10
 
-    if-nez v24, :cond_4
+    if-nez v6, :cond_4
 
     const/4 v6, 0x1
 
@@ -541,21 +541,21 @@
 
     add-int/lit8 v8, v8, 0x1
 
-    move-object/from16 v7, v28
+    move-object/from16 v7, v27
 
-    move/from16 v11, v29
+    move/from16 v11, v28
 
     goto :goto_1
 
     :cond_7
-    move-object/from16 v28, v7
+    move-object/from16 v27, v7
 
-    move/from16 v29, v11
+    move/from16 v28, v11
 
     const-wide/16 v10, 0x0
 
     .line 408
-    invoke-virtual/range {v28 .. v28}, Lcom/google/android/exoplayer2/Timeline;->getPeriodCount()I
+    invoke-virtual/range {v27 .. v27}, Lcom/google/android/exoplayer2/Timeline;->getPeriodCount()I
 
     move-result v6
 
@@ -571,7 +571,7 @@
 
     invoke-virtual {v5, v8}, Lcom/google/common/collect/ImmutableList$Builder;->add(Ljava/lang/Object;)Lcom/google/common/collect/ImmutableList$Builder;
 
-    move-object/from16 v8, v28
+    move-object/from16 v8, v27
 
     .line 411
     invoke-virtual {v8, v7, v2}, Lcom/google/android/exoplayer2/Timeline;->getPeriod(ILcom/google/android/exoplayer2/Timeline$Period;)Lcom/google/android/exoplayer2/Timeline$Period;
@@ -579,17 +579,17 @@
     .line 412
     iget-wide v10, v2, Lcom/google/android/exoplayer2/Timeline$Period;->durationUs:J
 
-    cmp-long v28, v10, v26
+    cmp-long v27, v10, v25
 
-    if-nez v28, :cond_a
+    if-nez v27, :cond_a
 
-    move-object/from16 v28, v2
+    move-object/from16 v27, v2
 
     const/4 v2, 0x1
 
     if-ne v6, v2, :cond_8
 
-    const/4 v10, 0x1
+    move v10, v2
 
     goto :goto_8
 
@@ -605,9 +605,9 @@
     .line 418
     iget-wide v10, v1, Lcom/google/android/exoplayer2/Timeline$Window;->durationUs:J
 
-    cmp-long v25, v10, v26
+    cmp-long v24, v10, v25
 
-    if-eqz v25, :cond_9
+    if-eqz v24, :cond_9
 
     goto :goto_9
 
@@ -616,7 +616,7 @@
     iget-wide v10, v9, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource2$MediaSourceHolder;->initialPlaceholderDurationUs:J
 
     :goto_9
-    move-object/from16 v25, v3
+    move-object/from16 v24, v3
 
     .line 421
     iget-wide v2, v1, Lcom/google/android/exoplayer2/Timeline$Window;->positionInFirstPeriodUs:J
@@ -626,38 +626,38 @@
     goto :goto_a
 
     :cond_a
-    move-object/from16 v28, v2
+    move-object/from16 v27, v2
 
-    move-object/from16 v25, v3
+    move-object/from16 v24, v3
 
     :goto_a
     add-long/2addr v15, v10
 
     add-int/lit8 v7, v7, 0x1
 
-    move-object/from16 v3, v25
+    move-object/from16 v3, v24
 
-    move-object/from16 v2, v28
+    move-object/from16 v2, v27
 
     const-wide/16 v10, 0x0
 
-    move-object/from16 v28, v8
+    move-object/from16 v27, v8
 
     goto :goto_7
 
     :cond_b
-    move-object/from16 v28, v2
+    move-object/from16 v27, v2
 
-    move-object/from16 v25, v3
+    move-object/from16 v24, v3
 
-    add-int/lit8 v11, v29, 0x1
+    add-int/lit8 v11, v28, 0x1
 
     const/4 v10, 0x1
 
     goto/16 :goto_0
 
     :cond_c
-    move-object/from16 v25, v3
+    move-object/from16 v24, v3
 
     .line 426
     new-instance v1, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource2$ConcatenatedTimeline;
@@ -665,7 +665,7 @@
     iget-object v2, v0, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource2;->mediaItem:Lcom/google/android/exoplayer2/MediaItem;
 
     .line 428
-    invoke-virtual/range {v25 .. v25}, Lcom/google/common/collect/ImmutableList$Builder;->build()Lcom/google/common/collect/ImmutableList;
+    invoke-virtual/range {v24 .. v24}, Lcom/google/common/collect/ImmutableList$Builder;->build()Lcom/google/common/collect/ImmutableList;
 
     move-result-object v14
 

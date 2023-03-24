@@ -155,7 +155,7 @@
 
     move-result v2
 
-    mul-int v2, v2, v1
+    mul-int/2addr v2, v1
 
     .line 67
     iget-object v4, p0, Lorg/telegram/ui/Components/BottomPagesView;->rect:Landroid/graphics/RectF;
@@ -235,7 +235,7 @@
 
     move-result v2
 
-    mul-int v1, v1, v2
+    mul-int/2addr v1, v2
 
     .line 76
     iget v2, p0, Lorg/telegram/ui/Components/BottomPagesView;->progress:F
@@ -272,7 +272,7 @@
 
     iget v7, p0, Lorg/telegram/ui/Components/BottomPagesView;->progress:F
 
-    mul-float v4, v4, v7
+    mul-float/2addr v4, v7
 
     add-float/2addr v1, v4
 
@@ -304,7 +304,7 @@
 
     sub-float/2addr v7, v8
 
-    mul-float v4, v4, v7
+    mul-float/2addr v4, v7
 
     sub-float/2addr v6, v4
 

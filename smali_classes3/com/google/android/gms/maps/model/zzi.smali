@@ -37,6 +37,12 @@
 
     const/high16 v6, 0x3f800000    # 1.0f
 
+    move v14, v2
+
+    move v15, v14
+
+    move/from16 v16, v15
+
     move-object v8, v3
 
     move-object v9, v8
@@ -45,25 +51,19 @@
 
     move-object v11, v10
 
-    const/4 v12, 0x0
+    move v12, v4
 
-    const/4 v13, 0x0
+    move v13, v12
 
-    const/4 v14, 0x0
+    move/from16 v17, v13
 
-    const/4 v15, 0x0
+    move/from16 v19, v17
 
-    const/16 v16, 0x0
+    move/from16 v21, v19
 
-    const/16 v17, 0x0
+    move/from16 v18, v5
 
-    const/high16 v18, 0x3f000000    # 0.5f
-
-    const/16 v19, 0x0
-
-    const/high16 v20, 0x3f800000    # 1.0f
-
-    const/16 v21, 0x0
+    move/from16 v20, v6
 
     .line 2
     :goto_0

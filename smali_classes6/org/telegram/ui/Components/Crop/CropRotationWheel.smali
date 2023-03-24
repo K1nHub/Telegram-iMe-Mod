@@ -497,7 +497,7 @@
 
     move-result-wide p2
 
-    mul-double v1, v1, p2
+    mul-double/2addr v1, p2
 
     double-to-int p2, v1
 
@@ -519,7 +519,7 @@
 
     div-float/2addr p2, v0
 
-    mul-float p2, p2, p2
+    mul-float/2addr p2, p2
 
     const/high16 v0, 0x3f800000    # 1.0f
 
@@ -527,7 +527,7 @@
 
     const/high16 p2, 0x437f0000    # 255.0f
 
-    mul-float v0, v0, p2
+    mul-float/2addr v0, p2
 
     float-to-int p2, v0
 
@@ -562,7 +562,7 @@
     goto :goto_0
 
     :cond_1
-    const/4 p2, 0x2
+    move p2, p3
 
     :goto_0
     if-eqz p6, :cond_2
@@ -646,7 +646,7 @@
 
     const/high16 v12, 0x40000000    # 2.0f
 
-    mul-float v0, v0, v12
+    mul-float/2addr v0, v12
 
     const/high16 v1, 0x40a00000    # 5.0f
 
@@ -709,7 +709,7 @@
 
     :cond_3
     :goto_1
-    const/4 v6, 0x1
+    move/from16 v6, v17
 
     :goto_2
     move-object/from16 v0, p0
@@ -752,7 +752,7 @@
 
     if-ne v2, v0, :cond_5
 
-    const/4 v6, 0x1
+    move/from16 v6, v17
 
     goto :goto_4
 
@@ -1116,12 +1116,8 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_0
-
-    :catch_0
-    nop
-
     .line 202
+    :catch_0
     :cond_5
     :goto_0
     iget v0, p0, Lorg/telegram/ui/Components/Crop/CropRotationWheel;->rotation:F

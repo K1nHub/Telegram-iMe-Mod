@@ -136,7 +136,7 @@
 
     invoke-direct {v3, v7}, Ljava/lang/StringBuilder;-><init>(I)V
 
-    const/4 v7, 0x0
+    move v7, v5
 
     .line 3034
     :goto_0
@@ -183,7 +183,7 @@
 
     if-eqz v2, :cond_6
 
-    const/4 v7, 0x0
+    move v7, v5
 
     .line 3043
     :goto_1

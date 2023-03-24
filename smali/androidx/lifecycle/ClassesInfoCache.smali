@@ -130,7 +130,7 @@
 
     const/4 v3, 0x0
 
-    const/4 v4, 0x0
+    move v4, v3
 
     :goto_0
     if-ge v4, v2, :cond_2
@@ -204,9 +204,9 @@
     :goto_2
     array-length v0, p2
 
-    const/4 v2, 0x0
+    move v2, v3
 
-    const/4 v4, 0x0
+    move v4, v2
 
     :goto_3
     if-ge v2, v0, :cond_b
@@ -250,7 +250,7 @@
 
     if-eqz v8, :cond_5
 
-    const/4 v8, 0x1
+    move v8, v7
 
     goto :goto_4
 
@@ -265,7 +265,7 @@
     throw p1
 
     :cond_6
-    const/4 v8, 0x0
+    move v8, v3
 
     .line 143
     :goto_4
@@ -296,7 +296,7 @@
 
     if-ne v6, v8, :cond_7
 
-    const/4 v8, 0x2
+    move v8, v10
 
     goto :goto_5
 
@@ -335,7 +335,7 @@
     .line 160
     invoke-direct {p0, v1, v4, v6, p1}, Landroidx/lifecycle/ClassesInfoCache;->verifyAndPutHandler(Ljava/util/Map;Landroidx/lifecycle/ClassesInfoCache$MethodReference;Landroidx/lifecycle/Lifecycle$Event;Ljava/lang/Class;)V
 
-    const/4 v4, 0x1
+    move v4, v7
 
     :goto_6
     add-int/lit8 v2, v2, 0x1
@@ -577,7 +577,7 @@
 
     const/4 v2, 0x0
 
-    const/4 v3, 0x0
+    move v3, v2
 
     :goto_0
     if-ge v3, v1, :cond_2

@@ -571,11 +571,11 @@
 
     const/4 v2, 0x1
 
-    const/4 v3, 0x0
+    move v3, v0
 
-    const/4 v4, 0x0
+    move v4, v3
 
-    const/4 v5, 0x0
+    move v5, v4
 
     .line 650
     :cond_0
@@ -612,21 +612,21 @@
     :pswitch_0
     add-int/lit8 v5, v5, -0x1
 
-    const/4 v4, 0x0
+    move v4, v0
 
     goto :goto_0
 
     :pswitch_1
     add-int/lit8 v5, v5, 0x1
 
-    const/4 v4, 0x1
+    move v4, v2
 
     goto :goto_0
 
     :pswitch_2
     add-int/lit8 v5, v5, 0x1
 
-    const/4 v4, -0x1
+    move v4, v1
 
     goto :goto_0
 
@@ -724,13 +724,14 @@
 
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    move v1, v0
 
-    const/4 v2, 0x0
+    :goto_0
+    move v2, v1
 
     .line 747
     :cond_0
-    :goto_0
+    :goto_1
     iget v3, p0, Landroidx/core/text/BidiFormatter$DirectionalityEstimator;->charIndex:I
 
     if-lez v3, :cond_6
@@ -760,12 +761,12 @@
 
     if-nez v2, :cond_0
 
-    goto :goto_1
+    goto :goto_2
 
     :pswitch_0
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_0
+    goto :goto_1
 
     :pswitch_1
     if-ne v2, v1, :cond_1
@@ -780,7 +781,7 @@
     :cond_1
     add-int/lit8 v1, v1, -0x1
 
-    goto :goto_0
+    goto :goto_1
 
     :cond_2
     if-nez v1, :cond_3
@@ -790,7 +791,7 @@
     :cond_3
     if-nez v2, :cond_0
 
-    goto :goto_1
+    goto :goto_2
 
     :cond_4
     if-nez v1, :cond_5
@@ -800,13 +801,13 @@
     :cond_5
     if-nez v2, :cond_0
 
-    :goto_1
-    move v2, v1
-
+    :goto_2
     goto :goto_0
 
     :cond_6
     return v0
+
+    nop
 
     :pswitch_data_0
     .packed-switch 0xe

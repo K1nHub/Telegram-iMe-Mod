@@ -30,7 +30,7 @@ import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.HashMap;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3286R;
+import org.telegram.messenger.C3301R;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.NotificationCenter;
@@ -133,7 +133,7 @@ public class ActionBarPopupWindow extends PopupWindow {
         }
 
         public ActionBarPopupWindowLayout(Context context, Theme.ResourcesProvider resourcesProvider) {
-            this(context, C3286R.C3288drawable.popup_fixed_alert2, resourcesProvider);
+            this(context, C3301R.C3303drawable.popup_fixed_alert2, resourcesProvider);
         }
 
         public ActionBarPopupWindowLayout(Context context, int i, Theme.ResourcesProvider resourcesProvider) {
@@ -199,9 +199,9 @@ public class ActionBarPopupWindow extends PopupWindow {
                         for (int i7 = 0; i7 < childCount; i7++) {
                             View childAt = getChildAt(i7);
                             if (childAt.getVisibility() != 8) {
-                                Object tag = childAt.getTag(C3286R.C3289id.width_tag);
-                                Object tag2 = childAt.getTag(C3286R.C3289id.object_tag);
-                                Object tag3 = childAt.getTag(C3286R.C3289id.fit_width_tag);
+                                Object tag = childAt.getTag(C3301R.C3304id.width_tag);
+                                Object tag2 = childAt.getTag(C3301R.C3304id.object_tag);
+                                Object tag3 = childAt.getTag(C3301R.C3304id.fit_width_tag);
                                 if (tag != null) {
                                     childAt.getLayoutParams().width = -2;
                                 }
@@ -441,14 +441,14 @@ public class ActionBarPopupWindow extends PopupWindow {
             return super.dispatchKeyEvent(keyEvent);
         }
 
-        /* JADX WARN: Removed duplicated region for block: B:105:0x025b A[SYNTHETIC] */
-        /* JADX WARN: Removed duplicated region for block: B:38:0x00f9  */
-        /* JADX WARN: Removed duplicated region for block: B:39:0x00fc  */
-        /* JADX WARN: Removed duplicated region for block: B:42:0x0105  */
-        /* JADX WARN: Removed duplicated region for block: B:43:0x0123  */
-        /* JADX WARN: Removed duplicated region for block: B:68:0x01b7  */
-        /* JADX WARN: Removed duplicated region for block: B:74:0x01e2  */
-        /* JADX WARN: Removed duplicated region for block: B:89:0x0258  */
+        /* JADX WARN: Removed duplicated region for block: B:105:0x024c A[SYNTHETIC] */
+        /* JADX WARN: Removed duplicated region for block: B:38:0x00f2  */
+        /* JADX WARN: Removed duplicated region for block: B:39:0x00f5  */
+        /* JADX WARN: Removed duplicated region for block: B:42:0x00fe  */
+        /* JADX WARN: Removed duplicated region for block: B:43:0x011a  */
+        /* JADX WARN: Removed duplicated region for block: B:68:0x01a9  */
+        /* JADX WARN: Removed duplicated region for block: B:74:0x01d4  */
+        /* JADX WARN: Removed duplicated region for block: B:89:0x0249  */
         @Override // android.view.ViewGroup, android.view.View
         /*
             Code decompiled incorrectly, please refer to instructions dump.
@@ -456,7 +456,7 @@ public class ActionBarPopupWindow extends PopupWindow {
         */
         protected void dispatchDraw(android.graphics.Canvas r20) {
             /*
-                Method dump skipped, instructions count: 667
+                Method dump skipped, instructions count: 650
                 To view this dump add '--comments-level debug' option
             */
             throw new UnsupportedOperationException("Method not decompiled: org.telegram.p048ui.ActionBar.ActionBarPopupWindow.ActionBarPopupWindowLayout.dispatchDraw(android.graphics.Canvas):void");
@@ -513,7 +513,7 @@ public class ActionBarPopupWindow extends PopupWindow {
             for (int i2 = 0; i2 < childCount; i2++) {
                 View childAt2 = this.linearLayout.getChildAt(i2);
                 if (childAt2.getVisibility() == 0) {
-                    Object tag = childAt2.getTag(C3286R.C3289id.object_tag);
+                    Object tag = childAt2.getTag(C3301R.C3304id.object_tag);
                     if (childAt2 instanceof ActionBarMenuSubItem) {
                         ((ActionBarMenuSubItem) childAt2).updateSelectorBackground(childAt2 == view || z, childAt2 == view2);
                     }
@@ -973,7 +973,7 @@ public class ActionBarPopupWindow extends PopupWindow {
 
         public GapView(Context context, int i, int i2) {
             super(context);
-            this.shadowDrawable = Theme.getThemedDrawable(getContext(), C3286R.C3288drawable.greydivider, i2);
+            this.shadowDrawable = Theme.getThemedDrawable(getContext(), C3301R.C3303drawable.greydivider, i2);
             setBackgroundColor(i);
         }
 

@@ -57,22 +57,22 @@ public class ReactionsEffectOverlay {
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:101:0x034e  */
-    /* JADX WARN: Removed duplicated region for block: B:102:0x035e  */
-    /* JADX WARN: Removed duplicated region for block: B:109:0x03e9  */
-    /* JADX WARN: Removed duplicated region for block: B:110:0x03fe  */
-    /* JADX WARN: Removed duplicated region for block: B:118:0x0411  */
-    /* JADX WARN: Removed duplicated region for block: B:141:0x0556  */
-    /* JADX WARN: Removed duplicated region for block: B:166:0x05e6  */
-    /* JADX WARN: Removed duplicated region for block: B:171:0x0621  */
-    /* JADX WARN: Removed duplicated region for block: B:174:0x0645  */
-    /* JADX WARN: Removed duplicated region for block: B:45:0x0191  */
-    /* JADX WARN: Removed duplicated region for block: B:46:0x01b7  */
+    /* JADX WARN: Removed duplicated region for block: B:101:0x0344  */
+    /* JADX WARN: Removed duplicated region for block: B:102:0x0353  */
+    /* JADX WARN: Removed duplicated region for block: B:109:0x03dd  */
+    /* JADX WARN: Removed duplicated region for block: B:110:0x03f2  */
+    /* JADX WARN: Removed duplicated region for block: B:118:0x0405  */
+    /* JADX WARN: Removed duplicated region for block: B:141:0x054a  */
+    /* JADX WARN: Removed duplicated region for block: B:166:0x05da  */
+    /* JADX WARN: Removed duplicated region for block: B:171:0x0615  */
+    /* JADX WARN: Removed duplicated region for block: B:174:0x0639  */
+    /* JADX WARN: Removed duplicated region for block: B:45:0x0190  */
+    /* JADX WARN: Removed duplicated region for block: B:46:0x01b4  */
     /* JADX WARN: Type inference failed for: r15v11 */
     /* JADX WARN: Type inference failed for: r15v13 */
     /* JADX WARN: Type inference failed for: r15v14 */
     /* JADX WARN: Type inference failed for: r15v4 */
-    /* JADX WARN: Type inference failed for: r15v5, types: [int, boolean] */
+    /* JADX WARN: Type inference failed for: r15v5, types: [boolean, int] */
     /* JADX WARN: Type inference failed for: r15v6 */
     /* JADX WARN: Type inference failed for: r15v7 */
     /*
@@ -81,7 +81,7 @@ public class ReactionsEffectOverlay {
     */
     private ReactionsEffectOverlay(android.content.Context r35, org.telegram.p048ui.ActionBar.BaseFragment r36, org.telegram.p048ui.Components.ReactionsContainerLayout r37, org.telegram.p048ui.Cells.ChatMessageCell r38, android.view.View r39, float r40, float r41, org.telegram.p048ui.Components.Reactions.ReactionsLayoutInBubble.VisibleReaction r42, int r43, int r44) {
         /*
-            Method dump skipped, instructions count: 1750
+            Method dump skipped, instructions count: 1738
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: org.telegram.p048ui.Components.Reactions.ReactionsEffectOverlay.<init>(android.content.Context, org.telegram.ui.ActionBar.BaseFragment, org.telegram.ui.Components.ReactionsContainerLayout, org.telegram.ui.Cells.ChatMessageCell, android.view.View, float, float, org.telegram.ui.Components.Reactions.ReactionsLayoutInBubble$VisibleReaction, int, int):void");
@@ -90,7 +90,7 @@ public class ReactionsEffectOverlay {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: org.telegram.ui.Components.Reactions.ReactionsEffectOverlay$1 */
     /* loaded from: classes6.dex */
-    public class C49851 extends FrameLayout {
+    public class C50001 extends FrameLayout {
         final /* synthetic */ int val$animationType;
         final /* synthetic */ ChatMessageCell val$cell;
         final /* synthetic */ ChatActivity val$chatActivity;
@@ -103,7 +103,7 @@ public class ReactionsEffectOverlay {
         final /* synthetic */ ReactionsLayoutInBubble.VisibleReaction val$visibleReaction;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        C49851(Context context, BaseFragment baseFragment, ChatMessageCell chatMessageCell, ChatActivity chatActivity, int i, int i2, boolean z, float f, float f2, float f3, ReactionsLayoutInBubble.VisibleReaction visibleReaction) {
+        C50001(Context context, BaseFragment baseFragment, ChatMessageCell chatMessageCell, ChatActivity chatActivity, int i, int i2, boolean z, float f, float f2, float f3, ReactionsLayoutInBubble.VisibleReaction visibleReaction) {
             super(context);
             this.val$fragment = baseFragment;
             this.val$cell = chatMessageCell;
@@ -117,14 +117,14 @@ public class ReactionsEffectOverlay {
             this.val$visibleReaction = visibleReaction;
         }
 
-        /* JADX WARN: Removed duplicated region for block: B:176:0x047b  */
-        /* JADX WARN: Removed duplicated region for block: B:184:0x04aa  */
-        /* JADX WARN: Removed duplicated region for block: B:185:0x04ad  */
-        /* JADX WARN: Removed duplicated region for block: B:188:0x0575  */
-        /* JADX WARN: Removed duplicated region for block: B:193:0x0582  */
-        /* JADX WARN: Removed duplicated region for block: B:194:0x0596  */
-        /* JADX WARN: Removed duplicated region for block: B:197:0x05a0  */
-        /* JADX WARN: Removed duplicated region for block: B:201:0x05b3  */
+        /* JADX WARN: Removed duplicated region for block: B:176:0x0469  */
+        /* JADX WARN: Removed duplicated region for block: B:184:0x0497  */
+        /* JADX WARN: Removed duplicated region for block: B:185:0x049a  */
+        /* JADX WARN: Removed duplicated region for block: B:188:0x0557  */
+        /* JADX WARN: Removed duplicated region for block: B:193:0x0564  */
+        /* JADX WARN: Removed duplicated region for block: B:194:0x0577  */
+        /* JADX WARN: Removed duplicated region for block: B:197:0x0581  */
+        /* JADX WARN: Removed duplicated region for block: B:201:0x0594  */
         @Override // android.view.ViewGroup, android.view.View
         /*
             Code decompiled incorrectly, please refer to instructions dump.
@@ -132,10 +132,10 @@ public class ReactionsEffectOverlay {
         */
         protected void dispatchDraw(android.graphics.Canvas r20) {
             /*
-                Method dump skipped, instructions count: 1488
+                Method dump skipped, instructions count: 1456
                 To view this dump add '--comments-level debug' option
             */
-            throw new UnsupportedOperationException("Method not decompiled: org.telegram.p048ui.Components.Reactions.ReactionsEffectOverlay.C49851.dispatchDraw(android.graphics.Canvas):void");
+            throw new UnsupportedOperationException("Method not decompiled: org.telegram.p048ui.Components.Reactions.ReactionsEffectOverlay.C50001.dispatchDraw(android.graphics.Canvas):void");
         }
 
         /* JADX INFO: Access modifiers changed from: private */
@@ -257,7 +257,7 @@ public class ReactionsEffectOverlay {
             if (r1 == 0) goto L70
             goto L71
         L70:
-            r13 = 0
+            r13 = r0
         L71:
             r15.useWindow = r13
             if (r13 == 0) goto L9b
@@ -507,7 +507,7 @@ public class ReactionsEffectOverlay {
         private AvatarParticle(ReactionsEffectOverlay reactionsEffectOverlay) {
         }
 
-        /* synthetic */ AvatarParticle(ReactionsEffectOverlay reactionsEffectOverlay, C49851 c49851) {
+        /* synthetic */ AvatarParticle(ReactionsEffectOverlay reactionsEffectOverlay, C50001 c50001) {
             this(reactionsEffectOverlay);
         }
     }

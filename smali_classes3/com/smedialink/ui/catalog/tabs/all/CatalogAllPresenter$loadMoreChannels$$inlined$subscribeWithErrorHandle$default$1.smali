@@ -69,7 +69,7 @@
 .end method
 
 .method public final invoke(Ljava/lang/Object;)V
-    .locals 8
+    .locals 7
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -130,9 +130,9 @@
 
     iget-wide v5, p0, Lcom/smedialink/ui/catalog/tabs/all/CatalogAllPresenter$loadMoreChannels$$inlined$subscribeWithErrorHandle$default$1;->$categoryId$inlined:J
 
-    cmp-long v7, v3, v5
+    cmp-long v3, v3, v5
 
-    if-nez v7, :cond_1
+    if-nez v3, :cond_1
 
     const/4 v3, 0x1
 

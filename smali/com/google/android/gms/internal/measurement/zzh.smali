@@ -56,7 +56,7 @@
 
     move-result-wide p0
 
-    mul-double v0, v0, p0
+    mul-double/2addr v0, p0
 
     return-wide v0
 
@@ -66,7 +66,7 @@
 .end method
 
 .method public static zzb(D)I
-    .locals 3
+    .locals 2
 
     .line 1
     invoke-static {p0, p1}, Ljava/lang/Double;->isNaN(D)Z
@@ -83,14 +83,14 @@
 
     const-wide/16 v0, 0x0
 
-    cmpl-double v2, p0, v0
+    cmpl-double v0, p0, v0
 
-    if-nez v2, :cond_0
+    if-nez v0, :cond_0
 
     goto :goto_1
 
     :cond_0
-    if-lez v2, :cond_1
+    if-lez v0, :cond_1
 
     const/4 v0, 0x1
 
@@ -111,7 +111,7 @@
 
     move-result-wide p0
 
-    mul-double v0, v0, p0
+    mul-double/2addr v0, p0
 
     const-wide/high16 p0, 0x41f0000000000000L    # 4.294967296E9
 
@@ -119,9 +119,9 @@
 
     double-to-long p0, v0
 
-    long-to-int p1, p0
+    long-to-int p0, p0
 
-    return p1
+    return p0
 
     :cond_2
     :goto_1
@@ -637,7 +637,7 @@
 .end method
 
 .method public static zzk(Lcom/google/android/gms/internal/measurement/zzap;)Z
-    .locals 6
+    .locals 5
 
     const/4 v0, 0x0
 
@@ -664,9 +664,9 @@
 
     const-wide/16 v3, 0x0
 
-    cmpl-double v5, v1, v3
+    cmpl-double v1, v1, v3
 
-    if-ltz v5, :cond_1
+    if-ltz v1, :cond_1
 
     invoke-virtual {p0}, Ljava/lang/Double;->doubleValue()D
 

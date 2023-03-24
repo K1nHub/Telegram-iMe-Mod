@@ -12,15 +12,13 @@
 
 .field public final synthetic f$2:J
 
-.field public final synthetic f$3:Z
+.field public final synthetic f$3:Landroidx/core/util/Consumer;
 
 .field public final synthetic f$4:I
 
-.field public final synthetic f$5:I
-
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/messenger/MessagesController;IJZII)V
+.method public synthetic constructor <init>(Lorg/telegram/messenger/MessagesController;IJLandroidx/core/util/Consumer;I)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -31,11 +29,9 @@
 
     iput-wide p3, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda54;->f$2:J
 
-    iput-boolean p5, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda54;->f$3:Z
+    iput-object p5, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda54;->f$3:Landroidx/core/util/Consumer;
 
     iput p6, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda54;->f$4:I
-
-    iput p7, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda54;->f$5:I
 
     return-void
 .end method
@@ -43,7 +39,7 @@
 
 # virtual methods
 .method public final run()V
-    .locals 7
+    .locals 6
 
     iget-object v0, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda54;->f$0:Lorg/telegram/messenger/MessagesController;
 
@@ -51,13 +47,11 @@
 
     iget-wide v2, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda54;->f$2:J
 
-    iget-boolean v4, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda54;->f$3:Z
+    iget-object v4, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda54;->f$3:Landroidx/core/util/Consumer;
 
     iget v5, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda54;->f$4:I
 
-    iget v6, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda54;->f$5:I
-
-    invoke-static/range {v0 .. v6}, Lorg/telegram/messenger/MessagesController;->$r8$lambda$YXFzPr0ZiybPwp_cXrm17G8CKNA(Lorg/telegram/messenger/MessagesController;IJZII)V
+    invoke-static/range {v0 .. v5}, Lorg/telegram/messenger/MessagesController;->$r8$lambda$kIHkzZvre26kYFoSreTyrbbzE6M(Lorg/telegram/messenger/MessagesController;IJLandroidx/core/util/Consumer;I)V
 
     return-void
 .end method

@@ -144,7 +144,7 @@
 
     move-result v2
 
-    mul-float v2, v2, v0
+    mul-float/2addr v2, v0
 
     add-float/2addr v1, v2
 
@@ -173,7 +173,7 @@
 
     const-wide v2, 0x3f689374bc6a7efaL    # 0.003
 
-    mul-double v0, v0, v2
+    mul-double/2addr v0, v2
 
     const-wide v2, 0x3f916872b020c49cL    # 0.017
 
@@ -269,13 +269,13 @@
 
     sub-float v8, v7, v3
 
-    mul-float v6, v6, v8
+    mul-float/2addr v6, v8
 
     iget-object v8, v0, Lorg/telegram/ui/Components/LineBlobDrawable;->radiusNext:[F
 
     aget v8, v8, v1
 
-    mul-float v8, v8, v3
+    mul-float/2addr v8, v3
 
     add-float/2addr v6, v8
 
@@ -311,13 +311,13 @@
 
     sub-float v13, v7, v10
 
-    mul-float v12, v12, v13
+    mul-float/2addr v12, v13
 
     iget-object v13, v0, Lorg/telegram/ui/Components/LineBlobDrawable;->radiusNext:[F
 
     aget v14, v13, v9
 
-    mul-float v14, v14, v10
+    mul-float/2addr v14, v10
 
     add-float/2addr v12, v14
 
@@ -329,11 +329,11 @@
 
     sub-float v11, v7, v8
 
-    mul-float v10, v10, v11
+    mul-float/2addr v10, v11
 
     aget v11, v13, v1
 
-    mul-float v11, v11, v8
+    mul-float/2addr v11, v8
 
     add-float/2addr v10, v11
 
@@ -343,7 +343,7 @@
 
     int-to-float v9, v9
 
-    mul-float v11, v11, v9
+    mul-float/2addr v11, v9
 
     div-float/2addr v8, v6
 
@@ -398,7 +398,7 @@
     :goto_1
     add-int/lit8 v1, v1, 0x1
 
-    goto/16 :goto_0
+    goto :goto_0
 
     .line 102
     :cond_3
@@ -439,17 +439,17 @@
 
     sget v5, Lorg/telegram/ui/Components/BlobDrawable;->MIN_SPEED:F
 
-    mul-float v4, v4, v5
+    mul-float/2addr v4, v5
 
     aget v3, v3, v0
 
-    mul-float v3, v3, p1
+    mul-float/2addr v3, p1
 
     sget v5, Lorg/telegram/ui/Components/BlobDrawable;->MAX_SPEED:F
 
-    mul-float v3, v3, v5
+    mul-float/2addr v3, v5
 
-    mul-float v3, v3, p2
+    mul-float/2addr v3, p2
 
     add-float/2addr v4, v3
 

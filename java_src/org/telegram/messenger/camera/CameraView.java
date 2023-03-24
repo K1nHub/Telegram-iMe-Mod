@@ -85,10 +85,10 @@ public class CameraView extends FrameLayout implements TextureView.SurfaceTextur
     private int clipTop;
 
     /* renamed from: cx */
-    private int f1480cx;
+    private int f1481cx;
 
     /* renamed from: cy */
-    private int f1481cy;
+    private int f1482cy;
     private CameraViewDelegate delegate;
     boolean firstFrameRendered;
     ValueAnimator flipAnimator;
@@ -483,25 +483,27 @@ public class CameraView extends FrameLayout implements TextureView.SurfaceTextur
         int i4 = 960;
         if (this.initialFrontface) {
             size = new Size(16, 9);
-            i2 = 1280;
             i4 = 720;
         } else if (Math.abs(max - 1.3333334f) < 0.1f) {
             size = new Size(4, 3);
-            if (SharedConfig.getDevicePerformanceClass() == 0) {
-                i2 = 1280;
-                i3 = 960;
-            } else {
-                i3 = 960;
+            if (SharedConfig.getDevicePerformanceClass() != 0) {
                 i4 = 1440;
+                i3 = 960;
+                this.previewSize = CameraController.chooseOptimalSize(this.info.getPreviewSizes(), 1280, i3, size);
+                this.pictureSize = CameraController.chooseOptimalSize(this.info.getPictureSizes(), i2, i4, size);
+                requestLayout();
             }
+            i3 = 960;
         } else {
             size = new Size(16, 9);
-            if (SharedConfig.getDevicePerformanceClass() == 0) {
-                i2 = 1280;
-            } else {
+            if (SharedConfig.getDevicePerformanceClass() != 0) {
                 i4 = 1080;
+                this.previewSize = CameraController.chooseOptimalSize(this.info.getPreviewSizes(), 1280, i3, size);
+                this.pictureSize = CameraController.chooseOptimalSize(this.info.getPictureSizes(), i2, i4, size);
+                requestLayout();
             }
         }
+        i2 = 1280;
         this.previewSize = CameraController.chooseOptimalSize(this.info.getPreviewSizes(), 1280, i3, size);
         this.pictureSize = CameraController.chooseOptimalSize(this.info.getPictureSizes(), i2, i4, size);
         requestLayout();
@@ -566,7 +568,7 @@ public class CameraView extends FrameLayout implements TextureView.SurfaceTextur
         if (z2) {
             float[] fArr = new float[2];
             fArr[0] = this.textureView.getAlpha();
-            fArr[1] = z ? 1.0f : BitmapDescriptorFactory.HUE_RED;
+            fArr[1] = z ? 1.0f : 0.0f;
             ValueAnimator ofFloat = ValueAnimator.ofFloat(fArr);
             this.textureViewAnimator = ofFloat;
             ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.messenger.camera.CameraView$$ExternalSyntheticLambda0
@@ -585,7 +587,7 @@ public class CameraView extends FrameLayout implements TextureView.SurfaceTextur
             this.textureViewAnimator.start();
             return;
         }
-        this.textureView.setAlpha(z ? 1.0f : BitmapDescriptorFactory.HUE_RED);
+        this.textureView.setAlpha(z ? 1.0f : 0.0f);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -664,8 +666,8 @@ public class CameraView extends FrameLayout implements TextureView.SurfaceTextur
             this.focusProgress = BitmapDescriptorFactory.HUE_RED;
             this.innerAlpha = 1.0f;
             this.outerAlpha = 1.0f;
-            this.f1480cx = i;
-            this.f1481cy = i2;
+            this.f1481cx = i;
+            this.f1482cy = i2;
             this.lastDrawTime = System.currentTimeMillis();
             invalidate();
         }
@@ -722,8 +724,8 @@ public class CameraView extends FrameLayout implements TextureView.SurfaceTextur
             this.innerPaint.setAlpha((int) (this.interpolator.getInterpolation(this.innerAlpha) * 127.0f));
             float interpolation = this.interpolator.getInterpolation(this.focusProgress);
             float f = m50dp;
-            canvas.drawCircle(this.f1480cx, this.f1481cy, ((1.0f - interpolation) * f) + f, this.outerPaint);
-            canvas.drawCircle(this.f1480cx, this.f1481cy, f * interpolation, this.innerPaint);
+            canvas.drawCircle(this.f1481cx, this.f1482cy, ((1.0f - interpolation) * f) + f, this.outerPaint);
+            canvas.drawCircle(this.f1481cx, this.f1482cy, f * interpolation, this.innerPaint);
             float f2 = this.focusProgress;
             if (f2 < 1.0f) {
                 float f3 = f2 + (((float) j2) / 200.0f);
@@ -1387,7 +1389,7 @@ public class CameraView extends FrameLayout implements TextureView.SurfaceTextur
             this.keyframeThumbs = new ArrayList<>();
             this.recorderRunnable = new Runnable() { // from class: org.telegram.messenger.camera.CameraView.VideoRecorder.1
                 /* JADX WARN: Code restructure failed: missing block: B:13:0x002d, code lost:
-                    if (r13.this$1.sendWhenDone == 0) goto L57;
+                    if (r13.this$1.sendWhenDone == 0) goto L54;
                  */
                 @Override // java.lang.Runnable
                 /*
@@ -1396,10 +1398,10 @@ public class CameraView extends FrameLayout implements TextureView.SurfaceTextur
                 */
                 public void run() {
                     /*
-                        Method dump skipped, instructions count: 268
+                        Method dump skipped, instructions count: 262
                         To view this dump add '--comments-level debug' option
                     */
-                    throw new UnsupportedOperationException("Method not decompiled: org.telegram.messenger.camera.CameraView.VideoRecorder.RunnableC33131.run():void");
+                    throw new UnsupportedOperationException("Method not decompiled: org.telegram.messenger.camera.CameraView.VideoRecorder.RunnableC33281.run():void");
                 }
             };
         }
@@ -1485,7 +1487,7 @@ public class CameraView extends FrameLayout implements TextureView.SurfaceTextur
         }
 
         /* JADX INFO: Access modifiers changed from: private */
-        /* JADX WARN: Removed duplicated region for block: B:105:0x00fb A[EDGE_INSN: B:105:0x00fb->B:41:0x00fb ?: BREAK  , SYNTHETIC] */
+        /* JADX WARN: Removed duplicated region for block: B:103:0x00fb A[EDGE_INSN: B:103:0x00fb->B:41:0x00fb ?: BREAK  , SYNTHETIC] */
         /* JADX WARN: Removed duplicated region for block: B:34:0x00c8  */
         /*
             Code decompiled incorrectly, please refer to instructions dump.
@@ -1493,7 +1495,7 @@ public class CameraView extends FrameLayout implements TextureView.SurfaceTextur
         */
         public void handleAudioFrameAvailable(org.telegram.p048ui.Components.InstantCameraView.AudioBufferInfo r17) {
             /*
-                Method dump skipped, instructions count: 525
+                Method dump skipped, instructions count: 517
                 To view this dump add '--comments-level debug' option
             */
             throw new UnsupportedOperationException("Method not decompiled: org.telegram.messenger.camera.CameraView.VideoRecorder.handleAudioFrameAvailable(org.telegram.ui.Components.InstantCameraView$AudioBufferInfo):void");

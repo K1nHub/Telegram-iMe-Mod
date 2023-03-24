@@ -25,7 +25,7 @@
 .method constructor <init>(Lorg/telegram/ui/DialogsActivity;)V
     .locals 0
 
-    .line 6772
+    .line 6835
     iput-object p1, p0, Lorg/telegram/ui/DialogsActivity$35;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -98,7 +98,7 @@
 .method public isCustomForward()Z
     .locals 1
 
-    .line 6780
+    .line 6843
     iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$35;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-virtual {v0}, Lorg/telegram/ui/DialogsActivity;->isCustomForward()Z
@@ -207,7 +207,7 @@
 .method public onMessageSend(Ljava/lang/CharSequence;ZILjava/lang/String;)V
     .locals 6
 
-    .line 6789
+    .line 6852
     iget-object p2, p0, Lorg/telegram/ui/DialogsActivity$35;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-static {p2}, Lorg/telegram/ui/DialogsActivity;->access$32000(Lorg/telegram/ui/DialogsActivity;)Lorg/telegram/ui/DialogsActivity$DialogsActivityDelegate;
@@ -230,7 +230,7 @@
 
     goto :goto_1
 
-    .line 6792
+    .line 6855
     :cond_0
     new-instance v2, Ljava/util/ArrayList;
 
@@ -238,9 +238,9 @@
 
     const/4 p2, 0x0
 
-    const/4 p3, 0x0
+    move p3, p2
 
-    .line 6793
+    .line 6856
     :goto_0
     iget-object p4, p0, Lorg/telegram/ui/DialogsActivity$35;->this$0:Lorg/telegram/ui/DialogsActivity;
 
@@ -254,7 +254,7 @@
 
     if-ge p3, p4, :cond_1
 
-    .line 6794
+    .line 6857
     iget-object p4, p0, Lorg/telegram/ui/DialogsActivity$35;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-static {p4}, Lorg/telegram/ui/DialogsActivity;->access$900(Lorg/telegram/ui/DialogsActivity;)Ljava/util/ArrayList;
@@ -281,7 +281,7 @@
 
     goto :goto_0
 
-    .line 6796
+    .line 6859
     :cond_1
     iget-object p2, p0, Lorg/telegram/ui/DialogsActivity$35;->this$0:Lorg/telegram/ui/DialogsActivity;
 

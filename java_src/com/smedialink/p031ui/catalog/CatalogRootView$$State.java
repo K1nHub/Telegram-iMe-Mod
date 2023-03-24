@@ -81,16 +81,16 @@ public class CatalogRootView$$State extends MvpViewState<CatalogRootView> implem
     public class OnTabSelectedCommand extends ViewCommand<CatalogRootView> {
 
         /* renamed from: id */
-        public final int f371id;
+        public final int f372id;
 
         OnTabSelectedCommand(CatalogRootView$$State catalogRootView$$State, int i) {
             super("onTabSelected", AddToEndSingleStrategy.class);
-            this.f371id = i;
+            this.f372id = i;
         }
 
         @Override // moxy.viewstate.ViewCommand
         public void apply(CatalogRootView catalogRootView) {
-            catalogRootView.onTabSelected(this.f371id);
+            catalogRootView.onTabSelected(this.f372id);
         }
     }
 

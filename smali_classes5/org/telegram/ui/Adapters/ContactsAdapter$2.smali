@@ -80,7 +80,7 @@
     goto :goto_0
 
     :cond_1
-    const/4 v1, 0x0
+    move v1, v0
 
     :goto_0
     sub-int/2addr p2, v1
@@ -102,7 +102,7 @@
 
     if-eqz v2, :cond_3
 
-    const/4 v2, 0x0
+    move v2, v0
 
     goto :goto_1
 

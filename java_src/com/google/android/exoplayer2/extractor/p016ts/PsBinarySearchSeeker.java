@@ -47,8 +47,8 @@ public final class PsBinarySearchSeeker extends BinarySearchSeeker {
 
         private BinarySearchSeeker.TimestampSearchResult searchForScrValueInBuffer(ParsableByteArray parsableByteArray, long j, long j2) {
             int i = -1;
-            long j3 = -9223372036854775807L;
             int i2 = -1;
+            long j3 = -9223372036854775807L;
             while (parsableByteArray.bytesLeft() >= 4) {
                 if (PsBinarySearchSeeker.peekIntAtPosition(parsableByteArray.getData(), parsableByteArray.getPosition()) != 442) {
                     parsableByteArray.skipBytes(1);

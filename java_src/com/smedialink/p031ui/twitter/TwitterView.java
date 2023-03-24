@@ -15,6 +15,9 @@ public interface TwitterView extends BaseView, LoadMoreView<BaseNode>, SwipeRefr
     void openBrowserUrl(String str);
 
     @AddToEndSingle
+    void renderInitialItems(List<BaseNode> list);
+
+    @AddToEndSingle
     void renderItems(List<BaseNode> list);
 
     void shareLink(String str);

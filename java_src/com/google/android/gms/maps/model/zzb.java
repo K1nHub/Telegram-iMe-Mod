@@ -11,8 +11,8 @@ public final class zzb implements Parcelable.Creator {
     public final /* bridge */ /* synthetic */ Object createFromParcel(Parcel parcel) {
         int validateObjectHeader = SafeParcelReader.validateObjectHeader(parcel);
         IBinder iBinder = null;
-        Float f = null;
         int i = 0;
+        Float f = null;
         while (parcel.dataPosition() < validateObjectHeader) {
             int readHeader = SafeParcelReader.readHeader(parcel);
             int fieldId = SafeParcelReader.getFieldId(readHeader);

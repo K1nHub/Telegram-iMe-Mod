@@ -149,13 +149,13 @@
 
     sub-long/2addr p1, v0
 
-    long-to-int p2, p1
+    long-to-int p1, p1
 
-    iget-object p1, p0, Lcom/google/android/exoplayer2/source/SampleDataQueue$AllocationNode;->allocation:Lcom/google/android/exoplayer2/upstream/Allocation;
+    iget-object p2, p0, Lcom/google/android/exoplayer2/source/SampleDataQueue$AllocationNode;->allocation:Lcom/google/android/exoplayer2/upstream/Allocation;
 
-    iget p1, p1, Lcom/google/android/exoplayer2/upstream/Allocation;->offset:I
+    iget p2, p2, Lcom/google/android/exoplayer2/upstream/Allocation;->offset:I
 
-    add-int/2addr p2, p1
+    add-int/2addr p1, p2
 
-    return p2
+    return p1
 .end method

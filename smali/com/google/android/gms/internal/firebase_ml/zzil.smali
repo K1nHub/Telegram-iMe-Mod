@@ -49,9 +49,9 @@
 
     const/4 v2, 0x0
 
-    const/4 v3, 0x0
+    move v3, v2
 
-    const/4 v4, 0x0
+    move v4, v3
 
     :goto_0
     if-ge p2, v0, :cond_c

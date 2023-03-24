@@ -169,10 +169,8 @@
 
     return v1
 
-    :catch_0
-    nop
-
     .line 6
+    :catch_0
     :cond_1
     :goto_0
     invoke-static {p4}, Lcom/google/android/gms/common/stats/ConnectionTracker;->zzd(Landroid/content/ServiceConnection;)Z

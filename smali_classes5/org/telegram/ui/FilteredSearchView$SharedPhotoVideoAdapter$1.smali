@@ -25,7 +25,7 @@
 .method constructor <init>(Lorg/telegram/ui/FilteredSearchView$SharedPhotoVideoAdapter;)V
     .locals 0
 
-    .line 899
+    .line 909
     iput-object p1, p0, Lorg/telegram/ui/FilteredSearchView$SharedPhotoVideoAdapter$1;->this$1:Lorg/telegram/ui/FilteredSearchView$SharedPhotoVideoAdapter;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,7 +38,7 @@
 .method public didClickItem(Lorg/telegram/ui/Cells/SharedPhotoVideoCell;ILorg/telegram/messenger/MessageObject;I)V
     .locals 1
 
-    .line 902
+    .line 912
     iget-object v0, p0, Lorg/telegram/ui/FilteredSearchView$SharedPhotoVideoAdapter$1;->this$1:Lorg/telegram/ui/FilteredSearchView$SharedPhotoVideoAdapter;
 
     iget-object v0, v0, Lorg/telegram/ui/FilteredSearchView$SharedPhotoVideoAdapter;->this$0:Lorg/telegram/ui/FilteredSearchView;
@@ -51,7 +51,7 @@
 .method public didLongClickItem(Lorg/telegram/ui/Cells/SharedPhotoVideoCell;ILorg/telegram/messenger/MessageObject;I)Z
     .locals 1
 
-    .line 907
+    .line 917
     iget-object v0, p0, Lorg/telegram/ui/FilteredSearchView$SharedPhotoVideoAdapter$1;->this$1:Lorg/telegram/ui/FilteredSearchView$SharedPhotoVideoAdapter;
 
     iget-object v0, v0, Lorg/telegram/ui/FilteredSearchView$SharedPhotoVideoAdapter;->this$0:Lorg/telegram/ui/FilteredSearchView;
@@ -66,14 +66,14 @@
 
     if-eqz v0, :cond_0
 
-    .line 908
+    .line 918
     invoke-virtual {p0, p1, p2, p3, p4}, Lorg/telegram/ui/FilteredSearchView$SharedPhotoVideoAdapter$1;->didClickItem(Lorg/telegram/ui/Cells/SharedPhotoVideoCell;ILorg/telegram/messenger/MessageObject;I)V
 
     const/4 p1, 0x1
 
     return p1
 
-    .line 911
+    .line 921
     :cond_0
     iget-object p2, p0, Lorg/telegram/ui/FilteredSearchView$SharedPhotoVideoAdapter$1;->this$1:Lorg/telegram/ui/FilteredSearchView$SharedPhotoVideoAdapter;
 

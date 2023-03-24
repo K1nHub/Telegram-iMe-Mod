@@ -11,10 +11,10 @@ public final class zza implements Parcelable.Creator {
         int validateObjectHeader = SafeParcelReader.validateObjectHeader(parcel);
         String str = null;
         String str2 = null;
-        long j = 0;
         int i = 0;
         int i2 = 0;
         int i3 = 0;
+        long j = 0;
         while (parcel.dataPosition() < validateObjectHeader) {
             int readHeader = SafeParcelReader.readHeader(parcel);
             switch (SafeParcelReader.getFieldId(readHeader)) {

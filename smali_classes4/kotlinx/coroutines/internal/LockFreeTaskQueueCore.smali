@@ -135,12 +135,12 @@
 
     if-gt p2, v2, :cond_0
 
-    const/4 v2, 0x1
+    move v2, v1
 
     goto :goto_0
 
     :cond_0
-    const/4 v2, 0x0
+    move v2, v0
 
     :goto_0
     const-string v3, "Check failed."
@@ -151,7 +151,7 @@
 
     if-nez p1, :cond_1
 
-    const/4 v0, 0x1
+    move v0, v1
 
     :cond_1
     if-eqz v0, :cond_2
@@ -212,32 +212,32 @@
 
     shr-long/2addr v1, v3
 
-    long-to-int v2, v1
+    long-to-int v1, v1
 
-    const-wide v3, 0xfffffffc0000000L
+    const-wide v2, 0xfffffffc0000000L
 
-    and-long/2addr v3, p1
+    and-long/2addr v2, p1
 
-    const/16 v1, 0x1e
+    const/16 v4, 0x1e
 
-    shr-long/2addr v3, v1
+    shr-long/2addr v2, v4
 
-    long-to-int v1, v3
+    long-to-int v2, v2
 
     .line 233
     :goto_0
     iget v3, p0, Lkotlinx/coroutines/internal/LockFreeTaskQueueCore;->mask:I
 
-    and-int v4, v2, v3
+    and-int v4, v1, v3
 
-    and-int v5, v1, v3
+    and-int v5, v2, v3
 
     if-eq v4, v5, :cond_1
 
     .line 235
     iget-object v4, p0, Lkotlinx/coroutines/internal/LockFreeTaskQueueCore;->array:Ljava/util/concurrent/atomic/AtomicReferenceArray;
 
-    and-int/2addr v3, v2
+    and-int/2addr v3, v1
 
     invoke-virtual {v4, v3}, Ljava/util/concurrent/atomic/AtomicReferenceArray;->get(I)Ljava/lang/Object;
 
@@ -247,7 +247,7 @@
 
     new-instance v3, Lkotlinx/coroutines/internal/LockFreeTaskQueueCore$Placeholder;
 
-    invoke-direct {v3, v2}, Lkotlinx/coroutines/internal/LockFreeTaskQueueCore$Placeholder;-><init>(I)V
+    invoke-direct {v3, v1}, Lkotlinx/coroutines/internal/LockFreeTaskQueueCore$Placeholder;-><init>(I)V
 
     .line 236
     :cond_0
@@ -255,11 +255,11 @@
 
     iget v5, v0, Lkotlinx/coroutines/internal/LockFreeTaskQueueCore;->mask:I
 
-    and-int/2addr v5, v2
+    and-int/2addr v5, v1
 
     invoke-virtual {v4, v5, v3}, Ljava/util/concurrent/atomic/AtomicReferenceArray;->set(ILjava/lang/Object;)V
 
-    add-int/lit8 v2, v2, 0x1
+    add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
@@ -363,7 +363,7 @@
 .end method
 
 .method private final markFrozen()J
-    .locals 9
+    .locals 8
 
     .line 336
     :cond_0
@@ -375,9 +375,9 @@
 
     const-wide/16 v6, 0x0
 
-    cmp-long v8, v4, v6
+    cmp-long v4, v4, v6
 
-    if-eqz v8, :cond_1
+    if-eqz v4, :cond_1
 
     return-wide v2
 
@@ -521,9 +521,9 @@
 
     const-wide/16 v6, 0x0
 
-    cmp-long v4, v0, v6
+    cmp-long v0, v0, v6
 
-    if-eqz v4, :cond_1
+    if-eqz v0, :cond_1
 
     .line 106
     sget-object p1, Lkotlinx/coroutines/internal/LockFreeTaskQueueCore;->Companion:Lkotlinx/coroutines/internal/LockFreeTaskQueueCore$Companion;
@@ -650,9 +650,9 @@
 
     and-long/2addr v1, v3
 
-    cmp-long v3, v1, v6
+    cmp-long v1, v1, v6
 
-    if-nez v3, :cond_6
+    if-nez v1, :cond_6
 
     goto :goto_0
 
@@ -673,7 +673,7 @@
 .end method
 
 .method public final close()Z
-    .locals 10
+    .locals 9
 
     .line 316
     :cond_0
@@ -683,24 +683,24 @@
 
     and-long v4, v2, v0
 
-    const/4 v6, 0x1
+    const-wide/16 v6, 0x0
 
-    const-wide/16 v7, 0x0
+    cmp-long v4, v4, v6
 
-    cmp-long v9, v4, v7
+    const/4 v8, 0x1
 
-    if-eqz v9, :cond_1
+    if-eqz v4, :cond_1
 
-    return v6
+    return v8
 
     :cond_1
     const-wide/high16 v4, 0x1000000000000000L
 
     and-long/2addr v4, v2
 
-    cmp-long v9, v4, v7
+    cmp-long v4, v4, v6
 
-    if-eqz v9, :cond_2
+    if-eqz v4, :cond_2
 
     const/4 v0, 0x0
 
@@ -720,11 +720,11 @@
 
     if-eqz v0, :cond_0
 
-    return v6
+    return v8
 .end method
 
 .method public final getSize()I
-    .locals 6
+    .locals 5
 
     .line 92
     iget-wide v0, p0, Lkotlinx/coroutines/internal/LockFreeTaskQueueCore;->_state:J
@@ -737,21 +737,21 @@
 
     shr-long/2addr v2, v4
 
-    long-to-int v3, v2
+    long-to-int v2, v2
 
-    const-wide v4, 0xfffffffc0000000L
+    const-wide v3, 0xfffffffc0000000L
 
-    and-long/2addr v0, v4
+    and-long/2addr v0, v3
 
-    const/16 v2, 0x1e
+    const/16 v3, 0x1e
 
-    shr-long/2addr v0, v2
+    shr-long/2addr v0, v3
 
-    long-to-int v1, v0
+    long-to-int v0, v0
 
-    sub-int/2addr v1, v3
+    sub-int/2addr v0, v2
 
-    const v0, 0x3fffffff    # 1.9999999f
+    const v1, 0x3fffffff    # 1.9999999f
 
     and-int/2addr v0, v1
 
@@ -772,19 +772,19 @@
 
     shr-long/2addr v2, v4
 
-    long-to-int v3, v2
+    long-to-int v2, v2
 
     const-wide v5, 0xfffffffc0000000L
 
     and-long/2addr v0, v5
 
-    const/16 v2, 0x1e
+    const/16 v3, 0x1e
 
-    shr-long/2addr v0, v2
+    shr-long/2addr v0, v3
 
-    long-to-int v1, v0
+    long-to-int v0, v0
 
-    if-ne v3, v1, :cond_0
+    if-ne v2, v0, :cond_0
 
     const/4 v4, 0x1
 
@@ -828,9 +828,9 @@
 
     const-wide/16 v4, 0x0
 
-    cmp-long v6, v0, v4
+    cmp-long v0, v0, v4
 
-    if-eqz v6, :cond_1
+    if-eqz v0, :cond_1
 
     .line 166
     sget-object v0, Lkotlinx/coroutines/internal/LockFreeTaskQueueCore;->REMOVE_FROZEN:Lkotlinx/coroutines/internal/Symbol;

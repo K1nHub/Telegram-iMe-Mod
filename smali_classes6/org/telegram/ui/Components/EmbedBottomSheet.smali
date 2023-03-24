@@ -206,12 +206,12 @@
 
     if-lez v10, :cond_1
 
-    const/4 v10, 0x1
+    move v10, v9
 
     goto :goto_0
 
     :cond_1
-    const/4 v10, 0x0
+    move v10, v6
 
     :goto_0
     iput-boolean v10, v0, Lorg/telegram/ui/Components/EmbedBottomSheet;->hasDescription:Z
@@ -419,12 +419,12 @@
 
     if-eqz v11, :cond_7
 
-    const/16 v11, 0x16
+    move/from16 v11, v21
 
     goto :goto_1
 
     :cond_7
-    const/4 v11, 0x0
+    move v11, v6
 
     :goto_1
     add-int/lit8 v20, v11, 0x54
@@ -470,12 +470,12 @@
 
     if-eqz v11, :cond_8
 
-    const/16 v11, 0x16
+    move/from16 v11, v21
 
     goto :goto_2
 
     :cond_8
-    const/4 v11, 0x0
+    move v11, v6
 
     :goto_2
     add-int/lit8 v11, v11, 0x54
@@ -524,12 +524,12 @@
 
     if-eqz v10, :cond_9
 
-    const/16 v10, 0x16
+    move/from16 v10, v21
 
     goto :goto_3
 
     :cond_9
-    const/4 v10, 0x0
+    move v10, v6
 
     :goto_3
     add-int/lit8 v20, v10, 0x54
@@ -574,7 +574,7 @@
     goto :goto_4
 
     :cond_a
-    const/16 v21, 0x0
+    move/from16 v21, v6
 
     :goto_4
     add-int/lit8 v21, v21, 0x54
@@ -1331,7 +1331,7 @@
     goto :goto_5
 
     :cond_c
-    const/4 v12, 0x0
+    move v12, v6
 
     goto :goto_6
 
@@ -1345,7 +1345,7 @@
 
     if-eqz v12, :cond_e
 
-    const/4 v2, 0x0
+    move v2, v6
 
     goto :goto_7
 
@@ -2712,7 +2712,7 @@
     goto :goto_1
 
     :cond_4
-    const/4 v8, 0x0
+    move v8, v9
 
     :goto_1
     add-int/lit8 v8, v8, 0x54
@@ -2923,7 +2923,7 @@
 
     if-eqz v0, :cond_0
 
-    const/4 v0, 0x0
+    move v0, p3
 
     goto :goto_0
 

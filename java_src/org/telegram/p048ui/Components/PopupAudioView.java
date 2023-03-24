@@ -231,7 +231,7 @@ public class PopupAudioView extends BaseCell implements SeekBar.SeekBarDelegate,
             if (r0 > 0) goto Lae
             r7.buttonPressed = r3
             r7.invalidate()
-            r2 = 1
+            r2 = r3
             goto Lae
         L64:
             int r5 = r7.buttonPressed

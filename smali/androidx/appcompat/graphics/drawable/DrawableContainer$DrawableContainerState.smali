@@ -153,7 +153,7 @@
     goto :goto_1
 
     :cond_2
-    const/4 v2, 0x0
+    move v2, v0
 
     :goto_1
     invoke-static {p3, v2}, Landroidx/appcompat/graphics/drawable/DrawableContainer;->resolveDensity(Landroid/content/res/Resources;I)I
@@ -681,7 +681,7 @@
 
     const/4 v2, 0x0
 
-    const/4 v3, 0x0
+    move v3, v2
 
     :goto_0
     if-ge v3, v0, :cond_2
@@ -762,7 +762,7 @@
 
     const/4 v3, 0x0
 
-    const/4 v4, 0x0
+    move v4, v3
 
     :goto_0
     if-ge v4, v1, :cond_2
@@ -1094,7 +1094,7 @@
 
     const/4 v4, 0x0
 
-    const/4 v5, 0x0
+    move v5, v4
 
     :goto_0
     if-ge v5, v2, :cond_7
@@ -1236,7 +1236,7 @@
     :goto_0
     const/4 v3, 0x1
 
-    const/4 v4, 0x1
+    move v4, v3
 
     :goto_1
     if-ge v4, v0, :cond_2
@@ -1353,9 +1353,9 @@
 
     const/4 v2, 0x0
 
-    const/4 v3, 0x0
+    move v3, v2
 
-    const/4 v4, 0x0
+    move v4, v3
 
     :goto_0
     if-ge v3, v0, :cond_2
@@ -1383,7 +1383,7 @@
     goto :goto_1
 
     :cond_0
-    const/4 v5, 0x0
+    move v5, v2
 
     :goto_1
     if-ne v3, p2, :cond_1

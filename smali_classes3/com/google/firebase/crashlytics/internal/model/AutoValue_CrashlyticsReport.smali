@@ -220,7 +220,7 @@
     goto :goto_1
 
     :cond_3
-    const/4 v0, 0x0
+    move v0, v2
 
     :goto_1
     return v0
@@ -315,7 +315,7 @@
 
     xor-int/2addr v0, v1
 
-    mul-int v0, v0, v1
+    mul-int/2addr v0, v1
 
     .line 132
     iget-object v2, p0, Lcom/google/firebase/crashlytics/internal/model/AutoValue_CrashlyticsReport;->gmpAppId:Ljava/lang/String;
@@ -326,14 +326,14 @@
 
     xor-int/2addr v0, v2
 
-    mul-int v0, v0, v1
+    mul-int/2addr v0, v1
 
     .line 134
     iget v2, p0, Lcom/google/firebase/crashlytics/internal/model/AutoValue_CrashlyticsReport;->platform:I
 
     xor-int/2addr v0, v2
 
-    mul-int v0, v0, v1
+    mul-int/2addr v0, v1
 
     .line 136
     iget-object v2, p0, Lcom/google/firebase/crashlytics/internal/model/AutoValue_CrashlyticsReport;->installationUuid:Ljava/lang/String;
@@ -344,7 +344,7 @@
 
     xor-int/2addr v0, v2
 
-    mul-int v0, v0, v1
+    mul-int/2addr v0, v1
 
     .line 138
     iget-object v2, p0, Lcom/google/firebase/crashlytics/internal/model/AutoValue_CrashlyticsReport;->buildVersion:Ljava/lang/String;
@@ -355,7 +355,7 @@
 
     xor-int/2addr v0, v2
 
-    mul-int v0, v0, v1
+    mul-int/2addr v0, v1
 
     .line 140
     iget-object v2, p0, Lcom/google/firebase/crashlytics/internal/model/AutoValue_CrashlyticsReport;->displayVersion:Ljava/lang/String;
@@ -366,7 +366,7 @@
 
     xor-int/2addr v0, v2
 
-    mul-int v0, v0, v1
+    mul-int/2addr v0, v1
 
     .line 142
     iget-object v2, p0, Lcom/google/firebase/crashlytics/internal/model/AutoValue_CrashlyticsReport;->session:Lcom/google/firebase/crashlytics/internal/model/CrashlyticsReport$Session;
@@ -375,7 +375,7 @@
 
     if-nez v2, :cond_0
 
-    const/4 v2, 0x0
+    move v2, v3
 
     goto :goto_0
 
@@ -387,7 +387,7 @@
     :goto_0
     xor-int/2addr v0, v2
 
-    mul-int v0, v0, v1
+    mul-int/2addr v0, v1
 
     .line 144
     iget-object v1, p0, Lcom/google/firebase/crashlytics/internal/model/AutoValue_CrashlyticsReport;->ndkPayload:Lcom/google/firebase/crashlytics/internal/model/CrashlyticsReport$FilesPayload;

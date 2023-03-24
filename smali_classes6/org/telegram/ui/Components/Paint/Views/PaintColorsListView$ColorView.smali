@@ -161,7 +161,7 @@
 
     iget v4, p0, Lorg/telegram/ui/Components/Paint/Views/PaintColorsListView$ColorView;->selectProgress:F
 
-    mul-float v2, v2, v4
+    mul-float/2addr v2, v4
 
     sub-float/2addr v0, v2
 

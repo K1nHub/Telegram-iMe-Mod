@@ -93,9 +93,9 @@
 
     if-eqz p1, :cond_1
 
-    const/4 v1, 0x0
+    move v1, v0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     .line 967
     :goto_0
@@ -131,7 +131,7 @@
     goto :goto_0
 
     :cond_1
-    const/4 v2, 0x0
+    move v2, v0
 
     .line 974
     :cond_2

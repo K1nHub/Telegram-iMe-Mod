@@ -195,7 +195,7 @@
 
     const v2, 0x3e6147ae    # 0.22f
 
-    mul-float v1, v1, v2
+    mul-float/2addr v1, v2
 
     invoke-static {v0, v1}, Ljava/lang/Math;->min(FF)F
 
@@ -575,7 +575,7 @@
     goto :goto_0
 
     :cond_0
-    const/4 p3, 0x0
+    move p3, p2
 
     .line 484
     :goto_0
@@ -819,12 +819,12 @@
 
     if-eqz p1, :cond_7
 
-    const/high16 v8, 0x3f800000    # 1.0f
+    move v8, v5
 
     goto :goto_2
 
     :cond_7
-    const/4 v8, 0x0
+    move v8, v4
 
     :goto_2
     cmpl-float p2, v9, v10
@@ -839,7 +839,7 @@
     goto :goto_3
 
     :cond_8
-    const/4 v0, 0x0
+    move v0, v1
 
     .line 462
     :goto_3
@@ -949,7 +949,7 @@
     :cond_c
     if-eqz p1, :cond_d
 
-    const/high16 v4, 0x3f800000    # 1.0f
+    move v4, v5
 
     .line 499
     :cond_d
@@ -1131,24 +1131,24 @@
 
     if-nez v0, :cond_1
 
-    const/4 v0, 0x1
+    move v0, v1
 
     goto :goto_0
 
     :cond_1
-    const/4 v0, 0x0
+    move v0, v2
 
     :goto_0
     const/4 v3, 0x2
 
     if-eqz v0, :cond_2
 
-    const/4 v0, 0x2
+    move v0, v3
 
     goto :goto_1
 
     :cond_2
-    const/4 v0, 0x0
+    move v0, v2
 
     :goto_1
     add-int/2addr v0, v3
@@ -1228,7 +1228,7 @@
 
     int-to-float v8, v8
 
-    mul-float v7, v7, v8
+    mul-float/2addr v7, v8
 
     invoke-static {v3, v7}, Ljava/lang/Math;->min(FF)F
 
@@ -1338,7 +1338,7 @@
     goto :goto_3
 
     :cond_6
-    const/4 v3, 0x0
+    move v3, v2
 
     :goto_3
     int-to-float v3, v3
@@ -1371,7 +1371,7 @@
 
     int-to-float v8, v8
 
-    mul-float v7, v7, v8
+    mul-float/2addr v7, v8
 
     invoke-static {v3, v7}, Ljava/lang/Math;->max(FF)F
 

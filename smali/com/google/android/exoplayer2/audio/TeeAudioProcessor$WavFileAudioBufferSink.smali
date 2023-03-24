@@ -410,7 +410,7 @@
 
     iget v3, p0, Lcom/google/android/exoplayer2/audio/TeeAudioProcessor$WavFileAudioBufferSink;->sampleRateHz:I
 
-    mul-int v3, v3, v1
+    mul-int/2addr v3, v1
 
     invoke-virtual {v2, v3}, Ljava/nio/ByteBuffer;->putInt(I)Ljava/nio/ByteBuffer;
 

@@ -193,7 +193,7 @@
 
     if-nez v2, :cond_4
 
-    const/4 p1, 0x0
+    move p1, v1
 
     .line 1892
     :goto_0

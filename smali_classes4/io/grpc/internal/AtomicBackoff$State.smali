@@ -60,7 +60,7 @@
 
     const-wide/16 v2, 0x2
 
-    mul-long v2, v2, v0
+    mul-long/2addr v2, v0
 
     invoke-static {v2, v3, v0, v1}, Ljava/lang/Math;->max(JJ)J
 

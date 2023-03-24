@@ -18,7 +18,7 @@
 .method constructor <init>(Lorg/telegram/ui/LoginActivity$LoginActivitySetupEmail;Lorg/telegram/ui/LoginActivity;)V
     .locals 0
 
-    .line 5752
+    .line 5766
     invoke-direct {p0}, Landroid/text/style/ReplacementSpan;-><init>()V
 
     return-void
@@ -37,7 +37,7 @@
 
     const/16 p1, 0xc
 
-    .line 5755
+    .line 5769
     invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result p1

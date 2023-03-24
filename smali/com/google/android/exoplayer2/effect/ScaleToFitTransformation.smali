@@ -72,12 +72,12 @@
 
     if-lez p1, :cond_0
 
-    const/4 v2, 0x1
+    move v2, v0
 
     goto :goto_0
 
     :cond_0
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_0
     const-string v3, "inputWidth must be positive"
@@ -87,12 +87,12 @@
 
     if-lez p2, :cond_1
 
-    const/4 v2, 0x1
+    move v2, v0
 
     goto :goto_1
 
     :cond_1
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_1
     const-string v3, "inputHeight must be positive"
@@ -191,13 +191,13 @@
 
     const v6, 0x7f7fffff    # Float.MAX_VALUE
 
-    const/4 v6, 0x1
+    move v9, v1
 
-    const v7, 0x7f7fffff    # Float.MAX_VALUE
+    move v7, v6
 
-    const v8, 0x7f7fffff    # Float.MAX_VALUE
+    move v8, v7
 
-    const/4 v9, 0x0
+    move v6, v5
 
     :goto_2
     if-ge v9, v2, :cond_3
@@ -262,7 +262,7 @@
 
     invoke-virtual {v0, v1, v4}, Landroid/graphics/Matrix;->postScale(FF)Z
 
-    mul-float p1, p1, v5
+    mul-float/2addr p1, v5
 
     .line 142
     invoke-static {p1}, Ljava/lang/Math;->round(F)I
@@ -273,7 +273,7 @@
 
     move-result-object p1
 
-    mul-float p2, p2, v6
+    mul-float/2addr p2, v6
 
     invoke-static {p2}, Ljava/lang/Math;->round(F)I
 

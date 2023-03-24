@@ -175,7 +175,7 @@
 
     if-nez v3, :cond_0
 
-    const/4 v3, 0x0
+    move v3, v4
 
     goto :goto_0
 
@@ -190,7 +190,7 @@
 
     if-nez v5, :cond_1
 
-    const/4 v5, 0x0
+    move v5, v4
 
     goto :goto_1
 
@@ -205,7 +205,7 @@
 
     if-nez v6, :cond_2
 
-    const/4 v6, 0x0
+    move v6, v4
 
     goto :goto_2
 
@@ -575,11 +575,11 @@
 
     iget p4, p0, Lorg/telegram/ui/Components/Premium/PremiumGradient$PremiumGradientTools;->cx:F
 
-    mul-float p4, p4, v1
+    mul-float/2addr p4, v1
 
     iget v0, p0, Lorg/telegram/ui/Components/Premium/PremiumGradient$PremiumGradientTools;->cy:F
 
-    mul-float v0, v0, v1
+    mul-float/2addr v0, v1
 
     invoke-virtual {p3, p1, p2, p4, v0}, Landroid/graphics/Matrix;->postScale(FFFF)Z
 

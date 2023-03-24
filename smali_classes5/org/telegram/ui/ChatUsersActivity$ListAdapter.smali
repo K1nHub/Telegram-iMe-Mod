@@ -958,12 +958,12 @@
 
     if-ne v3, v2, :cond_0
 
-    const/4 v7, 0x1
+    move v7, v11
 
     goto :goto_0
 
     :cond_0
-    const/4 v7, 0x0
+    move v7, v10
 
     .line 3492
     :goto_0
@@ -1395,12 +1395,12 @@
 
     if-nez v2, :cond_b
 
-    const/4 v5, 0x1
+    move v5, v11
 
     goto :goto_1
 
     :cond_b
-    const/4 v5, 0x0
+    move v5, v10
 
     :goto_1
     const/4 v6, 0x0
@@ -1528,7 +1528,7 @@
     if-lt v3, v4, :cond_f
 
     :cond_e
-    const/4 v3, 0x0
+    move v3, v10
 
     goto :goto_3
 
@@ -1568,7 +1568,7 @@
     goto :goto_4
 
     :cond_10
-    const/4 v11, 0x0
+    move v11, v10
 
     :goto_4
     sget v3, Lorg/telegram/messenger/R$drawable;->msg_policy:I
@@ -1641,7 +1641,7 @@
     if-lt v3, v4, :cond_13
 
     :cond_12
-    const/4 v3, 0x0
+    move v3, v10
 
     goto :goto_5
 
@@ -1681,7 +1681,7 @@
     goto :goto_6
 
     :cond_14
-    const/4 v11, 0x0
+    move v11, v10
 
     :goto_6
     invoke-virtual {v1, v2, v11, v10}, Lorg/telegram/ui/Cells/TextCell;->setTextAndCheck(Ljava/lang/CharSequence;ZZ)V
@@ -1922,12 +1922,12 @@
 
     if-ne v3, v2, :cond_1c
 
-    const/4 v3, 0x1
+    move v3, v11
 
     goto :goto_8
 
     :cond_1c
-    const/4 v3, 0x0
+    move v3, v10
 
     .line 3407
     :goto_8
@@ -1977,12 +1977,12 @@
 
     if-nez v5, :cond_1d
 
-    const/4 v5, 0x1
+    move v5, v11
 
     goto :goto_9
 
     :cond_1d
-    const/4 v5, 0x0
+    move v5, v10
 
     :goto_9
     iget-object v8, v0, Lorg/telegram/ui/ChatUsersActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatUsersActivity;
@@ -1993,12 +1993,12 @@
 
     if-eq v8, v7, :cond_1e
 
-    const/4 v7, 0x1
+    move v7, v11
 
     goto :goto_a
 
     :cond_1e
-    const/4 v7, 0x0
+    move v7, v10
 
     :goto_a
     invoke-virtual {v1, v4, v5, v7, v3}, Lorg/telegram/ui/Cells/TextCheckCell2;->setTextAndCheck(Ljava/lang/String;ZZZ)V
@@ -2079,12 +2079,12 @@
 
     if-nez v5, :cond_21
 
-    const/4 v5, 0x1
+    move v5, v11
 
     goto :goto_b
 
     :cond_21
-    const/4 v5, 0x0
+    move v5, v10
 
     :goto_b
     invoke-virtual {v1, v4, v5, v11, v3}, Lorg/telegram/ui/Cells/TextCheckCell2;->setTextAndCheck(Ljava/lang/String;ZZZ)V
@@ -2152,12 +2152,12 @@
 
     if-lez v4, :cond_24
 
-    const/4 v7, 0x1
+    move v7, v11
 
     goto :goto_c
 
     :cond_24
-    const/4 v7, 0x0
+    move v7, v10
 
     :goto_c
     invoke-virtual {v1, v5, v7, v11, v3}, Lorg/telegram/ui/Cells/TextCheckCell2;->setTextAndCheck(Ljava/lang/String;ZZZ)V
@@ -2529,7 +2529,7 @@
     goto :goto_e
 
     :cond_31
-    const/4 v4, 0x0
+    move v4, v10
 
     :goto_e
     invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -2849,7 +2849,7 @@
 
     if-eq v4, v7, :cond_3a
 
-    const/4 v10, 0x1
+    move v10, v11
 
     :cond_3a
     invoke-virtual {v1, v2, v9, v3, v10}, Lorg/telegram/ui/Cells/ManageChatTextCell;->setText(Ljava/lang/String;Ljava/lang/String;IZ)V
@@ -2912,7 +2912,7 @@
     if-eqz v2, :cond_3e
 
     :cond_3d
-    const/4 v10, 0x1
+    move v10, v11
 
     .line 3350
     :cond_3e
@@ -2990,7 +2990,7 @@
     if-nez v2, :cond_42
 
     :cond_41
-    const/4 v10, 0x1
+    move v10, v11
 
     .line 3354
     :cond_42
@@ -3068,7 +3068,7 @@
 
     if-le v4, v5, :cond_45
 
-    const/4 v10, 0x1
+    move v10, v11
 
     :cond_45
     invoke-virtual {v1, v2, v9, v3, v10}, Lorg/telegram/ui/Cells/ManageChatTextCell;->setText(Ljava/lang/String;Ljava/lang/String;IZ)V
@@ -3126,7 +3126,7 @@
 
     if-nez v2, :cond_48
 
-    const/4 v10, 0x1
+    move v10, v11
 
     .line 3365
     :cond_48
@@ -3632,7 +3632,7 @@
     if-nez v7, :cond_5a
 
     :goto_17
-    const/4 v7, 0x1
+    move v7, v11
 
     goto :goto_18
 
@@ -3695,7 +3695,7 @@
     move-result v4
 
     :cond_5a
-    const/4 v7, 0x0
+    move v7, v10
 
     .line 3224
     :goto_18
@@ -3776,9 +3776,9 @@
     const/4 v11, 0x0
 
     :goto_19
-    cmp-long v18, v14, v12
+    cmp-long v12, v14, v12
 
-    if-lez v18, :cond_5c
+    if-lez v12, :cond_5c
 
     .line 3249
     iget-object v12, v0, Lorg/telegram/ui/ChatUsersActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatUsersActivity;
@@ -3924,9 +3924,9 @@
 
     if-eq v2, v4, :cond_60
 
-    const/4 v2, 0x0
+    move v10, v9
 
-    const/4 v10, 0x1
+    const/4 v2, 0x0
 
     goto :goto_1d
 
@@ -3994,9 +3994,9 @@
     .line 3272
     iget-wide v5, v3, Lorg/telegram/tgnet/TLRPC$User;->id:J
 
-    cmp-long v7, v5, v14
+    cmp-long v5, v5, v14
 
-    if-nez v7, :cond_63
+    if-nez v5, :cond_63
 
     .line 3273
     sget v3, Lorg/telegram/messenger/R$string;->ChannelAdministrator:I
@@ -4052,9 +4052,9 @@
     goto :goto_20
 
     :cond_65
-    const/4 v2, 0x0
+    move v10, v9
 
-    const/4 v10, 0x0
+    const/4 v2, 0x0
 
     .line 3279
     :goto_20
@@ -4099,19 +4099,17 @@
 
     if-eq v2, v4, :cond_68
 
-    const/4 v2, 0x0
-
-    const/4 v10, 0x1
+    move v10, v5
 
     goto :goto_22
 
     :cond_68
+    move v10, v9
+
+    :goto_22
     const/4 v2, 0x0
 
-    const/4 v10, 0x0
-
     .line 3287
-    :goto_22
     invoke-virtual {v1, v12, v2, v3, v10}, Lorg/telegram/ui/Cells/ManageChatUserCell;->setData(Ljava/lang/Object;Ljava/lang/CharSequence;Ljava/lang/CharSequence;Z)V
 
     nop
@@ -4119,8 +4117,6 @@
     :cond_69
     :goto_23
     return-void
-
-    nop
 
     :pswitch_data_0
     .packed-switch 0x0
@@ -4665,7 +4661,7 @@
     goto :goto_1
 
     :cond_1
-    const/4 v1, 0x6
+    move v1, v4
 
     :cond_2
     :goto_1
@@ -4686,7 +4682,7 @@
     if-ne v2, v3, :cond_4
 
     :cond_3
-    const/4 v0, 0x6
+    move v0, v4
 
     :cond_4
     iget-object v2, p0, Lorg/telegram/ui/ChatUsersActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatUsersActivity;
@@ -4697,7 +4693,7 @@
 
     if-nez v2, :cond_5
 
-    const/4 v5, 0x1
+    move v5, v7
 
     :cond_5
     invoke-direct {p2, p1, v1, v0, v5}, Lorg/telegram/ui/Cells/ManageChatUserCell;-><init>(Landroid/content/Context;IIZ)V

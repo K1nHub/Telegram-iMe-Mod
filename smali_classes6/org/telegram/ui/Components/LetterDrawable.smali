@@ -233,7 +233,7 @@
 
     const/high16 v1, 0x3f400000    # 0.75f
 
-    mul-float p2, p2, v1
+    mul-float/2addr p2, v1
 
     invoke-virtual {p1, p2}, Landroid/text/TextPaint;->setTextSize(F)V
 

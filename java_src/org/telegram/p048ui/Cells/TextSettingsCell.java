@@ -270,29 +270,35 @@ public class TextSettingsCell extends FrameLayout {
             this.valueTextView.setAlpha((z || !this.canDisable) ? 1.0f : 0.5f);
         }
         if (this.valueImageView.getVisibility() == 0) {
-            this.valueImageView.setAlpha((z || !this.canDisable) ? 1.0f : 1.0f);
+            ImageView imageView = this.valueImageView;
+            if (z || !this.canDisable) {
+                f = 1.0f;
+            }
+            imageView.setAlpha(f);
         }
     }
 
     @Override // android.view.ViewGroup, android.view.View
     protected void dispatchDraw(Canvas canvas) {
-        if (this.drawLoading || this.drawLoadingProgress != BitmapDescriptorFactory.HUE_RED) {
+        boolean z = this.drawLoading;
+        float f = BitmapDescriptorFactory.HUE_RED;
+        if (z || this.drawLoadingProgress != BitmapDescriptorFactory.HUE_RED) {
             if (this.paint == null) {
                 Paint paint = new Paint(1);
                 this.paint = paint;
                 paint.setColor(Theme.getColor("dialogSearchBackground", this.resourcesProvider));
             }
             if (this.incrementLoadingProgress) {
-                float f = this.loadingProgress + 0.016f;
-                this.loadingProgress = f;
-                if (f > 1.0f) {
+                float f2 = this.loadingProgress + 0.016f;
+                this.loadingProgress = f2;
+                if (f2 > 1.0f) {
                     this.loadingProgress = 1.0f;
                     this.incrementLoadingProgress = false;
                 }
             } else {
-                float f2 = this.loadingProgress - 0.016f;
-                this.loadingProgress = f2;
-                if (f2 < BitmapDescriptorFactory.HUE_RED) {
+                float f3 = this.loadingProgress - 0.016f;
+                this.loadingProgress = f3;
+                if (f3 < BitmapDescriptorFactory.HUE_RED) {
                     this.loadingProgress = BitmapDescriptorFactory.HUE_RED;
                     this.incrementLoadingProgress = true;
                 }
@@ -301,23 +307,23 @@ public class TextSettingsCell extends FrameLayout {
             if (i > 0) {
                 this.changeProgressStartDelay = i - 15;
             } else {
-                boolean z = this.drawLoading;
-                if (z) {
-                    float f3 = this.drawLoadingProgress;
-                    if (f3 != 1.0f) {
-                        float f4 = f3 + 0.10666667f;
-                        this.drawLoadingProgress = f4;
-                        if (f4 > 1.0f) {
+                boolean z2 = this.drawLoading;
+                if (z2) {
+                    float f4 = this.drawLoadingProgress;
+                    if (f4 != 1.0f) {
+                        float f5 = f4 + 0.10666667f;
+                        this.drawLoadingProgress = f5;
+                        if (f5 > 1.0f) {
                             this.drawLoadingProgress = 1.0f;
                         }
                     }
                 }
-                if (!z) {
-                    float f5 = this.drawLoadingProgress;
-                    if (f5 != BitmapDescriptorFactory.HUE_RED) {
-                        float f6 = f5 - 0.10666667f;
-                        this.drawLoadingProgress = f6;
-                        if (f6 < BitmapDescriptorFactory.HUE_RED) {
+                if (!z2) {
+                    float f6 = this.drawLoadingProgress;
+                    if (f6 != BitmapDescriptorFactory.HUE_RED) {
+                        float f7 = f6 - 0.10666667f;
+                        this.drawLoadingProgress = f7;
+                        if (f7 < BitmapDescriptorFactory.HUE_RED) {
                             this.drawLoadingProgress = BitmapDescriptorFactory.HUE_RED;
                         }
                     }
@@ -338,7 +344,10 @@ public class TextSettingsCell extends FrameLayout {
         super.dispatchDraw(canvas);
         if (this.needDivider) {
             int m50dp = AndroidUtilities.m50dp(this.imageView.getVisibility() == 0 ? 71 : 20);
-            canvas.drawLine(LocaleController.isRTL ? BitmapDescriptorFactory.HUE_RED : m50dp, getMeasuredHeight() - 1, getMeasuredWidth() - (LocaleController.isRTL ? m50dp : 0), getMeasuredHeight() - 1, Theme.dividerPaint);
+            if (!LocaleController.isRTL) {
+                f = m50dp;
+            }
+            canvas.drawLine(f, getMeasuredHeight() - 1, getMeasuredWidth() - (LocaleController.isRTL ? m50dp : 0), getMeasuredHeight() - 1, Theme.dividerPaint);
         }
     }
 

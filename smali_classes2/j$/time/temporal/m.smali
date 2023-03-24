@@ -133,16 +133,16 @@
     .line 1
     iget-wide v0, p0, Lj$/time/temporal/m;->a:J
 
-    cmp-long v2, p1, v0
+    cmp-long v0, p1, v0
 
-    if-ltz v2, :cond_0
+    if-ltz v0, :cond_0
 
     .line 2
     iget-wide v0, p0, Lj$/time/temporal/m;->d:J
 
-    cmp-long v2, p1, v0
+    cmp-long v0, p1, v0
 
-    if-gtz v2, :cond_0
+    if-gtz v0, :cond_0
 
     const/4 v0, 0x1
 
@@ -194,23 +194,23 @@
 .end method
 
 .method public b()Z
-    .locals 5
+    .locals 4
 
     iget-wide v0, p0, Lj$/time/temporal/m;->a:J
 
     iget-wide v2, p0, Lj$/time/temporal/m;->b:J
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-nez v4, :cond_0
+    if-nez v0, :cond_0
 
     iget-wide v0, p0, Lj$/time/temporal/m;->c:J
 
     iget-wide v2, p0, Lj$/time/temporal/m;->d:J
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-nez v4, :cond_0
+    if-nez v0, :cond_0
 
     const/4 v0, 0x1
 
@@ -276,7 +276,7 @@
     goto :goto_0
 
     :cond_1
-    const/4 v0, 0x0
+    move v0, v2
 
     :goto_0
     return v0
@@ -330,9 +330,9 @@
 
     xor-long/2addr v0, v2
 
-    long-to-int v1, v0
+    long-to-int v0, v0
 
-    return v1
+    return v0
 .end method
 
 .method public toString()Ljava/lang/String;
@@ -350,36 +350,36 @@
 
     iget-wide v3, p0, Lj$/time/temporal/m;->b:J
 
-    const/16 v5, 0x2f
+    cmp-long v1, v1, v3
 
-    cmp-long v6, v1, v3
+    const/16 v2, 0x2f
 
-    if-eqz v6, :cond_0
+    if-eqz v1, :cond_0
 
-    invoke-virtual {v0, v5}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    iget-wide v1, p0, Lj$/time/temporal/m;->b:J
+    iget-wide v3, p0, Lj$/time/temporal/m;->b:J
 
-    invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v3, v4}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
     :cond_0
     const-string v1, " - "
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget-wide v1, p0, Lj$/time/temporal/m;->c:J
+    iget-wide v3, p0, Lj$/time/temporal/m;->c:J
 
-    invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v3, v4}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
-    iget-wide v1, p0, Lj$/time/temporal/m;->c:J
+    iget-wide v3, p0, Lj$/time/temporal/m;->c:J
 
-    iget-wide v3, p0, Lj$/time/temporal/m;->d:J
+    iget-wide v5, p0, Lj$/time/temporal/m;->d:J
 
-    cmp-long v6, v1, v3
+    cmp-long v1, v3, v5
 
-    if-eqz v6, :cond_1
+    if-eqz v1, :cond_1
 
-    invoke-virtual {v0, v5}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
     iget-wide v1, p0, Lj$/time/temporal/m;->d:J
 

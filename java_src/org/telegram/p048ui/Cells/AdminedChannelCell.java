@@ -9,7 +9,7 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3286R;
+import org.telegram.messenger.C3301R;
 import org.telegram.messenger.ChatObject;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessagesController;
@@ -82,7 +82,7 @@ public class AdminedChannelCell extends FrameLayout {
             ImageView imageView = new ImageView(context);
             this.deleteButton = imageView;
             imageView.setScaleType(ImageView.ScaleType.CENTER);
-            this.deleteButton.setImageResource(C3286R.C3288drawable.msg_panel_clear);
+            this.deleteButton.setImageResource(C3301R.C3303drawable.msg_panel_clear);
             this.deleteButton.setOnClickListener(onClickListener);
             this.deleteButton.setBackground(Theme.createSelectorDrawable(Theme.getColor("listSelectorSDK21")));
             this.deleteButton.setColorFilter(new PorterDuffColorFilter(Theme.getColor("windowBackgroundWhiteGrayText"), PorterDuff.Mode.MULTIPLY));

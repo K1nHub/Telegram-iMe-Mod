@@ -1,7 +1,7 @@
 package com.smedialink.p031ui.wallet.crypto.create;
 
 import android.view.View;
-import com.smedialink.p031ui.wallet.crypto.create.CreateWalletFragment;
+import com.smedialink.model.wallet.crypto.create.CreateWalletScreenType;
 import com.smedialink.storage.data.utils.extentions.StringExtKt;
 import com.smedialink.utils.extentions.common.ContextExtKt;
 import kotlin.Unit;
@@ -31,8 +31,8 @@ public final class CreateWalletFragment$createCopyButton$1$1 extends Lambda impl
     /* renamed from: invoke  reason: avoid collision after fix types in other method */
     public final void invoke2(View it) {
         Intrinsics.checkNotNullParameter(it, "it");
-        CreateWalletFragment.ScreenType screenType = this.this$0.currentType;
-        Intrinsics.checkNotNull(screenType, "null cannot be cast to non-null type com.smedialink.ui.wallet.crypto.create.CreateWalletFragment.ScreenType.SecretWords");
-        ContextExtKt.copyToClipboard$default(StringExtKt.joinBySpace(((CreateWalletFragment.ScreenType.SecretWords) screenType).getSecretWords()), null, 2, null);
+        CreateWalletScreenType createWalletScreenType = this.this$0.currentType;
+        Intrinsics.checkNotNull(createWalletScreenType, "null cannot be cast to non-null type com.smedialink.model.wallet.crypto.create.CreateWalletScreenType.SecretWords");
+        ContextExtKt.copyToClipboard$default(StringExtKt.joinBySpace(((CreateWalletScreenType.SecretWords) createWalletScreenType).getSecretWords()), null, 2, null);
     }
 }

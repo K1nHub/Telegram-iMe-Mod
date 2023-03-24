@@ -35,7 +35,7 @@ public final class WCBinanceTradeOrder extends WCBinanceOrder<Message> {
     public static final class Message {
 
         /* renamed from: id */
-        private final String f387id;
+        private final String f388id;
         private final int orderType;
         private final long price;
         private final long quantity;
@@ -50,24 +50,24 @@ public final class WCBinanceTradeOrder extends WCBinanceOrder<Message> {
             }
             if (obj instanceof Message) {
                 Message message = (Message) obj;
-                return Intrinsics.areEqual(this.f387id, message.f387id) && this.orderType == message.orderType && this.price == message.price && this.quantity == message.quantity && Intrinsics.areEqual(this.sender, message.sender) && this.side == message.side && Intrinsics.areEqual(this.symbol, message.symbol) && this.timeInforce == message.timeInforce;
+                return Intrinsics.areEqual(this.f388id, message.f388id) && this.orderType == message.orderType && this.price == message.price && this.quantity == message.quantity && Intrinsics.areEqual(this.sender, message.sender) && this.side == message.side && Intrinsics.areEqual(this.symbol, message.symbol) && this.timeInforce == message.timeInforce;
             }
             return false;
         }
 
         public int hashCode() {
-            return (((((((((((((this.f387id.hashCode() * 31) + this.orderType) * 31) + StakingApprovalPrepareRequest$$ExternalSyntheticBackport0.m716m(this.price)) * 31) + StakingApprovalPrepareRequest$$ExternalSyntheticBackport0.m716m(this.quantity)) * 31) + this.sender.hashCode()) * 31) + this.side) * 31) + this.symbol.hashCode()) * 31) + this.timeInforce;
+            return (((((((((((((this.f388id.hashCode() * 31) + this.orderType) * 31) + StakingApprovalPrepareRequest$$ExternalSyntheticBackport0.m716m(this.price)) * 31) + StakingApprovalPrepareRequest$$ExternalSyntheticBackport0.m716m(this.quantity)) * 31) + this.sender.hashCode()) * 31) + this.side) * 31) + this.symbol.hashCode()) * 31) + this.timeInforce;
         }
 
         public String toString() {
-            return "Message(id=" + this.f387id + ", orderType=" + this.orderType + ", price=" + this.price + ", quantity=" + this.quantity + ", sender=" + this.sender + ", side=" + this.side + ", symbol=" + this.symbol + ", timeInforce=" + this.timeInforce + ')';
+            return "Message(id=" + this.f388id + ", orderType=" + this.orderType + ", price=" + this.price + ", quantity=" + this.quantity + ", sender=" + this.sender + ", side=" + this.side + ", symbol=" + this.symbol + ", timeInforce=" + this.timeInforce + ')';
         }
 
         public Message(String id, int i, long j, long j2, String sender, int i2, String symbol, int i3) {
             Intrinsics.checkNotNullParameter(id, "id");
             Intrinsics.checkNotNullParameter(sender, "sender");
             Intrinsics.checkNotNullParameter(symbol, "symbol");
-            this.f387id = id;
+            this.f388id = id;
             this.orderType = i;
             this.price = j;
             this.quantity = j2;
@@ -78,7 +78,7 @@ public final class WCBinanceTradeOrder extends WCBinanceOrder<Message> {
         }
 
         public final String getId() {
-            return this.f387id;
+            return this.f388id;
         }
 
         public final int getOrderType() {

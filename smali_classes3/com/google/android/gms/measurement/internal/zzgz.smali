@@ -84,9 +84,9 @@
 
     const-wide/16 v3, 0x5
 
-    cmp-long v5, v1, v3
+    cmp-long v1, v1, v3
 
-    if-ltz v5, :cond_0
+    if-ltz v1, :cond_0
 
     iget-object v1, v0, Lcom/google/android/gms/measurement/internal/zzgo;->zzs:Lcom/google/android/gms/measurement/internal/zzfv;
 

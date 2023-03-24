@@ -59,7 +59,7 @@
     .line 160
     iget p2, p2, Lorg/telegram/ui/Components/BottomSheetWithRecyclerListView;->topPadding:F
 
-    mul-float v0, v0, p2
+    mul-float/2addr v0, p2
 
     float-to-int p2, v0
 

@@ -134,8 +134,8 @@ public final class TemplatesController extends BaseController implements KoinCom
         coerceAtLeast = RangesKt___RangesKt.coerceAtLeast(mapCapacity, 16);
         LinkedHashMap linkedHashMap = new LinkedHashMap(coerceAtLeast);
         for (TemplatesDb templatesDb : allTemplatesForUser) {
-            Pair m100to = TuplesKt.m100to(Long.valueOf(templatesDb.getMessageId()), TemplateMappingKt.mapToDomain(templatesDb));
-            linkedHashMap.put(m100to.getFirst(), m100to.getSecond());
+            Pair m99to = TuplesKt.m99to(Long.valueOf(templatesDb.getMessageId()), TemplateMappingKt.mapToDomain(templatesDb));
+            linkedHashMap.put(m99to.getFirst(), m99to.getSecond());
         }
         mutableMap = MapsKt__MapsKt.toMutableMap(linkedHashMap);
         this.templates = mutableMap;
@@ -150,7 +150,7 @@ public final class TemplatesController extends BaseController implements KoinCom
                 this.templates.clear();
                 TLRPC$TL_channels_getMessages tLRPC$TL_channels_getMessages = new TLRPC$TL_channels_getMessages();
                 tLRPC$TL_channels_getMessages.channel = getMessagesController().getInputChannel(this.templatesChannelId);
-                ArrayList<Integer> arrayList = tLRPC$TL_channels_getMessages.f1541id;
+                ArrayList<Integer> arrayList = tLRPC$TL_channels_getMessages.f1542id;
                 List<TemplateModel> templates = backup.getTemplates();
                 collectionSizeOrDefault = CollectionsKt__IterablesKt.collectionSizeOrDefault(templates, 10);
                 ArrayList arrayList2 = new ArrayList(collectionSizeOrDefault);
@@ -184,13 +184,13 @@ public final class TemplatesController extends BaseController implements KoinCom
             ArrayList<TLRPC$User> arrayList2 = tLRPC$messages_Messages.users;
             Intrinsics.checkNotNullExpressionValue(arrayList2, "response.users");
             for (TLRPC$User tLRPC$User : arrayList2) {
-                longSparseArray.put(tLRPC$User.f1639id, tLRPC$User);
+                longSparseArray.put(tLRPC$User.f1640id, tLRPC$User);
             }
             LongSparseArray longSparseArray2 = new LongSparseArray();
             ArrayList<TLRPC$Chat> arrayList3 = tLRPC$messages_Messages.chats;
             Intrinsics.checkNotNullExpressionValue(arrayList3, "response.chats");
             for (TLRPC$Chat tLRPC$Chat : arrayList3) {
-                longSparseArray2.put(tLRPC$Chat.f1499id, tLRPC$Chat);
+                longSparseArray2.put(tLRPC$Chat.f1500id, tLRPC$Chat);
             }
             ArrayList<TLRPC$Message> arrayList4 = tLRPC$messages_Messages.messages;
             Intrinsics.checkNotNullExpressionValue(arrayList4, "response.messages");
@@ -210,7 +210,7 @@ public final class TemplatesController extends BaseController implements KoinCom
         collectionSizeOrDefault = CollectionsKt__IterablesKt.collectionSizeOrDefault(arrayList5, 10);
         ArrayList arrayList6 = new ArrayList(collectionSizeOrDefault);
         for (TemplateModel templateModel : arrayList5) {
-            arrayList6.add(TuplesKt.m100to(Long.valueOf(templateModel.getMessageId()), templateModel));
+            arrayList6.add(TuplesKt.m99to(Long.valueOf(templateModel.getMessageId()), templateModel));
         }
         MapsKt__MapsKt.putAll(map2, arrayList6);
         this$0.getDao().restoreBackup(this$0.getUserConfig().clientUserId, arrayList5);
@@ -611,7 +611,7 @@ public final class TemplatesController extends BaseController implements KoinCom
         collectionSizeOrDefault2 = CollectionsKt__IterablesKt.collectionSizeOrDefault(arrayList, 10);
         ArrayList arrayList2 = new ArrayList(collectionSizeOrDefault2);
         for (TemplateModel templateModel : arrayList) {
-            arrayList2.add(TuplesKt.m100to(Long.valueOf(templateModel.getMessageId()), templateModel));
+            arrayList2.add(TuplesKt.m99to(Long.valueOf(templateModel.getMessageId()), templateModel));
         }
         MapsKt__MapsKt.putAll(map, arrayList2);
         Utilities.stageQueue.postRunnable(new Runnable() { // from class: org.fork.controller.TemplatesController$$ExternalSyntheticLambda10

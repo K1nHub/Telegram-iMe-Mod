@@ -56,15 +56,15 @@ public final class zzqv implements zzno<List<FirebaseVisionImageLabel>, zzqp>, z
             if (r0 <= 0) goto L1a
             goto L1c
         L1a:
-            r0 = 0
+            r0 = r1
             goto L1d
         L1c:
-            r0 = 1
+            r0 = r3
         L1d:
             if (r0 != 0) goto L20
             goto L21
         L20:
-            r3 = 0
+            r3 = r1
         L21:
             java.lang.Boolean r0 = java.lang.Boolean.valueOf(r3)     // Catch: java.lang.Throwable -> L97
             com.google.android.gms.internal.firebase_ml.zzqv.zzbcx = r0     // Catch: java.lang.Throwable -> L97
@@ -84,7 +84,7 @@ public final class zzqv implements zzno<List<FirebaseVisionImageLabel>, zzqp>, z
             java.util.ArrayList r2 = new java.util.ArrayList     // Catch: java.lang.Throwable -> L97
             r2.<init>()     // Catch: java.lang.Throwable -> L97
             if (r0 == 0) goto L6a
-            r5 = 0
+            r5 = r1
         L4f:
             int r6 = r0.size()     // Catch: java.lang.Throwable -> L97
             if (r5 >= r6) goto L6a

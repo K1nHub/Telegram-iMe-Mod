@@ -220,9 +220,9 @@
 
     const-wide v3, -0x7fffffffffffffffL    # -4.9E-324
 
-    cmp-long v5, v1, v3
+    cmp-long v1, v1, v3
 
-    if-nez v5, :cond_0
+    if-nez v1, :cond_0
 
     iget-boolean v0, v0, Lcom/google/android/exoplayer2/source/hls/playlist/HlsMediaPlaylist$ServerControl;->canBlockReload:Z
 
@@ -493,9 +493,9 @@
     .line 682
     iget-wide v2, p0, Lcom/google/android/exoplayer2/source/hls/playlist/DefaultHlsPlaylistTracker$MediaPlaylistBundle;->earliestNextLoadTimeMs:J
 
-    cmp-long v4, v0, v2
+    cmp-long v2, v0, v2
 
-    if-gez v4, :cond_1
+    if-gez v2, :cond_1
 
     const/4 v2, 0x1
 
@@ -610,7 +610,7 @@
 
     invoke-direct {v5, p1}, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistTracker$PlaylistResetException;-><init>(Landroid/net/Uri;)V
 
-    const/4 p1, 0x1
+    move p1, v6
 
     goto :goto_0
 
@@ -638,7 +638,7 @@
 
     move-result-wide v11
 
-    mul-double v9, v9, v11
+    mul-double/2addr v9, v11
 
     cmpl-double p1, v7, v9
 
@@ -652,7 +652,7 @@
     invoke-direct {v5, p1}, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistTracker$PlaylistStuckException;-><init>(Landroid/net/Uri;)V
 
     :cond_2
-    const/4 p1, 0x0
+    move p1, v4
 
     :goto_0
     if-eqz v5, :cond_3
@@ -723,9 +723,9 @@
 
     const-wide v0, -0x7fffffffffffffffL    # -4.9E-324
 
-    cmp-long v2, p1, v0
+    cmp-long p1, p1, v0
 
-    if-nez v2, :cond_6
+    if-nez p1, :cond_6
 
     iget-object p1, p0, Lcom/google/android/exoplayer2/source/hls/playlist/DefaultHlsPlaylistTracker$MediaPlaylistBundle;->playlistUrl:Landroid/net/Uri;
 
@@ -743,7 +743,7 @@
     if-eqz p1, :cond_7
 
     :cond_6
-    const/4 v4, 0x1
+    move v4, v6
 
     :cond_7
     if-eqz v4, :cond_8
@@ -836,7 +836,7 @@
     if-lez v0, :cond_2
 
     :cond_1
-    const/4 v1, 0x1
+    move v1, v7
 
     :cond_2
     return v1
@@ -1165,12 +1165,12 @@
 
     if-eqz v3, :cond_0
 
-    const/4 v3, 0x1
+    move v3, v4
 
     goto :goto_0
 
     :cond_0
-    const/4 v3, 0x0
+    move v3, v5
 
     .line 632
     :goto_0

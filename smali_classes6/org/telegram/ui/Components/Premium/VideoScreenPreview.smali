@@ -1004,7 +1004,7 @@
 
     const/4 v8, 0x0
 
-    const/4 v3, 0x0
+    move v3, v8
 
     .line 223
     :goto_0
@@ -1059,7 +1059,7 @@
 
     move-object v4, v1
 
-    const/4 v1, 0x0
+    move v1, v8
 
     .line 232
     :goto_2
@@ -1480,7 +1480,7 @@
 
     int-to-float v9, v7
 
-    mul-float v9, v9, v6
+    mul-float/2addr v9, v6
 
     sub-float/2addr v0, v9
 
@@ -1496,11 +1496,11 @@
 
     sub-float v7, v4, v0
 
-    mul-float v6, v6, v7
+    mul-float/2addr v6, v7
 
     aget v5, v5, v8
 
-    mul-float v5, v5, v0
+    mul-float/2addr v5, v0
 
     add-float v0, v6, v5
 
@@ -1525,7 +1525,7 @@
 
     sub-float/2addr v4, v5
 
-    mul-float v4, v4, v1
+    mul-float/2addr v4, v1
 
     add-float/2addr v4, v6
 
@@ -1534,9 +1534,9 @@
 
     const/high16 v6, 0x43160000    # 150.0f
 
-    mul-float v4, v4, v6
+    mul-float/2addr v4, v6
 
-    mul-float v4, v4, v0
+    mul-float/2addr v4, v0
 
     iput v4, v5, Lorg/telegram/ui/Components/Premium/SpeedLineParticles$Drawable;->speedScale:F
 
@@ -1570,7 +1570,7 @@
 
     int-to-float v0, v0
 
-    mul-float v0, v0, v1
+    mul-float/2addr v0, v1
 
     float-to-int v0, v0
 
@@ -1578,7 +1578,7 @@
 
     const v1, 0x3f2bc6a8    # 0.671f
 
-    mul-float v1, v1, v0
+    mul-float/2addr v1, v0
 
     .line 398
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
@@ -1593,7 +1593,7 @@
 
     const v1, 0x3d896bba    # 0.0671f
 
-    mul-float v1, v1, v0
+    mul-float/2addr v1, v0
 
     .line 399
     iput v1, p0, Lorg/telegram/ui/Components/Premium/VideoScreenPreview;->roundRadius:F
@@ -2037,7 +2037,7 @@
 
     const p4, 0x3f666666    # 0.9f
 
-    mul-float p2, p2, p4
+    mul-float/2addr p2, p4
 
     float-to-int p2, p2
 
@@ -2045,7 +2045,7 @@
 
     const p4, 0x3f2bc6a8    # 0.671f
 
-    mul-float p4, p4, p2
+    mul-float/2addr p4, p2
 
     .line 306
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
@@ -2220,7 +2220,7 @@
 
     const p5, 0x3ecccccd    # 0.4f
 
-    mul-float p4, p4, p5
+    mul-float/2addr p4, p5
 
     float-to-int p4, p4
 
@@ -2435,7 +2435,7 @@
 
     int-to-float p5, p5
 
-    mul-float p5, p5, p4
+    mul-float/2addr p5, p4
 
     invoke-virtual {p1, p3, p5}, Landroid/graphics/RectF;->offset(FF)V
 
@@ -2503,7 +2503,7 @@
 
     int-to-float p3, p3
 
-    mul-float p3, p3, p4
+    mul-float/2addr p3, p4
 
     invoke-virtual {p1, p2, p3}, Landroid/graphics/RectF;->inset(FF)V
 
@@ -2538,7 +2538,7 @@
 
     const v3, 0x3f666666    # 0.9f
 
-    mul-float v2, v2, v3
+    mul-float/2addr v2, v3
 
     float-to-int v2, v2
 
@@ -2546,7 +2546,7 @@
 
     const v3, 0x3f2bc6a8    # 0.671f
 
-    mul-float v3, v3, v2
+    mul-float/2addr v3, v2
 
     int-to-float v0, v0
 
@@ -2558,7 +2558,7 @@
 
     const v4, 0x3d896bba    # 0.0671f
 
-    mul-float v4, v4, v2
+    mul-float/2addr v4, v2
 
     .line 281
     iput v4, p0, Lorg/telegram/ui/Components/Premium/VideoScreenPreview;->roundRadius:F
@@ -2676,52 +2676,52 @@
 .method public setOffset(F)V
     .locals 7
 
-    const/high16 v0, 0x42480000    # 50.0f
+    const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    cmpg-float v1, p1, v0
 
-    const/4 v2, 0x1
+    const/high16 v2, 0x42480000    # 50.0f
 
-    const/4 v3, 0x0
+    const/4 v3, 0x1
 
-    const v4, 0x3e99999a    # 0.3f
+    const/4 v4, 0x0
 
-    cmpg-float v5, p1, v1
+    const v5, 0x3e99999a    # 0.3f
 
-    if-gez v5, :cond_3
+    if-gez v1, :cond_3
 
     neg-float p1, p1
 
     .line 446
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
 
-    move-result v5
+    move-result v1
 
-    int-to-float v5, v5
+    int-to-float v1, v1
 
-    div-float/2addr p1, v5
+    div-float/2addr p1, v1
 
-    const/high16 v5, 0x3f800000    # 1.0f
+    const/high16 v1, 0x3f800000    # 1.0f
 
-    sub-float v6, v5, p1
+    sub-float v6, v1, p1
 
     .line 447
-    invoke-static {v6, v5, v1}, Lorg/telegram/messenger/Utilities;->clamp(FFF)F
+    invoke-static {v6, v1, v0}, Lorg/telegram/messenger/Utilities;->clamp(FFF)F
 
-    move-result v1
+    move-result v0
 
     const/high16 v6, 0x3f000000    # 0.5f
 
-    mul-float v1, v1, v6
+    mul-float/2addr v0, v6
 
-    add-float/2addr v1, v6
+    add-float/2addr v0, v6
 
-    invoke-virtual {p0, v1}, Landroid/widget/FrameLayout;->setAlpha(F)V
+    invoke-virtual {p0, v0}, Landroid/widget/FrameLayout;->setAlpha(F)V
 
-    mul-float v0, v0, p1
+    mul-float/2addr v2, p1
 
     .line 448
-    invoke-virtual {p0, v0}, Landroid/widget/FrameLayout;->setRotationY(F)V
+    invoke-virtual {p0, v2}, Landroid/widget/FrameLayout;->setRotationY(F)V
 
     .line 449
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->invalidate()V
@@ -2740,9 +2740,9 @@
 
     int-to-float v0, v0
 
-    mul-float v0, v0, v4
+    mul-float/2addr v0, v5
 
-    mul-float v0, v0, p1
+    mul-float/2addr v0, p1
 
     invoke-virtual {p0, v0}, Landroid/widget/FrameLayout;->setTranslationY(F)V
 
@@ -2756,9 +2756,9 @@
 
     int-to-float v0, v0
 
-    mul-float v0, v0, v4
+    mul-float/2addr v0, v5
 
-    mul-float v0, v0, p1
+    mul-float/2addr v0, p1
 
     invoke-virtual {p0, v0}, Landroid/widget/FrameLayout;->setTranslationY(F)V
 
@@ -2770,16 +2770,16 @@
 
     iput v0, p0, Lorg/telegram/ui/Components/Premium/VideoScreenPreview;->progress:F
 
-    cmpg-float v0, p1, v5
+    cmpg-float v0, p1, v1
 
     if-gez v0, :cond_1
 
-    const/4 v0, 0x1
+    move v0, v3
 
     goto :goto_1
 
     :cond_1
-    const/4 v0, 0x0
+    move v0, v4
 
     :goto_1
     const v1, 0x3dcccccd    # 0.1f
@@ -2791,7 +2791,7 @@
     goto :goto_5
 
     :cond_2
-    const/4 v2, 0x0
+    move v3, v4
 
     goto :goto_5
 
@@ -2801,19 +2801,19 @@
     .line 459
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
 
-    move-result v1
+    move-result v0
 
-    int-to-float v1, v1
+    int-to-float v0, v0
 
-    div-float/2addr p1, v1
+    div-float/2addr p1, v0
 
     .line 460
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->invalidate()V
 
-    mul-float v0, v0, p1
+    mul-float/2addr v2, p1
 
     .line 461
-    invoke-virtual {p0, v0}, Landroid/widget/FrameLayout;->setRotationY(F)V
+    invoke-virtual {p0, v2}, Landroid/widget/FrameLayout;->setRotationY(F)V
 
     .line 462
     iget-boolean v0, p0, Lorg/telegram/ui/Components/Premium/VideoScreenPreview;->fromTop:Z
@@ -2827,9 +2827,9 @@
 
     int-to-float v0, v0
 
-    mul-float v0, v0, v4
+    mul-float/2addr v0, v5
 
-    mul-float v0, v0, p1
+    mul-float/2addr v0, p1
 
     invoke-virtual {p0, v0}, Landroid/widget/FrameLayout;->setTranslationY(F)V
 
@@ -2845,9 +2845,9 @@
 
     int-to-float v0, v0
 
-    mul-float v0, v0, v4
+    mul-float/2addr v0, v5
 
-    mul-float v0, v0, p1
+    mul-float/2addr v0, p1
 
     invoke-virtual {p0, v0}, Landroid/widget/FrameLayout;->setTranslationY(F)V
 
@@ -2858,12 +2858,12 @@
 
     if-lez v0, :cond_5
 
-    const/4 v0, 0x1
+    move v0, v3
 
     goto :goto_3
 
     :cond_5
-    const/4 v0, 0x0
+    move v0, v4
 
     :goto_3
     const v1, -0x42333333    # -0.1f
@@ -2875,7 +2875,7 @@
     goto :goto_4
 
     :cond_6
-    const/4 v2, 0x0
+    move v3, v4
 
     .line 469
     :goto_4
@@ -2901,15 +2901,15 @@
     :cond_7
     iget-boolean p1, p0, Lorg/telegram/ui/Components/Premium/VideoScreenPreview;->allowPlay:Z
 
-    if-eq v2, p1, :cond_9
+    if-eq v3, p1, :cond_9
 
     .line 476
-    iput-boolean v2, p0, Lorg/telegram/ui/Components/Premium/VideoScreenPreview;->allowPlay:Z
+    iput-boolean v3, p0, Lorg/telegram/ui/Components/Premium/VideoScreenPreview;->allowPlay:Z
 
     .line 477
     iget-object p1, p0, Lorg/telegram/ui/Components/Premium/VideoScreenPreview;->imageReceiver:Lorg/telegram/messenger/ImageReceiver;
 
-    invoke-virtual {p1, v2}, Lorg/telegram/messenger/ImageReceiver;->setAllowStartAnimation(Z)V
+    invoke-virtual {p1, v3}, Lorg/telegram/messenger/ImageReceiver;->setAllowStartAnimation(Z)V
 
     .line 478
     iget-boolean p1, p0, Lorg/telegram/ui/Components/Premium/VideoScreenPreview;->allowPlay:Z

@@ -113,7 +113,7 @@
 .end method
 
 .method private parseVopHeader(Lcom/google/android/exoplayer2/util/ParsableByteArray;Z)V
-    .locals 7
+    .locals 5
 
     .line 191
     invoke-virtual {p1}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->getPosition()I
@@ -133,28 +133,28 @@
 
     and-long/2addr v1, v3
 
-    const/4 v3, 0x0
+    const-wide/16 v3, 0x20
 
-    const-wide/16 v4, 0x20
+    cmp-long v1, v1, v3
 
-    cmp-long v6, v1, v4
+    const/4 v2, 0x0
 
-    if-nez v6, :cond_3
+    if-nez v1, :cond_3
 
     .line 202
     invoke-virtual {p1}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->peekUnsignedByte()I
 
     move-result v1
 
-    shr-int/lit8 v2, v1, 0x1
+    shr-int/lit8 v3, v1, 0x1
 
     const/4 v4, 0x1
 
-    and-int/2addr v2, v4
+    and-int/2addr v3, v4
 
     if-nez p2, :cond_1
 
-    if-nez v2, :cond_1
+    if-nez v3, :cond_1
 
     shr-int/lit8 p2, v1, 0x2
 
@@ -196,13 +196,13 @@
     :goto_0
     invoke-virtual {p1, v0}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->setPosition(I)V
 
-    if-nez v2, :cond_2
+    if-nez v3, :cond_2
 
-    const/4 v3, 0x1
+    move v2, v4
 
     .line 222
     :cond_2
-    iput-boolean v3, p0, Lcom/google/android/exoplayer2/source/rtsp/reader/RtpH263Reader;->isKeyFrame:Z
+    iput-boolean v2, p0, Lcom/google/android/exoplayer2/source/rtsp/reader/RtpH263Reader;->isKeyFrame:Z
 
     return-void
 
@@ -211,7 +211,7 @@
     invoke-virtual {p1, v0}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->setPosition(I)V
 
     .line 226
-    iput-boolean v3, p0, Lcom/google/android/exoplayer2/source/rtsp/reader/RtpH263Reader;->isKeyFrame:Z
+    iput-boolean v2, p0, Lcom/google/android/exoplayer2/source/rtsp/reader/RtpH263Reader;->isKeyFrame:Z
 
     return-void
 .end method
@@ -244,12 +244,12 @@
 
     if-lez v2, :cond_0
 
-    const/4 v2, 0x1
+    move v2, v4
 
     goto :goto_0
 
     :cond_0
-    const/4 v2, 0x0
+    move v2, v3
 
     :goto_0
     and-int/lit16 v5, v1, 0x200

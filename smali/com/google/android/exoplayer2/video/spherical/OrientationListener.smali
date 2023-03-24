@@ -172,7 +172,7 @@
 .end method
 
 .method private rotateAroundZ([FI)V
-    .locals 4
+    .locals 5
 
     if-eqz p2, :cond_3
 
@@ -192,7 +192,7 @@
 
     if-ne p2, v1, :cond_0
 
-    const/4 v1, 0x1
+    move v1, v3
 
     goto :goto_0
 
@@ -205,14 +205,16 @@
     throw p1
 
     :cond_1
-    const/16 v0, 0x81
+    move v4, v1
 
-    const/16 v1, 0x82
+    move v1, v0
+
+    move v0, v4
 
     goto :goto_0
 
     :cond_2
-    const/4 v0, 0x2
+    move v0, v2
 
     .line 118
     :goto_0

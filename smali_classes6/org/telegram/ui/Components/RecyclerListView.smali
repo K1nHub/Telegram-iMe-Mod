@@ -839,12 +839,12 @@
 
     if-eqz v0, :cond_2
 
-    const/4 v3, 0x0
+    move v3, v1
 
     goto :goto_0
 
     :cond_2
-    const/16 v3, 0x8
+    move v3, v2
 
     .line 2130
     :goto_0
@@ -859,7 +859,7 @@
     if-nez v4, :cond_4
 
     :cond_3
-    const/4 p1, 0x0
+    move p1, v1
 
     :cond_4
     const/4 v4, 0x1
@@ -1198,7 +1198,7 @@
 
     move-result p1
 
-    const/4 v0, 0x0
+    move v0, v3
 
     .line 2775
     :goto_0
@@ -1296,13 +1296,13 @@
     goto :goto_1
 
     :cond_1
-    const/4 v1, 0x0
+    move v1, v3
 
     goto :goto_2
 
     :cond_2
     :goto_1
-    const/4 v1, 0x1
+    move v1, v2
 
     .line 2788
     :goto_2
@@ -1653,7 +1653,7 @@
     goto :goto_0
 
     :cond_0
-    const/4 v1, 0x0
+    move v1, v0
 
     .line 2468
     :goto_0
@@ -1959,12 +1959,12 @@
 
     if-eq p1, v0, :cond_2
 
-    const/4 v0, 0x1
+    move v0, v1
 
     goto :goto_0
 
     :cond_2
-    const/4 v0, 0x0
+    move v0, v2
 
     .line 2289
     :goto_0
@@ -1990,7 +1990,7 @@
     goto :goto_1
 
     :cond_3
-    const/4 v3, 0x0
+    move v3, v2
 
     :goto_1
     const/4 v4, -0x1
@@ -2042,7 +2042,7 @@
     goto :goto_2
 
     :cond_6
-    const/4 v5, 0x0
+    move v5, v2
 
     :goto_2
     invoke-virtual {p0}, Landroidx/recyclerview/widget/RecyclerView;->getAdapter()Landroidx/recyclerview/widget/RecyclerView$Adapter;
@@ -2062,7 +2062,7 @@
     goto :goto_3
 
     :cond_7
-    const/4 p1, 0x0
+    move p1, v2
 
     :goto_3
     invoke-static {v4, v5, p1}, Lorg/telegram/ui/ActionBar/Theme;->setMaskDrawableRad(Landroid/graphics/drawable/Drawable;II)V
@@ -2614,15 +2614,15 @@
 
     move-result v1
 
+    move v11, v5
+
+    move v12, v11
+
+    move v8, v10
+
     const/4 v6, 0x0
 
-    const v8, 0x7fffffff
-
     const/4 v9, 0x0
-
-    const/4 v11, 0x0
-
-    const/4 v12, 0x0
 
     :goto_0
     if-ge v11, v1, :cond_9
@@ -2931,13 +2931,13 @@
 
     move-result v6
 
-    const v11, 0x7fffffff
+    move v12, v5
 
-    const/4 v12, 0x0
+    move v14, v12
+
+    move v11, v10
 
     const/4 v13, 0x0
-
-    const/4 v14, 0x0
 
     :goto_6
     if-ge v12, v6, :cond_19
@@ -3653,7 +3653,7 @@
 
     if-nez v0, :cond_d
 
-    const/4 v0, 0x0
+    move v0, v3
 
     .line 2558
     :goto_0
@@ -3710,7 +3710,7 @@
     goto :goto_1
 
     :cond_6
-    const/4 v6, 0x0
+    move v6, v2
 
     :goto_1
     int-to-float v5, v5
@@ -3841,7 +3841,7 @@
 
     iget v4, p0, Lorg/telegram/ui/Components/RecyclerListView;->pinnedHeaderShadowAlpha:F
 
-    mul-float v4, v4, v2
+    mul-float/2addr v4, v2
 
     float-to-int v2, v4
 
@@ -3876,15 +3876,15 @@
 
     iget v2, p0, Lorg/telegram/ui/Components/RecyclerListView;->pinnedHeaderShadowTargetAlpha:F
 
-    const/high16 v6, 0x43340000    # 180.0f
+    cmpg-float v6, v1, v2
 
-    cmpg-float v7, v1, v2
+    const/high16 v7, 0x43340000    # 180.0f
 
-    if-gez v7, :cond_a
+    if-gez v6, :cond_a
 
     long-to-float v4, v4
 
-    div-float/2addr v4, v6
+    div-float/2addr v4, v7
 
     add-float/2addr v1, v4
 
@@ -3905,13 +3905,13 @@
     goto :goto_2
 
     :cond_a
-    cmpl-float v7, v1, v2
+    cmpl-float v6, v1, v2
 
-    if-lez v7, :cond_c
+    if-lez v6, :cond_c
 
     long-to-float v4, v4
 
-    div-float/2addr v4, v6
+    div-float/2addr v4, v7
 
     sub-float/2addr v1, v4
 
@@ -4567,7 +4567,7 @@
     goto :goto_2
 
     :cond_0
-    const/4 v5, 0x0
+    move v5, v4
 
     :goto_2
     if-nez v1, :cond_1
@@ -4666,7 +4666,7 @@
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     .line 90
     :goto_0
@@ -4688,7 +4688,7 @@
     goto :goto_0
 
     :cond_0
-    const/4 v2, 0x0
+    move v2, v1
 
     .line 93
     :goto_1
@@ -4710,7 +4710,7 @@
     goto :goto_1
 
     :cond_1
-    const/4 v2, 0x0
+    move v2, v1
 
     .line 96
     :goto_2
@@ -5445,7 +5445,7 @@
     if-eqz p1, :cond_4
 
     :cond_3
-    const/4 v1, 0x1
+    move v1, v2
 
     :cond_4
     return v1

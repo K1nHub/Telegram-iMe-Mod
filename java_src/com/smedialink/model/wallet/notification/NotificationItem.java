@@ -110,13 +110,13 @@ public final class NotificationItem implements ClickableItem {
     @Override // com.smedialink.model.wallet.transaction.ClickableItem
     public String getLinkedText() {
         Notification notification = this.notification;
-        return notification instanceof Notification.CryptoTransfer.C1847In ? ((Notification.CryptoTransfer.C1847In) notification).getFromAddress() : notification instanceof Notification.CryptoTransfer.Out ? ((Notification.CryptoTransfer.Out) notification).getToAddress() : notification instanceof Notification.Donation.C1848In ? ((Notification.Donation.C1848In) notification).getFromAddress() : notification instanceof Notification.Donation.Out ? ((Notification.Donation.Out) notification).getToAddress() : "";
+        return notification instanceof Notification.CryptoTransfer.C1860In ? ((Notification.CryptoTransfer.C1860In) notification).getFromAddress() : notification instanceof Notification.CryptoTransfer.Out ? ((Notification.CryptoTransfer.Out) notification).getToAddress() : notification instanceof Notification.Donation.C1861In ? ((Notification.Donation.C1861In) notification).getFromAddress() : notification instanceof Notification.Donation.Out ? ((Notification.Donation.Out) notification).getToAddress() : "";
     }
 
     @Override // com.smedialink.model.wallet.transaction.ClickableItem
     public String getRecipientAddress() {
         Notification notification = this.notification;
-        return notification instanceof Notification.CryptoTransfer.C1847In ? ((Notification.CryptoTransfer.C1847In) notification).getFromAddress() : notification instanceof Notification.CryptoTransfer.Out ? ((Notification.CryptoTransfer.Out) notification).getToAddress() : notification instanceof Notification.Donation.C1848In ? ((Notification.Donation.C1848In) notification).getFromAddress() : notification instanceof Notification.Donation.Out ? ((Notification.Donation.Out) notification).getToAddress() : "";
+        return notification instanceof Notification.CryptoTransfer.C1860In ? ((Notification.CryptoTransfer.C1860In) notification).getFromAddress() : notification instanceof Notification.CryptoTransfer.Out ? ((Notification.CryptoTransfer.Out) notification).getToAddress() : notification instanceof Notification.Donation.C1861In ? ((Notification.Donation.C1861In) notification).getFromAddress() : notification instanceof Notification.Donation.Out ? ((Notification.Donation.Out) notification).getToAddress() : "";
     }
 
     @Override // com.smedialink.model.wallet.transaction.ClickableItem

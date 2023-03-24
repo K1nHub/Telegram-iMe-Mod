@@ -3,5 +3,5 @@ package org.telegram.tgnet;
 public abstract class TLRPC$ChannelParticipantsFilter extends TLObject {
 
     /* renamed from: q */
-    public String f1498q;
+    public String f1499q;
 }

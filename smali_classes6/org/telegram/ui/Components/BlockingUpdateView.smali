@@ -150,7 +150,7 @@
     goto :goto_0
 
     :cond_0
-    const/4 v5, 0x0
+    move v5, v8
 
     .line 69
     :goto_0
@@ -174,7 +174,7 @@
     goto :goto_1
 
     :cond_1
-    const/4 v2, 0x0
+    move v2, v8
 
     :goto_1
     add-int/2addr v10, v2
@@ -1780,13 +1780,8 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_1
-
-    :catch_0
-    nop
-
     .line 342
-    :goto_1
+    :catch_0
     iget-object p2, p1, Lorg/telegram/tgnet/TLRPC$TL_help_getAppUpdate;->source:Ljava/lang/String;
 
     if-nez p2, :cond_3

@@ -172,17 +172,17 @@
 
     move-object/from16 v21, v15
 
-    const/4 v8, 0x0
+    move v8, v6
 
-    const/4 v9, 0x0
+    move v9, v8
 
-    const/4 v10, 0x0
+    move v10, v9
 
-    const/16 v18, 0x0
+    move/from16 v18, v10
 
-    const/16 v19, 0x0
+    move/from16 v19, v18
 
-    const/16 v20, 0x0
+    move/from16 v20, v19
 
     .line 3
     :goto_0

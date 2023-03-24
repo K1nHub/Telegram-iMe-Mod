@@ -107,6 +107,7 @@ public class HeaderReader {
 
     private CentralDirectory readCentralDirectory() throws ZipException {
         String decodeFileName;
+        boolean z;
         if (this.zip4jRaf == null) {
             throw new ZipException("random access file was null", 3);
         }
@@ -130,7 +131,6 @@ public class HeaderReader {
                 FileHeader fileHeader = new FileHeader();
                 readIntoBuff(this.zip4jRaf, bArr);
                 int readIntLittleEndian = Raw.readIntLittleEndian(bArr, 0);
-                boolean z = true;
                 if (readIntLittleEndian != 33639248) {
                     throw new ZipException("Expected central directory entry not found (#" + (i + 1) + ")");
                 }
@@ -191,7 +191,9 @@ public class HeaderReader {
                     fileHeader.setFileName(decodeFileName);
                     if (!decodeFileName.endsWith("/") && !decodeFileName.endsWith("\\")) {
                         z = false;
+                        fileHeader.setDirectory(z);
                     }
+                    z = true;
                     fileHeader.setDirectory(z);
                 } else {
                     fileHeader.setFileName(null);

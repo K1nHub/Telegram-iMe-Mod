@@ -183,12 +183,12 @@
 
     if-ne v0, v2, :cond_0
 
-    const/4 v0, 0x1
+    move v0, v2
 
     goto :goto_0
 
     :cond_0
-    const/4 v0, 0x0
+    move v0, v1
 
     :goto_0
     iput-boolean v0, p0, Lcom/google/android/exoplayer2/metadata/scte35/SpliceInsertCommand;->spliceEventCancelIndicator:Z
@@ -200,12 +200,12 @@
 
     if-ne v0, v2, :cond_1
 
-    const/4 v0, 0x1
+    move v0, v2
 
     goto :goto_1
 
     :cond_1
-    const/4 v0, 0x0
+    move v0, v1
 
     :goto_1
     iput-boolean v0, p0, Lcom/google/android/exoplayer2/metadata/scte35/SpliceInsertCommand;->outOfNetworkIndicator:Z
@@ -217,12 +217,12 @@
 
     if-ne v0, v2, :cond_2
 
-    const/4 v0, 0x1
+    move v0, v2
 
     goto :goto_2
 
     :cond_2
-    const/4 v0, 0x0
+    move v0, v1
 
     :goto_2
     iput-boolean v0, p0, Lcom/google/android/exoplayer2/metadata/scte35/SpliceInsertCommand;->programSpliceFlag:Z
@@ -234,12 +234,12 @@
 
     if-ne v0, v2, :cond_3
 
-    const/4 v0, 0x1
+    move v0, v2
 
     goto :goto_3
 
     :cond_3
-    const/4 v0, 0x0
+    move v0, v1
 
     :goto_3
     iput-boolean v0, p0, Lcom/google/android/exoplayer2/metadata/scte35/SpliceInsertCommand;->spliceImmediateFlag:Z
@@ -268,7 +268,7 @@
 
     invoke-direct {v3, v0}, Ljava/util/ArrayList;-><init>(I)V
 
-    const/4 v4, 0x0
+    move v4, v1
 
     :goto_4
     if-ge v4, v0, :cond_4
@@ -299,7 +299,7 @@
 
     if-ne v0, v2, :cond_5
 
-    const/4 v1, 0x1
+    move v1, v2
 
     :cond_5
     iput-boolean v1, p0, Lcom/google/android/exoplayer2/metadata/scte35/SpliceInsertCommand;->autoReturn:Z
@@ -525,9 +525,9 @@
 
     const-wide/16 v17, 0x0
 
-    cmp-long v12, v7, v17
+    cmp-long v7, v7, v17
 
-    if-eqz v12, :cond_9
+    if-eqz v7, :cond_9
 
     const/16 v16, 0x1
 
@@ -554,7 +554,7 @@
 
     const-wide/16 v7, 0x3e8
 
-    mul-long v4, v4, v7
+    mul-long/2addr v4, v7
 
     const-wide/16 v7, 0x5a
 

@@ -30,14 +30,14 @@
 .method constructor <init>(Lcom/smedialink/ui/wallet/transaction/WalletTransactionsView$$State;Lcom/smedialink/storage/domain/model/crypto/NetworkType;)V
     .locals 1
 
-    .line 429
+    .line 460
     const-class p1, Lmoxy/viewstate/strategy/AddToEndSingleStrategy;
 
     const-string v0, "setupNetworkType"
 
     invoke-direct {p0, v0, p1}, Lmoxy/viewstate/ViewCommand;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
 
-    .line 431
+    .line 462
     iput-object p2, p0, Lcom/smedialink/ui/wallet/transaction/WalletTransactionsView$$State$SetupNetworkTypeCommand;->networkType:Lcom/smedialink/storage/domain/model/crypto/NetworkType;
 
     return-void
@@ -48,7 +48,7 @@
 .method public apply(Lcom/smedialink/ui/wallet/transaction/WalletTransactionsView;)V
     .locals 1
 
-    .line 436
+    .line 467
     iget-object v0, p0, Lcom/smedialink/ui/wallet/transaction/WalletTransactionsView$$State$SetupNetworkTypeCommand;->networkType:Lcom/smedialink/storage/domain/model/crypto/NetworkType;
 
     invoke-interface {p1, v0}, Lcom/smedialink/ui/base/mvp/SwitchNetworkView;->setupNetworkType(Lcom/smedialink/storage/domain/model/crypto/NetworkType;)V
@@ -59,7 +59,7 @@
 .method public bridge synthetic apply(Lmoxy/MvpView;)V
     .locals 0
 
-    .line 425
+    .line 456
     check-cast p1, Lcom/smedialink/ui/wallet/transaction/WalletTransactionsView;
 
     invoke-virtual {p0, p1}, Lcom/smedialink/ui/wallet/transaction/WalletTransactionsView$$State$SetupNetworkTypeCommand;->apply(Lcom/smedialink/ui/wallet/transaction/WalletTransactionsView;)V

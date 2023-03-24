@@ -135,12 +135,12 @@
 
     if-ge p1, p3, :cond_1
 
-    const/4 p1, 0x1
+    move p1, p2
 
     goto :goto_0
 
     :cond_1
-    const/4 p1, 0x0
+    move p1, p4
 
     .line 627
     :goto_0
@@ -156,12 +156,12 @@
 
     if-nez p3, :cond_2
 
-    const/4 p3, 0x1
+    move p3, p2
 
     goto :goto_1
 
     :cond_2
-    const/4 p3, 0x0
+    move p3, p4
 
     :goto_1
     if-eq p1, p3, :cond_7
@@ -250,12 +250,12 @@
 
     if-eqz p1, :cond_5
 
-    const/high16 v6, 0x3f800000    # 1.0f
+    move v6, v4
 
     goto :goto_3
 
     :cond_5
-    const/4 v6, 0x0
+    move v6, v5
 
     :goto_3
     aput v6, v3, p4
@@ -286,7 +286,7 @@
     goto :goto_4
 
     :cond_6
-    const/4 v4, 0x0
+    move v4, v5
 
     :goto_4
     aput v4, v3, p4

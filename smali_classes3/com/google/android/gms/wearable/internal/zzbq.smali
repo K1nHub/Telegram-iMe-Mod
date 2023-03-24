@@ -509,65 +509,65 @@
 
     const-wide/16 v0, 0x0
 
-    const/4 v2, 0x0
+    cmp-long v2, p3, v0
 
-    const/4 v4, 0x1
-
-    cmp-long v5, p3, v0
-
-    if-ltz v5, :cond_0
+    const/4 v4, 0x0
 
     const/4 v5, 0x1
+
+    if-ltz v2, :cond_0
+
+    move v2, v5
 
     goto :goto_0
 
     :cond_0
-    const/4 v5, 0x0
+    move v2, v4
 
     :goto_0
-    new-array v6, v4, [Ljava/lang/Object;
+    new-array v6, v5, [Ljava/lang/Object;
 
     .line 5
     invoke-static {p3, p4}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object v7
 
-    aput-object v7, v6, v2
+    aput-object v7, v6, v4
 
     const-string v7, "startOffset is negative: %s"
 
-    invoke-static {v5, v7, v6}, Lcom/google/android/gms/common/internal/Preconditions;->checkArgument(ZLjava/lang/String;[Ljava/lang/Object;)V
+    invoke-static {v2, v7, v6}, Lcom/google/android/gms/common/internal/Preconditions;->checkArgument(ZLjava/lang/String;[Ljava/lang/Object;)V
 
-    cmp-long v5, p5, v0
+    cmp-long v0, p5, v0
 
-    if-gez v5, :cond_2
+    if-gez v0, :cond_2
 
     const-wide/16 v0, -0x1
 
-    cmp-long v5, p5, v0
+    cmp-long v0, p5, v0
 
-    if-nez v5, :cond_1
+    if-nez v0, :cond_1
 
     goto :goto_1
 
     :cond_1
-    const/4 v0, 0x0
+    move v0, v4
 
     goto :goto_2
 
     :cond_2
     :goto_1
-    const/4 v0, 0x1
+    move v0, v5
 
     :goto_2
-    new-array v1, v4, [Ljava/lang/Object;
+    new-array v1, v5, [Ljava/lang/Object;
 
     .line 6
     invoke-static/range {p5 .. p6}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
-    move-result-object v4
+    move-result-object v2
 
-    aput-object v4, v1, v2
+    aput-object v2, v1, v4
 
     const-string v2, "invalid length: %s"
 
@@ -611,9 +611,9 @@
 
     const/4 v2, 0x0
 
-    const/4 v3, 0x0
+    move v3, v2
 
-    const/4 v4, 0x0
+    move v4, v3
 
     :goto_0
     if-ge v3, v1, :cond_0

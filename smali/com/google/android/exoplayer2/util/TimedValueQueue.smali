@@ -130,9 +130,9 @@
 
     aget-wide v1, v0, v1
 
-    cmp-long v0, p1, v1
+    cmp-long p1, p1, v1
 
-    if-gtz v0, :cond_0
+    if-gtz p1, :cond_0
 
     .line 137
     invoke-virtual {p0}, Lcom/google/android/exoplayer2/util/TimedValueQueue;->clear()V
@@ -233,7 +233,7 @@
 .end method
 
 .method private poll(JZ)Ljava/lang/Object;
-    .locals 8
+    .locals 7
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(JZ)TV;"
@@ -261,17 +261,17 @@
 
     const-wide/16 v5, 0x0
 
-    cmp-long v7, v3, v5
+    cmp-long v5, v3, v5
 
-    if-gez v7, :cond_0
+    if-gez v5, :cond_0
 
     if-nez p3, :cond_1
 
     neg-long v5, v3
 
-    cmp-long v7, v5, v1
+    cmp-long v1, v5, v1
 
-    if-ltz v7, :cond_0
+    if-ltz v1, :cond_0
 
     goto :goto_1
 
@@ -305,7 +305,7 @@
 
     if-lez v0, :cond_0
 
-    const/4 v0, 0x1
+    move v0, v1
 
     goto :goto_0
 

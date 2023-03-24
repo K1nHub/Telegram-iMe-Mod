@@ -74,8 +74,8 @@ public final class ColorUtils {
         float f5 = max - min;
         float f6 = (max + min) / 2.0f;
         if (max == min) {
-            f = BitmapDescriptorFactory.HUE_RED;
-            abs = BitmapDescriptorFactory.HUE_RED;
+            f = 0.0f;
+            abs = 0.0f;
         } else {
             f = max == f2 ? ((f3 - f4) / f5) % 6.0f : max == f3 ? ((f4 - f2) / f5) + 2.0f : 4.0f + ((f2 - f3) / f5);
             abs = f5 / (1.0f - Math.abs((2.0f * f6) - 1.0f));

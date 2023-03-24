@@ -236,7 +236,7 @@ public final class zzg {
     public final void zzac(long j) {
         Preconditions.checkArgument(j >= 0);
         this.zza.zzaz().zzg();
-        this.zzD = (this.zzg != j) | this.zzD;
+        this.zzD |= this.zzg != j;
         this.zzg = j;
     }
 

@@ -567,7 +567,7 @@
 
     iget v1, p0, Lorg/telegram/ui/Cells/DialogsEmptyCell;->utyanCollapseProgress:F
 
-    mul-float v0, v0, v1
+    mul-float/2addr v0, v1
 
     add-float/2addr p1, v0
 
@@ -791,7 +791,7 @@
 
     move-result v4
 
-    mul-int v3, v3, v4
+    mul-int/2addr v3, v4
 
     invoke-virtual {p2}, Ljava/util/ArrayList;->size()I
 
@@ -1446,7 +1446,7 @@
 
     sub-float/2addr v2, v3
 
-    mul-float v1, v1, v2
+    mul-float/2addr v1, v2
 
     sub-float/2addr v0, v1
 

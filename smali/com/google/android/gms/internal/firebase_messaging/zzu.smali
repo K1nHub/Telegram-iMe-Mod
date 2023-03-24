@@ -463,7 +463,7 @@
 .end method
 
 .method private final zzn(I)V
-    .locals 5
+    .locals 4
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -477,12 +477,12 @@
 
     const-wide/16 v2, 0x0
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
+
+    if-eqz v0, :cond_0
 
     .line 1
     iget-object v0, p0, Lcom/google/android/gms/internal/firebase_messaging/zzu;->zze:Ljava/io/OutputStream;
-
-    if-eqz v4, :cond_0
 
     and-int/lit8 v1, p1, 0x7f
 
@@ -495,6 +495,8 @@
     goto :goto_0
 
     :cond_0
+    iget-object v0, p0, Lcom/google/android/gms/internal/firebase_messaging/zzu;->zze:Ljava/io/OutputStream;
+
     and-int/lit8 p1, p1, 0x7f
 
     .line 2
@@ -504,7 +506,7 @@
 .end method
 
 .method private final zzo(J)V
-    .locals 5
+    .locals 4
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -518,12 +520,12 @@
 
     const-wide/16 v2, 0x0
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
+
+    if-eqz v0, :cond_0
 
     .line 1
     iget-object v0, p0, Lcom/google/android/gms/internal/firebase_messaging/zzu;->zze:Ljava/io/OutputStream;
-
-    if-eqz v4, :cond_0
 
     long-to-int v1, p1
 
@@ -540,9 +542,11 @@
     goto :goto_0
 
     :cond_0
-    long-to-int p2, p1
+    iget-object v0, p0, Lcom/google/android/gms/internal/firebase_messaging/zzu;->zze:Ljava/io/OutputStream;
 
-    and-int/lit8 p1, p2, 0x7f
+    long-to-int p1, p1
+
+    and-int/lit8 p1, p1, 0x7f
 
     .line 2
     invoke-virtual {v0, p1}, Ljava/io/OutputStream;->write(I)V

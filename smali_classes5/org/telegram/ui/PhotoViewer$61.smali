@@ -402,7 +402,7 @@
     goto :goto_0
 
     :cond_6
-    const/4 v8, 0x0
+    move v8, v3
 
     :goto_0
     add-int/2addr v7, v8

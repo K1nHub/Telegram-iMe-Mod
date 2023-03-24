@@ -176,7 +176,7 @@
 
     if-eqz v3, :cond_1
 
-    const/high16 v3, 0x3f800000    # 1.0f
+    move v3, v4
 
     goto :goto_0
 
@@ -204,7 +204,7 @@
 
     const/high16 v5, 0x437f0000    # 255.0f
 
-    mul-float v2, v2, v5
+    mul-float/2addr v2, v5
 
     float-to-int v2, v2
 

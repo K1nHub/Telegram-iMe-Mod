@@ -79,18 +79,18 @@ class ContactsRemoteViewsFactory implements RemoteViewsService.RemoteViewsFactor
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:103:0x0239  */
-    /* JADX WARN: Removed duplicated region for block: B:119:0x0278  */
-    /* JADX WARN: Removed duplicated region for block: B:120:0x027b  */
-    /* JADX WARN: Removed duplicated region for block: B:124:0x0291  */
-    /* JADX WARN: Removed duplicated region for block: B:125:0x029b  */
-    /* JADX WARN: Removed duplicated region for block: B:128:0x02ba  */
-    /* JADX WARN: Removed duplicated region for block: B:129:0x02bd  */
+    /* JADX WARN: Removed duplicated region for block: B:103:0x0238  */
+    /* JADX WARN: Removed duplicated region for block: B:119:0x0277  */
+    /* JADX WARN: Removed duplicated region for block: B:120:0x027a  */
+    /* JADX WARN: Removed duplicated region for block: B:124:0x0290  */
+    /* JADX WARN: Removed duplicated region for block: B:125:0x029a  */
+    /* JADX WARN: Removed duplicated region for block: B:128:0x02b9  */
+    /* JADX WARN: Removed duplicated region for block: B:129:0x02bc  */
     /* JADX WARN: Type inference failed for: r10v3, types: [org.telegram.messenger.FileLoader] */
     /* JADX WARN: Type inference failed for: r3v0 */
-    /* JADX WARN: Type inference failed for: r3v1, types: [int, boolean] */
+    /* JADX WARN: Type inference failed for: r3v1, types: [boolean, int] */
     /* JADX WARN: Type inference failed for: r3v31 */
-    /* JADX WARN: Type inference failed for: r9v10, types: [android.graphics.drawable.Drawable, org.telegram.ui.Components.AvatarDrawable] */
+    /* JADX WARN: Type inference failed for: r9v11, types: [android.graphics.drawable.Drawable, org.telegram.ui.Components.AvatarDrawable] */
     @Override // android.widget.RemoteViewsService.RemoteViewsFactory
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -98,7 +98,7 @@ class ContactsRemoteViewsFactory implements RemoteViewsService.RemoteViewsFactor
     */
     public android.widget.RemoteViews getViewAt(int r18) {
         /*
-            Method dump skipped, instructions count: 713
+            Method dump skipped, instructions count: 712
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: org.telegram.messenger.ContactsRemoteViewsFactory.getViewAt(int):android.widget.RemoteViews");

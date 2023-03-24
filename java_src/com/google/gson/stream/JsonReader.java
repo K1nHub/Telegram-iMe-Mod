@@ -328,61 +328,61 @@ public class JsonReader implements Closeable {
         return i;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:55:0x0095, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:54:0x0091, code lost:
         if (isLiteral(r14) != false) goto L76;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:56:0x0097, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:55:0x0093, code lost:
         if (r9 != 2) goto L23;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:57:0x0099, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:56:0x0095, code lost:
         if (r10 == false) goto L23;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:59:0x009f, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:58:0x009b, code lost:
         if (r11 != Long.MIN_VALUE) goto L15;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:60:0x00a1, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:59:0x009d, code lost:
         if (r13 == false) goto L23;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:62:0x00a7, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:61:0x00a3, code lost:
         if (r11 != 0) goto L18;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:63:0x00a9, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:62:0x00a5, code lost:
         if (r13 != false) goto L23;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:64:0x00ab, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:63:0x00a7, code lost:
         if (r13 == false) goto L19;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:66:0x00ae, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:65:0x00aa, code lost:
         r11 = -r11;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:67:0x00af, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:66:0x00ab, code lost:
         r18.peekedLong = r11;
         r18.pos += r8;
         r18.peeked = 15;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:68:0x00ba, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:67:0x00b6, code lost:
         return 15;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:69:0x00bb, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:68:0x00b7, code lost:
         if (r9 == 2) goto L29;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:71:0x00be, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:70:0x00ba, code lost:
         if (r9 == 4) goto L29;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:73:0x00c1, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:72:0x00bd, code lost:
         if (r9 != 7) goto L28;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:75:0x00c4, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:74:0x00c0, code lost:
         return 0;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:77:0x00c6, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:76:0x00c2, code lost:
         r18.peekedNumberLength = r8;
         r18.peeked = 16;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:78:0x00cc, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:77:0x00c8, code lost:
         return 16;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:79:0x00cd, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:78:0x00c9, code lost:
         return 0;
      */
     /*
@@ -391,7 +391,7 @@ public class JsonReader implements Closeable {
     */
     private int peekNumber() throws java.io.IOException {
         /*
-            Method dump skipped, instructions count: 252
+            Method dump skipped, instructions count: 247
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: com.google.gson.stream.JsonReader.peekNumber():int");
@@ -706,7 +706,7 @@ public class JsonReader implements Closeable {
             r0 = 0
             r1 = 0
         L2:
-            r2 = 0
+            r2 = r0
         L3:
             int r3 = r6.pos
             int r4 = r3 + r2

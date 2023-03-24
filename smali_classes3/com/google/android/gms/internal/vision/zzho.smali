@@ -1102,9 +1102,9 @@
 
     move-result-wide v0
 
-    long-to-int v1, v0
+    long-to-int v0, v0
 
-    return v1
+    return v0
 
     :cond_1
     add-int/lit8 v1, v3, 0x1
@@ -2903,7 +2903,7 @@
     .line 24
     iget-object v0, p0, Lcom/google/android/gms/internal/vision/zzho;->zzb:[B
 
-    const/4 v5, 0x0
+    move v5, v1
 
     :goto_0
     if-ge v5, v3, :cond_a
@@ -3969,12 +3969,12 @@
 
     if-eqz p1, :cond_0
 
-    const/4 p1, 0x1
+    move p1, v1
 
     goto :goto_1
 
     :cond_0
-    const/4 p1, 0x0
+    move p1, v2
 
     :goto_1
     invoke-virtual {v0, p1}, Lcom/google/android/gms/internal/vision/zzhr;->zza(Z)V
@@ -4064,12 +4064,12 @@
 
     if-eqz v0, :cond_6
 
-    const/4 v0, 0x1
+    move v0, v1
 
     goto :goto_3
 
     :cond_6
-    const/4 v0, 0x0
+    move v0, v2
 
     :goto_3
     invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;

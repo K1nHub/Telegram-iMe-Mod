@@ -14,12 +14,12 @@
 .method private constructor <init>(Lcom/google/protobuf/CodedOutputStream;)V
     .locals 1
 
-    .line 53
+    .line 54
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     const-string v0, "output"
 
-    .line 54
+    .line 55
     invoke-static {p1, v0}, Lcom/google/protobuf/Internal;->checkNotNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
     move-result-object p1
@@ -28,7 +28,7 @@
 
     iput-object p1, p0, Lcom/google/protobuf/CodedOutputStreamWriter;->output:Lcom/google/protobuf/CodedOutputStream;
 
-    .line 55
+    .line 56
     iput-object p0, p1, Lcom/google/protobuf/CodedOutputStream;->wrapper:Lcom/google/protobuf/CodedOutputStreamWriter;
 
     return-void
@@ -37,14 +37,14 @@
 .method public static forCodedOutput(Lcom/google/protobuf/CodedOutputStream;)Lcom/google/protobuf/CodedOutputStreamWriter;
     .locals 1
 
-    .line 47
+    .line 48
     iget-object v0, p0, Lcom/google/protobuf/CodedOutputStream;->wrapper:Lcom/google/protobuf/CodedOutputStreamWriter;
 
     if-eqz v0, :cond_0
 
     return-object v0
 
-    .line 50
+    .line 51
     :cond_0
     new-instance v0, Lcom/google/protobuf/CodedOutputStreamWriter;
 
@@ -72,14 +72,14 @@
         }
     .end annotation
 
-    .line 636
+    .line 641
     iget-object v0, p0, Lcom/google/protobuf/CodedOutputStreamWriter;->output:Lcom/google/protobuf/CodedOutputStream;
 
     const/4 v1, 0x2
 
     invoke-virtual {v0, p1, v1}, Lcom/google/protobuf/CodedOutputStream;->writeTag(II)V
 
-    .line 637
+    .line 642
     iget-object p1, p0, Lcom/google/protobuf/CodedOutputStreamWriter;->output:Lcom/google/protobuf/CodedOutputStream;
 
     invoke-static {p2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
@@ -92,7 +92,7 @@
 
     invoke-virtual {p1, v0}, Lcom/google/protobuf/CodedOutputStream;->writeUInt32NoTag(I)V
 
-    .line 638
+    .line 643
     iget-object p1, p0, Lcom/google/protobuf/CodedOutputStreamWriter;->output:Lcom/google/protobuf/CodedOutputStream;
 
     invoke-static {p2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
@@ -126,14 +126,14 @@
         }
     .end annotation
 
-    .line 644
+    .line 649
     invoke-interface {p3}, Ljava/util/Map;->size()I
 
     move-result v0
 
     new-array v1, v0, [I
 
-    .line 646
+    .line 651
     invoke-interface {p3}, Ljava/util/Map;->keySet()Ljava/util/Set;
 
     move-result-object v2
@@ -144,7 +144,7 @@
 
     const/4 v3, 0x0
 
-    const/4 v4, 0x0
+    move v4, v3
 
     :goto_0
     invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
@@ -165,24 +165,24 @@
 
     add-int/lit8 v6, v4, 0x1
 
-    .line 647
+    .line 652
     aput v5, v1, v4
 
     move v4, v6
 
     goto :goto_0
 
-    .line 649
+    .line 654
     :cond_0
     invoke-static {v1}, Ljava/util/Arrays;->sort([I)V
 
     :goto_1
     if-ge v3, v0, :cond_1
 
-    .line 650
+    .line 655
     aget v2, v1, v3
 
-    .line 651
+    .line 656
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v4
@@ -191,14 +191,14 @@
 
     move-result-object v4
 
-    .line 652
+    .line 657
     iget-object v5, p0, Lcom/google/protobuf/CodedOutputStreamWriter;->output:Lcom/google/protobuf/CodedOutputStream;
 
     const/4 v6, 0x2
 
     invoke-virtual {v5, p1, v6}, Lcom/google/protobuf/CodedOutputStream;->writeTag(II)V
 
-    .line 653
+    .line 658
     iget-object v5, p0, Lcom/google/protobuf/CodedOutputStreamWriter;->output:Lcom/google/protobuf/CodedOutputStream;
 
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -211,7 +211,7 @@
 
     invoke-virtual {v5, v6}, Lcom/google/protobuf/CodedOutputStream;->writeUInt32NoTag(I)V
 
-    .line 654
+    .line 659
     iget-object v5, p0, Lcom/google/protobuf/CodedOutputStreamWriter;->output:Lcom/google/protobuf/CodedOutputStream;
 
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -250,14 +250,14 @@
         }
     .end annotation
 
-    .line 661
+    .line 666
     invoke-interface {p3}, Ljava/util/Map;->size()I
 
     move-result v0
 
     new-array v1, v0, [J
 
-    .line 663
+    .line 668
     invoke-interface {p3}, Ljava/util/Map;->keySet()Ljava/util/Set;
 
     move-result-object v2
@@ -268,7 +268,7 @@
 
     const/4 v3, 0x0
 
-    const/4 v4, 0x0
+    move v4, v3
 
     :goto_0
     invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
@@ -289,24 +289,24 @@
 
     add-int/lit8 v7, v4, 0x1
 
-    .line 664
+    .line 669
     aput-wide v5, v1, v4
 
     move v4, v7
 
     goto :goto_0
 
-    .line 666
+    .line 671
     :cond_0
     invoke-static {v1}, Ljava/util/Arrays;->sort([J)V
 
     :goto_1
     if-ge v3, v0, :cond_1
 
-    .line 667
+    .line 672
     aget-wide v4, v1, v3
 
-    .line 668
+    .line 673
     invoke-static {v4, v5}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object v2
@@ -315,14 +315,14 @@
 
     move-result-object v2
 
-    .line 669
+    .line 674
     iget-object v6, p0, Lcom/google/protobuf/CodedOutputStreamWriter;->output:Lcom/google/protobuf/CodedOutputStream;
 
     const/4 v7, 0x2
 
     invoke-virtual {v6, p1, v7}, Lcom/google/protobuf/CodedOutputStream;->writeTag(II)V
 
-    .line 670
+    .line 675
     iget-object v6, p0, Lcom/google/protobuf/CodedOutputStreamWriter;->output:Lcom/google/protobuf/CodedOutputStream;
 
     invoke-static {v4, v5}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
@@ -335,7 +335,7 @@
 
     invoke-virtual {v6, v7}, Lcom/google/protobuf/CodedOutputStream;->writeUInt32NoTag(I)V
 
-    .line 671
+    .line 676
     iget-object v6, p0, Lcom/google/protobuf/CodedOutputStreamWriter;->output:Lcom/google/protobuf/CodedOutputStream;
 
     invoke-static {v4, v5}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
@@ -374,7 +374,7 @@
         }
     .end annotation
 
-    .line 596
+    .line 601
     sget-object v0, Lcom/google/protobuf/CodedOutputStreamWriter$1;->$SwitchMap$com$google$protobuf$WireFormat$FieldType:[I
 
     iget-object v1, p2, Lcom/google/protobuf/MapEntryLite$Metadata;->keyType:Lcom/google/protobuf/WireFormat$FieldType;
@@ -387,7 +387,7 @@
 
     packed-switch v0, :pswitch_data_0
 
-    .line 629
+    .line 634
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     new-instance p3, Ljava/lang/StringBuilder;
@@ -410,25 +410,25 @@
 
     throw p1
 
-    .line 625
+    .line 630
     :pswitch_0
     invoke-direct {p0, p1, p2, p3}, Lcom/google/protobuf/CodedOutputStreamWriter;->writeDeterministicStringMap(ILcom/google/protobuf/MapEntryLite$Metadata;Ljava/util/Map;)V
 
     goto :goto_0
 
-    .line 621
+    .line 626
     :pswitch_1
     invoke-direct {p0, p1, p2, p3}, Lcom/google/protobuf/CodedOutputStreamWriter;->writeDeterministicLongMap(ILcom/google/protobuf/MapEntryLite$Metadata;Ljava/util/Map;)V
 
     goto :goto_0
 
-    .line 613
+    .line 618
     :pswitch_2
     invoke-direct {p0, p1, p2, p3}, Lcom/google/protobuf/CodedOutputStreamWriter;->writeDeterministicIntegerMap(ILcom/google/protobuf/MapEntryLite$Metadata;Ljava/util/Map;)V
 
     goto :goto_0
 
-    .line 599
+    .line 604
     :pswitch_3
     sget-object v0, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
 
@@ -440,10 +440,10 @@
 
     const/4 v1, 0x0
 
-    .line 600
+    .line 605
     invoke-direct {p0, p1, v1, v0, p2}, Lcom/google/protobuf/CodedOutputStreamWriter;->writeDeterministicBooleanMapEntry(IZLjava/lang/Object;Lcom/google/protobuf/MapEntryLite$Metadata;)V
 
-    .line 603
+    .line 608
     :cond_0
     sget-object v0, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;
 
@@ -455,7 +455,7 @@
 
     const/4 v0, 0x1
 
-    .line 604
+    .line 609
     invoke-direct {p0, p1, v0, p3, p2}, Lcom/google/protobuf/CodedOutputStreamWriter;->writeDeterministicBooleanMapEntry(IZLjava/lang/Object;Lcom/google/protobuf/MapEntryLite$Metadata;)V
 
     :cond_1
@@ -503,14 +503,14 @@
         }
     .end annotation
 
-    .line 678
+    .line 683
     invoke-interface {p3}, Ljava/util/Map;->size()I
 
     move-result v0
 
     new-array v1, v0, [Ljava/lang/String;
 
-    .line 680
+    .line 685
     invoke-interface {p3}, Ljava/util/Map;->keySet()Ljava/util/Set;
 
     move-result-object v2
@@ -521,7 +521,7 @@
 
     const/4 v3, 0x0
 
-    const/4 v4, 0x0
+    move v4, v3
 
     :goto_0
     invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
@@ -538,36 +538,36 @@
 
     add-int/lit8 v6, v4, 0x1
 
-    .line 681
+    .line 686
     aput-object v5, v1, v4
 
     move v4, v6
 
     goto :goto_0
 
-    .line 683
+    .line 688
     :cond_0
     invoke-static {v1}, Ljava/util/Arrays;->sort([Ljava/lang/Object;)V
 
     :goto_1
     if-ge v3, v0, :cond_1
 
-    .line 684
+    .line 689
     aget-object v2, v1, v3
 
-    .line 685
+    .line 690
     invoke-interface {p3, v2}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v4
 
-    .line 686
+    .line 691
     iget-object v5, p0, Lcom/google/protobuf/CodedOutputStreamWriter;->output:Lcom/google/protobuf/CodedOutputStream;
 
     const/4 v6, 0x2
 
     invoke-virtual {v5, p1, v6}, Lcom/google/protobuf/CodedOutputStream;->writeTag(II)V
 
-    .line 687
+    .line 692
     iget-object v5, p0, Lcom/google/protobuf/CodedOutputStreamWriter;->output:Lcom/google/protobuf/CodedOutputStream;
 
     invoke-static {p2, v2, v4}, Lcom/google/protobuf/MapEntryLite;->computeSerializedSize(Lcom/google/protobuf/MapEntryLite$Metadata;Ljava/lang/Object;Ljava/lang/Object;)I
@@ -576,7 +576,7 @@
 
     invoke-virtual {v5, v6}, Lcom/google/protobuf/CodedOutputStream;->writeUInt32NoTag(I)V
 
-    .line 688
+    .line 693
     iget-object v5, p0, Lcom/google/protobuf/CodedOutputStreamWriter;->output:Lcom/google/protobuf/CodedOutputStream;
 
     invoke-static {v5, p2, v2, v4}, Lcom/google/protobuf/MapEntryLite;->writeTo(Lcom/google/protobuf/CodedOutputStream;Lcom/google/protobuf/MapEntryLite$Metadata;Ljava/lang/Object;Ljava/lang/Object;)V
@@ -597,12 +597,12 @@
         }
     .end annotation
 
-    .line 416
+    .line 420
     instance-of v0, p2, Ljava/lang/String;
 
     if-eqz v0, :cond_0
 
-    .line 417
+    .line 421
     iget-object v0, p0, Lcom/google/protobuf/CodedOutputStreamWriter;->output:Lcom/google/protobuf/CodedOutputStream;
 
     check-cast p2, Ljava/lang/String;
@@ -611,7 +611,7 @@
 
     goto :goto_0
 
-    .line 419
+    .line 423
     :cond_0
     iget-object v0, p0, Lcom/google/protobuf/CodedOutputStreamWriter;->output:Lcom/google/protobuf/CodedOutputStream;
 
@@ -628,7 +628,7 @@
 .method public fieldOrder()Lcom/google/protobuf/Writer$FieldOrder;
     .locals 1
 
-    .line 60
+    .line 61
     sget-object v0, Lcom/google/protobuf/Writer$FieldOrder;->ASCENDING:Lcom/google/protobuf/Writer$FieldOrder;
 
     return-object v0
@@ -642,7 +642,7 @@
         }
     .end annotation
 
-    .line 119
+    .line 120
     iget-object v0, p0, Lcom/google/protobuf/CodedOutputStreamWriter;->output:Lcom/google/protobuf/CodedOutputStream;
 
     invoke-virtual {v0, p1, p2}, Lcom/google/protobuf/CodedOutputStream;->writeBool(IZ)V
@@ -671,18 +671,18 @@
 
     if-eqz p3, :cond_1
 
-    .line 381
+    .line 385
     iget-object p3, p0, Lcom/google/protobuf/CodedOutputStreamWriter;->output:Lcom/google/protobuf/CodedOutputStream;
 
     const/4 v1, 0x2
 
     invoke-virtual {p3, p1, v1}, Lcom/google/protobuf/CodedOutputStream;->writeTag(II)V
 
-    const/4 p1, 0x0
+    move p1, v0
 
-    const/4 p3, 0x0
+    move p3, p1
 
-    .line 385
+    .line 389
     :goto_0
     invoke-interface {p2}, Ljava/util/List;->size()I
 
@@ -690,7 +690,7 @@
 
     if-ge p1, v1, :cond_0
 
-    .line 386
+    .line 390
     invoke-interface {p2, p1}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v1
@@ -711,13 +711,13 @@
 
     goto :goto_0
 
-    .line 388
+    .line 392
     :cond_0
     iget-object p1, p0, Lcom/google/protobuf/CodedOutputStreamWriter;->output:Lcom/google/protobuf/CodedOutputStream;
 
     invoke-virtual {p1, p3}, Lcom/google/protobuf/CodedOutputStream;->writeUInt32NoTag(I)V
 
-    .line 391
+    .line 395
     :goto_1
     invoke-interface {p2}, Ljava/util/List;->size()I
 
@@ -725,7 +725,7 @@
 
     if-ge v0, p1, :cond_2
 
-    .line 392
+    .line 396
     iget-object p1, p0, Lcom/google/protobuf/CodedOutputStreamWriter;->output:Lcom/google/protobuf/CodedOutputStream;
 
     invoke-interface {p2, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -744,7 +744,7 @@
 
     goto :goto_1
 
-    .line 395
+    .line 399
     :cond_1
     :goto_2
     invoke-interface {p2}, Ljava/util/List;->size()I
@@ -753,7 +753,7 @@
 
     if-ge v0, p3, :cond_2
 
-    .line 396
+    .line 400
     iget-object p3, p0, Lcom/google/protobuf/CodedOutputStreamWriter;->output:Lcom/google/protobuf/CodedOutputStream;
 
     invoke-interface {p2, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -784,7 +784,7 @@
         }
     .end annotation
 
-    .line 129
+    .line 130
     iget-object v0, p0, Lcom/google/protobuf/CodedOutputStreamWriter;->output:Lcom/google/protobuf/CodedOutputStream;
 
     invoke-virtual {v0, p1, p2}, Lcom/google/protobuf/CodedOutputStream;->writeBytes(ILcom/google/protobuf/ByteString;)V
@@ -811,7 +811,7 @@
 
     const/4 v0, 0x0
 
-    .line 425
+    .line 429
     :goto_0
     invoke-interface {p2}, Ljava/util/List;->size()I
 
@@ -819,7 +819,7 @@
 
     if-ge v0, v1, :cond_0
 
-    .line 426
+    .line 430
     iget-object v1, p0, Lcom/google/protobuf/CodedOutputStreamWriter;->output:Lcom/google/protobuf/CodedOutputStream;
 
     invoke-interface {p2, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -846,7 +846,7 @@
         }
     .end annotation
 
-    .line 89
+    .line 90
     iget-object v0, p0, Lcom/google/protobuf/CodedOutputStreamWriter;->output:Lcom/google/protobuf/CodedOutputStream;
 
     invoke-virtual {v0, p1, p2, p3}, Lcom/google/protobuf/CodedOutputStream;->writeDouble(ID)V
@@ -875,18 +875,18 @@
 
     if-eqz p3, :cond_1
 
-    .line 333
+    .line 337
     iget-object p3, p0, Lcom/google/protobuf/CodedOutputStreamWriter;->output:Lcom/google/protobuf/CodedOutputStream;
 
     const/4 v1, 0x2
 
     invoke-virtual {p3, p1, v1}, Lcom/google/protobuf/CodedOutputStream;->writeTag(II)V
 
-    const/4 p1, 0x0
+    move p1, v0
 
-    const/4 p3, 0x0
+    move p3, p1
 
-    .line 337
+    .line 341
     :goto_0
     invoke-interface {p2}, Ljava/util/List;->size()I
 
@@ -894,7 +894,7 @@
 
     if-ge p1, v1, :cond_0
 
-    .line 338
+    .line 342
     invoke-interface {p2, p1}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v1
@@ -915,13 +915,13 @@
 
     goto :goto_0
 
-    .line 340
+    .line 344
     :cond_0
     iget-object p1, p0, Lcom/google/protobuf/CodedOutputStreamWriter;->output:Lcom/google/protobuf/CodedOutputStream;
 
     invoke-virtual {p1, p3}, Lcom/google/protobuf/CodedOutputStream;->writeUInt32NoTag(I)V
 
-    .line 343
+    .line 347
     :goto_1
     invoke-interface {p2}, Ljava/util/List;->size()I
 
@@ -929,7 +929,7 @@
 
     if-ge v0, p1, :cond_2
 
-    .line 344
+    .line 348
     iget-object p1, p0, Lcom/google/protobuf/CodedOutputStreamWriter;->output:Lcom/google/protobuf/CodedOutputStream;
 
     invoke-interface {p2, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -948,7 +948,7 @@
 
     goto :goto_1
 
-    .line 347
+    .line 351
     :cond_1
     :goto_2
     invoke-interface {p2}, Ljava/util/List;->size()I
@@ -957,7 +957,7 @@
 
     if-ge v0, p3, :cond_2
 
-    .line 348
+    .line 352
     iget-object p3, p0, Lcom/google/protobuf/CodedOutputStreamWriter;->output:Lcom/google/protobuf/CodedOutputStream;
 
     invoke-interface {p2, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -988,7 +988,10 @@
         }
     .end annotation
 
-    .line 174
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
+
+    .line 178
     iget-object v0, p0, Lcom/google/protobuf/CodedOutputStreamWriter;->output:Lcom/google/protobuf/CodedOutputStream;
 
     const/4 v1, 0x4
@@ -1006,7 +1009,7 @@
         }
     .end annotation
 
-    .line 94
+    .line 95
     iget-object v0, p0, Lcom/google/protobuf/CodedOutputStreamWriter;->output:Lcom/google/protobuf/CodedOutputStream;
 
     invoke-virtual {v0, p1, p2}, Lcom/google/protobuf/CodedOutputStream;->writeEnum(II)V
@@ -1035,18 +1038,18 @@
 
     if-eqz p3, :cond_1
 
-    .line 357
+    .line 361
     iget-object p3, p0, Lcom/google/protobuf/CodedOutputStreamWriter;->output:Lcom/google/protobuf/CodedOutputStream;
 
     const/4 v1, 0x2
 
     invoke-virtual {p3, p1, v1}, Lcom/google/protobuf/CodedOutputStream;->writeTag(II)V
 
-    const/4 p1, 0x0
+    move p1, v0
 
-    const/4 p3, 0x0
+    move p3, p1
 
-    .line 361
+    .line 365
     :goto_0
     invoke-interface {p2}, Ljava/util/List;->size()I
 
@@ -1054,7 +1057,7 @@
 
     if-ge p1, v1, :cond_0
 
-    .line 362
+    .line 366
     invoke-interface {p2, p1}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v1
@@ -1075,13 +1078,13 @@
 
     goto :goto_0
 
-    .line 364
+    .line 368
     :cond_0
     iget-object p1, p0, Lcom/google/protobuf/CodedOutputStreamWriter;->output:Lcom/google/protobuf/CodedOutputStream;
 
     invoke-virtual {p1, p3}, Lcom/google/protobuf/CodedOutputStream;->writeUInt32NoTag(I)V
 
-    .line 367
+    .line 371
     :goto_1
     invoke-interface {p2}, Ljava/util/List;->size()I
 
@@ -1089,7 +1092,7 @@
 
     if-ge v0, p1, :cond_2
 
-    .line 368
+    .line 372
     iget-object p1, p0, Lcom/google/protobuf/CodedOutputStreamWriter;->output:Lcom/google/protobuf/CodedOutputStream;
 
     invoke-interface {p2, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -1108,7 +1111,7 @@
 
     goto :goto_1
 
-    .line 371
+    .line 375
     :cond_1
     :goto_2
     invoke-interface {p2}, Ljava/util/List;->size()I
@@ -1117,7 +1120,7 @@
 
     if-ge v0, p3, :cond_2
 
-    .line 372
+    .line 376
     iget-object p3, p0, Lcom/google/protobuf/CodedOutputStreamWriter;->output:Lcom/google/protobuf/CodedOutputStream;
 
     invoke-interface {p2, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -1148,7 +1151,7 @@
         }
     .end annotation
 
-    .line 114
+    .line 115
     iget-object v0, p0, Lcom/google/protobuf/CodedOutputStreamWriter;->output:Lcom/google/protobuf/CodedOutputStream;
 
     invoke-virtual {v0, p1, p2}, Lcom/google/protobuf/CodedOutputStream;->writeFixed32(II)V
@@ -1177,18 +1180,18 @@
 
     if-eqz p3, :cond_1
 
-    .line 214
+    .line 218
     iget-object p3, p0, Lcom/google/protobuf/CodedOutputStreamWriter;->output:Lcom/google/protobuf/CodedOutputStream;
 
     const/4 v1, 0x2
 
     invoke-virtual {p3, p1, v1}, Lcom/google/protobuf/CodedOutputStream;->writeTag(II)V
 
-    const/4 p1, 0x0
+    move p1, v0
 
-    const/4 p3, 0x0
+    move p3, p1
 
-    .line 218
+    .line 222
     :goto_0
     invoke-interface {p2}, Ljava/util/List;->size()I
 
@@ -1196,7 +1199,7 @@
 
     if-ge p1, v1, :cond_0
 
-    .line 219
+    .line 223
     invoke-interface {p2, p1}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v1
@@ -1217,13 +1220,13 @@
 
     goto :goto_0
 
-    .line 221
+    .line 225
     :cond_0
     iget-object p1, p0, Lcom/google/protobuf/CodedOutputStreamWriter;->output:Lcom/google/protobuf/CodedOutputStream;
 
     invoke-virtual {p1, p3}, Lcom/google/protobuf/CodedOutputStream;->writeUInt32NoTag(I)V
 
-    .line 224
+    .line 228
     :goto_1
     invoke-interface {p2}, Ljava/util/List;->size()I
 
@@ -1231,7 +1234,7 @@
 
     if-ge v0, p1, :cond_2
 
-    .line 225
+    .line 229
     iget-object p1, p0, Lcom/google/protobuf/CodedOutputStreamWriter;->output:Lcom/google/protobuf/CodedOutputStream;
 
     invoke-interface {p2, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -1250,7 +1253,7 @@
 
     goto :goto_1
 
-    .line 228
+    .line 232
     :cond_1
     :goto_2
     invoke-interface {p2}, Ljava/util/List;->size()I
@@ -1259,7 +1262,7 @@
 
     if-ge v0, p3, :cond_2
 
-    .line 229
+    .line 233
     iget-object p3, p0, Lcom/google/protobuf/CodedOutputStreamWriter;->output:Lcom/google/protobuf/CodedOutputStream;
 
     invoke-interface {p2, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -1290,7 +1293,7 @@
         }
     .end annotation
 
-    .line 109
+    .line 110
     iget-object v0, p0, Lcom/google/protobuf/CodedOutputStreamWriter;->output:Lcom/google/protobuf/CodedOutputStream;
 
     invoke-virtual {v0, p1, p2, p3}, Lcom/google/protobuf/CodedOutputStream;->writeFixed64(IJ)V
@@ -1319,18 +1322,18 @@
 
     if-eqz p3, :cond_1
 
-    .line 285
+    .line 289
     iget-object p3, p0, Lcom/google/protobuf/CodedOutputStreamWriter;->output:Lcom/google/protobuf/CodedOutputStream;
 
     const/4 v1, 0x2
 
     invoke-virtual {p3, p1, v1}, Lcom/google/protobuf/CodedOutputStream;->writeTag(II)V
 
-    const/4 p1, 0x0
+    move p1, v0
 
-    const/4 p3, 0x0
+    move p3, p1
 
-    .line 289
+    .line 293
     :goto_0
     invoke-interface {p2}, Ljava/util/List;->size()I
 
@@ -1338,7 +1341,7 @@
 
     if-ge p1, v1, :cond_0
 
-    .line 290
+    .line 294
     invoke-interface {p2, p1}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v1
@@ -1359,13 +1362,13 @@
 
     goto :goto_0
 
-    .line 292
+    .line 296
     :cond_0
     iget-object p1, p0, Lcom/google/protobuf/CodedOutputStreamWriter;->output:Lcom/google/protobuf/CodedOutputStream;
 
     invoke-virtual {p1, p3}, Lcom/google/protobuf/CodedOutputStream;->writeUInt32NoTag(I)V
 
-    .line 295
+    .line 299
     :goto_1
     invoke-interface {p2}, Ljava/util/List;->size()I
 
@@ -1373,7 +1376,7 @@
 
     if-ge v0, p1, :cond_2
 
-    .line 296
+    .line 300
     iget-object p1, p0, Lcom/google/protobuf/CodedOutputStreamWriter;->output:Lcom/google/protobuf/CodedOutputStream;
 
     invoke-interface {p2, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -1392,7 +1395,7 @@
 
     goto :goto_1
 
-    .line 299
+    .line 303
     :cond_1
     :goto_2
     invoke-interface {p2}, Ljava/util/List;->size()I
@@ -1401,7 +1404,7 @@
 
     if-ge v0, p3, :cond_2
 
-    .line 300
+    .line 304
     iget-object p3, p0, Lcom/google/protobuf/CodedOutputStreamWriter;->output:Lcom/google/protobuf/CodedOutputStream;
 
     invoke-interface {p2, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -1432,7 +1435,7 @@
         }
     .end annotation
 
-    .line 84
+    .line 85
     iget-object v0, p0, Lcom/google/protobuf/CodedOutputStreamWriter;->output:Lcom/google/protobuf/CodedOutputStream;
 
     invoke-virtual {v0, p1, p2}, Lcom/google/protobuf/CodedOutputStream;->writeFloat(IF)V
@@ -1461,18 +1464,18 @@
 
     if-eqz p3, :cond_1
 
-    .line 309
+    .line 313
     iget-object p3, p0, Lcom/google/protobuf/CodedOutputStreamWriter;->output:Lcom/google/protobuf/CodedOutputStream;
 
     const/4 v1, 0x2
 
     invoke-virtual {p3, p1, v1}, Lcom/google/protobuf/CodedOutputStream;->writeTag(II)V
 
-    const/4 p1, 0x0
+    move p1, v0
 
-    const/4 p3, 0x0
+    move p3, p1
 
-    .line 313
+    .line 317
     :goto_0
     invoke-interface {p2}, Ljava/util/List;->size()I
 
@@ -1480,7 +1483,7 @@
 
     if-ge p1, v1, :cond_0
 
-    .line 314
+    .line 318
     invoke-interface {p2, p1}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v1
@@ -1501,13 +1504,13 @@
 
     goto :goto_0
 
-    .line 316
+    .line 320
     :cond_0
     iget-object p1, p0, Lcom/google/protobuf/CodedOutputStreamWriter;->output:Lcom/google/protobuf/CodedOutputStream;
 
     invoke-virtual {p1, p3}, Lcom/google/protobuf/CodedOutputStream;->writeUInt32NoTag(I)V
 
-    .line 319
+    .line 323
     :goto_1
     invoke-interface {p2}, Ljava/util/List;->size()I
 
@@ -1515,7 +1518,7 @@
 
     if-ge v0, p1, :cond_2
 
-    .line 320
+    .line 324
     iget-object p1, p0, Lcom/google/protobuf/CodedOutputStreamWriter;->output:Lcom/google/protobuf/CodedOutputStream;
 
     invoke-interface {p2, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -1534,7 +1537,7 @@
 
     goto :goto_1
 
-    .line 323
+    .line 327
     :cond_1
     :goto_2
     invoke-interface {p2}, Ljava/util/List;->size()I
@@ -1543,7 +1546,7 @@
 
     if-ge v0, p3, :cond_2
 
-    .line 324
+    .line 328
     iget-object p3, p0, Lcom/google/protobuf/CodedOutputStreamWriter;->output:Lcom/google/protobuf/CodedOutputStream;
 
     invoke-interface {p2, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -1574,7 +1577,7 @@
         }
     .end annotation
 
-    .line 164
+    .line 166
     iget-object v0, p0, Lcom/google/protobuf/CodedOutputStreamWriter;->output:Lcom/google/protobuf/CodedOutputStream;
 
     check-cast p2, Lcom/google/protobuf/MessageLite;
@@ -1604,7 +1607,7 @@
 
     const/4 v0, 0x0
 
-    .line 573
+    .line 578
     :goto_0
     invoke-interface {p2}, Ljava/util/List;->size()I
 
@@ -1612,7 +1615,7 @@
 
     if-ge v0, v1, :cond_0
 
-    .line 574
+    .line 579
     invoke-interface {p2, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v1
@@ -1635,7 +1638,7 @@
         }
     .end annotation
 
-    .line 104
+    .line 105
     iget-object v0, p0, Lcom/google/protobuf/CodedOutputStreamWriter;->output:Lcom/google/protobuf/CodedOutputStream;
 
     invoke-virtual {v0, p1, p2}, Lcom/google/protobuf/CodedOutputStream;->writeInt32(II)V
@@ -1664,18 +1667,18 @@
 
     if-eqz p3, :cond_1
 
-    .line 190
+    .line 194
     iget-object p3, p0, Lcom/google/protobuf/CodedOutputStreamWriter;->output:Lcom/google/protobuf/CodedOutputStream;
 
     const/4 v1, 0x2
 
     invoke-virtual {p3, p1, v1}, Lcom/google/protobuf/CodedOutputStream;->writeTag(II)V
 
-    const/4 p1, 0x0
+    move p1, v0
 
-    const/4 p3, 0x0
+    move p3, p1
 
-    .line 194
+    .line 198
     :goto_0
     invoke-interface {p2}, Ljava/util/List;->size()I
 
@@ -1683,7 +1686,7 @@
 
     if-ge p1, v1, :cond_0
 
-    .line 195
+    .line 199
     invoke-interface {p2, p1}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v1
@@ -1704,13 +1707,13 @@
 
     goto :goto_0
 
-    .line 197
+    .line 201
     :cond_0
     iget-object p1, p0, Lcom/google/protobuf/CodedOutputStreamWriter;->output:Lcom/google/protobuf/CodedOutputStream;
 
     invoke-virtual {p1, p3}, Lcom/google/protobuf/CodedOutputStream;->writeUInt32NoTag(I)V
 
-    .line 200
+    .line 204
     :goto_1
     invoke-interface {p2}, Ljava/util/List;->size()I
 
@@ -1718,7 +1721,7 @@
 
     if-ge v0, p1, :cond_2
 
-    .line 201
+    .line 205
     iget-object p1, p0, Lcom/google/protobuf/CodedOutputStreamWriter;->output:Lcom/google/protobuf/CodedOutputStream;
 
     invoke-interface {p2, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -1737,7 +1740,7 @@
 
     goto :goto_1
 
-    .line 204
+    .line 208
     :cond_1
     :goto_2
     invoke-interface {p2}, Ljava/util/List;->size()I
@@ -1746,7 +1749,7 @@
 
     if-ge v0, p3, :cond_2
 
-    .line 205
+    .line 209
     iget-object p3, p0, Lcom/google/protobuf/CodedOutputStreamWriter;->output:Lcom/google/protobuf/CodedOutputStream;
 
     invoke-interface {p2, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -1777,7 +1780,7 @@
         }
     .end annotation
 
-    .line 74
+    .line 75
     iget-object v0, p0, Lcom/google/protobuf/CodedOutputStreamWriter;->output:Lcom/google/protobuf/CodedOutputStream;
 
     invoke-virtual {v0, p1, p2, p3}, Lcom/google/protobuf/CodedOutputStream;->writeInt64(IJ)V
@@ -1806,18 +1809,18 @@
 
     if-eqz p3, :cond_1
 
-    .line 237
+    .line 241
     iget-object p3, p0, Lcom/google/protobuf/CodedOutputStreamWriter;->output:Lcom/google/protobuf/CodedOutputStream;
 
     const/4 v1, 0x2
 
     invoke-virtual {p3, p1, v1}, Lcom/google/protobuf/CodedOutputStream;->writeTag(II)V
 
-    const/4 p1, 0x0
+    move p1, v0
 
-    const/4 p3, 0x0
+    move p3, p1
 
-    .line 241
+    .line 245
     :goto_0
     invoke-interface {p2}, Ljava/util/List;->size()I
 
@@ -1825,7 +1828,7 @@
 
     if-ge p1, v1, :cond_0
 
-    .line 242
+    .line 246
     invoke-interface {p2, p1}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v1
@@ -1846,13 +1849,13 @@
 
     goto :goto_0
 
-    .line 244
+    .line 248
     :cond_0
     iget-object p1, p0, Lcom/google/protobuf/CodedOutputStreamWriter;->output:Lcom/google/protobuf/CodedOutputStream;
 
     invoke-virtual {p1, p3}, Lcom/google/protobuf/CodedOutputStream;->writeUInt32NoTag(I)V
 
-    .line 247
+    .line 251
     :goto_1
     invoke-interface {p2}, Ljava/util/List;->size()I
 
@@ -1860,7 +1863,7 @@
 
     if-ge v0, p1, :cond_2
 
-    .line 248
+    .line 252
     iget-object p1, p0, Lcom/google/protobuf/CodedOutputStreamWriter;->output:Lcom/google/protobuf/CodedOutputStream;
 
     invoke-interface {p2, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -1879,7 +1882,7 @@
 
     goto :goto_1
 
-    .line 251
+    .line 255
     :cond_1
     :goto_2
     invoke-interface {p2}, Ljava/util/List;->size()I
@@ -1888,7 +1891,7 @@
 
     if-ge v0, p3, :cond_2
 
-    .line 252
+    .line 256
     iget-object p3, p0, Lcom/google/protobuf/CodedOutputStreamWriter;->output:Lcom/google/protobuf/CodedOutputStream;
 
     invoke-interface {p2, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -1933,7 +1936,7 @@
         }
     .end annotation
 
-    .line 581
+    .line 586
     iget-object v0, p0, Lcom/google/protobuf/CodedOutputStreamWriter;->output:Lcom/google/protobuf/CodedOutputStream;
 
     invoke-virtual {v0}, Lcom/google/protobuf/CodedOutputStream;->isSerializationDeterministic()Z
@@ -1942,12 +1945,12 @@
 
     if-eqz v0, :cond_0
 
-    .line 582
+    .line 587
     invoke-direct {p0, p1, p2, p3}, Lcom/google/protobuf/CodedOutputStreamWriter;->writeDeterministicMap(ILcom/google/protobuf/MapEntryLite$Metadata;Ljava/util/Map;)V
 
     return-void
 
-    .line 585
+    .line 590
     :cond_0
     invoke-interface {p3}, Ljava/util/Map;->entrySet()Ljava/util/Set;
 
@@ -1970,17 +1973,17 @@
 
     check-cast v0, Ljava/util/Map$Entry;
 
-    .line 586
+    .line 591
     iget-object v1, p0, Lcom/google/protobuf/CodedOutputStreamWriter;->output:Lcom/google/protobuf/CodedOutputStream;
 
     const/4 v2, 0x2
 
     invoke-virtual {v1, p1, v2}, Lcom/google/protobuf/CodedOutputStream;->writeTag(II)V
 
-    .line 587
+    .line 592
     iget-object v1, p0, Lcom/google/protobuf/CodedOutputStreamWriter;->output:Lcom/google/protobuf/CodedOutputStream;
 
-    .line 588
+    .line 593
     invoke-interface {v0}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
     move-result-object v2
@@ -1993,10 +1996,10 @@
 
     move-result v2
 
-    .line 587
+    .line 592
     invoke-virtual {v1, v2}, Lcom/google/protobuf/CodedOutputStream;->writeUInt32NoTag(I)V
 
-    .line 589
+    .line 594
     iget-object v1, p0, Lcom/google/protobuf/CodedOutputStreamWriter;->output:Lcom/google/protobuf/CodedOutputStream;
 
     invoke-interface {v0}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
@@ -2023,7 +2026,7 @@
         }
     .end annotation
 
-    .line 154
+    .line 155
     iget-object v0, p0, Lcom/google/protobuf/CodedOutputStreamWriter;->output:Lcom/google/protobuf/CodedOutputStream;
 
     check-cast p2, Lcom/google/protobuf/MessageLite;
@@ -2053,7 +2056,7 @@
 
     const/4 v0, 0x0
 
-    .line 559
+    .line 563
     :goto_0
     invoke-interface {p2}, Ljava/util/List;->size()I
 
@@ -2061,7 +2064,7 @@
 
     if-ge v0, v1, :cond_0
 
-    .line 560
+    .line 564
     invoke-interface {p2, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v1
@@ -2084,12 +2087,12 @@
         }
     .end annotation
 
-    .line 179
+    .line 183
     instance-of v0, p2, Lcom/google/protobuf/ByteString;
 
     if-eqz v0, :cond_0
 
-    .line 180
+    .line 184
     iget-object v0, p0, Lcom/google/protobuf/CodedOutputStreamWriter;->output:Lcom/google/protobuf/CodedOutputStream;
 
     check-cast p2, Lcom/google/protobuf/ByteString;
@@ -2098,7 +2101,7 @@
 
     goto :goto_0
 
-    .line 182
+    .line 186
     :cond_0
     iget-object v0, p0, Lcom/google/protobuf/CodedOutputStreamWriter;->output:Lcom/google/protobuf/CodedOutputStream;
 
@@ -2118,7 +2121,7 @@
         }
     .end annotation
 
-    .line 69
+    .line 70
     iget-object v0, p0, Lcom/google/protobuf/CodedOutputStreamWriter;->output:Lcom/google/protobuf/CodedOutputStream;
 
     invoke-virtual {v0, p1, p2}, Lcom/google/protobuf/CodedOutputStream;->writeSFixed32(II)V
@@ -2147,18 +2150,18 @@
 
     if-eqz p3, :cond_1
 
-    .line 458
+    .line 462
     iget-object p3, p0, Lcom/google/protobuf/CodedOutputStreamWriter;->output:Lcom/google/protobuf/CodedOutputStream;
 
     const/4 v1, 0x2
 
     invoke-virtual {p3, p1, v1}, Lcom/google/protobuf/CodedOutputStream;->writeTag(II)V
 
-    const/4 p1, 0x0
+    move p1, v0
 
-    const/4 p3, 0x0
+    move p3, p1
 
-    .line 462
+    .line 466
     :goto_0
     invoke-interface {p2}, Ljava/util/List;->size()I
 
@@ -2166,7 +2169,7 @@
 
     if-ge p1, v1, :cond_0
 
-    .line 463
+    .line 467
     invoke-interface {p2, p1}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v1
@@ -2187,13 +2190,13 @@
 
     goto :goto_0
 
-    .line 465
+    .line 469
     :cond_0
     iget-object p1, p0, Lcom/google/protobuf/CodedOutputStreamWriter;->output:Lcom/google/protobuf/CodedOutputStream;
 
     invoke-virtual {p1, p3}, Lcom/google/protobuf/CodedOutputStream;->writeUInt32NoTag(I)V
 
-    .line 468
+    .line 472
     :goto_1
     invoke-interface {p2}, Ljava/util/List;->size()I
 
@@ -2201,7 +2204,7 @@
 
     if-ge v0, p1, :cond_2
 
-    .line 469
+    .line 473
     iget-object p1, p0, Lcom/google/protobuf/CodedOutputStreamWriter;->output:Lcom/google/protobuf/CodedOutputStream;
 
     invoke-interface {p2, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -2220,7 +2223,7 @@
 
     goto :goto_1
 
-    .line 472
+    .line 476
     :cond_1
     :goto_2
     invoke-interface {p2}, Ljava/util/List;->size()I
@@ -2229,7 +2232,7 @@
 
     if-ge v0, p3, :cond_2
 
-    .line 473
+    .line 477
     iget-object p3, p0, Lcom/google/protobuf/CodedOutputStreamWriter;->output:Lcom/google/protobuf/CodedOutputStream;
 
     invoke-interface {p2, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -2260,7 +2263,7 @@
         }
     .end annotation
 
-    .line 79
+    .line 80
     iget-object v0, p0, Lcom/google/protobuf/CodedOutputStreamWriter;->output:Lcom/google/protobuf/CodedOutputStream;
 
     invoke-virtual {v0, p1, p2, p3}, Lcom/google/protobuf/CodedOutputStream;->writeSFixed64(IJ)V
@@ -2289,18 +2292,18 @@
 
     if-eqz p3, :cond_1
 
-    .line 482
+    .line 486
     iget-object p3, p0, Lcom/google/protobuf/CodedOutputStreamWriter;->output:Lcom/google/protobuf/CodedOutputStream;
 
     const/4 v1, 0x2
 
     invoke-virtual {p3, p1, v1}, Lcom/google/protobuf/CodedOutputStream;->writeTag(II)V
 
-    const/4 p1, 0x0
+    move p1, v0
 
-    const/4 p3, 0x0
+    move p3, p1
 
-    .line 486
+    .line 490
     :goto_0
     invoke-interface {p2}, Ljava/util/List;->size()I
 
@@ -2308,7 +2311,7 @@
 
     if-ge p1, v1, :cond_0
 
-    .line 487
+    .line 491
     invoke-interface {p2, p1}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v1
@@ -2329,13 +2332,13 @@
 
     goto :goto_0
 
-    .line 489
+    .line 493
     :cond_0
     iget-object p1, p0, Lcom/google/protobuf/CodedOutputStreamWriter;->output:Lcom/google/protobuf/CodedOutputStream;
 
     invoke-virtual {p1, p3}, Lcom/google/protobuf/CodedOutputStream;->writeUInt32NoTag(I)V
 
-    .line 492
+    .line 496
     :goto_1
     invoke-interface {p2}, Ljava/util/List;->size()I
 
@@ -2343,7 +2346,7 @@
 
     if-ge v0, p1, :cond_2
 
-    .line 493
+    .line 497
     iget-object p1, p0, Lcom/google/protobuf/CodedOutputStreamWriter;->output:Lcom/google/protobuf/CodedOutputStream;
 
     invoke-interface {p2, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -2362,7 +2365,7 @@
 
     goto :goto_1
 
-    .line 496
+    .line 500
     :cond_1
     :goto_2
     invoke-interface {p2}, Ljava/util/List;->size()I
@@ -2371,7 +2374,7 @@
 
     if-ge v0, p3, :cond_2
 
-    .line 497
+    .line 501
     iget-object p3, p0, Lcom/google/protobuf/CodedOutputStreamWriter;->output:Lcom/google/protobuf/CodedOutputStream;
 
     invoke-interface {p2, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -2402,7 +2405,7 @@
         }
     .end annotation
 
-    .line 139
+    .line 140
     iget-object v0, p0, Lcom/google/protobuf/CodedOutputStreamWriter;->output:Lcom/google/protobuf/CodedOutputStream;
 
     invoke-virtual {v0, p1, p2}, Lcom/google/protobuf/CodedOutputStream;->writeSInt32(II)V
@@ -2431,18 +2434,18 @@
 
     if-eqz p3, :cond_1
 
-    .line 506
+    .line 510
     iget-object p3, p0, Lcom/google/protobuf/CodedOutputStreamWriter;->output:Lcom/google/protobuf/CodedOutputStream;
 
     const/4 v1, 0x2
 
     invoke-virtual {p3, p1, v1}, Lcom/google/protobuf/CodedOutputStream;->writeTag(II)V
 
-    const/4 p1, 0x0
+    move p1, v0
 
-    const/4 p3, 0x0
+    move p3, p1
 
-    .line 510
+    .line 514
     :goto_0
     invoke-interface {p2}, Ljava/util/List;->size()I
 
@@ -2450,7 +2453,7 @@
 
     if-ge p1, v1, :cond_0
 
-    .line 511
+    .line 515
     invoke-interface {p2, p1}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v1
@@ -2471,13 +2474,13 @@
 
     goto :goto_0
 
-    .line 513
+    .line 517
     :cond_0
     iget-object p1, p0, Lcom/google/protobuf/CodedOutputStreamWriter;->output:Lcom/google/protobuf/CodedOutputStream;
 
     invoke-virtual {p1, p3}, Lcom/google/protobuf/CodedOutputStream;->writeUInt32NoTag(I)V
 
-    .line 516
+    .line 520
     :goto_1
     invoke-interface {p2}, Ljava/util/List;->size()I
 
@@ -2485,7 +2488,7 @@
 
     if-ge v0, p1, :cond_2
 
-    .line 517
+    .line 521
     iget-object p1, p0, Lcom/google/protobuf/CodedOutputStreamWriter;->output:Lcom/google/protobuf/CodedOutputStream;
 
     invoke-interface {p2, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -2504,7 +2507,7 @@
 
     goto :goto_1
 
-    .line 520
+    .line 524
     :cond_1
     :goto_2
     invoke-interface {p2}, Ljava/util/List;->size()I
@@ -2513,7 +2516,7 @@
 
     if-ge v0, p3, :cond_2
 
-    .line 521
+    .line 525
     iget-object p3, p0, Lcom/google/protobuf/CodedOutputStreamWriter;->output:Lcom/google/protobuf/CodedOutputStream;
 
     invoke-interface {p2, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -2544,7 +2547,7 @@
         }
     .end annotation
 
-    .line 144
+    .line 145
     iget-object v0, p0, Lcom/google/protobuf/CodedOutputStreamWriter;->output:Lcom/google/protobuf/CodedOutputStream;
 
     invoke-virtual {v0, p1, p2, p3}, Lcom/google/protobuf/CodedOutputStream;->writeSInt64(IJ)V
@@ -2573,18 +2576,18 @@
 
     if-eqz p3, :cond_1
 
-    .line 530
+    .line 534
     iget-object p3, p0, Lcom/google/protobuf/CodedOutputStreamWriter;->output:Lcom/google/protobuf/CodedOutputStream;
 
     const/4 v1, 0x2
 
     invoke-virtual {p3, p1, v1}, Lcom/google/protobuf/CodedOutputStream;->writeTag(II)V
 
-    const/4 p1, 0x0
+    move p1, v0
 
-    const/4 p3, 0x0
+    move p3, p1
 
-    .line 534
+    .line 538
     :goto_0
     invoke-interface {p2}, Ljava/util/List;->size()I
 
@@ -2592,7 +2595,7 @@
 
     if-ge p1, v1, :cond_0
 
-    .line 535
+    .line 539
     invoke-interface {p2, p1}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v1
@@ -2613,13 +2616,13 @@
 
     goto :goto_0
 
-    .line 537
+    .line 541
     :cond_0
     iget-object p1, p0, Lcom/google/protobuf/CodedOutputStreamWriter;->output:Lcom/google/protobuf/CodedOutputStream;
 
     invoke-virtual {p1, p3}, Lcom/google/protobuf/CodedOutputStream;->writeUInt32NoTag(I)V
 
-    .line 540
+    .line 544
     :goto_1
     invoke-interface {p2}, Ljava/util/List;->size()I
 
@@ -2627,7 +2630,7 @@
 
     if-ge v0, p1, :cond_2
 
-    .line 541
+    .line 545
     iget-object p1, p0, Lcom/google/protobuf/CodedOutputStreamWriter;->output:Lcom/google/protobuf/CodedOutputStream;
 
     invoke-interface {p2, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -2646,7 +2649,7 @@
 
     goto :goto_1
 
-    .line 544
+    .line 548
     :cond_1
     :goto_2
     invoke-interface {p2}, Ljava/util/List;->size()I
@@ -2655,7 +2658,7 @@
 
     if-ge v0, p3, :cond_2
 
-    .line 545
+    .line 549
     iget-object p3, p0, Lcom/google/protobuf/CodedOutputStreamWriter;->output:Lcom/google/protobuf/CodedOutputStream;
 
     invoke-interface {p2, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -2686,7 +2689,10 @@
         }
     .end annotation
 
-    .line 169
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
+
+    .line 172
     iget-object v0, p0, Lcom/google/protobuf/CodedOutputStreamWriter;->output:Lcom/google/protobuf/CodedOutputStream;
 
     const/4 v1, 0x3
@@ -2704,7 +2710,7 @@
         }
     .end annotation
 
-    .line 124
+    .line 125
     iget-object v0, p0, Lcom/google/protobuf/CodedOutputStreamWriter;->output:Lcom/google/protobuf/CodedOutputStream;
 
     invoke-virtual {v0, p1, p2}, Lcom/google/protobuf/CodedOutputStream;->writeString(ILjava/lang/String;)V
@@ -2729,19 +2735,19 @@
         }
     .end annotation
 
-    .line 403
+    .line 407
     instance-of v0, p2, Lcom/google/protobuf/LazyStringList;
 
     const/4 v1, 0x0
 
     if-eqz v0, :cond_0
 
-    .line 404
+    .line 408
     move-object v0, p2
 
     check-cast v0, Lcom/google/protobuf/LazyStringList;
 
-    .line 405
+    .line 409
     :goto_0
     invoke-interface {p2}, Ljava/util/List;->size()I
 
@@ -2749,7 +2755,7 @@
 
     if-ge v1, v2, :cond_1
 
-    .line 406
+    .line 410
     invoke-interface {v0, v1}, Lcom/google/protobuf/LazyStringList;->getRaw(I)Ljava/lang/Object;
 
     move-result-object v2
@@ -2760,7 +2766,7 @@
 
     goto :goto_0
 
-    .line 409
+    .line 413
     :cond_0
     :goto_1
     invoke-interface {p2}, Ljava/util/List;->size()I
@@ -2769,7 +2775,7 @@
 
     if-ge v1, v0, :cond_1
 
-    .line 410
+    .line 414
     iget-object v0, p0, Lcom/google/protobuf/CodedOutputStreamWriter;->output:Lcom/google/protobuf/CodedOutputStream;
 
     invoke-interface {p2, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -2796,7 +2802,7 @@
         }
     .end annotation
 
-    .line 134
+    .line 135
     iget-object v0, p0, Lcom/google/protobuf/CodedOutputStreamWriter;->output:Lcom/google/protobuf/CodedOutputStream;
 
     invoke-virtual {v0, p1, p2}, Lcom/google/protobuf/CodedOutputStream;->writeUInt32(II)V
@@ -2825,18 +2831,18 @@
 
     if-eqz p3, :cond_1
 
-    .line 434
+    .line 438
     iget-object p3, p0, Lcom/google/protobuf/CodedOutputStreamWriter;->output:Lcom/google/protobuf/CodedOutputStream;
 
     const/4 v1, 0x2
 
     invoke-virtual {p3, p1, v1}, Lcom/google/protobuf/CodedOutputStream;->writeTag(II)V
 
-    const/4 p1, 0x0
+    move p1, v0
 
-    const/4 p3, 0x0
+    move p3, p1
 
-    .line 438
+    .line 442
     :goto_0
     invoke-interface {p2}, Ljava/util/List;->size()I
 
@@ -2844,7 +2850,7 @@
 
     if-ge p1, v1, :cond_0
 
-    .line 439
+    .line 443
     invoke-interface {p2, p1}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v1
@@ -2865,13 +2871,13 @@
 
     goto :goto_0
 
-    .line 441
+    .line 445
     :cond_0
     iget-object p1, p0, Lcom/google/protobuf/CodedOutputStreamWriter;->output:Lcom/google/protobuf/CodedOutputStream;
 
     invoke-virtual {p1, p3}, Lcom/google/protobuf/CodedOutputStream;->writeUInt32NoTag(I)V
 
-    .line 444
+    .line 448
     :goto_1
     invoke-interface {p2}, Ljava/util/List;->size()I
 
@@ -2879,7 +2885,7 @@
 
     if-ge v0, p1, :cond_2
 
-    .line 445
+    .line 449
     iget-object p1, p0, Lcom/google/protobuf/CodedOutputStreamWriter;->output:Lcom/google/protobuf/CodedOutputStream;
 
     invoke-interface {p2, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -2898,7 +2904,7 @@
 
     goto :goto_1
 
-    .line 448
+    .line 452
     :cond_1
     :goto_2
     invoke-interface {p2}, Ljava/util/List;->size()I
@@ -2907,7 +2913,7 @@
 
     if-ge v0, p3, :cond_2
 
-    .line 449
+    .line 453
     iget-object p3, p0, Lcom/google/protobuf/CodedOutputStreamWriter;->output:Lcom/google/protobuf/CodedOutputStream;
 
     invoke-interface {p2, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -2938,7 +2944,7 @@
         }
     .end annotation
 
-    .line 99
+    .line 100
     iget-object v0, p0, Lcom/google/protobuf/CodedOutputStreamWriter;->output:Lcom/google/protobuf/CodedOutputStream;
 
     invoke-virtual {v0, p1, p2, p3}, Lcom/google/protobuf/CodedOutputStream;->writeUInt64(IJ)V
@@ -2967,18 +2973,18 @@
 
     if-eqz p3, :cond_1
 
-    .line 261
+    .line 265
     iget-object p3, p0, Lcom/google/protobuf/CodedOutputStreamWriter;->output:Lcom/google/protobuf/CodedOutputStream;
 
     const/4 v1, 0x2
 
     invoke-virtual {p3, p1, v1}, Lcom/google/protobuf/CodedOutputStream;->writeTag(II)V
 
-    const/4 p1, 0x0
+    move p1, v0
 
-    const/4 p3, 0x0
+    move p3, p1
 
-    .line 265
+    .line 269
     :goto_0
     invoke-interface {p2}, Ljava/util/List;->size()I
 
@@ -2986,7 +2992,7 @@
 
     if-ge p1, v1, :cond_0
 
-    .line 266
+    .line 270
     invoke-interface {p2, p1}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v1
@@ -3007,13 +3013,13 @@
 
     goto :goto_0
 
-    .line 268
+    .line 272
     :cond_0
     iget-object p1, p0, Lcom/google/protobuf/CodedOutputStreamWriter;->output:Lcom/google/protobuf/CodedOutputStream;
 
     invoke-virtual {p1, p3}, Lcom/google/protobuf/CodedOutputStream;->writeUInt32NoTag(I)V
 
-    .line 271
+    .line 275
     :goto_1
     invoke-interface {p2}, Ljava/util/List;->size()I
 
@@ -3021,7 +3027,7 @@
 
     if-ge v0, p1, :cond_2
 
-    .line 272
+    .line 276
     iget-object p1, p0, Lcom/google/protobuf/CodedOutputStreamWriter;->output:Lcom/google/protobuf/CodedOutputStream;
 
     invoke-interface {p2, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -3040,7 +3046,7 @@
 
     goto :goto_1
 
-    .line 275
+    .line 279
     :cond_1
     :goto_2
     invoke-interface {p2}, Ljava/util/List;->size()I
@@ -3049,7 +3055,7 @@
 
     if-ge v0, p3, :cond_2
 
-    .line 276
+    .line 280
     iget-object p3, p0, Lcom/google/protobuf/CodedOutputStreamWriter;->output:Lcom/google/protobuf/CodedOutputStream;
 
     invoke-interface {p2, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;

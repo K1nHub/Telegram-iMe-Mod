@@ -642,11 +642,11 @@
 
     move-object/from16 v0, p0
 
+    move v13, v1
+
     move-object/from16 v2, v16
 
     move/from16 v3, v17
-
-    const/4 v13, 0x1
 
     goto/16 :goto_3
 
@@ -655,7 +655,7 @@
 
     move/from16 v17, v3
 
-    const/4 v1, 0x1
+    move v1, v13
 
     const/4 v3, 0x0
 
@@ -670,8 +670,6 @@
     move-object/from16 v0, p0
 
     move/from16 v3, v17
-
-    const/4 v13, 0x1
 
     goto/16 :goto_2
 
@@ -692,7 +690,7 @@
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    move v2, v0
 
     :cond_0
     const/4 v3, 0x3
@@ -1190,7 +1188,7 @@
 
     add-int/2addr v2, v3
 
-    const/4 v4, 0x4
+    move v4, v3
 
     :goto_0
     if-ge v0, v1, :cond_2

@@ -431,7 +431,7 @@
     goto/16 :goto_0
 
     :cond_f
-    const/4 v8, 0x1
+    move v8, v7
 
     .line 80
     new-instance v1, Lcom/google/android/gms/internal/vision/zzem;

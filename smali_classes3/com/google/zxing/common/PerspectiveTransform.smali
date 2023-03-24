@@ -163,17 +163,17 @@
 
     sub-float/2addr v6, v7
 
-    mul-float v5, v5, v0
+    mul-float/2addr v5, v0
 
-    mul-float v3, v3, v1
+    mul-float/2addr v3, v1
 
     sub-float/2addr v5, v3
 
     div-float v7, v5, v6
 
-    mul-float v2, v2, v1
+    mul-float/2addr v2, v1
 
-    mul-float v0, v0, v4
+    mul-float/2addr v0, v4
 
     sub-float/2addr v2, v0
 
@@ -271,15 +271,15 @@
 
     iget v14, v0, Lcom/google/zxing/common/PerspectiveTransform;->a11:F
 
-    mul-float v2, v2, v14
+    mul-float/2addr v2, v14
 
     mul-float v15, v10, v6
 
     sub-float v15, v2, v15
 
-    mul-float v6, v6, v13
+    mul-float/2addr v6, v13
 
-    mul-float v5, v5, v14
+    mul-float/2addr v5, v14
 
     sub-float v16, v6, v5
 
@@ -289,15 +289,15 @@
 
     sub-float v17, v2, v5
 
-    mul-float v10, v10, v8
+    mul-float/2addr v10, v8
 
-    mul-float v4, v4, v14
+    mul-float/2addr v4, v14
 
     sub-float/2addr v10, v4
 
-    mul-float v14, v14, v1
+    mul-float/2addr v14, v1
 
-    mul-float v13, v13, v8
+    mul-float/2addr v13, v8
 
     sub-float v13, v14, v13
 
@@ -376,17 +376,17 @@
 
     iget v14, v1, Lcom/google/zxing/common/PerspectiveTransform;->a31:F
 
-    mul-float v2, v2, v14
+    mul-float/2addr v2, v14
 
     iget v15, v1, Lcom/google/zxing/common/PerspectiveTransform;->a32:F
 
-    mul-float v5, v5, v15
+    mul-float/2addr v5, v15
 
     add-float/2addr v2, v5
 
     iget v1, v1, Lcom/google/zxing/common/PerspectiveTransform;->a33:F
 
-    mul-float v7, v7, v1
+    mul-float/2addr v7, v1
 
     add-float v5, v2, v7
 
@@ -420,49 +420,49 @@
 
     add-float v17, v17, v18
 
-    mul-float v2, v2, v14
+    mul-float/2addr v2, v14
 
-    mul-float v5, v5, v15
+    mul-float/2addr v5, v15
 
     add-float/2addr v2, v5
 
-    mul-float v10, v10, v1
+    mul-float/2addr v10, v1
 
     add-float/2addr v10, v2
 
     iget v2, v0, Lcom/google/zxing/common/PerspectiveTransform;->a13:F
 
-    mul-float v3, v3, v2
+    mul-float/2addr v3, v2
 
     iget v5, v0, Lcom/google/zxing/common/PerspectiveTransform;->a23:F
 
-    mul-float v6, v6, v5
+    mul-float/2addr v6, v5
 
     add-float/2addr v3, v6
 
     iget v6, v0, Lcom/google/zxing/common/PerspectiveTransform;->a33:F
 
-    mul-float v8, v8, v6
+    mul-float/2addr v8, v6
 
     add-float/2addr v8, v3
 
-    mul-float v9, v9, v2
+    mul-float/2addr v9, v2
 
-    mul-float v12, v12, v5
+    mul-float/2addr v12, v5
 
     add-float/2addr v9, v12
 
-    mul-float v13, v13, v6
+    mul-float/2addr v13, v6
 
     add-float/2addr v9, v13
 
-    mul-float v2, v2, v14
+    mul-float/2addr v2, v14
 
-    mul-float v5, v5, v15
+    mul-float/2addr v5, v15
 
     add-float/2addr v2, v5
 
-    mul-float v6, v6, v1
+    mul-float/2addr v6, v1
 
     add-float v12, v2, v6
 
@@ -560,9 +560,9 @@
     .line 81
     aput v17, v1, v12
 
-    mul-float v13, v13, v3
+    mul-float/2addr v13, v3
 
-    mul-float v15, v15, v6
+    mul-float/2addr v15, v6
 
     add-float/2addr v13, v15
 

@@ -248,7 +248,7 @@
 
     if-eqz p2, :cond_8
 
-    const/4 v3, 0x0
+    move v3, v4
 
     .line 21
     :goto_1

@@ -232,7 +232,7 @@
     :try_end_0
     .catch Ljava/lang/InterruptedException; {:try_start_0 .. :try_end_0} :catch_0
 
-    const/4 v1, 0x1
+    move v1, v0
 
     goto :goto_0
 

@@ -31,7 +31,7 @@ public class PriorityGoalRow extends ArrayRow {
                     if (f2 != BitmapDescriptorFactory.HUE_RED) {
                         float f3 = f2 * f;
                         if (Math.abs(f3) < 1.0E-4f) {
-                            f3 = BitmapDescriptorFactory.HUE_RED;
+                            f3 = 0.0f;
                         }
                         this.variable.goalStrengthVector[i] = f3;
                     } else {

@@ -248,7 +248,7 @@
 
     const/4 v3, 0x1
 
-    const/4 v4, 0x1
+    move v4, v3
 
     .line 192
     :cond_1
@@ -274,12 +274,12 @@
 
     if-nez v5, :cond_3
 
-    const/4 v5, 0x1
+    move v5, v3
 
     goto :goto_1
 
     :cond_3
-    const/4 v5, 0x0
+    move v5, v6
 
     :goto_1
     if-eqz v2, :cond_5
@@ -408,7 +408,7 @@
     goto :goto_0
 
     :cond_a
-    const/4 v8, 0x0
+    move v8, v6
 
     .line 250
     :goto_3
@@ -427,7 +427,7 @@
     if-eq v5, v10, :cond_c
 
     :goto_4
-    const/4 v8, 0x1
+    move v8, v3
 
     goto :goto_8
 
@@ -504,19 +504,19 @@
     invoke-virtual {v5}, Lio/reactivex/internal/operators/observable/ObservableSwitchMap$SwitchMapInnerObserver;->cancel()V
 
     :goto_5
-    move-object v11, v9
+    move v8, v3
 
-    const/4 v8, 0x1
+    move-object v11, v9
 
     :goto_6
     if-nez v11, :cond_f
 
-    const/4 v12, 0x1
+    move v12, v3
 
     goto :goto_7
 
     :cond_f
-    const/4 v12, 0x0
+    move v12, v6
 
     :goto_7
     if-eqz v10, :cond_10
@@ -556,7 +556,7 @@
 .end method
 
 .method innerError(Lio/reactivex/internal/operators/observable/ObservableSwitchMap$SwitchMapInnerObserver;Ljava/lang/Throwable;)V
-    .locals 5
+    .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -572,9 +572,9 @@
 
     iget-wide v2, p0, Lio/reactivex/internal/operators/observable/ObservableSwitchMap$SwitchMapObserver;->unique:J
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-nez v4, :cond_1
+    if-nez v0, :cond_1
 
     iget-object v0, p0, Lio/reactivex/internal/operators/observable/ObservableSwitchMap$SwitchMapObserver;->errors:Lio/reactivex/internal/util/AtomicThrowable;
 

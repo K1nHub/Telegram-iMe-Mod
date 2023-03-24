@@ -93,16 +93,16 @@ public class WalletRootView$$State extends MvpViewState<WalletRootView> implemen
     public class OnTabSelectedCommand extends ViewCommand<WalletRootView> {
 
         /* renamed from: id */
-        public final int f379id;
+        public final int f380id;
 
         OnTabSelectedCommand(WalletRootView$$State walletRootView$$State, int i) {
             super("onTabSelected", AddToEndSingleStrategy.class);
-            this.f379id = i;
+            this.f380id = i;
         }
 
         @Override // moxy.viewstate.ViewCommand
         public void apply(WalletRootView walletRootView) {
-            walletRootView.onTabSelected(this.f379id);
+            walletRootView.onTabSelected(this.f380id);
         }
     }
 

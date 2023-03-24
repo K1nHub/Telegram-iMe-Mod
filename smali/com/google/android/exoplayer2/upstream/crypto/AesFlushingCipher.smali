@@ -59,10 +59,10 @@
     .line 57
     rem-long/2addr p5, v4
 
-    long-to-int p6, p5
+    long-to-int p5, p5
 
     .line 58
-    new-instance p5, Ljavax/crypto/spec/SecretKeySpec;
+    new-instance p6, Ljavax/crypto/spec/SecretKeySpec;
 
     .line 60
     invoke-virtual {v0}, Ljavax/crypto/Cipher;->getAlgorithm()Ljava/lang/String;
@@ -79,7 +79,7 @@
 
     aget-object v1, v1, v4
 
-    invoke-direct {p5, p2, v1}, Ljavax/crypto/spec/SecretKeySpec;-><init>([BLjava/lang/String;)V
+    invoke-direct {p6, p2, v1}, Ljavax/crypto/spec/SecretKeySpec;-><init>([BLjava/lang/String;)V
 
     new-instance p2, Ljavax/crypto/spec/IvParameterSpec;
 
@@ -91,14 +91,14 @@
     invoke-direct {p2, p3}, Ljavax/crypto/spec/IvParameterSpec;-><init>([B)V
 
     .line 58
-    invoke-virtual {v0, p1, p5, p2}, Ljavax/crypto/Cipher;->init(ILjava/security/Key;Ljava/security/spec/AlgorithmParameterSpec;)V
+    invoke-virtual {v0, p1, p6, p2}, Ljavax/crypto/Cipher;->init(ILjava/security/Key;Ljava/security/spec/AlgorithmParameterSpec;)V
 
-    if-eqz p6, :cond_0
+    if-eqz p5, :cond_0
 
     .line 63
-    new-array p1, p6, [B
+    new-array p1, p5, [B
 
-    invoke-virtual {p0, p1, v4, p6}, Lcom/google/android/exoplayer2/upstream/crypto/AesFlushingCipher;->updateInPlace([BII)V
+    invoke-virtual {p0, p1, v4, p5}, Lcom/google/android/exoplayer2/upstream/crypto/AesFlushingCipher;->updateInPlace([BII)V
     :try_end_0
     .catch Ljava/security/NoSuchAlgorithmException; {:try_start_0 .. :try_end_0} :catch_3
     .catch Ljavax/crypto/NoSuchPaddingException; {:try_start_0 .. :try_end_0} :catch_2
@@ -367,12 +367,12 @@
 
     if-ge p3, p2, :cond_3
 
-    const/4 p2, 0x1
+    move p2, v1
 
     goto :goto_0
 
     :cond_3
-    const/4 p2, 0x0
+    move p2, v0
 
     :goto_0
     invoke-static {p2}, Lcom/google/android/exoplayer2/util/Assertions;->checkState(Z)V
@@ -409,7 +409,7 @@
     goto :goto_1
 
     :cond_4
-    const/4 v1, 0x0
+    move v1, v0
 
     :goto_1
     invoke-static {v1}, Lcom/google/android/exoplayer2/util/Assertions;->checkState(Z)V

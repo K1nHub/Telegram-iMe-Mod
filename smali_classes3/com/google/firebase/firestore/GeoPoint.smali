@@ -25,7 +25,7 @@
 
 # direct methods
 .method public constructor <init>(DD)V
-    .locals 3
+    .locals 2
 
     .line 32
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,15 +39,15 @@
 
     const-wide v0, -0x3fa9800000000000L    # -90.0
 
-    cmpg-double v2, p1, v0
+    cmpg-double v0, p1, v0
 
-    if-ltz v2, :cond_1
+    if-ltz v0, :cond_1
 
     const-wide v0, 0x4056800000000000L    # 90.0
 
-    cmpl-double v2, p1, v0
+    cmpl-double v0, p1, v0
 
-    if-gtz v2, :cond_1
+    if-gtz v0, :cond_1
 
     .line 36
     invoke-static {p3, p4}, Ljava/lang/Double;->isNaN(D)Z
@@ -58,15 +58,15 @@
 
     const-wide v0, -0x3f99800000000000L    # -180.0
 
-    cmpg-double v2, p3, v0
+    cmpg-double v0, p3, v0
 
-    if-ltz v2, :cond_0
+    if-ltz v0, :cond_0
 
     const-wide v0, 0x4066800000000000L    # 180.0
 
-    cmpl-double v2, p3, v0
+    cmpl-double v0, p3, v0
 
-    if-gtz v2, :cond_0
+    if-gtz v0, :cond_0
 
     .line 39
     iput-wide p1, p0, Lcom/google/firebase/firestore/GeoPoint;->latitude:D
@@ -181,7 +181,7 @@
 .end method
 
 .method public hashCode()I
-    .locals 7
+    .locals 5
 
     .line 86
     iget-wide v0, p0, Lcom/google/firebase/firestore/GeoPoint;->latitude:D
@@ -196,7 +196,7 @@
 
     xor-long/2addr v0, v3
 
-    long-to-int v1, v0
+    long-to-int v0, v0
 
     .line 88
     iget-wide v3, p0, Lcom/google/firebase/firestore/GeoPoint;->longitude:D
@@ -205,17 +205,17 @@
 
     move-result-wide v3
 
-    mul-int/lit8 v1, v1, 0x1f
+    mul-int/lit8 v0, v0, 0x1f
 
-    ushr-long v5, v3, v2
+    ushr-long v1, v3, v2
 
-    xor-long v2, v3, v5
+    xor-long/2addr v1, v3
 
-    long-to-int v0, v2
+    long-to-int v1, v1
 
-    add-int/2addr v1, v0
+    add-int/2addr v0, v1
 
-    return v1
+    return v0
 .end method
 
 .method public toString()Ljava/lang/String;

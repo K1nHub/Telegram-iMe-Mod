@@ -17,7 +17,7 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 102
+    .line 127
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -26,7 +26,7 @@
 .method public static final getBotId()J
     .locals 2
 
-    .line 113
+    .line 138
     sget-object v0, Lcom/smedialink/storage/data/manager/common/EnvironmentManager;->INSTANCE:Lcom/smedialink/storage/data/manager/common/EnvironmentManager;
 
     invoke-virtual {v0}, Lcom/smedialink/storage/data/manager/common/EnvironmentManager;->getEnvironmentInformation()Lcom/smedialink/storage/domain/model/common/EnvironmentInformation;
@@ -43,7 +43,7 @@
 .method public static final getBotName()Ljava/lang/String;
     .locals 1
 
-    .line 110
+    .line 135
     sget-object v0, Lcom/smedialink/storage/data/manager/common/EnvironmentManager;->INSTANCE:Lcom/smedialink/storage/data/manager/common/EnvironmentManager;
 
     invoke-virtual {v0}, Lcom/smedialink/storage/data/manager/common/EnvironmentManager;->getEnvironmentInformation()Lcom/smedialink/storage/domain/model/common/EnvironmentInformation;

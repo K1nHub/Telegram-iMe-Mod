@@ -30,7 +30,7 @@
 .method private constructor <init>()V
     .locals 1
 
-    .line 463
+    .line 461
     invoke-static {}, Lcom/google/protobuf/Any;->access$000()Lcom/google/protobuf/Any;
 
     move-result-object v0
@@ -43,7 +43,7 @@
 .method synthetic constructor <init>(Lcom/google/protobuf/Any$1;)V
     .locals 0
 
-    .line 456
+    .line 454
     invoke-direct {p0}, Lcom/google/protobuf/Any$Builder;-><init>()V
 
     return-void

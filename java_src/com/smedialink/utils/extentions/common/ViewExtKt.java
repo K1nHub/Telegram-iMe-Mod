@@ -41,7 +41,7 @@ import kotlin.jvm.internal.Ref$LongRef;
 import kotlin.text.StringsKt;
 import org.fork.utils.Callbacks$Callback;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3286R;
+import org.telegram.messenger.C3301R;
 import org.telegram.p048ui.ActionBar.Theme;
 import timber.log.Timber;
 /* compiled from: ViewExt.kt */
@@ -390,7 +390,7 @@ public final class ViewExtKt {
 
     public static final void setGreyShadowBackground(View view, boolean z) {
         Intrinsics.checkNotNullParameter(view, "<this>");
-        view.setBackground(Theme.getThemedDrawable(view.getContext(), z ? C3286R.C3288drawable.greydivider_bottom : C3286R.C3288drawable.greydivider_top, "windowBackgroundGrayShadow"));
+        view.setBackground(Theme.getThemedDrawable(view.getContext(), z ? C3301R.C3303drawable.greydivider_bottom : C3301R.C3303drawable.greydivider_top, "windowBackgroundGrayShadow"));
     }
 
     public static final void setScale(View view, float f) {

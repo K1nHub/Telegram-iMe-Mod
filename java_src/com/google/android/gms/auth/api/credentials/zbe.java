@@ -9,14 +9,14 @@ public final class zbe implements Parcelable.Creator {
     @Override // android.os.Parcelable.Creator
     public final /* bridge */ /* synthetic */ Object createFromParcel(Parcel parcel) {
         int validateObjectHeader = SafeParcelReader.validateObjectHeader(parcel);
-        CredentialPickerConfig credentialPickerConfig = null;
-        String[] strArr = null;
-        String str = null;
-        String str2 = null;
         int i = 0;
         boolean z = false;
         boolean z2 = false;
         boolean z3 = false;
+        CredentialPickerConfig credentialPickerConfig = null;
+        String[] strArr = null;
+        String str = null;
+        String str2 = null;
         while (parcel.dataPosition() < validateObjectHeader) {
             int readHeader = SafeParcelReader.readHeader(parcel);
             int fieldId = SafeParcelReader.getFieldId(readHeader);

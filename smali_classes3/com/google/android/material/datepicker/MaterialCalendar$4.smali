@@ -213,7 +213,7 @@
 
     move-result v9
 
-    mul-int v9, v9, v8
+    mul-int/2addr v9, v8
 
     .line 264
     invoke-virtual {v2, v9}, Landroidx/recyclerview/widget/LinearLayoutManager;->findViewByPosition(I)Landroid/view/View;

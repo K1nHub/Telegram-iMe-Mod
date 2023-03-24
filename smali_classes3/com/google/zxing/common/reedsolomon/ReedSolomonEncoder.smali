@@ -206,7 +206,7 @@
 
     sub-int/2addr p2, v2
 
-    const/4 v2, 0x0
+    move v2, v3
 
     :goto_0
     if-ge v2, p2, :cond_0

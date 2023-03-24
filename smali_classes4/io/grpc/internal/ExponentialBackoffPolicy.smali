@@ -109,7 +109,7 @@
 
     move-result-wide v0
 
-    mul-double v0, v0, p3
+    mul-double/2addr v0, p3
 
     add-double/2addr v0, p1
 
@@ -131,7 +131,7 @@
     .line 50
     iget-wide v4, p0, Lio/grpc/internal/ExponentialBackoffPolicy;->multiplier:D
 
-    mul-double v4, v4, v2
+    mul-double/2addr v4, v2
 
     double-to-long v4, v4
 
@@ -148,9 +148,9 @@
 
     neg-double v6, v4
 
-    mul-double v6, v6, v2
+    mul-double/2addr v6, v2
 
-    mul-double v4, v4, v2
+    mul-double/2addr v4, v2
 
     .line 52
     invoke-direct {p0, v6, v7, v4, v5}, Lio/grpc/internal/ExponentialBackoffPolicy;->uniformRandom(DD)J

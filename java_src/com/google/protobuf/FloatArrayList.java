@@ -18,6 +18,10 @@ public final class FloatArrayList extends AbstractProtobufList<Float> implements
         floatArrayList.makeImmutable();
     }
 
+    public static FloatArrayList emptyList() {
+        return EMPTY_LIST;
+    }
+
     /* JADX INFO: Access modifiers changed from: package-private */
     public FloatArrayList() {
         this(new float[10], 0);
@@ -70,7 +74,7 @@ public final class FloatArrayList extends AbstractProtobufList<Float> implements
         return i;
     }
 
-    @Override // com.google.protobuf.Internal.ProtobufList
+    @Override // com.google.protobuf.Internal.ProtobufList, com.google.protobuf.Internal.BooleanList
     /* renamed from: mutableCopyWithCapacity */
     public Internal.ProtobufList<Float> mutableCopyWithCapacity2(int i) {
         if (i < this.size) {

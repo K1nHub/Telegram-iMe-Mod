@@ -44,7 +44,7 @@
 
     if-ne v4, v5, :cond_0
 
-    const/4 v4, 0x1
+    move v4, v7
 
     goto :goto_0
 
@@ -61,7 +61,7 @@
 
     if-nez v8, :cond_1
 
-    const/4 v15, 0x1
+    move v15, v7
 
     goto :goto_1
 
@@ -71,7 +71,7 @@
     :goto_1
     if-ne v8, v7, :cond_2
 
-    const/16 v16, 0x1
+    move/from16 v16, v7
 
     goto :goto_2
 
@@ -89,7 +89,7 @@
 
     if-nez v8, :cond_4
 
-    const/4 v15, 0x1
+    move v15, v7
 
     goto :goto_3
 
@@ -99,7 +99,7 @@
     :goto_3
     if-ne v8, v7, :cond_5
 
-    const/16 v16, 0x1
+    move/from16 v16, v7
 
     goto :goto_4
 
@@ -110,7 +110,7 @@
     if-ne v8, v5, :cond_6
 
     :goto_5
-    const/4 v5, 0x1
+    move v5, v7
 
     goto :goto_6
 
@@ -611,11 +611,11 @@
     :goto_14
     const/4 v6, 0x0
 
+    move/from16 v30, v6
+
     move-object/from16 v11, v22
 
     const/4 v7, 0x0
-
-    const/16 v30, 0x0
 
     :goto_15
     if-ge v7, v2, :cond_1f
@@ -660,7 +660,7 @@
 
     invoke-virtual {v9, v15, v3, v6, v8}, Landroidx/constraintlayout/core/LinearSystem;->addEquality(Landroidx/constraintlayout/core/SolverVariable;Landroidx/constraintlayout/core/SolverVariable;II)Landroidx/constraintlayout/core/ArrayRow;
 
-    const/4 v8, 0x0
+    move v8, v6
 
     goto :goto_17
 
@@ -1483,7 +1483,7 @@
     :cond_42
     move-object/from16 v23, v7
 
-    const/16 v10, 0x8
+    move v10, v8
 
     const/16 v21, 0x4
 
@@ -1503,11 +1503,11 @@
     move-object/from16 v7, v23
 
     :goto_34
-    move/from16 v10, p2
-
     move-object v15, v0
 
-    const/16 v8, 0x8
+    move v8, v10
+
+    move/from16 v10, p2
 
     goto/16 :goto_2b
 
@@ -1760,7 +1760,7 @@
 .end method
 
 .method public static applyChainConstraints(Landroidx/constraintlayout/core/widgets/ConstraintWidgetContainer;Landroidx/constraintlayout/core/LinearSystem;Ljava/util/ArrayList;I)V
-    .locals 6
+    .locals 7
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -1784,7 +1784,7 @@
 
     move-object v3, v2
 
-    const/4 v2, 0x0
+    move v2, v0
 
     goto :goto_0
 
@@ -1797,9 +1797,11 @@
     .line 57
     iget-object v3, p0, Landroidx/constraintlayout/core/widgets/ConstraintWidgetContainer;->mVerticalChainsArray:[Landroidx/constraintlayout/core/widgets/ChainHead;
 
-    move v1, v2
+    move v6, v2
 
-    const/4 v2, 0x2
+    move v2, v1
+
+    move v1, v6
 
     :goto_0
     if-ge v0, v1, :cond_3

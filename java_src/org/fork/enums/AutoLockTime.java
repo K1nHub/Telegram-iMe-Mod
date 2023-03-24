@@ -15,7 +15,7 @@ public enum AutoLockTime {
     public static final Companion Companion = new Companion(null);
 
     /* renamed from: id */
-    private final int f1416id;
+    private final int f1417id;
 
     /* compiled from: AutoLockTime.kt */
     /* loaded from: classes4.dex */
@@ -53,11 +53,11 @@ public enum AutoLockTime {
     }
 
     AutoLockTime(int i) {
-        this.f1416id = i;
+        this.f1417id = i;
     }
 
     public final int getId() {
-        return this.f1416id;
+        return this.f1417id;
     }
 
     public final long getTimeInSeconds() {

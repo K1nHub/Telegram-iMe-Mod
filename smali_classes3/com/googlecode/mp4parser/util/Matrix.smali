@@ -508,7 +508,7 @@
 
     xor-long/2addr v0, v3
 
-    long-to-int v1, v0
+    long-to-int v0, v0
 
     .line 53
     iget-wide v3, p0, Lcom/googlecode/mp4parser/util/Matrix;->v:D
@@ -517,15 +517,15 @@
 
     move-result-wide v3
 
-    mul-int/lit8 v1, v1, 0x1f
+    mul-int/lit8 v0, v0, 0x1f
 
     ushr-long v5, v3, v2
 
     xor-long/2addr v3, v5
 
-    long-to-int v0, v3
+    long-to-int v1, v3
 
-    add-int/2addr v1, v0
+    add-int/2addr v0, v1
 
     .line 55
     iget-wide v3, p0, Lcom/googlecode/mp4parser/util/Matrix;->w:D
@@ -534,15 +534,15 @@
 
     move-result-wide v3
 
-    mul-int/lit8 v1, v1, 0x1f
+    mul-int/lit8 v0, v0, 0x1f
 
     ushr-long v5, v3, v2
 
     xor-long/2addr v3, v5
 
-    long-to-int v0, v3
+    long-to-int v1, v3
 
-    add-int/2addr v1, v0
+    add-int/2addr v0, v1
 
     .line 57
     iget-wide v3, p0, Lcom/googlecode/mp4parser/util/Matrix;->a:D
@@ -551,15 +551,15 @@
 
     move-result-wide v3
 
-    mul-int/lit8 v1, v1, 0x1f
+    mul-int/lit8 v0, v0, 0x1f
 
     ushr-long v5, v3, v2
 
     xor-long/2addr v3, v5
 
-    long-to-int v0, v3
+    long-to-int v1, v3
 
-    add-int/2addr v1, v0
+    add-int/2addr v0, v1
 
     .line 59
     iget-wide v3, p0, Lcom/googlecode/mp4parser/util/Matrix;->b:D
@@ -568,15 +568,15 @@
 
     move-result-wide v3
 
-    mul-int/lit8 v1, v1, 0x1f
+    mul-int/lit8 v0, v0, 0x1f
 
     ushr-long v5, v3, v2
 
     xor-long/2addr v3, v5
 
-    long-to-int v0, v3
+    long-to-int v1, v3
 
-    add-int/2addr v1, v0
+    add-int/2addr v0, v1
 
     .line 61
     iget-wide v3, p0, Lcom/googlecode/mp4parser/util/Matrix;->c:D
@@ -585,15 +585,15 @@
 
     move-result-wide v3
 
-    mul-int/lit8 v1, v1, 0x1f
+    mul-int/lit8 v0, v0, 0x1f
 
     ushr-long v5, v3, v2
 
     xor-long/2addr v3, v5
 
-    long-to-int v0, v3
+    long-to-int v1, v3
 
-    add-int/2addr v1, v0
+    add-int/2addr v0, v1
 
     .line 63
     iget-wide v3, p0, Lcom/googlecode/mp4parser/util/Matrix;->d:D
@@ -602,15 +602,15 @@
 
     move-result-wide v3
 
-    mul-int/lit8 v1, v1, 0x1f
+    mul-int/lit8 v0, v0, 0x1f
 
     ushr-long v5, v3, v2
 
     xor-long/2addr v3, v5
 
-    long-to-int v0, v3
+    long-to-int v1, v3
 
-    add-int/2addr v1, v0
+    add-int/2addr v0, v1
 
     .line 65
     iget-wide v3, p0, Lcom/googlecode/mp4parser/util/Matrix;->tx:D
@@ -619,15 +619,15 @@
 
     move-result-wide v3
 
-    mul-int/lit8 v1, v1, 0x1f
+    mul-int/lit8 v0, v0, 0x1f
 
     ushr-long v5, v3, v2
 
     xor-long/2addr v3, v5
 
-    long-to-int v0, v3
+    long-to-int v1, v3
 
-    add-int/2addr v1, v0
+    add-int/2addr v0, v1
 
     .line 67
     iget-wide v3, p0, Lcom/googlecode/mp4parser/util/Matrix;->ty:D
@@ -636,17 +636,17 @@
 
     move-result-wide v3
 
-    mul-int/lit8 v1, v1, 0x1f
+    mul-int/lit8 v0, v0, 0x1f
 
-    ushr-long v5, v3, v2
+    ushr-long v1, v3, v2
 
-    xor-long v2, v3, v5
+    xor-long/2addr v1, v3
 
-    long-to-int v0, v2
+    long-to-int v1, v1
 
-    add-int/2addr v1, v0
+    add-int/2addr v0, v1
 
-    return v1
+    return v0
 .end method
 
 .method public toString()Ljava/lang/String;

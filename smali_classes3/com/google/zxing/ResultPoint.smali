@@ -43,7 +43,7 @@
 
     sub-float/2addr v2, p1
 
-    mul-float v1, v1, v2
+    mul-float/2addr v1, v2
 
     iget p2, p2, Lcom/google/zxing/ResultPoint;->y:F
 
@@ -53,7 +53,7 @@
 
     sub-float/2addr p0, v0
 
-    mul-float p2, p2, p0
+    mul-float/2addr p2, p0
 
     sub-float/2addr v1, p2
 

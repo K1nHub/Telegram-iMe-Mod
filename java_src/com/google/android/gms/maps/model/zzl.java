@@ -12,15 +12,15 @@ public final class zzl implements Parcelable.Creator {
         int validateObjectHeader = SafeParcelReader.validateObjectHeader(parcel);
         ArrayList arrayList = new ArrayList();
         ArrayList arrayList2 = null;
+        float f = 0.0f;
         ArrayList arrayList3 = null;
-        float f = BitmapDescriptorFactory.HUE_RED;
         int i = 0;
         int i2 = 0;
-        float f2 = BitmapDescriptorFactory.HUE_RED;
         boolean z = false;
         boolean z2 = false;
         boolean z3 = false;
         int i3 = 0;
+        float f2 = 0.0f;
         while (parcel.dataPosition() < validateObjectHeader) {
             int readHeader = SafeParcelReader.readHeader(parcel);
             switch (SafeParcelReader.getFieldId(readHeader)) {
@@ -31,7 +31,7 @@ public final class zzl implements Parcelable.Creator {
                     SafeParcelReader.readList(parcel, readHeader, arrayList, zzl.class.getClassLoader());
                     break;
                 case 4:
-                    f = SafeParcelReader.readFloat(parcel, readHeader);
+                    f2 = SafeParcelReader.readFloat(parcel, readHeader);
                     break;
                 case 5:
                     i = SafeParcelReader.readInt(parcel, readHeader);
@@ -40,7 +40,7 @@ public final class zzl implements Parcelable.Creator {
                     i2 = SafeParcelReader.readInt(parcel, readHeader);
                     break;
                 case 7:
-                    f2 = SafeParcelReader.readFloat(parcel, readHeader);
+                    f = SafeParcelReader.readFloat(parcel, readHeader);
                     break;
                 case 8:
                     z = SafeParcelReader.readBoolean(parcel, readHeader);
@@ -63,7 +63,7 @@ public final class zzl implements Parcelable.Creator {
             }
         }
         SafeParcelReader.ensureAtEnd(parcel, validateObjectHeader);
-        return new PolygonOptions(arrayList2, arrayList, f, i, i2, f2, z, z2, z3, i3, arrayList3);
+        return new PolygonOptions(arrayList2, arrayList, f2, i, i2, f, z, z2, z3, i3, arrayList3);
     }
 
     @Override // android.os.Parcelable.Creator

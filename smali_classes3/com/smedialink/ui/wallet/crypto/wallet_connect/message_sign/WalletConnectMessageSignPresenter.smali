@@ -229,7 +229,7 @@
     if-ne v1, v2, :cond_0
 
     .line 49
-    sget-object v1, Lcom/smedialink/storage/data/utils/crypto/CryptoWalletUtils;->INSTANCE:Lcom/smedialink/storage/data/utils/crypto/CryptoWalletUtils;
+    sget-object v1, Lcom/smedialink/storage/data/utils/crypto/CryptoEVMUtils;->INSTANCE:Lcom/smedialink/storage/data/utils/crypto/CryptoEVMUtils;
 
     iget-object v2, p0, Lcom/smedialink/ui/wallet/crypto/wallet_connect/message_sign/WalletConnectMessageSignPresenter;->message:Lcom/trustwallet/walletconnect/models/ethereum/WCEthereumSignMessage;
 
@@ -237,7 +237,7 @@
 
     move-result-object v2
 
-    invoke-virtual {v1, v2}, Lcom/smedialink/storage/data/utils/crypto/CryptoWalletUtils;->decodeHexMessageToString(Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual {v1, v2}, Lcom/smedialink/storage/data/utils/crypto/CryptoEVMUtils;->decodeHexMessageToString(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 

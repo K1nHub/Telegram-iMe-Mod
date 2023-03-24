@@ -411,7 +411,7 @@
 
     move-object v4, v3
 
-    const/4 v3, 0x0
+    move v3, v1
 
     :goto_0
     if-eqz v3, :cond_0

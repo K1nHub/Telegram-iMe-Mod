@@ -479,7 +479,7 @@
 .end method
 
 .method private readHeader()V
-    .locals 5
+    .locals 4
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -520,9 +520,9 @@
 
     move-result-wide v2
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-gtz v4, :cond_0
+    if-gtz v0, :cond_0
 
     .line 169
     iget-object v0, p0, Lcom/google/firebase/crashlytics/internal/log/QueueFile;->buffer:[B
@@ -945,7 +945,7 @@
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_0
     if-ge v1, v0, :cond_0

@@ -139,9 +139,9 @@
 
     neg-long v0, v0
 
-    cmp-long v2, p2, v0
+    cmp-long p2, p2, v0
 
-    if-nez v2, :cond_7
+    if-nez p2, :cond_7
 
     .line 1596
     iget-object p2, p0, Lorg/telegram/ui/Components/ShareAlert$22;->this$0:Lorg/telegram/ui/Components/ShareAlert;
@@ -197,7 +197,7 @@
     goto :goto_0
 
     :cond_2
-    const/4 p2, 0x0
+    move p2, p1
 
     .line 1598
     :goto_0

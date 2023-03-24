@@ -56,34 +56,34 @@
     .line 1
     iget-wide p1, p0, Lcom/google/android/gms/measurement/internal/zzke;->zzb:J
 
-    const/4 v0, 0x1
+    const-wide/16 v0, 0x0
 
-    const-wide/16 v1, 0x0
+    cmp-long p1, p1, v0
 
-    cmp-long v3, p1, v1
+    const/4 p2, 0x1
 
-    if-nez v3, :cond_0
+    if-nez p1, :cond_0
 
-    return v0
+    return p2
 
     :cond_0
     iget-object p1, p0, Lcom/google/android/gms/measurement/internal/zzke;->zza:Lcom/google/android/gms/common/util/Clock;
 
     invoke-interface {p1}, Lcom/google/android/gms/common/util/Clock;->elapsedRealtime()J
 
-    move-result-wide p1
+    move-result-wide v0
 
-    iget-wide v1, p0, Lcom/google/android/gms/measurement/internal/zzke;->zzb:J
+    iget-wide v2, p0, Lcom/google/android/gms/measurement/internal/zzke;->zzb:J
 
-    sub-long/2addr p1, v1
+    sub-long/2addr v0, v2
 
-    const-wide/32 v1, 0x36ee80
+    const-wide/32 v2, 0x36ee80
 
-    cmp-long v3, p1, v1
+    cmp-long p1, v0, v2
 
-    if-ltz v3, :cond_1
+    if-ltz p1, :cond_1
 
-    return v0
+    return p2
 
     :cond_1
     const/4 p1, 0x0

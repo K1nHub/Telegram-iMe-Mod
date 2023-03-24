@@ -870,9 +870,9 @@
 
     add-long/2addr v2, v4
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-ltz v4, :cond_0
+    if-ltz v0, :cond_0
 
     const/4 v0, 0x1
 

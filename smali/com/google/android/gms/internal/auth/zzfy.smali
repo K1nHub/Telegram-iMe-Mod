@@ -113,7 +113,7 @@
 
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    move v1, v0
 
     :goto_2
     const/16 v2, 0x20
@@ -370,7 +370,7 @@
 
     const/4 v5, 0x0
 
-    const/4 v6, 0x0
+    move v6, v5
 
     :goto_0
     const-string v7, "get"

@@ -122,7 +122,7 @@
 
     int-to-float v1, v1
 
-    mul-float v1, v1, p2
+    mul-float/2addr v1, p2
 
     float-to-int v1, v1
 
@@ -163,7 +163,7 @@
     :cond_0
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    move v1, v0
 
     .line 354
     :goto_0
@@ -197,7 +197,7 @@
     goto :goto_1
 
     :cond_1
-    const/4 v3, 0x0
+    move v3, v0
 
     :goto_1
     invoke-virtual {v2, v3}, Landroid/view/View;->setSelected(Z)V

@@ -163,7 +163,7 @@
 .end method
 
 .method private synthetic lambda$createView$3(Lorg/telegram/ui/CachedMediaLayout$ItemInner;Lorg/telegram/ui/ActionBar/BaseFragment;Landroid/view/View;)V
-    .locals 5
+    .locals 4
 
     .line 197
     new-instance p3, Landroid/os/Bundle;
@@ -177,9 +177,9 @@
 
     const-wide/16 v2, 0x0
 
-    cmp-long v4, v0, v2
+    cmp-long v2, v0, v2
 
-    if-lez v4, :cond_0
+    if-lez v2, :cond_0
 
     const-string v2, "user_id"
 
@@ -448,9 +448,9 @@
 
     const-wide/16 v3, 0x0
 
-    cmp-long v5, v1, v3
+    cmp-long v1, v1, v3
 
-    if-eqz v5, :cond_5
+    if-eqz v1, :cond_5
 
     iget v0, v0, Lorg/telegram/ui/Storage/CacheModel$FileInfo;->messageId:I
 

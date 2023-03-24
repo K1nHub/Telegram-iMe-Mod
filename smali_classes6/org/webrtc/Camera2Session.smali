@@ -1073,12 +1073,12 @@
 
     move-result-wide v0
 
-    long-to-int v1, v0
+    long-to-int v0, v0
 
     .line 373
-    sget-object v0, Lorg/webrtc/Camera2Session;->camera2StopTimeMsHistogram:Lorg/webrtc/Histogram;
+    sget-object v1, Lorg/webrtc/Camera2Session;->camera2StopTimeMsHistogram:Lorg/webrtc/Histogram;
 
-    invoke-virtual {v0, v1}, Lorg/webrtc/Histogram;->addSample(I)V
+    invoke-virtual {v1, v0}, Lorg/webrtc/Histogram;->addSample(I)V
 
     :cond_0
     return-void

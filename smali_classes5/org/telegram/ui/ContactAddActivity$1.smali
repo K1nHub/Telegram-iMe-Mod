@@ -152,12 +152,12 @@
 
     if-eqz v2, :cond_1
 
-    const/4 v2, 0x1
+    move v2, v0
 
     goto :goto_0
 
     :cond_1
-    const/4 v2, 0x0
+    move v2, v3
 
     :goto_0
     invoke-virtual {v1, p1, v2}, Lorg/telegram/messenger/ContactsController;->addContact(Lorg/telegram/tgnet/TLRPC$User;Z)V

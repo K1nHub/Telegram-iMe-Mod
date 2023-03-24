@@ -43,24 +43,24 @@
 .method public constructor <init>()V
     .locals 1
 
-    .line 11207
+    .line 11214
     invoke-direct {p0}, Lorg/telegram/tgnet/TLObject;-><init>()V
 
-    .line 11210
+    .line 11217
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lorg/telegram/tgnet/TLRPC$messages_SponsoredMessages;->messages:Ljava/util/ArrayList;
 
-    .line 11211
+    .line 11218
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lorg/telegram/tgnet/TLRPC$messages_SponsoredMessages;->chats:Ljava/util/ArrayList;
 
-    .line 11212
+    .line 11219
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
@@ -89,7 +89,7 @@
 
     goto :goto_0
 
-    .line 11224
+    .line 11231
     :cond_0
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_messages_sponsoredMessagesLayer147;
 
@@ -97,7 +97,7 @@
 
     goto :goto_0
 
-    .line 11218
+    .line 11225
     :cond_1
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_messages_sponsoredMessagesEmpty;
 
@@ -105,7 +105,7 @@
 
     goto :goto_0
 
-    .line 11221
+    .line 11228
     :cond_2
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_messages_sponsoredMessages;
 
@@ -118,7 +118,7 @@
 
     goto :goto_1
 
-    .line 11228
+    .line 11235
     :cond_3
     new-instance p0, Ljava/lang/RuntimeException;
 
@@ -148,7 +148,7 @@
     :goto_1
     if-eqz v0, :cond_5
 
-    .line 11231
+    .line 11238
     invoke-virtual {v0, p0, p2}, Lorg/telegram/tgnet/TLObject;->readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
 
     :cond_5

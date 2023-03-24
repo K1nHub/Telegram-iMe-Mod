@@ -332,36 +332,36 @@
 
     move-result-wide v5
 
-    const-wide/16 v7, 0x0
+    cmp-long v7, v5, v1
 
-    cmp-long v9, v5, v1
+    const-wide/16 v8, 0x0
 
-    if-nez v9, :cond_6
+    if-nez v7, :cond_6
 
     .line 72
     invoke-static {}, Lkotlinx/coroutines/AbstractTimeSourceKt;->getTimeSource()Lkotlinx/coroutines/AbstractTimeSource;
 
     invoke-static {}, Ljava/lang/System;->nanoTime()J
 
-    move-result-wide v9
+    move-result-wide v10
 
-    cmp-long v11, v3, v1
+    cmp-long v7, v3, v1
 
-    if-nez v11, :cond_3
+    if-nez v7, :cond_3
 
     .line 73
     sget-wide v3, Lkotlinx/coroutines/DefaultExecutor;->KEEP_ALIVE_NANOS:J
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    add-long/2addr v3, v9
+    add-long/2addr v3, v10
 
     :cond_3
-    sub-long v9, v3, v9
+    sub-long v10, v3, v10
 
-    cmp-long v11, v9, v7
+    cmp-long v7, v10, v8
 
-    if-gtz v11, :cond_5
+    if-gtz v7, :cond_5
 
     .line 86
     sput-object v0, Lkotlinx/coroutines/DefaultExecutor;->_thread:Ljava/lang/Thread;
@@ -387,7 +387,7 @@
     .line 76
     :cond_5
     :try_start_2
-    invoke-static {v5, v6, v9, v10}, Lkotlin/ranges/RangesKt;->coerceAtMost(JJ)J
+    invoke-static {v5, v6, v10, v11}, Lkotlin/ranges/RangesKt;->coerceAtMost(JJ)J
 
     move-result-wide v5
 
@@ -397,9 +397,9 @@
     move-wide v3, v1
 
     :goto_1
-    cmp-long v9, v5, v7
+    cmp-long v7, v5, v8
 
-    if-lez v9, :cond_2
+    if-lez v7, :cond_2
 
     .line 81
     invoke-direct {p0}, Lkotlinx/coroutines/DefaultExecutor;->isShutdownRequested()Z

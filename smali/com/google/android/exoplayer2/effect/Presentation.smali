@@ -138,7 +138,7 @@
 
     iget v1, p0, Lcom/google/android/exoplayer2/effect/Presentation;->requestedAspectRatio:F
 
-    mul-float v0, v0, v1
+    mul-float/2addr v0, v1
 
     iput v0, p0, Lcom/google/android/exoplayer2/effect/Presentation;->outputWidth:F
 
@@ -206,7 +206,7 @@
 
     iget v1, p0, Lcom/google/android/exoplayer2/effect/Presentation;->requestedAspectRatio:F
 
-    mul-float v0, v0, v1
+    mul-float/2addr v0, v1
 
     iput v0, p0, Lcom/google/android/exoplayer2/effect/Presentation;->outputWidth:F
 
@@ -224,7 +224,7 @@
 
     if-lez v2, :cond_4
 
-    mul-float v1, v1, v3
+    mul-float/2addr v1, v3
 
     .line 236
     iput v1, p0, Lcom/google/android/exoplayer2/effect/Presentation;->outputWidth:F
@@ -369,12 +369,12 @@
 
     if-lez p0, :cond_0
 
-    const/4 v2, 0x1
+    move v2, v0
 
     goto :goto_0
 
     :cond_0
-    const/4 v2, 0x0
+    move v2, v1
 
     .line 151
     :goto_0
@@ -403,7 +403,7 @@
     goto :goto_1
 
     :cond_1
-    const/4 v0, 0x0
+    move v0, v1
 
     .line 152
     :goto_1
@@ -458,12 +458,12 @@
 
     if-lez p1, :cond_0
 
-    const/4 v2, 0x1
+    move v2, v0
 
     goto :goto_0
 
     :cond_0
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_0
     const-string v3, "inputWidth must be positive"
@@ -476,7 +476,7 @@
     goto :goto_1
 
     :cond_1
-    const/4 v0, 0x0
+    move v0, v1
 
     :goto_1
     const-string v1, "inputHeight must be positive"
@@ -558,7 +558,7 @@
     .line 203
     iget v0, p0, Lcom/google/android/exoplayer2/effect/Presentation;->outputWidth:F
 
-    mul-float p2, p2, v0
+    mul-float/2addr p2, v0
 
     iget v0, p0, Lcom/google/android/exoplayer2/effect/Presentation;->outputHeight:F
 

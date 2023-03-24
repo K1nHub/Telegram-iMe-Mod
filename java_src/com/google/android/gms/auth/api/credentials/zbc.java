@@ -9,15 +9,15 @@ public final class zbc implements Parcelable.Creator {
     @Override // android.os.Parcelable.Creator
     public final /* bridge */ /* synthetic */ Object createFromParcel(Parcel parcel) {
         int validateObjectHeader = SafeParcelReader.validateObjectHeader(parcel);
+        int i = 0;
+        boolean z = false;
+        boolean z2 = false;
+        boolean z3 = false;
         String[] strArr = null;
         CredentialPickerConfig credentialPickerConfig = null;
         CredentialPickerConfig credentialPickerConfig2 = null;
         String str = null;
         String str2 = null;
-        int i = 0;
-        boolean z = false;
-        boolean z2 = false;
-        boolean z3 = false;
         while (parcel.dataPosition() < validateObjectHeader) {
             int readHeader = SafeParcelReader.readHeader(parcel);
             int fieldId = SafeParcelReader.getFieldId(readHeader);

@@ -252,7 +252,7 @@
 .end method
 
 .method public read([BII)I
-    .locals 6
+    .locals 4
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -288,16 +288,16 @@
 
     iget-wide v2, p0, Lnet/lingala/zip4j/io/InflaterInputStream;->uncompressedSize:J
 
-    const/4 v4, -0x1
+    cmp-long v0, v0, v2
 
-    cmp-long v5, v0, v2
+    const/4 v1, -0x1
 
-    if-ltz v5, :cond_1
+    if-ltz v0, :cond_1
 
     .line 72
     invoke-direct {p0}, Lnet/lingala/zip4j/io/InflaterInputStream;->finishInflating()V
 
-    return v4
+    return v1
 
     .line 75
     :cond_1
@@ -349,7 +349,7 @@
     :goto_1
     invoke-direct {p0}, Lnet/lingala/zip4j/io/InflaterInputStream;->finishInflating()V
 
-    return v4
+    return v1
 
     .line 84
     :cond_4
@@ -457,9 +457,9 @@
 
     const-wide/16 v0, 0x0
 
-    cmp-long v2, p1, v0
+    cmp-long v0, p1, v0
 
-    if-ltz v2, :cond_3
+    if-ltz v0, :cond_3
 
     const-wide/32 v0, 0x7fffffff
 
@@ -468,24 +468,24 @@
 
     move-result-wide p1
 
-    long-to-int p2, p1
+    long-to-int p1, p1
 
-    const/16 p1, 0x200
+    const/16 p2, 0x200
 
-    new-array v0, p1, [B
+    new-array v0, p2, [B
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_0
-    if-ge v2, p2, :cond_2
+    if-ge v2, p1, :cond_2
 
-    sub-int v3, p2, v2
+    sub-int v3, p1, v2
 
-    if-le v3, p1, :cond_0
+    if-le v3, p2, :cond_0
 
-    const/16 v3, 0x200
+    move v3, p2
 
     .line 138
     :cond_0

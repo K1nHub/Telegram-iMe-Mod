@@ -140,7 +140,7 @@
     :cond_0
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    move v1, v0
 
     :goto_0
     if-ge v1, p3, :cond_1

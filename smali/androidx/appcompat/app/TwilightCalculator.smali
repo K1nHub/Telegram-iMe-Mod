@@ -66,7 +66,7 @@
 
     const v4, 0x3c8ceb25
 
-    mul-float v4, v4, v3
+    mul-float/2addr v4, v3
 
     const v5, 0x40c7ae92
 
@@ -81,13 +81,13 @@
 
     const-wide v9, 0x3fa11c5fc0000000L    # 0.03341960161924362
 
-    mul-double v7, v7, v9
+    mul-double/2addr v7, v9
 
     add-double/2addr v7, v5
 
     const/high16 v9, 0x40000000    # 2.0f
 
-    mul-float v9, v9, v4
+    mul-float/2addr v9, v4
 
     float-to-double v9, v9
 
@@ -98,13 +98,13 @@
 
     const-wide v11, 0x3f36e05b00000000L    # 3.4906598739326E-4
 
-    mul-double v9, v9, v11
+    mul-double/2addr v9, v11
 
     add-double/2addr v7, v9
 
     const/high16 v9, 0x40400000    # 3.0f
 
-    mul-float v4, v4, v9
+    mul-float/2addr v4, v9
 
     float-to-double v9, v4
 
@@ -114,7 +114,7 @@
 
     const-wide v11, 0x3ed5f61cc0000000L    # 5.236000106378924E-6
 
-    mul-double v9, v9, v11
+    mul-double/2addr v9, v11
 
     add-double/2addr v7, v9
 
@@ -162,13 +162,13 @@
 
     const-wide v9, 0x3f75b573eab367a1L    # 0.0053
 
-    mul-double v5, v5, v9
+    mul-double/2addr v5, v9
 
     add-double/2addr v3, v5
 
     const-wide/high16 v5, 0x4000000000000000L    # 2.0
 
-    mul-double v5, v5, v7
+    mul-double/2addr v5, v7
 
     .line 105
     invoke-static {v5, v6}, Ljava/lang/Math;->sin(D)D
@@ -177,7 +177,7 @@
 
     const-wide v9, -0x4083bcd35a858794L    # -0.0069
 
-    mul-double v5, v5, v9
+    mul-double/2addr v5, v9
 
     add-double/2addr v3, v5
 
@@ -192,7 +192,7 @@
 
     move-result-wide v7
 
-    mul-double v5, v5, v7
+    mul-double/2addr v5, v7
 
     invoke-static {v5, v6}, Ljava/lang/Math;->asin(D)D
 
@@ -218,7 +218,7 @@
 
     move-result-wide v13
 
-    mul-double v11, v11, v13
+    mul-double/2addr v11, v13
 
     sub-double/2addr v9, v11
 
@@ -230,48 +230,48 @@
 
     move-result-wide v5
 
-    mul-double v7, v7, v5
+    mul-double/2addr v7, v5
 
     div-double/2addr v9, v7
 
-    const/4 v5, 0x1
+    const-wide/high16 v5, 0x3ff0000000000000L    # 1.0
 
-    const-wide/16 v6, -0x1
+    cmpl-double v5, v9, v5
 
-    const-wide/high16 v11, 0x3ff0000000000000L    # 1.0
+    const/4 v6, 0x1
 
-    cmpl-double v8, v9, v11
+    const-wide/16 v7, -0x1
 
-    if-ltz v8, :cond_0
+    if-ltz v5, :cond_0
 
     .line 117
-    iput v5, v0, Landroidx/appcompat/app/TwilightCalculator;->state:I
+    iput v6, v0, Landroidx/appcompat/app/TwilightCalculator;->state:I
 
     .line 118
-    iput-wide v6, v0, Landroidx/appcompat/app/TwilightCalculator;->sunset:J
+    iput-wide v7, v0, Landroidx/appcompat/app/TwilightCalculator;->sunset:J
 
     .line 119
-    iput-wide v6, v0, Landroidx/appcompat/app/TwilightCalculator;->sunrise:J
+    iput-wide v7, v0, Landroidx/appcompat/app/TwilightCalculator;->sunrise:J
 
     return-void
 
     :cond_0
     const-wide/high16 v11, -0x4010000000000000L    # -1.0
 
-    const/4 v8, 0x0
+    cmpg-double v5, v9, v11
 
-    cmpg-double v13, v9, v11
+    const/4 v11, 0x0
 
-    if-gtz v13, :cond_1
+    if-gtz v5, :cond_1
 
     .line 122
-    iput v8, v0, Landroidx/appcompat/app/TwilightCalculator;->state:I
+    iput v11, v0, Landroidx/appcompat/app/TwilightCalculator;->state:I
 
     .line 123
-    iput-wide v6, v0, Landroidx/appcompat/app/TwilightCalculator;->sunset:J
+    iput-wide v7, v0, Landroidx/appcompat/app/TwilightCalculator;->sunset:J
 
     .line 124
-    iput-wide v6, v0, Landroidx/appcompat/app/TwilightCalculator;->sunrise:J
+    iput-wide v7, v0, Landroidx/appcompat/app/TwilightCalculator;->sunrise:J
 
     return-void
 
@@ -279,21 +279,21 @@
     :cond_1
     invoke-static {v9, v10}, Ljava/lang/Math;->acos(D)D
 
-    move-result-wide v6
+    move-result-wide v7
 
     const-wide v9, 0x401921fb54442d18L    # 6.283185307179586
 
-    div-double/2addr v6, v9
+    div-double/2addr v7, v9
 
-    double-to-float v6, v6
+    double-to-float v5, v7
 
-    float-to-double v6, v6
+    float-to-double v7, v5
 
-    add-double v9, v3, v6
+    add-double v9, v3, v7
 
-    const-wide v11, 0x4194997000000000L    # 8.64E7
+    const-wide v12, 0x4194997000000000L    # 8.64E7
 
-    mul-double v9, v9, v11
+    mul-double/2addr v9, v12
 
     .line 130
     invoke-static {v9, v10}, Ljava/lang/Math;->round(D)J
@@ -304,9 +304,9 @@
 
     iput-wide v9, v0, Landroidx/appcompat/app/TwilightCalculator;->sunset:J
 
-    sub-double/2addr v3, v6
+    sub-double/2addr v3, v7
 
-    mul-double v3, v3, v11
+    mul-double/2addr v3, v12
 
     .line 131
     invoke-static {v3, v4}, Ljava/lang/Math;->round(D)J
@@ -324,18 +324,18 @@
     .line 133
     iget-wide v1, v0, Landroidx/appcompat/app/TwilightCalculator;->sunset:J
 
-    cmp-long v3, v1, p1
+    cmp-long v1, v1, p1
 
-    if-lez v3, :cond_2
+    if-lez v1, :cond_2
 
     .line 134
-    iput v8, v0, Landroidx/appcompat/app/TwilightCalculator;->state:I
+    iput v11, v0, Landroidx/appcompat/app/TwilightCalculator;->state:I
 
     goto :goto_0
 
     .line 136
     :cond_2
-    iput v5, v0, Landroidx/appcompat/app/TwilightCalculator;->state:I
+    iput v6, v0, Landroidx/appcompat/app/TwilightCalculator;->state:I
 
     :goto_0
     return-void

@@ -32,12 +32,12 @@
 
     if-nez p3, :cond_0
 
-    const/4 v2, 0x1
+    move v2, v0
 
     goto :goto_0
 
     :cond_0
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_0
     if-nez p7, :cond_1
@@ -45,7 +45,7 @@
     goto :goto_1
 
     :cond_1
-    const/4 v0, 0x0
+    move v0, v1
 
     :goto_1
     xor-int/2addr v0, v2
@@ -131,7 +131,7 @@
     goto :goto_0
 
     :cond_2
-    const/4 v1, 0x2
+    move v1, v3
 
     goto :goto_0
 
@@ -147,7 +147,7 @@
     goto :goto_0
 
     :cond_3
-    const/4 v1, 0x1
+    move v1, v0
 
     goto :goto_0
 

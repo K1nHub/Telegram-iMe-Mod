@@ -36,7 +36,7 @@
 
 # virtual methods
 .method public run()V
-    .locals 13
+    .locals 12
 
     .line 30
     iget-object v0, p0, Lorg/telegram/messenger/DispatchQueuePoolBackground$1;->this$0:Lorg/telegram/messenger/DispatchQueuePoolBackground;
@@ -62,7 +62,7 @@
 
     move-result-wide v5
 
-    const/4 v0, 0x0
+    move v0, v4
 
     .line 32
     :goto_0
@@ -98,9 +98,9 @@
 
     sub-long v10, v5, v2
 
-    cmp-long v12, v8, v10
+    cmp-long v8, v8, v10
 
-    if-gez v12, :cond_0
+    if-gez v8, :cond_0
 
     .line 35
     invoke-virtual {v7}, Lorg/telegram/messenger/DispatchQueue;->recycle()V

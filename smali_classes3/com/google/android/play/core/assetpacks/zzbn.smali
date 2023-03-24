@@ -228,15 +228,15 @@
 
     xor-int/2addr v0, v7
 
-    mul-int v0, v0, v7
+    mul-int/2addr v0, v7
 
     xor-int/2addr v0, v1
 
-    mul-int v0, v0, v7
+    mul-int/2addr v0, v7
 
     xor-int/2addr v0, v2
 
-    mul-int v0, v0, v7
+    mul-int/2addr v0, v7
 
     const/16 v1, 0x20
 
@@ -244,33 +244,33 @@
 
     xor-long v2, v8, v3
 
-    long-to-int v3, v2
+    long-to-int v2, v2
 
-    xor-int/2addr v0, v3
+    xor-int/2addr v0, v2
 
-    mul-int v0, v0, v7
+    mul-int/2addr v0, v7
 
     ushr-long v1, v5, v1
 
     xor-long/2addr v1, v5
 
-    long-to-int v2, v1
+    long-to-int v1, v1
 
-    xor-int/2addr v0, v2
+    xor-int/2addr v0, v1
 
-    mul-int v0, v0, v7
+    mul-int/2addr v0, v7
 
     iget v1, p0, Lcom/google/android/play/core/assetpacks/zzbn;->zzf:I
 
     xor-int/2addr v0, v1
 
-    mul-int v0, v0, v7
+    mul-int/2addr v0, v7
 
     iget v1, p0, Lcom/google/android/play/core/assetpacks/zzbn;->zzg:I
 
     xor-int/2addr v0, v1
 
-    mul-int v0, v0, v7
+    mul-int/2addr v0, v7
 
     iget-object v1, p0, Lcom/google/android/play/core/assetpacks/zzbn;->zzh:Ljava/lang/String;
 
@@ -281,7 +281,7 @@
 
     xor-int/2addr v0, v1
 
-    mul-int v0, v0, v7
+    mul-int/2addr v0, v7
 
     iget-object v1, p0, Lcom/google/android/play/core/assetpacks/zzbn;->zzi:Ljava/lang/String;
 

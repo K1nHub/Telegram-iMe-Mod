@@ -153,7 +153,7 @@
     .line 224
     array-length v6, v0
 
-    const/4 v7, 0x0
+    move v7, v2
 
     :goto_0
     if-ge v7, v6, :cond_1
@@ -306,14 +306,14 @@
 
     move-result-wide v0
 
-    long-to-int v1, v0
+    long-to-int v0, v0
 
     .line 199
     invoke-static {}, Lorg/webrtc/Camera2Session;->access$1800()Lorg/webrtc/Histogram;
 
-    move-result-object v0
+    move-result-object v1
 
-    invoke-virtual {v0, v1}, Lorg/webrtc/Histogram;->addSample(I)V
+    invoke-virtual {v1, v0}, Lorg/webrtc/Histogram;->addSample(I)V
 
     .line 205
     :cond_1

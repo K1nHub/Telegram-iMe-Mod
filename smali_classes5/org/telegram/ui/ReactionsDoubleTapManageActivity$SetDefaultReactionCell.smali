@@ -255,10 +255,8 @@
 
     return-void
 
-    :catch_0
-    nop
-
     .line 285
+    :catch_0
     :cond_0
     iget-object v1, p0, Lorg/telegram/ui/ReactionsDoubleTapManageActivity$SetDefaultReactionCell;->this$0:Lorg/telegram/ui/ReactionsDoubleTapManageActivity;
 

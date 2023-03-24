@@ -123,9 +123,9 @@
 
     const-wide/high16 v6, 0x3ff0000000000000L    # 1.0
 
-    cmpl-double v8, v4, v6
+    cmpl-double v4, v4, v6
 
-    if-eqz v8, :cond_2
+    if-eqz v4, :cond_2
 
     .line 1169
     iget v4, p0, Landroidx/constraintlayout/motion/widget/MotionController;->mStaggerOffset:F
@@ -134,7 +134,7 @@
 
     if-gez v5, :cond_1
 
-    const/4 p1, 0x0
+    move p1, v0
 
     :cond_1
     cmpl-float v5, p1, v4
@@ -149,7 +149,7 @@
 
     sub-float/2addr p1, v4
 
-    mul-float p1, p1, v3
+    mul-float/2addr p1, v3
 
     .line 1175
     invoke-static {p1, v2}, Ljava/lang/Math;->min(FF)F
@@ -248,7 +248,7 @@
 
     double-to-float p1, v6
 
-    mul-float p1, p1, v2
+    mul-float/2addr p1, v2
 
     add-float/2addr p1, v0
 
@@ -381,7 +381,7 @@
 
     double-to-float v4, v4
 
-    mul-float v4, v4, v3
+    mul-float/2addr v4, v3
 
     rem-float/2addr v2, v3
 
@@ -425,7 +425,7 @@
 
     if-lez v2, :cond_2
 
-    const/high16 v2, 0x3f800000    # 1.0f
+    move v2, v13
 
     goto :goto_0
 
@@ -433,7 +433,7 @@
     const/4 v2, 0x0
 
     :goto_0
-    mul-float v2, v2, v3
+    mul-float/2addr v2, v3
 
     add-float/2addr v2, v4
 
@@ -491,7 +491,7 @@
 
     move-object v8, v1
 
-    const/4 v9, 0x0
+    move v9, v15
 
     :goto_2
     invoke-interface {v7}, Ljava/util/Iterator;->hasNext()Z
@@ -544,7 +544,7 @@
     :cond_7
     move-object v8, v1
 
-    const/16 v16, 0x0
+    move/from16 v16, v15
 
     .line 1266
     :goto_3
@@ -827,7 +827,7 @@
 
     move-wide/from16 v7, v18
 
-    const/16 v17, 0x1
+    move/from16 v17, v9
 
     move-wide/from16 v9, v20
 
@@ -842,10 +842,10 @@
     goto :goto_6
 
     :cond_e
-    const/16 v17, 0x1
+    move/from16 v17, v9
 
     :goto_6
-    const/4 v9, 0x1
+    move/from16 v9, v17
 
     .line 1309
     :goto_7
@@ -945,7 +945,7 @@
 
     if-eqz v1, :cond_16
 
-    const/4 v1, 0x0
+    move v1, v15
 
     .line 1326
     :goto_9
@@ -965,7 +965,7 @@
     goto :goto_9
 
     :cond_13
-    const/16 v17, 0x1
+    move/from16 v17, v9
 
     .line 1333
     iget-object v1, v0, Landroidx/constraintlayout/motion/widget/MotionController;->mStartMotionPath:Landroidx/constraintlayout/motion/widget/MotionPaths;
@@ -978,7 +978,7 @@
 
     sub-float/2addr v4, v2
 
-    mul-float v4, v4, v14
+    mul-float/2addr v4, v14
 
     add-float/2addr v2, v4
 
@@ -989,7 +989,7 @@
 
     sub-float/2addr v5, v4
 
-    mul-float v5, v5, v14
+    mul-float/2addr v5, v14
 
     add-float/2addr v4, v5
 
@@ -1000,7 +1000,7 @@
 
     sub-float v7, v6, v5
 
-    mul-float v7, v7, v14
+    mul-float/2addr v7, v14
 
     add-float/2addr v7, v5
 
@@ -1011,7 +1011,7 @@
 
     sub-float v8, v3, v1
 
-    mul-float v8, v8, v14
+    mul-float/2addr v8, v14
 
     add-float/2addr v8, v1
 

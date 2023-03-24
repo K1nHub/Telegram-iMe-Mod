@@ -619,7 +619,7 @@
 
     if-eqz v6, :cond_5
 
-    const/4 v9, 0x0
+    move v9, v8
 
     .line 50
     :goto_0
@@ -799,7 +799,7 @@
     goto :goto_3
 
     :cond_8
-    const/4 v7, 0x0
+    move v7, v8
 
     :goto_3
     new-instance v8, Lcom/google/android/play/core/assetpacks/zzcz;

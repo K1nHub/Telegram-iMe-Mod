@@ -700,21 +700,21 @@ public class Barcode extends AbstractSafeParcelable {
     @RecentlyNonNull
     public Rect getBoundingBox() {
         int i = Integer.MIN_VALUE;
-        int i2 = Integer.MIN_VALUE;
-        int i3 = Integer.MAX_VALUE;
-        int i4 = Integer.MAX_VALUE;
-        int i5 = 0;
+        int i2 = Integer.MAX_VALUE;
+        int i3 = 0;
+        int i4 = Integer.MIN_VALUE;
+        int i5 = Integer.MAX_VALUE;
         while (true) {
             Point[] pointArr = this.cornerPoints;
-            if (i5 < pointArr.length) {
-                Point point = pointArr[i5];
-                i3 = Math.min(i3, point.x);
+            if (i3 < pointArr.length) {
+                Point point = pointArr[i3];
+                i5 = Math.min(i5, point.x);
                 i = Math.max(i, point.x);
-                i4 = Math.min(i4, point.y);
-                i2 = Math.max(i2, point.y);
-                i5++;
+                i2 = Math.min(i2, point.y);
+                i4 = Math.max(i4, point.y);
+                i3++;
             } else {
-                return new Rect(i3, i4, i, i2);
+                return new Rect(i5, i2, i, i4);
             }
         }
     }

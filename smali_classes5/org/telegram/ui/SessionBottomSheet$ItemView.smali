@@ -145,12 +145,12 @@
 
     if-eqz p2, :cond_0
 
-    const/16 v14, 0x40
+    move v14, v8
 
     goto :goto_0
 
     :cond_0
-    const/4 v14, 0x0
+    move v14, v2
 
     :goto_0
     const/4 v15, 0x0
@@ -208,12 +208,12 @@
 
     if-eqz p2, :cond_1
 
-    const/16 v14, 0x40
+    move v14, v8
 
     goto :goto_1
 
     :cond_1
-    const/4 v14, 0x0
+    move v14, v2
 
     :goto_1
     const/4 v15, 0x0

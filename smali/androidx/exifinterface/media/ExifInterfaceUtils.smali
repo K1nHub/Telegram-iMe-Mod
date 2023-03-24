@@ -27,7 +27,7 @@
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     .line 110
     :goto_0
@@ -172,7 +172,7 @@
     return v0
 
     :cond_1
-    const/4 v1, 0x0
+    move v1, v0
 
     .line 100
     :goto_0

@@ -196,7 +196,7 @@
 
     sub-float/2addr v7, v2
 
-    mul-float v7, v7, v8
+    mul-float/2addr v7, v8
 
     float-to-int v2, v7
 
@@ -211,7 +211,7 @@
     goto :goto_0
 
     :cond_1
-    const/high16 v2, 0x3f800000    # 1.0f
+    move v2, v10
 
     .line 432
     :goto_0
@@ -253,19 +253,19 @@
 
     invoke-virtual {v5, v1}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
 
-    const v5, -0xdadadb
+    cmpl-float v5, v2, v10
 
-    cmpl-float v7, v2, v10
+    const v7, -0xdadadb
 
-    if-eqz v7, :cond_3
+    if-eqz v5, :cond_3
 
     .line 441
-    sget-object v7, Lorg/telegram/ui/ActionBar/Theme;->dialogs_onlineCirclePaint:Landroid/graphics/Paint;
+    sget-object v5, Lorg/telegram/ui/ActionBar/Theme;->dialogs_onlineCirclePaint:Landroid/graphics/Paint;
 
-    invoke-virtual {v7, v5}, Landroid/graphics/Paint;->setColor(I)V
+    invoke-virtual {v5, v7}, Landroid/graphics/Paint;->setColor(I)V
 
     .line 442
-    iget-object v7, v0, Lorg/telegram/ui/Components/StickerMasksAlert$2;->rect:Landroid/graphics/RectF;
+    iget-object v5, v0, Lorg/telegram/ui/Components/StickerMasksAlert$2;->rect:Landroid/graphics/RectF;
 
     iget-object v8, v0, Lorg/telegram/ui/Components/StickerMasksAlert$2;->this$0:Lorg/telegram/ui/Components/StickerMasksAlert;
 
@@ -317,18 +317,18 @@
 
     int-to-float v3, v13
 
-    invoke-virtual {v7, v8, v11, v12, v3}, Landroid/graphics/RectF;->set(FFFF)V
+    invoke-virtual {v5, v8, v11, v12, v3}, Landroid/graphics/RectF;->set(FFFF)V
 
     .line 443
     iget-object v3, v0, Lorg/telegram/ui/Components/StickerMasksAlert$2;->rect:Landroid/graphics/RectF;
 
     invoke-static {v6}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
-    move-result v7
+    move-result v5
 
-    int-to-float v7, v7
+    int-to-float v5, v5
 
-    mul-float v7, v7, v2
+    mul-float/2addr v5, v2
 
     invoke-static {v6}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
@@ -336,22 +336,22 @@
 
     int-to-float v6, v6
 
-    mul-float v6, v6, v2
+    mul-float/2addr v6, v2
 
     sget-object v8, Lorg/telegram/ui/ActionBar/Theme;->dialogs_onlineCirclePaint:Landroid/graphics/Paint;
 
-    invoke-virtual {v1, v3, v7, v6, v8}, Landroid/graphics/Canvas;->drawRoundRect(Landroid/graphics/RectF;FFLandroid/graphics/Paint;)V
+    invoke-virtual {v1, v3, v5, v6, v8}, Landroid/graphics/Canvas;->drawRoundRect(Landroid/graphics/RectF;FFLandroid/graphics/Paint;)V
 
     .line 446
     :cond_3
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
-    move-result-wide v6
+    move-result-wide v5
 
     .line 447
     iget-wide v11, v0, Lorg/telegram/ui/Components/StickerMasksAlert$2;->lastUpdateTime:J
 
-    sub-long v11, v6, v11
+    sub-long v11, v5, v11
 
     const-wide/16 v13, 0x12
 
@@ -363,22 +363,22 @@
 
     .line 451
     :cond_4
-    iput-wide v6, v0, Lorg/telegram/ui/Components/StickerMasksAlert$2;->lastUpdateTime:J
+    iput-wide v5, v0, Lorg/telegram/ui/Components/StickerMasksAlert$2;->lastUpdateTime:J
 
-    const/high16 v3, 0x43340000    # 180.0f
+    const/4 v3, 0x0
 
-    const/4 v6, 0x0
+    cmpl-float v5, v2, v3
 
-    cmpl-float v7, v2, v6
+    const/high16 v6, 0x43340000    # 180.0f
 
-    if-lez v7, :cond_6
+    if-lez v5, :cond_6
 
-    const/16 v7, 0x24
+    const/16 v5, 0x24
 
     .line 454
-    invoke-static {v7}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    invoke-static {v5}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
-    move-result v7
+    move-result v5
 
     .line 455
     iget-object v8, v0, Lorg/telegram/ui/Components/StickerMasksAlert$2;->rect:Landroid/graphics/RectF;
@@ -387,7 +387,7 @@
 
     move-result v13
 
-    sub-int/2addr v13, v7
+    sub-int/2addr v13, v5
 
     const/4 v14, 0x2
 
@@ -401,11 +401,11 @@
 
     move-result v16
 
-    add-int v16, v16, v7
+    add-int v16, v16, v5
 
-    div-int/lit8 v7, v16, 0x2
+    div-int/lit8 v5, v16, 0x2
 
-    int-to-float v7, v7
+    int-to-float v5, v5
 
     invoke-static {v9}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
@@ -415,14 +415,14 @@
 
     int-to-float v4, v4
 
-    invoke-virtual {v8, v13, v15, v7, v4}, Landroid/graphics/RectF;->set(FFFF)V
+    invoke-virtual {v8, v13, v15, v5, v4}, Landroid/graphics/RectF;->set(FFFF)V
 
     const v4, -0xb4b4b5
 
     .line 457
     invoke-static {v4}, Landroid/graphics/Color;->alpha(I)I
 
-    move-result v7
+    move-result v5
 
     .line 458
     sget-object v8, Lorg/telegram/ui/ActionBar/Theme;->dialogs_onlineCirclePaint:Landroid/graphics/Paint;
@@ -432,13 +432,13 @@
     .line 459
     sget-object v4, Lorg/telegram/ui/ActionBar/Theme;->dialogs_onlineCirclePaint:Landroid/graphics/Paint;
 
-    int-to-float v7, v7
+    int-to-float v5, v5
 
-    mul-float v7, v7, v10
+    mul-float/2addr v5, v10
 
-    mul-float v7, v7, v2
+    mul-float/2addr v5, v2
 
-    float-to-int v2, v7
+    float-to-int v2, v5
 
     invoke-virtual {v4, v2}, Landroid/graphics/Paint;->setAlpha(I)V
 
@@ -453,36 +453,36 @@
 
     invoke-static {v14}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
-    move-result v7
+    move-result v5
 
-    int-to-float v7, v7
+    int-to-float v5, v5
 
     sget-object v8, Lorg/telegram/ui/ActionBar/Theme;->dialogs_onlineCirclePaint:Landroid/graphics/Paint;
 
-    invoke-virtual {v1, v2, v4, v7, v8}, Landroid/graphics/Canvas;->drawRoundRect(Landroid/graphics/RectF;FFLandroid/graphics/Paint;)V
+    invoke-virtual {v1, v2, v4, v5, v8}, Landroid/graphics/Canvas;->drawRoundRect(Landroid/graphics/RectF;FFLandroid/graphics/Paint;)V
 
     .line 461
     iget v2, v0, Lorg/telegram/ui/Components/StickerMasksAlert$2;->statusBarProgress:F
 
-    cmpl-float v4, v2, v6
+    cmpl-float v4, v2, v3
 
     if-lez v4, :cond_8
 
     long-to-float v4, v11
 
-    div-float/2addr v4, v3
+    div-float/2addr v4, v6
 
     sub-float/2addr v2, v4
 
     .line 462
     iput v2, v0, Lorg/telegram/ui/Components/StickerMasksAlert$2;->statusBarProgress:F
 
-    cmpg-float v2, v2, v6
+    cmpg-float v2, v2, v3
 
     if-gez v2, :cond_5
 
     .line 464
-    iput v6, v0, Lorg/telegram/ui/Components/StickerMasksAlert$2;->statusBarProgress:F
+    iput v3, v0, Lorg/telegram/ui/Components/StickerMasksAlert$2;->statusBarProgress:F
 
     goto :goto_1
 
@@ -496,15 +496,15 @@
     :cond_6
     iget v2, v0, Lorg/telegram/ui/Components/StickerMasksAlert$2;->statusBarProgress:F
 
-    cmpg-float v4, v2, v10
+    cmpg-float v3, v2, v10
 
-    if-gez v4, :cond_8
+    if-gez v3, :cond_8
 
-    long-to-float v4, v11
+    long-to-float v3, v11
 
-    div-float/2addr v4, v3
+    div-float/2addr v3, v6
 
-    add-float/2addr v2, v4
+    add-float/2addr v2, v3
 
     .line 471
     iput v2, v0, Lorg/telegram/ui/Components/StickerMasksAlert$2;->statusBarProgress:F
@@ -529,11 +529,11 @@
     .line 481
     iget v3, v0, Lorg/telegram/ui/Components/StickerMasksAlert$2;->statusBarProgress:F
 
-    mul-float v3, v3, v2
+    mul-float/2addr v3, v2
 
     float-to-int v2, v3
 
-    invoke-static {v5}, Landroid/graphics/Color;->red(I)I
+    invoke-static {v7}, Landroid/graphics/Color;->red(I)I
 
     move-result v3
 
@@ -541,31 +541,31 @@
 
     const v4, 0x3f4ccccd    # 0.8f
 
-    mul-float v3, v3, v4
+    mul-float/2addr v3, v4
 
     float-to-int v3, v3
 
-    invoke-static {v5}, Landroid/graphics/Color;->green(I)I
-
-    move-result v6
-
-    int-to-float v6, v6
-
-    mul-float v6, v6, v4
-
-    float-to-int v6, v6
-
-    invoke-static {v5}, Landroid/graphics/Color;->blue(I)I
+    invoke-static {v7}, Landroid/graphics/Color;->green(I)I
 
     move-result v5
 
     int-to-float v5, v5
 
-    mul-float v5, v5, v4
+    mul-float/2addr v5, v4
 
-    float-to-int v4, v5
+    float-to-int v5, v5
 
-    invoke-static {v2, v3, v6, v4}, Landroid/graphics/Color;->argb(IIII)I
+    invoke-static {v7}, Landroid/graphics/Color;->blue(I)I
+
+    move-result v6
+
+    int-to-float v6, v6
+
+    mul-float/2addr v6, v4
+
+    float-to-int v4, v6
+
+    invoke-static {v2, v3, v5, v4}, Landroid/graphics/Color;->argb(IIII)I
 
     move-result v2
 
@@ -764,7 +764,7 @@
     .line 366
     iput v0, p0, Lorg/telegram/ui/Components/StickerMasksAlert$2;->statusBarProgress:F
 
-    const/4 v0, 0x0
+    move v0, v2
 
     goto :goto_0
 

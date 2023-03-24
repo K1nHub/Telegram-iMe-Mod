@@ -167,7 +167,7 @@
 
     invoke-direct {v1, p1, p2}, Lorg/webrtc/VideoSource$AspectRatio;-><init>(II)V
 
-    mul-int p1, p1, p2
+    mul-int/2addr p1, p2
 
     .line 104
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -178,7 +178,7 @@
 
     invoke-direct {v3, p3, p4}, Lorg/webrtc/VideoSource$AspectRatio;-><init>(II)V
 
-    mul-int p3, p3, p4
+    mul-int/2addr p3, p4
 
     .line 106
     invoke-static {p3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;

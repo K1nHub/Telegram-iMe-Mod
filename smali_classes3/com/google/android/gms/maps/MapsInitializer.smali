@@ -167,13 +167,13 @@
     goto :goto_0
 
     :cond_2
-    const/4 v3, 0x2
+    move v3, v4
 
     goto :goto_1
 
     :cond_3
     :goto_0
-    const/4 v3, 0x0
+    move v3, v2
 
     .line 10
     :cond_4

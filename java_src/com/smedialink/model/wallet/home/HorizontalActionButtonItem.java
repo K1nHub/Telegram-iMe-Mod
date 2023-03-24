@@ -8,34 +8,34 @@ import kotlin.jvm.internal.Intrinsics;
 /* compiled from: HorizontalActionButtonItem.kt */
 /* loaded from: classes3.dex */
 public final class HorizontalActionButtonItem {
-    private final int iconRes;
+    private final int iconResId;
     private final boolean isEnabled;
     private final Function0<Unit> onClickAction;
-    private final int textRes;
+    private final String text;
 
     /* JADX WARN: Multi-variable type inference failed */
-    public static /* synthetic */ HorizontalActionButtonItem copy$default(HorizontalActionButtonItem horizontalActionButtonItem, int i, int i2, boolean z, Function0 function0, int i3, Object obj) {
-        if ((i3 & 1) != 0) {
-            i = horizontalActionButtonItem.iconRes;
+    public static /* synthetic */ HorizontalActionButtonItem copy$default(HorizontalActionButtonItem horizontalActionButtonItem, int i, String str, boolean z, Function0 function0, int i2, Object obj) {
+        if ((i2 & 1) != 0) {
+            i = horizontalActionButtonItem.iconResId;
         }
-        if ((i3 & 2) != 0) {
-            i2 = horizontalActionButtonItem.textRes;
+        if ((i2 & 2) != 0) {
+            str = horizontalActionButtonItem.text;
         }
-        if ((i3 & 4) != 0) {
+        if ((i2 & 4) != 0) {
             z = horizontalActionButtonItem.isEnabled;
         }
-        if ((i3 & 8) != 0) {
+        if ((i2 & 8) != 0) {
             function0 = horizontalActionButtonItem.onClickAction;
         }
-        return horizontalActionButtonItem.copy(i, i2, z, function0);
+        return horizontalActionButtonItem.copy(i, str, z, function0);
     }
 
     public final int component1() {
-        return this.iconRes;
+        return this.iconResId;
     }
 
-    public final int component2() {
-        return this.textRes;
+    public final String component2() {
+        return this.text;
     }
 
     public final boolean component3() {
@@ -46,33 +46,35 @@ public final class HorizontalActionButtonItem {
         return this.onClickAction;
     }
 
-    public final HorizontalActionButtonItem copy(int i, int i2, boolean z, Function0<Unit> onClickAction) {
+    public final HorizontalActionButtonItem copy(int i, String text, boolean z, Function0<Unit> onClickAction) {
+        Intrinsics.checkNotNullParameter(text, "text");
         Intrinsics.checkNotNullParameter(onClickAction, "onClickAction");
-        return new HorizontalActionButtonItem(i, i2, z, onClickAction);
+        return new HorizontalActionButtonItem(i, text, z, onClickAction);
     }
 
     public String toString() {
-        return "HorizontalActionButtonItem(iconRes=" + this.iconRes + ", textRes=" + this.textRes + ", isEnabled=" + this.isEnabled + ", onClickAction=" + this.onClickAction + ')';
+        return "HorizontalActionButtonItem(iconResId=" + this.iconResId + ", text=" + this.text + ", isEnabled=" + this.isEnabled + ", onClickAction=" + this.onClickAction + ')';
     }
 
-    public HorizontalActionButtonItem(int i, int i2, boolean z, Function0<Unit> onClickAction) {
+    public HorizontalActionButtonItem(int i, String text, boolean z, Function0<Unit> onClickAction) {
+        Intrinsics.checkNotNullParameter(text, "text");
         Intrinsics.checkNotNullParameter(onClickAction, "onClickAction");
-        this.iconRes = i;
-        this.textRes = i2;
+        this.iconResId = i;
+        this.text = text;
         this.isEnabled = z;
         this.onClickAction = onClickAction;
     }
 
-    public /* synthetic */ HorizontalActionButtonItem(int i, int i2, boolean z, Function0 function0, int i3, DefaultConstructorMarker defaultConstructorMarker) {
-        this(i, i2, (i3 & 4) != 0 ? true : z, function0);
+    public /* synthetic */ HorizontalActionButtonItem(int i, String str, boolean z, Function0 function0, int i2, DefaultConstructorMarker defaultConstructorMarker) {
+        this(i, str, (i2 & 4) != 0 ? true : z, function0);
     }
 
-    public final int getIconRes() {
-        return this.iconRes;
+    public final int getIconResId() {
+        return this.iconResId;
     }
 
-    public final int getTextRes() {
-        return this.textRes;
+    public final String getText() {
+        return this.text;
     }
 
     public final boolean isEnabled() {
@@ -90,12 +92,12 @@ public final class HorizontalActionButtonItem {
         if (Intrinsics.areEqual(HorizontalActionButtonItem.class, obj != null ? obj.getClass() : null)) {
             Intrinsics.checkNotNull(obj, "null cannot be cast to non-null type com.smedialink.model.wallet.home.HorizontalActionButtonItem");
             HorizontalActionButtonItem horizontalActionButtonItem = (HorizontalActionButtonItem) obj;
-            return this.iconRes == horizontalActionButtonItem.iconRes && this.textRes == horizontalActionButtonItem.textRes && this.isEnabled == horizontalActionButtonItem.isEnabled;
+            return this.iconResId == horizontalActionButtonItem.iconResId && Intrinsics.areEqual(this.text, horizontalActionButtonItem.text) && this.isEnabled == horizontalActionButtonItem.isEnabled;
         }
         return false;
     }
 
     public int hashCode() {
-        return Objects.hash(Integer.valueOf(this.iconRes), Integer.valueOf(this.textRes), Boolean.valueOf(this.isEnabled));
+        return Objects.hash(Integer.valueOf(this.iconResId), this.text, Boolean.valueOf(this.isEnabled));
     }
 }

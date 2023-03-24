@@ -151,8 +151,8 @@ public class DefaultStrategy implements Strategy {
             f += fArr[i];
         }
         float f2 = f / size;
-        int i2 = 0;
         float f3 = Float.MAX_VALUE;
+        int i2 = 0;
         for (int i3 = 0; i3 < size; i3++) {
             float abs = Math.abs(fArr[i3] - f2);
             if (abs < f3) {

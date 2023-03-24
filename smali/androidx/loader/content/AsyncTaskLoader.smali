@@ -342,9 +342,9 @@
 
     const-wide/16 v2, 0x0
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-lez v4, :cond_1
+    if-lez v0, :cond_1
 
     .line 216
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
@@ -358,9 +358,9 @@
 
     add-long/2addr v2, v4
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-gez v4, :cond_1
+    if-gez v0, :cond_1
 
     .line 222
     iget-object v0, p0, Landroidx/loader/content/AsyncTaskLoader;->mTask:Landroidx/loader/content/AsyncTaskLoader$LoadTask;
@@ -581,16 +581,16 @@
 .end method
 
 .method public setUpdateThrottle(J)V
-    .locals 3
+    .locals 2
 
     .line 144
     iput-wide p1, p0, Landroidx/loader/content/AsyncTaskLoader;->mUpdateThrottle:J
 
     const-wide/16 v0, 0x0
 
-    cmp-long v2, p1, v0
+    cmp-long p1, p1, v0
 
-    if-eqz v2, :cond_0
+    if-eqz p1, :cond_0
 
     .line 146
     new-instance p1, Landroid/os/Handler;

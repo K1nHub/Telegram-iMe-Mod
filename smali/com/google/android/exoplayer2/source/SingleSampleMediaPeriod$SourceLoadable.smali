@@ -115,51 +115,51 @@
 
     move-result-wide v0
 
-    long-to-int v1, v0
+    long-to-int v0, v0
 
     .line 441
-    iget-object v0, p0, Lcom/google/android/exoplayer2/source/SingleSampleMediaPeriod$SourceLoadable;->sampleData:[B
+    iget-object v1, p0, Lcom/google/android/exoplayer2/source/SingleSampleMediaPeriod$SourceLoadable;->sampleData:[B
 
-    if-nez v0, :cond_0
+    if-nez v1, :cond_0
 
-    const/16 v0, 0x400
+    const/16 v1, 0x400
 
-    new-array v0, v0, [B
+    new-array v1, v1, [B
 
     .line 442
-    iput-object v0, p0, Lcom/google/android/exoplayer2/source/SingleSampleMediaPeriod$SourceLoadable;->sampleData:[B
+    iput-object v1, p0, Lcom/google/android/exoplayer2/source/SingleSampleMediaPeriod$SourceLoadable;->sampleData:[B
 
     goto :goto_1
 
     .line 443
     :cond_0
-    array-length v2, v0
+    array-length v2, v1
 
-    if-ne v1, v2, :cond_1
+    if-ne v0, v2, :cond_1
 
     .line 444
-    array-length v2, v0
+    array-length v2, v1
 
     mul-int/lit8 v2, v2, 0x2
 
-    invoke-static {v0, v2}, Ljava/util/Arrays;->copyOf([BI)[B
+    invoke-static {v1, v2}, Ljava/util/Arrays;->copyOf([BI)[B
 
-    move-result-object v0
+    move-result-object v1
 
-    iput-object v0, p0, Lcom/google/android/exoplayer2/source/SingleSampleMediaPeriod$SourceLoadable;->sampleData:[B
+    iput-object v1, p0, Lcom/google/android/exoplayer2/source/SingleSampleMediaPeriod$SourceLoadable;->sampleData:[B
 
     .line 446
     :cond_1
     :goto_1
-    iget-object v0, p0, Lcom/google/android/exoplayer2/source/SingleSampleMediaPeriod$SourceLoadable;->dataSource:Lcom/google/android/exoplayer2/upstream/StatsDataSource;
+    iget-object v1, p0, Lcom/google/android/exoplayer2/source/SingleSampleMediaPeriod$SourceLoadable;->dataSource:Lcom/google/android/exoplayer2/upstream/StatsDataSource;
 
     iget-object v2, p0, Lcom/google/android/exoplayer2/source/SingleSampleMediaPeriod$SourceLoadable;->sampleData:[B
 
     array-length v3, v2
 
-    sub-int/2addr v3, v1
+    sub-int/2addr v3, v0
 
-    invoke-virtual {v0, v2, v1, v3}, Lcom/google/android/exoplayer2/upstream/StatsDataSource;->read([BII)I
+    invoke-virtual {v1, v2, v0, v3}, Lcom/google/android/exoplayer2/upstream/StatsDataSource;->read([BII)I
 
     move-result v0
     :try_end_0

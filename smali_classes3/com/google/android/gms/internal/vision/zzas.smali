@@ -96,7 +96,7 @@
 
     const/4 v0, 0x1
 
-    const/4 v1, 0x1
+    move v1, v0
 
     :goto_0
     const/4 v2, 0x2
@@ -156,7 +156,7 @@
     goto :goto_1
 
     :cond_2
-    const/4 v0, 0x0
+    move v0, v4
 
     :cond_3
     :goto_1

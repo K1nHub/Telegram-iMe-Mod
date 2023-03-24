@@ -399,7 +399,7 @@
 .end method
 
 .method public static readSeekTableMetadataBlock(Lcom/google/android/exoplayer2/util/ParsableByteArray;)Lcom/google/android/exoplayer2/extractor/FlacStreamMetadata$SeekTable;
-    .locals 11
+    .locals 10
 
     const/4 v0, 0x1
 
@@ -443,9 +443,9 @@
 
     const-wide/16 v8, -0x1
 
-    cmp-long v10, v6, v8
+    cmp-long v8, v6, v8
 
-    if-nez v10, :cond_0
+    if-nez v8, :cond_0
 
     .line 207
     invoke-static {v3, v5}, Ljava/util/Arrays;->copyOf([JI)[J

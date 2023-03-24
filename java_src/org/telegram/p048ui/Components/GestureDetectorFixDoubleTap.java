@@ -135,8 +135,8 @@ public class GestureDetectorFixDoubleTap {
             this.mLongpressDuration = j;
         }
 
-        /* JADX WARN: Removed duplicated region for block: B:109:0x020f  */
-        /* JADX WARN: Removed duplicated region for block: B:112:0x0226  */
+        /* JADX WARN: Removed duplicated region for block: B:109:0x020b  */
+        /* JADX WARN: Removed duplicated region for block: B:112:0x0222  */
         @Override // org.telegram.p048ui.Components.GestureDetectorFixDoubleTap.GestureDetectorCompatImpl
         /*
             Code decompiled incorrectly, please refer to instructions dump.
@@ -144,7 +144,7 @@ public class GestureDetectorFixDoubleTap {
         */
         public boolean onTouchEvent(android.view.MotionEvent r13) {
             /*
-                Method dump skipped, instructions count: 597
+                Method dump skipped, instructions count: 593
                 To view this dump add '--comments-level debug' option
             */
             throw new UnsupportedOperationException("Method not decompiled: org.telegram.p048ui.Components.GestureDetectorFixDoubleTap.GestureDetectorCompatImplBase.onTouchEvent(android.view.MotionEvent):boolean");

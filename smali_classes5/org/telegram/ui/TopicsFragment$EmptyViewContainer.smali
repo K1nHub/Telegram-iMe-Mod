@@ -162,24 +162,24 @@
 
     if-eqz p2, :cond_1
 
-    const/16 v5, 0x48
+    move v5, v3
 
     goto :goto_1
 
     :cond_1
-    const/16 v5, 0x20
+    move v5, v4
 
     :goto_1
     const/4 v6, 0x0
 
     if-eqz p2, :cond_2
 
-    const/16 p2, 0x20
+    move p2, v4
 
     goto :goto_2
 
     :cond_2
-    const/16 p2, 0x48
+    move p2, v3
 
     :goto_2
     const/16 v7, 0x20
@@ -282,7 +282,7 @@
 
     int-to-float v2, v2
 
-    mul-float v1, v1, v2
+    mul-float/2addr v1, v2
 
     sget-boolean v2, Lorg/telegram/messenger/LocaleController;->isRTL:Z
 
@@ -293,7 +293,7 @@
     :cond_2
     int-to-float v0, v0
 
-    mul-float v1, v1, v0
+    mul-float/2addr v1, v0
 
     invoke-virtual {p1, v1}, Landroid/widget/TextView;->setTranslationX(F)V
 

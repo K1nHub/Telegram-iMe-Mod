@@ -48,9 +48,9 @@
 
     const/high16 v1, 0x3f800000    # 1.0f
 
-    const/4 v2, 0x0
-
     cmpl-float v0, v0, v1
+
+    const/4 v2, 0x0
 
     if-nez v0, :cond_0
 
@@ -120,7 +120,7 @@
 
     sub-float/2addr v1, v0
 
-    mul-float v3, v3, v1
+    mul-float/2addr v3, v1
 
     .line 321
     iget-object v0, p0, Lorg/telegram/ui/Components/voip/GroupCallRenderersContainer$5;->this$0:Lorg/telegram/ui/Components/voip/GroupCallRenderersContainer;
@@ -143,7 +143,7 @@
 
     sub-float/2addr v0, v4
 
-    mul-float v0, v0, v1
+    mul-float/2addr v0, v1
 
     .line 322
     iget-object v4, p0, Lorg/telegram/ui/Components/voip/GroupCallRenderersContainer$5;->val$toastBackgroundDrawable:Landroid/graphics/drawable/Drawable;
@@ -168,7 +168,7 @@
 
     sub-float/2addr v7, v8
 
-    mul-float v7, v7, v1
+    mul-float/2addr v7, v1
 
     float-to-int v1, v7
 

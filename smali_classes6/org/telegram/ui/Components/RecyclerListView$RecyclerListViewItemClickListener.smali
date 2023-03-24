@@ -132,12 +132,12 @@
 
     if-nez v4, :cond_0
 
-    const/4 v4, 0x1
+    move v4, v5
 
     goto :goto_0
 
     :cond_0
-    const/4 v4, 0x0
+    move v4, v6
 
     :goto_0
     const/4 v7, 0x5

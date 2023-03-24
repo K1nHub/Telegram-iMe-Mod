@@ -529,7 +529,7 @@
 
     const/high16 v1, 0x437f0000    # 255.0f
 
-    mul-float v0, v0, v1
+    mul-float/2addr v0, v1
 
     float-to-int v0, v0
 
@@ -890,7 +890,7 @@
 
     const/high16 v1, 0x42c80000    # 100.0f
 
-    mul-float p3, p3, v1
+    mul-float/2addr p3, v1
 
     .line 176
     new-instance v2, Landroidx/dynamicanimation/animation/SpringAnimation;
@@ -914,10 +914,10 @@
 
     if-gez v3, :cond_2
 
-    const/4 p2, 0x1
+    move p2, v0
 
     :cond_2
-    mul-float p1, p1, v1
+    mul-float/2addr p1, v1
 
     .line 180
     iput-boolean p2, p0, Lorg/telegram/ui/Components/SenderSelectView;->scaleIn:Z

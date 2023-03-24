@@ -111,7 +111,7 @@
 
     move-result v5
 
-    mul-float v4, v4, v5
+    mul-float/2addr v4, v5
 
     iget-object v5, p0, Lorg/telegram/ui/Components/ChatThemeBottomSheet$6;->val$xRefPaint:Landroid/graphics/Paint;
 
@@ -145,7 +145,7 @@
 
     sub-float/2addr v3, v4
 
-    mul-float v2, v2, v3
+    mul-float/2addr v2, v3
 
     iget-object v3, p0, Lorg/telegram/ui/Components/ChatThemeBottomSheet$6;->val$bitmapPaint:Landroid/graphics/Paint;
 

@@ -378,12 +378,12 @@
 
     if-ge p2, v2, :cond_5
 
-    const/4 p2, 0x1
+    move p2, v4
 
     goto :goto_2
 
     :cond_5
-    const/4 p2, 0x0
+    move p2, v3
 
     :goto_2
     if-ne v0, v4, :cond_9
@@ -411,7 +411,7 @@
 
     if-nez v0, :cond_6
 
-    const/4 v0, 0x0
+    move v0, v3
 
     goto :goto_3
 
@@ -482,12 +482,12 @@
 
     if-ne v0, v6, :cond_7
 
-    const/4 v6, 0x1
+    move v6, v4
 
     goto :goto_4
 
     :cond_7
-    const/4 v6, 0x0
+    move v6, v3
 
     :goto_4
     invoke-virtual {v2, v5, v6}, Lorg/telegram/ui/Cells/SharedDocumentCell;->setChecked(ZZ)V
@@ -501,7 +501,7 @@
 
     if-ne v0, v1, :cond_8
 
-    const/4 v3, 0x1
+    move v3, v4
 
     :cond_8
     invoke-virtual {p1, p2, v3}, Lorg/telegram/ui/Cells/SharedDocumentCell;->showReorderIcon(ZZ)V
@@ -525,7 +525,7 @@
 
     if-nez v0, :cond_a
 
-    const/4 v0, 0x0
+    move v0, v3
 
     goto :goto_5
 
@@ -586,12 +586,12 @@
 
     if-ne v0, v5, :cond_b
 
-    const/4 v5, 0x1
+    move v5, v4
 
     goto :goto_6
 
     :cond_b
-    const/4 v5, 0x0
+    move v5, v3
 
     :goto_6
     invoke-virtual {p1, v2, v5}, Lorg/telegram/ui/Cells/SharedAudioCell;->setChecked(ZZ)V
@@ -603,7 +603,7 @@
 
     if-ne v0, v1, :cond_c
 
-    const/4 v3, 0x1
+    move v3, v4
 
     :cond_c
     invoke-virtual {p1, p2, v3}, Lorg/telegram/ui/Cells/SharedAudioCell;->showReorderIcon(ZZ)V

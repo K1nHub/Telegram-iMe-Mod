@@ -9,12 +9,12 @@ public final class zbf implements Parcelable.Creator {
     @Override // android.os.Parcelable.Creator
     public final /* bridge */ /* synthetic */ Object createFromParcel(Parcel parcel) {
         int validateObjectHeader = SafeParcelReader.validateObjectHeader(parcel);
+        boolean z = false;
+        int i = 0;
         String str = null;
         String str2 = null;
         String str3 = null;
         String str4 = null;
-        boolean z = false;
-        int i = 0;
         while (parcel.dataPosition() < validateObjectHeader) {
             int readHeader = SafeParcelReader.readHeader(parcel);
             switch (SafeParcelReader.getFieldId(readHeader)) {

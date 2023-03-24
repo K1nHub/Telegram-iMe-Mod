@@ -111,12 +111,12 @@
 
     if-eqz v0, :cond_0
 
-    const/4 v3, 0x1
+    move v3, v1
 
     goto :goto_0
 
     :cond_0
-    const/4 v3, 0x0
+    move v3, v2
 
     :goto_0
     const-string v4, "enum constant missing @Value or @NullValue annotation: %s"

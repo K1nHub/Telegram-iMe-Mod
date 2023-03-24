@@ -104,7 +104,7 @@
 
     sub-long/2addr v4, v6
 
-    mul-long v0, v0, v4
+    mul-long/2addr v0, v4
 
     iget-object v4, p0, Lcom/google/android/exoplayer2/extractor/ogg/DefaultOggSeeker$OggSeekMap;->this$0:Lcom/google/android/exoplayer2/extractor/ogg/DefaultOggSeeker;
 

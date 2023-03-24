@@ -122,7 +122,7 @@
 
     const/high16 p6, 0x437f0000    # 255.0f
 
-    mul-float p2, p2, p6
+    mul-float/2addr p2, p6
 
     float-to-int p2, p2
 

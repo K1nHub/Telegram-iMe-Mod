@@ -2333,7 +2333,7 @@
 
     if-eqz v2, :cond_0
 
-    const/4 v2, 0x0
+    move v2, v8
 
     goto :goto_0
 
@@ -3461,7 +3461,7 @@
 
     iput-object v1, v0, Lorg/telegram/ui/Components/StickersAlert;->selectedSticker:Lorg/telegram/tgnet/TLRPC$Document;
 
-    const/4 v1, 0x0
+    move v1, v8
 
     .line 799
     :goto_2
@@ -3525,7 +3525,7 @@
 
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    const/4 v1, 0x1
+    move v1, v7
 
     goto :goto_3
 
@@ -3535,7 +3535,7 @@
     goto :goto_2
 
     :cond_8
-    const/4 v1, 0x0
+    move v1, v8
 
     :goto_3
     if-nez v1, :cond_9
@@ -3927,7 +3927,7 @@
 
     iput-object p1, p0, Lorg/telegram/ui/Components/StickersAlert;->stickerSetCovereds:Ljava/util/ArrayList;
 
-    const/4 p1, 0x0
+    move p1, v0
 
     .line 315
     :goto_0
@@ -4124,7 +4124,7 @@
 
     const/4 p2, 0x0
 
-    const/4 v0, 0x0
+    move v0, p2
 
     :goto_0
     if-ge v0, p1, :cond_1
@@ -4280,7 +4280,7 @@
     goto :goto_2
 
     :cond_4
-    const/16 v11, 0x200
+    move v11, v10
 
     :goto_2
     mul-int/lit16 v11, v11, 0x400
@@ -4537,7 +4537,7 @@
     goto :goto_0
 
     :cond_0
-    const/4 v1, 0x0
+    move v1, v2
 
     .line 1376
     :goto_0
@@ -4841,7 +4841,7 @@
 
     if-eqz v1, :cond_0
 
-    const/4 v0, 0x1
+    move v0, v2
 
     goto :goto_0
 
@@ -4856,7 +4856,7 @@
     goto :goto_0
 
     :cond_1
-    const/4 v0, 0x0
+    move v0, v3
 
     :goto_0
     if-nez p1, :cond_3
@@ -6669,7 +6669,7 @@
 
     if-eqz v0, :cond_a
 
-    const/4 v0, 0x0
+    move v0, v4
 
     .line 1130
     :goto_4
@@ -6700,7 +6700,7 @@
 
     if-nez v5, :cond_9
 
-    const/4 v0, 0x1
+    move v0, v3
 
     goto :goto_5
 
@@ -6710,7 +6710,7 @@
     goto :goto_4
 
     :cond_a
-    const/4 v0, 0x0
+    move v0, v4
 
     :goto_5
     if-eqz v0, :cond_c
@@ -6780,7 +6780,7 @@
 
     move-result-object v0
 
-    const/4 v1, 0x0
+    move v1, v4
 
     :goto_6
     if-eqz v0, :cond_e
@@ -6829,7 +6829,7 @@
 
     if-nez v2, :cond_d
 
-    const/4 v0, 0x1
+    move v0, v3
 
     goto :goto_7
 
@@ -6839,7 +6839,7 @@
     goto :goto_6
 
     :cond_e
-    const/4 v0, 0x0
+    move v0, v4
 
     :goto_7
     xor-int/2addr v0, v3
@@ -6875,7 +6875,7 @@
     goto :goto_8
 
     :cond_10
-    const/4 v3, 0x0
+    move v3, v4
 
     :cond_11
     :goto_8
@@ -6945,7 +6945,7 @@
 
     if-nez v0, :cond_13
 
-    const/4 v0, 0x0
+    move v0, v4
 
     goto :goto_a
 
@@ -6982,7 +6982,7 @@
 
     if-nez v0, :cond_15
 
-    const/4 v0, 0x0
+    move v0, v4
 
     goto :goto_b
 
@@ -7021,7 +7021,7 @@
 
     :cond_18
     :goto_c
-    const/4 v0, 0x0
+    move v0, v4
 
     :goto_d
     new-array v1, v4, [Ljava/lang/Object;
@@ -7810,7 +7810,7 @@
 
     move-result v0
 
-    const/4 v3, 0x0
+    move v3, v2
 
     :goto_0
     if-ge v3, v0, :cond_4
@@ -8645,7 +8645,7 @@
 
     move-result p1
 
-    const/4 v0, 0x0
+    move v0, v2
 
     :goto_0
     if-ge v0, p1, :cond_0
@@ -8673,7 +8673,7 @@
 
     move-result p1
 
-    const/4 v0, 0x0
+    move v0, v2
 
     :goto_1
     if-ge v0, p1, :cond_1

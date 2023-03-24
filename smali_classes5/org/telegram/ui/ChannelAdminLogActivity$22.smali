@@ -77,9 +77,9 @@
 
     div-long/2addr v0, v3
 
-    long-to-int v1, v0
+    long-to-int v0, v0
 
-    iput v1, v2, Lorg/telegram/tgnet/TLRPC$TL_channelAdminLogEvent;->date:I
+    iput v0, v2, Lorg/telegram/tgnet/TLRPC$TL_channelAdminLogEvent;->date:I
 
     .line 2997
     iget-object v0, p0, Lorg/telegram/ui/ChannelAdminLogActivity$22;->this$0:Lorg/telegram/ui/ChannelAdminLogActivity;
@@ -242,9 +242,9 @@
 
     div-long/2addr v1, v5
 
-    long-to-int v2, v1
+    long-to-int v1, v1
 
-    iput v2, v4, Lorg/telegram/tgnet/TLRPC$TL_channelAdminLogEvent;->date:I
+    iput v1, v4, Lorg/telegram/tgnet/TLRPC$TL_channelAdminLogEvent;->date:I
 
     .line 3020
     iget-object v1, p0, Lorg/telegram/ui/ChannelAdminLogActivity$22;->this$0:Lorg/telegram/ui/ChannelAdminLogActivity;

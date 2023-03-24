@@ -149,12 +149,12 @@
 
     if-ge v0, v3, :cond_0
 
-    const/4 v3, 0x1
+    move v3, v1
 
     goto :goto_0
 
     :cond_0
-    const/4 v3, 0x0
+    move v3, v2
 
     :goto_0
     sput-boolean v3, Lorg/telegram/ui/Components/MotionBackgroundDrawable;->useLegacyBitmap:Z
@@ -166,7 +166,7 @@
     goto :goto_1
 
     :cond_1
-    const/4 v1, 0x0
+    move v1, v2
 
     .line 43
     :goto_1
@@ -517,7 +517,7 @@
 
     sget v1, Lorg/telegram/ui/Components/MotionBackgroundDrawable;->legacyBitmapScale:F
 
-    mul-float v0, v0, v1
+    mul-float/2addr v0, v1
 
     float-to-int v0, v0
 
@@ -532,7 +532,7 @@
 
     sget v2, Lorg/telegram/ui/Components/MotionBackgroundDrawable;->legacyBitmapScale:F
 
-    mul-float v1, v1, v2
+    mul-float/2addr v1, v2
 
     float-to-int v1, v1
 
@@ -1045,9 +1045,9 @@
 
     move-result v8
 
-    mul-float v4, v4, v8
+    mul-float/2addr v4, v8
 
-    mul-float v5, v5, v8
+    mul-float/2addr v5, v8
 
     sub-float v8, v6, v4
 
@@ -1108,7 +1108,7 @@
 
     iget v11, v0, Lorg/telegram/ui/Components/MotionBackgroundDrawable;->backgroundAlpha:F
 
-    mul-float v5, v5, v11
+    mul-float/2addr v5, v11
 
     float-to-int v5, v5
 
@@ -1160,9 +1160,9 @@
 
     move-result v5
 
-    mul-float v2, v2, v5
+    mul-float/2addr v2, v5
 
-    mul-float v4, v4, v5
+    mul-float/2addr v4, v5
 
     sub-float/2addr v6, v2
 
@@ -1264,11 +1264,11 @@
 
     int-to-float v5, v5
 
-    mul-float v4, v4, v5
+    mul-float/2addr v4, v5
 
     iget v5, v0, Lorg/telegram/ui/Components/MotionBackgroundDrawable;->patternAlpha:F
 
-    mul-float v4, v4, v5
+    mul-float/2addr v4, v5
 
     float-to-int v4, v4
 
@@ -1375,9 +1375,9 @@
 
     move-result v5
 
-    mul-float v3, v3, v5
+    mul-float/2addr v3, v5
 
-    mul-float v4, v4, v5
+    mul-float/2addr v4, v5
 
     sub-float/2addr v6, v3
 
@@ -1416,7 +1416,7 @@
 
     const/high16 v5, 0x437f0000    # 255.0f
 
-    mul-float v4, v4, v5
+    mul-float/2addr v4, v5
 
     float-to-int v4, v4
 
@@ -1497,11 +1497,11 @@
 
     iget v6, v0, Lorg/telegram/ui/Components/MotionBackgroundDrawable;->patternAlpha:F
 
-    mul-float v5, v5, v6
+    mul-float/2addr v5, v6
 
     sub-float v15, v3, v2
 
-    mul-float v5, v5, v15
+    mul-float/2addr v5, v15
 
     float-to-int v2, v5
 
@@ -1525,11 +1525,11 @@
 
     iget v4, v0, Lorg/telegram/ui/Components/MotionBackgroundDrawable;->patternAlpha:F
 
-    mul-float v3, v3, v4
+    mul-float/2addr v3, v4
 
     iget v4, v0, Lorg/telegram/ui/Components/MotionBackgroundDrawable;->posAnimationProgress:F
 
-    mul-float v3, v3, v4
+    mul-float/2addr v3, v4
 
     float-to-int v3, v3
 
@@ -1678,9 +1678,9 @@
 
     move-result v8
 
-    mul-float v4, v4, v8
+    mul-float/2addr v4, v8
 
-    mul-float v5, v5, v8
+    mul-float/2addr v5, v8
 
     sub-float/2addr v6, v4
 
@@ -1758,11 +1758,11 @@
 
     int-to-float v5, v5
 
-    mul-float v4, v4, v5
+    mul-float/2addr v4, v5
 
     iget v5, v0, Lorg/telegram/ui/Components/MotionBackgroundDrawable;->patternAlpha:F
 
-    mul-float v4, v4, v5
+    mul-float/2addr v4, v5
 
     float-to-int v4, v4
 
@@ -1942,7 +1942,7 @@
 
     const/high16 v4, 0x437f0000    # 255.0f
 
-    mul-float v3, v3, v4
+    mul-float/2addr v3, v4
 
     float-to-int v3, v3
 
@@ -1986,7 +1986,7 @@
     .line 823
     iget v5, v0, Lorg/telegram/ui/Components/MotionBackgroundDrawable;->backgroundAlpha:F
 
-    mul-float v4, v4, v5
+    mul-float/2addr v4, v5
 
     float-to-int v4, v4
 
@@ -2033,9 +2033,9 @@
 
     move-result v4
 
-    mul-float v2, v2, v4
+    mul-float/2addr v2, v4
 
-    mul-float v3, v3, v4
+    mul-float/2addr v3, v4
 
     sub-float/2addr v6, v2
 
@@ -2078,11 +2078,11 @@
 
     int-to-float v4, v4
 
-    mul-float v3, v3, v4
+    mul-float/2addr v3, v4
 
     iget v4, v0, Lorg/telegram/ui/Components/MotionBackgroundDrawable;->patternAlpha:F
 
-    mul-float v3, v3, v4
+    mul-float/2addr v3, v4
 
     float-to-int v3, v3
 
@@ -2175,9 +2175,9 @@
 
     move-result v6
 
-    mul-float v2, v2, v6
+    mul-float/2addr v2, v6
 
-    mul-float v3, v3, v6
+    mul-float/2addr v3, v6
 
     sub-float/2addr v4, v2
 
@@ -2230,7 +2230,7 @@
 
     iget v2, p0, Lorg/telegram/ui/Components/MotionBackgroundDrawable;->backgroundAlpha:F
 
-    mul-float v1, v1, v2
+    mul-float/2addr v1, v2
 
     float-to-int v1, v1
 
@@ -2348,7 +2348,7 @@
 
     iget v3, p0, Lorg/telegram/ui/Components/MotionBackgroundDrawable;->backgroundAlpha:F
 
-    mul-float v2, v2, v3
+    mul-float/2addr v2, v3
 
     float-to-int v2, v2
 
@@ -2407,7 +2407,7 @@
 
     iget v2, p0, Lorg/telegram/ui/Components/MotionBackgroundDrawable;->backgroundAlpha:F
 
-    mul-float v2, v2, v1
+    mul-float/2addr v2, v1
 
     float-to-int v1, v2
 
@@ -2451,7 +2451,7 @@
     .line 544
     iget v3, p0, Lorg/telegram/ui/Components/MotionBackgroundDrawable;->backgroundAlpha:F
 
-    mul-float v2, v2, v3
+    mul-float/2addr v2, v3
 
     float-to-int v2, v2
 
@@ -2548,9 +2548,9 @@
 
     move-result v6
 
-    mul-float v2, v2, v6
+    mul-float/2addr v2, v6
 
-    mul-float v3, v3, v6
+    mul-float/2addr v3, v6
 
     sub-float v2, v4, v2
 
@@ -2646,9 +2646,9 @@
 
     move-result v7
 
-    mul-float v0, v0, v7
+    mul-float/2addr v0, v7
 
-    mul-float v2, v2, v7
+    mul-float/2addr v2, v7
 
     sub-float/2addr v4, v0
 
@@ -2750,11 +2750,11 @@
 
     int-to-float v3, v3
 
-    mul-float v2, v2, v3
+    mul-float/2addr v2, v3
 
     iget v3, p0, Lorg/telegram/ui/Components/MotionBackgroundDrawable;->patternAlpha:F
 
-    mul-float v2, v2, v3
+    mul-float/2addr v2, v3
 
     float-to-int v2, v2
 
@@ -2861,9 +2861,9 @@
 
     move-result v7
 
-    mul-float v1, v1, v7
+    mul-float/2addr v1, v7
 
-    mul-float v2, v2, v7
+    mul-float/2addr v2, v7
 
     sub-float/2addr v4, v1
 
@@ -2902,7 +2902,7 @@
 
     const/high16 v4, 0x437f0000    # 255.0f
 
-    mul-float v2, v2, v4
+    mul-float/2addr v2, v4
 
     float-to-int v2, v2
 
@@ -2981,11 +2981,11 @@
 
     iget v3, p0, Lorg/telegram/ui/Components/MotionBackgroundDrawable;->patternAlpha:F
 
-    mul-float v2, v2, v3
+    mul-float/2addr v2, v3
 
     sub-float/2addr v12, v0
 
-    mul-float v2, v2, v12
+    mul-float/2addr v2, v12
 
     float-to-int v0, v2
 
@@ -3009,11 +3009,11 @@
 
     iget v2, p0, Lorg/telegram/ui/Components/MotionBackgroundDrawable;->patternAlpha:F
 
-    mul-float v1, v1, v2
+    mul-float/2addr v1, v2
 
     iget v2, p0, Lorg/telegram/ui/Components/MotionBackgroundDrawable;->posAnimationProgress:F
 
-    mul-float v1, v1, v2
+    mul-float/2addr v1, v2
 
     float-to-int v1, v1
 
@@ -3160,9 +3160,9 @@
 
     move-result v7
 
-    mul-float v2, v2, v7
+    mul-float/2addr v2, v7
 
-    mul-float v3, v3, v7
+    mul-float/2addr v3, v7
 
     sub-float/2addr v4, v2
 
@@ -3240,11 +3240,11 @@
 
     int-to-float v3, v3
 
-    mul-float v2, v2, v3
+    mul-float/2addr v2, v3
 
     iget v3, p0, Lorg/telegram/ui/Components/MotionBackgroundDrawable;->patternAlpha:F
 
-    mul-float v2, v2, v3
+    mul-float/2addr v2, v3
 
     float-to-int v2, v2
 
@@ -3317,9 +3317,9 @@
 
     move-result v2
 
-    mul-float v0, v0, v2
+    mul-float/2addr v0, v2
 
-    mul-float v1, v1, v2
+    mul-float/2addr v1, v2
 
     sub-float/2addr v4, v0
 
@@ -3362,11 +3362,11 @@
 
     int-to-float v2, v2
 
-    mul-float v1, v1, v2
+    mul-float/2addr v1, v2
 
     iget v2, p0, Lorg/telegram/ui/Components/MotionBackgroundDrawable;->patternAlpha:F
 
-    mul-float v1, v1, v2
+    mul-float/2addr v1, v2
 
     float-to-int v1, v1
 
@@ -3836,7 +3836,7 @@
 
     if-ne v2, v0, :cond_0
 
-    const/4 v1, 0x1
+    move v1, v3
 
     :cond_0
     return v1
@@ -4219,7 +4219,7 @@
 
     int-to-float v2, v2
 
-    mul-float v2, v2, v0
+    mul-float/2addr v2, v0
 
     sub-float/2addr v1, v2
 
@@ -4779,9 +4779,9 @@
 
     const-wide/16 v5, 0x14
 
-    cmp-long v7, v3, v5
+    cmp-long v5, v3, v5
 
-    if-lez v7, :cond_0
+    if-lez v5, :cond_0
 
     const-wide/16 v3, 0x11
 
@@ -4791,9 +4791,9 @@
 
     const-wide/16 v1, 0x1
 
-    cmp-long v5, v3, v1
+    cmp-long v1, v3, v1
 
-    if-gtz v5, :cond_1
+    if-gtz v1, :cond_1
 
     return-void
 
@@ -4840,13 +4840,13 @@
     goto :goto_0
 
     :cond_3
-    const/4 v7, 0x0
+    move v7, v8
 
     goto :goto_1
 
     :cond_4
     :goto_0
-    const/4 v7, 0x1
+    move v7, v9
 
     :goto_1
     const/4 v10, 0x2
@@ -4862,7 +4862,7 @@
     .line 872
     iget v3, v0, Lorg/telegram/ui/Components/MotionBackgroundDrawable;->indeterminateSpeedScale:F
 
-    mul-float v1, v1, v3
+    mul-float/2addr v1, v3
 
     add-float/2addr v6, v1
 
@@ -4889,7 +4889,7 @@
 
     int-to-float v4, v4
 
-    mul-float v4, v4, v1
+    mul-float/2addr v4, v1
 
     sub-float/2addr v3, v4
 
@@ -4899,7 +4899,7 @@
 
     move v15, v1
 
-    const/4 v7, 0x1
+    move v7, v9
 
     goto/16 :goto_d
 
@@ -4918,35 +4918,35 @@
 
     move-result v1
 
-    const/high16 v6, 0x3f400000    # 0.75f
+    const/high16 v6, 0x3e800000    # 0.25f
 
-    const/high16 v12, 0x3f000000    # 0.5f
+    cmpg-float v12, v1, v6
 
-    const/high16 v13, 0x3e800000    # 0.25f
+    const/high16 v13, 0x3f400000    # 0.75f
 
-    cmpg-float v14, v1, v13
+    const/high16 v14, 0x3f000000    # 0.5f
 
-    if-gtz v14, :cond_7
+    if-gtz v12, :cond_7
 
-    const/4 v1, 0x0
+    move v1, v8
 
     goto :goto_2
 
     :cond_7
-    cmpg-float v14, v1, v12
+    cmpg-float v12, v1, v14
 
-    if-gtz v14, :cond_8
+    if-gtz v12, :cond_8
 
-    const/4 v1, 0x1
+    move v1, v9
 
     goto :goto_2
 
     :cond_8
-    cmpg-float v1, v1, v6
+    cmpg-float v1, v1, v13
 
     if-gtz v1, :cond_9
 
-    const/4 v1, 0x2
+    move v1, v10
 
     goto :goto_2
 
@@ -4955,12 +4955,12 @@
 
     .line 893
     :goto_2
-    iget-object v14, v0, Lorg/telegram/ui/Components/MotionBackgroundDrawable;->animationProgressProvider:Lorg/telegram/messenger/GenericProvider;
+    iget-object v12, v0, Lorg/telegram/ui/Components/MotionBackgroundDrawable;->animationProgressProvider:Lorg/telegram/messenger/GenericProvider;
 
-    if-eqz v14, :cond_a
+    if-eqz v12, :cond_a
 
     .line 894
-    invoke-interface {v14, v0}, Lorg/telegram/messenger/GenericProvider;->provide(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {v12, v0}, Lorg/telegram/messenger/GenericProvider;->provide(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v3
 
@@ -4976,7 +4976,7 @@
 
     .line 896
     :cond_a
-    iget v14, v0, Lorg/telegram/ui/Components/MotionBackgroundDrawable;->posAnimationProgress:F
+    iget v12, v0, Lorg/telegram/ui/Components/MotionBackgroundDrawable;->posAnimationProgress:F
 
     long-to-float v3, v3
 
@@ -4994,9 +4994,9 @@
     :goto_3
     div-float/2addr v3, v4
 
-    add-float/2addr v14, v3
+    add-float/2addr v12, v3
 
-    iput v14, v0, Lorg/telegram/ui/Components/MotionBackgroundDrawable;->posAnimationProgress:F
+    iput v12, v0, Lorg/telegram/ui/Components/MotionBackgroundDrawable;->posAnimationProgress:F
 
     .line 898
     :goto_4
@@ -5055,21 +5055,21 @@
     :cond_f
     if-nez v1, :cond_10
 
-    cmpl-float v4, v3, v13
+    cmpl-float v4, v3, v6
 
     if-gtz v4, :cond_12
 
     :cond_10
     if-ne v1, v9, :cond_11
 
-    cmpl-float v4, v3, v12
+    cmpl-float v4, v3, v14
 
     if-gtz v4, :cond_12
 
     :cond_11
     if-ne v1, v10, :cond_14
 
-    cmpl-float v1, v3, v6
+    cmpl-float v1, v3, v13
 
     if-lez v1, :cond_14
 
@@ -5108,35 +5108,35 @@
 
     :cond_14
     :goto_6
-    cmpg-float v1, v3, v13
+    cmpg-float v1, v3, v6
 
     if-gtz v1, :cond_15
 
     :goto_7
-    div-float/2addr v3, v13
+    div-float/2addr v3, v6
 
     goto :goto_8
 
     :cond_15
-    cmpg-float v1, v3, v12
+    cmpg-float v1, v3, v14
 
     if-gtz v1, :cond_16
 
-    sub-float/2addr v3, v13
+    sub-float/2addr v3, v6
 
     goto :goto_7
 
     :cond_16
-    cmpg-float v1, v3, v6
+    cmpg-float v1, v3, v13
 
     if-gtz v1, :cond_17
 
-    sub-float/2addr v3, v12
+    sub-float/2addr v3, v14
 
     goto :goto_7
 
     :cond_17
-    sub-float/2addr v3, v6
+    sub-float/2addr v3, v13
 
     goto :goto_7
 
@@ -5168,7 +5168,7 @@
     iput v8, v0, Lorg/telegram/ui/Components/MotionBackgroundDrawable;->phase:I
 
     :cond_18
-    const/high16 v1, 0x3f800000    # 1.0f
+    move v1, v5
 
     goto :goto_c
 
@@ -5302,7 +5302,7 @@
     iput v8, v0, Lorg/telegram/ui/Components/MotionBackgroundDrawable;->phase:I
 
     :cond_21
-    const/high16 v15, 0x3f800000    # 1.0f
+    move v15, v5
 
     goto :goto_d
 
@@ -5398,7 +5398,7 @@
     :goto_e
     int-to-float v4, v3
 
-    mul-float v4, v4, v1
+    mul-float/2addr v4, v1
 
     sub-float/2addr v15, v4
 
@@ -5409,7 +5409,7 @@
 
     const/high16 v4, 0x437f0000    # 255.0f
 
-    mul-float v15, v15, v4
+    mul-float/2addr v15, v4
 
     float-to-int v4, v15
 

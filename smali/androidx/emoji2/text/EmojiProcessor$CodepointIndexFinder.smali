@@ -40,7 +40,7 @@
     const/4 v0, 0x0
 
     :goto_0
-    const/4 v2, 0x0
+    move v2, v0
 
     :goto_1
     if-nez p2, :cond_2
@@ -138,7 +138,7 @@
     const/4 v2, 0x0
 
     :goto_0
-    const/4 v3, 0x0
+    move v3, v2
 
     :goto_1
     if-nez p2, :cond_2

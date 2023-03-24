@@ -122,7 +122,7 @@
     .line 340
     array-length v2, v1
 
-    const/4 v3, 0x0
+    move v3, v0
 
     :goto_0
     if-ge v3, v2, :cond_6
@@ -187,7 +187,7 @@
 
     if-gez p3, :cond_1
 
-    goto :goto_1
+    goto/16 :goto_1
 
     .line 385
     :cond_1
@@ -280,7 +280,7 @@
     .line 412
     array-length v1, p4
 
-    const/4 v2, 0x0
+    move v2, v0
 
     :goto_0
     if-ge v2, v1, :cond_6
@@ -360,7 +360,7 @@
 
     if-eq p1, v0, :cond_0
 
-    const/4 p1, 0x0
+    move p1, v2
 
     goto :goto_0
 
@@ -572,7 +572,7 @@
     .line 197
     array-length v4, v3
 
-    const/4 v5, 0x0
+    move v5, v2
 
     :goto_2
     if-ge v5, v4, :cond_5
@@ -667,11 +667,11 @@
 
     move-result v4
 
-    move-object v2, v1
-
     move v5, v4
 
-    const/4 v4, 0x0
+    move v4, v2
+
+    move-object v2, v1
 
     :cond_8
     :goto_3

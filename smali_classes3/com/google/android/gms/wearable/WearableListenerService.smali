@@ -202,7 +202,7 @@
 
     if-eqz v1, :cond_2
 
-    const/4 v1, 0x2
+    move v1, v5
 
     goto :goto_1
 
@@ -215,7 +215,7 @@
 
     if-eqz v1, :cond_2
 
-    const/4 v1, 0x1
+    move v1, v6
 
     goto :goto_1
 
@@ -228,7 +228,7 @@
 
     if-eqz v1, :cond_2
 
-    const/4 v1, 0x4
+    move v1, v4
 
     goto :goto_1
 
@@ -241,7 +241,7 @@
 
     if-eqz v1, :cond_2
 
-    const/4 v1, 0x3
+    move v1, v7
 
     goto :goto_1
 
@@ -254,7 +254,7 @@
 
     if-eqz v1, :cond_2
 
-    const/4 v1, 0x5
+    move v1, v3
 
     goto :goto_1
 

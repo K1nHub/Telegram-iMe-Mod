@@ -692,13 +692,13 @@
 
     int-to-float v0, v0
 
-    const/4 v1, 0x1
-
     cmpg-float p1, p1, v0
+
+    const/4 v0, 0x1
 
     if-gtz p1, :cond_0
 
-    return v1
+    return v0
 
     .line 1106
     :cond_0
@@ -713,10 +713,10 @@
     goto :goto_0
 
     :cond_1
-    const/4 v1, 0x0
+    const/4 v0, 0x0
 
     :goto_0
-    return v1
+    return v0
 .end method
 
 .method public onTransitionAnimationProgress(ZF)V

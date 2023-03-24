@@ -156,12 +156,12 @@
 
     if-le v3, v2, :cond_0
 
-    const/4 v2, 0x1
+    move v2, v4
 
     goto :goto_0
 
     :cond_0
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_0
     iput-boolean v2, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview;->isPortrait:Z
@@ -224,16 +224,14 @@
 
     const/16 v3, 0x40
 
-    const/16 v8, 0x40
-
     goto :goto_1
 
     :cond_1
     const/16 v3, 0x38
 
-    const/16 v8, 0x38
-
     :goto_1
+    move v8, v3
+
     const/4 v9, 0x0
 
     const/16 v10, 0x28
@@ -957,7 +955,7 @@
 
     int-to-float v3, v3
 
-    mul-float v4, v4, v3
+    mul-float/2addr v4, v3
 
     invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->dp(F)I
 
@@ -1446,12 +1444,12 @@
 
     if-le p2, p1, :cond_0
 
-    const/4 p1, 0x1
+    move p1, p4
 
     goto :goto_0
 
     :cond_0
-    const/4 p1, 0x0
+    move p1, p3
 
     .line 909
     :goto_0

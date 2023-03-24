@@ -20,7 +20,7 @@ import androidx.core.graphics.ColorUtils;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.C3286R;
+import org.telegram.messenger.C3301R;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.p048ui.ActionBar.Theme;
 import org.telegram.p048ui.TopicsFragment;
@@ -148,7 +148,7 @@ public class PullForegroundDrawable {
         this.releaseTooltipLayout = staticLayout2;
         this.releaseTooltipLayoutWidth = staticLayout2.getLineWidth(0);
         try {
-            this.generalTopicDrawable = ApplicationLoader.applicationContext.getResources().getDrawable(C3286R.C3288drawable.msg_filled_general).mutate();
+            this.generalTopicDrawable = ApplicationLoader.applicationContext.getResources().getDrawable(C3301R.C3303drawable.msg_filled_general).mutate();
         } catch (Exception unused) {
         }
     }
@@ -425,7 +425,7 @@ public class PullForegroundDrawable {
                 if (valueAnimator != null) {
                     valueAnimator.cancel();
                 }
-                this.textSwappingProgress = z ? BitmapDescriptorFactory.HUE_RED : 1.0f;
+                this.textSwappingProgress = z ? 0.0f : 1.0f;
             } else {
                 ValueAnimator valueAnimator2 = this.textSwipingAnimator;
                 if (valueAnimator2 != null) {
@@ -433,7 +433,7 @@ public class PullForegroundDrawable {
                 }
                 float[] fArr = new float[2];
                 fArr[0] = this.textSwappingProgress;
-                fArr[1] = z ? BitmapDescriptorFactory.HUE_RED : 1.0f;
+                fArr[1] = z ? 0.0f : 1.0f;
                 ValueAnimator ofFloat = ValueAnimator.ofFloat(fArr);
                 this.textSwipingAnimator = ofFloat;
                 ofFloat.addUpdateListener(this.textSwappingUpdateListener);
@@ -450,7 +450,7 @@ public class PullForegroundDrawable {
             }
             float[] fArr2 = new float[2];
             fArr2[0] = this.arrowRotateProgress;
-            fArr2[1] = this.arrowAnimateTo ? BitmapDescriptorFactory.HUE_RED : 1.0f;
+            fArr2[1] = this.arrowAnimateTo ? 0.0f : 1.0f;
             ValueAnimator ofFloat2 = ValueAnimator.ofFloat(fArr2);
             this.arrowRotateAnimator = ofFloat2;
             ofFloat2.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.PullForegroundDrawable$$ExternalSyntheticLambda2

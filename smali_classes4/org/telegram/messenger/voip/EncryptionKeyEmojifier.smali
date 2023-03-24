@@ -2287,9 +2287,9 @@
 
     rem-long/2addr v4, v6
 
-    long-to-int v5, v4
+    long-to-int v4, v4
 
-    aget-object v3, v3, v5
+    aget-object v3, v3, v4
 
     aput-object v3, v1, v2
 

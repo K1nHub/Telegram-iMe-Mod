@@ -29,7 +29,7 @@
 .method constructor <init>(Lorg/telegram/ui/DialogsActivity$33;Landroid/graphics/Rect;)V
     .locals 0
 
-    .line 6519
+    .line 6582
     iput-object p1, p0, Lorg/telegram/ui/DialogsActivity$33$1;->this$1:Lorg/telegram/ui/DialogsActivity$33;
 
     iput-object p2, p0, Lorg/telegram/ui/DialogsActivity$33$1;->val$rect:Landroid/graphics/Rect;
@@ -40,7 +40,7 @@
 
     new-array p1, p1, [I
 
-    .line 6521
+    .line 6584
     iput-object p1, p0, Lorg/telegram/ui/DialogsActivity$33$1;->pos:[I
 
     return-void
@@ -51,7 +51,7 @@
 .method public onTouch(Landroid/view/View;Landroid/view/MotionEvent;)Z
     .locals 7
 
-    .line 6525
+    .line 6588
     invoke-virtual {p2}, Landroid/view/MotionEvent;->getActionMasked()I
 
     move-result p1
@@ -60,12 +60,12 @@
 
     if-nez p1, :cond_0
 
-    .line 6526
+    .line 6589
     iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$33$1;->this$1:Lorg/telegram/ui/DialogsActivity$33;
 
     iget-object p1, p1, Lorg/telegram/ui/DialogsActivity$33;->this$0:Lorg/telegram/ui/DialogsActivity;
 
-    invoke-static {p1}, Lorg/telegram/ui/DialogsActivity;->access$26200(Lorg/telegram/ui/DialogsActivity;)Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;
+    invoke-static {p1}, Lorg/telegram/ui/DialogsActivity;->access$26400(Lorg/telegram/ui/DialogsActivity;)Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;
 
     move-result-object p1
 
@@ -75,7 +75,7 @@
 
     iget-object p1, p1, Lorg/telegram/ui/DialogsActivity$33;->this$0:Lorg/telegram/ui/DialogsActivity;
 
-    invoke-static {p1}, Lorg/telegram/ui/DialogsActivity;->access$26200(Lorg/telegram/ui/DialogsActivity;)Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;
+    invoke-static {p1}, Lorg/telegram/ui/DialogsActivity;->access$26400(Lorg/telegram/ui/DialogsActivity;)Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;
 
     move-result-object p1
 
@@ -85,12 +85,12 @@
 
     if-eqz p1, :cond_1
 
-    .line 6527
+    .line 6590
     iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$33$1;->this$1:Lorg/telegram/ui/DialogsActivity$33;
 
     iget-object p1, p1, Lorg/telegram/ui/DialogsActivity$33;->this$0:Lorg/telegram/ui/DialogsActivity;
 
-    invoke-static {p1}, Lorg/telegram/ui/DialogsActivity;->access$26200(Lorg/telegram/ui/DialogsActivity;)Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;
+    invoke-static {p1}, Lorg/telegram/ui/DialogsActivity;->access$26400(Lorg/telegram/ui/DialogsActivity;)Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;
 
     move-result-object p1
 
@@ -98,12 +98,12 @@
 
     move-result-object p1
 
-    .line 6528
+    .line 6591
     iget-object v1, p0, Lorg/telegram/ui/DialogsActivity$33$1;->pos:[I
 
     invoke-virtual {p1, v1}, Landroid/view/View;->getLocationInWindow([I)V
 
-    .line 6529
+    .line 6592
     iget-object v1, p0, Lorg/telegram/ui/DialogsActivity$33$1;->val$rect:Landroid/graphics/Rect;
 
     iget-object v2, p0, Lorg/telegram/ui/DialogsActivity$33$1;->pos:[I
@@ -134,7 +134,7 @@
 
     invoke-virtual {v1, v3, v5, v2, v4}, Landroid/graphics/Rect;->set(IIII)V
 
-    .line 6530
+    .line 6593
     iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$33$1;->val$rect:Landroid/graphics/Rect;
 
     invoke-virtual {p2}, Landroid/view/MotionEvent;->getX()F
@@ -155,12 +155,12 @@
 
     if-nez p1, :cond_1
 
-    .line 6531
+    .line 6594
     iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$33$1;->this$1:Lorg/telegram/ui/DialogsActivity$33;
 
     iget-object p1, p1, Lorg/telegram/ui/DialogsActivity$33;->this$0:Lorg/telegram/ui/DialogsActivity;
 
-    invoke-static {p1}, Lorg/telegram/ui/DialogsActivity;->access$26200(Lorg/telegram/ui/DialogsActivity;)Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;
+    invoke-static {p1}, Lorg/telegram/ui/DialogsActivity;->access$26400(Lorg/telegram/ui/DialogsActivity;)Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;
 
     move-result-object p1
 
@@ -168,7 +168,7 @@
 
     goto :goto_0
 
-    .line 6534
+    .line 6597
     :cond_0
     invoke-virtual {p2}, Landroid/view/MotionEvent;->getActionMasked()I
 
@@ -178,12 +178,12 @@
 
     if-ne p1, p2, :cond_1
 
-    .line 6535
+    .line 6598
     iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$33$1;->this$1:Lorg/telegram/ui/DialogsActivity$33;
 
     iget-object p1, p1, Lorg/telegram/ui/DialogsActivity$33;->this$0:Lorg/telegram/ui/DialogsActivity;
 
-    invoke-static {p1}, Lorg/telegram/ui/DialogsActivity;->access$26200(Lorg/telegram/ui/DialogsActivity;)Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;
+    invoke-static {p1}, Lorg/telegram/ui/DialogsActivity;->access$26400(Lorg/telegram/ui/DialogsActivity;)Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;
 
     move-result-object p1
 
@@ -193,7 +193,7 @@
 
     iget-object p1, p1, Lorg/telegram/ui/DialogsActivity$33;->this$0:Lorg/telegram/ui/DialogsActivity;
 
-    invoke-static {p1}, Lorg/telegram/ui/DialogsActivity;->access$26200(Lorg/telegram/ui/DialogsActivity;)Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;
+    invoke-static {p1}, Lorg/telegram/ui/DialogsActivity;->access$26400(Lorg/telegram/ui/DialogsActivity;)Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;
 
     move-result-object p1
 
@@ -203,12 +203,12 @@
 
     if-eqz p1, :cond_1
 
-    .line 6536
+    .line 6599
     iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$33$1;->this$1:Lorg/telegram/ui/DialogsActivity$33;
 
     iget-object p1, p1, Lorg/telegram/ui/DialogsActivity$33;->this$0:Lorg/telegram/ui/DialogsActivity;
 
-    invoke-static {p1}, Lorg/telegram/ui/DialogsActivity;->access$26200(Lorg/telegram/ui/DialogsActivity;)Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;
+    invoke-static {p1}, Lorg/telegram/ui/DialogsActivity;->access$26400(Lorg/telegram/ui/DialogsActivity;)Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;
 
     move-result-object p1
 

@@ -178,11 +178,11 @@ public class LoadingDrawable extends Drawable {
         this.disappearStart = -1L;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:61:0x022c  */
-    /* JADX WARN: Removed duplicated region for block: B:73:0x02fc  */
-    /* JADX WARN: Removed duplicated region for block: B:81:0x0323  */
-    /* JADX WARN: Removed duplicated region for block: B:84:0x032f  */
-    /* JADX WARN: Removed duplicated region for block: B:97:0x03d8  */
+    /* JADX WARN: Removed duplicated region for block: B:61:0x0220  */
+    /* JADX WARN: Removed duplicated region for block: B:73:0x02f0  */
+    /* JADX WARN: Removed duplicated region for block: B:81:0x0317  */
+    /* JADX WARN: Removed duplicated region for block: B:84:0x0323  */
+    /* JADX WARN: Removed duplicated region for block: B:97:0x03ca  */
     /* JADX WARN: Removed duplicated region for block: B:99:? A[RETURN, SYNTHETIC] */
     @Override // android.graphics.drawable.Drawable
     /*
@@ -191,7 +191,7 @@ public class LoadingDrawable extends Drawable {
     */
     public void draw(android.graphics.Canvas r25) {
         /*
-            Method dump skipped, instructions count: 1074
+            Method dump skipped, instructions count: 1060
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: org.telegram.p048ui.Components.LoadingDrawable.draw(android.graphics.Canvas):void");

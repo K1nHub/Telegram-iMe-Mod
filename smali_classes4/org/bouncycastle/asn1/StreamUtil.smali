@@ -32,7 +32,7 @@
 
     if-le p0, v1, :cond_1
 
-    const/4 v1, 0x1
+    move v1, v0
 
     :goto_0
     ushr-int/lit8 p0, p0, 0x8
@@ -194,8 +194,6 @@
     return p0
 
     :catch_0
-    nop
-
     :cond_4
     sget-wide v3, Lorg/bouncycastle/asn1/StreamUtil;->MAX_MEMORY:J
 

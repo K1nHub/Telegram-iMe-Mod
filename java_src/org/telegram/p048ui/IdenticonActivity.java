@@ -20,11 +20,10 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.C3286R;
+import org.telegram.messenger.C3301R;
 import org.telegram.messenger.Emoji;
 import org.telegram.messenger.EmojiData;
 import org.telegram.messenger.FileLog;
@@ -33,7 +32,7 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.Utilities;
 import org.telegram.p048ui.ActionBar.BaseFragment;
-import org.telegram.p048ui.ActionBar.C3351ActionBar;
+import org.telegram.p048ui.ActionBar.C3366ActionBar;
 import org.telegram.p048ui.ActionBar.Theme;
 import org.telegram.p048ui.ActionBar.ThemeDescription;
 import org.telegram.p048ui.Components.IdenticonDrawable;
@@ -96,11 +95,11 @@ public class IdenticonActivity extends BaseFragment implements NotificationCente
 
     @Override // org.telegram.p048ui.ActionBar.BaseFragment
     public View createView(Context context) {
-        this.actionBar.setBackButtonImage(C3286R.C3288drawable.ic_ab_back);
+        this.actionBar.setBackButtonImage(C3301R.C3303drawable.ic_ab_back);
         this.actionBar.setAllowOverlayTitle(true);
-        this.actionBar.setTitle(LocaleController.getString("EncryptionKey", C3286R.string.EncryptionKey));
-        this.actionBar.setActionBarMenuOnItemClick(new C3351ActionBar.ActionBarMenuOnItemClick() { // from class: org.telegram.ui.IdenticonActivity.1
-            @Override // org.telegram.p048ui.ActionBar.C3351ActionBar.ActionBarMenuOnItemClick
+        this.actionBar.setTitle(LocaleController.getString("EncryptionKey", C3301R.string.EncryptionKey));
+        this.actionBar.setActionBarMenuOnItemClick(new C3366ActionBar.ActionBarMenuOnItemClick() { // from class: org.telegram.ui.IdenticonActivity.1
+            @Override // org.telegram.p048ui.ActionBar.C3366ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i) {
                 if (i == -1) {
                     IdenticonActivity.this.finishFragment();
@@ -203,12 +202,12 @@ public class IdenticonActivity extends BaseFragment implements NotificationCente
             }
             this.codeTextView.setText(spannableStringBuilder.toString());
             spannableStringBuilder.clear();
-            int i6 = C3286R.string.EncryptionKeyDescription;
+            int i6 = C3301R.string.EncryptionKeyDescription;
             String str = user.first_name;
             spannableStringBuilder.append((CharSequence) AndroidUtilities.replaceTags(LocaleController.formatString("EncryptionKeyDescription", i6, str, str)));
             int indexOf = spannableStringBuilder.toString().indexOf("telegram.org");
             if (indexOf != -1) {
-                spannableStringBuilder.setSpan(new URLSpanReplacement(LocaleController.getString("EncryptionKeyLink", C3286R.string.EncryptionKeyLink)), indexOf, indexOf + 12, 33);
+                spannableStringBuilder.setSpan(new URLSpanReplacement(LocaleController.getString("EncryptionKeyLink", C3301R.string.EncryptionKeyLink)), indexOf, indexOf + 12, 33);
             }
             this.textView.setText(spannableStringBuilder);
         }
@@ -249,27 +248,27 @@ public class IdenticonActivity extends BaseFragment implements NotificationCente
             Animator[] animatorArr = new Animator[6];
             TextView textView = this.emojiTextView;
             float[] fArr = new float[1];
-            fArr[0] = this.emojiSelected ? 1.0f : BitmapDescriptorFactory.HUE_RED;
+            fArr[0] = this.emojiSelected ? 1.0f : 0.0f;
             animatorArr[0] = ObjectAnimator.ofFloat(textView, "alpha", fArr);
             TextView textView2 = this.codeTextView;
             float[] fArr2 = new float[1];
-            fArr2[0] = this.emojiSelected ? BitmapDescriptorFactory.HUE_RED : 1.0f;
+            fArr2[0] = this.emojiSelected ? 0.0f : 1.0f;
             animatorArr[1] = ObjectAnimator.ofFloat(textView2, "alpha", fArr2);
             TextView textView3 = this.emojiTextView;
             float[] fArr3 = new float[1];
-            fArr3[0] = this.emojiSelected ? 1.0f : BitmapDescriptorFactory.HUE_RED;
+            fArr3[0] = this.emojiSelected ? 1.0f : 0.0f;
             animatorArr[2] = ObjectAnimator.ofFloat(textView3, "scaleX", fArr3);
             TextView textView4 = this.emojiTextView;
             float[] fArr4 = new float[1];
-            fArr4[0] = this.emojiSelected ? 1.0f : BitmapDescriptorFactory.HUE_RED;
+            fArr4[0] = this.emojiSelected ? 1.0f : 0.0f;
             animatorArr[3] = ObjectAnimator.ofFloat(textView4, "scaleY", fArr4);
             TextView textView5 = this.codeTextView;
             float[] fArr5 = new float[1];
-            fArr5[0] = this.emojiSelected ? BitmapDescriptorFactory.HUE_RED : 1.0f;
+            fArr5[0] = this.emojiSelected ? 0.0f : 1.0f;
             animatorArr[4] = ObjectAnimator.ofFloat(textView5, "scaleX", fArr5);
             TextView textView6 = this.codeTextView;
             float[] fArr6 = new float[1];
-            fArr6[0] = this.emojiSelected ? BitmapDescriptorFactory.HUE_RED : 1.0f;
+            fArr6[0] = this.emojiSelected ? 0.0f : 1.0f;
             animatorArr[5] = ObjectAnimator.ofFloat(textView6, "scaleY", fArr6);
             animatorSet2.playTogether(animatorArr);
             this.animatorSet.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.IdenticonActivity.3
@@ -284,12 +283,12 @@ public class IdenticonActivity extends BaseFragment implements NotificationCente
             this.animatorSet.setDuration(150L);
             this.animatorSet.start();
         } else {
-            this.emojiTextView.setAlpha(this.emojiSelected ? 1.0f : BitmapDescriptorFactory.HUE_RED);
-            this.codeTextView.setAlpha(this.emojiSelected ? BitmapDescriptorFactory.HUE_RED : 1.0f);
-            this.emojiTextView.setScaleX(this.emojiSelected ? 1.0f : BitmapDescriptorFactory.HUE_RED);
-            this.emojiTextView.setScaleY(this.emojiSelected ? 1.0f : BitmapDescriptorFactory.HUE_RED);
-            this.codeTextView.setScaleX(this.emojiSelected ? BitmapDescriptorFactory.HUE_RED : 1.0f);
-            this.codeTextView.setScaleY(this.emojiSelected ? BitmapDescriptorFactory.HUE_RED : 1.0f);
+            this.emojiTextView.setAlpha(this.emojiSelected ? 1.0f : 0.0f);
+            this.codeTextView.setAlpha(this.emojiSelected ? 0.0f : 1.0f);
+            this.emojiTextView.setScaleX(this.emojiSelected ? 1.0f : 0.0f);
+            this.emojiTextView.setScaleY(this.emojiSelected ? 1.0f : 0.0f);
+            this.codeTextView.setScaleX(this.emojiSelected ? 0.0f : 1.0f);
+            this.codeTextView.setScaleY(this.emojiSelected ? 0.0f : 1.0f);
         }
         this.emojiTextView.setTag(!this.emojiSelected ? "chat_emojiPanelIcon" : "chat_emojiPanelIconSelected");
     }

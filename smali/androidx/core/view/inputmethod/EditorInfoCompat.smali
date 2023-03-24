@@ -402,7 +402,7 @@
 
     if-le v0, v2, :cond_0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     goto :goto_0
 
@@ -423,7 +423,7 @@
 
     int-to-double v7, v4
 
-    mul-double v7, v7, v5
+    mul-double/2addr v7, v5
 
     double-to-int v5, v7
 

@@ -58,23 +58,23 @@
         }
     .end annotation
 
-    .line 47
+    .line 48
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 48
+    .line 49
     iput-object p1, p0, Lcom/google/protobuf/MessageSetSchema;->unknownFieldSchema:Lcom/google/protobuf/UnknownFieldSchema;
 
-    .line 49
+    .line 50
     invoke-virtual {p2, p3}, Lcom/google/protobuf/ExtensionSchema;->hasExtensions(Lcom/google/protobuf/MessageLite;)Z
 
     move-result p1
 
     iput-boolean p1, p0, Lcom/google/protobuf/MessageSetSchema;->hasExtensions:Z
 
-    .line 50
+    .line 51
     iput-object p2, p0, Lcom/google/protobuf/MessageSetSchema;->extensionSchema:Lcom/google/protobuf/ExtensionSchema;
 
-    .line 51
+    .line 52
     iput-object p3, p0, Lcom/google/protobuf/MessageSetSchema;->defaultInstance:Lcom/google/protobuf/MessageLite;
 
     return-void
@@ -222,7 +222,7 @@
         }
     .end annotation
 
-    .line 58
+    .line 59
     new-instance v0, Lcom/google/protobuf/MessageSetSchema;
 
     invoke-direct {v0, p0, p1, p2}, Lcom/google/protobuf/MessageSetSchema;-><init>(Lcom/google/protobuf/UnknownFieldSchema;Lcom/google/protobuf/ExtensionSchema;Lcom/google/protobuf/MessageLite;)V
@@ -448,7 +448,7 @@
         }
     .end annotation
 
-    .line 127
+    .line 128
     invoke-virtual {p1, p2}, Lcom/google/protobuf/UnknownFieldSchema;->getFromMessage(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p2
@@ -468,21 +468,21 @@
         }
     .end annotation
 
-    .line 69
+    .line 70
     iget-object v0, p0, Lcom/google/protobuf/MessageSetSchema;->unknownFieldSchema:Lcom/google/protobuf/UnknownFieldSchema;
 
     invoke-virtual {v0, p1}, Lcom/google/protobuf/UnknownFieldSchema;->getFromMessage(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
-    .line 70
+    .line 71
     iget-object v1, p0, Lcom/google/protobuf/MessageSetSchema;->unknownFieldSchema:Lcom/google/protobuf/UnknownFieldSchema;
 
     invoke-virtual {v1, p2}, Lcom/google/protobuf/UnknownFieldSchema;->getFromMessage(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v1
 
-    .line 71
+    .line 72
     invoke-virtual {v0, v1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
 
     move-result v0
@@ -493,27 +493,27 @@
 
     return p1
 
-    .line 74
+    .line 75
     :cond_0
     iget-boolean v0, p0, Lcom/google/protobuf/MessageSetSchema;->hasExtensions:Z
 
     if-eqz v0, :cond_1
 
-    .line 75
+    .line 76
     iget-object v0, p0, Lcom/google/protobuf/MessageSetSchema;->extensionSchema:Lcom/google/protobuf/ExtensionSchema;
 
     invoke-virtual {v0, p1}, Lcom/google/protobuf/ExtensionSchema;->getExtensions(Ljava/lang/Object;)Lcom/google/protobuf/FieldSet;
 
     move-result-object p1
 
-    .line 76
+    .line 77
     iget-object v0, p0, Lcom/google/protobuf/MessageSetSchema;->extensionSchema:Lcom/google/protobuf/ExtensionSchema;
 
     invoke-virtual {v0, p2}, Lcom/google/protobuf/ExtensionSchema;->getExtensions(Ljava/lang/Object;)Lcom/google/protobuf/FieldSet;
 
     move-result-object p2
 
-    .line 77
+    .line 78
     invoke-virtual {p1, p2}, Lcom/google/protobuf/FieldSet;->equals(Ljava/lang/Object;)Z
 
     move-result p1
@@ -573,7 +573,7 @@
         }
     .end annotation
 
-    .line 84
+    .line 85
     iget-object v0, p0, Lcom/google/protobuf/MessageSetSchema;->unknownFieldSchema:Lcom/google/protobuf/UnknownFieldSchema;
 
     invoke-virtual {v0, p1}, Lcom/google/protobuf/UnknownFieldSchema;->getFromMessage(Ljava/lang/Object;)Ljava/lang/Object;
@@ -584,12 +584,12 @@
 
     move-result v0
 
-    .line 85
+    .line 86
     iget-boolean v1, p0, Lcom/google/protobuf/MessageSetSchema;->hasExtensions:Z
 
     if-eqz v1, :cond_0
 
-    .line 86
+    .line 87
     iget-object v1, p0, Lcom/google/protobuf/MessageSetSchema;->extensionSchema:Lcom/google/protobuf/ExtensionSchema;
 
     invoke-virtual {v1, p1}, Lcom/google/protobuf/ExtensionSchema;->getExtensions(Ljava/lang/Object;)Lcom/google/protobuf/FieldSet;
@@ -598,7 +598,7 @@
 
     mul-int/lit8 v0, v0, 0x35
 
-    .line 87
+    .line 88
     invoke-virtual {p1}, Lcom/google/protobuf/FieldSet;->hashCode()I
 
     move-result p1
@@ -670,7 +670,7 @@
         }
     .end annotation
 
-    .line 227
+    .line 228
     iget-object v1, p0, Lcom/google/protobuf/MessageSetSchema;->unknownFieldSchema:Lcom/google/protobuf/UnknownFieldSchema;
 
     iget-object v2, p0, Lcom/google/protobuf/MessageSetSchema;->extensionSchema:Lcom/google/protobuf/ExtensionSchema;
@@ -696,17 +696,17 @@
         }
     .end annotation
 
-    .line 94
+    .line 95
     iget-object v0, p0, Lcom/google/protobuf/MessageSetSchema;->unknownFieldSchema:Lcom/google/protobuf/UnknownFieldSchema;
 
     invoke-static {v0, p1, p2}, Lcom/google/protobuf/SchemaUtil;->mergeUnknownFields(Lcom/google/protobuf/UnknownFieldSchema;Ljava/lang/Object;Ljava/lang/Object;)V
 
-    .line 95
+    .line 96
     iget-boolean v0, p0, Lcom/google/protobuf/MessageSetSchema;->hasExtensions:Z
 
     if-eqz v0, :cond_0
 
-    .line 96
+    .line 97
     iget-object v0, p0, Lcom/google/protobuf/MessageSetSchema;->extensionSchema:Lcom/google/protobuf/ExtensionSchema;
 
     invoke-static {v0, p1, p2}, Lcom/google/protobuf/SchemaUtil;->mergeExtensions(Lcom/google/protobuf/ExtensionSchema;Ljava/lang/Object;Ljava/lang/Object;)V
@@ -731,33 +731,33 @@
         }
     .end annotation
 
-    .line 135
+    .line 136
     move-object v0, p1
 
     check-cast v0, Lcom/google/protobuf/GeneratedMessageLite;
 
     iget-object v1, v0, Lcom/google/protobuf/GeneratedMessageLite;->unknownFields:Lcom/google/protobuf/UnknownFieldSetLite;
 
-    .line 136
+    .line 137
     invoke-static {}, Lcom/google/protobuf/UnknownFieldSetLite;->getDefaultInstance()Lcom/google/protobuf/UnknownFieldSetLite;
 
     move-result-object v2
 
     if-ne v1, v2, :cond_0
 
-    .line 137
+    .line 138
     invoke-static {}, Lcom/google/protobuf/UnknownFieldSetLite;->newInstance()Lcom/google/protobuf/UnknownFieldSetLite;
 
     move-result-object v1
 
-    .line 138
+    .line 139
     iput-object v1, v0, Lcom/google/protobuf/GeneratedMessageLite;->unknownFields:Lcom/google/protobuf/UnknownFieldSetLite;
 
-    .line 140
+    .line 141
     :cond_0
     check-cast p1, Lcom/google/protobuf/GeneratedMessageLite$ExtendableMessage;
 
-    .line 141
+    .line 142
     invoke-virtual {p1}, Lcom/google/protobuf/GeneratedMessageLite$ExtendableMessage;->ensureExtensionsAreMutable()Lcom/google/protobuf/FieldSet;
 
     move-result-object p1
@@ -769,41 +769,41 @@
     :goto_0
     if-ge p3, p4, :cond_b
 
-    .line 144
+    .line 145
     invoke-static {p2, p3, p5}, Lcom/google/protobuf/ArrayDecoders;->decodeVarint32([BILcom/google/protobuf/ArrayDecoders$Registers;)I
 
     move-result v4
 
-    .line 145
+    .line 146
     iget p3, p5, Lcom/google/protobuf/ArrayDecoders$Registers;->int1:I
 
-    .line 146
+    .line 147
     sget v3, Lcom/google/protobuf/WireFormat;->MESSAGE_SET_ITEM_TAG:I
 
     const/4 v5, 0x2
 
     if-eq p3, v3, :cond_3
 
-    .line 147
+    .line 148
     invoke-static {p3}, Lcom/google/protobuf/WireFormat;->getTagWireType(I)I
 
     move-result v3
 
     if-ne v3, v5, :cond_2
 
-    .line 148
+    .line 149
     iget-object v2, p0, Lcom/google/protobuf/MessageSetSchema;->extensionSchema:Lcom/google/protobuf/ExtensionSchema;
 
     iget-object v3, p5, Lcom/google/protobuf/ArrayDecoders$Registers;->extensionRegistry:Lcom/google/protobuf/ExtensionRegistryLite;
 
     iget-object v5, p0, Lcom/google/protobuf/MessageSetSchema;->defaultInstance:Lcom/google/protobuf/MessageLite;
 
-    .line 151
+    .line 152
     invoke-static {p3}, Lcom/google/protobuf/WireFormat;->getTagFieldNumber(I)I
 
     move-result v6
 
-    .line 149
+    .line 150
     invoke-virtual {v2, v3, v5, v6}, Lcom/google/protobuf/ExtensionSchema;->findExtensionByNumber(Lcom/google/protobuf/ExtensionRegistryLite;Lcom/google/protobuf/MessageLite;I)Ljava/lang/Object;
 
     move-result-object v2
@@ -814,12 +814,12 @@
 
     if-eqz v8, :cond_1
 
-    .line 155
+    .line 156
     invoke-static {}, Lcom/google/protobuf/Protobuf;->getInstance()Lcom/google/protobuf/Protobuf;
 
     move-result-object p3
 
-    .line 156
+    .line 157
     invoke-virtual {v8}, Lcom/google/protobuf/GeneratedMessageLite$GeneratedExtension;->getMessageDefaultInstance()Lcom/google/protobuf/MessageLite;
 
     move-result-object v2
@@ -828,17 +828,17 @@
 
     move-result-object v2
 
-    .line 155
+    .line 156
     invoke-virtual {p3, v2}, Lcom/google/protobuf/Protobuf;->schemaFor(Ljava/lang/Class;)Lcom/google/protobuf/Schema;
 
     move-result-object p3
 
-    .line 154
+    .line 155
     invoke-static {p3, p2, v4, p4, p5}, Lcom/google/protobuf/ArrayDecoders;->decodeMessageField(Lcom/google/protobuf/Schema;[BIILcom/google/protobuf/ArrayDecoders$Registers;)I
 
     move-result p3
 
-    .line 158
+    .line 159
     iget-object v2, v8, Lcom/google/protobuf/GeneratedMessageLite$GeneratedExtension;->descriptor:Lcom/google/protobuf/GeneratedMessageLite$ExtensionDescriptor;
 
     iget-object v3, p5, Lcom/google/protobuf/ArrayDecoders$Registers;->object1:Ljava/lang/Object;
@@ -858,7 +858,7 @@
 
     move-object v7, p5
 
-    .line 161
+    .line 162
     invoke-static/range {v2 .. v7}, Lcom/google/protobuf/ArrayDecoders;->decodeUnknownField(I[BIILcom/google/protobuf/UnknownFieldSetLite;Lcom/google/protobuf/ArrayDecoders$Registers;)I
 
     move-result p3
@@ -868,7 +868,7 @@
 
     goto :goto_0
 
-    .line 165
+    .line 166
     :cond_2
     invoke-static {p3, p2, v4, p4, p5}, Lcom/google/protobuf/ArrayDecoders;->skipField(I[BIILcom/google/protobuf/ArrayDecoders$Registers;)I
 
@@ -884,20 +884,20 @@
     :goto_2
     if-ge v4, p4, :cond_9
 
-    .line 174
+    .line 175
     invoke-static {p2, v4, p5}, Lcom/google/protobuf/ArrayDecoders;->decodeVarint32([BILcom/google/protobuf/ArrayDecoders$Registers;)I
 
     move-result v4
 
-    .line 175
+    .line 176
     iget v6, p5, Lcom/google/protobuf/ArrayDecoders$Registers;->int1:I
 
-    .line 176
+    .line 177
     invoke-static {v6}, Lcom/google/protobuf/WireFormat;->getTagFieldNumber(I)I
 
     move-result v7
 
-    .line 177
+    .line 178
     invoke-static {v6}, Lcom/google/protobuf/WireFormat;->getTagWireType(I)I
 
     move-result v8
@@ -913,12 +913,12 @@
     :cond_4
     if-eqz v2, :cond_5
 
-    .line 192
+    .line 193
     invoke-static {}, Lcom/google/protobuf/Protobuf;->getInstance()Lcom/google/protobuf/Protobuf;
 
     move-result-object v6
 
-    .line 193
+    .line 194
     invoke-virtual {v2}, Lcom/google/protobuf/GeneratedMessageLite$GeneratedExtension;->getMessageDefaultInstance()Lcom/google/protobuf/MessageLite;
 
     move-result-object v7
@@ -927,17 +927,17 @@
 
     move-result-object v7
 
-    .line 192
+    .line 193
     invoke-virtual {v6, v7}, Lcom/google/protobuf/Protobuf;->schemaFor(Ljava/lang/Class;)Lcom/google/protobuf/Schema;
 
     move-result-object v6
 
-    .line 191
+    .line 192
     invoke-static {v6, p2, v4, p4, p5}, Lcom/google/protobuf/ArrayDecoders;->decodeMessageField(Lcom/google/protobuf/Schema;[BIILcom/google/protobuf/ArrayDecoders$Registers;)I
 
     move-result v4
 
-    .line 195
+    .line 196
     iget-object v6, v2, Lcom/google/protobuf/GeneratedMessageLite$GeneratedExtension;->descriptor:Lcom/google/protobuf/GeneratedMessageLite$ExtensionDescriptor;
 
     iget-object v7, p5, Lcom/google/protobuf/ArrayDecoders$Registers;->object1:Ljava/lang/Object;
@@ -949,12 +949,12 @@
     :cond_5
     if-ne v8, v5, :cond_7
 
-    .line 199
+    .line 200
     invoke-static {p2, v4, p5}, Lcom/google/protobuf/ArrayDecoders;->decodeBytes([BILcom/google/protobuf/ArrayDecoders$Registers;)I
 
     move-result v4
 
-    .line 200
+    .line 201
     iget-object v3, p5, Lcom/google/protobuf/ArrayDecoders$Registers;->object1:Ljava/lang/Object;
 
     check-cast v3, Lcom/google/protobuf/ByteString;
@@ -964,22 +964,22 @@
     :cond_6
     if-nez v8, :cond_7
 
-    .line 181
+    .line 182
     invoke-static {p2, v4, p5}, Lcom/google/protobuf/ArrayDecoders;->decodeVarint32([BILcom/google/protobuf/ArrayDecoders$Registers;)I
 
     move-result v4
 
-    .line 182
+    .line 183
     iget p3, p5, Lcom/google/protobuf/ArrayDecoders$Registers;->int1:I
 
-    .line 183
+    .line 184
     iget-object v2, p0, Lcom/google/protobuf/MessageSetSchema;->extensionSchema:Lcom/google/protobuf/ExtensionSchema;
 
     iget-object v6, p5, Lcom/google/protobuf/ArrayDecoders$Registers;->extensionRegistry:Lcom/google/protobuf/ExtensionRegistryLite;
 
     iget-object v7, p0, Lcom/google/protobuf/MessageSetSchema;->defaultInstance:Lcom/google/protobuf/MessageLite;
 
-    .line 185
+    .line 186
     invoke-virtual {v2, v6, v7, p3}, Lcom/google/protobuf/ExtensionSchema;->findExtensionByNumber(Lcom/google/protobuf/ExtensionRegistryLite;Lcom/google/protobuf/MessageLite;I)Ljava/lang/Object;
 
     move-result-object v2
@@ -988,7 +988,7 @@
 
     goto :goto_2
 
-    .line 208
+    .line 209
     :cond_7
     :goto_3
     sget v7, Lcom/google/protobuf/WireFormat;->MESSAGE_SET_ITEM_END_TAG:I
@@ -997,7 +997,7 @@
 
     goto :goto_4
 
-    .line 211
+    .line 212
     :cond_8
     invoke-static {v6, p2, v4, p4, p5}, Lcom/google/protobuf/ArrayDecoders;->skipField(I[BIILcom/google/protobuf/ArrayDecoders$Registers;)I
 
@@ -1009,12 +1009,12 @@
     :goto_4
     if-eqz v3, :cond_a
 
-    .line 216
+    .line 217
     invoke-static {p3, v5}, Lcom/google/protobuf/WireFormat;->makeTag(II)I
 
     move-result p3
 
-    .line 215
+    .line 216
     invoke-virtual {v1, p3, v3}, Lcom/google/protobuf/UnknownFieldSetLite;->storeField(ILjava/lang/Object;)V
 
     :cond_a
@@ -1027,7 +1027,7 @@
 
     return-void
 
-    .line 220
+    .line 221
     :cond_c
     invoke-static {}, Lcom/google/protobuf/InvalidProtocolBufferException;->parseFailure()Lcom/google/protobuf/InvalidProtocolBufferException;
 
@@ -1044,7 +1044,7 @@
         }
     .end annotation
 
-    .line 64
+    .line 65
     iget-object v0, p0, Lcom/google/protobuf/MessageSetSchema;->defaultInstance:Lcom/google/protobuf/MessageLite;
 
     invoke-interface {v0}, Lcom/google/protobuf/MessageLite;->newBuilderForType()Lcom/google/protobuf/MessageLite$Builder;
@@ -1074,19 +1074,19 @@
         }
     .end annotation
 
-    .line 103
+    .line 104
     iget-object v0, p0, Lcom/google/protobuf/MessageSetSchema;->extensionSchema:Lcom/google/protobuf/ExtensionSchema;
 
     invoke-virtual {v0, p1}, Lcom/google/protobuf/ExtensionSchema;->getExtensions(Ljava/lang/Object;)Lcom/google/protobuf/FieldSet;
 
     move-result-object v0
 
-    .line 104
+    .line 105
     invoke-virtual {v0}, Lcom/google/protobuf/FieldSet;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
 
-    .line 105
+    .line 106
     :goto_0
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
@@ -1094,21 +1094,21 @@
 
     if-eqz v1, :cond_2
 
-    .line 106
+    .line 107
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v1
 
     check-cast v1, Ljava/util/Map$Entry;
 
-    .line 107
+    .line 108
     invoke-interface {v1}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
     move-result-object v2
 
     check-cast v2, Lcom/google/protobuf/FieldSet$FieldDescriptorLite;
 
-    .line 108
+    .line 109
     invoke-interface {v2}, Lcom/google/protobuf/FieldSet$FieldDescriptorLite;->getLiteJavaType()Lcom/google/protobuf/WireFormat$JavaType;
 
     move-result-object v3
@@ -1129,12 +1129,12 @@
 
     if-nez v3, :cond_1
 
-    .line 111
+    .line 112
     instance-of v3, v1, Lcom/google/protobuf/LazyField$LazyEntry;
 
     if-eqz v3, :cond_0
 
-    .line 113
+    .line 114
     invoke-interface {v2}, Lcom/google/protobuf/FieldSet$FieldDescriptorLite;->getNumber()I
 
     move-result v2
@@ -1149,12 +1149,12 @@
 
     move-result-object v1
 
-    .line 112
+    .line 113
     invoke-interface {p2, v2, v1}, Lcom/google/protobuf/Writer;->writeMessageSetItem(ILjava/lang/Object;)V
 
     goto :goto_0
 
-    .line 115
+    .line 116
     :cond_0
     invoke-interface {v2}, Lcom/google/protobuf/FieldSet$FieldDescriptorLite;->getNumber()I
 
@@ -1168,7 +1168,7 @@
 
     goto :goto_0
 
-    .line 109
+    .line 110
     :cond_1
     new-instance p1, Ljava/lang/IllegalStateException;
 
@@ -1178,7 +1178,7 @@
 
     throw p1
 
-    .line 118
+    .line 119
     :cond_2
     iget-object v0, p0, Lcom/google/protobuf/MessageSetSchema;->unknownFieldSchema:Lcom/google/protobuf/UnknownFieldSchema;
 

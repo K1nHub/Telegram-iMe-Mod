@@ -1675,7 +1675,7 @@
     goto :goto_0
 
     :cond_1
-    const/4 p2, 0x0
+    move p2, v1
 
     :goto_0
     if-eqz p2, :cond_2
@@ -1895,7 +1895,7 @@
     :cond_0
     array-length v1, p0
 
-    const/4 v2, 0x0
+    move v2, v0
 
     :goto_0
     if-ge v2, v1, :cond_2
@@ -2560,7 +2560,7 @@
     goto :goto_0
 
     :cond_0
-    const/4 v1, 0x0
+    move v1, v2
 
     .line 1030
     :goto_0
@@ -2578,7 +2578,7 @@
     .line 1032
     iput v1, p0, Lcom/google/android/material/chip/ChipDrawable;->currentChipSurfaceColor:I
 
-    const/4 v0, 0x1
+    move v0, v4
 
     .line 1036
     :cond_1
@@ -2596,7 +2596,7 @@
     goto :goto_1
 
     :cond_2
-    const/4 v3, 0x0
+    move v3, v2
 
     .line 1040
     :goto_1
@@ -2612,7 +2612,7 @@
     .line 1042
     iput v3, p0, Lcom/google/android/material/chip/ChipDrawable;->currentChipBackgroundColor:I
 
-    const/4 v0, 0x1
+    move v0, v4
 
     .line 1047
     :cond_3
@@ -2625,12 +2625,12 @@
 
     if-eq v3, v1, :cond_4
 
-    const/4 v3, 0x1
+    move v3, v4
 
     goto :goto_2
 
     :cond_4
-    const/4 v3, 0x0
+    move v3, v2
 
     .line 1050
     :goto_2
@@ -2640,12 +2640,12 @@
 
     if-nez v5, :cond_5
 
-    const/4 v5, 0x1
+    move v5, v4
 
     goto :goto_3
 
     :cond_5
-    const/4 v5, 0x0
+    move v5, v2
 
     :goto_3
     or-int/2addr v3, v5
@@ -2662,7 +2662,7 @@
 
     invoke-virtual {p0, v0}, Lcom/google/android/material/shape/MaterialShapeDrawable;->setFillColor(Landroid/content/res/ColorStateList;)V
 
-    const/4 v0, 0x1
+    move v0, v4
 
     .line 1057
     :cond_6
@@ -2680,7 +2680,7 @@
     goto :goto_4
 
     :cond_7
-    const/4 v1, 0x0
+    move v1, v2
 
     .line 1061
     :goto_4
@@ -2691,7 +2691,7 @@
     .line 1062
     iput v1, p0, Lcom/google/android/material/chip/ChipDrawable;->currentChipStrokeColor:I
 
-    const/4 v0, 0x1
+    move v0, v4
 
     .line 1066
     :cond_8
@@ -2718,7 +2718,7 @@
     goto :goto_5
 
     :cond_9
-    const/4 v1, 0x0
+    move v1, v2
 
     .line 1070
     :goto_5
@@ -2734,7 +2734,7 @@
 
     if-eqz v1, :cond_a
 
-    const/4 v0, 0x1
+    move v0, v4
 
     .line 1077
     :cond_a
@@ -2777,7 +2777,7 @@
     goto :goto_6
 
     :cond_b
-    const/4 v1, 0x0
+    move v1, v2
 
     .line 1085
     :goto_6
@@ -2788,7 +2788,7 @@
     .line 1086
     iput v1, p0, Lcom/google/android/material/chip/ChipDrawable;->currentTextColor:I
 
-    const/4 v0, 0x1
+    move v0, v4
 
     .line 1090
     :cond_c
@@ -2808,12 +2808,12 @@
 
     if-eqz v1, :cond_d
 
-    const/4 v1, 0x1
+    move v1, v4
 
     goto :goto_7
 
     :cond_d
-    const/4 v1, 0x0
+    move v1, v2
 
     .line 1091
     :goto_7
@@ -2842,17 +2842,21 @@
 
     if-eqz v0, :cond_e
 
-    const/4 v0, 0x1
+    move v0, v4
 
-    const/4 v1, 0x1
+    move v1, v0
 
     goto :goto_8
 
     :cond_e
-    const/4 v0, 0x1
+    move v1, v2
+
+    move v0, v4
+
+    goto :goto_8
 
     :cond_f
-    const/4 v1, 0x0
+    move v1, v2
 
     .line 1102
     :goto_8
@@ -2869,7 +2873,7 @@
     goto :goto_9
 
     :cond_10
-    const/4 v3, 0x0
+    move v3, v2
 
     .line 1103
     :goto_9

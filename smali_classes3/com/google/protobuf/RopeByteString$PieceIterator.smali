@@ -46,18 +46,18 @@
 .method private constructor <init>(Lcom/google/protobuf/ByteString;)V
     .locals 2
 
-    .line 735
+    .line 740
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 736
+    .line 741
     instance-of v0, p1, Lcom/google/protobuf/RopeByteString;
 
     if-eqz v0, :cond_0
 
-    .line 737
+    .line 742
     check-cast p1, Lcom/google/protobuf/RopeByteString;
 
-    .line 738
+    .line 743
     new-instance v0, Ljava/util/ArrayDeque;
 
     invoke-virtual {p1}, Lcom/google/protobuf/RopeByteString;->getTreeDepth()I
@@ -68,10 +68,10 @@
 
     iput-object v0, p0, Lcom/google/protobuf/RopeByteString$PieceIterator;->breadCrumbs:Ljava/util/ArrayDeque;
 
-    .line 739
+    .line 744
     invoke-virtual {v0, p1}, Ljava/util/ArrayDeque;->push(Ljava/lang/Object;)V
 
-    .line 740
+    .line 745
     invoke-static {p1}, Lcom/google/protobuf/RopeByteString;->access$400(Lcom/google/protobuf/RopeByteString;)Lcom/google/protobuf/ByteString;
 
     move-result-object p1
@@ -87,10 +87,10 @@
     :cond_0
     const/4 v0, 0x0
 
-    .line 742
+    .line 747
     iput-object v0, p0, Lcom/google/protobuf/RopeByteString$PieceIterator;->breadCrumbs:Ljava/util/ArrayDeque;
 
-    .line 743
+    .line 748
     check-cast p1, Lcom/google/protobuf/ByteString$LeafByteString;
 
     iput-object p1, p0, Lcom/google/protobuf/RopeByteString$PieceIterator;->next:Lcom/google/protobuf/ByteString$LeafByteString;
@@ -102,7 +102,7 @@
 .method synthetic constructor <init>(Lcom/google/protobuf/ByteString;Lcom/google/protobuf/RopeByteString$1;)V
     .locals 0
 
-    .line 731
+    .line 736
     invoke-direct {p0, p1}, Lcom/google/protobuf/RopeByteString$PieceIterator;-><init>(Lcom/google/protobuf/ByteString;)V
 
     return-void
@@ -111,28 +111,28 @@
 .method private getLeafByLeft(Lcom/google/protobuf/ByteString;)Lcom/google/protobuf/ByteString$LeafByteString;
     .locals 1
 
-    .line 749
+    .line 754
     :goto_0
     instance-of v0, p1, Lcom/google/protobuf/RopeByteString;
 
     if-eqz v0, :cond_0
 
-    .line 750
+    .line 755
     check-cast p1, Lcom/google/protobuf/RopeByteString;
 
-    .line 751
+    .line 756
     iget-object v0, p0, Lcom/google/protobuf/RopeByteString$PieceIterator;->breadCrumbs:Ljava/util/ArrayDeque;
 
     invoke-virtual {v0, p1}, Ljava/util/ArrayDeque;->push(Ljava/lang/Object;)V
 
-    .line 752
+    .line 757
     invoke-static {p1}, Lcom/google/protobuf/RopeByteString;->access$400(Lcom/google/protobuf/RopeByteString;)Lcom/google/protobuf/ByteString;
 
     move-result-object p1
 
     goto :goto_0
 
-    .line 754
+    .line 759
     :cond_0
     check-cast p1, Lcom/google/protobuf/ByteString$LeafByteString;
 
@@ -142,7 +142,7 @@
 .method private getNextNonEmptyLeaf()Lcom/google/protobuf/ByteString$LeafByteString;
     .locals 2
 
-    .line 761
+    .line 766
     :cond_0
     iget-object v0, p0, Lcom/google/protobuf/RopeByteString$PieceIterator;->breadCrumbs:Ljava/util/ArrayDeque;
 
@@ -156,7 +156,7 @@
 
     goto :goto_0
 
-    .line 764
+    .line 769
     :cond_1
     iget-object v0, p0, Lcom/google/protobuf/RopeByteString$PieceIterator;->breadCrumbs:Ljava/util/ArrayDeque;
 
@@ -174,7 +174,7 @@
 
     move-result-object v0
 
-    .line 765
+    .line 770
     invoke-virtual {v0}, Lcom/google/protobuf/ByteString;->isEmpty()Z
 
     move-result v1
@@ -203,7 +203,7 @@
 .method public hasNext()Z
     .locals 1
 
-    .line 774
+    .line 779
     iget-object v0, p0, Lcom/google/protobuf/RopeByteString$PieceIterator;->next:Lcom/google/protobuf/ByteString$LeafByteString;
 
     if-eqz v0, :cond_0
@@ -222,12 +222,12 @@
 .method public next()Lcom/google/protobuf/ByteString$LeafByteString;
     .locals 2
 
-    .line 784
+    .line 789
     iget-object v0, p0, Lcom/google/protobuf/RopeByteString$PieceIterator;->next:Lcom/google/protobuf/ByteString$LeafByteString;
 
     if-eqz v0, :cond_0
 
-    .line 788
+    .line 793
     invoke-direct {p0}, Lcom/google/protobuf/RopeByteString$PieceIterator;->getNextNonEmptyLeaf()Lcom/google/protobuf/ByteString$LeafByteString;
 
     move-result-object v1
@@ -236,7 +236,7 @@
 
     return-object v0
 
-    .line 785
+    .line 790
     :cond_0
     new-instance v0, Ljava/util/NoSuchElementException;
 
@@ -248,7 +248,7 @@
 .method public bridge synthetic next()Ljava/lang/Object;
     .locals 1
 
-    .line 731
+    .line 736
     invoke-virtual {p0}, Lcom/google/protobuf/RopeByteString$PieceIterator;->next()Lcom/google/protobuf/ByteString$LeafByteString;
 
     move-result-object v0
@@ -259,7 +259,7 @@
 .method public remove()V
     .locals 1
 
-    .line 794
+    .line 799
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V

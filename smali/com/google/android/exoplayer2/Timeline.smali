@@ -300,7 +300,7 @@
 
     if-eq v1, v3, :cond_2
 
-    goto :goto_3
+    goto/16 :goto_3
 
     .line 1299
     :cond_2
@@ -323,7 +323,7 @@
 
     invoke-direct {v5}, Lcom/google/android/exoplayer2/Timeline$Period;-><init>()V
 
-    const/4 v6, 0x0
+    move v6, v2
 
     .line 1303
     :goto_0
@@ -356,7 +356,7 @@
     goto :goto_0
 
     :cond_4
-    const/4 v1, 0x0
+    move v1, v2
 
     .line 1308
     :goto_1
@@ -739,7 +739,7 @@
 .end method
 
 .method public final getPeriodPositionUs(Lcom/google/android/exoplayer2/Timeline$Window;Lcom/google/android/exoplayer2/Timeline$Period;IJJ)Landroid/util/Pair;
-    .locals 4
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -799,9 +799,9 @@
 
     iget-wide v0, p2, Lcom/google/android/exoplayer2/Timeline$Period;->positionInWindowUs:J
 
-    cmp-long v2, v0, p4
+    cmp-long v0, v0, p4
 
-    if-eqz v2, :cond_1
+    if-eqz v0, :cond_1
 
     add-int/lit8 v0, p3, 0x1
 
@@ -812,9 +812,9 @@
 
     iget-wide v1, v1, Lcom/google/android/exoplayer2/Timeline$Period;->positionInWindowUs:J
 
-    cmp-long v3, v1, p4
+    cmp-long v1, v1, p4
 
-    if-gtz v3, :cond_1
+    if-gtz v1, :cond_1
 
     move p3, v0
 
@@ -982,7 +982,7 @@
 
     const/4 v2, 0x0
 
-    const/4 v4, 0x0
+    move v4, v2
 
     .line 1344
     :goto_0
@@ -1019,7 +1019,7 @@
 
     add-int/2addr v3, v0
 
-    const/4 v0, 0x0
+    move v0, v2
 
     .line 1348
     :goto_1
@@ -1138,7 +1138,7 @@
 
     const/4 v3, 0x0
 
-    const/4 v4, 0x0
+    move v4, v3
 
     :goto_0
     if-ge v4, v1, :cond_0
@@ -1176,7 +1176,7 @@
 
     invoke-direct {v5}, Lcom/google/android/exoplayer2/Timeline$Period;-><init>()V
 
-    const/4 v6, 0x0
+    move v6, v3
 
     :goto_1
     if-ge v6, v4, :cond_1
@@ -1212,7 +1212,7 @@
     aput v6, v4, v3
 
     :cond_2
-    const/4 v6, 0x1
+    move v6, v5
 
     :goto_2
     if-ge v6, v1, :cond_3

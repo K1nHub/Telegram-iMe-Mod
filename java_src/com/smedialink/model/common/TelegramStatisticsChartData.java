@@ -174,7 +174,7 @@ public final class TelegramStatisticsChartData {
             r1 = r0 & 16
             if (r1 == 0) goto L24
             r1 = 2
-            r8 = 2
+            r8 = r1
             goto L26
         L24:
             r8 = r22

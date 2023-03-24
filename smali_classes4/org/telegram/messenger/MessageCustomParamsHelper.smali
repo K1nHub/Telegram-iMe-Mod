@@ -78,7 +78,7 @@
 .end method
 
 .method public static isEmpty(Lorg/telegram/tgnet/TLRPC$Message;)Z
-    .locals 5
+    .locals 4
 
     .line 11
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$Message;->voiceTranscription:Ljava/lang/String;
@@ -105,9 +105,9 @@
 
     const-wide/16 v2, 0x0
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-nez v4, :cond_0
+    if-nez v0, :cond_0
 
     iget-boolean v0, p0, Lorg/telegram/tgnet/TLRPC$Message;->premiumEffectWasPlayed:Z
 

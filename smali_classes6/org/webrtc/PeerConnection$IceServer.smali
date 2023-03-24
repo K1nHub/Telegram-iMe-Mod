@@ -462,7 +462,7 @@
 
     if-eqz p1, :cond_3
 
-    const/4 v0, 0x1
+    move v0, v1
 
     :cond_3
     return v0

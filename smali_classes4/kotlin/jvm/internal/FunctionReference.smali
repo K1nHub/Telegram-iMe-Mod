@@ -23,14 +23,14 @@
 
     if-ne v0, v1, :cond_0
 
-    const/4 v7, 0x1
+    move v7, v1
 
     goto :goto_0
 
     :cond_0
     const/4 v0, 0x0
 
-    const/4 v7, 0x0
+    move v7, v0
 
     :goto_0
     move-object v2, p0
@@ -165,7 +165,7 @@
     goto :goto_0
 
     :cond_1
-    const/4 v0, 0x0
+    move v0, v2
 
     :goto_0
     return v0

@@ -550,7 +550,7 @@
 
     or-long/2addr v1, v3
 
-    const/4 v3, 0x7
+    move v3, v5
 
     :goto_0
     if-gez v0, :cond_1

@@ -122,13 +122,13 @@
     goto :goto_0
 
     :cond_0
-    const/4 p1, 0x0
+    move p1, p3
 
     goto :goto_1
 
     :cond_1
     :goto_0
-    const/4 p1, 0x1
+    move p1, p7
 
     :goto_1
     const-string p8, "passThrough should imply buffer is null"
@@ -143,13 +143,13 @@
     goto :goto_2
 
     :cond_2
-    const/4 p1, 0x0
+    move p1, p3
 
     goto :goto_3
 
     :cond_3
     :goto_2
-    const/4 p1, 0x1
+    move p1, p7
 
     :goto_3
     const-string p8, "passThrough should imply winningSubstream != null"
@@ -187,13 +187,13 @@
     goto :goto_4
 
     :cond_5
-    const/4 p1, 0x0
+    move p1, p3
 
     goto :goto_5
 
     :cond_6
     :goto_4
-    const/4 p1, 0x1
+    move p1, p7
 
     :goto_5
     const-string p2, "passThrough should imply winningSubstream is drained"
@@ -206,7 +206,7 @@
     if-eqz p4, :cond_8
 
     :cond_7
-    const/4 p3, 0x1
+    move p3, p7
 
     :cond_8
     const-string p1, "cancelled should imply committed"
@@ -238,7 +238,7 @@
 
     if-nez v0, :cond_0
 
-    const/4 v0, 0x1
+    move v0, v1
 
     goto :goto_0
 
@@ -349,12 +349,12 @@
 
     if-nez v0, :cond_0
 
-    const/4 v0, 0x1
+    move v0, v1
 
     goto :goto_0
 
     :cond_0
-    const/4 v0, 0x0
+    move v0, v2
 
     :goto_0
     const-string v3, "Already committed"
@@ -382,9 +382,9 @@
 
     move-object v4, v0
 
-    move-object v5, v2
+    move v9, v1
 
-    const/4 v9, 0x1
+    move-object v5, v2
 
     goto :goto_1
 
@@ -398,7 +398,7 @@
 
     move-object v5, v1
 
-    const/4 v9, 0x0
+    move v9, v2
 
     .line 1095
     :goto_1
@@ -674,12 +674,12 @@
 
     if-eqz v0, :cond_2
 
-    const/4 v8, 0x1
+    move v8, v1
 
     goto :goto_2
 
     :cond_2
-    const/4 v8, 0x0
+    move v8, v2
 
     .line 1049
     :goto_2
@@ -692,7 +692,7 @@
     goto :goto_3
 
     :cond_3
-    const/4 v1, 0x0
+    move v1, v2
 
     :goto_3
     const-string p1, "Another RPC attempt has already committed"

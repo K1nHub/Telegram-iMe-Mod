@@ -27,9 +27,9 @@
 
     iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda104;->f$0:Lorg/telegram/ui/DialogsActivity;
 
-    check-cast p1, Lcom/smedialink/storage/domain/model/filters/FilterFab;
+    check-cast p1, Ljava/lang/Long;
 
-    invoke-static {v0, p1}, Lorg/telegram/ui/DialogsActivity;->$r8$lambda$8VdDFhyeqr0uv8woSTh3SJyRwEk(Lorg/telegram/ui/DialogsActivity;Lcom/smedialink/storage/domain/model/filters/FilterFab;)V
+    invoke-static {v0, p1}, Lorg/telegram/ui/DialogsActivity;->$r8$lambda$Vtt1Lk9K5UaAH0qtIJsMNUvzRtE(Lorg/telegram/ui/DialogsActivity;Ljava/lang/Long;)V
 
     return-void
 .end method

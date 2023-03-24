@@ -329,7 +329,7 @@
 
     iget-object v0, v0, Lorg/telegram/messenger/ContactsController;->contacts:Ljava/util/ArrayList;
 
-    const/4 v1, 0x0
+    move v1, v11
 
     .line 146
     :goto_0
@@ -708,7 +708,7 @@
     goto :goto_3
 
     :cond_5
-    const/16 v7, 0x3c
+    move v7, v5
 
     :goto_3
     if-lt v3, v6, :cond_6
@@ -718,7 +718,7 @@
     goto :goto_4
 
     :cond_6
-    const/16 v8, 0x3c
+    move v8, v5
 
     :goto_4
     const/16 v9, 0x55
@@ -1831,7 +1831,7 @@
 
     invoke-direct {p1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const/4 v1, 0x0
+    move v1, v0
 
     .line 303
     :goto_1
@@ -2224,12 +2224,12 @@
 
     if-lez v0, :cond_0
 
-    const/4 v0, 0x1
+    move v0, v1
 
     goto :goto_0
 
     :cond_0
-    const/4 v0, 0x0
+    move v0, v2
 
     .line 427
     :goto_0
@@ -2279,12 +2279,12 @@
 
     if-eqz v0, :cond_3
 
-    const/high16 v6, 0x3f800000    # 1.0f
+    move v6, v3
 
     goto :goto_1
 
     :cond_3
-    const/4 v6, 0x0
+    move v6, v4
 
     :goto_1
     aput v6, v5, v1
@@ -2512,12 +2512,12 @@
     :cond_7
     if-eqz v0, :cond_8
 
-    const/high16 p1, 0x3f800000    # 1.0f
+    move p1, v3
 
     goto :goto_2
 
     :cond_8
-    const/4 p1, 0x0
+    move p1, v4
 
     .line 484
     :goto_2
@@ -3223,7 +3223,7 @@
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_0
     if-ge v2, v0, :cond_1
@@ -3332,7 +3332,7 @@
     goto :goto_2
 
     :cond_2
-    const/4 v0, 0x0
+    move v0, v1
 
     .line 382
     :goto_2
@@ -3392,7 +3392,7 @@
 
     int-to-float v0, v0
 
-    mul-float v0, v0, v4
+    mul-float/2addr v0, v4
 
     :goto_5
     float-to-int v0, v0
@@ -3416,7 +3416,7 @@
 
     int-to-float v0, v0
 
-    mul-float v0, v0, v4
+    mul-float/2addr v0, v4
 
     const/16 v2, 0x1e0
 
@@ -3457,9 +3457,9 @@
 
     move-result v4
 
-    const/4 v5, 0x0
+    move v5, v1
 
-    const/4 v6, 0x0
+    move v6, v5
 
     :goto_7
     if-ge v5, p1, :cond_9
@@ -3524,7 +3524,7 @@
 
     add-int/2addr v4, v6
 
-    const/4 v6, 0x0
+    move v6, v1
 
     .line 407
     :cond_8
@@ -3576,7 +3576,7 @@
     goto :goto_9
 
     :cond_a
-    const/4 p1, 0x0
+    move p1, v1
 
     goto :goto_9
 

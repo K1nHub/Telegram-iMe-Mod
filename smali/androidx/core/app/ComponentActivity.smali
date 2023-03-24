@@ -146,7 +146,7 @@
     goto :goto_0
 
     :cond_3
-    const/4 v1, 0x1
+    move v1, v3
 
     goto :goto_0
 
@@ -162,7 +162,7 @@
     goto :goto_0
 
     :cond_4
-    const/4 v1, 0x0
+    move v1, v0
 
     :goto_0
     packed-switch v1, :pswitch_data_0
@@ -177,7 +177,7 @@
 
     if-lt p0, v1, :cond_5
 
-    const/4 v0, 0x1
+    move v0, v3
 
     :cond_5
     return v0
@@ -190,7 +190,7 @@
 
     if-lt p0, v1, :cond_6
 
-    const/4 v0, 0x1
+    move v0, v3
 
     :cond_6
     return v0
@@ -211,7 +211,7 @@
 
     if-lt p0, v1, :cond_7
 
-    const/4 v0, 0x1
+    move v0, v3
 
     :cond_7
     :goto_1

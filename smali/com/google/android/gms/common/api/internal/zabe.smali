@@ -264,7 +264,7 @@
 
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    move v1, v0
 
     :goto_0
     invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
@@ -499,7 +499,7 @@
 
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    move v1, v0
 
     :goto_1
     invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
@@ -749,12 +749,12 @@
 
     if-eq v0, v1, :cond_0
 
-    const/4 v0, 0x1
+    move v0, v2
 
     goto :goto_0
 
     :cond_0
-    const/4 v0, 0x0
+    move v0, v3
 
     :goto_0
     const-string v1, "blockingConnect must not be called on the UI thread"
@@ -779,7 +779,7 @@
     goto :goto_1
 
     :cond_1
-    const/4 v2, 0x0
+    move v2, v3
 
     :goto_1
     const-string v0, "Sign-in mode should have been set explicitly by auto-manage."
@@ -915,7 +915,7 @@
     goto :goto_0
 
     :cond_0
-    const/4 v0, 0x0
+    move v0, v2
 
     :goto_0
     const-string v1, "blockingConnect must not be called on the UI thread"
@@ -1077,7 +1077,7 @@
     goto :goto_0
 
     :cond_0
-    const/4 v2, 0x0
+    move v2, v1
 
     :cond_1
     :goto_0
@@ -1182,12 +1182,12 @@
 
     if-eqz v0, :cond_0
 
-    const/4 v0, 0x1
+    move v0, v3
 
     goto :goto_0
 
     :cond_0
-    const/4 v0, 0x0
+    move v0, v2
 
     :goto_0
     const-string v4, "Sign-in mode should have been set explicitly by auto-manage."
@@ -1271,7 +1271,7 @@
     move v1, v0
 
     :goto_2
-    const/4 v2, 0x1
+    move v2, v3
 
     :goto_3
     :try_start_1
@@ -1372,7 +1372,7 @@
 
     if-ne p1, v0, :cond_0
 
-    const/4 p1, 0x2
+    move p1, v0
 
     goto :goto_0
 
@@ -2616,7 +2616,7 @@
 
     :cond_2
     :goto_0
-    const/4 p1, 0x1
+    move p1, v1
 
     .line 8
     :cond_3

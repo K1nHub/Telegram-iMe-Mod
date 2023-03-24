@@ -91,7 +91,7 @@
 
     const/high16 v4, 0x437f0000    # 255.0f
 
-    mul-float v3, v3, v4
+    mul-float/2addr v3, v4
 
     float-to-int v3, v3
 

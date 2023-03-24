@@ -131,10 +131,10 @@ public final class DefaultOggSeeker implements OggSeeker {
                 this.end = j6;
                 return j6;
             }
-            long j7 = i * (i2 <= 0 ? 2L : 1L);
-            long j8 = this.end;
-            long j9 = this.start;
-            return Util.constrainValue((extractorInput.getPosition() - j7) + ((j4 * (j8 - j9)) / (this.endGranule - this.startGranule)), j9, j8 - 1);
+            long position2 = extractorInput.getPosition() - (i * (i2 <= 0 ? 2L : 1L));
+            long j7 = this.end;
+            long j8 = this.start;
+            return Util.constrainValue(position2 + ((j4 * (j7 - j8)) / (this.endGranule - this.startGranule)), j8, j7 - 1);
         }
         return -1L;
     }

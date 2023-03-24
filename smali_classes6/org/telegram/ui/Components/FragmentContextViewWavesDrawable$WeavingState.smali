@@ -512,7 +512,7 @@
 .end method
 
 .method public update(IIJF)V
-    .locals 13
+    .locals 12
 
     move-object v0, p0
 
@@ -531,15 +531,15 @@
 
     const/4 v2, 0x0
 
-    const/4 v3, 0x3
+    cmpl-float v3, v1, v2
 
-    cmpl-float v4, v1, v2
+    const/4 v4, 0x3
 
-    if-eqz v4, :cond_1
+    if-eqz v3, :cond_1
 
-    iget v4, v0, Lorg/telegram/ui/Components/FragmentContextViewWavesDrawable$WeavingState;->time:F
+    iget v3, v0, Lorg/telegram/ui/Components/FragmentContextViewWavesDrawable$WeavingState;->time:F
 
-    cmpl-float v1, v4, v1
+    cmpl-float v1, v3, v1
 
     if-ltz v1, :cond_7
 
@@ -547,9 +547,9 @@
     :cond_1
     sget-object v1, Lorg/telegram/messenger/Utilities;->random:Ljava/security/SecureRandom;
 
-    const/16 v4, 0x2bc
+    const/16 v3, 0x2bc
 
-    invoke-virtual {v1, v4}, Ljava/security/SecureRandom;->nextInt(I)I
+    invoke-virtual {v1, v3}, Ljava/security/SecureRandom;->nextInt(I)I
 
     move-result v1
 
@@ -567,64 +567,64 @@
 
     const/high16 v2, -0x40800000    # -1.0f
 
-    const v4, 0x3e99999a    # 0.3f
-
-    const/high16 v5, 0x40800000    # 4.0f
-
-    const v6, 0x3f8ccccd    # 1.1f
-
-    const v7, 0x3e4ccccd    # 0.2f
-
-    const v8, 0x3f333333    # 0.7f
-
-    const v9, 0x3d4ccccd    # 0.05f
-
-    const v10, -0x41666666    # -0.3f
-
-    const/high16 v11, 0x42c80000    # 100.0f
-
-    const/16 v12, 0x64
-
     cmpl-float v1, v1, v2
+
+    const v2, 0x3e99999a    # 0.3f
+
+    const/high16 v3, 0x40800000    # 4.0f
+
+    const v5, 0x3f8ccccd    # 1.1f
+
+    const v6, 0x3e4ccccd    # 0.2f
+
+    const v7, 0x3f333333    # 0.7f
+
+    const v8, 0x3d4ccccd    # 0.05f
+
+    const v9, -0x41666666    # -0.3f
+
+    const/high16 v10, 0x42c80000    # 100.0f
+
+    const/16 v11, 0x64
 
     if-nez v1, :cond_4
 
     .line 322
     iget v1, v0, Lorg/telegram/ui/Components/FragmentContextViewWavesDrawable$WeavingState;->currentState:I
 
-    if-ne v1, v3, :cond_2
+    if-ne v1, v4, :cond_2
 
     .line 323
     sget-object v1, Lorg/telegram/messenger/Utilities;->random:Ljava/security/SecureRandom;
 
-    invoke-virtual {v1, v12}, Ljava/security/SecureRandom;->nextInt(I)I
+    invoke-virtual {v1, v11}, Ljava/security/SecureRandom;->nextInt(I)I
 
     move-result v1
 
     int-to-float v1, v1
 
-    mul-float v1, v1, v9
+    mul-float/2addr v1, v8
 
-    div-float/2addr v1, v11
+    div-float/2addr v1, v10
 
-    add-float/2addr v1, v10
+    add-float/2addr v1, v9
 
     iput v1, v0, Lorg/telegram/ui/Components/FragmentContextViewWavesDrawable$WeavingState;->targetX:F
 
     .line 324
     sget-object v1, Lorg/telegram/messenger/Utilities;->random:Ljava/security/SecureRandom;
 
-    invoke-virtual {v1, v12}, Ljava/security/SecureRandom;->nextInt(I)I
+    invoke-virtual {v1, v11}, Ljava/security/SecureRandom;->nextInt(I)I
 
     move-result v1
 
     int-to-float v1, v1
 
-    mul-float v1, v1, v9
+    mul-float/2addr v1, v8
 
-    div-float/2addr v1, v11
+    div-float/2addr v1, v10
 
-    add-float/2addr v1, v8
+    add-float/2addr v1, v7
 
     iput v1, v0, Lorg/telegram/ui/Components/FragmentContextViewWavesDrawable$WeavingState;->targetY:F
 
@@ -636,34 +636,34 @@
     .line 326
     sget-object v1, Lorg/telegram/messenger/Utilities;->random:Ljava/security/SecureRandom;
 
-    invoke-virtual {v1, v12}, Ljava/security/SecureRandom;->nextInt(I)I
+    invoke-virtual {v1, v11}, Ljava/security/SecureRandom;->nextInt(I)I
 
     move-result v1
 
     int-to-float v1, v1
 
-    mul-float v1, v1, v7
+    mul-float/2addr v1, v6
 
-    div-float/2addr v1, v11
+    div-float/2addr v1, v10
 
-    add-float/2addr v1, v10
+    add-float/2addr v1, v9
 
     iput v1, v0, Lorg/telegram/ui/Components/FragmentContextViewWavesDrawable$WeavingState;->targetX:F
 
     .line 327
     sget-object v1, Lorg/telegram/messenger/Utilities;->random:Ljava/security/SecureRandom;
 
-    invoke-virtual {v1, v12}, Ljava/security/SecureRandom;->nextInt(I)I
+    invoke-virtual {v1, v11}, Ljava/security/SecureRandom;->nextInt(I)I
 
     move-result v1
 
     int-to-float v1, v1
 
-    mul-float v1, v1, v4
+    mul-float/2addr v1, v2
 
-    div-float/2addr v1, v11
+    div-float/2addr v1, v10
 
-    add-float/2addr v1, v8
+    add-float/2addr v1, v7
 
     iput v1, v0, Lorg/telegram/ui/Components/FragmentContextViewWavesDrawable$WeavingState;->targetY:F
 
@@ -673,32 +673,32 @@
     :cond_3
     sget-object v1, Lorg/telegram/messenger/Utilities;->random:Ljava/security/SecureRandom;
 
-    invoke-virtual {v1, v12}, Ljava/security/SecureRandom;->nextInt(I)I
+    invoke-virtual {v1, v11}, Ljava/security/SecureRandom;->nextInt(I)I
 
     move-result v1
 
     int-to-float v1, v1
 
-    div-float/2addr v1, v11
+    div-float/2addr v1, v10
 
-    mul-float v1, v1, v7
+    mul-float/2addr v1, v6
 
-    add-float/2addr v1, v6
+    add-float/2addr v1, v5
 
     iput v1, v0, Lorg/telegram/ui/Components/FragmentContextViewWavesDrawable$WeavingState;->targetX:F
 
     .line 330
     sget-object v1, Lorg/telegram/messenger/Utilities;->random:Ljava/security/SecureRandom;
 
-    invoke-virtual {v1, v12}, Ljava/security/SecureRandom;->nextInt(I)I
+    invoke-virtual {v1, v11}, Ljava/security/SecureRandom;->nextInt(I)I
 
     move-result v1
 
     int-to-float v1, v1
 
-    mul-float v1, v1, v5
+    mul-float/2addr v1, v3
 
-    div-float/2addr v1, v11
+    div-float/2addr v1, v10
 
     iput v1, v0, Lorg/telegram/ui/Components/FragmentContextViewWavesDrawable$WeavingState;->targetY:F
 
@@ -717,39 +717,39 @@
     .line 335
     iget v1, v0, Lorg/telegram/ui/Components/FragmentContextViewWavesDrawable$WeavingState;->currentState:I
 
-    if-ne v1, v3, :cond_5
+    if-ne v1, v4, :cond_5
 
     .line 336
     sget-object v1, Lorg/telegram/messenger/Utilities;->random:Ljava/security/SecureRandom;
 
-    invoke-virtual {v1, v12}, Ljava/security/SecureRandom;->nextInt(I)I
+    invoke-virtual {v1, v11}, Ljava/security/SecureRandom;->nextInt(I)I
 
     move-result v1
 
     int-to-float v1, v1
 
-    mul-float v1, v1, v9
+    mul-float/2addr v1, v8
 
-    div-float/2addr v1, v11
+    div-float/2addr v1, v10
 
-    add-float/2addr v1, v10
+    add-float/2addr v1, v9
 
     iput v1, v0, Lorg/telegram/ui/Components/FragmentContextViewWavesDrawable$WeavingState;->targetX:F
 
     .line 337
     sget-object v1, Lorg/telegram/messenger/Utilities;->random:Ljava/security/SecureRandom;
 
-    invoke-virtual {v1, v12}, Ljava/security/SecureRandom;->nextInt(I)I
+    invoke-virtual {v1, v11}, Ljava/security/SecureRandom;->nextInt(I)I
 
     move-result v1
 
     int-to-float v1, v1
 
-    mul-float v1, v1, v9
+    mul-float/2addr v1, v8
 
-    div-float/2addr v1, v11
+    div-float/2addr v1, v10
 
-    add-float/2addr v1, v8
+    add-float/2addr v1, v7
 
     iput v1, v0, Lorg/telegram/ui/Components/FragmentContextViewWavesDrawable$WeavingState;->targetY:F
 
@@ -761,34 +761,34 @@
     .line 339
     sget-object v1, Lorg/telegram/messenger/Utilities;->random:Ljava/security/SecureRandom;
 
-    invoke-virtual {v1, v12}, Ljava/security/SecureRandom;->nextInt(I)I
+    invoke-virtual {v1, v11}, Ljava/security/SecureRandom;->nextInt(I)I
 
     move-result v1
 
     int-to-float v1, v1
 
-    mul-float v1, v1, v7
+    mul-float/2addr v1, v6
 
-    div-float/2addr v1, v11
+    div-float/2addr v1, v10
 
-    add-float/2addr v1, v10
+    add-float/2addr v1, v9
 
     iput v1, v0, Lorg/telegram/ui/Components/FragmentContextViewWavesDrawable$WeavingState;->targetX:F
 
     .line 340
     sget-object v1, Lorg/telegram/messenger/Utilities;->random:Ljava/security/SecureRandom;
 
-    invoke-virtual {v1, v12}, Ljava/security/SecureRandom;->nextInt(I)I
+    invoke-virtual {v1, v11}, Ljava/security/SecureRandom;->nextInt(I)I
 
     move-result v1
 
     int-to-float v1, v1
 
-    mul-float v1, v1, v4
+    mul-float/2addr v1, v2
 
-    div-float/2addr v1, v11
+    div-float/2addr v1, v10
 
-    add-float/2addr v1, v8
+    add-float/2addr v1, v7
 
     iput v1, v0, Lorg/telegram/ui/Components/FragmentContextViewWavesDrawable$WeavingState;->targetY:F
 
@@ -798,32 +798,32 @@
     :cond_6
     sget-object v1, Lorg/telegram/messenger/Utilities;->random:Ljava/security/SecureRandom;
 
-    invoke-virtual {v1, v12}, Ljava/security/SecureRandom;->nextInt(I)I
+    invoke-virtual {v1, v11}, Ljava/security/SecureRandom;->nextInt(I)I
 
     move-result v1
 
     int-to-float v1, v1
 
-    div-float/2addr v1, v11
+    div-float/2addr v1, v10
 
-    mul-float v1, v1, v7
+    mul-float/2addr v1, v6
 
-    add-float/2addr v1, v6
+    add-float/2addr v1, v5
 
     iput v1, v0, Lorg/telegram/ui/Components/FragmentContextViewWavesDrawable$WeavingState;->targetX:F
 
     .line 343
     sget-object v1, Lorg/telegram/messenger/Utilities;->random:Ljava/security/SecureRandom;
 
-    invoke-virtual {v1, v12}, Ljava/security/SecureRandom;->nextInt(I)I
+    invoke-virtual {v1, v11}, Ljava/security/SecureRandom;->nextInt(I)I
 
     move-result v1
 
     int-to-float v1, v1
 
-    mul-float v1, v1, v5
+    mul-float/2addr v1, v3
 
-    div-float/2addr v1, v11
+    div-float/2addr v1, v10
 
     iput v1, v0, Lorg/telegram/ui/Components/FragmentContextViewWavesDrawable$WeavingState;->targetY:F
 
@@ -832,25 +832,25 @@
     :goto_1
     iget v1, v0, Lorg/telegram/ui/Components/FragmentContextViewWavesDrawable$WeavingState;->time:F
 
-    move-wide/from16 v4, p3
+    move-wide v2, p3
 
-    long-to-float v2, v4
+    long-to-float v2, v2
 
-    const/high16 v4, 0x3f000000    # 0.5f
+    const/high16 v3, 0x3f000000    # 0.5f
 
     sget v5, Lorg/telegram/ui/Components/BlobDrawable;->GRADIENT_SPEED_MIN:F
 
-    add-float/2addr v5, v4
+    add-float/2addr v5, v3
 
-    mul-float v5, v5, v2
+    mul-float/2addr v5, v2
 
-    sget v4, Lorg/telegram/ui/Components/BlobDrawable;->GRADIENT_SPEED_MAX:F
+    sget v3, Lorg/telegram/ui/Components/BlobDrawable;->GRADIENT_SPEED_MAX:F
 
     const/high16 v6, 0x40000000    # 2.0f
 
-    mul-float v4, v4, v6
+    mul-float/2addr v3, v6
 
-    mul-float v2, v2, v4
+    mul-float/2addr v2, v3
 
     mul-float v2, v2, p5
 
@@ -874,11 +874,11 @@
     :cond_8
     sget-object v1, Lorg/telegram/ui/Components/CubicBezierInterpolator;->EASE_OUT:Lorg/telegram/ui/Components/CubicBezierInterpolator;
 
-    iget v4, v0, Lorg/telegram/ui/Components/FragmentContextViewWavesDrawable$WeavingState;->time:F
+    iget v3, v0, Lorg/telegram/ui/Components/FragmentContextViewWavesDrawable$WeavingState;->time:F
 
-    div-float/2addr v4, v2
+    div-float/2addr v3, v2
 
-    invoke-virtual {v1, v4}, Lorg/telegram/ui/Components/CubicBezierInterpolator;->getInterpolation(F)F
+    invoke-virtual {v1, v3}, Lorg/telegram/ui/Components/CubicBezierInterpolator;->getInterpolation(F)F
 
     move-result v1
 
@@ -887,21 +887,21 @@
     int-to-float v2, v2
 
     .line 351
-    iget v4, v0, Lorg/telegram/ui/Components/FragmentContextViewWavesDrawable$WeavingState;->startX:F
+    iget v3, v0, Lorg/telegram/ui/Components/FragmentContextViewWavesDrawable$WeavingState;->startX:F
 
     iget v5, v0, Lorg/telegram/ui/Components/FragmentContextViewWavesDrawable$WeavingState;->targetX:F
 
-    sub-float/2addr v5, v4
+    sub-float/2addr v5, v3
 
-    mul-float v5, v5, v1
+    mul-float/2addr v5, v1
 
-    add-float/2addr v4, v5
+    add-float/2addr v3, v5
 
-    mul-float v4, v4, v2
+    mul-float/2addr v3, v2
 
     const/high16 v5, 0x43480000    # 200.0f
 
-    sub-float/2addr v4, v5
+    sub-float/2addr v3, v5
 
     move v6, p1
 
@@ -914,11 +914,11 @@
 
     sub-float/2addr v8, v7
 
-    mul-float v8, v8, v1
+    mul-float/2addr v8, v1
 
     add-float/2addr v7, v8
 
-    mul-float v6, v6, v7
+    mul-float/2addr v6, v7
 
     sub-float/2addr v6, v5
 
@@ -931,7 +931,7 @@
 
     if-eqz v1, :cond_a
 
-    if-ne v1, v3, :cond_9
+    if-ne v1, v4, :cond_9
 
     goto :goto_2
 
@@ -945,7 +945,7 @@
     const/high16 v1, 0x40400000    # 3.0f
 
     :goto_3
-    mul-float v2, v2, v1
+    mul-float/2addr v2, v1
 
     .line 355
     iget-object v1, v0, Lorg/telegram/ui/Components/FragmentContextViewWavesDrawable$WeavingState;->matrix:Landroid/graphics/Matrix;
@@ -955,16 +955,16 @@
     .line 356
     iget-object v1, v0, Lorg/telegram/ui/Components/FragmentContextViewWavesDrawable$WeavingState;->matrix:Landroid/graphics/Matrix;
 
-    invoke-virtual {v1, v4, v6}, Landroid/graphics/Matrix;->postTranslate(FF)Z
+    invoke-virtual {v1, v3, v6}, Landroid/graphics/Matrix;->postTranslate(FF)Z
 
     .line 357
     iget-object v1, v0, Lorg/telegram/ui/Components/FragmentContextViewWavesDrawable$WeavingState;->matrix:Landroid/graphics/Matrix;
 
-    add-float/2addr v4, v5
+    add-float/2addr v3, v5
 
     add-float/2addr v6, v5
 
-    invoke-virtual {v1, v2, v2, v4, v6}, Landroid/graphics/Matrix;->postScale(FFFF)Z
+    invoke-virtual {v1, v2, v2, v3, v6}, Landroid/graphics/Matrix;->postScale(FFFF)Z
 
     .line 359
     iget-object v1, v0, Lorg/telegram/ui/Components/FragmentContextViewWavesDrawable$WeavingState;->shader:Landroid/graphics/Shader;

@@ -110,8 +110,8 @@ public final class Palette {
         int population = swatch2 != null ? swatch2.getPopulation() : 1;
         float saturationWeight = target.getSaturationWeight();
         float f = BitmapDescriptorFactory.HUE_RED;
-        float saturationWeight2 = saturationWeight > BitmapDescriptorFactory.HUE_RED ? target.getSaturationWeight() * (1.0f - Math.abs(hsl[1] - target.getTargetSaturation())) : BitmapDescriptorFactory.HUE_RED;
-        float lightnessWeight = target.getLightnessWeight() > BitmapDescriptorFactory.HUE_RED ? target.getLightnessWeight() * (1.0f - Math.abs(hsl[2] - target.getTargetLightness())) : BitmapDescriptorFactory.HUE_RED;
+        float saturationWeight2 = saturationWeight > BitmapDescriptorFactory.HUE_RED ? target.getSaturationWeight() * (1.0f - Math.abs(hsl[1] - target.getTargetSaturation())) : 0.0f;
+        float lightnessWeight = target.getLightnessWeight() > BitmapDescriptorFactory.HUE_RED ? target.getLightnessWeight() * (1.0f - Math.abs(hsl[2] - target.getTargetLightness())) : 0.0f;
         if (target.getPopulationWeight() > BitmapDescriptorFactory.HUE_RED) {
             f = target.getPopulationWeight() * (swatch.getPopulation() / population);
         }

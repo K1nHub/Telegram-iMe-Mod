@@ -258,13 +258,13 @@
     goto :goto_0
 
     :cond_1
-    const/4 v3, 0x0
+    move v3, v1
 
     goto :goto_1
 
     :cond_2
     :goto_0
-    const/4 v3, 0x1
+    move v3, v2
 
     :goto_1
     invoke-virtual {p0}, Lorg/telegram/ui/Components/AdminLogFilterAlert$ListAdapter;->getItemCount()I
@@ -275,7 +275,7 @@
 
     if-eq p2, v4, :cond_3
 
-    const/4 v1, 0x1
+    move v1, v2
 
     :cond_3
     invoke-virtual {p1, v0, v3, v1}, Lorg/telegram/ui/Cells/CheckBoxUserCell;->setUser(Lorg/telegram/tgnet/TLRPC$User;ZZ)V
@@ -307,7 +307,7 @@
 
     if-nez v0, :cond_5
 
-    const/4 v1, 0x1
+    move v1, v2
 
     :cond_5
     invoke-virtual {p1, p2, v1, v2}, Lorg/telegram/ui/Cells/TextCell;->setTextAndCheck(Ljava/lang/CharSequence;ZZ)V
@@ -382,7 +382,7 @@
     if-eqz v0, :cond_8
 
     :cond_7
-    const/4 v1, 0x1
+    move v1, v2
 
     :cond_8
     invoke-virtual {p1, p2, v1, v2}, Lorg/telegram/ui/Cells/TextCell;->setTextAndCheck(Ljava/lang/CharSequence;ZZ)V
@@ -437,7 +437,7 @@
     if-eqz v0, :cond_b
 
     :cond_a
-    const/4 v1, 0x1
+    move v1, v2
 
     :cond_b
     invoke-virtual {p1, p2, v1, v2}, Lorg/telegram/ui/Cells/TextCell;->setTextAndCheck(Ljava/lang/CharSequence;ZZ)V
@@ -492,7 +492,7 @@
     if-eqz v0, :cond_e
 
     :cond_d
-    const/4 v1, 0x1
+    move v1, v2
 
     :cond_e
     invoke-virtual {p1, p2, v1, v2}, Lorg/telegram/ui/Cells/TextCell;->setTextAndCheck(Ljava/lang/CharSequence;ZZ)V
@@ -546,7 +546,7 @@
     if-eqz v0, :cond_11
 
     :cond_10
-    const/4 v1, 0x1
+    move v1, v2
 
     :cond_11
     invoke-virtual {p1, p2, v1, v2}, Lorg/telegram/ui/Cells/TextCell;->setTextAndCheck(Ljava/lang/CharSequence;ZZ)V
@@ -582,7 +582,7 @@
     if-eqz v0, :cond_14
 
     :cond_13
-    const/4 v1, 0x1
+    move v1, v2
 
     :cond_14
     invoke-virtual {p1, p2, v1, v2}, Lorg/telegram/ui/Cells/TextCell;->setTextAndCheck(Ljava/lang/CharSequence;ZZ)V
@@ -627,7 +627,7 @@
     if-eqz v0, :cond_17
 
     :cond_16
-    const/4 v1, 0x1
+    move v1, v2
 
     :cond_17
     invoke-virtual {p1, p2, v1, v2}, Lorg/telegram/ui/Cells/TextCell;->setTextAndCheck(Ljava/lang/CharSequence;ZZ)V
@@ -672,7 +672,7 @@
     if-eqz v0, :cond_1a
 
     :cond_19
-    const/4 v1, 0x1
+    move v1, v2
 
     :cond_1a
     invoke-virtual {p1, p2, v1, v2}, Lorg/telegram/ui/Cells/TextCell;->setTextAndCheck(Ljava/lang/CharSequence;ZZ)V
@@ -717,7 +717,7 @@
     if-eqz v0, :cond_1d
 
     :cond_1c
-    const/4 v1, 0x1
+    move v1, v2
 
     :cond_1d
     invoke-virtual {p1, p2, v1, v2}, Lorg/telegram/ui/Cells/TextCell;->setTextAndCheck(Ljava/lang/CharSequence;ZZ)V
@@ -764,13 +764,13 @@
     goto :goto_2
 
     :cond_1f
-    const/4 v0, 0x0
+    move v0, v1
 
     goto :goto_3
 
     :cond_20
     :goto_2
-    const/4 v0, 0x1
+    move v0, v2
 
     :goto_3
     iget-object v3, p0, Lorg/telegram/ui/Components/AdminLogFilterAlert$ListAdapter;->this$0:Lorg/telegram/ui/Components/AdminLogFilterAlert;
@@ -783,12 +783,12 @@
 
     if-eq v3, v4, :cond_21
 
-    const/4 v1, 0x1
+    move v1, v2
 
     :cond_21
     invoke-virtual {p1, p2, v0, v1}, Lorg/telegram/ui/Cells/TextCell;->setTextAndCheck(Ljava/lang/CharSequence;ZZ)V
 
-    goto :goto_5
+    goto/16 :goto_5
 
     .line 480
     :cond_22
@@ -830,7 +830,7 @@
     goto :goto_4
 
     :cond_23
-    const/4 v2, 0x0
+    move v2, v1
 
     :cond_24
     :goto_4
@@ -876,7 +876,7 @@
     if-eqz v0, :cond_27
 
     :cond_26
-    const/4 v1, 0x1
+    move v1, v2
 
     :cond_27
     invoke-virtual {p1, p2, v1, v2}, Lorg/telegram/ui/Cells/TextCell;->setTextAndCheck(Ljava/lang/CharSequence;ZZ)V
@@ -910,7 +910,7 @@
 
     if-nez v0, :cond_29
 
-    const/4 v1, 0x1
+    move v1, v2
 
     :cond_29
     invoke-virtual {p1, p2, v1, v2}, Lorg/telegram/ui/Cells/TextCell;->setTextAndCheck(Ljava/lang/CharSequence;ZZ)V
@@ -1100,7 +1100,7 @@
     goto :goto_0
 
     :cond_1
-    const/4 v2, 0x0
+    move v2, v4
 
     :cond_2
     :goto_0

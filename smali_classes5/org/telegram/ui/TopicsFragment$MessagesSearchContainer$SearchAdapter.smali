@@ -251,12 +251,12 @@
 
     if-eq p2, v0, :cond_2
 
-    const/4 v0, 0x1
+    move v0, v1
 
     goto :goto_0
 
     :cond_2
-    const/4 v0, 0x0
+    move v0, v3
 
     :goto_0
     iput-boolean v0, v2, Lorg/telegram/ui/Cells/TopicSearchCell;->drawDivider:Z
@@ -302,7 +302,7 @@
 
     if-eq p2, v0, :cond_4
 
-    const/4 v3, 0x1
+    move v3, v1
 
     :cond_4
     iput-boolean v3, p1, Lorg/telegram/ui/TopicsFragment$TopicDialogCell;->drawDivider:Z

@@ -422,7 +422,7 @@
     :cond_2
     int-to-float p2, p2
 
-    mul-float p2, p2, p4
+    mul-float/2addr p2, p4
 
     int-to-float p1, p1
 

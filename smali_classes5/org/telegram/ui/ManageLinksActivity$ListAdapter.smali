@@ -1791,7 +1791,7 @@
     goto :goto_0
 
     :cond_5
-    const/4 v1, 0x0
+    move v1, v2
 
     :goto_0
     invoke-virtual {p1, p2, v2, v0, v1}, Landroid/widget/FrameLayout;->setPadding(IIII)V
@@ -2342,7 +2342,7 @@
 
     if-eq p2, v0, :cond_16
 
-    const/4 v2, 0x1
+    move v2, v5
 
     :cond_16
     invoke-virtual {p1, v2}, Lcom/smedialink/ui/custom/donation/DonationTransactionView;->showDivider(Z)V
@@ -2533,7 +2533,7 @@
     move-result v0
 
     :goto_4
-    const/4 v5, 0x0
+    move v5, v2
 
     goto :goto_5
 
@@ -2733,7 +2733,7 @@
     goto :goto_6
 
     :cond_1f
-    const/4 v2, 0x1
+    move v2, v5
 
     .line 2466
     :goto_6
@@ -2922,12 +2922,12 @@
 
     if-nez v0, :cond_23
 
-    const/4 v0, 0x1
+    move v0, v5
 
     goto :goto_7
 
     :cond_23
-    const/4 v0, 0x0
+    move v0, v2
 
     :goto_7
     invoke-virtual {p1, v0}, Lorg/telegram/ui/Components/LinkActionView;->setCanEdit(Z)V
@@ -3833,13 +3833,13 @@
     goto :goto_d
 
     :cond_36
-    const/4 p2, 0x0
+    move p2, v2
 
     goto :goto_e
 
     :cond_37
     :goto_d
-    const/4 p2, 0x1
+    move p2, v5
 
     :goto_e
     invoke-virtual {p1, p2}, Lorg/telegram/ui/Components/LinkActionView;->hideAllActionButtons(Z)V
@@ -3947,7 +3947,7 @@
 
     if-eqz v0, :cond_39
 
-    const/4 v2, 0x1
+    move v2, v5
 
     :cond_39
     invoke-virtual {p2, v2}, Landroid/widget/EditText;->setEnabled(Z)V
@@ -5002,7 +5002,7 @@
     goto :goto_12
 
     :cond_4d
-    const/4 v6, 0x5
+    move v6, v7
 
     :goto_12
     or-int/lit8 v0, v6, 0x10
@@ -5090,7 +5090,7 @@
     goto :goto_14
 
     :cond_50
-    const/4 v6, 0x5
+    move v6, v7
 
     :goto_14
     or-int/lit8 p2, v6, 0x10
@@ -5273,7 +5273,7 @@
     goto :goto_16
 
     :cond_55
-    const/4 v6, 0x5
+    move v6, v7
 
     :goto_16
     or-int/lit8 p2, v6, 0x10
@@ -5766,7 +5766,7 @@
     goto :goto_0
 
     :cond_5
-    const/4 v4, 0x0
+    move v4, v8
 
     :goto_0
     invoke-virtual {v1, v2, v8, v5, v4}, Landroid/view/View;->setPadding(IIII)V
@@ -6310,13 +6310,13 @@
     goto :goto_3
 
     :cond_f
-    const/16 v18, 0x0
+    move/from16 v18, v8
 
     goto :goto_4
 
     :cond_10
     :goto_3
-    const/16 v18, 0x1
+    move/from16 v18, v5
 
     .line 1901
     :goto_4
@@ -6339,13 +6339,13 @@
     goto :goto_5
 
     :cond_11
-    const/16 v19, 0x0
+    move/from16 v19, v8
 
     goto :goto_6
 
     :cond_12
     :goto_5
-    const/16 v19, 0x1
+    move/from16 v19, v5
 
     .line 1903
     :goto_6

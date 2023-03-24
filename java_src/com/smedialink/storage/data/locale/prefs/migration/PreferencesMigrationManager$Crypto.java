@@ -53,6 +53,7 @@ public final class PreferencesMigrationManager$Crypto implements KoinComponent {
         List<? extends TokenCode> listOf5;
         List<? extends TokenCode> listOf6;
         List<? extends TokenCode> listOf7;
+        List<? extends TokenCode> listOf8;
         if (this instanceof KoinScopeComponent) {
             rootScope = ((KoinScopeComponent) this).getScope();
         } else {
@@ -60,7 +61,7 @@ public final class PreferencesMigrationManager$Crypto implements KoinComponent {
         }
         CryptoPreferenceHelper cryptoPreferenceHelper = (CryptoPreferenceHelper) rootScope.get(Reflection.getOrCreateKotlinClass(CryptoPreferenceHelper.class), null, null);
         cryptoPreferenceHelper.setTempOneActionUserId(String.valueOf(j));
-        for (int prefsVersion = cryptoPreferenceHelper.getPrefsVersion() + 1; prefsVersion < 9; prefsVersion++) {
+        for (int prefsVersion = cryptoPreferenceHelper.getPrefsVersion() + 1; prefsVersion < 10; prefsVersion++) {
             switch (prefsVersion) {
                 case 1:
                     PreferencesMigrationManager$Crypto preferencesMigrationManager$Crypto = INSTANCE;
@@ -83,7 +84,7 @@ public final class PreferencesMigrationManager$Crypto implements KoinComponent {
                     preferencesMigrationManager$Crypto4.addSupportForNewTokens(cryptoPreferenceHelper, cryptoPreferenceHelper, listOf4);
                     break;
                 case 5:
-                    cryptoPreferenceHelper.resetTokensSettings();
+                    cryptoPreferenceHelper.resetAllTokensSettings();
                     break;
                 case 6:
                     String oldWalletPublicAddress = cryptoPreferenceHelper.getOldWalletPublicAddress();
@@ -107,6 +108,11 @@ public final class PreferencesMigrationManager$Crypto implements KoinComponent {
                     PreferencesMigrationManager$Crypto preferencesMigrationManager$Crypto7 = INSTANCE;
                     listOf7 = CollectionsKt__CollectionsKt.listOf((Object[]) new TokenCode[]{TokenCode.PPM, TokenCode.SIN});
                     preferencesMigrationManager$Crypto7.addSupportForNewTokens(cryptoPreferenceHelper, cryptoPreferenceHelper, listOf7);
+                    break;
+                case 9:
+                    PreferencesMigrationManager$Crypto preferencesMigrationManager$Crypto8 = INSTANCE;
+                    listOf8 = CollectionsKt__CollectionsJVMKt.listOf(TokenCode.HT);
+                    preferencesMigrationManager$Crypto8.addSupportForNewTokens(cryptoPreferenceHelper, cryptoPreferenceHelper, listOf8);
                     break;
             }
             cryptoPreferenceHelper.setPrefsVersion(prefsVersion);

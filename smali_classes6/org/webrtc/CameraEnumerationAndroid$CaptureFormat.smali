@@ -88,14 +88,14 @@
 
     if-ne p2, v0, :cond_0
 
-    mul-int p0, p0, p1
+    mul-int/2addr p0, p1
 
     .line 118
     invoke-static {p2}, Landroid/graphics/ImageFormat;->getBitsPerPixel(I)I
 
     move-result p1
 
-    mul-int p0, p0, p1
+    mul-int/2addr p0, p1
 
     div-int/lit8 p0, p0, 0x8
 
@@ -185,7 +185,7 @@
 
     const v1, 0xffd9
 
-    mul-int v0, v0, v1
+    mul-int/2addr v0, v1
 
     iget v1, p0, Lorg/webrtc/CameraEnumerationAndroid$CaptureFormat;->height:I
 

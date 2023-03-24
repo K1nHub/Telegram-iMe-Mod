@@ -182,7 +182,7 @@
 
     if-eqz v0, :cond_5
 
-    const/4 v0, 0x1
+    move v0, v2
 
     goto :goto_3
 
@@ -732,7 +732,7 @@
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_0
     if-ge v2, v0, :cond_1
@@ -931,7 +931,7 @@
     goto :goto_1
 
     :cond_2
-    const/4 v5, -0x1
+    move v5, v6
 
     :cond_3
     add-int/lit8 v8, v4, -0x1
@@ -1330,7 +1330,7 @@
 
     aget v7, v14, v7
 
-    mul-float v7, v7, v10
+    mul-float/2addr v7, v10
 
     div-float v7, v7, v17
 
@@ -1639,17 +1639,17 @@
     goto :goto_18
 
     :cond_2a
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_18
     if-lez v15, :cond_2b
 
-    const/4 v2, 0x0
+    move v2, v1
 
     :cond_2b
-    move/from16 v7, v21
+    move v3, v1
 
-    const/4 v3, 0x0
+    move/from16 v7, v21
 
     :goto_19
     if-ge v3, v4, :cond_56
@@ -1855,12 +1855,12 @@
 
     if-lez v15, :cond_39
 
-    const/4 v2, 0x0
+    move v2, v1
 
     :cond_39
-    move/from16 v7, v21
+    move v3, v1
 
-    const/4 v3, 0x0
+    move/from16 v7, v21
 
     :goto_21
     if-ge v3, v4, :cond_56
@@ -2084,7 +2084,7 @@
 
     int-to-float v2, v2
 
-    mul-float v2, v2, v3
+    mul-float/2addr v2, v3
 
     const/high16 v3, 0x3f000000    # 0.5f
 
@@ -2097,7 +2097,7 @@
     if-lez v15, :cond_49
 
     :cond_48
-    const/4 v2, 0x0
+    move v2, v1
 
     :cond_49
     if-eqz v23, :cond_4a
@@ -2110,7 +2110,7 @@
     add-int v7, v21, v2
 
     :goto_2a
-    const/4 v3, 0x0
+    move v3, v1
 
     :goto_2b
     if-ge v3, v4, :cond_56

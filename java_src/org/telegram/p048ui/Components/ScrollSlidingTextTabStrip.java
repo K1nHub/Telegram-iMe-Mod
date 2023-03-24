@@ -525,7 +525,7 @@ public class ScrollSlidingTextTabStrip extends HorizontalScrollView {
             return;
         }
         if (f < BitmapDescriptorFactory.HUE_RED) {
-            f = BitmapDescriptorFactory.HUE_RED;
+            f = 0.0f;
         } else if (f > 1.0f) {
             f = 1.0f;
         }

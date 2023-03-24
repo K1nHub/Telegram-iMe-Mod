@@ -54,7 +54,7 @@ public final class CryptoWalletRepositoryImpl implements CryptoWalletRepository 
     public Observable<Result<Boolean>> linkWallet(String address, NetworkType networkType, String str) {
         Intrinsics.checkNotNullParameter(address, "address");
         Intrinsics.checkNotNullParameter(networkType, "networkType");
-        Observable<R> map = this.cryptoWalletApi.linkWallet(new LinkWalletAddressRequest(address, networkType, networkType.getBlockchainType().getBackendName(), str)).map(new FirebaseExtKt$sam$i$io_reactivex_functions_Function$0(new CryptoWalletRepositoryImpl$linkWallet$$inlined$mapSuccess$1(this.firebaseErrorHandler)));
+        Observable<R> map = this.cryptoWalletApi.linkWallet(new LinkWalletAddressRequest(address, networkType, str)).map(new FirebaseExtKt$sam$i$io_reactivex_functions_Function$0(new CryptoWalletRepositoryImpl$linkWallet$$inlined$mapSuccess$1(this.firebaseErrorHandler)));
         Intrinsics.checkNotNullExpressionValue(map, "errorHandler: FirebaseFu…response).toError()\n    }");
         Observable<Result<Boolean>> onErrorReturn = map.onErrorReturn(new RxExtKt$sam$i$io_reactivex_functions_Function$0(new CryptoWalletRepositoryImpl$linkWallet$$inlined$handleError$1(this.errorHandler)));
         Intrinsics.checkNotNullExpressionValue(onErrorReturn, "errorHandler: ErrorHandl…ndleError(it).toError() }");
@@ -62,10 +62,9 @@ public final class CryptoWalletRepositoryImpl implements CryptoWalletRepository 
     }
 
     @Override // com.smedialink.storage.domain.repository.crypto.CryptoWalletRepository
-    public Observable<Result<Boolean>> unlinkWallet(NetworkType networkType, BlockchainType blockchainType) {
+    public Observable<Result<Boolean>> unlinkWallet(NetworkType networkType) {
         Intrinsics.checkNotNullParameter(networkType, "networkType");
-        Intrinsics.checkNotNullParameter(blockchainType, "blockchainType");
-        Observable<R> map = this.cryptoWalletApi.unlinkWallet(new UnlinkWalletAddressRequest(networkType, blockchainType.getBackendName())).map(new FirebaseExtKt$sam$i$io_reactivex_functions_Function$0(new CryptoWalletRepositoryImpl$unlinkWallet$$inlined$mapSuccess$1(this.firebaseErrorHandler)));
+        Observable<R> map = this.cryptoWalletApi.unlinkWallet(new UnlinkWalletAddressRequest(networkType)).map(new FirebaseExtKt$sam$i$io_reactivex_functions_Function$0(new CryptoWalletRepositoryImpl$unlinkWallet$$inlined$mapSuccess$1(this.firebaseErrorHandler)));
         Intrinsics.checkNotNullExpressionValue(map, "errorHandler: FirebaseFu…response).toError()\n    }");
         Observable map2 = map.map(new ObservableExtKt$sam$i$io_reactivex_functions_Function$0(new CryptoWalletRepositoryImpl$unlinkWallet$$inlined$mapError$1(FirebaseFunctionsErrorHandler.CryptoErrorStatus.ETHER_WALLET_NOT_LINKED)));
         Intrinsics.checkNotNullExpressionValue(map2, "errorStatus: IErrorStatu…ult as? R\n        }\n    }");
@@ -76,16 +75,17 @@ public final class CryptoWalletRepositoryImpl implements CryptoWalletRepository 
 
     @Override // com.smedialink.storage.domain.repository.crypto.CryptoWalletRepository
     public Observable<Result<CryptoWalletInfo>> getLinkedCryptoWalletInfo() {
-        Observable<R> map = this.cryptoWalletApi.getCryptoWalletInfo().map(new FirebaseExtKt$sam$i$io_reactivex_functions_Function$0(new C1734x1fe7c804(this.firebaseErrorHandler)));
+        Observable<R> map = this.cryptoWalletApi.getCryptoWalletInfo().map(new FirebaseExtKt$sam$i$io_reactivex_functions_Function$0(new C1742x1fe7c804(this.firebaseErrorHandler)));
         Intrinsics.checkNotNullExpressionValue(map, "errorHandler: FirebaseFu…response).toError()\n    }");
-        Observable<Result<CryptoWalletInfo>> onErrorReturn = map.onErrorReturn(new RxExtKt$sam$i$io_reactivex_functions_Function$0(new C1733xc018f11d(this.errorHandler)));
+        Observable<Result<CryptoWalletInfo>> onErrorReturn = map.onErrorReturn(new RxExtKt$sam$i$io_reactivex_functions_Function$0(new C1741xc018f11d(this.errorHandler)));
         Intrinsics.checkNotNullExpressionValue(onErrorReturn, "errorHandler: ErrorHandl…ndleError(it).toError() }");
         return onErrorReturn;
     }
 
     @Override // com.smedialink.storage.domain.repository.crypto.CryptoWalletRepository
-    public Observable<Result<Boolean>> clearTokensData() {
+    public Observable<Result<Boolean>> clearTokensData(final BlockchainType blockchainType) {
         int collectionSizeOrDefault;
+        Intrinsics.checkNotNullParameter(blockchainType, "blockchainType");
         WalletTokenBalanceDao walletTokenBalanceDao = this.walletTokenBalanceDao;
         long selectedAccountId = this.telegramGateway.getSelectedAccountId();
         List<TokenCode> cryptoCodes = TokenCode.Companion.getCryptoCodes();
@@ -98,7 +98,7 @@ public final class CryptoWalletRepositoryImpl implements CryptoWalletRepository 
             @Override // java.util.concurrent.Callable
             public final Object call() {
                 Unit clearTokensData$lambda$5;
-                clearTokensData$lambda$5 = CryptoWalletRepositoryImpl.clearTokensData$lambda$5(CryptoWalletRepositoryImpl.this);
+                clearTokensData$lambda$5 = CryptoWalletRepositoryImpl.clearTokensData$lambda$5(CryptoWalletRepositoryImpl.this, blockchainType);
                 return clearTokensData$lambda$5;
             }
         }));
@@ -106,15 +106,16 @@ public final class CryptoWalletRepositoryImpl implements CryptoWalletRepository 
         Intrinsics.checkNotNullExpressionValue(just, "just(this)");
         Observable andThen2 = andThen.andThen(just);
         Intrinsics.checkNotNullExpressionValue(andThen2, "walletTokenBalanceDao\n  …Success().toObservable())");
-        Observable<Result<Boolean>> onErrorReturn = andThen2.onErrorReturn(new RxExtKt$sam$i$io_reactivex_functions_Function$0(new C1732x72fefc63(this.errorHandler)));
+        Observable<Result<Boolean>> onErrorReturn = andThen2.onErrorReturn(new RxExtKt$sam$i$io_reactivex_functions_Function$0(new C1740x72fefc63(this.errorHandler)));
         Intrinsics.checkNotNullExpressionValue(onErrorReturn, "errorHandler: ErrorHandl…ndleError(it).toError() }");
         return onErrorReturn;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit clearTokensData$lambda$5(CryptoWalletRepositoryImpl this$0) {
+    public static final Unit clearTokensData$lambda$5(CryptoWalletRepositoryImpl this$0, BlockchainType blockchainType) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
-        this$0.cryptoPreferenceHelper.resetTokensSettings();
+        Intrinsics.checkNotNullParameter(blockchainType, "$blockchainType");
+        this$0.cryptoPreferenceHelper.resetTokensSettingsByBlockchainType(blockchainType);
         return Unit.INSTANCE;
     }
 }

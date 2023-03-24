@@ -326,7 +326,7 @@
 
     float-to-double v2, p4
 
-    mul-double v0, v0, v2
+    mul-double/2addr v0, v2
 
     invoke-static {p5, p6}, Ljava/lang/Math;->sin(D)D
 
@@ -336,7 +336,7 @@
 
     float-to-double p1, p3
 
-    mul-double p4, p4, p1
+    mul-double/2addr p4, p1
 
     sub-double/2addr v0, p4
 
@@ -360,11 +360,11 @@
 
     sub-float v1, p1, p3
 
-    mul-float v1, v1, p5
+    mul-float/2addr v1, p5
 
     sub-float v2, p2, p4
 
-    mul-float v2, v2, p6
+    mul-float/2addr v2, p6
 
     add-float/2addr v1, v2
 
@@ -383,21 +383,21 @@
 
     move-result v0
 
-    mul-float p5, p5, v0
+    mul-float/2addr p5, v0
 
     add-float/2addr p3, p5
 
     sub-float/2addr p3, p1
 
-    mul-float v0, v0, p6
+    mul-float/2addr v0, p6
 
     add-float/2addr p4, v0
 
     sub-float/2addr p4, p2
 
-    mul-float p3, p3, p3
+    mul-float/2addr p3, p3
 
-    mul-float p4, p4, p4
+    mul-float/2addr p4, p4
 
     add-float/2addr p3, p4
 
@@ -430,7 +430,7 @@
 
     int-to-float v1, v1
 
-    mul-float v0, v0, v1
+    mul-float/2addr v0, v1
 
     iget v1, p3, Lorg/telegram/ui/Components/Paint/ShapeInput$Point;->y:F
 
@@ -445,7 +445,7 @@
 
     int-to-float v2, v2
 
-    mul-float v1, v1, v2
+    mul-float/2addr v1, v2
 
     const/4 v2, 0x5
 
@@ -486,7 +486,7 @@
 
     int-to-float v1, v1
 
-    mul-float v0, v0, v1
+    mul-float/2addr v0, v1
 
     iget v1, p3, Lorg/telegram/ui/Components/Paint/ShapeInput$Point;->y:F
 
@@ -501,7 +501,7 @@
 
     int-to-float p2, p2
 
-    mul-float v1, v1, p2
+    mul-float/2addr v1, p2
 
     .line 544
     invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
@@ -567,7 +567,7 @@
 
     if-ne v0, v3, :cond_1
 
-    goto/16 :goto_4
+    goto/16 :goto_3
 
     .line 104
     :cond_1
@@ -677,13 +677,13 @@
 
     const v2, 0x3dcccccd    # 0.1f
 
-    mul-float v1, v1, v2
+    mul-float/2addr v1, v2
 
     cmpg-float v0, v0, v1
 
     if-gez v0, :cond_3
 
-    const/4 v8, 0x1
+    move v8, v10
 
     :cond_3
     return v8
@@ -728,65 +728,60 @@
 
     add-float/2addr v13, v12
 
-    const/4 v0, 0x0
+    cmpl-float v0, p2, v14
 
-    cmpl-float v5, p2, v14
+    const/4 v5, 0x0
 
-    if-lez v5, :cond_7
+    if-lez v0, :cond_6
 
-    cmpg-float v5, p2, v13
+    cmpg-float v0, p2, v13
 
-    if-gez v5, :cond_7
+    if-gez v0, :cond_6
 
-    cmpg-float v1, p1, v6
+    cmpg-float v0, p1, v6
 
-    if-gez v1, :cond_5
+    if-gez v0, :cond_5
 
-    sub-float v0, v6, p1
+    sub-float v5, v6, p1
 
     goto :goto_1
 
     :cond_5
-    cmpl-float v1, p1, v4
+    cmpl-float v0, p1, v4
 
-    if-lez v1, :cond_6
+    if-lez v0, :cond_9
 
-    sub-float v0, p1, v4
+    sub-float v5, p1, v4
 
     goto :goto_1
 
     :cond_6
-    const/4 v8, 0x0
+    cmpg-float v0, p1, v6
 
-    goto :goto_2
+    if-gez v0, :cond_8
+
+    cmpl-float v0, p1, v4
+
+    if-lez v0, :cond_8
+
+    cmpg-float v0, p2, v14
+
+    if-gez v0, :cond_7
+
+    sub-float v5, v14, p2
+
+    goto :goto_1
 
     :cond_7
-    cmpg-float v5, p1, v6
+    cmpl-float v0, p2, v13
 
-    if-gez v5, :cond_9
+    if-lez v0, :cond_9
 
-    cmpl-float v5, p1, v4
-
-    if-lez v5, :cond_9
-
-    cmpg-float v1, p2, v14
-
-    if-gez v1, :cond_8
-
-    sub-float v0, v14, p2
+    sub-float v5, p2, v13
 
     goto :goto_1
 
     :cond_8
-    cmpl-float v1, p2, v13
-
-    if-lez v1, :cond_6
-
-    sub-float v0, p2, v13
-
-    goto :goto_1
-
-    :cond_9
     sub-float v0, p1, v6
 
     float-to-double v5, v0
@@ -866,13 +861,13 @@
 
     move-result-wide v0
 
-    double-to-float v0, v0
+    double-to-float v5, v0
 
+    :cond_9
     :goto_1
-    move v8, v0
+    move v8, v5
 
     .line 138
-    :goto_2
     iget-object v0, v7, Lorg/telegram/ui/Components/Paint/ShapeInput;->shape:Lorg/telegram/ui/Components/Paint/Shape;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/Paint/Shape;->getType()I
@@ -920,19 +915,19 @@
 
     if-gez v0, :cond_b
 
-    const/4 v8, 0x1
+    move v8, v10
 
-    goto :goto_3
+    goto :goto_2
 
     :cond_b
     const/4 v8, 0x0
 
-    :goto_3
+    :goto_2
     return v8
 
     .line 103
     :cond_c
-    :goto_4
+    :goto_3
     iget-object v0, v7, Lorg/telegram/ui/Components/Paint/ShapeInput;->shape:Lorg/telegram/ui/Components/Paint/Shape;
 
     iget v0, v0, Lorg/telegram/ui/Components/Paint/Shape;->centerX:F
@@ -995,18 +990,18 @@
 
     int-to-double v2, v2
 
-    cmpg-double v4, v0, v2
+    cmpg-double v0, v0, v2
 
-    if-gez v4, :cond_d
+    if-gez v0, :cond_d
 
-    const/4 v8, 0x1
+    move v8, v10
 
-    goto :goto_5
+    goto :goto_4
 
     :cond_d
     const/4 v8, 0x0
 
-    :goto_5
+    :goto_4
     return v8
 .end method
 
@@ -1078,12 +1073,12 @@
     goto :goto_0
 
     :cond_0
-    const/4 p1, 0x1
+    move p1, v4
 
     :goto_0
     int-to-float p1, p1
 
-    mul-float v1, v1, p1
+    mul-float/2addr v1, p1
 
     .line 77
     aget p1, v2, v3
@@ -1096,7 +1091,7 @@
 
     move-result-wide v7
 
-    mul-double v5, v5, v7
+    mul-double/2addr v5, v7
 
     iget-object p1, p0, Lorg/telegram/ui/Components/Paint/ShapeInput;->tempPoint:[F
 
@@ -1108,7 +1103,7 @@
 
     move-result-wide v9
 
-    mul-double v7, v7, v9
+    mul-double/2addr v7, v9
 
     sub-double/2addr v5, v7
 
@@ -1125,7 +1120,7 @@
 
     move-result-wide v7
 
-    mul-double v5, v5, v7
+    mul-double/2addr v5, v7
 
     iget-object v2, p0, Lorg/telegram/ui/Components/Paint/ShapeInput;->tempPoint:[F
 
@@ -1137,7 +1132,7 @@
 
     move-result-wide v0
 
-    mul-double v7, v7, v0
+    mul-double/2addr v7, v0
 
     add-double/2addr v5, v7
 
@@ -1247,7 +1242,7 @@
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     .line 480
     :goto_0
@@ -1317,7 +1312,7 @@
 
     const-wide v6, 0x4066800000000000L    # 180.0
 
-    mul-double v4, v4, v6
+    mul-double/2addr v4, v6
 
     double-to-float v4, v4
 
@@ -1333,7 +1328,7 @@
 
     int-to-float v5, v5
 
-    mul-float v2, v2, v5
+    mul-float/2addr v2, v5
 
     iget-object v5, p0, Lorg/telegram/ui/Components/Paint/ShapeInput;->shape:Lorg/telegram/ui/Components/Paint/Shape;
 
@@ -1349,7 +1344,7 @@
 
     int-to-float v6, v6
 
-    mul-float v5, v5, v6
+    mul-float/2addr v5, v6
 
     invoke-virtual {p1, v4, v2, v5}, Landroid/graphics/Canvas;->rotate(FFF)V
 
@@ -1648,7 +1643,7 @@
 .end method
 
 .method public process(Landroid/view/MotionEvent;F)V
-    .locals 12
+    .locals 11
 
     .line 155
     iget-object p2, p0, Lorg/telegram/ui/Components/Paint/ShapeInput;->renderView:Lorg/telegram/ui/Components/Paint/RenderView;
@@ -1729,7 +1724,7 @@
 
     const-wide v4, 0x7fefffffffffffffL    # Double.MAX_VALUE
 
-    const/4 p2, 0x0
+    move p2, v2
 
     .line 173
     :goto_0
@@ -1801,9 +1796,9 @@
 
     int-to-double v9, v9
 
-    cmpg-double v11, v7, v9
+    cmpg-double v9, v7, v9
 
-    if-gez v11, :cond_4
+    if-gez v9, :cond_4
 
     if-eqz v3, :cond_3
 
@@ -1846,13 +1841,13 @@
     goto :goto_2
 
     :cond_6
-    const/4 p2, 0x0
+    move p2, v2
 
     goto :goto_3
 
     :cond_7
     :goto_2
-    const/4 p2, 0x1
+    move p2, v0
 
     :goto_3
     if-nez p2, :cond_8
@@ -2268,7 +2263,7 @@
 
     div-float v5, p1, v3
 
-    mul-float v5, v5, v4
+    mul-float/2addr v5, v4
 
     iput v5, v0, Lorg/telegram/ui/Components/Paint/Shape;->centerY:F
 
@@ -2279,7 +2274,7 @@
 
     div-float/2addr p1, v3
 
-    mul-float p1, p1, v2
+    mul-float/2addr p1, v2
 
     .line 272
     iput p1, v0, Lorg/telegram/ui/Components/Paint/Shape;->radiusY:F
@@ -2467,7 +2462,7 @@
 
     const v5, 0x3f4ccccd    # 0.8f
 
-    mul-float v4, v4, v5
+    mul-float/2addr v4, v5
 
     add-float/2addr v0, v4
 
@@ -2480,7 +2475,7 @@
 
     const v5, 0x3f99999a    # 1.2f
 
-    mul-float v4, v4, v5
+    mul-float/2addr v4, v5
 
     add-float/2addr v0, v4
 

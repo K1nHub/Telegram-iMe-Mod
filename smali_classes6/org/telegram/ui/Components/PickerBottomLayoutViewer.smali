@@ -43,7 +43,7 @@
     goto :goto_0
 
     :cond_0
-    const/4 p2, -0x1
+    move p2, v0
 
     .line 39
     :goto_0
@@ -72,12 +72,12 @@
 
     if-eqz v3, :cond_1
 
-    const/4 v3, -0x1
+    move v3, v0
 
     goto :goto_1
 
     :cond_1
-    const v3, -0xe65818
+    move v3, v4
 
     :goto_1
     invoke-virtual {p2, v3}, Landroid/widget/TextView;->setTextColor(I)V
@@ -100,12 +100,12 @@
 
     if-eqz v5, :cond_2
 
-    const v5, -0xc2c2c3
+    move v5, v6
 
     goto :goto_2
 
     :cond_2
-    const/high16 v5, 0x2f000000
+    move v5, v7
 
     :goto_2
     const/4 v8, 0x0
@@ -189,7 +189,7 @@
 
     if-eqz v2, :cond_3
 
-    const/4 v4, -0x1
+    move v4, v0
 
     :cond_3
     invoke-virtual {p2, v4}, Landroid/widget/TextView;->setTextColor(I)V
@@ -209,7 +209,7 @@
     goto :goto_3
 
     :cond_4
-    const/high16 v6, 0x2f000000
+    move v6, v7
 
     :goto_3
     invoke-static {v6, v8}, Lorg/telegram/ui/ActionBar/Theme;->createSelectorDrawable(II)Landroid/graphics/drawable/Drawable;
@@ -419,7 +419,7 @@
     goto :goto_0
 
     :cond_1
-    const v0, -0xe65818
+    move v0, v1
 
     :goto_0
     invoke-virtual {p1, v0}, Landroid/widget/TextView;->setTextColor(I)V
@@ -463,7 +463,7 @@
     goto :goto_1
 
     :cond_3
-    const v0, -0xe65818
+    move v0, v1
 
     :goto_1
     invoke-virtual {p1, v0}, Landroid/widget/TextView;->setTextColor(I)V

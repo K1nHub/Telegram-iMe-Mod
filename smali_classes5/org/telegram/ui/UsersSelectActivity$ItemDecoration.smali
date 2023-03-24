@@ -76,7 +76,7 @@
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_0
     if-ge v2, v0, :cond_5
@@ -138,8 +138,6 @@
 
     const/4 v4, 0x0
 
-    const/4 v7, 0x0
-
     goto :goto_2
 
     :cond_2
@@ -149,9 +147,9 @@
 
     int-to-float v4, v4
 
+    :goto_2
     move v7, v4
 
-    :goto_2
     int-to-float v10, v3
 
     sget-boolean v3, Lorg/telegram/messenger/LocaleController;->isRTL:Z
@@ -165,7 +163,7 @@
     goto :goto_3
 
     :cond_3
-    const/4 v3, 0x0
+    move v3, v1
 
     :goto_3
     sub-int v3, p3, v3

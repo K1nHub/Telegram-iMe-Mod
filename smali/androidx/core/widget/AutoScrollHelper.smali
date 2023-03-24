@@ -143,7 +143,7 @@
 
     const v0, 0x44c4e000    # 1575.0f
 
-    mul-float v0, v0, p1
+    mul-float/2addr v0, p1
 
     const/high16 v1, 0x3f000000    # 0.5f
 
@@ -153,7 +153,7 @@
 
     const v2, 0x439d8000    # 315.0f
 
-    mul-float p1, p1, v2
+    mul-float/2addr p1, v2
 
     add-float/2addr p1, v1
 
@@ -277,11 +277,11 @@
 
     aget p1, v2, p1
 
-    mul-float p3, p3, p4
+    mul-float/2addr p3, p4
 
     if-lez v0, :cond_1
 
-    mul-float p2, p2, p3
+    mul-float/2addr p2, p3
 
     .line 566
     invoke-static {p2, v1, p1}, Landroidx/core/widget/AutoScrollHelper;->constrain(FFF)F
@@ -293,7 +293,7 @@
     :cond_1
     neg-float p2, p2
 
-    mul-float p2, p2, p3
+    mul-float/2addr p2, p3
 
     .line 568
     invoke-static {p2, v1, p1}, Landroidx/core/widget/AutoScrollHelper;->constrain(FFF)F
@@ -384,17 +384,17 @@
 
     if-gez v3, :cond_4
 
-    const/high16 v3, 0x3f800000    # 1.0f
+    cmpl-float v3, p1, v0
 
-    cmpl-float v4, p1, v0
+    const/high16 v4, 0x3f800000    # 1.0f
 
-    if-ltz v4, :cond_3
+    if-ltz v3, :cond_3
 
     div-float/2addr p1, p2
 
-    sub-float/2addr v3, p1
+    sub-float/2addr v4, p1
 
-    return v3
+    return v4
 
     .line 645
     :cond_3
@@ -404,7 +404,7 @@
 
     if-ne v1, v2, :cond_4
 
-    return v3
+    return v4
 
     :cond_4
     :goto_0
@@ -414,7 +414,7 @@
 .method private getEdgeValue(FFFF)F
     .locals 1
 
-    mul-float p1, p1, p2
+    mul-float/2addr p1, p2
 
     const/4 v0, 0x0
 
@@ -732,7 +732,7 @@
 
     if-eqz p1, :cond_5
 
-    const/4 v1, 0x1
+    move v1, v2
 
     :cond_5
     return v1

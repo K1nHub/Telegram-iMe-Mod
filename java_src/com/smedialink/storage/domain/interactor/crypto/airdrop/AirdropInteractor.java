@@ -29,7 +29,7 @@ public final class AirdropInteractor {
 
     public final Observable<Result<String>> registerInAirdrop(AirdropVersion version) {
         Intrinsics.checkNotNullParameter(version, "version");
-        Observable<Result<String>> subscribeOn = this.airdropRepository.registerInAirdrop(version).subscribeOn(this.schedulersProvider.mo708io());
+        Observable<Result<String>> subscribeOn = this.airdropRepository.registerInAirdrop(version).subscribeOn(this.schedulersProvider.mo707io());
         Intrinsics.checkNotNullExpressionValue(subscribeOn, "airdropRepository\n      …(schedulersProvider.io())");
         return subscribeOn;
     }
@@ -44,7 +44,7 @@ public final class AirdropInteractor {
     public final Observable<Result<AirdropInfo>> checkAirdropStart(String requestId, AirdropVersion version) {
         Intrinsics.checkNotNullParameter(requestId, "requestId");
         Intrinsics.checkNotNullParameter(version, "version");
-        Observable<Result<AirdropInfo>> subscribeOn = this.airdropRepository.checkAirdropStart(requestId, version).subscribeOn(this.schedulersProvider.mo708io());
+        Observable<Result<AirdropInfo>> subscribeOn = this.airdropRepository.checkAirdropStart(requestId, version).subscribeOn(this.schedulersProvider.mo707io());
         Intrinsics.checkNotNullExpressionValue(subscribeOn, "airdropRepository\n      …(schedulersProvider.io())");
         return subscribeOn;
     }
@@ -59,7 +59,7 @@ public final class AirdropInteractor {
     public final Observable<Result<Boolean>> getTokensByAirdrop(String requestId, AirdropVersion version) {
         Intrinsics.checkNotNullParameter(requestId, "requestId");
         Intrinsics.checkNotNullParameter(version, "version");
-        Observable<Result<Boolean>> subscribeOn = this.airdropRepository.getTokensByAirdrop(requestId, version).subscribeOn(this.schedulersProvider.mo708io());
+        Observable<Result<Boolean>> subscribeOn = this.airdropRepository.getTokensByAirdrop(requestId, version).subscribeOn(this.schedulersProvider.mo707io());
         Intrinsics.checkNotNullExpressionValue(subscribeOn, "airdropRepository\n      …(schedulersProvider.io())");
         return subscribeOn;
     }

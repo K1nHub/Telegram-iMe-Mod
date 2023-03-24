@@ -309,7 +309,7 @@
 
     array-length v5, v4
 
-    const/4 v6, 0x0
+    move v6, v2
 
     :goto_1
     if-ge v6, v5, :cond_8

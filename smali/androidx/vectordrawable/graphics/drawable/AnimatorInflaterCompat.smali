@@ -269,7 +269,7 @@
     invoke-virtual {v4, v1}, Landroid/animation/ValueAnimator;->setValues([Landroid/animation/PropertyValuesHolder;)V
 
     :cond_6
-    const/4 v14, 0x1
+    move v14, v2
 
     :goto_2
     if-eqz v11, :cond_0
@@ -468,12 +468,12 @@
 
     if-eqz v0, :cond_0
 
-    const/4 v3, 0x1
+    move v3, v1
 
     goto :goto_0
 
     :cond_0
-    const/4 v3, 0x0
+    move v3, v2
 
     :goto_0
     if-eqz v3, :cond_1
@@ -484,7 +484,7 @@
     goto :goto_1
 
     :cond_1
-    const/4 v0, 0x0
+    move v0, v2
 
     .line 210
     :goto_1
@@ -494,12 +494,12 @@
 
     if-eqz v4, :cond_2
 
-    const/4 v5, 0x1
+    move v5, v1
 
     goto :goto_2
 
     :cond_2
-    const/4 v5, 0x0
+    move v5, v2
 
     :goto_2
     if-eqz v5, :cond_3
@@ -510,7 +510,7 @@
     goto :goto_3
 
     :cond_3
-    const/4 v4, 0x0
+    move v4, v2
 
     :goto_3
     const/4 v6, 0x4
@@ -538,23 +538,23 @@
     if-eqz p1, :cond_6
 
     :cond_5
-    const/4 p1, 0x3
+    move p1, v7
 
     goto :goto_4
 
     :cond_6
-    const/4 p1, 0x0
+    move p1, v2
 
     :cond_7
     :goto_4
     if-nez p1, :cond_8
 
-    const/4 v6, 0x1
+    move v6, v1
 
     goto :goto_5
 
     :cond_8
-    const/4 v6, 0x0
+    move v6, v2
 
     :goto_5
     const/4 v8, 0x0
@@ -960,12 +960,12 @@
 
     if-eqz p1, :cond_0
 
-    const/4 v2, 0x1
+    move v2, v0
 
     goto :goto_0
 
     :cond_0
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_0
     if-eqz v2, :cond_1
@@ -976,7 +976,7 @@
     goto :goto_1
 
     :cond_1
-    const/4 p1, 0x0
+    move p1, v1
 
     .line 658
     :goto_1
@@ -989,7 +989,7 @@
     goto :goto_2
 
     :cond_2
-    const/4 v0, 0x0
+    move v0, v1
 
     :goto_2
     if-eqz v0, :cond_3
@@ -1000,7 +1000,7 @@
     goto :goto_3
 
     :cond_3
-    const/4 p0, 0x0
+    move p0, v1
 
     :goto_3
     if-eqz v2, :cond_4
@@ -1054,7 +1054,7 @@
     goto :goto_0
 
     :cond_0
-    const/4 p3, 0x0
+    move p3, p2
 
     :goto_0
     if-eqz p3, :cond_1
@@ -1378,12 +1378,12 @@
 
     if-eqz v2, :cond_0
 
-    const/4 v4, 0x1
+    move v4, v3
 
     goto :goto_0
 
     :cond_0
-    const/4 v4, 0x0
+    move v4, v1
 
     :goto_0
     const/4 v5, 0x4
@@ -1401,12 +1401,12 @@
 
     if-eqz p4, :cond_1
 
-    const/4 p4, 0x3
+    move p4, p3
 
     goto :goto_1
 
     :cond_1
-    const/4 p4, 0x0
+    move p4, v1
 
     :cond_2
     :goto_1
@@ -1653,13 +1653,13 @@
 
     const/high16 v2, 0x3f800000    # 1.0f
 
-    const/4 v4, 0x0
+    cmpg-float v4, v0, v2
 
-    cmpg-float v5, v0, v2
+    const/4 v5, 0x0
 
-    if-gez v5, :cond_6
+    if-gez v4, :cond_6
 
-    cmpg-float v0, v0, v4
+    cmpg-float v0, v0, v5
 
     if-gez v0, :cond_5
 
@@ -1689,22 +1689,22 @@
 
     move-result p3
 
-    cmpl-float v0, p3, v4
+    cmpl-float v0, p3, v5
 
     if-eqz v0, :cond_8
 
-    cmpg-float p3, p3, v4
+    cmpg-float p3, p3, v5
 
     if-gez p3, :cond_7
 
     .line 737
-    invoke-virtual {p2, v4}, Landroid/animation/Keyframe;->setFraction(F)V
+    invoke-virtual {p2, v5}, Landroid/animation/Keyframe;->setFraction(F)V
 
     goto :goto_2
 
     .line 739
     :cond_7
-    invoke-static {p2, v4}, Landroidx/vectordrawable/graphics/drawable/AnimatorInflaterCompat;->createNewKeyframe(Landroid/animation/Keyframe;F)Landroid/animation/Keyframe;
+    invoke-static {p2, v5}, Landroidx/vectordrawable/graphics/drawable/AnimatorInflaterCompat;->createNewKeyframe(Landroid/animation/Keyframe;F)Landroid/animation/Keyframe;
 
     move-result-object p2
 
@@ -1731,14 +1731,14 @@
 
     move-result v0
 
-    cmpg-float v0, v0, v4
+    cmpg-float v0, v0, v5
 
     if-gez v0, :cond_d
 
     if-nez p1, :cond_9
 
     .line 749
-    invoke-virtual {p3, v4}, Landroid/animation/Keyframe;->setFraction(F)V
+    invoke-virtual {p3, v5}, Landroid/animation/Keyframe;->setFraction(F)V
 
     goto :goto_6
 
@@ -1761,15 +1761,15 @@
     if-ge p3, v0, :cond_c
 
     .line 758
-    aget-object v5, p2, p3
+    aget-object v4, p2, p3
 
-    invoke-virtual {v5}, Landroid/animation/Keyframe;->getFraction()F
+    invoke-virtual {v4}, Landroid/animation/Keyframe;->getFraction()F
 
-    move-result v5
+    move-result v4
 
-    cmpl-float v5, v5, v4
+    cmpl-float v4, v4, v5
 
-    if-ltz v5, :cond_b
+    if-ltz v4, :cond_b
 
     goto :goto_5
 
@@ -2213,7 +2213,7 @@
 
     const/high16 p2, 0x3f000000    # 0.5f
 
-    mul-float p3, p3, p2
+    mul-float/2addr p3, p2
 
     .line 419
     invoke-static {p1, p0, p3, v1, p4}, Landroidx/vectordrawable/graphics/drawable/AnimatorInflaterCompat;->setupPathMotion(Landroid/graphics/Path;Landroid/animation/ObjectAnimator;FLjava/lang/String;Ljava/lang/String;)V
@@ -2269,7 +2269,7 @@
 
     invoke-virtual {v6, v8}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    const/4 v8, 0x0
+    move v8, v7
 
     .line 443
     :cond_0
@@ -2329,9 +2329,9 @@
 
     div-float/2addr v8, v14
 
-    const/4 v14, 0x0
+    move v14, v5
 
-    const/4 v15, 0x0
+    move v15, v14
 
     :goto_0
     const/4 v12, 0x0

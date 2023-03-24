@@ -364,7 +364,7 @@
 
     :cond_2
     :goto_0
-    const/4 v4, 0x0
+    move v4, v2
 
     :goto_1
     if-lt v1, v3, :cond_4
@@ -412,7 +412,7 @@
 
     sub-float/2addr v3, p3
 
-    mul-float v3, v3, p1
+    mul-float/2addr v3, p1
 
     add-float/2addr v1, v3
 
@@ -431,7 +431,7 @@
 
     sub-float/2addr p1, p3
 
-    mul-float p1, p1, p2
+    mul-float/2addr p1, p2
 
     add-float/2addr v4, p1
 
@@ -633,11 +633,11 @@
 
     const/4 v1, 0x0
 
+    cmpl-float v0, v0, v1
+
     const/high16 v2, -0x40800000    # -1.0f
 
     const/high16 v3, 0x3f800000    # 1.0f
-
-    cmpl-float v0, v0, v1
 
     if-ltz v0, :cond_0
 
@@ -763,7 +763,7 @@
 
     int-to-float v2, v2
 
-    mul-float v2, v2, v3
+    mul-float/2addr v2, v3
 
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getScaleY()F
 
@@ -787,11 +787,11 @@
 
     iget v4, p0, Lorg/telegram/ui/Components/voip/VoIPFloatingLayout;->toFloatingModeProgress:F
 
-    mul-float v2, v2, v4
+    mul-float/2addr v2, v4
 
     iget v4, p0, Lorg/telegram/ui/Components/voip/VoIPFloatingLayout;->mutedProgress:F
 
-    mul-float v2, v2, v4
+    mul-float/2addr v2, v4
 
     .line 297
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getScaleY()F
@@ -802,11 +802,11 @@
 
     iget v4, p0, Lorg/telegram/ui/Components/voip/VoIPFloatingLayout;->toFloatingModeProgress:F
 
-    mul-float v3, v3, v4
+    mul-float/2addr v3, v4
 
     iget v4, p0, Lorg/telegram/ui/Components/voip/VoIPFloatingLayout;->mutedProgress:F
 
-    mul-float v3, v3, v4
+    mul-float/2addr v3, v4
 
     int-to-float v4, v0
 
@@ -931,13 +931,13 @@
 
     const v0, 0x3e6b851f    # 0.23f
 
-    mul-float p1, p1, v0
+    mul-float/2addr p1, v0
 
     float-to-int p1, p1
 
     int-to-float p2, p2
 
-    mul-float p2, p2, v0
+    mul-float/2addr p2, v0
 
     float-to-int p2, p2
 
@@ -1175,7 +1175,7 @@
 
     iget v5, p0, Lorg/telegram/ui/Components/voip/VoIPFloatingLayout;->touchSlop:F
 
-    mul-float v5, v5, v5
+    mul-float/2addr v5, v5
 
     cmpl-float v3, v3, v5
 
@@ -1230,9 +1230,9 @@
 
     iput p1, p0, Lorg/telegram/ui/Components/voip/VoIPFloatingLayout;->startMovingFromY:F
 
-    const/4 v1, 0x0
+    move v1, v4
 
-    const/4 v2, 0x0
+    move v2, v1
 
     .line 220
     :cond_3
@@ -1322,9 +1322,9 @@
 
     const-wide/16 v3, 0xc8
 
-    cmp-long v5, v0, v3
+    cmp-long v0, v0, v3
 
-    if-gez v5, :cond_5
+    if-gez v0, :cond_5
 
     .line 233
     iget-object v0, p0, Lorg/telegram/ui/Components/voip/VoIPFloatingLayout;->tapListener:Landroid/view/View$OnClickListener;
@@ -1713,7 +1713,7 @@
 
     :cond_2
     :goto_0
-    const/4 v4, 0x0
+    move v4, v1
 
     :goto_1
     if-lt v2, v3, :cond_4
@@ -1740,7 +1740,7 @@
 
     :cond_4
     :goto_2
-    const/4 v2, 0x0
+    move v2, v1
 
     .line 546
     :goto_3
@@ -1928,7 +1928,7 @@
     if-eqz v0, :cond_1
 
     :cond_0
-    const/4 p2, 0x0
+    move p2, v1
 
     :cond_1
     const/high16 v0, 0x3f800000    # 1.0f
@@ -1953,7 +1953,7 @@
     goto :goto_0
 
     :cond_2
-    const/4 v0, 0x0
+    move v0, v2
 
     .line 384
     :goto_0
@@ -2010,11 +2010,11 @@
     .line 400
     iget v6, p0, Lorg/telegram/ui/Components/voip/VoIPFloatingLayout;->relativePositionToSetX:F
 
-    const p1, 0x3e6b851f    # 0.23f
+    cmpl-float p1, v6, v2
 
-    cmpl-float v4, v6, v2
+    const v4, 0x3e6b851f    # 0.23f
 
-    if-ltz v4, :cond_6
+    if-ltz p1, :cond_6
 
     .line 401
     iget v7, p0, Lorg/telegram/ui/Components/voip/VoIPFloatingLayout;->relativePositionToSetY:F
@@ -2022,23 +2022,23 @@
     .line 402
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
 
-    move-result v4
+    move-result p1
 
-    int-to-float v4, v4
+    int-to-float p1, p1
 
-    mul-float v4, v4, p1
+    mul-float/2addr p1, v4
 
-    float-to-int v8, v4
+    float-to-int v8, p1
 
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredHeight()I
 
-    move-result v4
+    move-result p1
 
-    int-to-float v4, v4
+    int-to-float p1, p1
 
-    mul-float v4, v4, p1
+    mul-float/2addr p1, v4
 
-    float-to-int v9, v4
+    float-to-int v9, p1
 
     const/4 v10, 0x0
 
@@ -2057,7 +2057,7 @@
     .line 406
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getTranslationX()F
 
-    move-result v4
+    move-result p1
 
     .line 407
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getTranslationY()F
@@ -2132,11 +2132,11 @@
 
     move-result-object p2
 
-    invoke-virtual {p2, p1}, Landroid/view/ViewPropertyAnimator;->scaleX(F)Landroid/view/ViewPropertyAnimator;
+    invoke-virtual {p2, v4}, Landroid/view/ViewPropertyAnimator;->scaleX(F)Landroid/view/ViewPropertyAnimator;
 
     move-result-object p2
 
-    invoke-virtual {p2, p1}, Landroid/view/ViewPropertyAnimator;->scaleY(F)Landroid/view/ViewPropertyAnimator;
+    invoke-virtual {p2, v4}, Landroid/view/ViewPropertyAnimator;->scaleY(F)Landroid/view/ViewPropertyAnimator;
 
     move-result-object p2
 
@@ -2153,7 +2153,7 @@
 
     int-to-float v6, v6
 
-    mul-float v6, v6, p1
+    mul-float/2addr v6, v4
 
     sub-float/2addr v1, v6
 
@@ -2161,7 +2161,7 @@
 
     div-float/2addr v1, v6
 
-    sub-float v1, v4, v1
+    sub-float v1, p1, v1
 
     invoke-virtual {p2, v1}, Landroid/view/ViewPropertyAnimator;->translationX(F)Landroid/view/ViewPropertyAnimator;
 
@@ -2180,51 +2180,51 @@
 
     int-to-float v7, v7
 
-    mul-float v7, v7, p1
+    mul-float/2addr v7, v4
 
     sub-float/2addr v1, v7
 
     div-float/2addr v1, v6
 
-    sub-float p1, v5, v1
+    sub-float v1, v5, v1
 
-    invoke-virtual {p2, p1}, Landroid/view/ViewPropertyAnimator;->translationY(F)Landroid/view/ViewPropertyAnimator;
+    invoke-virtual {p2, v1}, Landroid/view/ViewPropertyAnimator;->translationY(F)Landroid/view/ViewPropertyAnimator;
 
-    move-result-object p1
+    move-result-object p2
 
     .line 422
-    invoke-virtual {p1, v0}, Landroid/view/ViewPropertyAnimator;->alpha(F)Landroid/view/ViewPropertyAnimator;
+    invoke-virtual {p2, v0}, Landroid/view/ViewPropertyAnimator;->alpha(F)Landroid/view/ViewPropertyAnimator;
 
-    move-result-object p1
+    move-result-object p2
 
     const-wide/16 v0, 0x0
 
     .line 423
-    invoke-virtual {p1, v0, v1}, Landroid/view/ViewPropertyAnimator;->setStartDelay(J)Landroid/view/ViewPropertyAnimator;
+    invoke-virtual {p2, v0, v1}, Landroid/view/ViewPropertyAnimator;->setStartDelay(J)Landroid/view/ViewPropertyAnimator;
 
-    move-result-object p1
+    move-result-object p2
 
     .line 424
-    invoke-virtual {p1, v2, v3}, Landroid/view/ViewPropertyAnimator;->setDuration(J)Landroid/view/ViewPropertyAnimator;
+    invoke-virtual {p2, v2, v3}, Landroid/view/ViewPropertyAnimator;->setDuration(J)Landroid/view/ViewPropertyAnimator;
 
-    move-result-object p1
+    move-result-object p2
 
-    sget-object p2, Lorg/telegram/ui/Components/CubicBezierInterpolator;->DEFAULT:Lorg/telegram/ui/Components/CubicBezierInterpolator;
+    sget-object v0, Lorg/telegram/ui/Components/CubicBezierInterpolator;->DEFAULT:Lorg/telegram/ui/Components/CubicBezierInterpolator;
 
-    invoke-virtual {p1, p2}, Landroid/view/ViewPropertyAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)Landroid/view/ViewPropertyAnimator;
+    invoke-virtual {p2, v0}, Landroid/view/ViewPropertyAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)Landroid/view/ViewPropertyAnimator;
 
-    move-result-object p1
+    move-result-object p2
 
-    new-instance v0, Lorg/telegram/ui/Components/voip/VoIPFloatingLayout$3;
+    new-instance v1, Lorg/telegram/ui/Components/voip/VoIPFloatingLayout$3;
 
-    invoke-direct {v0, p0, v4, v5}, Lorg/telegram/ui/Components/voip/VoIPFloatingLayout$3;-><init>(Lorg/telegram/ui/Components/voip/VoIPFloatingLayout;FF)V
+    invoke-direct {v1, p0, p1, v5}, Lorg/telegram/ui/Components/voip/VoIPFloatingLayout$3;-><init>(Lorg/telegram/ui/Components/voip/VoIPFloatingLayout;FF)V
 
-    invoke-virtual {p1, v0}, Landroid/view/ViewPropertyAnimator;->setListener(Landroid/animation/Animator$AnimatorListener;)Landroid/view/ViewPropertyAnimator;
+    invoke-virtual {p2, v1}, Landroid/view/ViewPropertyAnimator;->setListener(Landroid/animation/Animator$AnimatorListener;)Landroid/view/ViewPropertyAnimator;
 
     move-result-object p1
 
     .line 434
-    invoke-virtual {p1, p2}, Landroid/view/ViewPropertyAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)Landroid/view/ViewPropertyAnimator;
+    invoke-virtual {p1, v0}, Landroid/view/ViewPropertyAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)Landroid/view/ViewPropertyAnimator;
 
     move-result-object p1
 
@@ -2298,7 +2298,7 @@
     goto :goto_1
 
     :cond_a
-    const/4 v0, 0x0
+    move v0, v2
 
     :goto_1
     iput v0, p0, Lorg/telegram/ui/Components/voip/VoIPFloatingLayout;->toFloatingModeProgress:F
@@ -2357,7 +2357,7 @@
     goto :goto_0
 
     :cond_1
-    const/4 v0, 0x0
+    move v0, v1
 
     .line 491
     :goto_0
@@ -2396,7 +2396,7 @@
     goto :goto_1
 
     :cond_4
-    const/4 v0, 0x0
+    move v0, v1
 
     :goto_1
     aput v0, p2, v2
@@ -2551,7 +2551,7 @@
 
     :cond_2
     :goto_0
-    const/4 v4, 0x0
+    move v4, v3
 
     :goto_1
     if-lt v1, v2, :cond_4
@@ -2578,7 +2578,7 @@
 
     :cond_4
     :goto_2
-    const/4 v1, 0x0
+    move v1, v3
 
     .line 524
     :goto_3

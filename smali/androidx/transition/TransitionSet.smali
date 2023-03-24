@@ -200,7 +200,7 @@
 .end method
 
 .method public addTransition(Landroidx/transition/Transition;)Landroidx/transition/TransitionSet;
-    .locals 5
+    .locals 4
 
     .line 179
     invoke-direct {p0, p1}, Landroidx/transition/TransitionSet;->addTransitionInternal(Landroidx/transition/Transition;)V
@@ -210,9 +210,9 @@
 
     const-wide/16 v2, 0x0
 
-    cmp-long v4, v0, v2
+    cmp-long v2, v0, v2
 
-    if-ltz v4, :cond_0
+    if-ltz v2, :cond_0
 
     .line 181
     invoke-virtual {p1, v0, v1}, Landroidx/transition/Transition;->setDuration(J)Landroidx/transition/Transition;
@@ -934,7 +934,7 @@
 .end method
 
 .method public setDuration(J)Landroidx/transition/TransitionSet;
-    .locals 5
+    .locals 4
 
     .line 239
     invoke-super {p0, p1, p2}, Landroidx/transition/Transition;->setDuration(J)Landroidx/transition/Transition;
@@ -944,9 +944,9 @@
 
     const-wide/16 v2, 0x0
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-ltz v4, :cond_0
+    if-ltz v0, :cond_0
 
     iget-object v0, p0, Landroidx/transition/TransitionSet;->mTransitions:Ljava/util/ArrayList;
 

@@ -235,13 +235,13 @@
     .line 133
     iget v2, p0, Lorg/telegram/ui/Components/ReplaceableIconDrawable;->progress:F
 
-    const/high16 v3, 0x437f0000    # 255.0f
+    const/high16 v3, 0x3f800000    # 1.0f
 
-    const/16 v4, 0xff
+    cmpl-float v2, v2, v3
 
-    const/high16 v5, 0x3f800000    # 1.0f
+    const/high16 v4, 0x437f0000    # 255.0f
 
-    cmpl-float v2, v2, v5
+    const/16 v5, 0xff
 
     if-eqz v2, :cond_0
 
@@ -266,7 +266,7 @@
 
     iget v6, p0, Lorg/telegram/ui/Components/ReplaceableIconDrawable;->progress:F
 
-    mul-float v6, v6, v3
+    mul-float/2addr v6, v4
 
     float-to-int v6, v6
 
@@ -289,7 +289,7 @@
     if-eqz v2, :cond_1
 
     .line 140
-    invoke-virtual {v2, v4}, Landroid/graphics/drawable/Drawable;->setAlpha(I)V
+    invoke-virtual {v2, v5}, Landroid/graphics/drawable/Drawable;->setAlpha(I)V
 
     .line 141
     iget-object v2, p0, Lorg/telegram/ui/Components/ReplaceableIconDrawable;->currentDrawable:Landroid/graphics/drawable/Drawable;
@@ -301,7 +301,7 @@
     :goto_0
     iget v2, p0, Lorg/telegram/ui/Components/ReplaceableIconDrawable;->progress:F
 
-    cmpl-float v6, v2, v5
+    cmpl-float v6, v2, v3
 
     if-eqz v6, :cond_2
 
@@ -309,7 +309,7 @@
 
     if-eqz v6, :cond_2
 
-    sub-float/2addr v5, v2
+    sub-float/2addr v3, v2
 
     .line 146
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
@@ -319,14 +319,14 @@
     int-to-float v1, v1
 
     .line 147
-    invoke-virtual {p1, v5, v5, v0, v1}, Landroid/graphics/Canvas;->scale(FFFF)V
+    invoke-virtual {p1, v3, v3, v0, v1}, Landroid/graphics/Canvas;->scale(FFFF)V
 
     .line 148
     iget-object v0, p0, Lorg/telegram/ui/Components/ReplaceableIconDrawable;->outDrawable:Landroid/graphics/drawable/Drawable;
 
-    mul-float v5, v5, v3
+    mul-float/2addr v3, v4
 
-    float-to-int v1, v5
+    float-to-int v1, v3
 
     invoke-virtual {v0, v1}, Landroid/graphics/drawable/Drawable;->setAlpha(I)V
 
@@ -347,7 +347,7 @@
     if-eqz v0, :cond_3
 
     .line 152
-    invoke-virtual {v0, v4}, Landroid/graphics/drawable/Drawable;->setAlpha(I)V
+    invoke-virtual {v0, v5}, Landroid/graphics/drawable/Drawable;->setAlpha(I)V
 
     .line 153
     iget-object v0, p0, Lorg/telegram/ui/Components/ReplaceableIconDrawable;->outDrawable:Landroid/graphics/drawable/Drawable;
@@ -565,7 +565,7 @@
     if-eqz v1, :cond_2
 
     :cond_1
-    const/4 p2, 0x0
+    move p2, v2
 
     .line 58
     :cond_2

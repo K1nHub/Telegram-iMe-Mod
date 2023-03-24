@@ -133,7 +133,7 @@
 
     iput v0, p0, Lorg/bouncycastle/crypto/digests/GeneralDigest;->xBufOff:I
 
-    const/4 v1, 0x0
+    move v1, v0
 
     :goto_0
     iget-object v2, p0, Lorg/bouncycastle/crypto/digests/GeneralDigest;->xBuf:[B
@@ -200,7 +200,7 @@
 
     if-eqz v1, :cond_2
 
-    const/4 v1, 0x0
+    move v1, v0
 
     :goto_0
     if-ge v1, p3, :cond_1

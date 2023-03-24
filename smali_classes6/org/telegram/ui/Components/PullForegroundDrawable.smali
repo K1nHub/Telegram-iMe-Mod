@@ -839,11 +839,11 @@
 
     const/high16 v2, 0x3f000000    # 0.5f
 
-    mul-float v1, v1, v2
-
-    const/4 v2, 0x1
+    mul-float/2addr v1, v2
 
     cmpg-float v0, v0, v1
+
+    const/4 v1, 0x1
 
     if-gez v0, :cond_0
 
@@ -858,13 +858,13 @@
     iput v0, p0, Lorg/telegram/ui/Components/PullForegroundDrawable;->textInProgress:F
 
     .line 502
-    iput-boolean v2, p0, Lorg/telegram/ui/Components/PullForegroundDrawable;->animateToTextIn:Z
+    iput-boolean v1, p0, Lorg/telegram/ui/Components/PullForegroundDrawable;->animateToTextIn:Z
 
     goto :goto_0
 
     .line 505
     :cond_0
-    iput-boolean v2, p0, Lorg/telegram/ui/Components/PullForegroundDrawable;->wasSendCallback:Z
+    iput-boolean v1, p0, Lorg/telegram/ui/Components/PullForegroundDrawable;->wasSendCallback:Z
 
     .line 506
     iget-object v0, p0, Lorg/telegram/ui/Components/PullForegroundDrawable;->cell:Landroid/view/View;
@@ -890,22 +890,22 @@
 .method private updateTextProgress(F)V
     .locals 8
 
+    const v0, 0x3f59999a    # 0.85f
+
+    cmpl-float p1, p1, v0
+
     const/4 v0, 0x1
 
     const/4 v1, 0x0
 
-    const v2, 0x3f59999a    # 0.85f
-
-    cmpl-float p1, p1, v2
-
     if-lez p1, :cond_0
 
-    const/4 p1, 0x1
+    move p1, v0
 
     goto :goto_0
 
     :cond_0
-    const/4 p1, 0x0
+    move p1, v1
 
     .line 395
     :goto_0
@@ -940,12 +940,12 @@
     :cond_1
     if-eqz p1, :cond_2
 
-    const/4 v2, 0x0
+    move v2, v5
 
     goto :goto_1
 
     :cond_2
-    const/high16 v2, 0x3f800000    # 1.0f
+    move v2, v4
 
     .line 401
     :goto_1
@@ -972,12 +972,12 @@
 
     if-eqz p1, :cond_5
 
-    const/4 v6, 0x0
+    move v6, v5
 
     goto :goto_2
 
     :cond_5
-    const/high16 v6, 0x3f800000    # 1.0f
+    move v6, v4
 
     :goto_2
     aput v6, v2, v0
@@ -1044,7 +1044,7 @@
 
     if-eqz v1, :cond_8
 
-    const/4 v4, 0x0
+    move v4, v5
 
     :cond_8
     aput v4, p1, v0
@@ -1406,7 +1406,7 @@
 
     iget v5, v0, Lorg/telegram/ui/Components/PullForegroundDrawable;->pullProgress:F
 
-    mul-float v4, v4, v5
+    mul-float/2addr v4, v5
 
     float-to-int v4, v4
 
@@ -1419,7 +1419,7 @@
 
     iget v7, v0, Lorg/telegram/ui/Components/PullForegroundDrawable;->bounceProgress:F
 
-    mul-float v7, v7, v6
+    mul-float/2addr v7, v6
 
     const v6, 0x3d4ccccd    # 0.05f
 
@@ -1432,7 +1432,7 @@
 
     iget v7, v0, Lorg/telegram/ui/Components/PullForegroundDrawable;->bounceProgress:F
 
-    mul-float v7, v7, v6
+    mul-float/2addr v7, v6
 
     :goto_1
     move v13, v7
@@ -1445,7 +1445,7 @@
 
     const/high16 v14, 0x40000000    # 2.0f
 
-    mul-float v5, v5, v14
+    mul-float/2addr v5, v14
 
     const/high16 v15, 0x3f800000    # 1.0f
 
@@ -1453,7 +1453,7 @@
 
     if-lez v6, :cond_3
 
-    const/high16 v5, 0x3f800000    # 1.0f
+    move v5, v15
 
     .line 202
     :cond_3
@@ -1605,7 +1605,7 @@
 
     sub-float v12, v17, v12
 
-    mul-float v3, v3, v12
+    mul-float/2addr v3, v12
 
     add-float/2addr v2, v3
 
@@ -1689,13 +1689,13 @@
     .line 241
     iget v11, v0, Lorg/telegram/ui/Components/PullForegroundDrawable;->outProgress:F
 
-    mul-float v3, v3, v11
+    mul-float/2addr v3, v11
 
     int-to-float v12, v14
 
     sub-float v13, v10, v12
 
-    mul-float v13, v13, v11
+    mul-float/2addr v13, v11
 
     invoke-virtual {v8, v3, v13}, Landroid/graphics/Canvas;->translate(FF)V
 
@@ -1710,7 +1710,7 @@
 
     iget v11, v0, Lorg/telegram/ui/Components/PullForegroundDrawable;->accentRevalProgressOut:F
 
-    mul-float v3, v3, v11
+    mul-float/2addr v3, v11
 
     iget-object v11, v0, Lorg/telegram/ui/Components/PullForegroundDrawable;->backgroundPaint:Landroid/graphics/Paint;
 
@@ -1739,13 +1739,13 @@
     .line 247
     iget v11, v0, Lorg/telegram/ui/Components/PullForegroundDrawable;->outProgress:F
 
-    mul-float v3, v3, v11
+    mul-float/2addr v3, v11
 
     int-to-float v12, v14
 
     sub-float v13, v10, v12
 
-    mul-float v13, v13, v11
+    mul-float/2addr v13, v11
 
     invoke-virtual {v8, v3, v13}, Landroid/graphics/Canvas;->translate(FF)V
 
@@ -1760,7 +1760,7 @@
 
     iget v11, v0, Lorg/telegram/ui/Components/PullForegroundDrawable;->accentRevalProgress:F
 
-    mul-float v3, v3, v11
+    mul-float/2addr v3, v11
 
     iget-object v11, v0, Lorg/telegram/ui/Components/PullForegroundDrawable;->paintBackgroundAccent:Landroid/graphics/Paint;
 
@@ -1791,13 +1791,13 @@
     .line 254
     iget v11, v0, Lorg/telegram/ui/Components/PullForegroundDrawable;->outProgress:F
 
-    mul-float v3, v3, v11
+    mul-float/2addr v3, v11
 
     int-to-float v12, v14
 
     sub-float v13, v10, v12
 
-    mul-float v13, v13, v11
+    mul-float/2addr v13, v11
 
     invoke-virtual {v8, v3, v13}, Landroid/graphics/Canvas;->translate(FF)V
 
@@ -1812,7 +1812,7 @@
 
     iget v11, v0, Lorg/telegram/ui/Components/PullForegroundDrawable;->accentRevalProgress:F
 
-    mul-float v3, v3, v11
+    mul-float/2addr v3, v11
 
     iget-object v11, v0, Lorg/telegram/ui/Components/PullForegroundDrawable;->paintBackgroundAccent:Landroid/graphics/Paint;
 
@@ -1841,13 +1841,13 @@
     .line 260
     iget v11, v0, Lorg/telegram/ui/Components/PullForegroundDrawable;->outProgress:F
 
-    mul-float v3, v3, v11
+    mul-float/2addr v3, v11
 
     int-to-float v12, v14
 
     sub-float v13, v10, v12
 
-    mul-float v13, v13, v11
+    mul-float/2addr v13, v11
 
     invoke-virtual {v8, v3, v13}, Landroid/graphics/Canvas;->translate(FF)V
 
@@ -1862,7 +1862,7 @@
 
     iget v11, v0, Lorg/telegram/ui/Components/PullForegroundDrawable;->accentRevalProgressOut:F
 
-    mul-float v3, v3, v11
+    mul-float/2addr v3, v11
 
     iget-object v11, v0, Lorg/telegram/ui/Components/PullForegroundDrawable;->backgroundPaint:Landroid/graphics/Paint;
 
@@ -1886,11 +1886,11 @@
 
     const v3, 0x3ecccccd    # 0.4f
 
-    mul-float v5, v5, v3
+    mul-float/2addr v5, v3
 
-    mul-float v5, v5, v9
+    mul-float/2addr v5, v9
 
-    mul-float v5, v5, v11
+    mul-float/2addr v5, v11
 
     float-to-int v3, v5
 
@@ -2010,7 +2010,7 @@
 
     iget v3, v0, Lorg/telegram/ui/Components/PullForegroundDrawable;->outProgress:F
 
-    mul-float v2, v2, v3
+    mul-float/2addr v2, v3
 
     sub-float/2addr v1, v2
 
@@ -2020,11 +2020,11 @@
     :cond_12
     iget v1, v0, Lorg/telegram/ui/Components/PullForegroundDrawable;->outProgress:F
 
-    const/16 v18, 0x1
-
     const/4 v2, 0x0
 
     cmpl-float v3, v1, v2
+
+    const/16 v18, 0x1
 
     if-eqz v3, :cond_14
 
@@ -2048,7 +2048,7 @@
 
     sub-float v1, v4, v1
 
-    mul-float v3, v3, v1
+    mul-float/2addr v3, v1
 
     float-to-int v1, v3
 
@@ -2121,7 +2121,7 @@
 
     const/high16 v5, 0x43340000    # 180.0f
 
-    mul-float v5, v5, v3
+    mul-float/2addr v5, v3
 
     .line 299
     invoke-virtual {v8, v5, v1, v2}, Landroid/graphics/Canvas;->rotate(FFF)V
@@ -2131,7 +2131,7 @@
 
     move-result v1
 
-    mul-float v1, v1, v4
+    mul-float/2addr v1, v4
 
     sub-float/2addr v1, v3
 
@@ -2175,7 +2175,7 @@
 
     const/high16 v3, 0x437f0000    # 255.0f
 
-    mul-float v2, v2, v3
+    mul-float/2addr v2, v3
 
     float-to-int v2, v2
 
@@ -2254,11 +2254,11 @@
     .line 314
     iget v1, v0, Lorg/telegram/ui/Components/PullForegroundDrawable;->textSwappingProgress:F
 
-    const v15, 0x3f4ccccd    # 0.8f
-
     const/4 v2, 0x0
 
     cmpl-float v3, v1, v2
+
+    const v15, 0x3f4ccccd    # 0.8f
 
     if-lez v3, :cond_18
 
@@ -2276,7 +2276,7 @@
     .line 316
     iget v3, v0, Lorg/telegram/ui/Components/PullForegroundDrawable;->textSwappingProgress:F
 
-    mul-float v3, v3, v1
+    mul-float/2addr v3, v1
 
     add-float/2addr v3, v15
 
@@ -2293,7 +2293,7 @@
 
     sub-float v4, v2, v4
 
-    mul-float v1, v1, v4
+    mul-float/2addr v1, v4
 
     add-float/2addr v1, v11
 
@@ -2325,13 +2325,13 @@
 
     const/high16 v7, 0x437f0000    # 255.0f
 
-    mul-float v1, v1, v7
+    mul-float/2addr v1, v7
 
-    mul-float v1, v1, v9
+    mul-float/2addr v1, v9
 
     iget v7, v0, Lorg/telegram/ui/Components/PullForegroundDrawable;->textInProgress:F
 
-    mul-float v1, v1, v7
+    mul-float/2addr v1, v7
 
     float-to-int v7, v1
 
@@ -2372,7 +2372,7 @@
 
     sub-float v3, v4, v3
 
-    mul-float v2, v2, v3
+    mul-float/2addr v2, v3
 
     add-float/2addr v2, v11
 
@@ -2442,7 +2442,7 @@
 
     sub-float v4, v3, v4
 
-    mul-float v4, v4, v2
+    mul-float/2addr v4, v2
 
     add-float/2addr v4, v1
 
@@ -2457,7 +2457,7 @@
 
     iget v2, v0, Lorg/telegram/ui/Components/PullForegroundDrawable;->textSwappingProgress:F
 
-    mul-float v1, v1, v2
+    mul-float/2addr v1, v2
 
     sub-float v1, v11, v1
 
@@ -2493,13 +2493,13 @@
 
     const/high16 v6, 0x437f0000    # 255.0f
 
-    mul-float v1, v1, v6
+    mul-float/2addr v1, v6
 
-    mul-float v1, v1, v9
+    mul-float/2addr v1, v9
 
     iget v6, v0, Lorg/telegram/ui/Components/PullForegroundDrawable;->textInProgress:F
 
-    mul-float v1, v1, v6
+    mul-float/2addr v1, v6
 
     float-to-int v6, v1
 
@@ -2528,7 +2528,7 @@
 
     iget v2, v0, Lorg/telegram/ui/Components/PullForegroundDrawable;->textSwappingProgress:F
 
-    mul-float v1, v1, v2
+    mul-float/2addr v1, v2
 
     add-float/2addr v11, v1
 
@@ -2604,7 +2604,7 @@
 
     int-to-float v1, v1
 
-    mul-float v1, v1, v15
+    mul-float/2addr v1, v15
 
     float-to-int v1, v1
 
@@ -2640,7 +2640,7 @@
     .line 356
     iget v5, v0, Lorg/telegram/ui/Components/PullForegroundDrawable;->outProgress:F
 
-    mul-float v15, v15, v5
+    mul-float/2addr v15, v5
 
     add-float/2addr v3, v15
 
@@ -2656,7 +2656,7 @@
 
     sub-float v15, v4, v5
 
-    mul-float v6, v6, v15
+    mul-float/2addr v6, v15
 
     int-to-float v2, v2
 
@@ -2664,7 +2664,7 @@
 
     sub-float v15, v4, v5
 
-    mul-float v2, v2, v15
+    mul-float/2addr v2, v15
 
     .line 360
     invoke-virtual {v8, v6, v2}, Landroid/graphics/Canvas;->translate(FF)V

@@ -5,7 +5,7 @@
 
 # direct methods
 .method public static checkedCast(J)C
-    .locals 4
+    .locals 3
 
     long-to-int v0, p0
 
@@ -13,9 +13,9 @@
 
     int-to-long v1, v0
 
-    cmp-long v3, v1, p0
+    cmp-long v1, v1, p0
 
-    if-nez v3, :cond_0
+    if-nez v1, :cond_0
 
     const/4 v1, 0x1
 
@@ -41,7 +41,7 @@
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_0
     if-ge v2, v0, :cond_1

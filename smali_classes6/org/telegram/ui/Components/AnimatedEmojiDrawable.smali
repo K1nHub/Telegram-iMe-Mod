@@ -400,7 +400,7 @@
 .end method
 
 .method public static getDominantColor(Lorg/telegram/ui/Components/AnimatedEmojiDrawable;)I
-    .locals 6
+    .locals 5
 
     const/4 v0, 0x0
 
@@ -416,9 +416,9 @@
 
     const-wide/16 v3, 0x0
 
-    cmp-long v5, v1, v3
+    cmp-long v3, v1, v3
 
-    if-nez v5, :cond_1
+    if-nez v3, :cond_1
 
     return v0
 
@@ -584,7 +584,7 @@
 
     if-ne v1, v2, :cond_4
 
-    const/4 v1, 0x2
+    move v1, v4
 
     .line 477
     :cond_4
@@ -652,7 +652,7 @@
     if-nez v1, :cond_9
 
     :cond_8
-    const/4 v1, 0x1
+    move v1, v3
 
     goto :goto_0
 
@@ -667,7 +667,7 @@
 
     if-ne v10, v11, :cond_a
 
-    const/4 v1, 0x1
+    move v1, v3
 
     .line 484
     :cond_a
@@ -1488,7 +1488,7 @@
     goto :goto_7
 
     :cond_22
-    const/4 v9, 0x0
+    move v9, v4
 
     goto :goto_8
 
@@ -1798,7 +1798,7 @@
     :cond_0
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    move v1, v0
 
     .line 1214
     :goto_0
@@ -1819,7 +1819,7 @@
 
     check-cast v2, Landroid/util/LongSparseArray;
 
-    const/4 v3, 0x0
+    move v3, v0
 
     .line 1216
     :goto_1
@@ -1909,7 +1909,7 @@
     if-lez v0, :cond_3
 
     :cond_2
-    const/4 v0, 0x1
+    move v0, v1
 
     goto :goto_0
 
@@ -2107,7 +2107,7 @@
 
     add-float/2addr v0, v2
 
-    mul-float v0, v0, v1
+    mul-float/2addr v0, v1
 
     sget v1, Lorg/telegram/messenger/AndroidUtilities;->density:F
 
@@ -2164,7 +2164,7 @@
 
     add-float/2addr v0, v2
 
-    mul-float v0, v0, v1
+    mul-float/2addr v0, v1
 
     sget v1, Lorg/telegram/messenger/AndroidUtilities;->density:F
 
@@ -2235,7 +2235,7 @@
 
     add-float/2addr v0, v2
 
-    mul-float v0, v0, v1
+    mul-float/2addr v0, v1
 
     sget v1, Lorg/telegram/messenger/AndroidUtilities;->density:F
 
@@ -2632,7 +2632,7 @@
 
     const/high16 v1, 0x437f0000    # 255.0f
 
-    mul-float v0, v0, v1
+    mul-float/2addr v0, v1
 
     float-to-int v0, v0
 
@@ -2694,7 +2694,7 @@
 
     if-eqz v0, :cond_1
 
-    const/4 v0, 0x0
+    move v0, v1
 
     .line 583
     :goto_0

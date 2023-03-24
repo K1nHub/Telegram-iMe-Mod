@@ -208,12 +208,12 @@
 
     if-nez p5, :cond_0
 
-    const/4 p5, 0x1
+    move p5, p2
 
     goto :goto_0
 
     :cond_0
-    const/4 p5, 0x0
+    move p5, p1
 
     .line 162
     :goto_0
@@ -437,7 +437,7 @@
     goto :goto_0
 
     :cond_1
-    const/4 p3, 0x0
+    move p3, v0
 
     :goto_0
     if-eqz p0, :cond_3
@@ -463,7 +463,7 @@
     goto :goto_1
 
     :cond_3
-    const/4 p1, 0x0
+    move p1, v0
 
     :goto_1
     const/4 p0, -0x1
@@ -687,7 +687,7 @@
 
     move-result v4
 
-    const/4 v10, 0x0
+    move v10, v3
 
     :goto_0
     if-ge v10, v4, :cond_2
@@ -782,7 +782,7 @@
 
     const/4 v7, 0x2
 
-    if-nez v1, :cond_1d
+    if-nez v1, :cond_1e
 
     iget-boolean v1, v0, Lorg/telegram/ui/Adapters/DialogsAdapter;->isTransitionSupport:Z
 
@@ -806,9 +806,9 @@
 
     if-nez v1, :cond_9
 
-    iget-boolean v15, v0, Lorg/telegram/ui/Adapters/DialogsAdapter;->forceUpdatingContacts:Z
+    iget-boolean v1, v0, Lorg/telegram/ui/Adapters/DialogsAdapter;->forceUpdatingContacts:Z
 
-    if-eqz v15, :cond_9
+    if-eqz v1, :cond_9
 
     .line 1280
     iput-boolean v6, v0, Lorg/telegram/ui/Adapters/DialogsAdapter;->isEmpty:Z
@@ -865,9 +865,18 @@
 
     .line 1285
     :cond_9
-    iget-object v11, v0, Lorg/telegram/ui/Adapters/DialogsAdapter;->onlineContacts:Ljava/util/ArrayList;
+    iget-object v1, v0, Lorg/telegram/ui/Adapters/DialogsAdapter;->onlineContacts:Ljava/util/ArrayList;
 
-    if-eqz v11, :cond_e
+    if-eqz v1, :cond_e
+
+    invoke-virtual {v1}, Ljava/util/ArrayList;->isEmpty()Z
+
+    move-result v1
+
+    if-nez v1, :cond_e
+
+    .line 1286
+    iget v1, v0, Lorg/telegram/ui/Adapters/DialogsAdapter;->dialogsCount:I
 
     if-nez v1, :cond_b
 
@@ -913,10 +922,10 @@
 
     invoke-virtual {v1, v8}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    goto :goto_6
+    goto :goto_5
 
     :cond_b
-    const/4 v1, 0x0
+    move v1, v3
 
     .line 1292
     :goto_4
@@ -964,10 +973,11 @@
 
     invoke-virtual {v1, v8}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    const/4 v1, 0x0
-
-    .line 1297
     :goto_5
+    move v1, v3
+
+    .line 1298
+    :goto_6
     iget-object v8, v0, Lorg/telegram/ui/Adapters/DialogsAdapter;->onlineContacts:Ljava/util/ArrayList;
 
     invoke-virtual {v8}, Ljava/util/ArrayList;->size()I
@@ -976,7 +986,7 @@
 
     if-ge v1, v8, :cond_d
 
-    .line 1298
+    .line 1299
     iget-object v8, v0, Lorg/telegram/ui/Adapters/DialogsAdapter;->itemInternals:Ljava/util/ArrayList;
 
     new-instance v11, Lorg/telegram/ui/Adapters/DialogsAdapter$ItemInternal;
@@ -997,9 +1007,9 @@
 
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_5
+    goto :goto_6
 
-    .line 1300
+    .line 1301
     :cond_d
     iget-object v1, v0, Lorg/telegram/ui/Adapters/DialogsAdapter;->itemInternals:Ljava/util/ArrayList;
 
@@ -1009,8 +1019,7 @@
 
     invoke-virtual {v1, v8}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    :goto_6
-    const/4 v1, 0x1
+    move v1, v6
 
     goto/16 :goto_a
 
@@ -1042,7 +1051,7 @@
 
     invoke-virtual {v8, v11}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    const/4 v8, 0x0
+    move v8, v3
 
     :goto_7
     if-ge v8, v1, :cond_f
@@ -1166,7 +1175,7 @@
 
     :cond_14
     :goto_9
-    const/4 v1, 0x0
+    move v1, v3
 
     .line 1320
     :goto_a
@@ -1195,9 +1204,9 @@
     invoke-virtual {v5, v8}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     :cond_16
-    if-nez v1, :cond_18
+    if-nez v1, :cond_1d
 
-    const/4 v1, 0x0
+    move v1, v3
 
     .line 1325
     :goto_b
@@ -1258,7 +1267,7 @@
 
     goto :goto_b
 
-    .line 1334
+    .line 1333
     :cond_18
     iget-boolean v1, v0, Lorg/telegram/ui/Adapters/DialogsAdapter;->forceShowEmptyCell:Z
 
@@ -1312,6 +1321,11 @@
 
     if-nez v1, :cond_19
 
+    .line 1334
+    iget v1, v0, Lorg/telegram/ui/Adapters/DialogsAdapter;->dialogsCount:I
+
+    if-eqz v1, :cond_1d
+
     .line 1335
     iget-object v1, v0, Lorg/telegram/ui/Adapters/DialogsAdapter;->itemInternals:Ljava/util/ArrayList;
 
@@ -1323,16 +1337,16 @@
 
     goto :goto_e
 
-    .line 1336
+    .line 1337
     :cond_19
     iget v1, v0, Lorg/telegram/ui/Adapters/DialogsAdapter;->dialogsCount:I
 
     if-nez v1, :cond_1b
 
-    .line 1337
+    .line 1338
     iput-boolean v6, v0, Lorg/telegram/ui/Adapters/DialogsAdapter;->isEmpty:Z
 
-    .line 1338
+    .line 1339
     iget-object v1, v0, Lorg/telegram/ui/Adapters/DialogsAdapter;->itemInternals:Ljava/util/ArrayList;
 
     new-instance v2, Lorg/telegram/ui/Adapters/DialogsAdapter$ItemInternal;
@@ -1355,7 +1369,7 @@
 
     goto :goto_e
 
-    .line 1340
+    .line 1341
     :cond_1b
     iget v2, v0, Lorg/telegram/ui/Adapters/DialogsAdapter;->folderId:I
 
@@ -1387,7 +1401,7 @@
 
     if-nez v1, :cond_1c
 
-    .line 1341
+    .line 1342
     iget-object v1, v0, Lorg/telegram/ui/Adapters/DialogsAdapter;->itemInternals:Ljava/util/ArrayList;
 
     new-instance v2, Lorg/telegram/ui/Adapters/DialogsAdapter$ItemInternal;
@@ -1396,7 +1410,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1343
+    .line 1344
     :cond_1c
     iget-object v1, v0, Lorg/telegram/ui/Adapters/DialogsAdapter;->itemInternals:Ljava/util/ArrayList;
 
@@ -1408,12 +1422,13 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    :cond_1d
     :goto_e
     return-void
 
-    :cond_1d
+    :cond_1e
     :goto_f
-    const/4 v1, 0x0
+    move v1, v3
 
     .line 1269
     :goto_10
@@ -1421,12 +1436,12 @@
 
     move-result v5
 
-    if-ge v1, v5, :cond_1f
+    if-ge v1, v5, :cond_20
 
     .line 1270
     iget v5, v0, Lorg/telegram/ui/Adapters/DialogsAdapter;->dialogsType:I
 
-    if-ne v5, v7, :cond_1e
+    if-ne v5, v7, :cond_1f
 
     invoke-virtual {v2, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
@@ -1434,7 +1449,7 @@
 
     instance-of v5, v5, Lorg/telegram/ui/DialogsActivity$DialogsHeader;
 
-    if-eqz v5, :cond_1e
+    if-eqz v5, :cond_1f
 
     .line 1271
     iget-object v5, v0, Lorg/telegram/ui/Adapters/DialogsAdapter;->itemInternals:Ljava/util/ArrayList;
@@ -1454,7 +1469,7 @@
     goto :goto_11
 
     .line 1273
-    :cond_1e
+    :cond_1f
     iget-object v5, v0, Lorg/telegram/ui/Adapters/DialogsAdapter;->itemInternals:Ljava/util/ArrayList;
 
     new-instance v6, Lorg/telegram/ui/Adapters/DialogsAdapter$ItemInternal;
@@ -1474,7 +1489,7 @@
 
     goto :goto_10
 
-    :cond_1f
+    :cond_20
     return-void
 .end method
 
@@ -1505,12 +1520,12 @@
 
     if-ne v0, v2, :cond_0
 
-    const/4 v0, 0x1
+    move v0, v2
 
     goto :goto_0
 
     :cond_0
-    const/4 v0, 0x0
+    move v0, v1
 
     .line 686
     :goto_0
@@ -1640,7 +1655,7 @@
 
     if-eqz v0, :cond_9
 
-    const/4 v1, 0x1
+    move v1, v2
 
     :cond_9
     return v1
@@ -1684,7 +1699,7 @@
 .end method
 
 .method public findDialogPosition(J)I
-    .locals 4
+    .locals 3
 
     const/4 v0, 0x0
 
@@ -1723,9 +1738,9 @@
 
     iget-wide v1, v1, Lorg/telegram/tgnet/TLRPC$Dialog;->id:J
 
-    cmp-long v3, v1, p1
+    cmp-long v1, v1, p1
 
-    if-nez v3, :cond_0
+    if-nez v1, :cond_0
 
     return v0
 
@@ -2325,7 +2340,7 @@
     goto :goto_1
 
     :cond_2
-    const/4 v6, 0x0
+    move v6, v4
 
     :goto_1
     aget-object v3, v3, v6
@@ -2360,7 +2375,7 @@
     goto :goto_2
 
     :cond_4
-    const/4 v6, 0x0
+    move v6, v4
 
     :goto_2
     aget-object v3, v3, v6
@@ -2384,7 +2399,7 @@
     goto :goto_3
 
     :cond_6
-    const/4 v6, 0x0
+    move v6, v4
 
     :goto_3
     aget-object v3, v3, v6
@@ -2688,7 +2703,7 @@
 
     if-eqz v8, :cond_6
 
-    const/4 v6, 0x1
+    move v6, v7
 
     :cond_6
     invoke-virtual {v3, v4, v5, v6}, Lorg/telegram/ui/Cells/TextCell;->setTextAndIcon(Ljava/lang/String;IZ)V
@@ -3074,12 +3089,12 @@
 
     if-eqz v8, :cond_16
 
-    const/4 v5, 0x1
+    move v5, v7
 
     goto :goto_3
 
     :cond_16
-    const/4 v5, 0x0
+    move v5, v6
 
     .line 793
     :goto_3
@@ -3096,12 +3111,12 @@
 
     if-nez v5, :cond_17
 
-    const/4 v5, 0x1
+    move v5, v7
 
     goto :goto_4
 
     :cond_17
-    const/4 v5, 0x0
+    move v5, v6
 
     :goto_4
     iput-boolean v5, v4, Lorg/telegram/ui/Cells/DialogCell;->fullSeparator:Z
@@ -3127,12 +3142,12 @@
 
     if-nez v5, :cond_18
 
-    const/4 v5, 0x1
+    move v5, v7
 
     goto :goto_5
 
     :cond_18
-    const/4 v5, 0x0
+    move v5, v6
 
     :goto_5
     invoke-virtual {v4, v5}, Lorg/telegram/ui/Cells/DialogCell;->setDialogSelected(Z)V
@@ -3272,9 +3287,9 @@
 
     const-wide/16 v11, 0x0
 
-    cmp-long v13, v9, v11
+    cmp-long v9, v9, v11
 
-    if-eqz v13, :cond_1d
+    if-eqz v9, :cond_1d
 
     .line 733
     iget v9, v0, Lorg/telegram/ui/Adapters/DialogsAdapter;->currentAccount:I
@@ -3586,12 +3601,12 @@
     :goto_b
     if-eqz v8, :cond_2a
 
-    const/4 v3, 0x1
+    move v3, v7
 
     goto :goto_c
 
     :cond_2a
-    const/4 v3, 0x0
+    move v3, v6
 
     .line 787
     :goto_c
@@ -3629,7 +3644,7 @@
 
     if-nez v5, :cond_2b
 
-    const/4 v6, 0x1
+    move v6, v7
 
     :cond_2b
     invoke-virtual {v4, v3, v6}, Lorg/telegram/ui/Cells/ProfileSearchCell;->setChecked(ZZ)V
@@ -4028,12 +4043,12 @@
 
     if-eqz v2, :cond_0
 
-    const/4 v2, 0x3
+    move v2, v3
 
     goto :goto_0
 
     :cond_0
-    const/4 v2, 0x5
+    move v2, v0
 
     :goto_0
     or-int/lit8 v2, v2, 0x10
@@ -4052,7 +4067,7 @@
     goto :goto_1
 
     :cond_1
-    const/4 v3, 0x5
+    move v3, v0
 
     :goto_1
     or-int/lit8 v7, v3, 0x30
@@ -4097,7 +4112,7 @@
 
     if-ne p2, v2, :cond_2
 
-    const/16 v3, 0x12
+    move v3, v1
 
     goto :goto_2
 
@@ -4125,7 +4140,7 @@
 
     const/high16 v2, 0x3f000000    # 0.5f
 
-    mul-float v1, v1, v2
+    mul-float/2addr v1, v2
 
     const/16 v2, 0x40
 
@@ -4234,7 +4249,7 @@
 
     if-ne p2, v0, :cond_8
 
-    const/4 p2, -0x1
+    move p2, v4
 
     goto :goto_7
 
@@ -4386,7 +4401,7 @@
 
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    move v1, v0
 
     .line 1021
     :goto_0
@@ -4420,7 +4435,7 @@
     goto :goto_0
 
     :cond_1
-    const/4 v1, 0x0
+    move v1, v0
 
     .line 1026
     :goto_1
@@ -4454,7 +4469,7 @@
     goto :goto_1
 
     :cond_3
-    const/4 v1, 0x0
+    move v1, v0
 
     .line 1031
     :goto_2
@@ -4624,7 +4639,7 @@
 .end method
 
 .method public sortOnlineContacts(Z)V
-    .locals 5
+    .locals 4
 
     .line 341
     iget-object v0, p0, Lorg/telegram/ui/Adapters/DialogsAdapter;->onlineContacts:Ljava/util/ArrayList;
@@ -4643,9 +4658,9 @@
 
     const-wide/16 v2, 0x7d0
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-gez v4, :cond_0
+    if-gez v0, :cond_0
 
     goto :goto_0
 
@@ -4802,7 +4817,7 @@
 
     const/4 v4, -0x1
 
-    const/4 v5, -0x1
+    move v5, v4
 
     .line 422
     :goto_0

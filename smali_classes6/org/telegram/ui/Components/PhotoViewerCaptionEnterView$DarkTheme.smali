@@ -61,7 +61,7 @@
     sparse-switch v0, :sswitch_data_0
 
     :goto_0
-    const/4 p1, -0x1
+    move p1, v1
 
     goto/16 :goto_1
 

@@ -61,7 +61,7 @@
 .end method
 
 .method protected varargs onReceiveNotification([Ljava/lang/Object;)V
-    .locals 5
+    .locals 4
 
     const/4 v0, 0x0
 
@@ -81,9 +81,9 @@
 
     iget-wide v2, v2, Lorg/telegram/tgnet/TLRPC$User;->id:J
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-nez v4, :cond_0
+    if-nez v0, :cond_0
 
     const/4 v0, 0x1
 

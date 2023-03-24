@@ -158,7 +158,7 @@
 .end method
 
 .method constructor <init>([B)V
-    .locals 19
+    .locals 17
 
     move-object/from16 v0, p0
 
@@ -172,54 +172,52 @@
 
     const/4 v3, 0x1
 
-    const-wide/16 v6, 0x0
+    const/4 v7, 0x0
 
-    move-wide v9, v6
+    const-wide/16 v8, 0x0
 
-    const/4 v8, 0x0
-
-    const/4 v11, 0x0
+    const/4 v10, 0x0
 
     :goto_0
-    array-length v12, v1
+    array-length v11, v1
 
-    if-eq v8, v12, :cond_8
+    if-eq v7, v11, :cond_8
 
-    aget-byte v12, v1, v8
+    aget-byte v11, v1, v7
 
-    and-int/lit16 v12, v12, 0xff
+    and-int/lit16 v11, v11, 0xff
 
-    const-wide v13, 0xffffffffffff80L
+    const-wide v12, 0xffffffffffff80L
 
-    const/16 v15, 0x32
+    cmp-long v12, v8, v12
 
-    const/16 v4, 0x2e
+    const/16 v13, 0x32
 
-    const/4 v5, 0x7
+    const/16 v14, 0x2e
 
-    const-wide/16 v16, 0x50
+    const/4 v4, 0x7
 
-    cmp-long v18, v9, v13
+    const-wide/16 v15, 0x50
 
-    if-gtz v18, :cond_4
+    if-gtz v12, :cond_4
 
-    and-int/lit8 v13, v12, 0x7f
+    and-int/lit8 v12, v11, 0x7f
 
-    int-to-long v13, v13
+    int-to-long v5, v12
 
-    add-long/2addr v9, v13
+    add-long/2addr v8, v5
 
-    and-int/lit16 v12, v12, 0x80
+    and-int/lit16 v5, v11, 0x80
 
-    if-nez v12, :cond_3
+    if-nez v5, :cond_3
 
     if-eqz v3, :cond_2
 
-    const-wide/16 v12, 0x28
+    const-wide/16 v3, 0x28
 
-    cmp-long v3, v9, v12
+    cmp-long v5, v8, v3
 
-    if-gez v3, :cond_0
+    if-gez v5, :cond_0
 
     const/16 v3, 0x30
 
@@ -228,96 +226,96 @@
     goto :goto_1
 
     :cond_0
-    cmp-long v3, v9, v16
+    cmp-long v5, v8, v15
 
-    if-gez v3, :cond_1
+    if-gez v5, :cond_1
 
-    const/16 v3, 0x31
+    const/16 v5, 0x31
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuffer;->append(C)Ljava/lang/StringBuffer;
+    invoke-virtual {v2, v5}, Ljava/lang/StringBuffer;->append(C)Ljava/lang/StringBuffer;
 
-    sub-long/2addr v9, v12
+    sub-long/2addr v8, v3
 
     goto :goto_1
 
     :cond_1
-    invoke-virtual {v2, v15}, Ljava/lang/StringBuffer;->append(C)Ljava/lang/StringBuffer;
+    invoke-virtual {v2, v13}, Ljava/lang/StringBuffer;->append(C)Ljava/lang/StringBuffer;
 
-    sub-long v9, v9, v16
+    sub-long/2addr v8, v15
 
     :goto_1
     const/4 v3, 0x0
 
     :cond_2
-    invoke-virtual {v2, v4}, Ljava/lang/StringBuffer;->append(C)Ljava/lang/StringBuffer;
+    invoke-virtual {v2, v14}, Ljava/lang/StringBuffer;->append(C)Ljava/lang/StringBuffer;
 
-    invoke-virtual {v2, v9, v10}, Ljava/lang/StringBuffer;->append(J)Ljava/lang/StringBuffer;
+    invoke-virtual {v2, v8, v9}, Ljava/lang/StringBuffer;->append(J)Ljava/lang/StringBuffer;
 
-    move-wide v9, v6
+    const-wide/16 v8, 0x0
 
     goto :goto_2
 
     :cond_3
-    shl-long/2addr v9, v5
+    shl-long/2addr v8, v4
 
     goto :goto_2
 
     :cond_4
-    if-nez v11, :cond_5
+    if-nez v10, :cond_5
 
-    invoke-static {v9, v10}, Ljava/math/BigInteger;->valueOf(J)Ljava/math/BigInteger;
+    invoke-static {v8, v9}, Ljava/math/BigInteger;->valueOf(J)Ljava/math/BigInteger;
 
-    move-result-object v11
+    move-result-object v10
 
     :cond_5
-    and-int/lit8 v13, v12, 0x7f
+    and-int/lit8 v5, v11, 0x7f
 
-    int-to-long v13, v13
+    int-to-long v5, v5
 
-    invoke-static {v13, v14}, Ljava/math/BigInteger;->valueOf(J)Ljava/math/BigInteger;
+    invoke-static {v5, v6}, Ljava/math/BigInteger;->valueOf(J)Ljava/math/BigInteger;
 
-    move-result-object v13
+    move-result-object v5
 
-    invoke-virtual {v11, v13}, Ljava/math/BigInteger;->or(Ljava/math/BigInteger;)Ljava/math/BigInteger;
+    invoke-virtual {v10, v5}, Ljava/math/BigInteger;->or(Ljava/math/BigInteger;)Ljava/math/BigInteger;
 
-    move-result-object v11
+    move-result-object v5
 
-    and-int/lit16 v12, v12, 0x80
+    and-int/lit16 v6, v11, 0x80
 
-    if-nez v12, :cond_7
+    if-nez v6, :cond_7
 
     if-eqz v3, :cond_6
 
-    invoke-virtual {v2, v15}, Ljava/lang/StringBuffer;->append(C)Ljava/lang/StringBuffer;
+    invoke-virtual {v2, v13}, Ljava/lang/StringBuffer;->append(C)Ljava/lang/StringBuffer;
 
-    invoke-static/range {v16 .. v17}, Ljava/math/BigInteger;->valueOf(J)Ljava/math/BigInteger;
+    invoke-static/range {v15 .. v16}, Ljava/math/BigInteger;->valueOf(J)Ljava/math/BigInteger;
 
     move-result-object v3
 
-    invoke-virtual {v11, v3}, Ljava/math/BigInteger;->subtract(Ljava/math/BigInteger;)Ljava/math/BigInteger;
+    invoke-virtual {v5, v3}, Ljava/math/BigInteger;->subtract(Ljava/math/BigInteger;)Ljava/math/BigInteger;
 
-    move-result-object v11
+    move-result-object v5
 
     const/4 v3, 0x0
 
     :cond_6
-    invoke-virtual {v2, v4}, Ljava/lang/StringBuffer;->append(C)Ljava/lang/StringBuffer;
+    invoke-virtual {v2, v14}, Ljava/lang/StringBuffer;->append(C)Ljava/lang/StringBuffer;
 
-    invoke-virtual {v2, v11}, Ljava/lang/StringBuffer;->append(Ljava/lang/Object;)Ljava/lang/StringBuffer;
+    invoke-virtual {v2, v5}, Ljava/lang/StringBuffer;->append(Ljava/lang/Object;)Ljava/lang/StringBuffer;
 
-    move-wide v9, v6
+    const-wide/16 v8, 0x0
 
-    const/4 v11, 0x0
+    const/4 v10, 0x0
 
     goto :goto_2
 
     :cond_7
-    invoke-virtual {v11, v5}, Ljava/math/BigInteger;->shiftLeft(I)Ljava/math/BigInteger;
+    invoke-virtual {v5, v4}, Ljava/math/BigInteger;->shiftLeft(I)Ljava/math/BigInteger;
 
-    move-result-object v11
+    move-result-object v10
 
     :goto_2
-    add-int/lit8 v8, v8, 0x1
+    add-int/lit8 v7, v7, 0x1
 
     goto :goto_0
 
@@ -626,7 +624,7 @@
     const/4 v1, 0x0
 
     :cond_0
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_0
     add-int/lit8 v0, v0, -0x1

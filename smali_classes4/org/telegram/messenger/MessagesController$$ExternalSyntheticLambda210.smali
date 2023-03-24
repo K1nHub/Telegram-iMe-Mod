@@ -10,19 +10,17 @@
 
 .field public final synthetic f$1:Lorg/telegram/tgnet/TLRPC$messages_Dialogs;
 
-.field public final synthetic f$2:Ljava/util/ArrayList;
+.field public final synthetic f$2:Landroidx/collection/LongSparseArray;
 
-.field public final synthetic f$3:I
+.field public final synthetic f$3:Landroidx/collection/LongSparseArray;
 
 .field public final synthetic f$4:Z
 
-.field public final synthetic f$5:[J
-
-.field public final synthetic f$6:I
+.field public final synthetic f$5:Lorg/telegram/messenger/support/LongSparseIntArray;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/messenger/MessagesController;Lorg/telegram/tgnet/TLRPC$messages_Dialogs;Ljava/util/ArrayList;IZ[JI)V
+.method public synthetic constructor <init>(Lorg/telegram/messenger/MessagesController;Lorg/telegram/tgnet/TLRPC$messages_Dialogs;Landroidx/collection/LongSparseArray;Landroidx/collection/LongSparseArray;ZLorg/telegram/messenger/support/LongSparseIntArray;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -31,15 +29,13 @@
 
     iput-object p2, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda210;->f$1:Lorg/telegram/tgnet/TLRPC$messages_Dialogs;
 
-    iput-object p3, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda210;->f$2:Ljava/util/ArrayList;
+    iput-object p3, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda210;->f$2:Landroidx/collection/LongSparseArray;
 
-    iput p4, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda210;->f$3:I
+    iput-object p4, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda210;->f$3:Landroidx/collection/LongSparseArray;
 
     iput-boolean p5, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda210;->f$4:Z
 
-    iput-object p6, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda210;->f$5:[J
-
-    iput p7, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda210;->f$6:I
+    iput-object p6, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda210;->f$5:Lorg/telegram/messenger/support/LongSparseIntArray;
 
     return-void
 .end method
@@ -47,23 +43,21 @@
 
 # virtual methods
 .method public final run()V
-    .locals 7
+    .locals 6
 
     iget-object v0, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda210;->f$0:Lorg/telegram/messenger/MessagesController;
 
     iget-object v1, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda210;->f$1:Lorg/telegram/tgnet/TLRPC$messages_Dialogs;
 
-    iget-object v2, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda210;->f$2:Ljava/util/ArrayList;
+    iget-object v2, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda210;->f$2:Landroidx/collection/LongSparseArray;
 
-    iget v3, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda210;->f$3:I
+    iget-object v3, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda210;->f$3:Landroidx/collection/LongSparseArray;
 
     iget-boolean v4, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda210;->f$4:Z
 
-    iget-object v5, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda210;->f$5:[J
+    iget-object v5, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda210;->f$5:Lorg/telegram/messenger/support/LongSparseIntArray;
 
-    iget v6, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda210;->f$6:I
-
-    invoke-static/range {v0 .. v6}, Lorg/telegram/messenger/MessagesController;->$r8$lambda$OR97b9yFsl8s5e_X-uyy6eQDKhc(Lorg/telegram/messenger/MessagesController;Lorg/telegram/tgnet/TLRPC$messages_Dialogs;Ljava/util/ArrayList;IZ[JI)V
+    invoke-static/range {v0 .. v5}, Lorg/telegram/messenger/MessagesController;->$r8$lambda$GwLvPn68a8PdipOV1Knz2AwVZUE(Lorg/telegram/messenger/MessagesController;Lorg/telegram/tgnet/TLRPC$messages_Dialogs;Landroidx/collection/LongSparseArray;Landroidx/collection/LongSparseArray;ZLorg/telegram/messenger/support/LongSparseIntArray;)V
 
     return-void
 .end method

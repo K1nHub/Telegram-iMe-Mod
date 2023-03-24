@@ -178,12 +178,12 @@
 
     if-eqz v6, :cond_0
 
-    const/4 v6, 0x5
+    move v6, v7
 
     goto :goto_0
 
     :cond_0
-    const/4 v6, 0x3
+    move v6, v8
 
     :goto_0
     or-int/lit8 v11, v6, 0x30
@@ -260,12 +260,12 @@
 
     if-eqz v5, :cond_1
 
-    const/4 v5, 0x5
+    move v5, v7
 
     goto :goto_1
 
     :cond_1
-    const/4 v5, 0x3
+    move v5, v8
 
     :goto_1
     or-int/lit8 v14, v5, 0x50
@@ -330,12 +330,12 @@
 
     if-eqz v9, :cond_2
 
-    const/4 v9, 0x5
+    move v9, v7
 
     goto :goto_2
 
     :cond_2
-    const/4 v9, 0x3
+    move v9, v8
 
     :goto_2
     or-int/lit8 v14, v9, 0x50
@@ -392,7 +392,7 @@
     goto :goto_3
 
     :cond_3
-    const/4 v7, 0x3
+    move v7, v8
 
     :goto_3
     or-int/lit8 v14, v7, 0x50
@@ -665,12 +665,12 @@
     if-nez p2, :cond_4
 
     :cond_3
-    const/4 p2, 0x1
+    move p2, v0
 
     goto :goto_1
 
     :cond_4
-    const/4 p2, 0x0
+    move p2, v1
 
     :goto_1
     iput-boolean p2, p0, Lorg/telegram/ui/Components/Premium/PremiumTierCell;->isDrawingGradient:Z
@@ -1358,7 +1358,7 @@
     goto :goto_0
 
     :cond_0
-    const/4 v0, 0x0
+    move v0, p5
 
     :goto_0
     add-int/2addr p3, v0
@@ -1671,7 +1671,7 @@
     goto :goto_2
 
     :cond_4
-    const/4 p4, 0x0
+    move p4, p5
 
     :goto_2
     add-int/2addr p2, p4
@@ -1989,12 +1989,12 @@
 
     if-eqz p1, :cond_0
 
-    const/high16 v3, 0x3f800000    # 1.0f
+    move v3, v1
 
     goto :goto_0
 
     :cond_0
-    const v3, 0x3f19999a    # 0.6f
+    move v3, v2
 
     :goto_0
     invoke-virtual {v0, v3}, Landroid/widget/TextView;->setAlpha(F)V
@@ -2004,12 +2004,12 @@
 
     if-eqz p1, :cond_1
 
-    const/high16 v3, 0x3f800000    # 1.0f
+    move v3, v1
 
     goto :goto_1
 
     :cond_1
-    const v3, 0x3f19999a    # 0.6f
+    move v3, v2
 
     :goto_1
     invoke-virtual {v0, v3}, Landroid/widget/TextView;->setAlpha(F)V
@@ -2022,7 +2022,7 @@
     goto :goto_2
 
     :cond_2
-    const v1, 0x3f19999a    # 0.6f
+    move v1, v2
 
     :goto_2
     invoke-virtual {v0, v1}, Landroid/view/View;->setAlpha(F)V
@@ -2201,18 +2201,18 @@
 
     const-wide/16 v4, 0x11
 
-    cmp-long v6, v2, v4
+    cmp-long v4, v2, v4
 
-    if-lez v6, :cond_1
+    if-lez v4, :cond_1
 
     const-wide/16 v2, 0x10
 
     :cond_1
     const-wide/16 v4, 0x4
 
-    cmp-long v6, v2, v4
+    cmp-long v4, v2, v4
 
-    if-gez v6, :cond_2
+    if-gez v4, :cond_2
 
     const-wide/16 v2, 0x0
 
@@ -2238,7 +2238,7 @@
 
     int-to-long v5, v4
 
-    mul-long v2, v2, v5
+    mul-long/2addr v2, v5
 
     long-to-float v1, v2
 

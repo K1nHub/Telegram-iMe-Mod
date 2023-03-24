@@ -197,20 +197,18 @@
 
     move v15, v4
 
-    move v14, v5
-
     goto :goto_0
 
     :catch_0
-    const/4 v5, 0x0
+    move v5, v2
 
     :catch_1
+    move v15, v2
+
+    :goto_0
     move v14, v5
 
-    const/4 v15, 0x0
-
     .line 1045
-    :goto_0
     new-instance v4, Lorg/telegram/messenger/MediaController$PhotoEntry;
 
     const/4 v7, 0x0
@@ -239,10 +237,10 @@
 
     move-wide/from16 v5, p2
 
-    long-to-int v6, v5
+    long-to-int v5, v5
 
     .line 1046
-    iput v6, v4, Lorg/telegram/messenger/MediaController$PhotoEntry;->duration:I
+    iput v5, v4, Lorg/telegram/messenger/MediaController$PhotoEntry;->duration:I
 
     .line 1047
     iput-object v1, v4, Lorg/telegram/messenger/MediaController$MediaEditState;->thumbPath:Ljava/lang/String;
@@ -369,7 +367,7 @@
 
     if-eq v0, v4, :cond_1
 
-    const/4 v0, 0x0
+    move v0, v2
 
     goto :goto_0
 
@@ -397,7 +395,7 @@
     .line 1110
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
-    const/4 v10, 0x0
+    move v10, v2
 
     .line 1112
     :goto_1
@@ -440,20 +438,18 @@
 
     move v13, v0
 
-    move v12, v4
-
     goto :goto_2
 
     :catch_1
-    const/4 v4, 0x0
+    move v4, v2
 
     :catch_2
+    move v13, v2
+
+    :goto_2
     move v12, v4
 
-    const/4 v13, 0x0
-
     .line 1121
-    :goto_2
     new-instance v0, Lorg/telegram/messenger/MediaController$PhotoEntry;
 
     const/4 v5, 0x0
@@ -515,12 +511,12 @@
 
     if-ge v0, v1, :cond_0
 
-    const/4 v0, 0x1
+    move v0, v3
 
     goto :goto_0
 
     :cond_0
-    const/4 v0, 0x0
+    move v0, v2
 
     :goto_0
     if-eqz v0, :cond_1
@@ -573,7 +569,7 @@
 
     if-nez p1, :cond_3
 
-    const/4 v2, 0x1
+    move v2, v3
 
     :cond_3
     return v2
@@ -656,7 +652,7 @@
     if-eqz p1, :cond_9
 
     :cond_8
-    const/4 v2, 0x1
+    move v2, v3
 
     :cond_9
     return v2
@@ -844,7 +840,7 @@
     return v4
 
     :cond_3
-    const/4 v0, 0x0
+    move v0, v4
 
     :goto_0
     const/16 v1, 0x1e
@@ -982,12 +978,12 @@
 
     if-eqz v0, :cond_5
 
-    const/4 v0, 0x1
+    move v0, v2
 
     goto :goto_1
 
     :cond_5
-    const/4 v0, 0x0
+    move v0, v4
 
     :goto_1
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->generateVideoPath(Z)Ljava/io/File;
@@ -1068,12 +1064,12 @@
 
     if-eqz v0, :cond_6
 
-    const/4 v8, 0x1
+    move v8, v2
 
     goto :goto_2
 
     :cond_6
-    const/4 v8, 0x0
+    move v8, v4
 
     :goto_2
     new-instance v9, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout$10$$ExternalSyntheticLambda3;
@@ -1249,12 +1245,12 @@
 
     if-eqz v0, :cond_3
 
-    const/4 v0, 0x1
+    move v0, v2
 
     goto :goto_0
 
     :cond_3
-    const/4 v0, 0x0
+    move v0, v3
 
     :goto_0
     const/4 v1, 0x0
@@ -1304,7 +1300,7 @@
     goto :goto_1
 
     :cond_4
-    const/4 v2, 0x0
+    move v2, v3
 
     :cond_5
     :goto_1

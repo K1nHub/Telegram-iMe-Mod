@@ -310,11 +310,11 @@
     const/high16 v1, 0x3f000000    # 0.5f
 
     :goto_0
-    mul-float v0, v0, v1
+    mul-float/2addr v0, v1
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     .line 105
     :goto_1
@@ -354,9 +354,9 @@
     goto :goto_1
 
     :cond_2
-    const/4 v2, 0x0
+    move v2, v1
 
-    const/4 v3, 0x0
+    move v3, v2
 
     :goto_2
     const/4 v4, 0x1
@@ -374,7 +374,7 @@
 
     const/16 v2, 0x200
 
-    const/16 v3, 0x200
+    move v3, v2
 
     :cond_3
     if-nez v2, :cond_4
@@ -397,7 +397,7 @@
 
     div-float v2, v0, v2
 
-    mul-float p0, p0, v2
+    mul-float/2addr p0, v2
 
     float-to-int p0, p0
 
@@ -413,7 +413,7 @@
 
     div-float/2addr v0, v3
 
-    mul-float p0, p0, v0
+    mul-float/2addr p0, v0
 
     float-to-int p0, p0
 

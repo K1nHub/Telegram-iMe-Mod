@@ -551,7 +551,7 @@
 
     const/4 v2, 0x1
 
-    const/4 v3, 0x0
+    move v3, v1
 
     .line 6
     :cond_1
@@ -868,7 +868,7 @@
     invoke-static {p1, v5, v3}, Lcom/google/android/gms/common/server/response/SafeParcelResponse;->zaJ(Ljava/lang/StringBuilder;Lcom/google/android/gms/common/server/response/FastJsonResponse$Field;Ljava/lang/Object;)V
 
     :goto_3
-    const/4 v3, 0x1
+    move v3, v2
 
     goto/16 :goto_1
 
@@ -906,7 +906,7 @@
     .line 71
     array-length v4, v3
 
-    const/4 v7, 0x0
+    move v7, v1
 
     :goto_4
     if-ge v7, v4, :cond_6
@@ -1096,7 +1096,7 @@
 
     move-result-object v4
 
-    const/4 v5, 0x1
+    move v5, v2
 
     :goto_6
     invoke-interface {v4}, Ljava/util/Iterator;->hasNext()Z
@@ -1139,7 +1139,7 @@
 
     invoke-virtual {p1, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const/4 v5, 0x0
+    move v5, v1
 
     goto :goto_6
 

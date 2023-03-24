@@ -228,17 +228,17 @@ final class DvbParser {
             int readBits3 = parsableBitArray.readBits(16);
             int readBits4 = parsableBitArray.readBits(16);
             int readBits5 = parsableBitArray.readBits(16);
-            i2 = parsableBitArray.readBits(16);
-            i = readBits4;
-            i4 = readBits5;
-            i3 = readBits3;
+            i4 = parsableBitArray.readBits(16);
+            i3 = readBits4;
+            i2 = readBits5;
+            i = readBits3;
         } else {
-            i = readBits;
-            i2 = readBits2;
-            i3 = 0;
-            i4 = 0;
+            i = 0;
+            i2 = 0;
+            i3 = readBits;
+            i4 = readBits2;
         }
-        return new DisplayDefinition(readBits, readBits2, i3, i, i4, i2);
+        return new DisplayDefinition(readBits, readBits2, i, i3, i2, i4);
     }
 
     private static PageComposition parsePageComposition(ParsableBitArray parsableBitArray, int i) {
@@ -337,9 +337,9 @@ final class DvbParser {
                 i3 = readBits7;
             }
             if (readBits3 == 0) {
+                readBits2 = 255;
                 i3 = 0;
                 readBits = 0;
-                readBits2 = 255;
             }
             double d = readBits3;
             double d2 = i3 - 128;
@@ -496,218 +496,135 @@ final class DvbParser {
         }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:26:0x0063 A[ADDED_TO_REGION] */
-    /* JADX WARN: Removed duplicated region for block: B:28:0x0067  */
-    /* JADX WARN: Removed duplicated region for block: B:33:0x0083 A[LOOP:0: B:3:0x0009->B:33:0x0083, LOOP_END] */
-    /* JADX WARN: Removed duplicated region for block: B:34:0x0082 A[SYNTHETIC] */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-        To view partially-correct add '--show-bad-code' argument
-    */
-    private static int paint2BitPixelCodeString(com.google.android.exoplayer2.util.ParsableBitArray r13, int[] r14, byte[] r15, int r16, int r17, android.graphics.Paint r18, android.graphics.Canvas r19) {
-        /*
-            r0 = r13
-            r1 = r17
-            r8 = r18
-            r9 = 0
-            r10 = r16
-            r2 = 0
-        L9:
-            r3 = 2
-            int r4 = r13.readBits(r3)
-            r5 = 1
-            if (r4 == 0) goto L14
-            r11 = r2
-        L12:
-            r12 = 1
-            goto L61
-        L14:
-            boolean r4 = r13.readBit()
-            r6 = 3
-            if (r4 == 0) goto L28
-            int r4 = r13.readBits(r6)
-            int r4 = r4 + r6
-            int r3 = r13.readBits(r3)
-        L24:
-            r11 = r2
-            r12 = r4
-            r4 = r3
-            goto L61
-        L28:
-            boolean r4 = r13.readBit()
-            if (r4 == 0) goto L31
-            r11 = r2
-            r4 = 0
-            goto L12
-        L31:
-            int r4 = r13.readBits(r3)
-            if (r4 == 0) goto L5e
-            if (r4 == r5) goto L5a
-            if (r4 == r3) goto L4e
-            if (r4 == r6) goto L41
-            r11 = r2
-            r4 = 0
-        L3f:
-            r12 = 0
-            goto L61
-        L41:
-            r4 = 8
-            int r4 = r13.readBits(r4)
-            int r4 = r4 + 29
-            int r3 = r13.readBits(r3)
-            goto L24
-        L4e:
-            r4 = 4
-            int r4 = r13.readBits(r4)
-            int r4 = r4 + 12
-            int r3 = r13.readBits(r3)
-            goto L24
-        L5a:
-            r11 = r2
-            r4 = 0
-            r12 = 2
-            goto L61
-        L5e:
-            r4 = 0
-            r11 = 1
-            goto L3f
-        L61:
-            if (r12 == 0) goto L7f
-            if (r8 == 0) goto L7f
-            if (r15 == 0) goto L69
-            r4 = r15[r4]
-        L69:
-            r2 = r14[r4]
-            r8.setColor(r2)
-            float r3 = (float) r10
-            float r4 = (float) r1
-            int r2 = r10 + r12
-            float r6 = (float) r2
-            int r2 = r1 + 1
-            float r7 = (float) r2
-            r2 = r19
-            r5 = r6
-            r6 = r7
-            r7 = r18
-            r2.drawRect(r3, r4, r5, r6, r7)
-        L7f:
-            int r10 = r10 + r12
-            if (r11 == 0) goto L83
-            return r10
-        L83:
-            r2 = r11
-            goto L9
-        */
-        throw new UnsupportedOperationException("Method not decompiled: com.google.android.exoplayer2.text.dvb.DvbParser.paint2BitPixelCodeString(com.google.android.exoplayer2.util.ParsableBitArray, int[], byte[], int, int, android.graphics.Paint, android.graphics.Canvas):int");
+    private static int paint2BitPixelCodeString(ParsableBitArray parsableBitArray, int[] iArr, byte[] bArr, int i, int i2, Paint paint, Canvas canvas) {
+        boolean z;
+        int i3;
+        int readBits;
+        int readBits2;
+        int i4 = i;
+        boolean z2 = false;
+        while (true) {
+            byte readBits3 = parsableBitArray.readBits(2);
+            if (readBits3 != 0) {
+                z = z2;
+                i3 = 1;
+            } else {
+                if (parsableBitArray.readBit()) {
+                    readBits = parsableBitArray.readBits(3) + 3;
+                    readBits2 = parsableBitArray.readBits(2);
+                } else {
+                    if (parsableBitArray.readBit()) {
+                        z = z2;
+                        i3 = 1;
+                    } else {
+                        int readBits4 = parsableBitArray.readBits(2);
+                        if (readBits4 == 0) {
+                            z = true;
+                        } else if (readBits4 == 1) {
+                            z = z2;
+                            i3 = 2;
+                        } else if (readBits4 == 2) {
+                            readBits = parsableBitArray.readBits(4) + 12;
+                            readBits2 = parsableBitArray.readBits(2);
+                        } else if (readBits4 != 3) {
+                            z = z2;
+                        } else {
+                            readBits = parsableBitArray.readBits(8) + 29;
+                            readBits2 = parsableBitArray.readBits(2);
+                        }
+                        readBits3 = 0;
+                        i3 = 0;
+                    }
+                    readBits3 = 0;
+                }
+                z = z2;
+                i3 = readBits;
+                readBits3 = readBits2;
+            }
+            if (i3 != 0 && paint != null) {
+                if (bArr != null) {
+                    readBits3 = bArr[readBits3];
+                }
+                paint.setColor(iArr[readBits3]);
+                canvas.drawRect(i4, i2, i4 + i3, i2 + 1, paint);
+            }
+            i4 += i3;
+            if (z) {
+                return i4;
+            }
+            z2 = z;
+        }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:31:0x0074  */
-    /* JADX WARN: Removed duplicated region for block: B:36:0x008e A[LOOP:0: B:3:0x0009->B:36:0x008e, LOOP_END] */
-    /* JADX WARN: Removed duplicated region for block: B:37:0x008d A[SYNTHETIC] */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-        To view partially-correct add '--show-bad-code' argument
-    */
-    private static int paint4BitPixelCodeString(com.google.android.exoplayer2.util.ParsableBitArray r13, int[] r14, byte[] r15, int r16, int r17, android.graphics.Paint r18, android.graphics.Canvas r19) {
-        /*
-            r0 = r13
-            r1 = r17
-            r8 = r18
-            r9 = 0
-            r10 = r16
-            r2 = 0
-        L9:
-            r3 = 4
-            int r4 = r13.readBits(r3)
-            r5 = 2
-            r6 = 1
-            if (r4 == 0) goto L16
-            r11 = r2
-        L13:
-            r12 = 1
-            goto L6e
-        L16:
-            boolean r4 = r13.readBit()
-            r7 = 3
-            if (r4 != 0) goto L2c
-            int r3 = r13.readBits(r7)
-            if (r3 == 0) goto L29
-            int r5 = r3 + 2
-            r11 = r2
-            r12 = r5
-            r4 = 0
-            goto L6e
-        L29:
-            r4 = 0
-            r11 = 1
-            goto L4d
-        L2c:
-            boolean r4 = r13.readBit()
-            if (r4 != 0) goto L3f
-            int r4 = r13.readBits(r5)
-            int r5 = r4 + 4
-            int r4 = r13.readBits(r3)
-        L3c:
-            r11 = r2
-            r12 = r5
-            goto L6e
-        L3f:
-            int r4 = r13.readBits(r5)
-            if (r4 == 0) goto L6b
-            if (r4 == r6) goto L67
-            if (r4 == r5) goto L5c
-            if (r4 == r7) goto L4f
-            r11 = r2
-            r4 = 0
-        L4d:
-            r12 = 0
-            goto L6e
-        L4f:
-            r4 = 8
-            int r4 = r13.readBits(r4)
-            int r5 = r4 + 25
-            int r4 = r13.readBits(r3)
-            goto L3c
-        L5c:
-            int r4 = r13.readBits(r3)
-            int r5 = r4 + 9
-            int r4 = r13.readBits(r3)
-            goto L3c
-        L67:
-            r11 = r2
-            r4 = 0
-            r12 = 2
-            goto L6e
-        L6b:
-            r11 = r2
-            r4 = 0
-            goto L13
-        L6e:
-            if (r12 == 0) goto L8a
-            if (r8 == 0) goto L8a
-            if (r15 == 0) goto L76
-            r4 = r15[r4]
-        L76:
-            r2 = r14[r4]
-            r8.setColor(r2)
-            float r3 = (float) r10
-            float r4 = (float) r1
-            int r2 = r10 + r12
-            float r5 = (float) r2
-            int r2 = r1 + 1
-            float r6 = (float) r2
-            r2 = r19
-            r7 = r18
-            r2.drawRect(r3, r4, r5, r6, r7)
-        L8a:
-            int r10 = r10 + r12
-            if (r11 == 0) goto L8e
-            return r10
-        L8e:
-            r2 = r11
-            goto L9
-        */
-        throw new UnsupportedOperationException("Method not decompiled: com.google.android.exoplayer2.text.dvb.DvbParser.paint4BitPixelCodeString(com.google.android.exoplayer2.util.ParsableBitArray, int[], byte[], int, int, android.graphics.Paint, android.graphics.Canvas):int");
+    private static int paint4BitPixelCodeString(ParsableBitArray parsableBitArray, int[] iArr, byte[] bArr, int i, int i2, Paint paint, Canvas canvas) {
+        boolean z;
+        int i3;
+        int readBits;
+        int i4 = i;
+        boolean z2 = false;
+        while (true) {
+            byte readBits2 = parsableBitArray.readBits(4);
+            int i5 = 2;
+            if (readBits2 != 0) {
+                z = z2;
+                i3 = 1;
+            } else if (!parsableBitArray.readBit()) {
+                int readBits3 = parsableBitArray.readBits(3);
+                if (readBits3 != 0) {
+                    i5 = readBits3 + 2;
+                    z = z2;
+                    i3 = i5;
+                    readBits2 = 0;
+                } else {
+                    z = true;
+                    readBits2 = 0;
+                    i3 = 0;
+                }
+            } else {
+                if (!parsableBitArray.readBit()) {
+                    readBits = parsableBitArray.readBits(2) + 4;
+                    readBits2 = parsableBitArray.readBits(4);
+                } else {
+                    int readBits4 = parsableBitArray.readBits(2);
+                    if (readBits4 != 0) {
+                        if (readBits4 != 1) {
+                            if (readBits4 == 2) {
+                                readBits = parsableBitArray.readBits(4) + 9;
+                                readBits2 = parsableBitArray.readBits(4);
+                            } else if (readBits4 != 3) {
+                                z = z2;
+                                readBits2 = 0;
+                                i3 = 0;
+                            } else {
+                                readBits = parsableBitArray.readBits(8) + 25;
+                                readBits2 = parsableBitArray.readBits(4);
+                            }
+                        }
+                        z = z2;
+                        i3 = i5;
+                        readBits2 = 0;
+                    } else {
+                        z = z2;
+                        i3 = 1;
+                        readBits2 = 0;
+                    }
+                }
+                z = z2;
+                i3 = readBits;
+            }
+            if (i3 != 0 && paint != null) {
+                if (bArr != null) {
+                    readBits2 = bArr[readBits2];
+                }
+                paint.setColor(iArr[readBits2]);
+                canvas.drawRect(i4, i2, i4 + i3, i2 + 1, paint);
+            }
+            i4 += i3;
+            if (z) {
+                return i4;
+            }
+            z2 = z;
+        }
     }
 
     private static int paint8BitPixelCodeString(ParsableBitArray parsableBitArray, int[] iArr, byte[] bArr, int i, int i2, Paint paint, Canvas canvas) {
@@ -727,8 +644,8 @@ final class DvbParser {
                     readBits = readBits3;
                     readBits2 = 0;
                 } else {
-                    readBits2 = 0;
                     z = true;
+                    readBits2 = 0;
                     readBits = 0;
                 }
             } else {

@@ -103,7 +103,7 @@
 
     move-result-object v0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     .line 34
     :goto_0
@@ -127,7 +127,7 @@
     sparse-switch v6, :sswitch_data_0
 
     :goto_1
-    const/4 v4, -0x1
+    move v4, v5
 
     goto :goto_2
 
@@ -186,7 +186,7 @@
     goto :goto_1
 
     :cond_4
-    const/4 v4, 0x0
+    move v4, v1
 
     :cond_5
     :goto_2

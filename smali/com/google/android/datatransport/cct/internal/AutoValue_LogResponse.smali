@@ -56,7 +56,7 @@
     goto :goto_0
 
     :cond_1
-    const/4 v0, 0x0
+    move v0, v2
 
     :goto_0
     return v0
@@ -86,9 +86,9 @@
 
     xor-long/2addr v0, v2
 
-    long-to-int v1, v0
+    long-to-int v0, v0
 
-    const v0, 0xf4243
+    const v1, 0xf4243
 
     xor-int/2addr v0, v1
 

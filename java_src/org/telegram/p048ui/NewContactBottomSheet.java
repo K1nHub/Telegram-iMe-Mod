@@ -19,7 +19,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3286R;
+import org.telegram.messenger.C3301R;
 import org.telegram.messenger.Emoji;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.LocaleController;
@@ -99,7 +99,7 @@ public class NewContactBottomSheet extends BottomSheet implements AdapterView.On
         this.classGuid = ConnectionsManager.generateClassGuid();
         this.parentFragment = baseFragment;
         setCustomView(createView(getContext()));
-        setTitle(LocaleController.getString("NewContactTitle", C3286R.string.NewContactTitle), true);
+        setTitle(LocaleController.getString("NewContactTitle", C3301R.string.NewContactTitle), true);
     }
 
     /* JADX WARN: Removed duplicated region for block: B:57:0x03ea  */
@@ -142,15 +142,15 @@ public class NewContactBottomSheet extends BottomSheet implements AdapterView.On
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: org.telegram.ui.NewContactBottomSheet$1 */
     /* loaded from: classes5.dex */
-    public class C59781 extends TextView {
+    public class C60041 extends TextView {
         final NotificationCenter.NotificationCenterDelegate delegate;
 
-        C59781(NewContactBottomSheet newContactBottomSheet, Context context) {
+        C60041(NewContactBottomSheet newContactBottomSheet, Context context) {
             super(context);
             this.delegate = new NotificationCenter.NotificationCenterDelegate() { // from class: org.telegram.ui.NewContactBottomSheet$1$$ExternalSyntheticLambda0
                 @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
                 public final void didReceivedNotification(int i, int i2, Object[] objArr) {
-                    NewContactBottomSheet.C59781.this.lambda$$0(i, i2, objArr);
+                    NewContactBottomSheet.C60041.this.lambda$$0(i, i2, objArr);
                 }
             };
         }
@@ -176,8 +176,8 @@ public class NewContactBottomSheet extends BottomSheet implements AdapterView.On
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: org.telegram.ui.NewContactBottomSheet$2 */
     /* loaded from: classes5.dex */
-    public class C59792 implements CountrySelectActivity.CountrySelectActivityDelegate {
-        C59792() {
+    public class C60052 implements CountrySelectActivity.CountrySelectActivityDelegate {
+        C60052() {
         }
 
         @Override // org.telegram.p048ui.CountrySelectActivity.CountrySelectActivityDelegate
@@ -186,7 +186,7 @@ public class NewContactBottomSheet extends BottomSheet implements AdapterView.On
             AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.NewContactBottomSheet$2$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    NewContactBottomSheet.C59792.this.lambda$didSelectCountry$0();
+                    NewContactBottomSheet.C60052.this.lambda$didSelectCountry$0();
                 }
             }, 300L);
             NewContactBottomSheet.this.phoneField.requestFocus();
@@ -202,7 +202,7 @@ public class NewContactBottomSheet extends BottomSheet implements AdapterView.On
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$createView$3(View view) {
         CountrySelectActivity countrySelectActivity = new CountrySelectActivity(true);
-        countrySelectActivity.setCountrySelectActivityDelegate(new C59792());
+        countrySelectActivity.setCountrySelectActivityDelegate(new C60052());
         this.parentFragment.showAsSheet(countrySelectActivity);
     }
 
@@ -466,7 +466,7 @@ public class NewContactBottomSheet extends BottomSheet implements AdapterView.On
             java.lang.String r9 = "X"
             r10 = 0
             if (r7 != 0) goto L6c
-            r7 = 0
+            r7 = r10
         L4a:
             int r11 = r4.size()
             if (r7 >= r11) goto L6c
@@ -482,10 +482,10 @@ public class NewContactBottomSheet extends BottomSheet implements AdapterView.On
             int r7 = r7 + 1
             goto L4a
         L6c:
-            r7 = -1
+            r7 = r6
         L6d:
             if (r7 != r6) goto L90
-            r1 = 0
+            r1 = r10
         L70:
             int r2 = r4.size()
             if (r1 >= r2) goto L8d

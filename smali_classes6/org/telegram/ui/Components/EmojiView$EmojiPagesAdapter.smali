@@ -82,12 +82,12 @@
 
     if-ne p1, v1, :cond_3
 
-    const/4 p1, 0x1
+    move p1, v1
 
     goto :goto_0
 
     :cond_3
-    const/4 p1, 0x0
+    move p1, v0
 
     :goto_0
     invoke-virtual {v2, v1, v0, p1}, Lorg/telegram/ui/Components/EmojiView;->showStickerBanHint(ZZZ)V

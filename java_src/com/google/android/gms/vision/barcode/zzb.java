@@ -16,6 +16,9 @@ public final class zzb implements Parcelable.Creator<Barcode> {
     @Override // android.os.Parcelable.Creator
     public final /* synthetic */ Barcode createFromParcel(Parcel parcel) {
         int validateObjectHeader = SafeParcelReader.validateObjectHeader(parcel);
+        int i = 0;
+        int i2 = 0;
+        boolean z = false;
         String str = null;
         String str2 = null;
         Point[] pointArr = null;
@@ -29,9 +32,6 @@ public final class zzb implements Parcelable.Creator<Barcode> {
         Barcode.ContactInfo contactInfo = null;
         Barcode.DriverLicense driverLicense = null;
         byte[] bArr = null;
-        int i = 0;
-        int i2 = 0;
-        boolean z = false;
         while (parcel.dataPosition() < validateObjectHeader) {
             int readHeader = SafeParcelReader.readHeader(parcel);
             switch (SafeParcelReader.getFieldId(readHeader)) {

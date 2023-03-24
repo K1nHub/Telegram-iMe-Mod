@@ -741,7 +741,7 @@
 .end method
 
 .method private checkVisibleRows()V
-    .locals 9
+    .locals 8
 
     .line 938
     iget-object v0, p0, Lorg/telegram/ui/GroupCreateActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -752,7 +752,7 @@
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_0
     if-ge v2, v0, :cond_5
@@ -810,9 +810,9 @@
     move-wide v4, v6
 
     :goto_1
-    cmp-long v8, v4, v6
+    cmp-long v6, v4, v6
 
-    if-eqz v8, :cond_4
+    if-eqz v6, :cond_4
 
     .line 953
     iget-object v6, p0, Lorg/telegram/ui/GroupCreateActivity;->ignoreUsers:Landroidx/collection/LongSparseArray;
@@ -845,12 +845,12 @@
 
     if-ltz v4, :cond_3
 
-    const/4 v4, 0x1
+    move v4, v7
 
     goto :goto_2
 
     :cond_3
-    const/4 v4, 0x0
+    move v4, v1
 
     :goto_2
     invoke-virtual {v3, v4, v7}, Lorg/telegram/ui/Cells/GroupCreateUserCell;->setChecked(ZZ)V
@@ -1031,12 +1031,12 @@
 
     if-eqz p3, :cond_0
 
-    const/4 v11, 0x1
+    move v11, v3
 
     goto :goto_0
 
     :cond_0
-    const/4 v11, 0x0
+    move v11, v0
 
     :goto_0
     move-object v4, p2
@@ -1121,7 +1121,7 @@
 
     if-ltz v6, :cond_4
 
-    const/4 v0, 0x1
+    move v0, v3
 
     :cond_4
     const/4 v6, 0x0
@@ -1295,9 +1295,9 @@
     return-void
 
     :cond_8
-    cmp-long v4, v7, v1
+    cmp-long v1, v7, v1
 
-    if-eqz v4, :cond_a
+    if-eqz v1, :cond_a
 
     .line 739
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getMessagesController()Lorg/telegram/messenger/MessagesController;
@@ -1540,7 +1540,7 @@
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_0
     if-ge v2, v0, :cond_1
@@ -1683,7 +1683,7 @@
 .end method
 
 .method private onDonePressed(Z)Z
-    .locals 11
+    .locals 10
 
     .line 978
     iget-object v0, p0, Lorg/telegram/ui/GroupCreateActivity;->selectedContacts:Landroidx/collection/LongSparseArray;
@@ -1761,7 +1761,7 @@
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
 
-    const/4 v5, 0x0
+    move v5, v2
 
     .line 988
     :goto_0
@@ -1843,9 +1843,9 @@
 
     const-wide/16 v8, 0x0
 
-    cmp-long v10, v6, v8
+    cmp-long v8, v6, v8
 
-    if-eqz v10, :cond_5
+    if-eqz v8, :cond_5
 
     goto :goto_2
 
@@ -2226,7 +2226,7 @@
 
     invoke-direct {p1}, Ljava/util/ArrayList;-><init>()V
 
-    const/4 v1, 0x0
+    move v1, v2
 
     .line 1036
     :goto_9
@@ -2339,7 +2339,7 @@
     .line 1053
     invoke-direct {p0, v2}, Lorg/telegram/ui/GroupCreateActivity;->onAddToGroupDone(I)V
 
-    goto :goto_d
+    goto/16 :goto_d
 
     .line 1055
     :cond_13
@@ -2347,7 +2347,7 @@
 
     invoke-direct {p1}, Ljava/util/ArrayList;-><init>()V
 
-    const/4 v0, 0x0
+    move v0, v2
 
     .line 1056
     :goto_a
@@ -3595,12 +3595,12 @@
 
     if-eqz v5, :cond_c
 
-    const/4 v5, 0x1
+    move v5, v4
 
     goto :goto_4
 
     :cond_c
-    const/4 v5, 0x2
+    move v5, v3
 
     :goto_4
     invoke-virtual {v1, v5}, Landroid/view/ViewGroup;->setVerticalScrollbarPosition(I)V
@@ -4732,7 +4732,7 @@
 
     move-object v8, v10
 
-    const/4 v13, 0x1
+    move v13, v9
 
     move-object v9, v12
 

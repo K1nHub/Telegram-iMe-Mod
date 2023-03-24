@@ -20,7 +20,7 @@ import org.fork.utils.Callbacks$Callback;
 import org.koin.core.Koin;
 import org.koin.core.component.KoinComponent;
 import org.koin.p047mp.KoinPlatformTools;
-import org.telegram.messenger.C3286R;
+import org.telegram.messenger.C3301R;
 import org.telegram.messenger.databinding.ForkContentStakingPrognosisBinding;
 import org.telegram.p048ui.ActionBar.Theme;
 import org.telegram.p048ui.StatisticActivity;
@@ -125,14 +125,14 @@ public final class StakingPrognosisView extends FrameLayout implements KoinCompo
     private final void setupView() {
         setupColors();
         ForkContentStakingPrognosisBinding forkContentStakingPrognosisBinding = this.binding;
-        forkContentStakingPrognosisBinding.textStatistics.setText(getResourceManager().getString(C3286R.string.staking_calculator_statistics));
-        forkContentStakingPrognosisBinding.textModeTitle.setText(getResourceManager().getString(C3286R.string.staking_calculator_mode));
-        forkContentStakingPrognosisBinding.textProfitTitle.setText(getResourceManager().getString(C3286R.string.staking_calculator_income_profit));
-        forkContentStakingPrognosisBinding.textDepositTitle.setText(getResourceManager().getString(C3286R.string.staking_calculator_deposit_title));
-        forkContentStakingPrognosisBinding.textDepositDescription.setText(getResourceManager().getString(C3286R.string.staking_calculator_deposit_description));
+        forkContentStakingPrognosisBinding.textStatistics.setText(getResourceManager().getString(C3301R.string.staking_calculator_statistics));
+        forkContentStakingPrognosisBinding.textModeTitle.setText(getResourceManager().getString(C3301R.string.staking_calculator_mode));
+        forkContentStakingPrognosisBinding.textProfitTitle.setText(getResourceManager().getString(C3301R.string.staking_calculator_income_profit));
+        forkContentStakingPrognosisBinding.textDepositTitle.setText(getResourceManager().getString(C3301R.string.staking_calculator_deposit_title));
+        forkContentStakingPrognosisBinding.textDepositDescription.setText(getResourceManager().getString(C3301R.string.staking_calculator_deposit_description));
         BigActionButton bigActionButton = forkContentStakingPrognosisBinding.buttonDeposit;
         bigActionButton.setForcedCustomHeight(36);
-        bigActionButton.setText(getResourceManager().getString(C3286R.string.wallet_operation_deposit));
+        bigActionButton.setText(getResourceManager().getString(C3301R.string.wallet_operation_deposit));
         addView(this.binding.getRoot());
     }
 }

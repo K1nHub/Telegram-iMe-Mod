@@ -140,7 +140,7 @@
     goto :goto_0
 
     :cond_5
-    const/4 v0, 0x0
+    move v0, v1
 
     :goto_0
     return v0

@@ -809,15 +809,15 @@
 
     move-wide/from16 v9, p2
 
-    const/16 v23, 0x6
+    move/from16 v23, v13
 
     move-object/from16 v13, v16
 
-    const/4 v4, 0x1
+    move v4, v14
 
     move/from16 v14, v17
 
-    const/4 v3, 0x0
+    move v3, v15
 
     move/from16 v15, v20
 
@@ -865,11 +865,11 @@
     goto :goto_1
 
     :cond_1
-    const/4 v3, 0x0
+    move/from16 v23, v13
 
-    const/4 v4, 0x1
+    move v4, v14
 
-    const/16 v23, 0x6
+    move v3, v15
 
     :cond_2
     move/from16 v8, p11
@@ -958,7 +958,7 @@
     goto :goto_2
 
     :cond_3
-    const/4 v10, 0x0
+    move v10, v3
 
     :goto_2
     aput v10, v13, v23
@@ -977,7 +977,7 @@
     goto :goto_5
 
     :cond_4
-    const/4 v11, 0x0
+    move v11, v3
 
     .line 1375
     :goto_3
@@ -1026,7 +1026,7 @@
     :cond_8
     iput-wide v1, v0, Lorg/telegram/ui/Components/SharedMediaLayout;->dialog_id:J
 
-    const/4 v1, 0x0
+    move v1, v3
 
     .line 1388
     :goto_6
@@ -1211,7 +1211,7 @@
 
     invoke-virtual {v1, v0, v2}, Lorg/telegram/messenger/NotificationCenter;->addObserver(Lorg/telegram/messenger/NotificationCenter$NotificationCenterDelegate;I)V
 
-    const/4 v1, 0x0
+    move v1, v3
 
     :goto_8
     const/4 v12, 0x0
@@ -1241,7 +1241,7 @@
     goto :goto_9
 
     :cond_c
-    const/4 v13, 0x0
+    move v13, v3
 
     :goto_9
     invoke-direct {v2, v0, v7, v13, v12}, Lorg/telegram/ui/Components/SharedMediaLayout$2;-><init>(Lorg/telegram/ui/Components/SharedMediaLayout;Landroid/content/Context;ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
@@ -1326,7 +1326,7 @@
 
     iput-object v1, v0, Lorg/telegram/ui/Components/SharedMediaLayout;->scrollSlidingTextTabStrip:Lorg/telegram/ui/Components/SharedMediaLayout$ScrollSlidingTextTabStripInner;
 
-    const/4 v1, 0x1
+    move v1, v4
 
     :goto_a
     if-ltz v1, :cond_10
@@ -2503,11 +2503,11 @@
     .line 1847
     invoke-virtual {v0, v14}, Landroid/widget/FrameLayout;->setWillNotDraw(Z)V
 
+    move v4, v14
+
+    move v15, v4
+
     const/4 v1, -0x1
-
-    const/4 v4, 0x0
-
-    const/4 v15, 0x0
 
     .line 1852
     :goto_e
@@ -3227,9 +3227,9 @@
 
     div-long/2addr v3, v5
 
-    long-to-int v4, v3
+    long-to-int v3, v3
 
-    invoke-virtual {v1, v4, v14, v14}, Lorg/telegram/ui/Cells/ChatActionCell;->setCustomDate(IZZ)V
+    invoke-virtual {v1, v3, v14, v14}, Lorg/telegram/ui/Cells/ChatActionCell;->setCustomDate(IZZ)V
 
     .line 2557
     iget-object v1, v0, Lorg/telegram/ui/Components/SharedMediaLayout;->floatingDateView:Lorg/telegram/ui/Cells/ChatActionCell;
@@ -4667,7 +4667,7 @@
 
     move-result v1
 
-    const/4 v4, 0x0
+    move v4, v0
 
     .line 2700
     :goto_3
@@ -4853,9 +4853,9 @@
 
     const-wide/16 v7, 0x12c
 
-    cmp-long v9, v5, v7
+    cmp-long v5, v5, v7
 
-    if-gez v9, :cond_1
+    if-gez v5, :cond_1
 
     return-void
 
@@ -4888,7 +4888,7 @@
 
     if-ne v3, v4, :cond_3
 
-    const/4 v7, 0x0
+    move v7, v5
 
     goto :goto_0
 
@@ -5019,7 +5019,7 @@
     goto :goto_1
 
     :cond_5
-    const/4 v13, 0x1
+    move v13, v6
 
     .line 3213
     :goto_1
@@ -5041,17 +5041,17 @@
 
     div-float/2addr v14, v15
 
-    mul-float v14, v14, v13
+    mul-float/2addr v14, v13
 
     const/high16 v13, 0x3fc00000    # 1.5f
 
-    mul-float v14, v14, v13
+    mul-float/2addr v14, v13
 
     float-to-int v13, v14
 
     if-ge v13, v10, :cond_6
 
-    const/16 v13, 0x64
+    move v13, v10
 
     .line 3217
     :cond_6
@@ -5250,7 +5250,7 @@
 
     if-nez v9, :cond_e
 
-    const/4 v9, 0x3
+    move v9, v10
 
     goto :goto_2
 
@@ -5267,7 +5267,7 @@
     goto :goto_2
 
     :cond_f
-    const/4 v9, 0x6
+    move v9, v14
 
     :goto_2
     add-int/2addr v7, v3
@@ -5318,7 +5318,7 @@
 
     if-ne v8, v6, :cond_11
 
-    const/16 v22, 0x6
+    move/from16 v22, v14
 
     goto :goto_3
 
@@ -5330,12 +5330,12 @@
 
     if-ne v7, v12, :cond_12
 
-    const/16 v22, 0x7
+    move/from16 v22, v13
 
     goto :goto_3
 
     :cond_12
-    const/16 v22, 0x0
+    move/from16 v22, v5
 
     goto :goto_3
 
@@ -5347,7 +5347,7 @@
 
     if-ne v7, v6, :cond_14
 
-    const/16 v22, 0x1
+    move/from16 v22, v6
 
     goto :goto_3
 
@@ -5359,7 +5359,7 @@
 
     if-ne v7, v12, :cond_15
 
-    const/16 v22, 0x2
+    move/from16 v22, v12
 
     goto :goto_3
 
@@ -5371,7 +5371,7 @@
 
     if-ne v7, v11, :cond_16
 
-    const/16 v22, 0x4
+    move/from16 v22, v11
 
     goto :goto_3
 
@@ -5383,12 +5383,12 @@
 
     if-ne v7, v15, :cond_17
 
-    const/16 v22, 0x5
+    move/from16 v22, v15
 
     goto :goto_3
 
     :cond_17
-    const/16 v22, 0x3
+    move/from16 v22, v10
 
     .line 3275
     :goto_3
@@ -5478,9 +5478,9 @@
 
     const-wide/16 v10, 0x0
 
-    cmp-long v12, v7, v10
+    cmp-long v7, v7, v10
 
-    if-eqz v12, :cond_19
+    if-eqz v7, :cond_19
 
     iget-object v7, v0, Lorg/telegram/ui/Components/SharedMediaLayout;->sharedMediaData:[Lorg/telegram/ui/Components/SharedMediaLayout$SharedMediaData;
 
@@ -6542,7 +6542,7 @@
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     .line 2823
     :goto_0
@@ -6580,13 +6580,13 @@
     .line 2830
     iget v2, p0, Lorg/telegram/ui/Components/SharedMediaLayout;->photoVideoChangeColumnsProgress:F
 
-    const/16 v3, 0x8
+    const/high16 v3, 0x3f800000    # 1.0f
 
-    const/high16 v4, 0x3f800000    # 1.0f
+    cmpl-float v4, v2, v3
 
-    cmpl-float v5, v2, v4
+    const/16 v5, 0x8
 
-    if-nez v5, :cond_7
+    if-nez v4, :cond_7
 
     .line 2831
     iget-object v2, p0, Lorg/telegram/ui/Components/SharedMediaLayout;->photoVideoAdapter:Lorg/telegram/ui/Components/SharedMediaLayout$SharedPhotoVideoAdapter;
@@ -6599,18 +6599,18 @@
     iput-boolean v1, p0, Lorg/telegram/ui/Components/SharedMediaLayout;->photoVideoChangeColumnsAnimation:Z
 
     .line 2833
-    iget-object v4, p0, Lorg/telegram/ui/Components/SharedMediaLayout;->sharedMediaData:[Lorg/telegram/ui/Components/SharedMediaLayout$SharedMediaData;
+    iget-object v3, p0, Lorg/telegram/ui/Components/SharedMediaLayout;->sharedMediaData:[Lorg/telegram/ui/Components/SharedMediaLayout$SharedMediaData;
 
-    aget-object v4, v4, v1
+    aget-object v3, v3, v1
 
-    invoke-virtual {v4, v1}, Lorg/telegram/ui/Components/SharedMediaLayout$SharedMediaData;->setListFrozen(Z)V
+    invoke-virtual {v3, v1}, Lorg/telegram/ui/Components/SharedMediaLayout$SharedMediaData;->setListFrozen(Z)V
 
     .line 2834
     invoke-static {v0}, Lorg/telegram/ui/Components/SharedMediaLayout$MediaPage;->access$3400(Lorg/telegram/ui/Components/SharedMediaLayout$MediaPage;)Lorg/telegram/ui/Components/BlurredRecyclerView;
 
-    move-result-object v4
+    move-result-object v3
 
-    invoke-virtual {v4, v3}, Lorg/telegram/ui/Components/RecyclerListView;->setVisibility(I)V
+    invoke-virtual {v3, v5}, Lorg/telegram/ui/Components/RecyclerListView;->setVisibility(I)V
 
     .line 2835
     iget v3, p0, Lorg/telegram/ui/Components/SharedMediaLayout;->animateToColumnsCount:I
@@ -6752,9 +6752,9 @@
     return-void
 
     :cond_7
-    const/4 v5, 0x0
+    const/4 v4, 0x0
 
-    cmpl-float v6, v2, v5
+    cmpl-float v6, v2, v4
 
     if-nez v6, :cond_8
 
@@ -6773,7 +6773,7 @@
 
     move-result-object v1
 
-    invoke-virtual {v1, v3}, Lorg/telegram/ui/Components/RecyclerListView;->setVisibility(I)V
+    invoke-virtual {v1, v5}, Lorg/telegram/ui/Components/RecyclerListView;->setVisibility(I)V
 
     .line 2864
     invoke-static {v0}, Lorg/telegram/ui/Components/SharedMediaLayout$MediaPage;->access$100(Lorg/telegram/ui/Components/SharedMediaLayout$MediaPage;)Lorg/telegram/ui/Components/BlurredRecyclerView;
@@ -6785,20 +6785,20 @@
     return-void
 
     :cond_8
-    const v3, 0x3e4ccccd    # 0.2f
+    const v5, 0x3e4ccccd    # 0.2f
+
+    cmpl-float v5, v2, v5
 
     const/4 v6, 0x1
 
-    cmpl-float v3, v2, v3
+    if-lez v5, :cond_9
 
-    if-lez v3, :cond_9
-
-    const/4 v3, 0x1
+    move v5, v6
 
     goto :goto_4
 
     :cond_9
-    const/4 v3, 0x0
+    move v5, v1
 
     :goto_4
     const/4 v7, 0x2
@@ -6807,15 +6807,15 @@
 
     aput v2, v7, v1
 
-    if-eqz v3, :cond_a
+    if-eqz v5, :cond_a
 
     goto :goto_5
 
     :cond_a
-    const/4 v4, 0x0
+    move v3, v4
 
     :goto_5
-    aput v4, v7, v6
+    aput v3, v7, v6
 
     .line 2868
     invoke-static {v7}, Landroid/animation/ValueAnimator;->ofFloat([F)Landroid/animation/ValueAnimator;
@@ -6832,7 +6832,7 @@
     .line 2877
     new-instance v2, Lorg/telegram/ui/Components/SharedMediaLayout$20;
 
-    invoke-direct {v2, p0, v3, v0}, Lorg/telegram/ui/Components/SharedMediaLayout$20;-><init>(Lorg/telegram/ui/Components/SharedMediaLayout;ZLorg/telegram/ui/Components/SharedMediaLayout$MediaPage;)V
+    invoke-direct {v2, p0, v5, v0}, Lorg/telegram/ui/Components/SharedMediaLayout$20;-><init>(Lorg/telegram/ui/Components/SharedMediaLayout;ZLorg/telegram/ui/Components/SharedMediaLayout$MediaPage;)V
 
     invoke-virtual {v1, v2}, Landroid/animation/ValueAnimator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
@@ -7119,9 +7119,9 @@
 
     const/4 v1, 0x1
 
-    const/4 v2, 0x1
+    move v3, v0
 
-    const/4 v3, 0x0
+    move v2, v1
 
     :goto_0
     if-ltz v2, :cond_4
@@ -7131,7 +7131,7 @@
 
     invoke-direct {v4}, Ljava/util/ArrayList;-><init>()V
 
-    const/4 v5, 0x0
+    move v5, v0
 
     .line 2634
     :goto_1
@@ -7216,7 +7216,7 @@
 
     if-eqz v5, :cond_1
 
-    const/4 v3, 0x1
+    move v3, v1
 
     :cond_2
     if-eqz v3, :cond_3
@@ -7535,7 +7535,7 @@
     :cond_1
     if-eqz p4, :cond_3
 
-    const/4 p2, 0x0
+    move p2, v1
 
     .line 6190
     :goto_0
@@ -7675,7 +7675,7 @@
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_0
     if-ge v2, v0, :cond_3
@@ -7791,7 +7791,7 @@
 
     const/4 p2, 0x0
 
-    const/4 v0, 0x0
+    move v0, p2
 
     :goto_0
     if-ge v0, p1, :cond_3
@@ -8137,9 +8137,9 @@
     :goto_1
     const-wide/16 p3, 0x0
 
-    cmp-long p5, p1, p3
+    cmp-long p3, p1, p3
 
-    if-eqz p5, :cond_4
+    if-eqz p3, :cond_4
 
     .line 2384
     iget-object p3, p0, Lorg/telegram/ui/Components/SharedMediaLayout;->profileActivity:Lorg/telegram/ui/ActionBar/BaseFragment;
@@ -8152,9 +8152,9 @@
 
     move-result-wide p3
 
-    cmp-long p5, p1, p3
+    cmp-long p3, p1, p3
 
-    if-nez p5, :cond_3
+    if-nez p3, :cond_3
 
     goto :goto_2
 
@@ -8945,7 +8945,7 @@
 
     const/4 v15, 0x1
 
-    const/4 v3, 0x1
+    move v3, v15
 
     :goto_0
     const/4 v13, 0x0
@@ -9086,9 +9086,9 @@
 
     move-result-wide v5
 
-    cmp-long v7, v3, v5
+    cmp-long v3, v3, v5
 
-    if-eqz v7, :cond_8
+    if-eqz v3, :cond_8
 
     if-nez p3, :cond_8
 
@@ -9222,7 +9222,7 @@
     .line 3637
     invoke-virtual {v1, v14}, Lorg/telegram/ui/DialogsActivity;->getSelectedMessages(Ljava/util/ArrayList;)V
 
-    const/4 v12, 0x0
+    move v12, v13
 
     .line 3638
     :goto_6
@@ -9477,11 +9477,11 @@
 
     mul-float v1, p0, p0
 
-    mul-float v1, v1, p0
+    mul-float/2addr v1, p0
 
-    mul-float v1, v1, p0
+    mul-float/2addr v1, p0
 
-    mul-float v1, v1, p0
+    mul-float/2addr v1, p0
 
     add-float/2addr v1, v0
 
@@ -9501,7 +9501,7 @@
     :cond_0
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    move v1, v0
 
     .line 3423
     :goto_0
@@ -9741,9 +9741,10 @@
 
     const/4 v2, 0x6
 
-    const/4 v13, 0x6
+    :goto_0
+    move v13, v2
 
-    goto :goto_0
+    goto :goto_1
 
     .line 3315
     :cond_0
@@ -9755,50 +9756,46 @@
 
     const/4 v2, 0x7
 
-    const/4 v13, 0x7
-
     goto :goto_0
 
     :cond_1
-    const/4 v13, 0x0
+    move v13, v5
 
-    goto :goto_0
+    goto :goto_1
 
     :cond_2
     if-ne v1, v6, :cond_3
 
-    const/4 v13, 0x1
+    move v13, v6
 
-    goto :goto_0
+    goto :goto_1
 
     :cond_3
     if-ne v1, v4, :cond_4
 
-    const/4 v13, 0x2
+    move v13, v4
 
-    goto :goto_0
+    goto :goto_1
 
     :cond_4
     if-ne v1, v3, :cond_5
 
-    const/4 v13, 0x4
+    move v13, v3
 
-    goto :goto_0
+    goto :goto_1
 
     :cond_5
     if-ne v1, v2, :cond_6
-
-    const/4 v13, 0x5
 
     goto :goto_0
 
     :cond_6
     const/4 v2, 0x3
 
-    const/4 v13, 0x3
+    goto :goto_0
 
     .line 3329
-    :goto_0
+    :goto_1
     iget-object v2, v0, Lorg/telegram/ui/Components/SharedMediaLayout;->sharedMediaData:[Lorg/telegram/ui/Components/SharedMediaLayout$SharedMediaData;
 
     aget-object v2, v2, v1
@@ -9890,12 +9887,12 @@
 
     if-nez v4, :cond_1
 
-    const/4 v4, 0x0
+    move v4, v6
 
     goto :goto_0
 
     :cond_1
-    const/4 v4, 0x1
+    move v4, v7
 
     .line 5201
     :goto_0
@@ -10114,7 +10111,7 @@
     .line 5234
     invoke-direct {p0, v6}, Lorg/telegram/ui/Components/SharedMediaLayout;->showActionMode(Z)V
 
-    goto :goto_7
+    goto/16 :goto_7
 
     .line 5237
     :cond_9
@@ -10150,13 +10147,13 @@
     goto :goto_2
 
     :cond_b
-    const/16 v3, 0x8
+    move v3, v8
 
     goto :goto_3
 
     :cond_c
     :goto_2
-    const/4 v3, 0x0
+    move v3, v6
 
     :goto_3
     invoke-virtual {v5, v3}, Landroid/widget/FrameLayout;->setVisibility(I)V
@@ -10210,12 +10207,12 @@
 
     if-nez v5, :cond_f
 
-    const/4 v5, 0x0
+    move v5, v6
 
     goto :goto_6
 
     :cond_f
-    const/16 v5, 0x8
+    move v5, v8
 
     :goto_6
     invoke-virtual {v3, v5}, Landroid/widget/FrameLayout;->setVisibility(I)V
@@ -10236,7 +10233,7 @@
 
     if-ne v5, v7, :cond_10
 
-    const/4 v8, 0x0
+    move v8, v6
 
     :cond_10
     invoke-virtual {v3, v8}, Landroid/widget/FrameLayout;->setVisibility(I)V
@@ -10268,7 +10265,7 @@
 
     if-ltz v2, :cond_12
 
-    const/4 v6, 0x1
+    move v6, v7
 
     :cond_12
     invoke-virtual {v0, v6, v7}, Lorg/telegram/ui/Cells/SharedDocumentCell;->setChecked(ZZ)V
@@ -10300,7 +10297,7 @@
 
     move/from16 v2, p4
 
-    const/4 v6, 0x1
+    move v6, v7
 
     goto :goto_8
 
@@ -10335,7 +10332,7 @@
 
     if-ltz v2, :cond_16
 
-    const/4 v6, 0x1
+    move v6, v7
 
     :cond_16
     invoke-virtual {v0, v6, v7}, Lorg/telegram/ui/Cells/SharedLinkCell;->setChecked(ZZ)V
@@ -10365,7 +10362,7 @@
 
     if-ltz v2, :cond_18
 
-    const/4 v6, 0x1
+    move v6, v7
 
     :cond_18
     invoke-virtual {v0, v6, v7}, Lorg/telegram/ui/Cells/SharedAudioCell;->setChecked(ZZ)V
@@ -10395,7 +10392,7 @@
 
     if-ltz v2, :cond_1a
 
-    const/4 v6, 0x1
+    move v6, v7
 
     :cond_1a
     invoke-virtual {v0, v6, v7}, Lorg/telegram/ui/Cells/ContextLinkCell;->setChecked(ZZ)V
@@ -10425,7 +10422,7 @@
 
     if-ltz v2, :cond_1c
 
-    const/4 v6, 0x1
+    move v6, v7
 
     :cond_1c
     invoke-virtual {v0, v6, v7}, Lorg/telegram/ui/Cells/SharedPhotoVideoCell2;->setChecked(ZZ)V
@@ -10887,7 +10884,7 @@
 .end method
 
 .method private onItemLongClick(Lorg/telegram/messenger/MessageObject;Landroid/view/View;I)Z
-    .locals 8
+    .locals 7
 
     .line 5135
     iget-boolean v0, p0, Lorg/telegram/ui/Components/SharedMediaLayout;->isActionModeShowed:Z
@@ -10931,18 +10928,18 @@
 
     iget-wide v4, p0, Lorg/telegram/ui/Components/SharedMediaLayout;->dialog_id:J
 
-    const/4 v6, 0x1
+    cmp-long v2, v2, v4
 
-    cmp-long v7, v2, v4
+    const/4 v3, 0x1
 
-    if-nez v7, :cond_1
+    if-nez v2, :cond_1
 
-    const/4 v2, 0x0
+    move v2, v1
 
     goto :goto_0
 
     :cond_1
-    const/4 v2, 0x1
+    move v2, v3
 
     :goto_0
     aget-object v0, v0, v2
@@ -10965,7 +10962,7 @@
     .line 5141
     iget v0, p0, Lorg/telegram/ui/Components/SharedMediaLayout;->cantDeleteMessagesCount:I
 
-    add-int/2addr v0, v6
+    add-int/2addr v0, v3
 
     iput v0, p0, Lorg/telegram/ui/Components/SharedMediaLayout;->cantDeleteMessagesCount:I
 
@@ -10986,9 +10983,9 @@
 
     move-result v0
 
-    sget v3, Lcom/smedialink/common/IdFabric$CustomType;->MEDIA_TAB_PLAYLIST:I
+    sget v4, Lcom/smedialink/common/IdFabric$CustomType;->MEDIA_TAB_PLAYLIST:I
 
-    if-ne v0, v3, :cond_3
+    if-ne v0, v4, :cond_3
 
     .line 5146
     iput v1, p0, Lorg/telegram/ui/Components/SharedMediaLayout;->cantDeleteMessagesCount:I
@@ -11021,7 +11018,7 @@
     .line 5150
     iget p1, p0, Lorg/telegram/ui/Components/SharedMediaLayout;->cantAddToPlaylistCount:I
 
-    add-int/2addr p1, v6
+    add-int/2addr p1, v3
 
     iput p1, p0, Lorg/telegram/ui/Components/SharedMediaLayout;->cantAddToPlaylistCount:I
 
@@ -11031,7 +11028,7 @@
     :cond_4
     iget p1, p0, Lorg/telegram/ui/Components/SharedMediaLayout;->cantRemoveFromPlaylistCount:I
 
-    add-int/2addr p1, v6
+    add-int/2addr p1, v3
 
     iput p1, p0, Lorg/telegram/ui/Components/SharedMediaLayout;->cantRemoveFromPlaylistCount:I
 
@@ -11067,13 +11064,13 @@
     goto :goto_3
 
     :cond_6
-    const/16 v0, 0x8
+    move v0, v2
 
     goto :goto_4
 
     :cond_7
     :goto_3
-    const/4 v0, 0x0
+    move v0, v1
 
     :goto_4
     invoke-virtual {p1, v0}, Landroid/widget/FrameLayout;->setVisibility(I)V
@@ -11087,7 +11084,7 @@
 
     if-nez v0, :cond_9
 
-    const/4 v2, 0x0
+    move v2, v1
 
     :cond_9
     invoke-virtual {p1, v2}, Landroid/widget/FrameLayout;->setVisibility(I)V
@@ -11104,7 +11101,7 @@
     :cond_a
     iget-object p1, p0, Lorg/telegram/ui/Components/SharedMediaLayout;->selectedMessagesCountTextView:Lorg/telegram/ui/Components/NumberTextView;
 
-    invoke-virtual {p1, v6, v1}, Lorg/telegram/ui/Components/NumberTextView;->setNumber(IZ)V
+    invoke-virtual {p1, v3, v1}, Lorg/telegram/ui/Components/NumberTextView;->setNumber(IZ)V
 
     .line 5164
     new-instance p1, Landroid/animation/AnimatorSet;
@@ -11116,44 +11113,44 @@
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    const/4 v2, 0x0
+    move v2, v1
 
     .line 5166
     :goto_6
-    iget-object v3, p0, Lorg/telegram/ui/Components/SharedMediaLayout;->actionModeViews:Ljava/util/ArrayList;
+    iget-object v4, p0, Lorg/telegram/ui/Components/SharedMediaLayout;->actionModeViews:Ljava/util/ArrayList;
 
-    invoke-virtual {v3}, Ljava/util/ArrayList;->size()I
+    invoke-virtual {v4}, Ljava/util/ArrayList;->size()I
 
-    move-result v3
+    move-result v4
 
-    if-ge v2, v3, :cond_b
+    if-ge v2, v4, :cond_b
 
     .line 5167
-    iget-object v3, p0, Lorg/telegram/ui/Components/SharedMediaLayout;->actionModeViews:Ljava/util/ArrayList;
+    iget-object v4, p0, Lorg/telegram/ui/Components/SharedMediaLayout;->actionModeViews:Ljava/util/ArrayList;
 
-    invoke-virtual {v3, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+    invoke-virtual {v4, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
-    move-result-object v3
+    move-result-object v4
 
-    check-cast v3, Landroid/view/View;
+    check-cast v4, Landroid/view/View;
 
     .line 5168
-    invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->clearDrawableAnimation(Landroid/view/View;)V
+    invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->clearDrawableAnimation(Landroid/view/View;)V
 
     .line 5169
-    sget-object v4, Landroid/view/View;->SCALE_Y:Landroid/util/Property;
+    sget-object v5, Landroid/view/View;->SCALE_Y:Landroid/util/Property;
 
-    const/4 v5, 0x2
+    const/4 v6, 0x2
 
-    new-array v5, v5, [F
+    new-array v6, v6, [F
 
-    fill-array-data v5, :array_0
+    fill-array-data v6, :array_0
 
-    invoke-static {v3, v4, v5}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
+    invoke-static {v4, v5, v6}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
 
-    move-result-object v3
+    move-result-object v4
 
-    invoke-virtual {v0, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    invoke-virtual {v0, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     add-int/lit8 v2, v2, 0x1
 
@@ -11163,10 +11160,10 @@
     :cond_b
     invoke-virtual {p1, v0}, Landroid/animation/AnimatorSet;->playTogether(Ljava/util/Collection;)V
 
-    const-wide/16 v2, 0xfa
+    const-wide/16 v4, 0xfa
 
     .line 5172
-    invoke-virtual {p1, v2, v3}, Landroid/animation/AnimatorSet;->setDuration(J)Landroid/animation/AnimatorSet;
+    invoke-virtual {p1, v4, v5}, Landroid/animation/AnimatorSet;->setDuration(J)Landroid/animation/AnimatorSet;
 
     .line 5173
     invoke-virtual {p1}, Landroid/animation/AnimatorSet;->start()V
@@ -11182,7 +11179,7 @@
     .line 5176
     check-cast p2, Lorg/telegram/ui/Cells/SharedDocumentCell;
 
-    invoke-virtual {p2, v6, v6}, Lorg/telegram/ui/Cells/SharedDocumentCell;->setChecked(ZZ)V
+    invoke-virtual {p2, v3, v3}, Lorg/telegram/ui/Cells/SharedDocumentCell;->setChecked(ZZ)V
 
     goto :goto_7
 
@@ -11195,7 +11192,7 @@
     .line 5178
     check-cast p2, Lorg/telegram/ui/Cells/SharedPhotoVideoCell;
 
-    invoke-virtual {p2, p3, v6, v6}, Lorg/telegram/ui/Cells/SharedPhotoVideoCell;->setChecked(IZZ)V
+    invoke-virtual {p2, p3, v3, v3}, Lorg/telegram/ui/Cells/SharedPhotoVideoCell;->setChecked(IZZ)V
 
     goto :goto_7
 
@@ -11208,7 +11205,7 @@
     .line 5180
     check-cast p2, Lorg/telegram/ui/Cells/SharedLinkCell;
 
-    invoke-virtual {p2, v6, v6}, Lorg/telegram/ui/Cells/SharedLinkCell;->setChecked(ZZ)V
+    invoke-virtual {p2, v3, v3}, Lorg/telegram/ui/Cells/SharedLinkCell;->setChecked(ZZ)V
 
     goto :goto_7
 
@@ -11221,7 +11218,7 @@
     .line 5182
     check-cast p2, Lorg/telegram/ui/Cells/SharedAudioCell;
 
-    invoke-virtual {p2, v6, v6}, Lorg/telegram/ui/Cells/SharedAudioCell;->setChecked(ZZ)V
+    invoke-virtual {p2, v3, v3}, Lorg/telegram/ui/Cells/SharedAudioCell;->setChecked(ZZ)V
 
     goto :goto_7
 
@@ -11234,7 +11231,7 @@
     .line 5184
     check-cast p2, Lorg/telegram/ui/Cells/ContextLinkCell;
 
-    invoke-virtual {p2, v6, v6}, Lorg/telegram/ui/Cells/ContextLinkCell;->setChecked(ZZ)V
+    invoke-virtual {p2, v3, v3}, Lorg/telegram/ui/Cells/ContextLinkCell;->setChecked(ZZ)V
 
     goto :goto_7
 
@@ -11247,7 +11244,7 @@
     .line 5186
     check-cast p2, Lorg/telegram/ui/Cells/SharedPhotoVideoCell2;
 
-    invoke-virtual {p2, v6, v6}, Lorg/telegram/ui/Cells/SharedPhotoVideoCell2;->setChecked(ZZ)V
+    invoke-virtual {p2, v3, v3}, Lorg/telegram/ui/Cells/SharedPhotoVideoCell2;->setChecked(ZZ)V
 
     .line 5188
     :cond_11
@@ -11257,17 +11254,19 @@
     if-nez p1, :cond_12
 
     .line 5189
-    invoke-direct {p0, v6}, Lorg/telegram/ui/Components/SharedMediaLayout;->showActionMode(Z)V
+    invoke-direct {p0, v3}, Lorg/telegram/ui/Components/SharedMediaLayout;->showActionMode(Z)V
 
     .line 5191
     :cond_12
     invoke-direct {p0}, Lorg/telegram/ui/Components/SharedMediaLayout;->updateForwardItem()V
 
-    return v6
+    return v3
 
     :cond_13
     :goto_8
     return v1
+
+    nop
 
     :array_0
     .array-data 4
@@ -11729,7 +11728,7 @@
 
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    move v1, v0
 
     .line 4486
     :goto_0
@@ -11748,11 +11747,11 @@
 
     if-eqz v2, :cond_8
 
-    const/4 v3, 0x0
+    move v3, v0
 
-    const/4 v4, 0x0
+    move v4, v3
 
-    const/4 v5, 0x0
+    move v5, v4
 
     .line 4491
     :goto_1
@@ -11891,7 +11890,7 @@
     goto/16 :goto_5
 
     :cond_5
-    const/4 v6, 0x0
+    move v6, v0
 
     .line 4517
     :goto_3
@@ -12168,7 +12167,7 @@
     move-result v3
 
     :goto_1
-    mul-int v3, v3, v0
+    mul-int/2addr v3, v0
 
     int-to-float v0, v3
 
@@ -12189,7 +12188,7 @@
 
     const v4, 0x3f99999a    # 1.2f
 
-    mul-float v3, v3, v4
+    mul-float/2addr v3, v4
 
     cmpl-float v0, v0, v3
 
@@ -12265,9 +12264,9 @@
 
     const/4 v3, 0x0
 
-    const/4 v4, 0x1
-
     cmpl-float v1, v1, v3
+
+    const/4 v4, 0x1
 
     if-eqz v1, :cond_0
 
@@ -12275,10 +12274,10 @@
 
     if-ne v1, v4, :cond_0
 
-    const/4 p2, 0x0
+    move p2, v2
 
     :cond_0
-    const/4 v1, 0x0
+    move v1, v2
 
     .line 387
     :goto_0
@@ -12415,7 +12414,7 @@
 
     int-to-float v0, v0
 
-    mul-float v0, v0, p1
+    mul-float/2addr v0, p1
 
     add-float/2addr p2, v0
 
@@ -12810,7 +12809,7 @@
 
     if-eqz v3, :cond_3
 
-    const/4 v5, 0x0
+    move v5, v2
 
     .line 2741
     :goto_0
@@ -12875,7 +12874,7 @@
     goto :goto_2
 
     :cond_4
-    const/4 p1, 0x0
+    move p1, v2
 
     :goto_2
     const-string v3, "type"
@@ -12924,7 +12923,7 @@
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     .line 2788
     :goto_0
@@ -13093,7 +13092,7 @@
 
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    move v1, v0
 
     .line 4875
     :goto_0
@@ -13114,7 +13113,7 @@
 
     move-result v2
 
-    const/4 v3, 0x0
+    move v3, v0
 
     :goto_1
     if-ge v3, v2, :cond_2
@@ -13186,7 +13185,7 @@
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     .line 4895
     :goto_0
@@ -13802,7 +13801,7 @@
 
     :cond_12
     :goto_2
-    const/4 v2, 0x0
+    move v2, v1
 
     goto/16 :goto_f
 
@@ -13918,12 +13917,12 @@
 
     if-nez v2, :cond_16
 
-    const/4 v2, 0x1
+    move v2, v14
 
     goto :goto_3
 
     :cond_16
-    const/4 v2, 0x0
+    move v2, v1
 
     .line 5014
     :goto_3
@@ -14001,12 +14000,12 @@
 
     if-nez v2, :cond_19
 
-    const/4 v2, 0x1
+    move v2, v14
 
     goto :goto_4
 
     :cond_19
-    const/4 v2, 0x0
+    move v2, v1
 
     .line 5024
     :goto_4
@@ -14063,12 +14062,12 @@
 
     if-nez v2, :cond_1b
 
-    const/4 v2, 0x1
+    move v2, v14
 
     goto :goto_5
 
     :cond_1b
-    const/4 v2, 0x0
+    move v2, v1
 
     .line 5032
     :goto_5
@@ -14168,12 +14167,12 @@
 
     if-nez v2, :cond_1e
 
-    const/4 v2, 0x1
+    move v2, v14
 
     goto :goto_6
 
     :cond_1e
-    const/4 v2, 0x0
+    move v2, v1
 
     .line 5045
     :goto_6
@@ -14304,11 +14303,11 @@
 
     :cond_22
     :goto_7
-    const/4 v2, 0x0
+    move v2, v1
 
     :cond_23
     :goto_8
-    const/16 v3, 0x64
+    move v3, v6
 
     .line 5065
     :goto_9
@@ -14680,7 +14679,7 @@
 
     if-ne v8, v14, :cond_2f
 
-    const/16 v21, 0x6
+    move/from16 v21, v10
 
     goto :goto_d
 
@@ -14692,7 +14691,7 @@
 
     if-ne v6, v11, :cond_30
 
-    const/16 v21, 0x7
+    move/from16 v21, v12
 
     goto :goto_d
 
@@ -14901,12 +14900,12 @@
 
     if-eqz v0, :cond_3
 
-    const/high16 v4, 0x3f000000    # 0.5f
+    move v4, v2
 
     goto :goto_2
 
     :cond_3
-    const/high16 v4, 0x3f800000    # 1.0f
+    move v4, v3
 
     :goto_2
     invoke-virtual {v1, v4}, Landroid/widget/FrameLayout;->setAlpha(F)V
@@ -14970,7 +14969,7 @@
     goto :goto_4
 
     :cond_6
-    const/high16 v2, 0x3f800000    # 1.0f
+    move v2, v3
 
     :goto_4
     invoke-virtual {v6, v2}, Landroid/widget/FrameLayout;->setAlpha(F)V
@@ -15026,7 +15025,7 @@
 
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    move v1, v0
 
     .line 4709
     :goto_0
@@ -15047,7 +15046,7 @@
 
     move-result v2
 
-    const/4 v3, 0x0
+    move v3, v0
 
     :goto_1
     if-ge v3, v2, :cond_5
@@ -15166,7 +15165,7 @@
 
     if-nez v0, :cond_1
 
-    const/4 p1, 0x0
+    move p1, v1
 
     .line 4740
     :cond_1
@@ -15180,12 +15179,12 @@
 
     if-nez v0, :cond_2
 
-    const/4 v0, 0x1
+    move v0, v2
 
     goto :goto_0
 
     :cond_2
-    const/4 v0, 0x0
+    move v0, v1
 
     :goto_0
     iget-object v3, p0, Lorg/telegram/ui/Components/SharedMediaLayout;->scrollSlidingTextTabStrip:Lorg/telegram/ui/Components/SharedMediaLayout$ScrollSlidingTextTabStripInner;
@@ -15198,12 +15197,12 @@
 
     if-ne v0, v3, :cond_3
 
-    const/4 v0, 0x1
+    move v0, v2
 
     goto :goto_1
 
     :cond_3
-    const/4 v0, 0x0
+    move v0, v1
 
     .line 4743
     :goto_1
@@ -15213,12 +15212,12 @@
 
     if-gtz v3, :cond_4
 
-    const/4 v3, 0x1
+    move v3, v2
 
     goto :goto_2
 
     :cond_4
-    const/4 v3, 0x0
+    move v3, v1
 
     :goto_2
     iget-object v5, p0, Lorg/telegram/ui/Components/SharedMediaLayout;->scrollSlidingTextTabStrip:Lorg/telegram/ui/Components/SharedMediaLayout$ScrollSlidingTextTabStripInner;
@@ -15239,12 +15238,12 @@
 
     if-gtz v3, :cond_6
 
-    const/4 v3, 0x1
+    move v3, v2
 
     goto :goto_3
 
     :cond_6
-    const/4 v3, 0x0
+    move v3, v1
 
     :goto_3
     iget-object v5, p0, Lorg/telegram/ui/Components/SharedMediaLayout;->scrollSlidingTextTabStrip:Lorg/telegram/ui/Components/SharedMediaLayout$ScrollSlidingTextTabStripInner;
@@ -15278,12 +15277,12 @@
 
     if-gtz v3, :cond_8
 
-    const/4 v3, 0x1
+    move v3, v2
 
     goto :goto_4
 
     :cond_8
-    const/4 v3, 0x0
+    move v3, v1
 
     :goto_4
     iget-object v7, p0, Lorg/telegram/ui/Components/SharedMediaLayout;->scrollSlidingTextTabStrip:Lorg/telegram/ui/Components/SharedMediaLayout$ScrollSlidingTextTabStripInner;
@@ -15304,12 +15303,12 @@
 
     if-gtz v3, :cond_a
 
-    const/4 v3, 0x1
+    move v3, v2
 
     goto :goto_5
 
     :cond_a
-    const/4 v3, 0x0
+    move v3, v1
 
     :goto_5
     iget-object v7, p0, Lorg/telegram/ui/Components/SharedMediaLayout;->scrollSlidingTextTabStrip:Lorg/telegram/ui/Components/SharedMediaLayout$ScrollSlidingTextTabStripInner;
@@ -15330,12 +15329,12 @@
 
     if-gtz v3, :cond_c
 
-    const/4 v3, 0x1
+    move v3, v2
 
     goto :goto_6
 
     :cond_c
-    const/4 v3, 0x0
+    move v3, v1
 
     :goto_6
     iget-object v7, p0, Lorg/telegram/ui/Components/SharedMediaLayout;->scrollSlidingTextTabStrip:Lorg/telegram/ui/Components/SharedMediaLayout$ScrollSlidingTextTabStripInner;
@@ -15359,12 +15358,12 @@
 
     if-gtz v3, :cond_e
 
-    const/4 v3, 0x1
+    move v3, v2
 
     goto :goto_8
 
     :cond_e
-    const/4 v3, 0x0
+    move v3, v1
 
     :goto_8
     iget-object v8, p0, Lorg/telegram/ui/Components/SharedMediaLayout;->scrollSlidingTextTabStrip:Lorg/telegram/ui/Components/SharedMediaLayout$ScrollSlidingTextTabStripInner;
@@ -15387,12 +15386,12 @@
 
     if-gtz v3, :cond_10
 
-    const/4 v3, 0x1
+    move v3, v2
 
     goto :goto_9
 
     :cond_10
-    const/4 v3, 0x0
+    move v3, v1
 
     :goto_9
     iget-object v9, p0, Lorg/telegram/ui/Components/SharedMediaLayout;->scrollSlidingTextTabStrip:Lorg/telegram/ui/Components/SharedMediaLayout$ScrollSlidingTextTabStripInner;
@@ -15415,12 +15414,12 @@
 
     if-gtz v3, :cond_12
 
-    const/4 v3, 0x1
+    move v3, v2
 
     goto :goto_a
 
     :cond_12
-    const/4 v3, 0x0
+    move v3, v1
 
     :goto_a
     iget-object v10, p0, Lorg/telegram/ui/Components/SharedMediaLayout;->scrollSlidingTextTabStrip:Lorg/telegram/ui/Components/SharedMediaLayout$ScrollSlidingTextTabStripInner;
@@ -15988,11 +15987,11 @@
     :cond_3
     const/4 v0, -0x1
 
-    const/4 v3, 0x0
+    move v7, v0
 
-    const/4 v7, -0x1
+    move v8, v7
 
-    const/4 v8, -0x1
+    move v3, v1
 
     .line 316
     :goto_0
@@ -16100,12 +16099,12 @@
 
     if-lez v0, :cond_9
 
-    const/4 v0, 0x1
+    move v0, v2
 
     goto :goto_1
 
     :cond_9
-    const/4 v0, 0x0
+    move v0, v1
 
     .line 334
     :goto_1
@@ -16268,11 +16267,11 @@
 
     int-to-float v6, v6
 
-    mul-float v4, v4, v6
+    mul-float/2addr v4, v6
 
     float-to-int v4, v4
 
-    mul-int v0, v0, v3
+    mul-int/2addr v0, v3
 
     add-int/2addr v0, v4
 
@@ -16789,10 +16788,10 @@
 
     if-eqz v4, :cond_0
 
-    const/4 v2, 0x1
+    move v2, v5
 
     :cond_0
-    mul-int v0, v0, v2
+    mul-int/2addr v0, v2
 
     int-to-float v0, v0
 
@@ -16836,10 +16835,10 @@
     goto :goto_0
 
     :cond_2
-    const/4 v2, 0x1
+    move v2, v5
 
     :goto_0
-    mul-int v0, v0, v2
+    mul-int/2addr v0, v2
 
     int-to-float v0, v0
 
@@ -16855,7 +16854,7 @@
     goto :goto_1
 
     :cond_3
-    const/4 v5, 0x0
+    move v5, v1
 
     :goto_1
     if-eqz v5, :cond_5
@@ -16899,7 +16898,7 @@
 
     const/4 v0, 0x1
 
-    const/4 v2, 0x1
+    move v2, v0
 
     :goto_0
     if-ltz v2, :cond_0
@@ -17120,7 +17119,7 @@
     if-ne v10, v14, :cond_5
 
     :cond_4
-    const/4 v10, 0x0
+    move v10, v3
 
     .line 4146
     :cond_5
@@ -17177,16 +17176,16 @@
     .line 4153
     iget-wide v14, v0, Lorg/telegram/ui/Components/SharedMediaLayout;->dialog_id:J
 
-    cmp-long v17, v1, v14
+    cmp-long v1, v1, v14
 
-    if-nez v17, :cond_7
+    if-nez v1, :cond_7
 
-    const/4 v1, 0x0
+    move v1, v3
 
     goto :goto_2
 
     :cond_7
-    const/4 v1, 0x1
+    move v1, v4
 
     .line 4157
     :goto_2
@@ -17285,7 +17284,7 @@
     goto :goto_4
 
     :cond_f
-    const/4 v11, 0x0
+    move v11, v3
 
     .line 4184
     :cond_10
@@ -17405,7 +17404,7 @@
     goto/16 :goto_7
 
     :cond_13
-    const/4 v8, 0x0
+    move v8, v3
 
     .line 4205
     :goto_6
@@ -17643,9 +17642,9 @@
     :cond_18
     if-eqz v2, :cond_22
 
-    const/4 v1, 0x0
+    move v5, v3
 
-    const/4 v5, 0x0
+    const/4 v1, 0x0
 
     .line 4229
     :goto_8
@@ -17731,12 +17730,8 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    goto :goto_9
-
-    :catchall_0
-    nop
-
     .line 4249
+    :catchall_0
     :goto_9
     iget-object v7, v0, Lorg/telegram/ui/Components/SharedMediaLayout;->sharedMediaData:[Lorg/telegram/ui/Components/SharedMediaLayout$SharedMediaData;
 
@@ -17794,7 +17789,7 @@
 
     if-nez v6, :cond_21
 
-    const/4 v2, 0x0
+    move v2, v3
 
     :goto_b
     const/4 v5, 0x2
@@ -18096,11 +18091,11 @@
     .line 4318
     iget-wide v12, v0, Lorg/telegram/ui/Components/SharedMediaLayout;->mergeDialogId:J
 
-    cmp-long v7, v12, v5
+    cmp-long v5, v12, v5
 
-    if-eqz v7, :cond_32
+    if-eqz v5, :cond_32
 
-    const/4 v1, 0x1
+    move v1, v4
 
     goto :goto_11
 
@@ -18108,9 +18103,9 @@
     :cond_32
     iget-wide v5, v10, Lorg/telegram/tgnet/TLRPC$Chat;->id:J
 
-    cmp-long v7, v1, v5
+    cmp-long v1, v1, v5
 
-    if-nez v7, :cond_33
+    if-nez v1, :cond_33
 
     goto :goto_10
 
@@ -18120,15 +18115,15 @@
     :cond_34
     const-wide/16 v5, 0x0
 
-    cmp-long v7, v1, v5
+    cmp-long v1, v1, v5
 
-    if-eqz v7, :cond_35
+    if-eqz v1, :cond_35
 
     return-void
 
     :cond_35
     :goto_10
-    const/4 v1, 0x0
+    move v1, v3
 
     .line 4328
     :goto_11
@@ -18141,14 +18136,14 @@
 
     move-result v5
 
-    const/4 v6, 0x0
+    move v6, v3
 
-    const/4 v7, 0x0
+    move v7, v6
 
     :goto_12
     if-ge v6, v5, :cond_38
 
-    const/4 v9, 0x0
+    move v9, v3
 
     .line 4332
     :goto_13
@@ -18177,9 +18172,9 @@
 
     if-eqz v10, :cond_36
 
-    move v8, v9
+    move v7, v4
 
-    const/4 v7, 0x1
+    move v8, v9
 
     :cond_36
     add-int/lit8 v9, v9, 0x1
@@ -18333,9 +18328,9 @@
     .line 4381
     iget-wide v9, v0, Lorg/telegram/ui/Components/SharedMediaLayout;->dialog_id:J
 
-    cmp-long v5, v1, v9
+    cmp-long v1, v1, v9
 
-    if-nez v5, :cond_5f
+    if-nez v1, :cond_5f
 
     .line 4382
     aget-object v1, p3, v4
@@ -18347,9 +18342,9 @@
 
     move-result v2
 
-    const/4 v5, 0x0
+    move v5, v3
 
-    const/4 v9, 0x0
+    move v9, v5
 
     .line 4385
     :goto_14
@@ -18413,16 +18408,16 @@
 
     iget-wide v7, v0, Lorg/telegram/ui/Components/SharedMediaLayout;->dialog_id:J
 
-    cmp-long v17, v14, v7
+    cmp-long v7, v14, v7
 
-    if-nez v17, :cond_47
+    if-nez v7, :cond_47
 
-    const/4 v7, 0x0
+    move v7, v3
 
     goto :goto_15
 
     :cond_47
-    const/4 v7, 0x1
+    move v7, v4
 
     :goto_15
     invoke-virtual {v13, v10, v7, v4, v2}, Lorg/telegram/ui/Components/SharedMediaLayout$SharedMediaData;->addMessage(Lorg/telegram/messenger/MessageObject;IZZ)Z
@@ -18436,7 +18431,7 @@
 
     aput v4, v7, v12
 
-    const/4 v9, 0x1
+    move v9, v4
 
     :cond_48
     :goto_16
@@ -18742,14 +18737,14 @@
 
     const-wide/16 v5, 0x0
 
-    cmp-long v7, v1, v5
+    cmp-long v1, v1, v5
 
-    if-eqz v7, :cond_59
+    if-eqz v1, :cond_59
 
     return-void
 
     :cond_59
-    const/4 v1, 0x0
+    move v1, v3
 
     .line 4468
     :goto_1c
@@ -18770,7 +18765,7 @@
 
     move-result v2
 
-    const/4 v5, 0x0
+    move v5, v3
 
     :goto_1d
     if-ge v5, v2, :cond_5b
@@ -18818,7 +18813,7 @@
 
     :cond_5c
     :goto_1e
-    const/4 v1, 0x0
+    move v1, v3
 
     .line 4450
     :goto_1f
@@ -18839,7 +18834,7 @@
 
     move-result v2
 
-    const/4 v5, 0x0
+    move v5, v3
 
     :goto_20
     if-ge v5, v2, :cond_5e
@@ -19171,7 +19166,7 @@
 
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    move v1, v0
 
     .line 439
     :goto_0
@@ -19194,7 +19189,7 @@
 
     if-nez v2, :cond_1
 
-    const/4 v2, 0x0
+    move v2, v0
 
     .line 441
     :goto_1
@@ -19488,7 +19483,7 @@
     if-ne p1, v0, :cond_0
 
     :goto_0
-    const/4 p1, 0x3
+    move p1, v4
 
     goto :goto_4
 
@@ -19496,7 +19491,7 @@
     if-ne p1, v4, :cond_1
 
     :goto_1
-    const/4 p1, 0x4
+    move p1, v2
 
     goto :goto_4
 
@@ -19513,7 +19508,7 @@
     :cond_3
     if-ne p1, v5, :cond_9
 
-    const/16 p1, 0x9
+    move p1, v1
 
     goto :goto_4
 
@@ -19521,7 +19516,7 @@
     if-ne p1, v1, :cond_5
 
     :goto_2
-    const/4 p1, 0x6
+    move p1, v5
 
     goto :goto_4
 
@@ -19529,7 +19524,7 @@
     if-ne p1, v5, :cond_6
 
     :goto_3
-    const/4 p1, 0x5
+    move p1, v3
 
     goto :goto_4
 
@@ -19546,7 +19541,7 @@
     :cond_8
     if-ne p1, v4, :cond_9
 
-    const/4 p1, 0x2
+    move p1, v0
 
     :cond_9
     :goto_4
@@ -20358,7 +20353,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    const/4 v2, 0x0
+    move v2, v13
 
     .line 7150
     :goto_0
@@ -22322,7 +22317,7 @@
 
     if-nez v0, :cond_0
 
-    const/4 v1, 0x1
+    move v1, v2
 
     :cond_0
     return v1
@@ -22375,7 +22370,7 @@
 
     if-eq v0, v3, :cond_2
 
-    const/4 v1, 0x1
+    move v1, v2
 
     :cond_2
     return v1
@@ -22435,7 +22430,7 @@
     :goto_0
     if-ltz v5, :cond_2
 
-    const/4 v3, 0x0
+    move v3, v4
 
     .line 3537
     :goto_1
@@ -22574,7 +22569,7 @@
     :goto_3
     if-ltz v5, :cond_7
 
-    const/4 v2, 0x0
+    move v2, v4
 
     .line 3558
     :goto_4
@@ -22822,7 +22817,7 @@
 
     if-ne v2, v5, :cond_e
 
-    const/4 v5, 0x0
+    move v5, v4
 
     :cond_e
     aget-object v1, v1, v5
@@ -23376,7 +23371,7 @@
     goto :goto_0
 
     :cond_0
-    const/4 v1, 0x0
+    move v1, v2
 
     :goto_0
     if-nez v1, :cond_1
@@ -23395,7 +23390,7 @@
 
     move-result v0
 
-    const/4 v3, 0x0
+    move v3, v2
 
     :goto_1
     if-ge v3, v0, :cond_5
@@ -23766,12 +23761,12 @@
     :cond_4
     if-gez v6, :cond_5
 
-    const/4 v8, 0x1
+    move v8, v0
 
     goto :goto_0
 
     :cond_5
-    const/4 v8, 0x0
+    move v8, v1
 
     .line 3866
     :goto_0
@@ -23874,7 +23869,7 @@
 
     if-gez v6, :cond_8
 
-    const/4 v1, 0x1
+    move v1, v0
 
     .line 3877
     :cond_8
@@ -24010,7 +24005,7 @@
     goto :goto_4
 
     :cond_d
-    const/4 v4, 0x0
+    move v4, v5
 
     .line 3898
     :goto_4
@@ -24048,13 +24043,13 @@
     goto :goto_5
 
     :cond_f
-    const/4 v4, 0x0
+    move v4, v1
 
     goto :goto_6
 
     :cond_10
     :goto_5
-    const/4 v4, 0x4
+    move v4, v2
 
     :goto_6
     invoke-virtual {v6, v4}, Landroid/widget/ImageView;->setVisibility(I)V
@@ -24083,20 +24078,20 @@
 
     move v4, p1
 
-    move v6, v4
-
-    goto :goto_8
+    goto :goto_7
 
     :cond_11
     move v4, p1
 
-    goto :goto_7
+    move v6, v5
+
+    goto :goto_8
 
     :cond_12
-    const/4 v4, 0x0
+    move v4, v5
 
     :goto_7
-    const/4 v6, 0x0
+    move v6, v4
 
     .line 3912
     :goto_8
@@ -24141,13 +24136,13 @@
     goto :goto_9
 
     :cond_14
-    const/4 v4, 0x0
+    move v4, v1
 
     goto :goto_a
 
     :cond_15
     :goto_9
-    const/4 v4, 0x4
+    move v4, v2
 
     :goto_a
     invoke-virtual {v3, v4}, Landroid/widget/ImageView;->setVisibility(I)V
@@ -24171,7 +24166,7 @@
     if-nez v4, :cond_17
 
     :cond_16
-    const/4 v1, 0x4
+    move v1, v2
 
     :cond_17
     invoke-virtual {v3, v1}, Landroid/widget/ImageView;->setVisibility(I)V
@@ -24304,12 +24299,12 @@
 
     if-gez v8, :cond_1b
 
-    const/4 v8, 0x1
+    move v8, v0
 
     goto :goto_c
 
     :cond_1b
-    const/4 v8, 0x0
+    move v8, v1
 
     .line 3938
     :goto_c
@@ -24318,9 +24313,9 @@
     goto :goto_d
 
     :cond_1c
-    const/4 v6, 0x0
+    move v6, v5
 
-    const/4 v7, 0x0
+    move v7, v6
 
     .line 3945
     :cond_1d
@@ -24391,12 +24386,12 @@
     if-gez v7, :cond_1f
 
     :cond_1e
-    const/4 v7, 0x1
+    move v7, v0
 
     goto :goto_e
 
     :cond_1f
-    const/4 v7, 0x0
+    move v7, v1
 
     :goto_e
     iput-boolean v7, p0, Lorg/telegram/ui/Components/SharedMediaLayout;->backAnimation:Z
@@ -24682,7 +24677,7 @@
 
     move-result v4
 
-    mul-float v4, v4, v7
+    mul-float/2addr v4, v7
 
     add-float/2addr v7, v4
 
@@ -24704,13 +24699,13 @@
 
     move-result v3
 
-    mul-float v3, v3, p1
+    mul-float/2addr v3, p1
 
     invoke-static {v3}, Ljava/lang/Math;->round(F)I
 
     move-result p1
 
-    mul-int/lit8 p1, p1, 0x4
+    mul-int/2addr p1, v2
 
     goto :goto_10
 
@@ -24728,7 +24723,7 @@
 
     const/high16 v2, 0x42c80000    # 100.0f
 
-    mul-float p1, p1, v2
+    mul-float/2addr p1, v2
 
     float-to-int p1, p1
 
@@ -24847,7 +24842,7 @@
 
     const/4 p1, 0x0
 
-    const/4 v0, 0x0
+    move v0, p1
 
     .line 4662
     :goto_0
@@ -25146,7 +25141,7 @@
 
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    move v1, v0
 
     :goto_0
     const/4 v2, 0x1
@@ -25162,7 +25157,7 @@
 
     if-ltz v4, :cond_0
 
-    const/4 v1, 0x1
+    move v1, v2
 
     goto :goto_1
 
@@ -25172,7 +25167,7 @@
     goto :goto_0
 
     :cond_1
-    const/4 v1, 0x0
+    move v1, v0
 
     .line 3408
     :goto_1
@@ -25234,7 +25229,7 @@
 
     const/4 p1, 0x0
 
-    const/4 p3, 0x0
+    move p3, p1
 
     .line 3771
     :goto_0
@@ -25507,12 +25502,12 @@
 
     if-eqz v0, :cond_0
 
-    const/4 v0, 0x1
+    move v0, v1
 
     goto :goto_0
 
     :cond_0
-    const/4 v0, 0x0
+    move v0, v3
 
     .line 514
     :goto_0

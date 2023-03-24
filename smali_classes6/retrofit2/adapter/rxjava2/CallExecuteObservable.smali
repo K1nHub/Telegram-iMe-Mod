@@ -133,14 +133,14 @@
     :catchall_0
     move-exception v0
 
-    const/4 v4, 0x1
+    move v4, v2
 
     goto :goto_0
 
     :catchall_1
     move-exception v0
 
-    const/4 v4, 0x0
+    move v4, v3
 
     .line 54
     :goto_0

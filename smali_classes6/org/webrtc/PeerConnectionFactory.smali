@@ -47,7 +47,7 @@
 
 # direct methods
 .method constructor <init>(J)V
-    .locals 3
+    .locals 2
     .annotation build Lorg/webrtc/CalledByNative;
     .end annotation
 
@@ -59,9 +59,9 @@
 
     const-wide/16 v0, 0x0
 
-    cmp-long v2, p1, v0
+    cmp-long v0, p1, v0
 
-    if-eqz v2, :cond_0
+    if-eqz v0, :cond_0
 
     .line 354
     iput-wide p1, p0, Lorg/webrtc/PeerConnectionFactory;->nativeFactory:J
@@ -136,16 +136,16 @@
 .end method
 
 .method private checkPeerConnectionFactoryExists()V
-    .locals 5
+    .locals 4
 
     .line 500
     iget-wide v0, p0, Lorg/webrtc/PeerConnectionFactory;->nativeFactory:J
 
     const-wide/16 v2, 0x0
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-eqz v4, :cond_0
+    if-eqz v0, :cond_0
 
     return-void
 
@@ -776,7 +776,7 @@
 .end method
 
 .method createPeerConnectionInternal(Lorg/webrtc/PeerConnection$RTCConfiguration;Lorg/webrtc/MediaConstraints;Lorg/webrtc/PeerConnection$Observer;Lorg/webrtc/SSLCertificateVerifier;)Lorg/webrtc/PeerConnection;
-    .locals 9
+    .locals 10
 
     .line 364
     invoke-direct {p0}, Lorg/webrtc/PeerConnectionFactory;->checkPeerConnectionFactoryExists()V
@@ -786,15 +786,15 @@
 
     move-result-wide v4
 
-    const/4 p3, 0x0
-
     const-wide/16 v7, 0x0
 
-    cmp-long v0, v4, v7
+    cmp-long p3, v4, v7
 
-    if-nez v0, :cond_0
+    const/4 v9, 0x0
 
-    return-object p3
+    if-nez p3, :cond_0
+
+    return-object v9
 
     .line 369
     :cond_0
@@ -810,11 +810,11 @@
 
     move-result-wide p1
 
-    cmp-long p4, p1, v7
+    cmp-long p3, p1, v7
 
-    if-nez p4, :cond_1
+    if-nez p3, :cond_1
 
-    return-object p3
+    return-object v9
 
     .line 374
     :cond_1

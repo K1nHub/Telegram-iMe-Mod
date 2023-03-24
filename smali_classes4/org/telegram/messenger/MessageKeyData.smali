@@ -43,12 +43,12 @@
 
     if-eqz p2, :cond_1
 
-    const/16 p2, 0x8
+    move p2, v2
 
     goto :goto_0
 
     :cond_1
-    const/4 p2, 0x0
+    move p2, v1
 
     :goto_0
     const/4 v3, 0x1

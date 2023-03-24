@@ -230,7 +230,7 @@
 
 # virtual methods
 .method public declared-synchronized isRequestAllowed()Z
-    .locals 5
+    .locals 4
 
     monitor-enter p0
 
@@ -250,9 +250,9 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-lez v4, :cond_0
+    if-lez v0, :cond_0
 
     goto :goto_0
 

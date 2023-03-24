@@ -192,7 +192,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .locals 6
+    .locals 5
 
     const/4 v0, 0x6
 
@@ -249,9 +249,9 @@
 
     const-wide/16 v3, 0x0
 
-    cmp-long v5, v1, v3
+    cmp-long v1, v1, v3
 
-    if-lez v5, :cond_0
+    if-lez v1, :cond_0
 
     .line 6
     invoke-virtual {p0}, Lj$/util/f;->c()D

@@ -89,7 +89,7 @@ public final class CatalogRepositoryImpl implements CatalogRepository {
     @Override // com.smedialink.storage.domain.repository.catalog.CatalogRepository
     public Observable<Result<List<CategoryWithCounter>>> getCategories(ChatType chatType, boolean z) {
         Intrinsics.checkNotNullParameter(chatType, "chatType");
-        Observable<ApiBaseResponse<List<CategoryWithCounterResponse>>> subscribeOn = this.catalogApi.getCategories(chatType.name(), this.preferenceHelper.getCatalogSelectedLanguageId()).subscribeOn(this.schedulersProvider.mo708io());
+        Observable<ApiBaseResponse<List<CategoryWithCounterResponse>>> subscribeOn = this.catalogApi.getCategories(chatType.name(), this.preferenceHelper.getCatalogSelectedLanguageId()).subscribeOn(this.schedulersProvider.mo707io());
         Intrinsics.checkNotNullExpressionValue(subscribeOn, "catalogApi\n             …(schedulersProvider.io())");
         Observable flatMap = subscribeOn.flatMap(new FirebaseExtKt$sam$i$io_reactivex_functions_Function$0(new CatalogRepositoryImpl$getCategories$$inlined$flatMapSuccess$1(this.firebaseErrorHandler, this)));
         Intrinsics.checkNotNullExpressionValue(flatMap, "errorHandler: FirebaseFu…R>().toObservable()\n    }");
@@ -140,9 +140,9 @@ public final class CatalogRepositoryImpl implements CatalogRepository {
     @Override // com.smedialink.storage.domain.repository.catalog.CatalogRepository
     public Observable<Result<CampaignsCursored>> getCampaignsByCategoryId(long j, ChatType chatType, String str) {
         Intrinsics.checkNotNullParameter(chatType, "chatType");
-        Observable map = CatalogApi.DefaultImpls.getCampaignsByCategoryId$default(this.catalogApi, j, chatType.name(), str, null, this.preferenceHelper.getCatalogSelectedLanguageId(), 8, null).map(new FirebaseExtKt$sam$i$io_reactivex_functions_Function$0(new C1722x5d040d4b(this.firebaseErrorHandler)));
+        Observable map = CatalogApi.DefaultImpls.getCampaignsByCategoryId$default(this.catalogApi, j, chatType.name(), str, null, this.preferenceHelper.getCatalogSelectedLanguageId(), 8, null).map(new FirebaseExtKt$sam$i$io_reactivex_functions_Function$0(new C1730x5d040d4b(this.firebaseErrorHandler)));
         Intrinsics.checkNotNullExpressionValue(map, "errorHandler: FirebaseFu…response).toError()\n    }");
-        Observable<Result<CampaignsCursored>> onErrorReturn = map.onErrorReturn(new RxExtKt$sam$i$io_reactivex_functions_Function$0(new C1721x268554b6(this.errorHandler)));
+        Observable<Result<CampaignsCursored>> onErrorReturn = map.onErrorReturn(new RxExtKt$sam$i$io_reactivex_functions_Function$0(new C1729x268554b6(this.errorHandler)));
         Intrinsics.checkNotNullExpressionValue(onErrorReturn, "errorHandler: ErrorHandl…ndleError(it).toError() }");
         return onErrorReturn;
     }

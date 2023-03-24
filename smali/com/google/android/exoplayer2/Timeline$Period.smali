@@ -229,7 +229,7 @@
 
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
-    .locals 7
+    .locals 6
 
     const/4 v0, 0x1
 
@@ -293,17 +293,17 @@
 
     iget-wide v4, p1, Lcom/google/android/exoplayer2/Timeline$Period;->durationUs:J
 
-    cmp-long v6, v2, v4
+    cmp-long v2, v2, v4
 
-    if-nez v6, :cond_2
+    if-nez v2, :cond_2
 
     iget-wide v2, p0, Lcom/google/android/exoplayer2/Timeline$Period;->positionInWindowUs:J
 
     iget-wide v4, p1, Lcom/google/android/exoplayer2/Timeline$Period;->positionInWindowUs:J
 
-    cmp-long v6, v2, v4
+    cmp-long v2, v2, v4
 
-    if-nez v6, :cond_2
+    if-nez v2, :cond_2
 
     iget-boolean v2, p0, Lcom/google/android/exoplayer2/Timeline$Period;->isPlaceholder:Z
 
@@ -325,7 +325,7 @@
     goto :goto_0
 
     :cond_2
-    const/4 v0, 0x0
+    move v0, v1
 
     :goto_0
     return v0
@@ -622,7 +622,7 @@
 
     if-nez v0, :cond_0
 
-    const/4 v0, 0x0
+    move v0, v1
 
     goto :goto_0
 
@@ -671,9 +671,9 @@
 
     xor-long/2addr v0, v4
 
-    long-to-int v1, v0
+    long-to-int v0, v0
 
-    add-int/2addr v2, v1
+    add-int/2addr v2, v0
 
     mul-int/lit8 v2, v2, 0x1f
 
@@ -684,9 +684,9 @@
 
     xor-long/2addr v0, v3
 
-    long-to-int v1, v0
+    long-to-int v0, v0
 
-    add-int/2addr v2, v1
+    add-int/2addr v2, v0
 
     mul-int/lit8 v2, v2, 0x1f
 
@@ -779,7 +779,7 @@
 .end method
 
 .method public toBundle()Landroid/os/Bundle;
-    .locals 6
+    .locals 5
 
     .line 899
     new-instance v0, Landroid/os/Bundle;
@@ -802,9 +802,9 @@
 
     const-wide v3, -0x7fffffffffffffffL    # -4.9E-324
 
-    cmp-long v5, v1, v3
+    cmp-long v3, v1, v3
 
-    if-eqz v5, :cond_1
+    if-eqz v3, :cond_1
 
     .line 904
     sget-object v3, Lcom/google/android/exoplayer2/Timeline$Period;->FIELD_DURATION_US:Ljava/lang/String;
@@ -817,9 +817,9 @@
 
     const-wide/16 v3, 0x0
 
-    cmp-long v5, v1, v3
+    cmp-long v3, v1, v3
 
-    if-eqz v5, :cond_2
+    if-eqz v3, :cond_2
 
     .line 907
     sget-object v3, Lcom/google/android/exoplayer2/Timeline$Period;->FIELD_POSITION_IN_WINDOW_US:Ljava/lang/String;

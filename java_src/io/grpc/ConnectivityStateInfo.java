@@ -1,14 +1,14 @@
 package io.grpc;
 
 import com.google.common.base.Preconditions;
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public final class ConnectivityStateInfo {
     private final ConnectivityState state;
     private final Status status;
 
     public static ConnectivityStateInfo forNonError(ConnectivityState connectivityState) {
         Preconditions.checkArgument(connectivityState != ConnectivityState.TRANSIENT_FAILURE, "state is TRANSIENT_ERROR. Use forError() instead");
-        return new ConnectivityStateInfo(connectivityState, Status.f427OK);
+        return new ConnectivityStateInfo(connectivityState, Status.f428OK);
     }
 
     public static ConnectivityStateInfo forTransientFailure(Status status) {

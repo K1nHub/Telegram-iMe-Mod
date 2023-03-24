@@ -152,7 +152,7 @@
     :cond_0
     const/4 v1, 0x0
 
-    const/4 v7, 0x0
+    move v7, v1
 
     :goto_0
     const/4 v1, 0x3
@@ -166,7 +166,7 @@
     .line 76
     iget v3, p0, Lorg/telegram/ui/Components/SendingFileDrawable;->progress:F
 
-    mul-float v3, v3, v2
+    mul-float/2addr v3, v2
 
     float-to-int v2, v3
 
@@ -186,7 +186,7 @@
 
     sub-float/2addr v3, v4
 
-    mul-float v3, v3, v2
+    mul-float/2addr v3, v2
 
     float-to-int v2, v3
 
@@ -208,7 +208,7 @@
 
     move-result v3
 
-    mul-int v3, v3, v7
+    mul-int/2addr v3, v7
 
     int-to-float v3, v3
 
@@ -220,7 +220,7 @@
 
     iget v4, p0, Lorg/telegram/ui/Components/SendingFileDrawable;->progress:F
 
-    mul-float v2, v2, v4
+    mul-float/2addr v2, v4
 
     add-float v8, v3, v2
 
@@ -234,7 +234,7 @@
     goto :goto_2
 
     :cond_3
-    const/4 v1, 0x4
+    move v1, v9
 
     :goto_2
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
@@ -259,12 +259,12 @@
 
     if-eqz v1, :cond_4
 
-    const/4 v1, 0x7
+    move v1, v10
 
     goto :goto_3
 
     :cond_4
-    const/16 v1, 0x8
+    move v1, v11
 
     :goto_3
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
@@ -315,7 +315,7 @@
     goto :goto_5
 
     :cond_6
-    const/16 v10, 0x8
+    move v10, v11
 
     :goto_5
     invoke-static {v10}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I

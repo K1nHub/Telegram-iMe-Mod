@@ -76,12 +76,12 @@
 
     if-eqz v3, :cond_0
 
-    const/4 v3, 0x5
+    move v3, v4
 
     goto :goto_0
 
     :cond_0
-    const/4 v3, 0x3
+    move v3, v5
 
     :goto_0
     or-int/lit8 v3, v3, 0x30
@@ -113,12 +113,12 @@
 
     if-eqz v8, :cond_1
 
-    const/4 v8, 0x5
+    move v8, v4
 
     goto :goto_1
 
     :cond_1
-    const/4 v8, 0x3
+    move v8, v5
 
     :goto_1
     or-int/lit8 v8, v8, 0x30
@@ -180,12 +180,12 @@
 
     if-eqz v2, :cond_2
 
-    const/4 v2, 0x3
+    move v2, v5
 
     goto :goto_2
 
     :cond_2
-    const/4 v2, 0x5
+    move v2, v4
 
     :goto_2
     or-int/lit8 v2, v2, 0x30
@@ -208,7 +208,7 @@
 
     if-eqz v2, :cond_3
 
-    const/4 v4, 0x3
+    move v4, v5
 
     :cond_3
     or-int/lit8 v8, v4, 0x30
@@ -368,8 +368,6 @@
 
     const/4 v0, 0x0
 
-    const/4 v3, 0x0
-
     goto :goto_0
 
     :cond_0
@@ -379,9 +377,9 @@
 
     int-to-float v0, v0
 
+    :goto_0
     move v3, v0
 
-    :goto_0
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredHeight()I
 
     move-result v0
@@ -651,12 +649,12 @@
 
     if-eqz p1, :cond_0
 
-    const/high16 v5, 0x3f800000    # 1.0f
+    move v5, v0
 
     goto :goto_0
 
     :cond_0
-    const/high16 v5, 0x3f000000    # 0.5f
+    move v5, v1
 
     :goto_0
     const/4 v6, 0x0
@@ -678,12 +676,12 @@
 
     if-eqz p1, :cond_1
 
-    const/high16 v7, 0x3f800000    # 1.0f
+    move v7, v0
 
     goto :goto_1
 
     :cond_1
-    const/high16 v7, 0x3f000000    # 0.5f
+    move v7, v1
 
     :goto_1
     aput v7, v4, v6
@@ -704,7 +702,7 @@
     goto :goto_2
 
     :cond_2
-    const/high16 v0, 0x3f000000    # 0.5f
+    move v0, v1
 
     :goto_2
     aput v0, v3, v6
@@ -723,12 +721,12 @@
 
     if-eqz p1, :cond_4
 
-    const/high16 v2, 0x3f800000    # 1.0f
+    move v2, v0
 
     goto :goto_3
 
     :cond_4
-    const/high16 v2, 0x3f000000    # 0.5f
+    move v2, v1
 
     :goto_3
     invoke-virtual {p2, v2}, Landroid/widget/TextView;->setAlpha(F)V
@@ -738,12 +736,12 @@
 
     if-eqz p1, :cond_5
 
-    const/high16 v2, 0x3f800000    # 1.0f
+    move v2, v0
 
     goto :goto_4
 
     :cond_5
-    const/high16 v2, 0x3f000000    # 0.5f
+    move v2, v1
 
     :goto_4
     invoke-virtual {p2, v2}, Landroid/widget/FrameLayout;->setAlpha(F)V
@@ -756,7 +754,7 @@
     goto :goto_5
 
     :cond_6
-    const/high16 v0, 0x3f000000    # 0.5f
+    move v0, v1
 
     :goto_5
     invoke-virtual {p2, v0}, Landroid/widget/TextView;->setAlpha(F)V
@@ -802,13 +800,13 @@
 
     const-wide/32 v0, 0x83000
 
-    const/4 v2, 0x0
+    cmp-long v2, p1, v0
 
-    const/high16 v3, 0x3e800000    # 0.25f
+    const/4 v3, 0x0
 
-    cmp-long v4, p1, v0
+    const/high16 v4, 0x3e800000    # 0.25f
 
-    if-gez v4, :cond_0
+    if-gez v2, :cond_0
 
     long-to-float p1, p1
 
@@ -817,11 +815,11 @@
     div-float/2addr p1, p2
 
     .line 182
-    invoke-static {v2, p1}, Ljava/lang/Math;->max(FF)F
+    invoke-static {v3, p1}, Ljava/lang/Math;->max(FF)F
 
     move-result p1
 
-    mul-float p1, p1, v3
+    mul-float/2addr p1, v4
 
     goto :goto_1
 
@@ -830,9 +828,9 @@
 
     const-wide/32 v0, 0x900000
 
-    cmp-long v4, p1, v0
+    cmp-long v2, p1, v0
 
-    if-gez v4, :cond_1
+    if-gez v2, :cond_1
 
     long-to-float p1, p1
 
@@ -841,18 +839,18 @@
     div-float/2addr p1, p2
 
     .line 188
-    invoke-static {v2, p1}, Ljava/lang/Math;->max(FF)F
+    invoke-static {v3, p1}, Ljava/lang/Math;->max(FF)F
 
     move-result p1
 
-    mul-float p1, p1, v3
+    mul-float/2addr p1, v4
 
-    add-float/2addr p1, v3
+    add-float/2addr p1, v4
 
     goto :goto_1
 
     :cond_1
-    const/high16 v4, 0x3f000000    # 0.5f
+    const/high16 v2, 0x3f000000    # 0.5f
 
     sub-long/2addr p1, v0
 
@@ -869,14 +867,14 @@
     div-float/2addr p1, p2
 
     .line 194
-    invoke-static {v2, p1}, Ljava/lang/Math;->max(FF)F
+    invoke-static {v3, p1}, Ljava/lang/Math;->max(FF)F
 
     move-result p1
 
     goto :goto_0
 
     :cond_2
-    const/high16 v4, 0x3f400000    # 0.75f
+    const/high16 v2, 0x3f400000    # 0.75f
 
     sub-long/2addr p1, v0
 
@@ -887,14 +885,14 @@
     div-float/2addr p1, p2
 
     .line 199
-    invoke-static {v2, p1}, Ljava/lang/Math;->max(FF)F
+    invoke-static {v3, p1}, Ljava/lang/Math;->max(FF)F
 
     move-result p1
 
     :goto_0
-    mul-float p1, p1, v3
+    mul-float/2addr p1, v4
 
-    add-float/2addr p1, v4
+    add-float/2addr p1, v2
 
     .line 203
     :goto_1

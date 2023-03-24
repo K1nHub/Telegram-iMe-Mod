@@ -1420,7 +1420,7 @@
 
     int-to-float v3, v3
 
-    mul-float v3, v3, v2
+    mul-float/2addr v3, v2
 
     iput v3, v0, Lorg/telegram/ui/Components/Rect;->width:F
 
@@ -1431,24 +1431,24 @@
 
     int-to-float v1, v1
 
-    mul-float v1, v1, v2
+    mul-float/2addr v1, v2
 
     iput v1, v0, Lorg/telegram/ui/Components/Rect;->height:F
 
     const/high16 v1, -0x40800000    # -1.0f
 
-    const/high16 v2, 0x41800000    # 16.0f
+    cmpl-float v2, p0, v1
 
-    cmpl-float v3, p0, v1
+    const/high16 v3, 0x41800000    # 16.0f
 
-    if-eqz v3, :cond_3
+    if-eqz v2, :cond_3
 
     .line 501
-    iget v3, v0, Lorg/telegram/ui/Components/Rect;->width:F
+    iget v2, v0, Lorg/telegram/ui/Components/Rect;->width:F
 
     const/high16 v4, 0x40000000    # 2.0f
 
-    div-float v5, v3, v4
+    div-float v5, v2, v4
 
     add-float/2addr p0, v5
 
@@ -1466,20 +1466,20 @@
 
     int-to-float p0, v5
 
-    sub-float/2addr p0, v3
+    sub-float/2addr p0, v2
 
-    invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(F)I
+    invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->dp(F)I
 
-    move-result v3
+    move-result v2
 
-    int-to-float v3, v3
+    int-to-float v2, v2
 
-    sub-float/2addr p0, v3
+    sub-float/2addr p0, v2
 
     goto :goto_1
 
     :cond_2
-    invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(F)I
+    invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->dp(F)I
 
     move-result p0
 
@@ -1498,17 +1498,17 @@
 
     int-to-float p0, p0
 
-    iget v3, v0, Lorg/telegram/ui/Components/Rect;->width:F
+    iget v2, v0, Lorg/telegram/ui/Components/Rect;->width:F
 
-    sub-float/2addr p0, v3
+    sub-float/2addr p0, v2
 
-    invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(F)I
+    invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->dp(F)I
 
-    move-result v3
+    move-result v2
 
-    int-to-float v3, v3
+    int-to-float v2, v2
 
-    sub-float/2addr p0, v3
+    sub-float/2addr p0, v2
 
     iput p0, v0, Lorg/telegram/ui/Components/Rect;->x:F
 
@@ -1518,7 +1518,7 @@
     if-eqz p0, :cond_4
 
     .line 506
-    invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(F)I
+    invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->dp(F)I
 
     move-result p0
 
@@ -1528,7 +1528,7 @@
 
     iget v1, v1, Landroid/graphics/Point;->y:I
 
-    invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(F)I
+    invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->dp(F)I
 
     move-result v2
 
@@ -1556,7 +1556,7 @@
 
     .line 508
     :cond_4
-    invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(F)I
+    invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->dp(F)I
 
     move-result p0
 
@@ -1689,7 +1689,7 @@
 
     int-to-float v0, v0
 
-    mul-float v0, v0, p0
+    mul-float/2addr v0, p0
 
     float-to-int p0, v0
 
@@ -1736,7 +1736,7 @@
     const v0, 0x3eb33333    # 0.35f
 
     :goto_0
-    mul-float p0, p0, v0
+    mul-float/2addr p0, v0
 
     float-to-int p0, p0
 
@@ -1970,7 +1970,7 @@
     goto :goto_0
 
     :cond_0
-    const/4 v1, 0x0
+    move v1, v2
 
     :cond_1
     :goto_0
@@ -2277,14 +2277,9 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_0
-
-    :catch_0
-    nop
-
     .line 386
+    :catch_0
     :cond_0
-    :goto_0
     iget-object v0, p0, Lorg/telegram/ui/Components/PipVideoOverlay;->photoViewerWebView:Lorg/telegram/ui/Components/PhotoViewerWebView;
 
     if-eqz v0, :cond_1
@@ -2787,7 +2782,7 @@
 
     iget v7, v0, Lorg/telegram/ui/Components/PipVideoOverlay;->scaleFactor:F
 
-    mul-float v6, v6, v7
+    mul-float/2addr v6, v7
 
     float-to-int v6, v6
 
@@ -2802,7 +2797,7 @@
 
     iget v7, v0, Lorg/telegram/ui/Components/PipVideoOverlay;->scaleFactor:F
 
-    mul-float v6, v6, v7
+    mul-float/2addr v6, v7
 
     float-to-int v6, v6
 
@@ -3274,13 +3269,13 @@
     goto :goto_1
 
     :cond_6
-    const/4 v7, 0x0
+    move v7, v4
 
     goto :goto_2
 
     :cond_7
     :goto_1
-    const/4 v7, 0x1
+    move v7, v3
 
     :goto_2
     iput-boolean v7, v0, Lorg/telegram/ui/Components/PipVideoOverlay;->isWebView:Z
@@ -3306,7 +3301,7 @@
     goto :goto_3
 
     :cond_9
-    const/4 v7, 0x0
+    move v7, v4
 
     :goto_3
     invoke-virtual {v9, v7}, Landroid/widget/ImageView;->setVisibility(I)V
@@ -3391,26 +3386,26 @@
 
     const/high16 v7, -0x40800000    # -1.0f
 
-    const/high16 v9, 0x41800000    # 16.0f
+    cmpl-float v9, v2, v7
 
-    cmpl-float v10, v2, v7
+    const/high16 v10, 0x41800000    # 16.0f
 
-    if-eqz v10, :cond_c
+    if-eqz v9, :cond_c
 
-    int-to-float v10, v6
+    int-to-float v9, v6
 
     const/high16 v11, 0x40000000    # 2.0f
 
-    div-float/2addr v10, v11
+    div-float/2addr v9, v11
 
-    add-float/2addr v2, v10
+    add-float/2addr v2, v9
 
     .line 1110
-    sget-object v10, Lorg/telegram/messenger/AndroidUtilities;->displaySize:Landroid/graphics/Point;
+    sget-object v9, Lorg/telegram/messenger/AndroidUtilities;->displaySize:Landroid/graphics/Point;
 
-    iget v10, v10, Landroid/graphics/Point;->x:I
+    iget v9, v9, Landroid/graphics/Point;->x:I
 
-    int-to-float v12, v10
+    int-to-float v12, v9
 
     div-float/2addr v12, v11
 
@@ -3418,20 +3413,20 @@
 
     if-ltz v2, :cond_b
 
-    sub-int/2addr v10, v6
+    sub-int/2addr v9, v6
 
-    invoke-static {v9}, Lorg/telegram/messenger/AndroidUtilities;->dp(F)I
+    invoke-static {v10}, Lorg/telegram/messenger/AndroidUtilities;->dp(F)I
 
     move-result v2
 
-    sub-int/2addr v10, v2
+    sub-int/2addr v9, v2
 
-    int-to-float v2, v10
+    int-to-float v2, v9
 
     goto :goto_5
 
     :cond_b
-    invoke-static {v9}, Lorg/telegram/messenger/AndroidUtilities;->dp(F)I
+    invoke-static {v10}, Lorg/telegram/messenger/AndroidUtilities;->dp(F)I
 
     move-result v2
 
@@ -3454,7 +3449,7 @@
 
     sub-int/2addr v2, v6
 
-    invoke-static {v9}, Lorg/telegram/messenger/AndroidUtilities;->dp(F)I
+    invoke-static {v10}, Lorg/telegram/messenger/AndroidUtilities;->dp(F)I
 
     move-result v6
 
@@ -3476,7 +3471,7 @@
     .line 1115
     iget-object v1, v0, Lorg/telegram/ui/Components/PipVideoOverlay;->windowLayoutParams:Landroid/view/WindowManager$LayoutParams;
 
-    invoke-static {v9}, Lorg/telegram/messenger/AndroidUtilities;->dp(F)I
+    invoke-static {v10}, Lorg/telegram/messenger/AndroidUtilities;->dp(F)I
 
     move-result v2
 
@@ -3486,7 +3481,7 @@
 
     iget v6, v6, Landroid/graphics/Point;->y:I
 
-    invoke-static {v9}, Lorg/telegram/messenger/AndroidUtilities;->dp(F)I
+    invoke-static {v10}, Lorg/telegram/messenger/AndroidUtilities;->dp(F)I
 
     move-result v7
 
@@ -3514,7 +3509,7 @@
     :cond_d
     iget-object v1, v0, Lorg/telegram/ui/Components/PipVideoOverlay;->windowLayoutParams:Landroid/view/WindowManager$LayoutParams;
 
-    invoke-static {v9}, Lorg/telegram/messenger/AndroidUtilities;->dp(F)I
+    invoke-static {v10}, Lorg/telegram/messenger/AndroidUtilities;->dp(F)I
 
     move-result v2
 
@@ -3667,12 +3662,12 @@
 
     if-eqz p1, :cond_0
 
-    const/4 v3, 0x0
+    move v3, v1
 
     goto :goto_0
 
     :cond_0
-    const/high16 v3, 0x3f800000    # 1.0f
+    move v3, v2
 
     :goto_0
     const/4 v4, 0x0
@@ -3683,7 +3678,7 @@
 
     if-eqz p1, :cond_1
 
-    const/high16 v1, 0x3f800000    # 1.0f
+    move v1, v2
 
     :cond_1
     aput v1, v0, v3
@@ -3841,7 +3836,7 @@
 
 # virtual methods
 .method protected onLongClick()V
-    .locals 11
+    .locals 10
 
     .line 234
     iget-object v0, p0, Lorg/telegram/ui/Components/PipVideoOverlay;->photoViewer:Lorg/telegram/ui/PhotoViewer;
@@ -3908,40 +3903,40 @@
 
     iget v4, p0, Lorg/telegram/ui/Components/PipVideoOverlay;->scaleFactor:F
 
-    mul-float v3, v3, v4
+    mul-float/2addr v3, v4
 
     const/high16 v4, 0x3f000000    # 0.5f
 
-    mul-float v3, v3, v4
-
-    const/4 v4, 0x1
+    mul-float/2addr v3, v4
 
     cmpl-float v1, v1, v3
 
+    const/4 v3, 0x1
+
     if-ltz v1, :cond_2
 
-    const/4 v2, 0x1
+    move v2, v3
 
     .line 241
     :cond_2
     invoke-direct {p0}, Lorg/telegram/ui/Components/PipVideoOverlay;->getCurrentPosition()J
 
-    move-result-wide v5
+    move-result-wide v4
 
     .line 242
     invoke-direct {p0}, Lorg/telegram/ui/Components/PipVideoOverlay;->getDuration()J
 
-    move-result-wide v7
+    move-result-wide v6
 
-    const-wide v9, -0x7fffffffffffffffL    # -4.9E-324
+    const-wide v8, -0x7fffffffffffffffL    # -4.9E-324
 
-    cmp-long v1, v5, v9
+    cmp-long v1, v4, v8
 
     if-eqz v1, :cond_5
 
-    const-wide/16 v5, 0x3a98
+    const-wide/16 v4, 0x3a98
 
-    cmp-long v1, v7, v5
+    cmp-long v1, v6, v4
 
     if-gez v1, :cond_3
 
@@ -3962,13 +3957,13 @@
 
     iget-object v1, p0, Lorg/telegram/ui/Components/PipVideoOverlay;->photoViewerWebView:Lorg/telegram/ui/Components/PhotoViewerWebView;
 
-    iget-object v3, p0, Lorg/telegram/ui/Components/PipVideoOverlay;->photoViewer:Lorg/telegram/ui/PhotoViewer;
+    iget-object v4, p0, Lorg/telegram/ui/Components/PipVideoOverlay;->photoViewer:Lorg/telegram/ui/PhotoViewer;
 
-    invoke-virtual {v3}, Lorg/telegram/ui/PhotoViewer;->getCurrentVideoSpeed()F
+    invoke-virtual {v4}, Lorg/telegram/ui/PhotoViewer;->getCurrentVideoSpeed()F
 
-    move-result v3
+    move-result v4
 
-    invoke-virtual {v0, v1, v2, v3}, Lorg/telegram/messenger/video/VideoPlayerRewinder;->startRewind(Lorg/telegram/ui/Components/PhotoViewerWebView;ZF)V
+    invoke-virtual {v0, v1, v2, v4}, Lorg/telegram/messenger/video/VideoPlayerRewinder;->startRewind(Lorg/telegram/ui/Components/PhotoViewerWebView;ZF)V
 
     goto :goto_0
 
@@ -3980,13 +3975,13 @@
 
     move-result-object v1
 
-    iget-object v3, p0, Lorg/telegram/ui/Components/PipVideoOverlay;->photoViewer:Lorg/telegram/ui/PhotoViewer;
+    iget-object v4, p0, Lorg/telegram/ui/Components/PipVideoOverlay;->photoViewer:Lorg/telegram/ui/PhotoViewer;
 
-    invoke-virtual {v3}, Lorg/telegram/ui/PhotoViewer;->getCurrentVideoSpeed()F
+    invoke-virtual {v4}, Lorg/telegram/ui/PhotoViewer;->getCurrentVideoSpeed()F
 
-    move-result v3
+    move-result v4
 
-    invoke-virtual {v1, v0, v2, v3}, Lorg/telegram/messenger/video/VideoPlayerRewinder;->startRewind(Lorg/telegram/ui/Components/VideoPlayer;ZF)V
+    invoke-virtual {v1, v0, v2, v4}, Lorg/telegram/messenger/video/VideoPlayerRewinder;->startRewind(Lorg/telegram/ui/Components/VideoPlayer;ZF)V
 
     .line 253
     :goto_0
@@ -3995,9 +3990,9 @@
     if-nez v0, :cond_5
 
     .line 254
-    iput-boolean v4, p0, Lorg/telegram/ui/Components/PipVideoOverlay;->isShowingControls:Z
+    iput-boolean v3, p0, Lorg/telegram/ui/Components/PipVideoOverlay;->isShowingControls:Z
 
-    invoke-direct {p0, v4}, Lorg/telegram/ui/Components/PipVideoOverlay;->toggleControls(Z)V
+    invoke-direct {p0, v3}, Lorg/telegram/ui/Components/PipVideoOverlay;->toggleControls(Z)V
 
     .line 255
     iget-boolean v0, p0, Lorg/telegram/ui/Components/PipVideoOverlay;->postedDismissControls:Z
@@ -4012,7 +4007,7 @@
     invoke-static {v0, v1, v2}, Lorg/telegram/messenger/AndroidUtilities;->runOnUIThread(Ljava/lang/Runnable;J)V
 
     .line 257
-    iput-boolean v4, p0, Lorg/telegram/ui/Components/PipVideoOverlay;->postedDismissControls:Z
+    iput-boolean v3, p0, Lorg/telegram/ui/Components/PipVideoOverlay;->postedDismissControls:Z
 
     :cond_5
     :goto_1

@@ -15,7 +15,7 @@ import org.fork.utils.Callbacks$Callback;
 import org.koin.core.Koin;
 import org.koin.core.component.KoinComponent;
 import org.koin.p047mp.KoinPlatformTools;
-import org.telegram.messenger.C3286R;
+import org.telegram.messenger.C3301R;
 import org.telegram.p048ui.LaunchActivity;
 /* compiled from: NeuroBotHelper.kt */
 /* loaded from: classes3.dex */
@@ -46,7 +46,7 @@ public final class SmartBotHelper implements KoinComponent {
     }
 
     private final void showEnableSmartBotDialog(final Context context) {
-        DialogUtils.createDialog$default(context, new DialogModel(getResourceManager().getString(C3286R.string.neurobots_enable_dialog_title), getResourceManager().getString(C3286R.string.neurobots_enable_dialog_description), getResourceManager().getString(C3286R.string.common_cancel), getResourceManager().getString(C3286R.string.neurobots_enable_dialog_positive_btn_text)), new Callbacks$Callback() { // from class: com.smedialink.utils.helper.neurobot.SmartBotHelper$$ExternalSyntheticLambda0
+        DialogUtils.createDialog$default(context, new DialogModel(getResourceManager().getString(C3301R.string.neurobots_enable_dialog_title), getResourceManager().getString(C3301R.string.neurobots_enable_dialog_description), getResourceManager().getString(C3301R.string.common_cancel), getResourceManager().getString(C3301R.string.neurobots_enable_dialog_positive_btn_text)), new Callbacks$Callback() { // from class: com.smedialink.utils.helper.neurobot.SmartBotHelper$$ExternalSyntheticLambda0
             @Override // org.fork.utils.Callbacks$Callback
             public final void invoke() {
                 SmartBotHelper.showEnableSmartBotDialog$lambda$0(context);

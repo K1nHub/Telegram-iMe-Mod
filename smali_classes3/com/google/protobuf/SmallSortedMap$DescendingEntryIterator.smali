@@ -48,12 +48,12 @@
 .method private constructor <init>(Lcom/google/protobuf/SmallSortedMap;)V
     .locals 0
 
-    .line 589
+    .line 587
     iput-object p1, p0, Lcom/google/protobuf/SmallSortedMap$DescendingEntryIterator;->this$0:Lcom/google/protobuf/SmallSortedMap;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 591
+    .line 589
     invoke-static {p1}, Lcom/google/protobuf/SmallSortedMap;->access$600(Lcom/google/protobuf/SmallSortedMap;)Ljava/util/List;
 
     move-result-object p1
@@ -70,7 +70,7 @@
 .method synthetic constructor <init>(Lcom/google/protobuf/SmallSortedMap;Lcom/google/protobuf/SmallSortedMap$1;)V
     .locals 0
 
-    .line 589
+    .line 587
     invoke-direct {p0, p1}, Lcom/google/protobuf/SmallSortedMap$DescendingEntryIterator;-><init>(Lcom/google/protobuf/SmallSortedMap;)V
 
     return-void
@@ -87,12 +87,12 @@
         }
     .end annotation
 
-    .line 618
+    .line 616
     iget-object v0, p0, Lcom/google/protobuf/SmallSortedMap$DescendingEntryIterator;->lazyOverflowIterator:Ljava/util/Iterator;
 
     if-nez v0, :cond_0
 
-    .line 619
+    .line 617
     iget-object v0, p0, Lcom/google/protobuf/SmallSortedMap$DescendingEntryIterator;->this$0:Lcom/google/protobuf/SmallSortedMap;
 
     invoke-static {v0}, Lcom/google/protobuf/SmallSortedMap;->access$900(Lcom/google/protobuf/SmallSortedMap;)Ljava/util/Map;
@@ -109,7 +109,7 @@
 
     iput-object v0, p0, Lcom/google/protobuf/SmallSortedMap$DescendingEntryIterator;->lazyOverflowIterator:Ljava/util/Iterator;
 
-    .line 621
+    .line 619
     :cond_0
     iget-object v0, p0, Lcom/google/protobuf/SmallSortedMap$DescendingEntryIterator;->lazyOverflowIterator:Ljava/util/Iterator;
 
@@ -129,7 +129,7 @@
 .method public hasNext()Z
     .locals 2
 
-    .line 596
+    .line 594
     iget v0, p0, Lcom/google/protobuf/SmallSortedMap$DescendingEntryIterator;->pos:I
 
     if-lez v0, :cond_0
@@ -172,7 +172,7 @@
 .method public bridge synthetic next()Ljava/lang/Object;
     .locals 1
 
-    .line 589
+    .line 587
     invoke-virtual {p0}, Lcom/google/protobuf/SmallSortedMap$DescendingEntryIterator;->next()Ljava/util/Map$Entry;
 
     move-result-object v0
@@ -190,7 +190,7 @@
         }
     .end annotation
 
-    .line 601
+    .line 599
     invoke-direct {p0}, Lcom/google/protobuf/SmallSortedMap$DescendingEntryIterator;->getOverflowIterator()Ljava/util/Iterator;
 
     move-result-object v0
@@ -201,7 +201,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 602
+    .line 600
     invoke-direct {p0}, Lcom/google/protobuf/SmallSortedMap$DescendingEntryIterator;->getOverflowIterator()Ljava/util/Iterator;
 
     move-result-object v0
@@ -214,7 +214,7 @@
 
     return-object v0
 
-    .line 604
+    .line 602
     :cond_0
     iget-object v0, p0, Lcom/google/protobuf/SmallSortedMap$DescendingEntryIterator;->this$0:Lcom/google/protobuf/SmallSortedMap;
 
@@ -240,7 +240,7 @@
 .method public remove()V
     .locals 1
 
-    .line 609
+    .line 607
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V

@@ -171,7 +171,7 @@
     goto :goto_0
 
     :cond_0
-    const/4 v1, 0x0
+    move v1, v0
 
     :goto_0
     if-eqz v1, :cond_1
@@ -1062,14 +1062,9 @@
 
     const/4 p4, -0x1
 
-    const/4 v1, -0x1
-
-    goto :goto_2
-
     :cond_3
     move v1, p4
 
-    :goto_2
     and-int/lit8 p2, p7, 0x10
 
     if-eqz p2, :cond_4
@@ -1859,12 +1854,12 @@
 
     if-ltz p1, :cond_0
 
-    const/4 v2, 0x1
+    move v2, v1
 
     goto :goto_0
 
     :cond_0
-    const/4 v2, 0x0
+    move v2, v0
 
     :goto_0
     if-eqz v2, :cond_6
@@ -2005,7 +2000,7 @@
 
     if-ltz p1, :cond_0
 
-    const/4 v1, 0x1
+    move v1, v0
 
     goto :goto_0
 
@@ -2692,12 +2687,12 @@
 
     if-nez v3, :cond_0
 
-    const/4 v3, 0x0
+    move v3, v1
 
     goto :goto_0
 
     :cond_0
-    const/4 v3, 0x1
+    move v3, v4
 
     :goto_0
     add-int/2addr v2, v3
@@ -2707,19 +2702,19 @@
 
     invoke-direct {v3, v2}, Ljava/util/ArrayList;-><init>(I)V
 
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_1
     if-ltz v2, :cond_1
 
     if-ge v2, v0, :cond_1
 
-    const/4 v5, 0x1
+    move v5, v4
 
     goto :goto_2
 
     :cond_1
-    const/4 v5, 0x0
+    move v5, v1
 
     :goto_2
     if-eqz v5, :cond_4
@@ -2741,7 +2736,7 @@
 
     invoke-direct {v6, v5}, Ljava/util/ArrayList;-><init>(I)V
 
-    const/4 v7, 0x0
+    move v7, v1
 
     :goto_3
     if-ge v7, v5, :cond_3

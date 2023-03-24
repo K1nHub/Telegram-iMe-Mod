@@ -298,7 +298,10 @@ public abstract class BaseQuickAdapter<T, VH extends BaseViewHolder> extends Rec
             return (this.footerWithEmptyEnable && hasFooterLayout()) ? i + 1 : i;
         }
         BaseLoadMoreModule baseLoadMoreModule = this.mLoadMoreModule;
-        return getHeaderLayoutCount() + getDefItemCount() + getFooterLayoutCount() + ((baseLoadMoreModule == null || !baseLoadMoreModule.hasLoadMoreView()) ? 0 : 0);
+        if (baseLoadMoreModule == null || !baseLoadMoreModule.hasLoadMoreView()) {
+            i = 0;
+        }
+        return getHeaderLayoutCount() + getDefItemCount() + getFooterLayoutCount() + i;
     }
 
     /* JADX WARN: Type inference failed for: r0v4, types: [boolean] */

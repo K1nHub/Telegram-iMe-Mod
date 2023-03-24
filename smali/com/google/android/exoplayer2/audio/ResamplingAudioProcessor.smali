@@ -274,7 +274,7 @@
 
     const v4, 0x46fffe00    # 32767.0f
 
-    mul-float v3, v3, v4
+    mul-float/2addr v3, v4
 
     float-to-int v3, v3
 

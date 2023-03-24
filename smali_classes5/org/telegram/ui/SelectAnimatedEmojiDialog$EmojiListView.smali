@@ -360,7 +360,7 @@
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->restore()V
 
     :cond_2
-    const/4 v1, 0x0
+    move v1, v9
 
     .line 3369
     :goto_0
@@ -408,11 +408,11 @@
 
     const-wide/16 v3, 0x0
 
+    cmp-long v1, v1, v3
+
     const/4 v11, 0x1
 
-    cmp-long v5, v1, v3
-
-    if-lez v5, :cond_4
+    if-lez v1, :cond_4
 
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
@@ -432,16 +432,16 @@
 
     move-result-wide v3
 
-    cmp-long v5, v1, v3
+    cmp-long v1, v1, v3
 
-    if-gez v5, :cond_4
+    if-gez v1, :cond_4
 
-    const/4 v1, 0x1
+    move v1, v11
 
     goto :goto_1
 
     :cond_4
-    const/4 v1, 0x0
+    move v1, v9
 
     :goto_1
     if-eqz v1, :cond_5
@@ -463,12 +463,12 @@
 
     if-ltz v1, :cond_5
 
-    const/4 v12, 0x1
+    move v12, v11
 
     goto :goto_2
 
     :cond_5
-    const/4 v12, 0x0
+    move v12, v9
 
     .line 3377
     :goto_2
@@ -476,7 +476,7 @@
 
     if-eqz v1, :cond_d
 
-    const/4 v13, 0x0
+    move v13, v9
 
     .line 3378
     :goto_3
@@ -619,7 +619,7 @@
 
     move-result v7
 
-    mul-float v6, v6, v7
+    mul-float/2addr v6, v7
 
     float-to-int v6, v6
 
@@ -742,12 +742,12 @@
 
     if-lez v3, :cond_b
 
-    const/4 v3, 0x0
+    move v3, v9
 
     goto :goto_6
 
     :cond_b
-    const/4 v3, 0x1
+    move v3, v11
 
     :goto_6
     sub-int/2addr v2, v3
@@ -818,7 +818,7 @@
 
     sub-float v15, v3, v1
 
-    mul-float v7, v7, v15
+    mul-float/2addr v7, v15
 
     float-to-int v7, v7
 
@@ -863,7 +863,7 @@
 
     const/high16 v1, 0x3f000000    # 0.5f
 
-    mul-float v15, v15, v1
+    mul-float/2addr v15, v1
 
     add-float/2addr v15, v1
 
@@ -928,7 +928,7 @@
 
     move-result-wide v12
 
-    const/4 v14, 0x0
+    move v14, v9
 
     .line 3436
     :goto_7
@@ -963,7 +963,7 @@
 
     move-result v4
 
-    const/4 v5, 0x0
+    move v5, v9
 
     .line 3441
     :goto_8
@@ -1133,7 +1133,7 @@
     goto/16 :goto_7
 
     :cond_13
-    const/4 v1, 0x0
+    move v1, v9
 
     .line 3471
     :goto_b

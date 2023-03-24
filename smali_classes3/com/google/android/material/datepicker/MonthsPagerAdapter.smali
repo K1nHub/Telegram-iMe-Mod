@@ -92,7 +92,7 @@
 
     move-result v1
 
-    mul-int v0, v0, v1
+    mul-int/2addr v0, v1
 
     .line 64
     invoke-static {p1}, Lcom/google/android/material/datepicker/MaterialDatePicker;->isFullscreen(Landroid/content/Context;)Z

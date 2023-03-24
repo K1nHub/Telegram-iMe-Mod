@@ -284,12 +284,12 @@
 
     if-ne p3, v8, :cond_0
 
-    const/4 v3, 0x4
+    move v3, p2
 
     goto :goto_0
 
     :cond_0
-    const/16 v3, 0xc
+    move v3, v7
 
     :goto_0
     const/4 v4, 0x2
@@ -322,12 +322,7 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    goto :goto_1
-
     :catchall_0
-    nop
-
-    :goto_1
     mul-int/lit8 p4, p4, 0x6
 
     const p1, 0xac44
@@ -363,14 +358,14 @@
 
     if-ne p3, v8, :cond_1
 
-    const/4 v3, 0x4
+    move v3, p2
 
-    goto :goto_2
+    goto :goto_1
 
     :cond_1
-    const/16 v3, 0xc
+    move v3, v7
 
-    :goto_2
+    :goto_1
     const/4 v4, 0x2
 
     const/4 v6, 0x1

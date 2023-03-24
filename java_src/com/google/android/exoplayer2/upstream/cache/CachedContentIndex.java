@@ -475,12 +475,18 @@ public class CachedContentIndex {
         }
 
         private int hashCachedContent(CachedContent cachedContent, int i) {
-            int hashCode = (cachedContent.f141id * 31) + cachedContent.key.hashCode();
+            int i2;
+            int hashCode;
+            int hashCode2 = (cachedContent.f141id * 31) + cachedContent.key.hashCode();
             if (i < 2) {
                 long contentLength = ContentMetadata.CC.getContentLength(cachedContent.getMetadata());
-                return (hashCode * 31) + ((int) (contentLength ^ (contentLength >>> 32)));
+                i2 = hashCode2 * 31;
+                hashCode = (int) (contentLength ^ (contentLength >>> 32));
+            } else {
+                i2 = hashCode2 * 31;
+                hashCode = cachedContent.getMetadata().hashCode();
             }
-            return (hashCode * 31) + cachedContent.getMetadata().hashCode();
+            return i2 + hashCode;
         }
 
         private CachedContent readCachedContent(int i, DataInputStream dataInputStream) throws IOException {

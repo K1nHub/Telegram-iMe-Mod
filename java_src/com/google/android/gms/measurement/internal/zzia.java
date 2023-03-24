@@ -213,9 +213,13 @@ public final class zzia extends zzf {
         Bundle bundle2 = bundle == null ? new Bundle() : bundle;
         if (zzkz.zzak(str2, "screen_view")) {
             this.zzs.zzs().zzx(bundle2, j);
-        } else {
-            zzM(str3, str2, j, bundle2, z2, !z2 || this.zzd == null || zzkz.zzag(str2), z, null);
+            return;
         }
+        boolean z3 = true;
+        if (z2 && this.zzd != null && !zzkz.zzag(str2)) {
+            z3 = false;
+        }
+        zzM(str3, str2, j, bundle2, z2, z3, z, null);
     }
 
     public final void zzF(String str, String str2, Bundle bundle, String str3) {
@@ -752,8 +756,8 @@ public final class zzia extends zzf {
             com.google.android.gms.measurement.internal.zzfa r10 = r10.zzm()
             com.google.android.gms.measurement.internal.zzez r10 = r10.zzh
             long r4 = r11.longValue()
-            int r6 = (r4 > r2 ? 1 : (r4 == r2 ? 0 : -1))
-            if (r6 != 0) goto L4e
+            int r2 = (r4 > r2 ? 1 : (r4 == r2 ? 0 : -1))
+            if (r2 != 0) goto L4e
             java.lang.String r0 = "true"
         L4e:
             r10.zzb(r0)
@@ -1005,44 +1009,122 @@ public final class zzia extends zzf {
         this.zzs.zzaz().zzp(new zzhk(this, bundle2));
     }
 
-    public final void zzY(String str, String str2, Object obj, boolean z, long j) {
-        int i;
-        String str3 = str == null ? "app" : str;
-        if (!z) {
-            zzkz zzv = this.zzs.zzv();
-            if (zzv.zzab("user property", str2)) {
-                if (zzv.zzY("user property", zzgu.zza, null, str2)) {
-                    zzv.zzs.zzf();
-                    if (zzv.zzX("user property", 24, str2)) {
-                        i = 0;
-                    }
-                } else {
-                    i = 15;
-                }
-            }
-            i = 6;
-        } else {
-            i = this.zzs.zzv().zzl(str2);
-        }
-        if (i != 0) {
-            zzkz zzv2 = this.zzs.zzv();
-            this.zzs.zzf();
-            this.zzs.zzv().zzM(this.zzn, null, i, "_ev", zzv2.zzC(str2, 24, true), str2 != null ? str2.length() : 0);
-        } else if (obj != null) {
-            int zzd = this.zzs.zzv().zzd(str2, obj);
-            if (zzd == 0) {
-                Object zzB = this.zzs.zzv().zzB(str2, obj);
-                if (zzB != null) {
-                    zzN(str3, str2, j, zzB);
-                    return;
-                }
-                return;
-            }
-            zzkz zzv3 = this.zzs.zzv();
-            this.zzs.zzf();
-            this.zzs.zzv().zzM(this.zzn, null, zzd, "_ev", zzv3.zzC(str2, 24, true), ((obj instanceof String) || (obj instanceof CharSequence)) ? String.valueOf(obj).length() : 0);
-        } else {
-            zzN(str3, str2, j, null);
-        }
+    /* JADX WARN: Removed duplicated region for block: B:22:0x0049  */
+    /* JADX WARN: Removed duplicated region for block: B:27:0x006e  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+        To view partially-correct add '--show-bad-code' argument
+    */
+    public final void zzY(java.lang.String r16, java.lang.String r17, java.lang.Object r18, boolean r19, long r20) {
+        /*
+            r15 = this;
+            r6 = r15
+            r2 = r17
+            r0 = r18
+            if (r16 != 0) goto La
+            java.lang.String r1 = "app"
+            goto Lc
+        La:
+            r1 = r16
+        Lc:
+            r3 = 6
+            r4 = 0
+            r5 = 24
+            if (r19 == 0) goto L1e
+            com.google.android.gms.measurement.internal.zzfv r3 = r6.zzs
+            com.google.android.gms.measurement.internal.zzkz r3 = r3.zzv()
+            int r3 = r3.zzl(r2)
+        L1c:
+            r11 = r3
+            goto L46
+        L1e:
+            com.google.android.gms.measurement.internal.zzfv r7 = r6.zzs
+            com.google.android.gms.measurement.internal.zzkz r7 = r7.zzv()
+            java.lang.String r8 = "user property"
+            boolean r9 = r7.zzab(r8, r2)
+            if (r9 != 0) goto L2d
+        L2c:
+            goto L1c
+        L2d:
+            java.lang.String[] r9 = com.google.android.gms.measurement.internal.zzgu.zza
+            r10 = 0
+            boolean r9 = r7.zzY(r8, r9, r10, r2)
+            if (r9 != 0) goto L39
+            r3 = 15
+            goto L1c
+        L39:
+            com.google.android.gms.measurement.internal.zzfv r9 = r7.zzs
+            r9.zzf()
+            boolean r7 = r7.zzX(r8, r5, r2)
+            if (r7 != 0) goto L45
+            goto L2c
+        L45:
+            r11 = r4
+        L46:
+            r3 = 1
+            if (r11 == 0) goto L6e
+            com.google.android.gms.measurement.internal.zzfv r0 = r6.zzs
+            com.google.android.gms.measurement.internal.zzkz r0 = r0.zzv()
+            com.google.android.gms.measurement.internal.zzfv r1 = r6.zzs
+            r1.zzf()
+            java.lang.String r13 = r0.zzC(r2, r5, r3)
+            if (r2 == 0) goto L5e
+            int r4 = r17.length()
+        L5e:
+            r14 = r4
+            com.google.android.gms.measurement.internal.zzfv r0 = r6.zzs
+            com.google.android.gms.measurement.internal.zzkz r8 = r0.zzv()
+            com.google.android.gms.measurement.internal.zzky r9 = r6.zzn
+            r10 = 0
+            java.lang.String r12 = "_ev"
+            r8.zzM(r9, r10, r11, r12, r13, r14)
+            return
+        L6e:
+            if (r0 == 0) goto Lc0
+            com.google.android.gms.measurement.internal.zzfv r7 = r6.zzs
+            com.google.android.gms.measurement.internal.zzkz r7 = r7.zzv()
+            int r11 = r7.zzd(r2, r0)
+            if (r11 == 0) goto Lab
+            com.google.android.gms.measurement.internal.zzfv r1 = r6.zzs
+            com.google.android.gms.measurement.internal.zzkz r1 = r1.zzv()
+            com.google.android.gms.measurement.internal.zzfv r7 = r6.zzs
+            r7.zzf()
+            java.lang.String r13 = r1.zzC(r2, r5, r3)
+            boolean r1 = r0 instanceof java.lang.String
+            if (r1 != 0) goto L93
+            boolean r1 = r0 instanceof java.lang.CharSequence
+            if (r1 == 0) goto L9b
+        L93:
+            java.lang.String r0 = java.lang.String.valueOf(r18)
+            int r4 = r0.length()
+        L9b:
+            r14 = r4
+            com.google.android.gms.measurement.internal.zzfv r0 = r6.zzs
+            com.google.android.gms.measurement.internal.zzkz r8 = r0.zzv()
+            com.google.android.gms.measurement.internal.zzky r9 = r6.zzn
+            r10 = 0
+            java.lang.String r12 = "_ev"
+            r8.zzM(r9, r10, r11, r12, r13, r14)
+            return
+        Lab:
+            com.google.android.gms.measurement.internal.zzfv r3 = r6.zzs
+            com.google.android.gms.measurement.internal.zzkz r3 = r3.zzv()
+            java.lang.Object r5 = r3.zzB(r2, r0)
+            if (r5 == 0) goto Lbf
+            r0 = r15
+            r2 = r17
+            r3 = r20
+            r0.zzN(r1, r2, r3, r5)
+        Lbf:
+            return
+        Lc0:
+            r5 = 0
+            r0 = r15
+            r2 = r17
+            r3 = r20
+            r0.zzN(r1, r2, r3, r5)
+            return
+        */
+        throw new UnsupportedOperationException("Method not decompiled: com.google.android.gms.measurement.internal.zzia.zzY(java.lang.String, java.lang.String, java.lang.Object, boolean, long):void");
     }
 }

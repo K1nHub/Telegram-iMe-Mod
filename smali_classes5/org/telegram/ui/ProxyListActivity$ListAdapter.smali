@@ -726,7 +726,7 @@
 
     new-array v0, v0, [Ljava/lang/String;
 
-    const/4 v1, 0x0
+    move v1, v4
 
     .line 962
     :goto_0
@@ -805,12 +805,12 @@
 
     if-ne v1, v0, :cond_1
 
-    const/4 v0, 0x1
+    move v0, v3
 
     goto :goto_1
 
     :cond_1
-    const/4 v0, 0x0
+    move v0, v4
 
     :goto_1
     invoke-virtual {p1, v0}, Lorg/telegram/ui/ProxyListActivity$TextDetailProxyCell;->setChecked(Z)V
@@ -998,7 +998,7 @@
     goto :goto_2
 
     :cond_4
-    const/4 v3, 0x0
+    move v3, v4
 
     :goto_2
     invoke-virtual {p1, p2, v0, v3}, Lorg/telegram/ui/Cells/TextCheckCell;->setTextAndCheck(Ljava/lang/String;ZZ)V
@@ -1129,7 +1129,7 @@
     goto :goto_3
 
     :cond_7
-    const/4 v3, 0x0
+    move v3, v4
 
     :goto_3
     invoke-virtual {p1, p2, v3}, Lorg/telegram/ui/Cells/TextSettingsCell;->setText(Ljava/lang/CharSequence;Z)V

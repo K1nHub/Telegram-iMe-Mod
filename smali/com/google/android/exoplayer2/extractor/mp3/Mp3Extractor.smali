@@ -401,7 +401,7 @@
 
     const-wide/32 v2, 0xf4240
 
-    mul-long p1, p1, v2
+    mul-long/2addr p1, v2
 
     iget-object v2, p0, Lcom/google/android/exoplayer2/extractor/mp3/Mp3Extractor;->synchronizedHeader:Lcom/google/android/exoplayer2/audio/MpegAudioUtil$Header;
 
@@ -488,7 +488,7 @@
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_0
     if-ge v2, v0, :cond_1
@@ -622,9 +622,9 @@
 
     and-long p0, p1, v2
 
-    cmp-long p2, v0, p0
+    cmp-long p0, v0, p0
 
-    if-nez p2, :cond_0
+    if-nez p0, :cond_0
 
     const/4 p0, 0x1
 
@@ -799,11 +799,9 @@
     .line 500
     iget v0, v0, Lcom/google/android/exoplayer2/audio/MpegAudioUtil$Header;->channels:I
 
-    if-eq v0, v2, :cond_1
+    if-eq v0, v2, :cond_2
 
     const/16 v3, 0x24
-
-    const/16 v7, 0x24
 
     goto :goto_0
 
@@ -811,20 +809,18 @@
     :cond_0
     iget v0, v0, Lcom/google/android/exoplayer2/audio/MpegAudioUtil$Header;->channels:I
 
-    if-eq v0, v2, :cond_2
-
-    :cond_1
-    const/16 v7, 0x15
+    if-eq v0, v2, :cond_1
 
     goto :goto_0
 
-    :cond_2
+    :cond_1
     const/16 v3, 0xd
 
-    const/16 v7, 0xd
+    :cond_2
+    :goto_0
+    move v7, v3
 
     .line 502
-    :goto_0
     invoke-static {v5, v7}, Lcom/google/android/exoplayer2/extractor/mp3/Mp3Extractor;->getSeekFrameHeader(Lcom/google/android/exoplayer2/util/ParsableByteArray;I)I
 
     move-result v8
@@ -1188,9 +1184,9 @@
 
     const-wide/16 v2, 0x0
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-eqz v4, :cond_3
+    if-eqz v0, :cond_3
 
     .line 282
     invoke-interface {p1}, Lcom/google/android/exoplayer2/extractor/ExtractorInput;->getPosition()J
@@ -1519,15 +1515,15 @@
 
     const-wide/16 v3, 0x0
 
-    const/4 v5, 0x0
+    cmp-long v1, v1, v3
 
-    const/4 v6, 0x1
+    const/4 v2, 0x0
 
-    const/4 v7, 0x0
+    const/4 v3, 0x1
 
-    cmp-long v8, v1, v3
+    const/4 v4, 0x0
 
-    if-nez v8, :cond_5
+    if-nez v1, :cond_5
 
     .line 358
     iget v1, p0, Lcom/google/android/exoplayer2/extractor/mp3/Mp3Extractor;->flags:I
@@ -1536,17 +1532,17 @@
 
     if-nez v1, :cond_1
 
-    const/4 v1, 0x1
+    move v1, v3
 
     goto :goto_1
 
     :cond_1
-    const/4 v1, 0x0
+    move v1, v4
 
     :goto_1
     if-eqz v1, :cond_2
 
-    move-object v1, v5
+    move-object v1, v2
 
     goto :goto_2
 
@@ -1556,9 +1552,9 @@
 
     .line 361
     :goto_2
-    iget-object v2, p0, Lcom/google/android/exoplayer2/extractor/mp3/Mp3Extractor;->id3Peeker:Lcom/google/android/exoplayer2/extractor/Id3Peeker;
+    iget-object v5, p0, Lcom/google/android/exoplayer2/extractor/mp3/Mp3Extractor;->id3Peeker:Lcom/google/android/exoplayer2/extractor/Id3Peeker;
 
-    invoke-virtual {v2, p1, v1}, Lcom/google/android/exoplayer2/extractor/Id3Peeker;->peekId3Data(Lcom/google/android/exoplayer2/extractor/ExtractorInput;Lcom/google/android/exoplayer2/metadata/id3/Id3Decoder$FramePredicate;)Lcom/google/android/exoplayer2/metadata/Metadata;
+    invoke-virtual {v5, p1, v1}, Lcom/google/android/exoplayer2/extractor/Id3Peeker;->peekId3Data(Lcom/google/android/exoplayer2/extractor/ExtractorInput;Lcom/google/android/exoplayer2/metadata/id3/Id3Decoder$FramePredicate;)Lcom/google/android/exoplayer2/metadata/Metadata;
 
     move-result-object v1
 
@@ -1567,37 +1563,37 @@
     if-eqz v1, :cond_3
 
     .line 363
-    iget-object v2, p0, Lcom/google/android/exoplayer2/extractor/mp3/Mp3Extractor;->gaplessInfoHolder:Lcom/google/android/exoplayer2/extractor/GaplessInfoHolder;
+    iget-object v5, p0, Lcom/google/android/exoplayer2/extractor/mp3/Mp3Extractor;->gaplessInfoHolder:Lcom/google/android/exoplayer2/extractor/GaplessInfoHolder;
 
-    invoke-virtual {v2, v1}, Lcom/google/android/exoplayer2/extractor/GaplessInfoHolder;->setFromMetadata(Lcom/google/android/exoplayer2/metadata/Metadata;)Z
+    invoke-virtual {v5, v1}, Lcom/google/android/exoplayer2/extractor/GaplessInfoHolder;->setFromMetadata(Lcom/google/android/exoplayer2/metadata/Metadata;)Z
 
     .line 365
     :cond_3
     invoke-interface {p1}, Lcom/google/android/exoplayer2/extractor/ExtractorInput;->getPeekPosition()J
 
-    move-result-wide v1
+    move-result-wide v5
 
-    long-to-int v2, v1
+    long-to-int v1, v5
 
     if-nez p2, :cond_4
 
     .line 367
-    invoke-interface {p1, v2}, Lcom/google/android/exoplayer2/extractor/ExtractorInput;->skipFully(I)V
+    invoke-interface {p1, v1}, Lcom/google/android/exoplayer2/extractor/ExtractorInput;->skipFully(I)V
 
     :cond_4
-    const/4 v1, 0x0
+    move v5, v4
 
     goto :goto_3
 
     :cond_5
-    const/4 v1, 0x0
+    move v1, v4
 
-    const/4 v2, 0x0
+    move v5, v1
 
     :goto_3
-    const/4 v3, 0x0
+    move v6, v5
 
-    const/4 v4, 0x0
+    move v7, v6
 
     .line 371
     :goto_4
@@ -1607,7 +1603,7 @@
 
     if-eqz v8, :cond_7
 
-    if-lez v3, :cond_6
+    if-lez v6, :cond_6
 
     goto :goto_6
 
@@ -1623,7 +1619,7 @@
     :cond_7
     iget-object v8, p0, Lcom/google/android/exoplayer2/extractor/mp3/Mp3Extractor;->scratch:Lcom/google/android/exoplayer2/util/ParsableByteArray;
 
-    invoke-virtual {v8, v7}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->setPosition(I)V
+    invoke-virtual {v8, v4}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->setPosition(I)V
 
     .line 379
     iget-object v8, p0, Lcom/google/android/exoplayer2/extractor/mp3/Mp3Extractor;->scratch:Lcom/google/android/exoplayer2/util/ParsableByteArray;
@@ -1632,9 +1628,9 @@
 
     move-result v8
 
-    if-eqz v1, :cond_8
+    if-eqz v5, :cond_8
 
-    int-to-long v9, v1
+    int-to-long v9, v5
 
     .line 382
     invoke-static {v8, v9, v10}, Lcom/google/android/exoplayer2/extractor/mp3/Mp3Extractor;->headersMatch(IJ)Z
@@ -1654,19 +1650,19 @@
     if-ne v9, v10, :cond_d
 
     :cond_9
-    add-int/lit8 v1, v4, 0x1
+    add-int/lit8 v5, v7, 0x1
 
-    if-ne v4, v0, :cond_b
+    if-ne v7, v0, :cond_b
 
     if-eqz p2, :cond_a
 
-    return v7
+    return v4
 
     :cond_a
     const-string p1, "Searched too many bytes."
 
     .line 387
-    invoke-static {p1, v5}, Lcom/google/android/exoplayer2/ParserException;->createForMalformedContainer(Ljava/lang/String;Ljava/lang/Throwable;)Lcom/google/android/exoplayer2/ParserException;
+    invoke-static {p1, v2}, Lcom/google/android/exoplayer2/ParserException;->createForMalformedContainer(Ljava/lang/String;Ljava/lang/Throwable;)Lcom/google/android/exoplayer2/ParserException;
 
     move-result-object p1
 
@@ -1678,52 +1674,52 @@
     .line 395
     invoke-interface {p1}, Lcom/google/android/exoplayer2/extractor/ExtractorInput;->resetPeekPosition()V
 
-    add-int v3, v2, v1
+    add-int v6, v1, v5
 
     .line 396
-    invoke-interface {p1, v3}, Lcom/google/android/exoplayer2/extractor/ExtractorInput;->advancePeekPosition(I)V
+    invoke-interface {p1, v6}, Lcom/google/android/exoplayer2/extractor/ExtractorInput;->advancePeekPosition(I)V
 
     goto :goto_5
 
     .line 398
     :cond_c
-    invoke-interface {p1, v6}, Lcom/google/android/exoplayer2/extractor/ExtractorInput;->skipFully(I)V
+    invoke-interface {p1, v3}, Lcom/google/android/exoplayer2/extractor/ExtractorInput;->skipFully(I)V
 
     :goto_5
-    move v4, v1
+    move v6, v4
 
-    const/4 v1, 0x0
+    move v7, v5
 
-    const/4 v3, 0x0
+    move v5, v6
 
     goto :goto_4
 
     :cond_d
-    add-int/lit8 v3, v3, 0x1
+    add-int/lit8 v6, v6, 0x1
 
-    if-ne v3, v6, :cond_e
+    if-ne v6, v3, :cond_e
 
     .line 404
-    iget-object v1, p0, Lcom/google/android/exoplayer2/extractor/mp3/Mp3Extractor;->synchronizedHeader:Lcom/google/android/exoplayer2/audio/MpegAudioUtil$Header;
+    iget-object v5, p0, Lcom/google/android/exoplayer2/extractor/mp3/Mp3Extractor;->synchronizedHeader:Lcom/google/android/exoplayer2/audio/MpegAudioUtil$Header;
 
-    invoke-virtual {v1, v8}, Lcom/google/android/exoplayer2/audio/MpegAudioUtil$Header;->setForHeaderData(I)Z
+    invoke-virtual {v5, v8}, Lcom/google/android/exoplayer2/audio/MpegAudioUtil$Header;->setForHeaderData(I)Z
 
-    move v1, v8
+    move v5, v8
 
     goto :goto_8
 
     :cond_e
     const/4 v8, 0x4
 
-    if-ne v3, v8, :cond_10
+    if-ne v6, v8, :cond_10
 
     :goto_6
     if-eqz p2, :cond_f
 
-    add-int/2addr v2, v4
+    add-int/2addr v1, v7
 
     .line 414
-    invoke-interface {p1, v2}, Lcom/google/android/exoplayer2/extractor/ExtractorInput;->skipFully(I)V
+    invoke-interface {p1, v1}, Lcom/google/android/exoplayer2/extractor/ExtractorInput;->skipFully(I)V
 
     goto :goto_7
 
@@ -1733,9 +1729,9 @@
 
     .line 418
     :goto_7
-    iput v1, p0, Lcom/google/android/exoplayer2/extractor/mp3/Mp3Extractor;->synchronizedHeaderData:I
+    iput v5, p0, Lcom/google/android/exoplayer2/extractor/mp3/Mp3Extractor;->synchronizedHeaderData:I
 
-    return v6
+    return v3
 
     :cond_10
     :goto_8

@@ -82,6 +82,8 @@
 
 .field public static final enum HAPI:Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;
 
+.field public static final enum HT:Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;
+
 .field public static final enum INF:Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;
 
 .field public static final enum INTERNAL:Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;
@@ -150,6 +152,10 @@
 
 .field public static final enum TRU:Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;
 
+.field public static final enum TRX:Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;
+
+.field public static final enum TUSD:Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;
+
 .field public static final enum UFI:Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;
 
 .field public static final enum UFT:Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;
@@ -181,7 +187,7 @@
 .method private static final synthetic $values()[Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;
     .locals 3
 
-    const/16 v0, 0x4c
+    const/16 v0, 0x4f
 
     new-array v0, v0, [Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;
 
@@ -623,21 +629,39 @@
 
     aput-object v1, v0, v2
 
-    sget-object v1, Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;->INTERNAL:Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;
+    sget-object v1, Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;->TRX:Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;
 
     const/16 v2, 0x49
 
     aput-object v1, v0, v2
 
-    sget-object v1, Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;->USD:Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;
+    sget-object v1, Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;->TUSD:Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;
 
     const/16 v2, 0x4a
 
     aput-object v1, v0, v2
 
-    sget-object v1, Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;->UNKNOWN:Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;
+    sget-object v1, Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;->HT:Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;
 
     const/16 v2, 0x4b
+
+    aput-object v1, v0, v2
+
+    sget-object v1, Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;->INTERNAL:Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;
+
+    const/16 v2, 0x4c
+
+    aput-object v1, v0, v2
+
+    sget-object v1, Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;->USD:Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;
+
+    const/16 v2, 0x4d
+
+    aput-object v1, v0, v2
+
+    sget-object v1, Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;->UNKNOWN:Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;
+
+    const/16 v2, 0x4e
 
     aput-object v1, v0, v2
 
@@ -1450,34 +1474,67 @@
 
     sput-object v0, Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;->SIN:Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;
 
-    .line 80
+    .line 79
     new-instance v0, Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;
 
-    const-string v1, "INTERNAL"
+    const-string v1, "TRX"
 
     const/16 v2, 0x49
 
     invoke-direct {v0, v1, v2}, Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;->INTERNAL:Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;
+    sput-object v0, Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;->TRX:Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;
 
-    .line 81
+    .line 80
     new-instance v0, Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;
 
-    const-string v1, "USD"
+    const-string v1, "TUSD"
 
     const/16 v2, 0x4a
 
     invoke-direct {v0, v1, v2}, Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;-><init>(Ljava/lang/String;I)V
 
+    sput-object v0, Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;->TUSD:Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;
+
+    .line 81
+    new-instance v0, Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;
+
+    const-string v1, "HT"
+
+    const/16 v2, 0x4b
+
+    invoke-direct {v0, v1, v2}, Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;->HT:Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;
+
+    .line 83
+    new-instance v0, Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;
+
+    const-string v1, "INTERNAL"
+
+    const/16 v2, 0x4c
+
+    invoke-direct {v0, v1, v2}, Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;->INTERNAL:Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;
+
+    .line 84
+    new-instance v0, Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;
+
+    const-string v1, "USD"
+
+    const/16 v2, 0x4d
+
+    invoke-direct {v0, v1, v2}, Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;-><init>(Ljava/lang/String;I)V
+
     sput-object v0, Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;->USD:Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;
 
-    .line 82
+    .line 85
     new-instance v0, Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;
 
     const-string v1, "UNKNOWN"
 
-    const/16 v2, 0x4b
+    const/16 v2, 0x4e
 
     invoke-direct {v0, v1, v2}, Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;-><init>(Ljava/lang/String;I)V
 
@@ -1559,7 +1616,7 @@
 .method public final getName()Ljava/lang/String;
     .locals 1
 
-    .line 84
+    .line 87
     invoke-virtual {p0}, Ljava/lang/Enum;->name()Ljava/lang/String;
 
     move-result-object v0
@@ -1570,7 +1627,7 @@
 .method public final isBscTokens()Z
     .locals 1
 
-    .line 91
+    .line 94
     sget-object v0, Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;->Companion:Lcom/smedialink/storage/domain/model/wallet/token/TokenCode$Companion;
 
     invoke-virtual {v0}, Lcom/smedialink/storage/domain/model/wallet/token/TokenCode$Companion;->getBSCCodes()Ljava/util/List;
@@ -1587,7 +1644,7 @@
 .method public final isCryptoTokens()Z
     .locals 1
 
-    .line 95
+    .line 99
     invoke-virtual {p0}, Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;->isBscTokens()Z
 
     move-result v0
@@ -1606,7 +1663,14 @@
 
     if-nez v0, :cond_1
 
+    .line 100
     invoke-virtual {p0}, Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;->isFantomTokens()Z
+
+    move-result v0
+
+    if-nez v0, :cond_1
+
+    invoke-virtual {p0}, Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;->isTronTokens()Z
 
     move-result v0
 
@@ -1636,7 +1700,7 @@
 .method public final isEth()Z
     .locals 1
 
-    .line 88
+    .line 91
     sget-object v0, Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;->ETHER:Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;
 
     if-ne p0, v0, :cond_0
@@ -1655,7 +1719,7 @@
 .method public final isEthAndTokens()Z
     .locals 1
 
-    .line 90
+    .line 93
     sget-object v0, Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;->Companion:Lcom/smedialink/storage/domain/model/wallet/token/TokenCode$Companion;
 
     invoke-virtual {v0}, Lcom/smedialink/storage/domain/model/wallet/token/TokenCode$Companion;->getEthereumCodes()Ljava/util/List;
@@ -1672,7 +1736,7 @@
 .method public final isEthTokens()Z
     .locals 1
 
-    .line 89
+    .line 92
     sget-object v0, Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;->Companion:Lcom/smedialink/storage/domain/model/wallet/token/TokenCode$Companion;
 
     invoke-virtual {v0}, Lcom/smedialink/storage/domain/model/wallet/token/TokenCode$Companion;->getEthereumCodes()Ljava/util/List;
@@ -1703,7 +1767,7 @@
 .method public final isFantomTokens()Z
     .locals 1
 
-    .line 93
+    .line 96
     sget-object v0, Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;->Companion:Lcom/smedialink/storage/domain/model/wallet/token/TokenCode$Companion;
 
     invoke-virtual {v0}, Lcom/smedialink/storage/domain/model/wallet/token/TokenCode$Companion;->getFantomCodes()Ljava/util/List;
@@ -1720,7 +1784,7 @@
 .method public final isLime()Z
     .locals 1
 
-    .line 87
+    .line 90
     sget-object v0, Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;->LIME:Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;
 
     if-ne p0, v0, :cond_0
@@ -1739,7 +1803,7 @@
 .method public final isPolygonTokens()Z
     .locals 1
 
-    .line 92
+    .line 95
     sget-object v0, Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;->Companion:Lcom/smedialink/storage/domain/model/wallet/token/TokenCode$Companion;
 
     invoke-virtual {v0}, Lcom/smedialink/storage/domain/model/wallet/token/TokenCode$Companion;->getPolygonCodes()Ljava/util/List;
@@ -1756,7 +1820,7 @@
 .method public final isTonTokens()Z
     .locals 1
 
-    .line 94
+    .line 98
     sget-object v0, Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;->Companion:Lcom/smedialink/storage/domain/model/wallet/token/TokenCode$Companion;
 
     invoke-virtual {v0}, Lcom/smedialink/storage/domain/model/wallet/token/TokenCode$Companion;->getTonCodes()Ljava/util/List;
@@ -1770,10 +1834,27 @@
     return v0
 .end method
 
+.method public final isTronTokens()Z
+    .locals 1
+
+    .line 97
+    sget-object v0, Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;->Companion:Lcom/smedialink/storage/domain/model/wallet/token/TokenCode$Companion;
+
+    invoke-virtual {v0}, Lcom/smedialink/storage/domain/model/wallet/token/TokenCode$Companion;->getTronCodes()Ljava/util/List;
+
+    move-result-object v0
+
+    invoke-interface {v0, p0}, Ljava/util/List;->contains(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    return v0
+.end method
+
 .method public final isUnknown()Z
     .locals 1
 
-    .line 86
+    .line 89
     sget-object v0, Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;->UNKNOWN:Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;
 
     if-ne p0, v0, :cond_0

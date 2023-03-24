@@ -11,7 +11,7 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3286R;
+import org.telegram.messenger.C3301R;
 import org.telegram.messenger.ContactsController;
 import org.telegram.messenger.DialogObject;
 import org.telegram.messenger.IMapsProvider;
@@ -153,7 +153,7 @@ public class SharingLiveLocationCell extends FrameLayout {
         String str2 = !TextUtils.isEmpty(messageObject.messageOwner.media.address) ? messageObject.messageOwner.media.address : null;
         if (!TextUtils.isEmpty(messageObject.messageOwner.media.title)) {
             str = messageObject.messageOwner.media.title;
-            Drawable drawable = getResources().getDrawable(C3286R.C3288drawable.pin);
+            Drawable drawable = getResources().getDrawable(C3301R.C3303drawable.pin);
             drawable.setColorFilter(new PorterDuffColorFilter(getThemedColor("location_sendLocationIcon"), PorterDuff.Mode.MULTIPLY));
             int themedColor = getThemedColor("location_placeLocationBackground");
             CombinedDrawable combinedDrawable = new CombinedDrawable(Theme.createSimpleSelectorCircleDrawable(AndroidUtilities.m50dp(42), themedColor, themedColor), drawable);
@@ -196,7 +196,7 @@ public class SharingLiveLocationCell extends FrameLayout {
         } else if (str2 != null) {
             this.distanceTextView.setText(str2);
         } else if (!z) {
-            this.distanceTextView.setText(LocaleController.getString("Loading", C3286R.string.Loading));
+            this.distanceTextView.setText(LocaleController.getString("Loading", C3301R.string.Loading));
         } else {
             this.distanceTextView.setText("");
         }
@@ -204,15 +204,15 @@ public class SharingLiveLocationCell extends FrameLayout {
 
     public void setDialog(LocationActivity.LiveLocation liveLocation, Location location) {
         this.liveLocation = liveLocation;
-        if (DialogObject.isUserDialog(liveLocation.f1832id)) {
-            TLRPC$User user = MessagesController.getInstance(this.currentAccount).getUser(Long.valueOf(liveLocation.f1832id));
+        if (DialogObject.isUserDialog(liveLocation.f1833id)) {
+            TLRPC$User user = MessagesController.getInstance(this.currentAccount).getUser(Long.valueOf(liveLocation.f1833id));
             if (user != null) {
                 this.avatarDrawable.setInfo(user);
                 this.nameTextView.setText(ContactsController.formatName(user.first_name, user.last_name));
                 this.avatarImageView.setForUserOrChat(user, this.avatarDrawable);
             }
         } else {
-            TLRPC$Chat chat = MessagesController.getInstance(this.currentAccount).getChat(Long.valueOf(-liveLocation.f1832id));
+            TLRPC$Chat chat = MessagesController.getInstance(this.currentAccount).getChat(Long.valueOf(-liveLocation.f1833id));
             if (chat != null) {
                 this.avatarDrawable.setInfo(chat);
                 this.nameTextView.setText(chat.title);

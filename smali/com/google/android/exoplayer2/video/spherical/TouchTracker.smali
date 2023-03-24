@@ -190,9 +190,9 @@
     .line 115
     iget v1, v0, Landroid/graphics/PointF;->y:F
 
-    mul-float p4, p4, p1
+    mul-float/2addr p4, p1
 
-    mul-float p2, p2, p3
+    mul-float/2addr p2, p3
 
     add-float/2addr p4, p2
 

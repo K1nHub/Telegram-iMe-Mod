@@ -129,7 +129,7 @@
     goto :goto_0
 
     :cond_2
-    const/4 v1, 0x0
+    move v1, p2
 
     .line 78
     :goto_0
@@ -409,12 +409,12 @@
 
     if-eq v1, p3, :cond_0
 
-    const/4 v1, 0x1
+    move v1, p5
 
     goto :goto_0
 
     :cond_0
-    const/4 v1, 0x0
+    move v1, v0
 
     :goto_0
     if-eqz p1, :cond_1
@@ -479,7 +479,7 @@
     goto/16 :goto_2
 
     :cond_2
-    const/4 p5, 0x0
+    move p5, v0
 
     goto/16 :goto_2
 
@@ -584,18 +584,18 @@
     invoke-virtual {p2, v0, v0, v0, v0}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
 
     :goto_1
-    const/4 v0, 0x1
+    move v0, p5
 
     .line 336
     :cond_6
     iput-boolean v1, p0, Landroidx/appcompat/widget/ActionBarContainer;->mIsStacked:Z
 
-    if-eqz v1, :cond_7
+    if-eqz v1, :cond_2
 
     .line 337
     iget-object p2, p0, Landroidx/appcompat/widget/ActionBarContainer;->mStackedBackground:Landroid/graphics/drawable/Drawable;
 
-    if-eqz p2, :cond_7
+    if-eqz p2, :cond_2
 
     .line 338
     invoke-virtual {p1}, Landroid/view/View;->getLeft()I
@@ -618,18 +618,13 @@
     .line 338
     invoke-virtual {p2, p3, p4, v0, p1}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
 
-    goto :goto_2
-
-    :cond_7
-    move p5, v0
-
     :goto_2
-    if-eqz p5, :cond_8
+    if-eqz p5, :cond_7
 
     .line 345
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->invalidate()V
 
-    :cond_8
+    :cond_7
     return-void
 .end method
 
@@ -882,7 +877,7 @@
     goto :goto_0
 
     :cond_3
-    const/4 v0, 0x0
+    move v0, v1
 
     .line 102
     :goto_0
@@ -967,7 +962,7 @@
     if-nez p1, :cond_3
 
     :goto_0
-    const/4 v0, 0x1
+    move v0, v1
 
     goto :goto_1
 
@@ -1099,7 +1094,7 @@
     goto :goto_0
 
     :cond_3
-    const/4 v0, 0x0
+    move v0, v1
 
     .line 123
     :goto_0
@@ -1203,7 +1198,7 @@
     goto :goto_0
 
     :cond_0
-    const/4 p1, 0x0
+    move p1, v0
 
     .line 155
     :goto_0

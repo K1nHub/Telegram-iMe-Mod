@@ -355,7 +355,7 @@
     :cond_2
     iget-object p1, p1, Lcom/google/android/gms/internal/clearcut/zzch;->zzks:[I
 
-    const/4 v1, 0x0
+    move v1, v3
 
     :goto_0
     iget v2, p0, Lcom/google/android/gms/internal/clearcut/zzch;->size:I
@@ -485,7 +485,7 @@
 
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    move v1, v0
 
     :goto_0
     iget v2, p0, Lcom/google/android/gms/internal/clearcut/zzch;->size:I

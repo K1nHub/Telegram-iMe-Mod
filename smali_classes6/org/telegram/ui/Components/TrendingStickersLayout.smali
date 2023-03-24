@@ -992,9 +992,9 @@
 
     move-result-wide v1
 
-    cmp-long p3, p1, v1
+    cmp-long p1, p1, v1
 
-    if-eqz p3, :cond_2
+    if-eqz p1, :cond_2
 
     .line 529
     iput-boolean v0, p0, Lorg/telegram/ui/Components/TrendingStickersLayout;->loaded:Z
@@ -1113,7 +1113,7 @@
     goto :goto_1
 
     :cond_1
-    const/4 v3, -0x1
+    move v3, v2
 
     .line 390
     :goto_1
@@ -1193,7 +1193,7 @@
 
     const/high16 v4, 0x41cc0000    # 25.5f
 
-    mul-float v0, v0, v4
+    mul-float/2addr v0, v4
 
     float-to-int v0, v0
 
@@ -1721,7 +1721,7 @@
 
     move-result-object v0
 
-    const/4 v3, 0x1
+    move v3, v1
 
     .line 575
     :goto_0
@@ -1797,17 +1797,17 @@
     goto :goto_1
 
     :cond_3
-    const/4 v3, 0x0
+    move v3, v2
 
     :goto_1
     if-gez v0, :cond_4
 
-    const/4 v0, 0x1
+    move v0, v1
 
     goto :goto_2
 
     :cond_4
-    const/4 v0, 0x0
+    move v0, v2
 
     .line 584
     :goto_2

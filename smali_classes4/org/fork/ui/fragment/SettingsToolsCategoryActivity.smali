@@ -1048,7 +1048,7 @@
 
     const/4 v5, 0x0
 
-    const/4 v6, 0x0
+    move v6, v5
 
     :goto_0
     if-ge v6, v4, :cond_1
@@ -1104,12 +1104,12 @@
 
     if-ne v10, v7, :cond_0
 
-    const/4 v7, 0x1
+    move v7, v2
 
     goto :goto_1
 
     :cond_0
-    const/4 v7, 0x0
+    move v7, v5
 
     :goto_1
     invoke-virtual {v8, v9, v7}, Lorg/telegram/ui/Cells/RadioColorCell;->setTextAndValue(Ljava/lang/CharSequence;Z)V
@@ -2587,7 +2587,7 @@
 
     move-object v8, v3
 
-    const/4 v6, 0x5
+    move v6, v15
 
     move-object v15, v5
 

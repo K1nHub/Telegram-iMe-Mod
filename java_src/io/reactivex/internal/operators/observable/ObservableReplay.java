@@ -727,17 +727,17 @@ public final class ObservableReplay<T> extends ConnectableObservable<T> implemen
     public static final class Replay<T> extends ConnectableObservable<T> {
 
         /* renamed from: co */
-        private final ConnectableObservable<T> f458co;
+        private final ConnectableObservable<T> f459co;
         private final Observable<T> observable;
 
         Replay(ConnectableObservable<T> connectableObservable, Observable<T> observable) {
-            this.f458co = connectableObservable;
+            this.f459co = connectableObservable;
             this.observable = observable;
         }
 
         @Override // io.reactivex.observables.ConnectableObservable
         public void connect(Consumer<? super Disposable> consumer) {
-            this.f458co.connect(consumer);
+            this.f459co.connect(consumer);
         }
 
         @Override // io.reactivex.Observable

@@ -59,7 +59,7 @@
 
     if-eqz v1, :cond_0
 
-    mul-float p1, p1, v2
+    mul-float/2addr p1, v2
 
     sub-float/2addr v3, p1
 
@@ -73,7 +73,7 @@
     goto :goto_0
 
     :cond_0
-    mul-float p1, p1, v2
+    mul-float/2addr p1, v2
 
     sub-float/2addr v3, p1
 

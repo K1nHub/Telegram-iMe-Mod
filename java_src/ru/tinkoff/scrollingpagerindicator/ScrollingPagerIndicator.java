@@ -223,10 +223,10 @@ public class ScrollingPagerIndicator extends View {
         updateScaleInIdleState(i);
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:14:0x0039  */
-    /* JADX WARN: Removed duplicated region for block: B:16:0x003d  */
-    /* JADX WARN: Removed duplicated region for block: B:27:0x0073  */
-    /* JADX WARN: Removed duplicated region for block: B:29:0x0077  */
+    /* JADX WARN: Removed duplicated region for block: B:14:0x0037  */
+    /* JADX WARN: Removed duplicated region for block: B:16:0x003b  */
+    /* JADX WARN: Removed duplicated region for block: B:27:0x006f  */
+    /* JADX WARN: Removed duplicated region for block: B:29:0x0073  */
     @Override // android.view.View
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -238,76 +238,76 @@ public class ScrollingPagerIndicator extends View {
             int r0 = r4.orientation
             r1 = 1073741824(0x40000000, float:2.0)
             r2 = -2147483648(0xffffffff80000000, float:-0.0)
-            if (r0 != 0) goto L42
+            if (r0 != 0) goto L40
             boolean r5 = r4.isInEditMode()
-            if (r5 == 0) goto L1a
+            if (r5 == 0) goto L19
             int r5 = r4.visibleDotCount
             int r5 = r5 + (-1)
             int r0 = r4.spaceBetweenDotCenters
             int r5 = r5 * r0
             int r0 = r4.dotSelectedSize
-        L18:
+        L17:
             int r5 = r5 + r0
-            goto L2d
-        L1a:
+            goto L2b
+        L19:
             int r5 = r4.itemCount
             int r0 = r4.visibleDotCount
-            if (r5 < r0) goto L24
+            if (r5 < r0) goto L23
             float r5 = r4.visibleFrameWidth
             int r5 = (int) r5
-            goto L2d
-        L24:
+            goto L2b
+        L23:
             int r5 = r5 + (-1)
             int r0 = r4.spaceBetweenDotCenters
             int r5 = r5 * r0
             int r0 = r4.dotSelectedSize
-            goto L18
-        L2d:
+            goto L17
+        L2b:
             int r0 = android.view.View.MeasureSpec.getMode(r6)
             int r6 = android.view.View.MeasureSpec.getSize(r6)
             int r3 = r4.dotSelectedSize
-            if (r0 == r2) goto L3d
-            if (r0 == r1) goto L7b
+            if (r0 == r2) goto L3b
+            if (r0 == r1) goto L77
             r6 = r3
-            goto L7b
-        L3d:
+            goto L77
+        L3b:
             int r6 = java.lang.Math.min(r3, r6)
-            goto L7b
-        L42:
+            goto L77
+        L40:
             boolean r6 = r4.isInEditMode()
-            if (r6 == 0) goto L54
+            if (r6 == 0) goto L51
             int r6 = r4.visibleDotCount
             int r6 = r6 + (-1)
             int r0 = r4.spaceBetweenDotCenters
             int r6 = r6 * r0
             int r0 = r4.dotSelectedSize
-        L52:
+        L4f:
             int r6 = r6 + r0
-            goto L67
-        L54:
+            goto L63
+        L51:
             int r6 = r4.itemCount
             int r0 = r4.visibleDotCount
-            if (r6 < r0) goto L5e
+            if (r6 < r0) goto L5b
             float r6 = r4.visibleFrameWidth
             int r6 = (int) r6
-            goto L67
-        L5e:
+            goto L63
+        L5b:
             int r6 = r6 + (-1)
             int r0 = r4.spaceBetweenDotCenters
             int r6 = r6 * r0
             int r0 = r4.dotSelectedSize
-            goto L52
-        L67:
+            goto L4f
+        L63:
             int r0 = android.view.View.MeasureSpec.getMode(r5)
             int r5 = android.view.View.MeasureSpec.getSize(r5)
             int r3 = r4.dotSelectedSize
-            if (r0 == r2) goto L77
-            if (r0 == r1) goto L7b
+            if (r0 == r2) goto L73
+            if (r0 == r1) goto L77
             r5 = r3
-            goto L7b
-        L77:
+            goto L77
+        L73:
             int r5 = java.lang.Math.min(r3, r5)
-        L7b:
+        L77:
             r4.setMeasuredDimension(r5, r6)
             return
         */

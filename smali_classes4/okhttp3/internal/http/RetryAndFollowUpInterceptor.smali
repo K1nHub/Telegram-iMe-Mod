@@ -596,7 +596,7 @@
 
     if-nez p2, :cond_1
 
-    const/4 v1, 0x1
+    move v1, v2
 
     :cond_1
     return v1
@@ -812,9 +812,9 @@
 
     move-object v7, v3
 
-    const/4 v6, 0x1
+    move v6, v4
 
-    const/4 v8, 0x0
+    move v8, v5
 
     .line 66
     :goto_0
@@ -956,7 +956,7 @@
 
     move-object v0, v6
 
-    const/4 v6, 0x1
+    move v6, v4
 
     goto :goto_0
 
@@ -991,12 +991,12 @@
 
     if-nez v9, :cond_6
 
-    const/4 v9, 0x1
+    move v9, v4
 
     goto :goto_1
 
     :cond_6
-    const/4 v9, 0x0
+    move v9, v5
 
     :goto_1
     invoke-direct {p0, v6, v1, v0, v9}, Lokhttp3/internal/http/RetryAndFollowUpInterceptor;->recover(Ljava/io/IOException;Lokhttp3/internal/connection/RealCall;Lokhttp3/Request;Z)Z
@@ -1049,7 +1049,7 @@
     :goto_2
     invoke-virtual {v1, v4}, Lokhttp3/internal/connection/RealCall;->exitNetworkInterceptorExchange$okhttp(Z)V
 
-    const/4 v6, 0x0
+    move v6, v5
 
     goto/16 :goto_0
 

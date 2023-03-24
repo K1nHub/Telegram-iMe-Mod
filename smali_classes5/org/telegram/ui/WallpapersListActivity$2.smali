@@ -106,7 +106,7 @@
 .end method
 
 .method private synthetic lambda$onItemClick$2(Landroid/content/DialogInterface;I)V
-    .locals 10
+    .locals 9
 
     .line 499
     iget-object p1, p0, Lorg/telegram/ui/WallpapersListActivity$2;->this$0:Lorg/telegram/ui/WallpapersListActivity;
@@ -156,7 +156,7 @@
 
     aput p2, v0, p2
 
-    const/4 v1, 0x0
+    move v1, p2
 
     .line 505
     :goto_0
@@ -202,9 +202,9 @@
 
     const-wide/16 v7, 0x0
 
-    cmp-long v9, v5, v7
+    cmp-long v5, v5, v7
 
-    if-gez v9, :cond_0
+    if-gez v5, :cond_0
 
     .line 510
     iget-object v4, p0, Lorg/telegram/ui/WallpapersListActivity$2;->this$0:Lorg/telegram/ui/WallpapersListActivity;
@@ -450,7 +450,7 @@
 
     const/4 v3, 0x0
 
-    const/4 v4, 0x0
+    move v4, v3
 
     .line 571
     :goto_0

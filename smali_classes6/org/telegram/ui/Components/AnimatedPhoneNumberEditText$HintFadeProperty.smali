@@ -85,7 +85,7 @@
 
     const/high16 v0, 0x42c80000    # 100.0f
 
-    mul-float p1, p1, v0
+    mul-float/2addr p1, v0
 
     goto :goto_0
 

@@ -421,7 +421,7 @@
 
     int-to-float v2, v2
 
-    mul-float v2, v2, p1
+    mul-float/2addr v2, p1
 
     float-to-int v2, v2
 
@@ -1582,12 +1582,12 @@
     .line 1456
     invoke-direct {p0, p1, v3}, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->setInsetOffsetY(Landroid/view/View;I)V
 
-    const/4 v1, 0x1
+    move v1, v4
 
     goto :goto_1
 
     :cond_5
-    const/4 v1, 0x0
+    move v1, v5
 
     :goto_1
     and-int/lit8 v3, p3, 0x50
@@ -1623,7 +1623,7 @@
     .line 1463
     invoke-direct {p0, p1, v3}, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->setInsetOffsetY(Landroid/view/View;I)V
 
-    const/4 v1, 0x1
+    move v1, v4
 
     :cond_6
     if-nez v1, :cond_7
@@ -1659,12 +1659,12 @@
     .line 1475
     invoke-direct {p0, p1, v3}, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->setInsetOffsetX(Landroid/view/View;I)V
 
-    const/4 v1, 0x1
+    move v1, v4
 
     goto :goto_2
 
     :cond_8
-    const/4 v1, 0x0
+    move v1, v5
 
     :goto_2
     const/4 v3, 0x5
@@ -1931,11 +1931,11 @@
 
     const/4 v7, 0x0
 
-    const/4 v8, 0x0
+    move v8, v6
 
-    const/4 v9, 0x0
+    move v9, v8
 
-    const/4 v10, 0x0
+    move v10, v9
 
     :goto_0
     if-ge v8, v5, :cond_a
@@ -2057,12 +2057,12 @@
 
     if-nez v10, :cond_8
 
-    const/4 v10, 0x1
+    move v10, v14
 
     goto :goto_2
 
     :cond_8
-    const/4 v10, 0x0
+    move v10, v6
 
     :goto_2
     if-eqz v11, :cond_9
@@ -2105,7 +2105,7 @@
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_0
     if-ge v2, v0, :cond_4
@@ -2128,7 +2128,7 @@
 
     invoke-virtual {v5, v3}, Landroidx/coordinatorlayout/widget/DirectedAcyclicGraph;->addNode(Ljava/lang/Object;)V
 
-    const/4 v5, 0x0
+    move v5, v1
 
     :goto_1
     if-ge v5, v0, :cond_3
@@ -2225,7 +2225,7 @@
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_0
     if-ge v2, v0, :cond_2
@@ -2290,7 +2290,7 @@
     goto :goto_0
 
     :cond_2
-    const/4 p1, 0x0
+    move p1, v1
 
     :goto_2
     if-ge p1, v0, :cond_3
@@ -2663,7 +2663,7 @@
 
     const/high16 v2, 0x437f0000    # 255.0f
 
-    mul-float v1, v1, v2
+    mul-float/2addr v1, v2
 
     invoke-static {v1}, Ljava/lang/Math;->round(F)I
 
@@ -2834,7 +2834,7 @@
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_0
     if-ge v2, v0, :cond_1
@@ -3735,7 +3735,7 @@
 
     const/4 v7, 0x0
 
-    const/4 v8, 0x0
+    move v8, v7
 
     :goto_0
     if-ge v8, v3, :cond_f
@@ -3770,7 +3770,7 @@
     goto/16 :goto_7
 
     :cond_0
-    const/4 v11, 0x0
+    move v11, v7
 
     :goto_1
     if-ge v11, v8, :cond_2
@@ -4011,7 +4011,7 @@
     :cond_c
     invoke-virtual {v15, v0, v13, v9}, Landroidx/coordinatorlayout/widget/CoordinatorLayout$Behavior;->onDependentViewRemoved(Landroidx/coordinatorlayout/widget/CoordinatorLayout;Landroid/view/View;Landroid/view/View;)V
 
-    const/4 v13, 0x1
+    move v13, v11
 
     :goto_5
     if-ne v1, v11, :cond_d
@@ -4119,7 +4119,7 @@
     goto :goto_0
 
     :cond_0
-    const/4 v0, 0x0
+    move v0, v1
 
     :goto_0
     if-lez v0, :cond_1
@@ -4351,7 +4351,7 @@
 
     if-ne v10, v2, :cond_0
 
-    const/4 v12, 0x1
+    move v12, v2
 
     goto :goto_0
 
@@ -4404,7 +4404,7 @@
 
     if-eqz v3, :cond_1
 
-    const/16 v19, 0x1
+    move/from16 v19, v2
 
     goto :goto_1
 
@@ -4522,9 +4522,9 @@
 
     move-result v2
 
-    move/from16 v21, v2
+    move v11, v0
 
-    const/4 v11, 0x0
+    move/from16 v21, v2
 
     goto :goto_3
 
@@ -4560,7 +4560,7 @@
     :cond_9
     const/4 v11, 0x0
 
-    const/16 v21, 0x0
+    move/from16 v21, v11
 
     :goto_3
     if-eqz v19, :cond_a
@@ -4826,9 +4826,9 @@
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    move v2, v1
 
-    const/4 v3, 0x0
+    move v3, v2
 
     :goto_0
     if-ge v2, v0, :cond_3
@@ -4919,9 +4919,9 @@
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    move v2, v1
 
-    const/4 v3, 0x0
+    move v3, v2
 
     :goto_0
     if-ge v2, v0, :cond_3
@@ -5025,13 +5025,13 @@
 
     const/4 v10, 0x0
 
-    const/4 v0, 0x0
+    move v0, v10
 
-    const/4 v11, 0x0
+    move v11, v0
 
-    const/4 v12, 0x0
+    move v12, v11
 
-    const/4 v13, 0x0
+    move v13, v12
 
     :goto_0
     const/4 v14, 0x1
@@ -5154,7 +5154,7 @@
     :goto_2
     move v13, v0
 
-    const/4 v0, 0x1
+    move v0, v14
 
     :cond_4
     :goto_3
@@ -5238,13 +5238,13 @@
 
     const/4 v12, 0x0
 
-    const/4 v0, 0x0
+    move v0, v12
 
-    const/4 v13, 0x0
+    move v13, v0
 
-    const/4 v14, 0x0
+    move v14, v13
 
-    const/4 v15, 0x0
+    move v15, v14
 
     :goto_0
     const/4 v9, 0x1
@@ -5379,7 +5379,7 @@
     :goto_2
     move v15, v0
 
-    const/4 v0, 0x1
+    move v0, v1
 
     :cond_4
     :goto_3
@@ -5388,7 +5388,7 @@
     goto :goto_0
 
     :cond_5
-    const/4 v1, 0x1
+    move v1, v9
 
     .line 1903
     aget v2, p7, v12
@@ -5683,9 +5683,9 @@
 
     const/4 v9, 0x0
 
-    const/4 v10, 0x0
+    move v10, v9
 
-    const/4 v11, 0x0
+    move v11, v10
 
     :goto_0
     if-ge v10, v8, :cond_2
@@ -5874,7 +5874,7 @@
     goto :goto_0
 
     :cond_0
-    const/4 v3, 0x0
+    move v3, v5
 
     .line 560
     :goto_0
@@ -5903,7 +5903,7 @@
     goto :goto_1
 
     :cond_1
-    const/4 v6, 0x0
+    move v6, v5
 
     .line 568
     :goto_1
@@ -6175,7 +6175,7 @@
     goto :goto_0
 
     :cond_3
-    const/4 v0, 0x0
+    move v0, v1
 
     :goto_0
     invoke-virtual {p1, v0, v1}, Landroid/graphics/drawable/Drawable;->setVisible(ZZ)Z
@@ -6246,7 +6246,7 @@
     goto :goto_0
 
     :cond_0
-    const/4 p1, 0x0
+    move p1, v0
 
     .line 357
     :goto_0
@@ -6297,12 +6297,12 @@
 
     if-lez v2, :cond_0
 
-    const/4 v2, 0x1
+    move v2, v0
 
     goto :goto_0
 
     :cond_0
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_0
     iput-boolean v2, p0, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->mDrawStatusBarBackground:Z
@@ -6319,7 +6319,7 @@
     goto :goto_1
 
     :cond_1
-    const/4 v0, 0x0
+    move v0, v1
 
     :goto_1
     invoke-virtual {p0, v0}, Landroid/view/ViewGroup;->setWillNotDraw(Z)V

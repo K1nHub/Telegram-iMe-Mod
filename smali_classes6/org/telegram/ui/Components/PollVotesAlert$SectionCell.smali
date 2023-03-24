@@ -120,12 +120,12 @@
 
     if-eqz v6, :cond_0
 
-    const/4 v6, 0x5
+    move v6, v7
 
     goto :goto_0
 
     :cond_0
-    const/4 v6, 0x3
+    move v6, v8
 
     :goto_0
     const/16 v9, 0x10
@@ -164,12 +164,12 @@
 
     if-eqz v3, :cond_1
 
-    const/4 v3, 0x5
+    move v3, v7
 
     goto :goto_1
 
     :cond_1
-    const/4 v3, 0x3
+    move v3, v8
 
     :goto_1
     or-int/2addr v3, v9
@@ -214,12 +214,12 @@
 
     if-eqz v2, :cond_2
 
-    const/4 v2, 0x3
+    move v2, v8
 
     goto :goto_2
 
     :cond_2
-    const/4 v2, 0x5
+    move v2, v7
 
     :goto_2
     invoke-virtual {v1, v2}, Lorg/telegram/ui/Components/AnimatedTextView;->setGravity(I)V
@@ -244,12 +244,12 @@
 
     if-eqz v2, :cond_3
 
-    const/4 v3, 0x5
+    move v3, v7
 
     goto :goto_3
 
     :cond_3
-    const/4 v3, 0x3
+    move v3, v8
 
     :goto_3
     or-int/lit8 v12, v3, 0x30
@@ -258,24 +258,24 @@
 
     if-eqz v2, :cond_4
 
-    const/4 v13, 0x0
+    move v13, v3
 
     goto :goto_4
 
     :cond_4
-    const/16 v13, 0x10
+    move v13, v9
 
     :goto_4
     const/4 v14, 0x0
 
     if-eqz v2, :cond_5
 
-    const/16 v15, 0x10
+    move v15, v9
 
     goto :goto_5
 
     :cond_5
-    const/4 v15, 0x0
+    move v15, v3
 
     :goto_5
     const/16 v16, 0x0
@@ -297,12 +297,12 @@
 
     if-eqz v2, :cond_6
 
-    const/4 v2, 0x5
+    move v2, v7
 
     goto :goto_6
 
     :cond_6
-    const/4 v2, 0x3
+    move v2, v8
 
     :goto_6
     or-int/lit8 v11, v2, 0x30
@@ -332,7 +332,7 @@
 
     if-eqz v2, :cond_7
 
-    const/4 v7, 0x3
+    move v7, v8
 
     :cond_7
     or-int/lit8 v11, v7, 0x30

@@ -12,9 +12,13 @@
 
 .field public final synthetic f$2:Ljava/lang/Long;
 
+.field public final synthetic f$3:Lorg/telegram/ui/ChannelCreateActivity;
+
+.field public final synthetic f$4:Lorg/telegram/ui/ActionBar/BaseFragment;
+
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/DialogsActivity;Lorg/telegram/ui/ActionBar/AlertDialog;Ljava/lang/Long;)V
+.method public synthetic constructor <init>(Lorg/telegram/ui/DialogsActivity;Lorg/telegram/ui/ActionBar/AlertDialog;Ljava/lang/Long;Lorg/telegram/ui/ChannelCreateActivity;Lorg/telegram/ui/ActionBar/BaseFragment;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -25,13 +29,17 @@
 
     iput-object p3, p0, Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda127;->f$2:Ljava/lang/Long;
 
+    iput-object p4, p0, Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda127;->f$3:Lorg/telegram/ui/ChannelCreateActivity;
+
+    iput-object p5, p0, Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda127;->f$4:Lorg/telegram/ui/ActionBar/BaseFragment;
+
     return-void
 .end method
 
 
 # virtual methods
 .method public final run(Ljava/lang/Object;)V
-    .locals 3
+    .locals 6
 
     iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda127;->f$0:Lorg/telegram/ui/DialogsActivity;
 
@@ -39,9 +47,15 @@
 
     iget-object v2, p0, Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda127;->f$2:Ljava/lang/Long;
 
-    check-cast p1, Ljava/lang/Runnable;
+    iget-object v3, p0, Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda127;->f$3:Lorg/telegram/ui/ChannelCreateActivity;
 
-    invoke-static {v0, v1, v2, p1}, Lorg/telegram/ui/DialogsActivity;->$r8$lambda$Sff8-Iz0cT1Es1gPPYpwYyF3Hao(Lorg/telegram/ui/DialogsActivity;Lorg/telegram/ui/ActionBar/AlertDialog;Ljava/lang/Long;Ljava/lang/Runnable;)V
+    iget-object v4, p0, Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda127;->f$4:Lorg/telegram/ui/ActionBar/BaseFragment;
+
+    move-object v5, p1
+
+    check-cast v5, Ljava/lang/Runnable;
+
+    invoke-static/range {v0 .. v5}, Lorg/telegram/ui/DialogsActivity;->$r8$lambda$rZK-vK6iSt326t-p7uNUD3cgrPM(Lorg/telegram/ui/DialogsActivity;Lorg/telegram/ui/ActionBar/AlertDialog;Ljava/lang/Long;Lorg/telegram/ui/ChannelCreateActivity;Lorg/telegram/ui/ActionBar/BaseFragment;Ljava/lang/Runnable;)V
 
     return-void
 .end method

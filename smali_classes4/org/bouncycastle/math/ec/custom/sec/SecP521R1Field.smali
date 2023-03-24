@@ -184,7 +184,7 @@
 
     move-result p0
 
-    mul-int v8, v8, v0
+    mul-int/2addr v8, v0
 
     add-int/2addr p0, v8
 
@@ -220,7 +220,7 @@
 
     move-result p0
 
-    mul-int v0, v0, v0
+    mul-int/2addr v0, v0
 
     add-int/2addr p0, v0
 

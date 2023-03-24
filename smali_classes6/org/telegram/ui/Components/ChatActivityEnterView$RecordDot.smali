@@ -180,7 +180,7 @@
 
     iget v2, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordDot;->alpha:F
 
-    mul-float v2, v2, v1
+    mul-float/2addr v2, v1
 
     float-to-int v2, v2
 
@@ -196,7 +196,7 @@
 
     iget v2, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordDot;->alpha:F
 
-    mul-float v2, v2, v1
+    mul-float/2addr v2, v1
 
     float-to-int v1, v2
 

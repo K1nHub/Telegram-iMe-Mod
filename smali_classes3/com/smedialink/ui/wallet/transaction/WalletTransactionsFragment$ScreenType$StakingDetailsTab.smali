@@ -30,13 +30,13 @@
 
     const/4 v0, 0x0
 
-    .line 252
+    .line 255
     invoke-direct {p0, v0}, Lcom/smedialink/ui/wallet/transaction/WalletTransactionsFragment$ScreenType;-><init>(Lkotlin/jvm/internal/DefaultConstructorMarker;)V
 
-    .line 250
+    .line 253
     iput-object p1, p0, Lcom/smedialink/ui/wallet/transaction/WalletTransactionsFragment$ScreenType$StakingDetailsTab;->stakingDetails:Lcom/smedialink/model/staking/StakingDetailsItem;
 
-    .line 251
+    .line 254
     iput-object p2, p0, Lcom/smedialink/ui/wallet/transaction/WalletTransactionsFragment$ScreenType$StakingDetailsTab;->operationsType:Lcom/smedialink/storage/domain/model/staking/StakingOperationType;
 
     return-void
@@ -93,7 +93,7 @@
 .method public final getOperationsType()Lcom/smedialink/storage/domain/model/staking/StakingOperationType;
     .locals 1
 
-    .line 251
+    .line 254
     iget-object v0, p0, Lcom/smedialink/ui/wallet/transaction/WalletTransactionsFragment$ScreenType$StakingDetailsTab;->operationsType:Lcom/smedialink/storage/domain/model/staking/StakingOperationType;
 
     return-object v0
@@ -102,7 +102,7 @@
 .method public final getStakingDetails()Lcom/smedialink/model/staking/StakingDetailsItem;
     .locals 1
 
-    .line 250
+    .line 253
     iget-object v0, p0, Lcom/smedialink/ui/wallet/transaction/WalletTransactionsFragment$ScreenType$StakingDetailsTab;->stakingDetails:Lcom/smedialink/model/staking/StakingDetailsItem;
 
     return-object v0

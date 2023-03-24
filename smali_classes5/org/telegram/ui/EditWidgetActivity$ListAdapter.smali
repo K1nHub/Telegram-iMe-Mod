@@ -262,7 +262,7 @@
     goto :goto_0
 
     :cond_1
-    const/4 v1, 0x0
+    move v1, v3
 
     :goto_0
     invoke-virtual {p1, v0, v2, v2, v1}, Lorg/telegram/ui/Cells/GroupCreateUserCell;->setObject(Lorg/telegram/tgnet/TLObject;Ljava/lang/CharSequence;Ljava/lang/CharSequence;Z)V
@@ -301,7 +301,7 @@
     goto :goto_1
 
     :cond_3
-    const/4 v1, 0x0
+    move v1, v3
 
     :goto_1
     invoke-virtual {p1, v0, v2, v2, v1}, Lorg/telegram/ui/Cells/GroupCreateUserCell;->setObject(Lorg/telegram/tgnet/TLObject;Ljava/lang/CharSequence;Ljava/lang/CharSequence;Z)V
@@ -402,7 +402,7 @@
     goto :goto_2
 
     :cond_5
-    const/4 v1, 0x0
+    move v1, v3
 
     :goto_2
     invoke-virtual {p1, p2, v2, v1}, Lorg/telegram/ui/Cells/TextCell;->setTextAndIcon(Ljava/lang/String;Landroid/graphics/drawable/Drawable;Z)V

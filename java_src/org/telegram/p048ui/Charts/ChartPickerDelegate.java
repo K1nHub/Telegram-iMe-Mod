@@ -79,7 +79,7 @@ public class ChartPickerDelegate {
     public class CapturesData {
 
         /* renamed from: a */
-        ValueAnimator f1670a;
+        ValueAnimator f1671a;
         public float aValue = BitmapDescriptorFactory.HUE_RED;
         public int capturedX;
         public float end;
@@ -94,16 +94,16 @@ public class ChartPickerDelegate {
 
         public void captured() {
             ValueAnimator ofFloat = ValueAnimator.ofFloat(BitmapDescriptorFactory.HUE_RED, 1.0f);
-            this.f1670a = ofFloat;
+            this.f1671a = ofFloat;
             ofFloat.setDuration(600L);
-            this.f1670a.setInterpolator(BaseChartView.INTERPOLATOR);
-            this.f1670a.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Charts.ChartPickerDelegate$CapturesData$$ExternalSyntheticLambda0
+            this.f1671a.setInterpolator(BaseChartView.INTERPOLATOR);
+            this.f1671a.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Charts.ChartPickerDelegate$CapturesData$$ExternalSyntheticLambda0
                 @Override // android.animation.ValueAnimator.AnimatorUpdateListener
                 public final void onAnimationUpdate(ValueAnimator valueAnimator) {
                     ChartPickerDelegate.CapturesData.this.lambda$captured$0(valueAnimator);
                 }
             });
-            this.f1670a.start();
+            this.f1671a.start();
         }
 
         /* JADX INFO: Access modifiers changed from: private */
@@ -113,7 +113,7 @@ public class ChartPickerDelegate {
         }
 
         public void uncapture() {
-            ValueAnimator valueAnimator = this.f1670a;
+            ValueAnimator valueAnimator = this.f1671a;
             if (valueAnimator != null) {
                 valueAnimator.cancel();
             }
@@ -314,7 +314,7 @@ public class ChartPickerDelegate {
                     float f9 = f3 + f7;
                     if (f8 < BitmapDescriptorFactory.HUE_RED) {
                         f = f6;
-                        f2 = BitmapDescriptorFactory.HUE_RED;
+                        f2 = 0.0f;
                     } else if (f9 > 1.0f) {
                         f2 = 1.0f - f6;
                         f = 1.0f;

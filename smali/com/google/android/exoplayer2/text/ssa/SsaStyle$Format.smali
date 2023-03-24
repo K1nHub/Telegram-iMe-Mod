@@ -103,27 +103,27 @@
 
     const/4 v3, -0x1
 
-    const/4 v4, 0x0
+    move v4, v2
 
-    const/4 v6, -0x1
+    move v6, v3
 
-    const/4 v7, -0x1
+    move v7, v6
 
-    const/4 v8, -0x1
+    move v8, v7
 
-    const/4 v9, -0x1
+    move v9, v8
 
-    const/4 v10, -0x1
+    move v10, v9
 
-    const/4 v11, -0x1
+    move v11, v10
 
-    const/4 v12, -0x1
+    move v12, v11
 
-    const/4 v13, -0x1
+    move v13, v12
 
-    const/4 v14, -0x1
+    move v14, v13
 
-    const/4 v15, -0x1
+    move v15, v14
 
     .line 375
     :goto_0
@@ -151,7 +151,7 @@
     sparse-switch v16, :sswitch_data_0
 
     :goto_1
-    const/4 v0, -0x1
+    move v0, v3
 
     goto/16 :goto_2
 
@@ -311,7 +311,7 @@
     goto :goto_1
 
     :cond_9
-    const/4 v0, 0x0
+    move v0, v2
 
     :goto_2
     packed-switch v0, :pswitch_data_0

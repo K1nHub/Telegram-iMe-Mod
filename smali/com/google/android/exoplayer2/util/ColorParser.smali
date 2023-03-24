@@ -1812,7 +1812,7 @@
 
     move-result v0
 
-    mul-float v0, v0, p1
+    mul-float/2addr v0, p1
 
     float-to-int p1, v0
 

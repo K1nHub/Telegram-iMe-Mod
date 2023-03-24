@@ -27,14 +27,14 @@
 .method static constructor <clinit>()V
     .locals 1
 
-    .line 34
+    .line 35
     new-instance v0, Lcom/google/protobuf/ExtensionSchemaLite;
 
     invoke-direct {v0}, Lcom/google/protobuf/ExtensionSchemaLite;-><init>()V
 
     sput-object v0, Lcom/google/protobuf/ExtensionSchemas;->LITE_SCHEMA:Lcom/google/protobuf/ExtensionSchema;
 
-    .line 35
+    .line 36
     invoke-static {}, Lcom/google/protobuf/ExtensionSchemas;->loadSchemaForFullRuntime()Lcom/google/protobuf/ExtensionSchema;
 
     move-result-object v0
@@ -54,14 +54,14 @@
         }
     .end annotation
 
-    .line 51
+    .line 52
     sget-object v0, Lcom/google/protobuf/ExtensionSchemas;->FULL_SCHEMA:Lcom/google/protobuf/ExtensionSchema;
 
     if-eqz v0, :cond_0
 
     return-object v0
 
-    .line 52
+    .line 53
     :cond_0
     new-instance v0, Ljava/lang/IllegalStateException;
 
@@ -82,7 +82,7 @@
         }
     .end annotation
 
-    .line 47
+    .line 48
     sget-object v0, Lcom/google/protobuf/ExtensionSchemas;->LITE_SCHEMA:Lcom/google/protobuf/ExtensionSchema;
 
     return-object v0
@@ -101,7 +101,7 @@
     :try_start_0
     const-string v0, "com.google.protobuf.ExtensionSchemaFull"
 
-    .line 39
+    .line 40
     invoke-static {v0}, Ljava/lang/Class;->forName(Ljava/lang/String;)Ljava/lang/Class;
 
     move-result-object v0
@@ -110,7 +110,7 @@
 
     new-array v2, v1, [Ljava/lang/Class;
 
-    .line 40
+    .line 41
     invoke-virtual {v0, v2}, Ljava/lang/Class;->getDeclaredConstructor([Ljava/lang/Class;)Ljava/lang/reflect/Constructor;
 
     move-result-object v0

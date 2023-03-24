@@ -119,7 +119,7 @@
 .end method
 
 .method private getLogFilePath(J)Ljava/lang/String;
-    .locals 11
+    .locals 10
 
     .line 199
     invoke-static {}, Lorg/telegram/ui/Components/voip/VoIPHelper;->getLogsDir()Ljava/io/File;
@@ -204,9 +204,9 @@
 
     move-result-wide v8
 
-    cmp-long v10, v6, v8
+    cmp-long v6, v6, v8
 
-    if-gez v10, :cond_0
+    if-gez v6, :cond_0
 
     move-object v1, v5
 
@@ -397,7 +397,7 @@
 .end method
 
 .method private handleStateChange(I)V
-    .locals 5
+    .locals 4
 
     const/4 v0, 0x3
 
@@ -408,9 +408,9 @@
 
     const-wide/16 v2, 0x0
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-nez v4, :cond_0
+    if-nez v0, :cond_0
 
     .line 118
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
@@ -540,16 +540,16 @@
 .end method
 
 .method protected ensureNativeInstance()V
-    .locals 5
+    .locals 4
 
     .line 106
     iget-wide v0, p0, Lorg/telegram/messenger/voip/VoIPController;->nativeInst:J
 
     const-wide/16 v2, 0x0
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-eqz v4, :cond_0
+    if-eqz v0, :cond_0
 
     return-void
 
@@ -779,11 +779,17 @@
     goto :goto_0
 
     :catchall_0
-    :cond_0
-    const/4 v2, 0x0
+    move v2, v3
 
     :catchall_1
-    const/4 v4, 0x0
+    move v4, v3
+
+    goto :goto_0
+
+    :cond_0
+    move v2, v3
+
+    move v4, v2
 
     .line 157
     :goto_0
@@ -817,13 +823,13 @@
     goto :goto_1
 
     :cond_1
-    const/4 v9, 0x0
+    move v9, v3
 
     goto :goto_2
 
     :cond_2
     :goto_1
-    const/4 v9, 0x1
+    move v9, v8
 
     :goto_2
     if-eqz v4, :cond_4
@@ -840,13 +846,13 @@
     goto :goto_3
 
     :cond_3
-    const/4 v10, 0x0
+    move v10, v3
 
     goto :goto_4
 
     :cond_4
     :goto_3
-    const/4 v10, 0x1
+    move v10, v8
 
     :goto_4
     const/4 v11, 0x1

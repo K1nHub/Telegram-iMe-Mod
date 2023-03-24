@@ -197,7 +197,7 @@
 
     move-result v3
 
-    mul-int v2, v2, v3
+    mul-int/2addr v2, v3
 
     add-int/2addr v1, v2
 
@@ -245,7 +245,7 @@
 
     move-result v0
 
-    mul-int v2, v2, v0
+    mul-int/2addr v2, v0
 
     const/16 v0, 0x14
 
@@ -267,15 +267,15 @@
 
     const v5, 0x404ccccd    # 3.2f
 
-    mul-float v4, v4, v5
-
-    const/4 v5, 0x0
+    mul-float/2addr v4, v5
 
     cmpg-float v0, v0, v4
 
+    const/4 v4, 0x0
+
     if-gez v0, :cond_3
 
-    const/4 v2, 0x0
+    move v2, v4
 
     goto :goto_1
 
@@ -327,12 +327,12 @@
 
     move-result-object v0
 
-    invoke-virtual {v0, v5, v2, v5, v5}, Landroid/view/ViewGroup;->setPadding(IIII)V
+    invoke-virtual {v0, v4, v2, v4, v4}, Landroid/view/ViewGroup;->setPadding(IIII)V
 
     .line 169
     iget-object v0, p0, Lorg/telegram/ui/Components/AdminLogFilterAlert$1;->this$0:Lorg/telegram/ui/Components/AdminLogFilterAlert;
 
-    invoke-static {v0, v5}, Lorg/telegram/ui/Components/AdminLogFilterAlert;->access$602(Lorg/telegram/ui/Components/AdminLogFilterAlert;Z)Z
+    invoke-static {v0, v4}, Lorg/telegram/ui/Components/AdminLogFilterAlert;->access$602(Lorg/telegram/ui/Components/AdminLogFilterAlert;Z)Z
 
     .line 171
     :cond_6

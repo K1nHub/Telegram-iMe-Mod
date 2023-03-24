@@ -32,16 +32,16 @@
 .method public constructor <init>(Lorg/telegram/tgnet/TLRPC$TL_groupCallParticipant;ZZ)V
     .locals 0
 
-    .line 2110
+    .line 2114
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 2111
+    .line 2115
     iput-object p1, p0, Lorg/telegram/messenger/ChatObject$VideoParticipant;->participant:Lorg/telegram/tgnet/TLRPC$TL_groupCallParticipant;
 
-    .line 2112
+    .line 2116
     iput-boolean p2, p0, Lorg/telegram/messenger/ChatObject$VideoParticipant;->presentation:Z
 
-    .line 2113
+    .line 2117
     iput-boolean p3, p0, Lorg/telegram/messenger/ChatObject$VideoParticipant;->hasSame:Z
 
     return-void
@@ -50,17 +50,17 @@
 .method private setAspectRatio(FLorg/telegram/messenger/ChatObject$Call;)V
     .locals 1
 
-    .line 2135
+    .line 2139
     iget v0, p0, Lorg/telegram/messenger/ChatObject$VideoParticipant;->aspectRatio:F
 
     cmpl-float v0, v0, p1
 
     if-eqz v0, :cond_0
 
-    .line 2136
+    .line 2140
     iput p1, p0, Lorg/telegram/messenger/ChatObject$VideoParticipant;->aspectRatio:F
 
-    .line 2137
+    .line 2141
     sget-boolean p1, Lorg/telegram/ui/GroupCallActivity;->isLandscapeMode:Z
 
     if-nez p1, :cond_0
@@ -77,7 +77,7 @@
 
     if-ne p1, v0, :cond_0
 
-    .line 2138
+    .line 2142
     invoke-virtual {p2}, Lorg/telegram/messenger/ChatObject$Call;->updateVisibleParticipants()V
 
     :cond_0
@@ -100,7 +100,7 @@
 
     if-eqz p1, :cond_3
 
-    .line 2121
+    .line 2125
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     move-result-object v2
@@ -113,11 +113,11 @@
 
     goto :goto_1
 
-    .line 2124
+    .line 2128
     :cond_1
     check-cast p1, Lorg/telegram/messenger/ChatObject$VideoParticipant;
 
-    .line 2125
+    .line 2129
     iget-boolean v2, p0, Lorg/telegram/messenger/ChatObject$VideoParticipant;->presentation:Z
 
     iget-boolean v3, p1, Lorg/telegram/messenger/ChatObject$VideoParticipant;->presentation:Z
@@ -147,7 +147,7 @@
     goto :goto_0
 
     :cond_2
-    const/4 v0, 0x0
+    move v0, v1
 
     :goto_0
     return v0
@@ -160,10 +160,10 @@
 .method public setAspectRatio(IILorg/telegram/messenger/ChatObject$Call;)V
     .locals 0
 
-    .line 2129
+    .line 2133
     iput p1, p0, Lorg/telegram/messenger/ChatObject$VideoParticipant;->aspectRatioFromWidth:I
 
-    .line 2130
+    .line 2134
     iput p2, p0, Lorg/telegram/messenger/ChatObject$VideoParticipant;->aspectRatioFromHeight:I
 
     int-to-float p1, p1
@@ -172,7 +172,7 @@
 
     div-float/2addr p1, p2
 
-    .line 2131
+    .line 2135
     invoke-direct {p0, p1, p3}, Lorg/telegram/messenger/ChatObject$VideoParticipant;->setAspectRatio(FLorg/telegram/messenger/ChatObject$Call;)V
 
     return-void

@@ -20,7 +20,7 @@
 
     const/4 v0, 0x0
 
-    .line 146
+    .line 147
     invoke-direct {p0, v0}, Lcom/google/protobuf/ListFieldSchema;-><init>(Lcom/google/protobuf/ListFieldSchema$1;)V
 
     return-void
@@ -29,7 +29,7 @@
 .method synthetic constructor <init>(Lcom/google/protobuf/ListFieldSchema$1;)V
     .locals 0
 
-    .line 146
+    .line 147
     invoke-direct {p0}, Lcom/google/protobuf/ListFieldSchema$ListFieldSchemaLite;-><init>()V
 
     return-void
@@ -49,7 +49,7 @@
         }
     .end annotation
 
-    .line 187
+    .line 188
     invoke-static {p0, p1, p2}, Lcom/google/protobuf/UnsafeUtil;->getObject(Ljava/lang/Object;J)Ljava/lang/Object;
 
     move-result-object p0
@@ -64,12 +64,12 @@
 .method makeImmutableListAt(Ljava/lang/Object;J)V
     .locals 0
 
-    .line 163
+    .line 164
     invoke-static {p1, p2, p3}, Lcom/google/protobuf/ListFieldSchema$ListFieldSchemaLite;->getProtobufList(Ljava/lang/Object;J)Lcom/google/protobuf/Internal$ProtobufList;
 
     move-result-object p1
 
-    .line 164
+    .line 165
     invoke-interface {p1}, Lcom/google/protobuf/Internal$ProtobufList;->makeImmutable()V
 
     return-void
@@ -88,22 +88,22 @@
         }
     .end annotation
 
-    .line 169
+    .line 170
     invoke-static {p1, p3, p4}, Lcom/google/protobuf/ListFieldSchema$ListFieldSchemaLite;->getProtobufList(Ljava/lang/Object;J)Lcom/google/protobuf/Internal$ProtobufList;
 
     move-result-object v0
 
-    .line 170
+    .line 171
     invoke-static {p2, p3, p4}, Lcom/google/protobuf/ListFieldSchema$ListFieldSchemaLite;->getProtobufList(Ljava/lang/Object;J)Lcom/google/protobuf/Internal$ProtobufList;
 
     move-result-object p2
 
-    .line 172
+    .line 173
     invoke-interface {v0}, Ljava/util/List;->size()I
 
     move-result v1
 
-    .line 173
+    .line 174
     invoke-interface {p2}, Ljava/util/List;->size()I
 
     move-result v2
@@ -112,7 +112,7 @@
 
     if-lez v2, :cond_1
 
-    .line 175
+    .line 176
     invoke-interface {v0}, Lcom/google/protobuf/Internal$ProtobufList;->isModifiable()Z
 
     move-result v3
@@ -121,12 +121,12 @@
 
     add-int/2addr v2, v1
 
-    .line 176
+    .line 177
     invoke-interface {v0, v2}, Lcom/google/protobuf/Internal$ProtobufList;->mutableCopyWithCapacity(I)Lcom/google/protobuf/Internal$ProtobufList;
 
     move-result-object v0
 
-    .line 178
+    .line 179
     :cond_0
     invoke-interface {v0, p2}, Ljava/util/List;->addAll(Ljava/util/Collection;)Z
 
@@ -135,7 +135,7 @@
 
     move-object p2, v0
 
-    .line 182
+    .line 183
     :cond_2
     invoke-static {p1, p3, p4, p2}, Lcom/google/protobuf/UnsafeUtil;->putObject(Ljava/lang/Object;JLjava/lang/Object;)V
 
@@ -158,19 +158,19 @@
         }
     .end annotation
 
-    .line 150
+    .line 151
     invoke-static {p1, p2, p3}, Lcom/google/protobuf/ListFieldSchema$ListFieldSchemaLite;->getProtobufList(Ljava/lang/Object;J)Lcom/google/protobuf/Internal$ProtobufList;
 
     move-result-object v0
 
-    .line 151
+    .line 152
     invoke-interface {v0}, Lcom/google/protobuf/Internal$ProtobufList;->isModifiable()Z
 
     move-result v1
 
     if-nez v1, :cond_1
 
-    .line 152
+    .line 153
     invoke-interface {v0}, Ljava/util/List;->size()I
 
     move-result v1
@@ -184,13 +184,13 @@
     :cond_0
     mul-int/lit8 v1, v1, 0x2
 
-    .line 154
+    .line 155
     :goto_0
     invoke-interface {v0, v1}, Lcom/google/protobuf/Internal$ProtobufList;->mutableCopyWithCapacity(I)Lcom/google/protobuf/Internal$ProtobufList;
 
     move-result-object v0
 
-    .line 156
+    .line 157
     invoke-static {p1, p2, p3, v0}, Lcom/google/protobuf/UnsafeUtil;->putObject(Ljava/lang/Object;JLjava/lang/Object;)V
 
     :cond_1

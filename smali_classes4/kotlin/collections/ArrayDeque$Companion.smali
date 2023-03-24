@@ -61,7 +61,7 @@
     goto :goto_0
 
     :cond_1
-    const p1, 0x7ffffff7
+    move p1, v0
 
     :cond_2
     :goto_0

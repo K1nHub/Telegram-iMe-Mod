@@ -151,12 +151,12 @@
 
     if-ne p2, v1, :cond_1
 
-    const/4 v1, 0x1
+    move v1, v2
 
     goto :goto_1
 
     :cond_1
-    const/4 v1, 0x0
+    move v1, v3
 
     :goto_1
     if-nez p2, :cond_2
@@ -164,7 +164,7 @@
     goto :goto_2
 
     :cond_2
-    const/4 v2, 0x0
+    move v2, v3
 
     :goto_2
     invoke-virtual {p1, v0, v1, v2}, Lorg/telegram/ui/Cells/ThemesHorizontalListCell$InnerThemeView;->setTheme(Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;ZZ)V

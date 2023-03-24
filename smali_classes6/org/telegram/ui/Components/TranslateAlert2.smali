@@ -1665,7 +1665,7 @@
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    move v2, v0
 
     .line 285
     :goto_0
@@ -1739,7 +1739,7 @@
 
     if-ltz v1, :cond_2
 
-    const/4 v0, 0x1
+    move v0, v4
 
     :cond_2
     return v0
@@ -2069,12 +2069,12 @@
 
     if-nez v7, :cond_2
 
-    const/4 v7, 0x1
+    move v7, v4
 
     goto :goto_0
 
     :cond_2
-    const/4 v7, 0x0
+    move v7, v2
 
     :goto_0
     aput-boolean v7, p1, v2
@@ -2148,7 +2148,7 @@
 
     if-eqz p1, :cond_8
 
-    const/4 v2, 0x1
+    move v2, v4
 
     :cond_8
     if-eqz v2, :cond_9
@@ -2184,7 +2184,7 @@
     :cond_0
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    move v1, v0
 
     .line 355
     :goto_0
@@ -2361,7 +2361,7 @@
 
     move-result-object v2
 
-    const/4 v4, 0x0
+    move v4, v0
 
     .line 384
     :goto_2
@@ -2433,7 +2433,7 @@
     :cond_6
     const/4 v8, -0x1
 
-    const/4 v9, 0x0
+    move v9, v0
 
     .line 397
     :goto_3
@@ -2500,7 +2500,7 @@
     goto :goto_7
 
     :cond_a
-    const/4 v7, 0x0
+    move v7, v0
 
     .line 413
     :goto_5
@@ -2543,7 +2543,7 @@
 
     if-eqz v8, :cond_b
 
-    const/4 v7, 0x1
+    move v7, v3
 
     goto :goto_6
 
@@ -2553,7 +2553,7 @@
     goto :goto_5
 
     :cond_c
-    const/4 v7, 0x0
+    move v7, v0
 
     :goto_6
     if-eqz v7, :cond_d

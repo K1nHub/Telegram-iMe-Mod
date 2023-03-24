@@ -127,9 +127,9 @@
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    move v2, v1
 
-    const/4 v3, 0x0
+    move v3, v2
 
     :goto_0
     if-ge v2, v0, :cond_1
@@ -173,9 +173,9 @@
 
     invoke-virtual {v2, v3}, Ljava/util/ArrayList;->ensureCapacity(I)V
 
-    const/4 v2, 0x0
+    move v2, v1
 
-    const/4 v3, 0x0
+    move v3, v2
 
     :goto_1
     if-ge v2, v0, :cond_6
@@ -218,7 +218,7 @@
 
     add-int/2addr v6, v7
 
-    const/4 v7, 0x0
+    move v7, v1
 
     .line 243
     :goto_2
@@ -274,7 +274,7 @@
     goto :goto_4
 
     :cond_4
-    const/4 v11, 0x0
+    move v11, v1
 
     .line 253
     :goto_4
@@ -437,7 +437,7 @@
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_0
     if-ge v2, v0, :cond_1
@@ -706,7 +706,7 @@
 .end method
 
 .method postFromTraversal(Landroidx/recyclerview/widget/RecyclerView;II)V
-    .locals 5
+    .locals 4
 
     .line 180
     invoke-virtual {p1}, Landroidx/recyclerview/widget/RecyclerView;->isAttachedToWindow()Z
@@ -720,9 +720,9 @@
 
     const-wide/16 v2, 0x0
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-nez v4, :cond_0
+    if-nez v0, :cond_0
 
     .line 185
     invoke-virtual {p1}, Landroidx/recyclerview/widget/RecyclerView;->getNanoTime()J

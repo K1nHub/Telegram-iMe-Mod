@@ -68,36 +68,36 @@
 .method public constructor <init>(Lorg/telegram/ui/ChatActivity;Landroid/content/Context;)V
     .locals 1
 
-    .line 31251
+    .line 31279
     iput-object p1, p0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->this$0:Lorg/telegram/ui/ChatActivity;
 
     invoke-direct {p0}, Lorg/telegram/ui/Components/RecyclerAnimationScrollHelper$AnimatableAdapter;-><init>()V
 
     const/4 v0, -0x5
 
-    .line 31241
+    .line 31269
     iput v0, p0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->botInfoRow:I
 
-    .line 31242
+    .line 31270
     iput v0, p0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->botInfoEmptyRow:I
 
-    .line 31243
+    .line 31271
     iput v0, p0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->loadingUpRow:I
 
-    .line 31244
+    .line 31272
     iput v0, p0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->loadingDownRow:I
 
-    .line 31249
+    .line 31277
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->frozenMessages:Ljava/util/ArrayList;
 
-    .line 31252
+    .line 31280
     iput-object p2, p0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->mContext:Landroid/content/Context;
 
-    .line 31253
+    .line 31281
     iget-object p1, p1, Lorg/telegram/ui/ChatActivity;->currentUser:Lorg/telegram/tgnet/TLRPC$User;
 
     const/4 p2, 0x1
@@ -108,7 +108,7 @@
 
     if-eqz p1, :cond_0
 
-    const/4 p1, 0x1
+    move p1, p2
 
     goto :goto_0
 
@@ -118,7 +118,7 @@
     :goto_0
     iput-boolean p1, p0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->isBot:Z
 
-    .line 31254
+    .line 31282
     invoke-virtual {p0, p2}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->setHasStableIds(Z)V
 
     return-void
@@ -127,7 +127,7 @@
 .method static synthetic access$21100(Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;)Z
     .locals 0
 
-    .line 31236
+    .line 31264
     iget-boolean p0, p0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->isBot:Z
 
     return p0
@@ -136,7 +136,7 @@
 .method static synthetic access$22700(Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;)I
     .locals 0
 
-    .line 31236
+    .line 31264
     iget p0, p0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->messagesEndRow:I
 
     return p0
@@ -145,17 +145,8 @@
 .method static synthetic access$28500(Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;)I
     .locals 0
 
-    .line 31236
+    .line 31264
     iget p0, p0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->botInfoRow:I
-
-    return p0
-.end method
-
-.method static synthetic access$44800(Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;)I
-    .locals 0
-
-    .line 31236
-    iget p0, p0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->loadingDownRow:I
 
     return p0
 .end method
@@ -163,16 +154,25 @@
 .method static synthetic access$44900(Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;)I
     .locals 0
 
-    .line 31236
+    .line 31264
+    iget p0, p0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->loadingDownRow:I
+
+    return p0
+.end method
+
+.method static synthetic access$45000(Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;)I
+    .locals 0
+
+    .line 31264
     iget p0, p0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->loadingUpRow:I
 
     return p0
 .end method
 
-.method static synthetic access$45000(Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;)V
+.method static synthetic access$45100(Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;)V
     .locals 0
 
-    .line 31236
+    .line 31264
     invoke-direct {p0}, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->updateRowsInternal()V
 
     return-void
@@ -183,7 +183,7 @@
 
     const-string v0, "@"
 
-    .line 31567
+    .line 31595
     invoke-virtual {p1, v0}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
     move-result v0
@@ -192,7 +192,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 31568
+    .line 31596
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->this$0:Lorg/telegram/ui/ChatActivity;
 
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getMessagesController()Lorg/telegram/messenger/MessagesController;
@@ -214,7 +214,7 @@
     :cond_0
     const-string v0, "#"
 
-    .line 31569
+    .line 31597
     invoke-virtual {p1, v0}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
     move-result v0
@@ -236,21 +236,21 @@
     :cond_1
     const-string v0, "/"
 
-    .line 31573
+    .line 31601
     invoke-virtual {p1, v0}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
     move-result v0
 
     if-eqz v0, :cond_2
 
-    .line 31574
+    .line 31602
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->this$0:Lorg/telegram/ui/ChatActivity;
 
     iget-object v0, v0, Lorg/telegram/ui/ChatActivity;->chatActivityEnterView:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
     invoke-virtual {v0, v2, p1, v1, v1}, Lorg/telegram/ui/Components/ChatActivityEnterView;->setCommand(Lorg/telegram/messenger/MessageObject;Ljava/lang/String;ZZ)V
 
-    .line 31575
+    .line 31603
     iget-object p1, p0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->this$0:Lorg/telegram/ui/ChatActivity;
 
     iget-object p1, p1, Lorg/telegram/ui/ChatActivity;->chatActivityEnterView:Lorg/telegram/ui/Components/ChatActivityEnterView;
@@ -261,14 +261,14 @@
 
     if-nez p1, :cond_4
 
-    .line 31576
+    .line 31604
     iget-object p1, p0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->this$0:Lorg/telegram/ui/ChatActivity;
 
     invoke-virtual {p1, v1}, Lorg/telegram/ui/ChatActivity;->hideFieldPanel(Z)V
 
     goto :goto_1
 
-    .line 31579
+    .line 31607
     :cond_2
     iget-object v2, p0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->this$0:Lorg/telegram/ui/ChatActivity;
 
@@ -286,17 +286,17 @@
 
     goto :goto_1
 
-    .line 31570
+    .line 31598
     :cond_3
     :goto_0
     new-instance v0, Lorg/telegram/ui/DialogsActivity;
 
     invoke-direct {v0, v2}, Lorg/telegram/ui/DialogsActivity;-><init>(Landroid/os/Bundle;)V
 
-    .line 31571
+    .line 31599
     invoke-virtual {v0, p1}, Lorg/telegram/ui/DialogsActivity;->setSearchString(Ljava/lang/String;)V
 
-    .line 31572
+    .line 31600
     iget-object p1, p0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->this$0:Lorg/telegram/ui/ChatActivity;
 
     invoke-virtual {p1, v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->presentFragment(Lorg/telegram/ui/ActionBar/BaseFragment;)Z
@@ -309,14 +309,14 @@
 .method private synthetic lambda$updateRowsInternal$0()V
     .locals 1
 
-    .line 31311
+    .line 31339
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->this$0:Lorg/telegram/ui/ChatActivity;
 
     iget-object v0, v0, Lorg/telegram/ui/ChatActivity;->chatActivityEnterView:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
     if-eqz v0, :cond_0
 
-    .line 31312
+    .line 31340
     invoke-virtual {v0}, Lorg/telegram/ui/Components/ChatActivityEnterView;->updateCombineMessages()V
 
     :cond_0
@@ -328,10 +328,10 @@
 
     const/4 v0, 0x0
 
-    .line 31273
+    .line 31301
     iput v0, p0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->rowCount:I
 
-    .line 31274
+    .line 31302
     iget-boolean v1, p0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->isFrozen:Z
 
     if-eqz v1, :cond_0
@@ -345,7 +345,7 @@
 
     iget-object v1, v1, Lorg/telegram/ui/ChatActivity;->messages:Ljava/util/ArrayList;
 
-    .line 31275
+    .line 31303
     :goto_0
     invoke-virtual {v1}, Ljava/util/ArrayList;->isEmpty()Z
 
@@ -357,7 +357,7 @@
 
     if-nez v2, :cond_a
 
-    .line 31276
+    .line 31304
     iget-object v2, p0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->this$0:Lorg/telegram/ui/ChatActivity;
 
     invoke-static {v2}, Lorg/telegram/ui/ChatActivity;->access$24500(Lorg/telegram/ui/ChatActivity;)[Z
@@ -393,13 +393,13 @@
     :cond_1
     iget-object v2, p0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->this$0:Lorg/telegram/ui/ChatActivity;
 
-    invoke-static {v2}, Lorg/telegram/ui/ChatActivity;->access$48200(Lorg/telegram/ui/ChatActivity;)Z
+    invoke-static {v2}, Lorg/telegram/ui/ChatActivity;->access$48300(Lorg/telegram/ui/ChatActivity;)Z
 
     move-result v2
 
     if-nez v2, :cond_2
 
-    .line 31277
+    .line 31305
     iget v2, p0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->rowCount:I
 
     add-int/lit8 v7, v2, 0x1
@@ -410,17 +410,17 @@
 
     goto :goto_1
 
-    .line 31279
+    .line 31307
     :cond_2
     iput v4, p0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->loadingDownRow:I
 
-    .line 31281
+    .line 31309
     :goto_1
     iget v2, p0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->rowCount:I
 
     iput v2, p0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->messagesStartRow:I
 
-    .line 31282
+    .line 31310
     invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
 
     move-result v1
@@ -429,10 +429,10 @@
 
     iput v2, p0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->rowCount:I
 
-    .line 31283
+    .line 31311
     iput v2, p0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->messagesEndRow:I
 
-    .line 31285
+    .line 31313
     iget-object v1, p0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->this$0:Lorg/telegram/ui/ChatActivity;
 
     iget-object v1, v1, Lorg/telegram/ui/ChatActivity;->currentUser:Lorg/telegram/tgnet/TLRPC$User;
@@ -470,7 +470,7 @@
     :cond_3
     iget-object v1, p0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->this$0:Lorg/telegram/ui/ChatActivity;
 
-    invoke-static {v1}, Lorg/telegram/ui/ChatActivity;->access$48300(Lorg/telegram/ui/ChatActivity;)[Z
+    invoke-static {v1}, Lorg/telegram/ui/ChatActivity;->access$48400(Lorg/telegram/ui/ChatActivity;)[Z
 
     move-result-object v1
 
@@ -489,7 +489,7 @@
 
     iget-object v1, p0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->this$0:Lorg/telegram/ui/ChatActivity;
 
-    invoke-static {v1}, Lorg/telegram/ui/ChatActivity;->access$48300(Lorg/telegram/ui/ChatActivity;)[Z
+    invoke-static {v1}, Lorg/telegram/ui/ChatActivity;->access$48400(Lorg/telegram/ui/ChatActivity;)[Z
 
     move-result-object v1
 
@@ -499,13 +499,13 @@
 
     goto :goto_2
 
-    .line 31288
+    .line 31316
     :cond_5
     iput v4, p0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->botInfoRow:I
 
     goto :goto_3
 
-    .line 31286
+    .line 31314
     :cond_6
     :goto_2
     iget v1, p0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->rowCount:I
@@ -516,11 +516,11 @@
 
     iput v1, p0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->botInfoRow:I
 
-    .line 31291
+    .line 31319
     :goto_3
     iget-object v1, p0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->this$0:Lorg/telegram/ui/ChatActivity;
 
-    invoke-static {v1}, Lorg/telegram/ui/ChatActivity;->access$48300(Lorg/telegram/ui/ChatActivity;)[Z
+    invoke-static {v1}, Lorg/telegram/ui/ChatActivity;->access$48400(Lorg/telegram/ui/ChatActivity;)[Z
 
     move-result-object v1
 
@@ -534,13 +534,13 @@
 
     move-result-wide v0
 
-    cmp-long v2, v0, v5
+    cmp-long v0, v0, v5
 
-    if-eqz v2, :cond_8
+    if-eqz v0, :cond_8
 
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->this$0:Lorg/telegram/ui/ChatActivity;
 
-    invoke-static {v0}, Lorg/telegram/ui/ChatActivity;->access$48300(Lorg/telegram/ui/ChatActivity;)[Z
+    invoke-static {v0}, Lorg/telegram/ui/ChatActivity;->access$48400(Lorg/telegram/ui/ChatActivity;)[Z
 
     move-result-object v0
 
@@ -571,13 +571,13 @@
 
     goto :goto_4
 
-    .line 31294
+    .line 31322
     :cond_8
     iput v4, p0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->loadingUpRow:I
 
     goto :goto_6
 
-    .line 31292
+    .line 31320
     :cond_9
     :goto_4
     iget v0, p0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->rowCount:I
@@ -590,20 +590,20 @@
 
     goto :goto_6
 
-    .line 31297
+    .line 31325
     :cond_a
     iput v4, p0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->loadingUpRow:I
 
-    .line 31298
+    .line 31326
     iput v4, p0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->loadingDownRow:I
 
-    .line 31299
+    .line 31327
     iput v4, p0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->messagesStartRow:I
 
-    .line 31300
+    .line 31328
     iput v4, p0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->messagesEndRow:I
 
-    .line 31302
+    .line 31330
     iget-object v1, p0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->this$0:Lorg/telegram/ui/ChatActivity;
 
     iget-object v1, v1, Lorg/telegram/ui/ChatActivity;->currentUser:Lorg/telegram/tgnet/TLRPC$User;
@@ -649,13 +649,13 @@
 
     goto :goto_5
 
-    .line 31305
+    .line 31333
     :cond_c
     iput v4, p0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->botInfoRow:I
 
     goto :goto_6
 
-    .line 31303
+    .line 31331
     :cond_d
     :goto_5
     iget v0, p0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->rowCount:I
@@ -666,7 +666,7 @@
 
     iput v0, p0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->botInfoRow:I
 
-    .line 31309
+    .line 31337
     :goto_6
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->this$0:Lorg/telegram/ui/ChatActivity;
 
@@ -676,7 +676,7 @@
 
     if-eqz v0, :cond_e
 
-    .line 31310
+    .line 31338
     new-instance v0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter$$ExternalSyntheticLambda0;
 
     invoke-direct {v0, p0}, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;)V
@@ -696,13 +696,13 @@
 
     const/4 v0, -0x5
 
-    .line 31321
+    .line 31349
     iput v0, p0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->botInfoEmptyRow:I
 
-    .line 31322
+    .line 31350
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->this$0:Lorg/telegram/ui/ChatActivity;
 
-    invoke-static {v0}, Lorg/telegram/ui/ChatActivity;->access$48400(Lorg/telegram/ui/ChatActivity;)Z
+    invoke-static {v0}, Lorg/telegram/ui/ChatActivity;->access$48500(Lorg/telegram/ui/ChatActivity;)Z
 
     move-result v0
 
@@ -710,7 +710,7 @@
 
     if-eqz v0, :cond_4
 
-    .line 31323
+    .line 31351
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->this$0:Lorg/telegram/ui/ChatActivity;
 
     iget-object v2, v0, Lorg/telegram/ui/ChatActivity;->currentUser:Lorg/telegram/tgnet/TLRPC$User;
@@ -827,7 +827,7 @@
 
     if-eqz v0, :cond_3
 
-    .line 31324
+    .line 31352
     :cond_2
     iput v1, p0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->botInfoEmptyRow:I
 
@@ -836,11 +836,11 @@
     :cond_3
     return v1
 
-    .line 31329
+    .line 31357
     :cond_4
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->this$0:Lorg/telegram/ui/ChatActivity;
 
-    invoke-static {v0}, Lorg/telegram/ui/ChatActivity;->access$48400(Lorg/telegram/ui/ChatActivity;)Z
+    invoke-static {v0}, Lorg/telegram/ui/ChatActivity;->access$48500(Lorg/telegram/ui/ChatActivity;)Z
 
     move-result v0
 
@@ -858,10 +858,10 @@
 .method public getItemId(I)J
     .locals 5
 
-    .line 31334
+    .line 31362
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->this$0:Lorg/telegram/ui/ChatActivity;
 
-    invoke-static {v0}, Lorg/telegram/ui/ChatActivity;->access$48400(Lorg/telegram/ui/ChatActivity;)Z
+    invoke-static {v0}, Lorg/telegram/ui/ChatActivity;->access$48500(Lorg/telegram/ui/ChatActivity;)Z
 
     move-result v0
 
@@ -869,14 +869,14 @@
 
     if-eqz v0, :cond_0
 
-    .line 31335
+    .line 31363
     iget v0, p0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->botInfoEmptyRow:I
 
     if-ne p1, v0, :cond_0
 
     return-wide v1
 
-    .line 31339
+    .line 31367
     :cond_0
     iget-boolean v0, p0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->isFrozen:Z
 
@@ -891,7 +891,7 @@
 
     iget-object v0, v0, Lorg/telegram/ui/ChatActivity;->messages:Ljava/util/ArrayList;
 
-    .line 31341
+    .line 31369
     :goto_0
     iget v3, p0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->messagesStartRow:I
 
@@ -903,7 +903,7 @@
 
     sub-int/2addr p1, v3
 
-    .line 31342
+    .line 31370
     invoke-virtual {v0, p1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object p1
@@ -916,7 +916,7 @@
 
     return-wide v0
 
-    .line 31343
+    .line 31371
     :cond_2
     iget v0, p0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->botInfoRow:I
 
@@ -928,7 +928,7 @@
 
     goto :goto_1
 
-    .line 31345
+    .line 31373
     :cond_3
     iget v0, p0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->loadingUpRow:I
 
@@ -938,7 +938,7 @@
 
     return-wide v0
 
-    .line 31347
+    .line 31375
     :cond_4
     iget v0, p0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->loadingDownRow:I
 
@@ -961,10 +961,10 @@
 .method public getItemViewType(I)I
     .locals 3
 
-    .line 32011
+    .line 32039
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->this$0:Lorg/telegram/ui/ChatActivity;
 
-    invoke-static {v0}, Lorg/telegram/ui/ChatActivity;->access$48400(Lorg/telegram/ui/ChatActivity;)Z
+    invoke-static {v0}, Lorg/telegram/ui/ChatActivity;->access$48500(Lorg/telegram/ui/ChatActivity;)Z
 
     move-result v0
 
@@ -972,14 +972,14 @@
 
     if-eqz v0, :cond_0
 
-    .line 32012
+    .line 32040
     iget v0, p0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->botInfoEmptyRow:I
 
     if-ne p1, v0, :cond_0
 
     return v1
 
-    .line 32016
+    .line 32044
     :cond_0
     iget v0, p0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->messagesStartRow:I
 
@@ -989,7 +989,7 @@
 
     if-ge p1, v2, :cond_2
 
-    .line 32017
+    .line 32045
     iget-boolean v1, p0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->isFrozen:Z
 
     if-eqz v1, :cond_1
@@ -1006,7 +1006,7 @@
     :goto_0
     sub-int/2addr p1, v0
 
-    .line 32018
+    .line 32046
     invoke-virtual {v1, p1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object p1
@@ -1017,7 +1017,7 @@
 
     return p1
 
-    .line 32019
+    .line 32047
     :cond_2
     iget v0, p0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->botInfoRow:I
 
@@ -1034,7 +1034,7 @@
 .method public invalidateRowWithMessageObject(Lorg/telegram/messenger/MessageObject;)V
     .locals 4
 
-    .line 32184
+    .line 32212
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->this$0:Lorg/telegram/ui/ChatActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ChatActivity;->access$4100(Lorg/telegram/ui/ChatActivity;)Lorg/telegram/ui/Components/RecyclerListView;
@@ -1050,7 +1050,7 @@
     :goto_0
     if-ge v1, v0, :cond_1
 
-    .line 32186
+    .line 32214
     iget-object v2, p0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->this$0:Lorg/telegram/ui/ChatActivity;
 
     invoke-static {v2}, Lorg/telegram/ui/ChatActivity;->access$4100(Lorg/telegram/ui/ChatActivity;)Lorg/telegram/ui/Components/RecyclerListView;
@@ -1061,22 +1061,22 @@
 
     move-result-object v2
 
-    .line 32187
+    .line 32215
     instance-of v3, v2, Lorg/telegram/ui/Cells/ChatMessageCell;
 
     if-eqz v3, :cond_0
 
-    .line 32188
+    .line 32216
     check-cast v2, Lorg/telegram/ui/Cells/ChatMessageCell;
 
-    .line 32189
+    .line 32217
     invoke-virtual {v2}, Lorg/telegram/ui/Cells/ChatMessageCell;->getMessageObject()Lorg/telegram/messenger/MessageObject;
 
     move-result-object v3
 
     if-ne v3, p1, :cond_0
 
-    .line 32190
+    .line 32218
     invoke-virtual {v2}, Lorg/telegram/ui/Cells/ChatMessageCell;->invalidate()V
 
     return-void
@@ -1103,21 +1103,21 @@
 
     const/4 v0, 0x0
 
-    .line 32257
+    .line 32285
     invoke-virtual {p0, v0}, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->notifyDataSetChanged(Z)V
 
     return-void
 .end method
 
 .method public notifyDataSetChanged(Z)V
-    .locals 6
+    .locals 5
 
-    .line 32222
+    .line 32250
     sget-boolean v0, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
 
     if-eqz v0, :cond_0
 
-    .line 32223
+    .line 32251
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -1141,14 +1141,14 @@
     :cond_0
     if-eqz p1, :cond_1
 
-    .line 32225
+    .line 32253
     iget-object p1, p0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->this$0:Lorg/telegram/ui/ChatActivity;
 
     iget-boolean v0, p1, Lorg/telegram/ui/ChatActivity;->fragmentOpened:Z
 
     if-eqz v0, :cond_1
 
-    .line 32226
+    .line 32254
     invoke-static {p1}, Lorg/telegram/ui/ChatActivity;->access$4100(Lorg/telegram/ui/ChatActivity;)Lorg/telegram/ui/Components/RecyclerListView;
 
     move-result-object p1
@@ -1165,7 +1165,7 @@
 
     if-eq p1, v0, :cond_2
 
-    .line 32227
+    .line 32255
     iget-object p1, p0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->this$0:Lorg/telegram/ui/ChatActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/ChatActivity;->access$4100(Lorg/telegram/ui/ChatActivity;)Lorg/telegram/ui/Components/RecyclerListView;
@@ -1182,7 +1182,7 @@
 
     goto :goto_0
 
-    .line 32230
+    .line 32258
     :cond_1
     iget-object p1, p0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->this$0:Lorg/telegram/ui/ChatActivity;
 
@@ -1194,12 +1194,12 @@
 
     invoke-virtual {p1, v0}, Landroidx/recyclerview/widget/RecyclerView;->setItemAnimator(Landroidx/recyclerview/widget/RecyclerView$ItemAnimator;)V
 
-    .line 32232
+    .line 32260
     :cond_2
     :goto_0
     invoke-direct {p0}, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->updateRowsInternal()V
 
-    .line 32234
+    .line 32262
     :try_start_0
     invoke-super {p0}, Lorg/telegram/ui/Components/RecyclerAnimationScrollHelper$AnimatableAdapter;->notifyDataSetChanged()V
     :try_end_0
@@ -1210,10 +1210,10 @@
     :catch_0
     move-exception p1
 
-    .line 32236
+    .line 32264
     invoke-static {p1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
-    .line 32239
+    .line 32267
     :goto_1
     iget-object p1, p0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->this$0:Lorg/telegram/ui/ChatActivity;
 
@@ -1232,7 +1232,7 @@
 
     if-ltz p1, :cond_5
 
-    .line 32240
+    .line 32268
     iget-object v2, p0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->this$0:Lorg/telegram/ui/ChatActivity;
 
     iget-object v2, v2, Lorg/telegram/ui/ChatActivity;->messages:Ljava/util/ArrayList;
@@ -1243,7 +1243,7 @@
 
     check-cast v2, Lorg/telegram/messenger/MessageObject;
 
-    .line 32241
+    .line 32269
     iget-boolean v3, v2, Lorg/telegram/messenger/MessageObject;->isDateObject:Z
 
     if-eqz v3, :cond_3
@@ -1252,7 +1252,7 @@
 
     goto :goto_2
 
-    .line 32244
+    .line 32272
     :cond_3
     iget-object p1, v2, Lorg/telegram/messenger/MessageObject;->messageOwner:Lorg/telegram/tgnet/TLRPC$Message;
 
@@ -1269,18 +1269,18 @@
     if-eqz p1, :cond_5
 
     :cond_4
-    const/4 p1, 0x1
+    move p1, v0
 
     goto :goto_3
 
     :cond_5
-    const/4 p1, 0x0
+    move p1, v1
 
-    .line 32249
+    .line 32277
     :goto_3
     iget-object v2, p0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->this$0:Lorg/telegram/ui/ChatActivity;
 
-    invoke-static {v2}, Lorg/telegram/ui/ChatActivity;->access$48300(Lorg/telegram/ui/ChatActivity;)[Z
+    invoke-static {v2}, Lorg/telegram/ui/ChatActivity;->access$48400(Lorg/telegram/ui/ChatActivity;)[Z
 
     move-result-object v2
 
@@ -1296,13 +1296,13 @@
 
     const-wide/16 v3, 0x0
 
-    cmp-long v5, v1, v3
+    cmp-long v1, v1, v3
 
-    if-eqz v5, :cond_7
+    if-eqz v1, :cond_7
 
     iget-object v1, p0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->this$0:Lorg/telegram/ui/ChatActivity;
 
-    invoke-static {v1}, Lorg/telegram/ui/ChatActivity;->access$48300(Lorg/telegram/ui/ChatActivity;)[Z
+    invoke-static {v1}, Lorg/telegram/ui/ChatActivity;->access$48400(Lorg/telegram/ui/ChatActivity;)[Z
 
     move-result-object v1
 
@@ -1313,11 +1313,11 @@
     :cond_6
     if-eqz p1, :cond_8
 
-    .line 32250
+    .line 32278
     :cond_7
     iget-object p1, p0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->this$0:Lorg/telegram/ui/ChatActivity;
 
-    invoke-static {p1}, Lorg/telegram/ui/ChatActivity;->access$52500(Lorg/telegram/ui/ChatActivity;)Z
+    invoke-static {p1}, Lorg/telegram/ui/ChatActivity;->access$52600(Lorg/telegram/ui/ChatActivity;)Z
 
     move-result v0
 
@@ -1330,16 +1330,16 @@
 .method public notifyItemChanged(I)V
     .locals 2
 
-    .line 32262
+    .line 32290
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->this$0:Lorg/telegram/ui/ChatActivity;
 
-    invoke-static {v0}, Lorg/telegram/ui/ChatActivity;->access$52600(Lorg/telegram/ui/ChatActivity;)Z
+    invoke-static {v0}, Lorg/telegram/ui/ChatActivity;->access$52700(Lorg/telegram/ui/ChatActivity;)Z
 
     move-result v0
 
     if-nez v0, :cond_0
 
-    .line 32263
+    .line 32291
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->this$0:Lorg/telegram/ui/ChatActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ChatActivity;->access$4100(Lorg/telegram/ui/ChatActivity;)Lorg/telegram/ui/Components/RecyclerListView;
@@ -1352,7 +1352,7 @@
 
     goto :goto_0
 
-    .line 32264
+    .line 32292
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->this$0:Lorg/telegram/ui/ChatActivity;
 
@@ -1372,7 +1372,7 @@
 
     if-eq v0, v1, :cond_1
 
-    .line 32265
+    .line 32293
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->this$0:Lorg/telegram/ui/ChatActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ChatActivity;->access$4100(Lorg/telegram/ui/ChatActivity;)Lorg/telegram/ui/Components/RecyclerListView;
@@ -1387,12 +1387,12 @@
 
     invoke-virtual {v0, v1}, Landroidx/recyclerview/widget/RecyclerView;->setItemAnimator(Landroidx/recyclerview/widget/RecyclerView$ItemAnimator;)V
 
-    .line 32267
+    .line 32295
     :cond_1
     :goto_0
     invoke-direct {p0}, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->updateRowsInternal()V
 
-    .line 32269
+    .line 32297
     :try_start_0
     invoke-super {p0, p1}, Lorg/telegram/ui/Components/RecyclerAnimationScrollHelper$AnimatableAdapter;->notifyItemChanged(I)V
     :try_end_0
@@ -1403,7 +1403,7 @@
     :catch_0
     move-exception p1
 
-    .line 32271
+    .line 32299
     invoke-static {p1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :goto_1
@@ -1413,12 +1413,12 @@
 .method public notifyItemInserted(I)V
     .locals 2
 
-    .line 32295
+    .line 32323
     sget-boolean v0, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
 
     if-eqz v0, :cond_0
 
-    .line 32296
+    .line 32324
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -1435,17 +1435,17 @@
 
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->d(Ljava/lang/String;)V
 
-    .line 32298
+    .line 32326
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->this$0:Lorg/telegram/ui/ChatActivity;
 
-    invoke-static {v0}, Lorg/telegram/ui/ChatActivity;->access$52800(Lorg/telegram/ui/ChatActivity;)Z
+    invoke-static {v0}, Lorg/telegram/ui/ChatActivity;->access$52900(Lorg/telegram/ui/ChatActivity;)Z
 
     move-result v0
 
     if-nez v0, :cond_1
 
-    .line 32299
+    .line 32327
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->this$0:Lorg/telegram/ui/ChatActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ChatActivity;->access$4100(Lorg/telegram/ui/ChatActivity;)Lorg/telegram/ui/Components/RecyclerListView;
@@ -1458,7 +1458,7 @@
 
     goto :goto_0
 
-    .line 32300
+    .line 32328
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->this$0:Lorg/telegram/ui/ChatActivity;
 
@@ -1478,7 +1478,7 @@
 
     if-eq v0, v1, :cond_2
 
-    .line 32301
+    .line 32329
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->this$0:Lorg/telegram/ui/ChatActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ChatActivity;->access$4100(Lorg/telegram/ui/ChatActivity;)Lorg/telegram/ui/Components/RecyclerListView;
@@ -1493,12 +1493,12 @@
 
     invoke-virtual {v0, v1}, Landroidx/recyclerview/widget/RecyclerView;->setItemAnimator(Landroidx/recyclerview/widget/RecyclerView$ItemAnimator;)V
 
-    .line 32303
+    .line 32331
     :cond_2
     :goto_0
     invoke-direct {p0}, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->updateRowsInternal()V
 
-    .line 32305
+    .line 32333
     :try_start_0
     invoke-super {p0, p1}, Lorg/telegram/ui/Components/RecyclerAnimationScrollHelper$AnimatableAdapter;->notifyItemInserted(I)V
     :try_end_0
@@ -1509,7 +1509,7 @@
     :catch_0
     move-exception p1
 
-    .line 32307
+    .line 32335
     invoke-static {p1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :goto_1
@@ -1519,12 +1519,12 @@
 .method public notifyItemMoved(II)V
     .locals 2
 
-    .line 32313
+    .line 32341
     sget-boolean v0, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
 
     if-eqz v0, :cond_0
 
-    .line 32314
+    .line 32342
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -1547,17 +1547,17 @@
 
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->d(Ljava/lang/String;)V
 
-    .line 32316
+    .line 32344
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->this$0:Lorg/telegram/ui/ChatActivity;
 
-    invoke-static {v0}, Lorg/telegram/ui/ChatActivity;->access$52900(Lorg/telegram/ui/ChatActivity;)Z
+    invoke-static {v0}, Lorg/telegram/ui/ChatActivity;->access$53000(Lorg/telegram/ui/ChatActivity;)Z
 
     move-result v0
 
     if-nez v0, :cond_1
 
-    .line 32317
+    .line 32345
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->this$0:Lorg/telegram/ui/ChatActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ChatActivity;->access$4100(Lorg/telegram/ui/ChatActivity;)Lorg/telegram/ui/Components/RecyclerListView;
@@ -1570,7 +1570,7 @@
 
     goto :goto_0
 
-    .line 32318
+    .line 32346
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->this$0:Lorg/telegram/ui/ChatActivity;
 
@@ -1590,7 +1590,7 @@
 
     if-eq v0, v1, :cond_2
 
-    .line 32319
+    .line 32347
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->this$0:Lorg/telegram/ui/ChatActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ChatActivity;->access$4100(Lorg/telegram/ui/ChatActivity;)Lorg/telegram/ui/Components/RecyclerListView;
@@ -1605,12 +1605,12 @@
 
     invoke-virtual {v0, v1}, Landroidx/recyclerview/widget/RecyclerView;->setItemAnimator(Landroidx/recyclerview/widget/RecyclerView$ItemAnimator;)V
 
-    .line 32321
+    .line 32349
     :cond_2
     :goto_0
     invoke-direct {p0}, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->updateRowsInternal()V
 
-    .line 32323
+    .line 32351
     :try_start_0
     invoke-super {p0, p1, p2}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->notifyItemMoved(II)V
     :try_end_0
@@ -1621,7 +1621,7 @@
     :catch_0
     move-exception p1
 
-    .line 32325
+    .line 32353
     invoke-static {p1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :goto_1
@@ -1631,12 +1631,12 @@
 .method public notifyItemRangeChanged(II)V
     .locals 2
 
-    .line 32277
+    .line 32305
     sget-boolean v0, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
 
     if-eqz v0, :cond_0
 
-    .line 32278
+    .line 32306
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -1659,17 +1659,17 @@
 
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->d(Ljava/lang/String;)V
 
-    .line 32280
+    .line 32308
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->this$0:Lorg/telegram/ui/ChatActivity;
 
-    invoke-static {v0}, Lorg/telegram/ui/ChatActivity;->access$52700(Lorg/telegram/ui/ChatActivity;)Z
+    invoke-static {v0}, Lorg/telegram/ui/ChatActivity;->access$52800(Lorg/telegram/ui/ChatActivity;)Z
 
     move-result v0
 
     if-nez v0, :cond_1
 
-    .line 32281
+    .line 32309
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->this$0:Lorg/telegram/ui/ChatActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ChatActivity;->access$4100(Lorg/telegram/ui/ChatActivity;)Lorg/telegram/ui/Components/RecyclerListView;
@@ -1682,7 +1682,7 @@
 
     goto :goto_0
 
-    .line 32282
+    .line 32310
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->this$0:Lorg/telegram/ui/ChatActivity;
 
@@ -1702,7 +1702,7 @@
 
     if-eq v0, v1, :cond_2
 
-    .line 32283
+    .line 32311
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->this$0:Lorg/telegram/ui/ChatActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ChatActivity;->access$4100(Lorg/telegram/ui/ChatActivity;)Lorg/telegram/ui/Components/RecyclerListView;
@@ -1717,12 +1717,12 @@
 
     invoke-virtual {v0, v1}, Landroidx/recyclerview/widget/RecyclerView;->setItemAnimator(Landroidx/recyclerview/widget/RecyclerView$ItemAnimator;)V
 
-    .line 32285
+    .line 32313
     :cond_2
     :goto_0
     invoke-direct {p0}, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->updateRowsInternal()V
 
-    .line 32287
+    .line 32315
     :try_start_0
     invoke-super {p0, p1, p2}, Lorg/telegram/ui/Components/RecyclerAnimationScrollHelper$AnimatableAdapter;->notifyItemRangeChanged(II)V
     :try_end_0
@@ -1733,7 +1733,7 @@
     :catch_0
     move-exception p1
 
-    .line 32289
+    .line 32317
     invoke-static {p1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :goto_1
@@ -1743,12 +1743,12 @@
 .method public notifyItemRangeInserted(II)V
     .locals 7
 
-    .line 32331
+    .line 32359
     sget-boolean v0, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
 
     if-eqz v0, :cond_0
 
-    .line 32332
+    .line 32360
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -1764,312 +1764,6 @@
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {v0, p2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-static {v0}, Lorg/telegram/messenger/FileLog;->d(Ljava/lang/String;)V
-
-    .line 32334
-    :cond_0
-    iget-object v0, p0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->this$0:Lorg/telegram/ui/ChatActivity;
-
-    invoke-static {v0}, Lorg/telegram/ui/ChatActivity;->access$53000(Lorg/telegram/ui/ChatActivity;)Z
-
-    move-result v0
-
-    if-nez v0, :cond_1
-
-    .line 32335
-    iget-object v0, p0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->this$0:Lorg/telegram/ui/ChatActivity;
-
-    invoke-static {v0}, Lorg/telegram/ui/ChatActivity;->access$4100(Lorg/telegram/ui/ChatActivity;)Lorg/telegram/ui/Components/RecyclerListView;
-
-    move-result-object v0
-
-    const/4 v1, 0x0
-
-    invoke-virtual {v0, v1}, Landroidx/recyclerview/widget/RecyclerView;->setItemAnimator(Landroidx/recyclerview/widget/RecyclerView$ItemAnimator;)V
-
-    goto :goto_0
-
-    .line 32336
-    :cond_1
-    iget-object v0, p0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->this$0:Lorg/telegram/ui/ChatActivity;
-
-    invoke-static {v0}, Lorg/telegram/ui/ChatActivity;->access$4100(Lorg/telegram/ui/ChatActivity;)Lorg/telegram/ui/Components/RecyclerListView;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Landroidx/recyclerview/widget/RecyclerView;->getItemAnimator()Landroidx/recyclerview/widget/RecyclerView$ItemAnimator;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->this$0:Lorg/telegram/ui/ChatActivity;
-
-    invoke-static {v1}, Lorg/telegram/ui/ChatActivity;->access$5800(Lorg/telegram/ui/ChatActivity;)Landroidx/recyclerview/widget/ChatListItemAnimator;
-
-    move-result-object v1
-
-    if-eq v0, v1, :cond_2
-
-    .line 32337
-    iget-object v0, p0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->this$0:Lorg/telegram/ui/ChatActivity;
-
-    invoke-static {v0}, Lorg/telegram/ui/ChatActivity;->access$4100(Lorg/telegram/ui/ChatActivity;)Lorg/telegram/ui/Components/RecyclerListView;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->this$0:Lorg/telegram/ui/ChatActivity;
-
-    invoke-static {v1}, Lorg/telegram/ui/ChatActivity;->access$5800(Lorg/telegram/ui/ChatActivity;)Landroidx/recyclerview/widget/ChatListItemAnimator;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Landroidx/recyclerview/widget/RecyclerView;->setItemAnimator(Landroidx/recyclerview/widget/RecyclerView$ItemAnimator;)V
-
-    .line 32339
-    :cond_2
-    :goto_0
-    invoke-direct {p0}, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->updateRowsInternal()V
-
-    const/4 v0, 0x1
-
-    if-ne p1, v0, :cond_5
-
-    if-lez p2, :cond_5
-
-    add-int v1, p1, p2
-
-    .line 32342
-    iget v2, p0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->messagesStartRow:I
-
-    if-lt v1, v2, :cond_5
-
-    iget v3, p0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->messagesEndRow:I
-
-    if-ge v1, v3, :cond_5
-
-    .line 32343
-    iget-object v3, p0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->this$0:Lorg/telegram/ui/ChatActivity;
-
-    iget-object v3, v3, Lorg/telegram/ui/ChatActivity;->messages:Ljava/util/ArrayList;
-
-    sub-int v2, v1, v2
-
-    invoke-virtual {v3, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Lorg/telegram/messenger/MessageObject;
-
-    .line 32344
-    iget-object v3, p0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->this$0:Lorg/telegram/ui/ChatActivity;
-
-    iget-object v3, v3, Lorg/telegram/ui/ChatActivity;->messages:Ljava/util/ArrayList;
-
-    iget v4, p0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->messagesStartRow:I
-
-    sub-int/2addr v1, v4
-
-    sub-int/2addr v1, v0
-
-    invoke-virtual {v3, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lorg/telegram/messenger/MessageObject;
-
-    .line 32345
-    iget-object v1, p0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->this$0:Lorg/telegram/ui/ChatActivity;
-
-    iget-object v1, v1, Lorg/telegram/ui/ChatActivity;->currentChat:Lorg/telegram/tgnet/TLRPC$Chat;
-
-    if-eqz v1, :cond_3
-
-    invoke-virtual {v2}, Lorg/telegram/messenger/MessageObject;->getFromChatId()J
-
-    move-result-wide v3
-
-    invoke-virtual {v0}, Lorg/telegram/messenger/MessageObject;->getFromChatId()J
-
-    move-result-wide v5
-
-    cmp-long v1, v3, v5
-
-    if-eqz v1, :cond_4
-
-    :cond_3
-    iget-object v1, p0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->this$0:Lorg/telegram/ui/ChatActivity;
-
-    iget-object v1, v1, Lorg/telegram/ui/ChatActivity;->currentUser:Lorg/telegram/tgnet/TLRPC$User;
-
-    if-eqz v1, :cond_5
-
-    invoke-virtual {v2}, Lorg/telegram/messenger/MessageObject;->isOutOwner()Z
-
-    move-result v1
-
-    invoke-virtual {v0}, Lorg/telegram/messenger/MessageObject;->isOutOwner()Z
-
-    move-result v0
-
-    if-ne v1, v0, :cond_5
-
-    .line 32346
-    :cond_4
-    invoke-virtual {p0, p1}, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->notifyItemChanged(I)V
-
-    .line 32351
-    :cond_5
-    :try_start_0
-    invoke-super {p0, p1, p2}, Lorg/telegram/ui/Components/RecyclerAnimationScrollHelper$AnimatableAdapter;->notifyItemRangeInserted(II)V
-    :try_end_0
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
-
-    goto :goto_1
-
-    :catch_0
-    move-exception p1
-
-    .line 32353
-    invoke-static {p1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
-
-    :goto_1
-    return-void
-.end method
-
-.method public notifyItemRangeRemoved(II)V
-    .locals 2
-
-    .line 32377
-    sget-boolean v0, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
-
-    if-eqz v0, :cond_0
-
-    .line 32378
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v1, "notify item range removed"
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    const-string v1, ":"
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0, p2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-static {v0}, Lorg/telegram/messenger/FileLog;->d(Ljava/lang/String;)V
-
-    .line 32380
-    :cond_0
-    iget-object v0, p0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->this$0:Lorg/telegram/ui/ChatActivity;
-
-    invoke-static {v0}, Lorg/telegram/ui/ChatActivity;->access$53200(Lorg/telegram/ui/ChatActivity;)Z
-
-    move-result v0
-
-    if-nez v0, :cond_1
-
-    .line 32381
-    iget-object v0, p0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->this$0:Lorg/telegram/ui/ChatActivity;
-
-    invoke-static {v0}, Lorg/telegram/ui/ChatActivity;->access$4100(Lorg/telegram/ui/ChatActivity;)Lorg/telegram/ui/Components/RecyclerListView;
-
-    move-result-object v0
-
-    const/4 v1, 0x0
-
-    invoke-virtual {v0, v1}, Landroidx/recyclerview/widget/RecyclerView;->setItemAnimator(Landroidx/recyclerview/widget/RecyclerView$ItemAnimator;)V
-
-    goto :goto_0
-
-    .line 32382
-    :cond_1
-    iget-object v0, p0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->this$0:Lorg/telegram/ui/ChatActivity;
-
-    invoke-static {v0}, Lorg/telegram/ui/ChatActivity;->access$4100(Lorg/telegram/ui/ChatActivity;)Lorg/telegram/ui/Components/RecyclerListView;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Landroidx/recyclerview/widget/RecyclerView;->getItemAnimator()Landroidx/recyclerview/widget/RecyclerView$ItemAnimator;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->this$0:Lorg/telegram/ui/ChatActivity;
-
-    invoke-static {v1}, Lorg/telegram/ui/ChatActivity;->access$5800(Lorg/telegram/ui/ChatActivity;)Landroidx/recyclerview/widget/ChatListItemAnimator;
-
-    move-result-object v1
-
-    if-eq v0, v1, :cond_2
-
-    .line 32383
-    iget-object v0, p0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->this$0:Lorg/telegram/ui/ChatActivity;
-
-    invoke-static {v0}, Lorg/telegram/ui/ChatActivity;->access$4100(Lorg/telegram/ui/ChatActivity;)Lorg/telegram/ui/Components/RecyclerListView;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->this$0:Lorg/telegram/ui/ChatActivity;
-
-    invoke-static {v1}, Lorg/telegram/ui/ChatActivity;->access$5800(Lorg/telegram/ui/ChatActivity;)Landroidx/recyclerview/widget/ChatListItemAnimator;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Landroidx/recyclerview/widget/RecyclerView;->setItemAnimator(Landroidx/recyclerview/widget/RecyclerView$ItemAnimator;)V
-
-    .line 32385
-    :cond_2
-    :goto_0
-    invoke-direct {p0}, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->updateRowsInternal()V
-
-    .line 32387
-    :try_start_0
-    invoke-super {p0, p1, p2}, Lorg/telegram/ui/Components/RecyclerAnimationScrollHelper$AnimatableAdapter;->notifyItemRangeRemoved(II)V
-    :try_end_0
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
-
-    goto :goto_1
-
-    :catch_0
-    move-exception p1
-
-    .line 32389
-    invoke-static {p1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
-
-    :goto_1
-    return-void
-.end method
-
-.method public notifyItemRemoved(I)V
-    .locals 2
-
-    .line 32359
-    sget-boolean v0, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
-
-    if-eqz v0, :cond_0
-
-    .line 32360
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v1, "notify item removed "
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
@@ -2140,7 +1834,313 @@
     :goto_0
     invoke-direct {p0}, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->updateRowsInternal()V
 
-    .line 32369
+    const/4 v0, 0x1
+
+    if-ne p1, v0, :cond_5
+
+    if-lez p2, :cond_5
+
+    add-int v1, p1, p2
+
+    .line 32370
+    iget v2, p0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->messagesStartRow:I
+
+    if-lt v1, v2, :cond_5
+
+    iget v3, p0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->messagesEndRow:I
+
+    if-ge v1, v3, :cond_5
+
+    .line 32371
+    iget-object v3, p0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->this$0:Lorg/telegram/ui/ChatActivity;
+
+    iget-object v3, v3, Lorg/telegram/ui/ChatActivity;->messages:Ljava/util/ArrayList;
+
+    sub-int v2, v1, v2
+
+    invoke-virtual {v3, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Lorg/telegram/messenger/MessageObject;
+
+    .line 32372
+    iget-object v3, p0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->this$0:Lorg/telegram/ui/ChatActivity;
+
+    iget-object v3, v3, Lorg/telegram/ui/ChatActivity;->messages:Ljava/util/ArrayList;
+
+    iget v4, p0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->messagesStartRow:I
+
+    sub-int/2addr v1, v4
+
+    sub-int/2addr v1, v0
+
+    invoke-virtual {v3, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lorg/telegram/messenger/MessageObject;
+
+    .line 32373
+    iget-object v1, p0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->this$0:Lorg/telegram/ui/ChatActivity;
+
+    iget-object v1, v1, Lorg/telegram/ui/ChatActivity;->currentChat:Lorg/telegram/tgnet/TLRPC$Chat;
+
+    if-eqz v1, :cond_3
+
+    invoke-virtual {v2}, Lorg/telegram/messenger/MessageObject;->getFromChatId()J
+
+    move-result-wide v3
+
+    invoke-virtual {v0}, Lorg/telegram/messenger/MessageObject;->getFromChatId()J
+
+    move-result-wide v5
+
+    cmp-long v1, v3, v5
+
+    if-eqz v1, :cond_4
+
+    :cond_3
+    iget-object v1, p0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->this$0:Lorg/telegram/ui/ChatActivity;
+
+    iget-object v1, v1, Lorg/telegram/ui/ChatActivity;->currentUser:Lorg/telegram/tgnet/TLRPC$User;
+
+    if-eqz v1, :cond_5
+
+    invoke-virtual {v2}, Lorg/telegram/messenger/MessageObject;->isOutOwner()Z
+
+    move-result v1
+
+    invoke-virtual {v0}, Lorg/telegram/messenger/MessageObject;->isOutOwner()Z
+
+    move-result v0
+
+    if-ne v1, v0, :cond_5
+
+    .line 32374
+    :cond_4
+    invoke-virtual {p0, p1}, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->notifyItemChanged(I)V
+
+    .line 32379
+    :cond_5
+    :try_start_0
+    invoke-super {p0, p1, p2}, Lorg/telegram/ui/Components/RecyclerAnimationScrollHelper$AnimatableAdapter;->notifyItemRangeInserted(II)V
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+
+    goto :goto_1
+
+    :catch_0
+    move-exception p1
+
+    .line 32381
+    invoke-static {p1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
+
+    :goto_1
+    return-void
+.end method
+
+.method public notifyItemRangeRemoved(II)V
+    .locals 2
+
+    .line 32405
+    sget-boolean v0, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
+
+    if-eqz v0, :cond_0
+
+    .line 32406
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v1, "notify item range removed"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    const-string v1, ":"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0, p2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lorg/telegram/messenger/FileLog;->d(Ljava/lang/String;)V
+
+    .line 32408
+    :cond_0
+    iget-object v0, p0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->this$0:Lorg/telegram/ui/ChatActivity;
+
+    invoke-static {v0}, Lorg/telegram/ui/ChatActivity;->access$53300(Lorg/telegram/ui/ChatActivity;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_1
+
+    .line 32409
+    iget-object v0, p0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->this$0:Lorg/telegram/ui/ChatActivity;
+
+    invoke-static {v0}, Lorg/telegram/ui/ChatActivity;->access$4100(Lorg/telegram/ui/ChatActivity;)Lorg/telegram/ui/Components/RecyclerListView;
+
+    move-result-object v0
+
+    const/4 v1, 0x0
+
+    invoke-virtual {v0, v1}, Landroidx/recyclerview/widget/RecyclerView;->setItemAnimator(Landroidx/recyclerview/widget/RecyclerView$ItemAnimator;)V
+
+    goto :goto_0
+
+    .line 32410
+    :cond_1
+    iget-object v0, p0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->this$0:Lorg/telegram/ui/ChatActivity;
+
+    invoke-static {v0}, Lorg/telegram/ui/ChatActivity;->access$4100(Lorg/telegram/ui/ChatActivity;)Lorg/telegram/ui/Components/RecyclerListView;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroidx/recyclerview/widget/RecyclerView;->getItemAnimator()Landroidx/recyclerview/widget/RecyclerView$ItemAnimator;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->this$0:Lorg/telegram/ui/ChatActivity;
+
+    invoke-static {v1}, Lorg/telegram/ui/ChatActivity;->access$5800(Lorg/telegram/ui/ChatActivity;)Landroidx/recyclerview/widget/ChatListItemAnimator;
+
+    move-result-object v1
+
+    if-eq v0, v1, :cond_2
+
+    .line 32411
+    iget-object v0, p0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->this$0:Lorg/telegram/ui/ChatActivity;
+
+    invoke-static {v0}, Lorg/telegram/ui/ChatActivity;->access$4100(Lorg/telegram/ui/ChatActivity;)Lorg/telegram/ui/Components/RecyclerListView;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->this$0:Lorg/telegram/ui/ChatActivity;
+
+    invoke-static {v1}, Lorg/telegram/ui/ChatActivity;->access$5800(Lorg/telegram/ui/ChatActivity;)Landroidx/recyclerview/widget/ChatListItemAnimator;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Landroidx/recyclerview/widget/RecyclerView;->setItemAnimator(Landroidx/recyclerview/widget/RecyclerView$ItemAnimator;)V
+
+    .line 32413
+    :cond_2
+    :goto_0
+    invoke-direct {p0}, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->updateRowsInternal()V
+
+    .line 32415
+    :try_start_0
+    invoke-super {p0, p1, p2}, Lorg/telegram/ui/Components/RecyclerAnimationScrollHelper$AnimatableAdapter;->notifyItemRangeRemoved(II)V
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+
+    goto :goto_1
+
+    :catch_0
+    move-exception p1
+
+    .line 32417
+    invoke-static {p1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
+
+    :goto_1
+    return-void
+.end method
+
+.method public notifyItemRemoved(I)V
+    .locals 2
+
+    .line 32387
+    sget-boolean v0, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
+
+    if-eqz v0, :cond_0
+
+    .line 32388
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v1, "notify item removed "
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lorg/telegram/messenger/FileLog;->d(Ljava/lang/String;)V
+
+    .line 32390
+    :cond_0
+    iget-object v0, p0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->this$0:Lorg/telegram/ui/ChatActivity;
+
+    invoke-static {v0}, Lorg/telegram/ui/ChatActivity;->access$53200(Lorg/telegram/ui/ChatActivity;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_1
+
+    .line 32391
+    iget-object v0, p0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->this$0:Lorg/telegram/ui/ChatActivity;
+
+    invoke-static {v0}, Lorg/telegram/ui/ChatActivity;->access$4100(Lorg/telegram/ui/ChatActivity;)Lorg/telegram/ui/Components/RecyclerListView;
+
+    move-result-object v0
+
+    const/4 v1, 0x0
+
+    invoke-virtual {v0, v1}, Landroidx/recyclerview/widget/RecyclerView;->setItemAnimator(Landroidx/recyclerview/widget/RecyclerView$ItemAnimator;)V
+
+    goto :goto_0
+
+    .line 32392
+    :cond_1
+    iget-object v0, p0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->this$0:Lorg/telegram/ui/ChatActivity;
+
+    invoke-static {v0}, Lorg/telegram/ui/ChatActivity;->access$4100(Lorg/telegram/ui/ChatActivity;)Lorg/telegram/ui/Components/RecyclerListView;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroidx/recyclerview/widget/RecyclerView;->getItemAnimator()Landroidx/recyclerview/widget/RecyclerView$ItemAnimator;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->this$0:Lorg/telegram/ui/ChatActivity;
+
+    invoke-static {v1}, Lorg/telegram/ui/ChatActivity;->access$5800(Lorg/telegram/ui/ChatActivity;)Landroidx/recyclerview/widget/ChatListItemAnimator;
+
+    move-result-object v1
+
+    if-eq v0, v1, :cond_2
+
+    .line 32393
+    iget-object v0, p0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->this$0:Lorg/telegram/ui/ChatActivity;
+
+    invoke-static {v0}, Lorg/telegram/ui/ChatActivity;->access$4100(Lorg/telegram/ui/ChatActivity;)Lorg/telegram/ui/Components/RecyclerListView;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->this$0:Lorg/telegram/ui/ChatActivity;
+
+    invoke-static {v1}, Lorg/telegram/ui/ChatActivity;->access$5800(Lorg/telegram/ui/ChatActivity;)Landroidx/recyclerview/widget/ChatListItemAnimator;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Landroidx/recyclerview/widget/RecyclerView;->setItemAnimator(Landroidx/recyclerview/widget/RecyclerView$ItemAnimator;)V
+
+    .line 32395
+    :cond_2
+    :goto_0
+    invoke-direct {p0}, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->updateRowsInternal()V
+
+    .line 32397
     :try_start_0
     invoke-super {p0, p1}, Lorg/telegram/ui/Components/RecyclerAnimationScrollHelper$AnimatableAdapter;->notifyItemRemoved(I)V
     :try_end_0
@@ -2151,7 +2151,7 @@
     :catch_0
     move-exception p1
 
-    .line 32371
+    .line 32399
     invoke-static {p1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :goto_1
@@ -2167,7 +2167,7 @@
 
     move/from16 v2, p2
 
-    .line 31591
+    .line 31619
     iget v3, v0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->botInfoRow:I
 
     const/4 v4, 0x1
@@ -2182,7 +2182,7 @@
 
     goto/16 :goto_27
 
-    .line 31604
+    .line 31632
     :cond_0
     iget v3, v0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->loadingDownRow:I
 
@@ -2194,7 +2194,7 @@
 
     goto/16 :goto_25
 
-    .line 31607
+    .line 31635
     :cond_1
     iget v3, v0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->messagesStartRow:I
 
@@ -2204,7 +2204,7 @@
 
     if-ge v2, v6, :cond_45
 
-    .line 31608
+    .line 31636
     iget-boolean v6, v0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->isFrozen:Z
 
     if-eqz v6, :cond_2
@@ -2221,32 +2221,32 @@
     :goto_0
     sub-int v3, v2, v3
 
-    .line 31610
+    .line 31638
     invoke-virtual {v6, v3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v3
 
     check-cast v3, Lorg/telegram/messenger/MessageObject;
 
-    .line 31611
+    .line 31639
     iget-object v7, v1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
-    .line 31613
+    .line 31641
     instance-of v8, v7, Lorg/telegram/ui/Cells/ChatMessageCell;
 
     if-eqz v8, :cond_37
 
-    .line 31614
+    .line 31642
     check-cast v7, Lorg/telegram/ui/Cells/ChatMessageCell;
 
-    .line 31615
+    .line 31643
     iget-object v8, v0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->this$0:Lorg/telegram/ui/ChatActivity;
 
     invoke-static {v8, v3}, Lorg/telegram/ui/ChatActivity;->access$21900(Lorg/telegram/ui/ChatActivity;Lorg/telegram/messenger/MessageObject;)Lorg/telegram/messenger/MessageObject$GroupedMessages;
 
     move-result-object v8
 
-    .line 31617
+    .line 31645
     iget-object v9, v0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->this$0:Lorg/telegram/ui/ChatActivity;
 
     invoke-static {v9}, Lorg/telegram/ui/ChatActivity;->access$22800(Lorg/telegram/ui/ChatActivity;)Z
@@ -2255,14 +2255,14 @@
 
     iput-boolean v9, v7, Lorg/telegram/ui/Cells/ChatMessageCell;->albumMode:Z
 
-    .line 31618
+    .line 31646
     iget-object v9, v0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->this$0:Lorg/telegram/ui/ChatActivity;
 
     iget-boolean v10, v9, Lorg/telegram/ui/ChatActivity;->isTopic:Z
 
     if-nez v10, :cond_5
 
-    invoke-static {v9}, Lorg/telegram/ui/ChatActivity;->access$49700(Lorg/telegram/ui/ChatActivity;)Z
+    invoke-static {v9}, Lorg/telegram/ui/ChatActivity;->access$49800(Lorg/telegram/ui/ChatActivity;)Z
 
     move-result v9
 
@@ -2299,7 +2299,7 @@
     :cond_3
     iget-object v9, v0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->this$0:Lorg/telegram/ui/ChatActivity;
 
-    invoke-static {v9}, Lorg/telegram/ui/ChatActivity;->access$49800(Lorg/telegram/ui/ChatActivity;)Ljava/util/HashMap;
+    invoke-static {v9}, Lorg/telegram/ui/ChatActivity;->access$49900(Lorg/telegram/ui/ChatActivity;)Ljava/util/HashMap;
 
     move-result-object v9
 
@@ -2329,7 +2329,7 @@
 
     iget-object v9, v0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->this$0:Lorg/telegram/ui/ChatActivity;
 
-    invoke-static {v9}, Lorg/telegram/ui/ChatActivity;->access$49800(Lorg/telegram/ui/ChatActivity;)Ljava/util/HashMap;
+    invoke-static {v9}, Lorg/telegram/ui/ChatActivity;->access$49900(Lorg/telegram/ui/ChatActivity;)Ljava/util/HashMap;
 
     move-result-object v9
 
@@ -2356,17 +2356,17 @@
     if-eqz v9, :cond_5
 
     :cond_4
-    const/4 v9, 0x1
+    move v9, v4
 
     goto :goto_1
 
     :cond_5
-    const/4 v9, 0x0
+    move v9, v5
 
     :goto_1
     iput-boolean v9, v7, Lorg/telegram/ui/Cells/ChatMessageCell;->isInBookmarks:Z
 
-    .line 31619
+    .line 31647
     iget-object v9, v0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->this$0:Lorg/telegram/ui/ChatActivity;
 
     invoke-virtual {v9, v4, v5}, Lorg/telegram/ui/ChatActivity;->isTemplatesChannel(ZZ)Z
@@ -2375,7 +2375,7 @@
 
     iput-boolean v9, v7, Lorg/telegram/ui/Cells/ChatMessageCell;->isTemplatesChannel:Z
 
-    .line 31621
+    .line 31649
     iget-object v9, v0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->this$0:Lorg/telegram/ui/ChatActivity;
 
     iget-object v10, v9, Lorg/telegram/ui/ChatActivity;->currentChat:Lorg/telegram/tgnet/TLRPC$Chat;
@@ -2403,18 +2403,18 @@
     goto :goto_2
 
     :cond_6
-    const/4 v9, 0x0
+    move v9, v5
 
     goto :goto_3
 
     :cond_7
     :goto_2
-    const/4 v9, 0x1
+    move v9, v4
 
     :goto_3
     iput-boolean v9, v7, Lorg/telegram/ui/Cells/ChatMessageCell;->isChat:Z
 
-    .line 31622
+    .line 31650
     iget-object v9, v0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->this$0:Lorg/telegram/ui/ChatActivity;
 
     iget-object v10, v9, Lorg/telegram/ui/ChatActivity;->currentUser:Lorg/telegram/tgnet/TLRPC$User;
@@ -2425,17 +2425,17 @@
 
     if-eqz v10, :cond_8
 
-    const/4 v10, 0x1
+    move v10, v4
 
     goto :goto_4
 
     :cond_8
-    const/4 v10, 0x0
+    move v10, v5
 
     :goto_4
     iput-boolean v10, v7, Lorg/telegram/ui/Cells/ChatMessageCell;->isBot:Z
 
-    .line 31623
+    .line 31651
     iget-object v9, v9, Lorg/telegram/ui/ChatActivity;->currentChat:Lorg/telegram/tgnet/TLRPC$Chat;
 
     invoke-static {v9}, Lorg/telegram/messenger/ChatObject;->isChannel(Lorg/telegram/tgnet/TLRPC$Chat;)Z
@@ -2452,17 +2452,17 @@
 
     if-eqz v9, :cond_9
 
-    const/4 v9, 0x1
+    move v9, v4
 
     goto :goto_5
 
     :cond_9
-    const/4 v9, 0x0
+    move v9, v5
 
     :goto_5
     iput-boolean v9, v7, Lorg/telegram/ui/Cells/ChatMessageCell;->isMegagroup:Z
 
-    .line 31624
+    .line 31652
     iget-object v9, v0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->this$0:Lorg/telegram/ui/ChatActivity;
 
     iget-object v9, v9, Lorg/telegram/ui/ChatActivity;->currentChat:Lorg/telegram/tgnet/TLRPC$Chat;
@@ -2473,7 +2473,7 @@
 
     iput-boolean v9, v7, Lorg/telegram/ui/Cells/ChatMessageCell;->isForum:Z
 
-    .line 31625
+    .line 31653
     iget-object v9, v0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->this$0:Lorg/telegram/ui/ChatActivity;
 
     iget-object v9, v9, Lorg/telegram/ui/ChatActivity;->currentChat:Lorg/telegram/tgnet/TLRPC$Chat;
@@ -2496,17 +2496,17 @@
 
     if-ne v9, v4, :cond_a
 
-    const/4 v9, 0x1
+    move v9, v4
 
     goto :goto_6
 
     :cond_a
-    const/4 v9, 0x0
+    move v9, v5
 
     :goto_6
     iput-boolean v9, v7, Lorg/telegram/ui/Cells/ChatMessageCell;->isForumGeneral:Z
 
-    .line 31626
+    .line 31654
     iget-object v9, v0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->this$0:Lorg/telegram/ui/ChatActivity;
 
     invoke-static {v9}, Lorg/telegram/ui/ChatActivity;->access$7300(Lorg/telegram/ui/ChatActivity;)I
@@ -2528,18 +2528,18 @@
     goto :goto_7
 
     :cond_b
-    const/4 v9, 0x0
+    move v9, v5
 
     goto :goto_8
 
     :cond_c
     :goto_7
-    const/4 v9, 0x1
+    move v9, v4
 
     :goto_8
     iput-boolean v9, v7, Lorg/telegram/ui/Cells/ChatMessageCell;->isThreadChat:Z
 
-    .line 31627
+    .line 31655
     iget-object v9, v0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->this$0:Lorg/telegram/ui/ChatActivity;
 
     invoke-static {v9}, Lorg/telegram/ui/ChatActivity;->access$7200(Lorg/telegram/ui/ChatActivity;)I
@@ -2570,17 +2570,17 @@
 
     if-nez v9, :cond_d
 
-    const/4 v9, 0x1
+    move v9, v4
 
     goto :goto_9
 
     :cond_d
-    const/4 v9, 0x0
+    move v9, v5
 
     :goto_9
     iput-boolean v9, v7, Lorg/telegram/ui/Cells/ChatMessageCell;->hasDiscussion:Z
 
-    .line 31628
+    .line 31656
     iget-object v9, v0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->this$0:Lorg/telegram/ui/ChatActivity;
 
     invoke-static {v9}, Lorg/telegram/ui/ChatActivity;->access$7200(Lorg/telegram/ui/ChatActivity;)I
@@ -2591,7 +2591,7 @@
 
     iget-object v9, v0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->this$0:Lorg/telegram/ui/ChatActivity;
 
-    invoke-static {v9}, Lorg/telegram/ui/ChatActivity;->access$49900(Lorg/telegram/ui/ChatActivity;)Ljava/util/HashMap;
+    invoke-static {v9}, Lorg/telegram/ui/ChatActivity;->access$50000(Lorg/telegram/ui/ChatActivity;)Ljava/util/HashMap;
 
     move-result-object v9
 
@@ -2621,7 +2621,7 @@
 
     iget-object v9, v0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->this$0:Lorg/telegram/ui/ChatActivity;
 
-    invoke-static {v9}, Lorg/telegram/ui/ChatActivity;->access$49900(Lorg/telegram/ui/ChatActivity;)Ljava/util/HashMap;
+    invoke-static {v9}, Lorg/telegram/ui/ChatActivity;->access$50000(Lorg/telegram/ui/ChatActivity;)Ljava/util/HashMap;
 
     move-result-object v9
 
@@ -2648,17 +2648,17 @@
     if-eqz v9, :cond_f
 
     :cond_e
-    const/4 v9, 0x1
+    move v9, v4
 
     goto :goto_a
 
     :cond_f
-    const/4 v9, 0x0
+    move v9, v5
 
     :goto_a
     iput-boolean v9, v7, Lorg/telegram/ui/Cells/ChatMessageCell;->isPinned:Z
 
-    .line 31629
+    .line 31657
     iget-object v9, v0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->this$0:Lorg/telegram/ui/ChatActivity;
 
     invoke-static {v9}, Lorg/telegram/ui/ChatActivity;->access$7200(Lorg/telegram/ui/ChatActivity;)I
@@ -2683,7 +2683,7 @@
     :goto_b
     iput-wide v12, v7, Lorg/telegram/ui/Cells/ChatMessageCell;->linkedChatId:J
 
-    .line 31630
+    .line 31658
     iget-object v9, v0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->this$0:Lorg/telegram/ui/ChatActivity;
 
     iget-object v9, v9, Lorg/telegram/ui/ChatActivity;->currentUser:Lorg/telegram/tgnet/TLRPC$User;
@@ -2694,7 +2694,7 @@
 
     iput-boolean v9, v7, Lorg/telegram/ui/Cells/ChatMessageCell;->isRepliesChat:Z
 
-    .line 31631
+    .line 31659
     iget-object v9, v0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->this$0:Lorg/telegram/ui/ChatActivity;
 
     invoke-static {v9}, Lorg/telegram/ui/ChatActivity;->access$7200(Lorg/telegram/ui/ChatActivity;)I
@@ -2705,19 +2705,19 @@
 
     if-ne v9, v12, :cond_11
 
-    const/4 v9, 0x1
+    move v9, v4
 
     goto :goto_c
 
     :cond_11
-    const/4 v9, 0x0
+    move v9, v5
 
     :goto_c
     iput-boolean v9, v7, Lorg/telegram/ui/Cells/ChatMessageCell;->isPinnedChat:Z
 
     if-eqz v8, :cond_16
 
-    .line 31640
+    .line 31668
     iget-object v9, v8, Lorg/telegram/messenger/MessageObject$GroupedMessages;->positions:Ljava/util/HashMap;
 
     invoke-virtual {v9, v3}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -2728,12 +2728,12 @@
 
     if-eqz v9, :cond_15
 
-    .line 31642
+    .line 31670
     iget-boolean v13, v8, Lorg/telegram/messenger/MessageObject$GroupedMessages;->isDocuments:Z
 
     if-eqz v13, :cond_12
 
-    .line 31643
+    .line 31671
     iget-object v12, v8, Lorg/telegram/messenger/MessageObject$GroupedMessages;->posArray:Ljava/util/ArrayList;
 
     invoke-virtual {v12, v9}, Ljava/util/ArrayList;->indexOf(Ljava/lang/Object;)I
@@ -2744,7 +2744,7 @@
 
     add-int/2addr v12, v4
 
-    .line 31644
+    .line 31672
     iget-object v13, v8, Lorg/telegram/messenger/MessageObject$GroupedMessages;->posArray:Ljava/util/ArrayList;
 
     invoke-virtual {v13}, Ljava/util/ArrayList;->size()I
@@ -2763,17 +2763,9 @@
 
     move/from16 v16, v2
 
-    const/4 v2, 0x0
-
-    const/4 v9, 0x0
-
-    const/4 v14, 0x0
-
-    const/4 v15, 0x0
-
     goto :goto_f
 
-    .line 31646
+    .line 31674
     :cond_12
     iget v13, v9, Lorg/telegram/messenger/MessageObject$GroupedMessagePosition;->flags:I
 
@@ -2781,7 +2773,7 @@
 
     if-eqz v13, :cond_13
 
-    .line 31647
+    .line 31675
     iget-object v13, v8, Lorg/telegram/messenger/MessageObject$GroupedMessages;->posArray:Ljava/util/ArrayList;
 
     invoke-virtual {v13, v9}, Ljava/util/ArrayList;->indexOf(Ljava/lang/Object;)I
@@ -2792,20 +2784,20 @@
 
     add-int/2addr v13, v4
 
-    const/4 v14, 0x0
+    move v14, v5
 
-    const/4 v15, 0x0
+    move v15, v14
 
     goto :goto_d
 
     :cond_13
+    move v14, v4
+
+    move v15, v14
+
     const/16 v13, -0x64
 
-    const/4 v14, 0x1
-
-    const/4 v15, 0x1
-
-    .line 31653
+    .line 31681
     :goto_d
     iget v12, v9, Lorg/telegram/messenger/MessageObject$GroupedMessagePosition;->flags:I
 
@@ -2813,7 +2805,7 @@
 
     if-eqz v12, :cond_14
 
-    .line 31654
+    .line 31682
     iget-object v12, v8, Lorg/telegram/messenger/MessageObject$GroupedMessages;->posArray:Ljava/util/ArrayList;
 
     invoke-virtual {v12}, Ljava/util/ArrayList;->size()I
@@ -2830,41 +2822,38 @@
 
     add-int v12, v2, v9
 
+    move v2, v5
+
+    move v9, v2
+
     move/from16 v16, v12
 
     move v12, v13
 
-    const/4 v2, 0x0
-
-    const/4 v9, 0x0
-
-    goto :goto_f
+    goto :goto_10
 
     :cond_14
+    move v2, v4
+
+    move v9, v2
+
     move v12, v13
-
-    const/4 v2, 0x1
-
-    const/4 v9, 0x1
 
     goto :goto_e
 
     :cond_15
-    const/4 v2, 0x0
+    move v2, v5
 
-    const/4 v9, 0x0
+    move v9, v2
+
+    move v14, v9
+
+    move v15, v14
 
     const/16 v12, -0x64
 
-    const/4 v14, 0x0
-
-    const/4 v15, 0x0
-
     :goto_e
     const/16 v16, -0x64
-
-    :goto_f
-    move/from16 v13, v16
 
     goto :goto_10
 
@@ -2873,28 +2862,29 @@
 
     add-int/lit8 v12, v2, 0x1
 
+    :goto_f
+    move v2, v5
+
+    move v9, v2
+
+    move v14, v9
+
+    move v15, v14
+
+    :goto_10
     move/from16 v13, v16
 
-    const/4 v2, 0x0
-
-    const/4 v9, 0x0
-
-    const/4 v14, 0x0
-
-    const/4 v15, 0x0
-
-    .line 31669
-    :goto_10
+    .line 31697
     invoke-virtual {v0, v13}, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->getItemViewType(I)I
 
     move-result v4
 
-    .line 31670
+    .line 31698
     invoke-virtual {v0, v12}, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->getItemViewType(I)I
 
     move-result v5
 
-    .line 31672
+    .line 31700
     iget-object v10, v3, Lorg/telegram/messenger/MessageObject;->messageOwner:Lorg/telegram/tgnet/TLRPC$Message;
 
     iget-object v10, v10, Lorg/telegram/tgnet/TLRPC$Message;->reply_markup:Lorg/telegram/tgnet/TLRPC$ReplyMarkup;
@@ -2911,7 +2901,7 @@
 
     if-ne v4, v10, :cond_21
 
-    .line 31673
+    .line 31701
     iget v4, v0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->messagesStartRow:I
 
     sub-int/2addr v13, v4
@@ -2922,7 +2912,7 @@
 
     check-cast v4, Lorg/telegram/messenger/MessageObject;
 
-    .line 31674
+    .line 31702
     invoke-virtual {v4}, Lorg/telegram/messenger/MessageObject;->isOutOwner()Z
 
     move-result v9
@@ -2959,7 +2949,7 @@
     :goto_11
     if-eqz v9, :cond_21
 
-    .line 31676
+    .line 31704
     invoke-virtual {v3}, Lorg/telegram/messenger/MessageObject;->isImportedForward()Z
 
     move-result v10
@@ -2974,7 +2964,7 @@
 
     goto :goto_14
 
-    .line 31692
+    .line 31720
     :cond_18
     iget-object v10, v0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->this$0:Lorg/telegram/ui/ChatActivity;
 
@@ -2982,12 +2972,12 @@
 
     if-eqz v13, :cond_1b
 
-    .line 31693
+    .line 31721
     invoke-virtual {v4}, Lorg/telegram/messenger/MessageObject;->getFromChatId()J
 
     move-result-wide v9
 
-    .line 31694
+    .line 31722
     invoke-virtual {v3}, Lorg/telegram/messenger/MessageObject;->getFromChatId()J
 
     move-result-wide v19
@@ -3010,11 +3000,11 @@
 
     const-wide/16 v17, 0x0
 
-    cmp-long v13, v9, v17
+    cmp-long v9, v9, v17
 
-    if-gez v13, :cond_1a
+    if-gez v9, :cond_1a
 
-    .line 31695
+    .line 31723
     iget-object v9, v0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->this$0:Lorg/telegram/ui/ChatActivity;
 
     iget-object v9, v9, Lorg/telegram/ui/ChatActivity;->currentChat:Lorg/telegram/tgnet/TLRPC$Chat;
@@ -3030,7 +3020,7 @@
 
     goto/16 :goto_16
 
-    .line 31698
+    .line 31726
     :cond_1b
     iget-object v10, v10, Lorg/telegram/ui/ChatActivity;->currentUser:Lorg/telegram/tgnet/TLRPC$User;
 
@@ -3050,7 +3040,7 @@
 
     if-eqz v10, :cond_21
 
-    .line 31699
+    .line 31727
     :cond_1c
     invoke-virtual {v3}, Lorg/telegram/messenger/MessageObject;->isPrivateForward()Z
 
@@ -3066,7 +3056,7 @@
 
     goto :goto_15
 
-    .line 31702
+    .line 31730
     :cond_1d
     invoke-virtual {v4}, Lorg/telegram/messenger/MessageObject;->getSenderId()J
 
@@ -3085,7 +3075,7 @@
 
     goto :goto_16
 
-    .line 31677
+    .line 31705
     :cond_1e
     :goto_14
     invoke-virtual {v3}, Lorg/telegram/messenger/MessageObject;->isImportedForward()Z
@@ -3100,7 +3090,7 @@
 
     if-eqz v9, :cond_20
 
-    .line 31678
+    .line 31706
     iget-object v9, v4, Lorg/telegram/messenger/MessageObject;->messageOwner:Lorg/telegram/tgnet/TLRPC$Message;
 
     iget-object v9, v9, Lorg/telegram/tgnet/TLRPC$Message;->fwd_from:Lorg/telegram/tgnet/TLRPC$MessageFwdHeader;
@@ -3121,7 +3111,7 @@
 
     if-gt v9, v11, :cond_20
 
-    .line 31679
+    .line 31707
     iget-object v4, v4, Lorg/telegram/messenger/MessageObject;->messageOwner:Lorg/telegram/tgnet/TLRPC$Message;
 
     iget-object v4, v4, Lorg/telegram/tgnet/TLRPC$Message;->fwd_from:Lorg/telegram/tgnet/TLRPC$MessageFwdHeader;
@@ -3138,14 +3128,14 @@
 
     if-eqz v10, :cond_1f
 
-    .line 31680
+    .line 31708
     invoke-virtual {v9, v10}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v9
 
     goto :goto_16
 
-    .line 31681
+    .line 31709
     :cond_1f
     iget-object v4, v4, Lorg/telegram/tgnet/TLRPC$MessageFwdHeader;->from_id:Lorg/telegram/tgnet/TLRPC$Peer;
 
@@ -3159,7 +3149,7 @@
 
     if-eqz v9, :cond_20
 
-    .line 31682
+    .line 31710
     invoke-static {v4}, Lorg/telegram/messenger/MessageObject;->getPeerId(Lorg/telegram/tgnet/TLRPC$Peer;)J
 
     move-result-wide v9
@@ -3184,7 +3174,7 @@
     :goto_15
     const/4 v9, 0x0
 
-    .line 31707
+    .line 31735
     :cond_21
     :goto_16
     invoke-virtual/range {p1 .. p1}, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->getItemViewType()I
@@ -3193,7 +3183,7 @@
 
     if-ne v5, v4, :cond_2c
 
-    .line 31708
+    .line 31736
     iget v4, v0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->messagesStartRow:I
 
     sub-int/2addr v12, v4
@@ -3204,7 +3194,7 @@
 
     check-cast v4, Lorg/telegram/messenger/MessageObject;
 
-    .line 31709
+    .line 31737
     iget-object v5, v4, Lorg/telegram/messenger/MessageObject;->messageOwner:Lorg/telegram/tgnet/TLRPC$Message;
 
     iget-object v5, v5, Lorg/telegram/tgnet/TLRPC$Message;->reply_markup:Lorg/telegram/tgnet/TLRPC$ReplyMarkup;
@@ -3249,7 +3239,7 @@
     :goto_17
     if-eqz v14, :cond_2c
 
-    .line 31711
+    .line 31739
     invoke-virtual {v3}, Lorg/telegram/messenger/MessageObject;->isImportedForward()Z
 
     move-result v5
@@ -3264,7 +3254,7 @@
 
     goto :goto_1a
 
-    .line 31727
+    .line 31755
     :cond_23
     iget-object v5, v0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->this$0:Lorg/telegram/ui/ChatActivity;
 
@@ -3272,19 +3262,19 @@
 
     if-eqz v6, :cond_26
 
-    .line 31728
+    .line 31756
     invoke-virtual {v4}, Lorg/telegram/messenger/MessageObject;->getFromChatId()J
 
     move-result-wide v5
 
-    .line 31729
+    .line 31757
     invoke-virtual {v3}, Lorg/telegram/messenger/MessageObject;->getFromChatId()J
 
     move-result-wide v10
 
-    cmp-long v12, v5, v10
+    cmp-long v10, v5, v10
 
-    if-nez v12, :cond_24
+    if-nez v10, :cond_24
 
     invoke-virtual {v3}, Lorg/telegram/messenger/MessageObject;->isImportedForward()Z
 
@@ -3312,11 +3302,11 @@
 
     const-wide/16 v10, 0x0
 
-    cmp-long v12, v5, v10
+    cmp-long v5, v5, v10
 
-    if-gez v12, :cond_25
+    if-gez v5, :cond_25
 
-    .line 31730
+    .line 31758
     iget-object v5, v0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->this$0:Lorg/telegram/ui/ChatActivity;
 
     iget-object v5, v5, Lorg/telegram/ui/ChatActivity;->currentChat:Lorg/telegram/tgnet/TLRPC$Chat;
@@ -3332,7 +3322,7 @@
 
     goto/16 :goto_1c
 
-    .line 31733
+    .line 31761
     :cond_26
     iget-object v5, v5, Lorg/telegram/ui/ChatActivity;->currentUser:Lorg/telegram/tgnet/TLRPC$User;
 
@@ -3352,7 +3342,7 @@
 
     if-eqz v5, :cond_2c
 
-    .line 31734
+    .line 31762
     :cond_27
     invoke-virtual {v3}, Lorg/telegram/messenger/MessageObject;->isPrivateForward()Z
 
@@ -3368,7 +3358,7 @@
 
     goto :goto_1b
 
-    .line 31737
+    .line 31765
     :cond_28
     invoke-virtual {v4}, Lorg/telegram/messenger/MessageObject;->getSenderId()J
 
@@ -3378,16 +3368,16 @@
 
     move-result-wide v10
 
-    cmp-long v6, v4, v10
+    cmp-long v4, v4, v10
 
-    if-nez v6, :cond_2b
+    if-nez v4, :cond_2b
 
     :goto_19
     const/4 v14, 0x1
 
     goto :goto_1c
 
-    .line 31712
+    .line 31740
     :cond_29
     :goto_1a
     invoke-virtual {v3}, Lorg/telegram/messenger/MessageObject;->isImportedForward()Z
@@ -3402,7 +3392,7 @@
 
     if-eqz v5, :cond_2b
 
-    .line 31713
+    .line 31741
     iget-object v5, v3, Lorg/telegram/messenger/MessageObject;->messageOwner:Lorg/telegram/tgnet/TLRPC$Message;
 
     iget-object v5, v5, Lorg/telegram/tgnet/TLRPC$Message;->fwd_from:Lorg/telegram/tgnet/TLRPC$MessageFwdHeader;
@@ -3423,7 +3413,7 @@
 
     if-gt v5, v11, :cond_2b
 
-    .line 31714
+    .line 31742
     iget-object v4, v4, Lorg/telegram/messenger/MessageObject;->messageOwner:Lorg/telegram/tgnet/TLRPC$Message;
 
     iget-object v4, v4, Lorg/telegram/tgnet/TLRPC$Message;->fwd_from:Lorg/telegram/tgnet/TLRPC$MessageFwdHeader;
@@ -3440,14 +3430,14 @@
 
     if-eqz v6, :cond_2a
 
-    .line 31715
+    .line 31743
     invoke-virtual {v5, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v14
 
     goto :goto_1c
 
-    .line 31716
+    .line 31744
     :cond_2a
     iget-object v4, v4, Lorg/telegram/tgnet/TLRPC$MessageFwdHeader;->from_id:Lorg/telegram/tgnet/TLRPC$Peer;
 
@@ -3461,7 +3451,7 @@
 
     if-eqz v5, :cond_2b
 
-    .line 31717
+    .line 31745
     invoke-static {v4}, Lorg/telegram/messenger/MessageObject;->getPeerId(Lorg/telegram/tgnet/TLRPC$Peer;)J
 
     move-result-wide v4
@@ -3476,9 +3466,9 @@
 
     move-result-wide v10
 
-    cmp-long v6, v4, v10
+    cmp-long v4, v4, v10
 
-    if-nez v6, :cond_2b
+    if-nez v4, :cond_2b
 
     goto :goto_19
 
@@ -3486,7 +3476,7 @@
     :goto_1b
     const/4 v14, 0x0
 
-    .line 31742
+    .line 31770
     :cond_2c
     :goto_1c
     iget-object v4, v0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->this$0:Lorg/telegram/ui/ChatActivity;
@@ -3513,9 +3503,9 @@
 
     const-wide/16 v10, 0x0
 
-    cmp-long v6, v4, v10
+    cmp-long v4, v4, v10
 
-    if-gtz v6, :cond_2e
+    if-gtz v4, :cond_2e
 
     iget-object v4, v3, Lorg/telegram/messenger/MessageObject;->messageOwner:Lorg/telegram/tgnet/TLRPC$Message;
 
@@ -3545,15 +3535,15 @@
     :cond_2e
     const/4 v2, 0x0
 
-    .line 31751
+    .line 31779
     :goto_1d
     invoke-virtual {v3, v2}, Lorg/telegram/messenger/MessageObject;->updateTranslation(Z)Z
 
     if-eqz v8, :cond_2f
 
-    const/4 v4, 0x0
+    move v4, v2
 
-    .line 31753
+    .line 31781
     :goto_1e
     iget-object v5, v8, Lorg/telegram/messenger/MessageObject$GroupedMessages;->messages:Ljava/util/ArrayList;
 
@@ -3563,7 +3553,7 @@
 
     if-ge v4, v5, :cond_2f
 
-    .line 31754
+    .line 31782
     iget-object v5, v8, Lorg/telegram/messenger/MessageObject$GroupedMessages;->messages:Ljava/util/ArrayList;
 
     invoke-virtual {v5, v4}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -3580,11 +3570,11 @@
 
     goto :goto_1e
 
-    .line 31757
+    .line 31785
     :cond_2f
     invoke-virtual {v7, v3, v8, v9, v14}, Lorg/telegram/ui/Cells/ChatMessageCell;->setMessageObject(Lorg/telegram/messenger/MessageObject;Lorg/telegram/messenger/MessageObject$GroupedMessages;ZZ)V
 
-    .line 31758
+    .line 31786
     iget-object v2, v0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->this$0:Lorg/telegram/ui/ChatActivity;
 
     invoke-static {v2}, Lorg/telegram/ui/ChatActivity;->access$4100(Lorg/telegram/ui/ChatActivity;)Lorg/telegram/ui/Components/RecyclerListView;
@@ -3607,7 +3597,7 @@
     :goto_1f
     invoke-virtual {v7, v2}, Lorg/telegram/ui/Cells/ChatMessageCell;->setSpoilersSuppressed(Z)V
 
-    .line 31759
+    .line 31787
     iget-object v2, v0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->this$0:Lorg/telegram/ui/ChatActivity;
 
     iget v2, v2, Lorg/telegram/ui/ChatActivity;->highlightMessageId:I
@@ -3636,17 +3626,17 @@
     :goto_20
     invoke-virtual {v7, v2}, Lorg/telegram/ui/Cells/ChatMessageCell;->setHighlighted(Z)V
 
-    .line 31760
+    .line 31788
     iget-object v2, v0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->this$0:Lorg/telegram/ui/ChatActivity;
 
     iget v5, v2, Lorg/telegram/ui/ChatActivity;->highlightMessageId:I
 
     if-eq v5, v4, :cond_32
 
-    .line 31761
-    invoke-static {v2, v7}, Lorg/telegram/ui/ChatActivity;->access$50000(Lorg/telegram/ui/ChatActivity;Lorg/telegram/ui/Cells/ChatMessageCell;)V
+    .line 31789
+    invoke-static {v2, v7}, Lorg/telegram/ui/ChatActivity;->access$50100(Lorg/telegram/ui/ChatActivity;Lorg/telegram/ui/Cells/ChatMessageCell;)V
 
-    .line 31764
+    .line 31792
     :cond_32
     iget-object v2, v0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->this$0:Lorg/telegram/ui/ChatActivity;
 
@@ -3660,7 +3650,7 @@
 
     if-eq v2, v4, :cond_36
 
-    .line 31766
+    .line 31794
     iget v4, v3, Lorg/telegram/messenger/MessageObject;->type:I
 
     const/4 v5, 0x5
@@ -3687,7 +3677,7 @@
 
     if-eqz v4, :cond_33
 
-    .line 31768
+    .line 31796
     invoke-virtual {v7}, Landroid/view/ViewGroup;->getViewTreeObserver()Landroid/view/ViewTreeObserver;
 
     move-result-object v4
@@ -3700,7 +3690,7 @@
 
     goto :goto_21
 
-    .line 31859
+    .line 31887
     :cond_33
     invoke-virtual {v3}, Lorg/telegram/messenger/MessageObject;->isAnyKindOfSticker()Z
 
@@ -3714,7 +3704,7 @@
 
     if-nez v4, :cond_34
 
-    .line 31861
+    .line 31889
     invoke-virtual {v7}, Landroid/view/ViewGroup;->getViewTreeObserver()Landroid/view/ViewTreeObserver;
 
     move-result-object v4
@@ -3736,7 +3726,7 @@
     :goto_22
     if-nez v5, :cond_35
 
-    .line 31975
+    .line 32003
     iget-object v4, v0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->this$0:Lorg/telegram/ui/ChatActivity;
 
     invoke-static {v4}, Lorg/telegram/ui/ChatActivity;->access$5800(Lorg/telegram/ui/ChatActivity;)Landroidx/recyclerview/widget/ChatListItemAnimator;
@@ -3745,7 +3735,7 @@
 
     if-nez v4, :cond_36
 
-    .line 31976
+    .line 32004
     :cond_35
     iget-object v4, v0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->this$0:Lorg/telegram/ui/ChatActivity;
 
@@ -3753,14 +3743,14 @@
 
     invoke-virtual {v4, v2}, Ljava/util/ArrayList;->remove(I)Ljava/lang/Object;
 
-    .line 31977
+    .line 32005
     iget-object v2, v0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->this$0:Lorg/telegram/ui/ChatActivity;
 
     iget-object v2, v2, Lorg/telegram/ui/ChatActivity;->chatActivityEnterView:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
     invoke-virtual {v2}, Lorg/telegram/ui/Components/ChatActivityEnterView;->startMessageTransition()V
 
-    .line 31978
+    .line 32006
     iget-object v2, v0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->this$0:Lorg/telegram/ui/ChatActivity;
 
     iget-object v2, v2, Lorg/telegram/ui/ChatActivity;->chatActivityEnterView:Lorg/telegram/ui/Components/ChatActivityEnterView;
@@ -3769,11 +3759,11 @@
 
     invoke-virtual {v2, v4}, Lorg/telegram/ui/Components/ChatActivityEnterView;->hideTopView(Z)V
 
-    .line 31981
+    .line 32009
     :cond_36
     iget-object v2, v0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->this$0:Lorg/telegram/ui/ChatActivity;
 
-    invoke-static {v2}, Lorg/telegram/ui/ChatActivity;->access$50900(Lorg/telegram/ui/ChatActivity;)Ljava/util/HashMap;
+    invoke-static {v2}, Lorg/telegram/ui/ChatActivity;->access$51000(Lorg/telegram/ui/ChatActivity;)Ljava/util/HashMap;
 
     move-result-object v2
 
@@ -3785,7 +3775,7 @@
 
     iget-object v2, v0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->this$0:Lorg/telegram/ui/ChatActivity;
 
-    invoke-static {v2}, Lorg/telegram/ui/ChatActivity;->access$50900(Lorg/telegram/ui/ChatActivity;)Ljava/util/HashMap;
+    invoke-static {v2}, Lorg/telegram/ui/ChatActivity;->access$51000(Lorg/telegram/ui/ChatActivity;)Ljava/util/HashMap;
 
     move-result-object v2
 
@@ -3799,10 +3789,10 @@
 
     if-eqz v2, :cond_45
 
-    .line 31982
+    .line 32010
     iget-object v2, v0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->this$0:Lorg/telegram/ui/ChatActivity;
 
-    invoke-static {v2}, Lorg/telegram/ui/ChatActivity;->access$50900(Lorg/telegram/ui/ChatActivity;)Ljava/util/HashMap;
+    invoke-static {v2}, Lorg/telegram/ui/ChatActivity;->access$51000(Lorg/telegram/ui/ChatActivity;)Ljava/util/HashMap;
 
     move-result-object v2
 
@@ -3812,7 +3802,7 @@
 
     invoke-virtual {v2, v3}, Ljava/util/HashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 31983
+    .line 32011
     iget-object v2, v0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->this$0:Lorg/telegram/ui/ChatActivity;
 
     invoke-static {v2}, Lorg/telegram/ui/ChatActivity;->access$5800(Lorg/telegram/ui/ChatActivity;)Landroidx/recyclerview/widget/ChatListItemAnimator;
@@ -3821,7 +3811,7 @@
 
     if-eqz v2, :cond_45
 
-    .line 31984
+    .line 32012
     iget-object v2, v0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->this$0:Lorg/telegram/ui/ChatActivity;
 
     invoke-static {v2}, Lorg/telegram/ui/ChatActivity;->access$5800(Lorg/telegram/ui/ChatActivity;)Landroidx/recyclerview/widget/ChatListItemAnimator;
@@ -3830,7 +3820,7 @@
 
     iget-object v3, v0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->this$0:Lorg/telegram/ui/ChatActivity;
 
-    invoke-static {v3}, Lorg/telegram/ui/ChatActivity;->access$51000(Lorg/telegram/ui/ChatActivity;)Lorg/telegram/ui/Components/ChatGreetingsView;
+    invoke-static {v3}, Lorg/telegram/ui/ChatActivity;->access$51100(Lorg/telegram/ui/ChatActivity;)Lorg/telegram/ui/Components/ChatGreetingsView;
 
     move-result-object v3
 
@@ -3838,16 +3828,16 @@
 
     goto/16 :goto_2c
 
-    .line 31987
+    .line 32015
     :cond_37
     instance-of v1, v7, Lorg/telegram/ui/Cells/ChatActionCell;
 
     if-eqz v1, :cond_3b
 
-    .line 31988
+    .line 32016
     check-cast v7, Lorg/telegram/ui/Cells/ChatActionCell;
 
-    .line 31990
+    .line 32018
     iget-object v1, v0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->this$0:Lorg/telegram/ui/ChatActivity;
 
     invoke-virtual {v1}, Lorg/telegram/ui/ChatActivity;->isForwardingEditor()Z
@@ -3856,7 +3846,7 @@
 
     if-eqz v1, :cond_38
 
-    .line 31991
+    .line 32019
     sget v1, Lorg/telegram/messenger/R$string;->PrivacyForwards:I
 
     const-string v2, "PrivacyForwards"
@@ -3869,7 +3859,7 @@
 
     goto :goto_23
 
-    .line 31992
+    .line 32020
     :cond_38
     iget-object v1, v0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->this$0:Lorg/telegram/ui/ChatActivity;
 
@@ -3887,7 +3877,7 @@
 
     if-eqz v1, :cond_39
 
-    .line 31993
+    .line 32021
     sget v1, Lorg/telegram/messenger/R$string;->cloud_album_created:I
 
     invoke-static {v1}, Lorg/telegram/messenger/LocaleController;->getInternalString(I)Ljava/lang/String;
@@ -3896,17 +3886,17 @@
 
     iput-object v1, v3, Lorg/telegram/messenger/MessageObject;->messageText:Ljava/lang/CharSequence;
 
-    .line 31996
+    .line 32024
     :cond_39
     :goto_23
     invoke-virtual {v7, v3}, Lorg/telegram/ui/Cells/ChatActionCell;->setMessageObject(Lorg/telegram/messenger/MessageObject;)V
 
     const/high16 v1, 0x3f800000    # 1.0f
 
-    .line 31997
+    .line 32025
     invoke-virtual {v7, v1}, Landroid/view/ViewGroup;->setAlpha(F)V
 
-    .line 31998
+    .line 32026
     iget-object v1, v0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->this$0:Lorg/telegram/ui/ChatActivity;
 
     invoke-static {v1}, Lorg/telegram/ui/ChatActivity;->access$4100(Lorg/telegram/ui/ChatActivity;)Lorg/telegram/ui/Components/RecyclerListView;
@@ -3931,16 +3921,16 @@
 
     goto/16 :goto_2c
 
-    .line 31999
+    .line 32027
     :cond_3b
     instance-of v1, v7, Lorg/telegram/ui/Cells/ChatUnreadCell;
 
     if-eqz v1, :cond_45
 
-    .line 32000
+    .line 32028
     check-cast v7, Lorg/telegram/ui/Cells/ChatUnreadCell;
 
-    .line 32001
+    .line 32029
     sget v1, Lorg/telegram/messenger/R$string;->UnreadMessages:I
 
     const-string v2, "UnreadMessages"
@@ -3951,35 +3941,35 @@
 
     invoke-virtual {v7, v1}, Lorg/telegram/ui/Cells/ChatUnreadCell;->setText(Ljava/lang/String;)V
 
-    .line 32002
+    .line 32030
     iget-object v1, v0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->this$0:Lorg/telegram/ui/ChatActivity;
 
-    invoke-static {v1}, Lorg/telegram/ui/ChatActivity;->access$51100(Lorg/telegram/ui/ChatActivity;)I
+    invoke-static {v1}, Lorg/telegram/ui/ChatActivity;->access$51200(Lorg/telegram/ui/ChatActivity;)I
 
     move-result v1
 
     if-eqz v1, :cond_45
 
-    .line 32003
+    .line 32031
     iget-object v1, v0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->this$0:Lorg/telegram/ui/ChatActivity;
 
     const/4 v2, 0x0
 
-    invoke-static {v1, v2}, Lorg/telegram/ui/ChatActivity;->access$51102(Lorg/telegram/ui/ChatActivity;I)I
+    invoke-static {v1, v2}, Lorg/telegram/ui/ChatActivity;->access$51202(Lorg/telegram/ui/ChatActivity;I)I
 
     goto/16 :goto_2c
 
-    .line 31605
+    .line 31633
     :cond_3c
     :goto_25
     iget-object v1, v1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     check-cast v1, Lorg/telegram/ui/Cells/ChatLoadingCell;
 
-    .line 31606
+    .line 31634
     iget-object v2, v0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->this$0:Lorg/telegram/ui/ChatActivity;
 
-    invoke-static {v2}, Lorg/telegram/ui/ChatActivity;->access$49600(Lorg/telegram/ui/ChatActivity;)I
+    invoke-static {v2}, Lorg/telegram/ui/ChatActivity;->access$49700(Lorg/telegram/ui/ChatActivity;)I
 
     move-result v2
 
@@ -3987,7 +3977,7 @@
 
     if-le v2, v3, :cond_3d
 
-    const/4 v4, 0x1
+    move v4, v3
 
     goto :goto_26
 
@@ -3997,18 +3987,18 @@
     :goto_26
     invoke-virtual {v1, v4}, Lorg/telegram/ui/Cells/ChatLoadingCell;->setProgressVisible(Z)V
 
-    goto :goto_2c
+    goto/16 :goto_2c
 
     :cond_3e
     :goto_27
-    const/4 v3, 0x1
+    move v3, v4
 
-    .line 31592
+    .line 31620
     iget-object v1, v1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     check-cast v1, Lorg/telegram/ui/Cells/BotHelpCell;
 
-    .line 31594
+    .line 31622
     iget-object v2, v0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->this$0:Lorg/telegram/ui/ChatActivity;
 
     const/4 v4, 0x0
@@ -4019,7 +4009,7 @@
 
     if-eqz v2, :cond_3f
 
-    .line 31595
+    .line 31623
     sget v2, Lorg/telegram/messenger/R$string;->chat_templates_info:I
 
     invoke-static {v2}, Lorg/telegram/messenger/LocaleController;->getInternalString(I)Ljava/lang/String;
@@ -4030,7 +4020,7 @@
 
     goto :goto_2b
 
-    .line 31597
+    .line 31625
     :cond_3f
     iget-object v2, v0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->this$0:Lorg/telegram/ui/ChatActivity;
 
@@ -4042,7 +4032,7 @@
 
     if-eqz v2, :cond_40
 
-    .line 31598
+    .line 31626
     sget v2, Lorg/telegram/messenger/R$string;->RepliesChatInfo:I
 
     const-string v3, "RepliesChatInfo"
@@ -4055,7 +4045,7 @@
 
     goto :goto_2b
 
-    .line 31600
+    .line 31628
     :cond_40
     iget-object v2, v0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->this$0:Lorg/telegram/ui/ChatActivity;
 
@@ -4097,7 +4087,7 @@
     :goto_28
     if-eqz v2, :cond_42
 
-    .line 31601
+    .line 31629
     iget-object v4, v2, Lorg/telegram/tgnet/TLRPC$BotInfo;->description:Ljava/lang/String;
 
     goto :goto_29
@@ -4123,11 +4113,11 @@
 
     invoke-virtual {v1, v5, v4, v3, v2}, Lorg/telegram/ui/Cells/BotHelpCell;->setText(ZLjava/lang/String;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$BotInfo;)V
 
-    .line 31603
+    .line 31631
     :goto_2b
     iget-object v2, v0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->this$0:Lorg/telegram/ui/ChatActivity;
 
-    invoke-static {v2, v1}, Lorg/telegram/ui/ChatActivity;->access$49500(Lorg/telegram/ui/ChatActivity;Lorg/telegram/ui/Cells/BotHelpCell;)V
+    invoke-static {v2, v1}, Lorg/telegram/ui/ChatActivity;->access$49600(Lorg/telegram/ui/ChatActivity;Lorg/telegram/ui/Cells/BotHelpCell;)V
 
     :cond_45
     :goto_2c
@@ -4143,10 +4133,10 @@
 
     if-nez p2, :cond_2
 
-    .line 31357
+    .line 31385
     iget-object p2, p0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->this$0:Lorg/telegram/ui/ChatActivity;
 
-    invoke-static {p2}, Lorg/telegram/ui/ChatActivity;->access$48500(Lorg/telegram/ui/ChatActivity;)Ljava/util/ArrayList;
+    invoke-static {p2}, Lorg/telegram/ui/ChatActivity;->access$48600(Lorg/telegram/ui/ChatActivity;)Ljava/util/ArrayList;
 
     move-result-object p2
 
@@ -4156,10 +4146,10 @@
 
     if-nez p2, :cond_0
 
-    .line 31358
+    .line 31386
     iget-object p2, p0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->this$0:Lorg/telegram/ui/ChatActivity;
 
-    invoke-static {p2}, Lorg/telegram/ui/ChatActivity;->access$48500(Lorg/telegram/ui/ChatActivity;)Ljava/util/ArrayList;
+    invoke-static {p2}, Lorg/telegram/ui/ChatActivity;->access$48600(Lorg/telegram/ui/ChatActivity;)Ljava/util/ArrayList;
 
     move-result-object p2
 
@@ -4171,10 +4161,10 @@
 
     check-cast p2, Landroid/view/View;
 
-    .line 31359
+    .line 31387
     iget-object v2, p0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->this$0:Lorg/telegram/ui/ChatActivity;
 
-    invoke-static {v2}, Lorg/telegram/ui/ChatActivity;->access$48500(Lorg/telegram/ui/ChatActivity;)Ljava/util/ArrayList;
+    invoke-static {v2}, Lorg/telegram/ui/ChatActivity;->access$48600(Lorg/telegram/ui/ChatActivity;)Ljava/util/ArrayList;
 
     move-result-object v2
 
@@ -4182,7 +4172,7 @@
 
     goto :goto_0
 
-    .line 31361
+    .line 31389
     :cond_0
     new-instance p2, Lorg/telegram/ui/Cells/ChatMessageCell;
 
@@ -4192,29 +4182,29 @@
 
     iget-object v3, v2, Lorg/telegram/ui/ChatActivity;->themeDelegate:Lorg/telegram/ui/ChatActivity$ThemeDelegate;
 
-    invoke-static {v2}, Lorg/telegram/ui/ChatActivity;->access$48600(Lorg/telegram/ui/ChatActivity;)I
+    invoke-static {v2}, Lorg/telegram/ui/ChatActivity;->access$48700(Lorg/telegram/ui/ChatActivity;)I
 
     move-result v2
 
     invoke-direct {p2, v1, v0, v3, v2}, Lorg/telegram/ui/Cells/ChatMessageCell;-><init>(Landroid/content/Context;ZLorg/telegram/ui/ActionBar/Theme$ResourcesProvider;I)V
 
-    .line 31363
+    .line 31391
     :goto_0
     move-object v1, p2
 
     check-cast v1, Lorg/telegram/ui/Cells/ChatMessageCell;
 
-    .line 31364
+    .line 31392
     iget-object v2, p0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->this$0:Lorg/telegram/ui/ChatActivity;
 
     iget-object v2, v2, Lorg/telegram/ui/ChatActivity;->themeDelegate:Lorg/telegram/ui/ChatActivity$ThemeDelegate;
 
     invoke-virtual {v1, v2}, Lorg/telegram/ui/Cells/ChatMessageCell;->setResourcesProvider(Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
-    .line 31365
+    .line 31393
     iput-boolean v0, v1, Lorg/telegram/ui/Cells/ChatMessageCell;->shouldCheckVisibleOnScreen:Z
 
-    .line 31366
+    .line 31394
     new-instance v2, Lorg/telegram/ui/ChatActivity$ChatMessageCellDelegate;
 
     iget-object v3, p0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->this$0:Lorg/telegram/ui/ChatActivity;
@@ -4223,14 +4213,14 @@
 
     invoke-virtual {v1, v2}, Lorg/telegram/ui/Cells/ChatMessageCell;->setDelegate(Lorg/telegram/ui/Cells/ChatMessageCell$ChatMessageCellDelegate;)V
 
-    .line 31367
+    .line 31395
     iget-object p1, p0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->this$0:Lorg/telegram/ui/ChatActivity;
 
     iget-object p1, p1, Lorg/telegram/ui/ChatActivity;->currentEncryptedChat:Lorg/telegram/tgnet/TLRPC$EncryptedChat;
 
     if-nez p1, :cond_1
 
-    .line 31368
+    .line 31396
     invoke-virtual {v1, v0}, Lorg/telegram/ui/Cells/ChatMessageCell;->setAllowAssistant(Z)V
 
     :cond_1
@@ -4241,7 +4231,7 @@
     :cond_2
     if-ne p2, v0, :cond_3
 
-    .line 31371
+    .line 31399
     new-instance p1, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter$1;
 
     iget-object v4, p0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->mContext:Landroid/content/Context;
@@ -4252,7 +4242,7 @@
 
     iget-object v6, p2, Lorg/telegram/ui/ChatActivity;->themeDelegate:Lorg/telegram/ui/ChatActivity$ThemeDelegate;
 
-    invoke-static {p2}, Lorg/telegram/ui/ChatActivity;->access$48800(Lorg/telegram/ui/ChatActivity;)I
+    invoke-static {p2}, Lorg/telegram/ui/ChatActivity;->access$48900(Lorg/telegram/ui/ChatActivity;)I
 
     move-result v7
 
@@ -4262,10 +4252,10 @@
 
     invoke-direct/range {v2 .. v7}, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter$1;-><init>(Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;Landroid/content/Context;ZLorg/telegram/ui/Cells/ChatActionCell$ThemeDelegate;I)V
 
-    .line 31380
+    .line 31408
     invoke-virtual {p1, v0}, Lorg/telegram/ui/Cells/ChatActionCell;->setInvalidateColors(Z)V
 
-    .line 31381
+    .line 31409
     new-instance p2, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter$2;
 
     invoke-direct {p2, p0}, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter$2;-><init>(Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;)V
@@ -4279,7 +4269,7 @@
 
     if-ne p2, v0, :cond_4
 
-    .line 31563
+    .line 31591
     new-instance p1, Lorg/telegram/ui/Cells/ChatUnreadCell;
 
     iget-object p2, p0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->mContext:Landroid/content/Context;
@@ -4297,7 +4287,7 @@
 
     if-ne p2, v0, :cond_5
 
-    .line 31565
+    .line 31593
     new-instance p1, Lorg/telegram/ui/Cells/BotHelpCell;
 
     iget-object p2, p0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->mContext:Landroid/content/Context;
@@ -4308,7 +4298,7 @@
 
     invoke-direct {p1, p2, v0}, Lorg/telegram/ui/Cells/BotHelpCell;-><init>(Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
-    .line 31566
+    .line 31594
     new-instance p2, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter$$ExternalSyntheticLambda1;
 
     invoke-direct {p2, p0}, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter$$ExternalSyntheticLambda1;-><init>(Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;)V
@@ -4322,7 +4312,7 @@
 
     if-ne p2, v0, :cond_6
 
-    .line 31583
+    .line 31611
     new-instance p1, Lorg/telegram/ui/Cells/ChatLoadingCell;
 
     iget-object p2, p0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->mContext:Landroid/content/Context;
@@ -4335,7 +4325,7 @@
 
     invoke-direct {p1, p2, v1, v0}, Lorg/telegram/ui/Cells/ChatLoadingCell;-><init>(Landroid/content/Context;Landroid/view/View;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
-    .line 31585
+    .line 31613
     :cond_6
     :goto_1
     new-instance p2, Landroidx/recyclerview/widget/RecyclerView$LayoutParams;
@@ -4348,7 +4338,7 @@
 
     invoke-virtual {p1, p2}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 31586
+    .line 31614
     new-instance p2, Lorg/telegram/ui/Components/RecyclerListView$Holder;
 
     invoke-direct {p2, p1}, Lorg/telegram/ui/Components/RecyclerListView$Holder;-><init>(Landroid/view/View;)V
@@ -4359,7 +4349,7 @@
 .method public onViewAttachedToWindow(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;)V
     .locals 10
 
-    .line 32027
+    .line 32055
     iget-object v0, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     instance-of v1, v0, Lorg/telegram/ui/Cells/ChatMessageCell;
@@ -4370,7 +4360,7 @@
 
     if-eqz v1, :cond_1
 
-    .line 32029
+    .line 32057
     :cond_0
     invoke-virtual {v0}, Landroid/view/View;->getViewTreeObserver()Landroid/view/ViewTreeObserver;
 
@@ -4382,7 +4372,7 @@
 
     invoke-virtual {v1, v2}, Landroid/view/ViewTreeObserver;->addOnPreDrawListener(Landroid/view/ViewTreeObserver$OnPreDrawListener;)V
 
-    .line 32062
+    .line 32090
     :cond_1
     iget-object v0, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
@@ -4394,23 +4384,23 @@
 
     if-eqz v1, :cond_11
 
-    .line 32063
+    .line 32091
     check-cast v0, Lorg/telegram/ui/Cells/ChatMessageCell;
 
-    .line 32064
+    .line 32092
     invoke-virtual {v0}, Lorg/telegram/ui/Cells/ChatMessageCell;->getMessageObject()Lorg/telegram/messenger/MessageObject;
 
     move-result-object v1
 
     const/4 v4, -0x1
 
-    .line 32065
+    .line 32093
     invoke-virtual {v0, v2, v3, v4}, Lorg/telegram/ui/Cells/ChatMessageCell;->showHintButton(ZZI)V
 
-    .line 32066
+    .line 32094
     iget-object v4, p0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->this$0:Lorg/telegram/ui/ChatActivity;
 
-    invoke-static {v4}, Lorg/telegram/ui/ChatActivity;->access$51700(Lorg/telegram/ui/ChatActivity;)Lorg/telegram/messenger/MessageObject;
+    invoke-static {v4}, Lorg/telegram/ui/ChatActivity;->access$51800(Lorg/telegram/ui/ChatActivity;)Lorg/telegram/messenger/MessageObject;
 
     move-result-object v4
 
@@ -4418,7 +4408,7 @@
 
     iget-object v4, p0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->this$0:Lorg/telegram/ui/ChatActivity;
 
-    invoke-static {v4}, Lorg/telegram/ui/ChatActivity;->access$51700(Lorg/telegram/ui/ChatActivity;)Lorg/telegram/messenger/MessageObject;
+    invoke-static {v4}, Lorg/telegram/ui/ChatActivity;->access$51800(Lorg/telegram/ui/ChatActivity;)Lorg/telegram/messenger/MessageObject;
 
     move-result-object v4
 
@@ -4428,16 +4418,16 @@
 
     if-eqz v4, :cond_2
 
-    .line 32067
+    .line 32095
     iget-object v4, p0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->this$0:Lorg/telegram/ui/ChatActivity;
 
-    invoke-static {v4}, Lorg/telegram/ui/ChatActivity;->access$51800(Lorg/telegram/ui/ChatActivity;)I
+    invoke-static {v4}, Lorg/telegram/ui/ChatActivity;->access$51900(Lorg/telegram/ui/ChatActivity;)I
 
     move-result v4
 
     invoke-virtual {v0, v3, v3, v4}, Lorg/telegram/ui/Cells/ChatMessageCell;->showHintButton(ZZI)V
 
-    .line 32069
+    .line 32097
     :cond_2
     invoke-virtual {v1}, Lorg/telegram/messenger/MessageObject;->isAnimatedEmoji()Z
 
@@ -4445,14 +4435,14 @@
 
     if-eqz v4, :cond_3
 
-    .line 32070
+    .line 32098
     invoke-virtual {v1}, Lorg/telegram/messenger/MessageObject;->getStickerEmoji()Ljava/lang/String;
 
     move-result-object v4
 
     if-eqz v4, :cond_3
 
-    .line 32072
+    .line 32100
     iget-object v5, p0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->this$0:Lorg/telegram/ui/ChatActivity;
 
     invoke-virtual {v5}, Lorg/telegram/ui/ActionBar/BaseFragment;->getMessagesController()Lorg/telegram/messenger/MessagesController;
@@ -4477,7 +4467,7 @@
 
     if-eqz v5, :cond_3
 
-    .line 32074
+    .line 32102
     iget-object v6, p0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->this$0:Lorg/telegram/ui/ChatActivity;
 
     invoke-virtual {v6}, Lorg/telegram/ui/ActionBar/BaseFragment;->getMediaController()Lorg/telegram/messenger/MediaController;
@@ -4492,7 +4482,7 @@
 
     invoke-virtual {v6, v7, v4, v5, v2}, Lorg/telegram/messenger/MediaController;->playEmojiSound(Lorg/telegram/messenger/AccountInstance;Ljava/lang/String;Lorg/telegram/messenger/MessagesController$EmojiSound;Z)V
 
-    .line 32078
+    .line 32106
     :cond_3
     invoke-virtual {v1, v3}, Lorg/telegram/messenger/MessageObject;->updateTranslation(Z)Z
 
@@ -4500,7 +4490,7 @@
 
     if-eqz v4, :cond_4
 
-    .line 32079
+    .line 32107
     invoke-virtual {v0}, Lorg/telegram/ui/Cells/ChatMessageCell;->getCurrentMessagesGroup()Lorg/telegram/messenger/MessageObject$GroupedMessages;
 
     move-result-object v4
@@ -4517,7 +4507,7 @@
 
     goto :goto_1
 
-    .line 32081
+    .line 32109
     :cond_4
     invoke-virtual {v0}, Lorg/telegram/ui/Cells/ChatMessageCell;->getCurrentMessagesGroup()Lorg/telegram/messenger/MessageObject$GroupedMessages;
 
@@ -4525,9 +4515,9 @@
 
     if-eqz v4, :cond_5
 
-    const/4 v5, 0x0
+    move v5, v3
 
-    .line 32083
+    .line 32111
     :goto_0
     iget-object v6, v4, Lorg/telegram/messenger/MessageObject$GroupedMessages;->messages:Ljava/util/ArrayList;
 
@@ -4537,7 +4527,7 @@
 
     if-ge v5, v6, :cond_5
 
-    .line 32084
+    .line 32112
     iget-object v6, v4, Lorg/telegram/messenger/MessageObject$GroupedMessages;->messages:Ljava/util/ArrayList;
 
     invoke-virtual {v6, v5}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -4552,12 +4542,12 @@
 
     goto :goto_0
 
-    .line 32091
+    .line 32119
     :cond_5
     :goto_1
     iget-object v4, p0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->this$0:Lorg/telegram/ui/ChatActivity;
 
-    invoke-static {v4}, Lorg/telegram/ui/ChatActivity;->access$51900(Lorg/telegram/ui/ChatActivity;)Lorg/telegram/ui/ActionBar/ActionBar;
+    invoke-static {v4}, Lorg/telegram/ui/ChatActivity;->access$52000(Lorg/telegram/ui/ChatActivity;)Lorg/telegram/ui/ActionBar/ActionBar;
 
     move-result-object v4
 
@@ -4577,23 +4567,23 @@
 
     goto :goto_2
 
-    .line 32103
+    .line 32131
     :cond_6
     invoke-virtual {v0, v3}, Lorg/telegram/ui/Cells/ChatMessageCell;->setDrawSelectionBackground(Z)V
 
-    .line 32104
+    .line 32132
     invoke-virtual {v0, v3, v3, v3}, Lorg/telegram/ui/Cells/ChatMessageCell;->setChecked(ZZZ)V
 
-    .line 32105
+    .line 32133
     invoke-virtual {v0, v3, v3}, Lorg/telegram/ui/Cells/ChatMessageCell;->setCheckBoxVisible(ZZ)V
 
-    const/4 v4, 0x0
+    move v4, v3
 
-    const/4 v5, 0x0
+    move v5, v4
 
     goto :goto_7
 
-    .line 32092
+    .line 32120
     :cond_7
     :goto_2
     iget-object v4, p0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->this$0:Lorg/telegram/ui/ChatActivity;
@@ -4619,18 +4609,18 @@
     goto :goto_3
 
     :cond_8
-    const/4 v4, 0x0
+    move v4, v3
 
     goto :goto_4
 
     :cond_9
     :goto_3
-    const/4 v4, 0x1
+    move v4, v2
 
     :goto_4
     invoke-virtual {v0, v4, v3}, Lorg/telegram/ui/Cells/ChatMessageCell;->setCheckBoxVisible(ZZ)V
 
-    .line 32093
+    .line 32121
     invoke-virtual {v1}, Lorg/telegram/messenger/MessageObject;->getDialogId()J
 
     move-result-wide v4
@@ -4641,18 +4631,18 @@
 
     move-result-wide v6
 
-    cmp-long v8, v4, v6
+    cmp-long v4, v4, v6
 
-    if-nez v8, :cond_a
+    if-nez v4, :cond_a
 
-    const/4 v4, 0x0
+    move v4, v3
 
     goto :goto_5
 
     :cond_a
-    const/4 v4, 0x1
+    move v4, v2
 
-    .line 32094
+    .line 32122
     :goto_5
     iget-object v5, p0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->this$0:Lorg/telegram/ui/ChatActivity;
 
@@ -4672,26 +4662,26 @@
 
     if-ltz v5, :cond_b
 
-    .line 32095
+    .line 32123
     iget-object v5, p0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->this$0:Lorg/telegram/ui/ChatActivity;
 
-    invoke-static {v5, v1, v0, v4, v3}, Lorg/telegram/ui/ChatActivity;->access$52000(Lorg/telegram/ui/ChatActivity;Lorg/telegram/messenger/MessageObject;Lorg/telegram/ui/Cells/ChatMessageCell;IZ)V
+    invoke-static {v5, v1, v0, v4, v3}, Lorg/telegram/ui/ChatActivity;->access$52100(Lorg/telegram/ui/ChatActivity;Lorg/telegram/messenger/MessageObject;Lorg/telegram/ui/Cells/ChatMessageCell;IZ)V
 
-    const/4 v4, 0x1
+    move v4, v2
 
     goto :goto_6
 
-    .line 32098
+    .line 32126
     :cond_b
     invoke-virtual {v0, v3}, Lorg/telegram/ui/Cells/ChatMessageCell;->setDrawSelectionBackground(Z)V
 
-    .line 32099
+    .line 32127
     invoke-virtual {v0, v3, v3, v3}, Lorg/telegram/ui/Cells/ChatMessageCell;->setChecked(ZZZ)V
 
-    const/4 v4, 0x0
+    move v4, v3
 
     :goto_6
-    const/4 v5, 0x1
+    move v5, v2
 
     :goto_7
     xor-int/lit8 v6, v5, 0x1
@@ -4700,21 +4690,21 @@
 
     if-eqz v4, :cond_c
 
-    const/4 v4, 0x1
+    move v4, v2
 
     goto :goto_8
 
     :cond_c
-    const/4 v4, 0x0
+    move v4, v3
 
-    .line 32107
+    .line 32135
     :goto_8
     invoke-virtual {v0, v6, v4}, Lorg/telegram/ui/Cells/ChatMessageCell;->setCheckPressed(ZZ)V
 
-    .line 32109
+    .line 32137
     iget-object v4, p0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->this$0:Lorg/telegram/ui/ChatActivity;
 
-    invoke-static {v4}, Lorg/telegram/ui/ChatActivity;->access$41900(Lorg/telegram/ui/ChatActivity;)Lorg/telegram/ui/Components/BlurredFrameLayout;
+    invoke-static {v4}, Lorg/telegram/ui/ChatActivity;->access$42000(Lorg/telegram/ui/ChatActivity;)Lorg/telegram/ui/Components/BlurredFrameLayout;
 
     move-result-object v4
 
@@ -4722,7 +4712,7 @@
 
     iget-object v4, p0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->this$0:Lorg/telegram/ui/ChatActivity;
 
-    invoke-static {v4}, Lorg/telegram/ui/ChatActivity;->access$41900(Lorg/telegram/ui/ChatActivity;)Lorg/telegram/ui/Components/BlurredFrameLayout;
+    invoke-static {v4}, Lorg/telegram/ui/ChatActivity;->access$42000(Lorg/telegram/ui/ChatActivity;)Lorg/telegram/ui/Components/BlurredFrameLayout;
 
     move-result-object v4
 
@@ -4756,12 +4746,12 @@
 
     if-nez v1, :cond_d
 
-    const/4 v1, 0x1
+    move v1, v2
 
     goto :goto_9
 
     :cond_d
-    const/4 v1, 0x0
+    move v1, v3
 
     :goto_9
     invoke-virtual {v4, v5, v1}, Lorg/telegram/messenger/MediaDataController;->isMessageFound(IZ)Z
@@ -4782,7 +4772,7 @@
 
     if-eqz v1, :cond_e
 
-    .line 32110
+    .line 32138
     iget-object v1, p0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->this$0:Lorg/telegram/ui/ChatActivity;
 
     invoke-virtual {v1}, Lorg/telegram/ui/ActionBar/BaseFragment;->getMediaDataController()Lorg/telegram/messenger/MediaDataController;
@@ -4800,14 +4790,14 @@
     :cond_e
     const/4 v1, 0x0
 
-    .line 32112
+    .line 32140
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Cells/ChatMessageCell;->setHighlightedText(Ljava/lang/String;)V
 
-    .line 32115
+    .line 32143
     :goto_a
     iget-object v1, p0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->this$0:Lorg/telegram/ui/ChatActivity;
 
-    invoke-static {v1}, Lorg/telegram/ui/ChatActivity;->access$52100(Lorg/telegram/ui/ChatActivity;)Z
+    invoke-static {v1}, Lorg/telegram/ui/ChatActivity;->access$52200(Lorg/telegram/ui/ChatActivity;)Z
 
     move-result v1
 
@@ -4819,7 +4809,7 @@
 
     if-nez v1, :cond_11
 
-    .line 32116
+    .line 32144
     :cond_f
     iget-object v1, p0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->this$0:Lorg/telegram/ui/ChatActivity;
 
@@ -4843,33 +4833,33 @@
 
     if-ne v1, v5, :cond_10
 
-    const/4 v1, 0x1
+    move v1, v2
 
     goto :goto_b
 
     :cond_10
-    const/4 v1, 0x0
+    move v1, v3
 
     :goto_b
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Cells/ChatMessageCell;->setHighlighted(Z)V
 
-    .line 32117
+    .line 32145
     iget-object v1, p0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->this$0:Lorg/telegram/ui/ChatActivity;
 
     iget v5, v1, Lorg/telegram/ui/ChatActivity;->highlightMessageId:I
 
     if-eq v5, v4, :cond_11
 
-    .line 32118
-    invoke-static {v1, v0}, Lorg/telegram/ui/ChatActivity;->access$50000(Lorg/telegram/ui/ChatActivity;Lorg/telegram/ui/Cells/ChatMessageCell;)V
+    .line 32146
+    invoke-static {v1, v0}, Lorg/telegram/ui/ChatActivity;->access$50100(Lorg/telegram/ui/ChatActivity;Lorg/telegram/ui/Cells/ChatMessageCell;)V
 
-    .line 32123
+    .line 32151
     :cond_11
     invoke-virtual {p1}, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->getAdapterPosition()I
 
     move-result v0
 
-    .line 32124
+    .line 32152
     iget v1, p0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->messagesStartRow:I
 
     if-lt v0, v1, :cond_17
@@ -4878,7 +4868,7 @@
 
     if-ge v0, v4, :cond_17
 
-    .line 32125
+    .line 32153
     iget-boolean v4, p0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->isFrozen:Z
 
     if-eqz v4, :cond_12
@@ -4895,19 +4885,19 @@
     :goto_c
     sub-int/2addr v0, v1
 
-    .line 32127
+    .line 32155
     invoke-virtual {v4, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Lorg/telegram/messenger/MessageObject;
 
-    .line 32128
+    .line 32156
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     if-eqz v0, :cond_17
 
-    .line 32129
+    .line 32157
     iget-object v1, v0, Lorg/telegram/messenger/MessageObject;->messageOwner:Lorg/telegram/tgnet/TLRPC$Message;
 
     if-eqz v1, :cond_17
@@ -4920,10 +4910,10 @@
 
     if-eqz v1, :cond_17
 
-    .line 32130
+    .line 32158
     iget-object v1, p0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->this$0:Lorg/telegram/ui/ChatActivity;
 
-    invoke-static {v1}, Lorg/telegram/ui/ChatActivity;->access$52200(Lorg/telegram/ui/ChatActivity;)Z
+    invoke-static {v1}, Lorg/telegram/ui/ChatActivity;->access$52300(Lorg/telegram/ui/ChatActivity;)Z
 
     move-result v1
 
@@ -4937,7 +4927,7 @@
 
     if-nez v1, :cond_15
 
-    .line 32131
+    .line 32159
     invoke-virtual {v0}, Lorg/telegram/messenger/MessageObject;->isVoice()Z
 
     move-result v1
@@ -4950,12 +4940,12 @@
 
     if-nez v1, :cond_15
 
-    .line 32132
+    .line 32160
     iget-object v1, p0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->this$0:Lorg/telegram/ui/ChatActivity;
 
     invoke-static {v1}, Lorg/telegram/ui/ChatActivity;->access$25410(Lorg/telegram/ui/ChatActivity;)I
 
-    .line 32133
+    .line 32161
     iget-object v1, p0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->this$0:Lorg/telegram/ui/ChatActivity;
 
     invoke-static {v1}, Lorg/telegram/ui/ChatActivity;->access$25400(Lorg/telegram/ui/ChatActivity;)I
@@ -4964,24 +4954,24 @@
 
     if-gtz v1, :cond_13
 
-    .line 32134
+    .line 32162
     iget-object v1, p0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->this$0:Lorg/telegram/ui/ChatActivity;
 
     invoke-static {v1, v3}, Lorg/telegram/ui/ChatActivity;->access$25402(Lorg/telegram/ui/ChatActivity;I)I
 
-    .line 32135
+    .line 32163
     iget-object v1, p0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->this$0:Lorg/telegram/ui/ChatActivity;
 
     invoke-static {v1, v2}, Lorg/telegram/ui/ChatActivity;->access$25302(Lorg/telegram/ui/ChatActivity;Z)Z
 
-    .line 32136
+    .line 32164
     iget-object v1, p0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->this$0:Lorg/telegram/ui/ChatActivity;
 
     invoke-static {v1, v3, v2}, Lorg/telegram/ui/ChatActivity;->access$25500(Lorg/telegram/ui/ChatActivity;ZZ)V
 
     goto :goto_d
 
-    .line 32138
+    .line 32166
     :cond_13
     iget-object v1, p0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->this$0:Lorg/telegram/ui/ChatActivity;
 
@@ -5011,7 +5001,7 @@
 
     invoke-virtual {v1, v3}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setText(Ljava/lang/CharSequence;)Z
 
-    .line 32140
+    .line 32168
     :goto_d
     iget-object v1, p0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->this$0:Lorg/telegram/ui/ChatActivity;
 
@@ -5053,33 +5043,33 @@
 
     invoke-virtual/range {v3 .. v8}, Lorg/telegram/messenger/MessagesController;->markMentionMessageAsRead(IJJ)V
 
-    .line 32141
+    .line 32169
     invoke-virtual {v0}, Lorg/telegram/messenger/MessageObject;->setContentIsRead()V
 
-    .line 32144
+    .line 32172
     :cond_15
     instance-of v0, p1, Lorg/telegram/ui/Cells/ChatMessageCell;
 
     if-eqz v0, :cond_17
 
-    .line 32145
+    .line 32173
     check-cast p1, Lorg/telegram/ui/Cells/ChatMessageCell;
 
-    .line 32146
+    .line 32174
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->this$0:Lorg/telegram/ui/ChatActivity;
 
-    invoke-static {v0}, Lorg/telegram/ui/ChatActivity;->access$52300(Lorg/telegram/ui/ChatActivity;)Z
+    invoke-static {v0}, Lorg/telegram/ui/ChatActivity;->access$52400(Lorg/telegram/ui/ChatActivity;)Z
 
     move-result v0
 
     if-eqz v0, :cond_16
 
-    .line 32147
+    .line 32175
     invoke-virtual {p1, v2}, Lorg/telegram/ui/Cells/ChatMessageCell;->setHighlighted(Z)V
 
     goto :goto_f
 
-    .line 32149
+    .line 32177
     :cond_16
     invoke-virtual {p1}, Lorg/telegram/ui/Cells/ChatMessageCell;->setHighlightedAnimated()V
 
@@ -5091,7 +5081,7 @@
 .method public updateRowAtPosition(I)V
     .locals 7
 
-    .line 32157
+    .line 32185
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->this$0:Lorg/telegram/ui/ChatActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ChatActivity;->access$15100(Lorg/telegram/ui/ChatActivity;)Landroidx/recyclerview/widget/GridLayoutManagerFixed;
@@ -5106,7 +5096,7 @@
 
     goto/16 :goto_2
 
-    .line 32163
+    .line 32191
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->this$0:Lorg/telegram/ui/ChatActivity;
 
@@ -5122,13 +5112,13 @@
 
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->this$0:Lorg/telegram/ui/ChatActivity;
 
-    invoke-static {v0}, Lorg/telegram/ui/ChatActivity;->access$52400(Lorg/telegram/ui/ChatActivity;)Lorg/telegram/messenger/MessageObject;
+    invoke-static {v0}, Lorg/telegram/ui/ChatActivity;->access$52500(Lorg/telegram/ui/ChatActivity;)Lorg/telegram/messenger/MessageObject;
 
     move-result-object v0
 
     if-eqz v0, :cond_2
 
-    .line 32164
+    .line 32192
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->this$0:Lorg/telegram/ui/ChatActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ChatActivity;->access$4100(Lorg/telegram/ui/ChatActivity;)Lorg/telegram/ui/Components/RecyclerListView;
@@ -5139,12 +5129,12 @@
 
     move-result v0
 
-    const/4 v3, 0x0
+    move v3, v1
 
     :goto_0
     if-ge v3, v0, :cond_2
 
-    .line 32166
+    .line 32194
     iget-object v4, p0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->this$0:Lorg/telegram/ui/ChatActivity;
 
     invoke-static {v4}, Lorg/telegram/ui/ChatActivity;->access$4100(Lorg/telegram/ui/ChatActivity;)Lorg/telegram/ui/Components/RecyclerListView;
@@ -5155,7 +5145,7 @@
 
     move-result-object v4
 
-    .line 32167
+    .line 32195
     instance-of v5, v4, Lorg/telegram/ui/Cells/ChatMessageCell;
 
     if-eqz v5, :cond_1
@@ -5170,18 +5160,18 @@
 
     iget-object v6, p0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->this$0:Lorg/telegram/ui/ChatActivity;
 
-    invoke-static {v6}, Lorg/telegram/ui/ChatActivity;->access$52400(Lorg/telegram/ui/ChatActivity;)Lorg/telegram/messenger/MessageObject;
+    invoke-static {v6}, Lorg/telegram/ui/ChatActivity;->access$52500(Lorg/telegram/ui/ChatActivity;)Lorg/telegram/messenger/MessageObject;
 
     move-result-object v6
 
     if-ne v5, v6, :cond_1
 
-    .line 32168
+    .line 32196
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->this$0:Lorg/telegram/ui/ChatActivity;
 
     iget-object v3, v0, Lorg/telegram/ui/ChatActivity;->messages:Ljava/util/ArrayList;
 
-    invoke-static {v0}, Lorg/telegram/ui/ChatActivity;->access$52400(Lorg/telegram/ui/ChatActivity;)Lorg/telegram/messenger/MessageObject;
+    invoke-static {v0}, Lorg/telegram/ui/ChatActivity;->access$52500(Lorg/telegram/ui/ChatActivity;)Lorg/telegram/messenger/MessageObject;
 
     move-result-object v0
 
@@ -5191,14 +5181,14 @@
 
     if-ltz v0, :cond_2
 
-    .line 32170
+    .line 32198
     iget v0, p0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->messagesStartRow:I
 
     iget-object v1, p0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->this$0:Lorg/telegram/ui/ChatActivity;
 
     iget-object v3, v1, Lorg/telegram/ui/ChatActivity;->messages:Ljava/util/ArrayList;
 
-    invoke-static {v1}, Lorg/telegram/ui/ChatActivity;->access$52400(Lorg/telegram/ui/ChatActivity;)Lorg/telegram/messenger/MessageObject;
+    invoke-static {v1}, Lorg/telegram/ui/ChatActivity;->access$52500(Lorg/telegram/ui/ChatActivity;)Lorg/telegram/messenger/MessageObject;
 
     move-result-object v1
 
@@ -5208,7 +5198,7 @@
 
     add-int/2addr v0, v1
 
-    .line 32171
+    .line 32199
     iget-object v1, p0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->this$0:Lorg/telegram/ui/ChatActivity;
 
     invoke-static {v1}, Lorg/telegram/ui/ChatActivity;->access$4100(Lorg/telegram/ui/ChatActivity;)Lorg/telegram/ui/Components/RecyclerListView;
@@ -5245,15 +5235,15 @@
     goto :goto_0
 
     :cond_2
-    const/4 v0, -0x1
+    move v0, v2
 
-    .line 32177
+    .line 32205
     :goto_1
     invoke-virtual {p0, p1}, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->notifyItemChanged(I)V
 
     if-eq v0, v2, :cond_3
 
-    .line 32179
+    .line 32207
     iget-object p1, p0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->this$0:Lorg/telegram/ui/ChatActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/ChatActivity;->access$15100(Lorg/telegram/ui/ChatActivity;)Landroidx/recyclerview/widget/GridLayoutManagerFixed;
@@ -5272,7 +5262,7 @@
 
     if-eqz p2, :cond_1
 
-    .line 32199
+    .line 32227
     iget-object p2, p0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->this$0:Lorg/telegram/ui/ChatActivity;
 
     invoke-static {p2}, Lorg/telegram/ui/ChatActivity;->access$4100(Lorg/telegram/ui/ChatActivity;)Lorg/telegram/ui/Components/RecyclerListView;
@@ -5288,7 +5278,7 @@
     :goto_0
     if-ge v0, p2, :cond_1
 
-    .line 32201
+    .line 32229
     iget-object v1, p0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->this$0:Lorg/telegram/ui/ChatActivity;
 
     invoke-static {v1}, Lorg/telegram/ui/ChatActivity;->access$4100(Lorg/telegram/ui/ChatActivity;)Lorg/telegram/ui/Components/RecyclerListView;
@@ -5299,15 +5289,15 @@
 
     move-result-object v1
 
-    .line 32202
+    .line 32230
     instance-of v2, v1, Lorg/telegram/ui/Cells/ChatMessageCell;
 
     if-eqz v2, :cond_0
 
-    .line 32203
+    .line 32231
     check-cast v1, Lorg/telegram/ui/Cells/ChatMessageCell;
 
-    .line 32204
+    .line 32232
     invoke-virtual {v1}, Lorg/telegram/ui/Cells/ChatMessageCell;->getMessageObject()Lorg/telegram/messenger/MessageObject;
 
     move-result-object v2
@@ -5320,7 +5310,7 @@
 
     if-nez v2, :cond_0
 
-    .line 32205
+    .line 32233
     invoke-virtual {v1}, Lorg/telegram/ui/Cells/ChatMessageCell;->getCurrentMessagesGroup()Lorg/telegram/messenger/MessageObject$GroupedMessages;
 
     move-result-object p2
@@ -5342,7 +5332,7 @@
 
     goto :goto_0
 
-    .line 32211
+    .line 32239
     :cond_1
     iget-boolean p2, p0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->isFrozen:Z
 
@@ -5357,7 +5347,7 @@
 
     iget-object p2, p2, Lorg/telegram/ui/ChatActivity;->messages:Ljava/util/ArrayList;
 
-    .line 32213
+    .line 32241
     :goto_1
     invoke-virtual {p2, p1}, Ljava/util/ArrayList;->indexOf(Ljava/lang/Object;)I
 
@@ -5371,7 +5361,7 @@
 
     return-object v0
 
-    .line 32217
+    .line 32245
     :cond_3
     iget p2, p0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->messagesStartRow:I
 
@@ -5385,28 +5375,28 @@
 .method public updateRowsSafe()V
     .locals 7
 
-    .line 31258
+    .line 31286
     iget v0, p0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->rowCount:I
 
-    .line 31259
+    .line 31287
     iget v1, p0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->botInfoRow:I
 
-    .line 31260
+    .line 31288
     iget v2, p0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->loadingUpRow:I
 
-    .line 31261
+    .line 31289
     iget v3, p0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->loadingDownRow:I
 
-    .line 31262
+    .line 31290
     iget v4, p0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->messagesStartRow:I
 
-    .line 31263
+    .line 31291
     iget v5, p0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->messagesEndRow:I
 
-    .line 31264
+    .line 31292
     invoke-direct {p0}, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->updateRowsInternal()V
 
-    .line 31265
+    .line 31293
     iget v6, p0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->rowCount:I
 
     if-ne v0, v6, :cond_0
@@ -5434,7 +5424,7 @@
     :cond_0
     const/4 v0, 0x0
 
-    .line 31268
+    .line 31296
     invoke-virtual {p0, v0}, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->notifyDataSetChanged(Z)V
 
     :cond_1

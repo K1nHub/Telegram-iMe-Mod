@@ -670,7 +670,7 @@
     :cond_0
     move-wide p6, v1
 
-    const/4 p5, 0x0
+    move p5, v3
 
     .line 3753
     :cond_1
@@ -718,13 +718,13 @@
     goto :goto_0
 
     :cond_3
-    const/4 v0, 0x0
+    move v0, v3
 
     goto :goto_1
 
     :cond_4
     :goto_0
-    const/4 v0, 0x1
+    move v0, v1
 
     :goto_1
     if-nez v0, :cond_5
@@ -760,7 +760,7 @@
 
     if-nez p4, :cond_5
 
-    const/4 v3, 0x1
+    move v3, v1
 
     :cond_5
     if-nez v0, :cond_9
@@ -1177,7 +1177,7 @@
     goto :goto_0
 
     :cond_0
-    const/4 p2, -0x1
+    move p2, v1
 
     :goto_0
     return p2
@@ -1334,9 +1334,9 @@
 
     move-result-wide p0
 
-    cmp-long p4, v4, p0
+    cmp-long p0, v4, p0
 
-    if-lez p4, :cond_6
+    if-lez p0, :cond_6
 
     const/4 p0, 0x0
 
@@ -1606,9 +1606,9 @@
 
     if-eqz p2, :cond_7
 
-    cmp-long p2, v1, p0
+    cmp-long p0, v1, p0
 
-    if-ltz p2, :cond_7
+    if-ltz p0, :cond_7
 
     goto :goto_0
 
@@ -1646,9 +1646,9 @@
 
     if-eqz p2, :cond_a
 
-    cmp-long p2, v0, p0
+    cmp-long p0, v0, p0
 
-    if-ltz p2, :cond_a
+    if-ltz p0, :cond_a
 
     goto :goto_2
 
@@ -1715,11 +1715,11 @@
     goto :goto_0
 
     :cond_0
+    move v5, v1
+
     move-object p2, v3
 
     move-object v4, p2
-
-    const/4 v5, -0x1
 
     :goto_0
     if-eqz p1, :cond_2
@@ -1795,13 +1795,13 @@
 .end method
 
 .method private static getPositionOrDefaultInMediaItem(JLcom/google/android/exoplayer2/SimpleBasePlayer$State;)J
-    .locals 3
+    .locals 2
 
     const-wide v0, -0x7fffffffffffffffL    # -4.9E-324
 
-    cmp-long v2, p0, v0
+    cmp-long v0, p0, v0
 
-    if-eqz v2, :cond_0
+    if-eqz v0, :cond_0
 
     return-wide p0
 
@@ -2119,7 +2119,7 @@
     return v2
 
     :cond_0
-    const/4 v0, 0x0
+    move v0, v2
 
     .line 3484
     :goto_0
@@ -2161,7 +2161,7 @@
     goto :goto_1
 
     :cond_1
-    const/4 v3, 0x0
+    move v3, v2
 
     .line 3489
     :goto_1
@@ -3290,7 +3290,7 @@
 
     :cond_1
     :goto_0
-    const/4 v1, 0x1
+    move v1, v0
 
     .line 2069
     :goto_1
@@ -3438,12 +3438,12 @@
 
     if-eq v3, v5, :cond_2
 
-    const/4 v3, 0x1
+    move v3, v6
 
     goto :goto_0
 
     :cond_2
-    const/4 v3, 0x0
+    move v3, v4
 
     .line 3148
     :goto_0
@@ -3453,12 +3453,12 @@
 
     if-eq v5, v7, :cond_3
 
-    const/4 v5, 0x1
+    move v5, v6
 
     goto :goto_1
 
     :cond_3
-    const/4 v5, 0x0
+    move v5, v4
 
     .line 3149
     :goto_1
@@ -3572,9 +3572,14 @@
 
     invoke-virtual {v14, v15, v12}, Lcom/google/android/exoplayer2/util/ListenerSet;->queueEvent(ILcom/google/android/exoplayer2/util/ListenerSet$Event;)V
 
-    :cond_5
     const/4 v4, -0x1
 
+    goto :goto_2
+
+    :cond_5
+    move v4, v12
+
+    :goto_2
     if-eq v13, v4, :cond_7
 
     .line 3187
@@ -3588,7 +3593,7 @@
 
     const/4 v4, 0x0
 
-    goto :goto_2
+    goto :goto_3
 
     .line 3189
     :cond_6
@@ -3607,7 +3612,7 @@
     iget-object v4, v4, Lcom/google/android/exoplayer2/SimpleBasePlayer$MediaItemData;->mediaItem:Lcom/google/android/exoplayer2/MediaItem;
 
     .line 3190
-    :goto_2
+    :goto_3
     iget-object v6, v0, Lcom/google/android/exoplayer2/SimpleBasePlayer;->listeners:Lcom/google/android/exoplayer2/util/ListenerSet;
 
     new-instance v12, Lcom/google/android/exoplayer2/SimpleBasePlayer$$ExternalSyntheticLambda1;
@@ -3897,9 +3902,9 @@
 
     iget-wide v5, v1, Lcom/google/android/exoplayer2/SimpleBasePlayer$State;->seekBackIncrementMs:J
 
-    cmp-long v7, v3, v5
+    cmp-long v3, v3, v5
 
-    if-eqz v7, :cond_17
+    if-eqz v3, :cond_17
 
     .line 3273
     iget-object v3, v0, Lcom/google/android/exoplayer2/SimpleBasePlayer;->listeners:Lcom/google/android/exoplayer2/util/ListenerSet;
@@ -3918,9 +3923,9 @@
 
     iget-wide v5, v1, Lcom/google/android/exoplayer2/SimpleBasePlayer$State;->seekForwardIncrementMs:J
 
-    cmp-long v7, v3, v5
+    cmp-long v3, v3, v5
 
-    if-eqz v7, :cond_18
+    if-eqz v3, :cond_18
 
     .line 3278
     iget-object v3, v0, Lcom/google/android/exoplayer2/SimpleBasePlayer;->listeners:Lcom/google/android/exoplayer2/util/ListenerSet;
@@ -3939,9 +3944,9 @@
 
     iget-wide v5, v1, Lcom/google/android/exoplayer2/SimpleBasePlayer$State;->maxSeekToPreviousPositionMs:J
 
-    cmp-long v7, v3, v5
+    cmp-long v3, v3, v5
 
-    if-eqz v7, :cond_19
+    if-eqz v3, :cond_19
 
     .line 3283
     iget-object v3, v0, Lcom/google/android/exoplayer2/SimpleBasePlayer;->listeners:Lcom/google/android/exoplayer2/util/ListenerSet;
@@ -4172,9 +4177,9 @@
 
     const-wide v5, -0x7fffffffffffffffL    # -4.9E-324
 
-    cmp-long v7, v3, v5
+    cmp-long v3, v3, v5
 
-    if-eqz v7, :cond_24
+    if-eqz v3, :cond_24
 
     .line 3339
     iget-object v3, v0, Lcom/google/android/exoplayer2/SimpleBasePlayer;->listeners:Lcom/google/android/exoplayer2/util/ListenerSet;
@@ -6118,7 +6123,7 @@
 
     if-ltz p1, :cond_0
 
-    const/4 v1, 0x1
+    move v1, v0
 
     goto :goto_0
 

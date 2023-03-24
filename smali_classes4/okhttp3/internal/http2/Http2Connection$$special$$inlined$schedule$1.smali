@@ -47,7 +47,7 @@
 
 # virtual methods
 .method public runOnce()J
-    .locals 9
+    .locals 8
 
     .line 219
     iget-object v0, p0, Lokhttp3/internal/http2/Http2Connection$$special$$inlined$schedule$1;->this$0:Lokhttp3/internal/http2/Http2Connection;
@@ -68,15 +68,15 @@
 
     move-result-wide v3
 
-    const/4 v5, 0x1
+    cmp-long v1, v1, v3
 
-    const/4 v6, 0x0
+    const/4 v2, 0x1
 
-    cmp-long v7, v1, v3
+    const/4 v3, 0x0
 
-    if-gez v7, :cond_0
+    if-gez v1, :cond_0
 
-    const/4 v1, 0x1
+    move v1, v2
 
     goto :goto_0
 
@@ -86,17 +86,17 @@
 
     invoke-static {v1}, Lokhttp3/internal/http2/Http2Connection;->access$getIntervalPingsSent$p(Lokhttp3/internal/http2/Http2Connection;)J
 
-    move-result-wide v2
+    move-result-wide v4
 
-    const-wide/16 v7, 0x1
+    const-wide/16 v6, 0x1
 
-    add-long/2addr v2, v7
+    add-long/2addr v4, v6
 
-    invoke-static {v1, v2, v3}, Lokhttp3/internal/http2/Http2Connection;->access$setIntervalPingsSent$p(Lokhttp3/internal/http2/Http2Connection;J)V
+    invoke-static {v1, v4, v5}, Lokhttp3/internal/http2/Http2Connection;->access$setIntervalPingsSent$p(Lokhttp3/internal/http2/Http2Connection;J)V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    const/4 v1, 0x0
+    move v1, v3
 
     .line 219
     :goto_0
@@ -119,7 +119,7 @@
     :cond_1
     iget-object v0, p0, Lokhttp3/internal/http2/Http2Connection$$special$$inlined$schedule$1;->this$0:Lokhttp3/internal/http2/Http2Connection;
 
-    invoke-virtual {v0, v6, v5, v6}, Lokhttp3/internal/http2/Http2Connection;->writePing(ZII)V
+    invoke-virtual {v0, v3, v2, v3}, Lokhttp3/internal/http2/Http2Connection;->writePing(ZII)V
 
     .line 232
     iget-wide v0, p0, Lokhttp3/internal/http2/Http2Connection$$special$$inlined$schedule$1;->$pingIntervalNanos$inlined:J

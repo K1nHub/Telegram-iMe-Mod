@@ -48,11 +48,11 @@ import org.fork.utils.CollectionsUtilsKt;
 import org.koin.core.qualifier.StringQualifier;
 import org.koin.p047mp.KoinPlatformTools;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3286R;
+import org.telegram.messenger.C3301R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.databinding.ForkFragmentCatalogGlobalBinding;
 import org.telegram.p048ui.ActionBar.BaseFragment;
-import org.telegram.p048ui.ActionBar.C3351ActionBar;
+import org.telegram.p048ui.ActionBar.C3366ActionBar;
 import org.telegram.p048ui.ActionBar.Theme;
 import org.telegram.p048ui.ActionBar.ThemeDescription;
 import org.telegram.p048ui.LanguageSelectActivity;
@@ -276,14 +276,14 @@ public final class CatalogRootFragment extends MvpFragment implements BottomNavi
     }
 
     private final void setupActionBar() {
-        C3351ActionBar c3351ActionBar = this.actionBar;
-        c3351ActionBar.setCastShadows(false);
-        c3351ActionBar.setBackButtonImage(C3286R.C3288drawable.ic_ab_back);
-        c3351ActionBar.setTitle(getResourceManager().getString(C3286R.string.catalog_title));
-        c3351ActionBar.setAllowOverlayTitle(true);
-        c3351ActionBar.createMenu().addItem(IdFabric$Menu.LANGUAGE, C3286R.C3288drawable.msg_language);
-        c3351ActionBar.setActionBarMenuOnItemClick(new C3351ActionBar.ActionBarMenuOnItemClick() { // from class: com.smedialink.ui.catalog.CatalogRootFragment$setupActionBar$1$1
-            @Override // org.telegram.p048ui.ActionBar.C3351ActionBar.ActionBarMenuOnItemClick
+        C3366ActionBar c3366ActionBar = this.actionBar;
+        c3366ActionBar.setCastShadows(false);
+        c3366ActionBar.setBackButtonImage(C3301R.C3303drawable.ic_ab_back);
+        c3366ActionBar.setTitle(getResourceManager().getString(C3301R.string.catalog_title));
+        c3366ActionBar.setAllowOverlayTitle(true);
+        c3366ActionBar.createMenu().addItem(IdFabric$Menu.LANGUAGE, C3301R.C3303drawable.msg_language);
+        c3366ActionBar.setActionBarMenuOnItemClick(new C3366ActionBar.ActionBarMenuOnItemClick() { // from class: com.smedialink.ui.catalog.CatalogRootFragment$setupActionBar$1$1
+            @Override // org.telegram.p048ui.ActionBar.C3366ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i) {
                 CatalogRootPresenter presenter;
                 if (i == -1) {
@@ -315,9 +315,9 @@ public final class CatalogRootFragment extends MvpFragment implements BottomNavi
     /* JADX INFO: Access modifiers changed from: private */
     public final List<NavigationTab<CatalogFragment>> initTabs() {
         List<NavigationTab<CatalogFragment>> mutableListOf;
-        int i = C3286R.C3289id.catalog_root_bottom_navigation_channels;
+        int i = C3301R.C3304id.catalog_root_bottom_navigation_channels;
         CatalogFragment.Companion companion = CatalogFragment.Companion;
-        mutableListOf = CollectionsKt__CollectionsKt.mutableListOf(new NavigationTab(i, companion.newInstance(ChatType.CHANNEL)), new NavigationTab(C3286R.C3289id.catalog_root_bottom_navigation_groups, companion.newInstance(ChatType.GROUP)));
+        mutableListOf = CollectionsKt__CollectionsKt.mutableListOf(new NavigationTab(i, companion.newInstance(ChatType.CHANNEL)), new NavigationTab(C3301R.C3304id.catalog_root_bottom_navigation_groups, companion.newInstance(ChatType.GROUP)));
         Iterator<T> it = mutableListOf.iterator();
         while (it.hasNext()) {
             ((CatalogFragment) ((NavigationTab) it.next()).getFragment()).setBottomNavigationDelegate(this);
@@ -337,7 +337,7 @@ public final class CatalogRootFragment extends MvpFragment implements BottomNavi
                 return true;
             }
         });
-        mutableListOf = CollectionsKt__CollectionsKt.mutableListOf(new MenuItem(C3286R.C3289id.catalog_root_bottom_navigation_channels, getResourceManager().getString(C3286R.string.catalog_navigation_channels), C3286R.C3288drawable.fork_filter_icon_channel, true, getResourceManager().getColor(17170443), false, 32, null), new MenuItem(C3286R.C3289id.catalog_root_bottom_navigation_groups, getResourceManager().getString(C3286R.string.catalog_navigation_groups), C3286R.C3288drawable.msg_groups, true, getResourceManager().getColor(17170443), false, 32, null));
+        mutableListOf = CollectionsKt__CollectionsKt.mutableListOf(new MenuItem(C3301R.C3304id.catalog_root_bottom_navigation_channels, getResourceManager().getString(C3301R.string.catalog_navigation_channels), C3301R.C3303drawable.fork_filter_icon_channel, true, getResourceManager().getColor(17170443), false, 32, null), new MenuItem(C3301R.C3304id.catalog_root_bottom_navigation_groups, getResourceManager().getString(C3301R.string.catalog_navigation_groups), C3301R.C3303drawable.msg_groups, true, getResourceManager().getColor(17170443), false, 32, null));
         bubbleTabBar.setMenu(mutableListOf);
     }
 

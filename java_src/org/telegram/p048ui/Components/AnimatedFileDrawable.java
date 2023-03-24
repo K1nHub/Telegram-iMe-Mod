@@ -148,8 +148,8 @@ public class AnimatedFileDrawable extends BitmapDrawable implements Animatable, 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: org.telegram.ui.Components.AnimatedFileDrawable$2 */
     /* loaded from: classes6.dex */
-    public class RunnableC40312 implements Runnable {
-        RunnableC40312() {
+    public class RunnableC40462 implements Runnable {
+        RunnableC40462() {
         }
 
         @Override // java.lang.Runnable
@@ -174,7 +174,7 @@ public class AnimatedFileDrawable extends BitmapDrawable implements Animatable, 
             Runnable runnable = new Runnable() { // from class: org.telegram.ui.Components.AnimatedFileDrawable$2$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    AnimatedFileDrawable.RunnableC40312.this.lambda$run$1();
+                    AnimatedFileDrawable.RunnableC40462.this.lambda$run$1();
                 }
             };
             animatedFileDrawable3.cacheGenRunnable = runnable;
@@ -187,7 +187,7 @@ public class AnimatedFileDrawable extends BitmapDrawable implements Animatable, 
             AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.AnimatedFileDrawable$2$$ExternalSyntheticLambda1
                 @Override // java.lang.Runnable
                 public final void run() {
-                    AnimatedFileDrawable.RunnableC40312.this.lambda$run$0();
+                    AnimatedFileDrawable.RunnableC40462.this.lambda$run$0();
                 }
             });
         }
@@ -964,44 +964,34 @@ public class AnimatedFileDrawable extends BitmapDrawable implements Animatable, 
             if (bitmap2 == null && this.nextRenderingBitmap == null) {
                 scheduleNextGetFrame();
             } else if (this.nextRenderingBitmap != null && (bitmap2 == null || (Math.abs(j - this.lastFrameTime) >= this.invalidateAfter && !this.skipFrameUpdate))) {
-                this.backgroundBitmap = this.renderingBitmap;
                 this.renderingBitmap = this.nextRenderingBitmap;
                 this.renderingBitmapTime = this.nextRenderingBitmapTime;
-                int i = 0;
-                while (true) {
-                    BitmapShader[] bitmapShaderArr = this.backgroundShader;
-                    if (i < bitmapShaderArr.length) {
-                        BitmapShader[] bitmapShaderArr2 = this.renderingShader;
-                        bitmapShaderArr[i] = bitmapShaderArr2[i];
-                        BitmapShader[] bitmapShaderArr3 = this.nextRenderingShader;
-                        bitmapShaderArr2[i] = bitmapShaderArr3[i];
-                        bitmapShaderArr3[i] = null;
-                        i++;
-                    } else {
-                        this.nextRenderingBitmap = null;
-                        this.nextRenderingBitmapTime = 0;
-                        this.lastFrameTime = j;
-                        scheduleNextGetFrame();
-                        return;
-                    }
+                for (int i = 0; i < this.backgroundShader.length; i++) {
+                    BitmapShader[] bitmapShaderArr = this.renderingShader;
+                    BitmapShader[] bitmapShaderArr2 = this.nextRenderingShader;
+                    bitmapShaderArr[i] = bitmapShaderArr2[i];
+                    bitmapShaderArr2[i] = null;
                 }
+                this.nextRenderingBitmap = null;
+                this.nextRenderingBitmapTime = 0;
+                this.lastFrameTime = j;
+                scheduleNextGetFrame();
             } else {
                 invalidateInternal();
             }
-        } else if (this.isRunning || !this.decodeSingleFrame || Math.abs(j - this.lastFrameTime) < this.invalidateAfter || (bitmap = this.nextRenderingBitmap) == null) {
-        } else {
+        } else if (!this.isRunning && this.decodeSingleFrame && Math.abs(j - this.lastFrameTime) >= this.invalidateAfter && (bitmap = this.nextRenderingBitmap) != null) {
             this.backgroundBitmap = this.renderingBitmap;
             this.renderingBitmap = bitmap;
             this.renderingBitmapTime = this.nextRenderingBitmapTime;
             int i2 = 0;
             while (true) {
-                BitmapShader[] bitmapShaderArr4 = this.backgroundShader;
-                if (i2 < bitmapShaderArr4.length) {
-                    BitmapShader[] bitmapShaderArr5 = this.renderingShader;
+                BitmapShader[] bitmapShaderArr3 = this.backgroundShader;
+                if (i2 < bitmapShaderArr3.length) {
+                    BitmapShader[] bitmapShaderArr4 = this.renderingShader;
+                    bitmapShaderArr3[i2] = bitmapShaderArr4[i2];
+                    BitmapShader[] bitmapShaderArr5 = this.nextRenderingShader;
                     bitmapShaderArr4[i2] = bitmapShaderArr5[i2];
-                    BitmapShader[] bitmapShaderArr6 = this.nextRenderingShader;
-                    bitmapShaderArr5[i2] = bitmapShaderArr6[i2];
-                    bitmapShaderArr6[i2] = null;
+                    bitmapShaderArr5[i2] = null;
                     i2++;
                 } else {
                     this.nextRenderingBitmap = null;

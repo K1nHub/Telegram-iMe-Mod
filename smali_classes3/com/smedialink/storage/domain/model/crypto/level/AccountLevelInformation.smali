@@ -43,14 +43,14 @@
 
     if-eqz p5, :cond_0
 
-    const/4 p2, 0x0
+    move p2, v0
 
     :cond_0
     and-int/lit8 p4, p4, 0x4
 
     if-eqz p4, :cond_1
 
-    const/4 p3, 0x0
+    move p3, v0
 
     .line 3
     :cond_1
@@ -207,7 +207,7 @@
 
     if-eqz v1, :cond_0
 
-    const/4 v1, 0x1
+    move v1, v2
 
     :cond_0
     add-int/2addr v0, v1

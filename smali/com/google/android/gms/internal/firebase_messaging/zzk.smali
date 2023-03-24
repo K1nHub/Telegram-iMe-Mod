@@ -55,9 +55,9 @@
 
     move-result-wide v0
 
-    long-to-int v1, v0
+    long-to-int v0, v0
 
-    return v1
+    return v0
 .end method
 
 .method public final declared-synchronized mark(I)V
@@ -90,7 +90,7 @@
 .end method
 
 .method public final read()I
-    .locals 6
+    .locals 5
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -100,15 +100,15 @@
     .line 1
     iget-wide v0, p0, Lcom/google/android/gms/internal/firebase_messaging/zzk;->zza:J
 
-    const/4 v2, -0x1
+    const-wide/16 v2, 0x0
 
-    const-wide/16 v3, 0x0
+    cmp-long v0, v0, v2
 
-    cmp-long v5, v0, v3
+    const/4 v1, -0x1
 
-    if-nez v5, :cond_0
+    if-nez v0, :cond_0
 
-    return v2
+    return v1
 
     :cond_0
     iget-object v0, p0, Ljava/io/FilterInputStream;->in:Ljava/io/InputStream;
@@ -117,7 +117,7 @@
 
     move-result v0
 
-    if-eq v0, v2, :cond_1
+    if-eq v0, v1, :cond_1
 
     iget-wide v1, p0, Lcom/google/android/gms/internal/firebase_messaging/zzk;->zza:J
 
@@ -142,33 +142,33 @@
     .line 2
     iget-wide v0, p0, Lcom/google/android/gms/internal/firebase_messaging/zzk;->zza:J
 
-    const/4 v2, -0x1
+    const-wide/16 v2, 0x0
 
-    const-wide/16 v3, 0x0
+    cmp-long v2, v0, v2
 
-    cmp-long v5, v0, v3
+    const/4 v3, -0x1
 
-    if-nez v5, :cond_0
+    if-nez v2, :cond_0
 
-    return v2
+    return v3
 
     :cond_0
-    int-to-long v3, p3
+    int-to-long v4, p3
 
-    invoke-static {v3, v4, v0, v1}, Ljava/lang/Math;->min(JJ)J
+    invoke-static {v4, v5, v0, v1}, Ljava/lang/Math;->min(JJ)J
 
     move-result-wide v0
 
     .line 3
     iget-object p3, p0, Ljava/io/FilterInputStream;->in:Ljava/io/InputStream;
 
-    long-to-int v1, v0
+    long-to-int v0, v0
 
-    invoke-virtual {p3, p1, p2, v1}, Ljava/io/InputStream;->read([BII)I
+    invoke-virtual {p3, p1, p2, v0}, Ljava/io/InputStream;->read([BII)I
 
     move-result p1
 
-    if-eq p1, v2, :cond_1
+    if-eq p1, v3, :cond_1
 
     iget-wide p2, p0, Lcom/google/android/gms/internal/firebase_messaging/zzk;->zza:J
 
@@ -183,7 +183,7 @@
 .end method
 
 .method public final declared-synchronized reset()V
-    .locals 5
+    .locals 4
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -207,9 +207,9 @@
 
     const-wide/16 v2, -0x1
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-eqz v4, :cond_0
+    if-eqz v0, :cond_0
 
     .line 4
     iget-object v0, p0, Ljava/io/FilterInputStream;->in:Ljava/io/InputStream;

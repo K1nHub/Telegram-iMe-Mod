@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/ThemeActivity$ListAdapter;Landroid/content/Context;)V
     .locals 0
 
-    .line 1964
+    .line 1990
     iput-object p1, p0, Lorg/telegram/ui/ThemeActivity$ListAdapter$1;->this$1:Lorg/telegram/ui/ThemeActivity$ListAdapter;
 
     invoke-direct {p0, p2}, Lorg/telegram/ui/Cells/BrightnessControlCell;-><init>(Landroid/content/Context;)V
@@ -35,12 +35,12 @@
 .method protected didChangedValue(F)V
     .locals 6
 
-    .line 1967
+    .line 1993
     sget v0, Lorg/telegram/ui/ActionBar/Theme;->autoNightBrighnessThreshold:F
 
     const/high16 v1, 0x42c80000    # 100.0f
 
-    mul-float v0, v0, v1
+    mul-float/2addr v0, v1
 
     float-to-int v0, v0
 
@@ -48,17 +48,17 @@
 
     float-to-int v2, v2
 
-    .line 1969
+    .line 1995
     sput p1, Lorg/telegram/ui/ActionBar/Theme;->autoNightBrighnessThreshold:F
 
     if-eq v0, v2, :cond_1
 
-    .line 1971
+    .line 1997
     iget-object p1, p0, Lorg/telegram/ui/ThemeActivity$ListAdapter$1;->this$1:Lorg/telegram/ui/ThemeActivity$ListAdapter;
 
     iget-object p1, p1, Lorg/telegram/ui/ThemeActivity$ListAdapter;->this$0:Lorg/telegram/ui/ThemeActivity;
 
-    invoke-static {p1}, Lorg/telegram/ui/ThemeActivity;->access$2700(Lorg/telegram/ui/ThemeActivity;)Lorg/telegram/ui/Components/RecyclerListView;
+    invoke-static {p1}, Lorg/telegram/ui/ThemeActivity;->access$2600(Lorg/telegram/ui/ThemeActivity;)Lorg/telegram/ui/Components/RecyclerListView;
 
     move-result-object p1
 
@@ -66,7 +66,7 @@
 
     iget-object v0, v0, Lorg/telegram/ui/ThemeActivity$ListAdapter;->this$0:Lorg/telegram/ui/ThemeActivity;
 
-    invoke-static {v0}, Lorg/telegram/ui/ThemeActivity;->access$2600(Lorg/telegram/ui/ThemeActivity;)I
+    invoke-static {v0}, Lorg/telegram/ui/ThemeActivity;->access$2500(Lorg/telegram/ui/ThemeActivity;)I
 
     move-result v0
 
@@ -80,12 +80,12 @@
 
     if-eqz p1, :cond_0
 
-    .line 1973
+    .line 1999
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     check-cast p1, Lorg/telegram/ui/Cells/TextInfoPrivacyCell;
 
-    .line 1974
+    .line 2000
     sget v2, Lorg/telegram/messenger/R$string;->AutoNightBrightnessInfo:I
 
     new-array v3, v0, [Ljava/lang/Object;
@@ -94,7 +94,7 @@
 
     sget v5, Lorg/telegram/ui/ActionBar/Theme;->autoNightBrighnessThreshold:F
 
-    mul-float v5, v5, v1
+    mul-float/2addr v5, v1
 
     float-to-int v1, v5
 
@@ -112,7 +112,7 @@
 
     invoke-virtual {p1, v1}, Lorg/telegram/ui/Cells/TextInfoPrivacyCell;->setText(Ljava/lang/CharSequence;)V
 
-    .line 1976
+    .line 2002
     :cond_0
     invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->checkAutoNightThemeConditions(Z)V
 

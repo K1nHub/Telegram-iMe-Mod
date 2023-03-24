@@ -147,12 +147,12 @@
 
     if-eqz v1, :cond_0
 
-    const/4 v1, 0x1
+    move v1, v3
 
     goto :goto_0
 
     :cond_0
-    const/4 v1, 0x0
+    move v1, v2
 
     :goto_0
     const-wide/high16 v4, 0x4000000000000000L    # 2.0
@@ -179,7 +179,7 @@
 
     if-eqz v0, :cond_1
 
-    const/4 v2, 0x1
+    move v2, v3
 
     :cond_1
     iput-boolean v2, v5, Lcom/bumptech/glide/gifdecoder/GifFrame;->interlace:Z
@@ -261,7 +261,7 @@
 
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    move v1, v0
 
     .line 475
     :goto_0
@@ -364,7 +364,7 @@
 
     const/4 v2, 0x0
 
-    const/4 v3, 0x0
+    move v3, v2
 
     :goto_0
     if-ge v2, p1, :cond_1
@@ -462,7 +462,7 @@
 
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    move v1, v0
 
     :goto_0
     if-nez v1, :cond_a
@@ -507,7 +507,7 @@
     goto :goto_0
 
     :cond_0
-    const/4 v1, 0x1
+    move v1, v4
 
     goto :goto_0
 
@@ -566,7 +566,7 @@
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    const/4 v3, 0x0
+    move v3, v0
 
     :goto_1
     const/16 v4, 0xb
@@ -696,7 +696,7 @@
 
     if-ge v0, v3, :cond_2
 
-    const/16 v0, 0xa
+    move v0, v1
 
     .line 291
     :cond_2
@@ -704,7 +704,7 @@
 
     iget-object v2, v2, Lcom/bumptech/glide/gifdecoder/GifHeader;->currentFrame:Lcom/bumptech/glide/gifdecoder/GifFrame;
 
-    mul-int/lit8 v0, v0, 0xa
+    mul-int/2addr v0, v1
 
     iput v0, v2, Lcom/bumptech/glide/gifdecoder/GifFrame;->delay:I
 
@@ -850,7 +850,7 @@
 
     if-eqz v2, :cond_0
 
-    const/4 v2, 0x1
+    move v2, v3
 
     goto :goto_0
 

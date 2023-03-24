@@ -53,7 +53,7 @@ public class AdjustPanLayoutHelper {
     long startAfter;
 
     /* renamed from: to */
-    float f1653to;
+    float f1654to;
     private boolean useInsetsAnimator;
     private boolean usingInsetAnimator;
     ArrayList<View> viewsToHeightSet;
@@ -150,7 +150,7 @@ public class AdjustPanLayoutHelper {
             int r1 = r1 - r7
             goto L28
         L27:
-            r1 = 0
+            r1 = r2
         L28:
             int r1 = r1 + r7
             int r1 = java.lang.Math.max(r6, r1)
@@ -174,7 +174,7 @@ public class AdjustPanLayoutHelper {
             r6 = 1065353216(0x3f800000, float:1.0)
             r5.onPanTranslationUpdate(r1, r6, r8)
             r5.from = r7
-            r5.f1653to = r4
+            r5.f1654to = r4
             r5.inverse = r3
             goto L74
         L5b:
@@ -189,7 +189,7 @@ public class AdjustPanLayoutHelper {
             int r6 = r5.previousStartOffset
             int r6 = -r6
             float r6 = (float) r6
-            r5.f1653to = r6
+            r5.f1654to = r6
             r5.from = r1
             r5.inverse = r2
         L74:
@@ -208,7 +208,7 @@ public class AdjustPanLayoutHelper {
         if (this.inverse) {
             f = 1.0f - f;
         }
-        float f2 = (int) ((this.from * f) + (this.f1653to * (1.0f - f)));
+        float f2 = (int) ((this.from * f) + (this.f1654to * (1.0f - f)));
         this.parent.setTranslationY(f2);
         onPanTranslationUpdate(-f2, f, this.isKeyboardVisible);
     }
@@ -226,7 +226,7 @@ public class AdjustPanLayoutHelper {
         this.viewsToHeightSet.clear();
         this.resizableView.requestLayout();
         boolean z = this.isKeyboardVisible;
-        onPanTranslationUpdate(BitmapDescriptorFactory.HUE_RED, z ? 1.0f : BitmapDescriptorFactory.HUE_RED, z);
+        onPanTranslationUpdate(BitmapDescriptorFactory.HUE_RED, z ? 1.0f : 0.0f, z);
         this.parent.setTranslationY(BitmapDescriptorFactory.HUE_RED);
         onTransitionEnd();
     }

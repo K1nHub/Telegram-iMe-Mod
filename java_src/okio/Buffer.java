@@ -481,15 +481,13 @@ public final class Buffer implements BufferedSource, BufferedSink, Cloneable, By
         int i3 = i + 1;
         int i4 = i3 + 1;
         int i5 = i4 + 1;
-        long j = ((bArr[i] & 255) << 56) | ((bArr[i3] & 255) << 48) | ((bArr[i4] & 255) << 40);
         int i6 = i5 + 1;
-        long j2 = ((bArr[i5] & 255) << 32) | j;
         int i7 = i6 + 1;
         int i8 = i7 + 1;
-        long j3 = j2 | ((bArr[i6] & 255) << 24) | ((bArr[i7] & 255) << 16);
+        long j = ((bArr[i] & 255) << 56) | ((bArr[i3] & 255) << 48) | ((bArr[i4] & 255) << 40) | ((bArr[i5] & 255) << 32) | ((bArr[i6] & 255) << 24) | ((bArr[i7] & 255) << 16);
         int i9 = i8 + 1;
         int i10 = i9 + 1;
-        long j4 = j3 | ((bArr[i8] & 255) << 8) | (bArr[i9] & 255);
+        long j2 = j | ((bArr[i8] & 255) << 8) | (bArr[i9] & 255);
         setSize$okio(size() - 8);
         if (i10 == i2) {
             this.head = segment.pop();
@@ -497,7 +495,7 @@ public final class Buffer implements BufferedSource, BufferedSink, Cloneable, By
         } else {
             segment.pos = i10;
         }
-        return j4;
+        return j2;
     }
 
     @Override // okio.BufferedSink
@@ -617,45 +615,61 @@ public final class Buffer implements BufferedSource, BufferedSink, Cloneable, By
 
     @Override // okio.BufferedSink
     public Buffer writeDecimalLong(long j) {
-        int i = (j > 0L ? 1 : (j == 0L ? 0 : -1));
-        if (i == 0) {
+        int i;
+        int i2 = (j > 0L ? 1 : (j == 0L ? 0 : -1));
+        if (i2 == 0) {
             return writeByte(48);
         }
         boolean z = false;
-        int i2 = 1;
-        if (i < 0) {
+        int i3 = 1;
+        if (i2 < 0) {
             j = -j;
             if (j < 0) {
                 return writeUtf8("-9223372036854775808");
             }
             z = true;
         }
-        if (j >= 100000000) {
-            i2 = j < MediaPeriodQueue.INITIAL_RENDERER_POSITION_OFFSET_US ? j < 10000000000L ? j < C0468C.NANOS_PER_SECOND ? 9 : 10 : j < 100000000000L ? 11 : 12 : j < 1000000000000000L ? j < 10000000000000L ? 13 : j < 100000000000000L ? 14 : 15 : j < 100000000000000000L ? j < 10000000000000000L ? 16 : 17 : j < 1000000000000000000L ? 18 : 19;
-        } else if (j >= 10000) {
-            i2 = j < 1000000 ? j < 100000 ? 5 : 6 : j < 10000000 ? 7 : 8;
-        } else if (j >= 100) {
-            i2 = j < 1000 ? 3 : 4;
-        } else if (j >= 10) {
-            i2 = 2;
+        if (j < 100000000) {
+            if (j >= 10000) {
+                i = j < 1000000 ? j < 100000 ? 5 : 6 : j < 10000000 ? 7 : 8;
+            } else if (j >= 100) {
+                i = j < 1000 ? 3 : 4;
+            } else if (j >= 10) {
+                i3 = 2;
+            }
+            i3 = i;
+        } else if (j < MediaPeriodQueue.INITIAL_RENDERER_POSITION_OFFSET_US) {
+            if (j < 10000000000L) {
+                i3 = j < C0468C.NANOS_PER_SECOND ? 9 : 10;
+            } else {
+                i = j < 100000000000L ? 11 : 12;
+                i3 = i;
+            }
+        } else if (j >= 1000000000000000L) {
+            i3 = j < 100000000000000000L ? j < 10000000000000000L ? 16 : 17 : j < 1000000000000000000L ? 18 : 19;
+        } else if (j < 10000000000000L) {
+            i3 = 13;
+        } else {
+            i = j < 100000000000000L ? 14 : 15;
+            i3 = i;
         }
         if (z) {
-            i2++;
+            i3++;
         }
-        Segment writableSegment$okio = writableSegment$okio(i2);
+        Segment writableSegment$okio = writableSegment$okio(i3);
         byte[] bArr = writableSegment$okio.data;
-        int i3 = writableSegment$okio.limit + i2;
+        int i4 = writableSegment$okio.limit + i3;
         while (j != 0) {
             long j2 = 10;
-            i3--;
-            bArr[i3] = BufferKt.getHEX_DIGIT_BYTES()[(int) (j % j2)];
+            i4--;
+            bArr[i4] = BufferKt.getHEX_DIGIT_BYTES()[(int) (j % j2)];
             j /= j2;
         }
         if (z) {
-            bArr[i3 - 1] = (byte) 45;
+            bArr[i4 - 1] = (byte) 45;
         }
-        writableSegment$okio.limit += i2;
-        setSize$okio(size() + i2);
+        writableSegment$okio.limit += i3;
+        setSize$okio(size() + i3);
         return this;
     }
 
@@ -823,10 +837,10 @@ public final class Buffer implements BufferedSource, BufferedSink, Cloneable, By
         return -1;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:36:0x00ae  */
-    /* JADX WARN: Removed duplicated region for block: B:37:0x00b8  */
-    /* JADX WARN: Removed duplicated region for block: B:39:0x00be  */
-    /* JADX WARN: Removed duplicated region for block: B:51:0x00c2 A[EDGE_INSN: B:51:0x00c2->B:41:0x00c2 ?: BREAK  , SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:36:0x00ad  */
+    /* JADX WARN: Removed duplicated region for block: B:37:0x00b7  */
+    /* JADX WARN: Removed duplicated region for block: B:39:0x00bd  */
+    /* JADX WARN: Removed duplicated region for block: B:50:0x00c1 A[EDGE_INSN: B:50:0x00c1->B:41:0x00c1 ?: BREAK  , SYNTHETIC] */
     @Override // okio.BufferedSource
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -834,7 +848,7 @@ public final class Buffer implements BufferedSource, BufferedSink, Cloneable, By
     */
     public long readDecimalLong() throws java.io.EOFException {
         /*
-            Method dump skipped, instructions count: 214
+            Method dump skipped, instructions count: 213
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: okio.Buffer.readDecimalLong():long");
@@ -851,16 +865,16 @@ public final class Buffer implements BufferedSource, BufferedSink, Cloneable, By
     */
     public long readHexadecimalUnsignedLong() throws java.io.EOFException {
         /*
-            r15 = this;
-            long r0 = r15.size()
+            r14 = this;
+            long r0 = r14.size()
             r2 = 0
-            int r4 = (r0 > r2 ? 1 : (r0 == r2 ? 0 : -1))
-            if (r4 == 0) goto Lb8
+            int r0 = (r0 > r2 ? 1 : (r0 == r2 ? 0 : -1))
+            if (r0 == 0) goto Lb8
             r0 = 0
+            r1 = r0
             r4 = r2
-            r1 = 0
         Ld:
-            okio.Segment r6 = r15.head
+            okio.Segment r6 = r14.head
             kotlin.jvm.internal.Intrinsics.checkNotNull(r6)
             byte[] r7 = r6.data
             int r8 = r6.pos
@@ -898,8 +912,8 @@ public final class Buffer implements BufferedSource, BufferedSink, Cloneable, By
         L43:
             r12 = -1152921504606846976(0xf000000000000000, double:-3.105036184601418E231)
             long r12 = r12 & r4
-            int r14 = (r12 > r2 ? 1 : (r12 == r2 ? 0 : -1))
-            if (r14 != 0) goto L53
+            int r12 = (r12 > r2 ? 1 : (r12 == r2 ? 0 : -1))
+            if (r12 != 0) goto L53
             r10 = 4
             long r4 = r4 << r10
             long r10 = (long) r11
@@ -940,20 +954,20 @@ public final class Buffer implements BufferedSource, BufferedSink, Cloneable, By
         L9a:
             if (r8 != r9) goto La6
             okio.Segment r7 = r6.pop()
-            r15.head = r7
+            r14.head = r7
             okio.SegmentPool.recycle(r6)
             goto La8
         La6:
             r6.pos = r8
         La8:
             if (r1 != 0) goto Lae
-            okio.Segment r6 = r15.head
+            okio.Segment r6 = r14.head
             if (r6 != 0) goto Ld
         Lae:
-            long r1 = r15.size()
+            long r1 = r14.size()
             long r6 = (long) r0
             long r1 = r1 - r6
-            r15.setSize$okio(r1)
+            r14.setSize$okio(r1)
             return r4
         Lb8:
             java.io.EOFException r0 = new java.io.EOFException
@@ -1132,9 +1146,9 @@ public final class Buffer implements BufferedSource, BufferedSink, Cloneable, By
                 throw new IllegalStateException("resizeBuffer() only permitted for read/write buffers".toString());
             }
             long size = buffer.size();
-            int i = 1;
-            int i2 = (j > size ? 1 : (j == size ? 0 : -1));
-            if (i2 <= 0) {
+            int i = (j > size ? 1 : (j == size ? 0 : -1));
+            int i2 = 1;
+            if (i <= 0) {
                 if (!(j >= 0)) {
                     throw new IllegalArgumentException(("newSize < 0: " + j).toString());
                 }
@@ -1163,11 +1177,11 @@ public final class Buffer implements BufferedSource, BufferedSink, Cloneable, By
                 this.data = null;
                 this.start = -1;
                 this.end = -1;
-            } else if (i2 > 0) {
+            } else if (i > 0) {
                 long j4 = j - size;
                 boolean z = true;
                 while (j4 > 0) {
-                    Segment writableSegment$okio = buffer.writableSegment$okio(i);
+                    Segment writableSegment$okio = buffer.writableSegment$okio(i2);
                     int min = (int) Math.min(j4, 8192 - writableSegment$okio.limit);
                     int i4 = writableSegment$okio.limit + min;
                     writableSegment$okio.limit = i4;
@@ -1180,7 +1194,7 @@ public final class Buffer implements BufferedSource, BufferedSink, Cloneable, By
                         this.end = i4;
                         z = false;
                     }
-                    i = 1;
+                    i2 = 1;
                 }
             }
             buffer.setSize$okio(j);
@@ -1230,8 +1244,8 @@ public final class Buffer implements BufferedSource, BufferedSink, Cloneable, By
         byte b = getByte(0L);
         if ((b & 128) == 0) {
             i = b & Byte.MAX_VALUE;
-            i2 = 1;
             i3 = 0;
+            i2 = 1;
         } else if ((b & 224) == 192) {
             i = b & 31;
             i2 = 2;

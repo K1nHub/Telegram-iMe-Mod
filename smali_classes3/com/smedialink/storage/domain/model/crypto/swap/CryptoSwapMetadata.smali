@@ -40,19 +40,19 @@
 
 .field private final swapMethod:Lcom/smedialink/storage/domain/model/wallet/swap/SwapMethod;
 
-.field private final transactionParams:Lcom/smedialink/storage/domain/model/crypto/TransactionParams;
+.field private final transactionParams:Lcom/smedialink/storage/domain/model/crypto/TransactionParams$Ether;
 
 .field private final value:Ljava/math/BigInteger;
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/String;Lcom/smedialink/storage/domain/model/crypto/TransactionParams;Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;Ljava/lang/String;Lcom/smedialink/storage/domain/model/wallet/swap/SwapMethod;Ljava/math/BigDecimal;Ljava/math/BigDecimal;Ljava/math/BigInteger;Ljava/util/List;Ljava/math/BigDecimal;Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;Ljava/math/BigInteger;Ljava/lang/String;)V
+.method public constructor <init>(Ljava/lang/String;Lcom/smedialink/storage/domain/model/crypto/TransactionParams$Ether;Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;Ljava/lang/String;Lcom/smedialink/storage/domain/model/wallet/swap/SwapMethod;Ljava/math/BigDecimal;Ljava/math/BigDecimal;Ljava/math/BigInteger;Ljava/util/List;Ljava/math/BigDecimal;Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;Ljava/math/BigInteger;Ljava/lang/String;)V
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Ljava/lang/String;",
-            "Lcom/smedialink/storage/domain/model/crypto/TransactionParams;",
+            "Lcom/smedialink/storage/domain/model/crypto/TransactionParams$Ether;",
             "Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;",
             "Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;",
             "Ljava/lang/String;",
@@ -130,7 +130,7 @@
     iput-object p1, p0, Lcom/smedialink/storage/domain/model/crypto/swap/CryptoSwapMetadata;->quoteId:Ljava/lang/String;
 
     .line 12
-    iput-object p2, p0, Lcom/smedialink/storage/domain/model/crypto/swap/CryptoSwapMetadata;->transactionParams:Lcom/smedialink/storage/domain/model/crypto/TransactionParams;
+    iput-object p2, p0, Lcom/smedialink/storage/domain/model/crypto/swap/CryptoSwapMetadata;->transactionParams:Lcom/smedialink/storage/domain/model/crypto/TransactionParams$Ether;
 
     .line 13
     iput-object p3, p0, Lcom/smedialink/storage/domain/model/crypto/swap/CryptoSwapMetadata;->inputTokenCode:Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;
@@ -187,7 +187,7 @@
     return-void
 .end method
 
-.method public static synthetic copy$default(Lcom/smedialink/storage/domain/model/crypto/swap/CryptoSwapMetadata;Ljava/lang/String;Lcom/smedialink/storage/domain/model/crypto/TransactionParams;Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;Ljava/lang/String;Lcom/smedialink/storage/domain/model/wallet/swap/SwapMethod;Ljava/math/BigDecimal;Ljava/math/BigDecimal;Ljava/math/BigInteger;Ljava/util/List;Ljava/math/BigDecimal;Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;Ljava/math/BigInteger;Ljava/lang/String;ILjava/lang/Object;)Lcom/smedialink/storage/domain/model/crypto/swap/CryptoSwapMetadata;
+.method public static synthetic copy$default(Lcom/smedialink/storage/domain/model/crypto/swap/CryptoSwapMetadata;Ljava/lang/String;Lcom/smedialink/storage/domain/model/crypto/TransactionParams$Ether;Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;Ljava/lang/String;Lcom/smedialink/storage/domain/model/wallet/swap/SwapMethod;Ljava/math/BigDecimal;Ljava/math/BigDecimal;Ljava/math/BigInteger;Ljava/util/List;Ljava/math/BigDecimal;Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;Ljava/math/BigInteger;Ljava/lang/String;ILjava/lang/Object;)Lcom/smedialink/storage/domain/model/crypto/swap/CryptoSwapMetadata;
     .locals 15
 
     move-object v0, p0
@@ -210,7 +210,7 @@
 
     if-eqz v3, :cond_1
 
-    iget-object v3, v0, Lcom/smedialink/storage/domain/model/crypto/swap/CryptoSwapMetadata;->transactionParams:Lcom/smedialink/storage/domain/model/crypto/TransactionParams;
+    iget-object v3, v0, Lcom/smedialink/storage/domain/model/crypto/swap/CryptoSwapMetadata;->transactionParams:Lcom/smedialink/storage/domain/model/crypto/TransactionParams$Ether;
 
     goto :goto_1
 
@@ -390,7 +390,7 @@
 
     move-object/from16 p14, v1
 
-    invoke-virtual/range {p0 .. p14}, Lcom/smedialink/storage/domain/model/crypto/swap/CryptoSwapMetadata;->copy(Ljava/lang/String;Lcom/smedialink/storage/domain/model/crypto/TransactionParams;Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;Ljava/lang/String;Lcom/smedialink/storage/domain/model/wallet/swap/SwapMethod;Ljava/math/BigDecimal;Ljava/math/BigDecimal;Ljava/math/BigInteger;Ljava/util/List;Ljava/math/BigDecimal;Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;Ljava/math/BigInteger;Ljava/lang/String;)Lcom/smedialink/storage/domain/model/crypto/swap/CryptoSwapMetadata;
+    invoke-virtual/range {p0 .. p14}, Lcom/smedialink/storage/domain/model/crypto/swap/CryptoSwapMetadata;->copy(Ljava/lang/String;Lcom/smedialink/storage/domain/model/crypto/TransactionParams$Ether;Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;Ljava/lang/String;Lcom/smedialink/storage/domain/model/wallet/swap/SwapMethod;Ljava/math/BigDecimal;Ljava/math/BigDecimal;Ljava/math/BigInteger;Ljava/util/List;Ljava/math/BigDecimal;Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;Ljava/math/BigInteger;Ljava/lang/String;)Lcom/smedialink/storage/domain/model/crypto/swap/CryptoSwapMetadata;
 
     move-result-object v0
 
@@ -455,10 +455,10 @@
     return-object v0
 .end method
 
-.method public final component2()Lcom/smedialink/storage/domain/model/crypto/TransactionParams;
+.method public final component2()Lcom/smedialink/storage/domain/model/crypto/TransactionParams$Ether;
     .locals 1
 
-    iget-object v0, p0, Lcom/smedialink/storage/domain/model/crypto/swap/CryptoSwapMetadata;->transactionParams:Lcom/smedialink/storage/domain/model/crypto/TransactionParams;
+    iget-object v0, p0, Lcom/smedialink/storage/domain/model/crypto/swap/CryptoSwapMetadata;->transactionParams:Lcom/smedialink/storage/domain/model/crypto/TransactionParams$Ether;
 
     return-object v0
 .end method
@@ -519,13 +519,13 @@
     return-object v0
 .end method
 
-.method public final copy(Ljava/lang/String;Lcom/smedialink/storage/domain/model/crypto/TransactionParams;Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;Ljava/lang/String;Lcom/smedialink/storage/domain/model/wallet/swap/SwapMethod;Ljava/math/BigDecimal;Ljava/math/BigDecimal;Ljava/math/BigInteger;Ljava/util/List;Ljava/math/BigDecimal;Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;Ljava/math/BigInteger;Ljava/lang/String;)Lcom/smedialink/storage/domain/model/crypto/swap/CryptoSwapMetadata;
+.method public final copy(Ljava/lang/String;Lcom/smedialink/storage/domain/model/crypto/TransactionParams$Ether;Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;Ljava/lang/String;Lcom/smedialink/storage/domain/model/wallet/swap/SwapMethod;Ljava/math/BigDecimal;Ljava/math/BigDecimal;Ljava/math/BigInteger;Ljava/util/List;Ljava/math/BigDecimal;Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;Ljava/math/BigInteger;Ljava/lang/String;)Lcom/smedialink/storage/domain/model/crypto/swap/CryptoSwapMetadata;
     .locals 16
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Ljava/lang/String;",
-            "Lcom/smedialink/storage/domain/model/crypto/TransactionParams;",
+            "Lcom/smedialink/storage/domain/model/crypto/TransactionParams$Ether;",
             "Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;",
             "Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;",
             "Ljava/lang/String;",
@@ -629,7 +629,7 @@
 
     move-object/from16 v6, p5
 
-    invoke-direct/range {v1 .. v15}, Lcom/smedialink/storage/domain/model/crypto/swap/CryptoSwapMetadata;-><init>(Ljava/lang/String;Lcom/smedialink/storage/domain/model/crypto/TransactionParams;Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;Ljava/lang/String;Lcom/smedialink/storage/domain/model/wallet/swap/SwapMethod;Ljava/math/BigDecimal;Ljava/math/BigDecimal;Ljava/math/BigInteger;Ljava/util/List;Ljava/math/BigDecimal;Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;Ljava/math/BigInteger;Ljava/lang/String;)V
+    invoke-direct/range {v1 .. v15}, Lcom/smedialink/storage/domain/model/crypto/swap/CryptoSwapMetadata;-><init>(Ljava/lang/String;Lcom/smedialink/storage/domain/model/crypto/TransactionParams$Ether;Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;Ljava/lang/String;Lcom/smedialink/storage/domain/model/wallet/swap/SwapMethod;Ljava/math/BigDecimal;Ljava/math/BigDecimal;Ljava/math/BigInteger;Ljava/util/List;Ljava/math/BigDecimal;Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;Ljava/math/BigInteger;Ljava/lang/String;)V
 
     return-object v0
 .end method
@@ -668,9 +668,9 @@
     return v2
 
     :cond_2
-    iget-object v1, p0, Lcom/smedialink/storage/domain/model/crypto/swap/CryptoSwapMetadata;->transactionParams:Lcom/smedialink/storage/domain/model/crypto/TransactionParams;
+    iget-object v1, p0, Lcom/smedialink/storage/domain/model/crypto/swap/CryptoSwapMetadata;->transactionParams:Lcom/smedialink/storage/domain/model/crypto/TransactionParams$Ether;
 
-    iget-object v3, p1, Lcom/smedialink/storage/domain/model/crypto/swap/CryptoSwapMetadata;->transactionParams:Lcom/smedialink/storage/domain/model/crypto/TransactionParams;
+    iget-object v3, p1, Lcom/smedialink/storage/domain/model/crypto/swap/CryptoSwapMetadata;->transactionParams:Lcom/smedialink/storage/domain/model/crypto/TransactionParams$Ether;
 
     invoke-static {v1, v3}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
@@ -958,11 +958,11 @@
     return-object v0
 .end method
 
-.method public final getTransactionParams()Lcom/smedialink/storage/domain/model/crypto/TransactionParams;
+.method public final getTransactionParams()Lcom/smedialink/storage/domain/model/crypto/TransactionParams$Ether;
     .locals 1
 
     .line 12
-    iget-object v0, p0, Lcom/smedialink/storage/domain/model/crypto/swap/CryptoSwapMetadata;->transactionParams:Lcom/smedialink/storage/domain/model/crypto/TransactionParams;
+    iget-object v0, p0, Lcom/smedialink/storage/domain/model/crypto/swap/CryptoSwapMetadata;->transactionParams:Lcom/smedialink/storage/domain/model/crypto/TransactionParams$Ether;
 
     return-object v0
 .end method
@@ -987,9 +987,9 @@
 
     mul-int/lit8 v0, v0, 0x1f
 
-    iget-object v1, p0, Lcom/smedialink/storage/domain/model/crypto/swap/CryptoSwapMetadata;->transactionParams:Lcom/smedialink/storage/domain/model/crypto/TransactionParams;
+    iget-object v1, p0, Lcom/smedialink/storage/domain/model/crypto/swap/CryptoSwapMetadata;->transactionParams:Lcom/smedialink/storage/domain/model/crypto/TransactionParams$Ether;
 
-    invoke-virtual {v1}, Lcom/smedialink/storage/domain/model/crypto/TransactionParams;->hashCode()I
+    invoke-virtual {v1}, Lcom/smedialink/storage/domain/model/crypto/TransactionParams$Ether;->hashCode()I
 
     move-result v1
 
@@ -1145,7 +1145,7 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget-object v1, p0, Lcom/smedialink/storage/domain/model/crypto/swap/CryptoSwapMetadata;->transactionParams:Lcom/smedialink/storage/domain/model/crypto/TransactionParams;
+    iget-object v1, p0, Lcom/smedialink/storage/domain/model/crypto/swap/CryptoSwapMetadata;->transactionParams:Lcom/smedialink/storage/domain/model/crypto/TransactionParams$Ether;
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 

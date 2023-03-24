@@ -1339,7 +1339,7 @@
 .end method
 
 .method private checkDocuments(Z)V
-    .locals 11
+    .locals 10
 
     .line 1251
     iget-object v0, p0, Lorg/telegram/ui/Components/StickerMasksAlert;->recentStickers:[Ljava/util/ArrayList;
@@ -1408,7 +1408,7 @@
 
     const/4 v2, 0x0
 
-    const/4 v3, 0x0
+    move v3, v2
 
     .line 1256
     :goto_0
@@ -1429,7 +1429,7 @@
 
     check-cast v4, Lorg/telegram/tgnet/TLRPC$Document;
 
-    const/4 v5, 0x0
+    move v5, v2
 
     .line 1258
     :goto_1
@@ -1477,9 +1477,9 @@
 
     iget-wide v8, v4, Lorg/telegram/tgnet/TLRPC$Document;->id:J
 
-    cmp-long v10, v6, v8
+    cmp-long v6, v6, v8
 
-    if-nez v10, :cond_0
+    if-nez v6, :cond_0
 
     .line 1261
     iget-object v4, p0, Lorg/telegram/ui/Components/StickerMasksAlert;->recentStickers:[Ljava/util/ArrayList;
@@ -1642,7 +1642,7 @@
     goto :goto_2
 
     :cond_4
-    const/4 v0, -0x1
+    move v0, v1
 
     :goto_2
     if-eq v0, v1, :cond_7
@@ -2127,7 +2127,7 @@
 
     const/high16 v2, 0x41100000    # 9.0f
 
-    mul-float v1, v1, v2
+    mul-float/2addr v1, v2
 
     cmpl-float v0, v0, v1
 
@@ -2156,12 +2156,12 @@
 
     if-ge v1, p1, :cond_2
 
-    const/4 v1, 0x0
+    move v1, v2
 
     goto :goto_0
 
     :cond_2
-    const/4 v1, 0x1
+    move v1, v3
 
     :goto_0
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/RecyclerAnimationScrollHelper;->setScrollDirection(I)V
@@ -2393,12 +2393,12 @@
 
     if-ge v0, v4, :cond_4
 
-    const/4 v0, 0x1
+    move v0, v2
 
     goto :goto_1
 
     :cond_4
-    const/4 v0, 0x0
+    move v0, v1
 
     :goto_1
     invoke-static {v3, v0, p1}, Lorg/telegram/ui/Components/StickerMasksAlert$SearchField;->access$3500(Lorg/telegram/ui/Components/StickerMasksAlert$SearchField;ZZ)V
@@ -2524,12 +2524,12 @@
 
     if-ne v3, v4, :cond_1
 
-    const/4 v3, 0x1
+    move v3, v1
 
     goto :goto_0
 
     :cond_1
-    const/4 v3, 0x0
+    move v3, v2
 
     :goto_0
     invoke-virtual {v0, v3}, Landroid/widget/ImageView;->setSelected(Z)V
@@ -2541,12 +2541,12 @@
 
     if-nez v3, :cond_2
 
-    const/4 v3, 0x1
+    move v3, v1
 
     goto :goto_1
 
     :cond_2
-    const/4 v3, 0x0
+    move v3, v2
 
     :goto_1
     invoke-virtual {v0, v3}, Landroid/widget/ImageView;->setSelected(Z)V
@@ -2561,12 +2561,12 @@
 
     if-ne v3, v1, :cond_3
 
-    const/4 v3, 0x1
+    move v3, v1
 
     goto :goto_2
 
     :cond_3
-    const/4 v3, 0x0
+    move v3, v2
 
     :goto_2
     invoke-virtual {v0, v3}, Landroid/widget/ImageView;->setSelected(Z)V
@@ -2715,7 +2715,7 @@
 
     move-result-object v1
 
-    const/4 v3, 0x0
+    move v3, v2
 
     .line 1160
     :goto_3
@@ -2772,7 +2772,7 @@
     goto :goto_3
 
     :cond_9
-    const/4 v1, 0x0
+    move v1, v2
 
     .line 1167
     :goto_5

@@ -136,7 +136,7 @@
     goto :goto_0
 
     :cond_2
-    const/4 v0, 0x0
+    move v0, v2
 
     :goto_0
     return v0
@@ -193,13 +193,13 @@
 
     xor-long/2addr v0, v3
 
-    long-to-int v1, v0
+    long-to-int v0, v0
 
-    const v0, 0xf4243
+    const v1, 0xf4243
 
-    xor-int/2addr v1, v0
+    xor-int/2addr v0, v1
 
-    mul-int v1, v1, v0
+    mul-int/2addr v0, v1
 
     .line 86
     iget-wide v3, p0, Lcom/google/firebase/crashlytics/internal/model/AutoValue_CrashlyticsReport_Session_Event_Application_Execution_BinaryImage;->size:J
@@ -208,11 +208,11 @@
 
     xor-long v2, v5, v3
 
-    long-to-int v3, v2
+    long-to-int v2, v2
 
-    xor-int/2addr v1, v3
+    xor-int/2addr v0, v2
 
-    mul-int v1, v1, v0
+    mul-int/2addr v0, v1
 
     .line 88
     iget-object v2, p0, Lcom/google/firebase/crashlytics/internal/model/AutoValue_CrashlyticsReport_Session_Event_Application_Execution_BinaryImage;->name:Ljava/lang/String;
@@ -221,23 +221,23 @@
 
     move-result v2
 
-    xor-int/2addr v1, v2
+    xor-int/2addr v0, v2
 
-    mul-int v1, v1, v0
+    mul-int/2addr v0, v1
 
     .line 90
-    iget-object v0, p0, Lcom/google/firebase/crashlytics/internal/model/AutoValue_CrashlyticsReport_Session_Event_Application_Execution_BinaryImage;->uuid:Ljava/lang/String;
+    iget-object v1, p0, Lcom/google/firebase/crashlytics/internal/model/AutoValue_CrashlyticsReport_Session_Event_Application_Execution_BinaryImage;->uuid:Ljava/lang/String;
 
-    if-nez v0, :cond_0
+    if-nez v1, :cond_0
 
-    const/4 v0, 0x0
+    const/4 v1, 0x0
 
     goto :goto_0
 
     :cond_0
-    invoke-virtual {v0}, Ljava/lang/String;->hashCode()I
+    invoke-virtual {v1}, Ljava/lang/String;->hashCode()I
 
-    move-result v0
+    move-result v1
 
     :goto_0
     xor-int/2addr v0, v1

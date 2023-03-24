@@ -5,10 +5,10 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import java.util.zip.GZIPInputStream;
 import java.util.zip.GZIPOutputStream;
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public interface Codec extends Compressor, Decompressor {
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes.dex */
     public static final class Gzip implements Codec {
         @Override // io.grpc.Compressor, io.grpc.Decompressor
         public String getMessageEncoding() {
@@ -26,7 +26,7 @@ public interface Codec extends Compressor, Decompressor {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes.dex */
     public static final class Identity implements Codec {
         public static final Codec NONE = new Identity();
 

@@ -218,56 +218,57 @@ public final class BidiFormatter {
         int getExitDir() {
             this.charIndex = this.length;
             int i = 0;
-            int i2 = 0;
-            while (this.charIndex > 0) {
-                byte dirTypeBackward = dirTypeBackward();
-                if (dirTypeBackward != 0) {
-                    if (dirTypeBackward == 1 || dirTypeBackward == 2) {
-                        if (i == 0) {
-                            return 1;
-                        }
-                        if (i2 == 0) {
-                            i2 = i;
-                        }
-                    } else if (dirTypeBackward != 9) {
-                        switch (dirTypeBackward) {
-                            case 14:
-                            case 15:
-                                if (i2 == i) {
-                                    return -1;
-                                }
-                                i--;
+            while (true) {
+                int i2 = i;
+                while (this.charIndex > 0) {
+                    byte dirTypeBackward = dirTypeBackward();
+                    if (dirTypeBackward != 0) {
+                        if (dirTypeBackward == 1 || dirTypeBackward == 2) {
+                            if (i == 0) {
+                                return 1;
+                            }
+                            if (i2 == 0) {
                                 break;
-                            case 16:
-                            case 17:
-                                if (i2 == i) {
-                                    return 1;
-                                }
-                                i--;
-                                break;
-                            case 18:
-                                i++;
-                                break;
-                            default:
-                                if (i2 != 0) {
+                            }
+                        } else if (dirTypeBackward != 9) {
+                            switch (dirTypeBackward) {
+                                case 14:
+                                case 15:
+                                    if (i2 == i) {
+                                        return -1;
+                                    }
+                                    i--;
                                     break;
-                                } else {
-                                    i2 = i;
+                                case 16:
+                                case 17:
+                                    if (i2 == i) {
+                                        return 1;
+                                    }
+                                    i--;
                                     break;
-                                }
+                                case 18:
+                                    i++;
+                                    break;
+                                default:
+                                    if (i2 != 0) {
+                                        break;
+                                    } else {
+                                        break;
+                                    }
+                            }
+                        } else {
+                            continue;
                         }
+                    } else if (i == 0) {
+                        return -1;
                     } else {
-                        continue;
-                    }
-                } else if (i == 0) {
-                    return -1;
-                } else {
-                    if (i2 == 0) {
-                        i2 = i;
+                        if (i2 == 0) {
+                            break;
+                        }
                     }
                 }
+                return 0;
             }
-            return 0;
         }
 
         private static byte getCachedDirectionality(char c) {

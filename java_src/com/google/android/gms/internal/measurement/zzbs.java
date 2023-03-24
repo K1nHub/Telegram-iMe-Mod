@@ -34,7 +34,7 @@ public final class zzbs {
             if (r0 > r3) goto L28
             goto L29
         L28:
-            r1 = 0
+            r1 = r2
         L29:
             com.google.android.gms.internal.measurement.zzbs.zza = r1
             return

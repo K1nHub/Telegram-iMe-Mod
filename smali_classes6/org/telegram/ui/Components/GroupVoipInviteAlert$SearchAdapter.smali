@@ -193,12 +193,12 @@
 
     if-eqz v3, :cond_3
 
-    const/4 v7, 0x1
+    move v7, v6
 
     goto :goto_0
 
     :cond_3
-    const/4 v7, 0x0
+    move v7, v4
 
     :goto_0
     add-int/2addr v7, v6
@@ -225,7 +225,7 @@
 
     move-result v3
 
-    const/4 v9, 0x0
+    move v9, v4
 
     :goto_1
     if-ge v9, v3, :cond_d
@@ -328,9 +328,9 @@
     const/4 v14, 0x0
 
     :cond_7
-    const/4 v15, 0x0
+    move v15, v4
 
-    const/16 v16, 0x0
+    move/from16 v16, v15
 
     :goto_3
     if-ge v15, v7, :cond_c
@@ -654,7 +654,7 @@
     goto :goto_0
 
     :cond_2
-    const/4 v0, 0x0
+    move v0, p1
 
     .line 589
     :goto_0
@@ -1220,7 +1220,7 @@
 
     move-result-object v3
 
-    const/4 v6, 0x1
+    move v6, v1
 
     goto :goto_1
 
@@ -1228,9 +1228,9 @@
     sub-int/2addr p2, v3
 
     :cond_6
-    move-object v3, v5
+    move v6, v4
 
-    const/4 v6, 0x0
+    move-object v3, v5
 
     :goto_1
     const/16 v7, 0x21

@@ -1824,7 +1824,7 @@
     invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->runOnUIThread(Ljava/lang/Runnable;)V
 
     :cond_0
-    const/4 v2, 0x0
+    move v2, v0
 
     .line 437
     :goto_0
@@ -1864,7 +1864,7 @@
     goto :goto_0
 
     :cond_1
-    const/4 v2, 0x0
+    move v2, v0
 
     .line 443
     :goto_1
@@ -1944,7 +1944,7 @@
     goto :goto_1
 
     :cond_3
-    const/4 v2, 0x0
+    move v2, v0
 
     .line 458
     :goto_3
@@ -2057,7 +2057,7 @@
 
     if-eqz v2, :cond_7
 
-    const/4 v0, 0x1
+    move v0, v6
 
     goto :goto_5
 
@@ -2472,7 +2472,7 @@
     return p1
 
     :cond_7
-    const/4 p2, 0x0
+    move p2, v0
 
     :goto_2
     const/4 p3, 0x5
@@ -2650,7 +2650,7 @@
     goto :goto_0
 
     :cond_1
-    const/4 v1, 0x0
+    move v1, v2
 
     :cond_2
     :goto_0
@@ -2685,7 +2685,7 @@
     goto :goto_1
 
     :cond_4
-    const/4 v1, 0x0
+    move v1, v2
 
     .line 3415
     :goto_1
@@ -2758,7 +2758,7 @@
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_0
     if-ge v2, p0, :cond_5
@@ -2788,7 +2788,7 @@
     goto :goto_4
 
     :cond_1
-    const/4 v4, 0x0
+    move v4, v1
 
     .line 1363
     :goto_1
@@ -2798,7 +2798,7 @@
 
     if-ge v4, v5, :cond_4
 
-    const/4 v5, 0x0
+    move v5, v1
 
     .line 1364
     :goto_2
@@ -2946,7 +2946,7 @@
 
     const-wide/16 v0, 0x3e8
 
-    mul-long p0, p0, v0
+    mul-long/2addr p0, v0
 
     .line 1696
     :try_start_0
@@ -3034,9 +3034,9 @@
 
     const-wide v2, 0x757b12c00L
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-gez v4, :cond_2
+    if-gez v0, :cond_2
 
     .line 1708
     invoke-static {}, Lorg/telegram/messenger/LocaleController;->getInstance()Lorg/telegram/messenger/LocaleController;
@@ -3091,7 +3091,7 @@
 
     const-wide/16 v0, 0x3e8
 
-    mul-long p0, p0, v0
+    mul-long/2addr p0, v0
 
     .line 1721
     :try_start_0
@@ -3245,53 +3245,53 @@
 
     const-wide v6, 0x757b12c00L
 
-    const/4 p2, 0x2
+    cmp-long p2, v0, v6
 
-    const-string v2, "formatDateAtTime"
+    const/4 v0, 0x2
 
-    cmp-long v4, v0, v6
+    const-string v1, "formatDateAtTime"
 
-    if-gez v4, :cond_3
+    if-gez p2, :cond_3
 
     .line 1737
     :try_start_1
-    sget v0, Lorg/telegram/messenger/R$string;->formatDateAtTime:I
+    sget p2, Lorg/telegram/messenger/R$string;->formatDateAtTime:I
 
-    new-array p2, p2, [Ljava/lang/Object;
+    new-array v0, v0, [Ljava/lang/Object;
 
     invoke-static {}, Lorg/telegram/messenger/LocaleController;->getInstance()Lorg/telegram/messenger/LocaleController;
 
-    move-result-object v1
+    move-result-object v2
 
-    iget-object v1, v1, Lorg/telegram/messenger/LocaleController;->formatterDayMonth:Lorg/telegram/messenger/time/FastDateFormat;
+    iget-object v2, v2, Lorg/telegram/messenger/LocaleController;->formatterDayMonth:Lorg/telegram/messenger/time/FastDateFormat;
 
     new-instance v4, Ljava/util/Date;
 
     invoke-direct {v4, p0, p1}, Ljava/util/Date;-><init>(J)V
 
-    invoke-virtual {v1, v4}, Lorg/telegram/messenger/time/FastDateFormat;->format(Ljava/util/Date;)Ljava/lang/String;
+    invoke-virtual {v2, v4}, Lorg/telegram/messenger/time/FastDateFormat;->format(Ljava/util/Date;)Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v2
 
-    aput-object v1, p2, v5
+    aput-object v2, v0, v5
 
     invoke-static {}, Lorg/telegram/messenger/LocaleController;->getInstance()Lorg/telegram/messenger/LocaleController;
 
-    move-result-object v1
+    move-result-object v2
 
-    iget-object v1, v1, Lorg/telegram/messenger/LocaleController;->formatterDay:Lorg/telegram/messenger/time/FastDateFormat;
+    iget-object v2, v2, Lorg/telegram/messenger/LocaleController;->formatterDay:Lorg/telegram/messenger/time/FastDateFormat;
 
     new-instance v4, Ljava/util/Date;
 
     invoke-direct {v4, p0, p1}, Ljava/util/Date;-><init>(J)V
 
-    invoke-virtual {v1, v4}, Lorg/telegram/messenger/time/FastDateFormat;->format(Ljava/util/Date;)Ljava/lang/String;
+    invoke-virtual {v2, v4}, Lorg/telegram/messenger/time/FastDateFormat;->format(Ljava/util/Date;)Ljava/lang/String;
 
     move-result-object p0
 
-    aput-object p0, p2, v3
+    aput-object p0, v0, v3
 
-    invoke-static {v2, v0, p2}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {v1, p2, v0}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p0
 
@@ -3299,43 +3299,43 @@
 
     .line 1739
     :cond_3
-    sget v0, Lorg/telegram/messenger/R$string;->formatDateAtTime:I
+    sget p2, Lorg/telegram/messenger/R$string;->formatDateAtTime:I
 
-    new-array p2, p2, [Ljava/lang/Object;
+    new-array v0, v0, [Ljava/lang/Object;
 
     invoke-static {}, Lorg/telegram/messenger/LocaleController;->getInstance()Lorg/telegram/messenger/LocaleController;
 
-    move-result-object v1
+    move-result-object v2
 
-    iget-object v1, v1, Lorg/telegram/messenger/LocaleController;->formatterYear:Lorg/telegram/messenger/time/FastDateFormat;
+    iget-object v2, v2, Lorg/telegram/messenger/LocaleController;->formatterYear:Lorg/telegram/messenger/time/FastDateFormat;
 
     new-instance v4, Ljava/util/Date;
 
     invoke-direct {v4, p0, p1}, Ljava/util/Date;-><init>(J)V
 
-    invoke-virtual {v1, v4}, Lorg/telegram/messenger/time/FastDateFormat;->format(Ljava/util/Date;)Ljava/lang/String;
+    invoke-virtual {v2, v4}, Lorg/telegram/messenger/time/FastDateFormat;->format(Ljava/util/Date;)Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v2
 
-    aput-object v1, p2, v5
+    aput-object v2, v0, v5
 
     invoke-static {}, Lorg/telegram/messenger/LocaleController;->getInstance()Lorg/telegram/messenger/LocaleController;
 
-    move-result-object v1
+    move-result-object v2
 
-    iget-object v1, v1, Lorg/telegram/messenger/LocaleController;->formatterDay:Lorg/telegram/messenger/time/FastDateFormat;
+    iget-object v2, v2, Lorg/telegram/messenger/LocaleController;->formatterDay:Lorg/telegram/messenger/time/FastDateFormat;
 
     new-instance v4, Ljava/util/Date;
 
     invoke-direct {v4, p0, p1}, Ljava/util/Date;-><init>(J)V
 
-    invoke-virtual {v1, v4}, Lorg/telegram/messenger/time/FastDateFormat;->format(Ljava/util/Date;)Ljava/lang/String;
+    invoke-virtual {v2, v4}, Lorg/telegram/messenger/time/FastDateFormat;->format(Ljava/util/Date;)Ljava/lang/String;
 
     move-result-object p0
 
-    aput-object p0, p2, v3
+    aput-object p0, v0, v3
 
-    invoke-static {v2, v0, p2}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {v1, p2, v0}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p0
     :try_end_1
@@ -3355,11 +3355,11 @@
 .end method
 
 .method public static formatDateCallLog(J)Ljava/lang/String;
-    .locals 9
+    .locals 8
 
     const-wide/16 v0, 0x3e8
 
-    mul-long p0, p0, v0
+    mul-long/2addr p0, v0
 
     .line 1775
     :try_start_0
@@ -3469,53 +3469,53 @@
 
     const-wide v6, 0x757b12c00L
 
-    const/4 v2, 0x2
+    cmp-long v0, v0, v6
 
-    const-string v4, "formatDateAtTime"
+    const/4 v1, 0x2
 
-    cmp-long v8, v0, v6
+    const-string v2, "formatDateAtTime"
 
-    if-gez v8, :cond_2
+    if-gez v0, :cond_2
 
     .line 1787
     :try_start_1
     sget v0, Lorg/telegram/messenger/R$string;->formatDateAtTime:I
 
-    new-array v1, v2, [Ljava/lang/Object;
+    new-array v1, v1, [Ljava/lang/Object;
 
     invoke-static {}, Lorg/telegram/messenger/LocaleController;->getInstance()Lorg/telegram/messenger/LocaleController;
 
-    move-result-object v2
+    move-result-object v4
 
-    iget-object v2, v2, Lorg/telegram/messenger/LocaleController;->chatDate:Lorg/telegram/messenger/time/FastDateFormat;
+    iget-object v4, v4, Lorg/telegram/messenger/LocaleController;->chatDate:Lorg/telegram/messenger/time/FastDateFormat;
 
     new-instance v6, Ljava/util/Date;
 
     invoke-direct {v6, p0, p1}, Ljava/util/Date;-><init>(J)V
 
-    invoke-virtual {v2, v6}, Lorg/telegram/messenger/time/FastDateFormat;->format(Ljava/util/Date;)Ljava/lang/String;
+    invoke-virtual {v4, v6}, Lorg/telegram/messenger/time/FastDateFormat;->format(Ljava/util/Date;)Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v4
 
-    aput-object v2, v1, v5
+    aput-object v4, v1, v5
 
     invoke-static {}, Lorg/telegram/messenger/LocaleController;->getInstance()Lorg/telegram/messenger/LocaleController;
 
-    move-result-object v2
+    move-result-object v4
 
-    iget-object v2, v2, Lorg/telegram/messenger/LocaleController;->formatterDay:Lorg/telegram/messenger/time/FastDateFormat;
+    iget-object v4, v4, Lorg/telegram/messenger/LocaleController;->formatterDay:Lorg/telegram/messenger/time/FastDateFormat;
 
     new-instance v5, Ljava/util/Date;
 
     invoke-direct {v5, p0, p1}, Ljava/util/Date;-><init>(J)V
 
-    invoke-virtual {v2, v5}, Lorg/telegram/messenger/time/FastDateFormat;->format(Ljava/util/Date;)Ljava/lang/String;
+    invoke-virtual {v4, v5}, Lorg/telegram/messenger/time/FastDateFormat;->format(Ljava/util/Date;)Ljava/lang/String;
 
     move-result-object p0
 
     aput-object p0, v1, v3
 
-    invoke-static {v4, v0, v1}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {v2, v0, v1}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p0
 
@@ -3525,41 +3525,41 @@
     :cond_2
     sget v0, Lorg/telegram/messenger/R$string;->formatDateAtTime:I
 
-    new-array v1, v2, [Ljava/lang/Object;
+    new-array v1, v1, [Ljava/lang/Object;
 
     invoke-static {}, Lorg/telegram/messenger/LocaleController;->getInstance()Lorg/telegram/messenger/LocaleController;
 
-    move-result-object v2
+    move-result-object v4
 
-    iget-object v2, v2, Lorg/telegram/messenger/LocaleController;->chatFullDate:Lorg/telegram/messenger/time/FastDateFormat;
+    iget-object v4, v4, Lorg/telegram/messenger/LocaleController;->chatFullDate:Lorg/telegram/messenger/time/FastDateFormat;
 
     new-instance v6, Ljava/util/Date;
 
     invoke-direct {v6, p0, p1}, Ljava/util/Date;-><init>(J)V
 
-    invoke-virtual {v2, v6}, Lorg/telegram/messenger/time/FastDateFormat;->format(Ljava/util/Date;)Ljava/lang/String;
+    invoke-virtual {v4, v6}, Lorg/telegram/messenger/time/FastDateFormat;->format(Ljava/util/Date;)Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v4
 
-    aput-object v2, v1, v5
+    aput-object v4, v1, v5
 
     invoke-static {}, Lorg/telegram/messenger/LocaleController;->getInstance()Lorg/telegram/messenger/LocaleController;
 
-    move-result-object v2
+    move-result-object v4
 
-    iget-object v2, v2, Lorg/telegram/messenger/LocaleController;->formatterDay:Lorg/telegram/messenger/time/FastDateFormat;
+    iget-object v4, v4, Lorg/telegram/messenger/LocaleController;->formatterDay:Lorg/telegram/messenger/time/FastDateFormat;
 
     new-instance v5, Ljava/util/Date;
 
     invoke-direct {v5, p0, p1}, Ljava/util/Date;-><init>(J)V
 
-    invoke-virtual {v2, v5}, Lorg/telegram/messenger/time/FastDateFormat;->format(Ljava/util/Date;)Ljava/lang/String;
+    invoke-virtual {v4, v5}, Lorg/telegram/messenger/time/FastDateFormat;->format(Ljava/util/Date;)Ljava/lang/String;
 
     move-result-object p0
 
     aput-object p0, v1, v3
 
-    invoke-static {v4, v0, v1}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {v2, v0, v1}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p0
     :try_end_1
@@ -3616,7 +3616,7 @@
 
     const-wide/16 v3, 0x3e8
 
-    mul-long p0, p0, v3
+    mul-long/2addr p0, v3
 
     .line 1682
     invoke-virtual {v0, p0, p1}, Ljava/util/Calendar;->setTimeInMillis(J)V
@@ -3695,7 +3695,7 @@
 
     const-wide/16 v0, 0x3e8
 
-    mul-long p0, p0, v0
+    mul-long/2addr p0, v0
 
     .line 2081
     :try_start_0
@@ -3773,7 +3773,7 @@
 
     const-wide/16 v0, 0x3e8
 
-    mul-long p0, p0, v0
+    mul-long/2addr p0, v0
 
     .line 1897
     :try_start_0
@@ -4007,66 +4007,66 @@
 
     const-wide v4, 0x757b12c00L
 
-    const-string p2, "LastSeenDateFormatted"
+    cmp-long p2, v0, v4
 
-    const/4 v2, 0x2
+    const-string v0, "LastSeenDateFormatted"
 
-    const-string v6, "formatDateAtTime"
+    const/4 v1, 0x2
 
-    cmp-long v7, v0, v4
+    const-string v2, "formatDateAtTime"
 
-    if-gez v7, :cond_4
+    if-gez p2, :cond_4
 
     .line 1927
     :try_start_3
-    sget v0, Lorg/telegram/messenger/R$string;->formatDateAtTime:I
+    sget p2, Lorg/telegram/messenger/R$string;->formatDateAtTime:I
 
-    new-array v1, v2, [Ljava/lang/Object;
-
-    invoke-static {}, Lorg/telegram/messenger/LocaleController;->getInstance()Lorg/telegram/messenger/LocaleController;
-
-    move-result-object v2
-
-    iget-object v2, v2, Lorg/telegram/messenger/LocaleController;->formatterDayMonth:Lorg/telegram/messenger/time/FastDateFormat;
-
-    new-instance v4, Ljava/util/Date;
-
-    invoke-direct {v4, p0, p1}, Ljava/util/Date;-><init>(J)V
-
-    invoke-virtual {v2, v4}, Lorg/telegram/messenger/time/FastDateFormat;->format(Ljava/util/Date;)Ljava/lang/String;
-
-    move-result-object v2
-
-    aput-object v2, v1, v9
+    new-array v1, v1, [Ljava/lang/Object;
 
     invoke-static {}, Lorg/telegram/messenger/LocaleController;->getInstance()Lorg/telegram/messenger/LocaleController;
 
-    move-result-object v2
+    move-result-object v4
 
-    iget-object v2, v2, Lorg/telegram/messenger/LocaleController;->formatterDay:Lorg/telegram/messenger/time/FastDateFormat;
+    iget-object v4, v4, Lorg/telegram/messenger/LocaleController;->formatterDayMonth:Lorg/telegram/messenger/time/FastDateFormat;
 
-    new-instance v4, Ljava/util/Date;
+    new-instance v5, Ljava/util/Date;
 
-    invoke-direct {v4, p0, p1}, Ljava/util/Date;-><init>(J)V
+    invoke-direct {v5, p0, p1}, Ljava/util/Date;-><init>(J)V
 
-    invoke-virtual {v2, v4}, Lorg/telegram/messenger/time/FastDateFormat;->format(Ljava/util/Date;)Ljava/lang/String;
+    invoke-virtual {v4, v5}, Lorg/telegram/messenger/time/FastDateFormat;->format(Ljava/util/Date;)Ljava/lang/String;
+
+    move-result-object v4
+
+    aput-object v4, v1, v9
+
+    invoke-static {}, Lorg/telegram/messenger/LocaleController;->getInstance()Lorg/telegram/messenger/LocaleController;
+
+    move-result-object v4
+
+    iget-object v4, v4, Lorg/telegram/messenger/LocaleController;->formatterDay:Lorg/telegram/messenger/time/FastDateFormat;
+
+    new-instance v5, Ljava/util/Date;
+
+    invoke-direct {v5, p0, p1}, Ljava/util/Date;-><init>(J)V
+
+    invoke-virtual {v4, v5}, Lorg/telegram/messenger/time/FastDateFormat;->format(Ljava/util/Date;)Ljava/lang/String;
 
     move-result-object p0
 
     aput-object p0, v1, v3
 
-    invoke-static {v6, v0, v1}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {v2, p2, v1}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p0
 
     .line 1928
     sget p1, Lorg/telegram/messenger/R$string;->LastSeenDateFormatted:I
 
-    new-array v0, v3, [Ljava/lang/Object;
+    new-array p2, v3, [Ljava/lang/Object;
 
-    aput-object p0, v0, v9
+    aput-object p0, p2, v9
 
-    invoke-static {p2, p1, v0}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {v0, p1, p2}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p0
 
@@ -4074,54 +4074,54 @@
 
     .line 1930
     :cond_4
-    sget v0, Lorg/telegram/messenger/R$string;->formatDateAtTime:I
+    sget p2, Lorg/telegram/messenger/R$string;->formatDateAtTime:I
 
-    new-array v1, v2, [Ljava/lang/Object;
-
-    invoke-static {}, Lorg/telegram/messenger/LocaleController;->getInstance()Lorg/telegram/messenger/LocaleController;
-
-    move-result-object v2
-
-    iget-object v2, v2, Lorg/telegram/messenger/LocaleController;->formatterYear:Lorg/telegram/messenger/time/FastDateFormat;
-
-    new-instance v4, Ljava/util/Date;
-
-    invoke-direct {v4, p0, p1}, Ljava/util/Date;-><init>(J)V
-
-    invoke-virtual {v2, v4}, Lorg/telegram/messenger/time/FastDateFormat;->format(Ljava/util/Date;)Ljava/lang/String;
-
-    move-result-object v2
-
-    aput-object v2, v1, v9
+    new-array v1, v1, [Ljava/lang/Object;
 
     invoke-static {}, Lorg/telegram/messenger/LocaleController;->getInstance()Lorg/telegram/messenger/LocaleController;
 
-    move-result-object v2
+    move-result-object v4
 
-    iget-object v2, v2, Lorg/telegram/messenger/LocaleController;->formatterDay:Lorg/telegram/messenger/time/FastDateFormat;
+    iget-object v4, v4, Lorg/telegram/messenger/LocaleController;->formatterYear:Lorg/telegram/messenger/time/FastDateFormat;
 
-    new-instance v4, Ljava/util/Date;
+    new-instance v5, Ljava/util/Date;
 
-    invoke-direct {v4, p0, p1}, Ljava/util/Date;-><init>(J)V
+    invoke-direct {v5, p0, p1}, Ljava/util/Date;-><init>(J)V
 
-    invoke-virtual {v2, v4}, Lorg/telegram/messenger/time/FastDateFormat;->format(Ljava/util/Date;)Ljava/lang/String;
+    invoke-virtual {v4, v5}, Lorg/telegram/messenger/time/FastDateFormat;->format(Ljava/util/Date;)Ljava/lang/String;
+
+    move-result-object v4
+
+    aput-object v4, v1, v9
+
+    invoke-static {}, Lorg/telegram/messenger/LocaleController;->getInstance()Lorg/telegram/messenger/LocaleController;
+
+    move-result-object v4
+
+    iget-object v4, v4, Lorg/telegram/messenger/LocaleController;->formatterDay:Lorg/telegram/messenger/time/FastDateFormat;
+
+    new-instance v5, Ljava/util/Date;
+
+    invoke-direct {v5, p0, p1}, Ljava/util/Date;-><init>(J)V
+
+    invoke-virtual {v4, v5}, Lorg/telegram/messenger/time/FastDateFormat;->format(Ljava/util/Date;)Ljava/lang/String;
 
     move-result-object p0
 
     aput-object p0, v1, v3
 
-    invoke-static {v6, v0, v1}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {v2, p2, v1}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p0
 
     .line 1931
     sget p1, Lorg/telegram/messenger/R$string;->LastSeenDateFormatted:I
 
-    new-array v0, v3, [Ljava/lang/Object;
+    new-array p2, v3, [Ljava/lang/Object;
 
-    aput-object p0, v0, v9
+    aput-object p0, p2, v9
 
-    invoke-static {p2, p1, v0}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {v0, p1, p2}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p0
     :try_end_3
@@ -4141,11 +4141,11 @@
 .end method
 
 .method public static formatDateTime(J)Ljava/lang/String;
-    .locals 9
+    .locals 8
 
     const-wide/16 v0, 0x3e8
 
-    mul-long p0, p0, v0
+    mul-long/2addr p0, v0
 
     .line 1823
     :try_start_0
@@ -4267,53 +4267,53 @@
 
     const-wide v6, 0x757b12c00L
 
-    const/4 v2, 0x2
+    cmp-long v0, v0, v6
 
-    const-string v4, "formatDateAtTime"
+    const/4 v1, 0x2
 
-    cmp-long v8, v0, v6
+    const-string v2, "formatDateAtTime"
 
-    if-gez v8, :cond_2
+    if-gez v0, :cond_2
 
     .line 1835
     :try_start_1
     sget v0, Lorg/telegram/messenger/R$string;->formatDateAtTime:I
 
-    new-array v1, v2, [Ljava/lang/Object;
+    new-array v1, v1, [Ljava/lang/Object;
 
     invoke-static {}, Lorg/telegram/messenger/LocaleController;->getInstance()Lorg/telegram/messenger/LocaleController;
 
-    move-result-object v2
+    move-result-object v4
 
-    iget-object v2, v2, Lorg/telegram/messenger/LocaleController;->chatDate:Lorg/telegram/messenger/time/FastDateFormat;
+    iget-object v4, v4, Lorg/telegram/messenger/LocaleController;->chatDate:Lorg/telegram/messenger/time/FastDateFormat;
 
     new-instance v6, Ljava/util/Date;
 
     invoke-direct {v6, p0, p1}, Ljava/util/Date;-><init>(J)V
 
-    invoke-virtual {v2, v6}, Lorg/telegram/messenger/time/FastDateFormat;->format(Ljava/util/Date;)Ljava/lang/String;
+    invoke-virtual {v4, v6}, Lorg/telegram/messenger/time/FastDateFormat;->format(Ljava/util/Date;)Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v4
 
-    aput-object v2, v1, v5
+    aput-object v4, v1, v5
 
     invoke-static {}, Lorg/telegram/messenger/LocaleController;->getInstance()Lorg/telegram/messenger/LocaleController;
 
-    move-result-object v2
+    move-result-object v4
 
-    iget-object v2, v2, Lorg/telegram/messenger/LocaleController;->formatterDay:Lorg/telegram/messenger/time/FastDateFormat;
+    iget-object v4, v4, Lorg/telegram/messenger/LocaleController;->formatterDay:Lorg/telegram/messenger/time/FastDateFormat;
 
     new-instance v5, Ljava/util/Date;
 
     invoke-direct {v5, p0, p1}, Ljava/util/Date;-><init>(J)V
 
-    invoke-virtual {v2, v5}, Lorg/telegram/messenger/time/FastDateFormat;->format(Ljava/util/Date;)Ljava/lang/String;
+    invoke-virtual {v4, v5}, Lorg/telegram/messenger/time/FastDateFormat;->format(Ljava/util/Date;)Ljava/lang/String;
 
     move-result-object p0
 
     aput-object p0, v1, v3
 
-    invoke-static {v4, v0, v1}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {v2, v0, v1}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p0
 
@@ -4323,41 +4323,41 @@
     :cond_2
     sget v0, Lorg/telegram/messenger/R$string;->formatDateAtTime:I
 
-    new-array v1, v2, [Ljava/lang/Object;
+    new-array v1, v1, [Ljava/lang/Object;
 
     invoke-static {}, Lorg/telegram/messenger/LocaleController;->getInstance()Lorg/telegram/messenger/LocaleController;
 
-    move-result-object v2
+    move-result-object v4
 
-    iget-object v2, v2, Lorg/telegram/messenger/LocaleController;->chatFullDate:Lorg/telegram/messenger/time/FastDateFormat;
+    iget-object v4, v4, Lorg/telegram/messenger/LocaleController;->chatFullDate:Lorg/telegram/messenger/time/FastDateFormat;
 
     new-instance v6, Ljava/util/Date;
 
     invoke-direct {v6, p0, p1}, Ljava/util/Date;-><init>(J)V
 
-    invoke-virtual {v2, v6}, Lorg/telegram/messenger/time/FastDateFormat;->format(Ljava/util/Date;)Ljava/lang/String;
+    invoke-virtual {v4, v6}, Lorg/telegram/messenger/time/FastDateFormat;->format(Ljava/util/Date;)Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v4
 
-    aput-object v2, v1, v5
+    aput-object v4, v1, v5
 
     invoke-static {}, Lorg/telegram/messenger/LocaleController;->getInstance()Lorg/telegram/messenger/LocaleController;
 
-    move-result-object v2
+    move-result-object v4
 
-    iget-object v2, v2, Lorg/telegram/messenger/LocaleController;->formatterDay:Lorg/telegram/messenger/time/FastDateFormat;
+    iget-object v4, v4, Lorg/telegram/messenger/LocaleController;->formatterDay:Lorg/telegram/messenger/time/FastDateFormat;
 
     new-instance v5, Ljava/util/Date;
 
     invoke-direct {v5, p0, p1}, Ljava/util/Date;-><init>(J)V
 
-    invoke-virtual {v2, v5}, Lorg/telegram/messenger/time/FastDateFormat;->format(Ljava/util/Date;)Ljava/lang/String;
+    invoke-virtual {v4, v5}, Lorg/telegram/messenger/time/FastDateFormat;->format(Ljava/util/Date;)Ljava/lang/String;
 
     move-result-object p0
 
     aput-object p0, v1, v3
 
-    invoke-static {v4, v0, v1}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {v2, v0, v1}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p0
     :try_end_1
@@ -4420,12 +4420,12 @@
     if-eqz p2, :cond_2
 
     :cond_1
-    const/4 p2, 0x1
+    move p2, v1
 
     goto :goto_0
 
     :cond_2
-    const/4 p2, 0x0
+    move p2, v0
 
     :goto_0
     const-string v2, "%.2f"
@@ -4442,7 +4442,7 @@
 
     const p2, 0x4051f948
 
-    mul-float p0, p0, p2
+    mul-float/2addr p0, p2
 
     cmpg-float p2, p0, v4
 
@@ -4966,7 +4966,7 @@
 
     const-wide/16 v0, 0x3e8
 
-    mul-long p0, p0, v0
+    mul-long/2addr p0, v0
 
     .line 2176
     :try_start_0
@@ -5029,11 +5029,11 @@
 .end method
 
 .method public static formatJoined(J)Ljava/lang/String;
-    .locals 9
+    .locals 7
 
     const-wide/16 v0, 0x3e8
 
-    mul-long p0, p0, v0
+    mul-long/2addr p0, v0
 
     .line 2161
     :try_start_0
@@ -5051,57 +5051,57 @@
 
     const-wide v2, 0x757b12c00L
 
-    const/4 v4, 0x2
+    cmp-long v0, v0, v2
 
-    const-string v5, "formatDateAtTime"
+    const/4 v1, 0x2
 
-    const/4 v6, 0x1
+    const-string v2, "formatDateAtTime"
 
-    const/4 v7, 0x0
+    const/4 v3, 0x1
 
-    cmp-long v8, v0, v2
+    const/4 v4, 0x0
 
-    if-gez v8, :cond_0
+    if-gez v0, :cond_0
 
     .line 2162
     :try_start_1
     sget v0, Lorg/telegram/messenger/R$string;->formatDateAtTime:I
 
-    new-array v1, v4, [Ljava/lang/Object;
+    new-array v1, v1, [Ljava/lang/Object;
 
     invoke-static {}, Lorg/telegram/messenger/LocaleController;->getInstance()Lorg/telegram/messenger/LocaleController;
 
-    move-result-object v2
+    move-result-object v5
 
-    iget-object v2, v2, Lorg/telegram/messenger/LocaleController;->formatterDayMonth:Lorg/telegram/messenger/time/FastDateFormat;
+    iget-object v5, v5, Lorg/telegram/messenger/LocaleController;->formatterDayMonth:Lorg/telegram/messenger/time/FastDateFormat;
 
-    new-instance v3, Ljava/util/Date;
+    new-instance v6, Ljava/util/Date;
 
-    invoke-direct {v3, p0, p1}, Ljava/util/Date;-><init>(J)V
+    invoke-direct {v6, p0, p1}, Ljava/util/Date;-><init>(J)V
 
-    invoke-virtual {v2, v3}, Lorg/telegram/messenger/time/FastDateFormat;->format(Ljava/util/Date;)Ljava/lang/String;
+    invoke-virtual {v5, v6}, Lorg/telegram/messenger/time/FastDateFormat;->format(Ljava/util/Date;)Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v5
 
-    aput-object v2, v1, v7
+    aput-object v5, v1, v4
 
     invoke-static {}, Lorg/telegram/messenger/LocaleController;->getInstance()Lorg/telegram/messenger/LocaleController;
 
-    move-result-object v2
+    move-result-object v5
 
-    iget-object v2, v2, Lorg/telegram/messenger/LocaleController;->formatterDay:Lorg/telegram/messenger/time/FastDateFormat;
+    iget-object v5, v5, Lorg/telegram/messenger/LocaleController;->formatterDay:Lorg/telegram/messenger/time/FastDateFormat;
 
-    new-instance v3, Ljava/util/Date;
+    new-instance v6, Ljava/util/Date;
 
-    invoke-direct {v3, p0, p1}, Ljava/util/Date;-><init>(J)V
+    invoke-direct {v6, p0, p1}, Ljava/util/Date;-><init>(J)V
 
-    invoke-virtual {v2, v3}, Lorg/telegram/messenger/time/FastDateFormat;->format(Ljava/util/Date;)Ljava/lang/String;
+    invoke-virtual {v5, v6}, Lorg/telegram/messenger/time/FastDateFormat;->format(Ljava/util/Date;)Ljava/lang/String;
 
     move-result-object p0
 
-    aput-object p0, v1, v6
+    aput-object p0, v1, v3
 
-    invoke-static {v5, v0, v1}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {v2, v0, v1}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p0
 
@@ -5111,41 +5111,41 @@
     :cond_0
     sget v0, Lorg/telegram/messenger/R$string;->formatDateAtTime:I
 
-    new-array v1, v4, [Ljava/lang/Object;
+    new-array v1, v1, [Ljava/lang/Object;
 
     invoke-static {}, Lorg/telegram/messenger/LocaleController;->getInstance()Lorg/telegram/messenger/LocaleController;
 
-    move-result-object v2
+    move-result-object v5
 
-    iget-object v2, v2, Lorg/telegram/messenger/LocaleController;->formatterYear:Lorg/telegram/messenger/time/FastDateFormat;
+    iget-object v5, v5, Lorg/telegram/messenger/LocaleController;->formatterYear:Lorg/telegram/messenger/time/FastDateFormat;
 
-    new-instance v3, Ljava/util/Date;
+    new-instance v6, Ljava/util/Date;
 
-    invoke-direct {v3, p0, p1}, Ljava/util/Date;-><init>(J)V
+    invoke-direct {v6, p0, p1}, Ljava/util/Date;-><init>(J)V
 
-    invoke-virtual {v2, v3}, Lorg/telegram/messenger/time/FastDateFormat;->format(Ljava/util/Date;)Ljava/lang/String;
+    invoke-virtual {v5, v6}, Lorg/telegram/messenger/time/FastDateFormat;->format(Ljava/util/Date;)Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v5
 
-    aput-object v2, v1, v7
+    aput-object v5, v1, v4
 
     invoke-static {}, Lorg/telegram/messenger/LocaleController;->getInstance()Lorg/telegram/messenger/LocaleController;
 
-    move-result-object v2
+    move-result-object v5
 
-    iget-object v2, v2, Lorg/telegram/messenger/LocaleController;->formatterDay:Lorg/telegram/messenger/time/FastDateFormat;
+    iget-object v5, v5, Lorg/telegram/messenger/LocaleController;->formatterDay:Lorg/telegram/messenger/time/FastDateFormat;
 
-    new-instance v3, Ljava/util/Date;
+    new-instance v6, Ljava/util/Date;
 
-    invoke-direct {v3, p0, p1}, Ljava/util/Date;-><init>(J)V
+    invoke-direct {v6, p0, p1}, Ljava/util/Date;-><init>(J)V
 
-    invoke-virtual {v2, v3}, Lorg/telegram/messenger/time/FastDateFormat;->format(Ljava/util/Date;)Ljava/lang/String;
+    invoke-virtual {v5, v6}, Lorg/telegram/messenger/time/FastDateFormat;->format(Ljava/util/Date;)Ljava/lang/String;
 
     move-result-object p0
 
-    aput-object p0, v1, v6
+    aput-object p0, v1, v3
 
-    invoke-static {v5, v0, v1}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {v2, v0, v1}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p0
 
@@ -5155,9 +5155,9 @@
     .line 2166
     sget v0, Lorg/telegram/messenger/R$string;->ChannelOtherSubscriberJoined:I
 
-    new-array v1, v6, [Ljava/lang/Object;
+    new-array v1, v3, [Ljava/lang/Object;
 
-    aput-object p0, v1, v7
+    aput-object p0, v1, v4
 
     invoke-static {p1, v0, v1}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
 
@@ -5214,7 +5214,7 @@
     goto :goto_0
 
     :cond_0
-    const/4 v4, 0x0
+    move v4, v3
 
     :goto_0
     add-int/2addr v0, v4
@@ -5246,7 +5246,7 @@
     goto :goto_1
 
     :cond_2
-    const/4 v4, 0x0
+    move v4, v3
 
     :goto_1
     add-int/2addr v1, v4
@@ -5283,11 +5283,11 @@
 .end method
 
 .method public static formatLocationUpdateDate(J)Ljava/lang/String;
-    .locals 10
+    .locals 9
 
     const-wide/16 v0, 0x3e8
 
-    mul-long p0, p0, v0
+    mul-long/2addr p0, v0
 
     .line 1848
     :try_start_0
@@ -5485,53 +5485,53 @@
 
     const-wide v2, 0x757b12c00L
 
-    const/4 v4, 0x2
+    cmp-long v0, v0, v2
 
-    const-string v6, "formatDateAtTime"
+    const/4 v1, 0x2
 
-    cmp-long v9, v0, v2
+    const-string v2, "formatDateAtTime"
 
-    if-gez v9, :cond_4
+    if-gez v0, :cond_4
 
     .line 1866
     :try_start_2
     sget v0, Lorg/telegram/messenger/R$string;->formatDateAtTime:I
 
-    new-array v1, v4, [Ljava/lang/Object;
+    new-array v1, v1, [Ljava/lang/Object;
 
     invoke-static {}, Lorg/telegram/messenger/LocaleController;->getInstance()Lorg/telegram/messenger/LocaleController;
 
-    move-result-object v2
+    move-result-object v3
 
-    iget-object v2, v2, Lorg/telegram/messenger/LocaleController;->formatterDayMonth:Lorg/telegram/messenger/time/FastDateFormat;
+    iget-object v3, v3, Lorg/telegram/messenger/LocaleController;->formatterDayMonth:Lorg/telegram/messenger/time/FastDateFormat;
 
-    new-instance v3, Ljava/util/Date;
+    new-instance v4, Ljava/util/Date;
 
-    invoke-direct {v3, p0, p1}, Ljava/util/Date;-><init>(J)V
+    invoke-direct {v4, p0, p1}, Ljava/util/Date;-><init>(J)V
 
-    invoke-virtual {v2, v3}, Lorg/telegram/messenger/time/FastDateFormat;->format(Ljava/util/Date;)Ljava/lang/String;
+    invoke-virtual {v3, v4}, Lorg/telegram/messenger/time/FastDateFormat;->format(Ljava/util/Date;)Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v3
 
-    aput-object v2, v1, v8
+    aput-object v3, v1, v8
 
     invoke-static {}, Lorg/telegram/messenger/LocaleController;->getInstance()Lorg/telegram/messenger/LocaleController;
 
-    move-result-object v2
+    move-result-object v3
 
-    iget-object v2, v2, Lorg/telegram/messenger/LocaleController;->formatterDay:Lorg/telegram/messenger/time/FastDateFormat;
+    iget-object v3, v3, Lorg/telegram/messenger/LocaleController;->formatterDay:Lorg/telegram/messenger/time/FastDateFormat;
 
-    new-instance v3, Ljava/util/Date;
+    new-instance v4, Ljava/util/Date;
 
-    invoke-direct {v3, p0, p1}, Ljava/util/Date;-><init>(J)V
+    invoke-direct {v4, p0, p1}, Ljava/util/Date;-><init>(J)V
 
-    invoke-virtual {v2, v3}, Lorg/telegram/messenger/time/FastDateFormat;->format(Ljava/util/Date;)Ljava/lang/String;
+    invoke-virtual {v3, v4}, Lorg/telegram/messenger/time/FastDateFormat;->format(Ljava/util/Date;)Ljava/lang/String;
 
     move-result-object p0
 
     aput-object p0, v1, v5
 
-    invoke-static {v6, v0, v1}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {v2, v0, v1}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p0
 
@@ -5552,41 +5552,41 @@
     :cond_4
     sget v0, Lorg/telegram/messenger/R$string;->formatDateAtTime:I
 
-    new-array v1, v4, [Ljava/lang/Object;
+    new-array v1, v1, [Ljava/lang/Object;
 
     invoke-static {}, Lorg/telegram/messenger/LocaleController;->getInstance()Lorg/telegram/messenger/LocaleController;
 
-    move-result-object v2
+    move-result-object v3
 
-    iget-object v2, v2, Lorg/telegram/messenger/LocaleController;->formatterYear:Lorg/telegram/messenger/time/FastDateFormat;
+    iget-object v3, v3, Lorg/telegram/messenger/LocaleController;->formatterYear:Lorg/telegram/messenger/time/FastDateFormat;
 
-    new-instance v3, Ljava/util/Date;
+    new-instance v4, Ljava/util/Date;
 
-    invoke-direct {v3, p0, p1}, Ljava/util/Date;-><init>(J)V
+    invoke-direct {v4, p0, p1}, Ljava/util/Date;-><init>(J)V
 
-    invoke-virtual {v2, v3}, Lorg/telegram/messenger/time/FastDateFormat;->format(Ljava/util/Date;)Ljava/lang/String;
+    invoke-virtual {v3, v4}, Lorg/telegram/messenger/time/FastDateFormat;->format(Ljava/util/Date;)Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v3
 
-    aput-object v2, v1, v8
+    aput-object v3, v1, v8
 
     invoke-static {}, Lorg/telegram/messenger/LocaleController;->getInstance()Lorg/telegram/messenger/LocaleController;
 
-    move-result-object v2
+    move-result-object v3
 
-    iget-object v2, v2, Lorg/telegram/messenger/LocaleController;->formatterDay:Lorg/telegram/messenger/time/FastDateFormat;
+    iget-object v3, v3, Lorg/telegram/messenger/LocaleController;->formatterDay:Lorg/telegram/messenger/time/FastDateFormat;
 
-    new-instance v3, Ljava/util/Date;
+    new-instance v4, Ljava/util/Date;
 
-    invoke-direct {v3, p0, p1}, Ljava/util/Date;-><init>(J)V
+    invoke-direct {v4, p0, p1}, Ljava/util/Date;-><init>(J)V
 
-    invoke-virtual {v2, v3}, Lorg/telegram/messenger/time/FastDateFormat;->format(Ljava/util/Date;)Ljava/lang/String;
+    invoke-virtual {v3, v4}, Lorg/telegram/messenger/time/FastDateFormat;->format(Ljava/util/Date;)Ljava/lang/String;
 
     move-result-object p0
 
     aput-object p0, v1, v5
 
-    invoke-static {v6, v0, v1}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {v2, v0, v1}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p0
 
@@ -6121,11 +6121,11 @@
 .end method
 
 .method public static formatSeenDate(J)Ljava/lang/String;
-    .locals 9
+    .locals 8
 
     const-wide/16 v0, 0x3e8
 
-    mul-long p0, p0, v0
+    mul-long/2addr p0, v0
 
     .line 1750
     :try_start_0
@@ -6247,53 +6247,53 @@
 
     const-wide v6, 0x757b12c00L
 
-    const/4 v2, 0x2
+    cmp-long v0, v0, v6
 
-    const-string v4, "formatDateAtTime"
+    const/4 v1, 0x2
 
-    cmp-long v8, v0, v6
+    const-string v2, "formatDateAtTime"
 
-    if-gez v8, :cond_2
+    if-gez v0, :cond_2
 
     .line 1762
     :try_start_1
     sget v0, Lorg/telegram/messenger/R$string;->formatDateAtTime:I
 
-    new-array v1, v2, [Ljava/lang/Object;
+    new-array v1, v1, [Ljava/lang/Object;
 
     invoke-static {}, Lorg/telegram/messenger/LocaleController;->getInstance()Lorg/telegram/messenger/LocaleController;
 
-    move-result-object v2
+    move-result-object v4
 
-    iget-object v2, v2, Lorg/telegram/messenger/LocaleController;->formatterDayMonth:Lorg/telegram/messenger/time/FastDateFormat;
+    iget-object v4, v4, Lorg/telegram/messenger/LocaleController;->formatterDayMonth:Lorg/telegram/messenger/time/FastDateFormat;
 
     new-instance v6, Ljava/util/Date;
 
     invoke-direct {v6, p0, p1}, Ljava/util/Date;-><init>(J)V
 
-    invoke-virtual {v2, v6}, Lorg/telegram/messenger/time/FastDateFormat;->format(Ljava/util/Date;)Ljava/lang/String;
+    invoke-virtual {v4, v6}, Lorg/telegram/messenger/time/FastDateFormat;->format(Ljava/util/Date;)Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v4
 
-    aput-object v2, v1, v5
+    aput-object v4, v1, v5
 
     invoke-static {}, Lorg/telegram/messenger/LocaleController;->getInstance()Lorg/telegram/messenger/LocaleController;
 
-    move-result-object v2
+    move-result-object v4
 
-    iget-object v2, v2, Lorg/telegram/messenger/LocaleController;->formatterDay:Lorg/telegram/messenger/time/FastDateFormat;
+    iget-object v4, v4, Lorg/telegram/messenger/LocaleController;->formatterDay:Lorg/telegram/messenger/time/FastDateFormat;
 
     new-instance v5, Ljava/util/Date;
 
     invoke-direct {v5, p0, p1}, Ljava/util/Date;-><init>(J)V
 
-    invoke-virtual {v2, v5}, Lorg/telegram/messenger/time/FastDateFormat;->format(Ljava/util/Date;)Ljava/lang/String;
+    invoke-virtual {v4, v5}, Lorg/telegram/messenger/time/FastDateFormat;->format(Ljava/util/Date;)Ljava/lang/String;
 
     move-result-object p0
 
     aput-object p0, v1, v3
 
-    invoke-static {v4, v0, v1}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {v2, v0, v1}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p0
 
@@ -6303,41 +6303,41 @@
     :cond_2
     sget v0, Lorg/telegram/messenger/R$string;->formatDateAtTime:I
 
-    new-array v1, v2, [Ljava/lang/Object;
+    new-array v1, v1, [Ljava/lang/Object;
 
     invoke-static {}, Lorg/telegram/messenger/LocaleController;->getInstance()Lorg/telegram/messenger/LocaleController;
 
-    move-result-object v2
+    move-result-object v4
 
-    iget-object v2, v2, Lorg/telegram/messenger/LocaleController;->formatterYear:Lorg/telegram/messenger/time/FastDateFormat;
+    iget-object v4, v4, Lorg/telegram/messenger/LocaleController;->formatterYear:Lorg/telegram/messenger/time/FastDateFormat;
 
     new-instance v6, Ljava/util/Date;
 
     invoke-direct {v6, p0, p1}, Ljava/util/Date;-><init>(J)V
 
-    invoke-virtual {v2, v6}, Lorg/telegram/messenger/time/FastDateFormat;->format(Ljava/util/Date;)Ljava/lang/String;
+    invoke-virtual {v4, v6}, Lorg/telegram/messenger/time/FastDateFormat;->format(Ljava/util/Date;)Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v4
 
-    aput-object v2, v1, v5
+    aput-object v4, v1, v5
 
     invoke-static {}, Lorg/telegram/messenger/LocaleController;->getInstance()Lorg/telegram/messenger/LocaleController;
 
-    move-result-object v2
+    move-result-object v4
 
-    iget-object v2, v2, Lorg/telegram/messenger/LocaleController;->formatterDay:Lorg/telegram/messenger/time/FastDateFormat;
+    iget-object v4, v4, Lorg/telegram/messenger/LocaleController;->formatterDay:Lorg/telegram/messenger/time/FastDateFormat;
 
     new-instance v5, Ljava/util/Date;
 
     invoke-direct {v5, p0, p1}, Ljava/util/Date;-><init>(J)V
 
-    invoke-virtual {v2, v5}, Lorg/telegram/messenger/time/FastDateFormat;->format(Ljava/util/Date;)Ljava/lang/String;
+    invoke-virtual {v4, v5}, Lorg/telegram/messenger/time/FastDateFormat;->format(Ljava/util/Date;)Ljava/lang/String;
 
     move-result-object p0
 
     aput-object p0, v1, v3
 
-    invoke-static {v4, v0, v1}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {v2, v0, v1}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p0
     :try_end_1
@@ -6366,7 +6366,7 @@
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     .line 2127
     :goto_0
@@ -6401,7 +6401,7 @@
 
     add-double/2addr v3, v5
 
-    const/4 v5, 0x0
+    move v5, v1
 
     .line 2134
     :goto_1
@@ -6413,7 +6413,7 @@
 
     const-wide v6, 0x408f400000000000L    # 1000.0
 
-    mul-double v3, v3, v6
+    mul-double/2addr v3, v6
 
     add-int/lit8 v5, v5, 0x1
 
@@ -6603,7 +6603,7 @@
 
     const-wide/16 v5, 0x3e8
 
-    mul-long p0, p0, v5
+    mul-long/2addr p0, v5
 
     .line 2013
     invoke-virtual {v0, p0, p1}, Ljava/util/Calendar;->setTimeInMillis(J)V
@@ -6631,12 +6631,12 @@
     goto :goto_0
 
     :cond_0
-    const/4 p0, 0x1
+    move p0, v1
 
     goto :goto_0
 
     :cond_1
-    const/4 p0, 0x2
+    move p0, v3
 
     :goto_0
     if-ne p2, v1, :cond_2
@@ -6695,7 +6695,7 @@
 
     const-wide/16 v0, 0x3e8
 
-    mul-long p0, p0, v0
+    mul-long/2addr p0, v0
 
     .line 1800
     :try_start_0
@@ -6779,9 +6779,9 @@
 
     const-wide v2, 0x757b12c00L
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-gez v4, :cond_1
+    if-gez v0, :cond_1
 
     .line 1810
     invoke-static {}, Lorg/telegram/messenger/LocaleController;->getInstance()Lorg/telegram/messenger/LocaleController;
@@ -6978,8 +6978,6 @@
     goto :goto_1
 
     :catch_0
-    nop
-
     if-eqz p3, :cond_3
 
     .line 1295
@@ -7562,7 +7560,7 @@
 
     const-wide/16 v0, 0x3e8
 
-    mul-long p0, p0, v0
+    mul-long/2addr p0, v0
 
     .line 2047
     :try_start_0
@@ -8113,7 +8111,7 @@
     goto/16 :goto_0
 
     :cond_12
-    const/16 v3, 0xa
+    move v3, v1
 
     goto/16 :goto_0
 
@@ -8257,7 +8255,7 @@
     goto :goto_0
 
     :cond_1b
-    const/4 v3, 0x1
+    move v3, v2
 
     goto :goto_0
 
@@ -8297,8 +8295,6 @@
     const/16 p0, 0x3e8
 
     return p0
-
-    nop
 
     :sswitch_data_0
     .sparse-switch
@@ -10543,7 +10539,7 @@
 
     move-result v1
 
-    const/4 v2, 0x0
+    move v2, v0
 
     :goto_0
     const v3, 0x7fffffff
@@ -10573,7 +10569,7 @@
 
     move-result v1
 
-    const/4 v2, 0x0
+    move v2, v0
 
     :goto_1
     if-ge v2, v1, :cond_5
@@ -10789,7 +10785,7 @@
     goto/16 :goto_1
 
     :cond_5
-    const/4 p1, 0x0
+    move p1, v0
 
     .line 2438
     :goto_4
@@ -11269,7 +11265,7 @@
     .line 889
     array-length v4, v1
 
-    const/4 v6, 0x0
+    move v6, v2
 
     :goto_0
     if-ge v6, v4, :cond_1
@@ -11320,7 +11316,7 @@
     .line 899
     array-length v4, v1
 
-    const/4 v8, 0x0
+    move v8, v2
 
     :goto_1
     if-ge v8, v4, :cond_3
@@ -11536,7 +11532,7 @@
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const/4 v3, 0x0
+    move v3, v2
 
     .line 816
     :goto_0
@@ -11598,7 +11594,7 @@
     .line 827
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->setLength(I)V
 
-    const/4 v3, 0x0
+    move v3, v2
 
     .line 828
     :goto_1
@@ -11824,7 +11820,7 @@
 
     const-wide/16 v0, 0x3e8
 
-    mul-long p0, p0, v0
+    mul-long/2addr p0, v0
 
     .line 2100
     :try_start_0
@@ -11899,9 +11895,9 @@
 
     const-wide/32 v4, 0x1b77400
 
-    cmp-long v6, v2, v4
+    cmp-long v2, v2, v4
 
-    if-gez v6, :cond_1
+    if-gez v2, :cond_1
 
     goto :goto_0
 
@@ -12219,9 +12215,9 @@
     goto :goto_1
 
     :cond_5
-    const/4 v1, 0x0
+    move v1, v10
 
-    const/4 v2, 0x0
+    move v2, v1
 
     goto :goto_3
 
@@ -12263,7 +12259,7 @@
 
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->runOnUIThread(Ljava/lang/Runnable;)V
 
-    const/4 v1, 0x0
+    move v1, v10
 
     goto :goto_2
 
@@ -12286,7 +12282,7 @@
     move-result v1
 
     :goto_2
-    const/4 v2, 0x1
+    move v2, v15
 
     .line 1042
     :goto_3
@@ -13023,7 +13019,7 @@
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     :cond_0
     :goto_0
@@ -13967,7 +13963,7 @@
     goto :goto_0
 
     :cond_1c
-    const/4 v3, 0x1
+    move v3, v1
 
     goto :goto_0
 
@@ -13983,7 +13979,7 @@
     goto :goto_0
 
     :cond_1d
-    const/4 v3, 0x0
+    move v3, v2
 
     :goto_0
     const-string v0, " %.2f"
@@ -14027,9 +14023,9 @@
 
     const-wide/16 v7, 0x0
 
-    cmp-long v3, p1, v7
+    cmp-long p1, p1, v7
 
-    if-nez v3, :cond_1e
+    if-nez p1, :cond_1e
 
     move-object v0, v4
 
@@ -14213,20 +14209,20 @@
 
     const-wide/16 v2, 0x0
 
-    const/4 v4, 0x1
+    cmp-long v4, p1, v2
 
-    const/4 v5, 0x0
+    const/4 v5, 0x1
 
-    cmp-long v6, p1, v2
+    const/4 v6, 0x0
 
-    if-gez v6, :cond_0
+    if-gez v4, :cond_0
 
-    const/4 v6, 0x1
+    move v4, v5
 
     goto :goto_0
 
     :cond_0
-    const/4 v6, 0x0
+    move v4, v6
 
     .line 1385
     :goto_0
@@ -14712,7 +14708,7 @@
     goto :goto_1
 
     :cond_1d
-    const/4 v10, 0x1
+    move v10, v5
 
     goto :goto_1
 
@@ -14728,7 +14724,7 @@
     goto :goto_1
 
     :cond_1e
-    const/4 v10, 0x0
+    move v10, v6
 
     :goto_1
     const-string v11, " %.2f"
@@ -14772,9 +14768,9 @@
     .line 1395
     rem-long v7, v7, v16
 
-    cmp-long v10, v7, v2
+    cmp-long v2, v7, v2
 
-    if-nez v10, :cond_1f
+    if-nez v2, :cond_1f
 
     move-object v11, v13
 
@@ -14826,27 +14822,27 @@
     if-eqz v9, :cond_27
 
     .line 1451
-    iget-object v4, v0, Lorg/telegram/messenger/LocaleController;->currentLocale:Ljava/util/Locale;
+    iget-object v5, v0, Lorg/telegram/messenger/LocaleController;->currentLocale:Ljava/util/Locale;
 
-    if-eqz v4, :cond_21
+    if-eqz v5, :cond_21
 
     goto :goto_4
 
     :cond_21
-    iget-object v4, v0, Lorg/telegram/messenger/LocaleController;->systemDefaultLocale:Ljava/util/Locale;
+    iget-object v5, v0, Lorg/telegram/messenger/LocaleController;->systemDefaultLocale:Ljava/util/Locale;
 
     :goto_4
-    invoke-static {v4}, Ljava/text/NumberFormat;->getCurrencyInstance(Ljava/util/Locale;)Ljava/text/NumberFormat;
+    invoke-static {v5}, Ljava/text/NumberFormat;->getCurrencyInstance(Ljava/util/Locale;)Ljava/text/NumberFormat;
 
-    move-result-object v4
+    move-result-object v5
 
     .line 1452
-    invoke-virtual {v4, v9}, Ljava/text/NumberFormat;->setCurrency(Ljava/util/Currency;)V
+    invoke-virtual {v5, v9}, Ljava/text/NumberFormat;->setCurrency(Ljava/util/Currency;)V
 
     if-eqz p5, :cond_22
 
     .line 1454
-    invoke-virtual {v4, v5}, Ljava/text/NumberFormat;->setGroupingUsed(Z)V
+    invoke-virtual {v5, v6}, Ljava/text/NumberFormat;->setGroupingUsed(Z)V
 
     :cond_22
     if-eqz p4, :cond_23
@@ -14862,7 +14858,7 @@
 
     .line 1457
     :cond_23
-    invoke-virtual {v4, v5}, Ljava/text/NumberFormat;->setMaximumFractionDigits(I)V
+    invoke-virtual {v5, v6}, Ljava/text/NumberFormat;->setMaximumFractionDigits(I)V
 
     .line 1459
     :cond_24
@@ -14870,7 +14866,7 @@
 
     invoke-direct {v9}, Ljava/lang/StringBuilder;-><init>()V
 
-    if-eqz v6, :cond_25
+    if-eqz v4, :cond_25
 
     goto :goto_5
 
@@ -14880,7 +14876,7 @@
     :goto_5
     invoke-virtual {v9, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v4, v2, v3}, Ljava/text/NumberFormat;->format(D)Ljava/lang/String;
+    invoke-virtual {v5, v2, v3}, Ljava/text/NumberFormat;->format(D)Ljava/lang/String;
 
     move-result-object v2
 
@@ -14924,7 +14920,7 @@
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-virtual {v2, v5, v3}, Ljava/lang/String;->substring(II)Ljava/lang/String;
+    invoke-virtual {v2, v6, v3}, Ljava/lang/String;->substring(II)Ljava/lang/String;
 
     move-result-object v4
 
@@ -14953,7 +14949,7 @@
 
     invoke-direct {v9}, Ljava/lang/StringBuilder;-><init>()V
 
-    if-eqz v6, :cond_28
+    if-eqz v4, :cond_28
 
     goto :goto_6
 
@@ -14963,7 +14959,7 @@
     :goto_6
     invoke-virtual {v9, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    sget-object v6, Ljava/util/Locale;->US:Ljava/util/Locale;
+    sget-object v4, Ljava/util/Locale;->US:Ljava/util/Locale;
 
     new-instance v7, Ljava/lang/StringBuilder;
 
@@ -14977,15 +14973,15 @@
 
     move-result-object v1
 
-    new-array v4, v4, [Ljava/lang/Object;
+    new-array v5, v5, [Ljava/lang/Object;
 
     invoke-static {v2, v3}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
 
     move-result-object v2
 
-    aput-object v2, v4, v5
+    aput-object v2, v5, v6
 
-    invoke-static {v6, v1, v4}, Ljava/lang/String;->format(Ljava/util/Locale;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {v4, v1, v5}, Ljava/lang/String;->format(Ljava/util/Locale;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v1
 
@@ -19937,13 +19933,13 @@
     goto :goto_0
 
     :cond_3
-    const/4 v2, 0x0
+    move v2, v3
 
     goto :goto_1
 
     :cond_4
     :goto_0
-    const/4 v2, 0x1
+    move v2, v5
 
     :goto_1
     sput-boolean v2, Lorg/telegram/messenger/LocaleController;->isRTL:Z
@@ -19957,12 +19953,12 @@
 
     if-eqz v7, :cond_5
 
-    const/4 v7, 0x2
+    move v7, v6
 
     goto :goto_2
 
     :cond_5
-    const/4 v7, 0x1
+    move v7, v5
 
     :goto_2
     sput v7, Lorg/telegram/messenger/LocaleController;->nameDisplayOrder:I
@@ -20754,7 +20750,7 @@
 
     if-eqz v2, :cond_1
 
-    const/4 v6, 0x0
+    move v6, p3
 
     goto :goto_0
 
@@ -20768,12 +20764,12 @@
 
     if-eqz v2, :cond_2
 
-    const/4 v6, 0x1
+    move v6, v0
 
     goto :goto_0
 
     :cond_2
-    const/4 v6, -0x1
+    move v6, v3
 
     :goto_0
     const-string v2, ")"
@@ -20896,7 +20892,7 @@
     move-result-object v2
 
     :goto_2
-    const/4 v3, 0x0
+    move v3, p3
 
     .line 2287
     :goto_3
@@ -21362,13 +21358,13 @@
     goto :goto_e
 
     :cond_14
-    const/4 p2, 0x0
+    move p2, p3
 
     goto :goto_f
 
     :cond_15
     :goto_e
-    const/4 p2, 0x1
+    move p2, v0
 
     :goto_f
     invoke-virtual {v1, p2}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
@@ -21388,7 +21384,7 @@
     goto :goto_10
 
     :cond_16
-    const/4 v0, 0x0
+    move v0, p3
 
     :cond_17
     :goto_10

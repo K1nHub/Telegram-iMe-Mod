@@ -11,7 +11,7 @@ import kotlin.collections.CollectionsKt__CollectionsKt;
 import kotlin.collections.CollectionsKt__IterablesKt;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.messenger.C3286R;
+import org.telegram.messenger.C3301R;
 import org.telegram.messenger.FileLoader;
 import org.telegram.messenger.LocaleController;
 /* JADX WARN: Enum visitor error
@@ -145,31 +145,31 @@ public final class TelegramCacheType {
     public final String title() {
         switch (WhenMappings.$EnumSwitchMapping$0[ordinal()]) {
             case 1:
-                String string = LocaleController.getString("LocalPhotoCache", C3286R.string.LocalPhotoCache);
+                String string = LocaleController.getString("LocalPhotoCache", C3301R.string.LocalPhotoCache);
                 Intrinsics.checkNotNullExpressionValue(string, "getString(\"LocalPhotoCac…R.string.LocalPhotoCache)");
                 return string;
             case 2:
-                String string2 = LocaleController.getString("LocalVideoCache", C3286R.string.LocalVideoCache);
+                String string2 = LocaleController.getString("LocalVideoCache", C3301R.string.LocalVideoCache);
                 Intrinsics.checkNotNullExpressionValue(string2, "getString(\"LocalVideoCac…R.string.LocalVideoCache)");
                 return string2;
             case 3:
-                String string3 = LocaleController.getString("LocalDocumentCache", C3286R.string.LocalDocumentCache);
+                String string3 = LocaleController.getString("LocalDocumentCache", C3301R.string.LocalDocumentCache);
                 Intrinsics.checkNotNullExpressionValue(string3, "getString(\"LocalDocument…tring.LocalDocumentCache)");
                 return string3;
             case 4:
-                String string4 = LocaleController.getString("LocalMusicCache", C3286R.string.LocalMusicCache);
+                String string4 = LocaleController.getString("LocalMusicCache", C3301R.string.LocalMusicCache);
                 Intrinsics.checkNotNullExpressionValue(string4, "getString(\"LocalMusicCac…R.string.LocalMusicCache)");
                 return string4;
             case 5:
-                String string5 = LocaleController.getString("LocalAudioCache", C3286R.string.LocalAudioCache);
+                String string5 = LocaleController.getString("LocalAudioCache", C3301R.string.LocalAudioCache);
                 Intrinsics.checkNotNullExpressionValue(string5, "getString(\"LocalAudioCac…R.string.LocalAudioCache)");
                 return string5;
             case 6:
-                String string6 = LocaleController.getString("AnimatedStickers", C3286R.string.AnimatedStickers);
+                String string6 = LocaleController.getString("AnimatedStickers", C3301R.string.AnimatedStickers);
                 Intrinsics.checkNotNullExpressionValue(string6, "getString(\"AnimatedStick….string.AnimatedStickers)");
                 return string6;
             case 7:
-                String string7 = LocaleController.getString("LocalCache", C3286R.string.LocalCache);
+                String string7 = LocaleController.getString("LocalCache", C3301R.string.LocalCache);
                 Intrinsics.checkNotNullExpressionValue(string7, "getString(\"LocalCache\", R.string.LocalCache)");
                 return string7;
             default:

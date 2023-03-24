@@ -8,7 +8,7 @@ import android.widget.FrameLayout;
 import android.widget.TextView;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3286R;
+import org.telegram.messenger.C3301R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.UserObject;
 import org.telegram.p048ui.ActionBar.SimpleTextView;
@@ -69,10 +69,10 @@ public class MemberRequestCell extends FrameLayout {
         textView.setMaxLines(1);
         textView.setPadding(m50dp, 0, m50dp, 0);
         if (z) {
-            i = C3286R.string.AddToChannel;
+            i = C3301R.string.AddToChannel;
             str = "AddToChannel";
         } else {
-            i = C3286R.string.AddToGroup;
+            i = C3301R.string.AddToGroup;
             str = "AddToGroup";
         }
         textView.setText(LocaleController.getString(str, i));
@@ -93,7 +93,7 @@ public class MemberRequestCell extends FrameLayout {
         textView2.setGravity((LocaleController.isRTL ? 5 : 3) | 16);
         textView2.setMaxLines(1);
         textView2.setPadding(m50dp, 0, m50dp, 0);
-        textView2.setText(LocaleController.getString("Dismiss", C3286R.string.Dismiss));
+        textView2.setText(LocaleController.getString("Dismiss", C3301R.string.Dismiss));
         textView2.setTextColor(Theme.getColor("windowBackgroundWhiteBlueText"));
         textView2.setTextSize(14.0f);
         textView2.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
@@ -139,12 +139,12 @@ public class MemberRequestCell extends FrameLayout {
         String formatDateAudio = LocaleController.formatDateAudio(tLRPC$TL_chatInviteImporter.date, false);
         long j = tLRPC$TL_chatInviteImporter.approved_by;
         if (j == 0) {
-            this.statusTextView.setText(LocaleController.formatString("RequestedToJoinAt", C3286R.string.RequestedToJoinAt, formatDateAudio));
+            this.statusTextView.setText(LocaleController.formatString("RequestedToJoinAt", C3301R.string.RequestedToJoinAt, formatDateAudio));
             return;
         }
         TLRPC$User tLRPC$User2 = longSparseArray.get(j);
         if (tLRPC$User2 != null) {
-            this.statusTextView.setText(LocaleController.formatString("AddedBy", C3286R.string.AddedBy, UserObject.getFirstName(tLRPC$User2), formatDateAudio));
+            this.statusTextView.setText(LocaleController.formatString("AddedBy", C3301R.string.AddedBy, UserObject.getFirstName(tLRPC$User2), formatDateAudio));
         } else {
             this.statusTextView.setText("");
         }

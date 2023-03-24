@@ -91,7 +91,7 @@
 
     int-to-float v3, v3
 
-    mul-float v3, v3, v1
+    mul-float/2addr v3, v1
 
     div-float/2addr v3, v2
 
@@ -125,7 +125,7 @@
 
     const v4, 0x3e99999a    # 0.3f
 
-    mul-float v0, v0, v4
+    mul-float/2addr v0, v4
 
     div-float/2addr v0, v2
 
@@ -144,7 +144,7 @@
 
     int-to-float v1, v1
 
-    mul-float v1, v1, v4
+    mul-float/2addr v1, v4
 
     div-float/2addr v1, v2
 
@@ -168,7 +168,7 @@
 
     div-float/2addr v4, v2
 
-    mul-float v4, v4, v1
+    mul-float/2addr v4, v1
 
     add-float/2addr v4, v0
 
@@ -276,17 +276,17 @@
 
     add-float/2addr v1, p5
 
-    mul-float v1, v1, p4
+    mul-float/2addr v1, p4
 
     sget p5, Lorg/telegram/ui/Components/BlobDrawable;->GRADIENT_SPEED_MAX:F
 
     const/high16 v2, 0x40000000    # 2.0f
 
-    mul-float p5, p5, v2
+    mul-float/2addr p5, v2
 
-    mul-float p4, p4, p5
+    mul-float/2addr p4, p5
 
-    mul-float p4, p4, p6
+    mul-float/2addr p4, p6
 
     add-float/2addr v1, p4
 
@@ -327,11 +327,11 @@
 
     sub-float/2addr p6, p5
 
-    mul-float p6, p6, p4
+    mul-float/2addr p6, p4
 
     add-float/2addr p5, p6
 
-    mul-float p5, p5, p3
+    mul-float/2addr p5, p3
 
     add-float/2addr p2, p5
 
@@ -348,11 +348,11 @@
 
     sub-float/2addr v0, p6
 
-    mul-float v0, v0, p4
+    mul-float/2addr v0, p4
 
     add-float/2addr p6, v0
 
-    mul-float p3, p3, p6
+    mul-float/2addr p3, p6
 
     add-float/2addr p1, p3
 
@@ -400,7 +400,7 @@
 
     div-float/2addr p4, p6
 
-    mul-float p4, p4, p3
+    mul-float/2addr p4, p3
 
     .line 967
     iget-object p3, p0, Lorg/telegram/ui/GroupCallActivity$WeavingState;->matrix:Landroid/graphics/Matrix;

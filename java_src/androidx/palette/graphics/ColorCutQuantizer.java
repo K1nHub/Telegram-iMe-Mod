@@ -147,44 +147,44 @@ public final class ColorCutQuantizer {
             int[] iArr = colorCutQuantizer.mColors;
             int[] iArr2 = colorCutQuantizer.mHistogram;
             int i = Integer.MAX_VALUE;
-            int i2 = Integer.MAX_VALUE;
-            int i3 = Integer.MAX_VALUE;
+            int i2 = Integer.MIN_VALUE;
+            int i3 = Integer.MIN_VALUE;
             int i4 = Integer.MIN_VALUE;
-            int i5 = Integer.MIN_VALUE;
-            int i6 = Integer.MIN_VALUE;
-            int i7 = 0;
+            int i5 = 0;
+            int i6 = Integer.MAX_VALUE;
+            int i7 = Integer.MAX_VALUE;
             for (int i8 = this.mLowerIndex; i8 <= this.mUpperIndex; i8++) {
                 int i9 = iArr[i8];
-                i7 += iArr2[i9];
+                i5 += iArr2[i9];
                 int quantizedRed = ColorCutQuantizer.quantizedRed(i9);
                 int quantizedGreen = ColorCutQuantizer.quantizedGreen(i9);
                 int quantizedBlue = ColorCutQuantizer.quantizedBlue(i9);
-                if (quantizedRed > i4) {
-                    i4 = quantizedRed;
+                if (quantizedRed > i2) {
+                    i2 = quantizedRed;
                 }
                 if (quantizedRed < i) {
                     i = quantizedRed;
                 }
-                if (quantizedGreen > i5) {
-                    i5 = quantizedGreen;
+                if (quantizedGreen > i3) {
+                    i3 = quantizedGreen;
                 }
-                if (quantizedGreen < i2) {
-                    i2 = quantizedGreen;
+                if (quantizedGreen < i6) {
+                    i6 = quantizedGreen;
                 }
-                if (quantizedBlue > i6) {
-                    i6 = quantizedBlue;
+                if (quantizedBlue > i4) {
+                    i4 = quantizedBlue;
                 }
-                if (quantizedBlue < i3) {
-                    i3 = quantizedBlue;
+                if (quantizedBlue < i7) {
+                    i7 = quantizedBlue;
                 }
             }
             this.mMinRed = i;
-            this.mMaxRed = i4;
-            this.mMinGreen = i2;
-            this.mMaxGreen = i5;
-            this.mMinBlue = i3;
-            this.mMaxBlue = i6;
-            this.mPopulation = i7;
+            this.mMaxRed = i2;
+            this.mMinGreen = i6;
+            this.mMaxGreen = i3;
+            this.mMinBlue = i7;
+            this.mMaxBlue = i4;
+            this.mPopulation = i5;
         }
 
         final Vbox splitBox() {

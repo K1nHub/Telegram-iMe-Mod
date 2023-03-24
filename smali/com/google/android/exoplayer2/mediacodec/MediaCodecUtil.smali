@@ -919,7 +919,7 @@
     goto/16 :goto_0
 
     :cond_5
-    const/16 v1, 0x8
+    move v1, v3
 
     goto/16 :goto_0
 
@@ -983,7 +983,7 @@
     goto :goto_0
 
     :cond_9
-    const/4 v1, 0x4
+    move v1, v4
 
     goto :goto_0
 
@@ -1015,7 +1015,7 @@
     goto :goto_0
 
     :cond_b
-    const/4 v1, 0x2
+    move v1, v5
 
     goto :goto_0
 
@@ -1031,7 +1031,7 @@
     goto :goto_0
 
     :cond_c
-    const/4 v1, 0x1
+    move v1, v6
 
     goto :goto_0
 
@@ -1176,8 +1176,6 @@
 
     return-object p0
 
-    nop
-
     :sswitch_data_0
     .sparse-switch
         0x601 -> :sswitch_c
@@ -1270,7 +1268,7 @@
     goto/16 :goto_0
 
     :cond_2
-    const/16 v1, 0x8
+    move v1, v3
 
     goto/16 :goto_0
 
@@ -1334,7 +1332,7 @@
     goto :goto_0
 
     :cond_6
-    const/4 v1, 0x4
+    move v1, v4
 
     goto :goto_0
 
@@ -1366,7 +1364,7 @@
     goto :goto_0
 
     :cond_8
-    const/4 v1, 0x2
+    move v1, v5
 
     goto :goto_0
 
@@ -1382,7 +1380,7 @@
     goto :goto_0
 
     :cond_9
-    const/4 v1, 0x1
+    move v1, v6
 
     goto :goto_0
 
@@ -1496,6 +1494,8 @@
     move-result-object p0
 
     return-object p0
+
+    nop
 
     :pswitch_data_0
     .packed-switch 0x600
@@ -1895,7 +1895,7 @@
     goto :goto_0
 
     :cond_5
-    const/4 v0, 0x2
+    move v0, v5
 
     .line 872
     :goto_0
@@ -2409,7 +2409,7 @@
     sparse-switch v5, :sswitch_data_0
 
     :goto_0
-    const/4 v2, -0x1
+    move v2, v4
 
     goto :goto_1
 
@@ -2862,7 +2862,7 @@
 
     const/4 v0, 0x0
 
-    const/4 v12, 0x0
+    move v12, v0
 
     :goto_0
     if-ge v12, v14, :cond_d
@@ -3995,7 +3995,7 @@
     goto/16 :goto_0
 
     :cond_a
-    const/16 v1, 0x10
+    move v1, v3
 
     goto/16 :goto_0
 
@@ -4123,7 +4123,7 @@
     goto/16 :goto_0
 
     :cond_12
-    const/16 v1, 0x8
+    move v1, v4
 
     goto/16 :goto_0
 
@@ -4187,7 +4187,7 @@
     goto :goto_0
 
     :cond_16
-    const/4 v1, 0x4
+    move v1, v5
 
     goto :goto_0
 
@@ -4219,7 +4219,7 @@
     goto :goto_0
 
     :cond_18
-    const/4 v1, 0x2
+    move v1, v6
 
     goto :goto_0
 
@@ -4235,7 +4235,7 @@
     goto :goto_0
 
     :cond_19
-    const/4 v1, 0x1
+    move v1, v7
 
     goto :goto_0
 
@@ -5343,7 +5343,7 @@
     goto :goto_0
 
     :cond_4
-    const/4 v0, 0x0
+    move v0, v1
 
     :cond_5
     :goto_0
@@ -5570,7 +5570,7 @@
 
     array-length v2, v0
 
-    const/4 v3, 0x0
+    move v3, v1
 
     :goto_0
     if-ge v1, v2, :cond_0

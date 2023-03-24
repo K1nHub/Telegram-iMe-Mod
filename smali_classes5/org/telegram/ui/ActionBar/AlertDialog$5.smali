@@ -40,7 +40,7 @@
 
     const/4 p3, 0x0
 
-    const/4 p5, 0x0
+    move p5, p2
 
     :goto_0
     if-ge p5, p1, :cond_a
@@ -397,9 +397,9 @@
     goto :goto_2
 
     :cond_8
-    const/4 v3, 0x0
+    move v3, p2
 
-    const/4 v4, 0x0
+    move v4, v3
 
     :goto_2
     add-int/2addr v1, v3
@@ -449,7 +449,7 @@
 
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    move v1, v0
 
     :goto_0
     if-ge v0, p2, :cond_1

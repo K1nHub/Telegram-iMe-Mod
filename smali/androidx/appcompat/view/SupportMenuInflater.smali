@@ -208,9 +208,9 @@
 
     move-object v8, v4
 
-    const/4 v6, 0x0
+    move v6, v5
 
-    const/4 v7, 0x0
+    move v7, v6
 
     :goto_1
     if-nez v6, :cond_f
@@ -246,7 +246,7 @@
 
     move-object v8, v4
 
-    const/4 v7, 0x0
+    move v7, v5
 
     goto :goto_2
 
@@ -309,7 +309,7 @@
 
     if-eqz p3, :cond_d
 
-    const/4 v6, 0x1
+    move v6, v3
 
     goto :goto_2
 
@@ -370,7 +370,7 @@
     :cond_c
     move-object v8, p3
 
-    const/4 v7, 0x1
+    move v7, v3
 
     .line 219
     :cond_d

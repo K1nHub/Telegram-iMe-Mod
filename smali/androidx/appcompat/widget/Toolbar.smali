@@ -649,12 +649,12 @@
 
     if-ne v0, v2, :cond_0
 
-    const/4 v0, 0x1
+    move v0, v2
 
     goto :goto_0
 
     :cond_0
-    const/4 v0, 0x0
+    move v0, v1
 
     .line 2189
     :goto_0
@@ -1083,7 +1083,7 @@
 
     if-ne v0, v1, :cond_0
 
-    const/4 v2, 0x5
+    move v2, v3
 
     :cond_0
     return v2
@@ -1119,7 +1119,7 @@
     goto :goto_0
 
     :cond_0
-    const/4 p2, 0x0
+    move p2, v1
 
     .line 2140
     :goto_0
@@ -1390,9 +1390,9 @@
 
     move-result v2
 
-    const/4 v3, 0x0
+    move v3, v0
 
-    const/4 v4, 0x0
+    move v4, v3
 
     :goto_0
     if-ge v3, v2, :cond_0
@@ -1926,7 +1926,7 @@
 
     move-result v0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_0
     if-ge v2, v0, :cond_2
@@ -2528,7 +2528,7 @@
     goto :goto_0
 
     :cond_0
-    const/4 v0, 0x0
+    move v0, v1
 
     :goto_0
     if-eqz v0, :cond_1
@@ -3147,12 +3147,12 @@
 
     if-ne v1, v2, :cond_0
 
-    const/4 v1, 0x1
+    move v1, v2
 
     goto :goto_0
 
     :cond_0
-    const/4 v1, 0x0
+    move v1, v3
 
     .line 1875
     :goto_0
@@ -3212,7 +3212,7 @@
     goto :goto_1
 
     :cond_1
-    const/4 v12, 0x0
+    move v12, v3
 
     .line 1891
     :goto_1
@@ -4025,7 +4025,7 @@
 
     move-result v3
 
-    const/4 v7, 0x0
+    move v7, v1
 
     :goto_18
     if-ge v7, v3, :cond_22
@@ -4066,7 +4066,7 @@
 
     move-result v3
 
-    const/4 v7, 0x0
+    move v7, v1
 
     :goto_19
     if-ge v7, v3, :cond_23
@@ -4271,11 +4271,11 @@
     goto :goto_0
 
     :cond_0
-    const/4 v0, 0x0
+    move v0, v10
 
-    const/4 v12, 0x0
+    move v12, v0
 
-    const/4 v13, 0x0
+    move v13, v12
 
     .line 1768
     :goto_0
@@ -4454,7 +4454,7 @@
     goto :goto_1
 
     :cond_2
-    const/4 v0, 0x0
+    move v0, v10
 
     .line 1794
     :goto_1
@@ -4613,7 +4613,7 @@
 
     move-result v9
 
-    const/4 v11, 0x0
+    move v11, v10
 
     :goto_2
     if-ge v11, v9, :cond_7
@@ -4790,11 +4790,11 @@
     goto :goto_4
 
     :cond_8
+    move v15, v10
+
     move v6, v13
 
-    const/4 v13, 0x0
-
-    const/4 v15, 0x0
+    move v13, v15
 
     .line 1843
     :goto_4

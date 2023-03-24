@@ -503,7 +503,7 @@
 
     if-eqz p0, :cond_0
 
-    const/4 v2, 0x1
+    move v2, v1
 
     goto :goto_0
 
@@ -566,7 +566,7 @@
 .end method
 
 .method private static getStatusCodesFromList(Ljava/util/List;)Ljava/util/Set;
-    .locals 11
+    .locals 8
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -623,25 +623,25 @@
 
     move-result-wide v6
 
-    const/4 v8, 0x1
+    cmpl-double v4, v4, v6
 
-    const/4 v9, 0x0
+    const/4 v5, 0x1
 
-    cmpl-double v10, v4, v6
+    const/4 v6, 0x0
 
-    if-nez v10, :cond_0
+    if-nez v4, :cond_0
 
-    const/4 v4, 0x1
+    move v4, v5
 
     goto :goto_1
 
     :cond_0
-    const/4 v4, 0x0
+    move v4, v6
 
     :goto_1
-    const-string v5, "Status code %s is not integral"
+    const-string v7, "Status code %s is not integral"
 
-    invoke-static {v4, v5, v1}, Lcom/google/common/base/Verify;->verify(ZLjava/lang/String;Ljava/lang/Object;)V
+    invoke-static {v4, v7, v1}, Lcom/google/common/base/Verify;->verify(ZLjava/lang/String;Ljava/lang/Object;)V
 
     .line 145
     invoke-static {v3}, Lio/grpc/Status;->fromCodeValue(I)Lio/grpc/Status;
@@ -666,12 +666,12 @@
     goto :goto_2
 
     :cond_1
-    const/4 v8, 0x0
+    move v5, v6
 
     :goto_2
     const-string v2, "Status code %s is not valid"
 
-    invoke-static {v8, v2, v1}, Lcom/google/common/base/Verify;->verify(ZLjava/lang/String;Ljava/lang/Object;)V
+    invoke-static {v5, v2, v1}, Lcom/google/common/base/Verify;->verify(ZLjava/lang/String;Ljava/lang/Object;)V
 
     goto :goto_3
 
@@ -822,43 +822,43 @@
 
     move-result p0
 
-    const/4 v1, 0x1
+    const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    cmpl-float v2, v0, v1
 
-    const/4 v3, 0x0
+    const/4 v3, 0x1
 
-    cmpl-float v4, v0, v3
+    const/4 v4, 0x0
 
-    if-lez v4, :cond_2
+    if-lez v2, :cond_2
 
-    const/4 v4, 0x1
+    move v2, v3
 
     goto :goto_0
 
     :cond_2
-    const/4 v4, 0x0
+    move v2, v4
 
     :goto_0
     const-string v5, "maxToken should be greater than zero"
 
     .line 104
-    invoke-static {v4, v5}, Lcom/google/common/base/Preconditions;->checkState(ZLjava/lang/Object;)V
+    invoke-static {v2, v5}, Lcom/google/common/base/Preconditions;->checkState(ZLjava/lang/Object;)V
 
-    cmpl-float v3, p0, v3
+    cmpl-float v1, p0, v1
 
-    if-lez v3, :cond_3
+    if-lez v1, :cond_3
 
     goto :goto_1
 
     :cond_3
-    const/4 v1, 0x0
+    move v3, v4
 
     :goto_1
-    const-string v2, "tokenRatio should be greater than zero"
+    const-string v1, "tokenRatio should be greater than zero"
 
     .line 105
-    invoke-static {v1, v2}, Lcom/google/common/base/Preconditions;->checkState(ZLjava/lang/Object;)V
+    invoke-static {v3, v1}, Lcom/google/common/base/Preconditions;->checkState(ZLjava/lang/Object;)V
 
     .line 106
     new-instance v1, Lio/grpc/internal/RetriableStream$Throttle;

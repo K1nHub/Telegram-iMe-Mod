@@ -61,7 +61,7 @@
 
     invoke-virtual {p0, v2, v3, v1, v0}, Landroid/widget/LinearLayout;->setPadding(IIII)V
 
-    const/4 v1, 0x0
+    move v1, v0
 
     .line 160
     :goto_0
@@ -75,12 +75,12 @@
 
     if-nez v1, :cond_0
 
-    const/4 v4, 0x1
+    move v4, v3
 
     goto :goto_1
 
     :cond_0
-    const/4 v4, 0x0
+    move v4, v0
 
     :goto_1
     const/4 v5, 0x2
@@ -90,7 +90,7 @@
     goto :goto_2
 
     :cond_1
-    const/4 v3, 0x0
+    move v3, v0
 
     .line 169
     :goto_2
@@ -115,24 +115,24 @@
 
     if-nez v1, :cond_2
 
-    const/4 v10, 0x0
+    move v10, v0
 
     goto :goto_3
 
     :cond_2
-    const/4 v10, 0x5
+    move v10, v9
 
     :goto_3
     const/4 v11, 0x0
 
     if-ne v1, v5, :cond_3
 
-    const/4 v5, 0x0
+    move v5, v0
 
     goto :goto_4
 
     :cond_3
-    const/4 v5, 0x5
+    move v5, v9
 
     :goto_4
     const/4 v12, 0x0
@@ -173,7 +173,7 @@
 
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    move v1, v0
 
     .line 173
     :goto_0
@@ -198,12 +198,12 @@
 
     if-ne v3, p3, :cond_0
 
-    const/4 v3, 0x1
+    move v3, v4
 
     goto :goto_1
 
     :cond_0
-    const/4 v3, 0x0
+    move v3, v0
 
     :goto_1
     invoke-virtual {v2, v3, v4}, Lorg/telegram/ui/Components/RadioButton;->setChecked(ZZ)V

@@ -42,25 +42,25 @@
 
     const/4 v0, 0x0
 
-    .line 26
+    .line 27
     invoke-direct {p0, p1, p2, v0}, Lcom/smedialink/storage/domain/model/crypto/send/TransferArgs;-><init>(DLkotlin/jvm/internal/DefaultConstructorMarker;)V
 
-    .line 20
+    .line 21
     iput-wide p1, p0, Lcom/smedialink/storage/domain/model/crypto/send/TransferArgs$TON;->amount:D
 
-    .line 21
+    .line 22
     iput-object p3, p0, Lcom/smedialink/storage/domain/model/crypto/send/TransferArgs$TON;->weiConvertUnit:Lcom/smedialink/storage/domain/utils/crypto/Convert$Unit;
 
-    .line 22
+    .line 23
     iput-object p4, p0, Lcom/smedialink/storage/domain/model/crypto/send/TransferArgs$TON;->recipientAddress:Ljava/lang/String;
 
-    .line 23
+    .line 24
     iput-object p5, p0, Lcom/smedialink/storage/domain/model/crypto/send/TransferArgs$TON;->message:Ljava/lang/String;
 
-    .line 24
+    .line 25
     iput p6, p0, Lcom/smedialink/storage/domain/model/crypto/send/TransferArgs$TON;->sendMode:I
 
-    .line 25
+    .line 26
     iput-boolean p7, p0, Lcom/smedialink/storage/domain/model/crypto/send/TransferArgs$TON;->isUnencrypted:Z
 
     return-void
@@ -75,7 +75,7 @@
 
     const/4 v0, 0x1
 
-    const/4 v8, 0x1
+    move v8, v0
 
     goto :goto_0
 
@@ -95,7 +95,7 @@
 
     move v7, p6
 
-    .line 19
+    .line 20
     invoke-direct/range {v1 .. v8}, Lcom/smedialink/storage/domain/model/crypto/send/TransferArgs$TON;-><init>(DLcom/smedialink/storage/domain/utils/crypto/Convert$Unit;Ljava/lang/String;Ljava/lang/String;IZ)V
 
     return-void
@@ -380,7 +380,7 @@
 .method public getAmount()D
     .locals 2
 
-    .line 20
+    .line 21
     iget-wide v0, p0, Lcom/smedialink/storage/domain/model/crypto/send/TransferArgs$TON;->amount:D
 
     return-wide v0
@@ -389,7 +389,7 @@
 .method public final getMessage()Ljava/lang/String;
     .locals 1
 
-    .line 23
+    .line 24
     iget-object v0, p0, Lcom/smedialink/storage/domain/model/crypto/send/TransferArgs$TON;->message:Ljava/lang/String;
 
     return-object v0
@@ -398,7 +398,7 @@
 .method public final getRecipientAddress()Ljava/lang/String;
     .locals 1
 
-    .line 22
+    .line 23
     iget-object v0, p0, Lcom/smedialink/storage/domain/model/crypto/send/TransferArgs$TON;->recipientAddress:Ljava/lang/String;
 
     return-object v0
@@ -407,7 +407,7 @@
 .method public final getSendMode()I
     .locals 1
 
-    .line 24
+    .line 25
     iget v0, p0, Lcom/smedialink/storage/domain/model/crypto/send/TransferArgs$TON;->sendMode:I
 
     return v0
@@ -416,7 +416,7 @@
 .method public final getWeiConvertUnit()Lcom/smedialink/storage/domain/utils/crypto/Convert$Unit;
     .locals 1
 
-    .line 21
+    .line 22
     iget-object v0, p0, Lcom/smedialink/storage/domain/model/crypto/send/TransferArgs$TON;->weiConvertUnit:Lcom/smedialink/storage/domain/utils/crypto/Convert$Unit;
 
     return-object v0
@@ -494,7 +494,7 @@
 .method public final isUnencrypted()Z
     .locals 1
 
-    .line 25
+    .line 26
     iget-boolean v0, p0, Lcom/smedialink/storage/domain/model/crypto/send/TransferArgs$TON;->isUnencrypted:Z
 
     return v0

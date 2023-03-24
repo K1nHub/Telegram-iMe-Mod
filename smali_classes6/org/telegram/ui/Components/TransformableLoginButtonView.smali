@@ -196,7 +196,7 @@
 
     if-nez v1, :cond_0
 
-    const/4 v1, 0x1
+    move v1, v3
 
     goto :goto_0
 
@@ -216,10 +216,10 @@
     goto :goto_1
 
     :cond_1
-    const/high16 v1, 0x3f800000    # 1.0f
+    move v1, v2
 
     :goto_1
-    mul-float v1, v1, v6
+    mul-float/2addr v1, v6
 
     add-float/2addr v1, v5
 
@@ -383,7 +383,7 @@
 
     iget v3, v0, Lorg/telegram/ui/Components/TransformableLoginButtonView;->progress:F
 
-    mul-float v2, v2, v3
+    mul-float/2addr v2, v3
 
     invoke-virtual {v7, v2, v4}, Landroid/graphics/Canvas;->translate(FF)V
 
@@ -392,7 +392,7 @@
     .line 153
     iget v3, v0, Lorg/telegram/ui/Components/TransformableLoginButtonView;->progress:F
 
-    mul-float v3, v3, v2
+    mul-float/2addr v3, v2
 
     invoke-virtual/range {p0 .. p0}, Landroid/view/View;->getWidth()I
 
@@ -417,7 +417,7 @@
     .line 155
     iget v3, v0, Lorg/telegram/ui/Components/TransformableLoginButtonView;->progress:F
 
-    mul-float v2, v2, v3
+    mul-float/2addr v2, v3
 
     add-float/2addr v2, v1
 
@@ -438,7 +438,7 @@
     .line 157
     iget v2, v0, Lorg/telegram/ui/Components/TransformableLoginButtonView;->progress:F
 
-    mul-float v2, v2, v1
+    mul-float/2addr v2, v1
 
     add-float/2addr v2, v9
 
@@ -451,7 +451,7 @@
     .line 158
     iget v3, v0, Lorg/telegram/ui/Components/TransformableLoginButtonView;->progress:F
 
-    mul-float v3, v3, v2
+    mul-float/2addr v3, v2
 
     add-float/2addr v3, v9
 
@@ -468,7 +468,7 @@
 
     move-result-wide v3
 
-    mul-double v3, v3, v1
+    mul-double/2addr v3, v1
 
     sub-double v3, v5, v3
 
@@ -482,7 +482,7 @@
 
     move-result-wide v15
 
-    mul-double v1, v1, v15
+    mul-double/2addr v1, v15
 
     add-double/2addr v1, v8
 
@@ -515,7 +515,7 @@
 
     move-result-wide v3
 
-    mul-double v3, v3, v1
+    mul-double/2addr v3, v1
 
     sub-double v5, v17, v3
 
@@ -525,7 +525,7 @@
 
     move-result-wide v5
 
-    mul-double v1, v1, v5
+    mul-double/2addr v1, v5
 
     sub-double/2addr v8, v1
 
@@ -578,7 +578,7 @@
 
     sub-float/2addr v2, v14
 
-    mul-float v13, v13, v2
+    mul-float/2addr v13, v2
 
     float-to-int v2, v13
 
@@ -669,13 +669,13 @@
 
     move-result v3
 
-    mul-int/lit8 v3, v3, 0x2
+    mul-int/2addr v3, v6
 
     sub-int/2addr v2, v3
 
     int-to-float v2, v2
 
-    mul-float v2, v2, v8
+    mul-float/2addr v2, v8
 
     add-float v13, v1, v2
 
@@ -714,7 +714,7 @@
 
     int-to-float v1, v1
 
-    mul-float v1, v1, v8
+    mul-float/2addr v1, v8
 
     float-to-double v2, v13
 
@@ -725,7 +725,7 @@
 
     float-to-double v8, v1
 
-    mul-double v4, v4, v8
+    mul-double/2addr v4, v8
 
     sub-double/2addr v2, v4
 
@@ -736,7 +736,7 @@
 
     move-result-wide v1
 
-    mul-double v1, v1, v8
+    mul-double/2addr v1, v8
 
     double-to-float v8, v1
 

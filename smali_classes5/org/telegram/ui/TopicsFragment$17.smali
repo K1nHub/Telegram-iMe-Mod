@@ -94,7 +94,7 @@
 
     move-result v3
 
-    mul-float v3, v3, v2
+    mul-float/2addr v3, v2
 
     float-to-int v2, v3
 

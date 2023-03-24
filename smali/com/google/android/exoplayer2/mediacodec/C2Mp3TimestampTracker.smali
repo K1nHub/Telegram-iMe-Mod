@@ -41,7 +41,7 @@
 
     const-wide/32 v4, 0xf4240
 
-    mul-long v2, v2, v4
+    mul-long/2addr v2, v4
 
     div-long/2addr v2, p1
 
@@ -101,9 +101,9 @@
 
     const-wide/16 v2, 0x0
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-nez v4, :cond_0
+    if-nez v0, :cond_0
 
     .line 61
     iget-wide v0, p2, Lcom/google/android/exoplayer2/decoder/DecoderInputBuffer;->timeUs:J
@@ -133,7 +133,7 @@
 
     const/4 v1, 0x0
 
-    const/4 v4, 0x0
+    move v4, v1
 
     :goto_0
     const/4 v5, 0x4

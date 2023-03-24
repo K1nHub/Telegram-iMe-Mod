@@ -23,14 +23,15 @@ public final class ByteQuadsCanonicalizer {
 
     private ByteQuadsCanonicalizer(int i, boolean z, int i2, boolean z2) {
         int i3 = 16;
-        if (i < 16) {
-            i = 16;
-        } else if (((i - 1) & i) != 0) {
-            while (i3 < i) {
-                i3 += i3;
+        if (i >= 16) {
+            if (((i - 1) & i) != 0) {
+                while (i3 < i) {
+                    i3 += i3;
+                }
             }
-            i = i3;
+            new AtomicReference(TableInfo.createInitial(i));
         }
+        i = i3;
         new AtomicReference(TableInfo.createInitial(i));
     }
 

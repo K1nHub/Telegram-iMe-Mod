@@ -74,7 +74,7 @@
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_1
     iget-object v3, v0, Lj$/util/stream/w2;->a:Lj$/util/stream/A1;

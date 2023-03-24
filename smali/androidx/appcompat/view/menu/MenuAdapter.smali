@@ -290,12 +290,12 @@
 
     if-eq p3, v1, :cond_2
 
-    const/4 p3, 0x1
+    move p3, v4
 
     goto :goto_1
 
     :cond_2
-    const/4 p3, 0x0
+    move p3, v0
 
     :goto_1
     invoke-virtual {v2, p3}, Landroidx/appcompat/view/menu/ListMenuItemView;->setGroupDividerEnabled(Z)V

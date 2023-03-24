@@ -40,7 +40,7 @@
 
     const/high16 v0, 0x40000000    # 2.0f
 
-    mul-float p4, p4, v0
+    mul-float/2addr p4, v0
 
     mul-float v4, p4, p3
 

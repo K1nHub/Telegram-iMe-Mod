@@ -131,7 +131,7 @@
 .end method
 
 .method private final scheduleTimeout(Lokio/AsyncTimeout;JZ)V
-    .locals 6
+    .locals 5
 
     .line 228
     const-class v0, Lokio/AsyncTimeout;
@@ -169,9 +169,9 @@
 
     const-wide/16 v3, 0x0
 
-    cmp-long v5, p2, v3
+    cmp-long v3, p2, v3
 
-    if-eqz v5, :cond_1
+    if-eqz v3, :cond_1
 
     if-eqz p4, :cond_1
 
@@ -193,7 +193,7 @@
     goto :goto_0
 
     :cond_1
-    if-eqz v5, :cond_2
+    if-eqz v3, :cond_2
 
     add-long/2addr p2, v1
 
@@ -243,9 +243,9 @@
 
     move-result-wide v3
 
-    cmp-long v5, p2, v3
+    cmp-long v3, p2, v3
 
-    if-gez v5, :cond_3
+    if-gez v3, :cond_3
 
     goto :goto_2
 
@@ -373,9 +373,9 @@
 
     move-result-wide v3
 
-    cmp-long v5, v0, v3
+    cmp-long v0, v0, v3
 
-    if-ltz v5, :cond_0
+    if-ltz v0, :cond_0
 
     .line 302
     invoke-static {}, Lokio/AsyncTimeout;->access$getHead$cp()Lokio/AsyncTimeout;
@@ -397,16 +397,16 @@
 
     const-wide/16 v5, 0x0
 
-    cmp-long v7, v3, v5
+    cmp-long v5, v3, v5
 
-    if-lez v7, :cond_2
+    if-lez v5, :cond_2
 
     const-wide/32 v5, 0xf4240
 
     .line 314
     div-long v7, v3, v5
 
-    mul-long v5, v5, v7
+    mul-long/2addr v5, v7
 
     sub-long/2addr v3, v5
 

@@ -58,7 +58,7 @@ public class RendererCommon {
         }
 
         /* JADX WARN: Code restructure failed: missing block: B:32:0x0052, code lost:
-            if ((r5 > 0) == (r12 > 0)) goto L27;
+            if ((r3 > 0) == (r12 > 0)) goto L27;
          */
         /*
             Code decompiled incorrectly, please refer to instructions dump.
@@ -83,21 +83,21 @@ public class RendererCommon {
                 float r2 = (float) r0
                 float r12 = r12 / r2
                 r2 = 1065353216(0x3f800000, float:1.0)
-                r3 = 1
-                r4 = 0
-                int r5 = (r11 > r2 ? 1 : (r11 == r2 ? 0 : -1))
-                if (r5 <= 0) goto L24
-                r6 = 1
+                int r3 = (r11 > r2 ? 1 : (r11 == r2 ? 0 : -1))
+                r4 = 1
+                r5 = 0
+                if (r3 <= 0) goto L24
+                r6 = r4
                 goto L25
             L24:
-                r6 = 0
+                r6 = r5
             L25:
                 int r12 = (r12 > r2 ? 1 : (r12 == r2 ? 0 : -1))
                 if (r12 <= 0) goto L2b
-                r2 = 1
+                r2 = r4
                 goto L2c
             L2b:
-                r2 = 0
+                r2 = r5
             L2c:
                 if (r6 != r2) goto L31
                 float r2 = r7.visibleFractionMatchOrientation
@@ -114,18 +114,18 @@ public class RendererCommon {
             L43:
                 int r8 = android.view.View.MeasureSpec.getMode(r10)
                 if (r8 == r9) goto L54
-                if (r5 <= 0) goto L4d
-                r8 = 1
+                if (r3 <= 0) goto L4d
+                r8 = r4
                 goto L4e
             L4d:
-                r8 = 0
+                r8 = r5
             L4e:
                 if (r12 <= 0) goto L51
                 goto L52
             L51:
-                r3 = 0
+                r4 = r5
             L52:
-                if (r8 != r3) goto L56
+                if (r8 != r4) goto L56
             L54:
                 r11.y = r0
             L56:
@@ -186,7 +186,7 @@ public class RendererCommon {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: org.webrtc.RendererCommon$1 */
     /* loaded from: classes6.dex */
-    public static /* synthetic */ class C66991 {
+    public static /* synthetic */ class C67251 {
         static final /* synthetic */ int[] $SwitchMap$org$webrtc$RendererCommon$ScalingType;
 
         static {
@@ -209,7 +209,7 @@ public class RendererCommon {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static float convertScalingTypeToVisibleFraction(ScalingType scalingType) {
-        int i = C66991.$SwitchMap$org$webrtc$RendererCommon$ScalingType[scalingType.ordinal()];
+        int i = C67251.$SwitchMap$org$webrtc$RendererCommon$ScalingType[scalingType.ordinal()];
         if (i != 1) {
             if (i != 2) {
                 if (i == 3) {

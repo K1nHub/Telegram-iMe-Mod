@@ -187,9 +187,9 @@
 
     move-result-wide p0
 
-    long-to-int p1, p0
+    long-to-int p0, p0
 
-    return p1
+    return p0
 .end method
 
 .method private static queryForLong(Landroid/content/Context;Landroid/net/Uri;Ljava/lang/String;J)J

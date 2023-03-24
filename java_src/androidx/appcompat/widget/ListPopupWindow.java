@@ -254,7 +254,11 @@ public class ListPopupWindow implements ShowableListMenu {
                 } else if (i2 != -2) {
                     buildDropDown = i2;
                 }
-                this.mPopup.setOutsideTouchable((this.mForceIgnoreOutsideTouch || this.mDropDownAlwaysVisible) ? false : false);
+                PopupWindow popupWindow = this.mPopup;
+                if (this.mForceIgnoreOutsideTouch || this.mDropDownAlwaysVisible) {
+                    z = false;
+                }
+                popupWindow.setOutsideTouchable(z);
                 this.mPopup.update(getAnchorView(), this.mDropDownHorizontalOffset, this.mDropDownVerticalOffset, i < 0 ? -1 : i, buildDropDown < 0 ? -1 : buildDropDown);
                 return;
             }

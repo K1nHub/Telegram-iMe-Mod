@@ -24,7 +24,7 @@
 
     iput-object p1, p0, Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment$createContainer$2;->this$0:Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment;
 
-    .line 304
+    .line 305
     invoke-direct {p0, p2}, Landroid/view/ViewGroup;-><init>(Landroid/content/Context;)V
 
     return-void
@@ -35,7 +35,7 @@
 .method protected onLayout(ZIIII)V
     .locals 4
 
-    .line 326
+    .line 327
     iget-object p1, p0, Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment$createContainer$2;->this$0:Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment;
 
     invoke-static {p1}, Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment;->access$getActionBar$p$s1606076837(Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment;)Lorg/telegram/ui/ActionBar/ActionBar;
@@ -64,7 +64,7 @@
 
     if-le p4, p5, :cond_0
 
-    .line 330
+    .line 331
     iget-object p4, p0, Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment$createContainer$2;->this$0:Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment;
 
     invoke-static {p4}, Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment;->access$getImageView(Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment;)Lorg/telegram/ui/Components/RLottieImageView;
@@ -79,7 +79,7 @@
 
     div-int/2addr p4, p3
 
-    .line 331
+    .line 332
     iget-object p5, p0, Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment$createContainer$2;->this$0:Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment;
 
     invoke-static {p5}, Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment;->access$getImageView(Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment;)Lorg/telegram/ui/Components/RLottieImageView;
@@ -114,7 +114,7 @@
 
     const p4, 0x3ecccccd    # 0.4f
 
-    mul-float p4, p4, p1
+    mul-float/2addr p4, p1
 
     float-to-int p5, p4
 
@@ -122,11 +122,11 @@
 
     const v0, 0x3e6147ae    # 0.22f
 
-    mul-float v0, v0, p2
+    mul-float/2addr v0, p2
 
     float-to-int v0, v0
 
-    .line 334
+    .line 335
     iget-object v1, p0, Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment$createContainer$2;->this$0:Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment;
 
     invoke-static {v1}, Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment;->access$getTitleTextView(Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment;)Landroid/widget/TextView;
@@ -161,11 +161,11 @@
 
     const v0, 0x3ec7ae14    # 0.39f
 
-    mul-float v0, v0, p2
+    mul-float/2addr v0, p2
 
     float-to-int v0, v0
 
-    .line 337
+    .line 338
     iget-object v1, p0, Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment$createContainer$2;->this$0:Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment;
 
     invoke-static {v1}, Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment;->access$getDescriptionText(Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment;)Landroid/widget/TextView;
@@ -200,9 +200,9 @@
 
     const v0, 0x3f19999a    # 0.6f
 
-    mul-float p1, p1, v0
+    mul-float/2addr p1, v0
 
-    .line 338
+    .line 339
     iget-object v0, p0, Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment$createContainer$2;->this$0:Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment;
 
     invoke-static {v0}, Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment;->access$getButtonTextView(Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment;)Landroid/widget/TextView;
@@ -227,11 +227,11 @@
 
     const p3, 0x3f23d70a    # 0.64f
 
-    mul-float p3, p3, p2
+    mul-float/2addr p3, p2
 
     float-to-int p3, p3
 
-    .line 340
+    .line 341
     iget-object p4, p0, Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment$createContainer$2;->this$0:Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment;
 
     invoke-static {p4}, Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment;->access$getButtonTextView(Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment;)Landroid/widget/TextView;
@@ -266,11 +266,11 @@
 
     const p1, 0x3f4ccccd    # 0.8f
 
-    mul-float p2, p2, p1
+    mul-float/2addr p2, p1
 
     float-to-int p1, p2
 
-    .line 343
+    .line 344
     iget-object p2, p0, Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment$createContainer$2;->this$0:Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment;
 
     invoke-static {p2}, Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment;->access$getDescriptionText2(Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment;)Landroid/widget/TextView;
@@ -310,11 +310,11 @@
 
     const p4, 0x3e178d50    # 0.148f
 
-    mul-float p4, p4, p2
+    mul-float/2addr p4, p2
 
     float-to-int p4, p4
 
-    .line 346
+    .line 347
     iget-object p5, p0, Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment$createContainer$2;->this$0:Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment;
 
     invoke-static {p5}, Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment;->access$getImageView(Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment;)Lorg/telegram/ui/Components/RLottieImageView;
@@ -347,11 +347,11 @@
 
     const p4, 0x3eea7efa    # 0.458f
 
-    mul-float p4, p4, p2
+    mul-float/2addr p4, p2
 
     float-to-int p4, p4
 
-    .line 348
+    .line 349
     iget-object p5, p0, Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment$createContainer$2;->this$0:Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment;
 
     invoke-static {p5}, Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment;->access$getTitleTextView(Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment;)Landroid/widget/TextView;
@@ -384,11 +384,11 @@
 
     const p4, 0x3f051eb8    # 0.52f
 
-    mul-float p4, p4, p2
+    mul-float/2addr p4, p2
 
     float-to-int p4, p4
 
-    .line 350
+    .line 351
     iget-object p5, p0, Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment$createContainer$2;->this$0:Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment;
 
     invoke-static {p5}, Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment;->access$getDescriptionText(Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment;)Landroid/widget/TextView;
@@ -419,7 +419,7 @@
 
     invoke-virtual {p5, v1, p4, v0, v2}, Landroid/widget/TextView;->layout(IIII)V
 
-    .line 351
+    .line 352
     iget-object p4, p0, Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment$createContainer$2;->this$0:Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment;
 
     invoke-static {p4}, Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment;->access$getButtonTextView(Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment;)Landroid/widget/TextView;
@@ -436,11 +436,11 @@
 
     const p3, 0x3f4a7efa    # 0.791f
 
-    mul-float p3, p3, p2
+    mul-float/2addr p3, p2
 
     float-to-int p3, p3
 
-    .line 353
+    .line 354
     iget-object p4, p0, Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment$createContainer$2;->this$0:Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment;
 
     invoke-static {p4}, Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment;->access$getButtonTextView(Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment;)Landroid/widget/TextView;
@@ -475,11 +475,11 @@
 
     const p1, 0x3f64dd2f    # 0.894f
 
-    mul-float p2, p2, p1
+    mul-float/2addr p2, p1
 
     float-to-int p1, p2
 
-    .line 355
+    .line 356
     iget-object p2, p0, Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment$createContainer$2;->this$0:Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment;
 
     invoke-static {p2}, Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment;->access$getDescriptionText2(Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment;)Landroid/widget/TextView;
@@ -517,17 +517,17 @@
 .method protected onMeasure(II)V
     .locals 9
 
-    .line 306
+    .line 307
     invoke-static {p1}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
     move-result p1
 
-    .line 307
+    .line 308
     invoke-static {p2}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
     move-result v0
 
-    .line 308
+    .line 309
     iget-object v1, p0, Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment$createContainer$2;->this$0:Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment;
 
     invoke-static {v1}, Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment;->access$getActionBar$p$s1606076837(Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment;)Lorg/telegram/ui/ActionBar/ActionBar;
@@ -550,7 +550,7 @@
 
     if-le p1, v0, :cond_0
 
-    .line 310
+    .line 311
     iget-object v4, p0, Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment$createContainer$2;->this$0:Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment;
 
     invoke-static {v4}, Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment;->access$getImageView(Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment;)Lorg/telegram/ui/Components/RLottieImageView;
@@ -561,7 +561,7 @@
 
     const v6, 0x3ee66666    # 0.45f
 
-    mul-float v6, v6, v5
+    mul-float/2addr v6, v5
 
     float-to-int v6, v6
 
@@ -573,7 +573,7 @@
 
     const v8, 0x3f2e147b    # 0.68f
 
-    mul-float v7, v7, v8
+    mul-float/2addr v7, v8
 
     float-to-int v7, v7
 
@@ -583,7 +583,7 @@
 
     invoke-virtual {v4, v6, v7}, Landroid/widget/ImageView;->measure(II)V
 
-    .line 311
+    .line 312
     iget-object v4, p0, Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment$createContainer$2;->this$0:Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment;
 
     invoke-static {v4}, Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment;->access$getTitleTextView(Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment;)Landroid/widget/TextView;
@@ -592,7 +592,7 @@
 
     const v6, 0x3f19999a    # 0.6f
 
-    mul-float v5, v5, v6
+    mul-float/2addr v5, v6
 
     float-to-int v5, v5
 
@@ -606,7 +606,7 @@
 
     invoke-virtual {v4, v6, v7}, Landroid/widget/TextView;->measure(II)V
 
-    .line 312
+    .line 313
     iget-object v4, p0, Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment$createContainer$2;->this$0:Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment;
 
     invoke-static {v4}, Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment;->access$getDescriptionText(Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment;)Landroid/widget/TextView;
@@ -623,7 +623,7 @@
 
     invoke-virtual {v4, v6, v7}, Landroid/widget/TextView;->measure(II)V
 
-    .line 313
+    .line 314
     iget-object v4, p0, Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment$createContainer$2;->this$0:Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment;
 
     invoke-static {v4}, Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment;->access$getDescriptionText2(Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment;)Landroid/widget/TextView;
@@ -640,7 +640,7 @@
 
     invoke-virtual {v4, v6, v3}, Landroid/widget/TextView;->measure(II)V
 
-    .line 314
+    .line 315
     iget-object v3, p0, Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment$createContainer$2;->this$0:Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment;
 
     invoke-static {v3}, Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment;->access$getButtonTextView(Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment;)Landroid/widget/TextView;
@@ -663,7 +663,7 @@
 
     goto :goto_0
 
-    .line 316
+    .line 317
     :cond_0
     iget-object v4, p0, Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment$createContainer$2;->this$0:Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment;
 
@@ -679,7 +679,7 @@
 
     const v7, 0x3ecc49ba    # 0.399f
 
-    mul-float v6, v6, v7
+    mul-float/2addr v6, v7
 
     float-to-int v6, v6
 
@@ -689,7 +689,7 @@
 
     invoke-virtual {v4, v5, v6}, Landroid/widget/ImageView;->measure(II)V
 
-    .line 317
+    .line 318
     iget-object v4, p0, Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment$createContainer$2;->this$0:Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment;
 
     invoke-static {v4}, Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment;->access$getTitleTextView(Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment;)Landroid/widget/TextView;
@@ -706,7 +706,7 @@
 
     invoke-virtual {v4, v5, v6}, Landroid/widget/TextView;->measure(II)V
 
-    .line 318
+    .line 319
     iget-object v4, p0, Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment$createContainer$2;->this$0:Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment;
 
     invoke-static {v4}, Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment;->access$getDescriptionText(Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment;)Landroid/widget/TextView;
@@ -723,7 +723,7 @@
 
     invoke-virtual {v4, v5, v6}, Landroid/widget/TextView;->measure(II)V
 
-    .line 319
+    .line 320
     iget-object v4, p0, Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment$createContainer$2;->this$0:Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment;
 
     invoke-static {v4}, Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment;->access$getDescriptionText2(Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment;)Landroid/widget/TextView;
@@ -740,7 +740,7 @@
 
     invoke-virtual {v4, v5, v3}, Landroid/widget/TextView;->measure(II)V
 
-    .line 320
+    .line 321
     iget-object v3, p0, Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment$createContainer$2;->this$0:Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment;
 
     invoke-static {v3}, Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment;->access$getButtonTextView(Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment;)Landroid/widget/TextView;
@@ -761,7 +761,7 @@
 
     invoke-virtual {v3, v1, p2}, Landroid/widget/TextView;->measure(II)V
 
-    .line 322
+    .line 323
     :goto_0
     invoke-virtual {p0, p1, v0}, Landroid/view/ViewGroup;->setMeasuredDimension(II)V
 

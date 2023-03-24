@@ -110,8 +110,8 @@ public class ID3v2Info extends AudioInfo {
             int r6 = r3.getBodySize()     // Catch: org.telegram.messenger.audioinfo.mp3.ID3v2Exception -> Lcf
             long r6 = (long) r6     // Catch: org.telegram.messenger.audioinfo.mp3.ID3v2Exception -> Lcf
             long r8 = r2.getRemainingLength()     // Catch: org.telegram.messenger.audioinfo.mp3.ID3v2Exception -> Lcf
-            int r10 = (r6 > r8 ? 1 : (r6 == r8 ? 0 : -1))
-            if (r10 <= 0) goto L69
+            int r6 = (r6 > r8 ? 1 : (r6 == r8 ? 0 : -1))
+            if (r6 <= 0) goto L69
             java.util.logging.Logger r1 = org.telegram.messenger.audioinfo.mp3.ID3v2Info.LOGGER     // Catch: org.telegram.messenger.audioinfo.mp3.ID3v2Exception -> Lcf
             boolean r3 = r1.isLoggable(r13)     // Catch: org.telegram.messenger.audioinfo.mp3.ID3v2Exception -> Lcf
             if (r3 == 0) goto Lf0

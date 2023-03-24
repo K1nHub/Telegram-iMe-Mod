@@ -5,7 +5,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3286R;
+import org.telegram.messenger.C3301R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.p048ui.ActionBar.Theme;
 import org.telegram.p048ui.Components.LayoutHelper;
@@ -20,17 +20,17 @@ public class AboutPremiumView extends LinearLayout {
         textView.setTextSize(1, 14.0f);
         textView.setTextColor(Theme.getColor("windowBackgroundWhiteBlackText"));
         textView.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
-        textView.setText(LocaleController.getString("AboutPremiumTitle", C3286R.string.AboutPremiumTitle));
+        textView.setText(LocaleController.getString("AboutPremiumTitle", C3301R.string.AboutPremiumTitle));
         addView(textView);
         TextView textView2 = new TextView(context);
         textView2.setTextSize(1, 14.0f);
         textView2.setTextColor(Theme.getColor("windowBackgroundWhiteBlackText"));
-        textView2.setText(AndroidUtilities.replaceTags(LocaleController.getString("AboutPremiumDescription", C3286R.string.AboutPremiumDescription)));
+        textView2.setText(AndroidUtilities.replaceTags(LocaleController.getString("AboutPremiumDescription", C3301R.string.AboutPremiumDescription)));
         addView(textView2, LayoutHelper.createLinear(-1, -2, BitmapDescriptorFactory.HUE_RED, 0, 0, 0, 0, 0));
         TextView textView3 = new TextView(context);
         textView3.setTextSize(1, 14.0f);
         textView3.setTextColor(Theme.getColor("windowBackgroundWhiteBlackText"));
-        textView3.setText(AndroidUtilities.replaceTags(LocaleController.getString("AboutPremiumDescription2", C3286R.string.AboutPremiumDescription2)));
+        textView3.setText(AndroidUtilities.replaceTags(LocaleController.getString("AboutPremiumDescription2", C3301R.string.AboutPremiumDescription2)));
         addView(textView3, LayoutHelper.createLinear(-1, -2, BitmapDescriptorFactory.HUE_RED, 0, 0, 24, 0, 0));
     }
 }

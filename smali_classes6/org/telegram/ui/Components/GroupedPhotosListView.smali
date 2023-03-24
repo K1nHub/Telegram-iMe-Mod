@@ -400,11 +400,11 @@
 
     move-result v6
 
-    const/4 v7, 0x0
+    move v7, v1
 
-    const/high16 v8, -0x80000000
+    move v9, v4
 
-    const v9, 0x7fffffff
+    move v8, v5
 
     :goto_0
     if-ge v7, v6, :cond_5
@@ -434,7 +434,7 @@
 
     add-int/2addr v14, v13
 
-    mul-int v12, v12, v14
+    mul-int/2addr v12, v14
 
     add-int/2addr v12, v3
 
@@ -512,7 +512,7 @@
 
     add-int/2addr v10, v11
 
-    mul-int v7, v7, v10
+    mul-int/2addr v7, v10
 
     add-int/2addr v7, v3
 
@@ -661,7 +661,7 @@
 
     add-int/2addr v5, v4
 
-    mul-int v2, v2, v5
+    mul-int/2addr v2, v5
 
     add-int/2addr v2, v3
 
@@ -885,7 +885,7 @@
 
     add-int/2addr v1, v2
 
-    mul-int v0, v0, v1
+    mul-int/2addr v0, v1
 
     return v0
 .end method
@@ -916,7 +916,7 @@
 
     add-int/2addr v1, v2
 
-    mul-int v0, v0, v1
+    mul-int/2addr v0, v1
 
     return v0
 .end method
@@ -1027,7 +1027,7 @@
 
     add-int/2addr v0, v2
 
-    mul-int v1, v1, v0
+    mul-int/2addr v1, v0
 
     iput v1, p0, Lorg/telegram/ui/Components/GroupedPhotosListView;->animateToDX:I
 
@@ -1097,7 +1097,7 @@
 
     sub-int/2addr v0, v1
 
-    const/4 v1, 0x1
+    move v1, v7
 
     goto :goto_0
 
@@ -1109,7 +1109,7 @@
 
     add-int/2addr v0, v1
 
-    const/4 v1, -0x1
+    move v1, v5
 
     :goto_0
     mul-int/lit8 v4, v4, 0x2
@@ -1124,7 +1124,7 @@
     goto :goto_1
 
     :cond_1
-    const/4 v1, 0x0
+    move v1, v6
 
     .line 553
     :goto_1
@@ -1300,7 +1300,7 @@
 .end method
 
 .method public fillList()V
-    .locals 20
+    .locals 19
 
     move-object/from16 v0, p0
 
@@ -1409,7 +1409,7 @@
 
     move v15, v12
 
-    const/4 v12, 0x0
+    move v12, v2
 
     goto/16 :goto_9
 
@@ -1453,27 +1453,27 @@
     .line 133
     iget-wide v14, v0, Lorg/telegram/ui/Components/GroupedPhotosListView;->currentGroupId:J
 
-    cmp-long v16, v12, v14
+    cmp-long v14, v12, v14
 
-    if-eqz v16, :cond_4
+    if-eqz v14, :cond_4
 
     .line 135
     iput-wide v12, v0, Lorg/telegram/ui/Components/GroupedPhotosListView;->currentGroupId:J
 
-    const/4 v12, 0x1
+    move v12, v10
 
     goto :goto_0
 
     :cond_4
-    const/4 v12, 0x0
+    move v12, v2
 
     .line 137
     :goto_0
     iget-wide v13, v0, Lorg/telegram/ui/Components/GroupedPhotosListView;->currentGroupId:J
 
-    cmp-long v15, v13, v8
+    cmp-long v13, v13, v8
 
-    if-eqz v15, :cond_a
+    if-eqz v13, :cond_a
 
     .line 138
     iput-boolean v10, v0, Lorg/telegram/ui/Components/GroupedPhotosListView;->hasPhotos:Z
@@ -1491,7 +1491,7 @@
 
     move v14, v1
 
-    const/4 v15, 0x0
+    move v15, v2
 
     :goto_1
     if-ge v14, v13, :cond_6
@@ -1514,9 +1514,9 @@
 
     iget-wide v10, v0, Lorg/telegram/ui/Components/GroupedPhotosListView;->currentGroupId:J
 
-    cmp-long v19, v16, v10
+    cmp-long v10, v16, v10
 
-    if-nez v19, :cond_7
+    if-nez v10, :cond_7
 
     goto :goto_2
 
@@ -1568,9 +1568,9 @@
 
     iget-wide v2, v0, Lorg/telegram/ui/Components/GroupedPhotosListView;->currentGroupId:J
 
-    cmp-long v19, v13, v2
+    cmp-long v2, v13, v2
 
-    if-nez v19, :cond_b
+    if-nez v2, :cond_b
 
     goto :goto_4
 
@@ -1654,9 +1654,9 @@
     :goto_6
     iget-wide v2, v0, Lorg/telegram/ui/Components/GroupedPhotosListView;->currentGroupId:J
 
-    cmp-long v10, v2, v8
+    cmp-long v2, v2, v8
 
-    if-eqz v10, :cond_11
+    if-eqz v2, :cond_11
 
     const/4 v2, 0x1
 
@@ -1689,9 +1689,9 @@
 
     iget-wide v8, v0, Lorg/telegram/ui/Components/GroupedPhotosListView;->currentGroupId:J
 
-    cmp-long v15, v13, v8
+    cmp-long v8, v13, v8
 
-    if-nez v15, :cond_e
+    if-nez v8, :cond_e
 
     add-int/lit8 v3, v3, 0x1
 
@@ -1721,9 +1721,9 @@
 
     iget-wide v13, v0, Lorg/telegram/ui/Components/GroupedPhotosListView;->currentGroupId:J
 
-    cmp-long v10, v8, v13
+    cmp-long v8, v8, v13
 
-    if-nez v10, :cond_f
+    if-nez v8, :cond_f
 
     add-int/lit8 v3, v3, 0x1
 
@@ -1820,7 +1820,7 @@
     .line 197
     iget v2, v0, Lorg/telegram/ui/Components/GroupedPhotosListView;->drawAlpha:F
 
-    mul-float v2, v2, v3
+    mul-float/2addr v2, v3
 
     float-to-long v2, v2
 
@@ -1900,7 +1900,7 @@
 
     sub-float/2addr v7, v8
 
-    mul-float v7, v7, v3
+    mul-float/2addr v7, v3
 
     float-to-long v7, v7
 
@@ -2006,7 +2006,7 @@
 
     add-int/2addr v3, v8
 
-    mul-int v7, v7, v3
+    mul-int/2addr v7, v3
 
     iput v7, v0, Lorg/telegram/ui/Components/GroupedPhotosListView;->animateToDX:I
 
@@ -2046,7 +2046,7 @@
 
     add-int/2addr v9, v10
 
-    mul-int v7, v7, v9
+    mul-int/2addr v7, v9
 
     invoke-direct {v0, v8, v7}, Lorg/telegram/ui/Components/GroupedPhotosListView;->fillImages(ZI)V
 
@@ -2188,9 +2188,9 @@
 
     iget-wide v12, v0, Lorg/telegram/ui/Components/GroupedPhotosListView;->currentGroupId:J
 
-    cmp-long v14, v10, v12
+    cmp-long v10, v10, v12
 
-    if-nez v14, :cond_21
+    if-nez v10, :cond_21
 
     .line 290
     :cond_20
@@ -2320,9 +2320,9 @@
 
     const-wide/16 v8, 0x0
 
-    cmp-long v6, v3, v8
+    cmp-long v3, v3, v8
 
-    if-eqz v6, :cond_25
+    if-eqz v3, :cond_25
 
     .line 313
     invoke-interface {v5}, Ljava/util/List;->size()I
@@ -2348,9 +2348,9 @@
 
     iget-wide v10, v0, Lorg/telegram/ui/Components/GroupedPhotosListView;->currentGroupId:J
 
-    cmp-long v12, v8, v10
+    cmp-long v8, v8, v10
 
-    if-nez v12, :cond_24
+    if-nez v8, :cond_24
 
     .line 316
     iget-object v8, v0, Lorg/telegram/ui/Components/GroupedPhotosListView;->currentObjects:Ljava/util/ArrayList;
@@ -2407,9 +2407,9 @@
 
     iget-wide v8, v0, Lorg/telegram/ui/Components/GroupedPhotosListView;->currentGroupId:J
 
-    cmp-long v6, v3, v8
+    cmp-long v3, v3, v8
 
-    if-nez v6, :cond_25
+    if-nez v3, :cond_25
 
     .line 328
     iget-object v3, v0, Lorg/telegram/ui/Components/GroupedPhotosListView;->currentObjects:Ljava/util/ArrayList;
@@ -2617,7 +2617,7 @@
 
     const/high16 v5, 0x42fe0000    # 127.0f
 
-    mul-float v1, v1, v5
+    mul-float/2addr v1, v5
 
     float-to-int v1, v1
 
@@ -2675,7 +2675,7 @@
 
     const/high16 v6, 0x40000000    # 2.0f
 
-    mul-float v5, v5, v6
+    mul-float/2addr v5, v6
 
     float-to-int v5, v5
 
@@ -2721,7 +2721,7 @@
 
     div-float/2addr v10, v7
 
-    mul-float v9, v9, v10
+    mul-float/2addr v9, v10
 
     float-to-int v7, v9
 
@@ -2743,7 +2743,7 @@
 
     const/4 v8, 0x2
 
-    mul-int/lit8 v6, v6, 0x2
+    mul-int/2addr v6, v8
 
     int-to-float v6, v6
 
@@ -2761,7 +2761,7 @@
 
     int-to-float v7, v7
 
-    mul-float v7, v7, v9
+    mul-float/2addr v7, v9
 
     float-to-int v7, v7
 
@@ -2817,7 +2817,7 @@
 
     div-float/2addr v13, v7
 
-    mul-float v12, v12, v13
+    mul-float/2addr v12, v13
 
     float-to-int v7, v12
 
@@ -2846,7 +2846,7 @@
     .line 705
     iget v7, v0, Lorg/telegram/ui/Components/GroupedPhotosListView;->nextItemProgress:F
 
-    mul-float v6, v6, v7
+    mul-float/2addr v6, v7
 
     float-to-int v6, v6
 
@@ -2863,7 +2863,7 @@
 
     int-to-float v9, v9
 
-    mul-float v9, v9, v7
+    mul-float/2addr v9, v7
 
     iget v13, v0, Lorg/telegram/ui/Components/GroupedPhotosListView;->nextImage:I
 
@@ -2878,12 +2878,12 @@
     goto :goto_3
 
     :cond_7
-    const/4 v13, 0x1
+    move v13, v15
 
     :goto_3
     int-to-float v13, v13
 
-    mul-float v9, v9, v13
+    mul-float/2addr v9, v13
 
     add-float/2addr v2, v9
 
@@ -2893,7 +2893,7 @@
 
     int-to-float v5, v5
 
-    mul-float v5, v5, v7
+    mul-float/2addr v5, v7
 
     float-to-int v5, v5
 
@@ -2948,7 +2948,7 @@
     .line 715
     invoke-virtual {v13, v7}, Lorg/telegram/messenger/ImageReceiver;->setImageWidth(I)V
 
-    const/4 v4, 0x2
+    move v4, v8
 
     goto/16 :goto_6
 
@@ -2979,7 +2979,7 @@
 
     add-int/2addr v7, v4
 
-    mul-int v3, v3, v7
+    mul-int/2addr v3, v7
 
     add-int/2addr v3, v5
 
@@ -3009,7 +3009,7 @@
 
     add-int/2addr v4, v7
 
-    mul-int v3, v3, v4
+    mul-int/2addr v3, v4
 
     add-int/2addr v3, v5
 
@@ -3043,7 +3043,7 @@
 
     add-int/2addr v7, v8
 
-    mul-int v4, v4, v7
+    mul-int/2addr v4, v7
 
     add-int/2addr v3, v4
 
@@ -3071,7 +3071,7 @@
 
     add-int/2addr v4, v7
 
-    mul-int v3, v3, v4
+    mul-int/2addr v3, v4
 
     add-int/2addr v3, v5
 
@@ -3107,7 +3107,7 @@
 
     add-int/2addr v7, v8
 
-    mul-int v4, v4, v7
+    mul-int/2addr v4, v7
 
     add-int/2addr v3, v4
 
@@ -3143,7 +3143,7 @@
 
     add-int/2addr v7, v8
 
-    mul-int v4, v4, v7
+    mul-int/2addr v4, v7
 
     add-int/2addr v3, v4
 
@@ -3213,7 +3213,7 @@
 
     add-int/lit8 v9, v9, 0x1
 
-    const/4 v8, 0x2
+    move v8, v4
 
     goto/16 :goto_4
 
@@ -3268,7 +3268,7 @@
     goto :goto_7
 
     :cond_11
-    const/high16 v7, 0x43480000    # 200.0f
+    move v7, v2
 
     :goto_7
     div-float v7, v6, v7
@@ -3317,7 +3317,7 @@
 
     int-to-float v6, v6
 
-    mul-float v5, v5, v6
+    mul-float/2addr v5, v6
 
     float-to-double v5, v5
 
@@ -3385,7 +3385,7 @@
 
     int-to-float v6, v6
 
-    mul-float v5, v5, v6
+    mul-float/2addr v5, v6
 
     float-to-double v5, v5
 
@@ -3418,7 +3418,7 @@
 
     int-to-float v5, v5
 
-    mul-float v1, v1, v5
+    mul-float/2addr v1, v5
 
     float-to-double v5, v1
 
@@ -3740,7 +3740,7 @@
 
     const/4 v5, 0x0
 
-    const/4 v6, 0x0
+    move v6, v5
 
     :goto_0
     if-ge v6, v4, :cond_8
@@ -3976,7 +3976,7 @@
     if-eqz v0, :cond_2
 
     :cond_1
-    const/4 v1, 0x1
+    move v1, v2
 
     .line 639
     :cond_2
@@ -4114,16 +4114,16 @@
     :cond_0
     const/4 v0, 0x0
 
-    const/4 v1, 0x1
+    cmpl-float v1, p1, v0
 
-    cmpl-float v2, p1, v0
+    const/4 v2, 0x1
 
-    if-lez v2, :cond_1
+    if-lez v1, :cond_1
 
     .line 353
     iget v3, p0, Lorg/telegram/ui/Components/GroupedPhotosListView;->currentImage:I
 
-    sub-int/2addr v3, v1
+    sub-int/2addr v3, v2
 
     iput v3, p0, Lorg/telegram/ui/Components/GroupedPhotosListView;->nextImage:I
 
@@ -4133,7 +4133,7 @@
     :cond_1
     iget v3, p0, Lorg/telegram/ui/Components/GroupedPhotosListView;->currentImage:I
 
-    add-int/2addr v3, v1
+    add-int/2addr v3, v2
 
     iput v3, p0, Lorg/telegram/ui/Components/GroupedPhotosListView;->nextImage:I
 
@@ -4176,9 +4176,9 @@
 
     iput v4, p0, Lorg/telegram/ui/Components/GroupedPhotosListView;->nextItemProgress:F
 
-    if-eqz v2, :cond_3
+    if-eqz v1, :cond_3
 
-    const/4 v3, 0x1
+    move v3, v2
 
     goto :goto_2
 
@@ -4213,12 +4213,12 @@
 
     move-result v3
 
-    sub-int/2addr v3, v1
+    sub-int/2addr v3, v2
 
     if-eq v0, v3, :cond_6
 
     :cond_4
-    if-lez v2, :cond_5
+    if-lez v1, :cond_5
 
     iget v0, p0, Lorg/telegram/ui/Components/GroupedPhotosListView;->currentImage:I
 
@@ -4230,20 +4230,20 @@
     :cond_5
     iget v0, p0, Lorg/telegram/ui/Components/GroupedPhotosListView;->itemWidth:I
 
-    iget v2, p0, Lorg/telegram/ui/Components/GroupedPhotosListView;->itemSpacing:I
+    iget v1, p0, Lorg/telegram/ui/Components/GroupedPhotosListView;->itemSpacing:I
 
-    add-int/2addr v0, v2
+    add-int/2addr v0, v1
 
     int-to-float v0, v0
 
-    mul-float p1, p1, v0
+    mul-float/2addr p1, v0
 
     float-to-int p1, p1
 
     iput p1, p0, Lorg/telegram/ui/Components/GroupedPhotosListView;->drawDx:I
 
     .line 369
-    invoke-direct {p0, v1, p1}, Lorg/telegram/ui/Components/GroupedPhotosListView;->fillImages(ZI)V
+    invoke-direct {p0, v2, p1}, Lorg/telegram/ui/Components/GroupedPhotosListView;->fillImages(ZI)V
 
     :cond_6
     :goto_3

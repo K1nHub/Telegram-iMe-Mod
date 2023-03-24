@@ -125,7 +125,7 @@
     goto :goto_0
 
     :cond_1
-    const/4 v0, 0x0
+    move v0, v2
 
     :goto_0
     return v0
@@ -183,14 +183,14 @@
 
     xor-int/2addr v0, v1
 
-    mul-int v0, v0, v1
+    mul-int/2addr v0, v1
 
     .line 71
     iget v2, p0, Lcom/google/firebase/crashlytics/internal/model/AutoValue_CrashlyticsReport_Session_Event_Application_Execution_Thread;->importance:I
 
     xor-int/2addr v0, v2
 
-    mul-int v0, v0, v1
+    mul-int/2addr v0, v1
 
     .line 73
     iget-object v1, p0, Lcom/google/firebase/crashlytics/internal/model/AutoValue_CrashlyticsReport_Session_Event_Application_Execution_Thread;->frames:Lcom/google/firebase/crashlytics/internal/model/ImmutableList;

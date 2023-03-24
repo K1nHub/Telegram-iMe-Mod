@@ -152,12 +152,12 @@
 
     if-eqz v1, :cond_3
 
-    const/4 v4, 0x1
+    move v4, v3
 
     goto :goto_0
 
     :cond_3
-    const/4 v4, 0x0
+    move v4, v2
 
     :goto_0
     add-int/2addr v4, v3
@@ -179,7 +179,7 @@
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    const/4 v1, 0x0
+    move v1, v2
 
     .line 772
     :goto_1
@@ -196,7 +196,7 @@
 
     check-cast v3, Lorg/telegram/messenger/MediaController$AudioEntry;
 
-    const/4 v6, 0x0
+    move v6, v2
 
     :goto_2
     if-ge v6, v4, :cond_8
@@ -221,7 +221,7 @@
     goto :goto_3
 
     :cond_5
-    const/4 v8, 0x0
+    move v8, v2
 
     :goto_3
     if-nez v8, :cond_6
@@ -560,12 +560,12 @@
 
     if-eq p2, v2, :cond_0
 
-    const/4 p2, 0x1
+    move p2, v3
 
     goto :goto_0
 
     :cond_0
-    const/4 p2, 0x0
+    move p2, v4
 
     :goto_0
     invoke-virtual {p1, v1, p2}, Lorg/telegram/ui/Cells/SharedAudioCell;->setMessageObject(Lorg/telegram/messenger/MessageObject;Z)V
@@ -588,7 +588,7 @@
     goto :goto_1
 
     :cond_1
-    const/4 v3, 0x0
+    move v3, v4
 
     :goto_1
     invoke-virtual {p1, v3, v4}, Lorg/telegram/ui/Cells/SharedAudioCell;->setChecked(ZZ)V

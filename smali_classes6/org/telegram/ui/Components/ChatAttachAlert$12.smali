@@ -94,13 +94,13 @@
 
     const v4, 0x3ed70a3d    # 0.42f
 
-    mul-float v3, v3, v4
+    mul-float/2addr v3, v4
 
     const v4, 0x3f147ae1    # 0.58f
 
     add-float/2addr v3, v4
 
-    mul-float v0, v0, v3
+    mul-float/2addr v0, v3
 
     float-to-int v0, v0
 
@@ -151,7 +151,7 @@
 
     check-cast v0, [Landroid/text/style/ImageSpan;
 
-    const/4 v2, 0x0
+    move v2, v1
 
     .line 2560
     :goto_0
@@ -252,7 +252,7 @@
 
     if-ge p1, v7, :cond_2
 
-    const/16 p1, -0x270f
+    move p1, v7
 
     .line 2573
     :cond_2
@@ -274,12 +274,12 @@
 
     if-nez v8, :cond_3
 
-    const/4 v8, 0x1
+    move v8, v5
 
     goto :goto_1
 
     :cond_3
-    const/4 v8, 0x0
+    move v8, v1
 
     :goto_1
     invoke-virtual {v7, p1, v8}, Lorg/telegram/ui/Components/NumberTextView;->setNumber(IZ)V
@@ -401,7 +401,7 @@
 
     invoke-virtual {p1, v0}, Lorg/telegram/ui/Components/NumberTextView;->setTextColor(I)V
 
-    const/4 p1, 0x0
+    move p1, v1
 
     goto :goto_3
 
@@ -460,7 +460,7 @@
     invoke-virtual {p1, v0}, Landroid/view/ViewPropertyAnimator;->setListener(Landroid/animation/Animator$AnimatorListener;)Landroid/view/ViewPropertyAnimator;
 
     :goto_2
-    const/4 p1, 0x1
+    move p1, v5
 
     .line 2597
     :goto_3
@@ -501,19 +501,19 @@
 
     if-eqz v2, :cond_8
 
-    const/4 v3, 0x0
+    move v3, v4
 
     goto :goto_4
 
     :cond_8
-    const/high16 v3, 0x3f800000    # 1.0f
+    move v3, v6
 
     :goto_4
     aput v3, v0, v1
 
     if-eqz v2, :cond_9
 
-    const/high16 v4, 0x3f800000    # 1.0f
+    move v4, v6
 
     :cond_9
     aput v4, v0, v5

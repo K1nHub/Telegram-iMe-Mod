@@ -87,7 +87,7 @@
 
     if-lt v0, v2, :cond_0
 
-    const/4 v0, 0x1
+    move v0, v1
 
     goto :goto_0
 
@@ -561,7 +561,7 @@
 
     int-to-float v3, v3
 
-    mul-float v4, v4, v3
+    mul-float/2addr v4, v3
 
     invoke-virtual {v2, v4}, Landroid/view/View;->setTranslationY(F)V
 
@@ -685,9 +685,9 @@
 
     const/4 v4, 0x0
 
-    const/4 v5, 0x0
+    move v5, v4
 
-    const/4 v6, 0x0
+    move v6, v5
 
     :goto_0
     if-ge v5, v3, :cond_2
@@ -985,7 +985,7 @@
 .end method
 
 .method public dismiss(Z)V
-    .locals 11
+    .locals 10
 
     const/4 v0, 0x0
 
@@ -1041,9 +1041,9 @@
 
     check-cast v1, Landroid/view/ViewGroup;
 
-    move-object v4, v2
+    move v3, v0
 
-    const/4 v3, 0x0
+    move-object v4, v2
 
     .line 986
     :goto_0
@@ -1103,7 +1103,7 @@
 
     move-result v3
 
-    const/4 v5, 0x0
+    move v5, v0
 
     :goto_1
     if-ge v5, v3, :cond_4
@@ -1150,15 +1150,15 @@
 
     const-wide/16 v7, 0x0
 
-    const/4 v9, 0x2
+    cmp-long v5, v5, v7
 
-    cmp-long v10, v5, v7
+    const/4 v6, 0x2
 
-    if-lez v10, :cond_6
+    if-lez v5, :cond_6
 
     new-array p1, p1, [Landroid/animation/Animator;
 
-    new-array v1, v9, [F
+    new-array v1, v6, [F
 
     .line 1003
     fill-array-data v1, :array_0
@@ -1184,7 +1184,7 @@
     :cond_6
     iget-boolean v5, p0, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;->scaleOut:Z
 
-    const/4 v6, 0x0
+    const/4 v7, 0x0
 
     if-eqz v5, :cond_7
 
@@ -1195,14 +1195,14 @@
     .line 1006
     sget-object v5, Landroid/view/View;->SCALE_Y:Landroid/util/Property;
 
-    new-array v7, p1, [F
+    new-array v8, p1, [F
 
-    const v8, 0x3f4ccccd    # 0.8f
+    const v9, 0x3f4ccccd    # 0.8f
 
-    aput v8, v7, v0
+    aput v9, v8, v0
 
     .line 1007
-    invoke-static {v1, v5, v7}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
+    invoke-static {v1, v5, v8}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
 
     move-result-object v5
 
@@ -1210,12 +1210,12 @@
 
     sget-object v5, Landroid/view/View;->SCALE_X:Landroid/util/Property;
 
-    new-array v7, p1, [F
+    new-array v8, p1, [F
 
-    aput v8, v7, v0
+    aput v9, v8, v0
 
     .line 1008
-    invoke-static {v1, v5, v7}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
+    invoke-static {v1, v5, v8}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
 
     move-result-object v5
 
@@ -1225,14 +1225,14 @@
 
     new-array p1, p1, [F
 
-    aput v6, p1, v0
+    aput v7, p1, v0
 
     .line 1009
     invoke-static {v1, v5, p1}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
 
     move-result-object p1
 
-    aput-object p1, v4, v9
+    aput-object p1, v4, v6
 
     .line 1006
     invoke-virtual {v3, v4}, Landroid/animation/AnimatorSet;->playTogether([Landroid/animation/Animator;)V
@@ -1249,10 +1249,10 @@
     goto :goto_3
 
     :cond_7
-    new-array v5, v9, [Landroid/animation/Animator;
+    new-array v5, v6, [Landroid/animation/Animator;
 
     .line 1012
-    sget-object v7, Landroid/view/View;->TRANSLATION_Y:Landroid/util/Property;
+    sget-object v6, Landroid/view/View;->TRANSLATION_Y:Landroid/util/Property;
 
     new-array v8, p1, [F
 
@@ -1279,7 +1279,7 @@
 
     aput v4, v8, v0
 
-    invoke-static {v1, v7, v8}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
+    invoke-static {v1, v6, v8}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
 
     move-result-object v4
 
@@ -1287,12 +1287,12 @@
 
     sget-object v4, Landroid/view/View;->ALPHA:Landroid/util/Property;
 
-    new-array v7, p1, [F
+    new-array v6, p1, [F
 
-    aput v6, v7, v0
+    aput v7, v6, v0
 
     .line 1014
-    invoke-static {v1, v4, v7}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
+    invoke-static {v1, v4, v6}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
 
     move-result-object v0
 
@@ -1543,7 +1543,7 @@
     goto :goto_1
 
     :cond_1
-    const/4 v2, 0x0
+    move v2, v3
 
     .line 875
     :goto_0
@@ -1615,9 +1615,9 @@
 
     invoke-virtual {v6}, Ljava/util/HashMap;->clear()V
 
-    const/4 v6, 0x0
+    move v6, v3
 
-    const/4 v7, 0x0
+    move v7, v6
 
     :goto_2
     if-ge v6, v5, :cond_5

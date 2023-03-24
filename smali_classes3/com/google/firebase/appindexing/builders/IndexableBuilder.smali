@@ -40,9 +40,9 @@
 
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    move v1, v0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     .line 5
     :goto_0
@@ -158,7 +158,7 @@
 
     if-eqz v6, :cond_2
 
-    const/16 v4, 0x4e1f
+    move v4, v5
 
     .line 14
     :cond_2

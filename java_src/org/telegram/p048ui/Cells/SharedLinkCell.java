@@ -299,6 +299,9 @@ public class SharedLinkCell extends FrameLayout {
         this.fromInfoLayoutEmojis = AnimatedEmojiSpan.update(0, this, this.fromInfoLayoutEmojis, this.fromInfoLayout);
     }
 
+    /* JADX WARN: Code restructure failed: missing block: B:89:0x0177, code lost:
+        r6 = r0;
+     */
     /* JADX WARN: Removed duplicated region for block: B:133:0x0220  */
     @Override // android.view.View
     /*

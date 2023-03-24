@@ -156,9 +156,9 @@ public final class GoogleMapOptions extends AbstractSafeParcelable implements Re
         }
         TypedArray obtainAttributes = context.getResources().obtainAttributes(attributeSet, C0701R.styleable.MapAttrs);
         int i = C0701R.styleable.MapAttrs_cameraTargetLat;
-        float f = obtainAttributes.hasValue(i) ? obtainAttributes.getFloat(i, BitmapDescriptorFactory.HUE_RED) : BitmapDescriptorFactory.HUE_RED;
+        float f = obtainAttributes.hasValue(i) ? obtainAttributes.getFloat(i, BitmapDescriptorFactory.HUE_RED) : 0.0f;
         int i2 = C0701R.styleable.MapAttrs_cameraTargetLng;
-        LatLng latLng = new LatLng(f, obtainAttributes.hasValue(i2) ? obtainAttributes.getFloat(i2, BitmapDescriptorFactory.HUE_RED) : BitmapDescriptorFactory.HUE_RED);
+        LatLng latLng = new LatLng(f, obtainAttributes.hasValue(i2) ? obtainAttributes.getFloat(i2, BitmapDescriptorFactory.HUE_RED) : 0.0f);
         CameraPosition.Builder builder = CameraPosition.builder();
         builder.target(latLng);
         int i3 = C0701R.styleable.MapAttrs_cameraZoom;

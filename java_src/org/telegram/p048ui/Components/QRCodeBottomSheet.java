@@ -30,7 +30,7 @@ import java.util.HashMap;
 import java.util.concurrent.TimeUnit;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.BuildVars;
-import org.telegram.messenger.C3286R;
+import org.telegram.messenger.C3301R;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.NotificationCenter;
@@ -103,7 +103,7 @@ public class QRCodeBottomSheet extends BottomSheet implements NotificationCenter
 
     public void setupLoginTokenType(LoginTokenCallback loginTokenCallback) {
         this.loginTokenCallback = loginTokenCallback;
-        this.buttonTextView.setText(LocaleController.getString("Close", C3286R.string.Close));
+        this.buttonTextView.setText(LocaleController.getString("Close", C3301R.string.Close));
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
@@ -151,7 +151,7 @@ public class QRCodeBottomSheet extends BottomSheet implements NotificationCenter
         ActionBarMenuItem actionBarMenuItem = new ActionBarMenuItem(getContext(), null, 0, Theme.getColor("key_sheet_other"));
         this.optionsButton = actionBarMenuItem;
         actionBarMenuItem.setSubMenuOpenSide(2);
-        this.optionsButton.setIcon(C3286R.C3288drawable.ic_ab_other);
+        this.optionsButton.setIcon(C3301R.C3303drawable.ic_ab_other);
         this.optionsButton.setBackgroundDrawable(Theme.createSelectorDrawable(Theme.getColor("player_actionBarSelector")));
         this.optionsButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.QRCodeBottomSheet$$ExternalSyntheticLambda1
             @Override // android.view.View.OnClickListener
@@ -159,9 +159,9 @@ public class QRCodeBottomSheet extends BottomSheet implements NotificationCenter
                 QRCodeBottomSheet.this.lambda$addOptionMenu$0(view);
             }
         });
-        this.optionsButton.setContentDescription(LocaleController.getString("AccDescrMoreOptions", C3286R.string.AccDescrMoreOptions));
+        this.optionsButton.setContentDescription(LocaleController.getString("AccDescrMoreOptions", C3301R.string.AccDescrMoreOptions));
         if (getType() == 1) {
-            this.optionsButton.addSubItem(IdFabric$Menu.COPY, C3286R.C3288drawable.msg_copy, LocaleController.getInternalString(C3286R.string.wallet_transaction_details_action_copy_address));
+            this.optionsButton.addSubItem(IdFabric$Menu.COPY, C3301R.C3303drawable.msg_copy, LocaleController.getInternalString(C3301R.string.wallet_transaction_details_action_copy_address));
             this.optionsButton.setDelegate(new ActionBarMenuItem.ActionBarMenuItemDelegate() { // from class: org.telegram.ui.Components.QRCodeBottomSheet$$ExternalSyntheticLambda7
                 @Override // org.telegram.p048ui.ActionBar.ActionBarMenuItem.ActionBarMenuItemDelegate
                 public final void onItemClick(int i) {
@@ -180,7 +180,7 @@ public class QRCodeBottomSheet extends BottomSheet implements NotificationCenter
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$addOptionMenu$1(int i) {
         if (i == IdFabric$Menu.COPY) {
-            ContextExtKt.copyToClipboard(this.address, LocaleController.getString("TextCopied", C3286R.string.TextCopied));
+            ContextExtKt.copyToClipboard(this.address, LocaleController.getString("TextCopied", C3301R.string.TextCopied));
         }
     }
 
@@ -308,6 +308,7 @@ public class QRCodeBottomSheet extends BottomSheet implements NotificationCenter
         }
         LinearLayout linearLayout = new LinearLayout(context);
         linearLayout.setOrientation(1);
+        int i2 = 16;
         linearLayout.setPadding(0, AndroidUtilities.m50dp(16), 0, 0);
         Bitmap createQR = createQR(context, str2, this.qrCode);
         this.qrCode = createQR;
@@ -323,16 +324,16 @@ public class QRCodeBottomSheet extends BottomSheet implements NotificationCenter
             float lastX;
 
             @Override // android.widget.FrameLayout, android.view.View
-            protected void onMeasure(int i2, int i3) {
-                super.onMeasure(i2, i3);
+            protected void onMeasure(int i3, int i4) {
+                super.onMeasure(i3, i4);
                 float measuredHeight = (QRCodeBottomSheet.this.imageSize / 768.0f) * imageView.getMeasuredHeight();
                 if (this.lastX != measuredHeight) {
                     this.lastX = measuredHeight;
                     ViewGroup.LayoutParams layoutParams = QRCodeBottomSheet.this.iconImage.getLayoutParams();
-                    int i4 = (int) measuredHeight;
-                    QRCodeBottomSheet.this.iconImage.getLayoutParams().width = i4;
-                    layoutParams.height = i4;
-                    super.onMeasure(i2, i3);
+                    int i5 = (int) measuredHeight;
+                    QRCodeBottomSheet.this.iconImage.getLayoutParams().width = i5;
+                    layoutParams.height = i5;
+                    super.onMeasure(i3, i4);
                 }
             }
         };
@@ -349,14 +350,17 @@ public class QRCodeBottomSheet extends BottomSheet implements NotificationCenter
             textView.setTextSize(1, 17.0f);
             textView.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MONO));
         }
-        linearLayout.addView(textView, LayoutHelper.createFrame(-1, -2, 0, 40, (getType() == 1 || getType() == 2) ? 16 : 8, 40, 8));
+        if (getType() != 1 && getType() != 2) {
+            i2 = 8;
+        }
+        linearLayout.addView(textView, LayoutHelper.createFrame(-1, -2, 0, 40, i2, 40, 8));
         TextView textView2 = new TextView(context);
         this.buttonTextView = textView2;
         textView2.setPadding(AndroidUtilities.m50dp(34), 0, AndroidUtilities.m50dp(34), 0);
         textView2.setGravity(17);
         textView2.setTextSize(1, 14.0f);
         textView2.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
-        textView2.setText(LocaleController.getString("ShareQrCode", C3286R.string.ShareQrCode));
+        textView2.setText(LocaleController.getString("ShareQrCode", C3301R.string.ShareQrCode));
         textView2.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.QRCodeBottomSheet$$ExternalSyntheticLambda2
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
@@ -370,7 +374,7 @@ public class QRCodeBottomSheet extends BottomSheet implements NotificationCenter
             textView3.setPadding(AndroidUtilities.m50dp(34), 0, AndroidUtilities.m50dp(34), 0);
             this.button2TextView.setGravity(17);
             this.button2TextView.setTextSize(1, 14.0f);
-            this.button2TextView.setText(LocaleController.getString("ShareLink", C3286R.string.ShareLink));
+            this.button2TextView.setText(LocaleController.getString("ShareLink", C3301R.string.ShareLink));
             this.button2TextView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.QRCodeBottomSheet$$ExternalSyntheticLambda0
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
@@ -416,7 +420,7 @@ public class QRCodeBottomSheet extends BottomSheet implements NotificationCenter
         Intent intent = new Intent("android.intent.action.SEND");
         intent.setType("text/plain");
         intent.putExtra("android.intent.extra.TEXT", str);
-        Intent createChooser = Intent.createChooser(intent, LocaleController.getString("ShareLink", C3286R.string.ShareLink));
+        Intent createChooser = Intent.createChooser(intent, LocaleController.getString("ShareLink", C3301R.string.ShareLink));
         createChooser.setFlags(268435456);
         context.startActivity(createChooser);
     }

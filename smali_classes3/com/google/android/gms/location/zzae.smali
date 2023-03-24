@@ -27,18 +27,18 @@
 
     if-ne p0, v0, :cond_0
 
-    const/16 p0, 0x69
+    move p0, v0
 
     goto :goto_0
 
     :cond_0
-    const/4 v0, 0x0
+    move v0, v1
 
     goto :goto_1
 
     :cond_1
     :goto_0
-    const/4 v0, 0x1
+    move v0, v2
 
     :goto_1
     new-array v2, v2, [Ljava/lang/Object;

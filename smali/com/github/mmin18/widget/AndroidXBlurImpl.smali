@@ -61,12 +61,12 @@
 
     if-eqz p0, :cond_0
 
-    const/4 p0, 0x1
+    move p0, v1
 
     goto :goto_0
 
     :cond_0
-    const/4 p0, 0x0
+    move p0, v2
 
     :goto_0
     invoke-static {p0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
@@ -86,7 +86,7 @@
     goto :goto_1
 
     :cond_2
-    const/4 v1, 0x0
+    move v1, v2
 
     :goto_1
     return v1

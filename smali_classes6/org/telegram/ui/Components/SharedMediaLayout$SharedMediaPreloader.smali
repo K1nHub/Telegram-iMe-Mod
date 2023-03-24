@@ -216,7 +216,7 @@
 
     const/4 p1, 0x0
 
-    const/4 p2, 0x0
+    move p2, p1
 
     .line 690
     :goto_1
@@ -405,9 +405,9 @@
 
     const-wide/16 v2, 0x0
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-eqz v4, :cond_0
+    if-eqz v0, :cond_0
 
     .line 1026
     iget-object v0, p0, Lorg/telegram/ui/Components/SharedMediaLayout$SharedMediaPreloader;->parentFragment:Lorg/telegram/ui/ActionBar/BaseFragment;
@@ -544,15 +544,15 @@
 
     iget-wide v10, v0, Lorg/telegram/ui/Components/SharedMediaLayout$SharedMediaPreloader;->dialogId:J
 
-    cmp-long v12, v1, v10
+    cmp-long v10, v1, v10
 
-    if-eqz v12, :cond_0
+    if-eqz v10, :cond_0
 
     iget-wide v10, v0, Lorg/telegram/ui/Components/SharedMediaLayout$SharedMediaPreloader;->mergeDialogId:J
 
-    cmp-long v12, v1, v10
+    cmp-long v10, v1, v10
 
-    if-nez v12, :cond_43
+    if-nez v10, :cond_43
 
     .line 747
     :cond_0
@@ -605,7 +605,7 @@
     iput-object v14, v0, Lorg/telegram/ui/Components/SharedMediaLayout$SharedMediaPreloader;->mediaMergeCount:[I
 
     :goto_0
-    const/4 v7, 0x0
+    move v7, v9
 
     .line 761
     :goto_1
@@ -672,9 +672,9 @@
     :goto_2
     iget-wide v10, v0, Lorg/telegram/ui/Components/SharedMediaLayout$SharedMediaPreloader;->dialogId:J
 
-    cmp-long v12, v1, v10
+    cmp-long v10, v1, v10
 
-    if-nez v12, :cond_9
+    if-nez v10, :cond_9
 
     iget-object v10, v0, Lorg/telegram/ui/Components/SharedMediaLayout$SharedMediaPreloader;->lastMediaCount:[I
 
@@ -703,7 +703,7 @@
 
     if-ne v11, v8, :cond_6
 
-    const/16 v16, 0x6
+    move/from16 v16, v5
 
     goto :goto_3
 
@@ -715,7 +715,7 @@
 
     if-ne v10, v6, :cond_7
 
-    const/16 v16, 0x7
+    move/from16 v16, v4
 
     goto :goto_3
 
@@ -738,16 +738,14 @@
 
     const/16 v11, 0x1e
 
-    const/16 v13, 0x1e
-
     goto :goto_4
 
     :cond_8
     const/16 v11, 0x14
 
-    const/16 v13, 0x14
-
     :goto_4
+    move v13, v11
+
     const/16 v17, 0x0
 
     const/16 v18, 0x0
@@ -880,9 +878,9 @@
 
     int-to-long v10, v5
 
-    cmp-long v5, v10, v3
+    cmp-long v3, v10, v3
 
-    if-nez v5, :cond_43
+    if-nez v3, :cond_43
 
     .line 791
     aget-object v3, p3, v7
@@ -917,9 +915,9 @@
     .line 798
     iget-wide v5, v0, Lorg/telegram/ui/Components/SharedMediaLayout$SharedMediaPreloader;->dialogId:J
 
-    cmp-long v7, v1, v5
+    cmp-long v1, v1, v5
 
-    if-nez v7, :cond_e
+    if-nez v1, :cond_e
 
     .line 799
     iget-object v1, v0, Lorg/telegram/ui/Components/SharedMediaLayout$SharedMediaPreloader;->mediaCount:[I
@@ -1047,9 +1045,9 @@
 
     move-result-wide v4
 
-    cmp-long v10, v1, v4
+    cmp-long v1, v1, v4
 
-    if-nez v10, :cond_43
+    if-nez v1, :cond_43
 
     .line 820
     iget-wide v1, v0, Lorg/telegram/ui/Components/SharedMediaLayout$SharedMediaPreloader;->dialogId:J
@@ -1063,7 +1061,7 @@
 
     check-cast v2, Ljava/util/ArrayList;
 
-    const/4 v4, 0x0
+    move v4, v9
 
     .line 822
     :goto_a
@@ -1210,7 +1208,7 @@
     iput v11, v5, Lorg/telegram/ui/Components/SharedMediaLayout$SharedMediaData;->totalCount:I
 
     :cond_1a
-    const/4 v5, 0x0
+    move v5, v9
 
     .line 851
     :goto_b
@@ -1414,11 +1412,11 @@
     .line 882
     iget-wide v10, v0, Lorg/telegram/ui/Components/SharedMediaLayout$SharedMediaPreloader;->dialogId:J
 
-    cmp-long v12, v1, v10
+    cmp-long v1, v1, v10
 
-    if-nez v12, :cond_22
+    if-nez v1, :cond_22
 
-    const/4 v8, 0x0
+    move v8, v9
 
     :cond_22
     if-eqz v3, :cond_23
@@ -1440,7 +1438,7 @@
     return-void
 
     :cond_24
-    const/4 v3, 0x0
+    move v3, v9
 
     .line 889
     :cond_25
@@ -1468,7 +1466,7 @@
     invoke-virtual {v1, v8, v2}, Lorg/telegram/ui/Components/SharedMediaLayout$SharedMediaData;->setEndReached(IZ)V
 
     :cond_26
-    const/4 v1, 0x0
+    move v1, v9
 
     .line 892
     :goto_e
@@ -1575,23 +1573,23 @@
     .line 910
     iget-wide v6, v0, Lorg/telegram/ui/Components/SharedMediaLayout$SharedMediaPreloader;->mergeDialogId:J
 
-    cmp-long v10, v6, v4
+    cmp-long v4, v6, v4
 
-    if-nez v10, :cond_2c
+    if-nez v4, :cond_2c
 
     :cond_2a
     iget-wide v3, v3, Lorg/telegram/tgnet/TLRPC$Chat;->id:J
 
-    cmp-long v5, v1, v3
+    cmp-long v1, v1, v3
 
-    if-eqz v5, :cond_2c
+    if-eqz v1, :cond_2c
 
     return-void
 
     :cond_2b
-    cmp-long v3, v1, v4
+    cmp-long v1, v1, v4
 
-    if-eqz v3, :cond_2c
+    if-eqz v1, :cond_2c
 
     return-void
 
@@ -1606,14 +1604,14 @@
 
     move-result v2
 
-    const/4 v3, 0x0
+    move v3, v9
 
-    const/4 v4, 0x0
+    move v4, v3
 
     :goto_10
     if-ge v3, v2, :cond_32
 
-    const/4 v5, 0x0
+    move v5, v9
 
     .line 921
     :goto_11
@@ -1701,7 +1699,7 @@
 
     :cond_2f
     :goto_12
-    const/4 v4, 0x1
+    move v4, v8
 
     :cond_30
     add-int/lit8 v5, v5, 0x1
@@ -1716,7 +1714,7 @@
     :cond_32
     if-eqz v4, :cond_36
 
-    const/4 v1, 0x0
+    move v1, v9
 
     .line 938
     :goto_13
@@ -1840,23 +1838,23 @@
 
     iget-wide v6, v0, Lorg/telegram/ui/Components/SharedMediaLayout$SharedMediaPreloader;->mergeDialogId:J
 
-    cmp-long v10, v1, v6
+    cmp-long v6, v1, v6
 
-    if-eqz v10, :cond_38
+    if-eqz v6, :cond_38
 
     return-void
 
     :cond_38
-    cmp-long v6, v1, v4
+    cmp-long v1, v1, v4
 
-    if-nez v6, :cond_39
+    if-nez v1, :cond_39
 
-    const/4 v1, 0x0
+    move v1, v9
 
     goto :goto_16
 
     :cond_39
-    const/4 v1, 0x1
+    move v1, v8
 
     .line 958
     :goto_16
@@ -1869,7 +1867,7 @@
 
     move-result v4
 
-    const/4 v5, 0x0
+    move v5, v9
 
     :goto_17
     if-ge v5, v4, :cond_43
@@ -1910,7 +1908,7 @@
     goto :goto_1a
 
     :cond_3a
-    const/4 v10, 0x0
+    move v10, v9
 
     .line 967
     :goto_18
@@ -2053,17 +2051,17 @@
     .line 995
     iget-wide v2, v0, Lorg/telegram/ui/Components/SharedMediaLayout$SharedMediaPreloader;->dialogId:J
 
-    cmp-long v6, v2, v4
+    cmp-long v4, v2, v4
 
-    if-gez v6, :cond_43
+    if-gez v4, :cond_43
 
     iget-wide v4, v1, Lorg/telegram/tgnet/TLRPC$ChatFull;->id:J
 
     neg-long v2, v2
 
-    cmp-long v6, v4, v2
+    cmp-long v2, v4, v2
 
-    if-nez v6, :cond_43
+    if-nez v2, :cond_43
 
     .line 996
     invoke-direct {v0, v1}, Lorg/telegram/ui/Components/SharedMediaLayout$SharedMediaPreloader;->setChatInfo(Lorg/telegram/tgnet/TLRPC$ChatFull;)V
@@ -2081,7 +2079,7 @@
 
     invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
 
-    const/4 v2, 0x0
+    move v2, v9
 
     .line 1000
     :goto_1b

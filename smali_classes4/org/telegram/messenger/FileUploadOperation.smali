@@ -224,9 +224,9 @@
 
     const-wide/16 p1, 0x0
 
-    cmp-long p6, p4, p1
+    cmp-long p1, p4, p1
 
-    if-eqz p6, :cond_0
+    if-eqz p1, :cond_0
 
     if-nez p3, :cond_0
 
@@ -590,16 +590,16 @@
 .end method
 
 .method private synthetic lambda$checkNewDataAvailable$3(JJ)V
-    .locals 5
+    .locals 4
 
     .line 203
     iget-wide v0, p0, Lorg/telegram/messenger/FileUploadOperation;->estimatedSize:J
 
     const-wide/16 v2, 0x0
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-eqz v4, :cond_0
+    if-eqz v0, :cond_0
 
     cmp-long v0, p1, v2
 
@@ -692,7 +692,7 @@
     :cond_0
     const/4 p1, 0x0
 
-    const/4 v0, 0x0
+    move v0, p1
 
     .line 136
     :goto_0
@@ -1138,11 +1138,11 @@
 
     move-object/from16 v1, p0
 
+    move v15, v4
+
     const/high16 v11, 0x2000000
 
     const/high16 v13, 0x3000000
-
-    const/4 v15, 0x1
 
     move-wide/from16 v4, v19
 
@@ -1455,9 +1455,9 @@
     .line 607
     iget-wide v0, v6, Lorg/telegram/messenger/FileUploadOperation;->estimatedSize:J
 
-    cmp-long v2, v0, v17
+    cmp-long v0, v0, v17
 
-    if-nez v2, :cond_1d
+    if-nez v0, :cond_1d
 
     iget-boolean v0, v6, Lorg/telegram/messenger/FileUploadOperation;->uploadFirstPartLater:Z
 
@@ -1542,9 +1542,9 @@
 
     rem-long v3, v0, v3
 
-    cmp-long v5, v3, v17
+    cmp-long v3, v3, v17
 
-    if-eqz v5, :cond_18
+    if-eqz v3, :cond_18
 
     :cond_17
     if-nez v2, :cond_1c
@@ -1814,7 +1814,7 @@
     :try_start_2
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
-    const/4 v0, 0x0
+    move v0, v13
 
     :goto_0
     if-nez v0, :cond_1c
@@ -1922,7 +1922,7 @@
 
     const-wide/16 v12, 0x400
 
-    mul-long v7, v7, v12
+    mul-long/2addr v7, v12
 
     add-long/2addr v14, v7
 
@@ -1947,7 +1947,7 @@
 
     if-eqz v0, :cond_6
 
-    const/16 v0, 0x40
+    move v0, v7
 
     .line 295
     :goto_3
@@ -1969,7 +1969,7 @@
 
     if-eqz v0, :cond_7
 
-    const/16 v0, 0x20
+    move v0, v6
 
     goto :goto_4
 
@@ -2024,7 +2024,7 @@
     :cond_8
     iget v0, v11, Lorg/telegram/messenger/FileUploadOperation;->uploadChunkSize:I
 
-    mul-int/lit16 v0, v0, 0x400
+    mul-int/2addr v0, v2
 
     iput v0, v11, Lorg/telegram/messenger/FileUploadOperation;->uploadChunkSize:I
 
@@ -2298,7 +2298,7 @@
     goto :goto_7
 
     :cond_a
-    const/4 v2, 0x1
+    move v2, v1
 
     goto :goto_8
 
@@ -2387,9 +2387,9 @@
 
     div-long/2addr v14, v12
 
-    cmp-long v10, v8, v14
+    cmp-long v8, v8, v14
 
-    if-gez v10, :cond_17
+    if-gez v8, :cond_17
 
     .line 349
     iget-object v8, v11, Lorg/telegram/messenger/FileUploadOperation;->stream:Ljava/io/RandomAccessFile;
@@ -2461,7 +2461,7 @@
 
     if-eqz v8, :cond_12
 
-    const/4 v8, 0x0
+    move v8, v14
 
     :goto_d
     if-ge v8, v9, :cond_11
@@ -2581,7 +2581,7 @@
 
     :cond_16
     :goto_e
-    const/4 v2, 0x1
+    move v2, v1
 
     :cond_17
     if-eqz v2, :cond_19
@@ -2980,7 +2980,7 @@
 
     if-eqz v10, :cond_27
 
-    const/4 v3, 0x0
+    move v3, v12
 
     :goto_16
     if-ge v3, v2, :cond_26
@@ -3070,9 +3070,9 @@
     .line 488
     iget-wide v9, v11, Lorg/telegram/messenger/FileUploadOperation;->estimatedSize:J
 
-    cmp-long v12, v9, v4
+    cmp-long v4, v9, v4
 
-    if-eqz v12, :cond_28
+    if-eqz v4, :cond_28
 
     .line 489
     iput v0, v2, Lorg/telegram/tgnet/TLRPC$TL_upload_saveBigFilePart;->file_total_parts:I
@@ -3206,7 +3206,7 @@
 
     if-eqz v1, :cond_2b
 
-    const/16 v24, 0x4
+    move/from16 v24, v16
 
     goto :goto_1b
 
@@ -3256,7 +3256,7 @@
     goto :goto_1c
 
     :cond_2c
-    const/16 v22, 0x0
+    move/from16 v22, v12
 
     :goto_1c
     const v23, 0x7fffffff

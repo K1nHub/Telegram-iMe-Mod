@@ -61,9 +61,9 @@
 
     const/4 v0, -0x1
 
-    const/4 v1, -0x1
+    move v1, v0
 
-    const/4 v2, -0x1
+    move v2, v1
 
     .line 571
     :goto_0

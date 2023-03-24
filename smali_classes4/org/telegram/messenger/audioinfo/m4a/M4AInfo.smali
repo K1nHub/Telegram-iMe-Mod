@@ -422,7 +422,7 @@
     goto :goto_0
 
     :cond_10
-    const/4 v2, 0x4
+    move v2, v0
 
     goto :goto_0
 
@@ -454,7 +454,7 @@
     goto :goto_0
 
     :cond_12
-    const/4 v2, 0x2
+    move v2, v4
 
     goto :goto_0
 
@@ -470,7 +470,7 @@
     goto :goto_0
 
     :cond_13
-    const/4 v2, 0x1
+    move v2, v5
 
     goto :goto_0
 
@@ -486,7 +486,7 @@
     goto :goto_0
 
     :cond_14
-    const/4 v2, 0x0
+    move v2, v6
 
     :goto_0
     const-string v1, "UTF-8"
@@ -841,7 +841,7 @@
     .line 222
     iget v3, v0, Landroid/graphics/BitmapFactory$Options;->inSampleSize:I
 
-    mul-int/lit8 v3, v3, 0x2
+    mul-int/2addr v3, v4
 
     iput v3, v0, Landroid/graphics/BitmapFactory$Options;->inSampleSize:I
 
@@ -966,6 +966,8 @@
     :cond_1d
     :goto_3
     return-void
+
+    nop
 
     :sswitch_data_0
     .sparse-switch
@@ -1152,7 +1154,7 @@
 .end method
 
 .method ilst(Lorg/telegram/messenger/audioinfo/m4a/MP4Atom;)V
-    .locals 7
+    .locals 6
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -1221,9 +1223,9 @@
 
     const-wide/16 v4, 0x0
 
-    cmp-long v6, v2, v4
+    cmp-long v2, v2, v4
 
-    if-nez v6, :cond_2
+    if-nez v2, :cond_2
 
     .line 178
     iget-object v2, p0, Lorg/telegram/messenger/audioinfo/m4a/M4AInfo;->debugLevel:Ljava/util/logging/Level;
@@ -1276,7 +1278,7 @@
 .end method
 
 .method mdhd(Lorg/telegram/messenger/audioinfo/m4a/MP4Atom;)V
-    .locals 10
+    .locals 8
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -1356,13 +1358,13 @@
 
     const-wide/16 v6, 0x0
 
-    const-wide/16 v8, 0x3e8
-
     cmp-long p1, v4, v6
+
+    const-wide/16 v4, 0x3e8
 
     if-nez p1, :cond_3
 
-    mul-long v1, v1, v8
+    mul-long/2addr v1, v4
 
     int-to-long v3, v3
 
@@ -1383,17 +1385,17 @@
 
     if-eqz p1, :cond_4
 
-    iget-wide v4, p0, Lorg/telegram/messenger/audioinfo/AudioInfo;->duration:J
+    iget-wide v6, p0, Lorg/telegram/messenger/audioinfo/AudioInfo;->duration:J
 
-    mul-long v1, v1, v8
+    mul-long/2addr v1, v4
 
-    int-to-long v6, v3
+    int-to-long v3, v3
 
-    div-long/2addr v1, v6
+    div-long/2addr v1, v3
 
-    sub-long/2addr v4, v1
+    sub-long/2addr v6, v1
 
-    invoke-static {v4, v5}, Ljava/lang/Math;->abs(J)J
+    invoke-static {v6, v7}, Ljava/lang/Math;->abs(J)J
 
     move-result-wide v3
 
@@ -1690,7 +1692,7 @@
 .end method
 
 .method mvhd(Lorg/telegram/messenger/audioinfo/m4a/MP4Atom;)V
-    .locals 11
+    .locals 9
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -1770,13 +1772,13 @@
 
     const-wide/16 v6, 0x0
 
-    const-wide/16 v8, 0x3e8
+    cmp-long v4, v4, v6
 
-    cmp-long v10, v4, v6
+    const-wide/16 v5, 0x3e8
 
-    if-nez v10, :cond_3
+    if-nez v4, :cond_3
 
-    mul-long v1, v1, v8
+    mul-long/2addr v1, v5
 
     int-to-long v3, v3
 
@@ -1797,25 +1799,25 @@
 
     if-eqz v4, :cond_4
 
-    iget-wide v4, p0, Lorg/telegram/messenger/audioinfo/AudioInfo;->duration:J
+    iget-wide v7, p0, Lorg/telegram/messenger/audioinfo/AudioInfo;->duration:J
 
-    mul-long v1, v1, v8
+    mul-long/2addr v1, v5
 
-    int-to-long v6, v3
+    int-to-long v3, v3
 
-    div-long/2addr v1, v6
+    div-long/2addr v1, v3
 
-    sub-long/2addr v4, v1
+    sub-long/2addr v7, v1
 
-    invoke-static {v4, v5}, Ljava/lang/Math;->abs(J)J
+    invoke-static {v7, v8}, Ljava/lang/Math;->abs(J)J
 
     move-result-wide v3
 
     const-wide/16 v5, 0x2
 
-    cmp-long v7, v3, v5
+    cmp-long v3, v3, v5
 
-    if-lez v7, :cond_4
+    if-lez v3, :cond_4
 
     .line 105
     iget-object v3, p0, Lorg/telegram/messenger/audioinfo/m4a/M4AInfo;->debugLevel:Ljava/util/logging/Level;

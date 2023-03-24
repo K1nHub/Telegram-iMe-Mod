@@ -86,7 +86,7 @@ public final class zzey {
         long nextLong = this.zzb.zzs.zzv().zzF().nextLong();
         long j3 = j2 + 1;
         SharedPreferences.Editor edit2 = this.zzb.zza().edit();
-        if ((nextLong & Long.MAX_VALUE) < Long.MAX_VALUE / j3) {
+        if ((Long.MAX_VALUE & nextLong) < Long.MAX_VALUE / j3) {
             edit2.putString(this.zzd, str);
         }
         edit2.putLong(this.zzc, j3);

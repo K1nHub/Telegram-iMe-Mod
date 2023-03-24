@@ -213,7 +213,7 @@
 
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    move v1, v0
 
     .line 114
     :goto_0
@@ -299,7 +299,7 @@
     .line 120
     invoke-virtual {p0, p1}, Lcom/google/android/exoplayer2/source/smoothstreaming/manifest/SsManifestParser$ElementParser;->parseStartTag(Lorg/xmlpull/v1/XmlPullParser;)V
 
-    const/4 v0, 0x1
+    move v0, v3
 
     goto :goto_1
 
@@ -335,7 +335,7 @@
 
     if-nez v2, :cond_7
 
-    const/4 v1, 0x1
+    move v1, v3
 
     goto :goto_1
 

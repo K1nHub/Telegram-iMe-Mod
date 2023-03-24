@@ -773,7 +773,7 @@
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_0
     if-ge v2, v0, :cond_0
@@ -799,7 +799,7 @@
 
     move-result v0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_1
     if-ge v2, v0, :cond_1
@@ -825,7 +825,7 @@
 
     move-result v0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_2
     if-ge v2, v0, :cond_2
@@ -2388,12 +2388,12 @@
 
     if-eqz v7, :cond_0
 
-    const/4 v7, 0x1
+    move v7, v5
 
     goto :goto_0
 
     :cond_0
-    const/4 v7, 0x2
+    move v7, v10
 
     :goto_0
     invoke-virtual {v3, v7}, Landroid/view/ViewGroup;->setVerticalScrollbarPosition(I)V
@@ -2526,12 +2526,12 @@
 
     const/16 v4, 0x38
 
-    const/16 v13, 0x38
+    move v13, v4
 
     goto :goto_1
 
     :cond_1
-    const/4 v13, 0x0
+    move v13, v9
 
     :goto_1
     const/4 v14, 0x0
@@ -2801,7 +2801,7 @@
     goto :goto_5
 
     :cond_9
-    const/4 v4, 0x0
+    move v4, v9
 
     .line 393
     :goto_5
@@ -2840,12 +2840,12 @@
     invoke-virtual/range {v10 .. v19}, Lorg/telegram/messenger/ImageReceiver;->setImage(Lorg/telegram/messenger/ImageLocation;Ljava/lang/String;Lorg/telegram/messenger/ImageLocation;Ljava/lang/String;JLjava/lang/String;Ljava/lang/Object;I)V
 
     :goto_6
-    const/4 v1, 0x1
+    move v1, v5
 
     goto :goto_7
 
     :cond_a
-    const/4 v1, 0x0
+    move v1, v9
 
     .line 402
     :goto_7
@@ -3075,7 +3075,7 @@
 .end method
 
 .method public varargs didReceivedNotification(II[Ljava/lang/Object;)V
-    .locals 3
+    .locals 2
 
     .line 221
     sget p2, Lorg/telegram/messenger/NotificationCenter;->chatInfoDidLoad:I
@@ -3098,9 +3098,9 @@
 
     iget-wide v0, p0, Lorg/telegram/ui/MessageStatisticActivity;->chatId:J
 
-    cmp-long v2, p2, v0
+    cmp-long p2, p2, v0
 
-    if-nez v2, :cond_1
+    if-nez p2, :cond_1
 
     .line 224
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getMessagesController()Lorg/telegram/messenger/MessagesController;

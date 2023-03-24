@@ -92,7 +92,7 @@
 
     const/high16 v4, 0x3f800000    # 1.0f
 
-    mul-float v3, v3, v4
+    mul-float/2addr v3, v4
 
     iget-object v4, p0, Lorg/telegram/ui/Components/Paint/Input$1;->val$finalBrush:Lorg/telegram/ui/Components/Paint/Brush;
 

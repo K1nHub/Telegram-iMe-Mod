@@ -183,7 +183,10 @@ public class Guideline extends ConstraintWidget {
             anchor = constraintWidgetContainer.getAnchor(ConstraintAnchor.Type.TOP);
             anchor2 = constraintWidgetContainer.getAnchor(ConstraintAnchor.Type.BOTTOM);
             ConstraintWidget constraintWidget2 = this.mParent;
-            z3 = (constraintWidget2 == null || constraintWidget2.mListDimensionBehaviors[1] != ConstraintWidget.DimensionBehaviour.WRAP_CONTENT) ? false : false;
+            if (constraintWidget2 == null || constraintWidget2.mListDimensionBehaviors[1] != ConstraintWidget.DimensionBehaviour.WRAP_CONTENT) {
+                z2 = false;
+            }
+            z3 = z2;
         }
         if (this.resolved && this.mAnchor.hasFinalValue()) {
             SolverVariable createObjectVariable = linearSystem.createObjectVariable(this.mAnchor);

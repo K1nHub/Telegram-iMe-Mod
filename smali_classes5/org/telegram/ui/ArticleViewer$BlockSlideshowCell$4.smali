@@ -65,7 +65,7 @@
 
     move-result v1
 
-    mul-int v1, v1, v0
+    mul-int/2addr v1, v0
 
     add-int/lit8 v2, v0, -0x1
 
@@ -75,7 +75,7 @@
 
     move-result v3
 
-    mul-int v2, v2, v3
+    mul-int/2addr v2, v3
 
     add-int/2addr v1, v2
 
@@ -169,7 +169,7 @@
 
     int-to-float v7, v3
 
-    mul-float v6, v6, v7
+    mul-float/2addr v6, v7
 
     float-to-int v6, v6
 
@@ -179,7 +179,7 @@
 
     add-int/lit8 v0, v0, -0x1
 
-    mul-int v0, v0, v3
+    mul-int/2addr v0, v3
 
     add-int/2addr v6, v0
 
@@ -203,7 +203,7 @@
 
     add-int/lit8 v0, v0, -0x1
 
-    mul-int v0, v0, v3
+    mul-int/2addr v0, v3
 
     :goto_0
     sub-int v0, v1, v0
@@ -229,7 +229,7 @@
 
     int-to-float v6, v3
 
-    mul-float v0, v0, v6
+    mul-float/2addr v0, v6
 
     float-to-int v0, v0
 
@@ -241,7 +241,7 @@
 
     sub-int/2addr v6, v5
 
-    mul-int v6, v6, v3
+    mul-int/2addr v6, v3
 
     add-int/2addr v0, v6
 
@@ -276,7 +276,7 @@
 
     int-to-float v3, v3
 
-    mul-float v0, v0, v3
+    mul-float/2addr v0, v3
 
     float-to-int v0, v0
 
@@ -288,7 +288,7 @@
     :goto_1
     const/4 v1, 0x0
 
-    const/4 v3, 0x0
+    move v3, v1
 
     .line 8668
     :goto_2
@@ -317,7 +317,7 @@
 
     move-result v6
 
-    mul-int v6, v6, v3
+    mul-int/2addr v6, v3
 
     add-int/2addr v5, v6
 

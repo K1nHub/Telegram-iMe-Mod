@@ -22,12 +22,12 @@ final class DecodedBitStreamParser {
         Mode mode;
         BitSource bitSource = new BitSource(bArr);
         StringBuilder sb = new StringBuilder(50);
-        int i = 1;
+        boolean z = true;
         ArrayList arrayList = new ArrayList(1);
-        CharacterSetECI characterSetECI = null;
-        boolean z = false;
+        boolean z2 = false;
+        int i = -1;
         int i2 = -1;
-        int i3 = -1;
+        CharacterSetECI characterSetECI = null;
         while (true) {
             try {
                 if (bitSource.available() < 4) {
@@ -43,49 +43,50 @@ final class DecodedBitStreamParser {
                         break;
                     case 6:
                     case 7:
+                        z2 = z;
                         mode = mode2;
-                        z = true;
                         break;
                     case 8:
                         if (bitSource.available() < 16) {
                             throw FormatException.getFormatInstance();
                         }
                         int readBits = bitSource.readBits(8);
-                        i3 = bitSource.readBits(8);
-                        i2 = readBits;
+                        i2 = bitSource.readBits(8);
+                        i = readBits;
                         mode = mode2;
                         break;
                     case 9:
                         characterSetECI = CharacterSetECI.getCharacterSetECIByValue(parseECIValue(bitSource));
-                        if (characterSetECI == null) {
+                        if (characterSetECI != null) {
+                            mode = mode2;
+                            break;
+                        } else {
                             throw FormatException.getFormatInstance();
                         }
-                        mode = mode2;
-                        break;
                     case 10:
                         int readBits2 = bitSource.readBits(4);
                         int readBits3 = bitSource.readBits(mode2.getCharacterCountBits(version));
-                        if (readBits2 == i) {
+                        if (readBits2 == z) {
                             decodeHanziSegment(bitSource, sb, readBits3);
                         }
                         mode = mode2;
                         break;
                     default:
                         int readBits4 = bitSource.readBits(mode2.getCharacterCountBits(version));
-                        int i4 = iArr[mode2.ordinal()];
-                        if (i4 == i) {
+                        int i3 = iArr[mode2.ordinal()];
+                        if (i3 == z) {
                             mode = mode2;
                             decodeNumericSegment(bitSource, sb, readBits4);
                             break;
-                        } else if (i4 == 2) {
+                        } else if (i3 == 2) {
                             mode = mode2;
-                            decodeAlphanumericSegment(bitSource, sb, readBits4, z);
+                            decodeAlphanumericSegment(bitSource, sb, readBits4, z2);
                             break;
-                        } else if (i4 == 3) {
+                        } else if (i3 == 3) {
                             mode = mode2;
                             decodeByteSegment(bitSource, sb, readBits4, characterSetECI, arrayList, map);
                             break;
-                        } else if (i4 == 4) {
+                        } else if (i3 == 4) {
                             decodeKanjiSegment(bitSource, sb, readBits4);
                             mode = mode2;
                             break;
@@ -94,9 +95,9 @@ final class DecodedBitStreamParser {
                         }
                 }
                 if (mode == Mode.TERMINATOR) {
-                    return new DecoderResult(bArr, sb.toString(), arrayList.isEmpty() ? null : arrayList, errorCorrectionLevel == null ? null : errorCorrectionLevel.toString(), i2, i3);
+                    return new DecoderResult(bArr, sb.toString(), arrayList.isEmpty() ? null : arrayList, errorCorrectionLevel == null ? null : errorCorrectionLevel.toString(), i, i2);
                 }
-                i = 1;
+                z = true;
             } catch (IllegalArgumentException unused) {
                 throw FormatException.getFormatInstance();
             }

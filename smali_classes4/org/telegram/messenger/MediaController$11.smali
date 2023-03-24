@@ -25,7 +25,7 @@
 .method constructor <init>(Lorg/telegram/messenger/MediaController;)V
     .locals 0
 
-    .line 3265
+    .line 3266
     iput-object p1, p0, Lorg/telegram/messenger/MediaController$11;->this$0:Lorg/telegram/messenger/MediaController;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,7 +38,7 @@
 .method public needUpdate()Z
     .locals 1
 
-    .line 3273
+    .line 3274
     invoke-static {}, Lorg/telegram/ui/ActionBar/Theme;->getCurrentAudiVisualizerDrawable()Lorg/telegram/ui/Components/AudioVisualizerDrawable;
 
     move-result-object v0
@@ -63,7 +63,7 @@
 .method public onVisualizerUpdate(ZZ[F)V
     .locals 1
 
-    .line 3268
+    .line 3269
     invoke-static {}, Lorg/telegram/ui/ActionBar/Theme;->getCurrentAudiVisualizerDrawable()Lorg/telegram/ui/Components/AudioVisualizerDrawable;
 
     move-result-object v0

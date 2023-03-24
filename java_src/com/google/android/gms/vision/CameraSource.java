@@ -410,18 +410,18 @@ public class CameraSource {
         this.zzo = new IdentityHashMap<>();
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:58:0x01a4  */
-    /* JADX WARN: Removed duplicated region for block: B:59:0x01ae  */
-    /* JADX WARN: Removed duplicated region for block: B:62:0x01c4  */
-    /* JADX WARN: Removed duplicated region for block: B:72:0x0201  */
-    /* JADX WARN: Removed duplicated region for block: B:73:0x0207  */
+    /* JADX WARN: Removed duplicated region for block: B:58:0x01a1  */
+    /* JADX WARN: Removed duplicated region for block: B:59:0x01ab  */
+    /* JADX WARN: Removed duplicated region for block: B:62:0x01c1  */
+    /* JADX WARN: Removed duplicated region for block: B:72:0x01fe  */
+    /* JADX WARN: Removed duplicated region for block: B:73:0x0204  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct add '--show-bad-code' argument
     */
     private final android.hardware.Camera zza() throws java.io.IOException {
         /*
-            Method dump skipped, instructions count: 596
+            Method dump skipped, instructions count: 593
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: com.google.android.gms.vision.CameraSource.zza():android.hardware.Camera");

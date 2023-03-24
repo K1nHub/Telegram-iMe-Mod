@@ -341,7 +341,7 @@
 
     iput-object p3, p0, Lcom/fasterxml/jackson/core/JsonToken;->_serializedBytes:[B
 
-    const/4 p3, 0x0
+    move p3, p1
 
     :goto_0
     if-ge p3, p2, :cond_1
@@ -379,13 +379,13 @@
     goto :goto_2
 
     :cond_2
-    const/4 p2, 0x0
+    move p2, p1
 
     goto :goto_3
 
     :cond_3
     :goto_2
-    const/4 p2, 0x1
+    move p2, p3
 
     .line 155
     :goto_3
@@ -402,13 +402,13 @@
     goto :goto_4
 
     :cond_4
-    const/4 p2, 0x0
+    move p2, p1
 
     goto :goto_5
 
     :cond_5
     :goto_4
-    const/4 p2, 0x1
+    move p2, p3
 
     .line 156
     :goto_5
@@ -423,13 +423,13 @@
     goto :goto_6
 
     :cond_6
-    const/4 p2, 0x0
+    move p2, p1
 
     goto :goto_7
 
     :cond_7
     :goto_6
-    const/4 p2, 0x1
+    move p2, p3
 
     .line 158
     :goto_7
@@ -446,13 +446,13 @@
     goto :goto_8
 
     :cond_8
-    const/4 v0, 0x0
+    move v0, p1
 
     goto :goto_9
 
     :cond_9
     :goto_8
-    const/4 v0, 0x1
+    move v0, p3
 
     .line 159
     :goto_9
@@ -470,7 +470,7 @@
 
     if-eq p4, p2, :cond_a
 
-    const/4 p1, 0x1
+    move p1, p3
 
     .line 161
     :cond_a

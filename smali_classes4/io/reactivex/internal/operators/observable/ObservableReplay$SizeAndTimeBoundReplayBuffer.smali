@@ -80,7 +80,7 @@
 .end method
 
 .method getHead()Lio/reactivex/internal/operators/observable/ObservableReplay$Node;
-    .locals 8
+    .locals 7
 
     .line 897
     iget-object v0, p0, Lio/reactivex/internal/operators/observable/ObservableReplay$SizeAndTimeBoundReplayBuffer;->scheduler:Lio/reactivex/Scheduler;
@@ -110,11 +110,11 @@
     check-cast v3, Lio/reactivex/internal/operators/observable/ObservableReplay$Node;
 
     :goto_0
-    move-object v7, v3
+    move-object v6, v3
 
     move-object v3, v2
 
-    move-object v2, v7
+    move-object v2, v6
 
     if-nez v2, :cond_0
 
@@ -155,9 +155,9 @@
 
     move-result-wide v4
 
-    cmp-long v6, v4, v0
+    cmp-long v4, v4, v0
 
-    if-gtz v6, :cond_2
+    if-gtz v4, :cond_2
 
     .line 910
     invoke-virtual {v2}, Ljava/util/concurrent/atomic/AtomicReference;->get()Ljava/lang/Object;
@@ -187,7 +187,7 @@
 .end method
 
 .method truncate()V
-    .locals 9
+    .locals 8
 
     .line 834
     iget-object v0, p0, Lio/reactivex/internal/operators/observable/ObservableReplay$SizeAndTimeBoundReplayBuffer;->scheduler:Lio/reactivex/Scheduler;
@@ -219,11 +219,11 @@
     const/4 v4, 0x0
 
     :goto_0
-    move-object v8, v3
+    move-object v7, v3
 
     move-object v3, v2
 
-    move-object v2, v8
+    move-object v2, v7
 
     if-eqz v2, :cond_1
 
@@ -261,9 +261,9 @@
 
     move-result-wide v5
 
-    cmp-long v7, v5, v0
+    cmp-long v5, v5, v0
 
-    if-gtz v7, :cond_1
+    if-gtz v5, :cond_1
 
     add-int/lit8 v4, v4, 0x1
 

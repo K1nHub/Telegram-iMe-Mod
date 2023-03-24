@@ -24,12 +24,12 @@
 
     if-nez p2, :cond_0
 
-    const/4 p2, 0x1
+    move p2, p1
 
     goto :goto_0
 
     :cond_0
-    const/4 p2, 0x0
+    move p2, v0
 
     :goto_0
     if-nez p3, :cond_1
@@ -37,7 +37,7 @@
     goto :goto_1
 
     :cond_1
-    const/4 p1, 0x0
+    move p1, v0
 
     :goto_1
     if-ne p2, p1, :cond_2

@@ -194,7 +194,7 @@
 
     sub-float/2addr v5, v0
 
-    mul-float v5, v5, v4
+    mul-float/2addr v5, v4
 
     float-to-int v0, v5
 
@@ -209,7 +209,7 @@
     goto :goto_0
 
     :cond_1
-    const/high16 v0, 0x3f800000    # 1.0f
+    move v0, v7
 
     .line 682
     :goto_0
@@ -251,23 +251,23 @@
 
     invoke-virtual {v3, p1}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
 
-    const-string v3, "dialogBackground"
+    cmpl-float v3, v0, v7
 
-    cmpl-float v4, v0, v7
+    const-string v4, "dialogBackground"
 
-    if-eqz v4, :cond_3
+    if-eqz v3, :cond_3
 
     .line 691
-    sget-object v4, Lorg/telegram/ui/ActionBar/Theme;->dialogs_onlineCirclePaint:Landroid/graphics/Paint;
+    sget-object v3, Lorg/telegram/ui/ActionBar/Theme;->dialogs_onlineCirclePaint:Landroid/graphics/Paint;
 
-    invoke-static {v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v4}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
 
     move-result v5
 
-    invoke-virtual {v4, v5}, Landroid/graphics/Paint;->setColor(I)V
+    invoke-virtual {v3, v5}, Landroid/graphics/Paint;->setColor(I)V
 
     .line 692
-    iget-object v4, p0, Lorg/telegram/ui/Components/PollVotesAlert$3;->rect:Landroid/graphics/RectF;
+    iget-object v3, p0, Lorg/telegram/ui/Components/PollVotesAlert$3;->rect:Landroid/graphics/RectF;
 
     iget-object v5, p0, Lorg/telegram/ui/Components/PollVotesAlert$3;->this$0:Lorg/telegram/ui/Components/PollVotesAlert;
 
@@ -319,32 +319,32 @@
 
     int-to-float v1, v10
 
-    invoke-virtual {v4, v5, v8, v9, v1}, Landroid/graphics/RectF;->set(FFFF)V
+    invoke-virtual {v3, v5, v8, v9, v1}, Landroid/graphics/RectF;->set(FFFF)V
 
     .line 693
     iget-object v1, p0, Lorg/telegram/ui/Components/PollVotesAlert$3;->rect:Landroid/graphics/RectF;
 
-    const/16 v4, 0xc
+    const/16 v3, 0xc
 
-    invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v5
 
     int-to-float v5, v5
 
-    mul-float v5, v5, v0
+    mul-float/2addr v5, v0
 
-    invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
-    move-result v4
+    move-result v3
 
-    int-to-float v4, v4
+    int-to-float v3, v3
 
-    mul-float v4, v4, v0
+    mul-float/2addr v3, v0
 
     sget-object v8, Lorg/telegram/ui/ActionBar/Theme;->dialogs_onlineCirclePaint:Landroid/graphics/Paint;
 
-    invoke-virtual {p1, v1, v5, v4, v8}, Landroid/graphics/Canvas;->drawRoundRect(Landroid/graphics/RectF;FFLandroid/graphics/Paint;)V
+    invoke-virtual {p1, v1, v5, v3, v8}, Landroid/graphics/Canvas;->drawRoundRect(Landroid/graphics/RectF;FFLandroid/graphics/Paint;)V
 
     :cond_3
     const/4 v1, 0x0
@@ -361,7 +361,7 @@
     move-result v1
 
     .line 699
-    iget-object v4, p0, Lorg/telegram/ui/Components/PollVotesAlert$3;->rect:Landroid/graphics/RectF;
+    iget-object v3, p0, Lorg/telegram/ui/Components/PollVotesAlert$3;->rect:Landroid/graphics/RectF;
 
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
 
@@ -395,7 +395,7 @@
 
     int-to-float v2, v2
 
-    invoke-virtual {v4, v5, v9, v1, v2}, Landroid/graphics/RectF;->set(FFFF)V
+    invoke-virtual {v3, v5, v9, v1, v2}, Landroid/graphics/RectF;->set(FFFF)V
 
     const-string v1, "key_sheet_scrollUp"
 
@@ -410,18 +410,18 @@
     move-result v2
 
     .line 702
-    sget-object v4, Lorg/telegram/ui/ActionBar/Theme;->dialogs_onlineCirclePaint:Landroid/graphics/Paint;
+    sget-object v3, Lorg/telegram/ui/ActionBar/Theme;->dialogs_onlineCirclePaint:Landroid/graphics/Paint;
 
-    invoke-virtual {v4, v1}, Landroid/graphics/Paint;->setColor(I)V
+    invoke-virtual {v3, v1}, Landroid/graphics/Paint;->setColor(I)V
 
     .line 703
     sget-object v1, Lorg/telegram/ui/ActionBar/Theme;->dialogs_onlineCirclePaint:Landroid/graphics/Paint;
 
     int-to-float v2, v2
 
-    mul-float v2, v2, v7
+    mul-float/2addr v2, v7
 
-    mul-float v2, v2, v0
+    mul-float/2addr v2, v0
 
     float-to-int v0, v2
 
@@ -442,13 +442,13 @@
 
     int-to-float v2, v2
 
-    sget-object v4, Lorg/telegram/ui/ActionBar/Theme;->dialogs_onlineCirclePaint:Landroid/graphics/Paint;
+    sget-object v3, Lorg/telegram/ui/ActionBar/Theme;->dialogs_onlineCirclePaint:Landroid/graphics/Paint;
 
-    invoke-virtual {p1, v0, v1, v2, v4}, Landroid/graphics/Canvas;->drawRoundRect(Landroid/graphics/RectF;FFLandroid/graphics/Paint;)V
+    invoke-virtual {p1, v0, v1, v2, v3}, Landroid/graphics/Canvas;->drawRoundRect(Landroid/graphics/RectF;FFLandroid/graphics/Paint;)V
 
     .line 707
     :cond_4
-    invoke-static {v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v4}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
 
     move-result v0
 
@@ -465,7 +465,7 @@
 
     move-result v2
 
-    mul-float v2, v2, v1
+    mul-float/2addr v2, v1
 
     float-to-int v1, v2
 
@@ -477,7 +477,7 @@
 
     const v3, 0x3f4ccccd    # 0.8f
 
-    mul-float v2, v2, v3
+    mul-float/2addr v2, v3
 
     float-to-int v2, v2
 
@@ -487,7 +487,7 @@
 
     int-to-float v4, v4
 
-    mul-float v4, v4, v3
+    mul-float/2addr v4, v3
 
     float-to-int v4, v4
 
@@ -497,7 +497,7 @@
 
     int-to-float v0, v0
 
-    mul-float v0, v0, v3
+    mul-float/2addr v0, v3
 
     float-to-int v0, v0
 
@@ -768,7 +768,7 @@
 
     move-result v5
 
-    const/4 v6, 0x0
+    move v6, v3
 
     :goto_0
     const/high16 v7, 0x40000000    # 2.0f
@@ -846,7 +846,7 @@
 
     sub-int/2addr v7, v2
 
-    mul-int v9, v9, v7
+    mul-int/2addr v9, v7
 
     add-int/2addr v8, v9
 

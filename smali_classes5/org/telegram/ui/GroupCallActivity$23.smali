@@ -172,7 +172,7 @@
 
     sub-float/2addr v2, v4
 
-    mul-float v0, v0, v2
+    mul-float/2addr v0, v2
 
     .line 4617
     invoke-virtual {p0}, Landroid/view/ViewGroup;->getMeasuredWidth()I
@@ -181,7 +181,7 @@
 
     int-to-float v5, v5
 
-    mul-float v1, v1, v2
+    mul-float/2addr v1, v2
 
     invoke-virtual {p0}, Landroid/view/ViewGroup;->getMeasuredHeight()I
 
@@ -189,7 +189,7 @@
 
     int-to-float v2, v2
 
-    mul-float v2, v2, v4
+    mul-float/2addr v2, v4
 
     add-float/2addr v1, v2
 

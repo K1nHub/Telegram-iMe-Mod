@@ -157,12 +157,12 @@
 
     if-eqz v3, :cond_1
 
-    const/4 v3, 0x1
+    move v3, v9
 
     goto :goto_1
 
     :cond_1
-    const/4 v3, 0x0
+    move v3, v1
 
     .line 37
     :goto_1
@@ -192,12 +192,12 @@
 
     if-eqz v10, :cond_2
 
-    const/4 v10, 0x1
+    move v10, v9
 
     goto :goto_2
 
     :cond_2
-    const/4 v10, 0x0
+    move v10, v1
 
     :goto_2
     iput-boolean v10, v8, Lorg/telegram/messenger/SaveToGallerySettingsHelper$Settings;->saveVideo:Z
@@ -221,7 +221,7 @@
 
     if-eqz v2, :cond_3
 
-    const/4 v1, 0x1
+    move v1, v9
 
     .line 47
     :cond_3
@@ -307,7 +307,7 @@
 
     move-result v1
 
-    const/4 v3, 0x0
+    move v3, v2
 
     :goto_0
     if-ge v3, v1, :cond_1

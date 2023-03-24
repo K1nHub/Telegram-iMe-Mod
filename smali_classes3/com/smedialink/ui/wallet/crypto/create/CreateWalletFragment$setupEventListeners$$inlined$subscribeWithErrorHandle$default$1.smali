@@ -27,7 +27,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nRxExt.kt\nKotlin\n*S Kotlin\n*F\n+ 1 RxExt.kt\ncom/smedialink/utils/extentions/rx/RxExtKt$subscribeWithErrorHandle$2\n+ 2 CreateWalletFragment.kt\ncom/smedialink/ui/wallet/crypto/create/CreateWalletFragment\n*L\n1#1,111:1\n898#2,8:112\n*E\n"
+    value = "SMAP\nRxExt.kt\nKotlin\n*S Kotlin\n*F\n+ 1 RxExt.kt\ncom/smedialink/utils/extentions/rx/RxExtKt$subscribeWithErrorHandle$2\n+ 2 CreateWalletFragment.kt\ncom/smedialink/ui/wallet/crypto/create/CreateWalletFragment\n*L\n1#1,111:1\n899#2,8:112\n*E\n"
 .end annotation
 
 
@@ -85,7 +85,7 @@
 
     if-eqz v0, :cond_0
 
-    const/4 v0, 0x1
+    move v0, v1
 
     goto :goto_0
 
@@ -96,7 +96,7 @@
     :goto_0
     if-eqz v0, :cond_1
 
-    const/4 p1, 0x1
+    move p1, v1
 
     goto :goto_1
 
@@ -109,13 +109,13 @@
 
     iget-object p1, p0, Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment$setupEventListeners$$inlined$subscribeWithErrorHandle$default$1;->this$0:Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment;
 
-    invoke-static {p1}, Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment;->access$getCurrentType$p(Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment;)Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment$ScreenType;
+    invoke-static {p1}, Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment;->access$getCurrentType$p(Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment;)Lcom/smedialink/model/wallet/crypto/create/CreateWalletScreenType;
 
     move-result-object p1
 
-    check-cast p1, Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment$ScreenType$Import;
+    check-cast p1, Lcom/smedialink/model/wallet/crypto/create/CreateWalletScreenType$Import;
 
-    invoke-virtual {p1}, Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment$ScreenType$Import;->getPassword()Ljava/lang/String;
+    invoke-virtual {p1}, Lcom/smedialink/model/wallet/crypto/create/CreateWalletScreenType$Import;->getPassword()Ljava/lang/String;
 
     move-result-object p1
 

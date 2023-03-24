@@ -17,7 +17,6 @@ import com.google.android.exoplayer2.util.Assertions;
 import com.google.android.exoplayer2.util.Log;
 import com.google.android.exoplayer2.util.ParsableByteArray;
 import com.google.android.exoplayer2.util.Util;
-import com.google.common.base.Ascii;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
@@ -98,29 +97,60 @@ public final class SsaDecoder extends SimpleSubtitleDecoder {
         }
     }
 
-    private void parseScriptInfo(ParsableByteArray parsableByteArray) {
-        while (true) {
-            String readLine = parsableByteArray.readLine();
-            if (readLine == null) {
-                return;
-            }
-            if (parsableByteArray.bytesLeft() != 0 && parsableByteArray.peekUnsignedByte() == 91) {
-                return;
-            }
-            String[] split = readLine.split(":");
-            if (split.length == 2) {
-                String lowerCase = Ascii.toLowerCase(split[0].trim());
-                lowerCase.hashCode();
-                if (lowerCase.equals("playresx")) {
-                    this.screenWidth = Float.parseFloat(split[1].trim());
-                } else if (lowerCase.equals("playresy")) {
-                    try {
-                        this.screenHeight = Float.parseFloat(split[1].trim());
-                    } catch (NumberFormatException unused) {
-                    }
-                }
-            }
-        }
+    /* JADX WARN: Removed duplicated region for block: B:24:0x0059 A[SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:4:0x0006  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+        To view partially-correct add '--show-bad-code' argument
+    */
+    private void parseScriptInfo(com.google.android.exoplayer2.util.ParsableByteArray r5) {
+        /*
+            r4 = this;
+        L0:
+            java.lang.String r0 = r5.readLine()
+            if (r0 == 0) goto L59
+            int r1 = r5.bytesLeft()
+            if (r1 == 0) goto L14
+            int r1 = r5.peekUnsignedByte()
+            r2 = 91
+            if (r1 == r2) goto L59
+        L14:
+            java.lang.String r1 = ":"
+            java.lang.String[] r0 = r0.split(r1)
+            int r1 = r0.length
+            r2 = 2
+            if (r1 == r2) goto L1f
+            goto L0
+        L1f:
+            r1 = 0
+            r1 = r0[r1]
+            java.lang.String r1 = r1.trim()
+            java.lang.String r1 = com.google.common.base.Ascii.toLowerCase(r1)
+            r1.hashCode()
+            java.lang.String r2 = "playresx"
+            boolean r2 = r1.equals(r2)
+            r3 = 1
+            if (r2 != 0) goto L4c
+            java.lang.String r2 = "playresy"
+            boolean r1 = r1.equals(r2)
+            if (r1 != 0) goto L3f
+            goto L0
+        L3f:
+            r0 = r0[r3]     // Catch: java.lang.NumberFormatException -> L0
+            java.lang.String r0 = r0.trim()     // Catch: java.lang.NumberFormatException -> L0
+            float r0 = java.lang.Float.parseFloat(r0)     // Catch: java.lang.NumberFormatException -> L0
+            r4.screenHeight = r0     // Catch: java.lang.NumberFormatException -> L0
+            goto L0
+        L4c:
+            r0 = r0[r3]     // Catch: java.lang.NumberFormatException -> L0
+            java.lang.String r0 = r0.trim()     // Catch: java.lang.NumberFormatException -> L0
+            float r0 = java.lang.Float.parseFloat(r0)     // Catch: java.lang.NumberFormatException -> L0
+            r4.screenWidth = r0     // Catch: java.lang.NumberFormatException -> L0
+            goto L0
+        L59:
+            return
+        */
+        throw new UnsupportedOperationException("Method not decompiled: com.google.android.exoplayer2.text.ssa.SsaDecoder.parseScriptInfo(com.google.android.exoplayer2.util.ParsableByteArray):void");
     }
 
     private static Map<String, SsaStyle> parseStyles(ParsableByteArray parsableByteArray) {

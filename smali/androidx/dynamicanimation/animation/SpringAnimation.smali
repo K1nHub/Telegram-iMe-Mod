@@ -120,7 +120,7 @@
 .end method
 
 .method private sanityCheck()V
-    .locals 5
+    .locals 4
 
     .line 197
     iget-object v0, p0, Landroidx/dynamicanimation/animation/SpringAnimation;->mSpring:Landroidx/dynamicanimation/animation/SpringForce;
@@ -139,18 +139,18 @@
 
     float-to-double v2, v2
 
-    cmpl-double v4, v0, v2
+    cmpl-double v2, v0, v2
 
-    if-gtz v4, :cond_1
+    if-gtz v2, :cond_1
 
     .line 205
     iget v2, p0, Landroidx/dynamicanimation/animation/DynamicAnimation;->mMinValue:F
 
     float-to-double v2, v2
 
-    cmpg-double v4, v0, v2
+    cmpg-double v0, v0, v2
 
-    if-ltz v4, :cond_0
+    if-ltz v0, :cond_0
 
     return-void
 

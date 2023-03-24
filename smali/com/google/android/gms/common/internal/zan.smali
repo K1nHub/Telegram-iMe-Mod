@@ -43,15 +43,15 @@
 
     move-wide v13, v11
 
-    const/4 v8, 0x0
+    move v8, v5
 
-    const/4 v9, 0x0
+    move v9, v8
 
-    const/4 v10, 0x0
+    move v10, v9
 
-    const/16 v17, 0x0
+    move/from16 v17, v10
 
-    const/16 v18, -0x1
+    move/from16 v18, v6
 
     .line 2
     :goto_0

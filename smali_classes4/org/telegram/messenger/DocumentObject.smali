@@ -48,7 +48,7 @@
 
     const/high16 v1, 0x44000000    # 512.0f
 
-    mul-float p0, p0, v1
+    mul-float/2addr p0, v1
 
     const/high16 v1, 0x43800000    # 256.0f
 
@@ -211,11 +211,11 @@
 
     move-object v4, v1
 
-    const/4 v3, 0x0
+    move v3, v2
 
-    const/4 v5, 0x0
+    move v5, v3
 
-    const/4 v6, 0x0
+    move v6, v5
 
     :goto_0
     if-ge v3, v0, :cond_3
@@ -309,7 +309,7 @@
 
     const/4 v2, 0x0
 
-    const/4 v3, 0x0
+    move v3, v2
 
     :goto_0
     if-ge v3, v1, :cond_5
@@ -335,7 +335,7 @@
 
     move-result v1
 
-    const/4 v3, 0x0
+    move v3, v2
 
     :goto_1
     const/16 v5, 0x200
@@ -384,7 +384,7 @@
     goto :goto_3
 
     :cond_3
-    const/16 p0, 0x200
+    move p0, v5
 
     :goto_3
     if-eqz v5, :cond_5
@@ -398,13 +398,13 @@
 
     int-to-float v1, v5
 
-    mul-float v1, v1, p3
+    mul-float/2addr v1, p3
 
     float-to-int v1, v1
 
     int-to-float p0, p0
 
-    mul-float p0, p0, p3
+    mul-float/2addr p0, p3
 
     float-to-int p0, p0
 

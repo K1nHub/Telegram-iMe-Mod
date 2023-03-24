@@ -93,9 +93,9 @@
     .line 116
     aput-object v1, p1, v0
 
-    const/4 v2, 0x0
+    move v2, v0
 
-    const/4 v3, 0x0
+    move v3, v2
 
     .line 119
     :goto_0
@@ -322,7 +322,7 @@
     goto :goto_2
 
     :cond_6
-    const/4 v6, 0x2
+    move v6, v9
 
     goto :goto_2
 
@@ -338,7 +338,7 @@
     goto :goto_2
 
     :cond_7
-    const/4 v6, 0x1
+    move v6, v7
 
     goto :goto_2
 
@@ -354,7 +354,7 @@
     goto :goto_2
 
     :cond_8
-    const/4 v6, 0x0
+    move v6, v0
 
     :goto_2
     packed-switch v6, :pswitch_data_0
@@ -446,7 +446,7 @@
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     .line 83
     :goto_0

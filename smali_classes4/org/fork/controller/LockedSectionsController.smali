@@ -622,7 +622,7 @@
 
     const-wide/16 v3, 0x1388
 
-    mul-long v1, v1, v3
+    mul-long/2addr v1, v3
 
     .line 164
     invoke-virtual {v0, v1, v2}, Lorg/fork/controller/LockedSectionsController$SectionPasscodeData;->setPasscodeRetryInMs(J)V

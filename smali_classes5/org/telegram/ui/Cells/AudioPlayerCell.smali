@@ -209,12 +209,12 @@
 
     if-gt v1, v0, :cond_0
 
-    const/4 v0, 0x1
+    move v0, v4
 
     goto :goto_0
 
     :cond_0
-    const/4 v0, 0x0
+    move v0, v5
 
     .line 182
     :goto_0
@@ -312,7 +312,7 @@
     invoke-virtual {p1, v0, v4}, Lorg/telegram/ui/Components/RadialProgress2;->setPressed(ZZ)V
 
     :cond_5
-    const/4 v4, 0x0
+    move v4, v5
 
     :goto_2
     return v4
@@ -857,7 +857,7 @@
 
     if-eqz v0, :cond_0
 
-    const/16 v0, 0x8
+    move v0, v1
 
     goto :goto_0
 
@@ -1554,7 +1554,7 @@
     .line 217
     iput-boolean v2, p0, Lorg/telegram/ui/Cells/AudioPlayerCell;->buttonPressed:Z
 
-    const/4 v0, 0x0
+    move v0, v2
 
     :cond_1
     return v0
@@ -1779,18 +1779,18 @@
 
     if-eqz v1, :cond_5
 
-    const/4 v1, 0x1
+    move v1, v5
 
     goto :goto_1
 
     :cond_5
-    const/4 v1, 0x2
+    move v1, v3
 
     .line 343
     :goto_1
     iput v1, p0, Lorg/telegram/ui/Cells/AudioPlayerCell;->hasMiniProgress:I
 
-    const/4 v1, 0x1
+    move v1, v5
 
     goto :goto_2
 

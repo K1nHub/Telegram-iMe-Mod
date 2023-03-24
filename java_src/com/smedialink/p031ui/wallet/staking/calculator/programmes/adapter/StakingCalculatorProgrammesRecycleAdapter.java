@@ -11,7 +11,7 @@ import com.smedialink.p031ui.adapter.provider.StakingCalculatorProgrammeProvider
 import com.smedialink.utils.extentions.common.BaseQuickAdapterExtKt;
 import java.util.List;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.messenger.C3286R;
+import org.telegram.messenger.C3301R;
 /* compiled from: StakingCalculatorProgrammesRecycleAdapter.kt */
 /* renamed from: com.smedialink.ui.wallet.staking.calculator.programmes.adapter.StakingCalculatorProgrammesRecycleAdapter */
 /* loaded from: classes3.dex */
@@ -21,7 +21,7 @@ public final class StakingCalculatorProgrammesRecycleAdapter extends BaseNodeAda
         super(null, 1, null);
         Intrinsics.checkNotNullParameter(globalStateProvider, "globalStateProvider");
         Intrinsics.checkNotNullParameter(stakingProgrammeProvider, "stakingProgrammeProvider");
-        addChildClickViewIds(C3286R.C3289id.image_info);
+        addChildClickViewIds(C3301R.C3304id.image_info);
         addItemProvider(BaseQuickAdapterExtKt.asItem(globalStateProvider));
         addItemProvider(BaseQuickAdapterExtKt.asItem(stakingProgrammeProvider));
     }

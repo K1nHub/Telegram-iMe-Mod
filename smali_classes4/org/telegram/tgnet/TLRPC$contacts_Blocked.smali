@@ -41,24 +41,24 @@
 .method public constructor <init>()V
     .locals 1
 
-    .line 9265
+    .line 9272
     invoke-direct {p0}, Lorg/telegram/tgnet/TLObject;-><init>()V
 
-    .line 9267
+    .line 9274
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lorg/telegram/tgnet/TLRPC$contacts_Blocked;->blocked:Ljava/util/ArrayList;
 
-    .line 9268
+    .line 9275
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lorg/telegram/tgnet/TLRPC$contacts_Blocked;->chats:Ljava/util/ArrayList;
 
-    .line 9269
+    .line 9276
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
@@ -83,7 +83,7 @@
 
     goto :goto_0
 
-    .line 9276
+    .line 9283
     :cond_0
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_contacts_blocked;
 
@@ -91,7 +91,7 @@
 
     goto :goto_0
 
-    .line 9279
+    .line 9286
     :cond_1
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_contacts_blockedSlice;
 
@@ -104,7 +104,7 @@
 
     goto :goto_1
 
-    .line 9283
+    .line 9290
     :cond_2
     new-instance p0, Ljava/lang/RuntimeException;
 
@@ -134,7 +134,7 @@
     :goto_1
     if-eqz v0, :cond_4
 
-    .line 9286
+    .line 9293
     invoke-virtual {v0, p0, p2}, Lorg/telegram/tgnet/TLObject;->readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
 
     :cond_4

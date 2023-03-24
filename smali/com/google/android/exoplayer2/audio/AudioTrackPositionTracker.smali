@@ -152,7 +152,7 @@
 .end method
 
 .method private forceHasPendingData()Z
-    .locals 5
+    .locals 4
 
     .line 552
     iget-boolean v0, p0, Lcom/google/android/exoplayer2/audio/AudioTrackPositionTracker;->needsPassthroughWorkarounds:Z
@@ -183,9 +183,9 @@
 
     const-wide/16 v2, 0x0
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-nez v4, :cond_0
+    if-nez v0, :cond_0
 
     const/4 v0, 0x1
 
@@ -203,7 +203,7 @@
 
     const-wide/32 v0, 0xf4240
 
-    mul-long p1, p1, v0
+    mul-long/2addr p1, v0
 
     .line 533
     iget v0, p0, Lcom/google/android/exoplayer2/audio/AudioTrackPositionTracker;->outputSampleRate:I
@@ -232,9 +232,9 @@
 
     const-wide v3, -0x7fffffffffffffffL    # -4.9E-324
 
-    cmp-long v5, v1, v3
+    cmp-long v1, v1, v3
 
-    if-eqz v5, :cond_0
+    if-eqz v1, :cond_0
 
     .line 582
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
@@ -243,7 +243,7 @@
 
     const-wide/16 v2, 0x3e8
 
-    mul-long v0, v0, v2
+    mul-long/2addr v0, v2
 
     iget-wide v2, p0, Lcom/google/android/exoplayer2/audio/AudioTrackPositionTracker;->stopTimestampUs:J
 
@@ -254,7 +254,7 @@
 
     int-to-long v2, v2
 
-    mul-long v0, v0, v2
+    mul-long/2addr v0, v2
 
     const-wide/32 v2, 0xf4240
 
@@ -349,9 +349,9 @@
     .line 613
     iget-wide v0, p0, Lcom/google/android/exoplayer2/audio/AudioTrackPositionTracker;->forceResetWorkaroundTimeMs:J
 
-    cmp-long v2, v0, v3
+    cmp-long v0, v0, v3
 
-    if-nez v2, :cond_4
+    if-nez v0, :cond_4
 
     .line 614
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
@@ -374,9 +374,9 @@
     :cond_6
     iget-wide v0, p0, Lcom/google/android/exoplayer2/audio/AudioTrackPositionTracker;->lastRawPlaybackHeadPosition:J
 
-    cmp-long v2, v0, v7
+    cmp-long v0, v0, v7
 
-    if-lez v2, :cond_7
+    if-lez v0, :cond_7
 
     .line 624
     iget-wide v0, p0, Lcom/google/android/exoplayer2/audio/AudioTrackPositionTracker;->rawPlaybackHeadWrapCount:J
@@ -459,9 +459,9 @@
 
     const-wide/32 v7, 0x4c4b40
 
-    cmp-long v9, v1, v7
+    cmp-long v1, v1, v7
 
-    if-lez v9, :cond_1
+    if-lez v1, :cond_1
 
     .line 487
     iget-object v2, p0, Lcom/google/android/exoplayer2/audio/AudioTrackPositionTracker;->listener:Lcom/google/android/exoplayer2/audio/AudioTrackPositionTracker$Listener;
@@ -489,9 +489,9 @@
 
     move-result-wide v1
 
-    cmp-long v9, v1, v7
+    cmp-long v1, v1, v7
 
-    if-lez v9, :cond_2
+    if-lez v1, :cond_2
 
     .line 495
     iget-object v2, p0, Lcom/google/android/exoplayer2/audio/AudioTrackPositionTracker;->listener:Lcom/google/android/exoplayer2/audio/AudioTrackPositionTracker$Listener;
@@ -548,9 +548,9 @@
 
     const-wide/16 v8, 0x7530
 
-    cmp-long v10, v6, v8
+    cmp-long v6, v6, v8
 
-    if-ltz v10, :cond_2
+    if-ltz v6, :cond_2
 
     .line 455
     iget-object v6, p0, Lcom/google/android/exoplayer2/audio/AudioTrackPositionTracker;->playheadOffsets:[J
@@ -633,7 +633,7 @@
 .end method
 
 .method private maybeUpdateLatency(J)V
-    .locals 7
+    .locals 6
 
     .line 507
     iget-boolean v0, p0, Lcom/google/android/exoplayer2/audio/AudioTrackPositionTracker;->isOutputPcm:Z
@@ -650,9 +650,9 @@
 
     const-wide/32 v3, 0x7a120
 
-    cmp-long v5, v1, v3
+    cmp-long v1, v1, v3
 
-    if-ltz v5, :cond_1
+    if-ltz v1, :cond_1
 
     .line 513
     :try_start_0
@@ -687,7 +687,7 @@
 
     const-wide/16 v2, 0x3e8
 
-    mul-long v0, v0, v2
+    mul-long/2addr v0, v2
 
     iget-wide v2, p0, Lcom/google/android/exoplayer2/audio/AudioTrackPositionTracker;->bufferSizeUs:J
 
@@ -706,9 +706,9 @@
 
     const-wide/32 v4, 0x4c4b40
 
-    cmp-long v6, v0, v4
+    cmp-long v4, v0, v4
 
-    if-lez v6, :cond_0
+    if-lez v4, :cond_0
 
     .line 521
     iget-object v4, p0, Lcom/google/android/exoplayer2/audio/AudioTrackPositionTracker;->listener:Lcom/google/android/exoplayer2/audio/AudioTrackPositionTracker$Listener;
@@ -812,18 +812,18 @@
 
     int-to-long v2, v2
 
-    mul-long v0, v0, v2
+    mul-long/2addr v0, v2
 
     sub-long/2addr p1, v0
 
-    long-to-int p2, p1
+    long-to-int p1, p1
 
     .line 386
-    iget p1, p0, Lcom/google/android/exoplayer2/audio/AudioTrackPositionTracker;->bufferSize:I
+    iget p2, p0, Lcom/google/android/exoplayer2/audio/AudioTrackPositionTracker;->bufferSize:I
 
-    sub-int/2addr p1, p2
+    sub-int/2addr p2, p1
 
-    return p1
+    return p2
 .end method
 
 .method public getCurrentPositionUs(Z)J
@@ -980,16 +980,16 @@
 
     add-long/2addr v13, v15
 
-    mul-long v9, v9, v3
+    mul-long/2addr v9, v3
 
     .line 306
     div-long/2addr v9, v11
 
-    mul-long v7, v7, v9
+    mul-long/2addr v7, v9
 
     sub-long v9, v3, v9
 
-    mul-long v9, v9, v13
+    mul-long/2addr v9, v13
 
     add-long/2addr v7, v9
 
@@ -1074,7 +1074,7 @@
 
     const-wide/16 v2, 0x3e8
 
-    mul-long v0, v0, v2
+    mul-long/2addr v0, v2
 
     iput-wide v0, p0, Lcom/google/android/exoplayer2/audio/AudioTrackPositionTracker;->stopTimestampUs:J
 
@@ -1085,16 +1085,16 @@
 .end method
 
 .method public hasPendingData(J)Z
-    .locals 3
+    .locals 2
 
     .line 416
     invoke-direct {p0}, Lcom/google/android/exoplayer2/audio/AudioTrackPositionTracker;->getPlaybackHeadPosition()J
 
     move-result-wide v0
 
-    cmp-long v2, p1, v0
+    cmp-long p1, p1, v0
 
-    if-gtz v2, :cond_1
+    if-gtz p1, :cond_1
 
     invoke-direct {p0}, Lcom/google/android/exoplayer2/audio/AudioTrackPositionTracker;->forceHasPendingData()Z
 
@@ -1149,22 +1149,22 @@
 .end method
 
 .method public isStalled(J)Z
-    .locals 5
+    .locals 4
 
     .line 391
     iget-wide v0, p0, Lcom/google/android/exoplayer2/audio/AudioTrackPositionTracker;->forceResetWorkaroundTimeMs:J
 
     const-wide v2, -0x7fffffffffffffffL    # -4.9E-324
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-eqz v4, :cond_0
+    if-eqz v0, :cond_0
 
     const-wide/16 v0, 0x0
 
-    cmp-long v2, p1, v0
+    cmp-long p1, p1, v0
 
-    if-lez v2, :cond_0
+    if-lez p1, :cond_0
 
     .line 393
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
@@ -1177,9 +1177,9 @@
 
     const-wide/16 v0, 0xc8
 
-    cmp-long v2, p1, v0
+    cmp-long p1, p1, v0
 
-    if-ltz v2, :cond_0
+    if-ltz p1, :cond_0
 
     const/4 p1, 0x1
 
@@ -1277,7 +1277,7 @@
 .end method
 
 .method public pause()Z
-    .locals 5
+    .locals 4
 
     .line 425
     invoke-direct {p0}, Lcom/google/android/exoplayer2/audio/AudioTrackPositionTracker;->resetSyncParams()V
@@ -1287,9 +1287,9 @@
 
     const-wide v2, -0x7fffffffffffffffL    # -4.9E-324
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-nez v4, :cond_0
+    if-nez v0, :cond_0
 
     .line 429
     iget-object v0, p0, Lcom/google/android/exoplayer2/audio/AudioTrackPositionTracker;->audioTimestampPoller:Lcom/google/android/exoplayer2/audio/AudioTimestampPoller;
@@ -1371,7 +1371,7 @@
     goto :goto_0
 
     :cond_0
-    const/4 p2, 0x0
+    move p2, p1
 
     :goto_0
     iput-boolean p2, p0, Lcom/google/android/exoplayer2/audio/AudioTrackPositionTracker;->needsPassthroughWorkarounds:Z

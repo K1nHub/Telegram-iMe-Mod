@@ -27,7 +27,7 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 237
+    .line 240
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -46,7 +46,7 @@
 .method public final isStaking()Z
     .locals 1
 
-    .line 241
+    .line 244
     instance-of v0, p0, Lcom/smedialink/ui/wallet/transaction/WalletTransactionsFragment$ScreenType$StakingOperationsTab;
 
     if-nez v0, :cond_1

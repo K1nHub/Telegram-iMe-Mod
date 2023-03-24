@@ -203,7 +203,7 @@
     goto :goto_0
 
     :cond_0
-    const/4 v5, 0x0
+    move v5, v6
 
     :goto_0
     invoke-virtual {v1, v3, v5}, Lorg/telegram/ui/PremiumFeatureCell;->setData(Lorg/telegram/ui/PremiumPreviewFragment$PremiumFeatureData;Z)V
@@ -420,7 +420,7 @@
 
     array-length v13, v4
 
-    const/4 v14, 0x0
+    move v14, v6
 
     :goto_2
     if-ge v14, v13, :cond_17
@@ -476,7 +476,7 @@
     invoke-virtual {v3, v8, v7, v9, v12}, Landroid/text/SpannableString;->setSpan(Ljava/lang/Object;III)V
 
     :goto_4
-    const/16 v6, 0x21
+    move v6, v12
 
     goto/16 :goto_6
 
@@ -814,7 +814,7 @@
 
     move/from16 v11, v16
 
-    const/16 v6, 0x21
+    move v6, v12
 
     move-object v12, v15
 
@@ -829,7 +829,7 @@
     goto :goto_6
 
     :cond_14
-    const/16 v6, 0x21
+    move v6, v12
 
     .line 1198
     new-instance v5, Lorg/telegram/ui/Components/TextStyleSpan;
@@ -848,7 +848,7 @@
 
     :cond_15
     :goto_5
-    const/16 v6, 0x21
+    move v6, v12
 
     .line 1168
     new-instance v5, Lorg/telegram/ui/Components/URLSpanNoUnderline;

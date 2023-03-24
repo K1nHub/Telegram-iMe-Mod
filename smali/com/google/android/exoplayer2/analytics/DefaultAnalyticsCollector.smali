@@ -812,7 +812,7 @@
     goto :goto_0
 
     :cond_0
-    const/4 v0, 0x0
+    move v0, v1
 
     :goto_0
     if-eqz v0, :cond_1
@@ -853,7 +853,7 @@
     goto :goto_2
 
     :cond_3
-    const/4 v0, 0x0
+    move v0, v1
 
     :goto_2
     if-eqz v0, :cond_4
@@ -1827,12 +1827,12 @@
 
     if-ne v5, v1, :cond_1
 
-    const/4 v1, 0x1
+    move v1, v7
 
     goto :goto_1
 
     :cond_1
-    const/4 v1, 0x0
+    move v1, v8
 
     :goto_1
     const-wide/16 v9, 0x0
@@ -1874,7 +1874,7 @@
     goto :goto_2
 
     :cond_2
-    const/4 v7, 0x0
+    move v7, v8
 
     :goto_2
     if-eqz v7, :cond_6

@@ -308,7 +308,7 @@
 
     iget v8, p0, Lorg/telegram/ui/Components/GroupCallPip$3;->val$touchSlop:F
 
-    mul-float v8, v8, v8
+    mul-float/2addr v8, v8
 
     cmpl-float v6, v6, v8
 
@@ -344,7 +344,7 @@
     .line 201
     iput v2, p0, Lorg/telegram/ui/Components/GroupCallPip$3;->startY:F
 
-    const/4 v4, 0x0
+    move v4, v7
 
     goto :goto_0
 
@@ -481,7 +481,7 @@
 
     move-result v8
 
-    mul-int v9, v9, v8
+    mul-int/2addr v9, v8
 
     int-to-float v8, v9
 
@@ -550,7 +550,7 @@
 
     move-result p1
 
-    mul-int v0, v0, p1
+    mul-int/2addr v0, p1
 
     int-to-float p1, v0
 
@@ -558,19 +558,19 @@
 
     if-gez p1, :cond_7
 
-    const/4 p1, 0x1
+    move p1, v5
 
-    const/4 v1, 0x1
+    move v1, p1
 
     goto :goto_2
 
     :cond_7
-    const/4 p1, 0x1
+    move p1, v5
 
     goto :goto_2
 
     :cond_8
-    const/4 p1, 0x0
+    move p1, v1
 
     .line 234
     :goto_2

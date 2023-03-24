@@ -57,15 +57,15 @@ public class ArrayRow implements LinearSystem.Row {
         return toReadableString();
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:29:0x00c0  */
-    /* JADX WARN: Removed duplicated region for block: B:30:0x00d0  */
+    /* JADX WARN: Removed duplicated region for block: B:29:0x00bf  */
+    /* JADX WARN: Removed duplicated region for block: B:30:0x00cf  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct add '--show-bad-code' argument
     */
     java.lang.String toReadableString() {
         /*
-            Method dump skipped, instructions count: 256
+            Method dump skipped, instructions count: 255
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: androidx.constraintlayout.core.ArrayRow.toReadableString():java.lang.String");
@@ -291,11 +291,11 @@ public class ArrayRow implements LinearSystem.Row {
         boolean isNew2;
         int currentSize = this.variables.getCurrentSize();
         SolverVariable solverVariable = null;
-        SolverVariable solverVariable2 = null;
         boolean z = false;
         boolean z2 = false;
-        float f = BitmapDescriptorFactory.HUE_RED;
-        float f2 = BitmapDescriptorFactory.HUE_RED;
+        float f = 0.0f;
+        float f2 = 0.0f;
+        SolverVariable solverVariable2 = null;
         for (int i = 0; i < currentSize; i++) {
             float variableValue = this.variables.getVariableValue(i);
             SolverVariable variable = this.variables.getVariable(i);
@@ -403,7 +403,7 @@ public class ArrayRow implements LinearSystem.Row {
         SolverVariable.Type type;
         int currentSize = this.variables.getCurrentSize();
         SolverVariable solverVariable2 = null;
-        float f = BitmapDescriptorFactory.HUE_RED;
+        float f = 0.0f;
         for (int i = 0; i < currentSize; i++) {
             float variableValue = this.variables.getVariableValue(i);
             if (variableValue < BitmapDescriptorFactory.HUE_RED) {

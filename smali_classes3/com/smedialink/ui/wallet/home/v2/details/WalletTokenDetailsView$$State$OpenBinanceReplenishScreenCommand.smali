@@ -32,17 +32,17 @@
 .method constructor <init>(Lcom/smedialink/ui/wallet/home/v2/details/WalletTokenDetailsView$$State;Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;Lcom/smedialink/storage/domain/model/crypto/NetworkType;)V
     .locals 1
 
-    .line 868
+    .line 884
     const-class p1, Lmoxy/viewstate/strategy/OneExecutionStateStrategy;
 
     const-string v0, "openBinanceReplenishScreen"
 
     invoke-direct {p0, v0, p1}, Lmoxy/viewstate/ViewCommand;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
 
-    .line 870
+    .line 886
     iput-object p2, p0, Lcom/smedialink/ui/wallet/home/v2/details/WalletTokenDetailsView$$State$OpenBinanceReplenishScreenCommand;->token:Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;
 
-    .line 871
+    .line 887
     iput-object p3, p0, Lcom/smedialink/ui/wallet/home/v2/details/WalletTokenDetailsView$$State$OpenBinanceReplenishScreenCommand;->networkType:Lcom/smedialink/storage/domain/model/crypto/NetworkType;
 
     return-void
@@ -53,7 +53,7 @@
 .method public apply(Lcom/smedialink/ui/wallet/home/v2/details/WalletTokenDetailsView;)V
     .locals 2
 
-    .line 876
+    .line 892
     iget-object v0, p0, Lcom/smedialink/ui/wallet/home/v2/details/WalletTokenDetailsView$$State$OpenBinanceReplenishScreenCommand;->token:Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;
 
     iget-object v1, p0, Lcom/smedialink/ui/wallet/home/v2/details/WalletTokenDetailsView$$State$OpenBinanceReplenishScreenCommand;->networkType:Lcom/smedialink/storage/domain/model/crypto/NetworkType;
@@ -66,7 +66,7 @@
 .method public bridge synthetic apply(Lmoxy/MvpView;)V
     .locals 0
 
-    .line 862
+    .line 878
     check-cast p1, Lcom/smedialink/ui/wallet/home/v2/details/WalletTokenDetailsView;
 
     invoke-virtual {p0, p1}, Lcom/smedialink/ui/wallet/home/v2/details/WalletTokenDetailsView$$State$OpenBinanceReplenishScreenCommand;->apply(Lcom/smedialink/ui/wallet/home/v2/details/WalletTokenDetailsView;)V

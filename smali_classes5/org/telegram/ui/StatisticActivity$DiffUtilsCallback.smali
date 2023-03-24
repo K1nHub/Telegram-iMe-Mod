@@ -249,7 +249,7 @@
     goto :goto_0
 
     :cond_2
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_0
     return v2
@@ -658,9 +658,9 @@
 
     move-result-wide v5
 
-    cmp-long v7, v5, v3
+    cmp-long v5, v5, v3
 
-    if-eqz v7, :cond_0
+    if-eqz v5, :cond_0
 
     .line 2085
     iget-object v5, p0, Lorg/telegram/ui/StatisticActivity$DiffUtilsCallback;->layoutManager:Landroidx/recyclerview/widget/LinearLayoutManager;
@@ -691,9 +691,9 @@
     goto :goto_0
 
     :cond_1
-    move-wide v0, v3
+    move v5, v2
 
-    const/4 v5, 0x0
+    move-wide v0, v3
 
     .line 2093
     :goto_1
@@ -705,9 +705,9 @@
 
     invoke-virtual {v6, v7}, Landroidx/recyclerview/widget/DiffUtil$DiffResult;->dispatchUpdatesTo(Landroidx/recyclerview/widget/RecyclerView$Adapter;)V
 
-    cmp-long v6, v0, v3
+    cmp-long v3, v0, v3
 
-    if-eqz v6, :cond_4
+    if-eqz v3, :cond_4
 
     const/4 v3, -0x1
 

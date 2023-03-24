@@ -27,7 +27,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nComparisons.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Comparisons.kt\nkotlin/comparisons/ComparisonsKt__ComparisonsKt$compareBy$2\n+ 2 WalletRepositoryImpl.kt\ncom/smedialink/storage/data/repository/wallet/WalletRepositoryImpl$getWalletBalance$1\n*L\n1#1,328:1\n73#2:329\n*E\n"
+    value = "SMAP\nComparisons.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Comparisons.kt\nkotlin/comparisons/ComparisonsKt__ComparisonsKt$compareBy$2\n+ 2 WalletRepositoryImpl.kt\ncom/smedialink/storage/data/repository/wallet/WalletRepositoryImpl$getWalletBalance$1\n*L\n1#1,328:1\n74#2:329\n*E\n"
 .end annotation
 
 
@@ -53,7 +53,7 @@
     .line 102
     check-cast p1, Lcom/smedialink/storage/domain/model/wallet/token/TokenBalance;
 
-    .line 73
+    .line 74
     sget-object v0, Lcom/smedialink/storage/domain/model/wallet/token/TokenInfo;->Companion:Lcom/smedialink/storage/domain/model/wallet/token/TokenInfo$Companion;
 
     invoke-virtual {p1}, Lcom/smedialink/storage/domain/model/wallet/token/TokenBalance;->getCode()Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;
@@ -75,7 +75,7 @@
     .line 102
     check-cast p2, Lcom/smedialink/storage/domain/model/wallet/token/TokenBalance;
 
-    .line 73
+    .line 74
     invoke-virtual {p2}, Lcom/smedialink/storage/domain/model/wallet/token/TokenBalance;->getCode()Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;
 
     move-result-object p2

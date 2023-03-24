@@ -1412,13 +1412,13 @@
 
     const/4 v1, 0x0
 
+    move v4, v0
+
+    move v5, v4
+
     move-object v2, v1
 
     move-object v3, v2
-
-    const/4 v4, -0x1
-
-    const/4 v5, -0x1
 
     .line 565
     :goto_0
@@ -1903,7 +1903,7 @@
 
     if-eqz p2, :cond_2
 
-    const/4 p0, 0x0
+    move p0, v1
 
     .line 305
     :goto_0

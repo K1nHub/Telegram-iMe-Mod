@@ -280,7 +280,7 @@
 
     const/4 v2, 0x0
 
-    const/4 v3, 0x0
+    move v3, v2
 
     :goto_0
     if-ge v3, p2, :cond_3
@@ -306,13 +306,13 @@
     goto :goto_1
 
     :cond_1
-    const/4 v4, 0x0
+    move v4, v2
 
     goto :goto_2
 
     :cond_2
     :goto_1
-    const/4 v4, 0x1
+    move v4, v1
 
     :goto_2
     invoke-virtual {p0, v5, v4}, Landroidx/appcompat/widget/AppCompatProgressBarHelper;->tileify(Landroid/graphics/drawable/Drawable;Z)Landroid/graphics/drawable/Drawable;

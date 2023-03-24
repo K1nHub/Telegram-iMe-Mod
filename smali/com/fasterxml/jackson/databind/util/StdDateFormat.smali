@@ -610,7 +610,7 @@
 
     array-length v5, v4
 
-    const/4 v6, 0x0
+    move v6, v1
 
     :goto_1
     const/16 v7, 0x22

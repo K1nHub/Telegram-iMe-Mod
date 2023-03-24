@@ -142,7 +142,7 @@
 
     xor-int/2addr v0, v5
 
-    mul-int v0, v0, v5
+    mul-int/2addr v0, v5
 
     const/16 v6, 0x20
 
@@ -150,27 +150,27 @@
 
     xor-long/2addr v1, v7
 
-    long-to-int v2, v1
+    long-to-int v1, v1
 
-    xor-int/2addr v0, v2
+    xor-int/2addr v0, v1
 
-    mul-int v0, v0, v5
+    mul-int/2addr v0, v5
 
     ushr-long v1, v3, v6
 
     xor-long/2addr v1, v3
 
-    long-to-int v2, v1
+    long-to-int v1, v1
 
-    xor-int/2addr v0, v2
+    xor-int/2addr v0, v1
 
-    mul-int v0, v0, v5
+    mul-int/2addr v0, v5
 
     iget v1, p0, Lcom/google/android/play/core/install/zza;->zzd:I
 
     xor-int/2addr v0, v1
 
-    mul-int v0, v0, v5
+    mul-int/2addr v0, v5
 
     iget-object v1, p0, Lcom/google/android/play/core/install/zza;->zze:Ljava/lang/String;
 

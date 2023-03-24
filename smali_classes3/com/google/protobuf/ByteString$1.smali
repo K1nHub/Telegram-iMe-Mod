@@ -26,17 +26,17 @@
 .method constructor <init>(Lcom/google/protobuf/ByteString;)V
     .locals 1
 
-    .line 175
+    .line 176
     iput-object p1, p0, Lcom/google/protobuf/ByteString$1;->this$0:Lcom/google/protobuf/ByteString;
 
     invoke-direct {p0}, Lcom/google/protobuf/ByteString$AbstractByteIterator;-><init>()V
 
     const/4 v0, 0x0
 
-    .line 176
+    .line 177
     iput v0, p0, Lcom/google/protobuf/ByteString$1;->position:I
 
-    .line 177
+    .line 178
     invoke-virtual {p1}, Lcom/google/protobuf/ByteString;->size()I
 
     move-result p1
@@ -51,7 +51,7 @@
 .method public hasNext()Z
     .locals 2
 
-    .line 181
+    .line 182
     iget v0, p0, Lcom/google/protobuf/ByteString$1;->position:I
 
     iget v1, p0, Lcom/google/protobuf/ByteString$1;->limit:I
@@ -72,20 +72,20 @@
 .method public nextByte()B
     .locals 2
 
-    .line 186
+    .line 187
     iget v0, p0, Lcom/google/protobuf/ByteString$1;->position:I
 
-    .line 187
+    .line 188
     iget v1, p0, Lcom/google/protobuf/ByteString$1;->limit:I
 
     if-ge v0, v1, :cond_0
 
     add-int/lit8 v1, v0, 0x1
 
-    .line 190
+    .line 191
     iput v1, p0, Lcom/google/protobuf/ByteString$1;->position:I
 
-    .line 191
+    .line 192
     iget-object v1, p0, Lcom/google/protobuf/ByteString$1;->this$0:Lcom/google/protobuf/ByteString;
 
     invoke-virtual {v1, v0}, Lcom/google/protobuf/ByteString;->internalByteAt(I)B
@@ -94,7 +94,7 @@
 
     return v0
 
-    .line 188
+    .line 189
     :cond_0
     new-instance v0, Ljava/util/NoSuchElementException;
 

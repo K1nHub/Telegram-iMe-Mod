@@ -74,7 +74,7 @@ public final class IntArrayList extends AbstractProtobufList<Integer> implements
         return i;
     }
 
-    @Override // com.google.protobuf.Internal.ProtobufList
+    @Override // com.google.protobuf.Internal.ProtobufList, com.google.protobuf.Internal.BooleanList
     /* renamed from: mutableCopyWithCapacity */
     public Internal.ProtobufList<Integer> mutableCopyWithCapacity2(int i) {
         if (i < this.size) {

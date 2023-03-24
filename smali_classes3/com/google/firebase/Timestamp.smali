@@ -93,7 +93,7 @@
 .end method
 
 .method private static validateRange(JI)V
-    .locals 8
+    .locals 7
 
     const/4 v0, 0x1
 
@@ -101,12 +101,12 @@
 
     if-ltz p2, :cond_0
 
-    const/4 v2, 0x1
+    move v2, v0
 
     goto :goto_0
 
     :cond_0
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_0
     new-array v3, v0, [Ljava/lang/Object;
@@ -126,16 +126,16 @@
 
     const-wide v5, 0x41cdcd6500000000L    # 1.0E9
 
-    cmpg-double v7, v2, v5
+    cmpg-double v2, v2, v5
 
-    if-gez v7, :cond_1
+    if-gez v2, :cond_1
 
-    const/4 v2, 0x1
+    move v2, v0
 
     goto :goto_1
 
     :cond_1
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_1
     new-array v3, v0, [Ljava/lang/Object;
@@ -155,12 +155,12 @@
 
     if-ltz p2, :cond_2
 
-    const/4 p2, 0x1
+    move p2, v0
 
     goto :goto_2
 
     :cond_2
-    const/4 p2, 0x0
+    move p2, v1
 
     :goto_2
     new-array v2, v0, [Ljava/lang/Object;
@@ -182,12 +182,12 @@
 
     if-gez p2, :cond_3
 
-    const/4 p2, 0x1
+    move p2, v0
 
     goto :goto_3
 
     :cond_3
-    const/4 p2, 0x0
+    move p2, v1
 
     :goto_3
     new-array v0, v0, [Ljava/lang/Object;
@@ -295,7 +295,7 @@
     goto :goto_0
 
     :cond_2
-    const/4 v0, 0x0
+    move v0, v2
 
     :goto_0
     return v0
@@ -335,9 +335,9 @@
 
     shr-long/2addr v0, v3
 
-    long-to-int v1, v0
+    long-to-int v0, v0
 
-    add-int/2addr v2, v1
+    add-int/2addr v2, v0
 
     mul-int/lit8 v2, v2, 0x25
 
@@ -359,7 +359,7 @@
 
     const-wide/16 v3, 0x3e8
 
-    mul-long v1, v1, v3
+    mul-long/2addr v1, v3
 
     iget v3, p0, Lcom/google/firebase/Timestamp;->nanoseconds:I
 

@@ -89,32 +89,32 @@
 
     const/high16 v2, 0x3f800000    # 1.0f
 
-    const/4 v3, 0x1
+    cmpl-float v3, p4, v2
 
-    const/4 v4, 0x0
+    const/4 v4, 0x1
 
-    cmpl-float v5, p4, v2
+    const/4 v5, 0x0
 
-    if-lez v5, :cond_1
+    if-lez v3, :cond_1
 
-    const/4 v6, 0x1
+    move v6, v4
 
     goto :goto_0
 
     :cond_1
-    const/4 v6, 0x0
+    move v6, v5
 
     :goto_0
     cmpl-float p5, p5, v2
 
     if-lez p5, :cond_2
 
-    const/4 v2, 0x1
+    move v2, v4
 
     goto :goto_1
 
     :cond_2
-    const/4 v2, 0x0
+    move v2, v5
 
     :goto_1
     if-ne v6, v2, :cond_3
@@ -156,14 +156,14 @@
 
     if-eq p1, p2, :cond_7
 
-    if-lez v5, :cond_5
+    if-lez v3, :cond_5
 
-    const/4 p1, 0x1
+    move p1, v4
 
     goto :goto_3
 
     :cond_5
-    const/4 p1, 0x0
+    move p1, v5
 
     :goto_3
     if-lez p5, :cond_6
@@ -171,10 +171,10 @@
     goto :goto_4
 
     :cond_6
-    const/4 v3, 0x0
+    move v4, v5
 
     :goto_4
-    if-ne p1, v3, :cond_8
+    if-ne p1, v4, :cond_8
 
     .line 113
     :cond_7

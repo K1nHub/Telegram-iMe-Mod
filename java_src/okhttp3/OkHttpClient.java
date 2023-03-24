@@ -285,14 +285,14 @@ public class OkHttpClient implements Cloneable, Call.Factory {
     }
 
     private final void verifyClientState() {
+        List<Interceptor> list;
+        List<Interceptor> list2;
         boolean z;
-        List<Interceptor> list = this.interceptors;
-        Objects.requireNonNull(list, "null cannot be cast to non-null type kotlin.collections.List<okhttp3.Interceptor?>");
+        Objects.requireNonNull(this.interceptors, "null cannot be cast to non-null type kotlin.collections.List<okhttp3.Interceptor?>");
         if (!(!list.contains(null))) {
             throw new IllegalStateException(("Null interceptor: " + this.interceptors).toString());
         }
-        List<Interceptor> list2 = this.networkInterceptors;
-        Objects.requireNonNull(list2, "null cannot be cast to non-null type kotlin.collections.List<okhttp3.Interceptor?>");
+        Objects.requireNonNull(this.networkInterceptors, "null cannot be cast to non-null type kotlin.collections.List<okhttp3.Interceptor?>");
         if (!(!list2.contains(null))) {
             throw new IllegalStateException(("Null network interceptor: " + this.networkInterceptors).toString());
         }
@@ -593,7 +593,10 @@ public class OkHttpClient implements Cloneable, Call.Factory {
             if (!(mutableList.contains(protocol) || mutableList.contains(Protocol.HTTP_1_1))) {
                 throw new IllegalArgumentException(("protocols must contain h2_prior_knowledge or http/1.1: " + mutableList).toString());
             }
-            if (!((!mutableList.contains(protocol) || mutableList.size() <= 1) ? true : true)) {
+            if (!mutableList.contains(protocol) || mutableList.size() <= 1) {
+                z = true;
+            }
+            if (!z) {
                 throw new IllegalArgumentException(("protocols containing h2_prior_knowledge cannot use other protocols: " + mutableList).toString());
             } else if (!(!mutableList.contains(Protocol.HTTP_1_0))) {
                 throw new IllegalArgumentException(("protocols must not contain http/1.0: " + mutableList).toString());

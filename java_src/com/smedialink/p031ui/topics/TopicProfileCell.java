@@ -20,7 +20,7 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import org.fork.controller.ForkTopicsController;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3286R;
+import org.telegram.messenger.C3301R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.UserConfig;
 import org.telegram.p048ui.ActionBar.SimpleTextView;
@@ -102,22 +102,22 @@ public final class TopicProfileCell extends FrameLayout {
         Property property = FrameLayout.TRANSLATION_X;
         float[] fArr = new float[1];
         float f = BitmapDescriptorFactory.HUE_RED;
-        fArr[0] = AndroidUtilities.m51dp(topicModel != null ? -48.0f : BitmapDescriptorFactory.HUE_RED);
+        fArr[0] = AndroidUtilities.m51dp(topicModel != null ? -48.0f : 0.0f);
         objectAnimatorArr[0] = ObjectAnimator.ofFloat(selectTopicTextView, property, fArr);
         SimpleTextView selectTopicTextView2 = getSelectTopicTextView();
         Property property2 = FrameLayout.ALPHA;
         float[] fArr2 = new float[1];
-        fArr2[0] = topicModel != null ? BitmapDescriptorFactory.HUE_RED : 1.0f;
+        fArr2[0] = topicModel != null ? 0.0f : 1.0f;
         objectAnimatorArr[1] = ObjectAnimator.ofFloat(selectTopicTextView2, property2, fArr2);
         TopicView topicView = getTopicView();
         Property property3 = FrameLayout.TRANSLATION_X;
         float[] fArr3 = new float[1];
-        fArr3[0] = AndroidUtilities.m51dp(topicModel != null ? BitmapDescriptorFactory.HUE_RED : -48.0f);
+        fArr3[0] = AndroidUtilities.m51dp(topicModel != null ? 0.0f : -48.0f);
         objectAnimatorArr[2] = ObjectAnimator.ofFloat(topicView, property3, fArr3);
         TopicView topicView2 = getTopicView();
         Property property4 = FrameLayout.ALPHA;
         float[] fArr4 = new float[1];
-        fArr4[0] = topicModel == null ? BitmapDescriptorFactory.HUE_RED : 1.0f;
+        fArr4[0] = topicModel == null ? 0.0f : 1.0f;
         objectAnimatorArr[3] = ObjectAnimator.ofFloat(topicView2, property4, fArr4);
         ImageView deleteImageView3 = getDeleteImageView();
         Property property5 = FrameLayout.ROTATION;
@@ -149,7 +149,7 @@ public final class TopicProfileCell extends FrameLayout {
     /* JADX INFO: Access modifiers changed from: private */
     public final SimpleTextView initSelectTopicTextView() {
         SimpleTextView simpleTextView = new SimpleTextView(getContext());
-        simpleTextView.setText(LocaleController.getInternalString(C3286R.string.topics_select));
+        simpleTextView.setText(LocaleController.getInternalString(C3301R.string.topics_select));
         simpleTextView.setTextSize(16);
         return simpleTextView;
     }
@@ -158,7 +158,7 @@ public final class TopicProfileCell extends FrameLayout {
     public final ImageView initDeleteImageView() {
         ImageView imageView = new ImageView(getContext());
         imageView.setScaleType(ImageView.ScaleType.CENTER);
-        imageView.setImageResource(C3286R.C3288drawable.fork_plus);
+        imageView.setImageResource(C3301R.C3303drawable.fork_plus);
         return imageView;
     }
 

@@ -322,9 +322,9 @@
 
     shr-long v0, v1, v0
 
-    cmp-long v2, v0, v7
+    cmp-long v0, v0, v7
 
-    if-eqz v2, :cond_1
+    if-eqz v0, :cond_1
 
     const/16 v0, 0xc
 
@@ -858,9 +858,9 @@
 
     add-long v1, v1, v22
 
-    long-to-int v2, v1
+    long-to-int v1, v1
 
-    invoke-static {v2, v0}, Lorg/bouncycastle/math/ec/custom/sec/SecP384R1Field;->reduce32(I[I)V
+    invoke-static {v1, v0}, Lorg/bouncycastle/math/ec/custom/sec/SecP384R1Field;->reduce32(I[I)V
 
     return-void
 .end method
@@ -979,32 +979,32 @@
     move-wide v2, v0
 
     :goto_0
-    const/16 p0, 0xc
+    cmp-long p0, v2, v0
 
-    cmp-long v4, v2, v0
+    const/16 v0, 0xc
 
-    if-eqz v4, :cond_2
+    if-eqz p0, :cond_2
 
-    const/4 v0, 0x5
+    const/4 p0, 0x5
 
-    invoke-static {p0, p1, v0}, Lorg/bouncycastle/math/raw/Nat;->incAt(I[II)I
+    invoke-static {v0, p1, p0}, Lorg/bouncycastle/math/raw/Nat;->incAt(I[II)I
 
-    move-result v0
+    move-result p0
 
-    if-nez v0, :cond_3
+    if-nez p0, :cond_3
 
     :cond_2
-    const/16 v0, 0xb
+    const/16 p0, 0xb
 
-    aget v0, p1, v0
+    aget p0, p1, p0
 
     const/4 v1, -0x1
 
-    if-ne v0, v1, :cond_4
+    if-ne p0, v1, :cond_4
 
-    sget-object v0, Lorg/bouncycastle/math/ec/custom/sec/SecP384R1Field;->P:[I
+    sget-object p0, Lorg/bouncycastle/math/ec/custom/sec/SecP384R1Field;->P:[I
 
-    invoke-static {p0, p1, v0}, Lorg/bouncycastle/math/raw/Nat;->gte(I[I[I)Z
+    invoke-static {v0, p1, p0}, Lorg/bouncycastle/math/raw/Nat;->gte(I[I[I)Z
 
     move-result p0
 
@@ -1161,9 +1161,9 @@
 
     shr-long v0, v1, v0
 
-    cmp-long v2, v0, v7
+    cmp-long v0, v0, v7
 
-    if-eqz v2, :cond_1
+    if-eqz v0, :cond_1
 
     const/16 v0, 0xc
 

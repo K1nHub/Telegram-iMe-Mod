@@ -267,7 +267,7 @@
 .end method
 
 .method public run()V
-    .locals 6
+    .locals 7
 
     .line 513
     new-instance v0, Ljava/lang/StringBuilder;
@@ -362,7 +362,7 @@
     :try_end_3
     .catchall {:try_start_3 .. :try_end_3} :catchall_3
 
-    goto :goto_4
+    goto/16 :goto_4
 
     :catchall_0
     move-exception v0
@@ -377,9 +377,11 @@
     :catchall_1
     move-exception v3
 
-    move-object v0, v3
+    move-object v6, v3
 
-    const/4 v3, 0x0
+    move v3, v0
+
+    move-object v0, v6
 
     .line 528
     :goto_1
@@ -431,9 +433,11 @@
     :catch_1
     move-exception v3
 
-    move-object v0, v3
+    move-object v6, v3
 
-    const/4 v3, 0x0
+    move v3, v0
+
+    move-object v0, v6
 
     :goto_2
     if-eqz v3, :cond_1

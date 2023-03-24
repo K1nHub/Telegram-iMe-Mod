@@ -658,7 +658,7 @@
     goto :goto_0
 
     :cond_4
-    const/4 v2, 0x0
+    move v2, v1
 
     .line 6362
     :goto_0
@@ -888,11 +888,11 @@
 
     int-to-float v2, v2
 
-    mul-float v1, v1, v2
+    mul-float/2addr v1, v2
 
     const/high16 v2, 0x3f000000    # 0.5f
 
-    mul-float v1, v1, v2
+    mul-float/2addr v1, v2
 
     float-to-double v1, v1
 
@@ -1052,11 +1052,11 @@
 
     int-to-float v5, v5
 
-    mul-float v1, v1, v5
+    mul-float/2addr v1, v5
 
     float-to-int v1, v1
 
-    const/4 v5, 0x1
+    move v5, v12
 
     goto :goto_4
 
@@ -1081,7 +1081,7 @@
     goto :goto_5
 
     :cond_5
-    const/high16 v7, 0x42c80000    # 100.0f
+    move v7, v6
 
     :goto_5
     if-eqz v3, :cond_6
@@ -1098,7 +1098,7 @@
 
     div-float/2addr v1, v7
 
-    mul-float v1, v1, v6
+    mul-float/2addr v1, v6
 
     float-to-int v1, v1
 
@@ -1141,7 +1141,7 @@
 
     const v10, 0x3f666666    # 0.9f
 
-    mul-float v5, v5, v10
+    mul-float/2addr v5, v10
 
     float-to-int v5, v5
 
@@ -1151,7 +1151,7 @@
 
     div-float/2addr v1, v6
 
-    mul-float v1, v1, v7
+    mul-float/2addr v1, v7
 
     float-to-int v1, v1
 
@@ -1807,7 +1807,7 @@
 
     if-eqz v0, :cond_18
 
-    const/16 v16, 0x1
+    move/from16 v16, v12
 
     goto :goto_f
 
@@ -2283,7 +2283,7 @@
     goto :goto_1
 
     :cond_a
-    const/4 v1, 0x0
+    move v1, v4
 
     :cond_b
     :goto_1
@@ -2332,7 +2332,7 @@
     goto :goto_0
 
     :cond_0
-    const/4 p1, 0x0
+    move p1, p3
 
     goto :goto_1
 
@@ -2546,7 +2546,7 @@
     :cond_3
     iput v4, p0, Lorg/telegram/ui/ArticleViewer$BlockVideoCell;->buttonState:I
 
-    const/4 v3, 0x0
+    move v3, v4
 
     goto :goto_1
 

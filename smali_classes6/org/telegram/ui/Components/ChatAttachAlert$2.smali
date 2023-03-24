@@ -383,7 +383,7 @@
 
     int-to-float v2, v2
 
-    mul-float v2, v2, p2
+    mul-float/2addr v2, p2
 
     invoke-virtual {v1, v2}, Landroid/widget/FrameLayout;->setTranslationY(F)V
 
@@ -468,7 +468,7 @@
 
     int-to-float v2, v2
 
-    mul-float v2, v2, p2
+    mul-float/2addr v2, p2
 
     invoke-virtual {v1, v2}, Landroid/widget/FrameLayout;->setTranslationX(F)V
 
@@ -483,7 +483,7 @@
 
     int-to-float p1, p1
 
-    mul-float v0, v0, p1
+    mul-float/2addr v0, p1
 
     invoke-virtual {v1, v0}, Landroid/widget/FrameLayout;->setTranslationX(F)V
 
@@ -499,7 +499,7 @@
 
     int-to-float v2, p1
 
-    mul-float v2, v2, p2
+    mul-float/2addr v2, p2
 
     invoke-virtual {v1, v2}, Landroid/widget/FrameLayout;->setTranslationX(F)V
 
@@ -516,7 +516,7 @@
 
     sub-float/2addr v0, p2
 
-    mul-float p1, p1, v0
+    mul-float/2addr p1, v0
 
     invoke-virtual {v1, p1}, Landroid/widget/FrameLayout;->setTranslationX(F)V
 

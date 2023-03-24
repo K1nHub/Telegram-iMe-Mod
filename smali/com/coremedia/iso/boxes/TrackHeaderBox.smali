@@ -937,7 +937,7 @@
 
 # virtual methods
 .method public _parseDetails(Ljava/nio/ByteBuffer;)V
-    .locals 5
+    .locals 4
 
     .line 113
     invoke-virtual {p0, p1}, Lcom/googlecode/mp4parser/AbstractFullBox;->parseVersionAndFlags(Ljava/nio/ByteBuffer;)J
@@ -992,9 +992,9 @@
 
     const-wide/16 v2, -0x1
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-ltz v4, :cond_0
+    if-ltz v0, :cond_0
 
     goto :goto_0
 
@@ -1524,7 +1524,7 @@
 .end method
 
 .method public setDuration(J)V
-    .locals 3
+    .locals 2
 
     sget-object v0, Lcom/coremedia/iso/boxes/TrackHeaderBox;->ajc$tjp_15:Lorg/aspectj/lang/JoinPoint$StaticPart;
 
@@ -1547,9 +1547,9 @@
 
     const-wide v0, 0x100000000L
 
-    cmp-long v2, p1, v0
+    cmp-long p1, p1, v0
 
-    if-ltz v2, :cond_0
+    if-ltz p1, :cond_0
 
     const/4 p1, 0x1
 

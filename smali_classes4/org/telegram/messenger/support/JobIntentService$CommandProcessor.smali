@@ -59,6 +59,7 @@
     .locals 2
 
     .line 350
+    :catchall_0
     :goto_0
     iget-object p1, p0, Lorg/telegram/messenger/support/JobIntentService$CommandProcessor;->this$0:Lorg/telegram/messenger/support/JobIntentService;
 
@@ -82,11 +83,6 @@
     invoke-interface {p1}, Lorg/telegram/messenger/support/JobIntentService$GenericWorkItem;->complete()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    goto :goto_0
-
-    :catchall_0
-    nop
 
     goto :goto_0
 

@@ -52,6 +52,7 @@
 
     move-result-object p0
 
+    :catch_0
     :goto_0
     invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
 
@@ -80,53 +81,48 @@
 
     goto :goto_0
 
-    :catch_0
-    nop
-
-    goto :goto_0
-
     :cond_0
     return-void
 .end method
 
 .method public static synthetic c(JJ)J
-    .locals 7
+    .locals 5
 
     add-long v0, p0, p2
 
     xor-long/2addr p2, p0
 
-    const/4 v2, 0x1
+    const-wide/16 v2, 0x0
 
-    const/4 v3, 0x0
+    cmp-long p2, p2, v2
 
-    const-wide/16 v4, 0x0
+    const/4 p3, 0x1
 
-    cmp-long v6, p2, v4
+    const/4 v4, 0x0
 
-    if-gez v6, :cond_0
+    if-gez p2, :cond_0
 
-    const/4 p2, 0x1
+    move p2, p3
 
     goto :goto_0
 
     :cond_0
-    const/4 p2, 0x0
+    move p2, v4
 
     :goto_0
     xor-long/2addr p0, v0
 
-    cmp-long p3, p0, v4
+    cmp-long p0, p0, v2
 
-    if-ltz p3, :cond_1
+    if-ltz p0, :cond_1
 
     goto :goto_1
 
     :cond_1
-    const/4 v2, 0x0
+    move p3, v4
 
     :goto_1
-    or-int p0, p2, v2
+    or-int p0, p2, p3
 
     if-eqz p0, :cond_2
 

@@ -170,9 +170,9 @@
 
     const-wide/16 v5, 0x0
 
-    cmp-long v7, v1, v5
+    cmp-long v5, v1, v5
 
-    if-eqz v7, :cond_0
+    if-eqz v5, :cond_0
 
     const/4 v5, 0x1
 
@@ -221,9 +221,9 @@
 
     add-long/2addr v1, v3
 
-    long-to-int v2, v1
+    long-to-int v1, v1
 
-    aput v2, p0, v0
+    aput v1, p0, v0
 
     return-void
 .end method
@@ -474,15 +474,15 @@
 
     ushr-long v1, v13, v1
 
-    long-to-int v2, v1
+    long-to-int v1, v1
 
-    invoke-static {v2, v0}, Lorg/bouncycastle/math/ec/custom/sec/SecP128R1Field;->reduce32(I[I)V
+    invoke-static {v1, v0}, Lorg/bouncycastle/math/ec/custom/sec/SecP128R1Field;->reduce32(I[I)V
 
     return-void
 .end method
 
 .method public static reduce32(I[I)V
-    .locals 11
+    .locals 10
 
     :goto_0
     if-eqz p0, :cond_1
@@ -513,52 +513,52 @@
 
     const-wide/16 v6, 0x0
 
-    const/4 v8, 0x1
+    cmp-long v6, v4, v6
 
-    cmp-long v9, v4, v6
+    const/4 v7, 0x1
 
-    if-eqz v9, :cond_0
+    if-eqz v6, :cond_0
 
-    aget v6, p1, v8
+    aget v6, p1, v7
 
-    int-to-long v6, v6
+    int-to-long v8, v6
 
-    and-long/2addr v6, v2
+    and-long/2addr v8, v2
 
-    add-long/2addr v4, v6
+    add-long/2addr v4, v8
 
     long-to-int v6, v4
 
-    aput v6, p1, v8
+    aput v6, p1, v7
 
     shr-long/2addr v4, p0
 
     const/4 v6, 0x2
 
-    aget v7, p1, v6
+    aget v8, p1, v6
 
-    int-to-long v9, v7
+    int-to-long v8, v8
 
-    and-long/2addr v9, v2
+    and-long/2addr v8, v2
 
-    add-long/2addr v4, v9
+    add-long/2addr v4, v8
 
-    long-to-int v7, v4
+    long-to-int v8, v4
 
-    aput v7, p1, v6
+    aput v8, p1, v6
 
     shr-long/2addr v4, p0
 
     :cond_0
     const/4 v6, 0x3
 
-    aget v7, p1, v6
+    aget v8, p1, v6
 
-    int-to-long v9, v7
+    int-to-long v8, v8
 
-    and-long/2addr v2, v9
+    and-long/2addr v2, v8
 
-    shl-long/2addr v0, v8
+    shl-long/2addr v0, v7
 
     add-long/2addr v2, v0
 
@@ -643,9 +643,9 @@
 
     const-wide/16 v5, 0x0
 
-    cmp-long v7, v1, v5
+    cmp-long v5, v1, v5
 
-    if-eqz v7, :cond_0
+    if-eqz v5, :cond_0
 
     const/4 v5, 0x1
 
@@ -694,9 +694,9 @@
 
     add-long/2addr v1, v3
 
-    long-to-int v2, v1
+    long-to-int v1, v1
 
-    aput v2, p0, v0
+    aput v1, p0, v0
 
     return-void
 .end method

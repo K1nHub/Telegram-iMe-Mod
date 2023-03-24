@@ -506,9 +506,9 @@
 
     move-object v11, v4
 
-    const/4 v0, 0x0
+    move v0, v9
 
-    const/4 v10, 0x0
+    move v10, v0
 
     :goto_2
     const-string v12, "/s/"
@@ -563,13 +563,13 @@
 
     move-object/from16 v16, v4
 
+    move v15, v9
+
+    move/from16 v17, v15
+
+    move/from16 v18, v17
+
     move-object v14, v11
-
-    const/4 v15, 0x0
-
-    const/16 v17, 0x0
-
-    const/16 v18, 0x0
 
     move v11, v0
 
@@ -630,7 +630,7 @@
     :goto_4
     move-object/from16 v22, v5
 
-    const/16 v18, 0x1
+    move/from16 v18, v7
 
     goto/16 :goto_8
 
@@ -1615,7 +1615,7 @@
     :try_end_7
     .catch Ljava/lang/Exception; {:try_start_7 .. :try_end_7} :catch_7
 
-    const/4 v7, 0x0
+    move v7, v5
 
     goto :goto_16
 
@@ -1634,7 +1634,7 @@
 
     :cond_27
     :goto_15
-    const/4 v7, 0x1
+    move v7, v10
 
     goto :goto_16
 

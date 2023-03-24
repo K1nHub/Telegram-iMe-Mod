@@ -87,7 +87,7 @@
 .end method
 
 .method public equals(Ljava/lang/Object;)Z
-    .locals 7
+    .locals 6
 
     const/4 v0, 0x0
 
@@ -119,17 +119,17 @@
 
     iget-wide v4, p1, Lorg/telegram/ui/Components/Paint/Point;->x:D
 
-    cmpl-double v6, v2, v4
+    cmpl-double v2, v2, v4
 
-    if-nez v6, :cond_3
+    if-nez v2, :cond_3
 
     iget-wide v2, p0, Lorg/telegram/ui/Components/Paint/Point;->y:D
 
     iget-wide v4, p1, Lorg/telegram/ui/Components/Paint/Point;->y:D
 
-    cmpl-double v6, v2, v4
+    cmpl-double v2, v2, v4
 
-    if-nez v6, :cond_3
+    if-nez v2, :cond_3
 
     iget-wide v2, p0, Lorg/telegram/ui/Components/Paint/Point;->z:D
 
@@ -139,7 +139,7 @@
 
     if-nez p1, :cond_3
 
-    const/4 v0, 0x1
+    move v0, v1
 
     :cond_3
     return v0
@@ -206,11 +206,11 @@
 
     iget-wide v3, p0, Lorg/telegram/ui/Components/Paint/Point;->y:D
 
-    mul-double v3, v3, p1
+    mul-double/2addr v3, p1
 
     iget-wide v5, p0, Lorg/telegram/ui/Components/Paint/Point;->z:D
 
-    mul-double v5, v5, p1
+    mul-double/2addr v5, p1
 
     move-object v0, v7
 
@@ -239,7 +239,7 @@
 
     add-double/2addr v3, v5
 
-    mul-double v3, v3, p2
+    mul-double/2addr v3, p2
 
     iget-wide v5, p0, Lorg/telegram/ui/Components/Paint/Point;->z:D
 
@@ -247,7 +247,7 @@
 
     add-double/2addr v5, v8
 
-    mul-double v5, v5, p2
+    mul-double/2addr v5, p2
 
     move-object v0, v7
 

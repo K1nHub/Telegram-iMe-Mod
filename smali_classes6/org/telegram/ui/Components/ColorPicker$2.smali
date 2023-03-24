@@ -37,18 +37,18 @@
 
 # virtual methods
 .method public onTouchEvent(Landroid/view/MotionEvent;)Z
-    .locals 3
+    .locals 2
 
     .line 272
     invoke-virtual {p0}, Landroid/widget/EditText;->getAlpha()F
 
     move-result v0
 
+    const/high16 v1, 0x3f800000    # 1.0f
+
+    cmpl-float v0, v0, v1
+
     const/4 v1, 0x0
-
-    const/high16 v2, 0x3f800000    # 1.0f
-
-    cmpl-float v0, v0, v2
 
     if-eqz v0, :cond_0
 

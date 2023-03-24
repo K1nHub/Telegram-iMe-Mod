@@ -63,7 +63,7 @@
 .end method
 
 .method private synthetic lambda$onItemClick$0(Lorg/telegram/tgnet/TLObject;Ljava/lang/String;Lorg/telegram/ui/ActionBar/AlertDialog;)V
-    .locals 17
+    .locals 16
 
     move-object/from16 v0, p0
 
@@ -78,7 +78,7 @@
 
     const/4 v3, 0x0
 
-    const/4 v4, 0x0
+    move v4, v3
 
     .line 158
     :goto_0
@@ -262,9 +262,9 @@
 
     const-wide/16 v14, 0x0
 
-    cmp-long v16, v12, v14
+    cmp-long v14, v12, v14
 
-    if-eqz v16, :cond_0
+    if-eqz v14, :cond_0
 
     .line 182
     iput-wide v12, v6, Lorg/telegram/tgnet/TLRPC$TL_forumTopic;->icon_emoji_id:J

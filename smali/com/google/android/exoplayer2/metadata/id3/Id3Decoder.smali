@@ -180,7 +180,7 @@
     const-string p0, "image/jpeg"
 
     :cond_0
-    const/4 p2, 0x2
+    move p2, v4
 
     goto :goto_0
 
@@ -344,20 +344,20 @@
 
     move-result-wide v2
 
-    const-wide/16 v7, -0x1
+    const-wide v7, 0xffffffffL
 
-    const-wide v9, 0xffffffffL
+    cmp-long v9, v2, v7
 
-    cmp-long v11, v2, v9
+    const-wide/16 v10, -0x1
 
-    if-nez v11, :cond_0
+    if-nez v9, :cond_0
 
-    move-wide v11, v7
+    move-wide v12, v10
 
     goto :goto_0
 
     :cond_0
-    move-wide v11, v2
+    move-wide v12, v2
 
     .line 662
     :goto_0
@@ -365,11 +365,11 @@
 
     move-result-wide v2
 
-    cmp-long v13, v2, v9
+    cmp-long v7, v2, v7
 
-    if-nez v13, :cond_1
+    if-nez v7, :cond_1
 
-    move-wide v9, v7
+    move-wide v9, v10
 
     goto :goto_1
 
@@ -399,10 +399,10 @@
 
     move/from16 v8, p4
 
-    move-object/from16 v13, p5
+    move-object/from16 v11, p5
 
     .line 671
-    invoke-static {v3, p0, v7, v8, v13}, Lcom/google/android/exoplayer2/metadata/id3/Id3Decoder;->decodeFrame(ILcom/google/android/exoplayer2/util/ParsableByteArray;ZILcom/google/android/exoplayer2/metadata/id3/Id3Decoder$FramePredicate;)Lcom/google/android/exoplayer2/metadata/id3/Id3Frame;
+    invoke-static {v3, p0, v7, v8, v11}, Lcom/google/android/exoplayer2/metadata/id3/Id3Decoder;->decodeFrame(ILcom/google/android/exoplayer2/util/ParsableByteArray;ZILcom/google/android/exoplayer2/metadata/id3/Id3Decoder$FramePredicate;)Lcom/google/android/exoplayer2/metadata/id3/Id3Frame;
 
     move-result-object v14
 
@@ -423,20 +423,20 @@
 
     move-result-object v0
 
-    check-cast v0, [Lcom/google/android/exoplayer2/metadata/id3/Id3Frame;
+    move-object v11, v0
+
+    check-cast v11, [Lcom/google/android/exoplayer2/metadata/id3/Id3Frame;
 
     .line 679
-    new-instance v1, Lcom/google/android/exoplayer2/metadata/id3/ChapterFrame;
+    new-instance v0, Lcom/google/android/exoplayer2/metadata/id3/ChapterFrame;
 
-    move-object v3, v1
+    move-object v3, v0
 
-    move-wide v7, v11
-
-    move-object v11, v0
+    move-wide v7, v12
 
     invoke-direct/range {v3 .. v11}, Lcom/google/android/exoplayer2/metadata/id3/ChapterFrame;-><init>(Ljava/lang/String;IIJJ[Lcom/google/android/exoplayer2/metadata/id3/Id3Frame;)V
 
-    return-object v1
+    return-object v0
 .end method
 
 .method private static decodeChapterTOCFrame(Lcom/google/android/exoplayer2/util/ParsableByteArray;IIZILcom/google/android/exoplayer2/metadata/id3/Id3Decoder$FramePredicate;)Lcom/google/android/exoplayer2/metadata/id3/ChapterTocFrame;
@@ -490,24 +490,24 @@
 
     if-eqz v5, :cond_0
 
-    const/4 v5, 0x1
+    move v5, v4
 
     goto :goto_0
 
     :cond_0
-    const/4 v5, 0x0
+    move v5, v6
 
     :goto_0
     and-int/2addr v2, v4
 
     if-eqz v2, :cond_1
 
-    const/4 v2, 0x1
+    move v2, v4
 
     goto :goto_1
 
     :cond_1
-    const/4 v2, 0x0
+    move v2, v6
 
     .line 703
     :goto_1
@@ -518,7 +518,7 @@
     .line 704
     new-array v8, v7, [Ljava/lang/String;
 
-    const/4 v9, 0x0
+    move v9, v6
 
     :goto_2
     if-ge v9, v7, :cond_2
@@ -929,7 +929,7 @@
 
     if-eqz v3, :cond_9
 
-    const/4 v3, 0x1
+    move v3, v1
 
     goto :goto_4
 
@@ -941,7 +941,7 @@
 
     if-eqz v4, :cond_a
 
-    const/4 v4, 0x1
+    move v4, v1
 
     goto :goto_5
 
@@ -953,7 +953,7 @@
 
     if-eqz v2, :cond_b
 
-    const/4 v2, 0x1
+    move v2, v1
 
     goto :goto_6
 
@@ -978,7 +978,7 @@
 
     if-eqz v3, :cond_d
 
-    const/4 v3, 0x1
+    move v3, v1
 
     goto :goto_7
 
@@ -990,7 +990,7 @@
 
     if-eqz v4, :cond_e
 
-    const/4 v4, 0x1
+    move v4, v1
 
     goto :goto_8
 
@@ -1002,7 +1002,7 @@
 
     if-eqz v5, :cond_f
 
-    const/4 v5, 0x1
+    move v5, v1
 
     goto :goto_9
 
@@ -1014,7 +1014,7 @@
 
     if-eqz v6, :cond_10
 
-    const/4 v6, 0x1
+    move v6, v1
 
     goto :goto_a
 
@@ -1026,7 +1026,7 @@
 
     if-eqz v2, :cond_11
 
-    const/16 v17, 0x1
+    move/from16 v17, v1
 
     goto :goto_b
 
@@ -1603,12 +1603,12 @@
 
     if-eqz p0, :cond_2
 
-    const/4 p0, 0x1
+    move p0, v5
 
     goto :goto_0
 
     :cond_2
-    const/4 p0, 0x0
+    move p0, v4
 
     :goto_0
     if-eqz p0, :cond_9
@@ -1629,12 +1629,12 @@
 
     if-eqz v1, :cond_4
 
-    const/4 v1, 0x1
+    move v1, v5
 
     goto :goto_1
 
     :cond_4
-    const/4 v1, 0x0
+    move v1, v4
 
     :goto_1
     if-eqz v1, :cond_9
@@ -1660,12 +1660,12 @@
 
     if-eqz v1, :cond_6
 
-    const/4 v1, 0x1
+    move v1, v5
 
     goto :goto_2
 
     :cond_6
-    const/4 v1, 0x0
+    move v1, v4
 
     :goto_2
     if-eqz v1, :cond_7
@@ -1687,12 +1687,12 @@
 
     if-eqz p0, :cond_8
 
-    const/4 p0, 0x1
+    move p0, v5
 
     goto :goto_3
 
     :cond_8
-    const/4 p0, 0x0
+    move p0, v4
 
     :goto_3
     if-eqz p0, :cond_9
@@ -1707,7 +1707,7 @@
 
     if-eqz p0, :cond_a
 
-    const/4 v4, 0x1
+    move v4, v5
 
     .line 207
     :cond_a
@@ -2557,7 +2557,7 @@
 
     int-to-long v8, v8
 
-    const/4 v10, 0x0
+    move v10, v6
 
     :goto_1
     const-wide/16 v11, 0x0
@@ -2586,9 +2586,9 @@
 
     and-long/2addr v13, v8
 
-    cmp-long v15, v13, v11
+    cmp-long v11, v13, v11
 
-    if-eqz v15, :cond_2
+    if-eqz v11, :cond_2
 
     invoke-virtual {v1, v2}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->setPosition(I)V
 
@@ -2642,25 +2642,24 @@
 
     if-eqz v3, :cond_4
 
-    const/4 v3, 0x1
+    move v3, v4
 
     goto :goto_2
 
     :cond_4
-    const/4 v3, 0x0
+    move v3, v6
 
     :goto_2
     and-int/lit8 v7, v10, 0x1
 
     if-eqz v7, :cond_5
 
-    goto :goto_5
+    goto :goto_4
 
     :cond_5
-    :goto_3
-    const/4 v4, 0x0
+    move v4, v6
 
-    goto :goto_5
+    goto :goto_4
 
     :cond_6
     if-ne v0, v3, :cond_8
@@ -2669,26 +2668,26 @@
 
     if-eqz v3, :cond_7
 
-    const/4 v3, 0x1
+    move v3, v4
 
-    goto :goto_4
+    goto :goto_3
 
     :cond_7
-    const/4 v3, 0x0
+    move v3, v6
 
-    :goto_4
+    :goto_3
     and-int/lit16 v7, v10, 0x80
 
     if-eqz v7, :cond_5
 
-    goto :goto_5
+    goto :goto_4
 
     :cond_8
-    const/4 v3, 0x0
+    move v3, v6
 
-    goto :goto_3
+    move v4, v3
 
-    :goto_5
+    :goto_4
     if-eqz v4, :cond_9
 
     add-int/lit8 v3, v3, 0x4
@@ -2696,9 +2695,9 @@
     :cond_9
     int-to-long v3, v3
 
-    cmp-long v7, v8, v3
+    cmp-long v3, v8, v3
 
-    if-gez v7, :cond_a
+    if-gez v3, :cond_a
 
     invoke-virtual {v1, v2}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->setPosition(I)V
 
@@ -2715,9 +2714,9 @@
 
     int-to-long v3, v3
 
-    cmp-long v7, v3, v8
+    cmp-long v3, v3, v8
 
-    if-gez v7, :cond_b
+    if-gez v3, :cond_b
 
     .line 275
     invoke-virtual {v1, v2}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->setPosition(I)V
@@ -2875,7 +2874,7 @@
 
     if-eqz v2, :cond_3
 
-    const/4 v4, 0x1
+    move v4, v5
 
     goto :goto_1
 

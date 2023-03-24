@@ -33,11 +33,11 @@
 
     move-wide v7, v5
 
-    const/4 v9, 0x0
+    move v9, v3
 
-    const/4 v10, 0x0
+    move v10, v9
 
-    const/4 v11, 0x0
+    move v11, v10
 
     .line 2
     :goto_0

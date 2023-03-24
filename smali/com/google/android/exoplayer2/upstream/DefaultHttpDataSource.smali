@@ -497,7 +497,7 @@
 
     move-object/from16 v18, v3
 
-    const/4 v0, 0x0
+    move/from16 v0, v17
 
     :goto_0
     add-int/lit8 v7, v0, 0x1
@@ -622,7 +622,7 @@
     goto :goto_1
 
     :cond_4
-    const/4 v7, 0x0
+    move/from16 v7, v17
 
     :goto_1
     if-nez v7, :cond_5
@@ -907,7 +907,7 @@
 .end method
 
 .method private static maybeTerminateInputStream(Ljava/net/HttpURLConnection;J)V
-    .locals 3
+    .locals 2
 
     if-eqz p0, :cond_4
 
@@ -933,9 +933,9 @@
 
     const-wide/16 v0, -0x1
 
-    cmp-long v2, p1, v0
+    cmp-long v0, p1, v0
 
-    if-nez v2, :cond_1
+    if-nez v0, :cond_1
 
     .line 808
     invoke-virtual {p0}, Ljava/io/InputStream;->read()I
@@ -951,9 +951,9 @@
     :cond_1
     const-wide/16 v0, 0x800
 
-    cmp-long v2, p1, v0
+    cmp-long p1, p1, v0
 
-    if-gtz v2, :cond_2
+    if-gtz p1, :cond_2
 
     return-void
 
@@ -1050,30 +1050,30 @@
 
     const-wide/16 v2, -0x1
 
-    const/4 v4, -0x1
+    cmp-long v2, v0, v2
 
-    cmp-long v5, v0, v2
+    const/4 v3, -0x1
 
-    if-eqz v5, :cond_2
+    if-eqz v2, :cond_2
 
     .line 770
-    iget-wide v2, p0, Lcom/google/android/exoplayer2/upstream/DefaultHttpDataSource;->bytesRead:J
+    iget-wide v4, p0, Lcom/google/android/exoplayer2/upstream/DefaultHttpDataSource;->bytesRead:J
 
-    sub-long/2addr v0, v2
+    sub-long/2addr v0, v4
 
-    const-wide/16 v2, 0x0
+    const-wide/16 v4, 0x0
 
-    cmp-long v5, v0, v2
+    cmp-long v2, v0, v4
 
-    if-nez v5, :cond_1
+    if-nez v2, :cond_1
 
-    return v4
+    return v3
 
     :cond_1
-    int-to-long v2, p3
+    int-to-long v4, p3
 
     .line 774
-    invoke-static {v2, v3, v0, v1}, Ljava/lang/Math;->min(JJ)J
+    invoke-static {v4, v5, v0, v1}, Ljava/lang/Math;->min(JJ)J
 
     move-result-wide v0
 
@@ -1093,9 +1093,9 @@
 
     move-result p1
 
-    if-ne p1, v4, :cond_3
+    if-ne p1, v3, :cond_3
 
-    return v4
+    return v3
 
     .line 782
     :cond_3
@@ -1146,20 +1146,20 @@
 
     move-result-wide v4
 
-    long-to-int v5, v4
+    long-to-int v4, v4
 
     .line 732
-    iget-object v4, p0, Lcom/google/android/exoplayer2/upstream/DefaultHttpDataSource;->inputStream:Ljava/io/InputStream;
+    iget-object v5, p0, Lcom/google/android/exoplayer2/upstream/DefaultHttpDataSource;->inputStream:Ljava/io/InputStream;
 
-    invoke-static {v4}, Lcom/google/android/exoplayer2/util/Util;->castNonNull(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {v5}, Lcom/google/android/exoplayer2/util/Util;->castNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    move-result-object v4
+    move-result-object v5
 
-    check-cast v4, Ljava/io/InputStream;
+    check-cast v5, Ljava/io/InputStream;
 
     const/4 v6, 0x0
 
-    invoke-virtual {v4, v3, v6, v5}, Ljava/io/InputStream;->read([BII)I
+    invoke-virtual {v5, v3, v6, v4}, Ljava/io/InputStream;->read([BII)I
 
     move-result v4
 
@@ -1455,7 +1455,7 @@
 .end method
 
 .method public open(Lcom/google/android/exoplayer2/upstream/DataSpec;)J
-    .locals 14
+    .locals 13
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lcom/google/android/exoplayer2/upstream/HttpDataSource$HttpDataSourceException;
@@ -1723,9 +1723,9 @@
     .line 392
     iget-wide v11, p1, Lcom/google/android/exoplayer2/upstream/DataSpec;->position:J
 
-    cmp-long v13, v11, v5
+    cmp-long v5, v11, v5
 
-    if-nez v13, :cond_b
+    if-nez v5, :cond_b
 
     .line 393
     iput-boolean v2, p0, Lcom/google/android/exoplayer2/upstream/DefaultHttpDataSource;->opened:Z

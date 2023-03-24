@@ -189,7 +189,7 @@
 .end method
 
 .method public equals(Ljava/lang/Object;)Z
-    .locals 7
+    .locals 6
 
     const/4 v0, 0x1
 
@@ -222,17 +222,17 @@
 
     iget-wide v4, p1, Lcom/google/android/exoplayer2/metadata/emsg/EventMessage;->durationMs:J
 
-    cmp-long v6, v2, v4
+    cmp-long v2, v2, v4
 
-    if-nez v6, :cond_2
+    if-nez v2, :cond_2
 
     iget-wide v2, p0, Lcom/google/android/exoplayer2/metadata/emsg/EventMessage;->id:J
 
     iget-wide v4, p1, Lcom/google/android/exoplayer2/metadata/emsg/EventMessage;->id:J
 
-    cmp-long v6, v2, v4
+    cmp-long v2, v2, v4
 
-    if-nez v6, :cond_2
+    if-nez v2, :cond_2
 
     iget-object v2, p0, Lcom/google/android/exoplayer2/metadata/emsg/EventMessage;->schemeIdUri:Ljava/lang/String;
 
@@ -270,7 +270,7 @@
     goto :goto_0
 
     :cond_2
-    const/4 v0, 0x0
+    move v0, v1
 
     :goto_0
     return v0
@@ -425,7 +425,7 @@
     goto :goto_0
 
     :cond_0
-    const/4 v1, 0x0
+    move v1, v2
 
     :goto_0
     add-int/2addr v0, v1
@@ -455,9 +455,9 @@
 
     xor-long/2addr v1, v4
 
-    long-to-int v2, v1
+    long-to-int v1, v1
 
-    add-int/2addr v0, v2
+    add-int/2addr v0, v1
 
     mul-int/lit8 v0, v0, 0x1f
 
@@ -468,9 +468,9 @@
 
     xor-long/2addr v1, v3
 
-    long-to-int v2, v1
+    long-to-int v1, v1
 
-    add-int/2addr v0, v2
+    add-int/2addr v0, v1
 
     mul-int/lit8 v0, v0, 0x1f
 

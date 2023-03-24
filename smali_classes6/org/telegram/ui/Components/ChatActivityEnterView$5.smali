@@ -100,13 +100,13 @@
     goto :goto_0
 
     :cond_0
-    const/4 v6, 0x0
+    move v6, v4
 
     goto :goto_1
 
     :cond_1
     :goto_0
-    const/4 v6, 0x1
+    move v6, v5
 
     :goto_1
     invoke-static {v2, v6}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$1602(Lorg/telegram/ui/Components/ChatActivityEnterView;Z)Z
@@ -123,12 +123,12 @@
 
     if-nez v0, :cond_2
 
-    const/4 v7, 0x1
+    move v7, v5
 
     goto :goto_2
 
     :cond_2
-    const/4 v7, 0x0
+    move v7, v4
 
     :goto_2
     invoke-static {v6, v7}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$1702(Lorg/telegram/ui/Components/ChatActivityEnterView;Z)Z
@@ -159,7 +159,7 @@
     goto :goto_3
 
     :cond_3
-    const/4 v3, 0x1
+    move v3, v5
 
     :goto_3
     invoke-static {v4, v3, v5}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$2000(Lorg/telegram/ui/Components/ChatActivityEnterView;IZ)V

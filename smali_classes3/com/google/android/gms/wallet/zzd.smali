@@ -102,7 +102,7 @@
 
 # virtual methods
 .method public final onCreate(Landroid/os/Bundle;)V
-    .locals 5
+    .locals 4
 
     .line 1
     invoke-super {p0, p1}, Landroid/app/Fragment;->onCreate(Landroid/os/Bundle;)V
@@ -134,9 +134,9 @@
 
     move-result-wide v2
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-eqz v4, :cond_0
+    if-eqz v0, :cond_0
 
     const/4 v0, 0x0
 

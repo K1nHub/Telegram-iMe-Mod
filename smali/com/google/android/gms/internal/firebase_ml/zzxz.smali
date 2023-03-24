@@ -523,7 +523,7 @@
     .line 29
     new-array p3, p3, [C
 
-    const/4 v3, 0x0
+    move v3, v1
 
     :goto_0
     if-ge p2, v0, :cond_0

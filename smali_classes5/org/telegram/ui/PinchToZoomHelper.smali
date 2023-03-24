@@ -774,12 +774,12 @@
 
     if-eqz v2, :cond_2
 
-    const/4 v12, 0x1
+    move v12, v0
 
     goto :goto_0
 
     :cond_2
-    const/4 v12, 0x0
+    move v12, v4
 
     :goto_0
     const/4 v0, 0x0
@@ -827,9 +827,9 @@
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    move v2, v1
 
-    const/4 v3, 0x0
+    move v3, v2
 
     .line 241
     :goto_0
@@ -875,7 +875,7 @@
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/PinchToZoomHelper;->child:Landroid/view/View;
 
-    const/4 v4, 0x0
+    move v4, v1
 
     .line 253
     :goto_1
@@ -989,11 +989,11 @@
 
     const/4 v0, -0x1
 
-    const/4 v3, 0x0
+    move v6, v0
 
-    const/4 v6, -0x1
+    move v7, v6
 
-    const/4 v7, -0x1
+    move v3, v1
 
     .line 714
     :goto_0
@@ -1938,12 +1938,12 @@
 
     if-nez v3, :cond_2
 
-    const/4 v3, 0x1
+    move v3, p1
 
     goto :goto_0
 
     :cond_2
-    const/4 v3, 0x0
+    move v3, v0
 
     :goto_0
     iput-boolean v3, p0, Lorg/telegram/ui/PinchToZoomHelper;->hasMediaSpoiler:Z
@@ -2083,7 +2083,7 @@
 
     div-float/2addr v3, v4
 
-    mul-float v3, v3, v6
+    mul-float/2addr v3, v6
 
     .line 160
     iput v3, p0, Lorg/telegram/ui/PinchToZoomHelper;->fullImageWidth:F
@@ -2096,7 +2096,7 @@
     :cond_5
     div-float/2addr v4, v3
 
-    mul-float v4, v4, v7
+    mul-float/2addr v4, v7
 
     .line 163
     iput v4, p0, Lorg/telegram/ui/PinchToZoomHelper;->fullImageHeight:F

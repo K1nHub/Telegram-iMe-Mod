@@ -2380,7 +2380,7 @@
 
     const/4 v3, 0x0
 
-    const/4 v4, 0x0
+    move v4, v3
 
     .line 2254
     :goto_1
@@ -2661,7 +2661,7 @@
     goto :goto_0
 
     :cond_0
-    const/4 v0, 0x0
+    move v0, v1
 
     :goto_0
     invoke-static {}, Lorg/telegram/ui/ActionBar/ActionBar;->getCurrentActionBarHeight()I
@@ -2922,13 +2922,13 @@
     goto :goto_2
 
     :cond_9
-    const/4 v5, 0x0
+    move v5, v1
 
     goto :goto_3
 
     :cond_a
     :goto_2
-    const/16 v5, 0x42
+    move v5, v7
 
     .line 2139
     :goto_3
@@ -3654,9 +3654,9 @@
 
     const-wide/16 v5, 0x0
 
-    cmp-long v3, p1, v5
+    cmp-long p1, p1, v5
 
-    if-nez v3, :cond_1
+    if-nez p1, :cond_1
 
     .line 1052
     iget-object v3, p0, Lorg/telegram/ui/LocationActivity;->delegate:Lorg/telegram/ui/LocationActivity$LocationActivityDelegate;
@@ -5366,7 +5366,7 @@
 
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    move v1, v0
 
     .line 2387
     :goto_0
@@ -5794,7 +5794,7 @@
 
     move-result v1
 
-    mul-int v0, v0, v1
+    mul-int/2addr v0, v1
 
     mul-int/lit8 v0, v0, 0x4
 
@@ -5954,7 +5954,7 @@
 
     if-nez v1, :cond_1
 
-    const/4 v1, 0x0
+    move v1, v0
 
     goto :goto_0
 
@@ -6151,7 +6151,7 @@
 
     const/4 v0, 0x0
 
-    const/4 v2, 0x0
+    move v2, v0
 
     :goto_0
     if-ge v2, p1, :cond_4
@@ -6699,7 +6699,7 @@
 
     const-wide v0, 0x415848fd80000000L    # 6366198.0
 
-    mul-double p2, p2, v0
+    mul-double/2addr p2, v0
 
     div-double/2addr p0, p2
 
@@ -6938,7 +6938,7 @@
 
     move-result p2
 
-    const/4 p3, 0x0
+    move p3, v2
 
     :goto_0
     if-ge p3, p2, :cond_3
@@ -8013,9 +8013,9 @@
 
     div-long/2addr v2, v7
 
-    long-to-int v3, v2
+    long-to-int v2, v2
 
-    invoke-interface {p1, v4, v3}, Landroid/content/SharedPreferences$Editor;->putInt(Ljava/lang/String;I)Landroid/content/SharedPreferences$Editor;
+    invoke-interface {p1, v4, v2}, Landroid/content/SharedPreferences$Editor;->putInt(Ljava/lang/String;I)Landroid/content/SharedPreferences$Editor;
 
     move-result-object p1
 
@@ -8752,7 +8752,7 @@
     if-gez v1, :cond_1
 
     :cond_0
-    const/4 p1, 0x0
+    move p1, v0
 
     .line 1410
     :cond_1
@@ -8905,7 +8905,7 @@
 
     neg-int v0, v0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     .line 2027
     :goto_0
@@ -9069,7 +9069,7 @@
     goto :goto_2
 
     :cond_4
-    const/16 v5, 0xa
+    move v5, v6
 
     goto :goto_3
 
@@ -9357,7 +9357,7 @@
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_0
     if-ge v2, v0, :cond_1
@@ -9639,12 +9639,12 @@
 
     if-eqz v1, :cond_4
 
-    const/4 v1, 0x1
+    move v1, v11
 
     goto :goto_1
 
     :cond_4
-    const/4 v1, 0x0
+    move v1, v10
 
     :goto_1
     iput-boolean v1, v8, Lorg/telegram/ui/LocationActivity;->locationDenied:Z
@@ -10453,12 +10453,12 @@
 
     if-lt v0, v3, :cond_10
 
-    const/16 v28, 0x28
+    move/from16 v28, v22
 
     goto :goto_7
 
     :cond_10
-    const/16 v28, 0x2c
+    move/from16 v28, v19
 
     :goto_7
     const/16 v29, 0x31
@@ -10794,22 +10794,22 @@
 
     if-lt v0, v3, :cond_13
 
-    const/16 v29, 0x28
+    move/from16 v29, v22
 
     goto :goto_a
 
     :cond_13
-    const/16 v29, 0x2c
+    move/from16 v29, v19
 
     :goto_a
     if-lt v0, v3, :cond_14
 
-    const/16 v30, 0x28
+    move/from16 v30, v22
 
     goto :goto_b
 
     :cond_14
-    const/16 v30, 0x2c
+    move/from16 v30, v19
 
     :goto_b
     const/16 v31, 0x35
@@ -11083,22 +11083,22 @@
 
     if-lt v0, v1, :cond_16
 
-    const/16 v29, 0x28
+    move/from16 v29, v22
 
     goto :goto_d
 
     :cond_16
-    const/16 v29, 0x2c
+    move/from16 v29, v19
 
     :goto_d
     if-lt v0, v1, :cond_17
 
-    const/16 v30, 0x28
+    move/from16 v30, v22
 
     goto :goto_e
 
     :cond_17
-    const/16 v30, 0x2c
+    move/from16 v30, v19
 
     :goto_e
     const/16 v31, 0x55
@@ -11375,22 +11375,22 @@
 
     if-lt v0, v6, :cond_19
 
-    const/16 v28, 0x28
+    move/from16 v28, v22
 
     goto :goto_10
 
     :cond_19
-    const/16 v28, 0x2c
+    move/from16 v28, v19
 
     :goto_10
     if-lt v0, v6, :cond_1a
 
-    const/16 v29, 0x28
+    move/from16 v29, v22
 
     goto :goto_11
 
     :cond_1a
-    const/16 v29, 0x2c
+    move/from16 v29, v19
 
     :goto_11
     const/16 v30, 0x35
@@ -11542,9 +11542,9 @@
 
     move-result-wide v2
 
-    cmp-long v5, v0, v2
+    cmp-long v0, v0, v2
 
-    if-nez v5, :cond_1e
+    if-nez v0, :cond_1e
 
     .line 913
     iget-object v0, v8, Lorg/telegram/ui/LocationActivity;->proximityButton:Landroid/widget/ImageView;
@@ -11933,7 +11933,7 @@
 
     move-object/from16 v17, v12
 
-    const/4 v12, -0x1
+    move/from16 v12, v21
 
     move-object/from16 v7, v18
 
@@ -12378,9 +12378,9 @@
     invoke-virtual {v1, v0}, Lorg/telegram/ui/Adapters/LocationActivityAdapter;->setMessageObject(Lorg/telegram/messenger/MessageObject;)V
 
     :cond_27
-    const/4 v0, 0x2
+    move v10, v4
 
-    const/4 v10, 0x0
+    const/4 v0, 0x2
 
     :goto_15
     if-ge v10, v0, :cond_29
@@ -12679,9 +12679,9 @@
     .line 2466
     iget-wide v2, p0, Lorg/telegram/ui/LocationActivity;->dialogId:J
 
-    cmp-long v4, p1, v2
+    cmp-long p1, p1, v2
 
-    if-nez v4, :cond_a
+    if-nez p1, :cond_a
 
     iget-object p1, p0, Lorg/telegram/ui/LocationActivity;->messageObject:Lorg/telegram/messenger/MessageObject;
 
@@ -12695,7 +12695,7 @@
 
     check-cast p1, Ljava/util/ArrayList;
 
-    const/4 p2, 0x0
+    move p2, v1
 
     .line 2471
     :goto_0
@@ -12724,7 +12724,7 @@
 
     invoke-direct {p0, p2}, Lorg/telegram/ui/LocationActivity;->addUserMarker(Lorg/telegram/tgnet/TLRPC$Message;)Lorg/telegram/ui/LocationActivity$LiveLocation;
 
-    const/4 p2, 0x1
+    move p2, v0
 
     goto :goto_1
 
@@ -12812,9 +12812,9 @@
     .line 2491
     iget-wide v2, p0, Lorg/telegram/ui/LocationActivity;->dialogId:J
 
-    cmp-long v4, p1, v2
+    cmp-long v2, p1, v2
 
-    if-nez v4, :cond_13
+    if-nez v2, :cond_13
 
     iget-object v2, p0, Lorg/telegram/ui/LocationActivity;->messageObject:Lorg/telegram/messenger/MessageObject;
 
@@ -12828,9 +12828,9 @@
 
     check-cast p3, Ljava/util/ArrayList;
 
-    const/4 v2, 0x0
+    move v2, v1
 
-    const/4 v3, 0x0
+    move v3, v2
 
     .line 2496
     :goto_3
@@ -12854,7 +12854,7 @@
 
     if-nez v5, :cond_d
 
-    goto :goto_5
+    goto/16 :goto_5
 
     .line 2501
     :cond_d
@@ -12985,7 +12985,7 @@
 
     :cond_10
     :goto_4
-    const/4 v3, 0x1
+    move v3, v0
 
     :cond_11
     :goto_5
@@ -13067,7 +13067,7 @@
 
     const/4 v11, 0x0
 
-    const/4 v2, 0x0
+    move v2, v11
 
     .line 2736
     :goto_0
@@ -15728,14 +15728,9 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_0
-
-    :catch_0
-    nop
-
     .line 1962
+    :catch_0
     :cond_0
-    :goto_0
     iget-object p1, p0, Lorg/telegram/ui/LocationActivity;->mapViewClip:Landroid/widget/FrameLayout;
 
     const/16 p2, 0x33
@@ -15830,7 +15825,7 @@
     .line 1976
     invoke-direct {p0}, Lorg/telegram/ui/LocationActivity;->maybeShowProximityHint()V
 
-    goto :goto_1
+    goto :goto_0
 
     .line 1977
     :cond_3
@@ -15854,7 +15849,7 @@
     invoke-virtual {p1, v2, v0, p2}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;ILandroid/view/ViewGroup$LayoutParams;)V
 
     :cond_4
-    :goto_1
+    :goto_0
     return-void
 .end method
 

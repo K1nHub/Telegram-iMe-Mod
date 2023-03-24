@@ -58,7 +58,7 @@
     const v0, 0x3e99999a    # 0.3f
 
     :goto_1
-    mul-float p2, p2, v0
+    mul-float/2addr p2, v0
 
     float-to-int p2, p2
 

@@ -62,7 +62,7 @@ public final class WalletSettingsFragment extends WalletTabFragment implements W
             } catch (NoSuchFieldError unused) {
             }
             try {
-                iArr[SettingMenuItem.ETH_ACCOUNT.ordinal()] = 2;
+                iArr[SettingMenuItem.CRYPTO_ACCOUNT.ordinal()] = 2;
             } catch (NoSuchFieldError unused2) {
             }
             try {
@@ -166,9 +166,9 @@ public final class WalletSettingsFragment extends WalletTabFragment implements W
             }
         });
         RxEventBus rxEventBus = getRxEventBus();
-        Observable observeOn = rxEventBus.getPublisher().ofType(DomainRxEvents.CryptoEvent.class).observeOn(rxEventBus.getSchedulersProvider().mo707ui());
+        Observable observeOn = rxEventBus.getPublisher().ofType(DomainRxEvents.CryptoEvent.class).observeOn(rxEventBus.getSchedulersProvider().mo706ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "publisher\n              …(schedulersProvider.ui())");
-        Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2227x3106d7dd(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2228x3106d7de(null)));
+        Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2241x3106d7dd(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2242x3106d7de(null)));
         Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…  onError.invoke()\n    })");
         autoDispose(subscribe);
     }

@@ -26,11 +26,11 @@ public final class CreateReactionButtonsActivity$presenter$2 extends Lambda impl
     /* compiled from: CreateReactionButtonsActivity.kt */
     /* renamed from: org.fork.ui.fragment.CreateReactionButtonsActivity$presenter$2$1 */
     /* loaded from: classes4.dex */
-    public static final class C31491 extends Lambda implements Function0<ParametersHolder> {
+    public static final class C31631 extends Lambda implements Function0<ParametersHolder> {
         final /* synthetic */ CreateReactionButtonsActivity this$0;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        C31491(CreateReactionButtonsActivity createReactionButtonsActivity) {
+        C31631(CreateReactionButtonsActivity createReactionButtonsActivity) {
             super(0);
             this.this$0 = createReactionButtonsActivity;
         }
@@ -48,7 +48,7 @@ public final class CreateReactionButtonsActivity$presenter$2 extends Lambda impl
     public final ReactionPresenter invoke() {
         Lazy lazy;
         CreateReactionButtonsActivity createReactionButtonsActivity = this.this$0;
-        lazy = LazyKt__LazyJVMKt.lazy(KoinPlatformTools.INSTANCE.defaultLazyMode(), new C3148x788df6f3(createReactionButtonsActivity, null, new C31491(createReactionButtonsActivity)));
+        lazy = LazyKt__LazyJVMKt.lazy(KoinPlatformTools.INSTANCE.defaultLazyMode(), new C3162x788df6f3(createReactionButtonsActivity, null, new C31631(createReactionButtonsActivity)));
         return (ReactionPresenter) lazy.getValue();
     }
 }

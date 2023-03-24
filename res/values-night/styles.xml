@@ -37,6 +37,10 @@
         <item name="android:colorPrimary">#ff232d3a</item>
         <item name="android:colorPrimaryDark">#ff1c242e</item>
         <item name="android:navigationBarColor">#ff000000</item>
+        <item name="android:forceDarkAllowed">false</item>
+        <item name="android:windowSplashScreenBackground">?android:windowBackground</item>
+        <item name="android:windowSplashScreenAnimatedIcon">@drawable/tg_splash_320</item>
+        <item name="android:windowSplashScreenAnimationDuration">@integer/splash_screen_duration</item>
     </style>
     <style name="ThemeOverlay.AppCompat.DayNight" parent="@style/ThemeOverlay.AppCompat.Dark" />
     <style name="Widget.MaterialComponents.ActionBar.PrimarySurface" parent="@style/Widget.MaterialComponents.ActionBar.Surface" />

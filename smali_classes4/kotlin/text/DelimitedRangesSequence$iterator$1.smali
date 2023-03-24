@@ -263,7 +263,7 @@
 
     if-nez v0, :cond_5
 
-    const/4 v1, 0x1
+    move v1, v3
 
     :cond_5
     add-int/2addr v2, v1

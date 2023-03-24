@@ -246,7 +246,7 @@
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_0
     if-ge v1, v0, :cond_1
@@ -276,7 +276,7 @@
 
     add-int/lit8 v0, v0, -0x1
 
-    const/4 v2, 0x1
+    move v2, v4
 
     :cond_0
     add-int/2addr v1, v4
@@ -306,7 +306,7 @@
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_0
     if-ge v1, v0, :cond_1
@@ -336,7 +336,7 @@
 
     add-int/lit8 v0, v0, -0x1
 
-    const/4 v2, 0x1
+    move v2, v4
 
     :cond_0
     add-int/2addr v1, v4

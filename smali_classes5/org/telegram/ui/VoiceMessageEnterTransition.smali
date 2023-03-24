@@ -307,91 +307,91 @@
     .line 112
     iget v2, v0, Lorg/telegram/ui/VoiceMessageEnterTransition;->progress:F
 
-    const/high16 v3, 0x3f800000    # 1.0f
+    const v3, 0x3f19999a    # 0.6f
 
-    const v4, 0x3f19999a    # 0.6f
+    cmpl-float v4, v2, v3
 
-    cmpl-float v5, v2, v4
+    const/high16 v5, 0x3f800000    # 1.0f
 
-    if-lez v5, :cond_0
+    if-lez v4, :cond_0
 
-    const/high16 v4, 0x3f800000    # 1.0f
+    move v3, v5
 
     goto :goto_0
 
     :cond_0
-    div-float v4, v2, v4
+    div-float v3, v2, v3
 
     .line 115
     :goto_0
-    iget-object v5, v0, Lorg/telegram/ui/VoiceMessageEnterTransition;->recordCircle:Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;
+    iget-object v4, v0, Lorg/telegram/ui/VoiceMessageEnterTransition;->recordCircle:Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;
 
-    if-nez v5, :cond_1
+    if-nez v4, :cond_1
 
     const/4 v7, 0x0
 
     goto :goto_1
 
     :cond_1
-    iget v7, v5, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->drawingCx:F
+    iget v7, v4, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->drawingCx:F
 
-    invoke-virtual {v5}, Landroid/view/View;->getX()F
+    invoke-virtual {v4}, Landroid/view/View;->getX()F
 
-    move-result v5
+    move-result v4
 
-    add-float/2addr v7, v5
+    add-float/2addr v7, v4
 
-    iget-object v5, v0, Lorg/telegram/ui/VoiceMessageEnterTransition;->container:Lorg/telegram/ui/MessageEnterTransitionContainer;
+    iget-object v4, v0, Lorg/telegram/ui/VoiceMessageEnterTransition;->container:Lorg/telegram/ui/MessageEnterTransitionContainer;
 
-    invoke-virtual {v5}, Landroid/view/View;->getX()F
+    invoke-virtual {v4}, Landroid/view/View;->getX()F
 
-    move-result v5
+    move-result v4
 
-    sub-float/2addr v7, v5
+    sub-float/2addr v7, v4
 
     .line 116
     :goto_1
-    iget-object v5, v0, Lorg/telegram/ui/VoiceMessageEnterTransition;->recordCircle:Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;
+    iget-object v4, v0, Lorg/telegram/ui/VoiceMessageEnterTransition;->recordCircle:Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;
 
-    if-nez v5, :cond_2
+    if-nez v4, :cond_2
 
     const/4 v8, 0x0
 
     goto :goto_2
 
     :cond_2
-    iget v8, v5, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->drawingCy:F
+    iget v8, v4, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->drawingCy:F
 
-    invoke-virtual {v5}, Landroid/view/View;->getY()F
+    invoke-virtual {v4}, Landroid/view/View;->getY()F
 
-    move-result v5
+    move-result v4
 
-    add-float/2addr v8, v5
+    add-float/2addr v8, v4
 
-    iget-object v5, v0, Lorg/telegram/ui/VoiceMessageEnterTransition;->container:Lorg/telegram/ui/MessageEnterTransitionContainer;
+    iget-object v4, v0, Lorg/telegram/ui/VoiceMessageEnterTransition;->container:Lorg/telegram/ui/MessageEnterTransitionContainer;
 
-    invoke-virtual {v5}, Landroid/view/View;->getY()F
+    invoke-virtual {v4}, Landroid/view/View;->getY()F
 
-    move-result v5
+    move-result v4
 
-    sub-float/2addr v8, v5
+    sub-float/2addr v8, v4
 
     .line 121
     :goto_2
-    iget-object v5, v0, Lorg/telegram/ui/VoiceMessageEnterTransition;->messageView:Lorg/telegram/ui/Cells/ChatMessageCell;
+    iget-object v4, v0, Lorg/telegram/ui/VoiceMessageEnterTransition;->messageView:Lorg/telegram/ui/Cells/ChatMessageCell;
 
-    invoke-virtual {v5}, Lorg/telegram/ui/Cells/ChatMessageCell;->getMessageObject()Lorg/telegram/messenger/MessageObject;
+    invoke-virtual {v4}, Lorg/telegram/ui/Cells/ChatMessageCell;->getMessageObject()Lorg/telegram/messenger/MessageObject;
 
-    move-result-object v5
+    move-result-object v4
 
-    iget v5, v5, Lorg/telegram/messenger/MessageObject;->stableId:I
+    iget v4, v4, Lorg/telegram/messenger/MessageObject;->stableId:I
 
     iget v9, v0, Lorg/telegram/ui/VoiceMessageEnterTransition;->messageId:I
 
-    if-eq v5, v9, :cond_3
+    if-eq v4, v9, :cond_3
 
     .line 122
-    iget v5, v0, Lorg/telegram/ui/VoiceMessageEnterTransition;->lastToCx:F
+    iget v4, v0, Lorg/telegram/ui/VoiceMessageEnterTransition;->lastToCx:F
 
     .line 123
     iget v9, v0, Lorg/telegram/ui/VoiceMessageEnterTransition;->lastToCy:F
@@ -400,19 +400,19 @@
 
     .line 125
     :cond_3
-    iget-object v5, v0, Lorg/telegram/ui/VoiceMessageEnterTransition;->messageView:Lorg/telegram/ui/Cells/ChatMessageCell;
+    iget-object v4, v0, Lorg/telegram/ui/VoiceMessageEnterTransition;->messageView:Lorg/telegram/ui/Cells/ChatMessageCell;
 
-    invoke-virtual {v5}, Lorg/telegram/ui/Cells/ChatMessageCell;->getRadialProgress()Lorg/telegram/ui/Components/RadialProgress2;
+    invoke-virtual {v4}, Lorg/telegram/ui/Cells/ChatMessageCell;->getRadialProgress()Lorg/telegram/ui/Components/RadialProgress2;
 
-    move-result-object v5
+    move-result-object v4
 
-    invoke-virtual {v5}, Lorg/telegram/ui/Components/RadialProgress2;->getProgressRect()Landroid/graphics/RectF;
+    invoke-virtual {v4}, Lorg/telegram/ui/Components/RadialProgress2;->getProgressRect()Landroid/graphics/RectF;
 
-    move-result-object v5
+    move-result-object v4
 
-    invoke-virtual {v5}, Landroid/graphics/RectF;->centerY()F
+    invoke-virtual {v4}, Landroid/graphics/RectF;->centerY()F
 
-    move-result v5
+    move-result v4
 
     iget-object v9, v0, Lorg/telegram/ui/VoiceMessageEnterTransition;->messageView:Lorg/telegram/ui/Cells/ChatMessageCell;
 
@@ -420,7 +420,7 @@
 
     move-result v9
 
-    add-float/2addr v5, v9
+    add-float/2addr v4, v9
 
     iget-object v9, v0, Lorg/telegram/ui/VoiceMessageEnterTransition;->listView:Landroid/view/ViewGroup;
 
@@ -428,7 +428,7 @@
 
     move-result v9
 
-    add-float/2addr v5, v9
+    add-float/2addr v4, v9
 
     iget-object v9, v0, Lorg/telegram/ui/VoiceMessageEnterTransition;->container:Lorg/telegram/ui/MessageEnterTransitionContainer;
 
@@ -436,22 +436,22 @@
 
     move-result v9
 
-    sub-float v9, v5, v9
+    sub-float v9, v4, v9
 
     .line 126
-    iget-object v5, v0, Lorg/telegram/ui/VoiceMessageEnterTransition;->messageView:Lorg/telegram/ui/Cells/ChatMessageCell;
+    iget-object v4, v0, Lorg/telegram/ui/VoiceMessageEnterTransition;->messageView:Lorg/telegram/ui/Cells/ChatMessageCell;
 
-    invoke-virtual {v5}, Lorg/telegram/ui/Cells/ChatMessageCell;->getRadialProgress()Lorg/telegram/ui/Components/RadialProgress2;
+    invoke-virtual {v4}, Lorg/telegram/ui/Cells/ChatMessageCell;->getRadialProgress()Lorg/telegram/ui/Components/RadialProgress2;
 
-    move-result-object v5
+    move-result-object v4
 
-    invoke-virtual {v5}, Lorg/telegram/ui/Components/RadialProgress2;->getProgressRect()Landroid/graphics/RectF;
+    invoke-virtual {v4}, Lorg/telegram/ui/Components/RadialProgress2;->getProgressRect()Landroid/graphics/RectF;
 
-    move-result-object v5
+    move-result-object v4
 
-    invoke-virtual {v5}, Landroid/graphics/RectF;->centerX()F
+    invoke-virtual {v4}, Landroid/graphics/RectF;->centerX()F
 
-    move-result v5
+    move-result v4
 
     iget-object v10, v0, Lorg/telegram/ui/VoiceMessageEnterTransition;->messageView:Lorg/telegram/ui/Cells/ChatMessageCell;
 
@@ -459,7 +459,7 @@
 
     move-result v10
 
-    add-float/2addr v5, v10
+    add-float/2addr v4, v10
 
     iget-object v10, v0, Lorg/telegram/ui/VoiceMessageEnterTransition;->listView:Landroid/view/ViewGroup;
 
@@ -467,7 +467,7 @@
 
     move-result v10
 
-    add-float/2addr v5, v10
+    add-float/2addr v4, v10
 
     iget-object v10, v0, Lorg/telegram/ui/VoiceMessageEnterTransition;->container:Lorg/telegram/ui/MessageEnterTransitionContainer;
 
@@ -475,11 +475,11 @@
 
     move-result v10
 
-    sub-float/2addr v5, v10
+    sub-float/2addr v4, v10
 
     .line 129
     :goto_3
-    iput v5, v0, Lorg/telegram/ui/VoiceMessageEnterTransition;->lastToCx:F
+    iput v4, v0, Lorg/telegram/ui/VoiceMessageEnterTransition;->lastToCx:F
 
     .line 130
     iput v9, v0, Lorg/telegram/ui/VoiceMessageEnterTransition;->lastToCy:F
@@ -498,19 +498,19 @@
 
     move-result v11
 
-    sub-float v12, v3, v11
+    sub-float v12, v5, v11
 
-    mul-float v12, v12, v7
+    mul-float/2addr v12, v7
 
-    mul-float v5, v5, v11
+    mul-float/2addr v4, v11
 
-    add-float/2addr v12, v5
+    add-float/2addr v12, v4
 
-    sub-float v5, v3, v10
+    sub-float v4, v5, v10
 
-    mul-float v11, v8, v5
+    mul-float v11, v8, v4
 
-    mul-float v9, v9, v10
+    mul-float/2addr v9, v10
 
     add-float/2addr v11, v9
 
@@ -536,7 +536,7 @@
     .line 139
     iget v13, v0, Lorg/telegram/ui/VoiceMessageEnterTransition;->fromRadius:F
 
-    mul-float v13, v13, v5
+    mul-float/2addr v13, v4
 
     mul-float v14, v9, v10
 
@@ -585,18 +585,18 @@
 
     int-to-float v15, v15
 
-    mul-float v15, v15, v5
+    mul-float/2addr v15, v4
 
-    mul-float v14, v14, v10
+    mul-float/2addr v14, v10
 
     add-float/2addr v15, v14
 
-    float-to-int v5, v15
+    float-to-int v4, v15
 
     goto :goto_4
 
     :cond_4
-    const/4 v5, 0x0
+    const/4 v4, 0x0
 
     .line 151
     :goto_4
@@ -633,16 +633,16 @@
 
     if-eqz v6, :cond_5
 
-    sub-float v4, v3, v4
+    sub-float v3, v5, v3
 
     .line 154
-    invoke-virtual {v6, v1, v12, v11, v4}, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->drawWaves(Landroid/graphics/Canvas;FFF)V
+    invoke-virtual {v6, v1, v12, v11, v3}, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->drawWaves(Landroid/graphics/Canvas;FFF)V
 
     .line 157
     :cond_5
-    iget-object v4, v0, Lorg/telegram/ui/VoiceMessageEnterTransition;->circlePaint:Landroid/graphics/Paint;
+    iget-object v3, v0, Lorg/telegram/ui/VoiceMessageEnterTransition;->circlePaint:Landroid/graphics/Paint;
 
-    invoke-virtual {v1, v12, v11, v13, v4}, Landroid/graphics/Canvas;->drawCircle(FFFLandroid/graphics/Paint;)V
+    invoke-virtual {v1, v12, v11, v13, v3}, Landroid/graphics/Canvas;->drawCircle(FFFLandroid/graphics/Paint;)V
 
     .line 159
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->save()I
@@ -653,131 +653,131 @@
     invoke-virtual {v1, v13, v13, v12, v11}, Landroid/graphics/Canvas;->scale(FFFF)V
 
     .line 163
-    iget-object v4, v0, Lorg/telegram/ui/VoiceMessageEnterTransition;->messageView:Lorg/telegram/ui/Cells/ChatMessageCell;
+    iget-object v3, v0, Lorg/telegram/ui/VoiceMessageEnterTransition;->messageView:Lorg/telegram/ui/Cells/ChatMessageCell;
 
-    invoke-virtual {v4}, Lorg/telegram/ui/Cells/ChatMessageCell;->getRadialProgress()Lorg/telegram/ui/Components/RadialProgress2;
+    invoke-virtual {v3}, Lorg/telegram/ui/Cells/ChatMessageCell;->getRadialProgress()Lorg/telegram/ui/Components/RadialProgress2;
 
-    move-result-object v4
+    move-result-object v3
 
-    invoke-virtual {v4}, Lorg/telegram/ui/Components/RadialProgress2;->getProgressRect()Landroid/graphics/RectF;
+    invoke-virtual {v3}, Lorg/telegram/ui/Components/RadialProgress2;->getProgressRect()Landroid/graphics/RectF;
 
-    move-result-object v4
+    move-result-object v3
 
-    invoke-virtual {v4}, Landroid/graphics/RectF;->centerX()F
+    invoke-virtual {v3}, Landroid/graphics/RectF;->centerX()F
 
-    move-result v4
+    move-result v3
 
-    sub-float/2addr v12, v4
+    sub-float/2addr v12, v3
 
-    iget-object v4, v0, Lorg/telegram/ui/VoiceMessageEnterTransition;->messageView:Lorg/telegram/ui/Cells/ChatMessageCell;
+    iget-object v3, v0, Lorg/telegram/ui/VoiceMessageEnterTransition;->messageView:Lorg/telegram/ui/Cells/ChatMessageCell;
 
-    invoke-virtual {v4}, Lorg/telegram/ui/Cells/ChatMessageCell;->getRadialProgress()Lorg/telegram/ui/Components/RadialProgress2;
+    invoke-virtual {v3}, Lorg/telegram/ui/Cells/ChatMessageCell;->getRadialProgress()Lorg/telegram/ui/Components/RadialProgress2;
 
-    move-result-object v4
+    move-result-object v3
 
-    invoke-virtual {v4}, Lorg/telegram/ui/Components/RadialProgress2;->getProgressRect()Landroid/graphics/RectF;
+    invoke-virtual {v3}, Lorg/telegram/ui/Components/RadialProgress2;->getProgressRect()Landroid/graphics/RectF;
 
-    move-result-object v4
+    move-result-object v3
 
-    invoke-virtual {v4}, Landroid/graphics/RectF;->centerY()F
+    invoke-virtual {v3}, Landroid/graphics/RectF;->centerY()F
 
-    move-result v4
+    move-result v3
 
-    sub-float/2addr v11, v4
+    sub-float/2addr v11, v3
 
     invoke-virtual {v1, v12, v11}, Landroid/graphics/Canvas;->translate(FF)V
 
     .line 165
-    iget-object v4, v0, Lorg/telegram/ui/VoiceMessageEnterTransition;->messageView:Lorg/telegram/ui/Cells/ChatMessageCell;
+    iget-object v3, v0, Lorg/telegram/ui/VoiceMessageEnterTransition;->messageView:Lorg/telegram/ui/Cells/ChatMessageCell;
 
-    invoke-virtual {v4}, Lorg/telegram/ui/Cells/ChatMessageCell;->getRadialProgress()Lorg/telegram/ui/Components/RadialProgress2;
+    invoke-virtual {v3}, Lorg/telegram/ui/Cells/ChatMessageCell;->getRadialProgress()Lorg/telegram/ui/Components/RadialProgress2;
 
-    move-result-object v4
+    move-result-object v3
 
-    invoke-virtual {v4, v10}, Lorg/telegram/ui/Components/RadialProgress2;->setOverrideAlpha(F)V
+    invoke-virtual {v3, v10}, Lorg/telegram/ui/Components/RadialProgress2;->setOverrideAlpha(F)V
 
     .line 166
-    iget-object v4, v0, Lorg/telegram/ui/VoiceMessageEnterTransition;->messageView:Lorg/telegram/ui/Cells/ChatMessageCell;
+    iget-object v3, v0, Lorg/telegram/ui/VoiceMessageEnterTransition;->messageView:Lorg/telegram/ui/Cells/ChatMessageCell;
 
-    invoke-virtual {v4}, Lorg/telegram/ui/Cells/ChatMessageCell;->getRadialProgress()Lorg/telegram/ui/Components/RadialProgress2;
+    invoke-virtual {v3}, Lorg/telegram/ui/Cells/ChatMessageCell;->getRadialProgress()Lorg/telegram/ui/Components/RadialProgress2;
 
-    move-result-object v4
+    move-result-object v3
 
     const/4 v6, 0x0
 
-    invoke-virtual {v4, v6}, Lorg/telegram/ui/Components/RadialProgress2;->setDrawBackground(Z)V
+    invoke-virtual {v3, v6}, Lorg/telegram/ui/Components/RadialProgress2;->setDrawBackground(Z)V
 
     .line 167
-    iget-object v4, v0, Lorg/telegram/ui/VoiceMessageEnterTransition;->messageView:Lorg/telegram/ui/Cells/ChatMessageCell;
+    iget-object v3, v0, Lorg/telegram/ui/VoiceMessageEnterTransition;->messageView:Lorg/telegram/ui/Cells/ChatMessageCell;
 
-    invoke-virtual {v4}, Lorg/telegram/ui/Cells/ChatMessageCell;->getRadialProgress()Lorg/telegram/ui/Components/RadialProgress2;
+    invoke-virtual {v3}, Lorg/telegram/ui/Cells/ChatMessageCell;->getRadialProgress()Lorg/telegram/ui/Components/RadialProgress2;
 
-    move-result-object v4
+    move-result-object v3
 
-    invoke-virtual {v4, v1}, Lorg/telegram/ui/Components/RadialProgress2;->draw(Landroid/graphics/Canvas;)V
+    invoke-virtual {v3, v1}, Lorg/telegram/ui/Components/RadialProgress2;->draw(Landroid/graphics/Canvas;)V
 
     .line 168
-    iget-object v4, v0, Lorg/telegram/ui/VoiceMessageEnterTransition;->messageView:Lorg/telegram/ui/Cells/ChatMessageCell;
+    iget-object v3, v0, Lorg/telegram/ui/VoiceMessageEnterTransition;->messageView:Lorg/telegram/ui/Cells/ChatMessageCell;
 
-    invoke-virtual {v4}, Lorg/telegram/ui/Cells/ChatMessageCell;->getRadialProgress()Lorg/telegram/ui/Components/RadialProgress2;
+    invoke-virtual {v3}, Lorg/telegram/ui/Cells/ChatMessageCell;->getRadialProgress()Lorg/telegram/ui/Components/RadialProgress2;
 
-    move-result-object v4
+    move-result-object v3
 
     const/4 v6, 0x1
 
-    invoke-virtual {v4, v6}, Lorg/telegram/ui/Components/RadialProgress2;->setDrawBackground(Z)V
+    invoke-virtual {v3, v6}, Lorg/telegram/ui/Components/RadialProgress2;->setDrawBackground(Z)V
 
     .line 169
-    iget-object v4, v0, Lorg/telegram/ui/VoiceMessageEnterTransition;->messageView:Lorg/telegram/ui/Cells/ChatMessageCell;
+    iget-object v3, v0, Lorg/telegram/ui/VoiceMessageEnterTransition;->messageView:Lorg/telegram/ui/Cells/ChatMessageCell;
 
-    invoke-virtual {v4}, Lorg/telegram/ui/Cells/ChatMessageCell;->getRadialProgress()Lorg/telegram/ui/Components/RadialProgress2;
+    invoke-virtual {v3}, Lorg/telegram/ui/Cells/ChatMessageCell;->getRadialProgress()Lorg/telegram/ui/Components/RadialProgress2;
 
-    move-result-object v4
+    move-result-object v3
 
-    invoke-virtual {v4, v3}, Lorg/telegram/ui/Components/RadialProgress2;->setOverrideAlpha(F)V
+    invoke-virtual {v3, v5}, Lorg/telegram/ui/Components/RadialProgress2;->setOverrideAlpha(F)V
 
     .line 170
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->restore()V
 
     .line 172
-    iget-object v4, v0, Lorg/telegram/ui/VoiceMessageEnterTransition;->container:Lorg/telegram/ui/MessageEnterTransitionContainer;
+    iget-object v3, v0, Lorg/telegram/ui/VoiceMessageEnterTransition;->container:Lorg/telegram/ui/MessageEnterTransitionContainer;
 
-    invoke-virtual {v4}, Landroid/view/View;->getMeasuredHeight()I
+    invoke-virtual {v3}, Landroid/view/View;->getMeasuredHeight()I
 
-    move-result v4
+    move-result v3
 
-    if-lez v4, :cond_6
+    if-lez v3, :cond_6
 
     .line 173
-    iget-object v4, v0, Lorg/telegram/ui/VoiceMessageEnterTransition;->gradientMatrix:Landroid/graphics/Matrix;
+    iget-object v3, v0, Lorg/telegram/ui/VoiceMessageEnterTransition;->gradientMatrix:Landroid/graphics/Matrix;
 
-    int-to-float v5, v5
+    int-to-float v4, v4
 
     const/4 v6, 0x0
 
-    invoke-virtual {v4, v6, v5}, Landroid/graphics/Matrix;->setTranslate(FF)V
+    invoke-virtual {v3, v6, v4}, Landroid/graphics/Matrix;->setTranslate(FF)V
 
     .line 174
-    iget-object v4, v0, Lorg/telegram/ui/VoiceMessageEnterTransition;->gradientShader:Landroid/graphics/LinearGradient;
+    iget-object v3, v0, Lorg/telegram/ui/VoiceMessageEnterTransition;->gradientShader:Landroid/graphics/LinearGradient;
 
-    iget-object v5, v0, Lorg/telegram/ui/VoiceMessageEnterTransition;->gradientMatrix:Landroid/graphics/Matrix;
+    iget-object v4, v0, Lorg/telegram/ui/VoiceMessageEnterTransition;->gradientMatrix:Landroid/graphics/Matrix;
 
-    invoke-virtual {v4, v5}, Landroid/graphics/LinearGradient;->setLocalMatrix(Landroid/graphics/Matrix;)V
+    invoke-virtual {v3, v4}, Landroid/graphics/LinearGradient;->setLocalMatrix(Landroid/graphics/Matrix;)V
 
     .line 181
     :cond_6
-    iget-object v4, v0, Lorg/telegram/ui/VoiceMessageEnterTransition;->recordCircle:Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;
+    iget-object v3, v0, Lorg/telegram/ui/VoiceMessageEnterTransition;->recordCircle:Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;
 
-    if-eqz v4, :cond_7
+    if-eqz v3, :cond_7
 
-    float-to-int v5, v7
+    float-to-int v4, v7
 
     float-to-int v6, v8
 
-    sub-float/2addr v3, v2
+    sub-float/2addr v5, v2
 
     .line 182
-    invoke-virtual {v4, v1, v5, v6, v3}, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->drawIcon(Landroid/graphics/Canvas;IIF)V
+    invoke-virtual {v3, v1, v4, v6, v5}, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->drawIcon(Landroid/graphics/Canvas;IIF)V
 
     :cond_7
     return-void

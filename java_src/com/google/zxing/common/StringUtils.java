@@ -26,9 +26,9 @@ public final class StringUtils {
         boolean z = true;
         int i = 0;
         boolean z2 = bArr2.length > 3 && bArr2[0] == -17 && bArr2[1] == -69 && bArr2[2] == -65;
-        int i2 = 0;
         boolean z3 = true;
         boolean z4 = true;
+        int i2 = 0;
         int i3 = 0;
         int i4 = 0;
         int i5 = 0;

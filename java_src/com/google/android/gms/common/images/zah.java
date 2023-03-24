@@ -11,8 +11,8 @@ public final class zah implements Parcelable.Creator {
     public final /* bridge */ /* synthetic */ Object createFromParcel(Parcel parcel) {
         int validateObjectHeader = SafeParcelReader.validateObjectHeader(parcel);
         int i = 0;
-        Uri uri = null;
         int i2 = 0;
+        Uri uri = null;
         int i3 = 0;
         while (parcel.dataPosition() < validateObjectHeader) {
             int readHeader = SafeParcelReader.readHeader(parcel);
@@ -22,15 +22,15 @@ public final class zah implements Parcelable.Creator {
             } else if (fieldId == 2) {
                 uri = (Uri) SafeParcelReader.createParcelable(parcel, readHeader, Uri.CREATOR);
             } else if (fieldId == 3) {
-                i2 = SafeParcelReader.readInt(parcel, readHeader);
-            } else if (fieldId == 4) {
                 i3 = SafeParcelReader.readInt(parcel, readHeader);
+            } else if (fieldId == 4) {
+                i2 = SafeParcelReader.readInt(parcel, readHeader);
             } else {
                 SafeParcelReader.skipUnknownField(parcel, readHeader);
             }
         }
         SafeParcelReader.ensureAtEnd(parcel, validateObjectHeader);
-        return new WebImage(i, uri, i2, i3);
+        return new WebImage(i, uri, i3, i2);
     }
 
     @Override // android.os.Parcelable.Creator

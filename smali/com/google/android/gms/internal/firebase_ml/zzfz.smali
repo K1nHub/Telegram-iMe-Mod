@@ -160,7 +160,7 @@
 
     invoke-direct {v11}, Ljava/io/StringWriter;-><init>()V
 
-    const/4 v12, 0x1
+    move v12, v4
 
     .line 13
     :goto_2
@@ -196,7 +196,7 @@
     :cond_4
     if-eqz v12, :cond_5
 
-    const/4 v12, 0x0
+    move v12, v6
 
     goto :goto_2
 

@@ -142,6 +142,9 @@ public final class Id3Decoder extends SimpleMetadataDecoder {
     /* JADX WARN: Code restructure failed: missing block: B:31:0x0076, code lost:
         if ((r10 & 1) != 0) goto L33;
      */
+    /* JADX WARN: Code restructure failed: missing block: B:33:0x0079, code lost:
+        r4 = false;
+     */
     /* JADX WARN: Code restructure failed: missing block: B:40:0x0086, code lost:
         if ((r10 & 128) != 0) goto L33;
      */
@@ -170,7 +173,7 @@ public final class Id3Decoder extends SimpleMetadataDecoder {
             int r7 = r18.readUnsignedInt24()     // Catch: java.lang.Throwable -> Laf
             int r8 = r18.readUnsignedInt24()     // Catch: java.lang.Throwable -> Laf
             long r8 = (long) r8
-            r10 = 0
+            r10 = r6
         L2c:
             r11 = 0
             if (r7 != 0) goto L3a
@@ -185,8 +188,8 @@ public final class Id3Decoder extends SimpleMetadataDecoder {
             if (r21 != 0) goto L6b
             r13 = 8421504(0x808080, double:4.160776E-317)
             long r13 = r13 & r8
-            int r15 = (r13 > r11 ? 1 : (r13 == r11 ? 0 : -1))
-            if (r15 == 0) goto L4b
+            int r11 = (r13 > r11 ? 1 : (r13 == r11 ? 0 : -1))
+            if (r11 == 0) goto L4b
             r1.setPosition(r2)
             return r6
         L4b:
@@ -214,46 +217,46 @@ public final class Id3Decoder extends SimpleMetadataDecoder {
             if (r0 != r7) goto L7b
             r3 = r10 & 64
             if (r3 == 0) goto L73
-            r3 = 1
+            r3 = r4
             goto L74
         L73:
-            r3 = 0
+            r3 = r6
         L74:
             r7 = r10 & 1
             if (r7 == 0) goto L79
             goto L8b
         L79:
-            r4 = 0
+            r4 = r6
             goto L8b
         L7b:
             if (r0 != r3) goto L89
             r3 = r10 & 32
             if (r3 == 0) goto L83
-            r3 = 1
+            r3 = r4
             goto L84
         L83:
-            r3 = 0
+            r3 = r6
         L84:
             r7 = r10 & 128(0x80, float:1.794E-43)
             if (r7 == 0) goto L79
             goto L8b
         L89:
-            r3 = 0
-            goto L79
+            r3 = r6
+            r4 = r3
         L8b:
             if (r4 == 0) goto L8f
             int r3 = r3 + 4
         L8f:
             long r3 = (long) r3
-            int r7 = (r8 > r3 ? 1 : (r8 == r3 ? 0 : -1))
-            if (r7 >= 0) goto L98
+            int r3 = (r8 > r3 ? 1 : (r8 == r3 ? 0 : -1))
+            if (r3 >= 0) goto L98
             r1.setPosition(r2)
             return r6
         L98:
             int r3 = r18.bytesLeft()     // Catch: java.lang.Throwable -> Laf
             long r3 = (long) r3
-            int r7 = (r3 > r8 ? 1 : (r3 == r8 ? 0 : -1))
-            if (r7 >= 0) goto La5
+            int r3 = (r3 > r8 ? 1 : (r3 == r8 ? 0 : -1))
+            if (r3 >= 0) goto La5
             r1.setPosition(r2)
             return r6
         La5:

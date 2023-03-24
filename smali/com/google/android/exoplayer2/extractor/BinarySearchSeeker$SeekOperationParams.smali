@@ -150,15 +150,15 @@
 
     add-long v2, p6, v0
 
-    cmp-long v4, v2, p8
+    cmp-long v2, v2, p8
 
-    if-gez v4, :cond_1
+    if-gez v2, :cond_1
 
     add-long v2, p2, v0
 
-    cmp-long v4, v2, p4
+    cmp-long v2, v2, p4
 
-    if-ltz v4, :cond_0
+    if-ltz v2, :cond_0
 
     goto :goto_0
 
@@ -177,7 +177,7 @@
 
     long-to-float v2, v2
 
-    mul-float v2, v2, v4
+    mul-float/2addr v2, v4
 
     float-to-long v2, v2
 

@@ -8,7 +8,7 @@ import android.view.View;
 import androidx.core.content.ContextCompat;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3286R;
+import org.telegram.messenger.C3301R;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.UserConfig;
 import org.telegram.p048ui.Components.AvatarDrawable;
@@ -35,7 +35,7 @@ public class SuggestUserPhotoView extends View {
         this.avatarDrawable.setInfo(UserConfig.getInstance(UserConfig.selectedAccount).getCurrentUser());
         this.currentPhoto.setForUserOrChat(UserConfig.getInstance(UserConfig.selectedAccount).getCurrentUser(), this.avatarDrawable);
         this.newPhoto.setForUserOrChat(UserConfig.getInstance(UserConfig.selectedAccount).getCurrentUser(), this.avatarDrawable);
-        Drawable drawable = ContextCompat.getDrawable(context, C3286R.C3288drawable.msg_arrow_avatar);
+        Drawable drawable = ContextCompat.getDrawable(context, C3301R.C3303drawable.msg_arrow_avatar);
         this.arrowDrawable = drawable;
         drawable.setAlpha(100);
     }

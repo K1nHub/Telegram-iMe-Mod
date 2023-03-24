@@ -304,7 +304,7 @@
 
     const/4 v3, 0x0
 
-    const/4 v4, 0x0
+    move v4, v3
 
     :goto_0
     if-ge v4, v2, :cond_2
@@ -321,7 +321,7 @@
     goto :goto_1
 
     :cond_1
-    const/4 v5, 0x0
+    move v5, v3
 
     :goto_1
     invoke-static {v5}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;

@@ -136,7 +136,7 @@
 
     check-cast p1, Lcom/smedialink/storage/domain/model/crypto/swap/CryptoSwapMetadata;
 
-    invoke-virtual {p1}, Lcom/smedialink/storage/domain/model/crypto/swap/CryptoSwapMetadata;->getTransactionParams()Lcom/smedialink/storage/domain/model/crypto/TransactionParams;
+    invoke-virtual {p1}, Lcom/smedialink/storage/domain/model/crypto/swap/CryptoSwapMetadata;->getTransactionParams()Lcom/smedialink/storage/domain/model/crypto/TransactionParams$Ether;
 
     move-result-object p1
 

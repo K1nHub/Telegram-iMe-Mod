@@ -522,7 +522,7 @@
     goto :goto_0
 
     :cond_0
-    const/4 v2, 0x0
+    move v2, v4
 
     .line 2671
     :goto_0
@@ -553,12 +553,12 @@
     goto :goto_1
 
     :cond_1
-    const/4 v5, 0x0
+    move v5, v4
 
     :goto_1
     if-ne v2, v5, :cond_2
 
-    const/4 v5, 0x0
+    move v5, v4
 
     .line 2675
     :cond_2
@@ -589,7 +589,7 @@
     goto :goto_2
 
     :cond_3
-    const/4 v7, 0x0
+    move v7, v4
 
     .line 2676
     :goto_2
@@ -620,7 +620,7 @@
     goto :goto_3
 
     :cond_4
-    const/4 v3, 0x0
+    move v3, v4
 
     .line 2684
     :goto_3
@@ -830,27 +830,27 @@
 
     iget-wide v5, v0, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->backgroundOverrideColor:J
 
-    cmp-long v3, v1, v5
+    cmp-long v1, v1, v5
 
-    if-nez v3, :cond_a
+    if-nez v1, :cond_a
 
     iget-wide v1, v0, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->backgroundGradientOverrideColor1:J
 
-    cmp-long v3, v11, v1
+    cmp-long v1, v11, v1
 
-    if-nez v3, :cond_a
+    if-nez v1, :cond_a
 
     iget-wide v1, v0, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->backgroundGradientOverrideColor2:J
 
-    cmp-long v3, v13, v1
+    cmp-long v1, v13, v1
 
-    if-nez v3, :cond_a
+    if-nez v1, :cond_a
 
     iget-wide v1, v0, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->backgroundGradientOverrideColor3:J
 
-    cmp-long v3, v15, v1
+    cmp-long v1, v15, v1
 
-    if-nez v3, :cond_a
+    if-nez v1, :cond_a
 
     iget v1, v0, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->backgroundRotation:I
 
@@ -878,9 +878,9 @@
 
     const-wide v2, 0x3f50624dd2f1a9fcL    # 0.001
 
-    cmpg-double v4, v0, v2
+    cmpg-double v0, v0, v2
 
-    if-gez v4, :cond_a
+    if-gez v0, :cond_a
 
     const/4 v4, 0x1
 
@@ -1264,7 +1264,7 @@
     goto :goto_0
 
     :cond_0
-    const/4 v0, 0x0
+    move v0, v2
 
     :goto_0
     iput v0, p0, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->myMessagesAccentColor:I
@@ -1297,7 +1297,7 @@
     goto :goto_1
 
     :cond_1
-    const/4 v0, 0x0
+    move v0, v2
 
     :goto_1
     iput v0, p0, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->myMessagesGradientAccentColor1:I
@@ -1339,7 +1339,7 @@
     goto :goto_2
 
     :cond_3
-    const/4 v0, 0x0
+    move v0, v2
 
     :goto_2
     iput v0, p0, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->myMessagesGradientAccentColor2:I
@@ -1372,7 +1372,7 @@
     goto :goto_3
 
     :cond_4
-    const/4 v0, 0x0
+    move v0, v2
 
     :goto_3
     iput v0, p0, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->myMessagesGradientAccentColor3:I
@@ -1620,7 +1620,7 @@
 
     if-ne v0, v2, :cond_2
 
-    const/4 v1, 0x1
+    move v1, v3
 
     :cond_2
     return v1
@@ -1715,7 +1715,7 @@
 
     if-ne v0, v2, :cond_3
 
-    const/4 v1, 0x1
+    move v1, v3
 
     :cond_3
     :goto_0
@@ -1805,7 +1805,7 @@
 
     if-ne v0, v2, :cond_3
 
-    const/4 v1, 0x1
+    move v1, v3
 
     :cond_3
     :goto_0
@@ -2055,9 +2055,9 @@
 
     const-wide/32 v0, 0xf4241
 
-    cmp-long v2, p2, v0
+    cmp-long p2, p2, v0
 
-    if-nez v2, :cond_2
+    if-nez p2, :cond_2
 
     const-string p2, "d"
 
@@ -2254,7 +2254,7 @@
 
     if-ne p0, v5, :cond_0
 
-    const/4 v1, 0x1
+    move v1, v0
 
     :cond_0
     invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
@@ -2356,7 +2356,7 @@
 
     const/4 v2, 0x0
 
-    const/4 v3, 0x0
+    move v3, v2
 
     .line 2570
     :goto_0
@@ -2856,7 +2856,7 @@
 
     const/high16 v6, 0x437f0000    # 255.0f
 
-    mul-float v5, v5, v6
+    mul-float/2addr v5, v6
 
     float-to-int v5, v5
 
@@ -4000,7 +4000,7 @@
 
     if-ne v0, v3, :cond_0
 
-    const/4 v2, 0x1
+    move v2, v3
 
     :cond_0
     return v2
@@ -4103,7 +4103,7 @@
 
     if-ne v0, v3, :cond_7
 
-    const/4 v2, 0x1
+    move v2, v3
 
     :cond_7
     return v2

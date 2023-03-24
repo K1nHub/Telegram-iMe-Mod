@@ -242,7 +242,7 @@
     goto :goto_4
 
     :cond_6
-    const/4 v0, 0x0
+    move v0, v2
 
     :goto_4
     return v0
@@ -328,7 +328,7 @@
 
     xor-int/2addr v0, v1
 
-    mul-int v0, v0, v1
+    mul-int/2addr v0, v1
 
     .line 121
     iget-object v2, p0, Lcom/google/firebase/crashlytics/internal/model/AutoValue_CrashlyticsReport_Session_Application;->version:Ljava/lang/String;
@@ -339,7 +339,7 @@
 
     xor-int/2addr v0, v2
 
-    mul-int v0, v0, v1
+    mul-int/2addr v0, v1
 
     .line 123
     iget-object v2, p0, Lcom/google/firebase/crashlytics/internal/model/AutoValue_CrashlyticsReport_Session_Application;->displayVersion:Ljava/lang/String;
@@ -348,7 +348,7 @@
 
     if-nez v2, :cond_0
 
-    const/4 v2, 0x0
+    move v2, v3
 
     goto :goto_0
 
@@ -360,14 +360,14 @@
     :goto_0
     xor-int/2addr v0, v2
 
-    mul-int v0, v0, v1
+    mul-int/2addr v0, v1
 
     .line 125
     iget-object v2, p0, Lcom/google/firebase/crashlytics/internal/model/AutoValue_CrashlyticsReport_Session_Application;->organization:Lcom/google/firebase/crashlytics/internal/model/CrashlyticsReport$Session$Application$Organization;
 
     if-nez v2, :cond_1
 
-    const/4 v2, 0x0
+    move v2, v3
 
     goto :goto_1
 
@@ -379,14 +379,14 @@
     :goto_1
     xor-int/2addr v0, v2
 
-    mul-int v0, v0, v1
+    mul-int/2addr v0, v1
 
     .line 127
     iget-object v2, p0, Lcom/google/firebase/crashlytics/internal/model/AutoValue_CrashlyticsReport_Session_Application;->installationUuid:Ljava/lang/String;
 
     if-nez v2, :cond_2
 
-    const/4 v2, 0x0
+    move v2, v3
 
     goto :goto_2
 
@@ -398,14 +398,14 @@
     :goto_2
     xor-int/2addr v0, v2
 
-    mul-int v0, v0, v1
+    mul-int/2addr v0, v1
 
     .line 129
     iget-object v2, p0, Lcom/google/firebase/crashlytics/internal/model/AutoValue_CrashlyticsReport_Session_Application;->developmentPlatform:Ljava/lang/String;
 
     if-nez v2, :cond_3
 
-    const/4 v2, 0x0
+    move v2, v3
 
     goto :goto_3
 
@@ -417,7 +417,7 @@
     :goto_3
     xor-int/2addr v0, v2
 
-    mul-int v0, v0, v1
+    mul-int/2addr v0, v1
 
     .line 131
     iget-object v1, p0, Lcom/google/firebase/crashlytics/internal/model/AutoValue_CrashlyticsReport_Session_Application;->developmentPlatformVersion:Ljava/lang/String;

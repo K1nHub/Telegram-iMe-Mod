@@ -186,7 +186,7 @@
 
     move-result v0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_0
     if-ge v2, v0, :cond_2
@@ -318,12 +318,12 @@
 
     if-nez v0, :cond_3
 
-    const/4 v7, 0x1
+    move v7, v2
 
     goto :goto_0
 
     :cond_3
-    const/4 v7, 0x0
+    move v7, v1
 
     .line 68
     :goto_0
@@ -353,7 +353,7 @@
 
     invoke-virtual {v0}, Ljava/util/HashMap;->clear()V
 
-    const/4 v0, 0x0
+    move v0, v1
 
     :goto_1
     if-ge v0, p4, :cond_6

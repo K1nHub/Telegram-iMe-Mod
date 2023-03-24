@@ -142,16 +142,16 @@
 
     move-result-wide p1
 
-    long-to-int p2, p1
+    long-to-int p1, p1
 
     .line 264
-    iget p1, p0, Lcom/bumptech/glide/integration/webp/WebpHeaderParser$ByteArrayReader;->pos:I
+    iget p2, p0, Lcom/bumptech/glide/integration/webp/WebpHeaderParser$ByteArrayReader;->pos:I
 
-    add-int/2addr p1, p2
+    add-int/2addr p2, p1
 
-    iput p1, p0, Lcom/bumptech/glide/integration/webp/WebpHeaderParser$ByteArrayReader;->pos:I
+    iput p2, p0, Lcom/bumptech/glide/integration/webp/WebpHeaderParser$ByteArrayReader;->pos:I
 
-    int-to-long p1, p2
+    int-to-long p1, p1
 
     return-wide p1
 .end method

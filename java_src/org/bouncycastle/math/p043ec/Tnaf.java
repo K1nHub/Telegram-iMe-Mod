@@ -135,10 +135,10 @@ public class Tnaf {
 
     public static BigInteger norm(byte b, ZTauElement zTauElement) {
         BigInteger subtract;
-        BigInteger bigInteger = zTauElement.f1313u;
+        BigInteger bigInteger = zTauElement.f1314u;
         BigInteger multiply = bigInteger.multiply(bigInteger);
-        BigInteger multiply2 = zTauElement.f1313u.multiply(zTauElement.f1314v);
-        BigInteger bigInteger2 = zTauElement.f1314v;
+        BigInteger multiply2 = zTauElement.f1314u.multiply(zTauElement.f1315v);
+        BigInteger bigInteger2 = zTauElement.f1315v;
         BigInteger shiftLeft = bigInteger2.multiply(bigInteger2).shiftLeft(1);
         if (b == 1) {
             subtract = multiply.add(multiply2);
@@ -154,19 +154,16 @@ public class Tnaf {
         BigInteger add = b2 == 1 ? bigIntegerArr[0].add(bigIntegerArr[1]) : bigIntegerArr[0].subtract(bigIntegerArr[1]);
         BigInteger bigInteger2 = getLucas(b2, i, true)[1];
         ZTauElement round = round(approximateDivisionByN(bigInteger, bigIntegerArr[0], bigInteger2, b, i, b3), approximateDivisionByN(bigInteger, bigIntegerArr[1], bigInteger2, b, i, b3), b2);
-        return new ZTauElement(bigInteger.subtract(add.multiply(round.f1313u)).subtract(BigInteger.valueOf(2L).multiply(bigIntegerArr[1]).multiply(round.f1314v)), bigIntegerArr[1].multiply(round.f1313u).subtract(bigIntegerArr[0].multiply(round.f1314v)));
+        return new ZTauElement(bigInteger.subtract(add.multiply(round.f1314u)).subtract(BigInteger.valueOf(2L).multiply(bigIntegerArr[1]).multiply(round.f1315v)), bigIntegerArr[1].multiply(round.f1314u).subtract(bigIntegerArr[0].multiply(round.f1315v)));
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:21:0x0066, code lost:
         if (r5.compareTo(org.bouncycastle.math.p043ec.Tnaf.MINUS_ONE) < 0) goto L29;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:24:0x006f, code lost:
-        if (r8.compareTo(org.bouncycastle.math.p043ec.ECConstants.TWO) >= 0) goto L29;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:30:0x007f, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:30:0x0081, code lost:
         if (r5.compareTo(r9) >= 0) goto L25;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:33:0x0088, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:33:0x008a, code lost:
         if (r8.compareTo(org.bouncycastle.math.p043ec.Tnaf.MINUS_TWO) < 0) goto L25;
      */
     /*
@@ -177,7 +174,7 @@ public class Tnaf {
         /*
             int r0 = r8.getScale()
             int r1 = r9.getScale()
-            if (r1 != r0) goto La5
+            if (r1 != r0) goto La7
             r0 = -1
             r1 = 1
             if (r10 == r1) goto L19
@@ -217,33 +214,35 @@ public class Tnaf {
             if (r6 < 0) goto L69
             java.math.BigInteger r6 = org.bouncycastle.math.p043ec.Tnaf.MINUS_ONE
             int r6 = r5.compareTo(r6)
-            if (r6 >= 0) goto L73
+            if (r6 >= 0) goto L75
             goto L71
         L69:
             java.math.BigInteger r1 = org.bouncycastle.math.p043ec.ECConstants.TWO
             int r1 = r8.compareTo(r1)
-            if (r1 < 0) goto L72
+            if (r1 < 0) goto L74
         L71:
+            r1 = r7
             r7 = r10
-        L72:
-            r1 = 0
-        L73:
+            goto L75
+        L74:
+            r1 = r7
+        L75:
             java.math.BigInteger r6 = org.bouncycastle.math.p043ec.Tnaf.MINUS_ONE
             int r4 = r4.compareTo(r6)
-            if (r4 >= 0) goto L82
+            if (r4 >= 0) goto L84
             int r8 = r5.compareTo(r9)
-            if (r8 < 0) goto L8d
-            goto L8a
-        L82:
+            if (r8 < 0) goto L8f
+            goto L8c
+        L84:
             java.math.BigInteger r9 = org.bouncycastle.math.p043ec.Tnaf.MINUS_TWO
             int r8 = r8.compareTo(r9)
-            if (r8 >= 0) goto L8c
-        L8a:
+            if (r8 >= 0) goto L8e
+        L8c:
             int r8 = -r10
             byte r7 = (byte) r8
-        L8c:
+        L8e:
             r0 = r1
-        L8d:
+        L8f:
             long r8 = (long) r0
             java.math.BigInteger r8 = java.math.BigInteger.valueOf(r8)
             java.math.BigInteger r8 = r2.add(r8)
@@ -253,7 +252,7 @@ public class Tnaf {
             org.bouncycastle.math.ec.ZTauElement r10 = new org.bouncycastle.math.ec.ZTauElement
             r10.<init>(r8, r9)
             return r10
-        La5:
+        La7:
             java.lang.IllegalArgumentException r8 = new java.lang.IllegalArgumentException
             java.lang.String r9 = "lambda0 and lambda1 do not have same scale"
             r8.<init>(r9)
@@ -270,8 +269,8 @@ public class Tnaf {
         int bitLength = norm(b, zTauElement).bitLength();
         byte[] bArr = new byte[bitLength > 30 ? bitLength + 4 + b2 : b2 + 34];
         BigInteger shiftRight = bigInteger.shiftRight(1);
-        BigInteger bigInteger3 = zTauElement.f1313u;
-        BigInteger bigInteger4 = zTauElement.f1314v;
+        BigInteger bigInteger3 = zTauElement.f1314u;
+        BigInteger bigInteger4 = zTauElement.f1315v;
         int i = 0;
         while (true) {
             BigInteger bigInteger5 = ECConstants.ZERO;
@@ -292,11 +291,11 @@ public class Tnaf {
                     z = true;
                 }
                 if (z) {
-                    bigInteger3 = bigInteger3.subtract(zTauElementArr[intValue].f1313u);
-                    bigInteger4 = bigInteger4.subtract(zTauElementArr[intValue].f1314v);
+                    bigInteger3 = bigInteger3.subtract(zTauElementArr[intValue].f1314u);
+                    bigInteger4 = bigInteger4.subtract(zTauElementArr[intValue].f1315v);
                 } else {
-                    bigInteger3 = bigInteger3.add(zTauElementArr[intValue].f1313u);
-                    bigInteger4 = bigInteger4.add(zTauElementArr[intValue].f1314v);
+                    bigInteger3 = bigInteger3.add(zTauElementArr[intValue].f1314u);
+                    bigInteger4 = bigInteger4.add(zTauElementArr[intValue].f1315v);
                 }
             } else {
                 bArr[i] = 0;

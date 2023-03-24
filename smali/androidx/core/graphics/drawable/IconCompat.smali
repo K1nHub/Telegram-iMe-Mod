@@ -170,7 +170,7 @@
 
     const v1, 0x3f2aaaab
 
-    mul-float v0, v0, v1
+    mul-float/2addr v0, v1
 
     float-to-int v0, v0
 
@@ -197,17 +197,17 @@
 
     const/high16 v5, 0x3f000000    # 0.5f
 
-    mul-float v5, v5, v4
+    mul-float/2addr v5, v4
 
     const v6, 0x3f6aaaab
 
-    mul-float v6, v6, v5
+    mul-float/2addr v6, v5
 
     if-eqz p1, :cond_0
 
     const p1, 0x3c2aaaab
 
-    mul-float p1, p1, v4
+    mul-float/2addr p1, v4
 
     const/4 v7, 0x0
 
@@ -216,7 +216,7 @@
 
     const v7, 0x3caaaaab
 
-    mul-float v4, v4, v7
+    mul-float/2addr v4, v7
 
     const/high16 v7, 0x3d000000    # 0.03125f
 

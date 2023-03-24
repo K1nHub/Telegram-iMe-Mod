@@ -12,10 +12,10 @@ public final class ParamsForCryptoTransactionResponse {
 
     /* renamed from: to */
     private final String f307to;
-    private final TransactionParamsResponse transactionParams;
+    private final TransactionParamsResponse.EVM transactionParams;
     private final String value;
 
-    public static /* synthetic */ ParamsForCryptoTransactionResponse copy$default(ParamsForCryptoTransactionResponse paramsForCryptoTransactionResponse, String str, String str2, String str3, String str4, TransactionParamsResponse transactionParamsResponse, String str5, String str6, int i, Object obj) {
+    public static /* synthetic */ ParamsForCryptoTransactionResponse copy$default(ParamsForCryptoTransactionResponse paramsForCryptoTransactionResponse, String str, String str2, String str3, String str4, TransactionParamsResponse.EVM evm, String str5, String str6, int i, Object obj) {
         if ((i & 1) != 0) {
             str = paramsForCryptoTransactionResponse.from;
         }
@@ -32,9 +32,9 @@ public final class ParamsForCryptoTransactionResponse {
         }
         String str9 = str4;
         if ((i & 16) != 0) {
-            transactionParamsResponse = paramsForCryptoTransactionResponse.transactionParams;
+            evm = paramsForCryptoTransactionResponse.transactionParams;
         }
-        TransactionParamsResponse transactionParamsResponse2 = transactionParamsResponse;
+        TransactionParamsResponse.EVM evm2 = evm;
         if ((i & 32) != 0) {
             str5 = paramsForCryptoTransactionResponse.networkType;
         }
@@ -42,7 +42,7 @@ public final class ParamsForCryptoTransactionResponse {
         if ((i & 64) != 0) {
             str6 = paramsForCryptoTransactionResponse.feeTokenCode;
         }
-        return paramsForCryptoTransactionResponse.copy(str, str7, str8, str9, transactionParamsResponse2, str10, str6);
+        return paramsForCryptoTransactionResponse.copy(str, str7, str8, str9, evm2, str10, str6);
     }
 
     public final String component1() {
@@ -61,7 +61,7 @@ public final class ParamsForCryptoTransactionResponse {
         return this.data;
     }
 
-    public final TransactionParamsResponse component5() {
+    public final TransactionParamsResponse.EVM component5() {
         return this.transactionParams;
     }
 
@@ -73,7 +73,7 @@ public final class ParamsForCryptoTransactionResponse {
         return this.feeTokenCode;
     }
 
-    public final ParamsForCryptoTransactionResponse copy(String from, String to, String value, String data, TransactionParamsResponse transactionParams, String networkType, String feeTokenCode) {
+    public final ParamsForCryptoTransactionResponse copy(String from, String to, String value, String data, TransactionParamsResponse.EVM transactionParams, String networkType, String feeTokenCode) {
         Intrinsics.checkNotNullParameter(from, "from");
         Intrinsics.checkNotNullParameter(to, "to");
         Intrinsics.checkNotNullParameter(value, "value");
@@ -103,7 +103,7 @@ public final class ParamsForCryptoTransactionResponse {
         return "ParamsForCryptoTransactionResponse(from=" + this.from + ", to=" + this.f307to + ", value=" + this.value + ", data=" + this.data + ", transactionParams=" + this.transactionParams + ", networkType=" + this.networkType + ", feeTokenCode=" + this.feeTokenCode + ')';
     }
 
-    public ParamsForCryptoTransactionResponse(String from, String to, String value, String data, TransactionParamsResponse transactionParams, String networkType, String feeTokenCode) {
+    public ParamsForCryptoTransactionResponse(String from, String to, String value, String data, TransactionParamsResponse.EVM transactionParams, String networkType, String feeTokenCode) {
         Intrinsics.checkNotNullParameter(from, "from");
         Intrinsics.checkNotNullParameter(to, "to");
         Intrinsics.checkNotNullParameter(value, "value");
@@ -136,7 +136,7 @@ public final class ParamsForCryptoTransactionResponse {
         return this.data;
     }
 
-    public final TransactionParamsResponse getTransactionParams() {
+    public final TransactionParamsResponse.EVM getTransactionParams() {
         return this.transactionParams;
     }
 

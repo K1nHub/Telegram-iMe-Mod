@@ -79,7 +79,7 @@
 
     if-eqz v0, :cond_0
 
-    const/4 v0, 0x0
+    move v0, v4
 
     :goto_0
     if-ge v0, v3, :cond_3
@@ -145,7 +145,7 @@
 
     invoke-static {v0, v5, v6}, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->access$5000(Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;Landroid/widget/ImageView;Ljava/lang/String;)V
 
-    const/4 v0, 0x0
+    move v0, v4
 
     :goto_1
     if-ge v0, v3, :cond_3
@@ -161,12 +161,12 @@
 
     if-nez v0, :cond_1
 
-    const/4 v6, 0x0
+    move v6, v4
 
     goto :goto_2
 
     :cond_1
-    const/4 v6, 0x4
+    move v6, v1
 
     :goto_2
     invoke-virtual {v5, v6}, Landroid/widget/ImageView;->setVisibility(I)V
@@ -195,7 +195,7 @@
     goto :goto_3
 
     :cond_2
-    const/4 v6, 0x0
+    move v6, v2
 
     :goto_3
     invoke-virtual {v5, v6}, Landroid/widget/ImageView;->setAlpha(F)V
@@ -260,7 +260,7 @@
 
     if-eqz v2, :cond_5
 
-    const/4 v1, 0x0
+    move v1, v4
 
     :cond_5
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setVisibility(I)V

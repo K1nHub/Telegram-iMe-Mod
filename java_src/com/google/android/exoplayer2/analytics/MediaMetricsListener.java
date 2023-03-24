@@ -744,27 +744,33 @@ public final class MediaMetricsListener implements AnalyticsListener, PlaybackSe
         if (Util.areEqual(this.currentVideoFormat, format)) {
             return;
         }
-        int i2 = (this.currentVideoFormat == null && i == 0) ? 1 : i;
+        if (this.currentVideoFormat == null && i == 0) {
+            i = 1;
+        }
         this.currentVideoFormat = format;
-        reportTrackChangeEvent(1, j, format, i2);
+        reportTrackChangeEvent(1, j, format, i);
     }
 
     private void maybeUpdateAudioFormat(long j, Format format, int i) {
         if (Util.areEqual(this.currentAudioFormat, format)) {
             return;
         }
-        int i2 = (this.currentAudioFormat == null && i == 0) ? 1 : i;
+        if (this.currentAudioFormat == null && i == 0) {
+            i = 1;
+        }
         this.currentAudioFormat = format;
-        reportTrackChangeEvent(0, j, format, i2);
+        reportTrackChangeEvent(0, j, format, i);
     }
 
     private void maybeUpdateTextFormat(long j, Format format, int i) {
         if (Util.areEqual(this.currentTextFormat, format)) {
             return;
         }
-        int i2 = (this.currentTextFormat == null && i == 0) ? 1 : i;
+        if (this.currentTextFormat == null && i == 0) {
+            i = 1;
+        }
         this.currentTextFormat = format;
-        reportTrackChangeEvent(2, j, format, i2);
+        reportTrackChangeEvent(2, j, format, i);
     }
 
     private void reportTrackChangeEvent(int i, long j, Format format, int i2) {

@@ -213,9 +213,9 @@
 
     iget-wide v2, p0, Lj$/util/concurrent/ThreadLocalRandom$b;->b:J
 
-    cmp-long v4, v0, v2
+    cmp-long v2, v0, v2
 
-    if-gez v4, :cond_0
+    if-gez v2, :cond_0
 
     invoke-static {}, Lj$/util/concurrent/ThreadLocalRandom;->current()Lj$/util/concurrent/ThreadLocalRandom;
 

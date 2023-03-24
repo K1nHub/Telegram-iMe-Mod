@@ -110,7 +110,7 @@
     goto :goto_1
 
     :cond_1
-    const/4 v3, 0x0
+    move v3, v4
 
     :goto_1
     add-int/2addr v2, v3

@@ -12,19 +12,13 @@
 
 .field public final synthetic f$2:J
 
-.field public final synthetic f$3:Lorg/telegram/tgnet/TLRPC$updates_ChannelDifference;
+.field public final synthetic f$3:Lorg/telegram/messenger/MessagesController$SponsoredMessagesInfo;
 
-.field public final synthetic f$4:Lorg/telegram/tgnet/TLRPC$Chat;
-
-.field public final synthetic f$5:Landroidx/collection/LongSparseArray;
-
-.field public final synthetic f$6:I
-
-.field public final synthetic f$7:J
+.field public final synthetic f$4:Ljava/lang/Integer;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/messenger/MessagesController;Ljava/util/ArrayList;JLorg/telegram/tgnet/TLRPC$updates_ChannelDifference;Lorg/telegram/tgnet/TLRPC$Chat;Landroidx/collection/LongSparseArray;IJ)V
+.method public synthetic constructor <init>(Lorg/telegram/messenger/MessagesController;Ljava/util/ArrayList;JLorg/telegram/messenger/MessagesController$SponsoredMessagesInfo;Ljava/lang/Integer;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -35,15 +29,9 @@
 
     iput-wide p3, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda129;->f$2:J
 
-    iput-object p5, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda129;->f$3:Lorg/telegram/tgnet/TLRPC$updates_ChannelDifference;
+    iput-object p5, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda129;->f$3:Lorg/telegram/messenger/MessagesController$SponsoredMessagesInfo;
 
-    iput-object p6, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda129;->f$4:Lorg/telegram/tgnet/TLRPC$Chat;
-
-    iput-object p7, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda129;->f$5:Landroidx/collection/LongSparseArray;
-
-    iput p8, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda129;->f$6:I
-
-    iput-wide p9, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda129;->f$7:J
+    iput-object p6, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda129;->f$4:Ljava/lang/Integer;
 
     return-void
 .end method
@@ -51,7 +39,7 @@
 
 # virtual methods
 .method public final run()V
-    .locals 10
+    .locals 6
 
     iget-object v0, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda129;->f$0:Lorg/telegram/messenger/MessagesController;
 
@@ -59,17 +47,11 @@
 
     iget-wide v2, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda129;->f$2:J
 
-    iget-object v4, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda129;->f$3:Lorg/telegram/tgnet/TLRPC$updates_ChannelDifference;
+    iget-object v4, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda129;->f$3:Lorg/telegram/messenger/MessagesController$SponsoredMessagesInfo;
 
-    iget-object v5, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda129;->f$4:Lorg/telegram/tgnet/TLRPC$Chat;
+    iget-object v5, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda129;->f$4:Ljava/lang/Integer;
 
-    iget-object v6, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda129;->f$5:Landroidx/collection/LongSparseArray;
-
-    iget v7, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda129;->f$6:I
-
-    iget-wide v8, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda129;->f$7:J
-
-    invoke-static/range {v0 .. v9}, Lorg/telegram/messenger/MessagesController;->$r8$lambda$AMZEij5vSK23FCfZrThe6GjBl0k(Lorg/telegram/messenger/MessagesController;Ljava/util/ArrayList;JLorg/telegram/tgnet/TLRPC$updates_ChannelDifference;Lorg/telegram/tgnet/TLRPC$Chat;Landroidx/collection/LongSparseArray;IJ)V
+    invoke-static/range {v0 .. v5}, Lorg/telegram/messenger/MessagesController;->$r8$lambda$OO-vpzD_TG45APt5xv3QmLcg5nk(Lorg/telegram/messenger/MessagesController;Ljava/util/ArrayList;JLorg/telegram/messenger/MessagesController$SponsoredMessagesInfo;Ljava/lang/Integer;)V
 
     return-void
 .end method

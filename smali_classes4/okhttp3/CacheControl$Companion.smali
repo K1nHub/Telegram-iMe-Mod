@@ -97,9 +97,9 @@
 
     const/4 v6, 0x1
 
-    const/4 v7, 0x0
+    move v8, v6
 
-    const/4 v8, 0x1
+    const/4 v7, 0x0
 
     const/4 v9, 0x0
 
@@ -344,11 +344,12 @@
 
     if-eqz v1, :cond_6
 
+    move v10, v6
+
+    :goto_6
     const/4 v1, -0x1
 
-    const/4 v10, 0x1
-
-    goto/16 :goto_6
+    goto/16 :goto_7
 
     :cond_6
     const-string v1, "no-store"
@@ -360,11 +361,9 @@
 
     if-eqz v1, :cond_7
 
-    const/4 v1, -0x1
+    move v11, v6
 
-    const/4 v11, 0x1
-
-    goto/16 :goto_6
+    goto :goto_6
 
     :cond_7
     const-string v1, "max-age"
@@ -383,7 +382,7 @@
 
     move-result v12
 
-    goto/16 :goto_6
+    goto/16 :goto_7
 
     :cond_8
     const/4 v1, -0x1
@@ -402,7 +401,7 @@
 
     move-result v13
 
-    goto :goto_6
+    goto :goto_7
 
     :cond_9
     const-string v1, "private"
@@ -414,9 +413,7 @@
 
     if-eqz v1, :cond_a
 
-    const/4 v1, -0x1
-
-    const/4 v14, 0x1
+    move v14, v6
 
     goto :goto_6
 
@@ -430,9 +427,7 @@
 
     if-eqz v1, :cond_b
 
-    const/4 v1, -0x1
-
-    const/4 v15, 0x1
+    move v15, v6
 
     goto :goto_6
 
@@ -446,9 +441,7 @@
 
     if-eqz v1, :cond_c
 
-    const/4 v1, -0x1
-
-    const/16 v16, 0x1
+    move/from16 v16, v6
 
     goto :goto_6
 
@@ -469,8 +462,6 @@
 
     move-result v17
 
-    const/4 v1, -0x1
-
     goto :goto_6
 
     :cond_d
@@ -490,7 +481,7 @@
 
     move-result v18
 
-    goto :goto_6
+    goto :goto_7
 
     :cond_e
     const/4 v1, -0x1
@@ -504,9 +495,9 @@
 
     if-eqz v2, :cond_f
 
-    const/16 v19, 0x1
+    move/from16 v19, v6
 
-    goto :goto_6
+    goto :goto_7
 
     :cond_f
     const-string v2, "no-transform"
@@ -518,9 +509,9 @@
 
     if-eqz v2, :cond_10
 
-    const/16 v20, 0x1
+    move/from16 v20, v6
 
-    goto :goto_6
+    goto :goto_7
 
     :cond_10
     const-string v2, "immutable"
@@ -532,10 +523,10 @@
 
     if-eqz v2, :cond_11
 
-    const/16 v21, 0x1
+    move/from16 v21, v6
 
     :cond_11
-    :goto_6
+    :goto_7
     move-object/from16 v1, p1
 
     move v3, v4
@@ -551,12 +542,12 @@
 
     move/from16 v30, v8
 
-    goto :goto_7
+    goto :goto_8
 
     :cond_13
     move/from16 v29, v2
 
-    :goto_7
+    :goto_8
     const/4 v1, -0x1
 
     add-int/lit8 v7, v7, 0x1
@@ -572,13 +563,13 @@
 
     const/16 v22, 0x0
 
-    goto :goto_8
+    goto :goto_9
 
     :cond_15
     move-object/from16 v22, v9
 
     .line 397
-    :goto_8
+    :goto_9
     new-instance v1, Lokhttp3/CacheControl;
 
     const/16 v23, 0x0

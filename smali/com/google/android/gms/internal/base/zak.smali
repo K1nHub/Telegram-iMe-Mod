@@ -136,7 +136,7 @@
 
 # virtual methods
 .method public final draw(Landroid/graphics/Canvas;)V
-    .locals 7
+    .locals 6
 
     .line 4
     iget v0, p0, Lcom/google/android/gms/internal/base/zak;->zaa:I
@@ -159,9 +159,9 @@
 
     const-wide/16 v4, 0x0
 
-    cmp-long v6, v0, v4
+    cmp-long v0, v0, v4
 
-    if-ltz v6, :cond_4
+    if-ltz v0, :cond_4
 
     .line 1
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
@@ -189,7 +189,7 @@
     goto :goto_0
 
     :cond_1
-    const/4 v3, 0x0
+    move v3, v2
 
     :goto_0
     if-eqz v3, :cond_2
@@ -206,7 +206,7 @@
 
     int-to-float v1, v1
 
-    mul-float v1, v1, v0
+    mul-float/2addr v1, v0
 
     const/4 v0, 0x0
 
@@ -228,7 +228,7 @@
 
     iput v1, p0, Lcom/google/android/gms/internal/base/zak;->zaa:I
 
-    const/4 v3, 0x0
+    move v3, v2
 
     .line 4
     :cond_4
@@ -663,7 +663,7 @@
 
     if-eqz v0, :cond_0
 
-    const/4 v2, 0x1
+    move v2, v1
 
     :cond_0
     iput-boolean v2, p0, Lcom/google/android/gms/internal/base/zak;->zam:Z

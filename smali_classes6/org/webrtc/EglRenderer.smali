@@ -767,24 +767,24 @@
 
     if-eqz v2, :cond_1
 
-    const/high16 v2, -0x40800000    # -1.0f
+    move v2, v3
 
     goto :goto_0
 
     :cond_1
-    const/high16 v2, 0x3f800000    # 1.0f
+    move v2, v4
 
     :goto_0
     iget-boolean v5, v0, Lorg/webrtc/EglRenderer;->mirrorVertically:Z
 
     if-eqz v5, :cond_2
 
-    const/high16 v5, -0x40800000    # -1.0f
+    move v5, v3
 
     goto :goto_1
 
     :cond_2
-    const/high16 v5, 0x3f800000    # 1.0f
+    move v5, v4
 
     :goto_1
     invoke-virtual {v1, v2, v5}, Landroid/graphics/Matrix;->preScale(FF)Z
@@ -845,7 +845,7 @@
 
     int-to-float v4, v4
 
-    mul-float v3, v3, v4
+    mul-float/2addr v3, v4
 
     float-to-int v3, v3
 
@@ -858,7 +858,7 @@
 
     int-to-float v5, v5
 
-    mul-float v4, v4, v5
+    mul-float/2addr v4, v5
 
     float-to-int v14, v4
 
@@ -933,7 +933,7 @@
 
     move v11, v14
 
-    const/4 v15, 0x0
+    move v15, v13
 
     move/from16 v13, v16
 
@@ -1098,28 +1098,28 @@
 
     const-wide v3, 0x7fffffffffffffffL
 
+    cmp-long v3, v1, v3
+
     const/4 v12, 0x0
 
     const/4 v13, 0x1
 
-    cmp-long v5, v1, v3
-
-    if-nez v5, :cond_2
+    if-nez v3, :cond_2
 
     :goto_0
-    const/4 v14, 0x0
+    move v14, v12
 
     goto :goto_2
 
     :cond_2
     const-wide/16 v3, 0x0
 
-    cmp-long v5, v1, v3
+    cmp-long v1, v1, v3
 
-    if-gtz v5, :cond_3
+    if-gtz v1, :cond_3
 
     :goto_1
-    const/4 v14, 0x1
+    move v14, v13
 
     goto :goto_2
 
@@ -1188,13 +1188,13 @@
     goto :goto_3
 
     :cond_5
-    const/4 v0, 0x0
+    move v0, v12
 
     goto :goto_4
 
     :cond_6
     :goto_3
-    const/4 v0, 0x1
+    move v0, v13
 
     :goto_4
     if-eqz v0, :cond_7
@@ -1258,47 +1258,47 @@
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_1
 
-    const/high16 v2, 0x3f800000    # 1.0f
+    cmpl-float v2, v1, v3
 
-    cmpl-float v4, v1, v3
+    const/high16 v4, 0x3f800000    # 1.0f
 
-    if-lez v4, :cond_a
+    if-lez v2, :cond_a
 
     div-float/2addr v3, v1
 
-    const/high16 v1, 0x3f800000    # 1.0f
+    move v1, v4
 
     goto :goto_8
 
     :cond_a
     div-float/2addr v1, v3
 
-    const/high16 v3, 0x3f800000    # 1.0f
+    move v3, v4
 
     .line 676
     :goto_8
-    iget-object v4, p0, Lorg/webrtc/EglRenderer;->drawMatrix:Landroid/graphics/Matrix;
+    iget-object v2, p0, Lorg/webrtc/EglRenderer;->drawMatrix:Landroid/graphics/Matrix;
 
-    invoke-virtual {v4}, Landroid/graphics/Matrix;->reset()V
+    invoke-virtual {v2}, Landroid/graphics/Matrix;->reset()V
 
     .line 677
-    iget-object v4, p0, Lorg/webrtc/EglRenderer;->drawMatrix:Landroid/graphics/Matrix;
+    iget-object v2, p0, Lorg/webrtc/EglRenderer;->drawMatrix:Landroid/graphics/Matrix;
 
     const/high16 v5, 0x3f000000    # 0.5f
 
-    invoke-virtual {v4, v5, v5}, Landroid/graphics/Matrix;->preTranslate(FF)Z
+    invoke-virtual {v2, v5, v5}, Landroid/graphics/Matrix;->preTranslate(FF)Z
 
     .line 678
-    iget-object v4, p0, Lorg/webrtc/EglRenderer;->drawMatrix:Landroid/graphics/Matrix;
+    iget-object v2, p0, Lorg/webrtc/EglRenderer;->drawMatrix:Landroid/graphics/Matrix;
 
     iget v5, p0, Lorg/webrtc/EglRenderer;->rotation:I
 
     int-to-float v5, v5
 
-    invoke-virtual {v4, v5}, Landroid/graphics/Matrix;->preRotate(F)Z
+    invoke-virtual {v2, v5}, Landroid/graphics/Matrix;->preRotate(F)Z
 
     .line 679
-    iget-object v4, p0, Lorg/webrtc/EglRenderer;->drawMatrix:Landroid/graphics/Matrix;
+    iget-object v2, p0, Lorg/webrtc/EglRenderer;->drawMatrix:Landroid/graphics/Matrix;
 
     iget-boolean v5, p0, Lorg/webrtc/EglRenderer;->mirrorHorizontally:Z
 
@@ -1306,22 +1306,22 @@
 
     if-eqz v5, :cond_b
 
-    const/high16 v5, -0x40800000    # -1.0f
+    move v5, v6
 
     goto :goto_9
 
     :cond_b
-    const/high16 v5, 0x3f800000    # 1.0f
+    move v5, v4
 
     :goto_9
     iget-boolean v7, p0, Lorg/webrtc/EglRenderer;->mirrorVertically:Z
 
     if-eqz v7, :cond_c
 
-    const/high16 v2, -0x40800000    # -1.0f
+    move v4, v6
 
     :cond_c
-    invoke-virtual {v4, v5, v2}, Landroid/graphics/Matrix;->preScale(FF)Z
+    invoke-virtual {v2, v5, v4}, Landroid/graphics/Matrix;->preScale(FF)Z
 
     .line 680
     iget-object v2, p0, Lorg/webrtc/EglRenderer;->drawMatrix:Landroid/graphics/Matrix;

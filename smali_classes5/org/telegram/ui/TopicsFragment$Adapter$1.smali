@@ -67,11 +67,11 @@
 
     const/4 v2, 0x0
 
-    const/4 v3, 0x0
+    move v3, v2
 
-    const/4 v4, 0x0
+    move v4, v3
 
-    const/4 v5, 0x0
+    move v5, v4
 
     .line 2753
     :goto_0
@@ -168,12 +168,12 @@
 
     if-eqz v7, :cond_1
 
-    const/16 v7, 0xb
+    move v7, v9
 
     goto :goto_1
 
     :cond_1
-    const/16 v7, 0x32
+    move v7, v10
 
     :goto_1
     add-int/lit8 v7, v7, 0x4
@@ -224,7 +224,7 @@
     goto :goto_4
 
     :cond_4
-    const/16 v9, 0x32
+    move v9, v10
 
     :goto_4
     add-int/lit8 v9, v9, 0x5
@@ -272,12 +272,12 @@
 
     if-gtz v7, :cond_5
 
-    const/4 v7, 0x1
+    move v7, v8
 
     goto :goto_6
 
     :cond_5
-    const/4 v7, 0x0
+    move v7, v2
 
     :goto_6
     invoke-static {v7}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
@@ -302,7 +302,7 @@
     goto :goto_7
 
     :cond_7
-    const/4 v6, 0x0
+    move v6, v2
 
     :goto_7
     add-int/2addr v6, v0
@@ -414,7 +414,7 @@
     goto :goto_9
 
     :cond_c
-    const/4 p2, 0x0
+    move p2, v2
 
     :goto_9
     invoke-static {v2, p2}, Ljava/lang/Math;->max(II)I

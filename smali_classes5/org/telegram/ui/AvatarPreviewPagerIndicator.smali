@@ -235,7 +235,7 @@
     .line 83
     invoke-virtual {v2, v3}, Landroid/graphics/drawable/GradientDrawable;->setShape(I)V
 
-    const/4 v2, 0x0
+    move v2, v3
 
     :goto_0
     if-ge v2, v0, :cond_1
@@ -545,7 +545,7 @@
 
     aget v5, v5, v3
 
-    mul-float v5, v5, v4
+    mul-float/2addr v5, v4
 
     float-to-int v4, v5
 
@@ -623,15 +623,15 @@
 
     const-wide/16 v11, 0x0
 
-    cmp-long v13, v9, v11
+    cmp-long v11, v9, v11
 
-    if-ltz v13, :cond_4
+    if-ltz v11, :cond_4
 
     const-wide/16 v11, 0x14
 
-    cmp-long v13, v9, v11
+    cmp-long v11, v9, v11
 
-    if-lez v13, :cond_5
+    if-lez v11, :cond_5
 
     :cond_4
     const-wide/16 v9, 0x11
@@ -688,7 +688,7 @@
 
     iget v2, v0, Lorg/telegram/ui/AvatarPreviewPagerIndicator;->alpha:F
 
-    mul-float v2, v2, v15
+    mul-float/2addr v2, v15
 
     float-to-int v2, v2
 
@@ -699,7 +699,7 @@
 
     iget v13, v0, Lorg/telegram/ui/AvatarPreviewPagerIndicator;->alpha:F
 
-    mul-float v13, v13, v4
+    mul-float/2addr v13, v4
 
     float-to-int v4, v13
 
@@ -721,7 +721,7 @@
 
     add-int/lit8 v4, v3, -0x1
 
-    mul-int/lit8 v4, v4, 0x2
+    mul-int/2addr v4, v5
 
     invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
@@ -793,7 +793,7 @@
 
     int-to-float v11, v2
 
-    mul-float v11, v11, v7
+    mul-float/2addr v11, v7
 
     add-float/2addr v11, v14
 
@@ -834,7 +834,7 @@
 
     const/high16 v12, 0x42aa0000    # 85.0f
 
-    mul-float v11, v11, v12
+    mul-float/2addr v11, v12
 
     float-to-int v11, v11
 
@@ -864,7 +864,7 @@
     .line 228
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->restore()V
 
-    const/16 v6, 0x50
+    move/from16 v6, v20
 
     const/high16 v11, 0x42aa0000    # 85.0f
 
@@ -927,7 +927,7 @@
 
     int-to-long v14, v11
 
-    mul-long v14, v14, v9
+    mul-long/2addr v14, v9
 
     long-to-float v12, v14
 
@@ -998,7 +998,7 @@
 
     iget v12, v0, Lorg/telegram/ui/AvatarPreviewPagerIndicator;->currentLoadingAnimationProgress:F
 
-    mul-float v12, v12, v11
+    mul-float/2addr v12, v11
 
     const/high16 v11, 0x42aa0000    # 85.0f
 
@@ -1006,7 +1006,7 @@
 
     iget v14, v0, Lorg/telegram/ui/AvatarPreviewPagerIndicator;->alpha:F
 
-    mul-float v12, v12, v14
+    mul-float/2addr v12, v14
 
     float-to-int v12, v12
 
@@ -1033,7 +1033,7 @@
 
     invoke-virtual {v1, v6, v14, v12, v15}, Landroid/graphics/Canvas;->drawRoundRect(Landroid/graphics/RectF;FFLandroid/graphics/Paint;)V
 
-    const/16 v6, 0x50
+    move/from16 v6, v20
 
     goto/16 :goto_3
 
@@ -1051,7 +1051,7 @@
     const/high16 v11, 0x42aa0000    # 85.0f
 
     :goto_5
-    const/16 v6, 0x55
+    move/from16 v6, v18
 
     const/high16 v7, 0x3f800000    # 1.0f
 
@@ -1065,7 +1065,7 @@
 
     int-to-float v15, v2
 
-    mul-float v15, v15, v7
+    mul-float/2addr v15, v7
 
     add-float/2addr v15, v8
 
@@ -1114,7 +1114,7 @@
 
     iget v8, v0, Lorg/telegram/ui/AvatarPreviewPagerIndicator;->alpha:F
 
-    mul-float v6, v6, v8
+    mul-float/2addr v6, v8
 
     float-to-int v6, v6
 
@@ -1165,22 +1165,22 @@
 
     add-int/lit8 v13, v13, 0x1
 
+    move v12, v7
+
+    move v15, v11
+
     const/4 v6, 0x0
 
     const/16 v8, 0x14
 
     const/high16 v11, 0x3f800000    # 1.0f
 
-    const/4 v12, 0x1
-
     const/4 v14, 0x3
-
-    const/high16 v15, 0x42aa0000    # 85.0f
 
     goto/16 :goto_2
 
     :cond_13
-    const/4 v7, 0x1
+    move v7, v12
 
     .line 266
     iget v2, v0, Lorg/telegram/ui/AvatarPreviewPagerIndicator;->overlayCountVisible:I
@@ -1215,11 +1215,9 @@
     iput v4, v0, Lorg/telegram/ui/AvatarPreviewPagerIndicator;->alpha:F
 
     :cond_14
-    const/16 v2, 0x14
+    move/from16 v16, v7
 
-    const/16 v16, 0x1
-
-    goto :goto_c
+    goto :goto_b
 
     :cond_15
     const/4 v4, 0x3
@@ -1289,7 +1287,7 @@
     iput v8, v0, Lorg/telegram/ui/AvatarPreviewPagerIndicator;->previousSelectedPotision:I
 
     :cond_17
-    const/16 v16, 0x1
+    move/from16 v16, v7
 
     goto :goto_a
 
@@ -1315,7 +1313,7 @@
     goto :goto_c
 
     :cond_1b
-    const/4 v7, 0x1
+    move v7, v12
 
     const/16 v2, 0x14
 
@@ -1423,7 +1421,7 @@
 
     if-le v3, v4, :cond_1d
 
-    const/4 v11, 0x1
+    move v11, v7
 
     goto :goto_d
 
@@ -1587,7 +1585,7 @@
 
     cmpg-float v3, v3, v4
 
-    if-gez v3, :cond_25
+    if-gez v3, :cond_24
 
     .line 324
     aget v3, v1, v2
@@ -1613,18 +1611,13 @@
     aput v4, v1, v2
 
     :cond_23
-    const/4 v6, 0x0
-
-    const/4 v11, 0x1
+    move v11, v7
 
     :cond_24
-    :goto_11
-    const/high16 v12, 0x43340000    # 180.0f
-
-    goto :goto_12
+    const/4 v6, 0x0
 
     :cond_25
-    const/4 v6, 0x0
+    const/high16 v12, 0x43340000    # 180.0f
 
     goto :goto_11
 
@@ -1640,7 +1633,7 @@
 
     cmpl-float v3, v3, v6
 
-    if-lez v3, :cond_24
+    if-lez v3, :cond_25
 
     .line 332
     aget v3, v1, v2
@@ -1666,9 +1659,9 @@
     aput v6, v1, v2
 
     :cond_27
-    const/4 v11, 0x1
+    move v11, v7
 
-    :goto_12
+    :goto_11
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_10
@@ -1828,7 +1821,7 @@
 
     const/high16 v2, 0x3f000000    # 0.5f
 
-    mul-float v1, v1, v2
+    mul-float/2addr v1, v2
 
     float-to-int v1, v1
 
@@ -1847,7 +1840,7 @@
 
     int-to-float v4, v4
 
-    mul-float v4, v4, v2
+    mul-float/2addr v4, v2
 
     sub-float/2addr v1, v4
 
@@ -1965,7 +1958,7 @@
 
     const/high16 p2, 0x437f0000    # 255.0f
 
-    mul-float p2, p2, p1
+    mul-float/2addr p2, p1
 
     float-to-int p2, p2
 
@@ -1984,7 +1977,7 @@
 
     const/high16 v1, 0x42840000    # 66.0f
 
-    mul-float v1, v1, p1
+    mul-float/2addr v1, p1
 
     float-to-int v1, v1
 
@@ -1995,7 +1988,7 @@
 
     const/high16 v1, 0x42aa0000    # 85.0f
 
-    mul-float v1, v1, p1
+    mul-float/2addr v1, p1
 
     float-to-int v1, v1
 

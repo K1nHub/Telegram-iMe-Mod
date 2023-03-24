@@ -17,7 +17,7 @@ public interface Iterator<E> {
         }
 
         /* renamed from: a */
-        public static void m629a(java.util.Iterator it) {
+        public static void m628a(java.util.Iterator it) {
             throw new UnsupportedOperationException("remove");
         }
     }

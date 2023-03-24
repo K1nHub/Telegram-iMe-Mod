@@ -269,7 +269,7 @@
     goto :goto_0
 
     :cond_1
-    const/4 v2, 0x0
+    move v2, v0
 
     :goto_0
     invoke-static {v1, v2}, Lorg/telegram/ui/ChatActivity;->access$10402(Lorg/telegram/ui/ChatActivity;F)F
@@ -1160,12 +1160,12 @@
 
     invoke-virtual {p1}, Lorg/telegram/ui/Components/ChatActivityEnterView;->setFieldFocused()V
 
-    const/4 p1, 0x1
+    move p1, v1
 
     goto :goto_0
 
     :cond_3
-    const/4 p1, 0x0
+    move p1, v0
 
     .line 3787
     :goto_0
@@ -1413,12 +1413,12 @@
 
     if-lez v2, :cond_6
 
-    const/4 v2, 0x1
+    move v2, v0
 
     goto :goto_0
 
     :cond_6
-    const/4 v2, 0x0
+    move v2, p4
 
     .line 3515
     :goto_0
@@ -1438,7 +1438,7 @@
 
     move-result-object v3
 
-    const/4 v4, 0x0
+    move v4, p4
 
     .line 3516
     :goto_1
@@ -1470,7 +1470,7 @@
 
     if-nez v5, :cond_7
 
-    const/4 v2, 0x0
+    move v2, p4
 
     goto :goto_2
 
@@ -1994,12 +1994,12 @@
 
     if-eqz v3, :cond_2
 
-    const/4 v3, 0x0
+    move v3, v1
 
     goto :goto_1
 
     :cond_2
-    const/high16 v3, 0x3f800000    # 1.0f
+    move v3, v2
 
     :goto_1
     invoke-virtual {v0, v3}, Landroid/view/ViewPropertyAnimator;->alpha(F)Landroid/view/ViewPropertyAnimator;
@@ -2059,7 +2059,7 @@
     goto :goto_2
 
     :cond_4
-    const/high16 v1, 0x3f800000    # 1.0f
+    move v1, v2
 
     :goto_2
     invoke-virtual {v0, v1}, Landroid/view/ViewPropertyAnimator;->alpha(F)Landroid/view/ViewPropertyAnimator;
@@ -2169,7 +2169,7 @@
 
     :cond_1
     :goto_0
-    const/4 v1, 0x1
+    move v1, v2
 
     :goto_1
     invoke-virtual {v0, v1}, Lorg/telegram/messenger/MediaController;->setInputFieldHasText(Z)V
@@ -3064,7 +3064,7 @@
     goto :goto_1
 
     :cond_2
-    const/4 v0, 0x0
+    move v0, v3
 
     :goto_1
     add-int/2addr p1, v0

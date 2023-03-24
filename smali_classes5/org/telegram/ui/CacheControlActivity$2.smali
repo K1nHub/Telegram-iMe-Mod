@@ -135,7 +135,7 @@
 
     move-result v2
 
-    mul-float v2, v2, v1
+    mul-float/2addr v2, v1
 
     iget-object v1, p0, Lorg/telegram/ui/CacheControlActivity$2;->this$0:Lorg/telegram/ui/CacheControlActivity;
 
@@ -143,7 +143,7 @@
 
     move-result v1
 
-    mul-float v2, v2, v1
+    mul-float/2addr v2, v1
 
     float-to-int v1, v2
 

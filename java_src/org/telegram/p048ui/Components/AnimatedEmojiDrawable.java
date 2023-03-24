@@ -124,9 +124,9 @@ public class AnimatedEmojiDrawable extends Drawable {
             sparseArray.put(hash, longSparseArray2);
             longSparseArray = longSparseArray2;
         }
-        AnimatedEmojiDrawable animatedEmojiDrawable = longSparseArray.get(tLRPC$Document.f1507id);
+        AnimatedEmojiDrawable animatedEmojiDrawable = longSparseArray.get(tLRPC$Document.f1508id);
         if (animatedEmojiDrawable == null) {
-            long j = tLRPC$Document.f1507id;
+            long j = tLRPC$Document.f1508id;
             AnimatedEmojiDrawable animatedEmojiDrawable2 = new AnimatedEmojiDrawable(i2, i, tLRPC$Document);
             longSparseArray.put(j, animatedEmojiDrawable2);
             return animatedEmojiDrawable2;
@@ -273,9 +273,9 @@ public class AnimatedEmojiDrawable extends Drawable {
                     NativeByteBuffer byteBufferValue = queryFinalized.byteBufferValue(0);
                     try {
                         TLRPC$Document TLdeserialize = TLRPC$Document.TLdeserialize(byteBufferValue, byteBufferValue.readInt32(true), true);
-                        if (TLdeserialize != null && TLdeserialize.f1507id != 0) {
+                        if (TLdeserialize != null && TLdeserialize.f1508id != 0) {
                             arrayList2.add(TLdeserialize);
-                            hashSet.remove(Long.valueOf(TLdeserialize.f1507id));
+                            hashSet.remove(Long.valueOf(TLdeserialize.f1508id));
                         }
                     } catch (Exception e) {
                         FileLog.m45e(e);
@@ -335,7 +335,7 @@ public class AnimatedEmojiDrawable extends Drawable {
                 processDocuments(arrayList2);
                 for (int i = 0; i < arrayList2.size(); i++) {
                     if (arrayList2.get(i) instanceof TLRPC$Document) {
-                        hashSet.remove(Long.valueOf(((TLRPC$Document) arrayList2.get(i)).f1507id));
+                        hashSet.remove(Long.valueOf(((TLRPC$Document) arrayList2.get(i)).f1508id));
                     }
                 }
                 if (hashSet.isEmpty()) {
@@ -384,7 +384,7 @@ public class AnimatedEmojiDrawable extends Drawable {
                 r4.<init>(r5)     // Catch: java.lang.Exception -> L46
                 r2.serializeToStream(r4)     // Catch: java.lang.Exception -> L43
                 r0.requery()     // Catch: java.lang.Exception -> L43
-                long r2 = r2.f1507id     // Catch: java.lang.Exception -> L43
+                long r2 = r2.f1508id     // Catch: java.lang.Exception -> L43
                 r5 = 1
                 r0.bindLong(r5, r2)     // Catch: java.lang.Exception -> L43
                 r2 = 2
@@ -426,7 +426,7 @@ public class AnimatedEmojiDrawable extends Drawable {
                         TLRPC$Document tLRPC$Document = (TLRPC$Document) arrayList.get(i);
                         putDocument(tLRPC$Document);
                         HashMap<Long, ArrayList<ReceivedDocument>> hashMap = this.loadingDocuments;
-                        if (hashMap != null && (remove = hashMap.remove(Long.valueOf(tLRPC$Document.f1507id))) != null) {
+                        if (hashMap != null && (remove = hashMap.remove(Long.valueOf(tLRPC$Document.f1508id))) != null) {
                             for (int i2 = 0; i2 < remove.size(); i2++) {
                                 ReceivedDocument receivedDocument = remove.get(i2);
                                 if (receivedDocument != null) {
@@ -448,7 +448,7 @@ public class AnimatedEmojiDrawable extends Drawable {
                 if (this.emojiDocumentsCache == null) {
                     this.emojiDocumentsCache = new HashMap<>();
                 }
-                this.emojiDocumentsCache.put(Long.valueOf(tLRPC$Document.f1507id), tLRPC$Document);
+                this.emojiDocumentsCache.put(Long.valueOf(tLRPC$Document.f1508id), tLRPC$Document);
             }
         }
     }
@@ -525,7 +525,7 @@ public class AnimatedEmojiDrawable extends Drawable {
 
     public long getDocumentId() {
         TLRPC$Document tLRPC$Document = this.document;
-        return tLRPC$Document != null ? tLRPC$Document.f1507id : this.documentId;
+        return tLRPC$Document != null ? tLRPC$Document.f1508id : this.documentId;
     }
 
     public TLRPC$Document getDocument() {
@@ -548,6 +548,7 @@ public class AnimatedEmojiDrawable extends Drawable {
     private void initDocument(boolean z) {
         String str;
         Object obj;
+        int i;
         if (this.document != null) {
             ImageReceiver imageReceiver = this.imageReceiver;
             if (imageReceiver == null || z) {
@@ -561,9 +562,9 @@ public class AnimatedEmojiDrawable extends Drawable {
 
                         /* JADX INFO: Access modifiers changed from: protected */
                         @Override // org.telegram.messenger.ImageReceiver
-                        public boolean setImageBitmapByKey(Drawable drawable, String str2, int i, boolean z2, int i2) {
+                        public boolean setImageBitmapByKey(Drawable drawable, String str2, int i2, boolean z2, int i3) {
                             AnimatedEmojiDrawable.this.invalidate();
-                            return super.setImageBitmapByKey(drawable, str2, i, z2, i2);
+                            return super.setImageBitmapByKey(drawable, str2, i2, z2, i3);
                         }
                     };
                 }
@@ -573,12 +574,12 @@ public class AnimatedEmojiDrawable extends Drawable {
                 if (this.colorFilterToSet != null && canOverrideColor()) {
                     this.imageReceiver.setColorFilter(this.colorFilterToSet);
                 }
-                int i = this.cacheType;
-                if (i != 0) {
-                    if (i == 12) {
-                        i = 2;
+                int i2 = this.cacheType;
+                if (i2 != 0) {
+                    if (i2 == 12) {
+                        i2 = 2;
                     }
-                    this.imageReceiver.setUniqKeyPrefix(i + "_");
+                    this.imageReceiver.setUniqKeyPrefix(i2 + "_");
                 }
                 this.imageReceiver.setVideoThumbIsSame(true);
                 boolean z2 = (SharedConfig.getDevicePerformanceClass() == 0 && this.cacheType == 5) || (this.cacheType == 2 && !LiteMode.isEnabled(LiteMode.FLAG_ANIMATED_EMOJI_KEYBOARD)) || (this.cacheType == 3 && !LiteMode.isEnabled(LiteMode.FLAG_ANIMATED_EMOJI_REACTIONS));
@@ -589,12 +590,12 @@ public class AnimatedEmojiDrawable extends Drawable {
                 if (this.cacheType == 12) {
                     str2 = str2 + "_d_nostream";
                 }
-                int i2 = this.cacheType;
-                if (i2 != 15 && i2 != 14 && i2 != 8 && ((i2 != 1 || SharedConfig.getDevicePerformanceClass() < 2) && this.cacheType != 12)) {
+                int i3 = this.cacheType;
+                if (i3 != 15 && i3 != 14 && i3 != 8 && ((i3 != 1 || SharedConfig.getDevicePerformanceClass() < 2) && this.cacheType != 12)) {
                     str2 = str2 + "_pcache";
                 }
-                int i3 = this.cacheType;
-                if (i3 != 0 && i3 != 1 && i3 != 14 && i3 != 15) {
+                int i4 = this.cacheType;
+                if (i4 != 0 && i4 != 1 && i4 != 14 && i4 != 15) {
                     str2 = str2 + "_compress";
                 }
                 if (this.cacheType == 8) {
@@ -661,16 +662,17 @@ public class AnimatedEmojiDrawable extends Drawable {
                     this.imageReceiver.setImage(obj2, str2, ImageLocation.getForDocument(closestPhotoSizeWithSize, this.document), this.sizedp + "_" + this.sizedp, null, null, obj, tLRPC$Document5.size, null, tLRPC$Document5, 1);
                 }
                 updateAutoRepeat(this.imageReceiver);
-                int i4 = this.cacheType;
-                if (i4 == 13 || i4 == 3 || i4 == 5 || i4 == 4) {
+                int i5 = this.cacheType;
+                if (i5 == 13 || i5 == 3 || i5 == 5 || i5 == 4) {
                     this.imageReceiver.setLayerNum(7);
                 }
                 if (this.cacheType == 9) {
                     this.imageReceiver.setLayerNum(6656);
                 }
                 this.imageReceiver.setAspectFit(true);
-                int i5 = this.cacheType;
-                if (i5 == 12 || i5 == 8 || i5 == 6 || i5 == 5) {
+                int i6 = this.cacheType;
+                if (i6 == 12 || i6 == 8 || i6 == 6 || i6 == 5) {
+                    i = 0;
                     this.imageReceiver.setAllowStartAnimation(false);
                     this.imageReceiver.setAllowStartLottieAnimation(false);
                     this.imageReceiver.setAutoRepeat(0);
@@ -678,10 +680,11 @@ public class AnimatedEmojiDrawable extends Drawable {
                     this.imageReceiver.setAllowStartLottieAnimation(true);
                     this.imageReceiver.setAllowStartAnimation(true);
                     this.imageReceiver.setAutoRepeat(1);
+                    i = 0;
                 }
                 this.imageReceiver.setAllowDecodeSingleFrame(true);
-                int i6 = this.cacheType;
-                this.imageReceiver.setRoundRadius((i6 == 5 || i6 == 6) ? AndroidUtilities.m50dp(6) : 0);
+                int i7 = this.cacheType;
+                this.imageReceiver.setRoundRadius((i7 == 5 || i7 == 6) ? AndroidUtilities.m50dp(6) : i);
                 updateAttachState();
                 invalidate();
             }
@@ -883,7 +886,7 @@ public class AnimatedEmojiDrawable extends Drawable {
             if (r2 != 0) goto L2e
             boolean r2 = r0 instanceof org.telegram.tgnet.TLRPC$TL_inputStickerSetID
             if (r2 == 0) goto L2f
-            long r2 = r0.f1522id
+            long r2 = r0.f1523id
             r4 = 773947703670341676(0xabd9d560000002c, double:6.163529620788447E-257)
             int r0 = (r2 > r4 ? 1 : (r2 == r4 ? 0 : -1))
             if (r0 == 0) goto L2e
@@ -1221,7 +1224,7 @@ public class AnimatedEmojiDrawable extends Drawable {
 
         public void set(TLRPC$Document tLRPC$Document, int i, boolean z) {
             Drawable[] drawableArr = this.drawables;
-            if ((drawableArr[0] instanceof AnimatedEmojiDrawable) && tLRPC$Document != null && ((AnimatedEmojiDrawable) drawableArr[0]).getDocumentId() == tLRPC$Document.f1507id) {
+            if ((drawableArr[0] instanceof AnimatedEmojiDrawable) && tLRPC$Document != null && ((AnimatedEmojiDrawable) drawableArr[0]).getDocumentId() == tLRPC$Document.f1508id) {
                 return;
             }
             if (z) {

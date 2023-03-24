@@ -29,7 +29,7 @@
 .method private constructor <init>(Lcom/google/protobuf/SmallSortedMap;)V
     .locals 1
 
-    .line 523
+    .line 521
     iput-object p1, p0, Lcom/google/protobuf/SmallSortedMap$DescendingEntrySet;->this$0:Lcom/google/protobuf/SmallSortedMap;
 
     const/4 v0, 0x0
@@ -42,7 +42,7 @@
 .method synthetic constructor <init>(Lcom/google/protobuf/SmallSortedMap;Lcom/google/protobuf/SmallSortedMap$1;)V
     .locals 0
 
-    .line 523
+    .line 521
     invoke-direct {p0, p1}, Lcom/google/protobuf/SmallSortedMap$DescendingEntrySet;-><init>(Lcom/google/protobuf/SmallSortedMap;)V
 
     return-void
@@ -61,7 +61,7 @@
         }
     .end annotation
 
-    .line 526
+    .line 524
     new-instance v0, Lcom/google/protobuf/SmallSortedMap$DescendingEntryIterator;
 
     iget-object v1, p0, Lcom/google/protobuf/SmallSortedMap$DescendingEntrySet;->this$0:Lcom/google/protobuf/SmallSortedMap;

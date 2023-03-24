@@ -33,7 +33,7 @@ import kotlin.jvm.internal.Intrinsics;
 import kotlin.text.StringsKt__StringNumberConversionsJVMKt;
 import moxy.InjectViewState;
 import org.fork.utils.Callbacks$Callback1;
-import org.telegram.messenger.C3286R;
+import org.telegram.messenger.C3301R;
 import org.telegram.p048ui.ActionBar.BaseFragment;
 import org.telegram.p048ui.ManageLinksActivity;
 import org.telegram.tgnet.TLRPC$User;
@@ -128,17 +128,17 @@ public final class WalletReceiveBinancePayPresenter extends BasePresenter<Wallet
             BinanceInternalInteractor binanceInternalInteractor = this.binanceInternalInteractor;
             TLRPC$User tLRPC$User = this.selectedUser;
             Intrinsics.checkNotNull(tLRPC$User);
-            long j = tLRPC$User.f1639id;
+            long j = tLRPC$User.f1640id;
             double parseDouble = Double.parseDouble(amount);
             SelectableToken selectableToken = this.selectedToken;
             Intrinsics.checkNotNull(selectableToken);
-            Observable<R> flatMap = binanceInternalInteractor.createCollection(j, parseDouble, selectableToken.getId()).flatMap(new C2189xde1d1050(new C2182x1b3c7af8(this)));
+            Observable<R> flatMap = binanceInternalInteractor.createCollection(j, parseDouble, selectableToken.getId()).flatMap(new C2203xde1d1050(new C2196x1b3c7af8(this)));
             Intrinsics.checkNotNullExpressionValue(flatMap, "crossinline body: (T) ->…e.empty()\n        }\n    }");
-            Observable observeOn = flatMap.observeOn(this.schedulersProvider.mo707ui());
+            Observable observeOn = flatMap.observeOn(this.schedulersProvider.mo706ui());
             Intrinsics.checkNotNullExpressionValue(observeOn, "binanceInternalInteracto…(schedulersProvider.ui())");
             T viewState = getViewState();
             Intrinsics.checkNotNullExpressionValue(viewState, "viewState");
-            Disposable subscribe = RxExtKt.withLoadingDialog$default(observeOn, (BaseView) viewState, false, 2, (Object) null).subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2183xcd7a3035(fragment, this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2184xcd7a3036((BaseView) getViewState())));
+            Disposable subscribe = RxExtKt.withLoadingDialog$default(observeOn, (BaseView) viewState, false, 2, (Object) null).subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2197xcd7a3035(fragment, this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2198xcd7a3036((BaseView) getViewState())));
             Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…  onError.invoke()\n    })");
             BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
         }
@@ -168,7 +168,7 @@ public final class WalletReceiveBinancePayPresenter extends BasePresenter<Wallet
     /* JADX INFO: Access modifiers changed from: private */
     public final HashMap<String, String> formatBotRequestParams(String str, String str2) {
         HashMap<String, String> hashMapOf;
-        hashMapOf = MapsKt__MapsKt.hashMapOf(TuplesKt.m100to(TtmlNode.ATTR_ID, str), TuplesKt.m100to("query_id", str2), TuplesKt.m100to("bot", String.valueOf(AppConfiguration$Wallet.getWalletBotId())), TuplesKt.m100to("bot_name", AppConfiguration$Wallet.getWalletBotUsernameLowerCase()));
+        hashMapOf = MapsKt__MapsKt.hashMapOf(TuplesKt.m99to(TtmlNode.ATTR_ID, str), TuplesKt.m99to("query_id", str2), TuplesKt.m99to("bot", String.valueOf(AppConfiguration$Wallet.getWalletBotId())), TuplesKt.m99to("bot_name", AppConfiguration$Wallet.getWalletBotUsernameLowerCase()));
         return hashMapOf;
     }
 
@@ -184,14 +184,14 @@ public final class WalletReceiveBinancePayPresenter extends BasePresenter<Wallet
     }
 
     private final void loadAvailableToPayTokens(final boolean z, Function0<Unit> function0) {
-        Observable<Result<List<BinanceTokenInfo>>> doFinally = this.binanceInternalInteractor.getAvailablePaymentTokens().observeOn(this.schedulersProvider.mo707ui()).doFinally(new Action() { // from class: com.smedialink.ui.wallet.home.v2.tabs.binancepay.receive.WalletReceiveBinancePayPresenter$$ExternalSyntheticLambda0
+        Observable<Result<List<BinanceTokenInfo>>> doFinally = this.binanceInternalInteractor.getAvailablePaymentTokens().observeOn(this.schedulersProvider.mo706ui()).doFinally(new Action() { // from class: com.smedialink.ui.wallet.home.v2.tabs.binancepay.receive.WalletReceiveBinancePayPresenter$$ExternalSyntheticLambda0
             @Override // io.reactivex.functions.Action
             public final void run() {
                 WalletReceiveBinancePayPresenter.loadAvailableToPayTokens$lambda$2(z, this);
             }
         });
         Intrinsics.checkNotNullExpressionValue(doFinally, "binanceInternalInteracto…      }\n                }");
-        Disposable subscribe = doFinally.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2187x7b59101f(this, function0, z)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2188x7b591020((BaseView) getViewState())));
+        Disposable subscribe = doFinally.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2201x7b59101f(this, function0, z)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2202x7b591020((BaseView) getViewState())));
         Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…  onError.invoke()\n    })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }
@@ -211,9 +211,9 @@ public final class WalletReceiveBinancePayPresenter extends BasePresenter<Wallet
         Double doubleOrNull;
         Double doubleOrNull2;
         if (this.selectedUser == null) {
-            ((WalletReceiveBinancePayView) getViewState()).showToast(this.resourceManager.getString(C3286R.string.wallet_binance_receive_selected_user_is_empty));
+            ((WalletReceiveBinancePayView) getViewState()).showToast(this.resourceManager.getString(C3301R.string.wallet_binance_receive_selected_user_is_empty));
         } else if (this.selectedToken == null) {
-            ((WalletReceiveBinancePayView) getViewState()).showToast(this.resourceManager.getString(C3286R.string.wallet_binance_receive_selected_token_is_empty));
+            ((WalletReceiveBinancePayView) getViewState()).showToast(this.resourceManager.getString(C3301R.string.wallet_binance_receive_selected_token_is_empty));
         } else {
             List<BinanceTokenInfo> list = this.availablePaymentTokens;
             if (!(list instanceof Collection) || !list.isEmpty()) {
@@ -228,7 +228,7 @@ public final class WalletReceiveBinancePayPresenter extends BasePresenter<Wallet
             }
             z = false;
             if (!z) {
-                ((WalletReceiveBinancePayView) getViewState()).showToast(this.resourceManager.getString(C3286R.string.wallet_binance_receive_selected_token_is_unsupported));
+                ((WalletReceiveBinancePayView) getViewState()).showToast(this.resourceManager.getString(C3301R.string.wallet_binance_receive_selected_token_is_unsupported));
             } else {
                 doubleOrNull = StringsKt__StringNumberConversionsJVMKt.toDoubleOrNull(str);
                 if (doubleOrNull != null) {
@@ -237,7 +237,7 @@ public final class WalletReceiveBinancePayPresenter extends BasePresenter<Wallet
                         return true;
                     }
                 }
-                ((WalletReceiveBinancePayView) getViewState()).showToast(this.resourceManager.getString(C3286R.string.wallet_binance_receive_amount_is_empty_or_zero));
+                ((WalletReceiveBinancePayView) getViewState()).showToast(this.resourceManager.getString(C3301R.string.wallet_binance_receive_amount_is_empty_or_zero));
             }
         }
         return false;

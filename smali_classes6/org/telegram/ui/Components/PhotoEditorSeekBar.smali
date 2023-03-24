@@ -111,7 +111,7 @@
 
     int-to-float v0, v3
 
-    mul-float v2, v2, v0
+    mul-float/2addr v2, v0
 
     add-float/2addr v1, v2
 
@@ -149,7 +149,7 @@
 
     iget v4, v0, Lorg/telegram/ui/Components/PhotoEditorSeekBar;->progress:F
 
-    mul-float v2, v2, v4
+    mul-float/2addr v2, v4
 
     float-to-int v2, v2
 
@@ -529,7 +529,7 @@
 
     iget v4, p0, Lorg/telegram/ui/Components/PhotoEditorSeekBar;->progress:F
 
-    mul-float v3, v3, v4
+    mul-float/2addr v3, v4
 
     float-to-int v3, v3
 

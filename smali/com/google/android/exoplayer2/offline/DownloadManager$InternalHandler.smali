@@ -156,16 +156,14 @@
 
     if-eqz p2, :cond_1
 
-    const/4 v4, 0x1
-
     goto :goto_0
 
     :cond_1
     const/4 v1, 0x0
 
-    const/4 v4, 0x0
-
     :goto_0
+    move v4, v1
+
     const-wide/16 v9, -0x1
 
     const/4 v12, 0x0
@@ -529,15 +527,15 @@
     .line 1088
     iget-wide v2, v1, Lcom/google/android/exoplayer2/offline/Download;->contentLength:J
 
-    cmp-long v4, p2, v2
+    cmp-long v2, p2, v2
 
-    if-eqz v4, :cond_1
+    if-eqz v2, :cond_1
 
     const-wide/16 v2, -0x1
 
-    cmp-long v4, p2, v2
+    cmp-long v2, p2, v2
 
-    if-nez v4, :cond_0
+    if-nez v2, :cond_0
 
     goto :goto_0
 
@@ -594,17 +592,15 @@
 
     const/4 v3, 0x3
 
-    const/4 v5, 0x3
-
     goto :goto_0
 
     :cond_0
     const/4 v3, 0x4
 
-    const/4 v5, 0x4
+    :goto_0
+    move v5, v3
 
     .line 1151
-    :goto_0
     iget-wide v6, v0, Lcom/google/android/exoplayer2/offline/Download;->startTimeMs:J
 
     .line 1153
@@ -620,14 +616,14 @@
 
     if-nez v2, :cond_1
 
-    const/4 v13, 0x0
+    move v13, v14
 
     goto :goto_1
 
     :cond_1
     const/4 v3, 0x1
 
-    const/4 v13, 0x1
+    move v13, v3
 
     .line 1156
     :goto_1
@@ -635,7 +631,7 @@
 
     move-object v3, v15
 
-    const/4 v2, 0x0
+    move v2, v14
 
     move-object v14, v0
 
@@ -684,9 +680,9 @@
 
     invoke-direct {v3, v4}, Ljava/util/ArrayList;-><init>(Ljava/util/Collection;)V
 
-    move-object/from16 v2, p2
+    move v4, v2
 
-    const/4 v4, 0x0
+    move-object/from16 v2, p2
 
     invoke-direct {v0, v15, v4, v3, v2}, Lcom/google/android/exoplayer2/offline/DownloadManager$DownloadUpdate;-><init>(Lcom/google/android/exoplayer2/offline/Download;ZLjava/util/List;Ljava/lang/Exception;)V
 
@@ -957,7 +953,7 @@
 .end method
 
 .method private putDownload(Lcom/google/android/exoplayer2/offline/Download;)Lcom/google/android/exoplayer2/offline/Download;
-    .locals 8
+    .locals 7
 
     .line 1227
     iget v0, p1, Lcom/google/android/exoplayer2/offline/Download;->state:I
@@ -974,12 +970,12 @@
 
     if-eq v0, v3, :cond_0
 
-    const/4 v0, 0x1
+    move v0, v1
 
     goto :goto_0
 
     :cond_0
-    const/4 v0, 0x0
+    move v0, v2
 
     :goto_0
     invoke-static {v0}, Lcom/google/android/exoplayer2/util/Assertions;->checkState(Z)V
@@ -1025,14 +1021,14 @@
 
     iget-wide v5, v5, Lcom/google/android/exoplayer2/offline/Download;->startTimeMs:J
 
-    cmp-long v7, v3, v5
+    cmp-long v3, v3, v5
 
-    if-eqz v7, :cond_2
+    if-eqz v3, :cond_2
 
     goto :goto_1
 
     :cond_2
-    const/4 v1, 0x0
+    move v1, v2
 
     .line 1234
     :goto_1
@@ -1321,7 +1317,7 @@
     invoke-static {v0, v4}, Lcom/google/android/exoplayer2/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)V
 
     :goto_2
-    const/4 v4, 0x0
+    move v4, v3
 
     .line 928
     :goto_3
@@ -1355,7 +1351,7 @@
     goto :goto_3
 
     :cond_2
-    const/4 v4, 0x0
+    move v4, v3
 
     .line 931
     :goto_4
@@ -1420,7 +1416,7 @@
 
     invoke-direct {v0, v1}, Ljava/util/ArrayList;-><init>(Ljava/util/Collection;)V
 
-    const/4 v1, 0x0
+    move v1, v3
 
     .line 942
     :goto_6
@@ -1601,7 +1597,7 @@
     if-ne v3, v4, :cond_2
 
     :cond_1
-    const/4 v3, 0x1
+    move v3, v2
 
     .line 868
     :cond_2
@@ -1994,7 +1990,7 @@
 
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    move v1, v0
 
     .line 972
     :goto_0
@@ -2317,7 +2313,7 @@
 
     if-eqz p1, :cond_0
 
-    const/4 v1, 0x1
+    move v1, v2
 
     .line 743
     :cond_0
@@ -2333,7 +2329,7 @@
     invoke-direct {p0, p1}, Lcom/google/android/exoplayer2/offline/DownloadManager$InternalHandler;->initialize(I)V
 
     :goto_0
-    const/4 v1, 0x1
+    move v1, v2
 
     .line 792
     :goto_1

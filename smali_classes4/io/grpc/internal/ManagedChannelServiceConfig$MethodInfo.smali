@@ -77,12 +77,12 @@
 
     if-ltz v3, :cond_0
 
-    const/4 v3, 0x1
+    move v3, v1
 
     goto :goto_0
 
     :cond_0
-    const/4 v3, 0x0
+    move v3, v2
 
     :goto_0
     const-string v4, "maxInboundMessageSize %s exceeds bounds"
@@ -110,7 +110,7 @@
     goto :goto_1
 
     :cond_2
-    const/4 v1, 0x0
+    move v1, v2
 
     :goto_1
     const-string v2, "maxOutboundMessageSize %s exceeds bounds"
@@ -213,12 +213,12 @@
 
     if-lt v0, v3, :cond_0
 
-    const/4 v3, 0x1
+    move v3, v1
 
     goto :goto_0
 
     :cond_0
-    const/4 v3, 0x0
+    move v3, v2
 
     :goto_0
     const-string v4, "maxAttempts must be greater than 1: %s"
@@ -258,7 +258,7 @@
     goto :goto_1
 
     :cond_1
-    const/4 v1, 0x0
+    move v1, v2
 
     :goto_1
     const-string v0, "hedgingDelay must not be negative: %s"
@@ -317,12 +317,12 @@
 
     if-lt v0, v3, :cond_0
 
-    const/4 v3, 0x1
+    move v3, v1
 
     goto :goto_0
 
     :cond_0
-    const/4 v3, 0x0
+    move v3, v2
 
     :goto_0
     const-string v4, "maxAttempts must be greater than 1: %s"
@@ -359,12 +359,12 @@
 
     if-lez p1, :cond_1
 
-    const/4 p1, 0x1
+    move p1, v1
 
     goto :goto_1
 
     :cond_1
-    const/4 p1, 0x0
+    move p1, v2
 
     :goto_1
     const-string v0, "initialBackoffNanos must be greater than 0: %s"
@@ -394,12 +394,12 @@
 
     if-lez p1, :cond_2
 
-    const/4 p1, 0x1
+    move p1, v1
 
     goto :goto_2
 
     :cond_2
-    const/4 p1, 0x0
+    move p1, v2
 
     :goto_2
     const-string v0, "maxBackoff must be greater than 0: %s"
@@ -434,7 +434,7 @@
     goto :goto_3
 
     :cond_3
-    const/4 v1, 0x0
+    move v1, v2
 
     .line 296
     :goto_3

@@ -15,7 +15,7 @@ import kotlin.jvm.internal.Lambda;
 import kotlin.jvm.internal.Ref$LongRef;
 import org.fork.utils.Callbacks$Callback;
 import org.telegram.messenger.AccountInstance;
-import org.telegram.messenger.C3286R;
+import org.telegram.messenger.C3301R;
 import org.telegram.messenger.SendMessagesHelper;
 import org.telegram.tgnet.TLRPC$BotInlineResult;
 import org.telegram.tgnet.TLRPC$messages_BotResults;
@@ -37,12 +37,12 @@ public final class C1462x2b67fdc6 extends Lambda implements Function1<Result<? e
 
     @Override // kotlin.jvm.functions.Function1
     public /* bridge */ /* synthetic */ Unit invoke(Result<? extends TLRPC$messages_BotResults> result) {
-        m1155invoke(result);
+        m1167invoke(result);
         return Unit.INSTANCE;
     }
 
     /* renamed from: invoke  reason: collision with other method in class */
-    public final void m1155invoke(Result<? extends TLRPC$messages_BotResults> it) {
+    public final void m1167invoke(Result<? extends TLRPC$messages_BotResults> it) {
         CryptoRecipientView viewState;
         ResourceManager resourceManager;
         TelegramGateway telegramGateway;
@@ -62,15 +62,15 @@ public final class C1462x2b67fdc6 extends Lambda implements Function1<Result<? e
             telegramGateway = this.this$0.telegramGateway;
             AccountInstance accountInstance = AccountInstance.getInstance(telegramGateway.getSelectedAccountIndex());
             CryptoRecipientManager cryptoRecipientManager = this.this$0;
-            String str = tLRPC$BotInlineResult.f1497id;
+            String str = tLRPC$BotInlineResult.f1498id;
             Intrinsics.checkNotNullExpressionValue(str, "inlineBot.id");
             formatBotRequestParams = cryptoRecipientManager.formatBotRequestParams(str, String.valueOf(((TLRPC$messages_BotResults) success.getData()).query_id));
             SendMessagesHelper.prepareSendingBotContextResult(null, accountInstance, tLRPC$BotInlineResult, formatBotRequestParams, this.$chatId$inlined.element, null, null, true, 0, null);
             viewState2 = this.this$0.getViewState();
             resourceManager2 = this.this$0.resourceManager;
-            String string = resourceManager2.getString(C3286R.string.wallet_recipient_request_permission_success_dialog_title);
+            String string = resourceManager2.getString(C3301R.string.wallet_recipient_request_permission_success_dialog_title);
             resourceManager3 = this.this$0.resourceManager;
-            String string2 = resourceManager3.getString(C3286R.string.wallet_recipient_request_permission_success_dialog_description, this.$recipient$inlined);
+            String string2 = resourceManager3.getString(C3301R.string.wallet_recipient_request_permission_success_dialog_description, this.$recipient$inlined);
             final CryptoRecipientManager cryptoRecipientManager2 = this.this$0;
             final Ref$LongRef ref$LongRef = this.$chatId$inlined;
             viewState2.showRequestPermissionSuccessDialog(string, string2, new Callbacks$Callback() { // from class: com.smedialink.manager.crypto.recipient.CryptoRecipientManager$requestAddressPermission$2$1

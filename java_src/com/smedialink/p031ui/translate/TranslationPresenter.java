@@ -65,9 +65,9 @@ public final class TranslationPresenter extends BasePresenter<TranslationView> {
     }
 
     public final void loadLanguages(boolean z) {
-        Observable<Result<List<TranslationLanguage>>> observeOn = this.translationInteractor.languages().observeOn(this.schedulersProvider.mo707ui());
+        Observable<Result<List<TranslationLanguage>>> observeOn = this.translationInteractor.languages().observeOn(this.schedulersProvider.mo706ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "translationInteractor\n  …(schedulersProvider.ui())");
-        Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C1959xba424fcb(this, z)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C1960xba424fcc((BaseView) getViewState())));
+        Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C1973xba424fcb(this, z)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C1974xba424fcc((BaseView) getViewState())));
         Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…  onError.invoke()\n    })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }
@@ -92,9 +92,9 @@ public final class TranslationPresenter extends BasePresenter<TranslationView> {
             TranslationInteractor translationInteractor = this.translationInteractor;
             String languageCode = this.targetLanguage.getLanguageCode();
             Intrinsics.checkNotNull(languageCode);
-            Observable<Result<Translation>> observeOn = translationInteractor.translate(text, languageCode, this.sourceLanguage.getLanguageCode()).observeOn(this.schedulersProvider.mo707ui());
+            Observable<Result<Translation>> observeOn = translationInteractor.translate(text, languageCode, this.sourceLanguage.getLanguageCode()).observeOn(this.schedulersProvider.mo706ui());
             Intrinsics.checkNotNullExpressionValue(observeOn, "translationInteractor\n  …(schedulersProvider.ui())");
-            Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C1961xa655ab44(this, text, z)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C1962xa655ab45((BaseView) getViewState())));
+            Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C1975xa655ab44(this, text, z)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C1976xa655ab45((BaseView) getViewState())));
             Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…  onError.invoke()\n    })");
             BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
             return;
@@ -121,9 +121,9 @@ public final class TranslationPresenter extends BasePresenter<TranslationView> {
         TranslationInteractor translationInteractor = this.translationInteractor;
         String languageCode = this.sourceLanguage.getLanguageCode();
         Intrinsics.checkNotNull(languageCode);
-        Observable<Result<Translation>> observeOn = translationInteractor.translate(text, languageCode, this.outLanguage.getLanguageCode()).observeOn(this.schedulersProvider.mo707ui());
+        Observable<Result<Translation>> observeOn = translationInteractor.translate(text, languageCode, this.outLanguage.getLanguageCode()).observeOn(this.schedulersProvider.mo706ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "translationInteractor\n  …(schedulersProvider.ui())");
-        Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C1963x31d12e3f(this, text)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C1964x31d12e40((BaseView) getViewState())));
+        Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C1977x31d12e3f(this, text)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C1978x31d12e40((BaseView) getViewState())));
         Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…  onError.invoke()\n    })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }

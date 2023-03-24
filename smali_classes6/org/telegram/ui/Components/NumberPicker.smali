@@ -1167,7 +1167,7 @@
 
     iget v2, p0, Lorg/telegram/ui/Components/NumberPicker;->mTextSize:I
 
-    mul-int v1, v1, v2
+    mul-int/2addr v1, v2
 
     .line 910
     invoke-virtual {p0}, Landroid/widget/LinearLayout;->getBottom()I
@@ -1229,7 +1229,7 @@
 
     iget v2, p0, Lorg/telegram/ui/Components/NumberPicker;->SELECTOR_MIDDLE_ITEM_INDEX:I
 
-    mul-int v1, v1, v2
+    mul-int/2addr v1, v2
 
     sub-int/2addr v0, v1
 
@@ -1822,13 +1822,8 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_1
-
     :catch_0
-    nop
-
     :cond_2
-    :goto_1
     if-eqz p2, :cond_3
 
     .line 886
@@ -1864,7 +1859,7 @@
 
     const/4 v0, 0x0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_0
     const/16 v3, 0x9
@@ -1910,7 +1905,7 @@
     :cond_3
     int-to-float v1, v1
 
-    mul-float v1, v1, v0
+    mul-float/2addr v1, v0
 
     float-to-int v0, v1
 
@@ -1920,7 +1915,7 @@
     :cond_4
     array-length v2, v0
 
-    const/4 v3, 0x0
+    move v3, v1
 
     :goto_2
     if-ge v1, v2, :cond_6
@@ -2248,7 +2243,7 @@
 
     iget v1, p0, Lorg/telegram/ui/Components/NumberPicker;->mSelectorElementHeight:I
 
-    mul-int v0, v0, v1
+    mul-int/2addr v0, v1
 
     return v0
 .end method
@@ -2369,7 +2364,7 @@
 
     if-ne v0, v2, :cond_6
 
-    const/4 p1, 0x1
+    move p1, v3
 
     goto :goto_2
 
@@ -2591,7 +2586,7 @@
 
     const/4 v3, 0x0
 
-    const/4 v4, 0x0
+    move v4, v3
 
     .line 745
     :goto_0
@@ -2654,7 +2649,7 @@
 
     const/high16 v9, 0x3f000000    # 0.5f
 
-    mul-float v8, v8, v9
+    mul-float/2addr v8, v9
 
     .line 758
     iget-object v9, p0, Lorg/telegram/ui/Components/NumberPicker;->mSelectorWheelPaint:Landroid/graphics/Paint;
@@ -2689,7 +2684,7 @@
 
     div-float/2addr v6, v8
 
-    const/4 v8, 0x0
+    move v8, v3
 
     .line 766
     :goto_1
@@ -2716,7 +2711,7 @@
 
     move-result v9
 
-    mul-float v10, v10, v9
+    mul-float/2addr v10, v9
 
     if-nez v8, :cond_2
 
@@ -2733,7 +2728,7 @@
 
     const v9, 0x3e4ccccd    # 0.2f
 
-    mul-float v9, v9, v6
+    mul-float/2addr v9, v6
 
     add-float/2addr v9, v8
 
@@ -2742,25 +2737,25 @@
 
     const v7, 0x3dcccccd    # 0.1f
 
-    const/4 v8, -0x1
+    cmpg-float v8, v6, v7
 
-    cmpg-float v9, v6, v7
+    const/4 v9, -0x1
 
-    if-gez v9, :cond_3
+    if-gez v8, :cond_3
 
     .line 777
-    iget-object v9, p0, Lorg/telegram/ui/Components/NumberPicker;->mSelectorWheelPaint:Landroid/graphics/Paint;
+    iget-object v8, p0, Lorg/telegram/ui/Components/NumberPicker;->mSelectorWheelPaint:Landroid/graphics/Paint;
 
-    invoke-virtual {v9}, Landroid/graphics/Paint;->getAlpha()I
+    invoke-virtual {v8}, Landroid/graphics/Paint;->getAlpha()I
 
-    move-result v9
+    move-result v8
 
     .line 778
     iget-object v10, p0, Lorg/telegram/ui/Components/NumberPicker;->mSelectorWheelPaint:Landroid/graphics/Paint;
 
-    int-to-float v11, v9
+    int-to-float v11, v8
 
-    mul-float v11, v11, v6
+    mul-float/2addr v11, v6
 
     div-float/2addr v11, v7
 
@@ -2771,7 +2766,7 @@
     goto :goto_2
 
     :cond_3
-    const/4 v9, -0x1
+    move v8, v9
 
     .line 780
     :goto_2
@@ -2782,12 +2777,12 @@
     .line 781
     invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
 
-    if-eq v9, v8, :cond_5
+    if-eq v8, v9, :cond_5
 
     .line 783
     iget-object v5, p0, Lorg/telegram/ui/Components/NumberPicker;->mSelectorWheelPaint:Landroid/graphics/Paint;
 
-    invoke-virtual {v5, v9}, Landroid/graphics/Paint;->setAlpha(I)V
+    invoke-virtual {v5, v8}, Landroid/graphics/Paint;->setAlpha(I)V
 
     goto :goto_3
 
@@ -2928,9 +2923,9 @@
 
     int-to-float v0, v0
 
-    const/4 v2, 0x1
-
     cmpg-float v0, p1, v0
+
+    const/4 v2, 0x1
 
     if-gez v0, :cond_1
 
@@ -4032,13 +4027,13 @@
     goto :goto_0
 
     :cond_0
-    const/4 v0, 0x0
+    move v0, v1
 
     goto :goto_1
 
     :cond_1
     :goto_0
-    const/4 v0, 0x1
+    move v0, v2
 
     :goto_1
     if-eqz v0, :cond_2
@@ -4048,7 +4043,7 @@
 
     if-eqz p1, :cond_2
 
-    const/4 v1, 0x1
+    move v1, v2
 
     :cond_2
     iput-boolean v1, p0, Lorg/telegram/ui/Components/NumberPicker;->mWrapSelectorWheel:Z

@@ -21,7 +21,7 @@
 
     int-to-double v1, v0
 
-    mul-double p1, p1, v1
+    mul-double/2addr p1, v1
 
     double-to-int p1, p1
 
@@ -50,7 +50,7 @@
 
     const-wide/32 v2, -0x3361d2af
 
-    mul-long v0, v0, v2
+    mul-long/2addr v0, v2
 
     long-to-int p0, v0
 
@@ -65,7 +65,7 @@
 
     const-wide/32 v2, 0x1b873593
 
-    mul-long v0, v0, v2
+    mul-long/2addr v0, v2
 
     long-to-int p0, v0
 

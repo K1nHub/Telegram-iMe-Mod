@@ -30,12 +30,12 @@ final class ChannelDetailsBottomSheetDialog$presenter$2 extends Lambda implement
     /* compiled from: ChannelDetailsBottomSheetDialog.kt */
     /* renamed from: com.smedialink.ui.catalog.details.ChannelDetailsBottomSheetDialog$presenter$2$1 */
     /* loaded from: classes3.dex */
-    public static final class C18671 extends Lambda implements Function0<ParametersHolder> {
+    public static final class C18811 extends Lambda implements Function0<ParametersHolder> {
         final /* synthetic */ CampaignItem $campaign;
         final /* synthetic */ TLRPC$Chat $chat;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        C18671(CampaignItem campaignItem, TLRPC$Chat tLRPC$Chat) {
+        C18811(CampaignItem campaignItem, TLRPC$Chat tLRPC$Chat) {
             super(0);
             this.$campaign = campaignItem;
             this.$chat = tLRPC$Chat;
@@ -51,7 +51,7 @@ final class ChannelDetailsBottomSheetDialog$presenter$2 extends Lambda implement
     @Override // kotlin.jvm.functions.Function0
     public final ChannelDetailsPresenter invoke() {
         Lazy lazy;
-        lazy = LazyKt__LazyJVMKt.lazy(KoinPlatformTools.INSTANCE.defaultLazyMode(), new C1865xf609b581(this.this$0, null, new C18671(this.$campaign, this.$chat)));
+        lazy = LazyKt__LazyJVMKt.lazy(KoinPlatformTools.INSTANCE.defaultLazyMode(), new C1879xf609b581(this.this$0, null, new C18811(this.$campaign, this.$chat)));
         return (ChannelDetailsPresenter) lazy.getValue();
     }
 }

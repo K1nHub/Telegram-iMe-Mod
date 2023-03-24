@@ -37,7 +37,7 @@
 
     move-object v4, v3
 
-    const/4 v2, 0x1
+    move v2, v1
 
     :goto_0
     if-ge v2, v0, :cond_0

@@ -545,12 +545,12 @@
 
     if-eq p2, v1, :cond_1
 
-    const/4 p2, 0x1
+    move p2, v0
 
     goto :goto_1
 
     :cond_1
-    const/4 p2, 0x0
+    move p2, p1
 
     .line 116
     :goto_1
@@ -567,7 +567,7 @@
 
     if-ne p2, v0, :cond_2
 
-    const/4 p1, 0x1
+    move p1, v0
 
     :cond_2
     return p1
@@ -764,12 +764,12 @@
 
     if-eqz p3, :cond_6
 
-    const/4 p3, 0x1
+    move p3, v0
 
     goto :goto_1
 
     :cond_6
-    const/4 p3, 0x0
+    move p3, p1
 
     :goto_1
     invoke-virtual {p2, p3}, Landroid/media/audiofx/NoiseSuppressor;->setEnabled(Z)I
@@ -839,7 +839,7 @@
     goto :goto_3
 
     :cond_9
-    const/4 v0, 0x0
+    move v0, p1
 
     :goto_3
     invoke-virtual {p2, v0}, Landroid/media/audiofx/AcousticEchoCanceler;->setEnabled(Z)I

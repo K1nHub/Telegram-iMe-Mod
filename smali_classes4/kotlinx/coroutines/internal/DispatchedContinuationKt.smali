@@ -192,7 +192,7 @@
 
     invoke-interface {p0, p2}, Lkotlin/coroutines/Continuation;->resumeWith(Ljava/lang/Object;)V
 
-    const/4 p2, 0x1
+    move p2, v1
 
     goto :goto_0
 

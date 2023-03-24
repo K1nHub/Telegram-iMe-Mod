@@ -725,8 +725,6 @@
 
     const/4 v0, 0x0
 
-    const/4 v3, 0x0
-
     goto :goto_0
 
     :cond_0
@@ -736,9 +734,9 @@
 
     int-to-float v0, v0
 
+    :goto_0
     move v3, v0
 
-    :goto_0
     invoke-virtual {p0}, Landroid/view/ViewGroup;->getMeasuredHeight()I
 
     move-result v0

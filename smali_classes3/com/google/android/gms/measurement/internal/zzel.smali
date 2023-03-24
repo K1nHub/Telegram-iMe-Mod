@@ -887,14 +887,9 @@
 
     const/16 p1, 0x8
 
-    const/16 v2, 0x8
-
-    goto :goto_0
-
     :cond_3
     move v2, p1
 
-    :goto_0
     new-instance p1, Lcom/google/android/gms/measurement/internal/zzei;
 
     move-object v0, p1

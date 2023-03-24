@@ -100,7 +100,7 @@
 
 # virtual methods
 .method public close()V
-    .locals 5
+    .locals 4
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -125,15 +125,15 @@
 
     const-wide/16 v2, -0x1
 
-    cmp-long v4, v0, v2
+    cmp-long v2, v0, v2
 
-    if-eqz v4, :cond_2
+    if-eqz v2, :cond_2
 
     iget-wide v2, p0, Lokhttp3/internal/connection/Exchange$RequestBodySink;->bytesReceived:J
 
-    cmp-long v4, v2, v0
+    cmp-long v0, v2, v0
 
-    if-nez v4, :cond_1
+    if-nez v0, :cond_1
 
     goto :goto_0
 
@@ -201,7 +201,7 @@
 .end method
 
 .method public write(Lokio/Buffer;J)V
-    .locals 5
+    .locals 4
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -224,17 +224,17 @@
 
     const-wide/16 v2, -0x1
 
-    cmp-long v4, v0, v2
+    cmp-long v2, v0, v2
 
-    if-eqz v4, :cond_1
+    if-eqz v2, :cond_1
 
     iget-wide v2, p0, Lokhttp3/internal/connection/Exchange$RequestBodySink;->bytesReceived:J
 
     add-long/2addr v2, p2
 
-    cmp-long v4, v2, v0
+    cmp-long v0, v2, v0
 
-    if-gtz v4, :cond_0
+    if-gtz v0, :cond_0
 
     goto :goto_0
 

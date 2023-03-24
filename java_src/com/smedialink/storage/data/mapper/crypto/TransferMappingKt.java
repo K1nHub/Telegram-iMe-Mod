@@ -1,7 +1,7 @@
 package com.smedialink.storage.data.mapper.crypto;
 
 import com.smedialink.storage.data.network.model.response.crypto.ton.ParamsForTonCryptoTransferResponse;
-import com.smedialink.storage.data.network.model.response.crypto.wallet.DataForCryptoTransferResponse;
+import com.smedialink.storage.data.network.model.response.crypto.wallet.CryptoTransferDataResponse;
 import com.smedialink.storage.domain.model.crypto.Chain;
 import com.smedialink.storage.domain.model.crypto.TransactionParams;
 import com.smedialink.storage.domain.model.crypto.send.CryptoTransferMetadata;
@@ -12,15 +12,26 @@ import kotlin.jvm.internal.Intrinsics;
 /* compiled from: TransferMapping.kt */
 /* loaded from: classes3.dex */
 public final class TransferMappingKt {
-    public static final CryptoTransferMetadata mapToDomain(DataForCryptoTransferResponse dataForCryptoTransferResponse) {
-        Intrinsics.checkNotNullParameter(dataForCryptoTransferResponse, "<this>");
-        TransactionParams mapToDomain = CryptoWalletMappingKt.mapToDomain(dataForCryptoTransferResponse.getTransactionParams());
-        TokenCode map = TokenCode.Companion.map(dataForCryptoTransferResponse.getFeeTokenCode());
-        String contractAddress = dataForCryptoTransferResponse.getContractAddress();
+    public static final CryptoTransferMetadata mapToDomain(CryptoTransferDataResponse.EVM evm) {
+        Intrinsics.checkNotNullParameter(evm, "<this>");
+        TransactionParams.Ether mapToDomain = CryptoWalletMappingKt.mapToDomain(evm.getTransactionParams());
+        TokenCode map = TokenCode.Companion.map(evm.getFeeTokenCode());
+        String contractAddress = evm.getContractAddress();
         if (contractAddress == null) {
             contractAddress = "";
         }
-        return new CryptoTransferMetadata(mapToDomain, map, contractAddress, null);
+        return new CryptoTransferMetadata(mapToDomain, map, contractAddress);
+    }
+
+    public static final CryptoTransferMetadata mapToDomain(CryptoTransferDataResponse.TRON tron) {
+        Intrinsics.checkNotNullParameter(tron, "<this>");
+        TransactionParams.Tron mapToDomain = CryptoWalletMappingKt.mapToDomain(tron.getTransactionParams(), tron.getEstimateFees());
+        TokenCode tokenCode = TokenCode.TRX;
+        String contractAddress = tron.getContractAddress();
+        if (contractAddress == null) {
+            contractAddress = "";
+        }
+        return new CryptoTransferMetadata(mapToDomain, tokenCode, contractAddress);
     }
 
     public static final CryptoTransferMetadata mapToDomain(ParamsForTonCryptoTransferResponse paramsForTonCryptoTransferResponse) {
@@ -30,6 +41,6 @@ public final class TransferMappingKt {
         BigInteger ZERO = BigInteger.ZERO;
         Intrinsics.checkNotNullExpressionValue(ZERO, "ZERO");
         Intrinsics.checkNotNullExpressionValue(ZERO, "ZERO");
-        return new CryptoTransferMetadata(new TransactionParams(null, new GasPriceInfo(ZERO, ZERO, (int) paramsForTonCryptoTransferResponse.getEstimateFees().getDuration(), paramsForTonCryptoTransferResponse.getEstimateFees().getFee(), paramsForTonCryptoTransferResponse.getEstimateFees().getFeeInDollars()), null, valueOf, new Chain.Unknown(0L, 1, null)), TokenCode.TON, null, Integer.valueOf(paramsForTonCryptoTransferResponse.getTransactionParams().getSendMode()));
+        return new CryptoTransferMetadata(new TransactionParams.Ether(new GasPriceInfo(ZERO, ZERO, (int) paramsForTonCryptoTransferResponse.getEstimateFees().getDuration(), paramsForTonCryptoTransferResponse.getEstimateFees().getFee(), paramsForTonCryptoTransferResponse.getEstimateFees().getFeeInDollars()), null, null, valueOf, new Chain.Unknown(0L, 1, null)), TokenCode.TON, null);
     }
 }

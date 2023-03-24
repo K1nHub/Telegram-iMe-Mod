@@ -7,33 +7,40 @@ public final class GoppaCode {
         int degree = gF2mField.getDegree();
         int i = 1 << degree;
         int degree2 = polynomialGF2mSmallM.getDegree();
+        int i2 = 0;
         int[][] iArr = (int[][]) Array.newInstance(int.class, degree2, i);
         int[][] iArr2 = (int[][]) Array.newInstance(int.class, degree2, i);
-        for (int i2 = 0; i2 < i; i2++) {
-            iArr2[0][i2] = gF2mField.inverse(polynomialGF2mSmallM.evaluateAt(i2));
+        for (int i3 = 0; i3 < i; i3++) {
+            iArr2[0][i3] = gF2mField.inverse(polynomialGF2mSmallM.evaluateAt(i3));
         }
-        for (int i3 = 1; i3 < degree2; i3++) {
-            for (int i4 = 0; i4 < i; i4++) {
-                iArr2[i3][i4] = gF2mField.mult(iArr2[i3 - 1][i4], i4);
+        for (int i4 = 1; i4 < degree2; i4++) {
+            for (int i5 = 0; i5 < i; i5++) {
+                iArr2[i4][i5] = gF2mField.mult(iArr2[i4 - 1][i5], i5);
             }
         }
-        for (int i5 = 0; i5 < degree2; i5++) {
-            for (int i6 = 0; i6 < i; i6++) {
-                for (int i7 = 0; i7 <= i5; i7++) {
-                    iArr[i5][i6] = gF2mField.add(iArr[i5][i6], gF2mField.mult(iArr2[i7][i6], polynomialGF2mSmallM.getCoefficient((degree2 + i7) - i5)));
+        int i6 = 0;
+        while (i6 < degree2) {
+            int i7 = i2;
+            while (i7 < i) {
+                for (int i8 = i2; i8 <= i6; i8++) {
+                    iArr[i6][i7] = gF2mField.add(iArr[i6][i7], gF2mField.mult(iArr2[i8][i7], polynomialGF2mSmallM.getCoefficient((degree2 + i8) - i6)));
                 }
+                i7++;
+                i2 = 0;
             }
+            i6++;
+            i2 = 0;
         }
         int[][] iArr3 = (int[][]) Array.newInstance(int.class, degree2 * degree, (i + 31) >>> 5);
-        for (int i8 = 0; i8 < i; i8++) {
-            int i9 = i8 >>> 5;
-            int i10 = 1 << (i8 & 31);
-            for (int i11 = 0; i11 < degree2; i11++) {
-                int i12 = iArr[i11][i8];
-                for (int i13 = 0; i13 < degree; i13++) {
-                    if (((i12 >>> i13) & 1) != 0) {
-                        int[] iArr4 = iArr3[(((i11 + 1) * degree) - i13) - 1];
-                        iArr4[i9] = iArr4[i9] ^ i10;
+        for (int i9 = 0; i9 < i; i9++) {
+            int i10 = i9 >>> 5;
+            int i11 = 1 << (i9 & 31);
+            for (int i12 = 0; i12 < degree2; i12++) {
+                int i13 = iArr[i12][i9];
+                for (int i14 = 0; i14 < degree; i14++) {
+                    if (((i13 >>> i14) & 1) != 0) {
+                        int[] iArr4 = iArr3[(((i12 + 1) * degree) - i14) - 1];
+                        iArr4[i10] = iArr4[i10] ^ i11;
                     }
                 }
             }

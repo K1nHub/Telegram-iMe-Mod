@@ -241,12 +241,12 @@
 
     if-eqz v2, :cond_3
 
-    const/4 v6, 0x1
+    move v6, v3
 
     goto :goto_0
 
     :cond_3
-    const/4 v6, 0x0
+    move v6, v5
 
     :goto_0
     add-int/2addr v6, v3
@@ -282,7 +282,7 @@
 
     new-array v10, v9, [Ljava/lang/String;
 
-    const/4 v11, 0x0
+    move v11, v5
 
     .line 1025
     :goto_1
@@ -563,11 +563,11 @@
     const/4 v6, 0x0
 
     :cond_c
+    move v14, v5
+
     move/from16 v9, v16
 
-    const/4 v14, 0x0
-
-    const/16 v16, 0x0
+    move/from16 v16, v14
 
     :goto_6
     if-ge v14, v9, :cond_13
@@ -769,11 +769,11 @@
     :goto_a
     add-int/lit8 v11, v11, 0x1
 
+    move v3, v5
+
     move/from16 v6, v17
 
     move-object/from16 v7, v18
-
-    const/4 v3, 0x1
 
     const/4 v5, 0x0
 
@@ -804,14 +804,14 @@
 
     if-eq v1, v2, :cond_0
 
-    const/4 v3, 0x1
+    move v3, v2
 
     goto :goto_0
 
     :cond_0
     const/4 v1, 0x0
 
-    const/4 v3, 0x0
+    move v3, v1
 
     :goto_0
     const/4 v4, 0x1
@@ -1123,7 +1123,7 @@
 
     if-eq v0, v1, :cond_0
 
-    goto :goto_2
+    goto/16 :goto_2
 
     .line 1175
     :cond_0
@@ -1191,7 +1191,7 @@
     goto :goto_0
 
     :cond_2
-    const/4 v1, 0x0
+    move v1, v2
 
     :goto_0
     invoke-virtual {p1, v0, v3, v1}, Lorg/telegram/ui/Cells/UserCell;->setException(Lorg/telegram/ui/NotificationsSettingsActivity$NotificationException;Ljava/lang/CharSequence;Z)V
@@ -1248,12 +1248,12 @@
 
     if-eq p2, v0, :cond_4
 
-    const/4 v7, 0x1
+    move v7, v1
 
     goto :goto_1
 
     :cond_4
-    const/4 v7, 0x0
+    move v7, v2
 
     :goto_1
     move-object v2, p1
@@ -1372,14 +1372,14 @@
 
     if-eq p1, v0, :cond_1
 
-    const/4 v5, 0x1
+    move v5, v0
 
     goto :goto_0
 
     :cond_1
     const/4 p1, 0x0
 
-    const/4 v5, 0x0
+    move v5, p1
 
     :goto_0
     const/4 v6, 0x1

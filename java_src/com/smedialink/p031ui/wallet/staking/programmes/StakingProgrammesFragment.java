@@ -42,7 +42,7 @@ import moxy.ktx.MoxyKtxDelegate;
 import org.fork.utils.Callbacks$Callback;
 import org.fork.utils.Callbacks$Callback1;
 import org.koin.p047mp.KoinPlatformTools;
-import org.telegram.messenger.C3286R;
+import org.telegram.messenger.C3301R;
 import org.telegram.messenger.databinding.ForkFragmentStakingProgrammesBinding;
 import org.telegram.p048ui.ActionBar.ThemeDescription;
 import org.telegram.p048ui.ManageLinksActivity;
@@ -253,15 +253,15 @@ public final class StakingProgrammesFragment extends WalletAuthFragment implemen
         Intrinsics.checkNotNullParameter(baseQuickAdapter, "<anonymous parameter 0>");
         Intrinsics.checkNotNullParameter(view, "view");
         int id = view.getId();
-        if (id == C3286R.C3289id.image_header_right_button) {
+        if (id == C3301R.C3304id.image_header_right_button) {
             this$0.getPresenter().showSelectStakingOrderTypeDialog();
-        } else if (id == C3286R.C3289id.image_info) {
+        } else if (id == C3301R.C3304id.image_info) {
             this$0.showStakingFiltersInfoDialog();
         }
     }
 
     private final void showStakingFiltersInfoDialog() {
-        showDialog(DialogsFactoryKt.createInfoBottomSheetDialog$default(this, getResourceManager().getString(C3286R.string.staking_programmes_filters_info_title), getResourceManager().getString(C3286R.string.staking_programmes_filters_info_description), getResourceManager().getString(C3286R.string.common_ok), null, 8, null));
+        showDialog(DialogsFactoryKt.createInfoBottomSheetDialog$default(this, getResourceManager().getString(C3301R.string.staking_programmes_filters_info_title), getResourceManager().getString(C3301R.string.staking_programmes_filters_info_description), getResourceManager().getString(C3301R.string.common_ok), null, 8, null));
     }
 
     /* compiled from: StakingProgrammesFragment.kt */

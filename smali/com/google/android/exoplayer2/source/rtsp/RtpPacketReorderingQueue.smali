@@ -325,7 +325,7 @@
 .end method
 
 .method public declared-synchronized poll(J)Lcom/google/android/exoplayer2/source/rtsp/RtpPacket;
-    .locals 6
+    .locals 5
 
     monitor-enter p0
 
@@ -377,9 +377,9 @@
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    cmp-long v5, p1, v3
+    cmp-long p1, p1, v3
 
-    if-ltz v5, :cond_1
+    if-ltz p1, :cond_1
 
     goto :goto_0
 

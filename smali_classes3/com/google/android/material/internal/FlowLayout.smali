@@ -205,12 +205,12 @@
 
     if-ne p5, p1, :cond_1
 
-    const/4 p5, 0x1
+    move p5, p1
 
     goto :goto_0
 
     :cond_1
-    const/4 p5, 0x0
+    move p5, p3
 
     :goto_0
     if-eqz p5, :cond_2
@@ -252,11 +252,11 @@
 
     sub-int/2addr p4, v1
 
+    move v1, p3
+
     move v3, v0
 
     move p2, v2
-
-    const/4 v1, 0x0
 
     .line 207
     :goto_3
@@ -320,9 +320,9 @@
     goto :goto_4
 
     :cond_5
-    const/4 v5, 0x0
+    move v5, p3
 
-    const/4 v6, 0x0
+    move v6, v5
 
     :goto_4
     add-int v7, v3, v6
@@ -565,9 +565,9 @@
     :cond_3
     const/16 v16, 0x0
 
-    const/4 v8, 0x0
+    move/from16 v8, v16
 
-    const/4 v15, 0x0
+    move v15, v8
 
     :goto_3
     add-int v17, v6, v8

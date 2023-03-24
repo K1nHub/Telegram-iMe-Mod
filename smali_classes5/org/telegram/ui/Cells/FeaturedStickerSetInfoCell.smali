@@ -1060,7 +1060,7 @@
 
     iget v3, p0, Lorg/telegram/ui/Cells/FeaturedStickerSetInfoCell;->unreadProgress:F
 
-    mul-float v2, v2, v3
+    mul-float/2addr v2, v3
 
     iget-object v3, p0, Lorg/telegram/ui/Cells/FeaturedStickerSetInfoCell;->paint:Landroid/graphics/Paint;
 
@@ -1321,12 +1321,12 @@
 
     if-eqz p2, :cond_1
 
-    const/high16 v0, 0x3f800000    # 1.0f
+    move v0, v1
 
     goto :goto_0
 
     :cond_1
-    const/4 v0, 0x0
+    move v0, v2
 
     .line 184
     :goto_0
@@ -1424,13 +1424,13 @@
     goto :goto_2
 
     :cond_4
-    const/4 p1, 0x0
+    move p1, v0
 
     goto :goto_3
 
     :cond_5
     :goto_2
-    const/4 p1, 0x1
+    move p1, p2
 
     :goto_3
     iput-boolean p1, p0, Lorg/telegram/ui/Cells/FeaturedStickerSetInfoCell;->isInstalled:Z
@@ -1485,12 +1485,12 @@
 
     if-eqz v4, :cond_7
 
-    const/high16 v4, 0x3f800000    # 1.0f
+    move v4, v1
 
     goto :goto_5
 
     :cond_7
-    const/4 v4, 0x0
+    move v4, v2
 
     :goto_5
     aput v4, v3, v0
@@ -1512,12 +1512,12 @@
 
     if-eqz v4, :cond_8
 
-    const/high16 v4, 0x3f800000    # 1.0f
+    move v4, v1
 
     goto :goto_6
 
     :cond_8
-    const/4 v4, 0x0
+    move v4, v2
 
     :goto_6
     aput v4, v3, v0
@@ -1541,12 +1541,12 @@
 
     if-eqz v5, :cond_9
 
-    const/high16 v5, 0x3f800000    # 1.0f
+    move v5, v1
 
     goto :goto_7
 
     :cond_9
-    const/4 v5, 0x0
+    move v5, v2
 
     :goto_7
     aput v5, v4, v0
@@ -1570,12 +1570,12 @@
 
     if-eqz v5, :cond_a
 
-    const/4 v5, 0x0
+    move v5, v2
 
     goto :goto_8
 
     :cond_a
-    const/high16 v5, 0x3f800000    # 1.0f
+    move v5, v1
 
     :goto_8
     aput v5, v4, v0
@@ -1597,12 +1597,12 @@
 
     if-eqz v4, :cond_b
 
-    const/4 v4, 0x0
+    move v4, v2
 
     goto :goto_9
 
     :cond_b
-    const/high16 v4, 0x3f800000    # 1.0f
+    move v4, v1
 
     :goto_9
     aput v4, v3, v0
@@ -1626,7 +1626,7 @@
 
     if-eqz v3, :cond_c
 
-    const/4 v1, 0x0
+    move v1, v2
 
     :cond_c
     aput v1, p2, v0

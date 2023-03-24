@@ -19,12 +19,20 @@
 .end annotation
 
 
+# static fields
+.field private static final EMPTY_REGISTRY:Lcom/google/protobuf/ExtensionRegistryLite;
+
+
 # direct methods
 .method static constructor <clinit>()V
-    .locals 0
+    .locals 1
 
     .line 75
     invoke-static {}, Lcom/google/protobuf/ExtensionRegistryLite;->getEmptyRegistry()Lcom/google/protobuf/ExtensionRegistryLite;
+
+    move-result-object v0
+
+    sput-object v0, Lcom/google/protobuf/AbstractParser;->EMPTY_REGISTRY:Lcom/google/protobuf/ExtensionRegistryLite;
 
     return-void
 .end method
@@ -180,6 +188,86 @@
     return-object p1
 .end method
 
+.method public parseFrom([B)Lcom/google/protobuf/MessageLite;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "([B)TMessageType;"
+        }
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/google/protobuf/InvalidProtocolBufferException;
+        }
+    .end annotation
+
+    .line 208
+    sget-object v0, Lcom/google/protobuf/AbstractParser;->EMPTY_REGISTRY:Lcom/google/protobuf/ExtensionRegistryLite;
+
+    invoke-virtual {p0, p1, v0}, Lcom/google/protobuf/AbstractParser;->parseFrom([BLcom/google/protobuf/ExtensionRegistryLite;)Lcom/google/protobuf/MessageLite;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
+.method public parseFrom([BIILcom/google/protobuf/ExtensionRegistryLite;)Lcom/google/protobuf/MessageLite;
+    .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "([BII",
+            "Lcom/google/protobuf/ExtensionRegistryLite;",
+            ")TMessageType;"
+        }
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/google/protobuf/InvalidProtocolBufferException;
+        }
+    .end annotation
+
+    .line 191
+    invoke-virtual {p0, p1, p2, p3, p4}, Lcom/google/protobuf/AbstractParser;->parsePartialFrom([BIILcom/google/protobuf/ExtensionRegistryLite;)Lcom/google/protobuf/MessageLite;
+
+    move-result-object p1
+
+    invoke-direct {p0, p1}, Lcom/google/protobuf/AbstractParser;->checkMessageInitialized(Lcom/google/protobuf/MessageLite;)Lcom/google/protobuf/MessageLite;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
+.method public parseFrom([BLcom/google/protobuf/ExtensionRegistryLite;)Lcom/google/protobuf/MessageLite;
+    .locals 2
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "([B",
+            "Lcom/google/protobuf/ExtensionRegistryLite;",
+            ")TMessageType;"
+        }
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/google/protobuf/InvalidProtocolBufferException;
+        }
+    .end annotation
+
+    .line 203
+    array-length v0, p1
+
+    const/4 v1, 0x0
+
+    invoke-virtual {p0, p1, v1, v0, p2}, Lcom/google/protobuf/AbstractParser;->parseFrom([BIILcom/google/protobuf/ExtensionRegistryLite;)Lcom/google/protobuf/MessageLite;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
 .method public bridge synthetic parseFrom(Lcom/google/protobuf/ByteString;Lcom/google/protobuf/ExtensionRegistryLite;)Ljava/lang/Object;
     .locals 0
     .annotation system Ldalvik/annotation/Throws;
@@ -206,6 +294,22 @@
 
     .line 48
     invoke-virtual {p0, p1, p2}, Lcom/google/protobuf/AbstractParser;->parseFrom(Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/ExtensionRegistryLite;)Lcom/google/protobuf/MessageLite;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
+.method public bridge synthetic parseFrom([B)Ljava/lang/Object;
+    .locals 0
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/google/protobuf/InvalidProtocolBufferException;
+        }
+    .end annotation
+
+    .line 48
+    invoke-virtual {p0, p1}, Lcom/google/protobuf/AbstractParser;->parseFrom([B)Lcom/google/protobuf/MessageLite;
 
     move-result-object p1
 
@@ -272,4 +376,20 @@
 
     .line 108
     throw p1
+.end method
+
+.method public abstract parsePartialFrom([BIILcom/google/protobuf/ExtensionRegistryLite;)Lcom/google/protobuf/MessageLite;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "([BII",
+            "Lcom/google/protobuf/ExtensionRegistryLite;",
+            ")TMessageType;"
+        }
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/google/protobuf/InvalidProtocolBufferException;
+        }
+    .end annotation
 .end method

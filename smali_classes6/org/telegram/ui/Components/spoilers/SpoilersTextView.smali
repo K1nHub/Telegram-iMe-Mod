@@ -115,35 +115,35 @@
 .method private invalidateSpoilers()V
     .locals 2
 
-    .line 128
+    .line 134
     iget-object v0, p0, Lorg/telegram/ui/Components/spoilers/SpoilersTextView;->spoilers:Ljava/util/List;
 
     if-nez v0, :cond_0
 
     return-void
 
-    .line 129
+    .line 135
     :cond_0
     iget-object v1, p0, Lorg/telegram/ui/Components/spoilers/SpoilersTextView;->spoilersPool:Ljava/util/Stack;
 
     invoke-virtual {v1, v0}, Ljava/util/Stack;->addAll(Ljava/util/Collection;)Z
 
-    .line 130
+    .line 136
     iget-object v0, p0, Lorg/telegram/ui/Components/spoilers/SpoilersTextView;->spoilers:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->clear()V
 
-    .line 132
+    .line 138
     iget-boolean v0, p0, Lorg/telegram/ui/Components/spoilers/SpoilersTextView;->isSpoilersRevealed:Z
 
     if-eqz v0, :cond_1
 
-    .line 133
+    .line 139
     invoke-virtual {p0}, Landroid/widget/TextView;->invalidate()V
 
     return-void
 
-    .line 137
+    .line 143
     :cond_1
     invoke-virtual {p0}, Landroid/widget/TextView;->getLayout()Landroid/text/Layout;
 
@@ -151,7 +151,7 @@
 
     if-eqz v0, :cond_2
 
-    .line 138
+    .line 144
     invoke-virtual {p0}, Landroid/widget/TextView;->getText()Ljava/lang/CharSequence;
 
     move-result-object v0
@@ -160,14 +160,14 @@
 
     if-eqz v0, :cond_2
 
-    .line 139
+    .line 145
     iget-object v0, p0, Lorg/telegram/ui/Components/spoilers/SpoilersTextView;->spoilersPool:Ljava/util/Stack;
 
     iget-object v1, p0, Lorg/telegram/ui/Components/spoilers/SpoilersTextView;->spoilers:Ljava/util/List;
 
     invoke-static {p0, v0, v1}, Lorg/telegram/ui/Components/spoilers/SpoilerEffect;->addSpoilers(Landroid/widget/TextView;Ljava/util/Stack;Ljava/util/List;)V
 
-    .line 141
+    .line 147
     :cond_2
     invoke-virtual {p0}, Landroid/widget/TextView;->invalidate()V
 
@@ -310,7 +310,7 @@
 .end method
 
 .method protected onDraw(Landroid/graphics/Canvas;)V
-    .locals 11
+    .locals 10
 
     .line 78
     invoke-virtual {p0}, Landroid/widget/TextView;->getPaddingLeft()I
@@ -474,46 +474,46 @@
 
     const/high16 v2, -0x40800000    # -1.0f
 
-    const/4 v3, 0x1
-
     cmpl-float v0, v0, v2
+
+    const/4 v2, 0x1
 
     if-eqz v0, :cond_2
 
-    const/4 v0, 0x1
+    move v0, v2
 
     goto :goto_1
 
     :cond_2
-    const/4 v0, 0x0
+    move v0, v1
 
     :goto_1
     if-eqz v0, :cond_3
 
-    const/4 v5, 0x0
+    const/4 v4, 0x0
 
-    const/4 v6, 0x0
+    const/4 v5, 0x0
 
     .line 103
     invoke-virtual {p0}, Landroid/widget/TextView;->getMeasuredWidth()I
 
-    move-result v2
+    move-result v3
 
-    int-to-float v7, v2
+    int-to-float v6, v3
 
     invoke-virtual {p0}, Landroid/widget/TextView;->getMeasuredHeight()I
 
-    move-result v2
+    move-result v3
 
-    int-to-float v8, v2
+    int-to-float v7, v3
 
-    const/4 v9, 0x0
+    const/4 v8, 0x0
 
-    const/16 v10, 0x1f
+    const/16 v9, 0x1f
 
-    move-object v4, p1
+    move-object v3, p1
 
-    invoke-virtual/range {v4 .. v10}, Landroid/graphics/Canvas;->saveLayer(FFFFLandroid/graphics/Paint;I)I
+    invoke-virtual/range {v3 .. v9}, Landroid/graphics/Canvas;->saveLayer(FFFFLandroid/graphics/Paint;I)I
 
     goto :goto_2
 
@@ -525,9 +525,9 @@
     :goto_2
     invoke-virtual {p0}, Landroid/widget/TextView;->getPaddingLeft()I
 
-    move-result v2
+    move-result v3
 
-    int-to-float v2, v2
+    int-to-float v3, v3
 
     invoke-virtual {p0}, Landroid/widget/TextView;->getPaddingTop()I
 
@@ -543,23 +543,23 @@
 
     int-to-float v4, v4
 
-    invoke-virtual {p1, v2, v4}, Landroid/graphics/Canvas;->translate(FF)V
+    invoke-virtual {p1, v3, v4}, Landroid/graphics/Canvas;->translate(FF)V
 
     .line 108
-    iget-object v2, p0, Lorg/telegram/ui/Components/spoilers/SpoilersTextView;->spoilers:Ljava/util/List;
+    iget-object v3, p0, Lorg/telegram/ui/Components/spoilers/SpoilersTextView;->spoilers:Ljava/util/List;
 
-    invoke-interface {v2}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+    invoke-interface {v3}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
-    move-result-object v2
+    move-result-object v3
 
     :goto_3
-    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
+    invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v4
 
     if-eqz v4, :cond_4
 
-    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v4
 
@@ -610,7 +610,7 @@
     .line 117
     new-instance v0, Landroid/graphics/Paint;
 
-    invoke-direct {v0, v3}, Landroid/graphics/Paint;-><init>(I)V
+    invoke-direct {v0, v2}, Landroid/graphics/Paint;-><init>(I)V
 
     iput-object v0, p0, Lorg/telegram/ui/Components/spoilers/SpoilersTextView;->xRefPaint:Landroid/graphics/Paint;
 
@@ -643,6 +643,18 @@
     invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
 
     :cond_7
+    return-void
+.end method
+
+.method protected onLayout(ZIIII)V
+    .locals 0
+
+    .line 129
+    invoke-super/range {p0 .. p5}, Landroid/widget/TextView;->onLayout(ZIIII)V
+
+    .line 130
+    invoke-direct {p0}, Lorg/telegram/ui/Components/spoilers/SpoilersTextView;->invalidateSpoilers()V
+
     return-void
 .end method
 

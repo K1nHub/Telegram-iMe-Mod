@@ -17,7 +17,7 @@ import kotlin.jvm.internal.Intrinsics;
 import kotlin.ranges.RangesKt___RangesKt;
 import kotlin.text.StringsKt__StringsJVMKt;
 import moxy.InjectViewState;
-import org.telegram.messenger.C3286R;
+import org.telegram.messenger.C3301R;
 /* compiled from: TwitterAuthPresenter.kt */
 @InjectViewState
 /* renamed from: com.smedialink.ui.twitter.auth.TwitterAuthPresenter */
@@ -79,7 +79,7 @@ public final class TwitterAuthPresenter extends BasePresenter<TwitterAuthView> {
             }
             ((TwitterAuthView) getViewState()).onAuthResult(failure);
         }
-        failure = new TwitterAuthResult.Failure(this.resourceManager.getString(C3286R.string.common_error_unexpected));
+        failure = new TwitterAuthResult.Failure(this.resourceManager.getString(C3301R.string.common_error_unexpected));
         if (failure instanceof TwitterAuthResult.Failure) {
             failure = TwitterAuthResult.Cancelled.INSTANCE;
         }

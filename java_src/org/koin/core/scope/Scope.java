@@ -26,7 +26,7 @@ public final class Scope {
     private Object _source;
 
     /* renamed from: id */
-    private final String f1420id;
+    private final String f1421id;
     private final boolean isRoot;
     private final ArrayList<Scope> linkedScopes;
     private final Qualifier scopeQualifier;
@@ -37,14 +37,14 @@ public final class Scope {
         }
         if (obj instanceof Scope) {
             Scope scope = (Scope) obj;
-            return Intrinsics.areEqual(this.scopeQualifier, scope.scopeQualifier) && Intrinsics.areEqual(this.f1420id, scope.f1420id) && this.isRoot == scope.isRoot && Intrinsics.areEqual(this._koin, scope._koin);
+            return Intrinsics.areEqual(this.scopeQualifier, scope.scopeQualifier) && Intrinsics.areEqual(this.f1421id, scope.f1421id) && this.isRoot == scope.isRoot && Intrinsics.areEqual(this._koin, scope._koin);
         }
         return false;
     }
 
     /* JADX WARN: Multi-variable type inference failed */
     public int hashCode() {
-        int hashCode = ((this.scopeQualifier.hashCode() * 31) + this.f1420id.hashCode()) * 31;
+        int hashCode = ((this.scopeQualifier.hashCode() * 31) + this.f1421id.hashCode()) * 31;
         boolean z = this.isRoot;
         int i = z;
         if (z != 0) {
@@ -58,7 +58,7 @@ public final class Scope {
     }
 
     public final String getId() {
-        return this.f1420id;
+        return this.f1421id;
     }
 
     public Scope(Qualifier scopeQualifier, String id, boolean z, Koin _koin) {
@@ -66,7 +66,7 @@ public final class Scope {
         Intrinsics.checkNotNullParameter(id, "id");
         Intrinsics.checkNotNullParameter(_koin, "_koin");
         this.scopeQualifier = scopeQualifier;
-        this.f1420id = id;
+        this.f1421id = id;
         this.isRoot = z;
         this._koin = _koin;
         this.linkedScopes = new ArrayList<>();
@@ -164,7 +164,7 @@ public final class Scope {
     /* JADX INFO: Access modifiers changed from: private */
     public final <T> T resolveInstance(Qualifier qualifier, KClass<?> kClass, Function0<? extends ParametersHolder> function0) {
         if (this._closed) {
-            throw new ClosedScopeException("Scope '" + this.f1420id + "' is closed");
+            throw new ClosedScopeException("Scope '" + this.f1421id + "' is closed");
         }
         ParametersHolder invoke = function0 != null ? function0.invoke() : null;
         if (invoke != null) {
@@ -264,6 +264,6 @@ public final class Scope {
     }
 
     public String toString() {
-        return "['" + this.f1420id + "']";
+        return "['" + this.f1421id + "']";
     }
 }

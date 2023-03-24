@@ -1554,7 +1554,7 @@
     :goto_5
     const/4 v2, -0x8
 
-    const/16 v24, -0x8
+    move/from16 v24, v2
 
     :goto_6
     const/16 v25, 0x0
@@ -2213,20 +2213,20 @@
 .end method
 
 .method private getValidGroupedMessage(Lorg/telegram/messenger/MessageObject;Z)Lorg/telegram/messenger/MessageObject$GroupedMessages;
-    .locals 6
+    .locals 4
 
     .line 1364
     invoke-virtual {p1, p2}, Lorg/telegram/messenger/MessageObject;->getGroupId(Z)J
 
     move-result-wide v0
 
-    const/4 v2, 0x0
+    const-wide/16 v2, 0x0
 
-    const-wide/16 v3, 0x0
+    cmp-long v0, v0, v2
 
-    cmp-long v5, v0, v3
+    const/4 v1, 0x0
 
-    if-eqz v5, :cond_1
+    if-eqz v0, :cond_1
 
     .line 1365
     iget-object v0, p0, Lorg/telegram/ui/Components/ForwardingPreviewView;->forwardingMessagesParams:Lorg/telegram/messenger/ForwardingMessagesParams;
@@ -2235,9 +2235,9 @@
 
     invoke-virtual {p1, p2}, Lorg/telegram/messenger/MessageObject;->getGroupId(Z)J
 
-    move-result-wide v3
+    move-result-wide v2
 
-    invoke-virtual {v0, v3, v4}, Landroid/util/LongSparseArray;->get(J)Ljava/lang/Object;
+    invoke-virtual {v0, v2, v3}, Landroid/util/LongSparseArray;->get(J)Ljava/lang/Object;
 
     move-result-object p2
 
@@ -2252,9 +2252,9 @@
 
     move-result v0
 
-    const/4 v1, 0x1
+    const/4 v2, 0x1
 
-    if-le v0, v1, :cond_1
+    if-le v0, v2, :cond_1
 
     iget-object v0, p2, Lorg/telegram/messenger/MessageObject$GroupedMessages;->positions:Ljava/util/HashMap;
 
@@ -2267,11 +2267,11 @@
     goto :goto_0
 
     :cond_0
-    move-object v2, p2
+    move-object v1, p2
 
     :cond_1
     :goto_0
-    return-object v2
+    return-object v1
 .end method
 
 .method private synthetic lambda$new$0()V
@@ -2974,14 +2974,14 @@
 
     sub-float/2addr v0, p3
 
-    mul-float p1, p1, v0
+    mul-float/2addr p1, v0
 
     .line 1272
     iget v1, p0, Lorg/telegram/ui/Components/ForwardingPreviewView;->chatTopOffset:I
 
     int-to-float v1, v1
 
-    mul-float v1, v1, p3
+    mul-float/2addr v1, p3
 
     add-float/2addr p1, v1
 
@@ -2989,12 +2989,12 @@
 
     iput p1, p0, Lorg/telegram/ui/Components/ForwardingPreviewView;->currentTopOffset:I
 
-    mul-float p2, p2, v0
+    mul-float/2addr p2, v0
 
     .line 1273
     iget v0, p0, Lorg/telegram/ui/Components/ForwardingPreviewView;->yOffset:F
 
-    mul-float v0, v0, p3
+    mul-float/2addr v0, p3
 
     add-float/2addr p2, v0
 
@@ -3127,9 +3127,9 @@
     :cond_0
     const/4 v0, 0x0
 
-    const/4 v2, 0x0
+    move v2, v0
 
-    const/4 v3, 0x0
+    move v3, v2
 
     .line 1081
     :goto_0
@@ -3266,12 +3266,12 @@
 
     if-nez v5, :cond_5
 
-    const/4 v5, 0x1
+    move v5, v1
 
     goto :goto_3
 
     :cond_5
-    const/4 v5, 0x0
+    move v5, v0
 
     .line 1107
     :goto_3
@@ -3374,7 +3374,7 @@
     invoke-virtual {v3, v6, v1}, Landroid/util/SparseBooleanArray;->put(IZ)V
 
     :goto_5
-    const/4 v3, 0x1
+    move v3, v1
 
     goto :goto_4
 
@@ -3438,7 +3438,7 @@
 
     if-eqz v6, :cond_b
 
-    const/4 v4, 0x0
+    move v4, v0
 
     goto :goto_7
 
@@ -3454,7 +3454,7 @@
     goto/16 :goto_0
 
     :cond_d
-    const/4 v2, 0x0
+    move v2, v0
 
     .line 1134
     :goto_8
@@ -3492,7 +3492,7 @@
     goto :goto_8
 
     :cond_e
-    const/4 v1, 0x0
+    move v1, v0
 
     .line 1137
     :goto_9
@@ -4573,12 +4573,12 @@
 
     if-le v0, v1, :cond_0
 
-    const/4 v0, 0x1
+    move v0, v2
 
     goto :goto_0
 
     :cond_0
-    const/4 v0, 0x0
+    move v0, v3
 
     :goto_0
     iput-boolean v0, p0, Lorg/telegram/ui/Components/ForwardingPreviewView;->isLandscapeMode:Z
@@ -4602,14 +4602,14 @@
 
     const v1, 0x3ec28f5c    # 0.38f
 
-    mul-float v0, v0, v1
+    mul-float/2addr v0, v1
 
     float-to-int v0, v0
 
     :cond_1
-    const/4 v1, 0x0
+    move v1, v3
 
-    const/4 v4, 0x0
+    move v4, v1
 
     .line 1161
     :goto_1
@@ -4855,7 +4855,7 @@
 
     const v7, 0x3f19999a    # 0.6f
 
-    mul-float v6, v6, v7
+    mul-float/2addr v6, v7
 
     invoke-static {v5, v6}, Ljava/lang/Math;->max(FF)F
 
@@ -4959,7 +4959,7 @@
 
     const/high16 v5, 0x3f000000    # 0.5f
 
-    mul-float v4, v4, v5
+    mul-float/2addr v4, v5
 
     cmpg-float v0, v0, v4
 
@@ -4978,7 +4978,7 @@
 
     int-to-float v4, v4
 
-    mul-float v4, v4, v5
+    mul-float/2addr v4, v5
 
     float-to-int v4, v4
 

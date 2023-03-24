@@ -322,8 +322,8 @@ public final class zzih extends zzif {
             return r0
         L6b:
             long r0 = r5.zzs()
-            int r1 = (int) r0
-            return r1
+            int r0 = (int) r0
+            return r0
         */
         throw new UnsupportedOperationException("Method not decompiled: com.google.android.gms.internal.vision.zzih.zzv():int");
     }

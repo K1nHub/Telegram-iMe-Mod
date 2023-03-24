@@ -151,19 +151,19 @@
 .end method
 
 .method public setDurationUs(J)Lcom/google/android/exoplayer2/SimpleBasePlayer$PeriodData$Builder;
-    .locals 3
+    .locals 2
 
     const-wide v0, -0x7fffffffffffffffL    # -4.9E-324
 
-    cmp-long v2, p1, v0
+    cmp-long v0, p1, v0
 
-    if-eqz v2, :cond_1
+    if-eqz v0, :cond_1
 
     const-wide/16 v0, 0x0
 
-    cmp-long v2, p1, v0
+    cmp-long v0, p1, v0
 
-    if-ltz v2, :cond_0
+    if-ltz v0, :cond_0
 
     goto :goto_0
 

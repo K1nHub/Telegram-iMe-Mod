@@ -45,7 +45,7 @@
 
     const-wide/16 v2, 0x2
 
-    mul-long v0, v0, v2
+    mul-long/2addr v0, v2
 
     array-length p1, p3
 
@@ -53,7 +53,7 @@
 
     const-wide/16 v4, 0x3
 
-    mul-long v2, v2, v4
+    mul-long/2addr v2, v4
 
     cmp-long p1, v0, v2
 

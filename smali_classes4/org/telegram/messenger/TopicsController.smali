@@ -830,7 +830,7 @@
 
     if-nez p3, :cond_0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     goto :goto_0
 
@@ -1059,7 +1059,7 @@
 
     if-nez v1, :cond_0
 
-    const/4 v4, 0x0
+    move v4, v13
 
     goto :goto_0
 
@@ -1243,7 +1243,7 @@
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     .line 837
     :goto_0
@@ -1297,7 +1297,7 @@
 
     if-eqz v7, :cond_2
 
-    const/4 v8, 0x0
+    move v8, v1
 
     .line 846
     :goto_1
@@ -1567,9 +1567,9 @@
 
     const/4 v2, 0x0
 
-    move-object v4, v2
+    move v3, v1
 
-    const/4 v3, 0x0
+    move-object v4, v2
 
     .line 775
     :goto_0
@@ -2127,7 +2127,7 @@
     goto :goto_0
 
     :cond_0
-    const/4 v2, 0x1
+    move v2, v3
 
     :goto_0
     return v2
@@ -2145,7 +2145,7 @@
     goto :goto_1
 
     :cond_2
-    const/4 v2, 0x1
+    move v2, v3
 
     :goto_1
     return v2
@@ -2177,7 +2177,7 @@
     goto :goto_2
 
     :cond_5
-    const/4 p1, 0x0
+    move p1, v0
 
     :goto_2
     iget-object p0, p0, Lorg/telegram/tgnet/TLRPC$TL_forumTopic;->topMessage:Lorg/telegram/tgnet/TLRPC$Message;
@@ -2372,7 +2372,7 @@
 
     move-object v3, v0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     .line 325
     :goto_0
@@ -2641,7 +2641,7 @@
 
     if-eqz v5, :cond_4
 
-    const/4 v0, 0x0
+    move v0, v10
 
     .line 289
     :goto_1
@@ -2772,7 +2772,7 @@
     goto :goto_1
 
     :cond_3
-    const/4 v0, 0x0
+    move v0, v10
 
     .line 309
     :goto_2
@@ -2996,9 +2996,9 @@
 
     const/4 v2, 0x0
 
-    const/4 v3, 0x0
+    move v3, v2
 
-    const/4 v4, 0x0
+    move v4, v3
 
     .line 589
     :goto_0
@@ -3033,12 +3033,12 @@
 
     if-ltz v6, :cond_2
 
-    const/4 v7, 0x1
+    move v7, v1
 
     goto :goto_1
 
     :cond_2
-    const/4 v7, 0x0
+    move v7, v2
 
     .line 596
     :goto_1
@@ -3068,7 +3068,7 @@
 
     invoke-virtual {v4, p1, p2, v5, v6}, Lorg/telegram/messenger/MessagesStorage;->updateTopicData(JLorg/telegram/tgnet/TLRPC$TL_forumTopic;I)V
 
-    const/4 v4, 0x1
+    move v4, v1
 
     :cond_4
     :goto_2
@@ -3154,7 +3154,7 @@
 
     if-eqz v0, :cond_2
 
-    const/4 v3, 0x0
+    move v3, v2
 
     .line 496
     :goto_0
@@ -3213,7 +3213,7 @@
     invoke-direct {p0, p1, p2}, Lorg/telegram/messenger/TopicsController;->sortTopics(J)V
 
     :cond_2
-    const/4 v0, 0x0
+    move v0, v2
 
     .line 507
     :goto_1
@@ -3260,7 +3260,7 @@
 
     if-ne p1, p2, :cond_0
 
-    const/4 v1, 0x1
+    move v1, p2
 
     :cond_0
     return v1
@@ -3387,7 +3387,7 @@
 
     if-eqz v0, :cond_4
 
-    const/4 v1, 0x0
+    move v1, v2
 
     .line 451
     :goto_0
@@ -3415,12 +3415,12 @@
 
     if-lez v6, :cond_0
 
-    const/4 v6, 0x1
+    move v6, v7
 
     goto :goto_1
 
     :cond_0
-    const/4 v6, 0x0
+    move v6, v2
 
     :goto_1
     add-int/2addr v5, v6
@@ -3434,12 +3434,12 @@
 
     if-lez v6, :cond_1
 
-    const/4 v6, 0x1
+    move v6, v7
 
     goto :goto_2
 
     :cond_1
-    const/4 v6, 0x0
+    move v6, v2
 
     :goto_2
     add-int/2addr v5, v6
@@ -3458,7 +3458,7 @@
     goto :goto_3
 
     :cond_2
-    const/4 v7, 0x0
+    move v7, v2
 
     :goto_3
     add-int/2addr v6, v7
@@ -3753,7 +3753,7 @@
     if-eqz p1, :cond_1
 
     :cond_0
-    const/4 v1, 0x1
+    move v1, v2
 
     :cond_1
     return v1
@@ -4372,7 +4372,7 @@
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     .line 954
     :goto_0
@@ -4389,7 +4389,7 @@
 
     check-cast v3, Ljava/util/ArrayList;
 
-    const/4 v4, 0x0
+    move v4, v1
 
     .line 956
     :goto_1
@@ -5650,7 +5650,7 @@
 .end method
 
 .method public updateTopicsWithDeletedMessages(JLjava/util/ArrayList;)V
-    .locals 10
+    .locals 8
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(J",
@@ -5662,27 +5662,27 @@
 
     const-wide/16 v0, 0x0
 
-    cmp-long v2, p1, v0
+    cmp-long v0, p1, v0
 
-    if-lez v2, :cond_0
+    if-lez v0, :cond_0
 
     return-void
 
     :cond_0
-    neg-long v8, p1
+    neg-long v6, p1
 
     .line 269
     new-instance v0, Lorg/telegram/messenger/TopicsController$$ExternalSyntheticLambda7;
 
-    move-object v3, v0
+    move-object v1, v0
 
-    move-object v4, p0
+    move-object v2, p0
 
-    move-wide v5, p1
+    move-wide v3, p1
 
-    move-object v7, p3
+    move-object v5, p3
 
-    invoke-direct/range {v3 .. v9}, Lorg/telegram/messenger/TopicsController$$ExternalSyntheticLambda7;-><init>(Lorg/telegram/messenger/TopicsController;JLjava/util/ArrayList;J)V
+    invoke-direct/range {v1 .. v7}, Lorg/telegram/messenger/TopicsController$$ExternalSyntheticLambda7;-><init>(Lorg/telegram/messenger/TopicsController;JLjava/util/ArrayList;J)V
 
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->runOnUIThread(Ljava/lang/Runnable;)V
 

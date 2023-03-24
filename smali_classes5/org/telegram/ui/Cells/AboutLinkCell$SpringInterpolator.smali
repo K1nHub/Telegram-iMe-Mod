@@ -57,7 +57,7 @@
 
     const v1, 0x358637bd    # 1.0E-6f
 
-    mul-float v0, v0, v1
+    mul-float/2addr v0, v1
 
     iget v1, p0, Lorg/telegram/ui/Cells/AboutLinkCell$SpringInterpolator;->position:F
 
@@ -65,7 +65,7 @@
 
     sub-float v3, v1, v2
 
-    mul-float v0, v0, v3
+    mul-float/2addr v0, v3
 
     iget v3, p0, Lorg/telegram/ui/Cells/AboutLinkCell$SpringInterpolator;->friction:F
 
@@ -73,24 +73,24 @@
 
     const v4, 0x3a83126f    # 0.001f
 
-    mul-float v3, v3, v4
+    mul-float/2addr v3, v4
 
     iget v4, p0, Lorg/telegram/ui/Cells/AboutLinkCell$SpringInterpolator;->velocity:F
 
-    mul-float v3, v3, v4
+    mul-float/2addr v3, v4
 
     add-float/2addr v0, v3
 
     div-float/2addr v0, v2
 
-    mul-float v0, v0, p1
+    mul-float/2addr v0, p1
 
     add-float/2addr v4, v0
 
     .line 615
     iput v4, p0, Lorg/telegram/ui/Cells/AboutLinkCell$SpringInterpolator;->velocity:F
 
-    mul-float v4, v4, p1
+    mul-float/2addr v4, p1
 
     add-float/2addr v1, v4
 

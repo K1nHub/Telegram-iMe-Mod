@@ -730,8 +730,8 @@ public final class ForkTopicsController extends BaseController implements KoinCo
         coerceAtLeast = RangesKt___RangesKt.coerceAtLeast(mapCapacity, 16);
         LinkedHashMap linkedHashMap = new LinkedHashMap(coerceAtLeast);
         for (TopicDb topicDb : newTopics) {
-            Pair m100to = TuplesKt.m100to(Long.valueOf(topicDb.getTopicId()), TopicMappingKt.mapToDomain(topicDb));
-            linkedHashMap.put(m100to.getFirst(), m100to.getSecond());
+            Pair m99to = TuplesKt.m99to(Long.valueOf(topicDb.getTopicId()), TopicMappingKt.mapToDomain(topicDb));
+            linkedHashMap.put(m99to.getFirst(), m99to.getSecond());
         }
         mutableMap = MapsKt__MapsKt.toMutableMap(linkedHashMap);
         this.topics = mutableMap;

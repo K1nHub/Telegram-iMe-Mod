@@ -78,7 +78,7 @@
 
     const v1, 0x3e4ccccd    # 0.2f
 
-    mul-float v0, v0, v1
+    mul-float/2addr v0, v1
 
     const/high16 v1, 0x42480000    # 50.0f
 
@@ -113,7 +113,7 @@
 
     const v2, 0x3fa66666    # 1.3f
 
-    mul-float v2, v2, v1
+    mul-float/2addr v2, v1
 
     .line 3079
     iput v2, p0, Lorg/telegram/ui/GroupCallActivity$8;->gradientWidth:F
@@ -204,8 +204,6 @@
     :cond_0
     return p1
 
-    nop
-
     :array_0
     .array-data 4
         0x0
@@ -216,7 +214,7 @@
 .end method
 
 .method protected onDraw(Landroid/graphics/Canvas;)V
-    .locals 8
+    .locals 7
 
     .line 3090
     iget-object v0, p0, Lorg/telegram/ui/GroupCallActivity$8;->linearGradient:Landroid/graphics/LinearGradient;
@@ -253,7 +251,7 @@
 
     const-wide/16 v5, 0x3e8
 
-    mul-long v3, v3, v5
+    mul-long/2addr v3, v5
 
     invoke-static {v0}, Lorg/telegram/ui/GroupCallActivity;->access$200(Lorg/telegram/ui/GroupCallActivity;)Lorg/telegram/messenger/AccountInstance;
 
@@ -295,7 +293,7 @@
     goto :goto_0
 
     :cond_1
-    const/4 v1, 0x0
+    move v1, v2
 
     .line 3099
     :goto_0
@@ -314,9 +312,9 @@
 
     const v4, 0x3f333333    # 0.7f
 
-    mul-float v3, v3, v4
+    mul-float/2addr v3, v4
 
-    mul-float v3, v3, v1
+    mul-float/2addr v3, v1
 
     invoke-virtual {v0, v3, v2}, Landroid/graphics/Matrix;->postTranslate(FF)Z
 
@@ -332,9 +330,9 @@
 
     const-wide/16 v5, 0x14
 
-    cmp-long v7, v3, v5
+    cmp-long v5, v3, v5
 
-    if-lez v7, :cond_2
+    if-lez v5, :cond_2
 
     const-wide/16 v3, 0x11
 
@@ -407,15 +405,15 @@
 
     add-float/2addr v4, v3
 
-    mul-float v4, v4, v1
+    mul-float/2addr v4, v1
 
     sget v3, Lorg/telegram/ui/Components/BlobDrawable;->GRADIENT_SPEED_MAX:F
 
     const/high16 v5, 0x40000000    # 2.0f
 
-    mul-float v3, v3, v5
+    mul-float/2addr v3, v5
 
-    mul-float v1, v1, v3
+    mul-float/2addr v1, v3
 
     iget-object v3, p0, Lorg/telegram/ui/GroupCallActivity$8;->this$0:Lorg/telegram/ui/GroupCallActivity;
 
@@ -423,7 +421,7 @@
 
     move-result v3
 
-    mul-float v1, v1, v3
+    mul-float/2addr v1, v3
 
     add-float/2addr v4, v1
 
@@ -462,11 +460,11 @@
 
     sub-float/2addr v4, v3
 
-    mul-float v4, v4, v0
+    mul-float/2addr v4, v0
 
     add-float/2addr v3, v4
 
-    mul-float v3, v3, v1
+    mul-float/2addr v3, v1
 
     div-float/2addr v1, v5
 

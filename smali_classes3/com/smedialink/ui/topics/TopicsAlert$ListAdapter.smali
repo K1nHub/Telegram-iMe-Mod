@@ -114,7 +114,7 @@
 .end method
 
 .method public onBindViewHolder(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;I)V
-    .locals 6
+    .locals 5
 
     const-string v0, "holder"
 
@@ -258,9 +258,9 @@
 
     const-wide/16 v3, -0x1
 
-    cmp-long v5, v1, v3
+    cmp-long v1, v1, v3
 
-    if-eqz v5, :cond_4
+    if-eqz v1, :cond_4
 
     invoke-virtual {p2}, Lcom/smedialink/storage/domain/model/topics/TopicModel;->getTopicId()J
 

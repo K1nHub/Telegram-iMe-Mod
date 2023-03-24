@@ -30,14 +30,14 @@
 .method constructor <init>(Lcom/smedialink/ui/wallet/home/v2/details/WalletTokenDetailsView$$State;Lcom/smedialink/navigation/wallet/coordinator/args/TokenBuyCoordinatorArgs;)V
     .locals 1
 
-    .line 812
+    .line 828
     const-class p1, Lmoxy/viewstate/strategy/OneExecutionStateStrategy;
 
     const-string v0, "openBuyScreen"
 
     invoke-direct {p0, v0, p1}, Lmoxy/viewstate/ViewCommand;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
 
-    .line 814
+    .line 830
     iput-object p2, p0, Lcom/smedialink/ui/wallet/home/v2/details/WalletTokenDetailsView$$State$OpenBuyScreenCommand;->args:Lcom/smedialink/navigation/wallet/coordinator/args/TokenBuyCoordinatorArgs;
 
     return-void
@@ -48,7 +48,7 @@
 .method public apply(Lcom/smedialink/ui/wallet/home/v2/details/WalletTokenDetailsView;)V
     .locals 1
 
-    .line 819
+    .line 835
     iget-object v0, p0, Lcom/smedialink/ui/wallet/home/v2/details/WalletTokenDetailsView$$State$OpenBuyScreenCommand;->args:Lcom/smedialink/navigation/wallet/coordinator/args/TokenBuyCoordinatorArgs;
 
     invoke-interface {p1, v0}, Lcom/smedialink/ui/wallet/home/v2/details/WalletTokenDetailsView;->openBuyScreen(Lcom/smedialink/navigation/wallet/coordinator/args/TokenBuyCoordinatorArgs;)V
@@ -59,7 +59,7 @@
 .method public bridge synthetic apply(Lmoxy/MvpView;)V
     .locals 0
 
-    .line 808
+    .line 824
     check-cast p1, Lcom/smedialink/ui/wallet/home/v2/details/WalletTokenDetailsView;
 
     invoke-virtual {p0, p1}, Lcom/smedialink/ui/wallet/home/v2/details/WalletTokenDetailsView$$State$OpenBuyScreenCommand;->apply(Lcom/smedialink/ui/wallet/home/v2/details/WalletTokenDetailsView;)V

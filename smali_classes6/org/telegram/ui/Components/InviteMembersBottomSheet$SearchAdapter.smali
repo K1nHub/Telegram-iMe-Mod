@@ -262,12 +262,12 @@
 
     if-eqz v2, :cond_3
 
-    const/4 v6, 0x1
+    move v6, v5
 
     goto :goto_0
 
     :cond_3
-    const/4 v6, 0x0
+    move v6, v3
 
     :goto_0
     add-int/2addr v6, v5
@@ -294,7 +294,7 @@
 
     invoke-direct {v2}, Ljava/util/ArrayList;-><init>()V
 
-    const/4 v8, 0x0
+    move v8, v3
 
     .line 944
     :goto_1
@@ -387,9 +387,9 @@
     const/4 v13, 0x0
 
     :cond_6
-    const/4 v14, 0x0
+    move v14, v3
 
-    const/4 v15, 0x0
+    move v15, v14
 
     :goto_3
     if-ge v14, v6, :cond_d
@@ -571,23 +571,23 @@
 
     add-int/lit8 v14, v14, 0x1
 
-    const/4 v3, 0x0
+    move v5, v4
 
-    const/4 v5, 0x1
+    const/4 v3, 0x0
 
     goto/16 :goto_3
 
     :cond_d
-    const/4 v3, 0x0
+    move v4, v5
 
-    const/4 v4, 0x1
+    const/4 v3, 0x0
 
     :goto_8
     add-int/lit8 v8, v8, 0x1
 
-    const/4 v3, 0x0
+    move v5, v4
 
-    const/4 v5, 0x1
+    const/4 v3, 0x0
 
     goto/16 :goto_1
 
@@ -616,12 +616,12 @@
 
     if-eqz v1, :cond_0
 
-    const/4 v4, 0x1
+    move v4, v2
 
     goto :goto_0
 
     :cond_0
-    const/4 v4, 0x0
+    move v4, v3
 
     :goto_0
     const/4 v5, 0x1
@@ -634,12 +634,12 @@
 
     if-eqz v1, :cond_1
 
-    const/4 v6, 0x1
+    move v6, v2
 
     goto :goto_1
 
     :cond_1
-    const/4 v6, 0x0
+    move v6, v3
 
     :goto_1
     const/4 v7, 0x0
@@ -1341,12 +1341,12 @@
 
     if-nez p2, :cond_10
 
-    const/4 p2, 0x1
+    move p2, v1
 
     goto :goto_6
 
     :cond_10
-    const/4 p2, 0x0
+    move p2, v0
 
     .line 850
     :goto_6
@@ -1371,19 +1371,19 @@
 
     if-ltz p2, :cond_12
 
-    const/4 p2, 0x1
+    move p2, v1
 
     goto :goto_7
 
     :cond_12
-    const/4 p2, 0x0
+    move p2, v0
 
     :goto_7
     cmp-long v2, v3, v8
 
     if-nez v2, :cond_13
 
-    const/4 v0, 0x1
+    move v0, v1
 
     :cond_13
     invoke-virtual {p1, p2, v0}, Lorg/telegram/ui/Cells/GroupCreateUserCell;->setChecked(ZZ)V

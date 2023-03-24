@@ -6,15 +6,19 @@ import kotlin.jvm.internal.Intrinsics;
 public final class AccountInfo {
     private final Address ethAddress;
     private final Address tonAddress;
+    private final Address tronAddress;
 
-    public static /* synthetic */ AccountInfo copy$default(AccountInfo accountInfo, Address address, Address address2, int i, Object obj) {
+    public static /* synthetic */ AccountInfo copy$default(AccountInfo accountInfo, Address address, Address address2, Address address3, int i, Object obj) {
         if ((i & 1) != 0) {
             address = accountInfo.ethAddress;
         }
         if ((i & 2) != 0) {
             address2 = accountInfo.tonAddress;
         }
-        return accountInfo.copy(address, address2);
+        if ((i & 4) != 0) {
+            address3 = accountInfo.tronAddress;
+        }
+        return accountInfo.copy(address, address2, address3);
     }
 
     public final Address component1() {
@@ -25,10 +29,15 @@ public final class AccountInfo {
         return this.tonAddress;
     }
 
-    public final AccountInfo copy(Address ethAddress, Address tonAddress) {
+    public final Address component3() {
+        return this.tronAddress;
+    }
+
+    public final AccountInfo copy(Address ethAddress, Address tonAddress, Address tronAddress) {
         Intrinsics.checkNotNullParameter(ethAddress, "ethAddress");
         Intrinsics.checkNotNullParameter(tonAddress, "tonAddress");
-        return new AccountInfo(ethAddress, tonAddress);
+        Intrinsics.checkNotNullParameter(tronAddress, "tronAddress");
+        return new AccountInfo(ethAddress, tonAddress, tronAddress);
     }
 
     public boolean equals(Object obj) {
@@ -37,24 +46,26 @@ public final class AccountInfo {
         }
         if (obj instanceof AccountInfo) {
             AccountInfo accountInfo = (AccountInfo) obj;
-            return Intrinsics.areEqual(this.ethAddress, accountInfo.ethAddress) && Intrinsics.areEqual(this.tonAddress, accountInfo.tonAddress);
+            return Intrinsics.areEqual(this.ethAddress, accountInfo.ethAddress) && Intrinsics.areEqual(this.tonAddress, accountInfo.tonAddress) && Intrinsics.areEqual(this.tronAddress, accountInfo.tronAddress);
         }
         return false;
     }
 
     public int hashCode() {
-        return (this.ethAddress.hashCode() * 31) + this.tonAddress.hashCode();
+        return (((this.ethAddress.hashCode() * 31) + this.tonAddress.hashCode()) * 31) + this.tronAddress.hashCode();
     }
 
     public String toString() {
-        return "AccountInfo(ethAddress=" + this.ethAddress + ", tonAddress=" + this.tonAddress + ')';
+        return "AccountInfo(ethAddress=" + this.ethAddress + ", tonAddress=" + this.tonAddress + ", tronAddress=" + this.tronAddress + ')';
     }
 
-    public AccountInfo(Address ethAddress, Address tonAddress) {
+    public AccountInfo(Address ethAddress, Address tonAddress, Address tronAddress) {
         Intrinsics.checkNotNullParameter(ethAddress, "ethAddress");
         Intrinsics.checkNotNullParameter(tonAddress, "tonAddress");
+        Intrinsics.checkNotNullParameter(tronAddress, "tronAddress");
         this.ethAddress = ethAddress;
         this.tonAddress = tonAddress;
+        this.tronAddress = tronAddress;
     }
 
     public final Address getEthAddress() {
@@ -63,6 +74,10 @@ public final class AccountInfo {
 
     public final Address getTonAddress() {
         return this.tonAddress;
+    }
+
+    public final Address getTronAddress() {
+        return this.tronAddress;
     }
 
     /* compiled from: AccountInfo.kt */

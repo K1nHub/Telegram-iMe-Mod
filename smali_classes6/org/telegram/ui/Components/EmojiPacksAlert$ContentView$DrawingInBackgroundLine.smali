@@ -94,13 +94,13 @@
     goto :goto_0
 
     :cond_1
-    const/4 v0, 0x0
+    move v0, v2
 
     goto :goto_1
 
     :cond_2
     :goto_0
-    const/4 v0, 0x1
+    move v0, v3
 
     :goto_1
     if-nez v0, :cond_4
@@ -322,14 +322,14 @@
 
     const/high16 v3, 0x437f0000    # 255.0f
 
-    mul-float v3, v3, p2
+    mul-float/2addr v3, p2
 
     .line 814
     invoke-virtual {v1}, Landroid/view/View;->getAlpha()F
 
     move-result v4
 
-    mul-float v3, v3, v4
+    mul-float/2addr v3, v4
 
     float-to-int v3, v3
 
@@ -410,28 +410,28 @@
 
     const/4 v8, 0x0
 
-    const/high16 v9, 0x3f800000    # 1.0f
-
     cmpl-float v7, v7, v8
+
+    const/high16 v8, 0x3f800000    # 1.0f
 
     if-eqz v7, :cond_2
 
     const v7, 0x3f4ccccd    # 0.8f
 
-    const v8, 0x3e4ccccd    # 0.2f
+    const v9, 0x3e4ccccd    # 0.2f
 
     .line 821
     invoke-static {v1}, Lorg/telegram/ui/Components/EmojiPacksAlert$EmojiImageView;->access$3400(Lorg/telegram/ui/Components/EmojiPacksAlert$EmojiImageView;)F
 
     move-result v10
 
-    sub-float v10, v9, v10
+    sub-float v10, v8, v10
 
-    mul-float v10, v10, v8
+    mul-float/2addr v10, v9
 
     add-float/2addr v10, v7
 
-    mul-float v9, v9, v10
+    mul-float/2addr v8, v10
 
     .line 824
     :cond_2
@@ -439,9 +439,9 @@
 
     move-result v7
 
-    mul-float v7, v7, v3
+    mul-float/2addr v7, v3
 
-    mul-float v7, v7, v9
+    mul-float/2addr v7, v8
 
     sub-float v7, v6, v7
 
@@ -450,24 +450,24 @@
     .line 825
     invoke-virtual {v1}, Landroid/view/View;->getScaleY()F
 
-    move-result v8
+    move-result v9
 
-    mul-float v8, v8, v5
+    mul-float/2addr v9, v5
 
-    mul-float v8, v8, v9
+    mul-float/2addr v9, v8
 
-    sub-float v8, v4, v8
+    sub-float v9, v4, v9
 
-    float-to-int v8, v8
+    float-to-int v9, v9
 
     .line 826
     invoke-virtual {v1}, Landroid/view/View;->getScaleX()F
 
     move-result v10
 
-    mul-float v3, v3, v10
+    mul-float/2addr v3, v10
 
-    mul-float v3, v3, v9
+    mul-float/2addr v3, v8
 
     add-float/2addr v6, v3
 
@@ -478,16 +478,16 @@
 
     move-result v1
 
-    mul-float v5, v5, v1
+    mul-float/2addr v5, v1
 
-    mul-float v5, v5, v9
+    mul-float/2addr v5, v8
 
     add-float/2addr v4, v5
 
     float-to-int v1, v4
 
     .line 823
-    invoke-virtual {v2, v7, v8, v3, v1}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
+    invoke-virtual {v2, v7, v9, v3, v1}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
 
     .line 829
     invoke-virtual {v2, p1}, Lorg/telegram/ui/Components/AnimatedEmojiDrawable;->draw(Landroid/graphics/Canvas;)V

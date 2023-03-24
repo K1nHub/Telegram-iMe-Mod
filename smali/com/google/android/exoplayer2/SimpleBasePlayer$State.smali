@@ -149,13 +149,13 @@
     goto :goto_0
 
     :cond_0
-    const/4 v0, 0x0
+    move v0, v2
 
     goto :goto_1
 
     :cond_1
     :goto_0
-    const/4 v0, 0x1
+    move v0, v4
 
     :goto_1
     const-string v5, "Empty playlist only allowed in STATE_IDLE or STATE_ENDED"
@@ -177,12 +177,12 @@
 
     if-ne v0, v3, :cond_2
 
-    const/4 v0, 0x1
+    move v0, v4
 
     goto :goto_2
 
     :cond_2
-    const/4 v0, 0x0
+    move v0, v2
 
     :goto_2
     const-string v5, "Ads not allowed if playlist is empty"
@@ -200,7 +200,7 @@
 
     if-ne v0, v3, :cond_4
 
-    const/4 v8, 0x0
+    move v8, v2
 
     goto :goto_4
 
@@ -220,12 +220,12 @@
 
     if-ge v5, v6, :cond_5
 
-    const/4 v5, 0x1
+    move v5, v4
 
     goto :goto_3
 
     :cond_5
-    const/4 v5, 0x0
+    move v5, v2
 
     :goto_3
     const-string v6, "currentMediaItemIndex must be less than playlist.size()"
@@ -314,12 +314,12 @@
 
     if-ge v5, v6, :cond_7
 
-    const/4 v5, 0x1
+    move v5, v4
 
     goto :goto_6
 
     :cond_7
-    const/4 v5, 0x0
+    move v5, v2
 
     :goto_6
     const-string v6, "PeriodData has less ad groups than adGroupIndex"
@@ -345,12 +345,12 @@
 
     if-ge v5, v0, :cond_8
 
-    const/4 v0, 0x1
+    move v0, v4
 
     goto :goto_7
 
     :cond_8
-    const/4 v0, 0x0
+    move v0, v2
 
     :goto_7
     const-string v5, "Ad group has less ads than adIndexInGroupIndex"
@@ -374,7 +374,7 @@
 
     if-ne v0, v4, :cond_a
 
-    const/4 v2, 0x1
+    move v2, v4
 
     :cond_a
     const-string v0, "Player error only allowed in STATE_IDLE"
@@ -464,9 +464,9 @@
 
     const-wide v4, -0x7fffffffffffffffL    # -4.9E-324
 
-    cmp-long v6, v0, v4
+    cmp-long v0, v0, v4
 
-    if-eqz v6, :cond_e
+    if-eqz v0, :cond_e
 
     .line 943
     invoke-static {p1}, Lcom/google/android/exoplayer2/SimpleBasePlayer$State$Builder;->access$600(Lcom/google/android/exoplayer2/SimpleBasePlayer$State$Builder;)Ljava/lang/Long;
@@ -1208,7 +1208,7 @@
     goto :goto_0
 
     :cond_2
-    const/4 v0, 0x0
+    move v0, v2
 
     :goto_0
     return v0
@@ -1307,9 +1307,9 @@
 
     xor-long/2addr v2, v4
 
-    long-to-int v3, v2
+    long-to-int v2, v2
 
-    add-int/2addr v1, v3
+    add-int/2addr v1, v2
 
     mul-int/lit8 v1, v1, 0x1f
 
@@ -1320,9 +1320,9 @@
 
     xor-long/2addr v2, v4
 
-    long-to-int v3, v2
+    long-to-int v2, v2
 
-    add-int/2addr v1, v3
+    add-int/2addr v1, v2
 
     mul-int/lit8 v1, v1, 0x1f
 
@@ -1333,9 +1333,9 @@
 
     xor-long/2addr v2, v4
 
-    long-to-int v3, v2
+    long-to-int v2, v2
 
-    add-int/2addr v1, v3
+    add-int/2addr v1, v2
 
     mul-int/lit8 v1, v1, 0x1f
 

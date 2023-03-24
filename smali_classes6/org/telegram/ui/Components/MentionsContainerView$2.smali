@@ -222,7 +222,7 @@
     goto :goto_0
 
     :cond_3
-    const/high16 v4, 0x42c80000    # 100.0f
+    move v4, v3
 
     :goto_0
     iput v4, v2, Lorg/telegram/ui/Components/Size;->width:F

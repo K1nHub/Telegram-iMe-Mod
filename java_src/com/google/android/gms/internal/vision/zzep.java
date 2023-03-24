@@ -41,8 +41,9 @@ public final class zzep<E> extends zzee<E> {
         return this.zzc;
     }
 
+    /* JADX INFO: Access modifiers changed from: package-private */
     @Override // com.google.android.gms.internal.vision.zzee, com.google.android.gms.internal.vision.zzeb
-    final int zza(Object[] objArr, int i) {
+    public final int zza(Object[] objArr, int i) {
         System.arraycopy(this.zzb, 0, objArr, i, this.zzc);
         return i + this.zzc;
     }

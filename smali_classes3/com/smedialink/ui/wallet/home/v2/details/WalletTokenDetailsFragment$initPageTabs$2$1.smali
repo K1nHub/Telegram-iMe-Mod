@@ -52,7 +52,7 @@
 .method public final invoke()Landroid/view/View;
     .locals 2
 
-    .line 449
+    .line 454
     iget-object v0, p0, Lcom/smedialink/ui/wallet/home/v2/details/WalletTokenDetailsFragment$initPageTabs$2$1;->this$0:Lcom/smedialink/ui/wallet/home/v2/details/WalletTokenDetailsFragment;
 
     invoke-static {v0}, Lcom/smedialink/ui/wallet/home/v2/details/WalletTokenDetailsFragment;->access$getNavigationRouter(Lcom/smedialink/ui/wallet/home/v2/details/WalletTokenDetailsFragment;)Lcom/smedialink/navigation/common/router/base/NavigationRouter;
@@ -81,7 +81,7 @@
 .method public bridge synthetic invoke()Ljava/lang/Object;
     .locals 1
 
-    .line 448
+    .line 453
     invoke-virtual {p0}, Lcom/smedialink/ui/wallet/home/v2/details/WalletTokenDetailsFragment$initPageTabs$2$1;->invoke()Landroid/view/View;
 
     move-result-object v0

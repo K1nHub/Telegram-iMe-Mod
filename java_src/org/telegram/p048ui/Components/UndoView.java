@@ -33,7 +33,7 @@ import com.smedialink.common.IdFabric$CustomType;
 import java.util.ArrayList;
 import org.fork.controller.FiltersController;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3286R;
+import org.telegram.messenger.C3301R;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessagesController;
@@ -207,7 +207,7 @@ public class UndoView extends FrameLayout {
         });
         ImageView imageView = new ImageView(context);
         this.undoImageView = imageView;
-        imageView.setImageResource(C3286R.C3288drawable.chats_undo);
+        imageView.setImageResource(C3301R.C3303drawable.chats_undo);
         this.undoImageView.setColorFilter(new PorterDuffColorFilter(getThemedColor("undo_cancelColor"), PorterDuff.Mode.MULTIPLY));
         this.undoButton.addView(this.undoImageView, LayoutHelper.createLinear(-2, -2, 19, 4, 4, 0, 4));
         TextView textView3 = new TextView(context);
@@ -215,7 +215,7 @@ public class UndoView extends FrameLayout {
         textView3.setTextSize(1, 14.0f);
         this.undoTextView.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
         this.undoTextView.setTextColor(getThemedColor("undo_cancelColor"));
-        this.undoTextView.setText(LocaleController.getString("Undo", C3286R.string.Undo));
+        this.undoTextView.setText(LocaleController.getString("Undo", C3301R.string.Undo));
         this.undoButton.addView(this.undoTextView, LayoutHelper.createLinear(-2, -2, 19, 6, 4, 8, 4));
         this.rect = new RectF(AndroidUtilities.m50dp(15), AndroidUtilities.m50dp(15), AndroidUtilities.m50dp(33), AndroidUtilities.m50dp(33));
         Paint paint = new Paint(1);
@@ -360,20 +360,20 @@ public class UndoView extends FrameLayout {
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:623:0x17c6  */
-    /* JADX WARN: Removed duplicated region for block: B:626:0x17e6  */
-    /* JADX WARN: Removed duplicated region for block: B:629:0x180d  */
-    /* JADX WARN: Removed duplicated region for block: B:633:0x1852  */
+    /* JADX WARN: Removed duplicated region for block: B:623:0x17c7  */
+    /* JADX WARN: Removed duplicated region for block: B:626:0x17e7  */
+    /* JADX WARN: Removed duplicated region for block: B:629:0x180e  */
+    /* JADX WARN: Removed duplicated region for block: B:633:0x1853  */
     /* JADX WARN: Removed duplicated region for block: B:664:0x1906  */
     /* JADX WARN: Removed duplicated region for block: B:690:? A[RETURN, SYNTHETIC] */
-    /* JADX WARN: Type inference failed for: r2v549, types: [java.lang.CharSequence] */
+    /* JADX WARN: Type inference failed for: r2v551, types: [java.lang.CharSequence] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct add '--show-bad-code' argument
     */
     public void showWithAction(java.util.ArrayList<java.lang.Long> r18, int r19, java.lang.Object r20, java.lang.Object r21, java.lang.Runnable r22, java.lang.Runnable r23) {
         /*
-            Method dump skipped, instructions count: 6498
+            Method dump skipped, instructions count: 6496
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: org.telegram.p048ui.Components.UndoView.showWithAction(java.util.ArrayList, int, java.lang.Object, java.lang.Object, java.lang.Runnable, java.lang.Runnable):void");
@@ -388,7 +388,7 @@ public class UndoView extends FrameLayout {
     public /* synthetic */ void lambda$showWithAction$6(TLRPC$Message tLRPC$Message, View view) {
         hide(true, 1);
         TLRPC$TL_payments_getPaymentReceipt tLRPC$TL_payments_getPaymentReceipt = new TLRPC$TL_payments_getPaymentReceipt();
-        tLRPC$TL_payments_getPaymentReceipt.msg_id = tLRPC$Message.f1523id;
+        tLRPC$TL_payments_getPaymentReceipt.msg_id = tLRPC$Message.f1524id;
         tLRPC$TL_payments_getPaymentReceipt.peer = this.parentFragment.getMessagesController().getInputPeer(tLRPC$Message.peer_id);
         this.parentFragment.getConnectionsManager().sendRequest(tLRPC$TL_payments_getPaymentReceipt, new RequestDelegate() { // from class: org.telegram.ui.Components.UndoView$$ExternalSyntheticLambda7
             @Override // org.telegram.tgnet.RequestDelegate

@@ -6,7 +6,7 @@ import android.widget.TextView;
 import androidx.core.content.ContextCompat;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3286R;
+import org.telegram.messenger.C3301R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.p048ui.ActionBar.Theme;
 import org.telegram.p048ui.Cells.AppIconsSelectorCell;
@@ -40,6 +40,6 @@ public class AppIconBulletinLayout extends Bulletin.ButtonLayout {
         adaptiveIconImageView.setOuterPadding(AndroidUtilities.m50dp(8));
         adaptiveIconImageView.setBackgroundOuterPadding(AndroidUtilities.m50dp(24));
         adaptiveIconImageView.setForeground(launcherIcon.foreground);
-        textView.setText(AndroidUtilities.replaceTags(LocaleController.formatString(C3286R.string.AppIconChangedTo, LocaleController.getString(launcherIcon.title))));
+        textView.setText(AndroidUtilities.replaceTags(LocaleController.formatString(C3301R.string.AppIconChangedTo, LocaleController.getString(launcherIcon.title))));
     }
 }

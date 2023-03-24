@@ -75,26 +75,26 @@
     :cond_0
     const-wide/16 v0, 0x0
 
-    const/4 v2, -0x1
+    cmp-long v2, p1, v0
 
-    cmp-long v3, p1, v0
+    const/4 v3, -0x1
 
-    if-gez v3, :cond_1
+    if-gez v2, :cond_1
 
-    return v2
+    return v3
 
     .line 5840
     :cond_1
     :try_start_0
-    iget-wide v3, p0, Landroidx/exifinterface/media/ExifInterface$1;->mPosition:J
+    iget-wide v4, p0, Landroidx/exifinterface/media/ExifInterface$1;->mPosition:J
 
-    cmp-long v5, v3, p1
+    cmp-long v2, v4, p1
 
-    if-eqz v5, :cond_3
+    if-eqz v2, :cond_3
 
-    cmp-long v5, v3, v0
+    cmp-long v0, v4, v0
 
-    if-ltz v5, :cond_2
+    if-ltz v0, :cond_2
 
     .line 5845
     iget-object v0, p0, Landroidx/exifinterface/media/ExifInterface$1;->val$in:Landroidx/exifinterface/media/ExifInterface$SeekableByteOrderedDataInputStream;
@@ -105,13 +105,13 @@
 
     int-to-long v0, v0
 
-    add-long/2addr v3, v0
+    add-long/2addr v4, v0
 
-    cmp-long v0, p1, v3
+    cmp-long v0, p1, v4
 
     if-ltz v0, :cond_2
 
-    return v2
+    return v3
 
     .line 5848
     :cond_2
@@ -169,5 +169,5 @@
     .line 5867
     iput-wide p1, p0, Landroidx/exifinterface/media/ExifInterface$1;->mPosition:J
 
-    return v2
+    return v3
 .end method

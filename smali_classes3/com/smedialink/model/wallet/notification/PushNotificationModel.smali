@@ -88,27 +88,25 @@
 .method public abstract getMessage()Ljava/lang/String;
 .end method
 
-.method public final varargs getString(I[Ljava/lang/Object;)Ljava/lang/String;
-    .locals 2
+.method public final varargs getString$TMessagesProj_release(I[Ljava/lang/Object;)Ljava/lang/String;
+    .locals 1
 
     const-string v0, "formatArgs"
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 306
-    sget-object v0, Lorg/telegram/messenger/ApplicationLoader;->applicationContext:Landroid/content/Context;
+    .line 311
+    array-length v0, p2
 
-    array-length v1, p2
-
-    invoke-static {p2, v1}, Ljava/util/Arrays;->copyOf([Ljava/lang/Object;I)[Ljava/lang/Object;
+    invoke-static {p2, v0}, Ljava/util/Arrays;->copyOf([Ljava/lang/Object;I)[Ljava/lang/Object;
 
     move-result-object p2
 
-    invoke-virtual {v0, p1, p2}, Landroid/content/Context;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p1, p2}, Lorg/telegram/messenger/LocaleController;->formatStringInternal(I[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p1
 
-    const-string p2, "applicationContext.getString(id, *formatArgs)"
+    const-string p2, "formatStringInternal(id, *formatArgs)"
 
     invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 

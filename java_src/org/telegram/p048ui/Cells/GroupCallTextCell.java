@@ -162,6 +162,7 @@ public class GroupCallTextCell extends FrameLayout {
             } else {
                 m50dp = AndroidUtilities.m50dp(this.imageView.getVisibility() == 0 ? 68 : 20);
             }
+            float f = m50dp;
             float measuredHeight = getMeasuredHeight() - 1;
             int measuredWidth = getMeasuredWidth();
             if (LocaleController.isRTL) {
@@ -169,7 +170,7 @@ public class GroupCallTextCell extends FrameLayout {
             } else {
                 i = 0;
             }
-            canvas.drawLine(m50dp, measuredHeight, measuredWidth - i, getMeasuredHeight() - 1, this.dividerPaint);
+            canvas.drawLine(f, measuredHeight, measuredWidth - i, getMeasuredHeight() - 1, this.dividerPaint);
         }
     }
 

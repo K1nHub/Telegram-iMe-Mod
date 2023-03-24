@@ -391,7 +391,7 @@ public final class Encoder {
             r3 = 49472(0xc140, float:6.9325E-41)
             goto L29
         L39:
-            r2 = -1
+            r2 = r4
         L3a:
             if (r2 == r4) goto L4b
             int r3 = r2 >> 8

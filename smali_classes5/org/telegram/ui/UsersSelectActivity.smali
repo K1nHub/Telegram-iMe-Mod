@@ -494,7 +494,7 @@
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_0
     if-ge v2, v0, :cond_6
@@ -603,7 +603,7 @@
 
     if-eqz v4, :cond_0
 
-    const/4 v5, 0x0
+    move v5, v1
 
     goto :goto_1
 
@@ -616,7 +616,7 @@
 
     if-eqz v4, :cond_0
 
-    const/4 v5, 0x1
+    move v5, v8
 
     goto :goto_1
 
@@ -719,9 +719,9 @@
     move-wide v4, v6
 
     :goto_2
-    cmp-long v9, v4, v6
+    cmp-long v6, v4, v6
 
-    if-eqz v9, :cond_5
+    if-eqz v6, :cond_5
 
     .line 967
     iget-object v6, p0, Lorg/telegram/ui/UsersSelectActivity;->selectedContacts:Landroidx/collection/LongSparseArray;
@@ -732,12 +732,12 @@
 
     if-ltz v4, :cond_4
 
-    const/4 v4, 0x1
+    move v4, v8
 
     goto :goto_3
 
     :cond_4
-    const/4 v4, 0x0
+    move v4, v1
 
     :goto_3
     invoke-virtual {v3, v4, v8}, Lorg/telegram/ui/Cells/GroupCreateUserCell;->setChecked(ZZ)V
@@ -1060,7 +1060,7 @@
 
     if-ltz p3, :cond_b
 
-    const/4 p3, 0x1
+    move p3, v3
 
     goto :goto_2
 
@@ -1298,7 +1298,7 @@
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_0
     if-ge v2, v0, :cond_1
@@ -1330,7 +1330,7 @@
 .end method
 
 .method private onDonePressed(Z)Z
-    .locals 6
+    .locals 5
 
     .line 978
     new-instance p1, Ljava/util/ArrayList;
@@ -1358,9 +1358,9 @@
 
     const-wide/32 v3, -0x7ffffff9
 
-    cmp-long v5, v1, v3
+    cmp-long v1, v1, v3
 
-    if-gtz v5, :cond_0
+    if-gtz v1, :cond_0
 
     goto :goto_1
 
@@ -1731,24 +1731,24 @@
 
     if-eqz v8, :cond_0
 
-    const/4 v10, 0x0
+    move v10, v0
 
     goto :goto_0
 
     :cond_0
-    const/16 v10, 0x40
+    move v10, v9
 
     :goto_0
     const/4 v11, 0x0
 
     if-eqz v8, :cond_1
 
-    const/16 v12, 0x40
+    move v12, v9
 
     goto :goto_1
 
     :cond_1
-    const/4 v12, 0x0
+    move v12, v0
 
     :goto_1
     const/4 v13, 0x0
@@ -2036,12 +2036,12 @@
 
     if-eqz v5, :cond_7
 
-    const/4 v5, 0x5
+    move v5, v6
 
     goto :goto_3
 
     :cond_7
-    const/4 v5, 0x3
+    move v5, v7
 
     :goto_3
     or-int/lit8 v5, v5, 0x10
@@ -2204,12 +2204,12 @@
 
     if-eqz v5, :cond_9
 
-    const/4 v5, 0x1
+    move v5, v3
 
     goto :goto_5
 
     :cond_9
-    const/4 v5, 0x2
+    move v5, v8
 
     :goto_5
     invoke-virtual {v4, v5}, Landroid/view/ViewGroup;->setVerticalScrollbarPosition(I)V
@@ -2495,10 +2495,10 @@
     goto :goto_6
 
     :cond_c
-    const/4 v6, 0x3
+    move v6, v7
 
     :goto_6
-    const/4 v1, 0x1
+    move v1, v3
 
     :goto_7
     if-gt v1, v6, :cond_15
@@ -2632,7 +2632,7 @@
 
     move-result p1
 
-    const/4 v1, 0x0
+    move v1, v0
 
     :goto_9
     if-ge v1, p1, :cond_18
@@ -2653,9 +2653,9 @@
 
     const-wide/16 v5, 0x0
 
-    cmp-long v7, v3, v5
+    cmp-long v3, v3, v5
 
-    if-lez v7, :cond_16
+    if-lez v3, :cond_16
 
     .line 856
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getMessagesController()Lorg/telegram/messenger/MessagesController;
@@ -3482,7 +3482,7 @@
 
     move-object v8, v10
 
-    const/4 v13, 0x1
+    move v13, v9
 
     move-object v9, v12
 
@@ -3656,7 +3656,7 @@
 .end method
 
 .method public onClick(Landroid/view/View;)V
-    .locals 5
+    .locals 4
 
     .line 398
     check-cast p1, Lorg/telegram/ui/Components/GroupCreateSpan;
@@ -3685,9 +3685,9 @@
 
     const-wide/32 v2, -0x80000000
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-nez v4, :cond_0
+    if-nez v0, :cond_0
 
     .line 403
     iget p1, p0, Lorg/telegram/ui/UsersSelectActivity;->filterFlags:I
@@ -3710,9 +3710,9 @@
 
     const-wide/32 v2, -0x7fffffff
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-nez v4, :cond_1
+    if-nez v0, :cond_1
 
     .line 405
     iget p1, p0, Lorg/telegram/ui/UsersSelectActivity;->filterFlags:I
@@ -3735,9 +3735,9 @@
 
     const-wide/32 v2, -0x7ffffffe
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-nez v4, :cond_2
+    if-nez v0, :cond_2
 
     .line 407
     iget p1, p0, Lorg/telegram/ui/UsersSelectActivity;->filterFlags:I
@@ -3760,9 +3760,9 @@
 
     const-wide/32 v2, -0x7ffffffd
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-nez v4, :cond_3
+    if-nez v0, :cond_3
 
     .line 409
     iget p1, p0, Lorg/telegram/ui/UsersSelectActivity;->filterFlags:I
@@ -3785,9 +3785,9 @@
 
     const-wide/32 v2, -0x7ffffffc
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-nez v4, :cond_4
+    if-nez v0, :cond_4
 
     .line 411
     iget p1, p0, Lorg/telegram/ui/UsersSelectActivity;->filterFlags:I
@@ -3810,9 +3810,9 @@
 
     const-wide/32 v2, -0x7ffffffb
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-nez v4, :cond_5
+    if-nez v0, :cond_5
 
     .line 413
     iget p1, p0, Lorg/telegram/ui/UsersSelectActivity;->filterFlags:I
@@ -3835,9 +3835,9 @@
 
     const-wide/32 v2, -0x7ffffffa
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-nez v4, :cond_6
+    if-nez v0, :cond_6
 
     .line 415
     iget p1, p0, Lorg/telegram/ui/UsersSelectActivity;->filterFlags:I

@@ -53,7 +53,7 @@
 
     const/4 v0, 0x2
 
-    const/4 v1, 0x2
+    move v1, v0
 
     :goto_0
     if-ge p2, p3, :cond_0

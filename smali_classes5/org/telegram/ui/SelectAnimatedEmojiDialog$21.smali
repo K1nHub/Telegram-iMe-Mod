@@ -96,7 +96,7 @@
 
     invoke-static {p1, v0}, Lorg/telegram/ui/SelectAnimatedEmojiDialog;->access$8000(Lorg/telegram/ui/SelectAnimatedEmojiDialog;F)V
 
-    const/4 p1, 0x0
+    move p1, v3
 
     .line 3977
     :goto_0

@@ -98,59 +98,50 @@ public class ShapeInput {
     }
 
     private boolean isInsideShape(float f, float f2) {
-        float sqrt;
-        float f3;
         Shape shape = this.shape;
         if (shape == null) {
             return false;
         }
         if (shape.getType() == 0 || this.shape.getType() == 2) {
-            double sqrt2 = Math.sqrt(Math.pow(f - this.shape.centerX, 2.0d) + Math.pow(f2 - this.shape.centerY, 2.0d));
+            double sqrt = Math.sqrt(Math.pow(f - this.shape.centerX, 2.0d) + Math.pow(f2 - this.shape.centerY, 2.0d));
             Shape shape2 = this.shape;
-            return (sqrt2 - ((double) Math.min(shape2.radiusX, shape2.radiusY))) - ((double) (this.shape.thickness / 2.0f)) < ((double) AndroidUtilities.m50dp(30));
+            return (sqrt - ((double) Math.min(shape2.radiusX, shape2.radiusY))) - ((double) (this.shape.thickness / 2.0f)) < ((double) AndroidUtilities.m50dp(30));
         } else if (this.shape.getType() == 1 || this.shape.getType() == 3) {
             Shape shape3 = this.shape;
-            float f4 = shape3.centerX;
-            float f5 = shape3.radiusX;
-            float f6 = shape3.thickness;
-            float f7 = (f4 - f5) - (f6 / 2.0f);
-            float f8 = shape3.centerY;
-            float f9 = shape3.radiusY;
-            float f10 = (f8 - f9) - (f6 / 2.0f);
-            float f11 = f4 + f5 + (f6 / 2.0f);
-            float f12 = f8 + f9 + (f6 / 2.0f);
-            if (f2 <= f10 || f2 >= f12) {
-                if (f >= f7 || f <= f11) {
-                    double d = f - f7;
-                    double d2 = f2 - f10;
-                    double d3 = f - f11;
-                    double d4 = f2 - f12;
-                    sqrt = (float) Math.sqrt(Math.min(Math.min(Math.pow(d, 2.0d) + Math.pow(d2, 2.0d), Math.pow(d3, 2.0d) + Math.pow(d2, 2.0d)), Math.min(Math.pow(d, 2.0d) + Math.pow(d4, 2.0d), Math.pow(d3, 2.0d) + Math.pow(d4, 2.0d))));
-                } else if (f2 < f10) {
-                    sqrt = f10 - f2;
-                } else {
-                    if (f2 > f12) {
-                        sqrt = f2 - f12;
-                    }
-                    f3 = BitmapDescriptorFactory.HUE_RED;
+            float f3 = shape3.centerX;
+            float f4 = shape3.radiusX;
+            float f5 = shape3.thickness;
+            float f6 = (f3 - f4) - (f5 / 2.0f);
+            float f7 = shape3.centerY;
+            float f8 = shape3.radiusY;
+            float f9 = (f7 - f8) - (f5 / 2.0f);
+            float f10 = f3 + f4 + (f5 / 2.0f);
+            float f11 = f7 + f8 + (f5 / 2.0f);
+            int i = (f2 > f9 ? 1 : (f2 == f9 ? 0 : -1));
+            float f12 = BitmapDescriptorFactory.HUE_RED;
+            if (i <= 0 || f2 >= f11) {
+                if (f >= f6 || f <= f10) {
+                    double d = f - f6;
+                    double d2 = f2 - f9;
+                    double d3 = f - f10;
+                    double d4 = f2 - f11;
+                    f12 = (float) Math.sqrt(Math.min(Math.min(Math.pow(d, 2.0d) + Math.pow(d2, 2.0d), Math.pow(d3, 2.0d) + Math.pow(d2, 2.0d)), Math.min(Math.pow(d, 2.0d) + Math.pow(d4, 2.0d), Math.pow(d3, 2.0d) + Math.pow(d4, 2.0d))));
+                } else if (f2 < f9) {
+                    f12 = f9 - f2;
+                } else if (f2 > f11) {
+                    f12 = f2 - f11;
                 }
-                f3 = sqrt;
-            } else {
-                if (f < f7) {
-                    sqrt = f7 - f;
-                } else {
-                    if (f > f11) {
-                        sqrt = f - f11;
-                    }
-                    f3 = BitmapDescriptorFactory.HUE_RED;
-                }
-                f3 = sqrt;
+            } else if (f < f6) {
+                f12 = f6 - f;
+            } else if (f > f10) {
+                f12 = f - f10;
             }
+            float f13 = f12;
             if (this.shape.getType() == 3) {
                 Shape shape4 = this.shape;
-                f3 = Math.min(f3, distToLine(f, f2, shape4.centerX, shape4.centerY, shape4.middleX, shape4.middleY));
+                f13 = Math.min(f13, distToLine(f, f2, shape4.centerX, shape4.centerY, shape4.middleX, shape4.middleY));
             }
-            return f3 < ((float) AndroidUtilities.m50dp(30));
+            return f13 < ((float) AndroidUtilities.m50dp(30));
         } else if (this.shape.getType() == 4) {
             Size size = this.renderView.getPainting().getSize();
             Shape shape5 = this.shape;
@@ -197,11 +188,11 @@ public class ShapeInput {
                     float[] fArr3 = this.tempPoint;
                     float f4 = fArr3[0] + this.touchOffsetX;
                     Point point4 = this.center;
-                    float f5 = f4 - point4.f1738x;
-                    float f6 = (fArr3[1] + this.touchOffsetY) - point4.f1739y;
+                    float f5 = f4 - point4.f1739x;
+                    float f6 = (fArr3[1] + this.touchOffsetY) - point4.f1740y;
                     for (int i = 0; i < this.movingPoints.size(); i++) {
                         Point point5 = this.movingPoints.get(i);
-                        point5.update(point5.f1738x + f5, point5.f1739y + f6);
+                        point5.update(point5.f1739x + f5, point5.f1740y + f6);
                     }
                 }
             } else {
@@ -226,8 +217,8 @@ public class ShapeInput {
                 if (point7.rotate) {
                     rotate(f2, f3, false);
                 }
-                float f7 = point7.f1738x;
-                float f8 = point7.f1739y;
+                float f7 = point7.f1739x;
+                float f8 = point7.f1740y;
                 float[] fArr6 = this.tempPoint;
                 double distance = MathUtils.distance(f7, f8, fArr6[0], fArr6[1]);
                 if (distance < AndroidUtilities.m50dp(40) && (point == null || distance < d)) {
@@ -253,10 +244,10 @@ public class ShapeInput {
                 rotate(f2, f3, false);
             }
             Point point8 = this.movingPoint;
-            float f9 = point8.f1738x;
+            float f9 = point8.f1739x;
             float[] fArr9 = this.tempPoint;
             this.touchOffsetX = f9 - fArr9[0];
-            this.touchOffsetY = point8.f1739y - fArr9[1];
+            this.touchOffsetY = point8.f1740y - fArr9[1];
             return;
         }
         Point point9 = this.center;
@@ -265,10 +256,10 @@ public class ShapeInput {
                 rotate(f2, f3, false);
             }
             Point point10 = this.center;
-            float f10 = point10.f1738x;
+            float f10 = point10.f1739x;
             float[] fArr10 = this.tempPoint;
             this.touchOffsetX = f10 - fArr10[0];
-            this.touchOffsetY = point10.f1739y - fArr10[1];
+            this.touchOffsetY = point10.f1740y - fArr10[1];
         }
     }
 
@@ -455,26 +446,26 @@ public class ShapeInput {
             ArrayList<Point> arrayList4 = this.allPoints;
             Point point4 = new Point() { // from class: org.telegram.ui.Components.Paint.ShapeInput.7
                 private void limit() {
-                    if (this.f1739y > ShapeInput.this.shape.centerY - ShapeInput.this.shape.radiusY && this.f1739y < ShapeInput.this.shape.centerY + ShapeInput.this.shape.radiusY) {
-                        if (this.f1738x > ShapeInput.this.shape.centerX || this.f1738x <= ShapeInput.this.shape.centerX - ShapeInput.this.shape.radiusX) {
-                            if (this.f1738x > ShapeInput.this.shape.centerY && this.f1738x < ShapeInput.this.shape.centerX + ShapeInput.this.shape.radiusX) {
-                                this.f1738x = ShapeInput.this.shape.centerX + ShapeInput.this.shape.radiusX;
+                    if (this.f1740y > ShapeInput.this.shape.centerY - ShapeInput.this.shape.radiusY && this.f1740y < ShapeInput.this.shape.centerY + ShapeInput.this.shape.radiusY) {
+                        if (this.f1739x > ShapeInput.this.shape.centerX || this.f1739x <= ShapeInput.this.shape.centerX - ShapeInput.this.shape.radiusX) {
+                            if (this.f1739x > ShapeInput.this.shape.centerY && this.f1739x < ShapeInput.this.shape.centerX + ShapeInput.this.shape.radiusX) {
+                                this.f1739x = ShapeInput.this.shape.centerX + ShapeInput.this.shape.radiusX;
                             }
                         } else {
-                            this.f1738x = ShapeInput.this.shape.centerX - ShapeInput.this.shape.radiusX;
+                            this.f1739x = ShapeInput.this.shape.centerX - ShapeInput.this.shape.radiusX;
                         }
                     }
-                    if (this.f1738x <= ShapeInput.this.shape.centerX - ShapeInput.this.shape.radiusX || this.f1738x >= ShapeInput.this.shape.centerX + ShapeInput.this.shape.radiusX) {
+                    if (this.f1739x <= ShapeInput.this.shape.centerX - ShapeInput.this.shape.radiusX || this.f1739x >= ShapeInput.this.shape.centerX + ShapeInput.this.shape.radiusX) {
                         return;
                     }
-                    if (this.f1739y > ShapeInput.this.shape.centerY || this.f1739y <= ShapeInput.this.shape.centerY - ShapeInput.this.shape.radiusY) {
-                        if (this.f1739y <= ShapeInput.this.shape.centerY || this.f1739y >= ShapeInput.this.shape.centerY + ShapeInput.this.shape.radiusY) {
+                    if (this.f1740y > ShapeInput.this.shape.centerY || this.f1740y <= ShapeInput.this.shape.centerY - ShapeInput.this.shape.radiusY) {
+                        if (this.f1740y <= ShapeInput.this.shape.centerY || this.f1740y >= ShapeInput.this.shape.centerY + ShapeInput.this.shape.radiusY) {
                             return;
                         }
-                        this.f1739y = ShapeInput.this.shape.centerY + ShapeInput.this.shape.radiusY;
+                        this.f1740y = ShapeInput.this.shape.centerY + ShapeInput.this.shape.radiusY;
                         return;
                     }
-                    this.f1739y = ShapeInput.this.shape.centerY - ShapeInput.this.shape.radiusY;
+                    this.f1740y = ShapeInput.this.shape.centerY - ShapeInput.this.shape.radiusY;
                 }
 
                 @Override // org.telegram.p048ui.Components.Paint.ShapeInput.Point
@@ -486,8 +477,8 @@ public class ShapeInput {
                 protected void update(float f7, float f8) {
                     set(f7, f8);
                     limit();
-                    ShapeInput.this.shape.middleX = this.f1738x;
-                    ShapeInput.this.shape.middleY = this.f1739y;
+                    ShapeInput.this.shape.middleX = this.f1739x;
+                    ShapeInput.this.shape.middleY = this.f1740y;
                 }
 
                 @Override // org.telegram.p048ui.Components.Paint.ShapeInput.Point
@@ -504,8 +495,8 @@ public class ShapeInput {
         this.center = new Point(true) { // from class: org.telegram.ui.Components.Paint.ShapeInput.8
             @Override // org.telegram.p048ui.Components.Paint.ShapeInput.Point
             void set() {
-                this.f1738x = ShapeInput.this.shape.centerX;
-                this.f1739y = ShapeInput.this.shape.centerY;
+                this.f1739x = ShapeInput.this.shape.centerX;
+                this.f1740y = ShapeInput.this.shape.centerY;
             }
 
             @Override // org.telegram.p048ui.Components.Paint.ShapeInput.Point
@@ -557,6 +548,7 @@ public class ShapeInput {
     }
 
     public void dispatchDraw(Canvas canvas) {
+        Shape shape;
         RenderView renderView = this.renderView;
         if (renderView == null || renderView.getPainting() == null) {
             return;
@@ -568,11 +560,10 @@ public class ShapeInput {
                 drawPoint(canvas, size, point);
             }
         }
-        Shape shape = this.shape;
-        if (shape != null && shape.rotation != BitmapDescriptorFactory.HUE_RED) {
+        Shape shape2 = this.shape;
+        if (shape2 != null && shape2.rotation != BitmapDescriptorFactory.HUE_RED) {
             canvas.save();
-            Shape shape2 = this.shape;
-            canvas.rotate((float) (((-shape2.rotation) / 3.141592653589793d) * 180.0d), (shape2.centerX / size.width) * canvas.getWidth(), (this.shape.centerY / size.height) * canvas.getHeight());
+            canvas.rotate((float) (((-shape.rotation) / 3.141592653589793d) * 180.0d), (this.shape.centerX / size.width) * canvas.getWidth(), (this.shape.centerY / size.height) * canvas.getHeight());
         }
         Shape shape3 = this.shape;
         if (shape3 != null && shape3.getType() == 4) {
@@ -593,8 +584,8 @@ public class ShapeInput {
     }
 
     private void drawPoint(Canvas canvas, Size size, Point point) {
-        canvas.drawCircle((point.f1738x / size.width) * canvas.getWidth(), (point.f1739y / size.height) * canvas.getHeight(), AndroidUtilities.m50dp(5), point.green ? this.centerPointPaint : this.controlPointPaint);
-        canvas.drawCircle((point.f1738x / size.width) * canvas.getWidth(), (point.f1739y / size.height) * canvas.getHeight(), AndroidUtilities.m50dp(5), point.green ? this.centerPointStrokePaint : this.controlPointStrokePaint);
+        canvas.drawCircle((point.f1739x / size.width) * canvas.getWidth(), (point.f1740y / size.height) * canvas.getHeight(), AndroidUtilities.m50dp(5), point.green ? this.centerPointPaint : this.controlPointPaint);
+        canvas.drawCircle((point.f1739x / size.width) * canvas.getWidth(), (point.f1740y / size.height) * canvas.getHeight(), AndroidUtilities.m50dp(5), point.green ? this.centerPointStrokePaint : this.controlPointStrokePaint);
     }
 
     /* renamed from: org.telegram.ui.Components.Paint.ShapeInput$CornerPoint */
@@ -602,18 +593,18 @@ public class ShapeInput {
     private class CornerPoint extends Point {
 
         /* renamed from: rx */
-        public float f1736rx;
+        public float f1737rx;
 
         /* renamed from: ry */
-        public float f1737ry;
+        public float f1738ry;
         public Shape shape;
 
         public CornerPoint(Shape shape, boolean z, boolean z2) {
             super(ShapeInput.this);
             this.rotate = false;
             this.shape = shape;
-            this.f1736rx = z ? -1.0f : 1.0f;
-            this.f1737ry = z2 ? -1.0f : 1.0f;
+            this.f1737rx = z ? -1.0f : 1.0f;
+            this.f1738ry = z2 ? -1.0f : 1.0f;
             set();
         }
 
@@ -621,7 +612,7 @@ public class ShapeInput {
         void set() {
             Shape shape = this.shape;
             if (shape != null) {
-                ShapeInput.this.rotate(shape.centerX + (this.f1736rx * shape.radiusX), shape.centerY + (this.f1737ry * shape.radiusY), true);
+                ShapeInput.this.rotate(shape.centerX + (this.f1737rx * shape.radiusX), shape.centerY + (this.f1738ry * shape.radiusY), true);
                 set(ShapeInput.this.tempPoint[0], ShapeInput.this.tempPoint[1]);
             }
         }
@@ -630,8 +621,8 @@ public class ShapeInput {
         protected void update(float f, float f2) {
             super.update(f, f2);
             Shape shape = this.shape;
-            float f3 = shape.centerX + ((-this.f1736rx) * shape.radiusX);
-            float f4 = shape.centerY + ((-this.f1737ry) * shape.radiusY);
+            float f3 = shape.centerX + ((-this.f1737rx) * shape.radiusX);
+            float f4 = shape.centerY + ((-this.f1738ry) * shape.radiusY);
             ShapeInput.this.rotate(f, f2, false);
             ShapeInput.this.rotate(f3, f4, true);
             float f5 = ShapeInput.this.tempPoint[0];
@@ -656,10 +647,10 @@ public class ShapeInput {
         boolean green;
 
         /* renamed from: x */
-        float f1738x;
+        float f1739x;
 
         /* renamed from: y */
-        float f1739y;
+        float f1740y;
         boolean rotate = true;
         boolean draw = true;
 
@@ -676,13 +667,13 @@ public class ShapeInput {
         }
 
         void set(float f, float f2) {
-            this.f1738x = f;
-            this.f1739y = f2;
+            this.f1739x = f;
+            this.f1740y = f2;
         }
 
         protected void update(float f, float f2) {
-            this.f1738x = f;
-            this.f1739y = f2;
+            this.f1739x = f;
+            this.f1740y = f2;
         }
     }
 }

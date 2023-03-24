@@ -5,16 +5,16 @@
 
 # direct methods
 .method public static final mapToCryptoMetadata(Lcom/smedialink/storage/domain/model/crypto/donations/DonationTransferMetadata;)Lcom/smedialink/storage/domain/model/crypto/send/CryptoTransferMetadata;
-    .locals 4
+    .locals 3
 
     const-string v0, "<this>"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 20
+    .line 17
     new-instance v0, Lcom/smedialink/storage/domain/model/crypto/send/CryptoTransferMetadata;
 
-    invoke-virtual {p0}, Lcom/smedialink/storage/domain/model/crypto/donations/DonationTransferMetadata;->getTransactionParams()Lcom/smedialink/storage/domain/model/crypto/TransactionParams;
+    invoke-virtual {p0}, Lcom/smedialink/storage/domain/model/crypto/donations/DonationTransferMetadata;->getTransactionParams()Lcom/smedialink/storage/domain/model/crypto/TransactionParams$Ether;
 
     move-result-object v1
 
@@ -26,9 +26,7 @@
 
     move-result-object p0
 
-    const/4 v3, 0x0
-
-    invoke-direct {v0, v1, v2, p0, v3}, Lcom/smedialink/storage/domain/model/crypto/send/CryptoTransferMetadata;-><init>(Lcom/smedialink/storage/domain/model/crypto/TransactionParams;Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;Ljava/lang/String;Ljava/lang/Integer;)V
+    invoke-direct {v0, v1, v2, p0}, Lcom/smedialink/storage/domain/model/crypto/send/CryptoTransferMetadata;-><init>(Lcom/smedialink/storage/domain/model/crypto/TransactionParams;Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;Ljava/lang/String;)V
 
     return-object v0
 .end method
@@ -41,56 +39,40 @@
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 9
-    new-instance v0, Lcom/smedialink/storage/data/network/model/response/crypto/wallet/DataForCryptoTransferResponse;
+    new-instance v0, Lcom/smedialink/storage/domain/model/crypto/donations/DonationTransferMetadata;
 
-    invoke-virtual {p0}, Lcom/smedialink/storage/data/network/model/response/crypto/donations/DataForDonationTransactionResponse;->getTransactionParams()Lcom/smedialink/storage/data/network/model/response/crypto/wallet/TransactionParamsResponse;
+    .line 10
+    invoke-virtual {p0}, Lcom/smedialink/storage/data/network/model/response/crypto/donations/DataForDonationTransactionResponse;->getTransactionParams()Lcom/smedialink/storage/data/network/model/response/crypto/wallet/TransactionParamsResponse$EVM;
 
     move-result-object v1
 
+    invoke-static {v1}, Lcom/smedialink/storage/data/mapper/crypto/CryptoWalletMappingKt;->mapToDomain(Lcom/smedialink/storage/data/network/model/response/crypto/wallet/TransactionParamsResponse$EVM;)Lcom/smedialink/storage/domain/model/crypto/TransactionParams$Ether;
+
+    move-result-object v1
+
+    .line 11
+    sget-object v2, Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;->Companion:Lcom/smedialink/storage/domain/model/wallet/token/TokenCode$Companion;
+
     invoke-virtual {p0}, Lcom/smedialink/storage/data/network/model/response/crypto/donations/DataForDonationTransactionResponse;->getFeeTokenCode()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {v2, v3}, Lcom/smedialink/storage/domain/model/wallet/token/TokenCode$Companion;->map(Ljava/lang/String;)Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;
 
     move-result-object v2
 
+    .line 12
     invoke-virtual {p0}, Lcom/smedialink/storage/data/network/model/response/crypto/donations/DataForDonationTransactionResponse;->getContractAddress()Ljava/lang/String;
 
     move-result-object v3
 
-    invoke-direct {v0, v1, v2, v3}, Lcom/smedialink/storage/data/network/model/response/crypto/wallet/DataForCryptoTransferResponse;-><init>(Lcom/smedialink/storage/data/network/model/response/crypto/wallet/TransactionParamsResponse;Ljava/lang/String;Ljava/lang/String;)V
-
-    invoke-static {v0}, Lcom/smedialink/storage/data/mapper/crypto/TransferMappingKt;->mapToDomain(Lcom/smedialink/storage/data/network/model/response/crypto/wallet/DataForCryptoTransferResponse;)Lcom/smedialink/storage/domain/model/crypto/send/CryptoTransferMetadata;
-
-    move-result-object v0
-
-    .line 11
-    new-instance v1, Lcom/smedialink/storage/domain/model/crypto/donations/DonationTransferMetadata;
-
-    .line 12
-    invoke-virtual {v0}, Lcom/smedialink/storage/domain/model/crypto/send/CryptoTransferMetadata;->getTransactionParams()Lcom/smedialink/storage/domain/model/crypto/TransactionParams;
-
-    move-result-object v2
-
     .line 13
-    invoke-virtual {v0}, Lcom/smedialink/storage/domain/model/crypto/send/CryptoTransferMetadata;->getFeeTokenCode()Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;
-
-    move-result-object v3
-
-    .line 14
-    invoke-virtual {v0}, Lcom/smedialink/storage/domain/model/crypto/send/CryptoTransferMetadata;->getContractAddress()Ljava/lang/String;
-
-    move-result-object v0
-
-    if-nez v0, :cond_0
-
-    const-string v0, ""
-
-    .line 15
-    :cond_0
     invoke-virtual {p0}, Lcom/smedialink/storage/data/network/model/response/crypto/donations/DataForDonationTransactionResponse;->getRecipientAddress()Ljava/lang/String;
 
     move-result-object p0
 
-    .line 11
-    invoke-direct {v1, v2, v3, v0, p0}, Lcom/smedialink/storage/domain/model/crypto/donations/DonationTransferMetadata;-><init>(Lcom/smedialink/storage/domain/model/crypto/TransactionParams;Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;Ljava/lang/String;Ljava/lang/String;)V
+    .line 9
+    invoke-direct {v0, v1, v2, v3, p0}, Lcom/smedialink/storage/domain/model/crypto/donations/DonationTransferMetadata;-><init>(Lcom/smedialink/storage/domain/model/crypto/TransactionParams$Ether;Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;Ljava/lang/String;Ljava/lang/String;)V
 
-    return-object v1
+    return-object v0
 .end method

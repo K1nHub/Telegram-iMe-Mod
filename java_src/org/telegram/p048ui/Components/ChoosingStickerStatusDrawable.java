@@ -73,7 +73,7 @@ public class ChoosingStickerStatusDrawable extends StatusDrawable {
         int i = (min > 0.3f ? 1 : (min == 0.3f ? 0 : -1));
         float interpolation2 = CubicBezierInterpolator.EASE_IN.getInterpolation(i < 0 ? min / 0.3f : 1.0f);
         CubicBezierInterpolator cubicBezierInterpolator = CubicBezierInterpolator.EASE_OUT;
-        float interpolation3 = cubicBezierInterpolator.getInterpolation(i < 0 ? BitmapDescriptorFactory.HUE_RED : (min - 0.3f) / 0.7f);
+        float interpolation3 = cubicBezierInterpolator.getInterpolation(i < 0 ? 0.0f : (min - 0.3f) / 0.7f);
         float f = 2.0f;
         if (this.increment) {
             m51dp = (AndroidUtilities.m51dp(2.1f) * interpolation2) + ((AndroidUtilities.m50dp(7) - AndroidUtilities.m51dp(2.1f)) * (1.0f - interpolation2));

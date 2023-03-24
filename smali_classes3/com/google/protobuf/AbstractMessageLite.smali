@@ -45,6 +45,31 @@
     return-void
 .end method
 
+.method protected static addAll(Ljava/lang/Iterable;Ljava/util/Collection;)V
+    .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "<T:",
+            "Ljava/lang/Object;",
+            ">(",
+            "Ljava/lang/Iterable<",
+            "TT;>;",
+            "Ljava/util/Collection<",
+            "-TT;>;)V"
+        }
+    .end annotation
+
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
+
+    .line 142
+    check-cast p1, Ljava/util/List;
+
+    invoke-static {p0, p1}, Lcom/google/protobuf/AbstractMessageLite$Builder;->addAll(Ljava/lang/Iterable;Ljava/util/List;)V
+
+    return-void
+.end method
+
 .method protected static addAll(Ljava/lang/Iterable;Ljava/util/List;)V
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
@@ -63,6 +88,34 @@
     invoke-static {p0, p1}, Lcom/google/protobuf/AbstractMessageLite$Builder;->addAll(Ljava/lang/Iterable;Ljava/util/List;)V
 
     return-void
+.end method
+
+.method protected static checkByteStringIsUtf8(Lcom/google/protobuf/ByteString;)V
+    .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/IllegalArgumentException;
+        }
+    .end annotation
+
+    .line 134
+    invoke-virtual {p0}, Lcom/google/protobuf/ByteString;->isValidUtf8()Z
+
+    move-result p0
+
+    if-eqz p0, :cond_0
+
+    return-void
+
+    .line 135
+    :cond_0
+    new-instance p0, Ljava/lang/IllegalArgumentException;
+
+    const-string v0, "Byte string is not UTF-8."
+
+    invoke-direct {p0, v0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw p0
 .end method
 
 .method private getSerializingExceptionMessage(Ljava/lang/String;)Ljava/lang/String;
@@ -251,6 +304,48 @@
     invoke-direct {v1, v2, v0}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
 
     throw v1
+.end method
+
+.method public writeDelimitedTo(Ljava/io/OutputStream;)V
+    .locals 2
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+
+    .line 89
+    invoke-interface {p0}, Lcom/google/protobuf/MessageLite;->getSerializedSize()I
+
+    move-result v0
+
+    .line 92
+    invoke-static {v0}, Lcom/google/protobuf/CodedOutputStream;->computeUInt32SizeNoTag(I)I
+
+    move-result v1
+
+    add-int/2addr v1, v0
+
+    .line 91
+    invoke-static {v1}, Lcom/google/protobuf/CodedOutputStream;->computePreferredBufferSize(I)I
+
+    move-result v1
+
+    .line 93
+    invoke-static {p1, v1}, Lcom/google/protobuf/CodedOutputStream;->newInstance(Ljava/io/OutputStream;I)Lcom/google/protobuf/CodedOutputStream;
+
+    move-result-object p1
+
+    .line 94
+    invoke-virtual {p1, v0}, Lcom/google/protobuf/CodedOutputStream;->writeUInt32NoTag(I)V
+
+    .line 95
+    invoke-interface {p0, p1}, Lcom/google/protobuf/MessageLite;->writeTo(Lcom/google/protobuf/CodedOutputStream;)V
+
+    .line 96
+    invoke-virtual {p1}, Lcom/google/protobuf/CodedOutputStream;->flush()V
+
+    return-void
 .end method
 
 .method public writeTo(Ljava/io/OutputStream;)V

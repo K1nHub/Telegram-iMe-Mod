@@ -28,8 +28,7 @@ public final class UserDataReader {
             TrackOutput track = extractorOutput.track(trackIdGenerator.getTrackId(), 3);
             Format format = this.closedCaptionFormats.get(i);
             String str = format.sampleMimeType;
-            boolean z = MimeTypes.APPLICATION_CEA608.equals(str) || MimeTypes.APPLICATION_CEA708.equals(str);
-            Assertions.checkArgument(z, "Invalid closed caption mime type provided: " + str);
+            Assertions.checkArgument(MimeTypes.APPLICATION_CEA608.equals(str) || MimeTypes.APPLICATION_CEA708.equals(str), "Invalid closed caption mime type provided: " + str);
             track.format(new Format.Builder().setId(trackIdGenerator.getFormatId()).setSampleMimeType(str).setSelectionFlags(format.selectionFlags).setLanguage(format.language).setAccessibilityChannel(format.accessibilityChannel).setInitializationData(format.initializationData).build());
             this.outputs[i] = track;
         }

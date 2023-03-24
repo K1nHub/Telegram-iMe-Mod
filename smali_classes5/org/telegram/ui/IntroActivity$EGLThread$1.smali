@@ -195,24 +195,24 @@
 
     move-result-wide v2
 
-    long-to-int v3, v2
+    long-to-int v2, v2
 
     .line 841
-    iget-object v2, p0, Lorg/telegram/ui/IntroActivity$EGLThread$1;->this$1:Lorg/telegram/ui/IntroActivity$EGLThread;
+    iget-object v3, p0, Lorg/telegram/ui/IntroActivity$EGLThread$1;->this$1:Lorg/telegram/ui/IntroActivity$EGLThread;
 
-    iget-object v2, v2, Lorg/telegram/ui/IntroActivity$EGLThread;->this$0:Lorg/telegram/ui/IntroActivity;
+    iget-object v3, v3, Lorg/telegram/ui/IntroActivity$EGLThread;->this$0:Lorg/telegram/ui/IntroActivity;
 
-    invoke-static {v2}, Lorg/telegram/ui/IntroActivity;->access$700(Lorg/telegram/ui/IntroActivity;)J
+    invoke-static {v3}, Lorg/telegram/ui/IntroActivity;->access$700(Lorg/telegram/ui/IntroActivity;)J
 
-    move-result-wide v4
+    move-result-wide v3
 
-    sub-long v4, v0, v4
+    sub-long v3, v0, v3
 
-    long-to-float v2, v4
+    long-to-float v3, v3
 
     const/high16 v4, 0x447a0000    # 1000.0f
 
-    div-float/2addr v2, v4
+    div-float/2addr v3, v4
 
     .line 842
     iget-object v5, p0, Lorg/telegram/ui/IntroActivity$EGLThread$1;->this$1:Lorg/telegram/ui/IntroActivity$EGLThread;
@@ -226,10 +226,10 @@
     invoke-static {v5}, Lorg/telegram/messenger/Intro;->setPage(I)V
 
     .line 843
-    invoke-static {v2}, Lorg/telegram/messenger/Intro;->setDate(F)V
+    invoke-static {v3}, Lorg/telegram/messenger/Intro;->setDate(F)V
 
     .line 844
-    invoke-static {v3}, Lorg/telegram/messenger/Intro;->onDrawFrame(I)V
+    invoke-static {v2}, Lorg/telegram/messenger/Intro;->onDrawFrame(I)V
 
     .line 845
     iget-object v2, p0, Lorg/telegram/ui/IntroActivity$EGLThread$1;->this$1:Lorg/telegram/ui/IntroActivity$EGLThread;

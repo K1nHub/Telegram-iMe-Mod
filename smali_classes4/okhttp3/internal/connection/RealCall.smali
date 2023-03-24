@@ -874,7 +874,7 @@
 
     if-nez v0, :cond_0
 
-    const/4 v0, 0x1
+    move v0, v1
 
     goto :goto_0
 
@@ -1190,7 +1190,7 @@
 .end method
 
 .method public final getResponseWithInterceptorChain$okhttp()Lokhttp3/Response;
-    .locals 10
+    .locals 11
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -1391,9 +1391,11 @@
     :catchall_1
     move-exception v0
 
+    move v10, v2
+
     move-object v2, v0
 
-    const/4 v0, 0x1
+    move v0, v10
 
     :goto_0
     if-nez v0, :cond_3
@@ -1654,12 +1656,12 @@
 
     if-nez p3, :cond_5
 
-    const/4 p3, 0x1
+    move p3, v0
 
     goto :goto_1
 
     :cond_5
-    const/4 p3, 0x0
+    move p3, p1
 
     :goto_1
     if-nez p2, :cond_6
@@ -1676,7 +1678,7 @@
     goto :goto_2
 
     :cond_6
-    const/4 v0, 0x0
+    move v0, p1
 
     :goto_2
     move p1, p3
@@ -1684,7 +1686,7 @@
     goto :goto_3
 
     :cond_7
-    const/4 v0, 0x0
+    move v0, p1
 
     .line 301
     :goto_3
@@ -1757,7 +1759,7 @@
 
     const/4 v0, 0x1
 
-    const/4 v1, 0x1
+    move v1, v0
 
     .line 322
     :cond_0
@@ -1879,7 +1881,7 @@
 
     const/4 v3, 0x0
 
-    const/4 v4, 0x0
+    move v4, v3
 
     :goto_1
     invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
@@ -1918,7 +1920,7 @@
     goto :goto_1
 
     :cond_3
-    const/4 v4, -0x1
+    move v4, v6
 
     :goto_2
     if-eq v4, v6, :cond_4

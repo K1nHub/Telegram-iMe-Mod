@@ -231,7 +231,7 @@
 
     aget v3, p1, v1
 
-    mul-float v2, v2, v3
+    mul-float/2addr v2, v3
 
     const/4 v3, 0x4
 
@@ -241,7 +241,7 @@
 
     aget v6, p1, v5
 
-    mul-float v4, v4, v6
+    mul-float/2addr v4, v6
 
     add-float/2addr v2, v4
 
@@ -253,7 +253,7 @@
 
     aget v8, p1, v7
 
-    mul-float v6, v6, v8
+    mul-float/2addr v6, v8
 
     add-float/2addr v2, v6
 
@@ -265,7 +265,7 @@
 
     aget v10, p1, v9
 
-    mul-float v8, v8, v10
+    mul-float/2addr v8, v10
 
     add-float/2addr v2, v8
 
@@ -276,7 +276,7 @@
 
     aget v8, p1, v1
 
-    mul-float v2, v2, v8
+    mul-float/2addr v2, v8
 
     const/4 v8, 0x5
 
@@ -284,7 +284,7 @@
 
     aget v11, p1, v5
 
-    mul-float v10, v10, v11
+    mul-float/2addr v10, v11
 
     add-float/2addr v2, v10
 
@@ -294,7 +294,7 @@
 
     aget v12, p1, v7
 
-    mul-float v11, v11, v12
+    mul-float/2addr v11, v12
 
     add-float/2addr v2, v11
 
@@ -304,7 +304,7 @@
 
     aget v13, p1, v9
 
-    mul-float v12, v12, v13
+    mul-float/2addr v12, v13
 
     add-float/2addr v2, v12
 
@@ -315,7 +315,7 @@
 
     aget v12, p1, v1
 
-    mul-float v2, v2, v12
+    mul-float/2addr v2, v12
 
     const/4 v12, 0x6
 
@@ -323,7 +323,7 @@
 
     aget v14, p1, v5
 
-    mul-float v13, v13, v14
+    mul-float/2addr v13, v14
 
     add-float/2addr v2, v13
 
@@ -333,7 +333,7 @@
 
     aget v15, p1, v7
 
-    mul-float v14, v14, v15
+    mul-float/2addr v14, v15
 
     add-float/2addr v2, v14
 
@@ -354,7 +354,7 @@
 
     aget v15, p1, v1
 
-    mul-float v2, v2, v15
+    mul-float/2addr v2, v15
 
     const/4 v15, 0x7
 
@@ -657,13 +657,13 @@
 
     aget v2, p1, v6
 
-    mul-float v1, v1, v2
+    mul-float/2addr v1, v2
 
     aget v2, p0, v3
 
     aget v3, p1, v11
 
-    mul-float v2, v2, v3
+    mul-float/2addr v2, v3
 
     add-float/2addr v1, v2
 
@@ -671,7 +671,7 @@
 
     aget v3, p1, v14
 
-    mul-float v2, v2, v3
+    mul-float/2addr v2, v3
 
     add-float/2addr v1, v2
 
@@ -679,7 +679,7 @@
 
     aget v3, p1, v17
 
-    mul-float v2, v2, v3
+    mul-float/2addr v2, v3
 
     add-float/2addr v1, v2
 
@@ -690,13 +690,13 @@
 
     aget v2, p1, v6
 
-    mul-float v1, v1, v2
+    mul-float/2addr v1, v2
 
     aget v2, p0, v8
 
     aget v3, p1, v11
 
-    mul-float v2, v2, v3
+    mul-float/2addr v2, v3
 
     add-float/2addr v1, v2
 
@@ -704,7 +704,7 @@
 
     aget v3, p1, v14
 
-    mul-float v2, v2, v3
+    mul-float/2addr v2, v3
 
     add-float/2addr v1, v2
 
@@ -712,7 +712,7 @@
 
     aget v3, p1, v17
 
-    mul-float v2, v2, v3
+    mul-float/2addr v2, v3
 
     add-float/2addr v1, v2
 
@@ -723,13 +723,13 @@
 
     aget v2, p1, v6
 
-    mul-float v1, v1, v2
+    mul-float/2addr v1, v2
 
     aget v2, p0, v12
 
     aget v3, p1, v11
 
-    mul-float v2, v2, v3
+    mul-float/2addr v2, v3
 
     add-float/2addr v1, v2
 
@@ -737,7 +737,7 @@
 
     aget v3, p1, v14
 
-    mul-float v2, v2, v3
+    mul-float/2addr v2, v3
 
     add-float/2addr v1, v2
 
@@ -745,7 +745,7 @@
 
     aget v3, p1, v17
 
-    mul-float v2, v2, v3
+    mul-float/2addr v2, v3
 
     add-float/2addr v1, v2
 
@@ -756,13 +756,13 @@
 
     aget v2, p1, v6
 
-    mul-float v1, v1, v2
+    mul-float/2addr v1, v2
 
     aget v2, p0, v15
 
     aget v3, p1, v11
 
-    mul-float v2, v2, v3
+    mul-float/2addr v2, v3
 
     add-float/2addr v1, v2
 
@@ -770,7 +770,7 @@
 
     aget v3, p1, v14
 
-    mul-float v2, v2, v3
+    mul-float/2addr v2, v3
 
     add-float/2addr v1, v2
 
@@ -778,7 +778,7 @@
 
     aget v3, p1, v17
 
-    mul-float v2, v2, v3
+    mul-float/2addr v2, v3
 
     add-float/2addr v1, v2
 

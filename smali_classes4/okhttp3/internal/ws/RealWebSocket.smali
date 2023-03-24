@@ -800,7 +800,7 @@
 .end method
 
 .method public final declared-synchronized close(ILjava/lang/String;J)Z
-    .locals 8
+    .locals 7
 
     monitor-enter p0
 
@@ -834,16 +834,16 @@
 
     const-wide/16 v5, 0x7b
 
-    cmp-long v7, v3, v5
+    cmp-long v3, v3, v5
 
-    if-gtz v7, :cond_0
+    if-gtz v3, :cond_0
 
-    const/4 v3, 0x1
+    move v3, v2
 
     goto :goto_0
 
     :cond_0
-    const/4 v3, 0x0
+    move v3, v1
 
     :goto_0
     if-eqz v3, :cond_1
@@ -1276,9 +1276,9 @@
 
     const-wide/16 v3, 0x0
 
-    cmp-long v5, v1, v3
+    cmp-long v3, v1, v3
 
-    if-eqz v5, :cond_0
+    if-eqz v3, :cond_0
 
     .line 268
     sget-object v3, Ljava/util/concurrent/TimeUnit;->MILLISECONDS:Ljava/util/concurrent/TimeUnit;
@@ -1442,12 +1442,12 @@
 
     if-eq p1, v2, :cond_0
 
-    const/4 v3, 0x1
+    move v3, v0
 
     goto :goto_0
 
     :cond_0
-    const/4 v3, 0x0
+    move v3, v1
 
     :goto_0
     if-eqz v3, :cond_b
@@ -1464,7 +1464,7 @@
     goto :goto_1
 
     :cond_1
-    const/4 v0, 0x0
+    move v0, v1
 
     :goto_1
     if-eqz v0, :cond_a
@@ -2426,7 +2426,7 @@
     goto :goto_0
 
     :cond_1
-    const/4 v1, -0x1
+    move v1, v2
 
     .line 558
     :goto_0

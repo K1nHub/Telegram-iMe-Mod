@@ -165,7 +165,7 @@
 
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
-    .locals 7
+    .locals 6
 
     .line 1
     instance-of v0, p1, Lcom/google/android/gms/auth/AccountChangeEvent;
@@ -198,9 +198,9 @@
 
     iget-wide v4, p1, Lcom/google/android/gms/auth/AccountChangeEvent;->zzb:J
 
-    cmp-long v6, v2, v4
+    cmp-long v2, v2, v4
 
-    if-nez v6, :cond_2
+    if-nez v2, :cond_2
 
     iget-object v2, p0, Lcom/google/android/gms/auth/AccountChangeEvent;->zzc:Ljava/lang/String;
 

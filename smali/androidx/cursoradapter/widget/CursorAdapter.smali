@@ -336,7 +336,7 @@
     :goto_0
     if-eqz p2, :cond_1
 
-    const/4 v1, 0x1
+    move v1, v2
 
     .line 184
     :cond_1

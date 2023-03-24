@@ -158,7 +158,7 @@
 
     move-result p2
 
-    mul-float v1, v1, p2
+    mul-float/2addr v1, p2
 
     iget-object p2, p0, Landroidx/transition/PathProperty;->mPosition:[F
 

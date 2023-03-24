@@ -64,7 +64,7 @@
 
     int-to-float v1, v1
 
-    mul-float v1, v1, v0
+    mul-float/2addr v1, v0
 
     .line 2913
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredHeight()I

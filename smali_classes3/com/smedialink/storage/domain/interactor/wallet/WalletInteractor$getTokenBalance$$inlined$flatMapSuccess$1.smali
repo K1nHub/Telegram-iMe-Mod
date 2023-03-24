@@ -36,7 +36,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nObservableExt.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ObservableExt.kt\ncom/smedialink/storage/domain/utils/extentions/ObservableExtKt$flatMapSuccess$1\n+ 2 WalletInteractor.kt\ncom/smedialink/storage/domain/interactor/wallet/WalletInteractor\n+ 3 ResultExt.kt\ncom/smedialink/storage/domain/utils/extentions/ResultExtKt\n+ 4 RxExt.kt\ncom/smedialink/storage/data/utils/extentions/RxExtKt\n*L\n1#1,81:1\n52#2,2:82\n8#3:84\n18#4:85\n*S KotlinDebug\n*F\n+ 1 WalletInteractor.kt\ncom/smedialink/storage/domain/interactor/wallet/WalletInteractor\n*L\n53#1:84\n53#1:85\n*E\n"
+    value = "SMAP\nObservableExt.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ObservableExt.kt\ncom/smedialink/storage/domain/utils/extentions/ObservableExtKt$flatMapSuccess$1\n+ 2 WalletInteractor.kt\ncom/smedialink/storage/domain/interactor/wallet/WalletInteractor\n+ 3 ResultExt.kt\ncom/smedialink/storage/domain/utils/extentions/ResultExtKt\n+ 4 RxExt.kt\ncom/smedialink/storage/data/utils/extentions/RxExtKt\n*L\n1#1,81:1\n52#2,2:82\n11#3:84\n18#4:85\n*S KotlinDebug\n*F\n+ 1 WalletInteractor.kt\ncom/smedialink/storage/domain/interactor/wallet/WalletInteractor\n*L\n53#1:84\n53#1:85\n*E\n"
 .end annotation
 
 
@@ -121,7 +121,7 @@
 
     move-result-object p1
 
-    .line 8
+    .line 11
     sget-object v0, Lcom/smedialink/storage/domain/model/Result;->Companion:Lcom/smedialink/storage/domain/model/Result$Companion;
 
     invoke-virtual {v0, p1}, Lcom/smedialink/storage/domain/model/Result$Companion;->success(Ljava/lang/Object;)Lcom/smedialink/storage/domain/model/Result;

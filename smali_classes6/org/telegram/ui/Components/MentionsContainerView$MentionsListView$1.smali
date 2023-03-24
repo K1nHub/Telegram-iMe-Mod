@@ -44,12 +44,12 @@
 
     if-eqz p2, :cond_0
 
-    const/4 v2, 0x1
+    move v2, v1
 
     goto :goto_0
 
     :cond_0
-    const/4 v2, 0x0
+    move v2, v0
 
     :goto_0
     invoke-static {p1, v2}, Lorg/telegram/ui/Components/MentionsContainerView$MentionsListView;->access$702(Lorg/telegram/ui/Components/MentionsContainerView$MentionsListView;Z)Z
@@ -59,7 +59,7 @@
 
     if-ne p2, v1, :cond_1
 
-    const/4 v0, 0x1
+    move v0, v1
 
     :cond_1
     invoke-static {p1, v0}, Lorg/telegram/ui/Components/MentionsContainerView$MentionsListView;->access$802(Lorg/telegram/ui/Components/MentionsContainerView$MentionsListView;Z)Z

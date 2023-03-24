@@ -207,7 +207,7 @@
 
     move-object v2, v0
 
-    const/4 v1, 0x0
+    move v1, v10
 
     :goto_0
     const/4 v3, 0x7

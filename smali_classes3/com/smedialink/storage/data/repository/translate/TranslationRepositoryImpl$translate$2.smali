@@ -31,7 +31,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nTranslationRepositoryImpl.kt\nKotlin\n*S Kotlin\n*F\n+ 1 TranslationRepositoryImpl.kt\ncom/smedialink/storage/data/repository/translate/TranslationRepositoryImpl$translate$2\n+ 2 ResultExt.kt\ncom/smedialink/storage/domain/utils/extentions/ResultExtKt\n*L\n1#1,95:1\n8#2:96\n*S KotlinDebug\n*F\n+ 1 TranslationRepositoryImpl.kt\ncom/smedialink/storage/data/repository/translate/TranslationRepositoryImpl$translate$2\n*L\n74#1:96\n*E\n"
+    value = "SMAP\nTranslationRepositoryImpl.kt\nKotlin\n*S Kotlin\n*F\n+ 1 TranslationRepositoryImpl.kt\ncom/smedialink/storage/data/repository/translate/TranslationRepositoryImpl$translate$2\n+ 2 ResultExt.kt\ncom/smedialink/storage/domain/utils/extentions/ResultExtKt\n*L\n1#1,95:1\n9#2:96\n*S KotlinDebug\n*F\n+ 1 TranslationRepositoryImpl.kt\ncom/smedialink/storage/data/repository/translate/TranslationRepositoryImpl$translate$2\n*L\n74#1:96\n*E\n"
 .end annotation
 
 
@@ -137,7 +137,7 @@
     :cond_1
     invoke-direct {v0, v1, p1}, Lcom/smedialink/storage/domain/model/translation/Translation;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 8
+    .line 9
     sget-object p1, Lcom/smedialink/storage/domain/model/Result;->Companion:Lcom/smedialink/storage/domain/model/Result$Companion;
 
     invoke-virtual {p1, v0}, Lcom/smedialink/storage/domain/model/Result$Companion;->success(Ljava/lang/Object;)Lcom/smedialink/storage/domain/model/Result;

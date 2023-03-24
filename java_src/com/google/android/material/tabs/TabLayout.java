@@ -759,7 +759,7 @@ public class TabLayout extends HorizontalScrollView {
             int r1 = r6.getMeasuredWidth()
             if (r0 == r1) goto L8d
         L80:
-            r4 = 1
+            r4 = r5
             goto L8d
         L82:
             int r0 = r7.getMeasuredWidth()
@@ -1854,7 +1854,11 @@ public class TabLayout extends HorizontalScrollView {
             if (tabLayout != null) {
                 int i3 = this.scrollState;
                 boolean z = false;
-                tabLayout.setScrollPosition(i, f, i3 != 2 || this.previousScrollState == 1, (i3 == 2 && this.previousScrollState == 0) ? true : true);
+                boolean z2 = i3 != 2 || this.previousScrollState == 1;
+                if (i3 != 2 || this.previousScrollState != 0) {
+                    z = true;
+                }
+                tabLayout.setScrollPosition(i, f, z2, z);
             }
         }
 

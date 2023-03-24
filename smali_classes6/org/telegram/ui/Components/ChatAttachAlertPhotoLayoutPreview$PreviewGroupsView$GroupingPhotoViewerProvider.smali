@@ -113,7 +113,7 @@
 .end method
 
 .method public getPlaceForPhoto(Lorg/telegram/messenger/MessageObject;Lorg/telegram/tgnet/TLRPC$FileLocation;IZ)Lorg/telegram/ui/PhotoViewer$PlaceProviderObject;
-    .locals 10
+    .locals 9
 
     const/4 p1, 0x0
 
@@ -165,7 +165,7 @@
 
     move-object v2, v1
 
-    const/4 v0, 0x0
+    move v0, p4
 
     :goto_0
     if-ge v0, p3, :cond_4
@@ -195,7 +195,7 @@
 
     move-result v3
 
-    const/4 v4, 0x0
+    move v4, p4
 
     :goto_1
     if-ge v4, v3, :cond_2
@@ -222,9 +222,9 @@
 
     const-wide/high16 v7, 0x3fe0000000000000L    # 0.5
 
-    cmpl-double v9, v5, v7
+    cmpl-double v5, v5, v7
 
-    if-lez v9, :cond_1
+    if-lez v5, :cond_1
 
     .line 1504
     iget-object v2, v1, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell;->media:Ljava/util/ArrayList;
@@ -793,7 +793,7 @@
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     .line 1556
     :goto_0
@@ -829,7 +829,7 @@
 
     if-eqz v4, :cond_7
 
-    const/4 v4, 0x0
+    move v4, v1
 
     .line 1559
     :goto_1
@@ -885,9 +885,9 @@
 
     if-eqz v4, :cond_5
 
-    const/4 v4, 0x0
+    move v4, v1
 
-    const/4 v6, 0x0
+    move v6, v4
 
     .line 1567
     :goto_2
@@ -929,7 +929,7 @@
 
     invoke-virtual {v6, v4, p1}, Ljava/util/ArrayList;->set(ILjava/lang/Object;)Ljava/lang/Object;
 
-    const/4 v6, 0x1
+    move v6, v5
 
     :cond_4
     add-int/lit8 v4, v4, 0x1
@@ -937,7 +937,7 @@
     goto :goto_2
 
     :cond_5
-    const/4 v6, 0x0
+    move v6, v1
 
     :cond_6
     if-eqz v6, :cond_7

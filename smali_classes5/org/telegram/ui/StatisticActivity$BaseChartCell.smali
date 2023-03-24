@@ -694,9 +694,9 @@
 
     const p2, 0x7fffffff
 
-    const/4 v4, 0x0
+    move v4, v1
 
-    const/4 v5, 0x0
+    move v5, v4
 
     .line 1526
     :goto_0
@@ -828,19 +828,19 @@
 
     if-eqz p3, :cond_4
 
-    const/4 v5, 0x0
+    move v5, v3
 
     goto :goto_1
 
     :cond_4
-    const/high16 v5, 0x3f800000    # 1.0f
+    move v5, v4
 
     :goto_1
     aput v5, p2, v1
 
     if-eqz p3, :cond_5
 
-    const/high16 v3, 0x3f800000    # 1.0f
+    move v3, v4
 
     :cond_5
     aput v3, p2, v0
@@ -890,7 +890,7 @@
 
     div-float/2addr v1, v3
 
-    mul-float v1, v1, v2
+    mul-float/2addr v1, v2
 
     .line 1540
     sget v2, Lorg/telegram/ui/Charts/BaseChartView;->HORIZONTAL_PADDING:F
@@ -910,7 +910,7 @@
 
     move-result p2
 
-    mul-float v3, v3, p2
+    mul-float/2addr v3, p2
 
     add-float/2addr v2, v3
 
@@ -923,7 +923,7 @@
 
     iget v0, p1, Lorg/telegram/ui/Charts/view_data/TransitionParams;->xPercentage:F
 
-    mul-float p2, p2, v0
+    mul-float/2addr p2, v0
 
     sub-float/2addr p2, v1
 
@@ -1273,7 +1273,7 @@
 .end method
 
 .method public recolor()V
-    .locals 8
+    .locals 7
 
     .line 1652
     iget-object v0, p0, Lorg/telegram/ui/StatisticActivity$BaseChartCell;->chartView:Lorg/telegram/ui/Charts/BaseChartView;
@@ -1328,7 +1328,7 @@
 
     const/4 v0, 0x0
 
-    const/4 v2, 0x0
+    move v2, v0
 
     .line 1662
     :goto_0
@@ -1416,16 +1416,16 @@
 
     const-wide/high16 v5, 0x3fe0000000000000L    # 0.5
 
-    cmpg-double v7, v3, v5
+    cmpg-double v3, v3, v5
 
-    if-gez v7, :cond_1
+    if-gez v3, :cond_1
 
-    const/4 v3, 0x1
+    move v3, v1
 
     goto :goto_1
 
     :cond_1
-    const/4 v3, 0x0
+    move v3, v0
 
     :goto_1
     if-eqz v3, :cond_2
@@ -1554,12 +1554,12 @@
 
     if-ne v0, v1, :cond_1
 
-    const/4 v0, 0x1
+    move v0, v2
 
     goto :goto_0
 
     :cond_1
-    const/4 v0, 0x0
+    move v0, v3
 
     .line 1565
     :goto_0
@@ -1697,13 +1697,13 @@
     goto :goto_1
 
     :cond_5
-    const/4 v0, 0x0
+    move v0, v3
 
     goto :goto_2
 
     :cond_6
     :goto_1
-    const/4 v0, 0x1
+    move v0, v2
 
     :goto_2
     iput-boolean v0, p1, Lorg/telegram/ui/Charts/view_data/LegendSignatureView;->zoomEnabled:Z
@@ -1750,7 +1750,7 @@
 
     if-le p1, v2, :cond_7
 
-    const/4 v0, 0x0
+    move v0, v3
 
     :goto_3
     if-ge v0, p1, :cond_7
@@ -1989,9 +1989,9 @@
 
     if-le v3, v5, :cond_9
 
-    const/4 v3, 0x0
+    move v3, v6
 
-    const/4 v7, 0x0
+    move v7, v3
 
     .line 1361
     :goto_0
@@ -2009,7 +2009,7 @@
 
     if-ge v3, v8, :cond_7
 
-    const/4 v8, 0x0
+    move v8, v6
 
     .line 1363
     :goto_1
@@ -2092,12 +2092,12 @@
 
     if-eqz v10, :cond_2
 
-    const/high16 v11, 0x3f800000    # 1.0f
+    move v11, v9
 
     goto :goto_2
 
     :cond_2
-    const/4 v11, 0x0
+    move v11, v4
 
     :goto_2
     iput v11, v8, Lorg/telegram/ui/Charts/view_data/LineViewData;->alpha:F
@@ -2141,7 +2141,7 @@
     add-int/lit8 v7, v7, 0x1
 
     :cond_3
-    const/4 v8, 0x1
+    move v8, v5
 
     goto :goto_3
 
@@ -2151,7 +2151,7 @@
     goto :goto_1
 
     :cond_5
-    const/4 v8, 0x0
+    move v8, v6
 
     :goto_3
     if-nez v8, :cond_6

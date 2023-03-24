@@ -696,7 +696,7 @@
     .line 436
     iget v1, v0, Lorg/telegram/ui/Components/VideoTimelinePlayView;->progressLeft:F
 
-    mul-float v1, v1, v9
+    mul-float/2addr v1, v9
 
     float-to-int v1, v1
 
@@ -711,7 +711,7 @@
     .line 437
     iget v1, v0, Lorg/telegram/ui/Components/VideoTimelinePlayView;->progressRight:F
 
-    mul-float v1, v1, v9
+    mul-float/2addr v1, v9
 
     float-to-int v1, v1
 
@@ -774,7 +774,7 @@
     goto :goto_3
 
     :cond_0
-    const/4 v1, 0x0
+    move v1, v3
 
     .line 445
     :goto_0
@@ -807,7 +807,7 @@
 
     iget v14, v0, Lorg/telegram/ui/Components/VideoTimelinePlayView;->frameWidth:I
 
-    mul-int v14, v14, v1
+    mul-int/2addr v14, v1
 
     add-int/2addr v6, v14
 
@@ -853,7 +853,7 @@
 
     iget v10, v5, Lorg/telegram/ui/Components/VideoTimelinePlayView$BitmapFrame;->alpha:F
 
-    mul-float v10, v10, v15
+    mul-float/2addr v10, v15
 
     float-to-int v10, v10
 
@@ -1348,7 +1348,7 @@
 
     iget v2, v0, Lorg/telegram/ui/Components/VideoTimelinePlayView;->playProgress:F
 
-    mul-float v9, v9, v2
+    mul-float/2addr v9, v2
 
     add-float/2addr v1, v9
 
@@ -1602,7 +1602,7 @@
     .line 144
     iget v5, p0, Lorg/telegram/ui/Components/VideoTimelinePlayView;->progressLeft:F
 
-    mul-float v5, v5, v4
+    mul-float/2addr v5, v4
 
     float-to-int v5, v5
 
@@ -1617,7 +1617,7 @@
     .line 145
     iget v7, p0, Lorg/telegram/ui/Components/VideoTimelinePlayView;->playProgress:F
 
-    mul-float v7, v7, v4
+    mul-float/2addr v7, v4
 
     float-to-int v7, v7
 
@@ -1630,7 +1630,7 @@
     .line 146
     iget v8, p0, Lorg/telegram/ui/Components/VideoTimelinePlayView;->progressRight:F
 
-    mul-float v8, v8, v4
+    mul-float/2addr v8, v4
 
     float-to-int v8, v8
 

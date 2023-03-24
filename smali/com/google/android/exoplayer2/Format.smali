@@ -663,7 +663,7 @@
 
     if-ne v1, v2, :cond_2
 
-    const/4 v1, 0x0
+    move v1, v3
 
     goto :goto_1
 
@@ -747,7 +747,7 @@
 
     if-ne v1, v2, :cond_4
 
-    const/4 v1, 0x0
+    move v1, v3
 
     goto :goto_3
 
@@ -2744,7 +2744,7 @@
 .end method
 
 .method public equals(Ljava/lang/Object;)Z
-    .locals 7
+    .locals 6
 
     const/4 v0, 0x1
 
@@ -2821,9 +2821,9 @@
 
     iget-wide v4, p1, Lcom/google/android/exoplayer2/Format;->subsampleOffsetUs:J
 
-    cmp-long v6, v2, v4
+    cmp-long v2, v2, v4
 
-    if-nez v6, :cond_3
+    if-nez v2, :cond_3
 
     iget v2, p0, Lcom/google/android/exoplayer2/Format;->width:I
 
@@ -3045,7 +3045,7 @@
     goto :goto_0
 
     :cond_3
-    const/4 v0, 0x0
+    move v0, v1
 
     :goto_0
     return v0
@@ -3096,7 +3096,7 @@
 
     if-nez v1, :cond_0
 
-    const/4 v1, 0x0
+    move v1, v2
 
     goto :goto_0
 
@@ -3122,7 +3122,7 @@
     goto :goto_1
 
     :cond_1
-    const/4 v1, 0x0
+    move v1, v2
 
     :goto_1
     add-int/2addr v0, v1
@@ -3134,7 +3134,7 @@
 
     if-nez v1, :cond_2
 
-    const/4 v1, 0x0
+    move v1, v2
 
     goto :goto_2
 
@@ -3181,7 +3181,7 @@
 
     if-nez v1, :cond_3
 
-    const/4 v1, 0x0
+    move v1, v2
 
     goto :goto_3
 
@@ -3200,7 +3200,7 @@
 
     if-nez v1, :cond_4
 
-    const/4 v1, 0x0
+    move v1, v2
 
     goto :goto_4
 
@@ -3219,7 +3219,7 @@
 
     if-nez v1, :cond_5
 
-    const/4 v1, 0x0
+    move v1, v2
 
     goto :goto_5
 
@@ -3260,9 +3260,9 @@
     .line 1291
     iget-wide v1, p0, Lcom/google/android/exoplayer2/Format;->subsampleOffsetUs:J
 
-    long-to-int v2, v1
+    long-to-int v1, v1
 
-    add-int/2addr v0, v2
+    add-int/2addr v0, v1
 
     mul-int/lit8 v0, v0, 0x1f
 
@@ -3410,7 +3410,7 @@
     return v2
 
     :cond_0
-    const/4 v0, 0x0
+    move v0, v2
 
     .line 1378
     :goto_0

@@ -342,7 +342,7 @@
 
     sput v1, Lorg/telegram/messenger/Emoji;->bigImgSize:I
 
-    const/4 v1, 0x0
+    move v1, v0
 
     .line 81
     :goto_1
@@ -375,7 +375,7 @@
     goto :goto_1
 
     :cond_1
-    const/4 v1, 0x0
+    move v1, v0
 
     .line 86
     :goto_2
@@ -385,7 +385,7 @@
 
     if-ge v1, v2, :cond_3
 
-    const/4 v2, 0x0
+    move v2, v0
 
     .line 88
     :goto_3
@@ -629,7 +629,7 @@
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_0
     if-ge v2, v0, :cond_6
@@ -806,7 +806,7 @@
     goto :goto_0
 
     :cond_0
-    const/4 v0, 0x0
+    move v0, p0
 
     :goto_0
     return v0
@@ -939,7 +939,7 @@
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_0
     if-ge v2, v0, :cond_1
@@ -1228,23 +1228,23 @@
 
     const/high16 v1, 0x3f800000    # 1.0f
 
-    const/4 v2, 0x2
-
-    const/4 v3, 0x1
-
     cmpg-float v0, v0, v1
+
+    const/4 v1, 0x2
+
+    const/4 v2, 0x1
 
     if-gtz v0, :cond_0
 
-    const/4 v0, 0x2
+    move v0, v1
 
     goto :goto_0
 
     :cond_0
-    const/4 v0, 0x1
+    move v0, v2
 
     :goto_0
-    const/4 v1, 0x0
+    const/4 v3, 0x0
 
     .line 127
     :try_start_1
@@ -1266,7 +1266,7 @@
 
     const-string v7, "%d_%d.png"
 
-    new-array v2, v2, [Ljava/lang/Object;
+    new-array v1, v1, [Ljava/lang/Object;
 
     invoke-static {p0}, Ljava/lang/Byte;->valueOf(B)Ljava/lang/Byte;
 
@@ -1274,46 +1274,46 @@
 
     const/4 v9, 0x0
 
-    aput-object v8, v2, v9
+    aput-object v8, v1, v9
 
     invoke-static {p1}, Ljava/lang/Short;->valueOf(S)Ljava/lang/Short;
 
     move-result-object v8
 
-    aput-object v8, v2, v3
+    aput-object v8, v1, v2
 
-    invoke-static {v6, v7, v2}, Ljava/lang/String;->format(Ljava/util/Locale;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v5, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v4, v2}, Landroid/content/res/AssetManager;->open(Ljava/lang/String;)Ljava/io/InputStream;
-
-    move-result-object v2
-
-    .line 128
-    new-instance v3, Landroid/graphics/BitmapFactory$Options;
-
-    invoke-direct {v3}, Landroid/graphics/BitmapFactory$Options;-><init>()V
-
-    .line 129
-    iput-boolean v9, v3, Landroid/graphics/BitmapFactory$Options;->inJustDecodeBounds:Z
-
-    .line 130
-    iput v0, v3, Landroid/graphics/BitmapFactory$Options;->inSampleSize:I
-
-    .line 131
-    invoke-static {v2, v1, v3}, Landroid/graphics/BitmapFactory;->decodeStream(Ljava/io/InputStream;Landroid/graphics/Rect;Landroid/graphics/BitmapFactory$Options;)Landroid/graphics/Bitmap;
+    invoke-static {v6, v7, v1}, Ljava/lang/String;->format(Ljava/util/Locale;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v1
 
+    invoke-virtual {v5, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v4, v1}, Landroid/content/res/AssetManager;->open(Ljava/lang/String;)Ljava/io/InputStream;
+
+    move-result-object v1
+
+    .line 128
+    new-instance v2, Landroid/graphics/BitmapFactory$Options;
+
+    invoke-direct {v2}, Landroid/graphics/BitmapFactory$Options;-><init>()V
+
+    .line 129
+    iput-boolean v9, v2, Landroid/graphics/BitmapFactory$Options;->inJustDecodeBounds:Z
+
+    .line 130
+    iput v0, v2, Landroid/graphics/BitmapFactory$Options;->inSampleSize:I
+
+    .line 131
+    invoke-static {v1, v3, v2}, Landroid/graphics/BitmapFactory;->decodeStream(Ljava/io/InputStream;Landroid/graphics/Rect;Landroid/graphics/BitmapFactory$Options;)Landroid/graphics/Bitmap;
+
+    move-result-object v3
+
     .line 132
-    invoke-virtual {v2}, Ljava/io/InputStream;->close()V
+    invoke-virtual {v1}, Ljava/io/InputStream;->close()V
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
@@ -1332,7 +1332,7 @@
 
     aget-object p0, v0, p0
 
-    aput-object v1, p0, p1
+    aput-object v3, p0, p1
 
     .line 139
     sget-object p0, Lorg/telegram/messenger/Emoji;->invalidateUiRunnable:Ljava/lang/Runnable;
@@ -1434,7 +1434,7 @@
     .line 745
     array-length v9, v8
 
-    const/4 v10, 0x0
+    move v10, v7
 
     :goto_0
     if-ge v10, v9, :cond_4
@@ -1462,7 +1462,7 @@
 
     invoke-direct {v14}, Ljava/lang/StringBuilder;-><init>()V
 
-    const/4 v15, 0x0
+    move v15, v7
 
     :goto_1
     const/4 v5, 0x4
@@ -1568,7 +1568,7 @@
     .line 768
     array-length v5, v4
 
-    const/4 v8, 0x0
+    move v8, v7
 
     :goto_3
     if-ge v8, v5, :cond_6
@@ -1617,7 +1617,7 @@
 
     if-nez v4, :cond_8
 
-    const/4 v4, 0x0
+    move v4, v7
 
     .line 776
     :goto_5
@@ -1700,7 +1700,7 @@
 
     move-result-object v0
 
-    const/4 v2, 0x0
+    move v2, v7
 
     .line 792
     :goto_7
@@ -1767,7 +1767,7 @@
 .end method
 
 .method public static parseEmojis(Ljava/lang/CharSequence;[I)Ljava/util/ArrayList;
-    .locals 24
+    .locals 23
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -1795,7 +1795,7 @@
 
     if-gtz v2, :cond_0
 
-    goto/16 :goto_f
+    goto/16 :goto_e
 
     .line 366
     :cond_0
@@ -1863,9 +1863,9 @@
 
     and-long v17, v11, v17
 
-    cmp-long v19, v17, v5
+    cmp-long v17, v17, v5
 
-    if-nez v19, :cond_5
+    if-nez v17, :cond_5
 
     const-wide/32 v17, 0xffff
 
@@ -1873,9 +1873,9 @@
 
     const-wide/32 v19, 0xd83c
 
-    cmp-long v21, v17, v19
+    cmp-long v17, v17, v19
 
-    if-nez v21, :cond_5
+    if-nez v17, :cond_5
 
     const v5, 0xdde6
 
@@ -1910,7 +1910,7 @@
     :goto_4
     const/4 v3, 0x0
 
-    goto/16 :goto_9
+    goto/16 :goto_8
 
     .line 383
     :cond_5
@@ -1939,14 +1939,13 @@
     :goto_5
     add-int/lit8 v14, v14, 0x1
 
+    move/from16 v16, v7
+
     const/4 v3, 0x0
 
     const-wide/16 v11, 0x0
 
-    :goto_6
-    const/16 v16, 0x1
-
-    goto/16 :goto_9
+    goto/16 :goto_8
 
     :cond_7
     if-lez v3, :cond_8
@@ -2004,9 +2003,9 @@
     .line 400
     invoke-virtual {v2, v8}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    move v13, v15
+    move/from16 v16, v7
 
-    const/16 v16, 0x1
+    move v13, v15
 
     goto :goto_4
 
@@ -2027,16 +2026,16 @@
 
     if-gt v8, v3, :cond_c
 
-    goto :goto_7
+    goto :goto_6
 
     :cond_c
     const/4 v3, -0x1
 
-    goto :goto_8
+    goto :goto_7
 
     .line 404
     :cond_d
-    :goto_7
+    :goto_6
     sget-object v3, Lorg/telegram/messenger/EmojiData;->dataCharsMap:Ljava/util/HashMap;
 
     invoke-static {v8}, Ljava/lang/Character;->valueOf(C)Ljava/lang/Character;
@@ -2061,11 +2060,11 @@
     .line 409
     invoke-virtual {v2, v8}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    const/4 v3, 0x0
+    move/from16 v16, v7
 
-    goto :goto_6
+    goto/16 :goto_4
 
-    :goto_8
+    :goto_7
     if-eq v13, v3, :cond_f
 
     const/4 v3, 0x0
@@ -2081,7 +2080,7 @@
 
     const/16 v16, 0x0
 
-    goto :goto_9
+    goto :goto_8
 
     :cond_f
     const v3, 0xfe0f
@@ -2100,9 +2099,9 @@
 
     if-eq v8, v3, :cond_4
 
-    const/4 v3, 0x1
+    move v3, v7
 
-    :goto_9
+    :goto_8
     if-eqz v16, :cond_13
 
     add-int/lit8 v15, v10, 0x2
@@ -2144,7 +2143,7 @@
 
     add-int/lit8 v14, v14, 0x2
 
-    goto :goto_a
+    goto :goto_9
 
     .line 428
     :cond_10
@@ -2221,14 +2220,14 @@
     :cond_13
     move v15, v10
 
-    :goto_a
+    :goto_9
     move v5, v3
 
     move v6, v15
 
     const/4 v3, 0x0
 
-    :goto_b
+    :goto_a
     const/4 v7, 0x3
 
     if-ge v3, v7, :cond_1c
@@ -2242,7 +2241,7 @@
 
     move-result v10
 
-    move-wide/from16 v22, v11
+    move-wide/from16 v21, v11
 
     const/4 v11, 0x1
 
@@ -2274,7 +2273,7 @@
 
     const/16 v16, 0x0
 
-    goto :goto_d
+    goto :goto_c
 
     :cond_14
     const/4 v11, -0x1
@@ -2316,26 +2315,26 @@
 
     const/4 v6, 0x1
 
-    goto :goto_c
+    goto :goto_b
 
     :cond_16
     const/4 v6, 0x0
 
-    :goto_c
+    :goto_b
     move/from16 v16, v6
 
     :cond_17
     move v6, v7
 
-    goto :goto_d
+    goto :goto_c
 
     :cond_18
     const v11, 0xfe0f
 
-    goto :goto_d
+    goto :goto_c
 
     :cond_19
-    move-wide/from16 v22, v11
+    move-wide/from16 v21, v11
 
     :cond_1a
     const v11, 0xfe0f
@@ -2343,15 +2342,15 @@
     const/16 v12, 0x2a
 
     :cond_1b
-    :goto_d
+    :goto_c
     add-int/lit8 v3, v3, 0x1
 
-    move-wide/from16 v11, v22
+    move-wide/from16 v11, v21
 
-    goto :goto_b
+    goto :goto_a
 
     :cond_1c
-    move-wide/from16 v22, v11
+    move-wide/from16 v21, v11
 
     if-eqz v5, :cond_1d
 
@@ -2459,15 +2458,15 @@
 
     const/16 v16, 0x0
 
-    goto :goto_e
+    goto :goto_d
 
     :cond_20
     const/4 v3, 0x1
 
-    :goto_e
+    :goto_d
     add-int/lit8 v10, v6, 0x1
 
-    move-wide/from16 v11, v22
+    move-wide/from16 v11, v21
 
     const/16 v3, 0x10
 
@@ -2497,7 +2496,7 @@
     aput v2, v9, v2
 
     :cond_22
-    :goto_f
+    :goto_e
     return-object v1
 .end method
 
@@ -2706,7 +2705,7 @@
     const/16 v0, 0x32
 
     :goto_1
-    const/4 v2, 0x0
+    move v2, v1
 
     .line 528
     :goto_2
@@ -2726,7 +2725,7 @@
 
     if-eqz p0, :cond_6
 
-    const/4 v4, 0x0
+    move v4, v1
 
     .line 533
     :goto_3
@@ -2766,7 +2765,7 @@
     goto :goto_3
 
     :cond_5
-    const/4 v4, 0x0
+    move v4, v1
 
     :goto_4
     if-eqz v4, :cond_6

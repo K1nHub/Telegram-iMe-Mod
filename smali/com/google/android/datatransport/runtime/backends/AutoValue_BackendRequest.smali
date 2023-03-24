@@ -121,7 +121,7 @@
     goto :goto_1
 
     :cond_2
-    const/4 v0, 0x0
+    move v0, v2
 
     :goto_1
     return v0
@@ -170,7 +170,7 @@
 
     xor-int/2addr v0, v1
 
-    mul-int v0, v0, v1
+    mul-int/2addr v0, v1
 
     .line 61
     iget-object v1, p0, Lcom/google/android/datatransport/runtime/backends/AutoValue_BackendRequest;->extras:[B

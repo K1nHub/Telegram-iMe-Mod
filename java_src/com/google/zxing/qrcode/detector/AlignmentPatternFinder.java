@@ -116,16 +116,16 @@ final class AlignmentPatternFinder {
     /* JADX WARN: Code restructure failed: missing block: B:42:0x007d, code lost:
         return Float.NaN;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:44:0x008f, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:44:0x008e, code lost:
         if ((java.lang.Math.abs(((r2[0] + r2[1]) + r2[2]) - r13) * 5) < (r13 * 2)) goto L48;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:45:0x0091, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:45:0x0090, code lost:
         return Float.NaN;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:47:0x0096, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:47:0x0095, code lost:
         if (foundPatternCross(r2) == false) goto L52;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:49:0x009c, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:49:0x009b, code lost:
         return centerFromEnd(r2, r10);
      */
     /* JADX WARN: Code restructure failed: missing block: B:64:?, code lost:
@@ -164,10 +164,10 @@ final class AlignmentPatternFinder {
             goto L12
         L26:
             r7 = 2143289344(0x7fc00000, float:NaN)
-            if (r6 < 0) goto L9c
+            if (r6 < 0) goto L9b
             r8 = r2[r4]
             if (r8 <= r12) goto L30
-            goto L9c
+            goto L9b
         L30:
             if (r6 < 0) goto L44
             boolean r8 = r0.get(r11, r6)
@@ -197,10 +197,10 @@ final class AlignmentPatternFinder {
             int r10 = r10 + 1
             goto L4a
         L5e:
-            if (r10 == r1) goto L9c
+            if (r10 == r1) goto L9b
             r6 = r2[r4]
             if (r6 <= r12) goto L65
-            goto L9c
+            goto L9b
         L65:
             if (r10 >= r1) goto L79
             boolean r6 = r0.get(r11, r10)
@@ -225,14 +225,14 @@ final class AlignmentPatternFinder {
             int r11 = r11 - r13
             int r11 = java.lang.Math.abs(r11)
             int r11 = r11 * 5
-            int r13 = r13 * 2
-            if (r11 < r13) goto L92
+            int r13 = r13 * r5
+            if (r11 < r13) goto L91
             return r7
-        L92:
+        L91:
             boolean r11 = r9.foundPatternCross(r2)
-            if (r11 == 0) goto L9c
+            if (r11 == 0) goto L9b
             float r7 = centerFromEnd(r2, r10)
-        L9c:
+        L9b:
             return r7
         */
         throw new UnsupportedOperationException("Method not decompiled: com.google.zxing.qrcode.detector.AlignmentPatternFinder.crossCheckVertical(int, int, int, int):float");

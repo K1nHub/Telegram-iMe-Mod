@@ -150,7 +150,7 @@ public class WakeLock {
             java.lang.Integer r4 = java.lang.Integer.valueOf(r12)     // Catch: java.lang.Throwable -> L96
             r3[r2] = r4     // Catch: java.lang.Throwable -> L96
             r1.put(r6, r3)     // Catch: java.lang.Throwable -> L96
-            r2 = 1
+            r2 = r12
             goto L54
         L47:
             r3 = r1[r2]     // Catch: java.lang.Throwable -> L96
@@ -185,8 +185,8 @@ public class WakeLock {
             android.os.PowerManager$WakeLock r0 = r13.zzb
             r0.acquire()
             r0 = 0
-            int r2 = (r14 > r0 ? 1 : (r14 == r0 ? 0 : -1))
-            if (r2 <= 0) goto L95
+            int r0 = (r14 > r0 ? 1 : (r14 == r0 ? 0 : -1))
+            if (r0 <= 0) goto L95
             java.util.concurrent.ScheduledExecutorService r0 = com.google.android.gms.stats.WakeLock.zzn
             com.google.android.gms.stats.zzb r1 = new com.google.android.gms.stats.zzb
             r1.<init>(r13)
@@ -243,7 +243,7 @@ public class WakeLock {
             java.lang.Integer[] r1 = (java.lang.Integer[]) r1     // Catch: java.lang.Throwable -> L7e
             if (r1 != 0) goto L33
         L31:
-            r1 = 0
+            r1 = r11
             goto L50
         L33:
             r2 = r1[r11]     // Catch: java.lang.Throwable -> L7e
@@ -251,7 +251,7 @@ public class WakeLock {
             if (r2 != r10) goto L42
             java.util.Map<java.lang.String, java.lang.Integer[]> r1 = r12.zzj     // Catch: java.lang.Throwable -> L7e
             r1.remove(r6)     // Catch: java.lang.Throwable -> L7e
-            r1 = 1
+            r1 = r10
             goto L50
         L42:
             r2 = r1[r11]     // Catch: java.lang.Throwable -> L7e

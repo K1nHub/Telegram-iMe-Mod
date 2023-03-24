@@ -55,15 +55,15 @@ public final class GrpcUtil {
 
     static {
         Charset.forName(C0468C.ASCII_NAME);
-        TIMEOUT_KEY = Metadata.Key.m700of("grpc-timeout", new TimeoutMarshaller());
+        TIMEOUT_KEY = Metadata.Key.m699of("grpc-timeout", new TimeoutMarshaller());
         Metadata.AsciiMarshaller<String> asciiMarshaller = Metadata.ASCII_STRING_MARSHALLER;
-        MESSAGE_ENCODING_KEY = Metadata.Key.m700of("grpc-encoding", asciiMarshaller);
+        MESSAGE_ENCODING_KEY = Metadata.Key.m699of("grpc-encoding", asciiMarshaller);
         MESSAGE_ACCEPT_ENCODING_KEY = InternalMetadata.keyOf("grpc-accept-encoding", new AcceptEncodingMarshaller());
-        CONTENT_ENCODING_KEY = Metadata.Key.m700of("content-encoding", asciiMarshaller);
+        CONTENT_ENCODING_KEY = Metadata.Key.m699of("content-encoding", asciiMarshaller);
         CONTENT_ACCEPT_ENCODING_KEY = InternalMetadata.keyOf("accept-encoding", new AcceptEncodingMarshaller());
-        CONTENT_TYPE_KEY = Metadata.Key.m700of("content-type", asciiMarshaller);
-        TE_HEADER = Metadata.Key.m700of("te", asciiMarshaller);
-        USER_AGENT_KEY = Metadata.Key.m700of("user-agent", asciiMarshaller);
+        CONTENT_TYPE_KEY = Metadata.Key.m699of("content-type", asciiMarshaller);
+        TE_HEADER = Metadata.Key.m699of("te", asciiMarshaller);
+        USER_AGENT_KEY = Metadata.Key.m699of("user-agent", asciiMarshaller);
         Splitter.m756on(',').trimResults();
         TimeUnit timeUnit = TimeUnit.SECONDS;
         DEFAULT_KEEPALIVE_TIMEOUT_NANOS = timeUnit.toNanos(20L);
@@ -292,11 +292,14 @@ public final class GrpcUtil {
     }
 
     public static boolean isGrpcContentType(String str) {
-        char charAt;
         if (str != null && 16 <= str.length()) {
             String lowerCase = str.toLowerCase();
             if (lowerCase.startsWith("application/grpc")) {
-                return lowerCase.length() == 16 || (charAt = lowerCase.charAt(16)) == '+' || charAt == ';';
+                if (lowerCase.length() == 16) {
+                    return true;
+                }
+                char charAt = lowerCase.charAt(16);
+                return charAt == '+' || charAt == ';';
             }
             return false;
         }

@@ -29,15 +29,15 @@
 
     const/4 v2, 0x0
 
+    move v4, v1
+
+    move v5, v4
+
     move-object v6, v2
 
     move-object v7, v6
 
     move-object v8, v7
-
-    const/4 v4, 0x0
-
-    const/4 v5, 0x0
 
     .line 2
     :goto_0

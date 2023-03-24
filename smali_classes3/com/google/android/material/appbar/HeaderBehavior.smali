@@ -373,12 +373,12 @@
 
     if-eqz p1, :cond_4
 
-    const/4 p1, 0x1
+    move p1, v2
 
     goto :goto_0
 
     :cond_4
-    const/4 p1, 0x0
+    move p1, v4
 
     :goto_0
     iput-boolean p1, p0, Lcom/google/android/material/appbar/HeaderBehavior;->isBeingDragged:Z
@@ -476,12 +476,12 @@
 
     if-nez p1, :cond_1
 
-    const/4 p1, 0x1
+    move p1, v2
 
     goto :goto_0
 
     :cond_1
-    const/4 p1, 0x0
+    move p1, v3
 
     .line 127
     :goto_0
@@ -550,7 +550,7 @@
     invoke-virtual/range {v4 .. v9}, Lcom/google/android/material/appbar/HeaderBehavior;->scroll(Landroidx/coordinatorlayout/widget/CoordinatorLayout;Landroid/view/View;III)I
 
     :goto_1
-    const/4 p1, 0x0
+    move p1, v3
 
     goto :goto_3
 
@@ -596,12 +596,12 @@
 
     invoke-virtual/range {v5 .. v10}, Lcom/google/android/material/appbar/HeaderBehavior;->fling(Landroidx/coordinatorlayout/widget/CoordinatorLayout;Landroid/view/View;IIF)Z
 
-    const/4 p1, 0x1
+    move p1, v2
 
     goto :goto_2
 
     :cond_5
-    const/4 p1, 0x0
+    move p1, v3
 
     .line 141
     :goto_2
@@ -644,7 +644,7 @@
     goto :goto_4
 
     :cond_8
-    const/4 v2, 0x0
+    move v2, v3
 
     :cond_9
     :goto_4

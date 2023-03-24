@@ -237,9 +237,9 @@
     goto/16 :goto_2
 
     :cond_0
-    mul-int p2, p2, p3
+    mul-int/2addr p2, p3
 
-    mul-int p1, p1, p4
+    mul-int/2addr p1, p4
 
     mul-int/lit8 p5, p1, 0x2
 

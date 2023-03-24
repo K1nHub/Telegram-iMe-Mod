@@ -156,7 +156,7 @@
 
     const-wide/16 v10, 0x3e8
 
-    mul-long v8, v8, v10
+    mul-long/2addr v8, v10
 
     cmp-long v2, v8, v6
 
@@ -308,11 +308,11 @@
 
     move-result-wide v4
 
-    mul-long v4, v4, v10
+    mul-long/2addr v4, v10
 
-    cmp-long v10, v4, v6
+    cmp-long v6, v4, v6
 
-    if-nez v10, :cond_6
+    if-nez v6, :cond_6
 
     iget-object v0, v1, Lcom/google/android/gms/measurement/internal/zzfd;->zza:Lcom/google/android/gms/measurement/internal/zzfv;
 
@@ -353,9 +353,9 @@
 
     move-result-wide v4
 
-    cmp-long v6, v8, v4
+    cmp-long v4, v8, v4
 
-    if-nez v6, :cond_8
+    if-nez v4, :cond_8
 
     iget-object v4, v1, Lcom/google/android/gms/measurement/internal/zzfd;->zza:Lcom/google/android/gms/measurement/internal/zzfv;
 

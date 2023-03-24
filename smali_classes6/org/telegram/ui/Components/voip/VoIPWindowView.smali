@@ -488,7 +488,7 @@
     .line 87
     iput-boolean v5, p0, Lorg/telegram/ui/Components/voip/VoIPWindowView;->startDragging:Z
 
-    const/4 v0, 0x0
+    move v0, v4
 
     .line 89
     :cond_3
@@ -615,7 +615,7 @@
     goto :goto_1
 
     :cond_a
-    const/4 v5, 0x0
+    move v5, v1
 
     :cond_b
     :goto_1
@@ -645,7 +645,7 @@
 
     div-float/2addr v0, v2
 
-    mul-float v0, v0, p1
+    mul-float/2addr v0, p1
 
     float-to-int p1, v0
 

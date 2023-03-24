@@ -30,13 +30,13 @@ final class TwitterFragment$presenter$2 extends Lambda implements Function0<Twit
     /* compiled from: TwitterFragment.kt */
     /* renamed from: com.smedialink.ui.twitter.TwitterFragment$presenter$2$1 */
     /* loaded from: classes3.dex */
-    public static final class C19651 extends Lambda implements Function0<ParametersHolder> {
+    public static final class C19791 extends Lambda implements Function0<ParametersHolder> {
         final /* synthetic */ long $telegramProfileId;
         final /* synthetic */ long $twitterUserId;
         final /* synthetic */ String $twitterUserNickname;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        C19651(long j, long j2, String str) {
+        C19791(long j, long j2, String str) {
             super(0);
             this.$telegramProfileId = j;
             this.$twitterUserId = j2;
@@ -53,7 +53,7 @@ final class TwitterFragment$presenter$2 extends Lambda implements Function0<Twit
     @Override // kotlin.jvm.functions.Function0
     public final TwitterPresenter invoke() {
         Lazy lazy;
-        lazy = LazyKt__LazyJVMKt.lazy(KoinPlatformTools.INSTANCE.defaultLazyMode(), new TwitterFragment$presenter$2$invoke$$inlined$inject$default$1(this.this$0, null, new C19651(this.$telegramProfileId, this.$twitterUserId, this.$twitterUserNickname)));
+        lazy = LazyKt__LazyJVMKt.lazy(KoinPlatformTools.INSTANCE.defaultLazyMode(), new TwitterFragment$presenter$2$invoke$$inlined$inject$default$1(this.this$0, null, new C19791(this.$telegramProfileId, this.$twitterUserId, this.$twitterUserNickname)));
         return (TwitterPresenter) lazy.getValue();
     }
 }

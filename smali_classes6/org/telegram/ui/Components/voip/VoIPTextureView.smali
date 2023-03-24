@@ -597,13 +597,8 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    goto :goto_1
-
     :catchall_0
-    nop
-
     :cond_8
-    :goto_1
     if-nez v2, :cond_9
 
     .line 213
@@ -678,14 +673,14 @@
     .line 485
     iget v1, p0, Lorg/telegram/ui/Components/voip/VoIPTextureView;->clipVertical:F
 
-    mul-float v1, v1, p6
+    mul-float/2addr v1, p6
 
     iput v1, p0, Lorg/telegram/ui/Components/voip/VoIPTextureView;->currentClipVertical:F
 
     .line 486
     iget v1, p0, Lorg/telegram/ui/Components/voip/VoIPTextureView;->clipHorizontal:F
 
-    mul-float v1, v1, p6
+    mul-float/2addr v1, p6
 
     iput v1, p0, Lorg/telegram/ui/Components/voip/VoIPTextureView;->currentClipHorizontal:F
 
@@ -703,12 +698,12 @@
     :cond_0
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->invalidate()V
 
-    mul-float p1, p1, p6
+    mul-float/2addr p1, p6
 
     .line 492
     iget v1, p0, Lorg/telegram/ui/Components/voip/VoIPTextureView;->scaleTextureToFill:F
 
-    mul-float v1, v1, v0
+    mul-float/2addr v1, v0
 
     add-float/2addr p1, v1
 
@@ -722,12 +717,12 @@
 
     invoke-virtual {v1, p1}, Landroid/view/TextureView;->setScaleY(F)V
 
-    mul-float p2, p2, p6
+    mul-float/2addr p2, p6
 
     .line 496
     iget p1, p0, Lorg/telegram/ui/Components/voip/VoIPTextureView;->scaleTextureToFillBlur:F
 
-    mul-float p1, p1, v0
+    mul-float/2addr p1, v0
 
     add-float/2addr p2, p1
 
@@ -745,22 +740,22 @@
     invoke-virtual {p1, p2}, Landroid/view/TextureView;->setScaleY(F)V
 
     :cond_1
-    mul-float p3, p3, p6
+    mul-float/2addr p3, p6
 
     .line 502
     invoke-virtual {p0, p3}, Landroid/widget/FrameLayout;->setTranslationX(F)V
 
-    mul-float p4, p4, p6
+    mul-float/2addr p4, p6
 
     .line 503
     invoke-virtual {p0, p4}, Landroid/widget/FrameLayout;->setTranslationY(F)V
 
-    mul-float p5, p5, p6
+    mul-float/2addr p5, p6
 
     .line 504
     iget p1, p0, Lorg/telegram/ui/Components/voip/VoIPTextureView;->scaleThumb:F
 
-    mul-float p1, p1, v0
+    mul-float/2addr p1, v0
 
     add-float/2addr p5, p1
 
@@ -1049,11 +1044,11 @@
 
     move-result v0
 
-    const-wide/16 v1, 0x12c
+    const/high16 v1, 0x3f800000    # 1.0f
 
-    const/high16 v3, 0x3f800000    # 1.0f
+    cmpl-float v0, v0, v1
 
-    cmpl-float v0, v0, v3
+    const-wide/16 v2, 0x12c
 
     if-eqz v0, :cond_0
 
@@ -1064,11 +1059,11 @@
 
     move-result-object v0
 
-    invoke-virtual {v0, v1, v2}, Landroid/view/ViewPropertyAnimator;->setDuration(J)Landroid/view/ViewPropertyAnimator;
+    invoke-virtual {v0, v2, v3}, Landroid/view/ViewPropertyAnimator;->setDuration(J)Landroid/view/ViewPropertyAnimator;
 
     move-result-object v0
 
-    invoke-virtual {v0, v3}, Landroid/view/ViewPropertyAnimator;->alpha(F)Landroid/view/ViewPropertyAnimator;
+    invoke-virtual {v0, v1}, Landroid/view/ViewPropertyAnimator;->alpha(F)Landroid/view/ViewPropertyAnimator;
 
     .line 258
     :cond_0
@@ -1080,7 +1075,7 @@
 
     move-result v0
 
-    cmpl-float v0, v0, v3
+    cmpl-float v0, v0, v1
 
     if-eqz v0, :cond_1
 
@@ -1091,11 +1086,11 @@
 
     move-result-object v0
 
-    invoke-virtual {v0, v1, v2}, Landroid/view/ViewPropertyAnimator;->setDuration(J)Landroid/view/ViewPropertyAnimator;
+    invoke-virtual {v0, v2, v3}, Landroid/view/ViewPropertyAnimator;->setDuration(J)Landroid/view/ViewPropertyAnimator;
 
     move-result-object v0
 
-    invoke-virtual {v0, v3}, Landroid/view/ViewPropertyAnimator;->alpha(F)Landroid/view/ViewPropertyAnimator;
+    invoke-virtual {v0, v1}, Landroid/view/ViewPropertyAnimator;->alpha(F)Landroid/view/ViewPropertyAnimator;
 
     :cond_1
     return-void
@@ -2263,12 +2258,12 @@
 
     if-eqz p1, :cond_0
 
-    const/4 p1, 0x0
+    move p1, v1
 
     goto :goto_0
 
     :cond_0
-    const/16 p1, 0x8
+    move p1, v2
 
     :goto_0
     invoke-virtual {v0, p1}, Landroid/widget/FrameLayout;->setVisibility(I)V
@@ -2391,12 +2386,12 @@
 
     div-float/2addr v1, v0
 
-    mul-float v1, v1, p1
+    mul-float/2addr v1, p1
 
     goto :goto_0
 
     :cond_1
-    mul-float v1, v1, p1
+    mul-float/2addr v1, p1
 
     :goto_0
     sub-float/2addr v2, v1
@@ -2422,7 +2417,7 @@
 
     int-to-float v0, v0
 
-    mul-float v0, v0, p1
+    mul-float/2addr v0, p1
 
     invoke-virtual {p2, v0}, Landroid/widget/ImageView;->setTranslationY(F)V
 

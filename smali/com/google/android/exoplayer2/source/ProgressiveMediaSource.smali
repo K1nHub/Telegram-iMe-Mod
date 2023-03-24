@@ -231,13 +231,13 @@
 .end method
 
 .method public onSourceInfoRefreshed(JZZ)V
-    .locals 3
+    .locals 2
 
     const-wide v0, -0x7fffffffffffffffL    # -4.9E-324
 
-    cmp-long v2, p1, v0
+    cmp-long v0, p1, v0
 
-    if-nez v2, :cond_0
+    if-nez v0, :cond_0
 
     .line 325
     iget-wide p1, p0, Lcom/google/android/exoplayer2/source/ProgressiveMediaSource;->timelineDurationUs:J
@@ -250,9 +250,9 @@
 
     iget-wide v0, p0, Lcom/google/android/exoplayer2/source/ProgressiveMediaSource;->timelineDurationUs:J
 
-    cmp-long v2, v0, p1
+    cmp-long v0, v0, p1
 
-    if-nez v2, :cond_1
+    if-nez v0, :cond_1
 
     iget-boolean v0, p0, Lcom/google/android/exoplayer2/source/ProgressiveMediaSource;->timelineIsSeekable:Z
 

@@ -319,7 +319,7 @@
 
     const v0, 0x3e126e98    # 0.143f
 
-    mul-float p1, p1, v0
+    mul-float/2addr p1, v0
 
     const/high16 v0, 0x3f800000    # 1.0f
 
@@ -409,7 +409,7 @@
     if-eqz p2, :cond_2
 
     :cond_1
-    const/4 p2, 0x1
+    move p2, p4
 
     goto :goto_0
 
@@ -428,12 +428,12 @@
 
     if-eqz p2, :cond_3
 
-    const/high16 v0, 0x3f800000    # 1.0f
+    move v0, v1
 
     goto :goto_1
 
     :cond_3
-    const/4 v0, 0x0
+    move v0, v2
 
     .line 191
     :goto_1
@@ -662,7 +662,7 @@
 
     const/high16 v4, 0x437f0000    # 255.0f
 
-    mul-float v3, v3, v4
+    mul-float/2addr v3, v4
 
     float-to-int v3, v3
 
@@ -778,19 +778,19 @@
 .end method
 
 .method public setDialog(JZLjava/lang/CharSequence;)V
-    .locals 4
+    .locals 3
 
     .line 149
     iget-wide v0, p0, Lorg/telegram/ui/Cells/HintDialogCell;->dialogId:J
 
-    const/4 v2, 0x0
+    cmp-long v0, v0, p1
 
-    cmp-long v3, v0, p1
+    const/4 v1, 0x0
 
-    if-eqz v3, :cond_0
+    if-eqz v0, :cond_0
 
     .line 150
-    iput-boolean v2, p0, Lorg/telegram/ui/Cells/HintDialogCell;->wasDraw:Z
+    iput-boolean v1, p0, Lorg/telegram/ui/Cells/HintDialogCell;->wasDraw:Z
 
     .line 151
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->invalidate()V
@@ -804,7 +804,7 @@
 
     move-result v0
 
-    const-string v1, ""
+    const-string v2, ""
 
     if-eqz v0, :cond_3
 
@@ -852,7 +852,7 @@
     :cond_2
     iget-object p1, p0, Lorg/telegram/ui/Cells/HintDialogCell;->nameTextView:Landroid/widget/TextView;
 
-    invoke-virtual {p1, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+    invoke-virtual {p1, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     .line 163
     :goto_0
@@ -916,7 +916,7 @@
     :cond_5
     iget-object p2, p0, Lorg/telegram/ui/Cells/HintDialogCell;->nameTextView:Landroid/widget/TextView;
 
-    invoke-virtual {p2, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+    invoke-virtual {p2, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     .line 174
     :goto_1
@@ -940,7 +940,7 @@
     if-eqz p3, :cond_6
 
     .line 179
-    invoke-virtual {p0, v2}, Lorg/telegram/ui/Cells/HintDialogCell;->update(I)V
+    invoke-virtual {p0, v1}, Lorg/telegram/ui/Cells/HintDialogCell;->update(I)V
 
     :cond_6
     return-void

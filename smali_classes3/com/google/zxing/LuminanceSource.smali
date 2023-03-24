@@ -66,13 +66,13 @@
 
     add-int/lit8 v0, v0, 0x1
 
-    mul-int v3, v3, v0
+    mul-int/2addr v3, v0
 
     invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(I)V
 
     const/4 v0, 0x0
 
-    const/4 v3, 0x0
+    move v3, v0
 
     .line 136
     :goto_0
@@ -85,7 +85,7 @@
 
     move-result-object v1
 
-    const/4 v4, 0x0
+    move v4, v0
 
     .line 138
     :goto_1

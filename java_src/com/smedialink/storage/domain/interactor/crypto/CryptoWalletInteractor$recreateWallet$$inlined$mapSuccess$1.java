@@ -58,10 +58,10 @@ public final class CryptoWalletInteractor$recreateWallet$$inlined$mapSuccess$1 e
                 break;
             }
         }
-        Wallet wallet = (Wallet) obj;
-        if (wallet == null) {
-            wallet = (Wallet) CollectionsKt.first((List<? extends Object>) list);
+        Wallet wallet2 = (Wallet) obj;
+        if (wallet2 == null) {
+            wallet2 = (Wallet) CollectionsKt.first((List<? extends Object>) list);
         }
-        return Result.Companion.success(wallet);
+        return Result.Companion.success(wallet2);
     }
 }

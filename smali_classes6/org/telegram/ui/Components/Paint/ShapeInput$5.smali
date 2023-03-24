@@ -73,7 +73,7 @@
 
     double-to-float v4, v4
 
-    mul-float v4, v4, v0
+    mul-float/2addr v4, v0
 
     add-float/2addr v1, v4
 
@@ -91,7 +91,7 @@
 
     double-to-float v2, v2
 
-    mul-float v2, v2, v0
+    mul-float/2addr v2, v0
 
     add-float/2addr v4, v2
 

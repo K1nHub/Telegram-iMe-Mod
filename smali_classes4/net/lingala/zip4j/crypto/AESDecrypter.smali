@@ -489,7 +489,7 @@
 
     if-gt v2, v1, :cond_0
 
-    const/16 v1, 0x10
+    move v1, v3
 
     goto :goto_1
 

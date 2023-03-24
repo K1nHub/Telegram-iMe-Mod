@@ -38,13 +38,13 @@
 .method public onPageScrolled(F)V
     .locals 6
 
-    const/4 v0, 0x1
+    const/high16 v0, 0x3f800000    # 1.0f
 
-    const/high16 v1, 0x3f800000    # 1.0f
+    cmpl-float v0, p1, v0
 
-    cmpl-float v1, p1, v1
+    const/4 v1, 0x1
 
-    if-nez v1, :cond_0
+    if-nez v0, :cond_0
 
     .line 182
     iget-object v2, p0, Lorg/telegram/ui/DialogOrContactPickerActivity$3;->this$0:Lorg/telegram/ui/DialogOrContactPickerActivity;
@@ -53,7 +53,7 @@
 
     move-result-object v2
 
-    aget-object v2, v2, v0
+    aget-object v2, v2, v1
 
     invoke-virtual {v2}, Landroid/widget/FrameLayout;->getVisibility()I
 
@@ -100,7 +100,7 @@
 
     int-to-float v5, v5
 
-    mul-float v4, v4, v5
+    mul-float/2addr v4, v5
 
     invoke-virtual {v2, v4}, Landroid/widget/FrameLayout;->setTranslationX(F)V
 
@@ -111,7 +111,7 @@
 
     move-result-object v2
 
-    aget-object v2, v2, v0
+    aget-object v2, v2, v1
 
     iget-object v4, p0, Lorg/telegram/ui/DialogOrContactPickerActivity$3;->this$0:Lorg/telegram/ui/DialogOrContactPickerActivity;
 
@@ -141,7 +141,7 @@
 
     int-to-float v5, v5
 
-    mul-float p1, p1, v5
+    mul-float/2addr p1, v5
 
     sub-float/2addr v4, p1
 
@@ -173,7 +173,7 @@
 
     int-to-float v4, v4
 
-    mul-float v4, v4, p1
+    mul-float/2addr v4, p1
 
     invoke-virtual {v2, v4}, Landroid/widget/FrameLayout;->setTranslationX(F)V
 
@@ -184,7 +184,7 @@
 
     move-result-object v2
 
-    aget-object v2, v2, v0
+    aget-object v2, v2, v1
 
     iget-object v4, p0, Lorg/telegram/ui/DialogOrContactPickerActivity$3;->this$0:Lorg/telegram/ui/DialogOrContactPickerActivity;
 
@@ -200,7 +200,7 @@
 
     int-to-float v4, v4
 
-    mul-float p1, p1, v4
+    mul-float/2addr p1, v4
 
     iget-object v4, p0, Lorg/telegram/ui/DialogOrContactPickerActivity$3;->this$0:Lorg/telegram/ui/DialogOrContactPickerActivity;
 
@@ -221,7 +221,7 @@
     invoke-virtual {v2, p1}, Landroid/widget/FrameLayout;->setTranslationX(F)V
 
     :goto_0
-    if-nez v1, :cond_2
+    if-nez v0, :cond_2
 
     .line 193
     iget-object p1, p0, Lorg/telegram/ui/DialogOrContactPickerActivity$3;->this$0:Lorg/telegram/ui/DialogOrContactPickerActivity;
@@ -233,11 +233,11 @@
     aget-object p1, p1, v3
 
     .line 194
-    iget-object v1, p0, Lorg/telegram/ui/DialogOrContactPickerActivity$3;->this$0:Lorg/telegram/ui/DialogOrContactPickerActivity;
+    iget-object v0, p0, Lorg/telegram/ui/DialogOrContactPickerActivity$3;->this$0:Lorg/telegram/ui/DialogOrContactPickerActivity;
 
-    invoke-static {v1}, Lorg/telegram/ui/DialogOrContactPickerActivity;->access$300(Lorg/telegram/ui/DialogOrContactPickerActivity;)[Lorg/telegram/ui/DialogOrContactPickerActivity$ViewPage;
+    invoke-static {v0}, Lorg/telegram/ui/DialogOrContactPickerActivity;->access$300(Lorg/telegram/ui/DialogOrContactPickerActivity;)[Lorg/telegram/ui/DialogOrContactPickerActivity$ViewPage;
 
-    move-result-object v1
+    move-result-object v0
 
     iget-object v2, p0, Lorg/telegram/ui/DialogOrContactPickerActivity$3;->this$0:Lorg/telegram/ui/DialogOrContactPickerActivity;
 
@@ -245,18 +245,18 @@
 
     move-result-object v2
 
-    aget-object v2, v2, v0
+    aget-object v2, v2, v1
 
-    aput-object v2, v1, v3
+    aput-object v2, v0, v3
 
     .line 195
-    iget-object v1, p0, Lorg/telegram/ui/DialogOrContactPickerActivity$3;->this$0:Lorg/telegram/ui/DialogOrContactPickerActivity;
+    iget-object v0, p0, Lorg/telegram/ui/DialogOrContactPickerActivity$3;->this$0:Lorg/telegram/ui/DialogOrContactPickerActivity;
 
-    invoke-static {v1}, Lorg/telegram/ui/DialogOrContactPickerActivity;->access$300(Lorg/telegram/ui/DialogOrContactPickerActivity;)[Lorg/telegram/ui/DialogOrContactPickerActivity$ViewPage;
+    invoke-static {v0}, Lorg/telegram/ui/DialogOrContactPickerActivity;->access$300(Lorg/telegram/ui/DialogOrContactPickerActivity;)[Lorg/telegram/ui/DialogOrContactPickerActivity$ViewPage;
 
-    move-result-object v1
+    move-result-object v0
 
-    aput-object p1, v1, v0
+    aput-object p1, v0, v1
 
     .line 196
     iget-object p1, p0, Lorg/telegram/ui/DialogOrContactPickerActivity$3;->this$0:Lorg/telegram/ui/DialogOrContactPickerActivity;
@@ -265,7 +265,7 @@
 
     move-result-object p1
 
-    aget-object p1, p1, v0
+    aget-object p1, p1, v1
 
     const/16 v0, 0x8
 
@@ -313,12 +313,12 @@
 
     if-ne p1, v2, :cond_1
 
-    const/4 v2, 0x1
+    move v2, v3
 
     goto :goto_0
 
     :cond_1
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_0
     invoke-static {v0, v2}, Lorg/telegram/ui/DialogOrContactPickerActivity;->access$502(Lorg/telegram/ui/DialogOrContactPickerActivity;Z)Z

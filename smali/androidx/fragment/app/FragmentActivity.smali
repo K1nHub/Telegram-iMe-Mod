@@ -263,7 +263,7 @@
 
     invoke-virtual {v0, p1}, Landroidx/fragment/app/FragmentViewLifecycleOwner;->setCurrentState(Landroidx/lifecycle/Lifecycle$State;)V
 
-    const/4 v0, 0x1
+    move v0, v3
 
     .line 826
     :cond_3
@@ -286,7 +286,7 @@
 
     invoke-virtual {v0, p1}, Landroidx/lifecycle/LifecycleRegistry;->setCurrentState(Landroidx/lifecycle/Lifecycle$State;)V
 
-    const/4 v0, 0x1
+    move v0, v3
 
     goto :goto_0
 

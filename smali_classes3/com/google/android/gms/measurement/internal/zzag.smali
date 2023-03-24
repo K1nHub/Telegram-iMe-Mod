@@ -741,7 +741,7 @@
     return v3
 
     :cond_2
-    const/4 v2, 0x0
+    move v2, v3
 
     :cond_3
     :goto_0

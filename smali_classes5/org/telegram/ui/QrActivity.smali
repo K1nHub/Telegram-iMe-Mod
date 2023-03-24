@@ -1465,9 +1465,9 @@
 
     const-wide/16 p2, 0x96
 
-    cmp-long v2, v0, p2
+    cmp-long p2, v0, p2
 
-    if-lez v2, :cond_0
+    if-lez p2, :cond_0
 
     const/4 p2, 0x1
 
@@ -1581,7 +1581,7 @@
 
     invoke-direct {v0, v2}, Ljava/util/ArrayList;-><init>(I)V
 
-    const/4 v2, 0x0
+    move v2, v1
 
     .line 506
     :goto_0
@@ -1689,7 +1689,7 @@
     goto :goto_1
 
     :cond_3
-    const/4 v1, -0x1
+    move v1, v2
 
     :goto_2
     if-eq v1, v2, :cond_4
@@ -1756,7 +1756,7 @@
 
     move-result v2
 
-    mul-float v2, v2, v3
+    mul-float/2addr v2, v3
 
     .line 584
     iget-object v4, p0, Lorg/telegram/ui/QrActivity;->patternAlphaAnimator:Landroid/animation/ValueAnimator;
@@ -1766,7 +1766,7 @@
     goto :goto_0
 
     :cond_0
-    const/high16 v2, 0x3f800000    # 1.0f
+    move v2, v3
 
     .line 587
     :goto_0
@@ -2096,7 +2096,7 @@
 
     iput-object p1, v1, Lorg/telegram/ui/ActionBar/INavigationLayout$ThemeAnimationSettings;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
-    mul-float v2, v2, v0
+    mul-float/2addr v2, v0
 
     float-to-int p1, v2
 
@@ -2113,6 +2113,8 @@
     invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->runOnUIThread(Ljava/lang/Runnable;)V
 
     return-void
+
+    nop
 
     :array_0
     .array-data 4
@@ -2226,7 +2228,7 @@
 
     const/high16 v3, 0x3f800000    # 1.0f
 
-    mul-float v2, v2, v3
+    mul-float/2addr v2, v3
 
     int-to-float v3, v0
 
@@ -2238,7 +2240,7 @@
 
     if-lez v2, :cond_0
 
-    mul-float v3, v3, v4
+    mul-float/2addr v3, v4
 
     float-to-int v1, v3
 
@@ -2483,7 +2485,7 @@
     return v1
 
     :cond_0
-    const/4 v2, 0x0
+    move v2, v1
 
     .line 415
     :goto_0
@@ -2509,7 +2511,7 @@
 
     if-eqz v6, :cond_1
 
-    const/4 v0, 0x0
+    move v0, v1
 
     goto :goto_2
 
@@ -2527,7 +2529,7 @@
 
     if-eqz v3, :cond_3
 
-    const/4 v0, 0x1
+    move v0, v5
 
     goto :goto_2
 
@@ -2538,7 +2540,7 @@
 
     :cond_4
     :goto_1
-    const/4 v0, 0x2
+    move v0, v4
 
     :goto_2
     if-ne v0, v4, :cond_a
@@ -2568,7 +2570,7 @@
     goto :goto_4
 
     :cond_5
-    const/4 v3, 0x0
+    move v3, v1
 
     .line 433
     :goto_3
@@ -2623,7 +2625,7 @@
     if-ne v0, v5, :cond_c
 
     :cond_b
-    const/4 v1, 0x1
+    move v1, v5
 
     :cond_c
     return v1
@@ -2721,24 +2723,24 @@
 
     const-wide/16 v8, 0x0
 
-    const/4 v10, 0x1
+    cmp-long v6, v6, v8
 
-    cmp-long v11, v6, v8
+    const/4 v7, 0x1
 
-    if-eqz v11, :cond_4
+    if-eqz v6, :cond_4
 
     .line 281
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getMessagesController()Lorg/telegram/messenger/MessagesController;
 
     move-result-object v6
 
-    iget-wide v11, v0, Lorg/telegram/ui/QrActivity;->userId:J
+    iget-wide v10, v0, Lorg/telegram/ui/QrActivity;->userId:J
 
-    invoke-static {v11, v12}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+    invoke-static {v10, v11}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
-    move-result-object v7
+    move-result-object v10
 
-    invoke-virtual {v6, v7}, Lorg/telegram/messenger/MessagesController;->getUser(Ljava/lang/Long;)Lorg/telegram/tgnet/TLRPC$User;
+    invoke-virtual {v6, v10}, Lorg/telegram/messenger/MessagesController;->getUser(Ljava/lang/Long;)Lorg/telegram/tgnet/TLRPC$User;
 
     move-result-object v6
 
@@ -2747,9 +2749,9 @@
     .line 283
     invoke-static {v6}, Lorg/telegram/messenger/UserObject;->getPublicUsername(Lorg/telegram/tgnet/TLRPC$User;)Ljava/lang/String;
 
-    move-result-object v7
+    move-result-object v10
 
-    if-nez v7, :cond_2
+    if-nez v10, :cond_2
 
     .line 285
     invoke-static {v6}, Lorg/telegram/messenger/UserObject;->getUserName(Lorg/telegram/tgnet/TLRPC$User;)Ljava/lang/String;
@@ -2764,14 +2766,14 @@
     if-eqz v12, :cond_1
 
     .line 287
-    iget-object v7, v6, Lorg/telegram/tgnet/TLRPC$User;->phone:Ljava/lang/String;
+    iget-object v10, v6, Lorg/telegram/tgnet/TLRPC$User;->phone:Ljava/lang/String;
 
-    if-eqz v7, :cond_0
+    if-eqz v10, :cond_0
 
     const-string v12, "+"
 
     .line 288
-    invoke-virtual {v7, v12}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+    invoke-virtual {v10, v12}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
     move-result v13
 
@@ -2784,40 +2786,41 @@
 
     invoke-virtual {v13, v12}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v13, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v13, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {v13}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v7
+    move-result-object v10
 
     :cond_0
-    const/4 v12, 0x1
+    move v13, v3
+
+    move v12, v7
 
     goto :goto_0
 
     :cond_1
-    const/4 v12, 0x0
+    move v12, v3
 
-    const/4 v13, 0x1
+    move v13, v7
 
-    goto :goto_1
+    goto :goto_0
 
     :cond_2
+    move v12, v3
+
+    move v13, v12
+
     move-object v11, v4
 
-    const/4 v12, 0x0
-
-    :goto_0
-    const/4 v13, 0x0
-
     .line 296
-    :goto_1
+    :goto_0
     new-instance v14, Lorg/telegram/ui/Components/AvatarDrawable;
 
     invoke-direct {v14, v6}, Lorg/telegram/ui/Components/AvatarDrawable;-><init>(Lorg/telegram/tgnet/TLRPC$User;)V
 
     .line 297
-    invoke-static {v6, v10}, Lorg/telegram/messenger/ImageLocation;->getForUser(Lorg/telegram/tgnet/TLRPC$User;I)Lorg/telegram/messenger/ImageLocation;
+    invoke-static {v6, v7}, Lorg/telegram/messenger/ImageLocation;->getForUser(Lorg/telegram/tgnet/TLRPC$User;I)Lorg/telegram/messenger/ImageLocation;
 
     move-result-object v15
 
@@ -2830,51 +2833,50 @@
 
     move v3, v12
 
-    goto :goto_2
+    goto :goto_1
 
     :cond_3
+    move v13, v3
+
     move-object v6, v4
 
-    move-object v7, v6
+    move-object v10, v6
 
-    move-object v11, v7
+    move-object v11, v10
 
     move-object v14, v11
 
     move-object v15, v14
 
-    const/4 v13, 0x0
-
-    :goto_2
+    :goto_1
     move-object/from16 v19, v14
 
     move-object/from16 v17, v15
 
-    :goto_3
     move-object v15, v6
 
-    goto :goto_4
+    goto :goto_2
 
     .line 300
     :cond_4
-    iget-wide v6, v0, Lorg/telegram/ui/QrActivity;->chatId:J
+    iget-wide v10, v0, Lorg/telegram/ui/QrActivity;->chatId:J
 
-    cmp-long v11, v6, v8
+    cmp-long v6, v10, v8
 
-    if-eqz v11, :cond_5
+    if-eqz v6, :cond_5
 
     .line 301
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getMessagesController()Lorg/telegram/messenger/MessagesController;
 
     move-result-object v6
 
-    iget-wide v11, v0, Lorg/telegram/ui/QrActivity;->chatId:J
+    iget-wide v10, v0, Lorg/telegram/ui/QrActivity;->chatId:J
 
-    invoke-static {v11, v12}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+    invoke-static {v10, v11}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
-    move-result-object v7
+    move-result-object v10
 
-    invoke-virtual {v6, v7}, Lorg/telegram/messenger/MessagesController;->getChat(Ljava/lang/Long;)Lorg/telegram/tgnet/TLRPC$Chat;
+    invoke-virtual {v6, v10}, Lorg/telegram/messenger/MessagesController;->getChat(Ljava/lang/Long;)Lorg/telegram/tgnet/TLRPC$Chat;
 
     move-result-object v6
 
@@ -2883,7 +2885,7 @@
     .line 303
     invoke-static {v6}, Lorg/telegram/messenger/ChatObject;->getPublicUsername(Lorg/telegram/tgnet/TLRPC$Chat;)Ljava/lang/String;
 
-    move-result-object v7
+    move-result-object v10
 
     .line 304
     new-instance v14, Lorg/telegram/ui/Components/AvatarDrawable;
@@ -2891,7 +2893,7 @@
     invoke-direct {v14, v6}, Lorg/telegram/ui/Components/AvatarDrawable;-><init>(Lorg/telegram/tgnet/TLRPC$Chat;)V
 
     .line 305
-    invoke-static {v6, v10}, Lorg/telegram/messenger/ImageLocation;->getForChat(Lorg/telegram/tgnet/TLRPC$Chat;I)Lorg/telegram/messenger/ImageLocation;
+    invoke-static {v6, v7}, Lorg/telegram/messenger/ImageLocation;->getForChat(Lorg/telegram/tgnet/TLRPC$Chat;I)Lorg/telegram/messenger/ImageLocation;
 
     move-result-object v15
 
@@ -2900,20 +2902,18 @@
 
     move-result-object v6
 
+    move v13, v3
+
     move-object v11, v4
 
-    move-object/from16 v19, v14
-
-    move-object/from16 v17, v15
-
-    const/4 v13, 0x0
-
-    goto :goto_3
+    goto :goto_1
 
     :cond_5
-    move-object v7, v4
+    move v13, v3
 
-    move-object v11, v7
+    move-object v10, v4
+
+    move-object v11, v10
 
     move-object v15, v11
 
@@ -2921,10 +2921,8 @@
 
     move-object/from16 v19, v17
 
-    const/4 v13, 0x0
-
     .line 310
-    :goto_4
+    :goto_2
     new-instance v6, Lorg/telegram/ui/QrActivity$QrView;
 
     invoke-direct {v6, v1}, Lorg/telegram/ui/QrActivity$QrView;-><init>(Landroid/content/Context;)V
@@ -2942,7 +2940,7 @@
     .line 311
     invoke-virtual {v6, v12, v14, v8, v9}, Lorg/telegram/ui/QrActivity$QrView;->setColors(IIII)V
 
-    if-eqz v7, :cond_6
+    if-eqz v10, :cond_6
 
     .line 313
     new-instance v6, Ljava/lang/StringBuilder;
@@ -2967,27 +2965,27 @@
 
     invoke-virtual {v6, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v6, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v6
 
-    goto :goto_5
+    goto :goto_3
 
     :cond_6
     move-object v6, v4
 
     .line 315
-    :goto_5
+    :goto_3
     iget-object v8, v0, Lorg/telegram/ui/QrActivity;->qrView:Lorg/telegram/ui/QrActivity$QrView;
 
     if-eqz v11, :cond_7
 
-    move-object v7, v11
+    move-object v10, v11
 
     :cond_7
-    invoke-virtual {v8, v6, v7, v3, v13}, Lorg/telegram/ui/QrActivity$QrView;->setData(Ljava/lang/String;Ljava/lang/String;ZZ)V
+    invoke-virtual {v8, v6, v10, v3, v13}, Lorg/telegram/ui/QrActivity$QrView;->setData(Ljava/lang/String;Ljava/lang/String;ZZ)V
 
     .line 316
     iget-object v3, v0, Lorg/telegram/ui/QrActivity;->qrView:Lorg/telegram/ui/QrActivity$QrView;
@@ -3011,16 +3009,16 @@
     iput-object v3, v0, Lorg/telegram/ui/QrActivity;->logoImageView:Lorg/telegram/ui/Components/RLottieImageView;
 
     .line 323
-    invoke-virtual {v3, v10}, Lorg/telegram/ui/Components/RLottieImageView;->setAutoRepeat(Z)V
+    invoke-virtual {v3, v7}, Lorg/telegram/ui/Components/RLottieImageView;->setAutoRepeat(Z)V
 
     .line 324
     iget-object v3, v0, Lorg/telegram/ui/QrActivity;->logoImageView:Lorg/telegram/ui/Components/RLottieImageView;
 
     sget v6, Lorg/telegram/messenger/R$raw;->qr_code_logo_2:I
 
-    const/16 v7, 0x3c
+    const/16 v8, 0x3c
 
-    invoke-virtual {v3, v6, v7, v7}, Lorg/telegram/ui/Components/RLottieImageView;->setAnimation(III)V
+    invoke-virtual {v3, v6, v8, v8}, Lorg/telegram/ui/Components/RLottieImageView;->setAnimation(III)V
 
     .line 325
     iget-object v3, v0, Lorg/telegram/ui/QrActivity;->logoImageView:Lorg/telegram/ui/Components/RLottieImageView;
@@ -3055,20 +3053,20 @@
 
     invoke-static {v6}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
-    move-result v7
+    move-result v8
 
     invoke-static {v6}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
-    move-result v8
+    move-result v9
 
-    invoke-virtual {v3, v7, v8}, Lorg/telegram/ui/Components/BackupImageView;->setSize(II)V
+    invoke-virtual {v3, v8, v9}, Lorg/telegram/ui/Components/BackupImageView;->setSize(II)V
 
     .line 331
     iget-object v3, v0, Lorg/telegram/ui/QrActivity;->avatarImageView:Lorg/telegram/ui/Components/BackupImageView;
 
-    const/16 v7, 0x33
+    const/16 v8, 0x33
 
-    invoke-static {v6, v6, v7}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(III)Landroid/widget/FrameLayout$LayoutParams;
+    invoke-static {v6, v6, v8}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(III)Landroid/widget/FrameLayout$LayoutParams;
 
     move-result-object v6
 
@@ -3105,11 +3103,11 @@
 
     move-result v6
 
-    const/high16 v7, 0x28000000
+    const/high16 v8, 0x28000000
 
-    const v8, 0x28ffffff
+    const v9, 0x28ffffff
 
-    invoke-static {v6, v7, v8}, Lorg/telegram/ui/ActionBar/Theme;->createSimpleSelectorCircleDrawable(III)Landroid/graphics/drawable/Drawable;
+    invoke-static {v6, v8, v9}, Lorg/telegram/ui/ActionBar/Theme;->createSimpleSelectorCircleDrawable(III)Landroid/graphics/drawable/Drawable;
 
     move-result-object v6
 
@@ -3184,49 +3182,49 @@
 
     int-to-float v6, v6
 
-    iget-object v7, v0, Lorg/telegram/ui/QrActivity;->emojiThemeIcon:Landroid/graphics/Bitmap;
+    iget-object v8, v0, Lorg/telegram/ui/QrActivity;->emojiThemeIcon:Landroid/graphics/Bitmap;
 
-    invoke-virtual {v7}, Landroid/graphics/Bitmap;->getHeight()I
-
-    move-result v7
-
-    int-to-float v7, v7
-
-    const/4 v8, 0x0
-
-    invoke-virtual {v3, v8, v8, v6, v7}, Landroid/graphics/RectF;->set(FFFF)V
-
-    .line 344
-    new-instance v6, Landroid/graphics/Paint;
-
-    invoke-direct {v6, v10}, Landroid/graphics/Paint;-><init>(I)V
-
-    .line 345
-    invoke-virtual {v6, v5}, Landroid/graphics/Paint;->setColor(I)V
-
-    const/4 v7, 0x5
-
-    .line 346
-    invoke-static {v7}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    invoke-virtual {v8}, Landroid/graphics/Bitmap;->getHeight()I
 
     move-result v8
 
     int-to-float v8, v8
 
-    invoke-static {v7}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    const/4 v9, 0x0
 
-    move-result v7
+    invoke-virtual {v3, v9, v9, v6, v8}, Landroid/graphics/RectF;->set(FFFF)V
 
-    int-to-float v7, v7
+    .line 344
+    new-instance v6, Landroid/graphics/Paint;
 
-    invoke-virtual {v1, v3, v8, v7, v6}, Landroid/graphics/Canvas;->drawRoundRect(Landroid/graphics/RectF;FFLandroid/graphics/Paint;)V
+    invoke-direct {v6, v7}, Landroid/graphics/Paint;-><init>(I)V
+
+    .line 345
+    invoke-virtual {v6, v5}, Landroid/graphics/Paint;->setColor(I)V
+
+    const/4 v8, 0x5
+
+    .line 346
+    invoke-static {v8}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+
+    move-result v9
+
+    int-to-float v9, v9
+
+    invoke-static {v8}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+
+    move-result v8
+
+    int-to-float v8, v8
+
+    invoke-virtual {v1, v3, v9, v8, v6}, Landroid/graphics/Canvas;->drawRoundRect(Landroid/graphics/RectF;FFLandroid/graphics/Paint;)V
 
     .line 347
     new-instance v3, Landroid/graphics/PorterDuffXfermode;
 
-    sget-object v7, Landroid/graphics/PorterDuff$Mode;->DST_OUT:Landroid/graphics/PorterDuff$Mode;
+    sget-object v8, Landroid/graphics/PorterDuff$Mode;->DST_OUT:Landroid/graphics/PorterDuff$Mode;
 
-    invoke-direct {v3, v7}, Landroid/graphics/PorterDuffXfermode;-><init>(Landroid/graphics/PorterDuff$Mode;)V
+    invoke-direct {v3, v8}, Landroid/graphics/PorterDuffXfermode;-><init>(Landroid/graphics/PorterDuff$Mode;)V
 
     invoke-virtual {v6, v3}, Landroid/graphics/Paint;->setXfermode(Landroid/graphics/Xfermode;)Landroid/graphics/Xfermode;
 
@@ -3237,48 +3235,48 @@
 
     move-result-object v3
 
-    sget v7, Lorg/telegram/messenger/R$drawable;->msg_qr_mini:I
+    sget v8, Lorg/telegram/messenger/R$drawable;->msg_qr_mini:I
 
-    invoke-static {v3, v7}, Landroid/graphics/BitmapFactory;->decodeResource(Landroid/content/res/Resources;I)Landroid/graphics/Bitmap;
+    invoke-static {v3, v8}, Landroid/graphics/BitmapFactory;->decodeResource(Landroid/content/res/Resources;I)Landroid/graphics/Bitmap;
 
     move-result-object v3
 
     .line 349
-    iget-object v7, v0, Lorg/telegram/ui/QrActivity;->emojiThemeIcon:Landroid/graphics/Bitmap;
+    iget-object v8, v0, Lorg/telegram/ui/QrActivity;->emojiThemeIcon:Landroid/graphics/Bitmap;
 
-    invoke-virtual {v7}, Landroid/graphics/Bitmap;->getWidth()I
-
-    move-result v7
-
-    invoke-virtual {v3}, Landroid/graphics/Bitmap;->getWidth()I
+    invoke-virtual {v8}, Landroid/graphics/Bitmap;->getWidth()I
 
     move-result v8
 
-    sub-int/2addr v7, v8
-
-    int-to-float v7, v7
-
-    const/high16 v8, 0x3f000000    # 0.5f
-
-    mul-float v7, v7, v8
-
-    iget-object v9, v0, Lorg/telegram/ui/QrActivity;->emojiThemeIcon:Landroid/graphics/Bitmap;
-
-    invoke-virtual {v9}, Landroid/graphics/Bitmap;->getHeight()I
+    invoke-virtual {v3}, Landroid/graphics/Bitmap;->getWidth()I
 
     move-result v9
+
+    sub-int/2addr v8, v9
+
+    int-to-float v8, v8
+
+    const/high16 v9, 0x3f000000    # 0.5f
+
+    mul-float/2addr v8, v9
+
+    iget-object v10, v0, Lorg/telegram/ui/QrActivity;->emojiThemeIcon:Landroid/graphics/Bitmap;
+
+    invoke-virtual {v10}, Landroid/graphics/Bitmap;->getHeight()I
+
+    move-result v10
 
     invoke-virtual {v3}, Landroid/graphics/Bitmap;->getHeight()I
 
     move-result v11
 
-    sub-int/2addr v9, v11
+    sub-int/2addr v10, v11
 
-    int-to-float v9, v9
+    int-to-float v10, v10
 
-    mul-float v9, v9, v8
+    mul-float/2addr v10, v9
 
-    invoke-virtual {v1, v3, v7, v9, v6}, Landroid/graphics/Canvas;->drawBitmap(Landroid/graphics/Bitmap;FFLandroid/graphics/Paint;)V
+    invoke-virtual {v1, v3, v8, v10, v6}, Landroid/graphics/Canvas;->drawBitmap(Landroid/graphics/Bitmap;FFLandroid/graphics/Paint;)V
 
     .line 350
     invoke-virtual {v1, v4}, Landroid/graphics/Canvas;->setBitmap(Landroid/graphics/Bitmap;)V
@@ -3366,7 +3364,7 @@
     .line 372
     iget-object v1, v0, Lorg/telegram/ui/QrActivity;->currMotionDrawable:Lorg/telegram/ui/Components/MotionBackgroundDrawable;
 
-    invoke-virtual {v1, v10}, Lorg/telegram/ui/Components/MotionBackgroundDrawable;->setIndeterminateAnimation(Z)V
+    invoke-virtual {v1, v7}, Lorg/telegram/ui/Components/MotionBackgroundDrawable;->setIndeterminateAnimation(Z)V
 
     .line 374
     iput-object v2, v0, Lorg/telegram/ui/ActionBar/BaseFragment;->fragmentView:Landroid/view/View;
@@ -3396,13 +3394,13 @@
 
     const-wide/16 v8, 0xfa
 
-    goto :goto_6
+    goto :goto_4
 
     :cond_8
     const-wide/16 v8, 0x0
 
     .line 385
-    :goto_6
+    :goto_4
     invoke-virtual {v1, v2, v8, v9}, Landroid/view/View;->postDelayed(Ljava/lang/Runnable;J)Z
 
     .line 404

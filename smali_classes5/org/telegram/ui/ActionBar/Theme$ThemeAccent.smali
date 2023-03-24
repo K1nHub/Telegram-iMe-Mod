@@ -113,15 +113,15 @@
 
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    move v1, v0
 
-    const/4 v2, 0x0
+    move v2, v1
 
-    const/4 v3, 0x0
+    move v3, v2
 
-    const/4 v4, 0x0
+    move v4, v3
 
-    const/4 v5, 0x0
+    move v5, v4
 
     .line 1866
     :goto_0
@@ -364,7 +364,7 @@
     goto :goto_0
 
     :cond_0
-    const/4 v1, 0x0
+    move v1, v3
 
     :goto_0
     add-float/2addr v0, v1
@@ -415,25 +415,25 @@
 
     const/4 v1, 0x0
 
-    const/high16 v2, 0x3f800000    # 1.0f
+    cmpg-float v0, v0, v1
 
-    const/4 v3, 0x2
+    const/4 v2, 0x0
 
-    const/4 v4, 0x0
+    const/high16 v3, 0x3f800000    # 1.0f
 
-    cmpg-float v0, v0, v4
+    const/4 v4, 0x2
 
     if-lez v0, :cond_2
 
-    aget v0, p2, v3
+    aget v0, p2, v4
 
-    cmpl-float v0, v0, v2
+    cmpl-float v0, v0, v3
 
     if-gez v0, :cond_2
 
-    aget v0, p2, v3
+    aget v0, p2, v4
 
-    cmpg-float v0, v0, v4
+    cmpg-float v0, v0, v1
 
     if-gtz v0, :cond_1
 
@@ -441,17 +441,17 @@
 
     .line 1857
     :cond_1
-    aget p1, p2, v1
+    aget p1, p2, v2
 
     const v0, 0x3e6147ae    # 0.22f
 
     add-float/2addr p1, v0
 
-    invoke-static {p1, v4, v2}, Landroidx/core/math/MathUtils;->clamp(FFF)F
+    invoke-static {p1, v1, v3}, Landroidx/core/math/MathUtils;->clamp(FFF)F
 
     move-result p1
 
-    aput p1, p2, v1
+    aput p1, p2, v2
 
     .line 1858
     iget-object p1, p0, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->tempHSV:[F
@@ -462,7 +462,7 @@
 
     sub-float/2addr p2, v0
 
-    invoke-static {p2, v4, v2}, Landroidx/core/math/MathUtils;->clamp(FFF)F
+    invoke-static {p2, v1, v3}, Landroidx/core/math/MathUtils;->clamp(FFF)F
 
     move-result p2
 
@@ -473,7 +473,7 @@
     .line 1854
     :cond_2
     :goto_0
-    aput p1, p2, v1
+    aput p1, p2, v2
 
     const p1, 0x3e4ccccd    # 0.2f
 
@@ -484,17 +484,17 @@
     :goto_1
     iget-object p1, p0, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->tempHSV:[F
 
-    aget p2, p1, v3
+    aget p2, p1, v4
 
     const p3, 0x3f266666    # 0.65f
 
     sub-float/2addr p2, p3
 
-    invoke-static {p2, v4, v2}, Landroidx/core/math/MathUtils;->clamp(FFF)F
+    invoke-static {p2, v1, v3}, Landroidx/core/math/MathUtils;->clamp(FFF)F
 
     move-result p2
 
-    aput p2, p1, v3
+    aput p2, p1, v4
 
     const/16 p1, 0x5a
 
@@ -1065,12 +1065,12 @@
 
     if-lez v14, :cond_9
 
-    const/4 v14, 0x1
+    move v14, v3
 
     goto :goto_2
 
     :cond_9
-    const/4 v14, 0x0
+    move v14, v10
 
     goto :goto_2
 
@@ -1093,12 +1093,12 @@
 
     if-gt v13, v14, :cond_b
 
-    const/4 v12, 0x1
+    move v12, v3
 
     goto :goto_3
 
     :cond_b
-    const/4 v12, 0x0
+    move v12, v10
 
     .line 1528
     :goto_3
@@ -1113,7 +1113,7 @@
     goto :goto_4
 
     :cond_c
-    const/4 v12, 0x0
+    move v12, v10
 
     :goto_4
     if-eqz v7, :cond_f
@@ -1135,12 +1135,12 @@
     if-eq v11, v7, :cond_f
 
     :cond_e
-    const/4 v11, 0x1
+    move v11, v3
 
     goto :goto_5
 
     :cond_f
-    const/4 v11, 0x0
+    move v11, v10
 
     :goto_5
     if-nez v11, :cond_10
@@ -1433,7 +1433,7 @@
     goto :goto_a
 
     :cond_1d
-    const/4 v5, 0x0
+    move v5, v10
 
     goto :goto_a
 
@@ -1461,7 +1461,7 @@
 
     const v8, 0x4dffffff    # 5.3687088E8f
 
-    const/4 v5, -0x1
+    move v5, v1
 
     .line 1607
     :goto_b
@@ -1984,7 +1984,7 @@
     goto :goto_c
 
     :cond_22
-    const/4 v4, 0x0
+    move v4, v10
 
     .line 1687
     :goto_c
@@ -1996,7 +1996,7 @@
 
     if-ge v1, v4, :cond_23
 
-    const/4 v12, 0x0
+    move v12, v10
 
     .line 1691
     :cond_23
@@ -3366,7 +3366,7 @@
 
     const/high16 v7, 0x42c80000    # 100.0f
 
-    mul-float v4, v4, v7
+    mul-float/2addr v4, v7
 
     float-to-int v4, v4
 

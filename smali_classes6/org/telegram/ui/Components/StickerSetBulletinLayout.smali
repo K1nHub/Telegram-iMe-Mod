@@ -302,7 +302,7 @@
     goto :goto_5
 
     :cond_b
-    const/4 v2, 0x0
+    move v2, v10
 
     .line 114
     :goto_5

@@ -40,9 +40,9 @@
 
     const/4 v3, 0x0
 
-    const/4 v4, 0x0
+    move v4, v3
 
-    const/4 v5, 0x0
+    move v5, v4
 
     :goto_0
     if-ge v4, v2, :cond_0
@@ -73,11 +73,11 @@
     .line 83
     new-array v11, v5, [I
 
-    const/4 v2, 0x0
+    move v2, v3
 
-    const/4 v4, 0x0
+    move v4, v2
 
-    const/4 v9, 0x0
+    move v9, v4
 
     .line 87
     :goto_1

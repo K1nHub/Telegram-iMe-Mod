@@ -151,7 +151,7 @@
 
     const/4 v3, 0x0
 
-    const/4 v15, 0x0
+    move v15, v3
 
     .line 211
     :goto_0
@@ -278,7 +278,7 @@
 
     const/4 v3, 0x0
 
-    const/4 v4, 0x0
+    move v4, v3
 
     :goto_0
     if-ge v3, v2, :cond_1
@@ -598,27 +598,27 @@
 
     const-wide/16 v12, -0x1
 
-    const-wide/16 v14, 0x1
-
     cmp-long v0, v10, v12
+
+    const-wide/16 v12, 0x1
 
     if-eqz v0, :cond_0
 
     .line 244
     invoke-virtual {v5}, Lcom/google/android/exoplayer2/source/dash/DefaultDashChunkSource$RepresentationHolder;->getFirstSegmentNum()J
 
-    move-result-wide v12
+    move-result-wide v14
 
-    add-long/2addr v12, v10
+    add-long/2addr v14, v10
 
-    sub-long/2addr v12, v14
+    sub-long/2addr v14, v12
 
-    cmp-long v0, v3, v12
+    cmp-long v0, v3, v14
 
     if-gez v0, :cond_1
 
     :cond_0
-    add-long/2addr v3, v14
+    add-long/2addr v3, v12
 
     .line 245
     invoke-virtual {v5, v3, v4}, Lcom/google/android/exoplayer2/source/dash/DefaultDashChunkSource$RepresentationHolder;->getSegmentStartTimeUs(J)J
@@ -789,7 +789,7 @@
 
     const/16 v27, 0x0
 
-    const/4 v2, 0x0
+    move/from16 v2, v27
 
     :goto_1
     if-ge v2, v3, :cond_5
@@ -1044,7 +1044,7 @@
     goto :goto_5
 
     :cond_a
-    const/4 v13, 0x0
+    move/from16 v13, v27
 
     .line 389
     :goto_5
@@ -1054,9 +1054,9 @@
 
     const-wide/16 v2, 0x0
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-nez v4, :cond_b
+    if-nez v0, :cond_b
 
     .line 391
     iput-boolean v13, v15, Lcom/google/android/exoplayer2/source/chunk/ChunkHolder;->endOfStream:Z
@@ -1126,9 +1126,9 @@
 
     move-result-wide v0
 
-    cmp-long v2, v0, v16
+    cmp-long v0, v0, v16
 
-    if-ltz v2, :cond_e
+    if-ltz v0, :cond_e
 
     const/4 v0, 0x1
 
@@ -1155,14 +1155,14 @@
 
     move-result-wide v1
 
-    long-to-int v2, v1
+    long-to-int v1, v1
 
     if-eqz v10, :cond_f
 
     :goto_6
-    if-le v2, v0, :cond_f
+    if-le v1, v0, :cond_f
 
-    int-to-long v5, v2
+    int-to-long v5, v1
 
     add-long/2addr v5, v7
 
@@ -1173,16 +1173,16 @@
 
     move-result-wide v5
 
-    cmp-long v1, v5, v16
+    cmp-long v2, v5, v16
 
-    if-ltz v1, :cond_f
+    if-ltz v2, :cond_f
 
-    add-int/lit8 v2, v2, -0x1
+    add-int/lit8 v1, v1, -0x1
 
     goto :goto_6
 
     :cond_f
-    move v10, v2
+    move v10, v1
 
     .line 434
     invoke-interface/range {p5 .. p5}, Ljava/util/List;->isEmpty()Z
@@ -1438,7 +1438,7 @@
     goto :goto_0
 
     :cond_0
-    const/16 v6, 0x8
+    move v6, v9
 
     .line 667
     :goto_0
@@ -1483,7 +1483,7 @@
 
     move/from16 v10, p9
 
-    const/4 v15, 0x1
+    move v15, v5
 
     :goto_1
     if-ge v5, v10, :cond_3
@@ -1568,7 +1568,7 @@
     goto :goto_4
 
     :cond_5
-    const/16 v6, 0x8
+    move v6, v9
 
     .line 706
     :goto_4
@@ -1695,7 +1695,7 @@
 .end method
 
 .method public onChunkLoadError(Lcom/google/android/exoplayer2/source/chunk/Chunk;ZLcom/google/android/exoplayer2/upstream/LoadErrorHandlingPolicy$LoadErrorInfo;Lcom/google/android/exoplayer2/upstream/LoadErrorHandlingPolicy;)Z
-    .locals 7
+    .locals 6
 
     const/4 v0, 0x0
 
@@ -1766,15 +1766,15 @@
 
     const-wide/16 v4, -0x1
 
-    cmp-long v6, v2, v4
+    cmp-long v4, v2, v4
 
-    if-eqz v6, :cond_2
+    if-eqz v4, :cond_2
 
     const-wide/16 v4, 0x0
 
-    cmp-long v6, v2, v4
+    cmp-long v4, v2, v4
 
-    if-eqz v6, :cond_2
+    if-eqz v4, :cond_2
 
     .line 494
     invoke-virtual {p2}, Lcom/google/android/exoplayer2/source/dash/DefaultDashChunkSource$RepresentationHolder;->getFirstSegmentNum()J
@@ -1932,7 +1932,7 @@
 
     invoke-virtual {p1, p2, p3, p4}, Lcom/google/android/exoplayer2/source/dash/BaseUrlExclusionList;->exclude(Lcom/google/android/exoplayer2/source/dash/manifest/BaseUrl;J)V
 
-    const/4 v0, 0x1
+    move v0, v1
 
     :cond_7
     :goto_0

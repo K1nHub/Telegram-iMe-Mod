@@ -713,7 +713,7 @@
 
     int-to-float v0, v0
 
-    mul-float v0, v0, p5
+    mul-float/2addr v0, p5
 
     sub-float v0, p3, v0
 
@@ -721,7 +721,7 @@
 
     int-to-float p4, p4
 
-    mul-float p4, p4, p5
+    mul-float/2addr p4, p5
 
     add-float/2addr p2, p4
 
@@ -736,7 +736,7 @@
 
     const/high16 p3, 0x437f0000    # 255.0f
 
-    mul-float p6, p6, p3
+    mul-float/2addr p6, p3
 
     float-to-int p3, p6
 
@@ -782,7 +782,7 @@
 
     const/4 v5, 0x2
 
-    mul-int/lit8 v4, v4, 0x2
+    mul-int/2addr v4, v5
 
     mul-int/lit8 v6, v3, 0x4
 
@@ -1584,7 +1584,7 @@
 
     move-result v5
 
-    mul-float v4, v4, v5
+    mul-float/2addr v4, v5
 
     iget-object v5, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->this$2:Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell;
 
@@ -1615,7 +1615,7 @@
 
     move-result v6
 
-    mul-float v5, v5, v6
+    mul-float/2addr v5, v6
 
     iget-object v6, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->this$2:Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell;
 
@@ -1646,7 +1646,7 @@
 
     move-result v7
 
-    mul-float v6, v6, v7
+    mul-float/2addr v6, v7
 
     iget-object v7, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->this$2:Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell;
 
@@ -1677,7 +1677,7 @@
 
     move-result p1
 
-    mul-float v6, v6, p1
+    mul-float/2addr v6, p1
 
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->this$2:Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell;
 
@@ -1717,7 +1717,7 @@
 
     move-result v5
 
-    mul-float v4, v4, v5
+    mul-float/2addr v4, v5
 
     iget-object v5, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->this$2:Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell;
 
@@ -1748,7 +1748,7 @@
 
     move-result v6
 
-    mul-float v5, v5, v6
+    mul-float/2addr v5, v6
 
     iget-object v6, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->this$2:Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell;
 
@@ -1779,7 +1779,7 @@
 
     move-result v7
 
-    mul-float v6, v6, v7
+    mul-float/2addr v6, v7
 
     iget-object v7, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->this$2:Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell;
 
@@ -1810,7 +1810,7 @@
 
     move-result p1
 
-    mul-float v6, v6, p1
+    mul-float/2addr v6, p1
 
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->this$2:Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell;
 
@@ -2158,7 +2158,7 @@
 
     const v0, 0x3e99999a    # 0.3f
 
-    mul-float p2, p2, v0
+    mul-float/2addr p2, v0
 
     const/high16 v0, 0x437a0000    # 250.0f
 
@@ -2197,6 +2197,8 @@
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->start()V
 
     return-void
+
+    nop
 
     :array_0
     .array-data 4
@@ -2315,7 +2317,7 @@
     goto :goto_0
 
     :cond_1
-    const/4 v1, 0x0
+    move v1, v2
 
     .line 2315
     :goto_0
@@ -2659,7 +2661,7 @@
 
     iget v15, v7, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->spoilerRevealProgress:F
 
-    mul-float v12, v12, v15
+    mul-float/2addr v12, v15
 
     sget-object v15, Landroid/graphics/Path$Direction;->CW:Landroid/graphics/Path$Direction;
 
@@ -2720,9 +2722,9 @@
 
     const v9, 0x3ea66666    # 0.325f
 
-    mul-float v4, v4, v9
+    mul-float/2addr v4, v9
 
-    mul-float v4, v4, v10
+    mul-float/2addr v4, v10
 
     float-to-int v4, v4
 
@@ -2781,13 +2783,13 @@
     :cond_8
     iget v2, v7, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->spoilerCrossfadeProgress:F
 
+    const/high16 v3, 0x3f800000    # 1.0f
+
+    cmpl-float v4, v2, v3
+
     const/4 v3, 0x0
 
-    const/high16 v4, 0x3f800000    # 1.0f
-
-    cmpl-float v9, v2, v4
-
-    if-eqz v9, :cond_9
+    if-eqz v4, :cond_9
 
     iget-object v4, v7, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->spoilerCrossfadeBitmap:Landroid/graphics/Bitmap;
 
@@ -2890,7 +2892,7 @@
 
     const/high16 v0, 0x437f0000    # 255.0f
 
-    mul-float v14, v14, v0
+    mul-float/2addr v14, v0
 
     float-to-int v0, v14
 
@@ -3028,7 +3030,7 @@
 
     if-lez v0, :cond_d
 
-    const/4 v12, 0x1
+    move v12, v9
 
     goto :goto_6
 
@@ -3189,7 +3191,7 @@
 
     :cond_13
     :goto_9
-    const/4 v0, 0x0
+    move v0, v9
 
     return v0
 .end method
@@ -3285,11 +3287,11 @@
 
     sub-float v1, v4, v1
 
-    mul-float v1, v1, v3
+    mul-float/2addr v1, v3
 
     add-float/2addr v1, v2
 
-    mul-float v0, v0, v1
+    mul-float/2addr v0, v1
 
     .line 2159
     invoke-virtual {p0}, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->rect()Landroid/graphics/RectF;
@@ -3306,7 +3308,7 @@
 
     sub-float v5, v4, v0
 
-    mul-float v3, v3, v5
+    mul-float/2addr v3, v5
 
     const/high16 v6, 0x40000000    # 2.0f
 
@@ -3321,7 +3323,7 @@
 
     move-result v7
 
-    mul-float v7, v7, v5
+    mul-float/2addr v7, v5
 
     div-float/2addr v7, v6
 
@@ -3336,7 +3338,7 @@
 
     add-float/2addr v0, v4
 
-    mul-float v7, v7, v0
+    mul-float/2addr v7, v0
 
     div-float/2addr v7, v6
 
@@ -3349,7 +3351,7 @@
 
     move-result v7
 
-    mul-float v7, v7, v0
+    mul-float/2addr v7, v0
 
     div-float/2addr v7, v6
 
@@ -3457,7 +3459,7 @@
 
     move-result v2
 
-    mul-float v1, v1, v2
+    mul-float/2addr v1, v2
 
     add-float/2addr v0, v1
 
@@ -3478,7 +3480,7 @@
 
     move-result v3
 
-    mul-float v2, v2, v3
+    mul-float/2addr v2, v3
 
     add-float/2addr v1, v2
 
@@ -3495,7 +3497,7 @@
 
     move-result v3
 
-    mul-float v2, v2, v3
+    mul-float/2addr v2, v3
 
     .line 2127
     iget-object v3, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell$MediaCell;->rect:Landroid/graphics/RectF;
@@ -3510,7 +3512,7 @@
 
     move-result v4
 
-    mul-float v3, v3, v4
+    mul-float/2addr v3, v4
 
     const/high16 v4, 0x3f800000    # 1.0f
 
@@ -3540,7 +3542,7 @@
 
     move-result v6
 
-    mul-float v5, v5, v6
+    mul-float/2addr v5, v6
 
     add-float/2addr v4, v5
 
@@ -3565,7 +3567,7 @@
 
     move-result v6
 
-    mul-float v5, v5, v6
+    mul-float/2addr v5, v6
 
     add-float/2addr v4, v5
 
@@ -3586,7 +3588,7 @@
 
     move-result v5
 
-    mul-float v4, v4, v5
+    mul-float/2addr v4, v5
 
     invoke-static {v4, v2, p1}, Lorg/telegram/messenger/AndroidUtilities;->lerp(FFF)F
 
@@ -3605,7 +3607,7 @@
 
     move-result v5
 
-    mul-float v4, v4, v5
+    mul-float/2addr v4, v5
 
     invoke-static {v4, v3, p1}, Lorg/telegram/messenger/AndroidUtilities;->lerp(FFF)F
 

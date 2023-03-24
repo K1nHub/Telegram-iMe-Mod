@@ -134,8 +134,8 @@ public final class SinglePeriodTimeline extends Timeline {
             boolean r5 = r0.suppressPositionProjection
             if (r5 != 0) goto L2e
             r5 = 0
-            int r7 = (r27 > r5 ? 1 : (r27 == r5 ? 0 : -1))
-            if (r7 == 0) goto L2e
+            int r5 = (r27 > r5 ? 1 : (r27 == r5 ? 0 : -1))
+            if (r5 == 0) goto L2e
             long r5 = r0.windowDurationUs
             int r7 = (r5 > r3 ? 1 : (r5 == r3 ? 0 : -1))
             if (r7 != 0) goto L27
@@ -144,8 +144,8 @@ public final class SinglePeriodTimeline extends Timeline {
             goto L30
         L27:
             long r1 = r1 + r27
-            int r7 = (r1 > r5 ? 1 : (r1 == r5 ? 0 : -1))
-            if (r7 <= 0) goto L2e
+            int r5 = (r1 > r5 ? 1 : (r1 == r5 ? 0 : -1))
+            if (r5 <= 0) goto L2e
             goto L24
         L2e:
             r16 = r1

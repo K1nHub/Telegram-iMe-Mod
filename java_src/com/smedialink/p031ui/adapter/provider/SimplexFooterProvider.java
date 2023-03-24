@@ -7,7 +7,7 @@ import com.smedialink.model.wallet.crypto.buy.CryptoBuyFooterItem;
 import com.smedialink.storage.domain.utils.system.ResourceManager;
 import com.smedialink.utils.extentions.common.BaseQuickAdapterExtKt;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.messenger.C3286R;
+import org.telegram.messenger.C3301R;
 /* compiled from: SimplexFooterProvider.kt */
 /* renamed from: com.smedialink.ui.adapter.provider.SimplexFooterProvider */
 /* loaded from: classes3.dex */
@@ -20,7 +20,7 @@ public final class SimplexFooterProvider extends BaseNodeProvider<CryptoBuyFoote
         Intrinsics.checkNotNullParameter(resourceManager, "resourceManager");
         this.resourceManager = resourceManager;
         this.itemViewType = IdFabric$ViewTypes.FOOTER;
-        this.layoutId = C3286R.layout.fork_recycle_item_crypto_buy_footer;
+        this.layoutId = C3301R.layout.fork_recycle_item_crypto_buy_footer;
     }
 
     @Override // com.chad.library.adapter.base.provider.BaseItemProvider
@@ -37,9 +37,9 @@ public final class SimplexFooterProvider extends BaseNodeProvider<CryptoBuyFoote
     public void convert(BaseViewHolder helper, CryptoBuyFooterItem item) {
         Intrinsics.checkNotNullParameter(helper, "helper");
         Intrinsics.checkNotNullParameter(item, "item");
-        int i = C3286R.C3289id.text_title;
+        int i = C3301R.C3304id.text_title;
         BaseViewHolder themedTextColor = BaseQuickAdapterExtKt.setThemedTextColor(helper, i, "chats_date");
-        int i2 = C3286R.C3289id.text_powered_by;
+        int i2 = C3301R.C3304id.text_powered_by;
         BaseQuickAdapterExtKt.setThemedCompoundDrawablesColor(BaseQuickAdapterExtKt.setThemedTextColor(themedTextColor, i2, "chats_attachMessage"), i, "windowBackgroundWhiteGrayText2").setText(i, this.resourceManager.getString(item.getTitle())).setText(i2, item.getDescription());
     }
 }

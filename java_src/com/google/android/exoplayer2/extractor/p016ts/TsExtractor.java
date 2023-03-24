@@ -503,8 +503,8 @@ public final class TsExtractor implements Extractor {
             int position = parsableByteArray.getPosition();
             int i2 = i + position;
             String str = null;
-            ArrayList arrayList = null;
             int i3 = -1;
+            ArrayList arrayList = null;
             while (parsableByteArray.getPosition() < i2) {
                 int readUnsignedByte = parsableByteArray.readUnsignedByte();
                 int position2 = parsableByteArray.getPosition() + parsableByteArray.readUnsignedByte();
@@ -520,18 +520,18 @@ public final class TsExtractor implements Extractor {
                                     i3 = 36;
                                 }
                             }
-                            i3 = TsExtractor.TS_STREAM_TYPE_AC4;
+                            i3 = 172;
                         }
-                        i3 = TsExtractor.TS_STREAM_TYPE_E_AC3;
+                        i3 = 135;
                     }
-                    i3 = TsExtractor.TS_STREAM_TYPE_AC3;
+                    i3 = 129;
                 } else {
                     if (readUnsignedByte != 106) {
                         if (readUnsignedByte != 122) {
                             if (readUnsignedByte == TS_PMT_DESC_DVB_EXT) {
                                 if (parsableByteArray.readUnsignedByte() != 21) {
                                 }
-                                i3 = TsExtractor.TS_STREAM_TYPE_AC4;
+                                i3 = 172;
                             } else if (readUnsignedByte == 123) {
                                 i3 = TsExtractor.TS_STREAM_TYPE_DTS;
                             } else if (readUnsignedByte == 10) {
@@ -550,9 +550,9 @@ public final class TsExtractor implements Extractor {
                                 i3 = TsExtractor.TS_STREAM_TYPE_AIT;
                             }
                         }
-                        i3 = TsExtractor.TS_STREAM_TYPE_E_AC3;
+                        i3 = 135;
                     }
-                    i3 = TsExtractor.TS_STREAM_TYPE_AC3;
+                    i3 = 129;
                 }
                 parsableByteArray.skipBytes(position2 - parsableByteArray.getPosition());
             }

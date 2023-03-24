@@ -287,7 +287,7 @@
 .end method
 
 .method public packetFinished()V
-    .locals 12
+    .locals 11
 
     .line 89
     iget-boolean v0, p0, Lcom/google/android/exoplayer2/extractor/ts/DvbSubtitleReader;->writingSample:Z
@@ -299,44 +299,44 @@
 
     const-wide v2, -0x7fffffffffffffffL    # -4.9E-324
 
-    const/4 v4, 0x0
+    cmp-long v0, v0, v2
 
-    cmp-long v5, v0, v2
+    const/4 v1, 0x0
 
-    if-eqz v5, :cond_0
+    if-eqz v0, :cond_0
 
     .line 91
     iget-object v0, p0, Lcom/google/android/exoplayer2/extractor/ts/DvbSubtitleReader;->outputs:[Lcom/google/android/exoplayer2/extractor/TrackOutput;
 
-    array-length v1, v0
+    array-length v2, v0
 
-    const/4 v2, 0x0
+    move v3, v1
 
     :goto_0
-    if-ge v2, v1, :cond_0
+    if-ge v3, v2, :cond_0
 
-    aget-object v5, v0, v2
+    aget-object v4, v0, v3
 
     .line 92
-    iget-wide v6, p0, Lcom/google/android/exoplayer2/extractor/ts/DvbSubtitleReader;->sampleTimeUs:J
+    iget-wide v5, p0, Lcom/google/android/exoplayer2/extractor/ts/DvbSubtitleReader;->sampleTimeUs:J
 
-    const/4 v8, 0x1
+    const/4 v7, 0x1
 
-    iget v9, p0, Lcom/google/android/exoplayer2/extractor/ts/DvbSubtitleReader;->sampleBytesWritten:I
+    iget v8, p0, Lcom/google/android/exoplayer2/extractor/ts/DvbSubtitleReader;->sampleBytesWritten:I
+
+    const/4 v9, 0x0
 
     const/4 v10, 0x0
 
-    const/4 v11, 0x0
+    invoke-interface/range {v4 .. v10}, Lcom/google/android/exoplayer2/extractor/TrackOutput;->sampleMetadata(JIIILcom/google/android/exoplayer2/extractor/TrackOutput$CryptoData;)V
 
-    invoke-interface/range {v5 .. v11}, Lcom/google/android/exoplayer2/extractor/TrackOutput;->sampleMetadata(JIIILcom/google/android/exoplayer2/extractor/TrackOutput$CryptoData;)V
-
-    add-int/lit8 v2, v2, 0x1
+    add-int/lit8 v3, v3, 0x1
 
     goto :goto_0
 
     .line 95
     :cond_0
-    iput-boolean v4, p0, Lcom/google/android/exoplayer2/extractor/ts/DvbSubtitleReader;->writingSample:Z
+    iput-boolean v1, p0, Lcom/google/android/exoplayer2/extractor/ts/DvbSubtitleReader;->writingSample:Z
 
     :cond_1
     return-void

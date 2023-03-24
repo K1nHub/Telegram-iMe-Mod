@@ -24,7 +24,7 @@ public class LogUtils {
     }
 
     public static zzfi.zza zza(Context context) {
-        zzfi.zza.C6771zza zza = zzfi.zza.zza().zza(context.getPackageName());
+        zzfi.zza.C6858zza zza = zzfi.zza.zza().zza(context.getPackageName());
         String zzb = zzb(context);
         if (zzb != null) {
             zza.zzb(zzb);

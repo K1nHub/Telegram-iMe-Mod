@@ -481,7 +481,7 @@
     goto :goto_2
 
     :cond_8
-    const/4 v3, 0x0
+    move v3, v2
 
     :goto_2
     iput-boolean v3, p0, Lorg/telegram/ui/ActionBar/SimpleTextView;->textDoesNotFit:Z
@@ -632,11 +632,11 @@
 
     iget v2, p0, Lorg/telegram/ui/ActionBar/SimpleTextView;->fullAlpha:F
 
-    mul-float v0, v0, v2
+    mul-float/2addr v0, v2
 
     iget v3, p0, Lorg/telegram/ui/ActionBar/SimpleTextView;->fullLayoutLeftCharactersOffset:F
 
-    mul-float v3, v3, v2
+    mul-float/2addr v3, v2
 
     add-float/2addr v0, v3
 
@@ -1309,10 +1309,10 @@
 
     sub-long/2addr v0, v4
 
-    long-to-int v1, v0
+    long-to-int v0, v0
 
     .line 998
-    iput v1, p0, Lorg/telegram/ui/ActionBar/SimpleTextView;->currentScrollDelay:I
+    iput v0, p0, Lorg/telegram/ui/ActionBar/SimpleTextView;->currentScrollDelay:I
 
     goto :goto_1
 
@@ -1339,11 +1339,11 @@
 
     int-to-float v8, v8
 
-    const/high16 v9, 0x42480000    # 50.0f
-
-    const/high16 v10, 0x41a00000    # 20.0f
-
     cmpg-float v6, v6, v8
+
+    const/high16 v8, 0x42480000    # 50.0f
+
+    const/high16 v9, 0x41a00000    # 20.0f
 
     if-gez v6, :cond_3
 
@@ -1360,9 +1360,9 @@
 
     div-float/2addr v8, v7
 
-    mul-float v8, v8, v10
+    mul-float/2addr v8, v9
 
-    add-float v9, v8, v6
+    add-float/2addr v8, v6
 
     goto :goto_0
 
@@ -1372,13 +1372,13 @@
 
     invoke-static {v7}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
-    move-result v8
+    move-result v10
 
-    sub-int v8, v0, v8
+    sub-int v10, v0, v10
 
-    int-to-float v8, v8
+    int-to-float v10, v10
 
-    cmpl-float v6, v6, v8
+    cmpl-float v6, v6, v10
 
     if-ltz v6, :cond_4
 
@@ -1387,13 +1387,13 @@
 
     invoke-static {v7}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
-    move-result v8
+    move-result v10
 
-    sub-int v8, v0, v8
+    sub-int v10, v0, v10
 
-    int-to-float v8, v8
+    int-to-float v10, v10
 
-    sub-float/2addr v6, v8
+    sub-float/2addr v6, v10
 
     .line 1006
     invoke-static {v7}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
@@ -1404,9 +1404,9 @@
 
     div-float/2addr v6, v7
 
-    mul-float v6, v6, v10
+    mul-float/2addr v6, v9
 
-    sub-float/2addr v9, v6
+    sub-float/2addr v8, v6
 
     .line 1010
     :cond_4
@@ -1419,13 +1419,13 @@
 
     div-float/2addr v4, v5
 
-    invoke-static {v9}, Lorg/telegram/messenger/AndroidUtilities;->dp(F)I
+    invoke-static {v8}, Lorg/telegram/messenger/AndroidUtilities;->dp(F)I
 
     move-result v5
 
     int-to-float v5, v5
 
-    mul-float v4, v4, v5
+    mul-float/2addr v4, v5
 
     add-float/2addr v6, v4
 
@@ -1526,7 +1526,7 @@
 
     iget v7, v0, Lorg/telegram/ui/ActionBar/SimpleTextView;->rightDrawableScale:F
 
-    mul-float v6, v6, v7
+    mul-float/2addr v6, v7
 
     float-to-int v6, v6
 
@@ -1540,7 +1540,7 @@
     goto :goto_1
 
     :cond_1
-    const/4 v6, 0x0
+    move v6, v2
 
     .line 344
     :goto_1
@@ -2266,11 +2266,6 @@
 
     goto :goto_e
 
-    :catch_0
-    nop
-
-    goto :goto_e
-
     .line 422
     :cond_16
     iput-object v3, v0, Lorg/telegram/ui/ActionBar/SimpleTextView;->layout:Landroid/text/Layout;
@@ -2282,6 +2277,7 @@
     iput v2, v0, Lorg/telegram/ui/ActionBar/SimpleTextView;->textHeight:I
 
     .line 426
+    :catch_0
     :goto_e
     iget-object v1, v0, Lorg/telegram/ui/ActionBar/SimpleTextView;->emojiStack:Lorg/telegram/ui/Components/AnimatedEmojiSpan$EmojiGroupedSpans;
 
@@ -2466,7 +2462,7 @@
 
     iget v2, p0, Lorg/telegram/ui/ActionBar/SimpleTextView;->rightDrawableScale:F
 
-    mul-float v0, v0, v2
+    mul-float/2addr v0, v2
 
     float-to-int v0, v0
 
@@ -2784,32 +2780,24 @@
     if-eqz v1, :cond_1
 
     :cond_0
-    const/4 v12, 0x1
+    move v12, v10
 
     goto :goto_0
 
     :cond_1
-    const/4 v12, 0x0
+    move v12, v9
 
     :goto_0
     const/high16 v1, -0x80000000
 
-    if-nez v12, :cond_3
+    if-nez v12, :cond_2
 
     .line 735
     iget-boolean v2, v0, Lorg/telegram/ui/ActionBar/SimpleTextView;->ellipsizeByGradient:Z
 
-    if-eqz v2, :cond_2
-
-    goto :goto_1
+    if-eqz v2, :cond_3
 
     :cond_2
-    const/high16 v7, -0x80000000
-
-    goto :goto_2
-
-    :cond_3
-    :goto_1
     const/4 v2, 0x0
 
     const/4 v3, 0x0
@@ -2837,10 +2825,10 @@
 
     move-result v1
 
+    :cond_3
     move v7, v1
 
     .line 739
-    :goto_2
     iget v1, v0, Lorg/telegram/ui/ActionBar/SimpleTextView;->textWidth:I
 
     iput v1, v0, Lorg/telegram/ui/ActionBar/SimpleTextView;->totalWidth:I
@@ -2897,7 +2885,7 @@
 
     iget v4, v0, Lorg/telegram/ui/ActionBar/SimpleTextView;->leftDrawableTopPadding:I
 
-    goto :goto_3
+    goto :goto_1
 
     .line 749
     :cond_5
@@ -2921,7 +2909,7 @@
 
     iget v4, v0, Lorg/telegram/ui/ActionBar/SimpleTextView;->leftDrawableTopPadding:I
 
-    :goto_3
+    :goto_1
     add-int/2addr v3, v4
 
     .line 751
@@ -2959,16 +2947,16 @@
 
     if-ne v1, v10, :cond_6
 
-    goto :goto_4
+    goto :goto_2
 
     :cond_6
-    const/4 v1, 0x0
+    move v1, v9
 
-    goto :goto_5
+    goto :goto_3
 
     .line 754
     :cond_7
-    :goto_4
+    :goto_2
     iget v1, v0, Lorg/telegram/ui/ActionBar/SimpleTextView;->drawablePadding:I
 
     iget-object v3, v0, Lorg/telegram/ui/ActionBar/SimpleTextView;->leftDrawable:Landroid/graphics/drawable/Drawable;
@@ -2982,7 +2970,7 @@
     add-int/2addr v1, v9
 
     .line 756
-    :goto_5
+    :goto_3
     iget v3, v0, Lorg/telegram/ui/ActionBar/SimpleTextView;->totalWidth:I
 
     iget v4, v0, Lorg/telegram/ui/ActionBar/SimpleTextView;->drawablePadding:I
@@ -2999,13 +2987,13 @@
 
     iput v3, v0, Lorg/telegram/ui/ActionBar/SimpleTextView;->totalWidth:I
 
-    goto :goto_6
+    goto :goto_4
 
     :cond_8
-    const/4 v1, 0x0
+    move v1, v9
 
     .line 758
-    :goto_6
+    :goto_4
     iget-object v3, v0, Lorg/telegram/ui/ActionBar/SimpleTextView;->replacedDrawable:Landroid/graphics/drawable/Drawable;
 
     if-eqz v3, :cond_d
@@ -3061,7 +3049,7 @@
 
     add-int/2addr v3, v5
 
-    goto :goto_7
+    goto :goto_5
 
     .line 767
     :cond_a
@@ -3080,7 +3068,7 @@
     add-int/2addr v3, v5
 
     .line 769
-    :goto_7
+    :goto_5
     iget-object v5, v0, Lorg/telegram/ui/ActionBar/SimpleTextView;->replacedDrawable:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v5}, Landroid/graphics/drawable/Drawable;->getIntrinsicWidth()I
@@ -3220,7 +3208,7 @@
 
     iget v3, v0, Lorg/telegram/ui/ActionBar/SimpleTextView;->rightDrawableScale:F
 
-    mul-float v1, v1, v3
+    mul-float/2addr v1, v3
 
     float-to-int v1, v1
 
@@ -3235,7 +3223,7 @@
 
     iget v4, v0, Lorg/telegram/ui/ActionBar/SimpleTextView;->rightDrawableScale:F
 
-    mul-float v3, v3, v4
+    mul-float/2addr v3, v4
 
     float-to-int v3, v3
 
@@ -3257,7 +3245,7 @@
 
     iget v5, v0, Lorg/telegram/ui/ActionBar/SimpleTextView;->rightDrawableTopPadding:I
 
-    goto :goto_8
+    goto :goto_6
 
     .line 791
     :cond_10
@@ -3275,7 +3263,7 @@
 
     iget v5, v0, Lorg/telegram/ui/ActionBar/SimpleTextView;->rightDrawableTopPadding:I
 
-    :goto_8
+    :goto_6
     add-int/2addr v4, v5
 
     .line 793
@@ -3369,7 +3357,7 @@
 
     iget v3, v0, Lorg/telegram/ui/ActionBar/SimpleTextView;->leftDrawableTopPadding:I
 
-    goto :goto_9
+    goto :goto_7
 
     .line 808
     :cond_12
@@ -3393,7 +3381,7 @@
 
     iget v3, v0, Lorg/telegram/ui/ActionBar/SimpleTextView;->leftDrawableTopPadding:I
 
-    :goto_9
+    :goto_7
     add-int/2addr v2, v3
 
     .line 810
@@ -3439,7 +3427,7 @@
 
     iget v2, v0, Lorg/telegram/ui/ActionBar/SimpleTextView;->rightDrawableScale:F
 
-    mul-float v1, v1, v2
+    mul-float/2addr v1, v2
 
     float-to-int v1, v1
 
@@ -3454,7 +3442,7 @@
 
     iget v3, v0, Lorg/telegram/ui/ActionBar/SimpleTextView;->rightDrawableScale:F
 
-    mul-float v2, v2, v3
+    mul-float/2addr v2, v3
 
     float-to-int v2, v2
 
@@ -3495,7 +3483,7 @@
 
     iget v5, v0, Lorg/telegram/ui/ActionBar/SimpleTextView;->rightDrawableTopPadding:I
 
-    goto :goto_a
+    goto :goto_8
 
     .line 821
     :cond_14
@@ -3513,7 +3501,7 @@
 
     iget v5, v0, Lorg/telegram/ui/ActionBar/SimpleTextView;->rightDrawableTopPadding:I
 
-    :goto_a
+    :goto_8
     add-int/2addr v4, v5
 
     .line 823
@@ -3572,14 +3560,14 @@
 
     if-eqz v2, :cond_17
 
-    const/4 v2, 0x2
+    move v2, v14
 
-    goto :goto_b
+    goto :goto_9
 
     :cond_17
     const/4 v2, 0x0
 
-    :goto_b
+    :goto_9
     invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v2
@@ -3738,7 +3726,7 @@
 
     sub-float v5, v2, v5
 
-    mul-float v5, v5, v3
+    mul-float/2addr v5, v3
 
     float-to-int v5, v5
 
@@ -3771,23 +3759,23 @@
 
     move-result v4
 
-    goto :goto_c
+    goto :goto_a
 
     :cond_1c
     invoke-static/range {v17 .. v17}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v4
 
-    :goto_c
+    :goto_a
     int-to-float v4, v4
 
-    goto :goto_d
+    goto :goto_b
 
     :cond_1d
-    const/4 v4, 0x0
+    move v4, v11
 
     .line 857
-    :goto_d
+    :goto_b
     iget-object v5, v0, Lorg/telegram/ui/ActionBar/SimpleTextView;->layout:Landroid/text/Layout;
 
     const/4 v6, 0x0
@@ -3813,7 +3801,7 @@
 
     invoke-virtual {v8, v5, v11}, Landroid/graphics/Canvas;->translate(FF)V
 
-    goto :goto_e
+    goto :goto_c
 
     .line 860
     :cond_1e
@@ -3828,7 +3816,7 @@
     invoke-virtual {v8, v5, v11}, Landroid/graphics/Canvas;->translate(FF)V
 
     .line 862
-    :goto_e
+    :goto_c
     iget v4, v0, Lorg/telegram/ui/ActionBar/SimpleTextView;->fullLayoutLeftOffset:I
 
     neg-int v4, v4
@@ -3837,11 +3825,11 @@
 
     iget v5, v0, Lorg/telegram/ui/ActionBar/SimpleTextView;->fullAlpha:F
 
-    mul-float v4, v4, v5
+    mul-float/2addr v4, v5
 
     iget v6, v0, Lorg/telegram/ui/ActionBar/SimpleTextView;->fullLayoutLeftCharactersOffset:F
 
-    mul-float v6, v6, v5
+    mul-float/2addr v6, v5
 
     add-float/2addr v4, v6
 
@@ -3884,7 +3872,7 @@
 
     iget v5, v0, Lorg/telegram/ui/ActionBar/SimpleTextView;->fullAlpha:F
 
-    mul-float v5, v5, v3
+    mul-float/2addr v5, v3
 
     float-to-int v5, v5
 
@@ -3899,11 +3887,11 @@
 
     iget v5, v0, Lorg/telegram/ui/ActionBar/SimpleTextView;->fullAlpha:F
 
-    mul-float v4, v4, v5
+    mul-float/2addr v4, v5
 
     iget v6, v0, Lorg/telegram/ui/ActionBar/SimpleTextView;->fullLayoutLeftCharactersOffset:F
 
-    mul-float v5, v5, v6
+    mul-float/2addr v5, v6
 
     add-float/2addr v4, v5
 
@@ -3990,13 +3978,13 @@
 
     div-float/2addr v2, v4
 
-    mul-float v2, v2, v3
+    mul-float/2addr v2, v3
 
     float-to-int v2, v2
 
     invoke-virtual {v1, v2}, Landroid/graphics/Paint;->setAlpha(I)V
 
-    goto :goto_f
+    goto :goto_d
 
     .line 885
     :cond_24
@@ -4056,13 +4044,13 @@
 
     sub-float/2addr v2, v1
 
-    mul-float v2, v2, v3
+    mul-float/2addr v2, v3
 
     float-to-int v1, v2
 
     invoke-virtual {v5, v1}, Landroid/graphics/Paint;->setAlpha(I)V
 
-    goto :goto_f
+    goto :goto_d
 
     .line 889
     :cond_25
@@ -4072,7 +4060,7 @@
 
     invoke-virtual {v1, v2}, Landroid/graphics/Paint;->setAlpha(I)V
 
-    :goto_f
+    :goto_d
     const/4 v2, 0x0
 
     const/4 v3, 0x0
@@ -4144,7 +4132,7 @@
     .line 895
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->restore()V
 
-    goto :goto_11
+    goto :goto_f
 
     .line 896
     :cond_26
@@ -4196,14 +4184,14 @@
 
     if-eqz v2, :cond_27
 
-    const/16 v16, 0x2
+    move/from16 v16, v14
 
-    goto :goto_10
+    goto :goto_e
 
     :cond_27
     const/16 v16, 0x0
 
-    :goto_10
+    :goto_e
     invoke-static/range {v16 .. v16}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v2
@@ -4241,7 +4229,7 @@
 
     .line 905
     :cond_29
-    :goto_11
+    :goto_f
     invoke-direct/range {p0 .. p0}, Lorg/telegram/ui/ActionBar/SimpleTextView;->updateScrollAnimation()V
 
     .line 906
@@ -4294,14 +4282,14 @@
 
     neg-int v1, v9
 
-    goto :goto_12
+    goto :goto_10
 
     :cond_2d
     neg-float v1, v1
 
     float-to-int v1, v1
 
-    :goto_12
+    :goto_10
     add-int/2addr v15, v1
 
     add-int/2addr v15, v9
@@ -4339,7 +4327,7 @@
 
     iget v3, v0, Lorg/telegram/ui/ActionBar/SimpleTextView;->rightDrawableScale:F
 
-    mul-float v2, v2, v3
+    mul-float/2addr v2, v3
 
     float-to-int v2, v2
 
@@ -4354,7 +4342,7 @@
 
     iget v4, v0, Lorg/telegram/ui/ActionBar/SimpleTextView;->rightDrawableScale:F
 
-    mul-float v3, v3, v4
+    mul-float/2addr v3, v4
 
     float-to-int v3, v3
 
@@ -4376,7 +4364,7 @@
 
     iget v5, v0, Lorg/telegram/ui/ActionBar/SimpleTextView;->rightDrawableTopPadding:I
 
-    goto :goto_13
+    goto :goto_11
 
     .line 923
     :cond_2e
@@ -4394,7 +4382,7 @@
 
     iget v5, v0, Lorg/telegram/ui/ActionBar/SimpleTextView;->rightDrawableTopPadding:I
 
-    :goto_13
+    :goto_11
     add-int/2addr v4, v5
 
     .line 925
@@ -4538,7 +4526,7 @@
     goto :goto_0
 
     :cond_1
-    const/4 v2, 0x0
+    move v2, v3
 
     :goto_0
     sub-int/2addr v1, v2
@@ -4918,7 +4906,7 @@
     if-eqz p1, :cond_7
 
     :cond_6
-    const/4 v1, 0x1
+    move v1, v2
 
     :cond_7
     return v1
@@ -5504,7 +5492,7 @@
 
     iget v1, p0, Lorg/telegram/ui/ActionBar/SimpleTextView;->rightDrawableScale:F
 
-    mul-float v0, v0, v1
+    mul-float/2addr v0, v1
 
     float-to-int v0, v0
 

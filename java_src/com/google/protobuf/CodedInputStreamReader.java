@@ -131,12 +131,14 @@ public final class CodedInputStreamReader implements Reader {
     }
 
     @Override // com.google.protobuf.Reader
+    @Deprecated
     public <T> T readGroup(Class<T> cls, ExtensionRegistryLite extensionRegistryLite) throws IOException {
         requireWireType(3);
         return (T) readGroup(Protobuf.getInstance().schemaFor((Class) cls), extensionRegistryLite);
     }
 
     @Override // com.google.protobuf.Reader
+    @Deprecated
     public <T> T readGroupBySchemaWithCheck(Schema<T> schema, ExtensionRegistryLite extensionRegistryLite) throws IOException {
         requireWireType(3);
         return (T) readGroup(schema, extensionRegistryLite);
@@ -676,6 +678,7 @@ public final class CodedInputStreamReader implements Reader {
 
     /* JADX WARN: Multi-variable type inference failed */
     @Override // com.google.protobuf.Reader
+    @Deprecated
     public <T> void readGroupList(List<T> list, Schema<T> schema, ExtensionRegistryLite extensionRegistryLite) throws IOException {
         int readTag;
         if (WireFormat.getTagWireType(this.tag) != 3) {
@@ -1205,7 +1208,7 @@ public final class CodedInputStreamReader implements Reader {
             case 17:
                 return Long.valueOf(readUInt64());
             default:
-                throw new RuntimeException("unsupported field type.");
+                throw new IllegalArgumentException("unsupported field type.");
         }
     }
 

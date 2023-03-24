@@ -81,24 +81,24 @@
 
     if-lez v4, :cond_0
 
-    const/4 v4, 0x1
+    move v4, v3
 
     goto :goto_0
 
     :cond_0
-    const/4 v4, 0x0
+    move v4, v2
 
     :goto_0
     cmpl-float p1, p1, v1
 
     if-lez p1, :cond_1
 
-    const/4 p1, 0x1
+    move p1, v3
 
     goto :goto_1
 
     :cond_1
-    const/4 p1, 0x0
+    move p1, v2
 
     :goto_1
     if-eq v4, p1, :cond_2
@@ -128,7 +128,7 @@
     goto :goto_2
 
     :cond_3
-    const/4 v4, 0x0
+    move v4, v2
 
     .line 232
     :goto_2
@@ -219,7 +219,7 @@
 
     int-to-float p1, p1
 
-    mul-float p1, p1, v4
+    mul-float/2addr p1, v4
 
     add-float/2addr v6, p1
 
@@ -232,19 +232,19 @@
 
     if-lez p3, :cond_8
 
-    const/4 p3, 0x1
+    move p3, v3
 
     goto :goto_3
 
     :cond_8
-    const/4 p3, 0x0
+    move p3, v2
 
     :goto_3
     cmpl-float p1, p1, v1
 
     if-lez p1, :cond_9
 
-    const/4 v2, 0x1
+    move v2, v3
 
     :cond_9
     if-eq p3, v2, :cond_a

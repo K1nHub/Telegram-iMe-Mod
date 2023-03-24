@@ -2636,9 +2636,9 @@
 
     const/4 v13, 0x0
 
-    const/4 v14, 0x0
+    move v14, v6
 
-    const/4 v15, 0x0
+    move v15, v13
 
     :goto_0
     if-ge v14, v12, :cond_1
@@ -3120,7 +3120,7 @@
     invoke-direct {v1, v11}, Lorg/telegram/ui/ArticleViewer;->scrollToAnchor(Ljava/lang/String;)Z
 
     :goto_7
-    const/4 v3, 0x1
+    move v3, v4
 
     goto :goto_8
 
@@ -3162,7 +3162,7 @@
     goto :goto_b
 
     :cond_12
-    const/4 v4, 0x1
+    move v4, v3
 
     .line 2801
     invoke-virtual/range {p2 .. p2}, Landroid/view/MotionEvent;->getAction()I
@@ -3185,7 +3185,7 @@
 
     :cond_13
     :goto_a
-    const/4 v3, 0x1
+    move v3, v4
 
     goto :goto_c
 
@@ -3254,7 +3254,7 @@
 
     if-eqz v0, :cond_19
 
-    const/4 v6, 0x1
+    move v6, v4
 
     goto :goto_e
 
@@ -3270,7 +3270,7 @@
 
     if-eqz v0, :cond_1b
 
-    const/4 v6, 0x1
+    move v6, v4
 
     goto :goto_f
 
@@ -3282,7 +3282,7 @@
 
     :cond_1c
     :goto_10
-    const/4 v2, 0x0
+    move v2, v6
 
     return v2
 .end method
@@ -4097,7 +4097,7 @@
 
     move-result-object v0
 
-    const/4 v4, 0x0
+    move v4, v2
 
     .line 2618
     :goto_4
@@ -4217,7 +4217,7 @@
 
     if-lez v5, :cond_1d
 
-    const/4 v5, 0x0
+    move v5, v2
 
     .line 2632
     :goto_5
@@ -4325,7 +4325,7 @@
     :try_start_2
     invoke-virtual {v12, v2}, Lorg/telegram/ui/Components/LinkPath;->setAllowReset(Z)V
 
-    const/4 v13, 0x0
+    move v13, v2
 
     .line 2648
     :goto_7
@@ -4370,7 +4370,7 @@
     goto :goto_8
 
     :cond_1e
-    const/4 v0, 0x0
+    move v0, v2
 
     :goto_8
     if-eqz v0, :cond_20
@@ -4382,7 +4382,7 @@
     goto :goto_9
 
     :cond_1f
-    const/16 v16, -0x2
+    move/from16 v16, v4
 
     .line 2653
     :goto_9
@@ -4395,7 +4395,7 @@
     goto :goto_a
 
     :cond_20
-    const/4 v0, 0x0
+    move v0, v2
 
     :goto_a
     invoke-virtual {v12, v0}, Lorg/telegram/ui/Components/LinkPath;->setBaselineShift(I)V
@@ -4453,7 +4453,7 @@
     :try_start_4
     invoke-virtual {v8, v2}, Lorg/telegram/ui/Components/LinkPath;->setAllowReset(Z)V
 
-    const/4 v11, 0x0
+    move v11, v2
 
     .line 2666
     :goto_c
@@ -4498,7 +4498,7 @@
     goto :goto_d
 
     :cond_23
-    const/4 v15, 0x0
+    move v15, v2
 
     :goto_d
     if-eqz v15, :cond_25
@@ -4510,7 +4510,7 @@
     goto :goto_e
 
     :cond_24
-    const/16 v16, -0x2
+    move/from16 v16, v4
 
     .line 2671
     :goto_e
@@ -4523,7 +4523,7 @@
     goto :goto_f
 
     :cond_25
-    const/4 v15, 0x0
+    move v15, v2
 
     :goto_f
     invoke-virtual {v8, v15}, Lorg/telegram/ui/Components/LinkPath;->setBaselineShift(I)V
@@ -4796,7 +4796,7 @@
 
     int-to-float v1, v1
 
-    mul-float v1, v1, v0
+    mul-float/2addr v1, v0
 
     const v0, 0x3f371759    # 0.7152f
 
@@ -4806,7 +4806,7 @@
 
     int-to-float v2, v2
 
-    mul-float v2, v2, v0
+    mul-float/2addr v2, v0
 
     add-float/2addr v1, v2
 
@@ -4818,7 +4818,7 @@
 
     int-to-float p1, p1
 
-    mul-float p1, p1, v0
+    mul-float/2addr p1, v0
 
     add-float/2addr v1, p1
 
@@ -6572,9 +6572,9 @@
     :goto_1
     iget-wide v1, v12, Lorg/telegram/tgnet/TLRPC$RichText;->webpage_id:J
 
-    cmp-long v3, v1, v14
+    cmp-long v1, v1, v14
 
-    if-eqz v3, :cond_c
+    if-eqz v1, :cond_c
 
     .line 2076
     new-instance v1, Lorg/telegram/ui/Components/TextPaintWebpageUrlSpan;
@@ -6711,7 +6711,7 @@
 
     move-result v7
 
-    const/4 v6, 0x0
+    move v6, v13
 
     :goto_3
     if-ge v6, v7, :cond_1a
@@ -6745,16 +6745,16 @@
 
     iget-wide v1, v1, Lorg/telegram/tgnet/TLRPC$RichText;->webpage_id:J
 
-    cmp-long v3, v1, v14
+    cmp-long v1, v1, v14
 
-    if-eqz v3, :cond_12
+    if-eqz v1, :cond_12
 
-    const/16 v16, 0x1
+    move/from16 v16, v11
 
     goto :goto_4
 
     :cond_12
-    const/16 v16, 0x0
+    move/from16 v16, v13
 
     :goto_4
     const-string v3, " "
@@ -7317,7 +7317,7 @@
 
     int-to-float v0, v0
 
-    mul-float v0, v0, v5
+    mul-float/2addr v0, v5
 
     float-to-int v0, v0
 
@@ -7351,7 +7351,7 @@
 
     int-to-float v4, v4
 
-    mul-float v4, v4, v3
+    mul-float/2addr v4, v3
 
     const v3, 0x3f371759    # 0.7152f
 
@@ -7361,7 +7361,7 @@
 
     int-to-float v5, v5
 
-    mul-float v5, v5, v3
+    mul-float/2addr v5, v3
 
     add-float/2addr v4, v5
 
@@ -7373,7 +7373,7 @@
 
     int-to-float v0, v0
 
-    mul-float v0, v0, v3
+    mul-float/2addr v0, v3
 
     add-float/2addr v4, v0
 
@@ -7392,7 +7392,7 @@
 
     if-gtz v3, :cond_27
 
-    const/16 v25, 0x1
+    move/from16 v25, v11
 
     goto :goto_d
 
@@ -7489,7 +7489,7 @@
 .end method
 
 .method private getTextFlags(Lorg/telegram/tgnet/TLRPC$RichText;)I
-    .locals 5
+    .locals 4
 
     .line 1979
     instance-of v0, p1, Lorg/telegram/tgnet/TLRPC$TL_textFixed;
@@ -7625,9 +7625,9 @@
 
     const-wide/16 v2, 0x0
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-eqz v4, :cond_7
+    if-eqz v0, :cond_7
 
     .line 1996
     iget-object p1, p1, Lorg/telegram/tgnet/TLRPC$RichText;->parentRichText:Lorg/telegram/tgnet/TLRPC$RichText;
@@ -8593,7 +8593,7 @@
     goto :goto_c
 
     :cond_26
-    const/high16 p1, -0x10000
+    move p1, v6
 
     :goto_c
     and-int/lit16 p2, v0, 0x100
@@ -9345,7 +9345,7 @@
 
     const/4 p3, 0x0
 
-    const/4 p6, 0x0
+    move p6, p3
 
     .line 4860
     :goto_0
@@ -9384,7 +9384,7 @@
 
     if-eqz v0, :cond_1
 
-    const/4 p6, 0x1
+    move p6, v1
 
     goto :goto_1
 
@@ -9394,7 +9394,7 @@
     goto :goto_0
 
     :cond_2
-    const/4 p6, 0x0
+    move p6, p3
 
     .line 4869
     :goto_1
@@ -10211,7 +10211,7 @@
 
     const/4 v11, 0x0
 
-    const/4 v12, 0x0
+    move v12, v11
 
     :goto_0
     if-ge v12, v10, :cond_5
@@ -11205,7 +11205,7 @@
 
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    move v1, v0
 
     :goto_0
     const/4 v2, 0x2
@@ -11221,12 +11221,12 @@
 
     if-ne v1, p1, :cond_0
 
-    const/4 v4, 0x1
+    move v4, v3
 
     goto :goto_1
 
     :cond_0
-    const/4 v4, 0x0
+    move v4, v0
 
     :goto_1
     invoke-virtual {v2, v4, v3}, Lorg/telegram/ui/ArticleViewer$FontCell;->select(ZZ)V
@@ -11515,7 +11515,7 @@
 
     invoke-virtual {v0, v4, v5}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    const/4 v4, 0x0
+    move v4, v1
 
     :goto_1
     if-ge v4, v3, :cond_8
@@ -11579,12 +11579,12 @@
 
     if-ne v4, v6, :cond_7
 
-    const/4 v6, 0x1
+    move v6, v2
 
     goto :goto_3
 
     :cond_7
-    const/4 v6, 0x0
+    move v6, v1
 
     :goto_3
     invoke-virtual {v5, v6, v1}, Lorg/telegram/ui/ArticleViewer$FontCell;->select(ZZ)V
@@ -12258,7 +12258,7 @@
     .line 4787
     iput-boolean v0, p0, Lorg/telegram/ui/ArticleViewer;->isVisible:Z
 
-    const/4 v1, 0x0
+    move v1, v0
 
     .line 4788
     :goto_0
@@ -12303,7 +12303,7 @@
     invoke-static {v1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :goto_1
-    const/4 v1, 0x0
+    move v1, v0
 
     .line 4796
     :goto_2
@@ -12387,7 +12387,7 @@
 
     iget-object p2, p2, Lorg/telegram/tgnet/TLRPC$MessageMedia;->webpage:Lorg/telegram/tgnet/TLRPC$WebPage;
 
-    const/4 p3, 0x0
+    move p3, v1
 
     .line 4237
     :goto_0
@@ -13039,12 +13039,12 @@
     .line 1571
     iput-boolean v2, v0, Lorg/telegram/tgnet/TLRPC$TL_pageBlockDetails;->open:Z
 
-    const/4 v0, 0x1
+    move v0, v2
 
     goto :goto_0
 
     :cond_2
-    const/4 v0, 0x0
+    move v0, v1
 
     .line 1575
     :goto_0
@@ -13057,7 +13057,7 @@
     if-eqz v0, :cond_4
 
     :cond_3
-    const/4 v1, 0x1
+    move v1, v2
 
     :cond_4
     return v1
@@ -13797,7 +13797,7 @@
     goto :goto_0
 
     :cond_1
-    const/4 v2, 0x0
+    move v2, v1
 
     .line 4640
     :goto_0
@@ -14530,7 +14530,7 @@
 
     move-result v1
 
-    const/4 v3, 0x0
+    move v3, v2
 
     :goto_0
     if-ge v3, v1, :cond_3
@@ -14619,7 +14619,7 @@
 
     move-result v1
 
-    const/4 v3, 0x0
+    move v3, v2
 
     :goto_2
     const/4 v4, -0x1
@@ -14686,7 +14686,7 @@
     goto :goto_2
 
     :cond_6
-    const/4 v3, -0x1
+    move v3, v4
 
     :cond_7
     :goto_3
@@ -14983,7 +14983,7 @@
 
     const v5, 0x3e4ccccd    # 0.2f
 
-    mul-float v4, v4, v5
+    mul-float/2addr v4, v5
 
     add-float/2addr v4, v3
 
@@ -14995,7 +14995,7 @@
 
     const/high16 v1, 0x3f000000    # 0.5f
 
-    mul-float p1, p1, v1
+    mul-float/2addr p1, v1
 
     add-float/2addr p1, v1
 
@@ -15119,7 +15119,7 @@
     goto :goto_1
 
     :cond_4
-    const/4 v1, 0x0
+    move v1, v3
 
     :goto_1
     add-int/2addr v0, v1
@@ -16212,12 +16212,12 @@
 
     if-eqz v0, :cond_0
 
-    const/4 v0, 0x1
+    move v0, v1
 
     goto :goto_0
 
     :cond_0
-    const/4 v0, 0x0
+    move v0, v2
 
     :goto_0
     if-ne v0, p1, :cond_1
@@ -16395,7 +16395,7 @@
 
     if-eqz p1, :cond_5
 
-    const/4 v10, 0x0
+    move v10, v4
 
     goto :goto_3
 
@@ -16408,7 +16408,7 @@
     goto :goto_4
 
     :cond_6
-    const/4 v8, 0x0
+    move v8, v4
 
     :goto_4
     invoke-static {v9, v6, v7, v10, v8}, Landroid/view/ViewAnimationUtils;->createCircularReveal(Landroid/view/View;IIFF)Landroid/animation/Animator;
@@ -16437,12 +16437,12 @@
 
     if-eqz p1, :cond_8
 
-    const/high16 v9, 0x3f800000    # 1.0f
+    move v9, v3
 
     goto :goto_5
 
     :cond_8
-    const/4 v9, 0x0
+    move v9, v4
 
     :goto_5
     aput v9, v8, v2
@@ -16484,7 +16484,7 @@
     goto :goto_7
 
     :cond_a
-    const/4 v3, 0x0
+    move v3, v4
 
     :goto_7
     aput v3, v1, v2
@@ -16547,12 +16547,12 @@
 
     if-eqz p1, :cond_d
 
-    const/high16 v1, 0x3f800000    # 1.0f
+    move v1, v3
 
     goto :goto_8
 
     :cond_d
-    const/4 v1, 0x0
+    move v1, v4
 
     :goto_8
     invoke-virtual {v0, v1}, Landroid/widget/FrameLayout;->setAlpha(F)V
@@ -16564,12 +16564,12 @@
 
     if-eqz p1, :cond_e
 
-    const/4 v5, 0x4
+    move v5, v1
 
     goto :goto_9
 
     :cond_e
-    const/4 v5, 0x0
+    move v5, v2
 
     :goto_9
     invoke-virtual {v0, v5}, Landroid/widget/FrameLayout;->setVisibility(I)V
@@ -16579,12 +16579,12 @@
 
     if-eqz p1, :cond_f
 
-    const/4 v5, 0x0
+    move v5, v4
 
     goto :goto_a
 
     :cond_f
-    const/high16 v5, 0x3f800000    # 1.0f
+    move v5, v3
 
     :goto_a
     invoke-virtual {v0, v5, v2}, Lorg/telegram/ui/ActionBar/BackDrawable;->setRotation(FZ)V
@@ -16597,7 +16597,7 @@
     goto :goto_b
 
     :cond_10
-    const/4 v3, 0x0
+    move v3, v4
 
     :goto_b
     invoke-virtual {v0, v3}, Landroid/view/View;->setAlpha(F)V
@@ -16861,12 +16861,12 @@
 
     if-ne p3, v2, :cond_3
 
-    const/4 v4, 0x0
+    move v4, v3
 
     goto :goto_1
 
     :cond_3
-    const/4 v4, 0x1
+    move v4, v2
 
     .line 1646
     :goto_1
@@ -17137,7 +17137,7 @@
 
     move-result p1
 
-    const/4 v4, 0x0
+    move v4, v3
 
     :goto_4
     if-ge v4, p1, :cond_10
@@ -17262,7 +17262,7 @@
     goto :goto_6
 
     :cond_f
-    const/4 v11, 0x0
+    move v11, v3
 
     :goto_6
     invoke-static/range {v6 .. v11}, Lorg/telegram/ui/ArticleViewer$WebpageAdapter;->access$7400(Lorg/telegram/ui/ArticleViewer$WebpageAdapter;Lorg/telegram/ui/ArticleViewer$WebpageAdapter;Lorg/telegram/tgnet/TLRPC$PageBlock;III)V
@@ -17366,7 +17366,7 @@
     goto :goto_9
 
     :cond_13
-    const/4 v2, 0x0
+    move v2, v3
 
     :goto_9
     if-ne v4, v2, :cond_14
@@ -17800,7 +17800,7 @@
     :goto_3
     move-object v11, v3
 
-    const/4 v12, 0x0
+    move v12, v2
 
     .line 2948
     :goto_4
@@ -17846,7 +17846,7 @@
     goto :goto_4
 
     :cond_4
-    const/4 v12, 0x0
+    move v12, v2
 
     .line 2951
     :goto_5
@@ -17892,7 +17892,7 @@
     goto :goto_5
 
     :cond_5
-    const/4 v12, 0x0
+    move v12, v2
 
     .line 2954
     :goto_6
@@ -17938,7 +17938,7 @@
     goto :goto_6
 
     :cond_6
-    const/4 v12, 0x0
+    move v12, v2
 
     .line 2957
     :goto_7
@@ -17984,7 +17984,7 @@
     goto :goto_7
 
     :cond_7
-    const/4 v12, 0x0
+    move v12, v2
 
     .line 2960
     :goto_8
@@ -18030,7 +18030,7 @@
     goto :goto_8
 
     :cond_8
-    const/4 v12, 0x0
+    move v12, v2
 
     .line 2963
     :goto_9
@@ -18076,7 +18076,7 @@
     goto :goto_9
 
     :cond_9
-    const/4 v12, 0x0
+    move v12, v2
 
     .line 2966
     :goto_a
@@ -18122,7 +18122,7 @@
     goto :goto_a
 
     :cond_a
-    const/4 v12, 0x0
+    move v12, v2
 
     .line 2969
     :goto_b
@@ -18168,7 +18168,7 @@
     goto :goto_b
 
     :cond_b
-    const/4 v12, 0x0
+    move v12, v2
 
     .line 2972
     :goto_c
@@ -18214,7 +18214,7 @@
     goto :goto_c
 
     :cond_c
-    const/4 v12, 0x0
+    move v12, v2
 
     .line 2975
     :goto_d
@@ -18260,7 +18260,7 @@
     goto :goto_d
 
     :cond_d
-    const/4 v12, 0x0
+    move v12, v2
 
     .line 2978
     :goto_e
@@ -18306,7 +18306,7 @@
     goto :goto_e
 
     :cond_e
-    const/4 v12, 0x0
+    move v12, v2
 
     .line 2981
     :goto_f
@@ -18352,7 +18352,7 @@
     goto :goto_f
 
     :cond_f
-    const/4 v12, 0x0
+    move v12, v2
 
     .line 2984
     :goto_10
@@ -18398,7 +18398,7 @@
     goto :goto_10
 
     :cond_10
-    const/4 v12, 0x0
+    move v12, v2
 
     .line 2987
     :goto_11
@@ -18544,12 +18544,12 @@
 
     if-eqz v0, :cond_1
 
-    const/4 v0, 0x1
+    move v0, v3
 
     goto :goto_0
 
     :cond_1
-    const/4 v0, 0x0
+    move v0, v2
 
     :goto_0
     invoke-virtual {v1, v0}, Landroid/widget/ImageView;->setEnabled(Z)V
@@ -18577,12 +18577,12 @@
 
     if-eq v1, v4, :cond_2
 
-    const/4 v1, 0x1
+    move v1, v3
 
     goto :goto_1
 
     :cond_2
-    const/4 v1, 0x0
+    move v1, v2
 
     :goto_1
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setEnabled(Z)V
@@ -18600,12 +18600,12 @@
 
     if-eqz v1, :cond_3
 
-    const/high16 v1, 0x3f800000    # 1.0f
+    move v1, v4
 
     goto :goto_2
 
     :cond_3
-    const/high16 v1, 0x3f000000    # 0.5f
+    move v1, v5
 
     :goto_2
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setAlpha(F)V
@@ -18622,7 +18622,7 @@
     goto :goto_3
 
     :cond_4
-    const/high16 v4, 0x3f000000    # 0.5f
+    move v4, v5
 
     :goto_3
     invoke-virtual {v0, v4}, Landroid/widget/ImageView;->setAlpha(F)V
@@ -19375,7 +19375,7 @@
 
     if-eqz p1, :cond_9
 
-    const/4 p1, 0x0
+    move p1, v1
 
     .line 2866
     :goto_0
@@ -19392,7 +19392,7 @@
 
     move-result p2
 
-    const/4 p3, 0x0
+    move p3, v1
 
     :goto_1
     if-ge p3, p2, :cond_1
@@ -19455,7 +19455,7 @@
 
     if-eqz p2, :cond_9
 
-    const/4 p2, 0x0
+    move p2, v1
 
     .line 2896
     :goto_2
@@ -19472,7 +19472,7 @@
 
     move-result p3
 
-    const/4 v0, 0x0
+    move v0, v1
 
     :goto_3
     if-ge v0, p3, :cond_5
@@ -19561,7 +19561,7 @@
 
     if-eqz p1, :cond_9
 
-    const/4 p1, 0x0
+    move p1, v1
 
     .line 2879
     :goto_6
@@ -19578,7 +19578,7 @@
 
     move-result p2
 
-    const/4 p3, 0x0
+    move p3, v1
 
     :goto_7
     if-ge p3, p2, :cond_8
@@ -20059,7 +20059,7 @@
     .line 3178
     iput-object v0, v6, Lorg/telegram/ui/ArticleViewer;->layoutManager:[Landroidx/recyclerview/widget/LinearLayoutManager;
 
-    const/4 v0, 0x0
+    move v0, v8
 
     .line 3179
     :goto_0
@@ -20142,7 +20142,7 @@
 
     if-nez v0, :cond_2
 
-    const/4 v4, 0x0
+    move v4, v8
 
     goto :goto_1
 
@@ -20995,7 +20995,7 @@
 
     move/from16 v4, v22
 
-    const/16 v14, 0x38
+    move v14, v5
 
     move/from16 v5, v23
 
@@ -21579,7 +21579,7 @@
     goto :goto_2
 
     :cond_6
-    const/4 v2, 0x0
+    move v2, v8
 
     :goto_2
     if-eqz v2, :cond_7

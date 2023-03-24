@@ -154,14 +154,14 @@
 
     move-result-wide v2
 
-    long-to-int v3, v2
+    long-to-int v2, v2
 
     if-nez v1, :cond_1
 
-    if-lt v0, v3, :cond_1
+    if-lt v0, v2, :cond_1
 
     .line 126
-    invoke-virtual {p2, p3, v3, p1}, Lio/grpc/okhttp/OutboundFlowController$OutboundFlowState;->write(Lokio/Buffer;IZ)V
+    invoke-virtual {p2, p3, v2, p1}, Lio/grpc/okhttp/OutboundFlowController$OutboundFlowState;->write(Lokio/Buffer;IZ)V
 
     goto :goto_0
 
@@ -181,9 +181,9 @@
 
     move-result-wide v0
 
-    long-to-int v1, v0
+    long-to-int v0, v0
 
-    invoke-virtual {p2, p3, v1, p1}, Lio/grpc/okhttp/OutboundFlowController$OutboundFlowState;->enqueue(Lokio/Buffer;IZ)V
+    invoke-virtual {p2, p3, v0, p1}, Lio/grpc/okhttp/OutboundFlowController$OutboundFlowState;->enqueue(Lokio/Buffer;IZ)V
 
     :goto_0
     if-eqz p4, :cond_3
@@ -243,7 +243,7 @@
 
     const/4 v2, 0x0
 
-    const/4 v3, 0x0
+    move v3, v2
 
     :goto_0
     if-ge v3, v1, :cond_1
@@ -412,7 +412,7 @@
 
     double-to-int v4, v4
 
-    const/4 v5, 0x0
+    move v5, v3
 
     :goto_1
     if-ge v5, v2, :cond_2

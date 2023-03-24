@@ -11,9 +11,9 @@ public final class zzv implements Parcelable.Creator {
         int validateObjectHeader = SafeParcelReader.validateObjectHeader(parcel);
         String str = null;
         com.google.android.gms.internal.location.zzd zzdVar = null;
-        long j = Long.MAX_VALUE;
         int i = 0;
         boolean z = false;
+        long j = Long.MAX_VALUE;
         while (parcel.dataPosition() < validateObjectHeader) {
             int readHeader = SafeParcelReader.readHeader(parcel);
             int fieldId = SafeParcelReader.getFieldId(readHeader);

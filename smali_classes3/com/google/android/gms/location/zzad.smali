@@ -33,9 +33,9 @@
 
     move-wide v9, v7
 
-    const/4 v5, 0x1
+    move v5, v3
 
-    const/4 v6, 0x1
+    move v6, v5
 
     .line 2
     :goto_0

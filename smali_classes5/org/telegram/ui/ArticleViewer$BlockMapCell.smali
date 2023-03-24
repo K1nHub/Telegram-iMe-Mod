@@ -274,7 +274,7 @@
 
     const v1, 0x3f4ccccd    # 0.8f
 
-    mul-float v0, v0, v1
+    mul-float/2addr v0, v1
 
     float-to-int v0, v0
 
@@ -287,7 +287,7 @@
 
     int-to-float v3, v3
 
-    mul-float v3, v3, v1
+    mul-float/2addr v3, v1
 
     float-to-int v1, v3
 
@@ -350,7 +350,7 @@
 
     move-result v7
 
-    mul-float v7, v7, v6
+    mul-float/2addr v7, v6
 
     float-to-int v6, v7
 
@@ -408,7 +408,7 @@
     goto :goto_0
 
     :cond_2
-    const/4 v1, 0x0
+    move v1, v2
 
     .line 10542
     :goto_0
@@ -618,7 +618,7 @@
     goto :goto_0
 
     :cond_1
-    const/4 v0, 0x0
+    move v0, v2
 
     .line 10442
     :goto_0
@@ -708,7 +708,7 @@
 
     int-to-float v4, v4
 
-    mul-float v0, v0, v4
+    mul-float/2addr v0, v4
 
     float-to-int v0, v0
 
@@ -735,7 +735,7 @@
 
     const v5, 0x3f666666    # 0.9f
 
-    mul-float v4, v4, v5
+    mul-float/2addr v4, v5
 
     float-to-int v4, v4
 
@@ -757,7 +757,7 @@
 
     int-to-float v1, v1
 
-    mul-float v0, v0, v1
+    mul-float/2addr v0, v1
 
     float-to-int v1, v0
 
@@ -1384,7 +1384,7 @@
     if-eqz p1, :cond_4
 
     :cond_3
-    const/4 v4, 0x1
+    move v4, v5
 
     :cond_4
     return v4

@@ -33,13 +33,13 @@ import org.fork.p046ui.dialog.DrawerHeaderSettingsBottomSheet;
 import org.fork.p046ui.dialog.DrawerItemsSettingsBottomSheet;
 import org.fork.utils.Callbacks$Callback;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3286R;
+import org.telegram.messenger.C3301R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.UserConfig;
 import org.telegram.p048ui.ActionBar.AlertDialog;
-import org.telegram.p048ui.ActionBar.C3351ActionBar;
+import org.telegram.p048ui.ActionBar.C3366ActionBar;
 import org.telegram.p048ui.ActionBar.Theme;
 import org.telegram.p048ui.ActionBar.ThemeDescription;
 import org.telegram.p048ui.Cells.AppIconsSelectorCell;
@@ -160,16 +160,16 @@ public final class SettingsToolsCategoryActivity extends MvpFragment {
     /* JADX INFO: Access modifiers changed from: private */
     public final String getHint(int i) {
         if (i == this.customSharingRow) {
-            return LocaleController.getInternalString(C3286R.string.settings_tools_custom_sharing_hint);
+            return LocaleController.getInternalString(C3301R.string.settings_tools_custom_sharing_hint);
         }
         if (i == this.multiReplyRow) {
-            return LocaleController.getInternalString(C3286R.string.settings_tools_multi_reply_hint);
+            return LocaleController.getInternalString(C3301R.string.settings_tools_multi_reply_hint);
         }
         if (i == this.cloudAlbumsRow) {
-            return LocaleController.getInternalString(C3286R.string.settings_tools_cloud_albums_hint);
+            return LocaleController.getInternalString(C3301R.string.settings_tools_cloud_albums_hint);
         }
         if (i == this.sendPopupReactionsRow) {
-            return LocaleController.getInternalString(C3286R.string.settings_tools_send_popup_reactions_hint);
+            return LocaleController.getInternalString(C3301R.string.settings_tools_send_popup_reactions_hint);
         }
         return null;
     }
@@ -177,7 +177,7 @@ public final class SettingsToolsCategoryActivity extends MvpFragment {
     private final void showHintDialog(String str) {
         AlertDialog.Builder builder = new AlertDialog.Builder(getParentActivity());
         builder.setMessage(str);
-        builder.setPositiveButton(LocaleController.getString("OK", C3286R.string.OK), null);
+        builder.setPositiveButton(LocaleController.getString("OK", C3301R.string.OK), null);
         showDialog(builder.create());
     }
 
@@ -385,12 +385,12 @@ public final class SettingsToolsCategoryActivity extends MvpFragment {
     }
 
     private final void setupActionBar() {
-        C3351ActionBar c3351ActionBar = this.actionBar;
-        c3351ActionBar.setBackButtonImage(C3286R.C3288drawable.ic_ab_back);
-        c3351ActionBar.setAllowOverlayTitle(true);
-        c3351ActionBar.setTitle(this.category.getTitle());
-        c3351ActionBar.setActionBarMenuOnItemClick(new C3351ActionBar.ActionBarMenuOnItemClick() { // from class: org.fork.ui.fragment.SettingsToolsCategoryActivity$setupActionBar$1$1
-            @Override // org.telegram.p048ui.ActionBar.C3351ActionBar.ActionBarMenuOnItemClick
+        C3366ActionBar c3366ActionBar = this.actionBar;
+        c3366ActionBar.setBackButtonImage(C3301R.C3303drawable.ic_ab_back);
+        c3366ActionBar.setAllowOverlayTitle(true);
+        c3366ActionBar.setTitle(this.category.getTitle());
+        c3366ActionBar.setActionBarMenuOnItemClick(new C3366ActionBar.ActionBarMenuOnItemClick() { // from class: org.fork.ui.fragment.SettingsToolsCategoryActivity$setupActionBar$1$1
+            @Override // org.telegram.p048ui.ActionBar.C3366ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i) {
                 if (i == -1) {
                     SettingsToolsCategoryActivity.this.finishFragment();
@@ -407,8 +407,8 @@ public final class SettingsToolsCategoryActivity extends MvpFragment {
 
     private final AlertDialog createChooseSelectedIconHolidayDesignSideMenuDialog() {
         final AlertDialog.Builder builder = new AlertDialog.Builder(getParentActivity());
-        builder.setTitle(LocaleController.getInternalString(C3286R.string.settings_tools_design_icon));
-        builder.setNegativeButton(LocaleController.getInternalString(C3286R.string.common_cancel), null);
+        builder.setTitle(LocaleController.getInternalString(C3301R.string.settings_tools_design_icon));
+        builder.setNegativeButton(LocaleController.getInternalString(C3301R.string.common_cancel), null);
         LinearLayout linearLayout = new LinearLayout(getParentActivity());
         linearLayout.setOrientation(1);
         DrawerHolidayIconType[] values = DrawerHolidayIconType.values();
@@ -565,124 +565,124 @@ public final class SettingsToolsCategoryActivity extends MvpFragment {
                 TextCheckCell textCheckCell = (TextCheckCell) view;
                 textCheckCell.setDrawSwitchDivider(hasHint(i));
                 if (i == SettingsToolsCategoryActivity.this.customizationAutoOpenForwardingOptionsRow) {
-                    textCheckCell.setTextAndCheck(LocaleController.getInternalString(C3286R.string.auto_open_forwarding_options), SharedConfig.isOpenForwardingOptionsAutomaticallyEnabled, z2);
+                    textCheckCell.setTextAndCheck(LocaleController.getInternalString(C3301R.string.auto_open_forwarding_options), SharedConfig.isOpenForwardingOptionsAutomaticallyEnabled, z2);
                 } else if (i == SettingsToolsCategoryActivity.this.customSharingRow) {
-                    textCheckCell.setTextAndCheck(LocaleController.getInternalString(C3286R.string.settings_tools_custom_sharing), SharedConfig.isCustomSharingModeEnabled, z2);
+                    textCheckCell.setTextAndCheck(LocaleController.getInternalString(C3301R.string.settings_tools_custom_sharing), SharedConfig.isCustomSharingModeEnabled, z2);
                 } else if (i == SettingsToolsCategoryActivity.this.multiReplyRow) {
-                    textCheckCell.setTextAndCheck(LocaleController.getInternalString(C3286R.string.settings_tools_multi_reply), SharedConfig.isMultiReplyEnabled, z2);
+                    textCheckCell.setTextAndCheck(LocaleController.getInternalString(C3301R.string.settings_tools_multi_reply), SharedConfig.isMultiReplyEnabled, z2);
                 } else if (i == SettingsToolsCategoryActivity.this.chatListActionBarAccountSwitchRow) {
-                    textCheckCell.setTextAndCheck(LocaleController.getInternalString(C3286R.string.settings_interface_action_bar_account_switch), SharedConfig.isActionBarAccountSwitchEnabled, z2);
+                    textCheckCell.setTextAndCheck(LocaleController.getInternalString(C3301R.string.settings_interface_action_bar_account_switch), SharedConfig.isActionBarAccountSwitchEnabled, z2);
                 } else if (i == SettingsToolsCategoryActivity.this.chatListActionBarMenuRow) {
-                    textCheckCell.setTextAndCheck(LocaleController.getInternalString(C3286R.string.settings_interface_action_bar_menu), SharedConfig.isMainActionBarMenuEnabled, z2);
+                    textCheckCell.setTextAndCheck(LocaleController.getInternalString(C3301R.string.settings_interface_action_bar_menu), SharedConfig.isMainActionBarMenuEnabled, z2);
                 } else if (i == SettingsToolsCategoryActivity.this.proxyButtonForceVisibleRow) {
-                    textCheckCell.setTextAndCheck(LocaleController.getInternalString(C3286R.string.settings_proxy_button_in_toolbar), SharedConfig.isProxyButtonForceVisible, z2);
+                    textCheckCell.setTextAndCheck(LocaleController.getInternalString(C3301R.string.settings_proxy_button_in_toolbar), SharedConfig.isProxyButtonForceVisible, z2);
                 } else if (i == SettingsToolsCategoryActivity.this.cloudAlbumsRow) {
-                    textCheckCell.setTextAndCheck(LocaleController.getInternalString(C3286R.string.settings_tools_cloud_albums), SharedConfig.isCloudAlbumsEnabled, z2);
+                    textCheckCell.setTextAndCheck(LocaleController.getInternalString(C3301R.string.settings_tools_cloud_albums), SharedConfig.isCloudAlbumsEnabled, z2);
                 } else if (i == SettingsToolsCategoryActivity.this.chatBottomPanelRow) {
-                    textCheckCell.setTextAndCheck(LocaleController.getInternalString(C3286R.string.settings_interface_bottom_panel_in_channel), SettingsToolsCategoryActivity.this.getToolsController().isShowChannelBottomPanel(), z2);
+                    textCheckCell.setTextAndCheck(LocaleController.getInternalString(C3301R.string.settings_interface_bottom_panel_in_channel), SettingsToolsCategoryActivity.this.getToolsController().isShowChannelBottomPanel(), z2);
                 } else if (i == SettingsToolsCategoryActivity.this.chatHideKeyboardOnScrollRow) {
-                    textCheckCell.setTextAndCheck(LocaleController.getInternalString(C3286R.string.settings_interface_chat_hide_keyboard_on_scroll), SharedConfig.isHideChatKeyboardOnScrollEnabled, z2);
+                    textCheckCell.setTextAndCheck(LocaleController.getInternalString(C3301R.string.settings_interface_chat_hide_keyboard_on_scroll), SharedConfig.isHideChatKeyboardOnScrollEnabled, z2);
                 } else if (i == SettingsToolsCategoryActivity.this.chatThemesEnableRow) {
-                    textCheckCell.setTextAndCheck(LocaleController.getInternalString(C3286R.string.settings_interface_chat_themes), SharedConfig.isChatThemesEnabled, z2);
+                    textCheckCell.setTextAndCheck(LocaleController.getInternalString(C3301R.string.settings_interface_chat_themes), SharedConfig.isChatThemesEnabled, z2);
                 } else if (i == SettingsToolsCategoryActivity.this.chatMemoryRow) {
-                    textCheckCell.setTextAndCheck(LocaleController.getInternalString(C3286R.string.settings_tools_remember_chat), SettingsToolsCategoryActivity.this.getToolsController().isRememberLastDialogEnabled(), z2);
+                    textCheckCell.setTextAndCheck(LocaleController.getInternalString(C3301R.string.settings_tools_remember_chat), SettingsToolsCategoryActivity.this.getToolsController().isRememberLastDialogEnabled(), z2);
                 } else if (i == SettingsToolsCategoryActivity.this.sendPopupReactionsRow) {
-                    textCheckCell.setTextAndCheck(LocaleController.getInternalString(C3286R.string.settings_tools_send_popup_reactions), SharedConfig.isReactionsInSendPopupEnabled, z2);
+                    textCheckCell.setTextAndCheck(LocaleController.getInternalString(C3301R.string.settings_tools_send_popup_reactions), SharedConfig.isReactionsInSendPopupEnabled, z2);
                 } else if (i == SettingsToolsCategoryActivity.this.confirmationCallsRow) {
-                    textCheckCell.setTextAndCheck(LocaleController.getInternalString(C3286R.string.settings_interface_calls_confirmation), SharedConfig.isCallsConfirmationEnabled, z2);
+                    textCheckCell.setTextAndCheck(LocaleController.getInternalString(C3301R.string.settings_interface_calls_confirmation), SharedConfig.isCallsConfirmationEnabled, z2);
                 } else if (i == SettingsToolsCategoryActivity.this.confirmationDeleteCloudRow) {
-                    textCheckCell.setTextAndCheck(LocaleController.getInternalString(C3286R.string.settings_interface_delete_cloud_confirmation), SharedConfig.isDeleteCloudConfirmationEnabled, z2);
+                    textCheckCell.setTextAndCheck(LocaleController.getInternalString(C3301R.string.settings_interface_delete_cloud_confirmation), SharedConfig.isDeleteCloudConfirmationEnabled, z2);
                 } else if (i == SettingsToolsCategoryActivity.this.confirmationDeleteTwoSideRow) {
-                    textCheckCell.setTextAndCheck(LocaleController.getInternalString(C3286R.string.settings_revoke_by_default), SettingsToolsCategoryActivity.this.getToolsController().isRevokeByDefault(), z2);
+                    textCheckCell.setTextAndCheck(LocaleController.getInternalString(C3301R.string.settings_revoke_by_default), SettingsToolsCategoryActivity.this.getToolsController().isRevokeByDefault(), z2);
                 } else if (i == SettingsToolsCategoryActivity.this.confirmationSendingGifRow) {
-                    textCheckCell.setTextAndCheck(LocaleController.getInternalString(C3286R.string.settings_interface_sending_gif_confirmation), SharedConfig.isSendingGifConfirmationEnabled, z2);
+                    textCheckCell.setTextAndCheck(LocaleController.getInternalString(C3301R.string.settings_interface_sending_gif_confirmation), SharedConfig.isSendingGifConfirmationEnabled, z2);
                 } else if (i == SettingsToolsCategoryActivity.this.confirmationSendingStickerRow) {
-                    textCheckCell.setTextAndCheck(LocaleController.getInternalString(C3286R.string.settings_interface_sending_sticker_confirmation), SharedConfig.isSendingStickerConfirmationEnabled, z2);
+                    textCheckCell.setTextAndCheck(LocaleController.getInternalString(C3301R.string.settings_interface_sending_sticker_confirmation), SharedConfig.isSendingStickerConfirmationEnabled, z2);
                 } else if (i == SettingsToolsCategoryActivity.this.confirmationSpeakWithoutHoldRow) {
-                    textCheckCell.setTextAndCheck(LocaleController.getInternalString(C3286R.string.settings_interface_speak_without_hold), SharedConfig.isSpeakWithoutHoldEnabled, z2);
+                    textCheckCell.setTextAndCheck(LocaleController.getInternalString(C3301R.string.settings_interface_speak_without_hold), SharedConfig.isSpeakWithoutHoldEnabled, z2);
                 } else if (i == SettingsToolsCategoryActivity.this.confirmationVideoSpeakWithoutHoldRow) {
-                    textCheckCell.setTextAndCheck(LocaleController.getInternalString(C3286R.string.settings_interface_video_speak_without_hold), SharedConfig.isVideoSpeakWithoutHoldEnabled, z2);
+                    textCheckCell.setTextAndCheck(LocaleController.getInternalString(C3301R.string.settings_interface_video_speak_without_hold), SharedConfig.isVideoSpeakWithoutHoldEnabled, z2);
                 } else if (i == SettingsToolsCategoryActivity.this.messageWidePostsRow) {
-                    textCheckCell.setTextAndCheck(LocaleController.getInternalString(C3286R.string.settings_interface_wide_posts_in_channel), SettingsToolsCategoryActivity.this.getToolsController().isChannelWidePostsEnabled(), z2);
+                    textCheckCell.setTextAndCheck(LocaleController.getInternalString(C3301R.string.settings_interface_wide_posts_in_channel), SettingsToolsCategoryActivity.this.getToolsController().isChannelWidePostsEnabled(), z2);
                 }
             } else if (itemViewType == IdFabric$ViewTypes.TEXT && (view instanceof TextCell)) {
                 if (i == SettingsToolsCategoryActivity.this.drawerHeaderSettingsRow) {
-                    ((TextCell) view).setText(LocaleController.getInternalString(C3286R.string.settings_interface_drawer_account_info), z2);
+                    ((TextCell) view).setText(LocaleController.getInternalString(C3301R.string.settings_interface_drawer_account_info), z2);
                 } else if (i == SettingsToolsCategoryActivity.this.drawerItemsRow) {
-                    ((TextCell) view).setText(LocaleController.getInternalString(C3286R.string.settings_interface_drawer_items), z2);
+                    ((TextCell) view).setText(LocaleController.getInternalString(C3301R.string.settings_interface_drawer_items), z2);
                 } else if (i == SettingsToolsCategoryActivity.this.chatFolderAndChatSortingRow) {
-                    ((TextCell) view).setText(LocaleController.getString("FilterAvailableTitle", C3286R.string.FilterAvailableTitle), z2);
+                    ((TextCell) view).setText(LocaleController.getString("FilterAvailableTitle", C3301R.string.FilterAvailableTitle), z2);
                 } else if (i == SettingsToolsCategoryActivity.this.settingsTopicsRow) {
-                    ((TextCell) view).setText(LocaleController.getInternalString(C3286R.string.topics), z2);
+                    ((TextCell) view).setText(LocaleController.getInternalString(C3301R.string.topics), z2);
                 } else if (i == SettingsToolsCategoryActivity.this.chatAttachMenuButtonsRow) {
-                    ((TextCell) view).setText(LocaleController.getInternalString(C3286R.string.settings_interface_chat_attach_alert_buttons), z2);
+                    ((TextCell) view).setText(LocaleController.getInternalString(C3301R.string.settings_interface_chat_attach_alert_buttons), z2);
                 } else if (i == SettingsToolsCategoryActivity.this.chatExtendedAvatarPreviewerRow) {
-                    ((TextCell) view).setText(LocaleController.getInternalString(C3286R.string.settings_interface_chat_user_options_by_avatar_click_subtitle), z2);
+                    ((TextCell) view).setText(LocaleController.getInternalString(C3301R.string.settings_interface_chat_user_options_by_avatar_click_subtitle), z2);
                 } else if (i == SettingsToolsCategoryActivity.this.reactionSettingsRow) {
-                    ((TextCell) view).setText(LocaleController.getString("Reactions", C3286R.string.Reactions), z2);
+                    ((TextCell) view).setText(LocaleController.getString("Reactions", C3301R.string.Reactions), z2);
                 } else if (i == SettingsToolsCategoryActivity.this.messagesTranslate) {
-                    ((TextCell) view).setTextAndIcon(LocaleController.getInternalString(C3286R.string.settings_tools_translator), C3286R.C3288drawable.msg_translate, z2);
+                    ((TextCell) view).setTextAndIcon(LocaleController.getInternalString(C3301R.string.settings_tools_translator), C3301R.C3303drawable.msg_translate, z2);
                 } else if (i == SettingsToolsCategoryActivity.this.messagesContextMenu) {
-                    ((TextCell) view).setTextAndIcon(LocaleController.getInternalString(C3286R.string.settings_interface_message_context_menu), C3286R.C3288drawable.fork_settings_context_menu, z2);
+                    ((TextCell) view).setTextAndIcon(LocaleController.getInternalString(C3301R.string.settings_interface_message_context_menu), C3301R.C3303drawable.fork_settings_context_menu, z2);
                 } else if (i == SettingsToolsCategoryActivity.this.sendMessages) {
-                    ((TextCell) view).setTextAndIcon(LocaleController.getInternalString(C3286R.string.sending_settings_send), C3286R.C3288drawable.msg_send, z2);
+                    ((TextCell) view).setTextAndIcon(LocaleController.getInternalString(C3301R.string.sending_settings_send), C3301R.C3303drawable.msg_send, z2);
                 }
             } else if (itemViewType == IdFabric$ViewTypes.TEXT_SETTINGS && (view instanceof TextSettingsCell)) {
                 if (i == SettingsToolsCategoryActivity.this.chatProfileTelegramIdRow) {
-                    ((TextSettingsCell) view).setTextAndValue(LocaleController.getInternalString(C3286R.string.settings_tools_chat_profile_id_telegram), LocaleController.getInternalString(SharedConfig.selectedChatProfileTelegramIdMode.getTextResId()), z2);
+                    ((TextSettingsCell) view).setTextAndValue(LocaleController.getInternalString(C3301R.string.settings_tools_chat_profile_id_telegram), LocaleController.getInternalString(SharedConfig.selectedChatProfileTelegramIdMode.getTextResId()), z2);
                 } else if (i == SettingsToolsCategoryActivity.this.chatsTemplatesRow) {
-                    ((TextSettingsCell) view).setTextAndValue(LocaleController.getInternalString(C3286R.string.chat_templates), LocaleController.getInternalString(SharedConfig.selectedTemplatesMode.getTextResId()), z2);
+                    ((TextSettingsCell) view).setTextAndValue(LocaleController.getInternalString(C3301R.string.chat_templates), LocaleController.getInternalString(SharedConfig.selectedTemplatesMode.getTextResId()), z2);
                 } else if (i == SettingsToolsCategoryActivity.this.confirmationVideoVoiceCameraRow) {
-                    ((TextSettingsCell) view).setTextAndValue(LocaleController.getInternalString(C3286R.string.settings_interface_video_voice_camera), LocaleController.getInternalString(SharedConfig.selectedVideoVoiceCamera.getShortTextResId()), z2);
+                    ((TextSettingsCell) view).setTextAndValue(LocaleController.getInternalString(C3301R.string.settings_interface_video_voice_camera), LocaleController.getInternalString(SharedConfig.selectedVideoVoiceCamera.getShortTextResId()), z2);
                 } else if (i == SettingsToolsCategoryActivity.this.drawerHolidayIconType) {
-                    ((TextSettingsCell) view).setTextAndValue(LocaleController.getInternalString(C3286R.string.settings_tools_design_icon), SharedConfig.drawerHolidayIconType.getTitle(), z2);
+                    ((TextSettingsCell) view).setTextAndValue(LocaleController.getInternalString(C3301R.string.settings_tools_design_icon), SharedConfig.drawerHolidayIconType.getTitle(), z2);
                 }
             } else if (itemViewType == IdFabric$ViewTypes.NOTIFICATION_CHECK && (holder.itemView instanceof NotificationsCheckCell)) {
                 String str2 = null;
                 if (i != SettingsToolsCategoryActivity.this.chatMultiPanelRow) {
                     if (i != SettingsToolsCategoryActivity.this.chatSwipeToGoToNextUnreadDialogRow) {
                         if (i == SettingsToolsCategoryActivity.this.chatListRecentChatsRow) {
-                            str2 = LocaleController.getInternalString(C3286R.string.settings_interface_recent_chats);
+                            str2 = LocaleController.getInternalString(C3301R.string.settings_interface_recent_chats);
                             z = SettingsToolsCategoryActivity.this.getRecentChatsController().isRecentChatsEnabled();
                             if (z) {
                                 List<String> dialogTypesSettingsRecentChats = SettingsToolsCategoryActivity.this.getRecentChatsController().getDialogTypesSettingsRecentChats();
                                 if (dialogTypesSettingsRecentChats.isEmpty()) {
-                                    str = LocaleController.getInternalString(C3286R.string.settings_interface_multi_panel_no_buttons);
+                                    str = LocaleController.getInternalString(C3301R.string.settings_interface_multi_panel_no_buttons);
                                 } else {
                                     str = TextUtils.join(", ", dialogTypesSettingsRecentChats);
                                 }
                             } else {
-                                str = LocaleController.getInternalString(C3286R.string.folder_tabs_sorting_settings_item_value_off);
+                                str = LocaleController.getInternalString(C3301R.string.folder_tabs_sorting_settings_item_value_off);
                             }
                         } else {
                             str = null;
                         }
                     } else {
-                        str2 = LocaleController.getInternalString(C3286R.string.settings_interface_swipe_to_next_unread_dialog);
+                        str2 = LocaleController.getInternalString(C3301R.string.settings_interface_swipe_to_next_unread_dialog);
                         z = SettingsToolsCategoryActivity.this.getToolsController().isSwipeToGoToNextUnreadDialogEnabled();
                         if (z) {
                             List<String> swipeToGoToNextUnreadDialogTypeNames = SettingsToolsCategoryActivity.this.getToolsController().getSwipeToGoToNextUnreadDialogTypeNames();
                             if (swipeToGoToNextUnreadDialogTypeNames.isEmpty()) {
-                                str = LocaleController.getInternalString(C3286R.string.settings_interface_multi_panel_no_buttons);
+                                str = LocaleController.getInternalString(C3301R.string.settings_interface_multi_panel_no_buttons);
                             } else {
                                 str = TextUtils.join(", ", swipeToGoToNextUnreadDialogTypeNames);
                             }
                         } else {
-                            str = LocaleController.getInternalString(C3286R.string.folder_tabs_sorting_settings_item_value_off);
+                            str = LocaleController.getInternalString(C3301R.string.folder_tabs_sorting_settings_item_value_off);
                         }
                     }
                 } else {
-                    str2 = LocaleController.getInternalString(C3286R.string.settings_multi_panel_item_title);
+                    str2 = LocaleController.getInternalString(C3301R.string.settings_multi_panel_item_title);
                     z = SettingsToolsCategoryActivity.this.getMultiPanelController().isMultiPanelEnabled();
                     if (z) {
                         List<String> activeDialogTypeNames = SettingsToolsCategoryActivity.this.getMultiPanelController().getActiveDialogTypeNames();
                         if (activeDialogTypeNames.isEmpty()) {
-                            str = LocaleController.getInternalString(C3286R.string.settings_interface_multi_panel_no_buttons);
+                            str = LocaleController.getInternalString(C3301R.string.settings_interface_multi_panel_no_buttons);
                         } else {
                             str = TextUtils.join(", ", activeDialogTypeNames);
                         }
                     } else {
-                        str = LocaleController.getInternalString(C3286R.string.folder_tabs_sorting_settings_item_value_off);
+                        str = LocaleController.getInternalString(C3301R.string.folder_tabs_sorting_settings_item_value_off);
                     }
                 }
                 ((NotificationsCheckCell) holder.itemView).setTextAndValueAndCheck(str2, str, z, true);

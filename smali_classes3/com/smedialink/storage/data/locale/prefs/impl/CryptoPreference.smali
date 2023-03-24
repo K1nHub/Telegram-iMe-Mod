@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nCryptoPreference.kt\nKotlin\n*S Kotlin\n*F\n+ 1 CryptoPreference.kt\ncom/smedialink/storage/data/locale/prefs/impl/CryptoPreference\n+ 2 GsonExt.kt\ncom/smedialink/storage/data/utils/extentions/GsonExtKt\n+ 3 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 4 _Arrays.kt\nkotlin/collections/ArraysKt___ArraysKt\n+ 5 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,248:1\n25#2,2:249\n25#2,2:251\n25#2,2:253\n25#2,2:255\n25#2,2:257\n25#2,2:259\n25#2,2:261\n25#2,2:263\n25#2,2:265\n25#2,2:267\n1002#3,2:269\n1855#3,2:273\n13579#4,2:271\n1#5:275\n*S KotlinDebug\n*F\n+ 1 CryptoPreference.kt\ncom/smedialink/storage/data/locale/prefs/impl/CryptoPreference\n*L\n46#1:249,2\n67#1:251,2\n79#1:253,2\n110#1:255,2\n116#1:257,2\n122#1:259,2\n128#1:261,2\n140#1:263,2\n170#1:265,2\n187#1:267,2\n191#1:269,2\n233#1:273,2\n202#1:271,2\n*E\n"
+    value = "SMAP\nCryptoPreference.kt\nKotlin\n*S Kotlin\n*F\n+ 1 CryptoPreference.kt\ncom/smedialink/storage/data/locale/prefs/impl/CryptoPreference\n+ 2 GsonExt.kt\ncom/smedialink/storage/data/utils/extentions/GsonExtKt\n+ 3 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 4 _Arrays.kt\nkotlin/collections/ArraysKt___ArraysKt\n+ 5 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,264:1\n25#2,2:265\n25#2,2:267\n25#2,2:269\n25#2,2:271\n25#2,2:273\n25#2,2:275\n25#2,2:277\n25#2,2:279\n25#2,2:281\n25#2,2:283\n1002#3,2:285\n1855#3,2:289\n1855#3,2:291\n13579#4,2:287\n1#5:293\n*S KotlinDebug\n*F\n+ 1 CryptoPreference.kt\ncom/smedialink/storage/data/locale/prefs/impl/CryptoPreference\n*L\n46#1:265,2\n67#1:267,2\n79#1:269,2\n110#1:271,2\n116#1:273,2\n122#1:275,2\n128#1:277,2\n140#1:279,2\n170#1:281,2\n187#1:283,2\n191#1:285,2\n218#1:289,2\n249#1:291,2\n202#1:287,2\n*E\n"
 .end annotation
 
 
@@ -128,7 +128,7 @@
 .method private final getActualGuid()Ljava/lang/String;
     .locals 2
 
-    .line 245
+    .line 261
     iget-object v0, p0, Lcom/smedialink/storage/data/locale/prefs/impl/CryptoPreference;->tempOneActionGuid:Ljava/lang/String;
 
     invoke-interface {v0}, Ljava/lang/CharSequence;->length()I
@@ -658,7 +658,7 @@
 .method public getOldWalletPublicAddress()Ljava/lang/String;
     .locals 4
 
-    .line 223
+    .line 239
     invoke-virtual {p0}, Lcom/smedialink/storage/data/locale/prefs/impl/BasePreference;->getMPref()Landroid/content/SharedPreferences;
 
     move-result-object v0
@@ -693,7 +693,7 @@
 .method public getOldWalletSeed()Ljava/lang/String;
     .locals 4
 
-    .line 226
+    .line 242
     invoke-virtual {p0}, Lcom/smedialink/storage/data/locale/prefs/impl/BasePreference;->getMPref()Landroid/content/SharedPreferences;
 
     move-result-object v0
@@ -1265,151 +1265,7 @@
     return v0
 .end method
 
-.method public resetBinanceAccount()V
-    .locals 4
-
-    .line 216
-    invoke-virtual {p0}, Lcom/smedialink/storage/data/locale/prefs/impl/BasePreference;->getMPref()Landroid/content/SharedPreferences;
-
-    move-result-object v0
-
-    invoke-interface {v0}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
-
-    move-result-object v0
-
-    const-string v1, "binance_session"
-
-    const/4 v2, 0x0
-
-    const/4 v3, 0x2
-
-    .line 217
-    invoke-static {p0, v1, v2, v3, v2}, Lcom/smedialink/storage/domain/storage/BasePreferenceHelper$DefaultImpls;->withTgAccount$default(Lcom/smedialink/storage/domain/storage/BasePreferenceHelper;Ljava/lang/String;Ljava/lang/String;ILjava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-interface {v0, v1}, Landroid/content/SharedPreferences$Editor;->remove(Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
-
-    const-string v1, "binance_user_info"
-
-    .line 218
-    invoke-static {p0, v1, v2, v3, v2}, Lcom/smedialink/storage/domain/storage/BasePreferenceHelper$DefaultImpls;->withTgAccount$default(Lcom/smedialink/storage/domain/storage/BasePreferenceHelper;Ljava/lang/String;Ljava/lang/String;ILjava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-interface {v0, v1}, Landroid/content/SharedPreferences$Editor;->remove(Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
-
-    .line 219
-    invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->apply()V
-
-    return-void
-.end method
-
-.method public resetBinanceTokensSettings()V
-    .locals 4
-
-    .line 209
-    invoke-virtual {p0}, Lcom/smedialink/storage/data/locale/prefs/impl/BasePreference;->getMPref()Landroid/content/SharedPreferences;
-
-    move-result-object v0
-
-    invoke-interface {v0}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
-
-    move-result-object v0
-
-    const-string v1, "binance_tokens_only_positive"
-
-    const/4 v2, 0x0
-
-    const/4 v3, 0x2
-
-    .line 210
-    invoke-static {p0, v1, v2, v3, v2}, Lcom/smedialink/storage/domain/storage/BasePreferenceHelper$DefaultImpls;->withTgAccount$default(Lcom/smedialink/storage/domain/storage/BasePreferenceHelper;Ljava/lang/String;Ljava/lang/String;ILjava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-interface {v0, v1}, Landroid/content/SharedPreferences$Editor;->remove(Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
-
-    const-string v1, "binance_tokens_settings"
-
-    .line 211
-    invoke-static {p0, v1, v2, v3, v2}, Lcom/smedialink/storage/domain/storage/BasePreferenceHelper$DefaultImpls;->withTgAccount$default(Lcom/smedialink/storage/domain/storage/BasePreferenceHelper;Ljava/lang/String;Ljava/lang/String;ILjava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-interface {v0, v1}, Landroid/content/SharedPreferences$Editor;->remove(Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
-
-    .line 212
-    invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->apply()V
-
-    return-void
-.end method
-
-.method public resetOldWalletData()V
-    .locals 5
-
-    .line 229
-    invoke-virtual {p0}, Lcom/smedialink/storage/data/locale/prefs/impl/BasePreference;->getMPref()Landroid/content/SharedPreferences;
-
-    move-result-object v0
-
-    invoke-interface {v0}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
-
-    move-result-object v0
-
-    const-string v1, "wallet_public_address"
-
-    const-string v2, "wallet_seed"
-
-    .line 232
-    filled-new-array {v1, v2}, [Ljava/lang/String;
-
-    move-result-object v1
-
-    .line 230
-    invoke-static {v1}, Lkotlin/collections/CollectionsKt;->listOf([Ljava/lang/Object;)Ljava/util/List;
-
-    move-result-object v1
-
-    .line 1855
-    invoke-interface {v1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
-
-    move-result-object v1
-
-    :goto_0
-    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v2
-
-    if-eqz v2, :cond_0
-
-    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Ljava/lang/String;
-
-    const/4 v3, 0x2
-
-    const/4 v4, 0x0
-
-    .line 233
-    invoke-static {p0, v2, v4, v3, v4}, Lcom/smedialink/storage/domain/storage/CryptoPreferenceHelper$DefaultImpls;->withGuid$default(Lcom/smedialink/storage/domain/storage/CryptoPreferenceHelper;Ljava/lang/String;Ljava/lang/String;ILjava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-interface {v0, v2}, Landroid/content/SharedPreferences$Editor;->remove(Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
-
-    goto :goto_0
-
-    .line 234
-    :cond_0
-    invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->apply()V
-
-    return-void
-.end method
-
-.method public resetTokensSettings()V
+.method public resetAllTokensSettings()V
     .locals 8
 
     .line 200
@@ -1472,6 +1328,282 @@
 
     .line 205
     :cond_0
+    invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->apply()V
+
+    return-void
+.end method
+
+.method public resetBinanceAccount()V
+    .locals 4
+
+    .line 232
+    invoke-virtual {p0}, Lcom/smedialink/storage/data/locale/prefs/impl/BasePreference;->getMPref()Landroid/content/SharedPreferences;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
+
+    move-result-object v0
+
+    const-string v1, "binance_session"
+
+    const/4 v2, 0x0
+
+    const/4 v3, 0x2
+
+    .line 233
+    invoke-static {p0, v1, v2, v3, v2}, Lcom/smedialink/storage/domain/storage/BasePreferenceHelper$DefaultImpls;->withTgAccount$default(Lcom/smedialink/storage/domain/storage/BasePreferenceHelper;Ljava/lang/String;Ljava/lang/String;ILjava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-interface {v0, v1}, Landroid/content/SharedPreferences$Editor;->remove(Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
+
+    const-string v1, "binance_user_info"
+
+    .line 234
+    invoke-static {p0, v1, v2, v3, v2}, Lcom/smedialink/storage/domain/storage/BasePreferenceHelper$DefaultImpls;->withTgAccount$default(Lcom/smedialink/storage/domain/storage/BasePreferenceHelper;Ljava/lang/String;Ljava/lang/String;ILjava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-interface {v0, v1}, Landroid/content/SharedPreferences$Editor;->remove(Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
+
+    .line 235
+    invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->apply()V
+
+    return-void
+.end method
+
+.method public resetBinanceTokensSettings()V
+    .locals 4
+
+    .line 225
+    invoke-virtual {p0}, Lcom/smedialink/storage/data/locale/prefs/impl/BasePreference;->getMPref()Landroid/content/SharedPreferences;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
+
+    move-result-object v0
+
+    const-string v1, "binance_tokens_only_positive"
+
+    const/4 v2, 0x0
+
+    const/4 v3, 0x2
+
+    .line 226
+    invoke-static {p0, v1, v2, v3, v2}, Lcom/smedialink/storage/domain/storage/BasePreferenceHelper$DefaultImpls;->withTgAccount$default(Lcom/smedialink/storage/domain/storage/BasePreferenceHelper;Ljava/lang/String;Ljava/lang/String;ILjava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-interface {v0, v1}, Landroid/content/SharedPreferences$Editor;->remove(Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
+
+    const-string v1, "binance_tokens_settings"
+
+    .line 227
+    invoke-static {p0, v1, v2, v3, v2}, Lcom/smedialink/storage/domain/storage/BasePreferenceHelper$DefaultImpls;->withTgAccount$default(Lcom/smedialink/storage/domain/storage/BasePreferenceHelper;Ljava/lang/String;Ljava/lang/String;ILjava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-interface {v0, v1}, Landroid/content/SharedPreferences$Editor;->remove(Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
+
+    .line 228
+    invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->apply()V
+
+    return-void
+.end method
+
+.method public resetOldWalletData()V
+    .locals 5
+
+    .line 245
+    invoke-virtual {p0}, Lcom/smedialink/storage/data/locale/prefs/impl/BasePreference;->getMPref()Landroid/content/SharedPreferences;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
+
+    move-result-object v0
+
+    const-string v1, "wallet_public_address"
+
+    const-string v2, "wallet_seed"
+
+    .line 248
+    filled-new-array {v1, v2}, [Ljava/lang/String;
+
+    move-result-object v1
+
+    .line 246
+    invoke-static {v1}, Lkotlin/collections/CollectionsKt;->listOf([Ljava/lang/Object;)Ljava/util/List;
+
+    move-result-object v1
+
+    .line 1855
+    invoke-interface {v1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
+
+    move-result-object v1
+
+    :goto_0
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_0
+
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Ljava/lang/String;
+
+    const/4 v3, 0x2
+
+    const/4 v4, 0x0
+
+    .line 249
+    invoke-static {p0, v2, v4, v3, v4}, Lcom/smedialink/storage/domain/storage/CryptoPreferenceHelper$DefaultImpls;->withGuid$default(Lcom/smedialink/storage/domain/storage/CryptoPreferenceHelper;Ljava/lang/String;Ljava/lang/String;ILjava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-interface {v0, v2}, Landroid/content/SharedPreferences$Editor;->remove(Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
+
+    goto :goto_0
+
+    .line 250
+    :cond_0
+    invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->apply()V
+
+    return-void
+.end method
+
+.method public resetTokensSettingsByBlockchainType(Lcom/smedialink/storage/domain/model/crypto/BlockchainType;)V
+    .locals 5
+
+    const-string v0, "blockchainType"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 216
+    invoke-virtual {p0}, Lcom/smedialink/storage/data/locale/prefs/impl/BasePreference;->getMPref()Landroid/content/SharedPreferences;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
+
+    move-result-object v0
+
+    const-string v1, "tokens_only_positive"
+
+    const/4 v2, 0x0
+
+    const/4 v3, 0x2
+
+    .line 217
+    invoke-static {p0, v1, v2, v3, v2}, Lcom/smedialink/storage/domain/storage/BasePreferenceHelper$DefaultImpls;->withTgAccount$default(Lcom/smedialink/storage/domain/storage/BasePreferenceHelper;Ljava/lang/String;Ljava/lang/String;ILjava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-interface {v0, v1}, Landroid/content/SharedPreferences$Editor;->remove(Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
+
+    .line 218
+    sget-object v1, Lcom/smedialink/storage/domain/model/crypto/NetworkType;->Companion:Lcom/smedialink/storage/domain/model/crypto/NetworkType$Companion;
+
+    invoke-virtual {v1, p1}, Lcom/smedialink/storage/domain/model/crypto/NetworkType$Companion;->getNetworksByBlockchain(Lcom/smedialink/storage/domain/model/crypto/BlockchainType;)Ljava/util/List;
+
+    move-result-object p1
+
+    .line 1855
+    invoke-interface {p1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
+
+    move-result-object p1
+
+    :goto_0
+    invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Lcom/smedialink/storage/domain/model/crypto/NetworkType;
+
+    .line 219
+    invoke-virtual {v1}, Ljava/lang/Enum;->name()Ljava/lang/String;
+
+    move-result-object v1
+
+    const-string v4, "tokens_settings"
+
+    invoke-virtual {p0, v1, v4}, Lcom/smedialink/storage/data/locale/prefs/impl/BasePreference;->withPrefix(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {p0, v1, v2, v3, v2}, Lcom/smedialink/storage/domain/storage/BasePreferenceHelper$DefaultImpls;->withTgAccount$default(Lcom/smedialink/storage/domain/storage/BasePreferenceHelper;Ljava/lang/String;Ljava/lang/String;ILjava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-interface {v0, v1}, Landroid/content/SharedPreferences$Editor;->remove(Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
+
+    goto :goto_0
+
+    .line 221
+    :cond_0
+    invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->apply()V
+
+    return-void
+.end method
+
+.method public resetTokensSettingsByNetwork(Lcom/smedialink/storage/domain/model/crypto/NetworkType;)V
+    .locals 4
+
+    const-string v0, "networkType"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 209
+    invoke-virtual {p0}, Lcom/smedialink/storage/data/locale/prefs/impl/BasePreference;->getMPref()Landroid/content/SharedPreferences;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
+
+    move-result-object v0
+
+    const-string v1, "tokens_only_positive"
+
+    const/4 v2, 0x0
+
+    const/4 v3, 0x2
+
+    .line 210
+    invoke-static {p0, v1, v2, v3, v2}, Lcom/smedialink/storage/domain/storage/BasePreferenceHelper$DefaultImpls;->withTgAccount$default(Lcom/smedialink/storage/domain/storage/BasePreferenceHelper;Ljava/lang/String;Ljava/lang/String;ILjava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-interface {v0, v1}, Landroid/content/SharedPreferences$Editor;->remove(Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
+
+    .line 211
+    invoke-virtual {p1}, Ljava/lang/Enum;->name()Ljava/lang/String;
+
+    move-result-object p1
+
+    const-string v1, "tokens_settings"
+
+    invoke-virtual {p0, p1, v1}, Lcom/smedialink/storage/data/locale/prefs/impl/BasePreference;->withPrefix(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-static {p0, p1, v2, v3, v2}, Lcom/smedialink/storage/domain/storage/BasePreferenceHelper$DefaultImpls;->withTgAccount$default(Lcom/smedialink/storage/domain/storage/BasePreferenceHelper;Ljava/lang/String;Ljava/lang/String;ILjava/lang/Object;)Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-interface {v0, p1}, Landroid/content/SharedPreferences$Editor;->remove(Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
+
+    .line 212
     invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->apply()V
 
     return-void
@@ -2312,7 +2444,7 @@
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 239
+    .line 255
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V

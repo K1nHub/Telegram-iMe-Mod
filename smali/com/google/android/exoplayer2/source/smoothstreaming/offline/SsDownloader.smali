@@ -137,14 +137,14 @@
 
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    move v1, v0
 
     :goto_0
     if-ge v1, p3, :cond_2
 
     aget-object v2, p2, v1
 
-    const/4 v3, 0x0
+    move v3, v0
 
     .line 121
     :goto_1
@@ -154,7 +154,7 @@
 
     if-ge v3, v4, :cond_1
 
-    const/4 v4, 0x0
+    move v4, v0
 
     .line 122
     :goto_2

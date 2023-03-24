@@ -75,7 +75,7 @@ public final class MetadataUtil {
             r6 = 2
             if (r5 != r6) goto L3c
             if (r7 == 0) goto L3c
-            r5 = 0
+            r5 = r1
         L14:
             int r6 = r7.length()
             if (r5 >= r6) goto L3c
@@ -346,10 +346,10 @@ public final class MetadataUtil {
     }
 
     private static Id3Frame parseInternalAttribute(ParsableByteArray parsableByteArray, int i) {
-        String str = null;
-        String str2 = null;
         int i2 = -1;
         int i3 = -1;
+        String str = null;
+        String str2 = null;
         while (parsableByteArray.getPosition() < i) {
             int position = parsableByteArray.getPosition();
             int readInt = parsableByteArray.readInt();

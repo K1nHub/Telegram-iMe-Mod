@@ -413,9 +413,9 @@
 
     const-wide/high16 v2, -0x8000000000000000L
 
-    cmp-long v4, v0, v2
+    cmp-long v2, v0, v2
 
-    if-nez v4, :cond_0
+    if-nez v2, :cond_0
 
     const-wide/16 v0, 0x0
 
@@ -487,7 +487,7 @@
 .end method
 
 .method public static delete(Ljava/io/File;Lcom/google/android/exoplayer2/database/DatabaseProvider;)V
-    .locals 7
+    .locals 6
 
     const-string v0, "Failed to delete file metadata: "
 
@@ -525,9 +525,9 @@
 
     const-wide/16 v4, -0x1
 
-    cmp-long v6, v2, v4
+    cmp-long v4, v2, v4
 
-    if-eqz v6, :cond_2
+    if-eqz v4, :cond_2
 
     .line 112
     :try_start_0
@@ -587,7 +587,7 @@
 .end method
 
 .method private getSpan(Ljava/lang/String;JJ)Lcom/google/android/exoplayer2/upstream/cache/SimpleCacheSpan;
-    .locals 6
+    .locals 5
 
     .line 703
     iget-object v0, p0, Lcom/google/android/exoplayer2/upstream/cache/SimpleCache;->contentIndex:Lcom/google/android/exoplayer2/upstream/cache/CachedContentIndex;
@@ -625,9 +625,9 @@
 
     iget-wide v3, p1, Lcom/google/android/exoplayer2/upstream/cache/CacheSpan;->length:J
 
-    cmp-long v5, v1, v3
+    cmp-long v1, v1, v3
 
-    if-eqz v5, :cond_1
+    if-eqz v1, :cond_1
 
     .line 712
     invoke-direct {p0}, Lcom/google/android/exoplayer2/upstream/cache/SimpleCache;->removeStaleSpans()V
@@ -639,7 +639,7 @@
 .end method
 
 .method private initialize()V
-    .locals 7
+    .locals 6
 
     .line 552
     iget-object v0, p0, Lcom/google/android/exoplayer2/upstream/cache/SimpleCache;->cacheDir:Ljava/io/File;
@@ -720,9 +720,9 @@
 
     const-wide/16 v4, -0x1
 
-    cmp-long v6, v2, v4
+    cmp-long v2, v2, v4
 
-    if-nez v6, :cond_2
+    if-nez v2, :cond_2
 
     .line 572
     :try_start_1
@@ -948,7 +948,7 @@
 
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    move v1, v0
 
     :goto_0
     if-ge v1, p1, :cond_7
@@ -1438,7 +1438,7 @@
 .end method
 
 .method private removeStaleSpans()V
-    .locals 9
+    .locals 8
 
     .line 755
     new-instance v0, Ljava/util/ArrayList;
@@ -1501,9 +1501,9 @@
 
     iget-wide v6, v3, Lcom/google/android/exoplayer2/upstream/cache/CacheSpan;->length:J
 
-    cmp-long v8, v4, v6
+    cmp-long v4, v4, v6
 
-    if-eqz v8, :cond_1
+    if-eqz v4, :cond_1
 
     .line 759
     invoke-virtual {v0, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
@@ -1864,12 +1864,12 @@
 
     if-nez v0, :cond_0
 
-    const/4 v0, 0x1
+    move v0, v1
 
     goto :goto_0
 
     :cond_0
-    const/4 v0, 0x0
+    move v0, v2
 
     :goto_0
     invoke-static {v0}, Lcom/google/android/exoplayer2/util/Assertions;->checkState(Z)V
@@ -1977,7 +1977,7 @@
     goto :goto_1
 
     :cond_3
-    const/4 v1, 0x0
+    move v1, v2
 
     :goto_1
     invoke-static {v1}, Lcom/google/android/exoplayer2/util/Assertions;->checkState(Z)V
@@ -2108,93 +2108,99 @@
 .end method
 
 .method public declared-synchronized getCachedBytes(Ljava/lang/String;JJ)J
-    .locals 10
+    .locals 15
 
     monitor-enter p0
 
     const-wide/16 v0, -0x1
 
-    const-wide v2, 0x7fffffffffffffffL
+    cmp-long v0, p4, v0
 
-    cmp-long v4, p4, v0
+    const-wide v1, 0x7fffffffffffffffL
 
-    if-nez v4, :cond_0
+    if-nez v0, :cond_0
 
-    move-wide p4, v2
+    move-wide v3, v1
 
     goto :goto_0
 
     :cond_0
-    add-long/2addr p4, p2
+    add-long v3, p2, p4
 
     :goto_0
-    const-wide/16 v0, 0x0
+    const-wide/16 v7, 0x0
 
-    cmp-long v4, p4, v0
+    cmp-long v0, v3, v7
 
-    if-gez v4, :cond_1
+    if-gez v0, :cond_1
+
+    move-wide v9, v1
 
     goto :goto_1
 
     :cond_1
-    move-wide v2, p4
+    move-wide v9, v3
 
     :goto_1
-    move-wide p4, v0
+    move-wide/from16 v11, p2
+
+    move-wide v13, v7
 
     :goto_2
-    cmp-long v4, p2, v2
+    cmp-long v0, v11, v9
 
-    if-gez v4, :cond_3
+    if-gez v0, :cond_3
 
-    sub-long v8, v2, p2
+    sub-long v5, v9, v11
 
-    move-object v4, p0
+    move-object v1, p0
 
-    move-object v5, p1
+    move-object/from16 v2, p1
 
-    move-wide v6, p2
+    move-wide v3, v11
 
     .line 518
     :try_start_0
-    invoke-virtual/range {v4 .. v9}, Lcom/google/android/exoplayer2/upstream/cache/SimpleCache;->getCachedLength(Ljava/lang/String;JJ)J
+    invoke-virtual/range {v1 .. v6}, Lcom/google/android/exoplayer2/upstream/cache/SimpleCache;->getCachedLength(Ljava/lang/String;JJ)J
 
-    move-result-wide v4
+    move-result-wide v0
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    cmp-long v6, v4, v0
+    cmp-long v2, v0, v7
 
-    if-lez v6, :cond_2
+    if-lez v2, :cond_2
 
-    add-long/2addr p4, v4
+    add-long/2addr v13, v0
 
     goto :goto_3
 
     :cond_2
-    neg-long v4, v4
+    neg-long v0, v0
 
     :goto_3
-    add-long/2addr p2, v4
+    add-long/2addr v11, v0
 
     goto :goto_2
 
     :catchall_0
-    move-exception p1
+    move-exception v0
+
+    move-object v1, v0
 
     monitor-exit p0
 
-    throw p1
+    throw v1
 
     .line 527
     :cond_3
     monitor-exit p0
 
-    return-wide p4
+    return-wide v13
 .end method
 
 .method public declared-synchronized getCachedLength(Ljava/lang/String;JJ)J
-    .locals 3
+    .locals 2
 
     monitor-enter p0
 
@@ -2216,9 +2222,9 @@
 
     const-wide/16 v0, -0x1
 
-    cmp-long v2, p4, v0
+    cmp-long v0, p4, v0
 
-    if-nez v2, :cond_1
+    if-nez v0, :cond_1
 
     const-wide p4, 0x7fffffffffffffffL
 
@@ -2475,12 +2481,12 @@
 
     if-nez v0, :cond_0
 
-    const/4 v0, 0x1
+    move v0, v1
 
     goto :goto_0
 
     :cond_0
-    const/4 v0, 0x0
+    move v0, v2
 
     :goto_0
     invoke-static {v0}, Lcom/google/android/exoplayer2/util/Assertions;->checkState(Z)V
@@ -2501,14 +2507,14 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    cmp-long p3, p1, p4
+    cmp-long p1, p1, p4
 
-    if-ltz p3, :cond_1
+    if-ltz p1, :cond_1
 
     goto :goto_1
 
     :cond_1
-    const/4 v1, 0x0
+    move v1, v2
 
     :goto_1
     monitor-exit p0

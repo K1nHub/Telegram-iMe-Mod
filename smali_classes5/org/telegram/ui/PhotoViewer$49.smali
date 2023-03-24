@@ -149,7 +149,7 @@
 .end method
 
 .method public onSeekBarDrag(F)V
-    .locals 5
+    .locals 4
 
     .line 7926
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$49;->this$0:Lorg/telegram/ui/PhotoViewer;
@@ -235,7 +235,7 @@
 
     sub-float/2addr v1, v2
 
-    mul-float v1, v1, p1
+    mul-float/2addr v1, p1
 
     add-float p1, v0, v1
 
@@ -249,9 +249,9 @@
 
     const-wide v2, -0x7fffffffffffffffL    # -4.9E-324
 
-    cmp-long v4, v0, v2
+    cmp-long v2, v0, v2
 
-    if-nez v4, :cond_2
+    if-nez v2, :cond_2
 
     .line 7932
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$49;->this$0:Lorg/telegram/ui/PhotoViewer;
@@ -266,7 +266,7 @@
 
     long-to-float v0, v0
 
-    mul-float p1, p1, v0
+    mul-float/2addr p1, v0
 
     float-to-int p1, p1
 

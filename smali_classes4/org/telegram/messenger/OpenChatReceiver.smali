@@ -16,7 +16,7 @@
 
 # virtual methods
 .method protected onCreate(Landroid/os/Bundle;)V
-    .locals 8
+    .locals 7
 
     const-string v0, "userId"
 
@@ -96,13 +96,13 @@
 
     const-wide/16 v5, 0x0
 
-    cmp-long v7, v3, v5
-
-    if-nez v7, :cond_2
-
-    cmp-long v3, v0, v5
+    cmp-long v3, v3, v5
 
     if-nez v3, :cond_2
+
+    cmp-long v0, v0, v5
+
+    if-nez v0, :cond_2
 
     if-nez v2, :cond_2
 

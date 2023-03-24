@@ -92,7 +92,7 @@
 
     const v2, 0x3df0a3d7    # 0.1175f
 
-    mul-float v1, v1, v2
+    mul-float/2addr v1, v2
 
     float-to-int v1, v1
 
@@ -413,7 +413,7 @@
     if-eqz p1, :cond_6
 
     :cond_5
-    const/4 v1, 0x1
+    move v1, v2
 
     :cond_6
     return v1

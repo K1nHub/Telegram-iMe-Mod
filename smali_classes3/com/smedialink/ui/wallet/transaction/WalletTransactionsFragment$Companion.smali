@@ -18,7 +18,7 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 259
+    .line 262
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -39,10 +39,10 @@
 
     if-eqz p3, :cond_0
 
-    .line 263
+    .line 266
     sget-object p2, Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;->UNKNOWN:Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;
 
-    .line 261
+    .line 264
     :cond_0
     invoke-virtual {p0, p1, p2}, Lcom/smedialink/ui/wallet/transaction/WalletTransactionsFragment$Companion;->newInstance(Lcom/smedialink/ui/wallet/transaction/WalletTransactionsFragment$ScreenType;Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;)Lcom/smedialink/ui/wallet/transaction/WalletTransactionsFragment;
 
@@ -64,7 +64,7 @@
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 264
+    .line 267
     new-instance v0, Lcom/smedialink/ui/wallet/transaction/WalletTransactionsFragment;
 
     invoke-direct {v0, p1, p2}, Lcom/smedialink/ui/wallet/transaction/WalletTransactionsFragment;-><init>(Lcom/smedialink/ui/wallet/transaction/WalletTransactionsFragment$ScreenType;Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;)V

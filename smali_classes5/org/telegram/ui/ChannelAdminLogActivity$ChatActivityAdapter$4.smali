@@ -84,17 +84,15 @@
 
     const/4 v1, 0x0
 
-    const/4 v3, 0x0
-
     goto :goto_0
 
     :cond_0
     neg-int v1, v1
 
+    :goto_0
     move v3, v1
 
     .line 2861
-    :goto_0
     iget-object v1, p0, Lorg/telegram/ui/ChannelAdminLogActivity$ChatActivityAdapter$4;->val$view:Landroid/view/View;
 
     invoke-virtual {v1}, Landroid/view/View;->getMeasuredHeight()I

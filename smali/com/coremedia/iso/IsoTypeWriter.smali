@@ -15,7 +15,7 @@
 
     const-wide/high16 v0, 0x41d0000000000000L    # 1.073741824E9
 
-    mul-double p1, p1, v0
+    mul-double/2addr p1, v0
 
     double-to-int p1, p1
 
@@ -67,7 +67,7 @@
 
     const-wide/high16 v0, 0x40f0000000000000L    # 65536.0
 
-    mul-double p1, p1, v0
+    mul-double/2addr p1, v0
 
     double-to-int p1, p1
 
@@ -119,7 +119,7 @@
 
     const-wide/high16 v0, 0x4070000000000000L    # 256.0
 
-    mul-double p1, p1, v0
+    mul-double/2addr p1, v0
 
     double-to-int p1, p1
 
@@ -162,7 +162,7 @@
 
     const/4 v0, 0x0
 
-    const/4 v2, 0x0
+    move v2, v0
 
     :goto_0
     if-lt v0, v1, :cond_0
@@ -260,10 +260,10 @@
 .method public static writeUInt32(Ljava/nio/ByteBuffer;J)V
     .locals 0
 
-    long-to-int p2, p1
+    long-to-int p1, p1
 
     .line 29
-    invoke-virtual {p0, p2}, Ljava/nio/ByteBuffer;->putInt(I)Ljava/nio/ByteBuffer;
+    invoke-virtual {p0, p1}, Ljava/nio/ByteBuffer;->putInt(I)Ljava/nio/ByteBuffer;
 
     return-void
 .end method

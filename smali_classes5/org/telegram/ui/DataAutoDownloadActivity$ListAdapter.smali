@@ -738,7 +738,7 @@
 
     move-object v10, v1
 
-    const/4 v3, 0x1
+    move v3, v5
 
     goto :goto_1
 
@@ -763,7 +763,7 @@
 
     move-object v10, v1
 
-    const/4 v3, 0x4
+    move v3, v8
 
     goto :goto_1
 
@@ -866,9 +866,9 @@
 
     invoke-direct {v11}, Ljava/lang/StringBuilder;-><init>()V
 
-    const/4 v14, 0x0
+    move v14, v4
 
-    const/4 v15, 0x0
+    move v15, v14
 
     .line 704
     :goto_3
@@ -1124,7 +1124,7 @@
 
     if-eqz v15, :cond_17
 
-    const/4 v1, 0x1
+    move v1, v5
 
     goto :goto_7
 
@@ -1138,7 +1138,7 @@
     :cond_18
     if-eqz v15, :cond_19
 
-    const/4 v12, 0x1
+    move v12, v5
 
     goto :goto_8
 
@@ -1159,7 +1159,7 @@
 
     if-eq v2, v1, :cond_1a
 
-    const/4 v15, 0x1
+    move v15, v5
 
     goto :goto_9
 

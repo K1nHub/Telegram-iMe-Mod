@@ -58,15 +58,15 @@
         }
     .end annotation
 
-    .line 408
+    .line 407
     iput-object p1, p0, Lcom/google/protobuf/SmallSortedMap$Entry;->this$0:Lcom/google/protobuf/SmallSortedMap;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 409
+    .line 408
     iput-object p2, p0, Lcom/google/protobuf/SmallSortedMap$Entry;->key:Ljava/lang/Comparable;
 
-    .line 410
+    .line 409
     iput-object p3, p0, Lcom/google/protobuf/SmallSortedMap$Entry;->value:Ljava/lang/Object;
 
     return-void
@@ -82,7 +82,7 @@
         }
     .end annotation
 
-    .line 405
+    .line 404
     invoke-interface {p2}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
     move-result-object v0
@@ -114,7 +114,7 @@
 
     goto :goto_0
 
-    .line 461
+    .line 459
     :cond_1
     invoke-virtual {p1, p2}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
 
@@ -136,7 +136,7 @@
         }
     .end annotation
 
-    .line 425
+    .line 424
     invoke-virtual {p0}, Lcom/google/protobuf/SmallSortedMap$Entry;->getKey()Ljava/lang/Comparable;
 
     move-result-object v0
@@ -155,7 +155,7 @@
 .method public bridge synthetic compareTo(Ljava/lang/Object;)I
     .locals 0
 
-    .line 399
+    .line 398
     check-cast p1, Lcom/google/protobuf/SmallSortedMap$Entry;
 
     invoke-virtual {p0, p1}, Lcom/google/protobuf/SmallSortedMap$Entry;->compareTo(Lcom/google/protobuf/SmallSortedMap$Entry;)I
@@ -174,7 +174,7 @@
 
     return v0
 
-    .line 441
+    .line 440
     :cond_0
     instance-of v1, p1, Ljava/util/Map$Entry;
 
@@ -184,11 +184,11 @@
 
     return v2
 
-    .line 445
+    .line 443
     :cond_1
     check-cast p1, Ljava/util/Map$Entry;
 
-    .line 446
+    .line 444
     iget-object v1, p0, Lcom/google/protobuf/SmallSortedMap$Entry;->key:Ljava/lang/Comparable;
 
     invoke-interface {p1}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
@@ -216,7 +216,7 @@
     goto :goto_0
 
     :cond_2
-    const/4 v0, 0x0
+    move v0, v2
 
     :goto_0
     return v0
@@ -230,7 +230,7 @@
         }
     .end annotation
 
-    .line 415
+    .line 414
     iget-object v0, p0, Lcom/google/protobuf/SmallSortedMap$Entry;->key:Ljava/lang/Comparable;
 
     return-object v0
@@ -239,7 +239,7 @@
 .method public bridge synthetic getKey()Ljava/lang/Object;
     .locals 1
 
-    .line 399
+    .line 398
     invoke-virtual {p0}, Lcom/google/protobuf/SmallSortedMap$Entry;->getKey()Ljava/lang/Comparable;
 
     move-result-object v0
@@ -255,7 +255,7 @@
         }
     .end annotation
 
-    .line 420
+    .line 419
     iget-object v0, p0, Lcom/google/protobuf/SmallSortedMap$Entry;->value:Ljava/lang/Object;
 
     return-object v0
@@ -264,14 +264,14 @@
 .method public hashCode()I
     .locals 3
 
-    .line 451
+    .line 449
     iget-object v0, p0, Lcom/google/protobuf/SmallSortedMap$Entry;->key:Ljava/lang/Comparable;
 
     const/4 v1, 0x0
 
     if-nez v0, :cond_0
 
-    const/4 v0, 0x0
+    move v0, v1
 
     goto :goto_0
 
@@ -306,15 +306,15 @@
         }
     .end annotation
 
-    .line 430
+    .line 429
     iget-object v0, p0, Lcom/google/protobuf/SmallSortedMap$Entry;->this$0:Lcom/google/protobuf/SmallSortedMap;
 
     invoke-static {v0}, Lcom/google/protobuf/SmallSortedMap;->access$300(Lcom/google/protobuf/SmallSortedMap;)V
 
-    .line 431
+    .line 430
     iget-object v0, p0, Lcom/google/protobuf/SmallSortedMap$Entry;->value:Ljava/lang/Object;
 
-    .line 432
+    .line 431
     iput-object p1, p0, Lcom/google/protobuf/SmallSortedMap$Entry;->value:Ljava/lang/Object;
 
     return-object v0
@@ -323,7 +323,7 @@
 .method public toString()Ljava/lang/String;
     .locals 2
 
-    .line 456
+    .line 454
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V

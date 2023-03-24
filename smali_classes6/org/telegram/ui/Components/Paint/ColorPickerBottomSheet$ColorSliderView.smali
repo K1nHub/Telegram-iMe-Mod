@@ -336,7 +336,7 @@
 
     int-to-float v1, v1
 
-    mul-float v0, v0, v3
+    mul-float/2addr v0, v3
 
     sub-float/2addr v1, v0
 
@@ -365,7 +365,7 @@
 
     if-eq v0, v1, :cond_0
 
-    mul-float p1, p1, v2
+    mul-float/2addr p1, v2
 
     float-to-int p1, p1
 
@@ -418,7 +418,7 @@
 
     move-result v1
 
-    mul-float p1, p1, v2
+    mul-float/2addr p1, v2
 
     float-to-int p1, p1
 
@@ -440,7 +440,7 @@
 
     move-result v0
 
-    mul-float p1, p1, v2
+    mul-float/2addr p1, v2
 
     float-to-int p1, p1
 
@@ -664,11 +664,11 @@
 
     int-to-float v7, v7
 
-    mul-float v1, v1, v2
+    mul-float/2addr v1, v2
 
     sub-float/2addr v7, v1
 
-    mul-float v7, v7, v3
+    mul-float/2addr v7, v3
 
     add-float/2addr v2, v7
 

@@ -184,7 +184,7 @@
     sparse-switch v2, :sswitch_data_0
 
     :goto_0
-    const/4 v1, -0x1
+    move v1, v0
 
     goto/16 :goto_1
 
@@ -344,7 +344,7 @@
     goto/16 :goto_0
 
     :cond_a
-    const/16 v1, 0x10
+    move v1, v3
 
     goto/16 :goto_1
 
@@ -360,7 +360,7 @@
     goto/16 :goto_0
 
     :cond_b
-    const/16 v1, 0xf
+    move v1, v4
 
     goto/16 :goto_1
 
@@ -376,7 +376,7 @@
     goto/16 :goto_0
 
     :cond_c
-    const/16 v1, 0xe
+    move v1, v5
 
     goto/16 :goto_1
 
@@ -392,7 +392,7 @@
     goto/16 :goto_0
 
     :cond_d
-    const/16 v1, 0xd
+    move v1, v6
 
     goto/16 :goto_1
 
@@ -408,7 +408,7 @@
     goto/16 :goto_0
 
     :cond_e
-    const/16 v1, 0xc
+    move v1, v7
 
     goto/16 :goto_1
 
@@ -424,7 +424,7 @@
     goto/16 :goto_0
 
     :cond_f
-    const/16 v1, 0xb
+    move v1, v8
 
     goto/16 :goto_1
 
@@ -440,7 +440,7 @@
     goto/16 :goto_0
 
     :cond_10
-    const/16 v1, 0xa
+    move v1, v9
 
     goto/16 :goto_1
 
@@ -456,7 +456,7 @@
     goto/16 :goto_0
 
     :cond_11
-    const/16 v1, 0x9
+    move v1, v10
 
     goto/16 :goto_1
 
@@ -472,7 +472,7 @@
     goto/16 :goto_0
 
     :cond_12
-    const/16 v1, 0x8
+    move v1, v11
 
     goto/16 :goto_1
 
@@ -488,7 +488,7 @@
     goto/16 :goto_0
 
     :cond_13
-    const/4 v1, 0x7
+    move v1, v12
 
     goto :goto_1
 
@@ -504,7 +504,7 @@
     goto/16 :goto_0
 
     :cond_14
-    const/4 v1, 0x6
+    move v1, v13
 
     goto :goto_1
 
@@ -520,7 +520,7 @@
     goto/16 :goto_0
 
     :cond_15
-    const/4 v1, 0x5
+    move v1, v14
 
     goto :goto_1
 
@@ -536,7 +536,7 @@
     goto/16 :goto_0
 
     :cond_16
-    const/4 v1, 0x4
+    move v1, v15
 
     goto :goto_1
 
@@ -552,7 +552,7 @@
     goto/16 :goto_0
 
     :cond_17
-    const/4 v1, 0x3
+    move/from16 v1, v16
 
     goto :goto_1
 
@@ -584,7 +584,7 @@
     goto/16 :goto_0
 
     :cond_19
-    const/4 v1, 0x1
+    move/from16 v1, v17
 
     goto :goto_1
 
@@ -600,7 +600,7 @@
     goto/16 :goto_0
 
     :cond_1a
-    const/4 v1, 0x0
+    move/from16 v1, v18
 
     :goto_1
     packed-switch v1, :pswitch_data_0

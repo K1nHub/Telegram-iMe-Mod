@@ -689,9 +689,9 @@
 
     const-wide/16 v0, 0x0
 
-    cmp-long v2, p1, v0
+    cmp-long v0, p1, v0
 
-    if-lez v2, :cond_0
+    if-lez v0, :cond_0
 
     const/4 v0, 0x1
 

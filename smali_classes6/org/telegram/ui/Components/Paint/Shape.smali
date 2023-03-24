@@ -112,7 +112,7 @@
 
     const v2, 0x3fb5c28f    # 1.42f
 
-    mul-float v0, v0, v2
+    mul-float/2addr v0, v2
 
     sub-float v2, v1, v0
 

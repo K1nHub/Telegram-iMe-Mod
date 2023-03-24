@@ -31,7 +31,7 @@
 
     check-cast p2, Lorg/telegram/tgnet/TLRPC$Dialog;
 
-    invoke-static {v0, p1, p2}, Lorg/telegram/messenger/MessagesController;->$r8$lambda$ilOnPdPiTE3FZeRKQCxTcYb02Eg(Lorg/telegram/messenger/MessagesController;Lorg/telegram/tgnet/TLRPC$Dialog;Lorg/telegram/tgnet/TLRPC$Dialog;)I
+    invoke-static {v0, p1, p2}, Lorg/telegram/messenger/MessagesController;->$r8$lambda$QARWBnkgQofRtpaIzrEVrHlMk2o(Lorg/telegram/messenger/MessagesController;Lorg/telegram/tgnet/TLRPC$Dialog;Lorg/telegram/tgnet/TLRPC$Dialog;)I
 
     move-result p1
 

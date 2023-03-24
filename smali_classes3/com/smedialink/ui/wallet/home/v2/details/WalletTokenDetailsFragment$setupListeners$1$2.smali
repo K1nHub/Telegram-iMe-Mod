@@ -49,7 +49,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 611
+    .line 616
     check-cast p1, Landroid/view/View;
 
     invoke-virtual {p0, p1}, Lcom/smedialink/ui/wallet/home/v2/details/WalletTokenDetailsFragment$setupListeners$1$2;->invoke(Landroid/view/View;)V
@@ -66,7 +66,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 611
+    .line 616
     iget-object p1, p0, Lcom/smedialink/ui/wallet/home/v2/details/WalletTokenDetailsFragment$setupListeners$1$2;->this$0:Lcom/smedialink/ui/wallet/home/v2/details/WalletTokenDetailsFragment;
 
     invoke-static {p1}, Lcom/smedialink/ui/wallet/home/v2/details/WalletTokenDetailsFragment;->access$getPresenter(Lcom/smedialink/ui/wallet/home/v2/details/WalletTokenDetailsFragment;)Lcom/smedialink/ui/wallet/home/v2/details/WalletTokenDetailsPresenter;

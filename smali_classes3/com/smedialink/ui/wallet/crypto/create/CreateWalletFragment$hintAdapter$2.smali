@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment;-><init>(Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment$ScreenType;)V
+    value = Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment;-><init>(Lcom/smedialink/model/wallet/crypto/create/CreateWalletScreenType;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -48,7 +48,7 @@
 .method public final invoke()Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment$HintAdapter;
     .locals 1
 
-    .line 78
+    .line 79
     iget-object v0, p0, Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment$hintAdapter$2;->this$0:Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment;
 
     invoke-static {v0}, Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment;->access$createHintAdapter(Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment;)Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment$HintAdapter;
@@ -61,7 +61,7 @@
 .method public bridge synthetic invoke()Ljava/lang/Object;
     .locals 1
 
-    .line 78
+    .line 79
     invoke-virtual {p0}, Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment$hintAdapter$2;->invoke()Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment$HintAdapter;
 
     move-result-object v0

@@ -153,7 +153,7 @@
 
     const/high16 v1, 0x40000000    # 2.0f
 
-    mul-float v0, v0, v1
+    mul-float/2addr v0, v1
 
     float-to-double v0, v0
 
@@ -168,7 +168,7 @@
 
     const-wide v2, 0x3ff5555555555555L    # 1.3333333333333333
 
-    mul-double v0, v0, v2
+    mul-double/2addr v0, v2
 
     double-to-float v0, v0
 
@@ -260,7 +260,7 @@
 
     const v2, 0x3d4ccccd    # 0.05f
 
-    mul-float v0, v0, v2
+    mul-float/2addr v0, v2
 
     .line 90
     iget v2, p0, Lorg/telegram/ui/Components/BlobDrawable;->maxRadius:F
@@ -288,7 +288,7 @@
 
     move-result v4
 
-    mul-float v4, v4, v2
+    mul-float/2addr v4, v2
 
     add-float/2addr v3, v4
 
@@ -301,7 +301,7 @@
 
     int-to-float p1, p3
 
-    mul-float v1, v1, p1
+    mul-float/2addr v1, p1
 
     iget-object p1, p0, Lorg/telegram/ui/Components/BlobDrawable;->random:Ljava/util/Random;
 
@@ -315,7 +315,7 @@
 
     div-float/2addr p1, v5
 
-    mul-float p1, p1, v0
+    mul-float/2addr p1, v0
 
     add-float/2addr v1, p1
 
@@ -344,7 +344,7 @@
 
     const-wide v2, 0x3f689374bc6a7efaL    # 0.003
 
-    mul-double v0, v0, v2
+    mul-double/2addr v0, v2
 
     const-wide v2, 0x3f916872b020c49cL    # 0.017
 
@@ -387,7 +387,7 @@
 
     const/4 v3, 0x0
 
-    const/4 v4, 0x0
+    move v4, v3
 
     :goto_0
     int-to-float v5, v4
@@ -417,7 +417,7 @@
     goto :goto_1
 
     :cond_1
-    const/4 v6, 0x0
+    move v6, v3
 
     .line 120
     :goto_1
@@ -432,13 +432,13 @@
 
     sub-float v12, v11, v7
 
-    mul-float v10, v10, v12
+    mul-float/2addr v10, v12
 
     iget-object v13, v0, Lorg/telegram/ui/Components/BlobDrawable;->radiusNext:[F
 
     aget v14, v13, v4
 
-    mul-float v14, v14, v7
+    mul-float/2addr v14, v7
 
     add-float/2addr v10, v14
 
@@ -447,11 +447,11 @@
 
     sub-float/2addr v11, v5
 
-    mul-float v9, v9, v11
+    mul-float/2addr v9, v11
 
     aget v13, v13, v6
 
-    mul-float v13, v13, v5
+    mul-float/2addr v13, v5
 
     add-float/2addr v9, v13
 
@@ -460,24 +460,24 @@
 
     aget v14, v13, v4
 
-    mul-float v14, v14, v12
+    mul-float/2addr v14, v12
 
     iget-object v12, v0, Lorg/telegram/ui/Components/BlobDrawable;->angleNext:[F
 
     aget v15, v12, v4
 
-    mul-float v15, v15, v7
+    mul-float/2addr v15, v7
 
     add-float/2addr v14, v15
 
     .line 124
     aget v7, v13, v6
 
-    mul-float v7, v7, v11
+    mul-float/2addr v7, v11
 
     aget v6, v12, v6
 
-    mul-float v6, v6, v5
+    mul-float/2addr v6, v5
 
     add-float/2addr v7, v6
 
@@ -504,11 +504,11 @@
 
     add-float/2addr v6, v11
 
-    mul-float v5, v5, v6
+    mul-float/2addr v5, v6
 
     iget v6, v0, Lorg/telegram/ui/Components/BlobDrawable;->cubicBezierK:F
 
-    mul-float v5, v5, v6
+    mul-float/2addr v5, v6
 
     .line 127
     iget-object v6, v0, Lorg/telegram/ui/Components/BlobDrawable;->m:Landroid/graphics/Matrix;
@@ -811,17 +811,17 @@
 
     sget v5, Lorg/telegram/ui/Components/BlobDrawable;->MIN_SPEED:F
 
-    mul-float v4, v4, v5
+    mul-float/2addr v4, v5
 
     aget v3, v3, v0
 
-    mul-float v3, v3, p1
+    mul-float/2addr v3, p1
 
     sget v5, Lorg/telegram/ui/Components/BlobDrawable;->MAX_SPEED:F
 
-    mul-float v3, v3, v5
+    mul-float/2addr v3, v5
 
-    mul-float v3, v3, p2
+    mul-float/2addr v3, p2
 
     add-float/2addr v4, v3
 
@@ -890,7 +890,7 @@
 
     long-to-float p1, p1
 
-    mul-float p1, p1, v2
+    mul-float/2addr p1, v2
 
     add-float/2addr v1, p1
 

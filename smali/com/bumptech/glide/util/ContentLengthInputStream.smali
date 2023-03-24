@@ -23,7 +23,7 @@
 .end method
 
 .method private checkReadSoFarOrThrow(I)I
-    .locals 5
+    .locals 4
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -53,9 +53,9 @@
 
     const-wide/16 v2, 0x0
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-gtz v4, :cond_1
+    if-gtz v0, :cond_1
 
     :goto_0
     return p1
@@ -140,11 +140,11 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    long-to-int v1, v0
+    long-to-int v0, v0
 
     monitor-exit p0
 
-    return v1
+    return v0
 
     :catchall_0
     move-exception v0

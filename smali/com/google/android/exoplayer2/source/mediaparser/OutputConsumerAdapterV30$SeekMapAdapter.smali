@@ -52,7 +52,7 @@
 
 # virtual methods
 .method public getDurationUs()J
-    .locals 5
+    .locals 4
 
     .line 627
     iget-object v0, p0, Lcom/google/android/exoplayer2/source/mediaparser/OutputConsumerAdapterV30$SeekMapAdapter;->adaptedSeekMap:Landroid/media/MediaParser$SeekMap;
@@ -63,9 +63,9 @@
 
     const-wide/32 v2, -0x80000000
 
-    cmp-long v4, v0, v2
+    cmp-long v2, v0, v2
 
-    if-eqz v4, :cond_0
+    if-eqz v2, :cond_0
 
     goto :goto_0
 

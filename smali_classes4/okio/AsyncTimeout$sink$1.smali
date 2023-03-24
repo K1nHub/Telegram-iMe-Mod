@@ -286,9 +286,9 @@
 
     int-to-long v3, v3
 
-    cmp-long v5, v0, v3
+    cmp-long v3, v0, v3
 
-    if-gez v5, :cond_1
+    if-gez v3, :cond_1
 
     .line 93
     iget v3, v2, Lokio/Segment;->limit:I

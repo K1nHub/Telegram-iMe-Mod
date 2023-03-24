@@ -142,7 +142,7 @@
     goto :goto_1
 
     :cond_1
-    const/16 v4, 0x64
+    move v4, v3
 
     :goto_1
     int-to-float v4, v4

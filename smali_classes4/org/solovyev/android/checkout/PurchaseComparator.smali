@@ -91,18 +91,18 @@
 .end method
 
 .method public static compare(JJ)I
-    .locals 1
+    .locals 0
 
-    cmp-long v0, p0, p2
+    cmp-long p0, p0, p2
 
-    if-gez v0, :cond_0
+    if-gez p0, :cond_0
 
     const/4 p0, -0x1
 
     goto :goto_0
 
     :cond_0
-    if-nez v0, :cond_1
+    if-nez p0, :cond_1
 
     const/4 p0, 0x0
 
@@ -180,7 +180,7 @@
 
     move-result p1
 
-    mul-int v0, v0, p1
+    mul-int/2addr v0, p1
 
     return v0
 .end method

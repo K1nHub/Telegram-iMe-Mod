@@ -160,7 +160,7 @@
 
     const/4 v7, 0x2
 
-    if-eqz v4, :cond_1
+    if-eqz v4, :cond_2
 
     .line 348
     iget-object v4, p0, Lorg/fork/ui/dialog/ForwardCloudBottomSheet$CustomContainerView;->this$0:Lorg/fork/ui/dialog/ForwardCloudBottomSheet;
@@ -198,7 +198,7 @@
 
     add-int/2addr v2, v4
 
-    mul-int/lit8 v4, v4, 0x2
+    mul-int/2addr v4, v7
 
     int-to-float v4, v4
 
@@ -218,7 +218,7 @@
     goto :goto_0
 
     :cond_0
-    const/high16 v4, 0x3f800000    # 1.0f
+    move v4, v6
 
     .line 354
     :goto_0
@@ -232,7 +232,7 @@
 
     sget v9, Lorg/telegram/messenger/AndroidUtilities;->statusBarHeight:I
 
-    if-ge v8, v9, :cond_2
+    if-ge v8, v9, :cond_1
 
     sub-int v8, v9, v1
 
@@ -252,10 +252,14 @@
     goto :goto_1
 
     :cond_1
-    const/high16 v4, 0x3f800000    # 1.0f
+    move v8, v5
+
+    goto :goto_1
 
     :cond_2
-    const/4 v8, 0x0
+    move v8, v5
+
+    move v4, v6
 
     .line 358
     :goto_1
@@ -366,7 +370,7 @@
 
     int-to-float v6, v6
 
-    mul-float v6, v6, v4
+    mul-float/2addr v6, v4
 
     invoke-static {v5}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
@@ -374,7 +378,7 @@
 
     int-to-float v5, v5
 
-    mul-float v5, v5, v4
+    mul-float/2addr v5, v4
 
     sget-object v4, Lorg/telegram/ui/ActionBar/Theme;->dialogs_onlineCirclePaint:Landroid/graphics/Paint;
 
@@ -473,7 +477,7 @@
 
     const v3, 0x3f4ccccd    # 0.8f
 
-    mul-float v2, v2, v3
+    mul-float/2addr v2, v3
 
     float-to-int v2, v2
 
@@ -483,7 +487,7 @@
 
     int-to-float v4, v4
 
-    mul-float v4, v4, v3
+    mul-float/2addr v4, v3
 
     float-to-int v4, v4
 
@@ -493,7 +497,7 @@
 
     int-to-float v0, v0
 
-    mul-float v0, v0, v3
+    mul-float/2addr v0, v3
 
     float-to-int v0, v0
 
@@ -695,7 +699,7 @@
 
     sub-int/2addr v5, v1
 
-    mul-int v3, v3, v5
+    mul-int/2addr v3, v5
 
     add-int/2addr v2, v3
 
@@ -717,13 +721,13 @@
 
     const-wide v9, 0x400999999999999aL    # 3.2
 
-    mul-double v7, v7, v9
+    mul-double/2addr v7, v9
 
     cmpg-double v0, v5, v7
 
     if-gez v0, :cond_0
 
-    const/4 v0, 0x0
+    move v0, v4
 
     goto :goto_0
 
@@ -801,7 +805,7 @@
     goto :goto_1
 
     :cond_4
-    const/4 v1, 0x0
+    move v1, v4
 
     .line 323
     :goto_1

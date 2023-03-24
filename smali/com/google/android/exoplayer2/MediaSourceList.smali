@@ -352,7 +352,7 @@
 .end method
 
 .method private static getMediaPeriodIdForChildMediaPeriodId(Lcom/google/android/exoplayer2/MediaSourceList$MediaSourceHolder;Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;)Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;
-    .locals 6
+    .locals 5
 
     const/4 v0, 0x0
 
@@ -379,9 +379,9 @@
 
     iget-wide v3, p1, Lcom/google/android/exoplayer2/source/MediaPeriodId;->windowSequenceNumber:J
 
-    cmp-long v5, v1, v3
+    cmp-long v1, v1, v3
 
-    if-nez v5, :cond_0
+    if-nez v1, :cond_0
 
     .line 426
     iget-object v0, p1, Lcom/google/android/exoplayer2/source/MediaPeriodId;->periodUid:Ljava/lang/Object;
@@ -905,7 +905,7 @@
     :cond_0
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    move v1, v0
 
     .line 359
     :goto_0
@@ -1012,7 +1012,7 @@
 
     if-ltz p3, :cond_0
 
-    const/4 v1, 0x1
+    move v1, v0
 
     goto :goto_0
 

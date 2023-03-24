@@ -9,15 +9,15 @@ public final class zzy implements Parcelable.Creator<zzx> {
     @Override // android.os.Parcelable.Creator
     public final /* bridge */ /* synthetic */ zzx createFromParcel(Parcel parcel) {
         int validateObjectHeader = SafeParcelReader.validateObjectHeader(parcel);
+        int i = 0;
+        boolean z = false;
+        int i2 = 0;
         zzi zziVar = null;
         String str = null;
         zzg zzgVar = null;
         String str2 = null;
         long j = 0;
-        int i = 0;
-        boolean z = false;
-        int i2 = -1;
-        int i3 = 0;
+        int i3 = -1;
         while (parcel.dataPosition() < validateObjectHeader) {
             int readHeader = SafeParcelReader.readHeader(parcel);
             switch (SafeParcelReader.getFieldId(readHeader)) {
@@ -40,10 +40,10 @@ public final class zzy implements Parcelable.Creator<zzx> {
                     z = SafeParcelReader.readBoolean(parcel, readHeader);
                     break;
                 case 7:
-                    i2 = SafeParcelReader.readInt(parcel, readHeader);
+                    i3 = SafeParcelReader.readInt(parcel, readHeader);
                     break;
                 case 8:
-                    i3 = SafeParcelReader.readInt(parcel, readHeader);
+                    i2 = SafeParcelReader.readInt(parcel, readHeader);
                     break;
                 case 9:
                     str2 = SafeParcelReader.createString(parcel, readHeader);
@@ -54,7 +54,7 @@ public final class zzy implements Parcelable.Creator<zzx> {
             }
         }
         SafeParcelReader.ensureAtEnd(parcel, validateObjectHeader);
-        return new zzx(zziVar, j, i, str, zzgVar, z, i2, i3, str2);
+        return new zzx(zziVar, j, i, str, zzgVar, z, i3, i2, str2);
     }
 
     @Override // android.os.Parcelable.Creator

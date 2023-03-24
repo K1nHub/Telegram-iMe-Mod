@@ -211,7 +211,7 @@
 
     if-nez v1, :cond_2
 
-    const/4 v3, 0x1
+    move v3, v2
 
     goto :goto_0
 

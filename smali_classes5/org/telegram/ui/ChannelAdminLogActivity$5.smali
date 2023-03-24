@@ -156,7 +156,7 @@
 .end method
 
 .method protected onAttachedToWindow()V
-    .locals 6
+    .locals 5
 
     .line 600
     invoke-super {p0}, Lorg/telegram/ui/Components/SizeNotifierFrameLayout;->onAttachedToWindow()V
@@ -183,9 +183,9 @@
 
     const-wide/16 v3, 0x0
 
-    cmp-long v5, v1, v3
+    cmp-long v1, v1, v3
 
-    if-eqz v5, :cond_0
+    if-eqz v1, :cond_0
 
     invoke-virtual {v0}, Lorg/telegram/messenger/MessageObject;->getDialogId()J
 
@@ -199,9 +199,9 @@
 
     neg-long v2, v2
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-nez v4, :cond_0
+    if-nez v0, :cond_0
 
     .line 603
     invoke-static {}, Lorg/telegram/messenger/MediaController;->getInstance()Lorg/telegram/messenger/MediaController;
@@ -246,7 +246,7 @@
 
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    move v1, v0
 
     :goto_0
     if-ge v1, p1, :cond_c
@@ -475,7 +475,7 @@
     goto :goto_5
 
     :cond_8
-    const/4 v8, 0x0
+    move v8, v0
 
     :goto_5
     sub-int/2addr v6, v8
@@ -508,7 +508,7 @@
 
     if-ne v2, v6, :cond_b
 
-    const/4 v3, 0x0
+    move v3, v0
 
     :cond_b
     :goto_7

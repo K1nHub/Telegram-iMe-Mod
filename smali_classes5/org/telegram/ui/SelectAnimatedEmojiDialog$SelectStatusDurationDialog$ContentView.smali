@@ -78,7 +78,7 @@
 
     move-result v3
 
-    mul-float v3, v3, v1
+    mul-float/2addr v3, v1
 
     float-to-int v3, v3
 
@@ -200,7 +200,7 @@
 
     sub-float v4, v3, v4
 
-    mul-float v4, v4, v1
+    mul-float/2addr v4, v1
 
     float-to-int v4, v4
 
@@ -245,7 +245,7 @@
     goto :goto_1
 
     :cond_2
-    const/high16 v7, 0x3f800000    # 1.0f
+    move v7, v3
 
     goto :goto_3
 
@@ -284,11 +284,11 @@
     :goto_2
     sub-float v7, v3, v7
 
-    mul-float v7, v7, v6
+    mul-float/2addr v7, v6
 
     add-float/2addr v7, v5
 
-    mul-float v7, v7, v3
+    mul-float/2addr v7, v3
 
     .line 4572
     :goto_3
@@ -307,7 +307,7 @@
 
     div-float/2addr v8, v9
 
-    mul-float v8, v8, v7
+    mul-float/2addr v8, v7
 
     sub-float/2addr v6, v8
 
@@ -324,7 +324,7 @@
 
     div-float/2addr v10, v9
 
-    mul-float v10, v10, v7
+    mul-float/2addr v10, v7
 
     sub-float/2addr v8, v10
 
@@ -341,7 +341,7 @@
 
     div-float/2addr v11, v9
 
-    mul-float v11, v11, v7
+    mul-float/2addr v11, v7
 
     add-float/2addr v10, v11
 
@@ -358,7 +358,7 @@
 
     div-float/2addr v4, v9
 
-    mul-float v4, v4, v7
+    mul-float/2addr v4, v7
 
     add-float/2addr v11, v4
 
@@ -386,62 +386,62 @@
 
     sub-float v6, v3, v6
 
-    mul-float v4, v4, v6
+    mul-float/2addr v4, v6
 
     sub-float v4, v3, v4
 
     .line 4579
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
-    const/high16 v6, 0x41000000    # 8.0f
+    cmpg-float v6, v4, v3
 
-    cmpg-float v7, v4, v3
+    const/high16 v7, 0x41000000    # 8.0f
 
-    if-gez v7, :cond_5
+    if-gez v6, :cond_5
 
     .line 4581
-    iget v7, v5, Landroid/graphics/Rect;->left:I
+    iget v6, v5, Landroid/graphics/Rect;->left:I
 
-    int-to-float v7, v7
+    int-to-float v6, v6
 
     iget v8, v5, Landroid/graphics/Rect;->top:I
 
     int-to-float v8, v8
 
-    invoke-virtual {p1, v7, v8}, Landroid/graphics/Canvas;->translate(FF)V
+    invoke-virtual {p1, v6, v8}, Landroid/graphics/Canvas;->translate(FF)V
 
     .line 4582
     invoke-virtual {p1, v3, v4, v2, v2}, Landroid/graphics/Canvas;->scale(FFFF)V
 
     .line 4583
-    iget-object v7, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$SelectStatusDurationDialog$ContentView;->this$1:Lorg/telegram/ui/SelectAnimatedEmojiDialog$SelectStatusDurationDialog;
+    iget-object v6, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$SelectStatusDurationDialog$ContentView;->this$1:Lorg/telegram/ui/SelectAnimatedEmojiDialog$SelectStatusDurationDialog;
 
-    invoke-static {v7}, Lorg/telegram/ui/SelectAnimatedEmojiDialog$SelectStatusDurationDialog;->access$8800(Lorg/telegram/ui/SelectAnimatedEmojiDialog$SelectStatusDurationDialog;)Lorg/telegram/ui/SelectAnimatedEmojiDialog$ImageViewEmoji;
+    invoke-static {v6}, Lorg/telegram/ui/SelectAnimatedEmojiDialog$SelectStatusDurationDialog;->access$8800(Lorg/telegram/ui/SelectAnimatedEmojiDialog$SelectStatusDurationDialog;)Lorg/telegram/ui/SelectAnimatedEmojiDialog$ImageViewEmoji;
 
-    move-result-object v7
+    move-result-object v6
 
-    iget v7, v7, Lorg/telegram/ui/SelectAnimatedEmojiDialog$ImageViewEmoji;->skewIndex:I
+    iget v6, v6, Lorg/telegram/ui/SelectAnimatedEmojiDialog$ImageViewEmoji;->skewIndex:I
 
-    int-to-float v7, v7
+    int-to-float v6, v6
 
-    mul-float v7, v7, v9
+    mul-float/2addr v6, v9
 
-    div-float/2addr v7, v6
+    div-float/2addr v6, v7
 
-    sub-float v7, v3, v7
+    sub-float v6, v3, v6
 
     sub-float v8, v3, v4
 
-    mul-float v7, v7, v8
+    mul-float/2addr v6, v8
 
-    invoke-virtual {p1, v7, v2}, Landroid/graphics/Canvas;->skew(FF)V
+    invoke-virtual {p1, v6, v2}, Landroid/graphics/Canvas;->skew(FF)V
 
     .line 4584
-    iget v7, v5, Landroid/graphics/Rect;->left:I
+    iget v6, v5, Landroid/graphics/Rect;->left:I
 
-    neg-int v7, v7
+    neg-int v6, v6
 
-    int-to-float v7, v7
+    int-to-float v6, v6
 
     iget v8, v5, Landroid/graphics/Rect;->top:I
 
@@ -449,15 +449,15 @@
 
     int-to-float v8, v8
 
-    invoke-virtual {p1, v7, v8}, Landroid/graphics/Canvas;->translate(FF)V
+    invoke-virtual {p1, v6, v8}, Landroid/graphics/Canvas;->translate(FF)V
 
     .line 4586
     :cond_5
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getWidth()I
 
-    move-result v7
+    move-result v6
 
-    int-to-float v7, v7
+    int-to-float v6, v6
 
     iget-object v8, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$SelectStatusDurationDialog$ContentView;->this$1:Lorg/telegram/ui/SelectAnimatedEmojiDialog$SelectStatusDurationDialog;
 
@@ -481,11 +481,11 @@
 
     int-to-float v10, v10
 
-    mul-float v9, v9, v10
+    mul-float/2addr v9, v10
 
     add-float/2addr v8, v9
 
-    invoke-virtual {p1, v2, v2, v7, v8}, Landroid/graphics/Canvas;->clipRect(FFFF)Z
+    invoke-virtual {p1, v2, v2, v6, v8}, Landroid/graphics/Canvas;->clipRect(FFFF)Z
 
     .line 4587
     invoke-virtual {v0, v5}, Landroid/graphics/drawable/Drawable;->setBounds(Landroid/graphics/Rect;)V
@@ -509,7 +509,7 @@
 
     if-nez v0, :cond_6
 
-    mul-float v4, v4, v6
+    mul-float/2addr v4, v7
 
     .line 4592
     invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->dp(F)I
@@ -536,7 +536,7 @@
 
     const/high16 v0, 0x40800000    # 4.0f
 
-    mul-float v4, v4, v0
+    mul-float/2addr v4, v0
 
     .line 4594
     invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->dp(F)I
@@ -563,7 +563,7 @@
 
     const/high16 v0, -0x3f800000    # -4.0f
 
-    mul-float v4, v4, v0
+    mul-float/2addr v4, v0
 
     .line 4596
     invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->dp(F)I
@@ -592,7 +592,7 @@
 
     const/high16 v0, -0x3f000000    # -8.0f
 
-    mul-float v4, v4, v0
+    mul-float/2addr v4, v0
 
     .line 4598
     invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->dp(F)I
@@ -628,7 +628,7 @@
 
     sub-float/2addr v3, v0
 
-    mul-float v3, v3, v1
+    mul-float/2addr v3, v1
 
     float-to-int v11, v3
 

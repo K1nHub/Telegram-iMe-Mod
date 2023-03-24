@@ -139,7 +139,7 @@
 .end method
 
 .method public open(Lcom/google/android/exoplayer2/upstream/DataSpec;)J
-    .locals 8
+    .locals 7
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lcom/google/android/exoplayer2/upstream/AssetDataSource$AssetDataSourceException;
@@ -222,9 +222,9 @@
     .line 86
     iget-wide v3, p1, Lcom/google/android/exoplayer2/upstream/DataSpec;->position:J
 
-    cmp-long v5, v0, v3
+    cmp-long v0, v0, v3
 
-    if-ltz v5, :cond_4
+    if-ltz v0, :cond_4
 
     .line 92
     iget-wide v0, p1, Lcom/google/android/exoplayer2/upstream/DataSpec;->length:J
@@ -254,9 +254,9 @@
 
     const-wide/32 v5, 0x7fffffff
 
-    cmp-long v7, v0, v5
+    cmp-long v0, v0, v5
 
-    if-nez v7, :cond_3
+    if-nez v0, :cond_3
 
     .line 100
     iput-wide v3, p0, Lcom/google/android/exoplayer2/upstream/AssetDataSource;->bytesRemaining:J
@@ -325,7 +325,7 @@
 .end method
 
 .method public read([BII)I
-    .locals 7
+    .locals 8
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lcom/google/android/exoplayer2/upstream/AssetDataSource$AssetDataSourceException;
@@ -344,29 +344,29 @@
 
     const-wide/16 v2, 0x0
 
-    const/4 v4, -0x1
+    cmp-long v2, v0, v2
 
-    cmp-long v5, v0, v2
+    const/4 v3, -0x1
 
-    if-nez v5, :cond_1
+    if-nez v2, :cond_1
 
-    return v4
+    return v3
 
     :cond_1
-    const-wide/16 v2, -0x1
+    const-wide/16 v4, -0x1
 
-    cmp-long v5, v0, v2
+    cmp-long v2, v0, v4
 
-    if-nez v5, :cond_2
+    if-nez v2, :cond_2
 
     goto :goto_0
 
     :cond_2
-    int-to-long v5, p3
+    int-to-long v6, p3
 
     .line 129
     :try_start_0
-    invoke-static {v0, v1, v5, v6}, Ljava/lang/Math;->min(JJ)J
+    invoke-static {v0, v1, v6, v7}, Ljava/lang/Math;->min(JJ)J
 
     move-result-wide v0
 
@@ -388,15 +388,15 @@
     :try_end_0
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
-    if-ne p1, v4, :cond_3
+    if-ne p1, v3, :cond_3
 
-    return v4
+    return v3
 
     .line 138
     :cond_3
     iget-wide p2, p0, Lcom/google/android/exoplayer2/upstream/AssetDataSource;->bytesRemaining:J
 
-    cmp-long v0, p2, v2
+    cmp-long v0, p2, v4
 
     if-eqz v0, :cond_4
 

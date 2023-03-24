@@ -243,7 +243,7 @@ public class AnimatorInflaterCompat {
         ArrayList arrayList = new ArrayList();
         float f2 = BitmapDescriptorFactory.HUE_RED;
         arrayList.add(Float.valueOf((float) BitmapDescriptorFactory.HUE_RED));
-        float f3 = BitmapDescriptorFactory.HUE_RED;
+        float f3 = 0.0f;
         do {
             f3 += pathMeasure.getLength();
             arrayList.add(Float.valueOf(f3));

@@ -30,7 +30,7 @@
 .method constructor <init>(Lorg/telegram/ui/PasscodeActivity;Landroid/content/Context;)V
     .locals 0
 
-    .line 1018
+    .line 1019
     iput-object p1, p0, Lorg/telegram/ui/PasscodeActivity$8;->this$0:Lorg/telegram/ui/PasscodeActivity;
 
     invoke-direct {p0, p2}, Lorg/telegram/ui/CodeFieldContainer;-><init>(Landroid/content/Context;)V
@@ -41,7 +41,7 @@
 .method private synthetic lambda$processNextPressed$0()V
     .locals 1
 
-    .line 1022
+    .line 1023
     iget-object v0, p0, Lorg/telegram/ui/PasscodeActivity$8;->this$0:Lorg/telegram/ui/PasscodeActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/PasscodeActivity;->access$1700(Lorg/telegram/ui/PasscodeActivity;)V
@@ -54,7 +54,7 @@
 .method protected processNextPressed()V
     .locals 3
 
-    .line 1021
+    .line 1022
     iget-object v0, p0, Lorg/telegram/ui/PasscodeActivity$8;->this$0:Lorg/telegram/ui/PasscodeActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/PasscodeActivity;->access$1000(Lorg/telegram/ui/PasscodeActivity;)I
@@ -63,7 +63,7 @@
 
     if-nez v0, :cond_0
 
-    .line 1022
+    .line 1023
     new-instance v0, Lorg/telegram/ui/PasscodeActivity$8$$ExternalSyntheticLambda0;
 
     invoke-direct {v0, p0}, Lorg/telegram/ui/PasscodeActivity$8$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/PasscodeActivity$8;)V
@@ -74,7 +74,7 @@
 
     goto :goto_0
 
-    .line 1025
+    .line 1026
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/PasscodeActivity$8;->this$0:Lorg/telegram/ui/PasscodeActivity;
 
@@ -84,7 +84,7 @@
 
     if-nez v0, :cond_1
 
-    .line 1026
+    .line 1027
     iget-object v0, p0, Lorg/telegram/ui/PasscodeActivity$8;->this$0:Lorg/telegram/ui/PasscodeActivity;
 
     iget-object v1, v0, Lorg/telegram/ui/PasscodeActivity;->walletCreatePinPresenter:Lcom/smedialink/ui/wallet/crypto/create/pin/CreateWalletPinPresenter;
@@ -101,7 +101,7 @@
 
     goto :goto_0
 
-    .line 1028
+    .line 1029
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/PasscodeActivity$8;->this$0:Lorg/telegram/ui/PasscodeActivity;
 

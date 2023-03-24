@@ -325,7 +325,7 @@
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_0
     const/4 v3, 0x1
@@ -348,7 +348,7 @@
 
     if-ge p1, p2, :cond_0
 
-    const/4 v1, 0x1
+    move v1, v3
 
     :cond_0
     return v1
@@ -363,7 +363,7 @@
 
     if-ne v0, p1, :cond_3
 
-    const/4 v1, 0x1
+    move v1, v3
 
     :cond_3
     return v1
@@ -580,7 +580,7 @@
 
     sub-int/2addr v1, v0
 
-    const/4 v2, 0x1
+    move v2, v0
 
     :goto_0
     if-eqz v2, :cond_2
@@ -601,9 +601,9 @@
 
     move-object v4, v2
 
-    const/4 v2, 0x0
+    move v2, v3
 
-    const/4 v5, 0x0
+    move v5, v2
 
     :goto_1
     if-eq v5, v1, :cond_1
@@ -651,9 +651,9 @@
 
     invoke-virtual {v3, v2, v7}, Ljava/util/Vector;->setElementAt(Ljava/lang/Object;I)V
 
-    move v3, v5
+    move v2, v0
 
-    const/4 v2, 0x1
+    move v3, v5
 
     :goto_2
     move v5, v7

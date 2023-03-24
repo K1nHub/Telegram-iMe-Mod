@@ -305,6 +305,7 @@ public class AdaptiveTrackSelection extends BaseTrackSelection {
     }
 
     private long getAllocatedBandwidth(long j) {
+        long j2;
         long totalAllocatableBandwidth = getTotalAllocatableBandwidth(j);
         if (this.adaptationCheckpoints.isEmpty()) {
             return totalAllocatableBandwidth;
@@ -315,9 +316,8 @@ public class AdaptiveTrackSelection extends BaseTrackSelection {
         }
         AdaptationCheckpoint adaptationCheckpoint = this.adaptationCheckpoints.get(i - 1);
         AdaptationCheckpoint adaptationCheckpoint2 = this.adaptationCheckpoints.get(i);
-        long j2 = adaptationCheckpoint.totalBandwidth;
-        long j3 = adaptationCheckpoint.allocatedBandwidth;
-        return j3 + ((((float) (totalAllocatableBandwidth - j2)) / ((float) (adaptationCheckpoint2.totalBandwidth - j2))) * ((float) (adaptationCheckpoint2.allocatedBandwidth - j3)));
+        long j3 = adaptationCheckpoint.totalBandwidth;
+        return adaptationCheckpoint.allocatedBandwidth + ((((float) (totalAllocatableBandwidth - j3)) / ((float) (adaptationCheckpoint2.totalBandwidth - j3))) * ((float) (adaptationCheckpoint2.allocatedBandwidth - j2)));
     }
 
     private long getTotalAllocatableBandwidth(long j) {

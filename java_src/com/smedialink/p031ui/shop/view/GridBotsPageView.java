@@ -122,7 +122,7 @@ public final class GridBotsPageView extends FrameLayout {
                 subscribeToContent$lambda$1 = GridBotsPageView.subscribeToContent$lambda$1(GridBotsPageView.this, (List) obj, (List) obj2);
                 return subscribeToContent$lambda$1;
             }
-        }).subscribeOn(Schedulers.m694io()).observeOn(AndroidSchedulers.mainThread());
+        }).subscribeOn(Schedulers.m693io()).observeOn(AndroidSchedulers.mainThread());
         final GridBotsPageView$subscribeToContent$2 gridBotsPageView$subscribeToContent$2 = new GridBotsPageView$subscribeToContent$2(this);
         Observable doOnSubscribe = observeOn.doOnSubscribe(new Consumer() { // from class: com.smedialink.ui.shop.view.GridBotsPageView$$ExternalSyntheticLambda3
             @Override // io.reactivex.functions.Consumer

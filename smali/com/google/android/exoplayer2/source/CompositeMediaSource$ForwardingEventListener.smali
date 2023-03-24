@@ -200,15 +200,15 @@
     .line 371
     iget-wide v0, p1, Lcom/google/android/exoplayer2/source/MediaLoadData;->mediaStartTimeMs:J
 
-    cmp-long v2, v10, v0
+    cmp-long v0, v10, v0
 
-    if-nez v2, :cond_0
+    if-nez v0, :cond_0
 
     iget-wide v0, p1, Lcom/google/android/exoplayer2/source/MediaLoadData;->mediaEndTimeMs:J
 
-    cmp-long v2, v12, v0
+    cmp-long v0, v12, v0
 
-    if-nez v2, :cond_0
+    if-nez v0, :cond_0
 
     return-object p1
 

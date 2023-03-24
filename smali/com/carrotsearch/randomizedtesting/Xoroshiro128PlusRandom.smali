@@ -11,7 +11,7 @@
 
 # direct methods
 .method public constructor <init>(J)V
-    .locals 5
+    .locals 4
 
     const-wide/16 v0, 0x0
 
@@ -35,13 +35,13 @@
     .line 24
     iget-wide v2, p0, Lcom/carrotsearch/randomizedtesting/Xoroshiro128PlusRandom;->s0:J
 
-    cmp-long v4, v2, v0
-
-    if-nez v4, :cond_0
-
-    cmp-long v2, p1, v0
+    cmp-long v2, v2, v0
 
     if-nez v2, :cond_0
+
+    cmp-long p1, p1, v0
+
+    if-nez p1, :cond_0
 
     const-wide p1, 0xdeadbeefL
 
@@ -73,17 +73,17 @@
 
     move-result-wide v0
 
-    long-to-int v1, v0
+    long-to-int v0, v0
 
     rsub-int/lit8 p1, p1, 0x20
 
-    ushr-int p1, v1, p1
+    ushr-int p1, v0, p1
 
     return p1
 .end method
 
 .method public nextBoolean()Z
-    .locals 5
+    .locals 4
 
     .line 42
     invoke-virtual {p0}, Lcom/carrotsearch/randomizedtesting/Xoroshiro128PlusRandom;->nextLong()J
@@ -92,9 +92,9 @@
 
     const-wide/16 v2, 0x0
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-ltz v4, :cond_0
+    if-ltz v0, :cond_0
 
     const/4 v0, 0x1
 
@@ -176,7 +176,7 @@
 
     const-wide/high16 v2, 0x3ca0000000000000L
 
-    mul-double v0, v0, v2
+    mul-double/2addr v0, v2
 
     return-wide v0
 .end method
@@ -195,7 +195,7 @@
 
     const/high16 v1, 0x33800000
 
-    mul-float v0, v0, v1
+    mul-float/2addr v0, v1
 
     return v0
 .end method
@@ -219,9 +219,9 @@
 
     move-result-wide v0
 
-    long-to-int v1, v0
+    long-to-int v0, v0
 
-    return v1
+    return v0
 .end method
 
 .method public nextInt(I)I
@@ -278,22 +278,22 @@
 .end method
 
 .method public setSeed(J)V
-    .locals 3
+    .locals 2
 
     .line 33
     iget-wide p1, p0, Lcom/carrotsearch/randomizedtesting/Xoroshiro128PlusRandom;->s0:J
 
     const-wide/16 v0, 0x0
 
-    cmp-long v2, p1, v0
+    cmp-long p1, p1, v0
 
-    if-nez v2, :cond_0
+    if-nez p1, :cond_0
 
     iget-wide p1, p0, Lcom/carrotsearch/randomizedtesting/Xoroshiro128PlusRandom;->s1:J
 
-    cmp-long v2, p1, v0
+    cmp-long p1, p1, v0
 
-    if-nez v2, :cond_0
+    if-nez p1, :cond_0
 
     return-void
 

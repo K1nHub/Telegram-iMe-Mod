@@ -222,7 +222,7 @@
 .end method
 
 .method private final configureTokens(Ljava/util/List;)Ljava/util/List;
-    .locals 8
+    .locals 7
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -287,9 +287,9 @@
 
     const-wide/16 v5, 0x0
 
-    cmpl-double v7, v3, v5
+    cmpl-double v3, v3, v5
 
-    if-lez v7, :cond_1
+    if-lez v3, :cond_1
 
     goto :goto_1
 

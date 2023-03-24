@@ -80,7 +80,7 @@
 
     iput-object v5, v0, Lorg/bouncycastle/pqc/asn1/RainbowPrivateKey;->invA1:[[B
 
-    const/4 v5, 0x0
+    move v5, v2
 
     :goto_1
     invoke-virtual {v4}, Lorg/bouncycastle/asn1/ASN1Sequence;->size()I
@@ -144,7 +144,7 @@
 
     iput-object v7, v0, Lorg/bouncycastle/pqc/asn1/RainbowPrivateKey;->invA2:[[B
 
-    const/4 v7, 0x0
+    move v7, v2
 
     :goto_2
     invoke-virtual {v6}, Lorg/bouncycastle/asn1/ASN1Sequence;->size()I
@@ -244,7 +244,7 @@
 
     new-array v9, v9, [[B
 
-    const/4 v10, 0x0
+    move v10, v2
 
     :goto_3
     invoke-virtual {v1}, Lorg/bouncycastle/asn1/ASN1Sequence;->size()I
@@ -273,7 +273,7 @@
 
     aput-object v13, v6, v10
 
-    const/4 v13, 0x0
+    move v13, v2
 
     :goto_4
     invoke-virtual {v12}, Lorg/bouncycastle/asn1/ASN1Sequence;->size()I
@@ -708,7 +708,7 @@
 
     const/4 v2, 0x0
 
-    const/4 v3, 0x0
+    move v3, v2
 
     :goto_1
     iget-object v4, p0, Lorg/bouncycastle/pqc/asn1/RainbowPrivateKey;->invA1:[[B
@@ -758,7 +758,7 @@
 
     invoke-direct {v1}, Lorg/bouncycastle/asn1/ASN1EncodableVector;-><init>()V
 
-    const/4 v3, 0x0
+    move v3, v2
 
     :goto_2
     iget-object v4, p0, Lorg/bouncycastle/pqc/asn1/RainbowPrivateKey;->invA2:[[B
@@ -826,7 +826,7 @@
 
     invoke-direct {v1}, Lorg/bouncycastle/asn1/ASN1EncodableVector;-><init>()V
 
-    const/4 v3, 0x0
+    move v3, v2
 
     :goto_3
     iget-object v4, p0, Lorg/bouncycastle/pqc/asn1/RainbowPrivateKey;->layers:[Lorg/bouncycastle/pqc/crypto/rainbow/Layer;
@@ -855,7 +855,7 @@
 
     invoke-direct {v6}, Lorg/bouncycastle/asn1/ASN1EncodableVector;-><init>()V
 
-    const/4 v7, 0x0
+    move v7, v2
 
     :goto_4
     array-length v8, v5
@@ -866,7 +866,7 @@
 
     invoke-direct {v8}, Lorg/bouncycastle/asn1/ASN1EncodableVector;-><init>()V
 
-    const/4 v9, 0x0
+    move v9, v2
 
     :goto_5
     aget-object v10, v5, v7
@@ -923,7 +923,7 @@
 
     invoke-direct {v6}, Lorg/bouncycastle/asn1/ASN1EncodableVector;-><init>()V
 
-    const/4 v7, 0x0
+    move v7, v2
 
     :goto_6
     array-length v8, v5
@@ -934,7 +934,7 @@
 
     invoke-direct {v8}, Lorg/bouncycastle/asn1/ASN1EncodableVector;-><init>()V
 
-    const/4 v9, 0x0
+    move v9, v2
 
     :goto_7
     aget-object v10, v5, v7
@@ -991,7 +991,7 @@
 
     invoke-direct {v6}, Lorg/bouncycastle/asn1/ASN1EncodableVector;-><init>()V
 
-    const/4 v7, 0x0
+    move v7, v2
 
     :goto_8
     array-length v8, v5

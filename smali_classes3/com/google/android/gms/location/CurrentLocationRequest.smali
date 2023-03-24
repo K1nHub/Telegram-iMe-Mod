@@ -394,7 +394,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .locals 6
+    .locals 5
 
     .line 1
     new-instance v0, Ljava/lang/StringBuilder;
@@ -419,9 +419,9 @@
 
     const-wide v3, 0x7fffffffffffffffL
 
-    cmp-long v5, v1, v3
+    cmp-long v1, v1, v3
 
-    if-eqz v5, :cond_0
+    if-eqz v1, :cond_0
 
     const-string v1, ", maxAge="
 
@@ -436,9 +436,9 @@
     :cond_0
     iget-wide v1, p0, Lcom/google/android/gms/location/CurrentLocationRequest;->zzd:J
 
-    cmp-long v5, v1, v3
+    cmp-long v1, v1, v3
 
-    if-eqz v5, :cond_1
+    if-eqz v1, :cond_1
 
     const-string v1, ", duration="
 

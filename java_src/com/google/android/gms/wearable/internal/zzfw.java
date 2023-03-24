@@ -109,15 +109,14 @@ public final class zzfw extends MessageClient {
     public final Task<Void> addListener(MessageClient.OnMessageReceivedListener onMessageReceivedListener, Uri uri, int i) {
         boolean z;
         Preconditions.checkNotNull(uri, "uri must not be null");
-        if (i != 0) {
-            if (i != 1) {
-                z = false;
-                com.google.android.gms.common.internal.Preconditions.checkArgument(z, "invalid filter type");
-                return zza(onMessageReceivedListener, new IntentFilter[]{zzhl.zzb("com.google.android.gms.wearable.MESSAGE_RECEIVED", uri, i)});
-            }
+        if (i == 0) {
+            z = true;
+        } else if (i == 1) {
             i = 1;
+            z = true;
+        } else {
+            z = false;
         }
-        z = true;
         com.google.android.gms.common.internal.Preconditions.checkArgument(z, "invalid filter type");
         return zza(onMessageReceivedListener, new IntentFilter[]{zzhl.zzb("com.google.android.gms.wearable.MESSAGE_RECEIVED", uri, i)});
     }

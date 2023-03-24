@@ -129,8 +129,8 @@ public class VideoForwardDrawable extends Drawable {
         this.paint.setColorFilter(colorFilter);
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:105:0x02a6  */
-    /* JADX WARN: Removed duplicated region for block: B:106:0x02a9  */
+    /* JADX WARN: Removed duplicated region for block: B:105:0x0295  */
+    /* JADX WARN: Removed duplicated region for block: B:106:0x0298  */
     @Override // android.graphics.drawable.Drawable
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -138,7 +138,7 @@ public class VideoForwardDrawable extends Drawable {
     */
     public void draw(android.graphics.Canvas r12) {
         /*
-            Method dump skipped, instructions count: 688
+            Method dump skipped, instructions count: 671
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: org.telegram.p048ui.Components.VideoForwardDrawable.draw(android.graphics.Canvas):void");

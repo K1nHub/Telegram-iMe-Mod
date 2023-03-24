@@ -37,7 +37,7 @@ import kotlin.jvm.internal.Intrinsics;
 import moxy.InjectViewState;
 import org.fork.enums.ProfileTwitterAction;
 import org.fork.utils.CollectionsUtilsKt;
-import org.telegram.messenger.C3286R;
+import org.telegram.messenger.C3301R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.UserObject;
@@ -167,9 +167,9 @@ public final class ProfilePresenter extends BasePresenter<ProfileView> {
     }
 
     public final void changeRankVisibility(boolean z) {
-        Observable<Result<Boolean>> observeOn = this.accountLevelInteractor.changeLevelVisibility(z).observeOn(this.schedulersProvider.mo707ui());
+        Observable<Result<Boolean>> observeOn = this.accountLevelInteractor.changeLevelVisibility(z).observeOn(this.schedulersProvider.mo706ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "accountLevelInteractor\n …(schedulersProvider.ui())");
-        Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C1926x21fa58d6(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C1927x21fa58d7((BaseView) getViewState())));
+        Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C1940x21fa58d6(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C1941x21fa58d7((BaseView) getViewState())));
         Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…  onError.invoke()\n    })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }
@@ -262,11 +262,11 @@ public final class ProfilePresenter extends BasePresenter<ProfileView> {
         if (refreshToken == null) {
             refreshToken = "";
         }
-        Observable<Result<SessionTokens>> observeOn = walletSessionInteractor.refreshToken(refreshToken).startWith((Observable<Result<SessionTokens>>) Result.Companion.loading$default(Result.Companion, null, 1, null)).observeOn(this.schedulersProvider.mo707ui());
+        Observable<Result<SessionTokens>> observeOn = walletSessionInteractor.refreshToken(refreshToken).startWith((Observable<Result<SessionTokens>>) Result.Companion.loading$default(Result.Companion, null, 1, null)).observeOn(this.schedulersProvider.mo706ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "walletSessionInteractor\n…(schedulersProvider.ui())");
         T viewState = getViewState();
         Intrinsics.checkNotNullExpressionValue(viewState, "viewState");
-        Disposable subscribe = RxExtKt.withLoadingDialog$default((Observable) observeOn, (BaseView) viewState, false, 2, (Object) null).subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C1936x3fe6b4ef(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C1937x3fe6b4f0((BaseView) getViewState())));
+        Disposable subscribe = RxExtKt.withLoadingDialog$default((Observable) observeOn, (BaseView) viewState, false, 2, (Object) null).subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C1950x3fe6b4ef(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C1951x3fe6b4f0((BaseView) getViewState())));
         Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…  onError.invoke()\n    })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }
@@ -284,9 +284,9 @@ public final class ProfilePresenter extends BasePresenter<ProfileView> {
         if (twitterProfileInfo == null) {
             return;
         }
-        Observable<Result<Boolean>> observeOn = this.twitterInteractor.acceptConnection(twitterProfileInfo.getTwitterUserId(), this.profileId).observeOn(this.schedulersProvider.mo707ui());
+        Observable<Result<Boolean>> observeOn = this.twitterInteractor.acceptConnection(twitterProfileInfo.getTwitterUserId(), this.profileId).observeOn(this.schedulersProvider.mo706ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "twitterInteractor\n      …(schedulersProvider.ui())");
-        Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C1924xa60791c7(this, twitterProfileInfo)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C1925xa60791c8((BaseView) getViewState())));
+        Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C1938xa60791c7(this, twitterProfileInfo)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C1939xa60791c8((BaseView) getViewState())));
         Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…  onError.invoke()\n    })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }
@@ -295,18 +295,18 @@ public final class ProfilePresenter extends BasePresenter<ProfileView> {
         TwitterInteractor twitterInteractor = this.twitterInteractor;
         TwitterProfileInfo twitterProfileInfo = this.twitterProfileInfo;
         if (twitterProfileInfo != null) {
-            Observable<Result<Boolean>> observeOn = twitterInteractor.declineConnection(twitterProfileInfo.getTwitterUserId(), this.profileId).observeOn(this.schedulersProvider.mo707ui());
+            Observable<Result<Boolean>> observeOn = twitterInteractor.declineConnection(twitterProfileInfo.getTwitterUserId(), this.profileId).observeOn(this.schedulersProvider.mo706ui());
             Intrinsics.checkNotNullExpressionValue(observeOn, "twitterInteractor\n      …(schedulersProvider.ui())");
-            Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C1928x99db2a72(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C1929x99db2a73((BaseView) getViewState())));
+            Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C1942x99db2a72(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C1943x99db2a73((BaseView) getViewState())));
             Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…  onError.invoke()\n    })");
             BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
         }
     }
 
     public final void logoutTwitter() {
-        Observable<Result<Boolean>> observeOn = this.twitterInteractor.logout(this.profileId).observeOn(this.schedulersProvider.mo707ui());
+        Observable<Result<Boolean>> observeOn = this.twitterInteractor.logout(this.profileId).observeOn(this.schedulersProvider.mo706ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "twitterInteractor\n      …(schedulersProvider.ui())");
-        Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C1934x5e3b2f87(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C1935x5e3b2f88((BaseView) getViewState())));
+        Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C1948x5e3b2f87(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C1949x5e3b2f88((BaseView) getViewState())));
         Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…  onError.invoke()\n    })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }
@@ -367,9 +367,9 @@ public final class ProfilePresenter extends BasePresenter<ProfileView> {
     }
 
     private final void loadTwitterProfile() {
-        Observable<Result<TwitterProfileInfo>> observeOn = getTwitterProfileObservable().observeOn(this.schedulersProvider.mo707ui());
+        Observable<Result<TwitterProfileInfo>> observeOn = getTwitterProfileObservable().observeOn(this.schedulersProvider.mo706ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "getTwitterProfileObserva…(schedulersProvider.ui())");
-        Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C1932x153b6724(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C1933x153b6725((BaseView) getViewState())));
+        Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C1946x153b6724(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C1947x153b6725((BaseView) getViewState())));
         Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…  onError.invoke()\n    })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }
@@ -405,30 +405,30 @@ public final class ProfilePresenter extends BasePresenter<ProfileView> {
     }
 
     private final void loadAccountLevelInfo() {
-        Observable<Result<AccountLevelInformation>> observeOn = this.accountLevelInteractor.getAccountLevelInformation(this.userId).observeOn(this.schedulersProvider.mo707ui());
+        Observable<Result<AccountLevelInformation>> observeOn = this.accountLevelInteractor.getAccountLevelInformation(this.userId).observeOn(this.schedulersProvider.mo706ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "accountLevelInteractor\n …(schedulersProvider.ui())");
-        Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C1930xe14e28d3(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C1931xe14e28d4((BaseView) getViewState())));
+        Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C1944xe14e28d3(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C1945xe14e28d4((BaseView) getViewState())));
         Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…  onError.invoke()\n    })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }
 
     private final void showVpnWarningDialog() {
-        ((ProfileView) getViewState()).showVpnWarningDialog(new DialogModel(this.resourceManager.getString(C3286R.string.profile_twitter_vpn_alert_title), this.resourceManager.getString(C3286R.string.profile_twitter_vpn_alert_description), this.resourceManager.getString(C3286R.string.common_cancel), this.resourceManager.getString(C3286R.string.common_ok)));
+        ((ProfileView) getViewState()).showVpnWarningDialog(new DialogModel(this.resourceManager.getString(C3301R.string.profile_twitter_vpn_alert_title), this.resourceManager.getString(C3301R.string.profile_twitter_vpn_alert_description), this.resourceManager.getString(C3301R.string.common_cancel), this.resourceManager.getString(C3301R.string.common_ok)));
     }
 
     private final void showTwitterBotConfirmationDialog() {
-        ((ProfileView) getViewState()).showTwitterBotConfirmationDialogIfNeeded(new DialogModel(this.resourceManager.getString(C3286R.string.profile_twitter_bot_confirmation_alert_title), this.resourceManager.getString(C3286R.string.profile_twitter_bot_confirmation_alert_description, AppConfiguration$Wallet.getWalletBotUsernameWithAT()), this.resourceManager.getString(C3286R.string.common_cancel), LocaleController.getString("Add", C3286R.string.Add)));
+        ((ProfileView) getViewState()).showTwitterBotConfirmationDialogIfNeeded(new DialogModel(this.resourceManager.getString(C3301R.string.profile_twitter_bot_confirmation_alert_title), this.resourceManager.getString(C3301R.string.profile_twitter_bot_confirmation_alert_description, AppConfiguration$Wallet.getWalletBotUsernameWithAT()), this.resourceManager.getString(C3301R.string.common_cancel), LocaleController.getString("Add", C3301R.string.Add)));
     }
 
     private final void showTwitterUnlinkedErrorDialog() {
-        ((ProfileView) getViewState()).showTwitterUnlinkedErrorDialog(new DialogModel(this.resourceManager.getString(C3286R.string.profile_twitter_unlinked_error_alert_title), this.resourceManager.getString(C3286R.string.profile_twitter_unlinked_error_alert_description), this.resourceManager.getString(C3286R.string.profile_twitter_unlinked_error_alert_log_out), this.resourceManager.getString(C3286R.string.profile_twitter_unlinked_error_alert_link)));
+        ((ProfileView) getViewState()).showTwitterUnlinkedErrorDialog(new DialogModel(this.resourceManager.getString(C3301R.string.profile_twitter_unlinked_error_alert_title), this.resourceManager.getString(C3301R.string.profile_twitter_unlinked_error_alert_description), this.resourceManager.getString(C3301R.string.profile_twitter_unlinked_error_alert_log_out), this.resourceManager.getString(C3301R.string.profile_twitter_unlinked_error_alert_link)));
     }
 
     private final void showTwitterLinkConfirmationDialog() {
-        ((ProfileView) getViewState()).showTwitterLinkConfirmationDialog(new DialogModel(this.resourceManager.getString(C3286R.string.profile_twitter_link_confirmation_alert_title), this.resourceManager.getString(C3286R.string.profile_twitter_link_confirmation_alert_description), LocaleController.getString("Cancel", C3286R.string.Cancel), this.resourceManager.getString(C3286R.string.common_confirm)));
+        ((ProfileView) getViewState()).showTwitterLinkConfirmationDialog(new DialogModel(this.resourceManager.getString(C3301R.string.profile_twitter_link_confirmation_alert_title), this.resourceManager.getString(C3301R.string.profile_twitter_link_confirmation_alert_description), LocaleController.getString("Cancel", C3301R.string.Cancel), this.resourceManager.getString(C3301R.string.common_confirm)));
     }
 
     private final void showTwitterResetConfirmationDialog() {
-        ((ProfileView) getViewState()).showTwitterResetConfirmationDialog(new DialogModel(this.resourceManager.getString(C3286R.string.profile_twitter_reset_confirmation_alert_title), this.resourceManager.getString(C3286R.string.profile_twitter_reset_confirmation_alert_description), LocaleController.getString("Cancel", C3286R.string.Cancel), LocaleController.getString("Reset", C3286R.string.Reset)));
+        ((ProfileView) getViewState()).showTwitterResetConfirmationDialog(new DialogModel(this.resourceManager.getString(C3301R.string.profile_twitter_reset_confirmation_alert_title), this.resourceManager.getString(C3301R.string.profile_twitter_reset_confirmation_alert_description), LocaleController.getString("Cancel", C3301R.string.Cancel), LocaleController.getString("Reset", C3301R.string.Reset)));
     }
 }

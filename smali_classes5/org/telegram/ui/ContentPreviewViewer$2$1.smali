@@ -586,12 +586,12 @@
 
     if-nez v0, :cond_b
 
-    const/4 v9, 0x1
+    move v9, v2
 
     goto :goto_1
 
     :cond_b
-    const/4 v9, 0x0
+    move v9, v4
 
     :goto_1
     const/4 v10, 0x0

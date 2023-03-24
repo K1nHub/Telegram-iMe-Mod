@@ -5,7 +5,7 @@ import android.graphics.ColorFilter;
 import android.graphics.drawable.Drawable;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3286R;
+import org.telegram.messenger.C3301R;
 /* renamed from: org.telegram.ui.Components.ShareLocationDrawable */
 /* loaded from: classes6.dex */
 public class ShareLocationDrawable extends Drawable {
@@ -28,25 +28,25 @@ public class ShareLocationDrawable extends Drawable {
     public ShareLocationDrawable(Context context, int i) {
         this.currentType = i;
         if (i == 4) {
-            this.drawable = context.getResources().getDrawable(C3286R.C3288drawable.pin);
-            this.drawableLeft = context.getResources().getDrawable(C3286R.C3288drawable.smallanimationpinleft);
-            this.drawableRight = context.getResources().getDrawable(C3286R.C3288drawable.smallanimationpinright);
+            this.drawable = context.getResources().getDrawable(C3301R.C3303drawable.pin);
+            this.drawableLeft = context.getResources().getDrawable(C3301R.C3303drawable.smallanimationpinleft);
+            this.drawableRight = context.getResources().getDrawable(C3301R.C3303drawable.smallanimationpinright);
         } else if (i == 3) {
-            this.drawable = context.getResources().getDrawable(C3286R.C3288drawable.nearby_l);
-            this.drawableLeft = context.getResources().getDrawable(C3286R.C3288drawable.animationpinleft);
-            this.drawableRight = context.getResources().getDrawable(C3286R.C3288drawable.animationpinright);
+            this.drawable = context.getResources().getDrawable(C3301R.C3303drawable.nearby_l);
+            this.drawableLeft = context.getResources().getDrawable(C3301R.C3303drawable.animationpinleft);
+            this.drawableRight = context.getResources().getDrawable(C3301R.C3303drawable.animationpinright);
         } else if (i == 2) {
-            this.drawable = context.getResources().getDrawable(C3286R.C3288drawable.nearby_m);
-            this.drawableLeft = context.getResources().getDrawable(C3286R.C3288drawable.animationpinleft);
-            this.drawableRight = context.getResources().getDrawable(C3286R.C3288drawable.animationpinright);
+            this.drawable = context.getResources().getDrawable(C3301R.C3303drawable.nearby_m);
+            this.drawableLeft = context.getResources().getDrawable(C3301R.C3303drawable.animationpinleft);
+            this.drawableRight = context.getResources().getDrawable(C3301R.C3303drawable.animationpinright);
         } else if (i == 1) {
-            this.drawable = context.getResources().getDrawable(C3286R.C3288drawable.smallanimationpin);
-            this.drawableLeft = context.getResources().getDrawable(C3286R.C3288drawable.smallanimationpinleft);
-            this.drawableRight = context.getResources().getDrawable(C3286R.C3288drawable.smallanimationpinright);
+            this.drawable = context.getResources().getDrawable(C3301R.C3303drawable.smallanimationpin);
+            this.drawableLeft = context.getResources().getDrawable(C3301R.C3303drawable.smallanimationpinleft);
+            this.drawableRight = context.getResources().getDrawable(C3301R.C3303drawable.smallanimationpinright);
         } else {
-            this.drawable = context.getResources().getDrawable(C3286R.C3288drawable.animationpin);
-            this.drawableLeft = context.getResources().getDrawable(C3286R.C3288drawable.animationpinleft);
-            this.drawableRight = context.getResources().getDrawable(C3286R.C3288drawable.animationpinright);
+            this.drawable = context.getResources().getDrawable(C3301R.C3303drawable.animationpin);
+            this.drawableLeft = context.getResources().getDrawable(C3301R.C3303drawable.animationpinleft);
+            this.drawableRight = context.getResources().getDrawable(C3301R.C3303drawable.animationpinright);
         }
     }
 
@@ -70,8 +70,8 @@ public class ShareLocationDrawable extends Drawable {
         invalidateSelf();
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:31:0x0179  */
-    /* JADX WARN: Removed duplicated region for block: B:32:0x017d  */
+    /* JADX WARN: Removed duplicated region for block: B:31:0x0174  */
+    /* JADX WARN: Removed duplicated region for block: B:32:0x0178  */
     @Override // android.graphics.drawable.Drawable
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -79,7 +79,7 @@ public class ShareLocationDrawable extends Drawable {
     */
     public void draw(android.graphics.Canvas r22) {
         /*
-            Method dump skipped, instructions count: 445
+            Method dump skipped, instructions count: 440
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: org.telegram.p048ui.Components.ShareLocationDrawable.draw(android.graphics.Canvas):void");

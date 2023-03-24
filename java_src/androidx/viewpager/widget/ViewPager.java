@@ -985,23 +985,77 @@ public class ViewPager extends ViewGroup {
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
-    /* JADX WARN: Removed duplicated region for block: B:32:0x0082  */
-    /* JADX WARN: Removed duplicated region for block: B:36:0x0089  */
-    /* JADX WARN: Removed duplicated region for block: B:39:0x008e  */
-    /* JADX WARN: Removed duplicated region for block: B:42:0x0093  */
-    /* JADX WARN: Removed duplicated region for block: B:45:0x00a2  */
-    /* JADX WARN: Removed duplicated region for block: B:46:0x00a8  */
     @Override // android.view.View
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-        To view partially-correct add '--show-bad-code' argument
-    */
-    public void onMeasure(int r14, int r15) {
-        /*
-            Method dump skipped, instructions count: 244
-            To view this dump add '--comments-level debug' option
-        */
-        throw new UnsupportedOperationException("Method not decompiled: androidx.viewpager.widget.ViewPager.onMeasure(int, int):void");
+    public void onMeasure(int i, int i2) {
+        LayoutParams layoutParams;
+        LayoutParams layoutParams2;
+        int i3;
+        setMeasuredDimension(ViewGroup.getDefaultSize(0, i), ViewGroup.getDefaultSize(0, i2));
+        int measuredWidth = getMeasuredWidth();
+        this.mGutterSize = Math.min(measuredWidth / 10, this.mDefaultGutterSize);
+        int paddingLeft = (measuredWidth - getPaddingLeft()) - getPaddingRight();
+        int measuredHeight = (getMeasuredHeight() - getPaddingTop()) - getPaddingBottom();
+        int childCount = getChildCount();
+        int i4 = 0;
+        while (true) {
+            boolean z = true;
+            int i5 = 1073741824;
+            if (i4 >= childCount) {
+                break;
+            }
+            View childAt = getChildAt(i4);
+            if (childAt.getVisibility() != 8 && (layoutParams2 = (LayoutParams) childAt.getLayoutParams()) != null && layoutParams2.isDecor) {
+                int i6 = layoutParams2.gravity;
+                int i7 = i6 & 7;
+                int i8 = i6 & 112;
+                boolean z2 = i8 == 48 || i8 == 80;
+                if (i7 != 3 && i7 != 5) {
+                    z = false;
+                }
+                int i9 = Integer.MIN_VALUE;
+                if (z2) {
+                    i3 = Integer.MIN_VALUE;
+                    i9 = 1073741824;
+                } else {
+                    i3 = z ? 1073741824 : Integer.MIN_VALUE;
+                }
+                int i10 = ((ViewGroup.LayoutParams) layoutParams2).width;
+                if (i10 != -2) {
+                    if (i10 == -1) {
+                        i10 = paddingLeft;
+                    }
+                    i9 = 1073741824;
+                } else {
+                    i10 = paddingLeft;
+                }
+                int i11 = ((ViewGroup.LayoutParams) layoutParams2).height;
+                if (i11 == -2) {
+                    i11 = measuredHeight;
+                    i5 = i3;
+                } else if (i11 == -1) {
+                    i11 = measuredHeight;
+                }
+                childAt.measure(View.MeasureSpec.makeMeasureSpec(i10, i9), View.MeasureSpec.makeMeasureSpec(i11, i5));
+                if (z2) {
+                    measuredHeight -= childAt.getMeasuredHeight();
+                } else if (z) {
+                    paddingLeft -= childAt.getMeasuredWidth();
+                }
+            }
+            i4++;
+        }
+        this.mChildWidthMeasureSpec = View.MeasureSpec.makeMeasureSpec(paddingLeft, 1073741824);
+        this.mChildHeightMeasureSpec = View.MeasureSpec.makeMeasureSpec(measuredHeight, 1073741824);
+        this.mInLayout = true;
+        populate();
+        this.mInLayout = false;
+        int childCount2 = getChildCount();
+        for (int i12 = 0; i12 < childCount2; i12++) {
+            View childAt2 = getChildAt(i12);
+            if (childAt2.getVisibility() != 8 && ((layoutParams = (LayoutParams) childAt2.getLayoutParams()) == null || !layoutParams.isDecor)) {
+                childAt2.measure(View.MeasureSpec.makeMeasureSpec((int) (paddingLeft * layoutParams.widthFactor), 1073741824), this.mChildHeightMeasureSpec);
+            }
+        }
     }
 
     @Override // android.view.View
@@ -1040,7 +1094,7 @@ public class ViewPager extends ViewGroup {
     */
     protected void onLayout(boolean r19, int r20, int r21, int r22, int r23) {
         /*
-            Method dump skipped, instructions count: 286
+            Method dump skipped, instructions count: 284
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: androidx.viewpager.widget.ViewPager.onLayout(boolean, int, int, int, int):void");
@@ -1111,7 +1165,7 @@ public class ViewPager extends ViewGroup {
             int r4 = r12.getPaddingRight()
             int r5 = r12.getWidth()
             int r6 = r12.getChildCount()
-            r7 = 0
+            r7 = r1
         L1b:
             if (r7 >= r6) goto L6b
             android.view.View r8 = r12.getChildAt(r7)
@@ -1533,35 +1587,35 @@ public class ViewPager extends ViewGroup {
         int i;
         int clientWidth = getClientWidth();
         float f = BitmapDescriptorFactory.HUE_RED;
-        float scrollX = clientWidth > 0 ? getScrollX() / clientWidth : BitmapDescriptorFactory.HUE_RED;
-        float f2 = clientWidth > 0 ? this.mPageMargin / clientWidth : BitmapDescriptorFactory.HUE_RED;
+        float scrollX = clientWidth > 0 ? getScrollX() / clientWidth : 0.0f;
+        float f2 = clientWidth > 0 ? this.mPageMargin / clientWidth : 0.0f;
         ItemInfo itemInfo = null;
-        float f3 = BitmapDescriptorFactory.HUE_RED;
-        int i2 = -1;
-        int i3 = 0;
+        int i2 = 0;
+        int i3 = -1;
         boolean z = true;
-        while (i3 < this.mItems.size()) {
-            ItemInfo itemInfo2 = this.mItems.get(i3);
-            if (!z && itemInfo2.position != (i = i2 + 1)) {
+        float f3 = 0.0f;
+        while (i2 < this.mItems.size()) {
+            ItemInfo itemInfo2 = this.mItems.get(i2);
+            if (!z && itemInfo2.position != (i = i3 + 1)) {
                 itemInfo2 = this.mTempItem;
                 itemInfo2.offset = f + f3 + f2;
                 itemInfo2.position = i;
                 itemInfo2.widthFactor = this.mAdapter.getPageWidth(i);
-                i3--;
+                i2--;
             }
             f = itemInfo2.offset;
             float f4 = itemInfo2.widthFactor + f + f2;
             if (!z && scrollX < f) {
                 return itemInfo;
             }
-            if (scrollX < f4 || i3 == this.mItems.size() - 1) {
+            if (scrollX < f4 || i2 == this.mItems.size() - 1) {
                 return itemInfo2;
             }
-            i2 = itemInfo2.position;
+            i3 = itemInfo2.position;
             f3 = itemInfo2.widthFactor;
-            i3++;
-            itemInfo = itemInfo2;
+            i2++;
             z = false;
+            itemInfo = itemInfo2;
         }
         return itemInfo;
     }
@@ -1856,13 +1910,13 @@ public class ViewPager extends ViewGroup {
             boolean r5 = r4 instanceof android.view.ViewGroup
             if (r5 == 0) goto L1e
             if (r4 != r6) goto L19
-            r4 = 1
+            r4 = r1
             goto L1f
         L19:
             android.view.ViewParent r4 = r4.getParent()
             goto L11
         L1e:
-            r4 = 0
+            r4 = r2
         L1f:
             if (r4 != 0) goto L69
             java.lang.StringBuilder r4 = new java.lang.StringBuilder

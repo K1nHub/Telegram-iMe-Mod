@@ -76,17 +76,17 @@
 .end method
 
 .method private areDurationsCompatible(JJ)Z
-    .locals 3
+    .locals 2
 
     const-wide v0, -0x7fffffffffffffffL    # -4.9E-324
 
-    cmp-long v2, p1, v0
+    cmp-long v0, p1, v0
 
-    if-eqz v2, :cond_1
+    if-eqz v0, :cond_1
 
-    cmp-long v0, p1, p3
+    cmp-long p1, p1, p3
 
-    if-nez v0, :cond_0
+    if-nez p1, :cond_0
 
     goto :goto_0
 
@@ -104,16 +104,16 @@
 .end method
 
 .method private canKeepMediaPeriodHolder(Lcom/google/android/exoplayer2/MediaPeriodInfo;Lcom/google/android/exoplayer2/MediaPeriodInfo;)Z
-    .locals 5
+    .locals 4
 
     .line 601
     iget-wide v0, p1, Lcom/google/android/exoplayer2/MediaPeriodInfo;->startPositionUs:J
 
     iget-wide v2, p2, Lcom/google/android/exoplayer2/MediaPeriodInfo;->startPositionUs:J
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-nez v4, :cond_0
+    if-nez v0, :cond_0
 
     iget-object p1, p1, Lcom/google/android/exoplayer2/MediaPeriodInfo;->id:Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;
 
@@ -369,9 +369,9 @@
     .line 736
     iget-wide v0, v11, Lcom/google/android/exoplayer2/MediaPeriodInfo;->requestedContentPositionUs:J
 
-    cmp-long v3, v0, v15
+    cmp-long v0, v0, v15
 
-    if-eqz v3, :cond_6
+    if-eqz v0, :cond_6
 
     .line 738
     iget-object v0, v11, Lcom/google/android/exoplayer2/MediaPeriodInfo;->id:Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;
@@ -457,7 +457,7 @@
     return-object v0
 
     :cond_7
-    const/4 v0, -0x1
+    move v0, v13
 
     const-wide/16 v12, 0x0
 
@@ -644,7 +644,7 @@
 
     if-ne v0, v1, :cond_d
 
-    const/4 v12, 0x1
+    move v12, v14
 
     goto :goto_5
 
@@ -974,6 +974,8 @@
 
     if-eqz v9, :cond_1
 
+    move v9, v6
+
     goto :goto_0
 
     .line 903
@@ -997,9 +999,9 @@
 
     iget-wide v12, v11, Lcom/google/android/exoplayer2/Timeline$Period;->durationUs:J
 
-    cmp-long v14, v9, v12
+    cmp-long v9, v9, v12
 
-    if-nez v14, :cond_1
+    if-nez v9, :cond_1
 
     .line 905
     invoke-virtual {v11, v5}, Lcom/google/android/exoplayer2/Timeline$Period;->hasPlayedAdGroup(I)Z
@@ -1008,18 +1010,17 @@
 
     if-eqz v9, :cond_1
 
-    const/4 v5, -0x1
+    move v9, v6
 
-    :goto_0
-    const/4 v9, 0x1
+    move v5, v7
 
-    goto :goto_1
+    goto :goto_0
 
     :cond_1
-    const/4 v9, 0x0
+    move v9, v8
 
     .line 911
-    :goto_1
+    :goto_0
     new-instance v11, Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;
 
     move-wide/from16 v12, p7
@@ -1053,14 +1054,14 @@
 
     if-eqz v1, :cond_2
 
-    const/16 v20, 0x1
+    move/from16 v20, v6
 
-    goto :goto_2
+    goto :goto_1
 
     :cond_2
-    const/16 v20, 0x0
+    move/from16 v20, v8
 
-    :goto_2
+    :goto_1
     const-wide v12, -0x7fffffffffffffffL    # -4.9E-324
 
     if-eq v5, v7, :cond_3
@@ -1072,10 +1073,10 @@
 
     move-result-wide v14
 
-    :goto_3
+    :goto_2
     move-wide/from16 v16, v14
 
-    goto :goto_4
+    goto :goto_3
 
     :cond_3
     if-eqz v9, :cond_4
@@ -1085,12 +1086,12 @@
 
     iget-wide v14, v1, Lcom/google/android/exoplayer2/Timeline$Period;->durationUs:J
 
-    goto :goto_3
+    goto :goto_2
 
     :cond_4
     move-wide/from16 v16, v12
 
-    :goto_4
+    :goto_3
     cmp-long v1, v16, v12
 
     if-eqz v1, :cond_6
@@ -1101,23 +1102,23 @@
 
     if-nez v1, :cond_5
 
-    goto :goto_5
+    goto :goto_4
 
     :cond_5
     move-wide/from16 v18, v16
 
-    goto :goto_6
+    goto :goto_5
 
     .line 923
     :cond_6
-    :goto_5
+    :goto_4
     iget-object v1, v0, Lcom/google/android/exoplayer2/MediaPeriodQueue;->period:Lcom/google/android/exoplayer2/Timeline$Period;
 
     iget-wide v14, v1, Lcom/google/android/exoplayer2/Timeline$Period;->durationUs:J
 
     move-wide/from16 v18, v14
 
-    :goto_6
+    :goto_5
     cmp-long v1, v18, v12
 
     if-eqz v1, :cond_9
@@ -1130,13 +1131,13 @@
 
     if-nez v9, :cond_7
 
-    goto :goto_7
+    goto :goto_6
 
     :cond_7
-    const/4 v6, 0x0
+    move v6, v8
 
     :cond_8
-    :goto_7
+    :goto_6
     const-wide/16 v3, 0x0
 
     int-to-long v5, v6
@@ -1166,7 +1167,7 @@
 .end method
 
 .method private getMinStartPositionAfterAdGroupUs(Lcom/google/android/exoplayer2/Timeline;Ljava/lang/Object;I)J
-    .locals 3
+    .locals 2
 
     .line 966
     iget-object v0, p0, Lcom/google/android/exoplayer2/MediaPeriodQueue;->period:Lcom/google/android/exoplayer2/Timeline$Period;
@@ -1182,9 +1183,9 @@
 
     const-wide/high16 v0, -0x8000000000000000L
 
-    cmp-long v2, p1, v0
+    cmp-long v0, p1, v0
 
-    if-nez v2, :cond_0
+    if-nez v0, :cond_0
 
     .line 969
     iget-object p1, p0, Lcom/google/android/exoplayer2/MediaPeriodQueue;->period:Lcom/google/android/exoplayer2/Timeline$Period;
@@ -1436,58 +1437,58 @@
     :goto_0
     iget-wide v3, p7, Lcom/google/android/exoplayer2/Timeline$Period;->durationUs:J
 
-    const/4 p1, -0x1
-
     const-wide/16 v5, 0x0
 
-    cmp-long v1, v3, v5
+    cmp-long p1, v3, v5
 
-    if-nez v1, :cond_0
+    const/4 v1, -0x1
+
+    if-nez p1, :cond_0
 
     .line 478
     invoke-virtual {p7}, Lcom/google/android/exoplayer2/Timeline$Period;->getAdGroupCount()I
 
-    move-result v1
+    move-result p1
 
-    if-lez v1, :cond_0
+    if-lez p1, :cond_0
 
     .line 479
     invoke-virtual {p7}, Lcom/google/android/exoplayer2/Timeline$Period;->getRemovedAdGroupCount()I
 
-    move-result v1
+    move-result p1
 
-    invoke-virtual {p7, v1}, Lcom/google/android/exoplayer2/Timeline$Period;->isServerSideInsertedAdGroup(I)Z
+    invoke-virtual {p7, p1}, Lcom/google/android/exoplayer2/Timeline$Period;->isServerSideInsertedAdGroup(I)Z
 
-    move-result v1
+    move-result p1
 
-    if-eqz v1, :cond_0
+    if-eqz p1, :cond_0
 
     .line 480
     invoke-virtual {p7, v5, v6}, Lcom/google/android/exoplayer2/Timeline$Period;->getAdGroupIndexForPositionUs(J)I
 
-    move-result v1
+    move-result p1
 
-    if-ne v1, p1, :cond_0
+    if-ne p1, v1, :cond_0
 
-    add-int/lit8 v1, v0, 0x1
+    add-int/lit8 p1, v0, 0x1
 
     iget v3, p6, Lcom/google/android/exoplayer2/Timeline$Window;->lastPeriodIndex:I
 
     if-ge v0, v3, :cond_0
 
-    const/4 p1, 0x1
+    const/4 v0, 0x1
 
     .line 482
-    invoke-virtual {p0, v1, p7, p1}, Lcom/google/android/exoplayer2/Timeline;->getPeriod(ILcom/google/android/exoplayer2/Timeline$Period;Z)Lcom/google/android/exoplayer2/Timeline$Period;
+    invoke-virtual {p0, p1, p7, v0}, Lcom/google/android/exoplayer2/Timeline;->getPeriod(ILcom/google/android/exoplayer2/Timeline$Period;Z)Lcom/google/android/exoplayer2/Timeline$Period;
 
     .line 483
-    iget-object p1, p7, Lcom/google/android/exoplayer2/Timeline$Period;->uid:Ljava/lang/Object;
+    iget-object v0, p7, Lcom/google/android/exoplayer2/Timeline$Period;->uid:Ljava/lang/Object;
 
-    invoke-static {p1}, Lcom/google/android/exoplayer2/util/Assertions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {v0}, Lcom/google/android/exoplayer2/util/Assertions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v2
 
-    move v0, v1
+    move v0, p1
 
     goto :goto_0
 
@@ -1500,7 +1501,7 @@
 
     move-result v3
 
-    if-ne v3, p1, :cond_1
+    if-ne v3, v1, :cond_1
 
     .line 488
     invoke-virtual {p7, p2, p3}, Lcom/google/android/exoplayer2/Timeline$Period;->getAdGroupIndexAfterPositionUs(J)I
@@ -2268,9 +2269,10 @@
 
     move-result v1
 
+    :goto_5
     move v11, v1
 
-    goto :goto_5
+    goto :goto_6
 
     .line 422
     :cond_5
@@ -2289,17 +2291,15 @@
 
     const/4 v1, 0x1
 
-    const/4 v11, 0x1
-
     goto :goto_5
 
     :cond_6
     const/4 v1, 0x0
 
-    const/4 v11, 0x0
+    goto :goto_5
 
     .line 424
-    :goto_5
+    :goto_6
     new-instance v15, Lcom/google/android/exoplayer2/MediaPeriodInfo;
 
     iget-wide v4, v2, Lcom/google/android/exoplayer2/MediaPeriodInfo;->startPositionUs:J
@@ -2368,12 +2368,12 @@
 
     if-eqz p1, :cond_0
 
-    const/4 v2, 0x1
+    move v2, v0
 
     goto :goto_0
 
     :cond_0
-    const/4 v2, 0x0
+    move v2, v1
 
     .line 283
     :goto_0
@@ -2417,7 +2417,7 @@
 
     iput-object v1, p0, Lcom/google/android/exoplayer2/MediaPeriodQueue;->reading:Lcom/google/android/exoplayer2/MediaPeriodHolder;
 
-    const/4 v1, 0x1
+    move v1, v0
 
     .line 295
     :cond_2
@@ -2501,7 +2501,7 @@
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_0
     iget-object v3, p0, Lcom/google/android/exoplayer2/MediaPeriodQueue;->window:Lcom/google/android/exoplayer2/Timeline$Window;
@@ -2529,7 +2529,7 @@
     goto :goto_1
 
     :cond_0
-    const/4 v6, 0x0
+    move v6, v1
 
     :goto_1
     or-int/2addr v2, v6
@@ -2600,7 +2600,7 @@
 .end method
 
 .method public shouldLoadNextMediaPeriod()Z
-    .locals 5
+    .locals 4
 
     .line 144
     iget-object v0, p0, Lcom/google/android/exoplayer2/MediaPeriodQueue;->loading:Lcom/google/android/exoplayer2/MediaPeriodHolder;
@@ -2628,9 +2628,9 @@
 
     const-wide v2, -0x7fffffffffffffffL    # -4.9E-324
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-eqz v4, :cond_0
+    if-eqz v0, :cond_0
 
     iget v0, p0, Lcom/google/android/exoplayer2/MediaPeriodQueue;->length:I
 
@@ -2779,17 +2779,17 @@
 
     if-eqz p3, :cond_4
 
-    cmp-long p3, p4, p1
+    cmp-long p1, p4, p1
 
-    if-ltz p3, :cond_5
+    if-ltz p1, :cond_5
 
     :cond_4
-    const/4 p1, 0x1
+    move p1, v2
 
     goto :goto_3
 
     :cond_5
-    const/4 p1, 0x0
+    move p1, v1
 
     .line 384
     :goto_3
@@ -2804,7 +2804,7 @@
     goto :goto_4
 
     :cond_6
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_4
     return v2

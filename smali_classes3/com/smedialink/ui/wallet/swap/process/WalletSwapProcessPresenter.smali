@@ -891,7 +891,7 @@
 
     move-result-object v3
 
-    invoke-virtual {v2}, Lcom/smedialink/storage/domain/model/crypto/swap/CryptoTokenApproveMetadata$NeedApprove;->getTransactionParams()Lcom/smedialink/storage/domain/model/crypto/TransactionParams;
+    invoke-virtual {v2}, Lcom/smedialink/storage/domain/model/crypto/swap/CryptoTokenApproveMetadata$NeedApprove;->getTransactionParams()Lcom/smedialink/storage/domain/model/crypto/TransactionParams$Ether;
 
     move-result-object v2
 
@@ -1011,7 +1011,7 @@
 
     invoke-static {v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;)V
 
-    invoke-virtual {v0}, Lcom/smedialink/storage/domain/model/crypto/swap/CryptoTokenApproveMetadata$NeedApprove;->getTransactionParams()Lcom/smedialink/storage/domain/model/crypto/TransactionParams;
+    invoke-virtual {v0}, Lcom/smedialink/storage/domain/model/crypto/swap/CryptoTokenApproveMetadata$NeedApprove;->getTransactionParams()Lcom/smedialink/storage/domain/model/crypto/TransactionParams$Ether;
 
     move-result-object v2
 
@@ -1761,7 +1761,7 @@
     if-ne v0, v1, :cond_3
 
     :goto_0
-    const/4 v1, 0x1
+    move v1, v2
 
     goto :goto_1
 
@@ -1773,7 +1773,7 @@
     goto :goto_0
 
     :cond_4
-    const/4 v1, 0x0
+    move v1, v3
 
     :goto_1
     if-eqz v1, :cond_5
@@ -1827,7 +1827,7 @@
     goto :goto_2
 
     :cond_7
-    const/4 v2, 0x0
+    move v2, v3
 
     :goto_2
     if-eqz v2, :cond_8
@@ -1921,7 +1921,7 @@
     goto :goto_0
 
     :cond_0
-    const/4 v2, 0x0
+    move v2, v3
 
     goto :goto_0
 
@@ -2004,7 +2004,7 @@
     if-eqz v4, :cond_1
 
     :cond_0
-    const/4 v0, 0x0
+    move v0, v2
 
     goto :goto_1
 
@@ -2056,17 +2056,17 @@
 
     if-eqz v4, :cond_2
 
-    const/4 v0, 0x1
+    move v0, v1
 
     :goto_1
     if-ne v0, v1, :cond_4
 
-    const/4 v0, 0x1
+    move v0, v1
 
     goto :goto_2
 
     :cond_4
-    const/4 v0, 0x0
+    move v0, v2
 
     :goto_2
     if-eqz v0, :cond_5
@@ -2074,7 +2074,7 @@
     goto :goto_3
 
     :cond_5
-    const/4 v1, 0x0
+    move v1, v2
 
     :goto_3
     return v1
@@ -2218,12 +2218,12 @@
 
     if-nez v0, :cond_3
 
-    const/4 v0, 0x1
+    move v0, v2
 
     goto :goto_0
 
     :cond_3
-    const/4 v0, 0x0
+    move v0, v1
 
     :goto_0
     if-nez v0, :cond_a
@@ -2240,12 +2240,12 @@
 
     if-ne v0, v2, :cond_4
 
-    const/4 v0, 0x1
+    move v0, v2
 
     goto :goto_1
 
     :cond_4
-    const/4 v0, 0x0
+    move v0, v1
 
     :goto_1
     if-eqz v0, :cond_5
@@ -2276,7 +2276,7 @@
 
     invoke-interface {p1}, Lcom/smedialink/ui/wallet/swap/process/WalletSwapProcessView;->showNotEnoughMoneyBinanceErrorDialog()V
 
-    goto :goto_4
+    goto/16 :goto_4
 
     .line 876
     :cond_6
@@ -2346,12 +2346,12 @@
 
     if-ne p1, v2, :cond_8
 
-    const/4 p1, 0x1
+    move p1, v2
 
     goto :goto_2
 
     :cond_8
-    const/4 p1, 0x0
+    move p1, v1
 
     :goto_2
     if-eqz p1, :cond_9
@@ -2379,7 +2379,7 @@
     goto :goto_4
 
     :cond_9
-    const/4 p1, 0x1
+    move p1, v2
 
     goto :goto_5
 
@@ -2404,7 +2404,7 @@
 
     :cond_b
     :goto_4
-    const/4 p1, 0x0
+    move p1, v1
 
     .line 886
     :goto_5
@@ -2416,7 +2416,7 @@
 
     if-eqz p1, :cond_c
 
-    const/4 v1, 0x1
+    move v1, v2
 
     :cond_c
     return v1
@@ -3848,11 +3848,11 @@
     invoke-direct {v9, v1}, Ljava/math/BigInteger;-><init>(Ljava/lang/String;)V
 
     .line 785
-    invoke-virtual {v6}, Lcom/smedialink/storage/domain/model/crypto/swap/CryptoTokenApproveMetadata$NeedApprove;->getTransactionParams()Lcom/smedialink/storage/domain/model/crypto/TransactionParams;
+    invoke-virtual {v6}, Lcom/smedialink/storage/domain/model/crypto/swap/CryptoTokenApproveMetadata$NeedApprove;->getTransactionParams()Lcom/smedialink/storage/domain/model/crypto/TransactionParams$Ether;
 
     move-result-object v1
 
-    invoke-virtual {v1}, Lcom/smedialink/storage/domain/model/crypto/TransactionParams;->getChain()Lcom/smedialink/storage/domain/model/crypto/Chain;
+    invoke-virtual {v1}, Lcom/smedialink/storage/domain/model/crypto/TransactionParams$Ether;->getChain()Lcom/smedialink/storage/domain/model/crypto/Chain;
 
     move-result-object v1
 
@@ -3861,11 +3861,11 @@
     move-result-wide v11
 
     .line 786
-    invoke-virtual {v6}, Lcom/smedialink/storage/domain/model/crypto/swap/CryptoTokenApproveMetadata$NeedApprove;->getTransactionParams()Lcom/smedialink/storage/domain/model/crypto/TransactionParams;
+    invoke-virtual {v6}, Lcom/smedialink/storage/domain/model/crypto/swap/CryptoTokenApproveMetadata$NeedApprove;->getTransactionParams()Lcom/smedialink/storage/domain/model/crypto/TransactionParams$Ether;
 
     move-result-object v1
 
-    invoke-virtual {v1}, Lcom/smedialink/storage/domain/model/crypto/TransactionParams;->getNonce()Ljava/math/BigInteger;
+    invoke-virtual {v1}, Lcom/smedialink/storage/domain/model/crypto/TransactionParams$Ether;->getNonce()Ljava/math/BigInteger;
 
     move-result-object v13
 
@@ -4122,12 +4122,12 @@
 
     if-ne v5, v6, :cond_2
 
-    const/4 v5, 0x1
+    move v5, v2
 
     goto :goto_0
 
     :cond_2
-    const/4 v5, 0x0
+    move v5, v3
 
     :goto_0
     if-eqz v5, :cond_1
@@ -4185,12 +4185,12 @@
 
     if-eq v5, v6, :cond_6
 
-    const/4 v5, 0x1
+    move v5, v2
 
     goto :goto_2
 
     :cond_6
-    const/4 v5, 0x0
+    move v5, v3
 
     :goto_2
     if-eqz v5, :cond_5
@@ -4331,11 +4331,11 @@
 
     invoke-static {v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;)V
 
-    invoke-virtual {v1}, Lcom/smedialink/storage/domain/model/crypto/swap/CryptoSwapMetadata;->getTransactionParams()Lcom/smedialink/storage/domain/model/crypto/TransactionParams;
+    invoke-virtual {v1}, Lcom/smedialink/storage/domain/model/crypto/swap/CryptoSwapMetadata;->getTransactionParams()Lcom/smedialink/storage/domain/model/crypto/TransactionParams$Ether;
 
     move-result-object v1
 
-    invoke-virtual {v1}, Lcom/smedialink/storage/domain/model/crypto/TransactionParams;->getChain()Lcom/smedialink/storage/domain/model/crypto/Chain;
+    invoke-virtual {v1}, Lcom/smedialink/storage/domain/model/crypto/TransactionParams$Ether;->getChain()Lcom/smedialink/storage/domain/model/crypto/Chain;
 
     move-result-object v1
 
@@ -4348,11 +4348,11 @@
 
     invoke-static {v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;)V
 
-    invoke-virtual {v1}, Lcom/smedialink/storage/domain/model/crypto/swap/CryptoSwapMetadata;->getTransactionParams()Lcom/smedialink/storage/domain/model/crypto/TransactionParams;
+    invoke-virtual {v1}, Lcom/smedialink/storage/domain/model/crypto/swap/CryptoSwapMetadata;->getTransactionParams()Lcom/smedialink/storage/domain/model/crypto/TransactionParams$Ether;
 
     move-result-object v1
 
-    invoke-virtual {v1}, Lcom/smedialink/storage/domain/model/crypto/TransactionParams;->getNonce()Ljava/math/BigInteger;
+    invoke-virtual {v1}, Lcom/smedialink/storage/domain/model/crypto/TransactionParams$Ether;->getNonce()Ljava/math/BigInteger;
 
     move-result-object v12
 
@@ -4929,7 +4929,7 @@
     if-eqz v0, :cond_1
 
     :cond_0
-    const/4 p1, 0x0
+    move p1, v2
 
     goto :goto_0
 
@@ -4957,7 +4957,7 @@
 
     if-eqz v0, :cond_2
 
-    const/4 p1, 0x1
+    move p1, v1
 
     :goto_0
     if-eqz p1, :cond_3
@@ -6512,14 +6512,14 @@
 
     if-ne p1, v1, :cond_13
 
-    const/4 v8, 0x1
+    move v8, v5
 
     goto :goto_8
 
     :cond_13
     const/4 v1, 0x0
 
-    const/4 v8, 0x0
+    move v8, v1
 
     .line 272
     :goto_8

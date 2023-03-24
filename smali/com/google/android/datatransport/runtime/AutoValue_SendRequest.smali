@@ -174,7 +174,7 @@
     goto :goto_0
 
     :cond_1
-    const/4 v0, 0x0
+    move v0, v2
 
     :goto_0
     return v0
@@ -256,7 +256,7 @@
 
     xor-int/2addr v0, v1
 
-    mul-int v0, v0, v1
+    mul-int/2addr v0, v1
 
     .line 93
     iget-object v2, p0, Lcom/google/android/datatransport/runtime/AutoValue_SendRequest;->transportName:Ljava/lang/String;
@@ -267,7 +267,7 @@
 
     xor-int/2addr v0, v2
 
-    mul-int v0, v0, v1
+    mul-int/2addr v0, v1
 
     .line 95
     iget-object v2, p0, Lcom/google/android/datatransport/runtime/AutoValue_SendRequest;->event:Lcom/google/android/datatransport/Event;
@@ -278,7 +278,7 @@
 
     xor-int/2addr v0, v2
 
-    mul-int v0, v0, v1
+    mul-int/2addr v0, v1
 
     .line 97
     iget-object v2, p0, Lcom/google/android/datatransport/runtime/AutoValue_SendRequest;->transformer:Lcom/google/android/datatransport/Transformer;
@@ -289,7 +289,7 @@
 
     xor-int/2addr v0, v2
 
-    mul-int v0, v0, v1
+    mul-int/2addr v0, v1
 
     .line 99
     iget-object v1, p0, Lcom/google/android/datatransport/runtime/AutoValue_SendRequest;->encoding:Lcom/google/android/datatransport/Encoding;

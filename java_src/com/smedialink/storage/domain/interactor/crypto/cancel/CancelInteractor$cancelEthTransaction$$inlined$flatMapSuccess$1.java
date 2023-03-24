@@ -66,7 +66,7 @@ public final class CancelInteractor$cancelEthTransaction$$inlined$flatMapSuccess
         String address = eVMWallet != null ? eVMWallet.getAddress() : null;
         Observable<Result<String>> cancel = cancelRepository.cancel(new CancelArgs.Ethereum(cancelTokenBySourceTxToken, str, new TransferArgs.EVM(parseDouble, unit, address == null ? "" : address, id, nonce, price, limit, null, 128, null)));
         schedulersProvider = this.this$0.schedulersProvider;
-        Observable<Result<String>> subscribeOn = cancel.subscribeOn(schedulersProvider.mo708io());
+        Observable<Result<String>> subscribeOn = cancel.subscribeOn(schedulersProvider.mo707io());
         Intrinsics.checkNotNullExpressionValue(subscribeOn, "cancelRepository\n       …(schedulersProvider.io())");
         return subscribeOn;
     }

@@ -286,32 +286,32 @@ final class zzds<T> implements zzef<T> {
         }
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:124:0x022f, code lost:
-        if (r29.zzfe != 0) goto L137;
+    /* JADX WARN: Code restructure failed: missing block: B:124:0x0233, code lost:
+        if (r29.zzfe != 0) goto L141;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:125:0x0231, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:125:0x0235, code lost:
         r6 = true;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:126:0x0233, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:126:0x0237, code lost:
         r6 = false;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:127:0x0234, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:127:0x0238, code lost:
         r12.addBoolean(r6);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:128:0x0237, code lost:
-        if (r4 >= r19) goto L250;
+    /* JADX WARN: Code restructure failed: missing block: B:128:0x023b, code lost:
+        if (r4 >= r19) goto L254;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:129:0x0239, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:129:0x023d, code lost:
         r6 = com.google.android.gms.internal.clearcut.zzax.zza(r17, r4, r29);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:130:0x023f, code lost:
-        if (r20 != r29.zzfd) goto L250;
+    /* JADX WARN: Code restructure failed: missing block: B:130:0x0243, code lost:
+        if (r20 != r29.zzfd) goto L254;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:131:0x0241, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:131:0x0245, code lost:
         r4 = com.google.android.gms.internal.clearcut.zzax.zzb(r17, r6, r29);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:132:0x0249, code lost:
-        if (r29.zzfe == 0) goto L144;
+    /* JADX WARN: Code restructure failed: missing block: B:132:0x024d, code lost:
+        if (r29.zzfe == 0) goto L148;
      */
     /* JADX WARN: Code restructure failed: missing block: B:242:?, code lost:
         return r1;
@@ -345,23 +345,25 @@ final class zzds<T> implements zzef<T> {
     /* JADX WARN: Code restructure failed: missing block: B:70:0x0157, code lost:
         if (r4 != 0) goto L82;
      */
+    /* JADX WARN: Removed duplicated region for block: B:245:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:247:? A[RETURN, SYNTHETIC] */
     /* JADX WARN: Removed duplicated region for block: B:83:0x019a  */
-    /* JADX WARN: Removed duplicated region for block: B:97:0x01d0  */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:100:0x01de -> B:91:0x01b7). Please submit an issue!!! */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:126:0x0233 -> B:127:0x0234). Please submit an issue!!! */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:132:0x0249 -> B:125:0x0231). Please submit an issue!!! */
+    /* JADX WARN: Removed duplicated region for block: B:97:0x01d4  */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:100:0x01e2 -> B:91:0x01bb). Please submit an issue!!! */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:126:0x0237 -> B:127:0x0238). Please submit an issue!!! */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:132:0x024d -> B:125:0x0235). Please submit an issue!!! */
     /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:65:0x013f -> B:66:0x0147). Please submit an issue!!! */
     /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:70:0x0157 -> B:64:0x0139). Please submit an issue!!! */
     /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:81:0x0194 -> B:82:0x0198). Please submit an issue!!! */
     /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:86:0x01a8 -> B:79:0x0189). Please submit an issue!!! */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:95:0x01ca -> B:96:0x01ce). Please submit an issue!!! */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:95:0x01ce -> B:96:0x01d2). Please submit an issue!!! */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct add '--show-bad-code' argument
     */
     private final int zza(T r16, byte[] r17, int r18, int r19, int r20, int r21, int r22, int r23, long r24, int r26, long r27, com.google.android.gms.internal.clearcut.zzay r29) throws java.io.IOException {
         /*
-            Method dump skipped, instructions count: 990
+            Method dump skipped, instructions count: 994
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: com.google.android.gms.internal.clearcut.zzds.zza(java.lang.Object, byte[], int, int, int, int, int, int, long, int, long, com.google.android.gms.internal.clearcut.zzay):int");
@@ -418,14 +420,14 @@ final class zzds<T> implements zzef<T> {
         throw zzco.zzbo();
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:133:0x0370 A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:133:0x0372 A[ADDED_TO_REGION] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct add '--show-bad-code' argument
     */
     private final int zza(T r27, byte[] r28, int r29, int r30, int r31, com.google.android.gms.internal.clearcut.zzay r32) throws java.io.IOException {
         /*
-            Method dump skipped, instructions count: 1070
+            Method dump skipped, instructions count: 1072
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: com.google.android.gms.internal.clearcut.zzds.zza(java.lang.Object, byte[], int, int, int, com.google.android.gms.internal.clearcut.zzay):int");
@@ -539,13 +541,13 @@ final class zzds<T> implements zzef<T> {
                 if (zzcx >= zzecVar.zzcv() || i5 >= ((zzcx - i) << 2)) {
                     if (zzco.zzda()) {
                         zza = (int) zzfd.zza(zzco.zzdb());
-                        i4 = (int) zzfd.zza(zzco.zzdc());
-                        i3 = 0;
+                        i3 = (int) zzfd.zza(zzco.zzdc());
+                        i4 = 0;
                     } else {
                         zza = (int) zzfd.zza(zzco.zzdd());
                         if (zzco.zzde()) {
-                            i4 = (int) zzfd.zza(zzco.zzdf());
-                            i3 = zzco.zzdg();
+                            i3 = (int) zzfd.zza(zzco.zzdf());
+                            i4 = zzco.zzdg();
                         } else {
                             i3 = 0;
                             i4 = 0;
@@ -554,7 +556,7 @@ final class zzds<T> implements zzef<T> {
                     iArr[i5] = zzco.zzcx();
                     int i8 = i5 + 1;
                     iArr[i8] = (zzco.zzdi() ? 536870912 : 0) | (zzco.zzdh() ? 268435456 : 0) | (zzco.zzcy() << 20) | zza;
-                    iArr[i5 + 2] = (i3 << 20) | i4;
+                    iArr[i5 + 2] = i3 | (i4 << 20);
                     if (zzco.zzdl() != null) {
                         int i9 = (i5 / 4) << 1;
                         objArr[i9] = zzco.zzdl();
@@ -1341,49 +1343,49 @@ final class zzds<T> implements zzef<T> {
     /* JADX WARN: Code restructure failed: missing block: B:375:0x05fe, code lost:
         r9 = (com.google.android.gms.internal.clearcut.zzbn.zzr(r15) + com.google.android.gms.internal.clearcut.zzbn.zzt(r4)) + r4;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:393:0x06b4, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:395:0x06c4, code lost:
         if ((r12 & r18) != 0) goto L266;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:394:0x06b6, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:396:0x06c6, code lost:
         r4 = com.google.android.gms.internal.clearcut.zzbn.zzc(r15, (com.google.android.gms.internal.clearcut.zzdo) r2.getObject(r20, r10), zzad(r5));
      */
-    /* JADX WARN: Code restructure failed: missing block: B:404:0x06e1, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:406:0x06f1, code lost:
         if ((r12 & r18) != 0) goto L278;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:405:0x06e3, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:407:0x06f3, code lost:
         r4 = com.google.android.gms.internal.clearcut.zzbn.zzh(r15, 0L);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:407:0x06ec, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:409:0x06fc, code lost:
         if ((r12 & r18) != 0) goto L281;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:408:0x06ee, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:410:0x06fe, code lost:
         r9 = com.google.android.gms.internal.clearcut.zzbn.zzk(r15, 0);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:419:0x0711, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:421:0x0721, code lost:
         if ((r12 & r18) != 0) goto L293;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:420:0x0713, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:422:0x0723, code lost:
         r4 = r2.getObject(r20, r10);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:421:0x0717, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:423:0x0727, code lost:
         r4 = com.google.android.gms.internal.clearcut.zzbn.zzc(r15, (com.google.android.gms.internal.clearcut.zzbb) r4);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:423:0x0720, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:425:0x0730, code lost:
         if ((r12 & r18) != 0) goto L297;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:424:0x0722, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:426:0x0732, code lost:
         r4 = com.google.android.gms.internal.clearcut.zzeh.zzc(r15, r2.getObject(r20, r10), zzad(r5));
      */
-    /* JADX WARN: Code restructure failed: missing block: B:428:0x073a, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:430:0x074a, code lost:
         if ((r4 instanceof com.google.android.gms.internal.clearcut.zzbb) != false) goto L294;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:430:0x073d, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:432:0x074d, code lost:
         r4 = com.google.android.gms.internal.clearcut.zzbn.zzb(r15, (java.lang.String) r4);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:432:0x0747, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:434:0x0757, code lost:
         if ((r12 & r18) != 0) goto L305;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:433:0x0749, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:435:0x0759, code lost:
         r4 = com.google.android.gms.internal.clearcut.zzbn.zzc(r15, true);
      */
     /* JADX WARN: Code restructure failed: missing block: B:45:0x00ab, code lost:
@@ -1411,7 +1413,7 @@ final class zzds<T> implements zzef<T> {
     */
     public final int zzm(T r20) {
         /*
-            Method dump skipped, instructions count: 2290
+            Method dump skipped, instructions count: 2306
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: com.google.android.gms.internal.clearcut.zzds.zzm(java.lang.Object):int");

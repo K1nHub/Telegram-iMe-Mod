@@ -85,9 +85,9 @@
 
     const-wide/16 v5, 0x0
 
-    cmp-long v7, v3, v5
+    cmp-long v5, v3, v5
 
-    if-eqz v7, :cond_0
+    if-eqz v5, :cond_0
 
     goto :goto_0
 
@@ -148,9 +148,9 @@
     goto :goto_5
 
     :cond_2
-    cmp-long v8, v1, v3
+    cmp-long v1, v1, v3
 
-    if-lez v8, :cond_5
+    if-lez v1, :cond_5
 
     invoke-interface {v0}, Lj$/util/s;->trySplit()Lj$/util/s;
 

@@ -64,12 +64,12 @@
 
     if-eqz v3, :cond_0
 
-    const/4 v6, 0x5
+    move v6, v4
 
     goto :goto_0
 
     :cond_0
-    const/4 v6, 0x3
+    move v6, v5
 
     :goto_0
     or-int/lit8 v9, v6, 0x30
@@ -80,24 +80,24 @@
 
     if-eqz v3, :cond_1
 
-    const/4 v10, 0x0
+    move v10, v14
 
     goto :goto_1
 
     :cond_1
-    const/16 v10, 0xb
+    move v10, v6
 
     :goto_1
     const/16 v11, 0xb
 
     if-eqz v3, :cond_2
 
-    const/16 v12, 0xb
+    move v12, v6
 
     goto :goto_2
 
     :cond_2
-    const/4 v12, 0x0
+    move v12, v14
 
     :goto_2
     const/4 v13, 0x0
@@ -153,12 +153,12 @@
 
     if-eqz v3, :cond_3
 
-    const/4 v3, 0x5
+    move v3, v4
 
     goto :goto_3
 
     :cond_3
-    const/4 v3, 0x3
+    move v3, v5
 
     :goto_3
     or-int/lit8 v3, v3, 0x30
@@ -176,12 +176,12 @@
 
     if-eqz v3, :cond_4
 
-    const/4 v8, 0x5
+    move v8, v4
 
     goto :goto_4
 
     :cond_4
-    const/4 v8, 0x3
+    move v8, v5
 
     :goto_4
     or-int/lit8 v8, v8, 0x30
@@ -192,24 +192,24 @@
 
     if-eqz v3, :cond_5
 
-    const/16 v9, 0x1c
+    move v9, v13
 
     goto :goto_5
 
     :cond_5
-    const/16 v9, 0x48
+    move v9, v15
 
     :goto_5
     const/16 v10, 0xe
 
     if-eqz v3, :cond_6
 
-    const/16 v11, 0x48
+    move v11, v15
 
     goto :goto_6
 
     :cond_6
-    const/16 v11, 0x1c
+    move v11, v13
 
     :goto_6
     const/4 v12, 0x0
@@ -239,12 +239,12 @@
 
     if-eqz v3, :cond_7
 
-    const/4 v3, 0x5
+    move v3, v4
 
     goto :goto_7
 
     :cond_7
-    const/4 v3, 0x3
+    move v3, v5
 
     :goto_7
     or-int/lit8 v3, v3, 0x30
@@ -262,36 +262,36 @@
 
     if-eqz v3, :cond_8
 
-    const/4 v8, 0x5
+    move v8, v4
 
     goto :goto_8
 
     :cond_8
-    const/4 v8, 0x3
+    move v8, v5
 
     :goto_8
     or-int/lit8 v8, v8, 0x30
 
     if-eqz v3, :cond_9
 
-    const/16 v9, 0x1c
+    move v9, v13
 
     goto :goto_9
 
     :cond_9
-    const/16 v9, 0x48
+    move v9, v15
 
     :goto_9
     const/16 v10, 0x27
 
     if-eqz v3, :cond_a
 
-    const/16 v11, 0x48
+    move v11, v15
 
     goto :goto_a
 
     :cond_a
-    const/16 v11, 0x1c
+    move v11, v13
 
     :goto_a
     const/4 v12, 0x0
@@ -346,21 +346,21 @@
     goto :goto_b
 
     :cond_b
-    const/4 v4, 0x3
+    move v4, v5
 
     :goto_b
     or-int/lit8 v8, v4, 0x30
 
     if-eqz v2, :cond_c
 
-    const/4 v9, 0x0
+    move v9, v14
 
     goto :goto_c
 
     :cond_c
     const/16 v3, 0x28
 
-    const/16 v9, 0x28
+    move v9, v3
 
     :goto_c
     const/16 v10, 0x28
@@ -369,14 +369,9 @@
 
     const/16 v14, 0x27
 
-    const/16 v11, 0x27
-
-    goto :goto_d
-
     :cond_d
-    const/4 v11, 0x0
+    move v11, v14
 
-    :goto_d
     const/4 v12, 0x0
 
     invoke-static/range {v6 .. v12}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(IIIIIII)Landroid/widget/FrameLayout$LayoutParams;

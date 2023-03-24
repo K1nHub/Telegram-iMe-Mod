@@ -27,23 +27,23 @@
 
     const/4 v1, 0x0
 
-    const/4 v3, 0x0
+    move v3, v1
 
-    const/4 v4, 0x0
+    move v4, v3
 
-    const/4 v5, 0x0
+    move v5, v4
 
-    const/4 v6, 0x0
+    move v6, v5
 
-    const/4 v7, 0x0
+    move v7, v6
 
-    const/4 v8, 0x0
+    move v8, v7
 
-    const/4 v9, 0x0
+    move v9, v8
 
-    const/4 v10, 0x0
+    move v10, v9
 
-    const/4 v11, 0x0
+    move v11, v10
 
     .line 2
     :goto_0

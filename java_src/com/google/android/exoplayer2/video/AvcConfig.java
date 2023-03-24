@@ -16,9 +16,9 @@ public final class AvcConfig {
     public final int width;
 
     public static AvcConfig parse(ParsableByteArray parsableByteArray) throws ParserException {
+        float f;
         String str;
         int i;
-        float f;
         try {
             parsableByteArray.skipBytes(4);
             int readUnsignedByte = (parsableByteArray.readUnsignedByte() & 3) + 1;
@@ -45,9 +45,9 @@ public final class AvcConfig {
                 i = i6;
                 f = f2;
             } else {
+                f = 1.0f;
                 str = null;
                 i = -1;
-                f = 1.0f;
             }
             return new AvcConfig(arrayList, readUnsignedByte, i4, i, f, str);
         } catch (ArrayIndexOutOfBoundsException e) {

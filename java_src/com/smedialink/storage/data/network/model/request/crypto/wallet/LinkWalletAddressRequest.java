@@ -5,12 +5,11 @@ import kotlin.jvm.internal.Intrinsics;
 /* compiled from: LinkWalletAddressRequest.kt */
 /* loaded from: classes3.dex */
 public final class LinkWalletAddressRequest {
-    private final String blockchainPlatform;
     private final NetworkType networkType;
     private final String walletAddress;
     private final String walletPublicKey;
 
-    public static /* synthetic */ LinkWalletAddressRequest copy$default(LinkWalletAddressRequest linkWalletAddressRequest, String str, NetworkType networkType, String str2, String str3, int i, Object obj) {
+    public static /* synthetic */ LinkWalletAddressRequest copy$default(LinkWalletAddressRequest linkWalletAddressRequest, String str, NetworkType networkType, String str2, int i, Object obj) {
         if ((i & 1) != 0) {
             str = linkWalletAddressRequest.walletAddress;
         }
@@ -18,12 +17,9 @@ public final class LinkWalletAddressRequest {
             networkType = linkWalletAddressRequest.networkType;
         }
         if ((i & 4) != 0) {
-            str2 = linkWalletAddressRequest.blockchainPlatform;
+            str2 = linkWalletAddressRequest.walletPublicKey;
         }
-        if ((i & 8) != 0) {
-            str3 = linkWalletAddressRequest.walletPublicKey;
-        }
-        return linkWalletAddressRequest.copy(str, networkType, str2, str3);
+        return linkWalletAddressRequest.copy(str, networkType, str2);
     }
 
     public final String component1() {
@@ -35,18 +31,13 @@ public final class LinkWalletAddressRequest {
     }
 
     public final String component3() {
-        return this.blockchainPlatform;
-    }
-
-    public final String component4() {
         return this.walletPublicKey;
     }
 
-    public final LinkWalletAddressRequest copy(String walletAddress, NetworkType networkType, String blockchainPlatform, String str) {
+    public final LinkWalletAddressRequest copy(String walletAddress, NetworkType networkType, String str) {
         Intrinsics.checkNotNullParameter(walletAddress, "walletAddress");
         Intrinsics.checkNotNullParameter(networkType, "networkType");
-        Intrinsics.checkNotNullParameter(blockchainPlatform, "blockchainPlatform");
-        return new LinkWalletAddressRequest(walletAddress, networkType, blockchainPlatform, str);
+        return new LinkWalletAddressRequest(walletAddress, networkType, str);
     }
 
     public boolean equals(Object obj) {
@@ -55,28 +46,26 @@ public final class LinkWalletAddressRequest {
         }
         if (obj instanceof LinkWalletAddressRequest) {
             LinkWalletAddressRequest linkWalletAddressRequest = (LinkWalletAddressRequest) obj;
-            return Intrinsics.areEqual(this.walletAddress, linkWalletAddressRequest.walletAddress) && this.networkType == linkWalletAddressRequest.networkType && Intrinsics.areEqual(this.blockchainPlatform, linkWalletAddressRequest.blockchainPlatform) && Intrinsics.areEqual(this.walletPublicKey, linkWalletAddressRequest.walletPublicKey);
+            return Intrinsics.areEqual(this.walletAddress, linkWalletAddressRequest.walletAddress) && this.networkType == linkWalletAddressRequest.networkType && Intrinsics.areEqual(this.walletPublicKey, linkWalletAddressRequest.walletPublicKey);
         }
         return false;
     }
 
     public int hashCode() {
-        int hashCode = ((((this.walletAddress.hashCode() * 31) + this.networkType.hashCode()) * 31) + this.blockchainPlatform.hashCode()) * 31;
+        int hashCode = ((this.walletAddress.hashCode() * 31) + this.networkType.hashCode()) * 31;
         String str = this.walletPublicKey;
         return hashCode + (str == null ? 0 : str.hashCode());
     }
 
     public String toString() {
-        return "LinkWalletAddressRequest(walletAddress=" + this.walletAddress + ", networkType=" + this.networkType + ", blockchainPlatform=" + this.blockchainPlatform + ", walletPublicKey=" + this.walletPublicKey + ')';
+        return "LinkWalletAddressRequest(walletAddress=" + this.walletAddress + ", networkType=" + this.networkType + ", walletPublicKey=" + this.walletPublicKey + ')';
     }
 
-    public LinkWalletAddressRequest(String walletAddress, NetworkType networkType, String blockchainPlatform, String str) {
+    public LinkWalletAddressRequest(String walletAddress, NetworkType networkType, String str) {
         Intrinsics.checkNotNullParameter(walletAddress, "walletAddress");
         Intrinsics.checkNotNullParameter(networkType, "networkType");
-        Intrinsics.checkNotNullParameter(blockchainPlatform, "blockchainPlatform");
         this.walletAddress = walletAddress;
         this.networkType = networkType;
-        this.blockchainPlatform = blockchainPlatform;
         this.walletPublicKey = str;
     }
 
@@ -86,10 +75,6 @@ public final class LinkWalletAddressRequest {
 
     public final NetworkType getNetworkType() {
         return this.networkType;
-    }
-
-    public final String getBlockchainPlatform() {
-        return this.blockchainPlatform;
     }
 
     public final String getWalletPublicKey() {

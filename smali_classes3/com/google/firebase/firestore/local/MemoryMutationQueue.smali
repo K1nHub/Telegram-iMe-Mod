@@ -129,12 +129,12 @@
 
     if-ge p1, v2, :cond_0
 
-    const/4 v2, 0x1
+    move v2, v0
 
     goto :goto_0
 
     :cond_0
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_0
     new-array v0, v0, [Ljava/lang/Object;
@@ -229,12 +229,12 @@
 
     if-nez v0, :cond_0
 
-    const/4 v3, 0x1
+    move v3, v1
 
     goto :goto_0
 
     :cond_0
-    const/4 v3, 0x0
+    move v3, v2
 
     :goto_0
     new-array v4, v2, [Ljava/lang/Object;
@@ -260,12 +260,12 @@
 
     if-ne p1, v3, :cond_1
 
-    const/4 v3, 0x1
+    move v3, v1
 
     goto :goto_1
 
     :cond_1
-    const/4 v3, 0x0
+    move v3, v2
 
     :goto_1
     const/4 v4, 0x2
@@ -451,7 +451,7 @@
     goto :goto_1
 
     :cond_1
-    const/4 v4, 0x0
+    move v4, v1
 
     :goto_1
     new-array v5, v1, [Ljava/lang/Object;
@@ -853,7 +853,7 @@
     goto :goto_0
 
     :cond_1
-    const/4 p1, 0x0
+    move p1, v2
 
     :goto_0
     new-array v1, v2, [Ljava/lang/Object;
@@ -927,7 +927,7 @@
     goto :goto_0
 
     :cond_0
-    const/4 v0, 0x0
+    move v0, v1
 
     :goto_0
     new-array v2, v1, [Ljava/lang/Object;

@@ -71,7 +71,7 @@ public final class DashDownloader extends SegmentDownloader<DashManifest> {
             r9 = r33
             r10 = r34
             r0 = 0
-            r11 = 0
+            r11 = r0
         La:
             java.util.List<com.google.android.exoplayer2.source.dash.manifest.Representation> r0 = r8.representations
             int r0 = r0.size()
@@ -86,8 +86,8 @@ public final class DashDownloader extends SegmentDownloader<DashManifest> {
             r14 = r31
             long r16 = r13.getSegmentCount(r14)
             r1 = -1
-            int r3 = (r16 > r1 ? 1 : (r16 == r1 ? 0 : -1))
-            if (r3 == 0) goto L9a
+            int r1 = (r16 > r1 ? 1 : (r16 == r1 ? 0 : -1))
+            if (r1 == 0) goto L9a
             com.google.android.exoplayer2.source.dash.BaseUrlExclusionList r1 = r7.baseUrlExclusionList
             com.google.common.collect.ImmutableList<com.google.android.exoplayer2.source.dash.manifest.BaseUrl> r2 = r0.baseUrls
             com.google.android.exoplayer2.source.dash.manifest.BaseUrl r1 = r1.selectBaseUrl(r2)

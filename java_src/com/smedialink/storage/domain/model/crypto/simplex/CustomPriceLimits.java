@@ -77,7 +77,7 @@ public final class CustomPriceLimits {
     }
 
     public /* synthetic */ CustomPriceLimits(float f, float f2, float f3, float f4, int i, DefaultConstructorMarker defaultConstructorMarker) {
-        this((i & 1) != 0 ? BitmapDescriptorFactory.HUE_RED : f, (i & 2) != 0 ? BitmapDescriptorFactory.HUE_RED : f2, (i & 4) != 0 ? BitmapDescriptorFactory.HUE_RED : f3, (i & 8) != 0 ? BitmapDescriptorFactory.HUE_RED : f4);
+        this((i & 1) != 0 ? 0.0f : f, (i & 2) != 0 ? 0.0f : f2, (i & 4) != 0 ? 0.0f : f3, (i & 8) != 0 ? 0.0f : f4);
     }
 
     public final float getMinFiatAmount() {

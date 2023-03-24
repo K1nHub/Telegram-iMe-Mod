@@ -1384,11 +1384,11 @@
 
     const v9, 0x3f828f5c    # 1.02f
 
-    mul-float v8, v8, v9
+    mul-float/2addr v8, v9
 
     sub-float/2addr v8, v7
 
-    mul-float v8, v8, v2
+    mul-float/2addr v8, v2
 
     add-float/2addr v7, v8
 
@@ -1400,7 +1400,7 @@
 
     const v9, 0x3ca3d700    # 0.01999998f
 
-    mul-float v9, v9, v8
+    mul-float/2addr v9, v8
 
     sub-float/2addr v2, v7
 
@@ -1410,11 +1410,11 @@
 
     sub-float v2, v6, v2
 
-    mul-float v9, v9, v2
+    mul-float/2addr v9, v2
 
     add-float v7, v8, v9
 
-    const/high16 v2, 0x3f800000    # 1.0f
+    move v2, v6
 
     .line 1012
     :goto_0
@@ -1424,7 +1424,7 @@
 
     sub-float/2addr v9, v8
 
-    mul-float v9, v9, v2
+    mul-float/2addr v9, v2
 
     add-float/2addr v8, v9
 
@@ -1435,7 +1435,7 @@
 
     sub-float/2addr v10, v9
 
-    mul-float v10, v10, v2
+    mul-float/2addr v10, v2
 
     add-float/2addr v9, v10
 
@@ -1446,7 +1446,7 @@
 
     sub-float/2addr v11, v10
 
-    mul-float v11, v11, v2
+    mul-float/2addr v11, v2
 
     add-float/2addr v10, v11
 
@@ -1457,7 +1457,7 @@
 
     sub-float/2addr v12, v11
 
-    mul-float v12, v12, v2
+    mul-float/2addr v12, v2
 
     add-float/2addr v11, v12
 
@@ -1468,7 +1468,7 @@
 
     sub-float/2addr v13, v12
 
-    mul-float v13, v13, v2
+    mul-float/2addr v13, v2
 
     add-float/2addr v12, v13
 
@@ -1479,7 +1479,7 @@
 
     sub-float/2addr v14, v13
 
-    mul-float v14, v14, v2
+    mul-float/2addr v14, v2
 
     add-float/2addr v13, v14
 
@@ -1490,7 +1490,7 @@
 
     sub-float/2addr v15, v14
 
-    mul-float v15, v15, v2
+    mul-float/2addr v15, v2
 
     add-float/2addr v14, v15
 
@@ -1506,7 +1506,7 @@
 
     iget v8, v0, Lorg/telegram/ui/SecretMediaViewer;->animationValue:F
 
-    mul-float v7, v7, v8
+    mul-float/2addr v7, v8
 
     add-float/2addr v7, v2
 
@@ -1517,7 +1517,7 @@
 
     sub-float/2addr v9, v2
 
-    mul-float v9, v9, v8
+    mul-float/2addr v9, v8
 
     add-float/2addr v2, v9
 
@@ -1528,7 +1528,7 @@
 
     sub-float/2addr v10, v9
 
-    mul-float v10, v10, v8
+    mul-float/2addr v10, v8
 
     add-float/2addr v9, v10
 
@@ -1539,7 +1539,7 @@
 
     sub-float/2addr v11, v10
 
-    mul-float v11, v11, v8
+    mul-float/2addr v11, v8
 
     add-float/2addr v10, v11
 
@@ -1550,7 +1550,7 @@
 
     sub-float/2addr v12, v11
 
-    mul-float v12, v12, v8
+    mul-float/2addr v12, v8
 
     add-float/2addr v11, v12
 
@@ -1561,7 +1561,7 @@
 
     sub-float/2addr v13, v12
 
-    mul-float v13, v13, v8
+    mul-float/2addr v13, v8
 
     add-float/2addr v12, v13
 
@@ -1572,7 +1572,7 @@
 
     sub-float/2addr v14, v13
 
-    mul-float v14, v14, v8
+    mul-float/2addr v14, v8
 
     add-float/2addr v13, v14
 
@@ -1583,7 +1583,7 @@
 
     sub-float/2addr v15, v14
 
-    mul-float v15, v15, v8
+    mul-float/2addr v15, v8
 
     add-float/2addr v14, v15
 
@@ -1977,7 +1977,7 @@
 
     sub-float v2, v3, v2
 
-    mul-float v2, v2, v15
+    mul-float/2addr v2, v15
 
     invoke-static {v6, v2}, Ljava/lang/Math;->max(FF)F
 
@@ -2028,7 +2028,7 @@
 
     const v5, 0x3e99999a    # 0.3f
 
-    mul-float v5, v5, v3
+    mul-float/2addr v5, v3
 
     sub-float v3, v2, v3
 
@@ -2038,9 +2038,9 @@
     goto :goto_7
 
     :cond_11
-    const/high16 v3, 0x3f800000    # 1.0f
+    move v5, v4
 
-    const/4 v5, 0x0
+    const/high16 v3, 0x3f800000    # 1.0f
 
     .line 1107
     :goto_7
@@ -2192,11 +2192,11 @@
 
     move-result v6
 
-    mul-float v2, v2, v6
+    mul-float/2addr v2, v6
 
     float-to-int v2, v2
 
-    mul-float v5, v5, v6
+    mul-float/2addr v5, v6
 
     float-to-int v5, v5
 
@@ -2347,7 +2347,7 @@
 
     iget v4, v0, Lorg/telegram/ui/SecretMediaViewer;->videoCrossfadeAlpha:F
 
-    mul-float v3, v3, v4
+    mul-float/2addr v3, v4
 
     invoke-virtual {v2, v3}, Landroid/view/TextureView;->setAlpha(F)V
 
@@ -2741,7 +2741,7 @@
 
     iget v0, p0, Lorg/telegram/ui/SecretMediaViewer;->pinchStartScale:F
 
-    mul-float p1, p1, v0
+    mul-float/2addr p1, v0
 
     iput p1, p0, Lorg/telegram/ui/SecretMediaViewer;->scale:F
 
@@ -2780,7 +2780,7 @@
 
     div-float/2addr v2, v3
 
-    mul-float v0, v0, v2
+    mul-float/2addr v0, v2
 
     sub-float/2addr p1, v0
 
@@ -2821,7 +2821,7 @@
 
     div-float v3, v2, v3
 
-    mul-float v0, v0, v3
+    mul-float/2addr v0, v3
 
     sub-float/2addr p1, v0
 
@@ -3069,9 +3069,9 @@
     .line 1491
     iput-boolean v1, p0, Lorg/telegram/ui/SecretMediaViewer;->canDragDown:Z
 
-    const/4 v0, 0x0
+    move v0, v10
 
-    const/4 v3, 0x0
+    move v3, v0
 
     .line 1494
     :cond_c
@@ -3308,7 +3308,7 @@
 
     div-float v3, v8, v3
 
-    mul-float v0, v0, v3
+    mul-float/2addr v0, v3
 
     sub-float/2addr p1, v0
 
@@ -3345,7 +3345,7 @@
 
     div-float v4, v8, v4
 
-    mul-float v3, v3, v4
+    mul-float/2addr v3, v4
 
     sub-float/2addr v0, v3
 
@@ -3857,7 +3857,7 @@
     goto :goto_0
 
     :cond_1
-    const/4 v1, 0x0
+    move v1, v2
 
     :goto_0
     aput v1, v5, v0
@@ -3913,7 +3913,7 @@
     goto :goto_1
 
     :cond_4
-    const/4 v1, 0x0
+    move v1, v2
 
     :goto_1
     invoke-virtual {p2, v1}, Landroid/widget/FrameLayout;->setAlpha(F)V
@@ -3942,7 +3942,7 @@
 
     move-result v0
 
-    mul-float v0, v0, p1
+    mul-float/2addr v0, p1
 
     invoke-direct {p0}, Lorg/telegram/ui/SecretMediaViewer;->getContainerViewWidth()I
 
@@ -3963,7 +3963,7 @@
 
     move-result v1
 
-    mul-float v1, v1, p1
+    mul-float/2addr v1, p1
 
     invoke-direct {p0}, Lorg/telegram/ui/SecretMediaViewer;->getContainerViewHeight()I
 
@@ -4263,7 +4263,7 @@
     goto :goto_2
 
     :cond_6
-    const/16 v16, 0x0
+    move/from16 v16, v2
 
     :goto_2
     add-int v14, v14, v16
@@ -4371,7 +4371,7 @@
 
     if-lt v3, v10, :cond_7
 
-    const/4 v14, 0x0
+    move v14, v2
 
     goto :goto_3
 
@@ -4441,7 +4441,7 @@
 
     if-lt v3, v10, :cond_8
 
-    const/4 v3, 0x0
+    move v3, v2
 
     goto :goto_4
 
@@ -4529,7 +4529,7 @@
     goto :goto_5
 
     :cond_a
-    const/4 v5, 0x0
+    move v5, v2
 
     :goto_5
     add-int/2addr v3, v5
@@ -5060,7 +5060,7 @@
 .end method
 
 .method public varargs didReceivedNotification(II[Ljava/lang/Object;)V
-    .locals 8
+    .locals 7
 
     .line 356
     sget p2, Lorg/telegram/messenger/NotificationCenter;->messagesDeleted:I
@@ -5106,9 +5106,9 @@
 
     const-wide/16 v2, 0x0
 
-    cmp-long v4, p1, v2
+    cmp-long p1, p1, v2
 
-    if-eqz v4, :cond_2
+    if-eqz p1, :cond_2
 
     return-void
 
@@ -5192,9 +5192,9 @@
     .line 383
     iget-wide v2, p0, Lorg/telegram/ui/SecretMediaViewer;->currentDialogId:J
 
-    cmp-long v4, p1, v2
+    cmp-long p1, p1, v2
 
-    if-eqz v4, :cond_6
+    if-eqz p1, :cond_6
 
     return-void
 
@@ -5204,7 +5204,7 @@
 
     check-cast p1, Landroid/util/SparseArray;
 
-    const/4 p2, 0x0
+    move p2, v0
 
     .line 387
     :goto_0
@@ -5226,7 +5226,7 @@
 
     check-cast v1, Ljava/util/ArrayList;
 
-    const/4 v2, 0x0
+    move v2, v0
 
     .line 390
     :goto_1
@@ -5258,9 +5258,9 @@
 
     int-to-long v5, v5
 
-    cmp-long v7, v5, v3
+    cmp-long v3, v5, v3
 
-    if-nez v7, :cond_7
+    if-nez v3, :cond_7
 
     .line 393
     iget-object p1, p0, Lorg/telegram/ui/SecretMediaViewer;->currentMessageObject:Lorg/telegram/messenger/MessageObject;
@@ -5445,51 +5445,51 @@
     .line 1686
     iget v0, p0, Lorg/telegram/ui/SecretMediaViewer;->scale:F
 
-    const/4 v1, 0x0
+    const/high16 v1, 0x3f800000    # 1.0f
 
-    const/high16 v2, 0x3f800000    # 1.0f
+    cmpl-float v2, v0, v1
 
     const/4 v3, 0x0
 
-    cmpl-float v4, v0, v2
+    const/4 v4, 0x0
 
-    if-nez v4, :cond_1
+    if-nez v2, :cond_1
 
-    iget v4, p0, Lorg/telegram/ui/SecretMediaViewer;->translationY:F
+    iget v2, p0, Lorg/telegram/ui/SecretMediaViewer;->translationY:F
 
-    cmpl-float v4, v4, v3
+    cmpl-float v2, v2, v4
 
-    if-nez v4, :cond_0
+    if-nez v2, :cond_0
 
-    iget v4, p0, Lorg/telegram/ui/SecretMediaViewer;->translationX:F
+    iget v2, p0, Lorg/telegram/ui/SecretMediaViewer;->translationX:F
 
-    cmpl-float v4, v4, v3
+    cmpl-float v2, v2, v4
 
-    if-eqz v4, :cond_1
+    if-eqz v2, :cond_1
 
     :cond_0
-    return v1
+    return v3
 
     .line 1689
     :cond_1
-    iget-wide v4, p0, Lorg/telegram/ui/SecretMediaViewer;->animationStartTime:J
+    iget-wide v5, p0, Lorg/telegram/ui/SecretMediaViewer;->animationStartTime:J
 
-    const-wide/16 v6, 0x0
+    const-wide/16 v7, 0x0
 
-    cmp-long v8, v4, v6
+    cmp-long v2, v5, v7
 
-    if-nez v8, :cond_8
+    if-nez v2, :cond_8
 
-    iget v4, p0, Lorg/telegram/ui/SecretMediaViewer;->photoAnimationInProgress:I
+    iget v2, p0, Lorg/telegram/ui/SecretMediaViewer;->photoAnimationInProgress:I
 
-    if-eqz v4, :cond_2
+    if-eqz v2, :cond_2
 
     goto/16 :goto_5
 
     :cond_2
-    const/4 v1, 0x1
+    cmpl-float v0, v0, v1
 
-    cmpl-float v0, v0, v2
+    const/4 v2, 0x1
 
     if-nez v0, :cond_7
 
@@ -5500,17 +5500,17 @@
 
     invoke-direct {p0}, Lorg/telegram/ui/SecretMediaViewer;->getContainerViewWidth()I
 
-    move-result v2
+    move-result v1
 
-    div-int/lit8 v2, v2, 0x2
+    div-int/lit8 v1, v1, 0x2
 
-    int-to-float v2, v2
+    int-to-float v1, v1
 
-    sub-float/2addr v0, v2
+    sub-float/2addr v0, v1
 
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
 
-    move-result v2
+    move-result v1
 
     invoke-direct {p0}, Lorg/telegram/ui/SecretMediaViewer;->getContainerViewWidth()I
 
@@ -5520,11 +5520,11 @@
 
     int-to-float v3, v3
 
-    sub-float/2addr v2, v3
+    sub-float/2addr v1, v3
 
     iget v3, p0, Lorg/telegram/ui/SecretMediaViewer;->translationX:F
 
-    sub-float/2addr v2, v3
+    sub-float/2addr v1, v3
 
     iget v3, p0, Lorg/telegram/ui/SecretMediaViewer;->scale:F
 
@@ -5532,14 +5532,14 @@
 
     div-float v3, v4, v3
 
-    mul-float v2, v2, v3
+    mul-float/2addr v1, v3
 
-    sub-float/2addr v0, v2
+    sub-float/2addr v0, v1
 
     .line 1694
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getY()F
 
-    move-result v2
+    move-result v1
 
     invoke-direct {p0}, Lorg/telegram/ui/SecretMediaViewer;->getContainerViewHeight()I
 
@@ -5549,7 +5549,7 @@
 
     int-to-float v3, v3
 
-    sub-float/2addr v2, v3
+    sub-float/2addr v1, v3
 
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getY()F
 
@@ -5573,9 +5573,9 @@
 
     div-float v3, v4, v3
 
-    mul-float p1, p1, v3
+    mul-float/2addr p1, v3
 
-    sub-float/2addr v2, p1
+    sub-float/2addr v1, p1
 
     .line 1695
     invoke-direct {p0, v4}, Lorg/telegram/ui/SecretMediaViewer;->updateMinMax(F)V
@@ -5607,12 +5607,12 @@
     :goto_1
     iget p1, p0, Lorg/telegram/ui/SecretMediaViewer;->minY:F
 
-    cmpg-float v3, v2, p1
+    cmpg-float v3, v1, p1
 
     if-gez v3, :cond_5
 
     :goto_2
-    move v2, p1
+    move v1, p1
 
     goto :goto_3
 
@@ -5620,7 +5620,7 @@
     :cond_5
     iget p1, p0, Lorg/telegram/ui/SecretMediaViewer;->maxY:F
 
-    cmpl-float v3, v2, p1
+    cmpl-float v3, v1, p1
 
     if-lez v3, :cond_6
 
@@ -5629,21 +5629,23 @@
     .line 1706
     :cond_6
     :goto_3
-    invoke-direct {p0, v4, v0, v2, v1}, Lorg/telegram/ui/SecretMediaViewer;->animateTo(FFFZ)V
+    invoke-direct {p0, v4, v0, v1, v2}, Lorg/telegram/ui/SecretMediaViewer;->animateTo(FFFZ)V
 
     goto :goto_4
 
     .line 1708
     :cond_7
-    invoke-direct {p0, v2, v3, v3, v1}, Lorg/telegram/ui/SecretMediaViewer;->animateTo(FFFZ)V
+    invoke-direct {p0, v1, v4, v4, v2}, Lorg/telegram/ui/SecretMediaViewer;->animateTo(FFFZ)V
 
     .line 1710
     :goto_4
-    iput-boolean v1, p0, Lorg/telegram/ui/SecretMediaViewer;->doubleTap:Z
+    iput-boolean v2, p0, Lorg/telegram/ui/SecretMediaViewer;->doubleTap:Z
+
+    return v2
 
     :cond_8
     :goto_5
-    return v1
+    return v3
 .end method
 
 .method public onDoubleTapEvent(Landroid/view/MotionEvent;)Z
@@ -5988,7 +5990,7 @@
     goto :goto_0
 
     :cond_3
-    const/4 v9, 0x0
+    move v9, v13
 
     :goto_0
     add-int/2addr v7, v9
@@ -6470,11 +6472,11 @@
 
     const/4 v9, 0x2
 
-    const/4 v12, 0x2
+    move v12, v9
 
     move-object/from16 v9, p1
 
-    const/16 v12, 0x15
+    move v12, v10
 
     const/16 v16, 0x4
 
@@ -6508,7 +6510,7 @@
     goto/16 :goto_9
 
     :cond_b
-    const/16 v12, 0x15
+    move v12, v10
 
     const/16 v16, 0x4
 
@@ -6679,22 +6681,20 @@
 
     mul-long v4, v4, v17
 
-    cmp-long v6, v4, v2
+    cmp-long v2, v4, v2
 
-    if-lez v6, :cond_f
+    if-lez v2, :cond_f
 
     .line 828
-    iget-object v0, v1, Lorg/telegram/ui/SecretMediaViewer;->secretDeleteTimer:Lorg/telegram/ui/SecretMediaViewer$SecretDeleteTimer;
+    iget-object v3, v1, Lorg/telegram/ui/SecretMediaViewer;->secretDeleteTimer:Lorg/telegram/ui/SecretMediaViewer$SecretDeleteTimer;
 
-    const-wide/16 v20, -0x1
+    const-wide/16 v4, -0x1
 
-    const-wide/16 v22, -0x1
+    const-wide/16 v6, -0x1
 
-    const/16 v24, 0x1
+    const/4 v8, 0x1
 
-    move-object/from16 v19, v0
-
-    invoke-static/range {v19 .. v24}, Lorg/telegram/ui/SecretMediaViewer$SecretDeleteTimer;->access$2700(Lorg/telegram/ui/SecretMediaViewer$SecretDeleteTimer;JJZ)V
+    invoke-static/range {v3 .. v8}, Lorg/telegram/ui/SecretMediaViewer$SecretDeleteTimer;->access$2700(Lorg/telegram/ui/SecretMediaViewer$SecretDeleteTimer;JJZ)V
 
     goto/16 :goto_9
 
@@ -6708,20 +6708,24 @@
 
     int-to-long v3, v3
 
-    mul-long v3, v3, v17
+    mul-long v18, v3, v17
 
     iget v0, v0, Lorg/telegram/tgnet/TLRPC$Message;->ttl:I
 
-    int-to-long v5, v0
+    int-to-long v3, v0
 
-    const/4 v7, 0x0
+    const/16 v22, 0x0
 
-    invoke-static/range {v2 .. v7}, Lorg/telegram/ui/SecretMediaViewer$SecretDeleteTimer;->access$2700(Lorg/telegram/ui/SecretMediaViewer$SecretDeleteTimer;JJZ)V
+    move-object/from16 v17, v2
+
+    move-wide/from16 v20, v3
+
+    invoke-static/range {v17 .. v22}, Lorg/telegram/ui/SecretMediaViewer$SecretDeleteTimer;->access$2700(Lorg/telegram/ui/SecretMediaViewer$SecretDeleteTimer;JJZ)V
 
     goto :goto_9
 
     :cond_10
-    const/16 v12, 0x15
+    move v12, v10
 
     const/16 v16, 0x4
 
@@ -7100,6 +7104,8 @@
     :goto_b
     return-void
 
+    nop
+
     :array_0
     .array-data 4
         0x0
@@ -7320,12 +7326,12 @@
 
     if-lt v0, v4, :cond_2
 
-    const/4 v6, 0x1
+    move v6, v1
 
     goto :goto_0
 
     :cond_2
-    const/4 v6, 0x0
+    move v6, v2
 
     :goto_0
     invoke-virtual {v5, v6}, Lorg/telegram/ui/ActionBar/ActionBar;->setOccupyStatusBar(Z)V

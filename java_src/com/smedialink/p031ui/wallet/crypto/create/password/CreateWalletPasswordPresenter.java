@@ -11,7 +11,7 @@ import io.reactivex.disposables.Disposable;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import moxy.InjectViewState;
-import org.telegram.messenger.C3286R;
+import org.telegram.messenger.C3301R;
 /* compiled from: CreateWalletPasswordPresenter.kt */
 @InjectViewState
 /* renamed from: com.smedialink.ui.wallet.crypto.create.password.CreateWalletPasswordPresenter */
@@ -41,7 +41,7 @@ public final class CreateWalletPasswordPresenter extends BasePresenter<CreateWal
             return true;
         }
         CreateWalletPasswordView createWalletPasswordView = (CreateWalletPasswordView) getViewState();
-        createWalletPasswordView.showToast(this.resourceManager.getString(C3286R.string.wallet_create_eth_password_validation_length_error));
+        createWalletPasswordView.showToast(this.resourceManager.getString(C3301R.string.wallet_create_eth_password_validation_length_error));
         createWalletPasswordView.onCodeErrorShake();
         return false;
     }
@@ -58,16 +58,16 @@ public final class CreateWalletPasswordPresenter extends BasePresenter<CreateWal
             createWalletPasswordView.onPasswordMatch(this.password);
             return;
         }
-        createWalletPasswordView.showToast(this.resourceManager.getString(C3286R.string.wallet_confirm_eth_password_validation_not_match_error));
+        createWalletPasswordView.showToast(this.resourceManager.getString(C3301R.string.wallet_confirm_eth_password_validation_not_match_error));
         createWalletPasswordView.onCodeErrorShake();
     }
 
     public final void subscribeOnRxEvents(Runnable onEventAction) {
         Intrinsics.checkNotNullParameter(onEventAction, "onEventAction");
         RxEventBus rxEventBus = this.rxEventBus;
-        Observable observeOn = rxEventBus.getPublisher().ofType(DomainRxEvents.CryptoEvent.class).observeOn(rxEventBus.getSchedulersProvider().mo707ui());
+        Observable observeOn = rxEventBus.getPublisher().ofType(DomainRxEvents.CryptoEvent.class).observeOn(rxEventBus.getSchedulersProvider().mo706ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "publisher\n              …(schedulersProvider.ui())");
-        Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2056xbb8b799f(onEventAction)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2057xbb8b79a0(null)));
+        Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2070xbb8b799f(onEventAction)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2071xbb8b79a0(null)));
         Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…  onError.invoke()\n    })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }

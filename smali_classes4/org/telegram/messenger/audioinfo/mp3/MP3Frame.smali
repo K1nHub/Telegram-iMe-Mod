@@ -237,7 +237,7 @@
 
     move-result v3
 
-    const/4 v4, 0x0
+    move v4, v1
 
     :goto_0
     if-ge v4, v3, :cond_0
@@ -282,7 +282,7 @@
 
     if-eq v3, v0, :cond_1
 
-    const/4 v1, 0x1
+    move v1, v2
 
     :cond_1
     return v1

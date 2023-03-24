@@ -1487,6 +1487,7 @@ public class ConstraintSet {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public void applyToInternal(ConstraintLayout constraintLayout, boolean applyPostLayout) {
+        View findViewById;
         int childCount = constraintLayout.getChildCount();
         HashSet hashSet = new HashSet(this.mConstraints.keySet());
         for (int i = 0; i < childCount; i++) {
@@ -1542,8 +1543,7 @@ public class ConstraintSet {
                                 childAt.setScaleY(constraint.transform.scaleY);
                                 Transform transform = constraint.transform;
                                 if (transform.transformPivotTarget != -1) {
-                                    View findViewById = ((View) childAt.getParent()).findViewById(constraint.transform.transformPivotTarget);
-                                    if (findViewById != null) {
+                                    if (((View) childAt.getParent()).findViewById(constraint.transform.transformPivotTarget) != null) {
                                         float top = (findViewById.getTop() + findViewById.getBottom()) / 2.0f;
                                         float left = (findViewById.getLeft() + findViewById.getRight()) / 2.0f;
                                         if (childAt.getRight() - childAt.getLeft() > 0 && childAt.getBottom() - childAt.getTop() > 0) {

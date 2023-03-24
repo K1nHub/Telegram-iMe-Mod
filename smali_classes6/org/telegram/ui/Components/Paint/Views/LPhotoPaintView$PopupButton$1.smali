@@ -89,7 +89,7 @@
 
     int-to-float v1, v1
 
-    mul-float v0, v0, v1
+    mul-float/2addr v0, v1
 
     const/high16 v1, 0x40000000    # 2.0f
 

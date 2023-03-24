@@ -526,7 +526,7 @@
 
     move-result v0
 
-    const/4 v3, 0x0
+    move v3, v1
 
     :goto_0
     if-ge v3, v0, :cond_1
@@ -876,7 +876,7 @@
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_0
     if-ge v2, v0, :cond_1
@@ -996,7 +996,7 @@
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_0
     if-ge v2, v0, :cond_1
@@ -1254,16 +1254,14 @@
 
     const/4 p2, 0x1
 
-    const/4 v2, 0x1
-
     goto :goto_0
 
     :cond_0
     const/4 p2, 0x0
 
-    const/4 v2, 0x0
-
     :goto_0
+    move v2, p2
+
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
 
     move-result-object v3
@@ -1393,7 +1391,7 @@
 .end method
 
 .method private synthetic lambda$getCalls$8(Lorg/telegram/tgnet/TLRPC$TL_error;Lorg/telegram/tgnet/TLObject;)V
-    .locals 13
+    .locals 12
 
     .line 768
     iget-object v0, p0, Lorg/telegram/ui/CallLogActivity;->listViewAdapter:Lorg/telegram/ui/CallLogActivity$ListAdapter;
@@ -1437,7 +1435,7 @@
 
     iput-boolean v3, p0, Lorg/telegram/ui/CallLogActivity;->endReached:Z
 
-    const/4 v3, 0x0
+    move v3, v1
 
     .line 773
     :goto_0
@@ -1499,7 +1497,7 @@
     move-object v3, v4
 
     :goto_1
-    const/4 v5, 0x0
+    move v5, v1
 
     .line 778
     :goto_2
@@ -1545,16 +1543,16 @@
 
     move-result-wide v9
 
-    cmp-long v11, v7, v9
+    cmp-long v7, v7, v9
 
-    if-nez v11, :cond_3
+    if-nez v7, :cond_3
 
-    const/4 v7, 0x0
+    move v7, v1
 
     goto :goto_3
 
     :cond_3
-    const/4 v7, 0x1
+    move v7, v2
 
     .line 784
     :goto_3
@@ -1591,9 +1589,9 @@
 
     move-result-wide v10
 
-    cmp-long v12, v8, v10
+    cmp-long v10, v8, v10
 
-    if-nez v12, :cond_6
+    if-nez v10, :cond_6
 
     iget-object v8, v6, Lorg/telegram/tgnet/TLRPC$Message;->peer_id:Lorg/telegram/tgnet/TLRPC$Peer;
 
@@ -1607,9 +1605,9 @@
 
     iget-wide v10, v10, Lorg/telegram/tgnet/TLRPC$User;->id:J
 
-    cmp-long v12, v10, v8
+    cmp-long v10, v10, v8
 
-    if-nez v12, :cond_7
+    if-nez v10, :cond_7
 
     iget v10, v3, Lorg/telegram/ui/CallLogActivity$CallLogRow;->type:I
 
@@ -1666,12 +1664,12 @@
 
     if-eqz v7, :cond_9
 
-    const/4 v7, 0x1
+    move v7, v2
 
     goto :goto_4
 
     :cond_9
-    const/4 v7, 0x0
+    move v7, v1
 
     :goto_4
     iput-boolean v7, v3, Lorg/telegram/ui/CallLogActivity$CallLogRow;->video:Z
@@ -1804,7 +1802,7 @@
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_0
     if-ge v2, v0, :cond_1
@@ -2057,14 +2055,14 @@
     goto :goto_1
 
     :cond_1
-    const/4 v1, 0x0
+    move v1, v3
 
     :goto_1
     sget-boolean v7, Lorg/telegram/messenger/LocaleController;->isRTL:Z
 
     if-eqz v7, :cond_2
 
-    const/4 v6, 0x0
+    move v6, v3
 
     goto :goto_2
 
@@ -2273,7 +2271,7 @@
     return-void
 
     :cond_0
-    const/4 v1, 0x1
+    move v1, v2
 
     goto :goto_1
 
@@ -2296,7 +2294,7 @@
 
     invoke-direct {v2}, Ljava/util/ArrayList;-><init>()V
 
-    const/4 v3, 0x0
+    move v3, v1
 
     .line 726
     :goto_0
@@ -2762,12 +2760,12 @@
 
     if-eqz v7, :cond_0
 
-    const/4 v7, 0x1
+    move v7, v3
 
     goto :goto_0
 
     :cond_0
-    const/4 v7, 0x2
+    move v7, v8
 
     :goto_0
     invoke-virtual {v4, v7}, Landroid/view/ViewGroup;->setVerticalScrollbarPosition(I)V
@@ -3066,22 +3064,22 @@
 
     if-lt v7, v9, :cond_4
 
-    const/16 v10, 0x38
+    move v10, v4
 
     goto :goto_2
 
     :cond_4
-    const/16 v10, 0x3c
+    move v10, v3
 
     :goto_2
     if-lt v7, v9, :cond_5
 
-    const/16 v11, 0x38
+    move v11, v4
 
     goto :goto_3
 
     :cond_5
-    const/16 v11, 0x3c
+    move v11, v3
 
     :goto_3
     sget-boolean v3, Lorg/telegram/messenger/LocaleController;->isRTL:Z
@@ -3102,24 +3100,24 @@
 
     if-eqz v3, :cond_7
 
-    const/16 v13, 0xe
+    move v13, v4
 
     goto :goto_5
 
     :cond_7
-    const/4 v13, 0x0
+    move v13, v5
 
     :goto_5
     const/4 v14, 0x0
 
     if-eqz v3, :cond_8
 
-    const/4 v15, 0x0
+    move v15, v5
 
     goto :goto_6
 
     :cond_8
-    const/16 v15, 0xe
+    move v15, v4
 
     :goto_6
     const/16 v16, 0xe
@@ -3259,12 +3257,12 @@
 
     if-nez p3, :cond_4
 
-    const/4 p3, 0x0
+    move p3, v3
 
     goto :goto_2
 
     :cond_4
-    const/4 p3, 0x1
+    move p3, v2
 
     .line 215
     :goto_2
@@ -3286,7 +3284,7 @@
     if-eqz v4, :cond_6
 
     :cond_5
-    const/4 p3, 0x2
+    move p3, v1
 
     .line 219
     :cond_6
@@ -3506,7 +3504,7 @@
     .line 258
     invoke-interface {v0}, Ljava/util/Iterator;->remove()V
 
-    const/4 v3, 0x1
+    move v3, v2
 
     goto :goto_4
 
@@ -3761,7 +3759,7 @@
 
     move-object v2, v11
 
-    const/4 v12, 0x3
+    move v12, v9
 
     move-object/from16 v9, v16
 
@@ -4854,7 +4852,7 @@
     :cond_0
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     .line 839
     :goto_0
@@ -4869,7 +4867,7 @@
 
     if-eqz v3, :cond_1
 
-    const/4 v2, 0x0
+    move v2, v1
 
     goto :goto_1
 
@@ -4879,7 +4877,7 @@
     goto :goto_0
 
     :cond_2
-    const/4 v2, 0x1
+    move v2, v4
 
     .line 845
     :goto_1
@@ -4940,12 +4938,12 @@
 
     if-ne p1, v0, :cond_5
 
-    const/4 v6, 0x1
+    move v6, v4
 
     goto :goto_2
 
     :cond_5
-    const/4 v6, 0x0
+    move v6, v1
 
     :goto_2
     if-eq p1, v0, :cond_7
@@ -4959,13 +4957,13 @@
     goto :goto_3
 
     :cond_6
-    const/4 v7, 0x0
+    move v7, v1
 
     goto :goto_4
 
     :cond_7
     :goto_3
-    const/4 v7, 0x1
+    move v7, v4
 
     :goto_4
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;

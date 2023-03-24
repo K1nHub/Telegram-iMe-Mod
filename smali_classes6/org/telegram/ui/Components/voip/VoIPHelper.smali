@@ -337,9 +337,9 @@
     :goto_0
     int-to-long v9, v3
 
-    cmp-long v3, v1, v9
+    cmp-long v1, v1, v9
 
-    if-gez v3, :cond_2
+    if-gez v1, :cond_2
 
     return-void
 
@@ -872,12 +872,12 @@
 
     if-eqz p5, :cond_11
 
-    const/4 v5, 0x1
+    move v5, v3
 
     goto :goto_6
 
     :cond_11
-    const/4 v5, 0x0
+    move v5, v1
 
     :goto_6
     const-string v6, "video_call"
@@ -888,7 +888,7 @@
 
     if-eqz p6, :cond_12
 
-    const/4 v1, 0x1
+    move v1, v3
 
     :cond_12
     const-string v0, "can_video_call"
@@ -1139,7 +1139,7 @@
 .end method
 
 .method public static getLogFilePath(JZ)Ljava/lang/String;
-    .locals 11
+    .locals 10
 
     .line 733
     invoke-static {}, Lorg/telegram/ui/Components/voip/VoIPHelper;->getLogsDir()Ljava/io/File;
@@ -1226,9 +1226,9 @@
 
     move-result-wide v8
 
-    cmp-long v10, v6, v8
+    cmp-long v6, v6, v8
 
-    if-gez v10, :cond_0
+    if-gez v6, :cond_0
 
     move-object v1, v5
 
@@ -1613,9 +1613,9 @@
 
     const-wide/16 v10, 0x0
 
-    cmp-long v12, v6, v10
+    cmp-long v6, v6, v10
 
-    if-lez v12, :cond_9
+    if-lez v6, :cond_9
 
     .line 200
     invoke-virtual {v0}, Lorg/telegram/messenger/voip/VoIPService;->getUser()Lorg/telegram/tgnet/TLRPC$User;
@@ -1623,17 +1623,17 @@
     move-result-object v0
 
     .line 201
-    iget-object v6, v0, Lorg/telegram/tgnet/TLRPC$User;->first_name:Ljava/lang/String;
+    iget-object v7, v0, Lorg/telegram/tgnet/TLRPC$User;->first_name:Ljava/lang/String;
 
     iget-object v0, v0, Lorg/telegram/tgnet/TLRPC$User;->last_name:Ljava/lang/String;
 
-    invoke-static {v6, v0}, Lorg/telegram/messenger/ContactsController;->formatName(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v7, v0}, Lorg/telegram/messenger/ContactsController;->formatName(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
-    cmp-long v6, v4, v10
+    cmp-long v4, v4, v10
 
-    if-lez v6, :cond_8
+    if-lez v4, :cond_8
 
     .line 204
     sget v4, Lorg/telegram/messenger/R$string;->VoipOngoingAlert:I
@@ -1659,9 +1659,9 @@
     .line 211
     iget-object v0, v0, Lorg/telegram/tgnet/TLRPC$Chat;->title:Ljava/lang/String;
 
-    cmp-long v6, v4, v10
+    cmp-long v4, v4, v10
 
-    if-lez v6, :cond_a
+    if-lez v4, :cond_a
 
     .line 214
     sget v4, Lorg/telegram/messenger/R$string;->VoipOngoingChatAlert2:I
@@ -1680,48 +1680,48 @@
     if-eqz v1, :cond_b
 
     .line 221
-    iget-object v6, v1, Lorg/telegram/tgnet/TLRPC$User;->first_name:Ljava/lang/String;
+    iget-object v7, v1, Lorg/telegram/tgnet/TLRPC$User;->first_name:Ljava/lang/String;
 
-    iget-object v7, v1, Lorg/telegram/tgnet/TLRPC$User;->last_name:Ljava/lang/String;
+    iget-object v10, v1, Lorg/telegram/tgnet/TLRPC$User;->last_name:Ljava/lang/String;
 
-    invoke-static {v6, v7}, Lorg/telegram/messenger/ContactsController;->formatName(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v7, v10}, Lorg/telegram/messenger/ContactsController;->formatName(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v6
+    move-result-object v7
 
     goto :goto_5
 
     .line 223
     :cond_b
-    iget-object v6, v2, Lorg/telegram/tgnet/TLRPC$Chat;->title:Ljava/lang/String;
+    iget-object v7, v2, Lorg/telegram/tgnet/TLRPC$Chat;->title:Ljava/lang/String;
 
     .line 226
     :goto_5
-    new-instance v7, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
+    new-instance v10, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    invoke-direct {v7, v8}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
+    invoke-direct {v10, v8}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
-    if-gez v12, :cond_c
+    if-gez v6, :cond_c
 
     .line 227
-    sget v10, Lorg/telegram/messenger/R$string;->VoipOngoingChatAlertTitle:I
+    sget v6, Lorg/telegram/messenger/R$string;->VoipOngoingChatAlertTitle:I
 
     const-string v11, "VoipOngoingChatAlertTitle"
 
     goto :goto_6
 
     :cond_c
-    sget v10, Lorg/telegram/messenger/R$string;->VoipOngoingAlertTitle:I
+    sget v6, Lorg/telegram/messenger/R$string;->VoipOngoingAlertTitle:I
 
     const-string v11, "VoipOngoingAlertTitle"
 
     :goto_6
-    invoke-static {v11, v10}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+    invoke-static {v11, v6}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
-    move-result-object v10
+    move-result-object v6
 
-    invoke-virtual {v7, v10}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setTitle(Ljava/lang/CharSequence;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
+    invoke-virtual {v10, v6}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setTitle(Ljava/lang/CharSequence;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    move-result-object v7
+    move-result-object v6
 
     const/4 v10, 0x2
 
@@ -1731,7 +1731,7 @@
 
     aput-object v0, v10, v11
 
-    aput-object v6, v10, v3
+    aput-object v7, v10, v3
 
     .line 228
     invoke-static {v5, v4, v10}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
@@ -1742,7 +1742,7 @@
 
     move-result-object v0
 
-    invoke-virtual {v7, v0}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setMessage(Ljava/lang/CharSequence;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
+    invoke-virtual {v6, v0}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setMessage(Ljava/lang/CharSequence;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
     move-result-object v10
 
@@ -1827,7 +1827,7 @@
     goto :goto_7
 
     :cond_e
-    const/4 v11, 0x1
+    move v11, v3
 
     :goto_7
     const/4 v12, 0x1
@@ -2727,7 +2727,7 @@
 
     invoke-direct {v10}, Ljava/util/ArrayList;-><init>()V
 
-    const/4 v3, 0x0
+    move v3, v2
 
     .line 589
     :goto_1
@@ -2944,7 +2944,7 @@
     goto :goto_0
 
     :cond_0
-    const/4 p2, 0x0
+    move p2, v0
 
     :goto_0
     const-string v1, "android.permission.RECORD_AUDIO"
@@ -3476,7 +3476,7 @@
 
     aput-object v14, v10, v4
 
-    const/4 v14, 0x0
+    move v14, v1
 
     :goto_2
     if-ge v14, v9, :cond_3
@@ -4633,7 +4633,7 @@
     goto :goto_0
 
     :cond_1
-    const/4 v4, 0x0
+    move v4, v5
 
     .line 99
     :goto_0

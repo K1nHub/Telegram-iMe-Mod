@@ -132,7 +132,7 @@
 
     if-ne p3, p2, :cond_0
 
-    const/4 p3, 0x1
+    move p3, v0
 
     goto :goto_0
 

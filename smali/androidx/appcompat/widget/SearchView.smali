@@ -1281,7 +1281,7 @@
 
     const-wide/high16 v2, 0x3ff4000000000000L    # 1.25
 
-    mul-double v0, v0, v2
+    mul-double/2addr v0, v2
 
     double-to-int v0, v0
 
@@ -1716,7 +1716,7 @@
     goto :goto_0
 
     :cond_0
-    const/4 v1, 0x0
+    move v1, v2
 
     .line 944
     :cond_1
@@ -2009,12 +2009,12 @@
 
     if-eqz p1, :cond_0
 
-    const/4 v2, 0x0
+    move v2, v0
 
     goto :goto_0
 
     :cond_0
-    const/16 v2, 0x8
+    move v2, v1
 
     .line 880
     :goto_0
@@ -2043,12 +2043,12 @@
 
     if-eqz p1, :cond_1
 
-    const/16 p1, 0x8
+    move p1, v1
 
     goto :goto_1
 
     :cond_1
-    const/4 p1, 0x0
+    move p1, v0
 
     :goto_1
     invoke-virtual {v2, p1}, Landroid/view/View;->setVisibility(I)V
@@ -2067,7 +2067,7 @@
     if-eqz p1, :cond_3
 
     :cond_2
-    const/16 v0, 0x8
+    move v0, v1
 
     .line 892
     :cond_3
@@ -2114,7 +2114,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    const/4 v1, 0x0
+    move v1, p1
 
     .line 1165
     :cond_0
@@ -3168,7 +3168,7 @@
     :goto_0
     if-ne p2, p1, :cond_5
 
-    const/4 p1, 0x0
+    move p1, v0
 
     goto :goto_1
 

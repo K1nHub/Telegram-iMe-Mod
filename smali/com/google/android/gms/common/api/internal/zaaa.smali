@@ -1448,7 +1448,7 @@
     if-ne v0, v2, :cond_1
 
     :cond_0
-    const/4 v1, 0x1
+    move v1, v2
 
     :cond_1
     iget-object v0, p0, Lcom/google/android/gms/common/api/internal/zaaa;->zam:Ljava/util/concurrent/locks/Lock;

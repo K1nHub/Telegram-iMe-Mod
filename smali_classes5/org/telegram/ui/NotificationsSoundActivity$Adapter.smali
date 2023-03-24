@@ -512,12 +512,12 @@
 
     if-ne v3, v0, :cond_6
 
-    const/4 v3, 0x1
+    move v3, v2
 
     goto :goto_0
 
     :cond_6
-    const/4 v3, 0x0
+    move v3, v1
 
     .line 641
     :goto_0
@@ -527,12 +527,12 @@
 
     if-ne v0, v5, :cond_7
 
-    const/4 v5, 0x1
+    move v5, v2
 
     goto :goto_1
 
     :cond_7
-    const/4 v5, 0x0
+    move v5, v1
 
     .line 642
     :goto_1
@@ -546,12 +546,12 @@
 
     if-eqz v4, :cond_8
 
-    const/4 v4, 0x1
+    move v4, v2
 
     goto :goto_2
 
     :cond_8
-    const/4 v4, 0x0
+    move v4, v1
 
     .line 643
     :goto_2
@@ -575,7 +575,7 @@
 
     if-eq p2, v0, :cond_9
 
-    const/4 v1, 0x1
+    move v1, v2
 
     :cond_9
     invoke-static {p1, v1}, Lorg/telegram/ui/NotificationsSoundActivity$ToneCell;->access$902(Lorg/telegram/ui/NotificationsSoundActivity$ToneCell;Z)Z

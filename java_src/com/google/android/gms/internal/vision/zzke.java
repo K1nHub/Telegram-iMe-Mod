@@ -85,7 +85,7 @@ public final class zzke<K, V> extends LinkedHashMap<K, V> {
             int r3 = r7.size()
             if (r2 == r3) goto L16
         L14:
-            r7 = 0
+            r7 = r1
             goto L5a
         L16:
             java.util.Set r2 = r6.entrySet()
@@ -117,7 +117,7 @@ public final class zzke<K, V> extends LinkedHashMap<K, V> {
             if (r3 != 0) goto L1e
             goto L14
         L59:
-            r7 = 1
+            r7 = r0
         L5a:
             if (r7 == 0) goto L5d
             return r0

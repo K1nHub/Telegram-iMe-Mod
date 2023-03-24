@@ -15,6 +15,14 @@
 
 
 # virtual methods
+.method public abstract writeLazy(Ljava/nio/ByteBuffer;)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+.end method
+
 .method public abstract writeLazy([BII)V
     .annotation system Ldalvik/annotation/Throws;
         value = {

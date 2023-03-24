@@ -101,7 +101,7 @@ public class AnimatedPhoneNumberEditText extends HintEditText {
         }
         for (int i2 = 0; i2 < i; i2++) {
             float f = BitmapDescriptorFactory.HUE_RED;
-            float f2 = z ? BitmapDescriptorFactory.HUE_RED : 1.0f;
+            float f2 = z ? 0.0f : 1.0f;
             if (z) {
                 f = 1.0f;
             }

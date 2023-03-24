@@ -82,12 +82,12 @@
 
     if-eqz v1, :cond_0
 
-    const/4 v1, 0x1
+    move v1, v2
 
     goto :goto_0
 
     :cond_0
-    const/4 v1, 0x0
+    move v1, v3
 
     .line 1172
     :goto_0
@@ -112,7 +112,7 @@
     goto :goto_1
 
     :cond_1
-    const/4 v5, 0x0
+    move v5, v3
 
     .line 1178
     :goto_1
@@ -168,7 +168,7 @@
     goto :goto_2
 
     :cond_4
-    const/4 v4, 0x0
+    move v4, v3
 
     :goto_2
     sub-int/2addr p2, v4
@@ -202,9 +202,9 @@
 
     move-result v4
 
-    const/4 v5, 0x0
+    move v5, v3
 
-    const/4 v7, 0x0
+    move v7, v5
 
     :goto_4
     if-ge v5, v0, :cond_b
@@ -308,7 +308,7 @@
 
     move-result v5
 
-    mul-int v0, v0, v5
+    mul-int/2addr v0, v5
 
     iget-object v5, p0, Lorg/telegram/ui/Adapters/DialogsAdapter$LastEmptyView;->this$0:Lorg/telegram/ui/Adapters/DialogsAdapter;
 
@@ -342,7 +342,7 @@
     goto :goto_7
 
     :cond_d
-    const/4 v4, 0x0
+    move v4, v3
 
     :goto_7
     if-ge v7, p2, :cond_f

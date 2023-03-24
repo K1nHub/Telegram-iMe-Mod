@@ -316,9 +316,9 @@
 
     if-ne v0, v8, :cond_7
 
-    const/4 v0, 0x0
+    move v9, v6
 
-    const/4 v9, -0x1
+    move v0, v7
 
     .line 67
     :goto_1
@@ -349,12 +349,12 @@
 
     if-nez v0, :cond_3
 
-    const/16 v19, 0x1
+    move/from16 v19, v8
 
     goto :goto_2
 
     :cond_3
-    const/16 v19, 0x0
+    move/from16 v19, v7
 
     :goto_2
     move/from16 v16, v9
@@ -404,9 +404,9 @@
     .line 77
     iget-wide v10, v1, Lorg/telegram/ui/Components/RLottieDrawable;->secondNativePtr:J
 
-    cmp-long v12, v10, v4
+    cmp-long v10, v10, v4
 
-    if-eqz v12, :cond_6
+    if-eqz v10, :cond_6
 
     .line 78
     iput v2, v1, Lorg/telegram/ui/Components/RLottieDrawable;->isDice:I
@@ -423,7 +423,7 @@
 
     if-eqz v0, :cond_8
 
-    const/4 v0, 0x0
+    move v0, v7
 
     .line 84
     :goto_4
@@ -509,7 +509,7 @@
 
     invoke-static/range {v9 .. v16}, Lorg/telegram/ui/Components/RLottieDrawable;->getFrame(JILandroid/graphics/Bitmap;IIIZ)I
 
-    const/4 v0, 0x0
+    move v0, v7
 
     .line 96
     :goto_6
@@ -964,9 +964,9 @@
     :cond_0
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    move v1, v0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     .line 205
     :goto_0
@@ -981,34 +981,34 @@
 
     const-wide/16 v6, 0x0
 
-    const/4 v3, 0x1
+    cmp-long v3, v4, v6
 
-    cmp-long v8, v4, v6
+    const/4 v4, 0x1
 
-    if-eqz v8, :cond_1
+    if-eqz v3, :cond_1
 
     goto :goto_2
 
     :cond_1
-    const/4 v4, 0x2
+    const/4 v3, 0x2
 
     if-nez v1, :cond_2
 
-    const/4 v4, 0x1
+    move v3, v4
 
     goto :goto_1
 
     :cond_2
-    if-ne v1, v3, :cond_3
+    if-ne v1, v4, :cond_3
 
-    const/16 v4, 0x8
+    const/16 v3, 0x8
 
     goto :goto_1
 
     :cond_3
-    if-ne v1, v4, :cond_4
+    if-ne v1, v3, :cond_4
 
-    const/16 v4, 0xe
+    const/16 v3, 0xe
 
     goto :goto_1
 
@@ -1017,39 +1017,39 @@
 
     if-ne v1, v5, :cond_5
 
-    const/16 v4, 0x14
+    const/16 v3, 0x14
 
     .line 221
     :cond_5
     :goto_1
     iget-object v5, p1, Lorg/telegram/tgnet/TLRPC$messages_StickerSet;->documents:Ljava/util/ArrayList;
 
-    invoke-virtual {v5, v4}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+    invoke-virtual {v5, v3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
-    move-result-object v4
+    move-result-object v3
 
-    move-object v6, v4
+    move-object v6, v3
 
     check-cast v6, Lorg/telegram/tgnet/TLRPC$Document;
 
     .line 222
-    sget v4, Lorg/telegram/messenger/UserConfig;->selectedAccount:I
+    sget v3, Lorg/telegram/messenger/UserConfig;->selectedAccount:I
 
-    invoke-static {v4}, Lorg/telegram/messenger/FileLoader;->getInstance(I)Lorg/telegram/messenger/FileLoader;
+    invoke-static {v3}, Lorg/telegram/messenger/FileLoader;->getInstance(I)Lorg/telegram/messenger/FileLoader;
 
-    move-result-object v4
+    move-result-object v3
 
-    invoke-virtual {v4, v6, v3}, Lorg/telegram/messenger/FileLoader;->getPathToAttach(Lorg/telegram/tgnet/TLObject;Z)Ljava/io/File;
+    invoke-virtual {v3, v6, v4}, Lorg/telegram/messenger/FileLoader;->getPathToAttach(Lorg/telegram/tgnet/TLObject;Z)Ljava/io/File;
 
-    move-result-object v4
+    move-result-object v3
 
     .line 223
-    invoke-static {v4, v0}, Lorg/telegram/ui/Components/RLottieDrawable;->readRes(Ljava/io/File;I)Ljava/lang/String;
+    invoke-static {v3, v0}, Lorg/telegram/ui/Components/RLottieDrawable;->readRes(Ljava/io/File;I)Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v3
 
     .line 224
-    invoke-static {v4}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+    invoke-static {v3}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v5
 
@@ -1072,13 +1072,13 @@
 
     invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->runOnUIThread(Ljava/lang/Runnable;)V
 
-    const/4 v2, 0x1
+    move v2, v4
 
     goto :goto_2
 
     .line 232
     :cond_6
-    iget-object v3, p0, Lorg/telegram/ui/Components/SlotsDrawable;->nativePtrs:[J
+    iget-object v4, p0, Lorg/telegram/ui/Components/SlotsDrawable;->nativePtrs:[J
 
     iget-object v5, p0, Lorg/telegram/ui/Components/RLottieDrawable;->metaData:[I
 
@@ -1086,11 +1086,11 @@
 
     const-string v7, "dice"
 
-    invoke-static {v4, v7, v5, v6}, Lorg/telegram/ui/Components/RLottieDrawable;->createWithJson(Ljava/lang/String;Ljava/lang/String;[I[I)J
+    invoke-static {v3, v7, v5, v6}, Lorg/telegram/ui/Components/RLottieDrawable;->createWithJson(Ljava/lang/String;Ljava/lang/String;[I[I)J
 
-    move-result-wide v4
+    move-result-wide v5
 
-    aput-wide v4, v3, v1
+    aput-wide v5, v4, v1
 
     .line 233
     iget-object v3, p0, Lorg/telegram/ui/Components/SlotsDrawable;->frameCounts:[I
@@ -1151,9 +1151,9 @@
     :cond_0
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    move v2, v1
 
-    const/4 v3, 0x0
+    move v3, v2
 
     .line 278
     :goto_0
@@ -1231,14 +1231,14 @@
 
     move-object/from16 v7, p1
 
-    const/4 v4, 0x4
+    move v4, v5
 
     goto/16 :goto_3
 
     :cond_5
     move-object/from16 v7, p1
 
-    const/4 v4, 0x3
+    move v4, v9
 
     goto/16 :goto_3
 
@@ -1358,14 +1358,14 @@
 
     move-object/from16 v7, p1
 
-    const/4 v4, 0x1
+    move v4, v10
 
     goto :goto_3
 
     :cond_12
     move-object/from16 v7, p1
 
-    const/4 v4, 0x2
+    move v4, v6
 
     .line 331
     :goto_3
@@ -1419,7 +1419,7 @@
 
     invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->runOnUIThread(Ljava/lang/Runnable;)V
 
-    const/4 v3, 0x1
+    move v3, v10
 
     goto :goto_5
 
@@ -1458,12 +1458,12 @@
 
     if-ne v2, v9, :cond_15
 
-    const/4 v11, 0x0
+    move v11, v1
 
     goto :goto_4
 
     :cond_15
-    const/4 v11, 0x4
+    move v11, v5
 
     :goto_4
     iget-object v12, v0, Lorg/telegram/ui/Components/RLottieDrawable;->metaData:[I
@@ -1479,7 +1479,7 @@
 
     if-ne v2, v9, :cond_16
 
-    const/4 v5, 0x0
+    move v5, v1
 
     :cond_16
     iget-object v6, v0, Lorg/telegram/ui/Components/RLottieDrawable;->metaData:[I
@@ -1719,7 +1719,7 @@
 
 # virtual methods
 .method protected decodeFrameFinishedInternal()V
-    .locals 8
+    .locals 7
 
     .line 409
     iget-boolean v0, p0, Lorg/telegram/ui/Components/RLottieDrawable;->destroyWhenDone:Z
@@ -1742,7 +1742,7 @@
 
     const/4 v0, 0x0
 
-    const/4 v3, 0x0
+    move v3, v0
 
     .line 412
     :goto_0
@@ -1755,9 +1755,9 @@
     .line 413
     aget-wide v5, v4, v3
 
-    cmp-long v7, v5, v1
+    cmp-long v5, v5, v1
 
-    if-eqz v7, :cond_0
+    if-eqz v5, :cond_0
 
     .line 414
     aget-wide v5, v4, v3
@@ -1786,9 +1786,9 @@
     .line 419
     aget-wide v4, v3, v0
 
-    cmp-long v6, v4, v1
+    cmp-long v4, v4, v1
 
-    if-eqz v6, :cond_2
+    if-eqz v4, :cond_2
 
     .line 420
     aget-wide v4, v3, v0
@@ -1848,7 +1848,7 @@
 .end method
 
 .method public recycle(Z)V
-    .locals 8
+    .locals 7
 
     const/4 p1, 0x0
 
@@ -1884,7 +1884,7 @@
 
     if-nez v1, :cond_7
 
-    const/4 v0, 0x0
+    move v0, p1
 
     .line 383
     :goto_0
@@ -1908,9 +1908,9 @@
 
     iget-wide v1, p0, Lorg/telegram/ui/Components/RLottieDrawable;->nativePtr:J
 
-    cmp-long v7, v5, v1
+    cmp-long v1, v5, v1
 
-    if-nez v7, :cond_1
+    if-nez v1, :cond_1
 
     .line 386
     iput-wide v3, p0, Lorg/telegram/ui/Components/RLottieDrawable;->nativePtr:J
@@ -1945,9 +1945,9 @@
     .line 393
     aget-wide v1, v0, p1
 
-    cmp-long v5, v1, v3
+    cmp-long v1, v1, v3
 
-    if-eqz v5, :cond_5
+    if-eqz v1, :cond_5
 
     .line 394
     aget-wide v1, v0, p1
@@ -2006,13 +2006,13 @@
     .line 188
     iget-wide v0, p0, Lorg/telegram/ui/Components/RLottieDrawable;->nativePtr:J
 
-    const/4 v2, 0x1
+    const-wide/16 v2, 0x0
 
-    const-wide/16 v3, 0x0
+    cmp-long v0, v0, v2
 
-    cmp-long v5, v0, v3
+    const/4 v1, 0x1
 
-    if-nez v5, :cond_1
+    if-nez v0, :cond_1
 
     iget-boolean v0, p0, Lorg/telegram/ui/Components/RLottieDrawable;->loadingInBackground:Z
 
@@ -2022,55 +2022,55 @@
 
     .line 191
     :cond_0
-    iput-boolean v2, p0, Lorg/telegram/ui/Components/RLottieDrawable;->loadingInBackground:Z
+    iput-boolean v1, p0, Lorg/telegram/ui/Components/RLottieDrawable;->loadingInBackground:Z
 
     .line 192
     invoke-virtual {p1}, Lorg/telegram/ui/Cells/ChatMessageCell;->getMessageObject()Lorg/telegram/messenger/MessageObject;
 
-    move-result-object v7
+    move-result-object v6
 
     .line 193
     invoke-virtual {p1}, Lorg/telegram/ui/Cells/ChatMessageCell;->getMessageObject()Lorg/telegram/messenger/MessageObject;
 
     move-result-object v0
 
-    iget v6, v0, Lorg/telegram/messenger/MessageObject;->currentAccount:I
+    iget v5, v0, Lorg/telegram/messenger/MessageObject;->currentAccount:I
 
     .line 194
     sget-object v0, Lorg/telegram/messenger/Utilities;->globalQueue:Lorg/telegram/messenger/DispatchQueue;
 
-    new-instance v1, Lorg/telegram/ui/Components/SlotsDrawable$$ExternalSyntheticLambda8;
+    new-instance v8, Lorg/telegram/ui/Components/SlotsDrawable$$ExternalSyntheticLambda8;
 
-    move-object v3, v1
+    move-object v2, v8
 
-    move-object v4, p0
+    move-object v3, p0
 
-    move-object v5, p2
+    move-object v4, p2
 
-    move-object v8, p1
+    move-object v7, p1
 
-    invoke-direct/range {v3 .. v8}, Lorg/telegram/ui/Components/SlotsDrawable$$ExternalSyntheticLambda8;-><init>(Lorg/telegram/ui/Components/SlotsDrawable;Lorg/telegram/tgnet/TLRPC$TL_messages_stickerSet;ILorg/telegram/messenger/MessageObject;Lorg/telegram/ui/Cells/ChatMessageCell;)V
+    invoke-direct/range {v2 .. v7}, Lorg/telegram/ui/Components/SlotsDrawable$$ExternalSyntheticLambda8;-><init>(Lorg/telegram/ui/Components/SlotsDrawable;Lorg/telegram/tgnet/TLRPC$TL_messages_stickerSet;ILorg/telegram/messenger/MessageObject;Lorg/telegram/ui/Cells/ChatMessageCell;)V
 
-    invoke-virtual {v0, v1}, Lorg/telegram/messenger/DispatchQueue;->postRunnable(Ljava/lang/Runnable;)Z
+    invoke-virtual {v0, v8}, Lorg/telegram/messenger/DispatchQueue;->postRunnable(Ljava/lang/Runnable;)Z
 
     :cond_1
     :goto_0
-    return v2
+    return v1
 .end method
 
 .method public setDiceNumber(Lorg/telegram/ui/Cells/ChatMessageCell;ILorg/telegram/tgnet/TLRPC$TL_messages_stickerSet;Z)Z
-    .locals 10
+    .locals 9
 
     .line 258
     iget-wide v0, p0, Lorg/telegram/ui/Components/RLottieDrawable;->secondNativePtr:J
 
-    const/4 v2, 0x1
+    const-wide/16 v2, 0x0
 
-    const-wide/16 v3, 0x0
+    cmp-long v0, v0, v2
 
-    cmp-long v5, v0, v3
+    const/4 v1, 0x1
 
-    if-nez v5, :cond_1
+    if-nez v0, :cond_1
 
     iget-boolean v0, p0, Lorg/telegram/ui/Components/RLottieDrawable;->secondLoadingInBackground:Z
 
@@ -2085,38 +2085,38 @@
     .line 262
     invoke-virtual {p1}, Lorg/telegram/ui/Cells/ChatMessageCell;->getMessageObject()Lorg/telegram/messenger/MessageObject;
 
-    move-result-object v7
+    move-result-object v6
 
     .line 263
     invoke-virtual {p1}, Lorg/telegram/ui/Cells/ChatMessageCell;->getMessageObject()Lorg/telegram/messenger/MessageObject;
 
     move-result-object p2
 
-    iget v6, p2, Lorg/telegram/messenger/MessageObject;->currentAccount:I
+    iget v5, p2, Lorg/telegram/messenger/MessageObject;->currentAccount:I
 
     .line 265
-    iput-boolean v2, p0, Lorg/telegram/ui/Components/RLottieDrawable;->secondLoadingInBackground:Z
+    iput-boolean v1, p0, Lorg/telegram/ui/Components/RLottieDrawable;->secondLoadingInBackground:Z
 
     .line 266
     sget-object p2, Lorg/telegram/messenger/Utilities;->globalQueue:Lorg/telegram/messenger/DispatchQueue;
 
     new-instance v0, Lorg/telegram/ui/Components/SlotsDrawable$$ExternalSyntheticLambda9;
 
-    move-object v3, v0
+    move-object v2, v0
 
-    move-object v4, p0
+    move-object v3, p0
 
-    move-object v5, p3
+    move-object v4, p3
 
-    move-object v8, p1
+    move-object v7, p1
 
-    move v9, p4
+    move v8, p4
 
-    invoke-direct/range {v3 .. v9}, Lorg/telegram/ui/Components/SlotsDrawable$$ExternalSyntheticLambda9;-><init>(Lorg/telegram/ui/Components/SlotsDrawable;Lorg/telegram/tgnet/TLRPC$TL_messages_stickerSet;ILorg/telegram/messenger/MessageObject;Lorg/telegram/ui/Cells/ChatMessageCell;Z)V
+    invoke-direct/range {v2 .. v8}, Lorg/telegram/ui/Components/SlotsDrawable$$ExternalSyntheticLambda9;-><init>(Lorg/telegram/ui/Components/SlotsDrawable;Lorg/telegram/tgnet/TLRPC$TL_messages_stickerSet;ILorg/telegram/messenger/MessageObject;Lorg/telegram/ui/Cells/ChatMessageCell;Z)V
 
     invoke-virtual {p2, v0}, Lorg/telegram/messenger/DispatchQueue;->postRunnable(Ljava/lang/Runnable;)Z
 
     :cond_1
     :goto_0
-    return v2
+    return v1
 .end method

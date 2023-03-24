@@ -141,7 +141,7 @@
 
     const v2, 0x3fd47ae1    # 1.66f
 
-    mul-float v1, v1, v2
+    mul-float/2addr v1, v2
 
     invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setStrokeWidth(F)V
 
@@ -199,19 +199,19 @@
 
     iget v6, v0, Lorg/telegram/ui/ActionBar/MenuDrawable;->finalRotation:F
 
-    const/high16 v10, 0x43480000    # 200.0f
+    cmpl-float v10, v5, v6
 
-    const/high16 v11, 0x3f800000    # 1.0f
+    const/high16 v11, 0x43480000    # 200.0f
 
-    cmpl-float v12, v5, v6
+    const/high16 v12, 0x3f800000    # 1.0f
 
-    if-eqz v12, :cond_3
+    if-eqz v10, :cond_3
 
-    const-wide/16 v12, 0x0
+    const-wide/16 v13, 0x0
 
-    cmp-long v14, v3, v12
+    cmp-long v3, v3, v13
 
-    if-eqz v14, :cond_2
+    if-eqz v3, :cond_2
 
     .line 123
     iget v3, v0, Lorg/telegram/ui/ActionBar/MenuDrawable;->currentAnimationTime:I
@@ -220,13 +220,13 @@
 
     add-long/2addr v3, v8
 
-    long-to-int v4, v3
+    long-to-int v3, v3
 
-    iput v4, v0, Lorg/telegram/ui/ActionBar/MenuDrawable;->currentAnimationTime:I
+    iput v3, v0, Lorg/telegram/ui/ActionBar/MenuDrawable;->currentAnimationTime:I
 
-    const/16 v3, 0xc8
+    const/16 v4, 0xc8
 
-    if-lt v4, v3, :cond_0
+    if-lt v3, v4, :cond_0
 
     .line 125
     iput v6, v0, Lorg/telegram/ui/ActionBar/MenuDrawable;->currentRotation:F
@@ -234,24 +234,24 @@
     goto :goto_0
 
     :cond_0
-    cmpg-float v3, v5, v6
+    cmpg-float v4, v5, v6
 
-    if-gez v3, :cond_1
+    if-gez v4, :cond_1
 
     .line 128
-    iget-object v3, v0, Lorg/telegram/ui/ActionBar/MenuDrawable;->interpolator:Landroid/view/animation/DecelerateInterpolator;
+    iget-object v4, v0, Lorg/telegram/ui/ActionBar/MenuDrawable;->interpolator:Landroid/view/animation/DecelerateInterpolator;
 
-    int-to-float v4, v4
+    int-to-float v3, v3
 
-    div-float/2addr v4, v10
+    div-float/2addr v3, v11
 
-    invoke-virtual {v3, v4}, Landroid/view/animation/DecelerateInterpolator;->getInterpolation(F)F
+    invoke-virtual {v4, v3}, Landroid/view/animation/DecelerateInterpolator;->getInterpolation(F)F
 
     move-result v3
 
     iget v4, v0, Lorg/telegram/ui/ActionBar/MenuDrawable;->finalRotation:F
 
-    mul-float v3, v3, v4
+    mul-float/2addr v3, v4
 
     iput v3, v0, Lorg/telegram/ui/ActionBar/MenuDrawable;->currentRotation:F
 
@@ -259,17 +259,17 @@
 
     .line 130
     :cond_1
-    iget-object v3, v0, Lorg/telegram/ui/ActionBar/MenuDrawable;->interpolator:Landroid/view/animation/DecelerateInterpolator;
+    iget-object v4, v0, Lorg/telegram/ui/ActionBar/MenuDrawable;->interpolator:Landroid/view/animation/DecelerateInterpolator;
 
-    int-to-float v4, v4
+    int-to-float v3, v3
 
-    div-float/2addr v4, v10
+    div-float/2addr v3, v11
 
-    invoke-virtual {v3, v4}, Landroid/view/animation/DecelerateInterpolator;->getInterpolation(F)F
+    invoke-virtual {v4, v3}, Landroid/view/animation/DecelerateInterpolator;->getInterpolation(F)F
 
     move-result v3
 
-    sub-float v3, v11, v3
+    sub-float v3, v12, v3
 
     iput v3, v0, Lorg/telegram/ui/ActionBar/MenuDrawable;->currentRotation:F
 
@@ -282,25 +282,25 @@
     :cond_3
     iget v3, v0, Lorg/telegram/ui/ActionBar/MenuDrawable;->typeAnimationProgress:F
 
-    cmpg-float v4, v3, v11
+    cmpg-float v4, v3, v12
 
     if-gez v4, :cond_5
 
     long-to-float v4, v8
 
-    div-float/2addr v4, v10
+    div-float/2addr v4, v11
 
     add-float/2addr v3, v4
 
     .line 137
     iput v3, v0, Lorg/telegram/ui/ActionBar/MenuDrawable;->typeAnimationProgress:F
 
-    cmpl-float v3, v3, v11
+    cmpl-float v3, v3, v12
 
     if-lez v3, :cond_4
 
     .line 139
-    iput v11, v0, Lorg/telegram/ui/ActionBar/MenuDrawable;->typeAnimationProgress:F
+    iput v12, v0, Lorg/telegram/ui/ActionBar/MenuDrawable;->typeAnimationProgress:F
 
     .line 141
     :cond_4
@@ -318,9 +318,9 @@
 
     move-result v1
 
-    const/4 v12, 0x2
+    const/4 v10, 0x2
 
-    div-int/2addr v1, v12
+    div-int/2addr v1, v10
 
     const/16 v13, 0x9
 
@@ -342,7 +342,7 @@
 
     iget v4, v0, Lorg/telegram/ui/ActionBar/MenuDrawable;->currentRotation:F
 
-    mul-float v3, v3, v4
+    mul-float/2addr v3, v4
 
     sub-float/2addr v1, v3
 
@@ -350,7 +350,7 @@
 
     move-result v3
 
-    div-int/2addr v3, v12
+    div-int/2addr v3, v10
 
     int-to-float v3, v3
 
@@ -407,9 +407,9 @@
 
     iget v4, v0, Lorg/telegram/ui/ActionBar/MenuDrawable;->typeAnimationProgress:F
 
-    sub-float v4, v11, v4
+    sub-float v4, v12, v4
 
-    mul-float v3, v3, v4
+    mul-float/2addr v3, v4
 
     .line 160
     invoke-static {v5}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
@@ -423,9 +423,9 @@
     goto :goto_1
 
     :cond_8
-    const/4 v4, 0x0
+    move v4, v15
 
-    const/16 v16, 0x0
+    move/from16 v16, v4
 
     goto :goto_2
 
@@ -444,13 +444,13 @@
 
     iget v4, v0, Lorg/telegram/ui/ActionBar/MenuDrawable;->typeAnimationProgress:F
 
-    mul-float v3, v3, v4
+    mul-float/2addr v3, v4
 
     iget v4, v0, Lorg/telegram/ui/ActionBar/MenuDrawable;->currentRotation:F
 
-    sub-float v4, v11, v4
+    sub-float v4, v12, v4
 
-    mul-float v3, v3, v4
+    mul-float/2addr v3, v4
 
     .line 165
     invoke-static {v5}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
@@ -461,7 +461,7 @@
 
     iget v5, v0, Lorg/telegram/ui/ActionBar/MenuDrawable;->typeAnimationProgress:F
 
-    mul-float v4, v4, v5
+    mul-float/2addr v4, v5
 
     iget v5, v0, Lorg/telegram/ui/ActionBar/MenuDrawable;->currentRotation:F
 
@@ -477,9 +477,9 @@
 
     iget v4, v0, Lorg/telegram/ui/ActionBar/MenuDrawable;->currentRotation:F
 
-    sub-float v4, v11, v4
+    sub-float v4, v12, v4
 
-    mul-float v3, v3, v4
+    mul-float/2addr v3, v4
 
     .line 168
     invoke-static {v5}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
@@ -491,9 +491,9 @@
     iget v5, v0, Lorg/telegram/ui/ActionBar/MenuDrawable;->currentRotation:F
 
     :goto_1
-    sub-float v5, v11, v5
+    sub-float v5, v12, v5
 
-    mul-float v4, v4, v5
+    mul-float/2addr v4, v5
 
     move/from16 v16, v3
 
@@ -534,7 +534,7 @@
     :goto_3
     int-to-float v3, v3
 
-    mul-float v2, v2, v3
+    mul-float/2addr v2, v3
 
     invoke-static {v13}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
@@ -569,7 +569,7 @@
 
     iget v2, v0, Lorg/telegram/ui/ActionBar/MenuDrawable;->currentRotation:F
 
-    mul-float v1, v1, v2
+    mul-float/2addr v1, v2
 
     iget-object v2, v0, Lorg/telegram/ui/ActionBar/MenuDrawable;->paint:Landroid/graphics/Paint;
 
@@ -581,9 +581,9 @@
 
     iget v3, v0, Lorg/telegram/ui/ActionBar/MenuDrawable;->currentRotation:F
 
-    sub-float v3, v11, v3
+    sub-float v3, v12, v3
 
-    mul-float v2, v2, v3
+    mul-float/2addr v2, v3
 
     add-float/2addr v1, v2
 
@@ -592,7 +592,7 @@
     goto :goto_4
 
     :cond_c
-    const/4 v2, 0x0
+    move v2, v15
 
     :goto_4
     const/4 v3, 0x0
@@ -611,7 +611,7 @@
 
     iget v6, v0, Lorg/telegram/ui/ActionBar/MenuDrawable;->currentRotation:F
 
-    mul-float v5, v5, v6
+    mul-float/2addr v5, v6
 
     sub-float/2addr v1, v5
 
@@ -631,14 +631,14 @@
 
     iget v5, v0, Lorg/telegram/ui/ActionBar/MenuDrawable;->currentRotation:F
 
-    sub-float v5, v11, v5
+    sub-float v5, v12, v5
 
-    mul-float v4, v4, v5
+    mul-float/2addr v4, v5
 
     goto :goto_5
 
     :cond_d
-    const/4 v4, 0x0
+    move v4, v15
 
     :goto_5
     sub-float v4, v1, v4
@@ -664,9 +664,9 @@
 
     move-result v2
 
-    sub-float v2, v11, v2
+    sub-float v2, v12, v2
 
-    mul-float v1, v1, v2
+    mul-float/2addr v1, v2
 
     invoke-static/range {v22 .. v22}, Lorg/telegram/messenger/AndroidUtilities;->dp(F)I
 
@@ -680,7 +680,7 @@
 
     move-result v3
 
-    mul-float v2, v2, v3
+    mul-float/2addr v2, v3
 
     sub-float/2addr v1, v2
 
@@ -703,7 +703,7 @@
 
     move-result v4
 
-    mul-float v3, v3, v4
+    mul-float/2addr v3, v4
 
     sub-float/2addr v2, v3
 
@@ -726,7 +726,7 @@
 
     move-result v5
 
-    mul-float v4, v4, v5
+    mul-float/2addr v4, v5
 
     add-float/2addr v3, v4
 
@@ -745,7 +745,7 @@
 
     move-result v5
 
-    mul-float v4, v4, v5
+    mul-float/2addr v4, v5
 
     .line 180
     iget-boolean v5, v0, Lorg/telegram/ui/ActionBar/MenuDrawable;->roundCap:Z
@@ -763,9 +763,9 @@
 
     iget v6, v0, Lorg/telegram/ui/ActionBar/MenuDrawable;->currentRotation:F
 
-    sub-float v6, v11, v6
+    sub-float v6, v12, v6
 
-    mul-float v5, v5, v6
+    mul-float/2addr v5, v6
 
     add-float/2addr v4, v5
 
@@ -778,7 +778,7 @@
 
     iget v6, v0, Lorg/telegram/ui/ActionBar/MenuDrawable;->currentRotation:F
 
-    mul-float v5, v5, v6
+    mul-float/2addr v5, v6
 
     add-float/2addr v1, v5
 
@@ -791,7 +791,7 @@
 
     iget v6, v0, Lorg/telegram/ui/ActionBar/MenuDrawable;->currentRotation:F
 
-    mul-float v5, v5, v6
+    mul-float/2addr v5, v6
 
     iget-object v6, v0, Lorg/telegram/ui/ActionBar/MenuDrawable;->paint:Landroid/graphics/Paint;
 
@@ -803,9 +803,9 @@
 
     iget v13, v0, Lorg/telegram/ui/ActionBar/MenuDrawable;->currentRotation:F
 
-    sub-float v13, v11, v13
+    sub-float v13, v12, v13
 
-    mul-float v6, v6, v13
+    mul-float/2addr v6, v13
 
     add-float/2addr v5, v6
 
@@ -822,7 +822,7 @@
 
     iget v6, v0, Lorg/telegram/ui/ActionBar/MenuDrawable;->currentRotation:F
 
-    mul-float v5, v5, v6
+    mul-float/2addr v5, v6
 
     sub-float/2addr v3, v5
 
@@ -837,7 +837,7 @@
 
     iget v6, v0, Lorg/telegram/ui/ActionBar/MenuDrawable;->currentRotation:F
 
-    mul-float v5, v5, v6
+    mul-float/2addr v5, v6
 
     add-float/2addr v1, v5
 
@@ -861,7 +861,7 @@
     :goto_6
     int-to-float v5, v5
 
-    mul-float v3, v3, v5
+    mul-float/2addr v3, v5
 
     invoke-static {v13}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
@@ -899,9 +899,9 @@
 
     move-result v3
 
-    sub-float v3, v11, v3
+    sub-float v3, v12, v3
 
-    mul-float v1, v1, v3
+    mul-float/2addr v1, v3
 
     invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
@@ -911,7 +911,7 @@
 
     iget v3, v0, Lorg/telegram/ui/ActionBar/MenuDrawable;->currentRotation:F
 
-    mul-float v2, v2, v3
+    mul-float/2addr v2, v3
 
     add-float/2addr v2, v1
 
@@ -925,9 +925,9 @@
 
     iget v5, v0, Lorg/telegram/ui/ActionBar/MenuDrawable;->currentRotation:F
 
-    sub-float v5, v11, v5
+    sub-float v5, v12, v5
 
-    mul-float v1, v1, v5
+    mul-float/2addr v1, v5
 
     invoke-static/range {v18 .. v18}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
@@ -937,7 +937,7 @@
 
     iget v6, v0, Lorg/telegram/ui/ActionBar/MenuDrawable;->currentRotation:F
 
-    mul-float v5, v5, v6
+    mul-float/2addr v5, v6
 
     add-float/2addr v1, v5
 
@@ -964,9 +964,9 @@
 
     move-result v3
 
-    sub-float v3, v11, v3
+    sub-float v3, v12, v3
 
-    mul-float v2, v2, v3
+    mul-float/2addr v2, v3
 
     invoke-static/range {v22 .. v22}, Lorg/telegram/messenger/AndroidUtilities;->dpf2(F)F
 
@@ -978,7 +978,7 @@
 
     move-result v4
 
-    mul-float v3, v3, v4
+    mul-float/2addr v3, v4
 
     sub-float/2addr v2, v3
 
@@ -993,9 +993,9 @@
 
     move-result v4
 
-    sub-float v4, v11, v4
+    sub-float v4, v12, v4
 
-    mul-float v3, v3, v4
+    mul-float/2addr v3, v4
 
     const/high16 v4, 0x41100000    # 9.0f
 
@@ -1009,7 +1009,7 @@
 
     move-result v5
 
-    mul-float v4, v4, v5
+    mul-float/2addr v4, v5
 
     add-float/2addr v3, v4
 
@@ -1028,7 +1028,7 @@
 
     move-result v5
 
-    mul-float v4, v4, v5
+    mul-float/2addr v4, v5
 
     add-float/2addr v1, v4
 
@@ -1049,7 +1049,7 @@
 
     move-result v6
 
-    mul-float v5, v5, v6
+    mul-float/2addr v5, v6
 
     add-float/2addr v4, v5
 
@@ -1083,7 +1083,7 @@
     .line 200
     iget v6, v0, Lorg/telegram/ui/ActionBar/MenuDrawable;->currentRotation:F
 
-    invoke-static {v14, v5, v6, v11}, Lorg/telegram/messenger/AndroidUtilities;->getOffsetColor(IIFF)I
+    invoke-static {v14, v5, v6, v12}, Lorg/telegram/messenger/AndroidUtilities;->getOffsetColor(IIFF)I
 
     move-result v14
 
@@ -1092,7 +1092,7 @@
 
     iget v6, v0, Lorg/telegram/ui/ActionBar/MenuDrawable;->currentRotation:F
 
-    invoke-static {v1, v3, v6, v11}, Lorg/telegram/messenger/AndroidUtilities;->getOffsetColor(IIFF)I
+    invoke-static {v1, v3, v6, v12}, Lorg/telegram/messenger/AndroidUtilities;->getOffsetColor(IIFF)I
 
     move-result v1
 
@@ -1114,7 +1114,7 @@
 
     iget v3, v0, Lorg/telegram/ui/ActionBar/MenuDrawable;->currentRotation:F
 
-    mul-float v3, v3, v1
+    mul-float/2addr v3, v1
 
     const/4 v5, 0x0
 
@@ -1132,7 +1132,7 @@
 
     iget v6, v0, Lorg/telegram/ui/ActionBar/MenuDrawable;->currentRotation:F
 
-    mul-float v2, v2, v6
+    mul-float/2addr v2, v6
 
     sub-float/2addr v1, v2
 
@@ -1169,9 +1169,9 @@
 
     move-result v2
 
-    sub-float v2, v11, v2
+    sub-float v2, v12, v2
 
-    mul-float v1, v1, v2
+    mul-float/2addr v1, v2
 
     invoke-static/range {v22 .. v22}, Lorg/telegram/messenger/AndroidUtilities;->dp(F)I
 
@@ -1185,7 +1185,7 @@
 
     move-result v3
 
-    mul-float v2, v2, v3
+    mul-float/2addr v2, v3
 
     sub-float/2addr v1, v2
 
@@ -1208,7 +1208,7 @@
 
     move-result v4
 
-    mul-float v3, v3, v4
+    mul-float/2addr v3, v4
 
     sub-float/2addr v2, v3
 
@@ -1231,7 +1231,7 @@
 
     move-result v5
 
-    mul-float v4, v4, v5
+    mul-float/2addr v4, v5
 
     add-float/2addr v3, v4
 
@@ -1248,7 +1248,7 @@
 
     move-result v5
 
-    mul-float v4, v4, v5
+    mul-float/2addr v4, v5
 
     :cond_11
     :goto_7
@@ -1285,7 +1285,7 @@
 
     move/from16 v4, v19
 
-    move v10, v5
+    move v11, v5
 
     move/from16 v5, v20
 
@@ -1307,7 +1307,7 @@
     goto :goto_9
 
     :cond_12
-    move v10, v5
+    move v11, v5
 
     move/from16 v20, v6
 
@@ -1351,7 +1351,7 @@
 
     iget v1, v0, Lorg/telegram/ui/ActionBar/MenuDrawable;->currentRotation:F
 
-    cmpl-float v1, v1, v11
+    cmpl-float v1, v1, v12
 
     if-nez v1, :cond_14
 
@@ -1362,7 +1362,7 @@
 
     iget v1, v0, Lorg/telegram/ui/ActionBar/MenuDrawable;->typeAnimationProgress:F
 
-    cmpl-float v1, v1, v11
+    cmpl-float v1, v1, v12
 
     if-eqz v1, :cond_1d
 
@@ -1390,14 +1390,14 @@
 
     const/high16 v2, 0x40b00000    # 5.5f
 
-    mul-float v1, v1, v2
+    mul-float/2addr v1, v2
 
     .line 221
     iget v2, v0, Lorg/telegram/ui/ActionBar/MenuDrawable;->currentRotation:F
 
-    sub-float v3, v11, v2
+    sub-float v3, v12, v2
 
-    sub-float v2, v11, v2
+    sub-float v2, v12, v2
 
     invoke-virtual {v7, v3, v2, v13, v14}, Landroid/graphics/Canvas;->scale(FFFF)V
 
@@ -1411,15 +1411,15 @@
     .line 223
     iget v2, v0, Lorg/telegram/ui/ActionBar/MenuDrawable;->typeAnimationProgress:F
 
-    sub-float v2, v11, v2
+    sub-float v2, v12, v2
 
-    mul-float v1, v1, v2
+    mul-float/2addr v1, v2
 
     .line 225
     :cond_15
     iget-object v2, v0, Lorg/telegram/ui/ActionBar/MenuDrawable;->backPaint:Landroid/graphics/Paint;
 
-    invoke-virtual {v2, v10}, Landroid/graphics/Paint;->setColor(I)V
+    invoke-virtual {v2, v11}, Landroid/graphics/Paint;->setColor(I)V
 
     .line 226
     iget-object v2, v0, Lorg/telegram/ui/ActionBar/MenuDrawable;->backPaint:Landroid/graphics/Paint;
@@ -1452,7 +1452,7 @@
 
     const v3, 0x3fd47ae1    # 1.66f
 
-    mul-float v2, v2, v3
+    mul-float/2addr v2, v3
 
     invoke-virtual {v1, v2}, Landroid/graphics/Paint;->setStrokeWidth(F)V
 
@@ -1472,9 +1472,9 @@
 
     iget v3, v0, Lorg/telegram/ui/ActionBar/MenuDrawable;->typeAnimationProgress:F
 
-    sub-float v3, v11, v3
+    sub-float v3, v12, v3
 
-    mul-float v2, v2, v3
+    mul-float/2addr v2, v3
 
     float-to-int v2, v2
 
@@ -1492,7 +1492,7 @@
 
     .line 235
     :goto_a
-    invoke-static {v12}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    invoke-static {v10}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v1
 
@@ -1541,7 +1541,7 @@
     :cond_19
     iget-object v1, v0, Lorg/telegram/ui/ActionBar/MenuDrawable;->backPaint:Landroid/graphics/Paint;
 
-    invoke-static {v12}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    invoke-static {v10}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v2
 
@@ -1565,9 +1565,9 @@
 
     iget v3, v0, Lorg/telegram/ui/ActionBar/MenuDrawable;->typeAnimationProgress:F
 
-    sub-float/2addr v11, v3
+    sub-float/2addr v12, v3
 
-    mul-float v2, v2, v11
+    mul-float/2addr v2, v12
 
     float-to-int v2, v2
 
@@ -1591,7 +1591,7 @@
     .line 245
     iget v3, v0, Lorg/telegram/ui/ActionBar/MenuDrawable;->animatedDownloadProgress:F
 
-    mul-float v3, v3, v2
+    mul-float/2addr v3, v2
 
     invoke-static {v1, v3}, Ljava/lang/Math;->max(FF)F
 
@@ -1654,7 +1654,7 @@
 
     const-wide/16 v2, 0x168
 
-    mul-long v2, v2, v8
+    mul-long/2addr v2, v8
 
     long-to-float v2, v2
 
@@ -1720,7 +1720,7 @@
 
     move-result v1
 
-    mul-float v3, v3, v1
+    mul-float/2addr v3, v1
 
     add-float/2addr v2, v3
 
@@ -1894,13 +1894,13 @@
 
     if-eqz p2, :cond_3
 
-    const/high16 p2, 0x43480000    # 200.0f
+    cmpg-float p2, v2, p1
 
-    cmpg-float v0, v2, p1
+    const/high16 v0, 0x43480000    # 200.0f
 
-    if-gez v0, :cond_2
+    if-gez p2, :cond_2
 
-    mul-float v2, v2, p2
+    mul-float/2addr v2, v0
 
     float-to-int p2, v2
 
@@ -1912,7 +1912,7 @@
     :cond_2
     sub-float/2addr v3, v2
 
-    mul-float v3, v3, p2
+    mul-float/2addr v3, v0
 
     float-to-int p2, v3
 

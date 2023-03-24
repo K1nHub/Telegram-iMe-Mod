@@ -151,7 +151,7 @@
 
 # virtual methods
 .method protected onDraw(Landroid/graphics/Canvas;)V
-    .locals 13
+    .locals 12
 
     .line 1623
     invoke-super {p0, p1}, Landroid/view/View;->onDraw(Landroid/graphics/Canvas;)V
@@ -159,13 +159,13 @@
     .line 1624
     iget-wide v0, p0, Lorg/telegram/ui/Components/Bulletin$TimerView;->timeLeft:J
 
-    const/4 v2, 0x0
+    const-wide/16 v2, 0x0
 
-    const-wide/16 v3, 0x0
+    cmp-long v4, v0, v2
 
-    cmp-long v5, v0, v3
+    const/4 v5, 0x0
 
-    if-lez v5, :cond_0
+    if-lez v4, :cond_0
 
     long-to-float v0, v0
 
@@ -184,21 +184,21 @@
     goto :goto_0
 
     :cond_0
-    const/4 v0, 0x0
+    move v0, v5
 
     .line 1625
     :goto_0
     iget-object v1, p0, Lorg/telegram/ui/Components/Bulletin$TimerView;->rect:Landroid/graphics/RectF;
 
-    const/4 v5, 0x1
+    const/4 v4, 0x1
 
-    invoke-static {v5}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v6
 
     int-to-float v6, v6
 
-    invoke-static {v5}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v7
 
@@ -208,7 +208,7 @@
 
     move-result v8
 
-    invoke-static {v5}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v9
 
@@ -220,7 +220,7 @@
 
     move-result v9
 
-    invoke-static {v5}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v10
 
@@ -238,10 +238,10 @@
     .line 1627
     iput v0, p0, Lorg/telegram/ui/Components/Bulletin$TimerView;->prevSeconds:I
 
-    new-array v1, v5, [Ljava/lang/Object;
+    new-array v1, v4, [Ljava/lang/Object;
 
     .line 1628
-    invoke-static {v2, v0}, Ljava/lang/Math;->max(II)I
+    invoke-static {v5, v0}, Ljava/lang/Math;->max(II)I
 
     move-result v0
 
@@ -249,7 +249,7 @@
 
     move-result-object v0
 
-    aput-object v0, v1, v2
+    aput-object v0, v1, v5
 
     const-string v0, "%d"
 
@@ -298,23 +298,23 @@
     .line 1635
     new-instance v0, Landroid/text/StaticLayout;
 
-    iget-object v6, p0, Lorg/telegram/ui/Components/Bulletin$TimerView;->timeLeftString:Ljava/lang/String;
+    iget-object v5, p0, Lorg/telegram/ui/Components/Bulletin$TimerView;->timeLeftString:Ljava/lang/String;
 
-    iget-object v7, p0, Lorg/telegram/ui/Components/Bulletin$TimerView;->textPaint:Landroid/text/TextPaint;
+    iget-object v6, p0, Lorg/telegram/ui/Components/Bulletin$TimerView;->textPaint:Landroid/text/TextPaint;
 
-    const v8, 0x7fffffff
+    const v7, 0x7fffffff
 
-    sget-object v9, Landroid/text/Layout$Alignment;->ALIGN_NORMAL:Landroid/text/Layout$Alignment;
+    sget-object v8, Landroid/text/Layout$Alignment;->ALIGN_NORMAL:Landroid/text/Layout$Alignment;
 
-    const/high16 v10, 0x3f800000    # 1.0f
+    const/high16 v9, 0x3f800000    # 1.0f
+
+    const/4 v10, 0x0
 
     const/4 v11, 0x0
 
-    const/4 v12, 0x0
+    move-object v4, v0
 
-    move-object v5, v0
-
-    invoke-direct/range {v5 .. v12}, Landroid/text/StaticLayout;-><init>(Ljava/lang/CharSequence;Landroid/text/TextPaint;ILandroid/text/Layout$Alignment;FFZ)V
+    invoke-direct/range {v4 .. v11}, Landroid/text/StaticLayout;-><init>(Ljava/lang/CharSequence;Landroid/text/TextPaint;ILandroid/text/Layout$Alignment;FFZ)V
 
     iput-object v0, p0, Lorg/telegram/ui/Components/Bulletin$TimerView;->timeLayout:Landroid/text/StaticLayout;
 
@@ -324,13 +324,13 @@
 
     const/high16 v1, 0x3f800000    # 1.0f
 
-    cmpg-float v2, v0, v1
+    cmpg-float v4, v0, v1
 
-    if-gez v2, :cond_4
+    if-gez v4, :cond_4
 
-    const v2, 0x3dda740e
+    const v4, 0x3dda740e
 
-    add-float/2addr v0, v2
+    add-float/2addr v0, v4
 
     .line 1639
     iput v0, p0, Lorg/telegram/ui/Components/Bulletin$TimerView;->timeReplaceProgress:F
@@ -358,17 +358,17 @@
     move-result v0
 
     .line 1649
-    iget-object v2, p0, Lorg/telegram/ui/Components/Bulletin$TimerView;->timeLayoutOut:Landroid/text/StaticLayout;
+    iget-object v4, p0, Lorg/telegram/ui/Components/Bulletin$TimerView;->timeLayoutOut:Landroid/text/StaticLayout;
 
     const/16 v5, 0xa
 
     const/high16 v6, 0x40000000    # 2.0f
 
-    if-eqz v2, :cond_5
+    if-eqz v4, :cond_5
 
-    iget v2, p0, Lorg/telegram/ui/Components/Bulletin$TimerView;->timeReplaceProgress:F
+    iget v4, p0, Lorg/telegram/ui/Components/Bulletin$TimerView;->timeReplaceProgress:F
 
-    cmpg-float v7, v2, v1
+    cmpg-float v7, v4, v1
 
     if-gez v7, :cond_5
 
@@ -377,23 +377,23 @@
 
     int-to-float v8, v0
 
-    sub-float v2, v1, v2
+    sub-float v4, v1, v4
 
-    mul-float v8, v8, v2
+    mul-float/2addr v8, v4
 
-    float-to-int v2, v8
+    float-to-int v4, v8
 
-    invoke-virtual {v7, v2}, Landroid/text/TextPaint;->setAlpha(I)V
+    invoke-virtual {v7, v4}, Landroid/text/TextPaint;->setAlpha(I)V
 
     .line 1651
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
     .line 1652
-    iget-object v2, p0, Lorg/telegram/ui/Components/Bulletin$TimerView;->rect:Landroid/graphics/RectF;
+    iget-object v4, p0, Lorg/telegram/ui/Components/Bulletin$TimerView;->rect:Landroid/graphics/RectF;
 
-    invoke-virtual {v2}, Landroid/graphics/RectF;->centerX()F
+    invoke-virtual {v4}, Landroid/graphics/RectF;->centerX()F
 
-    move-result v2
+    move-result v4
 
     iget v7, p0, Lorg/telegram/ui/Components/Bulletin$TimerView;->textWidthOut:I
 
@@ -401,7 +401,7 @@
 
     div-float/2addr v7, v6
 
-    sub-float/2addr v2, v7
+    sub-float/2addr v4, v7
 
     iget-object v7, p0, Lorg/telegram/ui/Components/Bulletin$TimerView;->rect:Landroid/graphics/RectF;
 
@@ -429,35 +429,35 @@
 
     iget v9, p0, Lorg/telegram/ui/Components/Bulletin$TimerView;->timeReplaceProgress:F
 
-    mul-float v8, v8, v9
+    mul-float/2addr v8, v9
 
     add-float/2addr v7, v8
 
-    invoke-virtual {p1, v2, v7}, Landroid/graphics/Canvas;->translate(FF)V
+    invoke-virtual {p1, v4, v7}, Landroid/graphics/Canvas;->translate(FF)V
 
     .line 1653
-    iget-object v2, p0, Lorg/telegram/ui/Components/Bulletin$TimerView;->timeLayoutOut:Landroid/text/StaticLayout;
+    iget-object v4, p0, Lorg/telegram/ui/Components/Bulletin$TimerView;->timeLayoutOut:Landroid/text/StaticLayout;
 
-    invoke-virtual {v2, p1}, Landroid/text/StaticLayout;->draw(Landroid/graphics/Canvas;)V
+    invoke-virtual {v4, p1}, Landroid/text/StaticLayout;->draw(Landroid/graphics/Canvas;)V
 
     .line 1654
-    iget-object v2, p0, Lorg/telegram/ui/Components/Bulletin$TimerView;->textPaint:Landroid/text/TextPaint;
+    iget-object v4, p0, Lorg/telegram/ui/Components/Bulletin$TimerView;->textPaint:Landroid/text/TextPaint;
 
-    invoke-virtual {v2, v0}, Landroid/text/TextPaint;->setAlpha(I)V
+    invoke-virtual {v4, v0}, Landroid/text/TextPaint;->setAlpha(I)V
 
     .line 1655
     invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
 
     .line 1658
     :cond_5
-    iget-object v2, p0, Lorg/telegram/ui/Components/Bulletin$TimerView;->timeLayout:Landroid/text/StaticLayout;
+    iget-object v4, p0, Lorg/telegram/ui/Components/Bulletin$TimerView;->timeLayout:Landroid/text/StaticLayout;
 
-    if-eqz v2, :cond_8
+    if-eqz v4, :cond_8
 
     .line 1659
-    iget v2, p0, Lorg/telegram/ui/Components/Bulletin$TimerView;->timeReplaceProgress:F
+    iget v4, p0, Lorg/telegram/ui/Components/Bulletin$TimerView;->timeReplaceProgress:F
 
-    cmpl-float v7, v2, v1
+    cmpl-float v7, v4, v1
 
     if-eqz v7, :cond_6
 
@@ -466,22 +466,22 @@
 
     int-to-float v8, v0
 
-    mul-float v8, v8, v2
+    mul-float/2addr v8, v4
 
-    float-to-int v2, v8
+    float-to-int v4, v8
 
-    invoke-virtual {v7, v2}, Landroid/text/TextPaint;->setAlpha(I)V
+    invoke-virtual {v7, v4}, Landroid/text/TextPaint;->setAlpha(I)V
 
     .line 1662
     :cond_6
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
     .line 1663
-    iget-object v2, p0, Lorg/telegram/ui/Components/Bulletin$TimerView;->rect:Landroid/graphics/RectF;
+    iget-object v4, p0, Lorg/telegram/ui/Components/Bulletin$TimerView;->rect:Landroid/graphics/RectF;
 
-    invoke-virtual {v2}, Landroid/graphics/RectF;->centerX()F
+    invoke-virtual {v4}, Landroid/graphics/RectF;->centerX()F
 
-    move-result v2
+    move-result v4
 
     iget v7, p0, Lorg/telegram/ui/Components/Bulletin$TimerView;->textWidth:I
 
@@ -489,7 +489,7 @@
 
     div-float/2addr v7, v6
 
-    sub-float/2addr v2, v7
+    sub-float/2addr v4, v7
 
     iget-object v7, p0, Lorg/telegram/ui/Components/Bulletin$TimerView;->rect:Landroid/graphics/RectF;
 
@@ -519,21 +519,21 @@
 
     sub-float v6, v1, v6
 
-    mul-float v5, v5, v6
+    mul-float/2addr v5, v6
 
     sub-float/2addr v7, v5
 
-    invoke-virtual {p1, v2, v7}, Landroid/graphics/Canvas;->translate(FF)V
+    invoke-virtual {p1, v4, v7}, Landroid/graphics/Canvas;->translate(FF)V
 
     .line 1664
-    iget-object v2, p0, Lorg/telegram/ui/Components/Bulletin$TimerView;->timeLayout:Landroid/text/StaticLayout;
+    iget-object v4, p0, Lorg/telegram/ui/Components/Bulletin$TimerView;->timeLayout:Landroid/text/StaticLayout;
 
-    invoke-virtual {v2, p1}, Landroid/text/StaticLayout;->draw(Landroid/graphics/Canvas;)V
+    invoke-virtual {v4, p1}, Landroid/text/StaticLayout;->draw(Landroid/graphics/Canvas;)V
 
     .line 1665
-    iget v2, p0, Lorg/telegram/ui/Components/Bulletin$TimerView;->timeReplaceProgress:F
+    iget v4, p0, Lorg/telegram/ui/Components/Bulletin$TimerView;->timeReplaceProgress:F
 
-    cmpl-float v1, v2, v1
+    cmpl-float v1, v4, v1
 
     if-eqz v1, :cond_7
 
@@ -548,38 +548,38 @@
 
     .line 1671
     :cond_8
-    iget-object v6, p0, Lorg/telegram/ui/Components/Bulletin$TimerView;->rect:Landroid/graphics/RectF;
+    iget-object v5, p0, Lorg/telegram/ui/Components/Bulletin$TimerView;->rect:Landroid/graphics/RectF;
 
-    const/high16 v7, -0x3d4c0000    # -90.0f
+    const/high16 v6, -0x3d4c0000    # -90.0f
 
     const/high16 v0, -0x3c4c0000    # -360.0f
 
-    iget-wide v1, p0, Lorg/telegram/ui/Components/Bulletin$TimerView;->timeLeft:J
+    iget-wide v7, p0, Lorg/telegram/ui/Components/Bulletin$TimerView;->timeLeft:J
 
-    invoke-static {v3, v4, v1, v2}, Ljava/lang/Math;->max(JJ)J
+    invoke-static {v2, v3, v7, v8}, Ljava/lang/Math;->max(JJ)J
 
-    move-result-wide v1
+    move-result-wide v7
 
-    long-to-float v1, v1
+    long-to-float v1, v7
 
-    const v2, 0x459c4000    # 5000.0f
+    const v4, 0x459c4000    # 5000.0f
 
-    div-float/2addr v1, v2
+    div-float/2addr v1, v4
 
-    mul-float v8, v1, v0
+    mul-float v7, v1, v0
 
-    const/4 v9, 0x0
+    const/4 v8, 0x0
 
-    iget-object v10, p0, Lorg/telegram/ui/Components/Bulletin$TimerView;->progressPaint:Landroid/graphics/Paint;
+    iget-object v9, p0, Lorg/telegram/ui/Components/Bulletin$TimerView;->progressPaint:Landroid/graphics/Paint;
 
-    move-object v5, p1
+    move-object v4, p1
 
-    invoke-virtual/range {v5 .. v10}, Landroid/graphics/Canvas;->drawArc(Landroid/graphics/RectF;FFZLandroid/graphics/Paint;)V
+    invoke-virtual/range {v4 .. v9}, Landroid/graphics/Canvas;->drawArc(Landroid/graphics/RectF;FFZLandroid/graphics/Paint;)V
 
     .line 1673
     iget-wide v0, p0, Lorg/telegram/ui/Components/Bulletin$TimerView;->lastUpdateTime:J
 
-    cmp-long p1, v0, v3
+    cmp-long p1, v0, v2
 
     if-eqz p1, :cond_9
 

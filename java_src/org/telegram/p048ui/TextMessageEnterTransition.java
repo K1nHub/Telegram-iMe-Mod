@@ -392,17 +392,17 @@ public class TextMessageEnterTransition implements MessageEnterTransitionContain
         return layout.getLineRight(i) == ((float) layout.getWidth()) && layout.getLineLeft(i) != BitmapDescriptorFactory.HUE_RED;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:103:0x059a  */
-    /* JADX WARN: Removed duplicated region for block: B:74:0x03d0  */
-    /* JADX WARN: Removed duplicated region for block: B:75:0x03df  */
-    /* JADX WARN: Removed duplicated region for block: B:78:0x0417  */
-    /* JADX WARN: Removed duplicated region for block: B:81:0x0437  */
-    /* JADX WARN: Removed duplicated region for block: B:82:0x043f  */
-    /* JADX WARN: Removed duplicated region for block: B:85:0x0446  */
-    /* JADX WARN: Removed duplicated region for block: B:86:0x0471  */
-    /* JADX WARN: Removed duplicated region for block: B:89:0x04c2  */
-    /* JADX WARN: Removed duplicated region for block: B:92:0x04fb  */
-    /* JADX WARN: Removed duplicated region for block: B:95:0x0511  */
+    /* JADX WARN: Removed duplicated region for block: B:103:0x0590  */
+    /* JADX WARN: Removed duplicated region for block: B:74:0x03cd  */
+    /* JADX WARN: Removed duplicated region for block: B:75:0x03dc  */
+    /* JADX WARN: Removed duplicated region for block: B:78:0x0414  */
+    /* JADX WARN: Removed duplicated region for block: B:81:0x0432  */
+    /* JADX WARN: Removed duplicated region for block: B:82:0x043a  */
+    /* JADX WARN: Removed duplicated region for block: B:85:0x0441  */
+    /* JADX WARN: Removed duplicated region for block: B:86:0x046c  */
+    /* JADX WARN: Removed duplicated region for block: B:89:0x04bb  */
+    /* JADX WARN: Removed duplicated region for block: B:92:0x04f2  */
+    /* JADX WARN: Removed duplicated region for block: B:95:0x0508  */
     @Override // org.telegram.p048ui.MessageEnterTransitionContainer.Transition
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -410,7 +410,7 @@ public class TextMessageEnterTransition implements MessageEnterTransitionContain
     */
     public void onDraw(android.graphics.Canvas r44) {
         /*
-            Method dump skipped, instructions count: 2348
+            Method dump skipped, instructions count: 2333
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: org.telegram.p048ui.TextMessageEnterTransition.onDraw(android.graphics.Canvas):void");

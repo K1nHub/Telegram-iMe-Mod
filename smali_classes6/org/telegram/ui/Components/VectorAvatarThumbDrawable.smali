@@ -138,7 +138,7 @@
     goto :goto_0
 
     :cond_0
-    const/4 v4, 0x0
+    move v4, v2
 
     .line 50
     :goto_0
@@ -171,7 +171,7 @@
     goto :goto_1
 
     :cond_1
-    const/4 v6, 0x0
+    move v6, v2
 
     .line 51
     :goto_1
@@ -332,9 +332,9 @@
 
     iget-wide v5, v5, Lorg/telegram/tgnet/TLRPC$TL_videoSizeStickerMarkup;->sticker_id:J
 
-    cmp-long v7, v3, v5
+    cmp-long v3, v3, v5
 
-    if-nez v7, :cond_2
+    if-nez v3, :cond_2
 
     .line 85
     iget-object v0, v0, Lorg/telegram/tgnet/TLRPC$messages_StickerSet;->documents:Ljava/util/ArrayList;
@@ -610,7 +610,7 @@
 
     const v3, 0x3f333333    # 0.7f
 
-    mul-float v2, v2, v3
+    mul-float/2addr v2, v3
 
     float-to-int v2, v2
 
@@ -641,7 +641,7 @@
 
     int-to-float v5, v5
 
-    mul-float v5, v5, v4
+    mul-float/2addr v5, v4
 
     float-to-int v5, v5
 
@@ -676,7 +676,7 @@
 
     int-to-float v5, v5
 
-    mul-float v4, v4, v5
+    mul-float/2addr v4, v5
 
     float-to-int v4, v4
 
@@ -706,7 +706,7 @@
 .end method
 
 .method public equals(Ljava/lang/Object;)Z
-    .locals 8
+    .locals 7
 
     const/4 v0, 0x1
 
@@ -796,7 +796,7 @@
     goto :goto_0
 
     :cond_2
-    const/4 v0, 0x0
+    move v0, v1
 
     :goto_0
     return v0
@@ -820,9 +820,9 @@
 
     iget-wide v5, v5, Lorg/telegram/tgnet/TLRPC$InputStickerSet;->id:J
 
-    cmp-long v7, v3, v5
+    cmp-long v3, v3, v5
 
-    if-nez v7, :cond_4
+    if-nez v3, :cond_4
 
     iget-wide v2, v2, Lorg/telegram/tgnet/TLRPC$TL_videoSizeStickerMarkup;->sticker_id:J
 
@@ -835,7 +835,7 @@
     goto :goto_1
 
     :cond_4
-    const/4 v0, 0x0
+    move v0, v1
 
     :goto_1
     return v0

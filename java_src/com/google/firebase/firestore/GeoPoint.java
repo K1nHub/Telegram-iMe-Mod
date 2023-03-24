@@ -38,6 +38,6 @@ public class GeoPoint implements Comparable<GeoPoint> {
     public int hashCode() {
         long doubleToLongBits = Double.doubleToLongBits(this.latitude);
         long doubleToLongBits2 = Double.doubleToLongBits(this.longitude);
-        return (((int) (doubleToLongBits ^ (doubleToLongBits >>> 32))) * 31) + ((int) (doubleToLongBits2 ^ (doubleToLongBits2 >>> 32)));
+        return (((int) (doubleToLongBits ^ (doubleToLongBits >>> 32))) * 31) + ((int) ((doubleToLongBits2 >>> 32) ^ doubleToLongBits2));
     }
 }

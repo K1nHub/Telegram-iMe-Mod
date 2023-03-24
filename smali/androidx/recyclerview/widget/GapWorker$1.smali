@@ -50,24 +50,24 @@
 
     if-nez v0, :cond_0
 
-    const/4 v3, 0x1
+    move v3, v2
 
     goto :goto_0
 
     :cond_0
-    const/4 v3, 0x0
+    move v3, v1
 
     :goto_0
     iget-object v4, p2, Landroidx/recyclerview/widget/GapWorker$Task;->view:Landroidx/recyclerview/widget/RecyclerView;
 
     if-nez v4, :cond_1
 
-    const/4 v4, 0x1
+    move v4, v2
 
     goto :goto_1
 
     :cond_1
-    const/4 v4, 0x0
+    move v4, v1
 
     :goto_1
     const/4 v5, -0x1
@@ -79,7 +79,7 @@
     goto :goto_2
 
     :cond_2
-    const/4 v2, -0x1
+    move v2, v5
 
     :goto_2
     return v2
@@ -94,7 +94,7 @@
 
     if-eqz v0, :cond_4
 
-    const/4 v2, -0x1
+    move v2, v5
 
     :cond_4
     return v2

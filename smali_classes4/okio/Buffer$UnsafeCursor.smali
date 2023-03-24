@@ -122,7 +122,7 @@
 .end method
 
 .method public final next()I
-    .locals 5
+    .locals 4
 
     .line 809
     iget-wide v0, p0, Lokio/Buffer$UnsafeCursor;->offset:J
@@ -135,9 +135,9 @@
 
     move-result-wide v2
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-eqz v4, :cond_0
+    if-eqz v0, :cond_0
 
     const/4 v0, 0x1
 
@@ -154,9 +154,9 @@
 
     const-wide/16 v2, -0x1
 
-    cmp-long v4, v0, v2
+    cmp-long v2, v0, v2
 
-    if-nez v4, :cond_1
+    if-nez v2, :cond_1
 
     const-wide/16 v0, 0x0
 
@@ -217,48 +217,48 @@
 
     move-result-wide v4
 
-    const/4 v7, 0x1
+    cmp-long v6, v1, v4
 
-    const-wide/16 v8, 0x0
+    const/4 v8, 0x1
 
-    cmp-long v10, v1, v4
+    const-wide/16 v9, 0x0
 
-    if-gtz v10, :cond_4
+    if-gtz v6, :cond_4
 
-    cmp-long v10, v1, v8
+    cmp-long v6, v1, v9
 
-    if-ltz v10, :cond_0
+    if-ltz v6, :cond_0
 
-    const/4 v6, 0x1
+    move v7, v8
 
     goto :goto_0
 
     :cond_0
-    const/4 v6, 0x0
+    const/4 v7, 0x0
 
     :goto_0
-    if-eqz v6, :cond_3
+    if-eqz v7, :cond_3
 
     sub-long v6, v4, v1
 
     :goto_1
-    cmp-long v10, v6, v8
+    cmp-long v8, v6, v9
 
-    if-lez v10, :cond_2
+    if-lez v8, :cond_2
 
     .line 918
-    iget-object v10, v3, Lokio/Buffer;->head:Lokio/Segment;
+    iget-object v8, v3, Lokio/Buffer;->head:Lokio/Segment;
 
-    invoke-static {v10}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;)V
+    invoke-static {v8}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;)V
 
-    iget-object v10, v10, Lokio/Segment;->prev:Lokio/Segment;
+    iget-object v8, v8, Lokio/Segment;->prev:Lokio/Segment;
 
     .line 919
-    invoke-static {v10}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;)V
+    invoke-static {v8}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;)V
 
-    iget v11, v10, Lokio/Segment;->limit:I
+    iget v11, v8, Lokio/Segment;->limit:I
 
-    iget v12, v10, Lokio/Segment;->pos:I
+    iget v12, v8, Lokio/Segment;->pos:I
 
     sub-int v12, v11, v12
 
@@ -269,26 +269,26 @@
     if-gtz v14, :cond_1
 
     .line 921
-    invoke-virtual {v10}, Lokio/Segment;->pop()Lokio/Segment;
+    invoke-virtual {v8}, Lokio/Segment;->pop()Lokio/Segment;
 
     move-result-object v11
 
     iput-object v11, v3, Lokio/Buffer;->head:Lokio/Segment;
 
     .line 922
-    invoke-static {v10}, Lokio/SegmentPool;->recycle(Lokio/Segment;)V
+    invoke-static {v8}, Lokio/SegmentPool;->recycle(Lokio/Segment;)V
 
     sub-long/2addr v6, v12
 
     goto :goto_1
 
     :cond_1
-    long-to-int v7, v6
+    long-to-int v6, v6
 
-    sub-int/2addr v11, v7
+    sub-int/2addr v11, v6
 
     .line 925
-    iput v11, v10, Lokio/Segment;->limit:I
+    iput v11, v8, Lokio/Segment;->limit:I
 
     :cond_2
     const/4 v6, 0x0
@@ -339,19 +339,19 @@
     throw v2
 
     :cond_4
-    if-lez v10, :cond_6
+    if-lez v6, :cond_6
 
-    sub-long v10, v1, v4
+    sub-long v11, v1, v4
 
-    const/4 v12, 0x1
+    move v6, v8
 
     :goto_2
-    cmp-long v13, v10, v8
+    cmp-long v13, v11, v9
 
     if-lez v13, :cond_6
 
     .line 940
-    invoke-virtual {v3, v7}, Lokio/Buffer;->writableSegment$okio(I)Lokio/Segment;
+    invoke-virtual {v3, v8}, Lokio/Buffer;->writableSegment$okio(I)Lokio/Segment;
 
     move-result-object v13
 
@@ -363,24 +363,24 @@
     int-to-long v14, v14
 
     .line 75
-    invoke-static {v10, v11, v14, v15}, Ljava/lang/Math;->min(JJ)J
+    invoke-static {v11, v12, v14, v15}, Ljava/lang/Math;->min(JJ)J
 
     move-result-wide v14
 
-    long-to-int v15, v14
+    long-to-int v14, v14
 
     .line 942
-    iget v14, v13, Lokio/Segment;->limit:I
+    iget v15, v13, Lokio/Segment;->limit:I
 
-    add-int/2addr v14, v15
+    add-int/2addr v15, v14
 
-    iput v14, v13, Lokio/Segment;->limit:I
+    iput v15, v13, Lokio/Segment;->limit:I
 
-    int-to-long v6, v15
+    int-to-long v7, v14
 
-    sub-long/2addr v10, v6
+    sub-long/2addr v11, v7
 
-    if-eqz v12, :cond_5
+    if-eqz v6, :cond_5
 
     .line 947
     iput-object v13, v0, Lokio/Buffer$UnsafeCursor;->segment:Lokio/Segment;
@@ -393,18 +393,18 @@
 
     iput-object v6, v0, Lokio/Buffer$UnsafeCursor;->data:[B
 
-    sub-int v6, v14, v15
+    sub-int v6, v15, v14
 
     .line 950
     iput v6, v0, Lokio/Buffer$UnsafeCursor;->start:I
 
     .line 951
-    iput v14, v0, Lokio/Buffer$UnsafeCursor;->end:I
+    iput v15, v0, Lokio/Buffer$UnsafeCursor;->end:I
 
-    const/4 v12, 0x0
+    const/4 v6, 0x0
 
     :cond_5
-    const/4 v7, 0x1
+    const/4 v8, 0x1
 
     goto :goto_2
 
@@ -445,7 +445,7 @@
 .end method
 
 .method public final seek(J)I
-    .locals 12
+    .locals 11
 
     .line 819
     iget-object v0, p0, Lokio/Buffer$UnsafeCursor;->buffer:Lokio/Buffer;
@@ -456,33 +456,33 @@
 
     int-to-long v2, v1
 
-    cmp-long v4, p1, v2
+    cmp-long v2, p1, v2
 
-    if-ltz v4, :cond_9
+    if-ltz v2, :cond_9
 
     .line 820
     invoke-virtual {v0}, Lokio/Buffer;->size()J
 
     move-result-wide v2
 
-    cmp-long v4, p1, v2
+    cmp-long v2, p1, v2
 
-    if-gtz v4, :cond_9
+    if-gtz v2, :cond_9
 
     const-wide/16 v2, -0x1
 
-    cmp-long v4, p1, v2
+    cmp-long v2, p1, v2
 
-    if-eqz v4, :cond_8
+    if-eqz v2, :cond_8
 
     .line 825
     invoke-virtual {v0}, Lokio/Buffer;->size()J
 
     move-result-wide v2
 
-    cmp-long v4, p1, v2
+    cmp-long v2, p1, v2
 
-    if-nez v4, :cond_0
+    if-nez v2, :cond_0
 
     goto/16 :goto_3
 
@@ -550,9 +550,9 @@
 
     sub-long v9, p1, v1
 
-    cmp-long v11, v7, v9
+    cmp-long v7, v7, v9
 
-    if-lez v11, :cond_3
+    if-lez v7, :cond_3
 
     .line 858
     :goto_1
@@ -671,9 +671,9 @@
 
     sub-long/2addr p1, v1
 
-    long-to-int p2, p1
+    long-to-int p1, p1
 
-    add-int/2addr v0, p2
+    add-int/2addr v0, p1
 
     iput v0, p0, Lokio/Buffer$UnsafeCursor;->start:I
 

@@ -308,7 +308,7 @@
 
     if-ne p2, v0, :cond_2
 
-    const/4 p3, 0x1
+    move p3, v1
 
     .line 45
     :cond_2

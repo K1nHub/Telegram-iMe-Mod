@@ -189,7 +189,7 @@
 
     const/high16 v4, 0x3f400000    # 0.75f
 
-    mul-float v3, v3, v4
+    mul-float/2addr v3, v4
 
     sub-float/2addr v2, v3
 
@@ -404,12 +404,12 @@
     iput-object v2, p0, Lorg/telegram/ui/PhotoViewer$41;->pressedLink:Lorg/telegram/ui/Components/LinkSpanDrawable;
 
     :goto_0
-    const/4 v0, 0x1
+    move v0, v3
 
     goto/16 :goto_3
 
     :cond_2
-    const/4 v0, 0x0
+    move v0, v1
 
     goto/16 :goto_3
 
@@ -486,7 +486,7 @@
 
     cmpg-float v8, v7, v0
 
-    if-gtz v8, :cond_5
+    if-gtz v8, :cond_6
 
     .line 7302
     invoke-virtual {p0}, Landroid/widget/TextView;->getLayout()Landroid/text/Layout;
@@ -501,9 +501,9 @@
 
     cmpl-float v0, v7, v0
 
-    if-ltz v0, :cond_5
+    if-ltz v0, :cond_6
 
-    if-ltz v4, :cond_5
+    if-ltz v4, :cond_6
 
     invoke-virtual {p0}, Landroid/widget/TextView;->getLayout()Landroid/text/Layout;
 
@@ -513,7 +513,7 @@
 
     move-result v0
 
-    if-gt v4, v0, :cond_5
+    if-gt v4, v0, :cond_6
 
     .line 7303
     new-instance v0, Landroid/text/SpannableString;
@@ -536,7 +536,7 @@
     .line 7305
     array-length v5, v4
 
-    if-eqz v5, :cond_5
+    if-eqz v5, :cond_6
 
     .line 7306
     aget-object v5, v4, v1
@@ -546,7 +546,7 @@
 
     move-result v6
 
-    if-nez v6, :cond_6
+    if-nez v6, :cond_5
 
     .line 7309
     iget-object v6, p0, Lorg/telegram/ui/PhotoViewer$41;->links:Lorg/telegram/ui/Components/LinkSpanDrawable$LinkCollector;
@@ -649,15 +649,19 @@
     .line 7320
     invoke-virtual {p0, v4, v6, v7}, Landroid/widget/TextView;->postDelayed(Ljava/lang/Runnable;J)Z
 
-    const/4 v0, 0x1
+    move v0, v3
 
     goto :goto_2
 
     :cond_5
-    move-object v5, v2
+    move v0, v1
+
+    goto :goto_2
 
     :cond_6
-    const/4 v0, 0x0
+    move v0, v1
+
+    move-object v5, v2
 
     .line 7329
     :goto_2
@@ -716,13 +720,13 @@
     goto :goto_4
 
     :cond_9
-    const/4 p1, 0x0
+    move p1, v1
 
     goto :goto_5
 
     :cond_a
     :goto_4
-    const/4 p1, 0x1
+    move p1, v3
 
     .line 7344
     :goto_5
@@ -736,7 +740,7 @@
 
     if-eqz p1, :cond_b
 
-    const/4 v1, 0x1
+    move v1, v3
 
     :cond_b
     return v1

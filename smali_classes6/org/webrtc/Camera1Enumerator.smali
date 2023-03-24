@@ -274,7 +274,7 @@
     goto :goto_0
 
     :cond_0
-    const/4 v6, 0x0
+    move v6, v7
 
     .line 128
     :goto_0

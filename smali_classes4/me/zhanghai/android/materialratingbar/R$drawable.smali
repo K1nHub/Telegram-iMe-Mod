@@ -3,6 +3,6 @@
 
 
 # static fields
-.field public static final mrb_star_border_icon_black_36dp:I = 0x7f08044c
+.field public static final mrb_star_border_icon_black_36dp:I = 0x7f080451
 
-.field public static final mrb_star_icon_black_36dp:I = 0x7f08044d
+.field public static final mrb_star_icon_black_36dp:I = 0x7f080452

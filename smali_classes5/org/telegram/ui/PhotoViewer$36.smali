@@ -172,7 +172,7 @@
     goto :goto_0
 
     :cond_0
-    const/4 v6, 0x0
+    move v6, v3
 
     :goto_0
     add-int/2addr v5, v6

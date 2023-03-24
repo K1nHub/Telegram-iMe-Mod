@@ -229,7 +229,7 @@
     :cond_2
     iput p2, p0, Lorg/telegram/ui/Components/AdminLogFilterAlert;->restrictionsRow:I
 
-    const/4 v1, 0x1
+    move v1, p3
 
     :goto_0
     add-int/lit8 v2, v1, 0x1
@@ -858,7 +858,7 @@
 
     move-result p1
 
-    const/4 p2, 0x0
+    move p2, v1
 
     :goto_1
     if-ge p2, p1, :cond_12
@@ -938,7 +938,7 @@
 
     move-result p1
 
-    const/4 p2, 0x0
+    move p2, v1
 
     :goto_3
     if-ge p2, p1, :cond_12
@@ -1286,12 +1286,12 @@
 
     if-eqz p2, :cond_11
 
-    const/4 p2, 0x1
+    move p2, v2
 
     goto :goto_5
 
     :cond_11
-    const/4 p2, 0x0
+    move p2, v1
 
     .line 301
     :goto_5

@@ -16,8 +16,8 @@ final class ResamplingAudioProcessor extends BaseAudioProcessor {
     }
 
     /* JADX WARN: Removed duplicated region for block: B:16:0x0039  */
-    /* JADX WARN: Removed duplicated region for block: B:30:0x00b0 A[LOOP:4: B:30:0x00b0->B:31:0x00b2, LOOP_START, PHI: r0 
-      PHI: (r0v1 int) = (r0v0 int), (r0v2 int) binds: [B:15:0x0037, B:31:0x00b2] A[DONT_GENERATE, DONT_INLINE]] */
+    /* JADX WARN: Removed duplicated region for block: B:30:0x00af A[LOOP:4: B:30:0x00af->B:31:0x00b1, LOOP_START, PHI: r0 
+      PHI: (r0v1 int) = (r0v0 int), (r0v2 int) binds: [B:15:0x0037, B:31:0x00b1] A[DONT_GENERATE, DONT_INLINE]] */
     @Override // com.google.android.exoplayer2.audio.AudioProcessor
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -58,13 +58,13 @@ final class ResamplingAudioProcessor extends BaseAudioProcessor {
             java.nio.ByteBuffer r2 = r9.replaceOutputBuffer(r2)
             com.google.android.exoplayer2.audio.AudioProcessor$AudioFormat r3 = r9.inputAudioFormat
             int r3 = r3.encoding
-            if (r3 == r8) goto Lb0
+            if (r3 == r8) goto Laf
             if (r3 == r7) goto L8a
             if (r3 == r6) goto L75
             if (r3 == r5) goto L5e
             if (r3 != r4) goto L58
         L41:
-            if (r0 >= r1) goto Lc5
+            if (r0 >= r1) goto Lc4
             int r3 = r0 + 2
             byte r3 = r10.get(r3)
             r2.put(r3)
@@ -78,7 +78,7 @@ final class ResamplingAudioProcessor extends BaseAudioProcessor {
             r10.<init>()
             throw r10
         L5e:
-            if (r0 >= r1) goto Lc5
+            if (r0 >= r1) goto Lc4
             int r3 = r0 + 1
             byte r3 = r10.get(r3)
             r2.put(r3)
@@ -88,7 +88,7 @@ final class ResamplingAudioProcessor extends BaseAudioProcessor {
             int r0 = r0 + 3
             goto L5e
         L75:
-            if (r0 >= r1) goto Lc5
+            if (r0 >= r1) goto Lc4
             int r3 = r0 + 1
             byte r3 = r10.get(r3)
             r2.put(r3)
@@ -97,7 +97,7 @@ final class ResamplingAudioProcessor extends BaseAudioProcessor {
             int r0 = r0 + 2
             goto L75
         L8a:
-            if (r0 >= r1) goto Lc5
+            if (r0 >= r1) goto Lc4
             float r3 = r10.getFloat(r0)
             r4 = -1082130432(0xffffffffbf800000, float:-1.0)
             r5 = 1065353216(0x3f800000, float:1.0)
@@ -115,8 +115,8 @@ final class ResamplingAudioProcessor extends BaseAudioProcessor {
             r2.put(r3)
             int r0 = r0 + 4
             goto L8a
-        Lb0:
-            if (r0 >= r1) goto Lc5
+        Laf:
+            if (r0 >= r1) goto Lc4
             r3 = 0
             r2.put(r3)
             byte r3 = r10.get(r0)
@@ -125,8 +125,8 @@ final class ResamplingAudioProcessor extends BaseAudioProcessor {
             byte r3 = (byte) r3
             r2.put(r3)
             int r0 = r0 + 1
-            goto Lb0
-        Lc5:
+            goto Laf
+        Lc4:
             int r0 = r10.limit()
             r10.position(r0)
             r2.flip()

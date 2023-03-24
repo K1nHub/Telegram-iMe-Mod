@@ -334,12 +334,12 @@
 
     if-ne v2, v4, :cond_2
 
-    const/4 v2, 0x1
+    move v2, v5
 
     goto :goto_1
 
     :cond_2
-    const/4 v2, 0x0
+    move v2, v3
 
     :goto_1
     invoke-static {v2}, Lcom/google/android/exoplayer2/util/Assertions;->checkState(Z)V
@@ -357,7 +357,7 @@
 
     if-ne v1, p1, :cond_3
 
-    const/4 v3, 0x1
+    move v3, v5
 
     :cond_3
     invoke-static {v3}, Lcom/google/android/exoplayer2/util/Assertions;->checkState(Z)V
@@ -689,9 +689,9 @@
 
     const-wide/16 v0, -0x2
 
-    cmp-long v2, p4, v0
+    cmp-long v0, p4, v0
 
-    if-eqz v2, :cond_2
+    if-eqz v0, :cond_2
 
     .line 256
     :try_start_0
@@ -742,9 +742,9 @@
 
     const-wide/16 p2, -0x1
 
-    cmp-long v1, p4, p2
+    cmp-long p2, p4, p2
 
-    if-nez v1, :cond_1
+    if-nez p2, :cond_1
 
     .line 278
     invoke-static {}, Ljava/lang/System;->nanoTime()J

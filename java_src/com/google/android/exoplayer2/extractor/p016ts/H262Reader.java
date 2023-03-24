@@ -171,10 +171,10 @@ public final class H262Reader implements ElementaryStreamReader {
             r4 = r0[r5]
             r4 = r4 & 15
             int r4 = r4 + (-1)
-            if (r4 < 0) goto L9d
+            if (r4 < 0) goto L9c
             double[] r5 = com.google.android.exoplayer2.extractor.p016ts.H262Reader.FRAME_RATE_VALUES
             int r6 = r5.length
-            if (r4 >= r6) goto L9d
+            if (r4 >= r6) goto L9c
             r1 = r5[r4]
             int r8 = r8.sequenceExtensionPosition
             int r8 = r8 + 9
@@ -183,7 +183,7 @@ public final class H262Reader implements ElementaryStreamReader {
             int r3 = r4 >> 5
             r8 = r0[r8]
             r8 = r8 & 31
-            if (r3 == r8) goto L96
+            if (r3 == r8) goto L95
             double r3 = (double) r3
             r5 = 4607182418800017408(0x3ff0000000000000, double:1.0)
             double r3 = r3 + r5
@@ -191,11 +191,11 @@ public final class H262Reader implements ElementaryStreamReader {
             double r5 = (double) r8
             double r3 = r3 / r5
             double r1 = r1 * r3
-        L96:
+        L95:
             r3 = 4696837146684686336(0x412e848000000000, double:1000000.0)
             double r3 = r3 / r1
             long r1 = (long) r3
-        L9d:
+        L9c:
             java.lang.Long r8 = java.lang.Long.valueOf(r1)
             android.util.Pair r8 = android.util.Pair.create(r9, r8)
             return r8

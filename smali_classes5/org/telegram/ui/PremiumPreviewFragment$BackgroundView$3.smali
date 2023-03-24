@@ -175,12 +175,12 @@
 
     if-eq p2, v1, :cond_0
 
-    const/4 v1, 0x1
+    move v1, v2
 
     goto :goto_0
 
     :cond_0
-    const/4 v1, 0x0
+    move v1, v3
 
     :goto_0
     invoke-virtual {p1, v0, v1}, Lorg/telegram/ui/Components/Premium/PremiumTierCell;->bind(Lorg/telegram/ui/PremiumPreviewFragment$SubscriptionTier;Z)V
@@ -197,7 +197,7 @@
     goto :goto_1
 
     :cond_1
-    const/4 v2, 0x0
+    move v2, v3
 
     :goto_1
     invoke-virtual {p1, v2, v3}, Lorg/telegram/ui/Components/Premium/PremiumTierCell;->setChecked(ZZ)V

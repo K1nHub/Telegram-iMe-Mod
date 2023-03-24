@@ -56,7 +56,7 @@
 
     if-eqz v0, :cond_1
 
-    const/high16 v0, 0x3f800000    # 1.0f
+    move v0, v1
 
     goto :goto_0
 
@@ -86,7 +86,7 @@
 
     const v2, 0x3f19999a    # 0.6f
 
-    mul-float p1, p1, v2
+    mul-float/2addr p1, v2
 
     sub-float p1, v1, p1
 
@@ -99,7 +99,7 @@
 
     iget p1, p1, Lorg/telegram/ui/Components/GroupCallPip;->pinnedProgress:F
 
-    mul-float p1, p1, v2
+    mul-float/2addr p1, v2
 
     sub-float/2addr v1, p1
 

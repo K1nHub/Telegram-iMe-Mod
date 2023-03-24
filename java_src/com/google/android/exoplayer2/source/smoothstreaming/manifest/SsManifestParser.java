@@ -444,7 +444,7 @@ public class SsManifestParser implements ParsingLoadable.Parser<SsManifest> {
                 if (size == 0) {
                     parseLong = 0;
                 } else if (this.lastChunkDuration != -1) {
-                    parseLong = this.startTimes.get(size - 1).longValue() + this.lastChunkDuration;
+                    parseLong = this.lastChunkDuration + this.startTimes.get(size - 1).longValue();
                 } else {
                     throw ParserException.createForMalformedManifest("Unable to infer start time", null);
                 }

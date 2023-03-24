@@ -76,7 +76,7 @@
 
     const/4 p3, 0x0
 
-    const/4 v0, 0x0
+    move v0, p3
 
     :goto_0
     if-ge v0, p2, :cond_5

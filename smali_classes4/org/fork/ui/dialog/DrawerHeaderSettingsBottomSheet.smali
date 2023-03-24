@@ -864,7 +864,7 @@
 
     if-ne p3, p5, :cond_0
 
-    const/4 p5, 0x1
+    move p5, v0
 
     goto :goto_0
 

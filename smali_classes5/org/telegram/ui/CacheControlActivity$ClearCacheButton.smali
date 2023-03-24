@@ -397,7 +397,7 @@
 .end method
 
 .method public setSize(ZJ)V
-    .locals 3
+    .locals 2
 
     .line 1819
     iget-object v0, p0, Lorg/telegram/ui/CacheControlActivity$ClearCacheButton;->textView:Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;
@@ -434,9 +434,9 @@
 
     const-wide/16 v0, 0x0
 
-    cmp-long v2, p2, v0
+    cmp-long v0, p2, v0
 
-    if-gtz v2, :cond_1
+    if-gtz v0, :cond_1
 
     const-string p2, ""
 
@@ -454,14 +454,14 @@
 
     const/4 p2, 0x0
 
-    if-gtz v2, :cond_2
+    if-gtz v0, :cond_2
 
-    const/4 p3, 0x1
+    move p3, p1
 
     goto :goto_2
 
     :cond_2
-    const/4 p3, 0x0
+    move p3, p2
 
     .line 1825
     :goto_2

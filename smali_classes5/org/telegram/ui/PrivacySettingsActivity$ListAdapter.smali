@@ -746,7 +746,7 @@
     if-ne p1, v0, :cond_a
 
     :cond_9
-    const/4 v1, 0x1
+    move v1, v2
 
     :cond_a
     return v1
@@ -821,12 +821,12 @@
 
     if-ne v3, v2, :cond_1
 
-    const/4 v3, 0x1
+    move v3, v9
 
     goto :goto_0
 
     :cond_1
-    const/4 v3, 0x0
+    move v3, v8
 
     .line 1171
     :goto_0
@@ -891,7 +891,7 @@
 
     move-object v12, v5
 
-    const/4 v8, 0x1
+    move v8, v9
 
     goto :goto_2
 
@@ -976,7 +976,7 @@
 
     if-nez v1, :cond_6
 
-    const/4 v8, 0x1
+    move v8, v9
 
     goto :goto_4
 
@@ -1103,7 +1103,7 @@
 
     if-nez v1, :cond_9
 
-    const/4 v8, 0x1
+    move v8, v9
 
     goto :goto_5
 
@@ -1219,7 +1219,7 @@
 
     if-nez v1, :cond_c
 
-    const/4 v8, 0x1
+    move v8, v9
 
     goto :goto_7
 
@@ -1405,7 +1405,7 @@
     goto :goto_9
 
     :cond_12
-    const/4 v8, 0x1
+    move v8, v9
 
     .line 1258
     :goto_a
@@ -1443,7 +1443,7 @@
     goto :goto_c
 
     :cond_14
-    const/4 v9, 0x0
+    move v9, v8
 
     .line 1179
     :goto_c
@@ -1597,7 +1597,7 @@
     goto :goto_13
 
     :cond_1c
-    const/4 v9, 0x0
+    move v9, v8
 
     :goto_13
     invoke-virtual {v1, v2, v9, v8}, Lorg/telegram/ui/Cells/TextCheckCell;->setTextAndCheck(Ljava/lang/String;ZZ)V
@@ -2126,12 +2126,12 @@
 
     if-ne v3, v2, :cond_2f
 
-    const/4 v3, 0x1
+    move v3, v9
 
     goto :goto_14
 
     :cond_2f
-    const/4 v3, 0x0
+    move v3, v8
 
     .line 995
     :goto_14
@@ -2197,9 +2197,9 @@
 
     if-eqz v2, :cond_31
 
-    const/16 v4, 0x1e
+    move v8, v9
 
-    const/4 v8, 0x1
+    move v4, v11
 
     goto :goto_15
 
@@ -2252,9 +2252,9 @@
 
     if-eqz v2, :cond_33
 
-    const/16 v4, 0x1e
+    move v8, v9
 
-    const/4 v8, 0x1
+    move v4, v11
 
     goto :goto_16
 
@@ -2307,9 +2307,9 @@
 
     if-eqz v2, :cond_35
 
-    const/16 v4, 0x1e
+    move v8, v9
 
-    const/4 v8, 0x1
+    move v4, v11
 
     goto :goto_17
 
@@ -2362,9 +2362,9 @@
 
     if-eqz v2, :cond_37
 
-    const/16 v4, 0x1e
+    move v8, v9
 
-    const/4 v8, 0x1
+    move v4, v11
 
     goto :goto_18
 
@@ -2419,9 +2419,9 @@
 
     if-eqz v2, :cond_39
 
-    const/16 v4, 0x1e
+    move v8, v9
 
-    const/4 v8, 0x1
+    move v4, v11
 
     goto :goto_19
 
@@ -2474,9 +2474,9 @@
 
     if-eqz v2, :cond_3b
 
-    const/16 v4, 0x1e
+    move v8, v9
 
-    const/4 v8, 0x1
+    move v4, v11
 
     goto :goto_1a
 
@@ -2531,9 +2531,9 @@
 
     if-eqz v2, :cond_3d
 
-    const/4 v2, 0x1
+    move v2, v9
 
-    const/16 v4, 0x1e
+    move v4, v11
 
     goto :goto_1c
 
@@ -2573,7 +2573,7 @@
     move-result-object v5
 
     :goto_1b
-    const/4 v2, 0x0
+    move v2, v8
 
     .line 1056
     :goto_1c
@@ -2734,7 +2734,7 @@
     move-result-object v5
 
     :goto_1e
-    const/4 v9, 0x0
+    move v9, v8
 
     goto :goto_1f
 

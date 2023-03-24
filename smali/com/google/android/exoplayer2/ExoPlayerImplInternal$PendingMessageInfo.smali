@@ -63,24 +63,24 @@
 
     if-nez v0, :cond_0
 
-    const/4 v3, 0x1
+    move v3, v1
 
     goto :goto_0
 
     :cond_0
-    const/4 v3, 0x0
+    move v3, v2
 
     :goto_0
     iget-object v4, p1, Lcom/google/android/exoplayer2/ExoPlayerImplInternal$PendingMessageInfo;->resolvedPeriodUid:Ljava/lang/Object;
 
     if-nez v4, :cond_1
 
-    const/4 v4, 0x1
+    move v4, v1
 
     goto :goto_1
 
     :cond_1
-    const/4 v4, 0x0
+    move v4, v2
 
     :goto_1
     if-eq v3, v4, :cond_3

@@ -205,9 +205,9 @@
     .line 2
     iget-wide v10, v1, Lcom/google/android/gms/measurement/internal/zzih;->zzc:J
 
-    cmp-long v12, v8, v10
+    cmp-long v8, v8, v10
 
-    if-nez v12, :cond_1
+    if-nez v8, :cond_1
 
     iget-object v8, v2, Lcom/google/android/gms/measurement/internal/zzih;->zzb:Ljava/lang/String;
 
@@ -234,13 +234,13 @@
     goto :goto_0
 
     :cond_0
-    const/4 v8, 0x0
+    move v8, v6
 
     goto :goto_1
 
     :cond_1
     :goto_0
-    const/4 v8, 0x1
+    move v8, v7
 
     :goto_1
     if-eqz p5, :cond_2
@@ -249,7 +249,7 @@
 
     if-eqz v9, :cond_2
 
-    const/4 v6, 0x1
+    move v6, v7
 
     :cond_2
     if-eqz v8, :cond_c
@@ -497,7 +497,7 @@
     goto :goto_0
 
     :cond_0
-    const/4 v1, 0x0
+    move v1, v0
 
     :goto_0
     iget-object v2, p0, Lcom/google/android/gms/measurement/internal/zzgo;->zzs:Lcom/google/android/gms/measurement/internal/zzfv;

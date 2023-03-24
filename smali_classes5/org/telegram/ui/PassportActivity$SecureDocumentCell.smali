@@ -83,12 +83,12 @@
 
     if-eqz v0, :cond_0
 
-    const/4 v0, 0x5
+    move v0, v1
 
     goto :goto_0
 
     :cond_0
-    const/4 v0, 0x3
+    move v0, v2
 
     :goto_0
     or-int/lit8 v5, v0, 0x30
@@ -165,12 +165,12 @@
 
     if-eqz v0, :cond_1
 
-    const/4 v0, 0x5
+    move v0, v1
 
     goto :goto_1
 
     :cond_1
-    const/4 v0, 0x3
+    move v0, v2
 
     :goto_1
     or-int/lit8 v0, v0, 0x10
@@ -188,12 +188,12 @@
 
     if-eqz v0, :cond_2
 
-    const/4 v6, 0x5
+    move v6, v1
 
     goto :goto_2
 
     :cond_2
-    const/4 v6, 0x3
+    move v6, v2
 
     :goto_2
     or-int/lit8 v6, v6, 0x30
@@ -204,24 +204,24 @@
 
     if-eqz v0, :cond_3
 
-    const/16 v7, 0x15
+    move v7, v11
 
     goto :goto_3
 
     :cond_3
-    const/16 v7, 0x51
+    move v7, v12
 
     :goto_3
     const/16 v8, 0xa
 
     if-eqz v0, :cond_4
 
-    const/16 v9, 0x51
+    move v9, v12
 
     goto :goto_4
 
     :cond_4
-    const/16 v9, 0x15
+    move v9, v11
 
     :goto_4
     const/4 v10, 0x0
@@ -262,12 +262,12 @@
 
     if-eqz p2, :cond_5
 
-    const/4 p2, 0x5
+    move p2, v1
 
     goto :goto_5
 
     :cond_5
-    const/4 p2, 0x3
+    move p2, v2
 
     :goto_5
     invoke-virtual {p1, p2}, Landroid/widget/TextView;->setGravity(I)V
@@ -308,31 +308,31 @@
     goto :goto_6
 
     :cond_6
-    const/4 v1, 0x3
+    move v1, v2
 
     :goto_6
     or-int/lit8 v5, v1, 0x30
 
     if-eqz v0, :cond_7
 
-    const/16 v6, 0x15
+    move v6, v11
 
     goto :goto_7
 
     :cond_7
-    const/16 v6, 0x51
+    move v6, v12
 
     :goto_7
     const/16 v7, 0x23
 
     if-eqz v0, :cond_8
 
-    const/16 v8, 0x51
+    move v8, v12
 
     goto :goto_8
 
     :cond_8
-    const/16 v8, 0x15
+    move v8, v11
 
     :goto_8
     const/4 v9, 0x0
@@ -426,8 +426,6 @@
 
     const/4 v0, 0x0
 
-    const/4 v3, 0x0
-
     goto :goto_0
 
     :cond_0
@@ -437,9 +435,9 @@
 
     int-to-float v0, v0
 
+    :goto_0
     move v3, v0
 
-    :goto_0
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredHeight()I
 
     move-result v0

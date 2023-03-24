@@ -410,7 +410,7 @@
 
     if-nez v3, :cond_5
 
-    const/4 v3, 0x0
+    move v3, v2
 
     .line 4740
     :goto_1
@@ -483,7 +483,7 @@
     goto :goto_3
 
     :cond_6
-    const/16 v2, 0x8
+    move v2, v0
 
     :goto_3
     invoke-virtual {v3, v2}, Landroid/view/View;->setVisibility(I)V

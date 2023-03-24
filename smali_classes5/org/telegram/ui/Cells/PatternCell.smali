@@ -866,12 +866,12 @@
     if-nez p1, :cond_2
 
     :cond_1
-    const/4 p1, 0x1
+    move p1, v2
 
     goto :goto_0
 
     :cond_2
-    const/4 p1, 0x0
+    move p1, v1
 
     :goto_0
     if-eqz p1, :cond_4
@@ -962,17 +962,17 @@
 
     iget-wide p1, p1, Lorg/telegram/tgnet/TLRPC$WallPaper;->id:J
 
-    cmp-long p5, v0, p1
+    cmp-long p1, v0, p1
 
-    if-nez p5, :cond_2
+    if-nez p1, :cond_2
 
     :cond_1
-    const/4 p1, 0x1
+    move p1, p3
 
     goto :goto_0
 
     :cond_2
-    const/4 p1, 0x0
+    move p1, p4
 
     :goto_0
     if-eqz p1, :cond_3
@@ -1045,12 +1045,12 @@
     if-nez p1, :cond_2
 
     :cond_1
-    const/4 p1, 0x1
+    move p1, v1
 
     goto :goto_0
 
     :cond_2
-    const/4 p1, 0x0
+    move p1, v2
 
     :goto_0
     if-eqz p1, :cond_3
@@ -1165,7 +1165,7 @@
     goto :goto_0
 
     :cond_2
-    const/4 v1, 0x0
+    move v1, v2
 
     :goto_0
     if-eqz v1, :cond_3

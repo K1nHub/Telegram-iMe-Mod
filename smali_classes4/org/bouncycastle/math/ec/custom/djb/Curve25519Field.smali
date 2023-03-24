@@ -130,38 +130,38 @@
 
     shr-long/2addr v1, v0
 
-    const/4 v5, 0x7
+    const-wide/16 v5, 0x0
 
-    const-wide/16 v6, 0x0
+    cmp-long v5, v1, v5
 
-    cmp-long v8, v1, v6
+    const/4 v6, 0x7
 
-    if-eqz v8, :cond_0
+    if-eqz v5, :cond_0
 
     const/4 v1, 0x1
 
-    invoke-static {v5, p0, v1}, Lorg/bouncycastle/math/raw/Nat;->decAt(I[II)I
+    invoke-static {v6, p0, v1}, Lorg/bouncycastle/math/raw/Nat;->decAt(I[II)I
 
     move-result v1
 
     int-to-long v1, v1
 
     :cond_0
-    aget v6, p0, v5
+    aget v5, p0, v6
 
-    int-to-long v6, v6
+    int-to-long v7, v5
 
-    and-long/2addr v3, v6
+    and-long/2addr v3, v7
 
-    const-wide v6, 0x80000000L
+    const-wide v7, 0x80000000L
 
-    add-long/2addr v3, v6
+    add-long/2addr v3, v7
 
     add-long/2addr v1, v3
 
     long-to-int v3, v1
 
-    aput v3, p0, v5
+    aput v3, p0, v6
 
     shr-long v0, v1, v0
 
@@ -294,7 +294,7 @@
 
     and-int/2addr v2, v3
 
-    mul-int/lit8 p0, p0, 0x13
+    mul-int/2addr p0, v1
 
     invoke-static {v0, p0, p1}, Lorg/bouncycastle/math/raw/Nat;->addWordTo(II[I)I
 
@@ -398,7 +398,7 @@
 .end method
 
 .method private static subPExtFrom([I)I
-    .locals 14
+    .locals 15
 
     const/4 v0, 0x0
 
@@ -428,77 +428,77 @@
 
     shr-long/2addr v1, v0
 
-    const/4 v6, 0x1
+    const-wide/16 v6, 0x0
 
-    const-wide/16 v7, 0x0
+    cmp-long v8, v1, v6
 
-    const/16 v9, 0x8
+    const/4 v9, 0x1
 
-    cmp-long v10, v1, v7
+    const/16 v10, 0x8
 
-    if-eqz v10, :cond_0
+    if-eqz v8, :cond_0
 
-    invoke-static {v9, p0, v6}, Lorg/bouncycastle/math/raw/Nat;->decAt(I[II)I
+    invoke-static {v10, p0, v9}, Lorg/bouncycastle/math/raw/Nat;->decAt(I[II)I
 
     move-result v1
 
     int-to-long v1, v1
 
     :cond_0
-    aget v10, p0, v9
+    aget v8, p0, v10
 
-    int-to-long v10, v10
+    int-to-long v11, v8
 
-    and-long/2addr v10, v3
+    and-long/2addr v11, v3
 
-    const-wide/16 v12, 0x13
+    const-wide/16 v13, 0x13
 
-    add-long/2addr v10, v12
+    add-long/2addr v11, v13
 
-    add-long/2addr v1, v10
+    add-long/2addr v1, v11
 
-    long-to-int v10, v1
+    long-to-int v8, v1
 
-    aput v10, p0, v9
+    aput v8, p0, v10
 
     shr-long/2addr v1, v0
 
-    const/16 v9, 0xf
+    cmp-long v6, v1, v6
 
-    cmp-long v10, v1, v7
+    const/16 v7, 0xf
 
-    if-eqz v10, :cond_1
+    if-eqz v6, :cond_1
 
     const/16 v1, 0x9
 
-    invoke-static {v9, p0, v1}, Lorg/bouncycastle/math/raw/Nat;->incAt(I[II)I
+    invoke-static {v7, p0, v1}, Lorg/bouncycastle/math/raw/Nat;->incAt(I[II)I
 
     move-result v1
 
     int-to-long v1, v1
 
     :cond_1
-    aget v7, p0, v9
+    aget v6, p0, v7
 
-    int-to-long v7, v7
+    int-to-long v10, v6
 
-    and-long/2addr v7, v3
+    and-long/2addr v10, v3
 
-    aget v5, v5, v9
+    aget v5, v5, v7
 
-    add-int/2addr v5, v6
+    add-int/2addr v5, v9
 
     int-to-long v5, v5
 
     and-long/2addr v3, v5
 
-    sub-long/2addr v7, v3
+    sub-long/2addr v10, v3
 
-    add-long/2addr v1, v7
+    add-long/2addr v1, v10
 
     long-to-int v3, v1
 
-    aput v3, p0, v9
+    aput v3, p0, v7
 
     shr-long v0, v1, v0
 
@@ -532,38 +532,38 @@
 
     shr-long/2addr v1, v0
 
-    const/4 v5, 0x7
+    const-wide/16 v5, 0x0
 
-    const-wide/16 v6, 0x0
+    cmp-long v5, v1, v5
 
-    cmp-long v8, v1, v6
+    const/4 v6, 0x7
 
-    if-eqz v8, :cond_0
+    if-eqz v5, :cond_0
 
     const/4 v1, 0x1
 
-    invoke-static {v5, p0, v1}, Lorg/bouncycastle/math/raw/Nat;->incAt(I[II)I
+    invoke-static {v6, p0, v1}, Lorg/bouncycastle/math/raw/Nat;->incAt(I[II)I
 
     move-result v1
 
     int-to-long v1, v1
 
     :cond_0
-    aget v6, p0, v5
+    aget v5, p0, v6
 
-    int-to-long v6, v6
+    int-to-long v7, v5
 
-    and-long/2addr v3, v6
+    and-long/2addr v3, v7
 
-    const-wide v6, 0x80000000L
+    const-wide v7, 0x80000000L
 
-    sub-long/2addr v3, v6
+    sub-long/2addr v3, v7
 
     add-long/2addr v1, v3
 
     long-to-int v3, v1
 
-    aput v3, p0, v5
+    aput v3, p0, v6
 
     shr-long v0, v1, v0
 

@@ -57,7 +57,7 @@
     goto :goto_0
 
     :cond_0
-    const/4 v0, 0x0
+    move v0, v1
 
     :goto_0
     add-int/2addr p1, v0
@@ -75,7 +75,7 @@
 .end method
 
 .method protected dispatchDraw(Landroid/graphics/Canvas;)V
-    .locals 7
+    .locals 6
 
     .line 727
     iget-object v0, p0, Lorg/telegram/ui/Components/PollVotesAlert$4;->this$0:Lorg/telegram/ui/Components/PollVotesAlert;
@@ -102,9 +102,9 @@
 
     const-wide/16 v4, 0x11
 
-    cmp-long v6, v2, v4
+    cmp-long v4, v2, v4
 
-    if-lez v6, :cond_0
+    if-lez v4, :cond_0
 
     const-wide/16 v2, 0x10
 
@@ -121,7 +121,7 @@
 
     move-result v2
 
-    mul-float v1, v1, v2
+    mul-float/2addr v1, v2
 
     const/high16 v2, 0x44e10000    # 1800.0f
 
@@ -145,7 +145,7 @@
 
     const/high16 v2, 0x40000000    # 2.0f
 
-    mul-float v1, v1, v2
+    mul-float/2addr v1, v2
 
     cmpl-float v0, v0, v1
 
@@ -158,7 +158,7 @@
 
     move-result v1
 
-    mul-float v1, v1, v2
+    mul-float/2addr v1, v2
 
     invoke-static {v0, v1}, Lorg/telegram/ui/Components/PollVotesAlert;->access$3024(Lorg/telegram/ui/Components/PollVotesAlert;F)F
 

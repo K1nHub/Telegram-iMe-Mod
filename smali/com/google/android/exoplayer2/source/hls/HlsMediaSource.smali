@@ -231,14 +231,14 @@
 
     if-eqz v2, :cond_2
 
-    const/16 v23, 0x1
+    move/from16 v23, v4
 
     goto :goto_2
 
     :cond_2
     const/4 v2, 0x0
 
-    const/16 v23, 0x0
+    move/from16 v23, v2
 
     .line 515
     :goto_2
@@ -289,9 +289,9 @@
 
     const-wide v3, -0x7fffffffffffffffL    # -4.9E-324
 
-    cmp-long v5, v1, v3
+    cmp-long v1, v1, v3
 
-    if-eqz v5, :cond_3
+    if-eqz v1, :cond_3
 
     iget-object v1, v0, Lcom/google/android/exoplayer2/source/hls/playlist/HlsMediaPlaylist;->segments:Ljava/util/List;
 
@@ -313,9 +313,9 @@
 
     iget-wide v3, v0, Lcom/google/android/exoplayer2/source/hls/playlist/HlsMediaPlaylist;->durationUs:J
 
-    cmp-long v5, v1, v3
+    cmp-long v3, v1, v3
 
-    if-nez v5, :cond_1
+    if-nez v3, :cond_1
 
     goto :goto_0
 
@@ -517,16 +517,16 @@
 .end method
 
 .method private getLiveWindowDefaultStartPositionUs(Lcom/google/android/exoplayer2/source/hls/playlist/HlsMediaPlaylist;J)J
-    .locals 5
+    .locals 4
 
     .line 573
     iget-wide v0, p1, Lcom/google/android/exoplayer2/source/hls/playlist/HlsMediaPlaylist;->startOffsetUs:J
 
     const-wide v2, -0x7fffffffffffffffL    # -4.9E-324
 
-    cmp-long v4, v0, v2
+    cmp-long v2, v0, v2
 
-    if-eqz v4, :cond_0
+    if-eqz v2, :cond_0
 
     goto :goto_0
 
@@ -615,7 +615,7 @@
 .end method
 
 .method private static getTargetLiveOffsetUs(Lcom/google/android/exoplayer2/source/hls/playlist/HlsMediaPlaylist;J)J
-    .locals 8
+    .locals 7
 
     .line 630
     iget-object v0, p0, Lcom/google/android/exoplayer2/source/hls/playlist/HlsMediaPlaylist;->serverControl:Lcom/google/android/exoplayer2/source/hls/playlist/HlsMediaPlaylist$ServerControl;
@@ -646,9 +646,9 @@
 
     iget-wide v5, p0, Lcom/google/android/exoplayer2/source/hls/playlist/HlsMediaPlaylist;->partTargetDurationUs:J
 
-    cmp-long v7, v5, v3
+    cmp-long v5, v5, v3
 
-    if-eqz v7, :cond_1
+    if-eqz v5, :cond_1
 
     move-wide v3, v1
 
@@ -681,7 +681,7 @@
 .end method
 
 .method private updateLiveConfiguration(Lcom/google/android/exoplayer2/source/hls/playlist/HlsMediaPlaylist;J)V
-    .locals 5
+    .locals 4
 
     .line 600
     iget-object v0, p0, Lcom/google/android/exoplayer2/source/hls/HlsMediaSource;->mediaItem:Lcom/google/android/exoplayer2/MediaItem;
@@ -708,9 +708,9 @@
 
     const-wide v2, -0x7fffffffffffffffL    # -4.9E-324
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-nez v4, :cond_0
+    if-nez v0, :cond_0
 
     iget-wide v0, p1, Lcom/google/android/exoplayer2/source/hls/playlist/HlsMediaPlaylist$ServerControl;->partHoldBackUs:J
 
@@ -744,7 +744,7 @@
 
     if-eqz p1, :cond_1
 
-    const/high16 v0, 0x3f800000    # 1.0f
+    move v0, p3
 
     goto :goto_1
 

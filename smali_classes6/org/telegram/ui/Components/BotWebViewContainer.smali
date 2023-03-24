@@ -814,7 +814,7 @@
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_0
     if-ge v2, v0, :cond_1
@@ -1063,7 +1063,7 @@
     goto :goto_0
 
     :cond_0
-    const/4 v3, 0x0
+    move v3, v2
 
     :goto_0
     if-eqz v0, :cond_1
@@ -1104,7 +1104,7 @@
 
     if-eqz p1, :cond_2
 
-    const/4 v1, 0x0
+    move v1, v2
 
     :cond_2
     invoke-virtual {p2, v1}, Landroid/widget/FrameLayout;->setVisibility(I)V
@@ -1761,7 +1761,7 @@
     goto/16 :goto_0
 
     :cond_11
-    const/4 v0, 0x4
+    move v0, v7
 
     goto :goto_1
 
@@ -1777,7 +1777,7 @@
     goto/16 :goto_0
 
     :cond_12
-    const/4 v0, 0x3
+    move v0, v9
 
     goto :goto_1
 
@@ -1793,7 +1793,7 @@
     goto/16 :goto_0
 
     :cond_13
-    const/4 v0, 0x2
+    move v0, v10
 
     goto :goto_1
 
@@ -1809,7 +1809,7 @@
     goto/16 :goto_0
 
     :cond_14
-    const/4 v0, 0x1
+    move v0, v12
 
     goto :goto_1
 
@@ -1825,7 +1825,7 @@
     goto/16 :goto_0
 
     :cond_15
-    const/4 v0, 0x0
+    move v0, v11
 
     :goto_1
     const-string v6, "text"
@@ -1933,7 +1933,7 @@
 
     if-eqz v0, :cond_18
 
-    const/4 v11, 0x1
+    move v11, v12
 
     goto :goto_4
 
@@ -2025,12 +2025,12 @@
 
     if-nez v5, :cond_1b
 
-    const/16 v17, 0x1
+    move/from16 v17, v12
 
     goto :goto_6
 
     :cond_1b
-    const/16 v17, 0x0
+    move/from16 v17, v11
 
     .line 1366
     :goto_6
@@ -2086,12 +2086,12 @@
 
     if-eqz v17, :cond_1e
 
-    const/16 v22, 0x1
+    move/from16 v22, v12
 
     goto :goto_9
 
     :cond_1e
-    const/16 v22, 0x0
+    move/from16 v22, v11
 
     .line 1370
     :goto_9
@@ -2180,7 +2180,7 @@
 
     if-eqz v2, :cond_22
 
-    const/4 v2, 0x1
+    move v2, v12
 
     goto :goto_c
 
@@ -2193,7 +2193,7 @@
 
     if-eqz v2, :cond_22
 
-    const/4 v2, 0x2
+    move v2, v10
 
     goto :goto_c
 
@@ -2206,7 +2206,7 @@
 
     if-eqz v2, :cond_22
 
-    const/4 v2, 0x0
+    move v2, v11
 
     goto :goto_c
 
@@ -2264,7 +2264,7 @@
 
     if-eqz v0, :cond_28
 
-    const/4 v11, 0x2
+    move v11, v10
 
     goto :goto_e
 
@@ -2288,7 +2288,7 @@
 
     if-eqz v0, :cond_28
 
-    const/4 v11, 0x1
+    move v11, v12
 
     goto :goto_e
 
@@ -2324,7 +2324,7 @@
     :goto_f
     move-object v8, v0
 
-    goto :goto_12
+    goto/16 :goto_12
 
     :cond_2c
     const-string v2, "impact_style"
@@ -2351,7 +2351,7 @@
 
     if-eqz v0, :cond_2d
 
-    const/4 v11, 0x3
+    move v11, v9
 
     goto :goto_11
 
@@ -2375,7 +2375,7 @@
 
     if-eqz v0, :cond_2d
 
-    const/4 v11, 0x2
+    move v11, v10
 
     goto :goto_11
 
@@ -2388,7 +2388,7 @@
 
     if-eqz v0, :cond_2d
 
-    const/4 v11, 0x4
+    move v11, v7
 
     goto :goto_11
 
@@ -2401,7 +2401,7 @@
 
     if-eqz v0, :cond_2d
 
-    const/4 v11, 0x1
+    move v11, v12
 
     goto :goto_11
 
@@ -2819,7 +2819,7 @@
 
     if-eqz v0, :cond_38
 
-    const/4 v11, 0x1
+    move v11, v12
 
     :cond_38
     xor-int/lit8 v0, v11, 0x1
@@ -3137,7 +3137,7 @@
 
     invoke-direct {v3}, Ljava/util/ArrayList;-><init>()V
 
-    const/4 v4, 0x0
+    move v4, v11
 
     .line 1082
     :goto_16
@@ -3463,6 +3463,8 @@
     :pswitch_14
     return-void
 
+    nop
+
     :sswitch_data_0
     .sparse-switch
         -0x712ef480 -> :sswitch_14
@@ -3535,7 +3537,7 @@
 .end method
 
 .method private onOpenUri(Landroid/net/Uri;ZZ)V
-    .locals 5
+    .locals 4
 
     .line 470
     iget-boolean v0, p0, Lorg/telegram/ui/Components/BotWebViewContainer;->isRequestingPageOpen:Z
@@ -3552,9 +3554,9 @@
 
     const-wide/16 v2, 0x2710
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-lez v4, :cond_0
+    if-lez v0, :cond_0
 
     if-eqz p3, :cond_0
 
@@ -4751,7 +4753,7 @@
 .end method
 
 .method public loadFlickerAndSettingsItem(IJLorg/telegram/ui/ActionBar/ActionBarMenuSubItem;)V
-    .locals 8
+    .locals 7
 
     .line 743
     invoke-static {p1}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
@@ -4856,9 +4858,9 @@
     .line 755
     iget-wide v5, v3, Lorg/telegram/tgnet/TLRPC$TL_attachMenuBot;->bot_id:J
 
-    cmp-long v7, v5, p2
+    cmp-long v5, v5, p2
 
-    if-nez v7, :cond_1
+    if-nez v5, :cond_1
 
     goto :goto_0
 
@@ -4885,7 +4887,7 @@
     goto :goto_1
 
     :cond_3
-    const/4 p2, 0x0
+    move p2, v2
 
     :goto_1
     if-eqz p1, :cond_4

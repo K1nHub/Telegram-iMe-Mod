@@ -159,7 +159,7 @@
 
     if-ne v3, p2, :cond_0
 
-    const/4 v1, 0x1
+    move v1, v2
 
     :cond_0
     invoke-virtual {p1, v1, v2}, Lorg/telegram/ui/Components/AvatarConstructorFragment$GradientSelectorView;->setSelectedInternal(ZZ)V
@@ -189,7 +189,7 @@
 
     if-ne p2, v2, :cond_2
 
-    const/4 v1, 0x1
+    move v1, v2
 
     :cond_2
     invoke-virtual {p1, v1, v2}, Lorg/telegram/ui/Components/AvatarConstructorFragment$GradientSelectorView;->setSelectedInternal(ZZ)V

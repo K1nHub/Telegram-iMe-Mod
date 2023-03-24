@@ -428,7 +428,7 @@
 
     iput p1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->touchSlop:F
 
-    mul-float p1, p1, p1
+    mul-float/2addr p1, p1
 
     .line 1405
     iput p1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->touchSlop:F
@@ -696,15 +696,15 @@
 
     const/4 v0, 0x0
 
-    const/high16 v1, 0x3f800000    # 1.0f
+    cmpl-float v1, p4, v0
 
-    cmpl-float v2, p4, v0
+    const/high16 v2, 0x3f800000    # 1.0f
 
-    if-eqz v2, :cond_1
+    if-eqz v1, :cond_1
 
-    cmpl-float v2, p4, v1
+    cmpl-float v1, p4, v2
 
-    if-eqz v2, :cond_1
+    if-eqz v1, :cond_1
 
     if-nez p3, :cond_0
 
@@ -727,15 +727,15 @@
 
     invoke-virtual {p2}, Landroid/graphics/drawable/Drawable;->getBounds()Landroid/graphics/Rect;
 
-    move-result-object v2
+    move-result-object v1
 
-    invoke-virtual {v2}, Landroid/graphics/Rect;->centerY()I
+    invoke-virtual {v1}, Landroid/graphics/Rect;->centerY()I
 
-    move-result v2
+    move-result v1
 
-    int-to-float v2, v2
+    int-to-float v1, v1
 
-    invoke-virtual {p1, p4, p4, v0, v2}, Landroid/graphics/Canvas;->scale(FFFF)V
+    invoke-virtual {p1, p4, p4, v0, v1}, Landroid/graphics/Canvas;->scale(FFFF)V
 
     int-to-float p5, p5
 
@@ -755,7 +755,7 @@
     .line 2040
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
-    sub-float/2addr v1, p4
+    sub-float/2addr v2, p4
 
     .line 2041
     invoke-virtual {p2}, Landroid/graphics/drawable/Drawable;->getBounds()Landroid/graphics/Rect;
@@ -778,9 +778,9 @@
 
     int-to-float p2, p2
 
-    invoke-virtual {p1, v1, v1, p4, p2}, Landroid/graphics/Canvas;->scale(FFFF)V
+    invoke-virtual {p1, v2, v2, p4, p2}, Landroid/graphics/Canvas;->scale(FFFF)V
 
-    mul-float p5, p5, v1
+    mul-float/2addr p5, v2
 
     float-to-int p2, p5
 
@@ -804,7 +804,7 @@
 
     iget p4, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->slideToCancelProgress:F
 
-    cmpl-float p4, p4, v1
+    cmpl-float p4, p4, v2
 
     if-nez p4, :cond_2
 
@@ -816,7 +816,7 @@
     move-result-object p1
 
     .line 2015
-    invoke-virtual {p1, v1}, Landroid/view/View;->setAlpha(F)V
+    invoke-virtual {p1, v2}, Landroid/view/View;->setAlpha(F)V
 
     const/16 p1, 0x8
 
@@ -831,7 +831,7 @@
     .line 2019
     iget p4, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->slideToCancelProgress:F
 
-    cmpg-float p4, p4, v1
+    cmpg-float p4, p4, v2
 
     if-gez p4, :cond_5
 
@@ -1160,7 +1160,7 @@
 
     const/high16 p2, 0x437f0000    # 255.0f
 
-    mul-float p4, p4, p2
+    mul-float/2addr p4, p2
 
     float-to-int v7, p4
 
@@ -1208,9 +1208,9 @@
     .line 2135
     iget v2, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->scale:F
 
-    mul-float v2, v2, v1
+    mul-float/2addr v2, v1
 
-    mul-float v2, v2, v0
+    mul-float/2addr v2, v0
 
     sget v3, Lorg/telegram/ui/Components/BlobDrawable;->SCALE_BIG_MIN:F
 
@@ -1220,13 +1220,13 @@
 
     const v5, 0x3fb33333    # 1.4f
 
-    mul-float v4, v4, v5
+    mul-float/2addr v4, v5
 
     add-float/2addr v3, v4
 
-    mul-float v2, v2, v3
+    mul-float/2addr v2, v3
 
-    mul-float v2, v2, p4
+    mul-float/2addr v2, p4
 
     .line 2136
     invoke-virtual {p1, v2, v2, p2, p3}, Landroid/graphics/Canvas;->scale(FFFF)V
@@ -1244,9 +1244,9 @@
     .line 2139
     iget v2, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->scale:F
 
-    mul-float v2, v2, v1
+    mul-float/2addr v2, v1
 
-    mul-float v2, v2, v0
+    mul-float/2addr v2, v0
 
     sget v0, Lorg/telegram/ui/Components/BlobDrawable;->SCALE_SMALL_MIN:F
 
@@ -1254,13 +1254,13 @@
 
     iget v1, v1, Lorg/telegram/ui/Components/BlobDrawable;->amplitude:F
 
-    mul-float v1, v1, v5
+    mul-float/2addr v1, v5
 
     add-float/2addr v0, v1
 
-    mul-float v2, v2, v0
+    mul-float/2addr v2, v0
 
-    mul-float v2, v2, p4
+    mul-float/2addr v2, p4
 
     .line 2140
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
@@ -1342,7 +1342,7 @@
 .end method
 
 .method protected onDraw(Landroid/graphics/Canvas;)V
-    .locals 37
+    .locals 36
 
     move-object/from16 v6, p0
 
@@ -1395,7 +1395,7 @@
     goto :goto_0
 
     :cond_1
-    const/4 v11, 0x0
+    move v11, v10
 
     .line 1579
     :goto_0
@@ -1443,9 +1443,9 @@
 
     const v2, 0x461c4000    # 10000.0f
 
-    const/16 v3, 0x39
-
     cmpl-float v2, v1, v2
+
+    const/16 v3, 0x39
 
     if-eqz v2, :cond_3
 
@@ -1486,23 +1486,23 @@
     goto :goto_1
 
     :cond_3
-    const/4 v14, 0x0
+    move v14, v10
 
     .line 1595
     :goto_1
     iget v1, v6, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->scale:F
 
-    const/high16 v2, 0x3e800000    # 0.25f
+    const/high16 v2, 0x3f000000    # 0.5f
 
-    const/high16 v4, 0x3f000000    # 0.5f
+    cmpg-float v4, v1, v2
+
+    const/high16 v5, 0x3e800000    # 0.25f
 
     const/high16 v15, 0x3f800000    # 1.0f
 
-    cmpg-float v5, v1, v4
+    if-gtz v4, :cond_4
 
-    if-gtz v5, :cond_4
-
-    div-float/2addr v1, v4
+    div-float/2addr v1, v2
 
     :goto_2
     move/from16 v16, v1
@@ -1510,38 +1510,38 @@
     goto :goto_3
 
     :cond_4
-    const/high16 v5, 0x3f400000    # 0.75f
+    const/high16 v4, 0x3f400000    # 0.75f
 
-    cmpg-float v5, v1, v5
+    cmpg-float v4, v1, v4
 
-    if-gtz v5, :cond_5
+    if-gtz v4, :cond_5
 
-    sub-float/2addr v1, v4
+    sub-float/2addr v1, v2
 
-    div-float/2addr v1, v2
+    div-float/2addr v1, v5
 
-    const v4, 0x3dcccccd    # 0.1f
+    const v2, 0x3dcccccd    # 0.1f
 
-    mul-float v1, v1, v4
+    mul-float/2addr v1, v2
 
     sub-float v1, v15, v1
 
     goto :goto_2
 
     :cond_5
-    const v4, 0x3f666666    # 0.9f
+    const v2, 0x3f666666    # 0.9f
 
-    const/high16 v5, 0x3f400000    # 0.75f
+    const/high16 v4, 0x3f400000    # 0.75f
 
-    sub-float/2addr v1, v5
+    sub-float/2addr v1, v4
 
-    div-float/2addr v1, v2
+    div-float/2addr v1, v5
 
-    const v5, 0x3dcccccd    # 0.1f
+    const v4, 0x3dcccccd    # 0.1f
 
-    mul-float v1, v1, v5
+    mul-float/2addr v1, v4
 
-    add-float/2addr v1, v4
+    add-float/2addr v1, v2
 
     goto :goto_2
 
@@ -1549,39 +1549,39 @@
     :goto_3
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
-    move-result-wide v4
+    move-result-wide v1
 
     iget-wide v8, v6, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->lastUpdateTime:J
 
-    sub-long v8, v4, v8
+    sub-long v8, v1, v8
 
     .line 1603
     iget v1, v6, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->animateToAmplitude:F
 
-    iget v4, v6, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->amplitude:F
+    iget v2, v6, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->amplitude:F
 
-    cmpl-float v5, v1, v4
+    cmpl-float v4, v1, v2
 
-    if-eqz v5, :cond_8
+    if-eqz v4, :cond_8
 
     .line 1604
-    iget v5, v6, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->animateAmplitudeDiff:F
+    iget v4, v6, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->animateAmplitudeDiff:F
 
     long-to-float v3, v8
 
-    mul-float v3, v3, v5
+    mul-float/2addr v3, v4
 
-    add-float/2addr v4, v3
+    add-float/2addr v2, v3
 
-    iput v4, v6, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->amplitude:F
+    iput v2, v6, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->amplitude:F
 
-    cmpl-float v3, v5, v10
+    cmpl-float v3, v4, v10
 
     if-lez v3, :cond_6
 
-    cmpl-float v3, v4, v1
+    cmpl-float v2, v2, v1
 
-    if-lez v3, :cond_7
+    if-lez v2, :cond_7
 
     .line 1607
     iput v1, v6, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->amplitude:F
@@ -1589,9 +1589,9 @@
     goto :goto_4
 
     :cond_6
-    cmpg-float v3, v4, v1
+    cmpg-float v2, v2, v1
 
-    if-gez v3, :cond_7
+    if-gez v2, :cond_7
 
     .line 1611
     iput v1, v6, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->amplitude:F
@@ -1612,11 +1612,11 @@
     .line 1619
     sget-object v1, Lorg/telegram/ui/Components/CubicBezierInterpolator;->EASE_OUT:Lorg/telegram/ui/Components/CubicBezierInterpolator;
 
-    iget v3, v6, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->slideToCancelProgress:F
+    iget v2, v6, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->slideToCancelProgress:F
 
-    sub-float v3, v15, v3
+    sub-float v2, v15, v2
 
-    invoke-virtual {v1, v3}, Lorg/telegram/ui/Components/CubicBezierInterpolator;->getInterpolation(F)F
+    invoke-virtual {v1, v2}, Lorg/telegram/ui/Components/CubicBezierInterpolator;->getInterpolation(F)F
 
     move-result v1
 
@@ -1628,27 +1628,27 @@
     :cond_9
     iget v1, v6, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->slideToCancelProgress:F
 
-    const v3, 0x3e99999a    # 0.3f
+    const v2, 0x3e99999a    # 0.3f
 
-    mul-float v1, v1, v3
+    mul-float/2addr v1, v2
 
     add-float v1, v1, v19
 
     .line 1623
     :goto_5
-    iget v3, v6, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->circleRadius:F
+    iget v2, v6, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->circleRadius:F
 
-    iget v4, v6, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->circleRadiusAmplitude:F
+    iget v3, v6, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->circleRadiusAmplitude:F
 
-    iget v5, v6, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->amplitude:F
+    iget v4, v6, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->amplitude:F
 
-    mul-float v4, v4, v5
+    mul-float/2addr v3, v4
 
-    add-float/2addr v3, v4
+    add-float/2addr v2, v3
 
-    mul-float v3, v3, v16
+    mul-float v2, v2, v16
 
-    mul-float v3, v3, v1
+    mul-float/2addr v2, v1
 
     .line 1625
     iput v10, v6, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->progressToSeekbarStep3:F
@@ -1656,11 +1656,11 @@
     .line 1630
     iget v1, v6, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->transformToSeekbar:F
 
+    cmpl-float v1, v1, v10
+
     const v20, 0x3ecccccd    # 0.4f
 
     const/high16 v21, 0x40000000    # 2.0f
-
-    cmpl-float v1, v1, v10
 
     if-eqz v1, :cond_c
 
@@ -1674,42 +1674,42 @@
 
     const v1, 0x3ec28f5c    # 0.38f
 
-    const v5, 0x3ebd70a4    # 0.37f
+    const v4, 0x3ebd70a4    # 0.37f
 
     .line 1635
-    iget v4, v6, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->transformToSeekbar:F
+    iget v3, v6, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->transformToSeekbar:F
 
-    cmpl-float v23, v4, v1
+    cmpl-float v23, v3, v1
 
     if-lez v23, :cond_a
 
     goto :goto_6
 
     :cond_a
-    div-float v23, v4, v1
+    div-float v23, v3, v1
 
     move/from16 v15, v23
 
     :goto_6
     const v23, 0x3f2147ae    # 0.63f
 
-    cmpl-float v23, v4, v23
+    cmpl-float v23, v3, v23
 
     if-lez v23, :cond_b
 
-    const/high16 v4, 0x3f800000    # 1.0f
+    const/high16 v3, 0x3f800000    # 1.0f
 
     goto :goto_7
 
     :cond_b
-    sub-float/2addr v4, v1
+    sub-float/2addr v3, v1
 
-    div-float/2addr v4, v2
+    div-float/2addr v3, v5
 
     .line 1636
-    invoke-static {v10, v4}, Ljava/lang/Math;->max(FF)F
+    invoke-static {v10, v3}, Ljava/lang/Math;->max(FF)F
 
-    move-result v4
+    move-result v3
 
     .line 1637
     :goto_7
@@ -1717,29 +1717,29 @@
 
     sub-float/2addr v10, v1
 
-    sub-float/2addr v10, v2
+    sub-float/2addr v10, v5
 
-    div-float/2addr v10, v5
+    div-float/2addr v10, v4
 
     const/4 v1, 0x0
 
     invoke-static {v1, v10}, Ljava/lang/Math;->max(FF)F
 
-    move-result v2
+    move-result v4
 
-    iput v2, v6, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->progressToSeekbarStep3:F
+    iput v4, v6, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->progressToSeekbarStep3:F
 
     .line 1639
     sget-object v1, Lorg/telegram/ui/Components/CubicBezierInterpolator;->EASE_BOTH:Lorg/telegram/ui/Components/CubicBezierInterpolator;
 
     invoke-virtual {v1, v15}, Lorg/telegram/ui/Components/CubicBezierInterpolator;->getInterpolation(F)F
 
-    move-result v2
+    move-result v4
 
     .line 1640
-    invoke-virtual {v1, v4}, Lorg/telegram/ui/Components/CubicBezierInterpolator;->getInterpolation(F)F
+    invoke-virtual {v1, v3}, Lorg/telegram/ui/Components/CubicBezierInterpolator;->getInterpolation(F)F
 
-    move-result v4
+    move-result v3
 
     .line 1641
     iget v5, v6, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->progressToSeekbarStep3:F
@@ -1759,9 +1759,9 @@
 
     int-to-float v1, v1
 
-    mul-float v1, v1, v2
+    mul-float/2addr v1, v4
 
-    add-float/2addr v3, v1
+    add-float/2addr v2, v1
 
     .line 1645
     iget-object v1, v6, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
@@ -1778,21 +1778,21 @@
 
     div-float v1, v1, v21
 
-    sub-float/2addr v3, v1
+    sub-float/2addr v2, v1
 
     const/high16 v5, 0x3f800000    # 1.0f
 
-    sub-float v15, v5, v4
+    sub-float v15, v5, v3
 
-    mul-float v3, v3, v15
+    mul-float/2addr v2, v15
 
-    add-float/2addr v3, v1
+    add-float/2addr v2, v1
 
-    move/from16 v26, v2
+    move v10, v2
 
-    move v10, v3
+    move v15, v3
 
-    move v15, v4
+    move/from16 v26, v4
 
     const/high16 v5, 0x3f800000    # 1.0f
 
@@ -1804,15 +1804,15 @@
     :cond_c
     iget v1, v6, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->exitTransition:F
 
-    const/4 v2, 0x0
+    const/4 v3, 0x0
 
-    cmpl-float v4, v1, v2
+    cmpl-float v4, v1, v3
 
     if-eqz v4, :cond_10
 
-    const v2, 0x3f19999a    # 0.6f
+    const v3, 0x3f19999a    # 0.6f
 
-    cmpl-float v4, v1, v2
+    cmpl-float v4, v1, v3
 
     if-lez v4, :cond_d
 
@@ -1821,7 +1821,7 @@
     goto :goto_8
 
     :cond_d
-    div-float v4, v1, v2
+    div-float v4, v1, v3
 
     .line 1652
     :goto_8
@@ -1834,7 +1834,7 @@
     goto :goto_9
 
     :cond_e
-    sub-float/2addr v1, v2
+    sub-float/2addr v1, v3
 
     div-float v1, v1, v20
 
@@ -1866,15 +1866,15 @@
 
     int-to-float v5, v5
 
-    mul-float v5, v5, v4
+    mul-float/2addr v5, v4
 
-    add-float/2addr v3, v5
+    add-float/2addr v2, v5
 
     const/high16 v5, 0x3f800000    # 1.0f
 
     sub-float v15, v5, v1
 
-    mul-float v3, v3, v15
+    mul-float/2addr v2, v15
 
     const v10, 0x81e0
 
@@ -1887,26 +1887,26 @@
 
     iget v10, v6, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->exitTransition:F
 
-    cmpl-float v15, v10, v2
+    cmpl-float v15, v10, v3
 
     if-lez v15, :cond_f
 
-    sub-float/2addr v10, v2
+    sub-float/2addr v10, v3
 
     div-float v10, v10, v20
 
     sub-float v15, v5, v10
 
-    const/4 v2, 0x0
+    const/4 v3, 0x0
 
     .line 1661
-    invoke-static {v2, v15}, Ljava/lang/Math;->max(FF)F
+    invoke-static {v3, v15}, Ljava/lang/Math;->max(FF)F
 
     move-result v5
 
     move/from16 v25, v1
 
-    move v10, v3
+    move v10, v2
 
     move/from16 v26, v4
 
@@ -1915,7 +1915,7 @@
     :cond_f
     move/from16 v25, v1
 
-    move v10, v3
+    move v10, v2
 
     move/from16 v26, v4
 
@@ -1927,7 +1927,7 @@
     goto :goto_b
 
     :cond_10
-    move v10, v3
+    move v10, v2
 
     const/high16 v5, 0x3f800000    # 1.0f
 
@@ -1959,7 +1959,7 @@
 
     sub-float v1, v2, v1
 
-    mul-float v5, v5, v1
+    mul-float/2addr v5, v1
 
     .line 1669
     :cond_11
@@ -2339,7 +2339,7 @@
 
     sget v5, Lorg/telegram/ui/Components/BlobDrawable;->FORM_SMALL_MAX:F
 
-    mul-float v2, v2, v5
+    mul-float/2addr v2, v5
 
     add-float/2addr v1, v2
 
@@ -2379,7 +2379,7 @@
 
     sget v5, Lorg/telegram/ui/Components/BlobDrawable;->FORM_BIG_MAX:F
 
-    mul-float v2, v2, v5
+    mul-float/2addr v2, v5
 
     add-float/2addr v1, v2
 
@@ -2515,11 +2515,11 @@
 
     sub-float v11, v5, v26
 
-    mul-float v2, v2, v11
+    mul-float/2addr v2, v11
 
-    mul-float v2, v2, v0
+    mul-float/2addr v2, v0
 
-    mul-float v2, v2, v1
+    mul-float/2addr v2, v1
 
     sget v5, Lorg/telegram/ui/Components/BlobDrawable;->SCALE_BIG_MIN:F
 
@@ -2535,7 +2535,7 @@
 
     add-float/2addr v5, v3
 
-    mul-float v2, v2, v5
+    mul-float/2addr v2, v5
 
     .line 1749
     iget v3, v6, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->slideDelta:I
@@ -2565,11 +2565,11 @@
     .line 1752
     iget v2, v6, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->scale:F
 
-    mul-float v2, v2, v11
+    mul-float/2addr v2, v11
 
-    mul-float v2, v2, v0
+    mul-float/2addr v2, v0
 
-    mul-float v2, v2, v1
+    mul-float/2addr v2, v1
 
     sget v0, Lorg/telegram/ui/Components/BlobDrawable;->SCALE_SMALL_MIN:F
 
@@ -2579,11 +2579,11 @@
 
     iget v3, v3, Lorg/telegram/ui/Components/BlobDrawable;->amplitude:F
 
-    mul-float v3, v3, v1
+    mul-float/2addr v3, v1
 
     add-float/2addr v0, v3
 
-    mul-float v2, v2, v0
+    mul-float/2addr v2, v0
 
     .line 1753
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->save()I
@@ -2849,7 +2849,7 @@
 
     sub-float v9, v24, v14
 
-    mul-float v0, v0, v9
+    mul-float/2addr v0, v9
 
     add-float/2addr v1, v0
 
@@ -2859,7 +2859,7 @@
 
     sub-float v9, v24, v14
 
-    mul-float v2, v2, v9
+    mul-float/2addr v2, v9
 
     add-float/2addr v0, v2
 
@@ -2869,7 +2869,7 @@
 
     sub-float v9, v24, v14
 
-    mul-float v3, v3, v9
+    mul-float/2addr v3, v9
 
     add-float/2addr v2, v3
 
@@ -2877,7 +2877,7 @@
 
     sub-float v3, v24, v14
 
-    mul-float v10, v10, v3
+    mul-float/2addr v10, v3
 
     add-float/2addr v5, v10
 
@@ -2973,11 +2973,11 @@
 
     sub-float v2, v0, v15
 
-    mul-float v2, v2, v1
+    mul-float/2addr v2, v1
 
     const/high16 v0, 0x437f0000    # 255.0f
 
-    mul-float v2, v2, v0
+    mul-float/2addr v2, v0
 
     float-to-int v9, v2
 
@@ -3195,7 +3195,7 @@
 
     sub-float v14, v9, v16
 
-    mul-float v5, v5, v14
+    mul-float/2addr v5, v14
 
     float-to-int v5, v5
 
@@ -3223,7 +3223,7 @@
 
     int-to-float v9, v9
 
-    mul-float v5, v5, v9
+    mul-float/2addr v5, v9
 
     add-float/2addr v5, v1
 
@@ -3312,9 +3312,9 @@
 
     const-wide/16 v2, 0xc8
 
-    cmp-long v36, v30, v2
+    cmp-long v2, v30, v2
 
-    if-gtz v36, :cond_26
+    if-gtz v2, :cond_26
 
     goto :goto_19
 
@@ -3437,7 +3437,7 @@
 
     const/high16 v3, 0x437f0000    # 255.0f
 
-    mul-float v2, v2, v3
+    mul-float/2addr v2, v3
 
     float-to-int v2, v2
 
@@ -3611,7 +3611,7 @@
 
     move-result v10
 
-    mul-float v5, v5, v10
+    mul-float/2addr v5, v10
 
     sub-float/2addr v4, v5
 
@@ -3969,7 +3969,7 @@
 
     sub-float v2, v10, v2
 
-    mul-float v5, v5, v2
+    mul-float/2addr v5, v2
 
     sub-float/2addr v4, v5
 
@@ -3977,7 +3977,7 @@
 
     sub-float v2, v10, v2
 
-    mul-float v2, v2, v3
+    mul-float/2addr v2, v3
 
     add-float/2addr v4, v2
 
@@ -4001,15 +4001,15 @@
 
     sub-float v15, v10, v15
 
-    mul-float v2, v2, v15
+    mul-float/2addr v2, v15
 
     sub-float v15, v10, v25
 
-    mul-float v2, v2, v15
+    mul-float/2addr v2, v15
 
     iget v4, v6, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->slideToCancelLockProgress:F
 
-    mul-float v2, v2, v4
+    mul-float/2addr v2, v4
 
     int-to-float v4, v12
 
@@ -4154,7 +4154,7 @@
 
     sub-float v15, v10, v16
 
-    mul-float v5, v5, v15
+    mul-float/2addr v5, v15
 
     sub-float/2addr v2, v5
 
@@ -4163,7 +4163,7 @@
 
     move-result v5
 
-    mul-float v5, v5, v15
+    mul-float/2addr v5, v15
 
     sub-float v5, v14, v5
 
@@ -4182,7 +4182,7 @@
 
     move-result v11
 
-    mul-float v11, v11, v15
+    mul-float/2addr v11, v15
 
     add-float/2addr v10, v11
 
@@ -4201,7 +4201,7 @@
 
     move-result v11
 
-    mul-float v11, v11, v15
+    mul-float/2addr v11, v15
 
     add-float/2addr v14, v11
 
@@ -4237,7 +4237,7 @@
 
     sub-float v14, v11, v35
 
-    mul-float v10, v10, v14
+    mul-float/2addr v10, v14
 
     const/4 v11, 0x0
 
@@ -4276,7 +4276,7 @@
 
     move-result v8
 
-    mul-float v8, v8, v15
+    mul-float/2addr v8, v15
 
     iget-object v11, v6, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->lockBackgroundPaint:Landroid/graphics/Paint;
 
@@ -4318,7 +4318,7 @@
 
     move-result v2
 
-    mul-float v2, v2, v14
+    mul-float/2addr v2, v14
 
     add-float/2addr v3, v2
 
@@ -4343,7 +4343,7 @@
 
     sub-float v2, v3, v2
 
-    mul-float v0, v0, v2
+    mul-float/2addr v0, v2
 
     mul-float v0, v0, v35
 
@@ -4353,7 +4353,7 @@
 
     move-result v0
 
-    mul-float v0, v0, v14
+    mul-float/2addr v0, v14
 
     sub-float/2addr v9, v0
 
@@ -4373,7 +4373,7 @@
 
     iget v2, v6, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->snapAnimationProgress:F
 
-    mul-float v0, v0, v2
+    mul-float/2addr v0, v2
 
     add-float/2addr v9, v0
 
@@ -4428,7 +4428,7 @@
 
     move-result v4
 
-    mul-float v4, v4, v15
+    mul-float/2addr v4, v15
 
     add-float/2addr v4, v0
 
@@ -4471,7 +4471,7 @@
 
     iget v5, v6, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->idleProgress:F
 
-    mul-float v4, v4, v5
+    mul-float/2addr v4, v5
 
     mul-float v4, v4, v35
 
@@ -4485,7 +4485,7 @@
 
     int-to-float v5, v5
 
-    mul-float v4, v4, v5
+    mul-float/2addr v4, v5
 
     add-float/2addr v0, v4
 
@@ -4495,9 +4495,9 @@
 
     iget v5, v6, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->snapAnimationProgress:F
 
-    mul-float v4, v4, v5
+    mul-float/2addr v4, v5
 
-    mul-float v4, v4, v14
+    mul-float/2addr v4, v14
 
     add-float/2addr v4, v0
 
@@ -4558,7 +4558,7 @@
     goto :goto_21
 
     :cond_38
-    const/high16 v15, 0x3f800000    # 1.0f
+    move v15, v1
 
     .line 1981
     :goto_21
@@ -4578,7 +4578,7 @@
 
     const/high16 v0, 0x437f0000    # 255.0f
 
-    mul-float v15, v15, v0
+    mul-float/2addr v15, v0
 
     float-to-int v5, v15
 
@@ -4669,7 +4669,7 @@
     .line 1550
     iput v1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->tooltipWidth:F
 
-    const/4 v1, 0x0
+    move v1, v2
 
     :goto_0
     if-ge v1, p2, :cond_1
@@ -4746,7 +4746,7 @@
 
     const p2, 0x3eb33333    # 0.35f
 
-    mul-float p1, p1, p2
+    mul-float/2addr p1, p2
 
     const/16 p2, 0x8c
 
@@ -4778,7 +4778,7 @@
 
     sub-float/2addr p2, v0
 
-    mul-float p1, p1, p2
+    mul-float/2addr p1, p2
 
     float-to-int p1, p1
 
@@ -5032,13 +5032,13 @@
 .method public setLockTranslation(F)I
     .locals 3
 
-    const/high16 v0, -0x40800000    # -1.0f
+    const v0, 0x461c4000    # 10000.0f
 
-    const v1, 0x461c4000    # 10000.0f
+    cmpl-float v0, p1, v0
 
-    cmpl-float v1, p1, v1
+    const/high16 v1, -0x40800000    # -1.0f
 
-    if-nez v1, :cond_0
+    if-nez v0, :cond_0
 
     const/4 p1, 0x0
 
@@ -5046,10 +5046,10 @@
     iput-boolean p1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->sendButtonVisible:Z
 
     .line 1479
-    iput v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->lockAnimatedTranslation:F
+    iput v1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->lockAnimatedTranslation:F
 
     .line 1480
-    iput v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->startTranslation:F
+    iput v1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->startTranslation:F
 
     .line 1481
     invoke-virtual {p0}, Landroid/view/View;->invalidate()V
@@ -5092,19 +5092,19 @@
 
     .line 1495
     :cond_0
-    iget-boolean v1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->sendButtonVisible:Z
+    iget-boolean v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->sendButtonVisible:Z
 
     const/4 v2, 0x2
 
-    if-eqz v1, :cond_1
+    if-eqz v0, :cond_1
 
     return v2
 
     .line 1498
     :cond_1
-    iget v1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->lockAnimatedTranslation:F
+    iget v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->lockAnimatedTranslation:F
 
-    cmpl-float v0, v1, v0
+    cmpl-float v0, v0, v1
 
     if-nez v0, :cond_2
 
@@ -5175,7 +5175,7 @@
 
     sub-float v0, p1, v0
 
-    mul-float v1, v1, v0
+    mul-float/2addr v1, v0
 
     iget v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->lastMovingY:F
 
@@ -5183,7 +5183,7 @@
 
     sub-float v0, p2, v0
 
-    mul-float v2, v2, v0
+    mul-float/2addr v2, v0
 
     add-float/2addr v1, v2
 
@@ -5268,7 +5268,7 @@
 
     const v1, 0x3eb33333    # 0.35f
 
-    mul-float v0, v0, v1
+    mul-float/2addr v0, v1
 
     const/16 v1, 0x8c
 
@@ -5297,7 +5297,7 @@
 
     sub-float/2addr v1, p1
 
-    mul-float v0, v0, v1
+    mul-float/2addr v0, v1
 
     float-to-int p1, v0
 

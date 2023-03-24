@@ -646,12 +646,12 @@
 
     if-eqz p1, :cond_2
 
-    const v8, 0x3f4f5c29    # 0.81f
+    move v8, v7
 
     goto :goto_0
 
     :cond_2
-    const/high16 v8, 0x3f800000    # 1.0f
+    move v8, v0
 
     :goto_0
     aput v8, v6, v1
@@ -671,7 +671,7 @@
 
     if-eqz p1, :cond_3
 
-    const v0, 0x3f4f5c29    # 0.81f
+    move v0, v7
 
     :cond_3
     aput v0, v6, v1
@@ -717,12 +717,12 @@
 
     if-eqz p1, :cond_5
 
-    const v2, 0x3f59999a    # 0.85f
+    move v2, v1
 
     goto :goto_1
 
     :cond_5
-    const/high16 v2, 0x3f800000    # 1.0f
+    move v2, v0
 
     :goto_1
     invoke-virtual {p2, v2}, Landroid/widget/FrameLayout;->setScaleX(F)V
@@ -732,7 +732,7 @@
 
     if-eqz p1, :cond_6
 
-    const v0, 0x3f59999a    # 0.85f
+    move v0, v1
 
     :cond_6
     invoke-virtual {p2, v0}, Landroid/widget/FrameLayout;->setScaleY(F)V
@@ -1151,12 +1151,12 @@
 
     if-eqz v2, :cond_a
 
-    const/4 v15, 0x2
+    move v15, v4
 
     goto :goto_3
 
     :cond_a
-    const/4 v15, 0x1
+    move v15, v3
 
     :goto_3
     const-string v3, "100_100"
@@ -1216,12 +1216,12 @@
 
     if-eqz v2, :cond_d
 
-    const/4 v11, 0x2
+    move v11, v4
 
     goto :goto_4
 
     :cond_d
-    const/4 v11, 0x1
+    move v11, v3
 
     :goto_4
     const-string v3, "100_100"

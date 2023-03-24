@@ -260,7 +260,7 @@
     goto :goto_0
 
     :cond_0
-    const/4 v15, 0x5
+    move v15, v9
 
     :goto_0
     or-int/2addr v15, v7
@@ -269,24 +269,24 @@
 
     if-eqz v14, :cond_1
 
-    const/16 v17, 0xe
+    move/from16 v17, v16
 
     goto :goto_1
 
     :cond_1
-    const/16 v17, 0x0
+    move/from16 v17, v10
 
     :goto_1
     const/16 v18, 0xf
 
     if-eqz v14, :cond_2
 
-    const/16 v19, 0x0
+    move/from16 v19, v10
 
     goto :goto_2
 
     :cond_2
-    const/16 v19, 0xe
+    move/from16 v19, v16
 
     :goto_2
     const/16 v20, 0x0
@@ -351,7 +351,7 @@
     goto :goto_3
 
     :cond_3
-    const/4 v11, 0x0
+    move v11, v10
 
     :goto_3
     const-string v12, "windowBackgroundWhiteGrayText"
@@ -406,7 +406,7 @@
 
     if-eqz v15, :cond_4
 
-    const/16 v16, 0x5
+    move/from16 v16, v9
 
     goto :goto_4
 
@@ -418,7 +418,7 @@
 
     if-eqz v15, :cond_5
 
-    const/16 v17, 0x0
+    move/from16 v17, v10
 
     goto :goto_5
 
@@ -437,7 +437,7 @@
     goto :goto_6
 
     :cond_6
-    const/16 v19, 0x0
+    move/from16 v19, v10
 
     :goto_6
     const/16 v20, 0x0
@@ -497,7 +497,7 @@
 
     if-eqz v13, :cond_7
 
-    const/4 v13, 0x5
+    move v13, v9
 
     goto :goto_7
 
@@ -520,7 +520,7 @@
 
     if-eqz v15, :cond_8
 
-    const/16 v16, 0x5
+    move/from16 v16, v9
 
     goto :goto_8
 
@@ -538,12 +538,12 @@
 
     if-ne v2, v8, :cond_9
 
-    const/16 v18, 0x12
+    move/from16 v18, v17
 
     goto :goto_9
 
     :cond_9
-    const/16 v18, 0x0
+    move/from16 v18, v10
 
     :goto_9
     add-int/lit8 v18, v18, 0x1c
@@ -572,7 +572,7 @@
     goto :goto_b
 
     :cond_c
-    const/16 v17, 0x0
+    move/from16 v17, v10
 
     :goto_b
     add-int/lit8 v17, v17, 0x1c
@@ -634,7 +634,7 @@
 
     if-eqz v13, :cond_d
 
-    const/4 v13, 0x5
+    move v13, v9
 
     goto :goto_d
 
@@ -657,7 +657,7 @@
 
     if-eqz v15, :cond_e
 
-    const/16 v16, 0x5
+    move/from16 v16, v9
 
     goto :goto_e
 
@@ -752,7 +752,7 @@
 
     if-eqz v11, :cond_11
 
-    const/4 v15, 0x5
+    move v15, v9
 
     goto :goto_11
 
@@ -764,24 +764,24 @@
 
     if-eqz v11, :cond_12
 
-    const/16 v16, 0x0
+    move/from16 v16, v10
 
     goto :goto_12
 
     :cond_12
-    const/16 v16, 0x10
+    move/from16 v16, v12
 
     :goto_12
     const/16 v17, 0x0
 
     if-eqz v11, :cond_13
 
-    const/16 v18, 0x10
+    move/from16 v18, v12
 
     goto :goto_13
 
     :cond_13
-    const/16 v18, 0x0
+    move/from16 v18, v10
 
     :goto_13
     const/16 v19, 0x0
@@ -815,7 +815,7 @@
     goto :goto_14
 
     :cond_14
-    const/4 v8, 0x5
+    move v8, v9
 
     :goto_14
     or-int/lit8 v15, v8, 0x10
@@ -824,24 +824,24 @@
 
     if-eqz v4, :cond_15
 
-    const/16 v16, 0x13
+    move/from16 v16, v8
 
     goto :goto_15
 
     :cond_15
-    const/16 v16, 0x0
+    move/from16 v16, v10
 
     :goto_15
     const/16 v17, 0x0
 
     if-eqz v4, :cond_16
 
-    const/16 v18, 0x0
+    move/from16 v18, v10
 
     goto :goto_16
 
     :cond_16
-    const/16 v18, 0x13
+    move/from16 v18, v8
 
     :goto_16
     const/16 v19, 0x0
@@ -899,7 +899,7 @@
 
     if-eqz v4, :cond_18
 
-    const/4 v8, 0x5
+    move v8, v9
 
     goto :goto_17
 
@@ -911,7 +911,7 @@
 
     if-eqz v4, :cond_19
 
-    const/4 v14, 0x0
+    move v14, v10
 
     goto :goto_18
 
@@ -932,7 +932,7 @@
     goto :goto_19
 
     :cond_1a
-    const/16 v16, 0x0
+    move/from16 v16, v10
 
     :goto_19
     const/16 v17, 0x0
@@ -984,7 +984,7 @@
     goto :goto_1b
 
     :cond_1c
-    const/4 v8, 0x5
+    move v8, v9
 
     :goto_1b
     or-int/lit8 v13, v8, 0x30
@@ -993,24 +993,24 @@
 
     if-eqz v2, :cond_1d
 
-    const/16 v14, 0x17
+    move v14, v3
 
     goto :goto_1c
 
     :cond_1d
-    const/4 v14, 0x0
+    move v14, v10
 
     :goto_1c
     const/16 v15, 0xa
 
     if-eqz v2, :cond_1e
 
-    const/16 v16, 0x0
+    move/from16 v16, v10
 
     goto :goto_1d
 
     :cond_1e
-    const/16 v16, 0x17
+    move/from16 v16, v3
 
     :goto_1d
     const/16 v17, 0x0
@@ -1201,8 +1201,6 @@
 
     const/4 v0, 0x0
 
-    const/4 v3, 0x0
-
     goto :goto_0
 
     :cond_0
@@ -1212,9 +1210,9 @@
 
     int-to-float v0, v0
 
+    :goto_0
     move v3, v0
 
-    :goto_0
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredHeight()I
 
     move-result v0
@@ -1408,7 +1406,7 @@
 
     if-eqz p1, :cond_1
 
-    const/4 v2, 0x0
+    move v2, v1
 
     goto :goto_0
 
@@ -1474,7 +1472,7 @@
     goto :goto_1
 
     :cond_2
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_1
     sget-boolean v4, Lorg/telegram/messenger/LocaleController;->isRTL:Z
@@ -1490,7 +1488,7 @@
     goto :goto_2
 
     :cond_3
-    const/4 p1, 0x0
+    move p1, v1
 
     :goto_2
     invoke-virtual {v0, v2, v1, p1, v1}, Landroid/view/View;->setPadding(IIII)V
@@ -1549,7 +1547,7 @@
 
     if-eqz v1, :cond_0
 
-    const/4 v1, 0x0
+    move v1, v2
 
     goto :goto_0
 
@@ -1573,7 +1571,7 @@
     goto :goto_1
 
     :cond_1
-    const/4 v1, 0x0
+    move v1, v2
 
     :goto_1
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
@@ -1609,12 +1607,12 @@
 
     if-eqz v1, :cond_2
 
-    const/16 v1, 0x12
+    move v1, v3
 
     goto :goto_2
 
     :cond_2
-    const/4 v1, 0x0
+    move v1, v2
 
     :goto_2
     add-int/2addr v1, v4
@@ -1648,7 +1646,7 @@
     goto :goto_4
 
     :cond_5
-    const/4 v3, 0x0
+    move v3, v2
 
     :goto_4
     add-int/lit8 v1, v3, 0x1c
@@ -1674,7 +1672,7 @@
 
     if-eqz v1, :cond_6
 
-    const/16 v1, 0x1c
+    move v1, v4
 
     goto :goto_6
 
@@ -1719,7 +1717,7 @@
 
     if-eqz v1, :cond_8
 
-    const/4 v1, 0x0
+    move v1, v2
 
     goto :goto_7
 
@@ -2175,7 +2173,7 @@
     goto :goto_0
 
     :cond_7
-    const/4 v5, 0x0
+    move v5, v6
 
     :goto_0
     if-eqz v5, :cond_8
@@ -2502,9 +2500,9 @@
 
     iget-wide v10, v4, Lorg/telegram/tgnet/TLRPC$FileLocation;->volume_id:J
 
-    cmp-long v12, v8, v10
+    cmp-long v8, v8, v10
 
-    if-nez v12, :cond_6
+    if-nez v8, :cond_6
 
     iget v7, v7, Lorg/telegram/tgnet/TLRPC$FileLocation;->local_id:I
 
@@ -2682,7 +2680,7 @@
     goto :goto_6
 
     :cond_f
-    const/4 v7, 0x7
+    move v7, v15
 
     goto :goto_7
 
@@ -2698,7 +2696,7 @@
     goto :goto_6
 
     :cond_10
-    const/4 v7, 0x6
+    move v7, v11
 
     goto :goto_7
 
@@ -2714,7 +2712,7 @@
     goto :goto_6
 
     :cond_11
-    const/4 v7, 0x5
+    move v7, v6
 
     goto :goto_7
 
@@ -2730,7 +2728,7 @@
     goto :goto_6
 
     :cond_12
-    const/4 v7, 0x4
+    move v7, v5
 
     goto :goto_7
 
@@ -3182,9 +3180,9 @@
 
     div-long/2addr v10, v14
 
-    long-to-int v11, v10
+    long-to-int v10, v10
 
-    if-le v9, v11, :cond_24
+    if-le v9, v10, :cond_24
 
     .line 513
     iget-object v3, v0, Lorg/telegram/ui/Cells/UserCell;->emojiStatus:Lorg/telegram/ui/Components/AnimatedEmojiDrawable$SwapAnimatedEmojiDrawable;
@@ -3620,12 +3618,12 @@
 
     if-nez v6, :cond_34
 
-    const/16 v6, 0x8
+    move v6, v13
 
     goto :goto_11
 
     :cond_34
-    const/4 v6, 0x0
+    move v6, v5
 
     :goto_11
     invoke-virtual {v3, v6}, Landroid/widget/ImageView;->setVisibility(I)V
@@ -3729,6 +3727,8 @@
 
     :cond_39
     return-void
+
+    nop
 
     :sswitch_data_0
     .sparse-switch

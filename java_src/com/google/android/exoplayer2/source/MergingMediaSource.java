@@ -219,8 +219,8 @@ public final class MergingMediaSource extends CompositeMediaSource<Integer> {
         Timeline[] timelineArr;
         Timeline.Period period = new Timeline.Period();
         for (int i = 0; i < this.periodCount; i++) {
-            long j = Long.MIN_VALUE;
             int i2 = 0;
+            long j = Long.MIN_VALUE;
             while (true) {
                 timelineArr = this.timelines;
                 if (i2 >= timelineArr.length) {

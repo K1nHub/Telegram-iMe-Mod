@@ -117,7 +117,7 @@
 .end method
 
 .method public onNext(Ljava/lang/Object;)V
-    .locals 5
+    .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TT;)V"
@@ -129,9 +129,9 @@
 
     const-wide/16 v2, 0x0
 
-    cmp-long v4, v0, v2
+    cmp-long v2, v0, v2
 
-    if-eqz v4, :cond_0
+    if-eqz v2, :cond_0
 
     const-wide/16 v2, 0x1
 

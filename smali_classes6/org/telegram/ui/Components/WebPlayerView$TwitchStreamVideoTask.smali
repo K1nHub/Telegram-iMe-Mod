@@ -236,7 +236,7 @@
 
     const-wide v9, 0x416312d000000000L    # 1.0E7
 
-    mul-double v7, v7, v9
+    mul-double/2addr v7, v9
 
     double-to-int v5, v7
 

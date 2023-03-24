@@ -337,7 +337,7 @@
 .end method
 
 .method private final zzR(Ljava/lang/Runnable;)V
-    .locals 5
+    .locals 4
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/lang/IllegalStateException;
@@ -376,9 +376,9 @@
 
     const-wide/16 v2, 0x3e8
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-ltz v4, :cond_1
+    if-ltz v0, :cond_1
 
     iget-object p1, p0, Lcom/google/android/gms/measurement/internal/zzgo;->zzs:Lcom/google/android/gms/measurement/internal/zzfv;
 
@@ -698,9 +698,9 @@
 
     const/16 v1, 0x64
 
-    const/4 v2, 0x0
+    move v2, v0
 
-    const/16 v3, 0x64
+    move v3, v1
 
     :goto_0
     const/16 v4, 0x3e9
@@ -739,7 +739,7 @@
     goto :goto_1
 
     :cond_0
-    const/4 v4, 0x0
+    move v4, v0
 
     :goto_1
     if-eqz p2, :cond_1
@@ -754,7 +754,7 @@
 
     move-result v5
 
-    const/4 v6, 0x0
+    move v6, v0
 
     :goto_2
     if-ge v6, v5, :cond_5
@@ -1238,7 +1238,7 @@
 .end method
 
 .method final zzN()Z
-    .locals 6
+    .locals 7
 
     .line 1
     invoke-virtual {p0}, Lcom/google/android/gms/measurement/internal/zzgo;->zzg()V
@@ -1336,7 +1336,7 @@
     if-ne v4, v1, :cond_2
 
     :goto_1
-    const/4 v3, 0x1
+    move v3, v1
 
     goto/16 :goto_4
 
@@ -1473,7 +1473,7 @@
     invoke-virtual {v0, v1}, Lcom/google/android/gms/measurement/internal/zzej;->zza(Ljava/lang/String;)V
 
     :goto_2
-    const/4 v1, 0x0
+    move v1, v3
 
     goto :goto_4
 
@@ -1519,12 +1519,16 @@
     goto :goto_3
 
     :cond_8
-    const/4 v1, 0x0
+    move v1, v3
 
     :goto_3
+    move v6, v3
+
     move v3, v1
 
-    goto :goto_2
+    move v1, v6
+
+    goto :goto_4
 
     .line 20
     :cond_9

@@ -15,6 +15,19 @@ import moxy.viewstate.strategy.OneExecutionStateStrategy;
 /* loaded from: classes3.dex */
 public class WalletTransactionsView$$State extends MvpViewState<WalletTransactionsView> implements WalletTransactionsView {
     @Override // com.smedialink.p031ui.wallet.transaction.WalletTransactionsView
+    public void renderInitialItems(List<BaseNode> list) {
+        RenderInitialItemsCommand renderInitialItemsCommand = new RenderInitialItemsCommand(this, list);
+        this.viewCommands.beforeApply(renderInitialItemsCommand);
+        if (hasNotView().booleanValue()) {
+            return;
+        }
+        for (View view : this.views) {
+            view.renderInitialItems(list);
+        }
+        this.viewCommands.afterApply(renderInitialItemsCommand);
+    }
+
+    @Override // com.smedialink.p031ui.wallet.transaction.WalletTransactionsView
     public void renderItems(List<BaseNode> list) {
         RenderItemsCommand renderItemsCommand = new RenderItemsCommand(this, list);
         this.viewCommands.beforeApply(renderItemsCommand);
@@ -168,6 +181,23 @@ public class WalletTransactionsView$$State extends MvpViewState<WalletTransactio
             view.showChooseNetworkDialog(networkType, list, function1);
         }
         this.viewCommands.afterApply(showChooseNetworkDialogCommand);
+    }
+
+    /* compiled from: WalletTransactionsView$$State.java */
+    /* renamed from: com.smedialink.ui.wallet.transaction.WalletTransactionsView$$State$RenderInitialItemsCommand */
+    /* loaded from: classes3.dex */
+    public class RenderInitialItemsCommand extends ViewCommand<WalletTransactionsView> {
+        public final List<BaseNode> items;
+
+        RenderInitialItemsCommand(WalletTransactionsView$$State walletTransactionsView$$State, List<BaseNode> list) {
+            super("renderInitialItems", AddToEndSingleStrategy.class);
+            this.items = list;
+        }
+
+        @Override // moxy.viewstate.ViewCommand
+        public void apply(WalletTransactionsView walletTransactionsView) {
+            walletTransactionsView.renderInitialItems(this.items);
+        }
     }
 
     /* compiled from: WalletTransactionsView$$State.java */

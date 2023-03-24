@@ -407,7 +407,7 @@
     .line 1217
     iget v2, p0, Lorg/telegram/ui/Components/ChatAttachAlert$AttachBotButton;->checkedState:F
 
-    mul-float v2, v2, v1
+    mul-float/2addr v2, v1
 
     add-float/2addr v0, v2
 
@@ -420,7 +420,7 @@
 
     int-to-float v1, v1
 
-    mul-float v1, v1, v0
+    mul-float/2addr v1, v0
 
     .line 1220
     iget-object v2, p0, Lorg/telegram/ui/Components/ChatAttachAlert$AttachBotButton;->imageView:Lorg/telegram/ui/Components/BackupImageView;
@@ -503,7 +503,7 @@
 
     int-to-float v5, v5
 
-    mul-float v5, v5, v0
+    mul-float/2addr v5, v0
 
     invoke-virtual {v4, v5}, Landroid/graphics/Paint;->setStrokeWidth(F)V
 
@@ -518,7 +518,7 @@
 
     iget v5, p0, Lorg/telegram/ui/Components/ChatAttachAlert$AttachBotButton;->checkedState:F
 
-    mul-float v5, v5, v4
+    mul-float/2addr v5, v4
 
     invoke-static {v5}, Ljava/lang/Math;->round(F)I
 
@@ -539,7 +539,7 @@
 
     move-result v4
 
-    mul-float v4, v4, v0
+    mul-float/2addr v4, v0
 
     sub-float v0, v1, v4
 
@@ -584,7 +584,7 @@
 
     iget v4, p0, Lorg/telegram/ui/Components/ChatAttachAlert$AttachBotButton;->checkedState:F
 
-    mul-float v0, v0, v4
+    mul-float/2addr v0, v4
 
     sub-float/2addr v1, v0
 
@@ -719,12 +719,12 @@
 
     move-result-object p1
 
-    const/4 v2, 0x0
+    move v2, v1
 
     goto :goto_0
 
     :cond_1
-    const/4 v2, 0x1
+    move v2, v0
 
     :goto_0
     if-eqz p1, :cond_9
@@ -831,7 +831,7 @@
     goto :goto_2
 
     :cond_5
-    const/4 v6, 0x1
+    move v6, v0
 
     goto :goto_2
 
@@ -847,7 +847,7 @@
     goto :goto_2
 
     :cond_6
-    const/4 v6, 0x0
+    move v6, v1
 
     :goto_2
     packed-switch v6, :pswitch_data_0
@@ -1088,7 +1088,7 @@
 
     const v1, 0x3d75c28f    # 0.06f
 
-    mul-float p1, p1, v1
+    mul-float/2addr p1, v1
 
     const/high16 v1, 0x3f800000    # 1.0f
 
@@ -1243,12 +1243,12 @@
 
     if-nez v0, :cond_0
 
-    const/4 v0, 0x1
+    move v0, v1
 
     goto :goto_0
 
     :cond_0
-    const/4 v0, 0x0
+    move v0, v2
 
     .line 1243
     :goto_0
@@ -1339,12 +1339,12 @@
 
     if-eqz v0, :cond_4
 
-    const/4 v0, 0x0
+    move v0, v4
 
     goto :goto_1
 
     :cond_4
-    const/high16 v0, 0x3f800000    # 1.0f
+    move v0, v3
 
     :goto_1
     aput v0, p1, v2
@@ -1360,7 +1360,7 @@
     goto :goto_2
 
     :cond_5
-    const/4 v3, 0x0
+    move v3, v4
 
     :goto_2
     aput v3, p1, v1
@@ -1414,7 +1414,7 @@
     goto :goto_3
 
     :cond_8
-    const/4 v3, 0x0
+    move v3, v4
 
     :goto_3
     invoke-virtual {p0, v3}, Lorg/telegram/ui/Components/ChatAttachAlert$AttachBotButton;->setCheckedState(F)V

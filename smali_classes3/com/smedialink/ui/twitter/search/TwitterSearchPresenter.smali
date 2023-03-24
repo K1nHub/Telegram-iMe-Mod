@@ -19,7 +19,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nTwitterSearchPresenter.kt\nKotlin\n*S Kotlin\n*F\n+ 1 TwitterSearchPresenter.kt\ncom/smedialink/ui/twitter/search/TwitterSearchPresenter\n+ 2 RxExt.kt\ncom/smedialink/utils/extentions/rx/RxExtKt\n+ 3 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 4 ObservableExt.kt\ncom/smedialink/storage/domain/utils/extentions/ObservableExtKt\n+ 5 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 6 ResultExt.kt\ncom/smedialink/storage/domain/utils/extentions/ResultExtKt\n+ 7 RxExt.kt\ncom/smedialink/storage/data/utils/extentions/RxExtKt\n*L\n1#1,301:1\n39#2,8:302\n39#2,8:310\n39#2,8:318\n39#2,8:337\n800#3,11:326\n1603#3,9:346\n1855#3:355\n1856#3:357\n1612#3:358\n15#4:345\n1#5:356\n8#6:359\n18#7:360\n*S KotlinDebug\n*F\n+ 1 TwitterSearchPresenter.kt\ncom/smedialink/ui/twitter/search/TwitterSearchPresenter\n*L\n74#1:302,8\n100#1:310,8\n138#1:318,8\n208#1:337,8\n153#1:326,11\n240#1:346,9\n240#1:355\n240#1:357\n240#1:358\n233#1:345\n240#1:356\n253#1:359\n253#1:360\n*E\n"
+    value = "SMAP\nTwitterSearchPresenter.kt\nKotlin\n*S Kotlin\n*F\n+ 1 TwitterSearchPresenter.kt\ncom/smedialink/ui/twitter/search/TwitterSearchPresenter\n+ 2 RxExt.kt\ncom/smedialink/utils/extentions/rx/RxExtKt\n+ 3 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 4 ObservableExt.kt\ncom/smedialink/storage/domain/utils/extentions/ObservableExtKt\n+ 5 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 6 ResultExt.kt\ncom/smedialink/storage/domain/utils/extentions/ResultExtKt\n+ 7 RxExt.kt\ncom/smedialink/storage/data/utils/extentions/RxExtKt\n*L\n1#1,301:1\n39#2,8:302\n39#2,8:310\n39#2,8:318\n39#2,8:337\n800#3,11:326\n1603#3,9:346\n1855#3:355\n1856#3:357\n1612#3:358\n15#4:345\n1#5:356\n11#6:359\n18#7:360\n*S KotlinDebug\n*F\n+ 1 TwitterSearchPresenter.kt\ncom/smedialink/ui/twitter/search/TwitterSearchPresenter\n*L\n74#1:302,8\n100#1:310,8\n138#1:318,8\n208#1:337,8\n153#1:326,11\n240#1:346,9\n240#1:355\n240#1:357\n240#1:358\n233#1:345\n240#1:356\n253#1:359\n253#1:360\n*E\n"
 .end annotation
 
 .annotation runtime Lmoxy/InjectViewState;
@@ -462,7 +462,7 @@
 
     move-result-object p1
 
-    .line 8
+    .line 11
     :goto_1
     sget-object v0, Lcom/smedialink/storage/domain/model/Result;->Companion:Lcom/smedialink/storage/domain/model/Result$Companion;
 
@@ -1177,7 +1177,7 @@
 .end method
 
 .method public final processSelectedRecipient(Ljava/lang/String;Ljava/lang/String;)V
-    .locals 7
+    .locals 6
 
     const-string v0, "id"
 
@@ -1261,9 +1261,9 @@
 
     move-result-wide v4
 
-    cmp-long v6, v2, v4
+    cmp-long v2, v2, v4
 
-    if-nez v6, :cond_4
+    if-nez v2, :cond_4
 
     const/4 v2, 0x1
 

@@ -229,8 +229,7 @@ public class ApplicationLoader extends Application implements BillingProvider {
         applicationInited = true;
         initForkSmartBots();
         checkKoinInit();
-        FirebaseApp initGoogleServices = initGoogleServices();
-        PushListenerController.GooglePushListenerServiceProvider.INSTANCE.firebaseMessaging = (FirebaseMessaging) initGoogleServices.get(FirebaseMessaging.class);
+        PushListenerController.GooglePushListenerServiceProvider.INSTANCE.firebaseMessaging = (FirebaseMessaging) initGoogleServices().get(FirebaseMessaging.class);
         initDebugTools();
         initCryptoSecureServices();
         for (int i = 0; i < 5; i++) {

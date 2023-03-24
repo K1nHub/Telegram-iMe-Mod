@@ -36,6 +36,7 @@
     iget-object v1, p0, Lcom/google/mlkit/common/sdkinternal/zzb;->zzb:Ljava/util/Set;
 
     .line 3
+    :catch_0
     :goto_0
     invoke-interface {v1}, Ljava/util/Set;->isEmpty()Z
 
@@ -55,11 +56,6 @@
     invoke-interface {v2}, Lcom/google/mlkit/common/sdkinternal/Cleaner$Cleanable;->clean()V
     :try_end_0
     .catch Ljava/lang/InterruptedException; {:try_start_0 .. :try_end_0} :catch_0
-
-    goto :goto_0
-
-    :catch_0
-    nop
 
     goto :goto_0
 

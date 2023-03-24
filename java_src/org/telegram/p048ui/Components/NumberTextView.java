@@ -127,8 +127,8 @@ public class NumberTextView extends View {
             f = (getMeasuredWidth() - this.textWidth) / 2.0f;
             f2 = ((getMeasuredWidth() - this.oldTextWidth) / 2.0f) - f;
         } else {
-            f = BitmapDescriptorFactory.HUE_RED;
-            f2 = BitmapDescriptorFactory.HUE_RED;
+            f = 0.0f;
+            f2 = 0.0f;
         }
         canvas.save();
         canvas.translate(getPaddingLeft() + f, (getMeasuredHeight() - height) / 2.0f);

@@ -352,7 +352,7 @@
 
     const/high16 p3, -0x3d4c0000    # -90.0f
 
-    mul-float p1, p1, p3
+    mul-float/2addr p1, p3
 
     const/high16 p3, 0x42c80000    # 100.0f
 
@@ -480,7 +480,7 @@
     .line 435
     array-length v1, v0
 
-    const/4 v3, 0x0
+    move v3, v2
 
     :goto_0
     if-ge v3, v1, :cond_0
@@ -505,7 +505,7 @@
     goto :goto_0
 
     :cond_0
-    const/4 v0, 0x0
+    move v0, v2
 
     .line 439
     :goto_1
@@ -581,7 +581,7 @@
     invoke-virtual {p0, v2, v1}, Landroid/text/SpannableStringBuilder;->delete(II)Landroid/text/SpannableStringBuilder;
 
     :cond_4
-    const/4 v0, 0x0
+    move v0, v2
 
     .line 455
     :goto_3
@@ -785,9 +785,9 @@
     :cond_1
     iget-wide v1, p0, Lcom/google/android/exoplayer2/text/ttml/TtmlNode;->endTimeUs:J
 
-    cmp-long v5, v1, v3
+    cmp-long v3, v1, v3
 
-    if-eqz v5, :cond_2
+    if-eqz v3, :cond_2
 
     .line 231
     invoke-static {v1, v2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
@@ -807,7 +807,7 @@
     :cond_3
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     .line 237
     :goto_0
@@ -835,7 +835,7 @@
     goto :goto_1
 
     :cond_4
-    const/4 v4, 0x0
+    move v4, v1
 
     goto :goto_2
 
@@ -1108,15 +1108,10 @@
 
     move-result v1
 
+    :cond_2
     move v3, v1
 
-    goto :goto_2
-
-    :cond_2
-    const/4 v3, 0x0
-
     .line 381
-    :goto_2
     invoke-interface {v0}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
     move-result-object v0
@@ -1185,7 +1180,7 @@
     move-object/from16 v15, p6
 
     .line 389
-    :goto_3
+    :goto_2
     invoke-virtual/range {p0 .. p0}, Lcom/google/android/exoplayer2/text/ttml/TtmlNode;->getChildCount()I
 
     move-result v0
@@ -1214,7 +1209,7 @@
 
     move-object/from16 v13, p4
 
-    goto :goto_3
+    goto :goto_2
 
     :cond_5
     return-void
@@ -1404,7 +1399,7 @@
 
     const/4 v7, 0x0
 
-    const/4 v8, 0x0
+    move v8, v7
 
     .line 342
     :goto_2
@@ -1426,7 +1421,7 @@
     goto :goto_3
 
     :cond_5
-    const/4 v3, 0x0
+    move v3, v7
 
     goto :goto_4
 
@@ -1434,7 +1429,7 @@
     :goto_3
     const/4 v1, 0x1
 
-    const/4 v3, 0x1
+    move v3, v1
 
     :goto_4
     move-wide v1, p1
@@ -1967,7 +1962,7 @@
 .end method
 
 .method public isActive(J)Z
-    .locals 7
+    .locals 6
 
     .line 188
     iget-wide v0, p0, Lcom/google/android/exoplayer2/text/ttml/TtmlNode;->startTimeUs:J
@@ -1980,9 +1975,9 @@
 
     iget-wide v4, p0, Lcom/google/android/exoplayer2/text/ttml/TtmlNode;->endTimeUs:J
 
-    cmp-long v6, v4, v2
+    cmp-long v4, v4, v2
 
-    if-eqz v6, :cond_3
+    if-eqz v4, :cond_3
 
     :cond_0
     cmp-long v4, v0, p1
@@ -1991,31 +1986,31 @@
 
     iget-wide v4, p0, Lcom/google/android/exoplayer2/text/ttml/TtmlNode;->endTimeUs:J
 
-    cmp-long v6, v4, v2
+    cmp-long v4, v4, v2
 
-    if-eqz v6, :cond_3
+    if-eqz v4, :cond_3
 
     :cond_1
-    cmp-long v4, v0, v2
+    cmp-long v2, v0, v2
 
-    if-nez v4, :cond_2
+    if-nez v2, :cond_2
 
     iget-wide v2, p0, Lcom/google/android/exoplayer2/text/ttml/TtmlNode;->endTimeUs:J
 
-    cmp-long v4, p1, v2
+    cmp-long v2, p1, v2
 
-    if-ltz v4, :cond_3
+    if-ltz v2, :cond_3
 
     :cond_2
-    cmp-long v2, v0, p1
+    cmp-long v0, v0, p1
 
-    if-gtz v2, :cond_4
+    if-gtz v0, :cond_4
 
     iget-wide v0, p0, Lcom/google/android/exoplayer2/text/ttml/TtmlNode;->endTimeUs:J
 
-    cmp-long v2, p1, v0
+    cmp-long p1, p1, v0
 
-    if-gez v2, :cond_4
+    if-gez p1, :cond_4
 
     :cond_3
     const/4 p1, 0x1

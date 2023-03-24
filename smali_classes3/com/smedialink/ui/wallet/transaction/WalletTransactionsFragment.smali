@@ -15,7 +15,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nWalletTransactionsFragment.kt\nKotlin\n*S Kotlin\n*F\n+ 1 WalletTransactionsFragment.kt\ncom/smedialink/ui/wallet/transaction/WalletTransactionsFragment\n+ 2 Delegates.kt\nmoxy/ktx/DelegatesKt\n+ 3 KoinComponent.kt\norg/koin/core/component/KoinComponentKt\n+ 4 View.kt\nandroidx/core/view/ViewKt\n*L\n1#1,266:1\n13#2,4:267\n56#3,6:271\n162#4,8:277\n*S KotlinDebug\n*F\n+ 1 WalletTransactionsFragment.kt\ncom/smedialink/ui/wallet/transaction/WalletTransactionsFragment\n*L\n44#1:267,4\n45#1:271,6\n127#1:277,8\n*E\n"
+    value = "SMAP\nWalletTransactionsFragment.kt\nKotlin\n*S Kotlin\n*F\n+ 1 WalletTransactionsFragment.kt\ncom/smedialink/ui/wallet/transaction/WalletTransactionsFragment\n+ 2 Delegates.kt\nmoxy/ktx/DelegatesKt\n+ 3 KoinComponent.kt\norg/koin/core/component/KoinComponentKt\n+ 4 View.kt\nandroidx/core/view/ViewKt\n*L\n1#1,269:1\n13#2,4:270\n56#3,6:274\n162#4,8:280\n*S KotlinDebug\n*F\n+ 1 WalletTransactionsFragment.kt\ncom/smedialink/ui/wallet/transaction/WalletTransactionsFragment\n*L\n44#1:270,4\n45#1:274,6\n130#1:280,8\n*E\n"
 .end annotation
 
 
@@ -327,7 +327,7 @@
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 144
+    .line 147
     invoke-direct {p0}, Lcom/smedialink/ui/wallet/transaction/WalletTransactionsFragment;->getTransactionAdapter()Lcom/smedialink/ui/wallet/transaction/adapter/WalletTransactionsRecycleAdapter;
 
     move-result-object p0
@@ -355,15 +355,15 @@
 .method private final setupActionBar()V
     .locals 8
 
-    .line 152
+    .line 155
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
-    .line 153
+    .line 156
     sget v1, Lorg/telegram/messenger/R$drawable;->ic_ab_back:I
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/ActionBar;->setBackButtonImage(I)V
 
-    .line 154
+    .line 157
     invoke-virtual {p0}, Lcom/smedialink/ui/base/WalletAuthFragment;->getResourceManager()Lcom/smedialink/storage/domain/utils/system/ResourceManager;
 
     move-result-object v1
@@ -378,22 +378,22 @@
 
     const/4 v1, 0x1
 
-    .line 155
+    .line 158
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/ActionBar;->setAllowOverlayTitle(Z)V
 
-    .line 156
+    .line 159
     new-instance v1, Lcom/smedialink/ui/wallet/transaction/WalletTransactionsFragment$setupActionBar$1$1;
 
     invoke-direct {v1, p0}, Lcom/smedialink/ui/wallet/transaction/WalletTransactionsFragment$setupActionBar$1$1;-><init>(Lcom/smedialink/ui/wallet/transaction/WalletTransactionsFragment;)V
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/ActionBar;->setActionBarMenuOnItemClick(Lorg/telegram/ui/ActionBar/ActionBar$ActionBarMenuOnItemClick;)V
 
-    .line 164
+    .line 167
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/ActionBar;->createMenu()Lorg/telegram/ui/ActionBar/ActionBarMenu;
 
     move-result-object v0
 
-    .line 165
+    .line 168
     new-instance v7, Lcom/smedialink/ui/custom/NetworkTypeView;
 
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
@@ -418,7 +418,7 @@
 
     iput-object v7, p0, Lcom/smedialink/ui/wallet/transaction/WalletTransactionsFragment;->networkTypeView:Lcom/smedialink/ui/custom/NetworkTypeView;
 
-    .line 166
+    .line 169
     sget v1, Lcom/smedialink/common/IdFabric$Menu;->NETWORK_SWITCH:I
 
     const/4 v2, 0x0
@@ -431,7 +431,7 @@
 
     const-string v1, "setupActionBar$lambda$5$lambda$4$lambda$3"
 
-    .line 167
+    .line 170
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     const/16 v1, 0xe
@@ -442,7 +442,7 @@
 
     invoke-static {v0, v1}, Lcom/tbuonomo/viewpagerdotsindicator/ViewExtKt;->setPaddingHorizontal(Landroid/view/View;I)V
 
-    .line 168
+    .line 171
     iget-object v1, p0, Lcom/smedialink/ui/wallet/transaction/WalletTransactionsFragment;->networkTypeView:Lcom/smedialink/ui/custom/NetworkTypeView;
 
     const v2, 0x800015
@@ -459,7 +459,7 @@
 .method private final setupColors()V
     .locals 4
 
-    .line 206
+    .line 209
     invoke-direct {p0}, Lcom/smedialink/ui/wallet/transaction/WalletTransactionsFragment;->getBinding()Lorg/telegram/messenger/databinding/ForkFragmentWalletTransactionsBinding;
 
     move-result-object v0
@@ -470,7 +470,7 @@
 
     const-string v1, "windowBackgroundWhite"
 
-    .line 207
+    .line 210
     invoke-virtual {p0, v1}, Lorg/telegram/ui/ActionBar/BaseFragment;->getThemedColor(Ljava/lang/String;)I
 
     move-result v1
@@ -483,7 +483,7 @@
 
     const-string v2, "chats_actionBackground"
 
-    .line 208
+    .line 211
     invoke-virtual {p0, v2}, Lorg/telegram/ui/ActionBar/BaseFragment;->getThemedColor(Ljava/lang/String;)I
 
     move-result v2
@@ -500,12 +500,12 @@
 .method private final setupListeners()V
     .locals 3
 
-    .line 213
+    .line 216
     invoke-direct {p0}, Lcom/smedialink/ui/wallet/transaction/WalletTransactionsFragment;->getBinding()Lorg/telegram/messenger/databinding/ForkFragmentWalletTransactionsBinding;
 
     move-result-object v0
 
-    .line 214
+    .line 217
     invoke-virtual {v0}, Lorg/telegram/messenger/databinding/ForkFragmentWalletTransactionsBinding;->getRoot()Landroidx/swiperefreshlayout/widget/SwipeRefreshLayout;
 
     move-result-object v0
@@ -516,12 +516,12 @@
 
     invoke-virtual {v0, v1}, Landroidx/swiperefreshlayout/widget/SwipeRefreshLayout;->setOnRefreshListener(Landroidx/swiperefreshlayout/widget/SwipeRefreshLayout$OnRefreshListener;)V
 
-    .line 216
+    .line 219
     invoke-direct {p0}, Lcom/smedialink/ui/wallet/transaction/WalletTransactionsFragment;->getTransactionAdapter()Lcom/smedialink/ui/wallet/transaction/adapter/WalletTransactionsRecycleAdapter;
 
     move-result-object v0
 
-    .line 217
+    .line 220
     invoke-virtual {v0}, Lcom/smedialink/ui/wallet/transaction/adapter/WalletTransactionsRecycleAdapter;->getGlobalStateProvider()Lcom/smedialink/ui/adapter/provider/GlobalStateProvider;
 
     move-result-object v1
@@ -532,7 +532,7 @@
 
     invoke-virtual {v1, v2}, Lcom/smedialink/ui/adapter/provider/GlobalStateProvider;->setOnRetryButtonClickAction(Lkotlin/jvm/functions/Function0;)V
 
-    .line 218
+    .line 221
     new-instance v1, Lcom/smedialink/ui/wallet/transaction/WalletTransactionsFragment$$ExternalSyntheticLambda1;
 
     invoke-direct {v1, p0}, Lcom/smedialink/ui/wallet/transaction/WalletTransactionsFragment$$ExternalSyntheticLambda1;-><init>(Lcom/smedialink/ui/wallet/transaction/WalletTransactionsFragment;)V
@@ -549,7 +549,7 @@
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 214
+    .line 217
     invoke-direct {p0}, Lcom/smedialink/ui/wallet/transaction/WalletTransactionsFragment;->getPresenter()Lcom/smedialink/ui/wallet/transaction/WalletTransactionsPresenter;
 
     move-result-object v1
@@ -584,7 +584,7 @@
 
     invoke-static {p2, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 219
+    .line 222
     invoke-direct {p0}, Lcom/smedialink/ui/wallet/transaction/WalletTransactionsFragment;->getTransactionAdapter()Lcom/smedialink/ui/wallet/transaction/adapter/WalletTransactionsRecycleAdapter;
 
     move-result-object p1
@@ -595,12 +595,12 @@
 
     check-cast p1, Lcom/chad/library/adapter/base/entity/node/BaseNode;
 
-    .line 220
+    .line 223
     instance-of p2, p1, Lcom/smedialink/model/wallet/transaction/TransactionItem;
 
     if-eqz p2, :cond_1
 
-    .line 221
+    .line 224
     check-cast p1, Lcom/smedialink/model/wallet/transaction/TransactionItem;
 
     invoke-virtual {p1}, Lcom/smedialink/model/wallet/transaction/TransactionItem;->isUnsupported()Z
@@ -611,11 +611,11 @@
 
     return-void
 
-    .line 223
+    .line 226
     :cond_0
     sget-object v0, Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsBottomSheetDialog;->Companion:Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsBottomSheetDialog$Companion;
 
-    .line 225
+    .line 228
     new-instance v2, Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsBottomSheetDialog$ScreenType$TransactionDetails;
 
     invoke-direct {v2, p1}, Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsBottomSheetDialog$ScreenType$TransactionDetails;-><init>(Lcom/smedialink/model/wallet/transaction/TransactionItem;)V
@@ -628,17 +628,17 @@
 
     move-object v1, p0
 
-    .line 223
+    .line 226
     invoke-static/range {v0 .. v5}, Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsBottomSheetDialog$Companion;->newInstance$default(Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsBottomSheetDialog$Companion;Lorg/telegram/ui/ActionBar/BaseFragment;Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsBottomSheetDialog$ScreenType;Lorg/fork/utils/Callbacks$Callback1;ILjava/lang/Object;)Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsBottomSheetDialog;
 
     move-result-object p1
 
-    .line 222
+    .line 225
     invoke-virtual {p0, p1}, Lorg/telegram/ui/ActionBar/BaseFragment;->showDialog(Landroid/app/Dialog;)Landroid/app/Dialog;
 
     goto :goto_0
 
-    .line 229
+    .line 232
     :cond_1
     instance-of p2, p1, Lcom/smedialink/model/wallet/transaction/StakingOperationItem;
 
@@ -660,17 +660,17 @@
 .method private final setupLoadMore(Lcom/smedialink/ui/wallet/transaction/adapter/WalletTransactionsRecycleAdapter;)V
     .locals 2
 
-    .line 192
+    .line 195
     invoke-virtual {p1}, Lcom/chad/library/adapter/base/BaseQuickAdapter;->getLoadMoreModule()Lcom/chad/library/adapter/base/module/BaseLoadMoreModule;
 
     move-result-object v0
 
     const/4 v1, 0x5
 
-    .line 193
+    .line 196
     invoke-virtual {v0, v1}, Lcom/chad/library/adapter/base/module/BaseLoadMoreModule;->setPreLoadNumber(I)V
 
-    .line 194
+    .line 197
     new-instance v1, Lcom/smedialink/ui/wallet/transaction/WalletTransactionsFragment$$ExternalSyntheticLambda2;
 
     invoke-direct {v1, p1, p0, v0}, Lcom/smedialink/ui/wallet/transaction/WalletTransactionsFragment$$ExternalSyntheticLambda2;-><init>(Lcom/smedialink/ui/wallet/transaction/adapter/WalletTransactionsRecycleAdapter;Lcom/smedialink/ui/wallet/transaction/WalletTransactionsFragment;Lcom/chad/library/adapter/base/module/BaseLoadMoreModule;)V
@@ -695,7 +695,7 @@
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 195
+    .line 198
     invoke-virtual {p0}, Lcom/chad/library/adapter/base/BaseQuickAdapter;->getData()Ljava/util/List;
 
     move-result-object p0
@@ -710,7 +710,7 @@
 
     return-void
 
-    .line 196
+    .line 199
     :cond_0
     instance-of v0, p0, Lcom/smedialink/model/wallet/transaction/TransactionItem;
 
@@ -742,7 +742,7 @@
 
     goto :goto_0
 
-    .line 197
+    .line 200
     :cond_1
     instance-of p0, p0, Lcom/smedialink/model/wallet/transaction/StakingOperationItem;
 
@@ -766,7 +766,7 @@
 
     goto :goto_0
 
-    .line 198
+    .line 201
     :cond_2
     invoke-virtual {p2}, Lcom/chad/library/adapter/base/module/BaseLoadMoreModule;->loadMoreComplete()V
 
@@ -777,32 +777,32 @@
 .method private final setupRecycleView()V
     .locals 3
 
-    .line 175
+    .line 178
     invoke-direct {p0}, Lcom/smedialink/ui/wallet/transaction/WalletTransactionsFragment;->getBinding()Lorg/telegram/messenger/databinding/ForkFragmentWalletTransactionsBinding;
 
     move-result-object v0
 
     iget-object v0, v0, Lorg/telegram/messenger/databinding/ForkFragmentWalletTransactionsBinding;->recycleTransactions:Landroidx/recyclerview/widget/RecyclerView;
 
-    .line 176
+    .line 179
     invoke-direct {p0}, Lcom/smedialink/ui/wallet/transaction/WalletTransactionsFragment;->getTransactionAdapter()Lcom/smedialink/ui/wallet/transaction/adapter/WalletTransactionsRecycleAdapter;
 
     move-result-object v1
 
-    .line 178
+    .line 181
     new-instance v2, Lcom/smedialink/ui/wallet/transaction/adapter/diff/TransactionDiffCallback;
 
     invoke-direct {v2}, Lcom/smedialink/ui/wallet/transaction/adapter/diff/TransactionDiffCallback;-><init>()V
 
     invoke-virtual {v1, v2}, Lcom/chad/library/adapter/base/BaseQuickAdapter;->setDiffCallback(Landroidx/recyclerview/widget/DiffUtil$ItemCallback;)V
 
-    .line 179
+    .line 182
     invoke-direct {p0, v1}, Lcom/smedialink/ui/wallet/transaction/WalletTransactionsFragment;->setupLoadMore(Lcom/smedialink/ui/wallet/transaction/adapter/WalletTransactionsRecycleAdapter;)V
 
-    .line 176
+    .line 179
     invoke-virtual {v0, v1}, Landroidx/recyclerview/widget/RecyclerView;->setAdapter(Landroidx/recyclerview/widget/RecyclerView$Adapter;)V
 
-    .line 181
+    .line 184
     new-instance v1, Landroidx/recyclerview/widget/LinearLayoutManager;
 
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
@@ -813,7 +813,7 @@
 
     iput-object v1, p0, Lcom/smedialink/ui/wallet/transaction/WalletTransactionsFragment;->linearLayoutManager:Landroidx/recyclerview/widget/LinearLayoutManager;
 
-    .line 182
+    .line 185
     invoke-virtual {v0, v1}, Landroidx/recyclerview/widget/RecyclerView;->setLayoutManager(Landroidx/recyclerview/widget/RecyclerView$LayoutManager;)V
 
     return-void
@@ -822,7 +822,7 @@
 .method private final setupRootView()V
     .locals 3
 
-    .line 187
+    .line 190
     invoke-direct {p0}, Lcom/smedialink/ui/wallet/transaction/WalletTransactionsFragment;->getBinding()Lorg/telegram/messenger/databinding/ForkFragmentWalletTransactionsBinding;
 
     move-result-object v0
@@ -894,7 +894,7 @@
 
     new-array v1, v1, [Lorg/telegram/ui/ActionBar/ThemeDescription;
 
-    .line 140
+    .line 143
     new-instance v10, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v3, v0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
@@ -919,7 +919,7 @@
 
     aput-object v10, v1, v2
 
-    .line 141
+    .line 144
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v12, v0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
@@ -944,7 +944,7 @@
 
     aput-object v2, v1, v3
 
-    .line 142
+    .line 145
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v5, v0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
@@ -965,7 +965,7 @@
 
     aput-object v2, v1, v3
 
-    .line 143
+    .line 146
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v5, v0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
@@ -982,7 +982,7 @@
 
     aput-object v2, v1, v3
 
-    .line 144
+    .line 147
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     invoke-direct/range {p0 .. p0}, Lcom/smedialink/ui/wallet/transaction/WalletTransactionsFragment;->getBinding()Lorg/telegram/messenger/databinding/ForkFragmentWalletTransactionsBinding;
@@ -995,7 +995,7 @@
 
     sget v6, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_BACKGROUND:I
 
-    .line 139
+    .line 142
     new-instance v10, Lcom/smedialink/ui/wallet/transaction/WalletTransactionsFragment$$ExternalSyntheticLambda4;
 
     invoke-direct {v10, v0}, Lcom/smedialink/ui/wallet/transaction/WalletTransactionsFragment$$ExternalSyntheticLambda4;-><init>(Lcom/smedialink/ui/wallet/transaction/WalletTransactionsFragment;)V
@@ -1004,14 +1004,14 @@
 
     move-object v4, v2
 
-    .line 144
+    .line 147
     invoke-direct/range {v4 .. v11}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;Ljava/lang/String;)V
 
     const/4 v3, 0x4
 
     aput-object v2, v1, v3
 
-    .line 139
+    .line 142
     invoke-static {v1}, Lkotlin/collections/CollectionsKt;->arrayListOf([Ljava/lang/Object;)Ljava/util/ArrayList;
 
     move-result-object v1
@@ -1022,7 +1022,7 @@
 .method public handleBottomPadding(I)V
     .locals 4
 
-    .line 127
+    .line 130
     invoke-direct {p0}, Lcom/smedialink/ui/wallet/transaction/WalletTransactionsFragment;->getBinding()Lorg/telegram/messenger/databinding/ForkFragmentWalletTransactionsBinding;
 
     move-result-object v0
@@ -1107,7 +1107,7 @@
 .method public onLoadMoreComplete()V
     .locals 2
 
-    .line 115
+    .line 118
     invoke-direct {p0}, Lcom/smedialink/ui/wallet/transaction/WalletTransactionsFragment;->getTransactionAdapter()Lcom/smedialink/ui/wallet/transaction/adapter/WalletTransactionsRecycleAdapter;
 
     move-result-object v0
@@ -1126,7 +1126,7 @@
 .method public onLoadMoreError()V
     .locals 1
 
-    .line 119
+    .line 122
     invoke-direct {p0}, Lcom/smedialink/ui/wallet/transaction/WalletTransactionsFragment;->getTransactionAdapter()Lcom/smedialink/ui/wallet/transaction/adapter/WalletTransactionsRecycleAdapter;
 
     move-result-object v0
@@ -1155,12 +1155,12 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 108
+    .line 111
     invoke-direct {p0}, Lcom/smedialink/ui/wallet/transaction/WalletTransactionsFragment;->getTransactionAdapter()Lcom/smedialink/ui/wallet/transaction/adapter/WalletTransactionsRecycleAdapter;
 
     move-result-object v0
 
-    .line 109
+    .line 112
     invoke-virtual {v0}, Lcom/chad/library/adapter/base/BaseQuickAdapter;->getLoadMoreModule()Lcom/chad/library/adapter/base/module/BaseLoadMoreModule;
 
     move-result-object v1
@@ -1171,7 +1171,7 @@
 
     const/4 v2, 0x2
 
-    .line 110
+    .line 113
     invoke-static {v0, p1, v1, v2, v1}, Lcom/chad/library/adapter/base/BaseQuickAdapter;->setDiffNewData$default(Lcom/chad/library/adapter/base/BaseQuickAdapter;Ljava/util/List;Ljava/lang/Runnable;ILjava/lang/Object;)V
 
     return-void
@@ -1221,10 +1221,10 @@
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 132
+    .line 135
     sget-object v1, Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsBottomSheetDialog;->Companion:Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsBottomSheetDialog$Companion;
 
-    .line 134
+    .line 137
     new-instance v3, Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsBottomSheetDialog$ScreenType$StakingOperationDetails;
 
     invoke-direct {v3, p1, p2}, Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsBottomSheetDialog$ScreenType$StakingOperationDetails;-><init>(Lcom/smedialink/model/wallet/transaction/StakingOperationItem;Lcom/smedialink/storage/domain/model/crypto/NetworkType;)V
@@ -1237,13 +1237,38 @@
 
     move-object v2, p0
 
-    .line 132
+    .line 135
     invoke-static/range {v1 .. v6}, Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsBottomSheetDialog$Companion;->newInstance$default(Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsBottomSheetDialog$Companion;Lorg/telegram/ui/ActionBar/BaseFragment;Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsBottomSheetDialog$ScreenType;Lorg/fork/utils/Callbacks$Callback1;ILjava/lang/Object;)Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsBottomSheetDialog;
 
     move-result-object p1
 
-    .line 131
+    .line 134
     invoke-virtual {p0, p1}, Lorg/telegram/ui/ActionBar/BaseFragment;->showDialog(Landroid/app/Dialog;)Landroid/app/Dialog;
+
+    return-void
+.end method
+
+.method public renderInitialItems(Ljava/util/List;)V
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/util/List<",
+            "Lcom/chad/library/adapter/base/entity/node/BaseNode;",
+            ">;)V"
+        }
+    .end annotation
+
+    const-string v0, "items"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 103
+    invoke-direct {p0}, Lcom/smedialink/ui/wallet/transaction/WalletTransactionsFragment;->getTransactionAdapter()Lcom/smedialink/ui/wallet/transaction/adapter/WalletTransactionsRecycleAdapter;
+
+    move-result-object v0
+
+    invoke-virtual {v0, p1}, Lcom/chad/library/adapter/base/BaseNodeAdapter;->setNewInstance(Ljava/util/List;)V
 
     return-void
 .end method
@@ -1263,7 +1288,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 103
+    .line 107
     invoke-direct {p0}, Lcom/smedialink/ui/wallet/transaction/WalletTransactionsFragment;->getTransactionAdapter()Lcom/smedialink/ui/wallet/transaction/adapter/WalletTransactionsRecycleAdapter;
 
     move-result-object v0
@@ -1274,23 +1299,13 @@
 
     invoke-static {v0, p1, v1, v2, v1}, Lcom/chad/library/adapter/base/BaseQuickAdapter;->setDiffNewData$default(Lcom/chad/library/adapter/base/BaseQuickAdapter;Ljava/util/List;Ljava/lang/Runnable;ILjava/lang/Object;)V
 
-    .line 104
-    iget-object p1, p0, Lcom/smedialink/ui/wallet/transaction/WalletTransactionsFragment;->linearLayoutManager:Landroidx/recyclerview/widget/LinearLayoutManager;
-
-    if-eqz p1, :cond_0
-
-    const/4 v0, 0x0
-
-    invoke-virtual {p1, v0, v0}, Landroidx/recyclerview/widget/LinearLayoutManager;->scrollToPositionWithOffset(II)V
-
-    :cond_0
     return-void
 .end method
 
 .method public resetLoadMore()V
     .locals 1
 
-    .line 123
+    .line 126
     invoke-direct {p0}, Lcom/smedialink/ui/wallet/transaction/WalletTransactionsFragment;->getTransactionAdapter()Lcom/smedialink/ui/wallet/transaction/adapter/WalletTransactionsRecycleAdapter;
 
     move-result-object v0

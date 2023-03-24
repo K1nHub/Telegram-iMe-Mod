@@ -105,7 +105,7 @@
 
     const/4 p1, 0x0
 
-    const/4 v0, 0x0
+    move v0, p1
 
     .line 65
     :goto_0

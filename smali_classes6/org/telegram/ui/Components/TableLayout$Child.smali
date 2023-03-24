@@ -191,12 +191,12 @@
 
     if-ne v1, v2, :cond_1
 
-    const/4 v8, 0x1
+    move v8, v4
 
     goto :goto_0
 
     :cond_1
-    const/4 v8, 0x0
+    move v8, v3
 
     .line 201
     :goto_0
@@ -214,12 +214,12 @@
 
     if-ne v1, v2, :cond_2
 
-    const/4 v9, 0x1
+    move v9, v4
 
     goto :goto_1
 
     :cond_2
-    const/4 v9, 0x0
+    move v9, v3
 
     :goto_1
     const/4 v1, 0x3
@@ -289,7 +289,7 @@
 
     aput v12, v2, v3
 
-    const/4 v3, 0x1
+    move v3, v4
 
     goto :goto_2
 
@@ -338,7 +338,7 @@
 
     aput v6, v2, v11
 
-    const/4 v3, 0x1
+    move v3, v4
 
     goto :goto_3
 
@@ -388,7 +388,7 @@
 
     aput v12, v3, v2
 
-    const/4 v3, 0x1
+    move v3, v4
 
     goto :goto_4
 
@@ -1370,7 +1370,7 @@
 
     sub-float/2addr v4, v14
 
-    mul-int/lit8 v10, v10, 0x2
+    mul-int/2addr v10, v11
 
     int-to-float v5, v10
 

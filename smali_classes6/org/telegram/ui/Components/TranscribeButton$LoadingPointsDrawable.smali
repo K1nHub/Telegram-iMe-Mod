@@ -39,7 +39,7 @@
 
     const v0, 0x3f63d70a    # 0.89f
 
-    mul-float p1, p1, v0
+    mul-float/2addr p1, v0
 
     .line 529
     new-instance v6, Lorg/telegram/ui/Components/TranscribeButton$LoadingPointsDrawable$1;
@@ -50,7 +50,7 @@
 
     const/high16 v0, 0x3fa00000    # 1.25f
 
-    mul-float p1, p1, v0
+    mul-float/2addr p1, v0
 
     float-to-int v5, p1
 

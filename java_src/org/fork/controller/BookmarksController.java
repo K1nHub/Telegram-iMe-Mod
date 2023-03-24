@@ -75,8 +75,8 @@ public final class BookmarksController extends BaseController implements KoinCom
         filter = SequencesKt___SequencesKt.filter(asSequence, BookmarksController$loadBookmarks$1.INSTANCE);
         LinkedHashMap linkedHashMap = new LinkedHashMap();
         for (BookmarksDb bookmarksDb : filter) {
-            Pair m100to = TuplesKt.m100to(Long.valueOf(bookmarksDb.getDialogId()), BookmarksMappingKt.mapToDomain(bookmarksDb));
-            linkedHashMap.put(m100to.getFirst(), m100to.getSecond());
+            Pair m99to = TuplesKt.m99to(Long.valueOf(bookmarksDb.getDialogId()), BookmarksMappingKt.mapToDomain(bookmarksDb));
+            linkedHashMap.put(m99to.getFirst(), m99to.getSecond());
         }
         mutableMap = MapsKt__MapsKt.toMutableMap(linkedHashMap);
         this.bookmarks = mutableMap;

@@ -65,7 +65,7 @@
 .method constructor <init>(Lorg/telegram/ui/ChatActivity;ZIZLorg/telegram/ui/Components/ReactionsContainerLayout;FFLorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$VisibleReaction;Lorg/telegram/messenger/MessageObject;)V
     .locals 0
 
-    .line 28549
+    .line 28575
     iput-object p1, p0, Lorg/telegram/ui/ChatActivity$130;->this$0:Lorg/telegram/ui/ChatActivity;
 
     iput-boolean p2, p0, Lorg/telegram/ui/ChatActivity$130;->val$fromDoubleTap:Z
@@ -94,7 +94,7 @@
 
     move-object v0, p0
 
-    .line 28557
+    .line 28583
     iget-object v1, v0, Lorg/telegram/ui/ChatActivity$130;->this$0:Lorg/telegram/ui/ChatActivity;
 
     const/4 v2, 0x1
@@ -107,12 +107,12 @@
 
     if-eqz p2, :cond_0
 
-    .line 28559
+    .line 28585
     iget-object v3, v0, Lorg/telegram/ui/ChatActivity$130;->this$0:Lorg/telegram/ui/ChatActivity;
 
     const/4 v6, 0x0
 
-    invoke-static {v3}, Lorg/telegram/ui/ChatActivity;->access$47500(Lorg/telegram/ui/ChatActivity;)I
+    invoke-static {v3}, Lorg/telegram/ui/ChatActivity;->access$47600(Lorg/telegram/ui/ChatActivity;)I
 
     move-result v10
 
@@ -128,7 +128,7 @@
 
     invoke-static/range {v3 .. v11}, Lorg/telegram/ui/Components/Reactions/ReactionsEffectOverlay;->show(Lorg/telegram/ui/ActionBar/BaseFragment;Lorg/telegram/ui/Components/ReactionsContainerLayout;Lorg/telegram/ui/Cells/ChatMessageCell;Landroid/view/View;FFLorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$VisibleReaction;II)V
 
-    .line 28560
+    .line 28586
     invoke-static {}, Lorg/telegram/ui/Components/Reactions/ReactionsEffectOverlay;->startAnimation()V
 
     :cond_0
@@ -138,7 +138,7 @@
 .method private synthetic lambda$run$1(IZLorg/telegram/ui/Components/ReactionsContainerLayout;FFLorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$VisibleReaction;)V
     .locals 9
 
-    .line 28556
+    .line 28582
     new-instance v8, Lorg/telegram/ui/ChatActivity$130$$ExternalSyntheticLambda0;
 
     move-object v0, v8
@@ -169,7 +169,7 @@
 .method private synthetic lambda$run$2(Lorg/telegram/messenger/MessageObject;)V
     .locals 3
 
-    .line 28567
+    .line 28593
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$130;->this$0:Lorg/telegram/ui/ChatActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ChatActivity;->access$14400(Lorg/telegram/ui/ChatActivity;)[Landroid/util/SparseArray;
@@ -194,7 +194,7 @@
 
     if-eq v0, p1, :cond_0
 
-    .line 28569
+    .line 28595
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$130;->this$0:Lorg/telegram/ui/ChatActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ChatActivity;->access$14400(Lorg/telegram/ui/ChatActivity;)[Landroid/util/SparseArray;
@@ -213,7 +213,7 @@
 
     check-cast v0, Lorg/telegram/messenger/MessageObject;
 
-    .line 28570
+    .line 28596
     iget-object v1, v0, Lorg/telegram/messenger/MessageObject;->messageOwner:Lorg/telegram/tgnet/TLRPC$Message;
 
     iget-object p1, p1, Lorg/telegram/messenger/MessageObject;->messageOwner:Lorg/telegram/tgnet/TLRPC$Message;
@@ -224,15 +224,15 @@
 
     move-object p1, v0
 
-    .line 28573
+    .line 28599
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$130;->this$0:Lorg/telegram/ui/ChatActivity;
 
     const/4 v1, 0x1
 
-    invoke-static {v0, p1, v1}, Lorg/telegram/ui/ChatActivity;->access$47400(Lorg/telegram/ui/ChatActivity;Lorg/telegram/messenger/MessageObject;Z)V
+    invoke-static {v0, p1, v1}, Lorg/telegram/ui/ChatActivity;->access$47500(Lorg/telegram/ui/ChatActivity;Lorg/telegram/messenger/MessageObject;Z)V
 
-    .line 28574
+    .line 28600
     invoke-static {}, Lorg/telegram/ui/Components/Reactions/ReactionsEffectOverlay;->startAnimation()V
 
     return-void
@@ -243,7 +243,7 @@
 .method public run()V
     .locals 10
 
-    .line 28552
+    .line 28578
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$130;->this$0:Lorg/telegram/ui/ChatActivity;
 
     iget-object v1, v0, Lorg/telegram/ui/ChatActivity;->updateReactionRunnable:Ljava/lang/Runnable;
@@ -252,15 +252,15 @@
 
     const/4 v1, 0x0
 
-    .line 28553
+    .line 28579
     iput-object v1, v0, Lorg/telegram/ui/ChatActivity;->updateReactionRunnable:Ljava/lang/Runnable;
 
-    .line 28554
+    .line 28580
     iget-boolean v1, p0, Lorg/telegram/ui/ChatActivity$130;->val$fromDoubleTap:Z
 
     if-eqz v1, :cond_0
 
-    .line 28555
+    .line 28581
     iget v4, p0, Lorg/telegram/ui/ChatActivity$130;->val$finalMessageIdForCell:I
 
     iget-boolean v5, p0, Lorg/telegram/ui/ChatActivity$130;->val$added:Z
@@ -285,7 +285,7 @@
 
     goto :goto_0
 
-    .line 28565
+    .line 28591
     :cond_0
     iget-object v1, p0, Lorg/telegram/ui/ChatActivity$130;->val$primaryMessage:Lorg/telegram/messenger/MessageObject;
 
@@ -295,7 +295,7 @@
 
     invoke-virtual {v0, v2}, Lorg/telegram/ui/ChatActivity;->doOnIdle(Ljava/lang/Runnable;)V
 
-    .line 28577
+    .line 28603
     :goto_0
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$130;->this$0:Lorg/telegram/ui/ChatActivity;
 

@@ -378,9 +378,9 @@
 
     move-result p2
 
-    cmp-long v3, v4, v1
+    cmp-long v1, v4, v1
 
-    if-eqz v3, :cond_5
+    if-eqz v1, :cond_5
 
     if-eqz v0, :cond_5
 

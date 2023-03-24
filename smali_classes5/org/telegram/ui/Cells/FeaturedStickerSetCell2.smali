@@ -111,12 +111,12 @@
 
     if-eqz v1, :cond_0
 
-    const/4 v1, 0x5
+    move v1, v2
 
     goto :goto_0
 
     :cond_0
-    const/4 v1, 0x3
+    move v1, v3
 
     :goto_0
     invoke-virtual {p2, v1}, Landroid/widget/TextView;->setGravity(I)V
@@ -130,12 +130,12 @@
 
     if-eqz v1, :cond_1
 
-    const/4 v6, 0x5
+    move v6, v2
 
     goto :goto_1
 
     :cond_1
-    const/4 v6, 0x3
+    move v6, v3
 
     :goto_1
     const/16 v7, 0x16
@@ -144,24 +144,24 @@
 
     if-eqz v1, :cond_2
 
-    const/16 v8, 0x16
+    move v8, v7
 
     goto :goto_2
 
     :cond_2
-    const/16 v8, 0x47
+    move v8, v11
 
     :goto_2
     const/16 v9, 0xa
 
     if-eqz v1, :cond_3
 
-    const/16 v1, 0x47
+    move v1, v11
 
     goto :goto_3
 
     :cond_3
-    const/16 v1, 0x16
+    move v1, v7
 
     :goto_3
     const/4 v10, 0x0
@@ -218,12 +218,12 @@
 
     if-eqz v1, :cond_4
 
-    const/4 v1, 0x5
+    move v1, v2
 
     goto :goto_4
 
     :cond_4
-    const/4 v1, 0x3
+    move v1, v3
 
     :goto_4
     invoke-virtual {p2, v1}, Landroid/widget/TextView;->setGravity(I)V
@@ -237,24 +237,24 @@
 
     if-eqz v1, :cond_5
 
-    const/4 v6, 0x5
+    move v6, v2
 
     goto :goto_5
 
     :cond_5
-    const/4 v6, 0x3
+    move v6, v3
 
     :goto_5
     const/16 v7, 0x64
 
     if-eqz v1, :cond_6
 
-    const/16 v8, 0x64
+    move v8, v7
 
     goto :goto_6
 
     :cond_6
-    const/16 v8, 0x47
+    move v8, v11
 
     :goto_6
     const/16 v9, 0x23
@@ -264,7 +264,7 @@
     goto :goto_7
 
     :cond_7
-    const/16 v11, 0x64
+    move v11, v7
 
     :goto_7
     const/4 v10, 0x0
@@ -306,7 +306,7 @@
     goto :goto_8
 
     :cond_8
-    const/4 v2, 0x3
+    move v2, v3
 
     :goto_8
     or-int/lit8 v6, v2, 0x30
@@ -317,24 +317,24 @@
 
     if-eqz v1, :cond_9
 
-    const/4 v7, 0x0
+    move v7, v11
 
     goto :goto_9
 
     :cond_9
-    const/16 v7, 0xc
+    move v7, v2
 
     :goto_9
     const/16 v8, 0x8
 
     if-eqz v1, :cond_a
 
-    const/16 v9, 0xc
+    move v9, v2
 
     goto :goto_a
 
     :cond_a
-    const/4 v9, 0x0
+    move v9, v11
 
     :goto_a
     const/4 v10, 0x0
@@ -896,9 +896,9 @@
 
     move-result-wide v0
 
-    cmp-long v2, v0, p1
+    cmp-long p1, v0, p1
 
-    if-nez v2, :cond_0
+    if-nez p1, :cond_0
 
     const/4 p1, 0x0
 
@@ -1022,8 +1022,6 @@
 
     const/4 v0, 0x0
 
-    const/4 v3, 0x0
-
     goto :goto_0
 
     :cond_0
@@ -1033,9 +1031,9 @@
 
     int-to-float v0, v0
 
+    :goto_0
     move v3, v0
 
-    :goto_0
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getHeight()I
 
     move-result v0
@@ -1425,7 +1423,7 @@
 
     check-cast v4, Lorg/telegram/tgnet/TLRPC$Document;
 
-    const/4 v2, 0x0
+    move v2, v11
 
     .line 225
     :goto_4
@@ -1511,7 +1509,7 @@
 
     if-eqz v1, :cond_d
 
-    const/4 v1, 0x0
+    move v1, v11
 
     .line 237
     :goto_6
@@ -1538,9 +1536,9 @@
 
     iget-wide v5, v5, Lorg/telegram/tgnet/TLRPC$StickerSet;->thumb_document_id:J
 
-    cmp-long v7, v2, v5
+    cmp-long v2, v2, v5
 
-    if-nez v7, :cond_9
+    if-nez v2, :cond_9
 
     .line 239
     iget-object v2, v8, Lorg/telegram/tgnet/TLRPC$StickerSetCovered;->covers:Ljava/util/ArrayList;
@@ -1586,7 +1584,7 @@
 
     check-cast v2, Lorg/telegram/tgnet/TLRPC$Document;
 
-    const/4 v3, 0x0
+    move v3, v11
 
     .line 247
     :goto_7
@@ -1609,9 +1607,9 @@
 
     iget-wide v6, v6, Lorg/telegram/tgnet/TLRPC$StickerSet;->thumb_document_id:J
 
-    cmp-long v12, v4, v6
+    cmp-long v4, v4, v6
 
-    if-nez v12, :cond_b
+    if-nez v4, :cond_b
 
     .line 249
     invoke-virtual {v1, v3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -1904,13 +1902,13 @@
     goto :goto_b
 
     :cond_16
-    const/4 v1, 0x0
+    move v1, v11
 
     goto :goto_c
 
     :cond_17
     :goto_b
-    const/4 v1, 0x1
+    move v1, v10
 
     :goto_c
     iput-boolean v1, v0, Lorg/telegram/ui/Cells/FeaturedStickerSetCell2;->isInstalled:Z
@@ -1934,12 +1932,12 @@
 
     if-eqz v1, :cond_18
 
-    const/4 v1, 0x1
+    move v1, v10
 
     goto :goto_d
 
     :cond_18
-    const/4 v1, 0x0
+    move v1, v11
 
     :goto_d
     iput-boolean v1, v0, Lorg/telegram/ui/Cells/FeaturedStickerSetCell2;->isLocked:Z
@@ -2028,12 +2026,12 @@
 
     if-nez v8, :cond_1b
 
-    const/high16 v8, 0x3f800000    # 1.0f
+    move v8, v12
 
     goto :goto_f
 
     :cond_1b
-    const/4 v8, 0x0
+    move v8, v4
 
     :goto_f
     aput v8, v7, v11
@@ -2059,12 +2057,12 @@
 
     if-nez v8, :cond_1c
 
-    const/high16 v8, 0x3f800000    # 1.0f
+    move v8, v12
 
     goto :goto_10
 
     :cond_1c
-    const/4 v8, 0x0
+    move v8, v4
 
     :goto_10
     aput v8, v7, v11
@@ -2092,12 +2090,12 @@
 
     if-nez v9, :cond_1d
 
-    const/high16 v9, 0x3f800000    # 1.0f
+    move v9, v12
 
     goto :goto_11
 
     :cond_1d
-    const/4 v9, 0x0
+    move v9, v4
 
     :goto_11
     aput v9, v8, v11
@@ -2128,13 +2126,13 @@
     goto :goto_12
 
     :cond_1e
-    const/high16 v9, 0x3f800000    # 1.0f
+    move v9, v12
 
     goto :goto_13
 
     :cond_1f
     :goto_12
-    const/4 v9, 0x0
+    move v9, v4
 
     :goto_13
     aput v9, v8, v11
@@ -2163,13 +2161,13 @@
     goto :goto_14
 
     :cond_20
-    const/high16 v8, 0x3f800000    # 1.0f
+    move v8, v12
 
     goto :goto_15
 
     :cond_21
     :goto_14
-    const/4 v8, 0x0
+    move v8, v4
 
     :goto_15
     aput v8, v7, v11
@@ -2193,12 +2191,12 @@
 
     if-nez v8, :cond_22
 
-    const/4 v8, 0x0
+    move v8, v4
 
     goto :goto_16
 
     :cond_22
-    const/high16 v8, 0x3f800000    # 1.0f
+    move v8, v12
 
     :goto_16
     aput v8, v7, v11
@@ -2222,12 +2220,12 @@
 
     if-nez v8, :cond_23
 
-    const/4 v8, 0x0
+    move v8, v4
 
     goto :goto_17
 
     :cond_23
-    const/high16 v8, 0x3f800000    # 1.0f
+    move v8, v12
 
     :goto_17
     aput v8, v7, v11
@@ -2251,7 +2249,7 @@
 
     if-nez v8, :cond_24
 
-    const/4 v12, 0x0
+    move v12, v4
 
     :cond_24
     aput v12, v7, v11

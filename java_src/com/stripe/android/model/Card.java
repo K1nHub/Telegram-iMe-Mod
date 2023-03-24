@@ -416,8 +416,8 @@ public class Card {
     }
 
     private boolean isValidLuhnNumber(String str) {
-        int i = 0;
         boolean z = true;
+        int i = 0;
         for (int length = str.length() - 1; length >= 0; length--) {
             char charAt = str.charAt(length);
             if (!Character.isDigit(charAt)) {

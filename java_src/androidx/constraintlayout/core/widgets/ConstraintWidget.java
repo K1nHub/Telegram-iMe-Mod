@@ -723,13 +723,13 @@ public class ConstraintWidget {
                     }
                 }
             }
-            f = BitmapDescriptorFactory.HUE_RED;
+            f = i;
         } else {
             String substring4 = str.substring(i3);
             if (substring4.length() > 0) {
                 f = Float.parseFloat(substring4);
             }
-            f = BitmapDescriptorFactory.HUE_RED;
+            f = i;
         }
         i = (f > i ? 1 : (f == i ? 0 : -1));
         if (i > 0) {
@@ -999,55 +999,51 @@ public class ConstraintWidget {
         return false;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:124:0x01ec  */
-    /* JADX WARN: Removed duplicated region for block: B:128:0x01f7  */
-    /* JADX WARN: Removed duplicated region for block: B:132:0x01ff  */
-    /* JADX WARN: Removed duplicated region for block: B:135:0x020a  */
-    /* JADX WARN: Removed duplicated region for block: B:136:0x020c  */
-    /* JADX WARN: Removed duplicated region for block: B:139:0x0215  */
-    /* JADX WARN: Removed duplicated region for block: B:140:0x0217  */
-    /* JADX WARN: Removed duplicated region for block: B:143:0x0234  */
-    /* JADX WARN: Removed duplicated region for block: B:182:0x02c0  */
-    /* JADX WARN: Removed duplicated region for block: B:186:0x02d7  */
-    /* JADX WARN: Removed duplicated region for block: B:190:0x02e1  */
-    /* JADX WARN: Removed duplicated region for block: B:193:0x02e6  */
-    /* JADX WARN: Removed duplicated region for block: B:200:0x02fb  */
-    /* JADX WARN: Removed duplicated region for block: B:205:0x0304  */
-    /* JADX WARN: Removed duplicated region for block: B:206:0x0306  */
-    /* JADX WARN: Removed duplicated region for block: B:209:0x031e  */
-    /* JADX WARN: Removed duplicated region for block: B:220:0x0337  */
-    /* JADX WARN: Removed duplicated region for block: B:229:0x037f  */
-    /* JADX WARN: Removed duplicated region for block: B:232:0x038f  */
-    /* JADX WARN: Removed duplicated region for block: B:233:0x0397  */
-    /* JADX WARN: Removed duplicated region for block: B:236:0x039d  */
-    /* JADX WARN: Removed duplicated region for block: B:237:0x03a6  */
-    /* JADX WARN: Removed duplicated region for block: B:240:0x03ca  */
-    /* JADX WARN: Removed duplicated region for block: B:241:0x03cd  */
-    /* JADX WARN: Removed duplicated region for block: B:245:0x043c  */
-    /* JADX WARN: Removed duplicated region for block: B:25:0x005c  */
-    /* JADX WARN: Removed duplicated region for block: B:262:0x04a0  */
-    /* JADX WARN: Removed duplicated region for block: B:266:0x04b4  */
-    /* JADX WARN: Removed duplicated region for block: B:267:0x04b6  */
-    /* JADX WARN: Removed duplicated region for block: B:269:0x04b9  */
-    /* JADX WARN: Removed duplicated region for block: B:304:0x0554  */
-    /* JADX WARN: Removed duplicated region for block: B:305:0x0557  */
-    /* JADX WARN: Removed duplicated region for block: B:309:0x059d  */
-    /* JADX WARN: Removed duplicated region for block: B:313:0x05c8  */
-    /* JADX WARN: Removed duplicated region for block: B:316:0x05d2  */
-    /* JADX WARN: Removed duplicated region for block: B:34:0x0072  */
-    /* JADX WARN: Removed duplicated region for block: B:37:0x0078  */
-    /* JADX WARN: Removed duplicated region for block: B:47:0x00a9  */
-    /* JADX WARN: Removed duplicated region for block: B:59:0x00ea  */
-    /* JADX WARN: Removed duplicated region for block: B:65:0x00f7  */
-    /* JADX WARN: Removed duplicated region for block: B:79:0x0144  */
-    /* JADX WARN: Removed duplicated region for block: B:95:0x017f  */
+    /* JADX WARN: Removed duplicated region for block: B:123:0x01ed  */
+    /* JADX WARN: Removed duplicated region for block: B:127:0x01f8  */
+    /* JADX WARN: Removed duplicated region for block: B:131:0x0200  */
+    /* JADX WARN: Removed duplicated region for block: B:134:0x020b  */
+    /* JADX WARN: Removed duplicated region for block: B:135:0x020d  */
+    /* JADX WARN: Removed duplicated region for block: B:138:0x0216  */
+    /* JADX WARN: Removed duplicated region for block: B:139:0x0218  */
+    /* JADX WARN: Removed duplicated region for block: B:142:0x0235  */
+    /* JADX WARN: Removed duplicated region for block: B:181:0x02c1  */
+    /* JADX WARN: Removed duplicated region for block: B:185:0x02d8  */
+    /* JADX WARN: Removed duplicated region for block: B:189:0x02e2  */
+    /* JADX WARN: Removed duplicated region for block: B:192:0x02e7  */
+    /* JADX WARN: Removed duplicated region for block: B:199:0x02fc  */
+    /* JADX WARN: Removed duplicated region for block: B:204:0x0305  */
+    /* JADX WARN: Removed duplicated region for block: B:205:0x0307  */
+    /* JADX WARN: Removed duplicated region for block: B:208:0x031f  */
+    /* JADX WARN: Removed duplicated region for block: B:219:0x0338  */
+    /* JADX WARN: Removed duplicated region for block: B:228:0x0380  */
+    /* JADX WARN: Removed duplicated region for block: B:231:0x0390  */
+    /* JADX WARN: Removed duplicated region for block: B:232:0x0398  */
+    /* JADX WARN: Removed duplicated region for block: B:235:0x039e  */
+    /* JADX WARN: Removed duplicated region for block: B:236:0x03a7  */
+    /* JADX WARN: Removed duplicated region for block: B:239:0x03cb  */
+    /* JADX WARN: Removed duplicated region for block: B:240:0x03ce  */
+    /* JADX WARN: Removed duplicated region for block: B:244:0x043d  */
+    /* JADX WARN: Removed duplicated region for block: B:261:0x04a1  */
+    /* JADX WARN: Removed duplicated region for block: B:265:0x04b5  */
+    /* JADX WARN: Removed duplicated region for block: B:266:0x04b7  */
+    /* JADX WARN: Removed duplicated region for block: B:268:0x04ba  */
+    /* JADX WARN: Removed duplicated region for block: B:303:0x0555  */
+    /* JADX WARN: Removed duplicated region for block: B:304:0x0558  */
+    /* JADX WARN: Removed duplicated region for block: B:308:0x059e  */
+    /* JADX WARN: Removed duplicated region for block: B:312:0x05c9  */
+    /* JADX WARN: Removed duplicated region for block: B:315:0x05d3  */
+    /* JADX WARN: Removed duplicated region for block: B:36:0x0079  */
+    /* JADX WARN: Removed duplicated region for block: B:46:0x00aa  */
+    /* JADX WARN: Removed duplicated region for block: B:78:0x0145  */
+    /* JADX WARN: Removed duplicated region for block: B:94:0x0180  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct add '--show-bad-code' argument
     */
     public void addToSolver(androidx.constraintlayout.core.LinearSystem r54, boolean r55) {
         /*
-            Method dump skipped, instructions count: 1528
+            Method dump skipped, instructions count: 1529
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: androidx.constraintlayout.core.widgets.ConstraintWidget.addToSolver(androidx.constraintlayout.core.LinearSystem, boolean):void");
@@ -1094,35 +1090,36 @@ public class ConstraintWidget {
         }
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:270:0x046d, code lost:
-        if ((r4 instanceof androidx.constraintlayout.core.widgets.Barrier) != false) goto L213;
+    /* JADX WARN: Code restructure failed: missing block: B:268:0x049c, code lost:
+        if ((r4 instanceof androidx.constraintlayout.core.widgets.Barrier) != false) goto L211;
      */
-    /* JADX WARN: Removed duplicated region for block: B:114:0x01e5 A[ADDED_TO_REGION] */
-    /* JADX WARN: Removed duplicated region for block: B:205:0x032e  */
-    /* JADX WARN: Removed duplicated region for block: B:206:0x0332  */
-    /* JADX WARN: Removed duplicated region for block: B:248:0x03f6  */
-    /* JADX WARN: Removed duplicated region for block: B:256:0x043a  */
-    /* JADX WARN: Removed duplicated region for block: B:264:0x045d  */
-    /* JADX WARN: Removed duplicated region for block: B:277:0x048e  */
-    /* JADX WARN: Removed duplicated region for block: B:290:0x04b0  */
-    /* JADX WARN: Removed duplicated region for block: B:321:0x04f9  */
-    /* JADX WARN: Removed duplicated region for block: B:328:0x050b A[ADDED_TO_REGION] */
-    /* JADX WARN: Removed duplicated region for block: B:340:0x0527 A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:115:0x01e8 A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:206:0x0340  */
+    /* JADX WARN: Removed duplicated region for block: B:207:0x0344  */
+    /* JADX WARN: Removed duplicated region for block: B:246:0x0422  */
+    /* JADX WARN: Removed duplicated region for block: B:254:0x0469  */
+    /* JADX WARN: Removed duplicated region for block: B:262:0x048c  */
+    /* JADX WARN: Removed duplicated region for block: B:275:0x04be  */
+    /* JADX WARN: Removed duplicated region for block: B:288:0x04e2  */
+    /* JADX WARN: Removed duplicated region for block: B:319:0x052d  */
+    /* JADX WARN: Removed duplicated region for block: B:326:0x053f A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:338:0x055b A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:359:0x0592 A[ADDED_TO_REGION] */
     /* JADX WARN: Removed duplicated region for block: B:35:0x0092  */
-    /* JADX WARN: Removed duplicated region for block: B:361:0x055e A[ADDED_TO_REGION] */
     /* JADX WARN: Removed duplicated region for block: B:36:0x0096  */
-    /* JADX WARN: Removed duplicated region for block: B:388:? A[ADDED_TO_REGION, RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:386:? A[ADDED_TO_REGION, RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:389:? A[ADDED_TO_REGION, RETURN, SYNTHETIC] */
     /* JADX WARN: Removed duplicated region for block: B:38:0x009a  */
-    /* JADX WARN: Removed duplicated region for block: B:391:? A[ADDED_TO_REGION, RETURN, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:47:0x00bc  */
-    /* JADX WARN: Removed duplicated region for block: B:57:0x00e5  */
+    /* JADX WARN: Removed duplicated region for block: B:46:0x00bb  */
+    /* JADX WARN: Removed duplicated region for block: B:48:0x00c0  */
+    /* JADX WARN: Removed duplicated region for block: B:58:0x00e8  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct add '--show-bad-code' argument
     */
-    private void applyConstraints(androidx.constraintlayout.core.LinearSystem r37, boolean r38, boolean r39, boolean r40, boolean r41, androidx.constraintlayout.core.SolverVariable r42, androidx.constraintlayout.core.SolverVariable r43, androidx.constraintlayout.core.widgets.ConstraintWidget.DimensionBehaviour r44, boolean r45, androidx.constraintlayout.core.widgets.ConstraintAnchor r46, androidx.constraintlayout.core.widgets.ConstraintAnchor r47, int r48, int r49, int r50, int r51, float r52, boolean r53, boolean r54, boolean r55, boolean r56, boolean r57, int r58, int r59, int r60, int r61, float r62, boolean r63) {
+    private void applyConstraints(androidx.constraintlayout.core.LinearSystem r38, boolean r39, boolean r40, boolean r41, boolean r42, androidx.constraintlayout.core.SolverVariable r43, androidx.constraintlayout.core.SolverVariable r44, androidx.constraintlayout.core.widgets.ConstraintWidget.DimensionBehaviour r45, boolean r46, androidx.constraintlayout.core.widgets.ConstraintAnchor r47, androidx.constraintlayout.core.widgets.ConstraintAnchor r48, int r49, int r50, int r51, int r52, float r53, boolean r54, boolean r55, boolean r56, boolean r57, boolean r58, int r59, int r60, int r61, int r62, float r63, boolean r64) {
         /*
-            Method dump skipped, instructions count: 1431
+            Method dump skipped, instructions count: 1485
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: androidx.constraintlayout.core.widgets.ConstraintWidget.applyConstraints(androidx.constraintlayout.core.LinearSystem, boolean, boolean, boolean, boolean, androidx.constraintlayout.core.SolverVariable, androidx.constraintlayout.core.SolverVariable, androidx.constraintlayout.core.widgets.ConstraintWidget$DimensionBehaviour, boolean, androidx.constraintlayout.core.widgets.ConstraintAnchor, androidx.constraintlayout.core.widgets.ConstraintAnchor, int, int, int, int, float, boolean, boolean, boolean, boolean, boolean, int, int, int, int, float, boolean):void");

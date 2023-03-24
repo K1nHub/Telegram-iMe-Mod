@@ -244,7 +244,7 @@
 
     invoke-direct {v6, v5}, Ljava/util/ArrayList;-><init>(I)V
 
-    const/4 v7, 0x0
+    move v7, v2
 
     :goto_1
     if-ge v7, v5, :cond_1
@@ -325,7 +325,7 @@
     .catch Ljava/lang/Exception; {:try_start_6 .. :try_end_6} :catch_1
 
     :catch_1
-    const/4 p1, 0x1
+    move p1, v0
 
     goto :goto_6
 
@@ -383,7 +383,7 @@
 
     :catch_2
     :cond_4
-    const/4 p1, 0x0
+    move p1, v2
 
     :goto_6
     if-nez p1, :cond_5

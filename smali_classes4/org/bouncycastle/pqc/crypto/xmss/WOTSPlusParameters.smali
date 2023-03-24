@@ -64,7 +64,7 @@
 
     rsub-int/lit8 v4, v3, 0x10
 
-    mul-int v4, v4, v2
+    mul-int/2addr v4, v2
 
     invoke-static {v4}, Lorg/bouncycastle/pqc/crypto/xmss/XMSSUtil;->log2(I)I
 

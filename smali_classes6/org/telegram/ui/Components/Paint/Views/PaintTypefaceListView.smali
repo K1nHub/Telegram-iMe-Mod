@@ -129,7 +129,7 @@
 
     move-result v0
 
-    mul-int p2, p2, v0
+    mul-int/2addr p2, v0
 
     const/16 v0, 0x10
 

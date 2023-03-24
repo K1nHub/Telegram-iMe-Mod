@@ -48,12 +48,12 @@
 
     if-gt v1, v0, :cond_0
 
-    const/4 v0, 0x1
+    move v0, v2
 
     goto :goto_0
 
     :cond_0
-    const/4 v0, 0x0
+    move v0, v3
 
     :goto_0
     if-gt p1, p2, :cond_1
@@ -61,7 +61,7 @@
     goto :goto_1
 
     :cond_1
-    const/4 v2, 0x0
+    move v2, v3
 
     :goto_1
     if-ne v0, v2, :cond_2

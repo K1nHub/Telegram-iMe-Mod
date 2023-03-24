@@ -523,7 +523,7 @@
 
     const v5, 0x3e4ccccd    # 0.2f
 
-    mul-float v3, v3, v5
+    mul-float/2addr v3, v5
 
     .line 418
     invoke-virtual/range {p2 .. p2}, Landroid/graphics/RectF;->width()F
@@ -532,7 +532,7 @@
 
     const v6, 0x3dcccccd    # 0.1f
 
-    mul-float v5, v5, v6
+    mul-float/2addr v5, v6
 
     .line 419
     invoke-virtual/range {p2 .. p2}, Landroid/graphics/RectF;->width()F
@@ -541,7 +541,7 @@
 
     const v7, 0x3cf5c28f    # 0.03f
 
-    mul-float v6, v6, v7
+    mul-float/2addr v6, v7
 
     const/high16 v7, 0x40000000    # 2.0f
 
@@ -606,7 +606,7 @@
 
     div-float v13, v8, v7
 
-    mul-float v8, v8, v7
+    mul-float/2addr v8, v7
 
     neg-float v2, v5
 
@@ -791,7 +791,7 @@
 
     if-lez v3, :cond_2
 
-    const/high16 v3, 0x3f800000    # 1.0f
+    move v3, v8
 
     goto :goto_0
 
@@ -799,13 +799,13 @@
     div-float v3, v1, v2
 
     :goto_0
-    const/4 v9, 0x0
-
     cmpg-float v4, v1, v2
+
+    const/4 v9, 0x0
 
     if-gez v4, :cond_3
 
-    const/4 v10, 0x0
+    move v10, v9
 
     goto :goto_1
 
@@ -906,9 +906,9 @@
 
     add-float/2addr v5, v6
 
-    mul-float v1, v1, v4
+    mul-float/2addr v1, v4
 
-    mul-float v3, v3, v12
+    mul-float/2addr v3, v12
 
     add-float v6, v1, v3
 
@@ -935,13 +935,13 @@
 
     mul-float v1, v11, v8
 
-    mul-float v13, v13, v10
+    mul-float/2addr v13, v10
 
     add-float v4, v1, v13
 
-    mul-float v8, v8, v12
+    mul-float/2addr v8, v12
 
-    mul-float v14, v14, v10
+    mul-float/2addr v14, v10
 
     add-float v5, v8, v14
 
@@ -964,7 +964,7 @@
 .end method
 
 .method public static getNextUnreadDialog(JIIZ[I)Lorg/telegram/tgnet/TLRPC$Dialog;
-    .locals 17
+    .locals 16
 
     move-wide/from16 v6, p0
 
@@ -1125,7 +1125,7 @@
     move-result-object v1
 
     :goto_2
-    const/4 v2, 0x0
+    move v2, v12
 
     .line 610
     :goto_3
@@ -1220,9 +1220,9 @@
     :cond_9
     iget-wide v13, v3, Lorg/telegram/tgnet/TLRPC$Dialog;->id:J
 
-    cmp-long v16, v13, v6
+    cmp-long v13, v13, v6
 
-    if-eqz v16, :cond_c
+    if-eqz v13, :cond_c
 
     iget v13, v3, Lorg/telegram/tgnet/TLRPC$Dialog;->unread_count:I
 
@@ -1284,7 +1284,7 @@
 
     if-eqz v9, :cond_10
 
-    const/4 v13, 0x0
+    move v13, v12
 
     .line 632
     :goto_7
@@ -1345,7 +1345,7 @@
 
     if-eqz v0, :cond_13
 
-    const/4 v9, 0x0
+    move v9, v12
 
     .line 648
     :goto_8
@@ -1963,9 +1963,9 @@
 
     const-wide/16 v0, 0x0
 
-    cmp-long p3, p1, v0
+    cmp-long p1, p1, v0
 
-    if-eqz p3, :cond_0
+    if-eqz p1, :cond_0
 
     .line 556
     iget p1, p0, Lorg/telegram/ui/ChatPullingDownDrawable;->currentAccount:I
@@ -2035,7 +2035,7 @@
 
     int-to-float v3, v3
 
-    mul-float v3, v3, v2
+    mul-float/2addr v3, v2
 
     const/16 v4, 0x8
 
@@ -2061,7 +2061,7 @@
 
     const/high16 v5, 0x40a00000    # 5.0f
 
-    mul-float v5, v5, v2
+    mul-float/2addr v5, v2
 
     mul-float v5, v5, p4
 
@@ -2158,7 +2158,7 @@
 
     int-to-float v7, v12
 
-    mul-float v7, v7, v5
+    mul-float/2addr v7, v5
 
     float-to-int v7, v7
 
@@ -2171,7 +2171,7 @@
 
     int-to-float v7, v11
 
-    mul-float v7, v7, v5
+    mul-float/2addr v7, v5
 
     float-to-int v7, v7
 
@@ -2182,7 +2182,7 @@
 
     int-to-float v15, v13
 
-    mul-float v15, v15, v5
+    mul-float/2addr v15, v5
 
     float-to-int v15, v15
 
@@ -2193,38 +2193,38 @@
 
     invoke-virtual {v6, v5}, Lorg/telegram/messenger/ImageReceiver;->setAlpha(F)V
 
-    const/high16 v5, 0x3f800000    # 1.0f
+    const/high16 v6, 0x3f800000    # 1.0f
 
-    cmpl-float v16, v2, v5
+    cmpl-float v5, v2, v6
 
-    if-ltz v16, :cond_3
+    if-ltz v5, :cond_3
 
     .line 274
-    iget v4, v0, Lorg/telegram/ui/ChatPullingDownDrawable;->lastProgress:F
+    iget v10, v0, Lorg/telegram/ui/ChatPullingDownDrawable;->lastProgress:F
 
-    cmpg-float v4, v4, v5
+    cmpg-float v10, v10, v6
 
-    if-ltz v4, :cond_2
+    if-ltz v10, :cond_2
 
     goto :goto_2
 
     :cond_2
     :goto_1
-    move/from16 v18, v11
+    move v10, v7
 
     goto :goto_3
 
     :cond_3
     :goto_2
-    cmpg-float v4, v2, v5
+    cmpg-float v10, v2, v6
 
-    if-gez v4, :cond_5
+    if-gez v10, :cond_5
 
-    iget v4, v0, Lorg/telegram/ui/ChatPullingDownDrawable;->lastProgress:F
+    iget v10, v0, Lorg/telegram/ui/ChatPullingDownDrawable;->lastProgress:F
 
-    cmpl-float v4, v4, v5
+    cmpl-float v10, v10, v6
 
-    if-nez v4, :cond_5
+    if-nez v10, :cond_5
 
     goto :goto_1
 
@@ -2232,18 +2232,20 @@
     :goto_3
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
-    move-result-wide v10
+    move-result-wide v6
+
+    move/from16 v18, v5
 
     .line 276
-    iget-wide v5, v0, Lorg/telegram/ui/ChatPullingDownDrawable;->lastHapticTime:J
+    iget-wide v4, v0, Lorg/telegram/ui/ChatPullingDownDrawable;->lastHapticTime:J
 
-    sub-long v4, v10, v5
+    sub-long v4, v6, v4
 
-    const-wide/16 v20, 0x64
+    const-wide/16 v19, 0x64
 
-    cmp-long v6, v4, v20
+    cmp-long v4, v4, v19
 
-    if-lez v6, :cond_4
+    if-lez v4, :cond_4
 
     const/4 v4, 0x3
 
@@ -2253,7 +2255,7 @@
     invoke-virtual {v1, v4, v5}, Landroid/view/View;->performHapticFeedback(II)Z
 
     .line 278
-    iput-wide v10, v0, Lorg/telegram/ui/ChatPullingDownDrawable;->lastHapticTime:J
+    iput-wide v6, v0, Lorg/telegram/ui/ChatPullingDownDrawable;->lastHapticTime:J
 
     .line 280
     :cond_4
@@ -2262,12 +2264,14 @@
     goto :goto_4
 
     :cond_5
-    move/from16 v18, v11
+    move/from16 v18, v5
+
+    move v10, v7
 
     :goto_4
     const/4 v4, 0x1
 
-    if-nez v16, :cond_6
+    if-nez v18, :cond_6
 
     .line 283
     iget-boolean v5, v0, Lorg/telegram/ui/ChatPullingDownDrawable;->animateSwipeToRelease:Z
@@ -2293,7 +2297,7 @@
     goto :goto_5
 
     :cond_6
-    if-eqz v16, :cond_7
+    if-eqz v18, :cond_7
 
     .line 288
     iget-boolean v5, v0, Lorg/telegram/ui/ChatPullingDownDrawable;->animateSwipeToRelease:Z
@@ -2315,9 +2319,9 @@
 
     int-to-float v1, v1
 
-    const/high16 v10, 0x40000000    # 2.0f
+    const/high16 v18, 0x40000000    # 2.0f
 
-    div-float v11, v1, v10
+    div-float v7, v1, v18
 
     .line 294
     iget v1, v0, Lorg/telegram/ui/ChatPullingDownDrawable;->bounceProgress:F
@@ -2332,7 +2336,7 @@
 
     int-to-float v6, v6
 
-    mul-float v1, v1, v6
+    mul-float/2addr v1, v6
 
     .line 296
     iget-boolean v6, v0, Lorg/telegram/ui/ChatPullingDownDrawable;->emptyStub:Z
@@ -2345,7 +2349,7 @@
     :cond_8
     iget v6, v0, Lorg/telegram/ui/ChatPullingDownDrawable;->circleRadius:F
 
-    div-float v16, v3, v10
+    div-float v19, v3, v18
 
     const/16 v20, 0x10
 
@@ -2355,17 +2359,19 @@
 
     int-to-float v4, v4
 
-    mul-float v4, v4, v2
+    mul-float/2addr v4, v2
 
-    sub-float v4, v16, v4
+    sub-float v4, v19, v4
+
+    move/from16 v21, v13
 
     invoke-static {v5}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
-    move-result v10
+    move-result v13
 
-    int-to-float v10, v10
+    int-to-float v13, v13
 
-    sub-float/2addr v4, v10
+    sub-float/2addr v4, v13
 
     invoke-static {v6, v4}, Ljava/lang/Math;->min(FF)F
 
@@ -2378,23 +2384,23 @@
     move-result v4
 
     .line 302
-    iget v10, v0, Lorg/telegram/ui/ChatPullingDownDrawable;->circleRadius:F
+    iget v13, v0, Lorg/telegram/ui/ChatPullingDownDrawable;->circleRadius:F
 
-    mul-float v10, v10, v2
+    mul-float/2addr v13, v2
 
-    const/16 v17, 0x8
+    const/16 v16, 0x8
 
-    invoke-static/range {v17 .. v17}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    invoke-static/range {v16 .. v16}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v5
 
     int-to-float v5, v5
 
-    mul-float v5, v5, v2
+    mul-float/2addr v5, v2
 
-    sub-float v5, v16, v5
+    sub-float v5, v19, v5
 
-    invoke-static {v10, v5}, Ljava/lang/Math;->min(FF)F
+    invoke-static {v13, v5}, Ljava/lang/Math;->min(FF)F
 
     move-result v5
 
@@ -2402,9 +2408,7 @@
 
     move-result v5
 
-    const/high16 v6, 0x40000000    # 2.0f
-
-    mul-float v5, v5, v6
+    mul-float v5, v5, v18
 
     const/high16 v6, 0x41800000    # 16.0f
 
@@ -2419,31 +2423,31 @@
 
     iget v6, v0, Lorg/telegram/ui/ChatPullingDownDrawable;->swipeToReleaseProgress:F
 
-    const/high16 v10, 0x3f800000    # 1.0f
+    const/high16 v13, 0x3f800000    # 1.0f
 
-    sub-float v6, v10, v6
+    sub-float v6, v13, v6
 
-    mul-float v5, v5, v6
+    mul-float/2addr v5, v6
 
     const/16 v6, 0x38
 
     invoke-static {v6}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
-    move-result v10
+    move-result v13
 
-    int-to-float v10, v10
+    int-to-float v13, v13
 
     iget v6, v0, Lorg/telegram/ui/ChatPullingDownDrawable;->swipeToReleaseProgress:F
 
-    mul-float v10, v10, v6
+    mul-float/2addr v13, v6
 
-    add-float/2addr v5, v10
+    add-float/2addr v5, v13
+
+    const/high16 v13, 0x3f800000    # 1.0f
+
+    cmpg-float v6, v6, v13
 
     const/16 v22, 0x24
-
-    const/high16 v19, 0x3f800000    # 1.0f
-
-    cmpg-float v6, v6, v19
 
     if-ltz v6, :cond_a
 
@@ -2455,9 +2459,9 @@
     goto :goto_6
 
     :cond_9
-    move/from16 v16, v12
+    move/from16 v19, v11
 
-    move/from16 v23, v13
+    move/from16 v23, v12
 
     const/4 v6, 0x2
 
@@ -2470,48 +2474,50 @@
     .line 306
     invoke-static {v6}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
-    move-result v10
+    move-result v13
 
-    neg-int v6, v10
+    neg-int v6, v13
 
     int-to-float v6, v6
 
-    iget v10, v0, Lorg/telegram/ui/ChatPullingDownDrawable;->swipeToReleaseProgress:F
+    iget v13, v0, Lorg/telegram/ui/ChatPullingDownDrawable;->swipeToReleaseProgress:F
 
-    sub-float v10, v19, v10
+    const/high16 v17, 0x3f800000    # 1.0f
 
-    mul-float v6, v6, v10
+    sub-float v13, v17, v13
 
-    neg-float v10, v3
+    mul-float/2addr v6, v13
 
-    move/from16 v23, v13
+    neg-float v13, v3
 
-    const/16 v16, 0x38
+    move/from16 v23, v12
 
-    invoke-static/range {v16 .. v16}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    const/16 v19, 0x38
 
-    move-result v13
+    invoke-static/range {v19 .. v19}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
-    int-to-float v13, v13
+    move-result v12
 
-    add-float/2addr v13, v10
+    int-to-float v12, v12
 
-    move/from16 v16, v12
+    add-float/2addr v12, v13
 
-    iget v12, v0, Lorg/telegram/ui/ChatPullingDownDrawable;->swipeToReleaseProgress:F
+    move/from16 v19, v11
 
-    mul-float v13, v13, v12
+    iget v11, v0, Lorg/telegram/ui/ChatPullingDownDrawable;->swipeToReleaseProgress:F
 
-    add-float/2addr v6, v13
+    mul-float/2addr v12, v11
+
+    add-float/2addr v6, v12
 
     .line 307
-    sget-object v12, Lorg/telegram/messenger/AndroidUtilities;->rectTmp:Landroid/graphics/RectF;
+    sget-object v11, Lorg/telegram/messenger/AndroidUtilities;->rectTmp:Landroid/graphics/RectF;
 
-    sub-float v13, v11, v4
+    sub-float v12, v7, v4
 
-    add-float/2addr v4, v11
+    add-float/2addr v4, v7
 
-    invoke-virtual {v12, v13, v10, v4, v6}, Landroid/graphics/RectF;->set(FFFF)V
+    invoke-virtual {v11, v12, v13, v4, v6}, Landroid/graphics/RectF;->set(FFFF)V
 
     .line 308
     iget v4, v0, Lorg/telegram/ui/ChatPullingDownDrawable;->swipeToReleaseProgress:F
@@ -2535,14 +2541,14 @@
 
     iget v6, v0, Lorg/telegram/ui/ChatPullingDownDrawable;->swipeToReleaseProgress:F
 
-    mul-float v4, v4, v6
+    mul-float/2addr v4, v6
 
     .line 310
-    invoke-virtual {v12, v4, v4}, Landroid/graphics/RectF;->inset(FF)V
+    invoke-virtual {v11, v4, v4}, Landroid/graphics/RectF;->inset(FF)V
 
     .line 312
     :cond_b
-    invoke-direct {v0, v8, v12}, Lorg/telegram/ui/ChatPullingDownDrawable;->drawBackground(Landroid/graphics/Canvas;Landroid/graphics/RectF;)V
+    invoke-direct {v0, v8, v11}, Lorg/telegram/ui/ChatPullingDownDrawable;->drawBackground(Landroid/graphics/Canvas;Landroid/graphics/RectF;)V
 
     const/16 v4, 0x18
 
@@ -2553,19 +2559,19 @@
 
     int-to-float v6, v6
 
-    add-float/2addr v6, v10
+    add-float/2addr v6, v13
 
-    const/16 v13, 0x8
+    const/16 v12, 0x8
 
-    invoke-static {v13}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    invoke-static {v12}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v4
 
     int-to-float v4, v4
 
-    const/high16 v13, 0x3f800000    # 1.0f
+    const/high16 v12, 0x3f800000    # 1.0f
 
-    sub-float v24, v13, v2
+    sub-float v24, v12, v2
 
     mul-float v4, v4, v24
 
@@ -2577,9 +2583,9 @@
 
     int-to-float v4, v4
 
-    iget v13, v0, Lorg/telegram/ui/ChatPullingDownDrawable;->swipeToReleaseProgress:F
+    iget v12, v0, Lorg/telegram/ui/ChatPullingDownDrawable;->swipeToReleaseProgress:F
 
-    mul-float v4, v4, v13
+    mul-float/2addr v4, v12
 
     sub-float/2addr v6, v4
 
@@ -2591,9 +2597,9 @@
     .line 316
     invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
-    move-result v13
+    move-result v12
 
-    int-to-float v13, v13
+    int-to-float v12, v12
 
     invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
@@ -2601,34 +2607,34 @@
 
     int-to-float v4, v4
 
-    invoke-virtual {v12, v13, v4}, Landroid/graphics/RectF;->inset(FF)V
+    invoke-virtual {v11, v12, v4}, Landroid/graphics/RectF;->inset(FF)V
 
     .line 317
-    invoke-virtual {v8, v12}, Landroid/graphics/Canvas;->clipRect(Landroid/graphics/RectF;)Z
+    invoke-virtual {v8, v11}, Landroid/graphics/Canvas;->clipRect(Landroid/graphics/RectF;)Z
 
     .line 318
     iget v4, v0, Lorg/telegram/ui/ChatPullingDownDrawable;->swipeToReleaseProgress:F
 
-    const/4 v12, 0x0
+    const/4 v11, 0x0
 
-    cmpl-float v13, v4, v12
+    cmpl-float v12, v4, v11
 
-    if-lez v13, :cond_c
+    if-lez v12, :cond_c
 
     .line 319
-    iget-object v12, v0, Lorg/telegram/ui/ChatPullingDownDrawable;->arrowPaint:Landroid/graphics/Paint;
+    iget-object v11, v0, Lorg/telegram/ui/ChatPullingDownDrawable;->arrowPaint:Landroid/graphics/Paint;
 
-    const/high16 v13, 0x3f800000    # 1.0f
+    const/high16 v12, 0x3f800000    # 1.0f
 
-    sub-float v4, v13, v4
+    sub-float v4, v12, v4
 
-    const/high16 v13, 0x437f0000    # 255.0f
+    const/high16 v12, 0x437f0000    # 255.0f
 
-    mul-float v4, v4, v13
+    mul-float/2addr v4, v12
 
     float-to-int v4, v4
 
-    invoke-virtual {v12, v4}, Landroid/graphics/Paint;->setAlpha(I)V
+    invoke-virtual {v11, v4}, Landroid/graphics/Paint;->setAlpha(I)V
 
     :cond_c
     const/16 v4, 0x18
@@ -2640,9 +2646,9 @@
 
     int-to-float v4, v4
 
-    mul-float v4, v4, v2
+    mul-float/2addr v4, v2
 
-    invoke-direct {v0, v8, v11, v6, v4}, Lorg/telegram/ui/ChatPullingDownDrawable;->drawArrow(Landroid/graphics/Canvas;FFF)V
+    invoke-direct {v0, v8, v7, v6, v4}, Lorg/telegram/ui/ChatPullingDownDrawable;->drawArrow(Landroid/graphics/Canvas;FFF)V
 
     .line 323
     iget-boolean v4, v0, Lorg/telegram/ui/ChatPullingDownDrawable;->emptyStub:Z
@@ -2664,11 +2670,11 @@
 
     invoke-static {v6}, Lorg/telegram/messenger/AndroidUtilities;->dp2(F)I
 
-    move-result v12
+    move-result v11
 
-    int-to-float v6, v12
+    int-to-float v6, v11
 
-    mul-float v6, v6, v2
+    mul-float/2addr v6, v2
 
     sub-float/2addr v4, v6
 
@@ -2676,42 +2682,42 @@
 
     iget v6, v0, Lorg/telegram/ui/ChatPullingDownDrawable;->swipeToReleaseProgress:F
 
-    const/high16 v12, 0x3f800000    # 1.0f
+    const/high16 v11, 0x3f800000    # 1.0f
 
-    sub-float v6, v12, v6
+    sub-float v6, v11, v6
 
-    mul-float v4, v4, v6
+    mul-float/2addr v4, v6
 
     const/4 v6, 0x2
 
     invoke-static {v6}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
-    move-result v12
+    move-result v11
 
-    int-to-float v12, v12
+    int-to-float v11, v11
 
-    sub-float/2addr v10, v12
+    sub-float/2addr v13, v11
 
-    iget v12, v0, Lorg/telegram/ui/ChatPullingDownDrawable;->swipeToReleaseProgress:F
+    iget v11, v0, Lorg/telegram/ui/ChatPullingDownDrawable;->swipeToReleaseProgress:F
 
-    mul-float v10, v10, v12
+    mul-float/2addr v13, v11
 
-    add-float/2addr v4, v10
+    add-float/2addr v4, v13
 
     add-float/2addr v4, v1
 
     .line 325
-    iget-object v10, v0, Lorg/telegram/ui/ChatPullingDownDrawable;->arrowPaint:Landroid/graphics/Paint;
+    iget-object v11, v0, Lorg/telegram/ui/ChatPullingDownDrawable;->arrowPaint:Landroid/graphics/Paint;
 
-    invoke-virtual {v10, v14}, Landroid/graphics/Paint;->setAlpha(I)V
+    invoke-virtual {v11, v14}, Landroid/graphics/Paint;->setAlpha(I)V
 
     .line 326
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->save()I
 
-    const/16 v10, 0x1c
+    const/16 v11, 0x1c
 
     .line 327
-    invoke-static {v10}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    invoke-static {v11}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v12
 
@@ -2719,18 +2725,18 @@
 
     add-float/2addr v12, v4
 
-    invoke-virtual {v8, v2, v2, v11, v12}, Landroid/graphics/Canvas;->scale(FFFF)V
+    invoke-virtual {v8, v2, v2, v7, v12}, Landroid/graphics/Canvas;->scale(FFFF)V
 
     .line 328
-    invoke-static {v10}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    invoke-static {v11}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
-    move-result v10
+    move-result v11
 
-    int-to-float v10, v10
+    int-to-float v11, v11
 
-    add-float/2addr v4, v10
+    add-float/2addr v4, v11
 
-    invoke-direct {v0, v8, v11, v4}, Lorg/telegram/ui/ChatPullingDownDrawable;->drawCheck(Landroid/graphics/Canvas;FF)V
+    invoke-direct {v0, v8, v7, v4}, Lorg/telegram/ui/ChatPullingDownDrawable;->drawCheck(Landroid/graphics/Canvas;FF)V
 
     .line 329
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->restore()V
@@ -2752,9 +2758,9 @@
 
     iget v4, v0, Lorg/telegram/ui/ChatPullingDownDrawable;->swipeToReleaseProgress:F
 
-    const/4 v10, 0x0
+    const/4 v11, 0x0
 
-    cmpl-float v4, v4, v10
+    cmpl-float v4, v4, v11
 
     if-lez v4, :cond_f
 
@@ -2763,7 +2769,7 @@
 
     move-result-object v4
 
-    invoke-virtual {v4, v7}, Landroid/graphics/Paint;->setAlpha(I)V
+    invoke-virtual {v4, v10}, Landroid/graphics/Paint;->setAlpha(I)V
 
     .line 336
     iget-object v4, v0, Lorg/telegram/ui/ChatPullingDownDrawable;->textPaint:Landroid/text/TextPaint;
@@ -2779,151 +2785,147 @@
 
     int-to-float v4, v4
 
-    iget v7, v0, Lorg/telegram/ui/ChatPullingDownDrawable;->swipeToReleaseProgress:F
+    iget v10, v0, Lorg/telegram/ui/ChatPullingDownDrawable;->swipeToReleaseProgress:F
 
-    const/high16 v10, 0x3f800000    # 1.0f
+    const/high16 v11, 0x3f800000    # 1.0f
 
-    sub-float v7, v10, v7
+    sub-float v10, v11, v10
 
-    mul-float v4, v4, v7
+    mul-float/2addr v4, v10
 
     invoke-static/range {v22 .. v22}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
-    move-result v7
+    move-result v10
 
-    int-to-float v7, v7
+    int-to-float v10, v10
 
-    iget v10, v0, Lorg/telegram/ui/ChatPullingDownDrawable;->swipeToReleaseProgress:F
+    iget v11, v0, Lorg/telegram/ui/ChatPullingDownDrawable;->swipeToReleaseProgress:F
 
-    mul-float v7, v7, v10
+    mul-float/2addr v10, v11
 
-    sub-float/2addr v4, v7
+    sub-float/2addr v4, v10
 
     add-float/2addr v4, v1
 
     .line 339
-    sget-object v7, Lorg/telegram/messenger/AndroidUtilities;->rectTmp:Landroid/graphics/RectF;
+    sget-object v10, Lorg/telegram/messenger/AndroidUtilities;->rectTmp:Landroid/graphics/RectF;
 
-    iget v10, v0, Lorg/telegram/ui/ChatPullingDownDrawable;->lastWidth:I
+    iget v11, v0, Lorg/telegram/ui/ChatPullingDownDrawable;->lastWidth:I
 
     iget v12, v0, Lorg/telegram/ui/ChatPullingDownDrawable;->chatNameWidth:I
 
-    sub-int v13, v10, v12
+    sub-int v13, v11, v12
 
     int-to-float v13, v13
 
-    const/high16 v15, 0x40000000    # 2.0f
+    div-float v13, v13, v18
 
-    div-float/2addr v13, v15
+    int-to-float v15, v11
 
-    int-to-float v6, v10
+    sub-int/2addr v11, v12
 
-    sub-int/2addr v10, v12
+    int-to-float v11, v11
 
-    int-to-float v10, v10
+    div-float v11, v11, v18
 
-    div-float/2addr v10, v15
+    sub-float/2addr v15, v11
 
-    sub-float/2addr v6, v10
+    iget-object v11, v0, Lorg/telegram/ui/ChatPullingDownDrawable;->chatNameLayout:Landroid/text/StaticLayout;
 
-    iget-object v10, v0, Lorg/telegram/ui/ChatPullingDownDrawable;->chatNameLayout:Landroid/text/StaticLayout;
+    invoke-virtual {v11}, Landroid/text/StaticLayout;->getHeight()I
 
-    invoke-virtual {v10}, Landroid/text/StaticLayout;->getHeight()I
+    move-result v11
 
-    move-result v10
+    int-to-float v11, v11
 
-    int-to-float v10, v10
+    add-float/2addr v11, v4
 
-    add-float/2addr v10, v4
+    invoke-virtual {v10, v13, v4, v15, v11}, Landroid/graphics/RectF;->set(FFFF)V
 
-    invoke-virtual {v7, v13, v4, v6, v10}, Landroid/graphics/RectF;->set(FFFF)V
-
-    const/16 v6, 0x8
+    const/16 v11, 0x8
 
     .line 340
-    invoke-static {v6}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
-
-    move-result v10
-
-    neg-int v6, v10
-
-    int-to-float v6, v6
-
-    const/4 v10, 0x4
-
-    invoke-static {v10}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    invoke-static {v11}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v12
 
-    neg-int v10, v12
+    neg-int v11, v12
 
-    int-to-float v10, v10
+    int-to-float v11, v11
 
-    invoke-virtual {v7, v6, v10}, Landroid/graphics/RectF;->inset(FF)V
+    const/4 v12, 0x4
 
-    const/16 v6, 0xf
+    invoke-static {v12}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+
+    move-result v13
+
+    neg-int v12, v13
+
+    int-to-float v12, v12
+
+    invoke-virtual {v10, v11, v12}, Landroid/graphics/RectF;->inset(FF)V
+
+    const/16 v11, 0xf
 
     .line 341
-    invoke-static {v6}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
-
-    move-result v10
-
-    int-to-float v10, v10
-
-    invoke-static {v6}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    invoke-static {v11}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v12
 
     int-to-float v12, v12
 
+    invoke-static {v11}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+
+    move-result v13
+
+    int-to-float v13, v13
+
     invoke-direct {v0, v9}, Lorg/telegram/ui/ChatPullingDownDrawable;->getThemedPaint(Ljava/lang/String;)Landroid/graphics/Paint;
 
-    move-result-object v13
+    move-result-object v15
 
-    invoke-virtual {v8, v7, v10, v12, v13}, Landroid/graphics/Canvas;->drawRoundRect(Landroid/graphics/RectF;FFLandroid/graphics/Paint;)V
+    invoke-virtual {v8, v10, v12, v13, v15}, Landroid/graphics/Canvas;->drawRoundRect(Landroid/graphics/RectF;FFLandroid/graphics/Paint;)V
 
     .line 342
     invoke-direct/range {p0 .. p0}, Lorg/telegram/ui/ChatPullingDownDrawable;->hasGradientService()Z
 
-    move-result v10
+    move-result v12
 
-    if-eqz v10, :cond_e
+    if-eqz v12, :cond_e
 
     .line 343
-    invoke-static {v6}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    invoke-static {v11}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
-    move-result v10
+    move-result v12
 
-    int-to-float v10, v10
+    int-to-float v12, v12
 
-    invoke-static {v6}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    invoke-static {v11}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
-    move-result v6
+    move-result v11
 
-    int-to-float v6, v6
+    int-to-float v11, v11
 
-    sget-object v12, Lorg/telegram/ui/ActionBar/Theme;->chat_actionBackgroundGradientDarkenPaint:Landroid/graphics/Paint;
+    sget-object v13, Lorg/telegram/ui/ActionBar/Theme;->chat_actionBackgroundGradientDarkenPaint:Landroid/graphics/Paint;
 
-    invoke-virtual {v8, v7, v10, v6, v12}, Landroid/graphics/Canvas;->drawRoundRect(Landroid/graphics/RectF;FFLandroid/graphics/Paint;)V
+    invoke-virtual {v8, v10, v12, v11, v13}, Landroid/graphics/Canvas;->drawRoundRect(Landroid/graphics/RectF;FFLandroid/graphics/Paint;)V
 
     .line 346
     :cond_e
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->save()I
 
     .line 347
-    iget v6, v0, Lorg/telegram/ui/ChatPullingDownDrawable;->lastWidth:I
+    iget v10, v0, Lorg/telegram/ui/ChatPullingDownDrawable;->lastWidth:I
 
-    iget v7, v0, Lorg/telegram/ui/ChatPullingDownDrawable;->chatNameWidth:I
+    iget v11, v0, Lorg/telegram/ui/ChatPullingDownDrawable;->chatNameWidth:I
 
-    sub-int/2addr v6, v7
+    sub-int/2addr v10, v11
 
-    int-to-float v6, v6
+    int-to-float v10, v10
 
-    const/high16 v7, 0x40000000    # 2.0f
+    div-float v10, v10, v18
 
-    div-float/2addr v6, v7
-
-    invoke-virtual {v8, v6, v4}, Landroid/graphics/Canvas;->translate(FF)V
+    invoke-virtual {v8, v10, v4}, Landroid/graphics/Canvas;->translate(FF)V
 
     .line 348
     iget-object v4, v0, Lorg/telegram/ui/ChatPullingDownDrawable;->chatNameLayout:Landroid/text/StaticLayout;
@@ -2941,9 +2943,9 @@
 
     const/4 v4, 0x0
 
-    cmpl-float v6, v5, v4
+    cmpl-float v10, v5, v4
 
-    if-lez v6, :cond_11
+    if-lez v10, :cond_11
 
     const/16 v4, 0x8
 
@@ -2956,27 +2958,27 @@
 
     int-to-float v4, v4
 
-    const/high16 v6, 0x41000000    # 8.0f
+    const/high16 v10, 0x41000000    # 8.0f
 
-    invoke-static {v6}, Lorg/telegram/messenger/AndroidUtilities;->dp2(F)I
+    invoke-static {v10}, Lorg/telegram/messenger/AndroidUtilities;->dp2(F)I
 
-    move-result v6
+    move-result v10
 
-    int-to-float v6, v6
+    int-to-float v10, v10
 
-    mul-float v6, v6, v2
+    mul-float/2addr v10, v2
 
-    sub-float/2addr v4, v6
+    sub-float/2addr v4, v10
 
     sub-float/2addr v4, v5
 
     iget v2, v0, Lorg/telegram/ui/ChatPullingDownDrawable;->swipeToReleaseProgress:F
 
-    const/high16 v6, 0x3f800000    # 1.0f
+    const/high16 v10, 0x3f800000    # 1.0f
 
-    sub-float v2, v6, v2
+    sub-float v2, v10, v2
 
-    mul-float v4, v4, v2
+    mul-float/2addr v4, v2
 
     neg-float v2, v3
 
@@ -2992,29 +2994,27 @@
 
     iget v3, v0, Lorg/telegram/ui/ChatPullingDownDrawable;->swipeToReleaseProgress:F
 
-    mul-float v2, v2, v3
+    mul-float/2addr v2, v3
 
     add-float/2addr v4, v2
 
-    add-float v10, v4, v1
+    add-float v11, v4, v1
 
     .line 354
     iget-object v1, v0, Lorg/telegram/ui/ChatPullingDownDrawable;->imageReceiver:Lorg/telegram/messenger/ImageReceiver;
 
-    const/high16 v2, 0x40000000    # 2.0f
+    div-float v2, v5, v18
 
-    div-float v3, v5, v2
+    float-to-int v3, v2
 
-    float-to-int v2, v3
-
-    invoke-virtual {v1, v2}, Lorg/telegram/messenger/ImageReceiver;->setRoundRadius(I)V
+    invoke-virtual {v1, v3}, Lorg/telegram/messenger/ImageReceiver;->setRoundRadius(I)V
 
     .line 355
     iget-object v1, v0, Lorg/telegram/ui/ChatPullingDownDrawable;->imageReceiver:Lorg/telegram/messenger/ImageReceiver;
 
-    sub-float v2, v11, v3
+    sub-float v2, v7, v2
 
-    invoke-virtual {v1, v2, v10, v5, v5}, Lorg/telegram/messenger/ImageReceiver;->setImageCoords(FFFF)V
+    invoke-virtual {v1, v2, v11, v5, v5}, Lorg/telegram/messenger/ImageReceiver;->setImageCoords(FFFF)V
 
     .line 357
     iget v1, v0, Lorg/telegram/ui/ChatPullingDownDrawable;->swipeToReleaseProgress:F
@@ -3066,19 +3066,19 @@
 
     add-float/2addr v5, v1
 
-    const/16 v7, 0xff
+    const/16 v12, 0xff
 
-    const/16 v12, 0x1f
+    const/16 v13, 0x1f
 
     move-object/from16 v1, p1
 
-    const/high16 v13, 0x3f800000    # 1.0f
+    move v15, v6
 
-    const/4 v15, 0x2
+    move v6, v12
 
-    move v6, v7
+    move v12, v7
 
-    move v7, v12
+    move v7, v13
 
     invoke-virtual/range {v1 .. v7}, Landroid/graphics/Canvas;->saveLayerAlpha(FFFFII)I
 
@@ -3098,37 +3098,37 @@
 
     int-to-float v3, v3
 
-    add-float/2addr v3, v11
+    add-float v7, v12, v3
 
-    iget-object v4, v0, Lorg/telegram/ui/ChatPullingDownDrawable;->counterDrawable:Lorg/telegram/ui/Components/CounterView$CounterDrawable;
+    iget-object v3, v0, Lorg/telegram/ui/ChatPullingDownDrawable;->counterDrawable:Lorg/telegram/ui/Components/CounterView$CounterDrawable;
 
-    invoke-virtual {v4}, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->getCenterX()F
+    invoke-virtual {v3}, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->getCenterX()F
+
+    move-result v3
+
+    add-float/2addr v7, v3
+
+    const/4 v3, 0x6
+
+    invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v4
 
-    add-float/2addr v3, v4
+    int-to-float v4, v4
 
-    const/4 v4, 0x6
+    sub-float v4, v11, v4
 
-    invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    const/16 v5, 0xe
 
-    move-result v5
+    invoke-static {v5}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
-    int-to-float v5, v5
+    move-result v6
 
-    sub-float v5, v10, v5
+    int-to-float v6, v6
 
-    const/16 v6, 0xe
+    add-float/2addr v4, v6
 
-    invoke-static {v6}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
-
-    move-result v7
-
-    int-to-float v7, v7
-
-    add-float/2addr v5, v7
-
-    invoke-virtual {v8, v1, v1, v3, v5}, Landroid/graphics/Canvas;->scale(FFFF)V
+    invoke-virtual {v8, v1, v1, v7, v4}, Landroid/graphics/Canvas;->scale(FFFF)V
 
     .line 361
     invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
@@ -3137,17 +3137,17 @@
 
     int-to-float v1, v1
 
-    add-float/2addr v1, v11
+    add-float v7, v12, v1
 
-    invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
-    move-result v3
+    move-result v1
 
-    int-to-float v3, v3
+    int-to-float v1, v1
 
-    sub-float v3, v10, v3
+    sub-float v1, v11, v1
 
-    invoke-virtual {v8, v1, v3}, Landroid/graphics/Canvas;->translate(FF)V
+    invoke-virtual {v8, v7, v1}, Landroid/graphics/Canvas;->translate(FF)V
 
     .line 362
     iget-object v1, v0, Lorg/telegram/ui/ChatPullingDownDrawable;->counterDrawable:Lorg/telegram/ui/Components/CounterView$CounterDrawable;
@@ -3161,21 +3161,21 @@
 
     invoke-static {v15}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
-    move-result v3
+    move-result v4
 
-    neg-int v3, v3
+    neg-int v4, v4
 
-    int-to-float v3, v3
+    int-to-float v4, v4
 
     invoke-static {v15}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
-    move-result v5
+    move-result v6
 
-    neg-int v5, v5
+    neg-int v6, v6
 
-    int-to-float v5, v5
+    int-to-float v6, v6
 
-    invoke-virtual {v1, v3, v5}, Landroid/graphics/RectF;->inset(FF)V
+    invoke-virtual {v1, v4, v6}, Landroid/graphics/RectF;->inset(FF)V
 
     .line 364
     iget-object v1, v0, Lorg/telegram/ui/ChatPullingDownDrawable;->counterDrawable:Lorg/telegram/ui/Components/CounterView$CounterDrawable;
@@ -3184,25 +3184,23 @@
 
     invoke-virtual {v1}, Landroid/graphics/RectF;->height()F
 
-    move-result v3
+    move-result v4
 
-    const/high16 v5, 0x40000000    # 2.0f
+    div-float v4, v4, v18
 
-    div-float/2addr v3, v5
+    iget-object v6, v0, Lorg/telegram/ui/ChatPullingDownDrawable;->counterDrawable:Lorg/telegram/ui/Components/CounterView$CounterDrawable;
 
-    iget-object v7, v0, Lorg/telegram/ui/ChatPullingDownDrawable;->counterDrawable:Lorg/telegram/ui/Components/CounterView$CounterDrawable;
+    iget-object v6, v6, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->rectF:Landroid/graphics/RectF;
 
-    iget-object v7, v7, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->rectF:Landroid/graphics/RectF;
+    invoke-virtual {v6}, Landroid/graphics/RectF;->height()F
 
-    invoke-virtual {v7}, Landroid/graphics/RectF;->height()F
+    move-result v6
 
-    move-result v7
+    div-float v6, v6, v18
 
-    div-float/2addr v7, v5
+    iget-object v7, v0, Lorg/telegram/ui/ChatPullingDownDrawable;->xRefPaint:Landroid/graphics/Paint;
 
-    iget-object v5, v0, Lorg/telegram/ui/ChatPullingDownDrawable;->xRefPaint:Landroid/graphics/Paint;
-
-    invoke-virtual {v8, v1, v3, v7, v5}, Landroid/graphics/Canvas;->drawRoundRect(Landroid/graphics/RectF;FFLandroid/graphics/Paint;)V
+    invoke-virtual {v8, v1, v4, v6, v7}, Landroid/graphics/Canvas;->drawRoundRect(Landroid/graphics/RectF;FFLandroid/graphics/Paint;)V
 
     .line 365
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->restore()V
@@ -3215,37 +3213,37 @@
 
     invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
-    move-result v3
+    move-result v4
 
-    int-to-float v3, v3
+    int-to-float v4, v4
 
-    add-float/2addr v3, v11
+    add-float v7, v12, v4
 
-    iget-object v5, v0, Lorg/telegram/ui/ChatPullingDownDrawable;->counterDrawable:Lorg/telegram/ui/Components/CounterView$CounterDrawable;
+    iget-object v4, v0, Lorg/telegram/ui/ChatPullingDownDrawable;->counterDrawable:Lorg/telegram/ui/Components/CounterView$CounterDrawable;
 
-    invoke-virtual {v5}, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->getCenterX()F
+    invoke-virtual {v4}, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->getCenterX()F
 
-    move-result v5
+    move-result v4
 
-    add-float/2addr v3, v5
+    add-float/2addr v7, v4
 
-    invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+
+    move-result v4
+
+    int-to-float v4, v4
+
+    sub-float v4, v11, v4
+
+    invoke-static {v5}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v5
 
     int-to-float v5, v5
 
-    sub-float v5, v10, v5
+    add-float/2addr v4, v5
 
-    invoke-static {v6}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
-
-    move-result v6
-
-    int-to-float v6, v6
-
-    add-float/2addr v5, v6
-
-    invoke-virtual {v8, v1, v1, v3, v5}, Landroid/graphics/Canvas;->scale(FFFF)V
+    invoke-virtual {v8, v1, v1, v7, v4}, Landroid/graphics/Canvas;->scale(FFFF)V
 
     .line 369
     invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
@@ -3254,17 +3252,17 @@
 
     int-to-float v1, v1
 
-    add-float/2addr v11, v1
+    add-float v7, v12, v1
 
-    invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v1
 
     int-to-float v1, v1
 
-    sub-float/2addr v10, v1
+    sub-float/2addr v11, v1
 
-    invoke-virtual {v8, v11, v10}, Landroid/graphics/Canvas;->translate(FF)V
+    invoke-virtual {v8, v7, v11}, Landroid/graphics/Canvas;->translate(FF)V
 
     .line 370
     iget-object v1, v0, Lorg/telegram/ui/ChatPullingDownDrawable;->counterDrawable:Lorg/telegram/ui/Components/CounterView$CounterDrawable;
@@ -3276,10 +3274,8 @@
 
     goto :goto_9
 
-    :cond_10
-    const/high16 v13, 0x3f800000    # 1.0f
-
     .line 374
+    :cond_10
     iget-object v1, v0, Lorg/telegram/ui/ChatPullingDownDrawable;->imageReceiver:Lorg/telegram/messenger/ImageReceiver;
 
     invoke-virtual {v1, v8}, Lorg/telegram/messenger/ImageReceiver;->draw(Landroid/graphics/Canvas;)Z
@@ -3287,7 +3283,7 @@
     goto :goto_9
 
     :cond_11
-    const/high16 v13, 0x3f800000    # 1.0f
+    const/high16 v10, 0x3f800000    # 1.0f
 
     .line 378
     :goto_9
@@ -3295,21 +3291,21 @@
 
     move-result-object v1
 
-    move/from16 v2, v18
+    move/from16 v2, v19
 
     invoke-virtual {v1, v2}, Landroid/graphics/Paint;->setAlpha(I)V
 
     .line 379
     sget-object v1, Lorg/telegram/ui/ActionBar/Theme;->chat_actionBackgroundGradientDarkenPaint:Landroid/graphics/Paint;
 
-    move/from16 v2, v16
+    move/from16 v2, v23
 
     invoke-virtual {v1, v2}, Landroid/graphics/Paint;->setAlpha(I)V
 
     .line 380
     iget-object v1, v0, Lorg/telegram/ui/ChatPullingDownDrawable;->textPaint:Landroid/text/TextPaint;
 
-    move/from16 v2, v23
+    move/from16 v2, v21
 
     invoke-virtual {v1, v2}, Landroid/text/TextPaint;->setAlpha(I)V
 
@@ -3321,7 +3317,7 @@
     .line 382
     iget-object v1, v0, Lorg/telegram/ui/ChatPullingDownDrawable;->imageReceiver:Lorg/telegram/messenger/ImageReceiver;
 
-    invoke-virtual {v1, v13}, Lorg/telegram/messenger/ImageReceiver;->setAlpha(F)V
+    invoke-virtual {v1, v10}, Lorg/telegram/messenger/ImageReceiver;->setAlpha(F)V
 
     return-void
 .end method
@@ -3443,7 +3439,7 @@
     .line 691
     iget v2, v0, Lorg/telegram/ui/ChatPullingDownDrawable;->progressToBottomPanel:F
 
-    mul-float v1, v1, v2
+    mul-float/2addr v1, v2
 
     float-to-int v1, v1
 
@@ -3490,11 +3486,11 @@
 
     sub-float v1, v11, v1
 
-    mul-float v5, v5, v1
+    mul-float/2addr v5, v1
 
     iget v1, v0, Lorg/telegram/ui/ChatPullingDownDrawable;->progressToBottomPanel:F
 
-    mul-float v5, v5, v1
+    mul-float/2addr v5, v1
 
     float-to-int v1, v5
 
@@ -3525,7 +3521,7 @@
 
     iget v5, v0, Lorg/telegram/ui/ChatPullingDownDrawable;->swipeToReleaseProgress:F
 
-    mul-float v4, v4, v5
+    mul-float/2addr v4, v5
 
     sub-float/2addr v1, v4
 
@@ -3570,11 +3566,11 @@
 
     int-to-float v5, v14
 
-    mul-float v5, v5, v1
+    mul-float/2addr v5, v1
 
     iget v1, v0, Lorg/telegram/ui/ChatPullingDownDrawable;->progressToBottomPanel:F
 
-    mul-float v5, v5, v1
+    mul-float/2addr v5, v1
 
     float-to-int v1, v5
 
@@ -3607,7 +3603,7 @@
 
     sub-float/2addr v11, v2
 
-    mul-float v1, v1, v11
+    mul-float/2addr v1, v11
 
     add-float/2addr v15, v1
 
@@ -4496,12 +4492,12 @@
 
     if-ne v7, v2, :cond_0
 
-    const/4 v7, 0x1
+    move v7, v2
 
     goto :goto_0
 
     :cond_0
-    const/4 v7, 0x0
+    move v7, v3
 
     :goto_0
     iput-boolean v7, p0, Lorg/telegram/ui/ChatPullingDownDrawable;->drawFolderBackground:Z

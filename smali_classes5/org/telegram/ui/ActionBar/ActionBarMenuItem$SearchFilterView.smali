@@ -332,7 +332,7 @@
 
     const v3, 0x3f51eb85    # 0.82f
 
-    mul-float v2, v2, v3
+    mul-float/2addr v2, v3
 
     invoke-virtual {v0, v2}, Landroid/widget/ImageView;->setScaleX(F)V
 
@@ -341,7 +341,7 @@
 
     iget v2, p0, Lorg/telegram/ui/ActionBar/ActionBarMenuItem$SearchFilterView;->selectedProgress:F
 
-    mul-float v2, v2, v3
+    mul-float/2addr v2, v3
 
     invoke-virtual {v0, v2}, Landroid/widget/ImageView;->setScaleY(F)V
 

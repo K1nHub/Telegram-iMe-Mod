@@ -1,6 +1,6 @@
 package com.smedialink.p031ui.wallet.crypto.create;
 
-import com.smedialink.p031ui.wallet.crypto.create.CreateWalletFragment;
+import com.smedialink.model.wallet.crypto.create.CreateWalletScreenType;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.Lambda;
@@ -27,7 +27,7 @@ public final class CreateWalletFragment$setupViewsContents$1$1 extends Lambda im
     /* renamed from: invoke  reason: avoid collision after fix types in other method */
     public final void invoke2() {
         CreateWalletFragment createWalletFragment = this.this$0;
-        CreateWalletFragment newInstance = CreateWalletFragment.Companion.newInstance(CreateWalletFragment.ScreenType.TooBad.INSTANCE);
+        CreateWalletFragment newInstance = CreateWalletFragment.Companion.newInstance(CreateWalletScreenType.TooBad.INSTANCE);
         newInstance.fragmentToRemove = this.this$0;
         createWalletFragment.presentFragment(newInstance);
     }

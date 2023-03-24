@@ -60,7 +60,10 @@ public class ScrollingTabContainerView extends HorizontalScrollView implements A
             this.mMaxTabWidth = -1;
         }
         int makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(this.mContentHeight, 1073741824);
-        if ((z2 || !this.mAllowCollapse) ? false : false) {
+        if (z2 || !this.mAllowCollapse) {
+            z = false;
+        }
+        if (z) {
             this.mTabLayout.measure(0, makeMeasureSpec);
             if (this.mTabLayout.getMeasuredWidth() > View.MeasureSpec.getSize(i)) {
                 performCollapse();

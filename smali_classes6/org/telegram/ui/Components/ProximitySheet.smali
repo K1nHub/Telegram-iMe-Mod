@@ -964,13 +964,13 @@
 
     move-result v3
 
+    cmpg-float v3, v0, v3
+
     const v4, 0x455ac000    # 3500.0f
 
     const/4 v5, 0x0
 
     const/4 v6, 0x1
-
-    cmpg-float v3, v0, v3
 
     if-gez v3, :cond_0
 
@@ -1004,12 +1004,12 @@
     if-ltz p1, :cond_2
 
     :cond_1
-    const/4 p1, 0x1
+    move p1, v6
 
     goto :goto_0
 
     :cond_2
-    const/4 p1, 0x0
+    move p1, v2
 
     :goto_0
     if-nez p1, :cond_3
@@ -1064,7 +1064,7 @@
 
     div-float/2addr v0, v1
 
-    mul-float v0, v0, p2
+    mul-float/2addr v0, p2
 
     float-to-int p2, v0
 
@@ -1610,7 +1610,7 @@
 
     sub-float v5, v1, v5
 
-    mul-float v5, v5, v4
+    mul-float/2addr v5, v4
 
     div-float/2addr v5, v1
 
@@ -1787,7 +1787,7 @@
 
     const v1, 0x3fcdfeda
 
-    mul-float v0, v0, v1
+    mul-float/2addr v0, v1
 
     :cond_4
     return v0
@@ -2591,7 +2591,7 @@
     if-eqz p1, :cond_11
 
     :cond_10
-    const/4 v1, 0x1
+    move v1, v2
 
     :cond_11
     return v1
@@ -2891,7 +2891,7 @@
 
     const/high16 v11, 0x3fc00000    # 1.5f
 
-    mul-float v10, v10, v11
+    mul-float/2addr v10, v11
 
     int-to-float v9, v9
 

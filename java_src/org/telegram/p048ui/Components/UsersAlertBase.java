@@ -29,7 +29,7 @@ import android.widget.TextView;
 import androidx.recyclerview.widget.RecyclerView;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3286R;
+import org.telegram.messenger.C3301R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.p048ui.ActionBar.AdjustPanLayoutHelper;
 import org.telegram.p048ui.ActionBar.BottomSheet;
@@ -110,7 +110,7 @@ public class UsersAlertBase extends BottomSheet {
         updateColorKeys();
         setDimBehindAlpha(75);
         this.currentAccount = i;
-        this.shadowDrawable = context.getResources().getDrawable(C3286R.C3288drawable.sheet_shadow_round).mutate();
+        this.shadowDrawable = context.getResources().getDrawable(C3301R.C3303drawable.sheet_shadow_round).mutate();
         ContainerView createContainerView = createContainerView(context);
         this.containerView = createContainerView;
         createContainerView.setWillNotDraw(false);
@@ -131,8 +131,8 @@ public class UsersAlertBase extends BottomSheet {
         StickerEmptyView stickerEmptyView = new StickerEmptyView(context, this.flickerLoadingView, 1);
         this.emptyView = stickerEmptyView;
         stickerEmptyView.addView(this.flickerLoadingView, 0, LayoutHelper.createFrame(-1, -1, 0, 0, 2, 0, 0));
-        this.emptyView.title.setText(LocaleController.getString("NoResult", C3286R.string.NoResult));
-        this.emptyView.subtitle.setText(LocaleController.getString("SearchEmptyViewFilteredSubtitle2", C3286R.string.SearchEmptyViewFilteredSubtitle2));
+        this.emptyView.title.setText(LocaleController.getString("NoResult", C3301R.string.NoResult));
+        this.emptyView.subtitle.setText(LocaleController.getString("SearchEmptyViewFilteredSubtitle2", C3301R.string.SearchEmptyViewFilteredSubtitle2));
         this.emptyView.setVisibility(8);
         this.emptyView.setAnimateLayoutChange(true);
         this.emptyView.showProgress(true, false);
@@ -224,7 +224,7 @@ public class UsersAlertBase extends BottomSheet {
             ImageView imageView = new ImageView(context);
             this.searchIconImageView = imageView;
             imageView.setScaleType(ImageView.ScaleType.CENTER);
-            imageView.setImageResource(C3286R.C3288drawable.smiles_inputsearch);
+            imageView.setImageResource(C3301R.C3303drawable.smiles_inputsearch);
             imageView.setColorFilter(new PorterDuffColorFilter(Theme.getColor(UsersAlertBase.this.keySearchPlaceholder), PorterDuff.Mode.MULTIPLY));
             addView(imageView, LayoutHelper.createFrame(36, 36, 51, 16, 11, 0, 0));
             ImageView imageView2 = new ImageView(context);
@@ -272,7 +272,7 @@ public class UsersAlertBase extends BottomSheet {
             this.searchEditText.setLines(1);
             this.searchEditText.setSingleLine(true);
             this.searchEditText.setImeOptions(268435459);
-            this.searchEditText.setHint(LocaleController.getString("VoipGroupSearchMembers", C3286R.string.VoipGroupSearchMembers));
+            this.searchEditText.setHint(LocaleController.getString("VoipGroupSearchMembers", C3301R.string.VoipGroupSearchMembers));
             this.searchEditText.setCursorColor(Theme.getColor(UsersAlertBase.this.keySearchText));
             this.searchEditText.setCursorSize(AndroidUtilities.m50dp(20));
             this.searchEditText.setCursorWidth(1.5f);
@@ -633,20 +633,55 @@ public class UsersAlertBase extends BottomSheet {
             super.requestLayout();
         }
 
-        /* JADX WARN: Removed duplicated region for block: B:15:0x00c3  */
-        /* JADX WARN: Removed duplicated region for block: B:18:0x0165  */
-        /* JADX WARN: Removed duplicated region for block: B:21:0x01a1  */
         @Override // android.view.View
-        /*
-            Code decompiled incorrectly, please refer to instructions dump.
-            To view partially-correct add '--show-bad-code' argument
-        */
-        protected void onDraw(android.graphics.Canvas r15) {
-            /*
-                Method dump skipped, instructions count: 425
-                To view this dump add '--comments-level debug' option
-            */
-            throw new UnsupportedOperationException("Method not decompiled: org.telegram.p048ui.Components.UsersAlertBase.ContainerView.onDraw(android.graphics.Canvas):void");
+        protected void onDraw(Canvas canvas) {
+            int i;
+            float f;
+            canvas.save();
+            UsersAlertBase usersAlertBase = UsersAlertBase.this;
+            int m50dp = (usersAlertBase.scrollOffsetY - ((BottomSheet) usersAlertBase).backgroundPaddingTop) + AndroidUtilities.m50dp(6);
+            UsersAlertBase usersAlertBase2 = UsersAlertBase.this;
+            int m50dp2 = (usersAlertBase2.scrollOffsetY - ((BottomSheet) usersAlertBase2).backgroundPaddingTop) - AndroidUtilities.m50dp(13);
+            int measuredHeight = getMeasuredHeight() + AndroidUtilities.m50dp(50) + ((BottomSheet) UsersAlertBase.this).backgroundPaddingTop;
+            if (Build.VERSION.SDK_INT >= 21) {
+                int i2 = AndroidUtilities.statusBarHeight;
+                m50dp2 += i2;
+                m50dp += i2;
+                measuredHeight -= i2;
+                float translationY = ((BottomSheet) UsersAlertBase.this).backgroundPaddingTop + m50dp2 + getTranslationY();
+                int i3 = AndroidUtilities.statusBarHeight;
+                if (translationY < i3 * 2) {
+                    int min = (int) Math.min(i3, (((i3 * 2) - m50dp2) - ((BottomSheet) UsersAlertBase.this).backgroundPaddingTop) - getTranslationY());
+                    m50dp2 -= min;
+                    measuredHeight += min;
+                    f = 1.0f - Math.min(1.0f, (min * 2) / AndroidUtilities.statusBarHeight);
+                } else {
+                    f = 1.0f;
+                }
+                float translationY2 = ((BottomSheet) UsersAlertBase.this).backgroundPaddingTop + m50dp2 + getTranslationY();
+                int i4 = AndroidUtilities.statusBarHeight;
+                i = translationY2 < ((float) i4) ? (int) Math.min(i4, ((i4 - m50dp2) - ((BottomSheet) UsersAlertBase.this).backgroundPaddingTop) - getTranslationY()) : 0;
+            } else {
+                i = 0;
+                f = 1.0f;
+            }
+            UsersAlertBase.this.shadowDrawable.setBounds(0, m50dp2, getMeasuredWidth(), measuredHeight);
+            UsersAlertBase.this.shadowDrawable.draw(canvas);
+            if (f != 1.0f) {
+                Theme.dialogs_onlineCirclePaint.setColor(UsersAlertBase.this.backgroundColor);
+                UsersAlertBase.this.rect.set(((BottomSheet) UsersAlertBase.this).backgroundPaddingLeft, ((BottomSheet) UsersAlertBase.this).backgroundPaddingTop + m50dp2, getMeasuredWidth() - ((BottomSheet) UsersAlertBase.this).backgroundPaddingLeft, ((BottomSheet) UsersAlertBase.this).backgroundPaddingTop + m50dp2 + AndroidUtilities.m50dp(24));
+                canvas.drawRoundRect(UsersAlertBase.this.rect, AndroidUtilities.m50dp(12) * f, AndroidUtilities.m50dp(12) * f, Theme.dialogs_onlineCirclePaint);
+            }
+            int m50dp3 = AndroidUtilities.m50dp(36);
+            UsersAlertBase.this.rect.set((getMeasuredWidth() - m50dp3) / 2, m50dp, (getMeasuredWidth() + m50dp3) / 2, m50dp + AndroidUtilities.m50dp(4));
+            Theme.dialogs_onlineCirclePaint.setColor(Theme.getColor(UsersAlertBase.this.keyScrollUp));
+            canvas.drawRoundRect(UsersAlertBase.this.rect, AndroidUtilities.m50dp(2), AndroidUtilities.m50dp(2), Theme.dialogs_onlineCirclePaint);
+            if (i > 0) {
+                Theme.dialogs_onlineCirclePaint.setColor(UsersAlertBase.this.backgroundColor);
+                canvas.drawRect(((BottomSheet) UsersAlertBase.this).backgroundPaddingLeft, (AndroidUtilities.statusBarHeight - i) - getTranslationY(), getMeasuredWidth() - ((BottomSheet) UsersAlertBase.this).backgroundPaddingLeft, AndroidUtilities.statusBarHeight - getTranslationY(), Theme.dialogs_onlineCirclePaint);
+            }
+            updateLightStatusBar(i > AndroidUtilities.statusBarHeight / 2);
+            canvas.restore();
         }
 
         private void updateLightStatusBar(boolean z) {

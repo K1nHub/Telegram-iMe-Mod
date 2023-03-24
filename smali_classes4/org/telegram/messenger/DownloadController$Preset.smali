@@ -220,12 +220,12 @@
 
     if-ne v0, v5, :cond_0
 
-    const/4 v0, 0x1
+    move v0, v5
 
     goto :goto_0
 
     :cond_0
-    const/4 v0, 0x0
+    move v0, v4
 
     :goto_0
     iput-boolean v0, p0, Lorg/telegram/messenger/DownloadController$Preset;->preloadVideo:Z
@@ -245,12 +245,12 @@
 
     if-ne v0, v5, :cond_1
 
-    const/4 v0, 0x1
+    move v0, v5
 
     goto :goto_1
 
     :cond_1
-    const/4 v0, 0x0
+    move v0, v4
 
     :goto_1
     iput-boolean v0, p0, Lorg/telegram/messenger/DownloadController$Preset;->preloadMusic:Z
@@ -270,12 +270,12 @@
 
     if-ne v0, v5, :cond_2
 
-    const/4 v0, 0x1
+    move v0, v5
 
     goto :goto_2
 
     :cond_2
-    const/4 v0, 0x0
+    move v0, v4
 
     :goto_2
     iput-boolean v0, p0, Lorg/telegram/messenger/DownloadController$Preset;->enabled:Z
@@ -300,7 +300,7 @@
 
     if-ne v0, v5, :cond_3
 
-    const/4 v4, 0x1
+    move v4, v5
 
     :cond_3
     iput-boolean v4, p0, Lorg/telegram/messenger/DownloadController$Preset;->lessCallData:Z
@@ -328,7 +328,7 @@
 
     if-ne v3, v5, :cond_5
 
-    const/4 v4, 0x1
+    move v4, v5
 
     :cond_5
     iput-boolean v4, p0, Lorg/telegram/messenger/DownloadController$Preset;->lessCallData:Z
@@ -451,7 +451,7 @@
 
 # virtual methods
 .method public equals(Lorg/telegram/messenger/DownloadController$Preset;)Z
-    .locals 11
+    .locals 10
 
     .line 190
     iget-object v0, p0, Lorg/telegram/messenger/DownloadController$Preset;->mask:[I
@@ -498,17 +498,17 @@
 
     aget-wide v8, v3, v1
 
-    cmp-long v10, v6, v8
+    cmp-long v6, v6, v8
 
-    if-nez v10, :cond_0
+    if-nez v6, :cond_0
 
     aget-wide v6, v0, v5
 
     aget-wide v8, v3, v5
 
-    cmp-long v10, v6, v8
+    cmp-long v6, v6, v8
 
-    if-nez v10, :cond_0
+    if-nez v6, :cond_0
 
     aget-wide v6, v0, v2
 
@@ -544,7 +544,7 @@
 
     if-ne v0, p1, :cond_0
 
-    const/4 v1, 0x1
+    move v1, v5
 
     :cond_0
     return v1
@@ -555,7 +555,7 @@
 
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    move v1, v0
 
     .line 204
     :goto_0
@@ -630,7 +630,7 @@
 .end method
 
 .method public set(Lorg/telegram/tgnet/TLRPC$TL_autoDownloadSettings;)V
-    .locals 8
+    .locals 7
 
     .line 149
     iget-boolean v0, p1, Lorg/telegram/tgnet/TLRPC$TL_autoDownloadSettings;->audio_preload_next:Z
@@ -737,9 +737,9 @@
 
     const-wide/16 v4, 0x0
 
-    cmp-long v7, v1, v4
+    cmp-long v1, v1, v4
 
-    if-eqz v7, :cond_1
+    if-eqz v1, :cond_1
 
     iget-boolean v1, p1, Lorg/telegram/tgnet/TLRPC$TL_autoDownloadSettings;->disabled:Z
 
@@ -766,9 +766,9 @@
     :goto_2
     iget-wide v1, p1, Lorg/telegram/tgnet/TLRPC$TL_autoDownloadSettings;->file_size_max:J
 
-    cmp-long v7, v1, v4
+    cmp-long v1, v1, v4
 
-    if-eqz v7, :cond_2
+    if-eqz v1, :cond_2
 
     iget-boolean v1, p1, Lorg/telegram/tgnet/TLRPC$TL_autoDownloadSettings;->disabled:Z
 

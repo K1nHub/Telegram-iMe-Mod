@@ -300,9 +300,9 @@
 
     const-wide v0, 0x7fffffffffffffffL
 
-    cmp-long v3, p4, v0
+    cmp-long v0, p4, v0
 
-    if-eqz v3, :cond_0
+    if-eqz v0, :cond_0
 
     .line 5997
     iget-object v1, p0, Landroidx/recyclerview/widget/RecyclerView$Recycler;->mRecyclerPool:Landroidx/recyclerview/widget/RecyclerView$RecycledViewPool;
@@ -446,7 +446,7 @@
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_0
     if-ge v2, v0, :cond_0
@@ -475,7 +475,7 @@
 
     move-result v0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_1
     if-ge v2, v0, :cond_1
@@ -697,7 +697,7 @@
     :cond_0
     const/4 v2, 0x0
 
-    const/4 v3, 0x0
+    move v3, v2
 
     :goto_0
     const/16 v4, 0x20
@@ -874,7 +874,7 @@
 .end method
 
 .method getScrapOrCachedViewForId(JIZ)Landroidx/recyclerview/widget/RecyclerView$ViewHolder;
-    .locals 6
+    .locals 5
 
     .line 6691
     iget-object v0, p0, Landroidx/recyclerview/widget/RecyclerView$Recycler;->mAttachedScrap:Ljava/util/ArrayList;
@@ -902,9 +902,9 @@
 
     move-result-wide v2
 
-    cmp-long v4, v2, p1
+    cmp-long v2, v2, p1
 
-    if-nez v4, :cond_2
+    if-nez v2, :cond_2
 
     invoke-virtual {v1}, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->wasReturnedFromScrap()Z
 
@@ -1008,9 +1008,9 @@
 
     move-result-wide v3
 
-    cmp-long v5, v3, p1
+    cmp-long v3, v3, p1
 
-    if-nez v5, :cond_6
+    if-nez v3, :cond_6
 
     invoke-virtual {v2}, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->isAttachedToTransitionOverlay()Z
 
@@ -1064,7 +1064,7 @@
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_0
     if-ge v2, v0, :cond_2
@@ -1505,7 +1505,7 @@
 
     const/4 v4, 0x0
 
-    const/4 v5, 0x0
+    move v5, v4
 
     :goto_1
     if-ge v5, v3, :cond_4
@@ -1862,12 +1862,12 @@
 
     if-eqz v3, :cond_1
 
-    const/4 v3, 0x1
+    move v3, v2
 
     goto :goto_0
 
     :cond_1
-    const/4 v3, 0x0
+    move v3, v1
 
     :goto_0
     if-nez v3, :cond_3
@@ -1879,17 +1879,16 @@
 
     if-eqz v3, :cond_2
 
-    goto :goto_2
+    goto :goto_1
 
     :cond_2
-    :goto_1
-    const/4 v2, 0x0
+    move v2, v1
 
     goto :goto_6
 
     .line 6447
     :cond_3
-    :goto_2
+    :goto_1
     iget v3, p0, Landroidx/recyclerview/widget/RecyclerView$Recycler;->mViewCacheMax:I
 
     if-lez v3, :cond_8
@@ -1945,7 +1944,7 @@
 
     add-int/lit8 v3, v3, -0x1
 
-    :goto_3
+    :goto_2
     if-ltz v3, :cond_6
 
     .line 6466
@@ -1970,15 +1969,15 @@
 
     if-nez v4, :cond_5
 
-    goto :goto_4
+    goto :goto_3
 
     :cond_5
     add-int/lit8 v3, v3, -0x1
 
-    goto :goto_3
+    goto :goto_2
 
     :cond_6
-    :goto_4
+    :goto_3
     add-int/2addr v3, v2
 
     .line 6474
@@ -1987,27 +1986,26 @@
 
     invoke-virtual {v4, v3, p1}, Ljava/util/ArrayList;->add(ILjava/lang/Object;)V
 
-    const/4 v3, 0x1
+    move v3, v2
 
-    goto :goto_5
+    goto :goto_4
 
     :cond_8
-    const/4 v3, 0x0
+    move v3, v1
 
-    :goto_5
+    :goto_4
     if-nez v3, :cond_9
 
     .line 6478
     invoke-virtual {p0, p1, v2}, Landroidx/recyclerview/widget/RecyclerView$Recycler;->addViewHolderToRecycledViewPool(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;Z)V
 
-    move v1, v3
-
-    goto :goto_6
+    goto :goto_5
 
     :cond_9
-    move v1, v3
+    move v2, v1
 
-    goto :goto_1
+    :goto_5
+    move v1, v3
 
     .line 6496
     :goto_6
@@ -2124,7 +2122,7 @@
 
     if-eqz p1, :cond_e
 
-    const/4 v1, 0x1
+    move v1, v2
 
     :cond_e
     invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
@@ -2377,7 +2375,7 @@
 
     if-eqz v1, :cond_1
 
-    const/4 v4, 0x1
+    move v4, v7
 
     goto :goto_0
 
@@ -2385,7 +2383,7 @@
     move-object v1, v2
 
     :cond_1
-    const/4 v4, 0x0
+    move v4, v8
 
     :goto_0
     if-nez v1, :cond_6
@@ -2452,7 +2450,7 @@
     goto :goto_2
 
     :cond_5
-    const/4 v4, 0x1
+    move v4, v7
 
     :cond_6
     :goto_2
@@ -2518,7 +2516,7 @@
     .line 6183
     iput v5, v1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->mPosition:I
 
-    const/4 v4, 0x1
+    move v4, v7
 
     :cond_7
     if-nez v1, :cond_9
@@ -2799,7 +2797,7 @@
 
     :cond_10
     :goto_4
-    const/4 v0, 0x0
+    move v0, v8
 
     goto :goto_6
 
@@ -2894,7 +2892,7 @@
     goto :goto_8
 
     :cond_14
-    const/4 v7, 0x0
+    move v7, v8
 
     .line 6284
     :goto_8
@@ -3155,7 +3153,7 @@
 
     if-nez p1, :cond_2
 
-    const/4 v1, 0x1
+    move v1, v2
 
     :cond_2
     return v1

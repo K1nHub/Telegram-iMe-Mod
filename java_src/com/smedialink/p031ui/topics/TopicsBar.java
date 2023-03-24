@@ -193,15 +193,15 @@ public final class TopicsBar extends FrameLayout {
             float r3 = r6.editingAnimationProgress
             int r3 = (r3 > r2 ? 1 : (r3 == r2 ? 0 : -1))
             if (r3 != 0) goto L2d
-            r3 = 1
+            r3 = r9
             goto L2e
         L2d:
-            r3 = 0
+            r3 = r10
         L2e:
             if (r3 != 0) goto L31
             goto L33
         L31:
-            r9 = 0
+            r9 = r10
             goto L80
         L33:
             boolean r3 = r6.editingForwardAnimation
@@ -210,10 +210,10 @@ public final class TopicsBar extends FrameLayout {
             float r3 = r6.editingAnimationProgress
             int r5 = (r3 > r2 ? 1 : (r3 == r2 ? 0 : -1))
             if (r5 > 0) goto L41
-            r5 = 1
+            r5 = r9
             goto L42
         L41:
-            r5 = 0
+            r5 = r10
         L42:
             float r0 = (float) r0
             float r0 = r0 / r4
@@ -236,7 +236,7 @@ public final class TopicsBar extends FrameLayout {
             float r3 = r6.editingAnimationProgress
             int r5 = (r3 > r2 ? 1 : (r3 == r2 ? 0 : -1))
             if (r5 < 0) goto L65
-            r10 = 1
+            r10 = r9
         L65:
             float r0 = (float) r0
             float r0 = r0 / r4

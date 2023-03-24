@@ -11,11 +11,11 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.Executor;
 import java.util.concurrent.ScheduledExecutorService;
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public abstract class NameResolver {
 
     @Deprecated
-    /* loaded from: classes3.dex */
+    /* loaded from: classes.dex */
     public static abstract class Helper {
         public abstract int getDefaultPort();
 
@@ -26,14 +26,14 @@ public abstract class NameResolver {
         public abstract ConfigOrError parseServiceConfig(Map<String, ?> map);
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes.dex */
     public interface Listener {
         void onAddresses(List<EquivalentAddressGroup> list, Attributes attributes);
 
         void onError(Status status);
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes.dex */
     public static abstract class ServiceConfigParser {
         public abstract ConfigOrError parseServiceConfig(Map<String, ?> map);
     }
@@ -67,7 +67,7 @@ public abstract class NameResolver {
         start((Listener) listener2);
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes.dex */
     public static abstract class Factory {
         @Deprecated
         public static final Attributes.Key<Integer> PARAMS_DEFAULT_PORT = Attributes.Key.create("params-default-port");
@@ -120,7 +120,7 @@ public abstract class NameResolver {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes.dex */
     public static abstract class Listener2 implements Listener {
         @Override // io.grpc.NameResolver.Listener
         public abstract void onError(Status status);
@@ -134,7 +134,7 @@ public abstract class NameResolver {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes.dex */
     public static final class Args {
         private final ChannelLogger channelLogger;
         private final int defaultPort;
@@ -182,7 +182,7 @@ public abstract class NameResolver {
             return new Builder();
         }
 
-        /* loaded from: classes3.dex */
+        /* loaded from: classes.dex */
         public static final class Builder {
             private ChannelLogger channelLogger;
             private Integer defaultPort;
@@ -236,7 +236,7 @@ public abstract class NameResolver {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes.dex */
     public static final class ResolutionResult {
         private final List<EquivalentAddressGroup> addresses;
         private final Attributes attributes;
@@ -280,7 +280,7 @@ public abstract class NameResolver {
             return Objects.hashCode(this.addresses, this.attributes, this.serviceConfig);
         }
 
-        /* loaded from: classes3.dex */
+        /* loaded from: classes.dex */
         public static final class Builder {
             private List<EquivalentAddressGroup> addresses = Collections.emptyList();
             private Attributes attributes = Attributes.EMPTY;
@@ -310,7 +310,7 @@ public abstract class NameResolver {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes.dex */
     public static final class ConfigOrError {
         private final Object config;
         private final Status status;

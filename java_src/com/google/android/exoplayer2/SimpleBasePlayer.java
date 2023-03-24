@@ -2034,6 +2034,7 @@ public abstract class SimpleBasePlayer extends BasePlayer {
     }
 
     private void updateStateAndInformListeners(final State state, boolean z, boolean z2) {
+        int i;
         State state2 = this.state;
         this.state = state;
         if (state.hasPositionDiscontinuity || state.newlyRenderedFirstFrame) {
@@ -2066,8 +2067,11 @@ public abstract class SimpleBasePlayer extends BasePlayer {
                     SimpleBasePlayer.lambda$updateStateAndInformListeners$26(positionDiscontinuityReason, positionInfo, positionInfo2, (Player.Listener) obj);
                 }
             });
+            i = -1;
+        } else {
+            i = -1;
         }
-        if (mediaItemTransitionReason != -1) {
+        if (mediaItemTransitionReason != i) {
             final MediaItem mediaItem = state.timeline.isEmpty() ? null : state.playlist.get(getCurrentMediaItemIndexInternal(state)).mediaItem;
             this.listeners.queueEvent(1, new ListenerSet.Event() { // from class: com.google.android.exoplayer2.SimpleBasePlayer$$ExternalSyntheticLambda1
                 @Override // com.google.android.exoplayer2.util.ListenerSet.Event
@@ -2557,7 +2561,9 @@ public abstract class SimpleBasePlayer extends BasePlayer {
             }
             Object obj = list.get(i).uid;
             Object obj2 = list2.get(i).uid;
-            z = (!(obj instanceof PlaceholderUid) || (obj2 instanceof PlaceholderUid)) ? false : false;
+            if (!(obj instanceof PlaceholderUid) || (obj2 instanceof PlaceholderUid)) {
+                z = false;
+            }
             if (!obj.equals(obj2) && !z) {
                 return 0;
             }
@@ -2619,17 +2625,17 @@ public abstract class SimpleBasePlayer extends BasePlayer {
     }
 
     private static Player.PositionInfo getPositionInfo(State state, boolean z, Timeline.Window window, Timeline.Period period) {
+        int i;
         MediaItem mediaItem;
         Object obj;
-        int i;
         long j;
         long j2;
         int currentMediaItemIndexInternal = getCurrentMediaItemIndexInternal(state);
         Object obj2 = null;
         if (state.timeline.isEmpty()) {
+            i = -1;
             mediaItem = null;
             obj = null;
-            i = -1;
         } else {
             int currentPeriodIndexInternal = getCurrentPeriodIndexInternal(state, window, period);
             Object obj3 = state.timeline.getPeriod(currentPeriodIndexInternal, period, true).uid;

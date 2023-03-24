@@ -57,7 +57,7 @@
 
     const/4 v3, 0x0
 
-    const/4 v4, 0x0
+    move v4, v3
 
     :goto_0
     const/high16 v5, 0x4c000000    # 3.3554432E7f
@@ -298,7 +298,7 @@
 
     sub-float/2addr v3, p2
 
-    mul-float v0, v0, v3
+    mul-float/2addr v0, v3
 
     add-float/2addr v0, v2
 
@@ -311,7 +311,7 @@
 
     int-to-float v4, v4
 
-    mul-float v4, v4, v3
+    mul-float/2addr v4, v3
 
     invoke-virtual {p0, v4}, Landroid/view/View;->setTranslationY(F)V
 
@@ -333,7 +333,7 @@
 
     int-to-float p0, p0
 
-    mul-float p0, p0, p2
+    mul-float/2addr p0, p2
 
     invoke-virtual {p1, p0}, Landroid/view/View;->setTranslationY(F)V
 
@@ -594,7 +594,7 @@
 
     if-eqz p2, :cond_1
 
-    const/4 p3, 0x0
+    move p3, v1
 
     :cond_1
     if-nez p3, :cond_3
@@ -888,7 +888,7 @@
 
     if-eqz v0, :cond_0
 
-    const/4 p1, 0x0
+    move p1, v1
 
     .line 135
     :cond_0

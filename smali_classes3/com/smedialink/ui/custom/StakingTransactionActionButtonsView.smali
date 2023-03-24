@@ -365,12 +365,12 @@
 
     if-eqz p3, :cond_0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     goto :goto_0
 
     :cond_0
-    const/16 v2, 0x8
+    move v2, p4
 
     .line 262
     :goto_0
@@ -400,12 +400,12 @@
     goto :goto_1
 
     :cond_1
-    const/4 p2, 0x0
+    move p2, v1
 
     :goto_1
     if-eqz p2, :cond_2
 
-    const/4 p4, 0x0
+    move p4, v1
 
     .line 262
     :cond_2

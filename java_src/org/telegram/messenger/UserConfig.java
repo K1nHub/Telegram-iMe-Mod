@@ -98,11 +98,11 @@ public class UserConfig extends BaseController {
     }
 
     private void updateUserId() {
-        if (this.clientUserId == this.currentUser.f1639id) {
+        if (this.clientUserId == this.currentUser.f1640id) {
             return;
         }
         synchronized (this.sync) {
-            this.clientUserId = this.currentUser.f1639id;
+            this.clientUserId = this.currentUser.f1640id;
             this.cryptoAccessManager.getValue().onUserChanged();
             Utilities.stageQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.UserConfig$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
@@ -311,7 +311,7 @@ public class UserConfig extends BaseController {
         long j;
         synchronized (this.sync) {
             TLRPC$User tLRPC$User = this.currentUser;
-            j = tLRPC$User != null ? tLRPC$User.f1639id : 0L;
+            j = tLRPC$User != null ? tLRPC$User.f1640id : 0L;
         }
         return j;
     }

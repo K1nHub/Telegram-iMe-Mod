@@ -87,7 +87,7 @@
     goto :goto_0
 
     :cond_0
-    const/4 p0, 0x0
+    move p0, v3
 
     :goto_0
     invoke-static {}, Lorg/bouncycastle/math/raw/Nat256;->createExt()[I

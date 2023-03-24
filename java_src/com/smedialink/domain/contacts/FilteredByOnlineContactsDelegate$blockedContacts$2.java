@@ -26,10 +26,10 @@ public final class FilteredByOnlineContactsDelegate$blockedContacts$2 extends La
     */
     public final java.util.ArrayList<org.telegram.tgnet.TLRPC$TL_contact> invoke() {
         /*
-            r10 = this;
-            com.smedialink.domain.contacts.FilteredByOnlineContactsDelegate r0 = r10.this$0
+            r9 = this;
+            com.smedialink.domain.contacts.FilteredByOnlineContactsDelegate r0 = r9.this$0
             java.util.ArrayList r0 = com.smedialink.domain.contacts.FilteredByOnlineContactsDelegate.access$getContacts$p(r0)
-            com.smedialink.domain.contacts.FilteredByOnlineContactsDelegate r1 = r10.this$0
+            com.smedialink.domain.contacts.FilteredByOnlineContactsDelegate r1 = r9.this$0
             java.util.ArrayList r2 = new java.util.ArrayList
             r2.<init>()
             java.util.Iterator r0 = r0.iterator()
@@ -41,8 +41,8 @@ public final class FilteredByOnlineContactsDelegate$blockedContacts$2 extends La
             org.telegram.tgnet.TLRPC$TL_contact r4 = (org.telegram.tgnet.TLRPC$TL_contact) r4
             long r5 = r4.user_id
             long r7 = com.smedialink.domain.contacts.FilteredByOnlineContactsDelegate.access$getSelfId$p(r1)
-            int r9 = (r5 > r7 ? 1 : (r5 == r7 ? 0 : -1))
-            if (r9 == 0) goto L30
+            int r5 = (r5 > r7 ? 1 : (r5 == r7 ? 0 : -1))
+            if (r5 == 0) goto L30
             boolean r4 = com.smedialink.domain.contacts.FilteredByOnlineContactsDelegate.access$userIsBlocked(r1, r4)
             if (r4 == 0) goto L30
             r4 = 1

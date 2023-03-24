@@ -164,7 +164,7 @@ public class MnemonicUtils {
     private static byte readByte(BitSet bitSet, int i) {
         byte b = 0;
         for (int i2 = 0; i2 < 8; i2++) {
-            if (bitSet.get((i * 8) + i2)) {
+            if (bitSet.get((8 * i) + i2)) {
                 b = (byte) (b | (1 << (7 - i2)));
             }
         }

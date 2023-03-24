@@ -490,17 +490,17 @@
 
     const-wide/16 v4, 0x0
 
-    cmp-long v6, v2, v4
+    cmp-long v4, v2, v4
 
-    if-eqz v6, :cond_0
+    if-eqz v4, :cond_0
 
     const-wide/16 v4, 0x64
 
     sub-long v4, v0, v4
 
-    cmp-long v6, v2, v4
+    cmp-long v2, v2, v4
 
-    if-gez v6, :cond_1
+    if-gez v2, :cond_1
 
     .line 509
     :cond_0
@@ -765,7 +765,7 @@
 
     :cond_5
     :goto_1
-    const/4 v4, 0x0
+    move v4, v2
 
     goto :goto_2
 
@@ -819,7 +819,7 @@
     goto :goto_1
 
     :cond_9
-    const/4 v4, 0x1
+    move v4, v1
 
     .line 572
     :goto_2
@@ -883,9 +883,9 @@
 
     const-wide/16 v5, 0x0
 
-    cmp-long v7, v3, v5
+    cmp-long v3, v3, v5
 
-    if-nez v7, :cond_c
+    if-nez v3, :cond_c
 
     iget-object v3, p0, Lorg/telegram/messenger/ImageLoader$HttpImageTask;->httpConnection:Ljava/net/HttpURLConnection;
 
@@ -958,7 +958,7 @@
     :try_start_4
     new-array v3, v3, [B
 
-    const/4 v4, 0x0
+    move v4, v2
 
     .line 609
     :cond_d
@@ -1030,24 +1030,28 @@
     :catchall_2
     move-exception v2
 
-    move-object v1, v2
+    move-object v11, v2
 
-    const/4 v2, 0x1
+    move v2, v1
+
+    move-object v1, v11
 
     goto :goto_a
 
     :catch_2
     move-exception v2
 
-    move-object v1, v2
+    move-object v11, v2
 
-    const/4 v2, 0x1
+    move v2, v1
+
+    move-object v1, v11
 
     goto :goto_8
 
     :cond_10
     :goto_7
-    const/4 v1, 0x0
+    move v1, v2
 
     goto :goto_9
 
@@ -1061,7 +1065,7 @@
     :try_end_7
     .catchall {:try_start_7 .. :try_end_7} :catchall_3
 
-    move v1, v2
+    goto :goto_7
 
     :cond_11
     :goto_9
@@ -1113,13 +1117,8 @@
     :try_end_9
     .catchall {:try_start_9 .. :try_end_9} :catchall_5
 
-    goto :goto_d
-
     :catchall_5
-    nop
-
     :cond_14
-    :goto_d
     if-eqz p1, :cond_15
 
     .line 657
@@ -1128,7 +1127,7 @@
     :try_end_a
     .catchall {:try_start_a .. :try_end_a} :catchall_6
 
-    goto :goto_e
+    goto :goto_d
 
     :catchall_6
     move-exception p1
@@ -1137,7 +1136,7 @@
     invoke-static {p1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :cond_15
-    :goto_e
+    :goto_d
     if-eqz v2, :cond_16
 
     .line 664

@@ -6,6 +6,9 @@ import com.smedialink.storage.domain.model.crypto.BlockchainType;
 import com.smedialink.storage.domain.model.crypto.NetworkType;
 import com.smedialink.storage.domain.model.crypto.Wallet;
 import com.smedialink.storage.domain.storage.CryptoPreferenceHelper;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
@@ -41,15 +44,26 @@ public final class CryptoAccessManagerImpl implements CryptoAccessManager {
 
     @Override // com.smedialink.storage.domain.manager.crypto.CryptoAccessManager
     public Wallet getWallet(BlockchainType blockchainType) {
-        Intrinsics.checkNotNullParameter(blockchainType, "blockchainType");
+        if (blockchainType == null) {
+            return null;
+        }
         return this.wallets.get(blockchainType);
     }
 
     @Override // com.smedialink.storage.domain.manager.crypto.CryptoAccessManager
     public Wallet.EVM getEVMWallet() {
-        Wallet wallet = this.wallets.get(BlockchainType.EVM);
-        if (wallet instanceof Wallet.EVM) {
-            return (Wallet.EVM) wallet;
+        Wallet wallet2 = this.wallets.get(BlockchainType.EVM);
+        if (wallet2 instanceof Wallet.EVM) {
+            return (Wallet.EVM) wallet2;
+        }
+        return null;
+    }
+
+    @Override // com.smedialink.storage.domain.manager.crypto.CryptoAccessManager
+    public Wallet.TRON getTRONWallet() {
+        Wallet wallet2 = this.wallets.get(BlockchainType.TRON);
+        if (wallet2 instanceof Wallet.TRON) {
+            return (Wallet.TRON) wallet2;
         }
         return null;
     }
@@ -62,10 +76,39 @@ public final class CryptoAccessManagerImpl implements CryptoAccessManager {
     }
 
     @Override // com.smedialink.storage.domain.manager.crypto.CryptoAccessManager
-    public void setWallet(Wallet wallet, String password) {
-        Intrinsics.checkNotNullParameter(wallet, "wallet");
+    public BlockchainType getFirstBip39PhraseBasedBlockchainType() {
+        Object obj;
+        Iterator<T> it = this.wallets.keySet().iterator();
+        while (true) {
+            if (!it.hasNext()) {
+                obj = null;
+                break;
+            }
+            obj = it.next();
+            if (((BlockchainType) obj).isBip39PhraseBased()) {
+                break;
+            }
+        }
+        return (BlockchainType) obj;
+    }
+
+    @Override // com.smedialink.storage.domain.manager.crypto.CryptoAccessManager
+    public List<BlockchainType> getUnactivatedBip39PhraseBasedBlockchainTypes() {
+        List<BlockchainType> bip39PhraseBasedBlockchains = BlockchainType.Companion.getBip39PhraseBasedBlockchains();
+        ArrayList arrayList = new ArrayList();
+        for (Object obj : bip39PhraseBasedBlockchains) {
+            if (!this.wallets.keySet().contains((BlockchainType) obj)) {
+                arrayList.add(obj);
+            }
+        }
+        return arrayList;
+    }
+
+    @Override // com.smedialink.storage.domain.manager.crypto.CryptoAccessManager
+    public void setWallet(Wallet wallet2, String password) {
+        Intrinsics.checkNotNullParameter(wallet2, "wallet");
         Intrinsics.checkNotNullParameter(password, "password");
-        this.wallets.put(wallet.getBlockchainType(), wallet);
+        this.wallets.put(wallet2.getBlockchainType(), wallet2);
         this.walletPassword = password;
     }
 
@@ -116,8 +159,8 @@ public final class CryptoAccessManagerImpl implements CryptoAccessManager {
         Intrinsics.checkNotNullParameter(blockchainType, "blockchainType");
         if (!this.wallets.isEmpty()) {
             if (getLastLoggedInGuid().length() > 0) {
-                Wallet wallet = this.wallets.get(blockchainType);
-                if (Intrinsics.areEqual(wallet != null ? wallet.getGuid() : null, getLastLoggedInGuid())) {
+                Wallet wallet2 = this.wallets.get(blockchainType);
+                if (Intrinsics.areEqual(wallet2 != null ? wallet2.getGuid() : null, getLastLoggedInGuid())) {
                     if (this.walletPassword.length() > 0) {
                         return true;
                     }
@@ -146,6 +189,35 @@ public final class CryptoAccessManagerImpl implements CryptoAccessManager {
     @Override // com.smedialink.storage.domain.manager.crypto.CryptoAccessManager
     public boolean isAnyWalletCreated() {
         return getLastLoggedInGuid().length() > 0;
+    }
+
+    @Override // com.smedialink.storage.domain.manager.crypto.CryptoAccessManager
+    public boolean isAnyBip39PhraseBasedWalletCreated() {
+        boolean z;
+        boolean z2;
+        if (isAnyWalletCreated()) {
+            List<BlockchainType> bip39PhraseBasedBlockchains = BlockchainType.Companion.getBip39PhraseBasedBlockchains();
+            if (!(bip39PhraseBasedBlockchains instanceof Collection) || !bip39PhraseBasedBlockchains.isEmpty()) {
+                for (BlockchainType blockchainType : bip39PhraseBasedBlockchains) {
+                    if (this.wallets.get(blockchainType) != null) {
+                        z = true;
+                        continue;
+                    } else {
+                        z = false;
+                        continue;
+                    }
+                    if (z) {
+                        z2 = true;
+                        break;
+                    }
+                }
+            }
+            z2 = false;
+            if (z2) {
+                return true;
+            }
+        }
+        return false;
     }
 
     @Override // com.smedialink.storage.domain.manager.crypto.CryptoAccessManager

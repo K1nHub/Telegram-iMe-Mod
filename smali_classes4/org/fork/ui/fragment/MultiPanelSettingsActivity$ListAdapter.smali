@@ -71,7 +71,7 @@
 
     sget p1, Lcom/smedialink/common/IdFabric$ViewTypes;->TOPICS_BAR:I
 
-    goto :goto_8
+    goto/16 :goto_8
 
     .line 277
     :cond_0
@@ -88,7 +88,7 @@
     if-ne p1, v0, :cond_1
 
     :goto_0
-    const/4 v0, 0x1
+    move v0, v2
 
     goto :goto_1
 
@@ -104,13 +104,13 @@
     goto :goto_0
 
     :cond_2
-    const/4 v0, 0x0
+    move v0, v1
 
     :goto_1
     if-eqz v0, :cond_3
 
     :goto_2
-    const/4 v0, 0x1
+    move v0, v2
 
     goto :goto_3
 
@@ -126,7 +126,7 @@
     goto :goto_2
 
     :cond_4
-    const/4 v0, 0x0
+    move v0, v1
 
     :goto_3
     if-eqz v0, :cond_5
@@ -146,7 +146,7 @@
     if-ne p1, v0, :cond_6
 
     :goto_4
-    const/4 v0, 0x1
+    move v0, v2
 
     goto :goto_5
 
@@ -162,13 +162,13 @@
     goto :goto_4
 
     :cond_7
-    const/4 v0, 0x0
+    move v0, v1
 
     :goto_5
     if-eqz v0, :cond_8
 
     :goto_6
-    const/4 v1, 0x1
+    move v1, v2
 
     goto :goto_7
 

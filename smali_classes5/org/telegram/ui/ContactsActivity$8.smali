@@ -144,7 +144,7 @@
     goto :goto_0
 
     :cond_0
-    const/4 p1, 0x0
+    move p1, p3
 
     .line 1071
     :goto_0
@@ -176,12 +176,12 @@
 
     if-ge p1, v2, :cond_1
 
-    const/4 v2, 0x1
+    move v2, v1
 
     goto :goto_1
 
     :cond_1
-    const/4 v2, 0x0
+    move v2, p3
 
     .line 1074
     :goto_1
@@ -203,13 +203,13 @@
 
     if-le p2, v0, :cond_3
 
-    const/4 p3, 0x1
+    move p3, v1
 
     :cond_3
     move v2, p3
 
     :goto_2
-    const/4 p3, 0x1
+    move p3, v1
 
     :cond_4
     if-eqz p3, :cond_6

@@ -141,12 +141,12 @@
 
     if-eq v0, v1, :cond_0
 
-    const/4 v0, 0x1
+    move v0, v3
 
     goto :goto_0
 
     :cond_0
-    const/4 v0, 0x0
+    move v0, v2
 
     :goto_0
     invoke-static {v0}, Lcom/google/common/base/Preconditions;->checkState(Z)V

@@ -198,7 +198,7 @@
 
     iget v3, p0, Landroidx/swiperefreshlayout/widget/CircularProgressDrawable$Ring;->mArrowScale:F
 
-    mul-float v1, v1, v3
+    mul-float/2addr v1, v3
 
     div-float/2addr v1, v2
 
@@ -261,14 +261,14 @@
 
     const/high16 v1, 0x43b40000    # 360.0f
 
-    mul-float p2, p2, v1
+    mul-float/2addr p2, v1
 
     .line 708
     iget v3, p0, Landroidx/swiperefreshlayout/widget/CircularProgressDrawable$Ring;->mEndTrim:F
 
     add-float/2addr v3, v0
 
-    mul-float v3, v3, v1
+    mul-float/2addr v3, v1
 
     sub-float v7, v3, p2
 
@@ -395,7 +395,7 @@
 
     iget v3, p0, Landroidx/swiperefreshlayout/widget/CircularProgressDrawable$Ring;->mArrowScale:F
 
-    mul-float v2, v2, v3
+    mul-float/2addr v2, v3
 
     div-float/2addr v2, v1
 
@@ -415,7 +415,7 @@
 
     iget v6, p0, Landroidx/swiperefreshlayout/widget/CircularProgressDrawable$Ring;->mArrowScale:F
 
-    mul-float v5, v5, v6
+    mul-float/2addr v5, v6
 
     invoke-virtual {v3, v5, v4}, Landroid/graphics/Path;->lineTo(FF)V
 
@@ -428,7 +428,7 @@
 
     iget v5, p0, Landroidx/swiperefreshlayout/widget/CircularProgressDrawable$Ring;->mArrowScale:F
 
-    mul-float v4, v4, v5
+    mul-float/2addr v4, v5
 
     div-float/2addr v4, v1
 
@@ -436,7 +436,7 @@
 
     int-to-float v6, v6
 
-    mul-float v6, v6, v5
+    mul-float/2addr v6, v5
 
     invoke-virtual {v3, v4, v6}, Landroid/graphics/Path;->lineTo(FF)V
 

@@ -571,12 +571,12 @@
 
     if-eqz v7, :cond_4
 
-    const/4 v15, 0x3
+    move v15, v5
 
     goto :goto_0
 
     :cond_4
-    const/4 v15, 0x0
+    move v15, v9
 
     :goto_0
     const/16 v16, 0x0
@@ -696,12 +696,12 @@
 
     if-eqz v7, :cond_7
 
-    const/4 v13, 0x3
+    move v13, v5
 
     goto :goto_1
 
     :cond_7
-    const/4 v13, 0x0
+    move v13, v9
 
     :goto_1
     const/4 v14, 0x0
@@ -1063,9 +1063,9 @@
 
     const/4 v4, 0x0
 
-    const/4 v5, 0x0
+    move v9, v1
 
-    const/4 v9, 0x1
+    move v5, v4
 
     .line 855
     :goto_0
@@ -1131,12 +1131,12 @@
 
     if-ne v5, v6, :cond_1
 
-    const/4 v10, 0x1
+    move v10, v1
 
     goto :goto_1
 
     :cond_1
-    const/4 v10, 0x0
+    move v10, v4
 
     :goto_1
     iget-object v6, p0, Lorg/telegram/ui/Components/TranslateAlert2$HeaderView;->this$0:Lorg/telegram/ui/Components/TranslateAlert2;
@@ -1187,7 +1187,7 @@
     .line 885
     invoke-virtual {v0, v13}, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;->addView(Landroid/view/View;)V
 
-    const/4 v9, 0x0
+    move v9, v4
 
     :cond_2
     :goto_2
@@ -1280,15 +1280,15 @@
 
     const v7, 0x3f666666    # 0.9f
 
-    mul-float v6, v6, v7
+    mul-float/2addr v6, v7
 
     int-to-float v7, v0
 
     sub-float/2addr v6, v7
 
-    const/16 v7, 0x8
-
     cmpl-float v5, v5, v6
+
+    const/16 v6, 0x8
 
     if-lez v5, :cond_4
 
@@ -1296,7 +1296,7 @@
 
     sub-int/2addr v1, v0
 
-    invoke-static {v7}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    invoke-static {v6}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v0
 
@@ -1315,7 +1315,7 @@
 
     add-int/2addr v0, v1
 
-    invoke-static {v7}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    invoke-static {v6}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v1
 
@@ -1333,7 +1333,7 @@
 
     aget v2, v2, v4
 
-    invoke-static {v7}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    invoke-static {v6}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v4
 
@@ -1384,7 +1384,7 @@
 
     if-nez v2, :cond_0
 
-    const/high16 p1, 0x3f800000    # 1.0f
+    move p1, v1
 
     .line 914
     :cond_0

@@ -235,7 +235,7 @@
 
     move-result v5
 
-    const/4 v9, 0x0
+    move v9, v4
 
     :goto_0
     if-ge v9, v5, :cond_4
@@ -254,9 +254,9 @@
 
     move-result-wide v11
 
-    cmp-long v13, v11, v7
+    cmp-long v11, v11, v7
 
-    if-nez v13, :cond_0
+    if-nez v11, :cond_0
 
     .line 305
     iput-object v10, v0, Lorg/telegram/ui/Components/JoinCallAlert;->currentPeer:Lorg/telegram/tgnet/TLRPC$Peer;
@@ -285,7 +285,7 @@
 
     move-result v5
 
-    const/4 v9, 0x0
+    move v9, v4
 
     :goto_1
     if-ge v9, v5, :cond_4
@@ -304,9 +304,9 @@
 
     move-result-wide v11
 
-    cmp-long v13, v11, v7
+    cmp-long v11, v11, v7
 
-    if-nez v13, :cond_2
+    if-nez v11, :cond_2
 
     .line 314
     iput-object v10, v0, Lorg/telegram/ui/Components/JoinCallAlert;->currentPeer:Lorg/telegram/tgnet/TLRPC$Peer;
@@ -468,12 +468,12 @@
 
     if-nez v12, :cond_7
 
-    const/4 v12, 0x0
+    move v12, v4
 
     goto :goto_5
 
     :cond_7
-    const/4 v12, 0x1
+    move v12, v7
 
     :goto_5
     invoke-direct {v10, v11, v12, v4}, Landroidx/recyclerview/widget/LinearLayoutManager;-><init>(Landroid/content/Context;IZ)V
@@ -885,7 +885,7 @@
 
     move-result v6
 
-    const/4 v9, 0x0
+    move v9, v4
 
     :goto_c
     if-ge v9, v6, :cond_12
@@ -905,9 +905,9 @@
 
     const-wide/16 v12, 0x0
 
-    cmp-long v14, v10, v12
+    cmp-long v12, v10, v12
 
-    if-gez v14, :cond_11
+    if-gez v12, :cond_11
 
     .line 547
     iget v12, v0, Lorg/telegram/ui/ActionBar/BottomSheet;->currentAccount:I
@@ -938,7 +938,7 @@
     if-eqz v10, :cond_11
 
     :cond_10
-    const/4 v6, 0x1
+    move v6, v7
 
     goto :goto_d
 
@@ -948,7 +948,7 @@
     goto :goto_c
 
     :cond_12
-    const/4 v6, 0x0
+    move v6, v4
 
     .line 554
     :goto_d
@@ -1129,7 +1129,7 @@
 
     if-eqz v10, :cond_17
 
-    const/4 v10, 0x5
+    move v10, v9
 
     goto :goto_11
 
@@ -1180,16 +1180,14 @@
 
     const/4 v6, -0x2
 
-    const/4 v9, -0x2
-
     goto :goto_13
 
     :cond_18
     const/4 v6, -0x1
 
-    const/4 v9, -0x1
-
     :goto_13
+    move v9, v6
+
     const/16 v10, 0x5f
 
     const/16 v11, 0x31
@@ -1535,9 +1533,9 @@
 
     sget-wide v0, Lorg/telegram/ui/Components/JoinCallAlert;->lastCacheDid:J
 
-    cmp-long v2, v0, p1
+    cmp-long v0, v0, p1
 
-    if-nez v2, :cond_1
+    if-nez v0, :cond_1
 
     sget-object v0, Lorg/telegram/ui/Components/JoinCallAlert;->cachedChats:Ljava/util/ArrayList;
 
@@ -1553,9 +1551,9 @@
 
     const-wide/32 v2, 0x3a980
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-gez v4, :cond_1
+    if-gez v0, :cond_1
 
     .line 202
     sget-object p0, Lorg/telegram/ui/Components/JoinCallAlert;->cachedChats:Ljava/util/ArrayList;
@@ -1720,7 +1718,7 @@
 
     if-ne p0, p1, :cond_0
 
-    const/4 p3, 0x1
+    move p3, p1
 
     :cond_0
     invoke-interface {p5, p3}, Lorg/telegram/messenger/MessagesStorage$BooleanCallback;->run(Z)V
@@ -1844,7 +1842,7 @@
 
     const/4 v2, 0x0
 
-    const/4 v3, 0x0
+    move v3, v2
 
     :goto_1
     if-ge v3, v1, :cond_5
@@ -1948,7 +1946,7 @@
     goto :goto_0
 
     :cond_0
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_0
     invoke-interface {p1, p2, v2, v1}, Lorg/telegram/ui/Components/JoinCallAlert$JoinCallAlertDelegate;->didSelectChat(Lorg/telegram/tgnet/TLRPC$InputPeer;ZZ)V
@@ -2207,9 +2205,9 @@
 
     sget-wide v0, Lorg/telegram/ui/Components/JoinCallAlert;->lastCacheDid:J
 
-    cmp-long v2, v0, v4
+    cmp-long v0, v0, v4
 
-    if-nez v2, :cond_2
+    if-nez v0, :cond_2
 
     sget-object v0, Lorg/telegram/ui/Components/JoinCallAlert;->cachedChats:Ljava/util/ArrayList;
 
@@ -2225,9 +2223,9 @@
 
     const-wide/32 v2, 0x493e0
 
-    cmp-long v8, v0, v2
+    cmp-long v0, v0, v2
 
-    if-gez v8, :cond_2
+    if-gez v0, :cond_2
 
     .line 238
     sget-object v0, Lorg/telegram/ui/Components/JoinCallAlert;->cachedChats:Ljava/util/ArrayList;
@@ -2367,7 +2365,7 @@
 .end method
 
 .method public static processDeletedChat(IJ)V
-    .locals 4
+    .locals 3
 
     .line 93
     sget v0, Lorg/telegram/ui/Components/JoinCallAlert;->lastCachedAccount:I
@@ -2380,9 +2378,9 @@
 
     const-wide/16 v0, 0x0
 
-    cmp-long v2, p1, v0
+    cmp-long v0, p1, v0
 
-    if-lez v2, :cond_0
+    if-lez v0, :cond_0
 
     goto :goto_2
 
@@ -2410,9 +2408,9 @@
 
     move-result-wide v1
 
-    cmp-long v3, v1, p1
+    cmp-long v1, v1, p1
 
-    if-nez v3, :cond_1
+    if-nez v1, :cond_1
 
     .line 98
     sget-object p0, Lorg/telegram/ui/Components/JoinCallAlert;->cachedChats:Ljava/util/ArrayList;

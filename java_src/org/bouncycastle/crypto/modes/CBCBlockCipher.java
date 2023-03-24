@@ -9,7 +9,7 @@ import org.bouncycastle.util.Arrays;
 public class CBCBlockCipher implements BlockCipher {
 
     /* renamed from: IV */
-    private byte[] f1291IV;
+    private byte[] f1292IV;
     private int blockSize;
     private byte[] cbcNextV;
     private byte[] cbcV;
@@ -21,7 +21,7 @@ public class CBCBlockCipher implements BlockCipher {
         this.cipher = blockCipher;
         int blockSize = blockCipher.getBlockSize();
         this.blockSize = blockSize;
-        this.f1291IV = new byte[blockSize];
+        this.f1292IV = new byte[blockSize];
         this.cbcV = new byte[blockSize];
         this.cbcNextV = new byte[blockSize];
     }
@@ -78,7 +78,7 @@ public class CBCBlockCipher implements BlockCipher {
             if (iv.length != this.blockSize) {
                 throw new IllegalArgumentException("initialisation vector must be the same length as block size");
             }
-            System.arraycopy(iv, 0, this.f1291IV, 0, iv.length);
+            System.arraycopy(iv, 0, this.f1292IV, 0, iv.length);
             reset();
             if (parametersWithIV.getParameters() == null) {
                 if (z2 != z) {
@@ -108,7 +108,7 @@ public class CBCBlockCipher implements BlockCipher {
 
     @Override // org.bouncycastle.crypto.BlockCipher
     public void reset() {
-        byte[] bArr = this.f1291IV;
+        byte[] bArr = this.f1292IV;
         System.arraycopy(bArr, 0, this.cbcV, 0, bArr.length);
         Arrays.fill(this.cbcNextV, (byte) 0);
         this.cipher.reset();

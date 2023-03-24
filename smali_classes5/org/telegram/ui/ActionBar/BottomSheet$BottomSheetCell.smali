@@ -104,12 +104,12 @@
 
     if-eqz v1, :cond_0
 
-    const/4 v1, 0x5
+    move v1, v2
 
     goto :goto_0
 
     :cond_0
-    const/4 v1, 0x3
+    move v1, v3
 
     :goto_0
     or-int/lit8 v1, v1, 0x10
@@ -183,7 +183,7 @@
     goto :goto_1
 
     :cond_1
-    const/4 v2, 0x3
+    move v2, v3
 
     :goto_1
     or-int/lit8 p2, v2, 0x10
@@ -603,12 +603,12 @@
 
     if-eqz p4, :cond_1
 
-    const/16 p3, 0x15
+    move p3, p1
 
     goto :goto_0
 
     :cond_1
-    const/16 p3, 0x10
+    move p3, v0
 
     :goto_0
     invoke-static {p3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
@@ -620,7 +620,7 @@
     goto :goto_1
 
     :cond_2
-    const/16 p1, 0x10
+    move p1, v0
 
     :goto_1
     invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
@@ -665,12 +665,12 @@
 
     if-eqz p4, :cond_5
 
-    const/16 p4, 0x15
+    move p4, p1
 
     goto :goto_4
 
     :cond_5
-    const/16 p4, 0x48
+    move p4, p2
 
     :goto_4
     invoke-static {p4}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
@@ -681,7 +681,7 @@
 
     if-eqz v0, :cond_6
 
-    const/16 p1, 0x48
+    move p1, p2
 
     :cond_6
     invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
@@ -699,7 +699,7 @@
 
     if-eqz p2, :cond_7
 
-    const/4 p2, 0x0
+    move p2, v1
 
     goto :goto_5
 
@@ -730,12 +730,12 @@
 
     if-eqz p3, :cond_a
 
-    const/16 p3, 0x10
+    move p3, v0
 
     goto :goto_6
 
     :cond_a
-    const/16 p3, 0x48
+    move p3, p2
 
     :goto_6
     invoke-static {p3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
@@ -746,7 +746,7 @@
 
     if-eqz p4, :cond_b
 
-    const/16 v0, 0x48
+    move v0, p2
 
     :cond_b
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I

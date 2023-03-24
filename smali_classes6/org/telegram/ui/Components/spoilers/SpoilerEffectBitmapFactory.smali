@@ -110,7 +110,7 @@
 
     const/high16 v2, 0x3f000000    # 0.5f
 
-    mul-float v1, v1, v2
+    mul-float/2addr v1, v2
 
     int-to-float v0, v0
 
@@ -248,14 +248,14 @@
 
     invoke-direct {v2, v3}, Landroid/graphics/Canvas;-><init>(Landroid/graphics/Bitmap;)V
 
-    const/4 v3, 0x0
+    move v3, v1
 
     :goto_1
     const/16 v4, 0xa
 
     if-ge v3, v4, :cond_3
 
-    const/4 v5, 0x0
+    move v5, v1
 
     :goto_2
     if-ge v5, v4, :cond_2
@@ -310,7 +310,7 @@
 
 # virtual methods
 .method public checkUpdate()V
-    .locals 5
+    .locals 4
 
     .line 83
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
@@ -324,9 +324,9 @@
 
     const-wide/16 v2, 0x20
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-lez v4, :cond_0
+    if-lez v0, :cond_0
 
     iget-boolean v0, p0, Lorg/telegram/ui/Components/spoilers/SpoilerEffectBitmapFactory;->isRunning:Z
 
@@ -443,20 +443,20 @@
 
     div-float/2addr v0, v3
 
-    mul-float v0, v0, v2
+    mul-float/2addr v0, v2
 
     float-to-int v0, v0
 
     const/4 v2, 0x0
 
-    const/4 v3, 0x0
+    move v3, v2
 
     :goto_0
     const/16 v4, 0xa
 
     if-ge v3, v4, :cond_1
 
-    const/4 v5, 0x0
+    move v5, v2
 
     :goto_1
     if-ge v5, v4, :cond_0
@@ -552,12 +552,12 @@
     goto :goto_0
 
     :cond_1
-    const/4 v0, 0x0
+    move v0, v2
 
     :goto_2
     if-ge v0, v4, :cond_3
 
-    const/4 v1, 0x0
+    move v1, v2
 
     :goto_3
     if-ge v1, v4, :cond_2

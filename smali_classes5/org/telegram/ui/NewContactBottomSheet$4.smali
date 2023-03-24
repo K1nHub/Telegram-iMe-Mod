@@ -290,7 +290,7 @@
 
     invoke-virtual {v5, v1}, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
 
-    const/4 v5, 0x1
+    move v5, v0
 
     move-object v11, v1
 
@@ -306,9 +306,9 @@
     goto/16 :goto_0
 
     :cond_7
-    move-object v1, v3
+    move v5, v2
 
-    const/4 v5, 0x0
+    move-object v1, v3
 
     :goto_2
     if-nez v5, :cond_9
@@ -360,9 +360,9 @@
     goto :goto_3
 
     :cond_8
-    move-object v1, v3
+    move v5, v2
 
-    const/4 v5, 0x0
+    move-object v1, v3
 
     .line 307
     :cond_9
@@ -377,9 +377,9 @@
 
     move-result-object v6
 
-    move-object v8, v3
+    move v7, v2
 
-    const/4 v7, 0x0
+    move-object v8, v3
 
     :cond_a
     :goto_4

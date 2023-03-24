@@ -132,7 +132,7 @@
 .end method
 
 .method hasPendingData()Z
-    .locals 5
+    .locals 4
 
     .line 286
     iget-object v0, p0, Lio/grpc/okhttp/OutboundFlowController$OutboundFlowState;->pendingWriteBuffer:Lokio/Buffer;
@@ -143,9 +143,9 @@
 
     const-wide/16 v2, 0x0
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-lez v4, :cond_0
+    if-lez v0, :cond_0
 
     const/4 v0, 0x1
 
@@ -222,9 +222,9 @@
 
     move-result-wide v1
 
-    long-to-int v2, v1
+    long-to-int v1, v1
 
-    invoke-static {v0, v2}, Ljava/lang/Math;->min(II)I
+    invoke-static {v0, v1}, Ljava/lang/Math;->min(II)I
 
     move-result v0
 
@@ -285,7 +285,7 @@
 .end method
 
 .method write(Lokio/Buffer;IZ)V
-    .locals 6
+    .locals 5
 
     .line 321
     :cond_0
@@ -325,9 +325,9 @@
 
     int-to-long v3, v0
 
-    cmp-long v5, v1, v3
+    cmp-long v1, v1, v3
 
-    if-nez v5, :cond_1
+    if-nez v1, :cond_1
 
     if-eqz p3, :cond_1
 
@@ -379,7 +379,7 @@
 .end method
 
 .method writeBytes(ILio/grpc/okhttp/OutboundFlowController$WriteStatus;)I
-    .locals 8
+    .locals 7
 
     .line 294
     invoke-virtual {p0}, Lio/grpc/okhttp/OutboundFlowController$OutboundFlowState;->writableWindow()I
@@ -392,7 +392,7 @@
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     .line 295
     :goto_0
@@ -413,9 +413,9 @@
 
     move-result-wide v5
 
-    cmp-long v7, v3, v5
+    cmp-long v3, v3, v5
 
-    if-ltz v7, :cond_0
+    if-ltz v3, :cond_0
 
     .line 298
     iget-object v0, p0, Lio/grpc/okhttp/OutboundFlowController$OutboundFlowState;->pendingWriteBuffer:Lokio/Buffer;
@@ -435,11 +435,11 @@
 
     move-result-wide v3
 
-    long-to-int v4, v3
+    long-to-int v3, v3
 
-    iget-boolean v3, p0, Lio/grpc/okhttp/OutboundFlowController$OutboundFlowState;->pendingBufferHasEndOfStream:Z
+    iget-boolean v4, p0, Lio/grpc/okhttp/OutboundFlowController$OutboundFlowState;->pendingBufferHasEndOfStream:Z
 
-    invoke-virtual {p0, v0, v4, v3}, Lio/grpc/okhttp/OutboundFlowController$OutboundFlowState;->write(Lokio/Buffer;IZ)V
+    invoke-virtual {p0, v0, v3, v4}, Lio/grpc/okhttp/OutboundFlowController$OutboundFlowState;->write(Lokio/Buffer;IZ)V
 
     goto :goto_1
 

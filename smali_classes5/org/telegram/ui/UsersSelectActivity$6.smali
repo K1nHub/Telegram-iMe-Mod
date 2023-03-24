@@ -38,7 +38,7 @@
 
 # virtual methods
 .method public onKey(Landroid/view/View;ILandroid/view/KeyEvent;)Z
-    .locals 4
+    .locals 3
 
     const/4 p1, 0x0
 
@@ -71,7 +71,7 @@
     goto :goto_0
 
     :cond_0
-    const/4 v0, 0x0
+    move v0, p1
 
     :goto_0
     iput-boolean v0, p0, Lorg/telegram/ui/UsersSelectActivity$6;->wasEmpty:Z
@@ -143,9 +143,9 @@
 
     const-wide/32 v1, -0x80000000
 
-    cmp-long v3, p2, v1
+    cmp-long p2, p2, v1
 
-    if-nez v3, :cond_2
+    if-nez p2, :cond_2
 
     .line 604
     iget-object p1, p0, Lorg/telegram/ui/UsersSelectActivity$6;->this$0:Lorg/telegram/ui/UsersSelectActivity;
@@ -166,9 +166,9 @@
 
     const-wide/32 v1, -0x7fffffff
 
-    cmp-long v3, p2, v1
+    cmp-long p2, p2, v1
 
-    if-nez v3, :cond_3
+    if-nez p2, :cond_3
 
     .line 606
     iget-object p1, p0, Lorg/telegram/ui/UsersSelectActivity$6;->this$0:Lorg/telegram/ui/UsersSelectActivity;
@@ -189,9 +189,9 @@
 
     const-wide/32 v1, -0x7ffffffe
 
-    cmp-long v3, p2, v1
+    cmp-long p2, p2, v1
 
-    if-nez v3, :cond_4
+    if-nez p2, :cond_4
 
     .line 608
     iget-object p1, p0, Lorg/telegram/ui/UsersSelectActivity$6;->this$0:Lorg/telegram/ui/UsersSelectActivity;
@@ -212,9 +212,9 @@
 
     const-wide/32 v1, -0x7ffffffd
 
-    cmp-long v3, p2, v1
+    cmp-long p2, p2, v1
 
-    if-nez v3, :cond_5
+    if-nez p2, :cond_5
 
     .line 610
     iget-object p1, p0, Lorg/telegram/ui/UsersSelectActivity$6;->this$0:Lorg/telegram/ui/UsersSelectActivity;
@@ -235,9 +235,9 @@
 
     const-wide/32 v1, -0x7ffffffc
 
-    cmp-long v3, p2, v1
+    cmp-long p2, p2, v1
 
-    if-nez v3, :cond_6
+    if-nez p2, :cond_6
 
     .line 612
     iget-object p1, p0, Lorg/telegram/ui/UsersSelectActivity$6;->this$0:Lorg/telegram/ui/UsersSelectActivity;
@@ -258,9 +258,9 @@
 
     const-wide/32 v1, -0x7ffffffb
 
-    cmp-long v3, p2, v1
+    cmp-long p2, p2, v1
 
-    if-nez v3, :cond_7
+    if-nez p2, :cond_7
 
     .line 614
     iget-object p1, p0, Lorg/telegram/ui/UsersSelectActivity$6;->this$0:Lorg/telegram/ui/UsersSelectActivity;
@@ -281,9 +281,9 @@
 
     const-wide/32 v1, -0x7ffffffa
 
-    cmp-long v3, p2, v1
+    cmp-long p2, p2, v1
 
-    if-nez v3, :cond_8
+    if-nez p2, :cond_8
 
     .line 616
     iget-object p1, p0, Lorg/telegram/ui/UsersSelectActivity$6;->this$0:Lorg/telegram/ui/UsersSelectActivity;
@@ -304,9 +304,9 @@
 
     const-wide/32 v1, -0x7ffffff9
 
-    cmp-long p3, p1, v1
+    cmp-long p1, p1, v1
 
-    if-nez p3, :cond_9
+    if-nez p1, :cond_9
 
     .line 618
     iget-object p1, p0, Lorg/telegram/ui/UsersSelectActivity$6;->this$0:Lorg/telegram/ui/UsersSelectActivity;

@@ -239,12 +239,12 @@
 
     if-ne v0, v1, :cond_0
 
-    const/4 v2, 0x1
+    move v2, v1
 
     goto :goto_0
 
     :cond_0
-    const/4 v2, 0x0
+    move v2, v10
 
     .line 216
     :goto_0
@@ -254,12 +254,12 @@
 
     if-ne v0, v6, :cond_1
 
-    const/4 v0, 0x1
+    move v0, v1
 
     goto :goto_1
 
     :cond_1
-    const/4 v0, 0x0
+    move v0, v10
 
     .line 217
     :goto_1
@@ -1432,7 +1432,7 @@
     goto :goto_1
 
     :cond_1
-    const/4 v1, 0x0
+    move v1, v3
 
     .line 431
     :goto_1
@@ -1512,12 +1512,12 @@
 
     if-eqz v11, :cond_5
 
-    const/4 v10, 0x1
+    move v10, v2
 
     goto :goto_2
 
     :cond_5
-    const/4 v10, 0x0
+    move v10, v3
 
     :goto_2
     const/4 v12, 0x0
@@ -1848,7 +1848,7 @@
     .line 587
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertDocumentLayout;->listView:Lorg/telegram/ui/Components/RecyclerListView;
 
-    mul-float p2, p2, p3
+    mul-float/2addr p2, p3
 
     invoke-virtual {p1, p2}, Landroid/view/ViewGroup;->setTranslationX(F)V
 
@@ -1869,7 +1869,7 @@
 
     invoke-virtual {p1, p3}, Landroid/view/ViewGroup;->setAlpha(F)V
 
-    mul-float p3, p3, v0
+    mul-float/2addr p3, v0
 
     add-float/2addr p3, v1
 
@@ -1889,7 +1889,7 @@
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertDocumentLayout;->backgroundListView:Lorg/telegram/ui/Components/RecyclerListView;
 
-    mul-float p2, p2, p3
+    mul-float/2addr p2, p3
 
     invoke-virtual {p1, p2}, Landroid/view/ViewGroup;->setTranslationX(F)V
 
@@ -1916,7 +1916,7 @@
 
     invoke-virtual {p1, p3}, Landroid/view/ViewGroup;->setAlpha(F)V
 
-    mul-float p3, p3, v0
+    mul-float/2addr p3, v0
 
     add-float/2addr p3, v1
 
@@ -1981,7 +1981,7 @@
     goto :goto_0
 
     :cond_2
-    const/4 v1, 0x1
+    move v1, v3
 
     :goto_0
     return v1
@@ -2011,16 +2011,16 @@
 
     move-result-wide p1
 
-    cmp-long v0, v4, p1
+    cmp-long p1, v4, p1
 
-    if-nez v0, :cond_5
+    if-nez p1, :cond_5
 
     const/4 p1, 0x0
 
     return p1
 
     :cond_5
-    if-lez v0, :cond_6
+    if-lez p1, :cond_6
 
     return v1
 
@@ -2050,7 +2050,7 @@
 .end method
 
 .method private synthetic lambda$sortRecentItems$5(Lorg/telegram/ui/Components/ChatAttachAlertDocumentLayout$ListItem;Lorg/telegram/ui/Components/ChatAttachAlertDocumentLayout$ListItem;)I
-    .locals 3
+    .locals 2
 
     .line 1004
     iget-boolean v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertDocumentLayout;->sortByName:Z
@@ -2093,16 +2093,16 @@
 
     move-result-wide p1
 
-    cmp-long v2, v0, p1
+    cmp-long p1, v0, p1
 
-    if-nez v2, :cond_1
+    if-nez p1, :cond_1
 
     const/4 p1, 0x0
 
     return p1
 
     :cond_1
-    if-lez v2, :cond_2
+    if-lez p1, :cond_2
 
     const/4 p1, -0x1
 
@@ -2284,7 +2284,7 @@
 
     invoke-virtual {p1}, Ljava/util/ArrayList;->clear()V
 
-    const/4 p1, 0x0
+    move p1, v0
 
     .line 1205
     :goto_0
@@ -3329,7 +3329,7 @@
 .end method
 
 .method private onItemClick(Landroid/view/View;Ljava/lang/Object;)Z
-    .locals 8
+    .locals 7
 
     .line 798
     instance-of v0, p2, Lorg/telegram/ui/Components/ChatAttachAlertDocumentLayout$ListItem;
@@ -3383,7 +3383,7 @@
 
     invoke-virtual {p2, v0}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
 
-    const/4 p2, 0x0
+    move p2, v2
 
     goto/16 :goto_0
 
@@ -3445,9 +3445,9 @@
 
     const-wide/32 v5, 0x7d000000
 
-    cmp-long v7, v3, v5
+    cmp-long v3, v3, v5
 
-    if-lez v7, :cond_4
+    if-lez v3, :cond_4
 
     sget v3, Lorg/telegram/messenger/UserConfig;->selectedAccount:I
 
@@ -3470,9 +3470,9 @@
 
     const-wide v5, 0xfa000000L
 
-    cmp-long v7, v3, v5
+    cmp-long v3, v3, v5
 
-    if-lez v7, :cond_6
+    if-lez v3, :cond_6
 
     .line 818
     :cond_5
@@ -3571,9 +3571,9 @@
 
     const-wide/16 v5, 0x0
 
-    cmp-long v7, v3, v5
+    cmp-long v3, v3, v5
 
-    if-nez v7, :cond_9
+    if-nez v3, :cond_9
 
     return v2
 
@@ -3588,7 +3588,7 @@
 
     invoke-virtual {p2, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    const/4 p2, 0x1
+    move p2, v1
 
     .line 837
     :goto_0
@@ -3658,7 +3658,7 @@
 
     invoke-virtual {v2, v0, p2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    const/4 v2, 0x1
+    move v2, v1
 
     :goto_2
     move p2, v2
@@ -3680,7 +3680,7 @@
 
     if-eqz p2, :cond_f
 
-    const/4 p2, 0x1
+    move p2, v1
 
     goto :goto_4
 
@@ -3868,7 +3868,7 @@
 
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    move v1, v0
 
     .line 550
     :goto_0
@@ -3895,7 +3895,7 @@
     goto :goto_0
 
     :cond_2
-    const/4 v1, 0x0
+    move v1, v0
 
     :goto_1
     const/4 v2, 0x2
@@ -4421,7 +4421,7 @@
     goto :goto_0
 
     :cond_0
-    const/4 v3, 0x0
+    move v3, v2
 
     goto :goto_0
 
@@ -5170,11 +5170,11 @@
 
     const-wide/16 v4, 0x0
 
-    const/4 v6, 0x0
+    cmp-long v2, v2, v4
 
-    cmp-long v7, v2, v4
+    const/4 v3, 0x0
 
-    if-eqz v7, :cond_4
+    if-eqz v2, :cond_4
 
     if-eqz v0, :cond_4
 
@@ -5192,7 +5192,7 @@
     :cond_1
     invoke-virtual {p1}, Ljava/io/File;->length()J
 
-    move-result-wide v2
+    move-result-wide v4
 
     sget v0, Lorg/telegram/messenger/UserConfig;->selectedAccount:I
 
@@ -5202,13 +5202,13 @@
 
     iget v0, v0, Lorg/telegram/messenger/MessagesController;->ringtoneSizeMax:I
 
-    int-to-long v4, v0
+    int-to-long v6, v0
 
-    const/4 v0, 0x1
+    cmp-long v0, v4, v6
 
-    cmp-long v7, v2, v4
+    const/4 v2, 0x1
 
-    if-lez v7, :cond_2
+    if-lez v0, :cond_2
 
     .line 872
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlert$AttachAlertLayout;->parentAlert:Lorg/telegram/ui/Components/ChatAttachAlert;
@@ -5221,70 +5221,70 @@
 
     move-result-object p1
 
-    sget v2, Lorg/telegram/messenger/R$string;->TooLargeError:I
+    sget v0, Lorg/telegram/messenger/R$string;->TooLargeError:I
 
-    new-array v3, v6, [Ljava/lang/Object;
+    new-array v4, v3, [Ljava/lang/Object;
 
-    const-string v4, "TooLargeError"
+    const-string v5, "TooLargeError"
 
-    invoke-static {v4, v2, v3}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v2
-
-    sget v3, Lorg/telegram/messenger/R$string;->ErrorRingtoneSizeTooBig:I
-
-    new-array v0, v0, [Ljava/lang/Object;
-
-    sget v4, Lorg/telegram/messenger/UserConfig;->selectedAccount:I
-
-    invoke-static {v4}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
-
-    move-result-object v4
-
-    iget v4, v4, Lorg/telegram/messenger/MessagesController;->ringtoneSizeMax:I
-
-    div-int/lit16 v4, v4, 0x400
-
-    invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v4
-
-    aput-object v4, v0, v6
-
-    const-string v4, "ErrorRingtoneSizeTooBig"
-
-    invoke-static {v4, v3, v0}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {v5, v0, v4}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v0
 
-    invoke-virtual {p1, v2, v0, v1}, Lorg/telegram/ui/Components/BulletinFactory;->createErrorBulletinSubtitle(Ljava/lang/CharSequence;Ljava/lang/CharSequence;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)Lorg/telegram/ui/Components/Bulletin;
+    sget v4, Lorg/telegram/messenger/R$string;->ErrorRingtoneSizeTooBig:I
+
+    new-array v2, v2, [Ljava/lang/Object;
+
+    sget v5, Lorg/telegram/messenger/UserConfig;->selectedAccount:I
+
+    invoke-static {v5}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
+
+    move-result-object v5
+
+    iget v5, v5, Lorg/telegram/messenger/MessagesController;->ringtoneSizeMax:I
+
+    div-int/lit16 v5, v5, 0x400
+
+    invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v5
+
+    aput-object v5, v2, v3
+
+    const-string v5, "ErrorRingtoneSizeTooBig"
+
+    invoke-static {v5, v4, v2}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {p1, v0, v2, v1}, Lorg/telegram/ui/Components/BulletinFactory;->createErrorBulletinSubtitle(Ljava/lang/CharSequence;Ljava/lang/CharSequence;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)Lorg/telegram/ui/Components/Bulletin;
 
     move-result-object p1
 
     invoke-virtual {p1}, Lorg/telegram/ui/Components/Bulletin;->show()Lorg/telegram/ui/Components/Bulletin;
 
-    return v6
+    return v3
 
     .line 878
     :cond_2
     :try_start_0
-    new-instance v2, Landroid/media/MediaMetadataRetriever;
+    new-instance v0, Landroid/media/MediaMetadataRetriever;
 
-    invoke-direct {v2}, Landroid/media/MediaMetadataRetriever;-><init>()V
+    invoke-direct {v0}, Landroid/media/MediaMetadataRetriever;-><init>()V
 
     .line 879
-    sget-object v3, Lorg/telegram/messenger/ApplicationLoader;->applicationContext:Landroid/content/Context;
+    sget-object v4, Lorg/telegram/messenger/ApplicationLoader;->applicationContext:Landroid/content/Context;
 
     invoke-static {p1}, Landroid/net/Uri;->fromFile(Ljava/io/File;)Landroid/net/Uri;
 
     move-result-object p1
 
-    invoke-virtual {v2, v3, p1}, Landroid/media/MediaMetadataRetriever;->setDataSource(Landroid/content/Context;Landroid/net/Uri;)V
+    invoke-virtual {v0, v4, p1}, Landroid/media/MediaMetadataRetriever;->setDataSource(Landroid/content/Context;Landroid/net/Uri;)V
 
     const/16 p1, 0x9
 
     .line 880
-    invoke-virtual {v2, p1}, Landroid/media/MediaMetadataRetriever;->extractMetadata(I)Ljava/lang/String;
+    invoke-virtual {v0, p1}, Landroid/media/MediaMetadataRetriever;->extractMetadata(I)Ljava/lang/String;
 
     move-result-object p1
 
@@ -5302,17 +5302,17 @@
 
     .line 886
     :goto_1
-    sget v2, Lorg/telegram/messenger/UserConfig;->selectedAccount:I
+    sget v0, Lorg/telegram/messenger/UserConfig;->selectedAccount:I
 
-    invoke-static {v2}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
+    invoke-static {v0}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
 
-    move-result-object v2
+    move-result-object v0
 
-    iget v2, v2, Lorg/telegram/messenger/MessagesController;->ringtoneDurationMax:I
+    iget v0, v0, Lorg/telegram/messenger/MessagesController;->ringtoneDurationMax:I
 
-    mul-int/lit16 v2, v2, 0x3e8
+    mul-int/lit16 v0, v0, 0x3e8
 
-    if-le p1, v2, :cond_3
+    if-le p1, v0, :cond_3
 
     .line 887
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlert$AttachAlertLayout;->parentAlert:Lorg/telegram/ui/Components/ChatAttachAlert;
@@ -5325,50 +5325,50 @@
 
     move-result-object p1
 
-    sget v2, Lorg/telegram/messenger/R$string;->TooLongError:I
+    sget v0, Lorg/telegram/messenger/R$string;->TooLongError:I
 
-    new-array v3, v6, [Ljava/lang/Object;
+    new-array v4, v3, [Ljava/lang/Object;
 
-    const-string v4, "TooLongError"
+    const-string v5, "TooLongError"
 
-    invoke-static {v4, v2, v3}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v2
-
-    sget v3, Lorg/telegram/messenger/R$string;->ErrorRingtoneDurationTooLong:I
-
-    new-array v0, v0, [Ljava/lang/Object;
-
-    sget v4, Lorg/telegram/messenger/UserConfig;->selectedAccount:I
-
-    invoke-static {v4}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
-
-    move-result-object v4
-
-    iget v4, v4, Lorg/telegram/messenger/MessagesController;->ringtoneDurationMax:I
-
-    invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v4
-
-    aput-object v4, v0, v6
-
-    const-string v4, "ErrorRingtoneDurationTooLong"
-
-    invoke-static {v4, v3, v0}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {v5, v0, v4}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v0
 
-    invoke-virtual {p1, v2, v0, v1}, Lorg/telegram/ui/Components/BulletinFactory;->createErrorBulletinSubtitle(Ljava/lang/CharSequence;Ljava/lang/CharSequence;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)Lorg/telegram/ui/Components/Bulletin;
+    sget v4, Lorg/telegram/messenger/R$string;->ErrorRingtoneDurationTooLong:I
+
+    new-array v2, v2, [Ljava/lang/Object;
+
+    sget v5, Lorg/telegram/messenger/UserConfig;->selectedAccount:I
+
+    invoke-static {v5}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
+
+    move-result-object v5
+
+    iget v5, v5, Lorg/telegram/messenger/MessagesController;->ringtoneDurationMax:I
+
+    invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v5
+
+    aput-object v5, v2, v3
+
+    const-string v5, "ErrorRingtoneDurationTooLong"
+
+    invoke-static {v5, v4, v2}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {p1, v0, v2, v1}, Lorg/telegram/ui/Components/BulletinFactory;->createErrorBulletinSubtitle(Ljava/lang/CharSequence;Ljava/lang/CharSequence;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)Lorg/telegram/ui/Components/Bulletin;
 
     move-result-object p1
 
     invoke-virtual {p1}, Lorg/telegram/ui/Components/Bulletin;->show()Lorg/telegram/ui/Components/Bulletin;
 
-    return v6
+    return v3
 
     :cond_3
-    return v0
+    return v2
 
     .line 868
     :cond_4
@@ -5385,21 +5385,21 @@
 
     sget v0, Lorg/telegram/messenger/R$string;->InvalidFormatError:I
 
-    new-array v2, v6, [Ljava/lang/Object;
+    new-array v2, v3, [Ljava/lang/Object;
 
-    const-string v3, "InvalidFormatError"
+    const-string v4, "InvalidFormatError"
 
-    invoke-static {v3, v0, v2}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {v4, v0, v2}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v0
 
     sget v2, Lorg/telegram/messenger/R$string;->ErrorRingtoneInvalidFormat:I
 
-    new-array v3, v6, [Ljava/lang/Object;
+    new-array v4, v3, [Ljava/lang/Object;
 
-    const-string v4, "ErrorInvalidRingtone"
+    const-string v5, "ErrorInvalidRingtone"
 
-    invoke-static {v4, v2, v3}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {v5, v2, v4}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v2
 
@@ -5409,7 +5409,7 @@
 
     invoke-virtual {p1}, Lorg/telegram/ui/Components/Bulletin;->show()Lorg/telegram/ui/Components/Bulletin;
 
-    return v6
+    return v3
 .end method
 
 .method public loadRecentFiles()V
@@ -5515,9 +5515,9 @@
 
     int-to-long v8, v8
 
-    cmp-long v10, v3, v8
+    cmp-long v3, v3, v8
 
-    if-gtz v10, :cond_0
+    if-gtz v3, :cond_0
 
     sget v3, Lorg/telegram/messenger/UserConfig;->selectedAccount:I
 
@@ -5529,9 +5529,9 @@
 
     int-to-long v3, v3
 
-    cmp-long v8, v5, v3
+    cmp-long v3, v5, v3
 
-    if-gtz v8, :cond_0
+    if-gtz v3, :cond_0
 
     invoke-static {v7}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
@@ -6049,7 +6049,7 @@
 
     if-gez p1, :cond_2
 
-    const/4 p1, 0x0
+    move p1, v1
 
     .line 742
     :cond_2
@@ -6171,12 +6171,12 @@
 
     if-nez v4, :cond_0
 
-    const/4 v4, 0x1
+    move v4, v3
 
     goto :goto_0
 
     :cond_0
-    const/4 v4, 0x0
+    move v4, v2
 
     :goto_0
     invoke-virtual {v0, v1, v4}, Lorg/telegram/ui/ActionBar/ActionBarMenuItem;->setSubItemVisible(IZ)V

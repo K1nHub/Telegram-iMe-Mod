@@ -168,7 +168,7 @@
     goto :goto_0
 
     :cond_0
-    const/4 v0, 0x0
+    move v0, p3
 
     :goto_0
     iput-boolean v0, p0, Lorg/telegram/ui/Adapters/DrawerLayoutAdapter;->accountsShown:Z
@@ -246,7 +246,7 @@
 .end method
 
 .method private static synthetic lambda$resetItems$0(Ljava/lang/Integer;Ljava/lang/Integer;)I
-    .locals 3
+    .locals 2
 
     .line 384
     invoke-virtual {p0}, Ljava/lang/Integer;->intValue()I
@@ -274,16 +274,16 @@
 
     int-to-long p0, p0
 
-    cmp-long v2, v0, p0
+    cmp-long p0, v0, p0
 
-    if-lez v2, :cond_0
+    if-lez p0, :cond_0
 
     const/4 p0, 0x1
 
     return p0
 
     :cond_0
-    if-gez v2, :cond_1
+    if-gez p0, :cond_1
 
     const/4 p0, -0x1
 

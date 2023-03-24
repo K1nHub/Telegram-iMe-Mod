@@ -5,6 +5,8 @@ import android.animation.AnimatorListenerAdapter;
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
 import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Color;
 import android.graphics.ColorFilter;
 import android.graphics.PorterDuff;
 import android.graphics.PorterDuffColorFilter;
@@ -30,7 +32,7 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import org.fork.utils.Callbacks$Callback1;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3286R;
+import org.telegram.messenger.C3301R;
 import org.telegram.messenger.DialogObject;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessagesController;
@@ -141,7 +143,7 @@ public final class ForwardCloudBottomSheet extends BottomSheet {
         textView.setHighlightColor(Theme.getColor("dialogLinkSelection"));
         textView.setEllipsize(TextUtils.TruncateAt.END);
         textView.setGravity(16);
-        textView.setText(LocaleController.getInternalString(C3286R.string.cloud_albums_bottom_sheet_title));
+        textView.setText(LocaleController.getInternalString(C3301R.string.cloud_albums_bottom_sheet_title));
         textView.setTextColor(Theme.getColor("dialogTextBlack"));
         textView.setTextSize(1, 20.0f);
         textView.setLinkTextColor(Theme.getColor("dialogTextLink"));
@@ -341,7 +343,7 @@ public final class ForwardCloudBottomSheet extends BottomSheet {
             if (i == this.cloudRow) {
                 return UserConfig.getInstance(((BottomSheet) this.this$0).currentAccount).getClientUserId();
             }
-            return this.cloudAlbums.get(i - this.albumsStartRow).f1505id;
+            return this.cloudAlbums.get(i - this.albumsStartRow).f1506id;
         }
 
         @Override // androidx.recyclerview.widget.RecyclerView.Adapter
@@ -376,15 +378,15 @@ public final class ForwardCloudBottomSheet extends BottomSheet {
                 Intrinsics.checkNotNull(view, "null cannot be cast to non-null type org.telegram.ui.ActionBar.BottomSheet.BottomSheetCell");
                 BottomSheet.BottomSheetCell bottomSheetCell = (BottomSheet.BottomSheetCell) view;
                 bottomSheetCell.getImageView().setColorFilter((ColorFilter) null);
-                Drawable drawable = AppCompatResources.getDrawable(this.context, C3286R.C3288drawable.poll_add_circle);
-                Drawable drawable2 = AppCompatResources.getDrawable(this.context, C3286R.C3288drawable.poll_add_plus);
+                Drawable drawable = AppCompatResources.getDrawable(this.context, C3301R.C3303drawable.poll_add_circle);
+                Drawable drawable2 = AppCompatResources.getDrawable(this.context, C3301R.C3303drawable.poll_add_plus);
                 if (drawable != null && drawable2 != null) {
                     drawable.setColorFilter(new PorterDuffColorFilter(Theme.getColor("switchTrackChecked"), PorterDuff.Mode.MULTIPLY));
                     drawable2.setColorFilter(new PorterDuffColorFilter(Theme.getColor("checkboxCheck"), PorterDuff.Mode.MULTIPLY));
                 }
                 CombinedDrawable combinedDrawable = new CombinedDrawable(drawable, drawable2);
                 bottomSheetCell.setTextColor(Theme.getColor("windowBackgroundWhiteBlueText4"));
-                bottomSheetCell.setTextAndIcon(LocaleController.getInternalString(C3286R.string.cloud_albums_bottom_sheet_create_new_album), combinedDrawable);
+                bottomSheetCell.setTextAndIcon(LocaleController.getInternalString(C3301R.string.cloud_albums_bottom_sheet_create_new_album), combinedDrawable);
                 bottomSheetCell.getImageView().setPadding(AndroidUtilities.m50dp(11), 0, 0, 0);
                 return;
             }
@@ -481,21 +483,51 @@ public final class ForwardCloudBottomSheet extends BottomSheet {
             super.requestLayout();
         }
 
-        /* JADX WARN: Removed duplicated region for block: B:15:0x00ad  */
-        /* JADX WARN: Removed duplicated region for block: B:18:0x00b2  */
-        /* JADX WARN: Removed duplicated region for block: B:21:0x0140  */
-        /* JADX WARN: Removed duplicated region for block: B:23:? A[RETURN, SYNTHETIC] */
         @Override // android.view.View
-        /*
-            Code decompiled incorrectly, please refer to instructions dump.
-            To view partially-correct add '--show-bad-code' argument
-        */
-        protected void onDraw(android.graphics.Canvas r13) {
-            /*
-                Method dump skipped, instructions count: 395
-                To view this dump add '--comments-level debug' option
-            */
-            throw new UnsupportedOperationException("Method not decompiled: org.fork.p046ui.dialog.ForwardCloudBottomSheet.CustomContainerView.onDraw(android.graphics.Canvas):void");
+        protected void onDraw(Canvas canvas) {
+            int i;
+            float f;
+            Intrinsics.checkNotNullParameter(canvas, "canvas");
+            int m50dp = (this.this$0.scrollOffsetY - ((BottomSheet) this.this$0).backgroundPaddingTop) + AndroidUtilities.m50dp(6);
+            int m50dp2 = (this.this$0.scrollOffsetY - ((BottomSheet) this.this$0).backgroundPaddingTop) - AndroidUtilities.m50dp(13);
+            int measuredHeight = getMeasuredHeight() + AndroidUtilities.m50dp(36) + ((BottomSheet) this.this$0).backgroundPaddingTop;
+            int i2 = AndroidUtilities.statusBarHeight;
+            int i3 = m50dp2 + i2;
+            int i4 = m50dp + i2;
+            if (this.fullHeight) {
+                int i5 = ((BottomSheet) this.this$0).backgroundPaddingTop + i3;
+                int i6 = AndroidUtilities.statusBarHeight;
+                if (i5 < i6 * 2) {
+                    int min = Math.min(i6, ((i6 * 2) - i3) - ((BottomSheet) this.this$0).backgroundPaddingTop);
+                    i3 -= min;
+                    measuredHeight += min;
+                    f = 1.0f - Math.min(1.0f, (min * 2) / AndroidUtilities.statusBarHeight);
+                } else {
+                    f = 1.0f;
+                }
+                int i7 = ((BottomSheet) this.this$0).backgroundPaddingTop + i3;
+                int i8 = AndroidUtilities.statusBarHeight;
+                i = i7 < i8 ? Math.min(i8, (i8 - i3) - ((BottomSheet) this.this$0).backgroundPaddingTop) : 0;
+            } else {
+                i = 0;
+                f = 1.0f;
+            }
+            ((BottomSheet) this.this$0).shadowDrawable.setBounds(0, i3, getMeasuredWidth(), measuredHeight);
+            ((BottomSheet) this.this$0).shadowDrawable.draw(canvas);
+            if (!(f == 1.0f)) {
+                Theme.dialogs_onlineCirclePaint.setColor(Theme.getColor("dialogBackground"));
+                this.rect.set(((BottomSheet) this.this$0).backgroundPaddingLeft, ((BottomSheet) this.this$0).backgroundPaddingTop + i3, getMeasuredWidth() - ((BottomSheet) this.this$0).backgroundPaddingLeft, ((BottomSheet) this.this$0).backgroundPaddingTop + i3 + AndroidUtilities.m50dp(24));
+                canvas.drawRoundRect(this.rect, AndroidUtilities.m50dp(12) * f, AndroidUtilities.m50dp(12) * f, Theme.dialogs_onlineCirclePaint);
+            }
+            int m50dp3 = AndroidUtilities.m50dp(36);
+            this.rect.set((getMeasuredWidth() - m50dp3) / 2.0f, i4, (getMeasuredWidth() + m50dp3) / 2.0f, i4 + AndroidUtilities.m50dp(4));
+            Theme.dialogs_onlineCirclePaint.setColor(Theme.getColor("key_sheet_scrollUp"));
+            canvas.drawRoundRect(this.rect, AndroidUtilities.m50dp(2), AndroidUtilities.m50dp(2), Theme.dialogs_onlineCirclePaint);
+            if (i > 0) {
+                int color = Theme.getColor("dialogBackground");
+                Theme.dialogs_onlineCirclePaint.setColor(Color.argb(255, (int) (Color.red(color) * 0.8f), (int) (Color.green(color) * 0.8f), (int) (Color.blue(color) * 0.8f)));
+                canvas.drawRect(((BottomSheet) this.this$0).backgroundPaddingLeft, AndroidUtilities.statusBarHeight - i, getMeasuredWidth() - ((BottomSheet) this.this$0).backgroundPaddingLeft, AndroidUtilities.statusBarHeight, Theme.dialogs_onlineCirclePaint);
+            }
         }
     }
 

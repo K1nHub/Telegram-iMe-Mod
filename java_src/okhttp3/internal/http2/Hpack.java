@@ -384,19 +384,80 @@ public final class Hpack {
             this.dynamicTableByteCount += i;
         }
 
-        /* JADX WARN: Removed duplicated region for block: B:26:0x0080  */
-        /* JADX WARN: Removed duplicated region for block: B:37:0x00c6  */
-        /* JADX WARN: Removed duplicated region for block: B:38:0x00ce  */
-        /*
-            Code decompiled incorrectly, please refer to instructions dump.
-            To view partially-correct add '--show-bad-code' argument
-        */
-        public final void writeHeaders(java.util.List<okhttp3.internal.http2.Header> r14) throws java.io.IOException {
-            /*
-                Method dump skipped, instructions count: 268
-                To view this dump add '--comments-level debug' option
-            */
-            throw new UnsupportedOperationException("Method not decompiled: okhttp3.internal.http2.Hpack.Writer.writeHeaders(java.util.List):void");
+        public final void writeHeaders(List<Header> headerBlock) throws IOException {
+            int i;
+            int i2;
+            Intrinsics.checkNotNullParameter(headerBlock, "headerBlock");
+            if (this.emitDynamicTableSizeUpdate) {
+                int i3 = this.smallestHeaderTableSizeSetting;
+                if (i3 < this.maxDynamicTableByteCount) {
+                    writeInt(i3, 31, 32);
+                }
+                this.emitDynamicTableSizeUpdate = false;
+                this.smallestHeaderTableSizeSetting = Integer.MAX_VALUE;
+                writeInt(this.maxDynamicTableByteCount, 31, 32);
+            }
+            int size = headerBlock.size();
+            for (int i4 = 0; i4 < size; i4++) {
+                Header header = headerBlock.get(i4);
+                ByteString asciiLowercase = header.name.toAsciiLowercase();
+                ByteString byteString = header.value;
+                Hpack hpack = Hpack.INSTANCE;
+                Integer num = hpack.getNAME_TO_FIRST_INDEX().get(asciiLowercase);
+                if (num != null) {
+                    i2 = num.intValue() + 1;
+                    if (2 <= i2 && 7 >= i2) {
+                        if (Intrinsics.areEqual(hpack.getSTATIC_HEADER_TABLE()[i2 - 1].value, byteString)) {
+                            i = i2;
+                        } else if (Intrinsics.areEqual(hpack.getSTATIC_HEADER_TABLE()[i2].value, byteString)) {
+                            i2++;
+                            i = i2;
+                        }
+                    }
+                    i = i2;
+                    i2 = -1;
+                } else {
+                    i = -1;
+                    i2 = -1;
+                }
+                if (i2 == -1) {
+                    int i5 = this.nextHeaderIndex + 1;
+                    int length = this.dynamicTable.length;
+                    while (true) {
+                        if (i5 >= length) {
+                            break;
+                        }
+                        Header header2 = this.dynamicTable[i5];
+                        Intrinsics.checkNotNull(header2);
+                        if (Intrinsics.areEqual(header2.name, asciiLowercase)) {
+                            Header header3 = this.dynamicTable[i5];
+                            Intrinsics.checkNotNull(header3);
+                            if (Intrinsics.areEqual(header3.value, byteString)) {
+                                i2 = Hpack.INSTANCE.getSTATIC_HEADER_TABLE().length + (i5 - this.nextHeaderIndex);
+                                break;
+                            } else if (i == -1) {
+                                i = (i5 - this.nextHeaderIndex) + Hpack.INSTANCE.getSTATIC_HEADER_TABLE().length;
+                            }
+                        }
+                        i5++;
+                    }
+                }
+                if (i2 != -1) {
+                    writeInt(i2, 127, 128);
+                } else if (i == -1) {
+                    this.out.writeByte(64);
+                    writeByteString(asciiLowercase);
+                    writeByteString(byteString);
+                    insertIntoDynamicTable(header);
+                } else if (asciiLowercase.startsWith(Header.PSEUDO_PREFIX) && (!Intrinsics.areEqual(Header.TARGET_AUTHORITY, asciiLowercase))) {
+                    writeInt(i, 15, 0);
+                    writeByteString(byteString);
+                } else {
+                    writeInt(i, 63, 64);
+                    writeByteString(byteString);
+                    insertIntoDynamicTable(header);
+                }
+            }
         }
 
         public final void writeInt(int i, int i2, int i3) {

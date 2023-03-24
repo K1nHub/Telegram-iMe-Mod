@@ -57,7 +57,7 @@
     goto :goto_0
 
     :cond_0
-    const/4 p1, 0x0
+    move p1, v0
 
     .line 1601
     :goto_0
@@ -67,7 +67,7 @@
 
     move-result v1
 
-    const/4 v2, 0x0
+    move v2, v0
 
     :goto_1
     if-ge v2, v1, :cond_3
@@ -112,7 +112,7 @@
     .line 1612
     iget v4, v4, Lcom/google/android/material/appbar/CollapsingToolbarLayout$LayoutParams;->parallaxMult:F
 
-    mul-float v3, v3, v4
+    mul-float/2addr v3, v4
 
     invoke-static {v3}, Ljava/lang/Math;->round(F)I
 

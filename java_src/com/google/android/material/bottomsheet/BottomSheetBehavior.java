@@ -1113,8 +1113,8 @@ public class BottomSheetBehavior<V extends View> extends CoordinatorLayout.Behav
             if (!this.fitToContents || i4 > (i3 = this.fitToContentsOffset)) {
                 i2 = i4;
             } else {
-                i2 = i3;
                 i = 3;
+                i2 = i3;
             }
         } else if (i == 3) {
             i2 = getExpandedOffset();

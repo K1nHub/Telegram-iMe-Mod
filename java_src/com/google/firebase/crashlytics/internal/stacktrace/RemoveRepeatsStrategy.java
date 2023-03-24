@@ -28,8 +28,8 @@ public class RemoveRepeatsStrategy implements StackTraceTrimmingStrategy {
             if (num == null || !isRepeatingSequence(stackTraceElementArr, num.intValue(), i3)) {
                 stackTraceElementArr2[i4] = stackTraceElementArr[i3];
                 i4++;
-                i2 = i3;
                 i5 = 1;
+                i2 = i3;
             } else {
                 int intValue = i3 - num.intValue();
                 if (i5 < i) {

@@ -68,6 +68,7 @@ public class SharedConfig {
     public static boolean archiveHidden = false;
     public static int autoLockIn = 3600;
     public static int badPasscodeTries = 0;
+    public static boolean bigCameraForRound = false;
     public static int bubbleRadius = 0;
     public static boolean chatBubbles = false;
     private static int chatSwipeAction = 0;
@@ -125,7 +126,6 @@ public class SharedConfig {
     public static boolean isPlayerPinned = false;
     public static boolean isProfileInfoHidden = false;
     public static boolean isProxyButtonForceVisible = false;
-    public static boolean isRaiseToSwitchSpeakerEnabled = false;
     public static boolean isReactionsEnabled = false;
     public static boolean isReactionsInSendPopupEnabled = false;
     public static boolean isReadAllChatsConfirmationShown = false;
@@ -167,6 +167,7 @@ public class SharedConfig {
     public static int passcodeType = 0;
     public static int passportConfigHash = 0;
     private static HashMap<String, String> passportConfigMap = null;
+    public static boolean pauseMusicOnMedia = false;
     public static boolean pauseMusicOnRecord = false;
     public static TLRPC$TL_help_appUpdate pendingAppUpdate = null;
     public static int pendingAppUpdateBuildVersion = 0;
@@ -183,6 +184,7 @@ public class SharedConfig {
     public static long pushStringGetTimeStart = 0;
     public static String pushStringStatus = "";
     public static int pushType = 2;
+    public static boolean raiseToListen = false;
     public static boolean raiseToSpeak = false;
     public static boolean recordViaSco = false;
     public static int repeatMode = 0;
@@ -280,14 +282,6 @@ public class SharedConfig {
     public static void setVibrationEnabled(boolean z) {
         isVibrationEnabled = z;
         MessagesController.getGlobalMainSettings().edit().putBoolean(TelegramPreferenceKeys.Global.isVibrationEnabled(), isVibrationEnabled).apply();
-    }
-
-    public static void setRaiseToSwitchSpeakerEnabled(boolean z) {
-        isRaiseToSwitchSpeakerEnabled = z;
-        if (!z && raiseToSpeak) {
-            toogleRaiseToSpeak();
-        }
-        MessagesController.getGlobalMainSettings().edit().putBoolean(TelegramPreferenceKeys.Global.isRaiseToSwitchSpeakerEnabled(), isRaiseToSwitchSpeakerEnabled).apply();
     }
 
     public static void setSelectedStickersSize(StickersSize stickersSize) {
@@ -578,6 +572,7 @@ public class SharedConfig {
     static {
         chatBubbles = Build.VERSION.SDK_INT >= 30;
         raiseToSpeak = false;
+        raiseToListen = true;
         recordViaSco = false;
         customTabs = true;
         directShare = true;
@@ -589,6 +584,7 @@ public class SharedConfig {
         streamMkv = false;
         saveStreamMedia = true;
         pauseMusicOnRecord = false;
+        pauseMusicOnMedia = true;
         showNotificationsForAllAccounts = true;
         fontSize = 16;
         bubbleRadius = 17;
@@ -733,19 +729,19 @@ public class SharedConfig {
         return i;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:38:0x017a A[Catch: Exception -> 0x019c, all -> 0x07a4, TryCatch #2 {Exception -> 0x019c, blocks: (B:22:0x012b, B:24:0x0133, B:26:0x0143, B:27:0x0157, B:38:0x017a, B:40:0x017e, B:41:0x0180, B:43:0x0184, B:45:0x018a, B:47:0x0190, B:49:0x0194, B:36:0x0174), top: B:93:0x012b, outer: #3 }] */
-    /* JADX WARN: Removed duplicated region for block: B:40:0x017e A[Catch: Exception -> 0x019c, all -> 0x07a4, TryCatch #2 {Exception -> 0x019c, blocks: (B:22:0x012b, B:24:0x0133, B:26:0x0143, B:27:0x0157, B:38:0x017a, B:40:0x017e, B:41:0x0180, B:43:0x0184, B:45:0x018a, B:47:0x0190, B:49:0x0194, B:36:0x0174), top: B:93:0x012b, outer: #3 }] */
-    /* JADX WARN: Removed duplicated region for block: B:67:0x05fa  */
-    /* JADX WARN: Removed duplicated region for block: B:68:0x05fd  */
-    /* JADX WARN: Removed duplicated region for block: B:71:0x060d  */
-    /* JADX WARN: Removed duplicated region for block: B:72:0x060f  */
+    /* JADX WARN: Removed duplicated region for block: B:38:0x017a A[Catch: Exception -> 0x019c, all -> 0x07a5, TryCatch #2 {Exception -> 0x019c, blocks: (B:22:0x012b, B:24:0x0133, B:26:0x0143, B:27:0x0157, B:38:0x017a, B:40:0x017e, B:41:0x0180, B:43:0x0184, B:45:0x018a, B:47:0x0190, B:49:0x0194, B:36:0x0174), top: B:87:0x012b, outer: #3 }] */
+    /* JADX WARN: Removed duplicated region for block: B:40:0x017e A[Catch: Exception -> 0x019c, all -> 0x07a5, TryCatch #2 {Exception -> 0x019c, blocks: (B:22:0x012b, B:24:0x0133, B:26:0x0143, B:27:0x0157, B:38:0x017a, B:40:0x017e, B:41:0x0180, B:43:0x0184, B:45:0x018a, B:47:0x0190, B:49:0x0194, B:36:0x0174), top: B:87:0x012b, outer: #3 }] */
+    /* JADX WARN: Removed duplicated region for block: B:61:0x05eb  */
+    /* JADX WARN: Removed duplicated region for block: B:62:0x05ee  */
+    /* JADX WARN: Removed duplicated region for block: B:65:0x05fe  */
+    /* JADX WARN: Removed duplicated region for block: B:66:0x0600  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct add '--show-bad-code' argument
     */
     public static void loadConfig() {
         /*
-            Method dump skipped, instructions count: 1959
+            Method dump skipped, instructions count: 1960
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: org.telegram.messenger.SharedConfig.loadConfig():void");
@@ -856,7 +852,7 @@ public class SharedConfig {
             goto L1a
         L18:
             r1 = move-exception
-            r2 = 0
+            r2 = r0
         L1a:
             org.telegram.messenger.FileLog.m45e(r1)
             r1 = 0
@@ -1196,13 +1192,22 @@ public class SharedConfig {
         edit.commit();
     }
 
-    public static void toogleRaiseToSpeak() {
-        boolean z = !raiseToSpeak;
-        raiseToSpeak = z;
-        raiseToSpeak = z & isRaiseToSwitchSpeakerEnabled;
+    public static void toggleRaiseToSpeak() {
+        raiseToSpeak = !raiseToSpeak;
         SharedPreferences.Editor edit = MessagesController.getGlobalMainSettings().edit();
         edit.putBoolean("raise_to_speak", raiseToSpeak);
         edit.commit();
+    }
+
+    public static void toggleRaiseToListen() {
+        raiseToListen = !raiseToListen;
+        SharedPreferences.Editor edit = MessagesController.getGlobalMainSettings().edit();
+        edit.putBoolean("raise_to_listen", raiseToListen);
+        edit.commit();
+    }
+
+    public static boolean enabledRaiseTo(boolean z) {
+        return raiseToListen && (!z || raiseToSpeak);
     }
 
     public static void toggleCustomTabs() {
@@ -1270,6 +1275,13 @@ public class SharedConfig {
         edit.commit();
     }
 
+    public static void togglePauseMusicOnMedia() {
+        pauseMusicOnMedia = !pauseMusicOnMedia;
+        SharedPreferences.Editor edit = MessagesController.getGlobalMainSettings().edit();
+        edit.putBoolean("pauseMusicOnMedia", pauseMusicOnMedia);
+        edit.commit();
+    }
+
     public static void toggleChatBlur() {
         LiteMode.toggleFlag(256);
     }
@@ -1304,6 +1316,7 @@ public class SharedConfig {
     }
 
     public static void loadProxyList() {
+        byte readByte;
         if (proxyListLoaded) {
             return;
         }
@@ -1321,8 +1334,7 @@ public class SharedConfig {
             SerializedData serializedData = new SerializedData(Base64.decode(string5, 0));
             int readInt32 = serializedData.readInt32(false);
             if (readInt32 == -1) {
-                byte readByte = serializedData.readByte(false);
-                if (readByte == 2) {
+                if (serializedData.readByte(false) == 2) {
                     int readInt322 = serializedData.readInt32(false);
                     for (int i2 = 0; i2 < readInt322; i2++) {
                         ProxyInfo proxyInfo = new ProxyInfo(serializedData.readString(false), serializedData.readInt32(false), serializedData.readString(false), serializedData.readString(false), serializedData.readString(false));
@@ -1692,6 +1704,11 @@ public class SharedConfig {
 
     public static boolean deviceIsAverage() {
         return getDevicePerformanceClass() <= 1;
+    }
+
+    public static void toggleRoundCamera() {
+        bigCameraForRound = !bigCameraForRound;
+        ApplicationLoader.applicationContext.getSharedPreferences("mainconfig", 0).edit().putBoolean("bigCameraForRound", bigCameraForRound).apply();
     }
 
     @Deprecated

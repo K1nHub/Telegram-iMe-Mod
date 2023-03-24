@@ -141,13 +141,13 @@
     goto :goto_1
 
     :cond_2
-    const/4 v0, 0x0
+    move v0, v2
 
     goto :goto_2
 
     :cond_3
     :goto_1
-    const/4 v0, 0x1
+    move v0, v3
 
     :goto_2
     if-eq v3, v0, :cond_4
@@ -175,7 +175,7 @@
     goto :goto_4
 
     :cond_5
-    const/4 v3, 0x0
+    move v3, v2
 
     :goto_4
     iget-object v0, p0, Lcom/google/android/gms/measurement/internal/zzhz;->zza:Lcom/google/android/gms/measurement/internal/zzia;

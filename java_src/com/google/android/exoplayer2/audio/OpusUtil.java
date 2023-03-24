@@ -14,17 +14,17 @@ public class OpusUtil {
     public static final int SAMPLE_RATE = 48000;
 
     private static long getPacketDurationUs(byte b, byte b2) {
-        int i = b & 255;
-        int i2 = i & 3;
-        int i3 = 2;
-        if (i2 == 0) {
-            i3 = 1;
-        } else if (i2 != 1 && i2 != 2) {
-            i3 = b2 & 63;
+        int i;
+        int i2 = b & 255;
+        int i3 = i2 & 3;
+        int i4 = 2;
+        if (i3 == 0) {
+            i4 = 1;
+        } else if (i3 != 1 && i3 != 2) {
+            i4 = b2 & 63;
         }
-        int i4 = i >> 3;
-        int i5 = i4 & 3;
-        return i3 * (i4 >= 16 ? DefaultLoadControl.DEFAULT_BUFFER_FOR_PLAYBACK_MS << i5 : i4 >= 12 ? 10000 << (i5 & 1) : i5 == 3 ? 60000 : 10000 << i5);
+        int i5 = i2 >> 3;
+        return i4 * (i5 >= 16 ? DefaultLoadControl.DEFAULT_BUFFER_FOR_PLAYBACK_MS << i : i5 >= 12 ? 10000 << (i & 1) : (i5 & 3) == 3 ? 60000 : 10000 << i);
     }
 
     private OpusUtil() {

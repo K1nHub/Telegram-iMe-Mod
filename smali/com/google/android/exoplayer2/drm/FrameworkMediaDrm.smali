@@ -635,9 +635,9 @@
 
     check-cast p0, Lcom/google/android/exoplayer2/drm/DrmInitData$SchemeData;
 
-    const/4 v1, 0x0
+    move v1, v0
 
-    const/4 v3, 0x0
+    move v3, v1
 
     .line 368
     :goto_0
@@ -702,12 +702,12 @@
     goto :goto_0
 
     :cond_1
-    const/4 v1, 0x0
+    move v1, v0
 
     goto :goto_1
 
     :cond_2
-    const/4 v1, 0x1
+    move v1, v2
 
     :goto_1
     if-eqz v1, :cond_4
@@ -715,9 +715,9 @@
     .line 381
     new-array v1, v3, [B
 
-    const/4 v2, 0x0
+    move v2, v0
 
-    const/4 v3, 0x0
+    move v3, v2
 
     .line 383
     :goto_2
@@ -764,7 +764,7 @@
     return-object p0
 
     :cond_4
-    const/4 p0, 0x0
+    move p0, v0
 
     .line 397
     :goto_3
@@ -1042,7 +1042,7 @@
 
     if-lez v0, :cond_0
 
-    const/4 v0, 0x1
+    move v0, v1
 
     goto :goto_0
 

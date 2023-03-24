@@ -697,38 +697,38 @@
 
     move-result-wide v0
 
-    const-string p2, "this as java.lang.String).toUpperCase(Locale.ROOT)"
-
     const-wide/16 v2, -0x2
 
-    cmp-long v4, v0, v2
+    cmp-long p2, v0, v2
 
-    if-nez v4, :cond_0
+    const-string v0, "this as java.lang.String).toUpperCase(Locale.ROOT)"
+
+    if-nez p2, :cond_0
 
     .line 73
     invoke-direct {p0}, Lcom/smedialink/ui/topics/TopicView;->getNameTextView()Landroid/widget/TextView;
 
     move-result-object p1
 
-    sget v0, Lorg/telegram/messenger/R$string;->topics_title_notopic:I
+    sget p2, Lorg/telegram/messenger/R$string;->topics_title_notopic:I
 
-    invoke-static {v0}, Lorg/telegram/messenger/LocaleController;->getInternalString(I)Ljava/lang/String;
+    invoke-static {p2}, Lorg/telegram/messenger/LocaleController;->getInternalString(I)Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object p2
 
     const-string v1, "getInternalString(R.string.topics_title_notopic)"
 
-    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {p2, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     sget-object v1, Ljava/util/Locale;->ROOT:Ljava/util/Locale;
 
-    invoke-virtual {v0, v1}, Ljava/lang/String;->toUpperCase(Ljava/util/Locale;)Ljava/lang/String;
+    invoke-virtual {p2, v1}, Ljava/lang/String;->toUpperCase(Ljava/util/Locale;)Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object p2
 
-    invoke-static {v0, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    invoke-virtual {p1, v0}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+    invoke-virtual {p1, p2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     .line 74
     invoke-direct {p0}, Lcom/smedialink/ui/topics/TopicView;->getIconView()Landroid/widget/ImageView;
@@ -743,9 +743,9 @@
     :cond_0
     invoke-virtual {p1}, Lcom/smedialink/storage/domain/model/topics/TopicModel;->isUserTopic()Z
 
-    move-result v0
+    move-result p2
 
-    if-eqz v0, :cond_2
+    if-eqz p2, :cond_2
 
     .line 76
     invoke-direct {p0}, Lcom/smedialink/ui/topics/TopicView;->getNameTextView()Landroid/widget/TextView;
@@ -833,28 +833,28 @@
     :cond_2
     invoke-virtual {p1}, Lcom/smedialink/storage/domain/model/topics/TopicModel;->isAutoTopic()Z
 
-    move-result v0
+    move-result p2
 
-    if-eqz v0, :cond_5
+    if-eqz p2, :cond_5
 
     .line 84
     invoke-virtual {p1}, Lcom/smedialink/storage/domain/model/topics/TopicModel;->getIcon()Lcom/smedialink/storage/data/repository/topics/Topic;
 
-    move-result-object v0
+    move-result-object p2
 
-    invoke-static {v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;)V
+    invoke-static {p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;)V
 
-    invoke-static {v0}, Lcom/smedialink/utils/extentions/model/topic/TopicExtKt;->info(Lcom/smedialink/storage/data/repository/topics/Topic;)Lcom/smedialink/ui/topics/TopicInfo;
+    invoke-static {p2}, Lcom/smedialink/utils/extentions/model/topic/TopicExtKt;->info(Lcom/smedialink/storage/data/repository/topics/Topic;)Lcom/smedialink/ui/topics/TopicInfo;
 
-    move-result-object v0
+    move-result-object p2
 
-    invoke-virtual {v0}, Lcom/smedialink/ui/topics/TopicInfo;->component2()I
+    invoke-virtual {p2}, Lcom/smedialink/ui/topics/TopicInfo;->component2()I
 
     move-result v1
 
-    invoke-virtual {v0}, Lcom/smedialink/ui/topics/TopicInfo;->component3()I
+    invoke-virtual {p2}, Lcom/smedialink/ui/topics/TopicInfo;->component3()I
 
-    move-result v0
+    move-result p2
 
     if-eqz v1, :cond_3
 
@@ -877,7 +877,7 @@
 
     move-result-object v1
 
-    invoke-static {v1, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-virtual {v4, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
@@ -885,11 +885,11 @@
     :cond_3
     invoke-virtual {p1}, Lcom/smedialink/storage/domain/model/topics/TopicModel;->getTopicId()J
 
-    move-result-wide p1
+    move-result-wide v0
 
-    cmp-long v1, p1, v2
+    cmp-long p1, v0, v2
 
-    if-nez v1, :cond_4
+    if-nez p1, :cond_4
 
     .line 89
     invoke-direct {p0}, Lcom/smedialink/ui/topics/TopicView;->getIconView()Landroid/widget/ImageView;
@@ -913,7 +913,7 @@
 
     move-result-object p1
 
-    invoke-virtual {p1, v0}, Landroid/widget/ImageView;->setImageResource(I)V
+    invoke-virtual {p1, p2}, Landroid/widget/ImageView;->setImageResource(I)V
 
     .line 95
     :cond_5
@@ -1136,7 +1136,7 @@
     goto :goto_5
 
     :cond_c
-    const/4 v1, -0x1
+    move v1, v3
 
     :goto_5
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setTextColor(I)V

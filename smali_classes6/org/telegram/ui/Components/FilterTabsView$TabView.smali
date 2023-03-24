@@ -307,7 +307,7 @@
 
     invoke-direct {v5, v1}, Landroid/text/SpannableStringBuilder;-><init>(Ljava/lang/CharSequence;)V
 
-    const/4 v6, 0x0
+    move v6, v3
 
     .line 899
     :goto_0
@@ -531,12 +531,12 @@
 
     :cond_3
     :goto_2
-    const/4 v1, 0x1
+    move v1, v4
 
     goto :goto_3
 
     :cond_4
-    const/4 v1, 0x0
+    move v1, v3
 
     .line 924
     :goto_3
@@ -602,9 +602,9 @@
     goto :goto_4
 
     :cond_5
-    move-object v2, v5
+    move v6, v3
 
-    const/4 v6, 0x0
+    move-object v2, v5
 
     .line 931
     :goto_4
@@ -636,7 +636,7 @@
     move-result v2
 
     :goto_5
-    mul-float v8, v8, v2
+    mul-float/2addr v8, v2
 
     invoke-static {v8}, Lorg/telegram/messenger/AndroidUtilities;->dp(F)I
 
@@ -647,7 +647,7 @@
     goto :goto_6
 
     :cond_7
-    const/4 v6, 0x0
+    move v6, v3
 
     :goto_6
     add-int/2addr v7, v6
@@ -676,7 +676,7 @@
     .line 936
     iput v6, v0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->animateFromTextX:F
 
-    const/4 v1, 0x1
+    move v1, v4
 
     .line 940
     :cond_8
@@ -719,7 +719,7 @@
 
     iget-object v2, v2, Lorg/telegram/ui/Components/FilterTabsView$Tab;->title:Ljava/lang/String;
 
-    const/4 v6, 0x1
+    move v6, v4
 
     goto :goto_7
 
@@ -732,7 +732,7 @@
     .line 951
     iget-object v2, v0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->lastTitle:Ljava/lang/String;
 
-    const/4 v6, 0x0
+    move v6, v3
 
     .line 953
     :goto_7
@@ -1000,7 +1000,7 @@
     iput v1, v0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->animateFromTitleWidth:I
 
     :goto_9
-    const/4 v1, 0x1
+    move v1, v4
 
     :cond_e
     int-to-float v2, v7
@@ -1214,10 +1214,10 @@
     goto :goto_1
 
     :cond_1
-    const/high16 v11, -0x40800000    # -1.0f
+    move v11, v12
 
     :goto_1
-    mul-float v1, v1, v11
+    mul-float/2addr v1, v11
 
     .line 523
     rem-int/2addr v6, v5
@@ -1230,7 +1230,7 @@
 
     const-wide v15, 0x400921fb54442d18L    # Math.PI
 
-    mul-double v13, v13, v15
+    mul-double/2addr v13, v15
 
     const-wide/high16 v17, 0x4004000000000000L    # 2.5
 
@@ -1255,7 +1255,7 @@
 
     float-to-double v13, v6
 
-    mul-double v13, v13, v15
+    mul-double/2addr v13, v15
 
     iget v6, v0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->currentPosition:I
 
@@ -1268,12 +1268,12 @@
     goto :goto_2
 
     :cond_2
-    const/high16 v6, -0x40800000    # -1.0f
+    move v6, v12
 
     :goto_2
     float-to-double v3, v6
 
-    mul-double v13, v13, v3
+    mul-double/2addr v13, v3
 
     double-to-float v3, v13
 
@@ -1292,7 +1292,7 @@
 
     int-to-double v10, v11
 
-    mul-double v13, v13, v10
+    mul-double/2addr v13, v10
 
     iget v10, v0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->currentPosition:I
 
@@ -1305,7 +1305,7 @@
     :cond_3
     float-to-double v10, v12
 
-    mul-double v13, v13, v10
+    mul-double/2addr v13, v10
 
     double-to-float v10, v13
 
@@ -1322,7 +1322,7 @@
 
     int-to-double v11, v6
 
-    mul-double v3, v3, v11
+    mul-double/2addr v3, v11
 
     double-to-float v3, v3
 
@@ -1331,7 +1331,7 @@
 
     const v3, 0x3fb33333    # 1.4f
 
-    mul-float v1, v1, v3
+    mul-float/2addr v1, v3
 
     .line 529
     invoke-virtual/range {p0 .. p0}, Landroid/view/View;->getMeasuredWidth()I
@@ -1408,7 +1408,7 @@
     goto :goto_4
 
     :cond_6
-    const/4 v10, 0x0
+    move v10, v8
 
     :goto_4
     const-string v11, "chats_tabUnreadActiveBackground"
@@ -1803,9 +1803,9 @@
     goto :goto_d
 
     :cond_14
-    move-object/from16 v3, v19
+    move v5, v8
 
-    const/4 v5, 0x0
+    move-object/from16 v3, v19
 
     const/16 v18, 0x0
 
@@ -1977,7 +1977,7 @@
 
     move-result v15
 
-    mul-float v3, v3, v15
+    mul-float/2addr v3, v15
 
     add-float/2addr v9, v3
 
@@ -2019,7 +2019,7 @@
     move-result v13
 
     :goto_11
-    mul-float v15, v15, v13
+    mul-float/2addr v15, v13
 
     invoke-static {v15}, Lorg/telegram/messenger/AndroidUtilities;->dp(F)I
 
@@ -2062,7 +2062,7 @@
     .line 621
     iget v13, v0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->changeProgress:F
 
-    mul-float v3, v3, v13
+    mul-float/2addr v3, v13
 
     iget v15, v0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->animateFromTextX:F
 
@@ -2070,7 +2070,7 @@
 
     sub-float v13, v17, v13
 
-    mul-float v15, v15, v13
+    mul-float/2addr v15, v13
 
     add-float/2addr v3, v15
 
@@ -2347,7 +2347,7 @@
     sub-float v5, v9, v5
 
     :goto_14
-    mul-float v3, v3, v5
+    mul-float/2addr v3, v5
 
     .line 659
     iget-object v5, v0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->titleAnimateStableLayout:Landroid/text/StaticLayout;
@@ -2439,7 +2439,7 @@
     iget v15, v0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->changeProgress:F
 
     :goto_15
-    mul-float v10, v10, v15
+    mul-float/2addr v10, v15
 
     float-to-int v10, v10
 
@@ -2536,7 +2536,7 @@
     sub-float v15, v17, v15
 
     :goto_16
-    mul-float v10, v10, v15
+    mul-float/2addr v10, v15
 
     float-to-int v10, v10
 
@@ -2852,7 +2852,7 @@
     goto :goto_1b
 
     :cond_2d
-    const/4 v5, 0x4
+    move v5, v9
 
     goto :goto_1b
 
@@ -3154,11 +3154,11 @@
 
     sub-float v11, v10, v9
 
-    mul-float v4, v4, v11
+    mul-float/2addr v4, v11
 
     int-to-float v1, v1
 
-    mul-float v1, v1, v9
+    mul-float/2addr v1, v9
 
     add-float/2addr v4, v1
 
@@ -3318,9 +3318,9 @@
 
     sub-float v12, v11, v10
 
-    mul-float v4, v4, v12
+    mul-float/2addr v4, v12
 
-    mul-float v5, v5, v10
+    mul-float/2addr v5, v10
 
     add-float/2addr v4, v5
 
@@ -3344,7 +3344,7 @@
 
     sub-float v12, v11, v10
 
-    mul-float v5, v5, v12
+    mul-float/2addr v5, v12
 
     mul-float v10, v10, v23
 
@@ -3414,11 +3414,11 @@
 
     sget v5, Lorg/telegram/messenger/AndroidUtilities;->density:F
 
-    mul-float v4, v4, v5
+    mul-float/2addr v4, v5
 
     const/high16 v11, 0x41380000    # 11.5f
 
-    mul-float v5, v5, v11
+    mul-float/2addr v5, v11
 
     iget-object v11, v0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->this$0:Lorg/telegram/ui/Components/FilterTabsView;
 
@@ -3570,7 +3570,7 @@
 
     iget v5, v0, Lorg/telegram/ui/Components/FilterTabsView$TabView;->changeProgress:F
 
-    mul-float v4, v4, v5
+    mul-float/2addr v4, v5
 
     float-to-int v4, v4
 
@@ -3607,7 +3607,7 @@
 
     int-to-float v5, v8
 
-    mul-float v3, v3, v5
+    mul-float/2addr v3, v5
 
     add-float/2addr v3, v10
 
@@ -3645,7 +3645,7 @@
 
     sub-float v5, v8, v5
 
-    mul-float v4, v4, v5
+    mul-float/2addr v4, v5
 
     float-to-int v4, v4
 
@@ -3680,7 +3680,7 @@
 
     int-to-float v5, v5
 
-    mul-float v3, v3, v5
+    mul-float/2addr v3, v5
 
     add-float/2addr v3, v10
 
@@ -4434,7 +4434,7 @@
     goto :goto_0
 
     :cond_0
-    const/4 v0, 0x0
+    move v0, v1
 
     :goto_0
     invoke-virtual {p1, v0}, Landroid/view/accessibility/AccessibilityNodeInfo;->setSelected(Z)V
@@ -4502,7 +4502,7 @@
     goto :goto_2
 
     :cond_2
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_2
     if-lez v2, :cond_3

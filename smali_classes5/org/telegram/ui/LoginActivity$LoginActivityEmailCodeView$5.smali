@@ -1,14 +1,11 @@
 .class Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView$5;
-.super Ljava/lang/Object;
+.super Landroid/widget/TextView;
 .source "LoginActivity.java"
-
-# interfaces
-.implements Landroid/text/TextWatcher;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->setParams(Landroid/os/Bundle;Z)V
+    value = Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;-><init>(Lorg/telegram/ui/LoginActivity;Landroid/content/Context;Z)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -17,66 +14,43 @@
 .end annotation
 
 
-# instance fields
-.field final synthetic this$1:Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;
-
-
 # direct methods
-.method constructor <init>(Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;)V
+.method constructor <init>(Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;Landroid/content/Context;Lorg/telegram/ui/LoginActivity;)V
     .locals 0
 
-    .line 6265
-    iput-object p1, p0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView$5;->this$1:Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 6207
+    invoke-direct {p0, p2}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public afterTextChanged(Landroid/text/Editable;)V
-    .locals 0
+.method protected onMeasure(II)V
+    .locals 1
 
-    return-void
-.end method
+    .line 6210
+    invoke-static {p2}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
-.method public beforeTextChanged(Ljava/lang/CharSequence;III)V
-    .locals 0
+    move-result p2
 
-    .line 6268
-    iget-object p1, p0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView$5;->this$1:Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;
+    const/16 v0, 0x64
 
-    invoke-static {p1}, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->access$14400(Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;)Z
+    invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
-    move-result p1
+    move-result v0
 
-    if-eqz p1, :cond_0
+    invoke-static {p2, v0}, Ljava/lang/Math;->max(II)I
 
-    .line 6269
-    iget-object p1, p0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView$5;->this$1:Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;
+    move-result p2
 
-    invoke-static {p1}, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->access$14500(Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;)Ljava/lang/Runnable;
+    const/high16 v0, -0x80000000
 
-    move-result-object p2
+    invoke-static {p2, v0}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
 
-    invoke-virtual {p1, p2}, Landroid/widget/LinearLayout;->removeCallbacks(Ljava/lang/Runnable;)Z
+    move-result p2
 
-    .line 6270
-    iget-object p1, p0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView$5;->this$1:Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;
-
-    invoke-static {p1}, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->access$14500(Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;)Ljava/lang/Runnable;
-
-    move-result-object p1
-
-    invoke-interface {p1}, Ljava/lang/Runnable;->run()V
-
-    :cond_0
-    return-void
-.end method
-
-.method public onTextChanged(Ljava/lang/CharSequence;III)V
-    .locals 0
+    invoke-super {p0, p1, p2}, Landroid/widget/TextView;->onMeasure(II)V
 
     return-void
 .end method

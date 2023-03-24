@@ -400,7 +400,7 @@
     goto :goto_3
 
     :cond_5
-    const/4 v1, 0x0
+    move v1, v2
 
     .line 180
     :goto_3

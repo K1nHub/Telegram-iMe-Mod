@@ -49,29 +49,29 @@
 
     move-result p1
 
-    const/high16 v0, 0x3f800000    # 1.0f
+    const/high16 v0, 0x3f000000    # 0.5f
 
-    const/4 v1, 0x1
+    cmpg-float v0, p1, v0
 
-    const/high16 v2, 0x3f000000    # 0.5f
+    const/high16 v1, 0x3f800000    # 1.0f
 
-    cmpg-float v2, p1, v2
+    const/4 v2, 0x1
 
-    if-gez v2, :cond_0
+    if-gez v0, :cond_0
 
-    const/4 v2, 0x0
+    const/4 v0, 0x0
 
     goto :goto_0
 
     :cond_0
-    sub-float/2addr p1, v0
+    sub-float/2addr p1, v1
 
-    const/4 v2, 0x1
+    move v0, v2
 
     :goto_0
     const/high16 v3, 0x43340000    # 180.0f
 
-    mul-float p1, p1, v3
+    mul-float/2addr p1, v3
 
     .line 219
     iget-object v3, p0, Lorg/telegram/messenger/camera/CameraView$1;->this$0:Lorg/telegram/messenger/camera/CameraView;
@@ -91,26 +91,26 @@
 
     invoke-virtual {v3, p1}, Landroid/widget/ImageView;->setRotationY(F)V
 
-    if-eqz v2, :cond_1
+    if-eqz v0, :cond_1
 
     .line 221
     iget-object p1, p0, Lorg/telegram/messenger/camera/CameraView$1;->this$0:Lorg/telegram/messenger/camera/CameraView;
 
-    iget-boolean v2, p1, Lorg/telegram/messenger/camera/CameraView;->flipHalfReached:Z
+    iget-boolean v0, p1, Lorg/telegram/messenger/camera/CameraView;->flipHalfReached:Z
 
-    if-nez v2, :cond_1
+    if-nez v0, :cond_1
 
     .line 222
     invoke-static {p1}, Lorg/telegram/messenger/camera/CameraView;->access$100(Lorg/telegram/messenger/camera/CameraView;)Landroid/widget/ImageView;
 
     move-result-object p1
 
-    invoke-virtual {p1, v0}, Landroid/widget/ImageView;->setAlpha(F)V
+    invoke-virtual {p1, v1}, Landroid/widget/ImageView;->setAlpha(F)V
 
     .line 223
     iget-object p1, p0, Lorg/telegram/messenger/camera/CameraView$1;->this$0:Lorg/telegram/messenger/camera/CameraView;
 
-    iput-boolean v1, p1, Lorg/telegram/messenger/camera/CameraView;->flipHalfReached:Z
+    iput-boolean v2, p1, Lorg/telegram/messenger/camera/CameraView;->flipHalfReached:Z
 
     :cond_1
     return-void

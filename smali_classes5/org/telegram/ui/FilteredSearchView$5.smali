@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/FilteredSearchView;Landroid/content/Context;)V
     .locals 0
 
-    .line 353
+    .line 363
     iput-object p1, p0, Lorg/telegram/ui/FilteredSearchView$5;->this$0:Lorg/telegram/ui/FilteredSearchView;
 
     invoke-direct {p0, p2}, Lorg/telegram/ui/Components/FlickerLoadingView;-><init>(Landroid/content/Context;)V
@@ -35,7 +35,7 @@
 .method public getColumnsCount()I
     .locals 1
 
-    .line 356
+    .line 366
     iget-object v0, p0, Lorg/telegram/ui/FilteredSearchView$5;->this$0:Lorg/telegram/ui/FilteredSearchView;
 
     invoke-static {v0}, Lorg/telegram/ui/FilteredSearchView;->access$700(Lorg/telegram/ui/FilteredSearchView;)I

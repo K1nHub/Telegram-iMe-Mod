@@ -704,9 +704,9 @@
 
     const/4 v3, -0x5
 
-    const/4 v4, -0x5
+    move v5, v1
 
-    const/4 v5, 0x0
+    move v4, v3
 
     .line 7638
     :goto_0
@@ -1078,7 +1078,7 @@
 
     invoke-virtual {v14, v15, v5}, Landroid/util/SparseIntArray;->put(II)V
 
-    const/4 v14, 0x0
+    move v14, v1
 
     .line 7699
     :goto_3
@@ -1222,7 +1222,7 @@
 
     iget v6, v0, Lorg/telegram/ui/Components/EmojiView$StickersGridAdapter;->stickersPerRow:I
 
-    mul-int v13, v13, v6
+    mul-int/2addr v13, v6
 
     add-int/lit8 v13, v13, 0x1
 
@@ -1431,7 +1431,7 @@
 
     if-nez p1, :cond_1
 
-    const/4 p1, 0x1
+    move p1, v1
 
     .line 7408
     :cond_1
@@ -1760,7 +1760,7 @@
 
     if-ne p2, v0, :cond_3
 
-    const/4 v1, 0x1
+    move v1, v3
 
     :cond_3
     invoke-virtual {p1, v1}, Lorg/telegram/ui/Cells/StickerSetGroupInfoCell;->setIsLast(Z)V
@@ -1799,7 +1799,7 @@
 
     if-nez p2, :cond_5
 
-    const/4 p2, 0x0
+    move p2, v1
 
     goto :goto_1
 
@@ -2134,7 +2134,7 @@
 
     move-result v1
 
-    mul-int v0, v0, v1
+    mul-int/2addr v0, v1
 
     sub-int/2addr p2, v0
 

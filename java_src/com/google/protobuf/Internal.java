@@ -9,14 +9,19 @@ import java.util.RandomAccess;
 /* loaded from: classes3.dex */
 public final class Internal {
     public static final byte[] EMPTY_BYTE_ARRAY;
-    static final Charset UTF_8 = Charset.forName("UTF-8");
+    public static final ByteBuffer EMPTY_BYTE_BUFFER;
+    static final Charset UTF_8;
 
     /* loaded from: classes3.dex */
     public interface BooleanList extends ProtobufList<Boolean> {
+        @Override // 
+        ProtobufList<Boolean> mutableCopyWithCapacity(int i);
     }
 
     /* loaded from: classes3.dex */
     public interface DoubleList extends ProtobufList<Double> {
+        @Override // com.google.protobuf.Internal.ProtobufList, com.google.protobuf.Internal.BooleanList
+        ProtobufList<Double> mutableCopyWithCapacity(int i);
     }
 
     /* loaded from: classes3.dex */
@@ -36,14 +41,20 @@ public final class Internal {
 
     /* loaded from: classes3.dex */
     public interface FloatList extends ProtobufList<Float> {
+        @Override // com.google.protobuf.Internal.ProtobufList, com.google.protobuf.Internal.BooleanList
+        ProtobufList<Float> mutableCopyWithCapacity(int i);
     }
 
     /* loaded from: classes3.dex */
     public interface IntList extends ProtobufList<Integer> {
+        @Override // com.google.protobuf.Internal.ProtobufList, com.google.protobuf.Internal.BooleanList
+        ProtobufList<Integer> mutableCopyWithCapacity(int i);
     }
 
     /* loaded from: classes3.dex */
     public interface LongList extends ProtobufList<Long> {
+        @Override // com.google.protobuf.Internal.ProtobufList, com.google.protobuf.Internal.BooleanList
+        ProtobufList<Long> mutableCopyWithCapacity(int i);
     }
 
     /* loaded from: classes3.dex */
@@ -64,10 +75,12 @@ public final class Internal {
     }
 
     static {
+        Charset.forName(C0468C.ASCII_NAME);
+        UTF_8 = Charset.forName("UTF-8");
         Charset.forName(C0468C.ISO88591_NAME);
         byte[] bArr = new byte[0];
         EMPTY_BYTE_ARRAY = bArr;
-        ByteBuffer.wrap(bArr);
+        EMPTY_BYTE_BUFFER = ByteBuffer.wrap(bArr);
         CodedInputStream.newInstance(bArr);
     }
 

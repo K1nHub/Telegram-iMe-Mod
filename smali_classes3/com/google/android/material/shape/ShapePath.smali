@@ -344,7 +344,7 @@
 
     const/high16 p6, 0x3f000000    # 0.5f
 
-    mul-float p5, p5, p6
+    mul-float/2addr p5, p6
 
     sub-float/2addr p3, p1
 
@@ -365,7 +365,7 @@
 
     double-to-float v2, v2
 
-    mul-float p3, p3, v2
+    mul-float/2addr p3, v2
 
     add-float/2addr p5, p3
 
@@ -374,7 +374,7 @@
 
     add-float p3, p2, p4
 
-    mul-float p3, p3, p6
+    mul-float/2addr p3, p6
 
     sub-float/2addr p4, p2
 
@@ -391,7 +391,7 @@
 
     double-to-float p1, p1
 
-    mul-float p4, p4, p1
+    mul-float/2addr p4, p1
 
     add-float/2addr p3, p4
 

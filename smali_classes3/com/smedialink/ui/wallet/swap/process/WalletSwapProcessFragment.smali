@@ -3112,12 +3112,12 @@
 
     if-eqz p4, :cond_1
 
-    const/4 p3, 0x0
+    move p3, p5
 
     goto :goto_0
 
     :cond_1
-    const/16 p3, 0x8
+    move p3, v0
 
     .line 262
     :goto_0
@@ -3135,7 +3135,7 @@
     goto :goto_1
 
     :cond_2
-    const/16 p5, 0x8
+    move p5, v0
 
     .line 262
     :goto_1
@@ -3151,12 +3151,12 @@
 
     if-eqz p4, :cond_4
 
-    const/4 p2, 0x0
+    move p2, p5
 
     goto :goto_2
 
     :cond_4
-    const/16 p2, 0x8
+    move p2, v0
 
     .line 262
     :goto_2
@@ -3187,7 +3187,7 @@
     goto :goto_3
 
     :cond_6
-    const/16 p5, 0x8
+    move p5, v0
 
     .line 262
     :goto_3

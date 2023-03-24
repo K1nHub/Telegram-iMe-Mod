@@ -153,7 +153,7 @@
     goto :goto_0
 
     :cond_3
-    const/4 v0, 0x0
+    move v0, v2
 
     :goto_0
     return v0
@@ -179,15 +179,15 @@
 
     xor-long/2addr v0, v2
 
-    long-to-int v1, v0
+    long-to-int v0, v0
 
     goto :goto_0
 
     :cond_0
-    const/4 v1, 0x0
+    const/4 v0, 0x0
 
     :goto_0
-    return v1
+    return v0
 .end method
 
 .method public toString()Ljava/lang/String;

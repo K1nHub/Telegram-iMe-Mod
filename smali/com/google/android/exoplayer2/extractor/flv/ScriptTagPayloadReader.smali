@@ -555,7 +555,7 @@
 
     if-lez p2, :cond_4
 
-    mul-double v3, v3, v1
+    mul-double/2addr v3, v1
 
     double-to-long v3, v3
 
@@ -622,7 +622,7 @@
 
     iput-object v3, p0, Lcom/google/android/exoplayer2/extractor/flv/ScriptTagPayloadReader;->keyFrameTagPositions:[J
 
-    const/4 v3, 0x0
+    move v3, p3
 
     :goto_0
     if-ge v3, v0, :cond_6
@@ -655,7 +655,7 @@
 
     move-result-wide v7
 
-    mul-double v7, v7, v1
+    mul-double/2addr v7, v1
 
     double-to-long v7, v7
 

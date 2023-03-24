@@ -39,13 +39,13 @@ public class Render {
     }
 
     private static void PaintSegment(Point point, Point point2, RenderState renderState) {
-        boolean z;
         int i;
+        boolean z;
         double distanceTo = point.getDistanceTo(point2);
         Point substract = point2.substract(point);
         Point point3 = new Point(1.0d, 1.0d, 0.0d);
-        float atan2 = Math.abs(renderState.angle) > BitmapDescriptorFactory.HUE_RED ? renderState.angle : (float) Math.atan2(substract.f1732y, substract.f1731x);
-        float f = (float) ((((renderState.baseWeight * point2.f1733z) * renderState.scale) * 1.0d) / renderState.viewportScale);
+        float atan2 = Math.abs(renderState.angle) > BitmapDescriptorFactory.HUE_RED ? renderState.angle : (float) Math.atan2(substract.f1733y, substract.f1732x);
+        float f = (float) ((((renderState.baseWeight * point2.f1734z) * renderState.scale) * 1.0d) / renderState.viewportScale);
         double max = Math.max(1.0f, renderState.spacing * f);
         if (distanceTo > 0.0d) {
             point3 = substract.multiplyByScalar(1.0d / distanceTo);
@@ -58,15 +58,16 @@ public class Render {
         renderState.appendValuesCount((int) Math.ceil((distanceTo - renderState.remainder) / max));
         renderState.setPosition(count);
         Point add = point.add(point4.multiplyByScalar(renderState.remainder));
+        int i2 = 1;
         double d = renderState.remainder;
         boolean z4 = true;
         while (true) {
             if (d > distanceTo) {
+                i = i2;
                 z = z3;
-                i = 1;
                 break;
             }
-            i = 1;
+            i = i2;
             z = z3;
             z4 = renderState.addPoint(add.toPointF(), f, atan2, z2 ? min : renderState.alpha, -1);
             if (!z4) {
@@ -75,6 +76,7 @@ public class Render {
             add = add.add(point4.multiplyByScalar(max));
             z2 = false;
             d += max;
+            i2 = i;
             z3 = z;
         }
         if (z4 && z) {
@@ -87,7 +89,7 @@ public class Render {
     private static void PaintStamp(Point point, RenderState renderState) {
         float f = ((renderState.baseWeight * renderState.scale) * 1.0f) / renderState.viewportScale;
         PointF pointF = point.toPointF();
-        float f2 = Math.abs(renderState.angle) > BitmapDescriptorFactory.HUE_RED ? renderState.angle : BitmapDescriptorFactory.HUE_RED;
+        float f2 = Math.abs(renderState.angle) > BitmapDescriptorFactory.HUE_RED ? renderState.angle : 0.0f;
         float f3 = renderState.alpha;
         renderState.prepare();
         renderState.appendValuesCount(1);
@@ -106,12 +108,12 @@ public class Render {
         ByteBuffer allocateDirect = ByteBuffer.allocateDirect(((count * 4) + (i2 * 2)) * 20);
         allocateDirect.order(ByteOrder.nativeOrder());
         FloatBuffer asFloatBuffer = allocateDirect.asFloatBuffer();
-        char c = 0;
+        int i3 = 0;
         asFloatBuffer.position(0);
         renderState.setPosition(0);
-        int i3 = 0;
         int i4 = 0;
-        while (i3 < count) {
+        int i5 = 0;
+        while (i4 < count) {
             float read = renderState.read();
             float read2 = renderState.read();
             float read3 = renderState.read();
@@ -120,7 +122,7 @@ public class Render {
             RectF rectF2 = new RectF(read - read3, read2 - read3, read + read3, read2 + read3);
             float[] fArr = new float[8];
             float f2 = rectF2.left;
-            fArr[c] = f2;
+            fArr[i3] = f2;
             float f3 = rectF2.top;
             fArr[1] = f3;
             float f4 = rectF2.right;
@@ -139,7 +141,7 @@ public class Render {
             matrix.mapRect(rectF2);
             Utils.RectFIntegral(rectF2);
             rectF.union(rectF2);
-            if (i4 != 0) {
+            if (i5 != 0) {
                 asFloatBuffer.put(fArr[0]);
                 i = 1;
                 asFloatBuffer.put(fArr[1]);
@@ -147,7 +149,7 @@ public class Render {
                 asFloatBuffer.put(BitmapDescriptorFactory.HUE_RED);
                 asFloatBuffer.put(BitmapDescriptorFactory.HUE_RED);
                 asFloatBuffer.put(read5);
-                i4++;
+                i5++;
             } else {
                 i = 1;
                 f = BitmapDescriptorFactory.HUE_RED;
@@ -172,19 +174,19 @@ public class Render {
             asFloatBuffer.put(1.0f);
             asFloatBuffer.put(1.0f);
             asFloatBuffer.put(read5);
-            i4 = i4 + i + i + i + i;
-            if (i3 != i2) {
+            i5 = i5 + i + i + i + i;
+            if (i4 != i2) {
                 asFloatBuffer.put(fArr[6]);
                 asFloatBuffer.put(fArr[7]);
                 asFloatBuffer.put(1.0f);
                 asFloatBuffer.put(1.0f);
                 asFloatBuffer.put(read5);
-                i4++;
+                i5++;
             }
-            i3++;
-            c = 0;
+            i4++;
+            i3 = 0;
         }
-        asFloatBuffer.position(0);
+        asFloatBuffer.position(i3);
         GLES20.glVertexAttribPointer(0, 2, 5126, false, 20, (Buffer) asFloatBuffer.slice());
         GLES20.glEnableVertexAttribArray(0);
         asFloatBuffer.position(2);
@@ -193,7 +195,7 @@ public class Render {
         asFloatBuffer.position(4);
         GLES20.glVertexAttribPointer(2, 1, 5126, true, 20, (Buffer) asFloatBuffer.slice());
         GLES20.glEnableVertexAttribArray(2);
-        GLES20.glDrawArrays(5, 0, i4);
+        GLES20.glDrawArrays(5, 0, i5);
         return rectF;
     }
 }

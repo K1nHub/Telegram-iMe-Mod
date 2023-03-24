@@ -107,6 +107,7 @@ public class MotionPaths implements Comparable<MotionPaths> {
     public void setView(float position, View view, int[] toUse, double[] data, double[] slope, double[] cycle) {
         float f;
         boolean z;
+        boolean z2;
         float f2;
         float f3 = this.f32x;
         float f4 = this.f33y;
@@ -189,9 +190,11 @@ public class MotionPaths implements Comparable<MotionPaths> {
             if (slope.length >= 2) {
                 z = false;
                 slope[0] = sin2;
+                z2 = true;
                 slope[1] = cos2;
             } else {
                 z = false;
+                z2 = true;
             }
             if (!Float.isNaN(f14)) {
                 view.setRotation((float) (f14 + Math.toDegrees(Math.atan2(cos2, sin2))));
@@ -201,6 +204,7 @@ public class MotionPaths implements Comparable<MotionPaths> {
         } else {
             f = f6;
             z = false;
+            z2 = true;
             if (!Float.isNaN(f14)) {
                 view.setRotation((float) (((double) BitmapDescriptorFactory.HUE_RED) + f14 + Math.toDegrees(Math.atan2(f9 + (f11 / 2.0f), f8 + (f10 / 2.0f)))));
             }
@@ -217,7 +221,10 @@ public class MotionPaths implements Comparable<MotionPaths> {
         int i7 = (int) (f20 + f);
         int i8 = i6 - i4;
         int i9 = i7 - i5;
-        if ((i8 == view.getMeasuredWidth() && i9 == view.getMeasuredHeight()) ? true : true) {
+        if (i8 != view.getMeasuredWidth() || i9 != view.getMeasuredHeight()) {
+            z = z2;
+        }
+        if (z) {
             view.measure(View.MeasureSpec.makeMeasureSpec(i8, 1073741824), View.MeasureSpec.makeMeasureSpec(i9, 1073741824));
         }
         view.layout(i4, i5, i6, i7);

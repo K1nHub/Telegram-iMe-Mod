@@ -163,12 +163,12 @@
 
     if-eqz p2, :cond_1
 
-    const/4 p2, 0x5
+    move p2, v0
 
     goto :goto_0
 
     :cond_1
-    const/4 p2, 0x3
+    move p2, v1
 
     :goto_0
     or-int/lit8 p2, p2, 0x10
@@ -189,7 +189,7 @@
     goto :goto_1
 
     :cond_2
-    const/4 v0, 0x3
+    move v0, v1
 
     :goto_1
     or-int/lit8 v4, v0, 0x30
@@ -241,8 +241,6 @@
 
     const/4 v0, 0x0
 
-    const/4 v3, 0x0
-
     goto :goto_0
 
     :cond_0
@@ -252,9 +250,9 @@
 
     int-to-float v0, v0
 
+    :goto_0
     move v3, v0
 
-    :goto_0
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredHeight()I
 
     move-result v0
@@ -317,7 +315,7 @@
 
     iget v2, p0, Lorg/telegram/ui/Cells/TextColorCell;->alpha:F
 
-    mul-float v2, v2, v1
+    mul-float/2addr v2, v1
 
     float-to-int v1, v2
 
@@ -452,12 +450,12 @@
 
     if-eqz p1, :cond_0
 
-    const/high16 v6, 0x3f800000    # 1.0f
+    move v6, v0
 
     goto :goto_0
 
     :cond_0
-    const/high16 v6, 0x3f000000    # 0.5f
+    move v6, v1
 
     :goto_0
     const/4 v7, 0x0
@@ -480,7 +478,7 @@
     goto :goto_1
 
     :cond_1
-    const/high16 v0, 0x3f000000    # 0.5f
+    move v0, v1
 
     :goto_1
     aput v0, v3, v7
@@ -499,12 +497,12 @@
 
     if-eqz p1, :cond_3
 
-    const/high16 v2, 0x3f800000    # 1.0f
+    move v2, v0
 
     goto :goto_2
 
     :cond_3
-    const/high16 v2, 0x3f000000    # 0.5f
+    move v2, v1
 
     :goto_2
     invoke-virtual {p2, v2}, Landroid/widget/TextView;->setAlpha(F)V
@@ -514,7 +512,7 @@
     goto :goto_3
 
     :cond_4
-    const/high16 v0, 0x3f000000    # 0.5f
+    move v0, v1
 
     .line 98
     :goto_3

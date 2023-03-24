@@ -71,8 +71,8 @@ final class OrientationListener implements SensorEventListener {
             if (i == 1) {
                 i2 = 2;
             } else if (i == 2) {
-                i2 = TsExtractor.TS_STREAM_TYPE_AC3;
-                i3 = TsExtractor.TS_STREAM_TYPE_HDMV_DTS;
+                i3 = 130;
+                i2 = 129;
             } else if (i != 3) {
                 throw new IllegalStateException();
             } else {

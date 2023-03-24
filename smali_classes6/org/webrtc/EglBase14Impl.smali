@@ -665,12 +665,12 @@
 
     if-lt v1, v4, :cond_0
 
-    const/4 v5, 0x1
+    move v5, v2
 
     goto :goto_0
 
     :cond_0
-    const/4 v5, 0x0
+    move v5, v3
 
     :goto_0
     invoke-virtual {v0, v5}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
@@ -688,7 +688,7 @@
     goto :goto_1
 
     :cond_1
-    const/4 v2, 0x0
+    move v2, v3
 
     :goto_1
     return v2

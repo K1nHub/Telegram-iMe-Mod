@@ -103,7 +103,7 @@
 
     iget v0, p0, Lorg/telegram/ui/Components/SimpleFloatPropertyCompat;->multiplier:F
 
-    mul-float p1, p1, v0
+    mul-float/2addr p1, v0
 
     return p1
 .end method

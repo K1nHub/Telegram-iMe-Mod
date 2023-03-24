@@ -415,7 +415,7 @@
 
     int-to-float p1, p1
 
-    mul-float p1, p1, v0
+    mul-float/2addr p1, v0
 
     .line 1329
     iget-object v0, p0, Landroidx/recyclerview/widget/LinearLayoutManager;->mOrientationHelper:Landroidx/recyclerview/widget/OrientationHelper;
@@ -605,7 +605,7 @@
 
     int-to-float p1, p1
 
-    mul-float v0, v0, p1
+    mul-float/2addr v0, p1
 
     float-to-int p1, v0
 
@@ -623,7 +623,7 @@
 
     if-ne p4, v0, :cond_0
 
-    const/4 p4, 0x1
+    move p4, v0
 
     goto :goto_0
 
@@ -877,7 +877,7 @@
 
     int-to-float v0, v0
 
-    mul-float p1, p1, v0
+    mul-float/2addr p1, v0
 
     invoke-static {p1}, Ljava/lang/Math;->round(F)I
 
@@ -960,18 +960,18 @@
 
     const/4 v1, 0x1
 
+    move p4, v1
+
     move v1, p3
 
-    const/4 p3, 0x0
-
-    const/4 p4, 0x1
+    move p3, v0
 
     goto :goto_0
 
     :cond_0
     add-int/lit8 p3, p3, -0x1
 
-    const/4 p4, -0x1
+    move p4, v1
 
     :goto_0
     if-eq p3, v1, :cond_1
@@ -1052,7 +1052,7 @@
     .line 319
     rem-int/2addr p3, p2
 
-    const/4 v3, 0x0
+    move v3, v1
 
     :goto_0
     if-gt v0, p2, :cond_3
@@ -1105,7 +1105,7 @@
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     .line 505
     :goto_0
@@ -1707,12 +1707,12 @@
 
     if-eq v3, v4, :cond_0
 
-    const/4 v9, 0x1
+    move v9, v8
 
     goto :goto_0
 
     :cond_0
-    const/4 v9, 0x0
+    move v9, v5
 
     .line 520
     :goto_0
@@ -1731,7 +1731,7 @@
     goto :goto_1
 
     :cond_1
-    const/4 v10, 0x0
+    move v10, v5
 
     :goto_1
     if-eqz v9, :cond_2
@@ -1745,12 +1745,12 @@
 
     if-ne v11, v8, :cond_3
 
-    const/4 v11, 0x1
+    move v11, v8
 
     goto :goto_2
 
     :cond_3
-    const/4 v11, 0x0
+    move v11, v5
 
     .line 531
     :goto_2
@@ -1775,7 +1775,7 @@
     add-int/2addr v12, v13
 
     :cond_4
-    const/4 v13, 0x0
+    move v13, v5
 
     .line 537
     :goto_3
@@ -1887,9 +1887,9 @@
     .line 567
     invoke-virtual {v6, v0, v1, v13, v11}, Landroidx/recyclerview/widget/GridLayoutManager;->assignSpans(Landroidx/recyclerview/widget/RecyclerView$Recycler;Landroidx/recyclerview/widget/RecyclerView$State;IZ)V
 
-    const/4 v0, 0x0
+    move v0, v5
 
-    const/4 v1, 0x0
+    move v1, v0
 
     :goto_5
     if-ge v0, v13, :cond_f
@@ -1968,7 +1968,7 @@
 
     int-to-float v5, v5
 
-    mul-float v5, v5, v15
+    mul-float/2addr v5, v15
 
     iget v12, v14, Landroidx/recyclerview/widget/GridLayoutManager$LayoutParams;->mSpanSize:I
 
@@ -2197,9 +2197,9 @@
     move v0, v1
 
     :goto_b
-    const/4 v1, 0x0
+    move v1, v12
 
-    const/4 v3, 0x0
+    move v3, v1
 
     goto :goto_c
 
@@ -2216,11 +2216,11 @@
 
     move v3, v1
 
-    const/4 v2, 0x0
+    move v2, v12
 
     move v1, v0
 
-    const/4 v0, 0x0
+    move v0, v2
 
     goto :goto_c
 
@@ -2232,9 +2232,9 @@
 
     move v3, v0
 
-    const/4 v0, 0x0
+    move v0, v12
 
-    const/4 v2, 0x0
+    move v2, v0
 
     :goto_c
     if-ge v12, v13, :cond_1c
@@ -2681,7 +2681,7 @@
 
     if-ne v7, v9, :cond_2
 
-    const/4 v7, 0x1
+    move v7, v9
 
     goto :goto_0
 
@@ -2694,7 +2694,7 @@
 
     if-eq v7, v10, :cond_3
 
-    const/4 v7, 0x1
+    move v7, v9
 
     goto :goto_1
 
@@ -2713,9 +2713,9 @@
 
     sub-int/2addr v7, v9
 
-    const/4 v11, -0x1
+    move v11, v10
 
-    const/4 v12, -0x1
+    move v12, v11
 
     goto :goto_2
 
@@ -2727,9 +2727,9 @@
 
     move v11, v7
 
-    const/4 v7, 0x0
+    move v12, v9
 
-    const/4 v12, 0x1
+    const/4 v7, 0x0
 
     .line 1081
     :goto_2
@@ -2743,7 +2743,7 @@
 
     if-eqz v13, :cond_5
 
-    const/4 v13, 0x1
+    move v13, v9
 
     goto :goto_3
 
@@ -2756,15 +2756,15 @@
 
     move-result v14
 
-    move v10, v7
+    move v15, v10
+
+    move/from16 v16, v15
 
     const/4 v8, 0x0
 
-    const/4 v15, -0x1
-
-    const/16 v16, -0x1
-
     const/16 v17, 0x0
+
+    move v10, v7
 
     move-object v7, v4
 
@@ -3155,12 +3155,12 @@
 
     if-ne v0, v3, :cond_1
 
-    const/4 v5, 0x1
+    move v5, v1
 
     goto :goto_0
 
     :cond_1
-    const/4 v5, 0x0
+    move v5, p3
 
     :goto_0
     const/4 v6, 0x0
@@ -3203,12 +3203,12 @@
 
     if-ne p2, v0, :cond_3
 
-    const/4 v5, 0x1
+    move v5, v1
 
     goto :goto_1
 
     :cond_3
-    const/4 v5, 0x0
+    move v5, p3
 
     :goto_1
     const/4 v6, 0x0

@@ -377,7 +377,7 @@
 
     invoke-static {v2, v0}, Landroid/transition/TransitionManager;->beginDelayedTransition(Landroid/view/ViewGroup;Landroid/transition/Transition;)V
 
-    const/4 v0, 0x0
+    move v0, v1
 
     .line 241
     :goto_0
@@ -421,7 +421,7 @@
     goto :goto_0
 
     :cond_1
-    const/4 v0, 0x0
+    move v0, v1
 
     .line 248
     :goto_1
@@ -479,7 +479,7 @@
 
     move-result v0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     .line 257
     :goto_2
@@ -575,7 +575,7 @@
 
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    move v1, v0
 
     .line 275
     :goto_0
@@ -1263,7 +1263,7 @@
 
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    move v1, v0
 
     .line 316
     :goto_0

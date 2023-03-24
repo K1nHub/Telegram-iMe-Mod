@@ -47,7 +47,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.Bitmaps;
 import org.telegram.messenger.BuildVars;
-import org.telegram.messenger.C3286R;
+import org.telegram.messenger.C3301R;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.p048ui.Components.VideoPlayer;
@@ -417,20 +417,20 @@ public class WebPlayerView extends ViewGroup implements VideoPlayer.VideoPlayerD
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:87:0x0168, code lost:
-        if (r3 == (-1)) goto L81;
+        if (r3 == (-1)) goto L80;
      */
-    /* JADX WARN: Removed duplicated region for block: B:109:0x0190  */
-    /* JADX WARN: Removed duplicated region for block: B:111:0x0195  */
-    /* JADX WARN: Removed duplicated region for block: B:112:0x019a A[ORIG_RETURN, RETURN] */
-    /* JADX WARN: Removed duplicated region for block: B:125:0x0186 A[EXC_TOP_SPLITTER, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:129:0x0129 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:108:0x0191  */
+    /* JADX WARN: Removed duplicated region for block: B:110:0x0196  */
+    /* JADX WARN: Removed duplicated region for block: B:111:0x019b A[ORIG_RETURN, RETURN] */
+    /* JADX WARN: Removed duplicated region for block: B:126:0x0129 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:128:0x0187 A[EXC_TOP_SPLITTER, SYNTHETIC] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct add '--show-bad-code' argument
     */
     protected java.lang.String downloadUrlContent(android.os.AsyncTask r19, java.lang.String r20, java.util.HashMap<java.lang.String, java.lang.String> r21, boolean r22) {
         /*
-            Method dump skipped, instructions count: 412
+            Method dump skipped, instructions count: 413
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: org.telegram.p048ui.Components.WebPlayerView.downloadUrlContent(android.os.AsyncTask, java.lang.String, java.util.HashMap, boolean):java.lang.String");
@@ -582,9 +582,11 @@ public class WebPlayerView extends ViewGroup implements VideoPlayer.VideoPlayerD
             if (r9.find() != false) goto L161;
          */
         /* JADX WARN: Code restructure failed: missing block: B:151:0x0386, code lost:
+            r10 = true;
             r8 = r9.group(1);
          */
         /* JADX WARN: Code restructure failed: missing block: B:152:0x038c, code lost:
+            r10 = true;
             r9 = org.telegram.p048ui.Components.WebPlayerView.sigPattern2.matcher(r2);
          */
         /* JADX WARN: Code restructure failed: missing block: B:153:0x0399, code lost:
@@ -614,6 +616,9 @@ public class WebPlayerView extends ViewGroup implements VideoPlayer.VideoPlayerD
         /* JADX WARN: Code restructure failed: missing block: B:163:0x03d6, code lost:
             r6 = null;
          */
+        /* JADX WARN: Code restructure failed: missing block: B:164:0x03d7, code lost:
+            r10 = true;
+         */
         /* JADX WARN: Code restructure failed: missing block: B:166:0x03dc, code lost:
             if (android.text.TextUtils.isEmpty(r7) == false) goto L165;
          */
@@ -641,9 +646,10 @@ public class WebPlayerView extends ViewGroup implements VideoPlayer.VideoPlayerD
          */
         /* JADX WARN: Code restructure failed: missing block: B:175:0x044f, code lost:
             r6 = null;
+            r10 = true;
          */
         /* JADX WARN: Code restructure failed: missing block: B:176:0x0451, code lost:
-            r7 = true;
+            r7 = r10;
          */
         /* JADX WARN: Code restructure failed: missing block: B:177:0x0453, code lost:
             r6 = null;
@@ -1244,24 +1250,85 @@ public class WebPlayerView extends ViewGroup implements VideoPlayer.VideoPlayerD
             return true;
         }
 
-        /* JADX WARN: Removed duplicated region for block: B:45:0x0144  */
-        /* JADX WARN: Removed duplicated region for block: B:48:0x0158  */
-        /* JADX WARN: Removed duplicated region for block: B:49:0x015b  */
-        /* JADX WARN: Removed duplicated region for block: B:56:0x018a  */
-        /* JADX WARN: Removed duplicated region for block: B:57:0x018d  */
-        /* JADX WARN: Removed duplicated region for block: B:61:0x01b3  */
-        /* JADX WARN: Removed duplicated region for block: B:70:? A[RETURN, SYNTHETIC] */
         @Override // android.view.View
-        /*
-            Code decompiled incorrectly, please refer to instructions dump.
-            To view partially-correct add '--show-bad-code' argument
-        */
-        protected void onDraw(android.graphics.Canvas r16) {
-            /*
-                Method dump skipped, instructions count: 453
-                To view this dump add '--comments-level debug' option
-            */
-            throw new UnsupportedOperationException("Method not decompiled: org.telegram.p048ui.Components.WebPlayerView.ControlsView.onDraw(android.graphics.Canvas):void");
+        protected void onDraw(Canvas canvas) {
+            int m50dp;
+            int m50dp2;
+            int i;
+            int i2;
+            if (WebPlayerView.this.drawImage) {
+                if (WebPlayerView.this.firstFrameRendered && WebPlayerView.this.currentAlpha != BitmapDescriptorFactory.HUE_RED) {
+                    long currentTimeMillis = System.currentTimeMillis();
+                    WebPlayerView.this.lastUpdateTime = currentTimeMillis;
+                    WebPlayerView.access$4724(WebPlayerView.this, ((float) (currentTimeMillis - WebPlayerView.this.lastUpdateTime)) / 150.0f);
+                    if (WebPlayerView.this.currentAlpha < BitmapDescriptorFactory.HUE_RED) {
+                        WebPlayerView.this.currentAlpha = BitmapDescriptorFactory.HUE_RED;
+                    }
+                    invalidate();
+                }
+                this.imageReceiver.setAlpha(WebPlayerView.this.currentAlpha);
+                this.imageReceiver.draw(canvas);
+            }
+            if (!WebPlayerView.this.videoPlayer.isPlayerPrepared() || WebPlayerView.this.isStream) {
+                return;
+            }
+            int measuredWidth = getMeasuredWidth();
+            int measuredHeight = getMeasuredHeight();
+            if (!WebPlayerView.this.isInline) {
+                if (this.durationLayout != null) {
+                    canvas.save();
+                    canvas.translate((measuredWidth - AndroidUtilities.m50dp(58)) - this.durationWidth, measuredHeight - AndroidUtilities.m50dp((WebPlayerView.this.inFullscreen ? 6 : 10) + 29));
+                    this.durationLayout.draw(canvas);
+                    canvas.restore();
+                }
+                if (this.progressLayout != null) {
+                    canvas.save();
+                    canvas.translate(AndroidUtilities.m50dp(18), measuredHeight - AndroidUtilities.m50dp((WebPlayerView.this.inFullscreen ? 6 : 10) + 29));
+                    this.progressLayout.draw(canvas);
+                    canvas.restore();
+                }
+            }
+            if (this.duration != 0) {
+                int i3 = 0;
+                if (!WebPlayerView.this.isInline) {
+                    if (WebPlayerView.this.inFullscreen) {
+                        m50dp = measuredHeight - AndroidUtilities.m50dp(29);
+                        i3 = this.durationWidth + AndroidUtilities.m50dp(36);
+                        measuredWidth = (measuredWidth - AndroidUtilities.m50dp(76)) - this.durationWidth;
+                        m50dp2 = AndroidUtilities.m50dp(28);
+                    } else {
+                        m50dp = measuredHeight - AndroidUtilities.m50dp(13);
+                        m50dp2 = AndroidUtilities.m50dp(12);
+                    }
+                } else {
+                    m50dp = measuredHeight - AndroidUtilities.m50dp(3);
+                    m50dp2 = AndroidUtilities.m50dp(7);
+                }
+                int i4 = measuredHeight - m50dp2;
+                int i5 = measuredWidth;
+                int i6 = m50dp;
+                int i7 = i3;
+                if (WebPlayerView.this.inFullscreen) {
+                    canvas.drawRect(i7, i6, i5, AndroidUtilities.m50dp(3) + i6, this.progressInnerPaint);
+                }
+                if (this.progressPressed) {
+                    i = this.currentProgressX;
+                } else {
+                    i = ((int) ((i5 - i7) * (this.progress / this.duration))) + i7;
+                }
+                int i8 = i;
+                int i9 = this.bufferedPosition;
+                if (i9 != 0 && (i2 = this.duration) != 0) {
+                    float f = i7;
+                    canvas.drawRect(f, i6, ((i5 - i7) * (i9 / i2)) + f, AndroidUtilities.m50dp(3) + i6, WebPlayerView.this.inFullscreen ? this.progressBufferedPaint : this.progressInnerPaint);
+                }
+                float f2 = i8;
+                canvas.drawRect(i7, i6, f2, i6 + AndroidUtilities.m50dp(3), this.progressPaint);
+                if (WebPlayerView.this.isInline) {
+                    return;
+                }
+                canvas.drawCircle(f2, i4, AndroidUtilities.m50dp(this.progressPressed ? 7 : 5), this.progressPaint);
+            }
         }
     }
 
@@ -1307,8 +1374,8 @@ public class WebPlayerView extends ViewGroup implements VideoPlayer.VideoPlayerD
             /* JADX INFO: Access modifiers changed from: package-private */
             /* renamed from: org.telegram.ui.Components.WebPlayerView$2$1 */
             /* loaded from: classes6.dex */
-            public class ViewTreeObserver$OnPreDrawListenerC53361 implements ViewTreeObserver.OnPreDrawListener {
-                ViewTreeObserver$OnPreDrawListenerC53361() {
+            public class ViewTreeObserver$OnPreDrawListenerC53511 implements ViewTreeObserver.OnPreDrawListener {
+                ViewTreeObserver$OnPreDrawListenerC53511() {
                 }
 
                 @Override // android.view.ViewTreeObserver.OnPreDrawListener
@@ -1325,7 +1392,7 @@ public class WebPlayerView extends ViewGroup implements VideoPlayer.VideoPlayerD
                     AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.WebPlayerView$2$1$$ExternalSyntheticLambda0
                         @Override // java.lang.Runnable
                         public final void run() {
-                            WebPlayerView.TextureView$SurfaceTextureListenerC53352.ViewTreeObserver$OnPreDrawListenerC53361.this.lambda$onPreDraw$0();
+                            WebPlayerView.TextureView$SurfaceTextureListenerC53502.ViewTreeObserver$OnPreDrawListenerC53511.this.lambda$onPreDraw$0();
                         }
                     });
                     WebPlayerView.this.waitingForFirstTextureUpload = 0;
@@ -1341,7 +1408,7 @@ public class WebPlayerView extends ViewGroup implements VideoPlayer.VideoPlayerD
             @Override // android.view.TextureView.SurfaceTextureListener
             public void onSurfaceTextureUpdated(SurfaceTexture surfaceTexture) {
                 if (WebPlayerView.this.waitingForFirstTextureUpload == 1) {
-                    WebPlayerView.this.changedTextureView.getViewTreeObserver().addOnPreDrawListener(new ViewTreeObserver$OnPreDrawListenerC53361());
+                    WebPlayerView.this.changedTextureView.getViewTreeObserver().addOnPreDrawListener(new ViewTreeObserver$OnPreDrawListenerC53511());
                     WebPlayerView.this.changedTextureView.invalidate();
                 }
             }
@@ -1499,7 +1566,7 @@ public class WebPlayerView extends ViewGroup implements VideoPlayer.VideoPlayerD
             ImageView imageView5 = new ImageView(context);
             this.shareButton = imageView5;
             imageView5.setScaleType(ImageView.ScaleType.CENTER);
-            this.shareButton.setImageResource(C3286R.C3288drawable.ic_share_video);
+            this.shareButton.setImageResource(C3301R.C3303drawable.ic_share_video);
             this.controlsView.addView(this.shareButton, LayoutHelper.createFrame(56, 48, 53));
             this.shareButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.WebPlayerView$$ExternalSyntheticLambda1
                 @Override // android.view.View.OnClickListener
@@ -1784,14 +1851,14 @@ public class WebPlayerView extends ViewGroup implements VideoPlayer.VideoPlayerD
         AndroidUtilities.cancelRunOnUIThread(this.progressRunnable);
         if (!this.videoPlayer.isPlaying()) {
             if (this.isCompleted) {
-                this.playButton.setImageResource(this.isInline ? C3286R.C3288drawable.ic_againinline : C3286R.C3288drawable.ic_again);
+                this.playButton.setImageResource(this.isInline ? C3301R.C3303drawable.ic_againinline : C3301R.C3303drawable.ic_again);
                 return;
             } else {
-                this.playButton.setImageResource(this.isInline ? C3286R.C3288drawable.ic_playinline : C3286R.C3288drawable.ic_play);
+                this.playButton.setImageResource(this.isInline ? C3301R.C3303drawable.ic_playinline : C3301R.C3303drawable.ic_play);
                 return;
             }
         }
-        this.playButton.setImageResource(this.isInline ? C3286R.C3288drawable.ic_pauseinline : C3286R.C3288drawable.ic_pause);
+        this.playButton.setImageResource(this.isInline ? C3301R.C3303drawable.ic_pauseinline : C3301R.C3303drawable.ic_pause);
         AndroidUtilities.runOnUIThread(this.progressRunnable, 500L);
         checkAudioFocus();
     }
@@ -1842,11 +1909,11 @@ public class WebPlayerView extends ViewGroup implements VideoPlayer.VideoPlayerD
         }
         this.fullscreenButton.setVisibility(0);
         if (!this.inFullscreen) {
-            this.fullscreenButton.setImageResource(C3286R.C3288drawable.ic_gofullscreen);
+            this.fullscreenButton.setImageResource(C3301R.C3303drawable.ic_gofullscreen);
             this.fullscreenButton.setLayoutParams(LayoutHelper.createFrame(56, 56, 85, 0, 0, 0, 5));
             return;
         }
-        this.fullscreenButton.setImageResource(C3286R.C3288drawable.ic_outfullscreen);
+        this.fullscreenButton.setImageResource(C3301R.C3303drawable.ic_outfullscreen);
         this.fullscreenButton.setLayoutParams(LayoutHelper.createFrame(56, 56, 85, 0, 0, 0, 1));
     }
 
@@ -1873,7 +1940,7 @@ public class WebPlayerView extends ViewGroup implements VideoPlayer.VideoPlayerD
         if (imageView == null) {
             return;
         }
-        imageView.setImageResource(this.isInline ? C3286R.C3288drawable.ic_goinline : C3286R.C3288drawable.ic_outinline);
+        imageView.setImageResource(this.isInline ? C3301R.C3303drawable.ic_goinline : C3301R.C3303drawable.ic_outinline);
         this.inlineButton.setVisibility(this.videoPlayer.isPlayerPrepared() ? 0 : 8);
         if (this.isInline) {
             this.inlineButton.setLayoutParams(LayoutHelper.createFrame(40, 40, 53));
@@ -2154,7 +2221,7 @@ public class WebPlayerView extends ViewGroup implements VideoPlayer.VideoPlayerD
             Animator[] animatorArr = new Animator[1];
             RadialProgressView radialProgressView = this.progressView;
             float[] fArr = new float[1];
-            fArr[0] = z ? 1.0f : BitmapDescriptorFactory.HUE_RED;
+            fArr[0] = z ? 1.0f : 0.0f;
             animatorArr[0] = ObjectAnimator.ofFloat(radialProgressView, "alpha", fArr);
             animatorSet2.playTogether(animatorArr);
             this.progressAnimation.setDuration(150L);
@@ -2167,6 +2234,6 @@ public class WebPlayerView extends ViewGroup implements VideoPlayer.VideoPlayerD
             this.progressAnimation.start();
             return;
         }
-        this.progressView.setAlpha(z ? 1.0f : BitmapDescriptorFactory.HUE_RED);
+        this.progressView.setAlpha(z ? 1.0f : 0.0f);
     }
 }

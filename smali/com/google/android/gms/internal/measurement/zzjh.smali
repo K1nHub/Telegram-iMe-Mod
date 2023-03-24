@@ -95,9 +95,9 @@
 
     invoke-virtual {p3, p1, v1}, Lcom/google/android/gms/internal/measurement/zzjg;->zzo(II)V
 
-    const/4 p1, 0x0
+    move p1, v0
 
-    const/4 p3, 0x0
+    move p3, p1
 
     .line 4
     :goto_0
@@ -265,9 +265,9 @@
 
     invoke-virtual {p3, p1, v2}, Lcom/google/android/gms/internal/measurement/zzjg;->zzo(II)V
 
-    const/4 p1, 0x0
+    move p1, v1
 
-    const/4 p3, 0x0
+    move p3, p1
 
     .line 4
     :goto_0
@@ -556,9 +556,9 @@
 
     invoke-virtual {p3, p1, v1}, Lcom/google/android/gms/internal/measurement/zzjg;->zzo(II)V
 
-    const/4 p1, 0x0
+    move p1, v0
 
-    const/4 p3, 0x0
+    move p3, p1
 
     .line 4
     :goto_0
@@ -698,9 +698,9 @@
 
     invoke-virtual {p3, p1, v1}, Lcom/google/android/gms/internal/measurement/zzjg;->zzo(II)V
 
-    const/4 p1, 0x0
+    move p1, v0
 
-    const/4 p3, 0x0
+    move p3, p1
 
     .line 4
     :goto_0
@@ -840,9 +840,9 @@
 
     invoke-virtual {p3, p1, v1}, Lcom/google/android/gms/internal/measurement/zzjg;->zzo(II)V
 
-    const/4 p1, 0x0
+    move p1, v0
 
-    const/4 p3, 0x0
+    move p3, p1
 
     .line 4
     :goto_0
@@ -1043,9 +1043,9 @@
 
     invoke-virtual {p3, p1, v1}, Lcom/google/android/gms/internal/measurement/zzjg;->zzo(II)V
 
-    const/4 p1, 0x0
+    move p1, v0
 
-    const/4 p3, 0x0
+    move p3, p1
 
     .line 5
     :goto_0
@@ -1209,9 +1209,9 @@
 
     invoke-virtual {p3, p1, v1}, Lcom/google/android/gms/internal/measurement/zzjg;->zzo(II)V
 
-    const/4 p1, 0x0
+    move p1, v0
 
-    const/4 p3, 0x0
+    move p3, p1
 
     .line 4
     :goto_0
@@ -1351,9 +1351,9 @@
 
     invoke-virtual {p3, p1, v1}, Lcom/google/android/gms/internal/measurement/zzjg;->zzo(II)V
 
-    const/4 p1, 0x0
+    move p1, v0
 
-    const/4 p3, 0x0
+    move p3, p1
 
     .line 4
     :goto_0
@@ -1487,9 +1487,9 @@
 
     invoke-virtual {p3, p1, v1}, Lcom/google/android/gms/internal/measurement/zzjg;->zzo(II)V
 
-    const/4 p1, 0x0
+    move p1, v0
 
-    const/4 p3, 0x0
+    move p3, p1
 
     .line 4
     :goto_0
@@ -1628,9 +1628,9 @@
 
     invoke-virtual {p3, p1, v1}, Lcom/google/android/gms/internal/measurement/zzjg;->zzo(II)V
 
-    const/4 p1, 0x0
+    move p1, v0
 
-    const/4 p3, 0x0
+    move p3, p1
 
     .line 5
     :goto_0
@@ -1806,9 +1806,9 @@
 
     invoke-virtual {p3, p1, v1}, Lcom/google/android/gms/internal/measurement/zzjg;->zzo(II)V
 
-    const/4 p1, 0x0
+    move p1, v0
 
-    const/4 p3, 0x0
+    move p3, p1
 
     .line 4
     :goto_0
@@ -1948,9 +1948,9 @@
 
     invoke-virtual {p3, p1, v1}, Lcom/google/android/gms/internal/measurement/zzjg;->zzo(II)V
 
-    const/4 p1, 0x0
+    move p1, v0
 
-    const/4 p3, 0x0
+    move p3, p1
 
     .line 4
     :goto_0
@@ -2144,9 +2144,9 @@
 
     invoke-virtual {p3, p1, v1}, Lcom/google/android/gms/internal/measurement/zzjg;->zzo(II)V
 
-    const/4 p1, 0x0
+    move p1, v0
 
-    const/4 p3, 0x0
+    move p3, p1
 
     .line 4
     :goto_0
@@ -2280,9 +2280,9 @@
 
     invoke-virtual {p3, p1, v1}, Lcom/google/android/gms/internal/measurement/zzjg;->zzo(II)V
 
-    const/4 p1, 0x0
+    move p1, v0
 
-    const/4 p3, 0x0
+    move p3, p1
 
     .line 4
     :goto_0

@@ -109,7 +109,7 @@
 .end method
 
 .method private isSelected(J)Z
-    .locals 6
+    .locals 5
 
     .line 190
     iget-object v0, p0, Lcom/google/android/material/datepicker/MonthAdapter;->dateSelector:Lcom/google/android/material/datepicker/DateSelector;
@@ -148,9 +148,9 @@
 
     move-result-wide v1
 
-    cmp-long v5, v3, v1
+    cmp-long v1, v3, v1
 
-    if-nez v5, :cond_0
+    if-nez v1, :cond_0
 
     const/4 p1, 0x1
 
@@ -163,7 +163,7 @@
 .end method
 
 .method private updateSelectedState(Landroid/widget/TextView;J)V
-    .locals 3
+    .locals 2
 
     if-nez p1, :cond_0
 
@@ -212,9 +212,9 @@
 
     move-result-wide v0
 
-    cmp-long v2, v0, p2
+    cmp-long p2, v0, p2
 
-    if-nez v2, :cond_2
+    if-nez p2, :cond_2
 
     .line 178
     iget-object p2, p0, Lcom/google/android/material/datepicker/MonthAdapter;->calendarStyle:Lcom/google/android/material/datepicker/CalendarStyle;

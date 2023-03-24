@@ -122,9 +122,9 @@
     :goto_0
     const-wide/16 v0, 0x0
 
-    cmp-long v2, p2, v0
+    cmp-long v0, p2, v0
 
-    if-lez v2, :cond_1
+    if-lez v0, :cond_1
 
     .line 50
     iget-object v0, p0, Lokio/OutputStreamSink;->timeout:Lokio/Timeout;
@@ -150,25 +150,25 @@
 
     move-result-wide v1
 
-    long-to-int v2, v1
+    long-to-int v1, v1
 
     .line 53
-    iget-object v1, p0, Lokio/OutputStreamSink;->out:Ljava/io/OutputStream;
+    iget-object v2, p0, Lokio/OutputStreamSink;->out:Ljava/io/OutputStream;
 
     iget-object v3, v0, Lokio/Segment;->data:[B
 
     iget v4, v0, Lokio/Segment;->pos:I
 
-    invoke-virtual {v1, v3, v4, v2}, Ljava/io/OutputStream;->write([BII)V
+    invoke-virtual {v2, v3, v4, v1}, Ljava/io/OutputStream;->write([BII)V
 
     .line 55
-    iget v1, v0, Lokio/Segment;->pos:I
+    iget v2, v0, Lokio/Segment;->pos:I
 
-    add-int/2addr v1, v2
+    add-int/2addr v2, v1
 
-    iput v1, v0, Lokio/Segment;->pos:I
+    iput v2, v0, Lokio/Segment;->pos:I
 
-    int-to-long v1, v2
+    int-to-long v1, v1
 
     sub-long/2addr p2, v1
 

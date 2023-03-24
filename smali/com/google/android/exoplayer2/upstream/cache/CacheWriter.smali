@@ -145,14 +145,14 @@
 .end method
 
 .method private onRequestEndPosition(J)V
-    .locals 10
+    .locals 8
 
     .line 209
     iget-wide v0, p0, Lcom/google/android/exoplayer2/upstream/cache/CacheWriter;->endPosition:J
 
-    cmp-long v2, v0, p1
+    cmp-long v0, v0, p1
 
-    if-nez v2, :cond_0
+    if-nez v0, :cond_0
 
     return-void
 
@@ -161,27 +161,27 @@
     iput-wide p1, p0, Lcom/google/android/exoplayer2/upstream/cache/CacheWriter;->endPosition:J
 
     .line 213
-    iget-object v3, p0, Lcom/google/android/exoplayer2/upstream/cache/CacheWriter;->progressListener:Lcom/google/android/exoplayer2/upstream/cache/CacheWriter$ProgressListener;
+    iget-object v1, p0, Lcom/google/android/exoplayer2/upstream/cache/CacheWriter;->progressListener:Lcom/google/android/exoplayer2/upstream/cache/CacheWriter$ProgressListener;
 
-    if-eqz v3, :cond_1
+    if-eqz v1, :cond_1
 
     .line 214
     invoke-direct {p0}, Lcom/google/android/exoplayer2/upstream/cache/CacheWriter;->getLength()J
 
-    move-result-wide v4
+    move-result-wide v2
 
-    iget-wide v6, p0, Lcom/google/android/exoplayer2/upstream/cache/CacheWriter;->bytesCached:J
+    iget-wide v4, p0, Lcom/google/android/exoplayer2/upstream/cache/CacheWriter;->bytesCached:J
 
-    const-wide/16 v8, 0x0
+    const-wide/16 v6, 0x0
 
-    invoke-interface/range {v3 .. v9}, Lcom/google/android/exoplayer2/upstream/cache/CacheWriter$ProgressListener;->onProgress(JJJ)V
+    invoke-interface/range {v1 .. v7}, Lcom/google/android/exoplayer2/upstream/cache/CacheWriter$ProgressListener;->onProgress(JJJ)V
 
     :cond_1
     return-void
 .end method
 
 .method private readBlockToCache(JJ)J
-    .locals 9
+    .locals 6
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -193,49 +193,49 @@
     .line 148
     iget-wide v2, p0, Lcom/google/android/exoplayer2/upstream/cache/CacheWriter;->endPosition:J
 
-    const/4 v4, 0x1
+    cmp-long v0, v0, v2
 
-    const/4 v5, 0x0
+    const/4 v1, 0x1
 
-    const-wide/16 v6, -0x1
+    const/4 v2, 0x0
 
-    cmp-long v8, v0, v2
+    const-wide/16 v3, -0x1
 
-    if-eqz v8, :cond_1
+    if-eqz v0, :cond_1
 
-    cmp-long v0, p3, v6
+    cmp-long v0, p3, v3
 
     if-nez v0, :cond_0
 
     goto :goto_0
 
     :cond_0
-    const/4 v0, 0x0
+    move v0, v2
 
     goto :goto_1
 
     :cond_1
     :goto_0
-    const/4 v0, 0x1
+    move v0, v1
 
     :goto_1
-    cmp-long v1, p3, v6
+    cmp-long v5, p3, v3
 
-    if-eqz v1, :cond_2
+    if-eqz v5, :cond_2
 
     .line 155
-    iget-object v1, p0, Lcom/google/android/exoplayer2/upstream/cache/CacheWriter;->dataSpec:Lcom/google/android/exoplayer2/upstream/DataSpec;
+    iget-object v5, p0, Lcom/google/android/exoplayer2/upstream/cache/CacheWriter;->dataSpec:Lcom/google/android/exoplayer2/upstream/DataSpec;
 
     .line 156
-    invoke-virtual {v1}, Lcom/google/android/exoplayer2/upstream/DataSpec;->buildUpon()Lcom/google/android/exoplayer2/upstream/DataSpec$Builder;
+    invoke-virtual {v5}, Lcom/google/android/exoplayer2/upstream/DataSpec;->buildUpon()Lcom/google/android/exoplayer2/upstream/DataSpec$Builder;
 
-    move-result-object v1
+    move-result-object v5
 
-    invoke-virtual {v1, p1, p2}, Lcom/google/android/exoplayer2/upstream/DataSpec$Builder;->setPosition(J)Lcom/google/android/exoplayer2/upstream/DataSpec$Builder;
+    invoke-virtual {v5, p1, p2}, Lcom/google/android/exoplayer2/upstream/DataSpec$Builder;->setPosition(J)Lcom/google/android/exoplayer2/upstream/DataSpec$Builder;
 
-    move-result-object v1
+    move-result-object v5
 
-    invoke-virtual {v1, p3, p4}, Lcom/google/android/exoplayer2/upstream/DataSpec$Builder;->setLength(J)Lcom/google/android/exoplayer2/upstream/DataSpec$Builder;
+    invoke-virtual {v5, p3, p4}, Lcom/google/android/exoplayer2/upstream/DataSpec$Builder;->setLength(J)Lcom/google/android/exoplayer2/upstream/DataSpec$Builder;
 
     move-result-object p3
 
@@ -262,12 +262,12 @@
     invoke-static {p3}, Lcom/google/android/exoplayer2/upstream/DataSourceUtil;->closeQuietly(Lcom/google/android/exoplayer2/upstream/DataSource;)V
 
     :cond_2
-    move-wide p3, v6
+    move v1, v2
 
-    const/4 v4, 0x0
+    move-wide p3, v3
 
     :goto_2
-    if-nez v4, :cond_3
+    if-nez v1, :cond_3
 
     .line 168
     invoke-direct {p0}, Lcom/google/android/exoplayer2/upstream/cache/CacheWriter;->throwIfCanceled()V
@@ -284,7 +284,7 @@
 
     move-result-object p3
 
-    invoke-virtual {p3, v6, v7}, Lcom/google/android/exoplayer2/upstream/DataSpec$Builder;->setLength(J)Lcom/google/android/exoplayer2/upstream/DataSpec$Builder;
+    invoke-virtual {p3, v3, v4}, Lcom/google/android/exoplayer2/upstream/DataSpec$Builder;->setLength(J)Lcom/google/android/exoplayer2/upstream/DataSpec$Builder;
 
     move-result-object p3
 
@@ -319,7 +319,7 @@
     :goto_3
     if-eqz v0, :cond_4
 
-    cmp-long v1, p3, v6
+    cmp-long v1, p3, v3
 
     if-eqz v1, :cond_4
 
@@ -338,9 +338,9 @@
 
     :cond_4
     :goto_4
-    const/4 p3, 0x0
+    move p3, v2
 
-    const/4 p4, 0x0
+    move p4, p3
 
     :cond_5
     :goto_5
@@ -354,20 +354,20 @@
     .line 187
     iget-object p3, p0, Lcom/google/android/exoplayer2/upstream/cache/CacheWriter;->dataSource:Lcom/google/android/exoplayer2/upstream/cache/CacheDataSource;
 
-    iget-object v2, p0, Lcom/google/android/exoplayer2/upstream/cache/CacheWriter;->temporaryBuffer:[B
+    iget-object v3, p0, Lcom/google/android/exoplayer2/upstream/cache/CacheWriter;->temporaryBuffer:[B
 
-    array-length v3, v2
+    array-length v4, v3
 
-    invoke-virtual {p3, v2, v5, v3}, Lcom/google/android/exoplayer2/upstream/cache/CacheDataSource;->read([BII)I
+    invoke-virtual {p3, v3, v2, v4}, Lcom/google/android/exoplayer2/upstream/cache/CacheDataSource;->read([BII)I
 
     move-result p3
 
     if-eq p3, v1, :cond_5
 
-    int-to-long v1, p3
+    int-to-long v3, p3
 
     .line 189
-    invoke-direct {p0, v1, v2}, Lcom/google/android/exoplayer2/upstream/cache/CacheWriter;->onNewBytesCached(J)V
+    invoke-direct {p0, v3, v4}, Lcom/google/android/exoplayer2/upstream/cache/CacheWriter;->onNewBytesCached(J)V
 
     add-int/2addr p4, p3
 
@@ -538,9 +538,9 @@
 
     iget-wide v5, p0, Lcom/google/android/exoplayer2/upstream/cache/CacheWriter;->nextPosition:J
 
-    cmp-long v2, v5, v0
+    cmp-long v0, v5, v0
 
-    if-gez v2, :cond_3
+    if-gez v0, :cond_3
 
     goto :goto_2
 
@@ -555,9 +555,9 @@
     .line 126
     iget-wide v0, p0, Lcom/google/android/exoplayer2/upstream/cache/CacheWriter;->endPosition:J
 
-    const-wide v5, 0x7fffffffffffffffL
-
     cmp-long v2, v0, v3
+
+    const-wide v5, 0x7fffffffffffffffL
 
     if-nez v2, :cond_5
 

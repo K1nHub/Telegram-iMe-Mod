@@ -93,7 +93,7 @@
 
     if-eqz p3, :cond_1
 
-    const/4 p4, 0x0
+    move p4, p2
 
     .line 278
     :goto_0
@@ -616,7 +616,7 @@
 
     int-to-float p1, p1
 
-    mul-float p1, p1, p2
+    mul-float/2addr p1, p2
 
     float-to-int p1, p1
 

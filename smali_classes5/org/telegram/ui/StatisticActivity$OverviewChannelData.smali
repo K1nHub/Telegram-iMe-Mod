@@ -66,31 +66,31 @@
 
     double-to-int v2, v3
 
-    const/high16 v3, 0x42c80000    # 100.0f
+    const-wide/16 v3, 0x0
 
-    const-wide/16 v7, 0x0
+    cmpl-double v7, v5, v3
 
-    const/4 v4, 0x0
+    const/high16 v8, 0x42c80000    # 100.0f
 
-    cmpl-double v9, v5, v7
+    const/4 v9, 0x0
 
-    if-nez v9, :cond_0
+    if-nez v7, :cond_0
 
-    const/4 v5, 0x0
+    move v5, v9
 
     goto :goto_0
 
     :cond_0
-    int-to-float v9, v2
+    int-to-float v7, v2
 
     double-to-float v5, v5
 
-    div-float/2addr v9, v5
+    div-float/2addr v7, v5
 
-    mul-float v9, v9, v3
+    mul-float/2addr v7, v8
 
     .line 2259
-    invoke-static {v9}, Ljava/lang/Math;->abs(F)F
+    invoke-static {v7}, Ljava/lang/Math;->abs(F)F
 
     move-result v5
 
@@ -98,9 +98,9 @@
     :goto_0
     sget v6, Lorg/telegram/messenger/R$string;->FollowersChartTitle:I
 
-    const-string v9, "FollowersChartTitle"
+    const-string v7, "FollowersChartTitle"
 
-    invoke-static {v9, v6}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+    invoke-static {v7, v6}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v6
 
@@ -109,13 +109,13 @@
     .line 2261
     iget-object v6, v1, Lorg/telegram/tgnet/TLRPC$TL_stats_broadcastStats;->followers:Lorg/telegram/tgnet/TLRPC$TL_statsAbsValueAndPrev;
 
-    iget-wide v9, v6, Lorg/telegram/tgnet/TLRPC$TL_statsAbsValueAndPrev;->current:D
+    iget-wide v6, v6, Lorg/telegram/tgnet/TLRPC$TL_statsAbsValueAndPrev;->current:D
 
-    double-to-int v6, v9
+    double-to-int v6, v6
 
-    const/4 v9, 0x0
+    const/4 v7, 0x0
 
-    invoke-static {v6, v9}, Lorg/telegram/messenger/AndroidUtilities;->formatWholeNumber(II)Ljava/lang/String;
+    invoke-static {v6, v7}, Lorg/telegram/messenger/AndroidUtilities;->formatWholeNumber(II)Ljava/lang/String;
 
     move-result-object v6
 
@@ -139,63 +139,63 @@
 
     if-eqz v2, :cond_5
 
-    cmpl-float v17, v5, v4
+    cmpl-float v17, v5, v9
 
     if-nez v17, :cond_1
 
     goto :goto_3
 
     :cond_1
-    float-to-int v4, v5
+    float-to-int v9, v5
 
-    int-to-float v3, v4
+    int-to-float v8, v9
 
-    cmpl-float v3, v5, v3
+    cmpl-float v8, v5, v8
 
-    if-nez v3, :cond_3
+    if-nez v8, :cond_3
 
     .line 2266
-    sget-object v3, Ljava/util/Locale;->ENGLISH:Ljava/util/Locale;
+    sget-object v5, Ljava/util/Locale;->ENGLISH:Ljava/util/Locale;
 
-    new-array v5, v12, [Ljava/lang/Object;
+    new-array v8, v12, [Ljava/lang/Object;
 
-    new-instance v7, Ljava/lang/StringBuilder;
+    new-instance v3, Ljava/lang/StringBuilder;
 
-    invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
 
     if-lez v2, :cond_2
 
-    move-object v8, v11
+    move-object v4, v11
 
     goto :goto_1
 
     :cond_2
-    move-object v8, v15
+    move-object v4, v15
 
     :goto_1
-    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-static {v2, v9}, Lorg/telegram/messenger/AndroidUtilities;->formatWholeNumber(II)Ljava/lang/String;
-
-    move-result-object v8
-
-    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v7
-
-    aput-object v7, v5, v9
-
-    invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-static {v2, v7}, Lorg/telegram/messenger/AndroidUtilities;->formatWholeNumber(II)Ljava/lang/String;
 
     move-result-object v4
 
-    aput-object v4, v5, v16
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    aput-object v13, v5, v14
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    invoke-static {v3, v6, v5}, Ljava/lang/String;->format(Ljava/util/Locale;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+    move-result-object v3
+
+    aput-object v3, v8, v7
+
+    invoke-static {v9}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v3
+
+    aput-object v3, v8, v16
+
+    aput-object v13, v8, v14
+
+    invoke-static {v5, v6, v8}, Ljava/lang/String;->format(Ljava/util/Locale;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v3
 
@@ -209,33 +209,33 @@
 
     new-array v4, v12, [Ljava/lang/Object;
 
-    new-instance v7, Ljava/lang/StringBuilder;
+    new-instance v8, Ljava/lang/StringBuilder;
 
-    invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v8}, Ljava/lang/StringBuilder;-><init>()V
 
     if-lez v2, :cond_4
 
-    move-object v8, v11
+    move-object v9, v11
 
     goto :goto_2
 
     :cond_4
-    move-object v8, v15
+    move-object v9, v15
 
     :goto_2
-    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-static {v2, v9}, Lorg/telegram/messenger/AndroidUtilities;->formatWholeNumber(II)Ljava/lang/String;
+    invoke-static {v2, v7}, Lorg/telegram/messenger/AndroidUtilities;->formatWholeNumber(II)Ljava/lang/String;
+
+    move-result-object v9
+
+    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v8}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v8
 
-    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v7
-
-    aput-object v7, v4, v9
+    aput-object v8, v4, v7
 
     invoke-static {v5}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
 
@@ -261,12 +261,12 @@
     :goto_4
     if-ltz v2, :cond_6
 
-    const/4 v2, 0x1
+    move/from16 v2, v16
 
     goto :goto_5
 
     :cond_6
-    const/4 v2, 0x0
+    move v2, v7
 
     .line 2270
     :goto_5
@@ -277,15 +277,15 @@
 
     iget-wide v3, v2, Lorg/telegram/tgnet/TLRPC$TL_statsAbsValueAndPrev;->current:D
 
-    iget-wide v7, v2, Lorg/telegram/tgnet/TLRPC$TL_statsAbsValueAndPrev;->previous:D
+    iget-wide v8, v2, Lorg/telegram/tgnet/TLRPC$TL_statsAbsValueAndPrev;->previous:D
 
-    sub-double/2addr v3, v7
+    sub-double/2addr v3, v8
 
     double-to-int v2, v3
 
     const-wide/16 v3, 0x0
 
-    cmpl-double v5, v7, v3
+    cmpl-double v5, v8, v3
 
     if-nez v5, :cond_7
 
@@ -296,13 +296,13 @@
     :cond_7
     int-to-float v3, v2
 
-    double-to-float v4, v7
+    double-to-float v4, v8
 
     div-float/2addr v3, v4
 
     const/high16 v4, 0x42c80000    # 100.0f
 
-    mul-float v3, v3, v4
+    mul-float/2addr v3, v4
 
     .line 2273
     invoke-static {v3}, Ljava/lang/Math;->abs(F)F
@@ -328,7 +328,7 @@
 
     double-to-int v4, v4
 
-    invoke-static {v4, v9}, Lorg/telegram/messenger/AndroidUtilities;->formatWholeNumber(II)Ljava/lang/String;
+    invoke-static {v4, v7}, Lorg/telegram/messenger/AndroidUtilities;->formatWholeNumber(II)Ljava/lang/String;
 
     move-result-object v4
 
@@ -358,33 +358,33 @@
 
     new-array v5, v12, [Ljava/lang/Object;
 
-    new-instance v7, Ljava/lang/StringBuilder;
+    new-instance v8, Ljava/lang/StringBuilder;
 
-    invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v8}, Ljava/lang/StringBuilder;-><init>()V
 
     if-lez v2, :cond_9
 
-    move-object v8, v11
+    move-object v9, v11
 
     goto :goto_7
 
     :cond_9
-    move-object v8, v15
+    move-object v9, v15
 
     :goto_7
-    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-static {v2, v9}, Lorg/telegram/messenger/AndroidUtilities;->formatWholeNumber(II)Ljava/lang/String;
+    invoke-static {v2, v7}, Lorg/telegram/messenger/AndroidUtilities;->formatWholeNumber(II)Ljava/lang/String;
+
+    move-result-object v9
+
+    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v8}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v8
 
-    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v7
-
-    aput-object v7, v5, v9
+    aput-object v8, v5, v7
 
     invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -408,33 +408,33 @@
 
     new-array v5, v12, [Ljava/lang/Object;
 
-    new-instance v7, Ljava/lang/StringBuilder;
+    new-instance v8, Ljava/lang/StringBuilder;
 
-    invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v8}, Ljava/lang/StringBuilder;-><init>()V
 
     if-lez v2, :cond_b
 
-    move-object v8, v11
+    move-object v9, v11
 
     goto :goto_8
 
     :cond_b
-    move-object v8, v15
+    move-object v9, v15
 
     :goto_8
-    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-static {v2, v9}, Lorg/telegram/messenger/AndroidUtilities;->formatWholeNumber(II)Ljava/lang/String;
+    invoke-static {v2, v7}, Lorg/telegram/messenger/AndroidUtilities;->formatWholeNumber(II)Ljava/lang/String;
+
+    move-result-object v9
+
+    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v8}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v8
 
-    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v7
-
-    aput-object v7, v5, v9
+    aput-object v8, v5, v7
 
     invoke-static {v3}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
 
@@ -460,12 +460,12 @@
     :goto_a
     if-ltz v2, :cond_d
 
-    const/4 v2, 0x1
+    move/from16 v2, v16
 
     goto :goto_b
 
     :cond_d
-    const/4 v2, 0x0
+    move v2, v7
 
     .line 2284
     :goto_b
@@ -476,17 +476,17 @@
 
     iget-wide v3, v2, Lorg/telegram/tgnet/TLRPC$TL_statsAbsValueAndPrev;->current:D
 
-    iget-wide v7, v2, Lorg/telegram/tgnet/TLRPC$TL_statsAbsValueAndPrev;->previous:D
+    iget-wide v8, v2, Lorg/telegram/tgnet/TLRPC$TL_statsAbsValueAndPrev;->previous:D
 
-    sub-double/2addr v3, v7
+    sub-double/2addr v3, v8
 
     double-to-int v2, v3
 
     const-wide/16 v3, 0x0
 
-    cmpl-double v5, v7, v3
+    cmpl-double v3, v8, v3
 
-    if-nez v5, :cond_e
+    if-nez v3, :cond_e
 
     const/4 v4, 0x0
 
@@ -495,13 +495,13 @@
     :cond_e
     int-to-float v3, v2
 
-    double-to-float v4, v7
+    double-to-float v4, v8
 
     div-float/2addr v3, v4
 
     const/high16 v4, 0x42c80000    # 100.0f
 
-    mul-float v3, v3, v4
+    mul-float/2addr v3, v4
 
     .line 2287
     invoke-static {v3}, Ljava/lang/Math;->abs(F)F
@@ -523,11 +523,11 @@
     .line 2289
     iget-object v3, v1, Lorg/telegram/tgnet/TLRPC$TL_stats_broadcastStats;->views_per_post:Lorg/telegram/tgnet/TLRPC$TL_statsAbsValueAndPrev;
 
-    iget-wide v7, v3, Lorg/telegram/tgnet/TLRPC$TL_statsAbsValueAndPrev;->current:D
+    iget-wide v8, v3, Lorg/telegram/tgnet/TLRPC$TL_statsAbsValueAndPrev;->current:D
 
-    double-to-int v3, v7
+    double-to-int v3, v8
 
-    invoke-static {v3, v9}, Lorg/telegram/messenger/AndroidUtilities;->formatWholeNumber(II)Ljava/lang/String;
+    invoke-static {v3, v7}, Lorg/telegram/messenger/AndroidUtilities;->formatWholeNumber(II)Ljava/lang/String;
 
     move-result-object v3
 
@@ -557,9 +557,9 @@
 
     new-array v5, v12, [Ljava/lang/Object;
 
-    new-instance v7, Ljava/lang/StringBuilder;
+    new-instance v8, Ljava/lang/StringBuilder;
 
-    invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v8}, Ljava/lang/StringBuilder;-><init>()V
 
     if-lez v2, :cond_10
 
@@ -569,19 +569,19 @@
     move-object v11, v15
 
     :goto_d
-    invoke-virtual {v7, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v8, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-static {v2, v9}, Lorg/telegram/messenger/AndroidUtilities;->formatWholeNumber(II)Ljava/lang/String;
+    invoke-static {v2, v7}, Lorg/telegram/messenger/AndroidUtilities;->formatWholeNumber(II)Ljava/lang/String;
+
+    move-result-object v9
+
+    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v8}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v8
 
-    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v7
-
-    aput-object v7, v5, v9
+    aput-object v8, v5, v7
 
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -619,17 +619,17 @@
     :goto_e
     invoke-virtual {v6, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-static {v2, v9}, Lorg/telegram/messenger/AndroidUtilities;->formatWholeNumber(II)Ljava/lang/String;
+    invoke-static {v2, v7}, Lorg/telegram/messenger/AndroidUtilities;->formatWholeNumber(II)Ljava/lang/String;
 
-    move-result-object v7
+    move-result-object v8
 
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v6, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v6
 
-    aput-object v6, v5, v9
+    aput-object v6, v5, v7
 
     invoke-static {v4}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
 
@@ -655,12 +655,12 @@
     :goto_10
     if-ltz v2, :cond_14
 
-    const/4 v2, 0x1
+    move/from16 v2, v16
 
     goto :goto_11
 
     :cond_14
-    const/4 v2, 0x0
+    move v2, v7
 
     .line 2297
     :goto_11
@@ -677,7 +677,7 @@
 
     const-wide/high16 v4, 0x4059000000000000L    # 100.0
 
-    mul-double v2, v2, v4
+    mul-double/2addr v2, v4
 
     double-to-float v1, v2
 
@@ -709,7 +709,7 @@
 
     move-result-object v2
 
-    aput-object v2, v3, v9
+    aput-object v2, v3, v7
 
     aput-object v13, v3, v16
 
@@ -733,7 +733,7 @@
 
     move-result-object v1
 
-    aput-object v1, v3, v9
+    aput-object v1, v3, v7
 
     aput-object v13, v3, v16
 

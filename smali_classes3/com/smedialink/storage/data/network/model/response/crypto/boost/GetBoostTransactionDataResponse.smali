@@ -18,11 +18,11 @@
 
 .field private final oldTransactionData:Lcom/smedialink/storage/data/network/model/response/crypto/boost/GetBoostTransactionDataResponse$TransactionMethodParamsResponse;
 
-.field private final transactionParams:Lcom/smedialink/storage/data/network/model/response/crypto/wallet/TransactionParamsResponse;
+.field private final transactionParams:Lcom/smedialink/storage/data/network/model/response/crypto/wallet/TransactionParamsResponse$EVM;
 
 
 # direct methods
-.method public constructor <init>(Lcom/smedialink/storage/data/network/model/response/crypto/wallet/TransactionParamsResponse;Lcom/smedialink/storage/data/network/model/response/crypto/boost/GetBoostTransactionDataResponse$TransactionMethodParamsResponse;Ljava/lang/String;Ljava/lang/String;)V
+.method public constructor <init>(Lcom/smedialink/storage/data/network/model/response/crypto/wallet/TransactionParamsResponse$EVM;Lcom/smedialink/storage/data/network/model/response/crypto/boost/GetBoostTransactionDataResponse$TransactionMethodParamsResponse;Ljava/lang/String;Ljava/lang/String;)V
     .locals 1
 
     const-string v0, "transactionParams"
@@ -45,7 +45,7 @@
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 7
-    iput-object p1, p0, Lcom/smedialink/storage/data/network/model/response/crypto/boost/GetBoostTransactionDataResponse;->transactionParams:Lcom/smedialink/storage/data/network/model/response/crypto/wallet/TransactionParamsResponse;
+    iput-object p1, p0, Lcom/smedialink/storage/data/network/model/response/crypto/boost/GetBoostTransactionDataResponse;->transactionParams:Lcom/smedialink/storage/data/network/model/response/crypto/wallet/TransactionParamsResponse$EVM;
 
     .line 8
     iput-object p2, p0, Lcom/smedialink/storage/data/network/model/response/crypto/boost/GetBoostTransactionDataResponse;->oldTransactionData:Lcom/smedialink/storage/data/network/model/response/crypto/boost/GetBoostTransactionDataResponse$TransactionMethodParamsResponse;
@@ -59,14 +59,14 @@
     return-void
 .end method
 
-.method public static synthetic copy$default(Lcom/smedialink/storage/data/network/model/response/crypto/boost/GetBoostTransactionDataResponse;Lcom/smedialink/storage/data/network/model/response/crypto/wallet/TransactionParamsResponse;Lcom/smedialink/storage/data/network/model/response/crypto/boost/GetBoostTransactionDataResponse$TransactionMethodParamsResponse;Ljava/lang/String;Ljava/lang/String;ILjava/lang/Object;)Lcom/smedialink/storage/data/network/model/response/crypto/boost/GetBoostTransactionDataResponse;
+.method public static synthetic copy$default(Lcom/smedialink/storage/data/network/model/response/crypto/boost/GetBoostTransactionDataResponse;Lcom/smedialink/storage/data/network/model/response/crypto/wallet/TransactionParamsResponse$EVM;Lcom/smedialink/storage/data/network/model/response/crypto/boost/GetBoostTransactionDataResponse$TransactionMethodParamsResponse;Ljava/lang/String;Ljava/lang/String;ILjava/lang/Object;)Lcom/smedialink/storage/data/network/model/response/crypto/boost/GetBoostTransactionDataResponse;
     .locals 0
 
     and-int/lit8 p6, p5, 0x1
 
     if-eqz p6, :cond_0
 
-    iget-object p1, p0, Lcom/smedialink/storage/data/network/model/response/crypto/boost/GetBoostTransactionDataResponse;->transactionParams:Lcom/smedialink/storage/data/network/model/response/crypto/wallet/TransactionParamsResponse;
+    iget-object p1, p0, Lcom/smedialink/storage/data/network/model/response/crypto/boost/GetBoostTransactionDataResponse;->transactionParams:Lcom/smedialink/storage/data/network/model/response/crypto/wallet/TransactionParamsResponse$EVM;
 
     :cond_0
     and-int/lit8 p6, p5, 0x2
@@ -90,7 +90,7 @@
     iget-object p4, p0, Lcom/smedialink/storage/data/network/model/response/crypto/boost/GetBoostTransactionDataResponse;->networkType:Ljava/lang/String;
 
     :cond_3
-    invoke-virtual {p0, p1, p2, p3, p4}, Lcom/smedialink/storage/data/network/model/response/crypto/boost/GetBoostTransactionDataResponse;->copy(Lcom/smedialink/storage/data/network/model/response/crypto/wallet/TransactionParamsResponse;Lcom/smedialink/storage/data/network/model/response/crypto/boost/GetBoostTransactionDataResponse$TransactionMethodParamsResponse;Ljava/lang/String;Ljava/lang/String;)Lcom/smedialink/storage/data/network/model/response/crypto/boost/GetBoostTransactionDataResponse;
+    invoke-virtual {p0, p1, p2, p3, p4}, Lcom/smedialink/storage/data/network/model/response/crypto/boost/GetBoostTransactionDataResponse;->copy(Lcom/smedialink/storage/data/network/model/response/crypto/wallet/TransactionParamsResponse$EVM;Lcom/smedialink/storage/data/network/model/response/crypto/boost/GetBoostTransactionDataResponse$TransactionMethodParamsResponse;Ljava/lang/String;Ljava/lang/String;)Lcom/smedialink/storage/data/network/model/response/crypto/boost/GetBoostTransactionDataResponse;
 
     move-result-object p0
 
@@ -99,10 +99,10 @@
 
 
 # virtual methods
-.method public final component1()Lcom/smedialink/storage/data/network/model/response/crypto/wallet/TransactionParamsResponse;
+.method public final component1()Lcom/smedialink/storage/data/network/model/response/crypto/wallet/TransactionParamsResponse$EVM;
     .locals 1
 
-    iget-object v0, p0, Lcom/smedialink/storage/data/network/model/response/crypto/boost/GetBoostTransactionDataResponse;->transactionParams:Lcom/smedialink/storage/data/network/model/response/crypto/wallet/TransactionParamsResponse;
+    iget-object v0, p0, Lcom/smedialink/storage/data/network/model/response/crypto/boost/GetBoostTransactionDataResponse;->transactionParams:Lcom/smedialink/storage/data/network/model/response/crypto/wallet/TransactionParamsResponse$EVM;
 
     return-object v0
 .end method
@@ -131,7 +131,7 @@
     return-object v0
 .end method
 
-.method public final copy(Lcom/smedialink/storage/data/network/model/response/crypto/wallet/TransactionParamsResponse;Lcom/smedialink/storage/data/network/model/response/crypto/boost/GetBoostTransactionDataResponse$TransactionMethodParamsResponse;Ljava/lang/String;Ljava/lang/String;)Lcom/smedialink/storage/data/network/model/response/crypto/boost/GetBoostTransactionDataResponse;
+.method public final copy(Lcom/smedialink/storage/data/network/model/response/crypto/wallet/TransactionParamsResponse$EVM;Lcom/smedialink/storage/data/network/model/response/crypto/boost/GetBoostTransactionDataResponse$TransactionMethodParamsResponse;Ljava/lang/String;Ljava/lang/String;)Lcom/smedialink/storage/data/network/model/response/crypto/boost/GetBoostTransactionDataResponse;
     .locals 1
 
     const-string v0, "transactionParams"
@@ -152,7 +152,7 @@
 
     new-instance v0, Lcom/smedialink/storage/data/network/model/response/crypto/boost/GetBoostTransactionDataResponse;
 
-    invoke-direct {v0, p1, p2, p3, p4}, Lcom/smedialink/storage/data/network/model/response/crypto/boost/GetBoostTransactionDataResponse;-><init>(Lcom/smedialink/storage/data/network/model/response/crypto/wallet/TransactionParamsResponse;Lcom/smedialink/storage/data/network/model/response/crypto/boost/GetBoostTransactionDataResponse$TransactionMethodParamsResponse;Ljava/lang/String;Ljava/lang/String;)V
+    invoke-direct {v0, p1, p2, p3, p4}, Lcom/smedialink/storage/data/network/model/response/crypto/boost/GetBoostTransactionDataResponse;-><init>(Lcom/smedialink/storage/data/network/model/response/crypto/wallet/TransactionParamsResponse$EVM;Lcom/smedialink/storage/data/network/model/response/crypto/boost/GetBoostTransactionDataResponse$TransactionMethodParamsResponse;Ljava/lang/String;Ljava/lang/String;)V
 
     return-object v0
 .end method
@@ -178,9 +178,9 @@
     :cond_1
     check-cast p1, Lcom/smedialink/storage/data/network/model/response/crypto/boost/GetBoostTransactionDataResponse;
 
-    iget-object v1, p0, Lcom/smedialink/storage/data/network/model/response/crypto/boost/GetBoostTransactionDataResponse;->transactionParams:Lcom/smedialink/storage/data/network/model/response/crypto/wallet/TransactionParamsResponse;
+    iget-object v1, p0, Lcom/smedialink/storage/data/network/model/response/crypto/boost/GetBoostTransactionDataResponse;->transactionParams:Lcom/smedialink/storage/data/network/model/response/crypto/wallet/TransactionParamsResponse$EVM;
 
-    iget-object v3, p1, Lcom/smedialink/storage/data/network/model/response/crypto/boost/GetBoostTransactionDataResponse;->transactionParams:Lcom/smedialink/storage/data/network/model/response/crypto/wallet/TransactionParamsResponse;
+    iget-object v3, p1, Lcom/smedialink/storage/data/network/model/response/crypto/boost/GetBoostTransactionDataResponse;->transactionParams:Lcom/smedialink/storage/data/network/model/response/crypto/wallet/TransactionParamsResponse$EVM;
 
     invoke-static {v1, v3}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
@@ -260,11 +260,11 @@
     return-object v0
 .end method
 
-.method public final getTransactionParams()Lcom/smedialink/storage/data/network/model/response/crypto/wallet/TransactionParamsResponse;
+.method public final getTransactionParams()Lcom/smedialink/storage/data/network/model/response/crypto/wallet/TransactionParamsResponse$EVM;
     .locals 1
 
     .line 7
-    iget-object v0, p0, Lcom/smedialink/storage/data/network/model/response/crypto/boost/GetBoostTransactionDataResponse;->transactionParams:Lcom/smedialink/storage/data/network/model/response/crypto/wallet/TransactionParamsResponse;
+    iget-object v0, p0, Lcom/smedialink/storage/data/network/model/response/crypto/boost/GetBoostTransactionDataResponse;->transactionParams:Lcom/smedialink/storage/data/network/model/response/crypto/wallet/TransactionParamsResponse$EVM;
 
     return-object v0
 .end method
@@ -272,9 +272,9 @@
 .method public hashCode()I
     .locals 2
 
-    iget-object v0, p0, Lcom/smedialink/storage/data/network/model/response/crypto/boost/GetBoostTransactionDataResponse;->transactionParams:Lcom/smedialink/storage/data/network/model/response/crypto/wallet/TransactionParamsResponse;
+    iget-object v0, p0, Lcom/smedialink/storage/data/network/model/response/crypto/boost/GetBoostTransactionDataResponse;->transactionParams:Lcom/smedialink/storage/data/network/model/response/crypto/wallet/TransactionParamsResponse$EVM;
 
-    invoke-virtual {v0}, Lcom/smedialink/storage/data/network/model/response/crypto/wallet/TransactionParamsResponse;->hashCode()I
+    invoke-virtual {v0}, Lcom/smedialink/storage/data/network/model/response/crypto/wallet/TransactionParamsResponse$EVM;->hashCode()I
 
     move-result v0
 
@@ -322,7 +322,7 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget-object v1, p0, Lcom/smedialink/storage/data/network/model/response/crypto/boost/GetBoostTransactionDataResponse;->transactionParams:Lcom/smedialink/storage/data/network/model/response/crypto/wallet/TransactionParamsResponse;
+    iget-object v1, p0, Lcom/smedialink/storage/data/network/model/response/crypto/boost/GetBoostTransactionDataResponse;->transactionParams:Lcom/smedialink/storage/data/network/model/response/crypto/wallet/TransactionParamsResponse$EVM;
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 

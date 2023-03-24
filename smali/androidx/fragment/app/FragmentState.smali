@@ -91,12 +91,12 @@
 
     if-eqz v0, :cond_0
 
-    const/4 v0, 0x1
+    move v0, v1
 
     goto :goto_0
 
     :cond_0
-    const/4 v0, 0x0
+    move v0, v2
 
     :goto_0
     iput-boolean v0, p0, Landroidx/fragment/app/FragmentState;->mFromLayout:Z
@@ -129,12 +129,12 @@
 
     if-eqz v0, :cond_1
 
-    const/4 v0, 0x1
+    move v0, v1
 
     goto :goto_1
 
     :cond_1
-    const/4 v0, 0x0
+    move v0, v2
 
     :goto_1
     iput-boolean v0, p0, Landroidx/fragment/app/FragmentState;->mRetainInstance:Z
@@ -146,12 +146,12 @@
 
     if-eqz v0, :cond_2
 
-    const/4 v0, 0x1
+    move v0, v1
 
     goto :goto_2
 
     :cond_2
-    const/4 v0, 0x0
+    move v0, v2
 
     :goto_2
     iput-boolean v0, p0, Landroidx/fragment/app/FragmentState;->mRemoving:Z
@@ -163,12 +163,12 @@
 
     if-eqz v0, :cond_3
 
-    const/4 v0, 0x1
+    move v0, v1
 
     goto :goto_3
 
     :cond_3
-    const/4 v0, 0x0
+    move v0, v2
 
     :goto_3
     iput-boolean v0, p0, Landroidx/fragment/app/FragmentState;->mDetached:Z
@@ -190,7 +190,7 @@
     goto :goto_4
 
     :cond_4
-    const/4 v1, 0x0
+    move v1, v2
 
     :goto_4
     iput-boolean v1, p0, Landroidx/fragment/app/FragmentState;->mHidden:Z

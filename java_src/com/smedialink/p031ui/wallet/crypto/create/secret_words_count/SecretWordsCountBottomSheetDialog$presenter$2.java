@@ -22,7 +22,7 @@ final class SecretWordsCountBottomSheetDialog$presenter$2 extends Lambda impleme
     @Override // kotlin.jvm.functions.Function0
     public final SecretWordsCountPresenter invoke() {
         Lazy lazy;
-        lazy = LazyKt__LazyJVMKt.lazy(KoinPlatformTools.INSTANCE.defaultLazyMode(), new C2062x4b006a38(this.this$0, null, null));
+        lazy = LazyKt__LazyJVMKt.lazy(KoinPlatformTools.INSTANCE.defaultLazyMode(), new C2076x4b006a38(this.this$0, null, null));
         return (SecretWordsCountPresenter) lazy.getValue();
     }
 }

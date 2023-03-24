@@ -14,7 +14,7 @@ import kotlin.Lazy;
 import kotlin.LazyKt__LazyJVMKt;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.messenger.C3286R;
+import org.telegram.messenger.C3301R;
 import org.telegram.messenger.databinding.ForkContentImageHeaderBinding;
 import org.telegram.p048ui.ActionBar.Theme;
 /* compiled from: ImageHeaderView.kt */
@@ -82,7 +82,7 @@ public final class ImageHeaderView extends FrameLayout {
         Intrinsics.checkNotNullExpressionValue(imageIcon, "imageIcon");
         Context context = getContext();
         Intrinsics.checkNotNullExpressionValue(context, "context");
-        ImageViewExtKt.loadFromWithPlaceholderResId(imageIcon, iconUrl, context, Integer.valueOf(C3286R.C3288drawable.fork_ic_internal_logo), true);
+        ImageViewExtKt.loadFromWithPlaceholderResId(imageIcon, iconUrl, context, Integer.valueOf(C3301R.C3303drawable.fork_ic_internal_logo), true);
         forkContentImageHeaderBinding.textTitle.setText(titleText);
         forkContentImageHeaderBinding.textSubtitle.setText(subtitleText);
     }

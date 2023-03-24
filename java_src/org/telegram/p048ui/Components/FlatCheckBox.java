@@ -19,7 +19,7 @@ public class FlatCheckBox extends View {
     int INNER_PADDING;
 
     /* renamed from: P */
-    int f1720P;
+    int f1721P;
     int TRANSLETE_TEXT;
     boolean attached;
     ValueAnimator checkAnimator;
@@ -47,7 +47,7 @@ public class FlatCheckBox extends View {
         this.HEIGHT = AndroidUtilities.m50dp(36);
         this.INNER_PADDING = AndroidUtilities.m50dp(22);
         this.TRANSLETE_TEXT = AndroidUtilities.m50dp(8);
-        this.f1720P = AndroidUtilities.m50dp(2);
+        this.f1721P = AndroidUtilities.m50dp(2);
         this.rectF = new RectF();
         this.progress = BitmapDescriptorFactory.HUE_RED;
         this.lastW = 0;
@@ -87,7 +87,7 @@ public class FlatCheckBox extends View {
     public void setChecked(boolean z, boolean z2) {
         this.checked = z;
         if (!this.attached || !z2) {
-            this.progress = z ? 1.0f : BitmapDescriptorFactory.HUE_RED;
+            this.progress = z ? 1.0f : 0.0f;
             return;
         }
         ValueAnimator valueAnimator = this.checkAnimator;
@@ -97,7 +97,7 @@ public class FlatCheckBox extends View {
         }
         float[] fArr = new float[2];
         fArr[0] = this.progress;
-        fArr[1] = z ? 1.0f : BitmapDescriptorFactory.HUE_RED;
+        fArr[1] = z ? 1.0f : 0.0f;
         ValueAnimator ofFloat = ValueAnimator.ofFloat(fArr);
         this.checkAnimator = ofFloat;
         ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.FlatCheckBox$$ExternalSyntheticLambda0
@@ -124,10 +124,10 @@ public class FlatCheckBox extends View {
     @Override // android.view.View
     protected void onMeasure(int i, int i2) {
         String str = this.text;
-        setMeasuredDimension((str == null ? 0 : (int) this.textPaint.measureText(str)) + (this.INNER_PADDING << 1) + (this.f1720P * 2), this.HEIGHT + AndroidUtilities.m50dp(4));
+        setMeasuredDimension((str == null ? 0 : (int) this.textPaint.measureText(str)) + (this.INNER_PADDING << 1) + (this.f1721P * 2), this.HEIGHT + AndroidUtilities.m50dp(4));
         if (getMeasuredWidth() != this.lastW) {
             this.rectF.set(BitmapDescriptorFactory.HUE_RED, BitmapDescriptorFactory.HUE_RED, getMeasuredWidth(), getMeasuredHeight());
-            this.rectF.inset(this.f1720P + (this.outLinePaint.getStrokeWidth() / 2.0f), this.f1720P + (this.outLinePaint.getStrokeWidth() / 2.0f) + AndroidUtilities.m50dp(2));
+            this.rectF.inset(this.f1721P + (this.outLinePaint.getStrokeWidth() / 2.0f), this.f1721P + (this.outLinePaint.getStrokeWidth() / 2.0f) + AndroidUtilities.m50dp(2));
         }
     }
 

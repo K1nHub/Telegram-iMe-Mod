@@ -46,11 +46,11 @@ public class ExtendedGridLayoutManager extends GridLayoutManager {
     private void prepareLayout(float f) {
         Size sizeForItem;
         int i;
-        boolean z;
+        int i2;
         float f2 = f == BitmapDescriptorFactory.HUE_RED ? 100.0f : f;
         this.itemSpans.clear();
         this.itemsToRow.clear();
-        int i2 = 0;
+        int i3 = 0;
         this.rowsCount = 0;
         this.firstRowMax = 0;
         int flowItemCount = getFlowItemCount();
@@ -59,46 +59,46 @@ public class ExtendedGridLayoutManager extends GridLayoutManager {
         }
         int m50dp = AndroidUtilities.m50dp(100);
         int spanCount = getSpanCount();
-        int i3 = (this.lastRowFullWidth ? 1 : 0) + flowItemCount;
-        int i4 = spanCount;
+        int i4 = (this.lastRowFullWidth ? 1 : 0) + flowItemCount;
         int i5 = 0;
         int i6 = 0;
-        while (i5 < i3) {
+        int i7 = spanCount;
+        while (i5 < i4) {
             if (i5 == 0 && this.firstRowFullWidth) {
                 SparseIntArray sparseIntArray = this.itemSpans;
                 sparseIntArray.put(i5, sparseIntArray.get(i5) + spanCount);
-                this.itemsToRow.put(i2, this.rowsCount);
+                this.itemsToRow.put(i3, this.rowsCount);
                 this.rowsCount++;
-                i4 = spanCount;
-                i6 = 0;
+                i6 = i3;
+                i7 = spanCount;
             } else {
                 if ((i5 < flowItemCount ? sizeForItem(i5) : null) == null) {
-                    z = i6 != 0;
+                    i2 = i6 != 0 ? 1 : i3;
                     i = spanCount;
                 } else {
                     int min = Math.min(spanCount, (int) Math.floor(spanCount * (((sizeForItem.width / sizeForItem.height) * m50dp) / f2)));
                     i = min;
-                    z = i4 < min || (min > 33 && i4 < min + (-15));
+                    i2 = (i7 < min || (min > 33 && i7 < min + (-15))) ? 1 : i3;
                 }
-                if (z) {
-                    if (i4 != 0) {
-                        int i7 = i4 / i6;
-                        int i8 = i5 - i6;
-                        int i9 = i8;
+                if (i2 != 0) {
+                    if (i7 != 0) {
+                        int i8 = i7 / i6;
+                        int i9 = i5 - i6;
+                        int i10 = i9;
                         while (true) {
-                            int i10 = i8 + i6;
-                            if (i9 >= i10) {
+                            int i11 = i9 + i6;
+                            if (i10 >= i11) {
                                 break;
                             }
-                            if (i9 == i10 - 1) {
+                            if (i10 == i11 - 1) {
                                 SparseIntArray sparseIntArray2 = this.itemSpans;
-                                sparseIntArray2.put(i9, sparseIntArray2.get(i9) + i4);
+                                sparseIntArray2.put(i10, sparseIntArray2.get(i10) + i7);
                             } else {
                                 SparseIntArray sparseIntArray3 = this.itemSpans;
-                                sparseIntArray3.put(i9, sparseIntArray3.get(i9) + i7);
+                                sparseIntArray3.put(i10, sparseIntArray3.get(i10) + i8);
                             }
-                            i4 -= i7;
-                            i9++;
+                            i7 -= i8;
+                            i10++;
                         }
                         this.itemsToRow.put(i5 - 1, this.rowsCount);
                     }
@@ -106,10 +106,10 @@ public class ExtendedGridLayoutManager extends GridLayoutManager {
                         break;
                     }
                     this.rowsCount++;
-                    i4 = spanCount;
+                    i7 = spanCount;
                     i6 = 0;
-                } else if (i4 < i) {
-                    i = i4;
+                } else if (i7 < i) {
+                    i = i7;
                 }
                 if (this.rowsCount == 0) {
                     this.firstRowMax = Math.max(this.firstRowMax, i5);
@@ -118,11 +118,11 @@ public class ExtendedGridLayoutManager extends GridLayoutManager {
                     this.itemsToRow.put(i5, this.rowsCount);
                 }
                 i6++;
-                i4 -= i;
+                i7 -= i;
                 this.itemSpans.put(i5, i);
             }
             i5++;
-            i2 = 0;
+            i3 = 0;
         }
         this.rowsCount++;
     }

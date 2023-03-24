@@ -259,7 +259,7 @@
 
     const/4 v2, 0x0
 
-    const/4 v3, 0x0
+    move v3, v2
 
     :goto_0
     if-ge v3, v0, :cond_2
@@ -622,11 +622,14 @@
 
     sub-int/2addr v0, v2
 
-    const/4 v1, 0x1
-
-    const/4 v2, 0x0
-
     :goto_0
+    move v4, v2
+
+    move v2, v1
+
+    move v1, v4
+
+    :goto_1
     if-gt v1, v0, :cond_1
 
     add-int v2, v1, v0
@@ -647,12 +650,6 @@
 
     add-int/lit8 v2, v2, 0x1
 
-    move v4, v2
-
-    move v2, v1
-
-    move v1, v4
-
     goto :goto_0
 
     :cond_0
@@ -660,7 +657,7 @@
 
     move v0, v2
 
-    goto :goto_0
+    goto :goto_1
 
     .line 717
     :cond_1
@@ -946,7 +943,7 @@
     goto :goto_0
 
     :cond_0
-    const/4 p1, 0x0
+    move p1, v1
 
     .line 667
     :goto_0
@@ -1083,7 +1080,7 @@
 
     iget v6, p0, Landroidx/appcompat/widget/AppCompatTextViewAutoSizeHelper;->mAutoSizeStepGranularityInPx:F
 
-    mul-float v5, v5, v6
+    mul-float/2addr v5, v6
 
     add-float/2addr v4, v5
 
@@ -1182,12 +1179,12 @@
 
     if-lez v1, :cond_0
 
-    const/4 v4, 0x1
+    move v4, v3
 
     goto :goto_0
 
     :cond_0
-    const/4 v4, 0x0
+    move v4, v2
 
     .line 498
     :goto_0
@@ -1272,7 +1269,7 @@
     goto :goto_0
 
     :cond_1
-    const/4 v1, -0x1
+    move v1, v3
 
     .line 754
     :goto_0
@@ -1376,21 +1373,21 @@
         }
     .end annotation
 
-    const-string v0, "px) is less or equal to (0px)"
+    const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    cmpg-float v1, p1, v0
 
-    cmpg-float v2, p1, v1
+    const-string v2, "px) is less or equal to (0px)"
 
-    if-lez v2, :cond_2
+    if-lez v1, :cond_2
 
-    cmpg-float v2, p2, p1
+    cmpg-float v1, p2, p1
 
-    if-lez v2, :cond_1
+    if-lez v1, :cond_1
 
-    cmpg-float v1, p3, v1
+    cmpg-float v0, p3, v0
 
-    if-lez v1, :cond_0
+    if-lez v0, :cond_0
 
     const/4 v0, 0x1
 
@@ -1421,13 +1418,13 @@
 
     invoke-direct {p2}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v1, "The auto-size step granularity ("
+    const-string v0, "The auto-size step granularity ("
 
-    invoke-virtual {p2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {p2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {p2, p3}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
 
-    invoke-virtual {p2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {p2, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {p2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
@@ -1477,13 +1474,13 @@
 
     invoke-direct {p3}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v1, "Minimum auto-size text size ("
+    const-string v0, "Minimum auto-size text size ("
 
-    invoke-virtual {p3, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {p3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {p3, p1}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
 
-    invoke-virtual {p3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {p3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {p3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
@@ -1908,7 +1905,7 @@
     goto :goto_0
 
     :cond_1
-    const/high16 p1, -0x40800000    # -1.0f
+    move p1, v1
 
     .line 183
     :goto_0
@@ -1928,7 +1925,7 @@
     goto :goto_1
 
     :cond_2
-    const/high16 p2, -0x40800000    # -1.0f
+    move p2, v1
 
     .line 188
     :goto_1
@@ -1948,7 +1945,7 @@
     goto :goto_2
 
     :cond_3
-    const/high16 v2, -0x40800000    # -1.0f
+    move v2, v1
 
     .line 193
     :goto_2
@@ -2018,28 +2015,28 @@
 
     move-result-object v0
 
-    const/4 v3, 0x2
+    cmpl-float v3, p2, v1
 
-    cmpl-float v4, p2, v1
+    const/4 v4, 0x2
 
-    if-nez v4, :cond_5
+    if-nez v3, :cond_5
 
     const/high16 p2, 0x41400000    # 12.0f
 
     .line 215
-    invoke-static {v3, p2, v0}, Landroid/util/TypedValue;->applyDimension(IFLandroid/util/DisplayMetrics;)F
+    invoke-static {v4, p2, v0}, Landroid/util/TypedValue;->applyDimension(IFLandroid/util/DisplayMetrics;)F
 
     move-result p2
 
     :cond_5
-    cmpl-float v4, v2, v1
+    cmpl-float v3, v2, v1
 
-    if-nez v4, :cond_6
+    if-nez v3, :cond_6
 
     const/high16 v2, 0x42e00000    # 112.0f
 
     .line 222
-    invoke-static {v3, v2, v0}, Landroid/util/TypedValue;->applyDimension(IFLandroid/util/DisplayMetrics;)F
+    invoke-static {v4, v2, v0}, Landroid/util/TypedValue;->applyDimension(IFLandroid/util/DisplayMetrics;)F
 
     move-result v2
 

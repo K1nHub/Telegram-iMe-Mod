@@ -315,7 +315,7 @@
     .line 90
     iget-object v2, p0, Lcom/google/android/gms/internal/firebase_ml/zzhb;->zzxu:[Ljava/lang/Object;
 
-    const/4 v3, 0x1
+    move v3, v1
 
     :goto_0
     if-ge v3, v0, :cond_2
@@ -432,7 +432,7 @@
 
     if-nez v2, :cond_1
 
-    const/4 v5, 0x0
+    move v5, v4
 
     goto :goto_0
 

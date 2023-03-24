@@ -89,18 +89,18 @@
 
     const-wide/16 v6, 0x0
 
-    const/4 p1, -0x4
+    cmp-long p1, v2, v6
 
-    cmp-long v0, v2, v6
+    const/4 v0, -0x4
 
-    if-nez v0, :cond_1
+    if-nez p1, :cond_1
 
-    const/4 p3, 0x4
+    const/4 p1, 0x4
 
     .line 296
-    invoke-virtual {p2, p3}, Lcom/google/android/exoplayer2/decoder/Buffer;->addFlag(I)V
+    invoke-virtual {p2, p1}, Lcom/google/android/exoplayer2/decoder/Buffer;->addFlag(I)V
 
-    return p1
+    return v0
 
     .line 300
     :cond_1
@@ -116,24 +116,24 @@
     .line 302
     invoke-static {}, Lcom/google/android/exoplayer2/source/SilenceMediaSource;->access$500()[B
 
-    move-result-object v0
+    move-result-object p1
 
-    array-length v0, v0
+    array-length p1, p1
 
-    int-to-long v4, v0
+    int-to-long v4, p1
 
     invoke-static {v4, v5, v2, v3}, Ljava/lang/Math;->min(JJ)J
 
     move-result-wide v2
 
-    long-to-int v0, v2
+    long-to-int p1, v2
 
     and-int/lit8 v2, p3, 0x4
 
     if-nez v2, :cond_2
 
     .line 304
-    invoke-virtual {p2, v0}, Lcom/google/android/exoplayer2/decoder/DecoderInputBuffer;->ensureSpaceForWrite(I)V
+    invoke-virtual {p2, p1}, Lcom/google/android/exoplayer2/decoder/DecoderInputBuffer;->ensureSpaceForWrite(I)V
 
     .line 305
     iget-object p2, p2, Lcom/google/android/exoplayer2/decoder/DecoderInputBuffer;->data:Ljava/nio/ByteBuffer;
@@ -144,7 +144,7 @@
 
     const/4 v3, 0x0
 
-    invoke-virtual {p2, v2, v3, v0}, Ljava/nio/ByteBuffer;->put([BII)Ljava/nio/ByteBuffer;
+    invoke-virtual {p2, v2, v3, p1}, Ljava/nio/ByteBuffer;->put([BII)Ljava/nio/ByteBuffer;
 
     :cond_2
     and-int/lit8 p2, p3, 0x1
@@ -154,14 +154,14 @@
     .line 308
     iget-wide p2, p0, Lcom/google/android/exoplayer2/source/SilenceMediaSource$SilenceSampleStream;->positionBytes:J
 
-    int-to-long v0, v0
+    int-to-long v1, p1
 
-    add-long/2addr p2, v0
+    add-long/2addr p2, v1
 
     iput-wide p2, p0, Lcom/google/android/exoplayer2/source/SilenceMediaSource$SilenceSampleStream;->positionBytes:J
 
     :cond_3
-    return p1
+    return v0
 
     .line 289
     :cond_4
@@ -225,7 +225,7 @@
 
     div-long/2addr p1, v0
 
-    long-to-int p2, p1
+    long-to-int p1, p1
 
-    return p2
+    return p1
 .end method

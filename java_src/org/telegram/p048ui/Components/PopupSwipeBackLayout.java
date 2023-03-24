@@ -89,7 +89,7 @@ public class PopupSwipeBackLayout extends FrameLayout {
             @Override // android.view.GestureDetector.SimpleOnGestureListener, android.view.GestureDetector.OnGestureListener
             public boolean onScroll(MotionEvent motionEvent, MotionEvent motionEvent2, float f, float f2) {
                 if (!PopupSwipeBackLayout.this.isProcessingSwipe && !PopupSwipeBackLayout.this.isSwipeDisallowed) {
-                    if (!PopupSwipeBackLayout.this.isSwipeBackDisallowed && PopupSwipeBackLayout.this.transitionProgress == 1.0f && f <= (-scaledTouchSlop) && Math.abs(f) >= Math.abs(1.5f * f2)) {
+                    if (!PopupSwipeBackLayout.this.isSwipeBackDisallowed && PopupSwipeBackLayout.this.transitionProgress == 1.0f && f <= (-scaledTouchSlop) && Math.abs(f) >= Math.abs(f2 * 1.5f)) {
                         PopupSwipeBackLayout popupSwipeBackLayout = PopupSwipeBackLayout.this;
                         if (!popupSwipeBackLayout.isDisallowedView(motionEvent2, popupSwipeBackLayout.getChildAt(popupSwipeBackLayout.transitionProgress > 0.5f ? 1 : 0))) {
                             PopupSwipeBackLayout.this.isProcessingSwipe = true;
@@ -191,8 +191,8 @@ public class PopupSwipeBackLayout extends FrameLayout {
                 f2 = view.getMeasuredHeight();
             }
         } else {
-            f = BitmapDescriptorFactory.HUE_RED;
-            f2 = BitmapDescriptorFactory.HUE_RED;
+            f = 0.0f;
+            f2 = 0.0f;
         }
         if (childAt.getMeasuredWidth() == 0 || childAt.getMeasuredHeight() == 0) {
             return;
@@ -259,7 +259,7 @@ public class PopupSwipeBackLayout extends FrameLayout {
         if (!this.detector.onTouchEvent(motionEvent) && (action == 1 || action == 3)) {
             if (this.isProcessingSwipe) {
                 clearFlags();
-                animateToState(this.transitionProgress >= 0.5f ? 1.0f : BitmapDescriptorFactory.HUE_RED, BitmapDescriptorFactory.HUE_RED);
+                animateToState(this.transitionProgress >= 0.5f ? 1.0f : 0.0f, BitmapDescriptorFactory.HUE_RED);
                 return false;
             } else if (this.isSwipeDisallowed) {
                 clearFlags();

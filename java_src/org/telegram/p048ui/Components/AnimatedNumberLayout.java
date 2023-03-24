@@ -59,6 +59,7 @@ public class AnimatedNumberLayout {
     }
 
     public void setNumber(int i, boolean z) {
+        TextPaint textPaint;
         if (this.currentNumber != i || this.letters.isEmpty()) {
             ObjectAnimator objectAnimator = this.animator;
             if (objectAnimator != null) {
@@ -83,8 +84,7 @@ public class AnimatedNumberLayout {
                     this.letters.add(this.oldLetters.get(i2));
                     this.oldLetters.set(i2, null);
                 } else {
-                    TextPaint textPaint = this.textPaint;
-                    this.letters.add(new StaticLayout(substring, textPaint, (int) Math.ceil(textPaint.measureText(substring)), Layout.Alignment.ALIGN_NORMAL, 1.0f, BitmapDescriptorFactory.HUE_RED, false));
+                    this.letters.add(new StaticLayout(substring, this.textPaint, (int) Math.ceil(textPaint.measureText(substring)), Layout.Alignment.ALIGN_NORMAL, 1.0f, BitmapDescriptorFactory.HUE_RED, false));
                 }
                 i2 = i3;
             }

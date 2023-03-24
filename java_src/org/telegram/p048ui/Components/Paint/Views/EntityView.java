@@ -190,7 +190,7 @@ public class EntityView extends FrameLayout {
         return this.hasPanned;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:17:0x0031, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:17:0x0032, code lost:
         if (r3 != 6) goto L16;
      */
     @Override // android.view.View
@@ -204,46 +204,46 @@ public class EntityView extends FrameLayout {
             int r0 = r6.getPointerCount()
             r1 = 0
             r2 = 1
-            if (r0 > r2) goto L7a
+            if (r0 > r2) goto L7b
             org.telegram.ui.Components.Paint.Views.EntityView$EntityViewDelegate r0 = r5.delegate
             boolean r0 = r0.allowInteraction(r5)
-            if (r0 != 0) goto L11
-            goto L7a
-        L11:
+            if (r0 != 0) goto L12
+            goto L7b
+        L12:
             org.telegram.ui.Components.Paint.Views.EntityView$EntityViewDelegate r0 = r5.delegate
             float r3 = r6.getRawX()
             float r4 = r6.getRawY()
             float[] r0 = r0.getTransformedTouch(r3, r4)
             int r3 = r6.getActionMasked()
-            if (r3 == 0) goto L42
-            if (r3 == r2) goto L3d
+            if (r3 == 0) goto L43
+            if (r3 == r2) goto L3e
             r4 = 2
-            if (r3 == r4) goto L34
+            if (r3 == r4) goto L35
             r4 = 3
-            if (r3 == r4) goto L3d
+            if (r3 == r4) goto L3e
             r4 = 5
-            if (r3 == r4) goto L42
+            if (r3 == r4) goto L43
             r0 = 6
-            if (r3 == r0) goto L3d
-            goto L75
-        L34:
+            if (r3 == r0) goto L3e
+            goto L76
+        L35:
             r1 = r0[r1]
             r0 = r0[r2]
             boolean r1 = r5.onTouchMove(r1, r0)
-            goto L75
-        L3d:
+            goto L76
+        L3e:
             r5.onTouchUp()
-        L40:
-            r1 = 1
-            goto L75
-        L42:
+        L41:
+            r1 = r2
+            goto L76
+        L43:
             boolean r3 = r5.isSelected()
-            if (r3 != 0) goto L51
+            if (r3 != 0) goto L52
             org.telegram.ui.Components.Paint.Views.EntityView$EntityViewDelegate r3 = r5.delegate
-            if (r3 == 0) goto L51
+            if (r3 == 0) goto L52
             r3.onEntitySelected(r5)
             r5.announcedSelection = r2
-        L51:
+        L52:
             r3 = r0[r1]
             r5.previousLocationX = r3
             r0 = r0[r2]
@@ -251,20 +251,20 @@ public class EntityView extends FrameLayout {
             r5.hasReleased = r1
             android.view.ViewParent r0 = r5.getParent()
             boolean r0 = r0 instanceof org.telegram.p048ui.Components.Paint.Views.EntitiesContainerView
-            if (r0 == 0) goto L40
+            if (r0 == 0) goto L41
             boolean r0 = r5.hasStickyX
-            if (r0 != 0) goto L6b
+            if (r0 != 0) goto L6c
             boolean r0 = r5.hasStickyY
-            if (r0 == 0) goto L40
-        L6b:
+            if (r0 == 0) goto L41
+        L6c:
             android.view.ViewParent r0 = r5.getParent()
             org.telegram.ui.Components.Paint.Views.EntitiesContainerView r0 = (org.telegram.p048ui.Components.Paint.Views.EntitiesContainerView) r0
             r0.invalidate()
-            goto L40
-        L75:
+            goto L41
+        L76:
             android.view.GestureDetector r0 = r5.gestureDetector
             r0.onTouchEvent(r6)
-        L7a:
+        L7b:
             return r1
         */
         throw new UnsupportedOperationException("Method not decompiled: org.telegram.p048ui.Components.Paint.Views.EntityView.onTouchEvent(android.view.MotionEvent):boolean");
@@ -326,10 +326,10 @@ public class EntityView extends FrameLayout {
 
     public void pan(float f, float f2) {
         Point point = this.position;
-        float f3 = point.f1757x + f;
-        point.f1757x = f3;
-        float f4 = point.f1758y + f2;
-        point.f1758y = f4;
+        float f3 = point.f1758x + f;
+        point.f1758x = f3;
+        float f4 = point.f1759y + f2;
+        point.f1759y = f4;
         if (this.hasFromStickyXAnimation) {
             this.fromStickyX = f3;
         }
@@ -339,7 +339,7 @@ public class EntityView extends FrameLayout {
         View view = (View) getParent();
         if (view != null) {
             if (!this.hasStickyX) {
-                if (Math.abs(this.position.f1757x - (view.getMeasuredWidth() / 2.0f)) <= AndroidUtilities.m51dp(16.0f)) {
+                if (Math.abs(this.position.f1758x - (view.getMeasuredWidth() / 2.0f)) <= AndroidUtilities.m51dp(16.0f)) {
                     this.hasStickyX = true;
                     try {
                         performHapticFeedback(3, 2);
@@ -352,11 +352,11 @@ public class EntityView extends FrameLayout {
                     if (valueAnimator != null) {
                         valueAnimator.cancel();
                     }
-                    this.fromStickyX = this.position.f1757x;
+                    this.fromStickyX = this.position.f1758x;
                     this.hasFromStickyXAnimation = false;
                     runStickyXAnimator(BitmapDescriptorFactory.HUE_RED, 1.0f);
                 }
-            } else if (Math.abs(this.position.f1757x - (view.getMeasuredWidth() / 2.0f)) > AndroidUtilities.m51dp(48.0f)) {
+            } else if (Math.abs(this.position.f1758x - (view.getMeasuredWidth() / 2.0f)) > AndroidUtilities.m51dp(48.0f)) {
                 this.hasStickyX = false;
                 if (getParent() instanceof EntitiesContainerView) {
                     ((EntitiesContainerView) getParent()).invalidate();
@@ -369,7 +369,7 @@ public class EntityView extends FrameLayout {
                 runStickyXAnimator(1.0f, BitmapDescriptorFactory.HUE_RED);
             }
             if (!this.hasStickyY) {
-                if (Math.abs(this.position.f1758y - (view.getMeasuredHeight() / 2.0f)) <= AndroidUtilities.m51dp(16.0f)) {
+                if (Math.abs(this.position.f1759y - (view.getMeasuredHeight() / 2.0f)) <= AndroidUtilities.m51dp(16.0f)) {
                     this.hasStickyY = true;
                     try {
                         performHapticFeedback(3, 2);
@@ -382,11 +382,11 @@ public class EntityView extends FrameLayout {
                     if (valueAnimator3 != null) {
                         valueAnimator3.cancel();
                     }
-                    this.fromStickyY = this.position.f1758y;
+                    this.fromStickyY = this.position.f1759y;
                     this.hasFromStickyYAnimation = false;
                     runStickyYAnimator(BitmapDescriptorFactory.HUE_RED, 1.0f);
                 }
-            } else if (Math.abs(this.position.f1758y - (view.getMeasuredHeight() / 2.0f)) > AndroidUtilities.m51dp(48.0f)) {
+            } else if (Math.abs(this.position.f1759y - (view.getMeasuredHeight() / 2.0f)) > AndroidUtilities.m51dp(48.0f)) {
                 this.hasStickyY = false;
                 if (getParent() instanceof EntitiesContainerView) {
                     ((EntitiesContainerView) getParent()).invalidate();
@@ -404,7 +404,7 @@ public class EntityView extends FrameLayout {
 
     /* JADX INFO: Access modifiers changed from: protected */
     public float getPositionX() {
-        float f = this.position.f1757x;
+        float f = this.position.f1758x;
         if (getParent() != null) {
             View view = (View) getParent();
             if (this.stickyXAnimator != null) {
@@ -417,7 +417,7 @@ public class EntityView extends FrameLayout {
 
     /* JADX INFO: Access modifiers changed from: protected */
     public float getPositionY() {
-        float f = this.position.f1758y;
+        float f = this.position.f1759y;
         if (getParent() != null) {
             View view = (View) getParent();
             if (this.stickyYAnimator != null) {
@@ -632,8 +632,8 @@ public class EntityView extends FrameLayout {
         protected void updatePosition() {
             Rect selectionBounds = EntityView.this.getSelectionBounds();
             FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) getLayoutParams();
-            layoutParams.leftMargin = (int) selectionBounds.f1798x;
-            layoutParams.topMargin = (int) selectionBounds.f1799y;
+            layoutParams.leftMargin = (int) selectionBounds.f1799x;
+            layoutParams.topMargin = (int) selectionBounds.f1800y;
             layoutParams.width = (int) selectionBounds.width;
             layoutParams.height = (int) selectionBounds.height;
             setLayoutParams(layoutParams);
@@ -643,7 +643,7 @@ public class EntityView extends FrameLayout {
         /* JADX WARN: Code restructure failed: missing block: B:11:0x002c, code lost:
             if (r1 != 6) goto L11;
          */
-        /* JADX WARN: Removed duplicated region for block: B:45:0x0141  */
+        /* JADX WARN: Removed duplicated region for block: B:45:0x013e  */
         @Override // android.view.View
         /*
             Code decompiled incorrectly, please refer to instructions dump.
@@ -651,7 +651,7 @@ public class EntityView extends FrameLayout {
         */
         public boolean onTouchEvent(android.view.MotionEvent r19) {
             /*
-                Method dump skipped, instructions count: 333
+                Method dump skipped, instructions count: 330
                 To view this dump add '--comments-level debug' option
             */
             throw new UnsupportedOperationException("Method not decompiled: org.telegram.p048ui.Components.Paint.Views.EntityView.SelectionView.onTouchEvent(android.view.MotionEvent):boolean");

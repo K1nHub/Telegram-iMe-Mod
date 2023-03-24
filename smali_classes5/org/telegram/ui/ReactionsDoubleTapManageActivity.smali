@@ -922,7 +922,7 @@
 
     const v5, 0x3f733333    # 0.95f
 
-    mul-float v4, v4, v5
+    mul-float/2addr v4, v5
 
     invoke-static {v3, v4}, Ljava/lang/Math;->min(FF)F
 

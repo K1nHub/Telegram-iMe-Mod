@@ -994,7 +994,7 @@
     const/4 v1, 0x0
 
     :cond_0
-    const/4 v2, 0x0
+    move v2, v0
 
     .line 1057
     :goto_0
@@ -1400,15 +1400,15 @@
 
     const/4 v7, 0x0
 
-    const/4 v8, 0x0
+    move v10, v6
 
-    const/4 v9, 0x0
+    move v8, v7
 
-    const/4 v10, 0x1
+    move v9, v8
+
+    move v13, v9
 
     const-wide/16 v11, 0x0
-
-    const/4 v13, 0x0
 
     :goto_0
     add-int v14, v2, v8
@@ -1434,7 +1434,7 @@
 
     if-nez v2, :cond_1
 
-    goto/16 :goto_8
+    goto/16 :goto_7
 
     .line 674
     :cond_1
@@ -1481,14 +1481,14 @@
 
     if-le v14, v7, :cond_3
 
-    goto :goto_7
+    goto :goto_6
 
     :cond_3
-    if-eq v9, v6, :cond_c
+    if-eq v9, v6, :cond_b
 
     if-nez v9, :cond_4
 
-    goto :goto_5
+    goto :goto_3
 
     :cond_4
     if-ne v9, v15, :cond_8
@@ -1506,7 +1506,7 @@
     :cond_5
     const-wide/16 v4, 0xa
 
-    mul-long v4, v4, v11
+    mul-long/2addr v4, v11
 
     add-int/lit8 v14, v14, -0x30
 
@@ -1535,14 +1535,14 @@
 
     :cond_7
     :goto_1
-    const/4 v7, 0x1
+    move v7, v6
 
     :goto_2
     and-int/2addr v10, v7
 
     move-wide v11, v4
 
-    goto :goto_3
+    goto :goto_4
 
     :cond_8
     if-ne v9, v4, :cond_9
@@ -1551,67 +1551,60 @@
 
     const/4 v9, 0x4
 
-    goto :goto_6
+    goto :goto_5
 
     :cond_9
-    if-eq v9, v5, :cond_b
+    if-eq v9, v5, :cond_a
 
     const/4 v4, 0x6
 
-    if-ne v9, v4, :cond_a
-
-    goto :goto_4
+    if-ne v9, v4, :cond_c
 
     :cond_a
-    :goto_3
-    const/4 v7, 0x0
-
-    goto :goto_6
-
-    :cond_b
-    :goto_4
     const/4 v7, 0x0
 
     const/4 v9, 0x7
 
-    goto :goto_6
+    goto :goto_5
 
-    :cond_c
-    :goto_5
+    :cond_b
+    :goto_3
     add-int/lit8 v14, v14, -0x30
 
     neg-int v4, v14
 
     int-to-long v11, v4
 
+    move v9, v15
+
+    :cond_c
+    :goto_4
     const/4 v7, 0x0
 
-    const/4 v9, 0x2
-
-    :goto_6
+    :goto_5
     const-wide/16 v16, 0x0
 
-    goto/16 :goto_d
+    goto/16 :goto_c
 
     .line 715
     :cond_d
-    :goto_7
+    :goto_6
     invoke-direct {v0, v14}, Lcom/google/gson/stream/JsonReader;->isLiteral(C)Z
 
     move-result v1
 
     if-nez v1, :cond_14
 
-    :goto_8
+    :goto_7
     if-ne v9, v15, :cond_11
 
     if-eqz v10, :cond_11
 
     const-wide/high16 v1, -0x8000000000000000L
 
-    cmp-long v3, v11, v1
+    cmp-long v1, v11, v1
 
-    if-nez v3, :cond_e
+    if-nez v1, :cond_e
 
     if-eqz v13, :cond_11
 
@@ -1627,13 +1620,13 @@
     :cond_f
     if-eqz v13, :cond_10
 
-    goto :goto_9
+    goto :goto_8
 
     :cond_10
     neg-long v11, v11
 
     .line 741
-    :goto_9
+    :goto_8
     iput-wide v11, v0, Lcom/google/gson/stream/JsonReader;->peekedLong:J
 
     .line 742
@@ -1661,7 +1654,7 @@
 
     if-ne v9, v1, :cond_12
 
-    goto :goto_a
+    goto :goto_9
 
     :cond_12
     const/4 v7, 0x0
@@ -1670,7 +1663,7 @@
 
     .line 746
     :cond_13
-    :goto_a
+    :goto_9
     iput v8, v0, Lcom/google/gson/stream/JsonReader;->peekedNumberLength:I
 
     const/16 v1, 0x10
@@ -1692,9 +1685,7 @@
 
     if-ne v9, v15, :cond_16
 
-    const/4 v9, 0x3
-
-    goto :goto_d
+    goto :goto_b
 
     :cond_16
     return v7
@@ -1708,16 +1699,16 @@
 
     if-nez v9, :cond_18
 
-    const/4 v9, 0x1
+    move v9, v6
 
-    const/4 v13, 0x1
+    move v13, v9
 
-    goto :goto_d
+    goto :goto_c
 
     :cond_18
     if-ne v9, v5, :cond_19
 
-    goto :goto_c
+    goto :goto_b
 
     :cond_19
     return v7
@@ -1733,16 +1724,16 @@
 
     if-ne v9, v4, :cond_1b
 
-    goto :goto_b
+    goto :goto_a
 
     :cond_1b
     return v7
 
     :cond_1c
-    :goto_b
-    const/4 v9, 0x5
+    :goto_a
+    move v9, v5
 
-    goto :goto_d
+    goto :goto_c
 
     :cond_1d
     const/4 v4, 0x6
@@ -1753,10 +1744,10 @@
 
     if-ne v9, v5, :cond_1e
 
-    :goto_c
-    const/4 v9, 0x6
+    :goto_b
+    move v9, v4
 
-    :goto_d
+    :goto_c
     add-int/lit8 v8, v8, 0x1
 
     goto/16 :goto_0
@@ -3852,7 +3843,7 @@
 .end method
 
 .method public nextInt()I
-    .locals 8
+    .locals 7
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -3885,9 +3876,9 @@
 
     int-to-long v5, v4
 
-    cmp-long v7, v0, v5
+    cmp-long v0, v0, v5
 
-    if-nez v7, :cond_1
+    if-nez v0, :cond_1
 
     .line 1186
     iput v3, p0, Lcom/google/gson/stream/JsonReader;->peeked:I
@@ -4070,8 +4061,6 @@
     return v0
 
     :catch_0
-    nop
-
     :goto_3
     const/16 v0, 0xb
 
@@ -4089,9 +4078,9 @@
 
     int-to-double v5, v4
 
-    cmpl-double v7, v5, v0
+    cmpl-double v0, v5, v0
 
-    if-nez v7, :cond_8
+    if-nez v0, :cond_8
 
     const/4 v0, 0x0
 
@@ -4146,7 +4135,7 @@
 .end method
 
 .method public nextLong()J
-    .locals 9
+    .locals 8
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -4328,8 +4317,6 @@
     return-wide v0
 
     :catch_0
-    nop
-
     :goto_3
     const/16 v0, 0xb
 
@@ -4347,9 +4334,9 @@
 
     long-to-double v6, v4
 
-    cmpl-double v8, v6, v0
+    cmpl-double v0, v6, v0
 
-    if-nez v8, :cond_7
+    if-nez v0, :cond_7
 
     const/4 v0, 0x0
 
@@ -4882,7 +4869,7 @@
 
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    move v1, v0
 
     .line 1252
     :cond_0

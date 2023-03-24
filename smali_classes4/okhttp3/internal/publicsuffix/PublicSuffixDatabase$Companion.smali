@@ -87,7 +87,7 @@
 
     const/4 v8, 0x1
 
-    const/4 v9, 0x1
+    move v9, v8
 
     :goto_2
     add-int v10, v5, v9
@@ -255,9 +255,9 @@
     :cond_a
     add-int/lit8 v11, v11, 0x1
 
-    const/4 v9, 0x1
+    move v12, v7
 
-    const/4 v12, -0x1
+    move v9, v8
 
     goto :goto_3
 

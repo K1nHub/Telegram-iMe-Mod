@@ -142,7 +142,7 @@ final class zzfl<T extends zzfn<T>> {
                 default: goto L14;
             }
         L14:
-            r0 = 0
+            r0 = r1
             goto L42
         L16:
             boolean r2 = r3 instanceof com.google.android.gms.internal.mlkit_common.zzhb

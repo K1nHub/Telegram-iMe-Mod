@@ -214,7 +214,7 @@
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     .line 258
     :goto_0
@@ -234,7 +234,7 @@
 
     new-array v4, v4, [Lcom/google/android/exoplayer2/Format;
 
-    const/4 v5, 0x0
+    move v5, v1
 
     .line 261
     :goto_1
@@ -428,7 +428,7 @@
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     .line 161
     :goto_0
@@ -456,7 +456,7 @@
 
     move-result v4
 
-    const/4 v5, 0x0
+    move v5, v1
 
     .line 164
     :goto_1

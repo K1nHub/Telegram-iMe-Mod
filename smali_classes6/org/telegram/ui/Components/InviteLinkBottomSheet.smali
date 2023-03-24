@@ -656,12 +656,12 @@
 
     if-nez v5, :cond_5
 
-    const/4 v11, 0x0
+    move v11, v6
 
     goto :goto_2
 
     :cond_5
-    const/16 v11, 0x2c
+    move v11, v14
 
     :goto_2
     const/4 v12, 0x0
@@ -685,16 +685,14 @@
 
     if-nez v6, :cond_6
 
-    const/16 v6, 0x2c
-
     goto :goto_3
 
     :cond_6
     const/16 v14, 0x32
 
-    const/16 v6, 0x32
-
     :goto_3
+    move v6, v14
+
     const/16 v7, 0x33
 
     const/4 v8, 0x0
@@ -1108,7 +1106,7 @@
 
     invoke-interface {p3, p1}, Ljava/util/List;->addAll(Ljava/util/Collection;)Z
 
-    const/4 p1, 0x0
+    move p1, v0
 
     .line 959
     :goto_0
@@ -1161,7 +1159,7 @@
     goto :goto_1
 
     :cond_1
-    const/4 p1, 0x0
+    move p1, v0
 
     goto :goto_1
 
@@ -1287,12 +1285,12 @@
 
     if-ge p5, v2, :cond_1
 
-    const/4 v2, 0x1
+    move v2, v0
 
     goto :goto_0
 
     :cond_1
-    const/4 v2, 0x0
+    move v2, v1
 
     .line 293
     :goto_0
@@ -1307,7 +1305,7 @@
     goto :goto_1
 
     :cond_2
-    const/4 v0, 0x0
+    move v0, v1
 
     .line 294
     :goto_1
@@ -1532,12 +1530,12 @@
 
     if-eqz p1, :cond_5
 
-    const/high16 v9, 0x3f800000    # 1.0f
+    move v9, v7
 
     goto :goto_1
 
     :cond_5
-    const/4 v9, 0x0
+    move v9, v8
 
     :goto_1
     aput v9, v6, v0
@@ -1571,7 +1569,7 @@
     goto :goto_2
 
     :cond_6
-    const/4 v7, 0x0
+    move v7, v8
 
     :goto_2
     aput v7, v1, v0
@@ -2082,13 +2080,13 @@
     goto :goto_0
 
     :cond_1
-    const/4 v2, 0x0
+    move v2, v0
 
     goto :goto_1
 
     :cond_2
     :goto_0
-    const/4 v2, 0x1
+    move v2, v3
 
     .line 477
     :goto_1
@@ -2119,13 +2117,13 @@
     goto :goto_2
 
     :cond_3
-    const/4 v4, 0x0
+    move v4, v0
 
     goto :goto_3
 
     :cond_4
     :goto_2
-    const/4 v4, 0x1
+    move v4, v3
 
     .line 479
     :goto_3
@@ -2177,7 +2175,7 @@
 
     iput v0, p0, Lorg/telegram/ui/Components/InviteLinkBottomSheet;->emptyView2:I
 
-    const/4 v0, 0x1
+    move v0, v3
 
     .line 488
     :cond_5
@@ -2327,12 +2325,12 @@
 
     if-le v0, v1, :cond_1
 
-    const/4 v0, 0x1
+    move v0, v3
 
     goto :goto_0
 
     :cond_1
-    const/4 v0, 0x0
+    move v0, v2
 
     .line 929
     :goto_0
@@ -2352,12 +2350,12 @@
 
     if-le v1, v4, :cond_2
 
-    const/4 v1, 0x1
+    move v1, v3
 
     goto :goto_1
 
     :cond_2
-    const/4 v1, 0x0
+    move v1, v2
 
     :goto_1
     if-eqz v0, :cond_3
@@ -2367,7 +2365,7 @@
     :cond_3
     if-eqz v1, :cond_6
 
-    const/4 v2, 0x1
+    move v2, v3
 
     :goto_2
     if-eqz v2, :cond_4
@@ -2631,7 +2629,7 @@
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     .line 373
     :goto_0
@@ -2657,7 +2655,7 @@
     goto :goto_0
 
     :cond_1
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_1
     if-ge v2, v0, :cond_2
@@ -2683,7 +2681,7 @@
 
     move-result v0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_2
     if-ge v2, v0, :cond_3

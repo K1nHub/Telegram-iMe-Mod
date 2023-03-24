@@ -108,12 +108,12 @@
 
     if-eqz p2, :cond_1
 
-    const/4 p2, 0x1
+    move p2, p3
 
     goto :goto_1
 
     :cond_1
-    const/4 p2, 0x0
+    move p2, v0
 
     :goto_1
     iput-boolean p2, p0, Lcom/google/android/exoplayer2/trackselection/DefaultTrackSelector$VideoTrackInfo;->allowMixedMimeTypes:Z
@@ -169,12 +169,12 @@
     if-gt v1, v2, :cond_6
 
     :cond_5
-    const/4 v1, 0x1
+    move v1, p3
 
     goto :goto_2
 
     :cond_6
-    const/4 v1, 0x0
+    move v1, v0
 
     :goto_2
     iput-boolean v1, p0, Lcom/google/android/exoplayer2/trackselection/DefaultTrackSelector$VideoTrackInfo;->isWithinMaxConstraints:Z
@@ -226,12 +226,12 @@
     if-lt p2, p6, :cond_b
 
     :cond_a
-    const/4 p2, 0x1
+    move p2, p3
 
     goto :goto_3
 
     :cond_b
-    const/4 p2, 0x0
+    move p2, v0
 
     :goto_3
     iput-boolean p2, p0, Lcom/google/android/exoplayer2/trackselection/DefaultTrackSelector$VideoTrackInfo;->isWithinMinConstraints:Z
@@ -285,20 +285,20 @@
     goto :goto_4
 
     :cond_c
-    const/4 p2, 0x0
+    move p2, v0
 
     goto :goto_5
 
     :cond_d
     :goto_4
-    const/4 p2, 0x1
+    move p2, p3
 
     :goto_5
     iput-boolean p2, p0, Lcom/google/android/exoplayer2/trackselection/DefaultTrackSelector$VideoTrackInfo;->hasMainOrNoRoleFlag:Z
 
     const p2, 0x7fffffff
 
-    const/4 p6, 0x0
+    move p6, v0
 
     .line 3228
     :goto_6
@@ -353,12 +353,12 @@
 
     if-ne p2, p4, :cond_10
 
-    const/4 p2, 0x1
+    move p2, p3
 
     goto :goto_8
 
     :cond_10
-    const/4 p2, 0x0
+    move p2, v0
 
     :goto_8
     iput-boolean p2, p0, Lcom/google/android/exoplayer2/trackselection/DefaultTrackSelector$VideoTrackInfo;->usesPrimaryDecoder:Z
@@ -375,7 +375,7 @@
     goto :goto_9
 
     :cond_11
-    const/4 p3, 0x0
+    move p3, v0
 
     :goto_9
     iput-boolean p3, p0, Lcom/google/android/exoplayer2/trackselection/DefaultTrackSelector$VideoTrackInfo;->usesHardwareAcceleration:Z
@@ -773,7 +773,7 @@
 
     const/4 v12, 0x0
 
-    const/4 v13, 0x0
+    move v13, v12
 
     .line 3152
     :goto_0
@@ -803,7 +803,7 @@
     goto :goto_1
 
     :cond_0
-    const/4 v7, 0x0
+    move v7, v12
 
     goto :goto_2
 
@@ -811,7 +811,7 @@
     :goto_1
     const/4 v0, 0x1
 
-    const/4 v7, 0x1
+    move v7, v0
 
     .line 3157
     :goto_2

@@ -141,7 +141,7 @@
     move-result v1
 
     :goto_0
-    const/4 v3, 0x1
+    move v3, v4
 
     goto :goto_1
 
@@ -488,7 +488,7 @@
 
     if-nez p1, :cond_0
 
-    const/4 v4, 0x0
+    move v4, v3
 
     goto :goto_0
 
@@ -597,11 +597,11 @@
     :cond_1
     const/4 v0, 0x0
 
-    const/4 v6, 0x0
+    move v6, v0
 
-    const/4 v8, 0x0
+    move v8, v6
 
-    const/4 v9, 0x0
+    move v9, v1
 
     .line 1065
     :goto_0
@@ -720,7 +720,7 @@
 
     move-result v14
 
-    mul-float v14, v14, v5
+    mul-float/2addr v14, v5
 
     add-float/2addr v13, v14
 
@@ -735,7 +735,7 @@
 
     add-float/2addr v13, v9
 
-    const/4 v9, 0x0
+    move v9, v1
 
     .line 1161
     :cond_6
@@ -986,7 +986,7 @@
 
     move-result v2
 
-    mul-float v2, v2, v5
+    mul-float/2addr v2, v5
 
     add-float/2addr v1, v2
 
@@ -1001,7 +1001,7 @@
 
     add-float/2addr v1, v9
 
-    const/4 v9, 0x0
+    move v9, v14
 
     .line 1097
     :cond_e
@@ -1037,7 +1037,7 @@
 
     iput v1, v3, Lcom/google/android/flexbox/FlexLine;->mTotalFlexGrow:F
 
-    const/4 v6, 0x1
+    move v6, v13
 
     goto :goto_6
 
@@ -1977,7 +1977,7 @@
 
     if-ge p3, p4, :cond_5
 
-    const/4 v1, 0x1
+    move v1, v0
 
     :cond_5
     return v1
@@ -2050,11 +2050,11 @@
     :cond_1
     const/4 v1, 0x0
 
-    const/4 v6, 0x0
+    move v6, v1
 
-    const/4 v8, 0x0
+    move v8, v6
 
-    const/4 v9, 0x0
+    move v9, v2
 
     .line 1248
     :goto_0
@@ -2175,7 +2175,7 @@
 
     move-result v14
 
-    mul-float v14, v14, v5
+    mul-float/2addr v14, v5
 
     sub-float/2addr v13, v14
 
@@ -2190,7 +2190,7 @@
 
     add-float/2addr v13, v9
 
-    const/4 v9, 0x0
+    move v9, v2
 
     .line 1345
     :cond_6
@@ -2260,9 +2260,9 @@
     :cond_8
     const-wide/high16 v16, -0x4010000000000000L    # -1.0
 
-    cmpg-double v13, v0, v16
+    cmpg-double v0, v0, v16
 
-    if-gez v13, :cond_9
+    if-gez v0, :cond_9
 
     add-int/lit8 v14, v14, -0x1
 
@@ -2440,7 +2440,7 @@
 
     move-result v1
 
-    mul-float v1, v1, v5
+    mul-float/2addr v1, v5
 
     sub-float/2addr v0, v1
 
@@ -2457,7 +2457,7 @@
 
     add-float/2addr v0, v9
 
-    const/4 v9, 0x0
+    move v9, v14
 
     .line 1280
     :cond_e
@@ -2493,7 +2493,7 @@
 
     iput v0, v3, Lcom/google/android/flexbox/FlexLine;->mTotalFlexShrink:F
 
-    const/4 v6, 0x1
+    move v6, v13
 
     goto :goto_4
 
@@ -3178,13 +3178,13 @@
 
     move/from16 v19, v0
 
+    move/from16 v22, v18
+
     const/4 v0, 0x0
 
     const/16 v20, 0x0
 
     const/16 v21, 0x0
-
-    const/high16 v22, -0x80000000
 
     :goto_2
     if-ge v6, v1, :cond_18
@@ -3343,7 +3343,7 @@
 
     move-result v4
 
-    mul-float v1, v1, v4
+    mul-float/2addr v1, v4
 
     invoke-static {v1}, Ljava/lang/Math;->round(F)I
 
@@ -3609,17 +3609,15 @@
 
     add-int/lit8 v5, v13, -0x1
 
-    move-object/from16 v3, v28
-
     goto :goto_5
 
     :cond_9
+    move/from16 v5, v27
+
+    :goto_5
     move-object/from16 v3, v28
 
-    const/4 v5, 0x0
-
     .line 512
-    :goto_5
     invoke-direct {v10, v14, v3, v5, v12}, Lcom/google/android/flexbox/FlexboxHelper;->addFlexLine(Ljava/util/List;Lcom/google/android/flexbox/FlexLine;II)V
 
     .line 513
@@ -3797,9 +3795,9 @@
     .line 557
     iput v6, v3, Lcom/google/android/flexbox/FlexLine;->mFirstIndex:I
 
-    const/4 v1, 0x0
+    move/from16 v4, v18
 
-    const/high16 v4, -0x80000000
+    move/from16 v1, v27
 
     goto :goto_8
 
@@ -3850,7 +3848,7 @@
     goto :goto_9
 
     :cond_f
-    const/4 v9, 0x0
+    move/from16 v9, v27
 
     :goto_9
     or-int/2addr v8, v9
@@ -3873,7 +3871,7 @@
     goto :goto_a
 
     :cond_10
-    const/4 v9, 0x0
+    move/from16 v9, v27
 
     :goto_a
     or-int/2addr v8, v9
@@ -4117,7 +4115,7 @@
 
     move/from16 v11, p4
 
-    const/16 v19, 0x1
+    move/from16 v19, v12
 
     goto :goto_c
 
@@ -4607,7 +4605,7 @@
 
     move-result p2
 
-    const/4 p3, 0x0
+    move p3, v6
 
     :goto_2
     if-ge v5, p2, :cond_15
@@ -4637,7 +4635,7 @@
 
     add-float/2addr v2, p3
 
-    const/4 p3, 0x0
+    move p3, v6
 
     .line 1480
     :cond_6
@@ -4703,7 +4701,7 @@
 
     move-result p2
 
-    mul-int/lit8 p2, p2, 0x2
+    mul-int/2addr p2, v2
 
     .line 1507
     div-int/2addr p1, p2
@@ -4789,7 +4787,7 @@
 
     move-result p3
 
-    const/4 v1, 0x0
+    move v1, v6
 
     :goto_5
     if-ge v5, p3, :cond_12
@@ -4836,7 +4834,7 @@
 
     iput v1, v8, Lcom/google/android/flexbox/FlexLine;->mCrossSize:I
 
-    const/4 v1, 0x0
+    move v1, v6
 
     goto :goto_6
 
@@ -5245,9 +5243,9 @@
 
     shr-long/2addr p1, v0
 
-    long-to-int p2, p1
+    long-to-int p1, p1
 
-    return p2
+    return p1
 .end method
 
 .method extractLowerInt(J)I
@@ -5261,9 +5259,9 @@
         }
     .end annotation
 
-    long-to-int p2, p1
+    long-to-int p1, p1
 
-    return p2
+    return p1
 .end method
 
 .method isOrderChangedFromLastMeasurement(Landroid/util/SparseIntArray;)Z
@@ -5298,7 +5296,7 @@
     :cond_0
     const/4 v1, 0x0
 
-    const/4 v3, 0x0
+    move v3, v1
 
     :goto_0
     if-ge v3, v0, :cond_3

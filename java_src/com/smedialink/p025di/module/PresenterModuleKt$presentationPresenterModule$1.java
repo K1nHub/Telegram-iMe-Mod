@@ -13,6 +13,7 @@ import com.smedialink.model.catalog.CampaignItem;
 import com.smedialink.model.staking.StakingDetailsItem;
 import com.smedialink.model.translation.TranslationArgs;
 import com.smedialink.model.wallet.crypto.buy.CryptoBuyItem;
+import com.smedialink.model.wallet.crypto.create.CreateWalletScreenType;
 import com.smedialink.model.wallet.crypto.pin.EnterPinCodeScreenType;
 import com.smedialink.model.wallet.crypto.settings.BlockchainWalletItem;
 import com.smedialink.model.wallet.crypto.swap.SwapFeeScreenArgs;
@@ -53,7 +54,6 @@ import com.smedialink.p031ui.wallet.crypto.address_mismatch.AddressMismatchPrese
 import com.smedialink.p031ui.wallet.crypto.buy.BuyCryptoProductPresenter;
 import com.smedialink.p031ui.wallet.crypto.buy.customPrice.CryptoBuyCustomPricePresenter;
 import com.smedialink.p031ui.wallet.crypto.buy.processing.SimplexWebViewProcessingPresenter;
-import com.smedialink.p031ui.wallet.crypto.create.CreateWalletFragment;
 import com.smedialink.p031ui.wallet.crypto.create.CreateWalletPresenter;
 import com.smedialink.p031ui.wallet.crypto.create.password.CreateWalletPasswordPresenter;
 import com.smedialink.p031ui.wallet.crypto.create.pin.CreateWalletPinPresenter;
@@ -607,13 +607,13 @@ final class PresenterModuleKt$presentationPresenterModule$1 extends Lambda imple
         public final CreateWalletPresenter invoke(Scope factory, ParametersHolder parametersHolder) {
             Intrinsics.checkNotNullParameter(factory, "$this$factory");
             Intrinsics.checkNotNullParameter(parametersHolder, "<name for destructuring parameter 0>");
-            CreateWalletFragment.ScreenType screenType = (CreateWalletFragment.ScreenType) parametersHolder.elementAt(0, Reflection.getOrCreateKotlinClass(CreateWalletFragment.ScreenType.class));
+            CreateWalletScreenType createWalletScreenType = (CreateWalletScreenType) parametersHolder.elementAt(0, Reflection.getOrCreateKotlinClass(CreateWalletScreenType.class));
             CryptoWalletInteractor cryptoWalletInteractor = (CryptoWalletInteractor) factory.get(Reflection.getOrCreateKotlinClass(CryptoWalletInteractor.class), null, null);
             ResourceManager resourceManager = (ResourceManager) factory.get(Reflection.getOrCreateKotlinClass(ResourceManager.class), null, null);
             RxEventBus rxEventBus = (RxEventBus) factory.get(Reflection.getOrCreateKotlinClass(RxEventBus.class), null, null);
             SchedulersProvider schedulersProvider = (SchedulersProvider) factory.get(Reflection.getOrCreateKotlinClass(SchedulersProvider.class), null, null);
             CryptoWalletInteractor cryptoWalletInteractor2 = (CryptoWalletInteractor) factory.get(Reflection.getOrCreateKotlinClass(CryptoWalletInteractor.class), null, null);
-            return new CreateWalletPresenter(screenType, (CryptoAccessManager) factory.get(Reflection.getOrCreateKotlinClass(CryptoAccessManager.class), null, null), (CryptoPreferenceHelper) factory.get(Reflection.getOrCreateKotlinClass(CryptoPreferenceHelper.class), null, null), cryptoWalletInteractor, resourceManager, rxEventBus, schedulersProvider, cryptoWalletInteractor2);
+            return new CreateWalletPresenter(createWalletScreenType, (CryptoAccessManager) factory.get(Reflection.getOrCreateKotlinClass(CryptoAccessManager.class), null, null), (CryptoPreferenceHelper) factory.get(Reflection.getOrCreateKotlinClass(CryptoPreferenceHelper.class), null, null), cryptoWalletInteractor, resourceManager, rxEventBus, schedulersProvider, cryptoWalletInteractor2);
         }
     }
 

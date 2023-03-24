@@ -67,7 +67,7 @@
 .end method
 
 .method public constructor <init>(Lcom/google/android/gms/maps/model/LatLng;Lcom/google/android/gms/maps/model/LatLng;)V
-    .locals 7
+    .locals 6
     .param p1    # Lcom/google/android/gms/maps/model/LatLng;
         .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Param;
             id = 0x2
@@ -99,32 +99,32 @@
 
     iget-wide v2, p1, Lcom/google/android/gms/maps/model/LatLng;->latitude:D
 
-    const/4 v4, 0x1
+    cmpl-double v0, v0, v2
 
-    const/4 v5, 0x0
+    const/4 v1, 0x1
 
-    cmpl-double v6, v0, v2
+    const/4 v4, 0x0
 
-    if-ltz v6, :cond_0
+    if-ltz v0, :cond_0
 
-    const/4 v0, 0x1
+    move v0, v1
 
     goto :goto_0
 
     :cond_0
-    const/4 v0, 0x0
+    move v0, v4
 
     :goto_0
-    const/4 v1, 0x2
+    const/4 v5, 0x2
 
-    new-array v1, v1, [Ljava/lang/Object;
+    new-array v5, v5, [Ljava/lang/Object;
 
     .line 5
     invoke-static {v2, v3}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
 
     move-result-object v2
 
-    aput-object v2, v1, v5
+    aput-object v2, v5, v4
 
     iget-wide v2, p2, Lcom/google/android/gms/maps/model/LatLng;->latitude:D
 
@@ -133,12 +133,12 @@
 
     move-result-object v2
 
-    aput-object v2, v1, v4
+    aput-object v2, v5, v1
 
-    const-string v2, "southern latitude exceeds northern latitude (%s > %s)"
+    const-string v1, "southern latitude exceeds northern latitude (%s > %s)"
 
     .line 4
-    invoke-static {v0, v2, v1}, Lcom/google/android/gms/common/internal/Preconditions;->checkArgument(ZLjava/lang/String;[Ljava/lang/Object;)V
+    invoke-static {v0, v1, v5}, Lcom/google/android/gms/common/internal/Preconditions;->checkArgument(ZLjava/lang/String;[Ljava/lang/Object;)V
 
     iput-object p1, p0, Lcom/google/android/gms/maps/model/LatLngBounds;->southwest:Lcom/google/android/gms/maps/model/LatLng;
 
@@ -180,50 +180,48 @@
 
     iget-wide v2, v2, Lcom/google/android/gms/maps/model/LatLng;->longitude:D
 
-    const/4 v4, 0x0
+    cmpg-double v4, v0, v2
 
-    const/4 v5, 0x1
+    const/4 v5, 0x0
 
-    cmpg-double v6, v0, v2
+    const/4 v6, 0x1
 
-    if-gtz v6, :cond_1
+    cmpg-double v0, v0, p1
 
-    cmpg-double v6, v0, p1
-
-    if-gtz v6, :cond_0
-
-    cmpg-double v0, p1, v2
+    if-gtz v4, :cond_1
 
     if-gtz v0, :cond_0
 
-    return v5
+    cmpg-double p1, p1, v2
+
+    if-gtz p1, :cond_0
+
+    return v6
 
     :cond_0
-    return v4
+    return v5
 
     :cond_1
-    cmpg-double v6, v0, p1
+    if-lez v0, :cond_3
 
-    if-lez v6, :cond_3
+    cmpg-double p1, p1, v2
 
-    cmpg-double v0, p1, v2
-
-    if-gtz v0, :cond_2
+    if-gtz p1, :cond_2
 
     goto :goto_0
 
     :cond_2
-    return v4
+    return v5
 
     :cond_3
     :goto_0
-    return v5
+    return v6
 .end method
 
 
 # virtual methods
 .method public contains(Lcom/google/android/gms/maps/model/LatLng;)Z
-    .locals 5
+    .locals 4
 
     const-string v0, "point must not be null."
 
@@ -242,17 +240,17 @@
     .line 3
     iget-wide v2, v2, Lcom/google/android/gms/maps/model/LatLng;->latitude:D
 
-    cmpg-double v4, v2, v0
+    cmpg-double v2, v2, v0
 
-    if-gtz v4, :cond_0
+    if-gtz v2, :cond_0
 
     iget-object v2, p0, Lcom/google/android/gms/maps/model/LatLngBounds;->northeast:Lcom/google/android/gms/maps/model/LatLng;
 
     iget-wide v2, v2, Lcom/google/android/gms/maps/model/LatLng;->latitude:D
 
-    cmpg-double v4, v0, v2
+    cmpg-double v0, v0, v2
 
-    if-gtz v4, :cond_0
+    if-gtz v0, :cond_0
 
     .line 2
     iget-wide v0, p1, Lcom/google/android/gms/maps/model/LatLng;->longitude:D

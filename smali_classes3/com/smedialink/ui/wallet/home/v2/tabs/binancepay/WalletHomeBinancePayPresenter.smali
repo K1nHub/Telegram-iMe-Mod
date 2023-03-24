@@ -423,7 +423,7 @@
 
     if-eqz p2, :cond_0
 
-    const/4 p1, 0x1
+    move p1, p3
 
     .line 169
     :cond_0
@@ -1086,7 +1086,13 @@
     sget v3, Lorg/telegram/messenger/R$drawable;->fork_ic_pay_qr_28:I
 
     .line 272
+    iget-object v2, v0, Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/WalletHomeBinancePayPresenter;->resourceManager:Lcom/smedialink/storage/domain/utils/system/ResourceManager;
+
     sget v4, Lorg/telegram/messenger/R$string;->wallet_binance_pay_action_pay:I
+
+    invoke-interface {v2, v4}, Lcom/smedialink/storage/domain/utils/system/ResourceManager;->getString(I)Ljava/lang/String;
+
+    move-result-object v4
 
     .line 269
     new-instance v6, Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/WalletHomeBinancePayPresenter$resolveActions$1;
@@ -1102,7 +1108,7 @@
     move-object v2, v9
 
     .line 270
-    invoke-direct/range {v2 .. v8}, Lcom/smedialink/model/wallet/home/HorizontalActionButtonItem;-><init>(IIZLkotlin/jvm/functions/Function0;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+    invoke-direct/range {v2 .. v8}, Lcom/smedialink/model/wallet/home/HorizontalActionButtonItem;-><init>(ILjava/lang/String;ZLkotlin/jvm/functions/Function0;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
 
     const/4 v2, 0x0
 
@@ -1115,7 +1121,13 @@
     sget v11, Lorg/telegram/messenger/R$drawable;->fork_ic_buy_28:I
 
     .line 276
-    sget v12, Lorg/telegram/messenger/R$string;->wallet_token_details_action_buy:I
+    iget-object v3, v0, Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/WalletHomeBinancePayPresenter;->resourceManager:Lcom/smedialink/storage/domain/utils/system/ResourceManager;
+
+    sget v4, Lorg/telegram/messenger/R$string;->wallet_token_details_action_buy:I
+
+    invoke-interface {v3, v4}, Lcom/smedialink/storage/domain/utils/system/ResourceManager;->getString(I)Ljava/lang/String;
+
+    move-result-object v12
 
     .line 269
     new-instance v14, Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/WalletHomeBinancePayPresenter$resolveActions$2;
@@ -1131,7 +1143,7 @@
     move-object v10, v2
 
     .line 274
-    invoke-direct/range {v10 .. v16}, Lcom/smedialink/model/wallet/home/HorizontalActionButtonItem;-><init>(IIZLkotlin/jvm/functions/Function0;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+    invoke-direct/range {v10 .. v16}, Lcom/smedialink/model/wallet/home/HorizontalActionButtonItem;-><init>(ILjava/lang/String;ZLkotlin/jvm/functions/Function0;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
 
     const/4 v3, 0x1
 
@@ -1144,7 +1156,13 @@
     sget v5, Lorg/telegram/messenger/R$drawable;->fork_ic_exchange_27:I
 
     .line 280
-    sget v6, Lorg/telegram/messenger/R$string;->wallet_binance_pay_action_convert:I
+    iget-object v3, v0, Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/WalletHomeBinancePayPresenter;->resourceManager:Lcom/smedialink/storage/domain/utils/system/ResourceManager;
+
+    sget v4, Lorg/telegram/messenger/R$string;->wallet_binance_pay_action_convert:I
+
+    invoke-interface {v3, v4}, Lcom/smedialink/storage/domain/utils/system/ResourceManager;->getString(I)Ljava/lang/String;
+
+    move-result-object v6
 
     .line 269
     new-instance v8, Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/WalletHomeBinancePayPresenter$resolveActions$3;
@@ -1160,7 +1178,7 @@
     move-object v4, v2
 
     .line 278
-    invoke-direct/range {v4 .. v10}, Lcom/smedialink/model/wallet/home/HorizontalActionButtonItem;-><init>(IIZLkotlin/jvm/functions/Function0;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+    invoke-direct/range {v4 .. v10}, Lcom/smedialink/model/wallet/home/HorizontalActionButtonItem;-><init>(ILjava/lang/String;ZLkotlin/jvm/functions/Function0;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
 
     const/4 v3, 0x2
 
@@ -1173,7 +1191,13 @@
     sget v5, Lorg/telegram/messenger/R$drawable;->fork_ic_transactions_28:I
 
     .line 284
-    sget v6, Lorg/telegram/messenger/R$string;->wallet_binance_pay_action_history:I
+    iget-object v3, v0, Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/WalletHomeBinancePayPresenter;->resourceManager:Lcom/smedialink/storage/domain/utils/system/ResourceManager;
+
+    sget v4, Lorg/telegram/messenger/R$string;->wallet_binance_pay_action_history:I
+
+    invoke-interface {v3, v4}, Lcom/smedialink/storage/domain/utils/system/ResourceManager;->getString(I)Ljava/lang/String;
+
+    move-result-object v6
 
     .line 269
     new-instance v8, Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/WalletHomeBinancePayPresenter$resolveActions$4;
@@ -1183,7 +1207,7 @@
     move-object v4, v2
 
     .line 282
-    invoke-direct/range {v4 .. v10}, Lcom/smedialink/model/wallet/home/HorizontalActionButtonItem;-><init>(IIZLkotlin/jvm/functions/Function0;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+    invoke-direct/range {v4 .. v10}, Lcom/smedialink/model/wallet/home/HorizontalActionButtonItem;-><init>(ILjava/lang/String;ZLkotlin/jvm/functions/Function0;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
 
     const/4 v3, 0x3
 
@@ -1198,7 +1222,7 @@
 .end method
 
 .method private final resolveBalancesState(ZLjava/util/List;)[Lcom/chad/library/adapter/base/entity/node/BaseNode;
-    .locals 11
+    .locals 10
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(Z",
@@ -1279,14 +1303,14 @@
 
     move-result-wide v8
 
-    cmpl-double v10, v8, v5
+    cmpl-double v5, v8, v5
 
-    if-lez v10, :cond_2
+    if-lez v5, :cond_2
 
     goto :goto_1
 
     :cond_2
-    const/4 v7, 0x0
+    move v7, v1
 
     :cond_3
     :goto_1

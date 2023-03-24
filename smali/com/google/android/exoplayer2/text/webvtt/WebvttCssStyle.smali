@@ -383,7 +383,7 @@
 
     move-result p2
 
-    mul-int/lit8 p2, p2, 0x4
+    mul-int/2addr p2, v0
 
     add-int/2addr p1, p2
 
@@ -417,12 +417,12 @@
 
     if-ne v0, v2, :cond_1
 
-    const/4 v0, 0x1
+    move v0, v2
 
     goto :goto_0
 
     :cond_1
-    const/4 v0, 0x0
+    move v0, v1
 
     .line 192
     :goto_0

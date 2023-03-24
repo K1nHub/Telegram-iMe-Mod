@@ -66,12 +66,12 @@
 
     if-nez v0, :cond_0
 
-    const/4 v0, 0x1
+    move v0, v1
 
     goto :goto_0
 
     :cond_0
-    const/4 v0, 0x0
+    move v0, v2
 
     :goto_0
     iget-object v3, p0, Lcom/android/billingclient/api/BillingFlowParams$Builder;->zzc:Ljava/util/List;
@@ -85,12 +85,12 @@
 
     if-nez v3, :cond_1
 
-    const/4 v3, 0x1
+    move v3, v1
 
     goto :goto_1
 
     :cond_1
-    const/4 v3, 0x0
+    move v3, v2
 
     :goto_1
     if-nez v0, :cond_3
@@ -177,7 +177,7 @@
 
     move-result v9
 
-    const/4 v10, 0x0
+    move v10, v2
 
     :goto_4
     if-ge v10, v9, :cond_8
@@ -250,7 +250,7 @@
 
     move-result v9
 
-    const/4 v10, 0x0
+    move v10, v2
 
     :goto_6
     if-ge v10, v9, :cond_13
@@ -332,7 +332,7 @@
 
     check-cast v6, Lcom/android/billingclient/api/BillingFlowParams$ProductDetailsParams;
 
-    const/4 v7, 0x0
+    move v7, v2
 
     :goto_8
     iget-object v8, p0, Lcom/android/billingclient/api/BillingFlowParams$Builder;->zzc:Ljava/util/List;
@@ -576,7 +576,7 @@
     goto :goto_b
 
     :cond_15
-    const/4 v1, 0x0
+    move v1, v2
 
     :cond_16
     :goto_b

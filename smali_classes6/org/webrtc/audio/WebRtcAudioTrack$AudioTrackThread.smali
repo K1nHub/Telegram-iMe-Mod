@@ -135,12 +135,12 @@
 
     if-ne v0, v4, :cond_0
 
-    const/4 v0, 0x1
+    move v0, v2
 
     goto :goto_0
 
     :cond_0
-    const/4 v0, 0x0
+    move v0, v3
 
     :goto_0
     invoke-static {v0}, Lorg/webrtc/audio/WebRtcAudioTrack;->access$100(Z)V
@@ -189,12 +189,12 @@
 
     if-gt v0, v4, :cond_1
 
-    const/4 v4, 0x1
+    move v4, v2
 
     goto :goto_2
 
     :cond_1
-    const/4 v4, 0x0
+    move v4, v3
 
     :goto_2
     invoke-static {v4}, Lorg/webrtc/audio/WebRtcAudioTrack;->access$100(Z)V

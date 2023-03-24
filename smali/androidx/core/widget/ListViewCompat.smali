@@ -85,7 +85,7 @@
     if-le p1, v0, :cond_3
 
     :cond_2
-    const/4 v1, 0x1
+    move v1, v3
 
     :cond_3
     return v1
@@ -110,7 +110,7 @@
     if-ge p1, p0, :cond_6
 
     :cond_5
-    const/4 v1, 0x1
+    move v1, v3
 
     :cond_6
     return v1

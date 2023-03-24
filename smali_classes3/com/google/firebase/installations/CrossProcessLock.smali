@@ -144,13 +144,8 @@
     :try_end_3
     .catch Ljava/io/IOException; {:try_start_3 .. :try_end_3} :catch_9
 
-    goto :goto_3
-
     :catch_9
-    nop
-
     :cond_0
-    :goto_3
     if-eqz p0, :cond_1
 
     .line 74

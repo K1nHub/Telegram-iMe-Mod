@@ -443,7 +443,7 @@
 
     move-result v0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_0
     if-ge v2, v0, :cond_b
@@ -512,8 +512,6 @@
 
     if-eqz v8, :cond_2
 
-    move v8, v6
-
     goto :goto_1
 
     .line 458
@@ -540,27 +538,28 @@
 
     move v6, v12
 
-    goto :goto_1
+    goto :goto_2
 
     :cond_3
     move v8, v6
 
-    const/4 v6, -0x1
+    move v6, v7
 
-    goto :goto_1
+    goto :goto_2
 
     :cond_4
-    const/4 v6, -0x1
-
-    const/4 v8, -0x1
+    move v6, v7
 
     :goto_1
+    move v8, v6
+
+    :goto_2
     if-ne v6, v7, :cond_7
 
     .line 465
     iget v9, p0, Lio/grpc/okhttp/internal/framed/Hpack$Writer;->nextDynamicTableIndex:I
 
-    :goto_2
+    :goto_3
     add-int/lit8 v9, v9, 0x1
 
     iget-object v10, p0, Lio/grpc/okhttp/internal/framed/Hpack$Writer;->dynamicTable:[Lio/grpc/okhttp/internal/framed/Header;
@@ -606,7 +605,7 @@
 
     add-int/2addr v6, v9
 
-    goto :goto_3
+    goto :goto_4
 
     :cond_5
     if-ne v8, v7, :cond_6
@@ -625,10 +624,10 @@
     add-int/2addr v8, v10
 
     :cond_6
-    goto :goto_2
+    goto :goto_3
 
     :cond_7
-    :goto_3
+    :goto_4
     if-eq v6, v7, :cond_8
 
     const/16 v3, 0x7f
@@ -638,7 +637,7 @@
     .line 479
     invoke-virtual {p0, v6, v3, v4}, Lio/grpc/okhttp/internal/framed/Hpack$Writer;->writeInt(III)V
 
-    goto :goto_4
+    goto :goto_5
 
     :cond_8
     const/16 v6, 0x40
@@ -659,7 +658,7 @@
     .line 485
     invoke-direct {p0, v3}, Lio/grpc/okhttp/internal/framed/Hpack$Writer;->insertIntoDynamicTable(Lio/grpc/okhttp/internal/framed/Header;)V
 
-    goto :goto_4
+    goto :goto_5
 
     .line 486
     :cond_9
@@ -689,7 +688,7 @@
     .line 490
     invoke-virtual {p0, v5}, Lio/grpc/okhttp/internal/framed/Hpack$Writer;->writeByteString(Lokio/ByteString;)V
 
-    goto :goto_4
+    goto :goto_5
 
     :cond_a
     const/16 v4, 0x3f
@@ -703,7 +702,7 @@
     .line 495
     invoke-direct {p0, v3}, Lio/grpc/okhttp/internal/framed/Hpack$Writer;->insertIntoDynamicTable(Lio/grpc/okhttp/internal/framed/Header;)V
 
-    :goto_4
+    :goto_5
     add-int/lit8 v2, v2, 0x1
 
     goto/16 :goto_0

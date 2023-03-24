@@ -46,7 +46,7 @@
 
     if-nez p1, :cond_0
 
-    const/4 v1, 0x1
+    move v1, v0
 
     goto :goto_0
 

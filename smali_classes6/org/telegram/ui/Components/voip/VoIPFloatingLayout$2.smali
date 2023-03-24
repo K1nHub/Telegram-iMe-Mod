@@ -44,9 +44,9 @@
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
-
     cmpl-float v0, v0, v1
+
+    const/4 v2, 0x0
 
     if-ltz v0, :cond_1
 
@@ -74,7 +74,7 @@
 
     invoke-virtual {p2, v2, v2, v0, p1}, Landroid/graphics/Outline;->setRect(IIII)V
 
-    goto :goto_1
+    goto :goto_0
 
     :cond_0
     const/4 v4, 0x0
@@ -100,7 +100,7 @@
 
     invoke-virtual/range {v3 .. v8}, Landroid/graphics/Outline;->setRoundRect(IIIIF)V
 
-    goto :goto_1
+    goto :goto_0
 
     .line 124
     :cond_1
@@ -123,7 +123,7 @@
 
     invoke-virtual {p2, v2, v2, v0, p1}, Landroid/graphics/Outline;->setRect(IIII)V
 
-    goto :goto_1
+    goto :goto_0
 
     :cond_2
     const/4 v4, 0x0
@@ -155,18 +155,13 @@
 
     int-to-float v1, p1
 
+    :cond_3
     move v8, v1
 
-    goto :goto_0
-
-    :cond_3
-    const/4 v8, 0x0
-
-    :goto_0
     move-object v3, p2
 
     invoke-virtual/range {v3 .. v8}, Landroid/graphics/Outline;->setRoundRect(IIIIF)V
 
-    :goto_1
+    :goto_0
     return-void
 .end method

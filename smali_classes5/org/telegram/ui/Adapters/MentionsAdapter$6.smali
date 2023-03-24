@@ -180,7 +180,7 @@
 
     if-ge v0, p1, :cond_3
 
-    const/4 v3, -0x1
+    move v3, v4
 
     goto :goto_0
 
@@ -190,7 +190,7 @@
     goto :goto_0
 
     :cond_4
-    const/4 v3, 0x1
+    move v3, v5
 
     :goto_0
     return v3

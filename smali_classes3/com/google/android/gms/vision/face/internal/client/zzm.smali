@@ -41,11 +41,11 @@
 
     const/4 v2, 0x0
 
-    const/4 v2, 0x0
+    move v3, v2
 
-    const/4 v3, 0x0
+    move v4, v3
 
-    const/4 v4, 0x0
+    move v2, v1
 
     .line 12
     :goto_0

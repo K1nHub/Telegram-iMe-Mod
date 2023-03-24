@@ -151,7 +151,7 @@
 
     if-ne p2, v0, :cond_0
 
-    const/4 v2, 0x1
+    move v2, v3
 
     .line 230
     :cond_0
@@ -217,7 +217,7 @@
 
     if-ne p2, v0, :cond_4
 
-    const/4 v2, 0x1
+    move v2, v3
 
     .line 238
     :cond_4

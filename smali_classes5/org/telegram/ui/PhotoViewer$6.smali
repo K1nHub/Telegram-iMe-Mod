@@ -269,7 +269,7 @@
 
     long-to-float v4, v4
 
-    mul-float v2, v2, v4
+    mul-float/2addr v2, v4
 
     float-to-int v2, v2
 
@@ -426,7 +426,7 @@
 
     if-nez v3, :cond_9
 
-    const/4 v0, 0x0
+    move v0, v2
 
     .line 1158
     :cond_9
@@ -442,7 +442,7 @@
 
     if-eqz v3, :cond_a
 
-    const/high16 v3, 0x3f800000    # 1.0f
+    move v3, v5
 
     goto/16 :goto_6
 
@@ -562,7 +562,7 @@
     goto :goto_5
 
     :cond_d
-    const/high16 v3, 0x3f800000    # 1.0f
+    move v3, v5
 
     .line 1168
     :goto_5
@@ -573,7 +573,7 @@
     goto :goto_6
 
     :cond_e
-    const/high16 v3, -0x40800000    # -1.0f
+    move v3, v4
 
     .line 1173
     :goto_6
@@ -650,7 +650,7 @@
 
     long-to-float v4, v4
 
-    mul-float v3, v3, v4
+    mul-float/2addr v3, v4
 
     float-to-int v3, v3
 
@@ -687,7 +687,7 @@
 
     if-gez v1, :cond_10
 
-    const/4 v0, 0x0
+    move v0, v2
 
     .line 1185
     :cond_10
@@ -719,7 +719,7 @@
 
     if-lez v1, :cond_11
 
-    const/high16 v0, 0x3f800000    # 1.0f
+    move v0, v5
 
     .line 1189
     :cond_11
@@ -821,9 +821,9 @@
 
     const-wide/16 v3, 0x3e8
 
-    cmp-long v5, v1, v3
+    cmp-long v1, v1, v3
 
-    if-ltz v5, :cond_16
+    if-ltz v1, :cond_16
 
     .line 1204
     iget-object v1, p0, Lorg/telegram/ui/PhotoViewer$6;->this$0:Lorg/telegram/ui/PhotoViewer;

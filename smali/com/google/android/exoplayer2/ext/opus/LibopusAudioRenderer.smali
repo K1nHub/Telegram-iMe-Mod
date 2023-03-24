@@ -109,34 +109,30 @@
 
     const/4 v0, 0x1
 
-    const/4 v7, 0x1
-
     goto :goto_0
 
     :cond_0
     const/4 v0, 0x0
 
-    const/4 v7, 0x0
+    :goto_0
+    move v7, v0
 
     .line 108
-    :goto_0
     iget v0, p1, Lcom/google/android/exoplayer2/Format;->maxInputSize:I
 
     const/4 v1, -0x1
 
     if-eq v0, v1, :cond_1
 
-    move v4, v0
-
     goto :goto_1
 
     :cond_1
     const/16 v0, 0x1680
 
-    const/16 v4, 0x1680
+    :goto_1
+    move v4, v0
 
     .line 109
-    :goto_1
     new-instance v0, Lcom/google/android/exoplayer2/ext/opus/OpusDecoder;
 
     const/16 v2, 0x10

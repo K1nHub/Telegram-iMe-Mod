@@ -7,7 +7,7 @@ public final class zzjf {
 
     /* compiled from: com.google.mlkit:common@@17.0.0 */
     /* loaded from: classes.dex */
-    public static final class zza extends zzfq<zza, C6760zza> implements zzhd {
+    public static final class zza extends zzfq<zza, C6847zza> implements zzhd {
         private static final zza zzf;
         private static volatile zzhl<zza> zzg;
         private int zzc;
@@ -48,12 +48,12 @@ public final class zzjf {
         /* compiled from: com.google.mlkit:common@@17.0.0 */
         /* renamed from: com.google.android.gms.internal.mlkit_common.zzjf$zza$zza  reason: collision with other inner class name */
         /* loaded from: classes.dex */
-        public static final class C6760zza extends zzfq.zzb<zza, C6760zza> implements zzhd {
-            private C6760zza() {
+        public static final class C6847zza extends zzfq.zzb<zza, C6847zza> implements zzhd {
+            private C6847zza() {
                 super(zza.zzf);
             }
 
-            /* synthetic */ C6760zza(zzje zzjeVar) {
+            /* synthetic */ C6847zza(zzje zzjeVar) {
                 this();
             }
         }
@@ -67,7 +67,7 @@ public final class zzjf {
                 case 1:
                     return new zza();
                 case 2:
-                    return new C6760zza(null);
+                    return new C6847zza(null);
                 case 3:
                     return zzfq.zza(zzf, "\u0001\u0002\u0000\u0001\u0001\u0002\u0002\u0000\u0000\u0000\u0001ဌ\u0000\u0002ဉ\u0001", new Object[]{"zzc", "zzd", zzb.zzb(), "zze"});
                 case 4:
@@ -233,22 +233,22 @@ public final class zzjf {
         /* compiled from: com.google.mlkit:common@@17.0.0 */
         /* renamed from: com.google.android.gms.internal.mlkit_common.zzjf$zzc$zzc  reason: collision with other inner class name */
         /* loaded from: classes.dex */
-        public static final class C6761zzc extends zzfq<C6761zzc, zza> implements zzhd {
-            private static final C6761zzc zzf;
-            private static volatile zzhl<C6761zzc> zzg;
+        public static final class C6848zzc extends zzfq<C6848zzc, zza> implements zzhd {
+            private static final C6848zzc zzf;
+            private static volatile zzhl<C6848zzc> zzg;
             private int zzc;
             private int zzd;
             private int zze;
 
-            private C6761zzc() {
+            private C6848zzc() {
             }
 
             /* compiled from: com.google.mlkit:common@@17.0.0 */
             /* renamed from: com.google.android.gms.internal.mlkit_common.zzjf$zzc$zzc$zza */
             /* loaded from: classes.dex */
-            public static final class zza extends zzfq.zzb<C6761zzc, zza> implements zzhd {
+            public static final class zza extends zzfq.zzb<C6848zzc, zza> implements zzhd {
                 private zza() {
-                    super(C6761zzc.zzf);
+                    super(C6848zzc.zzf);
                 }
 
                 /* synthetic */ zza(zzje zzjeVar) {
@@ -260,10 +260,10 @@ public final class zzjf {
             /* JADX WARN: Type inference failed for: r2v14, types: [com.google.android.gms.internal.mlkit_common.zzhl<com.google.android.gms.internal.mlkit_common.zzjf$zzc$zzc>, com.google.android.gms.internal.mlkit_common.zzfq$zza] */
             @Override // com.google.android.gms.internal.mlkit_common.zzfq
             public final Object zza(int i, Object obj, Object obj2) {
-                zzhl<C6761zzc> zzhlVar;
+                zzhl<C6848zzc> zzhlVar;
                 switch (zzje.zza[i - 1]) {
                     case 1:
-                        return new C6761zzc();
+                        return new C6848zzc();
                     case 2:
                         return new zza(null);
                     case 3:
@@ -271,11 +271,11 @@ public final class zzjf {
                     case 4:
                         return zzf;
                     case 5:
-                        zzhl<C6761zzc> zzhlVar2 = zzg;
-                        zzhl<C6761zzc> zzhlVar3 = zzhlVar2;
+                        zzhl<C6848zzc> zzhlVar2 = zzg;
+                        zzhl<C6848zzc> zzhlVar3 = zzhlVar2;
                         if (zzhlVar2 == null) {
-                            synchronized (C6761zzc.class) {
-                                zzhl<C6761zzc> zzhlVar4 = zzg;
+                            synchronized (C6848zzc.class) {
+                                zzhl<C6848zzc> zzhlVar4 = zzg;
                                 zzhlVar = zzhlVar4;
                                 if (zzhlVar4 == null) {
                                     ?? zzaVar = new zzfq.zza(zzf);
@@ -296,9 +296,9 @@ public final class zzjf {
             }
 
             static {
-                C6761zzc c6761zzc = new C6761zzc();
-                zzf = c6761zzc;
-                zzfq.zza(C6761zzc.class, c6761zzc);
+                C6848zzc c6848zzc = new C6848zzc();
+                zzf = c6848zzc;
+                zzfq.zza(C6848zzc.class, c6848zzc);
             }
         }
 
@@ -308,8 +308,8 @@ public final class zzjf {
             private static final zzd zzg;
             private static volatile zzhl<zzd> zzh;
             private int zzc;
-            private C6761zzc zzd;
-            private C6761zzc zze;
+            private C6848zzc zzd;
+            private C6848zzc zze;
             private boolean zzf;
 
             private zzd() {

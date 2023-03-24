@@ -372,7 +372,7 @@
     goto :goto_0
 
     :cond_1
-    const/high16 v1, 0x3f800000    # 1.0f
+    move v1, v2
 
     :goto_0
     const/4 v3, 0x0
@@ -521,13 +521,13 @@
 
     const/high16 v1, 0x3b800000    # 0.00390625f
 
-    mul-float v1, v1, v0
+    mul-float/2addr v1, v0
 
     const/high16 v2, 0x3d340000
 
-    mul-float v0, v0, v2
+    mul-float/2addr v0, v2
 
-    mul-float v0, v0, p1
+    mul-float/2addr v0, p1
 
     add-float/2addr v1, v0
 

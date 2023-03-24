@@ -109,9 +109,9 @@
 
     const-wide/high16 v2, -0x8000000000000000L
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-eqz v4, :cond_4
+    if-eqz v0, :cond_4
 
     .line 3
     iget-short v0, p0, Lcom/google/android/gms/location/Geofence$Builder;->zzd:S
@@ -210,28 +210,28 @@
 .method public setCircularRegion(DDF)Lcom/google/android/gms/location/Geofence$Builder;
     .locals 5
 
-    const/4 v0, 0x1
+    const-wide v0, -0x3fa9800000000000L    # -90.0
 
-    const/4 v1, 0x0
+    cmpg-double v0, p1, v0
 
-    const-wide v2, -0x3fa9800000000000L    # -90.0
+    const/4 v1, 0x1
 
-    cmpg-double v4, p1, v2
+    const/4 v2, 0x0
 
-    if-ltz v4, :cond_0
+    if-ltz v0, :cond_0
 
-    const-wide v2, 0x4056800000000000L    # 90.0
+    const-wide v3, 0x4056800000000000L    # 90.0
 
-    cmpg-double v4, p1, v2
+    cmpg-double v0, p1, v3
 
-    if-gtz v4, :cond_0
+    if-gtz v0, :cond_0
 
-    const/4 v2, 0x1
+    move v0, v1
 
     goto :goto_0
 
     :cond_0
-    const/4 v2, 0x0
+    move v0, v2
 
     .line 1
     :goto_0
@@ -249,26 +249,26 @@
 
     move-result-object v3
 
-    invoke-static {v2, v3}, Lcom/google/android/gms/common/internal/Preconditions;->checkArgument(ZLjava/lang/Object;)V
+    invoke-static {v0, v3}, Lcom/google/android/gms/common/internal/Preconditions;->checkArgument(ZLjava/lang/Object;)V
 
-    const-wide v2, -0x3f99800000000000L    # -180.0
+    const-wide v3, -0x3f99800000000000L    # -180.0
 
-    cmpg-double v4, p3, v2
+    cmpg-double v0, p3, v3
 
-    if-ltz v4, :cond_1
+    if-ltz v0, :cond_1
 
-    const-wide v2, 0x4066800000000000L    # 180.0
+    const-wide v3, 0x4066800000000000L    # 180.0
 
-    cmpg-double v4, p3, v2
+    cmpg-double v0, p3, v3
 
-    if-gtz v4, :cond_1
+    if-gtz v0, :cond_1
 
-    const/4 v2, 0x1
+    move v0, v1
 
     goto :goto_1
 
     :cond_1
-    const/4 v2, 0x0
+    move v0, v2
 
     :goto_1
     new-instance v3, Ljava/lang/StringBuilder;
@@ -286,35 +286,35 @@
 
     move-result-object v3
 
-    invoke-static {v2, v3}, Lcom/google/android/gms/common/internal/Preconditions;->checkArgument(ZLjava/lang/Object;)V
+    invoke-static {v0, v3}, Lcom/google/android/gms/common/internal/Preconditions;->checkArgument(ZLjava/lang/Object;)V
 
-    const/4 v2, 0x0
+    const/4 v0, 0x0
 
-    cmpl-float v2, p5, v2
+    cmpl-float v0, p5, v0
 
-    if-lez v2, :cond_2
+    if-lez v0, :cond_2
 
-    const/4 v1, 0x1
+    move v2, v1
 
     :cond_2
-    new-instance v2, Ljava/lang/StringBuilder;
+    new-instance v0, Ljava/lang/StringBuilder;
 
     .line 3
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
     const-string v3, "Invalid radius: "
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v2, p5}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, p5}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v0
 
-    invoke-static {v1, v2}, Lcom/google/android/gms/common/internal/Preconditions;->checkArgument(ZLjava/lang/Object;)V
+    invoke-static {v2, v0}, Lcom/google/android/gms/common/internal/Preconditions;->checkArgument(ZLjava/lang/Object;)V
 
-    iput-short v0, p0, Lcom/google/android/gms/location/Geofence$Builder;->zzd:S
+    iput-short v1, p0, Lcom/google/android/gms/location/Geofence$Builder;->zzd:S
 
     iput-wide p1, p0, Lcom/google/android/gms/location/Geofence$Builder;->zze:D
 
@@ -326,13 +326,13 @@
 .end method
 
 .method public setExpirationDuration(J)Lcom/google/android/gms/location/Geofence$Builder;
-    .locals 3
+    .locals 2
 
     const-wide/16 v0, 0x0
 
-    cmp-long v2, p1, v0
+    cmp-long v0, p1, v0
 
-    if-gez v2, :cond_0
+    if-gez v0, :cond_0
 
     const-wide/16 p1, -0x1
 

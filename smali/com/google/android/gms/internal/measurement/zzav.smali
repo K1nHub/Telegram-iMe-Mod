@@ -239,9 +239,9 @@
 
     and-long/2addr p1, v1
 
-    long-to-int p2, p1
+    long-to-int p1, p1
 
-    ushr-long p1, v5, p2
+    ushr-long p1, v5, p1
 
     long-to-double p1, p1
 
@@ -315,9 +315,9 @@
 
     and-long/2addr p2, v1
 
-    long-to-int p3, p2
+    long-to-int p2, p2
 
-    shr-int/2addr p1, p3
+    shr-int/2addr p1, p2
 
     int-to-double p1, p1
 
@@ -512,9 +512,9 @@
 
     and-long/2addr p2, v1
 
-    long-to-int p3, p2
+    long-to-int p2, p2
 
-    shl-int/2addr p1, p3
+    shl-int/2addr p1, p2
 
     int-to-double p1, p1
 

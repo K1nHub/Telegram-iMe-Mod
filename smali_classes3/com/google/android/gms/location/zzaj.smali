@@ -111,12 +111,12 @@
 
     if-gt p1, v0, :cond_0
 
-    const/4 v3, 0x1
+    move v3, v1
 
     goto :goto_0
 
     :cond_0
-    const/4 v3, 0x0
+    move v3, v2
 
     :goto_0
     const-string v4, "Start hour must be in range [0, 23]."
@@ -130,12 +130,12 @@
 
     if-gt p2, v3, :cond_1
 
-    const/4 v4, 0x1
+    move v4, v1
 
     goto :goto_1
 
     :cond_1
-    const/4 v4, 0x0
+    move v4, v2
 
     :goto_1
     const-string v5, "Start minute must be in range [0, 59]."
@@ -147,12 +147,12 @@
 
     if-gt p3, v0, :cond_2
 
-    const/4 v0, 0x1
+    move v0, v1
 
     goto :goto_2
 
     :cond_2
-    const/4 v0, 0x0
+    move v0, v2
 
     :goto_2
     const-string v4, "End hour must be in range [0, 23]."
@@ -164,12 +164,12 @@
 
     if-gt p4, v3, :cond_3
 
-    const/4 v0, 0x1
+    move v0, v1
 
     goto :goto_3
 
     :cond_3
-    const/4 v0, 0x0
+    move v0, v2
 
     :goto_3
     const-string v3, "End minute must be in range [0, 59]."
@@ -188,7 +188,7 @@
     goto :goto_4
 
     :cond_4
-    const/4 v1, 0x0
+    move v1, v2
 
     :goto_4
     const-string v0, "Parameters can\'t be all 0."

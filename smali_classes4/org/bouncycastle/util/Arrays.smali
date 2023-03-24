@@ -39,7 +39,7 @@
     return v1
 
     :cond_2
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_0
     array-length v3, p0
@@ -95,7 +95,7 @@
     return v1
 
     :cond_2
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_0
     array-length v3, p0
@@ -151,7 +151,7 @@
     return v1
 
     :cond_2
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_0
     array-length v3, p0
@@ -207,7 +207,7 @@
     return v1
 
     :cond_2
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_0
     array-length v3, p0
@@ -585,9 +585,9 @@
 
     ushr-long/2addr v1, v3
 
-    long-to-int v2, v1
+    long-to-int v1, v1
 
-    xor-int/2addr v0, v2
+    xor-int/2addr v0, v1
 
     goto :goto_0
 
@@ -633,7 +633,7 @@
 
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    move v1, v0
 
     :goto_0
     array-length v2, p0
@@ -663,7 +663,7 @@
 
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    move v1, v0
 
     :goto_0
     array-length v2, p0

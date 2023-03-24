@@ -354,13 +354,13 @@
 
     invoke-direct {v9}, Ljava/util/ArrayList;-><init>()V
 
-    const/4 v10, 0x0
+    move v11, v7
 
-    const/4 v11, 0x1
+    move v13, v11
 
-    const/4 v12, 0x0
+    move v10, v8
 
-    const/4 v13, 0x1
+    move v12, v10
 
     :goto_0
     if-gt v10, v6, :cond_5
@@ -394,12 +394,12 @@
 
     if-eqz v14, :cond_0
 
-    const/4 v14, 0x1
+    move v14, v7
 
     goto :goto_1
 
     :cond_0
-    const/4 v14, 0x0
+    move v14, v8
 
     :goto_1
     if-ne v11, v14, :cond_1
@@ -575,11 +575,11 @@
     goto :goto_3
 
     :cond_b
-    const/4 v9, 0x0
+    move v10, v7
 
-    const/4 v10, 0x1
+    move v9, v8
 
-    const/4 v11, 0x0
+    move v11, v9
 
     :goto_6
     if-gt v9, v6, :cond_11
@@ -593,12 +593,12 @@
 
     if-eqz v12, :cond_c
 
-    const/4 v12, 0x1
+    move v12, v7
 
     goto :goto_7
 
     :cond_c
-    const/4 v12, 0x0
+    move v12, v8
 
     :goto_7
     if-ne v10, v12, :cond_d
@@ -697,7 +697,7 @@
 
     invoke-interface {v5, v2, v6, v1}, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable$RegionCallback;->run(Ljava/lang/CharSequence;II)V
 
-    goto :goto_c
+    goto/16 :goto_c
 
     .line 606
     :cond_13
@@ -713,15 +713,15 @@
 
     move-result v6
 
-    const/4 v9, 0x0
+    move v11, v7
 
-    const/4 v10, 0x0
+    move v9, v8
 
-    const/4 v11, 0x1
+    move v10, v9
 
-    const/4 v12, 0x0
+    move v12, v10
 
-    const/4 v13, 0x0
+    move v13, v12
 
     :goto_9
     if-gt v9, v6, :cond_1d
@@ -735,12 +735,12 @@
 
     if-eqz v14, :cond_14
 
-    const/4 v14, 0x1
+    move v14, v7
 
     goto :goto_a
 
     :cond_14
-    const/4 v14, 0x0
+    move v14, v8
 
     :goto_a
     if-ne v11, v14, :cond_15
@@ -1252,7 +1252,7 @@
     goto :goto_0
 
     :cond_1
-    const/4 v1, 0x0
+    move v1, v2
 
     :cond_2
     :goto_0
@@ -1282,7 +1282,7 @@
     goto :goto_1
 
     :cond_5
-    const/4 v1, 0x0
+    move v1, v2
 
     :cond_6
     :goto_1
@@ -1484,7 +1484,7 @@
 
     invoke-virtual {v12, v13}, Landroid/text/TextPaint;->setAlpha(I)V
 
-    const/4 v13, 0x0
+    move v13, v6
 
     goto :goto_1
 
@@ -1524,22 +1524,22 @@
 
     iget v14, v0, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;->moveAmplitude:F
 
-    mul-float v13, v13, v14
+    mul-float/2addr v13, v14
 
     iget v14, v0, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;->t:F
 
     sub-float v15, v9, v14
 
-    mul-float v13, v13, v15
+    mul-float/2addr v13, v15
 
     iget-boolean v15, v0, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;->moveDown:Z
 
     if-eqz v15, :cond_4
 
-    const/high16 v12, 0x3f800000    # 1.0f
+    move v12, v9
 
     :cond_4
-    mul-float v13, v13, v12
+    mul-float/2addr v13, v12
 
     .line 137
     iget-object v12, v0, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;->textPaint:Landroid/text/TextPaint;
@@ -1548,7 +1548,7 @@
 
     int-to-float v15, v15
 
-    mul-float v15, v15, v14
+    mul-float/2addr v15, v14
 
     float-to-int v14, v15
 
@@ -1666,25 +1666,25 @@
 
     iget v10, v0, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;->moveAmplitude:F
 
-    mul-float v6, v6, v10
+    mul-float/2addr v6, v10
 
     iget v10, v0, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;->t:F
 
-    mul-float v6, v6, v10
+    mul-float/2addr v6, v10
 
     iget-boolean v11, v0, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;->moveDown:Z
 
     if-eqz v11, :cond_b
 
-    const/high16 v11, 0x3f800000    # 1.0f
+    move v11, v9
 
     goto :goto_7
 
     :cond_b
-    const/high16 v11, -0x40800000    # -1.0f
+    move v11, v12
 
     :goto_7
-    mul-float v6, v6, v11
+    mul-float/2addr v6, v11
 
     .line 162
     iget-object v11, v0, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;->textPaint:Landroid/text/TextPaint;
@@ -1695,7 +1695,7 @@
 
     sub-float v10, v9, v10
 
-    mul-float v13, v13, v10
+    mul-float/2addr v13, v10
 
     float-to-int v10, v13
 
@@ -2221,7 +2221,7 @@
     if-nez p1, :cond_1
 
     :cond_0
-    const/4 p2, 0x0
+    move p2, v1
 
     :cond_1
     if-nez p1, :cond_2

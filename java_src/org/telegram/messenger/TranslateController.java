@@ -69,7 +69,7 @@ public class TranslateController extends BaseController {
         public String ownDisplayName;
 
         /* renamed from: q */
-        public String f1474q;
+        public String f1475q;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -304,7 +304,7 @@ public class TranslateController extends BaseController {
                     str2 = "";
                 }
                 sb.append(str2);
-                language.f1474q = sb.toString().toLowerCase();
+                language.f1475q = sb.toString().toLowerCase();
                 arrayList.add(language);
             }
         }
@@ -392,7 +392,7 @@ public class TranslateController extends BaseController {
                     language.displayName = TranslateAlert2.capitalFirst(TranslateAlert2.languageName(language.code));
                     language.ownDisplayName = TranslateAlert2.capitalFirst(TranslateAlert2.systemLanguageName(language.code, true));
                     if (language.displayName != null) {
-                        language.f1474q = (language.displayName + " " + language.ownDisplayName).toLowerCase();
+                        language.f1475q = (language.displayName + " " + language.ownDisplayName).toLowerCase();
                         arrayList.add(language);
                     }
                 }
@@ -723,6 +723,7 @@ public class TranslateController extends BaseController {
     }
 
     private void checkDialogTranslatable(MessageObject messageObject) {
+        int size;
         String str;
         String str2;
         if (messageObject == null || messageObject.messageOwner == null) {
@@ -739,7 +740,9 @@ public class TranslateController extends BaseController {
         }
         boolean z = true;
         boolean z2 = isTranslatable(messageObject) && ((str2 = messageObject.messageOwner.originalLanguage) == null || "und".equals(str2));
-        z = (!isTranslatable(messageObject) || (str = messageObject.messageOwner.originalLanguage) == null || "und".equals(str) || RestrictedLanguagesSelectActivity.getRestrictedLanguages().contains(messageObject.messageOwner.originalLanguage)) ? false : false;
+        if (!isTranslatable(messageObject) || (str = messageObject.messageOwner.originalLanguage) == null || "und".equals(str) || RestrictedLanguagesSelectActivity.getRestrictedLanguages().contains(messageObject.messageOwner.originalLanguage)) {
+            z = false;
+        }
         if (z2) {
             translatableDecision.unknown.add(Integer.valueOf(messageObject.getId()));
         } else {
@@ -748,11 +751,10 @@ public class TranslateController extends BaseController {
         if (!z2) {
             this.detectedDialogLanguage.put(Long.valueOf(dialogId), messageObject.messageOwner.originalLanguage);
         }
-        int size = translatableDecision.certainlyTranslatable.size();
-        int size2 = translatableDecision.unknown.size();
-        int size3 = translatableDecision.certainlyNotTranslatable.size();
-        int i = size + size2 + size3;
-        if (i < 8 || size / (size + size3) < REQUIRED_PERCENTAGE_MESSAGES_TRANSLATABLE || size2 / i >= REQUIRED_MIN_PERCENTAGE_MESSAGES_UNKNOWN) {
+        int size2 = translatableDecision.certainlyTranslatable.size();
+        int size3 = translatableDecision.unknown.size();
+        int size4 = size2 + size3 + translatableDecision.certainlyNotTranslatable.size();
+        if (size4 < 8 || size2 / (size2 + size) < REQUIRED_PERCENTAGE_MESSAGES_TRANSLATABLE || size3 / size4 >= REQUIRED_MIN_PERCENTAGE_MESSAGES_UNKNOWN) {
             return;
         }
         this.translatableDialogs.add(Long.valueOf(dialogId));
@@ -875,7 +877,7 @@ public class TranslateController extends BaseController {
         TLRPC$TL_messages_translateText tLRPC$TL_messages_translateText = new TLRPC$TL_messages_translateText();
         tLRPC$TL_messages_translateText.flags |= 1;
         tLRPC$TL_messages_translateText.peer = getMessagesController().getInputPeer(j);
-        tLRPC$TL_messages_translateText.f1609id = pendingTranslation.messageIds;
+        tLRPC$TL_messages_translateText.f1610id = pendingTranslation.messageIds;
         tLRPC$TL_messages_translateText.to_lang = pendingTranslation.language;
         int sendRequest = getConnectionsManager().sendRequest(tLRPC$TL_messages_translateText, new RequestDelegate() { // from class: org.telegram.messenger.TranslateController$$ExternalSyntheticLambda17
             @Override // org.telegram.tgnet.RequestDelegate
@@ -916,7 +918,7 @@ public class TranslateController extends BaseController {
             }
         } else if (tLRPC$TL_error != null && "TO_LANG_INVALID".equals(tLRPC$TL_error.text)) {
             toggleTranslatingDialog(j, false);
-            NotificationCenter.getGlobalInstance().postNotificationName(NotificationCenter.showBulletin, 1, LocaleController.getString("TranslationFailedAlert2", C3286R.string.TranslationFailedAlert2));
+            NotificationCenter.getGlobalInstance().postNotificationName(NotificationCenter.showBulletin, 1, LocaleController.getString("TranslationFailedAlert2", C3301R.string.TranslationFailedAlert2));
         } else {
             for (int i2 = 0; i2 < arrayList2.size(); i2++) {
                 arrayList2.get(i2).run(null, pendingTranslation.language);

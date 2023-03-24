@@ -129,12 +129,12 @@
 
     if-eqz v5, :cond_0
 
-    const/4 v8, 0x5
+    move v8, v6
 
     goto :goto_0
 
     :cond_0
-    const/4 v8, 0x3
+    move v8, v7
 
     :goto_0
     or-int/lit8 v11, v8, 0x30
@@ -143,7 +143,7 @@
 
     if-eqz v5, :cond_1
 
-    const/4 v12, 0x0
+    move v12, v8
 
     goto :goto_1
 
@@ -164,7 +164,7 @@
     goto :goto_2
 
     :cond_2
-    const/4 v14, 0x0
+    move v14, v8
 
     :goto_2
     const/4 v15, 0x0
@@ -214,12 +214,12 @@
 
     if-eqz v5, :cond_3
 
-    const/4 v5, 0x5
+    move v5, v6
 
     goto :goto_3
 
     :cond_3
-    const/4 v5, 0x3
+    move v5, v7
 
     :goto_3
     or-int/lit8 v5, v5, 0x30
@@ -237,12 +237,12 @@
 
     if-eqz v5, :cond_4
 
-    const/4 v11, 0x5
+    move v11, v6
 
     goto :goto_4
 
     :cond_4
-    const/4 v11, 0x3
+    move v11, v7
 
     :goto_4
     or-int/lit8 v11, v11, 0x30
@@ -255,12 +255,12 @@
 
     if-ne v2, v15, :cond_5
 
-    const/16 v13, 0x12
+    move v13, v12
 
     goto :goto_5
 
     :cond_5
-    const/4 v13, 0x0
+    move v13, v8
 
     :goto_5
     add-int/lit8 v13, v13, 0x1c
@@ -289,7 +289,7 @@
     goto :goto_7
 
     :cond_8
-    const/4 v12, 0x0
+    move v12, v8
 
     :goto_7
     add-int/lit8 v12, v12, 0x1c
@@ -305,7 +305,7 @@
 
     move v14, v5
 
-    const/4 v5, 0x2
+    move v5, v15
 
     move/from16 v15, v16
 
@@ -334,12 +334,12 @@
 
     if-eqz v9, :cond_9
 
-    const/4 v9, 0x5
+    move v9, v6
 
     goto :goto_9
 
     :cond_9
-    const/4 v9, 0x3
+    move v9, v7
 
     :goto_9
     or-int/lit8 v9, v9, 0x30
@@ -357,12 +357,12 @@
 
     if-eqz v11, :cond_a
 
-    const/4 v12, 0x5
+    move v12, v6
 
     goto :goto_a
 
     :cond_a
-    const/4 v12, 0x3
+    move v12, v7
 
     :goto_a
     or-int/lit8 v12, v12, 0x30
@@ -371,7 +371,7 @@
 
     if-eqz v11, :cond_b
 
-    const/high16 v14, 0x41e00000    # 28.0f
+    move v14, v13
 
     goto :goto_b
 
@@ -394,7 +394,7 @@
     goto :goto_c
 
     :cond_c
-    const/high16 v16, 0x41e00000    # 28.0f
+    move/from16 v16, v13
 
     :goto_c
     const/16 v17, 0x0
@@ -462,12 +462,12 @@
 
     if-eqz v11, :cond_d
 
-    const/4 v12, 0x5
+    move v12, v6
 
     goto :goto_d
 
     :cond_d
-    const/4 v12, 0x3
+    move v12, v7
 
     :goto_d
     const/16 v16, 0x10
@@ -476,24 +476,24 @@
 
     if-eqz v11, :cond_e
 
-    const/4 v13, 0x0
+    move v13, v8
 
     goto :goto_e
 
     :cond_e
-    const/16 v13, 0x10
+    move/from16 v13, v16
 
     :goto_e
     const/4 v14, 0x0
 
     if-eqz v11, :cond_f
 
-    const/16 v15, 0x10
+    move/from16 v15, v16
 
     goto :goto_f
 
     :cond_f
-    const/4 v15, 0x0
+    move v15, v8
 
     :goto_f
     const/16 v17, 0x0
@@ -532,7 +532,7 @@
 
     if-eqz v1, :cond_10
 
-    const/4 v6, 0x3
+    move v6, v7
 
     :cond_10
     or-int/lit8 v11, v6, 0x10
@@ -541,24 +541,24 @@
 
     if-eqz v1, :cond_11
 
-    const/16 v12, 0x13
+    move v12, v3
 
     goto :goto_10
 
     :cond_11
-    const/4 v12, 0x0
+    move v12, v8
 
     :goto_10
     const/4 v13, 0x0
 
     if-eqz v1, :cond_12
 
-    const/4 v14, 0x0
+    move v14, v8
 
     goto :goto_11
 
     :cond_12
-    const/16 v14, 0x13
+    move v14, v3
 
     :goto_11
     const/4 v15, 0x0
@@ -569,7 +569,7 @@
 
     invoke-virtual {v0, v2, v1}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    goto :goto_15
+    goto :goto_14
 
     :cond_13
     const/4 v4, 0x1
@@ -621,14 +621,14 @@
     goto :goto_12
 
     :cond_14
-    const/4 v6, 0x3
+    move v6, v7
 
     :goto_12
     or-int/lit8 v11, v6, 0x30
 
     if-eqz v2, :cond_15
 
-    const/4 v12, 0x0
+    move v12, v8
 
     goto :goto_13
 
@@ -644,14 +644,9 @@
 
     add-int/lit8 v8, p2, 0x25
 
+    :cond_16
     move v14, v8
 
-    goto :goto_14
-
-    :cond_16
-    const/4 v14, 0x0
-
-    :goto_14
     const/4 v15, 0x0
 
     invoke-static/range {v9 .. v15}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(IIIIIII)Landroid/widget/FrameLayout$LayoutParams;
@@ -661,7 +656,7 @@
     invoke-virtual {v0, v1, v2}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
     :cond_17
-    :goto_15
+    :goto_14
     return-void
 .end method
 
@@ -818,7 +813,7 @@
 .end method
 
 .method public update(I)V
-    .locals 12
+    .locals 11
 
     .line 186
     iget-object v0, p0, Lorg/telegram/ui/Cells/UserCell2;->currentObject:Lorg/telegram/tgnet/TLObject;
@@ -928,9 +923,9 @@
 
     iget-wide v9, v3, Lorg/telegram/tgnet/TLRPC$FileLocation;->volume_id:J
 
-    cmp-long v11, v7, v9
+    cmp-long v7, v7, v9
 
-    if-nez v11, :cond_6
+    if-nez v7, :cond_6
 
     iget v5, v5, Lorg/telegram/tgnet/TLRPC$FileLocation;->local_id:I
 
@@ -939,12 +934,12 @@
     if-eq v5, v7, :cond_7
 
     :cond_6
-    const/4 v5, 0x1
+    move v5, v6
 
     goto :goto_2
 
     :cond_7
-    const/4 v5, 0x0
+    move v5, v4
 
     :goto_2
     if-eqz v0, :cond_9
@@ -969,7 +964,7 @@
     goto :goto_3
 
     :cond_8
-    const/4 v7, 0x0
+    move v7, v4
 
     .line 210
     :goto_3
@@ -977,7 +972,7 @@
 
     if-eq v7, v8, :cond_9
 
-    const/4 v5, 0x1
+    move v5, v6
 
     :cond_9
     if-nez v5, :cond_b
@@ -1589,7 +1584,7 @@
 
     if-nez v1, :cond_29
 
-    const/16 v4, 0x8
+    move v4, v0
 
     :cond_29
     invoke-virtual {p1, v4}, Landroid/widget/ImageView;->setVisibility(I)V

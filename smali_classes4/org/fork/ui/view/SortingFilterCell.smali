@@ -660,12 +660,12 @@
 
     if-nez v0, :cond_0
 
-    const/4 v0, 0x1
+    move v0, v1
 
     goto :goto_0
 
     :cond_0
-    const/4 v0, 0x0
+    move v0, v2
 
     :goto_0
     if-eqz v0, :cond_1
@@ -688,7 +688,7 @@
     goto :goto_1
 
     :cond_1
-    const/4 v1, 0x0
+    move v1, v2
 
     :goto_1
     return v1
@@ -822,12 +822,12 @@
 
     if-eqz p1, :cond_0
 
-    const/4 v3, 0x0
+    move v3, v1
 
     goto :goto_0
 
     :cond_0
-    const/16 v3, 0x8
+    move v3, v2
 
     .line 262
     :goto_0
@@ -843,7 +843,7 @@
     goto :goto_1
 
     :cond_1
-    const/16 v1, 0x8
+    move v1, v2
 
     .line 262
     :goto_1

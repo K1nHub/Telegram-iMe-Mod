@@ -34,7 +34,7 @@ public final class WalletSessionInteractor$login$lambda$4$$inlined$flatMapSucces
             mutableListOf = CollectionsKt__CollectionsKt.mutableListOf(data);
             Observable<Result<Boolean>> savePushToken = pushNotificationRepository.savePushToken(mutableListOf);
             schedulersProvider = this.this$0.schedulersProvider;
-            Observable<Result<Boolean>> subscribeOn = savePushToken.subscribeOn(schedulersProvider.mo708io());
+            Observable<Result<Boolean>> subscribeOn = savePushToken.subscribeOn(schedulersProvider.mo707io());
             Intrinsics.checkNotNullExpressionValue(subscribeOn, "notificationRepository.s…(schedulersProvider.io())");
             return subscribeOn;
         } else if (result instanceof Result.Error) {

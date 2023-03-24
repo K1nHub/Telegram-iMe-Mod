@@ -193,47 +193,47 @@
 .method constructor <init>(Lorg/telegram/ui/ChatActivity;)V
     .locals 5
 
-    .line 35072
+    .line 35100
     iput-object p1, p0, Lorg/telegram/ui/ChatActivity$ThemeDelegate;->this$0:Lorg/telegram/ui/ChatActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 35048
+    .line 35076
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
     iput-object v0, p0, Lorg/telegram/ui/ChatActivity$ThemeDelegate;->currentDrawables:Ljava/util/HashMap;
 
-    .line 35049
+    .line 35077
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
     iput-object v0, p0, Lorg/telegram/ui/ChatActivity$ThemeDelegate;->currentPaints:Ljava/util/HashMap;
 
-    .line 35050
+    .line 35078
     new-instance v0, Landroid/graphics/Matrix;
 
     invoke-direct {v0}, Landroid/graphics/Matrix;-><init>()V
 
     iput-object v0, p0, Lorg/telegram/ui/ChatActivity$ThemeDelegate;->actionMatrix:Landroid/graphics/Matrix;
 
-    .line 35052
+    .line 35080
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
     iput-object v0, p0, Lorg/telegram/ui/ChatActivity$ThemeDelegate;->currentColors:Ljava/util/HashMap;
 
-    .line 35059
+    .line 35087
     new-instance v0, Landroid/graphics/Paint;
 
     invoke-direct {v0}, Landroid/graphics/Paint;-><init>()V
 
     iput-object v0, p0, Lorg/telegram/ui/ChatActivity$ThemeDelegate;->paint:Landroid/graphics/Paint;
 
-    .line 35073
+    .line 35101
     invoke-static {}, Lorg/telegram/ui/ActionBar/Theme;->getActiveTheme()Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;
 
     move-result-object v0
@@ -244,7 +244,7 @@
 
     iput-boolean v0, p0, Lorg/telegram/ui/ChatActivity$ThemeDelegate;->isDark:Z
 
-    .line 35075
+    .line 35103
     invoke-virtual {p0}, Lorg/telegram/ui/ChatActivity$ThemeDelegate;->isThemeChangeAvailable()Z
 
     move-result v0
@@ -259,8 +259,8 @@
 
     if-eqz v0, :cond_0
 
-    .line 35076
-    invoke-static {p1}, Lorg/telegram/ui/ChatActivity;->access$61100(Lorg/telegram/ui/ChatActivity;)I
+    .line 35104
+    invoke-static {p1}, Lorg/telegram/ui/ChatActivity;->access$61200(Lorg/telegram/ui/ChatActivity;)I
 
     move-result v0
 
@@ -280,27 +280,27 @@
 
     if-eqz p1, :cond_0
 
-    .line 35079
+    .line 35107
     invoke-direct {p0, p1, v1, v2}, Lorg/telegram/ui/ChatActivity$ThemeDelegate;->setupChatTheme(Lorg/telegram/ui/ActionBar/EmojiThemes;ZZ)V
 
-    const/4 v1, 0x1
+    move v1, v2
 
     :cond_0
     if-nez v1, :cond_1
 
-    .line 35082
+    .line 35110
     invoke-static {}, Lorg/telegram/ui/Components/ThemeEditorView;->getInstance()Lorg/telegram/ui/Components/ThemeEditorView;
 
     move-result-object p1
 
     if-nez p1, :cond_1
 
-    .line 35083
+    .line 35111
     invoke-static {v2, v2}, Lorg/telegram/ui/ActionBar/Theme;->refreshThemeColors(ZZ)V
 
     goto :goto_0
 
-    .line 35085
+    .line 35113
     :cond_1
     sget-object p1, Lorg/telegram/ui/ChatActivity$ThemeDelegate$$ExternalSyntheticLambda6;->INSTANCE:Lorg/telegram/ui/ChatActivity$ThemeDelegate$$ExternalSyntheticLambda6;
 
@@ -313,25 +313,25 @@
 .method static synthetic access$21200(Lorg/telegram/ui/ChatActivity$ThemeDelegate;)Z
     .locals 0
 
-    .line 35046
+    .line 35074
     iget-boolean p0, p0, Lorg/telegram/ui/ChatActivity$ThemeDelegate;->isDark:Z
 
     return p0
 .end method
 
-.method static synthetic access$45100(Lorg/telegram/ui/ChatActivity$ThemeDelegate;)Lorg/telegram/ui/ActionBar/EmojiThemes;
+.method static synthetic access$45200(Lorg/telegram/ui/ChatActivity$ThemeDelegate;)Lorg/telegram/ui/ActionBar/EmojiThemes;
     .locals 0
 
-    .line 35046
+    .line 35074
     iget-object p0, p0, Lorg/telegram/ui/ChatActivity$ThemeDelegate;->chatTheme:Lorg/telegram/ui/ActionBar/EmojiThemes;
 
     return-object p0
 .end method
 
-.method static synthetic access$61300(Lorg/telegram/ui/ChatActivity$ThemeDelegate;F)V
+.method static synthetic access$61400(Lorg/telegram/ui/ChatActivity$ThemeDelegate;F)V
     .locals 0
 
-    .line 35046
+    .line 35074
     invoke-direct {p0, p1}, Lorg/telegram/ui/ChatActivity$ThemeDelegate;->updateServiceMessageColor(F)V
 
     return-void
@@ -340,22 +340,22 @@
 .method private getBackgroundDrawableFromTheme(Lorg/telegram/ui/ActionBar/EmojiThemes;I)Landroid/graphics/drawable/Drawable;
     .locals 12
 
-    .line 35641
+    .line 35669
     iget-boolean v0, p1, Lorg/telegram/ui/ActionBar/EmojiThemes;->showAsDefaultStub:Z
 
     if-eqz v0, :cond_0
 
-    .line 35642
+    .line 35670
     iget-boolean v0, p0, Lorg/telegram/ui/ChatActivity$ThemeDelegate;->isDark:Z
 
     invoke-static {v0}, Lorg/telegram/ui/ActionBar/EmojiThemes;->getDefaultThemeInfo(Z)Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;
 
     move-result-object v0
 
-    .line 35643
+    .line 35671
     iget-object v1, p0, Lorg/telegram/ui/ChatActivity$ThemeDelegate;->this$0:Lorg/telegram/ui/ChatActivity;
 
-    invoke-static {v1}, Lorg/telegram/ui/ChatActivity;->access$61800(Lorg/telegram/ui/ChatActivity;)I
+    invoke-static {v1}, Lorg/telegram/ui/ChatActivity;->access$61900(Lorg/telegram/ui/ChatActivity;)I
 
     move-result v1
 
@@ -365,19 +365,19 @@
 
     move-result-object v1
 
-    .line 35644
+    .line 35672
     iget-boolean v2, p0, Lorg/telegram/ui/ChatActivity$ThemeDelegate;->isDark:Z
 
     invoke-virtual {p1, v2}, Lorg/telegram/ui/ActionBar/EmojiThemes;->getWallpaperLink(I)Ljava/lang/String;
 
     move-result-object p1
 
-    .line 35645
+    .line 35673
     invoke-static {v0, v1, p1, p2}, Lorg/telegram/ui/ActionBar/Theme;->createBackgroundDrawable(Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;Ljava/util/HashMap;Ljava/lang/String;I)Lorg/telegram/ui/ActionBar/Theme$BackgroundDrawableSettings;
 
     move-result-object p1
 
-    .line 35646
+    .line 35674
     iget-object p1, p1, Lorg/telegram/ui/ActionBar/Theme$BackgroundDrawableSettings;->wallpaper:Landroid/graphics/drawable/Drawable;
 
     goto :goto_0
@@ -385,28 +385,28 @@
     :cond_0
     const-string v0, "chat_wallpaper"
 
-    .line 35648
+    .line 35676
     invoke-virtual {p0, v0}, Lorg/telegram/ui/ChatActivity$ThemeDelegate;->getColor(Ljava/lang/String;)Ljava/lang/Integer;
 
     move-result-object v0
 
     const-string v1, "chat_wallpaper_gradient_to"
 
-    .line 35649
+    .line 35677
     invoke-virtual {p0, v1}, Lorg/telegram/ui/ChatActivity$ThemeDelegate;->getColor(Ljava/lang/String;)Ljava/lang/Integer;
 
     move-result-object v1
 
     const-string v2, "key_chat_wallpaper_gradient_to2"
 
-    .line 35650
+    .line 35678
     invoke-virtual {p0, v2}, Lorg/telegram/ui/ChatActivity$ThemeDelegate;->getColor(Ljava/lang/String;)Ljava/lang/Integer;
 
     move-result-object v2
 
     const-string v3, "key_chat_wallpaper_gradient_to3"
 
-    .line 35651
+    .line 35679
     invoke-virtual {p0, v3}, Lorg/telegram/ui/ChatActivity$ThemeDelegate;->getColor(Ljava/lang/String;)Ljava/lang/Integer;
 
     move-result-object v3
@@ -415,18 +415,18 @@
 
     const/4 v3, 0x0
 
-    .line 35653
+    .line 35681
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
 
-    .line 35656
+    .line 35684
     :cond_1
     new-instance v11, Lorg/telegram/ui/Components/MotionBackgroundDrawable;
 
     invoke-direct {v11}, Lorg/telegram/ui/Components/MotionBackgroundDrawable;-><init>()V
 
-    .line 35657
+    .line 35685
     iget-boolean v4, p0, Lorg/telegram/ui/ChatActivity$ThemeDelegate;->isDark:Z
 
     invoke-virtual {p1, v4}, Lorg/telegram/ui/ActionBar/EmojiThemes;->getWallpaper(I)Lorg/telegram/tgnet/TLRPC$WallPaper;
@@ -439,7 +439,7 @@
 
     invoke-virtual {v11, v4}, Lorg/telegram/ui/Components/MotionBackgroundDrawable;->setPatternBitmap(I)V
 
-    .line 35658
+    .line 35686
     invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
 
     move-result v5
@@ -464,18 +464,18 @@
 
     invoke-virtual/range {v4 .. v10}, Lorg/telegram/ui/Components/MotionBackgroundDrawable;->setColors(IIIIIZ)V
 
-    .line 35659
+    .line 35687
     invoke-virtual {v11, p2}, Lorg/telegram/ui/Components/MotionBackgroundDrawable;->setPhase(I)V
 
-    .line 35660
+    .line 35688
     invoke-virtual {v11}, Lorg/telegram/ui/Components/MotionBackgroundDrawable;->getPatternColor()I
 
     move-result v9
 
-    .line 35661
+    .line 35689
     iget-boolean p2, p0, Lorg/telegram/ui/ChatActivity$ThemeDelegate;->isDark:Z
 
-    .line 35662
+    .line 35690
     new-instance v0, Lorg/telegram/ui/ChatActivity$ThemeDelegate$$ExternalSyntheticLambda7;
 
     move-object v4, v0
@@ -501,7 +501,7 @@
 .method private getCurrentColorOrDefault(Ljava/lang/String;Z)I
     .locals 1
 
-    .line 35690
+    .line 35718
     invoke-virtual {p0, p1, p2}, Lorg/telegram/ui/ChatActivity$ThemeDelegate;->getCurrentColor(Ljava/lang/String;Z)Ljava/lang/Integer;
 
     move-result-object v0
@@ -510,7 +510,7 @@
 
     const/4 v0, 0x0
 
-    .line 35692
+    .line 35720
     invoke-static {p1, v0, p2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;[ZZ)I
 
     move-result p1
@@ -519,7 +519,7 @@
 
     move-result-object v0
 
-    .line 35694
+    .line 35722
     :cond_0
     invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
 
@@ -531,12 +531,12 @@
 .method private initDrawables()V
     .locals 7
 
-    .line 35397
+    .line 35425
     invoke-static {}, Lorg/telegram/ui/ActionBar/Theme;->getThemeDrawablesMap()Ljava/util/Map;
 
     move-result-object v0
 
-    .line 35398
+    .line 35426
     invoke-interface {v0}, Ljava/util/Map;->entrySet()Ljava/util/Set;
 
     move-result-object v0
@@ -559,7 +559,7 @@
 
     check-cast v1, Ljava/util/Map$Entry;
 
-    .line 35400
+    .line 35428
     invoke-interface {v1}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
     move-result-object v2
@@ -690,7 +690,7 @@
     goto :goto_1
 
     :cond_7
-    const/4 v3, 0x1
+    move v3, v5
 
     goto :goto_1
 
@@ -706,26 +706,26 @@
     goto :goto_1
 
     :cond_8
-    const/4 v3, 0x0
+    move v3, v6
 
     :goto_1
     packed-switch v3, :pswitch_data_0
 
-    .line 35426
+    .line 35454
     invoke-interface {v1}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
     move-result-object v2
 
     check-cast v2, Landroid/graphics/drawable/Drawable;
 
-    .line 35427
+    .line 35455
     invoke-virtual {v2}, Landroid/graphics/drawable/Drawable;->getConstantState()Landroid/graphics/drawable/Drawable$ConstantState;
 
     move-result-object v2
 
     if-eqz v2, :cond_9
 
-    .line 35429
+    .line 35457
     invoke-virtual {v2}, Landroid/graphics/drawable/Drawable$ConstantState;->newDrawable()Landroid/graphics/drawable/Drawable;
 
     move-result-object v2
@@ -742,7 +742,7 @@
     :goto_2
     if-eqz v2, :cond_b
 
-    .line 35434
+    .line 35462
     invoke-interface {v1}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
     move-result-object v3
@@ -755,14 +755,14 @@
 
     if-eqz v3, :cond_b
 
-    .line 35436
+    .line 35464
     invoke-virtual {p0, v3}, Lorg/telegram/ui/ChatActivity$ThemeDelegate;->getColor(Ljava/lang/String;)Ljava/lang/Integer;
 
     move-result-object v4
 
     if-nez v4, :cond_a
 
-    .line 35438
+    .line 35466
     invoke-static {v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
 
     move-result v3
@@ -771,7 +771,7 @@
 
     move-result-object v4
 
-    .line 35440
+    .line 35468
     :cond_a
     invoke-virtual {v4}, Ljava/lang/Integer;->intValue()I
 
@@ -781,7 +781,7 @@
 
     goto :goto_3
 
-    .line 35414
+    .line 35442
     :pswitch_0
     new-instance v2, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;
 
@@ -789,7 +789,7 @@
 
     goto :goto_3
 
-    .line 35405
+    .line 35433
     :pswitch_1
     new-instance v2, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;
 
@@ -797,7 +797,7 @@
 
     goto :goto_3
 
-    .line 35423
+    .line 35451
     :pswitch_2
     new-instance v2, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;
 
@@ -805,7 +805,7 @@
 
     goto :goto_3
 
-    .line 35417
+    .line 35445
     :pswitch_3
     new-instance v2, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;
 
@@ -813,7 +813,7 @@
 
     goto :goto_3
 
-    .line 35420
+    .line 35448
     :pswitch_4
     new-instance v2, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;
 
@@ -821,7 +821,7 @@
 
     goto :goto_3
 
-    .line 35411
+    .line 35439
     :pswitch_5
     new-instance v2, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;
 
@@ -829,7 +829,7 @@
 
     goto :goto_3
 
-    .line 35408
+    .line 35436
     :pswitch_6
     new-instance v2, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;
 
@@ -837,7 +837,7 @@
 
     goto :goto_3
 
-    .line 35402
+    .line 35430
     :pswitch_7
     new-instance v2, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;
 
@@ -847,7 +847,7 @@
     :goto_3
     if-eqz v2, :cond_0
 
-    .line 35445
+    .line 35473
     iget-object v3, p0, Lorg/telegram/ui/ChatActivity$ThemeDelegate;->currentDrawables:Ljava/util/HashMap;
 
     invoke-interface {v1}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
@@ -891,12 +891,12 @@
 .method private initPaints()V
     .locals 5
 
-    .line 35451
+    .line 35479
     invoke-static {}, Lorg/telegram/ui/ActionBar/Theme;->getThemePaintsMap()Ljava/util/Map;
 
     move-result-object v0
 
-    .line 35452
+    .line 35480
     invoke-interface {v0}, Ljava/util/Map;->entrySet()Ljava/util/Set;
 
     move-result-object v0
@@ -918,31 +918,31 @@
 
     check-cast v1, Ljava/util/Map$Entry;
 
-    .line 35453
+    .line 35481
     invoke-interface {v1}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
     move-result-object v2
 
     check-cast v2, Landroid/graphics/Paint;
 
-    .line 35455
+    .line 35483
     instance-of v3, v2, Landroid/text/TextPaint;
 
     if-eqz v3, :cond_0
 
-    .line 35456
+    .line 35484
     new-instance v3, Landroid/text/TextPaint;
 
     invoke-direct {v3}, Landroid/text/TextPaint;-><init>()V
 
-    .line 35457
+    .line 35485
     invoke-virtual {v2}, Landroid/graphics/Paint;->getTextSize()F
 
     move-result v4
 
     invoke-virtual {v3, v4}, Landroid/graphics/Paint;->setTextSize(F)V
 
-    .line 35458
+    .line 35486
     invoke-virtual {v2}, Landroid/graphics/Paint;->getTypeface()Landroid/graphics/Typeface;
 
     move-result-object v4
@@ -951,13 +951,13 @@
 
     goto :goto_1
 
-    .line 35460
+    .line 35488
     :cond_0
     new-instance v3, Landroid/graphics/Paint;
 
     invoke-direct {v3}, Landroid/graphics/Paint;-><init>()V
 
-    .line 35462
+    .line 35490
     :goto_1
     invoke-virtual {v2}, Landroid/graphics/Paint;->getFlags()I
 
@@ -969,10 +969,10 @@
 
     if-eqz v2, :cond_1
 
-    .line 35463
+    .line 35491
     invoke-virtual {v3, v4}, Landroid/graphics/Paint;->setFlags(I)V
 
-    .line 35466
+    .line 35494
     :cond_1
     invoke-interface {v1}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
@@ -986,14 +986,14 @@
 
     if-eqz v2, :cond_3
 
-    .line 35468
+    .line 35496
     invoke-virtual {p0, v2}, Lorg/telegram/ui/ChatActivity$ThemeDelegate;->getColor(Ljava/lang/String;)Ljava/lang/Integer;
 
     move-result-object v4
 
     if-nez v4, :cond_2
 
-    .line 35470
+    .line 35498
     invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
 
     move-result v2
@@ -1002,7 +1002,7 @@
 
     move-result-object v4
 
-    .line 35472
+    .line 35500
     :cond_2
     invoke-virtual {v4}, Ljava/lang/Integer;->intValue()I
 
@@ -1010,7 +1010,7 @@
 
     invoke-virtual {v3, v2}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 35474
+    .line 35502
     :cond_3
     iget-object v2, p0, Lorg/telegram/ui/ChatActivity$ThemeDelegate;->currentPaints:Ljava/util/HashMap;
 
@@ -1031,38 +1031,38 @@
 .method private initServiceMessageColors(Landroid/graphics/drawable/Drawable;)V
     .locals 10
 
-    .line 35491
+    .line 35519
     invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->calcDrawableColor(Landroid/graphics/drawable/Drawable;)[I
 
     move-result-object v0
 
     const/4 v1, 0x0
 
-    .line 35492
+    .line 35520
     aget v0, v0, v1
 
     const-string v2, "chat_serviceBackground"
 
-    .line 35494
+    .line 35522
     invoke-virtual {p0, v2}, Lorg/telegram/ui/ChatActivity$ThemeDelegate;->getCurrentColor(Ljava/lang/String;)Ljava/lang/Integer;
 
     move-result-object v2
 
     const-string v3, "chat_selectedBackground"
 
-    .line 35495
+    .line 35523
     invoke-virtual {p0, v3}, Lorg/telegram/ui/ChatActivity$ThemeDelegate;->getCurrentColor(Ljava/lang/String;)Ljava/lang/Integer;
 
     move-result-object v4
 
     if-nez v2, :cond_0
 
-    .line 35498
+    .line 35526
     invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v2
 
-    .line 35500
+    .line 35528
     :cond_0
     invoke-virtual {v2}, Ljava/lang/Integer;->intValue()I
 
@@ -1070,7 +1070,7 @@
 
     iput v0, p0, Lorg/telegram/ui/ChatActivity$ThemeDelegate;->currentServiceColor:I
 
-    .line 35502
+    .line 35530
     instance-of v0, p1, Lorg/telegram/ui/Components/MotionBackgroundDrawable;
 
     const/4 v2, 0x1
@@ -1083,12 +1083,12 @@
 
     if-eqz v0, :cond_1
 
-    const/4 v1, 0x1
+    move v1, v2
 
     :cond_1
     iput-boolean v1, p0, Lorg/telegram/ui/ChatActivity$ThemeDelegate;->drawServiceGradient:Z
 
-    .line 35503
+    .line 35531
     iput-boolean v1, p0, Lorg/telegram/ui/ChatActivity$ThemeDelegate;->drawSelectedGradient:Z
 
     const/4 v0, 0x0
@@ -1099,7 +1099,7 @@
 
     const/16 v5, 0x50
 
-    .line 35506
+    .line 35534
     sget-object v6, Landroid/graphics/Bitmap$Config;->ARGB_8888:Landroid/graphics/Bitmap$Config;
 
     invoke-static {v1, v5, v6}, Landroid/graphics/Bitmap;->createBitmap(IILandroid/graphics/Bitmap$Config;)Landroid/graphics/Bitmap;
@@ -1108,7 +1108,7 @@
 
     iput-object v1, p0, Lorg/telegram/ui/ChatActivity$ThemeDelegate;->serviceBitmap:Landroid/graphics/Bitmap;
 
-    .line 35507
+    .line 35535
     move-object v1, p1
 
     check-cast v1, Lorg/telegram/ui/Components/MotionBackgroundDrawable;
@@ -1119,7 +1119,7 @@
 
     iput-object v1, p0, Lorg/telegram/ui/ChatActivity$ThemeDelegate;->serviceBitmapSource:Landroid/graphics/Bitmap;
 
-    .line 35508
+    .line 35536
     new-instance v1, Landroid/graphics/Canvas;
 
     iget-object v5, p0, Lorg/telegram/ui/ChatActivity$ThemeDelegate;->serviceBitmap:Landroid/graphics/Bitmap;
@@ -1128,14 +1128,14 @@
 
     iput-object v1, p0, Lorg/telegram/ui/ChatActivity$ThemeDelegate;->serviceCanvas:Landroid/graphics/Canvas;
 
-    .line 35509
+    .line 35537
     iget-object v5, p0, Lorg/telegram/ui/ChatActivity$ThemeDelegate;->serviceBitmapSource:Landroid/graphics/Bitmap;
 
     const/4 v6, 0x0
 
     invoke-virtual {v1, v5, v6, v6, v0}, Landroid/graphics/Canvas;->drawBitmap(Landroid/graphics/Bitmap;FFLandroid/graphics/Paint;)V
 
-    .line 35510
+    .line 35538
     new-instance v1, Landroid/graphics/BitmapShader;
 
     iget-object v5, p0, Lorg/telegram/ui/ChatActivity$ThemeDelegate;->serviceBitmap:Landroid/graphics/Bitmap;
@@ -1146,7 +1146,7 @@
 
     iput-object v1, p0, Lorg/telegram/ui/ChatActivity$ThemeDelegate;->serviceShader:Landroid/graphics/BitmapShader;
 
-    .line 35511
+    .line 35539
     new-instance v1, Landroid/graphics/BitmapShader;
 
     iget-object v5, p0, Lorg/telegram/ui/ChatActivity$ThemeDelegate;->serviceBitmapSource:Landroid/graphics/Bitmap;
@@ -1157,53 +1157,53 @@
 
     iput-object v1, p0, Lorg/telegram/ui/ChatActivity$ThemeDelegate;->serviceShaderSource:Landroid/graphics/BitmapShader;
 
-    .line 35512
+    .line 35540
     iput-boolean v2, p0, Lorg/telegram/ui/ChatActivity$ThemeDelegate;->useSourceShader:Z
 
     goto :goto_0
 
-    .line 35514
+    .line 35542
     :cond_2
     iput-object v0, p0, Lorg/telegram/ui/ChatActivity$ThemeDelegate;->serviceBitmap:Landroid/graphics/Bitmap;
 
-    .line 35515
+    .line 35543
     iput-object v0, p0, Lorg/telegram/ui/ChatActivity$ThemeDelegate;->serviceShader:Landroid/graphics/BitmapShader;
 
     :goto_0
     const-string v1, "paintChatActionBackground"
 
-    .line 35518
+    .line 35546
     invoke-virtual {p0, v1}, Lorg/telegram/ui/ChatActivity$ThemeDelegate;->getPaint(Ljava/lang/String;)Landroid/graphics/Paint;
 
     move-result-object v1
 
     const-string v5, "paintChatActionBackgroundSelected"
 
-    .line 35519
+    .line 35547
     invoke-virtual {p0, v5}, Lorg/telegram/ui/ChatActivity$ThemeDelegate;->getPaint(Ljava/lang/String;)Landroid/graphics/Paint;
 
     move-result-object v5
 
     const-string v6, "paintChatMessageBackgroundSelected"
 
-    .line 35520
+    .line 35548
     invoke-virtual {p0, v6}, Lorg/telegram/ui/ChatActivity$ThemeDelegate;->getPaint(Ljava/lang/String;)Landroid/graphics/Paint;
 
     move-result-object v7
 
     if-eqz v1, :cond_5
 
-    .line 35523
+    .line 35551
     iget-boolean v8, p0, Lorg/telegram/ui/ChatActivity$ThemeDelegate;->drawServiceGradient:Z
 
     if-eqz v8, :cond_4
 
-    .line 35524
+    .line 35552
     new-instance v8, Landroid/graphics/ColorMatrix;
 
     invoke-direct {v8}, Landroid/graphics/ColorMatrix;-><init>()V
 
-    .line 35525
+    .line 35553
     check-cast p1, Lorg/telegram/ui/Components/MotionBackgroundDrawable;
 
     invoke-virtual {p1}, Lorg/telegram/ui/Components/MotionBackgroundDrawable;->getIntensity()I
@@ -1224,99 +1224,99 @@
 
     const/16 p1, 0x7f
 
-    .line 35527
+    .line 35555
     invoke-virtual {v1, p1}, Landroid/graphics/Paint;->setAlpha(I)V
 
-    .line 35528
+    .line 35556
     new-instance v9, Landroid/graphics/ColorMatrixColorFilter;
 
     invoke-direct {v9, v8}, Landroid/graphics/ColorMatrixColorFilter;-><init>(Landroid/graphics/ColorMatrix;)V
 
     invoke-virtual {v1, v9}, Landroid/graphics/Paint;->setColorFilter(Landroid/graphics/ColorFilter;)Landroid/graphics/ColorFilter;
 
-    .line 35529
+    .line 35557
     iget-object v9, p0, Lorg/telegram/ui/ChatActivity$ThemeDelegate;->serviceShaderSource:Landroid/graphics/BitmapShader;
 
     invoke-virtual {v1, v9}, Landroid/graphics/Paint;->setShader(Landroid/graphics/Shader;)Landroid/graphics/Shader;
 
-    .line 35531
+    .line 35559
     invoke-virtual {v5, p1}, Landroid/graphics/Paint;->setAlpha(I)V
 
-    .line 35532
+    .line 35560
     new-instance p1, Landroid/graphics/ColorMatrixColorFilter;
 
     invoke-direct {p1, v8}, Landroid/graphics/ColorMatrixColorFilter;-><init>(Landroid/graphics/ColorMatrix;)V
 
     invoke-virtual {v5, p1}, Landroid/graphics/Paint;->setColorFilter(Landroid/graphics/ColorFilter;)Landroid/graphics/ColorFilter;
 
-    .line 35533
+    .line 35561
     iget-object p1, p0, Lorg/telegram/ui/ChatActivity$ThemeDelegate;->serviceShaderSource:Landroid/graphics/BitmapShader;
 
     invoke-virtual {v5, p1}, Landroid/graphics/Paint;->setShader(Landroid/graphics/Shader;)Landroid/graphics/Shader;
 
     goto :goto_2
 
-    .line 35535
+    .line 35563
     :cond_4
     invoke-virtual {v1, v0}, Landroid/graphics/Paint;->setColorFilter(Landroid/graphics/ColorFilter;)Landroid/graphics/ColorFilter;
 
-    .line 35536
+    .line 35564
     invoke-virtual {v1, v0}, Landroid/graphics/Paint;->setShader(Landroid/graphics/Shader;)Landroid/graphics/Shader;
 
-    .line 35537
+    .line 35565
     invoke-virtual {v5, v0}, Landroid/graphics/Paint;->setColorFilter(Landroid/graphics/ColorFilter;)Landroid/graphics/ColorFilter;
 
-    .line 35538
+    .line 35566
     invoke-virtual {v5, v0}, Landroid/graphics/Paint;->setShader(Landroid/graphics/Shader;)Landroid/graphics/Shader;
 
     :cond_5
     :goto_2
     if-nez v7, :cond_6
 
-    .line 35543
+    .line 35571
     new-instance v7, Landroid/graphics/Paint;
 
     invoke-direct {v7, v2}, Landroid/graphics/Paint;-><init>(I)V
 
-    .line 35544
+    .line 35572
     iget-object p1, p0, Lorg/telegram/ui/ChatActivity$ThemeDelegate;->currentPaints:Ljava/util/HashMap;
 
     invoke-virtual {p1, v6, v7}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 35546
+    .line 35574
     :cond_6
     iget-boolean p1, p0, Lorg/telegram/ui/ChatActivity$ThemeDelegate;->drawSelectedGradient:Z
 
     if-eqz p1, :cond_7
 
-    .line 35547
+    .line 35575
     new-instance p1, Landroid/graphics/ColorMatrix;
 
     invoke-direct {p1}, Landroid/graphics/ColorMatrix;-><init>()V
 
     const/high16 v0, 0x40200000    # 2.5f
 
-    .line 35548
+    .line 35576
     invoke-static {p1, v0}, Lorg/telegram/messenger/AndroidUtilities;->adjustSaturationColorMatrix(Landroid/graphics/ColorMatrix;F)V
 
     const/high16 v0, 0x3f400000    # 0.75f
 
-    .line 35549
+    .line 35577
     invoke-static {p1, v0}, Lorg/telegram/messenger/AndroidUtilities;->multiplyBrightnessColorMatrix(Landroid/graphics/ColorMatrix;F)V
 
     const/16 v0, 0x40
 
-    .line 35550
+    .line 35578
     invoke-virtual {v7, v0}, Landroid/graphics/Paint;->setAlpha(I)V
 
-    .line 35551
+    .line 35579
     new-instance v0, Landroid/graphics/ColorMatrixColorFilter;
 
     invoke-direct {v0, p1}, Landroid/graphics/ColorMatrixColorFilter;-><init>(Landroid/graphics/ColorMatrix;)V
 
     invoke-virtual {v7, v0}, Landroid/graphics/Paint;->setColorFilter(Landroid/graphics/ColorFilter;)Landroid/graphics/ColorFilter;
 
-    .line 35552
+    .line 35580
     iget-object p1, p0, Lorg/telegram/ui/ChatActivity$ThemeDelegate;->serviceShaderSource:Landroid/graphics/BitmapShader;
 
     invoke-virtual {v7, p1}, Landroid/graphics/Paint;->setShader(Landroid/graphics/Shader;)Landroid/graphics/Shader;
@@ -1326,12 +1326,12 @@
     :cond_7
     if-nez v4, :cond_8
 
-    .line 35555
+    .line 35583
     invoke-virtual {p0, v3}, Lorg/telegram/ui/ChatActivity$ThemeDelegate;->getColor(Ljava/lang/String;)Ljava/lang/Integer;
 
     move-result-object v4
 
-    .line 35557
+    .line 35585
     :cond_8
     invoke-virtual {v4}, Ljava/lang/Integer;->intValue()I
 
@@ -1339,10 +1339,10 @@
 
     invoke-virtual {v7, p1}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 35558
+    .line 35586
     invoke-virtual {v7, v0}, Landroid/graphics/Paint;->setColorFilter(Landroid/graphics/ColorFilter;)Landroid/graphics/ColorFilter;
 
-    .line 35559
+    .line 35587
     invoke-virtual {v7, v0}, Landroid/graphics/Paint;->setShader(Landroid/graphics/Shader;)Landroid/graphics/Shader;
 
     :goto_3
@@ -1352,7 +1352,7 @@
 .method private static synthetic lambda$getBackgroundDrawableFromTheme$6(Lorg/telegram/ui/Components/MotionBackgroundDrawable;Landroid/animation/ValueAnimator;)V
     .locals 0
 
-    .line 35677
+    .line 35705
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
 
     move-result-object p1
@@ -1363,20 +1363,20 @@
 
     move-result p1
 
-    .line 35678
+    .line 35706
     invoke-virtual {p0, p1}, Lorg/telegram/ui/Components/MotionBackgroundDrawable;->setPatternAlpha(F)V
 
     return-void
 .end method
 
 .method private synthetic lambda$getBackgroundDrawableFromTheme$7(Lorg/telegram/ui/ActionBar/EmojiThemes;ZLorg/telegram/ui/Components/MotionBackgroundDrawable;ILandroid/util/Pair;)V
-    .locals 5
+    .locals 4
 
     if-nez p5, :cond_0
 
     return-void
 
-    .line 35666
+    .line 35694
     :cond_0
     iget-object v0, p5, Landroid/util/Pair;->first:Ljava/lang/Object;
 
@@ -1386,12 +1386,12 @@
 
     move-result-wide v0
 
-    .line 35667
+    .line 35695
     iget-object p5, p5, Landroid/util/Pair;->second:Ljava/lang/Object;
 
     check-cast p5, Landroid/graphics/Bitmap;
 
-    .line 35668
+    .line 35696
     iget-object v2, p0, Lorg/telegram/ui/ChatActivity$ThemeDelegate;->chatTheme:Lorg/telegram/ui/ActionBar/EmojiThemes;
 
     if-eqz v2, :cond_2
@@ -1404,21 +1404,21 @@
 
     iget-wide v2, v2, Lorg/telegram/tgnet/TLRPC$TL_theme;->id:J
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-nez v4, :cond_2
+    if-nez v0, :cond_2
 
     if-eqz p5, :cond_2
 
-    .line 35669
+    .line 35697
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$ThemeDelegate;->patternIntensityAnimator:Landroid/animation/ValueAnimator;
 
     if-eqz v0, :cond_1
 
-    .line 35670
+    .line 35698
     invoke-virtual {v0}, Landroid/animation/ValueAnimator;->cancel()V
 
-    .line 35672
+    .line 35700
     :cond_1
     invoke-virtual {p1, p2}, Lorg/telegram/ui/ActionBar/EmojiThemes;->getWallpaper(I)Lorg/telegram/tgnet/TLRPC$WallPaper;
 
@@ -1428,17 +1428,17 @@
 
     iget p1, p1, Lorg/telegram/tgnet/TLRPC$WallPaperSettings;->intensity:I
 
-    .line 35673
+    .line 35701
     invoke-virtual {p3, p1, p5}, Lorg/telegram/ui/Components/MotionBackgroundDrawable;->setPatternBitmap(ILandroid/graphics/Bitmap;)V
 
-    .line 35674
+    .line 35702
     invoke-virtual {p3, p4}, Lorg/telegram/ui/Components/MotionBackgroundDrawable;->setPatternColorFilter(I)V
 
     const/4 p1, 0x2
 
     new-array p1, p1, [F
 
-    .line 35675
+    .line 35703
     fill-array-data p1, :array_0
 
     invoke-static {p1}, Landroid/animation/ValueAnimator;->ofFloat([F)Landroid/animation/ValueAnimator;
@@ -1447,21 +1447,21 @@
 
     iput-object p1, p0, Lorg/telegram/ui/ChatActivity$ThemeDelegate;->patternIntensityAnimator:Landroid/animation/ValueAnimator;
 
-    .line 35676
+    .line 35704
     new-instance p2, Lorg/telegram/ui/ChatActivity$ThemeDelegate$$ExternalSyntheticLambda2;
 
     invoke-direct {p2, p3}, Lorg/telegram/ui/ChatActivity$ThemeDelegate$$ExternalSyntheticLambda2;-><init>(Lorg/telegram/ui/Components/MotionBackgroundDrawable;)V
 
     invoke-virtual {p1, p2}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
-    .line 35680
+    .line 35708
     iget-object p1, p0, Lorg/telegram/ui/ChatActivity$ThemeDelegate;->patternIntensityAnimator:Landroid/animation/ValueAnimator;
 
     const-wide/16 p2, 0xfa
 
     invoke-virtual {p1, p2, p3}, Landroid/animation/ValueAnimator;->setDuration(J)Landroid/animation/ValueAnimator;
 
-    .line 35681
+    .line 35709
     iget-object p1, p0, Lorg/telegram/ui/ChatActivity$ThemeDelegate;->patternIntensityAnimator:Landroid/animation/ValueAnimator;
 
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->start()V
@@ -1481,7 +1481,7 @@
 .method private static synthetic lambda$new$0()V
     .locals 5
 
-    .line 35085
+    .line 35113
     invoke-static {}, Lorg/telegram/messenger/NotificationCenter;->getGlobalInstance()Lorg/telegram/messenger/NotificationCenter;
 
     move-result-object v0
@@ -1518,10 +1518,10 @@
 
     const/4 v0, 0x0
 
-    .line 35258
+    .line 35286
     invoke-direct {p0, p1, p2, v0}, Lorg/telegram/ui/ChatActivity$ThemeDelegate;->setupChatTheme(Lorg/telegram/ui/ActionBar/EmojiThemes;ZZ)V
 
-    .line 35259
+    .line 35287
     iget-object p1, p0, Lorg/telegram/ui/ChatActivity$ThemeDelegate;->backgroundDrawable:Landroid/graphics/drawable/Drawable;
 
     invoke-direct {p0, p1}, Lorg/telegram/ui/ChatActivity$ThemeDelegate;->initServiceMessageColors(Landroid/graphics/drawable/Drawable;)V
@@ -1532,14 +1532,14 @@
 .method private synthetic lambda$setCurrentTheme$2()V
     .locals 3
 
-    .line 35272
+    .line 35300
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
     iput-object v0, p0, Lorg/telegram/ui/ChatActivity$ThemeDelegate;->animatingColors:Ljava/util/HashMap;
 
-    .line 35273
+    .line 35301
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$ThemeDelegate;->this$0:Lorg/telegram/ui/ChatActivity;
 
     const-string v1, "drawableMsgOut"
@@ -1552,10 +1552,10 @@
 
     iput-object v0, p0, Lorg/telegram/ui/ChatActivity$ThemeDelegate;->animatingMessageDrawable:Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;
 
-    .line 35274
+    .line 35302
     iget-object v1, p0, Lorg/telegram/ui/ChatActivity$ThemeDelegate;->this$0:Lorg/telegram/ui/ChatActivity;
 
-    invoke-static {v1}, Lorg/telegram/ui/ChatActivity;->access$61900(Lorg/telegram/ui/ChatActivity;)Lorg/telegram/ui/ActionBar/INavigationLayout;
+    invoke-static {v1}, Lorg/telegram/ui/ChatActivity;->access$62000(Lorg/telegram/ui/ChatActivity;)Lorg/telegram/ui/ActionBar/INavigationLayout;
 
     move-result-object v1
 
@@ -1565,7 +1565,7 @@
 
     iput-object v1, v0, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->crossfadeFromDrawable:Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;
 
-    .line 35275
+    .line 35303
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$ThemeDelegate;->this$0:Lorg/telegram/ui/ChatActivity;
 
     const-string v1, "drawableMsgOutMedia"
@@ -1578,10 +1578,10 @@
 
     iput-object v0, p0, Lorg/telegram/ui/ChatActivity$ThemeDelegate;->animatingMessageMediaDrawable:Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;
 
-    .line 35276
+    .line 35304
     iget-object v1, p0, Lorg/telegram/ui/ChatActivity$ThemeDelegate;->this$0:Lorg/telegram/ui/ChatActivity;
 
-    invoke-static {v1}, Lorg/telegram/ui/ChatActivity;->access$62000(Lorg/telegram/ui/ChatActivity;)Lorg/telegram/ui/ActionBar/INavigationLayout;
+    invoke-static {v1}, Lorg/telegram/ui/ChatActivity;->access$62100(Lorg/telegram/ui/ChatActivity;)Lorg/telegram/ui/ActionBar/INavigationLayout;
 
     move-result-object v1
 
@@ -1591,26 +1591,26 @@
 
     iput-object v1, v0, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->crossfadeFromDrawable:Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;
 
-    .line 35277
+    .line 35305
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$ThemeDelegate;->animatingMessageDrawable:Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;
 
     const/4 v1, 0x0
 
     iput v1, v0, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->crossfadeProgress:F
 
-    .line 35278
+    .line 35306
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$ThemeDelegate;->animatingMessageMediaDrawable:Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;
 
     iput v1, v0, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->crossfadeProgress:F
 
-    .line 35279
+    .line 35307
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$ThemeDelegate;->this$0:Lorg/telegram/ui/ChatActivity;
 
     const/4 v2, 0x0
 
     invoke-virtual {v0, v2}, Lorg/telegram/ui/ChatActivity;->updateMessagesVisiblePart(Z)V
 
-    .line 35280
+    .line 35308
     invoke-direct {p0, v1}, Lorg/telegram/ui/ChatActivity$ThemeDelegate;->updateServiceMessageColor(F)V
 
     return-void
@@ -1619,24 +1619,24 @@
 .method private synthetic lambda$setCurrentTheme$3()V
     .locals 2
 
-    .line 35283
+    .line 35311
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$ThemeDelegate;->animatingMessageDrawable:Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;
 
     const/4 v1, 0x0
 
     iput-object v1, v0, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->crossfadeFromDrawable:Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;
 
-    .line 35284
+    .line 35312
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$ThemeDelegate;->animatingMessageMediaDrawable:Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;
 
     iput-object v1, v0, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->crossfadeFromDrawable:Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;
 
-    .line 35285
+    .line 35313
     iput-object v1, p0, Lorg/telegram/ui/ChatActivity$ThemeDelegate;->animatingColors:Ljava/util/HashMap;
 
     const/high16 v0, 0x3f800000    # 1.0f
 
-    .line 35286
+    .line 35314
     invoke-direct {p0, v0}, Lorg/telegram/ui/ChatActivity$ThemeDelegate;->updateServiceMessageColor(F)V
 
     return-void
@@ -1645,7 +1645,7 @@
 .method private static synthetic lambda$setupChatTheme$4(Lorg/telegram/ui/Components/MotionBackgroundDrawable;Landroid/animation/ValueAnimator;)V
     .locals 0
 
-    .line 35356
+    .line 35384
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
 
     move-result-object p1
@@ -1664,7 +1664,7 @@
 .method private static synthetic lambda$setupChatTheme$5(Lorg/telegram/ui/Components/MotionBackgroundDrawable;Landroid/animation/ValueAnimator;)V
     .locals 0
 
-    .line 35371
+    .line 35399
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
 
     move-result-object p1
@@ -1683,13 +1683,13 @@
 .method private setupChatTheme(Lorg/telegram/ui/ActionBar/EmojiThemes;ZZ)V
     .locals 5
 
-    .line 35303
+    .line 35331
     iput-object p1, p0, Lorg/telegram/ui/ChatActivity$ThemeDelegate;->chatTheme:Lorg/telegram/ui/ActionBar/EmojiThemes;
 
-    .line 35306
+    .line 35334
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$ThemeDelegate;->this$0:Lorg/telegram/ui/ChatActivity;
 
-    invoke-static {v0}, Lorg/telegram/ui/ChatActivity;->access$61500(Lorg/telegram/ui/ChatActivity;)Landroid/view/View;
+    invoke-static {v0}, Lorg/telegram/ui/ChatActivity;->access$61600(Lorg/telegram/ui/ChatActivity;)Landroid/view/View;
 
     move-result-object v0
 
@@ -1697,10 +1697,10 @@
 
     if-eqz v0, :cond_0
 
-    .line 35307
+    .line 35335
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$ThemeDelegate;->this$0:Lorg/telegram/ui/ChatActivity;
 
-    invoke-static {v0}, Lorg/telegram/ui/ChatActivity;->access$61600(Lorg/telegram/ui/ChatActivity;)Landroid/view/View;
+    invoke-static {v0}, Lorg/telegram/ui/ChatActivity;->access$61700(Lorg/telegram/ui/ChatActivity;)Landroid/view/View;
 
     move-result-object v0
 
@@ -1715,7 +1715,7 @@
     :cond_0
     move-object v0, v1
 
-    .line 35309
+    .line 35337
     :goto_0
     instance-of v2, v0, Lorg/telegram/ui/Components/MotionBackgroundDrawable;
 
@@ -1733,7 +1733,7 @@
 
     if-eqz v0, :cond_2
 
-    .line 35310
+    .line 35338
     invoke-virtual {v0}, Lorg/telegram/ui/Components/MotionBackgroundDrawable;->getPhase()I
 
     move-result v3
@@ -1741,60 +1741,60 @@
     goto :goto_2
 
     :cond_2
-    const/4 v3, 0x0
+    move v3, v2
 
     :goto_2
     if-eqz p1, :cond_3
 
-    .line 35312
+    .line 35340
     iget-boolean v4, p1, Lorg/telegram/ui/ActionBar/EmojiThemes;->showAsDefaultStub:Z
 
     if-eqz v4, :cond_4
 
-    .line 35313
+    .line 35341
     :cond_3
     invoke-static {}, Lorg/telegram/ui/ActionBar/Theme;->getServiceMessageColor()I
 
     :cond_4
     if-nez p1, :cond_c
 
-    .line 35316
+    .line 35344
     new-instance p1, Ljava/util/HashMap;
 
     invoke-direct {p1}, Ljava/util/HashMap;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/ui/ChatActivity$ThemeDelegate;->currentColors:Ljava/util/HashMap;
 
-    .line 35317
+    .line 35345
     iget-object p1, p0, Lorg/telegram/ui/ChatActivity$ThemeDelegate;->currentPaints:Ljava/util/HashMap;
 
     invoke-virtual {p1}, Ljava/util/HashMap;->clear()V
 
-    .line 35318
+    .line 35346
     iget-object p1, p0, Lorg/telegram/ui/ChatActivity$ThemeDelegate;->currentDrawables:Ljava/util/HashMap;
 
     invoke-virtual {p1}, Ljava/util/HashMap;->clear()V
 
-    .line 35319
+    .line 35347
     invoke-static {}, Lorg/telegram/ui/ActionBar/Theme;->getCachedWallpaperNonBlocking()Landroid/graphics/drawable/Drawable;
 
     move-result-object p1
 
-    .line 35320
+    .line 35348
     instance-of p2, p1, Lorg/telegram/ui/Components/MotionBackgroundDrawable;
 
     if-eqz p2, :cond_5
 
-    .line 35321
+    .line 35349
     check-cast p1, Lorg/telegram/ui/Components/MotionBackgroundDrawable;
 
     invoke-virtual {p1, v3}, Lorg/telegram/ui/Components/MotionBackgroundDrawable;->setPhase(I)V
 
-    .line 35323
+    .line 35351
     :cond_5
     iput-object v1, p0, Lorg/telegram/ui/ChatActivity$ThemeDelegate;->backgroundDrawable:Landroid/graphics/drawable/Drawable;
 
-    .line 35326
+    .line 35354
     invoke-static {}, Lorg/telegram/ui/ActionBar/Theme;->getActiveTheme()Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;
 
     move-result-object p1
@@ -1807,14 +1807,14 @@
 
     if-ne p1, p2, :cond_6
 
-    .line 35327
+    .line 35355
     invoke-static {}, Lorg/telegram/ui/ActionBar/Theme;->getActiveTheme()Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;
 
     move-result-object p1
 
     goto :goto_5
 
-    .line 35329
+    .line 35357
     :cond_6
     sget-object p1, Lorg/telegram/messenger/ApplicationLoader;->applicationContext:Landroid/content/Context;
 
@@ -1828,12 +1828,12 @@
 
     const-string p3, "Blue"
 
-    .line 35330
+    .line 35358
     invoke-interface {p1, p2, p3}, Landroid/content/SharedPreferences;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p2
 
-    .line 35331
+    .line 35359
     invoke-static {p2}, Lorg/telegram/ui/ActionBar/Theme;->getTheme(Ljava/lang/String;)Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;
 
     move-result-object v0
@@ -1861,12 +1861,12 @@
 
     const-string v0, "Dark Blue"
 
-    .line 35334
+    .line 35362
     invoke-interface {p1, p2, v0}, Landroid/content/SharedPreferences;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p1
 
-    .line 35335
+    .line 35363
     invoke-static {p1}, Lorg/telegram/ui/ActionBar/Theme;->getTheme(Ljava/lang/String;)Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;
 
     move-result-object p2
@@ -1888,7 +1888,7 @@
     :cond_9
     move-object v0, p1
 
-    .line 35338
+    .line 35366
     :cond_a
     :goto_4
     iget-boolean p1, p0, Lorg/telegram/ui/ChatActivity$ThemeDelegate;->isDark:Z
@@ -1906,7 +1906,7 @@
 
     move-result-object p1
 
-    .line 35341
+    .line 35369
     :goto_5
     iget-boolean p2, p0, Lorg/telegram/ui/ChatActivity$ThemeDelegate;->isDark:Z
 
@@ -1914,22 +1914,22 @@
 
     goto/16 :goto_6
 
-    .line 35343
+    .line 35371
     :cond_c
     sget-object v1, Lorg/telegram/messenger/ApplicationLoader;->applicationContext:Landroid/content/Context;
 
     if-eqz v1, :cond_d
 
-    .line 35344
+    .line 35372
     sget-object v1, Lorg/telegram/messenger/ApplicationLoader;->applicationContext:Landroid/content/Context;
 
     invoke-static {v1, v2}, Lorg/telegram/ui/ActionBar/Theme;->createChatResources(Landroid/content/Context;Z)V
 
-    .line 35346
+    .line 35374
     :cond_d
     iget-object v1, p0, Lorg/telegram/ui/ChatActivity$ThemeDelegate;->this$0:Lorg/telegram/ui/ChatActivity;
 
-    invoke-static {v1}, Lorg/telegram/ui/ChatActivity;->access$61700(Lorg/telegram/ui/ChatActivity;)I
+    invoke-static {v1}, Lorg/telegram/ui/ChatActivity;->access$61800(Lorg/telegram/ui/ChatActivity;)I
 
     move-result v1
 
@@ -1941,25 +1941,25 @@
 
     iput-object v1, p0, Lorg/telegram/ui/ChatActivity$ThemeDelegate;->currentColors:Ljava/util/HashMap;
 
-    .line 35347
+    .line 35375
     invoke-direct {p0, p1, v3}, Lorg/telegram/ui/ChatActivity$ThemeDelegate;->getBackgroundDrawableFromTheme(Lorg/telegram/ui/ActionBar/EmojiThemes;I)Landroid/graphics/drawable/Drawable;
 
     move-result-object p1
 
     iput-object p1, p0, Lorg/telegram/ui/ChatActivity$ThemeDelegate;->backgroundDrawable:Landroid/graphics/drawable/Drawable;
 
-    .line 35349
+    .line 35377
     iget-object p1, p0, Lorg/telegram/ui/ChatActivity$ThemeDelegate;->patternAlphaAnimator:Landroid/animation/AnimatorSet;
 
     if-eqz p1, :cond_e
 
-    .line 35350
+    .line 35378
     invoke-virtual {p1}, Landroid/animation/AnimatorSet;->cancel()V
 
     :cond_e
     if-eqz p2, :cond_11
 
-    .line 35353
+    .line 35381
     new-instance p1, Landroid/animation/AnimatorSet;
 
     invoke-direct {p1}, Landroid/animation/AnimatorSet;-><init>()V
@@ -1974,21 +1974,21 @@
 
     new-array v1, p2, [F
 
-    .line 35355
+    .line 35383
     fill-array-data v1, :array_0
 
     invoke-static {v1}, Landroid/animation/ValueAnimator;->ofFloat([F)Landroid/animation/ValueAnimator;
 
     move-result-object v1
 
-    .line 35356
+    .line 35384
     new-instance v3, Lorg/telegram/ui/ChatActivity$ThemeDelegate$$ExternalSyntheticLambda0;
 
     invoke-direct {v3, v0}, Lorg/telegram/ui/ChatActivity$ThemeDelegate$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/Components/MotionBackgroundDrawable;)V
 
     invoke-virtual {v1, v3}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
-    .line 35357
+    .line 35385
     new-instance v3, Lorg/telegram/ui/ChatActivity$ThemeDelegate$2;
 
     invoke-direct {v3, p0, v0}, Lorg/telegram/ui/ChatActivity$ThemeDelegate$2;-><init>(Lorg/telegram/ui/ChatActivity$ThemeDelegate;Lorg/telegram/ui/Components/MotionBackgroundDrawable;)V
@@ -1997,10 +1997,10 @@
 
     const-wide/16 v3, 0xc8
 
-    .line 35364
+    .line 35392
     invoke-virtual {v1, v3, v4}, Landroid/animation/ValueAnimator;->setDuration(J)Landroid/animation/ValueAnimator;
 
-    .line 35365
+    .line 35393
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$ThemeDelegate;->patternAlphaAnimator:Landroid/animation/AnimatorSet;
 
     new-array v3, p1, [Landroid/animation/Animator;
@@ -2009,7 +2009,7 @@
 
     invoke-virtual {v0, v3}, Landroid/animation/AnimatorSet;->playTogether([Landroid/animation/Animator;)V
 
-    .line 35367
+    .line 35395
     :cond_f
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$ThemeDelegate;->backgroundDrawable:Landroid/graphics/drawable/Drawable;
 
@@ -2017,31 +2017,31 @@
 
     if-eqz v1, :cond_10
 
-    .line 35368
+    .line 35396
     check-cast v0, Lorg/telegram/ui/Components/MotionBackgroundDrawable;
 
     const/4 v1, 0x0
 
-    .line 35369
+    .line 35397
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/MotionBackgroundDrawable;->setPatternAlpha(F)V
 
     new-array p2, p2, [F
 
-    .line 35370
+    .line 35398
     fill-array-data p2, :array_1
 
     invoke-static {p2}, Landroid/animation/ValueAnimator;->ofFloat([F)Landroid/animation/ValueAnimator;
 
     move-result-object p2
 
-    .line 35371
+    .line 35399
     new-instance v1, Lorg/telegram/ui/ChatActivity$ThemeDelegate$$ExternalSyntheticLambda1;
 
     invoke-direct {v1, v0}, Lorg/telegram/ui/ChatActivity$ThemeDelegate$$ExternalSyntheticLambda1;-><init>(Lorg/telegram/ui/Components/MotionBackgroundDrawable;)V
 
     invoke-virtual {p2, v1}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
-    .line 35372
+    .line 35400
     new-instance v1, Lorg/telegram/ui/ChatActivity$ThemeDelegate$3;
 
     invoke-direct {v1, p0, v0}, Lorg/telegram/ui/ChatActivity$ThemeDelegate$3;-><init>(Lorg/telegram/ui/ChatActivity$ThemeDelegate;Lorg/telegram/ui/Components/MotionBackgroundDrawable;)V
@@ -2050,10 +2050,10 @@
 
     const-wide/16 v0, 0xfa
 
-    .line 35379
+    .line 35407
     invoke-virtual {p2, v0, v1}, Landroid/animation/ValueAnimator;->setDuration(J)Landroid/animation/ValueAnimator;
 
-    .line 35380
+    .line 35408
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$ThemeDelegate;->patternAlphaAnimator:Landroid/animation/AnimatorSet;
 
     new-array p1, p1, [Landroid/animation/Animator;
@@ -2062,7 +2062,7 @@
 
     invoke-virtual {v0, p1}, Landroid/animation/AnimatorSet;->playTogether([Landroid/animation/Animator;)V
 
-    .line 35382
+    .line 35410
     :cond_10
     iget-object p1, p0, Lorg/telegram/ui/ChatActivity$ThemeDelegate;->patternAlphaAnimator:Landroid/animation/AnimatorSet;
 
@@ -2071,30 +2071,30 @@
     :cond_11
     if-eqz p3, :cond_12
 
-    .line 35386
+    .line 35414
     iget-object p1, p0, Lorg/telegram/ui/ChatActivity$ThemeDelegate;->backgroundDrawable:Landroid/graphics/drawable/Drawable;
 
     invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->calcDrawableColor(Landroid/graphics/drawable/Drawable;)[I
 
     move-result-object p1
 
-    .line 35387
+    .line 35415
     aget p1, p1, v2
 
-    .line 35388
+    .line 35416
     invoke-direct {p0}, Lorg/telegram/ui/ChatActivity$ThemeDelegate;->initDrawables()V
 
-    .line 35389
+    .line 35417
     invoke-direct {p0}, Lorg/telegram/ui/ChatActivity$ThemeDelegate;->initPaints()V
 
-    .line 35390
+    .line 35418
     iget-object p1, p0, Lorg/telegram/ui/ChatActivity$ThemeDelegate;->backgroundDrawable:Landroid/graphics/drawable/Drawable;
 
     invoke-direct {p0, p1}, Lorg/telegram/ui/ChatActivity$ThemeDelegate;->initServiceMessageColors(Landroid/graphics/drawable/Drawable;)V
 
     const/high16 p1, 0x3f800000    # 1.0f
 
-    .line 35391
+    .line 35419
     invoke-direct {p0, p1}, Lorg/telegram/ui/ChatActivity$ThemeDelegate;->updateServiceMessageColor(F)V
 
     :cond_12
@@ -2119,7 +2119,7 @@
 .method private updateServiceMessageColor(F)V
     .locals 11
 
-    .line 35564
+    .line 35592
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$ThemeDelegate;->currentPaints:Ljava/util/HashMap;
 
     invoke-virtual {v0}, Ljava/util/HashMap;->isEmpty()Z
@@ -2133,29 +2133,29 @@
     :cond_0
     const-string v0, "paintChatActionBackground"
 
-    .line 35567
+    .line 35595
     invoke-virtual {p0, v0}, Lorg/telegram/ui/ChatActivity$ThemeDelegate;->getPaint(Ljava/lang/String;)Landroid/graphics/Paint;
 
     move-result-object v0
 
     const-string v1, "paintChatActionBackgroundSelected"
 
-    .line 35568
+    .line 35596
     invoke-virtual {p0, v1}, Lorg/telegram/ui/ChatActivity$ThemeDelegate;->getPaint(Ljava/lang/String;)Landroid/graphics/Paint;
 
     move-result-object v1
 
     const-string v2, "paintChatMessageBackgroundSelected"
 
-    .line 35569
+    .line 35597
     invoke-virtual {p0, v2}, Lorg/telegram/ui/ChatActivity$ThemeDelegate;->getPaint(Ljava/lang/String;)Landroid/graphics/Paint;
 
     move-result-object v2
 
-    .line 35571
+    .line 35599
     iget v3, p0, Lorg/telegram/ui/ChatActivity$ThemeDelegate;->currentServiceColor:I
 
-    .line 35572
+    .line 35600
     iget-boolean v4, p0, Lorg/telegram/ui/ChatActivity$ThemeDelegate;->drawServiceGradient:Z
 
     const/4 v5, -0x1
@@ -2164,7 +2164,7 @@
 
     if-eqz v4, :cond_1
 
-    const/4 v4, -0x1
+    move v4, v5
 
     goto :goto_0
 
@@ -2175,7 +2175,7 @@
 
     move-result v4
 
-    .line 35573
+    .line 35601
     :goto_0
     iget-boolean v7, p0, Lorg/telegram/ui/ChatActivity$ThemeDelegate;->drawServiceGradient:Z
 
@@ -2183,7 +2183,7 @@
 
     if-eqz v7, :cond_2
 
-    const/4 v7, -0x1
+    move v7, v5
 
     goto :goto_1
 
@@ -2192,13 +2192,13 @@
 
     move-result v7
 
-    .line 35574
+    .line 35602
     :goto_1
     iget-boolean v9, p0, Lorg/telegram/ui/ChatActivity$ThemeDelegate;->drawServiceGradient:Z
 
     if-eqz v9, :cond_3
 
-    const/4 v8, -0x1
+    move v8, v5
 
     goto :goto_2
 
@@ -2207,7 +2207,7 @@
 
     move-result v8
 
-    .line 35575
+    .line 35603
     :goto_2
     iget-boolean v9, p0, Lorg/telegram/ui/ChatActivity$ThemeDelegate;->drawServiceGradient:Z
 
@@ -2229,35 +2229,35 @@
 
     if-eqz v9, :cond_5
 
-    .line 35577
+    .line 35605
     iget v10, p0, Lorg/telegram/ui/ChatActivity$ThemeDelegate;->startServiceColor:I
 
     invoke-static {v10, v3, p1}, Landroidx/core/graphics/ColorUtils;->blendARGB(IIF)I
 
     move-result v3
 
-    .line 35578
+    .line 35606
     iget v10, p0, Lorg/telegram/ui/ChatActivity$ThemeDelegate;->startServiceTextColor:I
 
     invoke-static {v10, v4, p1}, Landroidx/core/graphics/ColorUtils;->blendARGB(IIF)I
 
     move-result v4
 
-    .line 35579
+    .line 35607
     iget v10, p0, Lorg/telegram/ui/ChatActivity$ThemeDelegate;->startServiceLinkColor:I
 
     invoke-static {v10, v7, p1}, Landroidx/core/graphics/ColorUtils;->blendARGB(IIF)I
 
     move-result v7
 
-    .line 35580
+    .line 35608
     iget v10, p0, Lorg/telegram/ui/ChatActivity$ThemeDelegate;->startServiceButtonColor:I
 
     invoke-static {v10, v8, p1}, Landroidx/core/graphics/ColorUtils;->blendARGB(IIF)I
 
     move-result v8
 
-    .line 35581
+    .line 35609
     iget v10, p0, Lorg/telegram/ui/ChatActivity$ThemeDelegate;->startServiceIconColor:I
 
     invoke-static {v10, v5, p1}, Landroidx/core/graphics/ColorUtils;->blendARGB(IIF)I
@@ -2267,33 +2267,33 @@
     :cond_5
     if-eqz v0, :cond_6
 
-    .line 35583
+    .line 35611
     iget-boolean v10, p0, Lorg/telegram/ui/ChatActivity$ThemeDelegate;->drawServiceGradient:Z
 
     if-nez v10, :cond_6
 
-    .line 35584
+    .line 35612
     invoke-virtual {v0, v3}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 35585
+    .line 35613
     invoke-virtual {v1, v3}, Landroid/graphics/Paint;->setColor(I)V
 
     :cond_6
     const-string v3, "paintChatActionText"
 
-    .line 35590
+    .line 35618
     invoke-virtual {p0, v3}, Lorg/telegram/ui/ChatActivity$ThemeDelegate;->getPaint(Ljava/lang/String;)Landroid/graphics/Paint;
 
     move-result-object v10
 
     if-eqz v10, :cond_7
 
-    .line 35592
+    .line 35620
     check-cast v10, Landroid/text/TextPaint;
 
     iput v7, v10, Landroid/text/TextPaint;->linkColor:I
 
-    .line 35593
+    .line 35621
     invoke-virtual {p0, v3}, Lorg/telegram/ui/ChatActivity$ThemeDelegate;->getPaint(Ljava/lang/String;)Landroid/graphics/Paint;
 
     move-result-object v3
@@ -2302,7 +2302,7 @@
 
     const-string v3, "paintChatBotButton"
 
-    .line 35594
+    .line 35622
     invoke-virtual {p0, v3}, Lorg/telegram/ui/ChatActivity$ThemeDelegate;->getPaint(Ljava/lang/String;)Landroid/graphics/Paint;
 
     move-result-object v3
@@ -2312,7 +2312,7 @@
     :cond_7
     const-string v3, "drawableMsgStickerCheck"
 
-    .line 35597
+    .line 35625
     invoke-virtual {p0, v3}, Lorg/telegram/ui/ChatActivity$ThemeDelegate;->getDrawable(Ljava/lang/String;)Landroid/graphics/drawable/Drawable;
 
     move-result-object v3
@@ -2321,7 +2321,7 @@
 
     const-string v3, "drawableMsgStickerClock"
 
-    .line 35598
+    .line 35626
     invoke-virtual {p0, v3}, Lorg/telegram/ui/ChatActivity$ThemeDelegate;->getDrawable(Ljava/lang/String;)Landroid/graphics/drawable/Drawable;
 
     move-result-object v3
@@ -2330,7 +2330,7 @@
 
     const-string v3, "drawableMsgStickerHalfCheck"
 
-    .line 35599
+    .line 35627
     invoke-virtual {p0, v3}, Lorg/telegram/ui/ChatActivity$ThemeDelegate;->getDrawable(Ljava/lang/String;)Landroid/graphics/drawable/Drawable;
 
     move-result-object v3
@@ -2339,7 +2339,7 @@
 
     const-string v3, "drawableMsgStickerPinned"
 
-    .line 35600
+    .line 35628
     invoke-virtual {p0, v3}, Lorg/telegram/ui/ChatActivity$ThemeDelegate;->getDrawable(Ljava/lang/String;)Landroid/graphics/drawable/Drawable;
 
     move-result-object v3
@@ -2348,7 +2348,7 @@
 
     const-string v3, "drawableMsgStickerReplies"
 
-    .line 35601
+    .line 35629
     invoke-virtual {p0, v3}, Lorg/telegram/ui/ChatActivity$ThemeDelegate;->getDrawable(Ljava/lang/String;)Landroid/graphics/drawable/Drawable;
 
     move-result-object v3
@@ -2357,7 +2357,7 @@
 
     const-string v3, "drawableMsgStickerViews"
 
-    .line 35602
+    .line 35630
     invoke-virtual {p0, v3}, Lorg/telegram/ui/ChatActivity$ThemeDelegate;->getDrawable(Ljava/lang/String;)Landroid/graphics/drawable/Drawable;
 
     move-result-object v3
@@ -2366,7 +2366,7 @@
 
     const-string v3, "drawableBotInline"
 
-    .line 35604
+    .line 35632
     invoke-virtual {p0, v3}, Lorg/telegram/ui/ChatActivity$ThemeDelegate;->getDrawable(Ljava/lang/String;)Landroid/graphics/drawable/Drawable;
 
     move-result-object v3
@@ -2375,7 +2375,7 @@
 
     const-string v3, "drawableBotLink"
 
-    .line 35605
+    .line 35633
     invoke-virtual {p0, v3}, Lorg/telegram/ui/ChatActivity$ThemeDelegate;->getDrawable(Ljava/lang/String;)Landroid/graphics/drawable/Drawable;
 
     move-result-object v3
@@ -2384,7 +2384,7 @@
 
     const-string v3, "drawable_botInvite"
 
-    .line 35606
+    .line 35634
     invoke-virtual {p0, v3}, Lorg/telegram/ui/ChatActivity$ThemeDelegate;->getDrawable(Ljava/lang/String;)Landroid/graphics/drawable/Drawable;
 
     move-result-object v3
@@ -2393,7 +2393,7 @@
 
     const-string v3, "drawableCommentSticker"
 
-    .line 35607
+    .line 35635
     invoke-virtual {p0, v3}, Lorg/telegram/ui/ChatActivity$ThemeDelegate;->getDrawable(Ljava/lang/String;)Landroid/graphics/drawable/Drawable;
 
     move-result-object v3
@@ -2402,7 +2402,7 @@
 
     const-string v3, "drawableGoIcon"
 
-    .line 35608
+    .line 35636
     invoke-virtual {p0, v3}, Lorg/telegram/ui/ChatActivity$ThemeDelegate;->getDrawable(Ljava/lang/String;)Landroid/graphics/drawable/Drawable;
 
     move-result-object v3
@@ -2411,7 +2411,7 @@
 
     const-string v3, "drawableReplyIcon"
 
-    .line 35609
+    .line 35637
     invoke-virtual {p0, v3}, Lorg/telegram/ui/ChatActivity$ThemeDelegate;->getDrawable(Ljava/lang/String;)Landroid/graphics/drawable/Drawable;
 
     move-result-object v3
@@ -2420,14 +2420,14 @@
 
     const-string v3, "drawableShareIcon"
 
-    .line 35610
+    .line 35638
     invoke-virtual {p0, v3}, Lorg/telegram/ui/ChatActivity$ThemeDelegate;->getDrawable(Ljava/lang/String;)Landroid/graphics/drawable/Drawable;
 
     move-result-object v3
 
     invoke-static {v3, v5}, Lorg/telegram/ui/ActionBar/Theme;->setDrawableColor(Landroid/graphics/drawable/Drawable;I)V
 
-    .line 35612
+    .line 35640
     iget-object v3, p0, Lorg/telegram/ui/ChatActivity$ThemeDelegate;->serviceCanvas:Landroid/graphics/Canvas;
 
     if-eqz v3, :cond_b
@@ -2442,31 +2442,31 @@
 
     if-eqz v9, :cond_9
 
-    .line 35613
+    .line 35641
     iget-object v8, p0, Lorg/telegram/ui/ChatActivity$ThemeDelegate;->startServiceBitmap:Landroid/graphics/Bitmap;
 
     if-eqz v8, :cond_9
 
     const/4 v4, 0x0
 
-    .line 35614
+    .line 35642
     iput-boolean v4, p0, Lorg/telegram/ui/ChatActivity$ThemeDelegate;->useSourceShader:Z
 
-    .line 35615
+    .line 35643
     invoke-virtual {v3, v8, v7, v7, v5}, Landroid/graphics/Canvas;->drawBitmap(Landroid/graphics/Bitmap;FFLandroid/graphics/Paint;)V
 
-    .line 35616
+    .line 35644
     iget-object v3, p0, Lorg/telegram/ui/ChatActivity$ThemeDelegate;->paint:Landroid/graphics/Paint;
 
     const/high16 v4, 0x437f0000    # 255.0f
 
-    mul-float p1, p1, v4
+    mul-float/2addr p1, v4
 
     float-to-int p1, p1
 
     invoke-virtual {v3, p1}, Landroid/graphics/Paint;->setAlpha(I)V
 
-    .line 35617
+    .line 35645
     iget-object p1, p0, Lorg/telegram/ui/ChatActivity$ThemeDelegate;->serviceCanvas:Landroid/graphics/Canvas;
 
     iget-object v3, p0, Lorg/telegram/ui/ChatActivity$ThemeDelegate;->serviceBitmapSource:Landroid/graphics/Bitmap;
@@ -2477,12 +2477,12 @@
 
     if-eqz v0, :cond_8
 
-    .line 35619
+    .line 35647
     iget-object p1, p0, Lorg/telegram/ui/ChatActivity$ThemeDelegate;->serviceShader:Landroid/graphics/BitmapShader;
 
     invoke-virtual {v0, p1}, Landroid/graphics/Paint;->setShader(Landroid/graphics/Shader;)Landroid/graphics/Shader;
 
-    .line 35620
+    .line 35648
     iget-object p1, p0, Lorg/telegram/ui/ChatActivity$ThemeDelegate;->serviceShader:Landroid/graphics/BitmapShader;
 
     invoke-virtual {v1, p1}, Landroid/graphics/Paint;->setShader(Landroid/graphics/Shader;)Landroid/graphics/Shader;
@@ -2490,28 +2490,28 @@
     :cond_8
     if-eqz v2, :cond_b
 
-    .line 35623
+    .line 35651
     iget-object p1, p0, Lorg/telegram/ui/ChatActivity$ThemeDelegate;->serviceShader:Landroid/graphics/BitmapShader;
 
     invoke-virtual {v2, p1}, Landroid/graphics/Paint;->setShader(Landroid/graphics/Shader;)Landroid/graphics/Shader;
 
     goto :goto_4
 
-    .line 35626
+    .line 35654
     :cond_9
     iput-boolean v6, p0, Lorg/telegram/ui/ChatActivity$ThemeDelegate;->useSourceShader:Z
 
-    .line 35627
+    .line 35655
     invoke-virtual {v3, v4, v7, v7, v5}, Landroid/graphics/Canvas;->drawBitmap(Landroid/graphics/Bitmap;FFLandroid/graphics/Paint;)V
 
     if-eqz v0, :cond_a
 
-    .line 35629
+    .line 35657
     iget-object p1, p0, Lorg/telegram/ui/ChatActivity$ThemeDelegate;->serviceShaderSource:Landroid/graphics/BitmapShader;
 
     invoke-virtual {v0, p1}, Landroid/graphics/Paint;->setShader(Landroid/graphics/Shader;)Landroid/graphics/Shader;
 
-    .line 35630
+    .line 35658
     iget-object p1, p0, Lorg/telegram/ui/ChatActivity$ThemeDelegate;->serviceShaderSource:Landroid/graphics/BitmapShader;
 
     invoke-virtual {v1, p1}, Landroid/graphics/Paint;->setShader(Landroid/graphics/Shader;)Landroid/graphics/Shader;
@@ -2519,7 +2519,7 @@
     :cond_a
     if-eqz v2, :cond_b
 
-    .line 35633
+    .line 35661
     iget-object p1, p0, Lorg/telegram/ui/ChatActivity$ThemeDelegate;->serviceShaderSource:Landroid/graphics/BitmapShader;
 
     invoke-virtual {v2, p1}, Landroid/graphics/Paint;->setShader(Landroid/graphics/Shader;)Landroid/graphics/Shader;
@@ -2534,7 +2534,7 @@
 .method public applyServiceShaderMatrix(IIFF)V
     .locals 10
 
-    .line 35162
+    .line 35190
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$ThemeDelegate;->chatTheme:Lorg/telegram/ui/ActionBar/EmojiThemes;
 
     if-eqz v0, :cond_2
@@ -2549,13 +2549,13 @@
 
     goto :goto_0
 
-    .line 35165
+    .line 35193
     :cond_0
     iget-boolean v0, p0, Lorg/telegram/ui/ChatActivity$ThemeDelegate;->useSourceShader:Z
 
     if-eqz v0, :cond_1
 
-    .line 35166
+    .line 35194
     iget-object v3, p0, Lorg/telegram/ui/ChatActivity$ThemeDelegate;->serviceBitmapSource:Landroid/graphics/Bitmap;
 
     iget-object v4, p0, Lorg/telegram/ui/ChatActivity$ThemeDelegate;->serviceShaderSource:Landroid/graphics/BitmapShader;
@@ -2574,7 +2574,7 @@
 
     goto :goto_1
 
-    .line 35168
+    .line 35196
     :cond_1
     iget-object v3, p0, Lorg/telegram/ui/ChatActivity$ThemeDelegate;->actionMatrix:Landroid/graphics/Matrix;
 
@@ -2590,7 +2590,7 @@
 
     goto :goto_1
 
-    .line 35163
+    .line 35191
     :cond_2
     :goto_0
     invoke-static {p0, p1, p2, p3, p4}, Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider$-CC;->$default$applyServiceShaderMatrix(Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;IIFF)V
@@ -2610,7 +2610,7 @@
         }
     .end annotation
 
-    .line 35090
+    .line 35118
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$ThemeDelegate;->cachedThemes:Ljava/util/List;
 
     return-object v0
@@ -2619,12 +2619,12 @@
 .method public getColor(Ljava/lang/String;)Ljava/lang/Integer;
     .locals 2
 
-    .line 35099
+    .line 35127
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$ThemeDelegate;->chatTheme:Lorg/telegram/ui/ActionBar/EmojiThemes;
 
     if-nez v0, :cond_0
 
-    .line 35100
+    .line 35128
     invoke-static {p1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
 
     move-result p1
@@ -2635,13 +2635,13 @@
 
     return-object p1
 
-    .line 35102
+    .line 35130
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$ThemeDelegate;->animatingColors:Ljava/util/HashMap;
 
     if-eqz v0, :cond_1
 
-    .line 35103
+    .line 35131
     invoke-virtual {v0, p1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
@@ -2652,7 +2652,7 @@
 
     return-object v0
 
-    .line 35108
+    .line 35136
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$ThemeDelegate;->currentColors:Ljava/util/HashMap;
 
@@ -2666,7 +2666,7 @@
 
     const-string v1, "chat_outBubbleGradient"
 
-    .line 35110
+    .line 35138
     invoke-virtual {v1, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v1
@@ -2689,7 +2689,7 @@
 
     if-eqz v1, :cond_4
 
-    .line 35111
+    .line 35139
     :cond_2
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$ThemeDelegate;->currentColors:Ljava/util/HashMap;
 
@@ -2703,7 +2703,7 @@
 
     if-nez v0, :cond_3
 
-    .line 35113
+    .line 35141
     invoke-static {p1}, Lorg/telegram/ui/ActionBar/Theme;->getColorOrNull(Ljava/lang/String;)Ljava/lang/Integer;
 
     move-result-object v0
@@ -2711,7 +2711,7 @@
     :cond_3
     if-nez v0, :cond_4
 
-    .line 35116
+    .line 35144
     invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
 
     move-result v0
@@ -2723,14 +2723,14 @@
     :cond_4
     if-nez v0, :cond_5
 
-    .line 35120
+    .line 35148
     invoke-static {p1}, Lorg/telegram/ui/ActionBar/Theme;->getFallbackKey(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
     if-eqz v1, :cond_5
 
-    .line 35122
+    .line 35150
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$ThemeDelegate;->currentColors:Ljava/util/HashMap;
 
     invoke-virtual {v0, v1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -2742,12 +2742,12 @@
     :cond_5
     if-nez v0, :cond_6
 
-    .line 35127
+    .line 35155
     iget-object v1, p0, Lorg/telegram/ui/ChatActivity$ThemeDelegate;->chatTheme:Lorg/telegram/ui/ActionBar/EmojiThemes;
 
     if-eqz v1, :cond_6
 
-    .line 35128
+    .line 35156
     invoke-static {p1}, Lorg/telegram/ui/ActionBar/Theme;->getDefaultColor(Ljava/lang/String;)I
 
     move-result p1
@@ -2775,7 +2775,7 @@
 
     const/4 v0, 0x0
 
-    .line 35136
+    .line 35164
     invoke-virtual {p0, p1, v0}, Lorg/telegram/ui/ChatActivity$ThemeDelegate;->getCurrentColor(Ljava/lang/String;Z)Ljava/lang/Integer;
 
     move-result-object p1
@@ -2786,12 +2786,12 @@
 .method public getCurrentColor(Ljava/lang/String;Z)Ljava/lang/Integer;
     .locals 1
 
-    .line 35140
+    .line 35168
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$ThemeDelegate;->chatTheme:Lorg/telegram/ui/ActionBar/EmojiThemes;
 
     if-nez v0, :cond_0
 
-    .line 35141
+    .line 35169
     invoke-static {p1}, Lorg/telegram/ui/ActionBar/Theme;->getColorOrNull(Ljava/lang/String;)Ljava/lang/Integer;
 
     move-result-object p1
@@ -2803,12 +2803,12 @@
 
     if-nez p2, :cond_1
 
-    .line 35144
+    .line 35172
     iget-object p2, p0, Lorg/telegram/ui/ChatActivity$ThemeDelegate;->animatingColors:Ljava/util/HashMap;
 
     if-eqz p2, :cond_1
 
-    .line 35145
+    .line 35173
     invoke-virtual {p2, p1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p2
@@ -2820,7 +2820,7 @@
     :cond_1
     if-nez v0, :cond_2
 
-    .line 35148
+    .line 35176
     iget-object p2, p0, Lorg/telegram/ui/ChatActivity$ThemeDelegate;->currentColors:Ljava/util/HashMap;
 
     invoke-virtual {p2, p1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -2838,7 +2838,7 @@
 .method public getCurrentTheme()Lorg/telegram/ui/ActionBar/EmojiThemes;
     .locals 1
 
-    .line 35198
+    .line 35226
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$ThemeDelegate;->chatTheme:Lorg/telegram/ui/ActionBar/EmojiThemes;
 
     return-object v0
@@ -2847,7 +2847,7 @@
 .method public getDrawable(Ljava/lang/String;)Landroid/graphics/drawable/Drawable;
     .locals 1
 
-    .line 35185
+    .line 35213
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$ThemeDelegate;->currentDrawables:Ljava/util/HashMap;
 
     invoke-virtual {v0}, Ljava/util/HashMap;->isEmpty()Z
@@ -2876,7 +2876,7 @@
 .method public getPaint(Ljava/lang/String;)Landroid/graphics/Paint;
     .locals 1
 
-    .line 35190
+    .line 35218
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$ThemeDelegate;->chatTheme:Lorg/telegram/ui/ActionBar/EmojiThemes;
 
     if-eqz v0, :cond_0
@@ -2901,7 +2901,7 @@
 .method public getWallpaperDrawable()Landroid/graphics/drawable/Drawable;
     .locals 1
 
-    .line 35203
+    .line 35231
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$ThemeDelegate;->backgroundDrawable:Landroid/graphics/drawable/Drawable;
 
     if-eqz v0, :cond_0
@@ -2920,7 +2920,7 @@
 .method public hasGradientService()Z
     .locals 1
 
-    .line 35180
+    .line 35208
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$ThemeDelegate;->chatTheme:Lorg/telegram/ui/ActionBar/EmojiThemes;
 
     if-eqz v0, :cond_1
@@ -2948,9 +2948,9 @@
 .end method
 
 .method public isThemeChangeAvailable()Z
-    .locals 5
+    .locals 4
 
-    .line 35194
+    .line 35222
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$ThemeDelegate;->this$0:Lorg/telegram/ui/ChatActivity;
 
     iget-object v1, v0, Lorg/telegram/ui/ChatActivity;->currentChat:Lorg/telegram/tgnet/TLRPC$Chat;
@@ -2973,9 +2973,9 @@
 
     const-wide/16 v2, 0x0
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-ltz v4, :cond_0
+    if-ltz v0, :cond_0
 
     const/4 v0, 0x1
 
@@ -2991,7 +2991,7 @@
 .method public isWallpaperMotion()Z
     .locals 1
 
-    .line 35208
+    .line 35236
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$ThemeDelegate;->chatTheme:Lorg/telegram/ui/ActionBar/EmojiThemes;
 
     if-eqz v0, :cond_0
@@ -3012,12 +3012,12 @@
 .method public setAnimatedColor(Ljava/lang/String;I)V
     .locals 1
 
-    .line 35155
+    .line 35183
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$ThemeDelegate;->animatingColors:Ljava/util/HashMap;
 
     if-eqz v0, :cond_0
 
-    .line 35156
+    .line 35184
     invoke-static {p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object p2
@@ -3039,7 +3039,7 @@
         }
     .end annotation
 
-    .line 35094
+    .line 35122
     iput-object p1, p0, Lorg/telegram/ui/ChatActivity$ThemeDelegate;->cachedThemes:Ljava/util/List;
 
     return-void
@@ -3048,10 +3048,10 @@
 .method public setCurrentTheme(Lorg/telegram/ui/ActionBar/EmojiThemes;ZLjava/lang/Boolean;)V
     .locals 7
 
-    .line 35212
+    .line 35240
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$ThemeDelegate;->this$0:Lorg/telegram/ui/ChatActivity;
 
-    invoke-static {v0}, Lorg/telegram/ui/ChatActivity;->access$61200(Lorg/telegram/ui/ChatActivity;)Lorg/telegram/ui/ActionBar/INavigationLayout;
+    invoke-static {v0}, Lorg/telegram/ui/ChatActivity;->access$61300(Lorg/telegram/ui/ChatActivity;)Lorg/telegram/ui/ActionBar/INavigationLayout;
 
     move-result-object v0
 
@@ -3059,7 +3059,7 @@
 
     return-void
 
-    .line 35216
+    .line 35244
     :cond_0
     sget-boolean v0, Lorg/telegram/messenger/SharedConfig;->isChatThemesEnabled:Z
 
@@ -3070,7 +3070,7 @@
     :cond_1
     if-eqz p3, :cond_2
 
-    .line 35221
+    .line 35249
     invoke-virtual {p3}, Ljava/lang/Boolean;->booleanValue()Z
 
     move-result p3
@@ -3091,7 +3091,7 @@
 
     if-eqz p1, :cond_3
 
-    .line 35222
+    .line 35250
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/EmojiThemes;->getEmoticon()Ljava/lang/String;
 
     move-result-object v1
@@ -3101,7 +3101,7 @@
     :cond_3
     move-object v1, v0
 
-    .line 35223
+    .line 35251
     :goto_1
     iget-object v2, p0, Lorg/telegram/ui/ChatActivity$ThemeDelegate;->chatTheme:Lorg/telegram/ui/ActionBar/EmojiThemes;
 
@@ -3116,7 +3116,7 @@
     :cond_4
     move-object v2, v0
 
-    .line 35224
+    .line 35252
     :goto_2
     invoke-virtual {p0}, Lorg/telegram/ui/ChatActivity$ThemeDelegate;->isThemeChangeAvailable()Z
 
@@ -3136,13 +3136,13 @@
 
     goto/16 :goto_e
 
-    .line 35227
+    .line 35255
     :cond_5
     iput-boolean p3, p0, Lorg/telegram/ui/ChatActivity$ThemeDelegate;->isDark:Z
 
     if-eqz p3, :cond_6
 
-    .line 35229
+    .line 35257
     invoke-static {}, Lorg/telegram/ui/ActionBar/Theme;->getCurrentNightTheme()Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;
 
     move-result-object p3
@@ -3154,7 +3154,7 @@
 
     move-result-object p3
 
-    .line 35230
+    .line 35258
     :goto_3
     new-instance v1, Lorg/telegram/ui/ActionBar/INavigationLayout$ThemeAnimationSettings;
 
@@ -3168,7 +3168,7 @@
 
     invoke-direct {v1, p3, v2, v3, v4}, Lorg/telegram/ui/ActionBar/INavigationLayout$ThemeAnimationSettings;-><init>(Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;IZZ)V
 
-    .line 35232
+    .line 35260
     iget-object p3, p0, Lorg/telegram/ui/ChatActivity$ThemeDelegate;->chatTheme:Lorg/telegram/ui/ActionBar/EmojiThemes;
 
     const-string v2, "chat_serviceIcon"
@@ -3181,25 +3181,25 @@
 
     if-nez p3, :cond_b
 
-    .line 35233
+    .line 35261
     invoke-static {}, Lorg/telegram/ui/ActionBar/Theme;->getCachedWallpaperNonBlocking()Landroid/graphics/drawable/Drawable;
 
     move-result-object p3
 
-    .line 35234
+    .line 35262
     instance-of v6, p3, Lorg/telegram/ui/Components/MotionBackgroundDrawable;
 
     iput-boolean v6, p0, Lorg/telegram/ui/ChatActivity$ThemeDelegate;->drawServiceGradient:Z
 
-    .line 35235
+    .line 35263
     invoke-direct {p0, p3}, Lorg/telegram/ui/ChatActivity$ThemeDelegate;->initServiceMessageColors(Landroid/graphics/drawable/Drawable;)V
 
-    .line 35236
+    .line 35264
     iget-boolean p3, p0, Lorg/telegram/ui/ChatActivity$ThemeDelegate;->drawServiceGradient:Z
 
     if-eqz p3, :cond_7
 
-    const/4 p3, -0x1
+    move p3, v5
 
     goto :goto_4
 
@@ -3211,12 +3211,12 @@
     :goto_4
     iput p3, p0, Lorg/telegram/ui/ChatActivity$ThemeDelegate;->startServiceTextColor:I
 
-    .line 35237
+    .line 35265
     iget-boolean p3, p0, Lorg/telegram/ui/ChatActivity$ThemeDelegate;->drawServiceGradient:Z
 
     if-eqz p3, :cond_8
 
-    const/4 p3, -0x1
+    move p3, v5
 
     goto :goto_5
 
@@ -3228,12 +3228,12 @@
     :goto_5
     iput p3, p0, Lorg/telegram/ui/ChatActivity$ThemeDelegate;->startServiceLinkColor:I
 
-    .line 35238
+    .line 35266
     iget-boolean p3, p0, Lorg/telegram/ui/ChatActivity$ThemeDelegate;->drawServiceGradient:Z
 
     if-eqz p3, :cond_9
 
-    const/4 p3, -0x1
+    move p3, v5
 
     goto :goto_6
 
@@ -3245,12 +3245,12 @@
     :goto_6
     iput p3, p0, Lorg/telegram/ui/ChatActivity$ThemeDelegate;->startServiceButtonColor:I
 
-    .line 35239
+    .line 35267
     iget-boolean p3, p0, Lorg/telegram/ui/ChatActivity$ThemeDelegate;->drawServiceGradient:Z
 
     if-eqz p3, :cond_a
 
-    const/4 p3, -0x1
+    move p3, v5
 
     goto :goto_7
 
@@ -3264,13 +3264,13 @@
 
     goto :goto_8
 
-    .line 35240
+    .line 35268
     :cond_b
     iget-boolean p3, p0, Lorg/telegram/ui/ChatActivity$ThemeDelegate;->drawServiceGradient:Z
 
     if-eqz p3, :cond_c
 
-    .line 35241
+    .line 35269
     iget-object p3, p0, Lorg/telegram/ui/ChatActivity$ThemeDelegate;->backgroundDrawable:Landroid/graphics/drawable/Drawable;
 
     check-cast p3, Lorg/telegram/ui/Components/MotionBackgroundDrawable;
@@ -3281,21 +3281,21 @@
 
     iput-object p3, p0, Lorg/telegram/ui/ChatActivity$ThemeDelegate;->startServiceBitmap:Landroid/graphics/Bitmap;
 
-    .line 35243
+    .line 35271
     :cond_c
     :goto_8
     iget p3, p0, Lorg/telegram/ui/ChatActivity$ThemeDelegate;->currentServiceColor:I
 
     iput p3, p0, Lorg/telegram/ui/ChatActivity$ThemeDelegate;->startServiceColor:I
 
-    .line 35244
+    .line 35272
     iget-boolean p3, p0, Lorg/telegram/ui/ChatActivity$ThemeDelegate;->drawServiceGradient:Z
 
     const/4 v6, 0x1
 
     if-eqz p3, :cond_d
 
-    const/4 p3, -0x1
+    move p3, v5
 
     goto :goto_9
 
@@ -3307,12 +3307,12 @@
     :goto_9
     iput p3, p0, Lorg/telegram/ui/ChatActivity$ThemeDelegate;->startServiceTextColor:I
 
-    .line 35245
+    .line 35273
     iget-boolean p3, p0, Lorg/telegram/ui/ChatActivity$ThemeDelegate;->drawServiceGradient:Z
 
     if-eqz p3, :cond_e
 
-    const/4 p3, -0x1
+    move p3, v5
 
     goto :goto_a
 
@@ -3324,12 +3324,12 @@
     :goto_a
     iput p3, p0, Lorg/telegram/ui/ChatActivity$ThemeDelegate;->startServiceLinkColor:I
 
-    .line 35246
+    .line 35274
     iget-boolean p3, p0, Lorg/telegram/ui/ChatActivity$ThemeDelegate;->drawServiceGradient:Z
 
     if-eqz p3, :cond_f
 
-    const/4 p3, -0x1
+    move p3, v5
 
     goto :goto_b
 
@@ -3341,7 +3341,7 @@
     :goto_b
     iput p3, p0, Lorg/telegram/ui/ChatActivity$ThemeDelegate;->startServiceButtonColor:I
 
-    .line 35247
+    .line 35275
     iget-boolean p3, p0, Lorg/telegram/ui/ChatActivity$ThemeDelegate;->drawServiceGradient:Z
 
     if-eqz p3, :cond_10
@@ -3360,27 +3360,27 @@
 
     if-eqz p1, :cond_11
 
-    .line 35250
+    .line 35278
     iget-object v2, p0, Lorg/telegram/ui/ChatActivity$ThemeDelegate;->backgroundDrawable:Landroid/graphics/drawable/Drawable;
 
     invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->calcDrawableColor(Landroid/graphics/drawable/Drawable;)[I
 
     move-result-object v2
 
-    .line 35251
+    .line 35279
     aget v2, v2, p3
 
-    .line 35252
+    .line 35280
     invoke-direct {p0}, Lorg/telegram/ui/ChatActivity$ThemeDelegate;->initDrawables()V
 
-    .line 35253
+    .line 35281
     invoke-direct {p0}, Lorg/telegram/ui/ChatActivity$ThemeDelegate;->initPaints()V
 
-    .line 35256
+    .line 35284
     :cond_11
     iput-boolean p3, v1, Lorg/telegram/ui/ActionBar/INavigationLayout$ThemeAnimationSettings;->applyTheme:Z
 
-    .line 35257
+    .line 35285
     new-instance p3, Lorg/telegram/ui/ChatActivity$ThemeDelegate$$ExternalSyntheticLambda5;
 
     invoke-direct {p3, p0, p1, p2}, Lorg/telegram/ui/ChatActivity$ThemeDelegate$$ExternalSyntheticLambda5;-><init>(Lorg/telegram/ui/ChatActivity$ThemeDelegate;Lorg/telegram/ui/ActionBar/EmojiThemes;Z)V
@@ -3389,21 +3389,21 @@
 
     if-eqz p2, :cond_12
 
-    .line 35262
+    .line 35290
     new-instance p1, Lorg/telegram/ui/ChatActivity$ThemeDelegate$1;
 
     invoke-direct {p1, p0}, Lorg/telegram/ui/ChatActivity$ThemeDelegate$1;-><init>(Lorg/telegram/ui/ChatActivity$ThemeDelegate;)V
 
     iput-object p1, v1, Lorg/telegram/ui/ActionBar/INavigationLayout$ThemeAnimationSettings;->animationProgress:Lorg/telegram/ui/ActionBar/INavigationLayout$ThemeAnimationSettings$onAnimationProgress;
 
-    .line 35271
+    .line 35299
     new-instance p1, Lorg/telegram/ui/ChatActivity$ThemeDelegate$$ExternalSyntheticLambda4;
 
     invoke-direct {p1, p0}, Lorg/telegram/ui/ChatActivity$ThemeDelegate$$ExternalSyntheticLambda4;-><init>(Lorg/telegram/ui/ChatActivity$ThemeDelegate;)V
 
     iput-object p1, v1, Lorg/telegram/ui/ActionBar/INavigationLayout$ThemeAnimationSettings;->beforeAnimationRunnable:Ljava/lang/Runnable;
 
-    .line 35282
+    .line 35310
     new-instance p1, Lorg/telegram/ui/ChatActivity$ThemeDelegate$$ExternalSyntheticLambda3;
 
     invoke-direct {p1, p0}, Lorg/telegram/ui/ChatActivity$ThemeDelegate$$ExternalSyntheticLambda3;-><init>(Lorg/telegram/ui/ChatActivity$ThemeDelegate;)V
@@ -3412,7 +3412,7 @@
 
     goto :goto_d
 
-    .line 35289
+    .line 35317
     :cond_12
     iget-object p1, p0, Lorg/telegram/ui/ChatActivity$ThemeDelegate;->this$0:Lorg/telegram/ui/ChatActivity;
 
@@ -3420,7 +3420,7 @@
 
     if-eqz p1, :cond_13
 
-    .line 35290
+    .line 35318
     invoke-static {}, Lorg/telegram/ui/ActionBar/Theme;->getCachedWallpaper()Landroid/graphics/drawable/Drawable;
 
     move-result-object p2
@@ -3431,36 +3431,36 @@
 
     invoke-virtual {p1, p2, p3}, Lorg/telegram/ui/Components/SizeNotifierFrameLayout;->setBackgroundImage(Landroid/graphics/drawable/Drawable;Z)V
 
-    .line 35293
+    .line 35321
     :cond_13
     :goto_d
     iput-boolean v6, v1, Lorg/telegram/ui/ActionBar/INavigationLayout$ThemeAnimationSettings;->onlyTopFragment:Z
 
-    .line 35294
+    .line 35322
     iput-object p0, v1, Lorg/telegram/ui/ActionBar/INavigationLayout$ThemeAnimationSettings;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
     const-wide/16 p1, 0xfa
 
-    .line 35295
+    .line 35323
     iput-wide p1, v1, Lorg/telegram/ui/ActionBar/INavigationLayout$ThemeAnimationSettings;->duration:J
 
-    .line 35296
+    .line 35324
     iget-object p1, p0, Lorg/telegram/ui/ChatActivity$ThemeDelegate;->this$0:Lorg/telegram/ui/ChatActivity;
 
-    invoke-static {p1}, Lorg/telegram/ui/ChatActivity;->access$61400(Lorg/telegram/ui/ChatActivity;)Lorg/telegram/ui/ActionBar/INavigationLayout;
+    invoke-static {p1}, Lorg/telegram/ui/ChatActivity;->access$61500(Lorg/telegram/ui/ChatActivity;)Lorg/telegram/ui/ActionBar/INavigationLayout;
 
     move-result-object p1
 
     invoke-interface {p1, v1, v0}, Lorg/telegram/ui/ActionBar/INavigationLayout;->animateThemedValues(Lorg/telegram/ui/ActionBar/INavigationLayout$ThemeAnimationSettings;Ljava/lang/Runnable;)V
 
-    .line 35297
+    .line 35325
     iget-object p1, p0, Lorg/telegram/ui/ChatActivity$ThemeDelegate;->this$0:Lorg/telegram/ui/ChatActivity;
 
     iget-object p1, p1, Lorg/telegram/ui/ChatActivity;->onThemeChange:Ljava/lang/Runnable;
 
     if-eqz p1, :cond_14
 
-    .line 35298
+    .line 35326
     invoke-interface {p1}, Ljava/lang/Runnable;->run()V
 
     :cond_14

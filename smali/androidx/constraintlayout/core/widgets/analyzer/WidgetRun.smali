@@ -179,7 +179,7 @@
 
     int-to-float p1, p1
 
-    mul-float p2, p2, p1
+    mul-float/2addr p2, p1
 
     add-float/2addr p2, v2
 
@@ -239,7 +239,7 @@
 
     int-to-float p2, p2
 
-    mul-float p2, p2, v0
+    mul-float/2addr p2, v0
 
     add-float/2addr p2, v2
 
@@ -744,7 +744,7 @@
     .line 160
     iget p2, v0, Landroidx/constraintlayout/core/widgets/analyzer/DependencyNode;->value:I
 
-    const/high16 p3, 0x3f000000    # 0.5f
+    move p3, p4
 
     :cond_5
     sub-int/2addr p2, v1
@@ -765,7 +765,7 @@
 
     int-to-float p2, p2
 
-    mul-float p2, p2, p3
+    mul-float/2addr p2, p3
 
     add-float/2addr v0, p2
 

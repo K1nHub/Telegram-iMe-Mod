@@ -123,7 +123,7 @@
 
     if-eqz v4, :cond_0
 
-    const/4 v1, 0x1
+    move v1, v5
 
     :cond_0
     invoke-static {v0, v2, v1}, Lcom/smedialink/utils/extentions/common/BaseQuickAdapterExtKt;->setVisibleElseGone(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;IZ)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;

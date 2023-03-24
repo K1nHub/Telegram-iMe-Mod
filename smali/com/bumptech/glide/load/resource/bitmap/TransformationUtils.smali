@@ -209,7 +209,7 @@
 .end method
 
 .method public static centerCrop(Lcom/bumptech/glide/load/engine/bitmap_recycle/BitmapPool;Landroid/graphics/Bitmap;II)Landroid/graphics/Bitmap;
-    .locals 6
+    .locals 7
 
     .line 114
     invoke-virtual {p1}, Landroid/graphics/Bitmap;->getWidth()I
@@ -237,13 +237,13 @@
 
     move-result v1
 
-    mul-int v1, v1, p3
+    mul-int/2addr v1, p3
 
     invoke-virtual {p1}, Landroid/graphics/Bitmap;->getHeight()I
 
     move-result v2
 
-    mul-int v2, v2, p2
+    mul-int/2addr v2, p2
 
     const/4 v3, 0x0
 
@@ -271,15 +271,17 @@
 
     int-to-float v5, v5
 
-    mul-float v5, v5, v1
+    mul-float/2addr v5, v1
 
     sub-float/2addr v2, v5
 
-    mul-float v2, v2, v4
+    mul-float/2addr v2, v4
+
+    move v6, v3
 
     move v3, v2
 
-    const/4 v2, 0x0
+    move v2, v6
 
     goto :goto_0
 
@@ -304,11 +306,11 @@
 
     int-to-float v5, v5
 
-    mul-float v5, v5, v1
+    mul-float/2addr v5, v1
 
     sub-float/2addr v2, v5
 
-    mul-float v2, v2, v4
+    mul-float/2addr v2, v4
 
     .line 132
     :goto_0
@@ -441,9 +443,9 @@
 
     move-result v4
 
-    mul-float v2, v2, v4
+    mul-float/2addr v2, v4
 
-    mul-float v4, v4, v3
+    mul-float/2addr v4, v3
 
     sub-float v3, p3, v2
 
@@ -618,7 +620,7 @@
 
     int-to-float v3, v3
 
-    mul-float v3, v3, v0
+    mul-float/2addr v3, v0
 
     invoke-static {v3}, Ljava/lang/Math;->round(F)I
 
@@ -631,7 +633,7 @@
 
     int-to-float v4, v4
 
-    mul-float v4, v4, v0
+    mul-float/2addr v4, v0
 
     invoke-static {v4}, Ljava/lang/Math;->round(F)I
 
@@ -673,7 +675,7 @@
 
     int-to-float v3, v3
 
-    mul-float v3, v3, v0
+    mul-float/2addr v3, v0
 
     float-to-int v3, v3
 
@@ -684,7 +686,7 @@
 
     int-to-float v4, v4
 
-    mul-float v4, v4, v0
+    mul-float/2addr v4, v0
 
     float-to-int v4, v4
 

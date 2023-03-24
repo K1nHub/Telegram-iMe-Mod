@@ -180,7 +180,7 @@
 .end method
 
 .method private addUploadProgress(Ljava/lang/String;JF)V
-    .locals 7
+    .locals 6
 
     .line 453
     iget-object v0, p0, Lorg/telegram/messenger/SendMessagesHelper$ImportingStickers;->uploadProgresses:Ljava/util/HashMap;
@@ -288,9 +288,9 @@
 
     const-wide/16 v4, 0x0
 
-    cmpl-double v6, v2, v4
+    cmpl-double v4, v2, v4
 
-    if-nez v6, :cond_1
+    if-nez v4, :cond_1
 
     .line 464
     iput-wide v0, p0, Lorg/telegram/messenger/SendMessagesHelper$ImportingStickers;->estimatedUploadSpeed:D
@@ -300,11 +300,11 @@
     :cond_1
     const-wide v4, 0x3f847ae147ae147bL    # 0.01
 
-    mul-double v0, v0, v4
+    mul-double/2addr v0, v4
 
     const-wide v4, 0x3fefae147ae147aeL    # 0.99
 
-    mul-double v4, v4, v2
+    mul-double/2addr v4, v2
 
     add-double/2addr v0, v4
 
@@ -319,7 +319,7 @@
 
     const-wide/16 v2, 0x3e8
 
-    mul-long v0, v0, v2
+    mul-long/2addr v0, v2
 
     long-to-double v0, v0
 
@@ -355,7 +355,7 @@
 
     const/high16 p2, 0x42c80000    # 100.0f
 
-    mul-float p1, p1, p2
+    mul-float/2addr p1, p2
 
     float-to-int p1, p1
 
@@ -430,7 +430,7 @@
 
     move-result v0
 
-    const/4 v1, 0x0
+    move v1, v5
 
     :goto_0
     if-ge v1, v0, :cond_0

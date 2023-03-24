@@ -298,7 +298,7 @@
     goto :goto_0
 
     :cond_0
-    const/4 v10, 0x3
+    move v10, v12
 
     :goto_0
     invoke-virtual {v4, v10}, Landroid/widget/TextView;->setGravity(I)V
@@ -340,7 +340,7 @@
     goto :goto_1
 
     :cond_1
-    const/4 v8, 0x3
+    move v8, v12
 
     :goto_1
     or-int/lit8 v8, v8, 0x30
@@ -362,7 +362,7 @@
     goto :goto_2
 
     :cond_2
-    const/4 v8, 0x3
+    move v8, v12
 
     :goto_2
     invoke-static {v13, v13, v8}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(III)Landroid/widget/LinearLayout$LayoutParams;
@@ -423,7 +423,7 @@
     goto :goto_3
 
     :cond_3
-    const/16 v16, 0x3
+    move/from16 v16, v12
 
     :goto_3
     const/16 v17, 0x52
@@ -457,7 +457,7 @@
     goto :goto_4
 
     :cond_5
-    const/16 v18, 0x3
+    move/from16 v18, v12
 
     :goto_4
     const/16 v19, 0x0
@@ -808,7 +808,7 @@
     goto :goto_7
 
     :cond_9
-    const/4 v6, 0x3
+    move v6, v12
 
     :goto_7
     invoke-static {v13, v13, v6}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(III)Landroid/widget/LinearLayout$LayoutParams;
@@ -836,7 +836,7 @@
     goto :goto_8
 
     :cond_a
-    const/4 v11, 0x3
+    move v11, v12
 
     :goto_8
     invoke-virtual {v4, v11}, Landroid/widget/TextView;->setGravity(I)V
@@ -1556,12 +1556,12 @@
     if-nez p1, :cond_3
 
     :cond_2
-    const/4 p1, 0x1
+    move p1, v1
 
     goto :goto_0
 
     :cond_3
-    const/4 p1, 0x0
+    move p1, v3
 
     :goto_0
     if-nez p1, :cond_4
@@ -2029,7 +2029,7 @@
 
     :cond_9
     :goto_1
-    const/4 p1, 0x0
+    move p1, v0
 
     .line 7823
     :goto_2
@@ -3290,7 +3290,7 @@
     goto :goto_2
 
     :cond_4
-    const/4 v1, 0x0
+    move v1, v7
 
     .line 7579
     :goto_1
@@ -3318,7 +3318,7 @@
 
     iput-object v1, v0, Lorg/telegram/ui/PassportActivity$PhoneConfirmationView;->codeField:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
-    const/4 v1, 0x0
+    move v1, v7
 
     .line 7493
     :goto_3
@@ -3541,7 +3541,7 @@
     goto :goto_5
 
     :cond_7
-    const/4 v15, 0x0
+    move v15, v7
 
     :goto_5
     const/16 v16, 0x0
@@ -3600,12 +3600,12 @@
 
     if-eqz v8, :cond_9
 
-    const/4 v8, 0x0
+    move v8, v7
 
     goto :goto_6
 
     :cond_9
-    const/16 v8, 0x8
+    move v8, v6
 
     :goto_6
     invoke-virtual {v1, v8}, Landroid/view/View;->setVisibility(I)V
@@ -3914,12 +3914,12 @@
 
     if-ge v2, v10, :cond_15
 
-    const/4 v2, 0x0
+    move v2, v7
 
     goto :goto_a
 
     :cond_15
-    const/16 v2, 0x8
+    move v2, v6
 
     :goto_a
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setVisibility(I)V
@@ -3934,7 +3934,7 @@
     goto :goto_b
 
     :cond_16
-    const/4 v6, 0x0
+    move v6, v7
 
     :goto_b
     invoke-virtual {v1, v6}, Landroid/widget/TextView;->setVisibility(I)V
@@ -3984,12 +3984,12 @@
 
     if-ge v2, v10, :cond_18
 
-    const/4 v2, 0x0
+    move v2, v7
 
     goto :goto_c
 
     :cond_18
-    const/16 v2, 0x8
+    move v2, v6
 
     :goto_c
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setVisibility(I)V
@@ -4004,7 +4004,7 @@
     goto :goto_d
 
     :cond_19
-    const/4 v6, 0x0
+    move v6, v7
 
     :goto_d
     invoke-virtual {v1, v6}, Landroid/widget/TextView;->setVisibility(I)V

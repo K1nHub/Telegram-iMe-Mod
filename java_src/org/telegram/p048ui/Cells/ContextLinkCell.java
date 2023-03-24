@@ -17,7 +17,7 @@ import android.widget.FrameLayout;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import java.io.File;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3286R;
+import org.telegram.messenger.C3301R;
 import org.telegram.messenger.DownloadController;
 import org.telegram.messenger.FileLoader;
 import org.telegram.messenger.ImageLoader;
@@ -161,41 +161,42 @@ public class ContextLinkCell extends FrameLayout implements DownloadController.F
         setWillNotDraw(false);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:80:0x01de, code lost:
-        if (r0 == r40.currentPhotoObject) goto L39;
+    /* JADX WARN: Code restructure failed: missing block: B:79:0x01d9, code lost:
+        if (r0 == r40.currentPhotoObject) goto L38;
      */
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:106:0x023c  */
-    /* JADX WARN: Removed duplicated region for block: B:119:0x026b  */
-    /* JADX WARN: Removed duplicated region for block: B:120:0x0287  */
-    /* JADX WARN: Removed duplicated region for block: B:124:0x02a3  */
-    /* JADX WARN: Removed duplicated region for block: B:125:0x02aa  */
-    /* JADX WARN: Removed duplicated region for block: B:128:0x02b1  */
-    /* JADX WARN: Removed duplicated region for block: B:140:0x02db A[ADDED_TO_REGION] */
-    /* JADX WARN: Removed duplicated region for block: B:143:0x02e1  */
-    /* JADX WARN: Removed duplicated region for block: B:146:0x02eb  */
-    /* JADX WARN: Removed duplicated region for block: B:150:0x02fe A[ADDED_TO_REGION] */
-    /* JADX WARN: Removed duplicated region for block: B:154:0x0309  */
-    /* JADX WARN: Removed duplicated region for block: B:160:0x0317  */
-    /* JADX WARN: Removed duplicated region for block: B:170:0x039b  */
-    /* JADX WARN: Removed duplicated region for block: B:173:0x03a9  */
-    /* JADX WARN: Removed duplicated region for block: B:174:0x03ab  */
-    /* JADX WARN: Removed duplicated region for block: B:177:0x03b3  */
-    /* JADX WARN: Removed duplicated region for block: B:201:0x0489  */
-    /* JADX WARN: Removed duplicated region for block: B:219:0x0594  */
-    /* JADX WARN: Removed duplicated region for block: B:227:0x05b8  */
-    /* JADX WARN: Removed duplicated region for block: B:231:0x05f7  */
-    /* JADX WARN: Removed duplicated region for block: B:256:0x06c4  */
-    /* JADX WARN: Removed duplicated region for block: B:260:0x012d A[EXC_TOP_SPLITTER, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:271:? A[RETURN, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:54:0x016e  */
-    /* JADX WARN: Removed duplicated region for block: B:59:0x017c  */
-    /* JADX WARN: Removed duplicated region for block: B:75:0x01c6  */
-    /* JADX WARN: Removed duplicated region for block: B:85:0x01e8  */
-    /* JADX WARN: Type inference failed for: r5v2, types: [int, boolean] */
+    /* JADX WARN: Removed duplicated region for block: B:105:0x0237  */
+    /* JADX WARN: Removed duplicated region for block: B:118:0x0266  */
+    /* JADX WARN: Removed duplicated region for block: B:119:0x0282  */
+    /* JADX WARN: Removed duplicated region for block: B:123:0x029e  */
+    /* JADX WARN: Removed duplicated region for block: B:124:0x02a5  */
+    /* JADX WARN: Removed duplicated region for block: B:127:0x02ac  */
+    /* JADX WARN: Removed duplicated region for block: B:139:0x02d6 A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:142:0x02dc  */
+    /* JADX WARN: Removed duplicated region for block: B:145:0x02e6  */
+    /* JADX WARN: Removed duplicated region for block: B:149:0x02f9 A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:153:0x0304  */
+    /* JADX WARN: Removed duplicated region for block: B:159:0x0312  */
+    /* JADX WARN: Removed duplicated region for block: B:169:0x0396  */
+    /* JADX WARN: Removed duplicated region for block: B:172:0x03a4  */
+    /* JADX WARN: Removed duplicated region for block: B:173:0x03a6  */
+    /* JADX WARN: Removed duplicated region for block: B:176:0x03ae  */
+    /* JADX WARN: Removed duplicated region for block: B:200:0x0484  */
+    /* JADX WARN: Removed duplicated region for block: B:218:0x058f  */
+    /* JADX WARN: Removed duplicated region for block: B:226:0x05b3  */
+    /* JADX WARN: Removed duplicated region for block: B:230:0x05f2  */
+    /* JADX WARN: Removed duplicated region for block: B:255:0x06bf  */
+    /* JADX WARN: Removed duplicated region for block: B:257:0x0127 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:270:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:54:0x0168  */
+    /* JADX WARN: Removed duplicated region for block: B:58:0x0177  */
+    /* JADX WARN: Removed duplicated region for block: B:74:0x01c1  */
+    /* JADX WARN: Removed duplicated region for block: B:84:0x01e3  */
+    /* JADX WARN: Type inference failed for: r5v1 */
+    /* JADX WARN: Type inference failed for: r5v2, types: [boolean, int] */
+    /* JADX WARN: Type inference failed for: r5v20 */
+    /* JADX WARN: Type inference failed for: r5v21 */
     /* JADX WARN: Type inference failed for: r5v22 */
-    /* JADX WARN: Type inference failed for: r5v23 */
-    /* JADX WARN: Type inference failed for: r5v24 */
     @Override // android.widget.FrameLayout, android.view.View
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -203,7 +204,7 @@ public class ContextLinkCell extends FrameLayout implements DownloadController.F
     */
     protected void onMeasure(int r41, int r42) {
         /*
-            Method dump skipped, instructions count: 1744
+            Method dump skipped, instructions count: 1739
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: org.telegram.p048ui.Cells.ContextLinkCell.onMeasure(int, int):void");
@@ -239,7 +240,7 @@ public class ContextLinkCell extends FrameLayout implements DownloadController.F
         if (i == 3 || i == 5) {
             TLRPC$TL_message tLRPC$TL_message = new TLRPC$TL_message();
             tLRPC$TL_message.out = true;
-            tLRPC$TL_message.f1523id = -Utilities.random.nextInt();
+            tLRPC$TL_message.f1524id = -Utilities.random.nextInt();
             tLRPC$TL_message.peer_id = new TLRPC$TL_peerUser();
             TLRPC$TL_peerUser tLRPC$TL_peerUser = new TLRPC$TL_peerUser();
             tLRPC$TL_message.from_id = tLRPC$TL_peerUser;
@@ -263,7 +264,7 @@ public class ContextLinkCell extends FrameLayout implements DownloadController.F
             } else {
                 String httpUrlExtension = ImageLoader.getHttpUrlExtension(this.inlineResult.content.url, this.documentAttachType == 5 ? "mp3" : "ogg");
                 TLRPC$Document tLRPC$Document3 = tLRPC$TL_message.media.document;
-                tLRPC$Document3.f1507id = 0L;
+                tLRPC$Document3.f1508id = 0L;
                 tLRPC$Document3.access_hash = 0L;
                 tLRPC$Document3.date = tLRPC$TL_message.date;
                 tLRPC$Document3.mime_type = "audio/" + httpUrlExtension;
@@ -689,7 +690,7 @@ public class ContextLinkCell extends FrameLayout implements DownloadController.F
             int i = this.resolveFileNameId;
             this.resolveFileNameId = i + 1;
             this.resolveFileNameId = i;
-            Utilities.searchQueue.postRunnable(new RunnableC36261(i, z));
+            Utilities.searchQueue.postRunnable(new RunnableC36411(i, z));
             this.radialProgress.setIcon(4, z, false);
         } else if (TextUtils.isEmpty(str)) {
             this.buttonState = -1;
@@ -745,11 +746,11 @@ public class ContextLinkCell extends FrameLayout implements DownloadController.F
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: org.telegram.ui.Cells.ContextLinkCell$1 */
     /* loaded from: classes5.dex */
-    public class RunnableC36261 implements Runnable {
+    public class RunnableC36411 implements Runnable {
         final /* synthetic */ boolean val$ifSame;
         final /* synthetic */ int val$localId;
 
-        RunnableC36261(int i, boolean z) {
+        RunnableC36411(int i, boolean z) {
             this.val$localId = i;
             this.val$ifSame = z;
         }
@@ -762,10 +763,10 @@ public class ContextLinkCell extends FrameLayout implements DownloadController.F
         */
         public void run() {
             /*
-                Method dump skipped, instructions count: 593
+                Method dump skipped, instructions count: 592
                 To view this dump add '--comments-level debug' option
             */
-            throw new UnsupportedOperationException("Method not decompiled: org.telegram.p048ui.Cells.ContextLinkCell.RunnableC36261.run():void");
+            throw new UnsupportedOperationException("Method not decompiled: org.telegram.p048ui.Cells.ContextLinkCell.RunnableC36411.run():void");
         }
 
         /* JADX INFO: Access modifiers changed from: private */
@@ -828,28 +829,28 @@ public class ContextLinkCell extends FrameLayout implements DownloadController.F
         StringBuilder sb = new StringBuilder();
         switch (this.documentAttachType) {
             case 1:
-                sb.append(LocaleController.getString("AttachDocument", C3286R.string.AttachDocument));
+                sb.append(LocaleController.getString("AttachDocument", C3301R.string.AttachDocument));
                 break;
             case 2:
-                sb.append(LocaleController.getString("AttachGif", C3286R.string.AttachGif));
+                sb.append(LocaleController.getString("AttachGif", C3301R.string.AttachGif));
                 break;
             case 3:
-                sb.append(LocaleController.getString("AttachAudio", C3286R.string.AttachAudio));
+                sb.append(LocaleController.getString("AttachAudio", C3301R.string.AttachAudio));
                 break;
             case 4:
-                sb.append(LocaleController.getString("AttachVideo", C3286R.string.AttachVideo));
+                sb.append(LocaleController.getString("AttachVideo", C3301R.string.AttachVideo));
                 break;
             case 5:
-                sb.append(LocaleController.getString("AttachMusic", C3286R.string.AttachMusic));
+                sb.append(LocaleController.getString("AttachMusic", C3301R.string.AttachMusic));
                 break;
             case 6:
-                sb.append(LocaleController.getString("AttachSticker", C3286R.string.AttachSticker));
+                sb.append(LocaleController.getString("AttachSticker", C3301R.string.AttachSticker));
                 break;
             case 7:
-                sb.append(LocaleController.getString("AttachPhoto", C3286R.string.AttachPhoto));
+                sb.append(LocaleController.getString("AttachPhoto", C3301R.string.AttachPhoto));
                 break;
             case 8:
-                sb.append(LocaleController.getString("AttachLocation", C3286R.string.AttachLocation));
+                sb.append(LocaleController.getString("AttachLocation", C3301R.string.AttachLocation));
                 break;
         }
         StaticLayout staticLayout = this.titleLayout;
@@ -858,7 +859,7 @@ public class ContextLinkCell extends FrameLayout implements DownloadController.F
         boolean z2 = (staticLayout2 == null || TextUtils.isEmpty(staticLayout2.getText())) ? false : true;
         if (this.documentAttachType == 5 && z && z2) {
             sb.append(", ");
-            sb.append(LocaleController.formatString("AccDescrMusicInfo", C3286R.string.AccDescrMusicInfo, this.descriptionLayout.getText(), this.titleLayout.getText()));
+            sb.append(LocaleController.formatString("AccDescrMusicInfo", C3301R.string.AccDescrMusicInfo, this.descriptionLayout.getText(), this.titleLayout.getText()));
         } else {
             if (z) {
                 if (sb.length() > 0) {

@@ -61,15 +61,15 @@ public class CircularProgressDrawable extends Drawable {
     }
 
     public static void getSegments(float f, float[] fArr) {
+        int i;
         float f2 = (1520.0f * f) / 5400.0f;
         fArr[0] = Math.max((float) BitmapDescriptorFactory.HUE_RED, f2 - 20.0f);
         fArr[1] = f2;
-        for (int i = 0; i < 4; i++) {
+        for (int i2 = 0; i2 < 4; i2++) {
             float f3 = fArr[1];
             FastOutSlowInInterpolator fastOutSlowInInterpolator = interpolator;
-            int i2 = i * 1350;
-            fArr[1] = f3 + (fastOutSlowInInterpolator.getInterpolation((f - i2) / 667.0f) * 250.0f);
-            fArr[0] = fArr[0] + (fastOutSlowInInterpolator.getInterpolation((f - (i2 + 667)) / 667.0f) * 250.0f);
+            fArr[1] = f3 + (fastOutSlowInInterpolator.getInterpolation((f - (i2 * 1350)) / 667.0f) * 250.0f);
+            fArr[0] = fArr[0] + (fastOutSlowInInterpolator.getInterpolation((f - (i + 667)) / 667.0f) * 250.0f);
         }
     }
 

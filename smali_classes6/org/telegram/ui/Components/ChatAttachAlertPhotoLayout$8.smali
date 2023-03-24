@@ -51,7 +51,7 @@
 
     const/high16 v2, 0x43020000    # 130.0f
 
-    mul-float v1, v1, v2
+    mul-float/2addr v1, v2
 
     const/high16 v2, 0x42fa0000    # 125.0f
 

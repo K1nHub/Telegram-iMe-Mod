@@ -78,12 +78,12 @@
 
     if-eqz v0, :cond_0
 
-    const/4 v3, 0x5
+    move v3, v1
 
     goto :goto_0
 
     :cond_0
-    const/4 v3, 0x3
+    move v3, v2
 
     :goto_0
     or-int/lit8 v6, v3, 0x30
@@ -94,24 +94,24 @@
 
     if-eqz v0, :cond_1
 
-    const/4 v7, 0x0
+    move v7, v3
 
     goto :goto_1
 
     :cond_1
-    const/16 v7, 0x12
+    move v7, v4
 
     :goto_1
     const/16 v8, 0xe
 
     if-eqz v0, :cond_2
 
-    const/16 v9, 0x12
+    move v9, v4
 
     goto :goto_2
 
     :cond_2
-    const/4 v9, 0x0
+    move v9, v3
 
     :goto_2
     const/4 v10, 0x0
@@ -173,12 +173,12 @@
 
     if-eqz v0, :cond_3
 
-    const/4 v0, 0x5
+    move v0, v1
 
     goto :goto_3
 
     :cond_3
-    const/4 v0, 0x3
+    move v0, v2
 
     :goto_3
     or-int/lit8 v0, v0, 0x10
@@ -196,12 +196,12 @@
 
     if-eqz v0, :cond_4
 
-    const/4 v6, 0x5
+    move v6, v1
 
     goto :goto_4
 
     :cond_4
-    const/4 v6, 0x3
+    move v6, v2
 
     :goto_4
     or-int/lit8 v6, v6, 0x30
@@ -212,24 +212,24 @@
 
     if-eqz v0, :cond_5
 
-    const/16 v7, 0x15
+    move v7, v11
 
     goto :goto_5
 
     :cond_5
-    const/16 v7, 0x33
+    move v7, v12
 
     :goto_5
     const/16 v8, 0xd
 
     if-eqz v0, :cond_6
 
-    const/16 v9, 0x33
+    move v9, v12
 
     goto :goto_6
 
     :cond_6
-    const/16 v9, 0x15
+    move v9, v11
 
     :goto_6
     const/4 v10, 0x0
@@ -270,12 +270,12 @@
 
     if-eqz p2, :cond_7
 
-    const/4 p2, 0x5
+    move p2, v1
 
     goto :goto_7
 
     :cond_7
-    const/4 p2, 0x3
+    move p2, v2
 
     :goto_7
     or-int/lit8 p2, p2, 0x10
@@ -303,31 +303,31 @@
     goto :goto_8
 
     :cond_8
-    const/4 v1, 0x3
+    move v1, v2
 
     :goto_8
     or-int/lit8 v5, v1, 0x30
 
     if-eqz p2, :cond_9
 
-    const/16 v6, 0x15
+    move v6, v11
 
     goto :goto_9
 
     :cond_9
-    const/16 v6, 0x33
+    move v6, v12
 
     :goto_9
     const/16 v7, 0x25
 
     if-eqz p2, :cond_a
 
-    const/16 v8, 0x33
+    move v8, v12
 
     goto :goto_a
 
     :cond_a
-    const/16 v8, 0x15
+    move v8, v11
 
     :goto_a
     const/4 v9, 0x0

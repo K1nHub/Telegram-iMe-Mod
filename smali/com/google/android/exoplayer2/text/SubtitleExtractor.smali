@@ -430,7 +430,7 @@
 .end method
 
 .method private skipInput(Lcom/google/android/exoplayer2/extractor/ExtractorInput;)Z
-    .locals 5
+    .locals 4
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -444,9 +444,9 @@
 
     const-wide/16 v2, -0x1
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-eqz v4, :cond_0
+    if-eqz v0, :cond_0
 
     .line 192
     invoke-interface {p1}, Lcom/google/android/exoplayer2/extractor/ExtractorInput;->getLength()J
@@ -510,12 +510,12 @@
 
     if-ne v0, v1, :cond_0
 
-    const/4 v0, 0x1
+    move v0, v3
 
     goto :goto_0
 
     :cond_0
-    const/4 v0, 0x0
+    move v0, v2
 
     :goto_0
     invoke-static {v0}, Lcom/google/android/exoplayer2/util/Assertions;->checkState(Z)V
@@ -525,11 +525,11 @@
 
     const-wide v4, -0x7fffffffffffffffL    # -4.9E-324
 
-    cmp-long v6, v0, v4
+    cmp-long v4, v0, v4
 
-    if-nez v6, :cond_1
+    if-nez v4, :cond_1
 
-    const/4 v0, 0x0
+    move v0, v2
 
     goto :goto_1
 
@@ -628,12 +628,12 @@
 
     if-nez v0, :cond_0
 
-    const/4 v0, 0x1
+    move v0, v1
 
     goto :goto_0
 
     :cond_0
-    const/4 v0, 0x0
+    move v0, v2
 
     :goto_0
     invoke-static {v0}, Lcom/google/android/exoplayer2/util/Assertions;->checkState(Z)V
@@ -710,12 +710,12 @@
 
     if-eq p2, v2, :cond_0
 
-    const/4 p2, 0x1
+    move p2, v0
 
     goto :goto_0
 
     :cond_0
-    const/4 p2, 0x0
+    move p2, v1
 
     :goto_0
     invoke-static {p2}, Lcom/google/android/exoplayer2/util/Assertions;->checkState(Z)V
@@ -862,7 +862,7 @@
 
     if-eq p1, v0, :cond_0
 
-    const/4 p1, 0x1
+    move p1, p2
 
     goto :goto_0
 

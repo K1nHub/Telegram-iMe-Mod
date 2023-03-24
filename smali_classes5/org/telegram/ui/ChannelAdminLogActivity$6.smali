@@ -206,7 +206,7 @@
 
     if-ltz p2, :cond_5
 
-    const/4 v6, 0x0
+    move v6, v2
 
     :cond_3
     const/16 v7, 0x14

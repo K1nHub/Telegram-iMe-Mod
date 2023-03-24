@@ -62,7 +62,7 @@
 
     div-float/2addr v2, v4
 
-    mul-float v3, v3, v2
+    mul-float/2addr v3, v2
 
     .line 26
     sget v4, Lorg/telegram/ui/Charts/BaseChartView;->HORIZONTAL_PADDING:F
@@ -71,7 +71,7 @@
 
     const/4 v4, 0x0
 
-    const/4 v5, 0x0
+    move v5, v4
 
     .line 29
     :goto_0
@@ -107,7 +107,7 @@
 
     move/from16 v17, v2
 
-    const/4 v6, 0x0
+    move v6, v4
 
     goto/16 :goto_a
 
@@ -125,7 +125,7 @@
 
     if-ge v9, v10, :cond_1
 
-    const/4 v7, 0x0
+    move v7, v8
 
     goto :goto_1
 
@@ -133,7 +133,7 @@
     :cond_1
     aget v7, v7, v11
 
-    mul-float v7, v7, v2
+    mul-float/2addr v7, v2
 
     .line 41
     :goto_1
@@ -181,9 +181,9 @@
 
     move-result v7
 
-    const/4 v13, 0x1
+    move v14, v4
 
-    const/4 v14, 0x0
+    move v13, v11
 
     :goto_2
     const/high16 v15, 0x40000000    # 2.0f
@@ -207,7 +207,7 @@
 
     aget v8, v8, v12
 
-    mul-float v8, v8, v2
+    mul-float/2addr v8, v2
 
     sub-float/2addr v8, v3
 
@@ -266,7 +266,7 @@
 
     sub-float/2addr v2, v10
 
-    mul-float v4, v4, v2
+    mul-float/2addr v4, v2
 
     sub-float/2addr v11, v4
 
@@ -385,7 +385,7 @@
     sub-float v8, v4, v8
 
     :goto_4
-    mul-float v7, v7, v15
+    mul-float/2addr v7, v15
 
     add-float/2addr v7, v4
 
@@ -469,9 +469,9 @@
 
     iget v8, v6, Lorg/telegram/ui/Charts/view_data/LineViewData;->alpha:F
 
-    mul-float v8, v8, v7
+    mul-float/2addr v8, v7
 
-    mul-float v8, v8, v4
+    mul-float/2addr v8, v4
 
     float-to-int v4, v8
 
@@ -538,9 +538,9 @@
     :goto_a
     add-int/lit8 v5, v5, 0x1
 
-    move/from16 v2, v17
+    move v4, v6
 
-    const/4 v4, 0x0
+    move/from16 v2, v17
 
     goto/16 :goto_0
 
@@ -571,7 +571,7 @@
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_0
     if-ge v2, v0, :cond_a
@@ -623,9 +623,9 @@
 
     invoke-virtual {v7}, Landroid/graphics/Path;->reset()V
 
-    const/4 v7, 0x0
+    move v7, v1
 
-    const/4 v8, 0x0
+    move v8, v7
 
     :goto_1
     if-ge v7, v4, :cond_7
@@ -647,7 +647,7 @@
 
     iget v11, p0, Lorg/telegram/ui/Charts/BaseChartView;->pickerWidth:F
 
-    mul-float v10, v10, v11
+    mul-float/2addr v10, v11
 
     .line 131
     sget-boolean v11, Lorg/telegram/ui/Charts/BaseChartView;->ANIMATE_PICKER_SIZES:Z
@@ -697,7 +697,7 @@
 
     int-to-float v11, v11
 
-    mul-float v9, v9, v11
+    mul-float/2addr v9, v11
 
     .line 136
     sget-boolean v11, Lorg/telegram/ui/Charts/BaseChartView;->USE_LINES:Z
@@ -791,7 +791,7 @@
 
     iget v6, v3, Lorg/telegram/ui/Charts/view_data/LineViewData;->alpha:F
 
-    mul-float v6, v6, v5
+    mul-float/2addr v6, v5
 
     float-to-int v5, v6
 

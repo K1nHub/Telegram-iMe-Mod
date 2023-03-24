@@ -349,9 +349,9 @@
 
     const-wide v3, 0x7fffffffffffffffL
 
-    cmp-long v5, p8, v3
+    cmp-long v3, p8, v3
 
-    if-nez v5, :cond_0
+    if-nez v3, :cond_0
 
     move-wide/from16 v3, p10
 
@@ -395,9 +395,9 @@
 
     const-wide/16 v3, -0x1
 
-    cmp-long v5, p15, v3
+    cmp-long v3, p15, v3
 
-    if-eqz v5, :cond_1
+    if-eqz v3, :cond_1
 
     move-wide/from16 v1, p15
 
@@ -483,13 +483,13 @@
 .end method
 
 .method private static zzf(J)Ljava/lang/String;
-    .locals 3
+    .locals 2
 
     const-wide v0, 0x7fffffffffffffffL
 
-    cmp-long v2, p0, v0
+    cmp-long v0, p0, v0
 
-    if-nez v2, :cond_0
+    if-nez v0, :cond_0
 
     const-string p0, "\u221e"
 
@@ -673,7 +673,7 @@
 .end method
 
 .method public getExpirationTime()J
-    .locals 7
+    .locals 6
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -694,9 +694,9 @@
 
     const-wide/16 v2, 0x0
 
-    cmp-long v6, v0, v2
+    cmp-long v0, v0, v2
 
-    if-gez v6, :cond_0
+    if-gez v0, :cond_0
 
     const-wide v0, 0x7fffffffffffffffL
 
@@ -887,15 +887,15 @@
 .end method
 
 .method public isBatched()Z
-    .locals 6
+    .locals 5
 
     iget-wide v0, p0, Lcom/google/android/gms/location/LocationRequest;->zzd:J
 
     const-wide/16 v2, 0x0
 
-    cmp-long v4, v0, v2
+    cmp-long v2, v0, v2
 
-    if-lez v4, :cond_0
+    if-lez v2, :cond_0
 
     const/4 v2, 0x1
 
@@ -903,9 +903,9 @@
 
     iget-wide v3, p0, Lcom/google/android/gms/location/LocationRequest;->zzb:J
 
-    cmp-long v5, v0, v3
+    cmp-long v0, v0, v3
 
-    if-ltz v5, :cond_0
+    if-ltz v0, :cond_0
 
     return v2
 
@@ -953,15 +953,15 @@
 .end method
 
 .method public setExpirationDuration(J)Lcom/google/android/gms/location/LocationRequest;
-    .locals 3
+    .locals 2
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
     const-wide/16 v0, 0x0
 
-    cmp-long v2, p1, v0
+    cmp-long v0, p1, v0
 
-    if-lez v2, :cond_0
+    if-lez v0, :cond_0
 
     const/4 v0, 0x1
 
@@ -1005,41 +1005,41 @@
 .end method
 
 .method public setFastestInterval(J)Lcom/google/android/gms/location/LocationRequest;
-    .locals 5
+    .locals 4
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
-    const/4 v0, 0x1
+    const-wide/16 v0, 0x0
 
-    const/4 v1, 0x0
+    cmp-long v0, p1, v0
 
-    const-wide/16 v2, 0x0
+    const/4 v1, 0x1
 
-    cmp-long v4, p1, v2
+    const/4 v2, 0x0
 
-    if-ltz v4, :cond_0
+    if-ltz v0, :cond_0
 
-    const/4 v2, 0x1
+    move v0, v1
 
     goto :goto_0
 
     :cond_0
-    const/4 v2, 0x0
+    move v0, v2
 
     :goto_0
-    new-array v0, v0, [Ljava/lang/Object;
+    new-array v1, v1, [Ljava/lang/Object;
 
     .line 1
     invoke-static {p1, p2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object v3
 
-    aput-object v3, v0, v1
+    aput-object v3, v1, v2
 
-    const-string v1, "illegal fastest interval: %d"
+    const-string v2, "illegal fastest interval: %d"
 
     .line 2
-    invoke-static {v2, v1, v0}, Lcom/google/android/gms/common/internal/Preconditions;->checkArgument(ZLjava/lang/String;[Ljava/lang/Object;)V
+    invoke-static {v0, v2, v1}, Lcom/google/android/gms/common/internal/Preconditions;->checkArgument(ZLjava/lang/String;[Ljava/lang/Object;)V
 
     iput-wide p1, p0, Lcom/google/android/gms/location/LocationRequest;->zzc:J
 
@@ -1047,15 +1047,15 @@
 .end method
 
 .method public setInterval(J)Lcom/google/android/gms/location/LocationRequest;
-    .locals 9
+    .locals 8
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
     const-wide/16 v0, 0x0
 
-    cmp-long v2, p1, v0
+    cmp-long v0, p1, v0
 
-    if-ltz v2, :cond_0
+    if-ltz v0, :cond_0
 
     const/4 v0, 0x1
 
@@ -1078,9 +1078,9 @@
 
     div-long v6, v2, v4
 
-    cmp-long v8, v0, v6
+    cmp-long v0, v0, v6
 
-    if-nez v8, :cond_1
+    if-nez v0, :cond_1
 
     div-long v0, p1, v4
 
@@ -1089,9 +1089,9 @@
     :cond_1
     iget-wide v0, p0, Lcom/google/android/gms/location/LocationRequest;->zzi:J
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-nez v4, :cond_2
+    if-nez v0, :cond_2
 
     iput-wide p1, p0, Lcom/google/android/gms/location/LocationRequest;->zzi:J
 
@@ -1102,41 +1102,41 @@
 .end method
 
 .method public setMaxWaitTime(J)Lcom/google/android/gms/location/LocationRequest;
-    .locals 5
+    .locals 4
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
-    const/4 v0, 0x1
+    const-wide/16 v0, 0x0
 
-    const/4 v1, 0x0
+    cmp-long v0, p1, v0
 
-    const-wide/16 v2, 0x0
+    const/4 v1, 0x1
 
-    cmp-long v4, p1, v2
+    const/4 v2, 0x0
 
-    if-ltz v4, :cond_0
+    if-ltz v0, :cond_0
 
-    const/4 v2, 0x1
+    move v0, v1
 
     goto :goto_0
 
     :cond_0
-    const/4 v2, 0x0
+    move v0, v2
 
     :goto_0
-    new-array v0, v0, [Ljava/lang/Object;
+    new-array v1, v1, [Ljava/lang/Object;
 
     .line 1
     invoke-static {p1, p2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object v3
 
-    aput-object v3, v0, v1
+    aput-object v3, v1, v2
 
-    const-string v1, "illegal max wait time: %d"
+    const-string v2, "illegal max wait time: %d"
 
     .line 2
-    invoke-static {v2, v1, v0}, Lcom/google/android/gms/common/internal/Preconditions;->checkArgument(ZLjava/lang/String;[Ljava/lang/Object;)V
+    invoke-static {v0, v2, v1}, Lcom/google/android/gms/common/internal/Preconditions;->checkArgument(ZLjava/lang/String;[Ljava/lang/Object;)V
 
     iput-wide p1, p0, Lcom/google/android/gms/location/LocationRequest;->zzd:J
 
@@ -1330,9 +1330,9 @@
 
     iget-wide v3, p0, Lcom/google/android/gms/location/LocationRequest;->zzb:J
 
-    cmp-long v5, v1, v3
+    cmp-long v1, v1, v3
 
-    if-eqz v5, :cond_3
+    if-eqz v1, :cond_3
 
     :cond_2
     const-string v1, ", minUpdateInterval="
@@ -1355,9 +1355,9 @@
 
     const-wide/16 v3, 0x0
 
-    cmpl-double v5, v1, v3
+    cmpl-double v1, v1, v3
 
-    if-lez v5, :cond_4
+    if-lez v1, :cond_4
 
     const-string v1, ", minUpdateDistance="
 

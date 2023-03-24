@@ -44,35 +44,35 @@
 .method constructor <init>(Lcom/smedialink/ui/wallet/home/v2/details/WalletTokenDetailsView$$State;ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ZLcom/smedialink/model/staking/StakingProgrammeStatus;)V
     .locals 1
 
-    .line 611
+    .line 627
     const-class p1, Lmoxy/viewstate/strategy/AddToEndSingleStrategy;
 
     const-string v0, "setupStakingDetailsScreen"
 
     invoke-direct {p0, v0, p1}, Lmoxy/viewstate/ViewCommand;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
 
-    .line 613
+    .line 629
     iput p2, p0, Lcom/smedialink/ui/wallet/home/v2/details/WalletTokenDetailsView$$State$SetupStakingDetailsScreenCommand;->logoImageResId:I
 
-    .line 614
+    .line 630
     iput-object p3, p0, Lcom/smedialink/ui/wallet/home/v2/details/WalletTokenDetailsView$$State$SetupStakingDetailsScreenCommand;->titleText:Ljava/lang/String;
 
-    .line 615
+    .line 631
     iput-object p4, p0, Lcom/smedialink/ui/wallet/home/v2/details/WalletTokenDetailsView$$State$SetupStakingDetailsScreenCommand;->balanceText:Ljava/lang/String;
 
-    .line 616
+    .line 632
     iput-object p5, p0, Lcom/smedialink/ui/wallet/home/v2/details/WalletTokenDetailsView$$State$SetupStakingDetailsScreenCommand;->annualTitleText:Ljava/lang/String;
 
-    .line 617
+    .line 633
     iput-object p6, p0, Lcom/smedialink/ui/wallet/home/v2/details/WalletTokenDetailsView$$State$SetupStakingDetailsScreenCommand;->annualValueText:Ljava/lang/String;
 
-    .line 618
+    .line 634
     iput-object p7, p0, Lcom/smedialink/ui/wallet/home/v2/details/WalletTokenDetailsView$$State$SetupStakingDetailsScreenCommand;->profitText:Ljava/lang/String;
 
-    .line 619
+    .line 635
     iput-boolean p8, p0, Lcom/smedialink/ui/wallet/home/v2/details/WalletTokenDetailsView$$State$SetupStakingDetailsScreenCommand;->shouldColorProfitText:Z
 
-    .line 620
+    .line 636
     iput-object p9, p0, Lcom/smedialink/ui/wallet/home/v2/details/WalletTokenDetailsView$$State$SetupStakingDetailsScreenCommand;->status:Lcom/smedialink/model/staking/StakingProgrammeStatus;
 
     return-void
@@ -83,7 +83,7 @@
 .method public apply(Lcom/smedialink/ui/wallet/home/v2/details/WalletTokenDetailsView;)V
     .locals 9
 
-    .line 625
+    .line 641
     iget v1, p0, Lcom/smedialink/ui/wallet/home/v2/details/WalletTokenDetailsView$$State$SetupStakingDetailsScreenCommand;->logoImageResId:I
 
     iget-object v2, p0, Lcom/smedialink/ui/wallet/home/v2/details/WalletTokenDetailsView$$State$SetupStakingDetailsScreenCommand;->titleText:Ljava/lang/String;
@@ -110,7 +110,7 @@
 .method public bridge synthetic apply(Lmoxy/MvpView;)V
     .locals 0
 
-    .line 591
+    .line 607
     check-cast p1, Lcom/smedialink/ui/wallet/home/v2/details/WalletTokenDetailsView;
 
     invoke-virtual {p0, p1}, Lcom/smedialink/ui/wallet/home/v2/details/WalletTokenDetailsView$$State$SetupStakingDetailsScreenCommand;->apply(Lcom/smedialink/ui/wallet/home/v2/details/WalletTokenDetailsView;)V

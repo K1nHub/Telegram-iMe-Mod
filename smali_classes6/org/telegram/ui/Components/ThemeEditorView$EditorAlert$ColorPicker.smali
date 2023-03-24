@@ -206,7 +206,7 @@
 
     invoke-virtual {v0, v7, v9}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    const/4 v7, 0x0
+    move v7, v6
 
     :goto_0
     if-ge v7, v4, :cond_6
@@ -449,7 +449,7 @@
     goto :goto_3
 
     :cond_5
-    const/4 v15, 0x0
+    move v15, v6
 
     :goto_3
     const/16 v16, 0x0
@@ -527,7 +527,7 @@
 
     const/4 v4, 0x0
 
-    const/4 v5, 0x0
+    move v5, v4
 
     :goto_0
     if-ge v5, v1, :cond_0
@@ -805,7 +805,7 @@
 
     if-eqz p1, :cond_2
 
-    const/4 v7, 0x0
+    move v7, v6
 
     goto :goto_0
 
@@ -907,7 +907,7 @@
 
     const/high16 v2, 0x437f0000    # 255.0f
 
-    mul-float v1, v1, v2
+    mul-float/2addr v1, v2
 
     float-to-int v1, v1
 
@@ -936,7 +936,7 @@
 
     iget v2, v0, Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$ColorPicker;->paramValueSliderWidth:I
 
-    mul-int/lit8 v2, v2, 0x2
+    mul-int/2addr v2, v8
 
     sub-int/2addr v1, v2
 
@@ -1004,13 +1004,13 @@
 
     float-to-double v12, v10
 
-    mul-double v5, v5, v12
+    mul-double/2addr v5, v12
 
     iget v10, v0, Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$ColorPicker;->colorWheelRadius:I
 
     int-to-double v12, v10
 
-    mul-double v5, v5, v12
+    mul-double/2addr v5, v12
 
     double-to-int v5, v5
 
@@ -1029,13 +1029,13 @@
 
     float-to-double v12, v10
 
-    mul-double v3, v3, v12
+    mul-double/2addr v3, v12
 
     iget v10, v0, Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$ColorPicker;->colorWheelRadius:I
 
     int-to-double v12, v10
 
-    mul-double v3, v3, v12
+    mul-double/2addr v3, v12
 
     double-to-int v3, v3
 
@@ -1188,7 +1188,7 @@
 
     int-to-float v14, v14
 
-    mul-float v3, v3, v14
+    mul-float/2addr v3, v14
 
     add-float/2addr v3, v10
 
@@ -1203,7 +1203,7 @@
     .line 460
     iget v1, v0, Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$ColorPicker;->paramValueSliderWidth:I
 
-    mul-int/lit8 v1, v1, 0x2
+    mul-int/2addr v1, v8
 
     add-int/2addr v12, v1
 
@@ -1301,7 +1301,7 @@
 
     sub-float v1, v2, v1
 
-    mul-float v1, v1, v14
+    mul-float/2addr v1, v14
 
     add-float/2addr v10, v1
 
@@ -1319,7 +1319,7 @@
 
     iget v4, v0, Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$ColorPicker;->alpha:F
 
-    mul-float v4, v4, v3
+    mul-float/2addr v4, v3
 
     float-to-int v3, v4
 
@@ -1412,9 +1412,9 @@
 .end method
 
 .method public onTouchEvent(Landroid/view/MotionEvent;)Z
-    .locals 16
+    .locals 15
 
-    move-object/from16 v0, p0
+    move-object v0, p0
 
     .line 534
     invoke-virtual/range {p1 .. p1}, Landroid/view/MotionEvent;->getAction()I
@@ -1446,7 +1446,7 @@
     iput-boolean v3, v0, Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$ColorPicker;->circlePressed:Z
 
     .line 610
-    invoke-direct {v0, v3}, Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$ColorPicker;->startColorChange(Z)V
+    invoke-direct {p0, v3}, Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$ColorPicker;->startColorChange(Z)V
 
     .line 613
     :goto_0
@@ -1472,7 +1472,7 @@
     float-to-int v5, v5
 
     .line 541
-    invoke-virtual/range {p0 .. p0}, Landroid/widget/FrameLayout;->getWidth()I
+    invoke-virtual {p0}, Landroid/widget/FrameLayout;->getWidth()I
 
     move-result v6
 
@@ -1480,12 +1480,12 @@
 
     iget v7, v0, Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$ColorPicker;->paramValueSliderWidth:I
 
-    mul-int/lit8 v7, v7, 0x2
+    mul-int/2addr v7, v2
 
     sub-int/2addr v6, v7
 
     .line 542
-    invoke-virtual/range {p0 .. p0}, Landroid/widget/FrameLayout;->getHeight()I
+    invoke-virtual {p0}, Landroid/widget/FrameLayout;->getHeight()I
 
     move-result v7
 
@@ -1543,9 +1543,9 @@
 
     int-to-double v13, v12
 
-    cmpl-double v15, v10, v13
+    cmpl-double v13, v10, v13
 
-    if-lez v15, :cond_3
+    if-lez v13, :cond_3
 
     int-to-double v10, v12
 
@@ -1637,7 +1637,7 @@
 
     add-int v10, v6, v8
 
-    mul-int/lit8 v11, v11, 0x2
+    mul-int/2addr v11, v2
 
     add-int/2addr v10, v11
 
@@ -1663,7 +1663,7 @@
 
     int-to-float v8, v8
 
-    mul-float v8, v8, v9
+    mul-float/2addr v8, v9
 
     div-float/2addr v10, v8
 
@@ -1726,7 +1726,7 @@
 
     add-int/2addr v6, v8
 
-    mul-int/lit8 v12, v12, 0x4
+    mul-int/2addr v12, v10
 
     add-int/2addr v6, v12
 
@@ -1752,7 +1752,7 @@
 
     int-to-float v1, v1
 
-    mul-float v1, v1, v9
+    mul-float/2addr v1, v9
 
     div-float/2addr v5, v1
 
@@ -1802,14 +1802,14 @@
 
     .line 577
     :cond_d
-    invoke-direct {v0, v4}, Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$ColorPicker;->startColorChange(Z)V
+    invoke-direct {p0, v4}, Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$ColorPicker;->startColorChange(Z)V
 
     .line 578
-    invoke-virtual/range {p0 .. p0}, Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$ColorPicker;->getColor()I
+    invoke-virtual {p0}, Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$ColorPicker;->getColor()I
 
     move-result v1
 
-    const/4 v5, 0x0
+    move v5, v3
 
     .line 579
     :goto_3
@@ -2041,7 +2041,7 @@
 
     invoke-virtual {v2, v1}, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
 
-    const/4 v1, 0x0
+    move v1, v3
 
     :goto_4
     if-ge v1, v10, :cond_12
@@ -2071,7 +2071,7 @@
 
     .line 602
     :cond_13
-    invoke-virtual/range {p0 .. p0}, Landroid/widget/FrameLayout;->invalidate()V
+    invoke-virtual {p0}, Landroid/widget/FrameLayout;->invalidate()V
 
     :cond_14
     return v4
@@ -2200,7 +2200,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
 
-    const/4 v0, 0x0
+    move v0, v6
 
     :goto_0
     const/4 v1, 0x4

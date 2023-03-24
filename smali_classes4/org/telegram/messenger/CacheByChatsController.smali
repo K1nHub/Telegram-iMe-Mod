@@ -468,7 +468,7 @@
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_0
     const/4 v3, 0x3
@@ -482,7 +482,7 @@
 
     if-eqz v3, :cond_0
 
-    const/4 v4, 0x0
+    move v4, v1
 
     .line 168
     :goto_1
@@ -556,7 +556,7 @@
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     .line 131
     :goto_0
@@ -580,11 +580,11 @@
 
     const-wide/16 v6, 0x0
 
-    cmp-long v8, v3, v6
+    cmp-long v6, v3, v6
 
-    if-ltz v8, :cond_0
+    if-ltz v6, :cond_0
 
-    const/4 v6, 0x0
+    move v6, v1
 
     goto :goto_1
 
@@ -649,7 +649,7 @@
 
     check-cast v3, Lorg/telegram/messenger/CacheByChatsController$KeepMediaException;
 
-    const/4 v4, 0x0
+    move v4, v1
 
     .line 151
     :goto_2

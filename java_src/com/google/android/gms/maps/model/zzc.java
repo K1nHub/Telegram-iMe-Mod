@@ -10,15 +10,15 @@ public final class zzc implements Parcelable.Creator {
     @Override // android.os.Parcelable.Creator
     public final /* bridge */ /* synthetic */ Object createFromParcel(Parcel parcel) {
         int validateObjectHeader = SafeParcelReader.validateObjectHeader(parcel);
+        float f = 0.0f;
+        float f2 = 0.0f;
         LatLng latLng = null;
         ArrayList arrayList = null;
-        double d = 0.0d;
-        float f = BitmapDescriptorFactory.HUE_RED;
         int i = 0;
         int i2 = 0;
-        float f2 = BitmapDescriptorFactory.HUE_RED;
         boolean z = false;
         boolean z2 = false;
+        double d = 0.0d;
         while (parcel.dataPosition() < validateObjectHeader) {
             int readHeader = SafeParcelReader.readHeader(parcel);
             switch (SafeParcelReader.getFieldId(readHeader)) {

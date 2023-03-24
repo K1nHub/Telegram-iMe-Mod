@@ -244,24 +244,24 @@ public class ViewCompat {
                 return actionList.get(i).getId();
             }
         }
-        int i2 = 0;
-        int i3 = -1;
+        int i2 = -1;
+        int i3 = 0;
         while (true) {
             int[] iArr = ACCESSIBILITY_ACTIONS_RESOURCE_IDS;
-            if (i2 >= iArr.length || i3 != -1) {
+            if (i3 >= iArr.length || i2 != -1) {
                 break;
             }
-            int i4 = iArr[i2];
+            int i4 = iArr[i3];
             boolean z = true;
             for (int i5 = 0; i5 < actionList.size(); i5++) {
                 z &= actionList.get(i5).getId() != i4;
             }
             if (z) {
-                i3 = i4;
+                i2 = i4;
             }
-            i2++;
+            i3++;
         }
-        return i3;
+        return i2;
     }
 
     public static void replaceAccessibilityAction(View view, AccessibilityNodeInfoCompat.AccessibilityActionCompat accessibilityActionCompat, CharSequence charSequence, AccessibilityViewCommand accessibilityViewCommand) {

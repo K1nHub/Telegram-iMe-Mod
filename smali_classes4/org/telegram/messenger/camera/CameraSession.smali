@@ -329,7 +329,7 @@
     goto :goto_0
 
     :cond_0
-    const/16 v2, 0x10e
+    move v2, v3
 
     goto :goto_0
 
@@ -339,7 +339,7 @@
     goto :goto_0
 
     :cond_2
-    const/16 v2, 0x5a
+    move v2, v4
 
     .line 535
     :cond_3
@@ -364,7 +364,7 @@
 
     if-ne p1, v4, :cond_4
 
-    const/16 p1, 0x10e
+    move p1, v3
 
     :cond_4
     if-nez p2, :cond_5
@@ -722,7 +722,7 @@
 
     int-to-float v3, v3
 
-    mul-float v4, v4, v3
+    mul-float/2addr v4, v3
 
     float-to-int v3, v4
 
@@ -830,7 +830,7 @@
     goto :goto_2
 
     :cond_5
-    const/4 v3, 0x0
+    move v3, v4
 
     .line 394
     :goto_2
@@ -853,7 +853,7 @@
 
     if-ne v0, v3, :cond_6
 
-    const/4 v4, 0x1
+    move v4, v5
 
     :cond_6
     iput-boolean v4, p0, Lorg/telegram/messenger/camera/CameraSession;->sameTakePictureOrientation:Z
@@ -866,7 +866,7 @@
 
     if-ne v0, v3, :cond_8
 
-    const/4 v4, 0x1
+    move v4, v5
 
     :cond_8
     iput-boolean v4, p0, Lorg/telegram/messenger/camera/CameraSession;->sameTakePictureOrientation:Z
@@ -961,7 +961,7 @@
     goto :goto_0
 
     :cond_1
-    const/4 v3, 0x0
+    move v3, v2
 
     .line 485
     :goto_0
@@ -1297,7 +1297,7 @@
     goto :goto_2
 
     :cond_5
-    const/4 v4, 0x0
+    move v4, v0
 
     .line 253
     :goto_2
@@ -1320,12 +1320,12 @@
 
     if-ne p1, v4, :cond_6
 
-    const/4 p1, 0x1
+    move p1, v1
 
     goto :goto_3
 
     :cond_6
-    const/4 p1, 0x0
+    move p1, v0
 
     :goto_3
     iput-boolean p1, p0, Lorg/telegram/messenger/camera/CameraSession;->sameTakePictureOrientation:Z
@@ -1338,12 +1338,12 @@
 
     if-ne p1, v4, :cond_8
 
-    const/4 p1, 0x1
+    move p1, v1
 
     goto :goto_4
 
     :cond_8
-    const/4 p1, 0x0
+    move p1, v0
 
     :goto_4
     iput-boolean p1, p0, Lorg/telegram/messenger/camera/CameraSession;->sameTakePictureOrientation:Z
@@ -1366,7 +1366,7 @@
 
     int-to-float v4, v4
 
-    mul-float p1, p1, v4
+    mul-float/2addr p1, v4
 
     float-to-int p1, p1
 
@@ -1675,7 +1675,7 @@
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     .line 165
     :goto_0
@@ -2091,7 +2091,7 @@
     if-eq v1, v5, :cond_4
 
     :cond_3
-    const/4 v1, 0x0
+    move v1, v3
 
     goto :goto_1
 
@@ -2106,7 +2106,7 @@
     goto :goto_1
 
     :cond_6
-    const/16 v1, 0x5a
+    move v1, v4
 
     .line 318
     :goto_1
@@ -2167,14 +2167,9 @@
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    goto :goto_3
-
-    :catchall_0
-    nop
-
     .line 335
+    :catchall_0
     :cond_9
-    :goto_3
     iget v0, p0, Lorg/telegram/messenger/camera/CameraSession;->currentOrientation:I
 
     iget v1, p0, Lorg/telegram/messenger/camera/CameraSession;->displayOrientation:I

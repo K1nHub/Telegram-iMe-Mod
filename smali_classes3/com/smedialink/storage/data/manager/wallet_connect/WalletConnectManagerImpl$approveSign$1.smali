@@ -87,7 +87,7 @@
     if-eqz v0, :cond_1
 
     .line 172
-    sget-object v0, Lcom/smedialink/storage/data/utils/crypto/CryptoWalletUtils;->INSTANCE:Lcom/smedialink/storage/data/utils/crypto/CryptoWalletUtils;
+    sget-object v0, Lcom/smedialink/storage/data/utils/crypto/CryptoEVMUtils;->INSTANCE:Lcom/smedialink/storage/data/utils/crypto/CryptoEVMUtils;
 
     .line 173
     iget-object v1, p0, Lcom/smedialink/storage/data/manager/wallet_connect/WalletConnectManagerImpl$approveSign$1;->this$0:Lcom/smedialink/storage/data/manager/wallet_connect/WalletConnectManagerImpl;
@@ -116,7 +116,7 @@
     move-result-object v3
 
     .line 172
-    invoke-virtual {v0, v1, v2, v3}, Lcom/smedialink/storage/data/utils/crypto/CryptoWalletUtils;->signMessage(Lcom/smedialink/storage/domain/model/crypto/Wallet$EVM;Ljava/lang/String;Lcom/trustwallet/walletconnect/models/ethereum/WCEthereumSignMessage$WCSignType;)Ljava/lang/String;
+    invoke-virtual {v0, v1, v2, v3}, Lcom/smedialink/storage/data/utils/crypto/CryptoEVMUtils;->signMessage(Lcom/smedialink/storage/domain/model/crypto/Wallet$EVM;Ljava/lang/String;Lcom/trustwallet/walletconnect/models/ethereum/WCEthereumSignMessage$WCSignType;)Ljava/lang/String;
 
     move-result-object v0
 

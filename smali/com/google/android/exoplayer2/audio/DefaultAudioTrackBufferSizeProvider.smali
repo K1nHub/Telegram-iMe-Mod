@@ -101,11 +101,11 @@
 
     int-to-long p0, p1
 
-    mul-long v0, v0, p0
+    mul-long/2addr v0, p0
 
     int-to-long p0, p2
 
-    mul-long v0, v0, p0
+    mul-long/2addr v0, p0
 
     const-wide/32 p0, 0xf4240
 
@@ -275,7 +275,7 @@
 
     int-to-double p2, p2
 
-    mul-double p2, p2, p7
+    mul-double/2addr p2, p7
 
     double-to-int p2, p2
 
@@ -291,7 +291,7 @@
     .line 181
     div-int/2addr p1, p4
 
-    mul-int p1, p1, p4
+    mul-int/2addr p1, p4
 
     return p1
 .end method
@@ -311,7 +311,7 @@
 
     int-to-long v2, p1
 
-    mul-long v0, v0, v2
+    mul-long/2addr v0, v2
 
     const-wide/32 v2, 0xf4240
 
@@ -337,7 +337,7 @@
     .line 216
     iget v1, p0, Lcom/google/android/exoplayer2/audio/DefaultAudioTrackBufferSizeProvider;->ac3BufferMultiplicationFactor:I
 
-    mul-int v0, v0, v1
+    mul-int/2addr v0, v1
 
     :cond_0
     const/4 v1, -0x1
@@ -366,7 +366,7 @@
 
     int-to-long p1, p1
 
-    mul-long v0, v0, p1
+    mul-long/2addr v0, p1
 
     const-wide/32 p1, 0xf4240
 
@@ -386,7 +386,7 @@
     .line 206
     iget v0, p0, Lcom/google/android/exoplayer2/audio/DefaultAudioTrackBufferSizeProvider;->pcmBufferMultiplicationFactor:I
 
-    mul-int p1, p1, v0
+    mul-int/2addr p1, v0
 
     .line 207
     iget v0, p0, Lcom/google/android/exoplayer2/audio/DefaultAudioTrackBufferSizeProvider;->minPcmBufferDurationUs:I

@@ -108,7 +108,7 @@
 
     move-result v3
 
-    mul-float v2, v2, v3
+    mul-float/2addr v2, v3
 
     float-to-int v2, v2
 
@@ -123,7 +123,7 @@
 
     move-result v4
 
-    mul-float v3, v3, v4
+    mul-float/2addr v3, v4
 
     float-to-int v3, v3
 
@@ -138,7 +138,7 @@
 
     move-result v5
 
-    mul-float v4, v4, v5
+    mul-float/2addr v4, v5
 
     float-to-int v4, v4
 
@@ -153,7 +153,7 @@
 
     move-result v1
 
-    mul-float v5, v5, v1
+    mul-float/2addr v5, v1
 
     float-to-int v1, v5
 
@@ -168,11 +168,11 @@
 
     const/high16 v6, 0x3f000000    # 0.5f
 
-    mul-float v5, v5, v6
+    mul-float/2addr v5, v6
 
     add-float/2addr v5, v6
 
-    mul-float v2, v2, v5
+    mul-float/2addr v2, v5
 
     float-to-int v10, v2
 
@@ -185,11 +185,11 @@
 
     move-result v3
 
-    mul-float v3, v3, v6
+    mul-float/2addr v3, v6
 
     add-float/2addr v3, v6
 
-    mul-float v2, v2, v3
+    mul-float/2addr v2, v3
 
     float-to-int v11, v2
 
@@ -230,13 +230,13 @@
 
     move-result v3
 
-    mul-float v2, v2, v3
+    mul-float/2addr v2, v3
 
     sub-float v2, v14, v2
 
     const/high16 v15, 0x437f0000    # 255.0f
 
-    mul-float v2, v2, v15
+    mul-float/2addr v2, v15
 
     float-to-int v2, v2
 
@@ -385,7 +385,7 @@
 
     move-result v2
 
-    mul-float v2, v2, v15
+    mul-float/2addr v2, v15
 
     float-to-int v2, v2
 
@@ -423,7 +423,7 @@
 
     const/high16 v4, 0x41a00000    # 20.0f
 
-    mul-float v3, v3, v4
+    mul-float/2addr v3, v4
 
     invoke-static {v14, v3}, Ljava/lang/Math;->min(FF)F
 
@@ -494,7 +494,7 @@
 
     const/high16 v6, 0x437f0000    # 255.0f
 
-    mul-float v5, v5, v6
+    mul-float/2addr v5, v6
 
     float-to-int v5, v5
 
@@ -537,7 +537,7 @@
 
     const/high16 v11, 0x3fc00000    # 1.5f
 
-    mul-float v6, v6, v11
+    mul-float/2addr v6, v11
 
     add-float v11, v18, v6
 
@@ -1045,7 +1045,7 @@
 
     const v0, 0x3f266666    # 0.65f
 
-    mul-float p1, p1, v0
+    mul-float/2addr p1, v0
 
     float-to-int p1, p1
 
@@ -1550,7 +1550,7 @@
 
     const p2, 0x3f3d70a4    # 0.74f
 
-    mul-float p1, p1, p2
+    mul-float/2addr p1, p2
 
     float-to-int p1, p1
 
@@ -1558,7 +1558,7 @@
 
     const p3, 0x3d4ccccd    # 0.05f
 
-    mul-float p2, p2, p3
+    mul-float/2addr p2, p3
 
     float-to-int p2, p2
 
@@ -1663,7 +1663,7 @@
 
     const v5, 0x3f343958    # 0.704f
 
-    mul-float v4, v4, v5
+    mul-float/2addr v4, v5
 
     float-to-int v4, v4
 
@@ -1857,7 +1857,7 @@
 
     const v4, 0x3f666666    # 0.9f
 
-    mul-float v3, v3, v4
+    mul-float/2addr v3, v4
 
     float-to-int v3, v3
 

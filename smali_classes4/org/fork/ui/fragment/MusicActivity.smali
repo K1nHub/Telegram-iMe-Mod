@@ -439,9 +439,9 @@
 
     div-long/2addr v1, v3
 
-    long-to-int v2, v1
+    long-to-int v1, v1
 
-    iput v2, v0, Lorg/telegram/tgnet/TLRPC$Message;->date:I
+    iput v1, v0, Lorg/telegram/tgnet/TLRPC$Message;->date:I
 
     const-string v1, ""
 
@@ -528,12 +528,12 @@
 
     if-lez v7, :cond_0
 
-    const/4 v7, 0x1
+    move v7, p2
 
     goto :goto_0
 
     :cond_0
-    const/4 v7, 0x0
+    move v7, v5
 
     :goto_0
     if-eqz v7, :cond_1
@@ -849,9 +849,9 @@
 
     move-result-wide v6
 
-    long-to-int v7, v6
+    long-to-int v6, v6
 
-    iput v7, v5, Lorg/telegram/messenger/MediaController$AudioEntry;->duration:I
+    iput v6, v5, Lorg/telegram/messenger/MediaController$AudioEntry;->duration:I
 
     const/4 v6, 0x5
 
@@ -1092,7 +1092,7 @@
 .end method
 
 .method private final prepareDialogsAdaptersData()V
-    .locals 9
+    .locals 8
 
     .line 259
     iget-object v0, p0, Lorg/fork/ui/fragment/MusicActivity;->countsMap:Landroid/util/LongSparseArray;
@@ -1126,9 +1126,9 @@
 
     const-wide/16 v6, 0x0
 
-    cmp-long v8, v3, v6
+    cmp-long v6, v3, v6
 
-    if-gez v8, :cond_1
+    if-gez v6, :cond_1
 
     .line 262
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getAlbumsController()Lorg/fork/controller/AlbumsController;
@@ -1357,12 +1357,12 @@
 
     if-ne p1, p0, :cond_0
 
-    const/4 p0, 0x1
+    move p0, v0
 
     goto :goto_0
 
     :cond_0
-    const/4 p0, 0x0
+    move p0, v1
 
     :goto_0
     if-eqz p0, :cond_1
@@ -1550,7 +1550,7 @@
 
     const/4 v2, 0x0
 
-    const/4 v3, 0x0
+    move v3, v2
 
     :goto_0
     if-ge v3, v1, :cond_2
@@ -1567,7 +1567,7 @@
 
     move-result v5
 
-    const/4 v6, 0x0
+    move v6, v2
 
     :goto_1
     if-ge v6, v5, :cond_1
@@ -1710,7 +1710,7 @@
     if-ne p1, p2, :cond_1
 
     :goto_0
-    const/4 p2, 0x1
+    move p2, v1
 
     goto :goto_1
 
@@ -1722,7 +1722,7 @@
     goto :goto_0
 
     :cond_2
-    const/4 p2, 0x0
+    move p2, v0
 
     :goto_1
     if-eqz p2, :cond_3
@@ -1737,7 +1737,7 @@
     goto :goto_2
 
     :cond_4
-    const/4 v1, 0x0
+    move v1, v0
 
     :goto_2
     if-eqz v1, :cond_6
@@ -1761,9 +1761,9 @@
 
     const-wide/16 v0, 0x0
 
-    cmp-long p3, p1, v0
+    cmp-long p1, p1, v0
 
-    if-eqz p3, :cond_5
+    if-eqz p1, :cond_5
 
     return-void
 
@@ -1848,7 +1848,7 @@
 
     const/4 v3, 0x0
 
-    const/4 v4, 0x0
+    move v4, v3
 
     :goto_0
     if-ge v4, v2, :cond_1

@@ -501,7 +501,7 @@
     .line 129
     iput v7, v0, Lorg/telegram/ui/Components/SwipeGestureSettingsView;->currentIconIndex:I
 
-    const/4 v4, 0x0
+    move v4, v7
 
     :goto_3
     if-ge v4, v2, :cond_4
@@ -928,12 +928,12 @@
 
     if-ne v0, v3, :cond_0
 
-    const/4 v0, 0x1
+    move v0, v2
 
     goto :goto_0
 
     :cond_0
-    const/4 v0, 0x0
+    move v0, v1
 
     :goto_0
     const v3, 0x3d5a740e

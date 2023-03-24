@@ -86,7 +86,7 @@
 
     const/high16 v2, 0x437f0000    # 255.0f
 
-    mul-float v1, v1, v2
+    mul-float/2addr v1, v2
 
     float-to-int v1, v1
 

@@ -17,8 +17,8 @@ public class SecT233K1Curve extends ECCurve.AbstractF2m {
     public SecT233K1Curve() {
         super(233, 74, 0, 0);
         this.infinity = new SecT233K1Point(this, null, null);
-        this.f1307a = fromBigInteger(BigInteger.valueOf(0L));
-        this.f1308b = fromBigInteger(BigInteger.valueOf(1L));
+        this.f1308a = fromBigInteger(BigInteger.valueOf(0L));
+        this.f1309b = fromBigInteger(BigInteger.valueOf(1L));
         this.order = new BigInteger(1, Hex.decode("8000000000000000000000000000069D5BB915BCD46EFB1AD5F173ABDF"));
         this.cofactor = BigInteger.valueOf(4L);
         this.coord = 6;
@@ -35,9 +35,9 @@ public class SecT233K1Curve extends ECCurve.AbstractF2m {
         int i3 = 0;
         for (int i4 = 0; i4 < i2; i4++) {
             ECPoint eCPoint = eCPointArr[i + i4];
-            Nat256.copy64(((SecT233FieldElement) eCPoint.getRawXCoord()).f1372x, 0, jArr, i3);
+            Nat256.copy64(((SecT233FieldElement) eCPoint.getRawXCoord()).f1373x, 0, jArr, i3);
             int i5 = i3 + 4;
-            Nat256.copy64(((SecT233FieldElement) eCPoint.getRawYCoord()).f1372x, 0, jArr, i5);
+            Nat256.copy64(((SecT233FieldElement) eCPoint.getRawYCoord()).f1373x, 0, jArr, i5);
             i3 = i5 + 4;
         }
         return new ECLookupTable() { // from class: org.bouncycastle.math.ec.custom.sec.SecT233K1Curve.1

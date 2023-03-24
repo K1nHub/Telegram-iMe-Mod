@@ -314,9 +314,9 @@
     iput v2, v1, Lorg/telegram/tgnet/TLRPC$PeerNotifySettings;->mute_until:I
 
     :cond_3
-    const/4 v1, 0x0
+    move/from16 v16, v7
 
-    const/16 v16, 0x1
+    const/4 v1, 0x0
 
     goto :goto_3
 
@@ -388,7 +388,7 @@
     iput v2, v1, Lorg/telegram/tgnet/TLRPC$PeerNotifySettings;->mute_until:I
 
     :cond_8
-    const/16 v16, 0x1
+    move/from16 v16, v7
 
     .line 138
     :goto_2
@@ -452,7 +452,7 @@
 
     invoke-interface {v13, v1, v5}, Landroid/content/SharedPreferences$Editor;->putInt(Ljava/lang/String;I)Landroid/content/SharedPreferences$Editor;
 
-    const/4 v15, 0x1
+    move v15, v7
 
     goto :goto_5
 
@@ -499,14 +499,14 @@
 
     invoke-interface {v13, v1}, Landroid/content/SharedPreferences$Editor;->remove(Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
-    const/4 v15, 0x1
+    move v15, v7
 
     goto :goto_6
 
     :cond_e
     const/4 v5, 0x0
 
-    const/4 v15, 0x0
+    move v15, v5
 
     :goto_6
     if-nez p3, :cond_f
@@ -604,11 +604,11 @@
     :cond_0
     const-wide/16 v0, 0x0
 
-    const/4 v2, 0x1
+    cmp-long v0, p3, v0
 
-    cmp-long v3, p3, v0
+    const/4 v1, 0x1
 
-    if-eqz v3, :cond_1
+    if-eqz v0, :cond_1
 
     .line 186
     invoke-static {p3, p4, p5}, Lorg/telegram/messenger/NotificationsController;->getSharedPrefKey(JI)Ljava/lang/String;
@@ -620,9 +620,9 @@
 
     invoke-direct {p6}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v0, "sound_"
+    const-string v2, "sound_"
 
-    invoke-virtual {p6, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {p6, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {p6, p5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -631,32 +631,32 @@
     move-result-object p6
 
     .line 188
-    new-instance v0, Ljava/lang/StringBuilder;
+    new-instance v2, Ljava/lang/StringBuilder;
 
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v1, "sound_path_"
+    const-string v3, "sound_path_"
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v0, p5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, p5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object v2
 
     .line 189
-    new-instance v1, Ljava/lang/StringBuilder;
+    new-instance v3, Ljava/lang/StringBuilder;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
 
     const-string v4, "sound_document_id_"
 
-    invoke-virtual {v1, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1, p5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v3, p5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p5
 
@@ -669,18 +669,18 @@
 
     const-string p5, "GroupSoundDocId"
 
-    const-string v0, "GroupSoundPath"
+    const-string v2, "GroupSoundPath"
 
     goto :goto_0
 
     :cond_2
-    if-ne p6, v2, :cond_3
+    if-ne p6, v1, :cond_3
 
     const-string p6, "GlobalSound"
 
     const-string p5, "GlobalSoundDocId"
 
-    const-string v0, "GlobalSoundPath"
+    const-string v2, "GlobalSoundPath"
 
     goto :goto_0
 
@@ -689,13 +689,13 @@
 
     const-string p5, "ChannelSoundDocId"
 
-    const-string v0, "ChannelSoundPath"
+    const-string v2, "ChannelSoundPath"
 
     .line 206
     :goto_0
-    instance-of v1, p1, Lorg/telegram/tgnet/TLRPC$TL_notificationSoundDefault;
+    instance-of v3, p1, Lorg/telegram/tgnet/TLRPC$TL_notificationSoundDefault;
 
-    if-eqz v1, :cond_4
+    if-eqz v3, :cond_4
 
     const-string p1, "Default"
 
@@ -703,7 +703,7 @@
     invoke-interface {p2, p6, p1}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
     .line 208
-    invoke-interface {p2, v0, p1}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
+    invoke-interface {p2, v2, p1}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
     .line 209
     invoke-interface {p2, p5}, Landroid/content/SharedPreferences$Editor;->remove(Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
@@ -712,9 +712,9 @@
 
     .line 210
     :cond_4
-    instance-of v1, p1, Lorg/telegram/tgnet/TLRPC$TL_notificationSoundNone;
+    instance-of v3, p1, Lorg/telegram/tgnet/TLRPC$TL_notificationSoundNone;
 
-    if-eqz v1, :cond_5
+    if-eqz v3, :cond_5
 
     const-string p1, "NoSound"
 
@@ -722,7 +722,7 @@
     invoke-interface {p2, p6, p1}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
     .line 212
-    invoke-interface {p2, v0, p1}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
+    invoke-interface {p2, v2, p1}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
     .line 213
     invoke-interface {p2, p5}, Landroid/content/SharedPreferences$Editor;->remove(Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
@@ -731,9 +731,9 @@
 
     .line 214
     :cond_5
-    instance-of v1, p1, Lorg/telegram/tgnet/TLRPC$TL_notificationSoundLocal;
+    instance-of v3, p1, Lorg/telegram/tgnet/TLRPC$TL_notificationSoundLocal;
 
-    if-eqz v1, :cond_6
+    if-eqz v3, :cond_6
 
     .line 215
     check-cast p1, Lorg/telegram/tgnet/TLRPC$TL_notificationSoundLocal;
@@ -746,7 +746,7 @@
     .line 217
     iget-object p1, p1, Lorg/telegram/tgnet/TLRPC$TL_notificationSoundLocal;->data:Ljava/lang/String;
 
-    invoke-interface {p2, v0, p1}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
+    invoke-interface {p2, v2, p1}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
     .line 218
     invoke-interface {p2, p5}, Landroid/content/SharedPreferences$Editor;->remove(Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
@@ -763,9 +763,9 @@
     check-cast p1, Lorg/telegram/tgnet/TLRPC$TL_notificationSoundRingtone;
 
     .line 221
-    iget-wide v0, p1, Lorg/telegram/tgnet/TLRPC$TL_notificationSoundRingtone;->id:J
+    iget-wide v2, p1, Lorg/telegram/tgnet/TLRPC$TL_notificationSoundRingtone;->id:J
 
-    invoke-interface {p2, p5, v0, v1}, Landroid/content/SharedPreferences$Editor;->putLong(Ljava/lang/String;J)Landroid/content/SharedPreferences$Editor;
+    invoke-interface {p2, p5, v2, v3}, Landroid/content/SharedPreferences$Editor;->putLong(Ljava/lang/String;J)Landroid/content/SharedPreferences$Editor;
 
     .line 222
     iget p5, p0, Lorg/telegram/messenger/NotificationsSettingsFacade;->currentAccount:I
@@ -778,7 +778,7 @@
 
     if-eqz p7, :cond_7
 
-    if-eqz v3, :cond_7
+    if-eqz v0, :cond_7
 
     .line 224
     new-instance p5, Ljava/lang/StringBuilder;
@@ -795,7 +795,7 @@
 
     move-result-object p3
 
-    invoke-interface {p2, p3, v2}, Landroid/content/SharedPreferences$Editor;->putBoolean(Ljava/lang/String;Z)Landroid/content/SharedPreferences$Editor;
+    invoke-interface {p2, p3, v1}, Landroid/content/SharedPreferences$Editor;->putBoolean(Ljava/lang/String;Z)Landroid/content/SharedPreferences$Editor;
 
     .line 226
     :cond_7

@@ -142,12 +142,12 @@
 
     if-eqz v1, :cond_0
 
-    const/4 v1, 0x1
+    move v1, v2
 
     goto :goto_0
 
     :cond_0
-    const/4 v1, 0x0
+    move v1, v3
 
     :goto_0
     const/4 v4, 0x4
@@ -512,7 +512,7 @@
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :cond_7
-    const/4 v1, 0x0
+    move v1, v3
 
     .line 912
     :goto_1

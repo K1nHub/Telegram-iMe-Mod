@@ -126,15 +126,15 @@
 .end method
 
 .method static c(JJJ)J
-    .locals 5
+    .locals 3
 
-    const-wide/16 v0, -0x1
+    const-wide/16 v0, 0x0
 
-    const-wide/16 v2, 0x0
+    cmp-long v0, p0, v0
 
-    cmp-long v4, p0, v2
+    const-wide/16 v1, -0x1
 
-    if-ltz v4, :cond_0
+    if-ltz v0, :cond_0
 
     sub-long/2addr p0, p2
 
@@ -143,53 +143,53 @@
 
     move-result-wide p0
 
-    invoke-static {v0, v1, p0, p1}, Ljava/lang/Math;->max(JJ)J
+    invoke-static {v1, v2, p0, p1}, Ljava/lang/Math;->max(JJ)J
 
-    move-result-wide v0
+    move-result-wide v1
 
     :cond_0
-    return-wide v0
+    return-wide v1
 .end method
 
 .method private static d(JJ)J
     .locals 5
 
-    const-wide v0, 0x7fffffffffffffffL
+    const-wide/16 v0, 0x0
 
-    const-wide/16 v2, 0x0
+    cmp-long v2, p2, v0
 
-    cmp-long v4, p2, v2
+    const-wide v3, 0x7fffffffffffffffL
 
-    if-ltz v4, :cond_0
+    if-ltz v2, :cond_0
 
     add-long/2addr p0, p2
 
     goto :goto_0
 
     :cond_0
-    move-wide p0, v0
+    move-wide p0, v3
 
     :goto_0
-    cmp-long p2, p0, v2
+    cmp-long p2, p0, v0
 
     if-ltz p2, :cond_1
 
-    move-wide v0, p0
+    move-wide v3, p0
 
     :cond_1
-    return-wide v0
+    return-wide v3
 .end method
 
 .method private static e(J)I
-    .locals 4
+    .locals 3
 
     sget v0, Lj$/util/stream/d4;->t:I
 
     const-wide/16 v1, -0x1
 
-    cmp-long v3, p0, v1
+    cmp-long p0, p0, v1
 
-    if-eqz v3, :cond_0
+    if-eqz p0, :cond_0
 
     sget p0, Lj$/util/stream/d4;->u:I
 
@@ -205,31 +205,31 @@
 .end method
 
 .method public static f(Lj$/util/stream/c;JJ)Lj$/util/stream/U;
-    .locals 11
+    .locals 9
 
     const-wide/16 v0, 0x0
 
-    cmp-long v2, p1, v0
+    cmp-long v0, p1, v0
 
-    if-ltz v2, :cond_0
+    if-ltz v0, :cond_0
 
     new-instance v0, Lj$/util/stream/y3;
 
-    sget-object v5, Lj$/util/stream/e4;->DOUBLE_VALUE:Lj$/util/stream/e4;
+    sget-object v3, Lj$/util/stream/e4;->DOUBLE_VALUE:Lj$/util/stream/e4;
 
     invoke-static {p3, p4}, Lj$/util/stream/B3;->e(J)I
 
-    move-result v6
+    move-result v4
 
-    move-object v3, v0
+    move-object v1, v0
 
-    move-object v4, p0
+    move-object v2, p0
 
-    move-wide v7, p1
+    move-wide v5, p1
 
-    move-wide v9, p3
+    move-wide v7, p3
 
-    invoke-direct/range {v3 .. v10}, Lj$/util/stream/y3;-><init>(Lj$/util/stream/c;Lj$/util/stream/e4;IJJ)V
+    invoke-direct/range {v1 .. v8}, Lj$/util/stream/y3;-><init>(Lj$/util/stream/c;Lj$/util/stream/e4;IJJ)V
 
     return-object v0
 
@@ -256,31 +256,31 @@
 .end method
 
 .method public static g(Lj$/util/stream/c;JJ)Lj$/util/stream/IntStream;
-    .locals 11
+    .locals 9
 
     const-wide/16 v0, 0x0
 
-    cmp-long v2, p1, v0
+    cmp-long v0, p1, v0
 
-    if-ltz v2, :cond_0
+    if-ltz v0, :cond_0
 
     new-instance v0, Lj$/util/stream/s3;
 
-    sget-object v5, Lj$/util/stream/e4;->INT_VALUE:Lj$/util/stream/e4;
+    sget-object v3, Lj$/util/stream/e4;->INT_VALUE:Lj$/util/stream/e4;
 
     invoke-static {p3, p4}, Lj$/util/stream/B3;->e(J)I
 
-    move-result v6
+    move-result v4
 
-    move-object v3, v0
+    move-object v1, v0
 
-    move-object v4, p0
+    move-object v2, p0
 
-    move-wide v7, p1
+    move-wide v5, p1
 
-    move-wide v9, p3
+    move-wide v7, p3
 
-    invoke-direct/range {v3 .. v10}, Lj$/util/stream/s3;-><init>(Lj$/util/stream/c;Lj$/util/stream/e4;IJJ)V
+    invoke-direct/range {v1 .. v8}, Lj$/util/stream/s3;-><init>(Lj$/util/stream/c;Lj$/util/stream/e4;IJJ)V
 
     return-object v0
 
@@ -307,31 +307,31 @@
 .end method
 
 .method public static h(Lj$/util/stream/c;JJ)Lj$/util/stream/e1;
-    .locals 11
+    .locals 9
 
     const-wide/16 v0, 0x0
 
-    cmp-long v2, p1, v0
+    cmp-long v0, p1, v0
 
-    if-ltz v2, :cond_0
+    if-ltz v0, :cond_0
 
     new-instance v0, Lj$/util/stream/v3;
 
-    sget-object v5, Lj$/util/stream/e4;->LONG_VALUE:Lj$/util/stream/e4;
+    sget-object v3, Lj$/util/stream/e4;->LONG_VALUE:Lj$/util/stream/e4;
 
     invoke-static {p3, p4}, Lj$/util/stream/B3;->e(J)I
 
-    move-result v6
+    move-result v4
 
-    move-object v3, v0
+    move-object v1, v0
 
-    move-object v4, p0
+    move-object v2, p0
 
-    move-wide v7, p1
+    move-wide v5, p1
 
-    move-wide v9, p3
+    move-wide v7, p3
 
-    invoke-direct/range {v3 .. v10}, Lj$/util/stream/v3;-><init>(Lj$/util/stream/c;Lj$/util/stream/e4;IJJ)V
+    invoke-direct/range {v1 .. v8}, Lj$/util/stream/v3;-><init>(Lj$/util/stream/c;Lj$/util/stream/e4;IJJ)V
 
     return-object v0
 
@@ -358,31 +358,31 @@
 .end method
 
 .method public static i(Lj$/util/stream/c;JJ)Lj$/util/stream/Stream;
-    .locals 11
+    .locals 9
 
     const-wide/16 v0, 0x0
 
-    cmp-long v2, p1, v0
+    cmp-long v0, p1, v0
 
-    if-ltz v2, :cond_0
+    if-ltz v0, :cond_0
 
     new-instance v0, Lj$/util/stream/p3;
 
-    sget-object v5, Lj$/util/stream/e4;->REFERENCE:Lj$/util/stream/e4;
+    sget-object v3, Lj$/util/stream/e4;->REFERENCE:Lj$/util/stream/e4;
 
     invoke-static {p3, p4}, Lj$/util/stream/B3;->e(J)I
 
-    move-result v6
+    move-result v4
 
-    move-object v3, v0
+    move-object v1, v0
 
-    move-object v4, p0
+    move-object v2, p0
 
-    move-wide v7, p1
+    move-wide v5, p1
 
-    move-wide v9, p3
+    move-wide v7, p3
 
-    invoke-direct/range {v3 .. v10}, Lj$/util/stream/p3;-><init>(Lj$/util/stream/c;Lj$/util/stream/e4;IJJ)V
+    invoke-direct/range {v1 .. v8}, Lj$/util/stream/p3;-><init>(Lj$/util/stream/c;Lj$/util/stream/e4;IJJ)V
 
     return-object v0
 

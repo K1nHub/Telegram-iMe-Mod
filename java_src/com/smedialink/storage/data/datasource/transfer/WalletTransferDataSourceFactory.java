@@ -3,15 +3,15 @@ package com.smedialink.storage.data.datasource.transfer;
 import com.smedialink.storage.data.datasource.base.DataSourceFactory;
 import com.smedialink.storage.domain.model.crypto.BlockchainType;
 import com.smedialink.storage.domain.model.wallet.token.TokenCode;
-import com.smedialink.storage.domain.storage.CryptoPreferenceHelper;
 import kotlin.NoWhenBranchMatchedException;
+import kotlin.Pair;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: WalletTransferDataSourceFactory.kt */
 /* loaded from: classes3.dex */
-public final class WalletTransferDataSourceFactory implements DataSourceFactory<TokenCode, WalletTransferDataSource> {
-    private final CryptoPreferenceHelper cryptoPreferenceHelper;
+public final class WalletTransferDataSourceFactory implements DataSourceFactory<Pair<? extends TokenCode, ? extends BlockchainType>, WalletTransferDataSource> {
     private final WalletTransferDataSource evmWalletTransferDataSource;
     private final WalletTransferDataSource tonWalletTransferDataSource;
+    private final WalletTransferDataSource tronWalletTransferDataSource;
 
     /* compiled from: WalletTransferDataSourceFactory.kt */
     /* loaded from: classes3.dex */
@@ -28,31 +28,39 @@ public final class WalletTransferDataSourceFactory implements DataSourceFactory<
                 iArr[BlockchainType.TON.ordinal()] = 2;
             } catch (NoSuchFieldError unused2) {
             }
+            try {
+                iArr[BlockchainType.TRON.ordinal()] = 3;
+            } catch (NoSuchFieldError unused3) {
+            }
             $EnumSwitchMapping$0 = iArr;
         }
     }
 
-    public WalletTransferDataSourceFactory(WalletTransferDataSource evmWalletTransferDataSource, WalletTransferDataSource tonWalletTransferDataSource, CryptoPreferenceHelper cryptoPreferenceHelper) {
+    public WalletTransferDataSourceFactory(WalletTransferDataSource evmWalletTransferDataSource, WalletTransferDataSource tonWalletTransferDataSource, WalletTransferDataSource tronWalletTransferDataSource) {
         Intrinsics.checkNotNullParameter(evmWalletTransferDataSource, "evmWalletTransferDataSource");
         Intrinsics.checkNotNullParameter(tonWalletTransferDataSource, "tonWalletTransferDataSource");
-        Intrinsics.checkNotNullParameter(cryptoPreferenceHelper, "cryptoPreferenceHelper");
+        Intrinsics.checkNotNullParameter(tronWalletTransferDataSource, "tronWalletTransferDataSource");
         this.evmWalletTransferDataSource = evmWalletTransferDataSource;
         this.tonWalletTransferDataSource = tonWalletTransferDataSource;
-        this.cryptoPreferenceHelper = cryptoPreferenceHelper;
+        this.tronWalletTransferDataSource = tronWalletTransferDataSource;
     }
 
-    public WalletTransferDataSource getDataSource(TokenCode arg) {
+    public WalletTransferDataSource getDataSource(Pair<? extends TokenCode, ? extends BlockchainType> arg) {
         Intrinsics.checkNotNullParameter(arg, "arg");
-        if (arg.isCryptoTokens()) {
-            int i = WhenMappings.$EnumSwitchMapping$0[this.cryptoPreferenceHelper.getCurrentBlockchainType().ordinal()];
+        TokenCode first = arg.getFirst();
+        if (first.isCryptoTokens()) {
+            int i = WhenMappings.$EnumSwitchMapping$0[arg.getSecond().ordinal()];
             if (i != 1) {
-                if (i == 2) {
-                    return this.tonWalletTransferDataSource;
+                if (i != 2) {
+                    if (i == 3) {
+                        return this.tronWalletTransferDataSource;
+                    }
+                    throw new NoWhenBranchMatchedException();
                 }
-                throw new NoWhenBranchMatchedException();
+                return this.tonWalletTransferDataSource;
             }
             return this.evmWalletTransferDataSource;
         }
-        throw new IllegalStateException(DataSourceFactory.Companion.unsupportedDataSource(arg.name()).toString());
+        throw new IllegalStateException(DataSourceFactory.Companion.unsupportedDataSource(first.name()).toString());
     }
 }

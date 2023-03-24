@@ -14,7 +14,7 @@ import kotlin.collections.CollectionsKt;
 import kotlin.jvm.internal.Intrinsics;
 import org.fork.p046ui.fragment.CreateReactionButtonsActivity;
 import org.fork.utils.Callbacks$Callback;
-import org.telegram.messenger.C3286R;
+import org.telegram.messenger.C3301R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.MessagesController;
@@ -39,7 +39,7 @@ public final class ReactionHelper {
         if (parentActivity == null) {
             return;
         }
-        DialogUtils.createDialog$default(parentActivity, new DialogModel(LocaleController.getInternalString(C3286R.string.chat_reaction_dialog_title), LocaleController.getInternalString(C3286R.string.chat_reaction_dialog_text), LocaleController.getInternalString(C3286R.string.common_cancel), LocaleController.getInternalString(C3286R.string.chat_reaction_start)), new Callbacks$Callback() { // from class: com.smedialink.utils.helper.reaction.ReactionHelper$$ExternalSyntheticLambda0
+        DialogUtils.createDialog$default(parentActivity, new DialogModel(LocaleController.getInternalString(C3301R.string.chat_reaction_dialog_title), LocaleController.getInternalString(C3301R.string.chat_reaction_dialog_text), LocaleController.getInternalString(C3301R.string.common_cancel), LocaleController.getInternalString(C3301R.string.chat_reaction_start)), new Callbacks$Callback() { // from class: com.smedialink.utils.helper.reaction.ReactionHelper$$ExternalSyntheticLambda0
             @Override // org.fork.utils.Callbacks$Callback
             public final void invoke() {
                 ReactionHelper.showReactionActivationAlert$lambda$0(BaseFragment.this);
@@ -64,7 +64,7 @@ public final class ReactionHelper {
                 if (!it.hasNext()) {
                     break;
                 }
-                if (((TLRPC$Dialog) it.next()).f1505id == AppConfiguration$Reaction.getBotId()) {
+                if (((TLRPC$Dialog) it.next()).f1506id == AppConfiguration$Reaction.getBotId()) {
                     z = true;
                     continue;
                 } else {

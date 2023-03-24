@@ -13,14 +13,14 @@ import org.bouncycastle.util.encoders.Hex;
 public class SecP192K1Curve extends ECCurve.AbstractFp {
 
     /* renamed from: q */
-    public static final BigInteger f1336q = new BigInteger(1, Hex.decode("FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEFFFFEE37"));
+    public static final BigInteger f1337q = new BigInteger(1, Hex.decode("FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEFFFFEE37"));
     protected SecP192K1Point infinity;
 
     public SecP192K1Curve() {
-        super(f1336q);
+        super(f1337q);
         this.infinity = new SecP192K1Point(this, null, null);
-        this.f1307a = fromBigInteger(ECConstants.ZERO);
-        this.f1308b = fromBigInteger(BigInteger.valueOf(3L));
+        this.f1308a = fromBigInteger(ECConstants.ZERO);
+        this.f1309b = fromBigInteger(BigInteger.valueOf(3L));
         this.order = new BigInteger(1, Hex.decode("FFFFFFFFFFFFFFFFFFFFFFFE26F2FC170F69466A74DEFD8D"));
         this.cofactor = BigInteger.valueOf(1L);
         this.coord = 2;
@@ -37,9 +37,9 @@ public class SecP192K1Curve extends ECCurve.AbstractFp {
         int i3 = 0;
         for (int i4 = 0; i4 < i2; i4++) {
             ECPoint eCPoint = eCPointArr[i + i4];
-            Nat192.copy(((SecP192K1FieldElement) eCPoint.getRawXCoord()).f1339x, 0, iArr, i3);
+            Nat192.copy(((SecP192K1FieldElement) eCPoint.getRawXCoord()).f1340x, 0, iArr, i3);
             int i5 = i3 + 6;
-            Nat192.copy(((SecP192K1FieldElement) eCPoint.getRawYCoord()).f1339x, 0, iArr, i5);
+            Nat192.copy(((SecP192K1FieldElement) eCPoint.getRawYCoord()).f1340x, 0, iArr, i5);
             i3 = i5 + 6;
         }
         return new ECLookupTable() { // from class: org.bouncycastle.math.ec.custom.sec.SecP192K1Curve.1
@@ -87,7 +87,7 @@ public class SecP192K1Curve extends ECCurve.AbstractFp {
 
     @Override // org.bouncycastle.math.p043ec.ECCurve
     public int getFieldSize() {
-        return f1336q.bitLength();
+        return f1337q.bitLength();
     }
 
     @Override // org.bouncycastle.math.p043ec.ECCurve

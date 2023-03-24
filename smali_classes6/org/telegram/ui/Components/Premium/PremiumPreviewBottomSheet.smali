@@ -874,9 +874,9 @@
 
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    move v1, v0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     .line 592
     :goto_0
@@ -1204,9 +1204,9 @@
 
     move-result-wide v0
 
-    cmp-long p3, p1, v0
+    cmp-long p1, p1, v0
 
-    if-nez p3, :cond_0
+    if-nez p1, :cond_0
 
     const/4 p1, 0x1
 
@@ -1328,7 +1328,7 @@
     goto :goto_0
 
     :cond_0
-    const/4 v4, 0x0
+    move v4, v3
 
     :goto_0
     invoke-virtual {v2, v4}, Landroid/view/View;->setVisibility(I)V
@@ -1489,7 +1489,7 @@
 
     int-to-float v7, v7
 
-    mul-float v5, v5, v7
+    mul-float/2addr v5, v7
 
     .line 656
     invoke-virtual {v4}, Landroid/view/View;->getMeasuredHeight()I
@@ -1500,7 +1500,7 @@
 
     const v10, 0x3f4ccccd    # 0.8f
 
-    mul-float v7, v7, v10
+    mul-float/2addr v7, v10
 
     div-float v10, v7, v5
 
@@ -1624,9 +1624,9 @@
 
     sub-float v15, v14, v12
 
-    mul-float v9, v9, v15
+    mul-float/2addr v9, v15
 
-    mul-float v10, v10, v12
+    mul-float/2addr v10, v12
 
     add-float/2addr v9, v10
 
@@ -1690,7 +1690,7 @@
 
     sub-float v9, v14, v9
 
-    mul-float v9, v9, v2
+    mul-float/2addr v9, v2
 
     float-to-int v2, v9
 
@@ -2108,7 +2108,7 @@
 .end method
 
 .method public setTitle(Z)V
-    .locals 13
+    .locals 12
 
     .line 261
     iget-object v0, p0, Lorg/telegram/ui/Components/Premium/PremiumPreviewBottomSheet;->titleView:[Lorg/telegram/ui/Components/LinkSpanDrawable$LinksTextView;
@@ -2233,7 +2233,7 @@
 
     if-eqz v7, :cond_4
 
-    const/4 v7, 0x0
+    move v7, v6
 
     .line 276
     :goto_1
@@ -2260,9 +2260,9 @@
 
     iget-wide v10, v10, Lorg/telegram/tgnet/TLRPC$StickerSet;->thumb_document_id:J
 
-    cmp-long v12, v8, v10
+    cmp-long v8, v8, v10
 
-    if-nez v12, :cond_2
+    if-nez v8, :cond_2
 
     .line 278
     iget-object v3, v2, Lorg/telegram/tgnet/TLRPC$messages_StickerSet;->documents:Ljava/util/ArrayList;

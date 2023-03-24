@@ -148,7 +148,7 @@
 
     const/high16 v2, 0x40000000    # 2.0f
 
-    mul-float v1, v1, v2
+    mul-float/2addr v1, v2
 
     div-float/2addr v0, v1
 
@@ -238,7 +238,7 @@
     goto :goto_0
 
     :cond_1
-    const/4 v0, 0x0
+    move v0, v1
 
     :goto_0
     aput v0, p2, v2
@@ -278,7 +278,7 @@
     goto :goto_1
 
     :cond_3
-    const/4 v0, 0x0
+    move v0, v1
 
     :goto_1
     aput v0, v4, v2
@@ -299,7 +299,7 @@
     goto :goto_3
 
     :cond_5
-    const/4 v0, 0x0
+    move v0, v1
 
     .line 322
     :goto_3
@@ -337,22 +337,22 @@
 
     move-result v0
 
-    const/4 v1, 0x1
+    const v1, 0x3f389375    # 0.721f
 
-    const/4 v2, 0x0
+    cmpl-float v0, v0, v1
 
-    const v3, 0x3f389375    # 0.721f
+    const/4 v2, 0x1
 
-    cmpl-float v0, v0, v3
+    const/4 v3, 0x0
 
     if-lez v0, :cond_0
 
-    const/4 v0, 0x1
+    move v0, v2
 
     goto :goto_0
 
     :cond_0
-    const/4 v0, 0x0
+    move v0, v3
 
     .line 248
     :goto_0
@@ -374,14 +374,14 @@
 
     move-result v4
 
-    cmpl-float v3, v4, v3
+    cmpl-float v1, v4, v1
 
-    if-lez v3, :cond_1
+    if-lez v1, :cond_1
 
     goto :goto_1
 
     :cond_1
-    const/4 v1, 0x0
+    move v2, v3
 
     :goto_1
     if-eqz p1, :cond_2
@@ -389,7 +389,7 @@
     goto :goto_2
 
     :cond_2
-    move v0, v1
+    move v0, v2
 
     .line 250
     :goto_2
@@ -415,69 +415,69 @@
 
     move-result v0
 
-    const/4 v1, 0x1
+    const/4 v1, 0x0
 
-    const/16 v2, 0x15
+    cmpl-float v2, v0, v1
 
-    const/4 v3, 0x0
+    const/4 v3, 0x1
 
-    const/4 v4, 0x0
+    const/16 v4, 0x15
 
-    cmpl-float v5, v0, v4
+    const/4 v5, 0x0
 
-    if-nez v5, :cond_0
+    if-nez v2, :cond_0
 
     .line 260
-    sget v5, Landroid/os/Build$VERSION;->SDK_INT:I
+    sget v2, Landroid/os/Build$VERSION;->SDK_INT:I
 
-    if-lt v5, v2, :cond_0
+    if-lt v2, v4, :cond_0
 
-    iget-object v5, p0, Lorg/telegram/ui/Components/TrendingStickersAlert$AlertContainerView;->this$0:Lorg/telegram/ui/Components/TrendingStickersAlert;
+    iget-object v2, p0, Lorg/telegram/ui/Components/TrendingStickersAlert$AlertContainerView;->this$0:Lorg/telegram/ui/Components/TrendingStickersAlert;
 
-    invoke-virtual {v5}, Lorg/telegram/ui/ActionBar/BottomSheet;->isDismissed()Z
+    invoke-virtual {v2}, Lorg/telegram/ui/ActionBar/BottomSheet;->isDismissed()Z
 
-    move-result v5
+    move-result v2
 
-    if-nez v5, :cond_0
+    if-nez v2, :cond_0
 
-    const/4 v5, 0x1
+    move v2, v3
 
     goto :goto_0
 
     :cond_0
-    const/4 v5, 0x0
+    move v2, v5
 
     :goto_0
-    invoke-direct {p0, v5, v1}, Lorg/telegram/ui/Components/TrendingStickersAlert$AlertContainerView;->setStatusBarVisible(ZZ)V
+    invoke-direct {p0, v2, v3}, Lorg/telegram/ui/Components/TrendingStickersAlert$AlertContainerView;->setStatusBarVisible(ZZ)V
 
     .line 261
-    iget v5, p0, Lorg/telegram/ui/Components/TrendingStickersAlert$AlertContainerView;->statusBarAlpha:F
+    iget v2, p0, Lorg/telegram/ui/Components/TrendingStickersAlert$AlertContainerView;->statusBarAlpha:F
 
     const/high16 v6, 0x3f000000    # 0.5f
 
-    cmpl-float v5, v5, v6
+    cmpl-float v2, v2, v6
 
-    if-lez v5, :cond_1
+    if-lez v2, :cond_1
 
     goto :goto_1
 
     :cond_1
-    const/4 v1, 0x0
+    move v3, v5
 
     :goto_1
-    invoke-direct {p0, v1}, Lorg/telegram/ui/Components/TrendingStickersAlert$AlertContainerView;->updateLightStatusBar(Z)V
+    invoke-direct {p0, v3}, Lorg/telegram/ui/Components/TrendingStickersAlert$AlertContainerView;->updateLightStatusBar(Z)V
 
     .line 262
-    iget v1, p0, Lorg/telegram/ui/Components/TrendingStickersAlert$AlertContainerView;->statusBarAlpha:F
+    iget v2, p0, Lorg/telegram/ui/Components/TrendingStickersAlert$AlertContainerView;->statusBarAlpha:F
 
-    const/high16 v5, 0x3f800000    # 1.0f
+    cmpl-float v2, v2, v1
 
-    cmpl-float v1, v1, v4
+    const/high16 v3, 0x3f800000    # 1.0f
 
-    if-lez v1, :cond_3
+    if-lez v2, :cond_3
 
     .line 263
-    iget-object v1, p0, Lorg/telegram/ui/Components/TrendingStickersAlert$AlertContainerView;->paint:Landroid/graphics/Paint;
+    iget-object v2, p0, Lorg/telegram/ui/Components/TrendingStickersAlert$AlertContainerView;->paint:Landroid/graphics/Paint;
 
     iget-object v6, p0, Lorg/telegram/ui/Components/TrendingStickersAlert$AlertContainerView;->this$0:Lorg/telegram/ui/Components/TrendingStickersAlert;
 
@@ -487,16 +487,16 @@
 
     move-result v6
 
-    invoke-virtual {v1, v6}, Landroid/graphics/Paint;->setColor(I)V
+    invoke-virtual {v2, v6}, Landroid/graphics/Paint;->setColor(I)V
 
     .line 264
-    iget-object v1, p0, Lorg/telegram/ui/Components/TrendingStickersAlert$AlertContainerView;->this$0:Lorg/telegram/ui/Components/TrendingStickersAlert;
+    iget-object v2, p0, Lorg/telegram/ui/Components/TrendingStickersAlert$AlertContainerView;->this$0:Lorg/telegram/ui/Components/TrendingStickersAlert;
 
-    invoke-static {v1}, Lorg/telegram/ui/Components/TrendingStickersAlert;->access$500(Lorg/telegram/ui/Components/TrendingStickersAlert;)I
+    invoke-static {v2}, Lorg/telegram/ui/Components/TrendingStickersAlert;->access$500(Lorg/telegram/ui/Components/TrendingStickersAlert;)I
 
-    move-result v1
+    move-result v2
 
-    int-to-float v1, v1
+    int-to-float v2, v2
 
     iget-object v6, p0, Lorg/telegram/ui/Components/TrendingStickersAlert$AlertContainerView;->this$0:Lorg/telegram/ui/Components/TrendingStickersAlert;
 
@@ -510,11 +510,11 @@
 
     move-result v7
 
-    sub-float v7, v5, v7
+    sub-float v7, v3, v7
 
-    mul-float v6, v6, v7
+    mul-float/2addr v6, v7
 
-    add-float/2addr v1, v6
+    add-float/2addr v2, v6
 
     const/16 v6, 0x18
 
@@ -524,7 +524,7 @@
 
     int-to-float v6, v6
 
-    add-float/2addr v1, v6
+    add-float/2addr v2, v6
 
     iget-object v6, p0, Lorg/telegram/ui/Components/TrendingStickersAlert$AlertContainerView;->this$0:Lorg/telegram/ui/Components/TrendingStickersAlert;
 
@@ -538,14 +538,14 @@
 
     sget v7, Landroid/os/Build$VERSION;->SDK_INT:I
 
-    if-lt v7, v2, :cond_2
+    if-lt v7, v4, :cond_2
 
     sget v7, Lorg/telegram/messenger/AndroidUtilities;->statusBarHeight:I
 
     goto :goto_2
 
     :cond_2
-    const/4 v7, 0x0
+    move v7, v5
 
     :goto_2
     iget-object v8, p0, Lorg/telegram/ui/Components/TrendingStickersAlert$AlertContainerView;->this$0:Lorg/telegram/ui/Components/TrendingStickersAlert;
@@ -560,13 +560,13 @@
 
     add-float/2addr v6, v7
 
-    add-float/2addr v1, v6
+    add-float/2addr v2, v6
 
-    invoke-static {v4, v1}, Ljava/lang/Math;->max(FF)F
+    invoke-static {v1, v2}, Ljava/lang/Math;->max(FF)F
 
-    move-result v1
+    move-result v2
 
-    float-to-int v1, v1
+    float-to-int v2, v2
 
     .line 265
     iget-object v6, p0, Lorg/telegram/ui/Components/TrendingStickersAlert$AlertContainerView;->this$0:Lorg/telegram/ui/Components/TrendingStickersAlert;
@@ -583,7 +583,7 @@
 
     iget v7, p0, Lorg/telegram/ui/Components/TrendingStickersAlert$AlertContainerView;->statusBarAlpha:F
 
-    invoke-static {v1, v6, v7}, Lorg/telegram/messenger/AndroidUtilities;->lerp(IIF)I
+    invoke-static {v2, v6, v7}, Lorg/telegram/messenger/AndroidUtilities;->lerp(IIF)I
 
     move-result v6
 
@@ -603,7 +603,7 @@
 
     int-to-float v10, v6
 
-    int-to-float v11, v1
+    int-to-float v11, v2
 
     iget-object v12, p0, Lorg/telegram/ui/Components/TrendingStickersAlert$AlertContainerView;->paint:Landroid/graphics/Paint;
 
@@ -619,38 +619,38 @@
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
     .line 271
-    iget-object v1, p0, Lorg/telegram/ui/Components/TrendingStickersAlert$AlertContainerView;->this$0:Lorg/telegram/ui/Components/TrendingStickersAlert;
-
-    invoke-static {v1}, Lorg/telegram/ui/Components/TrendingStickersAlert;->access$000(Lorg/telegram/ui/Components/TrendingStickersAlert;)Lorg/telegram/ui/Components/TrendingStickersLayout;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Landroid/widget/FrameLayout;->getTranslationY()F
-
-    move-result v1
-
-    sget v6, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    if-lt v6, v2, :cond_4
-
-    sget v3, Lorg/telegram/messenger/AndroidUtilities;->statusBarHeight:I
-
-    :cond_4
-    int-to-float v2, v3
-
-    add-float/2addr v1, v2
-
     iget-object v2, p0, Lorg/telegram/ui/Components/TrendingStickersAlert$AlertContainerView;->this$0:Lorg/telegram/ui/Components/TrendingStickersAlert;
 
-    invoke-static {v2}, Lorg/telegram/ui/Components/TrendingStickersAlert;->access$800(Lorg/telegram/ui/Components/TrendingStickersAlert;)I
+    invoke-static {v2}, Lorg/telegram/ui/Components/TrendingStickersAlert;->access$000(Lorg/telegram/ui/Components/TrendingStickersAlert;)Lorg/telegram/ui/Components/TrendingStickersLayout;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Landroid/widget/FrameLayout;->getTranslationY()F
 
     move-result v2
 
-    int-to-float v2, v2
+    sget v6, Landroid/os/Build$VERSION;->SDK_INT:I
 
-    sub-float/2addr v1, v2
+    if-lt v6, v4, :cond_4
 
-    invoke-virtual {p1, v4, v1}, Landroid/graphics/Canvas;->translate(FF)V
+    sget v5, Lorg/telegram/messenger/AndroidUtilities;->statusBarHeight:I
+
+    :cond_4
+    int-to-float v4, v5
+
+    add-float/2addr v2, v4
+
+    iget-object v4, p0, Lorg/telegram/ui/Components/TrendingStickersAlert$AlertContainerView;->this$0:Lorg/telegram/ui/Components/TrendingStickersAlert;
+
+    invoke-static {v4}, Lorg/telegram/ui/Components/TrendingStickersAlert;->access$800(Lorg/telegram/ui/Components/TrendingStickersAlert;)I
+
+    move-result v4
+
+    int-to-float v4, v4
+
+    sub-float/2addr v2, v4
+
+    invoke-virtual {p1, v1, v2}, Landroid/graphics/Canvas;->translate(FF)V
 
     const/16 v1, 0x24
 
@@ -666,17 +666,17 @@
 
     move-result v2
 
-    int-to-float v3, v2
+    int-to-float v4, v2
 
-    const/high16 v4, 0x40000000    # 2.0f
+    const/high16 v5, 0x40000000    # 2.0f
 
-    mul-float v3, v3, v4
+    mul-float/2addr v4, v5
 
-    sub-float/2addr v5, v0
+    sub-float/2addr v3, v0
 
-    mul-float v3, v3, v5
+    mul-float/2addr v4, v3
 
-    float-to-int v3, v3
+    float-to-int v3, v4
 
     .line 277
     iget-object v4, p0, Lorg/telegram/ui/Components/TrendingStickersAlert$AlertContainerView;->this$0:Lorg/telegram/ui/Components/TrendingStickersAlert;
@@ -717,7 +717,7 @@
 
     int-to-float v7, v7
 
-    mul-float v7, v7, v0
+    mul-float/2addr v7, v0
 
     float-to-int v0, v7
 
@@ -863,7 +863,7 @@
 
     sub-float v3, v2, v0
 
-    mul-float v1, v1, v3
+    mul-float/2addr v1, v3
 
     float-to-int v1, v1
 
@@ -881,7 +881,7 @@
     goto :goto_0
 
     :cond_0
-    const/4 v3, 0x0
+    move v3, v4
 
     :goto_0
     iget-object v5, p0, Lorg/telegram/ui/Components/TrendingStickersAlert$AlertContainerView;->this$0:Lorg/telegram/ui/Components/TrendingStickersAlert;
@@ -952,7 +952,7 @@
     goto :goto_1
 
     :cond_1
-    const/4 v3, 0x0
+    move v3, v4
 
     :goto_1
     add-int/2addr v9, v3
@@ -985,7 +985,7 @@
 
     int-to-float v2, v2
 
-    mul-float v2, v2, v0
+    mul-float/2addr v2, v0
 
     .line 233
     iget-object v0, p0, Lorg/telegram/ui/Components/TrendingStickersAlert$AlertContainerView;->this$0:Lorg/telegram/ui/Components/TrendingStickersAlert;
@@ -1168,7 +1168,7 @@
     goto :goto_0
 
     :cond_0
-    const/4 v0, 0x0
+    move v0, v1
 
     .line 185
     :goto_0
@@ -1193,7 +1193,7 @@
 
     const v4, 0x3e4ccccd    # 0.2f
 
-    mul-float v2, v2, v4
+    mul-float/2addr v2, v4
 
     float-to-int v2, v2
 

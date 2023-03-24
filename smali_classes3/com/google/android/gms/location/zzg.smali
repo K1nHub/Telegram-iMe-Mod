@@ -74,7 +74,7 @@
     :cond_2
     if-ge p1, p2, :cond_3
 
-    const/4 v2, -0x1
+    move v2, v3
 
     :cond_3
     :goto_0

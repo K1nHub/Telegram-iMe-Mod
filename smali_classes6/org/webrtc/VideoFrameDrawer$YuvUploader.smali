@@ -181,9 +181,9 @@
 
     aput v7, v5, v4
 
-    const/4 v4, 0x0
+    move v4, v3
 
-    const/4 v6, 0x0
+    move v6, v4
 
     :goto_0
     if-ge v4, v1, :cond_1
@@ -200,7 +200,7 @@
 
     aget v8, v5, v4
 
-    mul-int v7, v7, v8
+    mul-int/2addr v7, v8
 
     invoke-static {v6, v7}, Ljava/lang/Math;->max(II)I
 
@@ -247,7 +247,7 @@
     .line 92
     iput-object v4, v0, Lorg/webrtc/VideoFrameDrawer$YuvUploader;->yuvTextures:[I
 
-    const/4 v4, 0x0
+    move v4, v3
 
     :goto_1
     if-ge v4, v1, :cond_4

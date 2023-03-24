@@ -338,7 +338,7 @@ public class AlertController {
         setupButtons(resolvePanel3);
         setupTitle(resolvePanel);
         boolean z = viewGroup.getVisibility() != 8;
-        boolean z2 = (resolvePanel == null || resolvePanel.getVisibility() == 8) ? 0 : 1;
+        boolean z2 = (resolvePanel == null || resolvePanel.getVisibility() == 8) ? false : 1;
         boolean z3 = (resolvePanel3 == null || resolvePanel3.getVisibility() == 8) ? false : true;
         if (!z3 && resolvePanel2 != null && (findViewById2 = resolvePanel2.findViewById(R$id.textSpacerNoButtons)) != null) {
             findViewById2.setVisibility(0);

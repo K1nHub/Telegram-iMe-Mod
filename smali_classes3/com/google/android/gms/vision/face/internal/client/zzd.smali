@@ -53,31 +53,31 @@
 
     move-object/from16 v21, v17
 
-    const/4 v8, 0x0
+    move v8, v3
 
-    const/4 v9, 0x0
+    move v9, v8
 
-    const/4 v10, 0x0
+    move v14, v4
 
-    const/4 v11, 0x0
+    move v15, v14
 
-    const/4 v12, 0x0
+    move/from16 v16, v15
 
-    const/4 v13, 0x0
+    move v10, v5
 
-    const v14, 0x7f7fffff    # Float.MAX_VALUE
+    move v11, v10
 
-    const v15, 0x7f7fffff    # Float.MAX_VALUE
+    move v12, v11
 
-    const v16, 0x7f7fffff    # Float.MAX_VALUE
+    move v13, v12
 
-    const/16 v18, 0x0
+    move/from16 v18, v13
 
-    const/16 v19, 0x0
+    move/from16 v19, v18
 
-    const/16 v20, 0x0
+    move/from16 v20, v19
 
-    const/high16 v22, -0x40800000    # -1.0f
+    move/from16 v22, v6
 
     .line 23
     :goto_0
@@ -250,8 +250,6 @@
     invoke-direct/range {v7 .. v22}, Lcom/google/android/gms/vision/face/internal/client/FaceParcel;-><init>(IIFFFFFFF[Lcom/google/android/gms/vision/face/internal/client/LandmarkParcel;FFF[Lcom/google/android/gms/vision/face/internal/client/zza;F)V
 
     return-object v0
-
-    nop
 
     :pswitch_data_0
     .packed-switch 0x1

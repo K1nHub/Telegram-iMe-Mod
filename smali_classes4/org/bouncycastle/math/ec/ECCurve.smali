@@ -199,9 +199,9 @@
 
     const/4 v2, 0x0
 
-    const/4 v3, 0x0
+    move v3, v2
 
-    const/4 v4, 0x0
+    move v4, v3
 
     :goto_0
     if-ge v3, p3, :cond_2
@@ -240,12 +240,12 @@
 
     if-le v7, v0, :cond_0
 
-    const/4 v7, 0x1
+    move v7, v8
 
     goto :goto_1
 
     :cond_0
-    const/4 v7, 0x0
+    move v7, v2
 
     :goto_1
     array-length v9, v6
@@ -259,7 +259,7 @@
     goto :goto_2
 
     :cond_1
-    const/4 v8, 0x0
+    move v8, v2
 
     :goto_2
     array-length v10, v5
@@ -445,7 +445,7 @@
 
     if-ne v3, v1, :cond_2
 
-    const/4 v2, 0x1
+    move v2, v4
 
     :cond_2
     if-ne v0, v2, :cond_3
@@ -1004,9 +1004,9 @@
 
     const/4 v2, 0x0
 
-    const/4 v3, 0x0
+    move v3, v2
 
-    const/4 v4, 0x0
+    move v4, v3
 
     :goto_0
     if-ge v3, p3, :cond_2

@@ -134,7 +134,7 @@ public class ChatThemeController extends BaseController {
             java.util.ArrayList<org.telegram.tgnet.TLRPC$TL_theme> r2 = r7.themes
             int r2 = r2.size()
             r0.<init>(r2)
-            r2 = 0
+            r2 = r1
         L41:
             java.util.ArrayList<org.telegram.tgnet.TLRPC$TL_theme> r3 = r7.themes
             int r3 = r3.size()
@@ -171,7 +171,7 @@ public class ChatThemeController extends BaseController {
             if (r7 == 0) goto L9a
             java.util.List r0 = getAllChatThemesFromPrefs()
         L98:
-            r7 = 0
+            r7 = r1
             goto La4
         L9a:
             r0 = 0
@@ -330,7 +330,7 @@ public class ChatThemeController extends BaseController {
     public static void preloadAllWallpaperImages(boolean z) {
         for (EmojiThemes emojiThemes : allChatThemes) {
             TLRPC$TL_theme tlTheme = emojiThemes.getTlTheme(z ? 1 : 0);
-            if (tlTheme != null && !getPatternFile(tlTheme.f1630id).exists()) {
+            if (tlTheme != null && !getPatternFile(tlTheme.f1631id).exists()) {
                 emojiThemes.loadWallpaper(z ? 1 : 0, null);
             }
         }
@@ -340,7 +340,7 @@ public class ChatThemeController extends BaseController {
         for (EmojiThemes emojiThemes : allChatThemes) {
             TLRPC$TL_theme tlTheme = emojiThemes.getTlTheme(z ? 1 : 0);
             if (tlTheme != null) {
-                if (!themeIdWallpaperThumbMap.containsKey(Long.valueOf(tlTheme.f1630id))) {
+                if (!themeIdWallpaperThumbMap.containsKey(Long.valueOf(tlTheme.f1631id))) {
                     emojiThemes.loadWallpaperThumb(z ? 1 : 0, ChatThemeController$$ExternalSyntheticLambda7.INSTANCE);
                 }
             }

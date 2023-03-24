@@ -11,9 +11,9 @@ public final class zzi implements Parcelable.Creator {
         int validateObjectHeader = SafeParcelReader.validateObjectHeader(parcel);
         String str = null;
         String str2 = null;
+        int i = 0;
         double d = 0.0d;
         long j = 0;
-        int i = 0;
         int i2 = -1;
         while (parcel.dataPosition() < validateObjectHeader) {
             int readHeader = SafeParcelReader.readHeader(parcel);

@@ -269,9 +269,9 @@
 
     const-wide/16 v9, 0xc8
 
-    cmp-long v11, v7, v9
+    cmp-long v7, v7, v9
 
-    if-gez v11, :cond_1
+    if-gez v7, :cond_1
 
     sub-long v5, v3, v5
 
@@ -505,9 +505,9 @@
 
     add-long/2addr v8, v12
 
-    cmp-long v10, v8, v3
+    cmp-long v8, v8, v3
 
-    if-gtz v10, :cond_8
+    if-gtz v8, :cond_8
 
     .line 2483
     iget-object v6, v0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell;->media:Ljava/util/ArrayList;
@@ -582,20 +582,20 @@
 
     move-result v2
 
-    const/4 v3, 0x0
+    cmpg-float v3, v2, v4
 
-    const/4 v5, 0x1
-
-    cmpg-float v6, v2, v4
-
-    if-gez v6, :cond_0
+    const/4 v5, 0x0
 
     const/4 v6, 0x1
+
+    if-gez v3, :cond_0
+
+    move v3, v6
 
     goto :goto_0
 
     :cond_0
-    const/4 v6, 0x0
+    move v3, v5
 
     .line 2523
     :goto_0
@@ -613,7 +613,7 @@
 
     const/high16 v8, 0x3f000000    # 0.5f
 
-    mul-float v7, v7, v8
+    mul-float/2addr v7, v8
 
     .line 2524
     iget v8, v0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell;->previousGroupWidth:F
@@ -632,7 +632,7 @@
 
     int-to-float v9, v9
 
-    mul-float v8, v8, v9
+    mul-float/2addr v8, v9
 
     iget-object v9, v0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell;->this$1:Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView;
 
@@ -642,7 +642,7 @@
 
     move-result v9
 
-    mul-float v8, v8, v9
+    mul-float/2addr v8, v9
 
     .line 2525
     iget v9, v0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell;->previousGroupHeight:F
@@ -653,7 +653,7 @@
 
     move-result v9
 
-    mul-float v9, v9, v7
+    mul-float/2addr v9, v7
 
     iget-object v7, v0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell;->this$1:Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView;
 
@@ -663,7 +663,7 @@
 
     move-result v7
 
-    mul-float v9, v9, v7
+    mul-float/2addr v9, v7
 
     .line 2527
     iget-object v7, v0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell;->messageBackground:Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;
@@ -806,7 +806,7 @@
 
     const/high16 v7, 0x437f0000    # 255.0f
 
-    mul-float v4, v4, v7
+    mul-float/2addr v4, v7
 
     float-to-int v4, v4
 
@@ -884,12 +884,12 @@
     move-result v2
 
     :goto_2
-    if-ge v3, v2, :cond_7
+    if-ge v5, v2, :cond_7
 
     .line 2552
     iget-object v4, v0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell;->media:Ljava/util/ArrayList;
 
-    invoke-virtual {v4, v3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+    invoke-virtual {v4, v5}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v4
 
@@ -935,16 +935,16 @@
 
     if-eqz v4, :cond_6
 
-    const/4 v6, 0x1
+    move v3, v6
 
     :cond_6
     :goto_3
-    add-int/lit8 v3, v3, 0x1
+    add-int/lit8 v5, v5, 0x1
 
     goto :goto_2
 
     :cond_7
-    return v6
+    return v3
 .end method
 
 .method public getT()F
@@ -998,7 +998,7 @@
 
     const/high16 v1, 0x3f000000    # 0.5f
 
-    mul-float v0, v0, v1
+    mul-float/2addr v0, v1
 
     .line 2507
     iget v1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell;->previousGroupHeight:F
@@ -1013,7 +1013,7 @@
 
     move-result v1
 
-    mul-float v1, v1, v0
+    mul-float/2addr v1, v0
 
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$PreviewGroupCell;->this$1:Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView;
 
@@ -1023,7 +1023,7 @@
 
     move-result v0
 
-    mul-float v1, v1, v0
+    mul-float/2addr v1, v0
 
     return v1
 .end method

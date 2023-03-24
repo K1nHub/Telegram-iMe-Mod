@@ -1,6 +1,6 @@
 package com.smedialink.p031ui.wallet.crypto.create;
 
-import com.smedialink.p031ui.wallet.crypto.create.CreateWalletFragment;
+import com.smedialink.model.wallet.crypto.create.CreateWalletScreenType;
 import java.util.List;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.Lambda;
@@ -22,6 +22,6 @@ final class CreateWalletFragment$createNewWalletWithPassword$1 extends Lambda im
 
     @Override // kotlin.jvm.functions.Function0
     public final BaseFragment invoke() {
-        return CreateWalletFragment.Companion.newInstance(new CreateWalletFragment.ScreenType.SecretWords(this.$words, null, this.$password, null, 10, null));
+        return CreateWalletFragment.Companion.newInstance(new CreateWalletScreenType.SecretWords(this.$words, null, this.$password, null, 10, null));
     }
 }

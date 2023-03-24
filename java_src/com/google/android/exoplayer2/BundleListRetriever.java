@@ -48,25 +48,25 @@ public final class BundleListRetriever extends Binder {
     public static ImmutableList<Bundle> getList(IBinder iBinder) {
         int readInt;
         ImmutableList.Builder builder = ImmutableList.builder();
-        int i = 1;
-        int i2 = 0;
-        while (i != 0) {
+        int i = 0;
+        int i2 = 1;
+        while (i2 != 0) {
             Parcel obtain = Parcel.obtain();
             Parcel obtain2 = Parcel.obtain();
             try {
-                obtain.writeInt(i2);
+                obtain.writeInt(i);
                 try {
                     iBinder.transact(1, obtain, obtain2, 0);
                     while (true) {
                         readInt = obtain2.readInt();
                         if (readInt == 1) {
                             builder.add((ImmutableList.Builder) ((Bundle) Assertions.checkNotNull(obtain2.readBundle())));
-                            i2++;
+                            i++;
                         }
                     }
                     obtain2.recycle();
                     obtain.recycle();
-                    i = readInt;
+                    i2 = readInt;
                 } catch (RemoteException e) {
                     throw new RuntimeException(e);
                 }

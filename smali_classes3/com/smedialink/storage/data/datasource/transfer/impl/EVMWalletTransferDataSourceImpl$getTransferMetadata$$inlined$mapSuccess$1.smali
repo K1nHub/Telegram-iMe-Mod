@@ -21,7 +21,7 @@
         "Lkotlin/jvm/internal/Lambda;",
         "Lkotlin/jvm/functions/Function1<",
         "Lcom/smedialink/storage/data/network/model/response/base/ApiBaseResponse<",
-        "Lcom/smedialink/storage/data/network/model/response/crypto/wallet/DataForCryptoTransferResponse;",
+        "Lcom/smedialink/storage/data/network/model/response/crypto/wallet/CryptoTransferDataResponse$EVM;",
         ">;",
         "Lcom/smedialink/storage/domain/model/Result<",
         "+",
@@ -31,7 +31,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nFirebaseExt.kt\nKotlin\n*S Kotlin\n*F\n+ 1 FirebaseExt.kt\ncom/smedialink/storage/data/utils/extentions/FirebaseExtKt$mapSuccess$1\n+ 2 EVMWalletTransferDataSourceImpl.kt\ncom/smedialink/storage/data/datasource/transfer/impl/EVMWalletTransferDataSourceImpl\n+ 3 ResultExt.kt\ncom/smedialink/storage/domain/utils/extentions/ResultExtKt\n*L\n1#1,86:1\n54#2:87\n8#3:88\n6#3:89\n*S KotlinDebug\n*F\n+ 1 FirebaseExt.kt\ncom/smedialink/storage/data/utils/extentions/FirebaseExtKt$mapSuccess$1\n*L\n71#1:88\n72#1:89\n*E\n"
+    value = "SMAP\nFirebaseExt.kt\nKotlin\n*S Kotlin\n*F\n+ 1 FirebaseExt.kt\ncom/smedialink/storage/data/utils/extentions/FirebaseExtKt$mapSuccess$1\n+ 2 EVMWalletTransferDataSourceImpl.kt\ncom/smedialink/storage/data/datasource/transfer/impl/EVMWalletTransferDataSourceImpl\n+ 3 ResultExt.kt\ncom/smedialink/storage/domain/utils/extentions/ResultExtKt\n*L\n1#1,86:1\n53#2:87\n9#3:88\n7#3:89\n*S KotlinDebug\n*F\n+ 1 FirebaseExt.kt\ncom/smedialink/storage/data/utils/extentions/FirebaseExtKt$mapSuccess$1\n*L\n71#1:88\n72#1:89\n*E\n"
 .end annotation
 
 
@@ -60,7 +60,7 @@
         value = {
             "(",
             "Lcom/smedialink/storage/data/network/model/response/base/ApiBaseResponse<",
-            "Lcom/smedialink/storage/data/network/model/response/crypto/wallet/DataForCryptoTransferResponse;",
+            "Lcom/smedialink/storage/data/network/model/response/crypto/wallet/CryptoTransferDataResponse$EVM;",
             ">;)",
             "Lcom/smedialink/storage/domain/model/Result<",
             "Lcom/smedialink/storage/domain/model/crypto/send/CryptoTransferMetadata;",
@@ -79,18 +79,18 @@
 
     if-eqz v0, :cond_0
 
-    .line 54
+    .line 53
     invoke-virtual {p1}, Lcom/smedialink/storage/data/network/model/response/base/ApiBaseResponse;->getPayload()Ljava/lang/Object;
 
     move-result-object p1
 
-    check-cast p1, Lcom/smedialink/storage/data/network/model/response/crypto/wallet/DataForCryptoTransferResponse;
+    check-cast p1, Lcom/smedialink/storage/data/network/model/response/crypto/wallet/CryptoTransferDataResponse$EVM;
 
-    invoke-static {p1}, Lcom/smedialink/storage/data/mapper/crypto/TransferMappingKt;->mapToDomain(Lcom/smedialink/storage/data/network/model/response/crypto/wallet/DataForCryptoTransferResponse;)Lcom/smedialink/storage/domain/model/crypto/send/CryptoTransferMetadata;
+    invoke-static {p1}, Lcom/smedialink/storage/data/mapper/crypto/TransferMappingKt;->mapToDomain(Lcom/smedialink/storage/data/network/model/response/crypto/wallet/CryptoTransferDataResponse$EVM;)Lcom/smedialink/storage/domain/model/crypto/send/CryptoTransferMetadata;
 
     move-result-object p1
 
-    .line 8
+    .line 9
     sget-object v0, Lcom/smedialink/storage/domain/model/Result;->Companion:Lcom/smedialink/storage/domain/model/Result$Companion;
 
     invoke-virtual {v0, p1}, Lcom/smedialink/storage/domain/model/Result$Companion;->success(Ljava/lang/Object;)Lcom/smedialink/storage/domain/model/Result;
@@ -107,7 +107,7 @@
 
     move-result-object p1
 
-    .line 6
+    .line 7
     sget-object v0, Lcom/smedialink/storage/domain/model/Result;->Companion:Lcom/smedialink/storage/domain/model/Result$Companion;
 
     const/4 v1, 0x2

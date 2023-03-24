@@ -85,12 +85,13 @@
     .end annotation
 .end method
 
-.method public abstract sendTokens(Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;Lcom/smedialink/storage/domain/model/crypto/send/TransferArgs;)Lio/reactivex/Observable;
+.method public abstract sendTokens(Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;Lcom/smedialink/storage/domain/model/crypto/send/TransferArgs;Lcom/smedialink/storage/domain/model/crypto/BlockchainType;)Lio/reactivex/Observable;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;",
             "Lcom/smedialink/storage/domain/model/crypto/send/TransferArgs;",
+            "Lcom/smedialink/storage/domain/model/crypto/BlockchainType;",
             ")",
             "Lio/reactivex/Observable<",
             "Lcom/smedialink/storage/domain/model/Result<",

@@ -431,7 +431,7 @@
 
     if-gt v0, v3, :cond_4
 
-    const/16 v2, 0xf
+    move v2, v3
 
     goto :goto_4
 
@@ -1496,9 +1496,9 @@
 
     move-result p1
 
-    const/4 p2, 0x0
+    move p2, p4
 
-    const/4 p3, 0x0
+    move p3, p2
 
     :goto_0
     const/4 p6, 0x1
@@ -1519,7 +1519,7 @@
 
     move-result v1
 
-    const/4 v2, 0x0
+    move v2, p4
 
     :goto_1
     if-ge v2, v1, :cond_4
@@ -1571,7 +1571,7 @@
     if-eq v1, v2, :cond_2
 
     :cond_1
-    const/4 p3, 0x1
+    move p3, p6
 
     .line 509
     :cond_2
@@ -1635,7 +1635,7 @@
 
     invoke-direct {p2}, Ljava/util/ArrayList;-><init>()V
 
-    const/4 p3, 0x0
+    move p3, p4
 
     :goto_3
     if-ge p3, p1, :cond_9
@@ -2122,11 +2122,11 @@
 
     iget-wide p2, p2, Lorg/telegram/tgnet/TLRPC$User;->id:J
 
-    cmp-long v0, v4, p2
+    cmp-long p2, v4, p2
 
-    if-nez v0, :cond_8
+    if-nez p2, :cond_8
 
-    const/4 v1, 0x1
+    move v1, v2
 
     :cond_8
     invoke-virtual {v3, v1}, Lorg/telegram/ui/ProfileActivity;->setPlayProfileAnimation(I)V
@@ -2346,7 +2346,7 @@
 
     div-float/2addr v10, v11
 
-    mul-float v10, v10, v4
+    mul-float/2addr v10, v4
 
     invoke-static {v12, v10}, Lorg/telegram/ui/Components/PollVotesAlert$Button;->access$3902(Lorg/telegram/ui/Components/PollVotesAlert$Button;F)F
 
@@ -2562,12 +2562,12 @@
 
     if-gt p1, v1, :cond_2
 
-    const/4 v1, 0x1
+    move v1, v2
 
     goto :goto_1
 
     :cond_2
-    const/4 v1, 0x0
+    move v1, v0
 
     :goto_1
     if-eqz v1, :cond_3
@@ -2655,12 +2655,12 @@
 
     if-eqz v1, :cond_7
 
-    const/high16 v10, 0x3f800000    # 1.0f
+    move v10, v8
 
     goto :goto_3
 
     :cond_7
-    const/4 v10, 0x0
+    move v10, v9
 
     :goto_3
     aput v10, v7, v0
@@ -2683,7 +2683,7 @@
     goto :goto_4
 
     :cond_8
-    const/4 v8, 0x0
+    move v8, v9
 
     :goto_4
     aput v8, v7, v0
@@ -2878,7 +2878,7 @@
 
     const/4 v0, -0x2
 
-    const/4 v1, -0x2
+    move v1, v0
 
     .line 1264
     :goto_0
@@ -3059,11 +3059,11 @@
     return v0
 
     :cond_0
-    const/4 v1, 0x0
+    move v1, v0
 
-    const/4 v2, 0x0
+    move v2, v1
 
-    const/4 v3, 0x0
+    move v3, v2
 
     .line 1248
     :goto_0
@@ -3124,7 +3124,7 @@
 
     const/high16 v0, 0x42c80000    # 100.0f
 
-    mul-float p1, p1, v0
+    mul-float/2addr p1, v0
 
     .line 1260
     invoke-static {p1}, Ljava/lang/Math;->round(F)I
@@ -3427,7 +3427,7 @@
 
     move-object v9, v11
 
-    const/4 v14, 0x1
+    move v14, v10
 
     move-object v10, v13
 

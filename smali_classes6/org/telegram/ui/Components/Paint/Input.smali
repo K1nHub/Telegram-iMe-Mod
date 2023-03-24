@@ -559,7 +559,7 @@
     move-result p1
 
     :goto_0
-    mul-float p4, p4, p3
+    mul-float/2addr p4, p3
 
     .line 127
     invoke-virtual {v0, p1, p4, p2}, Lorg/telegram/ui/Components/Paint/Path;->setup(IFLorg/telegram/ui/Components/Paint/Brush;)V
@@ -661,7 +661,7 @@
 
     float-to-double v11, v10
 
-    mul-double v8, v8, v11
+    mul-double/2addr v8, v11
 
     const/16 v20, 0x0
 
@@ -671,7 +671,7 @@
 
     float-to-double v4, v10
 
-    mul-double v8, v8, v4
+    mul-double/2addr v8, v4
 
     add-double v7, v6, v8
 
@@ -685,7 +685,7 @@
 
     move-result-wide v9
 
-    mul-double v9, v9, v11
+    mul-double/2addr v9, v11
 
     aget v6, p4, v20
 
@@ -693,7 +693,7 @@
 
     float-to-double v11, v6
 
-    mul-double v9, v9, v11
+    mul-double/2addr v9, v11
 
     add-double/2addr v9, v4
 
@@ -716,11 +716,11 @@
 
     move-result-wide v9
 
-    mul-double v9, v9, v4
+    mul-double/2addr v9, v4
 
     float-to-double v11, v2
 
-    mul-double v9, v9, v11
+    mul-double/2addr v9, v11
 
     add-double v27, v7, v9
 
@@ -730,9 +730,9 @@
 
     move-result-wide v9
 
-    mul-double v9, v9, v4
+    mul-double/2addr v9, v4
 
-    mul-double v9, v9, v11
+    mul-double/2addr v9, v11
 
     add-double v29, v7, v9
 
@@ -793,7 +793,7 @@
 
     move-result-wide v9
 
-    mul-double v9, v9, v4
+    mul-double/2addr v9, v4
 
     aget v13, p4, v20
 
@@ -803,7 +803,7 @@
 
     float-to-double v2, v13
 
-    mul-double v9, v9, v2
+    mul-double/2addr v9, v2
 
     add-double v27, v7, v9
 
@@ -824,9 +824,9 @@
 
     move-result-wide v9
 
-    mul-double v9, v9, v4
+    mul-double/2addr v9, v4
 
-    mul-double v9, v9, v11
+    mul-double/2addr v9, v11
 
     add-double v30, v7, v9
 
@@ -836,9 +836,9 @@
 
     move-result-wide v9
 
-    mul-double v9, v9, v4
+    mul-double/2addr v9, v4
 
-    mul-double v9, v9, v11
+    mul-double/2addr v9, v11
 
     add-double v32, v7, v9
 
@@ -925,7 +925,7 @@
 
     move-result-wide v4
 
-    mul-double v4, v4, v0
+    mul-double/2addr v4, v0
 
     float-to-double v6, p3
 
@@ -935,7 +935,7 @@
 
     move-result-wide v8
 
-    mul-double v8, v8, v6
+    mul-double/2addr v8, v6
 
     add-double/2addr v4, v8
 
@@ -943,13 +943,13 @@
 
     move-result-wide v2
 
-    mul-double v0, v0, v2
+    mul-double/2addr v0, v2
 
     invoke-static {p1, p2}, Ljava/lang/Math;->cos(D)D
 
     move-result-wide p1
 
-    mul-double v6, v6, p1
+    mul-double/2addr v6, p1
 
     add-double/2addr v0, v6
 
@@ -1055,9 +1055,9 @@
 
     const-wide/16 v3, 0x0
 
-    cmpl-double v5, v1, v3
+    cmpl-double v3, v1, v3
 
-    if-lez v5, :cond_0
+    if-lez v3, :cond_0
 
     float-to-double v3, v0
 
@@ -1066,7 +1066,7 @@
 
     div-double/2addr v1, v5
 
-    mul-double v3, v3, v1
+    mul-double/2addr v3, v1
 
     double-to-float v0, v3
 
@@ -1087,7 +1087,7 @@
 
     iget v1, p1, Lorg/telegram/ui/Components/Paint/Shape;->thickness:F
 
-    mul-float v0, v0, v1
+    mul-float/2addr v0, v1
 
     iput v0, p1, Lorg/telegram/ui/Components/Paint/Shape;->arrowTriangleLength:F
 
@@ -1130,9 +1130,9 @@
 
     const/high16 v12, 0x40000000    # 2.0f
 
-    mul-float v12, v12, v5
+    mul-float/2addr v12, v5
 
-    mul-float v12, v12, v3
+    mul-float/2addr v12, v3
 
     float-to-double v12, v12
 
@@ -1140,14 +1140,14 @@
 
     float-to-double v14, v14
 
-    mul-float v5, v5, v5
+    mul-float/2addr v5, v5
 
     .line 464
     iget-wide v8, v0, Lorg/telegram/ui/Components/Paint/Point;->x:D
 
     float-to-double v4, v5
 
-    mul-double v8, v8, v4
+    mul-double/2addr v8, v4
 
     move-wide/from16 v18, v12
 
@@ -1161,36 +1161,36 @@
 
     float-to-double v10, v3
 
-    mul-double v12, v12, v10
+    mul-double/2addr v12, v10
 
-    mul-double v12, v12, v6
+    mul-double/2addr v12, v6
 
     add-double/2addr v8, v12
 
     iget-wide v12, v1, Lorg/telegram/ui/Components/Paint/Point;->x:D
 
-    mul-double v12, v12, v14
+    mul-double/2addr v12, v14
 
     add-double v23, v8, v12
 
     .line 465
     iget-wide v8, v0, Lorg/telegram/ui/Components/Paint/Point;->y:D
 
-    mul-double v8, v8, v4
+    mul-double/2addr v8, v4
 
     iget-wide v3, v2, Lorg/telegram/ui/Components/Paint/Point;->y:D
 
     mul-double v3, v3, v16
 
-    mul-double v3, v3, v10
+    mul-double/2addr v3, v10
 
-    mul-double v3, v3, v6
+    mul-double/2addr v3, v6
 
     add-double/2addr v8, v3
 
     iget-wide v3, v1, Lorg/telegram/ui/Components/Paint/Point;->y:D
 
-    mul-double v3, v3, v14
+    mul-double/2addr v3, v14
 
     add-double v25, v8, v3
 
@@ -1207,7 +1207,7 @@
 
     iget-wide v0, v1, Lorg/telegram/ui/Components/Paint/Point;->z:D
 
-    mul-double v0, v0, v14
+    mul-double/2addr v0, v14
 
     add-double/2addr v3, v0
 
@@ -1242,7 +1242,7 @@
 
     float-to-double v5, v5
 
-    mul-double v3, v3, v5
+    mul-double/2addr v3, v5
 
     add-double v27, v3, v0
 
@@ -1347,9 +1347,9 @@
 
     div-float v15, v1, v2
 
-    const/4 v5, 0x0
+    move/from16 v16, v0
 
-    const/16 v16, 0x0
+    move v5, v8
 
     :goto_0
     if-ge v5, v14, :cond_2
@@ -1686,12 +1686,12 @@
 
     if-ne v5, v6, :cond_1
 
-    const/4 v5, 0x1
+    move v5, v11
 
     goto :goto_0
 
     :cond_1
-    const/4 v5, 0x0
+    move v5, v10
 
     .line 194
     :goto_0
@@ -1734,7 +1734,7 @@
 
     move-result v6
 
-    mul-float v3, v3, v6
+    mul-float/2addr v3, v6
 
     add-float/2addr v3, v4
 
@@ -1990,7 +1990,7 @@
 
     double-to-float v1, v5
 
-    mul-float v0, v0, v1
+    mul-float/2addr v0, v1
 
     const/high16 v1, 0x40900000    # 4.5f
 
@@ -2071,13 +2071,13 @@
 
     invoke-virtual {v0}, Landroid/animation/ValueAnimator;->start()V
 
-    const/4 v0, 0x0
+    move v0, v10
 
     goto :goto_3
 
     :cond_b
     :goto_2
-    const/4 v0, 0x1
+    move v0, v11
 
     :goto_3
     if-eqz v0, :cond_d
@@ -2418,12 +2418,12 @@
 
     if-lez v4, :cond_17
 
-    const/16 v17, 0x1
+    move/from16 v17, v11
 
     goto :goto_4
 
     :cond_17
-    const/16 v17, 0x0
+    move/from16 v17, v10
 
     :goto_4
     move-wide v15, v7

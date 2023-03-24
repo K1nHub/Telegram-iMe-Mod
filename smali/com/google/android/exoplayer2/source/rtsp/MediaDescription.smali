@@ -274,7 +274,7 @@
     goto :goto_0
 
     :cond_2
-    const/4 v0, 0x0
+    move v0, v1
 
     :goto_0
     return v0
@@ -335,12 +335,12 @@
 
     if-ne v2, v3, :cond_1
 
-    const/4 v2, 0x1
+    move v2, v4
 
     goto :goto_0
 
     :cond_1
-    const/4 v2, 0x0
+    move v2, v5
 
     :goto_0
     invoke-static {v2, v0}, Lcom/google/android/exoplayer2/util/Assertions;->checkArgument(ZLjava/lang/Object;)V
@@ -362,7 +362,7 @@
     .line 376
     array-length v2, v0
 
-    const/4 v3, 0x0
+    move v3, v5
 
     :goto_1
     if-ge v3, v2, :cond_2
@@ -473,7 +473,7 @@
 
     if-nez v0, :cond_0
 
-    const/4 v0, 0x0
+    move v0, v2
 
     goto :goto_0
 
@@ -492,7 +492,7 @@
 
     if-nez v0, :cond_1
 
-    const/4 v0, 0x0
+    move v0, v2
 
     goto :goto_1
 

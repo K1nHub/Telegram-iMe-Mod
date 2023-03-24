@@ -49,10 +49,10 @@ public final class LongMath {
 
     /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
     /* JADX WARN: Code restructure failed: missing block: B:20:0x004a, code lost:
-        if (r10 > 0) goto L24;
+        if (r9 > 0) goto L24;
      */
     /* JADX WARN: Code restructure failed: missing block: B:22:0x004d, code lost:
-        if (r10 < 0) goto L24;
+        if (r9 < 0) goto L24;
      */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -72,9 +72,9 @@ public final class LongMath {
             long r9 = r9 ^ r11
             r7 = 63
             long r9 = r9 >> r7
-            int r10 = (int) r9
-            r9 = 1
-            r10 = r10 | r9
+            int r9 = (int) r9
+            r10 = 1
+            r9 = r9 | r10
             int[] r7 = com.google.common.math.LongMath.C09171.$SwitchMap$java$math$RoundingMode
             int r8 = r13.ordinal()
             r7 = r7[r8]
@@ -107,30 +107,30 @@ public final class LongMath {
             if (r13 != r11) goto L57
             r11 = 1
             long r11 = r11 & r0
-            int r13 = (r11 > r4 ? 1 : (r11 == r4 ? 0 : -1))
-            if (r13 == 0) goto L57
+            int r11 = (r11 > r4 ? 1 : (r11 == r4 ? 0 : -1))
+            if (r11 == 0) goto L57
             goto L58
         L47:
             if (r11 <= 0) goto L57
             goto L58
         L4a:
-            if (r10 <= 0) goto L57
+            if (r9 <= 0) goto L57
             goto L58
         L4d:
-            if (r10 >= 0) goto L57
+            if (r9 >= 0) goto L57
             goto L58
         L50:
             if (r6 != 0) goto L53
             goto L54
         L53:
-            r9 = 0
+            r10 = r8
         L54:
-            com.google.common.math.MathPreconditions.checkRoundingUnnecessary(r9)
+            com.google.common.math.MathPreconditions.checkRoundingUnnecessary(r10)
         L57:
-            r9 = 0
+            r10 = r8
         L58:
-            if (r9 == 0) goto L5c
-            long r9 = (long) r10
+            if (r10 == 0) goto L5c
+            long r9 = (long) r9
             long r0 = r0 + r9
         L5c:
             return r0

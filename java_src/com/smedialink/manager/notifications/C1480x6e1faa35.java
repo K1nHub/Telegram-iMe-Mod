@@ -24,12 +24,12 @@ public final class C1480x6e1faa35 extends Lambda implements Function1<Result<? e
 
     @Override // kotlin.jvm.functions.Function1
     public /* bridge */ /* synthetic */ Unit invoke(Result<? extends Boolean> result) {
-        m1157invoke(result);
+        m1169invoke(result);
         return Unit.INSTANCE;
     }
 
     /* renamed from: invoke  reason: collision with other method in class */
-    public final void m1157invoke(Result<? extends Boolean> it) {
+    public final void m1169invoke(Result<? extends Boolean> it) {
         PreferenceHelper preferenceHelper;
         Intrinsics.checkNotNullExpressionValue(it, "it");
         if (it instanceof Result.Success) {

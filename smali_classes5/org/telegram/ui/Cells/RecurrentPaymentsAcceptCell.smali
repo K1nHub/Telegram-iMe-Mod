@@ -56,12 +56,12 @@
 
     if-eqz v2, :cond_0
 
-    const/4 v2, 0x5
+    move v2, v3
 
     goto :goto_0
 
     :cond_0
-    const/4 v2, 0x3
+    move v2, v4
 
     :goto_0
     const/16 v5, 0x10
@@ -142,12 +142,12 @@
 
     if-eqz p2, :cond_1
 
-    const/4 p2, 0x5
+    move p2, v3
 
     goto :goto_1
 
     :cond_1
-    const/4 p2, 0x3
+    move p2, v4
 
     :goto_1
     or-int/2addr p2, v5
@@ -175,7 +175,7 @@
     goto :goto_2
 
     :cond_2
-    const/4 v3, 0x3
+    move v3, v4
 
     :goto_2
     or-int/lit8 v8, v3, 0x30
@@ -184,24 +184,24 @@
 
     if-eqz p2, :cond_3
 
-    const/16 v9, 0x10
+    move v9, v5
 
     goto :goto_3
 
     :cond_3
-    const/16 v9, 0x3a
+    move v9, v0
 
     :goto_3
     const/16 v10, 0x15
 
     if-eqz p2, :cond_4
 
-    const/16 v11, 0x3a
+    move v11, v0
 
     goto :goto_4
 
     :cond_4
-    const/16 v11, 0x10
+    move v11, v5
 
     :goto_4
     const/16 v12, 0x15

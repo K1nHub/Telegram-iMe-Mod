@@ -204,7 +204,7 @@
 
     const/16 v19, 0x0
 
-    const/16 v4, 0x78
+    move v4, v13
 
     move-object v13, v12
 
@@ -1064,7 +1064,7 @@
 
     int-to-double p2, p2
 
-    mul-double p2, p2, v2
+    mul-double/2addr p2, v2
 
     add-double/2addr p2, v0
 
@@ -1073,9 +1073,9 @@
 
     int-to-double v0, v0
 
-    cmpl-double v2, p2, v0
+    cmpl-double p2, p2, v0
 
-    if-ltz v2, :cond_2
+    if-ltz p2, :cond_2
 
     .line 259
     iget-object p2, p0, Lorg/telegram/ui/Components/ImportingAlert;->imageView:Lorg/telegram/ui/Components/RLottieImageView;
@@ -1211,7 +1211,7 @@
 
     int-to-double p2, p2
 
-    mul-double p2, p2, v2
+    mul-double/2addr p2, v2
 
     add-double/2addr p2, v0
 
@@ -1220,9 +1220,9 @@
 
     int-to-double v0, v0
 
-    cmpl-double v2, p2, v0
+    cmpl-double p2, p2, v0
 
-    if-ltz v2, :cond_6
+    if-ltz p2, :cond_6
 
     .line 281
     iget-object p2, p0, Lorg/telegram/ui/Components/ImportingAlert;->imageView:Lorg/telegram/ui/Components/RLottieImageView;

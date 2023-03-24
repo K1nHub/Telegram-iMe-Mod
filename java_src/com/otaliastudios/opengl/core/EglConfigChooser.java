@@ -19,7 +19,7 @@ public final class EglConfigChooser {
 
     /* JADX INFO: Access modifiers changed from: private */
     public final int[] getConfigSpec(int i, boolean z) {
-        int i2 = i >= 3 ? 68 : 4;
+        int i2 = i >= 3 ? 68 : (char) 4;
         int[] iArr = new int[15];
         iArr[0] = 12324;
         iArr[1] = 8;
@@ -33,7 +33,7 @@ public final class EglConfigChooser {
         iArr[9] = 5;
         iArr[10] = 12352;
         iArr[11] = i2;
-        iArr[12] = z ? EglBase.EGL_RECORDABLE_ANDROID : 12344;
+        iArr[12] = z ? EglBase.EGL_RECORDABLE_ANDROID : (char) 12344;
         iArr[13] = z ? 1 : 0;
         iArr[14] = 12344;
         return iArr;

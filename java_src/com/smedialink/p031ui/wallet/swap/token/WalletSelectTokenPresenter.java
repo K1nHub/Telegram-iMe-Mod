@@ -108,17 +108,17 @@ public final class WalletSelectTokenPresenter extends BasePresenter<WalletSelect
     }
 
     private final void loadBinanceBalances() {
-        Observable<Result<List<BinanceTokenBalanceInfo>>> observeOn = this.binanceInternalInteractor.getUserBalance().observeOn(this.schedulersProvider.mo707ui());
+        Observable<Result<List<BinanceTokenBalanceInfo>>> observeOn = this.binanceInternalInteractor.getUserBalance().observeOn(this.schedulersProvider.mo706ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "binanceInternalInteracto…(schedulersProvider.ui())");
-        Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2300xe8a4a06a(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2301xe8a4a06b((BaseView) getViewState())));
+        Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2314xe8a4a06a(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2315xe8a4a06b((BaseView) getViewState())));
         Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…  onError.invoke()\n    })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }
 
     private final void loadInternalBalances() {
-        Observable<Result<List<TokenBalance>>> observeOn = this.walletInteractor.getWalletBalance(false, this.networkType).distinctUntilChanged().observeOn(this.schedulersProvider.mo707ui());
+        Observable<Result<List<TokenBalance>>> observeOn = this.walletInteractor.getWalletBalance(false, this.networkType).distinctUntilChanged().observeOn(this.schedulersProvider.mo706ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "walletInteractor\n       …(schedulersProvider.ui())");
-        Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2302x58d117dd(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2303x58d117de((BaseView) getViewState())));
+        Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2316x58d117dd(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2317x58d117de((BaseView) getViewState())));
         Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…  onError.invoke()\n    })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }

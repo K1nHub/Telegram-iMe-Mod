@@ -178,7 +178,7 @@
 
     move-result-object v5
 
-    const/4 v7, 0x0
+    move v7, v3
 
     goto :goto_2
 
@@ -211,7 +211,7 @@
 
     aput-object v8, v5, v3
 
-    const/4 v8, 0x1
+    move v8, v4
 
     goto :goto_3
 

@@ -79,7 +79,7 @@ public class VoIPWindowView extends FrameLayout {
                 if (!this.startDragging && Math.abs(x) > AndroidUtilities.getPixelsInCM(0.4f, true) && Math.abs(x) / 3.0f > y) {
                     this.startX = motionEvent.getX();
                     this.startDragging = true;
-                    x = BitmapDescriptorFactory.HUE_RED;
+                    x = 0.0f;
                 }
                 if (this.startDragging) {
                     if (x >= BitmapDescriptorFactory.HUE_RED) {

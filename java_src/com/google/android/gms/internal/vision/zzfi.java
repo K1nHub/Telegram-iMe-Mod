@@ -340,7 +340,7 @@ public final class zzfi {
 
     /* compiled from: com.google.android.gms:play-services-vision-common@@19.1.3 */
     /* loaded from: classes3.dex */
-    public static final class zza extends zzjb<zza, C6771zza> implements zzkm {
+    public static final class zza extends zzjb<zza, C6858zza> implements zzkm {
         private static final zza zzf;
         private static volatile zzkx<zza> zzg;
         private int zzc;
@@ -353,12 +353,12 @@ public final class zzfi {
         /* compiled from: com.google.android.gms:play-services-vision-common@@19.1.3 */
         /* renamed from: com.google.android.gms.internal.vision.zzfi$zza$zza  reason: collision with other inner class name */
         /* loaded from: classes3.dex */
-        public static final class C6771zza extends zzjb.zzb<zza, C6771zza> implements zzkm {
-            private C6771zza() {
+        public static final class C6858zza extends zzjb.zzb<zza, C6858zza> implements zzkm {
+            private C6858zza() {
                 super(zza.zzf);
             }
 
-            public final C6771zza zza(String str) {
+            public final C6858zza zza(String str) {
                 if (this.zzb) {
                     zzb();
                     this.zzb = false;
@@ -367,7 +367,7 @@ public final class zzfi {
                 return this;
             }
 
-            public final C6771zza zzb(String str) {
+            public final C6858zza zzb(String str) {
                 if (this.zzb) {
                     zzb();
                     this.zzb = false;
@@ -376,7 +376,7 @@ public final class zzfi {
                 return this;
             }
 
-            /* synthetic */ C6771zza(zzfk zzfkVar) {
+            /* synthetic */ C6858zza(zzfk zzfkVar) {
                 this();
             }
         }
@@ -395,7 +395,7 @@ public final class zzfi {
             this.zze = str;
         }
 
-        public static C6771zza zza() {
+        public static C6858zza zza() {
             return zzf.zzj();
         }
 
@@ -408,7 +408,7 @@ public final class zzfi {
                 case 1:
                     return new zza();
                 case 2:
-                    return new C6771zza(null);
+                    return new C6858zza(null);
                 case 3:
                     return zzjb.zza(zzf, "\u0001\u0002\u0000\u0001\u0001\u0002\u0002\u0000\u0000\u0000\u0001ဈ\u0000\u0002ဈ\u0001", new Object[]{"zzc", "zzd", "zze"});
                 case 4:

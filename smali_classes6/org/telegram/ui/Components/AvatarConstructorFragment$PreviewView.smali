@@ -253,7 +253,7 @@
 
     const v2, 0x3e99999a    # 0.3f
 
-    mul-float v0, v0, v2
+    mul-float/2addr v0, v2
 
     goto :goto_0
 
@@ -278,12 +278,12 @@
 
     if-eqz v3, :cond_1
 
-    const/high16 v3, 0x3f800000    # 1.0f
+    move v3, v9
 
     goto :goto_1
 
     :cond_1
-    const/4 v3, 0x0
+    move v3, v4
 
     :goto_1
     invoke-virtual {v2, v3}, Lorg/telegram/ui/Components/AnimatedFloat;->set(F)F
@@ -415,7 +415,7 @@
 
     iget v7, v7, Lorg/telegram/ui/Components/AvatarConstructorFragment;->progressToExpand:F
 
-    mul-float v3, v3, v7
+    mul-float/2addr v3, v7
 
     add-float/2addr v6, v3
 
@@ -461,9 +461,9 @@
     .line 767
     iget v2, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment$PreviewView;->changeBackgroundProgress:F
 
-    const/16 v3, 0xff
-
     cmpl-float v2, v2, v9
+
+    const/16 v3, 0xff
 
     if-eqz v2, :cond_4
 
@@ -521,7 +521,7 @@
 
     iget v4, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment$PreviewView;->changeBackgroundProgress:F
 
-    mul-float v4, v4, v3
+    mul-float/2addr v4, v3
 
     float-to-int v3, v4
 
@@ -604,9 +604,9 @@
 
     if-eqz v2, :cond_6
 
-    mul-float v0, v0, v1
+    mul-float/2addr v0, v1
 
-    mul-float v0, v0, v3
+    mul-float/2addr v0, v3
 
     float-to-int v0, v0
 
@@ -627,7 +627,7 @@
 
     int-to-float v2, v2
 
-    mul-float v2, v2, v3
+    mul-float/2addr v2, v3
 
     float-to-int v2, v2
 
@@ -640,7 +640,7 @@
 
     int-to-float v4, v4
 
-    mul-float v4, v4, v3
+    mul-float/2addr v4, v3
 
     float-to-int v3, v4
 
@@ -695,9 +695,9 @@
 
     move-result-object v2
 
-    mul-float v1, v1, v0
+    mul-float/2addr v1, v0
 
-    mul-float v1, v1, v4
+    mul-float/2addr v1, v4
 
     float-to-int v1, v1
 
@@ -752,7 +752,7 @@
 
     sub-float/2addr v5, v0
 
-    mul-float v0, v0, v1
+    mul-float/2addr v0, v1
 
     invoke-virtual {v2, v3, v5, v0, v0}, Lorg/telegram/messenger/ImageReceiver;->setImageCoords(FFFF)V
 
@@ -761,7 +761,7 @@
 
     iget-object v1, v1, Lorg/telegram/ui/Components/BackupImageView;->imageReceiver:Lorg/telegram/messenger/ImageReceiver;
 
-    mul-float v0, v0, v4
+    mul-float/2addr v0, v4
 
     float-to-int v0, v0
 

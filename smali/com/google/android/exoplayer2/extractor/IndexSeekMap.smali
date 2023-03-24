@@ -34,12 +34,12 @@
 
     if-ne v0, v1, :cond_0
 
-    const/4 v0, 0x1
+    move v0, v2
 
     goto :goto_0
 
     :cond_0
-    const/4 v0, 0x0
+    move v0, v3
 
     :goto_0
     invoke-static {v0}, Lcom/google/android/exoplayer2/util/Assertions;->checkArgument(Z)V
@@ -49,12 +49,12 @@
 
     if-lez v0, :cond_1
 
-    const/4 v1, 0x1
+    move v1, v2
 
     goto :goto_1
 
     :cond_1
-    const/4 v1, 0x0
+    move v1, v3
 
     .line 45
     :goto_1
@@ -160,9 +160,9 @@
     .line 77
     iget-wide v3, v2, Lcom/google/android/exoplayer2/extractor/SeekPoint;->timeUs:J
 
-    cmp-long v5, v3, p1
+    cmp-long p1, v3, p1
 
-    if-eqz v5, :cond_2
+    if-eqz p1, :cond_2
 
     iget-object p1, p0, Lcom/google/android/exoplayer2/extractor/IndexSeekMap;->timesUs:[J
 

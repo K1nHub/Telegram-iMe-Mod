@@ -10,18 +10,18 @@ public enum PasscodeType {
     public static final Companion Companion = new Companion(null);
 
     /* renamed from: id */
-    private final int f1417id;
+    private final int f1418id;
 
     public static final PasscodeType findById(int i) {
         return Companion.findById(i);
     }
 
     PasscodeType(int i) {
-        this.f1417id = i;
+        this.f1418id = i;
     }
 
     public final int getId() {
-        return this.f1417id;
+        return this.f1418id;
     }
 
     /* compiled from: PasscodeType.kt */

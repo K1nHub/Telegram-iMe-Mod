@@ -288,8 +288,9 @@ public final class TtmlNode {
                     applyStyleToOutput(map, (Cue.Builder) Assertions.checkNotNull(map3.get(key)), intValue, intValue2, ((TtmlRegion) Assertions.checkNotNull(map2.get(str2))).verticalType);
                 }
             }
-            for (i = 0; i < getChildCount(); i++) {
+            while (i < getChildCount()) {
                 getChild(i).traverseForStyle(j, map, map2, str2, map3);
+                i++;
             }
         }
     }

@@ -18,7 +18,7 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 860
+    .line 861
     invoke-direct {p0}, Lcom/google/protobuf/Utf8$Processor;-><init>()V
 
     return-void
@@ -30,7 +30,7 @@
     :goto_0
     if-ge p1, p2, :cond_0
 
-    .line 1098
+    .line 1099
     aget-byte v0, p0, p1
 
     if-ltz v0, :cond_0
@@ -46,7 +46,7 @@
 
     goto :goto_1
 
-    .line 1102
+    .line 1103
     :cond_1
     invoke-static {p0, p1, p2}, Lcom/google/protobuf/Utf8$SafeProcessor;->partialIsValidUtf8NonAscii([BII)I
 
@@ -70,7 +70,7 @@
     :cond_1
     add-int/lit8 v0, p1, 0x1
 
-    .line 1115
+    .line 1116
     aget-byte p1, p0, p1
 
     if-gez p1, :cond_c
@@ -94,7 +94,7 @@
 
     add-int/lit8 p1, v0, 0x1
 
-    .line 1127
+    .line 1128
     aget-byte v0, p0, v0
 
     if-le v0, v3, :cond_0
@@ -111,7 +111,7 @@
 
     if-lt v0, v4, :cond_5
 
-    .line 1134
+    .line 1135
     invoke-static {p0, v0, p2}, Lcom/google/protobuf/Utf8;->access$1100([BII)I
 
     move-result p0
@@ -121,7 +121,7 @@
     :cond_5
     add-int/lit8 v4, v0, 0x1
 
-    .line 1136
+    .line 1137
     aget-byte v0, p0, v0
 
     if-gt v0, v3, :cond_8
@@ -154,7 +154,7 @@
 
     if-lt v0, v1, :cond_a
 
-    .line 1149
+    .line 1150
     invoke-static {p0, v0, p2}, Lcom/google/protobuf/Utf8;->access$1100([BII)I
 
     move-result p0
@@ -164,7 +164,7 @@
     :cond_a
     add-int/lit8 v1, v0, 0x1
 
-    .line 1151
+    .line 1152
     aget-byte v0, p0, v0
 
     if-gt v0, v3, :cond_b
@@ -212,7 +212,7 @@
 
     or-int v0, p2, p3
 
-    .line 958
+    .line 959
     array-length v1, p1
 
     sub-int/2addr v1, p2
@@ -229,18 +229,18 @@
 
     add-int v0, p2, p3
 
-    .line 968
+    .line 969
     new-array p3, p3, [C
 
-    const/4 v3, 0x0
+    move v3, v1
 
     :goto_0
     if-ge p2, v0, :cond_1
 
-    .line 974
+    .line 975
     aget-byte v4, p1, p2
 
-    .line 975
+    .line 976
     invoke-static {v4}, Lcom/google/protobuf/Utf8$DecodeUtil;->access$400(B)Z
 
     move-result v5
@@ -254,7 +254,7 @@
 
     add-int/lit8 v5, v3, 0x1
 
-    .line 979
+    .line 980
     invoke-static {v4, p3, v3}, Lcom/google/protobuf/Utf8$DecodeUtil;->access$500(B[CI)V
 
     move v3, v5
@@ -270,10 +270,10 @@
 
     add-int/lit8 v3, p2, 0x1
 
-    .line 983
+    .line 984
     aget-byte p2, p1, p2
 
-    .line 984
+    .line 985
     invoke-static {p2}, Lcom/google/protobuf/Utf8$DecodeUtil;->access$400(B)Z
 
     move-result v4
@@ -282,16 +282,16 @@
 
     add-int/lit8 v4, v8, 0x1
 
-    .line 985
+    .line 986
     invoke-static {p2, p3, v8}, Lcom/google/protobuf/Utf8$DecodeUtil;->access$500(B[CI)V
 
     :goto_3
     if-ge v3, v0, :cond_3
 
-    .line 989
+    .line 990
     aget-byte p2, p1, v3
 
-    .line 990
+    .line 991
     invoke-static {p2}, Lcom/google/protobuf/Utf8$DecodeUtil;->access$400(B)Z
 
     move-result v5
@@ -305,7 +305,7 @@
 
     add-int/lit8 v5, v4, 0x1
 
-    .line 994
+    .line 995
     invoke-static {p2, p3, v4}, Lcom/google/protobuf/Utf8$DecodeUtil;->access$500(B[CI)V
 
     move v4, v5
@@ -320,7 +320,7 @@
 
     goto :goto_2
 
-    .line 996
+    .line 997
     :cond_4
     invoke-static {p2}, Lcom/google/protobuf/Utf8$DecodeUtil;->access$600(B)Z
 
@@ -332,7 +332,7 @@
 
     add-int/lit8 v4, v3, 0x1
 
-    .line 1000
+    .line 1001
     aget-byte v3, p1, v3
 
     add-int/lit8 v5, v8, 0x1
@@ -345,7 +345,7 @@
 
     goto :goto_2
 
-    .line 998
+    .line 999
     :cond_5
     invoke-static {}, Lcom/google/protobuf/InvalidProtocolBufferException;->invalidUtf8()Lcom/google/protobuf/InvalidProtocolBufferException;
 
@@ -353,7 +353,7 @@
 
     throw p1
 
-    .line 1001
+    .line 1002
     :cond_6
     invoke-static {p2}, Lcom/google/protobuf/Utf8$DecodeUtil;->access$800(B)Z
 
@@ -367,7 +367,7 @@
 
     add-int/lit8 v4, v3, 0x1
 
-    .line 1005
+    .line 1006
     aget-byte v3, p1, v3
 
     add-int/lit8 v5, v4, 0x1
@@ -384,7 +384,7 @@
 
     goto :goto_2
 
-    .line 1003
+    .line 1004
     :cond_7
     invoke-static {}, Lcom/google/protobuf/InvalidProtocolBufferException;->invalidUtf8()Lcom/google/protobuf/InvalidProtocolBufferException;
 
@@ -399,7 +399,7 @@
 
     add-int/lit8 v4, v3, 0x1
 
-    .line 1015
+    .line 1016
     aget-byte v5, p1, v3
 
     add-int/lit8 v3, v4, 0x1
@@ -432,7 +432,7 @@
 
     goto :goto_2
 
-    .line 1013
+    .line 1014
     :cond_9
     invoke-static {}, Lcom/google/protobuf/InvalidProtocolBufferException;->invalidUtf8()Lcom/google/protobuf/InvalidProtocolBufferException;
 
@@ -440,7 +440,7 @@
 
     throw p1
 
-    .line 1027
+    .line 1028
     :cond_a
     new-instance p1, Ljava/lang/String;
 
@@ -448,7 +448,7 @@
 
     return-object p1
 
-    .line 959
+    .line 960
     :cond_b
     new-instance v0, Ljava/lang/ArrayIndexOutOfBoundsException;
 
@@ -458,7 +458,7 @@
 
     array-length p1, p1
 
-    .line 960
+    .line 961
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object p1
@@ -490,10 +490,26 @@
     throw v0
 .end method
 
+.method decodeUtf8Direct(Ljava/nio/ByteBuffer;II)Ljava/lang/String;
+    .locals 0
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/google/protobuf/InvalidProtocolBufferException;
+        }
+    .end annotation
+
+    .line 1035
+    invoke-virtual {p0, p1, p2, p3}, Lcom/google/protobuf/Utf8$Processor;->decodeUtf8Default(Ljava/nio/ByteBuffer;II)Ljava/lang/String;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
 .method encodeUtf8(Ljava/lang/CharSequence;[BII)I
     .locals 7
 
-    .line 1039
+    .line 1040
     invoke-interface {p1}, Ljava/lang/CharSequence;->length()I
 
     move-result v0
@@ -511,7 +527,7 @@
 
     if-ge v3, p4, :cond_0
 
-    .line 1045
+    .line 1046
     invoke-interface {p1, v1}, Ljava/lang/CharSequence;->charAt(I)C
 
     move-result v4
@@ -520,7 +536,7 @@
 
     int-to-byte v2, v4
 
-    .line 1046
+    .line 1047
     aput-byte v2, p2, v3
 
     add-int/lit8 v1, v1, 0x1
@@ -540,7 +556,7 @@
     :goto_1
     if-ge v1, v0, :cond_b
 
-    .line 1053
+    .line 1054
     invoke-interface {p1, v1}, Ljava/lang/CharSequence;->charAt(I)C
 
     move-result v3
@@ -553,7 +569,7 @@
 
     int-to-byte v3, v3
 
-    .line 1055
+    .line 1056
     aput-byte v3, p2, p3
 
     :goto_2
@@ -578,7 +594,7 @@
 
     int-to-byte v5, v5
 
-    .line 1057
+    .line 1058
     aput-byte v5, p2, p3
 
     add-int/lit8 p3, v4, 0x1
@@ -589,7 +605,7 @@
 
     int-to-byte v3, v3
 
-    .line 1058
+    .line 1059
     aput-byte v3, p2, v4
 
     goto :goto_3
@@ -616,7 +632,7 @@
 
     int-to-byte v5, v5
 
-    .line 1061
+    .line 1062
     aput-byte v5, p2, p3
 
     add-int/lit8 p3, v4, 0x1
@@ -629,7 +645,7 @@
 
     int-to-byte v5, v5
 
-    .line 1062
+    .line 1063
     aput-byte v5, p2, v4
 
     add-int/lit8 v4, p3, 0x1
@@ -640,7 +656,7 @@
 
     int-to-byte v3, v3
 
-    .line 1063
+    .line 1064
     aput-byte v3, p2, p3
 
     goto :goto_2
@@ -652,7 +668,7 @@
 
     add-int/lit8 v4, v1, 0x1
 
-    .line 1068
+    .line 1069
     invoke-interface {p1}, Ljava/lang/CharSequence;->length()I
 
     move-result v5
@@ -669,7 +685,7 @@
 
     if-eqz v5, :cond_6
 
-    .line 1071
+    .line 1072
     invoke-static {v3, v1}, Ljava/lang/Character;->toCodePoint(CC)I
 
     move-result v1
@@ -682,7 +698,7 @@
 
     int-to-byte v5, v5
 
-    .line 1072
+    .line 1073
     aput-byte v5, p2, p3
 
     add-int/lit8 p3, v3, 0x1
@@ -695,7 +711,7 @@
 
     int-to-byte v5, v5
 
-    .line 1073
+    .line 1074
     aput-byte v5, p2, v3
 
     add-int/lit8 v3, p3, 0x1
@@ -708,7 +724,7 @@
 
     int-to-byte v5, v5
 
-    .line 1074
+    .line 1075
     aput-byte v5, p2, p3
 
     add-int/lit8 p3, v3, 0x1
@@ -719,7 +735,7 @@
 
     int-to-byte v1, v1
 
-    .line 1075
+    .line 1076
     aput-byte v1, p2, v3
 
     move v1, v4
@@ -732,7 +748,7 @@
     :cond_6
     move v1, v4
 
-    .line 1069
+    .line 1070
     :cond_7
     new-instance p1, Lcom/google/protobuf/Utf8$UnpairedSurrogateException;
 
@@ -749,7 +765,7 @@
 
     add-int/lit8 p2, v1, 0x1
 
-    .line 1080
+    .line 1081
     invoke-interface {p1}, Ljava/lang/CharSequence;->length()I
 
     move-result p4
@@ -766,7 +782,7 @@
 
     if-nez p1, :cond_a
 
-    .line 1081
+    .line 1082
     :cond_9
     new-instance p1, Lcom/google/protobuf/Utf8$UnpairedSurrogateException;
 
@@ -774,7 +790,7 @@
 
     throw p1
 
-    .line 1083
+    .line 1084
     :cond_a
     new-instance p1, Ljava/lang/ArrayIndexOutOfBoundsException;
 
@@ -832,7 +848,7 @@
 
     add-int/lit8 p1, p3, 0x1
 
-    .line 881
+    .line 882
     aget-byte p3, p2, p3
 
     if-le p3, v3, :cond_1
@@ -863,12 +879,12 @@
 
     add-int/lit8 p1, p3, 0x1
 
-    .line 892
+    .line 893
     aget-byte p3, p2, p3
 
     if-lt p1, p4, :cond_4
 
-    .line 894
+    .line 895
     invoke-static {v0, p3}, Lcom/google/protobuf/Utf8;->access$000(II)I
 
     move-result p1
@@ -901,7 +917,7 @@
     :cond_7
     add-int/lit8 p1, p3, 0x1
 
-    .line 897
+    .line 898
     aget-byte p3, p2, p3
 
     if-le p3, v3, :cond_1
@@ -922,12 +938,12 @@
 
     add-int/lit8 p1, p3, 0x1
 
-    .line 913
+    .line 914
     aget-byte v1, p2, p3
 
     if-lt p1, p4, :cond_a
 
-    .line 915
+    .line 916
     invoke-static {v0, v1}, Lcom/google/protobuf/Utf8;->access$000(II)I
 
     move-result p1
@@ -949,12 +965,12 @@
 
     add-int/lit8 p1, p3, 0x1
 
-    .line 921
+    .line 922
     aget-byte v4, p2, p3
 
     if-lt p1, p4, :cond_c
 
-    .line 923
+    .line 924
     invoke-static {v0, v1, v4}, Lcom/google/protobuf/Utf8;->access$100(III)I
 
     move-result p1
@@ -981,7 +997,7 @@
 
     add-int/lit8 p1, p3, 0x1
 
-    .line 931
+    .line 932
     aget-byte p3, p2, p3
 
     if-le p3, v3, :cond_1
@@ -989,10 +1005,21 @@
     :cond_e
     return v2
 
-    .line 946
+    .line 947
     :cond_f
     :goto_2
     invoke-static {p2, p3, p4}, Lcom/google/protobuf/Utf8$SafeProcessor;->partialIsValidUtf8([BII)I
+
+    move-result p1
+
+    return p1
+.end method
+
+.method partialIsValidUtf8Direct(ILjava/nio/ByteBuffer;II)I
+    .locals 0
+
+    .line 953
+    invoke-virtual {p0, p1, p2, p3, p4}, Lcom/google/protobuf/Utf8$Processor;->partialIsValidUtf8Default(ILjava/nio/ByteBuffer;II)I
 
     move-result p1
 

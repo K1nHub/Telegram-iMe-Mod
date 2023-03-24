@@ -226,11 +226,11 @@
 
     iget v5, v2, Lorg/telegram/ui/Components/FireworksEffect$Particle;->velocity:F
 
-    mul-float v4, v4, v5
+    mul-float/2addr v4, v5
 
     long-to-float v6, p1
 
-    mul-float v4, v4, v6
+    mul-float/2addr v4, v6
 
     const/high16 v7, 0x43fa0000    # 500.0f
 
@@ -245,9 +245,9 @@
 
     iget v4, v2, Lorg/telegram/ui/Components/FireworksEffect$Particle;->vy:F
 
-    mul-float v5, v5, v4
+    mul-float/2addr v5, v4
 
-    mul-float v5, v5, v6
+    mul-float/2addr v5, v6
 
     div-float/2addr v5, v7
 
@@ -301,7 +301,7 @@
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_0
     if-ge v2, v0, :cond_1
@@ -358,7 +358,7 @@
     goto :goto_1
 
     :cond_2
-    const/4 p2, 0x0
+    move p2, v1
 
     .line 107
     :goto_1
@@ -374,7 +374,7 @@
 
     int-to-float v3, v3
 
-    mul-float v2, v2, v3
+    mul-float/2addr v2, v3
 
     int-to-float v3, p2
 
@@ -401,7 +401,7 @@
 
     int-to-float p2, v5
 
-    mul-float v4, v4, p2
+    mul-float/2addr v4, p2
 
     add-float/2addr v3, v4
 
@@ -451,7 +451,7 @@
     const p2, -0xcbd126
 
     :goto_2
-    const/4 v4, 0x0
+    move v4, v1
 
     :goto_3
     if-ge v4, v0, :cond_8
@@ -471,7 +471,7 @@
 
     int-to-double v8, v5
 
-    mul-double v8, v8, v6
+    mul-double/2addr v8, v6
 
     .line 136
     invoke-static {v8, v9}, Ljava/lang/Math;->cos(D)D
@@ -529,7 +529,7 @@
 
     const/high16 v8, 0x3fc00000    # 1.5f
 
-    mul-float v5, v5, v8
+    mul-float/2addr v5, v8
 
     .line 149
     iput v5, v7, Lorg/telegram/ui/Components/FireworksEffect$Particle;->vx:F
@@ -557,7 +557,7 @@
 
     move-result v6
 
-    mul-float v6, v6, v8
+    mul-float/2addr v6, v8
 
     invoke-static {v5, v6}, Ljava/lang/Math;->max(FF)F
 
@@ -594,7 +594,7 @@
 
     const/high16 v8, 0x40800000    # 4.0f
 
-    mul-float v6, v6, v8
+    mul-float/2addr v6, v8
 
     add-float/2addr v6, v5
 
@@ -607,7 +607,7 @@
 
     add-int/lit8 v4, v4, 0x1
 
-    goto/16 :goto_3
+    goto :goto_3
 
     .line 165
     :cond_8

@@ -88,7 +88,7 @@
 
     div-float v8, v2, v4
 
-    mul-float v3, v3, v8
+    mul-float/2addr v3, v8
 
     .line 35
     sget v2, Lorg/telegram/ui/Charts/BaseChartView;->HORIZONTAL_PADDING:F
@@ -112,9 +112,9 @@
 
     if-ge v3, v4, :cond_1
 
-    const/high16 v10, 0x3f800000    # 1.0f
+    move v10, v5
 
-    const/high16 v11, 0x3f800000    # 1.0f
+    move v11, v10
 
     goto :goto_0
 
@@ -128,7 +128,7 @@
 
     aget v3, v3, v6
 
-    mul-float v3, v3, v8
+    mul-float/2addr v3, v8
 
     .line 44
     check-cast v1, Lorg/telegram/ui/Charts/data/StackBarChartData;
@@ -139,7 +139,7 @@
 
     sub-float v10, v8, v3
 
-    mul-float v1, v1, v10
+    mul-float/2addr v1, v10
 
     move v10, v1
 
@@ -186,7 +186,7 @@
 
     move-result v1
 
-    const/4 v12, 0x0
+    move v12, v3
 
     .line 50
     :goto_1
@@ -240,7 +240,7 @@
 
     sub-float v15, v5, v12
 
-    mul-float v12, v12, v13
+    mul-float/2addr v12, v13
 
     add-float/2addr v12, v5
 
@@ -283,7 +283,7 @@
     goto :goto_2
 
     :cond_5
-    const/high16 v15, 0x3f800000    # 1.0f
+    move v15, v5
 
     .line 79
     :goto_2
@@ -313,9 +313,9 @@
     goto/16 :goto_6
 
     :cond_7
-    const/4 v3, 0x0
+    move v4, v14
 
-    const/4 v4, 0x0
+    const/4 v3, 0x0
 
     .line 84
     :goto_4
@@ -402,11 +402,11 @@
 
     int-to-float v13, v13
 
-    mul-float v5, v5, v13
+    mul-float/2addr v5, v13
 
     iget v13, v12, Lorg/telegram/ui/Charts/view_data/LineViewData;->alpha:F
 
-    mul-float v5, v5, v13
+    mul-float/2addr v5, v13
 
     .line 96
     invoke-virtual/range {p0 .. p0}, Landroid/view/View;->getMeasuredHeight()I
@@ -597,7 +597,7 @@
     const/high16 v13, 0x3f800000    # 1.0f
 
     :goto_a
-    mul-float v9, v9, v15
+    mul-float/2addr v9, v15
 
     float-to-int v4, v9
 
@@ -625,7 +625,7 @@
 
     if-eqz v6, :cond_12
 
-    const/4 v12, 0x0
+    move v12, v5
 
     const/4 v13, 0x0
 
@@ -691,7 +691,7 @@
 
     sub-float v6, v8, v11
 
-    mul-float v4, v4, v6
+    mul-float/2addr v4, v6
 
     add-float/2addr v3, v4
 
@@ -721,7 +721,7 @@
 
     int-to-float v3, v3
 
-    mul-float v2, v2, v3
+    mul-float/2addr v2, v3
 
     iget v3, v1, Lorg/telegram/ui/Charts/view_data/LineViewData;->alpha:F
 
@@ -818,7 +818,7 @@
 
     const/4 v3, 0x0
 
-    const/4 v4, 0x0
+    move v4, v3
 
     .line 196
     :goto_0
@@ -880,7 +880,7 @@
     iput-object v6, v0, Lorg/telegram/ui/Charts/StackBarChartView;->yMaxPoints:[I
 
     :cond_2
-    const/4 v6, 0x0
+    move v6, v3
 
     :goto_1
     if-ge v6, v1, :cond_9
@@ -896,9 +896,9 @@
 
     iget v8, v0, Lorg/telegram/ui/Charts/BaseChartView;->pickerWidth:F
 
-    mul-float v7, v7, v8
+    mul-float/2addr v7, v8
 
-    const/4 v8, 0x0
+    move v8, v3
 
     :goto_2
     const/4 v9, 0x0
@@ -956,9 +956,9 @@
 
     if-nez v8, :cond_8
 
-    const/4 v8, 0x0
+    move v8, v3
 
-    const/4 v10, 0x0
+    move v10, v9
 
     :goto_4
     if-ge v8, v2, :cond_8
@@ -1016,14 +1016,14 @@
 
     iget v12, v11, Lorg/telegram/ui/Charts/view_data/LineViewData;->alpha:F
 
-    mul-float v14, v14, v12
+    mul-float/2addr v14, v12
 
     .line 225
     iget v12, v0, Lorg/telegram/ui/Charts/BaseChartView;->pikerHeight:I
 
     int-to-float v15, v12
 
-    mul-float v14, v14, v15
+    mul-float/2addr v14, v15
 
     .line 228
     iget-object v15, v11, Lorg/telegram/ui/Charts/view_data/LineViewData;->linesPath:[F
@@ -1126,7 +1126,7 @@
 
     iget v3, v0, Lorg/telegram/ui/Charts/BaseChartView;->pickerWidth:F
 
-    mul-float v1, v1, v3
+    mul-float/2addr v1, v3
 
     :goto_7
     const/4 v3, 0x0
@@ -1148,7 +1148,7 @@
 
     int-to-float v7, v4
 
-    mul-float v7, v7, v1
+    mul-float/2addr v7, v1
 
     invoke-virtual {v6, v7}, Landroid/graphics/Paint;->setStrokeWidth(F)V
 
@@ -1238,14 +1238,14 @@
 
     const/4 v2, 0x0
 
-    const/4 v3, 0x0
+    move v3, v2
 
     :goto_0
     if-ge v3, v0, :cond_3
 
-    const/4 v4, 0x0
+    move v4, v2
 
-    const/4 v5, 0x0
+    move v5, v4
 
     :goto_1
     if-ge v4, v1, :cond_1
@@ -1340,7 +1340,7 @@
 
     iput-object v4, v3, Lorg/telegram/ui/Charts/data/StackBarChartData;->ySum:[I
 
-    const/4 v3, 0x0
+    move v3, v1
 
     :goto_0
     if-ge v3, v0, :cond_2
@@ -1354,7 +1354,7 @@
 
     aput v1, v4, v3
 
-    const/4 v4, 0x0
+    move v4, v1
 
     :goto_1
     if-ge v4, v2, :cond_1
@@ -1535,7 +1535,7 @@
 
     iget v2, v2, Lorg/telegram/ui/Charts/ChartPickerDelegate;->pickerStart:F
 
-    mul-float v2, v2, v1
+    mul-float/2addr v2, v1
 
     sget v3, Lorg/telegram/ui/Charts/BaseChartView;->HORIZONTAL_PADDING:F
 
@@ -1558,7 +1558,7 @@
 
     if-ge v3, v4, :cond_1
 
-    const/high16 v3, 0x3f800000    # 1.0f
+    move v3, v5
 
     goto :goto_0
 
@@ -1572,7 +1572,7 @@
 
     aget v3, v3, v6
 
-    mul-float v3, v3, v1
+    mul-float/2addr v3, v1
 
     :goto_0
     int-to-float p1, p1
@@ -1713,16 +1713,16 @@
 
     const/4 v2, 0x0
 
-    const/4 v3, 0x0
+    move v3, v2
 
-    const/4 v4, 0x0
+    move v4, v3
 
     :goto_0
     if-ge v3, v0, :cond_4
 
-    const/4 v5, 0x0
+    move v5, v2
 
-    const/4 v6, 0x0
+    move v6, v5
 
     :goto_1
     if-ge v5, v1, :cond_2

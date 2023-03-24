@@ -17,7 +17,7 @@ import kotlin.LazyKt__LazyJVMKt;
 import kotlin.collections.CollectionsKt__CollectionsKt;
 import kotlin.jvm.internal.Intrinsics;
 import moxy.InjectViewState;
-import org.telegram.messenger.C3286R;
+import org.telegram.messenger.C3301R;
 import org.telegram.messenger.ChatObject;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessagesController;
@@ -52,7 +52,7 @@ public final class CatalogRootPresenter extends BasePresenter<CatalogRootView> i
         this.telegramControllersGateway = telegramControllersGateway;
         lazy = LazyKt__LazyJVMKt.lazy(new CatalogRootPresenter$notificationCenter$2(this));
         this.notificationCenter$delegate = lazy;
-        this.selectedTabId = C3286R.C3289id.catalog_root_bottom_navigation_channels;
+        this.selectedTabId = C3301R.C3304id.catalog_root_bottom_navigation_channels;
         emptyList = CollectionsKt__CollectionsKt.emptyList();
         this.languages = emptyList;
     }
@@ -91,7 +91,7 @@ public final class CatalogRootPresenter extends BasePresenter<CatalogRootView> i
     /* JADX INFO: Access modifiers changed from: protected */
     @Override // moxy.MvpPresenter
     public void onFirstViewAttach() {
-        selectTab(C3286R.C3289id.catalog_root_bottom_navigation_channels);
+        selectTab(C3301R.C3304id.catalog_root_bottom_navigation_channels);
         getNotificationCenter().addObserver(this, NotificationCenter.needDeleteDialog);
     }
 
@@ -124,9 +124,9 @@ public final class CatalogRootPresenter extends BasePresenter<CatalogRootView> i
     }
 
     private final void loadLanguages() {
-        Observable<Result<List<CatalogLanguage>>> observeOn = this.catalogInteractor.getLanguages().observeOn(this.schedulersProvider.mo707ui());
+        Observable<Result<List<CatalogLanguage>>> observeOn = this.catalogInteractor.getLanguages().observeOn(this.schedulersProvider.mo706ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "catalogInteractor\n      …(schedulersProvider.ui())");
-        Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C1863xc92b31a1(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C1864xc92b31a2(null)));
+        Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C1877xc92b31a1(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C1878xc92b31a2(null)));
         Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…  onError.invoke()\n    })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }
@@ -134,8 +134,8 @@ public final class CatalogRootPresenter extends BasePresenter<CatalogRootView> i
     /* JADX INFO: Access modifiers changed from: private */
     public final LocaleController.LocaleInfo getAllLanguagesLocaleInfo() {
         LocaleController.LocaleInfo localeInfo = new LocaleController.LocaleInfo();
-        localeInfo.name = this.resourceManager.getString(C3286R.string.catalog_all);
-        localeInfo.nameEnglish = this.resourceManager.getString(C3286R.string.catalog_all_languages);
+        localeInfo.name = this.resourceManager.getString(C3301R.string.catalog_all);
+        localeInfo.nameEnglish = this.resourceManager.getString(C3301R.string.catalog_all_languages);
         localeInfo.serverIndex = -1;
         return localeInfo;
     }

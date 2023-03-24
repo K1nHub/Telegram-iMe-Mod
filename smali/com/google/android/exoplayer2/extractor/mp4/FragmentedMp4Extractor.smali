@@ -760,7 +760,7 @@
     goto :goto_0
 
     :cond_0
-    const/4 v1, 0x0
+    move v1, v2
 
     .line 595
     :goto_0
@@ -790,7 +790,7 @@
 
     move v1, v3
 
-    const/16 v4, 0x65
+    move v4, v6
 
     .line 599
     :cond_1
@@ -807,7 +807,7 @@
     .line 600
     array-length v1, v0
 
-    const/4 v3, 0x0
+    move v3, v2
 
     :goto_1
     if-ge v3, v1, :cond_2
@@ -1221,7 +1221,7 @@
 
     array-length v10, v6
 
-    const/4 v11, 0x0
+    move v11, v7
 
     :goto_2
     if-ge v11, v10, :cond_4
@@ -1442,7 +1442,7 @@
     goto :goto_0
 
     :cond_0
-    const/4 v1, 0x0
+    move v1, v2
 
     :goto_0
     iget v3, p0, Lcom/google/android/exoplayer2/extractor/mp4/FragmentedMp4Extractor;->flags:I
@@ -1467,7 +1467,7 @@
 
     move-result v0
 
-    const/4 v1, 0x0
+    move v1, v2
 
     :goto_1
     if-ge v1, v0, :cond_1
@@ -1549,12 +1549,12 @@
 
     if-nez v0, :cond_0
 
-    const/4 v0, 0x1
+    move v0, v1
 
     goto :goto_0
 
     :cond_0
-    const/4 v0, 0x0
+    move v0, v2
 
     :goto_0
     const-string v3, "Unexpected moov box."
@@ -1597,7 +1597,7 @@
 
     move-wide v8, v3
 
-    const/4 v3, 0x0
+    move v3, v2
 
     :goto_1
     if-ge v3, v5, :cond_3
@@ -1672,12 +1672,12 @@
 
     if-eqz v0, :cond_4
 
-    const/4 v0, 0x1
+    move v0, v1
 
     goto :goto_3
 
     :cond_4
-    const/4 v0, 0x0
+    move v0, v2
 
     :goto_3
     const/4 v10, 0x0
@@ -1792,7 +1792,7 @@
     goto :goto_5
 
     :cond_7
-    const/4 v1, 0x0
+    move v1, v2
 
     :goto_5
     invoke-static {v1}, Lcom/google/android/exoplayer2/util/Assertions;->checkState(Z)V
@@ -1900,7 +1900,7 @@
 
     const/4 v3, 0x0
 
-    const/4 v12, 0x0
+    move v12, v3
 
     :goto_0
     if-ge v12, v11, :cond_0
@@ -2174,9 +2174,9 @@
     .line 858
     iget-object v0, p2, Lcom/google/android/exoplayer2/extractor/mp4/TrackFragment;->sampleHasSubsampleEncryptionTable:[Z
 
-    const/4 v4, 0x0
+    move v4, v3
 
-    const/4 v5, 0x0
+    move v5, v4
 
     :goto_0
     if-ge v4, v1, :cond_4
@@ -2190,12 +2190,12 @@
 
     if-le v6, p0, :cond_1
 
-    const/4 v6, 0x1
+    move v6, v2
 
     goto :goto_1
 
     :cond_1
-    const/4 v6, 0x0
+    move v6, v3
 
     .line 862
     :goto_1
@@ -2211,10 +2211,10 @@
     goto :goto_2
 
     :cond_3
-    const/4 v2, 0x0
+    move v2, v3
 
     :goto_2
-    mul-int v0, v0, v1
+    mul-int/2addr v0, v1
 
     add-int/lit8 v5, v0, 0x0
 
@@ -2292,7 +2292,7 @@
 
     move-object v6, v5
 
-    const/4 v4, 0x0
+    move v4, v3
 
     .line 1137
     :goto_0
@@ -2488,12 +2488,12 @@
 
     if-ne v0, v8, :cond_8
 
-    const/4 v10, 0x1
+    move v10, v8
 
     goto :goto_3
 
     :cond_8
-    const/4 v10, 0x0
+    move v10, v3
 
     :goto_3
     if-nez v10, :cond_9
@@ -2608,7 +2608,7 @@
     goto :goto_0
 
     :cond_0
-    const/4 p1, 0x0
+    move p1, v0
 
     .line 1113
     :goto_0
@@ -2823,11 +2823,13 @@
 
     const/4 v3, 0x0
 
-    move-wide v3, v11
-
     move-wide/from16 v17, v15
 
-    const/4 v11, 0x0
+    move-wide/from16 v23, v11
+
+    move v11, v3
+
+    move-wide/from16 v3, v23
 
     :goto_1
     if-ge v11, v1, :cond_2
@@ -2911,11 +2913,11 @@
 
     move-object v6, v2
 
+    move v2, v5
+
     move-object v5, v12
 
     move-object/from16 v8, v22
-
-    const/4 v2, 0x4
 
     move/from16 v1, p1
 
@@ -3537,12 +3539,12 @@
 
     if-eqz v6, :cond_1
 
-    const/4 v6, 0x1
+    move v6, v8
 
     goto :goto_0
 
     :cond_1
-    const/4 v6, 0x0
+    move v6, v7
 
     .line 1003
     :goto_0
@@ -3560,48 +3562,48 @@
 
     if-eqz v10, :cond_3
 
-    const/4 v10, 0x1
+    move v10, v8
 
     goto :goto_1
 
     :cond_3
-    const/4 v10, 0x0
+    move v10, v7
 
     :goto_1
     and-int/lit16 v11, v1, 0x200
 
     if-eqz v11, :cond_4
 
-    const/4 v11, 0x1
+    move v11, v8
 
     goto :goto_2
 
     :cond_4
-    const/4 v11, 0x0
+    move v11, v7
 
     :goto_2
     and-int/lit16 v12, v1, 0x400
 
     if-eqz v12, :cond_5
 
-    const/4 v12, 0x1
+    move v12, v8
 
     goto :goto_3
 
     :cond_5
-    const/4 v12, 0x0
+    move v12, v7
 
     :goto_3
     and-int/lit16 v1, v1, 0x800
 
     if-eqz v1, :cond_6
 
-    const/4 v1, 0x1
+    move v1, v8
 
     goto :goto_4
 
     :cond_6
-    const/4 v1, 0x0
+    move v1, v7
 
     .line 1020
     :goto_4
@@ -3849,7 +3851,7 @@
     if-nez v7, :cond_11
 
     :cond_10
-    const/4 v0, 0x1
+    move v0, v1
 
     goto :goto_c
 
@@ -3905,11 +3907,11 @@
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    move v2, v1
 
-    const/4 v3, 0x0
+    move v3, v2
 
-    const/4 v4, 0x0
+    move v4, v3
 
     :goto_0
     const v5, 0x7472756e
@@ -3967,9 +3969,9 @@
 
     invoke-virtual {v2, v3, v4}, Lcom/google/android/exoplayer2/extractor/mp4/TrackFragment;->initTables(II)V
 
-    const/4 v2, 0x0
+    move v2, v1
 
-    const/4 v3, 0x0
+    move v3, v2
 
     :goto_1
     if-ge v1, v0, :cond_3
@@ -4048,7 +4050,7 @@
 .end method
 
 .method private processAtomEnded(J)V
-    .locals 3
+    .locals 2
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lcom/google/android/exoplayer2/ParserException;
@@ -4075,9 +4077,9 @@
 
     iget-wide v0, v0, Lcom/google/android/exoplayer2/extractor/mp4/Atom$ContainerAtom;->endPosition:J
 
-    cmp-long v2, v0, p1
+    cmp-long v0, v0, p1
 
-    if-nez v2, :cond_0
+    if-nez v0, :cond_0
 
     .line 466
     iget-object v0, p0, Lcom/google/android/exoplayer2/extractor/mp4/FragmentedMp4Extractor;->containerAtoms:Ljava/util/ArrayDeque;
@@ -4323,7 +4325,7 @@
 
     move-result v0
 
-    const/4 v7, 0x0
+    move v7, v2
 
     :goto_1
     if-ge v7, v0, :cond_7
@@ -4554,44 +4556,44 @@
     .line 453
     iget-wide v0, p0, Lcom/google/android/exoplayer2/extractor/mp4/FragmentedMp4Extractor;->atomSize:J
 
-    long-to-int v1, v0
+    long-to-int v0, v0
 
-    iget v0, p0, Lcom/google/android/exoplayer2/extractor/mp4/FragmentedMp4Extractor;->atomHeaderBytesRead:I
+    iget v1, p0, Lcom/google/android/exoplayer2/extractor/mp4/FragmentedMp4Extractor;->atomHeaderBytesRead:I
 
-    sub-int/2addr v1, v0
+    sub-int/2addr v0, v1
 
     .line 454
-    iget-object v0, p0, Lcom/google/android/exoplayer2/extractor/mp4/FragmentedMp4Extractor;->atomData:Lcom/google/android/exoplayer2/util/ParsableByteArray;
+    iget-object v1, p0, Lcom/google/android/exoplayer2/extractor/mp4/FragmentedMp4Extractor;->atomData:Lcom/google/android/exoplayer2/util/ParsableByteArray;
 
-    if-eqz v0, :cond_0
+    if-eqz v1, :cond_0
 
     .line 456
-    invoke-virtual {v0}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->getData()[B
+    invoke-virtual {v1}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->getData()[B
 
     move-result-object v2
 
     const/16 v3, 0x8
 
-    invoke-interface {p1, v2, v3, v1}, Lcom/google/android/exoplayer2/extractor/ExtractorInput;->readFully([BII)V
+    invoke-interface {p1, v2, v3, v0}, Lcom/google/android/exoplayer2/extractor/ExtractorInput;->readFully([BII)V
 
     .line 457
-    new-instance v1, Lcom/google/android/exoplayer2/extractor/mp4/Atom$LeafAtom;
+    new-instance v0, Lcom/google/android/exoplayer2/extractor/mp4/Atom$LeafAtom;
 
     iget v2, p0, Lcom/google/android/exoplayer2/extractor/mp4/FragmentedMp4Extractor;->atomType:I
 
-    invoke-direct {v1, v2, v0}, Lcom/google/android/exoplayer2/extractor/mp4/Atom$LeafAtom;-><init>(ILcom/google/android/exoplayer2/util/ParsableByteArray;)V
+    invoke-direct {v0, v2, v1}, Lcom/google/android/exoplayer2/extractor/mp4/Atom$LeafAtom;-><init>(ILcom/google/android/exoplayer2/util/ParsableByteArray;)V
 
     invoke-interface {p1}, Lcom/google/android/exoplayer2/extractor/ExtractorInput;->getPosition()J
 
-    move-result-wide v2
+    move-result-wide v1
 
-    invoke-direct {p0, v1, v2, v3}, Lcom/google/android/exoplayer2/extractor/mp4/FragmentedMp4Extractor;->onLeafAtomRead(Lcom/google/android/exoplayer2/extractor/mp4/Atom$LeafAtom;J)V
+    invoke-direct {p0, v0, v1, v2}, Lcom/google/android/exoplayer2/extractor/mp4/FragmentedMp4Extractor;->onLeafAtomRead(Lcom/google/android/exoplayer2/extractor/mp4/Atom$LeafAtom;J)V
 
     goto :goto_0
 
     .line 459
     :cond_0
-    invoke-interface {p1, v1}, Lcom/google/android/exoplayer2/extractor/ExtractorInput;->skipFully(I)V
+    invoke-interface {p1, v0}, Lcom/google/android/exoplayer2/extractor/ExtractorInput;->skipFully(I)V
 
     .line 461
     :goto_0
@@ -4787,9 +4789,9 @@
 
     sub-long/2addr v5, v7
 
-    long-to-int v6, v5
+    long-to-int v5, v5
 
-    if-gez v6, :cond_2
+    if-gez v5, :cond_2
 
     const-string v5, "FragmentedMp4Extractor"
 
@@ -4798,11 +4800,11 @@
     .line 1341
     invoke-static {v5, v6}, Lcom/google/android/exoplayer2/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)V
 
-    const/4 v6, 0x0
+    move v5, v4
 
     .line 1344
     :cond_2
-    invoke-interface {v1, v6}, Lcom/google/android/exoplayer2/extractor/ExtractorInput;->skipFully(I)V
+    invoke-interface {v1, v5}, Lcom/google/android/exoplayer2/extractor/ExtractorInput;->skipFully(I)V
 
     .line 1345
     iput-object v2, v0, Lcom/google/android/exoplayer2/extractor/mp4/FragmentedMp4Extractor;->currentTrackBundle:Lcom/google/android/exoplayer2/extractor/mp4/FragmentedMp4Extractor$TrackBundle;
@@ -5082,12 +5084,12 @@
 
     if-eqz v6, :cond_a
 
-    const/4 v6, 0x1
+    move v6, v8
 
     goto :goto_2
 
     :cond_a
-    const/4 v6, 0x0
+    move v6, v4
 
     :goto_2
     iput-boolean v6, v0, Lcom/google/android/exoplayer2/extractor/mp4/FragmentedMp4Extractor;->processSeiNalUnitPayload:Z
@@ -5656,7 +5658,7 @@
 
     const/4 p2, 0x0
 
-    const/4 v0, 0x0
+    move v0, p2
 
     :goto_0
     if-ge v0, p1, :cond_0

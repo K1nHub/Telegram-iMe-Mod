@@ -41,7 +41,7 @@ public final class BoostRepositoryImpl implements BoostRepository {
         Intrinsics.checkNotNullParameter(txHash, "txHash");
         Observable<R> map = this.boostApi.getDataForSpeedUpCryptoTransaction(new GetDataForCancelOrBoostCryptoTransactionRequest(txHash)).map(new FirebaseExtKt$sam$i$io_reactivex_functions_Function$0(new BoostRepositoryImpl$getCryptoBoostMetadata$$inlined$mapSuccess$1(this.firebaseErrorHandler, this)));
         Intrinsics.checkNotNullExpressionValue(map, "errorHandler: FirebaseFu…response).toError()\n    }");
-        Observable<Result<TransactionArgs>> onErrorReturn = map.onErrorReturn(new RxExtKt$sam$i$io_reactivex_functions_Function$0(new C1735xe2766782(this.errorHandler)));
+        Observable<Result<TransactionArgs>> onErrorReturn = map.onErrorReturn(new RxExtKt$sam$i$io_reactivex_functions_Function$0(new C1743xe2766782(this.errorHandler)));
         Intrinsics.checkNotNullExpressionValue(onErrorReturn, "errorHandler: ErrorHandl…ndleError(it).toError() }");
         return onErrorReturn;
     }

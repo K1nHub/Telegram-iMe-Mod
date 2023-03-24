@@ -1565,7 +1565,7 @@
     .line 3
     invoke-virtual {p0, p3}, Landroid/os/Parcel;->writeInt(I)V
 
-    const/4 v1, 0x0
+    move v1, v0
 
     :goto_0
     if-ge v1, p3, :cond_3
@@ -1646,7 +1646,7 @@
     .line 4
     invoke-virtual {p0, p3}, Landroid/os/Parcel;->writeInt(I)V
 
-    const/4 v1, 0x0
+    move v1, v0
 
     :goto_0
     if-ge v1, p3, :cond_3
@@ -1731,7 +1731,7 @@
     .line 4
     invoke-virtual {p0, p3}, Landroid/os/Parcel;->writeInt(I)V
 
-    const/4 v1, 0x0
+    move v1, v0
 
     :goto_0
     if-ge v1, p3, :cond_3
@@ -2206,7 +2206,7 @@
     .line 3
     invoke-virtual {p0, p4}, Landroid/os/Parcel;->writeInt(I)V
 
-    const/4 v1, 0x0
+    move v1, v0
 
     :goto_0
     if-ge v1, p4, :cond_3
@@ -2277,7 +2277,7 @@
     .line 4
     invoke-virtual {p0, p3}, Landroid/os/Parcel;->writeInt(I)V
 
-    const/4 v1, 0x0
+    move v1, v0
 
     :goto_0
     if-ge v1, p3, :cond_3
@@ -2352,7 +2352,7 @@
     .line 4
     invoke-virtual {p0, p3}, Landroid/os/Parcel;->writeInt(I)V
 
-    const/4 v1, 0x0
+    move v1, v0
 
     :goto_0
     if-ge v1, p3, :cond_3

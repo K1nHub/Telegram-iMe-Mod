@@ -56,25 +56,25 @@
 
     invoke-static {p6, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 267
+    .line 271
     invoke-direct {p0, p1, p2}, Lcom/smedialink/model/wallet/notification/PushNotificationModel$CryptoTransfer;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 261
+    .line 265
     iput-object p1, p0, Lcom/smedialink/model/wallet/notification/PushNotificationModel$Donation$In;->userId:Ljava/lang/String;
 
-    .line 262
+    .line 266
     iput-object p2, p0, Lcom/smedialink/model/wallet/notification/PushNotificationModel$Donation$In;->type:Ljava/lang/String;
 
-    .line 263
+    .line 267
     iput-object p3, p0, Lcom/smedialink/model/wallet/notification/PushNotificationModel$Donation$In;->cryptoCode:Ljava/lang/String;
 
-    .line 264
+    .line 268
     iput-object p4, p0, Lcom/smedialink/model/wallet/notification/PushNotificationModel$Donation$In;->fromWalletAddress:Ljava/lang/String;
 
-    .line 265
+    .line 269
     iput-object p5, p0, Lcom/smedialink/model/wallet/notification/PushNotificationModel$Donation$In;->toWalletAddress:Ljava/lang/String;
 
-    .line 266
+    .line 270
     iput-object p6, p0, Lcom/smedialink/model/wallet/notification/PushNotificationModel$Donation$In;->amount:Ljava/lang/String;
 
     return-void
@@ -375,7 +375,7 @@
 .method public final getAmount()Ljava/lang/String;
     .locals 1
 
-    .line 266
+    .line 270
     iget-object v0, p0, Lcom/smedialink/model/wallet/notification/PushNotificationModel$Donation$In;->amount:Ljava/lang/String;
 
     return-object v0
@@ -384,7 +384,7 @@
 .method public final getCryptoCode()Ljava/lang/String;
     .locals 1
 
-    .line 263
+    .line 267
     iget-object v0, p0, Lcom/smedialink/model/wallet/notification/PushNotificationModel$Donation$In;->cryptoCode:Ljava/lang/String;
 
     return-object v0
@@ -393,7 +393,7 @@
 .method public final getFromWalletAddress()Ljava/lang/String;
     .locals 1
 
-    .line 264
+    .line 268
     iget-object v0, p0, Lcom/smedialink/model/wallet/notification/PushNotificationModel$Donation$In;->fromWalletAddress:Ljava/lang/String;
 
     return-object v0
@@ -402,14 +402,14 @@
 .method public getMessage()Ljava/lang/String;
     .locals 5
 
-    .line 270
+    .line 274
     sget v0, Lorg/telegram/messenger/R$string;->push_notification_wallet_crypto_transfer_in_description:I
 
     const/4 v1, 0x3
 
     new-array v1, v1, [Ljava/lang/Object;
 
-    .line 271
+    .line 275
     new-instance v2, Ljava/math/BigDecimal;
 
     iget-object v3, p0, Lcom/smedialink/model/wallet/notification/PushNotificationModel$Donation$In;->amount:Ljava/lang/String;
@@ -436,7 +436,7 @@
 
     aput-object v2, v1, v4
 
-    .line 272
+    .line 276
     iget-object v2, p0, Lcom/smedialink/model/wallet/notification/PushNotificationModel$Donation$In;->cryptoCode:Ljava/lang/String;
 
     invoke-virtual {v3, v2}, Lcom/smedialink/storage/domain/model/wallet/token/TokenInfo$Companion;->map(Ljava/lang/String;)Lcom/smedialink/storage/domain/model/wallet/token/TokenInfo;
@@ -449,7 +449,7 @@
 
     new-array v3, v4, [Ljava/lang/Object;
 
-    invoke-virtual {p0, v2, v3}, Lcom/smedialink/model/wallet/notification/PushNotificationModel;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-virtual {p0, v2, v3}, Lcom/smedialink/model/wallet/notification/PushNotificationModel;->getString$TMessagesProj_release(I[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v2
 
@@ -463,8 +463,8 @@
 
     aput-object v2, v1, v3
 
-    .line 269
-    invoke-virtual {p0, v0, v1}, Lcom/smedialink/model/wallet/notification/PushNotificationModel;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
+    .line 273
+    invoke-virtual {p0, v0, v1}, Lcom/smedialink/model/wallet/notification/PushNotificationModel;->getString$TMessagesProj_release(I[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -474,7 +474,7 @@
 .method public final getToWalletAddress()Ljava/lang/String;
     .locals 1
 
-    .line 265
+    .line 269
     iget-object v0, p0, Lcom/smedialink/model/wallet/notification/PushNotificationModel$Donation$In;->toWalletAddress:Ljava/lang/String;
 
     return-object v0
@@ -483,7 +483,7 @@
 .method public getType()Ljava/lang/String;
     .locals 1
 
-    .line 262
+    .line 266
     iget-object v0, p0, Lcom/smedialink/model/wallet/notification/PushNotificationModel$Donation$In;->type:Ljava/lang/String;
 
     return-object v0
@@ -492,7 +492,7 @@
 .method public getUserId()Ljava/lang/String;
     .locals 1
 
-    .line 261
+    .line 265
     iget-object v0, p0, Lcom/smedialink/model/wallet/notification/PushNotificationModel$Donation$In;->userId:Ljava/lang/String;
 
     return-object v0

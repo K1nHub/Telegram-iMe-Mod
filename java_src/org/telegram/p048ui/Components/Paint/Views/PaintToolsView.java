@@ -14,7 +14,7 @@ import android.view.View;
 import android.widget.LinearLayout;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3286R;
+import org.telegram.messenger.C3301R;
 import org.telegram.p048ui.Components.CubicBezierInterpolator;
 import org.telegram.p048ui.Components.LayoutHelper;
 import org.telegram.p048ui.Components.Paint.Brush;
@@ -84,7 +84,7 @@ public class PaintToolsView extends LinearLayout {
                     i++;
                 }
             } else if (i == Brush.BRUSHES_LIST.size() + 1) {
-                this.buttons[i2].setImageResource(C3286R.C3288drawable.msg_add);
+                this.buttons[i2].setImageResource(C3301R.C3303drawable.msg_add);
                 this.buttons[i2].setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.Paint.Views.PaintToolsView$$ExternalSyntheticLambda2
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view) {
@@ -119,7 +119,7 @@ public class PaintToolsView extends LinearLayout {
         this.selectedIndex = i;
         if (this.isShapeSelected) {
             this.isShapeSelected = false;
-            AndroidUtilities.updateImageViewImageAnimated(this.buttons[this.brushesCount + 1], C3286R.C3288drawable.msg_add);
+            AndroidUtilities.updateImageViewImageAnimated(this.buttons[this.brushesCount + 1], C3301R.C3303drawable.msg_add);
         }
         invalidate();
     }
@@ -160,7 +160,7 @@ public class PaintToolsView extends LinearLayout {
                 }
                 if (this.isShapeSelected) {
                     this.isShapeSelected = false;
-                    AndroidUtilities.updateImageViewImageAnimated(this.buttons[this.brushesCount + 1], C3286R.C3288drawable.msg_add);
+                    AndroidUtilities.updateImageViewImageAnimated(this.buttons[this.brushesCount + 1], C3301R.C3303drawable.msg_add);
                 }
                 this.nextSelectedIndex = i;
                 this.nextSelectedIndexProgress = BitmapDescriptorFactory.HUE_RED;
@@ -238,14 +238,14 @@ public class PaintToolsView extends LinearLayout {
         int i = this.nextSelectedIndex;
         RLottieImageView rLottieImageView2 = i != -1 ? rLottieImageViewArr[i] : null;
         float f = BitmapDescriptorFactory.HUE_RED;
-        float f2 = rLottieImageView2 != null ? this.nextSelectedIndexProgress : BitmapDescriptorFactory.HUE_RED;
+        float f2 = rLottieImageView2 != null ? this.nextSelectedIndexProgress : 0.0f;
         float f3 = 1.0f;
         if (f2 > 0.25f && f2 < 0.75f) {
             f3 = (f2 <= 0.25f || f2 >= 0.5f) ? 1.0f - ((0.75f - f2) / 0.25f) : (0.5f - f2) / 0.25f;
         }
         float min = (Math.min((rLottieImageView.getWidth() - rLottieImageView.getPaddingLeft()) - rLottieImageView.getPaddingRight(), (rLottieImageView.getHeight() - rLottieImageView.getPaddingTop()) - rLottieImageView.getPaddingBottom()) / 2.0f) + AndroidUtilities.m50dp(3) + (AndroidUtilities.m50dp(3) * f3);
         float x = rLottieImageView.getX() + (rLottieImageView.getWidth() / 2.0f) + getOffsetForIndex(this.selectedIndex);
-        float x2 = rLottieImageView2 != null ? rLottieImageView2.getX() + (rLottieImageView2.getWidth() / 2.0f) : BitmapDescriptorFactory.HUE_RED;
+        float x2 = rLottieImageView2 != null ? rLottieImageView2.getX() + (rLottieImageView2.getWidth() / 2.0f) : 0.0f;
         int i2 = this.nextSelectedIndex;
         if (i2 != -1) {
             f = getOffsetForIndex(i2);

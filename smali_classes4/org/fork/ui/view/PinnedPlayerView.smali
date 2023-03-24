@@ -442,7 +442,7 @@
 
     move/from16 v6, v18
 
-    const/4 v15, 0x1
+    move v15, v7
 
     move-object v7, v11
 
@@ -1051,7 +1051,7 @@
 
     move-object/from16 v2, p1
 
-    const/16 v8, 0x30
+    move v8, v3
 
     move-object v3, v4
 
@@ -1059,13 +1059,13 @@
 
     move v5, v12
 
-    const/4 v12, 0x2
+    move/from16 v17, v6
 
-    const/16 v17, 0x0
+    const/4 v12, 0x2
 
     move v6, v7
 
-    const/4 v8, 0x0
+    move/from16 v8, v17
 
     move-object v7, v11
 
@@ -1551,12 +1551,12 @@
 
     if-eqz v0, :cond_3
 
-    const/4 v0, 0x1
+    move v0, v2
 
     goto :goto_1
 
     :cond_3
-    const/4 v0, 0x0
+    move v0, v3
 
     .line 1115
     :goto_1
@@ -2245,7 +2245,7 @@
     .line 941
     invoke-virtual {v12, v11}, Lorg/telegram/ui/DialogsActivity;->getSelectedMessages(Ljava/util/ArrayList;)V
 
-    const/4 v10, 0x0
+    move v10, v1
 
     .line 942
     :goto_2
@@ -3172,7 +3172,7 @@
 
     if-lt v4, v5, :cond_1
 
-    const/4 v4, 0x0
+    move v4, v6
 
     :cond_1
     const/4 v5, -0x1
@@ -3562,7 +3562,7 @@
 
     move-result p2
 
-    mul-float p1, p1, p2
+    mul-float/2addr p1, p2
 
     float-to-int p1, p1
 
@@ -3574,19 +3574,19 @@
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x1
-
     cmpl-float v0, v0, v1
+
+    const/4 v1, 0x1
 
     if-ltz v0, :cond_1
 
     iget v0, p0, Lorg/fork/ui/view/PinnedPlayerView;->rewindingState:I
 
-    const/4 v1, -0x1
+    const/4 v2, -0x1
 
-    if-eq v0, v1, :cond_2
+    if-eq v0, v2, :cond_2
 
-    if-ne v0, v2, :cond_1
+    if-ne v0, v1, :cond_1
 
     invoke-static {}, Lorg/telegram/messenger/MediaController;->getInstance()Lorg/telegram/messenger/MediaController;
 
@@ -3601,18 +3601,18 @@
     goto :goto_0
 
     :cond_1
-    const/4 v2, 0x0
+    const/4 v1, 0x0
 
     :cond_2
     :goto_0
-    if-eqz v2, :cond_3
+    if-eqz v1, :cond_3
 
     .line 1069
     iget-object v0, p0, Lorg/fork/ui/view/PinnedPlayerView;->seekBarView:Lorg/telegram/ui/Components/SeekBarView;
 
-    iget v1, p0, Lorg/fork/ui/view/PinnedPlayerView;->rewindingProgress:F
+    iget v2, p0, Lorg/fork/ui/view/PinnedPlayerView;->rewindingProgress:F
 
-    invoke-virtual {v0, v1, p2}, Lorg/telegram/ui/Components/SeekBarView;->setProgress(FZ)V
+    invoke-virtual {v0, v2, p2}, Lorg/telegram/ui/Components/SeekBarView;->setProgress(FZ)V
 
     goto :goto_1
 
@@ -3620,9 +3620,9 @@
     :cond_3
     iget-object v0, p0, Lorg/fork/ui/view/PinnedPlayerView;->seekBarView:Lorg/telegram/ui/Components/SeekBarView;
 
-    iget v1, p1, Lorg/telegram/messenger/MessageObject;->audioProgress:F
+    iget v2, p1, Lorg/telegram/messenger/MessageObject;->audioProgress:F
 
-    invoke-virtual {v0, v1, p2}, Lorg/telegram/ui/Components/SeekBarView;->setProgress(FZ)V
+    invoke-virtual {v0, v2, p2}, Lorg/telegram/ui/Components/SeekBarView;->setProgress(FZ)V
 
     .line 1075
     :goto_1
@@ -3630,7 +3630,7 @@
 
     const/high16 v0, -0x40800000    # -1.0f
 
-    const/high16 v1, 0x3f800000    # 1.0f
+    const/high16 v2, 0x3f800000    # 1.0f
 
     if-eqz p2, :cond_4
 
@@ -3676,15 +3676,15 @@
 
     move-result-object p2
 
-    iget v1, p1, Lorg/telegram/messenger/MessageObject;->audioProgress:F
+    iget v2, p1, Lorg/telegram/messenger/MessageObject;->audioProgress:F
 
     iget-object v5, p0, Lorg/fork/ui/view/PinnedPlayerView;->currentFile:Ljava/lang/String;
 
-    invoke-virtual {p2, v1, v5}, Lorg/telegram/messenger/FileLoader;->getBufferedProgressFromPosition(FLjava/lang/String;)F
+    invoke-virtual {p2, v2, v5}, Lorg/telegram/messenger/FileLoader;->getBufferedProgressFromPosition(FLjava/lang/String;)F
 
     move-result p2
 
-    move v1, p2
+    move v2, p2
 
     .line 1081
     :cond_5
@@ -3693,20 +3693,20 @@
     goto :goto_2
 
     :cond_6
-    const/high16 v1, -0x40800000    # -1.0f
+    move v2, v0
 
     :goto_2
-    cmpl-float p2, v1, v0
+    cmpl-float p2, v2, v0
 
     if-eqz p2, :cond_7
 
     .line 1087
     iget-object p2, p0, Lorg/fork/ui/view/PinnedPlayerView;->seekBarView:Lorg/telegram/ui/Components/SeekBarView;
 
-    invoke-virtual {p2, v1}, Lorg/telegram/ui/Components/SeekBarView;->setBufferedProgress(F)V
+    invoke-virtual {p2, v2}, Lorg/telegram/ui/Components/SeekBarView;->setBufferedProgress(F)V
 
     :cond_7
-    if-eqz v2, :cond_8
+    if-eqz v1, :cond_8
 
     .line 1090
     invoke-virtual {p1}, Lorg/telegram/messenger/MessageObject;->getDuration()I
@@ -3721,7 +3721,7 @@
 
     move-result v0
 
-    mul-float p2, p2, v0
+    mul-float/2addr p2, v0
 
     float-to-int p2, p2
 
@@ -4068,12 +4068,12 @@
 
     if-ne v1, v3, :cond_0
 
-    const/4 v1, 0x1
+    move v1, v3
 
     goto :goto_0
 
     :cond_0
-    const/4 v1, 0x0
+    move v1, v2
 
     :goto_0
     invoke-direct {p0, v0, v1}, Lorg/fork/ui/view/PinnedPlayerView;->setMenuItemChecked(Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;Z)V
@@ -4087,7 +4087,7 @@
 
     if-ne v1, v4, :cond_1
 
-    const/4 v2, 0x1
+    move v2, v3
 
     :cond_1
     invoke-direct {p0, v0, v2}, Lorg/fork/ui/view/PinnedPlayerView;->setMenuItemChecked(Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;Z)V
@@ -4129,7 +4129,7 @@
     goto :goto_1
 
     :cond_1
-    const/4 v3, 0x0
+    move v3, v2
 
     :goto_1
     invoke-virtual {v1, v3, v2}, Lorg/telegram/ui/Components/RLottieDrawable;->setCurrentFrame(IZ)V
@@ -4364,7 +4364,7 @@
     goto :goto_0
 
     :cond_7
-    const/high16 p3, -0x40800000    # -1.0f
+    move p3, v0
 
     :goto_0
     cmpl-float p1, p3, v0
@@ -4395,7 +4395,7 @@
 
     if-eqz p2, :cond_9
 
-    const/4 v2, 0x1
+    move v2, v1
 
     :cond_9
     invoke-virtual {p0, v2}, Lorg/fork/ui/view/PinnedPlayerView;->updateTitle(Z)V
@@ -5263,12 +5263,12 @@
 
     if-ne v0, p1, :cond_4
 
-    const/4 p1, 0x1
+    move p1, v2
 
     goto :goto_0
 
     :cond_4
-    const/4 p1, 0x0
+    move p1, v1
 
     .line 666
     :goto_0
@@ -5279,9 +5279,9 @@
 
     const-wide/16 v5, 0x0
 
-    cmp-long v7, v3, v5
+    cmp-long v3, v3, v5
 
-    if-nez v7, :cond_6
+    if-nez v3, :cond_6
 
     invoke-virtual {v0}, Lorg/telegram/messenger/MessageObject;->getId()I
 
@@ -5294,13 +5294,13 @@
     goto :goto_1
 
     :cond_5
-    const/4 v3, 0x0
+    move v3, v1
 
     goto :goto_2
 
     :cond_6
     :goto_1
-    const/4 v3, 0x1
+    move v3, v2
 
     .line 668
     :goto_2
@@ -5339,12 +5339,12 @@
 
     if-eqz v6, :cond_9
 
-    const/16 v6, 0x8
+    move v6, v7
 
     goto :goto_5
 
     :cond_9
-    const/4 v6, 0x0
+    move v6, v1
 
     :goto_5
     invoke-virtual {v4, v6}, Landroid/widget/FrameLayout;->setVisibility(I)V
@@ -5388,7 +5388,7 @@
     goto :goto_6
 
     :cond_a
-    const/4 v7, 0x0
+    move v7, v1
 
     :cond_b
     :goto_6
@@ -5544,7 +5544,7 @@
     goto :goto_7
 
     :cond_e
-    const/4 v4, 0x0
+    move v4, v1
 
     :goto_7
     add-int/lit16 v4, v4, 0xcd

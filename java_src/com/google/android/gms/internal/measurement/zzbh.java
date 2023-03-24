@@ -57,22 +57,19 @@ public final class zzbh extends zzaw {
                     if (!(list.get(0) instanceof zzat)) {
                         throw new IllegalArgumentException("Variable name in FOR_IN must be a string");
                     }
-                    String zzi = list.get(0).zzi();
-                    return zzd(new zzbg(zzgVar, zzi), zzgVar.zzb(list.get(1)), zzgVar.zzb(list.get(2)));
+                    return zzd(new zzbg(zzgVar, list.get(0).zzi()), zzgVar.zzb(list.get(1)), zzgVar.zzb(list.get(2)));
                 case 27:
                     zzh.zzh(zzbl.FOR_IN_CONST.name(), 3, list);
                     if (!(list.get(0) instanceof zzat)) {
                         throw new IllegalArgumentException("Variable name in FOR_IN_CONST must be a string");
                     }
-                    String zzi2 = list.get(0).zzi();
-                    return zzd(new zzbd(zzgVar, zzi2), zzgVar.zzb(list.get(1)), zzgVar.zzb(list.get(2)));
+                    return zzd(new zzbd(zzgVar, list.get(0).zzi()), zzgVar.zzb(list.get(1)), zzgVar.zzb(list.get(2)));
                 case 28:
                     zzh.zzh(zzbl.FOR_IN_LET.name(), 3, list);
                     if (!(list.get(0) instanceof zzat)) {
                         throw new IllegalArgumentException("Variable name in FOR_IN_LET must be a string");
                     }
-                    String zzi3 = list.get(0).zzi();
-                    return zzd(new zzbe(zzgVar, zzi3), zzgVar.zzb(list.get(1)), zzgVar.zzb(list.get(2)));
+                    return zzd(new zzbe(zzgVar, list.get(0).zzi()), zzgVar.zzb(list.get(1)), zzgVar.zzb(list.get(2)));
                 case 29:
                     zzh.zzh(zzbl.FOR_LET.name(), 4, list);
                     zzap zzb = zzgVar.zzb(list.get(0));
@@ -85,8 +82,8 @@ public final class zzbh extends zzaw {
                     zzap zzb2 = zzgVar.zzb(list.get(3));
                     zzg zza = zzgVar.zza();
                     for (int i = 0; i < zzaeVar.zzc(); i++) {
-                        String zzi4 = zzaeVar.zze(i).zzi();
-                        zza.zzg(zzi4, zzgVar.zzd(zzi4));
+                        String zzi = zzaeVar.zze(i).zzi();
+                        zza.zzg(zzi, zzgVar.zzd(zzi));
                     }
                     while (zzgVar.zzb(zzapVar).zzg().booleanValue()) {
                         zzap zzc = zzgVar.zzc((zzae) zzb2);
@@ -101,8 +98,8 @@ public final class zzbh extends zzaw {
                         }
                         zzg zza2 = zzgVar.zza();
                         for (int i2 = 0; i2 < zzaeVar.zzc(); i2++) {
-                            String zzi5 = zzaeVar.zze(i2).zzi();
-                            zza2.zzg(zzi5, zza.zzd(zzi5));
+                            String zzi2 = zzaeVar.zze(i2).zzi();
+                            zza2.zzg(zzi2, zza.zzd(zzi2));
                         }
                         zza2.zzb(zzapVar2);
                         zza = zza2;
@@ -113,22 +110,19 @@ public final class zzbh extends zzaw {
                     if (!(list.get(0) instanceof zzat)) {
                         throw new IllegalArgumentException("Variable name in FOR_OF must be a string");
                     }
-                    String zzi6 = list.get(0).zzi();
-                    return zze(new zzbg(zzgVar, zzi6), zzgVar.zzb(list.get(1)), zzgVar.zzb(list.get(2)));
+                    return zze(new zzbg(zzgVar, list.get(0).zzi()), zzgVar.zzb(list.get(1)), zzgVar.zzb(list.get(2)));
                 case 31:
                     zzh.zzh(zzbl.FOR_OF_CONST.name(), 3, list);
                     if (!(list.get(0) instanceof zzat)) {
                         throw new IllegalArgumentException("Variable name in FOR_OF_CONST must be a string");
                     }
-                    String zzi7 = list.get(0).zzi();
-                    return zze(new zzbd(zzgVar, zzi7), zzgVar.zzb(list.get(1)), zzgVar.zzb(list.get(2)));
+                    return zze(new zzbd(zzgVar, list.get(0).zzi()), zzgVar.zzb(list.get(1)), zzgVar.zzb(list.get(2)));
                 case 32:
                     zzh.zzh(zzbl.FOR_OF_LET.name(), 3, list);
                     if (!(list.get(0) instanceof zzat)) {
                         throw new IllegalArgumentException("Variable name in FOR_OF_LET must be a string");
                     }
-                    String zzi8 = list.get(0).zzi();
-                    return zze(new zzbe(zzgVar, zzi8), zzgVar.zzb(list.get(1)), zzgVar.zzb(list.get(2)));
+                    return zze(new zzbe(zzgVar, list.get(0).zzi()), zzgVar.zzb(list.get(1)), zzgVar.zzb(list.get(2)));
                 default:
                     return super.zzb(str);
             }

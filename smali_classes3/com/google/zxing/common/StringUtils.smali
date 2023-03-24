@@ -132,39 +132,39 @@
 
     if-ne v2, v7, :cond_1
 
-    const/4 v2, 0x1
+    move v2, v5
 
     goto :goto_0
 
     :cond_1
-    const/4 v2, 0x0
+    move v2, v6
 
     :goto_0
-    const/4 v3, 0x0
+    move v7, v5
 
-    const/4 v7, 0x1
+    move v8, v7
 
-    const/4 v8, 0x1
+    move v3, v6
 
-    const/4 v9, 0x0
+    move v9, v3
 
-    const/4 v10, 0x0
+    move v10, v9
 
-    const/4 v11, 0x0
+    move v11, v10
 
-    const/4 v12, 0x0
+    move v12, v11
 
-    const/4 v13, 0x0
+    move v13, v12
 
-    const/4 v14, 0x0
+    move v14, v13
 
-    const/4 v15, 0x0
+    move v15, v14
 
-    const/16 v16, 0x0
+    move/from16 v16, v15
 
-    const/16 v17, 0x0
+    move/from16 v17, v16
 
-    const/16 v18, 0x0
+    move/from16 v18, v17
 
     :goto_1
     if-ge v9, v1, :cond_16

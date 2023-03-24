@@ -665,22 +665,22 @@
 
     if-eqz v3, :cond_3
 
-    const/4 v3, 0x1
+    move v3, v2
 
     goto :goto_2
 
     :cond_3
-    const/4 v3, 0x0
+    move v3, v1
 
     :goto_2
     if-eq v3, p4, :cond_4
 
-    const/4 v3, 0x1
+    move v3, v2
 
     goto :goto_3
 
     :cond_4
-    const/4 v3, 0x0
+    move v3, v1
 
     :goto_3
     if-eqz v3, :cond_5
@@ -702,7 +702,7 @@
     if-ne p2, v0, :cond_6
 
     :goto_4
-    const/4 v1, 0x1
+    move v1, v2
 
     .line 552
     :cond_6
@@ -990,7 +990,7 @@
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_0
     if-ge v2, v0, :cond_8
@@ -1069,7 +1069,7 @@
 
     iget v6, p0, Lorg/telegram/ui/Components/TableLayout;->itemPaddingLeft:I
 
-    mul-int/lit8 v6, v6, 0x2
+    mul-int/2addr v6, v7
 
     add-int/2addr v5, v6
 
@@ -1080,7 +1080,7 @@
 
     iget v6, p0, Lorg/telegram/ui/Components/TableLayout;->itemPaddingTop:I
 
-    mul-int/lit8 v6, v6, 0x2
+    mul-int/2addr v6, v7
 
     add-int/2addr v5, v6
 
@@ -1124,7 +1124,7 @@
     goto :goto_3
 
     :cond_3
-    const/4 v5, 0x0
+    move v5, v1
 
     :goto_3
     if-eqz v5, :cond_4
@@ -1326,16 +1326,14 @@
 
     const/4 v0, 0x1
 
-    const/4 v1, 0x1
-
     goto :goto_0
 
     :cond_0
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
-
     :goto_0
+    move v1, v0
+
     const/4 v6, 0x0
 
     move-object v0, v7
@@ -1368,7 +1366,7 @@
     goto :goto_0
 
     :cond_0
-    const/4 v0, 0x0
+    move v0, v1
 
     :goto_0
     if-eqz v0, :cond_1
@@ -1392,7 +1390,7 @@
     goto :goto_2
 
     :cond_2
-    const/4 v2, 0x0
+    move v2, v1
 
     .line 618
     :goto_2
@@ -1403,11 +1401,11 @@
 
     move-result v4
 
-    const/4 v5, 0x0
+    move v5, v1
 
-    const/4 v6, 0x0
+    move v6, v5
 
-    const/4 v7, 0x0
+    move v7, v6
 
     :goto_3
     if-ge v5, v4, :cond_d
@@ -1510,7 +1508,7 @@
     :cond_9
     add-int/lit8 v6, v6, 0x1
 
-    const/4 v7, 0x0
+    move v7, v1
 
     goto :goto_6
 
@@ -1650,7 +1648,7 @@
 
     if-nez p4, :cond_0
 
-    const/4 v5, 0x1
+    move v5, v4
 
     goto :goto_0
 
@@ -1691,7 +1689,7 @@
     goto :goto_1
 
     :cond_1
-    const/4 v8, 0x1
+    move v8, v4
 
     :goto_1
     add-int/2addr v8, v3
@@ -2001,7 +1999,7 @@
 
     move-result v2
 
-    const/4 v3, 0x0
+    move v3, v7
 
     :goto_0
     if-ge v3, v2, :cond_0
@@ -2151,7 +2149,7 @@
 
     move-result v13
 
-    const/4 v14, 0x0
+    move v14, v7
 
     :goto_2
     if-ge v14, v13, :cond_8
@@ -2466,7 +2464,7 @@
 
     move-result v5
 
-    const/4 v7, 0x0
+    move v7, v4
 
     :goto_6
     if-ge v7, v5, :cond_6

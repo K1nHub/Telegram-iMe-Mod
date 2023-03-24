@@ -224,7 +224,7 @@
 
     const-wide/16 v4, 0x168
 
-    mul-long v2, v2, v4
+    mul-long/2addr v2, v4
 
     long-to-float v1, v2
 

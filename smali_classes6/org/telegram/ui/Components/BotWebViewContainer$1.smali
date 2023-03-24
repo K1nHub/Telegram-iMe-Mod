@@ -95,7 +95,7 @@
 
     div-float/2addr v4, v0
 
-    mul-float v3, v3, v4
+    mul-float/2addr v3, v4
 
     const/4 v0, 0x0
 

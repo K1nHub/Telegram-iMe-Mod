@@ -5,7 +5,7 @@ import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.Lambda;
-import org.telegram.messenger.C3286R;
+import org.telegram.messenger.C3301R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.p048ui.Components.QRCodeBottomSheet;
 /* JADX INFO: Access modifiers changed from: package-private */
@@ -34,7 +34,7 @@ public final class CreateWalletFragment$createQRButton$1$1 extends Lambda implem
         Intrinsics.checkNotNullParameter(it, "it");
         CreateWalletFragment createWalletFragment = this.this$0;
         qrCodeBottomSheet = createWalletFragment.getQrCodeBottomSheet();
-        qrCodeBottomSheet.setupWalletTypeBackup(LocaleController.getInternalString(C3286R.string.wallet_backup_secret_words_qr_title), LocaleController.getString("Close", C3286R.string.Close));
+        qrCodeBottomSheet.setupWalletTypeBackup(LocaleController.getInternalString(C3301R.string.wallet_backup_secret_words_qr_title), LocaleController.getString("Close", C3301R.string.Close));
         createWalletFragment.showDialog(qrCodeBottomSheet);
     }
 }

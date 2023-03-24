@@ -68,7 +68,7 @@
     if-ne v3, v2, :cond_2
 
     :cond_1
-    const/4 v3, -0x1
+    move v3, v2
 
     goto :goto_0
 
@@ -83,7 +83,7 @@
 
     if-ne v3, v4, :cond_1
 
-    const/4 v3, 0x4
+    move v3, v4
 
     :cond_3
     :goto_0
@@ -120,7 +120,7 @@
 
     const/4 v7, 0x0
 
-    const/4 v8, 0x0
+    move v8, v7
 
     :goto_1
     if-ge v8, v6, :cond_5

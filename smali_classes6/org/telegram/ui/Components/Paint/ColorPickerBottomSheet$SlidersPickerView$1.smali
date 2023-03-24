@@ -197,9 +197,9 @@
 
     move-result-wide v0
 
-    long-to-int v1, v0
+    long-to-int v0, v0
 
-    add-int/2addr p1, v1
+    add-int/2addr p1, v0
 
     goto :goto_1
 

@@ -316,7 +316,7 @@
 
     iget v6, p0, Landroidx/recyclerview/widget/LinearLayoutManager$LayoutState;->mItemDirection:I
 
-    mul-int v5, v5, v6
+    mul-int/2addr v5, v6
 
     if-gez v5, :cond_1
 

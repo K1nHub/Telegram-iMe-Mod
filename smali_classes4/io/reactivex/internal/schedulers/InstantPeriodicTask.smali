@@ -207,12 +207,12 @@
 
     if-eq v4, v5, :cond_0
 
-    const/4 v4, 0x1
+    move v4, v2
 
     goto :goto_0
 
     :cond_0
-    const/4 v4, 0x0
+    move v4, v3
 
     :goto_0
     invoke-interface {v0, v4}, Ljava/util/concurrent/Future;->cancel(Z)Z
@@ -243,7 +243,7 @@
     goto :goto_1
 
     :cond_2
-    const/4 v2, 0x0
+    move v2, v3
 
     :goto_1
     invoke-interface {v0, v2}, Ljava/util/concurrent/Future;->cancel(Z)Z

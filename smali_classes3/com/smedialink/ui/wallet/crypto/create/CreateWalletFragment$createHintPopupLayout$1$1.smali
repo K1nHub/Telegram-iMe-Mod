@@ -29,10 +29,10 @@
 
     iput-object p1, p0, Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment$createHintPopupLayout$1$1;->this$0:Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment;
 
-    .line 484
+    .line 485
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 485
+    .line 486
     new-instance p1, Landroid/graphics/Rect;
 
     invoke-direct {p1}, Landroid/graphics/Rect;-><init>()V
@@ -55,14 +55,14 @@
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 488
+    .line 489
     invoke-virtual {p2}, Landroid/view/MotionEvent;->getActionMasked()I
 
     move-result v0
 
     if-nez v0, :cond_0
 
-    .line 489
+    .line 490
     iget-object v0, p0, Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment$createHintPopupLayout$1$1;->this$0:Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment;
 
     invoke-static {v0}, Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment;->access$getHintPopupWindow(Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment;)Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;
@@ -75,12 +75,12 @@
 
     if-eqz v0, :cond_0
 
-    .line 490
+    .line 491
     iget-object v0, p0, Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment$createHintPopupLayout$1$1;->popupRect:Landroid/graphics/Rect;
 
     invoke-virtual {p1, v0}, Landroid/view/View;->getHitRect(Landroid/graphics/Rect;)V
 
-    .line 491
+    .line 492
     iget-object p1, p0, Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment$createHintPopupLayout$1$1;->popupRect:Landroid/graphics/Rect;
 
     invoke-virtual {p2}, Landroid/view/MotionEvent;->getX()F
@@ -101,7 +101,7 @@
 
     if-nez p1, :cond_0
 
-    .line 492
+    .line 493
     iget-object p1, p0, Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment$createHintPopupLayout$1$1;->this$0:Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment;
 
     invoke-static {p1}, Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment;->access$getHintPopupWindow(Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment;)Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;

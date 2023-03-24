@@ -24,7 +24,7 @@
 .end method
 
 .method public static final getSelectedAccountPositionByUserId(J)I
-    .locals 4
+    .locals 3
 
     const/4 v0, 0x0
 
@@ -42,9 +42,9 @@
 
     move-result-wide v1
 
-    cmp-long v3, v1, p0
+    cmp-long v1, v1, p0
 
-    if-nez v3, :cond_0
+    if-nez v1, :cond_0
 
     return v0
 
@@ -61,11 +61,11 @@
 .end method
 
 .method public static final isUserActive(J)Z
-    .locals 5
+    .locals 4
 
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    move v1, v0
 
     :goto_0
     const/4 v2, 0x5
@@ -81,9 +81,9 @@
 
     move-result-wide v2
 
-    cmp-long v4, v2, p0
+    cmp-long v2, v2, p0
 
-    if-nez v4, :cond_0
+    if-nez v2, :cond_0
 
     const/4 p0, 0x1
 

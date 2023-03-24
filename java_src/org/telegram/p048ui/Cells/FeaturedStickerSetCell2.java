@@ -20,7 +20,7 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import java.util.ArrayList;
 import java.util.List;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3286R;
+import org.telegram.messenger.C3301R;
 import org.telegram.messenger.DocumentObject;
 import org.telegram.messenger.FileLoader;
 import org.telegram.messenger.ImageLocation;
@@ -103,7 +103,7 @@ public class FeaturedStickerSetCell2 extends FrameLayout implements Notification
         addView(backupImageView, LayoutHelper.createFrame(48, 48, (z3 ? 5 : 3) | 48, z3 ? 0 : 12, 8, z3 ? 12 : 0, 0));
         ProgressButton progressButton = new ProgressButton(context);
         this.addButton = progressButton;
-        progressButton.setText(LocaleController.getString("Add", C3286R.string.Add));
+        progressButton.setText(LocaleController.getString("Add", C3301R.string.Add));
         progressButton.setTextColor(Theme.getColor("featuredStickers_buttonText"));
         addView(progressButton, LayoutHelper.createFrameRelatively(-2.0f, 28.0f, 8388661, BitmapDescriptorFactory.HUE_RED, 18.0f, 14.0f, BitmapDescriptorFactory.HUE_RED));
         TextView textView3 = new TextView(context);
@@ -112,12 +112,12 @@ public class FeaturedStickerSetCell2 extends FrameLayout implements Notification
         textView3.setTextColor(Theme.getColor("featuredStickers_removeButtonText"));
         textView3.setTextSize(1, 14.0f);
         textView3.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
-        textView3.setText(LocaleController.getString("StickersRemove", C3286R.string.StickersRemove));
+        textView3.setText(LocaleController.getString("StickersRemove", C3301R.string.StickersRemove));
         addView(textView3, LayoutHelper.createFrameRelatively(-2.0f, 28.0f, 8388661, BitmapDescriptorFactory.HUE_RED, 16.0f, 14.0f, BitmapDescriptorFactory.HUE_RED));
         PremiumButtonView premiumButtonView = new PremiumButtonView(context, AndroidUtilities.m50dp(4), false);
         this.unlockButton = premiumButtonView;
-        premiumButtonView.setIcon(C3286R.C3291raw.unlock_icon);
-        premiumButtonView.setButton(LocaleController.getString("Unlock", C3286R.string.Unlock), new View.OnClickListener() { // from class: org.telegram.ui.Cells.FeaturedStickerSetCell2$$ExternalSyntheticLambda0
+        premiumButtonView.setIcon(C3301R.C3306raw.unlock_icon);
+        premiumButtonView.setButton(LocaleController.getString("Unlock", C3301R.string.Unlock), new View.OnClickListener() { // from class: org.telegram.ui.Cells.FeaturedStickerSetCell2$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 FeaturedStickerSetCell2.this.lambda$new$0(view);
@@ -224,7 +224,7 @@ public class FeaturedStickerSetCell2 extends FrameLayout implements Notification
         TLRPC$StickerSet tLRPC$StickerSet2 = tLRPC$StickerSetCovered.set;
         textView2.setText(LocaleController.formatPluralString(tLRPC$StickerSet2.emojis ? "EmojiCount" : "Stickers", tLRPC$StickerSet2.count, new Object[0]));
         if ((tLRPC$StickerSetCovered instanceof TLRPC$TL_stickerSetNoCovered) && (tLRPC$StickerSet = tLRPC$StickerSetCovered.set) != null) {
-            this.waitingForStickerSetId = Long.valueOf(tLRPC$StickerSet.f1532id);
+            this.waitingForStickerSetId = Long.valueOf(tLRPC$StickerSet.f1533id);
             if (!this.bindedObserver) {
                 NotificationCenter.getInstance(this.currentAccount).addObserver(this, NotificationCenter.groupStickersDidLoad);
                 this.bindedObserver = true;
@@ -236,7 +236,7 @@ public class FeaturedStickerSetCell2 extends FrameLayout implements Notification
                 while (true) {
                     if (i >= stickerSet.documents.size()) {
                         break;
-                    } else if (stickerSet.documents.get(i).f1507id == tLRPC$StickerSetCovered.set.thumb_document_id) {
+                    } else if (stickerSet.documents.get(i).f1508id == tLRPC$StickerSetCovered.set.thumb_document_id) {
                         tLRPC$Document = stickerSet.documents.get(i);
                         break;
                     } else {
@@ -251,7 +251,7 @@ public class FeaturedStickerSetCell2 extends FrameLayout implements Notification
                     tLRPC$Document = tLRPC$StickerSetCovered.covers.get(0);
                     if (tLRPC$StickerSetCovered.set != null) {
                         for (int i2 = 0; i2 < tLRPC$StickerSetCovered.covers.size(); i2++) {
-                            if (tLRPC$StickerSetCovered.covers.get(i2).f1507id == tLRPC$StickerSetCovered.set.thumb_document_id) {
+                            if (tLRPC$StickerSetCovered.covers.get(i2).f1508id == tLRPC$StickerSetCovered.set.thumb_document_id) {
                                 tLRPC$Document2 = tLRPC$StickerSetCovered.covers.get(i2);
                             }
                         }
@@ -262,7 +262,7 @@ public class FeaturedStickerSetCell2 extends FrameLayout implements Notification
                         ArrayList<TLRPC$Document> arrayList2 = tLRPC$TL_stickerSetFullCovered.documents;
                         TLRPC$Document tLRPC$Document3 = arrayList2.get(0);
                         for (int i3 = 0; i3 < arrayList2.size(); i3++) {
-                            if (arrayList2.get(i3).f1507id == tLRPC$StickerSetCovered.set.thumb_document_id) {
+                            if (arrayList2.get(i3).f1508id == tLRPC$StickerSetCovered.set.thumb_document_id) {
                                 tLRPC$Document2 = arrayList2.get(i3);
                             }
                         }
@@ -311,7 +311,7 @@ public class FeaturedStickerSetCell2 extends FrameLayout implements Notification
         }
         this.addButton.setVisibility(0);
         this.forceInstalled = z3;
-        this.isInstalled = z3 || MediaDataController.getInstance(this.currentAccount).isStickerPackInstalled(tLRPC$StickerSetCovered.set.f1532id);
+        this.isInstalled = z3 || MediaDataController.getInstance(this.currentAccount).isStickerPackInstalled(tLRPC$StickerSetCovered.set.f1533id);
         boolean z7 = !UserConfig.getInstance(this.currentAccount).isPremium() && MessageObject.isPremiumEmojiPack(tLRPC$StickerSetCovered);
         this.isLocked = z7;
         if (!z4) {
@@ -375,42 +375,42 @@ public class FeaturedStickerSetCell2 extends FrameLayout implements Notification
         TextView textView3 = this.delButton;
         Property property = View.ALPHA;
         float[] fArr = new float[1];
-        fArr[0] = (!this.isInstalled || this.isLocked) ? BitmapDescriptorFactory.HUE_RED : 1.0f;
+        fArr[0] = (!this.isInstalled || this.isLocked) ? 0.0f : 1.0f;
         animatorArr[0] = ObjectAnimator.ofFloat(textView3, property, fArr);
         TextView textView4 = this.delButton;
         Property property2 = View.SCALE_X;
         float[] fArr2 = new float[1];
-        fArr2[0] = (!this.isInstalled || this.isLocked) ? BitmapDescriptorFactory.HUE_RED : 1.0f;
+        fArr2[0] = (!this.isInstalled || this.isLocked) ? 0.0f : 1.0f;
         animatorArr[1] = ObjectAnimator.ofFloat(textView4, property2, fArr2);
         TextView textView5 = this.delButton;
         Property property3 = View.SCALE_Y;
         float[] fArr3 = new float[1];
-        fArr3[0] = (!this.isInstalled || this.isLocked) ? BitmapDescriptorFactory.HUE_RED : 1.0f;
+        fArr3[0] = (!this.isInstalled || this.isLocked) ? 0.0f : 1.0f;
         animatorArr[2] = ObjectAnimator.ofFloat(textView5, property3, fArr3);
         ProgressButton progressButton = this.addButton;
         Property property4 = View.ALPHA;
         float[] fArr4 = new float[1];
-        fArr4[0] = (this.isInstalled || this.isLocked) ? BitmapDescriptorFactory.HUE_RED : 1.0f;
+        fArr4[0] = (this.isInstalled || this.isLocked) ? 0.0f : 1.0f;
         animatorArr[3] = ObjectAnimator.ofFloat(progressButton, property4, fArr4);
         ProgressButton progressButton2 = this.addButton;
         Property property5 = View.SCALE_X;
         float[] fArr5 = new float[1];
-        fArr5[0] = (this.isInstalled || this.isLocked) ? BitmapDescriptorFactory.HUE_RED : 1.0f;
+        fArr5[0] = (this.isInstalled || this.isLocked) ? 0.0f : 1.0f;
         animatorArr[4] = ObjectAnimator.ofFloat(progressButton2, property5, fArr5);
         PremiumButtonView premiumButtonView = this.unlockButton;
         Property property6 = View.SCALE_Y;
         float[] fArr6 = new float[1];
-        fArr6[0] = !this.isLocked ? BitmapDescriptorFactory.HUE_RED : 1.0f;
+        fArr6[0] = !this.isLocked ? 0.0f : 1.0f;
         animatorArr[5] = ObjectAnimator.ofFloat(premiumButtonView, property6, fArr6);
         PremiumButtonView premiumButtonView2 = this.unlockButton;
         Property property7 = View.SCALE_X;
         float[] fArr7 = new float[1];
-        fArr7[0] = !this.isLocked ? BitmapDescriptorFactory.HUE_RED : 1.0f;
+        fArr7[0] = !this.isLocked ? 0.0f : 1.0f;
         animatorArr[6] = ObjectAnimator.ofFloat(premiumButtonView2, property7, fArr7);
         PremiumButtonView premiumButtonView3 = this.unlockButton;
         Property property8 = View.SCALE_Y;
         float[] fArr8 = new float[1];
-        fArr8[0] = this.isLocked ? 1.0f : BitmapDescriptorFactory.HUE_RED;
+        fArr8[0] = this.isLocked ? 1.0f : 0.0f;
         animatorArr[7] = ObjectAnimator.ofFloat(premiumButtonView3, property8, fArr8);
         animatorSet3.playTogether(animatorArr);
         this.currentAnimation.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Cells.FeaturedStickerSetCell2.2

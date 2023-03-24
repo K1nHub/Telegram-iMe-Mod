@@ -263,22 +263,22 @@
     .line 127
     iget v0, p0, Lorg/telegram/ui/Components/FlatCheckBox;->progress:F
 
-    const/high16 v1, 0x3f800000    # 1.0f
+    const/high16 v1, 0x3f000000    # 0.5f
 
-    const/high16 v2, 0x3f000000    # 0.5f
+    cmpg-float v2, v0, v1
 
-    cmpg-float v3, v0, v2
+    const/high16 v3, 0x3f800000    # 1.0f
 
-    if-gtz v3, :cond_0
+    if-gtz v2, :cond_0
 
-    div-float/2addr v0, v2
+    div-float/2addr v0, v1
 
     .line 129
-    iget v3, p0, Lorg/telegram/ui/Components/FlatCheckBox;->colorInactive:I
+    iget v2, p0, Lorg/telegram/ui/Components/FlatCheckBox;->colorInactive:I
 
-    invoke-static {v3}, Landroid/graphics/Color;->red(I)I
+    invoke-static {v2}, Landroid/graphics/Color;->red(I)I
 
-    move-result v3
+    move-result v2
 
     iget v4, p0, Lorg/telegram/ui/Components/FlatCheckBox;->colorActive:I
 
@@ -286,13 +286,13 @@
 
     move-result v4
 
-    sub-int/2addr v3, v4
+    sub-int/2addr v2, v4
 
-    int-to-float v3, v3
+    int-to-float v2, v2
 
-    mul-float v3, v3, v0
+    mul-float/2addr v2, v0
 
-    float-to-int v3, v3
+    float-to-int v2, v2
 
     .line 130
     iget v4, p0, Lorg/telegram/ui/Components/FlatCheckBox;->colorInactive:I
@@ -311,7 +311,7 @@
 
     int-to-float v4, v4
 
-    mul-float v4, v4, v0
+    mul-float/2addr v4, v0
 
     float-to-int v4, v4
 
@@ -332,7 +332,7 @@
 
     int-to-float v5, v5
 
-    mul-float v5, v5, v0
+    mul-float/2addr v5, v0
 
     float-to-int v5, v5
 
@@ -343,15 +343,15 @@
 
     move-result v6
 
-    add-int/2addr v6, v3
+    add-int/2addr v6, v2
 
-    iget v3, p0, Lorg/telegram/ui/Components/FlatCheckBox;->colorActive:I
+    iget v2, p0, Lorg/telegram/ui/Components/FlatCheckBox;->colorActive:I
 
-    invoke-static {v3}, Landroid/graphics/Color;->green(I)I
+    invoke-static {v2}, Landroid/graphics/Color;->green(I)I
 
-    move-result v3
+    move-result v2
 
-    add-int/2addr v3, v4
+    add-int/2addr v2, v4
 
     iget v4, p0, Lorg/telegram/ui/Components/FlatCheckBox;->colorActive:I
 
@@ -361,21 +361,21 @@
 
     add-int/2addr v4, v5
 
-    invoke-static {v6, v3, v4}, Landroid/graphics/Color;->rgb(III)I
+    invoke-static {v6, v2, v4}, Landroid/graphics/Color;->rgb(III)I
 
-    move-result v3
+    move-result v2
 
     .line 134
     iget-object v4, p0, Lorg/telegram/ui/Components/FlatCheckBox;->fillPaint:Landroid/graphics/Paint;
 
-    invoke-virtual {v4, v3}, Landroid/graphics/Paint;->setColor(I)V
+    invoke-virtual {v4, v2}, Landroid/graphics/Paint;->setColor(I)V
 
     .line 136
-    iget v3, p0, Lorg/telegram/ui/Components/FlatCheckBox;->colorTextActive:I
+    iget v2, p0, Lorg/telegram/ui/Components/FlatCheckBox;->colorTextActive:I
 
-    invoke-static {v3}, Landroid/graphics/Color;->red(I)I
+    invoke-static {v2}, Landroid/graphics/Color;->red(I)I
 
-    move-result v3
+    move-result v2
 
     iget v4, p0, Lorg/telegram/ui/Components/FlatCheckBox;->colorInactive:I
 
@@ -383,13 +383,13 @@
 
     move-result v4
 
-    sub-int/2addr v3, v4
+    sub-int/2addr v2, v4
 
-    int-to-float v3, v3
+    int-to-float v2, v2
 
-    mul-float v3, v3, v0
+    mul-float/2addr v2, v0
 
-    float-to-int v3, v3
+    float-to-int v2, v2
 
     .line 137
     iget v4, p0, Lorg/telegram/ui/Components/FlatCheckBox;->colorTextActive:I
@@ -408,7 +408,7 @@
 
     int-to-float v4, v4
 
-    mul-float v4, v4, v0
+    mul-float/2addr v4, v0
 
     float-to-int v4, v4
 
@@ -429,7 +429,7 @@
 
     int-to-float v5, v5
 
-    mul-float v5, v5, v0
+    mul-float/2addr v5, v0
 
     float-to-int v5, v5
 
@@ -440,15 +440,15 @@
 
     move-result v6
 
-    add-int/2addr v6, v3
+    add-int/2addr v6, v2
 
-    iget v3, p0, Lorg/telegram/ui/Components/FlatCheckBox;->colorInactive:I
+    iget v2, p0, Lorg/telegram/ui/Components/FlatCheckBox;->colorInactive:I
 
-    invoke-static {v3}, Landroid/graphics/Color;->green(I)I
+    invoke-static {v2}, Landroid/graphics/Color;->green(I)I
 
-    move-result v3
+    move-result v2
 
-    add-int/2addr v3, v4
+    add-int/2addr v2, v4
 
     iget v4, p0, Lorg/telegram/ui/Components/FlatCheckBox;->colorInactive:I
 
@@ -458,14 +458,14 @@
 
     add-int/2addr v4, v5
 
-    invoke-static {v6, v3, v4}, Landroid/graphics/Color;->rgb(III)I
+    invoke-static {v6, v2, v4}, Landroid/graphics/Color;->rgb(III)I
 
-    move-result v3
+    move-result v2
 
     .line 141
     iget-object v4, p0, Lorg/telegram/ui/Components/FlatCheckBox;->textPaint:Landroid/text/TextPaint;
 
-    invoke-virtual {v4, v3}, Landroid/text/TextPaint;->setColor(I)V
+    invoke-virtual {v4, v2}, Landroid/text/TextPaint;->setColor(I)V
 
     goto :goto_0
 
@@ -473,26 +473,26 @@
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Components/FlatCheckBox;->textPaint:Landroid/text/TextPaint;
 
-    iget v3, p0, Lorg/telegram/ui/Components/FlatCheckBox;->colorTextActive:I
+    iget v2, p0, Lorg/telegram/ui/Components/FlatCheckBox;->colorTextActive:I
 
-    invoke-virtual {v0, v3}, Landroid/text/TextPaint;->setColor(I)V
+    invoke-virtual {v0, v2}, Landroid/text/TextPaint;->setColor(I)V
 
     .line 145
     iget-object v0, p0, Lorg/telegram/ui/Components/FlatCheckBox;->fillPaint:Landroid/graphics/Paint;
 
-    iget v3, p0, Lorg/telegram/ui/Components/FlatCheckBox;->colorInactive:I
+    iget v2, p0, Lorg/telegram/ui/Components/FlatCheckBox;->colorInactive:I
 
-    invoke-virtual {v0, v3}, Landroid/graphics/Paint;->setColor(I)V
+    invoke-virtual {v0, v2}, Landroid/graphics/Paint;->setColor(I)V
 
-    const/high16 v0, 0x3f800000    # 1.0f
+    move v0, v3
 
     .line 149
     :goto_0
     invoke-virtual {p0}, Landroid/view/View;->getMeasuredHeight()I
 
-    move-result v3
+    move-result v2
 
-    shr-int/lit8 v3, v3, 0x1
+    shr-int/lit8 v2, v2, 0x1
 
     .line 151
     iget-object v4, p0, Lorg/telegram/ui/Components/FlatCheckBox;->outLinePaint:Landroid/graphics/Paint;
@@ -555,11 +555,11 @@
 
     int-to-float v6, v6
 
-    mul-float v0, v0, v6
+    mul-float/2addr v0, v6
 
     add-float/2addr v5, v0
 
-    int-to-float v0, v3
+    int-to-float v0, v2
 
     iget-object v6, p0, Lorg/telegram/ui/Components/FlatCheckBox;->textPaint:Landroid/text/TextPaint;
 
@@ -570,7 +570,7 @@
 
     const v8, 0x3eb33333    # 0.35f
 
-    mul-float v6, v6, v8
+    mul-float/2addr v6, v8
 
     add-float/2addr v0, v6
 
@@ -583,7 +583,7 @@
     :cond_1
     iget v0, p0, Lorg/telegram/ui/Components/FlatCheckBox;->progress:F
 
-    div-float/2addr v0, v2
+    div-float/2addr v0, v1
 
     sub-float/2addr v7, v0
 
@@ -597,7 +597,7 @@
 
     move-result v4
 
-    int-to-float v5, v3
+    int-to-float v5, v2
 
     const v6, 0x3f666666    # 0.9f
 
@@ -618,46 +618,46 @@
 
     move-result v5
 
-    sub-int/2addr v3, v5
+    sub-int/2addr v2, v5
 
-    int-to-float v3, v3
+    int-to-float v2, v2
 
-    invoke-virtual {p1, v4, v3}, Landroid/graphics/Canvas;->translate(FF)V
+    invoke-virtual {p1, v4, v2}, Landroid/graphics/Canvas;->translate(FF)V
 
     .line 167
-    iget v3, p0, Lorg/telegram/ui/Components/FlatCheckBox;->progress:F
+    iget v2, p0, Lorg/telegram/ui/Components/FlatCheckBox;->progress:F
 
-    cmpl-float v2, v3, v2
+    cmpl-float v1, v2, v1
 
-    if-lez v2, :cond_2
+    if-lez v1, :cond_2
 
     .line 168
-    iget-object v2, p0, Lorg/telegram/ui/Components/FlatCheckBox;->checkPaint:Landroid/graphics/Paint;
+    iget-object v1, p0, Lorg/telegram/ui/Components/FlatCheckBox;->checkPaint:Landroid/graphics/Paint;
 
-    iget v3, p0, Lorg/telegram/ui/Components/FlatCheckBox;->colorTextActive:I
+    iget v2, p0, Lorg/telegram/ui/Components/FlatCheckBox;->colorTextActive:I
 
-    invoke-virtual {v2, v3}, Landroid/graphics/Paint;->setColor(I)V
+    invoke-virtual {v1, v2}, Landroid/graphics/Paint;->setColor(I)V
 
     .line 169
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dpf2(F)F
 
-    move-result v2
+    move-result v1
 
-    const/4 v3, 0x4
+    const/4 v2, 0x4
 
-    invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v4
 
     int-to-float v4, v4
 
-    sub-float/2addr v1, v7
+    sub-float/2addr v3, v7
 
-    mul-float v4, v4, v1
+    mul-float/2addr v4, v3
 
-    sub-float/2addr v2, v4
+    sub-float/2addr v1, v4
 
-    float-to-int v2, v2
+    float-to-int v1, v1
 
     const/high16 v4, 0x41500000    # 13.0f
 
@@ -666,17 +666,17 @@
 
     move-result v5
 
-    invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
-    move-result v3
+    move-result v2
 
-    int-to-float v3, v3
+    int-to-float v2, v2
 
-    mul-float v3, v3, v1
+    mul-float/2addr v2, v3
 
-    sub-float/2addr v5, v3
+    sub-float/2addr v5, v2
 
-    float-to-int v3, v5
+    float-to-int v2, v5
 
     .line 171
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dpf2(F)F
@@ -691,9 +691,9 @@
 
     int-to-float v7, v5
 
-    int-to-float v8, v2
+    int-to-float v8, v1
 
-    int-to-float v9, v3
+    int-to-float v9, v2
 
     iget-object v10, p0, Lorg/telegram/ui/Components/FlatCheckBox;->checkPaint:Landroid/graphics/Paint;
 
@@ -704,38 +704,38 @@
     .line 172
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dpf2(F)F
 
-    move-result v2
+    move-result v1
 
-    const/16 v3, 0x8
+    const/16 v2, 0x8
 
-    invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v5
 
     int-to-float v5, v5
 
-    mul-float v5, v5, v1
+    mul-float/2addr v5, v3
 
-    add-float/2addr v2, v5
+    add-float/2addr v1, v5
 
-    float-to-int v2, v2
+    float-to-int v1, v1
 
     .line 173
     invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->dpf2(F)F
 
     move-result v5
 
-    invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
-    move-result v3
+    move-result v2
 
-    int-to-float v3, v3
+    int-to-float v2, v2
 
-    mul-float v3, v3, v1
+    mul-float/2addr v2, v3
 
-    sub-float/2addr v5, v3
+    sub-float/2addr v5, v2
 
-    float-to-int v1, v5
+    float-to-int v2, v5
 
     .line 174
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dpf2(F)F
@@ -754,9 +754,9 @@
 
     int-to-float v7, v0
 
-    int-to-float v8, v2
+    int-to-float v8, v1
 
-    int-to-float v9, v1
+    int-to-float v9, v2
 
     iget-object v10, p0, Lorg/telegram/ui/Components/FlatCheckBox;->checkPaint:Landroid/graphics/Paint;
 
@@ -833,7 +833,7 @@
 
     const/4 v0, 0x2
 
-    mul-int/lit8 p2, p2, 0x2
+    mul-int/2addr p2, v0
 
     add-int/2addr p1, p2
 
@@ -1013,7 +1013,7 @@
     goto :goto_0
 
     :cond_2
-    const/4 v1, 0x0
+    move v1, v2
 
     :goto_0
     aput v1, p2, v0
@@ -1052,7 +1052,7 @@
     goto :goto_2
 
     :cond_4
-    const/4 v1, 0x0
+    move v1, v2
 
     .line 84
     :goto_2

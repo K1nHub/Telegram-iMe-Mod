@@ -296,12 +296,12 @@
 
     if-ltz p0, :cond_0
 
-    const/4 v2, 0x1
+    move v2, v1
 
     goto :goto_0
 
     :cond_0
-    const/4 v2, 0x0
+    move v2, v0
 
     :goto_0
     const-string v3, "recId must be positive"
@@ -318,12 +318,12 @@
 
     if-ltz v2, :cond_1
 
-    const/4 v2, 0x1
+    move v2, v1
 
     goto :goto_1
 
     :cond_1
-    const/4 v2, 0x0
+    move v2, v0
 
     :goto_1
     const-string v3, "r must be positive"
@@ -339,12 +339,12 @@
 
     if-ltz v2, :cond_2
 
-    const/4 v2, 0x1
+    move v2, v1
 
     goto :goto_2
 
     :cond_2
-    const/4 v2, 0x0
+    move v2, v0
 
     :goto_2
     const-string v3, "s must be positive"
@@ -353,12 +353,12 @@
 
     if-eqz p2, :cond_3
 
-    const/4 v2, 0x1
+    move v2, v1
 
     goto :goto_3
 
     :cond_3
-    const/4 v2, 0x0
+    move v2, v0
 
     :goto_3
     const-string v3, "message cannot be null"
@@ -414,12 +414,12 @@
 
     if-ne p0, v1, :cond_5
 
-    const/4 p0, 0x1
+    move p0, v1
 
     goto :goto_4
 
     :cond_5
-    const/4 p0, 0x0
+    move p0, v0
 
     .line 154
     :goto_4
@@ -548,7 +548,7 @@
 
     const/4 p2, 0x0
 
-    const/4 v1, 0x0
+    move v1, p2
 
     :goto_0
     const/4 v2, 0x4
@@ -579,7 +579,7 @@
     goto :goto_0
 
     :cond_2
-    const/4 v1, -0x1
+    move v1, v3
 
     :goto_1
     if-eq v1, v3, :cond_3

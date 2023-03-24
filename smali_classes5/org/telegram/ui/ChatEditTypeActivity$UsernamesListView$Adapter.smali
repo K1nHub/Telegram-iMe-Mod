@@ -369,7 +369,7 @@
     goto :goto_0
 
     :cond_3
-    const/4 v1, 0x0
+    move v1, v4
 
     :goto_0
     invoke-virtual {v2, v0, v1, v4}, Lorg/telegram/ui/ChangeUsernameActivity$UsernameCell;->set(Lorg/telegram/tgnet/TLRPC$TL_username;ZZ)V

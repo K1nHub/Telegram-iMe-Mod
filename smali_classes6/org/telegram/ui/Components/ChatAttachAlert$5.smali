@@ -137,7 +137,7 @@
 
     int-to-float v1, v1
 
-    mul-float v1, v1, p1
+    mul-float/2addr v1, p1
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/RecyclerListView;->setTranslationY(F)V
 
@@ -157,7 +157,7 @@
 
     int-to-float v1, v1
 
-    mul-float v1, v1, p1
+    mul-float/2addr v1, p1
 
     invoke-virtual {v0, v1}, Landroid/widget/FrameLayout;->setTranslationY(F)V
 
@@ -176,7 +176,7 @@
 
     int-to-float v1, v1
 
-    mul-float v1, v1, p1
+    mul-float/2addr v1, p1
 
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlert$5;->this$0:Lorg/telegram/ui/Components/ChatAttachAlert;
 
@@ -209,7 +209,7 @@
     goto :goto_0
 
     :cond_3
-    const/4 v1, 0x0
+    move v1, v0
 
     .line 1995
     :goto_0

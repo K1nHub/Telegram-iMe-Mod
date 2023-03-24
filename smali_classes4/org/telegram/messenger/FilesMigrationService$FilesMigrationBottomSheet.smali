@@ -399,12 +399,12 @@
 
     if-nez v2, :cond_0
 
-    const/4 v2, 0x1
+    move v2, v3
 
     goto :goto_0
 
     :cond_0
-    const/4 v2, 0x0
+    move v2, v4
 
     :goto_0
     const-string v5, "android.permission.READ_EXTERNAL_STORAGE"
@@ -419,7 +419,7 @@
     goto :goto_1
 
     :cond_1
-    const/4 v3, 0x0
+    move v3, v4
 
     :goto_1
     if-eqz v3, :cond_3

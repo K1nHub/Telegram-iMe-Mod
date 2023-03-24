@@ -28,7 +28,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nManagerModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ManagerModule.kt\ncom/smedialink/storage/data/di/module/ManagerModuleKt$dataManagerModule$1$2\n+ 2 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,68:1\n127#2,5:69\n*S KotlinDebug\n*F\n+ 1 ManagerModule.kt\ncom/smedialink/storage/data/di/module/ManagerModuleKt$dataManagerModule$1$2\n*L\n36#1:69,5\n*E\n"
+    value = "SMAP\nManagerModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ManagerModule.kt\ncom/smedialink/storage/data/di/module/ManagerModuleKt$dataManagerModule$1$2\n+ 2 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,70:1\n127#2,5:71\n*S KotlinDebug\n*F\n+ 1 ManagerModule.kt\ncom/smedialink/storage/data/di/module/ManagerModuleKt$dataManagerModule$1$2\n*L\n34#1:71,5\n*E\n"
 .end annotation
 
 
@@ -72,7 +72,7 @@
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 36
+    .line 34
     new-instance p2, Lcom/smedialink/storage/data/manager/crypto/EVMBlockchainCryptoWalletManagerImpl;
 
     .line 131
@@ -90,7 +90,7 @@
 
     check-cast p1, Lcom/smedialink/storage/domain/storage/CryptoPreferenceHelper;
 
-    .line 36
+    .line 34
     invoke-direct {p2, p1}, Lcom/smedialink/storage/data/manager/crypto/EVMBlockchainCryptoWalletManagerImpl;-><init>(Lcom/smedialink/storage/domain/storage/CryptoPreferenceHelper;)V
 
     return-object p2
@@ -99,7 +99,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 35
+    .line 33
     check-cast p1, Lorg/koin/core/scope/Scope;
 
     check-cast p2, Lorg/koin/core/parameter/ParametersHolder;

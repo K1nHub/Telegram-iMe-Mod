@@ -413,9 +413,9 @@
 
     const-wide/16 v1, 0x0
 
-    cmp-long p3, p1, v1
+    cmp-long p1, p1, v1
 
-    if-gtz p3, :cond_0
+    if-gtz p1, :cond_0
 
     goto :goto_0
 

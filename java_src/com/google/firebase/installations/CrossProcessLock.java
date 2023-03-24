@@ -15,8 +15,8 @@ class CrossProcessLock {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* JADX WARN: Removed duplicated region for block: B:34:0x0043 A[EXC_TOP_SPLITTER, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:36:0x003c A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:33:0x0041 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:35:0x003c A[EXC_TOP_SPLITTER, SYNTHETIC] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct add '--show-bad-code' argument
@@ -70,14 +70,12 @@ class CrossProcessLock {
             java.lang.String r2 = "CrossProcessLock"
             java.lang.String r3 = "encountered error while creating and acquiring the lock, ignoring"
             android.util.Log.e(r2, r3, r1)
-            if (r5 == 0) goto L41
-            r5.release()     // Catch: java.io.IOException -> L40
-            goto L41
-        L40:
-        L41:
-            if (r4 == 0) goto L46
-            r4.close()     // Catch: java.io.IOException -> L46
-        L46:
+            if (r5 == 0) goto L3f
+            r5.release()     // Catch: java.io.IOException -> L3f
+        L3f:
+            if (r4 == 0) goto L44
+            r4.close()     // Catch: java.io.IOException -> L44
+        L44:
             return r0
         */
         throw new UnsupportedOperationException("Method not decompiled: com.google.firebase.installations.CrossProcessLock.acquire(android.content.Context, java.lang.String):com.google.firebase.installations.CrossProcessLock");

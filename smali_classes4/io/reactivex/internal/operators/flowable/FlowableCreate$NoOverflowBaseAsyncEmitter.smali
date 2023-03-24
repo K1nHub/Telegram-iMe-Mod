@@ -44,7 +44,7 @@
 
 # virtual methods
 .method public final onNext(Ljava/lang/Object;)V
-    .locals 5
+    .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TT;)V"
@@ -82,9 +82,9 @@
 
     const-wide/16 v2, 0x0
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-eqz v4, :cond_2
+    if-eqz v0, :cond_2
 
     .line 403
     iget-object v0, p0, Lio/reactivex/internal/operators/flowable/FlowableCreate$BaseEmitter;->downstream:Lorg/reactivestreams/Subscriber;

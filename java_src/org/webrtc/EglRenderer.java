@@ -682,8 +682,8 @@ public class EglRenderer implements VideoSink {
             this.drawMatrix.preScale(this.mirrorHorizontally ? -1.0f : 1.0f, this.mirrorVertically ? -1.0f : 1.0f);
             this.drawMatrix.preScale(f3, f2);
             this.drawMatrix.preTranslate(-0.5f, -0.5f);
-            try {
-                if (z) {
+            if (z) {
+                try {
                     try {
                         this.frameDrawer.drawFrame(videoFrame, this.drawer, this.drawMatrix, 0, 0, this.eglBase.surfaceWidth(), this.eglBase.surfaceHeight(), z2, false);
                         if (this.eglBase.hasBackgroundSurface()) {
@@ -716,11 +716,11 @@ public class EglRenderer implements VideoSink {
                         this.frameDrawer.release();
                         this.bitmapTextureFramebuffer.release();
                     }
+                } finally {
+                    videoFrame.release();
                 }
-                notifyCallbacks(videoFrame, z);
-            } finally {
-                videoFrame.release();
             }
+            notifyCallbacks(videoFrame, z);
         }
     }
 

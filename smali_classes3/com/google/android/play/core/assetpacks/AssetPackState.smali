@@ -159,7 +159,7 @@
 
     const/4 v2, 0x2
 
-    const/4 v14, 0x2
+    move v14, v2
 
     goto :goto_0
 

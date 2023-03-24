@@ -94,7 +94,7 @@
 
     const/4 v2, 0x0
 
-    const/4 v3, 0x0
+    move v3, v2
 
     .line 170
     :goto_0
@@ -112,7 +112,7 @@
     .line 173
     aget-object v5, p1, v3
 
-    const/4 v6, 0x0
+    move v6, v2
 
     .line 174
     :goto_1
@@ -134,12 +134,12 @@
 
     if-eqz v8, :cond_0
 
-    const/4 v8, 0x1
+    move v8, v9
 
     goto :goto_2
 
     :cond_0
-    const/4 v8, 0x0
+    move v8, v2
 
     .line 180
     :goto_2
@@ -150,7 +150,7 @@
     .line 181
     new-array v10, v10, [Z
 
-    const/4 v12, 0x0
+    move v12, v2
 
     .line 182
     :goto_3
@@ -165,7 +165,7 @@
 
     aput v13, v11, v12
 
-    const/4 v13, 0x0
+    move v13, v2
 
     .line 186
     :goto_4
@@ -202,7 +202,7 @@
 
     if-eq v14, v15, :cond_1
 
-    const/4 v13, 0x1
+    move v13, v9
 
     goto :goto_5
 
@@ -212,7 +212,7 @@
     goto :goto_4
 
     :cond_2
-    const/4 v13, 0x0
+    move v13, v2
 
     .line 194
     :goto_5
@@ -245,7 +245,7 @@
 
     move-result-object v0
 
-    const/4 v3, 0x0
+    move v3, v2
 
     .line 200
     :goto_6
@@ -310,9 +310,9 @@
 
     const/4 v3, 0x0
 
-    const/4 v4, 0x0
+    move v4, v3
 
-    const/4 v5, 0x0
+    move v5, v4
 
     :goto_0
     if-ge v4, v2, :cond_1
@@ -352,9 +352,9 @@
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    move v2, v1
 
-    const/4 v3, 0x0
+    move v3, v2
 
     .line 65
     :goto_0
@@ -388,7 +388,7 @@
 
     aput-object v3, v0, v2
 
-    const/4 v3, 0x1
+    move v3, v5
 
     goto :goto_1
 

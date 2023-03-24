@@ -86,98 +86,98 @@ public final class CacheWriter {
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct add '--show-bad-code' argument
     */
-    private long readBlockToCache(long r10, long r12) throws java.io.IOException {
+    private long readBlockToCache(long r7, long r9) throws java.io.IOException {
         /*
-            r9 = this;
-            long r0 = r10 + r12
-            long r2 = r9.endPosition
-            r4 = 1
-            r5 = 0
-            r6 = -1
-            int r8 = (r0 > r2 ? 1 : (r0 == r2 ? 0 : -1))
-            if (r8 == 0) goto L13
-            int r0 = (r12 > r6 ? 1 : (r12 == r6 ? 0 : -1))
+            r6 = this;
+            long r0 = r7 + r9
+            long r2 = r6.endPosition
+            int r0 = (r0 > r2 ? 1 : (r0 == r2 ? 0 : -1))
+            r1 = 1
+            r2 = 0
+            r3 = -1
+            if (r0 == 0) goto L13
+            int r0 = (r9 > r3 ? 1 : (r9 == r3 ? 0 : -1))
             if (r0 != 0) goto L11
             goto L13
         L11:
-            r0 = 0
+            r0 = r2
             goto L14
         L13:
-            r0 = 1
+            r0 = r1
         L14:
-            int r1 = (r12 > r6 ? 1 : (r12 == r6 ? 0 : -1))
-            if (r1 == 0) goto L36
-            com.google.android.exoplayer2.upstream.DataSpec r1 = r9.dataSpec
-            com.google.android.exoplayer2.upstream.DataSpec$Builder r1 = r1.buildUpon()
-            com.google.android.exoplayer2.upstream.DataSpec$Builder r1 = r1.setPosition(r10)
-            com.google.android.exoplayer2.upstream.DataSpec$Builder r12 = r1.setLength(r12)
-            com.google.android.exoplayer2.upstream.DataSpec r12 = r12.build()
-            com.google.android.exoplayer2.upstream.cache.CacheDataSource r13 = r9.dataSource     // Catch: java.io.IOException -> L31
-            long r12 = r13.open(r12)     // Catch: java.io.IOException -> L31
+            int r5 = (r9 > r3 ? 1 : (r9 == r3 ? 0 : -1))
+            if (r5 == 0) goto L36
+            com.google.android.exoplayer2.upstream.DataSpec r5 = r6.dataSpec
+            com.google.android.exoplayer2.upstream.DataSpec$Builder r5 = r5.buildUpon()
+            com.google.android.exoplayer2.upstream.DataSpec$Builder r5 = r5.setPosition(r7)
+            com.google.android.exoplayer2.upstream.DataSpec$Builder r9 = r5.setLength(r9)
+            com.google.android.exoplayer2.upstream.DataSpec r9 = r9.build()
+            com.google.android.exoplayer2.upstream.cache.CacheDataSource r10 = r6.dataSource     // Catch: java.io.IOException -> L31
+            long r9 = r10.open(r9)     // Catch: java.io.IOException -> L31
             goto L38
         L31:
-            com.google.android.exoplayer2.upstream.cache.CacheDataSource r12 = r9.dataSource
-            com.google.android.exoplayer2.upstream.DataSourceUtil.closeQuietly(r12)
+            com.google.android.exoplayer2.upstream.cache.CacheDataSource r9 = r6.dataSource
+            com.google.android.exoplayer2.upstream.DataSourceUtil.closeQuietly(r9)
         L36:
-            r12 = r6
-            r4 = 0
+            r1 = r2
+            r9 = r3
         L38:
-            if (r4 != 0) goto L5d
-            r9.throwIfCanceled()
-            com.google.android.exoplayer2.upstream.DataSpec r12 = r9.dataSpec
-            com.google.android.exoplayer2.upstream.DataSpec$Builder r12 = r12.buildUpon()
-            com.google.android.exoplayer2.upstream.DataSpec$Builder r12 = r12.setPosition(r10)
-            com.google.android.exoplayer2.upstream.DataSpec$Builder r12 = r12.setLength(r6)
-            com.google.android.exoplayer2.upstream.DataSpec r12 = r12.build()
-            com.google.android.exoplayer2.upstream.cache.CacheDataSource r13 = r9.dataSource     // Catch: java.io.IOException -> L56
-            long r12 = r13.open(r12)     // Catch: java.io.IOException -> L56
+            if (r1 != 0) goto L5d
+            r6.throwIfCanceled()
+            com.google.android.exoplayer2.upstream.DataSpec r9 = r6.dataSpec
+            com.google.android.exoplayer2.upstream.DataSpec$Builder r9 = r9.buildUpon()
+            com.google.android.exoplayer2.upstream.DataSpec$Builder r9 = r9.setPosition(r7)
+            com.google.android.exoplayer2.upstream.DataSpec$Builder r9 = r9.setLength(r3)
+            com.google.android.exoplayer2.upstream.DataSpec r9 = r9.build()
+            com.google.android.exoplayer2.upstream.cache.CacheDataSource r10 = r6.dataSource     // Catch: java.io.IOException -> L56
+            long r9 = r10.open(r9)     // Catch: java.io.IOException -> L56
             goto L5d
         L56:
-            r10 = move-exception
-            com.google.android.exoplayer2.upstream.cache.CacheDataSource r11 = r9.dataSource
-            com.google.android.exoplayer2.upstream.DataSourceUtil.closeQuietly(r11)
-            throw r10
+            r7 = move-exception
+            com.google.android.exoplayer2.upstream.cache.CacheDataSource r8 = r6.dataSource
+            com.google.android.exoplayer2.upstream.DataSourceUtil.closeQuietly(r8)
+            throw r7
         L5d:
             if (r0 == 0) goto L6a
-            int r1 = (r12 > r6 ? 1 : (r12 == r6 ? 0 : -1))
+            int r1 = (r9 > r3 ? 1 : (r9 == r3 ? 0 : -1))
             if (r1 == 0) goto L6a
-            long r12 = r12 + r10
-            r9.onRequestEndPosition(r12)     // Catch: java.io.IOException -> L68
+            long r9 = r9 + r7
+            r6.onRequestEndPosition(r9)     // Catch: java.io.IOException -> L68
             goto L6a
         L68:
-            r10 = move-exception
+            r7 = move-exception
             goto L8b
         L6a:
-            r12 = 0
-            r13 = 0
+            r9 = r2
+            r10 = r9
         L6c:
             r1 = -1
-            if (r12 == r1) goto L83
-            r9.throwIfCanceled()     // Catch: java.io.IOException -> L68
-            com.google.android.exoplayer2.upstream.cache.CacheDataSource r12 = r9.dataSource     // Catch: java.io.IOException -> L68
-            byte[] r2 = r9.temporaryBuffer     // Catch: java.io.IOException -> L68
-            int r3 = r2.length     // Catch: java.io.IOException -> L68
-            int r12 = r12.read(r2, r5, r3)     // Catch: java.io.IOException -> L68
-            if (r12 == r1) goto L6c
-            long r1 = (long) r12     // Catch: java.io.IOException -> L68
-            r9.onNewBytesCached(r1)     // Catch: java.io.IOException -> L68
-            int r13 = r13 + r12
+            if (r9 == r1) goto L83
+            r6.throwIfCanceled()     // Catch: java.io.IOException -> L68
+            com.google.android.exoplayer2.upstream.cache.CacheDataSource r9 = r6.dataSource     // Catch: java.io.IOException -> L68
+            byte[] r3 = r6.temporaryBuffer     // Catch: java.io.IOException -> L68
+            int r4 = r3.length     // Catch: java.io.IOException -> L68
+            int r9 = r9.read(r3, r2, r4)     // Catch: java.io.IOException -> L68
+            if (r9 == r1) goto L6c
+            long r3 = (long) r9     // Catch: java.io.IOException -> L68
+            r6.onNewBytesCached(r3)     // Catch: java.io.IOException -> L68
+            int r10 = r10 + r9
             goto L6c
         L83:
             if (r0 == 0) goto L91
-            long r0 = (long) r13     // Catch: java.io.IOException -> L68
-            long r10 = r10 + r0
-            r9.onRequestEndPosition(r10)     // Catch: java.io.IOException -> L68
+            long r0 = (long) r10     // Catch: java.io.IOException -> L68
+            long r7 = r7 + r0
+            r6.onRequestEndPosition(r7)     // Catch: java.io.IOException -> L68
             goto L91
         L8b:
-            com.google.android.exoplayer2.upstream.cache.CacheDataSource r11 = r9.dataSource
-            com.google.android.exoplayer2.upstream.DataSourceUtil.closeQuietly(r11)
-            throw r10
+            com.google.android.exoplayer2.upstream.cache.CacheDataSource r8 = r6.dataSource
+            com.google.android.exoplayer2.upstream.DataSourceUtil.closeQuietly(r8)
+            throw r7
         L91:
-            com.google.android.exoplayer2.upstream.cache.CacheDataSource r10 = r9.dataSource
-            r10.close()
-            long r10 = (long) r13
-            return r10
+            com.google.android.exoplayer2.upstream.cache.CacheDataSource r7 = r6.dataSource
+            r7.close()
+            long r7 = (long) r10
+            return r7
         */
         throw new UnsupportedOperationException("Method not decompiled: com.google.android.exoplayer2.upstream.cache.CacheWriter.readBlockToCache(long, long):long");
     }

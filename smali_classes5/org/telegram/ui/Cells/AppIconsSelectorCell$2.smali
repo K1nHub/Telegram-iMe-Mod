@@ -117,7 +117,7 @@
 
     move-result p4
 
-    mul-int p4, p4, p2
+    mul-int/2addr p4, p2
 
     sub-int/2addr p3, p4
 

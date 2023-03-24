@@ -502,15 +502,15 @@
 
     if-eqz v1, :cond_0
 
-    const/4 v14, 0x1
+    move v14, v12
 
     goto :goto_0
 
     :cond_0
-    const/4 v14, 0x0
+    move v14, v13
 
     :goto_0
-    const/4 v1, 0x0
+    move v1, v13
 
     .line 511
     :goto_1
@@ -576,11 +576,11 @@
 
     iget-wide v4, v4, Lorg/telegram/tgnet/TLRPC$StickerSet;->id:J
 
-    cmp-long v6, v2, v4
+    cmp-long v2, v2, v4
 
-    if-nez v6, :cond_2
+    if-nez v2, :cond_2
 
-    const/4 v15, 0x1
+    move v15, v12
 
     goto :goto_3
 
@@ -591,7 +591,7 @@
     goto :goto_1
 
     :cond_3
-    const/4 v15, 0x0
+    move v15, v13
 
     .line 525
     :goto_3
@@ -604,8 +604,6 @@
     if-eqz v1, :cond_4
 
     const/4 v1, -0x1
-
-    const/4 v5, -0x1
 
     goto :goto_4
 
@@ -620,9 +618,9 @@
 
     move-result v1
 
+    :goto_4
     move v5, v1
 
-    :goto_4
     if-ltz v5, :cond_5
 
     .line 527
@@ -723,12 +721,12 @@
 
     if-ltz v1, :cond_8
 
-    const/4 v1, 0x1
+    move v1, v12
 
     goto :goto_6
 
     :cond_8
-    const/4 v1, 0x0
+    move v1, v13
 
     .line 540
     :goto_6
@@ -744,12 +742,12 @@
 
     if-ltz v2, :cond_9
 
-    const/4 v2, 0x1
+    move v2, v12
 
     goto :goto_7
 
     :cond_9
-    const/4 v2, 0x0
+    move v2, v13
 
     :goto_7
     if-nez v1, :cond_a
@@ -775,7 +773,7 @@
 
     invoke-virtual {v1, v2, v3}, Landroid/util/LongSparseArray;->remove(J)V
 
-    const/4 v1, 0x0
+    move v1, v13
 
     goto :goto_8
 
@@ -806,14 +804,14 @@
 
     move/from16 v1, p3
 
-    const/4 v2, 0x1
+    move v2, v12
 
     goto :goto_9
 
     :cond_d
     move/from16 v1, p3
 
-    const/4 v2, 0x0
+    move v2, v13
 
     .line 549
     :goto_9
@@ -827,7 +825,7 @@
     goto :goto_a
 
     :cond_e
-    const/4 v12, 0x0
+    move v12, v13
 
     .line 551
     :goto_a
@@ -1173,7 +1171,7 @@
 .end method
 
 .method public installStickerSet(Lorg/telegram/tgnet/TLRPC$InputStickerSet;)V
-    .locals 7
+    .locals 6
 
     const/4 v0, 0x0
 
@@ -1203,9 +1201,9 @@
 
     iget-wide v4, p1, Lorg/telegram/tgnet/TLRPC$InputStickerSet;->id:J
 
-    cmp-long v6, v2, v4
+    cmp-long v2, v2, v4
 
-    if-nez v6, :cond_0
+    if-nez v2, :cond_0
 
     const/4 p1, 0x0
 
@@ -1225,11 +1223,11 @@
 .end method
 
 .method public installStickerSet(Lorg/telegram/tgnet/TLRPC$StickerSetCovered;Lorg/telegram/ui/Cells/FeaturedStickerSetInfoCell;)V
-    .locals 7
+    .locals 6
 
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    move v1, v0
 
     .line 467
     :goto_0
@@ -1295,9 +1293,9 @@
 
     iget-wide v4, v4, Lorg/telegram/tgnet/TLRPC$StickerSet;->id:J
 
-    cmp-long v6, v2, v4
+    cmp-long v2, v2, v4
 
-    if-nez v6, :cond_1
+    if-nez v2, :cond_1
 
     return-void
 
@@ -1308,7 +1306,7 @@
 
     :cond_2
     :goto_1
-    const/4 v1, 0x0
+    move v1, v0
 
     .line 481
     :goto_2
@@ -1328,7 +1326,7 @@
     .line 483
     aput-object p1, v2, v1
 
-    const/4 v1, 0x1
+    move v1, v4
 
     goto :goto_3
 
@@ -1338,7 +1336,7 @@
     goto :goto_2
 
     :cond_4
-    const/4 v1, 0x0
+    move v1, v0
 
     :goto_3
     if-nez v1, :cond_5
@@ -1379,7 +1377,7 @@
 
     move-result p2
 
-    const/4 v1, 0x0
+    move v1, v0
 
     :goto_4
     if-ge v1, p2, :cond_8
@@ -1404,9 +1402,9 @@
 
     iget-wide v4, v4, Lorg/telegram/tgnet/TLRPC$StickerSet;->id:J
 
-    cmp-long v6, v2, v4
+    cmp-long v2, v2, v4
 
-    if-nez v6, :cond_7
+    if-nez v2, :cond_7
 
     .line 498
     invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -1491,9 +1489,9 @@
 
     xor-int/lit8 v4, v4, 0x1
 
-    const/4 v5, 0x0
+    move v5, v1
 
-    const/4 v6, 0x0
+    move v6, v5
 
     :goto_0
     add-int v7, v2, v3
@@ -1534,9 +1532,9 @@
 
     const-string v8, ""
 
-    const/4 v9, 0x0
+    move v9, v1
 
-    const/4 v10, 0x0
+    move v10, v9
 
     :goto_1
     if-ge v9, v7, :cond_4
@@ -1585,7 +1583,7 @@
 
     move-result v12
 
-    const/4 v13, 0x0
+    move v13, v1
 
     :goto_2
     if-ge v13, v12, :cond_3
@@ -1735,7 +1733,7 @@
 
     move-result v7
 
-    mul-int v7, v7, v1
+    mul-int/2addr v7, v1
 
     add-int/2addr v2, v7
 
@@ -1935,7 +1933,7 @@
 
     move-result v8
 
-    mul-int v1, v1, v8
+    mul-int/2addr v1, v8
 
     add-int/lit8 v1, v1, 0x1
 
@@ -2102,7 +2100,7 @@
     goto :goto_0
 
     :cond_4
-    const/4 v1, 0x0
+    move v1, v2
 
     :goto_0
     invoke-virtual {p1, p2, v2, v0, v1}, Lorg/telegram/ui/Cells/StickerSetNameCell;->setText(Ljava/lang/CharSequence;III)V

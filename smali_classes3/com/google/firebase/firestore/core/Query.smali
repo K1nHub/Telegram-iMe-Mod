@@ -371,7 +371,7 @@
 
     if-eqz p1, :cond_0
 
-    const/4 v2, 0x1
+    move v2, v3
 
     :cond_0
     return v2
@@ -419,7 +419,7 @@
 
     if-ne p1, v0, :cond_3
 
-    const/4 v2, 0x1
+    move v2, v3
 
     :cond_3
     return v2
@@ -690,7 +690,7 @@
     goto :goto_0
 
     :cond_0
-    const/4 v0, 0x0
+    move v0, v1
 
     goto :goto_1
 
@@ -761,7 +761,7 @@
 
     iput-object v0, p0, Lcom/google/firebase/firestore/core/Query;->memoizedOrderBy:Ljava/util/List;
 
-    goto :goto_3
+    goto/16 :goto_3
 
     :cond_0
     const/4 v1, 0x2
@@ -834,7 +834,7 @@
 
     if-eqz v4, :cond_2
 
-    const/4 v2, 0x1
+    move v2, v3
 
     goto :goto_0
 
@@ -926,7 +926,7 @@
 .end method
 
 .method public hasLimitToFirst()Z
-    .locals 5
+    .locals 4
 
     .line 161
     iget-object v0, p0, Lcom/google/firebase/firestore/core/Query;->limitType:Lcom/google/firebase/firestore/core/Query$LimitType;
@@ -939,9 +939,9 @@
 
     const-wide/16 v2, -0x1
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-eqz v4, :cond_0
+    if-eqz v0, :cond_0
 
     const/4 v0, 0x1
 
@@ -955,7 +955,7 @@
 .end method
 
 .method public hasLimitToLast()Z
-    .locals 5
+    .locals 4
 
     .line 174
     iget-object v0, p0, Lcom/google/firebase/firestore/core/Query;->limitType:Lcom/google/firebase/firestore/core/Query$LimitType;
@@ -968,9 +968,9 @@
 
     const-wide/16 v2, -0x1
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-eqz v4, :cond_0
+    if-eqz v0, :cond_0
 
     const/4 v0, 0x1
 

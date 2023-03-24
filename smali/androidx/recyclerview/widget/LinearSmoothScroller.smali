@@ -86,7 +86,7 @@
 
     sub-int p2, p1, p2
 
-    mul-int p1, p1, p2
+    mul-int/2addr p1, p2
 
     if-gtz p1, :cond_0
 
@@ -391,7 +391,7 @@
 
     move-result v0
 
-    mul-float p1, p1, v0
+    mul-float/2addr p1, v0
 
     float-to-double v0, p1
 
@@ -513,7 +513,7 @@
 
     int-to-float v1, p1
 
-    mul-float v0, v0, v1
+    mul-float/2addr v0, v1
 
     const/4 v1, 0x0
 
@@ -525,7 +525,7 @@
 
     int-to-float v0, p2
 
-    mul-float p3, p3, v0
+    mul-float/2addr p3, v0
 
     cmpg-float p3, p3, v1
 
@@ -700,7 +700,7 @@
 
     const v2, 0x461c4000    # 10000.0f
 
-    mul-float v1, v1, v2
+    mul-float/2addr v1, v2
 
     float-to-int v1, v1
 
@@ -709,7 +709,7 @@
     .line 257
     iget v0, v0, Landroid/graphics/PointF;->y:F
 
-    mul-float v0, v0, v2
+    mul-float/2addr v0, v2
 
     float-to-int v0, v0
 
@@ -729,7 +729,7 @@
 
     const v2, 0x3f99999a    # 1.2f
 
-    mul-float v1, v1, v2
+    mul-float/2addr v1, v2
 
     float-to-int v1, v1
 
@@ -737,13 +737,13 @@
 
     int-to-float v3, v3
 
-    mul-float v3, v3, v2
+    mul-float/2addr v3, v2
 
     float-to-int v3, v3
 
     int-to-float v0, v0
 
-    mul-float v0, v0, v2
+    mul-float/2addr v0, v2
 
     float-to-int v0, v0
 

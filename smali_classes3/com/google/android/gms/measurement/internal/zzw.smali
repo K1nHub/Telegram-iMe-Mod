@@ -292,13 +292,13 @@
     goto :goto_2
 
     :cond_4
-    const/4 v4, 0x0
+    move v4, v6
 
     goto :goto_3
 
     :cond_5
     :goto_2
-    const/4 v4, 0x1
+    move v4, v9
 
     :goto_3
     if-eqz p7, :cond_7
@@ -702,12 +702,12 @@
 
     if-eqz v10, :cond_14
 
-    const/4 v10, 0x1
+    move v10, v9
 
     goto :goto_8
 
     :cond_14
-    const/4 v10, 0x0
+    move v10, v6
 
     .line 58
     :goto_8

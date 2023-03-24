@@ -147,9 +147,9 @@
 
     const-wide/16 p2, 0x0
 
-    cmp-long p4, p0, p2
+    cmp-long p0, p0, p2
 
-    if-lez p4, :cond_6
+    if-lez p0, :cond_6
 
     const-string p0, ";Max-Age="
 

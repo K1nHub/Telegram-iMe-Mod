@@ -45,31 +45,31 @@
 
     move-object/from16 v24, v23
 
-    const/4 v6, -0x1
+    move v6, v3
 
-    const/4 v7, -0x1
+    move v7, v6
 
-    const/4 v8, 0x0
+    move v10, v7
 
-    const/4 v10, -0x1
+    move v11, v10
 
-    const/4 v11, -0x1
+    move v12, v11
 
-    const/4 v12, -0x1
+    move v13, v12
 
-    const/4 v13, -0x1
+    move v14, v13
 
-    const/4 v14, -0x1
+    move v15, v14
 
-    const/4 v15, -0x1
+    move/from16 v16, v15
 
-    const/16 v16, -0x1
+    move/from16 v17, v16
 
-    const/16 v17, -0x1
+    move/from16 v18, v17
 
-    const/16 v18, -0x1
+    move/from16 v22, v18
 
-    const/16 v22, -0x1
+    move v8, v4
 
     .line 2
     :goto_0

@@ -233,7 +233,7 @@
     iput v3, p0, Landroidx/emoji2/text/EmojiProcessor$ProcessorSm;->mCurrentDepth:I
 
     :goto_0
-    const/4 v2, 0x2
+    move v2, v4
 
     goto :goto_1
 

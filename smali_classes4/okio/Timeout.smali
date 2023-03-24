@@ -132,7 +132,7 @@
 .end method
 
 .method public throwIfReached()V
-    .locals 5
+    .locals 4
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -161,9 +161,9 @@
 
     const-wide/16 v2, 0x0
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-lez v4, :cond_0
+    if-lez v0, :cond_0
 
     goto :goto_0
 
@@ -200,7 +200,7 @@
 .end method
 
 .method public timeout(JLjava/util/concurrent/TimeUnit;)Lokio/Timeout;
-    .locals 3
+    .locals 2
 
     const-string v0, "unit"
 
@@ -208,9 +208,9 @@
 
     const-wide/16 v0, 0x0
 
-    cmp-long v2, p1, v0
+    cmp-long v0, p1, v0
 
-    if-ltz v2, :cond_0
+    if-ltz v0, :cond_0
 
     const/4 v0, 0x1
 

@@ -29,18 +29,14 @@ public class DataMapItem {
                     int size = freeze.getAssets().size();
                     for (int i = 0; i < size; i++) {
                         DataItemAsset dataItemAsset = freeze.getAssets().get(Integer.toString(i));
-                        if (dataItemAsset != null) {
-                            arrayList.add(Asset.createFromRef(dataItemAsset.getId()));
-                        } else {
-                            String obj = freeze.toString();
-                            throw new IllegalStateException("Cannot find DataItemAsset referenced in data at " + i + " for " + obj);
+                        if (dataItemAsset == null) {
+                            throw new IllegalStateException("Cannot find DataItemAsset referenced in data at " + i + " for " + freeze.toString());
                         }
+                        arrayList.add(Asset.createFromRef(dataItemAsset.getId()));
                     }
                     zza = com.google.android.gms.internal.wearable.zzl.zza(new com.google.android.gms.internal.wearable.zzk(com.google.android.gms.internal.wearable.zzx.zzd(data, zzbj.zza()), arrayList));
                 } catch (zzcf | NullPointerException e) {
-                    String valueOf = String.valueOf(freeze.getUri());
-                    String encodeToString = Base64.encodeToString(data, 0);
-                    Log.w("DataItem", "Unable to parse datamap from dataItem. uri=" + valueOf + ", data=" + encodeToString);
+                    Log.w("DataItem", "Unable to parse datamap from dataItem. uri=" + String.valueOf(freeze.getUri()) + ", data=" + Base64.encodeToString(data, 0));
                     throw new IllegalStateException("Unable to parse datamap from dataItem.  uri=".concat(String.valueOf(freeze.getUri())), e);
                 }
             }

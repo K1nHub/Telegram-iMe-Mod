@@ -887,15 +887,15 @@ public final class HlsSampleStreamWrapper implements Loader.Callback<Chunk>, Loa
         Format deriveFormat;
         Format format;
         int length = this.sampleQueues.length;
-        int i = 0;
-        int i2 = -2;
-        int i3 = -1;
+        int i = -2;
+        int i2 = -1;
+        int i3 = 0;
         while (true) {
             int i4 = 2;
-            if (i >= length) {
+            if (i3 >= length) {
                 break;
             }
-            String str = ((Format) Assertions.checkStateNotNull(this.sampleQueues[i].getUpstreamFormat())).sampleMimeType;
+            String str = ((Format) Assertions.checkStateNotNull(this.sampleQueues[i3].getUpstreamFormat())).sampleMimeType;
             if (!MimeTypes.isVideo(str)) {
                 if (MimeTypes.isAudio(str)) {
                     i4 = 1;
@@ -903,13 +903,13 @@ public final class HlsSampleStreamWrapper implements Loader.Callback<Chunk>, Loa
                     i4 = MimeTypes.isText(str) ? 3 : -2;
                 }
             }
-            if (getTrackTypeScore(i4) > getTrackTypeScore(i2)) {
-                i3 = i;
-                i2 = i4;
-            } else if (i4 == i2 && i3 != -1) {
-                i3 = -1;
+            if (getTrackTypeScore(i4) > getTrackTypeScore(i)) {
+                i2 = i3;
+                i = i4;
+            } else if (i4 == i && i2 != -1) {
+                i2 = -1;
             }
-            i++;
+            i3++;
         }
         TrackGroup trackGroup = this.chunkSource.getTrackGroup();
         int i5 = trackGroup.length;
@@ -922,11 +922,11 @@ public final class HlsSampleStreamWrapper implements Loader.Callback<Chunk>, Loa
         int i7 = 0;
         while (i7 < length) {
             Format format2 = (Format) Assertions.checkStateNotNull(this.sampleQueues[i7].getUpstreamFormat());
-            if (i7 == i3) {
+            if (i7 == i2) {
                 Format[] formatArr = new Format[i5];
                 for (int i8 = 0; i8 < i5; i8++) {
                     Format format3 = trackGroup.getFormat(i8);
-                    if (i2 == 1 && (format = this.muxedAudioFormat) != null) {
+                    if (i == 1 && (format = this.muxedAudioFormat) != null) {
                         format3 = format3.withManifestFormatInfo(format);
                     }
                     if (i5 == 1) {
@@ -939,11 +939,11 @@ public final class HlsSampleStreamWrapper implements Loader.Callback<Chunk>, Loa
                 trackGroupArr[i7] = new TrackGroup(this.uid, formatArr);
                 this.primaryTrackGroupIndex = i7;
             } else {
-                Format format4 = (i2 == 2 && MimeTypes.isAudio(format2.sampleMimeType)) ? this.muxedAudioFormat : null;
+                Format format4 = (i == 2 && MimeTypes.isAudio(format2.sampleMimeType)) ? this.muxedAudioFormat : null;
                 StringBuilder sb = new StringBuilder();
                 sb.append(this.uid);
                 sb.append(":muxed:");
-                sb.append(i7 < i3 ? i7 : i7 - 1);
+                sb.append(i7 < i2 ? i7 : i7 - 1);
                 trackGroupArr[i7] = new TrackGroup(sb.toString(), deriveFormat(format4, format2, false));
             }
             i7++;

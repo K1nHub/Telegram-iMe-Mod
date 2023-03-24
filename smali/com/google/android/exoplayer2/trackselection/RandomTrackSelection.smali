@@ -87,9 +87,9 @@
 
     const/4 p3, 0x0
 
-    const/4 p4, 0x0
+    move p4, p3
 
-    const/4 p5, 0x0
+    move p5, p4
 
     .line 90
     :goto_0
@@ -126,7 +126,7 @@
 
     if-eq p5, p4, :cond_4
 
-    const/4 p4, 0x0
+    move p4, p3
 
     .line 100
     :goto_1

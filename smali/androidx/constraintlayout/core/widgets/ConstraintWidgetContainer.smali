@@ -418,12 +418,12 @@
 
     if-ne p4, v0, :cond_2
 
-    const/4 p4, 0x1
+    move p4, v1
 
     goto :goto_0
 
     :cond_2
-    const/4 p4, 0x0
+    move p4, p0
 
     .line 546
     :goto_0
@@ -431,12 +431,12 @@
 
     if-ne v2, v0, :cond_3
 
-    const/4 v0, 0x1
+    move v0, v1
 
     goto :goto_1
 
     :cond_3
-    const/4 v0, 0x0
+    move v0, p0
 
     :goto_1
     const/4 v2, 0x0
@@ -450,12 +450,12 @@
 
     if-lez v3, :cond_4
 
-    const/4 v3, 0x1
+    move v3, v1
 
     goto :goto_2
 
     :cond_4
-    const/4 v3, 0x0
+    move v3, p0
 
     :goto_2
     if-eqz v0, :cond_5
@@ -467,12 +467,12 @@
 
     if-lez v2, :cond_5
 
-    const/4 v2, 0x1
+    move v2, v1
 
     goto :goto_3
 
     :cond_5
-    const/4 v2, 0x0
+    move v2, p0
 
     :goto_3
     if-eqz p4, :cond_7
@@ -508,7 +508,7 @@
     iput-object p4, p3, Landroidx/constraintlayout/core/widgets/analyzer/BasicMeasure$Measure;->horizontalBehavior:Landroidx/constraintlayout/core/widgets/ConstraintWidget$DimensionBehaviour;
 
     :cond_6
-    const/4 p4, 0x0
+    move p4, p0
 
     :cond_7
     if-eqz v0, :cond_9
@@ -544,7 +544,7 @@
     iput-object v0, p3, Landroidx/constraintlayout/core/widgets/analyzer/BasicMeasure$Measure;->verticalBehavior:Landroidx/constraintlayout/core/widgets/ConstraintWidget$DimensionBehaviour;
 
     :cond_8
-    const/4 v0, 0x0
+    move v0, p0
 
     .line 573
     :cond_9
@@ -559,7 +559,7 @@
 
     iput-object p4, p3, Landroidx/constraintlayout/core/widgets/analyzer/BasicMeasure$Measure;->horizontalBehavior:Landroidx/constraintlayout/core/widgets/ConstraintWidget$DimensionBehaviour;
 
-    const/4 p4, 0x0
+    move p4, p0
 
     .line 577
     :cond_a
@@ -574,7 +574,7 @@
 
     iput-object v0, p3, Landroidx/constraintlayout/core/widgets/analyzer/BasicMeasure$Measure;->verticalBehavior:Landroidx/constraintlayout/core/widgets/ConstraintWidget$DimensionBehaviour;
 
-    const/4 v0, 0x0
+    move v0, p0
 
     :cond_b
     const/4 v4, 0x4
@@ -633,7 +633,7 @@
 
     int-to-float p0, p0
 
-    mul-float v0, v0, p0
+    mul-float/2addr v0, p0
 
     float-to-int p0, v0
 
@@ -720,7 +720,7 @@
 
     int-to-float p0, p0
 
-    mul-float p4, p4, p0
+    mul-float/2addr p4, p0
 
     float-to-int p0, p4
 
@@ -833,9 +833,9 @@
 
     const/4 v2, 0x0
 
-    const/4 v3, 0x0
+    move v3, v2
 
-    const/4 v4, 0x0
+    move v4, v3
 
     :goto_0
     const/4 v5, 0x1
@@ -862,7 +862,7 @@
 
     if-eqz v6, :cond_0
 
-    const/4 v4, 0x1
+    move v4, v5
 
     :cond_0
     add-int/lit8 v3, v3, 0x1
@@ -872,7 +872,7 @@
     :cond_1
     if-eqz v4, :cond_3
 
-    const/4 v3, 0x0
+    move v3, v2
 
     :goto_1
     if-ge v3, v1, :cond_3
@@ -907,7 +907,7 @@
 
     invoke-virtual {v3}, Ljava/util/HashSet;->clear()V
 
-    const/4 v3, 0x0
+    move v3, v2
 
     :goto_2
     if-ge v3, v1, :cond_6
@@ -1062,7 +1062,7 @@
 
     invoke-direct {v3}, Ljava/util/HashSet;-><init>()V
 
-    const/4 v4, 0x0
+    move v4, v2
 
     :goto_6
     if-ge v4, v1, :cond_c
@@ -1101,12 +1101,12 @@
 
     if-ne v1, v4, :cond_d
 
-    const/4 v10, 0x0
+    move v10, v2
 
     goto :goto_7
 
     :cond_d
-    const/4 v10, 0x1
+    move v10, v5
 
     :goto_7
     const/4 v11, 0x0
@@ -1149,7 +1149,7 @@
     goto :goto_8
 
     :cond_e
-    const/4 v3, 0x0
+    move v3, v2
 
     :goto_9
     if-ge v3, v1, :cond_14
@@ -1624,7 +1624,7 @@
 
     invoke-static {v1, v8}, Landroidx/constraintlayout/core/widgets/analyzer/Direct;->solvingPass(Landroidx/constraintlayout/core/widgets/ConstraintWidgetContainer;Landroidx/constraintlayout/core/widgets/analyzer/BasicMeasure$Measurer;)V
 
-    const/4 v8, 0x0
+    move v8, v2
 
     :goto_0
     if-ge v8, v3, :cond_2
@@ -1689,12 +1689,12 @@
 
     if-eq v10, v6, :cond_0
 
-    const/4 v10, 0x1
+    move v10, v6
 
     goto :goto_1
 
     :cond_0
-    const/4 v10, 0x0
+    move v10, v2
 
     :goto_1
     if-nez v10, :cond_1
@@ -1809,7 +1809,7 @@
 
     move v4, v0
 
-    const/4 v0, 0x1
+    move v0, v6
 
     goto :goto_4
 
@@ -1818,7 +1818,7 @@
 
     move v4, v0
 
-    const/4 v0, 0x0
+    move v0, v2
 
     :goto_4
     const/16 v10, 0x40
@@ -1841,13 +1841,13 @@
     goto :goto_5
 
     :cond_9
-    const/4 v11, 0x0
+    move v11, v2
 
     goto :goto_6
 
     :cond_a
     :goto_5
-    const/4 v11, 0x1
+    move v11, v6
 
     .line 783
     :goto_6
@@ -1890,19 +1890,19 @@
     goto :goto_7
 
     :cond_c
-    const/4 v12, 0x0
+    move v12, v2
 
     goto :goto_8
 
     :cond_d
     :goto_7
-    const/4 v12, 0x1
+    move v12, v6
 
     .line 796
     :goto_8
     invoke-direct/range {p0 .. p0}, Landroidx/constraintlayout/core/widgets/ConstraintWidgetContainer;->resetChains()V
 
-    const/4 v13, 0x0
+    move v13, v2
 
     :goto_9
     if-ge v13, v3, :cond_f
@@ -1939,9 +1939,9 @@
 
     move v13, v0
 
-    const/4 v0, 0x0
+    move v0, v2
 
-    const/4 v14, 0x1
+    move v14, v6
 
     :goto_a
     if-eqz v14, :cond_21
@@ -1962,7 +1962,7 @@
 
     invoke-virtual {v1, v0}, Landroidx/constraintlayout/core/widgets/ConstraintWidget;->createObjectVariables(Landroidx/constraintlayout/core/LinearSystem;)V
 
-    const/4 v0, 0x0
+    move v0, v2
 
     :goto_b
     if-ge v0, v3, :cond_10
@@ -2427,9 +2427,9 @@
 
     aput-object v2, v0, v6
 
-    const/4 v2, 0x1
+    move v2, v6
 
-    const/16 v16, 0x1
+    move/from16 v16, v2
 
     goto :goto_11
 
@@ -2474,9 +2474,9 @@
     .line 943
     invoke-virtual {v1, v4}, Landroidx/constraintlayout/core/widgets/ConstraintWidget;->setWidth(I)V
 
-    const/4 v2, 0x1
+    move v2, v6
 
-    const/16 v16, 0x1
+    move/from16 v16, v2
 
     .line 947
     :cond_1e
@@ -2736,7 +2736,7 @@
 
     move-result v0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_0
     if-ge v1, v0, :cond_1

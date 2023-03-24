@@ -794,7 +794,7 @@
 .end method
 
 .method private isStorageAtLimit()Z
-    .locals 5
+    .locals 4
 
     .line 786
     invoke-direct {p0}, Lcom/google/android/datatransport/runtime/scheduling/persistence/SQLiteEventStore;->getPageCount()J
@@ -805,7 +805,7 @@
 
     move-result-wide v2
 
-    mul-long v0, v0, v2
+    mul-long/2addr v0, v2
 
     .line 788
     iget-object v2, p0, Lcom/google/android/datatransport/runtime/scheduling/persistence/SQLiteEventStore;->config:Lcom/google/android/datatransport/runtime/scheduling/persistence/EventStoreConfig;
@@ -814,9 +814,9 @@
 
     move-result-wide v2
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-ltz v4, :cond_0
+    if-ltz v0, :cond_0
 
     const/4 v0, 0x1
 
@@ -1560,7 +1560,7 @@
 
     if-eqz v3, :cond_0
 
-    const/4 v0, 0x1
+    move v0, v4
 
     .line 449
     :cond_0
@@ -1825,12 +1825,12 @@
 
     if-gt v3, p2, :cond_1
 
-    const/4 v3, 0x1
+    move v3, v5
 
     goto :goto_0
 
     :cond_1
-    const/4 v3, 0x0
+    move v3, v4
 
     .line 127
     :goto_0
@@ -1974,7 +1974,7 @@
 
     add-int/lit8 v4, v5, -0x1
 
-    mul-int v4, v4, p2
+    mul-int/2addr v4, p2
 
     mul-int v8, v5, p2
 
@@ -2113,7 +2113,7 @@
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     .line 484
     :goto_0
@@ -2142,9 +2142,9 @@
     :cond_0
     new-array p0, v2, [B
 
-    const/4 v2, 0x0
+    move v2, v1
 
-    const/4 v3, 0x0
+    move v3, v2
 
     .line 492
     :goto_1
@@ -2877,7 +2877,7 @@
 .end method
 
 .method private retryIfDbLocked(Lcom/google/android/datatransport/runtime/scheduling/persistence/SQLiteEventStore$Producer;Lcom/google/android/datatransport/runtime/scheduling/persistence/SQLiteEventStore$Function;)Ljava/lang/Object;
-    .locals 8
+    .locals 7
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -2929,9 +2929,9 @@
 
     add-long/2addr v5, v0
 
-    cmp-long v7, v3, v5
+    cmp-long v3, v3, v5
 
-    if-ltz v7, :cond_0
+    if-ltz v3, :cond_0
 
     .line 571
     invoke-interface {p2, v2}, Lcom/google/android/datatransport/runtime/scheduling/persistence/SQLiteEventStore$Function;->apply(Ljava/lang/Object;)Ljava/lang/Object;
@@ -3139,7 +3139,7 @@
 
     move-result-wide v2
 
-    mul-long v0, v0, v2
+    mul-long/2addr v0, v2
 
     return-wide v0
 .end method
@@ -3377,7 +3377,7 @@
 .end method
 
 .method public persist(Lcom/google/android/datatransport/runtime/TransportContext;Lcom/google/android/datatransport/runtime/EventInternal;)Lcom/google/android/datatransport/runtime/scheduling/persistence/PersistedEvent;
-    .locals 5
+    .locals 4
 
     const/4 v0, 0x3
 
@@ -3435,9 +3435,9 @@
 
     const-wide/16 v2, 0x1
 
-    cmp-long v4, v0, v2
+    cmp-long v2, v0, v2
 
-    if-gez v4, :cond_0
+    if-gez v2, :cond_0
 
     const/4 p1, 0x0
 

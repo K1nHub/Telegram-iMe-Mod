@@ -180,7 +180,7 @@
 
     const/4 v8, 0x1
 
-    const/4 v9, 0x1
+    move v9, v8
 
     .line 138
     :cond_1
@@ -209,7 +209,7 @@
 
     if-nez v11, :cond_3
 
-    const/4 v12, 0x1
+    move v12, v8
 
     goto :goto_1
 
@@ -235,7 +235,7 @@
 
     if-lez v11, :cond_4
 
-    const/4 v12, 0x1
+    move v12, v8
 
     :cond_4
     if-eqz v10, :cond_8

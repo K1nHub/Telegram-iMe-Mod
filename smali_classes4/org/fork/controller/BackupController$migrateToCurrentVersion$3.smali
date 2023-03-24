@@ -27,7 +27,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nBackupController.kt\nKotlin\n*S Kotlin\n*F\n+ 1 BackupController.kt\norg/fork/controller/BackupController$migrateToCurrentVersion$3\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,571:1\n1549#2:572\n1620#2,3:573\n*S KotlinDebug\n*F\n+ 1 BackupController.kt\norg/fork/controller/BackupController$migrateToCurrentVersion$3\n*L\n478#1:572\n478#1:573,3\n*E\n"
+    value = "SMAP\nBackupController.kt\nKotlin\n*S Kotlin\n*F\n+ 1 BackupController.kt\norg/fork/controller/BackupController$migrateToCurrentVersion$3\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,567:1\n1549#2:568\n1620#2,3:569\n*S KotlinDebug\n*F\n+ 1 BackupController.kt\norg/fork/controller/BackupController$migrateToCurrentVersion$3\n*L\n474#1:568\n474#1:569,3\n*E\n"
 .end annotation
 
 
@@ -67,21 +67,21 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 476
+    .line 472
     new-instance v0, Ljava/util/LinkedHashSet;
 
     invoke-direct {v0}, Ljava/util/LinkedHashSet;-><init>()V
 
     invoke-virtual {p1, v0}, Lorg/fork/models/backup/TopicBackup;->setPresets(Ljava/util/Set;)V
 
-    .line 477
+    .line 473
     invoke-virtual {p1}, Lorg/fork/models/backup/TopicBackup;->getName()Ljava/lang/String;
 
     move-result-object v0
 
     if-nez v0, :cond_1
 
-    .line 478
+    .line 474
     invoke-virtual {p1}, Lorg/fork/models/backup/TopicBackup;->getIcon()Lcom/smedialink/storage/data/repository/topics/Topic;
 
     move-result-object v0
@@ -130,7 +130,7 @@
 
     neg-long v2, v2
 
-    .line 478
+    .line 474
     invoke-static {v2, v3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object v2
@@ -140,7 +140,7 @@
 
     goto :goto_0
 
-    .line 479
+    .line 475
     :cond_0
     invoke-virtual {p1}, Lorg/fork/models/backup/TopicBackup;->getDatabaseDialogs()Ljava/util/Set;
 
@@ -152,7 +152,7 @@
 
     invoke-interface {v0, v1}, Ljava/util/Set;->removeAll(Ljava/util/Collection;)Z
 
-    .line 480
+    .line 476
     invoke-virtual {p1}, Lorg/fork/models/backup/TopicBackup;->getDatabaseDialogs()Ljava/util/Set;
 
     move-result-object p1
@@ -167,7 +167,7 @@
 
     return-object p1
 
-    .line 482
+    .line 478
     :cond_1
     sget-object p1, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
 
@@ -177,7 +177,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 475
+    .line 471
     check-cast p1, Lorg/fork/models/backup/TopicBackup;
 
     invoke-virtual {p0, p1}, Lorg/fork/controller/BackupController$migrateToCurrentVersion$3;->invoke(Lorg/fork/models/backup/TopicBackup;)Ljava/lang/Boolean;

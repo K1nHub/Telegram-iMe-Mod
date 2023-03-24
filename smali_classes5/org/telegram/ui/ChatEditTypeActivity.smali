@@ -888,7 +888,7 @@
     goto :goto_4
 
     :cond_3
-    const/4 v3, 0x0
+    move v3, v0
 
     .line 1411
     :goto_2
@@ -2089,7 +2089,7 @@
     return-void
 
     :cond_0
-    const/4 v1, 0x0
+    move v1, v0
 
     .line 1248
     :goto_0
@@ -2127,7 +2127,7 @@
     .line 1252
     check-cast p1, Lorg/telegram/tgnet/TLRPC$TL_messages_chats;
 
-    const/4 v1, 0x0
+    move v1, v0
 
     .line 1254
     :goto_1
@@ -2176,7 +2176,7 @@
     goto :goto_2
 
     :cond_2
-    const/4 v5, 0x0
+    move v5, v0
 
     :goto_2
     invoke-virtual {v2, v3, v5}, Lorg/telegram/ui/Cells/AdminedChannelCell;->setChannel(Lorg/telegram/tgnet/TLRPC$Chat;Z)V
@@ -2322,7 +2322,7 @@
 
     if-eqz p1, :cond_1
 
-    const/4 p1, 0x0
+    move p1, p2
 
     .line 1187
     :goto_0
@@ -2381,13 +2381,13 @@
 .end method
 
 .method private synthetic lambda$trySetUsername$10(J)V
-    .locals 3
+    .locals 2
 
     const-wide/16 v0, 0x0
 
-    cmp-long v2, p1, v0
+    cmp-long v0, p1, v0
 
-    if-eqz v2, :cond_0
+    if-eqz v0, :cond_0
 
     .line 1143
     iput-wide p1, p0, Lorg/telegram/ui/ChatEditTypeActivity;->chatId:J
@@ -2452,13 +2452,13 @@
 .end method
 
 .method private synthetic lambda$tryUpdateJoinSettings$9(J)V
-    .locals 3
+    .locals 2
 
     const-wide/16 v0, 0x0
 
-    cmp-long v2, p1, v0
+    cmp-long v0, p1, v0
 
-    if-eqz v2, :cond_0
+    if-eqz v0, :cond_0
 
     .line 705
     iput-wide p1, p0, Lorg/telegram/ui/ChatEditTypeActivity;->chatId:J
@@ -2686,7 +2686,7 @@
     :cond_1
     iput-boolean v1, p0, Lorg/telegram/ui/ChatEditTypeActivity;->deactivatingLinks:Z
 
-    const/4 v0, 0x0
+    move v0, v2
 
     .line 1176
     :goto_0
@@ -2722,7 +2722,7 @@
 
     if-nez v3, :cond_2
 
-    const/4 v0, 0x1
+    move v0, v1
 
     :cond_2
     add-int/lit8 v2, v2, 0x1
@@ -3024,12 +3024,12 @@
     if-eqz v0, :cond_3
 
     :cond_2
-    const/4 v0, 0x1
+    move v0, v1
 
     goto :goto_0
 
     :cond_3
-    const/4 v0, 0x0
+    move v0, v2
 
     :goto_0
     if-eqz v0, :cond_4
@@ -3174,12 +3174,12 @@
 
     if-eqz p1, :cond_2
 
-    const/high16 v4, 0x3f800000    # 1.0f
+    move v4, v2
 
     goto :goto_0
 
     :cond_2
-    const/4 v4, 0x0
+    move v4, v3
 
     :goto_0
     aput v4, v0, v1
@@ -3213,7 +3213,7 @@
     goto :goto_1
 
     :cond_3
-    const/4 v2, 0x0
+    move v2, v3
 
     :goto_1
     sub-float/2addr v4, v2
@@ -3222,7 +3222,7 @@
 
     move-result p1
 
-    mul-float p1, p1, v1
+    mul-float/2addr p1, v1
 
     float-to-long v1, p1
 
@@ -3618,12 +3618,12 @@
 
     if-eqz v5, :cond_a
 
-    const/16 v5, 0x8
+    move v5, v3
 
     goto :goto_7
 
     :cond_a
-    const/4 v5, 0x0
+    move v5, v4
 
     :goto_7
     invoke-virtual {v0, v5}, Landroid/widget/LinearLayout;->setVisibility(I)V
@@ -3635,12 +3635,12 @@
 
     if-eqz v5, :cond_b
 
-    const/4 v5, 0x0
+    move v5, v4
 
     goto :goto_8
 
     :cond_b
-    const/16 v5, 0x8
+    move v5, v3
 
     :goto_8
     invoke-virtual {v0, v5}, Landroid/widget/LinearLayout;->setVisibility(I)V
@@ -3667,7 +3667,7 @@
 
     if-eqz v5, :cond_c
 
-    const/4 v5, 0x0
+    move v5, v4
 
     goto :goto_9
 
@@ -3720,12 +3720,12 @@
 
     if-eqz v5, :cond_e
 
-    const/4 v5, 0x0
+    move v5, v4
 
     goto :goto_b
 
     :cond_e
-    const/16 v5, 0x8
+    move v5, v3
 
     :goto_b
     invoke-virtual {v0, v5}, Landroid/widget/FrameLayout;->setVisibility(I)V
@@ -3846,12 +3846,12 @@
 
     if-nez v1, :cond_11
 
-    const/4 v1, 0x0
+    move v1, v4
 
     goto :goto_e
 
     :cond_11
-    const/16 v1, 0x8
+    move v1, v3
 
     :goto_e
     invoke-virtual {v0, v1}, Landroid/widget/LinearLayout;->setVisibility(I)V
@@ -3874,7 +3874,7 @@
     goto :goto_f
 
     :cond_12
-    const/4 v2, 0x0
+    move v2, v4
 
     :goto_f
     invoke-virtual {v0, v2}, Lorg/telegram/ui/Components/JoinToSendSettingsView;->showJoinToSend(Z)V
@@ -3901,7 +3901,7 @@
     goto :goto_10
 
     :cond_14
-    const/4 v3, 0x0
+    move v3, v4
 
     :cond_15
     :goto_10
@@ -4802,13 +4802,13 @@
 
     move-object v10, v4
 
-    const/4 v11, 0x6
+    move v11, v5
 
     move-wide/from16 v4, v19
 
     const/16 v16, 0x8
 
-    const/4 v12, 0x0
+    move v12, v7
 
     move v7, v15
 
@@ -4993,13 +4993,13 @@
     goto :goto_4
 
     :cond_6
-    const/4 v7, 0x0
+    move v7, v12
 
     goto :goto_5
 
     :cond_7
     :goto_4
-    const/16 v7, 0x8
+    move/from16 v7, v16
 
     :goto_5
     invoke-virtual {v0, v7}, Lorg/telegram/ui/Components/RecyclerListView;->setVisibility(I)V
@@ -5093,16 +5093,16 @@
 
     const-wide/16 v3, 0x0
 
-    cmp-long v5, v1, v3
+    cmp-long v1, v1, v3
 
-    if-eqz v5, :cond_8
+    if-eqz v1, :cond_8
 
     const/4 v7, 0x1
 
     goto :goto_6
 
     :cond_8
-    const/4 v7, 0x0
+    move v7, v12
 
     :goto_6
     invoke-virtual {v0, v7}, Lorg/telegram/ui/Components/JoinToSendSettingsView;->showJoinToSend(Z)V
@@ -5351,7 +5351,7 @@
 .end method
 
 .method public varargs didReceivedNotification(II[Ljava/lang/Object;)V
-    .locals 3
+    .locals 2
 
     .line 663
     sget p2, Lorg/telegram/messenger/NotificationCenter;->chatInfoDidLoad:I
@@ -5370,9 +5370,9 @@
 
     iget-wide v0, p0, Lorg/telegram/ui/ChatEditTypeActivity;->chatId:J
 
-    cmp-long v2, p2, v0
+    cmp-long p2, p2, v0
 
-    if-nez v2, :cond_0
+    if-nez p2, :cond_0
 
     .line 666
     iput-object p1, p0, Lorg/telegram/ui/ChatEditTypeActivity;->info:Lorg/telegram/tgnet/TLRPC$ChatFull;
@@ -6867,7 +6867,7 @@
 
     move-object v8, v10
 
-    const/4 v14, 0x1
+    move v14, v9
 
     move-object v9, v13
 
@@ -7055,7 +7055,7 @@
     return v1
 
     :cond_0
-    const/4 v0, 0x0
+    move v0, v1
 
     .line 1380
     :goto_0
@@ -7232,12 +7232,12 @@
 
     if-nez v0, :cond_2
 
-    const/4 v0, 0x1
+    move v0, v2
 
     goto :goto_0
 
     :cond_2
-    const/4 v0, 0x0
+    move v0, v1
 
     :goto_0
     iput-boolean v0, p0, Lorg/telegram/ui/ChatEditTypeActivity;->isPrivate:Z
@@ -7257,12 +7257,12 @@
 
     if-nez v0, :cond_3
 
-    const/4 v0, 0x1
+    move v0, v2
 
     goto :goto_1
 
     :cond_3
-    const/4 v0, 0x0
+    move v0, v1
 
     :goto_1
     iput-boolean v0, p0, Lorg/telegram/ui/ChatEditTypeActivity;->isChannel:Z
@@ -7362,7 +7362,7 @@
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->clear()V
 
-    const/4 v0, 0x0
+    move v0, v1
 
     .line 200
     :goto_2

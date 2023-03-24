@@ -81,11 +81,11 @@
 
     iget-wide v1, v1, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->backgroundOverrideColor:J
 
-    long-to-int v2, v1
+    long-to-int v1, v1
 
-    if-eqz v2, :cond_1
+    if-eqz v1, :cond_1
 
-    move v0, v2
+    move v0, v1
 
     :cond_1
     return v0
@@ -179,11 +179,11 @@
 
     iget-wide v1, v1, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->backgroundGradientOverrideColor1:J
 
-    long-to-int v2, v1
+    long-to-int v1, v1
 
-    if-eqz v2, :cond_1
+    if-eqz v1, :cond_1
 
-    move v0, v2
+    move v0, v1
 
     :cond_1
     return v0
@@ -235,11 +235,11 @@
 
     iget-wide v1, v1, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->backgroundGradientOverrideColor2:J
 
-    long-to-int v2, v1
+    long-to-int v1, v1
 
-    if-eqz v2, :cond_1
+    if-eqz v1, :cond_1
 
-    move v0, v2
+    move v0, v1
 
     :cond_1
     return v0
@@ -291,11 +291,11 @@
 
     iget-wide v1, v1, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->backgroundGradientOverrideColor3:J
 
-    long-to-int v2, v1
+    long-to-int v1, v1
 
-    if-eqz v2, :cond_1
+    if-eqz v1, :cond_1
 
-    move v0, v2
+    move v0, v1
 
     :cond_1
     return v0

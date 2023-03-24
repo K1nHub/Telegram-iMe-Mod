@@ -71,7 +71,7 @@
 
 # virtual methods
 .method public onTransitionAnimationEnd(ZZ)V
-    .locals 3
+    .locals 2
 
     if-nez p1, :cond_1
 
@@ -99,9 +99,9 @@
 
     const-wide/16 v0, 0x0
 
-    cmp-long v2, p1, v0
+    cmp-long p1, p1, v0
 
-    if-lez v2, :cond_0
+    if-lez p1, :cond_0
 
     .line 1478
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getMessagesController()Lorg/telegram/messenger/MessagesController;

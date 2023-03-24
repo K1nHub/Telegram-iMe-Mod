@@ -11,52 +11,52 @@
 .end method
 
 .method public static checkedAdd(JJ)J
-    .locals 11
+    .locals 10
 
     add-long v0, p0, p2
 
     xor-long v2, p0, p2
 
-    const/4 v4, 0x1
+    const-wide/16 v4, 0x0
 
-    const/4 v5, 0x0
+    cmp-long v2, v2, v4
 
-    const-wide/16 v6, 0x0
+    const/4 v3, 0x1
 
-    cmp-long v8, v2, v6
+    const/4 v6, 0x0
 
-    if-gez v8, :cond_0
+    if-gez v2, :cond_0
 
-    const/4 v2, 0x1
+    move v2, v3
 
     goto :goto_0
 
     :cond_0
-    const/4 v2, 0x0
+    move v2, v6
 
     :goto_0
-    xor-long v8, p0, v0
+    xor-long v7, p0, v0
 
-    cmp-long v3, v8, v6
+    cmp-long v4, v7, v4
 
-    if-ltz v3, :cond_1
+    if-ltz v4, :cond_1
 
     goto :goto_1
 
     :cond_1
-    const/4 v4, 0x0
+    move v3, v6
 
     :goto_1
-    or-int v5, v2, v4
+    or-int v4, v2, v3
 
-    const-string v6, "checkedAdd"
+    const-string v5, "checkedAdd"
 
-    move-wide v7, p0
+    move-wide v6, p0
 
-    move-wide v9, p2
+    move-wide v8, p2
 
     .line 549
-    invoke-static/range {v5 .. v10}, Lcom/google/common/math/MathPreconditions;->checkNoOverflow(ZLjava/lang/String;JJ)V
+    invoke-static/range {v4 .. v9}, Lcom/google/common/math/MathPreconditions;->checkNoOverflow(ZLjava/lang/String;JJ)V
 
     return-wide v0
 .end method
@@ -89,11 +89,11 @@
 
     shr-long/2addr p0, v7
 
-    long-to-int p1, p0
+    long-to-int p0, p0
 
-    const/4 p0, 0x1
+    const/4 p1, 0x1
 
-    or-int/2addr p1, p0
+    or-int/2addr p0, p1
 
     .line 404
     sget-object v7, Lcom/google/common/math/LongMath$1;->$SwitchMap$java$math$RoundingMode:[I
@@ -147,9 +147,9 @@
 
     and-long/2addr p2, v0
 
-    cmp-long p4, p2, v4
+    cmp-long p2, p2, v4
 
-    if-eqz p4, :cond_3
+    if-eqz p2, :cond_3
 
     goto :goto_1
 
@@ -159,12 +159,12 @@
     goto :goto_1
 
     :pswitch_1
-    if-lez p1, :cond_3
+    if-lez p0, :cond_3
 
     goto :goto_1
 
     :pswitch_2
-    if-gez p1, :cond_3
+    if-gez p0, :cond_3
 
     goto :goto_1
 
@@ -174,22 +174,22 @@
     goto :goto_0
 
     :cond_2
-    const/4 p0, 0x0
+    move p1, v8
 
     .line 406
     :goto_0
-    invoke-static {p0}, Lcom/google/common/math/MathPreconditions;->checkRoundingUnnecessary(Z)V
+    invoke-static {p1}, Lcom/google/common/math/MathPreconditions;->checkRoundingUnnecessary(Z)V
 
     :cond_3
     :pswitch_4
-    const/4 p0, 0x0
+    move p1, v8
 
     :cond_4
     :goto_1
     :pswitch_5
-    if-eqz p0, :cond_5
+    if-eqz p1, :cond_5
 
-    int-to-long p0, p1
+    int-to-long p0, p0
 
     add-long/2addr v0, p0
 

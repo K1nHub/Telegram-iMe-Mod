@@ -32,7 +32,7 @@
 
     const/4 v2, 0x0
 
-    const/4 v3, 0x0
+    move v3, v2
 
     :goto_0
     array-length v4, p1
@@ -117,7 +117,7 @@
 
     if-le v0, p2, :cond_3
 
-    const/4 v3, 0x0
+    move v3, v2
 
     :goto_2
     div-int/lit8 v4, v0, 0x2
@@ -776,7 +776,7 @@
 
     new-array v4, v4, [B
 
-    const/4 v5, 0x0
+    move v5, v2
 
     :goto_3
     if-ge v5, v0, :cond_6

@@ -27,15 +27,14 @@ public final class zzah implements CapabilityApi {
     public final PendingResult<Status> addListener(GoogleApiClient googleApiClient, CapabilityApi.CapabilityListener capabilityListener, Uri uri, int i) {
         boolean z;
         Asserts.checkNotNull(uri, "uri must not be null");
-        if (i != 0) {
-            if (i != 1) {
-                z = false;
-                Preconditions.checkArgument(z, "invalid filter type");
-                return zzc.zza(googleApiClient, new zzz(new IntentFilter[]{zzhl.zzb("com.google.android.gms.wearable.CAPABILITY_CHANGED", uri, i)}), capabilityListener);
-            }
+        if (i == 0) {
+            z = true;
+        } else if (i == 1) {
             i = 1;
+            z = true;
+        } else {
+            z = false;
         }
-        z = true;
         Preconditions.checkArgument(z, "invalid filter type");
         return zzc.zza(googleApiClient, new zzz(new IntentFilter[]{zzhl.zzb("com.google.android.gms.wearable.CAPABILITY_CHANGED", uri, i)}), capabilityListener);
     }

@@ -67,7 +67,7 @@
 .end method
 
 .method private writeContinuationFrames(IJ)V
-    .locals 7
+    .locals 6
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -90,17 +90,17 @@
 
     move-result-wide v2
 
-    long-to-int v3, v2
+    long-to-int v2, v2
 
-    int-to-long v4, v3
+    int-to-long v3, v2
 
-    sub-long/2addr p2, v4
+    sub-long/2addr p2, v3
 
-    const/16 v2, 0x9
+    const/16 v5, 0x9
 
-    cmp-long v6, p2, v0
+    cmp-long v0, p2, v0
 
-    if-nez v6, :cond_0
+    if-nez v0, :cond_0
 
     const/4 v0, 0x4
 
@@ -111,14 +111,14 @@
 
     .line 471
     :goto_1
-    invoke-virtual {p0, p1, v3, v2, v0}, Lio/grpc/okhttp/internal/framed/Http2$Writer;->frameHeader(IIBB)V
+    invoke-virtual {p0, p1, v2, v5, v0}, Lio/grpc/okhttp/internal/framed/Http2$Writer;->frameHeader(IIBB)V
 
     .line 472
     iget-object v0, p0, Lio/grpc/okhttp/internal/framed/Http2$Writer;->sink:Lokio/BufferedSink;
 
     iget-object v1, p0, Lio/grpc/okhttp/internal/framed/Http2$Writer;->hpackBuffer:Lokio/Buffer;
 
-    invoke-interface {v0, v1, v4, v5}, Lokio/Sink;->write(Lokio/Buffer;J)V
+    invoke-interface {v0, v1, v3, v4}, Lokio/Sink;->write(Lokio/Buffer;J)V
 
     goto :goto_0
 
@@ -842,7 +842,7 @@
     goto :goto_0
 
     :cond_0
-    const/4 p1, 0x0
+    move p1, v2
 
     .line 534
     :goto_0
@@ -1027,7 +1027,7 @@
 
     if-ne v1, v0, :cond_2
 
-    const/4 v0, 0x4
+    move v0, v2
 
     goto :goto_1
 
@@ -1175,31 +1175,31 @@
 
     const-wide/16 v0, 0x0
 
-    const/4 v2, 0x0
+    cmp-long v0, p2, v0
 
-    cmp-long v3, p2, v0
+    const/4 v1, 0x0
 
-    if-eqz v3, :cond_0
+    if-eqz v0, :cond_0
 
-    const-wide/32 v0, 0x7fffffff
+    const-wide/32 v2, 0x7fffffff
 
-    cmp-long v3, p2, v0
+    cmp-long v0, p2, v2
 
-    if-gtz v3, :cond_0
+    if-gtz v0, :cond_0
 
     const/4 v0, 0x4
 
-    const/16 v1, 0x8
+    const/16 v2, 0x8
 
     .line 567
-    invoke-virtual {p0, p1, v0, v1, v2}, Lio/grpc/okhttp/internal/framed/Http2$Writer;->frameHeader(IIBB)V
+    invoke-virtual {p0, p1, v0, v2, v1}, Lio/grpc/okhttp/internal/framed/Http2$Writer;->frameHeader(IIBB)V
 
     .line 568
     iget-object p1, p0, Lio/grpc/okhttp/internal/framed/Http2$Writer;->sink:Lokio/BufferedSink;
 
-    long-to-int p3, p2
+    long-to-int p2, p2
 
-    invoke-interface {p1, p3}, Lokio/BufferedSink;->writeInt(I)Lokio/BufferedSink;
+    invoke-interface {p1, p2}, Lokio/BufferedSink;->writeInt(I)Lokio/BufferedSink;
 
     .line 569
     iget-object p1, p0, Lio/grpc/okhttp/internal/framed/Http2$Writer;->sink:Lokio/BufferedSink;
@@ -1226,7 +1226,7 @@
 
     move-result-object p2
 
-    aput-object p2, v0, v2
+    aput-object p2, v0, v1
 
     .line 561
     invoke-static {p1, v0}, Lio/grpc/okhttp/internal/framed/Http2;->access$500(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/IllegalArgumentException;

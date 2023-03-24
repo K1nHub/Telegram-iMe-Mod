@@ -138,7 +138,7 @@
 
     invoke-direct {v1, v0}, Lorg/json/JSONArray;-><init>(Ljava/lang/String;)V
 
-    const/4 v0, 0x0
+    move v0, v5
 
     .line 929
     :goto_0

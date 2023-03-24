@@ -18,7 +18,7 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 38
+    .line 39
     invoke-direct {p0}, Lcom/google/protobuf/UnknownFieldSchema;-><init>()V
 
     return-void
@@ -31,7 +31,7 @@
 
     const/4 v0, 0x5
 
-    .line 58
+    .line 59
     invoke-static {p2, v0}, Lcom/google/protobuf/WireFormat;->makeTag(II)I
 
     move-result p2
@@ -61,7 +61,7 @@
 
     const/4 v0, 0x1
 
-    .line 63
+    .line 64
     invoke-static {p2, v0}, Lcom/google/protobuf/WireFormat;->makeTag(II)I
 
     move-result p2
@@ -91,7 +91,7 @@
 
     const/4 v0, 0x3
 
-    .line 73
+    .line 74
     invoke-static {p2, v0}, Lcom/google/protobuf/WireFormat;->makeTag(II)I
 
     move-result p2
@@ -119,7 +119,7 @@
 
     const/4 v0, 0x2
 
-    .line 68
+    .line 69
     invoke-static {p2, v0}, Lcom/google/protobuf/WireFormat;->makeTag(II)I
 
     move-result p2
@@ -145,7 +145,7 @@
 
     const/4 v0, 0x0
 
-    .line 53
+    .line 54
     invoke-static {p2, v0}, Lcom/google/protobuf/WireFormat;->makeTag(II)I
 
     move-result p2
@@ -173,24 +173,24 @@
 .method getBuilderFromMessage(Ljava/lang/Object;)Lcom/google/protobuf/UnknownFieldSetLite;
     .locals 2
 
-    .line 94
+    .line 95
     invoke-virtual {p0, p1}, Lcom/google/protobuf/UnknownFieldSetLiteSchema;->getFromMessage(Ljava/lang/Object;)Lcom/google/protobuf/UnknownFieldSetLite;
 
     move-result-object v0
 
-    .line 97
+    .line 98
     invoke-static {}, Lcom/google/protobuf/UnknownFieldSetLite;->getDefaultInstance()Lcom/google/protobuf/UnknownFieldSetLite;
 
     move-result-object v1
 
     if-ne v0, v1, :cond_0
 
-    .line 98
+    .line 99
     invoke-static {}, Lcom/google/protobuf/UnknownFieldSetLite;->newInstance()Lcom/google/protobuf/UnknownFieldSetLite;
 
     move-result-object v0
 
-    .line 99
+    .line 100
     invoke-virtual {p0, p1, v0}, Lcom/google/protobuf/UnknownFieldSetLiteSchema;->setToMessage(Ljava/lang/Object;Lcom/google/protobuf/UnknownFieldSetLite;)V
 
     :cond_0
@@ -211,7 +211,7 @@
 .method getFromMessage(Ljava/lang/Object;)Lcom/google/protobuf/UnknownFieldSetLite;
     .locals 0
 
-    .line 89
+    .line 90
     check-cast p1, Lcom/google/protobuf/GeneratedMessageLite;
 
     iget-object p1, p1, Lcom/google/protobuf/GeneratedMessageLite;->unknownFields:Lcom/google/protobuf/UnknownFieldSetLite;
@@ -233,7 +233,7 @@
 .method getSerializedSize(Lcom/google/protobuf/UnknownFieldSetLite;)I
     .locals 0
 
-    .line 133
+    .line 134
     invoke-virtual {p1}, Lcom/google/protobuf/UnknownFieldSetLite;->getSerializedSize()I
 
     move-result p1
@@ -257,7 +257,7 @@
 .method getSerializedSizeAsMessageSet(Lcom/google/protobuf/UnknownFieldSetLite;)I
     .locals 0
 
-    .line 138
+    .line 139
     invoke-virtual {p1}, Lcom/google/protobuf/UnknownFieldSetLite;->getSerializedSizeAsMessageSet()I
 
     move-result p1
@@ -281,7 +281,7 @@
 .method makeImmutable(Ljava/lang/Object;)V
     .locals 0
 
-    .line 111
+    .line 112
     invoke-virtual {p0, p1}, Lcom/google/protobuf/UnknownFieldSetLiteSchema;->getFromMessage(Ljava/lang/Object;)Lcom/google/protobuf/UnknownFieldSetLite;
 
     move-result-object p1
@@ -294,7 +294,7 @@
 .method merge(Lcom/google/protobuf/UnknownFieldSetLite;Lcom/google/protobuf/UnknownFieldSetLite;)Lcom/google/protobuf/UnknownFieldSetLite;
     .locals 1
 
-    .line 126
+    .line 127
     invoke-static {}, Lcom/google/protobuf/UnknownFieldSetLite;->getDefaultInstance()Lcom/google/protobuf/UnknownFieldSetLite;
 
     move-result-object v0
@@ -307,7 +307,7 @@
 
     goto :goto_0
 
-    .line 128
+    .line 129
     :cond_0
     invoke-static {p1, p2}, Lcom/google/protobuf/UnknownFieldSetLite;->mutableCopyOf(Lcom/google/protobuf/UnknownFieldSetLite;Lcom/google/protobuf/UnknownFieldSetLite;)Lcom/google/protobuf/UnknownFieldSetLite;
 
@@ -335,7 +335,7 @@
 .method newBuilder()Lcom/google/protobuf/UnknownFieldSetLite;
     .locals 1
 
-    .line 48
+    .line 49
     invoke-static {}, Lcom/google/protobuf/UnknownFieldSetLite;->newInstance()Lcom/google/protobuf/UnknownFieldSetLite;
 
     move-result-object v0
@@ -357,7 +357,7 @@
 .method setBuilderToMessage(Ljava/lang/Object;Lcom/google/protobuf/UnknownFieldSetLite;)V
     .locals 0
 
-    .line 106
+    .line 107
     invoke-virtual {p0, p1, p2}, Lcom/google/protobuf/UnknownFieldSetLiteSchema;->setToMessage(Ljava/lang/Object;Lcom/google/protobuf/UnknownFieldSetLite;)V
 
     return-void
@@ -377,7 +377,7 @@
 .method setToMessage(Ljava/lang/Object;Lcom/google/protobuf/UnknownFieldSetLite;)V
     .locals 0
 
-    .line 84
+    .line 85
     check-cast p1, Lcom/google/protobuf/GeneratedMessageLite;
 
     iput-object p2, p1, Lcom/google/protobuf/GeneratedMessageLite;->unknownFields:Lcom/google/protobuf/UnknownFieldSetLite;
@@ -407,7 +407,7 @@
 .method toImmutable(Lcom/google/protobuf/UnknownFieldSetLite;)Lcom/google/protobuf/UnknownFieldSetLite;
     .locals 0
 
-    .line 78
+    .line 79
     invoke-virtual {p1}, Lcom/google/protobuf/UnknownFieldSetLite;->makeImmutable()V
 
     return-object p1
@@ -434,7 +434,7 @@
         }
     .end annotation
 
-    .line 121
+    .line 122
     invoke-virtual {p1, p2}, Lcom/google/protobuf/UnknownFieldSetLite;->writeAsMessageSetTo(Lcom/google/protobuf/Writer;)V
 
     return-void
@@ -464,7 +464,7 @@
         }
     .end annotation
 
-    .line 116
+    .line 117
     invoke-virtual {p1, p2}, Lcom/google/protobuf/UnknownFieldSetLite;->writeTo(Lcom/google/protobuf/Writer;)V
 
     return-void

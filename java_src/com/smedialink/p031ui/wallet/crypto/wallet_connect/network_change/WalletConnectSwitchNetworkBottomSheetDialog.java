@@ -17,7 +17,7 @@ import kotlin.jvm.internal.PropertyReference1Impl;
 import kotlin.jvm.internal.Reflection;
 import kotlin.reflect.KProperty;
 import moxy.ktx.MoxyKtxDelegate;
-import org.telegram.messenger.C3286R;
+import org.telegram.messenger.C3301R;
 import org.telegram.messenger.databinding.ForkContentWalletConnectSwitchNetworkBinding;
 import org.telegram.p048ui.ActionBar.ActionBarMenuItem;
 import org.telegram.p048ui.ActionBar.BaseFragment;
@@ -134,8 +134,8 @@ public final class WalletConnectSwitchNetworkBottomSheetDialog extends MvpBottom
         Intrinsics.checkNotNullParameter(url, "url");
         Intrinsics.checkNotNullParameter(networkName, "networkName");
         ForkContentWalletConnectSwitchNetworkBinding binding = getBinding();
-        binding.viewHeader.setupViewData(iconUrl, getResourceManager().getString(C3286R.string.wallet_connect_switch_network_title, name), url);
-        binding.viewNetworkCell.setupViewData(getResourceManager().getString(C3286R.string.wallet_connect_session_details_network), networkName, i, true);
+        binding.viewHeader.setupViewData(iconUrl, getResourceManager().getString(C3301R.string.wallet_connect_switch_network_title, name), url);
+        binding.viewNetworkCell.setupViewData(getResourceManager().getString(C3301R.string.wallet_connect_session_details_network), networkName, i, true);
     }
 
     @Override // android.app.Dialog
@@ -158,10 +158,10 @@ public final class WalletConnectSwitchNetworkBottomSheetDialog extends MvpBottom
     private final void setupViews() {
         ForkContentWalletConnectSwitchNetworkBinding binding = getBinding();
         binding.viewNetworkCell.setIconTinted(false);
-        binding.buttonChangeNetwork.setText(getResourceManager().getString(C3286R.string.wallet_connect_switch_network));
+        binding.buttonChangeNetwork.setText(getResourceManager().getString(C3301R.string.wallet_connect_switch_network));
         ActionBarMenuItem actionBarMenuItem = getBinding().buttonClose;
         actionBarMenuItem.setLongClickEnabled(false);
-        actionBarMenuItem.setIcon(C3286R.C3288drawable.ic_close_white);
+        actionBarMenuItem.setIcon(C3301R.C3303drawable.ic_close_white);
     }
 
     private final void setupListeners() {

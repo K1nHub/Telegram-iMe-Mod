@@ -427,14 +427,14 @@ public class SeekBar {
         int i5 = i3;
         while (i5 <= i) {
             float f6 = BitmapDescriptorFactory.HUE_RED;
-            float floatValue = i5 == i3 ? BitmapDescriptorFactory.HUE_RED : ((Float) this.timestamps.get(i5 - 1).first).floatValue();
+            float floatValue = i5 == i3 ? 0.0f : ((Float) this.timestamps.get(i5 - 1).first).floatValue();
             float floatValue2 = i5 == i ? 1.0f : ((Float) this.timestamps.get(i5).first).floatValue();
             while (i5 != i && i5 != 0 && i5 < this.timestamps.size() - i4 && ((Float) this.timestamps.get(i5).first).floatValue() - floatValue <= m50dp) {
                 i5++;
                 floatValue2 = ((Float) this.timestamps.get(i5).first).floatValue();
             }
             RectF rectF2 = AndroidUtilities.rectTmp;
-            rectF2.left = AndroidUtilities.lerp(f4, f5, floatValue) + (i5 > 0 ? m51dp : BitmapDescriptorFactory.HUE_RED);
+            rectF2.left = AndroidUtilities.lerp(f4, f5, floatValue) + (i5 > 0 ? m51dp : 0.0f);
             float lerp = AndroidUtilities.lerp(f4, f5, floatValue2);
             if (i5 < i) {
                 f6 = m51dp;
@@ -442,8 +442,8 @@ public class SeekBar {
             float f7 = lerp - f6;
             rectF2.right = f7;
             float f8 = rectF.right;
-            boolean z = f7 > f8;
-            if (z) {
+            int i6 = f7 > f8 ? i4 : 0;
+            if (i6 != 0) {
                 rectF2.right = f8;
             }
             float f9 = rectF2.right;
@@ -457,7 +457,7 @@ public class SeekBar {
                 if (tmpRadii == null) {
                     tmpRadii = new float[8];
                 }
-                if (i5 == i3 || (z && rectF2.left >= rectF.left)) {
+                if (i5 == i3 || (i6 != 0 && rectF2.left >= rectF.left)) {
                     f = m51dp;
                     float[] fArr = tmpRadii;
                     fArr[7] = f2;
@@ -495,7 +495,7 @@ public class SeekBar {
                     fArr3[0] = f13;
                 }
                 tmpPath.addRoundRect(rectF2, tmpRadii, Path.Direction.CW);
-                if (z) {
+                if (i6 != 0) {
                     break;
                 }
             }

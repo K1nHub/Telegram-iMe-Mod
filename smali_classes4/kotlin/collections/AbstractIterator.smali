@@ -123,12 +123,12 @@
 
     if-eq v0, v1, :cond_0
 
-    const/4 v1, 0x1
+    move v1, v3
 
     goto :goto_0
 
     :cond_0
-    const/4 v1, 0x0
+    move v1, v2
 
     :goto_0
     if-eqz v1, :cond_3
@@ -156,7 +156,7 @@
     goto :goto_1
 
     :cond_1
-    const/4 v2, 0x1
+    move v2, v3
 
     :cond_2
     :goto_1

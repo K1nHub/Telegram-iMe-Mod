@@ -85,30 +85,30 @@
 
     const-wide/16 v2, 0x0
 
-    const/4 v4, 0x0
+    cmp-long v2, v0, v2
 
-    cmp-long v5, v0, v2
+    const/4 v3, 0x0
 
-    if-lez v5, :cond_2
+    if-lez v2, :cond_2
 
-    const-wide v2, 0xfa000000L
+    const-wide v4, 0xfa000000L
 
-    cmp-long v5, v0, v2
+    cmp-long v2, v0, v4
 
-    if-gez v5, :cond_2
+    if-gez v2, :cond_2
 
     .line 247
     sget v2, Lorg/telegram/messenger/R$string;->SaveToGalleryVideosUpTo:I
 
-    const/4 v3, 0x1
+    const/4 v4, 0x1
 
-    new-array v5, v3, [Ljava/lang/Object;
+    new-array v5, v4, [Ljava/lang/Object;
 
-    invoke-static {v0, v1, v3}, Lorg/telegram/messenger/AndroidUtilities;->formatFileSize(JZ)Ljava/lang/String;
+    invoke-static {v0, v1, v4}, Lorg/telegram/messenger/AndroidUtilities;->formatFileSize(JZ)Ljava/lang/String;
 
     move-result-object v0
 
-    aput-object v0, v5, v4
+    aput-object v0, v5, v3
 
     const-string v0, "SaveToGalleryVideosUpTo"
 
@@ -124,7 +124,7 @@
     :cond_2
     sget v0, Lorg/telegram/messenger/R$string;->SaveToGalleryVideos:I
 
-    new-array v1, v4, [Ljava/lang/Object;
+    new-array v1, v3, [Ljava/lang/Object;
 
     const-string v2, "SaveToGalleryVideos"
 

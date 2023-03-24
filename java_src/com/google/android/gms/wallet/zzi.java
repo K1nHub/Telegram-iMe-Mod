@@ -10,9 +10,9 @@ public final class zzi implements Parcelable.Creator {
     public final /* bridge */ /* synthetic */ Object createFromParcel(Parcel parcel) {
         int validateObjectHeader = SafeParcelReader.validateObjectHeader(parcel);
         LoyaltyWalletObject loyaltyWalletObject = null;
-        OfferWalletObject offerWalletObject = null;
         GiftCardWalletObject giftCardWalletObject = null;
         int i = 0;
+        OfferWalletObject offerWalletObject = null;
         while (parcel.dataPosition() < validateObjectHeader) {
             int readHeader = SafeParcelReader.readHeader(parcel);
             int fieldId = SafeParcelReader.getFieldId(readHeader);

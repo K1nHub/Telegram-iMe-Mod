@@ -66,7 +66,6 @@ import androidx.appcompat.widget.ContentFrameLayout;
 import androidx.appcompat.widget.DecorContentParent;
 import androidx.appcompat.widget.FitWindowsViewGroup;
 import androidx.appcompat.widget.TintTypedArray;
-import androidx.appcompat.widget.VectorEnabledTintResources;
 import androidx.appcompat.widget.ViewUtils;
 import androidx.collection.SimpleArrayMap;
 import androidx.core.app.NavUtils;
@@ -86,7 +85,6 @@ import com.google.android.exoplayer2.extractor.p016ts.PsExtractor;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import java.lang.Thread;
 import java.util.List;
-import org.xmlpull.v1.XmlPullParser;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: classes.dex */
 public class AppCompatDelegateImpl extends AppCompatDelegate implements MenuBuilder.Callback, LayoutInflater.Factory2 {
@@ -962,43 +960,98 @@ public class AppCompatDelegateImpl extends AppCompatDelegate implements MenuBuil
         return false;
     }
 
-    public View createView(View view, String str, Context context, AttributeSet attributeSet) {
-        boolean z;
-        boolean z2 = false;
-        if (this.mAppCompatViewInflater == null) {
-            String string = this.mContext.obtainStyledAttributes(R$styleable.AppCompatTheme).getString(R$styleable.AppCompatTheme_viewInflaterClass);
-            if (string == null) {
-                this.mAppCompatViewInflater = new AppCompatViewInflater();
-            } else {
-                try {
-                    this.mAppCompatViewInflater = (AppCompatViewInflater) this.mContext.getClassLoader().loadClass(string).getDeclaredConstructor(new Class[0]).newInstance(new Object[0]);
-                } catch (Throwable th) {
-                    Log.i("AppCompatDelegate", "Failed to instantiate custom view inflater " + string + ". Falling back to default.", th);
-                    this.mAppCompatViewInflater = new AppCompatViewInflater();
-                }
-            }
-        }
-        boolean z3 = IS_PRE_LOLLIPOP;
-        if (z3) {
-            if (this.mLayoutIncludeDetector == null) {
-                this.mLayoutIncludeDetector = new LayoutIncludeDetector();
-            }
-            if (this.mLayoutIncludeDetector.detect(attributeSet)) {
-                z = true;
-            } else {
-                if (attributeSet instanceof XmlPullParser) {
-                    if (((XmlPullParser) attributeSet).getDepth() > 1) {
-                        z2 = true;
-                    }
-                } else {
-                    z2 = shouldInheritContext((ViewParent) view);
-                }
-                z = z2;
-            }
-        } else {
-            z = false;
-        }
-        return this.mAppCompatViewInflater.createView(view, str, context, attributeSet, z, z3, true, VectorEnabledTintResources.shouldBeUsed());
+    /* JADX WARN: Code restructure failed: missing block: B:22:0x0080, code lost:
+        if (((org.xmlpull.v1.XmlPullParser) r15).getDepth() > 1) goto L26;
+     */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+        To view partially-correct add '--show-bad-code' argument
+    */
+    public android.view.View createView(android.view.View r12, java.lang.String r13, android.content.Context r14, android.util.AttributeSet r15) {
+        /*
+            r11 = this;
+            androidx.appcompat.app.AppCompatViewInflater r0 = r11.mAppCompatViewInflater
+            r1 = 0
+            if (r0 != 0) goto L5b
+            android.content.Context r0 = r11.mContext
+            int[] r2 = androidx.appcompat.R$styleable.AppCompatTheme
+            android.content.res.TypedArray r0 = r0.obtainStyledAttributes(r2)
+            int r2 = androidx.appcompat.R$styleable.AppCompatTheme_viewInflaterClass
+            java.lang.String r0 = r0.getString(r2)
+            if (r0 != 0) goto L1d
+            androidx.appcompat.app.AppCompatViewInflater r0 = new androidx.appcompat.app.AppCompatViewInflater
+            r0.<init>()
+            r11.mAppCompatViewInflater = r0
+            goto L5b
+        L1d:
+            android.content.Context r2 = r11.mContext     // Catch: java.lang.Throwable -> L38
+            java.lang.ClassLoader r2 = r2.getClassLoader()     // Catch: java.lang.Throwable -> L38
+            java.lang.Class r2 = r2.loadClass(r0)     // Catch: java.lang.Throwable -> L38
+            java.lang.Class[] r3 = new java.lang.Class[r1]     // Catch: java.lang.Throwable -> L38
+            java.lang.reflect.Constructor r2 = r2.getDeclaredConstructor(r3)     // Catch: java.lang.Throwable -> L38
+            java.lang.Object[] r3 = new java.lang.Object[r1]     // Catch: java.lang.Throwable -> L38
+            java.lang.Object r2 = r2.newInstance(r3)     // Catch: java.lang.Throwable -> L38
+            androidx.appcompat.app.AppCompatViewInflater r2 = (androidx.appcompat.app.AppCompatViewInflater) r2     // Catch: java.lang.Throwable -> L38
+            r11.mAppCompatViewInflater = r2     // Catch: java.lang.Throwable -> L38
+            goto L5b
+        L38:
+            r2 = move-exception
+            java.lang.StringBuilder r3 = new java.lang.StringBuilder
+            r3.<init>()
+            java.lang.String r4 = "Failed to instantiate custom view inflater "
+            r3.append(r4)
+            r3.append(r0)
+            java.lang.String r0 = ". Falling back to default."
+            r3.append(r0)
+            java.lang.String r0 = r3.toString()
+            java.lang.String r3 = "AppCompatDelegate"
+            android.util.Log.i(r3, r0, r2)
+            androidx.appcompat.app.AppCompatViewInflater r0 = new androidx.appcompat.app.AppCompatViewInflater
+            r0.<init>()
+            r11.mAppCompatViewInflater = r0
+        L5b:
+            boolean r8 = androidx.appcompat.app.AppCompatDelegateImpl.IS_PRE_LOLLIPOP
+            r0 = 1
+            if (r8 == 0) goto L8b
+            androidx.appcompat.app.LayoutIncludeDetector r2 = r11.mLayoutIncludeDetector
+            if (r2 != 0) goto L6b
+            androidx.appcompat.app.LayoutIncludeDetector r2 = new androidx.appcompat.app.LayoutIncludeDetector
+            r2.<init>()
+            r11.mLayoutIncludeDetector = r2
+        L6b:
+            androidx.appcompat.app.LayoutIncludeDetector r2 = r11.mLayoutIncludeDetector
+            boolean r2 = r2.detect(r15)
+            if (r2 == 0) goto L75
+            r7 = r0
+            goto L8c
+        L75:
+            boolean r2 = r15 instanceof org.xmlpull.v1.XmlPullParser
+            if (r2 == 0) goto L83
+            r2 = r15
+            org.xmlpull.v1.XmlPullParser r2 = (org.xmlpull.v1.XmlPullParser) r2
+            int r2 = r2.getDepth()
+            if (r2 <= r0) goto L8b
+            goto L8a
+        L83:
+            r0 = r12
+            android.view.ViewParent r0 = (android.view.ViewParent) r0
+            boolean r0 = r11.shouldInheritContext(r0)
+        L8a:
+            r1 = r0
+        L8b:
+            r7 = r1
+        L8c:
+            androidx.appcompat.app.AppCompatViewInflater r2 = r11.mAppCompatViewInflater
+            r9 = 1
+            boolean r10 = androidx.appcompat.widget.VectorEnabledTintResources.shouldBeUsed()
+            r3 = r12
+            r4 = r13
+            r5 = r14
+            r6 = r15
+            android.view.View r12 = r2.createView(r3, r4, r5, r6, r7, r8, r9, r10)
+            return r12
+        */
+        throw new UnsupportedOperationException("Method not decompiled: androidx.appcompat.app.AppCompatDelegateImpl.createView(android.view.View, java.lang.String, android.content.Context, android.util.AttributeSet):android.view.View");
     }
 
     private boolean shouldInheritContext(ViewParent viewParent) {
@@ -1732,7 +1785,7 @@ public class AppCompatDelegateImpl extends AppCompatDelegate implements MenuBuil
             java.lang.Object r8 = r6.mHost
             android.app.Activity r8 = (android.app.Activity) r8
             androidx.core.app.ActivityCompat.recreate(r8)
-            r8 = 1
+            r8 = r4
             goto L4c
         L4b:
             r8 = 0
@@ -2126,7 +2179,9 @@ public class AppCompatDelegateImpl extends AppCompatDelegate implements MenuBuil
                 menuBuilder.setOverrideVisibleItems(true);
             }
             ActionBarMenuCallback actionBarMenuCallback = this.mActionBarCallback;
-            z = (actionBarMenuCallback == null || !actionBarMenuCallback.onPreparePanel(i)) ? false : false;
+            if (actionBarMenuCallback == null || !actionBarMenuCallback.onPreparePanel(i)) {
+                z = false;
+            }
             if (!z) {
                 z = super.onPreparePanel(i, view, menu);
             }

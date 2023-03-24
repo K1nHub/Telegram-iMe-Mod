@@ -97,11 +97,11 @@
 
     int-to-float p4, p4
 
-    mul-float p1, p1, p4
+    mul-float/2addr p1, p4
 
     float-to-int p1, p1
 
-    const/4 p4, 0x0
+    move p4, p3
 
     .line 63
     :goto_0
@@ -183,12 +183,12 @@
     goto :goto_1
 
     :cond_2
-    const/4 p1, 0x0
+    move p1, p3
 
     :goto_1
-    const/4 p4, 0x0
+    move p4, p3
 
-    const/4 p5, 0x0
+    move p5, p4
 
     .line 73
     :goto_2
@@ -249,7 +249,7 @@
     .line 37
     iput v0, p0, Lorg/telegram/ui/Components/voip/VoIPButtonsLayout;->visibleChildCount:I
 
-    const/4 v1, 0x0
+    move v1, v0
 
     .line 38
     :goto_0
@@ -309,7 +309,7 @@
 
     iput v1, p0, Lorg/telegram/ui/Components/voip/VoIPButtonsLayout;->childPadding:I
 
-    const/4 v1, 0x0
+    move v1, v0
 
     .line 46
     :goto_1

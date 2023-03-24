@@ -277,7 +277,7 @@
 .end method
 
 .method public next()Lcom/coremedia/iso/boxes/Box;
-    .locals 6
+    .locals 5
 
     .line 171
     iget-object v0, p0, Lcom/googlecode/mp4parser/BasicContainer;->lookahead:Lcom/coremedia/iso/boxes/Box;
@@ -305,9 +305,9 @@
 
     iget-wide v3, p0, Lcom/googlecode/mp4parser/BasicContainer;->endPosition:J
 
-    cmp-long v5, v1, v3
+    cmp-long v1, v1, v3
 
-    if-gez v5, :cond_1
+    if-gez v1, :cond_1
 
     .line 183
     :try_start_0

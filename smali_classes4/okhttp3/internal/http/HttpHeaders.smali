@@ -542,13 +542,13 @@
 
     const-wide/16 v4, -0x1
 
-    const/4 v6, 0x0
+    cmp-long v4, v2, v4
 
-    cmp-long v7, v2, v4
+    const/4 v5, 0x0
 
-    if-nez v7, :cond_1
+    if-nez v4, :cond_1
 
-    return-object v6
+    return-object v5
 
     .line 172
     :cond_1
@@ -575,17 +575,17 @@
     :cond_2
     invoke-virtual {p0}, Lokio/Buffer;->size()J
 
-    move-result-wide v4
+    move-result-wide v6
 
-    const-wide/16 v7, 0x1
+    const-wide/16 v8, 0x1
 
-    add-long v9, v2, v7
+    add-long v10, v2, v8
 
-    cmp-long v11, v4, v9
+    cmp-long v4, v6, v10
 
-    if-nez v11, :cond_3
+    if-nez v4, :cond_3
 
-    return-object v6
+    return-object v5
 
     .line 180
     :cond_3
@@ -595,7 +595,7 @@
     invoke-virtual {p0}, Lokio/Buffer;->readByte()B
 
     .line 183
-    invoke-virtual {v0, p0, v7, v8}, Lokio/Buffer;->write(Lokio/Buffer;J)V
+    invoke-virtual {v0, p0, v8, v9}, Lokio/Buffer;->write(Lokio/Buffer;J)V
 
     goto :goto_1
 
@@ -615,7 +615,7 @@
 .end method
 
 .method private static final readToken(Lokio/Buffer;)Ljava/lang/String;
-    .locals 5
+    .locals 4
 
     .line 192
     sget-object v0, Lokhttp3/internal/http/HttpHeaders;->TOKEN_DELIMITERS:Lokio/ByteString;
@@ -626,9 +626,9 @@
 
     const-wide/16 v2, -0x1
 
-    cmp-long v4, v0, v2
+    cmp-long v2, v0, v2
 
-    if-nez v4, :cond_0
+    if-nez v2, :cond_0
 
     .line 193
     invoke-virtual {p0}, Lokio/Buffer;->size()J
@@ -638,9 +638,9 @@
     :cond_0
     const-wide/16 v2, 0x0
 
-    cmp-long v4, v0, v2
+    cmp-long v2, v0, v2
 
-    if-eqz v4, :cond_1
+    if-eqz v2, :cond_1
 
     .line 196
     invoke-virtual {p0, v0, v1}, Lokio/Buffer;->readUtf8(J)Ljava/lang/String;

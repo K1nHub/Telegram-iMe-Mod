@@ -186,7 +186,7 @@
 .end method
 
 .method private canAutoDownload(Lorg/telegram/messenger/MessageObject;)Z
-    .locals 5
+    .locals 4
 
     .line 248
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
@@ -199,9 +199,9 @@
 
     const-wide/16 v2, 0x1388
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-lez v4, :cond_0
+    if-lez v0, :cond_0
 
     .line 249
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
@@ -405,7 +405,7 @@
 
     iget v2, p0, Lorg/telegram/ui/Cells/SharedPhotoVideoCell2;->imageScale:F
 
-    mul-float v0, v0, v2
+    mul-float/2addr v0, v2
 
     iget-object v2, p0, Lorg/telegram/ui/Cells/SharedPhotoVideoCell2;->crossfadeView:Lorg/telegram/ui/Cells/SharedPhotoVideoCell2;
 
@@ -578,37 +578,37 @@
     .line 269
     iget v1, v0, Lorg/telegram/ui/Cells/SharedPhotoVideoCell2;->crossfadeProgress:F
 
-    const/high16 v9, 0x41100000    # 9.0f
+    const/4 v9, 0x0
 
-    const/16 v10, 0x9
+    cmpl-float v1, v1, v9
 
-    const/high16 v11, 0x3f000000    # 0.5f
+    const/high16 v10, 0x41100000    # 9.0f
 
-    const/4 v12, 0x0
+    const/16 v11, 0x9
+
+    const/high16 v12, 0x3f000000    # 0.5f
 
     const/high16 v13, 0x3f800000    # 1.0f
-
-    cmpl-float v1, v1, v12
 
     if-eqz v1, :cond_2
 
     iget v1, v0, Lorg/telegram/ui/Cells/SharedPhotoVideoCell2;->crossfadeToColumnsCount:F
 
-    cmpl-float v2, v1, v9
+    cmpl-float v2, v1, v10
 
     if-eqz v2, :cond_0
 
     iget v2, v0, Lorg/telegram/ui/Cells/SharedPhotoVideoCell2;->currentParentColumnsCount:I
 
-    if-ne v2, v10, :cond_2
+    if-ne v2, v11, :cond_2
 
     :cond_0
-    cmpl-float v1, v1, v9
+    cmpl-float v1, v1, v10
 
     if-nez v1, :cond_1
 
     .line 271
-    invoke-static {v11}, Lorg/telegram/messenger/AndroidUtilities;->dp(F)I
+    invoke-static {v12}, Lorg/telegram/messenger/AndroidUtilities;->dp(F)I
 
     move-result v1
 
@@ -616,7 +616,7 @@
 
     iget v2, v0, Lorg/telegram/ui/Cells/SharedPhotoVideoCell2;->crossfadeProgress:F
 
-    mul-float v1, v1, v2
+    mul-float/2addr v1, v2
 
     invoke-static {v13}, Lorg/telegram/messenger/AndroidUtilities;->dpf2(F)F
 
@@ -636,9 +636,9 @@
 
     iget v2, v0, Lorg/telegram/ui/Cells/SharedPhotoVideoCell2;->crossfadeProgress:F
 
-    mul-float v1, v1, v2
+    mul-float/2addr v1, v2
 
-    invoke-static {v11}, Lorg/telegram/messenger/AndroidUtilities;->dpf2(F)F
+    invoke-static {v12}, Lorg/telegram/messenger/AndroidUtilities;->dpf2(F)F
 
     move-result v2
 
@@ -647,7 +647,7 @@
     :goto_0
     sub-float v3, v13, v3
 
-    mul-float v2, v2, v3
+    mul-float/2addr v2, v3
 
     add-float/2addr v1, v2
 
@@ -657,9 +657,9 @@
     :cond_2
     iget v1, v0, Lorg/telegram/ui/Cells/SharedPhotoVideoCell2;->currentParentColumnsCount:I
 
-    if-ne v1, v10, :cond_3
+    if-ne v1, v11, :cond_3
 
-    invoke-static {v11}, Lorg/telegram/messenger/AndroidUtilities;->dpf2(F)F
+    invoke-static {v12}, Lorg/telegram/messenger/AndroidUtilities;->dpf2(F)F
 
     move-result v1
 
@@ -688,7 +688,7 @@
 
     iget v2, v0, Lorg/telegram/ui/Cells/SharedPhotoVideoCell2;->imageScale:F
 
-    mul-float v1, v1, v2
+    mul-float/2addr v1, v2
 
     .line 280
     invoke-virtual/range {p0 .. p0}, Landroid/view/View;->getMeasuredHeight()I
@@ -701,24 +701,24 @@
 
     iget v3, v0, Lorg/telegram/ui/Cells/SharedPhotoVideoCell2;->imageScale:F
 
-    mul-float v2, v2, v3
+    mul-float/2addr v2, v3
 
     .line 282
     iget v3, v0, Lorg/telegram/ui/Cells/SharedPhotoVideoCell2;->crossfadeProgress:F
 
-    cmpl-float v3, v3, v11
+    cmpl-float v3, v3, v12
 
     if-lez v3, :cond_4
 
     iget v3, v0, Lorg/telegram/ui/Cells/SharedPhotoVideoCell2;->crossfadeToColumnsCount:F
 
-    cmpl-float v3, v3, v9
+    cmpl-float v3, v3, v10
 
     if-eqz v3, :cond_4
 
     iget v3, v0, Lorg/telegram/ui/Cells/SharedPhotoVideoCell2;->currentParentColumnsCount:I
 
-    if-eq v3, v10, :cond_4
+    if-eq v3, v11, :cond_4
 
     sub-float/2addr v1, v15
 
@@ -761,9 +761,9 @@
     goto :goto_2
 
     :cond_5
-    move v10, v5
+    move v11, v5
 
-    move v9, v6
+    move v10, v6
 
     goto :goto_5
 
@@ -816,19 +816,19 @@
     .line 293
     iget v1, v0, Lorg/telegram/ui/Cells/SharedPhotoVideoCell2;->crossfadeProgress:F
 
-    cmpl-float v1, v1, v11
+    cmpl-float v1, v1, v12
 
     if-lez v1, :cond_7
 
     iget v1, v0, Lorg/telegram/ui/Cells/SharedPhotoVideoCell2;->crossfadeToColumnsCount:F
 
-    cmpl-float v1, v1, v9
+    cmpl-float v1, v1, v10
 
     if-eqz v1, :cond_7
 
     iget v1, v0, Lorg/telegram/ui/Cells/SharedPhotoVideoCell2;->currentParentColumnsCount:I
 
-    if-eq v1, v10, :cond_7
+    if-eq v1, v11, :cond_7
 
     add-float v1, v14, v13
 
@@ -855,11 +855,11 @@
 
     move v2, v3
 
-    move v10, v5
+    move v11, v5
 
     move/from16 v5, v16
 
-    move v9, v6
+    move v10, v6
 
     move-object/from16 v6, v17
 
@@ -868,9 +868,9 @@
     goto :goto_4
 
     :cond_8
-    move v10, v5
+    move v11, v5
 
-    move v9, v6
+    move v10, v6
 
     .line 298
     :goto_4
@@ -880,9 +880,9 @@
     :goto_5
     iget v1, v0, Lorg/telegram/ui/Cells/SharedPhotoVideoCell2;->imageAlpha:F
 
-    const/high16 v17, 0x437f0000    # 255.0f
-
     cmpl-float v2, v1, v13
+
+    const/high16 v17, 0x437f0000    # 255.0f
 
     if-eqz v2, :cond_9
 
@@ -890,9 +890,9 @@
 
     const/4 v3, 0x0
 
-    add-float v4, v7, v9
+    add-float v4, v7, v10
 
-    add-float v5, v7, v10
+    add-float v5, v7, v11
 
     mul-float v1, v1, v17
 
@@ -946,9 +946,9 @@
 
     move v3, v14
 
-    move v4, v9
+    move v4, v10
 
-    move v5, v10
+    move v5, v11
 
     invoke-virtual/range {v1 .. v6}, Landroid/graphics/Canvas;->drawRect(FFFFLandroid/graphics/Paint;)V
 
@@ -956,9 +956,9 @@
     :cond_c
     iget v1, v0, Lorg/telegram/ui/Cells/SharedPhotoVideoCell2;->checkBoxProgress:F
 
-    const/16 v2, 0xa
+    cmpl-float v1, v1, v9
 
-    cmpl-float v1, v1, v12
+    const/16 v2, 0xa
 
     if-lez v1, :cond_d
 
@@ -971,18 +971,18 @@
 
     iget v3, v0, Lorg/telegram/ui/Cells/SharedPhotoVideoCell2;->checkBoxProgress:F
 
-    mul-float v1, v1, v3
+    mul-float/2addr v1, v3
 
     .line 313
     iget-object v3, v0, Lorg/telegram/ui/Cells/SharedPhotoVideoCell2;->imageReceiver:Lorg/telegram/messenger/ImageReceiver;
 
     add-float v4, v14, v1
 
-    mul-float v1, v1, v15
+    mul-float/2addr v1, v15
 
-    sub-float v6, v9, v1
+    sub-float v6, v10, v1
 
-    sub-float v5, v10, v1
+    sub-float v5, v11, v1
 
     invoke-virtual {v3, v4, v4, v6, v5}, Lorg/telegram/messenger/ImageReceiver;->setImageCoords(FFFF)V
 
@@ -997,7 +997,7 @@
     :cond_d
     iget v1, v0, Lorg/telegram/ui/Cells/SharedPhotoVideoCell2;->crossfadeProgress:F
 
-    cmpl-float v1, v1, v11
+    cmpl-float v1, v1, v12
 
     if-lez v1, :cond_e
 
@@ -1026,12 +1026,12 @@
     :goto_7
     iget-object v1, v0, Lorg/telegram/ui/Cells/SharedPhotoVideoCell2;->imageReceiver:Lorg/telegram/messenger/ImageReceiver;
 
-    invoke-virtual {v1, v13, v13, v9, v10}, Lorg/telegram/messenger/ImageReceiver;->setImageCoords(FFFF)V
+    invoke-virtual {v1, v13, v13, v10, v11}, Lorg/telegram/messenger/ImageReceiver;->setImageCoords(FFFF)V
 
     .line 321
     iget-object v1, v0, Lorg/telegram/ui/Cells/SharedPhotoVideoCell2;->blurImageReceiver:Lorg/telegram/messenger/ImageReceiver;
 
-    invoke-virtual {v1, v13, v13, v9, v10}, Lorg/telegram/messenger/ImageReceiver;->setImageCoords(FFFF)V
+    invoke-virtual {v1, v13, v13, v10, v11}, Lorg/telegram/messenger/ImageReceiver;->setImageCoords(FFFF)V
 
     .line 323
     :goto_8
@@ -1068,9 +1068,9 @@
     .line 326
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->save()I
 
-    add-float v6, v14, v9
+    add-float v6, v14, v10
 
-    add-float v5, v14, v10
+    add-float v5, v14, v11
 
     .line 327
     invoke-virtual {v8, v14, v14, v6, v5}, Landroid/graphics/Canvas;->clipRect(FFFF)Z
@@ -1078,7 +1078,7 @@
     .line 329
     iget v1, v0, Lorg/telegram/ui/Cells/SharedPhotoVideoCell2;->spoilerRevealProgress:F
 
-    cmpl-float v1, v1, v12
+    cmpl-float v1, v1, v9
 
     if-eqz v1, :cond_f
 
@@ -1098,7 +1098,7 @@
 
     iget v6, v0, Lorg/telegram/ui/Cells/SharedPhotoVideoCell2;->spoilerRevealProgress:F
 
-    mul-float v5, v5, v6
+    mul-float/2addr v5, v6
 
     sget-object v6, Landroid/graphics/Path$Direction;->CW:Landroid/graphics/Path$Direction;
 
@@ -1130,7 +1130,7 @@
 
     const v5, 0x3ea66666    # 0.325f
 
-    mul-float v4, v4, v5
+    mul-float/2addr v4, v5
 
     float-to-int v4, v4
 
@@ -1192,7 +1192,7 @@
     :cond_10
     iget v1, v0, Lorg/telegram/ui/Cells/SharedPhotoVideoCell2;->highlightProgress:F
 
-    cmpl-float v3, v1, v12
+    cmpl-float v3, v1, v9
 
     if-lez v3, :cond_11
 
@@ -1203,7 +1203,7 @@
 
     const/high16 v4, -0x1000000
 
-    mul-float v1, v1, v11
+    mul-float/2addr v1, v12
 
     mul-float v1, v1, v17
 
@@ -1241,9 +1241,9 @@
     .line 353
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->save()I
 
-    add-float v6, v14, v9
+    add-float v6, v14, v10
 
-    add-float v5, v14, v10
+    add-float v5, v14, v11
 
     .line 354
     invoke-virtual {v8, v14, v14, v6, v5}, Landroid/graphics/Canvas;->clipRect(FFFF)Z
@@ -1369,29 +1369,29 @@
 
     invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
+    move-result v12
+
+    int-to-float v12, v12
+
+    add-float/2addr v12, v11
+
+    invoke-static {v5}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+
     move-result v11
 
     int-to-float v11, v11
 
-    add-float/2addr v11, v10
-
-    invoke-static {v5}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
-
-    move-result v10
-
-    int-to-float v10, v10
-
-    sub-float/2addr v11, v10
+    sub-float/2addr v12, v11
 
     invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
-    move-result v10
+    move-result v11
 
-    int-to-float v10, v10
+    int-to-float v11, v11
 
-    sub-float/2addr v11, v10
+    sub-float/2addr v12, v11
 
-    invoke-virtual {v8, v7, v11}, Landroid/graphics/Canvas;->translate(FF)V
+    invoke-virtual {v8, v7, v12}, Landroid/graphics/Canvas;->translate(FF)V
 
     .line 369
     sget-object v7, Lorg/telegram/messenger/AndroidUtilities;->rectTmp:Landroid/graphics/RectF;
@@ -1400,11 +1400,11 @@
 
     invoke-static {v5}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
-    move-result v10
+    move-result v11
 
-    int-to-float v10, v10
+    int-to-float v11, v11
 
-    invoke-virtual {v7, v12, v12, v1, v10}, Landroid/graphics/RectF;->set(FFFF)V
+    invoke-virtual {v7, v9, v9, v1, v11}, Landroid/graphics/RectF;->set(FFFF)V
 
     .line 370
     invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
@@ -1415,13 +1415,13 @@
 
     invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
-    move-result v10
+    move-result v11
 
-    int-to-float v10, v10
+    int-to-float v11, v11
 
-    sget-object v11, Lorg/telegram/ui/ActionBar/Theme;->chat_timeBackgroundPaint:Landroid/graphics/Paint;
+    sget-object v12, Lorg/telegram/ui/ActionBar/Theme;->chat_timeBackgroundPaint:Landroid/graphics/Paint;
 
-    invoke-virtual {v8, v7, v1, v10, v11}, Landroid/graphics/Canvas;->drawRoundRect(Landroid/graphics/RectF;FFLandroid/graphics/Paint;)V
+    invoke-virtual {v8, v7, v1, v11, v12}, Landroid/graphics/Canvas;->drawRoundRect(Landroid/graphics/RectF;FFLandroid/graphics/Paint;)V
 
     .line 371
     iget-boolean v1, v0, Lorg/telegram/ui/Cells/SharedPhotoVideoCell2;->drawVideoIcon:Z
@@ -1559,7 +1559,7 @@
 
     move-result v1
 
-    cmpl-float v1, v1, v12
+    cmpl-float v1, v1, v9
 
     if-eqz v1, :cond_1d
 
@@ -1583,7 +1583,7 @@
 
     int-to-float v1, v1
 
-    add-float v6, v9, v1
+    add-float v6, v10, v1
 
     invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
@@ -1606,7 +1606,7 @@
 
     move-result v1
 
-    int-to-float v12, v1
+    int-to-float v9, v1
 
     goto :goto_c
 
@@ -1618,7 +1618,7 @@
 
     int-to-float v1, v1
 
-    add-float v6, v9, v1
+    add-float v6, v10, v1
 
     invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
@@ -1630,7 +1630,7 @@
 
     .line 395
     :goto_c
-    invoke-virtual {v8, v6, v12}, Landroid/graphics/Canvas;->translate(FF)V
+    invoke-virtual {v8, v6, v9}, Landroid/graphics/Canvas;->translate(FF)V
 
     .line 396
     iget-object v1, v0, Lorg/telegram/ui/Cells/SharedPhotoVideoCell2;->checkBoxBase:Lorg/telegram/ui/Components/CheckBoxBase;
@@ -1667,9 +1667,9 @@
 
     int-to-float v3, v3
 
-    add-float/2addr v3, v12
+    add-float/2addr v3, v9
 
-    invoke-virtual {v1, v6, v12, v2, v3}, Landroid/graphics/RectF;->set(FFFF)V
+    invoke-virtual {v1, v6, v9, v2, v3}, Landroid/graphics/RectF;->set(FFFF)V
 
     .line 399
     iget-object v2, v0, Lorg/telegram/ui/Cells/SharedPhotoVideoCell2;->canvasButton:Lorg/telegram/ui/Components/CanvasButton;
@@ -1752,12 +1752,12 @@
 
     if-eqz v0, :cond_0
 
-    const/4 v0, 0x1
+    move v0, v1
 
     goto :goto_0
 
     :cond_0
-    const/4 v0, 0x0
+    move v0, v2
 
     :goto_0
     if-ne v0, p1, :cond_1
@@ -1861,7 +1861,7 @@
     goto :goto_1
 
     :cond_4
-    const/4 v0, 0x0
+    move v0, v3
 
     :goto_1
     aput v0, p2, v1
@@ -1908,7 +1908,7 @@
     goto :goto_2
 
     :cond_6
-    const/4 v0, 0x0
+    move v0, v3
 
     .line 559
     :goto_2
@@ -2170,7 +2170,7 @@
     if-nez v2, :cond_6
 
     :cond_5
-    const/4 v12, 0x1
+    move v12, v6
 
     goto/16 :goto_4
 
@@ -2602,12 +2602,12 @@
 
     if-eqz v2, :cond_14
 
-    const/16 v16, 0x2
+    move/from16 v16, v5
 
     goto :goto_2
 
     :cond_14
-    const/16 v16, 0x1
+    move/from16 v16, v6
 
     :goto_2
     move-object v2, v4
@@ -2675,12 +2675,12 @@
 
     if-eqz v1, :cond_17
 
-    const/16 v16, 0x2
+    move/from16 v16, v5
 
     goto :goto_3
 
     :cond_17
-    const/16 v16, 0x1
+    move/from16 v16, v6
 
     :goto_3
     move-object v1, v4
@@ -2990,7 +2990,7 @@
 
     const v0, 0x3e99999a    # 0.3f
 
-    mul-float p2, p2, v0
+    mul-float/2addr p2, v0
 
     const/high16 v0, 0x437a0000    # 250.0f
 
@@ -3029,6 +3029,8 @@
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->start()V
 
     return-void
+
+    nop
 
     :array_0
     .array-data 4

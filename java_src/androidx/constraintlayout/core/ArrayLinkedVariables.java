@@ -165,7 +165,7 @@ public class ArrayLinkedVariables implements ArrayRow.ArrayRowVariables {
                     float f3 = fArr[i] + f;
                     float f4 = epsilon;
                     if (f3 > (-f4) && f3 < f4) {
-                        f3 = BitmapDescriptorFactory.HUE_RED;
+                        f3 = 0.0f;
                     }
                     fArr[i] = f3;
                     if (f3 == BitmapDescriptorFactory.HUE_RED) {

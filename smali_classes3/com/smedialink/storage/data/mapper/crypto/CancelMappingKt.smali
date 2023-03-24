@@ -15,11 +15,11 @@
     new-instance v0, Lcom/smedialink/storage/domain/model/crypto/cancel/CryptoCancelMetadata;
 
     .line 9
-    invoke-virtual {p0}, Lcom/smedialink/storage/data/network/model/response/crypto/cancel/GetCancelTransactionDataResponse;->getTransactionParams()Lcom/smedialink/storage/data/network/model/response/crypto/wallet/TransactionParamsResponse;
+    invoke-virtual {p0}, Lcom/smedialink/storage/data/network/model/response/crypto/cancel/GetCancelTransactionDataResponse;->getTransactionParams()Lcom/smedialink/storage/data/network/model/response/crypto/wallet/TransactionParamsResponse$EVM;
 
     move-result-object v1
 
-    invoke-static {v1}, Lcom/smedialink/storage/data/mapper/crypto/CryptoWalletMappingKt;->mapToDomain(Lcom/smedialink/storage/data/network/model/response/crypto/wallet/TransactionParamsResponse;)Lcom/smedialink/storage/domain/model/crypto/TransactionParams;
+    invoke-static {v1}, Lcom/smedialink/storage/data/mapper/crypto/CryptoWalletMappingKt;->mapToDomain(Lcom/smedialink/storage/data/network/model/response/crypto/wallet/TransactionParamsResponse$EVM;)Lcom/smedialink/storage/domain/model/crypto/TransactionParams$Ether;
 
     move-result-object v1
 
@@ -45,7 +45,7 @@
 
     .line 8
     :cond_0
-    invoke-direct {v0, v1, v2, p0}, Lcom/smedialink/storage/domain/model/crypto/cancel/CryptoCancelMetadata;-><init>(Lcom/smedialink/storage/domain/model/crypto/TransactionParams;Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;Ljava/lang/String;)V
+    invoke-direct {v0, v1, v2, p0}, Lcom/smedialink/storage/domain/model/crypto/cancel/CryptoCancelMetadata;-><init>(Lcom/smedialink/storage/domain/model/crypto/TransactionParams$Ether;Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;Ljava/lang/String;)V
 
     return-object v0
 .end method

@@ -466,9 +466,9 @@
 
     xor-int/2addr v1, v2
 
-    const/4 v3, 0x1
+    move v3, v2
 
-    const/4 v4, 0x1
+    move v4, v3
 
     .line 374
     :cond_0
@@ -504,12 +504,12 @@
 
     if-nez v6, :cond_2
 
-    const/4 v8, 0x1
+    move v8, v2
 
     goto :goto_1
 
     :cond_2
-    const/4 v8, 0x0
+    move v8, v7
 
     :goto_1
     if-eqz v5, :cond_5
@@ -528,7 +528,7 @@
     return-void
 
     :cond_3
-    const/4 v3, 0x0
+    move v3, v7
 
     :cond_4
     if-eqz v8, :cond_5

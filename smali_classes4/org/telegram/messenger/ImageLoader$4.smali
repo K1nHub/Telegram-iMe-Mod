@@ -177,7 +177,7 @@
 
     move-result p2
 
-    mul-int p1, p1, p2
+    mul-int/2addr p1, p2
 
     mul-int/lit8 p1, p1, 0x4
 

@@ -61,7 +61,7 @@
 
     move-result v1
 
-    mul-int p1, p1, v1
+    mul-int/2addr p1, v1
 
     int-to-float p1, p1
 

@@ -228,7 +228,7 @@
 
     const-wide/32 v3, 0xf4240
 
-    mul-long v1, v1, v3
+    mul-long/2addr v1, v3
 
     add-long/2addr p3, v1
 

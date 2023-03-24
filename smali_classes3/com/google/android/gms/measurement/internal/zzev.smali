@@ -80,7 +80,7 @@
 
     const/4 v0, 0x0
 
-    const/4 v3, 0x0
+    move v3, v0
 
     .line 4
     :goto_0
@@ -147,7 +147,7 @@
 
     if-eqz v7, :cond_4
 
-    const/4 v7, 0x0
+    move v7, v0
 
     goto :goto_2
 
@@ -160,7 +160,7 @@
 
     if-eqz v7, :cond_4
 
-    const/4 v7, 0x2
+    move v7, v9
 
     goto :goto_2
 
@@ -173,7 +173,7 @@
 
     if-eqz v7, :cond_4
 
-    const/4 v7, 0x1
+    move v7, v10
 
     goto :goto_2
 

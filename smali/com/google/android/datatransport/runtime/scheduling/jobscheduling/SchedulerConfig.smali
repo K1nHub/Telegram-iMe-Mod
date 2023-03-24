@@ -33,9 +33,9 @@
 
     const-wide/16 v0, 0x1
 
-    cmp-long v2, p2, v0
+    cmp-long v0, p2, v0
 
-    if-lez v2, :cond_0
+    if-lez v0, :cond_0
 
     move-wide v0, p2
 
@@ -54,7 +54,7 @@
 
     int-to-long v4, p1
 
-    mul-long v0, v0, v4
+    mul-long/2addr v0, v4
 
     long-to-double v0, v0
 
@@ -82,9 +82,9 @@
 
     long-to-double p1, p2
 
-    mul-double v2, v2, p1
+    mul-double/2addr v2, p1
 
-    mul-double v2, v2, v0
+    mul-double/2addr v2, v0
 
     double-to-long p1, v2
 

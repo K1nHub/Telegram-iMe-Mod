@@ -23,7 +23,7 @@
 .method static constructor <clinit>()V
     .locals 1
 
-    .line 84
+    .line 85
     invoke-static {}, Lcom/google/protobuf/Utf8$UnsafeProcessor;->isAvailable()Z
 
     move-result v0
@@ -56,7 +56,7 @@
 .method static synthetic access$000(II)I
     .locals 0
 
-    .line 76
+    .line 77
     invoke-static {p0, p1}, Lcom/google/protobuf/Utf8;->incompleteStateFor(II)I
 
     move-result p0
@@ -67,7 +67,7 @@
 .method static synthetic access$100(III)I
     .locals 0
 
-    .line 76
+    .line 77
     invoke-static {p0, p1, p2}, Lcom/google/protobuf/Utf8;->incompleteStateFor(III)I
 
     move-result p0
@@ -78,7 +78,7 @@
 .method static synthetic access$1100([BII)I
     .locals 0
 
-    .line 76
+    .line 77
     invoke-static {p0, p1, p2}, Lcom/google/protobuf/Utf8;->incompleteStateFor([BII)I
 
     move-result p0
@@ -89,12 +89,52 @@
 .method static synthetic access$1200(I)I
     .locals 0
 
-    .line 76
+    .line 77
     invoke-static {p0}, Lcom/google/protobuf/Utf8;->incompleteStateFor(I)I
 
     move-result p0
 
     return p0
+.end method
+
+.method static synthetic access$200(Ljava/nio/ByteBuffer;II)I
+    .locals 0
+
+    .line 77
+    invoke-static {p0, p1, p2}, Lcom/google/protobuf/Utf8;->estimateConsecutiveAscii(Ljava/nio/ByteBuffer;II)I
+
+    move-result p0
+
+    return p0
+.end method
+
+.method static synthetic access$300(Ljava/nio/ByteBuffer;III)I
+    .locals 0
+
+    .line 77
+    invoke-static {p0, p1, p2, p3}, Lcom/google/protobuf/Utf8;->incompleteStateFor(Ljava/nio/ByteBuffer;III)I
+
+    move-result p0
+
+    return p0
+.end method
+
+.method static decodeUtf8(Ljava/nio/ByteBuffer;II)Ljava/lang/String;
+    .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/google/protobuf/InvalidProtocolBufferException;
+        }
+    .end annotation
+
+    .line 331
+    sget-object v0, Lcom/google/protobuf/Utf8;->processor:Lcom/google/protobuf/Utf8$Processor;
+
+    invoke-virtual {v0, p0, p1, p2}, Lcom/google/protobuf/Utf8$Processor;->decodeUtf8(Ljava/nio/ByteBuffer;II)Ljava/lang/String;
+
+    move-result-object p0
+
+    return-object p0
 .end method
 
 .method static decodeUtf8([BII)Ljava/lang/String;
@@ -105,7 +145,7 @@
         }
     .end annotation
 
-    .line 340
+    .line 341
     sget-object v0, Lcom/google/protobuf/Utf8;->processor:Lcom/google/protobuf/Utf8$Processor;
 
     invoke-virtual {v0, p0, p1, p2}, Lcom/google/protobuf/Utf8$Processor;->decodeUtf8([BII)Ljava/lang/String;
@@ -118,7 +158,7 @@
 .method static encode(Ljava/lang/CharSequence;[BII)I
     .locals 1
 
-    .line 293
+    .line 294
     sget-object v0, Lcom/google/protobuf/Utf8;->processor:Lcom/google/protobuf/Utf8$Processor;
 
     invoke-virtual {v0, p0, p1, p2, p3}, Lcom/google/protobuf/Utf8$Processor;->encodeUtf8(Ljava/lang/CharSequence;[BII)I
@@ -131,7 +171,7 @@
 .method static encodedLength(Ljava/lang/CharSequence;)I
     .locals 5
 
-    .line 241
+    .line 242
     invoke-interface {p0}, Ljava/lang/CharSequence;->length()I
 
     move-result v0
@@ -141,7 +181,7 @@
     :goto_0
     if-ge v1, v0, :cond_0
 
-    .line 246
+    .line 247
     invoke-interface {p0, v1}, Ljava/lang/CharSequence;->charAt(I)C
 
     move-result v2
@@ -160,7 +200,7 @@
     :goto_1
     if-ge v1, v0, :cond_2
 
-    .line 252
+    .line 253
     invoke-interface {p0, v1}, Ljava/lang/CharSequence;->charAt(I)C
 
     move-result v3
@@ -179,7 +219,7 @@
 
     goto :goto_1
 
-    .line 256
+    .line 257
     :cond_1
     invoke-static {p0, v1}, Lcom/google/protobuf/Utf8;->encodedLengthGeneral(Ljava/lang/CharSequence;I)I
 
@@ -192,7 +232,7 @@
 
     return v2
 
-    .line 263
+    .line 264
     :cond_3
     new-instance p0, Ljava/lang/IllegalArgumentException;
 
@@ -224,7 +264,7 @@
 .method private static encodedLengthGeneral(Ljava/lang/CharSequence;I)I
     .locals 4
 
-    .line 270
+    .line 271
     invoke-interface {p0}, Ljava/lang/CharSequence;->length()I
 
     move-result v0
@@ -234,7 +274,7 @@
     :goto_0
     if-ge p1, v0, :cond_3
 
-    .line 273
+    .line 274
     invoke-interface {p0, p1}, Ljava/lang/CharSequence;->charAt(I)C
 
     move-result v2
@@ -262,7 +302,7 @@
 
     if-gt v2, v3, :cond_2
 
-    .line 281
+    .line 282
     invoke-static {p0, p1}, Ljava/lang/Character;->codePointAt(Ljava/lang/CharSequence;I)I
 
     move-result v2
@@ -275,7 +315,7 @@
 
     goto :goto_1
 
-    .line 283
+    .line 284
     :cond_1
     new-instance p0, Lcom/google/protobuf/Utf8$UnpairedSurrogateException;
 
@@ -291,6 +331,41 @@
 
     :cond_3
     return v1
+.end method
+
+.method private static estimateConsecutiveAscii(Ljava/nio/ByteBuffer;II)I
+    .locals 5
+
+    add-int/lit8 p2, p2, -0x7
+
+    move v0, p1
+
+    :goto_0
+    if-ge v0, p2, :cond_0
+
+    .line 375
+    invoke-virtual {p0, v0}, Ljava/nio/ByteBuffer;->getLong(I)J
+
+    move-result-wide v1
+
+    const-wide v3, -0x7f7f7f7f7f7f7f80L    # -2.937446524422997E-306
+
+    and-long/2addr v1, v3
+
+    const-wide/16 v3, 0x0
+
+    cmp-long v1, v1, v3
+
+    if-nez v1, :cond_0
+
+    add-int/lit8 v0, v0, 0x8
+
+    goto :goto_0
+
+    :cond_0
+    sub-int/2addr v0, p1
+
+    return v0
 .end method
 
 .method private static incompleteStateFor(I)I
@@ -368,12 +443,71 @@
     return p0
 .end method
 
+.method private static incompleteStateFor(Ljava/nio/ByteBuffer;III)I
+    .locals 2
+
+    if-eqz p3, :cond_2
+
+    const/4 v0, 0x1
+
+    if-eq p3, v0, :cond_1
+
+    const/4 v1, 0x2
+
+    if-ne p3, v1, :cond_0
+
+    .line 216
+    invoke-virtual {p0, p2}, Ljava/nio/ByteBuffer;->get(I)B
+
+    move-result p3
+
+    add-int/2addr p2, v0
+
+    invoke-virtual {p0, p2}, Ljava/nio/ByteBuffer;->get(I)B
+
+    move-result p0
+
+    invoke-static {p1, p3, p0}, Lcom/google/protobuf/Utf8;->incompleteStateFor(III)I
+
+    move-result p0
+
+    return p0
+
+    .line 218
+    :cond_0
+    new-instance p0, Ljava/lang/AssertionError;
+
+    invoke-direct {p0}, Ljava/lang/AssertionError;-><init>()V
+
+    throw p0
+
+    .line 214
+    :cond_1
+    invoke-virtual {p0, p2}, Ljava/nio/ByteBuffer;->get(I)B
+
+    move-result p0
+
+    invoke-static {p1, p0}, Lcom/google/protobuf/Utf8;->incompleteStateFor(II)I
+
+    move-result p0
+
+    return p0
+
+    .line 212
+    :cond_2
+    invoke-static {p1}, Lcom/google/protobuf/Utf8;->incompleteStateFor(I)I
+
+    move-result p0
+
+    return p0
+.end method
+
 .method private static incompleteStateFor([BII)I
     .locals 3
 
     add-int/lit8 v0, p1, -0x1
 
-    .line 194
+    .line 195
     aget-byte v0, p0, v0
 
     sub-int/2addr p2, p1
@@ -388,7 +522,7 @@
 
     if-ne p2, v2, :cond_0
 
-    .line 201
+    .line 202
     aget-byte p2, p0, p1
 
     add-int/2addr p1, v1
@@ -401,7 +535,7 @@
 
     return p0
 
-    .line 203
+    .line 204
     :cond_0
     new-instance p0, Ljava/lang/AssertionError;
 
@@ -409,7 +543,7 @@
 
     throw p0
 
-    .line 199
+    .line 200
     :cond_1
     aget-byte p0, p0, p1
 
@@ -419,7 +553,7 @@
 
     return p0
 
-    .line 197
+    .line 198
     :cond_2
     invoke-static {v0}, Lcom/google/protobuf/Utf8;->incompleteStateFor(I)I
 
@@ -428,10 +562,31 @@
     return p0
 .end method
 
-.method public static isValidUtf8([B)Z
+.method static isValidUtf8(Ljava/nio/ByteBuffer;)Z
     .locals 3
 
-    .line 147
+    .line 308
+    sget-object v0, Lcom/google/protobuf/Utf8;->processor:Lcom/google/protobuf/Utf8$Processor;
+
+    invoke-virtual {p0}, Ljava/nio/ByteBuffer;->position()I
+
+    move-result v1
+
+    invoke-virtual {p0}, Ljava/nio/ByteBuffer;->remaining()I
+
+    move-result v2
+
+    invoke-virtual {v0, p0, v1, v2}, Lcom/google/protobuf/Utf8$Processor;->isValidUtf8(Ljava/nio/ByteBuffer;II)Z
+
+    move-result p0
+
+    return p0
+.end method
+
+.method static isValidUtf8([B)Z
+    .locals 3
+
+    .line 148
     sget-object v0, Lcom/google/protobuf/Utf8;->processor:Lcom/google/protobuf/Utf8$Processor;
 
     array-length v1, p0
@@ -445,10 +600,10 @@
     return p0
 .end method
 
-.method public static isValidUtf8([BII)Z
+.method static isValidUtf8([BII)Z
     .locals 1
 
-    .line 159
+    .line 160
     sget-object v0, Lcom/google/protobuf/Utf8;->processor:Lcom/google/protobuf/Utf8$Processor;
 
     invoke-virtual {v0, p0, p1, p2}, Lcom/google/protobuf/Utf8$Processor;->isValidUtf8([BII)Z
@@ -458,10 +613,23 @@
     return p0
 .end method
 
-.method public static partialIsValidUtf8(I[BII)I
+.method static partialIsValidUtf8(ILjava/nio/ByteBuffer;II)I
     .locals 1
 
-    .line 176
+    .line 321
+    sget-object v0, Lcom/google/protobuf/Utf8;->processor:Lcom/google/protobuf/Utf8$Processor;
+
+    invoke-virtual {v0, p0, p1, p2, p3}, Lcom/google/protobuf/Utf8$Processor;->partialIsValidUtf8(ILjava/nio/ByteBuffer;II)I
+
+    move-result p0
+
+    return p0
+.end method
+
+.method static partialIsValidUtf8(I[BII)I
+    .locals 1
+
+    .line 177
     sget-object v0, Lcom/google/protobuf/Utf8;->processor:Lcom/google/protobuf/Utf8$Processor;
 
     invoke-virtual {v0, p0, p1, p2, p3}, Lcom/google/protobuf/Utf8$Processor;->partialIsValidUtf8(I[BII)I

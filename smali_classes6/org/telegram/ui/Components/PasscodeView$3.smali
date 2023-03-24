@@ -151,7 +151,7 @@
     .line 712
     invoke-virtual {p1, v1}, Lorg/telegram/ui/Components/MotionBackgroundDrawable;->switchToNextPosition(Z)V
 
-    const/4 p3, 0x1
+    move p3, v1
 
     goto :goto_0
 
@@ -163,14 +163,14 @@
     .line 716
     invoke-virtual {p1, v1}, Lorg/telegram/ui/Components/MotionBackgroundDrawable;->switchToPrevPosition(Z)V
 
-    const/4 p3, 0x0
+    move p3, v0
 
     goto :goto_0
 
     :cond_1
-    const/4 p3, 0x0
+    move p3, v0
 
-    const/4 v1, 0x0
+    move v1, p3
 
     :goto_0
     if-eqz v1, :cond_7

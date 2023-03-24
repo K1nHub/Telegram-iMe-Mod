@@ -17,7 +17,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 36144
+    .line 36154
     invoke-direct {p0}, Lorg/telegram/tgnet/TLRPC$messages_FoundStickerSets;-><init>()V
 
     return-void
@@ -28,7 +28,7 @@
 .method public serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
     .locals 1
 
-    .line 36149
+    .line 36159
     sget v0, Lorg/telegram/tgnet/TLRPC$TL_messages_foundStickerSetsNotModified;->constructor:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V

@@ -841,13 +841,13 @@
     goto :goto_0
 
     :cond_0
-    const/4 p3, 0x0
+    move p3, v1
 
     goto :goto_1
 
     :cond_1
     :goto_0
-    const/4 p3, 0x1
+    move p3, v2
 
     :goto_1
     const/4 v3, 0x0

@@ -536,7 +536,7 @@
 .end method
 
 .method protected onDraw(Landroid/graphics/Canvas;)V
-    .locals 22
+    .locals 21
 
     move-object/from16 v0, p0
 
@@ -575,7 +575,7 @@
 
     int-to-float v10, v10
 
-    mul-float v10, v10, v9
+    mul-float/2addr v10, v9
 
     add-float/2addr v2, v10
 
@@ -616,7 +616,7 @@
 
     int-to-float v10, v10
 
-    mul-float v10, v10, v9
+    mul-float/2addr v10, v9
 
     sub-float/2addr v2, v10
 
@@ -650,7 +650,7 @@
 
     int-to-float v10, v10
 
-    mul-float v10, v10, v9
+    mul-float/2addr v10, v9
 
     add-float/2addr v2, v10
 
@@ -693,7 +693,7 @@
 
     int-to-float v11, v11
 
-    mul-float v11, v11, v9
+    mul-float/2addr v11, v9
 
     sub-float/2addr v2, v11
 
@@ -843,52 +843,52 @@
 
     int-to-float v13, v10
 
-    mul-float v11, v11, v13
+    mul-float/2addr v11, v13
 
     add-float/2addr v11, v4
 
     float-to-int v7, v11
 
-    mul-float v13, v13, v8
+    mul-float/2addr v13, v8
 
     .line 299
     iget v8, v0, Lorg/telegram/ui/Components/voip/AcceptDeclineView;->arrowProgress:F
 
-    const/high16 v17, 0x3f000000    # 0.5f
+    cmpl-float v17, v8, v13
 
-    cmpl-float v18, v8, v13
+    const/high16 v18, 0x3f000000    # 0.5f
 
-    if-lez v18, :cond_7
+    if-lez v17, :cond_7
 
-    add-float v18, v13, v2
+    add-float v17, v13, v2
 
-    cmpg-float v18, v8, v18
+    cmpg-float v17, v8, v17
 
-    if-gez v18, :cond_7
+    if-gez v17, :cond_7
 
     sub-float/2addr v8, v13
 
     div-float/2addr v8, v2
 
-    move/from16 v18, v3
+    move/from16 v17, v3
 
     float-to-double v2, v8
 
     const-wide/high16 v19, 0x3fe0000000000000L    # 0.5
 
-    cmpl-double v21, v2, v19
+    cmpl-double v2, v2, v19
 
-    if-lez v21, :cond_6
+    if-lez v2, :cond_6
 
     sub-float v8, v14, v8
 
     :cond_6
-    add-float v17, v8, v17
+    add-float v18, v8, v18
 
     goto :goto_3
 
     :cond_7
-    move/from16 v18, v3
+    move/from16 v17, v3
 
     .line 304
     :goto_3
@@ -936,7 +936,7 @@
 
     const/high16 v3, 0x437f0000    # 255.0f
 
-    mul-float v3, v3, v17
+    mul-float v3, v3, v18
 
     float-to-int v3, v3
 
@@ -1104,7 +1104,7 @@
 
     add-int/lit8 v10, v10, 0x1
 
-    move/from16 v3, v18
+    move/from16 v3, v17
 
     const v2, 0x3f19999a    # 0.6f
 
@@ -1134,7 +1134,7 @@
 
     const v4, 0x3ba3d70a    # 0.005f
 
-    mul-float v3, v3, v4
+    mul-float/2addr v3, v4
 
     add-float/2addr v2, v3
 
@@ -1908,7 +1908,7 @@
 
     invoke-interface {p1, v2}, Landroid/view/ViewParent;->requestDisallowInterceptTouchEvent(Z)V
 
-    const/4 v0, 0x0
+    move v0, v4
 
     goto :goto_0
 
@@ -2111,7 +2111,7 @@
 
     iget v0, p0, Lorg/telegram/ui/Components/voip/AcceptDeclineView;->maxOffset:F
 
-    mul-float v0, v0, v5
+    mul-float/2addr v0, v5
 
     cmpl-float p1, p1, v0
 
@@ -2183,7 +2183,7 @@
 
     iget v0, p0, Lorg/telegram/ui/Components/voip/AcceptDeclineView;->maxOffset:F
 
-    mul-float v0, v0, v5
+    mul-float/2addr v0, v5
 
     cmpl-float p1, p1, v0
 

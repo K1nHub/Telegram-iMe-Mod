@@ -44,6 +44,12 @@
 
     const-wide/16 v6, 0x0
 
+    move v12, v2
+
+    move/from16 v17, v12
+
+    move/from16 v18, v17
+
     move-object v9, v3
 
     move-object v15, v9
@@ -53,12 +59,6 @@
     move-wide v10, v4
 
     move-wide v13, v6
-
-    const/4 v12, 0x0
-
-    const/16 v17, 0x0
-
-    const/16 v18, 0x0
 
     :goto_0
     invoke-virtual/range {p1 .. p1}, Landroid/os/Parcel;->dataPosition()I

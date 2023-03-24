@@ -166,11 +166,11 @@
 
     iget v5, v2, Lorg/telegram/ui/Components/TimerParticles$Particle;->velocity:F
 
-    mul-float v4, v4, v5
+    mul-float/2addr v4, v5
 
     long-to-float v6, p1
 
-    mul-float v4, v4, v6
+    mul-float/2addr v4, v6
 
     const/high16 v7, 0x43fa0000    # 500.0f
 
@@ -185,9 +185,9 @@
 
     iget v4, v2, Lorg/telegram/ui/Components/TimerParticles$Particle;->vy:F
 
-    mul-float v4, v4, v5
+    mul-float/2addr v4, v5
 
-    mul-float v4, v4, v6
+    mul-float/2addr v4, v6
 
     div-float/2addr v4, v7
 
@@ -229,7 +229,7 @@
 
     const/4 v3, 0x0
 
-    const/4 v4, 0x0
+    move v4, v3
 
     :goto_0
     if-ge v4, v2, :cond_0
@@ -248,7 +248,7 @@
     .line 61
     iget v7, v5, Lorg/telegram/ui/Components/TimerParticles$Particle;->alpha:F
 
-    mul-float v7, v7, v6
+    mul-float/2addr v7, v6
 
     mul-float v7, v7, p5
 
@@ -278,7 +278,7 @@
 
     const-wide v4, 0x3f91df46a2529d39L    # 0.017453292519943295
 
-    mul-double v1, v1, v4
+    mul-double/2addr v1, v4
 
     .line 65
     invoke-static {v1, v2}, Ljava/lang/Math;->sin(D)D
@@ -305,7 +305,7 @@
 
     float-to-double v11, v8
 
-    mul-double v9, v9, v11
+    mul-double/2addr v9, v11
 
     .line 68
     invoke-virtual/range {p3 .. p3}, Landroid/graphics/RectF;->centerX()F
@@ -318,7 +318,7 @@
 
     double-to-float v8, v9
 
-    mul-double v11, v11, v6
+    mul-double/2addr v11, v6
 
     .line 69
     invoke-virtual/range {p3 .. p3}, Landroid/graphics/RectF;->centerY()F
@@ -331,7 +331,7 @@
 
     double-to-float v9, v11
 
-    const/4 v10, 0x0
+    move v10, v3
 
     :goto_1
     const/4 v11, 0x1
@@ -391,13 +391,13 @@
 
     int-to-double v12, v12
 
-    mul-double v12, v12, v4
+    mul-double/2addr v12, v4
 
     const-wide/16 v14, 0x0
 
-    cmpg-double v16, v12, v14
+    cmpg-double v14, v12, v14
 
-    if-gez v16, :cond_2
+    if-gez v14, :cond_2
 
     const-wide v14, 0x401921fb54442d18L    # 6.283185307179586
 
@@ -409,7 +409,7 @@
 
     move-result-wide v14
 
-    mul-double v14, v14, v6
+    mul-double/2addr v14, v6
 
     invoke-static {v12, v13}, Ljava/lang/Math;->sin(D)D
 
@@ -428,13 +428,13 @@
 
     move-result-wide v14
 
-    mul-double v14, v14, v6
+    mul-double/2addr v14, v6
 
     invoke-static {v12, v13}, Ljava/lang/Math;->cos(D)D
 
     move-result-wide v12
 
-    mul-double v12, v12, v1
+    mul-double/2addr v12, v1
 
     add-double/2addr v14, v12
 
@@ -478,7 +478,7 @@
 
     const/high16 v14, 0x40800000    # 4.0f
 
-    mul-float v13, v13, v14
+    mul-float/2addr v13, v14
 
     add-float/2addr v13, v12
 

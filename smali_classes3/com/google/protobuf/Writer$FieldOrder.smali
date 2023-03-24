@@ -34,7 +34,7 @@
 .method static constructor <clinit>()V
     .locals 5
 
-    .line 44
+    .line 45
     new-instance v0, Lcom/google/protobuf/Writer$FieldOrder;
 
     const-string v1, "ASCENDING"
@@ -45,7 +45,7 @@
 
     sput-object v0, Lcom/google/protobuf/Writer$FieldOrder;->ASCENDING:Lcom/google/protobuf/Writer$FieldOrder;
 
-    .line 47
+    .line 48
     new-instance v1, Lcom/google/protobuf/Writer$FieldOrder;
 
     const-string v3, "DESCENDING"
@@ -64,7 +64,7 @@
 
     aput-object v1, v3, v4
 
-    .line 42
+    .line 43
     sput-object v3, Lcom/google/protobuf/Writer$FieldOrder;->$VALUES:[Lcom/google/protobuf/Writer$FieldOrder;
 
     return-void
@@ -78,7 +78,7 @@
         }
     .end annotation
 
-    .line 42
+    .line 43
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -87,7 +87,7 @@
 .method public static valueOf(Ljava/lang/String;)Lcom/google/protobuf/Writer$FieldOrder;
     .locals 1
 
-    .line 42
+    .line 43
     const-class v0, Lcom/google/protobuf/Writer$FieldOrder;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -102,7 +102,7 @@
 .method public static values()[Lcom/google/protobuf/Writer$FieldOrder;
     .locals 1
 
-    .line 42
+    .line 43
     sget-object v0, Lcom/google/protobuf/Writer$FieldOrder;->$VALUES:[Lcom/google/protobuf/Writer$FieldOrder;
 
     invoke-virtual {v0}, [Lcom/google/protobuf/Writer$FieldOrder;->clone()Ljava/lang/Object;

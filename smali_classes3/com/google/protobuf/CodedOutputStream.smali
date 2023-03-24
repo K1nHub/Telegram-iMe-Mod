@@ -283,7 +283,7 @@
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
-    .line 1070
+    .line 1068
     invoke-static {p0}, Lcom/google/protobuf/CodedOutputStream;->computeTagSize(I)I
 
     move-result p0
@@ -304,7 +304,7 @@
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
-    .line 1076
+    .line 1075
     invoke-interface {p0}, Lcom/google/protobuf/MessageLite;->getSerializedSize()I
 
     move-result p0
@@ -317,7 +317,7 @@
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
-    .line 1082
+    .line 1081
     check-cast p0, Lcom/google/protobuf/AbstractMessageLite;
 
     invoke-virtual {p0, p1}, Lcom/google/protobuf/AbstractMessageLite;->getSerializedSize(Lcom/google/protobuf/Schema;)I
@@ -402,7 +402,7 @@
 
     const/4 v1, 0x2
 
-    mul-int/lit8 v0, v0, 0x2
+    mul-int/2addr v0, v1
 
     .line 702
     invoke-static {v1, p0}, Lcom/google/protobuf/CodedOutputStream;->computeUInt32Size(II)I
@@ -480,7 +480,7 @@
 
     const/4 v1, 0x2
 
-    mul-int/lit8 v0, v0, 0x2
+    mul-int/2addr v0, v1
 
     .line 679
     invoke-static {v1, p0}, Lcom/google/protobuf/CodedOutputStream;->computeUInt32Size(II)I
@@ -592,7 +592,7 @@
 
     const/4 v1, 0x2
 
-    mul-int/lit8 v0, v0, 0x2
+    mul-int/2addr v0, v1
 
     .line 690
     invoke-static {v1, p0}, Lcom/google/protobuf/CodedOutputStream;->computeUInt32Size(II)I
@@ -611,19 +611,6 @@
     add-int/2addr v0, p0
 
     return v0
-.end method
-
-.method public static computeRawVarint32Size(I)I
-    .locals 0
-    .annotation runtime Ljava/lang/Deprecated;
-    .end annotation
-
-    .line 1114
-    invoke-static {p0}, Lcom/google/protobuf/CodedOutputStream;->computeUInt32SizeNoTag(I)I
-
-    move-result p0
-
-    return p0
 .end method
 
 .method public static computeSFixed32Size(II)I
@@ -898,9 +885,9 @@
 
     const-wide/16 v2, 0x0
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-nez v4, :cond_0
+    if-nez v0, :cond_0
 
     const/4 p0, 0x1
 
@@ -920,9 +907,9 @@
 
     and-long/2addr v0, p0
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-eqz v4, :cond_2
+    if-eqz v0, :cond_2
 
     const/4 v0, 0x6
 
@@ -955,9 +942,9 @@
 
     and-long/2addr p0, v4
 
-    cmp-long v1, p0, v2
+    cmp-long p0, p0, v2
 
-    if-eqz v1, :cond_4
+    if-eqz p0, :cond_4
 
     add-int/lit8 v0, v0, 0x1
 
@@ -1100,18 +1087,11 @@
 
     invoke-virtual {p0, p1, p2, v0}, Lcom/google/protobuf/ByteOutput;->writeLazy([BII)V
     :try_end_0
-    .catch Ljava/lang/IndexOutOfBoundsException; {:try_start_0 .. :try_end_0} :catch_1
-    .catch Lcom/google/protobuf/CodedOutputStream$OutOfSpaceException; {:try_start_0 .. :try_end_0} :catch_0
+    .catch Ljava/lang/IndexOutOfBoundsException; {:try_start_0 .. :try_end_0} :catch_0
 
     return-void
 
     :catch_0
-    move-exception p1
-
-    .line 1000
-    throw p1
-
-    :catch_1
     move-exception p1
 
     .line 998
@@ -1353,15 +1333,15 @@
 
     const/4 v0, 0x3
 
-    .line 1013
+    .line 1011
     invoke-virtual {p0, p1, v0}, Lcom/google/protobuf/CodedOutputStream;->writeTag(II)V
 
-    .line 1014
+    .line 1012
     invoke-virtual {p0, p2}, Lcom/google/protobuf/CodedOutputStream;->writeGroupNoTag(Lcom/google/protobuf/MessageLite;)V
 
     const/4 p2, 0x4
 
-    .line 1015
+    .line 1013
     invoke-virtual {p0, p1, p2}, Lcom/google/protobuf/CodedOutputStream;->writeTag(II)V
 
     return-void
@@ -1380,15 +1360,15 @@
 
     const/4 v0, 0x3
 
-    .line 1026
+    .line 1024
     invoke-virtual {p0, p1, v0}, Lcom/google/protobuf/CodedOutputStream;->writeTag(II)V
 
-    .line 1027
+    .line 1025
     invoke-virtual {p0, p2, p3}, Lcom/google/protobuf/CodedOutputStream;->writeGroupNoTag(Lcom/google/protobuf/MessageLite;Lcom/google/protobuf/Schema;)V
 
     const/4 p2, 0x4
 
-    .line 1028
+    .line 1026
     invoke-virtual {p0, p1, p2}, Lcom/google/protobuf/CodedOutputStream;->writeTag(II)V
 
     return-void
@@ -1405,7 +1385,7 @@
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
-    .line 1038
+    .line 1036
     invoke-interface {p1, p0}, Lcom/google/protobuf/MessageLite;->writeTo(Lcom/google/protobuf/CodedOutputStream;)V
 
     return-void
@@ -1422,7 +1402,7 @@
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
-    .line 1048
+    .line 1046
     iget-object v0, p0, Lcom/google/protobuf/CodedOutputStream;->wrapper:Lcom/google/protobuf/CodedOutputStreamWriter;
 
     invoke-interface {p2, p1, v0}, Lcom/google/protobuf/Schema;->writeTo(Ljava/lang/Object;Lcom/google/protobuf/Writer;)V

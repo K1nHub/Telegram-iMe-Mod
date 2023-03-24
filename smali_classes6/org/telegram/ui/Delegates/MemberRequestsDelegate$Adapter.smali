@@ -103,7 +103,7 @@
 
 # virtual methods
 .method public appendItems(Ljava/util/List;)V
-    .locals 8
+    .locals 7
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -115,7 +115,7 @@
 
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    move v1, v0
 
     .line 635
     :goto_0
@@ -134,7 +134,7 @@
 
     iget-wide v2, v2, Lorg/telegram/tgnet/TLRPC$TL_chatInviteImporter;->user_id:J
 
-    const/4 v4, 0x0
+    move v4, v0
 
     .line 637
     :goto_1
@@ -165,9 +165,9 @@
 
     iget-wide v5, v5, Lorg/telegram/tgnet/TLRPC$TL_chatInviteImporter;->user_id:J
 
-    cmp-long v7, v5, v2
+    cmp-long v5, v5, v2
 
-    if-nez v7, :cond_0
+    if-nez v5, :cond_0
 
     .line 640
     invoke-interface {p1, v1}, Ljava/util/List;->remove(I)Ljava/lang/Object;
@@ -586,7 +586,7 @@
 .end method
 
 .method public removeItem(Lorg/telegram/tgnet/TLRPC$TL_chatInviteImporter;)V
-    .locals 6
+    .locals 5
 
     const/4 v0, 0x0
 
@@ -621,9 +621,9 @@
 
     iget-wide v3, p1, Lorg/telegram/tgnet/TLRPC$TL_chatInviteImporter;->user_id:J
 
-    cmp-long v5, v1, v3
+    cmp-long v1, v1, v3
 
-    if-nez v5, :cond_0
+    if-nez v1, :cond_0
 
     goto :goto_1
 
@@ -679,7 +679,7 @@
 .end method
 
 .method public setItems(Ljava/util/List;)V
-    .locals 7
+    .locals 6
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -727,9 +727,9 @@
 
     iget-wide v4, v4, Lorg/telegram/tgnet/TLRPC$TL_chatInviteImporter;->user_id:J
 
-    cmp-long v6, v4, v1
+    cmp-long v4, v4, v1
 
-    if-nez v6, :cond_0
+    if-nez v4, :cond_0
 
     .line 623
     invoke-interface {p1, v0}, Ljava/util/List;->remove(I)Ljava/lang/Object;

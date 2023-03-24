@@ -56,7 +56,7 @@
 
 .field public static final enum CHANNELS:Lorg/fork/enums/SortingFilter;
 
-.field public static final CURRENT_DEPLOY_VERSION:I = 0x7
+.field public static final CURRENT_DEPLOY_VERSION:I = 0x8
 
 .field public static final Companion:Lorg/fork/enums/SortingFilter$Companion;
 

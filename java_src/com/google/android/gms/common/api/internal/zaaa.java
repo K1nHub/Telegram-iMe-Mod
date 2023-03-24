@@ -318,7 +318,7 @@ public final class zaaa implements zaca {
             int r0 = r3.zan     // Catch: java.lang.Throwable -> L28
             if (r0 != r2) goto L22
         L21:
-            r1 = 1
+            r1 = r2
         L22:
             java.util.concurrent.locks.Lock r0 = r3.zam
             r0.unlock()

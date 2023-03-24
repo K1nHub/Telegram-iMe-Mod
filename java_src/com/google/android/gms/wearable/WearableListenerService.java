@@ -98,8 +98,7 @@ public abstract class WearableListenerService extends Service implements DataApi
             return this.zzc;
         }
         if (Log.isLoggable("WearableLS", 3)) {
-            String obj = intent.toString();
-            Log.d("WearableLS", "onBind: Provided bind intent (" + obj + ") is not allowed");
+            Log.d("WearableLS", "onBind: Provided bind intent (" + intent.toString() + ") is not allowed");
         }
         return null;
     }

@@ -149,7 +149,7 @@
     goto :goto_1
 
     :cond_1
-    const/4 v2, 0x0
+    move v2, v3
 
     .line 177
     :goto_1
@@ -217,7 +217,7 @@
 
     invoke-virtual {v2, v3}, Ljava/nio/ByteBuffer;->position(I)Ljava/nio/Buffer;
 
-    const/4 v2, 0x0
+    move v2, v3
 
     .line 185
     :goto_2
@@ -256,14 +256,14 @@
 
     if-le v4, v6, :cond_3
 
-    const/16 v4, 0x7fff
+    move v4, v6
 
     :cond_3
     const/16 v6, -0x8000
 
     if-ge v4, v6, :cond_4
 
-    const/16 v4, -0x8000
+    move v4, v6
 
     .line 193
     :cond_4

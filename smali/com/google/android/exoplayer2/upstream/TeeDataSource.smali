@@ -152,7 +152,7 @@
 .end method
 
 .method public open(Lcom/google/android/exoplayer2/upstream/DataSpec;)J
-    .locals 9
+    .locals 8
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -182,9 +182,9 @@
 
     const-wide/16 v6, -0x1
 
-    cmp-long v8, v4, v6
+    cmp-long v4, v4, v6
 
-    if-nez v8, :cond_1
+    if-nez v4, :cond_1
 
     cmp-long v4, v0, v6
 
@@ -213,7 +213,7 @@
 .end method
 
 .method public read([BII)I
-    .locals 5
+    .locals 4
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -225,9 +225,9 @@
 
     const-wide/16 v2, 0x0
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-nez v4, :cond_0
+    if-nez v0, :cond_0
 
     const/4 p1, -0x1
 
@@ -253,9 +253,9 @@
 
     const-wide/16 v0, -0x1
 
-    cmp-long v2, p1, v0
+    cmp-long v0, p1, v0
 
-    if-eqz v2, :cond_1
+    if-eqz v0, :cond_1
 
     int-to-long v0, p3
 

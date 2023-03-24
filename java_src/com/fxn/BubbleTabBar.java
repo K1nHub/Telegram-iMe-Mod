@@ -261,10 +261,10 @@ public final class BubbleTabBar extends LinearLayout {
             int r4 = r6.getId()
             int r1 = r1.getId()
             if (r4 != r1) goto L1f
-            r1 = 1
+            r1 = r2
             goto L20
         L1f:
-            r1 = 0
+            r1 = r3
         L20:
             if (r1 != 0) goto L30
             com.fxn.OnBubbleClickListener r1 = r5.onBubbleClickListener
@@ -273,7 +273,7 @@ public final class BubbleTabBar extends LinearLayout {
             boolean r1 = r1.onBubbleClick(r4)
             goto L31
         L30:
-            r1 = 0
+            r1 = r3
         L31:
             if (r1 == 0) goto L5f
             com.fxn.Bubble r1 = r5.oldBubble

@@ -376,12 +376,12 @@
 
     if-nez v2, :cond_0
 
-    const/4 v2, 0x1
+    move v2, v3
 
     goto :goto_0
 
     :cond_0
-    const/4 v2, 0x0
+    move v2, v4
 
     .line 367
     :goto_0
@@ -725,7 +725,7 @@
 
     invoke-virtual {v1, v15}, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;->setGravity(I)V
 
-    const/4 v1, 0x0
+    move v1, v4
 
     .line 407
     :goto_1
@@ -937,18 +937,18 @@
 
     const/4 v0, 0x0
 
+    cmpg-float v0, p6, v0
+
     const/4 v1, 0x0
 
-    cmpg-float v1, p6, v1
+    if-gtz v0, :cond_0
 
-    if-gtz v1, :cond_0
-
-    return v0
+    return v1
 
     :cond_0
-    const/high16 v1, 0x437f0000    # 255.0f
+    const/high16 v0, 0x437f0000    # 255.0f
 
-    mul-float p6, p6, v1
+    mul-float/2addr p6, v0
 
     float-to-int p6, p6
 
@@ -956,7 +956,7 @@
     invoke-virtual {p2, p6}, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;->setAlpha(I)V
 
     .line 908
-    invoke-virtual {p2, v0, v0, v0, v0}, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;->setBounds(IIII)V
+    invoke-virtual {p2, v1, v1, v1, v1}, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;->setBounds(IIII)V
 
     .line 909
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
@@ -1037,7 +1037,7 @@
 
     const-wide v2, 0x400921fb54442d18L    # Math.PI
 
-    mul-double v0, v0, v2
+    mul-double/2addr v0, v2
 
     double-to-float p0, v0
 
@@ -1067,7 +1067,7 @@
     goto :goto_0
 
     :cond_0
-    const/4 v1, 0x0
+    move v1, v4
 
     :goto_0
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/AnimatedFloat;->set(F)F
@@ -1086,7 +1086,7 @@
     goto :goto_1
 
     :cond_1
-    const/4 v2, 0x0
+    move v2, v4
 
     :goto_1
     invoke-virtual {v1, v2}, Lorg/telegram/ui/Components/AnimatedFloat;->set(F)F
@@ -1271,9 +1271,9 @@
 
     aget v12, v8, v13
 
-    const/high16 v20, 0x40000000    # 2.0f
-
     cmpl-float v8, v0, v4
+
+    const/high16 v20, 0x40000000    # 2.0f
 
     if-lez v8, :cond_6
 
@@ -1294,7 +1294,7 @@
 
     int-to-float v11, v9
 
-    mul-float v11, v11, v0
+    mul-float/2addr v11, v0
 
     float-to-int v11, v11
 
@@ -1342,7 +1342,7 @@
     goto :goto_4
 
     :cond_7
-    const/4 v5, 0x0
+    move v5, v15
 
     goto :goto_5
 
@@ -1353,7 +1353,7 @@
     :goto_5
     move v8, v5
 
-    const/4 v5, 0x0
+    move v5, v15
 
     .line 784
     :goto_6
@@ -1500,7 +1500,7 @@
 
     const/high16 v12, 0x43b40000    # 360.0f
 
-    mul-float v11, v11, v12
+    mul-float/2addr v11, v12
 
     add-float/2addr v4, v11
 
@@ -1798,11 +1798,11 @@
 
     move/from16 v4, v18
 
-    const/high16 v6, 0x3f800000    # 1.0f
+    move v6, v5
 
     move/from16 v5, v19
 
-    const/high16 v10, 0x3f800000    # 1.0f
+    move v10, v6
 
     move/from16 v6, v21
 
@@ -1831,7 +1831,7 @@
 
     sub-float v5, v10, v11
 
-    mul-float v15, v15, v5
+    mul-float/2addr v15, v5
 
     move-object/from16 v0, p0
 
@@ -2051,7 +2051,7 @@
     :cond_19
     const/4 v2, 0x0
 
-    const/4 v15, 0x0
+    move v15, v2
 
     :goto_15
     if-nez v15, :cond_1a
@@ -2327,7 +2327,7 @@
 
     const v2, 0x3eb22d0e    # 0.348f
 
-    mul-float v1, v1, v2
+    mul-float/2addr v1, v2
 
     iget-object v2, v7, Lorg/telegram/ui/Components/CacheChart;->chartBounds:Landroid/graphics/RectF;
 
@@ -2337,7 +2337,7 @@
 
     const v3, 0x3f09ba5e    # 0.538f
 
-    mul-float v2, v2, v3
+    mul-float/2addr v2, v3
 
     invoke-virtual {v0, v1, v2}, Landroid/graphics/Path;->moveTo(FF)V
 
@@ -2352,7 +2352,7 @@
 
     const v2, 0x3ee4dd2f    # 0.447f
 
-    mul-float v1, v1, v2
+    mul-float/2addr v1, v2
 
     iget-object v2, v7, Lorg/telegram/ui/Components/CacheChart;->chartBounds:Landroid/graphics/RectF;
 
@@ -2362,7 +2362,7 @@
 
     const v3, 0x3f22d0e5    # 0.636f
 
-    mul-float v2, v2, v3
+    mul-float/2addr v2, v3
 
     invoke-virtual {v0, v1, v2}, Landroid/graphics/Path;->lineTo(FF)V
 
@@ -2377,7 +2377,7 @@
 
     const v2, 0x3f2d9168    # 0.678f
 
-    mul-float v1, v1, v2
+    mul-float/2addr v1, v2
 
     iget-object v2, v7, Lorg/telegram/ui/Components/CacheChart;->chartBounds:Landroid/graphics/RectF;
 
@@ -2387,7 +2387,7 @@
 
     const v3, 0x3ecdd2f2    # 0.402f
 
-    mul-float v2, v2, v3
+    mul-float/2addr v2, v3
 
     invoke-virtual {v0, v1, v2}, Landroid/graphics/Path;->lineTo(FF)V
 
@@ -2409,7 +2409,7 @@
 
     const v2, 0x3e95f6fd    # 0.2929f
 
-    mul-float v1, v1, v2
+    mul-float/2addr v1, v2
 
     iget-object v2, v7, Lorg/telegram/ui/Components/CacheChart;->chartBounds:Landroid/graphics/RectF;
 
@@ -2419,7 +2419,7 @@
 
     const v3, 0x3edfb15b    # 0.4369f
 
-    mul-float v2, v2, v3
+    mul-float/2addr v2, v3
 
     invoke-virtual {v0, v1, v2}, Landroid/graphics/Path;->moveTo(FF)V
 
@@ -2434,7 +2434,7 @@
 
     const v2, 0x3ec3126f    # 0.381f
 
-    mul-float v1, v1, v2
+    mul-float/2addr v1, v2
 
     iget-object v4, v7, Lorg/telegram/ui/Components/CacheChart;->chartBounds:Landroid/graphics/RectF;
 
@@ -2444,7 +2444,7 @@
 
     const v5, 0x3eb33333    # 0.35f
 
-    mul-float v4, v4, v5
+    mul-float/2addr v4, v5
 
     invoke-virtual {v0, v1, v4}, Landroid/graphics/Path;->lineTo(FF)V
 
@@ -2459,7 +2459,7 @@
 
     const v4, 0x3ef02de0    # 0.4691f
 
-    mul-float v1, v1, v4
+    mul-float/2addr v1, v4
 
     iget-object v4, v7, Lorg/telegram/ui/Components/CacheChart;->chartBounds:Landroid/graphics/RectF;
 
@@ -2467,7 +2467,7 @@
 
     move-result v4
 
-    mul-float v4, v4, v3
+    mul-float/2addr v4, v3
 
     invoke-virtual {v0, v1, v4}, Landroid/graphics/Path;->lineTo(FF)V
 
@@ -2480,7 +2480,7 @@
 
     move-result v1
 
-    mul-float v1, v1, v2
+    mul-float/2addr v1, v2
 
     iget-object v3, v7, Lorg/telegram/ui/Components/CacheChart;->chartBounds:Landroid/graphics/RectF;
 
@@ -2488,7 +2488,7 @@
 
     move-result v3
 
-    mul-float v3, v3, v5
+    mul-float/2addr v3, v5
 
     invoke-virtual {v0, v1, v3}, Landroid/graphics/Path;->moveTo(FF)V
 
@@ -2501,7 +2501,7 @@
 
     move-result v1
 
-    mul-float v1, v1, v2
+    mul-float/2addr v1, v2
 
     iget-object v2, v7, Lorg/telegram/ui/Components/CacheChart;->chartBounds:Landroid/graphics/RectF;
 
@@ -2511,7 +2511,7 @@
 
     const v3, 0x3f27a0f9    # 0.6548f
 
-    mul-float v2, v2, v3
+    mul-float/2addr v2, v3
 
     invoke-virtual {v0, v1, v2}, Landroid/graphics/Path;->lineTo(FF)V
 
@@ -2526,7 +2526,7 @@
 
     const v2, 0x3f057a78    # 0.5214f
 
-    mul-float v1, v1, v2
+    mul-float/2addr v1, v2
 
     iget-object v2, v7, Lorg/telegram/ui/Components/CacheChart;->chartBounds:Landroid/graphics/RectF;
 
@@ -2536,7 +2536,7 @@
 
     const v3, 0x3f150481    # 0.5821f
 
-    mul-float v2, v2, v3
+    mul-float/2addr v2, v3
 
     invoke-virtual {v0, v1, v2}, Landroid/graphics/Path;->moveTo(FF)V
 
@@ -2551,7 +2551,7 @@
 
     const v2, 0x3f1c0831    # 0.6095f
 
-    mul-float v1, v1, v2
+    mul-float/2addr v1, v2
 
     iget-object v4, v7, Lorg/telegram/ui/Components/CacheChart;->chartBounds:Landroid/graphics/RectF;
 
@@ -2561,7 +2561,7 @@
 
     const v5, 0x3f2b4396    # 0.669f
 
-    mul-float v4, v4, v5
+    mul-float/2addr v4, v5
 
     invoke-virtual {v0, v1, v4}, Landroid/graphics/Path;->lineTo(FF)V
 
@@ -2576,7 +2576,7 @@
 
     const v4, 0x3f3295ea    # 0.6976f
 
-    mul-float v1, v1, v4
+    mul-float/2addr v1, v4
 
     iget-object v4, v7, Lorg/telegram/ui/Components/CacheChart;->chartBounds:Landroid/graphics/RectF;
 
@@ -2584,7 +2584,7 @@
 
     move-result v4
 
-    mul-float v4, v4, v3
+    mul-float/2addr v4, v3
 
     invoke-virtual {v0, v1, v4}, Landroid/graphics/Path;->lineTo(FF)V
 
@@ -2597,7 +2597,7 @@
 
     move-result v1
 
-    mul-float v1, v1, v2
+    mul-float/2addr v1, v2
 
     iget-object v3, v7, Lorg/telegram/ui/Components/CacheChart;->chartBounds:Landroid/graphics/RectF;
 
@@ -2605,7 +2605,7 @@
 
     move-result v3
 
-    mul-float v3, v3, v5
+    mul-float/2addr v3, v5
 
     invoke-virtual {v0, v1, v3}, Landroid/graphics/Path;->moveTo(FF)V
 
@@ -2618,7 +2618,7 @@
 
     move-result v1
 
-    mul-float v1, v1, v2
+    mul-float/2addr v1, v2
 
     iget-object v2, v7, Lorg/telegram/ui/Components/CacheChart;->chartBounds:Landroid/graphics/RectF;
 
@@ -2628,7 +2628,7 @@
 
     const v3, 0x3eba8588    # 0.3643f
 
-    mul-float v2, v2, v3
+    mul-float/2addr v2, v3
 
     invoke-virtual {v0, v1, v2}, Landroid/graphics/Path;->lineTo(FF)V
 
@@ -2741,7 +2741,7 @@
 
     const-wide v3, 0x4066800000000000L    # 180.0
 
-    mul-double v0, v0, v3
+    mul-double/2addr v0, v3
 
     double-to-float v0, v0
 
@@ -2767,11 +2767,11 @@
 
     div-float/2addr v1, v3
 
+    cmpl-float v1, v2, v1
+
     const/4 v4, 0x0
 
     const/4 v5, -0x1
-
-    cmpl-float v1, v2, v1
 
     if-lez v1, :cond_2
 
@@ -2797,7 +2797,7 @@
 
     if-gez v1, :cond_2
 
-    const/4 v1, 0x0
+    move v1, v4
 
     .line 465
     :goto_0
@@ -2844,7 +2844,7 @@
     goto :goto_0
 
     :cond_2
-    const/4 v1, -0x1
+    move v1, v5
 
     .line 474
     :goto_1
@@ -2863,7 +2863,7 @@
 
     if-eq v1, v5, :cond_3
 
-    const/4 v4, 0x1
+    move v4, v2
 
     .line 477
     :cond_3
@@ -2902,7 +2902,7 @@
 
     if-eq v1, v5, :cond_6
 
-    const/4 v4, 0x1
+    move v4, v2
 
     .line 484
     :cond_6
@@ -2928,12 +2928,12 @@
     .line 492
     invoke-virtual {p0, v1}, Lorg/telegram/ui/Components/CacheChart;->onSectionClick(I)V
 
-    const/4 v0, 0x1
+    move v0, v2
 
     goto :goto_2
 
     :cond_8
-    const/4 v0, 0x0
+    move v0, v4
 
     .line 495
     :goto_2
@@ -3432,7 +3432,7 @@
 
     move-wide v14, v5
 
-    const/4 v13, 0x0
+    move v13, v9
 
     .line 588
     :goto_0
@@ -3539,7 +3539,7 @@
     goto :goto_2
 
     :cond_7
-    const/4 v2, 0x0
+    move v2, v9
 
     .line 604
     :goto_2
@@ -3566,7 +3566,7 @@
     goto :goto_3
 
     :cond_8
-    const/4 v7, 0x0
+    move v7, v8
 
     :goto_3
     invoke-virtual {v2, v7, v5}, Lorg/telegram/ui/Components/AnimatedFloat;->set(FZ)F
@@ -3650,11 +3650,11 @@
     return-void
 
     :cond_c
-    const/4 v3, 0x0
+    move v5, v8
 
-    const/4 v4, 0x0
+    move v3, v9
 
-    const/4 v5, 0x0
+    move v4, v3
 
     .line 627
     :goto_5
@@ -3692,7 +3692,7 @@
 
     :cond_e
     :goto_6
-    const/4 v6, 0x0
+    move v6, v8
 
     :goto_7
     cmpl-float v10, v6, v8
@@ -3762,7 +3762,7 @@
     iput-object v3, v0, Lorg/telegram/ui/Components/CacheChart;->tempFloat:[F
 
     :cond_14
-    const/4 v3, 0x0
+    move v3, v9
 
     .line 642
     :goto_8
@@ -3800,7 +3800,7 @@
 
     :cond_16
     :goto_9
-    const/4 v10, 0x0
+    move v10, v8
 
     :goto_a
     aput v10, v6, v3
@@ -3827,7 +3827,7 @@
 
     invoke-static {v2, v3}, Ljava/util/Arrays;->sort([Ljava/lang/Object;Ljava/util/Comparator;)V
 
-    const/4 v3, 0x0
+    move v3, v9
 
     .line 648
     :goto_b
@@ -3876,22 +3876,22 @@
 
     if-ge v12, v6, :cond_1a
 
-    const/4 v12, 0x0
+    move v12, v9
 
     :cond_1a
     int-to-float v6, v12
 
     const/high16 v10, 0x40000000    # 2.0f
 
-    mul-float v6, v6, v10
+    mul-float/2addr v6, v10
 
     sub-float/2addr v3, v6
 
-    const/4 v6, 0x0
+    move v11, v8
 
-    const/4 v11, 0x0
+    move v6, v9
 
-    const/4 v12, 0x0
+    move v12, v6
 
     .line 661
     :goto_d
@@ -3981,9 +3981,9 @@
 
     const-wide v22, 0x3fa999999999999aL    # 0.05
 
-    cmpl-double v17, v14, v22
+    cmpl-double v14, v14, v22
 
-    if-lez v17, :cond_1d
+    if-lez v14, :cond_1d
 
     const/high16 v14, 0x3f800000    # 1.0f
 
@@ -4112,7 +4112,7 @@
 
     if-lez v8, :cond_22
 
-    const v7, 0x3ca3d70a    # 0.02f
+    move v7, v2
 
     const/high16 v10, 0x3f800000    # 1.0f
 
@@ -4121,7 +4121,7 @@
     :cond_22
     int-to-float v8, v4
 
-    mul-float v8, v8, v2
+    mul-float/2addr v8, v2
 
     sub-float/2addr v8, v5
 
@@ -4129,7 +4129,7 @@
 
     sub-float v8, v10, v8
 
-    mul-float v7, v7, v8
+    mul-float/2addr v7, v8
 
     :goto_13
     mul-float v8, v11, v3
@@ -4138,7 +4138,7 @@
 
     const/high16 v15, 0x40000000    # 2.0f
 
-    mul-float v14, v14, v15
+    mul-float/2addr v14, v15
 
     add-float/2addr v8, v14
 
@@ -4300,6 +4300,8 @@
 
     move-object/from16 v17, v9
 
+    move/from16 v10, v16
+
     move-wide/from16 v14, v20
 
     const v7, 0x3ca3d70a    # 0.02f
@@ -4307,8 +4309,6 @@
     const/4 v8, 0x0
 
     const/4 v9, 0x0
-
-    const/high16 v10, 0x40000000    # 2.0f
 
     goto/16 :goto_d
 
@@ -4356,9 +4356,9 @@
 
     const-wide/32 v6, 0x40000000
 
-    cmp-long v8, v20, v6
+    cmp-long v6, v20, v6
 
-    if-gez v8, :cond_28
+    if-gez v6, :cond_28
 
     const-string v6, "\\."
 
@@ -4449,7 +4449,7 @@
 
     :cond_2c
     :goto_16
-    const/4 v2, 0x0
+    move v2, v9
 
     .line 555
     iput-boolean v2, v0, Lorg/telegram/ui/Components/CacheChart;->loading:Z
@@ -4542,7 +4542,7 @@
 
     invoke-virtual {v2, v3, v1}, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;->setText(Ljava/lang/CharSequence;Z)V
 
-    const/4 v9, 0x0
+    move v9, v6
 
     .line 568
     :goto_19
@@ -4600,7 +4600,7 @@
     :cond_0
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    move v1, v0
 
     .line 521
     :goto_0
@@ -4636,7 +4636,7 @@
     goto :goto_1
 
     :cond_2
-    const/4 v3, 0x0
+    move v3, v0
 
     :goto_1
     iput-boolean v3, v2, Lorg/telegram/ui/Components/CacheChart$Sector;->selected:Z

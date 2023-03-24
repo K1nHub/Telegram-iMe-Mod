@@ -50,7 +50,7 @@ public final class C1461xd1623ac9 extends Lambda implements Function1<Result<? e
             org.telegram.messenger.MessagesController r6 = com.smedialink.gateway.TelegramControllersGateway.DefaultImpls.getMessagesController$default(r6, r7, r8, r2)
             org.telegram.tgnet.TLRPC$User r0 = r6.getUser(r0)
             if (r0 == 0) goto L2c
-            long r6 = r0.f1639id
+            long r6 = r0.f1640id
             goto L2d
         L2c:
             r6 = r4
@@ -85,7 +85,7 @@ public final class C1461xd1623ac9 extends Lambda implements Function1<Result<? e
             com.smedialink.storage.data.network.model.error.ErrorModel r10 = new com.smedialink.storage.data.network.model.error.ErrorModel
             com.smedialink.manager.crypto.recipient.CryptoRecipientManager r0 = r9.this$0
             com.smedialink.storage.domain.utils.system.ResourceManager r0 = com.smedialink.manager.crypto.recipient.CryptoRecipientManager.access$getResourceManager$p(r0)
-            int r3 = org.telegram.messenger.C3286R.string.wallet_recipient_validation_chat_with_user_first_error
+            int r3 = org.telegram.messenger.C3301R.string.wallet_recipient_validation_chat_with_user_first_error
             java.lang.String r4 = r0.getString(r3)
             com.smedialink.storage.data.network.handlers.impl.ApiErrorHandler$ErrorStatus r5 = com.smedialink.storage.data.network.handlers.impl.ApiErrorHandler.ErrorStatus.BAD_RESPONSE
             r6 = 0

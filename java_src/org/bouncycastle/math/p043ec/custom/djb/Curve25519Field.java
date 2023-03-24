@@ -9,19 +9,19 @@ import org.bouncycastle.math.raw.Nat256;
 public class Curve25519Field {
 
     /* renamed from: P */
-    static final int[] f1316P = {-19, -1, -1, -1, -1, -1, -1, Integer.MAX_VALUE};
+    static final int[] f1317P = {-19, -1, -1, -1, -1, -1, -1, Integer.MAX_VALUE};
     private static final int[] PExt = {361, 0, 0, 0, 0, 0, 0, 0, -19, -1, -1, -1, -1, -1, -1, IdFabric$RequestCode.file_saving_directory};
 
     public static void add(int[] iArr, int[] iArr2, int[] iArr3) {
         Nat256.add(iArr, iArr2, iArr3);
-        if (Nat256.gte(iArr3, f1316P)) {
+        if (Nat256.gte(iArr3, f1317P)) {
             subPFrom(iArr3);
         }
     }
 
     public static void addOne(int[] iArr, int[] iArr2) {
         Nat.inc(8, iArr, iArr2);
-        if (Nat256.gte(iArr2, f1316P)) {
+        if (Nat256.gte(iArr2, f1317P)) {
             subPFrom(iArr2);
         }
     }
@@ -41,7 +41,7 @@ public class Curve25519Field {
     public static int[] fromBigInteger(BigInteger bigInteger) {
         int[] fromBigInteger = Nat256.fromBigInteger(bigInteger);
         while (true) {
-            int[] iArr = f1316P;
+            int[] iArr = f1317P;
             if (!Nat256.gte(fromBigInteger, iArr)) {
                 return fromBigInteger;
             }
@@ -66,7 +66,7 @@ public class Curve25519Field {
         if (Nat256.isZero(iArr)) {
             Nat256.zero(iArr2);
         } else {
-            Nat256.sub(f1316P, iArr, iArr2);
+            Nat256.sub(f1317P, iArr, iArr2);
         }
     }
 
@@ -75,7 +75,7 @@ public class Curve25519Field {
         Nat.shiftUpBit(8, iArr, 8, i, iArr2, 0);
         int i2 = iArr2[7];
         iArr2[7] = (i2 & Integer.MAX_VALUE) + Nat.addWordTo(7, ((Nat256.mulByWordAddTo(19, iArr, iArr2) << 1) + ((i2 >>> 31) - (i >>> 31))) * 19, iArr2);
-        if (Nat256.gte(iArr2, f1316P)) {
+        if (Nat256.gte(iArr2, f1317P)) {
             subPFrom(iArr2);
         }
     }
@@ -83,7 +83,7 @@ public class Curve25519Field {
     public static void reduce27(int i, int[] iArr) {
         int i2 = iArr[7];
         iArr[7] = (i2 & Integer.MAX_VALUE) + Nat.addWordTo(7, ((i << 1) | (i2 >>> 31)) * 19, iArr);
-        if (Nat256.gte(iArr, f1316P)) {
+        if (Nat256.gte(iArr, f1317P)) {
             subPFrom(iArr);
         }
     }
@@ -146,7 +146,7 @@ public class Curve25519Field {
 
     public static void twice(int[] iArr, int[] iArr2) {
         Nat.shiftUpBit(8, iArr, 0, iArr2);
-        if (Nat256.gte(iArr2, f1316P)) {
+        if (Nat256.gte(iArr2, f1317P)) {
             subPFrom(iArr2);
         }
     }

@@ -173,7 +173,7 @@
 
     mul-float v5, v7, v7
 
-    mul-float v2, v2, v2
+    mul-float/2addr v2, v2
 
     add-float/2addr v5, v2
 
@@ -194,13 +194,13 @@
 
     const-wide/high16 v13, 0x4000000000000000L    # 2.0
 
-    mul-double v9, v9, v13
+    mul-double/2addr v9, v13
 
     double-to-float v5, v9
 
     float-to-double v9, v7
 
-    mul-float v4, v4, v4
+    mul-float/2addr v4, v4
 
     add-float/2addr v4, v2
 
@@ -217,7 +217,7 @@
 
     div-double/2addr v2, v11
 
-    mul-double v2, v2, v13
+    mul-double/2addr v2, v13
 
     double-to-float v2, v2
 
@@ -276,11 +276,11 @@
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    move v2, v1
+
+    move v4, v2
 
     const/4 v3, 0x0
-
-    const/4 v4, 0x0
 
     .line 95
     :goto_1
@@ -323,53 +323,53 @@
 
     const/high16 v3, 0x3f800000    # 1.0f
 
-    const/high16 v5, -0x40800000    # -1.0f
+    cmpl-float v5, v2, v3
 
-    cmpl-float v6, v2, v3
+    const/high16 v6, -0x40800000    # -1.0f
 
-    if-lez v6, :cond_4
+    if-lez v5, :cond_4
 
-    const/high16 v6, 0x40000000    # 2.0f
+    const/high16 v5, 0x40000000    # 2.0f
 
     :goto_2
-    sub-float v2, v6, v2
+    sub-float v2, v5, v2
 
     goto :goto_3
 
     :cond_4
-    cmpg-float v6, v2, v5
+    cmpg-float v5, v2, v6
 
-    if-gez v6, :cond_5
+    if-gez v5, :cond_5
 
-    const/high16 v6, -0x40000000    # -2.0f
+    const/high16 v5, -0x40000000    # -2.0f
 
     goto :goto_2
 
     :cond_5
     :goto_3
-    const/high16 v6, 0x41800000    # 16.0f
+    const/high16 v5, 0x41800000    # 16.0f
 
     .line 106
-    invoke-static {v6}, Lorg/telegram/messenger/AndroidUtilities;->dpf2(F)F
+    invoke-static {v5}, Lorg/telegram/messenger/AndroidUtilities;->dpf2(F)F
 
     move-result v7
 
-    mul-float v7, v7, v4
+    mul-float/2addr v7, v4
 
     invoke-static {v7}, Ljava/lang/Math;->round(F)I
 
     move-result v7
 
     .line 107
-    invoke-static {v6}, Lorg/telegram/messenger/AndroidUtilities;->dpf2(F)F
+    invoke-static {v5}, Lorg/telegram/messenger/AndroidUtilities;->dpf2(F)F
 
-    move-result v6
+    move-result v5
 
-    mul-float v6, v6, v2
+    mul-float/2addr v5, v2
 
-    invoke-static {v6}, Ljava/lang/Math;->round(F)I
+    invoke-static {v5}, Ljava/lang/Math;->round(F)I
 
-    move-result v6
+    move-result v5
 
     neg-float v4, v4
 
@@ -382,7 +382,7 @@
 
     move-result v4
 
-    invoke-static {v5, v4}, Ljava/lang/Math;->max(FF)F
+    invoke-static {v6, v4}, Ljava/lang/Math;->max(FF)F
 
     move-result v4
 
@@ -395,7 +395,7 @@
 
     move-result v2
 
-    invoke-static {v5, v2}, Ljava/lang/Math;->max(FF)F
+    invoke-static {v6, v2}, Ljava/lang/Math;->max(FF)F
 
     move-result v2
 
@@ -418,7 +418,7 @@
 
     div-float/2addr v2, v3
 
-    mul-float v3, v4, v5
+    mul-float v3, v4, v6
 
     mul-float v8, v2, v1
 
@@ -426,9 +426,9 @@
 
     float-to-double v8, v3
 
-    mul-float v4, v4, v1
+    mul-float/2addr v4, v1
 
-    mul-float v2, v2, v5
+    mul-float/2addr v2, v6
 
     add-float/2addr v4, v2
 
@@ -439,9 +439,9 @@
 
     move-result-wide v2
 
-    const-wide v4, 0x3f91df46a2529d39L    # 0.017453292519943295
+    const-wide v8, 0x3f91df46a2529d39L    # 0.017453292519943295
 
-    div-double/2addr v2, v4
+    div-double/2addr v2, v8
 
     double-to-float v2, v2
 
@@ -460,7 +460,7 @@
     if-eqz v1, :cond_7
 
     .line 120
-    invoke-interface {v1, v7, v6, v2}, Lorg/telegram/ui/Components/WallpaperParallaxEffect$Callback;->onOffsetsChanged(IIF)V
+    invoke-interface {v1, v7, v5, v2}, Lorg/telegram/ui/Components/WallpaperParallaxEffect$Callback;->onOffsetsChanged(IIF)V
 
     :cond_7
     return-void

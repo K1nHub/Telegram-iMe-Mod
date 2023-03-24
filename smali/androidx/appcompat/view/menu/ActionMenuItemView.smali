@@ -101,7 +101,7 @@
 
     const/high16 p2, 0x42000000    # 32.0f
 
-    mul-float p1, p1, p2
+    mul-float/2addr p1, p2
 
     const/high16 p2, 0x3f000000    # 0.5f
 
@@ -751,7 +751,7 @@
 
     int-to-float v0, v1
 
-    mul-float v0, v0, v3
+    mul-float/2addr v0, v3
 
     float-to-int v1, v0
 
@@ -768,7 +768,7 @@
 
     int-to-float v0, v0
 
-    mul-float v0, v0, v3
+    mul-float/2addr v0, v3
 
     float-to-int v0, v0
 

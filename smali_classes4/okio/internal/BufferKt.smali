@@ -45,29 +45,29 @@
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-wide/16 v0, 0x1
+    const-wide/16 v0, 0x0
 
-    const-wide/16 v2, 0x0
+    cmp-long v0, p1, v0
 
-    cmp-long v4, p1, v2
+    const-wide/16 v1, 0x1
 
-    if-lez v4, :cond_0
+    if-lez v0, :cond_0
 
-    sub-long v2, p1, v0
+    sub-long v3, p1, v1
 
     .line 82
-    invoke-virtual {p0, v2, v3}, Lokio/Buffer;->getByte(J)B
+    invoke-virtual {p0, v3, v4}, Lokio/Buffer;->getByte(J)B
 
-    move-result v4
+    move-result v0
 
     const/16 v5, 0xd
 
     int-to-byte v5, v5
 
-    if-ne v4, v5, :cond_0
+    if-ne v0, v5, :cond_0
 
     .line 84
-    invoke-virtual {p0, v2, v3}, Lokio/Buffer;->readUtf8(J)Ljava/lang/String;
+    invoke-virtual {p0, v3, v4}, Lokio/Buffer;->readUtf8(J)Ljava/lang/String;
 
     move-result-object p1
 
@@ -85,7 +85,7 @@
     move-result-object p1
 
     .line 91
-    invoke-virtual {p0, v0, v1}, Lokio/Buffer;->skip(J)V
+    invoke-virtual {p0, v1, v2}, Lokio/Buffer;->skip(J)V
 
     :goto_0
     return-object p1
@@ -133,9 +133,9 @@
 
     move-object v9, v0
 
-    const/4 v8, 0x0
+    move v10, v3
 
-    const/4 v10, -0x1
+    move v8, v7
 
     :goto_0
     add-int/lit8 v11, v8, 0x1
@@ -191,7 +191,7 @@
     goto :goto_2
 
     :cond_3
-    const/4 v5, 0x0
+    move v5, v7
 
     :goto_2
     if-ne v8, v6, :cond_7
@@ -350,7 +350,7 @@
     goto :goto_7
 
     :cond_f
-    const/4 v1, -0x1
+    move v1, v3
 
     :goto_7
     return v1

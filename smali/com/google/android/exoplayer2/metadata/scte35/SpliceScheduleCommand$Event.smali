@@ -125,12 +125,12 @@
 
     if-ne v0, v2, :cond_0
 
-    const/4 v0, 0x1
+    move v0, v2
 
     goto :goto_0
 
     :cond_0
-    const/4 v0, 0x0
+    move v0, v1
 
     :goto_0
     iput-boolean v0, p0, Lcom/google/android/exoplayer2/metadata/scte35/SpliceScheduleCommand$Event;->spliceEventCancelIndicator:Z
@@ -142,12 +142,12 @@
 
     if-ne v0, v2, :cond_1
 
-    const/4 v0, 0x1
+    move v0, v2
 
     goto :goto_1
 
     :cond_1
-    const/4 v0, 0x0
+    move v0, v1
 
     :goto_1
     iput-boolean v0, p0, Lcom/google/android/exoplayer2/metadata/scte35/SpliceScheduleCommand$Event;->outOfNetworkIndicator:Z
@@ -159,12 +159,12 @@
 
     if-ne v0, v2, :cond_2
 
-    const/4 v0, 0x1
+    move v0, v2
 
     goto :goto_2
 
     :cond_2
-    const/4 v0, 0x0
+    move v0, v1
 
     :goto_2
     iput-boolean v0, p0, Lcom/google/android/exoplayer2/metadata/scte35/SpliceScheduleCommand$Event;->programSpliceFlag:Z
@@ -179,7 +179,7 @@
 
     invoke-direct {v3, v0}, Ljava/util/ArrayList;-><init>(I)V
 
-    const/4 v4, 0x0
+    move v4, v1
 
     :goto_3
     if-ge v4, v0, :cond_3
@@ -217,7 +217,7 @@
 
     if-ne v0, v2, :cond_4
 
-    const/4 v1, 0x1
+    move v1, v2
 
     :cond_4
     iput-boolean v1, p0, Lcom/google/android/exoplayer2/metadata/scte35/SpliceScheduleCommand$Event;->autoReturn:Z
@@ -444,9 +444,9 @@
 
     const-wide/16 v14, 0x0
 
-    cmp-long v8, v6, v14
+    cmp-long v6, v6, v14
 
-    if-eqz v8, :cond_7
+    if-eqz v6, :cond_7
 
     const/16 v16, 0x1
 
@@ -473,7 +473,7 @@
 
     const-wide/16 v6, 0x3e8
 
-    mul-long v3, v3, v6
+    mul-long/2addr v3, v6
 
     const-wide/16 v6, 0x5a
 

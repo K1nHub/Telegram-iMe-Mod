@@ -475,7 +475,7 @@
     goto :goto_2
 
     :cond_5
-    const/4 v11, 0x0
+    move v11, v4
 
     :goto_2
     invoke-static {v12, v11}, Ljava/lang/Math;->max(II)I
@@ -494,9 +494,9 @@
     goto :goto_3
 
     :cond_6
-    move-object v6, v9
+    move v12, v4
 
-    const/4 v12, 0x0
+    move-object v6, v9
 
     .line 119
     :goto_3
@@ -552,7 +552,7 @@
 
     if-lez v12, :cond_7
 
-    const/16 v19, 0x0
+    move/from16 v19, v4
 
     goto :goto_4
 
@@ -605,12 +605,12 @@
     if-nez v7, :cond_b
 
     :cond_a
-    const/4 v7, 0x1
+    move v7, v5
 
     goto :goto_5
 
     :cond_b
-    const/4 v7, 0x0
+    move v7, v4
 
     .line 129
     :goto_5
@@ -691,7 +691,7 @@
 
     if-eqz v13, :cond_d
 
-    const/16 v21, 0x0
+    move/from16 v21, v4
 
     goto :goto_7
 

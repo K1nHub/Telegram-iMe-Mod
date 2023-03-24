@@ -60,21 +60,20 @@ public final class RxJava2CallAdapterFactory extends CallAdapter.Factory {
                     throw new IllegalStateException("Response must be parameterized as Response<Foo> or Response<? extends Foo>");
                 }
                 type2 = CallAdapter.Factory.getParameterUpperBound(0, (ParameterizedType) parameterUpperBound);
+                z2 = false;
                 z = false;
-            } else if (rawType2 == Result.class) {
-                if (!(parameterUpperBound instanceof ParameterizedType)) {
-                    throw new IllegalStateException("Result must be parameterized as Result<Foo> or Result<? extends Foo>");
-                }
-                type2 = CallAdapter.Factory.getParameterUpperBound(0, (ParameterizedType) parameterUpperBound);
-                z = true;
-            } else {
+            } else if (rawType2 != Result.class) {
                 type2 = parameterUpperBound;
-                z = false;
+                z = true;
+                z2 = false;
+            } else if (!(parameterUpperBound instanceof ParameterizedType)) {
+                throw new IllegalStateException("Result must be parameterized as Result<Foo> or Result<? extends Foo>");
+            } else {
+                type2 = CallAdapter.Factory.getParameterUpperBound(0, (ParameterizedType) parameterUpperBound);
                 z2 = true;
-                return new RxJava2CallAdapter(type2, this.scheduler, this.isAsync, z, z2, z3, z4, z5, false);
+                z = false;
             }
-            z2 = false;
-            return new RxJava2CallAdapter(type2, this.scheduler, this.isAsync, z, z2, z3, z4, z5, false);
+            return new RxJava2CallAdapter(type2, this.scheduler, this.isAsync, z2, z, z3, z4, z5, false);
         }
         return null;
     }

@@ -80,9 +80,9 @@ public final class TwitterPresenter extends BasePresenter<TwitterView> {
             ((TwitterView) getViewState()).onLoadMoreComplete();
             return;
         }
-        Observable<Result<List<TweetInfo>>> observeOn = this.twitterInteractor.getUserTweets(this.telegramProfileId, this.twitterUserId, this.lastItemId).observeOn(this.schedulersProvider.mo707ui());
+        Observable<Result<List<TweetInfo>>> observeOn = this.twitterInteractor.getUserTweets(this.telegramProfileId, this.twitterUserId, this.lastItemId).observeOn(this.schedulersProvider.mo706ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "twitterInteractor\n      …(schedulersProvider.ui())");
-        Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C1966x586e495a(this, z3, z)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C1967x586e495b(null)));
+        Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C1980x586e495a(this, z3, z)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C1981x586e495b(null)));
         Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…  onError.invoke()\n    })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }
@@ -104,9 +104,9 @@ public final class TwitterPresenter extends BasePresenter<TwitterView> {
     }
 
     private final void subscribeToLikeToggles() {
-        Observable<TweetItem> observeOn = this.likeToggleSubject.debounce(200L, TimeUnit.MILLISECONDS).distinctUntilChanged().subscribeOn(this.schedulersProvider.mo708io()).observeOn(this.schedulersProvider.mo707ui());
+        Observable<TweetItem> observeOn = this.likeToggleSubject.debounce(200L, TimeUnit.MILLISECONDS).distinctUntilChanged().subscribeOn(this.schedulersProvider.mo707io()).observeOn(this.schedulersProvider.mo706ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "likeToggleSubject\n      …(schedulersProvider.ui())");
-        Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C1968xbd4bb315(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C1969xbd4bb316(null)));
+        Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C1982xbd4bb315(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C1983xbd4bb316(null)));
         Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…  onError.invoke()\n    })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }

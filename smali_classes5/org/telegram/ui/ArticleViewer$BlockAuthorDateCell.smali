@@ -262,7 +262,7 @@
 
     int-to-long v9, v9
 
-    mul-long v9, v9, v5
+    mul-long/2addr v9, v5
 
     invoke-virtual {v8, v9, v10}, Lorg/telegram/messenger/time/FastDateFormat;->format(J)Ljava/lang/String;
 
@@ -317,7 +317,7 @@
 
     int-to-long v7, v4
 
-    mul-long v7, v7, v5
+    mul-long/2addr v7, v5
 
     invoke-virtual {p2, v7, v8}, Lorg/telegram/messenger/time/FastDateFormat;->format(J)Ljava/lang/String;
 
@@ -350,7 +350,7 @@
 
     move-result-object p2
 
-    const/4 v4, 0x0
+    move v4, v3
 
     .line 10818
     :goto_2
@@ -510,7 +510,7 @@
     goto :goto_4
 
     :cond_5
-    const/4 p2, 0x0
+    move p2, v3
 
     .line 10841
     :cond_6

@@ -27,7 +27,7 @@ public class PartInputStream extends BaseInputStream {
         this.unzipEngine = unzipEngine;
         this.decrypter = unzipEngine.getDecrypter();
         this.length = j2;
-        this.isAESEncryptedFile = (unzipEngine.getFileHeader().isEncrypted() && unzipEngine.getFileHeader().getEncryptionMethod() == 99) ? false : false;
+        this.isAESEncryptedFile = (unzipEngine.getFileHeader().isEncrypted() && unzipEngine.getFileHeader().getEncryptionMethod() == 99) ? z : false;
     }
 
     @Override // net.lingala.zip4j.p036io.BaseInputStream, java.io.InputStream

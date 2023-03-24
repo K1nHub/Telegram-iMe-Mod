@@ -17,7 +17,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 45049
+    .line 45059
     invoke-direct {p0}, Lorg/telegram/tgnet/TLRPC$storage_FileType;-><init>()V
 
     return-void
@@ -28,7 +28,7 @@
 .method public serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
     .locals 1
 
-    .line 45054
+    .line 45064
     sget v0, Lorg/telegram/tgnet/TLRPC$TL_storage_fileJpeg;->constructor:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V

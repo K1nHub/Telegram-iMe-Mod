@@ -288,9 +288,9 @@
     .line 154
     iget-wide v1, p0, Lcom/google/android/exoplayer2/source/rtsp/RtpExtractor;->firstTimestamp:J
 
-    cmp-long v7, v1, v5
+    cmp-long v1, v1, v5
 
-    if-nez v7, :cond_4
+    if-nez v1, :cond_4
 
     .line 155
     iget-wide v1, p1, Lcom/google/android/exoplayer2/source/rtsp/RtpPacket;->timestamp:J

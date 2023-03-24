@@ -162,12 +162,12 @@
 
     if-ne v0, v3, :cond_1
 
-    const/4 v0, 0x1
+    move v0, v1
 
     goto :goto_0
 
     :cond_1
-    const/4 v0, 0x0
+    move v0, v2
 
     :goto_0
     invoke-static {p1, v0}, Lorg/telegram/ui/PhotoPickerSearchActivity;->access$502(Lorg/telegram/ui/PhotoPickerSearchActivity;Z)Z

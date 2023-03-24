@@ -538,9 +538,9 @@
     :goto_1
     iget v2, v0, Lorg/telegram/ui/Components/CheckBoxBase;->progress:F
 
-    const/high16 v15, 0x3f000000    # 0.5f
+    const/high16 v14, 0x3f000000    # 0.5f
 
-    cmpl-float v3, v2, v15
+    cmpl-float v3, v2, v14
 
     if-ltz v3, :cond_3
 
@@ -549,7 +549,7 @@
     goto :goto_2
 
     :cond_3
-    div-float/2addr v2, v15
+    div-float/2addr v2, v14
 
     move/from16 v16, v2
 
@@ -575,13 +575,13 @@
 
     const v4, 0xffffff
 
-    const/16 v14, 0xe
+    const/16 v15, 0xe
 
     const/4 v9, 0x7
 
     const/4 v7, 0x0
 
-    const/4 v15, 0x6
+    const/4 v14, 0x6
 
     if-eqz v2, :cond_c
 
@@ -600,7 +600,7 @@
     goto :goto_5
 
     :cond_4
-    if-eq v3, v15, :cond_8
+    if-eq v3, v14, :cond_8
 
     if-ne v3, v9, :cond_5
 
@@ -609,7 +609,7 @@
     :cond_5
     if-eq v3, v11, :cond_7
 
-    if-ne v3, v14, :cond_6
+    if-ne v3, v15, :cond_6
 
     goto :goto_3
 
@@ -738,9 +738,9 @@
 
     iget v9, v0, Lorg/telegram/ui/Components/CheckBoxBase;->progress:F
 
-    iget v15, v0, Lorg/telegram/ui/Components/CheckBoxBase;->backgroundAlpha:F
+    iget v14, v0, Lorg/telegram/ui/Components/CheckBoxBase;->backgroundAlpha:F
 
-    invoke-static {v4, v3, v9, v15}, Lorg/telegram/messenger/AndroidUtilities;->getOffsetColor(IIFF)I
+    invoke-static {v4, v3, v9, v14}, Lorg/telegram/messenger/AndroidUtilities;->getOffsetColor(IIFF)I
 
     move-result v3
 
@@ -761,7 +761,7 @@
 
     iget v4, v0, Lorg/telegram/ui/Components/CheckBoxBase;->backgroundAlpha:F
 
-    mul-float v4, v4, v3
+    mul-float/2addr v4, v3
 
     float-to-int v3, v4
 
@@ -805,9 +805,9 @@
 
     iget v9, v0, Lorg/telegram/ui/Components/CheckBoxBase;->backgroundAlpha:F
 
-    const/4 v15, -0x1
+    const/4 v14, -0x1
 
-    invoke-static {v15, v3, v4, v9}, Lorg/telegram/messenger/AndroidUtilities;->getOffsetColor(IIFF)I
+    invoke-static {v14, v3, v4, v9}, Lorg/telegram/messenger/AndroidUtilities;->getOffsetColor(IIFF)I
 
     move-result v3
 
@@ -835,9 +835,9 @@
 
     iget v9, v0, Lorg/telegram/ui/Components/CheckBoxBase;->progress:F
 
-    iget v15, v0, Lorg/telegram/ui/Components/CheckBoxBase;->backgroundAlpha:F
+    iget v14, v0, Lorg/telegram/ui/Components/CheckBoxBase;->backgroundAlpha:F
 
-    invoke-static {v4, v3, v9, v15}, Lorg/telegram/messenger/AndroidUtilities;->getOffsetColor(IIFF)I
+    invoke-static {v4, v3, v9, v14}, Lorg/telegram/messenger/AndroidUtilities;->getOffsetColor(IIFF)I
 
     move-result v3
 
@@ -849,7 +849,7 @@
 
     const/high16 v9, 0x3fc00000    # 1.5f
 
-    const/4 v15, 0x1
+    const/4 v14, 0x1
 
     if-eqz v2, :cond_15
 
@@ -870,7 +870,7 @@
 
     if-eq v2, v11, :cond_14
 
-    if-ne v2, v14, :cond_11
+    if-ne v2, v15, :cond_11
 
     goto :goto_a
 
@@ -904,7 +904,7 @@
     int-to-float v3, v5
 
     .line 317
-    invoke-static {v15}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    invoke-static {v14}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v4
 
@@ -986,13 +986,13 @@
 
     if-eq v2, v11, :cond_1e
 
-    if-eq v2, v14, :cond_1e
+    if-eq v2, v15, :cond_1e
 
     if-eq v2, v12, :cond_1c
 
     if-ne v2, v10, :cond_16
 
-    goto/16 :goto_f
+    goto/16 :goto_10
 
     :cond_16
     if-eqz v2, :cond_1b
@@ -1001,7 +1001,7 @@
 
     if-ne v2, v3, :cond_17
 
-    goto/16 :goto_e
+    goto/16 :goto_f
 
     .line 343
     :cond_17
@@ -1033,7 +1033,7 @@
     .line 348
     iget v3, v0, Lorg/telegram/ui/Components/CheckBoxBase;->progress:F
 
-    mul-float v3, v3, v2
+    mul-float/2addr v3, v2
 
     float-to-int v2, v3
 
@@ -1043,10 +1043,10 @@
 
     const/4 v10, 0x0
 
-    goto :goto_c
+    goto :goto_d
 
     :cond_18
-    if-ne v1, v15, :cond_19
+    if-ne v1, v14, :cond_19
 
     const/16 v2, -0x5a
 
@@ -1054,16 +1054,6 @@
 
     .line 351
     iget v4, v0, Lorg/telegram/ui/Components/CheckBoxBase;->progress:F
-
-    mul-float v4, v4, v3
-
-    float-to-int v3, v4
-
-    move v9, v3
-
-    const/4 v2, 0x6
-
-    const/16 v10, -0x5a
 
     goto :goto_c
 
@@ -1075,17 +1065,18 @@
     .line 354
     iget v4, v0, Lorg/telegram/ui/Components/CheckBoxBase;->progress:F
 
-    mul-float v4, v4, v3
+    :goto_c
+    mul-float/2addr v4, v3
 
     float-to-int v3, v4
+
+    move v10, v2
 
     move v9, v3
 
     const/4 v2, 0x6
 
-    const/16 v10, 0x5a
-
-    :goto_c
+    :goto_d
     if-ne v1, v2, :cond_1a
 
     const-string v1, "dialogBackground"
@@ -1112,7 +1103,7 @@
 
     iget v3, v0, Lorg/telegram/ui/Components/CheckBoxBase;->progress:F
 
-    mul-float v2, v2, v3
+    mul-float/2addr v2, v3
 
     float-to-int v2, v2
 
@@ -1135,13 +1126,13 @@
 
     const/4 v12, 0x0
 
-    const/16 v14, 0x9
+    const/16 v15, 0x9
 
     move v11, v5
 
     move/from16 v5, v20
 
-    move v14, v6
+    move v15, v6
 
     move-object/from16 v6, v21
 
@@ -1171,23 +1162,23 @@
 
     iget v3, v0, Lorg/telegram/ui/Components/CheckBoxBase;->progress:F
 
-    mul-float v2, v2, v3
+    mul-float/2addr v2, v3
 
     float-to-int v2, v2
 
     invoke-virtual {v1, v2}, Landroid/graphics/Paint;->setAlpha(I)V
 
-    goto :goto_d
+    goto :goto_e
 
     :cond_1a
     move v11, v5
 
-    move v14, v6
+    move v15, v6
 
     const/4 v12, 0x0
 
     .line 368
-    :goto_d
+    :goto_e
     iget-object v2, v0, Lorg/telegram/ui/Components/CheckBoxBase;->rect:Landroid/graphics/RectF;
 
     int-to-float v3, v10
@@ -1202,17 +1193,17 @@
 
     invoke-virtual/range {v1 .. v6}, Landroid/graphics/Canvas;->drawArc(Landroid/graphics/RectF;FFZLandroid/graphics/Paint;)V
 
-    goto/16 :goto_11
+    goto/16 :goto_12
 
     :cond_1b
-    :goto_e
+    :goto_f
     move v11, v5
 
-    move v14, v6
+    move v15, v6
 
     const/4 v12, 0x0
 
-    int-to-float v1, v14
+    int-to-float v1, v15
 
     int-to-float v2, v11
 
@@ -1221,13 +1212,13 @@
 
     invoke-virtual {v8, v1, v2, v13, v3}, Landroid/graphics/Canvas;->drawCircle(FFFLandroid/graphics/Paint;)V
 
-    goto :goto_11
+    goto :goto_12
 
     :cond_1c
-    :goto_f
+    :goto_10
     move v11, v5
 
-    move v14, v6
+    move v15, v6
 
     const/4 v12, 0x0
 
@@ -1298,7 +1289,7 @@
 
     invoke-virtual {v2, v1}, Landroid/graphics/Paint;->setShader(Landroid/graphics/Shader;)Landroid/graphics/Shader;
 
-    goto :goto_10
+    goto :goto_11
 
     .line 336
     :cond_1d
@@ -1306,13 +1297,13 @@
 
     invoke-virtual {v1, v7}, Landroid/graphics/Paint;->setShader(Landroid/graphics/Shader;)Landroid/graphics/Shader;
 
-    :goto_10
-    int-to-float v1, v14
+    :goto_11
+    int-to-float v1, v15
 
     int-to-float v2, v11
 
     .line 338
-    invoke-static {v15}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    invoke-static {v14}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v3
 
@@ -1322,7 +1313,7 @@
 
     iget v4, v0, Lorg/telegram/ui/Components/CheckBoxBase;->backgroundAlpha:F
 
-    mul-float v3, v3, v4
+    mul-float/2addr v3, v4
 
     iget-object v4, v0, Lorg/telegram/ui/Components/CheckBoxBase;->backgroundPaint:Landroid/graphics/Paint;
 
@@ -1335,16 +1326,16 @@
 
     invoke-virtual {v1, v2}, Landroid/graphics/Paint;->setStyle(Landroid/graphics/Paint$Style;)V
 
-    goto :goto_11
+    goto :goto_12
 
     :cond_1e
     move v11, v5
 
-    move v14, v6
+    move v15, v6
 
     const/4 v12, 0x0
 
-    :goto_11
+    :goto_12
     cmpl-float v1, v16, v12
 
     if-lez v1, :cond_30
@@ -1358,9 +1349,9 @@
 
     if-gez v3, :cond_1f
 
-    const/4 v9, 0x0
+    move v9, v12
 
-    goto :goto_12
+    goto :goto_13
 
     :cond_1f
     sub-float/2addr v1, v2
@@ -1370,7 +1361,7 @@
     move v9, v3
 
     .line 375
-    :goto_12
+    :goto_13
     iget v1, v0, Lorg/telegram/ui/Components/CheckBoxBase;->backgroundType:I
 
     const/16 v2, 0x9
@@ -1388,7 +1379,7 @@
 
     invoke-virtual {v1, v2}, Landroid/graphics/Paint;->setColor(I)V
 
-    goto :goto_15
+    goto :goto_16
 
     :cond_20
     const/16 v2, 0xb
@@ -1421,7 +1412,7 @@
 
     if-ne v1, v2, :cond_22
 
-    goto :goto_14
+    goto :goto_15
 
     .line 380
     :cond_22
@@ -1433,23 +1424,23 @@
 
     const-string v2, "checkbox"
 
-    goto :goto_13
+    goto :goto_14
 
     :cond_23
     const-string v2, "checkboxDisabled"
 
-    :goto_13
+    :goto_14
     invoke-direct {v0, v2}, Lorg/telegram/ui/Components/CheckBoxBase;->getThemedColor(Ljava/lang/String;)I
 
     move-result v2
 
     invoke-virtual {v1, v2}, Landroid/graphics/Paint;->setColor(I)V
 
-    goto :goto_15
+    goto :goto_16
 
     .line 378
     :cond_24
-    :goto_14
+    :goto_15
     sget-object v1, Lorg/telegram/ui/Components/CheckBoxBase;->paint:Landroid/graphics/Paint;
 
     iget-object v2, v0, Lorg/telegram/ui/Components/CheckBoxBase;->backgroundColorKey:Ljava/lang/String;
@@ -1461,7 +1452,7 @@
     invoke-virtual {v1, v2}, Landroid/graphics/Paint;->setColor(I)V
 
     .line 382
-    :goto_15
+    :goto_16
     iget-boolean v1, v0, Lorg/telegram/ui/Components/CheckBoxBase;->useDefaultCheck:Z
 
     if-nez v1, :cond_25
@@ -1479,7 +1470,7 @@
 
     invoke-virtual {v2, v1}, Landroid/graphics/Paint;->setColor(I)V
 
-    goto :goto_16
+    goto :goto_17
 
     .line 385
     :cond_25
@@ -1494,7 +1485,7 @@
     invoke-virtual {v1, v2}, Landroid/graphics/Paint;->setColor(I)V
 
     .line 388
-    :goto_16
+    :goto_17
     iget v1, v0, Lorg/telegram/ui/Components/CheckBoxBase;->backgroundType:I
 
     const/4 v2, -0x1
@@ -1519,7 +1510,7 @@
 
     move-result v6
 
-    int-to-float v1, v14
+    int-to-float v1, v15
 
     sub-float/2addr v1, v10
 
@@ -1557,7 +1548,7 @@
 
     move-object/from16 v1, p1
 
-    move v15, v6
+    move v14, v6
 
     move/from16 v6, v18
 
@@ -1587,7 +1578,7 @@
 
     if-ne v2, v3, :cond_26
 
-    goto :goto_17
+    goto :goto_18
 
     :cond_26
     const/high16 v2, 0x3f000000    # 0.5f
@@ -1608,18 +1599,18 @@
 
     sub-float v2, v1, v16
 
-    mul-float v13, v13, v2
+    mul-float/2addr v13, v2
 
     .line 404
     sget-object v1, Lorg/telegram/ui/Components/CheckBoxBase;->eraser:Landroid/graphics/Paint;
 
     invoke-virtual {v8, v10, v10, v13, v1}, Landroid/graphics/Canvas;->drawCircle(FFFLandroid/graphics/Paint;)V
 
-    goto :goto_18
+    goto :goto_19
 
     .line 395
     :cond_27
-    :goto_17
+    :goto_18
     invoke-virtual {v1}, Landroid/graphics/Paint;->getAlpha()I
 
     move-result v2
@@ -1646,12 +1637,17 @@
 
     .line 406
     :cond_28
-    :goto_18
-    invoke-virtual {v8, v15}, Landroid/graphics/Canvas;->restoreToCount(I)V
+    :goto_19
+    invoke-virtual {v8, v14}, Landroid/graphics/Canvas;->restoreToCount(I)V
 
-    :cond_29
     const/4 v1, 0x0
 
+    goto :goto_1a
+
+    :cond_29
+    move v1, v12
+
+    :goto_1a
     cmpl-float v1, v9, v1
 
     if-eqz v1, :cond_30
@@ -1684,13 +1680,13 @@
 
     invoke-virtual {v1, v3}, Landroid/text/TextPaint;->setTypeface(Landroid/graphics/Typeface;)Landroid/graphics/Typeface;
 
-    goto :goto_19
+    goto :goto_1b
 
     :cond_2a
     const/4 v2, 0x1
 
     .line 415
-    :goto_19
+    :goto_1b
     iget-object v1, v0, Lorg/telegram/ui/Components/CheckBoxBase;->checkedText:Ljava/lang/String;
 
     invoke-virtual {v1}, Ljava/lang/String;->length()I
@@ -1713,14 +1709,14 @@
 
     const/high16 v2, 0x417c0000    # 15.75f
 
-    goto :goto_1a
+    goto :goto_1c
 
     :cond_2b
     const/high16 v1, 0x41200000    # 10.0f
 
     const/high16 v2, 0x41840000    # 16.5f
 
-    goto :goto_1a
+    goto :goto_1c
 
     :cond_2c
     const/high16 v1, 0x41600000    # 14.0f
@@ -1728,7 +1724,7 @@
     const/high16 v2, 0x41900000    # 18.0f
 
     .line 430
-    :goto_1a
+    :goto_1c
     iget-object v3, v0, Lorg/telegram/ui/Components/CheckBoxBase;->textPaint:Landroid/text/TextPaint;
 
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(F)I
@@ -1753,7 +1749,7 @@
     .line 432
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->save()I
 
-    int-to-float v1, v14
+    int-to-float v1, v15
 
     int-to-float v3, v11
 
@@ -1790,7 +1786,7 @@
     .line 435
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->restore()V
 
-    goto :goto_1c
+    goto :goto_1e
 
     :cond_2d
     const/high16 v4, 0x3f800000    # 1.0f
@@ -1809,7 +1805,7 @@
 
     const v1, 0x3fb33333    # 1.4f
 
-    goto :goto_1b
+    goto :goto_1d
 
     :cond_2e
     const/4 v2, 0x5
@@ -1818,15 +1814,15 @@
 
     const v1, 0x3f4ccccd    # 0.8f
 
-    goto :goto_1b
+    goto :goto_1d
 
     :cond_2f
-    const/high16 v1, 0x3f800000    # 1.0f
+    move v1, v4
 
-    :goto_1b
+    :goto_1d
     const/high16 v2, 0x41100000    # 9.0f
 
-    mul-float v2, v2, v1
+    mul-float/2addr v2, v1
 
     .line 444
     invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(F)I
@@ -1835,11 +1831,11 @@
 
     int-to-float v2, v2
 
-    mul-float v2, v2, v9
+    mul-float/2addr v2, v9
 
     const/high16 v3, 0x40800000    # 4.0f
 
-    mul-float v1, v1, v3
+    mul-float/2addr v1, v3
 
     .line 445
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(F)I
@@ -1848,7 +1844,7 @@
 
     int-to-float v1, v1
 
-    mul-float v1, v1, v9
+    mul-float/2addr v1, v9
 
     const/high16 v3, 0x3fc00000    # 1.5f
 
@@ -1857,7 +1853,7 @@
 
     move-result v3
 
-    sub-int v6, v14, v3
+    sub-int v6, v15, v3
 
     const/4 v3, 0x4
 
@@ -1868,7 +1864,7 @@
 
     add-int v5, v11, v3
 
-    mul-float v1, v1, v1
+    mul-float/2addr v1, v1
 
     const/high16 v3, 0x40000000    # 2.0f
 
@@ -1901,7 +1897,7 @@
 
     invoke-virtual {v1, v4, v5}, Landroid/graphics/Path;->lineTo(FF)V
 
-    mul-float v2, v2, v2
+    mul-float/2addr v2, v2
 
     const/high16 v1, 0x40000000    # 2.0f
 
@@ -1933,7 +1929,7 @@
     invoke-virtual {v8, v1, v2}, Landroid/graphics/Canvas;->drawPath(Landroid/graphics/Path;Landroid/graphics/Paint;)V
 
     :cond_30
-    :goto_1c
+    :goto_1e
     return-void
 .end method
 

@@ -264,7 +264,7 @@
 
     if-nez v1, :cond_0
 
-    const/4 v1, 0x0
+    move v1, v2
 
     goto :goto_0
 
@@ -436,9 +436,9 @@
 
     const/4 v1, 0x0
 
-    const/4 v3, 0x0
+    move v3, v1
 
-    const/4 v4, 0x0
+    move v4, v3
 
     :goto_0
     iget-object v5, p0, Lcom/google/android/gms/internal/clearcut/zzgz;->zzbjd:[[B
@@ -467,7 +467,7 @@
     :cond_2
     add-int/2addr v0, v3
 
-    mul-int/lit8 v4, v4, 0x1
+    mul-int/2addr v4, v2
 
     add-int/2addr v0, v4
 

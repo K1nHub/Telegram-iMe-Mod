@@ -25,7 +25,7 @@
 .method constructor <init>(Lorg/telegram/messenger/MediaController;)V
     .locals 0
 
-    .line 633
+    .line 634
     iput-object p1, p0, Lorg/telegram/messenger/MediaController$1;->this$0:Lorg/telegram/messenger/MediaController;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,7 +38,7 @@
 .method public run()V
     .locals 4
 
-    .line 636
+    .line 637
     iget-object v0, p0, Lorg/telegram/messenger/MediaController$1;->this$0:Lorg/telegram/messenger/MediaController;
 
     invoke-static {v0}, Lorg/telegram/messenger/MediaController;->access$000(Lorg/telegram/messenger/MediaController;)Lorg/telegram/messenger/MessageObject;
@@ -49,7 +49,7 @@
 
     return-void
 
-    .line 639
+    .line 640
     :cond_0
     iget-object v0, p0, Lorg/telegram/messenger/MediaController$1;->this$0:Lorg/telegram/messenger/MediaController;
 

@@ -1794,7 +1794,7 @@
 
     if-eqz v4, :cond_0
 
-    const/4 v4, 0x1
+    move v4, v5
 
     goto :goto_0
 
@@ -1809,7 +1809,7 @@
     goto :goto_0
 
     :cond_1
-    const/4 v4, 0x0
+    move v4, v6
 
     :goto_0
     if-nez p1, :cond_5
@@ -2094,7 +2094,7 @@
     return-void
 
     :cond_1
-    const/4 p1, 0x0
+    move p1, v1
 
     .line 390
     :goto_0
@@ -2716,7 +2716,7 @@
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     .line 1096
     :goto_0
@@ -2739,12 +2739,12 @@
 
     if-ne p2, v4, :cond_0
 
-    const/4 v6, 0x1
+    move v6, v4
 
     goto :goto_1
 
     :cond_0
-    const/4 v6, 0x0
+    move v6, v1
 
     :goto_1
     const/4 v7, 0x0
@@ -2821,7 +2821,7 @@
     goto :goto_2
 
     :cond_0
-    const/4 p2, 0x0
+    move p2, v0
 
     .line 1131
     :goto_0
@@ -2850,7 +2850,7 @@
     goto :goto_1
 
     :cond_1
-    const/4 v3, 0x0
+    move v3, v0
 
     :goto_1
     const/4 v4, 0x0
@@ -3382,7 +3382,7 @@
     :goto_0
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     .line 1023
     :goto_1
@@ -3431,7 +3431,7 @@
 
     invoke-direct {v5}, Ljava/util/ArrayList;-><init>()V
 
-    const/4 v6, 0x0
+    move v6, v1
 
     .line 1031
     :goto_2
@@ -3506,12 +3506,12 @@
 
     if-ne v0, v5, :cond_7
 
-    const/4 v0, 0x1
+    move v0, v4
 
     goto :goto_4
 
     :cond_7
-    const/4 v0, 0x0
+    move v0, v1
 
     .line 1051
     :goto_4
@@ -3577,12 +3577,12 @@
 
     if-ge v0, v5, :cond_a
 
-    const/4 v0, 0x0
+    move v0, v1
 
     goto :goto_5
 
     :cond_a
-    const/4 v0, 0x1
+    move v0, v4
 
     :goto_5
     invoke-virtual {v6, v0}, Lorg/telegram/ui/Components/RecyclerAnimationScrollHelper;->setScrollDirection(I)V
@@ -3892,22 +3892,22 @@
 
     move-result v0
 
-    const/4 v1, 0x1
+    const v1, 0x3f389375    # 0.721f
 
-    const/4 v2, 0x0
+    cmpl-float v0, v0, v1
 
-    const v3, 0x3f389375    # 0.721f
+    const/4 v2, 0x1
 
-    cmpl-float v0, v0, v3
+    const/4 v3, 0x0
 
     if-lez v0, :cond_0
 
-    const/4 v0, 0x1
+    move v0, v2
 
     goto :goto_0
 
     :cond_0
-    const/4 v0, 0x0
+    move v0, v3
 
     :goto_0
     const-string v4, "actionBarDefault"
@@ -3927,14 +3927,14 @@
 
     move-result v4
 
-    cmpl-float v3, v4, v3
+    cmpl-float v1, v4, v1
 
-    if-lez v3, :cond_1
+    if-lez v1, :cond_1
 
     goto :goto_1
 
     :cond_1
-    const/4 v1, 0x0
+    move v2, v3
 
     :goto_1
     if-eqz p1, :cond_2
@@ -3942,7 +3942,7 @@
     goto :goto_2
 
     :cond_2
-    move v0, v1
+    move v0, v2
 
     .line 903
     :goto_2
@@ -3972,7 +3972,7 @@
     goto :goto_0
 
     :cond_0
-    const/4 v0, 0x0
+    move v0, v1
 
     .line 535
     :goto_0
@@ -4030,12 +4030,12 @@
 
     if-eqz p1, :cond_3
 
-    const/high16 v2, 0x3f800000    # 1.0f
+    move v2, v4
 
     goto :goto_2
 
     :cond_3
-    const/4 v2, 0x0
+    move v2, v5
 
     :goto_2
     invoke-virtual {v0, v2}, Landroid/view/ViewPropertyAnimator;->alpha(F)Landroid/view/ViewPropertyAnimator;
@@ -4078,7 +4078,7 @@
     goto :goto_3
 
     :cond_4
-    const/4 v8, 0x0
+    move v8, v5
 
     :goto_3
     invoke-virtual {v0, v8}, Landroid/view/ViewPropertyAnimator;->translationY(F)Landroid/view/ViewPropertyAnimator;
@@ -4090,7 +4090,7 @@
     goto :goto_4
 
     :cond_5
-    const/4 v4, 0x0
+    move v4, v5
 
     :goto_4
     invoke-virtual {v0, v4}, Landroid/view/ViewPropertyAnimator;->alpha(F)Landroid/view/ViewPropertyAnimator;
@@ -4147,12 +4147,12 @@
 
     if-eqz p1, :cond_8
 
-    const/high16 v6, 0x3f800000    # 1.0f
+    move v6, v4
 
     goto :goto_5
 
     :cond_8
-    const/4 v6, 0x0
+    move v6, v5
 
     :goto_5
     invoke-virtual {v0, v6}, Landroid/widget/FrameLayout;->setAlpha(F)V
@@ -4184,7 +4184,7 @@
     goto :goto_7
 
     :cond_a
-    const/4 v4, 0x0
+    move v4, v5
 
     :goto_7
     invoke-virtual {v0, v4}, Landroid/view/View;->setAlpha(F)V
@@ -4207,7 +4207,7 @@
     goto :goto_8
 
     :cond_b
-    const/4 v2, 0x0
+    move v2, v5
 
     :goto_8
     invoke-virtual {v0, v2}, Landroid/view/View;->setTranslationY(F)V
@@ -4311,7 +4311,7 @@
 
     if-nez v0, :cond_0
 
-    const/4 v0, 0x0
+    move v0, v1
 
     goto :goto_0
 

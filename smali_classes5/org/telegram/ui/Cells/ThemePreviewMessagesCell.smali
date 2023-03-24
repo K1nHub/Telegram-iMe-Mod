@@ -102,13 +102,13 @@
 
     div-long/2addr v0, v2
 
-    long-to-int v1, v0
+    long-to-int v0, v0
 
-    add-int/lit16 v1, v1, -0xe10
+    add-int/lit16 v0, v0, -0xe10
 
-    const-wide/16 v2, 0x0
+    const-wide/16 v1, 0x0
 
-    const/16 v0, 0x103
+    const/16 v3, 0x103
 
     const-wide/16 v4, 0x1
 
@@ -130,16 +130,16 @@
 
     iput-object v13, v15, Lorg/telegram/tgnet/TLRPC$Message;->message:Ljava/lang/String;
 
-    add-int/lit8 v1, v1, 0x3c
+    add-int/lit8 v0, v0, 0x3c
 
     .line 75
-    iput v1, v15, Lorg/telegram/tgnet/TLRPC$Message;->date:I
+    iput v0, v15, Lorg/telegram/tgnet/TLRPC$Message;->date:I
 
     .line 76
     iput-wide v4, v15, Lorg/telegram/tgnet/TLRPC$Message;->dialog_id:J
 
     .line 77
-    iput v0, v15, Lorg/telegram/tgnet/TLRPC$Message;->flags:I
+    iput v3, v15, Lorg/telegram/tgnet/TLRPC$Message;->flags:I
 
     .line 78
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_peerUser;
@@ -149,13 +149,13 @@
     iput-object v0, v15, Lorg/telegram/tgnet/TLRPC$Message;->from_id:Lorg/telegram/tgnet/TLRPC$Peer;
 
     .line 79
-    sget v1, Lorg/telegram/messenger/UserConfig;->selectedAccount:I
+    sget v3, Lorg/telegram/messenger/UserConfig;->selectedAccount:I
 
-    invoke-static {v1}, Lorg/telegram/messenger/UserConfig;->getInstance(I)Lorg/telegram/messenger/UserConfig;
+    invoke-static {v3}, Lorg/telegram/messenger/UserConfig;->getInstance(I)Lorg/telegram/messenger/UserConfig;
 
-    move-result-object v1
+    move-result-object v3
 
-    invoke-virtual {v1}, Lorg/telegram/messenger/UserConfig;->getClientUserId()J
+    invoke-virtual {v3}, Lorg/telegram/messenger/UserConfig;->getClientUserId()J
 
     move-result-wide v13
 
@@ -182,7 +182,7 @@
     iput-object v0, v15, Lorg/telegram/tgnet/TLRPC$Message;->peer_id:Lorg/telegram/tgnet/TLRPC$Peer;
 
     .line 84
-    iput-wide v2, v0, Lorg/telegram/tgnet/TLRPC$Peer;->user_id:J
+    iput-wide v1, v0, Lorg/telegram/tgnet/TLRPC$Peer;->user_id:J
 
     .line 86
     new-instance v0, Lorg/telegram/messenger/MessageObject;
@@ -299,7 +299,7 @@
     move/from16 v16, v10
 
     :goto_1
-    add-int/lit8 v9, v1, 0x3c
+    add-int/lit8 v9, v0, 0x3c
 
     .line 107
     iput v9, v13, Lorg/telegram/tgnet/TLRPC$Message;->date:I
@@ -308,7 +308,7 @@
     iput-wide v4, v13, Lorg/telegram/tgnet/TLRPC$Message;->dialog_id:J
 
     .line 109
-    iput v0, v13, Lorg/telegram/tgnet/TLRPC$Message;->flags:I
+    iput v3, v13, Lorg/telegram/tgnet/TLRPC$Message;->flags:I
 
     .line 110
     new-instance v10, Lorg/telegram/tgnet/TLRPC$TL_peerUser;
@@ -351,7 +351,7 @@
     iput-object v10, v13, Lorg/telegram/tgnet/TLRPC$Message;->peer_id:Lorg/telegram/tgnet/TLRPC$Peer;
 
     .line 116
-    iput-wide v2, v10, Lorg/telegram/tgnet/TLRPC$Peer;->user_id:J
+    iput-wide v1, v10, Lorg/telegram/tgnet/TLRPC$Peer;->user_id:J
 
     .line 117
     new-instance v10, Lorg/telegram/messenger/MessageObject;
@@ -400,30 +400,30 @@
     .line 125
     invoke-virtual {v14, v11}, Ljava/lang/String;->indexOf(I)I
 
-    move-result v2
+    move-result v1
 
     .line 126
     invoke-virtual {v14, v11}, Ljava/lang/String;->lastIndexOf(I)I
 
-    move-result v3
+    move-result v2
 
     const/4 v11, -0x1
 
+    if-eq v1, v11, :cond_4
+
     if-eq v2, v11, :cond_4
 
-    if-eq v3, v11, :cond_4
-
-    add-int/lit8 v11, v3, 0x1
+    add-int/lit8 v11, v2, 0x1
 
     const-string v14, ""
 
     .line 128
-    invoke-virtual {v15, v3, v11, v14}, Ljava/lang/StringBuilder;->replace(IILjava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v15, v2, v11, v14}, Ljava/lang/StringBuilder;->replace(IILjava/lang/String;)Ljava/lang/StringBuilder;
 
-    add-int/lit8 v11, v2, 0x1
+    add-int/lit8 v11, v1, 0x1
 
     .line 129
-    invoke-virtual {v15, v2, v11, v14}, Ljava/lang/StringBuilder;->replace(IILjava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v15, v1, v11, v14}, Ljava/lang/StringBuilder;->replace(IILjava/lang/String;)Ljava/lang/StringBuilder;
 
     .line 130
     new-instance v11, Lorg/telegram/tgnet/TLRPC$TL_messageEntityTextUrl;
@@ -431,79 +431,79 @@
     invoke-direct {v11}, Lorg/telegram/tgnet/TLRPC$TL_messageEntityTextUrl;-><init>()V
 
     .line 131
-    iput v2, v11, Lorg/telegram/tgnet/TLRPC$MessageEntity;->offset:I
+    iput v1, v11, Lorg/telegram/tgnet/TLRPC$MessageEntity;->offset:I
 
-    sub-int/2addr v3, v2
+    sub-int/2addr v2, v1
 
-    sub-int/2addr v3, v12
+    sub-int/2addr v2, v12
 
     .line 132
-    iput v3, v11, Lorg/telegram/tgnet/TLRPC$MessageEntity;->length:I
+    iput v2, v11, Lorg/telegram/tgnet/TLRPC$MessageEntity;->length:I
 
-    const-string v2, "https://telegram.org"
+    const-string v1, "https://telegram.org"
 
     .line 133
-    iput-object v2, v11, Lorg/telegram/tgnet/TLRPC$MessageEntity;->url:Ljava/lang/String;
+    iput-object v1, v11, Lorg/telegram/tgnet/TLRPC$MessageEntity;->url:Ljava/lang/String;
 
     .line 134
-    iget-object v2, v13, Lorg/telegram/tgnet/TLRPC$Message;->entities:Ljava/util/ArrayList;
+    iget-object v1, v13, Lorg/telegram/tgnet/TLRPC$Message;->entities:Ljava/util/ArrayList;
 
-    invoke-virtual {v2, v11}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    invoke-virtual {v1, v11}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     .line 136
     :cond_4
     invoke-virtual {v15}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v1
 
-    iput-object v2, v13, Lorg/telegram/tgnet/TLRPC$Message;->message:Ljava/lang/String;
+    iput-object v1, v13, Lorg/telegram/tgnet/TLRPC$Message;->message:Ljava/lang/String;
 
     .line 139
     :goto_2
-    iget-object v2, v13, Lorg/telegram/tgnet/TLRPC$Message;->message:Ljava/lang/String;
+    iget-object v1, v13, Lorg/telegram/tgnet/TLRPC$Message;->message:Ljava/lang/String;
 
-    const-string v3, "\ud83d\ude0e"
+    const-string v2, "\ud83d\ude0e"
 
-    invoke-virtual {v2, v3}, Ljava/lang/String;->indexOf(Ljava/lang/String;)I
+    invoke-virtual {v1, v2}, Ljava/lang/String;->indexOf(Ljava/lang/String;)I
 
-    move-result v2
+    move-result v1
 
-    if-ltz v2, :cond_5
+    if-ltz v1, :cond_5
 
     .line 141
-    new-instance v3, Lorg/telegram/tgnet/TLRPC$TL_messageEntityCustomEmoji;
+    new-instance v2, Lorg/telegram/tgnet/TLRPC$TL_messageEntityCustomEmoji;
 
-    invoke-direct {v3}, Lorg/telegram/tgnet/TLRPC$TL_messageEntityCustomEmoji;-><init>()V
+    invoke-direct {v2}, Lorg/telegram/tgnet/TLRPC$TL_messageEntityCustomEmoji;-><init>()V
 
     .line 142
-    iput v2, v3, Lorg/telegram/tgnet/TLRPC$MessageEntity;->offset:I
+    iput v1, v2, Lorg/telegram/tgnet/TLRPC$MessageEntity;->offset:I
 
-    const/4 v2, 0x2
+    const/4 v1, 0x2
 
     .line 143
-    iput v2, v3, Lorg/telegram/tgnet/TLRPC$MessageEntity;->length:I
+    iput v1, v2, Lorg/telegram/tgnet/TLRPC$MessageEntity;->length:I
 
     const-wide v14, 0x4a913c1500001b0eL    # 1.6120662781798343E51
 
     .line 144
-    iput-wide v14, v3, Lorg/telegram/tgnet/TLRPC$TL_messageEntityCustomEmoji;->document_id:J
+    iput-wide v14, v2, Lorg/telegram/tgnet/TLRPC$TL_messageEntityCustomEmoji;->document_id:J
 
     .line 145
-    iget-object v2, v13, Lorg/telegram/tgnet/TLRPC$Message;->entities:Ljava/util/ArrayList;
+    iget-object v1, v13, Lorg/telegram/tgnet/TLRPC$Message;->entities:Ljava/util/ArrayList;
 
-    invoke-virtual {v2, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     :cond_5
-    add-int/lit16 v1, v1, 0x3c0
+    add-int/lit16 v0, v0, 0x3c0
 
     .line 147
-    iput v1, v13, Lorg/telegram/tgnet/TLRPC$Message;->date:I
+    iput v0, v13, Lorg/telegram/tgnet/TLRPC$Message;->date:I
 
     .line 148
     iput-wide v4, v13, Lorg/telegram/tgnet/TLRPC$Message;->dialog_id:J
 
     .line 149
-    iput v0, v13, Lorg/telegram/tgnet/TLRPC$Message;->flags:I
+    iput v3, v13, Lorg/telegram/tgnet/TLRPC$Message;->flags:I
 
     .line 150
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_peerUser;
@@ -761,7 +761,7 @@
 
     if-ne v8, v2, :cond_8
 
-    const/4 v3, 0x1
+    move v3, v12
 
     goto :goto_7
 
@@ -1017,7 +1017,7 @@
 
     const/4 v1, 0x0
 
-    const/4 v3, 0x0
+    move v3, v1
 
     :goto_1
     const/4 v4, 0x2
@@ -1055,7 +1055,7 @@
 
     const/high16 v7, 0x437f0000    # 255.0f
 
-    mul-float v7, v7, v0
+    mul-float/2addr v7, v0
 
     float-to-int v7, v7
 
@@ -1205,7 +1205,7 @@
 
     int-to-float v8, v8
 
-    mul-float v8, v8, v7
+    mul-float/2addr v8, v7
 
     float-to-double v8, v8
 
@@ -1222,7 +1222,7 @@
 
     int-to-float v9, v9
 
-    mul-float v9, v9, v7
+    mul-float/2addr v9, v7
 
     float-to-double v9, v9
 

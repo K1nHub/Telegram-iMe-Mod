@@ -62,7 +62,7 @@
 
     const/high16 v2, 0x42cc0000    # 102.0f
 
-    mul-float v1, v1, v2
+    mul-float/2addr v1, v2
 
     iget-object v2, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$9;->this$0:Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;
 
@@ -74,7 +74,7 @@
 
     sub-float/2addr v3, v2
 
-    mul-float v1, v1, v3
+    mul-float/2addr v1, v3
 
     float-to-int v1, v1
 
@@ -318,7 +318,7 @@
 
     move-result v5
 
-    mul-float v4, v4, v5
+    mul-float/2addr v4, v5
 
     float-to-int v4, v4
 

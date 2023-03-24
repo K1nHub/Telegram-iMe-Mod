@@ -22,7 +22,7 @@ import org.fork.enums.TelegramCacheType;
 import org.fork.models.TelegramCacheData;
 import org.fork.utils.Callbacks$Callback2;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3286R;
+import org.telegram.messenger.C3301R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.Utilities;
 import org.telegram.p048ui.ActionBar.AlertDialog;
@@ -191,7 +191,7 @@ public final class ClearCacheBottomSheet extends BottomSheet {
     /* JADX INFO: Access modifiers changed from: private */
     public final BottomSheet.BottomSheetCell initClearButton() {
         final BottomSheet.BottomSheetCell bottomSheetCell = new BottomSheet.BottomSheetCell(getContext(), 2);
-        bottomSheetCell.setTextAndIcon(LocaleController.getString("ClearMediaCache", C3286R.string.ClearMediaCache), 0);
+        bottomSheetCell.setTextAndIcon(LocaleController.getString("ClearMediaCache", C3301R.string.ClearMediaCache), 0);
         bottomSheetCell.getTextView().setOnClickListener(new View.OnClickListener() { // from class: org.fork.ui.dialog.ClearCacheBottomSheet$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {

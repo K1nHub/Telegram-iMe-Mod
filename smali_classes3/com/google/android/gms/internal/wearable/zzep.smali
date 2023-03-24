@@ -109,7 +109,7 @@
 
     if-lt p1, v0, :cond_2
 
-    const/16 p0, -0x20
+    move p0, v1
 
     :cond_0
     const/16 v1, -0x13
@@ -118,7 +118,7 @@
 
     if-ge p1, v0, :cond_2
 
-    const/16 p0, -0x13
+    move p0, v1
 
     :cond_1
     invoke-static {p2}, Lcom/google/android/gms/internal/wearable/zzep;->zze(B)Z

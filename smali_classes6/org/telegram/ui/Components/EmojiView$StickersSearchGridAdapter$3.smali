@@ -73,7 +73,7 @@
 
     const v0, 0x3fd9999a    # 1.7f
 
-    mul-float p2, p2, v0
+    mul-float/2addr p2, v0
 
     float-to-int p2, p2
 

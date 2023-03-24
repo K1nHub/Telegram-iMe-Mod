@@ -40,7 +40,7 @@
 
 # virtual methods
 .method public onStickerSetInstalled()V
-    .locals 7
+    .locals 6
 
     .line 491
     iget-object v0, p0, Lorg/telegram/ui/Components/TrendingStickersLayout$8;->this$0:Lorg/telegram/ui/Components/TrendingStickersLayout;
@@ -107,9 +107,9 @@
 
     iget-wide v4, v4, Lorg/telegram/tgnet/TLRPC$InputStickerSet;->id:J
 
-    cmp-long v6, v2, v4
+    cmp-long v2, v2, v4
 
-    if-nez v6, :cond_0
+    if-nez v2, :cond_0
 
     .line 495
     iget-object v0, p0, Lorg/telegram/ui/Components/TrendingStickersLayout$8;->this$0:Lorg/telegram/ui/Components/TrendingStickersLayout;

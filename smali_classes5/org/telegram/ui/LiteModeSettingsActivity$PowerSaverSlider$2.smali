@@ -58,7 +58,7 @@
 
     const/high16 p1, 0x42c80000    # 100.0f
 
-    mul-float p2, p2, p1
+    mul-float/2addr p2, p1
 
     .line 688
     invoke-static {p2}, Ljava/lang/Math;->round(F)I

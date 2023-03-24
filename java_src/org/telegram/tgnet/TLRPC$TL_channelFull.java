@@ -25,7 +25,7 @@ public class TLRPC$TL_channelFull extends TLRPC$ChatFull {
         this.antispam = (readInt322 & 2) != 0;
         this.participants_hidden = (readInt322 & 4) != 0;
         this.translations_disabled = (readInt322 & 8) != 0;
-        this.f1500id = abstractSerializedData.readInt64(z);
+        this.f1501id = abstractSerializedData.readInt64(z);
         this.about = abstractSerializedData.readString(z);
         if ((this.flags & 1) != 0) {
             this.participants_count = abstractSerializedData.readInt32(z);
@@ -177,7 +177,7 @@ public class TLRPC$TL_channelFull extends TLRPC$ChatFull {
         int i12 = this.translations_disabled ? i11 | 8 : i11 & (-9);
         this.flags2 = i12;
         abstractSerializedData.writeInt32(i12);
-        abstractSerializedData.writeInt64(this.f1500id);
+        abstractSerializedData.writeInt64(this.f1501id);
         abstractSerializedData.writeString(this.about);
         if ((this.flags & 1) != 0) {
             abstractSerializedData.writeInt32(this.participants_count);

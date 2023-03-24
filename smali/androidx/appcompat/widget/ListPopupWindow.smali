@@ -548,14 +548,14 @@
 
     if-ltz v0, :cond_4
 
-    const/high16 v5, -0x80000000
+    move v5, v1
 
     goto :goto_1
 
     :cond_4
-    const/4 v0, 0x0
+    move v0, v4
 
-    const/4 v5, 0x0
+    move v5, v0
 
     .line 1251
     :goto_1
@@ -593,7 +593,7 @@
     goto :goto_2
 
     :cond_5
-    const/4 v0, 0x0
+    move v0, v4
 
     .line 1262
     :goto_2
@@ -641,7 +641,7 @@
     goto :goto_3
 
     :cond_7
-    const/4 v0, 0x0
+    move v0, v4
 
     .line 1277
     :goto_3
@@ -685,7 +685,7 @@
 
     invoke-virtual {v5}, Landroid/graphics/Rect;->setEmpty()V
 
-    const/4 v5, 0x0
+    move v5, v4
 
     .line 1293
     :cond_9
@@ -704,7 +704,7 @@
     goto :goto_5
 
     :cond_a
-    const/4 v3, 0x0
+    move v3, v4
 
     .line 1295
     :goto_5
@@ -1666,7 +1666,7 @@
 
     if-ne v2, v6, :cond_1
 
-    const/4 v2, -0x1
+    move v2, v6
 
     goto :goto_0
 
@@ -1694,7 +1694,7 @@
     goto :goto_1
 
     :cond_3
-    const/4 v0, -0x1
+    move v0, v6
 
     :goto_1
     if-eqz v1, :cond_5
@@ -1706,12 +1706,12 @@
 
     if-ne v4, v6, :cond_4
 
-    const/4 v4, -0x1
+    move v4, v6
 
     goto :goto_2
 
     :cond_4
-    const/4 v4, 0x0
+    move v4, v5
 
     :goto_2
     invoke-virtual {v1, v4}, Landroid/widget/PopupWindow;->setWidth(I)V
@@ -1731,12 +1731,12 @@
 
     if-ne v4, v6, :cond_6
 
-    const/4 v4, -0x1
+    move v4, v6
 
     goto :goto_3
 
     :cond_6
-    const/4 v4, 0x0
+    move v4, v5
 
     :goto_3
     invoke-virtual {v1, v4}, Landroid/widget/PopupWindow;->setWidth(I)V
@@ -1771,7 +1771,7 @@
     goto :goto_5
 
     :cond_9
-    const/4 v3, 0x0
+    move v3, v5
 
     :goto_5
     invoke-virtual {v1, v3}, Landroid/widget/PopupWindow;->setOutsideTouchable(Z)V
@@ -1789,7 +1789,7 @@
 
     if-gez v2, :cond_a
 
-    const/4 v11, -0x1
+    move v11, v6
 
     goto :goto_6
 
@@ -1799,7 +1799,7 @@
     :goto_6
     if-gez v0, :cond_b
 
-    const/4 v12, -0x1
+    move v12, v6
 
     goto :goto_7
 
@@ -1817,7 +1817,7 @@
 
     if-ne v1, v6, :cond_d
 
-    const/4 v1, -0x1
+    move v1, v6
 
     goto :goto_8
 
@@ -1840,7 +1840,7 @@
 
     if-ne v2, v6, :cond_f
 
-    const/4 v0, -0x1
+    move v0, v6
 
     goto :goto_9
 
@@ -1877,12 +1877,12 @@
 
     if-nez v1, :cond_11
 
-    const/4 v1, 0x1
+    move v1, v3
 
     goto :goto_a
 
     :cond_11
-    const/4 v1, 0x0
+    move v1, v5
 
     :goto_a
     invoke-virtual {v0, v1}, Landroid/widget/PopupWindow;->setOutsideTouchable(Z)V

@@ -84,53 +84,53 @@
 
     move/from16 v10, p10
 
-    .line 1041
+    .line 1080
     invoke-direct/range {v0 .. v11}, Lcom/smedialink/storage/domain/model/wallet/token/TokenInfo;-><init>(Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;IIIILcom/smedialink/storage/domain/model/wallet/token/TokenType;IIIILkotlin/jvm/internal/DefaultConstructorMarker;)V
 
-    .line 1031
+    .line 1070
     iput-object v13, v12, Lcom/smedialink/storage/domain/model/wallet/token/TokenInfo$Fiat;->code:Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;
 
     move/from16 v0, p2
 
-    .line 1032
+    .line 1071
     iput v0, v12, Lcom/smedialink/storage/domain/model/wallet/token/TokenInfo$Fiat;->logo:I
 
     move/from16 v0, p3
 
-    .line 1033
+    .line 1072
     iput v0, v12, Lcom/smedialink/storage/domain/model/wallet/token/TokenInfo$Fiat;->smallWhiteIcon:I
 
     move/from16 v0, p4
 
-    .line 1034
+    .line 1073
     iput v0, v12, Lcom/smedialink/storage/domain/model/wallet/token/TokenInfo$Fiat;->fullName:I
 
     move/from16 v0, p5
 
-    .line 1035
+    .line 1074
     iput v0, v12, Lcom/smedialink/storage/domain/model/wallet/token/TokenInfo$Fiat;->shortName:I
 
-    .line 1036
+    .line 1075
     iput-object v14, v12, Lcom/smedialink/storage/domain/model/wallet/token/TokenInfo$Fiat;->tokenType:Lcom/smedialink/storage/domain/model/wallet/token/TokenType;
 
     move/from16 v0, p7
 
-    .line 1037
+    .line 1076
     iput v0, v12, Lcom/smedialink/storage/domain/model/wallet/token/TokenInfo$Fiat;->decimals:I
 
     move/from16 v0, p8
 
-    .line 1038
+    .line 1077
     iput v0, v12, Lcom/smedialink/storage/domain/model/wallet/token/TokenInfo$Fiat;->maxInputDigits:I
 
     move/from16 v0, p9
 
-    .line 1039
+    .line 1078
     iput v0, v12, Lcom/smedialink/storage/domain/model/wallet/token/TokenInfo$Fiat;->sortPosition:I
 
     move/from16 v0, p10
 
-    .line 1040
+    .line 1079
     iput v0, v12, Lcom/smedialink/storage/domain/model/wallet/token/TokenInfo$Fiat;->site:I
 
     return-void
@@ -143,7 +143,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 1036
+    .line 1075
     sget-object v0, Lcom/smedialink/storage/domain/model/wallet/token/TokenType;->FIAT:Lcom/smedialink/storage/domain/model/wallet/token/TokenType;
 
     move-object v7, v0
@@ -174,7 +174,7 @@
 
     move/from16 v11, p10
 
-    .line 1030
+    .line 1069
     invoke-direct/range {v1 .. v11}, Lcom/smedialink/storage/domain/model/wallet/token/TokenInfo$Fiat;-><init>(Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;IIIILcom/smedialink/storage/domain/model/wallet/token/TokenType;IIII)V
 
     return-void
@@ -185,7 +185,7 @@
 .method public getCode()Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;
     .locals 1
 
-    .line 1031
+    .line 1070
     iget-object v0, p0, Lcom/smedialink/storage/domain/model/wallet/token/TokenInfo$Fiat;->code:Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;
 
     return-object v0
@@ -194,7 +194,7 @@
 .method public getDecimals()I
     .locals 1
 
-    .line 1037
+    .line 1076
     iget v0, p0, Lcom/smedialink/storage/domain/model/wallet/token/TokenInfo$Fiat;->decimals:I
 
     return v0
@@ -203,7 +203,7 @@
 .method public getFullName()I
     .locals 1
 
-    .line 1034
+    .line 1073
     iget v0, p0, Lcom/smedialink/storage/domain/model/wallet/token/TokenInfo$Fiat;->fullName:I
 
     return v0
@@ -212,7 +212,7 @@
 .method public getLogo()I
     .locals 1
 
-    .line 1032
+    .line 1071
     iget v0, p0, Lcom/smedialink/storage/domain/model/wallet/token/TokenInfo$Fiat;->logo:I
 
     return v0
@@ -221,7 +221,7 @@
 .method public getMaxInputDigits()I
     .locals 1
 
-    .line 1038
+    .line 1077
     iget v0, p0, Lcom/smedialink/storage/domain/model/wallet/token/TokenInfo$Fiat;->maxInputDigits:I
 
     return v0
@@ -230,7 +230,7 @@
 .method public getShortName()I
     .locals 1
 
-    .line 1035
+    .line 1074
     iget v0, p0, Lcom/smedialink/storage/domain/model/wallet/token/TokenInfo$Fiat;->shortName:I
 
     return v0
@@ -239,7 +239,7 @@
 .method public getSite()I
     .locals 1
 
-    .line 1040
+    .line 1079
     iget v0, p0, Lcom/smedialink/storage/domain/model/wallet/token/TokenInfo$Fiat;->site:I
 
     return v0
@@ -248,7 +248,7 @@
 .method public getSmallWhiteIcon()I
     .locals 1
 
-    .line 1033
+    .line 1072
     iget v0, p0, Lcom/smedialink/storage/domain/model/wallet/token/TokenInfo$Fiat;->smallWhiteIcon:I
 
     return v0
@@ -257,7 +257,7 @@
 .method public getSortPosition()I
     .locals 1
 
-    .line 1039
+    .line 1078
     iget v0, p0, Lcom/smedialink/storage/domain/model/wallet/token/TokenInfo$Fiat;->sortPosition:I
 
     return v0
@@ -266,7 +266,7 @@
 .method public getTokenType()Lcom/smedialink/storage/domain/model/wallet/token/TokenType;
     .locals 1
 
-    .line 1036
+    .line 1075
     iget-object v0, p0, Lcom/smedialink/storage/domain/model/wallet/token/TokenInfo$Fiat;->tokenType:Lcom/smedialink/storage/domain/model/wallet/token/TokenType;
 
     return-object v0

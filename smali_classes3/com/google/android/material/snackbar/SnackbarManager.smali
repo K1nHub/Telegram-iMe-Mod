@@ -192,7 +192,7 @@
     goto :goto_0
 
     :cond_2
-    const/16 v0, 0xabe
+    move v0, v1
 
     .line 235
     :goto_0

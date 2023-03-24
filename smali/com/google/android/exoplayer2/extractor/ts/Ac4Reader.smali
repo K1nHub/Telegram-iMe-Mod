@@ -263,7 +263,7 @@
 
     int-to-long v3, v0
 
-    mul-long v3, v3, v1
+    mul-long/2addr v3, v1
 
     iget-object v0, p0, Lcom/google/android/exoplayer2/extractor/ts/Ac4Reader;->format:Lcom/google/android/exoplayer2/Format;
 
@@ -308,7 +308,7 @@
 
     if-ne v0, v2, :cond_1
 
-    const/4 v1, 0x1
+    move v1, v3
 
     :cond_1
     iput-boolean v1, p0, Lcom/google/android/exoplayer2/extractor/ts/Ac4Reader;->lastByteWasAC:Z
@@ -323,12 +323,12 @@
 
     if-ne v0, v2, :cond_3
 
-    const/4 v2, 0x1
+    move v2, v3
 
     goto :goto_1
 
     :cond_3
-    const/4 v2, 0x0
+    move v2, v1
 
     .line 194
     :goto_1
@@ -345,7 +345,7 @@
     :cond_4
     if-ne v0, v4, :cond_5
 
-    const/4 v1, 0x1
+    move v1, v3
 
     .line 196
     :cond_5

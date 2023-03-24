@@ -156,7 +156,7 @@
 .end method
 
 .method public onNext(Ljava/lang/Object;)V
-    .locals 7
+    .locals 6
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TT;)V"
@@ -178,9 +178,9 @@
 
     const-wide/16 v4, 0x0
 
-    cmp-long v6, v0, v4
+    cmp-long v0, v0, v4
 
-    if-lez v6, :cond_1
+    if-lez v0, :cond_1
 
     cmp-long v0, v2, v4
 
@@ -209,7 +209,7 @@
 .end method
 
 .method public onSubscribe(Lio/reactivex/disposables/Disposable;)V
-    .locals 5
+    .locals 4
 
     .line 48
     iget-object v0, p0, Lio/reactivex/internal/operators/observable/ObservableTake$TakeObserver;->upstream:Lio/reactivex/disposables/Disposable;
@@ -228,9 +228,9 @@
 
     const-wide/16 v2, 0x0
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-nez v4, :cond_0
+    if-nez v0, :cond_0
 
     const/4 v0, 0x1
 

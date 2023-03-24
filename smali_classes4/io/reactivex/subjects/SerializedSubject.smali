@@ -281,7 +281,7 @@
     .line 130
     iput-boolean v1, p0, Lio/reactivex/subjects/SerializedSubject;->emitting:Z
 
-    const/4 v1, 0x0
+    move v1, v0
 
     .line 132
     :goto_0
@@ -474,7 +474,7 @@
 
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    move v1, v0
 
     .line 72
     :goto_0

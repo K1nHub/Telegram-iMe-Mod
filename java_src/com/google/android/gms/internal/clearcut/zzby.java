@@ -193,7 +193,7 @@ public final class zzby<FieldDescriptorType extends zzca<FieldDescriptorType>> {
             if (r2 == 0) goto L1e
             goto L43
         L1e:
-            r0 = 0
+            r0 = r1
             goto L43
         L20:
             boolean r2 = r3 instanceof java.lang.Integer

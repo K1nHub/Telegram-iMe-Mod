@@ -7,13 +7,13 @@ import com.smedialink.model.twitter.TweetsDateItem;
 import com.smedialink.utils.extentions.common.BaseQuickAdapterExtKt;
 import java.util.List;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.messenger.C3286R;
+import org.telegram.messenger.C3301R;
 /* compiled from: TweetDatesProvider.kt */
 /* renamed from: com.smedialink.ui.adapter.provider.TweetDatesProvider */
 /* loaded from: classes3.dex */
 public final class TweetDatesProvider extends BaseNodeProvider<TweetsDateItem> {
     private final int itemViewType = IdFabric$ViewTypes.TWEETS_DATE;
-    private final int layoutId = C3286R.layout.fork_recycle_item_date;
+    private final int layoutId = C3301R.layout.fork_recycle_item_date;
 
     @Override // com.chad.library.adapter.base.provider.BaseItemProvider
     public /* bridge */ /* synthetic */ void convert(BaseViewHolder baseViewHolder, Object obj, List list) {
@@ -34,7 +34,7 @@ public final class TweetDatesProvider extends BaseNodeProvider<TweetsDateItem> {
     public void convert(BaseViewHolder helper, TweetsDateItem item) {
         Intrinsics.checkNotNullParameter(helper, "helper");
         Intrinsics.checkNotNullParameter(item, "item");
-        int i = C3286R.C3289id.text_date;
+        int i = C3301R.C3304id.text_date;
         BaseQuickAdapterExtKt.applyForView(BaseQuickAdapterExtKt.setMediumTypeface(BaseQuickAdapterExtKt.setThemedTextColor(helper, i, "chat_serviceText"), i).setText(i, item.getDate()), i, TweetDatesProvider$convert$1.INSTANCE);
     }
 
@@ -42,6 +42,6 @@ public final class TweetDatesProvider extends BaseNodeProvider<TweetsDateItem> {
         Intrinsics.checkNotNullParameter(helper, "helper");
         Intrinsics.checkNotNullParameter(item, "item");
         Intrinsics.checkNotNullParameter(payloads, "payloads");
-        helper.setText(C3286R.C3289id.text_date, item.getDate());
+        helper.setText(C3301R.C3304id.text_date, item.getDate());
     }
 }

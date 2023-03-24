@@ -425,9 +425,9 @@
 
     ushr-long v1, v5, v1
 
-    long-to-int v2, v1
+    long-to-int v1, v1
 
-    invoke-static {v2, v0}, Lorg/bouncycastle/math/ec/custom/sec/SecP160R1Field;->reduce32(I[I)V
+    invoke-static {v1, v0}, Lorg/bouncycastle/math/ec/custom/sec/SecP160R1Field;->reduce32(I[I)V
 
     return-void
 .end method

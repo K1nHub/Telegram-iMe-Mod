@@ -270,12 +270,12 @@
 
     if-ne v3, v2, :cond_0
 
-    const/4 v3, 0x1
+    move v3, v2
 
     goto :goto_0
 
     :cond_0
-    const/4 v3, 0x0
+    move v3, v1
 
     :goto_0
     if-eqz v3, :cond_4
@@ -283,14 +283,14 @@
     .line 240
     iget-wide v3, p0, Lcom/smedialink/services/ServiceMessagesRemovingService;->migratedChatId:J
 
-    cmp-long v5, p1, v3
+    cmp-long v3, p1, v3
 
-    if-nez v5, :cond_1
+    if-nez v3, :cond_1
 
     goto :goto_1
 
     :cond_1
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_1
     iput-boolean v2, p0, Lcom/smedialink/services/ServiceMessagesRemovingService;->useMigratedChatId:Z
@@ -379,7 +379,7 @@
     goto :goto_3
 
     :cond_4
-    const/4 v1, 0x1
+    move v1, v2
 
     :goto_3
     return v1
@@ -586,16 +586,14 @@
 
     const/4 v1, 0x1
 
-    const/16 v20, 0x1
-
     goto :goto_0
 
     :cond_1
     const/4 v1, 0x0
 
-    const/16 v20, 0x0
-
     :goto_0
+    move/from16 v20, v1
+
     move-wide/from16 v3, p1
 
     move/from16 v17, v0
@@ -680,7 +678,7 @@
     goto :goto_1
 
     :cond_2
-    const/4 v4, 0x0
+    move v4, v0
 
     :cond_3
     :goto_1
@@ -857,13 +855,13 @@
     goto :goto_4
 
     :cond_8
-    const/4 v1, 0x0
+    move v1, v0
 
     goto :goto_5
 
     :cond_9
     :goto_4
-    const/4 v1, 0x1
+    move v1, v4
 
     :goto_5
     if-eqz v1, :cond_d
@@ -892,7 +890,7 @@
     if-eqz v1, :cond_b
 
     :cond_a
-    const/4 v0, 0x1
+    move v0, v4
 
     :cond_b
     if-nez v0, :cond_c
@@ -1036,12 +1034,12 @@
 
     if-le v5, v6, :cond_2
 
-    const/4 v5, 0x1
+    move v5, v3
 
     goto :goto_1
 
     :cond_2
-    const/4 v5, 0x0
+    move v5, v2
 
     :goto_1
     if-eqz v5, :cond_1
@@ -1158,7 +1156,7 @@
     if-eqz v1, :cond_8
 
     :cond_7
-    const/4 v2, 0x1
+    move v2, v3
 
     goto :goto_4
 
@@ -1190,12 +1188,12 @@
 
     if-ne v1, v4, :cond_a
 
-    const/4 v1, 0x1
+    move v1, v3
 
     goto :goto_3
 
     :cond_a
-    const/4 v1, 0x0
+    move v1, v2
 
     :goto_3
     if-nez v1, :cond_9

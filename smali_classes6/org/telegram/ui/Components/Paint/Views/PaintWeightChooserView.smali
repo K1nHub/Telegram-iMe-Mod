@@ -350,7 +350,7 @@
     .line 275
     iget v2, p0, Lorg/telegram/ui/Components/Paint/Views/PaintWeightChooserView;->showProgress:F
 
-    mul-float v2, v2, v1
+    mul-float/2addr v2, v1
 
     float-to-int v1, v2
 
@@ -770,7 +770,7 @@
 
     sub-float v9, v4, v1
 
-    mul-float v9, v9, v0
+    mul-float/2addr v9, v0
 
     float-to-int v0, v9
 
@@ -799,7 +799,7 @@
 
     move-result v9
 
-    mul-float v1, v1, v9
+    mul-float/2addr v1, v9
 
     iget-object v9, v6, Lorg/telegram/ui/Components/Paint/Views/PaintWeightChooserView;->touchRect:Landroid/graphics/RectF;
 
@@ -851,7 +851,7 @@
 
     sub-float/2addr v2, v9
 
-    mul-float v0, v0, v2
+    mul-float/2addr v0, v2
 
     add-float/2addr v1, v0
 
@@ -867,7 +867,7 @@
 
     const/high16 v5, 0x3fc00000    # 1.5f
 
-    mul-float v3, v3, v5
+    mul-float/2addr v3, v5
 
     .line 256
     invoke-static {v3, v14}, Ljava/lang/Math;->min(FF)F
@@ -973,7 +973,7 @@
 
     move-result v1
 
-    mul-float v0, v0, v1
+    mul-float/2addr v0, v1
 
     iget-object v1, v6, Lorg/telegram/ui/Components/Paint/Views/PaintWeightChooserView;->renderView:Lorg/telegram/ui/Components/Paint/RenderView;
 
@@ -1033,7 +1033,7 @@
 
     const p2, 0x3e99999a    # 0.3f
 
-    mul-float p1, p1, p2
+    mul-float/2addr p1, p2
 
     float-to-int p1, p1
 
@@ -1289,7 +1289,7 @@
 
     const v0, 0x3e99999a    # 0.3f
 
-    mul-float p2, p2, v0
+    mul-float/2addr p2, v0
 
     float-to-int p2, p2
 

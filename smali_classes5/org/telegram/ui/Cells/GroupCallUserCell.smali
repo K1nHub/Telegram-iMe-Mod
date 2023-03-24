@@ -259,12 +259,12 @@
 
     if-eqz v6, :cond_0
 
-    const/4 v8, 0x5
+    move v8, v2
 
     goto :goto_0
 
     :cond_0
-    const/4 v8, 0x3
+    move v8, v7
 
     :goto_0
     or-int/lit8 v11, v8, 0x30
@@ -273,24 +273,24 @@
 
     if-eqz v6, :cond_1
 
-    const/4 v12, 0x0
+    move v12, v4
 
     goto :goto_1
 
     :cond_1
-    const/16 v12, 0xb
+    move v12, v8
 
     :goto_1
     const/4 v13, 0x6
 
     if-eqz v6, :cond_2
 
-    const/16 v14, 0xb
+    move v14, v8
 
     goto :goto_2
 
     :cond_2
-    const/4 v14, 0x0
+    move v14, v4
 
     :goto_2
     const/4 v15, 0x0
@@ -342,24 +342,24 @@
 
     if-eqz v11, :cond_3
 
-    const/4 v12, 0x5
+    move v12, v2
 
     goto :goto_3
 
     :cond_3
-    const/4 v12, 0x3
+    move v12, v7
 
     :goto_3
     or-int/lit8 v12, v12, 0x30
 
     if-eqz v11, :cond_4
 
-    const/4 v13, 0x0
+    move v13, v4
 
     goto :goto_4
 
     :cond_4
-    const/16 v13, 0xb
+    move v13, v8
 
     :goto_4
     const/4 v14, 0x6
@@ -369,7 +369,7 @@
     goto :goto_5
 
     :cond_5
-    const/4 v8, 0x0
+    move v8, v4
 
     :goto_5
     const/4 v15, 0x0
@@ -447,12 +447,12 @@
 
     if-eqz v9, :cond_6
 
-    const/4 v9, 0x5
+    move v9, v2
 
     goto :goto_6
 
     :cond_6
-    const/4 v9, 0x3
+    move v9, v7
 
     :goto_6
     or-int/lit8 v9, v9, 0x30
@@ -470,12 +470,12 @@
 
     if-eqz v11, :cond_7
 
-    const/4 v12, 0x5
+    move v12, v2
 
     goto :goto_7
 
     :cond_7
-    const/4 v12, 0x3
+    move v12, v7
 
     :goto_7
     or-int/lit8 v12, v12, 0x30
@@ -486,24 +486,24 @@
 
     if-eqz v11, :cond_8
 
-    const/16 v13, 0x36
+    move/from16 v13, v16
 
     goto :goto_8
 
     :cond_8
-    const/16 v13, 0x43
+    move/from16 v13, v17
 
     :goto_8
     const/16 v14, 0xa
 
     if-eqz v11, :cond_9
 
-    const/16 v15, 0x43
+    move/from16 v15, v17
 
     goto :goto_9
 
     :cond_9
-    const/16 v15, 0x36
+    move/from16 v15, v16
 
     :goto_9
     const/16 v18, 0x0
@@ -569,7 +569,7 @@
 
     invoke-virtual {v5, v9}, Landroid/graphics/drawable/Drawable;->setColorFilter(Landroid/graphics/ColorFilter;)V
 
-    const/4 v5, 0x0
+    move v5, v4
 
     .line 303
     :goto_a
@@ -608,12 +608,12 @@
 
     if-eqz v11, :cond_a
 
-    const/4 v11, 0x5
+    move v11, v2
 
     goto :goto_b
 
     :cond_a
-    const/4 v11, 0x3
+    move v11, v7
 
     :goto_b
     or-int/lit8 v11, v11, 0x30
@@ -655,36 +655,36 @@
 
     if-eqz v11, :cond_b
 
-    const/4 v12, 0x5
+    move v12, v2
 
     goto :goto_c
 
     :cond_b
-    const/4 v12, 0x3
+    move v12, v7
 
     :goto_c
     or-int/lit8 v20, v12, 0x30
 
     if-eqz v11, :cond_c
 
-    const/16 v21, 0x36
+    move/from16 v21, v16
 
     goto :goto_d
 
     :cond_c
-    const/16 v21, 0x43
+    move/from16 v21, v17
 
     :goto_d
     const/16 v22, 0x20
 
     if-eqz v11, :cond_d
 
-    const/16 v23, 0x43
+    move/from16 v23, v17
 
     goto :goto_e
 
     :cond_d
-    const/16 v23, 0x36
+    move/from16 v23, v16
 
     :goto_e
     const/16 v24, 0x0
@@ -849,36 +849,36 @@
 
     if-eqz v11, :cond_13
 
-    const/4 v12, 0x5
+    move v12, v2
 
     goto :goto_10
 
     :cond_13
-    const/4 v12, 0x3
+    move v12, v7
 
     :goto_10
     or-int/lit8 v20, v12, 0x30
 
     if-eqz v11, :cond_14
 
-    const/16 v21, 0x36
+    move/from16 v21, v16
 
     goto :goto_11
 
     :cond_14
-    const/16 v21, 0x43
+    move/from16 v21, v17
 
     :goto_11
     const/16 v22, 0x20
 
     if-eqz v11, :cond_15
 
-    const/16 v23, 0x43
+    move/from16 v23, v17
 
     goto :goto_12
 
     :cond_15
-    const/16 v23, 0x36
+    move/from16 v23, v16
 
     :goto_12
     const/16 v24, 0x0
@@ -937,12 +937,12 @@
 
     if-eqz v5, :cond_17
 
-    const/4 v5, 0x5
+    move v5, v2
 
     goto :goto_14
 
     :cond_17
-    const/4 v5, 0x3
+    move v5, v7
 
     :goto_14
     or-int/lit8 v17, v5, 0x30
@@ -1109,7 +1109,7 @@
 
     if-eqz v3, :cond_19
 
-    const/4 v2, 0x3
+    move v2, v7
 
     :cond_19
     or-int/lit8 v17, v2, 0x10
@@ -1258,13 +1258,13 @@
     goto :goto_0
 
     :cond_1
-    const/4 v3, 0x0
+    move v3, v6
 
     goto :goto_1
 
     :cond_2
     :goto_0
-    const/4 v3, 0x1
+    move v3, v7
 
     :goto_1
     invoke-virtual {v2, v3}, Landroid/widget/ImageView;->setEnabled(Z)V
@@ -1282,9 +1282,9 @@
 
     const-wide/16 v9, 0x1f4
 
-    cmp-long v11, v2, v9
+    cmp-long v2, v2, v9
 
-    if-gez v11, :cond_3
+    if-gez v2, :cond_3
 
     .line 635
     iget-boolean v2, v8, Lorg/telegram/tgnet/TLRPC$TL_groupCallParticipant;->hasVoiceDelayed:Z
@@ -1313,12 +1313,12 @@
 
     if-gez v3, :cond_4
 
-    const/4 v3, 0x1
+    move v3, v7
 
     goto :goto_3
 
     :cond_4
-    const/4 v3, 0x0
+    move v3, v6
 
     .line 647
     :goto_3
@@ -1402,12 +1402,12 @@
 
     if-nez v3, :cond_9
 
-    const/4 v3, 0x1
+    move v3, v7
 
     goto :goto_4
 
     :cond_9
-    const/4 v3, 0x0
+    move v3, v6
 
     .line 671
     :goto_4
@@ -1442,12 +1442,12 @@
 
     :cond_a
     :goto_5
-    const/4 v8, 0x1
+    move v8, v7
 
     goto :goto_6
 
     :cond_b
-    const/4 v8, 0x0
+    move v8, v6
 
     goto :goto_6
 
@@ -1541,15 +1541,17 @@
 
     if-eqz v9, :cond_12
 
-    const/4 v3, 0x4
+    move v3, v15
 
     goto :goto_7
 
     :cond_12
-    const/4 v3, 0x0
+    move v3, v6
 
     :goto_7
     move v4, v3
+
+    move v3, v6
 
     move-object/from16 v18, v13
 
@@ -1566,12 +1568,12 @@
 
     if-eqz v2, :cond_14
 
-    const/4 v2, 0x1
+    move v2, v7
 
     goto :goto_9
 
     :cond_14
-    const/4 v2, 0x0
+    move v2, v6
 
     :goto_9
     if-eqz v2, :cond_19
@@ -1594,9 +1596,9 @@
 
     sub-long v16, v16, v12
 
-    cmp-long v11, v12, v4
+    cmp-long v4, v12, v4
 
-    if-eqz v11, :cond_16
+    if-eqz v4, :cond_16
 
     const-wide/16 v4, 0x1388
 
@@ -1622,19 +1624,19 @@
     :goto_a
     if-eqz v3, :cond_17
 
-    const/4 v3, 0x2
+    move v3, v14
 
     goto :goto_b
 
     :cond_17
     if-eqz v9, :cond_18
 
-    const/4 v3, 0x4
+    move v3, v15
 
     goto :goto_b
 
     :cond_18
-    const/4 v3, 0x0
+    move v3, v6
 
     :goto_b
     move v4, v3
@@ -1643,7 +1645,7 @@
 
     move v2, v10
 
-    goto :goto_f
+    goto :goto_e
 
     :cond_19
     move-object/from16 v18, v13
@@ -1657,19 +1659,19 @@
 
     if-eqz v3, :cond_1a
 
-    const/4 v3, 0x2
+    move v3, v14
 
     goto :goto_c
 
     :cond_1a
     if-eqz v9, :cond_1b
 
-    const/4 v3, 0x4
+    move v3, v15
 
     goto :goto_c
 
     :cond_1b
-    const/4 v3, 0x0
+    move v3, v6
 
     :goto_c
     move/from16 v19, v3
@@ -1680,7 +1682,7 @@
 
     move/from16 v4, v19
 
-    goto :goto_f
+    goto :goto_e
 
     :cond_1c
     move-object/from16 v18, v13
@@ -1699,11 +1701,11 @@
 
     move-result v2
 
-    const/4 v3, 0x0
+    move v3, v6
 
-    const/4 v4, 0x1
+    move v4, v7
 
-    goto :goto_f
+    goto :goto_e
 
     .line 708
     :cond_1d
@@ -1715,12 +1717,12 @@
 
     if-eqz v9, :cond_1e
 
-    const/4 v3, 0x4
+    move v3, v15
 
     goto :goto_d
 
     :cond_1e
-    const/4 v3, 0x0
+    move v3, v6
 
     .line 710
     :goto_d
@@ -1728,11 +1730,10 @@
 
     move v4, v3
 
-    :goto_e
-    const/4 v3, 0x0
+    move v3, v6
 
     .line 714
-    :goto_f
+    :goto_e
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/ui/Cells/GroupCallUserCell;->isSelfUser()Z
 
     move-result v5
@@ -1787,7 +1788,7 @@
 
     invoke-virtual {v5, v10}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setText(Ljava/lang/CharSequence;)Z
 
-    goto :goto_10
+    goto :goto_f
 
     .line 723
     :cond_20
@@ -1806,7 +1807,7 @@
     invoke-virtual {v5, v10}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setText(Ljava/lang/CharSequence;)Z
 
     .line 725
-    :goto_10
+    :goto_f
     iget-object v5, v0, Lorg/telegram/ui/Cells/GroupCallUserCell;->statusTextView:[Lorg/telegram/ui/ActionBar/SimpleTextView;
 
     aget-object v5, v5, v15
@@ -1819,7 +1820,7 @@
 
     invoke-virtual {v5, v10}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setTextColor(I)V
 
-    goto :goto_12
+    goto :goto_11
 
     :cond_21
     if-nez v9, :cond_23
@@ -1844,7 +1845,7 @@
 
     invoke-virtual {v5, v10}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setText(Ljava/lang/CharSequence;)Z
 
-    goto :goto_11
+    goto :goto_10
 
     .line 730
     :cond_22
@@ -1863,7 +1864,7 @@
     invoke-virtual {v5, v10}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setText(Ljava/lang/CharSequence;)Z
 
     .line 732
-    :goto_11
+    :goto_10
     iget-object v5, v0, Lorg/telegram/ui/Cells/GroupCallUserCell;->statusTextView:[Lorg/telegram/ui/ActionBar/SimpleTextView;
 
     aget-object v5, v5, v15
@@ -1876,7 +1877,7 @@
 
     invoke-virtual {v5, v10}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setTextColor(I)V
 
-    goto :goto_12
+    goto :goto_11
 
     .line 733
     :cond_23
@@ -1912,7 +1913,7 @@
 
     invoke-virtual {v5, v10}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setTextColor(I)V
 
-    goto :goto_12
+    goto :goto_11
 
     .line 737
     :cond_24
@@ -1941,7 +1942,7 @@
 
     invoke-virtual {v5, v10}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setTextColor(I)V
 
-    :goto_12
+    :goto_11
     if-eqz v9, :cond_25
 
     .line 741
@@ -1968,7 +1969,7 @@
 
     invoke-virtual {v5, v9}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setTextColor(I)V
 
-    goto :goto_13
+    goto :goto_12
 
     .line 744
     :cond_25
@@ -1997,7 +1998,7 @@
 
     invoke-virtual {v5, v9}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setTextColor(I)V
 
-    goto :goto_13
+    goto :goto_12
 
     :cond_26
     const-string v5, ""
@@ -2024,7 +2025,7 @@
 
     invoke-virtual {v9, v5}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setText(Ljava/lang/CharSequence;)Z
 
-    goto :goto_13
+    goto :goto_12
 
     .line 751
     :cond_27
@@ -2040,7 +2041,7 @@
     invoke-virtual {v9, v5}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setText(Ljava/lang/CharSequence;)Z
 
     .line 755
-    :goto_13
+    :goto_12
     iget-object v5, v0, Lorg/telegram/ui/Cells/GroupCallUserCell;->animatorSet:Landroid/animation/AnimatorSet;
 
     if-eqz v5, :cond_29
@@ -2055,14 +2056,14 @@
     if-eq v9, v2, :cond_29
 
     :cond_28
-    const/4 v9, 0x1
+    move v9, v7
 
-    goto :goto_14
+    goto :goto_13
 
     :cond_29
-    const/4 v9, 0x0
+    move v9, v6
 
-    :goto_14
+    :goto_13
     const/4 v10, 0x0
 
     if-eqz v1, :cond_2a
@@ -2121,7 +2122,7 @@
     .line 778
     invoke-virtual {v5, v12}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    goto :goto_15
+    goto :goto_14
 
     .line 780
     :cond_2d
@@ -2153,7 +2154,7 @@
     :cond_2e
     move-object v5, v10
 
-    :goto_15
+    :goto_14
     if-ne v4, v7, :cond_31
 
     .line 785
@@ -2190,7 +2191,7 @@
 
     if-ge v2, v12, :cond_2f
 
-    const/4 v11, 0x1
+    move v11, v7
 
     :cond_2f
     invoke-static {v11}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -2207,7 +2208,7 @@
 
     invoke-virtual {v13, v2}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setText(Ljava/lang/CharSequence;)Z
 
-    goto :goto_16
+    goto :goto_15
 
     .line 791
     :cond_30
@@ -2234,7 +2235,7 @@
 
     .line 795
     :cond_31
-    :goto_16
+    :goto_15
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/ui/Cells/GroupCallUserCell;->isSelfUser()Z
 
     move-result v2
@@ -2248,7 +2249,7 @@
     .line 796
     invoke-direct {v0, v2}, Lorg/telegram/ui/Cells/GroupCallUserCell;->applyStatus(I)V
 
-    goto/16 :goto_1e
+    goto/16 :goto_1d
 
     :cond_32
     if-eqz v1, :cond_33
@@ -2275,10 +2276,10 @@
 
     if-nez v4, :cond_37
 
-    const/4 v12, 0x0
+    move v12, v6
 
     .line 806
-    :goto_17
+    :goto_16
     iget-object v13, v0, Lorg/telegram/ui/Cells/GroupCallUserCell;->statusTextView:[Lorg/telegram/ui/ActionBar/SimpleTextView;
 
     array-length v14, v13
@@ -2294,9 +2295,9 @@
 
     if-ne v12, v4, :cond_35
 
-    const/4 v2, 0x0
+    move v2, v11
 
-    goto :goto_18
+    goto :goto_17
 
     :cond_35
     invoke-static {v9}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
@@ -2305,7 +2306,7 @@
 
     int-to-float v2, v2
 
-    :goto_18
+    :goto_17
     aput v2, v15, v6
 
     invoke-static {v13, v14, v15}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
@@ -2327,12 +2328,12 @@
 
     const/high16 v15, 0x3f800000    # 1.0f
 
-    goto :goto_19
+    goto :goto_18
 
     :cond_36
-    const/4 v15, 0x0
+    move v15, v11
 
-    :goto_19
+    :goto_18
     aput v15, v14, v6
 
     invoke-static {v2, v13, v14}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
@@ -2343,13 +2344,13 @@
 
     add-int/lit8 v12, v12, 0x1
 
-    goto :goto_17
+    goto :goto_16
 
     :cond_37
-    const/4 v2, 0x0
+    move v2, v6
 
     .line 811
-    :goto_1a
+    :goto_19
     iget-object v12, v0, Lorg/telegram/ui/Cells/GroupCallUserCell;->statusTextView:[Lorg/telegram/ui/ActionBar/SimpleTextView;
 
     array-length v13, v12
@@ -2365,28 +2366,28 @@
 
     if-ne v2, v4, :cond_38
 
-    const/4 v15, 0x0
+    move v15, v11
 
-    goto :goto_1c
+    goto :goto_1b
 
     :cond_38
     if-nez v2, :cond_39
 
     const/4 v15, 0x2
 
-    goto :goto_1b
+    goto :goto_1a
 
     :cond_39
-    const/4 v15, -0x2
+    move v15, v9
 
-    :goto_1b
+    :goto_1a
     invoke-static {v15}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v15
 
     int-to-float v15, v15
 
-    :goto_1c
+    :goto_1b
     aput v15, v14, v6
 
     invoke-static {v12, v13, v14}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
@@ -2408,12 +2409,12 @@
 
     const/high16 v15, 0x3f800000    # 1.0f
 
-    goto :goto_1d
+    goto :goto_1c
 
     :cond_3a
-    const/4 v15, 0x0
+    move v15, v11
 
-    :goto_1d
+    :goto_1c
     aput v15, v14, v6
 
     invoke-static {v12, v13, v14}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
@@ -2424,7 +2425,7 @@
 
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_1a
+    goto :goto_19
 
     .line 817
     :cond_3b
@@ -2436,7 +2437,7 @@
 
     .line 821
     :cond_3d
-    :goto_1e
+    :goto_1d
     iget-object v2, v0, Lorg/telegram/ui/Cells/GroupCallUserCell;->avatarWavesDrawable:Lorg/telegram/ui/Cells/GroupCallUserCell$AvatarWavesDrawable;
 
     invoke-virtual {v2, v4, v1}, Lorg/telegram/ui/Cells/GroupCallUserCell$AvatarWavesDrawable;->setMuted(IZ)V
@@ -2523,7 +2524,7 @@
 
     invoke-virtual {v9, v10, v12}, Lorg/telegram/ui/Components/RLottieDrawable;->setOnFinishCallback(Ljava/lang/Runnable;I)V
 
-    goto :goto_20
+    goto :goto_1f
 
     .line 849
     :cond_41
@@ -2531,7 +2532,7 @@
 
     invoke-virtual {v9, v10, v6}, Lorg/telegram/ui/Components/RLottieDrawable;->setOnFinishCallback(Ljava/lang/Runnable;I)V
 
-    goto :goto_20
+    goto :goto_1f
 
     .line 852
     :cond_42
@@ -2560,7 +2561,7 @@
 
     move-result v5
 
-    goto :goto_20
+    goto :goto_1f
 
     .line 857
     :cond_43
@@ -2570,17 +2571,17 @@
 
     const/16 v9, 0x40
 
-    goto :goto_1f
+    goto :goto_1e
 
     :cond_44
     const/16 v9, 0x2a
 
-    :goto_1f
+    :goto_1e
     invoke-virtual {v5, v9}, Lorg/telegram/ui/Components/RLottieDrawable;->setCustomEndFrame(I)Z
 
     move-result v5
 
-    :goto_20
+    :goto_1f
     if-eqz v1, :cond_49
 
     if-eqz v5, :cond_48
@@ -2596,7 +2597,7 @@
 
     invoke-virtual {v1, v2}, Lorg/telegram/ui/Components/RLottieDrawable;->setCurrentFrame(I)V
 
-    goto :goto_21
+    goto :goto_20
 
     :cond_45
     if-eqz v8, :cond_46
@@ -2613,7 +2614,7 @@
 
     invoke-virtual {v1, v6}, Lorg/telegram/ui/Components/RLottieDrawable;->setCurrentFrame(I)V
 
-    goto :goto_21
+    goto :goto_20
 
     :cond_46
     if-eqz v8, :cond_47
@@ -2625,7 +2626,7 @@
 
     invoke-virtual {v1, v2}, Lorg/telegram/ui/Components/RLottieDrawable;->setCurrentFrame(I)V
 
-    goto :goto_21
+    goto :goto_20
 
     .line 870
     :cond_47
@@ -2635,12 +2636,12 @@
 
     .line 874
     :cond_48
-    :goto_21
+    :goto_20
     iget-object v1, v0, Lorg/telegram/ui/Cells/GroupCallUserCell;->muteButton:Lorg/telegram/ui/Components/RLottieImageView;
 
     invoke-virtual {v1}, Lorg/telegram/ui/Components/RLottieImageView;->playAnimation()V
 
-    goto :goto_22
+    goto :goto_21
 
     .line 876
     :cond_49
@@ -2660,7 +2661,7 @@
     invoke-virtual {v1}, Landroid/widget/ImageView;->invalidate()V
 
     .line 879
-    :goto_22
+    :goto_21
     iput-boolean v8, v0, Lorg/telegram/ui/Cells/GroupCallUserCell;->lastMuted:Z
 
     .line 880
@@ -2693,12 +2694,14 @@
 
     if-nez v2, :cond_4c
 
-    const/4 v6, 0x1
+    move v6, v7
 
     :cond_4c
     invoke-virtual {v1, v6, v0}, Lorg/telegram/ui/Cells/GroupCallUserCell$AvatarWavesDrawable;->setShowWaves(ZLandroid/view/View;)V
 
     return-void
+
+    nop
 
     :array_0
     .array-data 4
@@ -2733,7 +2736,7 @@
 
     if-ne v2, p1, :cond_0
 
-    const/4 v5, 0x0
+    move v5, v3
 
     goto :goto_1
 
@@ -2754,12 +2757,12 @@
 
     if-ne v2, p1, :cond_1
 
-    const/high16 v5, 0x3f800000    # 1.0f
+    move v5, v0
 
     goto :goto_2
 
     :cond_1
-    const/4 v5, 0x0
+    move v5, v3
 
     :goto_2
     invoke-virtual {v4, v5}, Landroid/view/View;->setAlpha(F)V
@@ -2782,7 +2785,7 @@
 
     if-ne v2, p1, :cond_3
 
-    const/4 v5, 0x0
+    move v5, v3
 
     goto :goto_5
 
@@ -2794,7 +2797,7 @@
     goto :goto_4
 
     :cond_4
-    const/4 v5, -0x2
+    move v5, v1
 
     :goto_4
     invoke-static {v5}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
@@ -2813,12 +2816,12 @@
 
     if-ne v2, p1, :cond_5
 
-    const/high16 v5, 0x3f800000    # 1.0f
+    move v5, v0
 
     goto :goto_6
 
     :cond_5
-    const/4 v5, 0x0
+    move v5, v3
 
     :goto_6
     invoke-virtual {v4, v5}, Landroid/view/View;->setAlpha(F)V
@@ -2928,9 +2931,9 @@
 
     const/4 v1, 0x0
 
-    const/16 v1, 0x78
+    move v2, v1
 
-    const/4 v2, 0x0
+    move v1, v4
 
     goto :goto_0
 
@@ -2939,9 +2942,9 @@
 
     if-ge v0, v5, :cond_1
 
-    const/16 v1, 0xf0
+    move v1, v3
 
-    const/16 v2, 0x78
+    move v2, v4
 
     goto :goto_0
 
@@ -2950,9 +2953,9 @@
 
     if-ge v0, v4, :cond_2
 
-    const/16 v1, 0x1a4
+    move v1, v2
 
-    const/16 v2, 0xf0
+    move v2, v3
 
     goto :goto_0
 
@@ -2966,9 +2969,9 @@
     :cond_3
     const/16 v0, 0x2d0
 
-    const/16 v1, 0x2d0
+    move v2, v1
 
-    const/16 v2, 0x21c
+    move v1, v0
 
     .line 121
     :goto_0
@@ -3120,24 +3123,24 @@
     .line 912
     iget v0, p0, Lorg/telegram/ui/Cells/GroupCallUserCell;->progressToAvatarPreview:F
 
-    const/high16 v2, 0x437f0000    # 255.0f
+    cmpl-float v2, v0, v1
 
-    const/high16 v3, 0x3f800000    # 1.0f
+    const/high16 v3, 0x437f0000    # 255.0f
 
-    cmpl-float v4, v0, v1
+    const/high16 v4, 0x3f800000    # 1.0f
 
-    if-eqz v4, :cond_0
+    if-eqz v2, :cond_0
 
     .line 913
-    iget-object v4, p0, Lorg/telegram/ui/Cells/GroupCallUserCell;->dividerPaint:Landroid/graphics/Paint;
+    iget-object v2, p0, Lorg/telegram/ui/Cells/GroupCallUserCell;->dividerPaint:Landroid/graphics/Paint;
 
-    sub-float/2addr v3, v0
+    sub-float/2addr v4, v0
 
-    mul-float v3, v3, v2
+    mul-float/2addr v4, v3
 
-    float-to-int v0, v3
+    float-to-int v0, v4
 
-    invoke-virtual {v4, v0}, Landroid/graphics/Paint;->setAlpha(I)V
+    invoke-virtual {v2, v0}, Landroid/graphics/Paint;->setAlpha(I)V
 
     goto :goto_0
 
@@ -3145,21 +3148,21 @@
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Cells/GroupCallUserCell;->dividerPaint:Landroid/graphics/Paint;
 
-    iget-object v4, p0, Lorg/telegram/ui/Cells/GroupCallUserCell;->statusTextView:[Lorg/telegram/ui/ActionBar/SimpleTextView;
+    iget-object v2, p0, Lorg/telegram/ui/Cells/GroupCallUserCell;->statusTextView:[Lorg/telegram/ui/ActionBar/SimpleTextView;
 
     const/4 v5, 0x4
 
-    aget-object v4, v4, v5
+    aget-object v2, v2, v5
 
-    invoke-virtual {v4}, Lorg/telegram/ui/ActionBar/SimpleTextView;->getFullAlpha()F
+    invoke-virtual {v2}, Lorg/telegram/ui/ActionBar/SimpleTextView;->getFullAlpha()F
 
-    move-result v4
+    move-result v2
 
-    sub-float/2addr v3, v4
+    sub-float/2addr v4, v2
 
-    mul-float v3, v3, v2
+    mul-float/2addr v4, v3
 
-    float-to-int v2, v3
+    float-to-int v2, v4
 
     invoke-virtual {v0, v2}, Landroid/graphics/Paint;->setAlpha(I)V
 
@@ -3171,7 +3174,7 @@
 
     if-eqz v0, :cond_1
 
-    const/4 v4, 0x0
+    move v4, v1
 
     goto :goto_1
 
@@ -3513,56 +3516,56 @@
     .line 442
     iget-wide v0, p0, Lorg/telegram/ui/Cells/GroupCallUserCell;->selfId:J
 
-    const/4 v2, 0x1
+    const-wide/16 v2, 0x0
 
-    const/4 v3, 0x0
+    cmp-long v2, v0, v2
 
-    const-wide/16 v4, 0x0
+    const/4 v3, 0x1
 
-    cmp-long v6, v0, v4
+    const/4 v4, 0x0
 
-    if-lez v6, :cond_1
+    if-lez v2, :cond_1
 
     .line 443
-    iget-object v4, p0, Lorg/telegram/ui/Cells/GroupCallUserCell;->currentUser:Lorg/telegram/tgnet/TLRPC$User;
+    iget-object v2, p0, Lorg/telegram/ui/Cells/GroupCallUserCell;->currentUser:Lorg/telegram/tgnet/TLRPC$User;
 
-    if-eqz v4, :cond_0
+    if-eqz v2, :cond_0
 
-    iget-wide v4, v4, Lorg/telegram/tgnet/TLRPC$User;->id:J
+    iget-wide v5, v2, Lorg/telegram/tgnet/TLRPC$User;->id:J
 
-    cmp-long v6, v4, v0
+    cmp-long v0, v5, v0
 
-    if-nez v6, :cond_0
+    if-nez v0, :cond_0
 
     goto :goto_0
 
     :cond_0
-    const/4 v2, 0x0
+    move v3, v4
 
     :goto_0
-    return v2
+    return v3
 
     .line 445
     :cond_1
-    iget-object v4, p0, Lorg/telegram/ui/Cells/GroupCallUserCell;->currentChat:Lorg/telegram/tgnet/TLRPC$Chat;
+    iget-object v2, p0, Lorg/telegram/ui/Cells/GroupCallUserCell;->currentChat:Lorg/telegram/tgnet/TLRPC$Chat;
 
-    if-eqz v4, :cond_2
+    if-eqz v2, :cond_2
 
-    iget-wide v4, v4, Lorg/telegram/tgnet/TLRPC$Chat;->id:J
+    iget-wide v5, v2, Lorg/telegram/tgnet/TLRPC$Chat;->id:J
 
     neg-long v0, v0
 
-    cmp-long v6, v4, v0
+    cmp-long v0, v5, v0
 
-    if-nez v6, :cond_2
+    if-nez v0, :cond_2
 
     goto :goto_1
 
     :cond_2
-    const/4 v2, 0x0
+    move v3, v4
 
     :goto_1
-    return v2
+    return v3
 .end method
 
 .method protected onAttachedToWindow()V
@@ -3825,9 +3828,9 @@
 
     const-wide/high16 v0, 0x3ff8000000000000L    # 1.5
 
-    cmpl-double v2, p1, v0
+    cmpl-double v0, p1, v0
 
-    if-lez v2, :cond_2
+    if-lez v0, :cond_2
 
     .line 559
     iget-boolean v0, p0, Lorg/telegram/ui/Cells/GroupCallUserCell;->updateRunnableScheduled:Z
@@ -3884,7 +3887,7 @@
 .end method
 
 .method public setData(Lorg/telegram/messenger/AccountInstance;Lorg/telegram/tgnet/TLRPC$TL_groupCallParticipant;Lorg/telegram/messenger/ChatObject$Call;JLorg/telegram/tgnet/TLRPC$FileLocation;Z)V
-    .locals 6
+    .locals 7
 
     .line 462
     iput-object p3, p0, Lorg/telegram/ui/Cells/GroupCallUserCell;->currentCall:Lorg/telegram/messenger/ChatObject$Call;
@@ -3905,39 +3908,39 @@
 
     move-result-wide p2
 
-    const/4 p4, 0x0
+    const-wide/16 p4, 0x0
 
-    const-string p5, "50_50"
+    cmp-long p4, p2, p4
 
-    const/4 v0, 0x1
+    const/4 p5, 0x0
 
-    const/4 v1, 0x0
+    const-string v0, "50_50"
 
-    const-wide/16 v2, 0x0
+    const/4 v1, 0x1
 
-    cmp-long v4, p2, v2
+    const/4 v2, 0x0
 
-    if-lez v4, :cond_8
+    if-lez p4, :cond_8
 
     .line 470
-    iget-object v2, p0, Lorg/telegram/ui/Cells/GroupCallUserCell;->accountInstance:Lorg/telegram/messenger/AccountInstance;
+    iget-object p4, p0, Lorg/telegram/ui/Cells/GroupCallUserCell;->accountInstance:Lorg/telegram/messenger/AccountInstance;
 
-    invoke-virtual {v2}, Lorg/telegram/messenger/AccountInstance;->getMessagesController()Lorg/telegram/messenger/MessagesController;
+    invoke-virtual {p4}, Lorg/telegram/messenger/AccountInstance;->getMessagesController()Lorg/telegram/messenger/MessagesController;
 
-    move-result-object v2
+    move-result-object p4
 
     invoke-static {p2, p3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object p2
 
-    invoke-virtual {v2, p2}, Lorg/telegram/messenger/MessagesController;->getUser(Ljava/lang/Long;)Lorg/telegram/tgnet/TLRPC$User;
+    invoke-virtual {p4, p2}, Lorg/telegram/messenger/MessagesController;->getUser(Ljava/lang/Long;)Lorg/telegram/tgnet/TLRPC$User;
 
     move-result-object p2
 
     iput-object p2, p0, Lorg/telegram/ui/Cells/GroupCallUserCell;->currentUser:Lorg/telegram/tgnet/TLRPC$User;
 
     .line 471
-    iput-object v1, p0, Lorg/telegram/ui/Cells/GroupCallUserCell;->currentChat:Lorg/telegram/tgnet/TLRPC$Chat;
+    iput-object v2, p0, Lorg/telegram/ui/Cells/GroupCallUserCell;->currentChat:Lorg/telegram/tgnet/TLRPC$Chat;
 
     .line 472
     iget-object p3, p0, Lorg/telegram/ui/Cells/GroupCallUserCell;->avatarDrawable:Lorg/telegram/ui/Components/AvatarDrawable;
@@ -3974,11 +3977,11 @@
     move-result p3
 
     .line 479
-    iget-object v2, p0, Lorg/telegram/ui/Cells/GroupCallUserCell;->currentUser:Lorg/telegram/tgnet/TLRPC$User;
+    iget-object p4, p0, Lorg/telegram/ui/Cells/GroupCallUserCell;->currentUser:Lorg/telegram/tgnet/TLRPC$User;
 
-    if-eqz v2, :cond_1
+    if-eqz p4, :cond_1
 
-    iget-boolean v3, v2, Lorg/telegram/tgnet/TLRPC$User;->verified:Z
+    iget-boolean v3, p4, Lorg/telegram/tgnet/TLRPC$User;->verified:Z
 
     if-eqz v3, :cond_1
 
@@ -3993,9 +3996,9 @@
 
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getContext()Landroid/content/Context;
 
-    move-result-object v2
+    move-result-object p4
 
-    invoke-direct {p3, v2}, Lorg/telegram/ui/Cells/GroupCallUserCell$VerifiedDrawable;-><init>(Landroid/content/Context;)V
+    invoke-direct {p3, p4}, Lorg/telegram/ui/Cells/GroupCallUserCell$VerifiedDrawable;-><init>(Landroid/content/Context;)V
 
     :cond_0
     iput-object p3, p0, Lorg/telegram/ui/Cells/GroupCallUserCell;->verifiedDrawable:Landroid/graphics/drawable/Drawable;
@@ -4007,10 +4010,10 @@
     :cond_1
     if-eqz p3, :cond_2
 
-    if-eqz v2, :cond_2
+    if-eqz p4, :cond_2
 
     .line 481
-    iget-object v3, v2, Lorg/telegram/tgnet/TLRPC$User;->emoji_status:Lorg/telegram/tgnet/TLRPC$EmojiStatus;
+    iget-object v3, p4, Lorg/telegram/tgnet/TLRPC$User;->emoji_status:Lorg/telegram/tgnet/TLRPC$EmojiStatus;
 
     instance-of v4, v3, Lorg/telegram/tgnet/TLRPC$TL_emojiStatus;
 
@@ -4021,23 +4024,23 @@
 
     check-cast v3, Lorg/telegram/tgnet/TLRPC$TL_emojiStatus;
 
-    iget-wide v2, v3, Lorg/telegram/tgnet/TLRPC$TL_emojiStatus;->document_id:J
+    iget-wide p3, v3, Lorg/telegram/tgnet/TLRPC$TL_emojiStatus;->document_id:J
 
-    invoke-virtual {p2, v2, v3, p7}, Lorg/telegram/ui/Components/AnimatedEmojiDrawable$SwapAnimatedEmojiDrawable;->set(JZ)V
+    invoke-virtual {p2, p3, p4, p7}, Lorg/telegram/ui/Components/AnimatedEmojiDrawable$SwapAnimatedEmojiDrawable;->set(JZ)V
 
     goto :goto_0
 
     :cond_2
     if-eqz p3, :cond_3
 
-    if-eqz v2, :cond_3
+    if-eqz p4, :cond_3
 
     .line 483
-    iget-object p3, v2, Lorg/telegram/tgnet/TLRPC$User;->emoji_status:Lorg/telegram/tgnet/TLRPC$EmojiStatus;
+    iget-object p3, p4, Lorg/telegram/tgnet/TLRPC$User;->emoji_status:Lorg/telegram/tgnet/TLRPC$EmojiStatus;
 
-    instance-of v2, p3, Lorg/telegram/tgnet/TLRPC$TL_emojiStatusUntil;
+    instance-of p4, p3, Lorg/telegram/tgnet/TLRPC$TL_emojiStatusUntil;
 
-    if-eqz v2, :cond_3
+    if-eqz p4, :cond_3
 
     check-cast p3, Lorg/telegram/tgnet/TLRPC$TL_emojiStatusUntil;
 
@@ -4045,15 +4048,15 @@
 
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
-    move-result-wide v2
+    move-result-wide v3
 
-    const-wide/16 v4, 0x3e8
+    const-wide/16 v5, 0x3e8
 
-    div-long/2addr v2, v4
+    div-long/2addr v3, v5
 
-    long-to-int v3, v2
+    long-to-int p4, v3
 
-    if-le p3, v3, :cond_3
+    if-le p3, p4, :cond_3
 
     .line 484
     iget-object p2, p0, Lorg/telegram/ui/Cells/GroupCallUserCell;->rightDrawable:Lorg/telegram/ui/Components/AnimatedEmojiDrawable$SwapAnimatedEmojiDrawable;
@@ -4064,9 +4067,9 @@
 
     check-cast p3, Lorg/telegram/tgnet/TLRPC$TL_emojiStatusUntil;
 
-    iget-wide v2, p3, Lorg/telegram/tgnet/TLRPC$TL_emojiStatusUntil;->document_id:J
+    iget-wide p3, p3, Lorg/telegram/tgnet/TLRPC$TL_emojiStatusUntil;->document_id:J
 
-    invoke-virtual {p2, v2, v3, p7}, Lorg/telegram/ui/Components/AnimatedEmojiDrawable$SwapAnimatedEmojiDrawable;->set(JZ)V
+    invoke-virtual {p2, p3, p4, p7}, Lorg/telegram/ui/Components/AnimatedEmojiDrawable$SwapAnimatedEmojiDrawable;->set(JZ)V
 
     goto :goto_0
 
@@ -4113,17 +4116,17 @@
 
     iget-object p3, p0, Lorg/telegram/ui/Cells/GroupCallUserCell;->premiumDrawable:Landroid/graphics/drawable/Drawable;
 
-    const/16 v2, 0xe
+    const/16 p4, 0xe
 
-    invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    invoke-static {p4}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v3
 
-    invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    invoke-static {p4}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
-    move-result v2
+    move-result p4
 
-    invoke-direct {p2, p0, p3, v3, v2}, Lorg/telegram/ui/Cells/GroupCallUserCell$3;-><init>(Lorg/telegram/ui/Cells/GroupCallUserCell;Landroid/graphics/drawable/Drawable;II)V
+    invoke-direct {p2, p0, p3, v3, p4}, Lorg/telegram/ui/Cells/GroupCallUserCell$3;-><init>(Lorg/telegram/ui/Cells/GroupCallUserCell;Landroid/graphics/drawable/Drawable;II)V
 
     iput-object p2, p0, Lorg/telegram/ui/Cells/GroupCallUserCell;->premiumDrawable:Landroid/graphics/drawable/Drawable;
 
@@ -4141,7 +4144,7 @@
     :cond_5
     iget-object p2, p0, Lorg/telegram/ui/Cells/GroupCallUserCell;->rightDrawable:Lorg/telegram/ui/Components/AnimatedEmojiDrawable$SwapAnimatedEmojiDrawable;
 
-    invoke-virtual {p2, v1, p7}, Lorg/telegram/ui/Components/AnimatedEmojiDrawable$SwapAnimatedEmojiDrawable;->set(Landroid/graphics/drawable/Drawable;Z)V
+    invoke-virtual {p2, v2, p7}, Lorg/telegram/ui/Components/AnimatedEmojiDrawable$SwapAnimatedEmojiDrawable;->set(Landroid/graphics/drawable/Drawable;Z)V
 
     .line 502
     :goto_0
@@ -4182,7 +4185,7 @@
     if-eqz p6, :cond_6
 
     .line 506
-    iput-boolean v0, p0, Lorg/telegram/ui/Cells/GroupCallUserCell;->hasAvatar:Z
+    iput-boolean v1, p0, Lorg/telegram/ui/Cells/GroupCallUserCell;->hasAvatar:Z
 
     .line 507
     iget-object p1, p0, Lorg/telegram/ui/Cells/GroupCallUserCell;->avatarImageView:Lorg/telegram/ui/Components/BackupImageView;
@@ -4193,7 +4196,7 @@
 
     iget-object p3, p0, Lorg/telegram/ui/Cells/GroupCallUserCell;->avatarDrawable:Lorg/telegram/ui/Components/AvatarDrawable;
 
-    invoke-virtual {p1, p2, p5, p3, v1}, Lorg/telegram/ui/Components/BackupImageView;->setImage(Lorg/telegram/messenger/ImageLocation;Ljava/lang/String;Landroid/graphics/drawable/Drawable;Ljava/lang/Object;)V
+    invoke-virtual {p1, p2, v0, p3, v2}, Lorg/telegram/ui/Components/BackupImageView;->setImage(Lorg/telegram/messenger/ImageLocation;Ljava/lang/String;Landroid/graphics/drawable/Drawable;Ljava/lang/Object;)V
 
     goto/16 :goto_2
 
@@ -4201,17 +4204,17 @@
     :cond_6
     iget-object p1, p0, Lorg/telegram/ui/Cells/GroupCallUserCell;->currentUser:Lorg/telegram/tgnet/TLRPC$User;
 
-    invoke-static {p1, v0}, Lorg/telegram/messenger/ImageLocation;->getForUser(Lorg/telegram/tgnet/TLRPC$User;I)Lorg/telegram/messenger/ImageLocation;
+    invoke-static {p1, v1}, Lorg/telegram/messenger/ImageLocation;->getForUser(Lorg/telegram/tgnet/TLRPC$User;I)Lorg/telegram/messenger/ImageLocation;
 
     move-result-object p1
 
     if-eqz p1, :cond_7
 
-    const/4 p4, 0x1
+    move p5, v1
 
     .line 510
     :cond_7
-    iput-boolean p4, p0, Lorg/telegram/ui/Cells/GroupCallUserCell;->hasAvatar:Z
+    iput-boolean p5, p0, Lorg/telegram/ui/Cells/GroupCallUserCell;->hasAvatar:Z
 
     .line 511
     iget-object p2, p0, Lorg/telegram/ui/Cells/GroupCallUserCell;->avatarImageView:Lorg/telegram/ui/Components/BackupImageView;
@@ -4220,17 +4223,17 @@
 
     iget-object p4, p0, Lorg/telegram/ui/Cells/GroupCallUserCell;->currentUser:Lorg/telegram/tgnet/TLRPC$User;
 
-    invoke-virtual {p2, p1, p5, p3, p4}, Lorg/telegram/ui/Components/BackupImageView;->setImage(Lorg/telegram/messenger/ImageLocation;Ljava/lang/String;Landroid/graphics/drawable/Drawable;Ljava/lang/Object;)V
+    invoke-virtual {p2, p1, v0, p3, p4}, Lorg/telegram/ui/Components/BackupImageView;->setImage(Lorg/telegram/messenger/ImageLocation;Ljava/lang/String;Landroid/graphics/drawable/Drawable;Ljava/lang/Object;)V
 
     goto/16 :goto_2
 
     .line 514
     :cond_8
-    iget-object v2, p0, Lorg/telegram/ui/Cells/GroupCallUserCell;->accountInstance:Lorg/telegram/messenger/AccountInstance;
+    iget-object p4, p0, Lorg/telegram/ui/Cells/GroupCallUserCell;->accountInstance:Lorg/telegram/messenger/AccountInstance;
 
-    invoke-virtual {v2}, Lorg/telegram/messenger/AccountInstance;->getMessagesController()Lorg/telegram/messenger/MessagesController;
+    invoke-virtual {p4}, Lorg/telegram/messenger/AccountInstance;->getMessagesController()Lorg/telegram/messenger/MessagesController;
 
-    move-result-object v2
+    move-result-object p4
 
     neg-long p2, p2
 
@@ -4238,14 +4241,14 @@
 
     move-result-object p2
 
-    invoke-virtual {v2, p2}, Lorg/telegram/messenger/MessagesController;->getChat(Ljava/lang/Long;)Lorg/telegram/tgnet/TLRPC$Chat;
+    invoke-virtual {p4, p2}, Lorg/telegram/messenger/MessagesController;->getChat(Ljava/lang/Long;)Lorg/telegram/tgnet/TLRPC$Chat;
 
     move-result-object p2
 
     iput-object p2, p0, Lorg/telegram/ui/Cells/GroupCallUserCell;->currentChat:Lorg/telegram/tgnet/TLRPC$Chat;
 
     .line 515
-    iput-object v1, p0, Lorg/telegram/ui/Cells/GroupCallUserCell;->currentUser:Lorg/telegram/tgnet/TLRPC$User;
+    iput-object v2, p0, Lorg/telegram/ui/Cells/GroupCallUserCell;->currentUser:Lorg/telegram/tgnet/TLRPC$User;
 
     .line 516
     iget-object p3, p0, Lorg/telegram/ui/Cells/GroupCallUserCell;->avatarDrawable:Lorg/telegram/ui/Components/AvatarDrawable;
@@ -4282,9 +4285,9 @@
 
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getContext()Landroid/content/Context;
 
-    move-result-object v2
+    move-result-object p4
 
-    invoke-direct {p3, v2}, Lorg/telegram/ui/Cells/GroupCallUserCell$VerifiedDrawable;-><init>(Landroid/content/Context;)V
+    invoke-direct {p3, p4}, Lorg/telegram/ui/Cells/GroupCallUserCell$VerifiedDrawable;-><init>(Landroid/content/Context;)V
 
     :cond_9
     iput-object p3, p0, Lorg/telegram/ui/Cells/GroupCallUserCell;->verifiedDrawable:Landroid/graphics/drawable/Drawable;
@@ -4297,7 +4300,7 @@
     :cond_a
     iget-object p2, p0, Lorg/telegram/ui/Cells/GroupCallUserCell;->rightDrawable:Lorg/telegram/ui/Components/AnimatedEmojiDrawable$SwapAnimatedEmojiDrawable;
 
-    invoke-virtual {p2, v1, p7}, Lorg/telegram/ui/Components/AnimatedEmojiDrawable$SwapAnimatedEmojiDrawable;->set(Landroid/graphics/drawable/Drawable;Z)V
+    invoke-virtual {p2, v2, p7}, Lorg/telegram/ui/Components/AnimatedEmojiDrawable$SwapAnimatedEmojiDrawable;->set(Landroid/graphics/drawable/Drawable;Z)V
 
     .line 525
     :goto_1
@@ -4316,7 +4319,7 @@
     if-eqz p6, :cond_b
 
     .line 527
-    iput-boolean v0, p0, Lorg/telegram/ui/Cells/GroupCallUserCell;->hasAvatar:Z
+    iput-boolean v1, p0, Lorg/telegram/ui/Cells/GroupCallUserCell;->hasAvatar:Z
 
     .line 528
     iget-object p1, p0, Lorg/telegram/ui/Cells/GroupCallUserCell;->avatarImageView:Lorg/telegram/ui/Components/BackupImageView;
@@ -4327,7 +4330,7 @@
 
     iget-object p3, p0, Lorg/telegram/ui/Cells/GroupCallUserCell;->avatarDrawable:Lorg/telegram/ui/Components/AvatarDrawable;
 
-    invoke-virtual {p1, p2, p5, p3, v1}, Lorg/telegram/ui/Components/BackupImageView;->setImage(Lorg/telegram/messenger/ImageLocation;Ljava/lang/String;Landroid/graphics/drawable/Drawable;Ljava/lang/Object;)V
+    invoke-virtual {p1, p2, v0, p3, v2}, Lorg/telegram/ui/Components/BackupImageView;->setImage(Lorg/telegram/messenger/ImageLocation;Ljava/lang/String;Landroid/graphics/drawable/Drawable;Ljava/lang/Object;)V
 
     goto :goto_2
 
@@ -4335,17 +4338,17 @@
     :cond_b
     iget-object p1, p0, Lorg/telegram/ui/Cells/GroupCallUserCell;->currentChat:Lorg/telegram/tgnet/TLRPC$Chat;
 
-    invoke-static {p1, v0}, Lorg/telegram/messenger/ImageLocation;->getForChat(Lorg/telegram/tgnet/TLRPC$Chat;I)Lorg/telegram/messenger/ImageLocation;
+    invoke-static {p1, v1}, Lorg/telegram/messenger/ImageLocation;->getForChat(Lorg/telegram/tgnet/TLRPC$Chat;I)Lorg/telegram/messenger/ImageLocation;
 
     move-result-object p1
 
     if-eqz p1, :cond_c
 
-    const/4 p4, 0x1
+    move p5, v1
 
     .line 531
     :cond_c
-    iput-boolean p4, p0, Lorg/telegram/ui/Cells/GroupCallUserCell;->hasAvatar:Z
+    iput-boolean p5, p0, Lorg/telegram/ui/Cells/GroupCallUserCell;->hasAvatar:Z
 
     .line 532
     iget-object p2, p0, Lorg/telegram/ui/Cells/GroupCallUserCell;->avatarImageView:Lorg/telegram/ui/Components/BackupImageView;
@@ -4354,7 +4357,7 @@
 
     iget-object p4, p0, Lorg/telegram/ui/Cells/GroupCallUserCell;->currentChat:Lorg/telegram/tgnet/TLRPC$Chat;
 
-    invoke-virtual {p2, p1, p5, p3, p4}, Lorg/telegram/ui/Components/BackupImageView;->setImage(Lorg/telegram/messenger/ImageLocation;Ljava/lang/String;Landroid/graphics/drawable/Drawable;Ljava/lang/Object;)V
+    invoke-virtual {p2, p1, v0, p3, p4}, Lorg/telegram/ui/Components/BackupImageView;->setImage(Lorg/telegram/messenger/ImageLocation;Ljava/lang/String;Landroid/graphics/drawable/Drawable;Ljava/lang/Object;)V
 
     .line 536
     :cond_d
@@ -4502,7 +4505,7 @@
     :goto_0
     int-to-float v1, v1
 
-    mul-float v1, v1, p1
+    mul-float/2addr v1, p1
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setTranslationX(F)V
 
@@ -4552,7 +4555,7 @@
 
     sub-float v8, v3, p1
 
-    mul-float v7, v7, v8
+    mul-float/2addr v7, v8
 
     invoke-virtual {v0, v7}, Landroid/view/View;->setTranslationX(F)V
 
@@ -4594,7 +4597,7 @@
     :goto_2
     int-to-float v2, v2
 
-    mul-float v2, v2, p1
+    mul-float/2addr v2, p1
 
     invoke-virtual {v0, v2}, Landroid/view/View;->setTranslationX(F)V
 
@@ -4608,7 +4611,7 @@
 
     invoke-virtual {v0, v7}, Landroid/view/View;->setVisibility(I)V
 
-    const/4 v0, 0x0
+    move v0, v6
 
     .line 166
     :goto_3
@@ -4721,7 +4724,7 @@
     :goto_5
     int-to-float v8, v8
 
-    mul-float v8, v8, p1
+    mul-float/2addr v8, p1
 
     invoke-virtual {v7, v8}, Landroid/view/View;->setTranslationX(F)V
 
@@ -4746,7 +4749,7 @@
 
     if-nez v2, :cond_8
 
-    const/high16 v5, 0x3f800000    # 1.0f
+    move v5, v3
 
     :cond_8
     invoke-virtual {v0, v5}, Landroid/view/View;->setAlpha(F)V
@@ -4763,7 +4766,7 @@
     goto :goto_8
 
     :cond_9
-    const/4 v1, 0x0
+    move v1, v6
 
     :goto_8
     invoke-virtual {v0, v1, p0}, Lorg/telegram/ui/Cells/GroupCallUserCell$AvatarWavesDrawable;->setShowWaves(ZLandroid/view/View;)V
@@ -4782,7 +4785,7 @@
 
     const v1, 0x3ecccccd    # 0.4f
 
-    mul-float v3, v3, v1
+    mul-float/2addr v3, v1
 
     add-float/2addr v3, v0
 

@@ -953,7 +953,7 @@
 
     if-ne p1, v2, :cond_0
 
-    const/4 v1, 0x1
+    move v1, v0
 
     :cond_0
     xor-int/lit8 p1, v1, 0x1
@@ -1307,17 +1307,17 @@
 
     if-nez v0, :cond_0
 
-    const/4 v0, 0x1
+    move v0, v2
 
     goto :goto_0
 
     :cond_0
-    const/4 v0, 0x0
+    move v0, v1
 
     :goto_0
     if-ne v0, v2, :cond_1
 
-    const/4 v1, 0x1
+    move v1, v2
 
     :cond_1
     if-nez v1, :cond_3
@@ -1453,7 +1453,7 @@
     goto :goto_1
 
     :cond_3
-    const/4 v4, 0x0
+    move v4, v5
 
     :cond_4
     :goto_1
@@ -1496,12 +1496,12 @@
 
     if-lez v0, :cond_6
 
-    const/4 v0, 0x1
+    move v0, v4
 
     goto :goto_2
 
     :cond_6
-    const/4 v0, 0x0
+    move v0, v5
 
     :goto_2
     if-eqz v0, :cond_7
@@ -1534,7 +1534,7 @@
     goto :goto_3
 
     :cond_8
-    const/4 v4, 0x0
+    move v4, v5
 
     :goto_3
     if-eqz v4, :cond_9

@@ -69,7 +69,7 @@
 
     const v1, 0x3e4ccccd    # 0.2f
 
-    mul-float v0, v0, v1
+    mul-float/2addr v0, v1
 
     .line 208
     iget-object v1, p0, Lorg/telegram/ui/Components/ReorderingHintDrawable$RectDrawable;->tempRect:Landroid/graphics/RectF;

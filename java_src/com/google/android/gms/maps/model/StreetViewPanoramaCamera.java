@@ -74,7 +74,7 @@ public class StreetViewPanoramaCamera extends AbstractSafeParcelable implements 
             z = true;
         }
         Preconditions.checkArgument(z, "Tilt needs to be between -90 and 90 inclusive: " + f2);
-        this.zoom = ((double) f) <= 0.0d ? BitmapDescriptorFactory.HUE_RED : f;
+        this.zoom = ((double) f) <= 0.0d ? 0.0f : f;
         this.tilt = BitmapDescriptorFactory.HUE_RED + f2;
         this.bearing = (((double) f3) <= 0.0d ? (f3 % 360.0f) + 360.0f : f3) % 360.0f;
         StreetViewPanoramaOrientation.Builder builder = new StreetViewPanoramaOrientation.Builder();

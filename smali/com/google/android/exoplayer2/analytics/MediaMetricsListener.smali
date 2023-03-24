@@ -340,7 +340,7 @@
     goto :goto_2
 
     :cond_2
-    const/4 v0, 0x0
+    move v0, v1
 
     .line 609
     :goto_2
@@ -609,12 +609,12 @@
 
     if-ne v3, v2, :cond_1
 
-    const/4 v3, 0x1
+    move v3, v2
 
     goto :goto_0
 
     :cond_1
-    const/4 v3, 0x0
+    move v3, v1
 
     .line 705
     :goto_0
@@ -623,9 +623,9 @@
     goto :goto_1
 
     :cond_2
-    const/4 v0, 0x0
+    move v0, v1
 
-    const/4 v3, 0x0
+    move v3, v0
 
     .line 707
     :goto_1
@@ -1564,7 +1564,7 @@
 
     if-ne v2, v3, :cond_1
 
-    const/4 v2, 0x1
+    move v2, v4
 
     goto :goto_0
 
@@ -1893,15 +1893,10 @@
 
     const/4 p4, 0x1
 
-    const/4 v5, 0x1
-
-    goto :goto_0
-
     :cond_1
     move v5, p4
 
     .line 502
-    :goto_0
     iput-object p3, p0, Lcom/google/android/exoplayer2/analytics/MediaMetricsListener;->currentAudioFormat:Lcom/google/android/exoplayer2/Format;
 
     const/4 v1, 0x0
@@ -2036,15 +2031,10 @@
 
     const/4 p4, 0x1
 
-    const/4 v5, 0x1
-
-    goto :goto_0
-
     :cond_1
     move v5, p4
 
     .line 515
-    :goto_0
     iput-object p3, p0, Lcom/google/android/exoplayer2/analytics/MediaMetricsListener;->currentTextFormat:Lcom/google/android/exoplayer2/Format;
 
     const/4 v1, 0x2
@@ -2163,7 +2153,7 @@
     goto :goto_0
 
     :cond_3
-    const/4 p1, 0x1
+    move p1, p2
 
     .line 593
     :goto_0
@@ -2199,15 +2189,10 @@
 
     const/4 p4, 0x1
 
-    const/4 v5, 0x1
-
-    goto :goto_0
-
     :cond_1
     move v5, p4
 
     .line 489
-    :goto_0
     iput-object p3, p0, Lcom/google/android/exoplayer2/analytics/MediaMetricsListener;->currentVideoFormat:Lcom/google/android/exoplayer2/Format;
 
     const/4 v1, 0x1

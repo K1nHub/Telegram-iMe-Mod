@@ -811,7 +811,7 @@
 
     if-ne v1, v3, :cond_8
 
-    const/4 v1, 0x0
+    move v1, v2
 
     .line 19562
     :goto_0
@@ -969,13 +969,13 @@
     goto/16 :goto_0
 
     :cond_7
-    const/4 v1, 0x1
+    move v1, v5
 
     goto :goto_4
 
     :cond_8
     :goto_3
-    const/4 v1, 0x0
+    move v1, v2
 
     :goto_4
     if-nez v1, :cond_9
@@ -1021,7 +1021,7 @@
 
     iput-object v3, v1, Lorg/telegram/ui/Cells/ChatMessageCell;->animatedEmojiStack:Lorg/telegram/ui/Components/AnimatedEmojiSpan$EmojiGroupedSpans;
 
-    const/4 v1, 0x1
+    move v1, v5
 
     goto :goto_5
 
@@ -1044,7 +1044,7 @@
     iput-object v3, v1, Lorg/telegram/ui/Cells/ChatMessageCell;->animatedEmojiStack:Lorg/telegram/ui/Components/AnimatedEmojiSpan$EmojiGroupedSpans;
 
     :cond_a
-    const/4 v1, 0x0
+    move v1, v2
 
     .line 19588
     :goto_5
@@ -1087,7 +1087,7 @@
 
     iput-object v1, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->animateOutAnimateEmojiReply:Lorg/telegram/ui/Components/AnimatedEmojiSpan$EmojiGroupedSpans;
 
-    const/4 v1, 0x1
+    move v1, v5
 
     .line 19594
     :cond_b
@@ -1290,7 +1290,7 @@
     .line 19615
     iput-boolean v5, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->shouldAnimateTimeX:Z
 
-    const/4 v1, 0x1
+    move v1, v5
 
     .line 19618
     :cond_d
@@ -1354,7 +1354,7 @@
     .line 19625
     iput-boolean v5, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->shouldAnimateTimeX:Z
 
-    const/4 v1, 0x1
+    move v1, v5
 
     .line 19629
     :cond_f
@@ -1375,7 +1375,7 @@
     .line 19631
     iput-boolean v5, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->animateDrawBackground:Z
 
-    const/4 v1, 0x1
+    move v1, v5
 
     .line 19635
     :cond_10
@@ -1395,7 +1395,7 @@
     .line 19637
     iput-boolean v5, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->animateUseTranscribeButton:Z
 
-    const/4 v1, 0x1
+    move v1, v5
 
     .line 19641
     :cond_11
@@ -1457,22 +1457,22 @@
     :goto_9
     if-nez v6, :cond_14
 
-    const/4 v7, 0x1
+    move v7, v5
 
     goto :goto_a
 
     :cond_14
-    const/4 v7, 0x0
+    move v7, v2
 
     :goto_a
     if-nez v3, :cond_15
 
-    const/4 v8, 0x1
+    move v8, v5
 
     goto :goto_b
 
     :cond_15
-    const/4 v8, 0x0
+    move v8, v2
 
     :goto_b
     if-ne v7, v8, :cond_18
@@ -1638,7 +1638,7 @@
     iput v1, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->captionFromY:F
 
     :goto_d
-    const/4 v1, 0x1
+    move v1, v5
 
     .line 19668
     :cond_1b
@@ -1691,7 +1691,7 @@
 
     if-nez v3, :cond_20
 
-    const/4 v3, 0x0
+    move v3, v2
 
     .line 19673
     :goto_e
@@ -1849,7 +1849,7 @@
     .line 19691
     iput-boolean v5, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->animateButton:Z
 
-    const/4 v1, 0x1
+    move v1, v5
 
     .line 19698
     :cond_24
@@ -1867,14 +1867,14 @@
     .line 19702
     iput-object v4, v6, Lorg/telegram/ui/Cells/ChatMessageCell;->accessibilityText:Ljava/lang/CharSequence;
 
-    const/4 v1, 0x1
+    move v1, v5
 
-    const/4 v3, 0x1
+    move v3, v1
 
     goto :goto_10
 
     :cond_25
-    const/4 v3, 0x0
+    move v3, v2
 
     .line 19705
     :goto_10
@@ -1887,9 +1887,9 @@
     .line 19706
     iput-boolean v5, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->animateIsInBookmarks:Z
 
-    const/4 v1, 0x1
+    move v1, v5
 
-    const/4 v3, 0x1
+    move v3, v1
 
     .line 19712
     :cond_26
@@ -1927,9 +1927,9 @@
 
     iput-object v4, v1, Lorg/telegram/ui/Cells/ChatMessageCell;->accessibilityText:Ljava/lang/CharSequence;
 
-    const/4 v1, 0x1
+    move v1, v5
 
-    const/4 v3, 0x1
+    move v3, v1
 
     .line 19720
     :cond_28
@@ -1961,9 +1961,9 @@
 
     iput-object v4, v1, Lorg/telegram/ui/Cells/ChatMessageCell;->accessibilityText:Ljava/lang/CharSequence;
 
-    const/4 v1, 0x1
+    move v1, v5
 
-    const/4 v3, 0x1
+    move v3, v1
 
     .line 19727
     :cond_29
@@ -2055,7 +2055,7 @@
     .line 19739
     iput-boolean v5, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->animateComments:Z
 
-    const/4 v1, 0x1
+    move v1, v5
 
     .line 19743
     :cond_2b
@@ -2085,7 +2085,7 @@
 
     iput v1, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->animateNameX:F
 
-    const/4 v1, 0x1
+    move v1, v5
 
     .line 19749
     :cond_2c
@@ -2106,7 +2106,7 @@
     iput-object v4, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->animateViewsLayout:Landroid/text/StaticLayout;
 
     :goto_12
-    const/4 v1, 0x1
+    move v1, v5
 
     goto :goto_13
 
@@ -2240,7 +2240,7 @@
     .line 19778
     iput-boolean v5, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->animatePlayingRound:Z
 
-    const/4 v1, 0x1
+    move v1, v5
 
     .line 19782
     :cond_33
@@ -2266,7 +2266,7 @@
 
     iput v1, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->animateFromTextY:F
 
-    const/4 v1, 0x1
+    move v1, v5
 
     .line 19788
     :cond_34
@@ -2325,7 +2325,7 @@
 
     iput v1, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->animateForwardNameWidth:I
 
-    const/4 v1, 0x1
+    move v1, v5
 
     .line 19799
     :cond_35
@@ -2344,7 +2344,7 @@
 
     if-eqz v3, :cond_36
 
-    const/4 v1, 0x1
+    move v1, v5
 
     .line 19803
     :cond_36
@@ -2416,7 +2416,7 @@
     .line 19810
     iput v3, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->animateFromRoundVideoDotY:F
 
-    const/4 v1, 0x1
+    move v1, v5
 
     .line 19815
     :cond_39
@@ -2503,7 +2503,7 @@
 
     if-eqz v0, :cond_0
 
-    goto :goto_1
+    goto :goto_2
 
     .line 19908
     :cond_0
@@ -2519,13 +2519,13 @@
 
     if-eqz v0, :cond_1
 
-    const/4 v0, 0x0
+    move v6, v3
 
-    const/4 v3, 0x0
+    move v0, v4
 
-    const/4 v5, 0x0
+    move v3, v0
 
-    const/4 v6, 0x1
+    move v5, v3
 
     goto :goto_3
 
@@ -2566,35 +2566,39 @@
 
     if-nez v0, :cond_2
 
-    const/4 v0, 0x1
+    move v0, v3
 
     goto :goto_0
 
     :cond_2
-    const/4 v0, 0x0
-
-    goto :goto_0
-
-    :cond_3
-    const/4 v0, 0x0
-
-    const/4 v3, 0x0
+    move v0, v4
 
     :goto_0
-    const/4 v5, 0x0
+    move v5, v4
 
-    goto :goto_2
+    goto :goto_1
+
+    :cond_3
+    move v0, v4
+
+    move v3, v0
+
+    move v5, v3
+
+    :goto_1
+    move v6, v5
+
+    goto :goto_3
 
     :cond_4
-    :goto_1
-    const/4 v0, 0x0
-
-    const/4 v3, 0x0
-
-    const/4 v5, 0x1
-
     :goto_2
-    const/4 v6, 0x0
+    move v5, v3
+
+    move v0, v4
+
+    move v3, v0
+
+    move v6, v3
 
     :goto_3
     if-eqz v3, :cond_5
@@ -2604,7 +2608,7 @@
     goto :goto_4
 
     :cond_5
-    const/4 v3, 0x0
+    move v3, v4
 
     :goto_4
     or-int/2addr v0, v3
@@ -2614,7 +2618,7 @@
     goto :goto_5
 
     :cond_6
-    const/4 v2, 0x0
+    move v2, v4
 
     :goto_5
     or-int/2addr v0, v2
@@ -2624,7 +2628,7 @@
     goto :goto_6
 
     :cond_7
-    const/4 v1, 0x0
+    move v1, v4
 
     :goto_6
     or-int/2addr v0, v1
@@ -2660,7 +2664,7 @@
     goto :goto_7
 
     :cond_9
-    const/4 v3, 0x0
+    move v3, v4
 
     .line 19925
     :cond_a
@@ -2680,7 +2684,7 @@
     goto :goto_8
 
     :cond_b
-    const/4 v2, 0x0
+    move v2, v4
 
     :goto_8
     if-eqz v0, :cond_c
@@ -2688,7 +2692,7 @@
     goto :goto_9
 
     :cond_c
-    const/4 v1, 0x0
+    move v1, v4
 
     :goto_9
     or-int v0, v2, v1

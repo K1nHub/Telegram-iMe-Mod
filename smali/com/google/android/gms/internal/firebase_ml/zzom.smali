@@ -271,10 +271,8 @@
 
     goto :goto_2
 
-    :catch_0
-    nop
-
     .line 61
+    :catch_0
     sget-object v4, Lcom/google/android/gms/internal/firebase_ml/zzom;->zzass:Lcom/google/android/gms/common/internal/GmsLogger;
 
     const-string v5, "Contains non-integer file name "
@@ -686,9 +684,9 @@
 
     array-length v3, v1
 
-    const/4 v4, 0x0
+    move v4, v0
 
-    const/4 v5, 0x1
+    move v5, v2
 
     :goto_0
     if-ge v4, v3, :cond_3
@@ -704,12 +702,12 @@
 
     if-eqz v5, :cond_1
 
-    const/4 v5, 0x1
+    move v5, v2
 
     goto :goto_1
 
     :cond_1
-    const/4 v5, 0x0
+    move v5, v0
 
     :goto_1
     add-int/lit8 v4, v4, 0x1
@@ -717,7 +715,7 @@
     goto :goto_0
 
     :cond_2
-    const/4 v5, 0x1
+    move v5, v2
 
     :cond_3
     if-eqz v5, :cond_4

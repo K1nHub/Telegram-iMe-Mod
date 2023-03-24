@@ -190,7 +190,7 @@
 
     int-to-float v4, v6
 
-    mul-float v4, v4, v0
+    mul-float/2addr v4, v0
 
     .line 3390
     iget-object v6, p0, Lorg/telegram/ui/ArticleViewer$10;->this$0:Lorg/telegram/ui/ArticleViewer;
@@ -213,7 +213,7 @@
 
     int-to-float v3, v3
 
-    mul-float v4, v4, v3
+    mul-float/2addr v4, v3
 
     div-float/2addr v4, v5
 
@@ -253,12 +253,12 @@
 
     sub-float/2addr v4, v3
 
-    mul-float v4, v4, v0
+    mul-float/2addr v4, v0
 
     :goto_1
     int-to-float v2, v2
 
-    mul-float v2, v2, v0
+    mul-float/2addr v2, v0
 
     add-float v5, v2, v4
 

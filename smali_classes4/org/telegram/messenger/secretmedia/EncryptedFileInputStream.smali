@@ -343,9 +343,9 @@
 
     add-long/2addr v0, p1
 
-    long-to-int v1, v0
+    long-to-int v0, v0
 
-    iput v1, p0, Lorg/telegram/messenger/secretmedia/EncryptedFileInputStream;->fileOffset:I
+    iput v0, p0, Lorg/telegram/messenger/secretmedia/EncryptedFileInputStream;->fileOffset:I
 
     .line 69
     invoke-super {p0, p1, p2}, Ljava/io/FileInputStream;->skip(J)J

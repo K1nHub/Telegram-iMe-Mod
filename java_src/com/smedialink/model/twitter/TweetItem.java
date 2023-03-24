@@ -72,28 +72,6 @@ public final class TweetItem extends NoChildNode {
         return new TweetItem(j, authorName, authorNickname, avatarUrl, likesCountText, commentsCountText, retweetsCountText, text, date, z);
     }
 
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj instanceof TweetItem) {
-            TweetItem tweetItem = (TweetItem) obj;
-            return this.f273id == tweetItem.f273id && Intrinsics.areEqual(this.authorName, tweetItem.authorName) && Intrinsics.areEqual(this.authorNickname, tweetItem.authorNickname) && Intrinsics.areEqual(this.avatarUrl, tweetItem.avatarUrl) && Intrinsics.areEqual(this.likesCountText, tweetItem.likesCountText) && Intrinsics.areEqual(this.commentsCountText, tweetItem.commentsCountText) && Intrinsics.areEqual(this.retweetsCountText, tweetItem.retweetsCountText) && Intrinsics.areEqual(this.text, tweetItem.text) && Intrinsics.areEqual(this.date, tweetItem.date) && this.isLiked == tweetItem.isLiked;
-        }
-        return false;
-    }
-
-    /* JADX WARN: Multi-variable type inference failed */
-    public int hashCode() {
-        int m716m = ((((((((((((((((StakingApprovalPrepareRequest$$ExternalSyntheticBackport0.m716m(this.f273id) * 31) + this.authorName.hashCode()) * 31) + this.authorNickname.hashCode()) * 31) + this.avatarUrl.hashCode()) * 31) + this.likesCountText.hashCode()) * 31) + this.commentsCountText.hashCode()) * 31) + this.retweetsCountText.hashCode()) * 31) + this.text.hashCode()) * 31) + this.date.hashCode()) * 31;
-        boolean z = this.isLiked;
-        int i = z;
-        if (z != 0) {
-            i = 1;
-        }
-        return m716m + i;
-    }
-
     public String toString() {
         return "TweetItem(id=" + this.f273id + ", authorName=" + this.authorName + ", authorNickname=" + this.authorNickname + ", avatarUrl=" + this.avatarUrl + ", likesCountText=" + this.likesCountText + ", commentsCountText=" + this.commentsCountText + ", retweetsCountText=" + this.retweetsCountText + ", text=" + ((Object) this.text) + ", date=" + this.date + ", isLiked=" + this.isLiked + ')';
     }
@@ -157,5 +135,21 @@ public final class TweetItem extends NoChildNode {
         this.text = text;
         this.date = date;
         this.isLiked = z;
+    }
+
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (Intrinsics.areEqual(TweetItem.class, obj != null ? obj.getClass() : null)) {
+            Intrinsics.checkNotNull(obj, "null cannot be cast to non-null type com.smedialink.model.twitter.TweetItem");
+            TweetItem tweetItem = (TweetItem) obj;
+            return this.f273id == tweetItem.f273id && Intrinsics.areEqual(this.authorName, tweetItem.authorName) && Intrinsics.areEqual(this.authorNickname, tweetItem.authorNickname) && Intrinsics.areEqual(this.avatarUrl, tweetItem.avatarUrl) && Intrinsics.areEqual(this.likesCountText, tweetItem.likesCountText) && Intrinsics.areEqual(this.commentsCountText, tweetItem.commentsCountText) && Intrinsics.areEqual(this.retweetsCountText, tweetItem.retweetsCountText) && Intrinsics.areEqual(this.text.toString(), tweetItem.text.toString()) && Intrinsics.areEqual(this.date, tweetItem.date) && this.isLiked == tweetItem.isLiked;
+        }
+        return false;
+    }
+
+    public int hashCode() {
+        return (((((((((((((((((StakingApprovalPrepareRequest$$ExternalSyntheticBackport0.m716m(this.f273id) * 31) + this.authorName.hashCode()) * 31) + this.authorNickname.hashCode()) * 31) + this.avatarUrl.hashCode()) * 31) + this.likesCountText.hashCode()) * 31) + this.commentsCountText.hashCode()) * 31) + this.retweetsCountText.hashCode()) * 31) + this.text.toString().hashCode()) * 31) + this.date.hashCode()) * 31) + TweetItem$$ExternalSyntheticBackport0.m708m(this.isLiked);
     }
 }

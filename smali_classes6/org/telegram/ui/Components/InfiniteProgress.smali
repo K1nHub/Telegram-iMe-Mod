@@ -94,7 +94,7 @@
 
     const-wide/16 v4, 0x168
 
-    mul-long v4, v4, v2
+    mul-long/2addr v4, v2
 
     long-to-float v1, v4
 
@@ -162,7 +162,7 @@
 
     move-result v4
 
-    mul-float v4, v4, v0
+    mul-float/2addr v4, v0
 
     add-float/2addr v4, v3
 
@@ -186,7 +186,7 @@
 
     sub-float/2addr v0, v4
 
-    mul-float v0, v0, v2
+    mul-float/2addr v0, v2
 
     sub-float/2addr v3, v0
 
@@ -244,25 +244,25 @@
 
     int-to-float v2, v1
 
-    mul-float v2, v2, p4
+    mul-float/2addr v2, p4
 
     sub-float v2, p2, v2
 
     int-to-float v3, v1
 
-    mul-float v3, v3, p4
+    mul-float/2addr v3, p4
 
     sub-float v3, p3, v3
 
     int-to-float v4, v1
 
-    mul-float v4, v4, p4
+    mul-float/2addr v4, p4
 
     add-float/2addr p2, v4
 
     int-to-float v1, v1
 
-    mul-float v1, v1, p4
+    mul-float/2addr v1, p4
 
     add-float/2addr p3, v1
 
@@ -279,7 +279,7 @@
 
     int-to-float p3, p3
 
-    mul-float p3, p3, p4
+    mul-float/2addr p3, p4
 
     invoke-virtual {p2, p3}, Landroid/graphics/Paint;->setStrokeWidth(F)V
 
@@ -318,7 +318,7 @@
 
     int-to-float v1, v1
 
-    mul-float p1, p1, v1
+    mul-float/2addr p1, v1
 
     float-to-int p1, p1
 

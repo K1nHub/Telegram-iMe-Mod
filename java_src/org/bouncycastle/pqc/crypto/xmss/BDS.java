@@ -17,7 +17,7 @@ public final class BDS implements Serializable {
     private int index;
 
     /* renamed from: k */
-    private int f1407k;
+    private int f1408k;
     private Map<Integer, XMSSNode> keep;
     private Map<Integer, LinkedList<XMSSNode>> retain;
     private XMSSNode root;
@@ -30,7 +30,7 @@ public final class BDS implements Serializable {
     private BDS(BDS bds, byte[] bArr, byte[] bArr2, OTSHashAddress oTSHashAddress) {
         this.wotsPlus = bds.wotsPlus;
         this.treeHeight = bds.treeHeight;
-        this.f1407k = bds.f1407k;
+        this.f1408k = bds.f1408k;
         this.root = bds.root;
         this.authenticationPath = new ArrayList(bds.authenticationPath);
         this.retain = bds.retain;
@@ -45,7 +45,7 @@ public final class BDS implements Serializable {
     private BDS(WOTSPlus wOTSPlus, int i, int i2) {
         this.wotsPlus = wOTSPlus;
         this.treeHeight = i;
-        this.f1407k = i2;
+        this.f1408k = i2;
         if (i2 <= i && i2 >= 2) {
             int i3 = i - i2;
             if (i3 % 2 == 0) {
@@ -115,10 +115,10 @@ public final class BDS implements Serializable {
                 if (floor == 1) {
                     this.authenticationPath.add(lTree.clone());
                 }
-                if (floor == 3 && lTree.getHeight() < this.treeHeight - this.f1407k) {
+                if (floor == 3 && lTree.getHeight() < this.treeHeight - this.f1408k) {
                     this.treeHashInstances.get(lTree.getHeight()).setNode(lTree.clone());
                 }
-                if (floor >= 3 && (floor & 1) == 1 && lTree.getHeight() >= this.treeHeight - this.f1407k && lTree.getHeight() <= this.treeHeight - 2) {
+                if (floor >= 3 && (floor & 1) == 1 && lTree.getHeight() >= this.treeHeight - this.f1408k && lTree.getHeight() <= this.treeHeight - 2) {
                     if (this.retain.get(Integer.valueOf(lTree.getHeight())) == null) {
                         LinkedList<XMSSNode> linkedList = new LinkedList<>();
                         linkedList.add(lTree.clone());
@@ -165,7 +165,7 @@ public final class BDS implements Serializable {
             this.authenticationPath.set(calculateTau, new XMSSNode(randomizeHash.getHeight() + 1, randomizeHash.getValue()));
             this.keep.remove(Integer.valueOf(i));
             for (int i2 = 0; i2 < calculateTau; i2++) {
-                if (i2 < this.treeHeight - this.f1407k) {
+                if (i2 < this.treeHeight - this.f1408k) {
                     list = this.authenticationPath;
                     removeFirst = this.treeHashInstances.get(i2).getTailNode();
                 } else {
@@ -174,7 +174,7 @@ public final class BDS implements Serializable {
                 }
                 list.set(i2, removeFirst);
             }
-            int min = Math.min(calculateTau, this.treeHeight - this.f1407k);
+            int min = Math.min(calculateTau, this.treeHeight - this.f1408k);
             for (int i3 = 0; i3 < min; i3++) {
                 int i4 = this.index + 1 + ((1 << i3) * 3);
                 if (i4 < (1 << this.treeHeight)) {
@@ -182,7 +182,7 @@ public final class BDS implements Serializable {
                 }
             }
         }
-        for (int i5 = 0; i5 < ((this.treeHeight - this.f1407k) >> 1); i5++) {
+        for (int i5 = 0; i5 < ((this.treeHeight - this.f1408k) >> 1); i5++) {
             BDSTreeHash bDSTreeHashInstanceForUpdate = getBDSTreeHashInstanceForUpdate();
             if (bDSTreeHashInstanceForUpdate != null) {
                 bDSTreeHashInstanceForUpdate.update(this.stack, this.wotsPlus, bArr, bArr2, oTSHashAddress);

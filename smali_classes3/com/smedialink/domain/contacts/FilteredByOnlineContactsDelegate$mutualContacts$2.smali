@@ -62,7 +62,7 @@
 .end method
 
 .method public final invoke()Ljava/util/ArrayList;
-    .locals 10
+    .locals 9
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -114,9 +114,9 @@
 
     move-result-wide v7
 
-    cmp-long v9, v5, v7
+    cmp-long v5, v5, v7
 
-    if-eqz v9, :cond_1
+    if-eqz v5, :cond_1
 
     iget-boolean v4, v4, Lorg/telegram/tgnet/TLRPC$TL_contact;->mutual:Z
 

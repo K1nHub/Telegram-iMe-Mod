@@ -532,7 +532,7 @@ to: %2$s"</string>
     <string name="AppIconPremium">Premium</string>
     <string name="AppIconTurbo">Turbo</string>
     <string name="AppIconVintage">Vintage</string>
-    <string name="AppName">Telegram</string>
+    <string name="AppName">iMe</string>
     <string name="AppNameBeta">iMe</string>
     <string name="AppUpdate">Update Telegram</string>
     <string name="AppUpdateChangelogEmpty">"**What's new?**
@@ -3171,6 +3171,19 @@ This operation can take a few minutes to complete."</string>
     <string name="LoginAccessibilityCountryCode">Country code</string>
     <string name="LoginAttempts">Incomplete login attempts</string>
     <string name="LoginAttemptsInfo">The devices above have no access to your messages. The code was entered correctly, but no correct password was given.</string>
+    <string name="LoginCantAccessThisEmail">"Can't access this email?"</string>
+    <string name="LoginEmailResetButton">Reset Login Email</string>
+    <string name="LoginEmailResetInDoublePattern">%1$s and %2$s</string>
+    <string name="LoginEmailResetInSinglePattern">%1$s</string>
+    <string name="LoginEmailResetInTime">"Email will be reset in %1$s.
+*Reset now via SMS*"</string>
+    <string name="LoginEmailResetMessage">"You can change your login email if you are logged into Telegram from another device. Otherwise, if you don't have access to email %1$s, you can reset this email with an **SMS** code in **%2$s**."</string>
+    <string name="LoginEmailResetPleaseWait">Resetting email, please wait...</string>
+    <string name="LoginEmailResetPremiumRequiredMessage">"Due to the high cost of SMS in your country, you need a **Telegram Premium** account to immediately reset this email via an SMS code.
+
+You can ask a friend to gift a Premium subscription for your account **%1$s**"</string>
+    <string name="LoginEmailResetPremiumRequiredTitle">Telegram Premium Required</string>
+    <string name="LoginEmailResetTitle">Reset Email</string>
     <string name="LoginOrSingInWithGoogle">or</string>
     <string name="LoginPassword">Password</string>
     <string name="LoginPasswordText">You have Two-Step Verification enabled, so your account is protected with an additional password.</string>
@@ -4146,6 +4159,7 @@ You can visit our *FAQ* to learn more."</string>
     <string name="PasswordReset">Password deactivated</string>
     <string name="PasteFromClipboard">Paste from clipboard</string>
     <string name="PauseAll">Pause all</string>
+    <string name="PauseMusicOnMedia">Pause music while playing media</string>
     <string name="PauseMusicOnRecord">Pause music while recording</string>
     <string name="PaymentAppNotFoundForDeeplink">No app found to handle this deep link.</string>
     <string name="PaymentBillingAddress">Billing address</string>
@@ -4600,6 +4614,7 @@ We will access your location only for the duration you choose, and you can stop 
     <string name="ProximityTooltioUser">Alert when %1$s is close</string>
     <string name="Proxy">Proxy</string>
     <string name="ProxyAddedSuccess">Proxy added.</string>
+    <string name="ProxyBottomSheetChecking">Checking</string>
     <string name="ProxyConnections">Connections</string>
     <string name="ProxyDetails">Proxy Details</string>
     <string name="ProxyRotationTimeoutInfo">You can configure the timeout for connecting to the nearest active proxy if the current one stops working.</string>
@@ -4682,6 +4697,7 @@ We will access your location only for the duration you choose, and you can stop 
     <string name="QuizWellDoneInfo">You chose the right answer.</string>
     <string name="QuizWrongAnswer">Wrong answer!</string>
     <string name="QuizWrongAnswerInfo">You missed the correct option.</string>
+    <string name="RaiseToListen">Raise to Listen</string>
     <string name="RaiseToSpeak">Raise to Speak</string>
     <string name="RateCallDistorted">Speech was distorted</string>
     <string name="RateCallDropped">Call ended unexpectedly</string>
@@ -6921,7 +6937,7 @@ Settings > Tools > Chats > Templates"</string>
     <string name="collection_tab_all">All</string>
     <string name="collection_tab_categories">Categories</string>
     <string name="collection_tab_my">My</string>
-    <string name="com.crashlytics.android.build_id">1fb48ec70ef94f8297ef91818399f5e9</string>
+    <string name="com.crashlytics.android.build_id">db0d00edd8f24ff19e794916f847a4fd</string>
     <string name="combine_messages_alert_message">"You send messages in a row and this can annoy other users.
 
 Enable the option so that your messages sent in a row within 30 seconds will be combined into one message?"</string>
@@ -7059,6 +7075,8 @@ Enable the option so that your messages sent in a row within 30 seconds will be 
     <string name="currency_gt_site">https://gatechain.io/</string>
     <string name="currency_hapi">HAPI</string>
     <string name="currency_hapi_site">https://www.hapi.one/</string>
+    <string name="currency_huobitoken">HuobiToken</string>
+    <string name="currency_huobitoken_site">https://www.huobi.com/</string>
     <string name="currency_infam">INFAM</string>
     <string name="currency_infam_site">https://infam.io/</string>
     <string name="currency_internal_site">https://imem.app</string>
@@ -7141,6 +7159,7 @@ Enable the option so that your messages sent in a row within 30 seconds will be 
     <string name="currency_short_gns">GNS</string>
     <string name="currency_short_gt">GT</string>
     <string name="currency_short_hapi">HAPI</string>
+    <string name="currency_short_huobitoken">HT</string>
     <string name="currency_short_infam">INF</string>
     <string name="currency_short_kaby">KABY</string>
     <string name="currency_short_kft">KFT</string>
@@ -7173,7 +7192,9 @@ Enable the option so that your messages sent in a row within 30 seconds will be 
     <string name="currency_short_tara">TARA</string>
     <string name="currency_short_tomoe">TOMOE</string>
     <string name="currency_short_ton">TON</string>
+    <string name="currency_short_tron">TRX</string>
     <string name="currency_short_tru">TRU</string>
+    <string name="currency_short_trueusd">TUSD</string>
     <string name="currency_short_ufi">UFI</string>
     <string name="currency_short_uft">UFT</string>
     <string name="currency_short_uni">UNI</string>
@@ -7199,8 +7220,12 @@ Enable the option so that your messages sent in a row within 30 seconds will be 
     <string name="currency_tomoe_site">https://tomochain.com/</string>
     <string name="currency_ton">The Open Network</string>
     <string name="currency_ton_site">https://ton.org/</string>
+    <string name="currency_tron">TRON</string>
+    <string name="currency_tron_site">https://tron.network/</string>
     <string name="currency_tru">TrueFi</string>
     <string name="currency_tru_site">https://truefi.io/</string>
+    <string name="currency_trueusd">TrueUSD</string>
+    <string name="currency_trueusd_site">https://tusd.io/</string>
     <string name="currency_ufi">PureFi Protocol</string>
     <string name="currency_ufi_site">https://purefi.io/</string>
     <string name="currency_uft">Unilend</string>
@@ -8188,6 +8213,8 @@ Your balance will be updated after the transaction is confirmed in the blockchai
     <string name="wallet_account_level_zero_description">0</string>
     <string name="wallet_account_type_crypto">Crypto assets</string>
     <string name="wallet_account_type_fiat">Fiat</string>
+    <string name="wallet_activation_confirmation_description">You can create this wallet by using the same mnemonic as in your EVM wallet</string>
+    <string name="wallet_activation_confirmation_title">Fast creation</string>
     <string name="wallet_amount_button_calculate">Calculate fee</string>
     <string name="wallet_amount_button_txt">Send</string>
     <string name="wallet_amount_confirm_alert_ok_btn">Transfer</string>
@@ -8469,6 +8496,8 @@ All operations are carried out on the blockchain without the participation of pe
     <string name="wallet_crypto_blockchains_title">Blockchains</string>
     <string name="wallet_crypto_blockchains_ton_subtitle">The Open Network</string>
     <string name="wallet_crypto_blockchains_ton_title">TON</string>
+    <string name="wallet_crypto_blockchains_tron_subtitle">TRC20 network</string>
+    <string name="wallet_crypto_blockchains_tron_title">TRON</string>
     <string name="wallet_crypto_buy_amount_title">Amount</string>
     <string name="wallet_crypto_buy_confirm_dialog_action_txt">Buy</string>
     <string name="wallet_crypto_buy_confirm_dialog_description">Are you sure you want to buy ~%1$s %2$s?</string>
@@ -8506,6 +8535,7 @@ All operations are carried out on the blockchain without the participation of pe
     <string name="wallet_crypto_wallet_not_created_dialog_positive_btn">Create</string>
     <string name="wallet_crypto_wallet_not_created_dialog_title">Crypto Wallet is not created</string>
     <string name="wallet_dashboard_account_title">%s Account</string>
+    <string name="wallet_dashboard_activate_wallet">Activate %s wallet</string>
     <string name="wallet_dashboard_balance_24h_rate">%1$.2f%% / 24h</string>
     <string name="wallet_dashboard_create_eth_wallet">Create</string>
     <string name="wallet_dashboard_create_eth_wallet_success_dialog_description">"Your wallet was successfully created.
@@ -8564,6 +8594,8 @@ To use the previously linked crypto wallet address, log in to your account via r
     <string name="wallet_details_info_evm_title">EVM</string>
     <string name="wallet_details_info_ton_description">This is your active account on The Open Network (TON) blockchain.</string>
     <string name="wallet_details_info_ton_title">TON</string>
+    <string name="wallet_details_info_tron_description">This is your active account on TRON blockchain.</string>
+    <string name="wallet_details_info_tron_title">TRON</string>
     <string name="wallet_details_reset_description">Are you sure you want to reset this wallet?</string>
     <string name="wallet_details_reset_title">Reset wallet</string>
     <string name="wallet_enter_eth_password_delete_wallet_dialog_description">"Are you sure you want to reset your account to the initial value?
@@ -8662,6 +8694,7 @@ Only you have access to your wallet, private keys and funds on your accounts."</
     <string name="wallet_network_scanner_fantom">FTMScan</string>
     <string name="wallet_network_scanner_polygon">PolygonScan</string>
     <string name="wallet_network_scanner_ton">TonScan</string>
+    <string name="wallet_network_scanner_tron">TronScan</string>
     <string name="wallet_network_type_bep20">BNB Chain</string>
     <string name="wallet_network_type_bsc_short_name">BNB Chain</string>
     <string name="wallet_network_type_dialog_title">Select network</string>
@@ -8675,6 +8708,8 @@ Only you have access to your wallet, private keys and funds on your accounts."</
     <string name="wallet_network_type_polygon_short_name">Polygon</string>
     <string name="wallet_network_type_ton">TON</string>
     <string name="wallet_network_type_ton_short_name">TON</string>
+    <string name="wallet_network_type_tron">TRON</string>
+    <string name="wallet_network_type_tron_short_name">TRON</string>
     <string name="wallet_notifications_success_mark_all_notification_as_read">All notifications are marked as read</string>
     <string name="wallet_notifications_toolbar_title">Notifications</string>
     <string name="wallet_operation_deposit">Deposit</string>

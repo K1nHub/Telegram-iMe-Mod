@@ -258,7 +258,7 @@
 
     float-to-int p1, p1
 
-    mul-int p2, p2, p1
+    mul-int/2addr p2, p1
 
     mul-int/lit8 p2, p2, 0x4
 
@@ -826,7 +826,7 @@
 
     move-result v11
 
-    mul-float v10, v10, v11
+    mul-float/2addr v10, v11
 
     float-to-int v10, v10
 
@@ -1891,24 +1891,24 @@
 
     if-eqz p1, :cond_1
 
-    const/4 v3, 0x1
+    move v3, v1
 
     goto :goto_0
 
     :cond_1
-    const/4 v3, 0x0
+    move v3, v2
 
     :goto_0
     if-eq v0, v3, :cond_6
 
     if-eqz p1, :cond_2
 
-    const/4 v0, 0x1
+    move v0, v1
 
     goto :goto_1
 
     :cond_2
-    const/4 v0, 0x0
+    move v0, v2
 
     .line 171
     :goto_1
@@ -2581,7 +2581,7 @@
 
     move-result v7
 
-    mul-float v5, v5, v7
+    mul-float/2addr v5, v7
 
     mul-float v5, v5, p3
 
@@ -3014,12 +3014,12 @@
 
     if-ne v2, v3, :cond_4
 
-    const/4 v2, 0x1
+    move v2, v8
 
     goto :goto_0
 
     :cond_4
-    const/4 v2, 0x0
+    move v2, v5
 
     :goto_0
     invoke-static {v1, v2}, Landroid/opengl/GLES20;->glUniform1i(II)V
@@ -3671,7 +3671,7 @@
 
     move v9, v1
 
-    const/16 v14, 0xde1
+    move v14, v10
 
     move/from16 v10, v16
 
@@ -3679,7 +3679,7 @@
 
     move/from16 v11, v17
 
-    const v15, 0x8d40
+    move v15, v12
 
     move/from16 v12, v18
 
@@ -3888,7 +3888,7 @@
 
     mul-int v5, v4, v1
 
-    mul-int/lit8 v5, v5, 0x4
+    mul-int/2addr v5, v3
 
     invoke-virtual {v2, v5}, Ljava/nio/ByteBuffer;->limit(I)Ljava/nio/Buffer;
 
@@ -4107,13 +4107,13 @@
 
     iget v4, p0, Lorg/telegram/ui/Components/Paint/Painting;->helperAlpha:F
 
-    mul-float v4, v4, v2
+    mul-float/2addr v4, v2
 
     sub-float/2addr v1, v4
 
     iget v4, p0, Lorg/telegram/ui/Components/Paint/Painting;->helperApplyAlpha:F
 
-    mul-float v4, v4, v2
+    mul-float/2addr v4, v2
 
     sub-float/2addr v1, v4
 
@@ -4177,11 +4177,11 @@
 
     iget v4, p0, Lorg/telegram/ui/Components/Paint/Painting;->helperAlpha:F
 
-    mul-float v4, v4, v2
+    mul-float/2addr v4, v2
 
     iget v5, p0, Lorg/telegram/ui/Components/Paint/Painting;->helperApplyAlpha:F
 
-    mul-float v5, v5, v2
+    mul-float/2addr v5, v2
 
     add-float/2addr v4, v5
 

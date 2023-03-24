@@ -247,23 +247,21 @@
 
     const-wide v3, 0x7fffffffffffffffL
 
-    cmp-long v5, v1, v3
+    cmp-long v1, v1, v3
 
-    if-eqz v5, :cond_0
+    if-eqz v1, :cond_0
 
     const/4 v1, 0x1
-
-    const/4 v10, 0x1
 
     goto :goto_0
 
     :cond_0
     const/4 v1, 0x0
 
-    const/4 v10, 0x0
+    :goto_0
+    move v10, v1
 
     .line 370
-    :goto_0
     new-instance v1, Lio/grpc/okhttp/OkHttpChannelBuilder$OkHttpTransportFactory;
 
     move-object v2, v1
@@ -485,13 +483,13 @@
 .end method
 
 .method public keepAliveTime(JLjava/util/concurrent/TimeUnit;)Lio/grpc/okhttp/OkHttpChannelBuilder;
-    .locals 3
+    .locals 2
 
     const-wide/16 v0, 0x0
 
-    cmp-long v2, p1, v0
+    cmp-long v0, p1, v0
 
-    if-lez v2, :cond_0
+    if-lez v0, :cond_0
 
     const/4 v0, 0x1
 
@@ -523,9 +521,9 @@
     .line 213
     sget-wide v0, Lio/grpc/okhttp/OkHttpChannelBuilder;->AS_LARGE_AS_INFINITE:J
 
-    cmp-long p3, p1, v0
+    cmp-long p1, p1, v0
 
-    if-ltz p3, :cond_1
+    if-ltz p1, :cond_1
 
     const-wide p1, 0x7fffffffffffffffL
 

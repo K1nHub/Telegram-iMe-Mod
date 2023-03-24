@@ -31,7 +31,7 @@ import kotlin.reflect.KProperty;
 import moxy.ktx.MoxyKtxDelegate;
 import org.fork.utils.Callbacks$Callback;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3286R;
+import org.telegram.messenger.C3301R;
 import org.telegram.messenger.databinding.ForkContentWalletCryptoBuyCustomPriceLayoutBinding;
 import org.telegram.p048ui.ActionBar.BaseFragment;
 import org.telegram.p048ui.ActionBar.Theme;
@@ -191,10 +191,10 @@ public final class CryptoBuyCustomPriceBottomSheetDialog extends MvpBottomSheet 
             if (r7 == 0) goto L30
             goto L32
         L30:
-            r7 = 0
+            r7 = r1
             goto L33
         L32:
-            r7 = 1
+            r7 = r2
         L33:
             r3 = 0
             if (r7 != 0) goto L43
@@ -234,7 +234,7 @@ public final class CryptoBuyCustomPriceBottomSheetDialog extends MvpBottomSheet 
     public void resetInputError() {
         AppCompatTextView appCompatTextView = getBinding().textAction;
         appCompatTextView.setTextColor(Theme.getColor("chats_actionBackground"));
-        appCompatTextView.setText(getResourceManager().getString(C3286R.string.wallet_crypto_buy_custom_price_dialog_action));
+        appCompatTextView.setText(getResourceManager().getString(C3301R.string.wallet_crypto_buy_custom_price_dialog_action));
     }
 
     private final void setupStyles() {
@@ -276,8 +276,8 @@ public final class CryptoBuyCustomPriceBottomSheetDialog extends MvpBottomSheet 
 
     private final void setupActionBar() {
         ForkContentWalletCryptoBuyCustomPriceLayoutBinding binding = getBinding();
-        binding.imageBack.setImageResource(C3286R.C3288drawable.ic_ab_back);
-        binding.textTitle.setText(getResourceManager().getString(C3286R.string.wallet_crypto_buy_custom_price_dialog_toolbar_title));
+        binding.imageBack.setImageResource(C3301R.C3303drawable.ic_ab_back);
+        binding.textTitle.setText(getResourceManager().getString(C3301R.string.wallet_crypto_buy_custom_price_dialog_toolbar_title));
     }
 
     private final void setupListeners() {

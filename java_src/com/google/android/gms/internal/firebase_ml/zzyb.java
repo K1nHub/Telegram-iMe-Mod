@@ -3,10 +3,10 @@ package com.google.android.gms.internal.firebase_ml;
 import com.google.android.exoplayer2.extractor.p016ts.PsExtractor;
 /* loaded from: classes.dex */
 final class zzyb extends zzxw {
-    /* JADX WARN: Code restructure failed: missing block: B:33:0x0061, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:33:0x0065, code lost:
         return -1;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:61:0x00b6, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:61:0x00ba, code lost:
         return -1;
      */
     @Override // com.google.android.gms.internal.firebase_ml.zzxw
@@ -14,9 +14,9 @@ final class zzyb extends zzxw {
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct add '--show-bad-code' argument
     */
-    final int zzb(int r16, byte[] r17, int r18, int r19) {
+    final int zzb(int r18, byte[] r19, int r20, int r21) {
         /*
-            Method dump skipped, instructions count: 217
+            Method dump skipped, instructions count: 221
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: com.google.android.gms.internal.firebase_ml.zzyb.zzb(int, byte[], int, int):int");
@@ -107,6 +107,7 @@ final class zzyb extends zzxw {
         long j;
         long j2;
         long j3;
+        char c2;
         int i3;
         char charAt;
         long j4 = i;
@@ -137,70 +138,69 @@ final class zzyb extends zzxw {
         }
         while (i4 < length) {
             char charAt3 = charSequence.charAt(i4);
-            if (charAt3 >= c || j4 >= j5) {
-                if (charAt3 < 2048 && j4 <= j5 - 2) {
-                    long j6 = j4 + j;
-                    zzxs.zza(bArr, j4, (byte) ((charAt3 >>> 6) | 960));
-                    zzxs.zza(bArr, j6, (byte) ((charAt3 & '?') | 128));
-                    j2 = j6 + j;
-                    j3 = j;
-                } else if ((charAt3 >= 55296 && 57343 >= charAt3) || j4 > j5 - 3) {
-                    if (j4 <= j5 - 4) {
-                        int i5 = i4 + 1;
-                        if (i5 != length) {
-                            char charAt4 = charSequence.charAt(i5);
-                            if (Character.isSurrogatePair(charAt3, charAt4)) {
-                                int codePoint = Character.toCodePoint(charAt3, charAt4);
-                                long j7 = j4 + 1;
-                                zzxs.zza(bArr, j4, (byte) ((codePoint >>> 18) | PsExtractor.VIDEO_STREAM_MASK));
-                                long j8 = j7 + 1;
-                                zzxs.zza(bArr, j7, (byte) (((codePoint >>> 12) & 63) | 128));
-                                long j9 = j8 + 1;
-                                zzxs.zza(bArr, j8, (byte) (((codePoint >>> 6) & 63) | 128));
-                                j3 = 1;
-                                j2 = j9 + 1;
-                                zzxs.zza(bArr, j9, (byte) ((codePoint & 63) | 128));
-                                i4 = i5;
-                            } else {
-                                i4 = i5;
-                            }
-                        }
-                        throw new zzxy(i4 - 1, length);
-                    } else if (55296 <= charAt3 && charAt3 <= 57343 && ((i3 = i4 + 1) == length || !Character.isSurrogatePair(charAt3, charSequence.charAt(i3)))) {
-                        throw new zzxy(i4, length);
-                    } else {
-                        StringBuilder sb2 = new StringBuilder(46);
-                        sb2.append("Failed writing ");
-                        sb2.append(charAt3);
-                        sb2.append(" at index ");
-                        sb2.append(j4);
-                        throw new ArrayIndexOutOfBoundsException(sb2.toString());
-                    }
-                } else {
-                    long j10 = j4 + j;
-                    zzxs.zza(bArr, j4, (byte) ((charAt3 >>> '\f') | 480));
-                    long j11 = j10 + j;
-                    zzxs.zza(bArr, j10, (byte) (((charAt3 >>> 6) & 63) | 128));
-                    zzxs.zza(bArr, j11, (byte) ((charAt3 & '?') | 128));
-                    j2 = j11 + 1;
-                    j3 = 1;
-                }
-                i4++;
-                c = 128;
-                long j12 = j3;
-                j4 = j2;
-                j = j12;
-            } else {
-                long j13 = j4 + j;
+            if (charAt3 < c && j4 < j5) {
+                long j6 = j4 + j;
                 zzxs.zza(bArr, j4, (byte) charAt3);
                 j3 = j;
-                j2 = j13;
+                j2 = j6;
+                c2 = c;
+            } else if (charAt3 < 2048 && j4 <= j5 - 2) {
+                long j7 = j4 + j;
+                zzxs.zza(bArr, j4, (byte) ((charAt3 >>> 6) | 960));
+                long j8 = j7 + j;
+                zzxs.zza(bArr, j7, (byte) ((charAt3 & '?') | 128));
+                long j9 = j;
+                c2 = 128;
+                j2 = j8;
+                j3 = j9;
+            } else if ((charAt3 >= 55296 && 57343 >= charAt3) || j4 > j5 - 3) {
+                if (j4 <= j5 - 4) {
+                    int i5 = i4 + 1;
+                    if (i5 != length) {
+                        char charAt4 = charSequence.charAt(i5);
+                        if (Character.isSurrogatePair(charAt3, charAt4)) {
+                            int codePoint = Character.toCodePoint(charAt3, charAt4);
+                            long j10 = j4 + 1;
+                            zzxs.zza(bArr, j4, (byte) ((codePoint >>> 18) | PsExtractor.VIDEO_STREAM_MASK));
+                            long j11 = j10 + 1;
+                            c2 = 128;
+                            zzxs.zza(bArr, j10, (byte) (((codePoint >>> 12) & 63) | 128));
+                            long j12 = j11 + 1;
+                            zzxs.zza(bArr, j11, (byte) (((codePoint >>> 6) & 63) | 128));
+                            j3 = 1;
+                            j2 = j12 + 1;
+                            zzxs.zza(bArr, j12, (byte) ((codePoint & 63) | 128));
+                            i4 = i5;
+                        } else {
+                            i4 = i5;
+                        }
+                    }
+                    throw new zzxy(i4 - 1, length);
+                } else if (55296 <= charAt3 && charAt3 <= 57343 && ((i3 = i4 + 1) == length || !Character.isSurrogatePair(charAt3, charSequence.charAt(i3)))) {
+                    throw new zzxy(i4, length);
+                } else {
+                    StringBuilder sb2 = new StringBuilder(46);
+                    sb2.append("Failed writing ");
+                    sb2.append(charAt3);
+                    sb2.append(" at index ");
+                    sb2.append(j4);
+                    throw new ArrayIndexOutOfBoundsException(sb2.toString());
+                }
+            } else {
+                long j13 = j4 + j;
+                zzxs.zza(bArr, j4, (byte) ((charAt3 >>> '\f') | 480));
+                long j14 = j13 + j;
+                zzxs.zza(bArr, j13, (byte) (((charAt3 >>> 6) & 63) | 128));
+                zzxs.zza(bArr, j14, (byte) ((charAt3 & '?') | 128));
+                j2 = j14 + 1;
+                j3 = 1;
+                c2 = 128;
             }
             i4++;
-            c = 128;
-            long j122 = j3;
+            c = c2;
+            long j15 = j3;
             j4 = j2;
-            j = j122;
+            j = j15;
         }
         return (int) j4;
     }

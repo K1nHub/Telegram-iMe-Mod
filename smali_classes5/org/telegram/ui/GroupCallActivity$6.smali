@@ -1959,7 +1959,7 @@
     .line 2172
     new-array v13, v9, [I
 
-    const/4 v14, 0x0
+    move v14, v3
 
     :goto_6
     if-ge v14, v9, :cond_19
@@ -2048,7 +2048,7 @@
 
     if-ne v8, v4, :cond_1a
 
-    const/4 v1, 0x0
+    move v1, v3
 
     goto :goto_7
 
@@ -2060,12 +2060,12 @@
 
     if-nez v1, :cond_1b
 
-    const/4 v1, 0x1
+    move v1, v4
 
     goto :goto_7
 
     :cond_1b
-    const/4 v1, 0x2
+    move v1, v5
 
     .line 2198
     :goto_7

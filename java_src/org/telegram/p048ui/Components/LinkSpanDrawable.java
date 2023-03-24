@@ -179,7 +179,7 @@ public class LinkSpanDrawable<S extends CharacterStyle> {
         }
         float interpolation = CubicBezierInterpolator.DEFAULT.getInterpolation(Math.min(1.0f, ((float) (elapsedRealtime - this.mStart)) / ((float) this.mDuration)));
         long j = this.mReleaseStart;
-        float min = j < 0 ? BitmapDescriptorFactory.HUE_RED : Math.min(1.0f, Math.max((float) BitmapDescriptorFactory.HUE_RED, ((float) ((elapsedRealtime - 75) - j)) / 100.0f));
+        float min = j < 0 ? 0.0f : Math.min(1.0f, Math.max((float) BitmapDescriptorFactory.HUE_RED, ((float) ((elapsedRealtime - 75) - j)) / 100.0f));
         if (this.mSupportsLongPress) {
             long j2 = this.mDuration;
             float max = Math.max((float) BitmapDescriptorFactory.HUE_RED, ((float) ((elapsedRealtime - this.mStart) - (j2 * 2))) / ((float) (this.mLongPressDuration - (j2 * 2))));
@@ -627,7 +627,7 @@ public class LinkSpanDrawable<S extends CharacterStyle> {
                 if (!this.disablePaddingsOffset) {
                     boolean z = this.disablePaddingsOffsetX;
                     float f = BitmapDescriptorFactory.HUE_RED;
-                    float paddingLeft = z ? BitmapDescriptorFactory.HUE_RED : getPaddingLeft();
+                    float paddingLeft = z ? 0.0f : getPaddingLeft();
                     if (!this.disablePaddingsOffsetY) {
                         f = getPaddingTop();
                     }

@@ -5,12 +5,12 @@ public class TLRPC$TL_channelParticipantsKicked extends TLRPC$ChannelParticipant
 
     @Override // org.telegram.tgnet.TLObject
     public void readParams(AbstractSerializedData abstractSerializedData, boolean z) {
-        this.f1498q = abstractSerializedData.readString(z);
+        this.f1499q = abstractSerializedData.readString(z);
     }
 
     @Override // org.telegram.tgnet.TLObject
     public void serializeToStream(AbstractSerializedData abstractSerializedData) {
         abstractSerializedData.writeInt32(constructor);
-        abstractSerializedData.writeString(this.f1498q);
+        abstractSerializedData.writeString(this.f1499q);
     }
 }

@@ -405,7 +405,7 @@
 
     const-wide v1, 0x3fee666666666666L    # 0.95
 
-    mul-double p2, p2, v1
+    mul-double/2addr p2, v1
 
     double-to-long p2, p2
 
@@ -1417,7 +1417,7 @@
 
     if-eqz v30, :cond_b
 
-    const/4 v5, 0x1
+    move/from16 v5, v16
 
     goto :goto_7
 
@@ -1522,7 +1522,7 @@
 
     invoke-direct {v5, v6}, Ljava/util/ArrayList;-><init>(I)V
 
-    const/4 v6, 0x1
+    move v6, v4
 
     .line 70
     :goto_8
@@ -1978,9 +1978,10 @@
 
     const/16 v0, 0x11
 
-    const/16 v3, 0x11
+    :goto_f
+    move v3, v0
 
-    goto :goto_f
+    goto :goto_10
 
     .line 113
     :cond_22
@@ -1992,8 +1993,6 @@
 
     const/16 v0, 0xf
 
-    const/16 v3, 0xf
-
     goto :goto_f
 
     :cond_23
@@ -2003,17 +2002,15 @@
 
     const/16 v0, 0x9
 
-    const/16 v3, 0x9
-
     goto :goto_f
 
     :cond_24
     const/4 v0, 0x6
 
-    const/4 v3, 0x6
+    goto :goto_f
 
     .line 93
-    :goto_f
+    :goto_10
     new-instance v0, Lcom/android/billingclient/api/zzac;
 
     move-object v1, v0
@@ -2045,7 +2042,7 @@
 
     move-result-object v0
 
-    goto :goto_10
+    goto :goto_11
 
     :cond_25
     move-object/from16 v19, v7
@@ -2074,7 +2071,7 @@
 
     move-result-object v0
 
-    :goto_10
+    :goto_11
     const-wide/16 v1, 0x1388
 
     .line 94
@@ -2189,12 +2186,12 @@
     :catch_3
     move-exception v0
 
-    goto :goto_11
+    goto :goto_12
 
     :catch_4
     move-exception v0
 
-    :goto_11
+    :goto_12
     const-string v1, "Time out while launching billing flow. Try to reconnect"
 
     .line 111
@@ -2833,7 +2830,7 @@
 
     const/4 v12, 0x0
 
-    const/4 v4, 0x0
+    move v4, v12
 
     :goto_0
     const/4 v13, 0x4
@@ -2877,7 +2874,7 @@
 
     move-result v5
 
-    const/4 v7, 0x0
+    move v7, v12
 
     :goto_2
     if-ge v7, v5, :cond_1
@@ -2962,7 +2959,7 @@
     invoke-static {v2, v0}, Lcom/google/android/gms/internal/play_billing/zzb;->zzo(Ljava/lang/String;Ljava/lang/String;)V
 
     :goto_3
-    const/4 v12, 0x4
+    move v12, v13
 
     goto/16 :goto_6
 
@@ -3032,7 +3029,7 @@
     goto :goto_3
 
     :cond_5
-    const/4 v5, 0x0
+    move v5, v12
 
     .line 18
     :goto_4
@@ -3105,7 +3102,7 @@
     const-string v14, "An internal error occurred."
 
     :goto_5
-    const/4 v12, 0x6
+    move/from16 v12, v16
 
     goto :goto_6
 

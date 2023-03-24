@@ -297,12 +297,12 @@
 
     iput p1, p0, Lorg/telegram/ui/Components/GestureDetectorFixDoubleTap$GestureDetectorCompatImplBase;->mMaximumFlingVelocity:I
 
-    mul-int v0, v0, v0
+    mul-int/2addr v0, v0
 
     .line 146
     iput v0, p0, Lorg/telegram/ui/Components/GestureDetectorFixDoubleTap$GestureDetectorCompatImplBase;->mTouchSlopSquare:I
 
-    mul-int v1, v1, v1
+    mul-int/2addr v1, v1
 
     .line 147
     iput v1, p0, Lorg/telegram/ui/Components/GestureDetectorFixDoubleTap$GestureDetectorCompatImplBase;->mDoubleTapSlopSquare:I
@@ -393,9 +393,9 @@
 
     sub-int/2addr p1, p3
 
-    mul-int p2, p2, p2
+    mul-int/2addr p2, p2
 
-    mul-int p1, p1, p1
+    mul-int/2addr p1, p1
 
     add-int/2addr p2, p1
 
@@ -478,12 +478,12 @@
 
     if-ne v0, v1, :cond_1
 
-    const/4 v4, 0x1
+    move v4, v2
 
     goto :goto_0
 
     :cond_1
-    const/4 v4, 0x0
+    move v4, v3
 
     :goto_0
     if-eqz v4, :cond_2
@@ -506,11 +506,11 @@
 
     const/4 v7, 0x0
 
-    const/4 v8, 0x0
+    move v8, v3
 
-    const/4 v9, 0x0
+    move v9, v7
 
-    const/4 v10, 0x0
+    move v10, v9
 
     :goto_2
     if-ge v8, v6, :cond_4
@@ -622,7 +622,7 @@
 
     move-result v1
 
-    const/4 v4, 0x0
+    move v4, v3
 
     :goto_5
     if-ge v4, v6, :cond_21
@@ -644,7 +644,7 @@
 
     move-result v8
 
-    mul-float v8, v8, v2
+    mul-float/2addr v8, v2
 
     .line 248
     iget-object v9, p0, Lorg/telegram/ui/Components/GestureDetectorFixDoubleTap$GestureDetectorCompatImplBase;->mVelocityTracker:Landroid/view/VelocityTracker;
@@ -653,7 +653,7 @@
 
     move-result v5
 
-    mul-float v5, v5, v1
+    mul-float/2addr v5, v1
 
     add-float/2addr v8, v5
 
@@ -751,9 +751,9 @@
 
     float-to-int v7, v7
 
-    mul-int v6, v6, v6
+    mul-int/2addr v6, v6
 
-    mul-int v7, v7, v7
+    mul-int/2addr v7, v7
 
     add-int/2addr v6, v7
 
@@ -798,7 +798,7 @@
     goto :goto_7
 
     :cond_e
-    const/4 p1, 0x0
+    move p1, v3
 
     .line 321
     :goto_7
@@ -976,7 +976,7 @@
 
     :cond_16
     :goto_8
-    const/4 p1, 0x0
+    move p1, v3
 
     goto :goto_a
 
@@ -1121,7 +1121,7 @@
     invoke-virtual {v0, v5, v6, v7}, Landroid/os/Handler;->sendEmptyMessageDelayed(IJ)Z
 
     :cond_1e
-    const/4 v0, 0x0
+    move v0, v3
 
     .line 277
     :goto_c

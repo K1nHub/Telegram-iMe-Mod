@@ -588,15 +588,15 @@
 .end method
 
 .method public isUrgent()Z
-    .locals 5
+    .locals 4
 
     iget-wide v0, p0, Lcom/google/android/gms/wearable/PutDataRequest;->zzf:J
 
     const-wide/16 v2, 0x0
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-nez v4, :cond_0
+    if-nez v0, :cond_0
 
     const/4 v0, 0x1
 

@@ -120,7 +120,7 @@ public class SampleToChunkBox extends AbstractFullBox {
             long j = this.firstChunk;
             long j2 = this.samplesPerChunk;
             long j3 = this.sampleDescriptionIndex;
-            return (((((int) (j ^ (j >>> 32))) * 31) + ((int) (j2 ^ (j2 >>> 32)))) * 31) + ((int) (j3 ^ (j3 >>> 32)));
+            return (((((int) (j ^ (j >>> 32))) * 31) + ((int) (j2 ^ (j2 >>> 32)))) * 31) + ((int) ((j3 >>> 32) ^ j3));
         }
     }
 }

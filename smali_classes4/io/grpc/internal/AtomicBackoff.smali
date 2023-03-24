@@ -42,7 +42,7 @@
 .end method
 
 .method public constructor <init>(Ljava/lang/String;J)V
-    .locals 4
+    .locals 3
 
     .line 36
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -56,9 +56,9 @@
 
     const-wide/16 v1, 0x0
 
-    cmp-long v3, p2, v1
+    cmp-long v1, p2, v1
 
-    if-lez v3, :cond_0
+    if-lez v1, :cond_0
 
     const/4 v1, 0x1
 

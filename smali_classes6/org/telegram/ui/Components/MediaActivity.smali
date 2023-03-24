@@ -1227,7 +1227,7 @@
 .end method
 
 .method public isLightStatusBar()Z
-    .locals 5
+    .locals 4
 
     const-string v0, "windowBackgroundWhite"
 
@@ -1260,9 +1260,9 @@
 
     const-wide v2, 0x3fe6666660000000L    # 0.699999988079071
 
-    cmpl-double v4, v0, v2
+    cmpl-double v0, v0, v2
 
-    if-lez v4, :cond_1
+    if-lez v0, :cond_1
 
     const/4 v0, 0x1
 

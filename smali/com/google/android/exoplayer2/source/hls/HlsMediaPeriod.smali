@@ -285,7 +285,7 @@
 
     const/4 v5, 0x0
 
-    const/4 v6, 0x0
+    move v6, v5
 
     .line 708
     :goto_0
@@ -331,9 +331,9 @@
 
     const/4 v8, 0x1
 
-    const/4 v9, 0x0
+    move v9, v5
 
-    const/4 v10, 0x1
+    move v10, v8
 
     .line 721
     :goto_1
@@ -394,12 +394,12 @@
 
     if-ne v11, v8, :cond_1
 
-    const/4 v11, 0x1
+    move v11, v8
 
     goto :goto_2
 
     :cond_1
-    const/4 v11, 0x0
+    move v11, v5
 
     :goto_2
     and-int/2addr v10, v11
@@ -564,11 +564,11 @@
 
     const/4 v3, 0x0
 
-    const/4 v4, 0x0
+    move v4, v3
 
-    const/4 v5, 0x0
+    move v5, v4
 
-    const/4 v6, 0x0
+    move v6, v5
 
     .line 571
     :goto_0
@@ -653,7 +653,9 @@
 
     move v1, v5
 
-    const/4 v4, 0x1
+    move v4, v9
+
+    move v5, v3
 
     goto :goto_3
 
@@ -662,20 +664,19 @@
 
     sub-int/2addr v1, v6
 
-    const/4 v4, 0x0
+    move v4, v3
 
-    const/4 v5, 0x1
+    move v5, v9
 
-    goto :goto_4
+    goto :goto_3
 
     :cond_5
-    const/4 v4, 0x0
+    move v4, v3
 
-    :goto_3
-    const/4 v5, 0x0
+    move v5, v4
 
     .line 599
-    :goto_4
+    :goto_3
     new-array v13, v1, [Landroid/net/Uri;
 
     .line 600
@@ -684,12 +685,12 @@
     .line 601
     new-array v7, v1, [I
 
-    const/4 v10, 0x0
+    move v10, v3
 
-    const/4 v11, 0x0
+    move v11, v10
 
     .line 603
-    :goto_5
+    :goto_4
     iget-object v12, v0, Lcom/google/android/exoplayer2/source/hls/playlist/HlsMultivariantPlaylist;->variants:Ljava/util/List;
 
     invoke-interface {v12}, Ljava/util/List;->size()I
@@ -742,7 +743,7 @@
     :cond_8
     add-int/lit8 v10, v10, 0x1
 
-    goto :goto_5
+    goto :goto_4
 
     .line 612
     :cond_9
@@ -781,26 +782,26 @@
 
     if-lez v8, :cond_b
 
-    const/4 v8, 0x1
+    move v8, v9
 
-    goto :goto_6
+    goto :goto_5
 
     :cond_b
-    const/4 v8, 0x0
+    move v8, v3
 
-    :goto_6
+    :goto_5
     if-nez v4, :cond_c
 
     if-lez v2, :cond_c
 
-    const/4 v12, 0x1
+    move v12, v9
 
-    goto :goto_7
+    goto :goto_6
 
     :cond_c
-    const/4 v12, 0x0
+    move v12, v3
 
-    :goto_7
+    :goto_6
     const-string v4, "main"
 
     .line 626
@@ -854,9 +855,9 @@
     .line 641
     new-array v5, v1, [Lcom/google/android/exoplayer2/Format;
 
-    const/4 v11, 0x0
+    move v11, v3
 
-    :goto_8
+    :goto_7
     if-ge v11, v1, :cond_d
 
     .line 643
@@ -870,7 +871,7 @@
 
     add-int/lit8 v11, v11, 0x1
 
-    goto :goto_8
+    goto :goto_7
 
     .line 645
     :cond_d
@@ -938,10 +939,10 @@
 
     if-eqz v0, :cond_12
 
-    const/4 v1, 0x0
+    move v1, v3
 
     .line 660
-    :goto_9
+    :goto_8
     invoke-interface {v0}, Ljava/util/List;->size()I
 
     move-result v2
@@ -984,15 +985,15 @@
 
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_9
+    goto :goto_8
 
     .line 667
     :cond_10
     new-array v2, v1, [Lcom/google/android/exoplayer2/Format;
 
-    const/4 v5, 0x0
+    move v5, v3
 
-    :goto_a
+    :goto_9
     if-ge v5, v1, :cond_11
 
     .line 669
@@ -1009,7 +1010,7 @@
 
     add-int/lit8 v5, v5, 0x1
 
-    goto :goto_a
+    goto :goto_9
 
     .line 675
     :cond_11
@@ -1208,7 +1209,7 @@
 
     iput v0, v10, Lcom/google/android/exoplayer2/source/hls/HlsMediaPeriod;->audioVideoSampleStreamWrapperCount:I
 
-    const/4 v9, 0x0
+    move v9, v14
 
     .line 500
     :goto_1
@@ -1368,7 +1369,7 @@
 
     iput v0, v10, Lcom/google/android/exoplayer2/source/hls/HlsMediaPeriod;->pendingPrepareCount:I
 
-    const/4 v0, 0x0
+    move v0, v14
 
     .line 524
     :goto_2
@@ -1604,17 +1605,17 @@
     :cond_1
     move-object v5, v0
 
-    move-object v1, v3
+    move v4, v1
 
-    const/4 v3, 0x0
-
-    const/4 v4, 0x0
-
-    const/4 v6, -0x1
+    move v6, v2
 
     move-object v0, p1
 
     move-object p1, v5
+
+    move-object v1, v3
+
+    move v3, v4
 
     .line 865
     :goto_0
@@ -1630,7 +1631,7 @@
     goto :goto_1
 
     :cond_2
-    const/4 v8, -0x1
+    move v8, v2
 
     :goto_1
     if-eqz p2, :cond_3
@@ -1948,7 +1949,7 @@
 
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    move v1, v0
 
     :goto_0
     if-ge v1, p2, :cond_0
@@ -2153,7 +2154,7 @@
     .line 203
     sget-object v8, Lcom/google/android/exoplayer2/source/TrackGroupArray;->EMPTY:Lcom/google/android/exoplayer2/source/TrackGroupArray;
 
-    const/4 v6, 0x0
+    move v6, v5
 
     .line 207
     :goto_0
@@ -2166,9 +2167,9 @@
 
     move-result-object v10
 
-    const/4 v11, 0x0
+    move v11, v5
 
-    const/4 v12, 0x0
+    move v12, v11
 
     :goto_1
     invoke-interface {v10}, Ljava/util/Iterator;->hasNext()Z
@@ -2199,7 +2200,7 @@
 
     if-ne v15, v6, :cond_2
 
-    const/4 v3, 0x0
+    move v3, v5
 
     .line 217
     :goto_2
@@ -2312,9 +2313,9 @@
     :cond_5
     add-int/lit8 v15, v15, 0x1
 
-    const/4 v3, -0x1
-
     move-object/from16 v0, p0
+
+    move v3, v5
 
     goto :goto_3
 
@@ -2689,7 +2690,7 @@
 
     if-nez v7, :cond_0
 
-    const/4 v7, -0x1
+    move v7, v8
 
     goto :goto_1
 
@@ -2920,7 +2921,7 @@
 
     invoke-virtual {v11, v12, v14}, Ljava/util/IdentityHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    const/4 v11, 0x1
+    move v11, v13
 
     goto :goto_9
 
@@ -2981,7 +2982,7 @@
 
     invoke-virtual {v5}, Lcom/google/android/exoplayer2/source/hls/TimestampAdjusterProvider;->reset()V
 
-    const/16 v17, 0x1
+    move/from16 v17, v13
 
     goto :goto_b
 

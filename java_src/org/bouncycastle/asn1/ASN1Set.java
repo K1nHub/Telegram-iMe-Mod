@@ -171,8 +171,8 @@ public abstract class ASN1Set extends ASN1Primitive implements Iterable {
                         Vector vector = this.set;
                         vector.setElementAt(vector.elementAt(i3), i2);
                         this.set.setElementAt(elementAt, i3);
-                        i = i2;
                         z = true;
+                        i = i2;
                     }
                     i2 = i3;
                 }

@@ -368,7 +368,7 @@
     .line 43
     array-length v1, p1
 
-    const/4 v2, 0x0
+    move v2, v3
 
     :goto_3
     if-ge v2, v1, :cond_7

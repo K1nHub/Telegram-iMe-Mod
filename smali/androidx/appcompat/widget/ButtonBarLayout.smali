@@ -261,14 +261,14 @@
 
     move-result v0
 
-    const/4 v1, 0x1
+    move v1, v3
 
     goto :goto_0
 
     :cond_2
     move v0, p1
 
-    const/4 v1, 0x0
+    move v1, v2
 
     .line 105
     :goto_0
@@ -298,12 +298,12 @@
 
     if-ne v0, v4, :cond_3
 
-    const/4 v0, 0x1
+    move v0, v3
 
     goto :goto_1
 
     :cond_3
-    const/4 v0, 0x0
+    move v0, v2
 
     :goto_1
     if-eqz v0, :cond_4
@@ -311,7 +311,7 @@
     .line 115
     invoke-direct {p0, v3}, Landroidx/appcompat/widget/ButtonBarLayout;->setStacked(Z)V
 
-    const/4 v1, 0x1
+    move v1, v3
 
     :cond_4
     if-eqz v1, :cond_5
@@ -398,7 +398,7 @@
 
     iget v2, v2, Landroid/util/DisplayMetrics;->density:F
 
-    mul-float v2, v2, v1
+    mul-float/2addr v2, v1
 
     float-to-int v1, v2
 

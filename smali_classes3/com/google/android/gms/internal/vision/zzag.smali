@@ -45,6 +45,14 @@
 
     const/4 v4, 0x0
 
+    move v13, v2
+
+    move v14, v13
+
+    move v15, v14
+
+    move/from16 v16, v15
+
     move-object v6, v3
 
     move-object v7, v6
@@ -57,15 +65,7 @@
 
     move-object v12, v10
 
-    const/4 v11, 0x0
-
-    const/4 v13, 0x0
-
-    const/4 v14, 0x0
-
-    const/4 v15, 0x0
-
-    const/16 v16, 0x0
+    move v11, v4
 
     .line 19
     :goto_0

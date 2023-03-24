@@ -33,17 +33,17 @@
 
     and-long/2addr p0, v0
 
-    long-to-int p1, p0
+    long-to-int p0, p0
 
-    return p1
+    return p0
 .end method
 
 .method public static getFolderId(J)I
     .locals 0
 
-    long-to-int p1, p0
+    long-to-int p0, p0
 
-    return p1
+    return p0
 .end method
 
 .method public static getLastMessageOrDraftDate(Lorg/telegram/tgnet/TLRPC$Dialog;Lorg/telegram/tgnet/TLRPC$DraftMessage;)J
@@ -94,9 +94,9 @@
     :cond_1
     iget-wide v2, p0, Lorg/telegram/tgnet/TLRPC$InputPeer;->chat_id:J
 
-    cmp-long v4, v2, v0
+    cmp-long v0, v2, v0
 
-    if-eqz v4, :cond_2
+    if-eqz v0, :cond_2
 
     neg-long v0, v2
 
@@ -134,9 +134,9 @@
     :cond_1
     iget-wide v2, p0, Lorg/telegram/tgnet/TLRPC$Peer;->chat_id:J
 
-    cmp-long v4, v2, v0
+    cmp-long v0, v2, v0
 
-    if-eqz v4, :cond_2
+    if-eqz v0, :cond_2
 
     neg-long v0, v2
 
@@ -199,9 +199,9 @@
 
     const-wide/16 v2, 0x0
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-eqz v4, :cond_0
+    if-eqz v0, :cond_0
 
     goto :goto_0
 
@@ -307,7 +307,7 @@
 .end method
 
 .method public static isChatDialog(J)Z
-    .locals 3
+    .locals 2
 
     .line 82
     invoke-static {p0, p1}, Lorg/telegram/messenger/DialogObject;->isEncryptedDialog(J)Z
@@ -324,9 +324,9 @@
 
     const-wide/16 v0, 0x0
 
-    cmp-long v2, p0, v0
+    cmp-long p0, p0, v0
 
-    if-gez v2, :cond_0
+    if-gez p0, :cond_0
 
     const/4 p0, 0x1
 
@@ -340,7 +340,7 @@
 .end method
 
 .method public static isEncryptedDialog(J)Z
-    .locals 5
+    .locals 4
 
     const-wide/high16 v0, 0x4000000000000000L    # 2.0
 
@@ -348,17 +348,17 @@
 
     const-wide/16 v2, 0x0
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-eqz v4, :cond_0
+    if-eqz v0, :cond_0
 
     const-wide/high16 v0, -0x8000000000000000L
 
     and-long/2addr p0, v0
 
-    cmp-long v0, p0, v2
+    cmp-long p0, p0, v2
 
-    if-nez v0, :cond_0
+    if-nez p0, :cond_0
 
     const/4 p0, 0x1
 
@@ -372,7 +372,7 @@
 .end method
 
 .method public static isFolderDialogId(J)Z
-    .locals 5
+    .locals 4
 
     const-wide/high16 v0, 0x2000000000000000L
 
@@ -380,17 +380,17 @@
 
     const-wide/16 v2, 0x0
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-eqz v4, :cond_0
+    if-eqz v0, :cond_0
 
     const-wide/high16 v0, -0x8000000000000000L
 
     and-long/2addr p0, v0
 
-    cmp-long v0, p0, v2
+    cmp-long p0, p0, v2
 
-    if-nez v0, :cond_0
+    if-nez p0, :cond_0
 
     const/4 p0, 0x1
 
@@ -404,7 +404,7 @@
 .end method
 
 .method public static isUserDialog(J)Z
-    .locals 3
+    .locals 2
 
     .line 86
     invoke-static {p0, p1}, Lorg/telegram/messenger/DialogObject;->isEncryptedDialog(J)Z
@@ -421,9 +421,9 @@
 
     const-wide/16 v0, 0x0
 
-    cmp-long v2, p0, v0
+    cmp-long p0, p0, v0
 
-    if-lez v2, :cond_0
+    if-lez p0, :cond_0
 
     const/4 p0, 0x1
 

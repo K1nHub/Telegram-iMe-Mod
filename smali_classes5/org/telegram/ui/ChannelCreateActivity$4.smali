@@ -83,7 +83,7 @@
 
     move-result v2
 
-    mul-float v2, v2, v1
+    mul-float/2addr v2, v1
 
     iget-object v1, p0, Lorg/telegram/ui/ChannelCreateActivity$4;->this$0:Lorg/telegram/ui/ChannelCreateActivity;
 
@@ -95,7 +95,7 @@
 
     move-result v1
 
-    mul-float v2, v2, v1
+    mul-float/2addr v2, v1
 
     float-to-int v1, v2
 

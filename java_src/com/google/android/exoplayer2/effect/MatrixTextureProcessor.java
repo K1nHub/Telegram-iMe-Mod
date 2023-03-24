@@ -60,7 +60,10 @@ public final class MatrixTextureProcessor extends SingleFrameGlTextureProcessor 
             }
             createGlProgram.setFloatsUniform("uYuvToRgbColorTransform", fArr);
             int i = colorInfo.colorTransfer;
-            Assertions.checkArgument((i == 7 || i == 6) ? true : true);
+            if (i == 7 || i == 6) {
+                z = true;
+            }
+            Assertions.checkArgument(z);
             createGlProgram.setIntUniform("uEotfColorTransfer", i);
         } else {
             createGlProgram.setIntUniform("uApplyOetf", 0);

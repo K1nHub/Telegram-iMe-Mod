@@ -115,7 +115,7 @@ public class StickerImageView extends BackupImageView implements NotificationCen
             r3 = 1
             goto L69
         L68:
-            r3 = 0
+            r3 = r2
         L69:
             r0.loadStickersByEmojiOrName(r1, r2, r3)
         L6c:

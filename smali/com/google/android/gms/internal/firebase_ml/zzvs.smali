@@ -395,7 +395,7 @@
     :cond_2
     iget-object p1, p1, Lcom/google/android/gms/internal/firebase_ml/zzvs;->zzbuq:[J
 
-    const/4 v1, 0x0
+    move v1, v3
 
     .line 22
     :goto_0
@@ -549,7 +549,7 @@
 
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    move v1, v0
 
     .line 69
     :goto_0

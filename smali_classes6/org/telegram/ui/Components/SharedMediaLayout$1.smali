@@ -129,11 +129,11 @@
 
     const/4 v6, -0x1
 
-    const/4 v7, 0x0
+    move v7, v3
 
-    const/4 v8, -0x1
+    move v8, v6
 
-    const/4 v9, -0x1
+    move v9, v8
 
     :goto_0
     if-ge v7, v5, :cond_14
@@ -469,7 +469,7 @@
 
     if-lt v6, v7, :cond_c
 
-    const/4 v6, 0x0
+    move v6, v3
 
     goto :goto_2
 
@@ -660,7 +660,7 @@
     goto :goto_3
 
     :cond_e
-    const/4 v5, 0x0
+    move v5, v3
 
     .line 1135
     :goto_3

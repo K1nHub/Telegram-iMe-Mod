@@ -3,7 +3,6 @@ package com.google.android.gms.common.stats;
 import android.os.Parcel;
 import android.os.Parcelable;
 import com.google.android.gms.common.internal.safeparcel.SafeParcelReader;
-import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import java.util.ArrayList;
 /* compiled from: com.google.android.gms:play-services-basement@@18.1.0 */
 /* loaded from: classes.dex */
@@ -14,18 +13,18 @@ public final class zza implements Parcelable.Creator {
         long j = 0;
         long j2 = 0;
         long j3 = 0;
+        int i = 0;
+        int i2 = 0;
+        int i3 = 0;
+        int i4 = 0;
+        boolean z = false;
         String str = null;
         ArrayList<String> arrayList = null;
         String str2 = null;
         String str3 = null;
         String str4 = null;
         String str5 = null;
-        int i = 0;
-        int i2 = 0;
-        int i3 = 0;
-        int i4 = 0;
-        float f = BitmapDescriptorFactory.HUE_RED;
-        boolean z = false;
+        float f = 0.0f;
         while (parcel.dataPosition() < validateObjectHeader) {
             int readHeader = SafeParcelReader.readHeader(parcel);
             switch (SafeParcelReader.getFieldId(readHeader)) {

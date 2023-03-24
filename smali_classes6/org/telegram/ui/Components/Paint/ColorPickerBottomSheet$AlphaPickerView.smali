@@ -174,7 +174,7 @@
 
     int-to-float v1, v1
 
-    mul-float v0, v0, v3
+    mul-float/2addr v0, v3
 
     sub-float/2addr v1, v0
 
@@ -201,7 +201,7 @@
 
     const/high16 v2, 0x437f0000    # 255.0f
 
-    mul-float v1, v1, v2
+    mul-float/2addr v1, v2
 
     float-to-int v1, v1
 
@@ -377,13 +377,13 @@
 
     int-to-float v6, v6
 
-    mul-float v1, v1, v3
+    mul-float/2addr v1, v3
 
     sub-float/2addr v6, v1
 
     iget v1, p0, Lorg/telegram/ui/Components/Paint/ColorPickerBottomSheet$AlphaPickerView;->alpha:F
 
-    mul-float v6, v6, v1
+    mul-float/2addr v6, v1
 
     add-float/2addr v3, v6
 
@@ -409,7 +409,7 @@
 
     const/high16 v5, 0x437f0000    # 255.0f
 
-    mul-float v3, v3, v5
+    mul-float/2addr v3, v5
 
     float-to-int v3, v3
 

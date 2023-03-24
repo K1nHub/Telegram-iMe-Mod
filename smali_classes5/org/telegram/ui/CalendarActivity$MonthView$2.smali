@@ -123,9 +123,9 @@
 
     const/4 v6, 0x0
 
-    const/4 v7, 0x0
+    move v7, v6
 
-    const/4 v8, 0x0
+    move v8, v7
 
     .line 674
     :goto_0
@@ -137,7 +137,7 @@
 
     int-to-float v9, v1
 
-    mul-float v9, v9, v0
+    mul-float/2addr v9, v0
 
     const/high16 v10, 0x40000000    # 2.0f
 
@@ -147,7 +147,7 @@
 
     int-to-float v11, v8
 
-    mul-float v11, v11, v3
+    mul-float/2addr v11, v3
 
     div-float v10, v3, v10
 
@@ -212,7 +212,7 @@
 
     add-int/lit8 v8, v8, 0x1
 
-    const/4 v1, 0x0
+    move v1, v6
 
     :cond_2
     add-int/lit8 v7, v7, 0x1
@@ -585,9 +585,9 @@
 
     const-wide/16 v4, 0x0
 
-    cmp-long v6, v2, v4
+    cmp-long v2, v2, v4
 
-    if-lez v6, :cond_1
+    if-lez v2, :cond_1
 
     .line 707
     iget-object v2, p0, Lorg/telegram/ui/CalendarActivity$MonthView$2;->this$1:Lorg/telegram/ui/CalendarActivity$MonthView;

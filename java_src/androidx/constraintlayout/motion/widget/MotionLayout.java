@@ -516,6 +516,7 @@ public class MotionLayout extends ConstraintLayout implements NestedScrollingPar
         super.dispatchDraw(canvas);
     }
 
+    /* JADX WARN: Multi-variable type inference failed */
     void evaluate(boolean force) {
         boolean z;
         boolean z2;
@@ -535,7 +536,7 @@ public class MotionLayout extends ConstraintLayout implements NestedScrollingPar
             float signum = Math.signum(this.mTransitionGoalPosition - f);
             long nanoTime = getNanoTime();
             Interpolator interpolator = this.mInterpolator;
-            float f2 = !(interpolator instanceof MotionInterpolator) ? ((((float) (nanoTime - this.mTransitionLastTime)) * signum) * 1.0E-9f) / this.mTransitionDuration : BitmapDescriptorFactory.HUE_RED;
+            float f2 = !(interpolator instanceof MotionInterpolator) ? ((((float) (nanoTime - this.mTransitionLastTime)) * signum) * 1.0E-9f) / this.mTransitionDuration : 0.0f;
             float f3 = this.mTransitionLastPosition + f2;
             if (this.mTransitionInstantly) {
                 f3 = this.mTransitionGoalPosition;
@@ -575,7 +576,7 @@ public class MotionLayout extends ConstraintLayout implements NestedScrollingPar
                         if (velocity < BitmapDescriptorFactory.HUE_RED && interpolation <= BitmapDescriptorFactory.HUE_RED) {
                             this.mTransitionLastPosition = BitmapDescriptorFactory.HUE_RED;
                             this.mInTransition = z4;
-                            f3 = BitmapDescriptorFactory.HUE_RED;
+                            f3 = 0.0f;
                         }
                     }
                 } else {
@@ -599,11 +600,11 @@ public class MotionLayout extends ConstraintLayout implements NestedScrollingPar
                 this.mInTransition = false;
             }
             if (f3 >= 1.0f || f3 <= BitmapDescriptorFactory.HUE_RED) {
-                z2 = false;
+                z2 = 0;
                 this.mInTransition = false;
                 setState(TransitionState.FINISHED);
             } else {
-                z2 = false;
+                z2 = 0;
             }
             int childCount = getChildCount();
             this.mKeepAnimating = z2;
@@ -617,7 +618,7 @@ public class MotionLayout extends ConstraintLayout implements NestedScrollingPar
                 this.mLastVelocity = interpolation3;
                 this.mLastVelocity = interpolation3 - this.mProgressInterpolator.getInterpolation(f3);
             }
-            for (int i4 = 0; i4 < childCount; i4++) {
+            for (int i4 = z2; i4 < childCount; i4++) {
                 View childAt = getChildAt(i4);
                 MotionController motionController = this.mFrameArrayList.get(childAt);
                 if (motionController != null) {

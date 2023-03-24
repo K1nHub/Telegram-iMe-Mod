@@ -148,7 +148,7 @@
 
     move-result v2
 
-    mul-int v2, v2, v0
+    mul-int/2addr v2, v0
 
     int-to-float v2, v2
 
@@ -178,7 +178,7 @@
 
     move-result v0
 
-    mul-int p1, p1, v0
+    mul-int/2addr p1, v0
 
     iget v0, p0, Lorg/telegram/ui/Components/BetterRatingView;->numStars:I
 
@@ -190,7 +190,7 @@
 
     move-result v1
 
-    mul-int v0, v0, v1
+    mul-int/2addr v0, v1
 
     add-int/2addr p1, v0
 
@@ -228,9 +228,9 @@
 
     move-result v2
 
-    const/16 v3, 0x30
-
     cmpl-float v2, v2, v0
+
+    const/16 v3, 0x30
 
     if-lez v2, :cond_1
 

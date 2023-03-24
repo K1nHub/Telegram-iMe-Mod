@@ -58,15 +58,15 @@
 
     if-eq v1, v3, :cond_1
 
-    const/4 v1, 0x1
+    move v1, v4
 
     goto :goto_0
 
     :cond_1
-    const/4 v1, 0x0
+    move v1, v5
 
     :goto_0
-    const/4 v3, 0x0
+    move v3, v5
 
     .line 61
     :goto_1
@@ -84,12 +84,12 @@
 
     if-eq v6, v3, :cond_2
 
-    const/4 v6, 0x1
+    move v6, v4
 
     goto :goto_2
 
     :cond_2
-    const/4 v6, 0x0
+    move v6, v5
 
     :goto_2
     or-int/2addr v1, v6
@@ -197,7 +197,7 @@
 
     iget v4, v4, Lcom/google/android/exoplayer2/audio/AudioProcessor$AudioFormat;->bytesPerFrame:I
 
-    mul-int v3, v3, v4
+    mul-int/2addr v3, v4
 
     .line 80
     invoke-virtual {p0, v3}, Lcom/google/android/exoplayer2/audio/BaseAudioProcessor;->replaceOutputBuffer(I)Ljava/nio/ByteBuffer;

@@ -61,7 +61,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.BuildVars;
-import org.telegram.messenger.C3286R;
+import org.telegram.messenger.C3301R;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.ImageLoader;
 import org.telegram.messenger.LocaleController;
@@ -75,7 +75,7 @@ import org.telegram.messenger.camera.CameraView;
 import org.telegram.messenger.camera.Size;
 import org.telegram.p048ui.ActionBar.BaseFragment;
 import org.telegram.p048ui.ActionBar.BottomSheet;
-import org.telegram.p048ui.ActionBar.C3351ActionBar;
+import org.telegram.p048ui.ActionBar.C3366ActionBar;
 import org.telegram.p048ui.ActionBar.INavigationLayout;
 import org.telegram.p048ui.ActionBar.Theme;
 import org.telegram.p048ui.ActionBar.ThemeDescription;
@@ -130,7 +130,7 @@ public class CameraScanActivity extends BaseFragment {
     private float recognizedT = BitmapDescriptorFactory.HUE_RED;
     private float newRecognizedT = BitmapDescriptorFactory.HUE_RED;
     private float useRecognizedBounds = BitmapDescriptorFactory.HUE_RED;
-    private Runnable requestShot = new RunnableC35937();
+    private Runnable requestShot = new RunnableC36087();
     private float averageProcessTime = BitmapDescriptorFactory.HUE_RED;
     private long processTimesCount = 0;
 
@@ -191,7 +191,7 @@ public class CameraScanActivity extends BaseFragment {
 
     /* renamed from: org.telegram.ui.CameraScanActivity$1 */
     /* loaded from: classes5.dex */
-    public class DialogC35861 extends BottomSheet {
+    public class DialogC36011 extends BottomSheet {
         CameraScanActivity fragment;
         final /* synthetic */ INavigationLayout[] val$actionBarLayout;
         final /* synthetic */ boolean val$allowCustomScan;
@@ -205,7 +205,7 @@ public class CameraScanActivity extends BaseFragment {
         }
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        DialogC35861(Context context, boolean z, INavigationLayout[] iNavigationLayoutArr, int i, boolean z2, boolean z3, CameraScanActivityDelegate cameraScanActivityDelegate) {
+        DialogC36011(Context context, boolean z, INavigationLayout[] iNavigationLayoutArr, int i, boolean z2, boolean z3, CameraScanActivityDelegate cameraScanActivityDelegate) {
             super(context, z);
             this.val$actionBarLayout = iNavigationLayoutArr;
             this.val$type = i;
@@ -215,18 +215,18 @@ public class CameraScanActivity extends BaseFragment {
             iNavigationLayoutArr[0].setFragmentStack(new ArrayList());
             CameraScanActivity cameraScanActivity = new CameraScanActivity(i) { // from class: org.telegram.ui.CameraScanActivity.1.1
                 {
-                    DialogC35861.this = this;
+                    DialogC36011.this = this;
                 }
 
                 @Override // org.telegram.p048ui.ActionBar.BaseFragment
                 public void finishFragment() {
                     setFinishing(true);
-                    DialogC35861.this.dismiss();
+                    DialogC36011.this.dismiss();
                 }
 
                 @Override // org.telegram.p048ui.ActionBar.BaseFragment
                 public void removeSelfFromStack() {
-                    DialogC35861.this.dismiss();
+                    DialogC36011.this.dismiss();
                 }
             };
             this.fragment = cameraScanActivity;
@@ -249,7 +249,7 @@ public class CameraScanActivity extends BaseFragment {
             setOnDismissListener(new DialogInterface.OnDismissListener() { // from class: org.telegram.ui.CameraScanActivity$1$$ExternalSyntheticLambda0
                 @Override // android.content.DialogInterface.OnDismissListener
                 public final void onDismiss(DialogInterface dialogInterface) {
-                    CameraScanActivity.DialogC35861.this.lambda$new$0(dialogInterface);
+                    CameraScanActivity.DialogC36011.this.lambda$new$0(dialogInterface);
                 }
             });
         }
@@ -280,14 +280,14 @@ public class CameraScanActivity extends BaseFragment {
         if (activity == null) {
             return null;
         }
-        DialogC35861 dialogC35861 = new DialogC35861(activity, false, new INavigationLayout[]{INavigationLayout.CC.newLayout(activity)}, i, z2, z, cameraScanActivityDelegate);
-        dialogC35861.setUseLightStatusBar(false);
-        AndroidUtilities.setLightNavigationBar(dialogC35861.getWindow(), false);
-        AndroidUtilities.setNavigationBarColor(dialogC35861.getWindow(), -16777216, false);
-        dialogC35861.setUseLightStatusBar(false);
-        dialogC35861.getWindow().addFlags(512);
-        dialogC35861.show();
-        return dialogC35861;
+        DialogC36011 dialogC36011 = new DialogC36011(activity, false, new INavigationLayout[]{INavigationLayout.CC.newLayout(activity)}, i, z2, z, cameraScanActivityDelegate);
+        dialogC36011.setUseLightStatusBar(false);
+        AndroidUtilities.setLightNavigationBar(dialogC36011.getWindow(), false);
+        AndroidUtilities.setNavigationBarColor(dialogC36011.getWindow(), -16777216, false);
+        dialogC36011.setUseLightStatusBar(false);
+        dialogC36011.getWindow().addFlags(512);
+        dialogC36011.show();
+        return dialogC36011;
     }
 
     public CameraScanActivity(int i) {
@@ -330,7 +330,7 @@ public class CameraScanActivity extends BaseFragment {
 
     @Override // org.telegram.p048ui.ActionBar.BaseFragment
     public View createView(Context context) {
-        this.actionBar.setBackButtonImage(C3286R.C3288drawable.ic_ab_back);
+        this.actionBar.setBackButtonImage(C3301R.C3303drawable.ic_ab_back);
         if (this.shownAsBottomSheet) {
             this.actionBar.setItemsColor(-1, false);
             this.actionBar.setItemsBackgroundColor(-1, false);
@@ -344,12 +344,12 @@ public class CameraScanActivity extends BaseFragment {
         if (!AndroidUtilities.isTablet() && !isQr()) {
             this.actionBar.showActionModeTop();
         }
-        this.actionBar.setActionBarMenuOnItemClick(new C3351ActionBar.ActionBarMenuOnItemClick() { // from class: org.telegram.ui.CameraScanActivity.2
+        this.actionBar.setActionBarMenuOnItemClick(new C3366ActionBar.ActionBarMenuOnItemClick() { // from class: org.telegram.ui.CameraScanActivity.2
             {
                 CameraScanActivity.this = this;
             }
 
-            @Override // org.telegram.p048ui.ActionBar.C3351ActionBar.ActionBarMenuOnItemClick
+            @Override // org.telegram.p048ui.ActionBar.C3366ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i) {
                 if (i == -1) {
                     CameraScanActivity.this.finishFragment();
@@ -550,7 +550,7 @@ public class CameraScanActivity extends BaseFragment {
         }
         int i = this.currentType;
         if (i == 2 || i == 3) {
-            this.actionBar.setTitle(LocaleController.getString("AuthAnotherClientScan", C3286R.string.AuthAnotherClientScan));
+            this.actionBar.setTitle(LocaleController.getString("AuthAnotherClientScan", C3301R.string.AuthAnotherClientScan));
         }
         final Paint paint = new Paint(1);
         paint.setPathEffect(LinkPath.getRoundedEffect());
@@ -657,22 +657,22 @@ public class CameraScanActivity extends BaseFragment {
         this.recognizedMrzView.setAlpha(BitmapDescriptorFactory.HUE_RED);
         int i2 = this.currentType;
         if (i2 == 0) {
-            this.titleTextView.setText(LocaleController.getString("PassportScanPassport", C3286R.string.PassportScanPassport));
-            this.descriptionText.setText(LocaleController.getString("PassportScanPassportInfo", C3286R.string.PassportScanPassportInfo));
+            this.titleTextView.setText(LocaleController.getString("PassportScanPassport", C3301R.string.PassportScanPassport));
+            this.descriptionText.setText(LocaleController.getString("PassportScanPassportInfo", C3301R.string.PassportScanPassportInfo));
             this.titleTextView.setTextColor(Theme.getColor("windowBackgroundWhiteBlackText"));
             this.recognizedMrzView.setTypeface(Typeface.MONOSPACE);
         } else {
             if (i2 == IdFabric$CustomType.QR_CODE_SCANNER_CHAT_LINK) {
-                this.titleTextView.setText(LocaleController.getInternalString(C3286R.string.dialogs_qr_scanner_chat_link_hint));
+                this.titleTextView.setText(LocaleController.getInternalString(C3301R.string.dialogs_qr_scanner_chat_link_hint));
                 this.titleTextView.setTextSize(1, 16.0f);
             } else if (!this.needGalleryButton) {
                 if (i2 == 1 || i2 == 3) {
-                    this.titleTextView.setText(LocaleController.getString("AuthAnotherClientScan", C3286R.string.AuthAnotherClientScan));
+                    this.titleTextView.setText(LocaleController.getString("AuthAnotherClientScan", C3301R.string.AuthAnotherClientScan));
                 } else {
-                    LocaleController.getString("AuthAnotherClientInfo5", C3286R.string.AuthAnotherClientInfo5);
-                    SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(LocaleController.getInternalString(C3286R.string.AuthAnotherClientInfo4));
-                    LocaleController.getString("AuthAnotherClientDownloadClientUrl", C3286R.string.AuthAnotherClientDownloadClientUrl);
-                    LocaleController.getString("AuthAnotherWebClientUrl", C3286R.string.AuthAnotherWebClientUrl);
+                    LocaleController.getString("AuthAnotherClientInfo5", C3301R.string.AuthAnotherClientInfo5);
+                    SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(LocaleController.getInternalString(C3301R.string.AuthAnotherClientInfo4));
+                    LocaleController.getString("AuthAnotherClientDownloadClientUrl", C3301R.string.AuthAnotherClientDownloadClientUrl);
+                    LocaleController.getString("AuthAnotherWebClientUrl", C3301R.string.AuthAnotherWebClientUrl);
                     String[] strArr = {"https://apps.apple.com/us/app/ime-messenger/id1450480822", BuildVars.PLAYSTORE_APP_URL, "https://imem.app/desktop"};
                     int i3 = 0;
                     for (int i4 = 3; i3 < i4; i4 = 3) {
@@ -706,14 +706,14 @@ public class CameraScanActivity extends BaseFragment {
             this.recognizedMrzView.setTextSize(1, 16.0f);
             this.recognizedMrzView.setPadding(AndroidUtilities.m50dp(10), 0, AndroidUtilities.m50dp(10), AndroidUtilities.m50dp(10));
             if (!this.needGalleryButton) {
-                this.recognizedMrzView.setText(LocaleController.getString("AuthAnotherClientNotFound", C3286R.string.AuthAnotherClientNotFound));
+                this.recognizedMrzView.setText(LocaleController.getString("AuthAnotherClientNotFound", C3301R.string.AuthAnotherClientNotFound));
             }
             viewGroup.addView(this.recognizedMrzView);
             if (this.needGalleryButton) {
                 ImageView imageView = new ImageView(context);
                 this.galleryButton = imageView;
                 imageView.setScaleType(ImageView.ScaleType.CENTER);
-                this.galleryButton.setImageResource(C3286R.C3288drawable.qr_gallery);
+                this.galleryButton.setImageResource(C3301R.C3303drawable.qr_gallery);
                 this.galleryButton.setBackgroundDrawable(Theme.createSelectorDrawableFromDrawables(Theme.createCircleDrawable(AndroidUtilities.m50dp(60), 587202559), Theme.createCircleDrawable(AndroidUtilities.m50dp(60), 1157627903)));
                 viewGroup.addView(this.galleryButton);
                 this.galleryButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.CameraScanActivity$$ExternalSyntheticLambda2
@@ -726,7 +726,7 @@ public class CameraScanActivity extends BaseFragment {
             ImageView imageView2 = new ImageView(context);
             this.flashButton = imageView2;
             imageView2.setScaleType(ImageView.ScaleType.CENTER);
-            this.flashButton.setImageResource(C3286R.C3288drawable.qr_flashlight);
+            this.flashButton.setImageResource(C3301R.C3303drawable.qr_flashlight);
             this.flashButton.setBackgroundDrawable(Theme.createCircleDrawable(AndroidUtilities.m50dp(60), 587202559));
             viewGroup.addView(this.flashButton);
             this.flashButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.CameraScanActivity$$ExternalSyntheticLambda3
@@ -776,7 +776,7 @@ public class CameraScanActivity extends BaseFragment {
                             CameraScanActivity.this.removeSelfFromStack();
                         }
                         if (tryReadQr == null && CameraScanActivity.this.isAllowCustomScan) {
-                            ContextExtKt.toast(LocaleController.getInternalString(C3286R.string.custom_qr_error));
+                            ContextExtKt.toast(LocaleController.getInternalString(C3301R.string.custom_qr_error));
                             CameraScanActivity.this.removeSelfFromStack();
                         }
                     }
@@ -1068,8 +1068,8 @@ public class CameraScanActivity extends BaseFragment {
 
     /* renamed from: org.telegram.ui.CameraScanActivity$7 */
     /* loaded from: classes5.dex */
-    public class RunnableC35937 implements Runnable {
-        RunnableC35937() {
+    public class RunnableC36087 implements Runnable {
+        RunnableC36087() {
             CameraScanActivity.this = r1;
         }
 
@@ -1081,7 +1081,7 @@ public class CameraScanActivity extends BaseFragment {
             CameraScanActivity.this.handler.post(new Runnable() { // from class: org.telegram.ui.CameraScanActivity$7$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    CameraScanActivity.RunnableC35937.this.lambda$run$0();
+                    CameraScanActivity.RunnableC36087.this.lambda$run$0();
                 }
             });
         }
@@ -1332,18 +1332,18 @@ public class CameraScanActivity extends BaseFragment {
         private QrResult(CameraScanActivity cameraScanActivity) {
         }
 
-        /* synthetic */ QrResult(CameraScanActivity cameraScanActivity, DialogC35861 dialogC35861) {
+        /* synthetic */ QrResult(CameraScanActivity cameraScanActivity, DialogC36011 dialogC36011) {
             this(cameraScanActivity);
         }
     }
 
     public QrResult tryReadQr(byte[] bArr, Size size, int i, int i2, int i3, Bitmap bitmap) {
-        String str;
         int i4;
         LuminanceSource planarYUVLuminanceSource;
+        String text;
         Frame build;
         int i5;
-        String str2;
+        String str;
         try {
             RectF rectF = new RectF();
             BarcodeDetector barcodeDetector = this.visionQrReader;
@@ -1365,102 +1365,103 @@ public class CameraScanActivity extends BaseFragment {
                 if (detect.size() == 0 && bitmap != null) {
                     detect = getCodesFromFixedBitmap(bitmap);
                 }
-                if (detect != null && detect.size() > 0) {
-                    Barcode valueAt = detect.valueAt(0);
-                    str = valueAt.rawValue;
-                    Point[] pointArr = valueAt.cornerPoints;
-                    if (pointArr != null && pointArr.length != 0) {
-                        int length = pointArr.length;
-                        float f3 = Float.MIN_VALUE;
-                        float f4 = Float.MAX_VALUE;
-                        while (i7 < length) {
-                            Point point = pointArr[i7];
-                            f2 = Math.min(f2, point.x);
-                            f = Math.max(f, point.x);
-                            f4 = Math.min(f4, point.y);
-                            f3 = Math.max(f3, point.y);
-                            i7++;
-                        }
-                        rectF.set(f2, f4, f, f3);
-                    }
-                    rectF = null;
-                } else if (bitmap != null) {
-                    Bitmap invert = invert(bitmap);
-                    bitmap.recycle();
-                    Frame build2 = new Frame.Builder().setBitmap(invert).build();
-                    int width = invert.getWidth();
-                    int height = invert.getHeight();
-                    SparseArray<Barcode> detect2 = this.visionQrReader.detect(build2);
-                    if (detect2 != null && detect2.size() > 0) {
-                        Barcode valueAt2 = detect2.valueAt(0);
-                        str2 = valueAt2.rawValue;
-                        Point[] pointArr2 = valueAt2.cornerPoints;
-                        if (pointArr2 != null && pointArr2.length != 0) {
-                            int length2 = pointArr2.length;
-                            float f5 = Float.MIN_VALUE;
-                            float f6 = Float.MAX_VALUE;
-                            while (i7 < length2) {
-                                Point point2 = pointArr2[i7];
-                                f2 = Math.min(f2, point2.x);
-                                f = Math.max(f, point2.x);
-                                f6 = Math.min(f6, point2.y);
-                                f5 = Math.max(f5, point2.y);
-                                i7++;
-                            }
-                            rectF.set(f2, f6, f, f5);
-                            i5 = height;
-                            str = str2;
-                            i6 = width;
-                            i4 = i5;
-                        }
-                        rectF = null;
-                        i5 = height;
-                        str = str2;
-                        i6 = width;
-                        i4 = i5;
-                    } else {
-                        Bitmap monochrome = monochrome(invert, 90);
-                        invert.recycle();
-                        Frame build3 = new Frame.Builder().setBitmap(monochrome).build();
-                        width = invert.getWidth();
-                        height = invert.getHeight();
-                        SparseArray<Barcode> detect3 = this.visionQrReader.detect(build3);
-                        if (detect3 == null || detect3.size() <= 0) {
-                            i5 = height;
-                            str = null;
-                            i6 = width;
-                            i4 = i5;
-                        } else {
-                            Barcode valueAt3 = detect3.valueAt(0);
-                            str2 = valueAt3.rawValue;
-                            Point[] pointArr3 = valueAt3.cornerPoints;
-                            if (pointArr3 != null && pointArr3.length != 0) {
-                                int length3 = pointArr3.length;
-                                float f7 = Float.MIN_VALUE;
-                                float f8 = Float.MAX_VALUE;
-                                while (i7 < length3) {
-                                    Point point3 = pointArr3[i7];
-                                    f2 = Math.min(f2, point3.x);
-                                    f = Math.max(f, point3.x);
-                                    f8 = Math.min(f8, point3.y);
-                                    f7 = Math.max(f7, point3.y);
+                if (detect == null || detect.size() <= 0) {
+                    if (bitmap != null) {
+                        Bitmap invert = invert(bitmap);
+                        bitmap.recycle();
+                        Frame build2 = new Frame.Builder().setBitmap(invert).build();
+                        int width = invert.getWidth();
+                        int height = invert.getHeight();
+                        SparseArray<Barcode> detect2 = this.visionQrReader.detect(build2);
+                        if (detect2 != null && detect2.size() > 0) {
+                            Barcode valueAt = detect2.valueAt(0);
+                            str = valueAt.rawValue;
+                            Point[] pointArr = valueAt.cornerPoints;
+                            if (pointArr != null && pointArr.length != 0) {
+                                int length = pointArr.length;
+                                float f3 = Float.MIN_VALUE;
+                                float f4 = Float.MAX_VALUE;
+                                while (i7 < length) {
+                                    Point point = pointArr[i7];
+                                    f2 = Math.min(f2, point.x);
+                                    f = Math.max(f, point.x);
+                                    f4 = Math.min(f4, point.y);
+                                    f3 = Math.max(f3, point.y);
                                     i7++;
                                 }
-                                rectF.set(f2, f8, f, f7);
+                                rectF.set(f2, f4, f, f3);
                                 i5 = height;
-                                str = str2;
+                                text = str;
                                 i6 = width;
                                 i4 = i5;
                             }
                             rectF = null;
                             i5 = height;
-                            str = str2;
+                            text = str;
                             i6 = width;
                             i4 = i5;
+                        } else {
+                            Bitmap monochrome = monochrome(invert, 90);
+                            invert.recycle();
+                            Frame build3 = new Frame.Builder().setBitmap(monochrome).build();
+                            width = invert.getWidth();
+                            height = invert.getHeight();
+                            SparseArray<Barcode> detect3 = this.visionQrReader.detect(build3);
+                            if (detect3 == null || detect3.size() <= 0) {
+                                i5 = height;
+                                text = null;
+                                i6 = width;
+                                i4 = i5;
+                            } else {
+                                Barcode valueAt2 = detect3.valueAt(0);
+                                str = valueAt2.rawValue;
+                                Point[] pointArr2 = valueAt2.cornerPoints;
+                                if (pointArr2 != null && pointArr2.length != 0) {
+                                    int length2 = pointArr2.length;
+                                    float f5 = Float.MIN_VALUE;
+                                    float f6 = Float.MAX_VALUE;
+                                    while (i7 < length2) {
+                                        Point point2 = pointArr2[i7];
+                                        f2 = Math.min(f2, point2.x);
+                                        f = Math.max(f, point2.x);
+                                        f6 = Math.min(f6, point2.y);
+                                        f5 = Math.max(f5, point2.y);
+                                        i7++;
+                                    }
+                                    rectF.set(f2, f6, f, f5);
+                                    i5 = height;
+                                    text = str;
+                                    i6 = width;
+                                    i4 = i5;
+                                }
+                                rectF = null;
+                                i5 = height;
+                                text = str;
+                                i6 = width;
+                                i4 = i5;
+                            }
                         }
                     }
+                    text = null;
                 } else {
-                    str = null;
+                    Barcode valueAt3 = detect.valueAt(0);
+                    text = valueAt3.rawValue;
+                    Point[] pointArr3 = valueAt3.cornerPoints;
+                    if (pointArr3 != null && pointArr3.length != 0) {
+                        int length3 = pointArr3.length;
+                        float f7 = Float.MIN_VALUE;
+                        float f8 = Float.MAX_VALUE;
+                        while (i7 < length3) {
+                            Point point3 = pointArr3[i7];
+                            f2 = Math.min(f2, point3.x);
+                            f = Math.max(f, point3.x);
+                            f8 = Math.min(f8, point3.y);
+                            f7 = Math.max(f7, point3.y);
+                            i7++;
+                        }
+                        rectF.set(f2, f8, f, f7);
+                    }
+                    rectF = null;
                 }
             } else if (this.qrReader != null) {
                 if (bitmap != null) {
@@ -1479,7 +1480,7 @@ public class CameraScanActivity extends BaseFragment {
                     onNoQrFound();
                     return null;
                 }
-                str = decode.getText();
+                text = decode.getText();
                 if (decode.getResultPoints() != null && decode.getResultPoints().length != 0) {
                     ResultPoint[] resultPoints = decode.getResultPoints();
                     int length4 = resultPoints.length;
@@ -1497,17 +1498,17 @@ public class CameraScanActivity extends BaseFragment {
                 }
                 rectF = null;
             } else {
-                str = null;
                 i4 = 1;
+                text = null;
             }
-            if (TextUtils.isEmpty(str)) {
+            if (TextUtils.isEmpty(text)) {
                 onNoQrFound();
                 return null;
             }
             if (!this.isAllowCustomScan) {
                 if (this.needGalleryButton) {
-                    Uri.parse(str).getPath().replace("/", "");
-                } else if (!str.startsWith("tg://login?token=") && this.currentType != 3) {
+                    Uri.parse(text).getPath().replace("/", "");
+                } else if (!text.startsWith("tg://login?token=") && this.currentType != 3) {
                     onNoQrFound();
                     return null;
                 }
@@ -1522,7 +1523,7 @@ public class CameraScanActivity extends BaseFragment {
                 rectF.set(rectF.left / f11, rectF.top / f12, rectF.right / f11, rectF.bottom / f12);
             }
             qrResult.bounds = rectF;
-            qrResult.text = str;
+            qrResult.text = text;
             return qrResult;
         } catch (Throwable unused) {
             onNoQrFound();

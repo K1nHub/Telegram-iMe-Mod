@@ -6,7 +6,7 @@ public class TLRPC$TL_messages_saveRecentSticker extends TLObject {
     public int flags;
 
     /* renamed from: id */
-    public TLRPC$InputDocument f1603id;
+    public TLRPC$InputDocument f1604id;
     public boolean unsave;
 
     @Override // org.telegram.tgnet.TLObject
@@ -20,7 +20,7 @@ public class TLRPC$TL_messages_saveRecentSticker extends TLObject {
         int i = this.attached ? this.flags | 1 : this.flags & (-2);
         this.flags = i;
         abstractSerializedData.writeInt32(i);
-        this.f1603id.serializeToStream(abstractSerializedData);
+        this.f1604id.serializeToStream(abstractSerializedData);
         abstractSerializedData.writeBool(this.unsave);
     }
 }

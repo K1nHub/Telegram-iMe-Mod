@@ -79,7 +79,7 @@
 
     sub-float/2addr v3, v2
 
-    mul-float v1, v1, v3
+    mul-float/2addr v1, v3
 
     float-to-int v1, v1
 
@@ -92,7 +92,7 @@
 
     iget v3, p0, Lorg/telegram/ui/Components/CrossfadeDrawable;->progress:F
 
-    mul-float v2, v2, v3
+    mul-float/2addr v2, v3
 
     float-to-int v2, v2
 

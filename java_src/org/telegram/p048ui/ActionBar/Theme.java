@@ -80,7 +80,7 @@ import org.json.JSONObject;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.BuildVars;
-import org.telegram.messenger.C3286R;
+import org.telegram.messenger.C3301R;
 import org.telegram.messenger.DispatchQueue;
 import org.telegram.messenger.FileLoader;
 import org.telegram.messenger.FileLog;
@@ -90,7 +90,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.MessagesController$$ExternalSyntheticLambda236;
+import org.telegram.messenger.MessagesController$$ExternalSyntheticLambda237;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.SvgHelper;
@@ -520,14 +520,15 @@ public class Theme {
         return i | (-16777216);
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:172:0x36d8 A[Catch: Exception -> 0x38c1, TryCatch #3 {Exception -> 0x38c1, blocks: (B:61:0x3398, B:63:0x33b0, B:74:0x33f3, B:76:0x3401, B:84:0x342e, B:86:0x3432, B:88:0x343a, B:89:0x344c, B:90:0x3458, B:92:0x345e, B:94:0x3468, B:96:0x346c, B:98:0x349a, B:100:0x349e, B:170:0x36d2, B:172:0x36d8, B:173:0x36e1, B:175:0x36e5, B:177:0x36ed, B:179:0x36f1, B:181:0x36f5, B:182:0x36f7, B:184:0x3701, B:155:0x35ca, B:158:0x35e9, B:159:0x35f1, B:161:0x35fd, B:163:0x3609, B:167:0x3615, B:169:0x36ba, B:164:0x360f, B:189:0x3719, B:190:0x371f, B:194:0x372a, B:196:0x3781, B:198:0x378f, B:200:0x379d, B:202:0x37ab, B:201:0x37a4, B:197:0x3788, B:77:0x3411, B:79:0x3419, B:81:0x3422, B:83:0x342c, B:64:0x33bf, B:66:0x33c7, B:68:0x33cf, B:70:0x33d9, B:72:0x33e1, B:102:0x34af, B:105:0x34c4, B:107:0x34d9, B:108:0x34df, B:110:0x34f1, B:113:0x3501, B:117:0x350d, B:121:0x3524, B:125:0x3535, B:128:0x3544, B:131:0x354d, B:133:0x3561, B:136:0x356a, B:138:0x3571, B:139:0x3581, B:141:0x3585, B:142:0x3589, B:144:0x3594, B:145:0x359b, B:122:0x352b, B:118:0x3517), top: B:242:0x3398 }] */
-    /* JADX WARN: Removed duplicated region for block: B:179:0x36f1 A[Catch: Exception -> 0x38c1, TryCatch #3 {Exception -> 0x38c1, blocks: (B:61:0x3398, B:63:0x33b0, B:74:0x33f3, B:76:0x3401, B:84:0x342e, B:86:0x3432, B:88:0x343a, B:89:0x344c, B:90:0x3458, B:92:0x345e, B:94:0x3468, B:96:0x346c, B:98:0x349a, B:100:0x349e, B:170:0x36d2, B:172:0x36d8, B:173:0x36e1, B:175:0x36e5, B:177:0x36ed, B:179:0x36f1, B:181:0x36f5, B:182:0x36f7, B:184:0x3701, B:155:0x35ca, B:158:0x35e9, B:159:0x35f1, B:161:0x35fd, B:163:0x3609, B:167:0x3615, B:169:0x36ba, B:164:0x360f, B:189:0x3719, B:190:0x371f, B:194:0x372a, B:196:0x3781, B:198:0x378f, B:200:0x379d, B:202:0x37ab, B:201:0x37a4, B:197:0x3788, B:77:0x3411, B:79:0x3419, B:81:0x3422, B:83:0x342c, B:64:0x33bf, B:66:0x33c7, B:68:0x33cf, B:70:0x33d9, B:72:0x33e1, B:102:0x34af, B:105:0x34c4, B:107:0x34d9, B:108:0x34df, B:110:0x34f1, B:113:0x3501, B:117:0x350d, B:121:0x3524, B:125:0x3535, B:128:0x3544, B:131:0x354d, B:133:0x3561, B:136:0x356a, B:138:0x3571, B:139:0x3581, B:141:0x3585, B:142:0x3589, B:144:0x3594, B:145:0x359b, B:122:0x352b, B:118:0x3517), top: B:242:0x3398 }] */
-    /* JADX WARN: Removed duplicated region for block: B:180:0x36f4  */
-    /* JADX WARN: Removed duplicated region for block: B:184:0x3701 A[Catch: Exception -> 0x38c1, TryCatch #3 {Exception -> 0x38c1, blocks: (B:61:0x3398, B:63:0x33b0, B:74:0x33f3, B:76:0x3401, B:84:0x342e, B:86:0x3432, B:88:0x343a, B:89:0x344c, B:90:0x3458, B:92:0x345e, B:94:0x3468, B:96:0x346c, B:98:0x349a, B:100:0x349e, B:170:0x36d2, B:172:0x36d8, B:173:0x36e1, B:175:0x36e5, B:177:0x36ed, B:179:0x36f1, B:181:0x36f5, B:182:0x36f7, B:184:0x3701, B:155:0x35ca, B:158:0x35e9, B:159:0x35f1, B:161:0x35fd, B:163:0x3609, B:167:0x3615, B:169:0x36ba, B:164:0x360f, B:189:0x3719, B:190:0x371f, B:194:0x372a, B:196:0x3781, B:198:0x378f, B:200:0x379d, B:202:0x37ab, B:201:0x37a4, B:197:0x3788, B:77:0x3411, B:79:0x3419, B:81:0x3422, B:83:0x342c, B:64:0x33bf, B:66:0x33c7, B:68:0x33cf, B:70:0x33d9, B:72:0x33e1, B:102:0x34af, B:105:0x34c4, B:107:0x34d9, B:108:0x34df, B:110:0x34f1, B:113:0x3501, B:117:0x350d, B:121:0x3524, B:125:0x3535, B:128:0x3544, B:131:0x354d, B:133:0x3561, B:136:0x356a, B:138:0x3571, B:139:0x3581, B:141:0x3585, B:142:0x3589, B:144:0x3594, B:145:0x359b, B:122:0x352b, B:118:0x3517), top: B:242:0x3398 }] */
-    /* JADX WARN: Removed duplicated region for block: B:262:0x370b A[SYNTHETIC] */
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Removed duplicated region for block: B:142:0x358a A[Catch: all -> 0x35b7, TryCatch #3 {Exception -> 0x38ca, blocks: (B:61:0x3398, B:63:0x33b0, B:74:0x33f3, B:76:0x3401, B:84:0x342e, B:86:0x3432, B:88:0x343a, B:89:0x344c, B:90:0x3458, B:92:0x345e, B:94:0x3468, B:96:0x346c, B:98:0x349a, B:100:0x349e, B:171:0x36da, B:173:0x36e0, B:174:0x36e9, B:176:0x36ed, B:178:0x36f5, B:180:0x36f9, B:182:0x36fd, B:183:0x36ff, B:185:0x3709, B:155:0x35cf, B:158:0x35ee, B:159:0x35f6, B:161:0x3602, B:163:0x360e, B:167:0x361a, B:169:0x36bf, B:164:0x3614, B:190:0x3721, B:191:0x3727, B:195:0x3732, B:197:0x3789, B:199:0x3797, B:201:0x37a5, B:203:0x37b3, B:202:0x37ac, B:198:0x3790, B:77:0x3411, B:79:0x3419, B:81:0x3422, B:83:0x342c, B:64:0x33bf, B:66:0x33c7, B:68:0x33cf, B:70:0x33d9, B:72:0x33e1, B:102:0x34af, B:105:0x34c4, B:107:0x34d9, B:108:0x34df, B:110:0x34f1, B:113:0x3501, B:117:0x350d, B:121:0x3524, B:125:0x3535, B:128:0x3546, B:131:0x354f, B:133:0x3563, B:137:0x356f, B:139:0x3576, B:140:0x3586, B:142:0x358a, B:143:0x358e, B:145:0x3599, B:146:0x35a0, B:122:0x352b, B:118:0x3517), top: B:240:0x3398 }] */
+    /* JADX WARN: Removed duplicated region for block: B:145:0x3599 A[Catch: all -> 0x35b7, TryCatch #3 {Exception -> 0x38ca, blocks: (B:61:0x3398, B:63:0x33b0, B:74:0x33f3, B:76:0x3401, B:84:0x342e, B:86:0x3432, B:88:0x343a, B:89:0x344c, B:90:0x3458, B:92:0x345e, B:94:0x3468, B:96:0x346c, B:98:0x349a, B:100:0x349e, B:171:0x36da, B:173:0x36e0, B:174:0x36e9, B:176:0x36ed, B:178:0x36f5, B:180:0x36f9, B:182:0x36fd, B:183:0x36ff, B:185:0x3709, B:155:0x35cf, B:158:0x35ee, B:159:0x35f6, B:161:0x3602, B:163:0x360e, B:167:0x361a, B:169:0x36bf, B:164:0x3614, B:190:0x3721, B:191:0x3727, B:195:0x3732, B:197:0x3789, B:199:0x3797, B:201:0x37a5, B:203:0x37b3, B:202:0x37ac, B:198:0x3790, B:77:0x3411, B:79:0x3419, B:81:0x3422, B:83:0x342c, B:64:0x33bf, B:66:0x33c7, B:68:0x33cf, B:70:0x33d9, B:72:0x33e1, B:102:0x34af, B:105:0x34c4, B:107:0x34d9, B:108:0x34df, B:110:0x34f1, B:113:0x3501, B:117:0x350d, B:121:0x3524, B:125:0x3535, B:128:0x3546, B:131:0x354f, B:133:0x3563, B:137:0x356f, B:139:0x3576, B:140:0x3586, B:142:0x358a, B:143:0x358e, B:145:0x3599, B:146:0x35a0, B:122:0x352b, B:118:0x3517), top: B:240:0x3398 }] */
+    /* JADX WARN: Type inference failed for: r6v78 */
+    /* JADX WARN: Type inference failed for: r6v79, types: [boolean] */
+    /* JADX WARN: Type inference failed for: r6v90 */
     static {
         /*
-            Method dump skipped, instructions count: 16224
+            Method dump skipped, instructions count: 16232
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: org.telegram.p048ui.ActionBar.Theme.<clinit>():void");
@@ -1124,21 +1125,216 @@ public class Theme {
             draw(canvas, null);
         }
 
-        /* JADX WARN: Removed duplicated region for block: B:116:0x0369  */
-        /* JADX WARN: Removed duplicated region for block: B:53:0x0100  */
-        /* JADX WARN: Removed duplicated region for block: B:54:0x0107  */
-        /* JADX WARN: Removed duplicated region for block: B:60:0x011b  */
-        /* JADX WARN: Removed duplicated region for block: B:63:0x0122  */
-        /*
-            Code decompiled incorrectly, please refer to instructions dump.
-            To view partially-correct add '--show-bad-code' argument
-        */
-        public void draw(android.graphics.Canvas r22, android.graphics.Paint r23) {
-            /*
-                Method dump skipped, instructions count: 1505
-                To view this dump add '--comments-level debug' option
-            */
-            throw new UnsupportedOperationException("Method not decompiled: org.telegram.p048ui.ActionBar.Theme.MessageDrawable.draw(android.graphics.Canvas, android.graphics.Paint):void");
+        public void draw(Canvas canvas, Paint paint) {
+            int m34dp;
+            boolean z;
+            boolean z2;
+            Path path;
+            boolean z3;
+            int i;
+            int color;
+            Drawable backgroundDrawable;
+            Rect bounds = getBounds();
+            if (paint == null && this.gradientShader == null && this.overrideRoundRadius == 0 && this.overrideRounding <= BitmapDescriptorFactory.HUE_RED && (backgroundDrawable = getBackgroundDrawable()) != null) {
+                backgroundDrawable.setBounds(bounds);
+                backgroundDrawable.draw(canvas);
+                return;
+            }
+            int m34dp2 = m34dp(2.0f);
+            int i2 = this.overrideRoundRadius;
+            if (i2 != 0) {
+                m34dp = i2;
+            } else if (this.overrideRounding > BitmapDescriptorFactory.HUE_RED) {
+                i2 = AndroidUtilities.lerp(m34dp(SharedConfig.bubbleRadius), Math.min(bounds.width(), bounds.height()) / 2, this.overrideRounding);
+                m34dp = AndroidUtilities.lerp(m34dp(Math.min(6, SharedConfig.bubbleRadius)), Math.min(bounds.width(), bounds.height()) / 2, this.overrideRounding);
+            } else if (this.currentType == 2) {
+                i2 = m34dp(6.0f);
+                m34dp = m34dp(6.0f);
+            } else {
+                i2 = m34dp(SharedConfig.bubbleRadius);
+                m34dp = m34dp(Math.min(6, SharedConfig.bubbleRadius));
+            }
+            int m34dp3 = m34dp(6.0f);
+            Paint paint2 = paint == null ? this.paint : paint;
+            if (paint == null && this.gradientShader != null) {
+                this.matrix.reset();
+                applyMatrixScale();
+                this.matrix.postTranslate(BitmapDescriptorFactory.HUE_RED, -this.topY);
+                this.gradientShader.setLocalMatrix(this.matrix);
+            }
+            int max = Math.max(bounds.top, 0);
+            if (this.pathDrawCacheParams == null || bounds.height() >= this.currentBackgroundHeight) {
+                z = this.currentType != 1 ? (this.topY + bounds.bottom) - i2 < this.currentBackgroundHeight : (this.topY + bounds.bottom) - (m34dp3 * 2) < this.currentBackgroundHeight;
+                z2 = this.topY + (i2 * 2) >= 0;
+            } else {
+                z = true;
+                z2 = true;
+            }
+            PathDrawParams pathDrawParams = this.pathDrawCacheParams;
+            if (pathDrawParams != null) {
+                path = pathDrawParams.path;
+                z3 = pathDrawParams.invalidatePath(bounds, z, z2);
+            } else {
+                path = this.path;
+                z3 = true;
+            }
+            if (z3 || this.overrideRoundRadius != 0) {
+                path.rewind();
+                int height = (bounds.height() - m34dp2) >> 1;
+                if (i2 > height) {
+                    i2 = height;
+                }
+                if (this.isOut) {
+                    if (this.drawFullBubble || this.currentType == 2 || paint != null || z) {
+                        if (this.currentType == 1) {
+                            path.moveTo((bounds.right - m34dp(8.0f)) - i2, bounds.bottom - m34dp2);
+                        } else {
+                            path.moveTo(bounds.right - m34dp(2.6f), bounds.bottom - m34dp2);
+                        }
+                        path.lineTo(bounds.left + m34dp2 + i2, bounds.bottom - m34dp2);
+                        RectF rectF = this.rect;
+                        int i3 = bounds.left;
+                        int i4 = bounds.bottom;
+                        int i5 = i2 * 2;
+                        i = m34dp;
+                        rectF.set(i3 + m34dp2, (i4 - m34dp2) - i5, i3 + m34dp2 + i5, i4 - m34dp2);
+                        path.arcTo(this.rect, 90.0f, 90.0f, false);
+                    } else {
+                        path.moveTo(bounds.right - m34dp(8.0f), (max - this.topY) + this.currentBackgroundHeight);
+                        path.lineTo(bounds.left + m34dp2, (max - this.topY) + this.currentBackgroundHeight);
+                        i = m34dp;
+                    }
+                    if (this.drawFullBubble || this.currentType == 2 || paint != null || z2) {
+                        path.lineTo(bounds.left + m34dp2, bounds.top + m34dp2 + i2);
+                        RectF rectF2 = this.rect;
+                        int i6 = bounds.left;
+                        int i7 = bounds.top;
+                        int i8 = i2 * 2;
+                        rectF2.set(i6 + m34dp2, i7 + m34dp2, i6 + m34dp2 + i8, i7 + m34dp2 + i8);
+                        path.arcTo(this.rect, 180.0f, 90.0f, false);
+                        int i9 = this.isTopNear ? i : i2;
+                        if (this.currentType == 1) {
+                            path.lineTo((bounds.right - m34dp2) - i9, bounds.top + m34dp2);
+                            RectF rectF3 = this.rect;
+                            int i10 = bounds.right;
+                            int i11 = i9 * 2;
+                            int i12 = bounds.top;
+                            rectF3.set((i10 - m34dp2) - i11, i12 + m34dp2, i10 - m34dp2, i12 + m34dp2 + i11);
+                        } else {
+                            path.lineTo((bounds.right - m34dp(8.0f)) - i9, bounds.top + m34dp2);
+                            int i13 = i9 * 2;
+                            this.rect.set((bounds.right - m34dp(8.0f)) - i13, bounds.top + m34dp2, bounds.right - m34dp(8.0f), bounds.top + m34dp2 + i13);
+                        }
+                        path.arcTo(this.rect, 270.0f, 90.0f, false);
+                    } else {
+                        path.lineTo(bounds.left + m34dp2, (max - this.topY) - m34dp(2.0f));
+                        if (this.currentType == 1) {
+                            path.lineTo(bounds.right - m34dp2, (max - this.topY) - m34dp(2.0f));
+                        } else {
+                            path.lineTo(bounds.right - m34dp(8.0f), (max - this.topY) - m34dp(2.0f));
+                        }
+                    }
+                    int i14 = this.currentType;
+                    if (i14 == 1) {
+                        if (paint != null || z) {
+                            int i15 = this.isBottomNear ? i : i2;
+                            path.lineTo(bounds.right - m34dp2, (bounds.bottom - m34dp2) - i15);
+                            RectF rectF4 = this.rect;
+                            int i16 = bounds.right;
+                            int i17 = i15 * 2;
+                            int i18 = bounds.bottom;
+                            rectF4.set((i16 - m34dp2) - i17, (i18 - m34dp2) - i17, i16 - m34dp2, i18 - m34dp2);
+                            path.arcTo(this.rect, BitmapDescriptorFactory.HUE_RED, 90.0f, false);
+                        } else {
+                            path.lineTo(bounds.right - m34dp2, (max - this.topY) + this.currentBackgroundHeight);
+                        }
+                    } else if (this.drawFullBubble || i14 == 2 || paint != null || z) {
+                        path.lineTo(bounds.right - m34dp(8.0f), ((bounds.bottom - m34dp2) - m34dp3) - m34dp(3.0f));
+                        int i19 = m34dp3 * 2;
+                        this.rect.set(bounds.right - m34dp(8.0f), ((bounds.bottom - m34dp2) - i19) - m34dp(9.0f), (bounds.right - m34dp(7.0f)) + i19, (bounds.bottom - m34dp2) - m34dp(1.0f));
+                        path.arcTo(this.rect, 180.0f, -83.0f, false);
+                    } else {
+                        path.lineTo(bounds.right - m34dp(8.0f), (max - this.topY) + this.currentBackgroundHeight);
+                    }
+                } else {
+                    int i20 = m34dp;
+                    if (this.drawFullBubble || this.currentType == 2 || paint != null || z) {
+                        if (this.currentType == 1) {
+                            path.moveTo(bounds.left + m34dp(8.0f) + i2, bounds.bottom - m34dp2);
+                        } else {
+                            path.moveTo(bounds.left + m34dp(2.6f), bounds.bottom - m34dp2);
+                        }
+                        path.lineTo((bounds.right - m34dp2) - i2, bounds.bottom - m34dp2);
+                        RectF rectF5 = this.rect;
+                        int i21 = bounds.right;
+                        int i22 = i2 * 2;
+                        int i23 = bounds.bottom;
+                        rectF5.set((i21 - m34dp2) - i22, (i23 - m34dp2) - i22, i21 - m34dp2, i23 - m34dp2);
+                        path.arcTo(this.rect, 90.0f, -90.0f, false);
+                    } else {
+                        path.moveTo(bounds.left + m34dp(8.0f), (max - this.topY) + this.currentBackgroundHeight);
+                        path.lineTo(bounds.right - m34dp2, (max - this.topY) + this.currentBackgroundHeight);
+                    }
+                    if (this.drawFullBubble || this.currentType == 2 || paint != null || z2) {
+                        path.lineTo(bounds.right - m34dp2, bounds.top + m34dp2 + i2);
+                        RectF rectF6 = this.rect;
+                        int i24 = bounds.right;
+                        int i25 = i2 * 2;
+                        int i26 = bounds.top;
+                        rectF6.set((i24 - m34dp2) - i25, i26 + m34dp2, i24 - m34dp2, i26 + m34dp2 + i25);
+                        path.arcTo(this.rect, BitmapDescriptorFactory.HUE_RED, -90.0f, false);
+                        int i27 = this.isTopNear ? i20 : i2;
+                        if (this.currentType == 1) {
+                            path.lineTo(bounds.left + m34dp2 + i27, bounds.top + m34dp2);
+                            RectF rectF7 = this.rect;
+                            int i28 = bounds.left;
+                            int i29 = bounds.top;
+                            int i30 = i27 * 2;
+                            rectF7.set(i28 + m34dp2, i29 + m34dp2, i28 + m34dp2 + i30, i29 + m34dp2 + i30);
+                        } else {
+                            path.lineTo(bounds.left + m34dp(8.0f) + i27, bounds.top + m34dp2);
+                            int i31 = i27 * 2;
+                            this.rect.set(bounds.left + m34dp(8.0f), bounds.top + m34dp2, bounds.left + m34dp(8.0f) + i31, bounds.top + m34dp2 + i31);
+                        }
+                        path.arcTo(this.rect, 270.0f, -90.0f, false);
+                    } else {
+                        path.lineTo(bounds.right - m34dp2, (max - this.topY) - m34dp(2.0f));
+                        if (this.currentType == 1) {
+                            path.lineTo(bounds.left + m34dp2, (max - this.topY) - m34dp(2.0f));
+                        } else {
+                            path.lineTo(bounds.left + m34dp(8.0f), (max - this.topY) - m34dp(2.0f));
+                        }
+                    }
+                    int i32 = this.currentType;
+                    if (i32 == 1) {
+                        if (paint != null || z) {
+                            int i33 = this.isBottomNear ? i20 : i2;
+                            path.lineTo(bounds.left + m34dp2, (bounds.bottom - m34dp2) - i33);
+                            RectF rectF8 = this.rect;
+                            int i34 = bounds.left;
+                            int i35 = bounds.bottom;
+                            int i36 = i33 * 2;
+                            rectF8.set(i34 + m34dp2, (i35 - m34dp2) - i36, i34 + m34dp2 + i36, i35 - m34dp2);
+                            path.arcTo(this.rect, 180.0f, -90.0f, false);
+                        } else {
+                            path.lineTo(bounds.left + m34dp2, (max - this.topY) + this.currentBackgroundHeight);
+                        }
+                    } else if (this.drawFullBubble || i32 == 2 || paint != null || z) {
+                        path.lineTo(bounds.left + m34dp(8.0f), ((bounds.bottom - m34dp2) - m34dp3) - m34dp(3.0f));
+                        int i37 = m34dp3 * 2;
+                        this.rect.set((bounds.left + m34dp(7.0f)) - i37, ((bounds.bottom - m34dp2) - i37) - m34dp(9.0f), bounds.left + m34dp(8.0f), (bounds.bottom - m34dp2) - m34dp(1.0f));
+                        path.arcTo(this.rect, BitmapDescriptorFactory.HUE_RED, 83.0f, false);
+                    } else {
+                        path.lineTo(bounds.left + m34dp(8.0f), (max - this.topY) + this.currentBackgroundHeight);
+                    }
+                }
+                path.close();
+            }
+            canvas.drawPath(path, paint2);
+            if (this.gradientShader != null && this.isSelected && paint == null) {
+                this.selectedPaint.setColor(ColorUtils.setAlphaComponent(getColor("chat_outBubbleGradientSelectedOverlay"), (int) ((Color.alpha(color) * this.alpha) / 255.0f)));
+                canvas.drawPath(path, this.selectedPaint);
+            }
         }
 
         public void setDrawFullBubble(boolean z) {
@@ -1247,7 +1443,7 @@ public class Theme {
                         int size = themeInfo.themeAccents.size();
                         for (int i2 = 0; i2 < size; i2++) {
                             ThemeAccent themeAccent = themeInfo.themeAccents.get(i2);
-                            if (themeAccent.f1655id != Theme.DEFALT_THEME_ACCENT_ID && !TextUtils.isEmpty(themeAccent.patternSlug)) {
+                            if (themeAccent.f1656id != Theme.DEFALT_THEME_ACCENT_ID && !TextUtils.isEmpty(themeAccent.patternSlug)) {
                                 if (arrayList2 == null) {
                                     arrayList2 = new ArrayList();
                                 }
@@ -1333,7 +1529,7 @@ public class Theme {
                             Bitmap bitmap2 = bitmap;
                             Boolean bool = bitmap2;
                             int i2 = 0;
-                            RunnableC34411 runnableC34411 = bitmap;
+                            RunnableC34561 runnableC34561 = bitmap;
                             while (i2 < size2) {
                                 ThemeAccent themeAccent = (ThemeAccent) arrayList.get(i2);
                                 bool = bool;
@@ -1362,7 +1558,7 @@ public class Theme {
                                     }
                                 }
                                 i2++;
-                                runnableC34411 = 0;
+                                runnableC34561 = 0;
                                 bool = bool;
                             }
                             if (bitmap2 != null) {
@@ -1568,7 +1764,7 @@ public class Theme {
         public long backgroundOverrideColor;
 
         /* renamed from: id */
-        public int f1655id;
+        public int f1656id;
         public TLRPC$TL_theme info;
         public boolean isDefault;
         public int myMessagesAccentColor;
@@ -1665,7 +1861,7 @@ public class Theme {
             float[] fArr = this.tempHSV;
             fArr[1] = Math.max((float) BitmapDescriptorFactory.HUE_RED, Math.min(1.0f, fArr[1] - 0.1f));
             float[] fArr2 = this.tempHSV;
-            fArr2[2] = Math.max((float) BitmapDescriptorFactory.HUE_RED, Math.min(1.0f, fArr2[2] + (z ? 0.1f : BitmapDescriptorFactory.HUE_RED)));
+            fArr2[2] = Math.max((float) BitmapDescriptorFactory.HUE_RED, Math.min(1.0f, fArr2[2] + (z ? 0.1f : 0.0f)));
             return Color.HSVToColor(51, this.tempHSV);
         }
 
@@ -1712,27 +1908,27 @@ public class Theme {
         }
 
         public File getPathToWallpaper() {
-            if (this.f1655id < 100) {
+            if (this.f1656id < 100) {
                 if (TextUtils.isEmpty(this.patternSlug)) {
                     return null;
                 }
-                return new File(ApplicationLoader.getFilesDirFixed(), String.format(Locale.US, "%s_%d_%s_v5.jpg", this.parentTheme.getKey(), Integer.valueOf(this.f1655id), this.patternSlug));
+                return new File(ApplicationLoader.getFilesDirFixed(), String.format(Locale.US, "%s_%d_%s_v5.jpg", this.parentTheme.getKey(), Integer.valueOf(this.f1656id), this.patternSlug));
             } else if (TextUtils.isEmpty(this.patternSlug)) {
                 return null;
             } else {
-                return new File(ApplicationLoader.getFilesDirFixed(), String.format(Locale.US, "%s_%d_%s_v8_debug.jpg", this.parentTheme.getKey(), Integer.valueOf(this.f1655id), this.patternSlug));
+                return new File(ApplicationLoader.getFilesDirFixed(), String.format(Locale.US, "%s_%d_%s_v8_debug.jpg", this.parentTheme.getKey(), Integer.valueOf(this.f1656id), this.patternSlug));
             }
         }
 
-        /* JADX WARN: Removed duplicated region for block: B:96:0x02f4 A[EXC_TOP_SPLITTER, SYNTHETIC] */
-        /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:81:0x02eb -> B:93:0x02ef). Please submit an issue!!! */
+        /* JADX WARN: Removed duplicated region for block: B:94:0x02f3 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+        /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:81:0x02ea -> B:91:0x02ee). Please submit an issue!!! */
         /*
             Code decompiled incorrectly, please refer to instructions dump.
             To view partially-correct add '--show-bad-code' argument
         */
         public java.io.File saveToFile() {
             /*
-                Method dump skipped, instructions count: 766
+                Method dump skipped, instructions count: 765
                 To view this dump add '--comments-level debug' option
             */
             throw new UnsupportedOperationException("Method not decompiled: org.telegram.p048ui.ActionBar.Theme.ThemeAccent.saveToFile():java.io.File");
@@ -1885,7 +2081,7 @@ public class Theme {
 
         private String getKey() {
             if (this.parentAccent != null) {
-                return this.parentTheme.name + "_" + this.parentAccent.f1655id + "_owp";
+                return this.parentTheme.name + "_" + this.parentAccent.f1656id + "_owp";
             }
             return this.parentTheme.name + "_owp";
         }
@@ -2068,7 +2264,7 @@ public class Theme {
                 int size = this.themeAccents.size();
                 for (int i = 0; i < size; i++) {
                     ThemeAccent themeAccent = this.themeAccents.get(i);
-                    loadOverrideWallpaper(sharedPreferences, themeAccent, this.name + "_" + themeAccent.f1655id + "_owp");
+                    loadOverrideWallpaper(sharedPreferences, themeAccent, this.name + "_" + themeAccent.f1656id + "_owp");
                 }
                 return;
             }
@@ -2131,19 +2327,19 @@ public class Theme {
 
         public String getName() {
             if ("Blue".equals(this.name)) {
-                return LocaleController.getString("ThemeClassic", C3286R.string.ThemeClassic);
+                return LocaleController.getString("ThemeClassic", C3301R.string.ThemeClassic);
             }
             if ("Dark Blue".equals(this.name)) {
-                return LocaleController.getString("ThemeDark", C3286R.string.ThemeDark);
+                return LocaleController.getString("ThemeDark", C3301R.string.ThemeDark);
             }
             if ("Arctic Blue".equals(this.name)) {
-                return LocaleController.getString("ThemeArcticBlue", C3286R.string.ThemeArcticBlue);
+                return LocaleController.getString("ThemeArcticBlue", C3301R.string.ThemeArcticBlue);
             }
             if ("Day".equals(this.name)) {
-                return LocaleController.getString("ThemeDay", C3286R.string.ThemeDay);
+                return LocaleController.getString("ThemeDay", C3301R.string.ThemeDay);
             }
             if ("Night".equals(this.name)) {
-                return LocaleController.getString("ThemeNight", C3286R.string.ThemeNight);
+                return LocaleController.getString("ThemeNight", C3301R.string.ThemeNight);
             }
             TLRPC$TL_theme tLRPC$TL_theme = this.info;
             return tLRPC$TL_theme != null ? tLRPC$TL_theme.title : this.name;
@@ -2169,13 +2365,13 @@ public class Theme {
                     sb2 = new StringBuilder();
                     sb2.append(this.name);
                     sb2.append("_");
-                    sb2.append(themeAccent.f1655id);
+                    sb2.append(themeAccent.f1656id);
                     sb2.append("_wp_o");
                 } else {
                     sb2 = new StringBuilder();
                     sb2.append(this.name);
                     sb2.append("_");
-                    sb2.append(themeAccent.f1655id);
+                    sb2.append(themeAccent.f1656id);
                     sb2.append("_wp");
                 }
                 sb3.append(sb2.toString());
@@ -2303,7 +2499,7 @@ public class Theme {
 
         public String getKey() {
             if (this.info != null) {
-                return "remote" + this.info.f1630id;
+                return "remote" + this.info.f1631id;
             }
             return this.name;
         }
@@ -2355,7 +2551,7 @@ public class Theme {
             this.accentsByThemeId = new LongSparseArray<>();
             for (int i = 0; i < iArr.length; i++) {
                 ThemeAccent themeAccent = new ThemeAccent();
-                themeAccent.f1655id = iArr8 != null ? iArr8[i] : i;
+                themeAccent.f1656id = iArr8 != null ? iArr8[i] : i;
                 if (Theme.isHome(themeAccent)) {
                     themeAccent.isDefault = true;
                 }
@@ -2369,28 +2565,28 @@ public class Theme {
                 }
                 if (iArr4 != null) {
                     themeAccent.backgroundOverrideColor = iArr4[i];
-                    if (this.firstAccentIsDefault && themeAccent.f1655id == Theme.DEFALT_THEME_ACCENT_ID) {
+                    if (this.firstAccentIsDefault && themeAccent.f1656id == Theme.DEFALT_THEME_ACCENT_ID) {
                         themeAccent.backgroundOverrideColor = 4294967296L;
                     } else {
                         themeAccent.backgroundOverrideColor = iArr4[i];
                     }
                 }
                 if (iArr5 != null) {
-                    if (this.firstAccentIsDefault && themeAccent.f1655id == Theme.DEFALT_THEME_ACCENT_ID) {
+                    if (this.firstAccentIsDefault && themeAccent.f1656id == Theme.DEFALT_THEME_ACCENT_ID) {
                         themeAccent.backgroundGradientOverrideColor1 = 4294967296L;
                     } else {
                         themeAccent.backgroundGradientOverrideColor1 = iArr5[i];
                     }
                 }
                 if (iArr6 != null) {
-                    if (this.firstAccentIsDefault && themeAccent.f1655id == Theme.DEFALT_THEME_ACCENT_ID) {
+                    if (this.firstAccentIsDefault && themeAccent.f1656id == Theme.DEFALT_THEME_ACCENT_ID) {
                         themeAccent.backgroundGradientOverrideColor2 = 4294967296L;
                     } else {
                         themeAccent.backgroundGradientOverrideColor2 = iArr6[i];
                     }
                 }
                 if (iArr7 != null) {
-                    if (this.firstAccentIsDefault && themeAccent.f1655id == Theme.DEFALT_THEME_ACCENT_ID) {
+                    if (this.firstAccentIsDefault && themeAccent.f1656id == Theme.DEFALT_THEME_ACCENT_ID) {
                         themeAccent.backgroundGradientOverrideColor3 = 4294967296L;
                     } else {
                         themeAccent.backgroundGradientOverrideColor3 = iArr7[i];
@@ -2414,7 +2610,7 @@ public class Theme {
                         themeAccent.backgroundGradientOverrideColor3 = -13421992L;
                     }
                 }
-                this.themeAccentsMap.put(themeAccent.f1655id, themeAccent);
+                this.themeAccentsMap.put(themeAccent.f1656id, themeAccent);
                 this.themeAccents.add(themeAccent);
             }
             this.accentBaseColor = this.themeAccentsMap.get(0).accentColor;
@@ -2583,33 +2779,33 @@ public class Theme {
             }
             TLRPC$ThemeSettings tLRPC$ThemeSettings = i2 < tLRPC$TL_theme.settings.size() ? tLRPC$TL_theme.settings.get(i2) : null;
             if (z) {
-                ThemeAccent themeAccent = this.chatAccentsByThemeId.get(tLRPC$TL_theme.f1630id);
+                ThemeAccent themeAccent = this.chatAccentsByThemeId.get(tLRPC$TL_theme.f1631id);
                 if (themeAccent != null) {
                     return themeAccent;
                 }
                 int i3 = this.lastChatThemeId + 1;
                 this.lastChatThemeId = i3;
                 ThemeAccent createNewAccent = createNewAccent(tLRPC$ThemeSettings);
-                createNewAccent.f1655id = i3;
+                createNewAccent.f1656id = i3;
                 createNewAccent.info = tLRPC$TL_theme;
                 createNewAccent.account = i;
                 this.chatAccentsByThemeId.put(i3, createNewAccent);
                 return createNewAccent;
             }
-            ThemeAccent themeAccent2 = this.accentsByThemeId.get(tLRPC$TL_theme.f1630id);
+            ThemeAccent themeAccent2 = this.accentsByThemeId.get(tLRPC$TL_theme.f1631id);
             if (themeAccent2 != null) {
                 return themeAccent2;
             }
             int i4 = this.lastAccentId + 1;
             this.lastAccentId = i4;
             ThemeAccent createNewAccent2 = createNewAccent(tLRPC$ThemeSettings);
-            createNewAccent2.f1655id = i4;
+            createNewAccent2.f1656id = i4;
             createNewAccent2.info = tLRPC$TL_theme;
             createNewAccent2.account = i;
             this.themeAccentsMap.put(i4, createNewAccent2);
             this.themeAccents.add(0, createNewAccent2);
             Theme.sortAccents(this);
-            this.accentsByThemeId.put(tLRPC$TL_theme.f1630id, createNewAccent2);
+            this.accentsByThemeId.put(tLRPC$TL_theme.f1631id, createNewAccent2);
             return createNewAccent2;
         }
 
@@ -2643,7 +2839,7 @@ public class Theme {
                     themeAccent2.overrideWallpaper = new OverrideWallpaperInfo(overrideWallpaperInfo, this, themeAccent2);
                 }
                 this.prevAccentId = this.currentAccentId;
-                themeAccent2.f1655id = i;
+                themeAccent2.f1656id = i;
                 this.currentAccentId = i;
                 this.overrideWallpaper = themeAccent2.overrideWallpaper;
                 this.themeAccentsMap.put(i, themeAccent2);
@@ -2853,15 +3049,15 @@ public class Theme {
         if (r0 != r3) {
             return r0 > r3 ? -1 : 1;
         } else if (r0 != 0) {
-            int i = themeAccent.f1655id;
-            int i2 = themeAccent2.f1655id;
+            int i = themeAccent.f1656id;
+            int i2 = themeAccent2.f1656id;
             if (i > i2) {
                 return 1;
             }
             return i < i2 ? -1 : 0;
         } else {
-            int i3 = themeAccent.f1655id;
-            int i4 = themeAccent2.f1655id;
+            int i3 = themeAccent.f1656id;
+            int i4 = themeAccent2.f1656id;
             if (i3 > i4) {
                 return -1;
             }
@@ -2956,9 +3152,9 @@ public class Theme {
 
     public static Drawable createEditTextDrawable(Context context, int i, int i2) {
         Resources resources = context.getResources();
-        Drawable mutate = resources.getDrawable(C3286R.C3288drawable.search_dark).mutate();
+        Drawable mutate = resources.getDrawable(C3301R.C3303drawable.search_dark).mutate();
         mutate.setColorFilter(new PorterDuffColorFilter(i, PorterDuff.Mode.MULTIPLY));
-        Drawable mutate2 = resources.getDrawable(C3286R.C3288drawable.search_dark_activated).mutate();
+        Drawable mutate2 = resources.getDrawable(C3301R.C3303drawable.search_dark_activated).mutate();
         mutate2.setColorFilter(new PorterDuffColorFilter(i2, PorterDuff.Mode.MULTIPLY));
         StateListDrawable stateListDrawable = new StateListDrawable() { // from class: org.telegram.ui.ActionBar.Theme.4
             @Override // android.graphics.drawable.DrawableContainer
@@ -3012,14 +3208,14 @@ public class Theme {
         return 0;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:19:0x0056, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:19:0x0055, code lost:
         if (r2 <= 31) goto L17;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:21:0x005a, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:21:0x0059, code lost:
         if (r2 == 1) goto L17;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:22:0x005c, code lost:
-        org.telegram.p048ui.ActionBar.Theme.dialogs_holidayDrawable = org.telegram.messenger.ApplicationLoader.applicationContext.getResources().getDrawable(org.telegram.messenger.C3286R.C3288drawable.newyear);
+    /* JADX WARN: Code restructure failed: missing block: B:22:0x005b, code lost:
+        org.telegram.p048ui.ActionBar.Theme.dialogs_holidayDrawable = org.telegram.messenger.ApplicationLoader.applicationContext.getResources().getDrawable(org.telegram.messenger.C3301R.C3303drawable.newyear);
         org.telegram.p048ui.ActionBar.Theme.dialogs_holidayDrawableOffsetX = -org.telegram.messenger.AndroidUtilities.m50dp(3);
         org.telegram.p048ui.ActionBar.Theme.dialogs_holidayDrawableOffsetY = -org.telegram.messenger.AndroidUtilities.m50dp(-7);
      */
@@ -3033,8 +3229,8 @@ public class Theme {
             long r2 = org.telegram.p048ui.ActionBar.Theme.lastHolidayCheckTime
             long r0 = r0 - r2
             r2 = 60000(0xea60, double:2.9644E-319)
-            int r4 = (r0 > r2 ? 1 : (r0 == r2 ? 0 : -1))
-            if (r4 < 0) goto L7a
+            int r0 = (r0 > r2 ? 1 : (r0 == r2 ? 0 : -1))
+            if (r0 < 0) goto L79
             long r0 = java.lang.System.currentTimeMillis()
             org.telegram.p048ui.ActionBar.Theme.lastHolidayCheckTime = r0
             java.util.Calendar r0 = java.util.Calendar.getInstance()
@@ -3060,25 +3256,25 @@ public class Theme {
             org.telegram.p048ui.ActionBar.Theme.canStartHolidayAnimation = r0
         L43:
             android.graphics.drawable.Drawable r0 = org.telegram.p048ui.ActionBar.Theme.dialogs_holidayDrawable
-            if (r0 != 0) goto L7a
-            if (r1 != r3) goto L58
+            if (r0 != 0) goto L79
+            if (r1 != r3) goto L57
             boolean r0 = org.telegram.messenger.BuildVars.DEBUG_PRIVATE_VERSION
             r3 = 31
             if (r0 == 0) goto L52
             r0 = 29
-            goto L54
+            goto L53
         L52:
-            r0 = 31
-        L54:
-            if (r2 < r0) goto L58
-            if (r2 <= r3) goto L5c
-        L58:
-            if (r1 != 0) goto L7a
-            if (r2 != r4) goto L7a
-        L5c:
+            r0 = r3
+        L53:
+            if (r2 < r0) goto L57
+            if (r2 <= r3) goto L5b
+        L57:
+            if (r1 != 0) goto L79
+            if (r2 != r4) goto L79
+        L5b:
             android.content.Context r0 = org.telegram.messenger.ApplicationLoader.applicationContext
             android.content.res.Resources r0 = r0.getResources()
-            int r1 = org.telegram.messenger.C3286R.C3288drawable.newyear
+            int r1 = org.telegram.messenger.C3301R.C3303drawable.newyear
             android.graphics.drawable.Drawable r0 = r0.getDrawable(r1)
             org.telegram.p048ui.ActionBar.Theme.dialogs_holidayDrawable = r0
             r0 = 3
@@ -3089,7 +3285,7 @@ public class Theme {
             int r0 = org.telegram.messenger.AndroidUtilities.m50dp(r0)
             int r0 = -r0
             org.telegram.p048ui.ActionBar.Theme.dialogs_holidayDrawableOffsetY = r0
-        L7a:
+        L79:
             android.graphics.drawable.Drawable r0 = org.telegram.p048ui.ActionBar.Theme.dialogs_holidayDrawable
             return r0
         */
@@ -3877,8 +4073,7 @@ public class Theme {
             checkIsDark(getThemeFileValues(new File(themeInfo.pathToFile), null, strArr), themeInfo);
             if (!TextUtils.isEmpty(strArr[0])) {
                 String str2 = strArr[0];
-                File filesDirFixed = ApplicationLoader.getFilesDirFixed();
-                themeInfo.pathToWallpaper = new File(filesDirFixed, Utilities.MD5(str2) + ".wp").getAbsolutePath();
+                themeInfo.pathToWallpaper = new File(ApplicationLoader.getFilesDirFixed(), Utilities.MD5(str2) + ".wp").getAbsolutePath();
                 Uri parse = Uri.parse(str2);
                 themeInfo.slug = parse.getQueryParameter("slug");
                 String queryParameter = parse.getQueryParameter("mode");
@@ -3951,7 +4146,7 @@ public class Theme {
                 return themeInfo;
             }
             if (tLRPC$TL_theme != null) {
-                str2 = "remote" + tLRPC$TL_theme.f1630id;
+                str2 = "remote" + tLRPC$TL_theme.f1631id;
                 file2 = new File(ApplicationLoader.getFilesDirFixed(), str2 + ".attheme");
             } else {
                 file2 = new File(ApplicationLoader.getFilesDirFixed(), str);
@@ -4011,14 +4206,14 @@ public class Theme {
         org.telegram.messenger.SharedConfig.setPinnedPlayerThemeOverridden(false);
         org.telegram.messenger.SharedConfig.setPinnedPlayerNightThemeEnabled(r7.isDark());
      */
-    /* JADX WARN: Removed duplicated region for block: B:91:0x01dd A[Catch: Exception -> 0x01f4, TryCatch #5 {Exception -> 0x01f4, blocks: (B:8:0x000d, B:11:0x0014, B:16:0x001d, B:17:0x002b, B:87:0x01d1, B:89:0x01d5, B:91:0x01dd, B:92:0x01ee, B:19:0x003c, B:22:0x004a, B:23:0x005c, B:25:0x0063, B:27:0x0077, B:29:0x0083, B:31:0x0089, B:33:0x0093, B:39:0x00cf, B:85:0x01cb, B:26:0x006a, B:40:0x00d1, B:42:0x00e7, B:44:0x00f3, B:47:0x00f7, B:49:0x00fa, B:51:0x0104, B:55:0x0113, B:52:0x0107, B:54:0x0111, B:56:0x0116, B:57:0x0127, B:59:0x0133, B:61:0x014b, B:63:0x0155, B:64:0x0161, B:66:0x0169, B:68:0x0173, B:69:0x0180, B:71:0x0188, B:73:0x0192, B:74:0x019f, B:76:0x01ab), top: B:114:0x000d }] */
+    /* JADX WARN: Removed duplicated region for block: B:90:0x01db A[Catch: Exception -> 0x01f2, TryCatch #5 {Exception -> 0x01f2, blocks: (B:8:0x000d, B:11:0x0014, B:16:0x001d, B:17:0x002b, B:86:0x01cf, B:88:0x01d3, B:90:0x01db, B:91:0x01ec, B:19:0x003c, B:22:0x004a, B:23:0x005c, B:25:0x0063, B:27:0x0077, B:29:0x0083, B:31:0x0089, B:33:0x0093, B:39:0x00cf, B:84:0x01c9, B:26:0x006a, B:40:0x00d1, B:42:0x00e7, B:44:0x00f3, B:47:0x00f7, B:49:0x00fa, B:51:0x0104, B:55:0x0113, B:52:0x0107, B:54:0x0111, B:56:0x0116, B:57:0x0127, B:59:0x0133, B:61:0x014b, B:63:0x0155, B:64:0x0161, B:66:0x0169, B:68:0x0173, B:69:0x0180, B:71:0x0188, B:73:0x0192, B:74:0x019f, B:76:0x01ab), top: B:114:0x000d }] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct add '--show-bad-code' argument
     */
     private static void applyTheme(org.telegram.p048ui.ActionBar.Theme.ThemeInfo r7, boolean r8, boolean r9, boolean r10) {
         /*
-            Method dump skipped, instructions count: 528
+            Method dump skipped, instructions count: 526
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: org.telegram.p048ui.ActionBar.Theme.applyTheme(org.telegram.ui.ActionBar.Theme$ThemeInfo, boolean, boolean, boolean):void");
@@ -4080,7 +4275,7 @@ public class Theme {
             org.telegram.p048ui.ActionBar.Theme.switchNightThemeDelay = r0     // Catch: java.lang.Exception -> La3
             long r0 = android.os.SystemClock.elapsedRealtime()     // Catch: java.lang.Exception -> La3
             org.telegram.p048ui.ActionBar.Theme.lastDelayUpdateTime = r0     // Catch: java.lang.Exception -> La3
-            org.telegram.messenger.MessagesController$$ExternalSyntheticLambda236 r0 = org.telegram.messenger.MessagesController$$ExternalSyntheticLambda236.INSTANCE     // Catch: java.lang.Exception -> La3
+            org.telegram.messenger.MessagesController$$ExternalSyntheticLambda237 r0 = org.telegram.messenger.MessagesController$$ExternalSyntheticLambda237.INSTANCE     // Catch: java.lang.Exception -> La3
             r1 = 2100(0x834, double:1.0375E-320)
             org.telegram.messenger.AndroidUtilities.runOnUIThread(r0, r1)     // Catch: java.lang.Exception -> La3
         L5c:
@@ -4151,8 +4346,7 @@ public class Theme {
             themedWallpaperFileOffset = num != null ? num.intValue() : -1;
             if (!TextUtils.isEmpty(strArr[0])) {
                 themedWallpaperLink = strArr[0];
-                File filesDirFixed = ApplicationLoader.getFilesDirFixed();
-                String absolutePath = new File(filesDirFixed, Utilities.MD5(themedWallpaperLink) + ".wp").getAbsolutePath();
+                String absolutePath = new File(ApplicationLoader.getFilesDirFixed(), Utilities.MD5(themedWallpaperLink) + ".wp").getAbsolutePath();
                 try {
                     String str = themeInfo.pathToWallpaper;
                     if (str != null && !str.equals(absolutePath)) {
@@ -4213,7 +4407,7 @@ public class Theme {
                 if (isCurrentThemeNight()) {
                     switchNightThemeDelay = 2000;
                     lastDelayUpdateTime = SystemClock.elapsedRealtime();
-                    AndroidUtilities.runOnUIThread(MessagesController$$ExternalSyntheticLambda236.INSTANCE, 2100L);
+                    AndroidUtilities.runOnUIThread(MessagesController$$ExternalSyntheticLambda237.INSTANCE, 2100L);
                 }
             }
             currentTheme = themeInfo;
@@ -4370,23 +4564,23 @@ public class Theme {
         if (themeAccent == null || themeInfo == null || themeInfo.themeAccents == null) {
             return false;
         }
-        boolean z3 = themeAccent.f1655id == themeInfo.currentAccentId;
+        boolean z3 = themeAccent.f1656id == themeInfo.currentAccentId;
         File pathToWallpaper = themeAccent.getPathToWallpaper();
         if (pathToWallpaper != null) {
             pathToWallpaper.delete();
         }
-        themeInfo.themeAccentsMap.remove(themeAccent.f1655id);
+        themeInfo.themeAccentsMap.remove(themeAccent.f1656id);
         themeInfo.themeAccents.remove(themeAccent);
         TLRPC$TL_theme tLRPC$TL_theme = themeAccent.info;
         if (tLRPC$TL_theme != null) {
-            themeInfo.accentsByThemeId.remove(tLRPC$TL_theme.f1630id);
+            themeInfo.accentsByThemeId.remove(tLRPC$TL_theme.f1631id);
         }
         OverrideWallpaperInfo overrideWallpaperInfo = themeAccent.overrideWallpaper;
         if (overrideWallpaperInfo != null) {
             overrideWallpaperInfo.delete();
         }
         if (z3) {
-            themeInfo.setCurrentAccentId(themeInfo.themeAccents.get(0).f1655id);
+            themeInfo.setCurrentAccentId(themeInfo.themeAccents.get(0).f1656id);
         }
         if (z) {
             saveThemeAccents(themeInfo, true, false, false, false);
@@ -4416,7 +4610,7 @@ public class Theme {
                 serializedData.writeInt32(max);
                 for (int i = 0; i < size; i++) {
                     ThemeAccent themeAccent = themeInfo.themeAccents.get(i);
-                    int i2 = themeAccent.f1655id;
+                    int i2 = themeAccent.f1656id;
                     if (i2 >= 100) {
                         serializedData.writeInt32(i2);
                         serializedData.writeInt32(themeAccent.accentColor);
@@ -4456,11 +4650,11 @@ public class Theme {
             if (themeInfo.prevAccentId != -1) {
                 if (z2) {
                     ThemeAccent themeAccent2 = themeInfo.themeAccentsMap.get(themeInfo.currentAccentId);
-                    themeInfo.themeAccentsMap.remove(themeAccent2.f1655id);
+                    themeInfo.themeAccentsMap.remove(themeAccent2.f1656id);
                     themeInfo.themeAccents.remove(themeAccent2);
                     TLRPC$TL_theme tLRPC$TL_theme = themeAccent2.info;
                     if (tLRPC$TL_theme != null) {
-                        themeInfo.accentsByThemeId.remove(tLRPC$TL_theme.f1630id);
+                        themeInfo.accentsByThemeId.remove(tLRPC$TL_theme.f1631id);
                     }
                 }
                 themeInfo.currentAccentId = themeInfo.prevAccentId;
@@ -4856,11 +5050,11 @@ public class Theme {
                         if (tLRPC$TL_theme != null && tLRPC$TL_theme.document != null) {
                             loadingCurrentTheme++;
                             TLRPC$TL_account_getTheme tLRPC$TL_account_getTheme = new TLRPC$TL_account_getTheme();
-                            tLRPC$TL_account_getTheme.document_id = tLRPC$TL_theme.document.f1507id;
+                            tLRPC$TL_account_getTheme.document_id = tLRPC$TL_theme.document.f1508id;
                             tLRPC$TL_account_getTheme.format = "android";
                             TLRPC$TL_inputTheme tLRPC$TL_inputTheme = new TLRPC$TL_inputTheme();
                             tLRPC$TL_inputTheme.access_hash = tLRPC$TL_theme.access_hash;
-                            tLRPC$TL_inputTheme.f1571id = tLRPC$TL_theme.f1630id;
+                            tLRPC$TL_inputTheme.f1572id = tLRPC$TL_theme.f1631id;
                             tLRPC$TL_account_getTheme.theme = tLRPC$TL_inputTheme;
                             ConnectionsManager.getInstance(i).sendRequest(tLRPC$TL_account_getTheme, new RequestDelegate() { // from class: org.telegram.ui.ActionBar.Theme$$ExternalSyntheticLambda15
                                 @Override // org.telegram.tgnet.RequestDelegate
@@ -4926,7 +5120,7 @@ public class Theme {
             org.telegram.ui.ActionBar.Theme$ThemeInfo r7 = org.telegram.p048ui.ActionBar.Theme.currentTheme
             if (r7 != r9) goto L70
             int r7 = r7.currentAccentId
-            int r9 = r8.f1655id
+            int r9 = r8.f1656id
             if (r7 != r9) goto L70
             refreshThemeColors()
             android.content.Context r7 = org.telegram.messenger.ApplicationLoader.applicationContext
@@ -4939,10 +5133,10 @@ public class Theme {
             r10[r2] = r4
             org.telegram.ui.ActionBar.Theme$ThemeInfo r5 = org.telegram.p048ui.ActionBar.Theme.currentNightTheme
             if (r5 != r4) goto L5b
-            r4 = 1
+            r4 = r1
             goto L5c
         L5b:
-            r4 = 0
+            r4 = r2
         L5c:
             java.lang.Boolean r4 = java.lang.Boolean.valueOf(r4)
             r10[r1] = r4
@@ -4955,10 +5149,10 @@ public class Theme {
             r7.postNotificationName(r9, r10)
         L70:
             org.telegram.p048ui.ActionBar.Theme.PatternsLoader.createLoader(r1)
-            r7 = 1
+            r7 = r1
             goto L76
         L75:
-            r7 = 0
+            r7 = r2
         L76:
             org.telegram.tgnet.TLRPC$WallPaper r9 = r0.wallpaper
             if (r9 == 0) goto L83
@@ -4968,7 +5162,7 @@ public class Theme {
             if (r9 == 0) goto L83
             goto L84
         L83:
-            r1 = 0
+            r1 = r2
         L84:
             r8.patternMotion = r1
             r1 = r7
@@ -4976,9 +5170,9 @@ public class Theme {
         L88:
             org.telegram.tgnet.TLRPC$Document r0 = r7.document
             if (r0 == 0) goto La1
-            long r3 = r0.f1507id
+            long r3 = r0.f1508id
             org.telegram.tgnet.TLRPC$Document r10 = r10.document
-            long r5 = r10.f1507id
+            long r5 = r10.f1508id
             int r10 = (r3 > r5 ? 1 : (r3 == r5 ? 0 : -1))
             if (r10 == 0) goto La1
             if (r8 == 0) goto L9b
@@ -4989,15 +5183,15 @@ public class Theme {
             org.telegram.p048ui.ActionBar.Theme.ThemeInfo.access$3600(r9)
             goto La2
         La1:
-            r1 = 0
+            r1 = r2
         La2:
             int r7 = org.telegram.p048ui.ActionBar.Theme.loadingCurrentTheme
             if (r7 != 0) goto Lb3
             long r7 = java.lang.System.currentTimeMillis()
             r9 = 1000(0x3e8, double:4.94E-321)
             long r7 = r7 / r9
-            int r8 = (int) r7
-            org.telegram.p048ui.ActionBar.Theme.lastLoadingCurrentThemeTime = r8
+            int r7 = (int) r7
+            org.telegram.p048ui.ActionBar.Theme.lastLoadingCurrentThemeTime = r7
             saveOtherThemes(r1)
         Lb3:
             return
@@ -5097,7 +5291,7 @@ public class Theme {
         int size = themes.size();
         for (int i = 0; i < size; i++) {
             TLRPC$TL_theme tLRPC$TL_theme2 = themes.get(i).info;
-            if (tLRPC$TL_theme2 != null && tLRPC$TL_theme2.f1630id == tLRPC$TL_theme.f1630id) {
+            if (tLRPC$TL_theme2 != null && tLRPC$TL_theme2.f1631id == tLRPC$TL_theme.f1631id) {
                 TLRPC$Document tLRPC$Document2 = tLRPC$TL_theme2.document;
                 if (tLRPC$Document2 == null || (tLRPC$Document = tLRPC$TL_theme.document) == null) {
                     return;
@@ -5126,18 +5320,18 @@ public class Theme {
                 if (baseThemeKey == null || (themeInfo = themesDict.get(baseThemeKey)) == null) {
                     return;
                 }
-                themeAccent = themeInfo.accentsByThemeId.get(tLRPC$TL_theme.f1630id);
+                themeAccent = themeInfo.accentsByThemeId.get(tLRPC$TL_theme.f1631id);
             }
             if (themeAccent == null) {
                 return;
             }
             TLRPC$TL_theme tLRPC$TL_theme2 = themeAccent.info;
             if (tLRPC$TL_theme2 != null) {
-                themeInfo.accentsByThemeId.remove(tLRPC$TL_theme2.f1630id);
+                themeInfo.accentsByThemeId.remove(tLRPC$TL_theme2.f1631id);
             }
             themeAccent.info = tLRPC$TL_theme;
             themeAccent.account = i;
-            themeInfo.accentsByThemeId.put(tLRPC$TL_theme.f1630id, themeAccent);
+            themeInfo.accentsByThemeId.put(tLRPC$TL_theme.f1631id, themeAccent);
             if (!ThemeInfo.accentEquals(themeAccent, tLRPC$ThemeSettings)) {
                 File pathToWallpaper = themeAccent.getPathToWallpaper();
                 if (pathToWallpaper != null) {
@@ -5145,7 +5339,7 @@ public class Theme {
                 }
                 ThemeInfo.fillAccentValues(themeAccent, tLRPC$ThemeSettings);
                 ThemeInfo themeInfo2 = currentTheme;
-                if (themeInfo2 == themeInfo && themeInfo2.currentAccentId == themeAccent.f1655id) {
+                if (themeInfo2 == themeInfo && themeInfo2.currentAccentId == themeAccent.f1656id) {
                     refreshThemeColors();
                     NotificationCenter globalInstance = NotificationCenter.getGlobalInstance();
                     int i2 = NotificationCenter.needSetDayNightTheme;
@@ -5168,7 +5362,7 @@ public class Theme {
                 str = themeInfo.getKey();
                 hashMap.remove(str);
             } else {
-                str = "remote" + tLRPC$TL_theme.f1630id;
+                str = "remote" + tLRPC$TL_theme.f1631id;
                 themeInfo = themesDict.get(str);
             }
             if (themeInfo == null) {
@@ -5229,48 +5423,43 @@ public class Theme {
         return num.intValue();
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:173:0x03b9, code lost:
-        if (android.text.TextUtils.isEmpty(r6[0]) == false) goto L101;
-     */
-    /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:114:0x01e6  */
-    /* JADX WARN: Removed duplicated region for block: B:117:0x0247 A[Catch: all -> 0x067c, TryCatch #17 {all -> 0x067c, blocks: (B:3:0x0008, B:5:0x0015, B:6:0x001a, B:8:0x0089, B:11:0x0091, B:16:0x00a0, B:25:0x00b2, B:28:0x00ba, B:32:0x00c3, B:39:0x00d1, B:42:0x00d9, B:46:0x00e2, B:53:0x00f7, B:56:0x00ff, B:60:0x010a, B:67:0x011a, B:69:0x0123, B:71:0x0131, B:74:0x013b, B:76:0x014b, B:78:0x0155, B:80:0x015f, B:81:0x016e, B:83:0x0176, B:85:0x0182, B:87:0x0192, B:92:0x019d, B:94:0x01a5, B:96:0x01b1, B:98:0x01bf, B:112:0x01e0, B:115:0x01ef, B:117:0x0247, B:121:0x0253, B:125:0x0263, B:126:0x026e, B:236:0x04e0, B:238:0x04ff, B:240:0x0528, B:242:0x0541, B:243:0x0563, B:245:0x05f3, B:248:0x0615, B:249:0x063d, B:153:0x0343, B:158:0x034f, B:168:0x0397, B:160:0x0357, B:161:0x0363, B:163:0x036d, B:167:0x037b, B:166:0x0377, B:170:0x03ac, B:207:0x04ac, B:211:0x04b2, B:219:0x04c3, B:223:0x04c9, B:172:0x03b2, B:217:0x04be, B:250:0x0665), top: B:287:0x0008, inners: #0, #7, #14 }] */
-    /* JADX WARN: Removed duplicated region for block: B:155:0x0349  */
-    /* JADX WARN: Removed duplicated region for block: B:236:0x04e0 A[Catch: all -> 0x067c, TryCatch #17 {all -> 0x067c, blocks: (B:3:0x0008, B:5:0x0015, B:6:0x001a, B:8:0x0089, B:11:0x0091, B:16:0x00a0, B:25:0x00b2, B:28:0x00ba, B:32:0x00c3, B:39:0x00d1, B:42:0x00d9, B:46:0x00e2, B:53:0x00f7, B:56:0x00ff, B:60:0x010a, B:67:0x011a, B:69:0x0123, B:71:0x0131, B:74:0x013b, B:76:0x014b, B:78:0x0155, B:80:0x015f, B:81:0x016e, B:83:0x0176, B:85:0x0182, B:87:0x0192, B:92:0x019d, B:94:0x01a5, B:96:0x01b1, B:98:0x01bf, B:112:0x01e0, B:115:0x01ef, B:117:0x0247, B:121:0x0253, B:125:0x0263, B:126:0x026e, B:236:0x04e0, B:238:0x04ff, B:240:0x0528, B:242:0x0541, B:243:0x0563, B:245:0x05f3, B:248:0x0615, B:249:0x063d, B:153:0x0343, B:158:0x034f, B:168:0x0397, B:160:0x0357, B:161:0x0363, B:163:0x036d, B:167:0x037b, B:166:0x0377, B:170:0x03ac, B:207:0x04ac, B:211:0x04b2, B:219:0x04c3, B:223:0x04c9, B:172:0x03b2, B:217:0x04be, B:250:0x0665), top: B:287:0x0008, inners: #0, #7, #14 }] */
-    /* JADX WARN: Removed duplicated region for block: B:237:0x04fe  */
-    /* JADX WARN: Removed duplicated region for block: B:240:0x0528 A[Catch: all -> 0x067c, TryCatch #17 {all -> 0x067c, blocks: (B:3:0x0008, B:5:0x0015, B:6:0x001a, B:8:0x0089, B:11:0x0091, B:16:0x00a0, B:25:0x00b2, B:28:0x00ba, B:32:0x00c3, B:39:0x00d1, B:42:0x00d9, B:46:0x00e2, B:53:0x00f7, B:56:0x00ff, B:60:0x010a, B:67:0x011a, B:69:0x0123, B:71:0x0131, B:74:0x013b, B:76:0x014b, B:78:0x0155, B:80:0x015f, B:81:0x016e, B:83:0x0176, B:85:0x0182, B:87:0x0192, B:92:0x019d, B:94:0x01a5, B:96:0x01b1, B:98:0x01bf, B:112:0x01e0, B:115:0x01ef, B:117:0x0247, B:121:0x0253, B:125:0x0263, B:126:0x026e, B:236:0x04e0, B:238:0x04ff, B:240:0x0528, B:242:0x0541, B:243:0x0563, B:245:0x05f3, B:248:0x0615, B:249:0x063d, B:153:0x0343, B:158:0x034f, B:168:0x0397, B:160:0x0357, B:161:0x0363, B:163:0x036d, B:167:0x037b, B:166:0x0377, B:170:0x03ac, B:207:0x04ac, B:211:0x04b2, B:219:0x04c3, B:223:0x04c9, B:172:0x03b2, B:217:0x04be, B:250:0x0665), top: B:287:0x0008, inners: #0, #7, #14 }] */
-    /* JADX WARN: Removed duplicated region for block: B:242:0x0541 A[Catch: all -> 0x067c, TryCatch #17 {all -> 0x067c, blocks: (B:3:0x0008, B:5:0x0015, B:6:0x001a, B:8:0x0089, B:11:0x0091, B:16:0x00a0, B:25:0x00b2, B:28:0x00ba, B:32:0x00c3, B:39:0x00d1, B:42:0x00d9, B:46:0x00e2, B:53:0x00f7, B:56:0x00ff, B:60:0x010a, B:67:0x011a, B:69:0x0123, B:71:0x0131, B:74:0x013b, B:76:0x014b, B:78:0x0155, B:80:0x015f, B:81:0x016e, B:83:0x0176, B:85:0x0182, B:87:0x0192, B:92:0x019d, B:94:0x01a5, B:96:0x01b1, B:98:0x01bf, B:112:0x01e0, B:115:0x01ef, B:117:0x0247, B:121:0x0253, B:125:0x0263, B:126:0x026e, B:236:0x04e0, B:238:0x04ff, B:240:0x0528, B:242:0x0541, B:243:0x0563, B:245:0x05f3, B:248:0x0615, B:249:0x063d, B:153:0x0343, B:158:0x034f, B:168:0x0397, B:160:0x0357, B:161:0x0363, B:163:0x036d, B:167:0x037b, B:166:0x0377, B:170:0x03ac, B:207:0x04ac, B:211:0x04b2, B:219:0x04c3, B:223:0x04c9, B:172:0x03b2, B:217:0x04be, B:250:0x0665), top: B:287:0x0008, inners: #0, #7, #14 }] */
-    /* JADX WARN: Removed duplicated region for block: B:245:0x05f3 A[Catch: all -> 0x067c, TryCatch #17 {all -> 0x067c, blocks: (B:3:0x0008, B:5:0x0015, B:6:0x001a, B:8:0x0089, B:11:0x0091, B:16:0x00a0, B:25:0x00b2, B:28:0x00ba, B:32:0x00c3, B:39:0x00d1, B:42:0x00d9, B:46:0x00e2, B:53:0x00f7, B:56:0x00ff, B:60:0x010a, B:67:0x011a, B:69:0x0123, B:71:0x0131, B:74:0x013b, B:76:0x014b, B:78:0x0155, B:80:0x015f, B:81:0x016e, B:83:0x0176, B:85:0x0182, B:87:0x0192, B:92:0x019d, B:94:0x01a5, B:96:0x01b1, B:98:0x01bf, B:112:0x01e0, B:115:0x01ef, B:117:0x0247, B:121:0x0253, B:125:0x0263, B:126:0x026e, B:236:0x04e0, B:238:0x04ff, B:240:0x0528, B:242:0x0541, B:243:0x0563, B:245:0x05f3, B:248:0x0615, B:249:0x063d, B:153:0x0343, B:158:0x034f, B:168:0x0397, B:160:0x0357, B:161:0x0363, B:163:0x036d, B:167:0x037b, B:166:0x0377, B:170:0x03ac, B:207:0x04ac, B:211:0x04b2, B:219:0x04c3, B:223:0x04c9, B:172:0x03b2, B:217:0x04be, B:250:0x0665), top: B:287:0x0008, inners: #0, #7, #14 }] */
-    /* JADX WARN: Removed duplicated region for block: B:248:0x0615 A[Catch: all -> 0x067c, TryCatch #17 {all -> 0x067c, blocks: (B:3:0x0008, B:5:0x0015, B:6:0x001a, B:8:0x0089, B:11:0x0091, B:16:0x00a0, B:25:0x00b2, B:28:0x00ba, B:32:0x00c3, B:39:0x00d1, B:42:0x00d9, B:46:0x00e2, B:53:0x00f7, B:56:0x00ff, B:60:0x010a, B:67:0x011a, B:69:0x0123, B:71:0x0131, B:74:0x013b, B:76:0x014b, B:78:0x0155, B:80:0x015f, B:81:0x016e, B:83:0x0176, B:85:0x0182, B:87:0x0192, B:92:0x019d, B:94:0x01a5, B:96:0x01b1, B:98:0x01bf, B:112:0x01e0, B:115:0x01ef, B:117:0x0247, B:121:0x0253, B:125:0x0263, B:126:0x026e, B:236:0x04e0, B:238:0x04ff, B:240:0x0528, B:242:0x0541, B:243:0x0563, B:245:0x05f3, B:248:0x0615, B:249:0x063d, B:153:0x0343, B:158:0x034f, B:168:0x0397, B:160:0x0357, B:161:0x0363, B:163:0x036d, B:167:0x037b, B:166:0x0377, B:170:0x03ac, B:207:0x04ac, B:211:0x04b2, B:219:0x04c3, B:223:0x04c9, B:172:0x03b2, B:217:0x04be, B:250:0x0665), top: B:287:0x0008, inners: #0, #7, #14 }] */
-    /* JADX WARN: Removed duplicated region for block: B:259:0x04ac A[EXC_TOP_SPLITTER, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:25:0x00b2 A[Catch: all -> 0x067c, TryCatch #17 {all -> 0x067c, blocks: (B:3:0x0008, B:5:0x0015, B:6:0x001a, B:8:0x0089, B:11:0x0091, B:16:0x00a0, B:25:0x00b2, B:28:0x00ba, B:32:0x00c3, B:39:0x00d1, B:42:0x00d9, B:46:0x00e2, B:53:0x00f7, B:56:0x00ff, B:60:0x010a, B:67:0x011a, B:69:0x0123, B:71:0x0131, B:74:0x013b, B:76:0x014b, B:78:0x0155, B:80:0x015f, B:81:0x016e, B:83:0x0176, B:85:0x0182, B:87:0x0192, B:92:0x019d, B:94:0x01a5, B:96:0x01b1, B:98:0x01bf, B:112:0x01e0, B:115:0x01ef, B:117:0x0247, B:121:0x0253, B:125:0x0263, B:126:0x026e, B:236:0x04e0, B:238:0x04ff, B:240:0x0528, B:242:0x0541, B:243:0x0563, B:245:0x05f3, B:248:0x0615, B:249:0x063d, B:153:0x0343, B:158:0x034f, B:168:0x0397, B:160:0x0357, B:161:0x0363, B:163:0x036d, B:167:0x037b, B:166:0x0377, B:170:0x03ac, B:207:0x04ac, B:211:0x04b2, B:219:0x04c3, B:223:0x04c9, B:172:0x03b2, B:217:0x04be, B:250:0x0665), top: B:287:0x0008, inners: #0, #7, #14 }] */
-    /* JADX WARN: Removed duplicated region for block: B:261:0x0286 A[EXC_TOP_SPLITTER, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:269:0x0123 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:126:0x01fc  */
+    /* JADX WARN: Removed duplicated region for block: B:129:0x0261 A[Catch: all -> 0x0686, TryCatch #3 {all -> 0x0686, blocks: (B:3:0x0008, B:5:0x0015, B:6:0x001a, B:8:0x0089, B:11:0x0091, B:16:0x00a0, B:25:0x00b2, B:28:0x00ba, B:32:0x00c3, B:39:0x00d1, B:42:0x00d9, B:46:0x00e2, B:53:0x00f7, B:56:0x00ff, B:60:0x010a, B:67:0x011b, B:69:0x0123, B:71:0x0131, B:74:0x013b, B:76:0x014c, B:79:0x0156, B:81:0x0160, B:85:0x0174, B:87:0x017c, B:89:0x0188, B:91:0x0198, B:96:0x01a3, B:100:0x01ad, B:102:0x01b7, B:104:0x01c6, B:127:0x0207, B:129:0x0261, B:133:0x0270, B:137:0x027f, B:138:0x028c, B:243:0x04f1, B:245:0x0510, B:247:0x053a, B:249:0x0555, B:250:0x0577, B:252:0x0600, B:255:0x0621, B:256:0x0647, B:164:0x035d, B:175:0x03a9, B:167:0x0367, B:168:0x0373, B:170:0x037d, B:174:0x038b, B:173:0x0387, B:177:0x03bf, B:214:0x04bd, B:218:0x04c3, B:226:0x04d4, B:230:0x04da, B:179:0x03c5, B:124:0x01f4, B:257:0x066f, B:141:0x02a2, B:143:0x02b1, B:145:0x02b5, B:147:0x02c6, B:149:0x02d1, B:153:0x02de, B:154:0x0302, B:224:0x04cf), top: B:266:0x0008, inners: #5, #16, #18 }] */
+    /* JADX WARN: Removed duplicated region for block: B:141:0x02a2 A[Catch: all -> 0x0352, TRY_ENTER, TryCatch #3 {all -> 0x0686, blocks: (B:3:0x0008, B:5:0x0015, B:6:0x001a, B:8:0x0089, B:11:0x0091, B:16:0x00a0, B:25:0x00b2, B:28:0x00ba, B:32:0x00c3, B:39:0x00d1, B:42:0x00d9, B:46:0x00e2, B:53:0x00f7, B:56:0x00ff, B:60:0x010a, B:67:0x011b, B:69:0x0123, B:71:0x0131, B:74:0x013b, B:76:0x014c, B:79:0x0156, B:81:0x0160, B:85:0x0174, B:87:0x017c, B:89:0x0188, B:91:0x0198, B:96:0x01a3, B:100:0x01ad, B:102:0x01b7, B:104:0x01c6, B:127:0x0207, B:129:0x0261, B:133:0x0270, B:137:0x027f, B:138:0x028c, B:243:0x04f1, B:245:0x0510, B:247:0x053a, B:249:0x0555, B:250:0x0577, B:252:0x0600, B:255:0x0621, B:256:0x0647, B:164:0x035d, B:175:0x03a9, B:167:0x0367, B:168:0x0373, B:170:0x037d, B:174:0x038b, B:173:0x0387, B:177:0x03bf, B:214:0x04bd, B:218:0x04c3, B:226:0x04d4, B:230:0x04da, B:179:0x03c5, B:124:0x01f4, B:257:0x066f, B:141:0x02a2, B:143:0x02b1, B:145:0x02b5, B:147:0x02c6, B:149:0x02d1, B:153:0x02de, B:154:0x0302, B:224:0x04cf), top: B:266:0x0008, inners: #5, #16, #18 }] */
+    /* JADX WARN: Removed duplicated region for block: B:151:0x02da  */
+    /* JADX WARN: Removed duplicated region for block: B:162:0x0359  */
+    /* JADX WARN: Removed duplicated region for block: B:243:0x04f1 A[Catch: all -> 0x0686, TryCatch #3 {all -> 0x0686, blocks: (B:3:0x0008, B:5:0x0015, B:6:0x001a, B:8:0x0089, B:11:0x0091, B:16:0x00a0, B:25:0x00b2, B:28:0x00ba, B:32:0x00c3, B:39:0x00d1, B:42:0x00d9, B:46:0x00e2, B:53:0x00f7, B:56:0x00ff, B:60:0x010a, B:67:0x011b, B:69:0x0123, B:71:0x0131, B:74:0x013b, B:76:0x014c, B:79:0x0156, B:81:0x0160, B:85:0x0174, B:87:0x017c, B:89:0x0188, B:91:0x0198, B:96:0x01a3, B:100:0x01ad, B:102:0x01b7, B:104:0x01c6, B:127:0x0207, B:129:0x0261, B:133:0x0270, B:137:0x027f, B:138:0x028c, B:243:0x04f1, B:245:0x0510, B:247:0x053a, B:249:0x0555, B:250:0x0577, B:252:0x0600, B:255:0x0621, B:256:0x0647, B:164:0x035d, B:175:0x03a9, B:167:0x0367, B:168:0x0373, B:170:0x037d, B:174:0x038b, B:173:0x0387, B:177:0x03bf, B:214:0x04bd, B:218:0x04c3, B:226:0x04d4, B:230:0x04da, B:179:0x03c5, B:124:0x01f4, B:257:0x066f, B:141:0x02a2, B:143:0x02b1, B:145:0x02b5, B:147:0x02c6, B:149:0x02d1, B:153:0x02de, B:154:0x0302, B:224:0x04cf), top: B:266:0x0008, inners: #5, #16, #18 }] */
+    /* JADX WARN: Removed duplicated region for block: B:244:0x050f  */
+    /* JADX WARN: Removed duplicated region for block: B:247:0x053a A[Catch: all -> 0x0686, TryCatch #3 {all -> 0x0686, blocks: (B:3:0x0008, B:5:0x0015, B:6:0x001a, B:8:0x0089, B:11:0x0091, B:16:0x00a0, B:25:0x00b2, B:28:0x00ba, B:32:0x00c3, B:39:0x00d1, B:42:0x00d9, B:46:0x00e2, B:53:0x00f7, B:56:0x00ff, B:60:0x010a, B:67:0x011b, B:69:0x0123, B:71:0x0131, B:74:0x013b, B:76:0x014c, B:79:0x0156, B:81:0x0160, B:85:0x0174, B:87:0x017c, B:89:0x0188, B:91:0x0198, B:96:0x01a3, B:100:0x01ad, B:102:0x01b7, B:104:0x01c6, B:127:0x0207, B:129:0x0261, B:133:0x0270, B:137:0x027f, B:138:0x028c, B:243:0x04f1, B:245:0x0510, B:247:0x053a, B:249:0x0555, B:250:0x0577, B:252:0x0600, B:255:0x0621, B:256:0x0647, B:164:0x035d, B:175:0x03a9, B:167:0x0367, B:168:0x0373, B:170:0x037d, B:174:0x038b, B:173:0x0387, B:177:0x03bf, B:214:0x04bd, B:218:0x04c3, B:226:0x04d4, B:230:0x04da, B:179:0x03c5, B:124:0x01f4, B:257:0x066f, B:141:0x02a2, B:143:0x02b1, B:145:0x02b5, B:147:0x02c6, B:149:0x02d1, B:153:0x02de, B:154:0x0302, B:224:0x04cf), top: B:266:0x0008, inners: #5, #16, #18 }] */
+    /* JADX WARN: Removed duplicated region for block: B:249:0x0555 A[Catch: all -> 0x0686, TryCatch #3 {all -> 0x0686, blocks: (B:3:0x0008, B:5:0x0015, B:6:0x001a, B:8:0x0089, B:11:0x0091, B:16:0x00a0, B:25:0x00b2, B:28:0x00ba, B:32:0x00c3, B:39:0x00d1, B:42:0x00d9, B:46:0x00e2, B:53:0x00f7, B:56:0x00ff, B:60:0x010a, B:67:0x011b, B:69:0x0123, B:71:0x0131, B:74:0x013b, B:76:0x014c, B:79:0x0156, B:81:0x0160, B:85:0x0174, B:87:0x017c, B:89:0x0188, B:91:0x0198, B:96:0x01a3, B:100:0x01ad, B:102:0x01b7, B:104:0x01c6, B:127:0x0207, B:129:0x0261, B:133:0x0270, B:137:0x027f, B:138:0x028c, B:243:0x04f1, B:245:0x0510, B:247:0x053a, B:249:0x0555, B:250:0x0577, B:252:0x0600, B:255:0x0621, B:256:0x0647, B:164:0x035d, B:175:0x03a9, B:167:0x0367, B:168:0x0373, B:170:0x037d, B:174:0x038b, B:173:0x0387, B:177:0x03bf, B:214:0x04bd, B:218:0x04c3, B:226:0x04d4, B:230:0x04da, B:179:0x03c5, B:124:0x01f4, B:257:0x066f, B:141:0x02a2, B:143:0x02b1, B:145:0x02b5, B:147:0x02c6, B:149:0x02d1, B:153:0x02de, B:154:0x0302, B:224:0x04cf), top: B:266:0x0008, inners: #5, #16, #18 }] */
+    /* JADX WARN: Removed duplicated region for block: B:252:0x0600 A[Catch: all -> 0x0686, TryCatch #3 {all -> 0x0686, blocks: (B:3:0x0008, B:5:0x0015, B:6:0x001a, B:8:0x0089, B:11:0x0091, B:16:0x00a0, B:25:0x00b2, B:28:0x00ba, B:32:0x00c3, B:39:0x00d1, B:42:0x00d9, B:46:0x00e2, B:53:0x00f7, B:56:0x00ff, B:60:0x010a, B:67:0x011b, B:69:0x0123, B:71:0x0131, B:74:0x013b, B:76:0x014c, B:79:0x0156, B:81:0x0160, B:85:0x0174, B:87:0x017c, B:89:0x0188, B:91:0x0198, B:96:0x01a3, B:100:0x01ad, B:102:0x01b7, B:104:0x01c6, B:127:0x0207, B:129:0x0261, B:133:0x0270, B:137:0x027f, B:138:0x028c, B:243:0x04f1, B:245:0x0510, B:247:0x053a, B:249:0x0555, B:250:0x0577, B:252:0x0600, B:255:0x0621, B:256:0x0647, B:164:0x035d, B:175:0x03a9, B:167:0x0367, B:168:0x0373, B:170:0x037d, B:174:0x038b, B:173:0x0387, B:177:0x03bf, B:214:0x04bd, B:218:0x04c3, B:226:0x04d4, B:230:0x04da, B:179:0x03c5, B:124:0x01f4, B:257:0x066f, B:141:0x02a2, B:143:0x02b1, B:145:0x02b5, B:147:0x02c6, B:149:0x02d1, B:153:0x02de, B:154:0x0302, B:224:0x04cf), top: B:266:0x0008, inners: #5, #16, #18 }] */
+    /* JADX WARN: Removed duplicated region for block: B:255:0x0621 A[Catch: all -> 0x0686, TryCatch #3 {all -> 0x0686, blocks: (B:3:0x0008, B:5:0x0015, B:6:0x001a, B:8:0x0089, B:11:0x0091, B:16:0x00a0, B:25:0x00b2, B:28:0x00ba, B:32:0x00c3, B:39:0x00d1, B:42:0x00d9, B:46:0x00e2, B:53:0x00f7, B:56:0x00ff, B:60:0x010a, B:67:0x011b, B:69:0x0123, B:71:0x0131, B:74:0x013b, B:76:0x014c, B:79:0x0156, B:81:0x0160, B:85:0x0174, B:87:0x017c, B:89:0x0188, B:91:0x0198, B:96:0x01a3, B:100:0x01ad, B:102:0x01b7, B:104:0x01c6, B:127:0x0207, B:129:0x0261, B:133:0x0270, B:137:0x027f, B:138:0x028c, B:243:0x04f1, B:245:0x0510, B:247:0x053a, B:249:0x0555, B:250:0x0577, B:252:0x0600, B:255:0x0621, B:256:0x0647, B:164:0x035d, B:175:0x03a9, B:167:0x0367, B:168:0x0373, B:170:0x037d, B:174:0x038b, B:173:0x0387, B:177:0x03bf, B:214:0x04bd, B:218:0x04c3, B:226:0x04d4, B:230:0x04da, B:179:0x03c5, B:124:0x01f4, B:257:0x066f, B:141:0x02a2, B:143:0x02b1, B:145:0x02b5, B:147:0x02c6, B:149:0x02d1, B:153:0x02de, B:154:0x0302, B:224:0x04cf), top: B:266:0x0008, inners: #5, #16, #18 }] */
+    /* JADX WARN: Removed duplicated region for block: B:25:0x00b2 A[Catch: all -> 0x0686, TryCatch #3 {all -> 0x0686, blocks: (B:3:0x0008, B:5:0x0015, B:6:0x001a, B:8:0x0089, B:11:0x0091, B:16:0x00a0, B:25:0x00b2, B:28:0x00ba, B:32:0x00c3, B:39:0x00d1, B:42:0x00d9, B:46:0x00e2, B:53:0x00f7, B:56:0x00ff, B:60:0x010a, B:67:0x011b, B:69:0x0123, B:71:0x0131, B:74:0x013b, B:76:0x014c, B:79:0x0156, B:81:0x0160, B:85:0x0174, B:87:0x017c, B:89:0x0188, B:91:0x0198, B:96:0x01a3, B:100:0x01ad, B:102:0x01b7, B:104:0x01c6, B:127:0x0207, B:129:0x0261, B:133:0x0270, B:137:0x027f, B:138:0x028c, B:243:0x04f1, B:245:0x0510, B:247:0x053a, B:249:0x0555, B:250:0x0577, B:252:0x0600, B:255:0x0621, B:256:0x0647, B:164:0x035d, B:175:0x03a9, B:167:0x0367, B:168:0x0373, B:170:0x037d, B:174:0x038b, B:173:0x0387, B:177:0x03bf, B:214:0x04bd, B:218:0x04c3, B:226:0x04d4, B:230:0x04da, B:179:0x03c5, B:124:0x01f4, B:257:0x066f, B:141:0x02a2, B:143:0x02b1, B:145:0x02b5, B:147:0x02c6, B:149:0x02d1, B:153:0x02de, B:154:0x0302, B:224:0x04cf), top: B:266:0x0008, inners: #5, #16, #18 }] */
     /* JADX WARN: Removed duplicated region for block: B:26:0x00b7  */
-    /* JADX WARN: Removed duplicated region for block: B:273:0x02bf A[EXC_TOP_SPLITTER, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:281:0x04c3 A[EXC_TOP_SPLITTER, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:28:0x00ba A[Catch: all -> 0x067c, TryCatch #17 {all -> 0x067c, blocks: (B:3:0x0008, B:5:0x0015, B:6:0x001a, B:8:0x0089, B:11:0x0091, B:16:0x00a0, B:25:0x00b2, B:28:0x00ba, B:32:0x00c3, B:39:0x00d1, B:42:0x00d9, B:46:0x00e2, B:53:0x00f7, B:56:0x00ff, B:60:0x010a, B:67:0x011a, B:69:0x0123, B:71:0x0131, B:74:0x013b, B:76:0x014b, B:78:0x0155, B:80:0x015f, B:81:0x016e, B:83:0x0176, B:85:0x0182, B:87:0x0192, B:92:0x019d, B:94:0x01a5, B:96:0x01b1, B:98:0x01bf, B:112:0x01e0, B:115:0x01ef, B:117:0x0247, B:121:0x0253, B:125:0x0263, B:126:0x026e, B:236:0x04e0, B:238:0x04ff, B:240:0x0528, B:242:0x0541, B:243:0x0563, B:245:0x05f3, B:248:0x0615, B:249:0x063d, B:153:0x0343, B:158:0x034f, B:168:0x0397, B:160:0x0357, B:161:0x0363, B:163:0x036d, B:167:0x037b, B:166:0x0377, B:170:0x03ac, B:207:0x04ac, B:211:0x04b2, B:219:0x04c3, B:223:0x04c9, B:172:0x03b2, B:217:0x04be, B:250:0x0665), top: B:287:0x0008, inners: #0, #7, #14 }] */
+    /* JADX WARN: Removed duplicated region for block: B:270:0x04d4 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:28:0x00ba A[Catch: all -> 0x0686, TryCatch #3 {all -> 0x0686, blocks: (B:3:0x0008, B:5:0x0015, B:6:0x001a, B:8:0x0089, B:11:0x0091, B:16:0x00a0, B:25:0x00b2, B:28:0x00ba, B:32:0x00c3, B:39:0x00d1, B:42:0x00d9, B:46:0x00e2, B:53:0x00f7, B:56:0x00ff, B:60:0x010a, B:67:0x011b, B:69:0x0123, B:71:0x0131, B:74:0x013b, B:76:0x014c, B:79:0x0156, B:81:0x0160, B:85:0x0174, B:87:0x017c, B:89:0x0188, B:91:0x0198, B:96:0x01a3, B:100:0x01ad, B:102:0x01b7, B:104:0x01c6, B:127:0x0207, B:129:0x0261, B:133:0x0270, B:137:0x027f, B:138:0x028c, B:243:0x04f1, B:245:0x0510, B:247:0x053a, B:249:0x0555, B:250:0x0577, B:252:0x0600, B:255:0x0621, B:256:0x0647, B:164:0x035d, B:175:0x03a9, B:167:0x0367, B:168:0x0373, B:170:0x037d, B:174:0x038b, B:173:0x0387, B:177:0x03bf, B:214:0x04bd, B:218:0x04c3, B:226:0x04d4, B:230:0x04da, B:179:0x03c5, B:124:0x01f4, B:257:0x066f, B:141:0x02a2, B:143:0x02b1, B:145:0x02b5, B:147:0x02c6, B:149:0x02d1, B:153:0x02de, B:154:0x0302, B:224:0x04cf), top: B:266:0x0008, inners: #5, #16, #18 }] */
+    /* JADX WARN: Removed duplicated region for block: B:290:0x04bd A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:292:0x0123 A[EXC_TOP_SPLITTER, SYNTHETIC] */
     /* JADX WARN: Removed duplicated region for block: B:29:0x00be  */
     /* JADX WARN: Removed duplicated region for block: B:36:0x00cd  */
-    /* JADX WARN: Removed duplicated region for block: B:39:0x00d1 A[Catch: all -> 0x067c, TryCatch #17 {all -> 0x067c, blocks: (B:3:0x0008, B:5:0x0015, B:6:0x001a, B:8:0x0089, B:11:0x0091, B:16:0x00a0, B:25:0x00b2, B:28:0x00ba, B:32:0x00c3, B:39:0x00d1, B:42:0x00d9, B:46:0x00e2, B:53:0x00f7, B:56:0x00ff, B:60:0x010a, B:67:0x011a, B:69:0x0123, B:71:0x0131, B:74:0x013b, B:76:0x014b, B:78:0x0155, B:80:0x015f, B:81:0x016e, B:83:0x0176, B:85:0x0182, B:87:0x0192, B:92:0x019d, B:94:0x01a5, B:96:0x01b1, B:98:0x01bf, B:112:0x01e0, B:115:0x01ef, B:117:0x0247, B:121:0x0253, B:125:0x0263, B:126:0x026e, B:236:0x04e0, B:238:0x04ff, B:240:0x0528, B:242:0x0541, B:243:0x0563, B:245:0x05f3, B:248:0x0615, B:249:0x063d, B:153:0x0343, B:158:0x034f, B:168:0x0397, B:160:0x0357, B:161:0x0363, B:163:0x036d, B:167:0x037b, B:166:0x0377, B:170:0x03ac, B:207:0x04ac, B:211:0x04b2, B:219:0x04c3, B:223:0x04c9, B:172:0x03b2, B:217:0x04be, B:250:0x0665), top: B:287:0x0008, inners: #0, #7, #14 }] */
+    /* JADX WARN: Removed duplicated region for block: B:39:0x00d1 A[Catch: all -> 0x0686, TryCatch #3 {all -> 0x0686, blocks: (B:3:0x0008, B:5:0x0015, B:6:0x001a, B:8:0x0089, B:11:0x0091, B:16:0x00a0, B:25:0x00b2, B:28:0x00ba, B:32:0x00c3, B:39:0x00d1, B:42:0x00d9, B:46:0x00e2, B:53:0x00f7, B:56:0x00ff, B:60:0x010a, B:67:0x011b, B:69:0x0123, B:71:0x0131, B:74:0x013b, B:76:0x014c, B:79:0x0156, B:81:0x0160, B:85:0x0174, B:87:0x017c, B:89:0x0188, B:91:0x0198, B:96:0x01a3, B:100:0x01ad, B:102:0x01b7, B:104:0x01c6, B:127:0x0207, B:129:0x0261, B:133:0x0270, B:137:0x027f, B:138:0x028c, B:243:0x04f1, B:245:0x0510, B:247:0x053a, B:249:0x0555, B:250:0x0577, B:252:0x0600, B:255:0x0621, B:256:0x0647, B:164:0x035d, B:175:0x03a9, B:167:0x0367, B:168:0x0373, B:170:0x037d, B:174:0x038b, B:173:0x0387, B:177:0x03bf, B:214:0x04bd, B:218:0x04c3, B:226:0x04d4, B:230:0x04da, B:179:0x03c5, B:124:0x01f4, B:257:0x066f, B:141:0x02a2, B:143:0x02b1, B:145:0x02b5, B:147:0x02c6, B:149:0x02d1, B:153:0x02de, B:154:0x0302, B:224:0x04cf), top: B:266:0x0008, inners: #5, #16, #18 }] */
     /* JADX WARN: Removed duplicated region for block: B:40:0x00d6  */
-    /* JADX WARN: Removed duplicated region for block: B:42:0x00d9 A[Catch: all -> 0x067c, TryCatch #17 {all -> 0x067c, blocks: (B:3:0x0008, B:5:0x0015, B:6:0x001a, B:8:0x0089, B:11:0x0091, B:16:0x00a0, B:25:0x00b2, B:28:0x00ba, B:32:0x00c3, B:39:0x00d1, B:42:0x00d9, B:46:0x00e2, B:53:0x00f7, B:56:0x00ff, B:60:0x010a, B:67:0x011a, B:69:0x0123, B:71:0x0131, B:74:0x013b, B:76:0x014b, B:78:0x0155, B:80:0x015f, B:81:0x016e, B:83:0x0176, B:85:0x0182, B:87:0x0192, B:92:0x019d, B:94:0x01a5, B:96:0x01b1, B:98:0x01bf, B:112:0x01e0, B:115:0x01ef, B:117:0x0247, B:121:0x0253, B:125:0x0263, B:126:0x026e, B:236:0x04e0, B:238:0x04ff, B:240:0x0528, B:242:0x0541, B:243:0x0563, B:245:0x05f3, B:248:0x0615, B:249:0x063d, B:153:0x0343, B:158:0x034f, B:168:0x0397, B:160:0x0357, B:161:0x0363, B:163:0x036d, B:167:0x037b, B:166:0x0377, B:170:0x03ac, B:207:0x04ac, B:211:0x04b2, B:219:0x04c3, B:223:0x04c9, B:172:0x03b2, B:217:0x04be, B:250:0x0665), top: B:287:0x0008, inners: #0, #7, #14 }] */
+    /* JADX WARN: Removed duplicated region for block: B:42:0x00d9 A[Catch: all -> 0x0686, TryCatch #3 {all -> 0x0686, blocks: (B:3:0x0008, B:5:0x0015, B:6:0x001a, B:8:0x0089, B:11:0x0091, B:16:0x00a0, B:25:0x00b2, B:28:0x00ba, B:32:0x00c3, B:39:0x00d1, B:42:0x00d9, B:46:0x00e2, B:53:0x00f7, B:56:0x00ff, B:60:0x010a, B:67:0x011b, B:69:0x0123, B:71:0x0131, B:74:0x013b, B:76:0x014c, B:79:0x0156, B:81:0x0160, B:85:0x0174, B:87:0x017c, B:89:0x0188, B:91:0x0198, B:96:0x01a3, B:100:0x01ad, B:102:0x01b7, B:104:0x01c6, B:127:0x0207, B:129:0x0261, B:133:0x0270, B:137:0x027f, B:138:0x028c, B:243:0x04f1, B:245:0x0510, B:247:0x053a, B:249:0x0555, B:250:0x0577, B:252:0x0600, B:255:0x0621, B:256:0x0647, B:164:0x035d, B:175:0x03a9, B:167:0x0367, B:168:0x0373, B:170:0x037d, B:174:0x038b, B:173:0x0387, B:177:0x03bf, B:214:0x04bd, B:218:0x04c3, B:226:0x04d4, B:230:0x04da, B:179:0x03c5, B:124:0x01f4, B:257:0x066f, B:141:0x02a2, B:143:0x02b1, B:145:0x02b5, B:147:0x02c6, B:149:0x02d1, B:153:0x02de, B:154:0x0302, B:224:0x04cf), top: B:266:0x0008, inners: #5, #16, #18 }] */
     /* JADX WARN: Removed duplicated region for block: B:43:0x00dd  */
     /* JADX WARN: Removed duplicated region for block: B:51:0x00f3  */
-    /* JADX WARN: Removed duplicated region for block: B:53:0x00f7 A[Catch: all -> 0x067c, TryCatch #17 {all -> 0x067c, blocks: (B:3:0x0008, B:5:0x0015, B:6:0x001a, B:8:0x0089, B:11:0x0091, B:16:0x00a0, B:25:0x00b2, B:28:0x00ba, B:32:0x00c3, B:39:0x00d1, B:42:0x00d9, B:46:0x00e2, B:53:0x00f7, B:56:0x00ff, B:60:0x010a, B:67:0x011a, B:69:0x0123, B:71:0x0131, B:74:0x013b, B:76:0x014b, B:78:0x0155, B:80:0x015f, B:81:0x016e, B:83:0x0176, B:85:0x0182, B:87:0x0192, B:92:0x019d, B:94:0x01a5, B:96:0x01b1, B:98:0x01bf, B:112:0x01e0, B:115:0x01ef, B:117:0x0247, B:121:0x0253, B:125:0x0263, B:126:0x026e, B:236:0x04e0, B:238:0x04ff, B:240:0x0528, B:242:0x0541, B:243:0x0563, B:245:0x05f3, B:248:0x0615, B:249:0x063d, B:153:0x0343, B:158:0x034f, B:168:0x0397, B:160:0x0357, B:161:0x0363, B:163:0x036d, B:167:0x037b, B:166:0x0377, B:170:0x03ac, B:207:0x04ac, B:211:0x04b2, B:219:0x04c3, B:223:0x04c9, B:172:0x03b2, B:217:0x04be, B:250:0x0665), top: B:287:0x0008, inners: #0, #7, #14 }] */
+    /* JADX WARN: Removed duplicated region for block: B:53:0x00f7 A[Catch: all -> 0x0686, TryCatch #3 {all -> 0x0686, blocks: (B:3:0x0008, B:5:0x0015, B:6:0x001a, B:8:0x0089, B:11:0x0091, B:16:0x00a0, B:25:0x00b2, B:28:0x00ba, B:32:0x00c3, B:39:0x00d1, B:42:0x00d9, B:46:0x00e2, B:53:0x00f7, B:56:0x00ff, B:60:0x010a, B:67:0x011b, B:69:0x0123, B:71:0x0131, B:74:0x013b, B:76:0x014c, B:79:0x0156, B:81:0x0160, B:85:0x0174, B:87:0x017c, B:89:0x0188, B:91:0x0198, B:96:0x01a3, B:100:0x01ad, B:102:0x01b7, B:104:0x01c6, B:127:0x0207, B:129:0x0261, B:133:0x0270, B:137:0x027f, B:138:0x028c, B:243:0x04f1, B:245:0x0510, B:247:0x053a, B:249:0x0555, B:250:0x0577, B:252:0x0600, B:255:0x0621, B:256:0x0647, B:164:0x035d, B:175:0x03a9, B:167:0x0367, B:168:0x0373, B:170:0x037d, B:174:0x038b, B:173:0x0387, B:177:0x03bf, B:214:0x04bd, B:218:0x04c3, B:226:0x04d4, B:230:0x04da, B:179:0x03c5, B:124:0x01f4, B:257:0x066f, B:141:0x02a2, B:143:0x02b1, B:145:0x02b5, B:147:0x02c6, B:149:0x02d1, B:153:0x02de, B:154:0x0302, B:224:0x04cf), top: B:266:0x0008, inners: #5, #16, #18 }] */
     /* JADX WARN: Removed duplicated region for block: B:54:0x00fc  */
-    /* JADX WARN: Removed duplicated region for block: B:56:0x00ff A[Catch: all -> 0x067c, TryCatch #17 {all -> 0x067c, blocks: (B:3:0x0008, B:5:0x0015, B:6:0x001a, B:8:0x0089, B:11:0x0091, B:16:0x00a0, B:25:0x00b2, B:28:0x00ba, B:32:0x00c3, B:39:0x00d1, B:42:0x00d9, B:46:0x00e2, B:53:0x00f7, B:56:0x00ff, B:60:0x010a, B:67:0x011a, B:69:0x0123, B:71:0x0131, B:74:0x013b, B:76:0x014b, B:78:0x0155, B:80:0x015f, B:81:0x016e, B:83:0x0176, B:85:0x0182, B:87:0x0192, B:92:0x019d, B:94:0x01a5, B:96:0x01b1, B:98:0x01bf, B:112:0x01e0, B:115:0x01ef, B:117:0x0247, B:121:0x0253, B:125:0x0263, B:126:0x026e, B:236:0x04e0, B:238:0x04ff, B:240:0x0528, B:242:0x0541, B:243:0x0563, B:245:0x05f3, B:248:0x0615, B:249:0x063d, B:153:0x0343, B:158:0x034f, B:168:0x0397, B:160:0x0357, B:161:0x0363, B:163:0x036d, B:167:0x037b, B:166:0x0377, B:170:0x03ac, B:207:0x04ac, B:211:0x04b2, B:219:0x04c3, B:223:0x04c9, B:172:0x03b2, B:217:0x04be, B:250:0x0665), top: B:287:0x0008, inners: #0, #7, #14 }] */
+    /* JADX WARN: Removed duplicated region for block: B:56:0x00ff A[Catch: all -> 0x0686, TryCatch #3 {all -> 0x0686, blocks: (B:3:0x0008, B:5:0x0015, B:6:0x001a, B:8:0x0089, B:11:0x0091, B:16:0x00a0, B:25:0x00b2, B:28:0x00ba, B:32:0x00c3, B:39:0x00d1, B:42:0x00d9, B:46:0x00e2, B:53:0x00f7, B:56:0x00ff, B:60:0x010a, B:67:0x011b, B:69:0x0123, B:71:0x0131, B:74:0x013b, B:76:0x014c, B:79:0x0156, B:81:0x0160, B:85:0x0174, B:87:0x017c, B:89:0x0188, B:91:0x0198, B:96:0x01a3, B:100:0x01ad, B:102:0x01b7, B:104:0x01c6, B:127:0x0207, B:129:0x0261, B:133:0x0270, B:137:0x027f, B:138:0x028c, B:243:0x04f1, B:245:0x0510, B:247:0x053a, B:249:0x0555, B:250:0x0577, B:252:0x0600, B:255:0x0621, B:256:0x0647, B:164:0x035d, B:175:0x03a9, B:167:0x0367, B:168:0x0373, B:170:0x037d, B:174:0x038b, B:173:0x0387, B:177:0x03bf, B:214:0x04bd, B:218:0x04c3, B:226:0x04d4, B:230:0x04da, B:179:0x03c5, B:124:0x01f4, B:257:0x066f, B:141:0x02a2, B:143:0x02b1, B:145:0x02b5, B:147:0x02c6, B:149:0x02d1, B:153:0x02de, B:154:0x0302, B:224:0x04cf), top: B:266:0x0008, inners: #5, #16, #18 }] */
     /* JADX WARN: Removed duplicated region for block: B:57:0x0104  */
     /* JADX WARN: Removed duplicated region for block: B:59:0x0108 A[ADDED_TO_REGION] */
-    /* JADX WARN: Removed duplicated region for block: B:65:0x0118  */
-    /* JADX WARN: Type inference failed for: r3v30 */
+    /* JADX WARN: Removed duplicated region for block: B:65:0x0119  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct add '--show-bad-code' argument
     */
-    public static java.lang.String createThemePreviewImage(java.lang.String r37, java.lang.String r38, org.telegram.p048ui.ActionBar.Theme.ThemeAccent r39) {
+    public static java.lang.String createThemePreviewImage(java.lang.String r34, java.lang.String r35, org.telegram.p048ui.ActionBar.Theme.ThemeAccent r36) {
         /*
-            Method dump skipped, instructions count: 1666
+            Method dump skipped, instructions count: 1676
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: org.telegram.p048ui.ActionBar.Theme.createThemePreviewImage(java.lang.String, java.lang.String, org.telegram.ui.ActionBar.Theme$ThemeAccent):java.lang.String");
@@ -5312,8 +5501,8 @@ public class Theme {
                 FileInputStream fileInputStream2 = new FileInputStream(str != null ? getAssetFile(str) : file);
                 int i = -1;
                 int i2 = 0;
-                int i3 = 0;
-                int i4 = -1;
+                int i3 = -1;
+                int i4 = 0;
                 boolean z = false;
                 while (true) {
                     try {
@@ -5321,22 +5510,22 @@ public class Theme {
                         if (read == i) {
                             break;
                         }
-                        int i5 = i3;
-                        int i6 = 0;
-                        int i7 = 0;
+                        int i5 = i2;
+                        int i6 = i5;
+                        int i7 = i4;
                         while (true) {
-                            if (i6 >= read) {
+                            if (i5 >= read) {
                                 break;
                             }
-                            if (bArr[i6] == 10) {
-                                int i8 = (i6 - i7) + 1;
-                                String str2 = new String(bArr, i7, i8 - 1);
+                            if (bArr[i5] == 10) {
+                                int i8 = (i5 - i6) + 1;
+                                String str2 = new String(bArr, i6, i8 - 1);
                                 if (str2.startsWith("WLS=")) {
                                     if (strArr != null && strArr.length > 0) {
                                         strArr[i2] = str2.substring(4);
                                     }
                                 } else if (str2.startsWith("WPS")) {
-                                    i4 = i8 + i5;
+                                    i3 = i8 + i7;
                                     z = true;
                                     break;
                                 } else {
@@ -5356,21 +5545,21 @@ public class Theme {
                                         hashMap.put(substring, Integer.valueOf(intValue));
                                     }
                                 }
+                                i6 += i8;
                                 i7 += i8;
-                                i5 += i8;
                             }
-                            i6++;
+                            i5++;
                             i = -1;
                             i2 = 0;
                         }
-                        if (i3 == i5) {
+                        if (i4 == i7) {
                             break;
                         }
-                        fileInputStream2.getChannel().position(i5);
+                        fileInputStream2.getChannel().position(i7);
                         if (z) {
                             break;
                         }
-                        i3 = i5;
+                        i4 = i7;
                         i = -1;
                         i2 = 0;
                     } catch (Throwable th) {
@@ -5394,7 +5583,7 @@ public class Theme {
                         }
                     }
                 }
-                hashMap.put("wallpaperFileOffset", Integer.valueOf(i4));
+                hashMap.put("wallpaperFileOffset", Integer.valueOf(i3));
                 fileInputStream2.close();
             } catch (Exception e2) {
                 FileLog.m45e(e2);
@@ -5428,22 +5617,22 @@ public class Theme {
             linkSelectionPaint = paint5;
             paint5.setPathEffect(LinkPath.getRoundedEffect());
             Resources resources = context.getResources();
-            avatarDrawables[0] = resources.getDrawable(C3286R.C3288drawable.chats_saved);
-            avatarDrawables[0] = AppCompatResources.getDrawable(context, C3286R.C3288drawable.fork_ic_cloud);
-            avatarDrawables[1] = resources.getDrawable(C3286R.C3288drawable.ghost);
+            avatarDrawables[0] = resources.getDrawable(C3301R.C3303drawable.chats_saved);
+            avatarDrawables[0] = AppCompatResources.getDrawable(context, C3301R.C3303drawable.fork_ic_cloud);
+            avatarDrawables[1] = resources.getDrawable(C3301R.C3303drawable.ghost);
             Drawable[] drawableArr = avatarDrawables;
-            int i = C3286R.C3288drawable.msg_folders_private;
+            int i = C3301R.C3303drawable.msg_folders_private;
             drawableArr[2] = resources.getDrawable(i);
-            avatarDrawables[3] = resources.getDrawable(C3286R.C3288drawable.msg_folders_requests);
-            avatarDrawables[4] = resources.getDrawable(C3286R.C3288drawable.msg_folders_groups);
-            avatarDrawables[5] = resources.getDrawable(C3286R.C3288drawable.msg_folders_channels);
-            avatarDrawables[6] = resources.getDrawable(C3286R.C3288drawable.msg_folders_bots);
-            avatarDrawables[7] = resources.getDrawable(C3286R.C3288drawable.msg_folders_muted);
-            avatarDrawables[8] = resources.getDrawable(C3286R.C3288drawable.msg_folders_read);
-            avatarDrawables[9] = resources.getDrawable(C3286R.C3288drawable.msg_folders_archive);
+            avatarDrawables[3] = resources.getDrawable(C3301R.C3303drawable.msg_folders_requests);
+            avatarDrawables[4] = resources.getDrawable(C3301R.C3303drawable.msg_folders_groups);
+            avatarDrawables[5] = resources.getDrawable(C3301R.C3303drawable.msg_folders_channels);
+            avatarDrawables[6] = resources.getDrawable(C3301R.C3303drawable.msg_folders_bots);
+            avatarDrawables[7] = resources.getDrawable(C3301R.C3303drawable.msg_folders_muted);
+            avatarDrawables[8] = resources.getDrawable(C3301R.C3303drawable.msg_folders_read);
+            avatarDrawables[9] = resources.getDrawable(C3301R.C3303drawable.msg_folders_archive);
             avatarDrawables[10] = resources.getDrawable(i);
-            avatarDrawables[11] = resources.getDrawable(C3286R.C3288drawable.chats_replies);
-            avatarDrawables[12] = resources.getDrawable(C3286R.C3288drawable.other_chats);
+            avatarDrawables[11] = resources.getDrawable(C3301R.C3303drawable.chats_replies);
+            avatarDrawables[12] = resources.getDrawable(C3301R.C3303drawable.other_chats);
             RLottieDrawable rLottieDrawable = dialogs_archiveAvatarDrawable;
             if (rLottieDrawable != null) {
                 rLottieDrawable.setCallback(null);
@@ -5469,19 +5658,19 @@ public class Theme {
             if (rLottieDrawable6 != null) {
                 rLottieDrawable6.recycle(false);
             }
-            dialogs_archiveAvatarDrawable = new RLottieDrawable(C3286R.C3291raw.chats_archiveavatar, "chats_archiveavatar", AndroidUtilities.m50dp(36), AndroidUtilities.m50dp(36), false, null);
-            dialogs_archiveDrawable = new RLottieDrawable(C3286R.C3291raw.chats_archive, "chats_archive", AndroidUtilities.m50dp(36), AndroidUtilities.m50dp(36), false, null);
-            dialogs_unarchiveDrawable = new RLottieDrawable(C3286R.C3291raw.chats_unarchive, "chats_unarchive", AndroidUtilities.m50dp(AndroidUtilities.m50dp(36)), AndroidUtilities.m50dp(36), false, null);
-            dialogs_pinArchiveDrawable = new RLottieDrawable(C3286R.C3291raw.chats_hide, "chats_hide", AndroidUtilities.m50dp(36), AndroidUtilities.m50dp(36), false, null);
-            dialogs_unpinArchiveDrawable = new RLottieDrawable(C3286R.C3291raw.chats_unhide, "chats_unhide", AndroidUtilities.m50dp(36), AndroidUtilities.m50dp(36), false, null);
-            dialogs_hidePsaDrawable = new RLottieDrawable(C3286R.C3291raw.chat_audio_record_delete, "chats_psahide", AndroidUtilities.m50dp(30), AndroidUtilities.m50dp(30), false, null);
-            dialogs_swipeMuteDrawable = new RLottieDrawable(C3286R.C3291raw.swipe_mute, "swipe_mute", AndroidUtilities.m50dp(36), AndroidUtilities.m50dp(36), false, null);
-            dialogs_swipeUnmuteDrawable = new RLottieDrawable(C3286R.C3291raw.swipe_unmute, "swipe_unmute", AndroidUtilities.m50dp(36), AndroidUtilities.m50dp(36), false, null);
-            dialogs_swipeReadDrawable = new RLottieDrawable(C3286R.C3291raw.swipe_read, "swipe_read", AndroidUtilities.m50dp(36), AndroidUtilities.m50dp(36), false, null);
-            dialogs_swipeUnreadDrawable = new RLottieDrawable(C3286R.C3291raw.swipe_unread, "swipe_unread", AndroidUtilities.m50dp(36), AndroidUtilities.m50dp(36), false, null);
-            dialogs_swipeDeleteDrawable = new RLottieDrawable(C3286R.C3291raw.swipe_delete, "swipe_delete", AndroidUtilities.m50dp(36), AndroidUtilities.m50dp(36), false, null);
-            dialogs_swipeUnpinDrawable = new RLottieDrawable(C3286R.C3291raw.swipe_unpin, "swipe_unpin", AndroidUtilities.m50dp(36), AndroidUtilities.m50dp(36), false, null);
-            dialogs_swipePinDrawable = new RLottieDrawable(C3286R.C3291raw.swipe_pin, "swipe_pin", AndroidUtilities.m50dp(36), AndroidUtilities.m50dp(36), false, null);
+            dialogs_archiveAvatarDrawable = new RLottieDrawable(C3301R.C3306raw.chats_archiveavatar, "chats_archiveavatar", AndroidUtilities.m50dp(36), AndroidUtilities.m50dp(36), false, null);
+            dialogs_archiveDrawable = new RLottieDrawable(C3301R.C3306raw.chats_archive, "chats_archive", AndroidUtilities.m50dp(36), AndroidUtilities.m50dp(36), false, null);
+            dialogs_unarchiveDrawable = new RLottieDrawable(C3301R.C3306raw.chats_unarchive, "chats_unarchive", AndroidUtilities.m50dp(AndroidUtilities.m50dp(36)), AndroidUtilities.m50dp(36), false, null);
+            dialogs_pinArchiveDrawable = new RLottieDrawable(C3301R.C3306raw.chats_hide, "chats_hide", AndroidUtilities.m50dp(36), AndroidUtilities.m50dp(36), false, null);
+            dialogs_unpinArchiveDrawable = new RLottieDrawable(C3301R.C3306raw.chats_unhide, "chats_unhide", AndroidUtilities.m50dp(36), AndroidUtilities.m50dp(36), false, null);
+            dialogs_hidePsaDrawable = new RLottieDrawable(C3301R.C3306raw.chat_audio_record_delete, "chats_psahide", AndroidUtilities.m50dp(30), AndroidUtilities.m50dp(30), false, null);
+            dialogs_swipeMuteDrawable = new RLottieDrawable(C3301R.C3306raw.swipe_mute, "swipe_mute", AndroidUtilities.m50dp(36), AndroidUtilities.m50dp(36), false, null);
+            dialogs_swipeUnmuteDrawable = new RLottieDrawable(C3301R.C3306raw.swipe_unmute, "swipe_unmute", AndroidUtilities.m50dp(36), AndroidUtilities.m50dp(36), false, null);
+            dialogs_swipeReadDrawable = new RLottieDrawable(C3301R.C3306raw.swipe_read, "swipe_read", AndroidUtilities.m50dp(36), AndroidUtilities.m50dp(36), false, null);
+            dialogs_swipeUnreadDrawable = new RLottieDrawable(C3301R.C3306raw.swipe_unread, "swipe_unread", AndroidUtilities.m50dp(36), AndroidUtilities.m50dp(36), false, null);
+            dialogs_swipeDeleteDrawable = new RLottieDrawable(C3301R.C3306raw.swipe_delete, "swipe_delete", AndroidUtilities.m50dp(36), AndroidUtilities.m50dp(36), false, null);
+            dialogs_swipeUnpinDrawable = new RLottieDrawable(C3301R.C3306raw.swipe_unpin, "swipe_unpin", AndroidUtilities.m50dp(36), AndroidUtilities.m50dp(36), false, null);
+            dialogs_swipePinDrawable = new RLottieDrawable(C3301R.C3306raw.swipe_pin, "swipe_pin", AndroidUtilities.m50dp(36), AndroidUtilities.m50dp(36), false, null);
             applyCommonTheme();
         }
     }
@@ -5596,27 +5785,27 @@ public class Theme {
             dialogs_countGrayPaint = new Paint(1);
             dialogs_errorPaint = new Paint(1);
             dialogs_actionMessagePaint = new Paint(1);
-            dialogs_lockDrawable = resources.getDrawable(C3286R.C3288drawable.list_secret);
-            dialogs_lock2Drawable = resources.getDrawable(C3286R.C3288drawable.msg_mini_lock2);
-            int i2 = C3286R.C3288drawable.list_check;
+            dialogs_lockDrawable = resources.getDrawable(C3301R.C3303drawable.list_secret);
+            dialogs_lock2Drawable = resources.getDrawable(C3301R.C3303drawable.msg_mini_lock2);
+            int i2 = C3301R.C3303drawable.list_check;
             dialogs_checkDrawable = resources.getDrawable(i2).mutate();
-            dialogs_playDrawable = resources.getDrawable(C3286R.C3288drawable.minithumb_play).mutate();
+            dialogs_playDrawable = resources.getDrawable(C3301R.C3303drawable.minithumb_play).mutate();
             dialogs_checkReadDrawable = resources.getDrawable(i2).mutate();
-            dialogs_halfCheckDrawable = resources.getDrawable(C3286R.C3288drawable.list_halfcheck);
+            dialogs_halfCheckDrawable = resources.getDrawable(C3301R.C3303drawable.list_halfcheck);
             dialogs_clockDrawable = new MsgClockDrawable();
-            dialogs_errorDrawable = resources.getDrawable(C3286R.C3288drawable.list_warning_sign);
-            dialogs_reorderDrawable = resources.getDrawable(C3286R.C3288drawable.list_reorder).mutate();
-            dialogs_muteDrawable = resources.getDrawable(C3286R.C3288drawable.list_mute).mutate();
-            dialogs_unmuteDrawable = resources.getDrawable(C3286R.C3288drawable.list_unmute).mutate();
-            dialogs_verifiedDrawable = resources.getDrawable(C3286R.C3288drawable.verified_area).mutate();
+            dialogs_errorDrawable = resources.getDrawable(C3301R.C3303drawable.list_warning_sign);
+            dialogs_reorderDrawable = resources.getDrawable(C3301R.C3303drawable.list_reorder).mutate();
+            dialogs_muteDrawable = resources.getDrawable(C3301R.C3303drawable.list_mute).mutate();
+            dialogs_unmuteDrawable = resources.getDrawable(C3301R.C3303drawable.list_unmute).mutate();
+            dialogs_verifiedDrawable = resources.getDrawable(C3301R.C3303drawable.verified_area).mutate();
             dialogs_scamDrawable = new ScamDrawable(11, 0);
             dialogs_fakeDrawable = new ScamDrawable(11, 1);
-            dialogs_verifiedCheckDrawable = resources.getDrawable(C3286R.C3288drawable.verified_check).mutate();
-            dialogs_mentionDrawable = resources.getDrawable(C3286R.C3288drawable.mentionchatslist);
-            dialogs_reactionsMentionDrawable = resources.getDrawable(C3286R.C3288drawable.reactionchatslist);
-            dialogs_pinnedDrawable = resources.getDrawable(C3286R.C3288drawable.list_pin);
-            dialogs_forum_arrowDrawable = resources.getDrawable(C3286R.C3288drawable.msg_mini_forumarrow);
-            moveUpDrawable = resources.getDrawable(C3286R.C3288drawable.preview_arrow);
+            dialogs_verifiedCheckDrawable = resources.getDrawable(C3301R.C3303drawable.verified_check).mutate();
+            dialogs_mentionDrawable = resources.getDrawable(C3301R.C3303drawable.mentionchatslist);
+            dialogs_reactionsMentionDrawable = resources.getDrawable(C3301R.C3303drawable.reactionchatslist);
+            dialogs_pinnedDrawable = resources.getDrawable(C3301R.C3303drawable.list_pin);
+            dialogs_forum_arrowDrawable = resources.getDrawable(C3301R.C3303drawable.msg_mini_forumarrow);
+            moveUpDrawable = resources.getDrawable(C3301R.C3303drawable.preview_arrow);
             RectF rectF = new RectF();
             chat_updatePath[0] = new Path();
             chat_updatePath[2] = new Path();
@@ -5891,20 +6080,21 @@ public class Theme {
 
     public static void createChatResources(Context context, boolean z) {
         TextPaint textPaint;
+        float f;
         createCommonChatResources();
         if (!z && chat_msgInDrawable == null) {
             Resources resources = context.getResources();
-            int i = C3286R.C3288drawable.arrow_more;
+            int i = C3301R.C3303drawable.arrow_more;
             chat_msgInSpoilerDrawable = resources.getDrawable(i).mutate();
             chat_msgOutSpoilerDrawable = resources.getDrawable(i).mutate();
-            int i2 = C3286R.C3288drawable.fork_chat_bookmarks_mark;
+            int i2 = C3301R.C3303drawable.fork_chat_bookmarks_mark;
             chat_msgInBookmarkDrawable = resources.getDrawable(i2).mutate();
             chat_msgInBookmarkSelectedDrawable = resources.getDrawable(i2).mutate();
             chat_msgOutBookmarkDrawable = resources.getDrawable(i2).mutate();
             chat_msgOutBookmarkSelectedDrawable = resources.getDrawable(i2).mutate();
             chat_msgMediaBookmarkDrawable = resources.getDrawable(i2).mutate();
             chat_msgStickerBookmarkDrawable = resources.getDrawable(i2).mutate();
-            chat_msgNoSoundDrawable = resources.getDrawable(C3286R.C3288drawable.video_muted);
+            chat_msgNoSoundDrawable = resources.getDrawable(C3301R.C3303drawable.video_muted);
             chat_msgInDrawable = new MessageDrawable(0, false, false);
             chat_msgInSelectedDrawable = new MessageDrawable(0, false, true);
             chat_msgOutDrawable = new MessageDrawable(0, true, false);
@@ -5922,33 +6112,33 @@ public class Theme {
             playPauseAnimator.addSvgKeyFrame("M 47.421 16.941 C 50.544 18.191 50.783 19.91 50.769 22.706 C 50.761 24.484 50.76 23.953 50.79 26.073 C 50.814 27.835 49.334 30 47.124 30 L 5 30.01 C 2.79 30.01 1 28.22 1 26.01 L 1.001 10.823 C 1.001 8.218 3.532 6.895 5.572 7.26 C 7.493 8.01 47.421 16.941 47.421 16.941 Z", 267.0f);
             playPauseAnimator.addSvgKeyFrame("M 47.641 17.125 C 50.641 18.207 51.09 19.935 51.078 22.653 C 51.07 24.191 51.062 21.23 51.088 23.063 C 51.109 24.886 49.587 27 47.377 27 L 5 27.009 C 2.79 27.009 1 25.219 1 23.009 L 0.983 11.459 C 0.983 8.908 3.414 7.522 5.476 7.838 C 7.138 8.486 47.641 17.125 47.641 17.125 Z", 300.0f);
             playPauseAnimator.addSvgKeyFrame("M 48 7 C 50.21 7 52 8.79 52 11 C 52 19 52 19 52 19 C 52 21.21 50.21 23 48 23 L 4 23 C 1.79 23 0 21.21 0 19 L 0 11 C 0 8.79 1.79 7 4 7 C 48 7 48 7 48 7 Z", 383.0f);
-            int i3 = C3286R.C3288drawable.msg_check_s;
+            int i3 = C3301R.C3303drawable.msg_check_s;
             chat_msgOutCheckDrawable = resources.getDrawable(i3).mutate();
             chat_msgOutCheckSelectedDrawable = resources.getDrawable(i3).mutate();
             chat_msgOutCheckReadDrawable = resources.getDrawable(i3).mutate();
             chat_msgOutCheckReadSelectedDrawable = resources.getDrawable(i3).mutate();
             chat_msgMediaCheckDrawable = resources.getDrawable(i3).mutate();
             chat_msgStickerCheckDrawable = resources.getDrawable(i3).mutate();
-            int i4 = C3286R.C3288drawable.msg_halfcheck;
+            int i4 = C3301R.C3303drawable.msg_halfcheck;
             chat_msgOutHalfCheckDrawable = resources.getDrawable(i4).mutate();
             chat_msgOutHalfCheckSelectedDrawable = resources.getDrawable(i4).mutate();
-            int i5 = C3286R.C3288drawable.msg_halfcheck_s;
+            int i5 = C3301R.C3303drawable.msg_halfcheck_s;
             chat_msgMediaHalfCheckDrawable = resources.getDrawable(i5).mutate();
             chat_msgStickerHalfCheckDrawable = resources.getDrawable(i5).mutate();
             chat_msgClockDrawable = new MsgClockDrawable();
-            int i6 = C3286R.C3288drawable.ic_lock_header;
+            int i6 = C3301R.C3303drawable.ic_lock_header;
             chat_msgUnlockDrawable = resources.getDrawable(i6).mutate();
-            int i7 = C3286R.C3288drawable.msg_views;
+            int i7 = C3301R.C3303drawable.msg_views;
             chat_msgInViewsDrawable = resources.getDrawable(i7).mutate();
             chat_msgInViewsSelectedDrawable = resources.getDrawable(i7).mutate();
             chat_msgOutViewsDrawable = resources.getDrawable(i7).mutate();
             chat_msgOutViewsSelectedDrawable = resources.getDrawable(i7).mutate();
-            int i8 = C3286R.C3288drawable.msg_reply_small;
+            int i8 = C3301R.C3303drawable.msg_reply_small;
             chat_msgInRepliesDrawable = resources.getDrawable(i8).mutate();
             chat_msgInRepliesSelectedDrawable = resources.getDrawable(i8).mutate();
             chat_msgOutRepliesDrawable = resources.getDrawable(i8).mutate();
             chat_msgOutRepliesSelectedDrawable = resources.getDrawable(i8).mutate();
-            int i9 = C3286R.C3288drawable.msg_pin_mini;
+            int i9 = C3301R.C3303drawable.msg_pin_mini;
             chat_msgInPinnedDrawable = resources.getDrawable(i9).mutate();
             chat_msgInPinnedSelectedDrawable = resources.getDrawable(i9).mutate();
             chat_msgOutPinnedDrawable = resources.getDrawable(i9).mutate();
@@ -5959,75 +6149,75 @@ public class Theme {
             chat_msgMediaRepliesDrawable = resources.getDrawable(i8).mutate();
             chat_msgStickerViewsDrawable = resources.getDrawable(i7).mutate();
             chat_msgStickerRepliesDrawable = resources.getDrawable(i8).mutate();
-            int i10 = C3286R.C3288drawable.msg_actions;
+            int i10 = C3301R.C3303drawable.msg_actions;
             chat_msgInMenuDrawable = resources.getDrawable(i10).mutate();
             chat_msgInMenuSelectedDrawable = resources.getDrawable(i10).mutate();
             chat_msgOutMenuDrawable = resources.getDrawable(i10).mutate();
             chat_msgOutMenuSelectedDrawable = resources.getDrawable(i10).mutate();
-            chat_msgMediaMenuDrawable = resources.getDrawable(C3286R.C3288drawable.video_actions);
-            int i11 = C3286R.C3288drawable.msg_instant;
+            chat_msgMediaMenuDrawable = resources.getDrawable(C3301R.C3303drawable.video_actions);
+            int i11 = C3301R.C3303drawable.msg_instant;
             chat_msgInInstantDrawable = resources.getDrawable(i11).mutate();
             chat_msgOutInstantDrawable = resources.getDrawable(i11).mutate();
-            chat_msgErrorDrawable = resources.getDrawable(C3286R.C3288drawable.msg_warning);
-            chat_muteIconDrawable = resources.getDrawable(C3286R.C3288drawable.list_mute).mutate();
+            chat_msgErrorDrawable = resources.getDrawable(C3301R.C3303drawable.msg_warning);
+            chat_muteIconDrawable = resources.getDrawable(C3301R.C3303drawable.list_mute).mutate();
             chat_lockIconDrawable = resources.getDrawable(i6);
             Drawable[] drawableArr = chat_msgInCallDrawable;
-            int i12 = C3286R.C3288drawable.chat_calls_voice;
+            int i12 = C3301R.C3303drawable.chat_calls_voice;
             drawableArr[0] = resources.getDrawable(i12).mutate();
             chat_msgInCallSelectedDrawable[0] = resources.getDrawable(i12).mutate();
             chat_msgOutCallDrawable[0] = resources.getDrawable(i12).mutate();
             chat_msgOutCallSelectedDrawable[0] = resources.getDrawable(i12).mutate();
             Drawable[] drawableArr2 = chat_msgInCallDrawable;
-            int i13 = C3286R.C3288drawable.chat_calls_video;
+            int i13 = C3301R.C3303drawable.chat_calls_video;
             drawableArr2[1] = resources.getDrawable(i13).mutate();
             chat_msgInCallSelectedDrawable[1] = resources.getDrawable(i13).mutate();
             chat_msgOutCallDrawable[1] = resources.getDrawable(i13).mutate();
             chat_msgOutCallSelectedDrawable[1] = resources.getDrawable(i13).mutate();
-            chat_msgCallUpGreenDrawable = resources.getDrawable(C3286R.C3288drawable.chat_calls_outgoing).mutate();
-            int i14 = C3286R.C3288drawable.chat_calls_incoming;
+            chat_msgCallUpGreenDrawable = resources.getDrawable(C3301R.C3303drawable.chat_calls_outgoing).mutate();
+            int i14 = C3301R.C3303drawable.chat_calls_incoming;
             chat_msgCallDownRedDrawable = resources.getDrawable(i14).mutate();
             chat_msgCallDownGreenDrawable = resources.getDrawable(i14).mutate();
             for (int i15 = 0; i15 < 2; i15++) {
-                chat_pollCheckDrawable[i15] = resources.getDrawable(C3286R.C3288drawable.poll_right).mutate();
-                chat_pollCrossDrawable[i15] = resources.getDrawable(C3286R.C3288drawable.poll_wrong).mutate();
-                chat_pollHintDrawable[i15] = resources.getDrawable(C3286R.C3288drawable.msg_emoji_objects).mutate();
-                chat_psaHelpDrawable[i15] = resources.getDrawable(C3286R.C3288drawable.msg_psa).mutate();
+                chat_pollCheckDrawable[i15] = resources.getDrawable(C3301R.C3303drawable.poll_right).mutate();
+                chat_pollCrossDrawable[i15] = resources.getDrawable(C3301R.C3303drawable.poll_wrong).mutate();
+                chat_pollHintDrawable[i15] = resources.getDrawable(C3301R.C3303drawable.msg_emoji_objects).mutate();
+                chat_psaHelpDrawable[i15] = resources.getDrawable(C3301R.C3303drawable.msg_psa).mutate();
             }
-            int i16 = C3286R.C3288drawable.ic_call_made_green_18dp;
+            int i16 = C3301R.C3303drawable.ic_call_made_green_18dp;
             calllog_msgCallUpRedDrawable = resources.getDrawable(i16).mutate();
             calllog_msgCallUpGreenDrawable = resources.getDrawable(i16).mutate();
-            int i17 = C3286R.C3288drawable.ic_call_received_green_18dp;
+            int i17 = C3301R.C3303drawable.ic_call_received_green_18dp;
             calllog_msgCallDownRedDrawable = resources.getDrawable(i17).mutate();
             calllog_msgCallDownGreenDrawable = resources.getDrawable(i17).mutate();
-            chat_msgAvatarLiveLocationDrawable = resources.getDrawable(C3286R.C3288drawable.livepin).mutate();
-            chat_inlineResultFile = resources.getDrawable(C3286R.C3288drawable.bot_file);
-            chat_inlineResultAudio = resources.getDrawable(C3286R.C3288drawable.bot_music);
-            chat_inlineResultLocation = resources.getDrawable(C3286R.C3288drawable.bot_location);
-            chat_redLocationIcon = resources.getDrawable(C3286R.C3288drawable.map_pin).mutate();
-            chat_botLinkDrawable = resources.getDrawable(C3286R.C3288drawable.bot_link);
-            chat_botInlineDrawable = resources.getDrawable(C3286R.C3288drawable.bot_lines);
-            chat_botCardDrawable = resources.getDrawable(C3286R.C3288drawable.bot_card);
-            chat_botWebViewDrawable = resources.getDrawable(C3286R.C3288drawable.bot_webview);
-            chat_botInviteDrawable = resources.getDrawable(C3286R.C3288drawable.bot_invite);
-            chat_commentDrawable = resources.getDrawable(C3286R.C3288drawable.msg_msgbubble);
-            chat_commentStickerDrawable = resources.getDrawable(C3286R.C3288drawable.msg_msgbubble2);
-            chat_commentArrowDrawable = resources.getDrawable(C3286R.C3288drawable.msg_arrowright);
-            chat_gradientLeftDrawable = resources.getDrawable(C3286R.C3288drawable.gradient_left);
-            chat_gradientRightDrawable = resources.getDrawable(C3286R.C3288drawable.gradient_right);
-            chat_contextResult_shadowUnderSwitchDrawable = resources.getDrawable(C3286R.C3288drawable.header_shadow).mutate();
-            chat_attachButtonDrawables[0] = new RLottieDrawable(C3286R.C3291raw.attach_gallery, "attach_gallery", AndroidUtilities.m50dp(26), AndroidUtilities.m50dp(26));
-            chat_attachButtonDrawables[1] = new RLottieDrawable(C3286R.C3291raw.attach_music, "attach_music", AndroidUtilities.m50dp(26), AndroidUtilities.m50dp(26));
-            chat_attachButtonDrawables[2] = new RLottieDrawable(C3286R.C3291raw.attach_file, "attach_file", AndroidUtilities.m50dp(26), AndroidUtilities.m50dp(26));
-            chat_attachButtonDrawables[3] = new RLottieDrawable(C3286R.C3291raw.attach_contact, "attach_contact", AndroidUtilities.m50dp(26), AndroidUtilities.m50dp(26));
-            chat_attachButtonDrawables[4] = new RLottieDrawable(C3286R.C3291raw.attach_location, "attach_location", AndroidUtilities.m50dp(26), AndroidUtilities.m50dp(26));
-            chat_attachButtonDrawables[5] = new RLottieDrawable(C3286R.C3291raw.attach_poll, "attach_poll", AndroidUtilities.m50dp(26), AndroidUtilities.m50dp(26));
-            chat_attachButtonDrawables[6] = new RLottieDrawable(C3286R.C3291raw.fork_attach_wallet, "attach_wallet", AndroidUtilities.m50dp(26), AndroidUtilities.m50dp(26));
-            chat_attachButtonDrawables[7] = new RLottieDrawable(C3286R.C3291raw.fork_attach_binance, "attach_binance", AndroidUtilities.m50dp(26), AndroidUtilities.m50dp(26));
-            chat_attachButtonDrawables[8] = new RLottieDrawable(C3286R.C3291raw.fork_attach_templates, "attach_templates", AndroidUtilities.m50dp(26), AndroidUtilities.m50dp(26));
-            chat_attachEmptyDrawable = resources.getDrawable(C3286R.C3288drawable.nophotos3);
-            chat_shareIconDrawable = resources.getDrawable(C3286R.C3288drawable.share_arrow).mutate();
-            chat_replyIconDrawable = resources.getDrawable(C3286R.C3288drawable.fast_reply);
-            chat_goIconDrawable = resources.getDrawable(C3286R.C3288drawable.message_arrow);
+            chat_msgAvatarLiveLocationDrawable = resources.getDrawable(C3301R.C3303drawable.livepin).mutate();
+            chat_inlineResultFile = resources.getDrawable(C3301R.C3303drawable.bot_file);
+            chat_inlineResultAudio = resources.getDrawable(C3301R.C3303drawable.bot_music);
+            chat_inlineResultLocation = resources.getDrawable(C3301R.C3303drawable.bot_location);
+            chat_redLocationIcon = resources.getDrawable(C3301R.C3303drawable.map_pin).mutate();
+            chat_botLinkDrawable = resources.getDrawable(C3301R.C3303drawable.bot_link);
+            chat_botInlineDrawable = resources.getDrawable(C3301R.C3303drawable.bot_lines);
+            chat_botCardDrawable = resources.getDrawable(C3301R.C3303drawable.bot_card);
+            chat_botWebViewDrawable = resources.getDrawable(C3301R.C3303drawable.bot_webview);
+            chat_botInviteDrawable = resources.getDrawable(C3301R.C3303drawable.bot_invite);
+            chat_commentDrawable = resources.getDrawable(C3301R.C3303drawable.msg_msgbubble);
+            chat_commentStickerDrawable = resources.getDrawable(C3301R.C3303drawable.msg_msgbubble2);
+            chat_commentArrowDrawable = resources.getDrawable(C3301R.C3303drawable.msg_arrowright);
+            chat_gradientLeftDrawable = resources.getDrawable(C3301R.C3303drawable.gradient_left);
+            chat_gradientRightDrawable = resources.getDrawable(C3301R.C3303drawable.gradient_right);
+            chat_contextResult_shadowUnderSwitchDrawable = resources.getDrawable(C3301R.C3303drawable.header_shadow).mutate();
+            chat_attachButtonDrawables[0] = new RLottieDrawable(C3301R.C3306raw.attach_gallery, "attach_gallery", AndroidUtilities.m50dp(26), AndroidUtilities.m50dp(26));
+            chat_attachButtonDrawables[1] = new RLottieDrawable(C3301R.C3306raw.attach_music, "attach_music", AndroidUtilities.m50dp(26), AndroidUtilities.m50dp(26));
+            chat_attachButtonDrawables[2] = new RLottieDrawable(C3301R.C3306raw.attach_file, "attach_file", AndroidUtilities.m50dp(26), AndroidUtilities.m50dp(26));
+            chat_attachButtonDrawables[3] = new RLottieDrawable(C3301R.C3306raw.attach_contact, "attach_contact", AndroidUtilities.m50dp(26), AndroidUtilities.m50dp(26));
+            chat_attachButtonDrawables[4] = new RLottieDrawable(C3301R.C3306raw.attach_location, "attach_location", AndroidUtilities.m50dp(26), AndroidUtilities.m50dp(26));
+            chat_attachButtonDrawables[5] = new RLottieDrawable(C3301R.C3306raw.attach_poll, "attach_poll", AndroidUtilities.m50dp(26), AndroidUtilities.m50dp(26));
+            chat_attachButtonDrawables[6] = new RLottieDrawable(C3301R.C3306raw.fork_attach_wallet, "attach_wallet", AndroidUtilities.m50dp(26), AndroidUtilities.m50dp(26));
+            chat_attachButtonDrawables[7] = new RLottieDrawable(C3301R.C3306raw.fork_attach_binance, "attach_binance", AndroidUtilities.m50dp(26), AndroidUtilities.m50dp(26));
+            chat_attachButtonDrawables[8] = new RLottieDrawable(C3301R.C3306raw.fork_attach_templates, "attach_templates", AndroidUtilities.m50dp(26), AndroidUtilities.m50dp(26));
+            chat_attachEmptyDrawable = resources.getDrawable(C3301R.C3303drawable.nophotos3);
+            chat_shareIconDrawable = resources.getDrawable(C3301R.C3303drawable.share_arrow).mutate();
+            chat_replyIconDrawable = resources.getDrawable(C3301R.C3303drawable.fast_reply);
+            chat_goIconDrawable = resources.getDrawable(C3301R.C3303drawable.message_arrow);
             int m50dp = AndroidUtilities.m50dp(2);
             RectF rectF = new RectF();
             chat_filePath[0] = new Path();
@@ -6050,47 +6240,47 @@ public class Theme {
             chat_filePath[1].lineTo(AndroidUtilities.m50dp(19), AndroidUtilities.m50dp(10));
             chat_filePath[1].lineTo(AndroidUtilities.m50dp(14), AndroidUtilities.m50dp(10));
             chat_filePath[1].close();
-            chat_backupIconDrawable = resources.getDrawable(C3286R.C3288drawable.fork_settings_filled).mutate();
-            chat_flameIcon = resources.getDrawable(C3286R.C3288drawable.burn).mutate();
-            chat_gifIcon = resources.getDrawable(C3286R.C3288drawable.msg_round_gif_m).mutate();
+            chat_backupIconDrawable = resources.getDrawable(C3301R.C3303drawable.fork_settings_filled).mutate();
+            chat_flameIcon = resources.getDrawable(C3301R.C3303drawable.burn).mutate();
+            chat_gifIcon = resources.getDrawable(C3301R.C3303drawable.msg_round_gif_m).mutate();
             Drawable[] drawableArr3 = chat_fileStatesDrawable[0];
             int m50dp2 = AndroidUtilities.m50dp(44);
-            int i19 = C3286R.C3288drawable.msg_round_play_m;
+            int i19 = C3301R.C3303drawable.msg_round_play_m;
             drawableArr3[0] = createCircleDrawableWithIcon(m50dp2, i19);
             chat_fileStatesDrawable[0][1] = createCircleDrawableWithIcon(AndroidUtilities.m50dp(44), i19);
             Drawable[] drawableArr4 = chat_fileStatesDrawable[1];
             int m50dp3 = AndroidUtilities.m50dp(44);
-            int i20 = C3286R.C3288drawable.msg_round_pause_m;
+            int i20 = C3301R.C3303drawable.msg_round_pause_m;
             drawableArr4[0] = createCircleDrawableWithIcon(m50dp3, i20);
             chat_fileStatesDrawable[1][1] = createCircleDrawableWithIcon(AndroidUtilities.m50dp(44), i20);
             Drawable[] drawableArr5 = chat_fileStatesDrawable[2];
             int m50dp4 = AndroidUtilities.m50dp(44);
-            int i21 = C3286R.C3288drawable.msg_round_load_m;
+            int i21 = C3301R.C3303drawable.msg_round_load_m;
             drawableArr5[0] = createCircleDrawableWithIcon(m50dp4, i21);
             chat_fileStatesDrawable[2][1] = createCircleDrawableWithIcon(AndroidUtilities.m50dp(44), i21);
             Drawable[] drawableArr6 = chat_fileStatesDrawable[3];
             int m50dp5 = AndroidUtilities.m50dp(44);
-            int i22 = C3286R.C3288drawable.msg_round_file_s;
+            int i22 = C3301R.C3303drawable.msg_round_file_s;
             drawableArr6[0] = createCircleDrawableWithIcon(m50dp5, i22);
             chat_fileStatesDrawable[3][1] = createCircleDrawableWithIcon(AndroidUtilities.m50dp(44), i22);
             Drawable[] drawableArr7 = chat_fileStatesDrawable[4];
             int m50dp6 = AndroidUtilities.m50dp(44);
-            int i23 = C3286R.C3288drawable.msg_round_cancel_m;
+            int i23 = C3301R.C3303drawable.msg_round_cancel_m;
             drawableArr7[0] = createCircleDrawableWithIcon(m50dp6, i23);
             chat_fileStatesDrawable[4][1] = createCircleDrawableWithIcon(AndroidUtilities.m50dp(44), i23);
             Drawable[] drawableArr8 = chat_contactDrawable;
             int m50dp7 = AndroidUtilities.m50dp(44);
-            int i24 = C3286R.C3288drawable.msg_contact;
+            int i24 = C3301R.C3303drawable.msg_contact;
             drawableArr8[0] = createCircleDrawableWithIcon(m50dp7, i24);
             chat_contactDrawable[1] = createCircleDrawableWithIcon(AndroidUtilities.m50dp(44), i24);
             Drawable[] drawableArr9 = chat_locationDrawable;
-            int i25 = C3286R.C3288drawable.msg_location;
+            int i25 = C3301R.C3303drawable.msg_location;
             drawableArr9[0] = resources.getDrawable(i25).mutate();
             chat_locationDrawable[1] = resources.getDrawable(i25).mutate();
-            chat_composeShadowDrawable = context.getResources().getDrawable(C3286R.C3288drawable.compose_panel_shadow).mutate();
-            chat_composeShadowRoundDrawable = context.getResources().getDrawable(C3286R.C3288drawable.sheet_shadow_round).mutate();
-            chat_translateIconDrawable = AppCompatResources.getDrawable(context, C3286R.C3288drawable.msg_translate);
-            chat_editIconDrawable = AppCompatResources.getDrawable(context, C3286R.C3288drawable.msg_edit);
+            chat_composeShadowDrawable = context.getResources().getDrawable(C3301R.C3303drawable.compose_panel_shadow).mutate();
+            chat_composeShadowRoundDrawable = context.getResources().getDrawable(C3301R.C3303drawable.sheet_shadow_round).mutate();
+            chat_translateIconDrawable = AppCompatResources.getDrawable(context, C3301R.C3303drawable.msg_translate);
+            chat_editIconDrawable = AppCompatResources.getDrawable(context, C3301R.C3303drawable.msg_edit);
             try {
                 int m50dp8 = AndroidUtilities.roundMessageSize + AndroidUtilities.m50dp(6);
                 Bitmap createBitmap = Bitmap.createBitmap(m50dp8, m50dp8, Bitmap.Config.ARGB_8888);
@@ -6183,11 +6373,10 @@ public class Theme {
         chat_contactNamePaint.setTextSize(AndroidUtilities.m50dp(15));
         chat_contactPhonePaint.setTextSize(AndroidUtilities.m50dp(13));
         chat_durationPaint.setTextSize(AndroidUtilities.m50dp(12));
-        float f = ((SharedConfig.fontSize * 2) + 10) / 3.0f;
         chat_namePaint.setTextSize(AndroidUtilities.m51dp(f));
         chat_replyNamePaint.setTextSize(AndroidUtilities.m51dp(f));
         chat_replyTextPaint.setTextSize(AndroidUtilities.m51dp(f));
-        float f2 = f - 1.0f;
+        float f2 = (((SharedConfig.fontSize * 2) + 10) / 3.0f) - 1.0f;
         chat_topicTextPaint.setTextSize(AndroidUtilities.m51dp(f2));
         chat_forwardNamePaint.setTextSize(AndroidUtilities.m51dp(f));
         chat_adminPaint.setTextSize(AndroidUtilities.m51dp(f2));
@@ -6465,7 +6654,10 @@ public class Theme {
             drawable = drawable2;
         }
         boolean z2 = drawable instanceof MotionBackgroundDrawable;
-        if ((z2 && SharedConfig.getDevicePerformanceClass() != 0 && LiteMode.isEnabled(32)) ? false : false) {
+        if (!z2 || SharedConfig.getDevicePerformanceClass() == 0 || !LiteMode.isEnabled(32)) {
+            z = false;
+        }
+        if (z) {
             Bitmap bitmap = ((MotionBackgroundDrawable) drawable).getBitmap();
             if (serviceBitmap != bitmap) {
                 serviceBitmap = bitmap;
@@ -6580,8 +6772,8 @@ public class Theme {
         if (profile_verifiedDrawable == null) {
             profile_aboutTextPaint = new TextPaint(1);
             Resources resources = context.getResources();
-            profile_verifiedDrawable = resources.getDrawable(C3286R.C3288drawable.verified_area).mutate();
-            profile_verifiedCheckDrawable = resources.getDrawable(C3286R.C3288drawable.verified_check).mutate();
+            profile_verifiedDrawable = resources.getDrawable(C3301R.C3303drawable.verified_area).mutate();
+            profile_verifiedCheckDrawable = resources.getDrawable(C3301R.C3303drawable.verified_check).mutate();
             applyProfileTheme();
         }
         profile_aboutTextPaint.setTextSize(AndroidUtilities.m50dp(16));
@@ -7104,8 +7296,8 @@ public class Theme {
         NotificationCenter.getGlobalInstance().postNotificationName(NotificationCenter.didSetNewWallpapper, new Object[0]);
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:27:0x0047  */
-    /* JADX WARN: Removed duplicated region for block: B:28:0x004d  */
+    /* JADX WARN: Removed duplicated region for block: B:27:0x0046  */
+    /* JADX WARN: Removed duplicated region for block: B:28:0x004b  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct add '--show-bad-code' argument
@@ -7120,10 +7312,10 @@ public class Theme {
             int r1 = r0.currentAccentId
             int r4 = org.telegram.p048ui.ActionBar.Theme.DEFALT_THEME_ACCENT_ID
             if (r1 != r4) goto Lf
-            r8 = 1
+            r8 = r2
             goto L10
         Lf:
-            r8 = 0
+            r8 = r3
         L10:
             org.telegram.ui.ActionBar.Theme$ThemeAccent r1 = r13.getAccent(r3)
             if (r1 == 0) goto L1b
@@ -7135,42 +7327,41 @@ public class Theme {
             if (r1 == 0) goto L24
             boolean r5 = r1.patternMotion
             if (r5 == 0) goto L24
-            r11 = 1
+            r11 = r2
             goto L25
         L24:
-            r11 = 0
+            r11 = r3
         L25:
             org.telegram.ui.ActionBar.Theme$OverrideWallpaperInfo r2 = r0.overrideWallpaper
             r3 = 1120403456(0x42c80000, float:100.0)
-            if (r2 == 0) goto L32
+            if (r2 == 0) goto L31
             float r1 = r2.intensity
         L2d:
             float r1 = r1 * r3
-        L2f:
+        L2e:
             int r1 = (int) r1
             r6 = r1
-            goto L3b
-        L32:
-            if (r1 == 0) goto L37
+            goto L3a
+        L31:
+            if (r1 == 0) goto L36
             float r1 = r1.patternIntensity
             goto L2d
-        L37:
+        L36:
             int r1 = r0.patternIntensity
             float r1 = (float) r1
-            goto L2f
-        L3b:
+            goto L2e
+        L3a:
             java.util.HashMap<java.lang.String, java.lang.Integer> r1 = org.telegram.p048ui.ActionBar.Theme.currentColorsNoAccent
             java.lang.String r3 = "wallpaperFileOffset"
             java.lang.Object r1 = r1.get(r3)
             java.lang.Integer r1 = (java.lang.Integer) r1
-            if (r1 == 0) goto L4d
+            if (r1 == 0) goto L4b
             int r1 = r1.intValue()
-            r5 = r1
-            goto L4f
-        L4d:
+            goto L4c
+        L4b:
             r1 = -1
-            r5 = -1
-        L4f:
+        L4c:
+            r5 = r1
             r9 = 0
             r10 = 0
             r12 = 0
@@ -7186,14 +7377,14 @@ public class Theme {
         throw new UnsupportedOperationException("Method not decompiled: org.telegram.p048ui.ActionBar.Theme.createBackgroundDrawable(org.telegram.ui.ActionBar.Theme$ThemeInfo, java.util.HashMap, java.lang.String, int):org.telegram.ui.ActionBar.Theme$BackgroundDrawableSettings");
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:134:0x0313  */
+    /* JADX WARN: Removed duplicated region for block: B:132:0x030f  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct add '--show-bad-code' argument
     */
     public static org.telegram.p048ui.ActionBar.Theme.BackgroundDrawableSettings createBackgroundDrawable(org.telegram.p048ui.ActionBar.Theme.ThemeInfo r24, org.telegram.p048ui.ActionBar.Theme.OverrideWallpaperInfo r25, java.util.HashMap<java.lang.String, java.lang.Integer> r26, java.io.File r27, java.lang.String r28, int r29, int r30, int r31, boolean r32, boolean r33, boolean r34, boolean r35, org.telegram.tgnet.TLRPC$Document r36) {
         /*
-            Method dump skipped, instructions count: 900
+            Method dump skipped, instructions count: 896
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: org.telegram.p048ui.ActionBar.Theme.createBackgroundDrawable(org.telegram.ui.ActionBar.Theme$ThemeInfo, org.telegram.ui.ActionBar.Theme$OverrideWallpaperInfo, java.util.HashMap, java.io.File, java.lang.String, int, int, int, boolean, boolean, boolean, boolean, org.telegram.tgnet.TLRPC$Document):org.telegram.ui.ActionBar.Theme$BackgroundDrawableSettings");
@@ -7211,7 +7402,7 @@ public class Theme {
             Point point2 = AndroidUtilities.displaySize;
             i2 = Math.max(point2.x, point2.y);
         }
-        motionBackgroundDrawable.setPatternBitmap(34, SvgHelper.getBitmap(C3286R.C3291raw.default_pattern, i, i2, -16777216));
+        motionBackgroundDrawable.setPatternBitmap(34, SvgHelper.getBitmap(C3301R.C3306raw.default_pattern, i, i2, -16777216));
         motionBackgroundDrawable.setPatternColorFilter(motionBackgroundDrawable.getPatternColor());
         return motionBackgroundDrawable;
     }
@@ -7291,24 +7482,145 @@ public class Theme {
         }
     }
 
-    /* JADX WARN: Can't wrap try/catch for region: R(7:1|(3:3|(1:5)|(2:7|8)(4:10|(1:100)|(4:21|(1:23)(1:89)|24|(1:26))(1:(5:91|(1:93)(1:98)|(1:95)|96|97)(1:99))|27))(3:101|(2:103|(6:107|(1:109)(1:111)|110|29|(7:32|33|34|35|(2:37|(2:38|(1:44)(1:42)))(0)|46|(6:48|(1:50)|51|52|53|54)(1:(4:59|60|61|62)(2:66|67)))|31))|112)|28|29|(0)|31|(1:(0))) */
-    /* JADX WARN: Code restructure failed: missing block: B:92:0x0179, code lost:
-        r0 = move-exception;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:93:0x017a, code lost:
-        org.telegram.messenger.FileLog.m45e(r0);
-     */
-    /* JADX WARN: Removed duplicated region for block: B:111:0x00f8 A[EXC_TOP_SPLITTER, SYNTHETIC] */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-        To view partially-correct add '--show-bad-code' argument
-    */
-    public static android.graphics.drawable.Drawable getThemedWallpaper(final boolean r17, final android.view.View r18) {
-        /*
-            Method dump skipped, instructions count: 398
-            To view this dump add '--comments-level debug' option
-        */
-        throw new UnsupportedOperationException("Method not decompiled: org.telegram.p048ui.ActionBar.Theme.getThemedWallpaper(boolean, android.view.View):android.graphics.drawable.Drawable");
+    public static Drawable getThemedWallpaper(final boolean z, final View view) {
+        int i;
+        MotionBackgroundDrawable motionBackgroundDrawable;
+        File file;
+        FileInputStream fileInputStream;
+        Bitmap decodeStream;
+        MotionBackgroundDrawable motionBackgroundDrawable2;
+        Integer num = currentColors.get("chat_wallpaper");
+        int i2 = 1;
+        if (num != null) {
+            Integer num2 = currentColors.get("chat_wallpaper_gradient_to");
+            Integer num3 = currentColors.get("key_chat_wallpaper_gradient_to2");
+            Integer num4 = currentColors.get("key_chat_wallpaper_gradient_to3");
+            Integer num5 = currentColors.get("chat_wallpaper_gradient_rotation");
+            if (num5 == null) {
+                num5 = 45;
+            }
+            if (num2 == null) {
+                return new ColorDrawable(num.intValue());
+            }
+            ThemeAccent accent = currentTheme.getAccent(false);
+            if (accent == null || TextUtils.isEmpty(accent.patternSlug) || previousTheme != null || (file = accent.getPathToWallpaper()) == null || !file.exists()) {
+                file = null;
+            }
+            if (num3 != null) {
+                motionBackgroundDrawable2 = new MotionBackgroundDrawable(num.intValue(), num2.intValue(), num3.intValue(), num4 != null ? num4.intValue() : 0, true);
+                if (file == null) {
+                    return motionBackgroundDrawable2;
+                }
+            } else if (file == null) {
+                BackgroundGradientDrawable backgroundGradientDrawable = new BackgroundGradientDrawable(BackgroundGradientDrawable.getGradientOrientation(num5.intValue()), new int[]{num.intValue(), num2.intValue()});
+                backgroundGradientDrawable.startDithering(!z ? BackgroundGradientDrawable.Sizes.ofDeviceScreen() : BackgroundGradientDrawable.Sizes.ofDeviceScreen(0.125f, BackgroundGradientDrawable.Sizes.Orientation.PORTRAIT), view != null ? new BackgroundGradientDrawable.ListenerAdapter() { // from class: org.telegram.ui.ActionBar.Theme.13
+                    @Override // org.telegram.p048ui.Components.BackgroundGradientDrawable.ListenerAdapter, org.telegram.p048ui.Components.BackgroundGradientDrawable.Listener
+                    public void onSizeReady(int i3, int i4) {
+                        if (!z) {
+                            Point point = AndroidUtilities.displaySize;
+                            if ((point.x <= point.y) == (i3 <= i4)) {
+                                view.invalidate();
+                                return;
+                            }
+                            return;
+                        }
+                        view.invalidate();
+                    }
+                } : null);
+                return backgroundGradientDrawable;
+            } else {
+                motionBackgroundDrawable2 = null;
+            }
+            motionBackgroundDrawable = motionBackgroundDrawable2;
+            i = 0;
+        } else {
+            if (themedWallpaperFileOffset > 0) {
+                ThemeInfo themeInfo = currentTheme;
+                if (themeInfo.pathToFile != null || themeInfo.assetName != null) {
+                    String str = themeInfo.assetName;
+                    file = str != null ? getAssetFile(str) : new File(currentTheme.pathToFile);
+                    i = themedWallpaperFileOffset;
+                    motionBackgroundDrawable = null;
+                }
+            }
+            i = 0;
+            motionBackgroundDrawable = null;
+            file = null;
+        }
+        try {
+            if (file != null) {
+                try {
+                    fileInputStream = new FileInputStream(file);
+                    try {
+                        fileInputStream.getChannel().position(i);
+                        BitmapFactory.Options options = new BitmapFactory.Options();
+                        if (z) {
+                            options.inJustDecodeBounds = true;
+                            float f = options.outWidth;
+                            float f2 = options.outHeight;
+                            int m50dp = AndroidUtilities.m50dp(100);
+                            while (true) {
+                                float f3 = m50dp;
+                                if (f <= f3 && f2 <= f3) {
+                                    break;
+                                }
+                                i2 *= 2;
+                                f /= 2.0f;
+                                f2 /= 2.0f;
+                            }
+                        }
+                        options.inJustDecodeBounds = false;
+                        options.inSampleSize = i2;
+                        decodeStream = BitmapFactory.decodeStream(fileInputStream, null, options);
+                    } catch (Throwable th) {
+                        th = th;
+                        try {
+                            FileLog.m45e(th);
+                            if (fileInputStream != null) {
+                                fileInputStream.close();
+                            }
+                            return null;
+                        } catch (Throwable th2) {
+                            if (fileInputStream != null) {
+                                try {
+                                    fileInputStream.close();
+                                } catch (Exception e) {
+                                    FileLog.m45e(e);
+                                }
+                            }
+                            throw th2;
+                        }
+                    }
+                } catch (Throwable th3) {
+                    th = th3;
+                    fileInputStream = null;
+                }
+                if (motionBackgroundDrawable != null) {
+                    ThemeAccent accent2 = currentTheme.getAccent(false);
+                    motionBackgroundDrawable.setPatternBitmap(accent2 != null ? (int) (accent2.patternIntensity * 100.0f) : 100, decodeStream);
+                    motionBackgroundDrawable.setPatternColorFilter(motionBackgroundDrawable.getPatternColor());
+                    try {
+                        fileInputStream.close();
+                    } catch (Exception e2) {
+                        FileLog.m45e(e2);
+                    }
+                    return motionBackgroundDrawable;
+                } else if (decodeStream != null) {
+                    BitmapDrawable bitmapDrawable = new BitmapDrawable(decodeStream);
+                    try {
+                        fileInputStream.close();
+                    } catch (Exception e3) {
+                        FileLog.m45e(e3);
+                    }
+                    return bitmapDrawable;
+                } else {
+                    fileInputStream.close();
+                }
+            }
+        } catch (Exception e4) {
+            FileLog.m45e(e4);
+        }
+        return null;
     }
 
     public static String getSelectedBackgroundSlug() {
@@ -7499,13 +7811,13 @@ public class Theme {
     public static boolean isHome(ThemeAccent themeAccent) {
         ThemeInfo themeInfo = themeAccent.parentTheme;
         if (themeInfo != null) {
-            if (themeInfo.getKey().equals("Blue") && themeAccent.f1655id == 99) {
+            if (themeInfo.getKey().equals("Blue") && themeAccent.f1656id == 99) {
                 return true;
             }
-            if (themeAccent.parentTheme.getKey().equals("Day") && themeAccent.f1655id == 9) {
+            if (themeAccent.parentTheme.getKey().equals("Day") && themeAccent.f1656id == 9) {
                 return true;
             }
-            return (themeAccent.parentTheme.getKey().equals("Night") || themeAccent.parentTheme.getKey().equals("Dark Blue")) && themeAccent.f1655id == 0;
+            return (themeAccent.parentTheme.getKey().equals("Night") || themeAccent.parentTheme.getKey().equals("Dark Blue")) && themeAccent.f1656id == 0;
         }
         return false;
     }
@@ -7533,13 +7845,13 @@ public class Theme {
             if (frameLayout != null && runnable != null) {
                 try {
                     BulletinFactory m28of = BulletinFactory.m28of(frameLayout, null);
-                    int i = C3286R.C3291raw.auto_night_off;
+                    int i = C3301R.C3306raw.auto_night_off;
                     if (selectedAutoNightType == 3) {
-                        string = LocaleController.getString("AutoNightSystemModeOff", C3286R.string.AutoNightSystemModeOff);
+                        string = LocaleController.getString("AutoNightSystemModeOff", C3301R.string.AutoNightSystemModeOff);
                     } else {
-                        string = LocaleController.getString("AutoNightModeOff", C3286R.string.AutoNightModeOff);
+                        string = LocaleController.getString("AutoNightModeOff", C3301R.string.AutoNightModeOff);
                     }
-                    m28of.createSimpleBulletin(i, string, LocaleController.getString("Settings", C3286R.string.Settings), DefaultLoadControl.DEFAULT_BUFFER_FOR_PLAYBACK_AFTER_REBUFFER_MS, runnable).show();
+                    m28of.createSimpleBulletin(i, string, LocaleController.getString("Settings", C3301R.string.Settings), DefaultLoadControl.DEFAULT_BUFFER_FOR_PLAYBACK_AFTER_REBUFFER_MS, runnable).show();
                 } catch (Exception e) {
                     FileLog.m45e(e);
                 }

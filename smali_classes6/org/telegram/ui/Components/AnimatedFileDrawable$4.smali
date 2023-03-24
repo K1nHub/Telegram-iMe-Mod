@@ -312,7 +312,7 @@
 
     move-result v4
 
-    mul-int v5, v5, v4
+    mul-int/2addr v5, v4
 
     invoke-static {v3, v5}, Lorg/telegram/ui/Components/AnimatedFileDrawable;->access$1602(Lorg/telegram/ui/Components/AnimatedFileDrawable;I)I
 
@@ -460,7 +460,7 @@
 
     move-result v7
 
-    mul-float v5, v5, v7
+    mul-float/2addr v5, v7
 
     float-to-int v5, v5
 
@@ -480,7 +480,7 @@
 
     move-result v8
 
-    mul-float v7, v7, v8
+    mul-float/2addr v7, v8
 
     float-to-int v7, v7
 
@@ -577,9 +577,9 @@
 
     move-result-wide v1
 
-    long-to-int v2, v1
+    long-to-int v1, v1
 
-    aput v2, v0, v6
+    aput v1, v0, v6
 
     .line 364
     iget-object v0, p0, Lorg/telegram/ui/Components/AnimatedFileDrawable$4;->this$0:Lorg/telegram/ui/Components/AnimatedFileDrawable;
@@ -641,7 +641,7 @@
     :try_end_4
     .catchall {:try_start_4 .. :try_end_4} :catchall_2
 
-    const/4 v3, 0x1
+    move v3, v4
 
     goto :goto_3
 

@@ -81,23 +81,23 @@ public class TextBlock implements Text {
                 textBlock2.zzb = new Point[0];
             } else {
                 int i = Integer.MIN_VALUE;
-                int i2 = Integer.MIN_VALUE;
+                int i2 = 0;
                 int i3 = Integer.MAX_VALUE;
                 int i4 = Integer.MAX_VALUE;
-                int i5 = 0;
+                int i5 = Integer.MIN_VALUE;
                 while (true) {
                     zzahVarArr = textBlock2.zza;
-                    if (i5 >= zzahVarArr.length) {
+                    if (i2 >= zzahVarArr.length) {
                         break;
                     }
-                    zzab zzabVar = zzahVarArr[i5].zzb;
+                    zzab zzabVar = zzahVarArr[i2].zzb;
                     zzab zzabVar2 = zzahVarArr[c].zzb;
                     double sin = Math.sin(Math.toRadians(zzabVar2.zze));
                     double cos = Math.cos(Math.toRadians(zzabVar2.zze));
                     Point[] pointArr = new Point[4];
                     pointArr[c] = new Point(zzabVar.zza, zzabVar.zzb);
                     pointArr[c].offset(-zzabVar2.zza, -zzabVar2.zzb);
-                    int i6 = i2;
+                    int i6 = i5;
                     int i7 = (int) ((pointArr[c].x * cos) + (pointArr[c].y * sin));
                     int i8 = (int) (((-pointArr[0].x) * sin) + (pointArr[0].y * cos));
                     pointArr[0].x = i7;
@@ -105,20 +105,20 @@ public class TextBlock implements Text {
                     pointArr[1] = new Point(zzabVar.zzc + i7, i8);
                     pointArr[2] = new Point(zzabVar.zzc + i7, zzabVar.zzd + i8);
                     pointArr[3] = new Point(i7, i8 + zzabVar.zzd);
-                    i2 = i6;
+                    i5 = i6;
                     for (int i9 = 0; i9 < 4; i9++) {
                         Point point = pointArr[i9];
                         i3 = Math.min(i3, point.x);
                         i = Math.max(i, point.x);
                         i4 = Math.min(i4, point.y);
-                        i2 = Math.max(i2, point.y);
+                        i5 = Math.max(i5, point.y);
                     }
-                    i5++;
+                    i2++;
                     c = 0;
                     textBlock2 = this;
                 }
-                int i10 = i2;
-                zzab zzabVar3 = zzahVarArr[0].zzb;
+                int i10 = i5;
+                zzab zzabVar3 = zzahVarArr[c].zzb;
                 int i11 = zzabVar3.zza;
                 int i12 = zzabVar3.zzb;
                 double sin2 = Math.sin(Math.toRadians(zzabVar3.zze));

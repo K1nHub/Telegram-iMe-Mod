@@ -67,7 +67,7 @@
 
     int-to-float v0, p1
 
-    mul-float p2, p2, v0
+    mul-float/2addr p2, v0
 
     float-to-int p2, p2
 
@@ -87,7 +87,7 @@
 
     const v0, -0x61c88647
 
-    mul-int p0, p0, v0
+    mul-int/2addr p0, v0
 
     ushr-int/lit8 v0, p0, 0x10
 
@@ -277,7 +277,7 @@
     .line 158
     iget v1, p0, Lio/reactivex/internal/util/OpenHashSet;->loadFactor:F
 
-    mul-float v0, v0, v1
+    mul-float/2addr v0, v1
 
     float-to-int v0, v0
 

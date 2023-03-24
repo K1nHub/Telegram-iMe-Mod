@@ -491,12 +491,12 @@
     goto :goto_0
 
     :cond_0
-    const/4 p2, 0x0
+    move p2, v0
 
     :goto_0
     if-eqz p2, :cond_2
 
-    const/4 v1, 0x0
+    move v1, v0
 
     .line 230
     :goto_1
@@ -528,7 +528,7 @@
 .end method
 
 .method private moveToExifSegmentAndGetLength(Lcom/bumptech/glide/load/resource/bitmap/DefaultImageHeaderParser$Reader;)I
-    .locals 10
+    .locals 9
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -629,9 +629,9 @@
 
     move-result-wide v7
 
-    cmp-long v9, v7, v5
+    cmp-long v5, v7, v5
 
-    if-eqz v9, :cond_0
+    if-eqz v5, :cond_0
 
     .line 270
     invoke-static {v4, v2}, Landroid/util/Log;->isLoggable(Ljava/lang/String;I)Z

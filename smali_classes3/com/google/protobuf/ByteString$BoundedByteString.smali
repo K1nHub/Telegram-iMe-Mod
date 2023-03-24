@@ -24,20 +24,20 @@
 .method constructor <init>([BII)V
     .locals 1
 
-    .line 1550
+    .line 1628
     invoke-direct {p0, p1}, Lcom/google/protobuf/ByteString$LiteralByteString;-><init>([B)V
 
     add-int v0, p2, p3
 
-    .line 1551
+    .line 1629
     array-length p1, p1
 
     invoke-static {p2, v0, p1}, Lcom/google/protobuf/ByteString;->checkRange(III)I
 
-    .line 1553
+    .line 1631
     iput p2, p0, Lcom/google/protobuf/ByteString$BoundedByteString;->bytesOffset:I
 
-    .line 1554
+    .line 1632
     iput p3, p0, Lcom/google/protobuf/ByteString$BoundedByteString;->bytesLength:I
 
     return-void
@@ -48,14 +48,14 @@
 .method public byteAt(I)B
     .locals 2
 
-    .line 1570
+    .line 1648
     invoke-virtual {p0}, Lcom/google/protobuf/ByteString$BoundedByteString;->size()I
 
     move-result v0
 
     invoke-static {p1, v0}, Lcom/google/protobuf/ByteString;->checkIndex(II)V
 
-    .line 1571
+    .line 1649
     iget-object v0, p0, Lcom/google/protobuf/ByteString$LiteralByteString;->bytes:[B
 
     iget v1, p0, Lcom/google/protobuf/ByteString$BoundedByteString;->bytesOffset:I
@@ -70,17 +70,17 @@
 .method protected copyToInternal([BIII)V
     .locals 2
 
-    .line 1595
+    .line 1673
     iget-object v0, p0, Lcom/google/protobuf/ByteString$LiteralByteString;->bytes:[B
 
-    .line 1596
+    .line 1674
     invoke-virtual {p0}, Lcom/google/protobuf/ByteString$BoundedByteString;->getOffsetIntoBytes()I
 
     move-result v1
 
     add-int/2addr v1, p2
 
-    .line 1595
+    .line 1673
     invoke-static {v0, v1, p1, p3, p4}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
     return-void
@@ -89,7 +89,7 @@
 .method protected getOffsetIntoBytes()I
     .locals 1
 
-    .line 1586
+    .line 1664
     iget v0, p0, Lcom/google/protobuf/ByteString$BoundedByteString;->bytesOffset:I
 
     return v0
@@ -98,7 +98,7 @@
 .method internalByteAt(I)B
     .locals 2
 
-    .line 1576
+    .line 1654
     iget-object v0, p0, Lcom/google/protobuf/ByteString$LiteralByteString;->bytes:[B
 
     iget v1, p0, Lcom/google/protobuf/ByteString$BoundedByteString;->bytesOffset:I
@@ -113,7 +113,7 @@
 .method public size()I
     .locals 1
 
-    .line 1581
+    .line 1659
     iget v0, p0, Lcom/google/protobuf/ByteString$BoundedByteString;->bytesLength:I
 
     return v0

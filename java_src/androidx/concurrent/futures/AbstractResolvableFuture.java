@@ -317,8 +317,8 @@ public abstract class AbstractResolvableFuture<V> implements ListenableFuture<V>
             return false;
         }
         Cancellation cancellation = GENERATE_CANCELLATION_CAUSES ? new Cancellation(z, new CancellationException("Future.cancel() was called.")) : z ? Cancellation.CAUSELESS_INTERRUPTED : Cancellation.CAUSELESS_CANCELLED;
-        boolean z2 = false;
         AbstractResolvableFuture<V> abstractResolvableFuture = this;
+        boolean z2 = false;
         while (true) {
             if (ATOMIC_HELPER.casValue(abstractResolvableFuture, obj, cancellation)) {
                 if (z) {

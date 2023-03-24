@@ -9,11 +9,11 @@ public final class DonationTransferMetadata {
     private final String contractAddress;
     private final TokenCode feeTokenCode;
     private final String recipientAddress;
-    private final TransactionParams transactionParams;
+    private final TransactionParams.Ether transactionParams;
 
-    public static /* synthetic */ DonationTransferMetadata copy$default(DonationTransferMetadata donationTransferMetadata, TransactionParams transactionParams, TokenCode tokenCode, String str, String str2, int i, Object obj) {
+    public static /* synthetic */ DonationTransferMetadata copy$default(DonationTransferMetadata donationTransferMetadata, TransactionParams.Ether ether, TokenCode tokenCode, String str, String str2, int i, Object obj) {
         if ((i & 1) != 0) {
-            transactionParams = donationTransferMetadata.transactionParams;
+            ether = donationTransferMetadata.transactionParams;
         }
         if ((i & 2) != 0) {
             tokenCode = donationTransferMetadata.feeTokenCode;
@@ -24,10 +24,10 @@ public final class DonationTransferMetadata {
         if ((i & 8) != 0) {
             str2 = donationTransferMetadata.recipientAddress;
         }
-        return donationTransferMetadata.copy(transactionParams, tokenCode, str, str2);
+        return donationTransferMetadata.copy(ether, tokenCode, str, str2);
     }
 
-    public final TransactionParams component1() {
+    public final TransactionParams.Ether component1() {
         return this.transactionParams;
     }
 
@@ -43,7 +43,7 @@ public final class DonationTransferMetadata {
         return this.recipientAddress;
     }
 
-    public final DonationTransferMetadata copy(TransactionParams transactionParams, TokenCode feeTokenCode, String contractAddress, String recipientAddress) {
+    public final DonationTransferMetadata copy(TransactionParams.Ether transactionParams, TokenCode feeTokenCode, String contractAddress, String recipientAddress) {
         Intrinsics.checkNotNullParameter(transactionParams, "transactionParams");
         Intrinsics.checkNotNullParameter(feeTokenCode, "feeTokenCode");
         Intrinsics.checkNotNullParameter(contractAddress, "contractAddress");
@@ -70,7 +70,7 @@ public final class DonationTransferMetadata {
         return "DonationTransferMetadata(transactionParams=" + this.transactionParams + ", feeTokenCode=" + this.feeTokenCode + ", contractAddress=" + this.contractAddress + ", recipientAddress=" + this.recipientAddress + ')';
     }
 
-    public DonationTransferMetadata(TransactionParams transactionParams, TokenCode feeTokenCode, String contractAddress, String recipientAddress) {
+    public DonationTransferMetadata(TransactionParams.Ether transactionParams, TokenCode feeTokenCode, String contractAddress, String recipientAddress) {
         Intrinsics.checkNotNullParameter(transactionParams, "transactionParams");
         Intrinsics.checkNotNullParameter(feeTokenCode, "feeTokenCode");
         Intrinsics.checkNotNullParameter(contractAddress, "contractAddress");
@@ -81,7 +81,7 @@ public final class DonationTransferMetadata {
         this.recipientAddress = recipientAddress;
     }
 
-    public final TransactionParams getTransactionParams() {
+    public final TransactionParams.Ether getTransactionParams() {
         return this.transactionParams;
     }
 

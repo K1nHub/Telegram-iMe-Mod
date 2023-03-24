@@ -319,7 +319,7 @@
 
     move-result v1
 
-    const/4 v2, 0x0
+    move v2, v13
 
     :goto_1
     if-ge v2, v1, :cond_8
@@ -343,7 +343,7 @@
 
     move-result v14
 
-    const/4 v15, 0x0
+    move v15, v13
 
     :goto_2
     if-ge v15, v14, :cond_7

@@ -257,12 +257,12 @@
 
     if-ne v1, p1, :cond_2
 
-    const/4 v1, 0x1
+    move v1, v3
 
     goto :goto_1
 
     :cond_2
-    const/4 v1, 0x0
+    move v1, v2
 
     :goto_1
     if-eqz v1, :cond_5
@@ -584,7 +584,7 @@
 
 # virtual methods
 .method public final awaitTaskToRun()Lokhttp3/internal/concurrent/Task;
-    .locals 15
+    .locals 14
 
     .line 608
     sget-boolean v0, Lokhttp3/internal/Util;->assertionsEnabled:Z
@@ -714,9 +714,9 @@
 
     move-result-wide v10
 
-    cmp-long v14, v10, v12
+    cmp-long v12, v10, v12
 
-    if-lez v14, :cond_3
+    if-lez v12, :cond_3
 
     .line 174
     invoke-static {v10, v11, v4, v5}, Ljava/lang/Math;->min(JJ)J
@@ -728,7 +728,7 @@
     :cond_3
     if-eqz v6, :cond_4
 
-    const/4 v0, 0x1
+    move v0, v8
 
     goto :goto_2
 
@@ -738,7 +738,7 @@
     goto :goto_1
 
     :cond_5
-    const/4 v0, 0x0
+    move v0, v9
 
     :goto_2
     if-eqz v6, :cond_8

@@ -283,7 +283,7 @@
 
     const/4 p1, 0x0
 
-    const/4 v0, 0x0
+    move v0, p1
 
     .line 4536
     :goto_0
@@ -544,9 +544,9 @@
 
     move-result-wide v3
 
-    cmp-long v5, v1, v3
+    cmp-long v1, v1, v3
 
-    if-eqz v5, :cond_5
+    if-eqz v1, :cond_5
 
     if-nez p5, :cond_5
 
@@ -660,7 +660,7 @@
     invoke-virtual/range {p3 .. p3}, Lorg/telegram/ui/DialogsActivity;->finishFragment()V
 
     :goto_1
-    const/4 v15, 0x1
+    move v15, v11
 
     goto/16 :goto_4
 
@@ -669,7 +669,7 @@
     :goto_2
     invoke-virtual {v13, v12}, Lorg/telegram/ui/DialogsActivity;->getSelectedMessages(Ljava/util/ArrayList;)V
 
-    const/4 v10, 0x0
+    move v10, v15
 
     .line 4686
     :goto_3
@@ -771,7 +771,7 @@
 
     move-object/from16 v10, v16
 
-    const/4 v15, 0x1
+    move v15, v11
 
     move/from16 v11, v17
 
@@ -779,14 +779,14 @@
 
     add-int/lit8 v10, v18, 0x1
 
-    const/4 v11, 0x1
+    move v11, v15
 
     const/4 v15, 0x0
 
     goto :goto_3
 
     :cond_7
-    const/4 v15, 0x1
+    move v15, v11
 
     .line 4693
     invoke-virtual/range {p3 .. p3}, Lorg/telegram/ui/DialogsActivity;->finishFragment()V
@@ -1032,9 +1032,9 @@
 
     iget-wide v6, v6, Lorg/telegram/tgnet/TLRPC$Message;->random_id:J
 
-    cmp-long v9, v6, v3
+    cmp-long v3, v6, v3
 
-    if-eqz v9, :cond_2
+    if-eqz v3, :cond_2
 
     .line 4837
     new-instance v2, Ljava/util/ArrayList;
@@ -1385,9 +1385,9 @@
 
     move-result-wide v8
 
-    cmp-long v10, v8, v3
+    cmp-long v3, v8, v3
 
-    if-lez v10, :cond_b
+    if-lez v3, :cond_b
 
     .line 4875
     iget-object v3, v0, Lorg/telegram/ui/PhotoViewer$14;->this$0:Lorg/telegram/ui/PhotoViewer;
@@ -2199,7 +2199,7 @@
 
 # virtual methods
 .method public canOpenMenu()Z
-    .locals 10
+    .locals 9
 
     .line 5126
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$14;->this$0:Lorg/telegram/ui/PhotoViewer;
@@ -2273,9 +2273,9 @@
 
     const-wide/16 v7, 0x0
 
-    cmp-long v9, v5, v7
+    cmp-long v5, v5, v7
 
-    if-nez v9, :cond_2
+    if-nez v5, :cond_2
 
     iget-object v5, p0, Lorg/telegram/ui/PhotoViewer$14;->this$0:Lorg/telegram/ui/PhotoViewer;
 
@@ -2288,13 +2288,13 @@
     goto :goto_0
 
     :cond_1
-    const/4 v5, 0x0
+    move v5, v2
 
     goto :goto_1
 
     :cond_2
     :goto_0
-    const/4 v5, 0x1
+    move v5, v1
 
     :goto_1
     invoke-virtual {v0, v3, v4, v5}, Lorg/telegram/messenger/FileLoader;->getPathToAttach(Lorg/telegram/tgnet/TLObject;Ljava/lang/String;Z)Ljava/io/File;
@@ -2332,7 +2332,7 @@
     goto :goto_2
 
     :cond_3
-    const/4 v1, 0x0
+    move v1, v2
 
     :cond_4
     :goto_2
@@ -2926,9 +2926,9 @@
 
     const-wide/16 v8, 0x0
 
-    cmp-long v10, v5, v8
+    cmp-long v5, v5, v8
 
-    if-nez v10, :cond_13
+    if-nez v5, :cond_13
 
     iget-object v5, v7, Lorg/telegram/ui/PhotoViewer$14;->this$0:Lorg/telegram/ui/PhotoViewer;
 
@@ -2947,7 +2947,7 @@
 
     :cond_13
     :goto_3
-    const/4 v5, 0x1
+    move v5, v2
 
     :goto_4
     invoke-virtual {v3, v4, v0, v5}, Lorg/telegram/messenger/FileLoader;->getPathToAttach(Lorg/telegram/tgnet/TLObject;Ljava/lang/String;Z)Ljava/io/File;
@@ -3148,7 +3148,7 @@
 
     if-eqz v4, :cond_1c
 
-    const/4 v3, 0x1
+    move v3, v2
 
     :cond_1c
     add-int/lit8 v1, v1, 0x1
@@ -3388,9 +3388,9 @@
 
     const-wide/16 v3, 0x0
 
-    cmp-long v5, v0, v3
+    cmp-long v0, v0, v3
 
-    if-eqz v5, :cond_78
+    if-eqz v0, :cond_78
 
     .line 4573
     iget-object v0, v7, Lorg/telegram/ui/PhotoViewer$14;->this$0:Lorg/telegram/ui/PhotoViewer;
@@ -3681,7 +3681,7 @@
 
     :cond_2a
     :goto_c
-    const/4 v3, 0x1
+    move v3, v2
 
     .line 4611
     :goto_d
@@ -4796,9 +4796,9 @@
 
     move-result-wide v11
 
-    cmp-long v13, v9, v11
+    cmp-long v9, v9, v11
 
-    if-nez v13, :cond_4a
+    if-nez v9, :cond_4a
 
     :cond_49
     if-eqz v4, :cond_51
@@ -5593,11 +5593,11 @@
 
     div-long/2addr v2, v4
 
-    long-to-int v3, v2
+    long-to-int v2, v2
 
-    const/4 v2, 0x1
+    const/4 v3, 0x1
 
-    invoke-virtual {v1, v0, v3, v2}, Lorg/telegram/messenger/MediaDataController;->addRecentGif(Lorg/telegram/tgnet/TLRPC$Document;IZ)V
+    invoke-virtual {v1, v0, v2, v3}, Lorg/telegram/messenger/MediaDataController;->addRecentGif(Lorg/telegram/tgnet/TLRPC$Document;IZ)V
 
     .line 5006
     :goto_21
@@ -5675,11 +5675,11 @@
 
     div-long/2addr v2, v4
 
-    long-to-int v3, v2
+    long-to-int v2, v2
 
-    const/4 v2, 0x1
+    const/4 v3, 0x1
 
-    invoke-virtual {v1, v0, v3, v2}, Lorg/telegram/messenger/MediaDataController;->addRecentGif(Lorg/telegram/tgnet/TLRPC$Document;IZ)V
+    invoke-virtual {v1, v0, v2, v3}, Lorg/telegram/messenger/MediaDataController;->addRecentGif(Lorg/telegram/tgnet/TLRPC$Document;IZ)V
 
     .line 5012
     iget-object v1, v7, Lorg/telegram/ui/PhotoViewer$14;->this$0:Lorg/telegram/ui/PhotoViewer;
@@ -5817,9 +5817,9 @@
 
     iget-wide v8, v4, Lorg/telegram/messenger/UserConfig;->clientUserId:J
 
-    cmp-long v10, v5, v8
+    cmp-long v5, v5, v8
 
-    if-nez v10, :cond_68
+    if-nez v5, :cond_68
 
     .line 5029
     new-instance v5, Lorg/telegram/tgnet/TLRPC$TL_photos_updateProfilePhoto;

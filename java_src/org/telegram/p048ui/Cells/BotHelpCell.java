@@ -16,7 +16,7 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import java.util.Iterator;
 import java.util.Objects;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3286R;
+import org.telegram.messenger.C3301R;
 import org.telegram.messenger.Emoji;
 import org.telegram.messenger.FileLoader;
 import org.telegram.messenger.FileLog;
@@ -156,7 +156,7 @@ public class BotHelpCell extends View {
         if (this.isTextVisible) {
             String[] split = str2.split("\n");
             SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
-            String string = LocaleController.getString(C3286R.string.BotInfoTitle);
+            String string = LocaleController.getString(C3301R.string.BotInfoTitle);
             if (z) {
                 spannableStringBuilder.append((CharSequence) string);
                 spannableStringBuilder.append((CharSequence) "\n\n");
@@ -208,8 +208,8 @@ public class BotHelpCell extends View {
         return staticLayout.getText();
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:66:0x0120  */
-    /* JADX WARN: Removed duplicated region for block: B:88:0x0178  */
+    /* JADX WARN: Removed duplicated region for block: B:66:0x0121  */
+    /* JADX WARN: Removed duplicated region for block: B:88:0x0179  */
     @Override // android.view.View
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -217,7 +217,7 @@ public class BotHelpCell extends View {
     */
     public boolean onTouchEvent(android.view.MotionEvent r13) {
         /*
-            Method dump skipped, instructions count: 392
+            Method dump skipped, instructions count: 394
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: org.telegram.p048ui.Cells.BotHelpCell.onTouchEvent(android.view.MotionEvent):boolean");

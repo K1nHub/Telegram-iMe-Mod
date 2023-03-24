@@ -1126,9 +1126,9 @@
 
     move-result-wide v6
 
-    long-to-int v7, v6
+    long-to-int v6, v6
 
-    invoke-static {v7}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-static {v6}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v6
 
@@ -1182,7 +1182,7 @@
 .end method
 
 .method private static synthetic lambda$prepare$0(Lorg/telegram/messenger/video/Track$SamplePresentationTime;Lorg/telegram/messenger/video/Track$SamplePresentationTime;)I
-    .locals 5
+    .locals 4
 
     .line 281
     invoke-static {p0}, Lorg/telegram/messenger/video/Track$SamplePresentationTime;->access$000(Lorg/telegram/messenger/video/Track$SamplePresentationTime;)J
@@ -1193,9 +1193,9 @@
 
     move-result-wide v2
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-lez v4, :cond_0
+    if-lez v0, :cond_0
 
     const/4 p0, 0x1
 
@@ -1211,9 +1211,9 @@
 
     move-result-wide p0
 
-    cmp-long v2, v0, p0
+    cmp-long p0, v0, p0
 
-    if-gez v2, :cond_1
+    if-gez p0, :cond_1
 
     const/4 p0, -0x1
 
@@ -1298,7 +1298,7 @@
 
     int-to-long v3, p3
 
-    mul-long v1, v1, v3
+    mul-long/2addr v1, v3
 
     const-wide/32 v3, 0x7a120
 
@@ -1369,7 +1369,7 @@
 
     const-wide/32 v2, 0xf4240
 
-    mul-long v0, v0, v2
+    mul-long/2addr v0, v2
 
     const-wide/32 v2, 0x7a120
 
@@ -1656,9 +1656,9 @@
 
     const-wide/32 v4, 0x7fffffff
 
-    cmp-long v6, v13, v4
+    cmp-long v4, v13, v4
 
-    if-gez v6, :cond_1
+    if-gez v4, :cond_1
 
     move-wide/from16 v5, v16
 
@@ -1682,7 +1682,7 @@
 
     if-eq v4, v7, :cond_2
 
-    const/4 v10, 0x1
+    move v10, v12
 
     :cond_2
     add-int/lit8 v7, v7, 0x1
@@ -1767,7 +1767,7 @@
 
     iput-object v1, v0, Lorg/telegram/messenger/video/Track;->sampleCompositions:[I
 
-    const/4 v4, 0x0
+    move v4, v3
 
     .line 316
     :goto_3

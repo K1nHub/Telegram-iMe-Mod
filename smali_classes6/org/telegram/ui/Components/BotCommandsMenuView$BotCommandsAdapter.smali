@@ -443,7 +443,7 @@
 
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    move v1, v0
 
     .line 430
     :goto_0
@@ -460,7 +460,7 @@
 
     check-cast v2, Lorg/telegram/tgnet/TLRPC$BotInfo;
 
-    const/4 v3, 0x0
+    move v3, v0
 
     .line 432
     :goto_1

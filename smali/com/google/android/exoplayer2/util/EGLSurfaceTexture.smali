@@ -167,12 +167,12 @@
 
     if-eqz v2, :cond_0
 
-    const/4 v2, 0x1
+    move v2, v0
 
     goto :goto_0
 
     :cond_0
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_0
     const/4 v3, 0x3
@@ -337,7 +337,7 @@
     goto :goto_1
 
     :cond_2
-    const/4 v0, 0x0
+    move v0, v1
 
     :goto_1
     const-string p3, "eglCreatePbufferSurface failed"
@@ -434,12 +434,12 @@
 
     if-eqz v1, :cond_0
 
-    const/4 v3, 0x1
+    move v3, v2
 
     goto :goto_0
 
     :cond_0
-    const/4 v3, 0x0
+    move v3, v0
 
     :goto_0
     const-string v4, "eglGetDisplay failed"

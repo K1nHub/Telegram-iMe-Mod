@@ -631,7 +631,7 @@
 
     const/4 v5, 0x0
 
-    const/4 v6, 0x0
+    move v6, v5
 
     .line 726
     :goto_1
@@ -697,9 +697,9 @@
     goto :goto_1
 
     :cond_2
-    const/4 v6, 0x0
+    move v6, v5
 
-    const/4 v7, 0x0
+    move v7, v6
 
     .line 739
     :goto_2
@@ -764,11 +764,11 @@
     :goto_3
     move-object/from16 v16, v0
 
+    move v11, v5
+
     move/from16 v17, v6
 
     move/from16 v18, v7
-
-    const/4 v11, 0x0
 
     goto/16 :goto_d
 
@@ -1600,11 +1600,11 @@
     :goto_e
     add-int/lit8 v6, v17, 0x1
 
+    move v5, v11
+
     move-object/from16 v0, v16
 
     const/4 v2, 0x1
-
-    const/4 v5, 0x0
 
     goto/16 :goto_2
 

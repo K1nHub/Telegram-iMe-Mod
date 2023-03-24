@@ -13,6 +13,7 @@ import kotlin.jvm.internal.Intrinsics;
 public final class CryptoWalletsManagerImpl implements CryptoWalletsManager {
     private final BlockchainCryptoWalletManager evmBlockchainCryptoWalletManager;
     private final BlockchainCryptoWalletManager tonBlockchainCryptoWalletManager;
+    private final BlockchainCryptoWalletManager tronBlockchainCryptoWalletManager;
 
     /* compiled from: CryptoWalletsManagerImpl.kt */
     /* loaded from: classes3.dex */
@@ -29,15 +30,21 @@ public final class CryptoWalletsManagerImpl implements CryptoWalletsManager {
                 iArr[BlockchainType.TON.ordinal()] = 2;
             } catch (NoSuchFieldError unused2) {
             }
+            try {
+                iArr[BlockchainType.TRON.ordinal()] = 3;
+            } catch (NoSuchFieldError unused3) {
+            }
             $EnumSwitchMapping$0 = iArr;
         }
     }
 
-    public CryptoWalletsManagerImpl(BlockchainCryptoWalletManager evmBlockchainCryptoWalletManager, BlockchainCryptoWalletManager tonBlockchainCryptoWalletManager) {
+    public CryptoWalletsManagerImpl(BlockchainCryptoWalletManager evmBlockchainCryptoWalletManager, BlockchainCryptoWalletManager tonBlockchainCryptoWalletManager, BlockchainCryptoWalletManager tronBlockchainCryptoWalletManager) {
         Intrinsics.checkNotNullParameter(evmBlockchainCryptoWalletManager, "evmBlockchainCryptoWalletManager");
         Intrinsics.checkNotNullParameter(tonBlockchainCryptoWalletManager, "tonBlockchainCryptoWalletManager");
+        Intrinsics.checkNotNullParameter(tronBlockchainCryptoWalletManager, "tronBlockchainCryptoWalletManager");
         this.evmBlockchainCryptoWalletManager = evmBlockchainCryptoWalletManager;
         this.tonBlockchainCryptoWalletManager = tonBlockchainCryptoWalletManager;
+        this.tronBlockchainCryptoWalletManager = tronBlockchainCryptoWalletManager;
     }
 
     @Override // com.smedialink.storage.domain.manager.crypto.CryptoWalletsManager
@@ -99,10 +106,13 @@ public final class CryptoWalletsManagerImpl implements CryptoWalletsManager {
     private final BlockchainCryptoWalletManager getWalletManager(BlockchainType blockchainType) {
         int i = WhenMappings.$EnumSwitchMapping$0[blockchainType.ordinal()];
         if (i != 1) {
-            if (i == 2) {
-                return this.tonBlockchainCryptoWalletManager;
+            if (i != 2) {
+                if (i == 3) {
+                    return this.tronBlockchainCryptoWalletManager;
+                }
+                throw new NoWhenBranchMatchedException();
             }
-            throw new NoWhenBranchMatchedException();
+            return this.tonBlockchainCryptoWalletManager;
         }
         return this.evmBlockchainCryptoWalletManager;
     }

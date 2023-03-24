@@ -180,7 +180,7 @@
 
     move v1, p1
 
-    const/4 v2, 0x1
+    move v2, v0
 
     :goto_0
     ushr-int/lit8 v1, v1, 0x8

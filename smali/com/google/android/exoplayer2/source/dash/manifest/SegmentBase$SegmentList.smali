@@ -101,9 +101,9 @@
 
     sub-long/2addr p2, v0
 
-    long-to-int p3, p2
+    long-to-int p2, p2
 
-    invoke-interface {p1, p3}, Ljava/util/List;->get(I)Ljava/lang/Object;
+    invoke-interface {p1, p2}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object p1
 

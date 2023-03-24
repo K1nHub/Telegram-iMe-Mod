@@ -389,12 +389,12 @@
 
     if-ne v4, v1, :cond_0
 
-    const/4 v1, 0x1
+    move v1, v2
 
     goto :goto_0
 
     :cond_0
-    const/4 v1, 0x0
+    move v1, v3
 
     :goto_0
     if-nez v1, :cond_1
@@ -415,7 +415,7 @@
     goto :goto_1
 
     :cond_1
-    const/4 v1, 0x0
+    move v1, v3
 
     :goto_1
     if-eqz v1, :cond_3
@@ -862,12 +862,12 @@
 
     if-ne v1, p1, :cond_1
 
-    const/4 v1, 0x1
+    move v1, v2
 
     goto :goto_0
 
     :cond_1
-    const/4 v1, 0x0
+    move v1, v3
 
     :goto_0
     if-nez v1, :cond_3
@@ -977,7 +977,7 @@
     goto :goto_0
 
     :cond_1
-    const/4 v4, 0x0
+    move v4, v2
 
     :goto_0
     if-eqz v4, :cond_0

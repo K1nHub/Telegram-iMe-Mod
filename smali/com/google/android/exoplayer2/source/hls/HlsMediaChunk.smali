@@ -395,7 +395,7 @@
 
     if-eqz v4, :cond_1
 
-    const/4 v15, 0x1
+    move v15, v7
 
     goto :goto_1
 
@@ -436,7 +436,7 @@
 
     if-eqz v5, :cond_3
 
-    const/4 v10, 0x1
+    move v10, v7
 
     goto :goto_3
 
@@ -557,9 +557,9 @@
 
     iget-wide v14, v11, Lcom/google/android/exoplayer2/upstream/DataSpec;->position:J
 
-    cmp-long v11, v9, v14
+    cmp-long v9, v9, v14
 
-    if-nez v11, :cond_6
+    if-nez v9, :cond_6
 
     goto :goto_6
 
@@ -570,7 +570,7 @@
 
     :cond_7
     :goto_6
-    const/4 v9, 0x1
+    move v9, v7
 
     .line 148
     :goto_7
@@ -589,7 +589,7 @@
 
     if-eqz v10, :cond_8
 
-    const/16 v24, 0x1
+    move/from16 v24, v7
 
     goto :goto_8
 
@@ -745,7 +745,7 @@
 
     const/4 p3, 0x1
 
-    const/4 v0, 0x1
+    move v0, p3
 
     :cond_0
     move-object p3, p2
@@ -1208,7 +1208,7 @@
 
     move-result v2
 
-    const/4 v3, 0x0
+    move v3, v4
 
     :goto_0
     if-ge v3, v2, :cond_4
@@ -1498,9 +1498,9 @@
 
     iget-wide p0, p0, Lcom/google/android/exoplayer2/source/chunk/Chunk;->endTimeUs:J
 
-    cmp-long p2, p4, p0
+    cmp-long p0, p4, p0
 
-    if-gez p2, :cond_3
+    if-gez p0, :cond_3
 
     :cond_2
     const/4 v0, 0x1

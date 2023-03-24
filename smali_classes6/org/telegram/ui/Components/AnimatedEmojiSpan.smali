@@ -470,20 +470,20 @@
 
     const/4 v3, 0x0
 
-    const/4 v4, 0x0
+    cmpl-float v2, v2, v3
 
-    cmpl-float v2, v2, v4
+    const/4 v4, 0x0
 
     if-nez v2, :cond_2
 
-    cmpl-float v2, p3, v4
+    cmpl-float v2, p3, v3
 
     if-eqz v2, :cond_1
 
     goto :goto_0
 
     :cond_1
-    const/4 v11, 0x0
+    move v11, v4
 
     goto :goto_1
 
@@ -497,7 +497,7 @@
 
     const/high16 v5, 0x41a00000    # 20.0f
 
-    mul-float v5, v5, p3
+    mul-float/2addr v5, p3
 
     invoke-static {v5}, Lorg/telegram/messenger/AndroidUtilities;->dp(F)I
 
@@ -507,17 +507,17 @@
 
     add-float/2addr v2, v5
 
-    invoke-virtual {p0, v4, v2}, Landroid/graphics/Canvas;->translate(FF)V
+    invoke-virtual {p0, v3, v2}, Landroid/graphics/Canvas;->translate(FF)V
 
     const/4 v2, 0x1
 
-    const/4 v11, 0x1
+    move v11, v2
 
     .line 204
     :goto_1
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
-    move-result-wide v4
+    move-result-wide v5
 
     .line 205
     :goto_2
@@ -527,21 +527,21 @@
 
     move-result v2
 
-    if-ge v3, v2, :cond_4
+    if-ge v4, v2, :cond_4
 
     .line 206
     iget-object v2, v1, Lorg/telegram/ui/Components/AnimatedEmojiSpan$EmojiGroupedSpans;->backgroundDrawingArray:Ljava/util/ArrayList;
 
-    invoke-virtual {v2, v3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+    invoke-virtual {v2, v4}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v2
 
     check-cast v2, Lorg/telegram/ui/Components/AnimatedEmojiSpan$SpansChunk;
 
     .line 207
-    iget-object v6, v2, Lorg/telegram/ui/Components/AnimatedEmojiSpan$SpansChunk;->layout:Landroid/text/Layout;
+    iget-object v3, v2, Lorg/telegram/ui/Components/AnimatedEmojiSpan$SpansChunk;->layout:Landroid/text/Layout;
 
-    if-ne v6, v0, :cond_3
+    if-ne v3, v0, :cond_3
 
     move-object v0, v2
 
@@ -549,7 +549,7 @@
 
     move-object/from16 v2, p4
 
-    move-wide v3, v4
+    move-wide v3, v5
 
     move/from16 v5, p5
 
@@ -567,7 +567,7 @@
     goto :goto_3
 
     :cond_3
-    add-int/lit8 v3, v3, 0x1
+    add-int/lit8 v4, v4, 0x1
 
     goto :goto_2
 
@@ -610,24 +610,24 @@
     :cond_0
     sget p1, Lorg/telegram/messenger/Emoji;->emojiDrawingYOffset:F
 
-    const/4 p4, 0x1
+    const/4 p4, 0x0
 
-    const/4 p5, 0x0
+    cmpl-float p1, p1, p4
+
+    const/4 p5, 0x1
 
     const/4 p6, 0x0
 
-    cmpl-float p1, p1, p5
-
     if-nez p1, :cond_2
 
-    cmpl-float p1, p3, p5
+    cmpl-float p1, p3, p4
 
     if-eqz p1, :cond_1
 
     goto :goto_0
 
     :cond_1
-    const/4 p1, 0x0
+    move p1, p6
 
     goto :goto_1
 
@@ -641,7 +641,7 @@
 
     const/high16 p7, 0x41a00000    # 20.0f
 
-    mul-float p3, p3, p7
+    mul-float/2addr p3, p7
 
     invoke-static {p3}, Lorg/telegram/messenger/AndroidUtilities;->dp(F)I
 
@@ -651,37 +651,37 @@
 
     add-float/2addr p1, p3
 
-    invoke-virtual {p0, p5, p1}, Landroid/graphics/Canvas;->translate(FF)V
+    invoke-virtual {p0, p4, p1}, Landroid/graphics/Canvas;->translate(FF)V
 
-    const/4 p1, 0x1
+    move p1, p5
 
     .line 230
     :goto_1
     invoke-static {p2}, Lorg/telegram/ui/Components/AnimatedEmojiSpan$EmojiGroupedSpans;->access$008(Lorg/telegram/ui/Components/AnimatedEmojiSpan$EmojiGroupedSpans;)I
 
-    const/4 p3, 0x0
+    move p3, p6
 
     .line 231
     :goto_2
-    iget-object p5, p2, Lorg/telegram/ui/Components/AnimatedEmojiSpan$EmojiGroupedSpans;->holders:Ljava/util/ArrayList;
+    iget-object p4, p2, Lorg/telegram/ui/Components/AnimatedEmojiSpan$EmojiGroupedSpans;->holders:Ljava/util/ArrayList;
 
-    invoke-virtual {p5}, Ljava/util/ArrayList;->size()I
+    invoke-virtual {p4}, Ljava/util/ArrayList;->size()I
 
-    move-result p5
+    move-result p4
 
-    if-ge p3, p5, :cond_4
+    if-ge p3, p4, :cond_4
 
     .line 232
-    iget-object p5, p2, Lorg/telegram/ui/Components/AnimatedEmojiSpan$EmojiGroupedSpans;->holders:Ljava/util/ArrayList;
+    iget-object p4, p2, Lorg/telegram/ui/Components/AnimatedEmojiSpan$EmojiGroupedSpans;->holders:Ljava/util/ArrayList;
 
-    invoke-virtual {p5, p3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+    invoke-virtual {p4, p3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
-    move-result-object p5
+    move-result-object p4
 
-    check-cast p5, Lorg/telegram/ui/Components/AnimatedEmojiSpan$AnimatedEmojiHolder;
+    check-cast p4, Lorg/telegram/ui/Components/AnimatedEmojiSpan$AnimatedEmojiHolder;
 
     .line 233
-    iget-object p7, p5, Lorg/telegram/ui/Components/AnimatedEmojiSpan$AnimatedEmojiHolder;->span:Lorg/telegram/ui/Components/AnimatedEmojiSpan;
+    iget-object p7, p4, Lorg/telegram/ui/Components/AnimatedEmojiSpan$AnimatedEmojiHolder;->span:Lorg/telegram/ui/Components/AnimatedEmojiSpan;
 
     iget p8, p7, Lorg/telegram/ui/Components/AnimatedEmojiSpan;->measuredSize:I
 
@@ -698,7 +698,7 @@
     iget p7, p7, Lorg/telegram/ui/Components/AnimatedEmojiSpan;->lastDrawnCy:F
 
     .line 237
-    iget-object v1, p5, Lorg/telegram/ui/Components/AnimatedEmojiSpan$AnimatedEmojiHolder;->drawableBounds:Landroid/graphics/Rect;
+    iget-object v1, p4, Lorg/telegram/ui/Components/AnimatedEmojiSpan$AnimatedEmojiHolder;->drawableBounds:Landroid/graphics/Rect;
 
     sub-float v2, v0, p8
 
@@ -719,14 +719,14 @@
     invoke-virtual {v1, v2, v3, v0, p7}, Landroid/graphics/Rect;->set(IIII)V
 
     .line 238
-    iget-object p7, p5, Lorg/telegram/ui/Components/AnimatedEmojiSpan$AnimatedEmojiHolder;->drawable:Lorg/telegram/ui/Components/AnimatedEmojiDrawable;
+    iget-object p7, p4, Lorg/telegram/ui/Components/AnimatedEmojiSpan$AnimatedEmojiHolder;->drawable:Lorg/telegram/ui/Components/AnimatedEmojiDrawable;
 
-    iget-object p8, p5, Lorg/telegram/ui/Components/AnimatedEmojiSpan$AnimatedEmojiHolder;->drawableBounds:Landroid/graphics/Rect;
+    iget-object p8, p4, Lorg/telegram/ui/Components/AnimatedEmojiSpan$AnimatedEmojiHolder;->drawableBounds:Landroid/graphics/Rect;
 
     invoke-virtual {p7, p8}, Landroid/graphics/drawable/Drawable;->setBounds(Landroid/graphics/Rect;)V
 
     .line 240
-    iget-object p7, p5, Lorg/telegram/ui/Components/AnimatedEmojiSpan$AnimatedEmojiHolder;->drawable:Lorg/telegram/ui/Components/AnimatedEmojiDrawable;
+    iget-object p7, p4, Lorg/telegram/ui/Components/AnimatedEmojiSpan$AnimatedEmojiHolder;->drawable:Lorg/telegram/ui/Components/AnimatedEmojiDrawable;
 
     iget p7, p7, Lorg/telegram/ui/Components/AnimatedEmojiDrawable;->rawDrawIndex:I
 
@@ -737,7 +737,7 @@
     if-ge p7, p8, :cond_3
 
     .line 241
-    iget-object p7, p5, Lorg/telegram/ui/Components/AnimatedEmojiSpan$AnimatedEmojiHolder;->drawable:Lorg/telegram/ui/Components/AnimatedEmojiDrawable;
+    iget-object p7, p4, Lorg/telegram/ui/Components/AnimatedEmojiSpan$AnimatedEmojiHolder;->drawable:Lorg/telegram/ui/Components/AnimatedEmojiDrawable;
 
     invoke-static {p2}, Lorg/telegram/ui/Components/AnimatedEmojiSpan$EmojiGroupedSpans;->access$000(Lorg/telegram/ui/Components/AnimatedEmojiSpan$EmojiGroupedSpans;)I
 
@@ -745,18 +745,18 @@
 
     iput p8, p7, Lorg/telegram/ui/Components/AnimatedEmojiDrawable;->rawDrawIndex:I
 
-    const/4 p7, 0x1
+    move p7, p5
 
     goto :goto_3
 
     :cond_3
-    const/4 p7, 0x0
+    move p7, p6
 
     .line 244
     :goto_3
-    iget-object p5, p5, Lorg/telegram/ui/Components/AnimatedEmojiSpan$AnimatedEmojiHolder;->drawable:Lorg/telegram/ui/Components/AnimatedEmojiDrawable;
+    iget-object p4, p4, Lorg/telegram/ui/Components/AnimatedEmojiSpan$AnimatedEmojiHolder;->drawable:Lorg/telegram/ui/Components/AnimatedEmojiDrawable;
 
-    invoke-virtual {p5, p0, p7, p9}, Lorg/telegram/ui/Components/AnimatedEmojiDrawable;->drawRaw(Landroid/graphics/Canvas;ZI)V
+    invoke-virtual {p4, p0, p7, p9}, Lorg/telegram/ui/Components/AnimatedEmojiDrawable;->drawRaw(Landroid/graphics/Canvas;ZI)V
 
     add-int/lit8 p3, p3, 0x1
 
@@ -829,7 +829,7 @@
 
     check-cast p0, [Lorg/telegram/ui/Components/TextStyleSpan;
 
-    const/4 p1, 0x0
+    move p1, v0
 
     :goto_0
     if-eqz p0, :cond_2
@@ -930,7 +930,7 @@
 .end method
 
 .method public static update(ILandroid/view/View;[Lorg/telegram/ui/Components/AnimatedEmojiSpan;Landroid/util/LongSparseArray;)Landroid/util/LongSparseArray;
-    .locals 10
+    .locals 9
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I",
@@ -961,7 +961,7 @@
     :cond_1
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    move v1, v0
 
     .line 491
     :goto_0
@@ -996,7 +996,7 @@
     goto :goto_4
 
     :cond_2
-    const/4 v6, 0x0
+    move v6, v0
 
     .line 500
     :goto_2
@@ -1015,11 +1015,11 @@
 
     move-result-wide v7
 
-    cmp-long v9, v7, v2
+    cmp-long v7, v7, v2
 
-    if-nez v9, :cond_3
+    if-nez v7, :cond_3
 
-    const/4 v6, 0x1
+    move v6, v5
 
     goto :goto_3
 
@@ -1029,7 +1029,7 @@
     goto :goto_2
 
     :cond_4
-    const/4 v6, 0x0
+    move v6, v0
 
     :goto_3
     if-nez v6, :cond_5
@@ -1258,7 +1258,7 @@
 
     if-nez p4, :cond_0
 
-    const/4 v1, 0x0
+    move v1, v0
 
     goto :goto_0
 
@@ -1334,7 +1334,7 @@
     :cond_0
     const/4 v3, 0x0
 
-    const/4 v4, 0x0
+    move v4, v3
 
     .line 387
     :goto_0
@@ -1376,7 +1376,7 @@
 
     check-cast v8, [Lorg/telegram/ui/Components/AnimatedEmojiSpan;
 
-    const/4 v9, 0x0
+    move v9, v3
 
     :goto_1
     if-eqz v8, :cond_c
@@ -1439,7 +1439,7 @@
     invoke-direct {v0}, Lorg/telegram/ui/Components/AnimatedEmojiSpan$EmojiGroupedSpans;-><init>()V
 
     :cond_3
-    const/4 v11, 0x0
+    move v11, v3
 
     .line 409
     :goto_2
@@ -1956,7 +1956,7 @@
 
     if-nez p5, :cond_1
 
-    const/4 p2, 0x0
+    move p2, p1
 
     goto :goto_0
 
@@ -1967,7 +1967,7 @@
     :goto_0
     if-nez p5, :cond_2
 
-    const/4 p3, 0x0
+    move p3, p1
 
     goto :goto_1
 
@@ -2027,14 +2027,14 @@
     .line 132
     iput v1, p5, Landroid/graphics/Paint$FontMetricsInt;->bottom:I
 
-    mul-float v2, v2, v3
+    mul-float/2addr v2, v3
 
     float-to-int v1, v2
 
     .line 133
     iput v1, p5, Landroid/graphics/Paint$FontMetricsInt;->ascent:I
 
-    mul-float v0, v0, v3
+    mul-float/2addr v0, v3
 
     float-to-int v0, v0
 
@@ -2050,13 +2050,13 @@
     .line 138
     iget p4, p0, Lorg/telegram/ui/Components/AnimatedEmojiSpan;->scale:F
 
-    mul-float p1, p1, p4
+    mul-float/2addr p1, p4
 
     float-to-int p1, p1
 
     iput p1, p0, Lorg/telegram/ui/Components/AnimatedEmojiSpan;->measuredSize:I
 
-    goto/16 :goto_2
+    goto :goto_2
 
     .line 140
     :cond_4
@@ -2064,7 +2064,7 @@
 
     iget v0, p0, Lorg/telegram/ui/Components/AnimatedEmojiSpan;->scale:F
 
-    mul-float p1, p1, v0
+    mul-float/2addr p1, v0
 
     float-to-int p1, p1
 
@@ -2132,7 +2132,7 @@
 
     int-to-float v0, v0
 
-    mul-float p4, p4, v0
+    mul-float/2addr p4, v0
 
     float-to-double v0, p4
 
@@ -2157,7 +2157,7 @@
 
     int-to-float v0, v0
 
-    mul-float p4, p4, v0
+    mul-float/2addr p4, v0
 
     float-to-double v0, p4
 
@@ -2182,7 +2182,7 @@
 
     int-to-float v0, v0
 
-    mul-float p4, p4, v0
+    mul-float/2addr p4, v0
 
     float-to-double v0, p4
 
@@ -2207,7 +2207,7 @@
 
     int-to-float p1, p1
 
-    mul-float p4, p4, p1
+    mul-float/2addr p4, p1
 
     float-to-double v0, p4
 

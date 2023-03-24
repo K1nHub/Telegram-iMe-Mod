@@ -196,7 +196,7 @@
 
     const v1, 0x3dcccccd    # 0.1f
 
-    mul-float v0, v0, v1
+    mul-float/2addr v0, v1
 
     const v1, 0x3f666666    # 0.9f
 
@@ -231,7 +231,7 @@
 
     iget v2, p0, Lorg/telegram/ui/Components/SimpleAvatarView;->selectProgress:F
 
-    mul-float v1, v1, v2
+    mul-float/2addr v1, v2
 
     float-to-int v1, v1
 
@@ -299,11 +299,11 @@
 
     const/high16 v1, 0x40200000    # 2.5f
 
-    mul-float v0, v0, v1
+    mul-float/2addr v0, v1
 
     iget v1, p0, Lorg/telegram/ui/Components/SimpleAvatarView;->selectProgress:F
 
-    mul-float v0, v0, v1
+    mul-float/2addr v0, v1
 
     .line 78
     iget-object v1, p0, Lorg/telegram/ui/Components/SimpleAvatarView;->avatarImage:Lorg/telegram/messenger/ImageReceiver;
@@ -316,7 +316,7 @@
 
     const/high16 v3, 0x40000000    # 2.0f
 
-    mul-float v3, v3, v0
+    mul-float/2addr v3, v0
 
     sub-float/2addr v2, v3
 
@@ -392,7 +392,7 @@
     goto :goto_0
 
     :cond_1
-    const/4 v0, 0x0
+    move v0, v1
 
     :goto_0
     const/4 p1, 0x2
@@ -453,7 +453,7 @@
     goto :goto_1
 
     :cond_3
-    const/4 v0, 0x0
+    move v0, v1
 
     .line 127
     :goto_1

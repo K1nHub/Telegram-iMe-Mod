@@ -18,6 +18,7 @@ import com.smedialink.common.IdFabric$Menu;
 import com.smedialink.manager.common.MediaEditManager;
 import com.smedialink.model.dialog.AnimatedSpannableDialogModel;
 import com.smedialink.model.dialog.DialogModel;
+import com.smedialink.model.wallet.crypto.create.CreateWalletScreenType;
 import com.smedialink.model.wallet.crypto.tutorial.TutorialType;
 import com.smedialink.model.wallet.details.TokenDetailsArgs;
 import com.smedialink.model.wallet.home.AccountItem;
@@ -71,7 +72,7 @@ import moxy.ktx.MoxyKtxDelegate;
 import org.fork.utils.Callbacks$Callback;
 import org.fork.utils.Callbacks$Callback1;
 import org.koin.p047mp.KoinPlatformTools;
-import org.telegram.messenger.C3286R;
+import org.telegram.messenger.C3301R;
 import org.telegram.messenger.SendMessagesHelper;
 import org.telegram.messenger.browser.Browser;
 import org.telegram.messenger.databinding.ForkFragmentWalletHomeCryptoBinding;
@@ -214,8 +215,17 @@ public final class WalletHomeCryptoFragment extends WalletHomeTabFragment implem
         Activity parentActivity = getParentActivity();
         Intrinsics.checkNotNullExpressionValue(parentActivity, "parentActivity");
         AlertDialog createDialog$default = DialogUtils.createDialog$default(parentActivity, dialogModel, action, null, 8, null);
-        DialogExtKt.makeClickableDescription$default(createDialog$default, null, walletAddress, new C2191xea8f105d(walletAddress), 1, null);
+        DialogExtKt.makeClickableDescription$default(createDialog$default, null, walletAddress, new C2205xea8f105d(walletAddress), 1, null);
         showDialog(createDialog$default);
+    }
+
+    @Override // com.smedialink.manager.wallet.create.WalletCreateManagerView
+    public void showActivationConfirmationDialog(DialogModel dialogModel, Callbacks$Callback action) {
+        Intrinsics.checkNotNullParameter(dialogModel, "dialogModel");
+        Intrinsics.checkNotNullParameter(action, "action");
+        Activity parentActivity = getParentActivity();
+        Intrinsics.checkNotNullExpressionValue(parentActivity, "parentActivity");
+        showDialog(DialogUtils.createDialog$default(parentActivity, dialogModel, action, null, 8, null));
     }
 
     @Override // com.smedialink.manager.wallet.create.WalletCreateManagerView
@@ -225,7 +235,7 @@ public final class WalletHomeCryptoFragment extends WalletHomeTabFragment implem
         if (str == null) {
             str = "";
         }
-        presentFragment(companion.newInstance(new CreateWalletFragment.ScreenType.Import(str, password)));
+        presentFragment(companion.newInstance(new CreateWalletScreenType.Import(str, password)));
     }
 
     @Override // com.smedialink.manager.wallet.create.WalletCreateManagerView
@@ -324,7 +334,7 @@ public final class WalletHomeCryptoFragment extends WalletHomeTabFragment implem
                 return presenter.getCurrentNetworkType().getLogo();
             }
         };
-        qRCodeBottomSheet.setupWalletTypeReceive(getResourceManager().getString(C3286R.string.wallet_receive_dialog_title), getResourceManager().getString(C3286R.string.wallet_receive_dialog_btn_text), address, TokenCode.UNKNOWN, blockchainType);
+        qRCodeBottomSheet.setupWalletTypeReceive(getResourceManager().getString(C3301R.string.wallet_receive_dialog_title), getResourceManager().getString(C3301R.string.wallet_receive_dialog_btn_text), address, TokenCode.UNKNOWN, blockchainType);
         showDialog(qRCodeBottomSheet);
     }
 
@@ -453,20 +463,20 @@ public final class WalletHomeCryptoFragment extends WalletHomeTabFragment implem
         Intrinsics.checkNotNullParameter(baseQuickAdapter, "<anonymous parameter 0>");
         Intrinsics.checkNotNullParameter(view, "view");
         int id = view.getId();
-        if (id == C3286R.C3289id.image_wallet_crypto_eye) {
+        if (id == C3301R.C3304id.image_wallet_crypto_eye) {
             this$0.getPresenter().switchHiddenBalance();
-        } else if (id == C3286R.C3289id.image_wallet_crypto_tokens_settings) {
+        } else if (id == C3301R.C3304id.image_wallet_crypto_tokens_settings) {
             this$0.presentFragment(WalletHomeCryptoTokensSettingsFragment.Companion.newInstance(new WalletHomeCryptoTokensSettingsFragment.ScreenType.Crypto(this$0.getPresenter().getCurrentNetworkType())));
-        } else if (id == C3286R.C3289id.image_wallet_order_tokens) {
+        } else if (id == C3301R.C3304id.image_wallet_order_tokens) {
             this$0.showDialog(DialogsFactoryKt.createSelectTokensOrderTypeDialog(this$0, this$0.getResourceManager(), this$0.getPresenter().getSelectedTokensOrderType(), new Callbacks$Callback1() { // from class: com.smedialink.ui.wallet.home.v2.tabs.crypto.WalletHomeCryptoFragment$$ExternalSyntheticLambda6
                 @Override // org.fork.utils.Callbacks$Callback1
                 public final void invoke(Object obj) {
                     WalletHomeCryptoFragment.setupListeners$lambda$15$lambda$14$lambda$13(WalletHomeCryptoFragment.this, (TokenOrderType) obj);
                 }
             }));
-        } else if (id == C3286R.C3289id.frame_network_type) {
+        } else if (id == C3301R.C3304id.frame_network_type) {
             this$0.getPresenter().startChooseNetworkDialog();
-        } else if (id == C3286R.C3289id.image_copy) {
+        } else if (id == C3301R.C3304id.image_copy) {
             BaseNode baseNode = (BaseNode) this$0.getBalancesRecycleAdapter().getItem(i);
             if (baseNode instanceof CryptoAccountItem) {
                 ContextExtKt.copyToClipboard$default(((CryptoAccountItem) baseNode).getAddress(), null, 2, null);

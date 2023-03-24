@@ -934,7 +934,7 @@
 
     int-to-float v0, v0
 
-    mul-float p1, p1, v0
+    mul-float/2addr p1, v0
 
     .line 518
     invoke-virtual {p0}, Landroid/widget/HorizontalScrollView;->getScrollX()I
@@ -955,7 +955,7 @@
 
     int-to-float v2, v2
 
-    mul-float v1, v1, v2
+    mul-float/2addr v1, v2
 
     div-float/2addr v0, v1
 
@@ -970,22 +970,22 @@
 
     div-float/2addr v1, p1
 
-    const/4 v2, 0x0
+    cmpl-float v2, v0, v1
 
-    cmpl-float v3, v0, v1
+    const/4 v3, 0x0
 
-    if-lez v3, :cond_0
+    if-lez v2, :cond_0
 
     move v0, v1
 
-    const/4 p2, 0x0
+    move p2, v3
 
     :cond_0
-    mul-float p1, p1, v0
+    mul-float/2addr p1, v0
 
     sub-float v0, p1, p2
 
-    cmpg-float v0, v0, v2
+    cmpg-float v0, v0, v3
 
     if-gez v0, :cond_1
 
@@ -1323,7 +1323,7 @@
     goto :goto_1
 
     :cond_1
-    const/4 v2, 0x0
+    move v2, v3
 
     :goto_1
     invoke-virtual {v1, v2}, Landroid/widget/FrameLayout;->setSelected(Z)V
@@ -1728,7 +1728,7 @@
     goto :goto_1
 
     :cond_1
-    const/4 v3, 0x0
+    move v3, p1
 
     :goto_1
     invoke-virtual {v1, v3}, Landroid/widget/FrameLayout;->setSelected(Z)V
@@ -1847,7 +1847,7 @@
     goto :goto_1
 
     :cond_1
-    const/4 v2, 0x0
+    move v2, p2
 
     :goto_1
     invoke-virtual {v1, v2}, Landroid/widget/FrameLayout;->setSelected(Z)V
@@ -1983,7 +1983,7 @@
 
     if-ne v1, p1, :cond_2
 
-    const/4 v3, 0x1
+    move v3, v4
 
     :cond_2
     invoke-virtual {v2, v3}, Landroid/widget/FrameLayout;->setSelected(Z)V
@@ -2135,7 +2135,7 @@
 
     if-ne v1, p1, :cond_1
 
-    const/4 v3, 0x1
+    move v3, v4
 
     :cond_1
     invoke-virtual {v2, v3}, Landroid/widget/FrameLayout;->setSelected(Z)V
@@ -2428,7 +2428,7 @@
 
     if-eqz v2, :cond_7
 
-    const/4 v2, 0x0
+    move v2, v3
 
     .line 1017
     :goto_2
@@ -2477,7 +2477,7 @@
 
     move-result v5
 
-    mul-int v4, v4, v5
+    mul-int/2addr v4, v5
 
     int-to-float v4, v4
 
@@ -2630,7 +2630,7 @@
     .line 1050
     invoke-virtual {p0, p1, v0}, Lorg/telegram/ui/Components/ScrollSlidingTabStrip;->stickerSetPositionChanged(II)V
 
-    const/4 p1, 0x0
+    move p1, v3
 
     .line 1051
     :goto_5
@@ -2697,8 +2697,6 @@
 
     :cond_e
     return v3
-
-    nop
 
     :array_0
     .array-data 4
@@ -2839,11 +2837,11 @@
 
     sub-float v3, v4, v3
 
-    mul-float v2, v2, v3
+    mul-float/2addr v2, v3
 
     const/4 v3, 0x0
 
-    const/4 v5, 0x0
+    move v5, v3
 
     .line 801
     :goto_0
@@ -2885,14 +2883,14 @@
 
     int-to-float v7, v5
 
-    mul-float v7, v7, v1
+    mul-float/2addr v7, v1
 
     .line 806
     iget v8, v0, Lorg/telegram/ui/Components/ScrollSlidingTabStrip;->expandProgress:F
 
     sub-float v8, v4, v8
 
-    mul-float v7, v7, v8
+    mul-float/2addr v7, v8
 
     add-float/2addr v7, v2
 
@@ -2948,7 +2946,7 @@
 
     sub-float v5, v4, v5
 
-    mul-float v2, v2, v5
+    mul-float/2addr v2, v5
 
     sub-float/2addr v1, v2
 
@@ -2962,7 +2960,7 @@
 
     if-eqz v2, :cond_4
 
-    const/high16 v2, 0x3f800000    # 1.0f
+    move v2, v4
 
     goto :goto_2
 
@@ -3340,13 +3338,13 @@
 
     move-result v12
 
-    mul-float v12, v12, v10
+    mul-float/2addr v12, v10
 
-    mul-float v12, v12, v6
+    mul-float/2addr v12, v6
 
     sub-float/2addr v8, v12
 
-    mul-float v8, v8, v7
+    mul-float/2addr v8, v7
 
     const v10, 0x3f666666    # 0.9f
 
@@ -3365,13 +3363,13 @@
 
     move-result v13
 
-    mul-float v13, v13, v12
+    mul-float/2addr v13, v12
 
-    mul-float v13, v13, v6
+    mul-float/2addr v13, v6
 
     add-float/2addr v13, v10
 
-    mul-float v7, v7, v13
+    mul-float/2addr v7, v13
 
     .line 860
     sget-object v10, Lorg/telegram/ui/Components/CubicBezierInterpolator;->EASE_IN:Lorg/telegram/ui/Components/CubicBezierInterpolator;
@@ -3419,7 +3417,7 @@
 
     move-result v3
 
-    mul-float v7, v7, v3
+    mul-float/2addr v7, v3
 
     .line 864
     iget-object v3, v0, Lorg/telegram/ui/Components/ScrollSlidingTabStrip;->tabBounds:Landroid/graphics/RectF;
@@ -3462,7 +3460,7 @@
 
     int-to-float v3, v3
 
-    mul-float v3, v3, v1
+    mul-float/2addr v3, v1
 
     float-to-int v1, v3
 
@@ -3580,7 +3578,7 @@
 
     sub-float/2addr v3, v1
 
-    mul-float v0, v0, v3
+    mul-float/2addr v0, v3
 
     .line 884
     iget-object v1, p0, Lorg/telegram/ui/Components/ScrollSlidingTabStrip;->draggingView:Landroid/view/View;
@@ -3599,7 +3597,7 @@
 
     iget v3, p0, Lorg/telegram/ui/Components/ScrollSlidingTabStrip;->draggingViewOutProgress:F
 
-    mul-float v1, v1, v3
+    mul-float/2addr v1, v3
 
     add-float/2addr v0, v1
 
@@ -3795,7 +3793,7 @@
 
     int-to-float v1, v1
 
-    mul-float v0, v0, v1
+    mul-float/2addr v0, v1
 
     div-float/2addr p2, v0
 
@@ -3810,9 +3808,9 @@
 
     int-to-float v1, v1
 
-    mul-float v0, v0, v1
+    mul-float/2addr v0, v1
 
-    mul-float v0, v0, p2
+    mul-float/2addr v0, p2
 
     .line 601
     invoke-virtual {p0}, Landroid/widget/HorizontalScrollView;->getScrollX()I
@@ -3874,7 +3872,7 @@
 
     iget v1, p0, Lorg/telegram/ui/Components/ScrollSlidingTabStrip;->expandProgress:F
 
-    mul-float v0, v0, v1
+    mul-float/2addr v0, v1
 
     goto :goto_0
 
@@ -4054,7 +4052,7 @@
     :cond_2
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    move v1, v0
 
     .line 925
     :goto_0
@@ -4080,7 +4078,7 @@
     goto :goto_1
 
     :cond_3
-    const/4 v3, 0x0
+    move v3, v0
 
     :goto_1
     invoke-virtual {v2, v3}, Landroid/view/View;->setSelected(Z)V
@@ -4244,7 +4242,7 @@
 
     iget v3, v0, Lorg/telegram/ui/Components/ScrollSlidingTabStrip;->expandProgress:F
 
-    mul-float v2, v2, v3
+    mul-float/2addr v2, v3
 
     add-float/2addr v1, v2
 
@@ -4259,7 +4257,7 @@
 
     sub-float/2addr v4, v3
 
-    mul-float v2, v2, v4
+    mul-float/2addr v2, v4
 
     goto :goto_0
 
@@ -4336,7 +4334,7 @@
 
     if-gez v2, :cond_1
 
-    const/4 v2, 0x0
+    move v2, v5
 
     .line 667
     :cond_1
@@ -4361,7 +4359,7 @@
 
     invoke-virtual {v3}, Landroid/util/SparseArray;->clear()V
 
-    const/4 v3, 0x0
+    move v3, v5
 
     .line 672
     :goto_1
@@ -4643,7 +4641,7 @@
     goto :goto_5
 
     :cond_b
-    const/4 v10, 0x0
+    move v10, v5
 
     .line 721
     :goto_5

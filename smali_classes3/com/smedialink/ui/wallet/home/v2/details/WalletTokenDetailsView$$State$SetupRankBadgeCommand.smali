@@ -32,17 +32,17 @@
 .method constructor <init>(Lcom/smedialink/ui/wallet/home/v2/details/WalletTokenDetailsView$$State;ZLcom/smedialink/storage/domain/model/crypto/level/AccountLevel;)V
     .locals 1
 
-    .line 650
+    .line 666
     const-class p1, Lmoxy/viewstate/strategy/AddToEndSingleStrategy;
 
     const-string v0, "setupRankBadge"
 
     invoke-direct {p0, v0, p1}, Lmoxy/viewstate/ViewCommand;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
 
-    .line 652
+    .line 668
     iput-boolean p2, p0, Lcom/smedialink/ui/wallet/home/v2/details/WalletTokenDetailsView$$State$SetupRankBadgeCommand;->isBadgeVisible:Z
 
-    .line 653
+    .line 669
     iput-object p3, p0, Lcom/smedialink/ui/wallet/home/v2/details/WalletTokenDetailsView$$State$SetupRankBadgeCommand;->accountLevel:Lcom/smedialink/storage/domain/model/crypto/level/AccountLevel;
 
     return-void
@@ -53,7 +53,7 @@
 .method public apply(Lcom/smedialink/ui/wallet/home/v2/details/WalletTokenDetailsView;)V
     .locals 2
 
-    .line 658
+    .line 674
     iget-boolean v0, p0, Lcom/smedialink/ui/wallet/home/v2/details/WalletTokenDetailsView$$State$SetupRankBadgeCommand;->isBadgeVisible:Z
 
     iget-object v1, p0, Lcom/smedialink/ui/wallet/home/v2/details/WalletTokenDetailsView$$State$SetupRankBadgeCommand;->accountLevel:Lcom/smedialink/storage/domain/model/crypto/level/AccountLevel;
@@ -66,7 +66,7 @@
 .method public bridge synthetic apply(Lmoxy/MvpView;)V
     .locals 0
 
-    .line 644
+    .line 660
     check-cast p1, Lcom/smedialink/ui/wallet/home/v2/details/WalletTokenDetailsView;
 
     invoke-virtual {p0, p1}, Lcom/smedialink/ui/wallet/home/v2/details/WalletTokenDetailsView$$State$SetupRankBadgeCommand;->apply(Lcom/smedialink/ui/wallet/home/v2/details/WalletTokenDetailsView;)V

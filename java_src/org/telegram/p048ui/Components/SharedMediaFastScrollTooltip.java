@@ -15,7 +15,7 @@ import androidx.core.graphics.ColorUtils;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import java.util.Random;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3286R;
+import org.telegram.messenger.C3301R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.p048ui.ActionBar.Theme;
 /* renamed from: org.telegram.ui.Components.SharedMediaFastScrollTooltip */
@@ -24,7 +24,7 @@ public class SharedMediaFastScrollTooltip extends FrameLayout {
     public SharedMediaFastScrollTooltip(Context context) {
         super(context);
         TextView textView = new TextView(context);
-        textView.setText(LocaleController.getString("SharedMediaFastScrollHint", C3286R.string.SharedMediaFastScrollHint));
+        textView.setText(LocaleController.getString("SharedMediaFastScrollHint", C3301R.string.SharedMediaFastScrollHint));
         textView.setTextSize(1, 14.0f);
         textView.setMaxLines(3);
         textView.setTextColor(Theme.getColor("chat_gifSaveHintText"));
@@ -75,7 +75,7 @@ public class SharedMediaFastScrollTooltip extends FrameLayout {
             int m50dp = ((AndroidUtilities.m50dp(1) + measuredWidth) * 7) + AndroidUtilities.m50dp(1);
             CubicBezierInterpolator cubicBezierInterpolator = CubicBezierInterpolator.EASE_OUT;
             float f = this.progress;
-            float interpolation = cubicBezierInterpolator.getInterpolation(f > 0.4f ? (f - 0.4f) / 0.6f : BitmapDescriptorFactory.HUE_RED);
+            float interpolation = cubicBezierInterpolator.getInterpolation(f > 0.4f ? (f - 0.4f) / 0.6f : 0.0f);
             float f2 = (this.toProgress * interpolation) + (this.fromProgress * (1.0f - interpolation));
             canvas.save();
             canvas.translate(BitmapDescriptorFactory.HUE_RED, (-(m50dp - (getMeasuredHeight() - AndroidUtilities.m50dp(4)))) * f2);

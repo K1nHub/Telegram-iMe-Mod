@@ -26,7 +26,7 @@ import moxy.ktx.MoxyKtxDelegate;
 import org.koin.core.component.KoinComponent;
 import org.koin.p047mp.KoinPlatformTools;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3286R;
+import org.telegram.messenger.C3301R;
 import org.telegram.messenger.databinding.ForkContentWordSwitcherBinding;
 import org.telegram.p048ui.ActionBar.Theme;
 /* compiled from: BackupWordSwitcher.kt */
@@ -97,7 +97,7 @@ public final class BackupWordSwitcher extends MvpFrameLayout implements KoinComp
         forkContentWordSwitcherBinding.textTitle.setTextColor(Theme.getColor("windowBackgroundWhiteGrayText2"));
         ConstraintLayout constraintWords = forkContentWordSwitcherBinding.constraintWords;
         Intrinsics.checkNotNullExpressionValue(constraintWords, "constraintWords");
-        filter = SequencesKt___SequencesKt.filter(ViewGroupKt.getChildren(constraintWords), C1909xbf3f1d4f.INSTANCE);
+        filter = SequencesKt___SequencesKt.filter(ViewGroupKt.getChildren(constraintWords), C1923xbf3f1d4f.INSTANCE);
         Intrinsics.checkNotNull(filter, "null cannot be cast to non-null type kotlin.sequences.Sequence<R of kotlin.sequences.SequencesKt___SequencesKt.filterIsInstance>");
         for (BackupWordView backupWordView : filter) {
             backupWordView.applyColors();
@@ -128,7 +128,7 @@ public final class BackupWordSwitcher extends MvpFrameLayout implements KoinComp
 
     @Override // com.smedialink.p031ui.custom.backup.switcher.BackupWordSwitcherMvpView
     public void setupTitle(int i) {
-        this.binding.textTitle.setText(getResourceManager().getString(C3286R.string.wallet_eth_backup_confirm_word_description, Integer.valueOf(i)));
+        this.binding.textTitle.setText(getResourceManager().getString(C3301R.string.wallet_eth_backup_confirm_word_description, Integer.valueOf(i)));
     }
 
     @Override // com.smedialink.p031ui.custom.backup.switcher.BackupWordSwitcherMvpView

@@ -45,7 +45,7 @@
 .method static constructor <clinit>()V
     .locals 1
 
-    .line 45
+    .line 46
     invoke-static {}, Lcom/google/protobuf/SchemaUtil;->getGeneratedMessageClass()Ljava/lang/Class;
 
     move-result-object v0
@@ -54,7 +54,7 @@
 
     const/4 v0, 0x0
 
-    .line 47
+    .line 48
     invoke-static {v0}, Lcom/google/protobuf/SchemaUtil;->getUnknownFieldSetSchema(Z)Lcom/google/protobuf/UnknownFieldSchema;
 
     move-result-object v0
@@ -63,14 +63,14 @@
 
     const/4 v0, 0x1
 
-    .line 49
+    .line 50
     invoke-static {v0}, Lcom/google/protobuf/SchemaUtil;->getUnknownFieldSetSchema(Z)Lcom/google/protobuf/UnknownFieldSchema;
 
     move-result-object v0
 
     sput-object v0, Lcom/google/protobuf/SchemaUtil;->PROTO3_UNKNOWN_FIELD_SET_SCHEMA:Lcom/google/protobuf/UnknownFieldSchema;
 
-    .line 50
+    .line 51
     new-instance v0, Lcom/google/protobuf/UnknownFieldSetLiteSchema;
 
     invoke-direct {v0}, Lcom/google/protobuf/UnknownFieldSetLiteSchema;-><init>()V
@@ -90,7 +90,7 @@
         }
     .end annotation
 
-    .line 626
+    .line 627
     invoke-interface {p1}, Ljava/util/List;->size()I
 
     move-result p1
@@ -104,12 +104,12 @@
     :cond_0
     if-eqz p2, :cond_1
 
-    .line 632
+    .line 633
     invoke-static {p0}, Lcom/google/protobuf/CodedOutputStream;->computeTagSize(I)I
 
     move-result p0
 
-    .line 633
+    .line 634
     invoke-static {p1}, Lcom/google/protobuf/CodedOutputStream;->computeLengthDelimitedFieldSize(I)I
 
     move-result p1
@@ -121,12 +121,12 @@
     :cond_1
     const/4 p2, 0x1
 
-    .line 635
+    .line 636
     invoke-static {p0, p2}, Lcom/google/protobuf/CodedOutputStream;->computeBoolSize(IZ)I
 
     move-result p0
 
-    mul-int p1, p1, p0
+    mul-int/2addr p1, p0
 
     return p1
 .end method
@@ -141,7 +141,7 @@
         }
     .end annotation
 
-    .line 622
+    .line 623
     invoke-interface {p0}, Ljava/util/List;->size()I
 
     move-result p0
@@ -160,7 +160,7 @@
         }
     .end annotation
 
-    .line 711
+    .line 712
     invoke-interface {p1}, Ljava/util/List;->size()I
 
     move-result v0
@@ -171,15 +171,15 @@
 
     return v1
 
-    .line 715
+    .line 716
     :cond_0
     invoke-static {p0}, Lcom/google/protobuf/CodedOutputStream;->computeTagSize(I)I
 
     move-result p0
 
-    mul-int v0, v0, p0
+    mul-int/2addr v0, p0
 
-    .line 716
+    .line 717
     :goto_0
     invoke-interface {p1}, Ljava/util/List;->size()I
 
@@ -187,7 +187,7 @@
 
     if-ge v1, p0, :cond_1
 
-    .line 717
+    .line 718
     invoke-interface {p1, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object p0
@@ -219,7 +219,7 @@
         }
     .end annotation
 
-    .line 461
+    .line 462
     invoke-interface {p1}, Ljava/util/List;->size()I
 
     move-result v0
@@ -230,7 +230,7 @@
 
     return p0
 
-    .line 465
+    .line 466
     :cond_0
     invoke-static {p1}, Lcom/google/protobuf/SchemaUtil;->computeSizeEnumListNoTag(Ljava/util/List;)I
 
@@ -238,12 +238,12 @@
 
     if-eqz p2, :cond_1
 
-    .line 468
+    .line 469
     invoke-static {p0}, Lcom/google/protobuf/CodedOutputStream;->computeTagSize(I)I
 
     move-result p0
 
-    .line 469
+    .line 470
     invoke-static {p1}, Lcom/google/protobuf/CodedOutputStream;->computeLengthDelimitedFieldSize(I)I
 
     move-result p1
@@ -252,13 +252,13 @@
 
     return p0
 
-    .line 471
+    .line 472
     :cond_1
     invoke-static {p0}, Lcom/google/protobuf/CodedOutputStream;->computeTagSize(I)I
 
     move-result p0
 
-    mul-int v0, v0, p0
+    mul-int/2addr v0, p0
 
     add-int/2addr p1, v0
 
@@ -276,7 +276,7 @@
         }
     .end annotation
 
-    .line 440
+    .line 441
     invoke-interface {p0}, Ljava/util/List;->size()I
 
     move-result v0
@@ -287,21 +287,21 @@
 
     return v1
 
-    .line 447
+    .line 448
     :cond_0
     instance-of v2, p0, Lcom/google/protobuf/IntArrayList;
 
     if-eqz v2, :cond_1
 
-    .line 448
+    .line 449
     check-cast p0, Lcom/google/protobuf/IntArrayList;
 
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_0
     if-ge v1, v0, :cond_2
 
-    .line 450
+    .line 451
     invoke-virtual {p0, v1}, Lcom/google/protobuf/IntArrayList;->getInt(I)I
 
     move-result v3
@@ -317,12 +317,12 @@
     goto :goto_0
 
     :cond_1
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_1
     if-ge v1, v0, :cond_2
 
-    .line 454
+    .line 455
     invoke-interface {p0, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v3
@@ -357,7 +357,7 @@
         }
     .end annotation
 
-    .line 589
+    .line 590
     invoke-interface {p1}, Ljava/util/List;->size()I
 
     move-result p1
@@ -373,12 +373,12 @@
 
     mul-int/lit8 p1, p1, 0x4
 
-    .line 595
+    .line 596
     invoke-static {p0}, Lcom/google/protobuf/CodedOutputStream;->computeTagSize(I)I
 
     move-result p0
 
-    .line 596
+    .line 597
     invoke-static {p1}, Lcom/google/protobuf/CodedOutputStream;->computeLengthDelimitedFieldSize(I)I
 
     move-result p1
@@ -387,13 +387,13 @@
 
     return p0
 
-    .line 598
+    .line 599
     :cond_1
     invoke-static {p0, v0}, Lcom/google/protobuf/CodedOutputStream;->computeFixed32Size(II)I
 
     move-result p0
 
-    mul-int p1, p1, p0
+    mul-int/2addr p1, p0
 
     return p1
 .end method
@@ -408,7 +408,7 @@
         }
     .end annotation
 
-    .line 585
+    .line 586
     invoke-interface {p0}, Ljava/util/List;->size()I
 
     move-result p0
@@ -428,7 +428,7 @@
         }
     .end annotation
 
-    .line 607
+    .line 608
     invoke-interface {p1}, Ljava/util/List;->size()I
 
     move-result p1
@@ -444,12 +444,12 @@
 
     mul-int/lit8 p1, p1, 0x8
 
-    .line 613
+    .line 614
     invoke-static {p0}, Lcom/google/protobuf/CodedOutputStream;->computeTagSize(I)I
 
     move-result p0
 
-    .line 614
+    .line 615
     invoke-static {p1}, Lcom/google/protobuf/CodedOutputStream;->computeLengthDelimitedFieldSize(I)I
 
     move-result p1
@@ -461,12 +461,12 @@
     :cond_1
     const-wide/16 v0, 0x0
 
-    .line 616
+    .line 617
     invoke-static {p0, v0, v1}, Lcom/google/protobuf/CodedOutputStream;->computeFixed64Size(IJ)I
 
     move-result p0
 
-    mul-int p1, p1, p0
+    mul-int/2addr p1, p0
 
     return p1
 .end method
@@ -481,7 +481,7 @@
         }
     .end annotation
 
-    .line 603
+    .line 604
     invoke-interface {p0}, Ljava/util/List;->size()I
 
     move-result p0
@@ -504,7 +504,7 @@
         }
     .end annotation
 
-    .line 735
+    .line 736
     invoke-interface {p1}, Ljava/util/List;->size()I
 
     move-result v0
@@ -516,12 +516,12 @@
     return v1
 
     :cond_0
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_0
     if-ge v1, v0, :cond_1
 
-    .line 741
+    .line 742
     invoke-interface {p1, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v3
@@ -553,7 +553,7 @@
         }
     .end annotation
 
-    .line 497
+    .line 498
     invoke-interface {p1}, Ljava/util/List;->size()I
 
     move-result v0
@@ -564,7 +564,7 @@
 
     return p0
 
-    .line 501
+    .line 502
     :cond_0
     invoke-static {p1}, Lcom/google/protobuf/SchemaUtil;->computeSizeInt32ListNoTag(Ljava/util/List;)I
 
@@ -572,12 +572,12 @@
 
     if-eqz p2, :cond_1
 
-    .line 504
+    .line 505
     invoke-static {p0}, Lcom/google/protobuf/CodedOutputStream;->computeTagSize(I)I
 
     move-result p0
 
-    .line 505
+    .line 506
     invoke-static {p1}, Lcom/google/protobuf/CodedOutputStream;->computeLengthDelimitedFieldSize(I)I
 
     move-result p1
@@ -586,13 +586,13 @@
 
     return p0
 
-    .line 507
+    .line 508
     :cond_1
     invoke-static {p0}, Lcom/google/protobuf/CodedOutputStream;->computeTagSize(I)I
 
     move-result p0
 
-    mul-int v0, v0, p0
+    mul-int/2addr v0, p0
 
     add-int/2addr p1, v0
 
@@ -610,7 +610,7 @@
         }
     .end annotation
 
-    .line 476
+    .line 477
     invoke-interface {p0}, Ljava/util/List;->size()I
 
     move-result v0
@@ -621,21 +621,21 @@
 
     return v1
 
-    .line 483
+    .line 484
     :cond_0
     instance-of v2, p0, Lcom/google/protobuf/IntArrayList;
 
     if-eqz v2, :cond_1
 
-    .line 484
+    .line 485
     check-cast p0, Lcom/google/protobuf/IntArrayList;
 
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_0
     if-ge v1, v0, :cond_2
 
-    .line 486
+    .line 487
     invoke-virtual {p0, v1}, Lcom/google/protobuf/IntArrayList;->getInt(I)I
 
     move-result v3
@@ -651,12 +651,12 @@
     goto :goto_0
 
     :cond_1
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_1
     if-ge v1, v0, :cond_2
 
-    .line 490
+    .line 491
     invoke-interface {p0, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v3
@@ -692,7 +692,7 @@
         }
     .end annotation
 
-    .line 353
+    .line 354
     invoke-interface {p1}, Ljava/util/List;->size()I
 
     move-result v0
@@ -703,7 +703,7 @@
 
     return p0
 
-    .line 357
+    .line 358
     :cond_0
     invoke-static {p1}, Lcom/google/protobuf/SchemaUtil;->computeSizeInt64ListNoTag(Ljava/util/List;)I
 
@@ -711,12 +711,12 @@
 
     if-eqz p2, :cond_1
 
-    .line 360
+    .line 361
     invoke-static {p0}, Lcom/google/protobuf/CodedOutputStream;->computeTagSize(I)I
 
     move-result p0
 
-    .line 361
+    .line 362
     invoke-static {v0}, Lcom/google/protobuf/CodedOutputStream;->computeLengthDelimitedFieldSize(I)I
 
     move-result p1
@@ -725,7 +725,7 @@
 
     return p0
 
-    .line 363
+    .line 364
     :cond_1
     invoke-interface {p1}, Ljava/util/List;->size()I
 
@@ -735,7 +735,7 @@
 
     move-result p0
 
-    mul-int p1, p1, p0
+    mul-int/2addr p1, p0
 
     add-int/2addr v0, p1
 
@@ -753,7 +753,7 @@
         }
     .end annotation
 
-    .line 332
+    .line 333
     invoke-interface {p0}, Ljava/util/List;->size()I
 
     move-result v0
@@ -764,21 +764,21 @@
 
     return v1
 
-    .line 339
+    .line 340
     :cond_0
     instance-of v2, p0, Lcom/google/protobuf/LongArrayList;
 
     if-eqz v2, :cond_1
 
-    .line 340
+    .line 341
     check-cast p0, Lcom/google/protobuf/LongArrayList;
 
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_0
     if-ge v1, v0, :cond_2
 
-    .line 342
+    .line 343
     invoke-virtual {p0, v1}, Lcom/google/protobuf/LongArrayList;->getLong(I)J
 
     move-result-wide v3
@@ -794,12 +794,12 @@
     goto :goto_0
 
     :cond_1
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_1
     if-ge v1, v0, :cond_2
 
-    .line 346
+    .line 347
     invoke-interface {p0, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v3
@@ -827,12 +827,12 @@
 .method static computeSizeMessage(ILjava/lang/Object;Lcom/google/protobuf/Schema;)I
     .locals 1
 
-    .line 669
+    .line 670
     instance-of v0, p1, Lcom/google/protobuf/LazyFieldLite;
 
     if-eqz v0, :cond_0
 
-    .line 670
+    .line 671
     check-cast p1, Lcom/google/protobuf/LazyFieldLite;
 
     invoke-static {p0, p1}, Lcom/google/protobuf/CodedOutputStream;->computeLazyFieldSize(ILcom/google/protobuf/LazyFieldLite;)I
@@ -841,7 +841,7 @@
 
     return p0
 
-    .line 672
+    .line 673
     :cond_0
     check-cast p1, Lcom/google/protobuf/MessageLite;
 
@@ -864,7 +864,7 @@
         }
     .end annotation
 
-    .line 694
+    .line 695
     invoke-interface {p1}, Ljava/util/List;->size()I
 
     move-result v0
@@ -875,28 +875,28 @@
 
     return v1
 
-    .line 698
+    .line 699
     :cond_0
     invoke-static {p0}, Lcom/google/protobuf/CodedOutputStream;->computeTagSize(I)I
 
     move-result p0
 
-    mul-int p0, p0, v0
+    mul-int/2addr p0, v0
 
     :goto_0
     if-ge v1, v0, :cond_2
 
-    .line 700
+    .line 701
     invoke-interface {p1, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v2
 
-    .line 701
+    .line 702
     instance-of v3, v2, Lcom/google/protobuf/LazyFieldLite;
 
     if-eqz v3, :cond_1
 
-    .line 702
+    .line 703
     check-cast v2, Lcom/google/protobuf/LazyFieldLite;
 
     invoke-static {v2}, Lcom/google/protobuf/CodedOutputStream;->computeLazyFieldSizeNoTag(Lcom/google/protobuf/LazyFieldLite;)I
@@ -905,7 +905,7 @@
 
     goto :goto_1
 
-    .line 704
+    .line 705
     :cond_1
     check-cast v2, Lcom/google/protobuf/MessageLite;
 
@@ -935,7 +935,7 @@
         }
     .end annotation
 
-    .line 569
+    .line 570
     invoke-interface {p1}, Ljava/util/List;->size()I
 
     move-result v0
@@ -946,7 +946,7 @@
 
     return p0
 
-    .line 574
+    .line 575
     :cond_0
     invoke-static {p1}, Lcom/google/protobuf/SchemaUtil;->computeSizeSInt32ListNoTag(Ljava/util/List;)I
 
@@ -954,12 +954,12 @@
 
     if-eqz p2, :cond_1
 
-    .line 577
+    .line 578
     invoke-static {p0}, Lcom/google/protobuf/CodedOutputStream;->computeTagSize(I)I
 
     move-result p0
 
-    .line 578
+    .line 579
     invoke-static {p1}, Lcom/google/protobuf/CodedOutputStream;->computeLengthDelimitedFieldSize(I)I
 
     move-result p1
@@ -968,13 +968,13 @@
 
     return p0
 
-    .line 580
+    .line 581
     :cond_1
     invoke-static {p0}, Lcom/google/protobuf/CodedOutputStream;->computeTagSize(I)I
 
     move-result p0
 
-    mul-int v0, v0, p0
+    mul-int/2addr v0, p0
 
     add-int/2addr p1, v0
 
@@ -992,7 +992,7 @@
         }
     .end annotation
 
-    .line 548
+    .line 549
     invoke-interface {p0}, Ljava/util/List;->size()I
 
     move-result v0
@@ -1003,21 +1003,21 @@
 
     return v1
 
-    .line 555
+    .line 556
     :cond_0
     instance-of v2, p0, Lcom/google/protobuf/IntArrayList;
 
     if-eqz v2, :cond_1
 
-    .line 556
+    .line 557
     check-cast p0, Lcom/google/protobuf/IntArrayList;
 
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_0
     if-ge v1, v0, :cond_2
 
-    .line 558
+    .line 559
     invoke-virtual {p0, v1}, Lcom/google/protobuf/IntArrayList;->getInt(I)I
 
     move-result v3
@@ -1033,12 +1033,12 @@
     goto :goto_0
 
     :cond_1
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_1
     if-ge v1, v0, :cond_2
 
-    .line 562
+    .line 563
     invoke-interface {p0, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v3
@@ -1074,7 +1074,7 @@
         }
     .end annotation
 
-    .line 425
+    .line 426
     invoke-interface {p1}, Ljava/util/List;->size()I
 
     move-result v0
@@ -1085,7 +1085,7 @@
 
     return p0
 
-    .line 429
+    .line 430
     :cond_0
     invoke-static {p1}, Lcom/google/protobuf/SchemaUtil;->computeSizeSInt64ListNoTag(Ljava/util/List;)I
 
@@ -1093,12 +1093,12 @@
 
     if-eqz p2, :cond_1
 
-    .line 432
+    .line 433
     invoke-static {p0}, Lcom/google/protobuf/CodedOutputStream;->computeTagSize(I)I
 
     move-result p0
 
-    .line 433
+    .line 434
     invoke-static {p1}, Lcom/google/protobuf/CodedOutputStream;->computeLengthDelimitedFieldSize(I)I
 
     move-result p1
@@ -1107,13 +1107,13 @@
 
     return p0
 
-    .line 435
+    .line 436
     :cond_1
     invoke-static {p0}, Lcom/google/protobuf/CodedOutputStream;->computeTagSize(I)I
 
     move-result p0
 
-    mul-int v0, v0, p0
+    mul-int/2addr v0, p0
 
     add-int/2addr p1, v0
 
@@ -1131,7 +1131,7 @@
         }
     .end annotation
 
-    .line 404
+    .line 405
     invoke-interface {p0}, Ljava/util/List;->size()I
 
     move-result v0
@@ -1142,21 +1142,21 @@
 
     return v1
 
-    .line 411
+    .line 412
     :cond_0
     instance-of v2, p0, Lcom/google/protobuf/LongArrayList;
 
     if-eqz v2, :cond_1
 
-    .line 412
+    .line 413
     check-cast p0, Lcom/google/protobuf/LongArrayList;
 
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_0
     if-ge v1, v0, :cond_2
 
-    .line 414
+    .line 415
     invoke-virtual {p0, v1}, Lcom/google/protobuf/LongArrayList;->getLong(I)J
 
     move-result-wide v3
@@ -1172,12 +1172,12 @@
     goto :goto_0
 
     :cond_1
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_1
     if-ge v1, v0, :cond_2
 
-    .line 418
+    .line 419
     invoke-interface {p0, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v3
@@ -1212,7 +1212,7 @@
         }
     .end annotation
 
-    .line 640
+    .line 641
     invoke-interface {p1}, Ljava/util/List;->size()I
 
     move-result v0
@@ -1223,36 +1223,36 @@
 
     return v1
 
-    .line 644
+    .line 645
     :cond_0
     invoke-static {p0}, Lcom/google/protobuf/CodedOutputStream;->computeTagSize(I)I
 
     move-result p0
 
-    mul-int p0, p0, v0
+    mul-int/2addr p0, v0
 
-    .line 645
+    .line 646
     instance-of v2, p1, Lcom/google/protobuf/LazyStringList;
 
     if-eqz v2, :cond_2
 
-    .line 646
+    .line 647
     check-cast p1, Lcom/google/protobuf/LazyStringList;
 
     :goto_0
     if-ge v1, v0, :cond_4
 
-    .line 648
+    .line 649
     invoke-interface {p1, v1}, Lcom/google/protobuf/LazyStringList;->getRaw(I)Ljava/lang/Object;
 
     move-result-object v2
 
-    .line 649
+    .line 650
     instance-of v3, v2, Lcom/google/protobuf/ByteString;
 
     if-eqz v3, :cond_1
 
-    .line 650
+    .line 651
     check-cast v2, Lcom/google/protobuf/ByteString;
 
     invoke-static {v2}, Lcom/google/protobuf/CodedOutputStream;->computeBytesSizeNoTag(Lcom/google/protobuf/ByteString;)I
@@ -1261,7 +1261,7 @@
 
     goto :goto_1
 
-    .line 652
+    .line 653
     :cond_1
     check-cast v2, Ljava/lang/String;
 
@@ -1280,17 +1280,17 @@
     :goto_2
     if-ge v1, v0, :cond_4
 
-    .line 657
+    .line 658
     invoke-interface {p1, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v2
 
-    .line 658
+    .line 659
     instance-of v3, v2, Lcom/google/protobuf/ByteString;
 
     if-eqz v3, :cond_3
 
-    .line 659
+    .line 660
     check-cast v2, Lcom/google/protobuf/ByteString;
 
     invoke-static {v2}, Lcom/google/protobuf/CodedOutputStream;->computeBytesSizeNoTag(Lcom/google/protobuf/ByteString;)I
@@ -1299,7 +1299,7 @@
 
     goto :goto_3
 
-    .line 661
+    .line 662
     :cond_3
     check-cast v2, Ljava/lang/String;
 
@@ -1329,7 +1329,7 @@
         }
     .end annotation
 
-    .line 533
+    .line 534
     invoke-interface {p1}, Ljava/util/List;->size()I
 
     move-result v0
@@ -1340,7 +1340,7 @@
 
     return p0
 
-    .line 537
+    .line 538
     :cond_0
     invoke-static {p1}, Lcom/google/protobuf/SchemaUtil;->computeSizeUInt32ListNoTag(Ljava/util/List;)I
 
@@ -1348,12 +1348,12 @@
 
     if-eqz p2, :cond_1
 
-    .line 540
+    .line 541
     invoke-static {p0}, Lcom/google/protobuf/CodedOutputStream;->computeTagSize(I)I
 
     move-result p0
 
-    .line 541
+    .line 542
     invoke-static {p1}, Lcom/google/protobuf/CodedOutputStream;->computeLengthDelimitedFieldSize(I)I
 
     move-result p1
@@ -1362,13 +1362,13 @@
 
     return p0
 
-    .line 543
+    .line 544
     :cond_1
     invoke-static {p0}, Lcom/google/protobuf/CodedOutputStream;->computeTagSize(I)I
 
     move-result p0
 
-    mul-int v0, v0, p0
+    mul-int/2addr v0, p0
 
     add-int/2addr p1, v0
 
@@ -1386,7 +1386,7 @@
         }
     .end annotation
 
-    .line 512
+    .line 513
     invoke-interface {p0}, Ljava/util/List;->size()I
 
     move-result v0
@@ -1397,21 +1397,21 @@
 
     return v1
 
-    .line 519
+    .line 520
     :cond_0
     instance-of v2, p0, Lcom/google/protobuf/IntArrayList;
 
     if-eqz v2, :cond_1
 
-    .line 520
+    .line 521
     check-cast p0, Lcom/google/protobuf/IntArrayList;
 
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_0
     if-ge v1, v0, :cond_2
 
-    .line 522
+    .line 523
     invoke-virtual {p0, v1}, Lcom/google/protobuf/IntArrayList;->getInt(I)I
 
     move-result v3
@@ -1427,12 +1427,12 @@
     goto :goto_0
 
     :cond_1
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_1
     if-ge v1, v0, :cond_2
 
-    .line 526
+    .line 527
     invoke-interface {p0, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v3
@@ -1468,7 +1468,7 @@
         }
     .end annotation
 
-    .line 389
+    .line 390
     invoke-interface {p1}, Ljava/util/List;->size()I
 
     move-result v0
@@ -1479,7 +1479,7 @@
 
     return p0
 
-    .line 393
+    .line 394
     :cond_0
     invoke-static {p1}, Lcom/google/protobuf/SchemaUtil;->computeSizeUInt64ListNoTag(Ljava/util/List;)I
 
@@ -1487,12 +1487,12 @@
 
     if-eqz p2, :cond_1
 
-    .line 396
+    .line 397
     invoke-static {p0}, Lcom/google/protobuf/CodedOutputStream;->computeTagSize(I)I
 
     move-result p0
 
-    .line 397
+    .line 398
     invoke-static {p1}, Lcom/google/protobuf/CodedOutputStream;->computeLengthDelimitedFieldSize(I)I
 
     move-result p1
@@ -1501,13 +1501,13 @@
 
     return p0
 
-    .line 399
+    .line 400
     :cond_1
     invoke-static {p0}, Lcom/google/protobuf/CodedOutputStream;->computeTagSize(I)I
 
     move-result p0
 
-    mul-int v0, v0, p0
+    mul-int/2addr v0, p0
 
     add-int/2addr p1, v0
 
@@ -1525,7 +1525,7 @@
         }
     .end annotation
 
-    .line 368
+    .line 369
     invoke-interface {p0}, Ljava/util/List;->size()I
 
     move-result v0
@@ -1536,21 +1536,21 @@
 
     return v1
 
-    .line 375
+    .line 376
     :cond_0
     instance-of v2, p0, Lcom/google/protobuf/LongArrayList;
 
     if-eqz v2, :cond_1
 
-    .line 376
+    .line 377
     check-cast p0, Lcom/google/protobuf/LongArrayList;
 
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_0
     if-ge v1, v0, :cond_2
 
-    .line 378
+    .line 379
     invoke-virtual {p0, v1}, Lcom/google/protobuf/LongArrayList;->getLong(I)J
 
     move-result-wide v3
@@ -1566,12 +1566,12 @@
     goto :goto_0
 
     :cond_1
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_1
     if-ge v1, v0, :cond_2
 
-    .line 382
+    .line 383
     invoke-interface {p0, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v3
@@ -1619,25 +1619,25 @@
 
     return-object p3
 
-    .line 913
+    .line 914
     :cond_0
     instance-of v0, p1, Ljava/util/RandomAccess;
 
     if-eqz v0, :cond_4
 
-    .line 915
+    .line 916
     invoke-interface {p1}, Ljava/util/List;->size()I
 
     move-result v0
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_0
     if-ge v1, v0, :cond_3
 
-    .line 917
+    .line 918
     invoke-interface {p1, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v3
@@ -1648,7 +1648,7 @@
 
     move-result v3
 
-    .line 918
+    .line 919
     invoke-interface {p2, v3}, Lcom/google/protobuf/Internal$EnumLiteMap;->findValueByNumber(I)Lcom/google/protobuf/Internal$EnumLite;
 
     move-result-object v4
@@ -1657,7 +1657,7 @@
 
     if-eq v1, v2, :cond_1
 
-    .line 920
+    .line 921
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
@@ -1669,7 +1669,7 @@
 
     goto :goto_1
 
-    .line 924
+    .line 925
     :cond_2
     invoke-static {p0, v3, p3, p4}, Lcom/google/protobuf/SchemaUtil;->storeUnknownEnum(IILjava/lang/Object;Lcom/google/protobuf/UnknownFieldSchema;)Ljava/lang/Object;
 
@@ -1683,7 +1683,7 @@
     :cond_3
     if-eq v2, v0, :cond_6
 
-    .line 928
+    .line 929
     invoke-interface {p1, v2, v0}, Ljava/util/List;->subList(II)Ljava/util/List;
 
     move-result-object p0
@@ -1692,7 +1692,7 @@
 
     goto :goto_3
 
-    .line 931
+    .line 932
     :cond_4
     invoke-interface {p1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
@@ -1706,7 +1706,7 @@
 
     if-eqz v0, :cond_6
 
-    .line 932
+    .line 933
     invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v0
@@ -1717,19 +1717,19 @@
 
     move-result v0
 
-    .line 933
+    .line 934
     invoke-interface {p2, v0}, Lcom/google/protobuf/Internal$EnumLiteMap;->findValueByNumber(I)Lcom/google/protobuf/Internal$EnumLite;
 
     move-result-object v1
 
     if-nez v1, :cond_5
 
-    .line 934
+    .line 935
     invoke-static {p0, v0, p3, p4}, Lcom/google/protobuf/SchemaUtil;->storeUnknownEnum(IILjava/lang/Object;Lcom/google/protobuf/UnknownFieldSchema;)Ljava/lang/Object;
 
     move-result-object p3
 
-    .line 935
+    .line 936
     invoke-interface {p1}, Ljava/util/Iterator;->remove()V
 
     goto :goto_2
@@ -1762,25 +1762,25 @@
 
     return-object p3
 
-    .line 953
+    .line 954
     :cond_0
     instance-of v0, p1, Ljava/util/RandomAccess;
 
     if-eqz v0, :cond_4
 
-    .line 955
+    .line 956
     invoke-interface {p1}, Ljava/util/List;->size()I
 
     move-result v0
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_0
     if-ge v1, v0, :cond_3
 
-    .line 957
+    .line 958
     invoke-interface {p1, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v3
@@ -1791,7 +1791,7 @@
 
     move-result v3
 
-    .line 958
+    .line 959
     invoke-interface {p2, v3}, Lcom/google/protobuf/Internal$EnumVerifier;->isInRange(I)Z
 
     move-result v4
@@ -1800,7 +1800,7 @@
 
     if-eq v1, v2, :cond_1
 
-    .line 960
+    .line 961
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
@@ -1812,7 +1812,7 @@
 
     goto :goto_1
 
-    .line 964
+    .line 965
     :cond_2
     invoke-static {p0, v3, p3, p4}, Lcom/google/protobuf/SchemaUtil;->storeUnknownEnum(IILjava/lang/Object;Lcom/google/protobuf/UnknownFieldSchema;)Ljava/lang/Object;
 
@@ -1826,7 +1826,7 @@
     :cond_3
     if-eq v2, v0, :cond_6
 
-    .line 968
+    .line 969
     invoke-interface {p1, v2, v0}, Ljava/util/List;->subList(II)Ljava/util/List;
 
     move-result-object p0
@@ -1835,7 +1835,7 @@
 
     goto :goto_3
 
-    .line 971
+    .line 972
     :cond_4
     invoke-interface {p1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
@@ -1849,7 +1849,7 @@
 
     if-eqz v0, :cond_6
 
-    .line 972
+    .line 973
     invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v0
@@ -1860,19 +1860,19 @@
 
     move-result v0
 
-    .line 973
+    .line 974
     invoke-interface {p2, v0}, Lcom/google/protobuf/Internal$EnumVerifier;->isInRange(I)Z
 
     move-result v1
 
     if-nez v1, :cond_5
 
-    .line 974
+    .line 975
     invoke-static {p0, v0, p3, p4}, Lcom/google/protobuf/SchemaUtil;->storeUnknownEnum(IILjava/lang/Object;Lcom/google/protobuf/UnknownFieldSchema;)Ljava/lang/Object;
 
     move-result-object p3
 
-    .line 975
+    .line 976
     invoke-interface {p1}, Ljava/util/Iterator;->remove()V
 
     goto :goto_2
@@ -1895,7 +1895,7 @@
     :try_start_0
     const-string v0, "com.google.protobuf.GeneratedMessageV3"
 
-    .line 811
+    .line 812
     invoke-static {v0}, Ljava/lang/Class;->forName(Ljava/lang/String;)Ljava/lang/Class;
 
     move-result-object v0
@@ -1922,7 +1922,7 @@
 
     const/4 v0, 0x0
 
-    .line 799
+    .line 800
     :try_start_0
     invoke-static {}, Lcom/google/protobuf/SchemaUtil;->getUnknownFieldSetSchemaClass()Ljava/lang/Class;
 
@@ -1937,7 +1937,7 @@
 
     new-array v3, v2, [Ljava/lang/Class;
 
-    .line 803
+    .line 804
     sget-object v4, Ljava/lang/Boolean;->TYPE:Ljava/lang/Class;
 
     const/4 v5, 0x0
@@ -1983,7 +1983,7 @@
     :try_start_0
     const-string v0, "com.google.protobuf.UnknownFieldSetSchema"
 
-    .line 819
+    .line 820
     invoke-static {v0}, Ljava/lang/Class;->forName(Ljava/lang/String;)Ljava/lang/Class;
 
     move-result-object v0
@@ -2012,24 +2012,24 @@
         }
     .end annotation
 
-    .line 887
+    .line 888
     invoke-virtual {p0, p2}, Lcom/google/protobuf/ExtensionSchema;->getExtensions(Ljava/lang/Object;)Lcom/google/protobuf/FieldSet;
 
     move-result-object p2
 
-    .line 888
+    .line 889
     invoke-virtual {p2}, Lcom/google/protobuf/FieldSet;->isEmpty()Z
 
     move-result v0
 
     if-nez v0, :cond_0
 
-    .line 889
+    .line 890
     invoke-virtual {p0, p1}, Lcom/google/protobuf/ExtensionSchema;->getMutableExtensions(Ljava/lang/Object;)Lcom/google/protobuf/FieldSet;
 
     move-result-object p0
 
-    .line 890
+    .line 891
     invoke-virtual {p0, p2}, Lcom/google/protobuf/FieldSet;->mergeFrom(Lcom/google/protobuf/FieldSet;)V
 
     :cond_0
@@ -2048,7 +2048,7 @@
         }
     .end annotation
 
-    .line 881
+    .line 882
     invoke-static {p1, p3, p4}, Lcom/google/protobuf/UnsafeUtil;->getObject(Ljava/lang/Object;J)Ljava/lang/Object;
 
     move-result-object v0
@@ -2057,12 +2057,12 @@
 
     move-result-object p2
 
-    .line 880
+    .line 881
     invoke-interface {p0, v0, p2}, Lcom/google/protobuf/MapFieldSchema;->mergeFrom(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p0
 
-    .line 882
+    .line 883
     invoke-static {p1, p3, p4, p0}, Lcom/google/protobuf/UnsafeUtil;->putObject(Ljava/lang/Object;JLjava/lang/Object;)V
 
     return-void
@@ -2084,22 +2084,22 @@
         }
     .end annotation
 
-    .line 896
+    .line 897
     invoke-virtual {p0, p1}, Lcom/google/protobuf/UnknownFieldSchema;->getFromMessage(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
-    .line 897
+    .line 898
     invoke-virtual {p0, p2}, Lcom/google/protobuf/UnknownFieldSchema;->getFromMessage(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p2
 
-    .line 898
+    .line 899
     invoke-virtual {p0, v0, p2}, Lcom/google/protobuf/UnknownFieldSchema;->merge(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p2
 
-    .line 899
+    .line 900
     invoke-virtual {p0, p1, p2}, Lcom/google/protobuf/UnknownFieldSchema;->setToMessage(Ljava/lang/Object;Ljava/lang/Object;)V
 
     return-void
@@ -2115,7 +2115,7 @@
         }
     .end annotation
 
-    .line 786
+    .line 787
     sget-object v0, Lcom/google/protobuf/SchemaUtil;->PROTO2_UNKNOWN_FIELD_SET_SCHEMA:Lcom/google/protobuf/UnknownFieldSchema;
 
     return-object v0
@@ -2131,7 +2131,7 @@
         }
     .end annotation
 
-    .line 790
+    .line 791
     sget-object v0, Lcom/google/protobuf/SchemaUtil;->PROTO3_UNKNOWN_FIELD_SET_SCHEMA:Lcom/google/protobuf/UnknownFieldSchema;
 
     return-object v0
@@ -2147,7 +2147,7 @@
         }
     .end annotation
 
-    .line 62
+    .line 63
     const-class v0, Lcom/google/protobuf/GeneratedMessageLite;
 
     invoke-virtual {v0, p0}, Ljava/lang/Class;->isAssignableFrom(Ljava/lang/Class;)Z
@@ -2160,7 +2160,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 64
+    .line 65
     invoke-virtual {v0, p0}, Ljava/lang/Class;->isAssignableFrom(Ljava/lang/Class;)Z
 
     move-result p0
@@ -2169,11 +2169,11 @@
 
     goto :goto_0
 
-    .line 65
+    .line 66
     :cond_0
     new-instance p0, Ljava/lang/IllegalArgumentException;
 
-    const-string v0, "Message classes must extend GeneratedMessage or GeneratedMessageLite"
+    const-string v0, "Message classes must extend GeneratedMessageV3 or GeneratedMessageLite"
 
     invoke-direct {p0, v0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
@@ -2191,7 +2191,7 @@
 
     if-eqz p0, :cond_0
 
-    .line 875
+    .line 876
     invoke-virtual {p0, p1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
 
     move-result p0
@@ -2229,7 +2229,7 @@
 
     if-nez p2, :cond_0
 
-    .line 986
+    .line 988
     invoke-virtual {p3}, Lcom/google/protobuf/UnknownFieldSchema;->newBuilder()Ljava/lang/Object;
 
     move-result-object p2
@@ -2237,7 +2237,7 @@
     :cond_0
     int-to-long v0, p1
 
-    .line 988
+    .line 990
     invoke-virtual {p3, p2, p0, v0, v1}, Lcom/google/protobuf/UnknownFieldSchema;->addVarint(Ljava/lang/Object;IJ)V
 
     return-object p2
@@ -2253,7 +2253,7 @@
         }
     .end annotation
 
-    .line 794
+    .line 795
     sget-object v0, Lcom/google/protobuf/SchemaUtil;->UNKNOWN_FIELD_SET_LITE_SCHEMA:Lcom/google/protobuf/UnknownFieldSchema;
 
     return-object v0
@@ -2280,14 +2280,14 @@
 
     if-eqz p1, :cond_0
 
-    .line 275
+    .line 276
     invoke-interface {p1}, Ljava/util/List;->isEmpty()Z
 
     move-result v0
 
     if-nez v0, :cond_0
 
-    .line 276
+    .line 277
     invoke-interface {p2, p0, p1, p3}, Lcom/google/protobuf/Writer;->writeBoolList(ILjava/util/List;Z)V
 
     :cond_0
@@ -2315,14 +2315,14 @@
 
     if-eqz p1, :cond_0
 
-    .line 289
+    .line 290
     invoke-interface {p1}, Ljava/util/List;->isEmpty()Z
 
     move-result v0
 
     if-nez v0, :cond_0
 
-    .line 290
+    .line 291
     invoke-interface {p2, p0, p1}, Lcom/google/protobuf/Writer;->writeBytesList(ILjava/util/List;)V
 
     :cond_0
@@ -2350,14 +2350,14 @@
 
     if-eqz p1, :cond_0
 
-    .line 184
+    .line 185
     invoke-interface {p1}, Ljava/util/List;->isEmpty()Z
 
     move-result v0
 
     if-nez v0, :cond_0
 
-    .line 185
+    .line 186
     invoke-interface {p2, p0, p1, p3}, Lcom/google/protobuf/Writer;->writeDoubleList(ILjava/util/List;Z)V
 
     :cond_0
@@ -2385,14 +2385,14 @@
 
     if-eqz p1, :cond_0
 
-    .line 268
+    .line 269
     invoke-interface {p1}, Ljava/util/List;->isEmpty()Z
 
     move-result v0
 
     if-nez v0, :cond_0
 
-    .line 269
+    .line 270
     invoke-interface {p2, p0, p1, p3}, Lcom/google/protobuf/Writer;->writeEnumList(ILjava/util/List;Z)V
 
     :cond_0
@@ -2420,14 +2420,14 @@
 
     if-eqz p1, :cond_0
 
-    .line 254
+    .line 255
     invoke-interface {p1}, Ljava/util/List;->isEmpty()Z
 
     move-result v0
 
     if-nez v0, :cond_0
 
-    .line 255
+    .line 256
     invoke-interface {p2, p0, p1, p3}, Lcom/google/protobuf/Writer;->writeFixed32List(ILjava/util/List;Z)V
 
     :cond_0
@@ -2455,14 +2455,14 @@
 
     if-eqz p1, :cond_0
 
-    .line 219
+    .line 220
     invoke-interface {p1}, Ljava/util/List;->isEmpty()Z
 
     move-result v0
 
     if-nez v0, :cond_0
 
-    .line 220
+    .line 221
     invoke-interface {p2, p0, p1, p3}, Lcom/google/protobuf/Writer;->writeFixed64List(ILjava/util/List;Z)V
 
     :cond_0
@@ -2490,14 +2490,14 @@
 
     if-eqz p1, :cond_0
 
-    .line 191
+    .line 192
     invoke-interface {p1}, Ljava/util/List;->isEmpty()Z
 
     move-result v0
 
     if-nez v0, :cond_0
 
-    .line 192
+    .line 193
     invoke-interface {p2, p0, p1, p3}, Lcom/google/protobuf/Writer;->writeFloatList(ILjava/util/List;Z)V
 
     :cond_0
@@ -2525,14 +2525,14 @@
 
     if-eqz p1, :cond_0
 
-    .line 326
+    .line 327
     invoke-interface {p1}, Ljava/util/List;->isEmpty()Z
 
     move-result v0
 
     if-nez v0, :cond_0
 
-    .line 327
+    .line 328
     invoke-interface {p2, p0, p1, p3}, Lcom/google/protobuf/Writer;->writeGroupList(ILjava/util/List;Lcom/google/protobuf/Schema;)V
 
     :cond_0
@@ -2560,14 +2560,14 @@
 
     if-eqz p1, :cond_0
 
-    .line 233
+    .line 234
     invoke-interface {p1}, Ljava/util/List;->isEmpty()Z
 
     move-result v0
 
     if-nez v0, :cond_0
 
-    .line 234
+    .line 235
     invoke-interface {p2, p0, p1, p3}, Lcom/google/protobuf/Writer;->writeInt32List(ILjava/util/List;Z)V
 
     :cond_0
@@ -2595,14 +2595,14 @@
 
     if-eqz p1, :cond_0
 
-    .line 198
+    .line 199
     invoke-interface {p1}, Ljava/util/List;->isEmpty()Z
 
     move-result v0
 
     if-nez v0, :cond_0
 
-    .line 199
+    .line 200
     invoke-interface {p2, p0, p1, p3}, Lcom/google/protobuf/Writer;->writeInt64List(ILjava/util/List;Z)V
 
     :cond_0
@@ -2630,14 +2630,14 @@
 
     if-eqz p1, :cond_0
 
-    .line 303
+    .line 304
     invoke-interface {p1}, Ljava/util/List;->isEmpty()Z
 
     move-result v0
 
     if-nez v0, :cond_0
 
-    .line 304
+    .line 305
     invoke-interface {p2, p0, p1, p3}, Lcom/google/protobuf/Writer;->writeMessageList(ILjava/util/List;Lcom/google/protobuf/Schema;)V
 
     :cond_0
@@ -2665,14 +2665,14 @@
 
     if-eqz p1, :cond_0
 
-    .line 261
+    .line 262
     invoke-interface {p1}, Ljava/util/List;->isEmpty()Z
 
     move-result v0
 
     if-nez v0, :cond_0
 
-    .line 262
+    .line 263
     invoke-interface {p2, p0, p1, p3}, Lcom/google/protobuf/Writer;->writeSFixed32List(ILjava/util/List;Z)V
 
     :cond_0
@@ -2700,14 +2700,14 @@
 
     if-eqz p1, :cond_0
 
-    .line 226
+    .line 227
     invoke-interface {p1}, Ljava/util/List;->isEmpty()Z
 
     move-result v0
 
     if-nez v0, :cond_0
 
-    .line 227
+    .line 228
     invoke-interface {p2, p0, p1, p3}, Lcom/google/protobuf/Writer;->writeSFixed64List(ILjava/util/List;Z)V
 
     :cond_0
@@ -2735,14 +2735,14 @@
 
     if-eqz p1, :cond_0
 
-    .line 247
+    .line 248
     invoke-interface {p1}, Ljava/util/List;->isEmpty()Z
 
     move-result v0
 
     if-nez v0, :cond_0
 
-    .line 248
+    .line 249
     invoke-interface {p2, p0, p1, p3}, Lcom/google/protobuf/Writer;->writeSInt32List(ILjava/util/List;Z)V
 
     :cond_0
@@ -2770,14 +2770,14 @@
 
     if-eqz p1, :cond_0
 
-    .line 212
+    .line 213
     invoke-interface {p1}, Ljava/util/List;->isEmpty()Z
 
     move-result v0
 
     if-nez v0, :cond_0
 
-    .line 213
+    .line 214
     invoke-interface {p2, p0, p1, p3}, Lcom/google/protobuf/Writer;->writeSInt64List(ILjava/util/List;Z)V
 
     :cond_0
@@ -2805,14 +2805,14 @@
 
     if-eqz p1, :cond_0
 
-    .line 282
+    .line 283
     invoke-interface {p1}, Ljava/util/List;->isEmpty()Z
 
     move-result v0
 
     if-nez v0, :cond_0
 
-    .line 283
+    .line 284
     invoke-interface {p2, p0, p1}, Lcom/google/protobuf/Writer;->writeStringList(ILjava/util/List;)V
 
     :cond_0
@@ -2840,14 +2840,14 @@
 
     if-eqz p1, :cond_0
 
-    .line 240
+    .line 241
     invoke-interface {p1}, Ljava/util/List;->isEmpty()Z
 
     move-result v0
 
     if-nez v0, :cond_0
 
-    .line 241
+    .line 242
     invoke-interface {p2, p0, p1, p3}, Lcom/google/protobuf/Writer;->writeUInt32List(ILjava/util/List;Z)V
 
     :cond_0
@@ -2875,14 +2875,14 @@
 
     if-eqz p1, :cond_0
 
-    .line 205
+    .line 206
     invoke-interface {p1}, Ljava/util/List;->isEmpty()Z
 
     move-result v0
 
     if-nez v0, :cond_0
 
-    .line 206
+    .line 207
     invoke-interface {p2, p0, p1, p3}, Lcom/google/protobuf/Writer;->writeUInt64List(ILjava/util/List;Z)V
 
     :cond_0

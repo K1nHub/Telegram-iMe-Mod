@@ -25,13 +25,13 @@
 
 .field private final tokenContractAddress:Ljava/lang/String;
 
-.field private final transactionParams:Lcom/smedialink/storage/domain/model/crypto/TransactionParams;
+.field private final transactionParams:Lcom/smedialink/storage/domain/model/crypto/TransactionParams$Ether;
 
 .field private final value:Ljava/lang/String;
 
 
 # direct methods
-.method public constructor <init>(Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;Lcom/smedialink/storage/domain/model/wallet/swap/TokenApproveStatus;Ljava/lang/String;Lcom/smedialink/storage/domain/model/crypto/TransactionParams;Ljava/lang/String;Ljava/lang/String;Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;)V
+.method public constructor <init>(Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;Lcom/smedialink/storage/domain/model/wallet/swap/TokenApproveStatus;Ljava/lang/String;Lcom/smedialink/storage/domain/model/crypto/TransactionParams$Ether;Ljava/lang/String;Ljava/lang/String;Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;)V
     .locals 17
 
     move-object/from16 v9, p0
@@ -99,7 +99,7 @@
     move-object/from16 v8, v16
 
     .line 42
-    invoke-direct/range {v0 .. v8}, Lcom/smedialink/storage/domain/model/crypto/swap/CryptoTokenApproveMetadata$NeedApprove;-><init>(Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;Lcom/smedialink/storage/domain/model/wallet/swap/TokenApproveStatus;Ljava/lang/String;Lcom/smedialink/storage/domain/model/crypto/TransactionParams;Ljava/lang/String;Ljava/lang/String;Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;Lkotlin/jvm/internal/DefaultConstructorMarker;)V
+    invoke-direct/range {v0 .. v8}, Lcom/smedialink/storage/domain/model/crypto/swap/CryptoTokenApproveMetadata$NeedApprove;-><init>(Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;Lcom/smedialink/storage/domain/model/wallet/swap/TokenApproveStatus;Ljava/lang/String;Lcom/smedialink/storage/domain/model/crypto/TransactionParams$Ether;Ljava/lang/String;Ljava/lang/String;Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;Lkotlin/jvm/internal/DefaultConstructorMarker;)V
 
     .line 35
     iput-object v10, v9, Lcom/smedialink/storage/domain/model/crypto/swap/CryptoTokenApproveMetadata$NeedApprove$NotAllowed;->tokenCode:Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;
@@ -111,7 +111,7 @@
     iput-object v12, v9, Lcom/smedialink/storage/domain/model/crypto/swap/CryptoTokenApproveMetadata$NeedApprove$NotAllowed;->value:Ljava/lang/String;
 
     .line 38
-    iput-object v13, v9, Lcom/smedialink/storage/domain/model/crypto/swap/CryptoTokenApproveMetadata$NeedApprove$NotAllowed;->transactionParams:Lcom/smedialink/storage/domain/model/crypto/TransactionParams;
+    iput-object v13, v9, Lcom/smedialink/storage/domain/model/crypto/swap/CryptoTokenApproveMetadata$NeedApprove$NotAllowed;->transactionParams:Lcom/smedialink/storage/domain/model/crypto/TransactionParams$Ether;
 
     .line 39
     iput-object v14, v9, Lcom/smedialink/storage/domain/model/crypto/swap/CryptoTokenApproveMetadata$NeedApprove$NotAllowed;->tokenContractAddress:Ljava/lang/String;
@@ -127,7 +127,7 @@
     return-void
 .end method
 
-.method public static synthetic copy$default(Lcom/smedialink/storage/domain/model/crypto/swap/CryptoTokenApproveMetadata$NeedApprove$NotAllowed;Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;Lcom/smedialink/storage/domain/model/wallet/swap/TokenApproveStatus;Ljava/lang/String;Lcom/smedialink/storage/domain/model/crypto/TransactionParams;Ljava/lang/String;Ljava/lang/String;Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;ILjava/lang/Object;)Lcom/smedialink/storage/domain/model/crypto/swap/CryptoTokenApproveMetadata$NeedApprove$NotAllowed;
+.method public static synthetic copy$default(Lcom/smedialink/storage/domain/model/crypto/swap/CryptoTokenApproveMetadata$NeedApprove$NotAllowed;Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;Lcom/smedialink/storage/domain/model/wallet/swap/TokenApproveStatus;Ljava/lang/String;Lcom/smedialink/storage/domain/model/crypto/TransactionParams$Ether;Ljava/lang/String;Ljava/lang/String;Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;ILjava/lang/Object;)Lcom/smedialink/storage/domain/model/crypto/swap/CryptoTokenApproveMetadata$NeedApprove$NotAllowed;
     .locals 5
 
     and-int/lit8 p9, p8, 0x1
@@ -165,7 +165,7 @@
 
     if-eqz p2, :cond_3
 
-    invoke-virtual {p0}, Lcom/smedialink/storage/domain/model/crypto/swap/CryptoTokenApproveMetadata$NeedApprove$NotAllowed;->getTransactionParams()Lcom/smedialink/storage/domain/model/crypto/TransactionParams;
+    invoke-virtual {p0}, Lcom/smedialink/storage/domain/model/crypto/swap/CryptoTokenApproveMetadata$NeedApprove$NotAllowed;->getTransactionParams()Lcom/smedialink/storage/domain/model/crypto/TransactionParams$Ether;
 
     move-result-object p4
 
@@ -221,7 +221,7 @@
 
     move-object p9, v4
 
-    invoke-virtual/range {p2 .. p9}, Lcom/smedialink/storage/domain/model/crypto/swap/CryptoTokenApproveMetadata$NeedApprove$NotAllowed;->copy(Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;Lcom/smedialink/storage/domain/model/wallet/swap/TokenApproveStatus;Ljava/lang/String;Lcom/smedialink/storage/domain/model/crypto/TransactionParams;Ljava/lang/String;Ljava/lang/String;Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;)Lcom/smedialink/storage/domain/model/crypto/swap/CryptoTokenApproveMetadata$NeedApprove$NotAllowed;
+    invoke-virtual/range {p2 .. p9}, Lcom/smedialink/storage/domain/model/crypto/swap/CryptoTokenApproveMetadata$NeedApprove$NotAllowed;->copy(Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;Lcom/smedialink/storage/domain/model/wallet/swap/TokenApproveStatus;Ljava/lang/String;Lcom/smedialink/storage/domain/model/crypto/TransactionParams$Ether;Ljava/lang/String;Ljava/lang/String;Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;)Lcom/smedialink/storage/domain/model/crypto/swap/CryptoTokenApproveMetadata$NeedApprove$NotAllowed;
 
     move-result-object p0
 
@@ -260,10 +260,10 @@
     return-object v0
 .end method
 
-.method public final component4()Lcom/smedialink/storage/domain/model/crypto/TransactionParams;
+.method public final component4()Lcom/smedialink/storage/domain/model/crypto/TransactionParams$Ether;
     .locals 1
 
-    invoke-virtual {p0}, Lcom/smedialink/storage/domain/model/crypto/swap/CryptoTokenApproveMetadata$NeedApprove$NotAllowed;->getTransactionParams()Lcom/smedialink/storage/domain/model/crypto/TransactionParams;
+    invoke-virtual {p0}, Lcom/smedialink/storage/domain/model/crypto/swap/CryptoTokenApproveMetadata$NeedApprove$NotAllowed;->getTransactionParams()Lcom/smedialink/storage/domain/model/crypto/TransactionParams$Ether;
 
     move-result-object v0
 
@@ -300,7 +300,7 @@
     return-object v0
 .end method
 
-.method public final copy(Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;Lcom/smedialink/storage/domain/model/wallet/swap/TokenApproveStatus;Ljava/lang/String;Lcom/smedialink/storage/domain/model/crypto/TransactionParams;Ljava/lang/String;Ljava/lang/String;Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;)Lcom/smedialink/storage/domain/model/crypto/swap/CryptoTokenApproveMetadata$NeedApprove$NotAllowed;
+.method public final copy(Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;Lcom/smedialink/storage/domain/model/wallet/swap/TokenApproveStatus;Ljava/lang/String;Lcom/smedialink/storage/domain/model/crypto/TransactionParams$Ether;Ljava/lang/String;Ljava/lang/String;Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;)Lcom/smedialink/storage/domain/model/crypto/swap/CryptoTokenApproveMetadata$NeedApprove$NotAllowed;
     .locals 9
 
     const-string v0, "tokenCode"
@@ -349,7 +349,7 @@
 
     move-object v1, v0
 
-    invoke-direct/range {v1 .. v8}, Lcom/smedialink/storage/domain/model/crypto/swap/CryptoTokenApproveMetadata$NeedApprove$NotAllowed;-><init>(Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;Lcom/smedialink/storage/domain/model/wallet/swap/TokenApproveStatus;Ljava/lang/String;Lcom/smedialink/storage/domain/model/crypto/TransactionParams;Ljava/lang/String;Ljava/lang/String;Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;)V
+    invoke-direct/range {v1 .. v8}, Lcom/smedialink/storage/domain/model/crypto/swap/CryptoTokenApproveMetadata$NeedApprove$NotAllowed;-><init>(Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;Lcom/smedialink/storage/domain/model/wallet/swap/TokenApproveStatus;Ljava/lang/String;Lcom/smedialink/storage/domain/model/crypto/TransactionParams$Ether;Ljava/lang/String;Ljava/lang/String;Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;)V
 
     return-object v0
 .end method
@@ -418,11 +418,11 @@
     return v2
 
     :cond_4
-    invoke-virtual {p0}, Lcom/smedialink/storage/domain/model/crypto/swap/CryptoTokenApproveMetadata$NeedApprove$NotAllowed;->getTransactionParams()Lcom/smedialink/storage/domain/model/crypto/TransactionParams;
+    invoke-virtual {p0}, Lcom/smedialink/storage/domain/model/crypto/swap/CryptoTokenApproveMetadata$NeedApprove$NotAllowed;->getTransactionParams()Lcom/smedialink/storage/domain/model/crypto/TransactionParams$Ether;
 
     move-result-object v1
 
-    invoke-virtual {p1}, Lcom/smedialink/storage/domain/model/crypto/swap/CryptoTokenApproveMetadata$NeedApprove$NotAllowed;->getTransactionParams()Lcom/smedialink/storage/domain/model/crypto/TransactionParams;
+    invoke-virtual {p1}, Lcom/smedialink/storage/domain/model/crypto/swap/CryptoTokenApproveMetadata$NeedApprove$NotAllowed;->getTransactionParams()Lcom/smedialink/storage/domain/model/crypto/TransactionParams$Ether;
 
     move-result-object v3
 
@@ -530,11 +530,11 @@
     return-object v0
 .end method
 
-.method public getTransactionParams()Lcom/smedialink/storage/domain/model/crypto/TransactionParams;
+.method public getTransactionParams()Lcom/smedialink/storage/domain/model/crypto/TransactionParams$Ether;
     .locals 1
 
     .line 38
-    iget-object v0, p0, Lcom/smedialink/storage/domain/model/crypto/swap/CryptoTokenApproveMetadata$NeedApprove$NotAllowed;->transactionParams:Lcom/smedialink/storage/domain/model/crypto/TransactionParams;
+    iget-object v0, p0, Lcom/smedialink/storage/domain/model/crypto/swap/CryptoTokenApproveMetadata$NeedApprove$NotAllowed;->transactionParams:Lcom/smedialink/storage/domain/model/crypto/TransactionParams$Ether;
 
     return-object v0
 .end method
@@ -585,11 +585,11 @@
 
     mul-int/lit8 v0, v0, 0x1f
 
-    invoke-virtual {p0}, Lcom/smedialink/storage/domain/model/crypto/swap/CryptoTokenApproveMetadata$NeedApprove$NotAllowed;->getTransactionParams()Lcom/smedialink/storage/domain/model/crypto/TransactionParams;
+    invoke-virtual {p0}, Lcom/smedialink/storage/domain/model/crypto/swap/CryptoTokenApproveMetadata$NeedApprove$NotAllowed;->getTransactionParams()Lcom/smedialink/storage/domain/model/crypto/TransactionParams$Ether;
 
     move-result-object v1
 
-    invoke-virtual {v1}, Lcom/smedialink/storage/domain/model/crypto/TransactionParams;->hashCode()I
+    invoke-virtual {v1}, Lcom/smedialink/storage/domain/model/crypto/TransactionParams$Ether;->hashCode()I
 
     move-result v1
 
@@ -675,7 +675,7 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {p0}, Lcom/smedialink/storage/domain/model/crypto/swap/CryptoTokenApproveMetadata$NeedApprove$NotAllowed;->getTransactionParams()Lcom/smedialink/storage/domain/model/crypto/TransactionParams;
+    invoke-virtual {p0}, Lcom/smedialink/storage/domain/model/crypto/swap/CryptoTokenApproveMetadata$NeedApprove$NotAllowed;->getTransactionParams()Lcom/smedialink/storage/domain/model/crypto/TransactionParams$Ether;
 
     move-result-object v1
 

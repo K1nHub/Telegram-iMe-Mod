@@ -3,7 +3,7 @@ package com.smedialink.p031ui.wallet.crypto.wallet_connect.message_sign;
 import com.smedialink.model.dialog.DialogModel;
 import com.smedialink.model.wallet.crypto.wallet_connect.WalletConnectSessionItem;
 import com.smedialink.p031ui.base.mvp.base.BasePresenter;
-import com.smedialink.storage.data.utils.crypto.CryptoWalletUtils;
+import com.smedialink.storage.data.utils.crypto.CryptoEVMUtils;
 import com.smedialink.storage.domain.manager.crypto.CryptoAccessManager;
 import com.smedialink.storage.domain.manager.wallet_connect.WalletConnectManager;
 import com.smedialink.storage.domain.model.crypto.Wallet;
@@ -12,7 +12,7 @@ import com.smedialink.utils.extentions.common.StringExtKt;
 import com.trustwallet.walletconnect.models.ethereum.WCEthereumSignMessage;
 import kotlin.jvm.internal.Intrinsics;
 import moxy.InjectViewState;
-import org.telegram.messenger.C3286R;
+import org.telegram.messenger.C3301R;
 /* compiled from: WalletConnectMessageSignPresenter.kt */
 @InjectViewState
 /* renamed from: com.smedialink.ui.wallet.crypto.wallet_connect.message_sign.WalletConnectMessageSignPresenter */
@@ -56,7 +56,7 @@ public final class WalletConnectMessageSignPresenter extends BasePresenter<Walle
     }
 
     public final DialogModel getSendConfirmationDialogModel() {
-        return new DialogModel(this.resourceManager.getString(C3286R.string.wallet_connect_message_sign_confirm_title), this.resourceManager.getString(C3286R.string.wallet_connect_message_sign_confirm_description), this.resourceManager.getString(C3286R.string.common_cancel), this.resourceManager.getString(C3286R.string.wallet_connect_transaction_button_sign));
+        return new DialogModel(this.resourceManager.getString(C3301R.string.wallet_connect_message_sign_confirm_title), this.resourceManager.getString(C3301R.string.wallet_connect_message_sign_confirm_description), this.resourceManager.getString(C3301R.string.common_cancel), this.resourceManager.getString(C3301R.string.wallet_connect_transaction_button_sign));
     }
 
     public final void approveSign() {
@@ -73,7 +73,7 @@ public final class WalletConnectMessageSignPresenter extends BasePresenter<Walle
         String data;
         WalletConnectMessageSignView walletConnectMessageSignView = (WalletConnectMessageSignView) getViewState();
         if (WhenMappings.$EnumSwitchMapping$0[this.message.getType().ordinal()] == 1) {
-            data = CryptoWalletUtils.INSTANCE.decodeHexMessageToString(this.message.getData());
+            data = CryptoEVMUtils.INSTANCE.decodeHexMessageToString(this.message.getData());
         } else {
             data = this.message.getData();
         }
@@ -84,6 +84,6 @@ public final class WalletConnectMessageSignPresenter extends BasePresenter<Walle
         String address;
         String shortened$default;
         Wallet.EVM eVMWallet = this.cryptoAccessManager.getEVMWallet();
-        return (eVMWallet == null || (address = eVMWallet.getAddress()) == null || (shortened$default = StringExtKt.shortened$default(address, 0, 1, null)) == null) ? this.resourceManager.getString(C3286R.string.wallet_connect_message_sign_address_hidden) : shortened$default;
+        return (eVMWallet == null || (address = eVMWallet.getAddress()) == null || (shortened$default = StringExtKt.shortened$default(address, 0, 1, null)) == null) ? this.resourceManager.getString(C3301R.string.wallet_connect_message_sign_address_hidden) : shortened$default;
     }
 }

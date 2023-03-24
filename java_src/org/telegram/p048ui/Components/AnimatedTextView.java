@@ -67,7 +67,7 @@ public class AnimatedTextView extends View {
         private boolean startFromEnd;
 
         /* renamed from: t */
-        private float f1678t;
+        private float f1679t;
         private TextPaint textPaint;
         private CharSequence toSetText;
         private boolean toSetTextMoveDown;
@@ -100,7 +100,7 @@ public class AnimatedTextView extends View {
                 this.offset = f;
                 this.toOppositeIndex = i;
                 float f2 = BitmapDescriptorFactory.HUE_RED;
-                this.left = (staticLayout == null || staticLayout.getLineCount() <= 0) ? BitmapDescriptorFactory.HUE_RED : staticLayout.getLineLeft(0);
+                this.left = (staticLayout == null || staticLayout.getLineCount() <= 0) ? 0.0f : staticLayout.getLineLeft(0);
                 if (staticLayout != null && staticLayout.getLineCount() > 0) {
                     f2 = staticLayout.getLineWidth(0);
                 }
@@ -116,7 +116,7 @@ public class AnimatedTextView extends View {
             this.textPaint = new TextPaint(1);
             this.gravity = 0;
             this.isRTL = false;
-            this.f1678t = BitmapDescriptorFactory.HUE_RED;
+            this.f1679t = BitmapDescriptorFactory.HUE_RED;
             this.moveDown = true;
             this.animateDelay = 0L;
             this.animateDuration = 450L;
@@ -154,10 +154,10 @@ public class AnimatedTextView extends View {
             int width = this.bounds.width();
             int height = this.bounds.height();
             if (this.currentParts != null && this.oldParts != null) {
-                float f10 = this.f1678t;
+                float f10 = this.f1679t;
                 if (f10 != 1.0f) {
                     float lerp = AndroidUtilities.lerp(this.oldWidth, this.currentWidth, f10);
-                    canvas.translate(BitmapDescriptorFactory.HUE_RED, (height - AndroidUtilities.lerp(this.oldHeight, this.currentHeight, this.f1678t)) / 2.0f);
+                    canvas.translate(BitmapDescriptorFactory.HUE_RED, (height - AndroidUtilities.lerp(this.oldHeight, this.currentHeight, this.f1679t)) / 2.0f);
                     int i = 0;
                     while (true) {
                         Part[] partArr = this.currentParts;
@@ -177,16 +177,16 @@ public class AnimatedTextView extends View {
                             if (z && !this.ignoreRTL) {
                                 f12 = this.oldWidth - (f12 + part2.width);
                             }
-                            f7 = AndroidUtilities.lerp(f12 - part2.left, f11 - part.left, this.f1678t);
+                            f7 = AndroidUtilities.lerp(f12 - part2.left, f11 - part.left, this.f1679t);
                             this.textPaint.setAlpha(this.alpha);
-                            f8 = BitmapDescriptorFactory.HUE_RED;
+                            f8 = 0.0f;
                         } else {
                             if (this.isRTL && !this.ignoreRTL) {
                                 f11 = this.currentWidth - (f11 + part.width);
                             }
                             f7 = f11 - part.left;
                             float f13 = (-this.textPaint.getTextSize()) * this.moveAmplitude;
-                            float f14 = this.f1678t;
+                            float f14 = this.f1679t;
                             f8 = f13 * (1.0f - f14) * (this.moveDown ? 1.0f : -1.0f);
                             this.textPaint.setAlpha((int) (this.alpha * f14));
                         }
@@ -221,7 +221,7 @@ public class AnimatedTextView extends View {
                         if (part3.toOppositeIndex < 0) {
                             float f16 = part3.offset;
                             float textSize = this.textPaint.getTextSize() * this.moveAmplitude;
-                            float f17 = this.f1678t;
+                            float f17 = this.f1679t;
                             float f18 = textSize * f17 * (this.moveDown ? 1.0f : -1.0f);
                             this.textPaint.setAlpha((int) (this.alpha * (1.0f - f17)));
                             canvas.save();
@@ -310,7 +310,10 @@ public class AnimatedTextView extends View {
         }
 
         public void setText(CharSequence charSequence, boolean z, boolean z2) {
-            z = (this.currentText == null || charSequence == null) ? false : false;
+            Part[] partArr;
+            if (this.currentText == null || charSequence == null) {
+                z = false;
+            }
             if (charSequence == null) {
                 charSequence = "";
             }
@@ -354,13 +357,13 @@ public class AnimatedTextView extends View {
                         AnimatedTextView.AnimatedTextDrawable.this.lambda$setText$2(arrayList2, charSequence2, i, i2);
                     }
                 });
-                Part[] partArr = this.currentParts;
-                if (partArr == null || partArr.length != arrayList.size()) {
+                Part[] partArr2 = this.currentParts;
+                if (partArr2 == null || partArr2.length != arrayList.size()) {
                     this.currentParts = new Part[arrayList.size()];
                 }
                 arrayList.toArray(this.currentParts);
-                Part[] partArr2 = this.oldParts;
-                if (partArr2 == null || partArr2.length != arrayList2.size()) {
+                Part[] partArr3 = this.oldParts;
+                if (partArr3 == null || partArr3.length != arrayList2.size()) {
                     this.oldParts = new Part[arrayList2.size()];
                 }
                 arrayList2.toArray(this.oldParts);
@@ -370,7 +373,7 @@ public class AnimatedTextView extends View {
                 }
                 this.moveDown = z2;
                 float[] fArr = {BitmapDescriptorFactory.HUE_RED, 1.0f};
-                this.f1678t = BitmapDescriptorFactory.HUE_RED;
+                this.f1679t = BitmapDescriptorFactory.HUE_RED;
                 ValueAnimator ofFloat = ValueAnimator.ofFloat(fArr);
                 this.animator = ofFloat;
                 ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.AnimatedTextView$AnimatedTextDrawable$$ExternalSyntheticLambda0
@@ -386,7 +389,7 @@ public class AnimatedTextView extends View {
                         AnimatedTextDrawable.this.oldParts = null;
                         AnimatedTextDrawable.this.oldText = null;
                         AnimatedTextDrawable.this.oldWidth = BitmapDescriptorFactory.HUE_RED;
-                        AnimatedTextDrawable.this.f1678t = BitmapDescriptorFactory.HUE_RED;
+                        AnimatedTextDrawable.this.f1679t = BitmapDescriptorFactory.HUE_RED;
                         AnimatedTextDrawable.this.invalidateSelf();
                         AnimatedTextDrawable.this.animator = null;
                         if (AnimatedTextDrawable.this.toSetText == null) {
@@ -415,14 +418,13 @@ public class AnimatedTextView extends View {
             this.animator = null;
             this.toSetText = null;
             this.toSetTextMoveDown = false;
-            this.f1678t = BitmapDescriptorFactory.HUE_RED;
+            this.f1679t = BitmapDescriptorFactory.HUE_RED;
             if (!charSequence.equals(this.currentText)) {
                 this.currentParts = r11;
                 this.currentText = charSequence;
-                Part[] partArr3 = {new Part(this, makeLayout(charSequence, this.bounds.width()), BitmapDescriptorFactory.HUE_RED, -1)};
-                Part[] partArr4 = this.currentParts;
-                this.currentWidth = partArr4[0].width;
-                this.currentHeight = partArr4[0].layout.getHeight();
+                Part[] partArr4 = {new Part(this, makeLayout(charSequence, this.bounds.width()), BitmapDescriptorFactory.HUE_RED, -1)};
+                this.currentWidth = this.currentParts[0].width;
+                this.currentHeight = partArr[0].layout.getHeight();
                 this.isRTL = AndroidUtilities.isRTL(this.currentText);
             }
             this.oldParts = null;
@@ -466,7 +468,7 @@ public class AnimatedTextView extends View {
 
         /* JADX INFO: Access modifiers changed from: private */
         public /* synthetic */ void lambda$setText$3(ValueAnimator valueAnimator) {
-            this.f1678t = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+            this.f1679t = ((Float) valueAnimator.getAnimatedValue()).floatValue();
             invalidateSelf();
         }
 
@@ -480,7 +482,7 @@ public class AnimatedTextView extends View {
 
         public float getCurrentWidth() {
             if (this.currentParts != null && this.oldParts != null) {
-                return AndroidUtilities.lerp(this.oldWidth, this.currentWidth, this.f1678t);
+                return AndroidUtilities.lerp(this.oldWidth, this.currentWidth, this.f1679t);
             }
             return this.currentWidth;
         }
@@ -639,28 +641,29 @@ public class AnimatedTextView extends View {
         }
 
         private void diff(CharSequence charSequence, CharSequence charSequence2, RegionCallback regionCallback, RegionCallback regionCallback2, RegionCallback regionCallback3) {
+            boolean z = false;
             if (this.preserveIndex) {
                 int min = Math.min(charSequence2.length(), charSequence.length());
                 if (this.startFromEnd) {
                     ArrayList arrayList = new ArrayList();
-                    boolean z = true;
-                    int i = 0;
                     boolean z2 = true;
+                    boolean z3 = true;
+                    int i = 0;
                     for (int i2 = 0; i2 <= min; i2++) {
                         int length = (charSequence2.length() - i2) - 1;
                         int length2 = (charSequence.length() - i2) - 1;
-                        boolean z3 = length >= 0 && length2 >= 0 && partEquals(charSequence2, charSequence, length, length2);
-                        if (z != z3 || i2 == min) {
+                        boolean z4 = length >= 0 && length2 >= 0 && partEquals(charSequence2, charSequence, length, length2);
+                        if (z2 != z4 || i2 == min) {
                             int i3 = i2 - i;
                             if (i3 > 0) {
                                 if (arrayList.size() != 0) {
-                                    z = z2;
+                                    z2 = z3;
                                 }
                                 arrayList.add(Integer.valueOf(i3));
-                                z2 = z;
+                                z3 = z2;
                             }
                             i = i2;
-                            z = z3;
+                            z2 = z4;
                         }
                     }
                     int length3 = charSequence2.length() - min;
@@ -673,7 +676,7 @@ public class AnimatedTextView extends View {
                     }
                     for (int size = arrayList.size() - 1; size >= 0; size--) {
                         int intValue = ((Integer) arrayList.get(size)).intValue();
-                        if (size % 2 != 0 ? !z2 : z2) {
+                        if (size % 2 != 0 ? !z3 : z3) {
                             if (charSequence2.length() > charSequence.length()) {
                                 int i4 = length3 + intValue;
                                 regionCallback.run(charSequence2.subSequence(length3, i4), length3, i4);
@@ -692,14 +695,14 @@ public class AnimatedTextView extends View {
                     }
                     return;
                 }
+                boolean z5 = true;
                 int i8 = 0;
-                boolean z4 = true;
                 int i9 = 0;
                 while (i8 <= min) {
-                    boolean z5 = i8 < min && partEquals(charSequence2, charSequence, i8, i8);
-                    if (z4 != z5 || i8 == min) {
+                    boolean z6 = i8 < min && partEquals(charSequence2, charSequence, i8, i8);
+                    if (z5 != z6 || i8 == min) {
                         if (i8 - i9 > 0) {
-                            if (z4) {
+                            if (z5) {
                                 regionCallback.run(charSequence2.subSequence(i9, i8), i9, i8);
                             } else {
                                 regionCallback2.run(charSequence2.subSequence(i9, i8), i9, i8);
@@ -707,7 +710,7 @@ public class AnimatedTextView extends View {
                             }
                         }
                         i9 = i8;
-                        z4 = z5;
+                        z5 = z6;
                     }
                     i8++;
                 }
@@ -721,14 +724,14 @@ public class AnimatedTextView extends View {
                 return;
             }
             int min2 = Math.min(charSequence2.length(), charSequence.length());
+            boolean z7 = true;
             int i10 = 0;
             int i11 = 0;
-            boolean z6 = true;
             int i12 = 0;
             int i13 = 0;
             while (i10 <= min2) {
-                boolean z7 = i10 < min2 && partEquals(charSequence2, charSequence, i10, i11);
-                if (z6 != z7 || i10 == min2) {
+                boolean z8 = (i10 >= min2 || !partEquals(charSequence2, charSequence, i10, i11)) ? z : true;
+                if (z7 != z8 || i10 == min2) {
                     if (i10 == min2) {
                         i10 = charSequence2.length();
                         i11 = charSequence.length();
@@ -736,7 +739,7 @@ public class AnimatedTextView extends View {
                     int i14 = i10 - i12;
                     int i15 = i11 - i13;
                     if (i14 > 0 || i15 > 0) {
-                        if (i14 == i15 && z6) {
+                        if (i14 == i15 && z7) {
                             regionCallback.run(charSequence2.subSequence(i12, i10), i12, i10);
                         } else {
                             if (i14 > 0) {
@@ -749,12 +752,13 @@ public class AnimatedTextView extends View {
                     }
                     i12 = i10;
                     i13 = i11;
-                    z6 = z7;
+                    z7 = z8;
                 }
-                if (z7) {
+                if (z8) {
                     i11++;
                 }
                 i10++;
+                z = false;
             }
         }
 

@@ -571,24 +571,24 @@
 
     const/4 v0, 0x0
 
+    cmpl-float v0, p2, v0
+
     const/4 v1, 0x0
 
-    cmpl-float v1, p2, v1
+    if-ltz v0, :cond_0
 
-    if-ltz v1, :cond_0
+    const/high16 v0, 0x42c80000    # 100.0f
 
-    const/high16 v1, 0x42c80000    # 100.0f
+    cmpg-float v0, p2, v0
 
-    cmpg-float v1, p2, v1
+    if-gtz v0, :cond_0
 
-    if-gtz v1, :cond_0
-
-    const/4 v1, 0x1
+    const/4 v0, 0x1
 
     goto :goto_0
 
     :cond_0
-    const/4 v1, 0x0
+    move v0, v1
 
     :goto_0
     const/high16 v2, 0x3f800000    # 1.0f
@@ -597,7 +597,7 @@
 
     if-nez v2, :cond_1
 
-    if-nez v1, :cond_1
+    if-nez v0, :cond_1
 
     return p0
 
@@ -609,7 +609,7 @@
 
     int-to-float v2, v2
 
-    mul-float v2, v2, p1
+    mul-float/2addr v2, p1
 
     const/high16 p1, 0x3f000000    # 0.5f
 
@@ -620,11 +620,11 @@
     const/16 v2, 0xff
 
     .line 248
-    invoke-static {p1, v0, v2}, Landroidx/core/math/MathUtils;->clamp(III)I
+    invoke-static {p1, v1, v2}, Landroidx/core/math/MathUtils;->clamp(III)I
 
     move-result p1
 
-    if-eqz v1, :cond_2
+    if-eqz v0, :cond_2
 
     .line 251
     invoke-static {p0}, Landroidx/core/content/res/CamColor;->fromColor(I)Landroidx/core/content/res/CamColor;

@@ -212,7 +212,7 @@
 .end method
 
 .method public n(J)V
-    .locals 4
+    .locals 3
 
     iget-object v0, p0, Lj$/util/stream/D1;->a:[Ljava/lang/Object;
 
@@ -220,28 +220,28 @@
 
     int-to-long v0, v0
 
-    const/4 v2, 0x0
+    cmp-long v0, p1, v0
 
-    cmp-long v3, p1, v0
+    const/4 v1, 0x0
 
-    if-nez v3, :cond_0
+    if-nez v0, :cond_0
 
-    iput v2, p0, Lj$/util/stream/D1;->b:I
+    iput v1, p0, Lj$/util/stream/D1;->b:I
 
     return-void
 
     :cond_0
     new-instance v0, Ljava/lang/IllegalStateException;
 
-    const/4 v1, 0x2
+    const/4 v2, 0x2
 
-    new-array v1, v1, [Ljava/lang/Object;
+    new-array v2, v2, [Ljava/lang/Object;
 
     invoke-static {p1, p2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object p1
 
-    aput-object p1, v1, v2
+    aput-object p1, v2, v1
 
     iget-object p1, p0, Lj$/util/stream/D1;->a:[Ljava/lang/Object;
 
@@ -253,11 +253,11 @@
 
     const/4 p2, 0x1
 
-    aput-object p1, v1, p2
+    aput-object p1, v2, p2
 
     const-string p1, "Begin size %d is not equal to fixed size %d"
 
-    invoke-static {p1, v1}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p1, v2}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p1
 

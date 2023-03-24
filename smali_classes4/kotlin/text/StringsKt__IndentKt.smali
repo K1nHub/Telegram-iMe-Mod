@@ -94,7 +94,7 @@
     goto :goto_0
 
     :cond_1
-    const/4 v1, -0x1
+    move v1, v2
 
     :goto_1
     if-ne v1, v2, :cond_2
@@ -228,7 +228,7 @@
     goto :goto_2
 
     :cond_3
-    const/4 v1, 0x0
+    move v1, v2
 
     .line 78
     :goto_2
@@ -244,7 +244,7 @@
 
     move-result v4
 
-    mul-int v3, v3, v4
+    mul-int/2addr v3, v4
 
     add-int/2addr p0, v3
 
@@ -426,7 +426,7 @@
 
     move-result v4
 
-    mul-int v3, v3, v4
+    mul-int/2addr v3, v4
 
     add-int v8, v1, v3
 
@@ -451,7 +451,7 @@
 
     const/4 v12, 0x0
 
-    const/4 v1, 0x0
+    move v1, v12
 
     :goto_0
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
@@ -500,7 +500,7 @@
 
     move-result v1
 
-    const/4 v2, 0x0
+    move v2, v12
 
     :goto_1
     const/4 v3, -0x1
@@ -531,7 +531,7 @@
     goto :goto_1
 
     :cond_4
-    const/4 v6, -0x1
+    move v6, v3
 
     :goto_2
     if-ne v6, v3, :cond_5

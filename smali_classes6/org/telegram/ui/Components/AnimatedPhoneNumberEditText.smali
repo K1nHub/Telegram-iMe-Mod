@@ -231,17 +231,17 @@
 
     if-eqz p2, :cond_1
 
-    const/4 v5, 0x0
+    move v5, v3
 
     goto :goto_1
 
     :cond_1
-    const/high16 v5, 0x3f800000    # 1.0f
+    move v5, v4
 
     :goto_1
     if-eqz p2, :cond_2
 
-    const/high16 v3, 0x3f800000    # 1.0f
+    move v3, v4
 
     .line 101
     :cond_2
@@ -259,7 +259,7 @@
 
     const/high16 v8, 0x42c80000    # 100.0f
 
-    mul-float v3, v3, v8
+    mul-float/2addr v3, v8
 
     invoke-direct {v7, v3}, Landroidx/dynamicanimation/animation/SpringForce;-><init>(F)V
 
@@ -285,7 +285,7 @@
 
     move-result-object v3
 
-    mul-float v8, v8, v5
+    mul-float/2addr v8, v5
 
     .line 106
     invoke-virtual {v3, v8}, Landroidx/dynamicanimation/animation/DynamicAnimation;->setStartValue(F)Landroidx/dynamicanimation/animation/DynamicAnimation;
@@ -317,7 +317,7 @@
 
     int-to-long v5, v0
 
-    mul-long v5, v5, v1
+    mul-long/2addr v5, v1
 
     invoke-virtual {p0, v4, v5, v6}, Landroid/widget/EditText;->postDelayed(Ljava/lang/Runnable;J)Z
 
@@ -331,7 +331,7 @@
 
     int-to-long p1, p1
 
-    mul-long p1, p1, v1
+    mul-long/2addr p1, v1
 
     const-wide/16 v0, 0x96
 
@@ -402,7 +402,7 @@
 
     const/high16 p3, 0x437f0000    # 255.0f
 
-    mul-float p1, p1, p3
+    mul-float/2addr p1, p3
 
     float-to-int p1, p1
 
@@ -619,7 +619,7 @@
     goto :goto_0
 
     :cond_2
-    const/4 v0, 0x0
+    move v0, v2
 
     :goto_0
     const/4 v3, 0x0

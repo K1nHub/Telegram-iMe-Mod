@@ -625,12 +625,12 @@
 
     if-ne v0, p1, :cond_0
 
-    const/4 v0, 0x1
+    move v0, v1
 
     goto :goto_0
 
     :cond_0
-    const/4 v0, 0x0
+    move v0, v2
 
     :goto_0
     if-eqz v0, :cond_1
@@ -789,7 +789,7 @@
     goto :goto_7
 
     :cond_c
-    const/4 v1, 0x0
+    move v1, v2
 
     :cond_d
     :goto_7
@@ -1947,13 +1947,13 @@
     goto :goto_0
 
     :cond_0
-    const/4 v0, 0x0
+    move v0, v1
 
     goto :goto_1
 
     :cond_1
     :goto_0
-    const/4 v0, 0x1
+    move v0, v2
 
     :goto_1
     if-eqz v0, :cond_2

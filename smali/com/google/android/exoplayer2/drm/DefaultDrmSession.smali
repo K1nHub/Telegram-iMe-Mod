@@ -1127,7 +1127,7 @@
 
     if-ne p1, v0, :cond_2
 
-    const/4 v1, 0x1
+    move v1, v2
 
     :cond_2
     invoke-static {v1}, Lcom/google/android/exoplayer2/util/Assertions;->checkState(Z)V

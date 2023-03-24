@@ -138,9 +138,9 @@
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    move v2, v1
 
-    const/4 v3, 0x0
+    move v3, v2
 
     .line 217
     :goto_0
@@ -170,14 +170,14 @@
     :cond_0
     if-ne v4, v5, :cond_3
 
-    const/4 v3, 0x1
+    move v3, v6
 
     goto :goto_1
 
     :cond_1
     if-ne v4, v5, :cond_2
 
-    const/4 v3, 0x0
+    move v3, v1
 
     goto :goto_1
 

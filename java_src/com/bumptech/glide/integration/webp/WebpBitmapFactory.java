@@ -186,11 +186,20 @@ public class WebpBitmapFactory {
         return decodeResource(resources, i, null);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:16:0x0021, code lost:
-        if (r3 == null) goto L8;
+    /* JADX WARN: Code restructure failed: missing block: B:15:0x001f, code lost:
+        if (r3 == null) goto L7;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:17:0x0022, code lost:
+        if (r0 != null) goto L14;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:23:0x0032, code lost:
+        throw new java.lang.IllegalArgumentException("Problem decoding into existing bitmap");
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:24:0x0033, code lost:
+        return r0;
      */
     /* JADX WARN: Code restructure failed: missing block: B:5:0x000e, code lost:
-        if (r3 != null) goto L16;
+        if (r3 != null) goto L15;
      */
     /* JADX WARN: Code restructure failed: missing block: B:6:0x0010, code lost:
         r3.close();
@@ -202,44 +211,42 @@ public class WebpBitmapFactory {
     public static android.graphics.Bitmap decodeResource(android.content.res.Resources r2, int r3, android.graphics.BitmapFactory.Options r4) {
         /*
             r0 = 0
-            android.util.TypedValue r1 = new android.util.TypedValue     // Catch: java.lang.Throwable -> L19 java.lang.Exception -> L20
-            r1.<init>()     // Catch: java.lang.Throwable -> L19 java.lang.Exception -> L20
-            java.io.InputStream r3 = r2.openRawResource(r3, r1)     // Catch: java.lang.Throwable -> L19 java.lang.Exception -> L20
-            android.graphics.Bitmap r0 = decodeResourceStream(r2, r1, r3, r0, r4)     // Catch: java.lang.Throwable -> L16 java.lang.Exception -> L21
-            if (r3 == 0) goto L24
+            android.util.TypedValue r1 = new android.util.TypedValue     // Catch: java.lang.Throwable -> L17 java.lang.Exception -> L1e
+            r1.<init>()     // Catch: java.lang.Throwable -> L17 java.lang.Exception -> L1e
+            java.io.InputStream r3 = r2.openRawResource(r3, r1)     // Catch: java.lang.Throwable -> L17 java.lang.Exception -> L1e
+            android.graphics.Bitmap r0 = decodeResourceStream(r2, r1, r3, r0, r4)     // Catch: java.lang.Throwable -> L14 java.lang.Exception -> L1f
+            if (r3 == 0) goto L22
         L10:
-            r3.close()     // Catch: java.io.IOException -> L14
-            goto L24
+            r3.close()     // Catch: java.io.IOException -> L22
+            goto L22
         L14:
-            goto L24
-        L16:
             r2 = move-exception
             r0 = r3
-            goto L1a
-        L19:
+            goto L18
+        L17:
             r2 = move-exception
-        L1a:
-            if (r0 == 0) goto L1f
-            r0.close()     // Catch: java.io.IOException -> L1f
-        L1f:
+        L18:
+            if (r0 == 0) goto L1d
+            r0.close()     // Catch: java.io.IOException -> L1d
+        L1d:
             throw r2
-        L20:
+        L1e:
             r3 = r0
-        L21:
-            if (r3 == 0) goto L24
+        L1f:
+            if (r3 == 0) goto L22
             goto L10
-        L24:
-            if (r0 != 0) goto L35
-            if (r4 == 0) goto L35
+        L22:
+            if (r0 != 0) goto L33
+            if (r4 == 0) goto L33
             android.graphics.Bitmap r2 = r4.inBitmap
-            if (r2 != 0) goto L2d
-            goto L35
-        L2d:
+            if (r2 != 0) goto L2b
+            goto L33
+        L2b:
             java.lang.IllegalArgumentException r2 = new java.lang.IllegalArgumentException
             java.lang.String r3 = "Problem decoding into existing bitmap"
             r2.<init>(r3)
             throw r2
-        L35:
+        L33:
             return r0
         */
         throw new UnsupportedOperationException("Method not decompiled: com.bumptech.glide.integration.webp.WebpBitmapFactory.decodeResource(android.content.res.Resources, int, android.graphics.BitmapFactory$Options):android.graphics.Bitmap");

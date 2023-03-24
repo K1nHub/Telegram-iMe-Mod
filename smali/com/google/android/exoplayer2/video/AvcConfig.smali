@@ -130,7 +130,7 @@
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_0
     if-ge v2, v0, :cond_0
@@ -152,7 +152,7 @@
 
     move-result v2
 
-    const/4 v5, 0x0
+    move v5, v1
 
     :goto_1
     if-ge v5, v2, :cond_1
@@ -230,11 +230,11 @@
     goto :goto_2
 
     :cond_2
+    move v7, p0
+
     move-object v8, v2
 
-    const/4 v6, -0x1
-
-    const/high16 v7, 0x3f800000    # 1.0f
+    move v6, v5
 
     .line 73
     :goto_2

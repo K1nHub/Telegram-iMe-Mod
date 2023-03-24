@@ -83,12 +83,12 @@ public class VoIPOverlayBackground extends ImageView {
         }
         this.showBlackout = z;
         if (!z2) {
-            this.blackoutProgress = z ? 1.0f : BitmapDescriptorFactory.HUE_RED;
+            this.blackoutProgress = z ? 1.0f : 0.0f;
             return;
         }
         float[] fArr = new float[2];
         fArr[0] = this.blackoutProgress;
-        fArr[1] = z ? 1.0f : BitmapDescriptorFactory.HUE_RED;
+        fArr[1] = z ? 1.0f : 0.0f;
         ValueAnimator ofFloat = ValueAnimator.ofFloat(fArr);
         ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.voip.VoIPOverlayBackground$$ExternalSyntheticLambda0
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener

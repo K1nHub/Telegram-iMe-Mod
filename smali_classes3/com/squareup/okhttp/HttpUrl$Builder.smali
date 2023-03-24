@@ -168,7 +168,7 @@
 
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    move v1, v0
 
     .line 1403
     :goto_0
@@ -259,7 +259,7 @@
     :cond_2
     move v2, p1
 
-    const/4 v3, 0x0
+    move v3, v1
 
     :goto_1
     if-ge v2, p2, :cond_6
@@ -350,11 +350,11 @@
 
     const/4 v3, 0x0
 
-    const/4 v4, 0x0
+    move v5, v2
 
-    const/4 v5, -0x1
+    move v6, v5
 
-    const/4 v6, -0x1
+    move v4, v3
 
     :goto_0
     const/4 v7, 0x0
@@ -451,9 +451,9 @@
     move v6, p1
 
     :goto_2
-    move p1, v6
+    move v8, v3
 
-    const/4 v8, 0x0
+    move p1, v6
 
     :goto_3
     if-ge p1, p2, :cond_9
@@ -615,9 +615,9 @@
 
     const/4 v1, -0x1
 
-    const/4 v2, 0x0
+    move v2, v0
 
-    const/4 v3, 0x0
+    move v3, v2
 
     .line 1425
     :goto_0

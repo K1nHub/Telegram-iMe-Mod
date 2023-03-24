@@ -10,11 +10,11 @@
 
 .field public final synthetic f$1:Ljava/lang/String;
 
-.field public final synthetic f$2:Lorg/telegram/tgnet/TLRPC$TL_messages_stickerSet;
+.field public final synthetic f$2:Z
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/messenger/MediaDataController;Ljava/lang/String;Lorg/telegram/tgnet/TLRPC$TL_messages_stickerSet;)V
+.method public synthetic constructor <init>(Lorg/telegram/messenger/MediaDataController;Ljava/lang/String;Z)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -23,7 +23,7 @@
 
     iput-object p2, p0, Lorg/telegram/messenger/MediaDataController$$ExternalSyntheticLambda65;->f$1:Ljava/lang/String;
 
-    iput-object p3, p0, Lorg/telegram/messenger/MediaDataController$$ExternalSyntheticLambda65;->f$2:Lorg/telegram/tgnet/TLRPC$TL_messages_stickerSet;
+    iput-boolean p3, p0, Lorg/telegram/messenger/MediaDataController$$ExternalSyntheticLambda65;->f$2:Z
 
     return-void
 .end method
@@ -37,9 +37,9 @@
 
     iget-object v1, p0, Lorg/telegram/messenger/MediaDataController$$ExternalSyntheticLambda65;->f$1:Ljava/lang/String;
 
-    iget-object v2, p0, Lorg/telegram/messenger/MediaDataController$$ExternalSyntheticLambda65;->f$2:Lorg/telegram/tgnet/TLRPC$TL_messages_stickerSet;
+    iget-boolean v2, p0, Lorg/telegram/messenger/MediaDataController$$ExternalSyntheticLambda65;->f$2:Z
 
-    invoke-static {v0, v1, v2}, Lorg/telegram/messenger/MediaDataController;->$r8$lambda$TNo9MV56G41YRFfj4VU9lH0jRM4(Lorg/telegram/messenger/MediaDataController;Ljava/lang/String;Lorg/telegram/tgnet/TLRPC$TL_messages_stickerSet;)V
+    invoke-static {v0, v1, v2}, Lorg/telegram/messenger/MediaDataController;->$r8$lambda$G1J7NHm1uMOFe_JGQ4MFl0l9H1Q(Lorg/telegram/messenger/MediaDataController;Ljava/lang/String;Z)V
 
     return-void
 .end method

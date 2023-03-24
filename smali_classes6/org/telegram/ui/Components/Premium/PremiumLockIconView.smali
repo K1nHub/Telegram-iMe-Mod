@@ -217,35 +217,35 @@
 
     const/4 v1, 0x0
 
-    const/4 v3, 0x0
+    move v3, v1
 
-    const/4 v4, 0x0
+    move v4, v3
 
-    const/4 v5, 0x0
+    move v5, v4
 
-    const/4 v6, 0x0
+    move v6, v5
 
-    const/4 v7, 0x0
+    move v7, v6
 
     :goto_0
     const/16 v8, 0xa
 
     if-ge v3, v8, :cond_3
 
-    const/4 v9, 0x0
+    move v9, v1
 
     :goto_1
     if-ge v9, v8, :cond_2
 
     int-to-float v10, v3
 
-    mul-float v10, v10, v2
+    mul-float/2addr v10, v2
 
     float-to-int v10, v10
 
     int-to-float v11, v9
 
-    mul-float v11, v11, v0
+    mul-float/2addr v11, v0
 
     float-to-int v11, v11
 
@@ -361,7 +361,7 @@
     const/high16 v3, 0x3f800000    # 1.0f
 
     :goto_0
-    mul-float v2, v2, v3
+    mul-float/2addr v2, v3
 
     aput v2, v0, v1
 
@@ -726,7 +726,7 @@
 
     const/high16 v5, 0x437f0000    # 255.0f
 
-    mul-float v1, v1, v5
+    mul-float/2addr v1, v5
 
     float-to-int v1, v1
 

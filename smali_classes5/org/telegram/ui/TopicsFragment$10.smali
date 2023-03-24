@@ -196,12 +196,12 @@
 
     if-ne v4, v6, :cond_1
 
-    const/4 v4, 0x1
+    move v4, v6
 
     goto :goto_0
 
     :cond_1
-    const/4 v4, 0x0
+    move v4, v5
 
     .line 936
     :goto_0
@@ -292,7 +292,7 @@
 
     if-gt v13, v14, :cond_3
 
-    const/4 v12, 0x1
+    move v12, v6
 
     :cond_3
     if-nez v4, :cond_6
@@ -347,7 +347,7 @@
 
     sub-int/2addr v12, v6
 
-    mul-int v12, v12, v13
+    mul-int/2addr v12, v13
 
     add-int/2addr v8, v12
 
@@ -397,7 +397,7 @@
 
     if-lez v12, :cond_7
 
-    const/high16 v13, 0x3f800000    # 1.0f
+    move v13, v10
 
     .line 965
     :cond_7
@@ -415,11 +415,11 @@
 
     const/high16 v15, 0x3e800000    # 0.25f
 
-    mul-float v13, v13, v15
+    mul-float/2addr v13, v15
 
     sub-float/2addr v14, v13
 
-    mul-float v12, v12, v14
+    mul-float/2addr v12, v14
 
     float-to-int v12, v12
 
@@ -482,12 +482,12 @@
 
     move v12, v8
 
-    const/4 v8, 0x0
+    move v8, v9
 
     goto :goto_3
 
     :cond_a
-    const/4 v12, 0x0
+    move v12, v5
 
     .line 982
     :goto_3
@@ -665,7 +665,7 @@
 
     if-lez v7, :cond_11
 
-    const/high16 v3, 0x3f800000    # 1.0f
+    move v3, v10
 
     .line 1011
     :cond_11
@@ -693,7 +693,7 @@
 
     if-lez v7, :cond_12
 
-    const/4 v5, 0x1
+    move v5, v6
 
     .line 1013
     :cond_12
@@ -802,9 +802,9 @@
 
     const v5, 0x3e4ccccd    # 0.2f
 
-    mul-float v1, v1, v5
+    mul-float/2addr v1, v5
 
-    mul-float v1, v1, v10
+    mul-float/2addr v1, v10
 
     sub-float/2addr v4, v1
 

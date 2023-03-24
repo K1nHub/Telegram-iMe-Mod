@@ -390,7 +390,7 @@
     :goto_0
     const/16 v6, 0xc
 
-    if-ge v4, v6, :cond_22
+    if-ge v4, v6, :cond_23
 
     const-string v6, "preferences.getString(ol\u2026        ?: return@forEach"
 
@@ -405,9 +405,9 @@
     :cond_0
     :goto_1
     :pswitch_0
-    const/4 v7, 0x0
+    move v7, v3
 
-    goto/16 :goto_16
+    goto/16 :goto_17
 
     .line 297
     :pswitch_1
@@ -522,7 +522,7 @@
 
     move-result-object v7
 
-    const/4 v10, 0x0
+    move v10, v3
 
     :goto_2
     invoke-interface {v7}, Ljava/util/Iterator;->hasNext()Z
@@ -592,7 +592,7 @@
 
     move-result-object v7
 
-    const/4 v8, 0x0
+    move v8, v3
 
     :goto_3
     invoke-interface {v7}, Ljava/util/Iterator;->hasNext()Z
@@ -818,12 +818,12 @@
     :goto_5
     invoke-interface {v10}, Landroid/content/SharedPreferences$Editor;->apply()V
 
-    const/4 v8, 0x1
+    move v8, v5
 
     goto :goto_6
 
     :cond_9
-    const/4 v8, 0x0
+    move v8, v3
 
     .line 240
     :goto_6
@@ -850,7 +850,7 @@
     .line 13579
     array-length v11, v10
 
-    const/4 v12, 0x0
+    move v12, v3
 
     :goto_7
     if-ge v12, v11, :cond_b
@@ -919,7 +919,7 @@
     :cond_b
     invoke-interface {v8}, Landroid/content/SharedPreferences$Editor;->apply()V
 
-    const/4 v8, 0x1
+    move v8, v5
 
     :cond_c
     if-eqz v8, :cond_0
@@ -1069,7 +1069,7 @@
     .line 13579
     array-length v8, v7
 
-    const/4 v9, 0x0
+    move v9, v3
 
     :goto_a
     if-ge v9, v8, :cond_10
@@ -1086,7 +1086,7 @@
 
     move-result-object v11
 
-    const/4 v12, 0x0
+    move v12, v3
 
     :goto_b
     invoke-interface {v11}, Ljava/util/Iterator;->hasNext()Z
@@ -1819,7 +1819,7 @@
 
     invoke-virtual {v3, v1}, Lorg/fork/controller/FiltersController;->loadConfig(Landroid/content/SharedPreferences;)V
 
-    goto/16 :goto_1
+    goto/16 :goto_16
 
     .line 100
     :pswitch_a
@@ -1831,7 +1831,7 @@
 
     move-result v3
 
-    if-eqz v3, :cond_0
+    if-eqz v3, :cond_22
 
     .line 101
     invoke-interface/range {p1 .. p1}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
@@ -1951,8 +1951,14 @@
 
     invoke-virtual {v3, v1}, Lorg/fork/controller/FiltersController;->loadConfig(Landroid/content/SharedPreferences;)V
 
-    .line 305
+    goto :goto_17
+
+    :cond_22
     :goto_16
+    const/4 v7, 0x0
+
+    .line 305
+    :goto_17
     invoke-interface/range {p1 .. p1}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
 
     move-result-object v3
@@ -1965,13 +1971,13 @@
 
     add-int/lit8 v4, v4, 0x1
 
-    const/4 v3, 0x0
+    move v3, v7
 
     const/4 v5, 0x1
 
     goto/16 :goto_0
 
-    :cond_22
+    :cond_23
     return-void
 
     nop

@@ -372,7 +372,7 @@
     sget-object v1, Lorg/bouncycastle/math/ec/ECConstants;->ONE:Ljava/math/BigInteger;
 
     :goto_1
-    const/4 v2, 0x1
+    move v2, v0
 
     :goto_2
     if-ge v2, p1, :cond_4
@@ -740,7 +740,7 @@
 
     const/4 v3, 0x0
 
-    const/4 v4, 0x0
+    move v4, v3
 
     :goto_0
     if-ltz v2, :cond_2
@@ -771,7 +771,7 @@
 
     check-cast v0, Lorg/bouncycastle/math/ec/ECPoint$AbstractF2m;
 
-    const/4 v4, 0x0
+    move v4, v3
 
     :cond_1
     add-int/lit8 v2, v2, -0x1
@@ -1113,12 +1113,17 @@
     if-ltz v1, :cond_5
 
     :goto_3
+    move v1, v7
+
     move v7, p2
 
+    goto :goto_4
+
     :cond_5
-    const/4 v1, 0x0
+    move v1, v7
 
     :cond_6
+    :goto_4
     sget-object v6, Lorg/bouncycastle/math/ec/Tnaf;->MINUS_ONE:Ljava/math/BigInteger;
 
     invoke-virtual {v4, v6}, Lorg/bouncycastle/math/ec/SimpleBigDecimal;->compareTo(Ljava/math/BigInteger;)I
@@ -1133,7 +1138,7 @@
 
     if-ltz p0, :cond_9
 
-    goto :goto_4
+    goto :goto_5
 
     :cond_7
     sget-object p1, Lorg/bouncycastle/math/ec/Tnaf;->MINUS_TWO:Ljava/math/BigInteger;
@@ -1144,7 +1149,7 @@
 
     if-gez p0, :cond_8
 
-    :goto_4
+    :goto_5
     neg-int p0, p2
 
     int-to-byte v7, p0
@@ -1247,7 +1252,7 @@
 
     const/4 v3, 0x0
 
-    const/4 v4, 0x0
+    move v4, v3
 
     :goto_2
     sget-object v5, Lorg/bouncycastle/math/ec/ECConstants;->ZERO:Ljava/math/BigInteger;
@@ -1314,12 +1319,12 @@
 
     int-to-byte v5, v5
 
-    const/4 v6, 0x0
+    move v6, v3
 
     goto :goto_4
 
     :cond_6
-    const/4 v6, 0x1
+    move v6, v0
 
     :goto_4
     if-eqz v6, :cond_7

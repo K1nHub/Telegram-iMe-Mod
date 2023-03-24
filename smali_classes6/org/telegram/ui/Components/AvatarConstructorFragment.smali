@@ -540,7 +540,7 @@
     goto :goto_0
 
     :cond_1
-    const/4 v3, 0x0
+    move v3, v1
 
     :goto_0
     const/4 v4, 0x1
@@ -568,7 +568,7 @@
 
     iget v3, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment;->progressToExpand:F
 
-    mul-float v0, v0, v3
+    mul-float/2addr v0, v3
 
     if-eqz p1, :cond_2
 
@@ -1427,7 +1427,7 @@
 
     int-to-float v0, v0
 
-    mul-float v0, v0, p1
+    mul-float/2addr v0, p1
 
     .line 624
     iget v1, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment;->keyboardVisibleProgress:F
@@ -1466,7 +1466,7 @@
 
     div-float/2addr v1, v2
 
-    mul-float v1, v1, p1
+    mul-float/2addr v1, p1
 
     invoke-virtual {v0, v1}, Landroid/widget/FrameLayout;->setTranslationY(F)V
 
@@ -2858,12 +2858,12 @@
     if-lez v0, :cond_1
 
     :goto_0
-    const/4 v0, 0x1
+    move v0, v2
 
     goto :goto_1
 
     :cond_1
-    const/4 v0, 0x0
+    move v0, v3
 
     goto :goto_1
 
@@ -2901,9 +2901,9 @@
 
     move-result v1
 
-    const/high16 v5, 0x3f800000    # 1.0f
-
     cmpl-float v1, v1, v4
+
+    const/high16 v5, 0x3f800000    # 1.0f
 
     if-nez v1, :cond_4
 
@@ -2912,7 +2912,7 @@
     goto :goto_2
 
     :cond_3
-    const/high16 v4, 0x3f800000    # 1.0f
+    move v4, v5
 
     .line 1301
     :goto_2
@@ -2949,7 +2949,7 @@
     goto :goto_3
 
     :cond_6
-    const/high16 v4, 0x3f800000    # 1.0f
+    move v4, v5
 
     :goto_3
     aput v4, v1, v2
@@ -3031,9 +3031,9 @@
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x1
-
     cmpl-float v0, v0, v1
+
+    const/4 v1, 0x1
 
     if-lez v0, :cond_2
 
@@ -3048,7 +3048,7 @@
     iput v0, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment;->progressToExpand:F
 
     .line 1341
-    iput-boolean v2, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment;->expandWithKeyboard:Z
+    iput-boolean v1, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment;->expandWithKeyboard:Z
 
     .line 1343
     :cond_1
@@ -3064,11 +3064,11 @@
 
     iget-boolean v0, v0, Lorg/telegram/ui/Components/AvatarConstructorFragment$PreviewView;->expanded:Z
 
-    xor-int/2addr v0, v2
+    xor-int/2addr v0, v1
 
-    const/4 v1, 0x0
+    const/4 v2, 0x0
 
-    invoke-direct {p0, v0, v2, v1}, Lorg/telegram/ui/Components/AvatarConstructorFragment;->setExpanded(ZZZ)V
+    invoke-direct {p0, v0, v1, v2}, Lorg/telegram/ui/Components/AvatarConstructorFragment;->setExpanded(ZZZ)V
 
     return-void
 .end method
@@ -3103,7 +3103,7 @@
 .end method
 
 .method public startFrom(Lorg/telegram/tgnet/TLRPC$VideoSize;)V
-    .locals 10
+    .locals 9
 
     .line 651
     new-instance v0, Lorg/telegram/ui/Components/AvatarConstructorFragment$BackgroundGradient;
@@ -3163,7 +3163,7 @@
     goto :goto_0
 
     :cond_0
-    const/4 v1, 0x0
+    move v1, v2
 
     :goto_0
     iput v1, v0, Lorg/telegram/ui/Components/AvatarConstructorFragment$BackgroundGradient;->color2:I
@@ -3198,7 +3198,7 @@
     goto :goto_1
 
     :cond_1
-    const/4 v1, 0x0
+    move v1, v2
 
     :goto_1
     iput v1, v0, Lorg/telegram/ui/Components/AvatarConstructorFragment$BackgroundGradient;->color3:I
@@ -3233,7 +3233,7 @@
     goto :goto_2
 
     :cond_2
-    const/4 v1, 0x0
+    move v1, v2
 
     :goto_2
     iput v1, v0, Lorg/telegram/ui/Components/AvatarConstructorFragment$BackgroundGradient;->color4:I
@@ -3303,9 +3303,9 @@
 
     iget-wide v7, p1, Lorg/telegram/tgnet/TLRPC$TL_videoSizeStickerMarkup;->sticker_id:J
 
-    cmp-long v9, v5, v7
+    cmp-long v5, v5, v7
 
-    if-nez v9, :cond_4
+    if-nez v5, :cond_4
 
     .line 668
     iget-object v3, v1, Lorg/telegram/tgnet/TLRPC$messages_StickerSet;->documents:Ljava/util/ArrayList;

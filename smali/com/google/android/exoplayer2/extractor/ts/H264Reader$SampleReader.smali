@@ -219,7 +219,7 @@
 
     add-int/2addr v5, v2
 
-    mul-int/lit8 v5, v5, 0x2
+    mul-int/2addr v5, v7
 
     .line 351
     invoke-static {v3, v5}, Ljava/util/Arrays;->copyOf([BI)[B
@@ -490,24 +490,26 @@
 
     move v14, v3
 
-    move/from16 v16, v6
+    move v15, v5
 
-    const/4 v15, 0x1
+    move/from16 v16, v6
 
     goto :goto_1
 
     :cond_d
     move v14, v3
 
+    move v15, v4
+
     goto :goto_0
 
     :cond_e
-    const/4 v14, 0x0
+    move v14, v4
+
+    move v15, v14
 
     :goto_0
-    const/4 v15, 0x0
-
-    const/16 v16, 0x0
+    move/from16 v16, v15
 
     .line 417
     :goto_1
@@ -515,12 +517,12 @@
 
     if-ne v3, v2, :cond_f
 
-    const/16 v17, 0x1
+    move/from16 v17, v5
 
     goto :goto_2
 
     :cond_f
-    const/16 v17, 0x0
+    move/from16 v17, v4
 
     :goto_2
     if-eqz v17, :cond_11
@@ -549,7 +551,7 @@
     goto :goto_3
 
     :cond_11
-    const/16 v18, 0x0
+    move/from16 v18, v4
 
     .line 429
     :goto_3
@@ -610,10 +612,14 @@
 
     move/from16 v19, v2
 
+    move/from16 v21, v4
+
     goto :goto_5
 
     :cond_14
     move/from16 v19, v2
+
+    move/from16 v20, v4
 
     goto :goto_4
 
@@ -674,35 +680,36 @@
 
     move/from16 v21, v2
 
-    const/16 v19, 0x0
+    move/from16 v19, v4
 
-    const/16 v20, 0x0
+    move/from16 v20, v19
 
-    goto :goto_7
+    goto :goto_6
 
     :cond_18
     move/from16 v21, v2
 
-    const/16 v19, 0x0
+    move/from16 v19, v4
 
-    const/16 v20, 0x0
+    move/from16 v20, v19
+
+    move/from16 v22, v20
 
     goto :goto_6
 
     :cond_19
-    const/16 v19, 0x0
+    move/from16 v19, v4
+
+    move/from16 v20, v19
 
     :goto_4
-    const/16 v20, 0x0
+    move/from16 v21, v20
 
     :goto_5
-    const/16 v21, 0x0
-
-    :goto_6
-    const/16 v22, 0x0
+    move/from16 v22, v21
 
     .line 452
-    :goto_7
+    :goto_6
     iget-object v8, v0, Lcom/google/android/exoplayer2/extractor/ts/H264Reader$SampleReader;->sliceHeader:Lcom/google/android/exoplayer2/extractor/ts/H264Reader$SampleReader$SliceHeaderData;
 
     invoke-virtual/range {v8 .. v22}, Lcom/google/android/exoplayer2/extractor/ts/H264Reader$SampleReader$SliceHeaderData;->setAll(Lcom/google/android/exoplayer2/util/NalUnitUtil$SpsData;IIIIZZZZIIIII)V
@@ -755,9 +762,9 @@
 
     sub-long/2addr p1, v3
 
-    long-to-int p2, p1
+    long-to-int p1, p1
 
-    add-int/2addr p3, p2
+    add-int/2addr p3, p1
 
     .line 477
     invoke-direct {p0, p3}, Lcom/google/android/exoplayer2/extractor/ts/H264Reader$SampleReader;->outputSample(I)V
@@ -806,7 +813,7 @@
     if-ne p2, v2, :cond_5
 
     :cond_4
-    const/4 v1, 0x1
+    move v1, v2
 
     :cond_5
     or-int/2addr p1, v1

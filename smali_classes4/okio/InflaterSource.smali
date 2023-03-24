@@ -139,7 +139,7 @@
 .end method
 
 .method public read(Lokio/Buffer;J)J
-    .locals 5
+    .locals 4
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -158,9 +158,9 @@
 
     const-wide/16 v2, 0x0
 
-    cmp-long v4, v0, v2
+    cmp-long v2, v0, v2
 
-    if-lez v4, :cond_0
+    if-lez v2, :cond_0
 
     return-wide v0
 
@@ -224,15 +224,15 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const/4 v0, 0x1
+    const-wide/16 v0, 0x0
 
-    const-wide/16 v1, 0x0
+    cmp-long v2, p2, v0
 
-    cmp-long v3, p2, v1
+    const/4 v3, 0x1
 
-    if-ltz v3, :cond_0
+    if-ltz v2, :cond_0
 
-    const/4 v4, 0x1
+    move v4, v3
 
     goto :goto_0
 
@@ -245,23 +245,23 @@
     .line 67
     iget-boolean v4, p0, Lokio/InflaterSource;->closed:Z
 
-    xor-int/2addr v4, v0
+    xor-int/2addr v4, v3
 
     if-eqz v4, :cond_4
 
-    if-nez v3, :cond_1
+    if-nez v2, :cond_1
 
-    return-wide v1
+    return-wide v0
 
     .line 72
     :cond_1
     :try_start_0
-    invoke-virtual {p1, v0}, Lokio/Buffer;->writableSegment$okio(I)Lokio/Segment;
+    invoke-virtual {p1, v3}, Lokio/Buffer;->writableSegment$okio(I)Lokio/Segment;
 
-    move-result-object v0
+    move-result-object v2
 
     .line 73
-    iget v3, v0, Lokio/Segment;->limit:I
+    iget v3, v2, Lokio/Segment;->limit:I
 
     rsub-int v3, v3, 0x2000
 
@@ -272,19 +272,19 @@
 
     move-result-wide p2
 
-    long-to-int p3, p2
+    long-to-int p2, p2
 
     .line 76
     invoke-virtual {p0}, Lokio/InflaterSource;->refill()Z
 
     .line 79
-    iget-object p2, p0, Lokio/InflaterSource;->inflater:Ljava/util/zip/Inflater;
+    iget-object p3, p0, Lokio/InflaterSource;->inflater:Ljava/util/zip/Inflater;
 
-    iget-object v3, v0, Lokio/Segment;->data:[B
+    iget-object v3, v2, Lokio/Segment;->data:[B
 
-    iget v4, v0, Lokio/Segment;->limit:I
+    iget v4, v2, Lokio/Segment;->limit:I
 
-    invoke-virtual {p2, v3, v4, p3}, Ljava/util/zip/Inflater;->inflate([BII)I
+    invoke-virtual {p3, v3, v4, p2}, Ljava/util/zip/Inflater;->inflate([BII)I
 
     move-result p2
 
@@ -294,11 +294,11 @@
     if-lez p2, :cond_2
 
     .line 86
-    iget p3, v0, Lokio/Segment;->limit:I
+    iget p3, v2, Lokio/Segment;->limit:I
 
     add-int/2addr p3, p2
 
-    iput p3, v0, Lokio/Segment;->limit:I
+    iput p3, v2, Lokio/Segment;->limit:I
 
     .line 87
     invoke-virtual {p1}, Lokio/Buffer;->size()J
@@ -315,26 +315,26 @@
 
     .line 92
     :cond_2
-    iget p2, v0, Lokio/Segment;->pos:I
+    iget p2, v2, Lokio/Segment;->pos:I
 
-    iget p3, v0, Lokio/Segment;->limit:I
+    iget p3, v2, Lokio/Segment;->limit:I
 
     if-ne p2, p3, :cond_3
 
     .line 93
-    invoke-virtual {v0}, Lokio/Segment;->pop()Lokio/Segment;
+    invoke-virtual {v2}, Lokio/Segment;->pop()Lokio/Segment;
 
     move-result-object p2
 
     iput-object p2, p1, Lokio/Buffer;->head:Lokio/Segment;
 
     .line 94
-    invoke-static {v0}, Lokio/SegmentPool;->recycle(Lokio/Segment;)V
+    invoke-static {v2}, Lokio/SegmentPool;->recycle(Lokio/Segment;)V
     :try_end_0
     .catch Ljava/util/zip/DataFormatException; {:try_start_0 .. :try_end_0} :catch_0
 
     :cond_3
-    return-wide v1
+    return-wide v0
 
     :catch_0
     move-exception p1

@@ -1,5 +1,5 @@
 .class Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView$4;
-.super Landroid/widget/ViewSwitcher;
+.super Landroid/widget/TextView;
 .source "LoginActivity.java"
 
 
@@ -18,8 +18,8 @@
 .method constructor <init>(Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;Landroid/content/Context;Lorg/telegram/ui/LoginActivity;)V
     .locals 0
 
-    .line 6161
-    invoke-direct {p0, p2}, Landroid/widget/ViewSwitcher;-><init>(Landroid/content/Context;)V
+    .line 6148
+    invoke-direct {p0, p2}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
 
     return-void
 .end method
@@ -31,7 +31,7 @@
 
     const/16 p2, 0x64
 
-    .line 6164
+    .line 6151
     invoke-static {p2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result p2
@@ -42,7 +42,7 @@
 
     move-result p2
 
-    invoke-super {p0, p1, p2}, Landroid/widget/ViewSwitcher;->onMeasure(II)V
+    invoke-super {p0, p1, p2}, Landroid/widget/TextView;->onMeasure(II)V
 
     return-void
 .end method

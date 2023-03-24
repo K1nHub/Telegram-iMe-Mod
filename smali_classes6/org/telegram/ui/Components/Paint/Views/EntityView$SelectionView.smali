@@ -376,7 +376,7 @@
 
     move-result-wide v14
 
-    mul-double v10, v10, v14
+    mul-double/2addr v10, v14
 
     add-double/2addr v12, v10
 
@@ -389,7 +389,7 @@
 
     const/high16 v10, -0x40800000    # -1.0f
 
-    mul-float v1, v1, v10
+    mul-float/2addr v1, v10
 
     .line 624
     :cond_3
@@ -403,7 +403,7 @@
 
     const/high16 v11, 0x40000000    # 2.0f
 
-    mul-float v1, v1, v11
+    mul-float/2addr v1, v11
 
     .line 625
     invoke-virtual/range {p0 .. p0}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
@@ -544,7 +544,7 @@
 
     :cond_8
     :goto_2
-    const/4 v5, 0x1
+    move v5, v7
 
     goto :goto_3
 

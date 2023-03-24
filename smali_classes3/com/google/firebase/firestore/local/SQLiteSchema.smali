@@ -529,12 +529,12 @@
 
     if-eqz v0, :cond_0
 
-    const/4 v3, 0x1
+    move v3, v1
 
     goto :goto_0
 
     :cond_0
-    const/4 v3, 0x0
+    move v3, v2
 
     :goto_0
     new-array v4, v2, [Ljava/lang/Object;
@@ -604,7 +604,7 @@
 .end method
 
 .method private ensureTargetGlobal()V
-    .locals 5
+    .locals 4
 
     .line 376
     iget-object v0, p0, Lcom/google/firebase/firestore/local/SQLiteSchema;->db:Landroid/database/sqlite/SQLiteDatabase;
@@ -617,9 +617,9 @@
 
     const-wide/16 v2, 0x1
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-nez v4, :cond_0
+    if-nez v0, :cond_0
 
     const/4 v0, 0x1
 
@@ -673,12 +673,12 @@
 
     if-ne v1, v0, :cond_0
 
-    const/4 v4, 0x1
+    move v4, v2
 
     goto :goto_0
 
     :cond_0
-    const/4 v4, 0x0
+    move v4, v3
 
     :goto_0
     new-array v5, v3, [Ljava/lang/Object;
@@ -695,7 +695,7 @@
     goto :goto_1
 
     :cond_1
-    const/4 v2, 0x0
+    move v2, v3
 
     :goto_1
     return v2
@@ -731,9 +731,9 @@
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    move v2, v1
 
-    const/4 v3, 0x0
+    move v3, v2
 
     .line 193
     :goto_0
@@ -1253,14 +1253,14 @@
 
     const-wide/16 p2, -0x1
 
-    cmp-long p4, p0, p2
+    cmp-long p0, p0, p2
 
-    if-eqz p4, :cond_0
+    if-eqz p0, :cond_0
 
     goto :goto_0
 
     :cond_0
-    const/4 v1, 0x0
+    move v1, v0
 
     :goto_0
     new-array p0, v0, [Ljava/lang/Object;
@@ -1479,12 +1479,12 @@
 
     if-eqz v0, :cond_0
 
-    const/4 v0, 0x1
+    move v0, v1
 
     goto :goto_0
 
     :cond_0
-    const/4 v0, 0x0
+    move v0, v2
 
     :goto_0
     new-array v3, v4, [Ljava/lang/Object;

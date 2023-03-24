@@ -854,12 +854,12 @@
 
     if-eqz p1, :cond_1
 
-    const/high16 v3, 0x3f800000    # 1.0f
+    move v3, v1
 
     goto :goto_0
 
     :cond_1
-    const/4 v3, 0x0
+    move v3, v2
 
     :goto_0
     sub-float/2addr v0, v3
@@ -900,7 +900,7 @@
     goto :goto_1
 
     :cond_3
-    const/4 v1, 0x0
+    move v1, v2
 
     :goto_1
     aput v1, v0, v3
@@ -1591,7 +1591,7 @@
     goto :goto_0
 
     :cond_4
-    const/4 v0, 0x0
+    move v0, v1
 
     :goto_0
     aput v0, p2, v2
@@ -1645,7 +1645,7 @@
     goto :goto_1
 
     :cond_6
-    const/4 v0, 0x0
+    move v0, v1
 
     .line 1253
     :goto_1

@@ -72,7 +72,7 @@ final class AutoValue_CrashlyticsReport_Session_Event extends CrashlyticsReport.
         long j = this.timestamp;
         int hashCode = (((((((((int) (j ^ (j >>> 32))) ^ 1000003) * 1000003) ^ this.type.hashCode()) * 1000003) ^ this.app.hashCode()) * 1000003) ^ this.device.hashCode()) * 1000003;
         CrashlyticsReport.Session.Event.Log log = this.log;
-        return (log == null ? 0 : log.hashCode()) ^ hashCode;
+        return hashCode ^ (log == null ? 0 : log.hashCode());
     }
 
     @Override // com.google.firebase.crashlytics.internal.model.CrashlyticsReport.Session.Event

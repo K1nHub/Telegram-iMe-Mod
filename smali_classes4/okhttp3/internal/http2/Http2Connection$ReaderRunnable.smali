@@ -167,11 +167,11 @@
 
     iput-wide v2, v13, Lkotlin/jvm/internal/Ref$LongRef;->element:J
 
-    const/4 v10, 0x0
+    const-wide/16 v9, 0x0
 
-    const-wide/16 v8, 0x0
+    cmp-long v1, v2, v9
 
-    cmp-long v1, v2, v8
+    const/4 v8, 0x0
 
     if-eqz v1, :cond_3
 
@@ -202,7 +202,7 @@
 
     move-result-object v1
 
-    new-array v2, v10, [Lokhttp3/internal/http2/Http2Stream;
+    new-array v2, v8, [Lokhttp3/internal/http2/Http2Stream;
 
     .line 38
     invoke-interface {v1, v2}, Ljava/util/Collection;->toArray([Ljava/lang/Object;)[Ljava/lang/Object;
@@ -289,11 +289,11 @@
 
     move-object v7, v15
 
+    move/from16 v19, v8
+
     move/from16 v8, p1
 
     move-object/from16 v9, p2
-
-    const/16 v19, 0x0
 
     move-object v10, v13
 
@@ -376,12 +376,12 @@
 
     array-length v1, v0
 
-    const/4 v10, 0x0
+    move/from16 v8, v19
 
     :goto_4
-    if-ge v10, v1, :cond_4
+    if-ge v8, v1, :cond_4
 
-    aget-object v2, v0, v10
+    aget-object v2, v0, v8
 
     .line 770
     monitor-enter v2
@@ -400,7 +400,7 @@
     .line 770
     monitor-exit v2
 
-    add-int/lit8 v10, v10, 0x1
+    add-int/lit8 v8, v8, 0x1
 
     goto :goto_4
 

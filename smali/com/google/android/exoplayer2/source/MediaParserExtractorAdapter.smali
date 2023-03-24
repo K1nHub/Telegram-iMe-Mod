@@ -305,7 +305,7 @@
 .end method
 
 .method public seek(JJ)V
-    .locals 4
+    .locals 3
 
     .line 118
     iget-object v0, p0, Lcom/google/android/exoplayer2/source/MediaParserExtractorAdapter;->inputReaderAdapter:Lcom/google/android/exoplayer2/source/mediaparser/InputReaderAdapterV30;
@@ -330,9 +330,9 @@
 
     iget-wide v1, v1, Landroid/media/MediaParser$SeekPoint;->position:J
 
-    cmp-long v3, v1, p1
+    cmp-long p1, v1, p1
 
-    if-nez v3, :cond_0
+    if-nez p1, :cond_0
 
     check-cast v0, Landroid/media/MediaParser$SeekPoint;
 

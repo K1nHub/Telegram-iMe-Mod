@@ -414,7 +414,7 @@
 
     if-ge p3, p2, :cond_1
 
-    const/4 p1, 0x1
+    move p1, v1
 
     :cond_1
     :goto_0

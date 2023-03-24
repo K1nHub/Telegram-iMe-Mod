@@ -73,7 +73,7 @@
 
     :cond_3
     :goto_2
-    const/4 p1, -0x1
+    move p1, v0
 
     goto :goto_3
 

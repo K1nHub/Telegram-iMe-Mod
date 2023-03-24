@@ -125,14 +125,14 @@ public class MediaCodecAudioRenderer extends MediaCodecRenderer implements Media
             for (int i3 = 1; i3 < decoderInfos.size(); i3++) {
                 MediaCodecInfo mediaCodecInfo2 = decoderInfos.get(i3);
                 if (mediaCodecInfo2.isFormatSupported(format)) {
-                    mediaCodecInfo = mediaCodecInfo2;
                     z = false;
+                    mediaCodecInfo = mediaCodecInfo2;
                     break;
                 }
             }
         }
-        z2 = isFormatSupported;
         z = true;
+        z2 = isFormatSupported;
         int i4 = z2 ? 4 : 3;
         if (z2 && mediaCodecInfo.isSeamlessAdaptationSupported(format)) {
             i2 = 16;

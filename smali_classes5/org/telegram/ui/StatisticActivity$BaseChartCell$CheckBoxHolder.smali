@@ -117,7 +117,7 @@
 
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    move v1, v0
 
     :goto_0
     const/4 v2, 0x1
@@ -169,7 +169,7 @@
     goto :goto_0
 
     :cond_2
-    const/4 v0, 0x1
+    move v0, v2
 
     .line 1711
     :goto_1
@@ -269,7 +269,7 @@
 .end method
 
 .method private synthetic lambda$setData$1(Lorg/telegram/ui/Charts/view_data/LineViewData;Landroid/view/View;)Z
-    .locals 8
+    .locals 7
 
     .line 1729
     iget-object p2, p0, Lorg/telegram/ui/StatisticActivity$BaseChartCell$CheckBoxHolder;->checkBox:Lorg/telegram/ui/Components/FlatCheckBox;
@@ -297,7 +297,7 @@
 
     move-result p2
 
-    const/4 v1, 0x0
+    move v1, v0
 
     :goto_0
     const-wide/16 v2, 0x0
@@ -341,9 +341,9 @@
 
     iget-wide v5, v5, Lorg/telegram/ui/StatisticActivity$ChartViewData;->activeZoom:J
 
-    cmp-long v7, v5, v2
+    cmp-long v2, v5, v2
 
-    if-lez v7, :cond_1
+    if-lez v2, :cond_1
 
     iget-object v2, v4, Lorg/telegram/ui/StatisticActivity$BaseChartCell;->zoomedChartView:Lorg/telegram/ui/Charts/BaseChartView;
 

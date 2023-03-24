@@ -581,8 +581,7 @@ public class FilePathDatabase {
         int i3 = 0;
         try {
             try {
-                SQLiteDatabase sQLiteDatabase = this.database;
-                sQLiteCursor = sQLiteDatabase.queryFinalized("SELECT dialog_id, message_id, message_type FROM paths_by_dialog_id WHERE path = '" + shield(file.getPath()) + "'", new Object[0]);
+                sQLiteCursor = this.database.queryFinalized("SELECT dialog_id, message_id, message_type FROM paths_by_dialog_id WHERE path = '" + shield(file.getPath()) + "'", new Object[0]);
                 if (sQLiteCursor.next()) {
                     j = sQLiteCursor.longValue(0);
                     i = sQLiteCursor.intValue(1);
@@ -715,15 +714,15 @@ public class FilePathDatabase {
     public static class PathData {
 
         /* renamed from: dc */
-        public final int f1428dc;
+        public final int f1429dc;
 
         /* renamed from: id */
-        public final long f1429id;
+        public final long f1430id;
         public final int type;
 
         public PathData(long j, int i, int i2) {
-            this.f1429id = j;
-            this.f1428dc = i;
+            this.f1430id = j;
+            this.f1429dc = i;
             this.type = i2;
         }
     }

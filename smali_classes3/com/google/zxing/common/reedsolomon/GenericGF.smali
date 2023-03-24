@@ -125,9 +125,9 @@
 
     const/4 v0, 0x1
 
-    const/4 v1, 0x0
+    move v1, p3
 
-    const/4 v2, 0x1
+    move v2, v0
 
     :goto_0
     if-ge v1, p2, :cond_1
@@ -153,7 +153,7 @@
     goto :goto_0
 
     :cond_1
-    const/4 p1, 0x0
+    move p1, p3
 
     :goto_1
     add-int/lit8 v1, p2, -0x1

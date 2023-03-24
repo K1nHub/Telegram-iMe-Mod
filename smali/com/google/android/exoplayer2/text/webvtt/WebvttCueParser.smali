@@ -665,7 +665,7 @@
 
     const/4 p3, 0x0
 
-    const/4 v2, 0x0
+    move v2, p3
 
     .line 579
     :goto_0
@@ -917,7 +917,7 @@
     goto :goto_0
 
     :cond_5
-    const/4 v7, 0x2
+    move v7, v4
 
     goto :goto_0
 
@@ -933,7 +933,7 @@
     goto :goto_0
 
     :cond_6
-    const/4 v7, 0x1
+    move v7, v6
 
     goto :goto_0
 
@@ -949,7 +949,7 @@
     goto :goto_0
 
     :cond_7
-    const/4 v7, 0x0
+    move v7, v5
 
     :goto_0
     const/16 v2, 0x21
@@ -1623,7 +1623,7 @@
     goto :goto_0
 
     :cond_6
-    const/4 v3, 0x1
+    move v3, v1
 
     goto :goto_0
 
@@ -1639,7 +1639,7 @@
     goto :goto_0
 
     :cond_7
-    const/4 v3, 0x0
+    move v3, v2
 
     :goto_0
     packed-switch v3, :pswitch_data_0
@@ -2191,7 +2191,7 @@
 
     const/4 v3, 0x0
 
-    const/4 v4, 0x0
+    move v4, v3
 
     .line 251
     :goto_0
@@ -2245,12 +2245,12 @@
 
     if-ne v6, v7, :cond_2
 
-    const/4 v6, 0x1
+    move v6, v8
 
     goto :goto_1
 
     :cond_2
-    const/4 v6, 0x0
+    move v6, v3
 
     .line 261
     :goto_1
@@ -2267,12 +2267,12 @@
 
     if-ne v10, v7, :cond_3
 
-    const/4 v7, 0x1
+    move v7, v8
 
     goto :goto_2
 
     :cond_3
-    const/4 v7, 0x0
+    move v7, v3
 
     :goto_2
     if-eqz v6, :cond_4
@@ -2563,7 +2563,7 @@
     goto :goto_0
 
     :cond_1
-    const/4 v4, 0x2
+    move v4, v1
 
     goto :goto_0
 
@@ -2579,7 +2579,7 @@
     goto :goto_0
 
     :cond_2
-    const/4 v4, 0x1
+    move v4, v2
 
     goto :goto_0
 
@@ -2595,7 +2595,7 @@
     goto :goto_0
 
     :cond_3
-    const/4 v4, 0x0
+    move v4, v3
 
     :goto_0
     packed-switch v4, :pswitch_data_0
@@ -2808,7 +2808,7 @@
     goto :goto_0
 
     :cond_3
-    const/4 v4, 0x2
+    move v4, v1
 
     goto :goto_0
 
@@ -2824,7 +2824,7 @@
     goto :goto_0
 
     :cond_4
-    const/4 v4, 0x1
+    move v4, v2
 
     goto :goto_0
 
@@ -2840,7 +2840,7 @@
     goto :goto_0
 
     :cond_5
-    const/4 v4, 0x0
+    move v4, v3
 
     :goto_0
     packed-switch v4, :pswitch_data_0
@@ -2983,7 +2983,7 @@
     goto :goto_0
 
     :cond_0
-    const/4 v6, 0x5
+    move v6, v1
 
     goto :goto_0
 
@@ -2999,7 +2999,7 @@
     goto :goto_0
 
     :cond_1
-    const/4 v6, 0x4
+    move v6, v2
 
     goto :goto_0
 
@@ -3015,7 +3015,7 @@
     goto :goto_0
 
     :cond_2
-    const/4 v6, 0x3
+    move v6, v3
 
     goto :goto_0
 
@@ -3031,7 +3031,7 @@
     goto :goto_0
 
     :cond_3
-    const/4 v6, 0x2
+    move v6, v5
 
     goto :goto_0
 
@@ -3047,7 +3047,7 @@
     goto :goto_0
 
     :cond_4
-    const/4 v6, 0x1
+    move v6, v4
 
     goto :goto_0
 

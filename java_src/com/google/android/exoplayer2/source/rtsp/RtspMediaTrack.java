@@ -200,8 +200,7 @@ public final class RtspMediaTrack {
                     Assertions.checkArgument(fmtpParametersAsMap.containsKey(PARAMETER_MP4A_C_PRESENT) && fmtpParametersAsMap.get(PARAMETER_MP4A_C_PRESENT).equals(SessionDescription.SUPPORTED_SDP_VERSION), "Only supports cpresent=0 in AAC audio.");
                     String str2 = fmtpParametersAsMap.get(PARAMETER_MP4A_CONFIG);
                     Assertions.checkNotNull(str2, "AAC audio stream must include config fmtp parameter");
-                    boolean z = str2.length() % 2 == 0;
-                    Assertions.checkArgument(z, "Malformat MPEG4 config: " + str2);
+                    Assertions.checkArgument(str2.length() % 2 == 0, "Malformat MPEG4 config: " + str2);
                     AacUtil.Config parseAacStreamMuxConfig = parseAacStreamMuxConfig(str2);
                     builder.setSampleRate(parseAacStreamMuxConfig.sampleRateHz).setChannelCount(parseAacStreamMuxConfig.channelCount).setCodecs(parseAacStreamMuxConfig.codecs);
                 }

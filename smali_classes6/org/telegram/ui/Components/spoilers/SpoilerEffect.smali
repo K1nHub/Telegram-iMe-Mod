@@ -190,7 +190,7 @@
 
     const/4 v3, 0x2
 
-    mul-int/lit8 v2, v2, 0x2
+    mul-int/2addr v2, v3
 
     new-array v3, v3, [I
 
@@ -255,7 +255,7 @@
 
     iput-object v0, p0, Lorg/telegram/ui/Components/spoilers/SpoilerEffect;->rippleInterpolator:Landroid/animation/TimeInterpolator;
 
-    const/4 v0, 0x0
+    move v0, v2
 
     .line 129
     :goto_0
@@ -440,7 +440,7 @@
 
     const/4 v15, 0x0
 
-    const/4 v12, 0x0
+    move v12, v15
 
     .line 556
     :goto_0
@@ -493,7 +493,7 @@
 
     array-length v6, v7
 
-    const/4 v5, 0x0
+    move v5, v15
 
     :goto_1
     if-ge v5, v6, :cond_2
@@ -771,7 +771,7 @@
 
     array-length v9, v8
 
-    const/4 v10, 0x0
+    move v10, v15
 
     :goto_0
     if-ge v10, v9, :cond_0
@@ -801,7 +801,7 @@
 
     array-length v9, v8
 
-    const/4 v10, 0x0
+    move v10, v15
 
     :goto_1
     if-ge v10, v9, :cond_1
@@ -920,9 +920,9 @@
     .line 598
     invoke-virtual {v8}, Landroid/text/StaticLayout$Builder;->build()Landroid/text/StaticLayout;
 
-    const/4 v0, 0x0
+    move/from16 v18, v14
 
-    const/16 v18, 0x1
+    move v0, v15
 
     goto :goto_3
 
@@ -944,11 +944,11 @@
 
     move-object v9, v7
 
-    const/16 v18, 0x1
+    move/from16 v18, v14
 
     move/from16 v14, v16
 
-    const/4 v0, 0x0
+    move v0, v15
 
     move/from16 v15, v17
 
@@ -987,12 +987,12 @@
 
     if-nez v8, :cond_6
 
-    const/4 v15, 0x1
+    move/from16 v15, v18
 
     goto :goto_4
 
     :cond_6
-    const/4 v15, 0x0
+    move v15, v0
 
     :goto_4
     if-eqz v6, :cond_8
@@ -1115,7 +1115,7 @@
     .line 609
     invoke-virtual {v6}, Lorg/telegram/ui/Components/spoilers/SpoilerEffect;->updateMaxParticles()V
 
-    const/4 v1, 0x0
+    move v1, v0
 
     move-object/from16 v0, p0
 
@@ -1130,7 +1130,7 @@
 
     invoke-interface {v0}, Ljava/util/List;->clear()V
 
-    const/4 v15, 0x0
+    move v15, v1
 
     .line 614
     :goto_a
@@ -1354,7 +1354,7 @@
 
     int-to-float v1, v1
 
-    mul-float v0, v0, v1
+    mul-float/2addr v0, v1
 
     add-float/2addr p2, v0
 
@@ -1385,7 +1385,7 @@
 
     int-to-float v1, v1
 
-    mul-float v0, v0, v1
+    mul-float/2addr v0, v1
 
     add-float/2addr p2, v0
 
@@ -1399,9 +1399,9 @@
 
     int-to-float p1, p1
 
-    const/4 v0, 0x1
-
     cmpg-float p1, p5, p1
+
+    const/4 v0, 0x1
 
     if-ltz p1, :cond_3
 
@@ -1444,7 +1444,7 @@
     :cond_0
     const/4 p1, 0x0
 
-    const/4 p2, 0x0
+    move p2, p1
 
     .line 420
     :goto_0
@@ -1514,7 +1514,7 @@
 
     sub-float/2addr v0, p2
 
-    mul-float p1, p1, v0
+    mul-float/2addr p1, v0
 
     float-to-int p1, p1
 
@@ -1713,7 +1713,7 @@
 
     array-length v6, v5
 
-    const/4 v7, 0x0
+    move v7, v13
 
     :goto_0
     if-ge v7, v6, :cond_4
@@ -1747,7 +1747,7 @@
 
     array-length v10, v9
 
-    const/4 v14, 0x0
+    move v14, v13
 
     :goto_1
     if-ge v14, v10, :cond_2
@@ -2415,7 +2415,7 @@
 
     const/4 v13, 0x0
 
-    const/4 v0, 0x0
+    move v0, v13
 
     .line 308
     :goto_0
@@ -2435,7 +2435,7 @@
     goto :goto_0
 
     :cond_0
-    const/4 v14, 0x0
+    move v14, v13
 
     .line 311
     :goto_1
@@ -2537,7 +2537,7 @@
 
     move-result v1
 
-    mul-float v1, v1, v0
+    mul-float/2addr v1, v0
 
     invoke-static {v15, v1}, Lorg/telegram/ui/Components/spoilers/SpoilerEffect$Particle;->access$516(Lorg/telegram/ui/Components/spoilers/SpoilerEffect$Particle;F)F
 
@@ -2546,7 +2546,7 @@
 
     move-result v1
 
-    mul-float v1, v1, v0
+    mul-float/2addr v1, v0
 
     invoke-static {v15, v1}, Lorg/telegram/ui/Components/spoilers/SpoilerEffect$Particle;->access$616(Lorg/telegram/ui/Components/spoilers/SpoilerEffect$Particle;F)F
 
@@ -2661,7 +2661,7 @@
 
     invoke-static {v0, v14}, Ljava/util/Arrays;->fill([FF)V
 
-    const/4 v15, 0x0
+    move v15, v13
 
     :goto_4
     if-ge v15, v8, :cond_9
@@ -2718,7 +2718,7 @@
     :goto_5
     move-object v5, v0
 
-    const/4 v0, 0x0
+    move v0, v13
 
     .line 346
     :goto_6
@@ -2790,11 +2790,11 @@
 
     const-wide v2, 0x400921fb54442d18L    # Math.PI
 
-    mul-double v0, v0, v2
+    mul-double/2addr v0, v2
 
     const-wide/high16 v4, 0x4000000000000000L    # 2.0
 
-    mul-double v0, v0, v4
+    mul-double/2addr v0, v4
 
     sub-double/2addr v0, v2
 
@@ -3199,7 +3199,7 @@
 
     move-result v3
 
-    mul-float v2, v2, v3
+    mul-float/2addr v2, v3
 
     sget-object v3, Landroid/graphics/Path$Direction;->CW:Landroid/graphics/Path$Direction;
 
@@ -3284,7 +3284,7 @@
 
     int-to-float v3, p1
 
-    mul-float v1, v1, v3
+    mul-float/2addr v1, v3
 
     float-to-int v1, v1
 
@@ -3405,7 +3405,7 @@
 
     aget v1, v1, v0
 
-    mul-float v3, v3, v1
+    mul-float/2addr v3, v1
 
     float-to-int v1, v3
 
@@ -3674,12 +3674,12 @@
 
     if-eqz p4, :cond_0
 
-    const/high16 p3, 0x3f800000    # 1.0f
+    move p3, p1
 
     goto :goto_0
 
     :cond_0
-    const/4 p3, 0x0
+    move p3, p2
 
     .line 199
     :goto_0
@@ -3737,7 +3737,7 @@
 
     if-eqz p4, :cond_3
 
-    const/4 p1, 0x0
+    move p1, p2
 
     :cond_3
     aput p1, v1, v0
@@ -3750,7 +3750,7 @@
 
     const p4, 0x3e99999a    # 0.3f
 
-    mul-float p2, p2, p4
+    mul-float/2addr p2, p4
 
     const/high16 p4, 0x437a0000    # 250.0f
 
@@ -3824,7 +3824,7 @@
 
     sget v1, Lorg/telegram/ui/Components/spoilers/SpoilerEffect;->PARTICLES_PER_CHARACTER:I
 
-    mul-int v0, v0, v1
+    mul-int/2addr v0, v1
 
     sget v2, Lorg/telegram/ui/Components/spoilers/SpoilerEffect;->MAX_PARTICLES_PER_ENTITY:I
 

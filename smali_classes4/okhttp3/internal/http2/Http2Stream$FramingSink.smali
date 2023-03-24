@@ -99,9 +99,9 @@
 
     move-result-wide v3
 
-    cmp-long v5, v1, v3
+    cmp-long v1, v1, v3
 
-    if-ltz v5, :cond_0
+    if-ltz v1, :cond_0
 
     iget-boolean v1, p0, Lokhttp3/internal/http2/Http2Stream$FramingSink;->finished:Z
 
@@ -195,17 +195,15 @@
 
     const/4 p1, 0x1
 
-    const/4 v7, 0x1
-
     goto :goto_1
 
     :cond_1
     const/4 p1, 0x0
 
-    const/4 v7, 0x0
+    :goto_1
+    move v7, p1
 
     .line 561
-    :goto_1
     sget-object p1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_2
@@ -392,12 +390,12 @@
 
     if-nez v1, :cond_3
 
-    const/4 v1, 0x1
+    move v1, v3
 
     goto :goto_1
 
     :cond_3
-    const/4 v1, 0x0
+    move v1, v2
 
     .line 595
     :goto_1
@@ -432,12 +430,12 @@
 
     if-lez v0, :cond_4
 
-    const/4 v0, 0x1
+    move v0, v3
 
     goto :goto_2
 
     :cond_4
-    const/4 v0, 0x0
+    move v0, v2
 
     .line 601
     :goto_2
@@ -445,12 +443,12 @@
 
     if-eqz v4, :cond_5
 
-    const/4 v4, 0x1
+    move v4, v3
 
     goto :goto_3
 
     :cond_5
-    const/4 v4, 0x0
+    move v4, v2
 
     :goto_3
     if-eqz v4, :cond_7
@@ -509,9 +507,9 @@
 
     move-result-wide v0
 
-    cmp-long v2, v0, v6
+    cmp-long v0, v0, v6
 
-    if-lez v2, :cond_9
+    if-lez v0, :cond_9
 
     .line 612
     invoke-direct {p0, v3}, Lokhttp3/internal/http2/Http2Stream$FramingSink;->emitFrame(Z)V
@@ -689,9 +687,9 @@
 
     const-wide/16 v2, 0x0
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-lez v4, :cond_2
+    if-lez v0, :cond_2
 
     const/4 v0, 0x0
 
@@ -837,9 +835,9 @@
 
     const-wide/16 v0, 0x4000
 
-    cmp-long p3, p1, v0
+    cmp-long p1, p1, v0
 
-    if-ltz p3, :cond_2
+    if-ltz p1, :cond_2
 
     const/4 p1, 0x0
 

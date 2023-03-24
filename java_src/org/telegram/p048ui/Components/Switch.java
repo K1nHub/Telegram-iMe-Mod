@@ -366,32 +366,32 @@ public class Switch extends View {
         invalidate();
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:19:0x00a7, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:19:0x00a5, code lost:
         if (r11 == 0) goto L21;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:20:0x00a9, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:20:0x00a7, code lost:
         r16 = com.google.android.gms.maps.model.BitmapDescriptorFactory.HUE_RED;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:21:0x00ac, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:21:0x00aa, code lost:
         r16 = 1.0f;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:23:0x00b1, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:23:0x00af, code lost:
         if (r11 == 0) goto L47;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:69:0x01f0, code lost:
-        if (r1 == 0) goto L73;
+    /* JADX WARN: Code restructure failed: missing block: B:68:0x01ed, code lost:
+        if (r1 == 0) goto L72;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:70:0x01f2, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:69:0x01ef, code lost:
         r6 = com.google.android.gms.maps.model.BitmapDescriptorFactory.HUE_RED;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:71:0x01f4, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:70:0x01f1, code lost:
         r6 = 1.0f;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:74:0x01fa, code lost:
-        if (r1 == 0) goto L95;
+    /* JADX WARN: Code restructure failed: missing block: B:73:0x01f7, code lost:
+        if (r1 == 0) goto L94;
      */
-    /* JADX WARN: Removed duplicated region for block: B:95:0x03b1  */
-    /* JADX WARN: Removed duplicated region for block: B:96:0x03ba  */
+    /* JADX WARN: Removed duplicated region for block: B:94:0x03a2  */
+    /* JADX WARN: Removed duplicated region for block: B:95:0x03ab  */
     @Override // android.view.View
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -399,7 +399,7 @@ public class Switch extends View {
     */
     protected void onDraw(android.graphics.Canvas r26) {
         /*
-            Method dump skipped, instructions count: 975
+            Method dump skipped, instructions count: 961
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: org.telegram.p048ui.Components.Switch.onDraw(android.graphics.Canvas):void");

@@ -168,7 +168,10 @@ public class StringsKt__StringsJVMKt extends StringsKt__StringNumberConversionsK
     }
 
     public static /* synthetic */ boolean regionMatches$default(String str, int i, String str2, int i2, int i3, boolean z, int i4, Object obj) {
-        return regionMatches(str, i, str2, i2, i3, (i4 & 16) != 0 ? false : z);
+        if ((i4 & 16) != 0) {
+            z = false;
+        }
+        return regionMatches(str, i, str2, i2, i3, z);
     }
 
     public static final boolean regionMatches(String str, int i, String other, int i2, int i3, boolean z) {

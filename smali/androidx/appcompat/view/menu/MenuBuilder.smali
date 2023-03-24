@@ -756,7 +756,7 @@
     goto :goto_0
 
     :cond_0
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_0
     and-int/lit8 p7, p7, 0x1
@@ -1565,7 +1565,7 @@
 
     move-result v4
 
-    const/4 v6, 0x0
+    move v6, v5
 
     :goto_0
     if-ge v6, p2, :cond_7
@@ -1689,7 +1689,7 @@
 
     const/4 v5, 0x0
 
-    const/4 v6, 0x0
+    move v6, v5
 
     :goto_0
     if-ge v6, v3, :cond_7
@@ -1763,7 +1763,7 @@
     goto :goto_3
 
     :cond_4
-    const/4 v9, 0x0
+    move v9, v5
 
     :goto_3
     if-eqz v9, :cond_6
@@ -1836,7 +1836,7 @@
 
     const/4 v2, 0x0
 
-    const/4 v3, 0x0
+    move v3, v2
 
     :goto_0
     invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
@@ -1895,7 +1895,7 @@
 
     move-result v1
 
-    const/4 v3, 0x0
+    move v3, v2
 
     :goto_1
     if-ge v3, v1, :cond_5
@@ -2126,7 +2126,7 @@
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_0
     if-ge v2, v0, :cond_2
@@ -2191,7 +2191,7 @@
 
     const/4 v2, 0x0
 
-    const/4 v3, 0x0
+    move v3, v2
 
     :goto_0
     if-ge v3, v0, :cond_2
@@ -2406,12 +2406,12 @@
 
     if-eqz v4, :cond_1
 
-    const/4 v4, 0x1
+    move v4, v3
 
     goto :goto_0
 
     :cond_1
-    const/4 v4, 0x0
+    move v4, v0
 
     .line 989
     :goto_0
@@ -2575,7 +2575,7 @@
 
     const/4 v2, 0x0
 
-    const/4 v3, 0x0
+    move v3, v2
 
     :goto_0
     add-int/lit8 v4, v3, 0x1
@@ -2913,7 +2913,7 @@
 
     const/4 v2, 0x0
 
-    const/4 v3, 0x0
+    move v3, v2
 
     :goto_0
     if-ge v3, v1, :cond_4
@@ -2961,7 +2961,7 @@
     goto :goto_1
 
     :cond_2
-    const/4 v5, 0x0
+    move v5, v2
 
     .line 624
     :goto_1
@@ -3090,7 +3090,7 @@
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_0
     const/4 v3, 0x1
@@ -3120,7 +3120,7 @@
 
     if-eqz v4, :cond_0
 
-    const/4 v2, 0x1
+    move v2, v3
 
     :cond_0
     add-int/lit8 v1, v1, 0x1

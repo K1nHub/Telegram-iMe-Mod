@@ -61,13 +61,13 @@
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    move v2, v1
 
-    const/4 v3, 0x0
+    move v3, v2
 
-    const/4 v4, 0x0
+    move v4, v3
 
-    const/4 v5, 0x0
+    move v5, v4
 
     :goto_0
     if-ge v2, v0, :cond_2
@@ -97,9 +97,9 @@
     goto :goto_0
 
     :cond_2
-    const/4 v2, 0x0
+    move v2, v1
 
-    const/4 v3, 0x0
+    move v3, v2
 
     :goto_1
     if-ge v1, v0, :cond_4
@@ -109,9 +109,9 @@
     .line 168
     aget v7, p0, v1
 
-    mul-int v7, v7, v6
+    mul-int/2addr v7, v6
 
-    mul-int v7, v7, v6
+    mul-int/2addr v7, v6
 
     if-le v7, v3, :cond_3
 
@@ -148,27 +148,27 @@
 
     const/4 v1, -0x1
 
-    move v1, v0
+    move v3, v1
 
-    const/4 v3, -0x1
+    move v1, v0
 
     :goto_3
     if-le v0, v2, :cond_7
 
     sub-int v6, v0, v2
 
-    mul-int v6, v6, v6
+    mul-int/2addr v6, v6
 
     sub-int v7, v5, v0
 
-    mul-int v6, v6, v7
+    mul-int/2addr v6, v7
 
     .line 193
     aget v7, p0, v0
 
     sub-int v7, v4, v7
 
-    mul-int v6, v6, v7
+    mul-int/2addr v6, v7
 
     if-le v6, v3, :cond_6
 
@@ -213,7 +213,7 @@
     :cond_0
     const/4 p1, 0x0
 
-    const/4 v0, 0x0
+    move v0, p1
 
     :goto_0
     const/16 v1, 0x20
@@ -271,7 +271,7 @@
     .line 103
     iget-object v5, p0, Lcom/google/zxing/common/GlobalHistogramBinarizer;->buckets:[I
 
-    const/4 v6, 0x1
+    move v6, v4
 
     :goto_0
     const/4 v7, 0x5
@@ -337,14 +337,14 @@
 
     const/4 v5, 0x0
 
-    const/4 v6, 0x0
+    move v6, v5
 
     :goto_2
     if-ge v6, v2, :cond_4
 
     mul-int v7, v6, v1
 
-    const/4 v8, 0x0
+    move v8, v5
 
     :goto_3
     if-ge v8, v1, :cond_3

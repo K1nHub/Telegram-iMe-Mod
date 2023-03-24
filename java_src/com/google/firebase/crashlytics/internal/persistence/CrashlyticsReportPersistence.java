@@ -199,8 +199,7 @@ public class CrashlyticsReportPersistence {
         boolean z;
         List<File> filesInDirectory = getFilesInDirectory(file, EVENT_FILE_FILTER);
         if (filesInDirectory.isEmpty()) {
-            Logger logger = Logger.getLogger();
-            logger.m732v("Session " + file.getName() + " has no events.");
+            Logger.getLogger().m732v("Session " + file.getName() + " has no events.");
             return;
         }
         Collections.sort(filesInDirectory);
@@ -211,8 +210,7 @@ public class CrashlyticsReportPersistence {
                 try {
                     arrayList.add(TRANSFORM.eventFromJson(readTextFile(file2)));
                 } catch (IOException e) {
-                    Logger logger2 = Logger.getLogger();
-                    logger2.m729w("Could not add event to report for " + file2, e);
+                    Logger.getLogger().m729w("Could not add event to report for " + file2, e);
                 }
                 if (z || isHighPriorityEventFile(file2.getName())) {
                     z = true;
@@ -220,8 +218,7 @@ public class CrashlyticsReportPersistence {
             }
         }
         if (arrayList.isEmpty()) {
-            Logger logger3 = Logger.getLogger();
-            logger3.m730w("Could not parse event files for session " + file.getName());
+            Logger.getLogger().m730w("Could not parse event files for session " + file.getName());
             return;
         }
         String str = null;
@@ -230,8 +227,7 @@ public class CrashlyticsReportPersistence {
             try {
                 str = readTextFile(file3);
             } catch (IOException e2) {
-                Logger logger4 = Logger.getLogger();
-                logger4.m729w("Could not read user ID file in " + file.getName(), e2);
+                Logger.getLogger().m729w("Could not read user ID file in " + file.getName(), e2);
             }
         }
         synthesizeReportFile(new File(file, "report"), z ? this.priorityReportsDirectory : this.reportsDirectory, arrayList, j, z, str);

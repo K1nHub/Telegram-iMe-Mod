@@ -156,9 +156,9 @@
 
     const-wide/16 v5, 0x3e8
 
-    cmp-long v7, v3, v5
+    cmp-long v3, v3, v5
 
-    if-gtz v7, :cond_6
+    if-gtz v3, :cond_6
 
     .line 48
     sget-boolean p1, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
@@ -257,7 +257,7 @@
 
     if-eqz p2, :cond_9
 
-    const v1, 0x7fffffff
+    move v1, v6
 
     :cond_9
     invoke-interface {p1, v0, v1}, Landroid/content/SharedPreferences$Editor;->putInt(Ljava/lang/String;I)Landroid/content/SharedPreferences$Editor;
@@ -343,7 +343,7 @@
     goto :goto_0
 
     :cond_d
-    const/4 v6, 0x0
+    move v6, v1
 
     :goto_0
     invoke-interface {p1, v0, v6}, Landroid/content/SharedPreferences$Editor;->putInt(Ljava/lang/String;I)Landroid/content/SharedPreferences$Editor;
@@ -426,7 +426,7 @@
 
     if-eqz p2, :cond_11
 
-    const v1, 0x7fffffff
+    move v1, v6
 
     :cond_11
     invoke-interface {p1, v0, v1}, Landroid/content/SharedPreferences$Editor;->putInt(Ljava/lang/String;I)Landroid/content/SharedPreferences$Editor;
@@ -551,7 +551,7 @@
     goto :goto_1
 
     :cond_16
-    const/4 v7, 0x0
+    move v7, v1
 
     :goto_1
     invoke-interface {p1, v3, v7}, Landroid/content/SharedPreferences$Editor;->putInt(Ljava/lang/String;I)Landroid/content/SharedPreferences$Editor;

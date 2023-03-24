@@ -292,7 +292,7 @@ public final class C$Gson$Types {
             java.lang.Object r1 = r5.clone()
             r5 = r1
             java.lang.reflect.Type[] r5 = (java.lang.reflect.Type[]) r5
-            r1 = 1
+            r1 = r3
         L9b:
             r5[r2] = r7
         L9d:

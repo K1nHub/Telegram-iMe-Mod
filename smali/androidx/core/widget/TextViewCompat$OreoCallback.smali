@@ -273,7 +273,7 @@
     goto :goto_0
 
     :cond_2
-    const/4 v1, 0x0
+    move v1, v2
 
     :cond_3
     :goto_0
@@ -457,7 +457,7 @@
 
     move-result-object v0
 
-    const/4 v2, 0x0
+    move v2, v4
 
     .line 643
     :goto_3

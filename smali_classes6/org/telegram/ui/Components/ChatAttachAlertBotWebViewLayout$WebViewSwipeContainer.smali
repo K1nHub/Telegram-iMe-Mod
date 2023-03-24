@@ -393,7 +393,7 @@
 
     move-result p2
 
-    mul-float p6, p6, p2
+    mul-float/2addr p6, p2
 
     sub-float/2addr p3, p6
 
@@ -807,7 +807,7 @@
     if-eqz v2, :cond_9
 
     :cond_8
-    const/4 v1, 0x1
+    move v1, v3
 
     :cond_9
     return v1
@@ -967,14 +967,14 @@
 
     if-gtz v0, :cond_2
 
-    const/4 v5, 0x1
+    move v5, v1
 
     goto :goto_0
 
     :cond_2
     const/4 v0, 0x0
 
-    const/4 v5, 0x0
+    move v5, v0
 
     .line 810
     :goto_0

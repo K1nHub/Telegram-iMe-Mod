@@ -343,13 +343,13 @@
     goto :goto_1
 
     :cond_3
-    const/4 v1, 0x0
+    move v1, v4
 
     goto :goto_2
 
     :cond_4
     :goto_1
-    const/4 v1, 0x1
+    move v1, v3
 
     .line 1665
     :goto_2
@@ -453,13 +453,13 @@
     goto :goto_3
 
     :cond_5
-    const/4 v2, 0x0
+    move v2, v4
 
     goto :goto_4
 
     :cond_6
     :goto_3
-    const/4 v2, 0x1
+    move v2, v3
 
     :goto_4
     invoke-virtual {p1, v2}, Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;->setChecked(Z)V
@@ -513,7 +513,7 @@
     goto :goto_5
 
     :cond_7
-    const/4 v3, 0x0
+    move v3, v4
 
     :cond_8
     :goto_5

@@ -33,9 +33,9 @@
 
     const-wide/16 p1, 0x0
 
-    cmp-long p5, p3, p1
+    cmp-long p1, p3, p1
 
-    if-lez p5, :cond_0
+    if-lez p1, :cond_0
 
     const/4 p1, 0x1
 
@@ -208,25 +208,25 @@
     :goto_0
     iget-wide v4, p0, Lcom/google/android/gms/measurement/internal/zzey;->zze:J
 
-    const/4 v6, 0x0
+    cmp-long v6, v0, v4
 
-    cmp-long v7, v0, v4
+    const/4 v7, 0x0
 
-    if-gez v7, :cond_1
+    if-gez v6, :cond_1
 
-    return-object v6
+    return-object v7
 
     :cond_1
     add-long/2addr v4, v4
 
-    cmp-long v7, v0, v4
+    cmp-long v0, v0, v4
 
-    if-lez v7, :cond_2
+    if-lez v0, :cond_2
 
     .line 7
     invoke-direct {p0}, Lcom/google/android/gms/measurement/internal/zzey;->zzd()V
 
-    return-object v6
+    return-object v7
 
     :cond_2
     iget-object v0, p0, Lcom/google/android/gms/measurement/internal/zzey;->zzb:Lcom/google/android/gms/measurement/internal/zzfa;
@@ -238,7 +238,7 @@
 
     iget-object v1, p0, Lcom/google/android/gms/measurement/internal/zzey;->zzd:Ljava/lang/String;
 
-    invoke-interface {v0, v1, v6}, Landroid/content/SharedPreferences;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-interface {v0, v1, v7}, Landroid/content/SharedPreferences;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -301,9 +301,9 @@
 
     const-wide/16 v0, 0x0
 
-    cmp-long v2, p2, v0
+    cmp-long p2, p2, v0
 
-    if-nez v2, :cond_0
+    if-nez p2, :cond_0
 
     .line 3
     invoke-direct {p0}, Lcom/google/android/gms/measurement/internal/zzey;->zzd()V
@@ -327,11 +327,11 @@
 
     move-result-wide p2
 
-    const-wide/16 v2, 0x1
+    cmp-long v0, p2, v0
 
-    cmp-long v4, p2, v0
+    const-wide/16 v1, 0x1
 
-    if-gtz v4, :cond_2
+    if-gtz v0, :cond_2
 
     iget-object p2, p0, Lcom/google/android/gms/measurement/internal/zzey;->zzb:Lcom/google/android/gms/measurement/internal/zzfa;
 
@@ -352,7 +352,7 @@
     iget-object p1, p0, Lcom/google/android/gms/measurement/internal/zzey;->zzc:Ljava/lang/String;
 
     .line 7
-    invoke-interface {p2, p1, v2, v3}, Landroid/content/SharedPreferences$Editor;->putLong(Ljava/lang/String;J)Landroid/content/SharedPreferences$Editor;
+    invoke-interface {p2, p1, v1, v2}, Landroid/content/SharedPreferences$Editor;->putLong(Ljava/lang/String;J)Landroid/content/SharedPreferences$Editor;
 
     .line 8
     invoke-interface {p2}, Landroid/content/SharedPreferences$Editor;->apply()V
@@ -376,45 +376,45 @@
 
     invoke-virtual {v0}, Ljava/security/SecureRandom;->nextLong()J
 
-    move-result-wide v0
+    move-result-wide v3
 
-    add-long/2addr p2, v2
+    add-long/2addr p2, v1
 
-    const-wide v2, 0x7fffffffffffffffL
+    const-wide v0, 0x7fffffffffffffffL
 
     .line 11
-    div-long v4, v2, p2
+    div-long v5, v0, p2
 
-    iget-object v6, p0, Lcom/google/android/gms/measurement/internal/zzey;->zzb:Lcom/google/android/gms/measurement/internal/zzfa;
+    iget-object v2, p0, Lcom/google/android/gms/measurement/internal/zzey;->zzb:Lcom/google/android/gms/measurement/internal/zzfa;
 
     .line 12
-    invoke-virtual {v6}, Lcom/google/android/gms/measurement/internal/zzfa;->zza()Landroid/content/SharedPreferences;
+    invoke-virtual {v2}, Lcom/google/android/gms/measurement/internal/zzfa;->zza()Landroid/content/SharedPreferences;
 
-    move-result-object v6
+    move-result-object v2
 
-    invoke-interface {v6}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
+    invoke-interface {v2}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
 
-    move-result-object v6
+    move-result-object v2
 
-    and-long/2addr v0, v2
+    and-long/2addr v0, v3
 
-    cmp-long v2, v0, v4
+    cmp-long v0, v0, v5
 
-    if-gez v2, :cond_3
+    if-gez v0, :cond_3
 
     iget-object v0, p0, Lcom/google/android/gms/measurement/internal/zzey;->zzd:Ljava/lang/String;
 
     .line 13
-    invoke-interface {v6, v0, p1}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
+    invoke-interface {v2, v0, p1}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
     :cond_3
     iget-object p1, p0, Lcom/google/android/gms/measurement/internal/zzey;->zzc:Ljava/lang/String;
 
     .line 14
-    invoke-interface {v6, p1, p2, p3}, Landroid/content/SharedPreferences$Editor;->putLong(Ljava/lang/String;J)Landroid/content/SharedPreferences$Editor;
+    invoke-interface {v2, p1, p2, p3}, Landroid/content/SharedPreferences$Editor;->putLong(Ljava/lang/String;J)Landroid/content/SharedPreferences$Editor;
 
     .line 15
-    invoke-interface {v6}, Landroid/content/SharedPreferences$Editor;->apply()V
+    invoke-interface {v2}, Landroid/content/SharedPreferences$Editor;->apply()V
 
     return-void
 .end method

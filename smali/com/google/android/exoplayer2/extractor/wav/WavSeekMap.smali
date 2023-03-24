@@ -101,7 +101,7 @@
 
     int-to-long v0, v0
 
-    mul-long v0, v0, p1
+    mul-long/2addr v0, p1
 
     iget v2, p0, Lcom/google/android/exoplayer2/extractor/wav/WavSeekMap;->framesPerBlock:I
 
@@ -109,7 +109,7 @@
 
     const-wide/32 v4, 0xf4240
 
-    mul-long v2, v2, v4
+    mul-long/2addr v2, v4
 
     div-long v4, v0, v2
 
@@ -135,7 +135,7 @@
 
     int-to-long v6, v6
 
-    mul-long v6, v6, v0
+    mul-long/2addr v6, v0
 
     add-long/2addr v4, v6
 
@@ -149,18 +149,18 @@
 
     invoke-direct {v8, v6, v7, v4, v5}, Lcom/google/android/exoplayer2/extractor/SeekPoint;-><init>(JJ)V
 
-    cmp-long v4, v6, p1
+    cmp-long p1, v6, p1
 
-    if-gez v4, :cond_1
+    if-gez p1, :cond_1
 
     .line 59
     iget-wide p1, p0, Lcom/google/android/exoplayer2/extractor/wav/WavSeekMap;->blockCount:J
 
     sub-long/2addr p1, v2
 
-    cmp-long v4, v0, p1
+    cmp-long p1, v0, p1
 
-    if-nez v4, :cond_0
+    if-nez p1, :cond_0
 
     goto :goto_0
 
@@ -176,7 +176,7 @@
 
     int-to-long v2, v2
 
-    mul-long v2, v2, v0
+    mul-long/2addr v2, v0
 
     add-long/2addr p1, v2
 

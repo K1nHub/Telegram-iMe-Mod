@@ -253,7 +253,7 @@
 .end method
 
 .method public onStopNestedScroll(Landroid/view/View;)V
-    .locals 3
+    .locals 2
 
     .line 1374
     iget-object v0, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment$ContainerLayout;->nestedScrollingParentHelper:Landroidx/core/view/NestedScrollingParentHelper;
@@ -265,11 +265,11 @@
 
     iget v0, p1, Lorg/telegram/ui/Components/AvatarConstructorFragment;->progressToExpand:F
 
+    const/high16 v1, 0x3f000000    # 0.5f
+
+    cmpl-float v0, v0, v1
+
     const/4 v1, 0x0
-
-    const/high16 v2, 0x3f000000    # 0.5f
-
-    cmpl-float v0, v0, v2
 
     if-lez v0, :cond_0
 
@@ -278,7 +278,7 @@
     goto :goto_0
 
     :cond_0
-    const/4 v0, 0x0
+    move v0, v1
 
     :goto_0
     invoke-static {p1, v0, v1, v1}, Lorg/telegram/ui/Components/AvatarConstructorFragment;->access$1300(Lorg/telegram/ui/Components/AvatarConstructorFragment;ZZZ)V

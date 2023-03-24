@@ -15,6 +15,7 @@ import com.smedialink.storage.data.utils.extentions.NumberExtKt;
 import com.smedialink.storage.data.utils.extentions.RxExtKt$sam$i$io_reactivex_functions_Function$0;
 import com.smedialink.storage.domain.gateway.TelegramGateway;
 import com.smedialink.storage.domain.model.Result;
+import com.smedialink.storage.domain.model.crypto.BlockchainType;
 import com.smedialink.storage.domain.model.crypto.NetworkType;
 import com.smedialink.storage.domain.model.crypto.send.CryptoTransferMetadata;
 import com.smedialink.storage.domain.model.crypto.send.TransferArgs;
@@ -30,6 +31,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.List;
+import kotlin.TuplesKt;
 import kotlin.collections.CollectionsKt__IterablesKt;
 import kotlin.collections.MapsKt__MapsJVMKt;
 import kotlin.jvm.functions.Function1;
@@ -83,7 +85,7 @@ public final class WalletRepositoryImpl implements WalletRepository {
     public Observable<Result<CryptoTransferMetadata>> getCryptoTransferMetadata(TokenCode tokenCode, String str, String str2, NetworkType networkType) {
         Intrinsics.checkNotNullParameter(tokenCode, "tokenCode");
         Intrinsics.checkNotNullParameter(networkType, "networkType");
-        Observable<Result<CryptoTransferMetadata>> onErrorReturn = this.dataSourceFactory.getDataSource(tokenCode).getTransferMetadata(tokenCode, str, str2, networkType).onErrorReturn(new RxExtKt$sam$i$io_reactivex_functions_Function$0(new C1801x8820c924(this.errorHandler)));
+        Observable<Result<CryptoTransferMetadata>> onErrorReturn = this.dataSourceFactory.getDataSource(TuplesKt.m99to(tokenCode, networkType.getBlockchainType())).getTransferMetadata(tokenCode, str, str2, networkType).onErrorReturn(new RxExtKt$sam$i$io_reactivex_functions_Function$0(new C1809x8820c924(this.errorHandler)));
         Intrinsics.checkNotNullExpressionValue(onErrorReturn, "errorHandler: ErrorHandl…ndleError(it).toError() }");
         return onErrorReturn;
     }
@@ -112,7 +114,7 @@ public final class WalletRepositoryImpl implements WalletRepository {
             }
         });
         if (z || DateExtKt.isMinutesAgo(2, getLastUpdateBalanceTimeByNetworkType(networkType))) {
-            flatMap = this.walletApi.getWalletTokensBalance(new GetTokensBalanceRequest(null, networkType.name(), networkType.getBlockchainType().getBackendName(), 1, null)).flatMap(new FirebaseExtKt$sam$i$io_reactivex_functions_Function$0(new WalletRepositoryImpl$getWalletBalance$$inlined$flatMapSuccess$1(this.firebaseErrorHandler, this, networkType)));
+            flatMap = this.walletApi.getWalletTokensBalance(new GetTokensBalanceRequest(null, networkType.name(), 1, null)).flatMap(new FirebaseExtKt$sam$i$io_reactivex_functions_Function$0(new WalletRepositoryImpl$getWalletBalance$$inlined$flatMapSuccess$1(this.firebaseErrorHandler, this, networkType)));
             Intrinsics.checkNotNullExpressionValue(flatMap, "errorHandler: FirebaseFu…R>().toObservable()\n    }");
         } else {
             flatMap = Observable.empty();
@@ -167,7 +169,7 @@ public final class WalletRepositoryImpl implements WalletRepository {
             for (TokenCode tokenCode2 : codes) {
                 arrayList2.add(tokenCode2.getName());
             }
-            flatMap = walletApi.getWalletTokensBalance(new GetTokensBalanceRequest(arrayList2, networkType.name(), networkType.getBlockchainType().getBackendName())).flatMap(new FirebaseExtKt$sam$i$io_reactivex_functions_Function$0(new WalletRepositoryImpl$getTokensBalance$$inlined$flatMapSuccess$1(this.firebaseErrorHandler, this)));
+            flatMap = walletApi.getWalletTokensBalance(new GetTokensBalanceRequest(arrayList2, networkType.name())).flatMap(new FirebaseExtKt$sam$i$io_reactivex_functions_Function$0(new WalletRepositoryImpl$getTokensBalance$$inlined$flatMapSuccess$1(this.firebaseErrorHandler, this)));
             Intrinsics.checkNotNullExpressionValue(flatMap, "errorHandler: FirebaseFu…R>().toObservable()\n    }");
         } else {
             flatMap = Observable.empty();
@@ -188,18 +190,19 @@ public final class WalletRepositoryImpl implements WalletRepository {
     @Override // com.smedialink.storage.domain.repository.wallet.WalletRepository
     public Observable<Result<List<Transaction>>> getWalletTransactionHistory(boolean z, String str, TokenCode tokenCode, int i, NetworkType networkType) {
         Intrinsics.checkNotNullParameter(networkType, "networkType");
-        Observable<R> map = this.walletApi.getWalletTransactions(new GetWalletTransactionsRequest(str, i, networkType.name(), tokenCode != null ? tokenCode.getName() : null)).map(new FirebaseExtKt$sam$i$io_reactivex_functions_Function$0(new C1809x5cdbb371(this.firebaseErrorHandler)));
+        Observable<R> map = this.walletApi.getWalletTransactions(new GetWalletTransactionsRequest(str, i, networkType.name(), tokenCode != null ? tokenCode.getName() : null)).map(new FirebaseExtKt$sam$i$io_reactivex_functions_Function$0(new C1817x5cdbb371(this.firebaseErrorHandler)));
         Intrinsics.checkNotNullExpressionValue(map, "errorHandler: FirebaseFu…response).toError()\n    }");
-        Observable<Result<List<Transaction>>> onErrorReturn = map.onErrorReturn(new RxExtKt$sam$i$io_reactivex_functions_Function$0(new C1808x21a27350(this.errorHandler)));
+        Observable<Result<List<Transaction>>> onErrorReturn = map.onErrorReturn(new RxExtKt$sam$i$io_reactivex_functions_Function$0(new C1816x21a27350(this.errorHandler)));
         Intrinsics.checkNotNullExpressionValue(onErrorReturn, "errorHandler: ErrorHandl…ndleError(it).toError() }");
         return onErrorReturn;
     }
 
     @Override // com.smedialink.storage.domain.repository.wallet.WalletRepository
-    public Observable<Result<Boolean>> sendTokens(TokenCode code, TransferArgs args) {
+    public Observable<Result<Boolean>> sendTokens(TokenCode code, TransferArgs args, BlockchainType blockchainType) {
         Intrinsics.checkNotNullParameter(code, "code");
         Intrinsics.checkNotNullParameter(args, "args");
-        Observable<Result<Boolean>> onErrorReturn = this.dataSourceFactory.getDataSource(code).transfer(args).onErrorReturn(new RxExtKt$sam$i$io_reactivex_functions_Function$0(new WalletRepositoryImpl$sendTokens$$inlined$handleError$1(this.errorHandler)));
+        Intrinsics.checkNotNullParameter(blockchainType, "blockchainType");
+        Observable<Result<Boolean>> onErrorReturn = this.dataSourceFactory.getDataSource(TuplesKt.m99to(code, blockchainType)).transfer(args).onErrorReturn(new RxExtKt$sam$i$io_reactivex_functions_Function$0(new WalletRepositoryImpl$sendTokens$$inlined$handleError$1(this.errorHandler)));
         Intrinsics.checkNotNullExpressionValue(onErrorReturn, "errorHandler: ErrorHandl…ndleError(it).toError() }");
         return onErrorReturn;
     }

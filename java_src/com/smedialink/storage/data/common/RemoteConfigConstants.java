@@ -22,7 +22,7 @@ public final class RemoteConfigConstants {
 
     static {
         Map<String, Object> mapOf;
-        mapOf = MapsKt__MapsJVMKt.mapOf(TuplesKt.m100to("on_ona_shop_enabled", Boolean.FALSE));
+        mapOf = MapsKt__MapsJVMKt.mapOf(TuplesKt.m99to("on_ona_shop_enabled", Boolean.FALSE));
         defaultValues = mapOf;
     }
 }

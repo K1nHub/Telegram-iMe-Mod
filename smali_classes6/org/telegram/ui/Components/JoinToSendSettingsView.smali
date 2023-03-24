@@ -204,13 +204,13 @@
     goto :goto_0
 
     :cond_0
-    const/4 v2, 0x0
+    move v2, v3
 
     goto :goto_1
 
     :cond_1
     :goto_0
-    const/4 v2, 0x1
+    move v2, v0
 
     :goto_1
     invoke-virtual {v1, v2}, Lorg/telegram/ui/Cells/TextCheckCell;->setEnabled(Z)V
@@ -283,7 +283,7 @@
     goto :goto_2
 
     :cond_2
-    const/4 v0, 0x0
+    move v0, v3
 
     :cond_3
     :goto_2
@@ -421,7 +421,7 @@
 
     iget v3, p0, Lorg/telegram/ui/Components/JoinToSendSettingsView;->toggleValue:F
 
-    mul-float v2, v2, v3
+    mul-float/2addr v2, v3
 
     add-float/2addr v1, v2
 
@@ -624,7 +624,7 @@
 
     int-to-float v3, v3
 
-    mul-float v3, v3, v2
+    mul-float/2addr v3, v2
 
     invoke-virtual {v0, v3}, Landroid/widget/FrameLayout;->setTranslationY(F)V
 
@@ -633,7 +633,7 @@
 
     const v3, 0x3dcccccd    # 0.1f
 
-    mul-float v3, v3, v2
+    mul-float/2addr v3, v2
 
     sub-float/2addr v1, v3
 
@@ -676,7 +676,7 @@
 
     int-to-float v0, v0
 
-    mul-float v0, v0, v2
+    mul-float/2addr v0, v2
 
     const/4 v3, 0x4
 
@@ -688,7 +688,7 @@
 
     int-to-float v4, v4
 
-    mul-float v4, v4, p1
+    mul-float/2addr v4, p1
 
     add-float/2addr v4, v0
 
@@ -708,7 +708,7 @@
 
     int-to-float v1, v1
 
-    mul-float v1, v1, v2
+    mul-float/2addr v1, v2
 
     add-float/2addr v0, v1
 
@@ -897,13 +897,13 @@
     goto :goto_0
 
     :cond_0
-    const/4 p1, 0x0
+    move p1, v2
 
     goto :goto_1
 
     :cond_1
     :goto_0
-    const/4 p1, 0x1
+    move p1, v3
 
     :goto_1
     invoke-virtual {v0, p1}, Lorg/telegram/ui/Cells/TextCheckCell;->setEnabled(Z)V
@@ -926,7 +926,7 @@
     if-eqz v0, :cond_3
 
     :cond_2
-    const/4 v2, 0x1
+    move v2, v3
 
     :cond_3
     invoke-virtual {p1, v2}, Lorg/telegram/ui/Cells/TextCheckCell;->setEnabled(Z)V
@@ -1068,7 +1068,7 @@
 
     if-eqz p1, :cond_0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     goto :goto_0
 

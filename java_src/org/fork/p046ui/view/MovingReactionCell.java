@@ -18,7 +18,7 @@ import kotlin.LazyKt__LazyJVMKt;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3286R;
+import org.telegram.messenger.C3301R;
 import org.telegram.messenger.Emoji;
 import org.telegram.messenger.LocaleController;
 import org.telegram.p048ui.ActionBar.Theme;
@@ -129,12 +129,12 @@ public final class MovingReactionCell extends FrameLayout {
         Intrinsics.checkNotNullParameter(urlButton, "urlButton");
         this.urlButton = urlButton;
         if (urlButton.getTitle().length() == 0) {
-            getEditText().setHint(LocaleController.getInternalString(C3286R.string.chat_reaction_enter_the_title));
+            getEditText().setHint(LocaleController.getInternalString(C3301R.string.chat_reaction_enter_the_title));
         }
         TextView valueTextView = getValueTextView();
         String url = urlButton.getUrl();
         if (url.length() == 0) {
-            url = LocaleController.getInternalString(C3286R.string.chat_reaction_link_not_added);
+            url = LocaleController.getInternalString(C3301R.string.chat_reaction_link_not_added);
         }
         valueTextView.setText(url);
         getLinkImageView().setColorFilter(urlButton.getUrl().length() == 0 ? new PorterDuffColorFilter(Theme.getColor("windowBackgroundWhiteBlueHeader"), PorterDuff.Mode.MULTIPLY) : new PorterDuffColorFilter(Theme.getColor("stickers_menu"), PorterDuff.Mode.MULTIPLY));
@@ -195,7 +195,7 @@ public final class MovingReactionCell extends FrameLayout {
         r1.setBackground(null);
         r1.setImeOptions(r1.getImeOptions() | 268435456);
         r1.setInputType(r1.getInputType() | 16384);
-        r1.setHint(LocaleController.getInternalString(C3286R.string.chat_reaction_enter_the_title));
+        r1.setHint(LocaleController.getInternalString(C3301R.string.chat_reaction_enter_the_title));
         r1.setTextSize(1, 16.0f);
         r1.setTextColor(Theme.getColor("windowBackgroundWhiteBlackText"));
         r1.setHintTextColor(Theme.getColor("windowBackgroundWhiteHintText"));
@@ -209,7 +209,7 @@ public final class MovingReactionCell extends FrameLayout {
         imageView.setScaleType(ImageView.ScaleType.CENTER);
         imageView.setColorFilter(new PorterDuffColorFilter(Theme.getColor("stickers_menu"), PorterDuff.Mode.MULTIPLY));
         imageView.setClickable(true);
-        imageView.setImageResource(C3286R.C3288drawable.poll_reorder);
+        imageView.setImageResource(C3301R.C3303drawable.poll_reorder);
         return imageView;
     }
 
@@ -219,7 +219,7 @@ public final class MovingReactionCell extends FrameLayout {
         ViewExtKt.singleLine(textView);
         textView.setGravity(8388611);
         textView.setEllipsize(TextUtils.TruncateAt.END);
-        textView.setText(LocaleController.getInternalString(C3286R.string.chat_reaction_link_not_added));
+        textView.setText(LocaleController.getInternalString(C3301R.string.chat_reaction_link_not_added));
         textView.setTextColor(Theme.getColor("windowBackgroundWhiteGrayText2"));
         textView.setTextSize(1, 12.0f);
         return textView;
@@ -232,7 +232,7 @@ public final class MovingReactionCell extends FrameLayout {
         imageView.setScaleType(ImageView.ScaleType.CENTER);
         imageView.setColorFilter(new PorterDuffColorFilter(Theme.getColor("stickers_menu"), PorterDuff.Mode.MULTIPLY));
         imageView.setClickable(true);
-        imageView.setImageResource(C3286R.C3288drawable.delete);
+        imageView.setImageResource(C3301R.C3303drawable.delete);
         return imageView;
     }
 
@@ -244,7 +244,7 @@ public final class MovingReactionCell extends FrameLayout {
         imageView.setScaleType(ImageView.ScaleType.CENTER);
         imageView.setColorFilter(new PorterDuffColorFilter(Theme.getColor("windowBackgroundWhiteBlueHeader"), PorterDuff.Mode.MULTIPLY));
         imageView.setVisibility(this.linkIconShow ? 0 : 8);
-        imageView.setImageResource(C3286R.C3288drawable.msg_link);
+        imageView.setImageResource(C3301R.C3303drawable.msg_link);
         return imageView;
     }
 

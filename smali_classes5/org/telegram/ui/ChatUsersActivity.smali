@@ -1985,9 +1985,9 @@
 
     move-result-wide v2
 
-    cmp-long v14, v5, v2
+    cmp-long v2, v5, v2
 
-    if-nez v14, :cond_3
+    if-nez v2, :cond_3
 
     goto/16 :goto_14
 
@@ -2044,7 +2044,7 @@
     if-eqz v8, :cond_5
 
     :cond_4
-    const/4 v1, 0x1
+    move v1, v0
 
     goto :goto_1
 
@@ -2073,7 +2073,7 @@
     if-eqz v8, :cond_8
 
     :cond_7
-    const/4 v8, 0x1
+    move v8, v0
 
     goto :goto_2
 
@@ -2097,7 +2097,7 @@
 
     :cond_a
     :goto_3
-    const/4 v2, 0x1
+    move v2, v0
 
     .line 1736
     :goto_4
@@ -2450,7 +2450,7 @@
     const/4 v12, 0x1
 
     :goto_b
-    const/4 v2, 0x1
+    move v2, v12
 
     goto/16 :goto_13
 
@@ -2469,7 +2469,7 @@
 
     move-object/from16 v22, v15
 
-    const/4 v12, 0x1
+    move v12, v0
 
     const/4 v0, 0x3
 
@@ -4318,30 +4318,24 @@
     :cond_2
     if-nez v9, :cond_a
 
-    const/4 v0, 0x0
+    cmp-long v0, v14, v1
 
-    cmp-long v3, v14, v1
+    const/4 v1, 0x0
 
-    if-lez v3, :cond_3
+    if-lez v0, :cond_3
 
     .line 1938
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getMessagesController()Lorg/telegram/messenger/MessagesController;
 
-    move-result-object v1
+    move-result-object v0
 
     invoke-static/range {p2 .. p3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object v2
 
-    invoke-virtual {v1, v2}, Lorg/telegram/messenger/MessagesController;->getUser(Ljava/lang/Long;)Lorg/telegram/tgnet/TLRPC$User;
+    invoke-virtual {v0, v2}, Lorg/telegram/messenger/MessagesController;->getUser(Ljava/lang/Long;)Lorg/telegram/tgnet/TLRPC$User;
 
-    move-result-object v1
-
-    move-object/from16 v26, v1
-
-    move-object v1, v0
-
-    move-object/from16 v0, v26
+    move-result-object v0
 
     goto :goto_0
 
@@ -4349,7 +4343,7 @@
     :cond_3
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getMessagesController()Lorg/telegram/messenger/MessagesController;
 
-    move-result-object v1
+    move-result-object v0
 
     neg-long v2, v14
 
@@ -4357,9 +4351,15 @@
 
     move-result-object v2
 
-    invoke-virtual {v1, v2}, Lorg/telegram/messenger/MessagesController;->getChat(Ljava/lang/Long;)Lorg/telegram/tgnet/TLRPC$Chat;
+    invoke-virtual {v0, v2}, Lorg/telegram/messenger/MessagesController;->getChat(Ljava/lang/Long;)Lorg/telegram/tgnet/TLRPC$Chat;
 
-    move-result-object v1
+    move-result-object v0
+
+    move-object/from16 v26, v1
+
+    move-object v1, v0
+
+    move-object/from16 v0, v26
 
     .line 1944
     :goto_0
@@ -4885,12 +4885,12 @@
 
     const/4 v0, 0x0
 
-    const/4 v8, 0x0
+    move v8, v0
 
     goto :goto_0
 
     :cond_0
-    const/4 v8, 0x1
+    move v8, v3
 
     :goto_0
     const/4 v9, 0x0
@@ -4934,12 +4934,12 @@
 
     if-ne v1, v2, :cond_0
 
-    const/4 v1, 0x1
+    move v1, v4
 
     goto :goto_0
 
     :cond_0
-    const/4 v1, 0x0
+    move v1, v3
 
     :goto_0
     const-string v2, "chat_id"
@@ -5435,7 +5435,7 @@
 
     if-nez v2, :cond_14
 
-    const/4 v5, 0x2
+    move v5, v6
 
     :cond_14
     invoke-virtual {v0, v1, v5}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
@@ -6260,7 +6260,7 @@
 
     const-string v11, ""
 
-    if-eqz v1, :cond_3f
+    if-eqz v1, :cond_3e
 
     .line 1117
     iget-object v1, v10, Lorg/telegram/ui/ChatUsersActivity;->listViewAdapter:Lorg/telegram/ui/ChatUsersActivity$ListAdapter;
@@ -6310,12 +6310,12 @@
     if-eqz v1, :cond_38
 
     :cond_37
-    const/4 v1, 0x1
+    move v1, v4
 
     goto :goto_d
 
     :cond_38
-    const/4 v1, 0x0
+    move v1, v3
 
     .line 1125
     :goto_d
@@ -6460,22 +6460,21 @@
     :cond_3d
     move-object v6, v0
 
+    move v14, v3
+
     move-wide v12, v7
 
+    :goto_10
     move-object/from16 v19, v9
 
     move-object/from16 v22, v11
 
-    :cond_3e
-    const/4 v14, 0x0
-
-    :goto_10
     move-object/from16 v11, v19
 
     goto/16 :goto_14
 
     .line 1152
-    :cond_3f
+    :cond_3e
     iget-object v1, v10, Lorg/telegram/ui/ChatUsersActivity;->searchListViewAdapter:Lorg/telegram/ui/ChatUsersActivity$SearchAdapter;
 
     invoke-virtual {v1, v0}, Lorg/telegram/ui/ChatUsersActivity$SearchAdapter;->getItem(I)Lorg/telegram/tgnet/TLObject;
@@ -6485,7 +6484,7 @@
     .line 1153
     instance-of v1, v0, Lorg/telegram/tgnet/TLRPC$User;
 
-    if-eqz v1, :cond_40
+    if-eqz v1, :cond_3f
 
     .line 1154
     check-cast v0, Lorg/telegram/tgnet/TLRPC$User;
@@ -6511,25 +6510,25 @@
     goto :goto_12
 
     .line 1157
-    :cond_40
+    :cond_3f
     instance-of v1, v0, Lorg/telegram/tgnet/TLRPC$ChannelParticipant;
 
-    if-nez v1, :cond_42
+    if-nez v1, :cond_41
 
     instance-of v1, v0, Lorg/telegram/tgnet/TLRPC$ChatParticipant;
 
-    if-eqz v1, :cond_41
+    if-eqz v1, :cond_40
 
     goto :goto_11
 
-    :cond_41
+    :cond_40
     move-wide v12, v7
 
     move-object v0, v9
 
     goto :goto_12
 
-    :cond_42
+    :cond_41
     :goto_11
     move-wide v12, v7
 
@@ -6537,7 +6536,7 @@
     :goto_12
     instance-of v1, v0, Lorg/telegram/tgnet/TLRPC$ChannelParticipant;
 
-    if-eqz v1, :cond_46
+    if-eqz v1, :cond_45
 
     .line 1163
     move-object v1, v0
@@ -6554,24 +6553,24 @@
     .line 1165
     instance-of v6, v1, Lorg/telegram/tgnet/TLRPC$TL_channelParticipantAdmin;
 
-    if-nez v6, :cond_43
+    if-nez v6, :cond_42
 
     instance-of v6, v1, Lorg/telegram/tgnet/TLRPC$TL_channelParticipantCreator;
+
+    if-eqz v6, :cond_43
+
+    :cond_42
+    iget-boolean v6, v1, Lorg/telegram/tgnet/TLRPC$ChannelParticipant;->can_edit:Z
 
     if-eqz v6, :cond_44
 
     :cond_43
-    iget-boolean v6, v1, Lorg/telegram/tgnet/TLRPC$ChannelParticipant;->can_edit:Z
-
-    if-eqz v6, :cond_45
-
-    :cond_44
-    const/4 v6, 0x1
+    move v6, v4
 
     goto :goto_13
 
-    :cond_45
-    const/4 v6, 0x0
+    :cond_44
+    move v6, v3
 
     .line 1166
     :goto_13
@@ -6594,10 +6593,10 @@
     goto/16 :goto_e
 
     .line 1169
-    :cond_46
+    :cond_45
     instance-of v1, v0, Lorg/telegram/tgnet/TLRPC$ChatParticipant;
 
-    if-eqz v1, :cond_47
+    if-eqz v1, :cond_46
 
     .line 1170
     move-object v1, v0
@@ -6616,22 +6615,19 @@
 
     move v14, v1
 
-    move-object/from16 v19, v9
+    goto :goto_10
 
-    move-object/from16 v22, v11
+    :cond_46
+    move-object v6, v0
+
+    if-nez v0, :cond_47
+
+    move v14, v4
 
     goto :goto_10
 
     :cond_47
-    move-object v6, v0
-
-    move-object/from16 v19, v9
-
-    move-object/from16 v22, v11
-
-    if-nez v0, :cond_3e
-
-    const/4 v14, 0x1
+    move v14, v3
 
     goto :goto_10
 
@@ -6777,12 +6773,12 @@
     :cond_4b
     if-ne v1, v4, :cond_4c
 
-    const/4 v8, 0x0
+    move v8, v3
 
     goto :goto_16
 
     :cond_4c
-    const/4 v8, 0x1
+    move v8, v4
 
     :goto_16
     if-eq v1, v4, :cond_4e
@@ -6792,13 +6788,13 @@
     goto :goto_17
 
     :cond_4d
-    const/4 v9, 0x0
+    move v9, v3
 
     goto :goto_18
 
     :cond_4e
     :goto_17
-    const/4 v9, 0x1
+    move v9, v4
 
     :goto_18
     move-object/from16 v0, p0
@@ -6848,12 +6844,12 @@
     if-eqz v14, :cond_51
 
     :cond_50
-    const/4 v1, 0x1
+    move v1, v4
 
     goto :goto_1a
 
     :cond_51
-    const/4 v1, 0x0
+    move v1, v3
 
     goto :goto_1a
 
@@ -6865,7 +6861,7 @@
     goto :goto_19
 
     :cond_53
-    const/16 v24, 0x0
+    move/from16 v24, v3
 
     goto :goto_1b
 
@@ -6991,22 +6987,22 @@
 
     if-ne v7, v4, :cond_58
 
-    const/16 v23, 0x0
+    move/from16 v23, v3
 
     goto :goto_1d
 
     :cond_58
-    const/16 v23, 0x1
+    move/from16 v23, v4
 
     :goto_1d
     if-nez v6, :cond_59
 
-    const/16 v25, 0x1
+    move/from16 v25, v4
 
     goto :goto_1e
 
     :cond_59
-    const/16 v25, 0x0
+    move/from16 v25, v3
 
     :goto_1e
     const/16 v26, 0x0
@@ -7150,7 +7146,7 @@
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_0
     if-ge v2, v0, :cond_1
@@ -7182,15 +7178,15 @@
 .end method
 
 .method private synthetic lambda$loadChatParticipants$18(Ljava/util/ArrayList;Ljava/util/ArrayList;)V
-    .locals 18
+    .locals 17
 
     move-object/from16 v1, p0
 
     const/4 v2, 0x0
 
-    const/4 v0, 0x0
+    move v0, v2
 
-    const/4 v3, 0x0
+    move v3, v0
 
     .line 2332
     :goto_0
@@ -7276,7 +7272,7 @@
 
     if-eqz v12, :cond_3
 
-    const/4 v12, 0x0
+    move v12, v2
 
     .line 2344
     :goto_1
@@ -7303,9 +7299,9 @@
 
     move-result-wide v13
 
-    cmp-long v15, v13, v10
+    cmp-long v13, v13, v10
 
-    if-nez v15, :cond_2
+    if-nez v13, :cond_2
 
     .line 2346
     iget-object v13, v9, Lorg/telegram/tgnet/TLRPC$channels_ChannelParticipants;->participants:Ljava/util/ArrayList;
@@ -7397,7 +7393,7 @@
 
     move-result v13
 
-    const/4 v14, 0x0
+    move v14, v2
 
     :goto_4
     if-ge v14, v13, :cond_8
@@ -7416,9 +7412,9 @@
     .line 2374
     iget-wide v2, v15, Lorg/telegram/tgnet/TLRPC$ChannelParticipant;->user_id:J
 
-    cmp-long v17, v2, v10
+    cmp-long v2, v2, v10
 
-    if-nez v17, :cond_7
+    if-nez v2, :cond_7
 
     .line 2375
     invoke-virtual {v7, v15}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
@@ -7535,9 +7531,9 @@
 
     const-wide/16 v11, 0x0
 
-    cmp-long v13, v9, v11
+    cmp-long v11, v9, v11
 
-    if-lez v13, :cond_b
+    if-lez v11, :cond_b
 
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getMessagesController()Lorg/telegram/messenger/MessagesController;
 
@@ -7580,7 +7576,7 @@
 
     :cond_d
     :goto_8
-    const/4 v11, 0x1
+    move v11, v6
 
     :goto_9
     if-eqz v11, :cond_e
@@ -7892,13 +7888,13 @@
 .end method
 
 .method private synthetic lambda$processDone$17(J)V
-    .locals 3
+    .locals 2
 
     const-wide/16 v0, 0x0
 
-    cmp-long v2, p1, v0
+    cmp-long v0, p1, v0
 
-    if-eqz v2, :cond_0
+    if-eqz v0, :cond_0
 
     .line 2157
     iput-wide p1, p0, Lorg/telegram/ui/ChatUsersActivity;->chatId:J
@@ -7993,7 +7989,7 @@
 .end method
 
 .method private synthetic lambda$sortUsers$21(ILorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLObject;)I
-    .locals 11
+    .locals 10
 
     .line 2458
     instance-of v0, p2, Lorg/telegram/tgnet/TLRPC$ChannelParticipant;
@@ -8029,74 +8025,74 @@
 
     move-result-wide v4
 
-    const v0, 0xc350
+    const-wide/16 v6, 0x0
 
-    const/16 v6, -0x64
+    cmp-long v0, v2, v6
 
-    const-wide/16 v7, 0x0
+    const v2, 0xc350
 
-    cmp-long v9, v2, v7
+    const/16 v3, -0x64
 
-    if-lez v9, :cond_3
+    if-lez v0, :cond_3
 
     .line 2468
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getMessagesController()Lorg/telegram/messenger/MessagesController;
 
-    move-result-object v2
+    move-result-object v0
 
     iget-object p2, p2, Lorg/telegram/tgnet/TLRPC$ChannelParticipant;->peer:Lorg/telegram/tgnet/TLRPC$Peer;
 
     invoke-static {p2}, Lorg/telegram/messenger/MessageObject;->getPeerId(Lorg/telegram/tgnet/TLRPC$Peer;)J
 
-    move-result-wide v9
+    move-result-wide v8
 
-    invoke-static {v9, v10}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+    invoke-static {v8, v9}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object p2
 
-    invoke-virtual {v2, p2}, Lorg/telegram/messenger/MessagesController;->getUser(Ljava/lang/Long;)Lorg/telegram/tgnet/TLRPC$User;
+    invoke-virtual {v0, p2}, Lorg/telegram/messenger/MessagesController;->getUser(Ljava/lang/Long;)Lorg/telegram/tgnet/TLRPC$User;
 
     move-result-object p2
 
     if-eqz p2, :cond_2
 
     .line 2469
-    iget-object v2, p2, Lorg/telegram/tgnet/TLRPC$User;->status:Lorg/telegram/tgnet/TLRPC$UserStatus;
+    iget-object v0, p2, Lorg/telegram/tgnet/TLRPC$User;->status:Lorg/telegram/tgnet/TLRPC$UserStatus;
 
-    if-eqz v2, :cond_2
+    if-eqz v0, :cond_2
 
     .line 2470
     iget-boolean p2, p2, Lorg/telegram/tgnet/TLRPC$User;->self:Z
 
     if-eqz p2, :cond_1
 
-    add-int p2, p1, v0
+    add-int p2, p1, v2
 
     goto :goto_0
 
     .line 2473
     :cond_1
-    iget p2, v2, Lorg/telegram/tgnet/TLRPC$UserStatus;->expires:I
+    iget p2, v0, Lorg/telegram/tgnet/TLRPC$UserStatus;->expires:I
 
     goto :goto_0
 
     :cond_2
-    const/4 p2, 0x0
+    move p2, v1
 
     goto :goto_0
 
     :cond_3
-    const/16 p2, -0x64
+    move p2, v3
 
     :goto_0
-    cmp-long v2, v4, v7
+    cmp-long v0, v4, v6
 
-    if-lez v2, :cond_6
+    if-lez v0, :cond_6
 
     .line 2481
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getMessagesController()Lorg/telegram/messenger/MessagesController;
 
-    move-result-object v2
+    move-result-object v0
 
     iget-object p3, p3, Lorg/telegram/tgnet/TLRPC$ChannelParticipant;->peer:Lorg/telegram/tgnet/TLRPC$Peer;
 
@@ -8108,37 +8104,37 @@
 
     move-result-object p3
 
-    invoke-virtual {v2, p3}, Lorg/telegram/messenger/MessagesController;->getUser(Ljava/lang/Long;)Lorg/telegram/tgnet/TLRPC$User;
+    invoke-virtual {v0, p3}, Lorg/telegram/messenger/MessagesController;->getUser(Ljava/lang/Long;)Lorg/telegram/tgnet/TLRPC$User;
 
     move-result-object p3
 
     if-eqz p3, :cond_5
 
     .line 2482
-    iget-object v2, p3, Lorg/telegram/tgnet/TLRPC$User;->status:Lorg/telegram/tgnet/TLRPC$UserStatus;
+    iget-object v0, p3, Lorg/telegram/tgnet/TLRPC$User;->status:Lorg/telegram/tgnet/TLRPC$UserStatus;
 
-    if-eqz v2, :cond_5
+    if-eqz v0, :cond_5
 
     .line 2483
     iget-boolean p3, p3, Lorg/telegram/tgnet/TLRPC$User;->self:Z
 
     if-eqz p3, :cond_4
 
-    add-int/2addr p1, v0
+    add-int/2addr p1, v2
 
     goto :goto_1
 
     .line 2486
     :cond_4
-    iget p1, v2, Lorg/telegram/tgnet/TLRPC$UserStatus;->expires:I
+    iget p1, v0, Lorg/telegram/tgnet/TLRPC$UserStatus;->expires:I
 
     :goto_1
-    move v6, p1
+    move v3, p1
 
     goto :goto_2
 
     :cond_5
-    const/4 v6, 0x0
+    move v3, v1
 
     :cond_6
     :goto_2
@@ -8148,14 +8144,14 @@
 
     if-lez p2, :cond_9
 
-    if-lez v6, :cond_9
+    if-lez v3, :cond_9
 
-    if-le p2, v6, :cond_7
+    if-le p2, v3, :cond_7
 
     return p3
 
     :cond_7
-    if-ge p2, v6, :cond_8
+    if-ge p2, v3, :cond_8
 
     return p1
 
@@ -8165,14 +8161,14 @@
     :cond_9
     if-gez p2, :cond_c
 
-    if-gez v6, :cond_c
+    if-gez v3, :cond_c
 
-    if-le p2, v6, :cond_a
+    if-le p2, v3, :cond_a
 
     return p3
 
     :cond_a
-    if-ge p2, v6, :cond_b
+    if-ge p2, v3, :cond_b
 
     return p1
 
@@ -8182,23 +8178,23 @@
     :cond_c
     if-gez p2, :cond_d
 
-    if-gtz v6, :cond_e
+    if-gtz v3, :cond_e
 
     :cond_d
     if-nez p2, :cond_f
 
-    if-eqz v6, :cond_f
+    if-eqz v3, :cond_f
 
     :cond_e
     return p1
 
     :cond_f
-    if-gez v6, :cond_10
+    if-gez v3, :cond_10
 
     if-gtz p2, :cond_11
 
     :cond_10
-    if-nez v6, :cond_12
+    if-nez v3, :cond_12
 
     if-eqz p2, :cond_12
 
@@ -8399,9 +8395,9 @@
 
     iget-wide v3, v0, Lorg/telegram/tgnet/TLRPC$ChatParticipant;->user_id:J
 
-    cmp-long v5, v3, p1
+    cmp-long v3, v3, p1
 
-    if-nez v5, :cond_3
+    if-nez v3, :cond_3
 
     goto/16 :goto_2
 
@@ -8970,9 +8966,9 @@
 
     iput-boolean v1, v0, Lorg/telegram/tgnet/TLRPC$Chat;->creator:Z
 
-    const/4 v0, 0x0
+    move v0, v1
 
-    const/4 v2, 0x0
+    move v2, v0
 
     :goto_1
     const/4 v3, 0x3
@@ -9055,14 +9051,14 @@
     invoke-virtual {v5, v6, v2}, Ljava/util/ArrayList;->set(ILjava/lang/Object;)Ljava/lang/Object;
 
     :cond_3
-    const/4 v2, 0x1
+    move v2, v3
 
-    const/4 v6, 0x1
+    move v6, v2
 
     goto :goto_3
 
     :cond_4
-    const/4 v6, 0x0
+    move v6, v1
 
     .line 1417
     :goto_3
@@ -9119,9 +9115,9 @@
 
     div-long/2addr v10, v12
 
-    long-to-int v11, v10
+    long-to-int v10, v10
 
-    iput v11, v6, Lorg/telegram/tgnet/TLRPC$ChannelParticipant;->date:I
+    iput v10, v6, Lorg/telegram/tgnet/TLRPC$ChannelParticipant;->date:I
 
     .line 1427
     new-instance v10, Lorg/telegram/tgnet/TLRPC$TL_chatAdminRights;
@@ -9264,16 +9260,14 @@
 
     const/4 v0, 0x1
 
-    const/16 v18, 0x1
-
     goto :goto_0
 
     :cond_0
     const/4 v0, 0x0
 
-    const/16 v18, 0x0
-
     :goto_0
+    move/from16 v18, v0
+
     const/16 v19, 0x0
 
     move-object v7, v5
@@ -9344,13 +9338,13 @@
     :cond_0
     const/4 v0, 0x0
 
-    const/16 v17, 0x0
+    move/from16 v17, v0
 
     goto :goto_1
 
     :cond_1
     :goto_0
-    const/16 v17, 0x1
+    move/from16 v17, v1
 
     .line 1473
     :goto_1
@@ -9644,7 +9638,7 @@
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_0
     const/4 v3, 0x3
@@ -9714,7 +9708,7 @@
     iput v4, v2, Lorg/telegram/tgnet/TLRPC$ChatFull;->kicked_count:I
 
     :cond_2
-    const/4 v2, 0x1
+    move v2, v3
 
     :cond_3
     add-int/lit8 v1, v1, 0x1
@@ -10009,7 +10003,7 @@
 
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    move v1, v0
 
     :goto_0
     const/4 v2, 0x3
@@ -10095,7 +10089,7 @@
     .line 1688
     invoke-interface {v4, p4, p5, v3}, Lorg/telegram/ui/ChatUsersActivity$ChatUsersActivityDelegate;->didAddParticipantToList(JLorg/telegram/tgnet/TLObject;)V
 
-    const/4 v1, 0x1
+    move v1, v2
 
     :cond_3
     add-int/lit8 v0, v0, 0x1
@@ -11282,7 +11276,7 @@
     .line 482
     iput v1, p0, Lorg/telegram/ui/ChatUsersActivity;->contactsEndRow:I
 
-    const/4 v1, 0x1
+    move v1, v4
 
     .line 485
     :cond_2a
@@ -11950,7 +11944,7 @@
     goto :goto_2
 
     :cond_e
-    const/4 v2, 0x2
+    move v2, v3
 
     :goto_2
     invoke-virtual {v4, v2}, Landroid/view/ViewGroup;->setVerticalScrollbarPosition(I)V
@@ -12058,7 +12052,7 @@
 .end method
 
 .method public varargs didReceivedNotification(II[Ljava/lang/Object;)V
-    .locals 5
+    .locals 4
 
     .line 1959
     sget p2, Lorg/telegram/messenger/NotificationCenter;->chatInfoDidLoad:I
@@ -12088,9 +12082,9 @@
 
     iget-wide v2, p0, Lorg/telegram/ui/ChatUsersActivity;->chatId:J
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-nez v4, :cond_3
+    if-nez v0, :cond_3
 
     if-eqz p3, :cond_0
 
@@ -13718,7 +13712,7 @@
 
     const/4 v1, -0x1
 
-    const/4 v2, -0x1
+    move v2, v1
 
     .line 3638
     :goto_0

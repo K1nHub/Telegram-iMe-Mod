@@ -7,7 +7,7 @@ import kotlin.collections.ArraysKt___ArraysKt;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.messenger.C3286R;
+import org.telegram.messenger.C3301R;
 import org.telegram.tgnet.TLRPC$ChannelParticipantsFilter;
 import org.telegram.tgnet.TLRPC$TL_channelParticipantsAdmins;
 import org.telegram.tgnet.TLRPC$TL_channelParticipantsBanned;
@@ -20,13 +20,13 @@ import p034j$.util.function.Predicate;
 /* compiled from: GroupMembersFilter.kt */
 /* loaded from: classes3.dex */
 public enum GroupMembersFilter {
-    ALL(C3286R.string.profile_group_filter_all, C3286R.C3288drawable.msg_contacts, new TLRPC$TL_channelParticipantsRecent(), false),
-    ADMINISTRATORS(C3286R.string.profile_group_filter_administrator, C3286R.C3288drawable.msg_admins, new TLRPC$TL_channelParticipantsAdmins(), false),
-    BOTS(C3286R.string.profile_group_filter_bots, C3286R.C3288drawable.fork_filter_icon_bot, new TLRPC$TL_channelParticipantsBots(), false),
-    CONTACTS(C3286R.string.profile_group_filter_contacts, C3286R.C3288drawable.msg_groups, new TLRPC$TL_channelParticipantsContacts(), false),
-    RESTRICTED(C3286R.string.profile_group_filter_restricted, C3286R.C3288drawable.msg_permissions, new TLRPC$TL_channelParticipantsBanned(), false),
-    BLOCKED(C3286R.string.profile_group_filter_blocked, C3286R.C3288drawable.msg_block, new TLRPC$TL_channelParticipantsKicked(), true),
-    DELETED(C3286R.string.profile_group_filter_deleted, C3286R.C3288drawable.fork_ic_ghost_26, new TLRPC$TL_channelParticipantsRecent(), true);
+    ALL(C3301R.string.profile_group_filter_all, C3301R.C3303drawable.msg_contacts, new TLRPC$TL_channelParticipantsRecent(), false),
+    ADMINISTRATORS(C3301R.string.profile_group_filter_administrator, C3301R.C3303drawable.msg_admins, new TLRPC$TL_channelParticipantsAdmins(), false),
+    BOTS(C3301R.string.profile_group_filter_bots, C3301R.C3303drawable.fork_filter_icon_bot, new TLRPC$TL_channelParticipantsBots(), false),
+    CONTACTS(C3301R.string.profile_group_filter_contacts, C3301R.C3303drawable.msg_groups, new TLRPC$TL_channelParticipantsContacts(), false),
+    RESTRICTED(C3301R.string.profile_group_filter_restricted, C3301R.C3303drawable.msg_permissions, new TLRPC$TL_channelParticipantsBanned(), false),
+    BLOCKED(C3301R.string.profile_group_filter_blocked, C3301R.C3303drawable.msg_block, new TLRPC$TL_channelParticipantsKicked(), true),
+    DELETED(C3301R.string.profile_group_filter_deleted, C3301R.C3303drawable.fork_ic_ghost_26, new TLRPC$TL_channelParticipantsRecent(), true);
     
     public static final Companion Companion = new Companion(null);
     public static GroupMembersFilter defaultValue;

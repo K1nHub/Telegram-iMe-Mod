@@ -903,7 +903,7 @@
 
     if-ltz v2, :cond_5
 
-    const/4 v9, 0x1
+    move v9, v3
 
     :cond_5
     const-string v2, "invalid idleTimeoutMillis %s"
@@ -2129,16 +2129,16 @@
 .end method
 
 .method private rescheduleIdleTimer()V
-    .locals 5
+    .locals 4
 
     .line 411
     iget-wide v0, p0, Lio/grpc/internal/ManagedChannelImpl;->idleTimeoutMillis:J
 
     const-wide/16 v2, -0x1
 
-    cmp-long v4, v0, v2
+    cmp-long v2, v0, v2
 
-    if-nez v4, :cond_0
+    if-nez v2, :cond_0
 
     return-void
 
@@ -2182,7 +2182,7 @@
     goto :goto_0
 
     :cond_0
-    const/4 v1, 0x0
+    move v1, v0
 
     :goto_0
     const-string v2, "lbHelper is null"

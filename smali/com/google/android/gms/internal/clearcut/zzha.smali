@@ -721,9 +721,9 @@
 
     xor-long/2addr v1, v4
 
-    long-to-int v2, v1
+    long-to-int v1, v1
 
-    add-int/2addr v0, v2
+    add-int/2addr v0, v1
 
     mul-int/lit8 v0, v0, 0x1f
 
@@ -733,9 +733,9 @@
 
     xor-long/2addr v1, v4
 
-    long-to-int v2, v1
+    long-to-int v1, v1
 
-    add-int/2addr v0, v2
+    add-int/2addr v0, v1
 
     mul-int/lit8 v0, v0, 0x1f
 
@@ -747,7 +747,7 @@
 
     if-nez v1, :cond_0
 
-    const/4 v1, 0x0
+    move v1, v2
 
     goto :goto_0
 
@@ -771,7 +771,7 @@
 
     if-nez v1, :cond_1
 
-    const/4 v1, 0x0
+    move v1, v2
 
     goto :goto_1
 
@@ -817,7 +817,7 @@
 
     if-nez v4, :cond_2
 
-    const/4 v4, 0x0
+    move v4, v2
 
     goto :goto_2
 
@@ -845,7 +845,7 @@
 
     if-nez v4, :cond_3
 
-    const/4 v4, 0x0
+    move v4, v2
 
     goto :goto_3
 
@@ -863,7 +863,7 @@
 
     if-nez v4, :cond_4
 
-    const/4 v4, 0x0
+    move v4, v2
 
     goto :goto_4
 
@@ -881,7 +881,7 @@
 
     if-nez v4, :cond_5
 
-    const/4 v4, 0x0
+    move v4, v2
 
     goto :goto_5
 
@@ -899,7 +899,7 @@
 
     if-nez v4, :cond_6
 
-    const/4 v4, 0x0
+    move v4, v2
 
     goto :goto_6
 
@@ -919,9 +919,9 @@
 
     xor-long v3, v4, v6
 
-    long-to-int v4, v3
+    long-to-int v3, v3
 
-    add-int/2addr v0, v4
+    add-int/2addr v0, v3
 
     iget-object v3, p0, Lcom/google/android/gms/internal/clearcut/zzha;->zzbjv:Lcom/google/android/gms/internal/clearcut/zzgz;
 
@@ -929,7 +929,7 @@
 
     if-nez v3, :cond_7
 
-    const/4 v3, 0x0
+    move v3, v2
 
     goto :goto_7
 
@@ -957,7 +957,7 @@
 
     if-nez v3, :cond_8
 
-    const/4 v3, 0x0
+    move v3, v2
 
     goto :goto_8
 
@@ -989,7 +989,7 @@
 
     if-nez v3, :cond_9
 
-    const/4 v3, 0x0
+    move v3, v2
 
     goto :goto_9
 
@@ -1090,7 +1090,7 @@
 
     if-lez v0, :cond_3
 
-    const/4 v0, 0x0
+    move v0, v4
 
     :goto_0
     iget-object v5, p0, Lcom/google/android/gms/internal/clearcut/zzha;->zzbjm:[Lcom/google/android/gms/internal/clearcut/zzhb;
@@ -1371,13 +1371,13 @@
 
     const-wide/16 v3, 0x0
 
-    const/4 v5, 0x1
+    cmp-long v5, v1, v3
 
-    cmp-long v6, v1, v3
+    const/4 v6, 0x1
 
-    if-eqz v6, :cond_0
+    if-eqz v5, :cond_0
 
-    invoke-static {v5, v1, v2}, Lcom/google/android/gms/internal/clearcut/zzfs;->zzd(IJ)I
+    invoke-static {v6, v1, v2}, Lcom/google/android/gms/internal/clearcut/zzfs;->zzd(IJ)I
 
     move-result v1
 
@@ -1388,11 +1388,11 @@
 
     const/4 v2, 0x2
 
-    const-string v6, ""
+    const-string v5, ""
 
     if-eqz v1, :cond_1
 
-    invoke-virtual {v1, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v1, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v1
 
@@ -1417,7 +1417,7 @@
 
     if-lez v1, :cond_3
 
-    const/4 v1, 0x0
+    move v1, v7
 
     :goto_0
     iget-object v8, p0, Lcom/google/android/gms/internal/clearcut/zzha;->zzbjm:[Lcom/google/android/gms/internal/clearcut/zzhb;
@@ -1501,7 +1501,7 @@
 
     if-eqz v1, :cond_7
 
-    invoke-virtual {v1, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v1, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v1
 
@@ -1554,7 +1554,7 @@
 
     if-eqz v1, :cond_a
 
-    invoke-virtual {v1, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v1, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v1
 
@@ -1575,7 +1575,7 @@
 
     if-eqz v1, :cond_b
 
-    invoke-virtual {v1, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v1, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v1
 
@@ -1674,7 +1674,7 @@
 
     if-lez v1, :cond_11
 
-    const/4 v1, 0x0
+    move v1, v7
 
     :goto_1
     iget-object v3, p0, Lcom/google/android/gms/internal/clearcut/zzha;->zzbjz:[I
@@ -1700,7 +1700,7 @@
 
     array-length v1, v3
 
-    mul-int/lit8 v1, v1, 0x2
+    mul-int/2addr v1, v2
 
     add-int/2addr v0, v1
 
@@ -1722,7 +1722,7 @@
 
     if-eqz v1, :cond_13
 
-    invoke-virtual {v1, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v1, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v1
 
@@ -1749,7 +1749,7 @@
 
     move-result v1
 
-    add-int/2addr v1, v5
+    add-int/2addr v1, v6
 
     add-int/2addr v0, v1
 
@@ -1758,7 +1758,7 @@
 
     if-eqz v1, :cond_15
 
-    invoke-virtual {v1, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v1, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v1
 

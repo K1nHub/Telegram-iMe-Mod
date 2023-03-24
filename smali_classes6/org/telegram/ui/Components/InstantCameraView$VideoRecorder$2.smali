@@ -25,7 +25,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;)V
     .locals 0
 
-    .line 2277
+    .line 2302
     iput-object p1, p0, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder$2;->this$1:Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,7 +38,7 @@
 .method public onError(Lorg/telegram/ui/Components/VideoPlayer;Ljava/lang/Exception;)V
     .locals 0
 
-    .line 2290
+    .line 2315
     invoke-static {p2}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     return-void
@@ -77,7 +77,7 @@
 .method public onStateChanged(ZI)V
     .locals 4
 
-    .line 2280
+    .line 2305
     iget-object p1, p0, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder$2;->this$1:Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;
 
     iget-object p1, p1, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->this$0:Lorg/telegram/ui/Components/InstantCameraView;
@@ -90,7 +90,7 @@
 
     return-void
 
-    .line 2283
+    .line 2308
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder$2;->this$1:Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;
 
@@ -110,7 +110,7 @@
 
     if-ne p2, p1, :cond_2
 
-    .line 2284
+    .line 2309
     iget-object p1, p0, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder$2;->this$1:Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;
 
     iget-object p1, p1, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->this$0:Lorg/telegram/ui/Components/InstantCameraView;

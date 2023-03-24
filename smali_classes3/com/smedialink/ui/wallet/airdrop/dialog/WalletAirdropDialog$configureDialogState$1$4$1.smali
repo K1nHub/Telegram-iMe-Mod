@@ -49,7 +49,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 102
+    .line 103
     check-cast p1, Landroid/view/View;
 
     invoke-virtual {p0, p1}, Lcom/smedialink/ui/wallet/airdrop/dialog/WalletAirdropDialog$configureDialogState$1$4$1;->invoke(Landroid/view/View;)V
@@ -66,7 +66,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 103
+    .line 104
     iget-object p1, p0, Lcom/smedialink/ui/wallet/airdrop/dialog/WalletAirdropDialog$configureDialogState$1$4$1;->this$0:Lcom/smedialink/ui/wallet/airdrop/dialog/WalletAirdropDialog;
 
     invoke-static {p1}, Lcom/smedialink/ui/wallet/airdrop/dialog/WalletAirdropDialog;->access$getFragment$p(Lcom/smedialink/ui/wallet/airdrop/dialog/WalletAirdropDialog;)Lorg/telegram/ui/ActionBar/BaseFragment;
@@ -75,21 +75,21 @@
 
     sget-object v0, Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment;->Companion:Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment$Companion;
 
-    new-instance v1, Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment$ScreenType$Import;
+    new-instance v1, Lcom/smedialink/model/wallet/crypto/create/CreateWalletScreenType$Import;
 
     const/4 v2, 0x0
 
     const/4 v3, 0x3
 
-    invoke-direct {v1, v2, v2, v3, v2}, Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment$ScreenType$Import;-><init>(Ljava/lang/String;Ljava/lang/String;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+    invoke-direct {v1, v2, v2, v3, v2}, Lcom/smedialink/model/wallet/crypto/create/CreateWalletScreenType$Import;-><init>(Ljava/lang/String;Ljava/lang/String;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
 
-    invoke-virtual {v0, v1}, Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment$Companion;->newInstance(Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment$ScreenType;)Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment;
+    invoke-virtual {v0, v1}, Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment$Companion;->newInstance(Lcom/smedialink/model/wallet/crypto/create/CreateWalletScreenType;)Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment;
 
     move-result-object v0
 
     invoke-virtual {p1, v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->presentFragment(Lorg/telegram/ui/ActionBar/BaseFragment;)Z
 
-    .line 104
+    .line 105
     iget-object p1, p0, Lcom/smedialink/ui/wallet/airdrop/dialog/WalletAirdropDialog$configureDialogState$1$4$1;->this$0:Lcom/smedialink/ui/wallet/airdrop/dialog/WalletAirdropDialog;
 
     invoke-virtual {p1}, Lcom/smedialink/ui/base/mvp/MvpAlertDialog;->finishScreen()V

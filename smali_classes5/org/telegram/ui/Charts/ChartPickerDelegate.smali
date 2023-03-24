@@ -134,7 +134,7 @@
 
     sub-float v0, p2, p1
 
-    mul-float v0, v0, p5
+    mul-float/2addr v0, p5
 
     add-float/2addr p1, v0
 
@@ -143,7 +143,7 @@
 
     sub-float p1, p4, p3
 
-    mul-float p1, p1, p5
+    mul-float/2addr p1, p5
 
     add-float/2addr p3, p1
 
@@ -830,7 +830,7 @@
     iput v0, p0, Lorg/telegram/ui/Charts/ChartPickerDelegate;->pickerStart:F
 
     :cond_3
-    const/4 v0, 0x1
+    move v0, v4
 
     :cond_4
     const/4 v5, 0x2
@@ -878,7 +878,7 @@
     iput v5, p0, Lorg/telegram/ui/Charts/ChartPickerDelegate;->pickerEnd:F
 
     :cond_6
-    const/4 v0, 0x1
+    move v0, v4
 
     :cond_7
     const/4 v5, 0x4
@@ -936,7 +936,7 @@
     iput v6, p0, Lorg/telegram/ui/Charts/ChartPickerDelegate;->pickerStart:F
 
     :cond_9
-    const/4 v0, 0x1
+    move v0, v4
 
     :cond_a
     if-eqz v0, :cond_b
@@ -1052,9 +1052,9 @@
 
     if-gez p1, :cond_2
 
-    mul-float p2, p2, p2
+    mul-float/2addr p2, p2
 
-    mul-float v0, v0, v0
+    mul-float/2addr v0, v0
 
     add-float/2addr p2, v0
 
@@ -1072,9 +1072,9 @@
 
     int-to-double v0, v0
 
-    cmpg-double v3, p1, v0
+    cmpg-double p1, p1, v0
 
-    if-gez v3, :cond_2
+    if-gez p1, :cond_2
 
     .line 244
     iget p1, p0, Lorg/telegram/ui/Charts/ChartPickerDelegate;->moveToX:F
@@ -1104,28 +1104,28 @@
 
     const/4 v0, 0x0
 
-    const/high16 v3, 0x3f800000    # 1.0f
+    cmpg-float v3, v1, v0
 
-    cmpg-float v4, v1, v0
+    const/high16 v4, 0x3f800000    # 1.0f
 
-    if-gez v4, :cond_0
+    if-gez v3, :cond_0
 
     move v8, p2
 
-    const/4 v6, 0x0
+    move v6, v0
 
     goto :goto_0
 
     :cond_0
-    cmpl-float v0, p1, v3
+    cmpl-float v0, p1, v4
 
     if-lez v0, :cond_1
 
-    sub-float p1, v3, p2
+    sub-float p1, v4, p2
 
     move v6, p1
 
-    const/high16 v8, 0x3f800000    # 1.0f
+    move v8, v4
 
     goto :goto_0
 
@@ -1235,6 +1235,8 @@
     :cond_7
     :goto_1
     return v1
+
+    nop
 
     :array_0
     .array-data 4

@@ -83,7 +83,7 @@
     goto :goto_0
 
     :catch_0
-    const/4 v1, 0x0
+    move v1, v2
 
     :goto_0
     return v1
@@ -145,7 +145,7 @@
 
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    move v1, v0
 
     :goto_0
     const/16 v2, 0x9
@@ -210,7 +210,7 @@
     return-object p1
 
     :cond_2
-    const/4 v1, 0x1
+    move v1, v3
 
     goto :goto_1
 

@@ -110,10 +110,10 @@
 .method calcElementOffset(J)I
     .locals 0
 
-    long-to-int p2, p1
+    long-to-int p1, p1
 
     .line 125
-    iget p1, p0, Lio/reactivex/internal/queue/SpscArrayQueue;->mask:I
+    iget p2, p0, Lio/reactivex/internal/queue/SpscArrayQueue;->mask:I
 
     and-int/2addr p1, p2
 
@@ -123,9 +123,9 @@
 .method calcElementOffset(JI)I
     .locals 0
 
-    long-to-int p2, p1
+    long-to-int p1, p1
 
-    and-int p1, p2, p3
+    and-int/2addr p1, p3
 
     return p1
 .end method
@@ -155,7 +155,7 @@
 .end method
 
 .method public isEmpty()Z
-    .locals 5
+    .locals 4
 
     .line 103
     iget-object v0, p0, Lio/reactivex/internal/queue/SpscArrayQueue;->producerIndex:Ljava/util/concurrent/atomic/AtomicLong;
@@ -170,9 +170,9 @@
 
     move-result-wide v2
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-nez v4, :cond_0
+    if-nez v0, :cond_0
 
     const/4 v0, 0x1
 
@@ -202,7 +202,7 @@
 .end method
 
 .method public offer(Ljava/lang/Object;)Z
-    .locals 7
+    .locals 6
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TE;)Z"
@@ -232,9 +232,9 @@
     .line 67
     iget-wide v4, p0, Lio/reactivex/internal/queue/SpscArrayQueue;->producerLookAhead:J
 
-    cmp-long v6, v1, v4
+    cmp-long v4, v1, v4
 
-    if-ltz v6, :cond_1
+    if-ltz v4, :cond_1
 
     .line 68
     iget v4, p0, Lio/reactivex/internal/queue/SpscArrayQueue;->lookAheadStep:I

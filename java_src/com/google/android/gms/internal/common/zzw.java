@@ -61,7 +61,7 @@ public abstract class zzw extends zzj {
             java.lang.CharSequence r1 = r5.zzb
             int r1 = r1.length()
             r5.zze = r2
-            r3 = -1
+            r3 = r2
             goto L1d
         L17:
             int r3 = r5.zzc(r1)

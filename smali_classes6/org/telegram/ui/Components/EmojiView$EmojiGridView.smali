@@ -255,7 +255,7 @@
 
     const-wide/16 v2, 0x28
 
-    mul-long v0, v0, v2
+    mul-long/2addr v0, v2
 
     const-wide/16 v2, 0x258
 
@@ -295,7 +295,7 @@
 
     const-wide/16 v2, 0x23
 
-    mul-long v0, v0, v2
+    mul-long/2addr v0, v2
 
     const-wide/16 v2, 0x190
 
@@ -419,7 +419,7 @@
 
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    move v1, v0
 
     .line 3904
     :goto_0
@@ -532,7 +532,7 @@
     :cond_0
     const/4 v9, 0x0
 
-    const/4 v1, 0x0
+    move v1, v9
 
     .line 3784
     :goto_0
@@ -580,11 +580,11 @@
 
     const-wide/16 v3, 0x0
 
+    cmp-long v1, v1, v3
+
     const/4 v10, 0x1
 
-    cmp-long v5, v1, v3
-
-    if-lez v5, :cond_2
+    if-lez v1, :cond_2
 
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
@@ -602,16 +602,16 @@
 
     move-result-wide v3
 
-    cmp-long v5, v1, v3
+    cmp-long v1, v1, v3
 
-    if-gez v5, :cond_2
+    if-gez v1, :cond_2
 
-    const/4 v1, 0x1
+    move v1, v10
 
     goto :goto_1
 
     :cond_2
-    const/4 v1, 0x0
+    move v1, v9
 
     :goto_1
     if-eqz v1, :cond_3
@@ -633,12 +633,12 @@
 
     if-ltz v1, :cond_3
 
-    const/4 v11, 0x1
+    move v11, v10
 
     goto :goto_2
 
     :cond_3
-    const/4 v11, 0x0
+    move v11, v9
 
     .line 3792
     :goto_2
@@ -658,7 +658,7 @@
 
     if-eqz v1, :cond_8
 
-    const/4 v12, 0x0
+    move v12, v9
 
     .line 3793
     :goto_3
@@ -847,7 +847,7 @@
 
     sub-float v14, v4, v1
 
-    mul-float v7, v7, v14
+    mul-float/2addr v7, v14
 
     float-to-int v7, v7
 
@@ -882,7 +882,7 @@
 
     const/high16 v1, 0x3f000000    # 0.5f
 
-    mul-float v14, v14, v1
+    mul-float/2addr v14, v1
 
     add-float/2addr v14, v1
 
@@ -947,7 +947,7 @@
 
     move-result-wide v11
 
-    const/4 v13, 0x0
+    move v13, v9
 
     .line 3830
     :goto_5
@@ -980,7 +980,7 @@
     .line 3833
     iget v4, v3, Lorg/telegram/ui/Components/EmojiView$ImageViewEmoji;->position:I
 
-    const/4 v5, 0x0
+    move v5, v9
 
     .line 3835
     :goto_6
@@ -1266,13 +1266,13 @@
     goto :goto_0
 
     :cond_0
-    const/4 v0, 0x0
+    move v0, v1
 
     goto :goto_1
 
     :cond_1
     :goto_0
-    const/4 v0, 0x1
+    move v0, v2
 
     .line 4095
     :goto_1
@@ -1293,13 +1293,13 @@
     goto :goto_2
 
     :cond_2
-    const/4 v3, 0x0
+    move v3, v1
 
     goto :goto_3
 
     :cond_3
     :goto_2
-    const/4 v3, 0x1
+    move v3, v2
 
     .line 4096
     :goto_3
@@ -1311,12 +1311,12 @@
 
     if-ne v4, v5, :cond_4
 
-    const/4 v4, 0x1
+    move v4, v2
 
     goto :goto_4
 
     :cond_4
-    const/4 v4, 0x0
+    move v4, v1
 
     :goto_4
     if-nez v0, :cond_5
@@ -1485,7 +1485,7 @@
 
     const/high16 v8, 0x40400000    # 3.0f
 
-    mul-float v3, v3, v8
+    mul-float/2addr v3, v8
 
     float-to-double v10, v3
 
@@ -1558,11 +1558,6 @@
 
     goto :goto_5
 
-    :catch_0
-    nop
-
-    goto :goto_5
-
     .line 4140
     :cond_a
     instance-of v7, v3, Lorg/telegram/ui/Components/EmojiView$EmojiPackExpand;
@@ -1595,6 +1590,7 @@
     .line 4147
     invoke-virtual {v3}, Landroid/view/View;->callOnClick()Z
 
+    :catch_0
     :cond_c
     :goto_5
     if-eqz v0, :cond_d
@@ -1658,12 +1654,10 @@
     if-lez p1, :cond_10
 
     :cond_f
-    const/4 v1, 0x1
+    move v1, v2
 
     :cond_10
     return v1
-
-    nop
 
     :array_0
     .array-data 4
@@ -1701,7 +1695,7 @@
 
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    move v1, v0
 
     .line 3886
     :goto_0
@@ -2076,9 +2070,9 @@
 
     move-result v0
 
-    const/4 v2, 0x0
-
     cmpl-float v0, v0, v5
+
+    const/4 v2, 0x0
 
     if-eqz v0, :cond_3
 
@@ -2136,7 +2130,7 @@
     goto :goto_0
 
     :cond_1
-    const/4 v0, 0x1
+    move v0, v6
 
     goto :goto_1
 
@@ -2153,7 +2147,7 @@
     invoke-static {v0, v5}, Lorg/telegram/ui/Components/EmojiView;->access$6802(Lorg/telegram/ui/Components/EmojiView;F)F
 
     :cond_3
-    const/4 v0, 0x0
+    move v0, v2
 
     :goto_1
     if-nez v0, :cond_11
@@ -2239,7 +2233,7 @@
 
     if-gez p1, :cond_4
 
-    const/4 v3, 0x0
+    move v3, v2
 
     goto :goto_2
 

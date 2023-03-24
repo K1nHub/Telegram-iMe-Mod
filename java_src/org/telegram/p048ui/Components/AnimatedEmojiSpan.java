@@ -54,7 +54,7 @@ public class AnimatedEmojiSpan extends ReplacementSpan {
     }
 
     public AnimatedEmojiSpan(TLRPC$Document tLRPC$Document, Paint.FontMetricsInt fontMetricsInt) {
-        this(tLRPC$Document.f1507id, 1.2f, fontMetricsInt);
+        this(tLRPC$Document.f1508id, 1.2f, fontMetricsInt);
         this.document = tLRPC$Document;
     }
 
@@ -93,7 +93,7 @@ public class AnimatedEmojiSpan extends ReplacementSpan {
 
     public long getDocumentId() {
         TLRPC$Document tLRPC$Document = this.document;
-        return tLRPC$Document != null ? tLRPC$Document.f1507id : this.documentId;
+        return tLRPC$Document != null ? tLRPC$Document.f1508id : this.documentId;
     }
 
     public void replaceFontMetrics(Paint.FontMetricsInt fontMetricsInt) {
@@ -404,7 +404,8 @@ public class AnimatedEmojiSpan extends ReplacementSpan {
             } else {
                 Spanned spanned = (Spanned) layout.getText();
                 animatedEmojiSpanArr = (AnimatedEmojiSpan[]) spanned.getSpans(i3, spanned.length(), AnimatedEmojiSpan.class);
-                for (int i5 = 0; animatedEmojiSpanArr != null && i5 < animatedEmojiSpanArr.length; i5++) {
+                int i5 = i3;
+                while (animatedEmojiSpanArr != null && i5 < animatedEmojiSpanArr.length) {
                     AnimatedEmojiSpan animatedEmojiSpan = animatedEmojiSpanArr[i5];
                     if (animatedEmojiSpan != null) {
                         if (z2 && (layout.getText() instanceof Spannable)) {
@@ -418,7 +419,7 @@ public class AnimatedEmojiSpan extends ReplacementSpan {
                         if (emojiGroupedSpans2 == null) {
                             emojiGroupedSpans2 = new EmojiGroupedSpans();
                         }
-                        int i6 = 0;
+                        int i6 = i3;
                         while (true) {
                             if (i6 >= emojiGroupedSpans2.holders.size()) {
                                 animatedEmojiHolder = null;
@@ -459,6 +460,8 @@ public class AnimatedEmojiSpan extends ReplacementSpan {
                             animatedEmojiHolder.insideSpoiler = isInsideSpoiler(layout, spanned.getSpanStart(animatedEmojiSpan), spanned.getSpanEnd(animatedEmojiSpan));
                         }
                     }
+                    i5++;
+                    i3 = 0;
                 }
             }
             if (emojiGroupedSpans2 != null) {

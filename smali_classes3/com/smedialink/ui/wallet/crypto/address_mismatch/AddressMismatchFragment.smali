@@ -624,7 +624,7 @@
 
     const/4 v3, 0x0
 
-    invoke-static {p0, v0, v1, v2, v3}, Lcom/smedialink/ui/wallet/crypto/address_mismatch/AddressMismatchPresenter;->deleteActiveEthWallet$default(Lcom/smedialink/ui/wallet/crypto/address_mismatch/AddressMismatchPresenter;JILjava/lang/Object;)V
+    invoke-static {p0, v0, v1, v2, v3}, Lcom/smedialink/ui/wallet/crypto/address_mismatch/AddressMismatchPresenter;->deleteActiveWallet$default(Lcom/smedialink/ui/wallet/crypto/address_mismatch/AddressMismatchPresenter;JILjava/lang/Object;)V
 
     return-void
 .end method

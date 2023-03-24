@@ -14,7 +14,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nEVMWalletTransferDataSourceImpl.kt\nKotlin\n*S Kotlin\n*F\n+ 1 EVMWalletTransferDataSourceImpl.kt\ncom/smedialink/storage/data/datasource/transfer/impl/EVMWalletTransferDataSourceImpl\n+ 2 FirebaseExt.kt\ncom/smedialink/storage/data/utils/extentions/FirebaseExtKt\n+ 3 ObservableExt.kt\ncom/smedialink/storage/domain/utils/extentions/ObservableExtKt\n+ 4 ResultExt.kt\ncom/smedialink/storage/domain/utils/extentions/ResultExtKt\n+ 5 RxExt.kt\ncom/smedialink/storage/data/utils/extentions/RxExtKt\n*L\n1#1,107:1\n70#2:108\n15#3:109\n8#4:110\n18#5:111\n*S KotlinDebug\n*F\n+ 1 EVMWalletTransferDataSourceImpl.kt\ncom/smedialink/storage/data/datasource/transfer/impl/EVMWalletTransferDataSourceImpl\n*L\n54#1:108\n57#1:109\n76#1:110\n76#1:111\n*E\n"
+    value = "SMAP\nEVMWalletTransferDataSourceImpl.kt\nKotlin\n*S Kotlin\n*F\n+ 1 EVMWalletTransferDataSourceImpl.kt\ncom/smedialink/storage/data/datasource/transfer/impl/EVMWalletTransferDataSourceImpl\n+ 2 FirebaseExt.kt\ncom/smedialink/storage/data/utils/extentions/FirebaseExtKt\n+ 3 ObservableExt.kt\ncom/smedialink/storage/domain/utils/extentions/ObservableExtKt\n+ 4 ResultExt.kt\ncom/smedialink/storage/domain/utils/extentions/ResultExtKt\n+ 5 RxExt.kt\ncom/smedialink/storage/data/utils/extentions/RxExtKt\n*L\n1#1,104:1\n70#2:105\n15#3:106\n11#4:107\n18#5:108\n*S KotlinDebug\n*F\n+ 1 EVMWalletTransferDataSourceImpl.kt\ncom/smedialink/storage/data/datasource/transfer/impl/EVMWalletTransferDataSourceImpl\n*L\n53#1:105\n56#1:106\n75#1:107\n75#1:108\n*E\n"
 .end annotation
 
 
@@ -60,19 +60,19 @@
 
     invoke-static {p4, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 32
+    .line 31
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 33
+    .line 32
     iput-object p1, p0, Lcom/smedialink/storage/data/datasource/transfer/impl/EVMWalletTransferDataSourceImpl;->firebaseErrorHandler:Lcom/smedialink/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler;
 
-    .line 34
+    .line 33
     iput-object p2, p0, Lcom/smedialink/storage/data/datasource/transfer/impl/EVMWalletTransferDataSourceImpl;->cryptoWalletApi:Lcom/smedialink/storage/data/network/api/own/CryptoWalletApi;
 
-    .line 35
+    .line 34
     iput-object p3, p0, Lcom/smedialink/storage/data/datasource/transfer/impl/EVMWalletTransferDataSourceImpl;->cryptoAccessManager:Lcom/smedialink/storage/domain/manager/crypto/CryptoAccessManager;
 
-    .line 36
+    .line 35
     iput-object p4, p0, Lcom/smedialink/storage/data/datasource/transfer/impl/EVMWalletTransferDataSourceImpl;->walletApi:Lcom/smedialink/storage/data/network/api/own/WalletApi;
 
     return-void
@@ -81,7 +81,7 @@
 .method public static final synthetic access$getCryptoWalletApi$p(Lcom/smedialink/storage/data/datasource/transfer/impl/EVMWalletTransferDataSourceImpl;)Lcom/smedialink/storage/data/network/api/own/CryptoWalletApi;
     .locals 0
 
-    .line 32
+    .line 31
     iget-object p0, p0, Lcom/smedialink/storage/data/datasource/transfer/impl/EVMWalletTransferDataSourceImpl;->cryptoWalletApi:Lcom/smedialink/storage/data/network/api/own/CryptoWalletApi;
 
     return-object p0
@@ -90,7 +90,7 @@
 .method public static final synthetic access$getFirebaseErrorHandler$p(Lcom/smedialink/storage/data/datasource/transfer/impl/EVMWalletTransferDataSourceImpl;)Lcom/smedialink/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler;
     .locals 0
 
-    .line 32
+    .line 31
     iget-object p0, p0, Lcom/smedialink/storage/data/datasource/transfer/impl/EVMWalletTransferDataSourceImpl;->firebaseErrorHandler:Lcom/smedialink/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler;
 
     return-object p0
@@ -103,7 +103,7 @@
 
     new-array v0, v0, [Lorg/web3j/abi/datatypes/Type;
 
-    .line 98
+    .line 96
     new-instance v1, Lorg/web3j/abi/datatypes/Address;
 
     invoke-direct {v1, p1}, Lorg/web3j/abi/datatypes/Address;-><init>(Ljava/lang/String;)V
@@ -140,7 +140,7 @@
 .method private final createTransactionByType(Lcom/smedialink/storage/domain/model/crypto/send/TransferArgs$EVM;)Lorg/web3j/crypto/RawTransaction;
     .locals 8
 
-    .line 84
+    .line 83
     invoke-virtual {p1}, Lcom/smedialink/storage/domain/model/crypto/send/TransferArgs$EVM;->getContractAddress()Ljava/lang/String;
 
     move-result-object v0
@@ -165,11 +165,11 @@
     const/4 v0, 0x1
 
     :goto_1
-    const-string v1, "{\n            RawTransac\u2026)\n            )\n        }"
+    const-string v1, "{\n                RawTra\u2026          )\n            }"
 
     if-eqz v0, :cond_2
 
-    .line 86
+    .line 85
     invoke-virtual {p1}, Lcom/smedialink/storage/domain/model/crypto/send/TransferArgs$EVM;->getNonce()Ljava/math/BigInteger;
 
     move-result-object v0
@@ -182,7 +182,7 @@
 
     move-result-object v3
 
-    .line 87
+    .line 86
     invoke-virtual {p1}, Lcom/smedialink/storage/domain/model/crypto/send/TransferArgs$EVM;->getRecipientAddress()Ljava/lang/String;
 
     move-result-object v4
@@ -203,17 +203,17 @@
 
     move-result-object p1
 
-    .line 85
+    .line 84
     invoke-static {v0, v2, v3, v4, p1}, Lorg/web3j/crypto/RawTransaction;->createEtherTransaction(Ljava/math/BigInteger;Ljava/math/BigInteger;Ljava/math/BigInteger;Ljava/lang/String;Ljava/math/BigInteger;)Lorg/web3j/crypto/RawTransaction;
 
     move-result-object p1
 
-    .line 84
+    .line 83
     invoke-static {p1, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     goto :goto_2
 
-    .line 91
+    .line 90
     :cond_2
     invoke-virtual {p1}, Lcom/smedialink/storage/domain/model/crypto/send/TransferArgs$EVM;->getNonce()Ljava/math/BigInteger;
 
@@ -227,7 +227,7 @@
 
     move-result-object v3
 
-    .line 92
+    .line 91
     invoke-virtual {p1}, Lcom/smedialink/storage/domain/model/crypto/send/TransferArgs$EVM;->getContractAddress()Ljava/lang/String;
 
     move-result-object v4
@@ -256,12 +256,12 @@
 
     move-result-object p1
 
-    .line 90
+    .line 89
     invoke-static {v0, v2, v3, v4, p1}, Lorg/web3j/crypto/RawTransaction;->createTransaction(Ljava/math/BigInteger;Ljava/math/BigInteger;Ljava/math/BigInteger;Ljava/lang/String;Ljava/lang/String;)Lorg/web3j/crypto/RawTransaction;
 
     move-result-object p1
 
-    .line 89
+    .line 88
     invoke-static {p1, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     :goto_2
@@ -295,31 +295,31 @@
 
     invoke-static {p4, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 45
+    .line 44
     iget-object v0, p0, Lcom/smedialink/storage/data/datasource/transfer/impl/EVMWalletTransferDataSourceImpl;->walletApi:Lcom/smedialink/storage/data/network/api/own/WalletApi;
 
-    .line 47
+    .line 46
     new-instance v1, Lcom/smedialink/storage/data/network/model/request/crypto/wallet/GetDataForCryptoTransferRequest;
 
-    .line 48
+    .line 47
     invoke-virtual {p1}, Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;->getName()Ljava/lang/String;
 
     move-result-object p1
 
-    .line 51
+    .line 50
     invoke-virtual {p4}, Ljava/lang/Enum;->name()Ljava/lang/String;
 
     move-result-object p4
 
-    .line 47
+    .line 46
     invoke-direct {v1, p1, p2, p3, p4}, Lcom/smedialink/storage/data/network/model/request/crypto/wallet/GetDataForCryptoTransferRequest;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 46
-    invoke-interface {v0, v1}, Lcom/smedialink/storage/data/network/api/own/WalletApi;->getDataForCryptoTransfer(Lcom/smedialink/storage/data/network/model/request/crypto/wallet/GetDataForCryptoTransferRequest;)Lio/reactivex/Observable;
+    .line 45
+    invoke-interface {v0, v1}, Lcom/smedialink/storage/data/network/api/own/WalletApi;->getEVMCryptoTransferData(Lcom/smedialink/storage/data/network/model/request/crypto/wallet/GetDataForCryptoTransferRequest;)Lio/reactivex/Observable;
 
     move-result-object p1
 
-    .line 54
+    .line 53
     iget-object p2, p0, Lcom/smedialink/storage/data/datasource/transfer/impl/EVMWalletTransferDataSourceImpl;->firebaseErrorHandler:Lcom/smedialink/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler;
 
     .line 70
@@ -360,24 +360,24 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 66
+    .line 65
     instance-of v0, p1, Lcom/smedialink/storage/domain/model/crypto/send/TransferArgs$EVM;
 
     if-eqz v0, :cond_1
 
-    .line 68
+    .line 67
     check-cast p1, Lcom/smedialink/storage/domain/model/crypto/send/TransferArgs$EVM;
 
     invoke-direct {p0, p1}, Lcom/smedialink/storage/data/datasource/transfer/impl/EVMWalletTransferDataSourceImpl;->createTransactionByType(Lcom/smedialink/storage/domain/model/crypto/send/TransferArgs$EVM;)Lorg/web3j/crypto/RawTransaction;
 
     move-result-object v0
 
-    .line 71
+    .line 70
     invoke-virtual {p1}, Lcom/smedialink/storage/domain/model/crypto/send/TransferArgs$EVM;->getChainId()J
 
     move-result-wide v1
 
-    .line 72
+    .line 71
     iget-object p1, p0, Lcom/smedialink/storage/data/datasource/transfer/impl/EVMWalletTransferDataSourceImpl;->cryptoAccessManager:Lcom/smedialink/storage/domain/manager/crypto/CryptoAccessManager;
 
     invoke-interface {p1}, Lcom/smedialink/storage/domain/manager/crypto/CryptoAccessManager;->getEVMWallet()Lcom/smedialink/storage/domain/model/crypto/Wallet$EVM;
@@ -395,18 +395,22 @@
     :cond_0
     const/4 p1, 0x0
 
-    .line 69
+    .line 68
     :goto_0
     invoke-static {v0, v1, v2, p1}, Lorg/web3j/crypto/TransactionEncoder;->signMessage(Lorg/web3j/crypto/RawTransaction;JLorg/web3j/crypto/Credentials;)[B
 
     move-result-object p1
 
-    .line 76
+    .line 75
     invoke-static {p1}, Lorg/web3j/utils/Numeric;->toHexString([B)Ljava/lang/String;
 
     move-result-object p1
 
-    .line 8
+    const-string v0, "toHexString(signedTransaction)"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 11
     sget-object v0, Lcom/smedialink/storage/domain/model/Result;->Companion:Lcom/smedialink/storage/domain/model/Result$Companion;
 
     invoke-virtual {v0, p1}, Lcom/smedialink/storage/domain/model/Result$Companion;->success(Ljava/lang/Object;)Lcom/smedialink/storage/domain/model/Result;
@@ -424,7 +428,7 @@
 
     return-object p1
 
-    .line 66
+    .line 65
     :cond_1
     new-instance p1, Ljava/lang/IllegalStateException;
 
@@ -438,7 +442,7 @@
 .method public bridge synthetic sign(Ljava/lang/Object;)Lio/reactivex/Observable;
     .locals 0
 
-    .line 32
+    .line 31
     check-cast p1, Lcom/smedialink/storage/domain/model/crypto/send/TransactionArgs;
 
     invoke-virtual {p0, p1}, Lcom/smedialink/storage/data/datasource/transfer/impl/EVMWalletTransferDataSourceImpl;->sign(Lcom/smedialink/storage/domain/model/crypto/send/TransactionArgs;)Lio/reactivex/Observable;
@@ -466,7 +470,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 57
+    .line 56
     invoke-virtual {p0, p1}, Lcom/smedialink/storage/data/datasource/transfer/impl/EVMWalletTransferDataSourceImpl;->sign(Lcom/smedialink/storage/domain/model/crypto/send/TransactionArgs;)Lio/reactivex/Observable;
 
     move-result-object p1

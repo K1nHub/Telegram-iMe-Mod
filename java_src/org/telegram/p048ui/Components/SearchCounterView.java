@@ -35,7 +35,7 @@ public class SearchCounterView extends View {
     String currentString;
 
     /* renamed from: dx */
-    float f1802dx;
+    float f1803dx;
     int gravity;
     public float horizontalPadding;
     int lastH;
@@ -46,7 +46,7 @@ public class SearchCounterView extends View {
     TextPaint textPaint;
 
     /* renamed from: x */
-    float f1803x;
+    float f1804x;
 
     public SearchCounterView(Context context, Theme.ResourcesProvider resourcesProvider) {
         super(context);
@@ -55,7 +55,7 @@ public class SearchCounterView extends View {
         this.countChangeProgress = 1.0f;
         this.textColorKey = "chat_searchPanelText";
         this.gravity = 17;
-        this.f1802dx = BitmapDescriptorFactory.HUE_RED;
+        this.f1803dx = BitmapDescriptorFactory.HUE_RED;
         this.resourcesProvider = resourcesProvider;
         this.textPaint.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
         this.textPaint.setTextSize(AndroidUtilities.m50dp(15));
@@ -74,6 +74,7 @@ public class SearchCounterView extends View {
     }
 
     public void setCount(String str, int i, boolean z) {
+        boolean z2;
         String str2 = str;
         String str3 = this.currentString;
         if (str3 == null || !str3.equals(str2)) {
@@ -81,11 +82,12 @@ public class SearchCounterView extends View {
             if (valueAnimator != null) {
                 valueAnimator.cancel();
             }
-            boolean z2 = (this.currentCount == 0 || i <= 0 || str2 == null || LocaleController.isRTL || TextUtils.isEmpty(str)) ? false : z;
-            if (z2 && str2 != null && !str2.contains("**")) {
-                z2 = false;
+            boolean z3 = (this.currentCount == 0 || i <= 0 || str2 == null || LocaleController.isRTL || TextUtils.isEmpty(str)) ? false : z;
+            if (z3 && str2 != null && !str2.contains("**")) {
+                z3 = false;
             }
-            if (!z2) {
+            int i2 = 12;
+            if (!z3) {
                 if (str2 != null) {
                     str2 = str2.replaceAll("\\*\\*", "");
                 }
@@ -99,8 +101,8 @@ public class SearchCounterView extends View {
                 }
                 invalidate();
             }
-            this.f1802dx = BitmapDescriptorFactory.HUE_RED;
-            if (z2) {
+            this.f1803dx = BitmapDescriptorFactory.HUE_RED;
+            if (z3) {
                 ValueAnimator valueAnimator2 = this.countAnimator;
                 if (valueAnimator2 != null) {
                     valueAnimator2.cancel();
@@ -139,56 +141,64 @@ public class SearchCounterView extends View {
                     SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(str4);
                     SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder(str2);
                     SpannableStringBuilder spannableStringBuilder3 = new SpannableStringBuilder(str2);
-                    boolean z3 = Integer.toString(this.currentCount).length() != Integer.toString(i).length();
+                    boolean z4 = Integer.toString(this.currentCount).length() != Integer.toString(i).length();
                     int min = Math.min(str4.length(), str2.length());
                     if (indexOf > 0) {
                         spannableStringBuilder.setSpan(new EmptyStubSpan(), 0, indexOf, 33);
                         spannableStringBuilder2.setSpan(new EmptyStubSpan(), 0, indexOf, 33);
                         spannableStringBuilder3.setSpan(new EmptyStubSpan(), 0, indexOf, 33);
                     }
-                    int i2 = 0;
-                    boolean z4 = false;
-                    boolean z5 = false;
                     int i3 = 0;
-                    for (int i4 = indexOf; i4 < min; i4++) {
-                        if (!z4 && !z5) {
-                            if (z3) {
-                                spannableStringBuilder3.setSpan(new EmptyStubSpan(), i4, i4 + 1, 33);
-                            } else if (str4.charAt(i4) == str2.charAt(i4)) {
-                                int i5 = i4 + 1;
-                                spannableStringBuilder.setSpan(new EmptyStubSpan(), i4, i5, 33);
-                                spannableStringBuilder2.setSpan(new EmptyStubSpan(), i4, i5, 33);
+                    boolean z5 = false;
+                    boolean z6 = false;
+                    int i4 = 0;
+                    int i5 = indexOf;
+                    while (i5 < min) {
+                        if (!z5 && !z6) {
+                            if (z4) {
+                                spannableStringBuilder3.setSpan(new EmptyStubSpan(), i5, i5 + 1, 33);
+                            } else if (str4.charAt(i5) == str2.charAt(i5)) {
+                                int i6 = i5 + 1;
+                                spannableStringBuilder.setSpan(new EmptyStubSpan(), i5, i6, 33);
+                                spannableStringBuilder2.setSpan(new EmptyStubSpan(), i5, i6, 33);
                             } else {
-                                spannableStringBuilder3.setSpan(new EmptyStubSpan(), i4, i4 + 1, 33);
+                                spannableStringBuilder3.setSpan(new EmptyStubSpan(), i5, i5 + 1, 33);
                             }
                         }
-                        if (!Character.isDigit(str2.charAt(i4))) {
-                            spannableStringBuilder2.setSpan(new EmptyStubSpan(), i4, str2.length(), 33);
-                            i3 = i4;
-                            z4 = true;
-                        }
-                        if (!Character.isDigit(str4.charAt(i4))) {
-                            spannableStringBuilder.setSpan(new EmptyStubSpan(), i4, str4.length(), 33);
-                            i2 = i4;
+                        if (!Character.isDigit(str2.charAt(i5))) {
+                            spannableStringBuilder2.setSpan(new EmptyStubSpan(), i5, str2.length(), 33);
+                            i4 = i5;
                             z5 = true;
                         }
+                        if (!Character.isDigit(str4.charAt(i5))) {
+                            spannableStringBuilder.setSpan(new EmptyStubSpan(), i5, str4.length(), 33);
+                            i3 = i5;
+                            z6 = true;
+                        }
+                        i5++;
+                        i2 = 12;
                     }
-                    int max = Math.max(AndroidUtilities.m50dp(12), (int) Math.ceil(this.textPaint.measureText(str4)));
-                    int max2 = Math.max(AndroidUtilities.m50dp(12), (int) Math.ceil(this.textPaint.measureText(str2)));
+                    int i7 = i2;
+                    int max = Math.max(AndroidUtilities.m50dp(i7), (int) Math.ceil(this.textPaint.measureText(str4)));
+                    int max2 = Math.max(AndroidUtilities.m50dp(i7), (int) Math.ceil(this.textPaint.measureText(str2)));
                     this.countOldLayout = new StaticLayout(spannableStringBuilder, this.textPaint, max, Layout.Alignment.ALIGN_CENTER, 1.0f, BitmapDescriptorFactory.HUE_RED, false);
                     this.countAnimationStableLayout = new StaticLayout(spannableStringBuilder3, this.textPaint, max2, Layout.Alignment.ALIGN_CENTER, 1.0f, BitmapDescriptorFactory.HUE_RED, false);
                     this.countAnimationInLayout = new StaticLayout(spannableStringBuilder2, this.textPaint, max2, Layout.Alignment.ALIGN_CENTER, 1.0f, BitmapDescriptorFactory.HUE_RED, false);
                     if (indexOf > 0) {
                         SpannableStringBuilder spannableStringBuilder4 = new SpannableStringBuilder(str2);
+                        z2 = false;
                         spannableStringBuilder4.setSpan(new EmptyStubSpan(), indexOf, str2.length(), 0);
                         this.countAnimationStableLayout2 = new StaticLayout(spannableStringBuilder4, this.textPaint, max2, Layout.Alignment.ALIGN_CENTER, 1.0f, BitmapDescriptorFactory.HUE_RED, false);
                     } else {
+                        z2 = false;
                         this.countAnimationStableLayout2 = null;
                     }
-                    this.f1802dx = this.countOldLayout.getPrimaryHorizontal(i2) - this.countAnimationStableLayout.getPrimaryHorizontal(i3);
+                    this.f1803dx = this.countOldLayout.getPrimaryHorizontal(i3) - this.countAnimationStableLayout.getPrimaryHorizontal(i4);
+                } else {
+                    z2 = false;
                 }
                 this.countWidthOld = this.countWidth;
-                this.countAnimationIncrement = i < this.currentCount;
+                this.countAnimationIncrement = i < this.currentCount ? true : z2;
                 this.countAnimator.start();
             }
             if (i > 0) {
@@ -228,7 +238,7 @@ public class SearchCounterView extends View {
             }
             updateX(f);
             RectF rectF = this.rectF;
-            float f3 = this.f1803x;
+            float f3 = this.f1804x;
             rectF.set(f3, measuredHeight, f + f3 + AndroidUtilities.m50dp(11), AndroidUtilities.m50dp(23) + measuredHeight);
             boolean z = this.countAnimationIncrement;
             if (this.countAnimationInLayout != null) {
@@ -265,7 +275,7 @@ public class SearchCounterView extends View {
             }
             if (this.countAnimationStableLayout != null) {
                 canvas.save();
-                canvas.translate(this.countLeft + (this.f1802dx * (1.0f - this.countChangeProgress)), AndroidUtilities.m50dp(2) + measuredHeight);
+                canvas.translate(this.countLeft + (this.f1803dx * (1.0f - this.countChangeProgress)), AndroidUtilities.m50dp(2) + measuredHeight);
                 this.textPaint.setAlpha(255);
                 this.countAnimationStableLayout.draw(canvas);
                 canvas.restore();
@@ -299,7 +309,7 @@ public class SearchCounterView extends View {
         } else {
             this.countLeft = (int) ((getMeasuredWidth() - f) / 2.0f);
         }
-        this.f1803x = this.countLeft - AndroidUtilities.m51dp(5.5f);
+        this.f1804x = this.countLeft - AndroidUtilities.m51dp(5.5f);
     }
 
     private void drawInternal(Canvas canvas) {

@@ -130,7 +130,7 @@
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_0
     if-ge v2, v0, :cond_0
@@ -459,7 +459,7 @@
 
     new-array v2, v0, [Lorg/telegram/tgnet/TLObject;
 
-    const/4 v3, 0x0
+    move v3, v1
 
     :goto_0
     if-ge v3, v0, :cond_1
@@ -530,7 +530,7 @@
 .end method
 
 .method public commitTransition(ZZ)V
-    .locals 11
+    .locals 10
 
     .line 83
     iget-boolean v0, p0, Lorg/telegram/ui/Components/AvatarsDrawable;->wasDraw:Z
@@ -550,9 +550,9 @@
 
     const/4 v2, 0x0
 
-    const/4 v3, 0x0
+    move v3, v2
 
-    const/4 v4, 0x0
+    move v4, v3
 
     :goto_0
     const/4 v5, 0x1
@@ -581,11 +581,11 @@
 
     move-result-wide v8
 
-    cmp-long v10, v6, v8
+    cmp-long v6, v6, v8
 
-    if-eqz v10, :cond_1
+    if-eqz v6, :cond_1
 
-    const/4 v4, 0x1
+    move v4, v5
 
     goto :goto_1
 
@@ -619,14 +619,14 @@
     return-void
 
     :cond_3
-    const/4 v1, 0x0
+    move v1, v2
 
     :goto_2
     const/4 v3, 0x2
 
     if-ge v1, p1, :cond_8
 
-    const/4 v4, 0x0
+    move v4, v2
 
     :goto_3
     if-ge v4, p1, :cond_6
@@ -648,9 +648,9 @@
 
     move-result-wide v8
 
-    cmp-long v10, v6, v8
+    cmp-long v6, v6, v8
 
-    if-nez v10, :cond_5
+    if-nez v6, :cond_5
 
     const/4 v6, 0x0
 
@@ -717,7 +717,7 @@
     invoke-static {v3, v4}, Lorg/telegram/ui/Components/AvatarsDrawable$DrawingState;->access$402(Lorg/telegram/ui/Components/AvatarsDrawable$DrawingState;I)I
 
     :goto_4
-    const/4 v3, 0x1
+    move v3, v5
 
     goto :goto_5
 
@@ -727,7 +727,7 @@
     goto :goto_3
 
     :cond_6
-    const/4 v3, 0x0
+    move v3, v2
 
     :goto_5
     if-nez v3, :cond_7
@@ -745,7 +745,7 @@
     goto :goto_2
 
     :cond_8
-    const/4 v1, 0x0
+    move v1, v2
 
     :goto_6
     if-ge v1, p1, :cond_a
@@ -1022,7 +1022,7 @@
 
     :cond_1
     :goto_0
-    const/4 v13, 0x1
+    move v13, v9
 
     .line 355
     :goto_1
@@ -1059,7 +1059,7 @@
 
     const v2, 0x3f4ccccd    # 0.8f
 
-    mul-float v1, v1, v2
+    mul-float/2addr v1, v2
 
     float-to-int v1, v1
 
@@ -1104,9 +1104,9 @@
 
     move-result-wide v5
 
-    cmp-long v7, v5, v3
+    cmp-long v3, v5, v3
 
-    if-eqz v7, :cond_5
+    if-eqz v3, :cond_5
 
     add-int/lit8 v2, v2, 0x1
 
@@ -1158,12 +1158,12 @@
 
     if-eqz v13, :cond_9
 
-    const/16 v2, 0x8
+    move/from16 v2, v18
 
     goto :goto_8
 
     :cond_9
-    const/4 v2, 0x4
+    move v2, v11
 
     :goto_8
     invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
@@ -1199,7 +1199,7 @@
 
     if-eqz v1, :cond_b
 
-    const/4 v1, 0x1
+    move v1, v9
 
     goto :goto_a
 
@@ -1305,7 +1305,7 @@
 
     :cond_12
     :goto_e
-    const/16 v21, 0x1
+    move/from16 v21, v9
 
     :goto_f
     const/16 v22, 0x10
@@ -1326,7 +1326,7 @@
     goto :goto_10
 
     :cond_13
-    const/4 v1, 0x0
+    move/from16 v1, v23
 
     :goto_10
     neg-float v3, v1
@@ -1352,11 +1352,11 @@
 
     move v2, v3
 
-    const/4 v12, 0x5
+    move v12, v5
 
     move/from16 v5, v24
 
-    const/4 v12, 0x2
+    move v12, v6
 
     move/from16 v6, v25
 
@@ -1367,10 +1367,10 @@
     goto :goto_11
 
     :cond_14
-    const/4 v12, 0x2
+    move v12, v6
 
     :goto_11
-    const/4 v6, 0x2
+    move v6, v12
 
     :goto_12
     if-ltz v6, :cond_3c
@@ -1460,12 +1460,12 @@
 
     if-eqz v13, :cond_19
 
-    const/16 v7, 0x8
+    move/from16 v7, v18
 
     goto :goto_16
 
     :cond_19
-    const/4 v7, 0x4
+    move v7, v11
 
     :goto_16
     invoke-static {v7}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
@@ -1516,7 +1516,7 @@
     :cond_1c
     if-ne v5, v11, :cond_1d
 
-    const/16 v5, 0x8
+    move/from16 v5, v18
 
     goto :goto_19
 
@@ -1591,7 +1591,7 @@
     sub-float v5, v2, v5
 
     :goto_1c
-    const/4 v7, 0x1
+    move v7, v9
 
     goto/16 :goto_21
 
@@ -1649,12 +1649,12 @@
 
     if-eqz v13, :cond_21
 
-    const/16 v7, 0x8
+    move/from16 v7, v18
 
     goto :goto_1d
 
     :cond_21
-    const/4 v7, 0x4
+    move v7, v11
 
     :goto_1d
     invoke-static {v7}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
@@ -1691,13 +1691,13 @@
     .line 435
     iget v10, v0, Lorg/telegram/ui/Components/AvatarsDrawable;->transitionProgress:F
 
-    mul-float v5, v5, v10
+    mul-float/2addr v5, v10
 
     int-to-float v7, v7
 
     sub-float v10, v2, v10
 
-    mul-float v7, v7, v10
+    mul-float/2addr v7, v10
 
     add-float/2addr v5, v7
 
@@ -1732,12 +1732,12 @@
 
     if-eqz v13, :cond_24
 
-    const/16 v7, 0x8
+    move/from16 v7, v18
 
     goto :goto_1f
 
     :cond_24
-    const/4 v7, 0x4
+    move v7, v11
 
     :goto_1f
     invoke-static {v7}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
@@ -1759,13 +1759,13 @@
     .line 440
     iget v10, v0, Lorg/telegram/ui/Components/AvatarsDrawable;->transitionProgress:F
 
-    mul-float v5, v5, v10
+    mul-float/2addr v5, v10
 
     int-to-float v7, v7
 
     sub-float v10, v2, v10
 
-    mul-float v7, v7, v10
+    mul-float/2addr v7, v10
 
     add-float/2addr v5, v7
 
@@ -1775,7 +1775,7 @@
 
     :cond_25
     :goto_20
-    const/high16 v5, 0x3f800000    # 1.0f
+    move v5, v2
 
     const/4 v7, 0x0
 
@@ -1783,7 +1783,7 @@
     :goto_21
     iget v10, v0, Lorg/telegram/ui/Components/AvatarsDrawable;->overrideAlpha:F
 
-    mul-float v5, v5, v10
+    mul-float/2addr v5, v10
 
     .line 446
     array-length v10, v3
@@ -1878,7 +1878,7 @@
 
     int-to-float v12, v10
 
-    mul-float v12, v12, v5
+    mul-float/2addr v12, v5
 
     float-to-int v12, v12
 
@@ -2079,7 +2079,7 @@
 
     const/high16 v11, 0x41700000    # 15.0f
 
-    mul-float v2, v2, v11
+    mul-float/2addr v2, v11
 
     .line 492
     aget-object v11, v3, v6
@@ -2390,7 +2390,7 @@
 
     const/high16 v9, 0x41700000    # 15.0f
 
-    mul-float v2, v2, v9
+    mul-float/2addr v2, v9
 
     .line 462
     aget-object v9, v3, v6
@@ -2603,7 +2603,7 @@
 
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    move v1, v0
 
     .line 592
     :goto_0
@@ -3210,7 +3210,7 @@
     goto :goto_5
 
     :cond_a
-    const/4 v3, 0x0
+    move v3, v6
 
     .line 346
     :cond_b

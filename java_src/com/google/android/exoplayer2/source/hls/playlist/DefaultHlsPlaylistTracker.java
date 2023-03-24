@@ -521,7 +521,10 @@ public final class DefaultHlsPlaylistTracker implements HlsPlaylistTracker, Load
                 }
             }
             this.earliestNextLoadTimeMs = elapsedRealtime + Util.usToMs(j);
-            if (!((this.playlistSnapshot.partTargetDurationUs != C0468C.TIME_UNSET || this.playlistUrl.equals(DefaultHlsPlaylistTracker.this.primaryMediaPlaylistUrl)) ? true : true) || this.playlistSnapshot.hasEndTag) {
+            if (this.playlistSnapshot.partTargetDurationUs != C0468C.TIME_UNSET || this.playlistUrl.equals(DefaultHlsPlaylistTracker.this.primaryMediaPlaylistUrl)) {
+                z2 = true;
+            }
+            if (!z2 || this.playlistSnapshot.hasEndTag) {
                 return;
             }
             loadPlaylistInternal(getMediaPlaylistUriForReload());

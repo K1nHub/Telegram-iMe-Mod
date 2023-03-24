@@ -384,7 +384,7 @@
 
     if-eqz v0, :cond_1
 
-    const/4 v1, 0x1
+    move v1, v2
 
     :cond_1
     invoke-direct {p0, v1, p1}, Lorg/telegram/ui/ProxySettingsActivity;->setShareDoneEnabled(ZZ)V
@@ -547,7 +547,7 @@
 
     const/4 p1, 0x0
 
-    const/4 v0, 0x0
+    move v0, p1
 
     .line 455
     :goto_0
@@ -1382,12 +1382,12 @@
 
     if-nez p3, :cond_5
 
-    const/4 p3, 0x1
+    move p3, v1
 
     goto :goto_1
 
     :cond_5
-    const/4 p3, 0x0
+    move p3, v4
 
     :goto_1
     invoke-virtual {p1, p3, p2}, Lorg/telegram/ui/Cells/RadioCell;->setChecked(ZZ)V
@@ -1404,7 +1404,7 @@
     goto :goto_2
 
     :cond_6
-    const/4 v1, 0x0
+    move v1, v4
 
     :goto_2
     invoke-virtual {p1, v1, p2}, Lorg/telegram/ui/Cells/RadioCell;->setChecked(ZZ)V
@@ -1482,7 +1482,7 @@
 
     if-eqz p1, :cond_2
 
-    const/high16 v0, 0x3f800000    # 1.0f
+    move v0, v1
 
     .line 676
     :cond_2
@@ -1498,7 +1498,7 @@
     :cond_3
     if-eqz p1, :cond_4
 
-    const/high16 v0, 0x3f800000    # 1.0f
+    move v0, v1
 
     .line 679
     :cond_4
@@ -1656,7 +1656,7 @@
 
     move-result-object v5
 
-    const/4 v6, 0x0
+    move v6, v2
 
     :goto_1
     const-string v7, "&"
@@ -1714,7 +1714,7 @@
 
     move-result-object v6
 
-    const/4 v8, 0x0
+    move v8, v2
 
     :goto_3
     if-ge v8, v4, :cond_5
@@ -1759,7 +1759,7 @@
     :goto_4
     if-eqz v1, :cond_d
 
-    const/4 v0, 0x0
+    move v0, v2
 
     .line 618
     :goto_5
@@ -1804,7 +1804,7 @@
     sparse-switch v8, :sswitch_data_0
 
     :goto_6
-    const/4 v7, -0x1
+    move v7, v3
 
     goto :goto_7
 
@@ -1820,7 +1820,7 @@
     goto :goto_6
 
     :cond_7
-    const/4 v7, 0x4
+    move v7, v9
 
     goto :goto_7
 
@@ -1836,7 +1836,7 @@
     goto :goto_6
 
     :cond_8
-    const/4 v7, 0x3
+    move v7, v10
 
     goto :goto_7
 
@@ -1852,7 +1852,7 @@
     goto :goto_6
 
     :cond_9
-    const/4 v7, 0x2
+    move v7, v4
 
     goto :goto_7
 
@@ -1868,7 +1868,7 @@
     goto :goto_6
 
     :cond_a
-    const/4 v7, 0x1
+    move v7, v5
 
     goto :goto_7
 
@@ -1884,7 +1884,7 @@
     goto :goto_6
 
     :cond_b
-    const/4 v7, 0x0
+    move v7, v2
 
     :goto_7
     packed-switch v7, :pswitch_data_0
@@ -2209,7 +2209,7 @@
 
     invoke-direct {v2, v0}, Lorg/telegram/ui/ProxySettingsActivity$$ExternalSyntheticLambda2;-><init>(Lorg/telegram/ui/ProxySettingsActivity;)V
 
-    const/4 v4, 0x0
+    move v4, v3
 
     :goto_0
     const/4 v7, 0x2
@@ -2266,12 +2266,12 @@
 
     if-ne v4, v10, :cond_1
 
-    const/4 v10, 0x1
+    move v10, v6
 
     goto :goto_1
 
     :cond_1
-    const/4 v10, 0x0
+    move v10, v3
 
     :goto_1
     invoke-virtual {v7, v9, v10, v6}, Lorg/telegram/ui/Cells/RadioCell;->setText(Ljava/lang/String;ZZ)V
@@ -2296,12 +2296,12 @@
 
     if-ne v4, v10, :cond_3
 
-    const/4 v10, 0x1
+    move v10, v6
 
     goto :goto_2
 
     :cond_3
-    const/4 v10, 0x0
+    move v10, v3
 
     :goto_2
     invoke-virtual {v7, v9, v10, v3}, Lorg/telegram/ui/Cells/RadioCell;->setText(Ljava/lang/String;ZZ)V
@@ -2423,7 +2423,7 @@
     .line 299
     iput-object v4, v0, Lorg/telegram/ui/ProxySettingsActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
-    const/4 v4, 0x0
+    move v4, v3
 
     :goto_4
     if-ge v4, v2, :cond_10
@@ -2557,12 +2557,12 @@
 
     if-eqz v13, :cond_6
 
-    const/4 v13, 0x5
+    move v13, v2
 
     goto :goto_5
 
     :cond_6
-    const/4 v13, 0x3
+    move v13, v14
 
     :goto_5
     or-int/lit8 v13, v13, 0x10
@@ -2924,12 +2924,12 @@
 
     const/16 v12, 0xc
 
-    const/16 v21, 0xc
+    move/from16 v21, v12
 
     goto :goto_8
 
     :cond_f
-    const/16 v21, 0x0
+    move/from16 v21, v3
 
     :goto_8
     const/16 v22, 0x11
@@ -2960,7 +2960,7 @@
     goto/16 :goto_4
 
     :cond_10
-    const/4 v2, 0x0
+    move v2, v3
 
     :goto_9
     const-string v4, "windowBackgroundGrayShadow"
@@ -3601,7 +3601,7 @@
 
     move-object v8, v10
 
-    const/4 v14, 0x1
+    move v14, v9
 
     move-object v9, v13
 
@@ -3695,7 +3695,7 @@
 
     invoke-virtual {v11, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    const/4 v1, 0x0
+    move/from16 v1, v20
 
     .line 802
     :goto_0
@@ -3860,7 +3860,7 @@
 
     if-eqz v1, :cond_1
 
-    const/4 v12, 0x0
+    move/from16 v12, v20
 
     .line 811
     :goto_1
@@ -4115,7 +4115,7 @@
 
     invoke-virtual {v11, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    const/4 v1, 0x0
+    move/from16 v1, v20
 
     .line 826
     :goto_2
@@ -4167,7 +4167,7 @@
     goto :goto_2
 
     :cond_4
-    const/4 v1, 0x0
+    move/from16 v1, v20
 
     .line 831
     :goto_3

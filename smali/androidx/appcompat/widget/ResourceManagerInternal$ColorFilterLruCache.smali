@@ -40,7 +40,7 @@
 
     add-int/2addr p0, v0
 
-    mul-int/lit8 p0, p0, 0x1f
+    mul-int/2addr p0, v0
 
     .line 434
     invoke-virtual {p1}, Landroid/graphics/PorterDuff$Mode;->hashCode()I

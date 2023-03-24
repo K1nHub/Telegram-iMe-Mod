@@ -375,7 +375,7 @@
 
     invoke-virtual {p0, v0}, Lio/grpc/internal/AbstractStream$TransportState;->setFullStreamDecompressor(Lio/grpc/internal/GzipInflatingBuffer;)V
 
-    const/4 v0, 0x1
+    move v0, v1
 
     goto :goto_0
 
@@ -419,7 +419,7 @@
     return-void
 
     :cond_1
-    const/4 v0, 0x0
+    move v0, v3
 
     .line 333
     :goto_0

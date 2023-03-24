@@ -32,15 +32,15 @@ public final class WalletConnectManagerImpl$updateSessionsChain$1 extends Lambda
     /* renamed from: invoke  reason: avoid collision after fix types in other method */
     public final void invoke2() {
         Map map;
-        Wallet.EVM wallet;
+        Wallet.EVM wallet2;
         List<String> listOf;
         CryptoPreferenceHelper cryptoPreferenceHelper;
         map = this.this$0.wcClients;
         Collection<WCClient> values = map.values();
         WalletConnectManagerImpl walletConnectManagerImpl = this.this$0;
         for (WCClient wCClient : values) {
-            wallet = walletConnectManagerImpl.getWallet();
-            String address = wallet != null ? wallet.getAddress() : null;
+            wallet2 = walletConnectManagerImpl.getWallet();
+            String address = wallet2 != null ? wallet2.getAddress() : null;
             if (address == null) {
                 address = "";
             }

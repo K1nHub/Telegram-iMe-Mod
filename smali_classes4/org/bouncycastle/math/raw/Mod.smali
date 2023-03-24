@@ -52,7 +52,7 @@
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_0
     aget v3, p1, v1
@@ -79,7 +79,7 @@
     add-int/2addr v2, v3
 
     :cond_1
-    const/4 p1, 0x0
+    move p1, v1
 
     :goto_1
     if-ge p1, v2, :cond_4
@@ -166,7 +166,7 @@
     goto :goto_0
 
     :cond_1
-    const/4 v3, 0x0
+    move v3, v2
 
     :goto_0
     invoke-static {v0, p1}, Lorg/bouncycastle/math/raw/Nat;->isOne(I[I)Z

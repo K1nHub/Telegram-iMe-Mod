@@ -320,7 +320,7 @@
     if-ne p1, v0, :cond_2
 
     :cond_1
-    const/4 v2, 0x1
+    move v2, v0
 
     :cond_2
     return v2
@@ -479,12 +479,12 @@
 
     if-nez p1, :cond_5
 
-    const/4 v8, 0x1
+    move v8, v2
 
     goto :goto_0
 
     :cond_5
-    const/4 v8, 0x0
+    move v8, v1
 
     .line 897
     :goto_0
@@ -656,7 +656,7 @@
 
     if-eq p2, v3, :cond_b
 
-    const/4 v1, 0x1
+    move v1, v2
 
     :cond_b
     const/4 p2, 0x0

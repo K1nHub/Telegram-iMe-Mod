@@ -76,7 +76,7 @@
 .end method
 
 .method private verifySize()V
-    .locals 6
+    .locals 5
 
     .line 514
     iget-wide v0, p0, Lio/grpc/internal/MessageDeframer$SizeEnforcingInputStream;->count:J
@@ -85,9 +85,9 @@
 
     int-to-long v3, v2
 
-    cmp-long v5, v0, v3
+    cmp-long v0, v0, v3
 
-    if-gtz v5, :cond_0
+    if-gtz v0, :cond_0
 
     return-void
 
@@ -247,7 +247,7 @@
 .end method
 
 .method public declared-synchronized reset()V
-    .locals 5
+    .locals 4
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -271,9 +271,9 @@
 
     const-wide/16 v2, -0x1
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-eqz v4, :cond_0
+    if-eqz v0, :cond_0
 
     .line 502
     iget-object v0, p0, Ljava/io/FilterInputStream;->in:Ljava/io/InputStream;

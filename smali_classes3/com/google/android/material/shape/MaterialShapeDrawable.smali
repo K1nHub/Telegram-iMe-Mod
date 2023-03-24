@@ -777,7 +777,7 @@
 
     iget p4, p4, Lcom/google/android/material/shape/MaterialShapeDrawable$MaterialShapeDrawableState;->interpolation:F
 
-    mul-float p3, p3, p4
+    mul-float/2addr p3, p4
 
     .line 1042
     invoke-virtual {p1, p5, p3, p3, p2}, Landroid/graphics/Canvas;->drawRoundRect(Landroid/graphics/RectF;FFLandroid/graphics/Paint;)V
@@ -1197,7 +1197,7 @@
 
     add-int/2addr p1, v0
 
-    mul-int p0, p0, p1
+    mul-int/2addr p0, p1
 
     ushr-int/lit8 p0, p0, 0x8
 
@@ -1298,7 +1298,7 @@
 
     invoke-virtual {v0, v2}, Landroid/graphics/Paint;->setColor(I)V
 
-    const/4 v0, 0x1
+    move v0, v1
 
     goto :goto_0
 
@@ -1437,7 +1437,7 @@
     goto :goto_0
 
     :cond_1
-    const/4 v5, 0x0
+    move v5, v6
 
     :cond_2
     :goto_0
@@ -1457,7 +1457,7 @@
 
     const/high16 v2, 0x3f400000    # 0.75f
 
-    mul-float v2, v2, v0
+    mul-float/2addr v2, v0
 
     float-to-double v2, v2
 
@@ -1474,7 +1474,7 @@
 
     const/high16 v2, 0x3e800000    # 0.25f
 
-    mul-float v0, v0, v2
+    mul-float/2addr v0, v2
 
     float-to-double v2, v0
 
@@ -1842,7 +1842,7 @@
 
     iget v1, v1, Lcom/google/android/material/shape/MaterialShapeDrawable$MaterialShapeDrawableState;->interpolation:F
 
-    mul-float v0, v0, v1
+    mul-float/2addr v0, v1
 
     .line 1185
     invoke-virtual {p0}, Landroid/graphics/drawable/Drawable;->getBounds()Landroid/graphics/Rect;
@@ -1952,7 +1952,7 @@
 
     move-result-wide v3
 
-    mul-double v1, v1, v3
+    mul-double/2addr v1, v3
 
     double-to-int v0, v1
 
@@ -1982,7 +1982,7 @@
 
     move-result-wide v3
 
-    mul-double v1, v1, v3
+    mul-double/2addr v1, v3
 
     double-to-int v0, v1
 

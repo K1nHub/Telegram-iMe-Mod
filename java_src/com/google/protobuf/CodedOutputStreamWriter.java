@@ -119,11 +119,13 @@ public final class CodedOutputStreamWriter implements Writer {
     }
 
     @Override // com.google.protobuf.Writer
+    @Deprecated
     public void writeStartGroup(int i) throws IOException {
         this.output.writeTag(i, 3);
     }
 
     @Override // com.google.protobuf.Writer
+    @Deprecated
     public void writeEndGroup(int i) throws IOException {
         this.output.writeTag(i, 4);
     }

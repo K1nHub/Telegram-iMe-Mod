@@ -147,7 +147,7 @@
 
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    move v1, v0
 
     :goto_2
     if-ge v1, p3, :cond_1a
@@ -243,7 +243,7 @@
 
     const/4 v4, 0x1
 
-    const/4 v5, 0x1
+    move v5, v4
 
     .line 37
     :cond_7
@@ -283,7 +283,7 @@
     goto :goto_4
 
     :cond_8
-    const/4 v8, 0x0
+    move v8, v0
 
     .line 42
     :goto_4
@@ -327,7 +327,7 @@
 
     invoke-virtual {p2, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const/4 v5, 0x0
+    move v5, v0
 
     .line 52
     :goto_5

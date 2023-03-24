@@ -1293,7 +1293,7 @@
     goto :goto_0
 
     :cond_1
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_0
     if-lez v2, :cond_2
@@ -1312,7 +1312,7 @@
     goto :goto_1
 
     :cond_2
-    const/4 v3, 0x0
+    move v3, v1
 
     :goto_1
     if-ltz v2, :cond_3

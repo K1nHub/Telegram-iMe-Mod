@@ -64,7 +64,7 @@
 
     const/16 v0, 0x10
 
-    mul-int/lit8 p2, p2, 0x10
+    mul-int/2addr p2, v0
 
     new-array p2, p2, [C
 
@@ -72,9 +72,9 @@
 
     const/4 p2, 0x0
 
-    const/4 v1, 0x0
+    move v1, p2
 
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_0
     if-ge v1, v0, :cond_0

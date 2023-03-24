@@ -162,13 +162,13 @@
     goto :goto_0
 
     :cond_0
-    const/4 v0, 0x0
+    move v0, v1
 
     goto :goto_1
 
     :cond_1
     :goto_0
-    const/4 v0, 0x1
+    move v0, v2
 
     :goto_1
     if-nez v0, :cond_4
@@ -188,13 +188,13 @@
     goto :goto_2
 
     :cond_2
-    const/4 v0, 0x0
+    move v0, v1
 
     goto :goto_3
 
     :cond_3
     :goto_2
-    const/4 v0, 0x1
+    move v0, v2
 
     :goto_3
     if-nez v0, :cond_4
@@ -205,14 +205,14 @@
 
     if-eqz v0, :cond_4
 
-    const/4 v1, 0x1
+    move v1, v2
 
     :cond_4
     return v1
 .end method
 
 .method public isRefreshTokenValid()Z
-    .locals 5
+    .locals 4
 
     .line 36
     iget-object v0, p0, Lcom/smedialink/storage/data/manager/binancepay/BinancePayManagerImpl;->cryptoPreferenceHelper:Lcom/smedialink/storage/domain/storage/CryptoPreferenceHelper;
@@ -236,9 +236,9 @@
 
     move-result-wide v2
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-lez v4, :cond_0
+    if-lez v0, :cond_0
 
     const/4 v0, 0x1
 

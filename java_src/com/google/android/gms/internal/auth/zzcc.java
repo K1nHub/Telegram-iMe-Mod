@@ -42,7 +42,7 @@ public final class zzcc {
             goto L5e
         L15:
             r2 = 1
-            r3 = 1
+            r3 = r2
         L17:
             r4 = 2
             r5 = 0
@@ -56,7 +56,7 @@ public final class zzcc {
         L29:
             android.os.UserManager r4 = com.google.android.gms.internal.auth.zzcc.zza     // Catch: java.lang.Throwable -> L5b
             if (r4 != 0) goto L2f
-            r8 = 1
+            r8 = r2
             goto L53
         L2f:
             boolean r6 = r4.isUserUnlocked()     // Catch: java.lang.NullPointerException -> L41 java.lang.Throwable -> L5b
@@ -65,7 +65,7 @@ public final class zzcc {
             boolean r8 = r4.isUserRunning(r6)     // Catch: java.lang.NullPointerException -> L41 java.lang.Throwable -> L5b
             if (r8 != 0) goto L4e
         L3f:
-            r8 = 1
+            r8 = r2
             goto L4f
         L41:
             r4 = move-exception
@@ -76,7 +76,7 @@ public final class zzcc {
             int r3 = r3 + 1
             goto L17
         L4e:
-            r8 = 0
+            r8 = r1
         L4f:
             if (r8 == 0) goto L53
             com.google.android.gms.internal.auth.zzcc.zza = r5     // Catch: java.lang.Throwable -> L5b

@@ -726,12 +726,12 @@
 
     if-le p2, v0, :cond_1
 
-    const/4 v0, 0x1
+    move v0, v2
 
     goto :goto_0
 
     :cond_1
-    const/4 v0, 0x0
+    move v0, v1
 
     :goto_0
     if-eqz v0, :cond_2
@@ -780,12 +780,12 @@
 
     if-eq p2, v3, :cond_4
 
-    const/4 p2, 0x1
+    move p2, v2
 
     goto :goto_2
 
     :cond_4
-    const/4 p2, 0x0
+    move p2, v1
 
     :goto_2
     xor-int/2addr v0, v2
@@ -888,7 +888,7 @@
     goto :goto_5
 
     :cond_8
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_5
     invoke-virtual {p1, v2, v1}, Lorg/telegram/ui/Cells/StickerSetCell;->setChecked(ZZ)V

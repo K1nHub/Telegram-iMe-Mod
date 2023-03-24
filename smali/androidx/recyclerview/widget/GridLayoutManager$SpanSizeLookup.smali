@@ -253,18 +253,20 @@
 
     add-int/lit8 v2, v2, 0x1
 
+    move v4, v1
+
     goto :goto_0
 
     :cond_0
-    const/4 v2, 0x0
+    move v2, v1
 
-    const/4 v3, 0x0
+    move v3, v2
 
-    :goto_0
-    const/4 v4, 0x0
+    move v4, v3
 
     .line 1033
     :cond_1
+    :goto_0
     invoke-virtual {p0, p1}, Landroidx/recyclerview/widget/GridLayoutManager$SpanSizeLookup;->getSpanSize(I)I
 
     move-result v0
@@ -283,7 +285,7 @@
 
     add-int/lit8 v2, v2, 0x1
 
-    const/4 v4, 0x0
+    move v4, v1
 
     goto :goto_2
 
@@ -356,9 +358,9 @@
     goto :goto_1
 
     :cond_1
-    const/4 v2, 0x0
+    move v2, v1
 
-    const/4 v3, 0x0
+    move v3, v2
 
     :goto_0
     if-ge v2, p1, :cond_4
@@ -372,7 +374,7 @@
 
     if-ne v3, p2, :cond_2
 
-    const/4 v3, 0x0
+    move v3, v1
 
     goto :goto_1
 

@@ -814,7 +814,7 @@
 
     :cond_4
     :goto_1
-    const/4 v2, 0x1
+    move v2, v3
 
     .line 187
     :goto_2

@@ -61,7 +61,7 @@
 
     iget p2, p3, Lcom/google/android/exoplayer2/extractor/wav/WavFormat;->bitsPerSample:I
 
-    mul-int p1, p1, p2
+    mul-int/2addr p1, p2
 
     div-int/lit8 p1, p1, 0x8
 
@@ -77,7 +77,7 @@
 
     mul-int/lit8 v0, v0, 0x8
 
-    mul-int p2, p2, p1
+    mul-int/2addr p2, p1
 
     .line 314
     div-int/lit8 p2, p2, 0xa
@@ -241,13 +241,13 @@
     move-wide/from16 v1, p2
 
     :goto_0
-    const/4 v3, 0x1
+    const-wide/16 v3, 0x0
 
-    const-wide/16 v4, 0x0
+    cmp-long v5, v1, v3
 
-    cmp-long v6, v1, v4
+    const/4 v6, 0x1
 
-    if-lez v6, :cond_1
+    if-lez v5, :cond_1
 
     .line 345
     iget v7, v0, Lcom/google/android/exoplayer2/extractor/wav/WavExtractor$PassthroughOutputWriter;->pendingOutputBytes:I
@@ -258,41 +258,41 @@
 
     sub-int/2addr v8, v7
 
-    int-to-long v6, v8
+    int-to-long v7, v8
 
     .line 346
-    invoke-static {v6, v7, v1, v2}, Ljava/lang/Math;->min(JJ)J
+    invoke-static {v7, v8, v1, v2}, Ljava/lang/Math;->min(JJ)J
 
-    move-result-wide v6
+    move-result-wide v7
 
-    long-to-int v7, v6
+    long-to-int v5, v7
 
     .line 347
-    iget-object v6, v0, Lcom/google/android/exoplayer2/extractor/wav/WavExtractor$PassthroughOutputWriter;->trackOutput:Lcom/google/android/exoplayer2/extractor/TrackOutput;
+    iget-object v7, v0, Lcom/google/android/exoplayer2/extractor/wav/WavExtractor$PassthroughOutputWriter;->trackOutput:Lcom/google/android/exoplayer2/extractor/TrackOutput;
 
     move-object/from16 v8, p1
 
-    invoke-interface {v6, v8, v7, v3}, Lcom/google/android/exoplayer2/extractor/TrackOutput;->sampleData(Lcom/google/android/exoplayer2/upstream/DataReader;IZ)I
+    invoke-interface {v7, v8, v5, v6}, Lcom/google/android/exoplayer2/extractor/TrackOutput;->sampleData(Lcom/google/android/exoplayer2/upstream/DataReader;IZ)I
 
-    move-result v3
+    move-result v5
 
     const/4 v6, -0x1
 
-    if-ne v3, v6, :cond_0
+    if-ne v5, v6, :cond_0
 
-    move-wide v1, v4
+    move-wide v1, v3
 
     goto :goto_0
 
     .line 351
     :cond_0
-    iget v4, v0, Lcom/google/android/exoplayer2/extractor/wav/WavExtractor$PassthroughOutputWriter;->pendingOutputBytes:I
+    iget v3, v0, Lcom/google/android/exoplayer2/extractor/wav/WavExtractor$PassthroughOutputWriter;->pendingOutputBytes:I
 
-    add-int/2addr v4, v3
+    add-int/2addr v3, v5
 
-    iput v4, v0, Lcom/google/android/exoplayer2/extractor/wav/WavExtractor$PassthroughOutputWriter;->pendingOutputBytes:I
+    iput v3, v0, Lcom/google/android/exoplayer2/extractor/wav/WavExtractor$PassthroughOutputWriter;->pendingOutputBytes:I
 
-    int-to-long v3, v3
+    int-to-long v3, v5
 
     sub-long/2addr v1, v3
 
@@ -305,11 +305,11 @@
     iget v2, v1, Lcom/google/android/exoplayer2/extractor/wav/WavFormat;->blockSize:I
 
     .line 360
-    iget v4, v0, Lcom/google/android/exoplayer2/extractor/wav/WavExtractor$PassthroughOutputWriter;->pendingOutputBytes:I
+    iget v3, v0, Lcom/google/android/exoplayer2/extractor/wav/WavExtractor$PassthroughOutputWriter;->pendingOutputBytes:I
 
-    div-int/2addr v4, v2
+    div-int/2addr v3, v2
 
-    if-lez v4, :cond_2
+    if-lez v3, :cond_2
 
     .line 362
     iget-wide v7, v0, Lcom/google/android/exoplayer2/extractor/wav/WavExtractor$PassthroughOutputWriter;->startTimeUs:J
@@ -329,7 +329,7 @@
 
     add-long v12, v7, v9
 
-    mul-int v15, v4, v2
+    mul-int v15, v3, v2
 
     .line 367
     iget v1, v0, Lcom/google/android/exoplayer2/extractor/wav/WavExtractor$PassthroughOutputWriter;->pendingOutputBytes:I
@@ -350,9 +350,9 @@
     .line 370
     iget-wide v7, v0, Lcom/google/android/exoplayer2/extractor/wav/WavExtractor$PassthroughOutputWriter;->outputFrameCount:J
 
-    int-to-long v4, v4
+    int-to-long v2, v3
 
-    add-long/2addr v7, v4
+    add-long/2addr v7, v2
 
     iput-wide v7, v0, Lcom/google/android/exoplayer2/extractor/wav/WavExtractor$PassthroughOutputWriter;->outputFrameCount:J
 
@@ -360,13 +360,13 @@
     iput v1, v0, Lcom/google/android/exoplayer2/extractor/wav/WavExtractor$PassthroughOutputWriter;->pendingOutputBytes:I
 
     :cond_2
-    if-gtz v6, :cond_3
+    if-gtz v5, :cond_3
 
     goto :goto_1
 
     :cond_3
-    const/4 v3, 0x0
+    const/4 v6, 0x0
 
     :goto_1
-    return v3
+    return v6
 .end method

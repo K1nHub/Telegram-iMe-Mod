@@ -1180,29 +1180,29 @@
 .end method
 
 .method public setSeekBackIncrementMs(J)Lcom/google/android/exoplayer2/ExoPlayer$Builder;
-    .locals 4
+    .locals 2
 
-    const/4 v0, 0x1
+    const-wide/16 v0, 0x0
 
-    const-wide/16 v1, 0x0
-
-    cmp-long v3, p1, v1
-
-    if-lez v3, :cond_0
+    cmp-long v0, p1, v0
 
     const/4 v1, 0x1
+
+    if-lez v0, :cond_0
+
+    move v0, v1
 
     goto :goto_0
 
     :cond_0
-    const/4 v1, 0x0
+    const/4 v0, 0x0
 
     .line 973
     :goto_0
-    invoke-static {v1}, Lcom/google/android/exoplayer2/util/Assertions;->checkArgument(Z)V
+    invoke-static {v0}, Lcom/google/android/exoplayer2/util/Assertions;->checkArgument(Z)V
 
     .line 974
-    iget-boolean v1, p0, Lcom/google/android/exoplayer2/ExoPlayer$Builder;->buildCalled:Z
+    iget-boolean v0, p0, Lcom/google/android/exoplayer2/ExoPlayer$Builder;->buildCalled:Z
 
     xor-int/2addr v0, v1
 
@@ -1215,29 +1215,29 @@
 .end method
 
 .method public setSeekForwardIncrementMs(J)Lcom/google/android/exoplayer2/ExoPlayer$Builder;
-    .locals 4
+    .locals 2
 
-    const/4 v0, 0x1
+    const-wide/16 v0, 0x0
 
-    const-wide/16 v1, 0x0
-
-    cmp-long v3, p1, v1
-
-    if-lez v3, :cond_0
+    cmp-long v0, p1, v0
 
     const/4 v1, 0x1
+
+    if-lez v0, :cond_0
+
+    move v0, v1
 
     goto :goto_0
 
     :cond_0
-    const/4 v1, 0x0
+    const/4 v0, 0x0
 
     .line 989
     :goto_0
-    invoke-static {v1}, Lcom/google/android/exoplayer2/util/Assertions;->checkArgument(Z)V
+    invoke-static {v0}, Lcom/google/android/exoplayer2/util/Assertions;->checkArgument(Z)V
 
     .line 990
-    iget-boolean v1, p0, Lcom/google/android/exoplayer2/ExoPlayer$Builder;->buildCalled:Z
+    iget-boolean v0, p0, Lcom/google/android/exoplayer2/ExoPlayer$Builder;->buildCalled:Z
 
     xor-int/2addr v0, v1
 

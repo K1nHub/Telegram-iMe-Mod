@@ -125,12 +125,12 @@
 
     if-eqz v2, :cond_0
 
-    const/4 v4, 0x1
+    move v4, v1
 
     goto :goto_0
 
     :cond_0
-    const/4 v4, 0x0
+    move v4, v3
 
     .line 54
     :goto_0
@@ -163,7 +163,7 @@
 
     move-result v2
 
-    mul-float v2, v2, v5
+    mul-float/2addr v2, v5
 
     float-to-long v6, v2
 
@@ -185,7 +185,7 @@
     :try_end_0
     .catch Ljava/lang/NumberFormatException; {:try_start_0 .. :try_end_0} :catch_0
 
-    mul-float v0, v0, v5
+    mul-float/2addr v0, v5
 
     float-to-long v4, v0
 
@@ -196,7 +196,7 @@
     goto :goto_2
 
     :cond_2
-    const/4 v1, 0x0
+    move v1, v3
 
     .line 68
     :goto_2
@@ -242,16 +242,16 @@
 .end method
 
 .method public isLive()Z
-    .locals 5
+    .locals 4
 
     .line 100
     iget-wide v0, p0, Lcom/google/android/exoplayer2/source/rtsp/RtspSessionTiming;->stopTimeMs:J
 
     const-wide v2, -0x7fffffffffffffffL    # -4.9E-324
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-nez v4, :cond_0
+    if-nez v0, :cond_0
 
     const/4 v0, 0x1
 

@@ -39,7 +39,7 @@
 
     sub-int/2addr v0, v1
 
-    const/4 v3, 0x1
+    move v3, v1
 
     :goto_0
     if-ltz v0, :cond_2
@@ -50,12 +50,12 @@
 
     if-ne v4, v5, :cond_1
 
-    const/4 v4, 0x1
+    move v4, v1
 
     goto :goto_1
 
     :cond_1
-    const/4 v4, 0x0
+    move v4, v2
 
     :goto_1
     and-int/2addr v3, v4

@@ -9,12 +9,12 @@ import org.bouncycastle.math.raw.Nat384;
 public class SecP384R1Field {
 
     /* renamed from: P */
-    static final int[] f1361P = {-1, 0, 0, -1, -2, -1, -1, -1, -1, -1, -1, -1};
+    static final int[] f1362P = {-1, 0, 0, -1, -2, -1, -1, -1, -1, -1, -1, -1};
     static final int[] PExt = {1, -2, 0, 2, 0, -2, 0, 2, 1, 0, 0, 0, -2, 1, 0, -2, -3, -1, -1, -1, -1, -1, -1, -1};
     private static final int[] PExtInv = {-1, 1, -1, -3, -1, 1, -1, -3, -2, -1, -1, -1, 1, -2, -1, 1, 2};
 
     public static void add(int[] iArr, int[] iArr2, int[] iArr3) {
-        if (Nat.add(12, iArr, iArr2, iArr3) != 0 || (iArr3[11] == -1 && Nat.gte(12, iArr3, f1361P))) {
+        if (Nat.add(12, iArr, iArr2, iArr3) != 0 || (iArr3[11] == -1 && Nat.gte(12, iArr3, f1362P))) {
             addPInvTo(iArr3);
         }
     }
@@ -29,7 +29,7 @@ public class SecP384R1Field {
     }
 
     public static void addOne(int[] iArr, int[] iArr2) {
-        if (Nat.inc(12, iArr, iArr2) != 0 || (iArr2[11] == -1 && Nat.gte(12, iArr2, f1361P))) {
+        if (Nat.inc(12, iArr, iArr2) != 0 || (iArr2[11] == -1 && Nat.gte(12, iArr2, f1362P))) {
             addPInvTo(iArr2);
         }
     }
@@ -57,7 +57,7 @@ public class SecP384R1Field {
     public static int[] fromBigInteger(BigInteger bigInteger) {
         int[] fromBigInteger = Nat.fromBigInteger(RendererCapabilities.MODE_SUPPORT_MASK, bigInteger);
         if (fromBigInteger[11] == -1) {
-            int[] iArr = f1361P;
+            int[] iArr = f1362P;
             if (Nat.gte(12, fromBigInteger, iArr)) {
                 Nat.subFrom(12, iArr, fromBigInteger);
             }
@@ -75,7 +75,7 @@ public class SecP384R1Field {
         if (Nat.isZero(12, iArr)) {
             Nat.zero(12, iArr2);
         } else {
-            Nat.sub(12, f1361P, iArr, iArr2);
+            Nat.sub(12, f1362P, iArr, iArr2);
         }
     }
 
@@ -145,7 +145,7 @@ public class SecP384R1Field {
         } else {
             j = 0;
         }
-        if ((j == 0 || Nat.incAt(12, iArr, 5) == 0) && !(iArr[11] == -1 && Nat.gte(12, iArr, f1361P))) {
+        if ((j == 0 || Nat.incAt(12, iArr, 5) == 0) && !(iArr[11] == -1 && Nat.gte(12, iArr, f1362P))) {
             return;
         }
         addPInvTo(iArr);
@@ -197,7 +197,7 @@ public class SecP384R1Field {
     }
 
     public static void twice(int[] iArr, int[] iArr2) {
-        if (Nat.shiftUpBit(12, iArr, 0, iArr2) != 0 || (iArr2[11] == -1 && Nat.gte(12, iArr2, f1361P))) {
+        if (Nat.shiftUpBit(12, iArr, 0, iArr2) != 0 || (iArr2[11] == -1 && Nat.gte(12, iArr2, f1362P))) {
             addPInvTo(iArr2);
         }
     }

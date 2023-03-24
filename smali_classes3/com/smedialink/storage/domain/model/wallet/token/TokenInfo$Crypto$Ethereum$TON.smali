@@ -38,7 +38,7 @@
     sget-object v1, Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;->TON:Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;
 
     .line 937
-    sget v2, Lcom/smedialink/storage/R$drawable;->fork_ic_ton_58:I
+    sget v2, Lcom/smedialink/storage/R$drawable;->fork_ic_ton_logo:I
 
     .line 939
     sget v4, Lcom/smedialink/storage/R$string;->currency_ton:I

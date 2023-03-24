@@ -366,7 +366,7 @@
 
     iput v1, p0, Lcom/google/android/exoplayer2/util/ParsableBitArray;->bitOffset:I
 
-    const/4 v1, 0x0
+    move v1, v0
 
     .line 171
     :goto_0

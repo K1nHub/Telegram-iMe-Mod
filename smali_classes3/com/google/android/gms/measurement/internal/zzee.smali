@@ -85,9 +85,9 @@
 
     const/4 v4, 0x5
 
-    const/4 v5, 0x0
+    move v5, v2
 
-    const/4 v6, 0x5
+    move v6, v4
 
     :goto_0
     if-ge v5, v4, :cond_c
@@ -171,30 +171,30 @@
 
     :cond_2
     :goto_1
-    const-string v0, "messages"
-
     const-wide/32 v13, 0x186a0
 
-    cmp-long v15, v11, v13
+    cmp-long v0, v11, v13
 
-    if-ltz v15, :cond_3
+    const-string v15, "messages"
+
+    if-ltz v0, :cond_3
 
     :try_start_3
-    iget-object v15, v1, Lcom/google/android/gms/measurement/internal/zzgo;->zzs:Lcom/google/android/gms/measurement/internal/zzfv;
+    iget-object v0, v1, Lcom/google/android/gms/measurement/internal/zzgo;->zzs:Lcom/google/android/gms/measurement/internal/zzfv;
 
     .line 11
-    invoke-virtual {v15}, Lcom/google/android/gms/measurement/internal/zzfv;->zzay()Lcom/google/android/gms/measurement/internal/zzel;
+    invoke-virtual {v0}, Lcom/google/android/gms/measurement/internal/zzfv;->zzay()Lcom/google/android/gms/measurement/internal/zzel;
 
-    move-result-object v15
+    move-result-object v0
 
     .line 12
-    invoke-virtual {v15}, Lcom/google/android/gms/measurement/internal/zzel;->zzd()Lcom/google/android/gms/measurement/internal/zzej;
+    invoke-virtual {v0}, Lcom/google/android/gms/measurement/internal/zzel;->zzd()Lcom/google/android/gms/measurement/internal/zzej;
 
-    move-result-object v15
+    move-result-object v0
 
     const-string v4, "Data loss, local db full"
 
-    invoke-virtual {v15, v4}, Lcom/google/android/gms/measurement/internal/zzej;->zza(Ljava/lang/String;)V
+    invoke-virtual {v0, v4}, Lcom/google/android/gms/measurement/internal/zzej;->zza(Ljava/lang/String;)V
 
     sub-long/2addr v13, v11
 
@@ -202,41 +202,41 @@
 
     add-long/2addr v13, v11
 
-    new-array v4, v7, [Ljava/lang/String;
+    new-array v0, v7, [Ljava/lang/String;
 
     .line 13
     invoke-static {v13, v14}, Ljava/lang/Long;->toString(J)Ljava/lang/String;
 
-    move-result-object v11
+    move-result-object v4
 
-    aput-object v11, v4, v2
+    aput-object v4, v0, v2
 
-    const-string v11, "rowid in (select rowid from messages order by rowid asc limit ?)"
+    const-string v4, "rowid in (select rowid from messages order by rowid asc limit ?)"
 
     .line 14
-    invoke-virtual {v9, v0, v11, v4}, Landroid/database/sqlite/SQLiteDatabase;->delete(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;)I
+    invoke-virtual {v9, v15, v4, v0}, Landroid/database/sqlite/SQLiteDatabase;->delete(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;)I
 
-    move-result v4
+    move-result v0
 
-    int-to-long v11, v4
+    int-to-long v11, v0
 
-    cmp-long v4, v11, v13
+    cmp-long v0, v11, v13
 
-    if-eqz v4, :cond_3
+    if-eqz v0, :cond_3
 
-    iget-object v4, v1, Lcom/google/android/gms/measurement/internal/zzgo;->zzs:Lcom/google/android/gms/measurement/internal/zzfv;
+    iget-object v0, v1, Lcom/google/android/gms/measurement/internal/zzgo;->zzs:Lcom/google/android/gms/measurement/internal/zzfv;
 
     .line 15
-    invoke-virtual {v4}, Lcom/google/android/gms/measurement/internal/zzfv;->zzay()Lcom/google/android/gms/measurement/internal/zzel;
+    invoke-virtual {v0}, Lcom/google/android/gms/measurement/internal/zzfv;->zzay()Lcom/google/android/gms/measurement/internal/zzel;
 
-    move-result-object v4
+    move-result-object v0
 
     .line 16
-    invoke-virtual {v4}, Lcom/google/android/gms/measurement/internal/zzel;->zzd()Lcom/google/android/gms/measurement/internal/zzej;
+    invoke-virtual {v0}, Lcom/google/android/gms/measurement/internal/zzel;->zzd()Lcom/google/android/gms/measurement/internal/zzej;
 
-    move-result-object v4
+    move-result-object v0
 
-    const-string v15, "Different delete count than expected in local db. expected, received, difference"
+    const-string v4, "Different delete count than expected in local db. expected, received, difference"
 
     .line 17
     invoke-static {v13, v14}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
@@ -256,11 +256,11 @@
     move-result-object v11
 
     .line 20
-    invoke-virtual {v4, v15, v2, v7, v11}, Lcom/google/android/gms/measurement/internal/zzej;->zzd(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V
+    invoke-virtual {v0, v4, v2, v7, v11}, Lcom/google/android/gms/measurement/internal/zzej;->zzd(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V
 
     .line 21
     :cond_3
-    invoke-virtual {v9, v0, v8, v3}, Landroid/database/sqlite/SQLiteDatabase;->insertOrThrow(Ljava/lang/String;Ljava/lang/String;Landroid/content/ContentValues;)J
+    invoke-virtual {v9, v15, v8, v3}, Landroid/database/sqlite/SQLiteDatabase;->insertOrThrow(Ljava/lang/String;Ljava/lang/String;Landroid/content/ContentValues;)J
 
     .line 22
     invoke-virtual {v9}, Landroid/database/sqlite/SQLiteDatabase;->setTransactionSuccessful()V
@@ -596,9 +596,9 @@
 
     const/4 v7, 0x0
 
-    const/4 v8, 0x0
+    move v9, v6
 
-    const/4 v9, 0x5
+    move v8, v7
 
     :goto_0
     if-ge v8, v6, :cond_13
@@ -1668,9 +1668,9 @@
 
     const/4 v1, 0x5
 
-    const/4 v3, 0x0
+    move v4, v1
 
-    const/4 v4, 0x5
+    move v3, v2
 
     :goto_0
     if-ge v3, v1, :cond_5

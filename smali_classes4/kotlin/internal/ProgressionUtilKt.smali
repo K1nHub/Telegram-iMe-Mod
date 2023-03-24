@@ -101,9 +101,9 @@
 
     const-wide/16 v0, 0x0
 
-    cmp-long v2, p4, v0
+    cmp-long v0, p4, v0
 
-    if-lez v2, :cond_1
+    if-lez v0, :cond_1
 
     cmp-long v0, p0, p2
 
@@ -128,7 +128,7 @@
     goto :goto_0
 
     :cond_1
-    if-gez v2, :cond_3
+    if-gez v0, :cond_3
 
     cmp-long v0, p0, p2
 
@@ -182,16 +182,16 @@
 .end method
 
 .method private static final mod(JJ)J
-    .locals 3
+    .locals 2
 
     .line 15
     rem-long/2addr p0, p2
 
     const-wide/16 v0, 0x0
 
-    cmp-long v2, p0, v0
+    cmp-long v0, p0, v0
 
-    if-ltz v2, :cond_0
+    if-ltz v0, :cond_0
 
     goto :goto_0
 

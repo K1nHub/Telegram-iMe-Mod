@@ -393,9 +393,9 @@
 
     move-result-wide v4
 
-    cmpl-double v8, v2, v4
+    cmpl-double v4, v2, v4
 
-    if-ltz v8, :cond_1
+    if-ltz v4, :cond_1
 
     const/4 v4, 0x1
 
@@ -408,42 +408,42 @@
     :goto_0
     invoke-virtual {v1}, Lcom/smedialink/model/staking/StakingDetailsItem;->getStartsAtISO()Ljava/lang/String;
 
-    move-result-object v5
+    move-result-object v7
 
-    invoke-static {v5}, Lcom/smedialink/utils/extentions/common/StringExtKt;->parseISODate(Ljava/lang/String;)J
+    invoke-static {v7}, Lcom/smedialink/utils/extentions/common/StringExtKt;->parseISODate(Ljava/lang/String;)J
 
-    move-result-wide v8
+    move-result-wide v7
 
     invoke-static {}, Lcom/smedialink/storage/data/utils/extentions/DateExtKt;->now()J
 
-    move-result-wide v10
+    move-result-wide v9
 
-    invoke-static {v8, v9, v10, v11}, Ljava/lang/Math;->max(JJ)J
+    invoke-static {v7, v8, v9, v10}, Ljava/lang/Math;->max(JJ)J
 
-    move-result-wide v8
+    move-result-wide v7
 
     .line 226
     invoke-virtual {v1}, Lcom/smedialink/model/staking/StakingDetailsItem;->getIncomePercent()D
 
-    move-result-wide v10
+    move-result-wide v9
 
-    const-wide/high16 v12, 0x4059000000000000L    # 100.0
+    const-wide/high16 v11, 0x4059000000000000L    # 100.0
 
-    div-double/2addr v10, v12
+    div-double/2addr v9, v11
 
     .line 227
-    sget-object v5, Ljava/util/concurrent/TimeUnit;->SECONDS:Ljava/util/concurrent/TimeUnit;
+    sget-object v13, Ljava/util/concurrent/TimeUnit;->SECONDS:Ljava/util/concurrent/TimeUnit;
 
     invoke-virtual {v1}, Lcom/smedialink/model/staking/StakingDetailsItem;->getIncomePeriod()J
 
     move-result-wide v14
 
-    invoke-virtual {v5, v14, v15}, Ljava/util/concurrent/TimeUnit;->toMillis(J)J
+    invoke-virtual {v13, v14, v15}, Ljava/util/concurrent/TimeUnit;->toMillis(J)J
 
-    move-result-wide v14
+    move-result-wide v13
 
     .line 228
-    new-instance v5, Lkotlin/ranges/LongRange;
+    new-instance v15, Lkotlin/ranges/LongRange;
 
     invoke-virtual {v1}, Lcom/smedialink/model/staking/StakingDetailsItem;->getEndsAtISO()Ljava/lang/String;
 
@@ -451,19 +451,19 @@
 
     invoke-static {v1}, Lcom/smedialink/utils/extentions/common/StringExtKt;->parseISODate(Ljava/lang/String;)J
 
-    move-result-wide v12
+    move-result-wide v11
 
-    invoke-direct {v5, v8, v9, v12, v13}, Lkotlin/ranges/LongRange;-><init>(JJ)V
+    invoke-direct {v15, v7, v8, v11, v12}, Lkotlin/ranges/LongRange;-><init>(JJ)V
 
     sget-object v1, Ljava/util/concurrent/TimeUnit;->DAYS:Ljava/util/concurrent/TimeUnit;
 
-    const-wide/16 v12, 0x1
+    const-wide/16 v11, 0x1
 
-    invoke-virtual {v1, v12, v13}, Ljava/util/concurrent/TimeUnit;->toMillis(J)J
+    invoke-virtual {v1, v11, v12}, Ljava/util/concurrent/TimeUnit;->toMillis(J)J
 
-    move-result-wide v12
+    move-result-wide v11
 
-    invoke-static {v5, v12, v13}, Lkotlin/ranges/RangesKt;->step(Lkotlin/ranges/LongProgression;J)Lkotlin/ranges/LongProgression;
+    invoke-static {v15, v11, v12}, Lkotlin/ranges/RangesKt;->step(Lkotlin/ranges/LongProgression;J)Lkotlin/ranges/LongProgression;
 
     move-result-object v1
 
@@ -472,7 +472,7 @@
     move-result-object v1
 
     .line 1549
-    new-instance v5, Ljava/util/ArrayList;
+    new-instance v11, Ljava/util/ArrayList;
 
     const/16 v12, 0xa
 
@@ -480,7 +480,7 @@
 
     move-result v12
 
-    invoke-direct {v5, v12}, Ljava/util/ArrayList;-><init>(I)V
+    invoke-direct {v11, v12}, Ljava/util/ArrayList;-><init>(I)V
 
     .line 1620
     invoke-interface {v1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
@@ -490,106 +490,108 @@
     :goto_1
     invoke-interface {v12}, Ljava/util/Iterator;->hasNext()Z
 
-    move-result v13
+    move-result v15
 
-    if-eqz v13, :cond_4
+    if-eqz v15, :cond_4
 
     invoke-interface {v12}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    move-result-object v13
+    move-result-object v15
 
     .line 1621
-    check-cast v13, Ljava/lang/Number;
+    check-cast v15, Ljava/lang/Number;
 
-    invoke-virtual {v13}, Ljava/lang/Number;->longValue()J
+    invoke-virtual {v15}, Ljava/lang/Number;->longValue()J
 
     move-result-wide v18
 
-    sub-long v20, v18, v8
+    sub-long v20, v18, v7
 
     .line 230
-    div-long v6, v20, v14
+    div-long v5, v20, v13
 
-    long-to-int v7, v6
+    long-to-int v5, v5
 
     .line 231
-    rem-long v20, v8, v14
+    rem-long v20, v7, v13
 
-    rem-long v18, v18, v14
+    rem-long v18, v18, v13
 
     cmp-long v6, v20, v18
 
     if-lez v6, :cond_2
 
-    add-int/lit8 v7, v7, 0x1
+    add-int/lit8 v5, v5, 0x1
 
     :cond_2
     if-eqz v4, :cond_3
 
     const-wide/high16 v18, 0x3ff0000000000000L    # 1.0
 
-    move-wide/from16 v20, v14
+    move-wide/from16 v20, v7
 
-    add-double v13, v10, v18
+    add-double v6, v9, v18
 
-    int-to-double v6, v7
+    move v8, v4
+
+    int-to-double v4, v5
 
     .line 233
-    invoke-static {v13, v14, v6, v7}, Ljava/lang/Math;->pow(DD)D
+    invoke-static {v6, v7, v4, v5}, Ljava/lang/Math;->pow(DD)D
 
-    move-result-wide v6
+    move-result-wide v4
 
-    move-wide/from16 v18, v8
+    move/from16 v18, v8
 
-    const/4 v13, 0x1
+    const/4 v6, 0x1
 
-    int-to-double v8, v13
+    int-to-double v7, v6
 
-    sub-double/2addr v6, v8
+    sub-double/2addr v4, v7
 
-    mul-double v6, v6, v2
+    mul-double/2addr v4, v2
 
     goto :goto_2
 
     :cond_3
-    move-wide/from16 v18, v8
+    move/from16 v18, v4
 
-    move-wide/from16 v20, v14
+    move-wide/from16 v20, v7
 
-    const/4 v13, 0x1
+    const/4 v6, 0x1
 
-    mul-double v8, v2, v10
+    mul-double v7, v2, v9
 
-    int-to-double v6, v7
+    int-to-double v4, v5
 
-    mul-double v6, v6, v8
+    mul-double/2addr v4, v7
 
     :goto_2
-    const/16 v8, 0x64
+    const/16 v7, 0x64
 
-    int-to-double v8, v8
+    int-to-double v7, v7
 
-    mul-double v6, v6, v8
+    mul-double/2addr v4, v7
 
-    double-to-int v6, v6
+    double-to-int v4, v4
 
-    int-to-double v6, v6
+    int-to-double v4, v4
 
-    const-wide/high16 v8, 0x4059000000000000L    # 100.0
+    const-wide/high16 v7, 0x4059000000000000L    # 100.0
 
-    div-double/2addr v6, v8
+    div-double/2addr v4, v7
 
     .line 237
-    invoke-static {v6, v7}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
+    invoke-static {v4, v5}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
 
-    move-result-object v6
+    move-result-object v4
 
     .line 1621
-    invoke-interface {v5, v6}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
+    invoke-interface {v11, v4}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
-    move-wide/from16 v8, v18
+    move/from16 v4, v18
 
-    move-wide/from16 v14, v20
+    move-wide/from16 v7, v20
 
     goto :goto_1
 
@@ -616,7 +618,7 @@
     const/16 v17, 0x0
 
     .line 240
-    invoke-static {v5}, Lkotlin/collections/CollectionsKt;->last(Ljava/util/List;)Ljava/lang/Object;
+    invoke-static {v11}, Lkotlin/collections/CollectionsKt;->last(Ljava/util/List;)Ljava/lang/Object;
 
     move-result-object v3
 
@@ -669,25 +671,25 @@
 
     move-result-object v3
 
-    const/4 v6, 0x0
+    const/4 v5, 0x0
 
-    invoke-direct {v2, v3, v6}, Lorg/telegram/ui/StatisticActivity$ChartViewData;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v2, v3, v5}, Lorg/telegram/ui/StatisticActivity$ChartViewData;-><init>(Ljava/lang/String;I)V
 
     .line 244
     new-instance v3, Lorg/telegram/ui/Charts/data/ChartData;
 
     .line 245
-    sget-object v6, Lcom/smedialink/model/common/TelegramStatisticsChartData;->Companion:Lcom/smedialink/model/common/TelegramStatisticsChartData$Companion;
+    sget-object v5, Lcom/smedialink/model/common/TelegramStatisticsChartData;->Companion:Lcom/smedialink/model/common/TelegramStatisticsChartData$Companion;
 
     .line 246
-    iget-object v7, v0, Lcom/smedialink/ui/wallet/staking/calculator/StakingCalculatorPresenter;->resourceManager:Lcom/smedialink/storage/domain/utils/system/ResourceManager;
+    iget-object v6, v0, Lcom/smedialink/ui/wallet/staking/calculator/StakingCalculatorPresenter;->resourceManager:Lcom/smedialink/storage/domain/utils/system/ResourceManager;
 
-    invoke-interface {v7, v4}, Lcom/smedialink/storage/domain/utils/system/ResourceManager;->getString(I)Ljava/lang/String;
+    invoke-interface {v6, v4}, Lcom/smedialink/storage/domain/utils/system/ResourceManager;->getString(I)Ljava/lang/String;
 
     move-result-object v4
 
     .line 245
-    invoke-virtual {v6, v4, v1, v5}, Lcom/smedialink/model/common/TelegramStatisticsChartData$Companion;->generateJSONObject(Ljava/lang/String;Ljava/util/List;Ljava/util/List;)Lorg/json/JSONObject;
+    invoke-virtual {v5, v4, v1, v11}, Lcom/smedialink/model/common/TelegramStatisticsChartData$Companion;->generateJSONObject(Ljava/lang/String;Ljava/util/List;Ljava/util/List;)Lorg/json/JSONObject;
 
     move-result-object v1
 
@@ -1170,7 +1172,7 @@
 .end method
 
 .method public final getPercentageText()Ljava/lang/String;
-    .locals 6
+    .locals 5
 
     .line 66
     iget-object v0, p0, Lcom/smedialink/ui/wallet/staking/calculator/StakingCalculatorPresenter;->selectedStakingProgramme:Lcom/smedialink/model/staking/StakingDetailsItem;
@@ -1198,9 +1200,9 @@
 
     move-result-wide v3
 
-    cmpl-double v5, v1, v3
+    cmpl-double v1, v1, v3
 
-    if-ltz v5, :cond_0
+    if-ltz v1, :cond_0
 
     invoke-virtual {v0}, Lcom/smedialink/model/staking/StakingDetailsItem;->getFormattedAPY()Ljava/lang/String;
 

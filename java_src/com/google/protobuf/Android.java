@@ -1,16 +1,17 @@
 package com.google.protobuf;
 /* loaded from: classes3.dex */
 final class Android {
+    private static boolean ASSUME_ANDROID;
     private static final boolean IS_ROBOLECTRIC;
     private static final Class<?> MEMORY_CLASS = getClassForName("libcore.io.Memory");
 
     static {
-        IS_ROBOLECTRIC = getClassForName("org.robolectric.Robolectric") != null;
+        IS_ROBOLECTRIC = (ASSUME_ANDROID || getClassForName("org.robolectric.Robolectric") == null) ? false : true;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static boolean isOnAndroidDevice() {
-        return (MEMORY_CLASS == null || IS_ROBOLECTRIC) ? false : true;
+        return ASSUME_ANDROID || !(MEMORY_CLASS == null || IS_ROBOLECTRIC);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */

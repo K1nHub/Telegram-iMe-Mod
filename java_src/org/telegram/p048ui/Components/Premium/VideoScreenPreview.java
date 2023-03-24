@@ -150,9 +150,9 @@ public class VideoScreenPreview extends FrameLayout implements PagerHeaderView, 
                 drawable.size2 = 16;
                 drawable.size3 = 15;
             }
-            drawable.f1786k3 = 0.98f;
-            drawable.f1785k2 = 0.98f;
-            drawable.f1784k1 = 0.98f;
+            drawable.f1787k3 = 0.98f;
+            drawable.f1786k2 = 0.98f;
+            drawable.f1785k1 = 0.98f;
             drawable.speedScale = 4.0f;
             drawable.colorKey = "premiumStartSmallStarsColor2";
             drawable.init();
@@ -177,9 +177,9 @@ public class VideoScreenPreview extends FrameLayout implements PagerHeaderView, 
             drawable3.size1 = 8;
             drawable3.size1 = 6;
             drawable3.size1 = 4;
-            drawable3.f1786k3 = 0.98f;
-            drawable3.f1785k2 = 0.98f;
-            drawable3.f1784k1 = 0.98f;
+            drawable3.f1787k3 = 0.98f;
+            drawable3.f1786k2 = 0.98f;
+            drawable3.f1785k1 = 0.98f;
             drawable3.useRotate = true;
             drawable3.speedScale = 4.0f;
             drawable3.checkBounds = true;
@@ -489,7 +489,7 @@ public class VideoScreenPreview extends FrameLayout implements PagerHeaderView, 
             this.progress = Math.abs(measuredWidth);
             z = measuredWidth < 1.0f;
             if (measuredWidth >= 0.1f) {
-                r2 = false;
+                r3 = false;
             }
         } else {
             float measuredWidth2 = (-f) / getMeasuredWidth();
@@ -501,16 +501,16 @@ public class VideoScreenPreview extends FrameLayout implements PagerHeaderView, 
                 setTranslationY((-getMeasuredHeight()) * 0.3f * measuredWidth2);
             }
             z = measuredWidth2 > -1.0f;
-            r2 = measuredWidth2 > -0.1f;
+            r3 = measuredWidth2 > -0.1f;
             this.progress = Math.abs(measuredWidth2);
         }
         if (z != this.visible) {
             this.visible = z;
             updateAttachState();
         }
-        if (r2 != this.allowPlay) {
-            this.allowPlay = r2;
-            this.imageReceiver.setAllowStartAnimation(r2);
+        if (r3 != this.allowPlay) {
+            this.allowPlay = r3;
+            this.imageReceiver.setAllowStartAnimation(r3);
             if (this.allowPlay) {
                 this.imageReceiver.startAnimation();
                 runVideoPlayer();
@@ -646,7 +646,7 @@ public class VideoScreenPreview extends FrameLayout implements PagerHeaderView, 
                     sb.append("?account=");
                     sb.append(this.currentAccount);
                     sb.append("&id=");
-                    sb.append(this.document.f1507id);
+                    sb.append(this.document.f1508id);
                     sb.append("&hash=");
                     sb.append(this.document.access_hash);
                     sb.append("&dc=");

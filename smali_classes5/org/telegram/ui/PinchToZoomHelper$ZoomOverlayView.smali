@@ -333,7 +333,7 @@
 
     move-result v2
 
-    mul-float v3, v3, v2
+    mul-float/2addr v3, v2
 
     const/high16 v2, 0x3f800000    # 1.0f
 
@@ -369,7 +369,7 @@
 
     move-result v4
 
-    mul-float v5, v5, v4
+    mul-float/2addr v5, v4
 
     add-float/2addr v5, v0
 
@@ -381,7 +381,7 @@
 
     move-result v4
 
-    mul-float v6, v6, v4
+    mul-float/2addr v6, v4
 
     add-float/2addr v6, v1
 
@@ -540,7 +540,7 @@
     goto :goto_1
 
     :cond_6
-    const/high16 v4, 0x3f800000    # 1.0f
+    move v4, v2
 
     .line 552
     :goto_1
@@ -586,7 +586,7 @@
 
     move-result v8
 
-    mul-float v7, v7, v4
+    mul-float/2addr v7, v4
 
     sub-float/2addr v8, v7
 
@@ -597,7 +597,7 @@
 
     move-result v9
 
-    mul-float v5, v5, v4
+    mul-float/2addr v5, v4
 
     sub-float v4, v9, v5
 
@@ -623,7 +623,7 @@
 
     move-result v10
 
-    mul-float v7, v7, v6
+    mul-float/2addr v7, v6
 
     add-float/2addr v10, v7
 
@@ -633,7 +633,7 @@
 
     move-result v7
 
-    mul-float v5, v5, v6
+    mul-float/2addr v5, v6
 
     add-float/2addr v7, v5
 
@@ -854,13 +854,13 @@
 
     iget v6, v0, Lorg/telegram/ui/PinchToZoomHelper;->pinchTranslationX:F
 
-    mul-float v6, v6, v3
+    mul-float/2addr v6, v3
 
     invoke-static {v0}, Lorg/telegram/ui/PinchToZoomHelper;->access$700(Lorg/telegram/ui/PinchToZoomHelper;)F
 
     move-result v0
 
-    mul-float v6, v6, v0
+    mul-float/2addr v6, v0
 
     add-float/2addr v4, v6
 
@@ -875,13 +875,13 @@
 
     iget v2, v1, Lorg/telegram/ui/PinchToZoomHelper;->pinchTranslationY:F
 
-    mul-float v2, v2, v3
+    mul-float/2addr v2, v3
 
     invoke-static {v1}, Lorg/telegram/ui/PinchToZoomHelper;->access$700(Lorg/telegram/ui/PinchToZoomHelper;)F
 
     move-result v1
 
-    mul-float v2, v2, v1
+    mul-float/2addr v2, v1
 
     add-float/2addr v5, v2
 
@@ -1205,7 +1205,7 @@
 
     const v3, 0x3ea66666    # 0.325f
 
-    mul-float v2, v2, v3
+    mul-float/2addr v2, v3
 
     iget-object v3, p0, Lorg/telegram/ui/PinchToZoomHelper$ZoomOverlayView;->this$0:Lorg/telegram/ui/PinchToZoomHelper;
 
@@ -1217,7 +1217,7 @@
 
     move-result v3
 
-    mul-float v2, v2, v3
+    mul-float/2addr v2, v3
 
     float-to-int v2, v2
 
@@ -1382,7 +1382,7 @@
 
     move-result v1
 
-    mul-float v0, v0, v1
+    mul-float/2addr v0, v1
 
     .line 494
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredHeight()I
@@ -1391,21 +1391,21 @@
 
     int-to-float v1, v1
 
-    const/4 v3, 0x0
+    cmpl-float v3, v0, v2
 
-    cmpl-float v4, v0, v2
+    const/4 v4, 0x0
 
-    if-eqz v4, :cond_2
+    if-eqz v3, :cond_2
 
     .line 495
-    iget-object v4, p0, Lorg/telegram/ui/PinchToZoomHelper$ZoomOverlayView;->this$0:Lorg/telegram/ui/PinchToZoomHelper;
+    iget-object v3, p0, Lorg/telegram/ui/PinchToZoomHelper$ZoomOverlayView;->this$0:Lorg/telegram/ui/PinchToZoomHelper;
 
-    iget-object v5, v4, Lorg/telegram/ui/PinchToZoomHelper;->clipBoundsListener:Lorg/telegram/ui/PinchToZoomHelper$ClipBoundsListener;
+    iget-object v5, v3, Lorg/telegram/ui/PinchToZoomHelper;->clipBoundsListener:Lorg/telegram/ui/PinchToZoomHelper$ClipBoundsListener;
 
     if-eqz v5, :cond_2
 
     .line 496
-    invoke-static {v4}, Lorg/telegram/ui/PinchToZoomHelper;->access$800(Lorg/telegram/ui/PinchToZoomHelper;)[F
+    invoke-static {v3}, Lorg/telegram/ui/PinchToZoomHelper;->access$800(Lorg/telegram/ui/PinchToZoomHelper;)[F
 
     move-result-object v1
 
@@ -1421,13 +1421,13 @@
 
     move-result-object v1
 
-    const/4 v4, 0x0
+    const/4 v3, 0x0
 
-    aget v1, v1, v4
+    aget v1, v1, v3
 
-    sub-float v4, v2, v0
+    sub-float v3, v2, v0
 
-    mul-float v1, v1, v4
+    mul-float/2addr v1, v3
 
     .line 499
     iget-object v5, p0, Lorg/telegram/ui/PinchToZoomHelper$ZoomOverlayView;->this$0:Lorg/telegram/ui/PinchToZoomHelper;
@@ -1440,17 +1440,17 @@
 
     aget v5, v5, v6
 
-    mul-float v5, v5, v4
+    mul-float/2addr v5, v3
 
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredHeight()I
 
-    move-result v4
+    move-result v3
 
-    int-to-float v4, v4
+    int-to-float v3, v3
 
-    mul-float v4, v4, v0
+    mul-float/2addr v3, v0
 
-    add-float/2addr v4, v5
+    add-float/2addr v3, v5
 
     .line 500
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
@@ -1459,7 +1459,7 @@
 
     int-to-float v5, v5
 
-    invoke-virtual {p1, v3, v1, v5, v4}, Landroid/graphics/Canvas;->clipRect(FFFF)Z
+    invoke-virtual {p1, v4, v1, v5, v3}, Landroid/graphics/Canvas;->clipRect(FFFF)Z
 
     .line 501
     invoke-direct {p0, p1}, Lorg/telegram/ui/PinchToZoomHelper$ZoomOverlayView;->drawImage(Landroid/graphics/Canvas;)V
@@ -1472,7 +1472,7 @@
 
     move v11, v1
 
-    move v12, v4
+    move v12, v3
 
     goto :goto_1
 
@@ -1485,7 +1485,7 @@
 
     move v12, v1
 
-    const/4 v11, 0x0
+    move v11, v4
 
     .line 509
     :goto_1

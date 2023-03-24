@@ -318,7 +318,7 @@
 
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
-    .locals 7
+    .locals 6
 
     const/4 v0, 0x1
 
@@ -363,17 +363,17 @@
 
     iget-wide v4, p1, Lcom/google/android/exoplayer2/Player$PositionInfo;->positionMs:J
 
-    cmp-long v6, v2, v4
+    cmp-long v2, v2, v4
 
-    if-nez v6, :cond_2
+    if-nez v2, :cond_2
 
     iget-wide v2, p0, Lcom/google/android/exoplayer2/Player$PositionInfo;->contentPositionMs:J
 
     iget-wide v4, p1, Lcom/google/android/exoplayer2/Player$PositionInfo;->contentPositionMs:J
 
-    cmp-long v6, v2, v4
+    cmp-long v2, v2, v4
 
-    if-nez v6, :cond_2
+    if-nez v2, :cond_2
 
     iget v2, p0, Lcom/google/android/exoplayer2/Player$PositionInfo;->adGroupIndex:I
 
@@ -423,7 +423,7 @@
     goto :goto_0
 
     :cond_2
-    const/4 v0, 0x0
+    move v0, v1
 
     :goto_0
     return v0
@@ -566,7 +566,7 @@
     goto :goto_0
 
     :cond_0
-    const/4 v3, 0x0
+    move v3, v2
 
     :goto_0
     invoke-virtual {v0, v1, v3}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
@@ -637,7 +637,7 @@
     goto :goto_2
 
     :cond_5
-    const/4 v2, -0x1
+    move v2, v1
 
     :goto_2
     invoke-virtual {v0, p2, v2}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V

@@ -31,11 +31,9 @@ public class zzat extends zzas {
                 if (zzl == 0 || zzl2 == 0 || zzl == zzl2) {
                     int zzd = zzd();
                     if (zzd > zzatVar.zzd()) {
-                        int zzd2 = zzd();
-                        throw new IllegalArgumentException("Length too large: " + zzd + zzd2);
+                        throw new IllegalArgumentException("Length too large: " + zzd + zzd());
                     } else if (zzd > zzatVar.zzd()) {
-                        int zzd3 = zzatVar.zzd();
-                        throw new IllegalArgumentException("Ran off end of other: 0, " + zzd + ", " + zzd3);
+                        throw new IllegalArgumentException("Ran off end of other: 0, " + zzd + ", " + zzatVar.zzd());
                     } else {
                         byte[] bArr = this.zza;
                         byte[] bArr2 = zzatVar.zza;

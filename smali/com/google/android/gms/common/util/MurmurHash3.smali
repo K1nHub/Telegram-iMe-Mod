@@ -66,7 +66,7 @@
 
     or-int/2addr v3, v4
 
-    mul-int v3, v3, v2
+    mul-int/2addr v3, v2
 
     shl-int/lit8 v2, v3, 0xf
 
@@ -74,7 +74,7 @@
 
     or-int/2addr v2, v3
 
-    mul-int v2, v2, v1
+    mul-int/2addr v2, v1
 
     xor-int/2addr p3, v2
 
@@ -143,7 +143,7 @@
 
     or-int/2addr p0, v3
 
-    mul-int p0, p0, v2
+    mul-int/2addr p0, v2
 
     shl-int/lit8 p1, p0, 0xf
 
@@ -151,7 +151,7 @@
 
     or-int/2addr p0, p1
 
-    mul-int p0, p0, v1
+    mul-int/2addr p0, v1
 
     xor-int/2addr p3, p0
 
@@ -164,7 +164,7 @@
 
     const p1, -0x7a143595
 
-    mul-int p0, p0, p1
+    mul-int/2addr p0, p1
 
     ushr-int/lit8 p1, p0, 0xd
 
@@ -172,7 +172,7 @@
 
     const p1, -0x3d4d51cb
 
-    mul-int p0, p0, p1
+    mul-int/2addr p0, p1
 
     ushr-int/lit8 p1, p0, 0x10
 

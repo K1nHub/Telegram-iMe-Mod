@@ -202,11 +202,11 @@
     .line 132
     iget-wide v3, p0, Lcom/bumptech/glide/util/LruCache;->maxSize:J
 
-    const/4 v5, 0x0
+    cmp-long v3, v1, v3
 
-    cmp-long v6, v1, v3
+    const/4 v4, 0x0
 
-    if-ltz v6, :cond_0
+    if-ltz v3, :cond_0
 
     .line 133
     invoke-virtual {p0, p1, p2}, Lcom/bumptech/glide/util/LruCache;->onItemEvicted(Ljava/lang/Object;Ljava/lang/Object;)V
@@ -216,18 +216,18 @@
     .line 134
     monitor-exit p0
 
-    return-object v5
+    return-object v4
 
     :cond_0
     if-eqz p2, :cond_1
 
     .line 138
     :try_start_1
-    iget-wide v3, p0, Lcom/bumptech/glide/util/LruCache;->currentSize:J
+    iget-wide v5, p0, Lcom/bumptech/glide/util/LruCache;->currentSize:J
 
-    add-long/2addr v3, v1
+    add-long/2addr v5, v1
 
-    iput-wide v3, p0, Lcom/bumptech/glide/util/LruCache;->currentSize:J
+    iput-wide v5, p0, Lcom/bumptech/glide/util/LruCache;->currentSize:J
 
     .line 140
     :cond_1
@@ -235,7 +235,7 @@
 
     if-nez p2, :cond_2
 
-    move-object v2, v5
+    move-object v2, v4
 
     goto :goto_0
 
@@ -258,9 +258,9 @@
 
     iget v3, v0, Lcom/bumptech/glide/util/LruCache$Entry;->size:I
 
-    int-to-long v3, v3
+    int-to-long v5, v3
 
-    sub-long/2addr v1, v3
+    sub-long/2addr v1, v5
 
     iput-wide v1, p0, Lcom/bumptech/glide/util/LruCache;->currentSize:J
 
@@ -285,14 +285,14 @@
     if-eqz v0, :cond_4
 
     .line 150
-    iget-object v5, v0, Lcom/bumptech/glide/util/LruCache$Entry;->value:Ljava/lang/Object;
+    iget-object v4, v0, Lcom/bumptech/glide/util/LruCache$Entry;->value:Ljava/lang/Object;
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     :cond_4
     monitor-exit p0
 
-    return-object v5
+    return-object v4
 
     :catchall_0
     move-exception p1
@@ -373,9 +373,9 @@
     :try_start_0
     iget-wide v0, p0, Lcom/bumptech/glide/util/LruCache;->currentSize:J
 
-    cmp-long v2, v0, p1
+    cmp-long v0, v0, p1
 
-    if-lez v2, :cond_0
+    if-lez v0, :cond_0
 
     .line 183
     iget-object v0, p0, Lcom/bumptech/glide/util/LruCache;->cache:Ljava/util/Map;

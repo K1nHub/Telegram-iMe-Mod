@@ -755,15 +755,15 @@ public abstract class TokenInfo {
             /* compiled from: TokenInfo.kt */
             /* renamed from: com.smedialink.storage.domain.model.wallet.token.TokenInfo$Crypto$Ethereum$GT */
             /* loaded from: classes3.dex */
-            public static final class C1850GT extends Ethereum {
-                public static final C1850GT INSTANCE = new C1850GT();
+            public static final class C1863GT extends Ethereum {
+                public static final C1863GT INSTANCE = new C1863GT();
 
                 /* JADX WARN: Illegal instructions before constructor call */
                 /*
                     Code decompiled incorrectly, please refer to instructions dump.
                     To view partially-correct add '--show-bad-code' argument
                 */
-                private C1850GT() {
+                private C1863GT() {
                     /*
                         r14 = this;
                         com.smedialink.storage.domain.model.wallet.token.TokenCode r1 = com.smedialink.storage.domain.model.wallet.token.TokenCode.GT
@@ -783,7 +783,7 @@ public abstract class TokenInfo {
                         r0.<init>(r1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, r13)
                         return
                     */
-                    throw new UnsupportedOperationException("Method not decompiled: com.smedialink.storage.domain.model.wallet.token.TokenInfo.Crypto.Ethereum.C1850GT.<init>():void");
+                    throw new UnsupportedOperationException("Method not decompiled: com.smedialink.storage.domain.model.wallet.token.TokenInfo.Crypto.Ethereum.C1863GT.<init>():void");
                 }
             }
 
@@ -2048,15 +2048,15 @@ public abstract class TokenInfo {
             /* compiled from: TokenInfo.kt */
             /* renamed from: com.smedialink.storage.domain.model.wallet.token.TokenInfo$Crypto$Ethereum$OM */
             /* loaded from: classes3.dex */
-            public static final class C1851OM extends Ethereum {
-                public static final C1851OM INSTANCE = new C1851OM();
+            public static final class C1865OM extends Ethereum {
+                public static final C1865OM INSTANCE = new C1865OM();
 
                 /* JADX WARN: Illegal instructions before constructor call */
                 /*
                     Code decompiled incorrectly, please refer to instructions dump.
                     To view partially-correct add '--show-bad-code' argument
                 */
-                private C1851OM() {
+                private C1865OM() {
                     /*
                         r14 = this;
                         com.smedialink.storage.domain.model.wallet.token.TokenCode r1 = com.smedialink.storage.domain.model.wallet.token.TokenCode.OM
@@ -2076,7 +2076,7 @@ public abstract class TokenInfo {
                         r0.<init>(r1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, r13)
                         return
                     */
-                    throw new UnsupportedOperationException("Method not decompiled: com.smedialink.storage.domain.model.wallet.token.TokenInfo.Crypto.Ethereum.C1851OM.<init>():void");
+                    throw new UnsupportedOperationException("Method not decompiled: com.smedialink.storage.domain.model.wallet.token.TokenInfo.Crypto.Ethereum.C1865OM.<init>():void");
                 }
             }
 
@@ -2638,7 +2638,7 @@ public abstract class TokenInfo {
                     /*
                         r14 = this;
                         com.smedialink.storage.domain.model.wallet.token.TokenCode r1 = com.smedialink.storage.domain.model.wallet.token.TokenCode.TON
-                        int r2 = com.smedialink.storage.R$drawable.fork_ic_ton_58
+                        int r2 = com.smedialink.storage.R$drawable.fork_ic_ton_logo
                         int r4 = com.smedialink.storage.R$string.currency_ton
                         int r5 = com.smedialink.storage.R$string.currency_short_ton
                         com.smedialink.storage.domain.utils.crypto.Convert$Unit r11 = com.smedialink.storage.domain.utils.crypto.Convert.Unit.GWEI
@@ -2859,6 +2859,109 @@ public abstract class TokenInfo {
                         return
                     */
                     throw new UnsupportedOperationException("Method not decompiled: com.smedialink.storage.domain.model.wallet.token.TokenInfo.Crypto.Ethereum.SIN.<init>():void");
+                }
+            }
+
+            /* compiled from: TokenInfo.kt */
+            /* loaded from: classes3.dex */
+            public static final class TRX extends Ethereum {
+                public static final TRX INSTANCE = new TRX();
+
+                /* JADX WARN: Illegal instructions before constructor call */
+                /*
+                    Code decompiled incorrectly, please refer to instructions dump.
+                    To view partially-correct add '--show-bad-code' argument
+                */
+                private TRX() {
+                    /*
+                        r14 = this;
+                        com.smedialink.storage.domain.model.wallet.token.TokenCode r1 = com.smedialink.storage.domain.model.wallet.token.TokenCode.TRX
+                        int r2 = com.smedialink.storage.R$drawable.fork_ic_tron_logo
+                        int r4 = com.smedialink.storage.R$string.currency_tron
+                        int r5 = com.smedialink.storage.R$string.currency_short_tron
+                        com.smedialink.storage.domain.utils.crypto.Convert$Unit r11 = com.smedialink.storage.domain.utils.crypto.Convert.Unit.MWEI
+                        int r9 = r1.ordinal()
+                        int r10 = com.smedialink.storage.R$string.currency_tron_site
+                        r3 = 0
+                        r6 = 0
+                        r7 = 6
+                        r8 = 10
+                        r12 = 32
+                        r13 = 0
+                        r0 = r14
+                        r0.<init>(r1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, r13)
+                        return
+                    */
+                    throw new UnsupportedOperationException("Method not decompiled: com.smedialink.storage.domain.model.wallet.token.TokenInfo.Crypto.Ethereum.TRX.<init>():void");
+                }
+            }
+
+            /* compiled from: TokenInfo.kt */
+            /* loaded from: classes3.dex */
+            public static final class TUSD extends Ethereum {
+                public static final TUSD INSTANCE = new TUSD();
+
+                /* JADX WARN: Illegal instructions before constructor call */
+                /*
+                    Code decompiled incorrectly, please refer to instructions dump.
+                    To view partially-correct add '--show-bad-code' argument
+                */
+                private TUSD() {
+                    /*
+                        r14 = this;
+                        com.smedialink.storage.domain.model.wallet.token.TokenCode r1 = com.smedialink.storage.domain.model.wallet.token.TokenCode.TUSD
+                        int r2 = com.smedialink.storage.R$drawable.fork_ic_tusd_logo
+                        int r4 = com.smedialink.storage.R$string.currency_trueusd
+                        int r5 = com.smedialink.storage.R$string.currency_short_trueusd
+                        com.smedialink.storage.domain.utils.crypto.Convert$Unit r11 = com.smedialink.storage.domain.utils.crypto.Convert.Unit.ETHER
+                        int r9 = r1.ordinal()
+                        int r10 = com.smedialink.storage.R$string.currency_trueusd_site
+                        r3 = 0
+                        r6 = 0
+                        r7 = 8
+                        r8 = 10
+                        r12 = 32
+                        r13 = 0
+                        r0 = r14
+                        r0.<init>(r1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, r13)
+                        return
+                    */
+                    throw new UnsupportedOperationException("Method not decompiled: com.smedialink.storage.domain.model.wallet.token.TokenInfo.Crypto.Ethereum.TUSD.<init>():void");
+                }
+            }
+
+            /* compiled from: TokenInfo.kt */
+            /* renamed from: com.smedialink.storage.domain.model.wallet.token.TokenInfo$Crypto$Ethereum$HT */
+            /* loaded from: classes3.dex */
+            public static final class C1864HT extends Ethereum {
+                public static final C1864HT INSTANCE = new C1864HT();
+
+                /* JADX WARN: Illegal instructions before constructor call */
+                /*
+                    Code decompiled incorrectly, please refer to instructions dump.
+                    To view partially-correct add '--show-bad-code' argument
+                */
+                private C1864HT() {
+                    /*
+                        r14 = this;
+                        com.smedialink.storage.domain.model.wallet.token.TokenCode r1 = com.smedialink.storage.domain.model.wallet.token.TokenCode.HT
+                        int r2 = com.smedialink.storage.R$drawable.fork_ic_ht_logo
+                        int r4 = com.smedialink.storage.R$string.currency_huobitoken
+                        int r5 = com.smedialink.storage.R$string.currency_short_huobitoken
+                        com.smedialink.storage.domain.utils.crypto.Convert$Unit r11 = com.smedialink.storage.domain.utils.crypto.Convert.Unit.ETHER
+                        int r9 = r1.ordinal()
+                        int r10 = com.smedialink.storage.R$string.currency_huobitoken_site
+                        r3 = 0
+                        r6 = 0
+                        r7 = 8
+                        r8 = 10
+                        r12 = 32
+                        r13 = 0
+                        r0 = r14
+                        r0.<init>(r1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, r13)
+                        return
+                    */
+                    throw new UnsupportedOperationException("Method not decompiled: com.smedialink.storage.domain.model.wallet.token.TokenInfo.Crypto.Ethereum.C1864HT.<init>():void");
                 }
             }
         }

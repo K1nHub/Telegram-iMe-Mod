@@ -404,7 +404,7 @@
 
     if-eq p1, v2, :cond_0
 
-    const/4 v1, 0x1
+    move v1, v4
 
     :cond_0
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Cells/CheckBoxCell;->setNeedDivider(Z)V
@@ -639,7 +639,7 @@
     goto :goto_1
 
     :cond_1
-    const/4 v3, 0x0
+    move v3, p1
 
     :goto_1
     if-eqz v3, :cond_0
@@ -951,7 +951,7 @@
 
     move-result-object v0
 
-    const/4 v1, 0x0
+    move v1, v2
 
     :cond_1
     :goto_0
@@ -987,7 +987,7 @@
     goto :goto_1
 
     :cond_2
-    const/4 v3, 0x0
+    move v3, v2
 
     :goto_1
     if-eqz v3, :cond_1

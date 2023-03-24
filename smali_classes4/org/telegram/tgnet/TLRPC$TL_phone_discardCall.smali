@@ -31,7 +31,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 57916
+    .line 57943
     invoke-direct {p0}, Lorg/telegram/tgnet/TLObject;-><init>()V
 
     return-void
@@ -42,7 +42,7 @@
 .method public deserializeResponse(Lorg/telegram/tgnet/AbstractSerializedData;IZ)Lorg/telegram/tgnet/TLObject;
     .locals 0
 
-    .line 57927
+    .line 57954
     invoke-static {p1, p2, p3}, Lorg/telegram/tgnet/TLRPC$Updates;->TLdeserialize(Lorg/telegram/tgnet/AbstractSerializedData;IZ)Lorg/telegram/tgnet/TLRPC$Updates;
 
     move-result-object p1
@@ -53,12 +53,12 @@
 .method public serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
     .locals 2
 
-    .line 57931
+    .line 57958
     sget v0, Lorg/telegram/tgnet/TLRPC$TL_phone_discardCall;->constructor:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 57932
+    .line 57959
     iget-boolean v0, p0, Lorg/telegram/tgnet/TLRPC$TL_phone_discardCall;->video:Z
 
     if-eqz v0, :cond_0
@@ -77,25 +77,25 @@
     :goto_0
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$TL_phone_discardCall;->flags:I
 
-    .line 57933
+    .line 57960
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 57934
+    .line 57961
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$TL_phone_discardCall;->peer:Lorg/telegram/tgnet/TLRPC$TL_inputPhoneCall;
 
     invoke-virtual {v0, p1}, Lorg/telegram/tgnet/TLRPC$TL_inputPhoneCall;->serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
 
-    .line 57935
+    .line 57962
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$TL_phone_discardCall;->duration:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 57936
+    .line 57963
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$TL_phone_discardCall;->reason:Lorg/telegram/tgnet/TLRPC$PhoneCallDiscardReason;
 
     invoke-virtual {v0, p1}, Lorg/telegram/tgnet/TLObject;->serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
 
-    .line 57937
+    .line 57964
     iget-wide v0, p0, Lorg/telegram/tgnet/TLRPC$TL_phone_discardCall;->connection_id:J
 
     invoke-virtual {p1, v0, v1}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt64(J)V

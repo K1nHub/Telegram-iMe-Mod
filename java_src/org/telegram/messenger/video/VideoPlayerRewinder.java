@@ -187,7 +187,7 @@ public class VideoPlayerRewinder {
             if (r0 == r1) goto L48
             if (r0 != r3) goto L49
         L48:
-            r2 = 1
+            r2 = r1
         L49:
             int r0 = r4.rewindCount
             if (r0 != r1) goto L66

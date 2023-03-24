@@ -155,7 +155,7 @@
 .end method
 
 .method private static toString(Lokio/Buffer;)Ljava/lang/String;
-    .locals 5
+    .locals 4
 
     .line 59
     invoke-virtual {p0}, Lokio/Buffer;->size()J
@@ -164,9 +164,9 @@
 
     const-wide/16 v2, 0x40
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-gtz v4, :cond_0
+    if-gtz v0, :cond_0
 
     .line 61
     invoke-virtual {p0}, Lokio/Buffer;->snapshot()Lokio/ByteString;
@@ -189,14 +189,14 @@
 
     move-result-wide v0
 
-    long-to-int v1, v0
+    long-to-int v0, v0
 
     .line 66
-    new-instance v0, Ljava/lang/StringBuilder;
+    new-instance v1, Ljava/lang/StringBuilder;
 
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-virtual {p0, v1}, Lokio/Buffer;->snapshot(I)Lokio/ByteString;
+    invoke-virtual {p0, v0}, Lokio/Buffer;->snapshot(I)Lokio/ByteString;
 
     move-result-object p0
 
@@ -204,13 +204,13 @@
 
     move-result-object p0
 
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     const-string p0, "..."
 
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p0
 

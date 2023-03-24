@@ -429,9 +429,9 @@
 
     invoke-virtual {p3, p1, v1}, Lcom/google/android/gms/internal/firebase_ml/zzue;->zzh(II)V
 
-    const/4 p1, 0x0
+    move p1, v0
 
-    const/4 p3, 0x0
+    move p3, p1
 
     .line 64
     :goto_0
@@ -710,9 +710,9 @@
 
     invoke-virtual {p3, p1, v1}, Lcom/google/android/gms/internal/firebase_ml/zzue;->zzh(II)V
 
-    const/4 p1, 0x0
+    move p1, v0
 
-    const/4 p3, 0x0
+    move p3, p1
 
     .line 79
     :goto_0
@@ -871,9 +871,9 @@
 
     invoke-virtual {p3, p1, v1}, Lcom/google/android/gms/internal/firebase_ml/zzue;->zzh(II)V
 
-    const/4 p1, 0x0
+    move p1, v0
 
-    const/4 p3, 0x0
+    move p3, p1
 
     .line 94
     :goto_0
@@ -1002,9 +1002,9 @@
 
     invoke-virtual {p3, p1, v1}, Lcom/google/android/gms/internal/firebase_ml/zzue;->zzh(II)V
 
-    const/4 p1, 0x0
+    move p1, v0
 
-    const/4 p3, 0x0
+    move p3, p1
 
     .line 111
     :goto_0
@@ -1167,9 +1167,9 @@
 
     invoke-virtual {p3, p1, v1}, Lcom/google/android/gms/internal/firebase_ml/zzue;->zzh(II)V
 
-    const/4 p1, 0x0
+    move p1, v0
 
-    const/4 p3, 0x0
+    move p3, p1
 
     .line 126
     :goto_0
@@ -1296,9 +1296,9 @@
 
     invoke-virtual {p3, p1, v1}, Lcom/google/android/gms/internal/firebase_ml/zzue;->zzh(II)V
 
-    const/4 p1, 0x0
+    move p1, v0
 
-    const/4 p3, 0x0
+    move p3, p1
 
     .line 141
     :goto_0
@@ -1425,9 +1425,9 @@
 
     invoke-virtual {p3, p1, v1}, Lcom/google/android/gms/internal/firebase_ml/zzue;->zzh(II)V
 
-    const/4 p1, 0x0
+    move p1, v0
 
-    const/4 p3, 0x0
+    move p3, p1
 
     .line 156
     :goto_0
@@ -1554,9 +1554,9 @@
 
     invoke-virtual {p3, p1, v1}, Lcom/google/android/gms/internal/firebase_ml/zzue;->zzh(II)V
 
-    const/4 p1, 0x0
+    move p1, v0
 
-    const/4 p3, 0x0
+    move p3, p1
 
     .line 171
     :goto_0
@@ -1718,9 +1718,9 @@
 
     invoke-virtual {p3, p1, v1}, Lcom/google/android/gms/internal/firebase_ml/zzue;->zzh(II)V
 
-    const/4 p1, 0x0
+    move p1, v0
 
-    const/4 p3, 0x0
+    move p3, p1
 
     .line 188
     :goto_0
@@ -1880,9 +1880,9 @@
 
     invoke-virtual {p3, p1, v1}, Lcom/google/android/gms/internal/firebase_ml/zzue;->zzh(II)V
 
-    const/4 p1, 0x0
+    move p1, v0
 
-    const/4 p3, 0x0
+    move p3, p1
 
     .line 220
     :goto_0
@@ -2025,9 +2025,9 @@
 
     invoke-virtual {p3, p1, v1}, Lcom/google/android/gms/internal/firebase_ml/zzue;->zzh(II)V
 
-    const/4 p1, 0x0
+    move p1, v0
 
-    const/4 p3, 0x0
+    move p3, p1
 
     .line 235
     :goto_0
@@ -2172,9 +2172,9 @@
 
     invoke-virtual {p3, p1, v1}, Lcom/google/android/gms/internal/firebase_ml/zzue;->zzh(II)V
 
-    const/4 p1, 0x0
+    move p1, v0
 
-    const/4 p3, 0x0
+    move p3, p1
 
     .line 252
     :goto_0
@@ -2303,9 +2303,9 @@
 
     invoke-virtual {p3, p1, v1}, Lcom/google/android/gms/internal/firebase_ml/zzue;->zzh(II)V
 
-    const/4 p1, 0x0
+    move p1, v0
 
-    const/4 p3, 0x0
+    move p3, p1
 
     .line 269
     :goto_0
@@ -2432,9 +2432,9 @@
 
     invoke-virtual {p3, p1, v1}, Lcom/google/android/gms/internal/firebase_ml/zzue;->zzh(II)V
 
-    const/4 p1, 0x0
+    move p1, v0
 
-    const/4 p3, 0x0
+    move p3, p1
 
     .line 284
     :goto_0

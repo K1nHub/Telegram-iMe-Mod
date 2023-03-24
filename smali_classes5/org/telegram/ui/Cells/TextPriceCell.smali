@@ -68,12 +68,12 @@
 
     if-eqz v3, :cond_0
 
-    const/4 v3, 0x5
+    move v3, v4
 
     goto :goto_0
 
     :cond_0
-    const/4 v3, 0x3
+    move v3, v5
 
     :goto_0
     or-int/lit8 v3, v3, 0x10
@@ -91,12 +91,12 @@
 
     if-eqz v3, :cond_1
 
-    const/4 v3, 0x5
+    move v3, v4
 
     goto :goto_1
 
     :cond_1
-    const/4 v3, 0x3
+    move v3, v5
 
     :goto_1
     or-int/lit8 v8, v3, 0x30
@@ -165,12 +165,12 @@
 
     if-eqz v0, :cond_2
 
-    const/4 v0, 0x3
+    move v0, v5
 
     goto :goto_2
 
     :cond_2
-    const/4 v0, 0x5
+    move v0, v4
 
     :goto_2
     or-int/lit8 v0, v0, 0x10
@@ -188,7 +188,7 @@
 
     if-eqz v0, :cond_3
 
-    const/4 v4, 0x3
+    move v4, v5
 
     :cond_3
     or-int/lit8 v8, v4, 0x30

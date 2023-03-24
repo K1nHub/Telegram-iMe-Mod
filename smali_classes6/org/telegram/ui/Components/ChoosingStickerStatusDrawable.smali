@@ -174,7 +174,7 @@
     goto :goto_0
 
     :cond_0
-    const/high16 v7, 0x3f800000    # 1.0f
+    move v7, v3
 
     :goto_0
     invoke-virtual {v4, v7}, Lorg/telegram/ui/Components/CubicBezierInterpolator;->getInterpolation(F)F
@@ -188,7 +188,7 @@
 
     if-gez v6, :cond_1
 
-    const/4 v2, 0x0
+    move v2, v8
 
     goto :goto_1
 
@@ -224,7 +224,7 @@
 
     int-to-float v5, v5
 
-    mul-float v5, v5, v4
+    mul-float/2addr v5, v4
 
     invoke-static {v9}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
@@ -240,7 +240,7 @@
 
     sub-float v12, v3, v4
 
-    mul-float v10, v10, v12
+    mul-float/2addr v10, v12
 
     add-float/2addr v5, v10
 
@@ -259,7 +259,7 @@
 
     sub-float/2addr v3, v7
 
-    mul-float v6, v6, v3
+    mul-float/2addr v6, v3
 
     goto :goto_2
 
@@ -273,7 +273,7 @@
 
     sub-float/2addr v3, v4
 
-    mul-float v5, v5, v3
+    mul-float/2addr v5, v3
 
     invoke-static {v9}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
@@ -287,7 +287,7 @@
 
     int-to-float v3, v3
 
-    mul-float v3, v3, v4
+    mul-float/2addr v3, v4
 
     add-float/2addr v5, v3
 
@@ -306,7 +306,7 @@
 
     move-result v6
 
-    mul-float v6, v6, v3
+    mul-float/2addr v6, v3
 
     :goto_2
     const/16 v3, 0xb
@@ -332,13 +332,13 @@
 
     move-result v13
 
-    mul-float v13, v13, v4
+    mul-float/2addr v13, v4
 
     invoke-static {v12}, Lorg/telegram/messenger/AndroidUtilities;->dpf2(F)F
 
     move-result v4
 
-    mul-float v4, v4, v2
+    mul-float/2addr v4, v2
 
     sub-float/2addr v13, v4
 
@@ -416,7 +416,7 @@
 
     move-result v15
 
-    mul-int v15, v15, v12
+    mul-int/2addr v15, v12
 
     int-to-float v15, v15
 

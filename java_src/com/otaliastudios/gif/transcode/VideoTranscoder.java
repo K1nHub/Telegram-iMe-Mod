@@ -73,13 +73,12 @@ public class VideoTranscoder extends BaseTranscoder {
         float integer3 = (z ? mediaFormat2.getInteger("height") : mediaFormat2.getInteger("width")) / (z ? mediaFormat2.getInteger("width") : mediaFormat2.getInteger("height"));
         float f3 = 1.0f;
         if (f2 > integer3) {
-            f3 = f2 / integer3;
-        } else if (f2 < integer3) {
-            f = integer3 / f2;
-            this.mDecoderOutputSurface.setSize((int) integer, (int) integer2);
-            this.mDecoderOutputSurface.setScale(f3, f);
+            float f4 = f2 / integer3;
+            f = 1.0f;
+            f3 = f4;
+        } else {
+            f = f2 < integer3 ? integer3 / f2 : 1.0f;
         }
-        f = 1.0f;
         this.mDecoderOutputSurface.setSize((int) integer, (int) integer2);
         this.mDecoderOutputSurface.setScale(f3, f);
     }

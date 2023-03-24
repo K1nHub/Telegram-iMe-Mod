@@ -170,7 +170,7 @@
     if-nez v1, :cond_4
 
     :cond_3
-    const/4 v11, 0x1
+    move v11, v12
 
     :cond_4
     const-string v1, "primitive number field but found a JSON null"
@@ -330,7 +330,7 @@
     if-eqz v0, :cond_a
 
     :cond_9
-    const/4 v11, 0x1
+    move v11, v12
 
     :cond_a
     const-string v0, "number field formatted as a JSON string must use the @JsonString annotation"
@@ -364,7 +364,7 @@
     if-nez v0, :cond_d
 
     :cond_c
-    const/4 v11, 0x1
+    move v11, v12
 
     :cond_d
     const-string v0, "number type formatted as a JSON number cannot use @JsonString annotation"
@@ -607,13 +607,13 @@
     goto :goto_8
 
     :cond_1d
-    const/4 v0, 0x0
+    move v0, v11
 
     goto :goto_9
 
     :cond_1e
     :goto_8
-    const/4 v0, 0x1
+    move v0, v12
 
     :goto_9
     const-string v1, "expected type Boolean or boolean but got %s"
@@ -675,13 +675,13 @@
     goto :goto_a
 
     :cond_21
-    const/4 v1, 0x0
+    move v1, v11
 
     goto :goto_b
 
     :cond_22
     :goto_a
-    const/4 v1, 0x1
+    move v1, v12
 
     :goto_b
     const-string v2, "expected collection or array type but got %s"
@@ -823,12 +823,12 @@
 
     if-nez v1, :cond_2a
 
-    const/4 v1, 0x1
+    move v1, v12
 
     goto :goto_f
 
     :cond_2a
-    const/4 v1, 0x0
+    move v1, v11
 
     :goto_f
     const-string v2, "expected object or map type but got %s"
@@ -881,12 +881,12 @@
 
     if-eqz v1, :cond_2e
 
-    const/4 v1, 0x1
+    move v1, v12
 
     goto :goto_12
 
     :cond_2e
-    const/4 v1, 0x0
+    move v1, v11
 
     :goto_12
     if-eqz v13, :cond_2f
@@ -1267,7 +1267,7 @@
 
     if-eqz v1, :cond_40
 
-    const/4 v2, 0x1
+    move v2, v12
 
     goto :goto_1a
 
@@ -1339,7 +1339,7 @@
     :goto_1c
     if-eqz v3, :cond_43
 
-    const/4 v11, 0x1
+    move v11, v12
 
     goto :goto_1d
 
@@ -1712,12 +1712,12 @@
 
     if-nez v0, :cond_3
 
-    const/4 v0, 0x1
+    move v0, v4
 
     goto :goto_1
 
     :cond_3
-    const/4 v0, 0x0
+    move v0, v5
 
     :goto_1
     const-string v6, "Class contains more than one field with @JsonPolymorphicTypeMap annotation: %s"
@@ -1769,12 +1769,12 @@
 
     if-lez v6, :cond_4
 
-    const/4 v6, 0x1
+    move v6, v4
 
     goto :goto_2
 
     :cond_4
-    const/4 v6, 0x0
+    move v6, v5
 
     :goto_2
     const-string v7, "@JsonPolymorphicTypeMap must have at least one @TypeDef"
@@ -1785,7 +1785,7 @@
     .line 260
     array-length v6, v0
 
-    const/4 v7, 0x0
+    move v7, v5
 
     :goto_3
     if-ge v7, v6, :cond_6

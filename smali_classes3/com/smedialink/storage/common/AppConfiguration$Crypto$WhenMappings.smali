@@ -87,7 +87,7 @@
 
     :catch_3
     :try_start_4
-    sget-object v1, Lcom/smedialink/storage/domain/model/crypto/NetworkType;->THE_OPEN_NETWORK:Lcom/smedialink/storage/domain/model/crypto/NetworkType;
+    sget-object v1, Lcom/smedialink/storage/domain/model/crypto/NetworkType;->TRON:Lcom/smedialink/storage/domain/model/crypto/NetworkType;
 
     invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
 
@@ -100,6 +100,20 @@
     .catch Ljava/lang/NoSuchFieldError; {:try_start_4 .. :try_end_4} :catch_4
 
     :catch_4
+    :try_start_5
+    sget-object v1, Lcom/smedialink/storage/domain/model/crypto/NetworkType;->THE_OPEN_NETWORK:Lcom/smedialink/storage/domain/model/crypto/NetworkType;
+
+    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
+
+    move-result v1
+
+    const/4 v2, 0x6
+
+    aput v2, v0, v1
+    :try_end_5
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_5 .. :try_end_5} :catch_5
+
+    :catch_5
     sput-object v0, Lcom/smedialink/storage/common/AppConfiguration$Crypto$WhenMappings;->$EnumSwitchMapping$0:[I
 
     return-void

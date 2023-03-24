@@ -133,12 +133,12 @@
 
     if-eqz v0, :cond_0
 
-    const/4 v0, 0x5
+    move v0, v1
 
     goto :goto_0
 
     :cond_0
-    const/4 v0, 0x3
+    move v0, v2
 
     :goto_0
     invoke-virtual {p4, v0}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setGravity(I)V
@@ -160,24 +160,24 @@
 
     if-eqz v5, :cond_1
 
-    const/4 v6, 0x5
+    move v6, v1
 
     goto :goto_1
 
     :cond_1
-    const/4 v6, 0x3
+    move v6, v2
 
     :goto_1
     or-int/lit8 v6, v6, 0x30
 
     if-eqz v5, :cond_2
 
-    const/4 v7, 0x0
+    move v7, v0
 
     goto :goto_2
 
     :cond_2
-    const/16 v7, 0xf
+    move v7, p4
 
     :goto_2
     const/16 v8, 0xc
@@ -187,7 +187,7 @@
     goto :goto_3
 
     :cond_3
-    const/4 p4, 0x0
+    move p4, v0
 
     :goto_3
     const/4 v9, 0x0
@@ -217,12 +217,12 @@
 
     if-eqz p4, :cond_4
 
-    const/4 v5, 0x5
+    move v5, v1
 
     goto :goto_4
 
     :cond_4
-    const/4 v5, 0x3
+    move v5, v2
 
     :goto_4
     or-int/lit8 v5, v5, 0x30
@@ -236,14 +236,14 @@
     goto :goto_5
 
     :cond_5
-    const/16 v6, 0x49
+    move v6, v10
 
     :goto_5
     const/16 v7, 0xc
 
     if-eqz p4, :cond_6
 
-    const/16 v8, 0x49
+    move v8, v10
 
     goto :goto_6
 
@@ -289,12 +289,12 @@
 
     if-eqz p2, :cond_7
 
-    const/4 p2, 0x5
+    move p2, v1
 
     goto :goto_7
 
     :cond_7
-    const/4 p2, 0x3
+    move p2, v2
 
     :goto_7
     invoke-virtual {p1, p2}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setGravity(I)V
@@ -313,7 +313,7 @@
     goto :goto_8
 
     :cond_8
-    const/4 v1, 0x3
+    move v1, v2
 
     :goto_8
     or-int/lit8 v5, v1, 0x30
@@ -325,14 +325,14 @@
     goto :goto_9
 
     :cond_9
-    const/16 v6, 0x49
+    move v6, v10
 
     :goto_9
     const/16 v7, 0x25
 
     if-eqz p2, :cond_a
 
-    const/16 v8, 0x49
+    move v8, v10
 
     goto :goto_a
 
@@ -362,36 +362,36 @@
 
     if-eqz p2, :cond_c
 
-    const/4 v5, 0x5
+    move v5, v1
 
     goto :goto_b
 
     :cond_c
-    const/4 v5, 0x3
+    move v5, v2
 
     :goto_b
     or-int/lit8 v5, v5, 0x30
 
     if-eqz p2, :cond_d
 
-    const/4 v6, 0x0
+    move v6, v0
 
     goto :goto_c
 
     :cond_d
-    const/16 v6, 0xf
+    move v6, p4
 
     :goto_c
     const/4 v7, 0x6
 
     if-eqz p2, :cond_e
 
-    const/16 v8, 0xf
+    move v8, p4
 
     goto :goto_d
 
     :cond_e
-    const/4 v8, 0x0
+    move v8, v0
 
     :goto_d
     const/4 v9, 0x0
@@ -416,7 +416,7 @@
     goto :goto_e
 
     :cond_f
-    const/4 v1, 0x3
+    move v1, v2
 
     :goto_e
     or-int/lit8 v5, v1, 0x30
@@ -430,14 +430,14 @@
     goto :goto_f
 
     :cond_10
-    const/16 v6, 0x4a
+    move v6, p4
 
     :goto_f
     const/16 v7, 0x11
 
     if-eqz p2, :cond_11
 
-    const/16 v8, 0x4a
+    move v8, p4
 
     goto :goto_10
 
@@ -646,7 +646,7 @@
     goto :goto_1
 
     :cond_3
-    const/16 v5, 0xc
+    move v5, v6
 
     :goto_1
     invoke-static {v5}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
@@ -668,7 +668,7 @@
     goto :goto_2
 
     :cond_4
-    const/16 v3, 0x2a
+    move v3, v4
 
     :goto_2
     invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
@@ -704,7 +704,7 @@
     goto :goto_3
 
     :cond_6
-    const/16 v5, 0xc
+    move v5, v6
 
     :goto_3
     invoke-static {v5}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
@@ -732,7 +732,7 @@
     goto :goto_4
 
     :cond_7
-    const/16 v3, 0x2a
+    move v3, v4
 
     :goto_4
     invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
@@ -1307,9 +1307,9 @@
 
     const-wide/16 v3, 0x0
 
-    cmp-long v6, v0, v3
+    cmp-long v3, v0, v3
 
-    if-lez v6, :cond_3
+    if-lez v3, :cond_3
 
     .line 170
     iget v3, p0, Lorg/telegram/ui/Cells/SharingLiveLocationCell;->currentAccount:I

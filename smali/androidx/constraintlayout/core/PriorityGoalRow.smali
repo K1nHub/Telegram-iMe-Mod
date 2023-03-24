@@ -139,7 +139,7 @@
 
     const/4 v0, 0x0
 
-    const/4 v2, 0x0
+    move v2, v0
 
     .line 205
     :goto_0
@@ -204,7 +204,7 @@
 
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    move v1, v0
 
     .line 224
     :goto_0
@@ -313,7 +313,7 @@
 
     const/4 v0, 0x0
 
-    const/4 v1, -0x1
+    move v1, p1
 
     .line 168
     :goto_0
@@ -542,7 +542,7 @@
 
     iget v4, p2, Landroidx/constraintlayout/core/ArrayRow;->constantValue:F
 
-    mul-float v4, v4, v3
+    mul-float/2addr v4, v3
 
     add-float/2addr v2, v4
 

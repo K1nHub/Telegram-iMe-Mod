@@ -153,8 +153,8 @@ public class Engine {
         this.mOutputFormat = mediaFormat;
         Logger logger = LOG;
         logger.m711v("Duration (us): " + getTotalDurationUs());
-        long j = 0L;
         boolean z = false;
+        long j = 0L;
         while (!z) {
             try {
                 Logger logger2 = LOG;

@@ -98,7 +98,7 @@
     goto :goto_3
 
     :cond_1
-    const/4 v0, 0x0
+    move v0, v1
 
     :goto_0
     iget-object v3, p0, Lcom/google/android/gms/common/internal/zal;->zaa:Landroid/util/SparseIntArray;
@@ -136,7 +136,7 @@
     goto :goto_0
 
     :cond_3
-    const/4 v1, -0x1
+    move v1, v2
 
     :goto_1
     if-ne v1, v2, :cond_4

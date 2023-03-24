@@ -55,7 +55,7 @@ public final class TONWalletTransferDataSourceImpl implements WalletTransferData
         if (str == null) {
             str = "";
         }
-        Observable map = tonApi.getParamsForCryptoTransfer(new GetParamsForTonCryptoTransferRequest(name, str, StringExtKt.orZero(str2))).map(new FirebaseExtKt$sam$i$io_reactivex_functions_Function$0(new C1500xf1226d95(this.firebaseErrorHandler)));
+        Observable map = tonApi.getParamsForCryptoTransfer(new GetParamsForTonCryptoTransferRequest(name, str, StringExtKt.orZero(str2))).map(new FirebaseExtKt$sam$i$io_reactivex_functions_Function$0(new C1502xf1226d95(this.firebaseErrorHandler)));
         Intrinsics.checkNotNullExpressionValue(map, "errorHandler: FirebaseFu…response).toError()\n    }");
         return map;
     }
@@ -68,8 +68,8 @@ public final class TONWalletTransferDataSourceImpl implements WalletTransferData
         }
         TransferArgs.TON ton = (TransferArgs.TON) args;
         TonController tonController = this.tonController;
-        Wallet wallet = this.cryptoAccessManager.getWallet(BlockchainType.TON);
-        String address = wallet != null ? wallet.getAddress() : null;
+        Wallet wallet2 = this.cryptoAccessManager.getWallet(BlockchainType.TON);
+        String address = wallet2 != null ? wallet2.getAddress() : null;
         if (address == null) {
             address = "";
         }

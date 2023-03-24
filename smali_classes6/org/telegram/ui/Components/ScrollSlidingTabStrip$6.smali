@@ -49,22 +49,22 @@
 
     sub-long/2addr v0, v2
 
-    const/4 v2, -0x1
+    const-wide/16 v2, 0xbb8
 
-    const/4 v3, 0x1
+    cmp-long v2, v0, v2
 
-    const-wide/16 v4, 0xbb8
+    const/4 v3, -0x1
 
-    cmp-long v6, v0, v4
+    const/4 v4, 0x1
 
-    if-gez v6, :cond_1
+    if-gez v2, :cond_1
 
     .line 1105
-    invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v0
 
-    invoke-static {v3, v0}, Ljava/lang/Math;->max(II)I
+    invoke-static {v4, v0}, Ljava/lang/Math;->max(II)I
 
     move-result v0
 
@@ -75,19 +75,19 @@
     if-eqz v1, :cond_0
 
     :goto_0
-    const/4 v2, 0x1
+    move v3, v4
 
     :cond_0
-    mul-int v0, v0, v2
+    mul-int/2addr v0, v3
 
     goto :goto_1
 
     :cond_1
-    const-wide/16 v4, 0x1388
+    const-wide/16 v5, 0x1388
 
-    cmp-long v6, v0, v4
+    cmp-long v0, v0, v5
 
-    if-gez v6, :cond_2
+    if-gez v0, :cond_2
 
     const/4 v0, 0x2
 
@@ -96,7 +96,7 @@
 
     move-result v0
 
-    invoke-static {v3, v0}, Ljava/lang/Math;->max(II)I
+    invoke-static {v4, v0}, Ljava/lang/Math;->max(II)I
 
     move-result v0
 
@@ -116,7 +116,7 @@
 
     move-result v0
 
-    invoke-static {v3, v0}, Ljava/lang/Math;->max(II)I
+    invoke-static {v4, v0}, Ljava/lang/Math;->max(II)I
 
     move-result v0
 

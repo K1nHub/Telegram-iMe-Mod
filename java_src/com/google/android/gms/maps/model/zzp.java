@@ -10,8 +10,8 @@ public final class zzp implements Parcelable.Creator {
     public final /* bridge */ /* synthetic */ Object createFromParcel(Parcel parcel) {
         int validateObjectHeader = SafeParcelReader.validateObjectHeader(parcel);
         float f = BitmapDescriptorFactory.HUE_RED;
-        float f2 = BitmapDescriptorFactory.HUE_RED;
-        float f3 = BitmapDescriptorFactory.HUE_RED;
+        float f2 = 0.0f;
+        float f3 = 0.0f;
         while (parcel.dataPosition() < validateObjectHeader) {
             int readHeader = SafeParcelReader.readHeader(parcel);
             int fieldId = SafeParcelReader.getFieldId(readHeader);

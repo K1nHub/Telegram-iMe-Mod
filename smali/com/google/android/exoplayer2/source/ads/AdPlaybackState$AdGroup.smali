@@ -410,7 +410,7 @@
 
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
-    .locals 7
+    .locals 6
 
     const/4 v0, 0x1
 
@@ -443,9 +443,9 @@
 
     iget-wide v4, p1, Lcom/google/android/exoplayer2/source/ads/AdPlaybackState$AdGroup;->timeUs:J
 
-    cmp-long v6, v2, v4
+    cmp-long v2, v2, v4
 
-    if-nez v6, :cond_2
+    if-nez v2, :cond_2
 
     iget v2, p0, Lcom/google/android/exoplayer2/source/ads/AdPlaybackState$AdGroup;->count:I
 
@@ -496,9 +496,9 @@
 
     iget-wide v4, p1, Lcom/google/android/exoplayer2/source/ads/AdPlaybackState$AdGroup;->contentResumeOffsetUs:J
 
-    cmp-long v6, v2, v4
+    cmp-long v2, v2, v4
 
-    if-nez v6, :cond_2
+    if-nez v2, :cond_2
 
     iget-boolean v2, p0, Lcom/google/android/exoplayer2/source/ads/AdPlaybackState$AdGroup;->isServerSideInserted:Z
 
@@ -509,7 +509,7 @@
     goto :goto_0
 
     :cond_2
-    const/4 v0, 0x0
+    move v0, v1
 
     :goto_0
     return v0
@@ -589,7 +589,7 @@
     :cond_0
     const/4 v0, 0x0
 
-    const/4 v2, 0x0
+    move v2, v0
 
     .line 168
     :goto_0
@@ -647,9 +647,9 @@
 
     xor-long/2addr v1, v4
 
-    long-to-int v2, v1
+    long-to-int v1, v1
 
-    add-int/2addr v0, v2
+    add-int/2addr v0, v1
 
     mul-int/lit8 v0, v0, 0x1f
 
@@ -693,9 +693,9 @@
 
     xor-long/2addr v1, v3
 
-    long-to-int v2, v1
+    long-to-int v1, v1
 
-    add-int/2addr v0, v2
+    add-int/2addr v0, v1
 
     mul-int/lit8 v0, v0, 0x1f
 
@@ -960,13 +960,13 @@
     goto :goto_0
 
     :cond_0
-    const/4 v3, 0x0
+    move v3, v4
 
     goto :goto_1
 
     :cond_1
     :goto_0
-    const/4 v3, 0x1
+    move v3, v5
 
     :goto_1
     invoke-static {v3}, Lcom/google/android/exoplayer2/util/Assertions;->checkArgument(Z)V
@@ -994,7 +994,7 @@
     if-ne v3, v1, :cond_3
 
     :cond_2
-    const/4 v4, 0x1
+    move v4, v5
 
     :cond_3
     invoke-static {v4}, Lcom/google/android/exoplayer2/util/Assertions;->checkArgument(Z)V
@@ -1171,7 +1171,7 @@
 
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    move v1, v0
 
     :goto_0
     if-ge v1, v4, :cond_4
@@ -1203,7 +1203,7 @@
 
     if-nez v2, :cond_2
 
-    const/4 v2, 0x0
+    move v2, v0
 
     goto :goto_1
 

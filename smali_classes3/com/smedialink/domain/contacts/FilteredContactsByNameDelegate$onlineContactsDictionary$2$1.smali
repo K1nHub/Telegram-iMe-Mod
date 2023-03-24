@@ -47,7 +47,7 @@
 
 # virtual methods
 .method public final invoke(Lorg/telegram/tgnet/TLRPC$TL_contact;)Ljava/lang/Boolean;
-    .locals 5
+    .locals 4
 
     const-string v0, "it"
 
@@ -62,9 +62,9 @@
 
     move-result-wide v2
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-eqz v4, :cond_0
+    if-eqz v0, :cond_0
 
     .line 16
     iget-object v0, p0, Lcom/smedialink/domain/contacts/FilteredContactsByNameDelegate$onlineContactsDictionary$2$1;->this$0:Lcom/smedialink/domain/contacts/FilteredContactsByNameDelegate;

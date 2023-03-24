@@ -37,7 +37,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3286R;
+import org.telegram.messenger.C3301R;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.XiaomiUtilities;
 import org.telegram.p048ui.ActionBar.FloatingActionMode;
@@ -374,7 +374,7 @@ public class EditTextBoldCursor extends EditTextEffects {
                 }
                 Field field = mCursorDrawableResField;
                 if (field != null) {
-                    field.set(this, Integer.valueOf(C3286R.C3288drawable.field_carret_empty));
+                    field.set(this, Integer.valueOf(C3301R.C3303drawable.field_carret_empty));
                 }
             } catch (Throwable unused5) {
             }
@@ -459,7 +459,7 @@ public class EditTextBoldCursor extends EditTextEffects {
 
     public void setLineColors(int i, int i2, int i3) {
         this.lineVisible = true;
-        getContext().getResources().getDrawable(C3286R.C3288drawable.search_dark).getPadding(this.padding);
+        getContext().getResources().getDrawable(C3301R.C3303drawable.search_dark).getPadding(this.padding);
         Rect rect = this.padding;
         setPadding(rect.left, rect.top, rect.right, rect.bottom);
         this.lineColor = i;
@@ -617,14 +617,14 @@ public class EditTextBoldCursor extends EditTextEffects {
                 this.headerTransformAnimation = animatorSet2;
                 Animator[] animatorArr = new Animator[1];
                 float[] fArr = new float[1];
-                fArr[0] = z2 ? 1.0f : BitmapDescriptorFactory.HUE_RED;
+                fArr[0] = z2 ? 1.0f : 0.0f;
                 animatorArr[0] = ObjectAnimator.ofFloat(this, "headerAnimationProgress", fArr);
                 animatorSet2.playTogether(animatorArr);
                 this.headerTransformAnimation.setDuration(200L);
                 this.headerTransformAnimation.setInterpolator(CubicBezierInterpolator.EASE_OUT_QUINT);
                 this.headerTransformAnimation.start();
             } else {
-                this.headerAnimationProgress = z2 ? 1.0f : BitmapDescriptorFactory.HUE_RED;
+                this.headerAnimationProgress = z2 ? 1.0f : 0.0f;
             }
             invalidate();
         }
@@ -698,8 +698,8 @@ public class EditTextBoldCursor extends EditTextEffects {
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
-    /* JADX WARN: Removed duplicated region for block: B:114:0x027e A[Catch: all -> 0x02a7, TryCatch #2 {all -> 0x02a7, blocks: (B:89:0x01d3, B:91:0x01d7, B:93:0x01db, B:95:0x01ed, B:100:0x01fb, B:103:0x0201, B:105:0x0208, B:107:0x0210, B:112:0x0236, B:114:0x027e, B:116:0x0281, B:117:0x0286, B:108:0x0223, B:110:0x022b, B:99:0x01f7), top: B:208:0x01d3 }] */
-    /* JADX WARN: Removed duplicated region for block: B:138:0x0335 A[Catch: all -> 0x035f, TryCatch #4 {all -> 0x035f, blocks: (B:127:0x02b8, B:129:0x02bf, B:131:0x02c7, B:136:0x02ed, B:138:0x0335, B:140:0x0338, B:141:0x033d, B:132:0x02da, B:134:0x02e2), top: B:212:0x02b8 }] */
+    /* JADX WARN: Removed duplicated region for block: B:114:0x0279 A[Catch: all -> 0x02a2, TryCatch #0 {all -> 0x02a2, blocks: (B:89:0x01ce, B:91:0x01d2, B:93:0x01d6, B:95:0x01e8, B:100:0x01f6, B:103:0x01fc, B:105:0x0203, B:107:0x020b, B:112:0x0231, B:114:0x0279, B:116:0x027c, B:117:0x0281, B:108:0x021e, B:110:0x0226, B:99:0x01f2), top: B:203:0x01ce }] */
+    /* JADX WARN: Removed duplicated region for block: B:138:0x0330 A[Catch: all -> 0x035a, TryCatch #3 {all -> 0x035a, blocks: (B:127:0x02b3, B:129:0x02ba, B:131:0x02c2, B:136:0x02e8, B:138:0x0330, B:140:0x0333, B:141:0x0338, B:132:0x02d5, B:134:0x02dd), top: B:210:0x02b3 }] */
     @Override // org.telegram.p048ui.Components.EditTextEffects, android.widget.TextView, android.view.View
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -707,7 +707,7 @@ public class EditTextBoldCursor extends EditTextEffects {
     */
     public void onDraw(android.graphics.Canvas r16) {
         /*
-            Method dump skipped, instructions count: 1212
+            Method dump skipped, instructions count: 1204
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: org.telegram.p048ui.Components.EditTextBoldCursor.onDraw(android.graphics.Canvas):void");

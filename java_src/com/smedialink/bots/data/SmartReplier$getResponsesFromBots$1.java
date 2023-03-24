@@ -17,7 +17,7 @@ import kotlinx.coroutines.CoroutineDispatcher;
 import kotlinx.coroutines.CoroutineScope;
 import kotlinx.coroutines.Dispatchers;
 /* compiled from: SmartReplier.kt */
-@DebugMetadata(m99c = "com.smedialink.bots.data.SmartReplier$getResponsesFromBots$1", m98f = "SmartReplier.kt", m97l = {37}, m96m = "invokeSuspend")
+@DebugMetadata(m98c = "com.smedialink.bots.data.SmartReplier$getResponsesFromBots$1", m97f = "SmartReplier.kt", m96l = {37}, m95m = "invokeSuspend")
 /* loaded from: classes3.dex */
 final class SmartReplier$getResponsesFromBots$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
     final /* synthetic */ AiBotsManager.SmartReplierCallback $callback;
@@ -81,7 +81,7 @@ final class SmartReplier$getResponsesFromBots$1 extends SuspendLambda implements
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* compiled from: SmartReplier.kt */
-    @DebugMetadata(m99c = "com.smedialink.bots.data.SmartReplier$getResponsesFromBots$1$1", m98f = "SmartReplier.kt", m97l = {39}, m96m = "invokeSuspend")
+    @DebugMetadata(m98c = "com.smedialink.bots.data.SmartReplier$getResponsesFromBots$1$1", m97f = "SmartReplier.kt", m96l = {39}, m95m = "invokeSuspend")
     /* renamed from: com.smedialink.bots.data.SmartReplier$getResponsesFromBots$1$1 */
     /* loaded from: classes3.dex */
     public static final class C12671 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Boolean>, Object> {

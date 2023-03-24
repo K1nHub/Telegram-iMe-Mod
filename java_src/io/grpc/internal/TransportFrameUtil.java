@@ -29,8 +29,7 @@ public final class TransportFrameUtil {
                 serialize[i + 1] = bArr2;
             } else {
                 String str = new String(bArr, Charsets.US_ASCII);
-                Logger logger2 = logger;
-                logger2.warning("Metadata key=" + str + ", value=" + Arrays.toString(bArr2) + " contains invalid ASCII characters");
+                logger.warning("Metadata key=" + str + ", value=" + Arrays.toString(bArr2) + " contains invalid ASCII characters");
             }
             i += 2;
         }

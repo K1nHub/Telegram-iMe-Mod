@@ -404,9 +404,7 @@ public class EventLogger implements AnalyticsListener {
             Tracks.Group group = groups.get(i);
             logd("  group [");
             for (int i2 = 0; i2 < group.length; i2++) {
-                String trackStatusString = getTrackStatusString(group.isTrackSelected(i2));
-                String formatSupportString = Util.getFormatSupportString(group.getTrackSupport(i2));
-                logd("    " + trackStatusString + " Track:" + i2 + ", " + Format.toLogString(group.getTrackFormat(i2)) + ", supported=" + formatSupportString);
+                logd("    " + getTrackStatusString(group.isTrackSelected(i2)) + " Track:" + i2 + ", " + Format.toLogString(group.getTrackFormat(i2)) + ", supported=" + Util.getFormatSupportString(group.getTrackSupport(i2)));
             }
             logd("  ]");
         }

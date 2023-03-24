@@ -144,9 +144,9 @@
 
     const-wide/16 v4, 0x0
 
-    cmp-long v6, v2, v4
+    cmp-long v2, v2, v4
 
-    if-nez v6, :cond_0
+    if-nez v2, :cond_0
 
     const/4 v2, 0x1
 
@@ -228,9 +228,9 @@
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
-    cmp-long v8, v6, v4
+    cmp-long v4, v6, v4
 
-    if-eqz v8, :cond_1
+    if-eqz v4, :cond_1
 
     .line 30
     :try_start_3
@@ -400,16 +400,16 @@
 .end method
 
 .method public final zza(Ljava/lang/String;F)Ljava/lang/String;
-    .locals 5
+    .locals 4
 
     .line 10
     iget-wide v0, p0, Lcom/google/mlkit/nl/languageid/internal/LanguageIdentificationJni;->zze:J
 
     const-wide/16 v2, 0x0
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-eqz v4, :cond_0
+    if-eqz v0, :cond_0
 
     const/4 v0, 0x1
 
@@ -438,7 +438,7 @@
 .end method
 
 .method public final zzb(Ljava/lang/String;F)Ljava/util/List;
-    .locals 5
+    .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -455,9 +455,9 @@
 
     const-wide/16 v2, 0x0
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-eqz v4, :cond_0
+    if-eqz v0, :cond_0
 
     const/4 v0, 0x1
 

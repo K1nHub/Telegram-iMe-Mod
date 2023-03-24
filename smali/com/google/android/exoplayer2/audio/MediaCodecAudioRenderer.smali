@@ -513,7 +513,7 @@
 .end method
 
 .method private updateCurrentPosition()V
-    .locals 5
+    .locals 4
 
     .line 875
     iget-object v0, p0, Lcom/google/android/exoplayer2/audio/MediaCodecAudioRenderer;->audioSink:Lcom/google/android/exoplayer2/audio/AudioSink;
@@ -528,9 +528,9 @@
 
     const-wide/high16 v2, -0x8000000000000000L
 
-    cmp-long v4, v0, v2
+    cmp-long v2, v0, v2
 
-    if-eqz v4, :cond_1
+    if-eqz v2, :cond_1
 
     .line 878
     iget-boolean v2, p0, Lcom/google/android/exoplayer2/audio/MediaCodecAudioRenderer;->allowPositionDiscontinuity:Z
@@ -595,17 +595,15 @@
 
     const/4 p1, 0x0
 
-    const/4 v6, 0x0
-
     goto :goto_0
 
     .line 449
     :cond_1
     iget p1, v0, Lcom/google/android/exoplayer2/decoder/DecoderReuseEvaluation;->result:I
 
+    :goto_0
     move v6, p1
 
-    :goto_0
     move-object v2, v1
 
     move-object v4, p2
@@ -691,7 +689,7 @@
 
     const/4 v1, 0x0
 
-    const/4 v2, -0x1
+    move v2, v0
 
     :goto_0
     if-ge v1, p2, :cond_1
@@ -723,7 +721,7 @@
     :cond_2
     int-to-float p2, v2
 
-    mul-float p1, p1, p2
+    mul-float/2addr p1, p2
 
     :goto_1
     return p1
@@ -1595,7 +1593,7 @@
     .line 538
     new-array v2, v0, [I
 
-    const/4 v0, 0x0
+    move v0, v1
 
     .line 539
     :goto_1
@@ -1720,7 +1718,7 @@
 .end method
 
 .method protected onQueueInputBuffer(Lcom/google/android/exoplayer2/decoder/DecoderInputBuffer;)V
-    .locals 5
+    .locals 4
 
     .line 655
     iget-boolean v0, p0, Lcom/google/android/exoplayer2/audio/MediaCodecAudioRenderer;->allowFirstBufferPositionDiscontinuity:Z
@@ -1746,9 +1744,9 @@
 
     const-wide/32 v2, 0x7a120
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-lez v4, :cond_0
+    if-lez v0, :cond_0
 
     .line 660
     iget-wide v0, p1, Lcom/google/android/exoplayer2/decoder/DecoderInputBuffer;->timeUs:J
@@ -2067,7 +2065,7 @@
     goto :goto_0
 
     :cond_1
-    const/4 v0, 0x0
+    move v0, v1
 
     .line 288
     :goto_0
@@ -2077,12 +2075,12 @@
 
     if-eqz v2, :cond_2
 
-    const/4 v2, 0x1
+    move v2, v3
 
     goto :goto_1
 
     :cond_2
-    const/4 v2, 0x0
+    move v2, v1
 
     .line 289
     :goto_1
@@ -2227,7 +2225,7 @@
 
     if-nez v4, :cond_a
 
-    const/4 v7, 0x1
+    move v7, v3
 
     .line 322
     :goto_2
@@ -2251,9 +2249,9 @@
 
     if-eqz v9, :cond_9
 
-    move-object v2, v8
+    move p1, v1
 
-    const/4 p1, 0x0
+    move-object v2, v8
 
     goto :goto_3
 
@@ -2263,9 +2261,9 @@
     goto :goto_2
 
     :cond_a
-    move v3, v4
+    move p1, v3
 
-    const/4 p1, 0x1
+    move v3, v4
 
     :goto_3
     if-eqz v3, :cond_b
@@ -2298,7 +2296,7 @@
     goto :goto_5
 
     :cond_d
-    const/4 p2, 0x0
+    move p2, v1
 
     :goto_5
     if-eqz p1, :cond_e

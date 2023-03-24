@@ -29,7 +29,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nObservableExt.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ObservableExt.kt\ncom/smedialink/storage/domain/utils/extentions/ObservableExtKt$wrapAsResult$2\n+ 2 ResultExt.kt\ncom/smedialink/storage/domain/utils/extentions/ResultExtKt\n*L\n1#1,81:1\n6#2:82\n*S KotlinDebug\n*F\n+ 1 ObservableExt.kt\ncom/smedialink/storage/domain/utils/extentions/ObservableExtKt$wrapAsResult$2\n*L\n80#1:82\n*E\n"
+    value = "SMAP\nObservableExt.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ObservableExt.kt\ncom/smedialink/storage/domain/utils/extentions/ObservableExtKt$wrapAsResult$2\n+ 2 ResultExt.kt\ncom/smedialink/storage/domain/utils/extentions/ResultExtKt\n*L\n1#1,81:1\n7#2:82\n*S KotlinDebug\n*F\n+ 1 ObservableExt.kt\ncom/smedialink/storage/domain/utils/extentions/ObservableExtKt$wrapAsResult$2\n*L\n80#1:82\n*E\n"
 .end annotation
 
 
@@ -86,7 +86,7 @@
 
     invoke-direct {v0, v1, p1}, Lcom/smedialink/storage/data/network/model/error/ErrorModel;-><init>(Lcom/smedialink/storage/data/network/model/error/IErrorStatus;Ljava/lang/Throwable;)V
 
-    .line 6
+    .line 7
     sget-object p1, Lcom/smedialink/storage/domain/model/Result;->Companion:Lcom/smedialink/storage/domain/model/Result$Companion;
 
     const/4 v1, 0x0

@@ -31,7 +31,7 @@ public final class TONBlockchainCryptoWalletManagerImpl extends BlockchainCrypto
     public Observable<Result<Wallet>> createWallet(String guid, String password) {
         Intrinsics.checkNotNullParameter(guid, "guid");
         Intrinsics.checkNotNullParameter(password, "password");
-        Observable<Result<Wallet>> subscribeOn = this.tonController.createWallet(guid).subscribeOn(this.schedulersProvider.mo708io());
+        Observable<Result<Wallet>> subscribeOn = this.tonController.createWallet(guid).subscribeOn(this.schedulersProvider.mo707io());
         Intrinsics.checkNotNullExpressionValue(subscribeOn, "tonController\n          …(schedulersProvider.io())");
         return subscribeOn;
     }
@@ -41,9 +41,9 @@ public final class TONBlockchainCryptoWalletManagerImpl extends BlockchainCrypto
         Intrinsics.checkNotNullParameter(guid, "guid");
         Intrinsics.checkNotNullParameter(mnemonic, "mnemonic");
         Intrinsics.checkNotNullParameter(password, "password");
-        Observable<Result<Wallet>> subscribeOn = this.tonController.importWallet(guid, StringExtKt.splitBySpace(mnemonic)).subscribeOn(this.schedulersProvider.mo708io());
+        Observable<Result<Wallet>> subscribeOn = this.tonController.importWallet(guid, StringExtKt.splitBySpace(mnemonic)).subscribeOn(this.schedulersProvider.mo707io());
         Intrinsics.checkNotNullExpressionValue(subscribeOn, "tonController\n          …(schedulersProvider.io())");
-        Observable map = subscribeOn.map(new ObservableExtKt$sam$i$io_reactivex_functions_Function$0(new C1691xa78c6f83(this, guid, mnemonic, password)));
+        Observable map = subscribeOn.map(new ObservableExtKt$sam$i$io_reactivex_functions_Function$0(new C1698xa78c6f83(this, guid, mnemonic, password)));
         Intrinsics.checkNotNullExpressionValue(map, "crossinline body: (T) ->…ult as? R\n        }\n    }");
         return map;
     }
@@ -54,9 +54,9 @@ public final class TONBlockchainCryptoWalletManagerImpl extends BlockchainCrypto
         Intrinsics.checkNotNullParameter(oldGuid, "oldGuid");
         Intrinsics.checkNotNullParameter(mnemonic, "mnemonic");
         Intrinsics.checkNotNullParameter(password, "password");
-        Observable<Result<Wallet>> subscribeOn = this.tonController.importWallet(guid, StringExtKt.splitBySpace(mnemonic)).subscribeOn(this.schedulersProvider.mo708io());
+        Observable<Result<Wallet>> subscribeOn = this.tonController.importWallet(guid, StringExtKt.splitBySpace(mnemonic)).subscribeOn(this.schedulersProvider.mo707io());
         Intrinsics.checkNotNullExpressionValue(subscribeOn, "tonController\n          …(schedulersProvider.io())");
-        Observable map = subscribeOn.map(new ObservableExtKt$sam$i$io_reactivex_functions_Function$0(new C1692x643346a2(guid, oldGuid, this, mnemonic, password)));
+        Observable map = subscribeOn.map(new ObservableExtKt$sam$i$io_reactivex_functions_Function$0(new C1699x643346a2(guid, oldGuid, this, mnemonic, password)));
         Intrinsics.checkNotNullExpressionValue(map, "crossinline body: (T) ->…ult as? R\n        }\n    }");
         return map;
     }
@@ -64,9 +64,9 @@ public final class TONBlockchainCryptoWalletManagerImpl extends BlockchainCrypto
     @Override // com.smedialink.storage.domain.manager.crypto.BlockchainCryptoWalletManager
     public Observable<Result<String>> generateAddressByMnemonic(String mnemonic) {
         Intrinsics.checkNotNullParameter(mnemonic, "mnemonic");
-        Observable<Result<Wallet>> subscribeOn = this.tonController.importWallet("", StringExtKt.splitBySpace(mnemonic)).subscribeOn(this.schedulersProvider.mo708io());
+        Observable<Result<Wallet>> subscribeOn = this.tonController.importWallet("", StringExtKt.splitBySpace(mnemonic)).subscribeOn(this.schedulersProvider.mo707io());
         Intrinsics.checkNotNullExpressionValue(subscribeOn, "tonController\n          …(schedulersProvider.io())");
-        Observable map = subscribeOn.map(new ObservableExtKt$sam$i$io_reactivex_functions_Function$0(new C1689xcf4b3e2d()));
+        Observable map = subscribeOn.map(new ObservableExtKt$sam$i$io_reactivex_functions_Function$0(new C1696xcf4b3e2d()));
         Intrinsics.checkNotNullExpressionValue(map, "crossinline body: (T) ->…ult as? R\n        }\n    }");
         return map;
     }
@@ -75,9 +75,9 @@ public final class TONBlockchainCryptoWalletManagerImpl extends BlockchainCrypto
     public Observable<Result<String>> generateMnemonic(String guid, String password) {
         Intrinsics.checkNotNullParameter(guid, "guid");
         Intrinsics.checkNotNullParameter(password, "password");
-        Observable<Result<Wallet>> subscribeOn = createWallet(guid, password).subscribeOn(this.schedulersProvider.mo708io());
+        Observable<Result<Wallet>> subscribeOn = createWallet(guid, password).subscribeOn(this.schedulersProvider.mo707io());
         Intrinsics.checkNotNullExpressionValue(subscribeOn, "createWallet(guid, passw…(schedulersProvider.io())");
-        Observable map = subscribeOn.map(new ObservableExtKt$sam$i$io_reactivex_functions_Function$0(new C1690x4798a41c()));
+        Observable map = subscribeOn.map(new ObservableExtKt$sam$i$io_reactivex_functions_Function$0(new C1697x4798a41c()));
         Intrinsics.checkNotNullExpressionValue(map, "crossinline body: (T) ->…ult as? R\n        }\n    }");
         return map;
     }
@@ -85,7 +85,7 @@ public final class TONBlockchainCryptoWalletManagerImpl extends BlockchainCrypto
     @Override // com.smedialink.storage.domain.manager.crypto.BlockchainCryptoWalletManager
     public Observable<Result<Boolean>> isValidAddress(String address) {
         Intrinsics.checkNotNullParameter(address, "address");
-        Observable<Result<Boolean>> subscribeOn = this.tonController.isValidWalletAddress(address).subscribeOn(this.schedulersProvider.mo708io());
+        Observable<Result<Boolean>> subscribeOn = this.tonController.isValidWalletAddress(address).subscribeOn(this.schedulersProvider.mo707io());
         Intrinsics.checkNotNullExpressionValue(subscribeOn, "tonController\n          …(schedulersProvider.io())");
         return subscribeOn;
     }

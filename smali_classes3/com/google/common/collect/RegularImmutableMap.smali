@@ -298,9 +298,9 @@
     .line 171
     invoke-static {v1, v7}, Ljava/util/Arrays;->fill([BB)V
 
-    const/4 v5, 0x0
+    move v5, v9
 
-    const/4 v7, 0x0
+    move v7, v5
 
     :goto_0
     if-ge v5, v0, :cond_4
@@ -439,9 +439,9 @@
     .line 211
     invoke-static {v1, v7}, Ljava/util/Arrays;->fill([SS)V
 
-    const/4 v5, 0x0
+    move v5, v9
 
-    const/4 v7, 0x0
+    move v7, v5
 
     :goto_4
     if-ge v5, v0, :cond_a
@@ -576,9 +576,9 @@
     .line 248
     invoke-static {v1, v7}, Ljava/util/Arrays;->fill([II)V
 
-    const/4 v5, 0x0
+    move v5, v9
 
-    const/4 v10, 0x0
+    move v10, v5
 
     :goto_8
     if-ge v5, v0, :cond_10

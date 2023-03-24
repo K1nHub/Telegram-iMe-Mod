@@ -88,9 +88,9 @@
     .line 63
     iget-wide v4, v0, Lorg/solovyev/android/checkout/Cache$Entry;->expiresAt:J
 
-    cmp-long v6, v2, v4
+    cmp-long v4, v2, v4
 
-    if-ltz v6, :cond_2
+    if-ltz v4, :cond_2
 
     const-string v4, "Cache"
 

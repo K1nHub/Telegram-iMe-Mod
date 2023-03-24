@@ -85,7 +85,7 @@
 
     const/4 v0, 0x2
 
-    const/4 v1, 0x2
+    move v1, v0
 
     :goto_0
     iget v2, p0, Lorg/bouncycastle/pqc/crypto/xmss/XMSSParameters;->height:I

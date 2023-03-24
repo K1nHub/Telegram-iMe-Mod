@@ -88,7 +88,7 @@
 
     move-result v1
 
-    mul-int v0, v0, v1
+    mul-int/2addr v0, v1
 
     iget-object v1, p0, Lorg/fork/ui/view/MessageMoreActionsView$createListView$1;->this$0:Lorg/fork/ui/view/MessageMoreActionsView;
 
@@ -138,7 +138,7 @@
 
     move-result v2
 
-    mul-int v1, v1, v2
+    mul-int/2addr v1, v2
 
     add-int/2addr v0, v1
 

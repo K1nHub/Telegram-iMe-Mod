@@ -26,7 +26,7 @@
 
 # virtual methods
 .method protected final bridge synthetic doExecute(Lcom/google/android/gms/common/api/Api$AnyClient;)V
-    .locals 7
+    .locals 6
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -43,26 +43,26 @@
     .line 2
     invoke-static {v2}, Lcom/google/android/gms/common/internal/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    const/4 v3, 0x1
+    const-wide/16 v3, 0x0
 
-    const-wide/16 v4, 0x0
-
-    cmp-long v6, v0, v4
-
-    if-ltz v6, :cond_0
+    cmp-long v3, v0, v3
 
     const/4 v4, 0x1
+
+    if-ltz v3, :cond_0
+
+    move v3, v4
 
     goto :goto_0
 
     :cond_0
-    const/4 v4, 0x0
+    const/4 v3, 0x0
 
     :goto_0
     const-string v5, "detectionIntervalMillis must be >= 0"
 
     .line 3
-    invoke-static {v4, v5}, Lcom/google/android/gms/common/internal/Preconditions;->checkArgument(ZLjava/lang/Object;)V
+    invoke-static {v3, v5}, Lcom/google/android/gms/common/internal/Preconditions;->checkArgument(ZLjava/lang/Object;)V
 
     .line 4
     invoke-virtual {p1}, Lcom/google/android/gms/common/internal/BaseGmsClient;->getService()Landroid/os/IInterface;
@@ -72,7 +72,7 @@
     .line 5
     check-cast p1, Lcom/google/android/gms/internal/location/zzo;
 
-    invoke-interface {p1, v0, v1, v3, v2}, Lcom/google/android/gms/internal/location/zzo;->zzr(JZLandroid/app/PendingIntent;)V
+    invoke-interface {p1, v0, v1, v4, v2}, Lcom/google/android/gms/internal/location/zzo;->zzr(JZLandroid/app/PendingIntent;)V
 
     .line 6
     sget-object p1, Lcom/google/android/gms/common/api/Status;->RESULT_SUCCESS:Lcom/google/android/gms/common/api/Status;

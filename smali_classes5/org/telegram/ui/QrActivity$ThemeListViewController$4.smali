@@ -65,7 +65,7 @@
 
     const/high16 p3, 0x3f800000    # 1.0f
 
-    mul-float p2, p2, p3
+    mul-float/2addr p2, p3
 
     const/4 p3, 0x6
 

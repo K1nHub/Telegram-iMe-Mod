@@ -1389,12 +1389,12 @@
 
     if-gt v0, v3, :cond_0
 
-    const/4 v0, 0x1
+    move v0, v2
 
     goto :goto_0
 
     :cond_0
-    const/4 v0, 0x0
+    move v0, v1
 
     .line 981
     :goto_0
@@ -1408,7 +1408,7 @@
 
     if-eqz v3, :cond_1
 
-    const/4 v0, 0x1
+    move v0, v2
 
     :cond_1
     if-eqz v0, :cond_5
@@ -1443,7 +1443,7 @@
     if-nez v0, :cond_3
 
     :cond_2
-    const/4 v1, 0x1
+    move v1, v2
 
     :cond_3
     if-eqz v1, :cond_4
@@ -1497,12 +1497,12 @@
 
     if-eqz v0, :cond_7
 
-    const/high16 v3, 0x3f800000    # 1.0f
+    move v3, v1
 
     goto :goto_2
 
     :cond_7
-    const/4 v3, 0x0
+    move v3, v2
 
     :goto_2
     invoke-virtual {p1, v3}, Landroid/view/ViewPropertyAnimator;->alpha(F)Landroid/view/ViewPropertyAnimator;
@@ -1511,12 +1511,12 @@
 
     if-eqz v0, :cond_8
 
-    const/high16 v3, 0x3f800000    # 1.0f
+    move v3, v1
 
     goto :goto_3
 
     :cond_8
-    const/4 v3, 0x0
+    move v3, v2
 
     :goto_3
     invoke-virtual {p1, v3}, Landroid/view/ViewPropertyAnimator;->scaleX(F)Landroid/view/ViewPropertyAnimator;
@@ -1528,7 +1528,7 @@
     goto :goto_4
 
     :cond_9
-    const/4 v1, 0x0
+    move v1, v2
 
     :goto_4
     invoke-virtual {p1, v1}, Landroid/view/ViewPropertyAnimator;->scaleY(F)Landroid/view/ViewPropertyAnimator;
@@ -1551,12 +1551,12 @@
 
     if-eqz v0, :cond_b
 
-    const/high16 v3, 0x3f800000    # 1.0f
+    move v3, v1
 
     goto :goto_5
 
     :cond_b
-    const/4 v3, 0x0
+    move v3, v2
 
     :goto_5
     invoke-virtual {p1, v3}, Landroid/widget/FrameLayout;->setAlpha(F)V
@@ -1566,12 +1566,12 @@
 
     if-eqz v0, :cond_c
 
-    const/high16 v3, 0x3f800000    # 1.0f
+    move v3, v1
 
     goto :goto_6
 
     :cond_c
-    const/4 v3, 0x0
+    move v3, v2
 
     :goto_6
     invoke-virtual {p1, v3}, Landroid/widget/FrameLayout;->setScaleX(F)V
@@ -1584,7 +1584,7 @@
     goto :goto_7
 
     :cond_d
-    const/4 v1, 0x0
+    move v1, v2
 
     :goto_7
     invoke-virtual {p1, v1}, Landroid/widget/FrameLayout;->setScaleY(F)V
@@ -2156,7 +2156,7 @@
     .line 492
     iput-object p2, p0, Lorg/telegram/ui/FilterCreateActivity;->newNeverShow:Ljava/util/ArrayList;
 
-    const/4 p1, 0x0
+    move p1, v0
 
     .line 493
     :goto_0
@@ -2199,7 +2199,7 @@
     :cond_0
     iput-object p2, p0, Lorg/telegram/ui/FilterCreateActivity;->newAlwaysShow:Ljava/util/ArrayList;
 
-    const/4 p1, 0x0
+    move p1, v0
 
     .line 500
     :goto_1
@@ -2239,7 +2239,7 @@
 
     move-result p2
 
-    const/4 p3, 0x0
+    move p3, v0
 
     :goto_2
     if-ge p3, p2, :cond_4
@@ -2295,7 +2295,7 @@
 
     move-result p2
 
-    const/4 p3, 0x0
+    move p3, v0
 
     :goto_4
     if-ge p3, p2, :cond_5
@@ -2678,7 +2678,7 @@
 
     invoke-virtual {p1, p2}, Landroid/widget/TextView;->setTextColor(I)V
 
-    goto :goto_4
+    goto/16 :goto_4
 
     .line 576
     :cond_6
@@ -2746,7 +2746,7 @@
     goto :goto_0
 
     :cond_9
-    const/4 v0, 0x0
+    move v0, v1
 
     :goto_0
     invoke-direct {p0, p2, p3, p1, v0}, Lorg/telegram/ui/FilterCreateActivity;->showRemoveAlert(ILjava/lang/CharSequence;Ljava/lang/Object;Z)V
@@ -2773,12 +2773,12 @@
 
     if-ne p2, p4, :cond_c
 
-    const/4 p4, 0x1
+    move p4, v0
 
     goto :goto_3
 
     :cond_c
-    const/4 p4, 0x0
+    move p4, v1
 
     :goto_3
     iget v2, p0, Lorg/telegram/ui/FilterCreateActivity;->newFilterFlags:I
@@ -2807,7 +2807,7 @@
 
     if-ne p2, p1, :cond_d
 
-    const/4 v0, 0x0
+    move v0, v1
 
     :cond_d
     iput v0, p3, Lorg/telegram/ui/UsersSelectActivity;->topicModeFilterFolderId:I
@@ -2849,7 +2849,7 @@
 
     if-ge p2, v2, :cond_0
 
-    const/4 v1, 0x1
+    move v1, v3
 
     :cond_0
     invoke-direct {p0, p2, v0, p1, v1}, Lorg/telegram/ui/FilterCreateActivity;->showRemoveAlert(ILjava/lang/CharSequence;Ljava/lang/Object;Z)V
@@ -2875,7 +2875,7 @@
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_0
     if-ge v2, v0, :cond_3
@@ -3686,12 +3686,12 @@
 
     if-eqz v6, :cond_2
 
-    const/4 v6, 0x1
+    move v6, v5
 
     goto :goto_1
 
     :cond_2
-    const/4 v6, 0x0
+    move v6, v2
 
     :goto_1
     iput-boolean v6, v4, Lorg/telegram/tgnet/TLRPC$DialogFilter;->contacts:Z
@@ -3703,12 +3703,12 @@
 
     if-eqz v6, :cond_3
 
-    const/4 v6, 0x1
+    move v6, v5
 
     goto :goto_2
 
     :cond_3
-    const/4 v6, 0x0
+    move v6, v2
 
     :goto_2
     iput-boolean v6, v4, Lorg/telegram/tgnet/TLRPC$DialogFilter;->non_contacts:Z
@@ -3720,12 +3720,12 @@
 
     if-eqz v6, :cond_4
 
-    const/4 v6, 0x1
+    move v6, v5
 
     goto :goto_3
 
     :cond_4
-    const/4 v6, 0x0
+    move v6, v2
 
     :goto_3
     iput-boolean v6, v4, Lorg/telegram/tgnet/TLRPC$DialogFilter;->groups:Z
@@ -3737,12 +3737,12 @@
 
     if-eqz v6, :cond_5
 
-    const/4 v6, 0x1
+    move v6, v5
 
     goto :goto_4
 
     :cond_5
-    const/4 v6, 0x0
+    move v6, v2
 
     :goto_4
     iput-boolean v6, v4, Lorg/telegram/tgnet/TLRPC$DialogFilter;->broadcasts:Z
@@ -3754,12 +3754,12 @@
 
     if-eqz v6, :cond_6
 
-    const/4 v6, 0x1
+    move v6, v5
 
     goto :goto_5
 
     :cond_6
-    const/4 v6, 0x0
+    move v6, v2
 
     :goto_5
     iput-boolean v6, v4, Lorg/telegram/tgnet/TLRPC$DialogFilter;->bots:Z
@@ -3771,12 +3771,12 @@
 
     if-eqz v6, :cond_7
 
-    const/4 v6, 0x1
+    move v6, v5
 
     goto :goto_6
 
     :cond_7
-    const/4 v6, 0x0
+    move v6, v2
 
     :goto_6
     iput-boolean v6, v4, Lorg/telegram/tgnet/TLRPC$DialogFilter;->exclude_muted:Z
@@ -3788,12 +3788,12 @@
 
     if-eqz v6, :cond_8
 
-    const/4 v6, 0x1
+    move v6, v5
 
     goto :goto_7
 
     :cond_8
-    const/4 v6, 0x0
+    move v6, v2
 
     :goto_7
     iput-boolean v6, v4, Lorg/telegram/tgnet/TLRPC$DialogFilter;->exclude_read:Z
@@ -3805,12 +3805,12 @@
 
     if-eqz v6, :cond_9
 
-    const/4 v6, 0x1
+    move v6, v5
 
     goto :goto_8
 
     :cond_9
-    const/4 v6, 0x0
+    move v6, v2
 
     :goto_8
     iput-boolean v6, v4, Lorg/telegram/tgnet/TLRPC$DialogFilter;->exclude_archived:Z
@@ -3847,7 +3847,7 @@
 
     move-result v7
 
-    const/4 v8, 0x0
+    move v8, v2
 
     :goto_9
     if-ge v8, v7, :cond_b
@@ -3888,7 +3888,7 @@
     invoke-static {v6, v7}, Ljava/util/Collections;->sort(Ljava/util/List;Ljava/util/Comparator;)V
 
     :cond_c
-    const/4 v7, 0x0
+    move v7, v2
 
     :goto_b
     if-ge v7, v1, :cond_14
@@ -3930,7 +3930,7 @@
 
     move-result v10
 
-    const/4 v11, 0x0
+    move v11, v2
 
     :goto_d
     if-ge v11, v10, :cond_13
@@ -4194,7 +4194,7 @@
     goto :goto_0
 
     :cond_1
-    const/4 v0, 0x0
+    move v0, v1
 
     :goto_0
     rsub-int/lit8 v0, v0, 0xc

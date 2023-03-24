@@ -50,7 +50,7 @@ public final class Download {
         boolean z = true;
         Assertions.checkArgument((i3 == 0) == (i != 4));
         if (i2 != 0) {
-            Assertions.checkArgument((i == 2 || i == 0) ? false : false);
+            Assertions.checkArgument((i == 2 || i == 0) ? false : z);
         }
         this.request = downloadRequest;
         this.state = i;

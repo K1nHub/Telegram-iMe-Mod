@@ -123,7 +123,7 @@
 .end method
 
 .method private didPressedButton()V
-    .locals 7
+    .locals 6
 
     .line 218
     iget v0, p0, Lorg/telegram/ui/Components/PopupAudioView;->buttonState:I
@@ -171,9 +171,9 @@
 
     const-wide/16 v4, 0x0
 
-    cmp-long v6, v2, v4
+    cmp-long v2, v2, v4
 
-    if-nez v6, :cond_0
+    if-nez v2, :cond_0
 
     .line 222
     iget v2, p0, Lorg/telegram/ui/Components/PopupAudioView;->currentAccount:I
@@ -1027,7 +1027,7 @@
     .line 190
     invoke-virtual {p0}, Landroid/view/ViewGroup;->invalidate()V
 
-    const/4 v2, 0x1
+    move v2, v3
 
     goto :goto_0
 
@@ -1428,7 +1428,7 @@
 
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    move v1, v0
 
     .line 258
     :goto_0

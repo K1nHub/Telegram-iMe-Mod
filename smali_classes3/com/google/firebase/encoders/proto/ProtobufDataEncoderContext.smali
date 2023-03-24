@@ -488,7 +488,7 @@
 .end method
 
 .method private writeVarInt32(I)V
-    .locals 5
+    .locals 4
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -502,9 +502,9 @@
 
     const-wide/16 v2, 0x0
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-eqz v4, :cond_0
+    if-eqz v0, :cond_0
 
     .line 400
     iget-object v0, p0, Lcom/google/firebase/encoders/proto/ProtobufDataEncoderContext;->output:Ljava/io/OutputStream;
@@ -531,7 +531,7 @@
 .end method
 
 .method private writeVarInt64(J)V
-    .locals 5
+    .locals 4
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -545,9 +545,9 @@
 
     const-wide/16 v2, 0x0
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-eqz v4, :cond_0
+    if-eqz v0, :cond_0
 
     .line 408
     iget-object v0, p0, Lcom/google/firebase/encoders/proto/ProtobufDataEncoderContext;->output:Ljava/io/OutputStream;
@@ -570,9 +570,9 @@
     :cond_0
     iget-object v0, p0, Lcom/google/firebase/encoders/proto/ProtobufDataEncoderContext;->output:Ljava/io/OutputStream;
 
-    long-to-int p2, p1
+    long-to-int p1, p1
 
-    and-int/lit8 p1, p2, 0x7f
+    and-int/lit8 p1, p1, 0x7f
 
     invoke-virtual {v0, p1}, Ljava/io/OutputStream;->write(I)V
 

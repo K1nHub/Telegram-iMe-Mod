@@ -51,15 +51,15 @@
 .method static constructor <clinit>()V
     .locals 2
 
-    .line 743
+    .line 741
     new-instance v0, Lcom/google/protobuf/Any;
 
     invoke-direct {v0}, Lcom/google/protobuf/Any;-><init>()V
 
-    .line 746
+    .line 744
     sput-object v0, Lcom/google/protobuf/Any;->DEFAULT_INSTANCE:Lcom/google/protobuf/Any;
 
-    .line 747
+    .line 745
     const-class v1, Lcom/google/protobuf/Any;
 
     invoke-static {v1, v0}, Lcom/google/protobuf/GeneratedMessageLite;->registerDefaultInstance(Ljava/lang/Class;Lcom/google/protobuf/GeneratedMessageLite;)V
@@ -70,15 +70,15 @@
 .method private constructor <init>()V
     .locals 1
 
-    .line 83
+    .line 82
     invoke-direct {p0}, Lcom/google/protobuf/GeneratedMessageLite;-><init>()V
 
     const-string v0, ""
 
-    .line 84
+    .line 83
     iput-object v0, p0, Lcom/google/protobuf/Any;->typeUrl_:Ljava/lang/String;
 
-    .line 85
+    .line 84
     sget-object v0, Lcom/google/protobuf/ByteString;->EMPTY:Lcom/google/protobuf/ByteString;
 
     iput-object v0, p0, Lcom/google/protobuf/Any;->value_:Lcom/google/protobuf/ByteString;
@@ -89,7 +89,7 @@
 .method static synthetic access$000()Lcom/google/protobuf/Any;
     .locals 1
 
-    .line 78
+    .line 77
     sget-object v0, Lcom/google/protobuf/Any;->DEFAULT_INSTANCE:Lcom/google/protobuf/Any;
 
     return-object v0
@@ -100,7 +100,7 @@
 .method protected final dynamicMethod(Lcom/google/protobuf/GeneratedMessageLite$MethodToInvoke;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 1
 
-    .line 693
+    .line 691
     sget-object p2, Lcom/google/protobuf/Any$1;->$SwitchMap$com$google$protobuf$GeneratedMessageLite$MethodToInvoke:[I
 
     invoke-virtual {p1}, Ljava/lang/Enum;->ordinal()I
@@ -115,7 +115,7 @@
 
     packed-switch p1, :pswitch_data_0
 
-    .line 736
+    .line 734
     new-instance p1, Ljava/lang/UnsupportedOperationException;
 
     invoke-direct {p1}, Ljava/lang/UnsupportedOperationException;-><init>()V
@@ -125,7 +125,7 @@
     :pswitch_0
     return-object p3
 
-    .line 730
+    .line 728
     :pswitch_1
     invoke-static {p2}, Ljava/lang/Byte;->valueOf(B)Ljava/lang/Byte;
 
@@ -133,34 +133,34 @@
 
     return-object p1
 
-    .line 715
+    .line 713
     :pswitch_2
     sget-object p1, Lcom/google/protobuf/Any;->PARSER:Lcom/google/protobuf/Parser;
 
     if-nez p1, :cond_1
 
-    .line 717
+    .line 715
     const-class p2, Lcom/google/protobuf/Any;
 
     monitor-enter p2
 
-    .line 718
+    .line 716
     :try_start_0
     sget-object p1, Lcom/google/protobuf/Any;->PARSER:Lcom/google/protobuf/Parser;
 
     if-nez p1, :cond_0
 
-    .line 720
+    .line 718
     new-instance p1, Lcom/google/protobuf/GeneratedMessageLite$DefaultInstanceBasedParser;
 
     sget-object p3, Lcom/google/protobuf/Any;->DEFAULT_INSTANCE:Lcom/google/protobuf/Any;
 
     invoke-direct {p1, p3}, Lcom/google/protobuf/GeneratedMessageLite$DefaultInstanceBasedParser;-><init>(Lcom/google/protobuf/GeneratedMessageLite;)V
 
-    .line 723
+    .line 721
     sput-object p1, Lcom/google/protobuf/Any;->PARSER:Lcom/google/protobuf/Parser;
 
-    .line 725
+    .line 723
     :cond_0
     monitor-exit p2
 
@@ -179,7 +179,7 @@
     :goto_0
     return-object p1
 
-    .line 712
+    .line 710
     :pswitch_3
     sget-object p1, Lcom/google/protobuf/Any;->DEFAULT_INSTANCE:Lcom/google/protobuf/Any;
 
@@ -202,7 +202,7 @@
 
     const-string p2, "\u0000\u0002\u0000\u0000\u0001\u0002\u0002\u0000\u0000\u0000\u0001\u0208\u0002\n"
 
-    .line 708
+    .line 706
     sget-object p3, Lcom/google/protobuf/Any;->DEFAULT_INSTANCE:Lcom/google/protobuf/Any;
 
     invoke-static {p3, p2, p1}, Lcom/google/protobuf/GeneratedMessageLite;->newMessageInfo(Lcom/google/protobuf/MessageLite;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/Object;
@@ -211,7 +211,7 @@
 
     return-object p1
 
-    .line 698
+    .line 696
     :pswitch_5
     new-instance p1, Lcom/google/protobuf/Any$Builder;
 
@@ -219,7 +219,7 @@
 
     return-object p1
 
-    .line 695
+    .line 693
     :pswitch_6
     new-instance p1, Lcom/google/protobuf/Any;
 

@@ -352,7 +352,7 @@
 
     int-to-float p5, v0
 
-    mul-float p5, p5, p4
+    mul-float/2addr p5, p4
 
     .line 261
     invoke-static {p5}, Ljava/lang/Math;->round(F)I
@@ -361,7 +361,7 @@
 
     int-to-float p5, v1
 
-    mul-float p4, p4, p5
+    mul-float/2addr p4, p5
 
     .line 262
     invoke-static {p4}, Ljava/lang/Math;->round(F)I
@@ -470,15 +470,15 @@
 
     const-wide/16 v0, 0x0
 
-    cmp-long v4, v2, v0
+    cmp-long v0, v2, v0
 
-    if-gez v4, :cond_1
+    if-gez v0, :cond_1
 
     const-wide/16 v0, -0x1
 
-    cmp-long v4, v2, v0
+    cmp-long v0, v2, v0
 
-    if-nez v4, :cond_0
+    if-nez v0, :cond_0
 
     goto :goto_0
 

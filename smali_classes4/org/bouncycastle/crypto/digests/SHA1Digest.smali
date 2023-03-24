@@ -204,7 +204,7 @@
 
     const/16 v0, 0x10
 
-    const/16 v1, 0x10
+    move v1, v0
 
     :goto_0
     const/16 v2, 0x50
@@ -260,9 +260,9 @@
 
     const/4 v6, 0x0
 
-    const/4 v7, 0x0
+    move v7, v6
 
-    const/4 v8, 0x0
+    move v8, v7
 
     :goto_1
     const/4 v9, 0x4
@@ -428,7 +428,7 @@
     goto/16 :goto_1
 
     :cond_1
-    const/4 v7, 0x0
+    move v7, v6
 
     :goto_2
     if-ge v7, v9, :cond_2
@@ -592,7 +592,7 @@
     goto/16 :goto_2
 
     :cond_2
-    const/4 v7, 0x0
+    move v7, v6
 
     :goto_3
     if-ge v7, v9, :cond_3
@@ -756,7 +756,7 @@
     goto/16 :goto_3
 
     :cond_3
-    const/4 v7, 0x0
+    move v7, v6
 
     :goto_4
     const/4 v9, 0x3
@@ -954,7 +954,7 @@
 
     iput v6, p0, Lorg/bouncycastle/crypto/digests/SHA1Digest;->xOff:I
 
-    const/4 v1, 0x0
+    move v1, v6
 
     :goto_5
     if-ge v1, v0, :cond_5
@@ -989,15 +989,15 @@
 
     ushr-long v2, p1, v2
 
-    long-to-int v3, v2
+    long-to-int v2, v2
 
-    aput v3, v0, v1
+    aput v2, v0, v1
 
     const/16 v1, 0xf
 
-    long-to-int p2, p1
+    long-to-int p1, p1
 
-    aput p2, v0, v1
+    aput p1, v0, v1
 
     return-void
 .end method
@@ -1086,7 +1086,7 @@
 
     iput v0, p0, Lorg/bouncycastle/crypto/digests/SHA1Digest;->xOff:I
 
-    const/4 v1, 0x0
+    move v1, v0
 
     :goto_0
     iget-object v2, p0, Lorg/bouncycastle/crypto/digests/SHA1Digest;->X:[I

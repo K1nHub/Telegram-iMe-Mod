@@ -115,12 +115,12 @@
 
     if-nez p1, :cond_1
 
-    const/4 v4, 0x1
+    move v4, v3
 
     goto :goto_0
 
     :cond_1
-    const/4 v4, 0x0
+    move v4, v2
 
     :goto_0
     invoke-static {v1, v4}, Lorg/telegram/ui/Components/EmojiView;->access$12400(Lorg/telegram/ui/Components/EmojiView;Z)V
@@ -133,12 +133,12 @@
 
     if-ne p1, v3, :cond_3
 
-    const/4 v4, 0x1
+    move v4, v3
 
     goto :goto_1
 
     :cond_3
-    const/4 v4, 0x0
+    move v4, v2
 
     :goto_1
     invoke-static {v1, v4}, Lorg/telegram/ui/Components/EmojiView;->access$12400(Lorg/telegram/ui/Components/EmojiView;Z)V

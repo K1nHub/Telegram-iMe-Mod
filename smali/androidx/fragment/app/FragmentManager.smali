@@ -1095,7 +1095,7 @@
 
     move v3, p3
 
-    const/4 v4, 0x0
+    move v4, v2
 
     :goto_1
     const/4 v5, 0x1
@@ -1150,13 +1150,13 @@
     goto :goto_3
 
     :cond_2
-    const/4 v4, 0x0
+    move v4, v2
 
     goto :goto_4
 
     :cond_3
     :goto_3
-    const/4 v4, 0x1
+    move v4, v5
 
     :goto_4
     add-int/lit8 v3, v3, 0x1
@@ -1860,7 +1860,7 @@
 
     move-result v1
 
-    const/4 v3, 0x0
+    move v3, v2
 
     :goto_0
     if-ge v2, v1, :cond_1
@@ -2262,7 +2262,7 @@
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_0
     if-ge v1, v0, :cond_4
@@ -2428,22 +2428,22 @@
     goto :goto_0
 
     :cond_0
-    const/16 v0, 0x2005
+    move v0, v2
 
     goto :goto_0
 
     :cond_1
-    const/16 v0, 0x1003
+    move v0, v1
 
     goto :goto_0
 
     :cond_2
-    const/16 v0, 0x1001
+    move v0, v4
 
     goto :goto_0
 
     :cond_3
-    const/16 v0, 0x2002
+    move v0, v3
 
     :cond_4
     :goto_0
@@ -3251,7 +3251,7 @@
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     :cond_0
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
@@ -3655,7 +3655,7 @@
 
     move-result-object v3
 
-    const/4 v4, 0x0
+    move v4, v1
 
     :cond_1
     :goto_0
@@ -3697,7 +3697,7 @@
     :cond_2
     invoke-virtual {v0, v5}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    const/4 v4, 0x1
+    move v4, v2
 
     goto :goto_0
 
@@ -4197,7 +4197,7 @@
 
     if-eqz v3, :cond_1
 
-    const/4 v1, 0x1
+    move v1, v2
 
     goto :goto_0
 
@@ -4343,7 +4343,7 @@
 
     invoke-virtual {p3, v1}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    const/4 v1, 0x0
+    move v1, p4
 
     :goto_0
     if-ge v1, p2, :cond_0
@@ -4404,7 +4404,7 @@
 
     invoke-virtual {p3, v1}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    const/4 v1, 0x0
+    move v1, p4
 
     :goto_1
     if-ge v1, p2, :cond_1
@@ -4796,7 +4796,7 @@
     .line 1703
     invoke-direct {p0}, Landroidx/fragment/app/FragmentManager;->cleanupExec()V
 
-    const/4 v0, 0x1
+    move v0, p1
 
     goto :goto_0
 
@@ -6003,12 +6003,12 @@
 
     if-eqz p5, :cond_0
 
-    const/4 p5, 0x1
+    move p5, v0
 
     goto :goto_0
 
     :cond_0
-    const/4 p5, 0x0
+    move p5, v1
 
     .line 2208
     :goto_0
@@ -6487,7 +6487,7 @@
 
     iput-object v0, p0, Landroidx/fragment/app/FragmentManager;->mBackStack:Ljava/util/ArrayList;
 
-    const/4 v0, 0x0
+    move v0, v1
 
     .line 2454
     :goto_3
@@ -6601,7 +6601,7 @@
 
     if-eqz v0, :cond_e
 
-    const/4 v2, 0x0
+    move v2, v1
 
     .line 2478
     :goto_4

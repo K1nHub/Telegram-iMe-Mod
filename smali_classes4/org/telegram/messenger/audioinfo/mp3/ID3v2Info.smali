@@ -151,9 +151,9 @@
 
     move-result-wide v8
 
-    cmp-long v10, v6, v8
+    cmp-long v6, v6, v8
 
-    if-lez v10, :cond_1
+    if-lez v6, :cond_1
 
     .line 91
     sget-object v1, Lorg/telegram/messenger/audioinfo/mp3/ID3v2Info;->LOGGER:Ljava/util/logging/Logger;
@@ -595,9 +595,9 @@
 
     move-result-wide v3
 
-    long-to-int v4, v3
+    long-to-int v3, v3
 
-    invoke-virtual {p1, v4, v0}, Lorg/telegram/messenger/audioinfo/mp3/ID3v2FrameBody;->readFixedLengthString(ILorg/telegram/messenger/audioinfo/mp3/ID3v2Encoding;)Ljava/lang/String;
+    invoke-virtual {p1, v3, v0}, Lorg/telegram/messenger/audioinfo/mp3/ID3v2FrameBody;->readFixedLengthString(ILorg/telegram/messenger/audioinfo/mp3/ID3v2Encoding;)Ljava/lang/String;
 
     move-result-object p1
 
@@ -1148,7 +1148,7 @@
     goto :goto_0
 
     :cond_1d
-    const/4 v1, 0x4
+    move v1, v3
 
     goto :goto_0
 
@@ -1164,7 +1164,7 @@
     goto :goto_0
 
     :cond_1e
-    const/4 v1, 0x3
+    move v1, v4
 
     goto :goto_0
 
@@ -1180,7 +1180,7 @@
     goto :goto_0
 
     :cond_1f
-    const/4 v1, 0x2
+    move v1, v5
 
     goto :goto_0
 
@@ -1196,7 +1196,7 @@
     goto :goto_0
 
     :cond_20
-    const/4 v1, 0x1
+    move v1, v7
 
     goto :goto_0
 
@@ -1212,7 +1212,7 @@
     goto :goto_0
 
     :cond_21
-    const/4 v1, 0x0
+    move v1, v6
 
     :goto_0
     const/16 v0, 0x2f
@@ -1254,10 +1254,8 @@
 
     goto/16 :goto_7
 
-    :catch_0
-    nop
-
     .line 221
+    :catch_0
     sget-object v0, Lorg/telegram/messenger/audioinfo/mp3/ID3v2Info;->LOGGER:Ljava/util/logging/Logger;
 
     iget-object v1, p0, Lorg/telegram/messenger/audioinfo/mp3/ID3v2Info;->debugLevel:Ljava/util/logging/Level;
@@ -1335,10 +1333,8 @@
 
     goto/16 :goto_7
 
-    :catch_1
-    nop
-
     .line 323
+    :catch_1
     sget-object v0, Lorg/telegram/messenger/audioinfo/mp3/ID3v2Info;->LOGGER:Ljava/util/logging/Logger;
 
     iget-object v1, p0, Lorg/telegram/messenger/audioinfo/mp3/ID3v2Info;->debugLevel:Ljava/util/logging/Level;
@@ -1428,10 +1424,8 @@
 
     goto/16 :goto_7
 
-    :catch_2
-    nop
-
     .line 286
+    :catch_2
     sget-object v0, Lorg/telegram/messenger/audioinfo/mp3/ID3v2Info;->LOGGER:Ljava/util/logging/Logger;
 
     iget-object v2, p0, Lorg/telegram/messenger/audioinfo/mp3/ID3v2Info;->debugLevel:Ljava/util/logging/Level;
@@ -1482,10 +1476,8 @@
 
     goto :goto_1
 
-    :catch_3
-    nop
-
     .line 294
+    :catch_3
     sget-object v2, Lorg/telegram/messenger/audioinfo/mp3/ID3v2Info;->LOGGER:Ljava/util/logging/Logger;
 
     iget-object v3, p0, Lorg/telegram/messenger/audioinfo/mp3/ID3v2Info;->debugLevel:Ljava/util/logging/Level;
@@ -1537,10 +1529,8 @@
 
     goto/16 :goto_7
 
-    :catch_4
-    nop
-
     .line 301
+    :catch_4
     sget-object v0, Lorg/telegram/messenger/audioinfo/mp3/ID3v2Info;->LOGGER:Ljava/util/logging/Logger;
 
     iget-object v1, p0, Lorg/telegram/messenger/audioinfo/mp3/ID3v2Info;->debugLevel:Ljava/util/logging/Level;
@@ -1610,10 +1600,8 @@
 
     goto/16 :goto_7
 
-    :catch_5
-    nop
-
     .line 255
+    :catch_5
     sget-object v0, Lorg/telegram/messenger/audioinfo/mp3/ID3v2Info;->LOGGER:Ljava/util/logging/Logger;
 
     iget-object v2, p0, Lorg/telegram/messenger/audioinfo/mp3/ID3v2Info;->debugLevel:Ljava/util/logging/Level;
@@ -1664,10 +1652,8 @@
 
     goto :goto_2
 
-    :catch_6
-    nop
-
     .line 263
+    :catch_6
     sget-object v2, Lorg/telegram/messenger/audioinfo/mp3/ID3v2Info;->LOGGER:Ljava/util/logging/Logger;
 
     iget-object v3, p0, Lorg/telegram/messenger/audioinfo/mp3/ID3v2Info;->debugLevel:Ljava/util/logging/Level;
@@ -1719,10 +1705,8 @@
 
     goto/16 :goto_7
 
-    :catch_7
-    nop
-
     .line 270
+    :catch_7
     sget-object v0, Lorg/telegram/messenger/audioinfo/mp3/ID3v2Info;->LOGGER:Ljava/util/logging/Logger;
 
     iget-object v1, p0, Lorg/telegram/messenger/audioinfo/mp3/ID3v2Info;->debugLevel:Ljava/util/logging/Level;
@@ -1796,10 +1780,8 @@
 
     goto/16 :goto_7
 
-    :catch_8
-    nop
-
     .line 233
+    :catch_8
     sget-object v0, Lorg/telegram/messenger/audioinfo/mp3/ID3v2Info;->LOGGER:Ljava/util/logging/Logger;
 
     iget-object v1, p0, Lorg/telegram/messenger/audioinfo/mp3/ID3v2Info;->debugLevel:Ljava/util/logging/Level;
@@ -2045,7 +2027,7 @@
     .line 142
     iget v4, v1, Landroid/graphics/BitmapFactory$Options;->inSampleSize:I
 
-    mul-int/lit8 v4, v4, 0x2
+    mul-int/2addr v4, v5
 
     iput v4, v1, Landroid/graphics/BitmapFactory$Options;->inSampleSize:I
 
@@ -2293,9 +2275,9 @@
 
     move-result-wide v1
 
-    long-to-int v2, v1
+    long-to-int v1, v1
 
-    invoke-virtual {p1, v2, v0}, Lorg/telegram/messenger/audioinfo/mp3/ID3v2FrameBody;->readFixedLengthString(ILorg/telegram/messenger/audioinfo/mp3/ID3v2Encoding;)Ljava/lang/String;
+    invoke-virtual {p1, v1, v0}, Lorg/telegram/messenger/audioinfo/mp3/ID3v2FrameBody;->readFixedLengthString(ILorg/telegram/messenger/audioinfo/mp3/ID3v2Encoding;)Ljava/lang/String;
 
     move-result-object p1
 

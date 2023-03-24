@@ -328,7 +328,7 @@
 
     if-eqz v3, :cond_2
 
-    const/4 v3, 0x0
+    move v3, v2
 
     :goto_0
     if-ge v3, v0, :cond_1
@@ -365,7 +365,7 @@
 
     move-result-object p1
 
-    const/4 v3, 0x0
+    move v3, v2
 
     :goto_1
     if-ge v3, v0, :cond_3

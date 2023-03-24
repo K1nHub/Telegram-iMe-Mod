@@ -378,12 +378,12 @@
 
     if-lt v0, v3, :cond_0
 
-    const/4 v0, 0x1
+    move v0, v1
 
     goto :goto_0
 
     :cond_0
-    const/4 v0, 0x0
+    move v0, v2
 
     :goto_0
     iput-boolean v0, p0, Lorg/telegram/ui/Components/WebPlayerView;->allowInlineAnimation:Z
@@ -2043,9 +2043,9 @@
 
     const-wide v2, -0x7fffffffffffffffL    # -4.9E-324
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-eqz v4, :cond_2
+    if-eqz v0, :cond_2
 
     .line 1968
     iget-object v0, p0, Lorg/telegram/ui/Components/WebPlayerView;->controlsView:Lorg/telegram/ui/Components/WebPlayerView$ControlsView;
@@ -2060,9 +2060,9 @@
 
     div-long/2addr v1, v3
 
-    long-to-int v2, v1
+    long-to-int v1, v1
 
-    invoke-virtual {v0, v2}, Lorg/telegram/ui/Components/WebPlayerView$ControlsView;->setDuration(I)V
+    invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/WebPlayerView$ControlsView;->setDuration(I)V
 
     goto :goto_1
 
@@ -2148,7 +2148,7 @@
     goto :goto_0
 
     :cond_1
-    const/4 v0, 0x0
+    move v0, v1
 
     :goto_0
     const/4 p1, 0x0
@@ -2197,7 +2197,7 @@
     goto :goto_1
 
     :cond_3
-    const/4 v0, 0x0
+    move v0, v1
 
     :goto_1
     invoke-virtual {p2, v0}, Lorg/telegram/ui/Components/RadialProgressView;->setAlpha(F)V
@@ -3401,7 +3401,7 @@
     :goto_2
     move-object v1, v0
 
-    const/4 v0, 0x1
+    move v0, v8
 
     goto :goto_6
 
@@ -3477,7 +3477,7 @@
     goto :goto_4
 
     :cond_9
-    const/4 v1, 0x1
+    move v1, v8
 
     .line 528
     :goto_5
@@ -3598,7 +3598,7 @@
 
     :cond_e
     :goto_9
-    const/4 v8, 0x0
+    move v8, v6
 
     goto :goto_b
 
@@ -3619,7 +3619,7 @@
     :goto_b
     move v10, v8
 
-    goto :goto_e
+    goto :goto_d
 
     :catchall_2
     move-exception v0
@@ -3644,17 +3644,18 @@
     :goto_c
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
+    move v10, v6
+
     goto :goto_d
 
     :cond_f
     const/4 v6, 0x0
 
+    move v10, v6
+
     const/4 v2, 0x0
 
     :goto_d
-    const/4 v10, 0x0
-
-    :goto_e
     if-eqz v1, :cond_11
 
     .line 575
@@ -3663,7 +3664,7 @@
     :try_end_b
     .catchall {:try_start_b .. :try_end_b} :catchall_5
 
-    goto :goto_f
+    goto :goto_e
 
     :catchall_5
     move-exception v0
@@ -3673,17 +3674,17 @@
     .line 578
     invoke-static {v1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
-    goto :goto_f
+    goto :goto_e
 
     :cond_10
     const/4 v6, 0x0
 
+    move v10, v6
+
     const/4 v2, 0x0
 
-    const/4 v10, 0x0
-
     :cond_11
-    :goto_f
+    :goto_e
     if-eqz v10, :cond_12
 
     .line 581
@@ -3691,12 +3692,12 @@
 
     move-result-object v9
 
-    goto :goto_10
+    goto :goto_f
 
     :cond_12
     const/4 v9, 0x0
 
-    :goto_10
+    :goto_f
     return-object v9
 .end method
 
@@ -5112,9 +5113,9 @@
 
     const-wide v2, -0x7fffffffffffffffL    # -4.9E-324
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-eqz v4, :cond_0
+    if-eqz v0, :cond_0
 
     .line 1737
     iget-object v0, p0, Lorg/telegram/ui/Components/WebPlayerView;->controlsView:Lorg/telegram/ui/Components/WebPlayerView$ControlsView;
@@ -5129,9 +5130,9 @@
 
     div-long/2addr v1, v3
 
-    long-to-int v2, v1
+    long-to-int v1, v1
 
-    invoke-virtual {v0, v2}, Lorg/telegram/ui/Components/WebPlayerView$ControlsView;->setDuration(I)V
+    invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/WebPlayerView$ControlsView;->setDuration(I)V
 
     goto :goto_0
 
@@ -5376,7 +5377,7 @@
     :cond_1
     int-to-float p1, p1
 
-    mul-float p1, p1, p4
+    mul-float/2addr p1, p4
 
     float-to-int p4, p1
 

@@ -248,7 +248,7 @@
 
     if-ne p1, v2, :cond_3
 
-    const/4 v1, 0x1
+    move v1, v0
 
     :cond_3
     return v1
@@ -261,7 +261,7 @@
 
     if-ne p1, v2, :cond_5
 
-    const/4 v1, 0x1
+    move v1, v0
 
     :cond_5
     return v1

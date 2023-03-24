@@ -30,14 +30,14 @@
 .method constructor <init>(Lcom/smedialink/ui/wallet/home/v2/details/WalletTokenDetailsView$$State;Lcom/smedialink/model/statistic/StatisticDiagramModel;)V
     .locals 1
 
-    .line 722
+    .line 738
     const-class p1, Lmoxy/viewstate/strategy/OneExecutionStateStrategy;
 
     const-string v0, "showStatisticDialog"
 
     invoke-direct {p0, v0, p1}, Lmoxy/viewstate/ViewCommand;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
 
-    .line 724
+    .line 740
     iput-object p2, p0, Lcom/smedialink/ui/wallet/home/v2/details/WalletTokenDetailsView$$State$ShowStatisticDialogCommand;->distributionDiagramModel:Lcom/smedialink/model/statistic/StatisticDiagramModel;
 
     return-void
@@ -48,7 +48,7 @@
 .method public apply(Lcom/smedialink/ui/wallet/home/v2/details/WalletTokenDetailsView;)V
     .locals 1
 
-    .line 729
+    .line 745
     iget-object v0, p0, Lcom/smedialink/ui/wallet/home/v2/details/WalletTokenDetailsView$$State$ShowStatisticDialogCommand;->distributionDiagramModel:Lcom/smedialink/model/statistic/StatisticDiagramModel;
 
     invoke-interface {p1, v0}, Lcom/smedialink/ui/wallet/home/v2/details/WalletTokenDetailsView;->showStatisticDialog(Lcom/smedialink/model/statistic/StatisticDiagramModel;)V
@@ -59,7 +59,7 @@
 .method public bridge synthetic apply(Lmoxy/MvpView;)V
     .locals 0
 
-    .line 718
+    .line 734
     check-cast p1, Lcom/smedialink/ui/wallet/home/v2/details/WalletTokenDetailsView;
 
     invoke-virtual {p0, p1}, Lcom/smedialink/ui/wallet/home/v2/details/WalletTokenDetailsView$$State$ShowStatisticDialogCommand;->apply(Lcom/smedialink/ui/wallet/home/v2/details/WalletTokenDetailsView;)V

@@ -12,16 +12,16 @@ public final class zzap implements Parcelable.Creator {
     @Override // android.os.Parcelable.Creator
     public final /* bridge */ /* synthetic */ Object createFromParcel(Parcel parcel) {
         int validateObjectHeader = SafeParcelReader.validateObjectHeader(parcel);
-        StreetViewPanoramaCamera streetViewPanoramaCamera = null;
-        String str = null;
-        LatLng latLng = null;
-        Integer num = null;
-        StreetViewSource streetViewSource = null;
         byte b = 0;
         byte b2 = 0;
         byte b3 = 0;
         byte b4 = 0;
         byte b5 = 0;
+        StreetViewPanoramaCamera streetViewPanoramaCamera = null;
+        String str = null;
+        LatLng latLng = null;
+        Integer num = null;
+        StreetViewSource streetViewSource = null;
         while (parcel.dataPosition() < validateObjectHeader) {
             int readHeader = SafeParcelReader.readHeader(parcel);
             switch (SafeParcelReader.getFieldId(readHeader)) {

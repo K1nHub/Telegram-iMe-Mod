@@ -404,10 +404,10 @@ public final class RemoteSerializer {
             r3 = 1
             if (r0 <= 0) goto L34
             if (r0 != r3) goto L11
-            r0 = 1
+            r0 = r3
             goto L12
         L11:
-            r0 = 0
+            r0 = r2
         L12:
             java.lang.Object[] r4 = new java.lang.Object[r2]
             java.lang.String r5 = "StructuredQuery.from with more than one collection is not supported."

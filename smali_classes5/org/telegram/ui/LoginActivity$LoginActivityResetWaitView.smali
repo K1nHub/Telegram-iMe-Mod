@@ -88,46 +88,46 @@
 
     move-object/from16 v2, p2
 
-    .line 5473
+    .line 5487
     iput-object v1, v0, Lorg/telegram/ui/LoginActivity$LoginActivityResetWaitView;->this$0:Lorg/telegram/ui/LoginActivity;
 
-    .line 5474
+    .line 5488
     invoke-direct {v0, v2}, Lorg/telegram/ui/Components/SlideView;-><init>(Landroid/content/Context;)V
 
     const/4 v1, 0x1
 
-    .line 5476
+    .line 5490
     invoke-virtual {v0, v1}, Landroid/widget/LinearLayout;->setOrientation(I)V
 
-    .line 5478
+    .line 5492
     new-instance v3, Landroid/widget/LinearLayout;
 
     invoke-direct {v3, v2}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;)V
 
-    .line 5479
+    .line 5493
     invoke-virtual {v3, v1}, Landroid/widget/LinearLayout;->setOrientation(I)V
 
     const/16 v4, 0x11
 
-    .line 5480
+    .line 5494
     invoke-virtual {v3, v4}, Landroid/widget/LinearLayout;->setGravity(I)V
 
-    .line 5482
+    .line 5496
     new-instance v5, Landroid/widget/FrameLayout;
 
     invoke-direct {v5, v2}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
-    .line 5483
+    .line 5497
     new-instance v6, Lorg/telegram/ui/Components/RLottieImageView;
 
     invoke-direct {v6, v2}, Lorg/telegram/ui/Components/RLottieImageView;-><init>(Landroid/content/Context;)V
 
     iput-object v6, v0, Lorg/telegram/ui/LoginActivity$LoginActivityResetWaitView;->waitImageView:Lorg/telegram/ui/Components/RLottieImageView;
 
-    .line 5484
+    .line 5498
     invoke-virtual {v6, v1}, Lorg/telegram/ui/Components/RLottieImageView;->setAutoRepeat(Z)V
 
-    .line 5485
+    .line 5499
     iget-object v6, v0, Lorg/telegram/ui/LoginActivity$LoginActivityResetWaitView;->waitImageView:Lorg/telegram/ui/Components/RLottieImageView;
 
     sget v7, Lorg/telegram/messenger/R$raw;->sandclock:I
@@ -136,7 +136,7 @@
 
     invoke-virtual {v6, v7, v8, v8}, Lorg/telegram/ui/Components/RLottieImageView;->setAnimation(III)V
 
-    .line 5486
+    .line 5500
     iget-object v6, v0, Lorg/telegram/ui/LoginActivity$LoginActivityResetWaitView;->waitImageView:Lorg/telegram/ui/Components/RLottieImageView;
 
     invoke-static {v8, v8, v1}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(III)Landroid/widget/FrameLayout$LayoutParams;
@@ -145,7 +145,7 @@
 
     invoke-virtual {v5, v6, v7}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 5487
+    .line 5501
     sget-object v6, Lorg/telegram/messenger/AndroidUtilities;->displaySize:Landroid/graphics/Point;
 
     iget v7, v6, Landroid/graphics/Point;->x:I
@@ -167,7 +167,7 @@
     goto :goto_0
 
     :cond_0
-    const/4 v6, 0x0
+    move v6, v8
 
     :goto_0
     invoke-virtual {v5, v6}, Landroid/widget/FrameLayout;->setVisibility(I)V
@@ -176,14 +176,14 @@
 
     const/4 v7, -0x1
 
-    .line 5488
+    .line 5502
     invoke-static {v7, v6, v1}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(III)Landroid/widget/FrameLayout$LayoutParams;
 
     move-result-object v6
 
     invoke-virtual {v3, v5, v6}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 5490
+    .line 5504
     new-instance v5, Landroid/widget/TextView;
 
     invoke-direct {v5, v2}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
@@ -192,10 +192,10 @@
 
     const/high16 v6, 0x41900000    # 18.0f
 
-    .line 5491
+    .line 5505
     invoke-virtual {v5, v1, v6}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    .line 5492
+    .line 5506
     iget-object v5, v0, Lorg/telegram/ui/LoginActivity$LoginActivityResetWaitView;->titleView:Landroid/widget/TextView;
 
     const-string v6, "fonts/rmedium.ttf"
@@ -206,7 +206,7 @@
 
     invoke-virtual {v5, v9}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
 
-    .line 5493
+    .line 5507
     iget-object v5, v0, Lorg/telegram/ui/LoginActivity$LoginActivityResetWaitView;->titleView:Landroid/widget/TextView;
 
     sget v9, Lorg/telegram/messenger/R$string;->ResetAccount:I
@@ -217,12 +217,12 @@
 
     invoke-virtual {v5, v10}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 5494
+    .line 5508
     iget-object v5, v0, Lorg/telegram/ui/LoginActivity$LoginActivityResetWaitView;->titleView:Landroid/widget/TextView;
 
     invoke-virtual {v5, v4}, Landroid/widget/TextView;->setGravity(I)V
 
-    .line 5495
+    .line 5509
     iget-object v5, v0, Lorg/telegram/ui/LoginActivity$LoginActivityResetWaitView;->titleView:Landroid/widget/TextView;
 
     const/4 v10, 0x2
@@ -237,7 +237,7 @@
 
     invoke-virtual {v5, v11, v12}, Landroid/widget/TextView;->setLineSpacing(FF)V
 
-    .line 5496
+    .line 5510
     iget-object v5, v0, Lorg/telegram/ui/LoginActivity$LoginActivityResetWaitView;->titleView:Landroid/widget/TextView;
 
     const/4 v13, -0x1
@@ -260,7 +260,7 @@
 
     invoke-virtual {v3, v5, v11}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 5498
+    .line 5512
     new-instance v5, Landroid/widget/TextView;
 
     invoke-direct {v5, v2}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
@@ -269,15 +269,15 @@
 
     const/high16 v11, 0x41600000    # 14.0f
 
-    .line 5499
+    .line 5513
     invoke-virtual {v5, v1, v11}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    .line 5500
+    .line 5514
     iget-object v5, v0, Lorg/telegram/ui/LoginActivity$LoginActivityResetWaitView;->confirmTextView:Landroid/widget/TextView;
 
     invoke-virtual {v5, v1}, Landroid/widget/TextView;->setGravity(I)V
 
-    .line 5501
+    .line 5515
     iget-object v5, v0, Lorg/telegram/ui/LoginActivity$LoginActivityResetWaitView;->confirmTextView:Landroid/widget/TextView;
 
     invoke-static {v10}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
@@ -288,7 +288,7 @@
 
     invoke-virtual {v5, v13, v12}, Landroid/widget/TextView;->setLineSpacing(FF)V
 
-    .line 5502
+    .line 5516
     iget-object v5, v0, Lorg/telegram/ui/LoginActivity$LoginActivityResetWaitView;->confirmTextView:Landroid/widget/TextView;
 
     const/4 v13, -0x2
@@ -305,24 +305,24 @@
 
     invoke-virtual {v3, v5, v13}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 5504
+    .line 5518
     invoke-static {v7, v8, v12}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(IIF)Landroid/widget/LinearLayout$LayoutParams;
 
     move-result-object v5
 
     invoke-virtual {v0, v3, v5}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 5506
+    .line 5520
     new-instance v3, Landroid/widget/TextView;
 
     invoke-direct {v3, v2}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
 
     iput-object v3, v0, Lorg/telegram/ui/LoginActivity$LoginActivityResetWaitView;->resetAccountText:Landroid/widget/TextView;
 
-    .line 5507
+    .line 5521
     invoke-virtual {v3, v1}, Landroid/widget/TextView;->setGravity(I)V
 
-    .line 5508
+    .line 5522
     iget-object v3, v0, Lorg/telegram/ui/LoginActivity$LoginActivityResetWaitView;->resetAccountText:Landroid/widget/TextView;
 
     sget v5, Lorg/telegram/messenger/R$string;->ResetAccountStatus:I
@@ -335,12 +335,12 @@
 
     invoke-virtual {v3, v5}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 5509
+    .line 5523
     iget-object v3, v0, Lorg/telegram/ui/LoginActivity$LoginActivityResetWaitView;->resetAccountText:Landroid/widget/TextView;
 
     invoke-virtual {v3, v1, v11}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    .line 5510
+    .line 5524
     iget-object v3, v0, Lorg/telegram/ui/LoginActivity$LoginActivityResetWaitView;->resetAccountText:Landroid/widget/TextView;
 
     invoke-static {v10}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
@@ -351,7 +351,7 @@
 
     invoke-virtual {v3, v5, v12}, Landroid/widget/TextView;->setLineSpacing(FF)V
 
-    .line 5511
+    .line 5525
     iget-object v3, v0, Lorg/telegram/ui/LoginActivity$LoginActivityResetWaitView;->resetAccountText:Landroid/widget/TextView;
 
     const/4 v13, -0x2
@@ -370,24 +370,24 @@
 
     invoke-virtual {v0, v3, v5}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 5513
+    .line 5527
     new-instance v3, Landroid/widget/TextView;
 
     invoke-direct {v3, v2}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
 
     iput-object v3, v0, Lorg/telegram/ui/LoginActivity$LoginActivityResetWaitView;->resetAccountTime:Landroid/widget/TextView;
 
-    .line 5514
+    .line 5528
     invoke-virtual {v3, v1}, Landroid/widget/TextView;->setGravity(I)V
 
-    .line 5515
+    .line 5529
     iget-object v3, v0, Lorg/telegram/ui/LoginActivity$LoginActivityResetWaitView;->resetAccountTime:Landroid/widget/TextView;
 
     const/high16 v5, 0x41a00000    # 20.0f
 
     invoke-virtual {v3, v1, v5}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    .line 5516
+    .line 5530
     iget-object v3, v0, Lorg/telegram/ui/LoginActivity$LoginActivityResetWaitView;->resetAccountTime:Landroid/widget/TextView;
 
     invoke-static {v6}, Lorg/telegram/messenger/AndroidUtilities;->getTypeface(Ljava/lang/String;)Landroid/graphics/Typeface;
@@ -396,7 +396,7 @@
 
     invoke-virtual {v3, v5}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
 
-    .line 5517
+    .line 5531
     iget-object v3, v0, Lorg/telegram/ui/LoginActivity$LoginActivityResetWaitView;->resetAccountTime:Landroid/widget/TextView;
 
     invoke-static {v10}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
@@ -407,7 +407,7 @@
 
     invoke-virtual {v3, v5, v12}, Landroid/widget/TextView;->setLineSpacing(FF)V
 
-    .line 5518
+    .line 5532
     iget-object v3, v0, Lorg/telegram/ui/LoginActivity$LoginActivityResetWaitView;->resetAccountTime:Landroid/widget/TextView;
 
     const/4 v15, 0x1
@@ -420,17 +420,17 @@
 
     invoke-virtual {v0, v3, v5}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 5520
+    .line 5534
     new-instance v3, Landroid/widget/TextView;
 
     invoke-direct {v3, v2}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
 
     iput-object v3, v0, Lorg/telegram/ui/LoginActivity$LoginActivityResetWaitView;->resetAccountButton:Landroid/widget/TextView;
 
-    .line 5521
+    .line 5535
     invoke-virtual {v3, v4}, Landroid/widget/TextView;->setGravity(I)V
 
-    .line 5522
+    .line 5536
     iget-object v2, v0, Lorg/telegram/ui/LoginActivity$LoginActivityResetWaitView;->resetAccountButton:Landroid/widget/TextView;
 
     invoke-static {v9}, Lorg/telegram/messenger/LocaleController;->getString(I)Ljava/lang/String;
@@ -439,7 +439,7 @@
 
     invoke-virtual {v2, v3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 5523
+    .line 5537
     iget-object v2, v0, Lorg/telegram/ui/LoginActivity$LoginActivityResetWaitView;->resetAccountButton:Landroid/widget/TextView;
 
     invoke-static {v6}, Lorg/telegram/messenger/AndroidUtilities;->getTypeface(Ljava/lang/String;)Landroid/graphics/Typeface;
@@ -448,14 +448,14 @@
 
     invoke-virtual {v2, v3}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
 
-    .line 5524
+    .line 5538
     iget-object v2, v0, Lorg/telegram/ui/LoginActivity$LoginActivityResetWaitView;->resetAccountButton:Landroid/widget/TextView;
 
     const/high16 v3, 0x41700000    # 15.0f
 
     invoke-virtual {v2, v1, v3}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    .line 5525
+    .line 5539
     iget-object v1, v0, Lorg/telegram/ui/LoginActivity$LoginActivityResetWaitView;->resetAccountButton:Landroid/widget/TextView;
 
     invoke-static {v10}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
@@ -466,7 +466,7 @@
 
     invoke-virtual {v1, v2, v12}, Landroid/widget/TextView;->setLineSpacing(FF)V
 
-    .line 5526
+    .line 5540
     iget-object v1, v0, Lorg/telegram/ui/LoginActivity$LoginActivityResetWaitView;->resetAccountButton:Landroid/widget/TextView;
 
     const/16 v2, 0x22
@@ -481,12 +481,12 @@
 
     invoke-virtual {v1, v3, v8, v2, v8}, Landroid/widget/TextView;->setPadding(IIII)V
 
-    .line 5527
+    .line 5541
     iget-object v1, v0, Lorg/telegram/ui/LoginActivity$LoginActivityResetWaitView;->resetAccountButton:Landroid/widget/TextView;
 
     invoke-virtual {v1, v7}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 5528
+    .line 5542
     iget-object v1, v0, Lorg/telegram/ui/LoginActivity$LoginActivityResetWaitView;->resetAccountButton:Landroid/widget/TextView;
 
     const/4 v2, -0x1
@@ -509,7 +509,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 5529
+    .line 5543
     iget-object v1, v0, Lorg/telegram/ui/LoginActivity$LoginActivityResetWaitView;->resetAccountButton:Landroid/widget/TextView;
 
     new-instance v2, Lorg/telegram/ui/LoginActivity$LoginActivityResetWaitView$$ExternalSyntheticLambda1;
@@ -524,7 +524,7 @@
 .method static synthetic access$13400(Lorg/telegram/ui/LoginActivity$LoginActivityResetWaitView;)Ljava/lang/Runnable;
     .locals 0
 
-    .line 5454
+    .line 5468
     iget-object p0, p0, Lorg/telegram/ui/LoginActivity$LoginActivityResetWaitView;->timeRunnable:Ljava/lang/Runnable;
 
     return-object p0
@@ -533,7 +533,7 @@
 .method static synthetic access$13500(Lorg/telegram/ui/LoginActivity$LoginActivityResetWaitView;)V
     .locals 0
 
-    .line 5454
+    .line 5468
     invoke-direct {p0}, Lorg/telegram/ui/LoginActivity$LoginActivityResetWaitView;->updateTimeText()V
 
     return-void
@@ -542,7 +542,7 @@
 .method private synthetic lambda$new$0(Lorg/telegram/tgnet/TLRPC$TL_error;)V
     .locals 4
 
-    .line 5541
+    .line 5555
     iget-object v0, p0, Lorg/telegram/ui/LoginActivity$LoginActivityResetWaitView;->this$0:Lorg/telegram/ui/LoginActivity;
 
     const/4 v1, 0x0
@@ -551,7 +551,7 @@
 
     if-nez p1, :cond_2
 
-    .line 5543
+    .line 5557
     iget-object p1, p0, Lorg/telegram/ui/LoginActivity$LoginActivityResetWaitView;->requestPhone:Ljava/lang/String;
 
     const/4 v0, 0x1
@@ -568,34 +568,34 @@
 
     goto :goto_0
 
-    .line 5548
+    .line 5562
     :cond_0
     new-instance p1, Landroid/os/Bundle;
 
     invoke-direct {p1}, Landroid/os/Bundle;-><init>()V
 
-    .line 5549
+    .line 5563
     iget-object v2, p0, Lorg/telegram/ui/LoginActivity$LoginActivityResetWaitView;->requestPhone:Ljava/lang/String;
 
     const-string v3, "phoneFormated"
 
     invoke-virtual {p1, v3, v2}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 5550
+    .line 5564
     iget-object v2, p0, Lorg/telegram/ui/LoginActivity$LoginActivityResetWaitView;->phoneHash:Ljava/lang/String;
 
     const-string v3, "phoneHash"
 
     invoke-virtual {p1, v3, v2}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 5551
+    .line 5565
     iget-object v2, p0, Lorg/telegram/ui/LoginActivity$LoginActivityResetWaitView;->phoneCode:Ljava/lang/String;
 
     const-string v3, "code"
 
     invoke-virtual {p1, v3, v2}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 5552
+    .line 5566
     iget-object v2, p0, Lorg/telegram/ui/LoginActivity$LoginActivityResetWaitView;->this$0:Lorg/telegram/ui/LoginActivity;
 
     const/4 v3, 0x5
@@ -604,7 +604,7 @@
 
     goto :goto_1
 
-    .line 5544
+    .line 5558
     :cond_1
     :goto_0
     iget-object p1, p0, Lorg/telegram/ui/LoginActivity$LoginActivityResetWaitView;->this$0:Lorg/telegram/ui/LoginActivity;
@@ -615,7 +615,7 @@
 
     return-void
 
-    .line 5554
+    .line 5568
     :cond_2
     iget-object v0, p1, Lorg/telegram/tgnet/TLRPC$TL_error;->text:Ljava/lang/String;
 
@@ -627,7 +627,7 @@
 
     if-eqz v0, :cond_3
 
-    .line 5555
+    .line 5569
     iget-object p1, p0, Lorg/telegram/ui/LoginActivity$LoginActivityResetWaitView;->this$0:Lorg/telegram/ui/LoginActivity;
 
     sget v0, Lorg/telegram/messenger/R$string;->RestorePasswordNoEmailTitle:I
@@ -648,7 +648,7 @@
 
     goto :goto_1
 
-    .line 5557
+    .line 5571
     :cond_3
     iget-object v0, p0, Lorg/telegram/ui/LoginActivity$LoginActivityResetWaitView;->this$0:Lorg/telegram/ui/LoginActivity;
 
@@ -669,7 +669,7 @@
 .method private synthetic lambda$new$1(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
     .locals 0
 
-    .line 5540
+    .line 5554
     new-instance p1, Lorg/telegram/ui/LoginActivity$LoginActivityResetWaitView$$ExternalSyntheticLambda2;
 
     invoke-direct {p1, p0, p2}, Lorg/telegram/ui/LoginActivity$LoginActivityResetWaitView$$ExternalSyntheticLambda2;-><init>(Lorg/telegram/ui/LoginActivity$LoginActivityResetWaitView;Lorg/telegram/tgnet/TLRPC$TL_error;)V
@@ -682,24 +682,24 @@
 .method private synthetic lambda$new$2(Landroid/content/DialogInterface;I)V
     .locals 2
 
-    .line 5537
+    .line 5551
     iget-object p1, p0, Lorg/telegram/ui/LoginActivity$LoginActivityResetWaitView;->this$0:Lorg/telegram/ui/LoginActivity;
 
     const/4 p2, 0x0
 
     invoke-static {p1, p2}, Lorg/telegram/ui/LoginActivity;->access$7300(Lorg/telegram/ui/LoginActivity;I)V
 
-    .line 5538
+    .line 5552
     new-instance p1, Lorg/telegram/tgnet/TLRPC$TL_account_deleteAccount;
 
     invoke-direct {p1}, Lorg/telegram/tgnet/TLRPC$TL_account_deleteAccount;-><init>()V
 
     const-string p2, "Forgot password"
 
-    .line 5539
+    .line 5553
     iput-object p2, p1, Lorg/telegram/tgnet/TLRPC$TL_account_deleteAccount;->reason:Ljava/lang/String;
 
-    .line 5540
+    .line 5554
     iget-object p2, p0, Lorg/telegram/ui/LoginActivity$LoginActivityResetWaitView;->this$0:Lorg/telegram/ui/LoginActivity;
 
     invoke-static {p2}, Lorg/telegram/ui/LoginActivity;->access$13600(Lorg/telegram/ui/LoginActivity;)I
@@ -724,7 +724,7 @@
 .method private synthetic lambda$new$3(Landroid/view/View;)V
     .locals 3
 
-    .line 5530
+    .line 5544
     iget-object p1, p0, Lorg/telegram/ui/LoginActivity$LoginActivityResetWaitView;->this$0:Lorg/telegram/ui/LoginActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/LoginActivity;->access$500(Lorg/telegram/ui/LoginActivity;)Lorg/telegram/ui/Components/RadialProgressView;
@@ -739,7 +739,7 @@
 
     return-void
 
-    .line 5533
+    .line 5547
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/LoginActivity$LoginActivityResetWaitView;->this$0:Lorg/telegram/ui/LoginActivity;
 
@@ -755,7 +755,7 @@
 
     const-string v2, "ResetMyAccountWarning"
 
-    .line 5534
+    .line 5548
     invoke-static {v2, v1}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v1
@@ -768,7 +768,7 @@
 
     const-string v2, "ResetMyAccountWarningText"
 
-    .line 5535
+    .line 5549
     invoke-static {v2, v1}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v1
@@ -781,7 +781,7 @@
 
     const-string v2, "ResetMyAccountWarningReset"
 
-    .line 5536
+    .line 5550
     invoke-static {v2, v1}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v1
@@ -798,7 +798,7 @@
 
     const-string v2, "Cancel"
 
-    .line 5562
+    .line 5576
     invoke-static {v2, v1}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v1
@@ -813,7 +813,7 @@
 
     move-result-object v0
 
-    .line 5533
+    .line 5547
     invoke-virtual {p1, v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->showDialog(Landroid/app/Dialog;)Landroid/app/Dialog;
 
     return-void
@@ -822,7 +822,7 @@
 .method private updateTimeText()V
     .locals 10
 
-    .line 5581
+    .line 5595
     iget v0, p0, Lorg/telegram/ui/LoginActivity$LoginActivityResetWaitView;->waitTime:I
 
     iget-object v1, p0, Lorg/telegram/ui/LoginActivity$LoginActivityResetWaitView;->this$0:Lorg/telegram/ui/LoginActivity;
@@ -853,7 +853,7 @@
 
     const v2, 0x15180
 
-    .line 5582
+    .line 5596
     div-int v2, v0, v2
 
     int-to-float v3, v0
@@ -862,20 +862,20 @@
 
     div-float/2addr v3, v4
 
-    .line 5583
+    .line 5597
     invoke-static {v3}, Ljava/lang/Math;->round(F)I
 
     move-result v3
 
-    .line 5584
+    .line 5598
     div-int/lit16 v4, v0, 0xe10
 
-    .line 5585
+    .line 5599
     div-int/lit8 v5, v0, 0x3c
 
     rem-int/lit8 v5, v5, 0x3c
 
-    .line 5586
+    .line 5600
     rem-int/lit8 v6, v0, 0x3c
 
     const/4 v7, 0x2
@@ -884,7 +884,7 @@
 
     if-lt v2, v7, :cond_0
 
-    .line 5588
+    .line 5602
     iget-object v2, p0, Lorg/telegram/ui/LoginActivity$LoginActivityResetWaitView;->resetAccountTime:Landroid/widget/TextView;
 
     new-array v4, v1, [Ljava/lang/Object;
@@ -899,7 +899,7 @@
 
     goto :goto_0
 
-    .line 5590
+    .line 5604
     :cond_0
     iget-object v2, p0, Lorg/telegram/ui/LoginActivity$LoginActivityResetWaitView;->resetAccountTime:Landroid/widget/TextView;
 
@@ -940,14 +940,14 @@
     :goto_0
     if-nez v0, :cond_1
 
-    const/4 v0, 0x1
+    move v0, v8
 
     goto :goto_1
 
     :cond_1
-    const/4 v0, 0x0
+    move v0, v1
 
-    .line 5594
+    .line 5608
     :goto_1
     iget-object v2, p0, Lorg/telegram/ui/LoginActivity$LoginActivityResetWaitView;->wasResetButtonActive:Ljava/lang/Boolean;
 
@@ -962,12 +962,12 @@
     :cond_2
     if-nez v0, :cond_3
 
-    .line 5596
+    .line 5610
     iget-object v2, p0, Lorg/telegram/ui/LoginActivity$LoginActivityResetWaitView;->waitImageView:Lorg/telegram/ui/Components/RLottieImageView;
 
     invoke-virtual {v2, v8}, Lorg/telegram/ui/Components/RLottieImageView;->setAutoRepeat(Z)V
 
-    .line 5597
+    .line 5611
     iget-object v2, p0, Lorg/telegram/ui/LoginActivity$LoginActivityResetWaitView;->waitImageView:Lorg/telegram/ui/Components/RLottieImageView;
 
     invoke-virtual {v2}, Lorg/telegram/ui/Components/RLottieImageView;->isPlaying()Z
@@ -976,14 +976,14 @@
 
     if-nez v2, :cond_4
 
-    .line 5598
+    .line 5612
     iget-object v2, p0, Lorg/telegram/ui/LoginActivity$LoginActivityResetWaitView;->waitImageView:Lorg/telegram/ui/Components/RLottieImageView;
 
     invoke-virtual {v2}, Lorg/telegram/ui/Components/RLottieImageView;->playAnimation()V
 
     goto :goto_2
 
-    .line 5601
+    .line 5615
     :cond_3
     iget-object v2, p0, Lorg/telegram/ui/LoginActivity$LoginActivityResetWaitView;->waitImageView:Lorg/telegram/ui/Components/RLottieImageView;
 
@@ -993,7 +993,7 @@
 
     invoke-virtual {v2, v1}, Lorg/telegram/ui/Components/RLottieDrawable;->setAutoRepeat(I)V
 
-    .line 5604
+    .line 5618
     :cond_4
     :goto_2
     iget-object v2, p0, Lorg/telegram/ui/LoginActivity$LoginActivityResetWaitView;->resetAccountTime:Landroid/widget/TextView;
@@ -1002,32 +1002,32 @@
 
     if-eqz v0, :cond_5
 
-    const/4 v4, 0x4
+    move v4, v3
 
     goto :goto_3
 
     :cond_5
-    const/4 v4, 0x0
+    move v4, v1
 
     :goto_3
     invoke-virtual {v2, v4}, Landroid/widget/TextView;->setVisibility(I)V
 
-    .line 5605
+    .line 5619
     iget-object v2, p0, Lorg/telegram/ui/LoginActivity$LoginActivityResetWaitView;->resetAccountText:Landroid/widget/TextView;
 
     if-eqz v0, :cond_6
 
-    const/4 v4, 0x4
+    move v4, v3
 
     goto :goto_4
 
     :cond_6
-    const/4 v4, 0x0
+    move v4, v1
 
     :goto_4
     invoke-virtual {v2, v4}, Landroid/widget/TextView;->setVisibility(I)V
 
-    .line 5606
+    .line 5620
     iget-object v2, p0, Lorg/telegram/ui/LoginActivity$LoginActivityResetWaitView;->resetAccountButton:Landroid/widget/TextView;
 
     if-eqz v0, :cond_7
@@ -1035,12 +1035,12 @@
     goto :goto_5
 
     :cond_7
-    const/4 v1, 0x4
+    move v1, v3
 
     :goto_5
     invoke-virtual {v2, v1}, Landroid/widget/TextView;->setVisibility(I)V
 
-    .line 5608
+    .line 5622
     invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object v0
@@ -1056,7 +1056,7 @@
 .method public getHeaderName()Ljava/lang/String;
     .locals 2
 
-    .line 5577
+    .line 5591
     sget v0, Lorg/telegram/messenger/R$string;->ResetAccount:I
 
     const-string v1, "ResetAccount"
@@ -1079,24 +1079,24 @@
 .method public onBackPressed(Z)Z
     .locals 1
 
-    .line 5645
+    .line 5659
     iget-object p1, p0, Lorg/telegram/ui/LoginActivity$LoginActivityResetWaitView;->this$0:Lorg/telegram/ui/LoginActivity;
 
     const/4 v0, 0x1
 
     invoke-static {p1, v0}, Lorg/telegram/ui/LoginActivity;->access$6800(Lorg/telegram/ui/LoginActivity;Z)V
 
-    .line 5646
+    .line 5660
     iget-object p1, p0, Lorg/telegram/ui/LoginActivity$LoginActivityResetWaitView;->timeRunnable:Ljava/lang/Runnable;
 
     invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->cancelRunOnUIThread(Ljava/lang/Runnable;)V
 
     const/4 p1, 0x0
 
-    .line 5647
+    .line 5661
     iput-object p1, p0, Lorg/telegram/ui/LoginActivity$LoginActivityResetWaitView;->timeRunnable:Ljava/lang/Runnable;
 
-    .line 5648
+    .line 5662
     iput-object p1, p0, Lorg/telegram/ui/LoginActivity$LoginActivityResetWaitView;->currentParams:Landroid/os/Bundle;
 
     return v0
@@ -1107,7 +1107,7 @@
 
     const-string v0, "resetview_params"
 
-    .line 5661
+    .line 5675
     invoke-virtual {p1, v0}, Landroid/os/Bundle;->getBundle(Ljava/lang/String;)Landroid/os/Bundle;
 
     move-result-object p1
@@ -1118,7 +1118,7 @@
 
     const/4 v0, 0x1
 
-    .line 5663
+    .line 5677
     invoke-virtual {p0, p1, v0}, Lorg/telegram/ui/LoginActivity$LoginActivityResetWaitView;->setParams(Landroid/os/Bundle;Z)V
 
     :cond_0
@@ -1128,14 +1128,14 @@
 .method public saveStateParams(Landroid/os/Bundle;)V
     .locals 2
 
-    .line 5654
+    .line 5668
     iget-object v0, p0, Lorg/telegram/ui/LoginActivity$LoginActivityResetWaitView;->currentParams:Landroid/os/Bundle;
 
     if-eqz v0, :cond_0
 
     const-string v1, "resetview_params"
 
-    .line 5655
+    .line 5669
     invoke-virtual {p1, v1, v0}, Landroid/os/Bundle;->putBundle(Ljava/lang/String;Landroid/os/Bundle;)V
 
     :cond_0
@@ -1149,13 +1149,13 @@
 
     return-void
 
-    .line 5617
+    .line 5631
     :cond_0
     iput-object p1, p0, Lorg/telegram/ui/LoginActivity$LoginActivityResetWaitView;->currentParams:Landroid/os/Bundle;
 
     const-string p2, "phoneFormated"
 
-    .line 5618
+    .line 5632
     invoke-virtual {p1, p2}, Landroid/os/Bundle;->getString(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p2
@@ -1164,7 +1164,7 @@
 
     const-string p2, "phoneHash"
 
-    .line 5619
+    .line 5633
     invoke-virtual {p1, p2}, Landroid/os/Bundle;->getString(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p2
@@ -1173,7 +1173,7 @@
 
     const-string p2, "code"
 
-    .line 5620
+    .line 5634
     invoke-virtual {p1, p2}, Landroid/os/Bundle;->getString(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p2
@@ -1182,7 +1182,7 @@
 
     const-string p2, "startTime"
 
-    .line 5621
+    .line 5635
     invoke-virtual {p1, p2}, Landroid/os/Bundle;->getInt(Ljava/lang/String;)I
 
     move-result p2
@@ -1191,14 +1191,14 @@
 
     const-string p2, "waitTime"
 
-    .line 5622
+    .line 5636
     invoke-virtual {p1, p2}, Landroid/os/Bundle;->getInt(Ljava/lang/String;)I
 
     move-result p1
 
     iput p1, p0, Lorg/telegram/ui/LoginActivity$LoginActivityResetWaitView;->waitTime:I
 
-    .line 5623
+    .line 5637
     iget-object p1, p0, Lorg/telegram/ui/LoginActivity$LoginActivityResetWaitView;->confirmTextView:Landroid/widget/TextView;
 
     sget p2, Lorg/telegram/messenger/R$string;->ResetAccountInfo:I
@@ -1251,10 +1251,10 @@
 
     invoke-virtual {p1, p2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 5624
+    .line 5638
     invoke-direct {p0}, Lorg/telegram/ui/LoginActivity$LoginActivityResetWaitView;->updateTimeText()V
 
-    .line 5625
+    .line 5639
     new-instance p1, Lorg/telegram/ui/LoginActivity$LoginActivityResetWaitView$1;
 
     invoke-direct {p1, p0}, Lorg/telegram/ui/LoginActivity$LoginActivityResetWaitView$1;-><init>(Lorg/telegram/ui/LoginActivity$LoginActivityResetWaitView;)V
@@ -1263,7 +1263,7 @@
 
     const-wide/16 v0, 0x3e8
 
-    .line 5635
+    .line 5649
     invoke-static {p1, v0, v1}, Lorg/telegram/messenger/AndroidUtilities;->runOnUIThread(Ljava/lang/Runnable;J)V
 
     return-void
@@ -1272,7 +1272,7 @@
 .method public updateColors()V
     .locals 4
 
-    .line 5568
+    .line 5582
     iget-object v0, p0, Lorg/telegram/ui/LoginActivity$LoginActivityResetWaitView;->titleView:Landroid/widget/TextView;
 
     const-string v1, "windowBackgroundWhiteBlackText"
@@ -1283,7 +1283,7 @@
 
     invoke-virtual {v0, v2}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 5569
+    .line 5583
     iget-object v0, p0, Lorg/telegram/ui/LoginActivity$LoginActivityResetWaitView;->confirmTextView:Landroid/widget/TextView;
 
     invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
@@ -1292,7 +1292,7 @@
 
     invoke-virtual {v0, v2}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 5570
+    .line 5584
     iget-object v0, p0, Lorg/telegram/ui/LoginActivity$LoginActivityResetWaitView;->resetAccountText:Landroid/widget/TextView;
 
     invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
@@ -1301,7 +1301,7 @@
 
     invoke-virtual {v0, v2}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 5571
+    .line 5585
     iget-object v0, p0, Lorg/telegram/ui/LoginActivity$LoginActivityResetWaitView;->resetAccountTime:Landroid/widget/TextView;
 
     invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
@@ -1310,7 +1310,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 5572
+    .line 5586
     iget-object v0, p0, Lorg/telegram/ui/LoginActivity$LoginActivityResetWaitView;->resetAccountButton:Landroid/widget/TextView;
 
     const/4 v1, 0x6

@@ -17,7 +17,7 @@ import com.google.android.material.appbar.MaterialToolbar;
 import com.smedialink.p031ui.custom.HorizontalActionButtonsView;
 import org.fork.p046ui.view.AccountLevelBadgeView;
 import org.fork.p046ui.view.TabbedViewPager;
-import org.telegram.messenger.C3286R;
+import org.telegram.messenger.C3301R;
 import org.telegram.p048ui.ActionBar.ActionBarMenuItem;
 import org.telegram.p048ui.Cells.TextDetailCell;
 /* loaded from: classes4.dex */
@@ -84,7 +84,7 @@ public final class ForkFragmentWalletTokenDetailsBinding implements ViewBinding 
     }
 
     public static ForkFragmentWalletTokenDetailsBinding inflate(LayoutInflater layoutInflater, ViewGroup viewGroup, boolean z) {
-        View inflate = layoutInflater.inflate(C3286R.layout.fork_fragment_wallet_token_details, viewGroup, false);
+        View inflate = layoutInflater.inflate(C3301R.layout.fork_fragment_wallet_token_details, viewGroup, false);
         if (z) {
             viewGroup.addView(inflate);
         }
@@ -95,67 +95,67 @@ public final class ForkFragmentWalletTokenDetailsBinding implements ViewBinding 
         View findChildViewById;
         View findChildViewById2;
         View findChildViewById3;
-        int i = C3286R.C3289id.account_rank_badge;
+        int i = C3301R.C3304id.account_rank_badge;
         AccountLevelBadgeView accountLevelBadgeView = (AccountLevelBadgeView) ViewBindings.findChildViewById(view, i);
         if (accountLevelBadgeView != null) {
-            i = C3286R.C3289id.appbar;
+            i = C3301R.C3304id.appbar;
             AppBarLayout appBarLayout = (AppBarLayout) ViewBindings.findChildViewById(view, i);
             if (appBarLayout != null) {
-                i = C3286R.C3289id.constraint_layout_header;
+                i = C3301R.C3304id.constraint_layout_header;
                 ConstraintLayout constraintLayout = (ConstraintLayout) ViewBindings.findChildViewById(view, i);
                 if (constraintLayout != null) {
-                    i = C3286R.C3289id.coordinator;
+                    i = C3301R.C3304id.coordinator;
                     CoordinatorLayout coordinatorLayout = (CoordinatorLayout) ViewBindings.findChildViewById(view, i);
-                    if (coordinatorLayout != null && (findChildViewById = ViewBindings.findChildViewById(view, (i = C3286R.C3289id.divider_action_buttons))) != null && (findChildViewById2 = ViewBindings.findChildViewById(view, (i = C3286R.C3289id.divider_staking))) != null && (findChildViewById3 = ViewBindings.findChildViewById(view, (i = C3286R.C3289id.header_underlay))) != null) {
-                        i = C3286R.C3289id.horizontal_action_buttons;
+                    if (coordinatorLayout != null && (findChildViewById = ViewBindings.findChildViewById(view, (i = C3301R.C3304id.divider_action_buttons))) != null && (findChildViewById2 = ViewBindings.findChildViewById(view, (i = C3301R.C3304id.divider_staking))) != null && (findChildViewById3 = ViewBindings.findChildViewById(view, (i = C3301R.C3304id.header_underlay))) != null) {
+                        i = C3301R.C3304id.horizontal_action_buttons;
                         HorizontalActionButtonsView horizontalActionButtonsView = (HorizontalActionButtonsView) ViewBindings.findChildViewById(view, i);
                         if (horizontalActionButtonsView != null) {
-                            i = C3286R.C3289id.image_coin_icon;
+                            i = C3301R.C3304id.image_coin_icon;
                             AppCompatImageView appCompatImageView = (AppCompatImageView) ViewBindings.findChildViewById(view, i);
                             if (appCompatImageView != null) {
-                                i = C3286R.C3289id.image_staking_info;
+                                i = C3301R.C3304id.image_staking_info;
                                 AppCompatImageView appCompatImageView2 = (AppCompatImageView) ViewBindings.findChildViewById(view, i);
                                 if (appCompatImageView2 != null) {
-                                    i = C3286R.C3289id.item_back;
+                                    i = C3301R.C3304id.item_back;
                                     ActionBarMenuItem actionBarMenuItem = (ActionBarMenuItem) ViewBindings.findChildViewById(view, i);
                                     if (actionBarMenuItem != null) {
-                                        i = C3286R.C3289id.item_more_options;
+                                        i = C3301R.C3304id.item_more_options;
                                         ActionBarMenuItem actionBarMenuItem2 = (ActionBarMenuItem) ViewBindings.findChildViewById(view, i);
                                         if (actionBarMenuItem2 != null) {
-                                            i = C3286R.C3289id.linear_content;
+                                            i = C3301R.C3304id.linear_content;
                                             LinearLayout linearLayout = (LinearLayout) ViewBindings.findChildViewById(view, i);
                                             if (linearLayout != null) {
-                                                i = C3286R.C3289id.linear_header;
+                                                i = C3301R.C3304id.linear_header;
                                                 LinearLayout linearLayout2 = (LinearLayout) ViewBindings.findChildViewById(view, i);
                                                 if (linearLayout2 != null) {
-                                                    i = C3286R.C3289id.linear_staking_info;
+                                                    i = C3301R.C3304id.linear_staking_info;
                                                     LinearLayoutCompat linearLayoutCompat = (LinearLayoutCompat) ViewBindings.findChildViewById(view, i);
                                                     if (linearLayoutCompat != null) {
-                                                        i = C3286R.C3289id.text_account_balance;
+                                                        i = C3301R.C3304id.text_account_balance;
                                                         AppCompatTextView appCompatTextView = (AppCompatTextView) ViewBindings.findChildViewById(view, i);
                                                         if (appCompatTextView != null) {
-                                                            i = C3286R.C3289id.text_account_title;
+                                                            i = C3301R.C3304id.text_account_title;
                                                             AppCompatTextView appCompatTextView2 = (AppCompatTextView) ViewBindings.findChildViewById(view, i);
                                                             if (appCompatTextView2 != null) {
-                                                                i = C3286R.C3289id.text_staking_info;
+                                                                i = C3301R.C3304id.text_staking_info;
                                                                 AppCompatTextView appCompatTextView3 = (AppCompatTextView) ViewBindings.findChildViewById(view, i);
                                                                 if (appCompatTextView3 != null) {
-                                                                    i = C3286R.C3289id.text_transactions;
+                                                                    i = C3301R.C3304id.text_transactions;
                                                                     AppCompatTextView appCompatTextView4 = (AppCompatTextView) ViewBindings.findChildViewById(view, i);
                                                                     if (appCompatTextView4 != null) {
-                                                                        i = C3286R.C3289id.toolbar;
+                                                                        i = C3301R.C3304id.toolbar;
                                                                         MaterialToolbar materialToolbar = (MaterialToolbar) ViewBindings.findChildViewById(view, i);
                                                                         if (materialToolbar != null) {
-                                                                            i = C3286R.C3289id.transactions_pager;
+                                                                            i = C3301R.C3304id.transactions_pager;
                                                                             TabbedViewPager tabbedViewPager = (TabbedViewPager) ViewBindings.findChildViewById(view, i);
                                                                             if (tabbedViewPager != null) {
-                                                                                i = C3286R.C3289id.view_annual_percentage_cell;
+                                                                                i = C3301R.C3304id.view_annual_percentage_cell;
                                                                                 TextDetailCell textDetailCell = (TextDetailCell) ViewBindings.findChildViewById(view, i);
                                                                                 if (textDetailCell != null) {
-                                                                                    i = C3286R.C3289id.view_finished_cell;
+                                                                                    i = C3301R.C3304id.view_finished_cell;
                                                                                     TextDetailCell textDetailCell2 = (TextDetailCell) ViewBindings.findChildViewById(view, i);
                                                                                     if (textDetailCell2 != null) {
-                                                                                        i = C3286R.C3289id.view_profit_cell;
+                                                                                        i = C3301R.C3304id.view_profit_cell;
                                                                                         TextDetailCell textDetailCell3 = (TextDetailCell) ViewBindings.findChildViewById(view, i);
                                                                                         if (textDetailCell3 != null) {
                                                                                             return new ForkFragmentWalletTokenDetailsBinding((SwipeRefreshLayout) view, accountLevelBadgeView, appBarLayout, constraintLayout, coordinatorLayout, findChildViewById, findChildViewById2, findChildViewById3, horizontalActionButtonsView, appCompatImageView, appCompatImageView2, actionBarMenuItem, actionBarMenuItem2, linearLayout, linearLayout2, linearLayoutCompat, appCompatTextView, appCompatTextView2, appCompatTextView3, appCompatTextView4, materialToolbar, tabbedViewPager, textDetailCell, textDetailCell2, textDetailCell3);

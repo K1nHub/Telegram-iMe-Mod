@@ -22,7 +22,7 @@
 .method public getCheckInitialized()[I
     .locals 1
 
-    .line 84
+    .line 85
     iget-object v0, p0, Lcom/google/protobuf/StructuralMessageInfo;->checkInitialized:[I
 
     return-object v0
@@ -31,7 +31,7 @@
 .method public getDefaultInstance()Lcom/google/protobuf/MessageLite;
     .locals 1
 
-    .line 97
+    .line 98
     iget-object v0, p0, Lcom/google/protobuf/StructuralMessageInfo;->defaultInstance:Lcom/google/protobuf/MessageLite;
 
     return-object v0
@@ -40,7 +40,7 @@
 .method public getFields()[Lcom/google/protobuf/FieldInfo;
     .locals 1
 
-    .line 92
+    .line 93
     iget-object v0, p0, Lcom/google/protobuf/StructuralMessageInfo;->fields:[Lcom/google/protobuf/FieldInfo;
 
     return-object v0
@@ -49,7 +49,7 @@
 .method public getSyntax()Lcom/google/protobuf/ProtoSyntax;
     .locals 1
 
-    .line 73
+    .line 74
     iget-object v0, p0, Lcom/google/protobuf/StructuralMessageInfo;->syntax:Lcom/google/protobuf/ProtoSyntax;
 
     return-object v0
@@ -58,7 +58,7 @@
 .method public isMessageSetWireFormat()Z
     .locals 1
 
-    .line 79
+    .line 80
     iget-boolean v0, p0, Lcom/google/protobuf/StructuralMessageInfo;->messageSetWireFormat:Z
 
     return v0

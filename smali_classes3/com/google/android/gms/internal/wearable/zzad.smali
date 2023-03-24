@@ -105,7 +105,7 @@
 
     if-ne v2, v1, :cond_3
 
-    const/4 v2, 0x0
+    move v2, v3
 
     :goto_0
     if-ge v2, v1, :cond_2
@@ -208,9 +208,9 @@
 
     xor-long v2, v3, v5
 
-    long-to-int v3, v2
+    long-to-int v2, v2
 
-    add-int/2addr v1, v3
+    add-int/2addr v1, v2
 
     add-int/lit8 v0, v0, 0x1
 
@@ -268,7 +268,7 @@
 .end method
 
 .method public final lastIndexOf(Ljava/lang/Object;)I
-    .locals 8
+    .locals 7
 
     .line 1
     instance-of v0, p1, Ljava/lang/Long;
@@ -298,16 +298,16 @@
     .line 3
     aget-wide v5, v0, v4
 
-    cmp-long v7, v5, v2
+    cmp-long v5, v5, v2
 
-    if-eqz v7, :cond_1
+    if-eqz v5, :cond_1
 
     add-int/lit8 v4, v4, -0x1
 
     goto :goto_0
 
     :cond_0
-    const/4 v4, -0x1
+    move v4, v1
 
     :cond_1
     if-ltz v4, :cond_2

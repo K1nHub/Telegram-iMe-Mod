@@ -316,7 +316,7 @@
     goto :goto_0
 
     :cond_4
-    const/4 v1, 0x0
+    move v1, v2
 
     :goto_0
     invoke-virtual {v0, v3, v2, v1}, Lorg/telegram/messenger/MediaDataController;->loadStickersByEmojiOrName(Ljava/lang/String;ZZ)V

@@ -181,7 +181,7 @@
 
     if-lez v2, :cond_0
 
-    const/high16 v0, 0x40000000    # 2.0f
+    move v0, v3
 
     :cond_0
     invoke-virtual {v1, v0}, Landroid/graphics/Paint;->setStrokeWidth(F)V
@@ -292,7 +292,7 @@
 
     iget v3, v0, Lorg/telegram/ui/Components/LoadingDrawable;->gradientWidthScale:F
 
-    mul-float v1, v1, v3
+    mul-float/2addr v1, v3
 
     float-to-int v1, v1
 
@@ -570,7 +570,7 @@
     .line 233
     iget v5, v0, Lorg/telegram/ui/Components/LoadingDrawable;->speed:F
 
-    mul-float v1, v1, v5
+    mul-float/2addr v1, v5
 
     const/high16 v5, 0x40800000    # 4.0f
 
@@ -586,18 +586,18 @@
 
     double-to-float v6, v6
 
-    mul-float v6, v6, v5
+    mul-float/2addr v6, v5
 
     .line 234
     sget v5, Lorg/telegram/messenger/AndroidUtilities;->density:F
 
-    mul-float v6, v6, v5
+    mul-float/2addr v6, v5
 
     iget v5, v0, Lorg/telegram/ui/Components/LoadingDrawable;->gradientWidth:I
 
     int-to-float v7, v5
 
-    mul-float v6, v6, v7
+    mul-float/2addr v6, v7
 
     int-to-float v5, v5
 
@@ -617,15 +617,15 @@
     .line 236
     iget-wide v10, v0, Lorg/telegram/ui/Components/LoadingDrawable;->disappearStart:J
 
-    const/4 v15, 0x0
+    cmp-long v6, v10, v13
 
-    const/high16 v6, 0x3f800000    # 1.0f
+    const/4 v13, 0x0
 
-    cmp-long v16, v10, v13
+    const/high16 v14, 0x3f800000    # 1.0f
 
-    if-lez v16, :cond_a
+    if-lez v6, :cond_a
 
-    sget-object v13, Lorg/telegram/ui/Components/CubicBezierInterpolator;->EASE_OUT:Lorg/telegram/ui/Components/CubicBezierInterpolator;
+    sget-object v6, Lorg/telegram/ui/Components/CubicBezierInterpolator;->EASE_OUT:Lorg/telegram/ui/Components/CubicBezierInterpolator;
 
     sub-long/2addr v3, v10
 
@@ -635,20 +635,20 @@
 
     div-float/2addr v3, v4
 
-    invoke-static {v6, v3}, Ljava/lang/Math;->min(FF)F
+    invoke-static {v14, v3}, Ljava/lang/Math;->min(FF)F
 
     move-result v3
 
-    invoke-virtual {v13, v3}, Lorg/telegram/ui/Components/CubicBezierInterpolator;->getInterpolation(F)F
+    invoke-virtual {v6, v3}, Lorg/telegram/ui/Components/CubicBezierInterpolator;->getInterpolation(F)F
 
     move-result v3
 
-    sub-float v3, v6, v3
+    sub-float v3, v14, v3
 
     goto :goto_4
 
     :cond_a
-    const/4 v3, 0x0
+    move v3, v13
 
     .line 238
     :goto_4
@@ -669,35 +669,33 @@
 
     invoke-virtual {v8}, Landroid/graphics/Rect;->width()I
 
-    move-result v13
+    move-result v6
 
     const/4 v9, 0x3
 
-    div-int/2addr v13, v9
+    div-int/2addr v6, v9
 
-    invoke-static {v4, v13}, Ljava/lang/Math;->max(II)I
+    invoke-static {v4, v6}, Ljava/lang/Math;->max(II)I
 
     move-result v4
 
-    cmpg-float v13, v3, v6
+    cmpg-float v6, v3, v14
 
-    if-gez v13, :cond_d
+    if-gez v6, :cond_d
 
     .line 242
-    iget-object v13, v0, Lorg/telegram/ui/Components/LoadingDrawable;->disappearPaint:Landroid/graphics/Paint;
+    iget-object v6, v0, Lorg/telegram/ui/Components/LoadingDrawable;->disappearPaint:Landroid/graphics/Paint;
 
-    if-nez v13, :cond_b
+    if-nez v6, :cond_b
 
     .line 243
-    new-instance v13, Landroid/graphics/Paint;
+    new-instance v15, Landroid/graphics/Paint;
 
     const/4 v1, 0x1
 
-    invoke-direct {v13, v1}, Landroid/graphics/Paint;-><init>(I)V
+    invoke-direct {v15, v1}, Landroid/graphics/Paint;-><init>(I)V
 
-    const/high16 v14, 0x3f800000    # 1.0f
-
-    iput-object v13, v0, Lorg/telegram/ui/Components/LoadingDrawable;->disappearPaint:Landroid/graphics/Paint;
+    iput-object v15, v0, Lorg/telegram/ui/Components/LoadingDrawable;->disappearPaint:Landroid/graphics/Paint;
 
     .line 244
     new-instance v1, Landroid/graphics/LinearGradient;
@@ -712,9 +710,9 @@
 
     const/16 v20, 0x0
 
-    new-array v13, v12, [I
+    new-array v15, v12, [I
 
-    fill-array-data v13, :array_2
+    fill-array-data v15, :array_2
 
     new-array v6, v12, [F
 
@@ -726,7 +724,7 @@
 
     move/from16 v19, v4
 
-    move-object/from16 v21, v13
+    move-object/from16 v21, v15
 
     move-object/from16 v22, v6
 
@@ -766,10 +764,8 @@
 
     goto :goto_5
 
-    :cond_b
-    const/high16 v14, 0x3f800000    # 1.0f
-
     .line 249
+    :cond_b
     iget v1, v0, Lorg/telegram/ui/Components/LoadingDrawable;->disappearGradientWidth:I
 
     if-eq v1, v4, :cond_c
@@ -777,35 +773,35 @@
     .line 250
     new-instance v1, Landroid/graphics/LinearGradient;
 
-    const/16 v17, 0x0
+    const/16 v16, 0x0
 
-    const/16 v18, 0x0
+    const/16 v17, 0x0
 
     iput v4, v0, Lorg/telegram/ui/Components/LoadingDrawable;->disappearGradientWidth:I
 
     int-to-float v4, v4
 
-    const/16 v20, 0x0
+    const/16 v19, 0x0
 
     new-array v6, v12, [I
 
     fill-array-data v6, :array_4
 
-    new-array v13, v12, [F
+    new-array v15, v12, [F
 
-    fill-array-data v13, :array_5
+    fill-array-data v15, :array_5
 
-    sget-object v23, Landroid/graphics/Shader$TileMode;->CLAMP:Landroid/graphics/Shader$TileMode;
+    sget-object v22, Landroid/graphics/Shader$TileMode;->CLAMP:Landroid/graphics/Shader$TileMode;
 
-    move-object/from16 v16, v1
+    move-object/from16 v21, v15
 
-    move/from16 v19, v4
+    move-object v15, v1
 
-    move-object/from16 v21, v6
+    move/from16 v18, v4
 
-    move-object/from16 v22, v13
+    move-object/from16 v20, v6
 
-    invoke-direct/range {v16 .. v23}, Landroid/graphics/LinearGradient;-><init>(FFFF[I[FLandroid/graphics/Shader$TileMode;)V
+    invoke-direct/range {v15 .. v22}, Landroid/graphics/LinearGradient;-><init>(FFFF[I[FLandroid/graphics/Shader$TileMode;)V
 
     iput-object v1, v0, Lorg/telegram/ui/Components/LoadingDrawable;->disappearGradient:Landroid/graphics/LinearGradient;
 
@@ -852,16 +848,14 @@
     .line 257
     iget-object v1, v0, Lorg/telegram/ui/Components/LoadingDrawable;->rectF:Landroid/graphics/RectF;
 
-    move-object/from16 v13, p1
+    move-object/from16 v15, p1
 
-    invoke-virtual {v13, v1, v11, v10}, Landroid/graphics/Canvas;->saveLayerAlpha(Landroid/graphics/RectF;II)I
+    invoke-virtual {v15, v1, v11, v10}, Landroid/graphics/Canvas;->saveLayerAlpha(Landroid/graphics/RectF;II)I
 
     goto :goto_6
 
     :cond_d
-    move-object/from16 v13, p1
-
-    const/high16 v14, 0x3f800000    # 1.0f
+    move-object/from16 v15, p1
 
     .line 260
     :goto_6
@@ -1055,13 +1049,13 @@
     .line 279
     iget-object v1, v0, Lorg/telegram/ui/Components/LoadingDrawable;->rectF:Landroid/graphics/RectF;
 
-    invoke-virtual {v13, v1, v11, v10}, Landroid/graphics/Canvas;->saveLayerAlpha(Landroid/graphics/RectF;II)I
+    invoke-virtual {v15, v1, v11, v10}, Landroid/graphics/Canvas;->saveLayerAlpha(Landroid/graphics/RectF;II)I
 
     .line 283
     :cond_10
     iget-object v1, v0, Lorg/telegram/ui/Components/LoadingDrawable;->matrix:Landroid/graphics/Matrix;
 
-    invoke-virtual {v1, v5, v15}, Landroid/graphics/Matrix;->setTranslate(FF)V
+    invoke-virtual {v1, v5, v13}, Landroid/graphics/Matrix;->setTranslate(FF)V
 
     .line 284
     iget-object v1, v0, Lorg/telegram/ui/Components/LoadingDrawable;->gradient:Landroid/graphics/LinearGradient;
@@ -1073,7 +1067,7 @@
     .line 286
     iget-object v1, v0, Lorg/telegram/ui/Components/LoadingDrawable;->strokeMatrix:Landroid/graphics/Matrix;
 
-    invoke-virtual {v1, v5, v15}, Landroid/graphics/Matrix;->setTranslate(FF)V
+    invoke-virtual {v1, v5, v13}, Landroid/graphics/Matrix;->setTranslate(FF)V
 
     .line 287
     iget-object v1, v0, Lorg/telegram/ui/Components/LoadingDrawable;->strokeGradient:Landroid/graphics/LinearGradient;
@@ -1136,13 +1130,13 @@
     if-eqz v2, :cond_14
 
     .line 301
-    invoke-virtual {v13, v1, v2}, Landroid/graphics/Canvas;->drawPath(Landroid/graphics/Path;Landroid/graphics/Paint;)V
+    invoke-virtual {v15, v1, v2}, Landroid/graphics/Canvas;->drawPath(Landroid/graphics/Path;Landroid/graphics/Paint;)V
 
     .line 303
     :cond_14
     iget-object v2, v0, Lorg/telegram/ui/Components/LoadingDrawable;->paint:Landroid/graphics/Paint;
 
-    invoke-virtual {v13, v1, v2}, Landroid/graphics/Canvas;->drawPath(Landroid/graphics/Path;Landroid/graphics/Paint;)V
+    invoke-virtual {v15, v1, v2}, Landroid/graphics/Canvas;->drawPath(Landroid/graphics/Path;Landroid/graphics/Paint;)V
 
     .line 304
     iget-boolean v2, v0, Lorg/telegram/ui/Components/LoadingDrawable;->stroke:Z
@@ -1152,7 +1146,7 @@
     .line 305
     iget-object v2, v0, Lorg/telegram/ui/Components/LoadingDrawable;->strokePaint:Landroid/graphics/Paint;
 
-    invoke-virtual {v13, v1, v2}, Landroid/graphics/Canvas;->drawPath(Landroid/graphics/Path;Landroid/graphics/Paint;)V
+    invoke-virtual {v15, v1, v2}, Landroid/graphics/Canvas;->drawPath(Landroid/graphics/Path;Landroid/graphics/Paint;)V
 
     .line 308
     :cond_15
@@ -1184,7 +1178,7 @@
 
     int-to-float v1, v1
 
-    mul-float v3, v3, v1
+    mul-float/2addr v3, v1
 
     int-to-float v1, v2
 
@@ -1199,7 +1193,7 @@
 
     sub-float/2addr v2, v3
 
-    invoke-virtual {v1, v2, v15}, Landroid/graphics/Matrix;->setTranslate(FF)V
+    invoke-virtual {v1, v2, v13}, Landroid/graphics/Matrix;->setTranslate(FF)V
 
     .line 312
     iget-object v1, v0, Lorg/telegram/ui/Components/LoadingDrawable;->disappearGradient:Landroid/graphics/LinearGradient;
@@ -1282,7 +1276,7 @@
 
     int-to-float v1, v1
 
-    mul-float v7, v7, v1
+    mul-float/2addr v7, v1
 
     int-to-float v1, v2
 
@@ -1297,7 +1291,7 @@
 
     add-float/2addr v2, v7
 
-    invoke-virtual {v1, v2, v15}, Landroid/graphics/Matrix;->setTranslate(FF)V
+    invoke-virtual {v1, v2, v13}, Landroid/graphics/Matrix;->setTranslate(FF)V
 
     .line 322
     iget-object v1, v0, Lorg/telegram/ui/Components/LoadingDrawable;->appearGradient:Landroid/graphics/LinearGradient;
@@ -1452,16 +1446,16 @@
 .end method
 
 .method public isDisappeared()Z
-    .locals 5
+    .locals 4
 
     .line 81
     iget-wide v0, p0, Lorg/telegram/ui/Components/LoadingDrawable;->disappearStart:J
 
     const-wide/16 v2, 0x0
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-lez v4, :cond_0
+    if-lez v0, :cond_0
 
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
@@ -1491,16 +1485,16 @@
 .end method
 
 .method public isDisappearing()Z
-    .locals 5
+    .locals 4
 
     .line 77
     iget-wide v0, p0, Lorg/telegram/ui/Components/LoadingDrawable;->disappearStart:J
 
     const-wide/16 v2, 0x0
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-lez v4, :cond_0
+    if-lez v0, :cond_0
 
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
@@ -1696,6 +1690,8 @@
 
     aget v2, v0, v1
 
+    cmpl-float v2, v2, p1
+
     const/4 v3, 0x6
 
     const/4 v4, 0x4
@@ -1703,8 +1699,6 @@
     const/4 v5, 0x2
 
     const/4 v6, 0x1
-
-    cmpl-float v2, v2, p1
 
     if-nez v2, :cond_1
 
@@ -1729,13 +1723,13 @@
     goto :goto_0
 
     :cond_0
-    const/4 v2, 0x0
+    move v2, v1
 
     goto :goto_1
 
     :cond_1
     :goto_0
-    const/4 v2, 0x1
+    move v2, v6
 
     .line 162
     :goto_1
@@ -1896,9 +1890,9 @@
 
     const-wide/16 v2, 0x0
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-lez v4, :cond_0
+    if-lez v0, :cond_0
 
     const-wide/16 v0, 0x140
 

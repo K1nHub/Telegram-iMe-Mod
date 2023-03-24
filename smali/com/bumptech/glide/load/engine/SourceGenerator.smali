@@ -621,7 +621,7 @@
 
     invoke-direct {p0, v0}, Lcom/bumptech/glide/load/engine/SourceGenerator;->startNextLoad(Lcom/bumptech/glide/load/model/ModelLoader$LoadData;)V
 
-    const/4 v0, 0x1
+    move v0, v2
 
     goto :goto_0
 

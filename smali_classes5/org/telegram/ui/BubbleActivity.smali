@@ -93,7 +93,7 @@
 .end method
 
 .method private handleIntent(Landroid/content/Intent;ZZZII)Z
-    .locals 4
+    .locals 3
 
     const/4 v0, 0x1
 
@@ -207,9 +207,9 @@
 
     invoke-direct {v2}, Landroid/os/Bundle;-><init>()V
 
-    cmp-long v3, p1, p3
+    cmp-long p3, p1, p3
 
-    if-eqz v3, :cond_3
+    if-eqz p3, :cond_3
 
     .line 164
     iput-wide p1, p0, Lorg/telegram/ui/BubbleActivity;->dialogId:J
@@ -452,9 +452,9 @@
 
     div-long/2addr v0, v2
 
-    long-to-int v1, v0
+    long-to-int v0, v0
 
-    sput v1, Lorg/telegram/messenger/SharedConfig;->lastPauseTime:I
+    sput v0, Lorg/telegram/messenger/SharedConfig;->lastPauseTime:I
 
     .line 281
     new-instance v0, Lorg/telegram/ui/BubbleActivity$1;
@@ -481,7 +481,7 @@
 
     int-to-long v4, v1
 
-    mul-long v4, v4, v2
+    mul-long/2addr v4, v2
 
     add-long/2addr v4, v2
 
@@ -993,9 +993,9 @@
 
     div-long/2addr v1, v3
 
-    long-to-int v2, v1
+    long-to-int v1, v1
 
-    sput v2, Lorg/telegram/messenger/SharedConfig;->lastPauseTime:I
+    sput v1, Lorg/telegram/messenger/SharedConfig;->lastPauseTime:I
 
     .line 83
     :cond_2
@@ -1141,12 +1141,12 @@
 
     if-eqz p1, :cond_3
 
-    const/4 v6, 0x1
+    move v6, v0
 
     goto :goto_2
 
     :cond_3
-    const/4 v6, 0x0
+    move v6, v1
 
     :goto_2
     const/4 v7, 0x0

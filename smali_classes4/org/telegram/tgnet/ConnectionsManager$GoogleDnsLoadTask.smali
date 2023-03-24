@@ -244,7 +244,7 @@
 
     invoke-direct {v3, v2}, Ljava/lang/StringBuilder;-><init>(I)V
 
-    const/4 v4, 0x0
+    move v4, v0
 
     :goto_1
     if-ge v4, v2, :cond_1
@@ -407,7 +407,7 @@
 
     invoke-direct {v5, v4}, Ljava/util/ArrayList;-><init>(I)V
 
-    const/4 v6, 0x0
+    move v6, v0
 
     :goto_4
     if-ge v6, v4, :cond_5
@@ -456,7 +456,7 @@
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
 
-    const/4 v4, 0x0
+    move v4, v0
 
     .line 1201
     :goto_6

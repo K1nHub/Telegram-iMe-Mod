@@ -133,7 +133,7 @@
 
     move-result p1
 
-    const/4 p2, 0x0
+    move p2, v2
 
     :goto_0
     if-ge p2, p1, :cond_2

@@ -8,10 +8,9 @@ import kotlin.jvm.internal.Intrinsics;
 public final class CryptoTransferMetadata {
     private final String contractAddress;
     private final TokenCode feeTokenCode;
-    private final Integer sendMode;
     private final TransactionParams transactionParams;
 
-    public static /* synthetic */ CryptoTransferMetadata copy$default(CryptoTransferMetadata cryptoTransferMetadata, TransactionParams transactionParams, TokenCode tokenCode, String str, Integer num, int i, Object obj) {
+    public static /* synthetic */ CryptoTransferMetadata copy$default(CryptoTransferMetadata cryptoTransferMetadata, TransactionParams transactionParams, TokenCode tokenCode, String str, int i, Object obj) {
         if ((i & 1) != 0) {
             transactionParams = cryptoTransferMetadata.transactionParams;
         }
@@ -21,10 +20,7 @@ public final class CryptoTransferMetadata {
         if ((i & 4) != 0) {
             str = cryptoTransferMetadata.contractAddress;
         }
-        if ((i & 8) != 0) {
-            num = cryptoTransferMetadata.sendMode;
-        }
-        return cryptoTransferMetadata.copy(transactionParams, tokenCode, str, num);
+        return cryptoTransferMetadata.copy(transactionParams, tokenCode, str);
     }
 
     public final TransactionParams component1() {
@@ -39,14 +35,10 @@ public final class CryptoTransferMetadata {
         return this.contractAddress;
     }
 
-    public final Integer component4() {
-        return this.sendMode;
-    }
-
-    public final CryptoTransferMetadata copy(TransactionParams transactionParams, TokenCode feeTokenCode, String str, Integer num) {
+    public final CryptoTransferMetadata copy(TransactionParams transactionParams, TokenCode feeTokenCode, String str) {
         Intrinsics.checkNotNullParameter(transactionParams, "transactionParams");
         Intrinsics.checkNotNullParameter(feeTokenCode, "feeTokenCode");
-        return new CryptoTransferMetadata(transactionParams, feeTokenCode, str, num);
+        return new CryptoTransferMetadata(transactionParams, feeTokenCode, str);
     }
 
     public boolean equals(Object obj) {
@@ -55,7 +47,7 @@ public final class CryptoTransferMetadata {
         }
         if (obj instanceof CryptoTransferMetadata) {
             CryptoTransferMetadata cryptoTransferMetadata = (CryptoTransferMetadata) obj;
-            return Intrinsics.areEqual(this.transactionParams, cryptoTransferMetadata.transactionParams) && this.feeTokenCode == cryptoTransferMetadata.feeTokenCode && Intrinsics.areEqual(this.contractAddress, cryptoTransferMetadata.contractAddress) && Intrinsics.areEqual(this.sendMode, cryptoTransferMetadata.sendMode);
+            return Intrinsics.areEqual(this.transactionParams, cryptoTransferMetadata.transactionParams) && this.feeTokenCode == cryptoTransferMetadata.feeTokenCode && Intrinsics.areEqual(this.contractAddress, cryptoTransferMetadata.contractAddress);
         }
         return false;
     }
@@ -63,22 +55,19 @@ public final class CryptoTransferMetadata {
     public int hashCode() {
         int hashCode = ((this.transactionParams.hashCode() * 31) + this.feeTokenCode.hashCode()) * 31;
         String str = this.contractAddress;
-        int hashCode2 = (hashCode + (str == null ? 0 : str.hashCode())) * 31;
-        Integer num = this.sendMode;
-        return hashCode2 + (num != null ? num.hashCode() : 0);
+        return hashCode + (str == null ? 0 : str.hashCode());
     }
 
     public String toString() {
-        return "CryptoTransferMetadata(transactionParams=" + this.transactionParams + ", feeTokenCode=" + this.feeTokenCode + ", contractAddress=" + this.contractAddress + ", sendMode=" + this.sendMode + ')';
+        return "CryptoTransferMetadata(transactionParams=" + this.transactionParams + ", feeTokenCode=" + this.feeTokenCode + ", contractAddress=" + this.contractAddress + ')';
     }
 
-    public CryptoTransferMetadata(TransactionParams transactionParams, TokenCode feeTokenCode, String str, Integer num) {
+    public CryptoTransferMetadata(TransactionParams transactionParams, TokenCode feeTokenCode, String str) {
         Intrinsics.checkNotNullParameter(transactionParams, "transactionParams");
         Intrinsics.checkNotNullParameter(feeTokenCode, "feeTokenCode");
         this.transactionParams = transactionParams;
         this.feeTokenCode = feeTokenCode;
         this.contractAddress = str;
-        this.sendMode = num;
     }
 
     public final TransactionParams getTransactionParams() {
@@ -91,9 +80,5 @@ public final class CryptoTransferMetadata {
 
     public final String getContractAddress() {
         return this.contractAddress;
-    }
-
-    public final Integer getSendMode() {
-        return this.sendMode;
     }
 }

@@ -7,7 +7,7 @@ public class TLRPC$TL_messages_searchStickerSets extends TLObject {
     public long hash;
 
     /* renamed from: q */
-    public String f1606q;
+    public String f1607q;
 
     @Override // org.telegram.tgnet.TLObject
     public TLObject deserializeResponse(AbstractSerializedData abstractSerializedData, int i, boolean z) {
@@ -20,7 +20,7 @@ public class TLRPC$TL_messages_searchStickerSets extends TLObject {
         int i = this.exclude_featured ? this.flags | 1 : this.flags & (-2);
         this.flags = i;
         abstractSerializedData.writeInt32(i);
-        abstractSerializedData.writeString(this.f1606q);
+        abstractSerializedData.writeString(this.f1607q);
         abstractSerializedData.writeInt64(this.hash);
     }
 }

@@ -60,7 +60,7 @@
 .end method
 
 .method public onPlaylistError(Landroid/net/Uri;Lcom/google/android/exoplayer2/upstream/LoadErrorHandlingPolicy$LoadErrorInfo;Z)Z
-    .locals 8
+    .locals 7
 
     .line 830
     iget-object p3, p0, Lcom/google/android/exoplayer2/source/hls/playlist/DefaultHlsPlaylistTracker$FirstPrimaryMediaPlaylistListener;->this$0:Lcom/google/android/exoplayer2/source/hls/playlist/DefaultHlsPlaylistTracker;
@@ -93,9 +93,9 @@
 
     iget-object p3, p3, Lcom/google/android/exoplayer2/source/hls/playlist/HlsMultivariantPlaylist;->variants:Ljava/util/List;
 
-    const/4 v3, 0x0
+    move v3, v0
 
-    const/4 v4, 0x0
+    move v4, v3
 
     .line 834
     :goto_0
@@ -133,9 +133,9 @@
 
     move-result-wide v5
 
-    cmp-long v7, v1, v5
+    cmp-long v5, v1, v5
 
-    if-gez v7, :cond_0
+    if-gez v5, :cond_0
 
     add-int/lit8 v4, v4, 0x1
 

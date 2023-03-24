@@ -622,7 +622,7 @@
     goto :goto_0
 
     :cond_0
-    const/4 v5, 0x0
+    move v5, v12
 
     :goto_0
     invoke-static {v5}, Lcom/google/android/exoplayer2/util/Assertions;->checkState(Z)V
@@ -1171,9 +1171,9 @@
 
     const-wide/16 v8, 0x0
 
-    cmp-long v10, v6, v8
+    cmp-long v8, v6, v8
 
-    if-lez v10, :cond_4
+    if-lez v8, :cond_4
 
     .line 360
     invoke-virtual {v0, v6, v7}, Lcom/google/android/exoplayer2/ExoPlayerImplInternal;->experimentalSetForegroundModeTimeoutMs(J)V
@@ -1253,12 +1253,12 @@
 
     if-eqz v6, :cond_6
 
-    const/4 v12, 0x1
+    move v12, v3
 
     goto :goto_5
 
     :cond_6
-    const/4 v12, 0x0
+    move v12, v2
 
     :goto_5
     invoke-virtual {v4, v12}, Lcom/google/android/exoplayer2/WakeLockManager;->setEnabled(Z)V
@@ -1279,12 +1279,12 @@
 
     if-ne v5, v6, :cond_7
 
-    const/4 v12, 0x1
+    move v12, v3
 
     goto :goto_6
 
     :cond_7
-    const/4 v12, 0x0
+    move v12, v2
 
     :goto_6
     invoke-virtual {v4, v12}, Lcom/google/android/exoplayer2/WifiLockManager;->setEnabled(Z)V
@@ -1922,15 +1922,10 @@
 
     const/4 v0, 0x0
 
-    const/4 v5, 0x0
-
-    goto :goto_0
-
     :cond_0
     move v5, v0
 
     .line 2475
-    :goto_0
     iget-object v6, p0, Lcom/google/android/exoplayer2/ExoPlayerImpl;->clock:Lcom/google/android/exoplayer2/util/Clock;
 
     .line 2477
@@ -2087,7 +2082,7 @@
 
     if-nez p4, :cond_2
 
-    const/4 v5, 0x1
+    move v5, v2
 
     goto :goto_0
 
@@ -2096,7 +2091,7 @@
 
     if-ne p4, v2, :cond_3
 
-    const/4 v5, 0x2
+    move v5, v1
 
     goto :goto_0
 
@@ -2139,9 +2134,9 @@
 
     iget-wide p1, p1, Lcom/google/android/exoplayer2/source/MediaPeriodId;->windowSequenceNumber:J
 
-    cmp-long p5, v4, p1
+    cmp-long p1, v4, p1
 
-    if-gez p5, :cond_6
+    if-gez p1, :cond_6
 
     .line 2164
     new-instance p1, Landroid/util/Pair;
@@ -2556,11 +2551,11 @@
     :cond_0
     const/4 v0, -0x1
 
+    move v5, v0
+
     move-object v3, v1
 
     move-object v4, v3
-
-    const/4 v5, -0x1
 
     .line 2096
     :goto_0
@@ -2691,13 +2686,13 @@
     :cond_0
     move/from16 v11, p3
 
+    move v14, v4
+
     move-object v10, v5
 
     move-object v12, v10
 
     move-object v13, v12
-
-    const/4 v14, -0x1
 
     :goto_0
     if-nez p1, :cond_3
@@ -2820,7 +2815,7 @@
 .end method
 
 .method private static getRequestedContentPositionUs(Lcom/google/android/exoplayer2/PlaybackInfo;)J
-    .locals 7
+    .locals 6
 
     .line 2112
     new-instance v0, Lcom/google/android/exoplayer2/Timeline$Window;
@@ -2846,9 +2841,9 @@
 
     const-wide v4, -0x7fffffffffffffffL    # -4.9E-324
 
-    cmp-long v6, v2, v4
+    cmp-long v2, v2, v4
 
-    if-nez v6, :cond_0
+    if-nez v2, :cond_0
 
     .line 2116
     iget-object p0, p0, Lcom/google/android/exoplayer2/PlaybackInfo;->timeline:Lcom/google/android/exoplayer2/Timeline;
@@ -2987,17 +2982,17 @@
 
     if-ne v5, v6, :cond_3
 
-    const/4 v5, 0x1
+    move v5, v3
 
     goto :goto_0
 
     :cond_3
-    const/4 v5, 0x0
+    move v5, v4
 
     :goto_0
     invoke-static {v5}, Lcom/google/android/exoplayer2/util/Assertions;->checkState(Z)V
 
-    const/4 v5, 0x0
+    move v5, v4
 
     .line 1823
     :goto_1
@@ -3067,7 +3062,7 @@
     goto :goto_2
 
     :cond_5
-    const/4 v3, 0x0
+    move v3, v4
 
     :cond_6
     :goto_2
@@ -3129,7 +3124,7 @@
     :cond_a
     move-wide v7, v5
 
-    const/4 v5, 0x0
+    move v5, v4
 
     .line 1844
     :goto_6
@@ -3611,7 +3606,7 @@
 
     :cond_1
     :goto_0
-    const/4 v3, 0x1
+    move v3, v4
 
     :goto_1
     invoke-static {v3}, Lcom/google/android/exoplayer2/util/Assertions;->checkArgument(Z)V
@@ -4074,9 +4069,9 @@
 
     const-wide p1, -0x7fffffffffffffffL    # -4.9E-324
 
-    cmp-long v0, p3, p1
+    cmp-long p1, p3, p1
 
-    if-nez v0, :cond_0
+    if-nez p1, :cond_0
 
     const-wide/16 p3, 0x0
 
@@ -4488,7 +4483,7 @@
 
     move-result v1
 
-    mul-float v0, v0, v1
+    mul-float/2addr v0, v1
 
     .line 2602
     invoke-static {v0}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
@@ -4732,7 +4727,7 @@
     goto :goto_4
 
     :cond_8
-    const/4 v5, 0x0
+    move v5, v6
 
     :goto_4
     const/4 v2, 0x0
@@ -4866,7 +4861,7 @@
 
     const/4 v3, 0x0
 
-    const/4 v4, 0x0
+    move v4, v3
 
     :goto_0
     const/4 v5, 0x1
@@ -4944,18 +4939,13 @@
 
     invoke-virtual {v1, v6, v7}, Lcom/google/android/exoplayer2/PlayerMessage;->blockUntilDelivered(J)Z
     :try_end_0
-    .catch Ljava/lang/InterruptedException; {:try_start_0 .. :try_end_0} :catch_1
-    .catch Ljava/util/concurrent/TimeoutException; {:try_start_0 .. :try_end_0} :catch_0
+    .catch Ljava/lang/InterruptedException; {:try_start_0 .. :try_end_0} :catch_0
+    .catch Ljava/util/concurrent/TimeoutException; {:try_start_0 .. :try_end_0} :catch_1
 
     goto :goto_1
 
-    :catch_0
-    nop
-
-    goto :goto_2
-
     .line 2548
-    :catch_1
+    :catch_0
     invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
 
     move-result-object v0
@@ -4963,10 +4953,10 @@
     invoke-virtual {v0}, Ljava/lang/Thread;->interrupt()V
 
     :cond_2
-    const/4 v5, 0x0
+    move v5, v3
 
     .line 2552
-    :goto_2
+    :catch_1
     iget-object v0, p0, Lcom/google/android/exoplayer2/ExoPlayerImpl;->videoOutput:Ljava/lang/Object;
 
     iget-object v1, p0, Lcom/google/android/exoplayer2/ExoPlayerImpl;->ownedSurface:Landroid/view/Surface;
@@ -4981,14 +4971,14 @@
     .line 2555
     iput-object v0, p0, Lcom/google/android/exoplayer2/ExoPlayerImpl;->ownedSurface:Landroid/view/Surface;
 
-    goto :goto_3
+    goto :goto_2
 
     :cond_3
-    const/4 v5, 0x0
+    move v5, v3
 
     .line 2558
     :cond_4
-    :goto_3
+    :goto_2
     iput-object p1, p0, Lcom/google/android/exoplayer2/ExoPlayerImpl;->videoOutput:Ljava/lang/Object;
 
     if-eqz v5, :cond_5
@@ -5113,12 +5103,12 @@
 
     if-nez p1, :cond_2
 
-    const/4 v7, 0x1
+    move v7, v1
 
     goto :goto_1
 
     :cond_2
-    const/4 v7, 0x0
+    move v7, v0
 
     :goto_1
     const/4 v4, 0x0
@@ -5198,19 +5188,19 @@
 
     if-eq p2, v3, :cond_0
 
-    const/4 v3, 0x1
+    move v3, v2
 
     goto :goto_0
 
     :cond_0
-    const/4 v3, 0x0
+    move v3, v1
 
     :goto_0
     if-eqz v3, :cond_1
 
     if-eq p2, v2, :cond_1
 
-    const/4 v1, 0x1
+    move v1, v2
 
     .line 2615
     :cond_1
@@ -5451,12 +5441,12 @@
 
     if-eq v2, v5, :cond_4
 
-    const/4 v2, 0x1
+    move v2, v11
 
     goto :goto_0
 
     :cond_4
-    const/4 v2, 0x0
+    move v2, v6
 
     .line 1912
     :goto_0
@@ -5466,12 +5456,12 @@
 
     if-eq v5, v13, :cond_5
 
-    const/4 v5, 0x1
+    move v5, v11
 
     goto :goto_1
 
     :cond_5
-    const/4 v5, 0x0
+    move v5, v6
 
     :goto_1
     if-nez v5, :cond_6
@@ -5490,12 +5480,12 @@
 
     if-eq v13, v14, :cond_8
 
-    const/4 v13, 0x1
+    move v13, v11
 
     goto :goto_2
 
     :cond_8
-    const/4 v13, 0x0
+    move v13, v6
 
     :goto_2
     if-eqz v13, :cond_9
@@ -5920,7 +5910,7 @@
     goto :goto_0
 
     :cond_2
-    const/4 v1, 0x0
+    move v1, v2
 
     :goto_0
     invoke-virtual {v3, v1}, Lcom/google/android/exoplayer2/WakeLockManager;->setStayAwake(Z)V
@@ -6178,7 +6168,7 @@
 
     if-ltz p1, :cond_0
 
-    const/4 v2, 0x1
+    move v2, v1
 
     goto :goto_0
 
@@ -6757,7 +6747,7 @@
 .end method
 
 .method public getContentBufferedPosition()J
-    .locals 6
+    .locals 5
 
     .line 1116
     invoke-direct {p0}, Lcom/google/android/exoplayer2/ExoPlayerImpl;->verifyApplicationThread()V
@@ -6790,9 +6780,9 @@
 
     iget-wide v3, v3, Lcom/google/android/exoplayer2/source/MediaPeriodId;->windowSequenceNumber:J
 
-    cmp-long v5, v1, v3
+    cmp-long v1, v1, v3
 
-    if-eqz v5, :cond_1
+    if-eqz v1, :cond_1
 
     .line 1122
     iget-object v0, v0, Lcom/google/android/exoplayer2/PlaybackInfo;->timeline:Lcom/google/android/exoplayer2/Timeline;
@@ -6858,9 +6848,9 @@
 
     const-wide/high16 v3, -0x8000000000000000L
 
-    cmp-long v5, v1, v3
+    cmp-long v3, v1, v3
 
-    if-nez v5, :cond_2
+    if-nez v3, :cond_2
 
     .line 1131
     iget-wide v0, v0, Lcom/google/android/exoplayer2/Timeline$Period;->durationUs:J
@@ -6893,7 +6883,7 @@
 .end method
 
 .method public getContentPosition()J
-    .locals 6
+    .locals 5
 
     .line 1100
     invoke-direct {p0}, Lcom/google/android/exoplayer2/ExoPlayerImpl;->verifyApplicationThread()V
@@ -6925,9 +6915,9 @@
 
     const-wide v3, -0x7fffffffffffffffL    # -4.9E-324
 
-    cmp-long v5, v1, v3
+    cmp-long v1, v1, v3
 
-    if-nez v5, :cond_0
+    if-nez v1, :cond_0
 
     .line 1107
     iget-object v0, v0, Lcom/google/android/exoplayer2/PlaybackInfo;->timeline:Lcom/google/android/exoplayer2/Timeline;
@@ -7775,7 +7765,7 @@
 
     const/4 v2, 0x0
 
-    const/4 v3, 0x0
+    move v3, v2
 
     :goto_0
     if-ge v3, v1, :cond_1
@@ -7822,7 +7812,7 @@
 
     if-ltz v2, :cond_0
 
-    const/4 v4, 0x1
+    move v4, v3
 
     goto :goto_0
 
@@ -8382,7 +8372,7 @@
 
     if-lt p2, p1, :cond_0
 
-    const/4 v1, 0x1
+    move v1, v0
 
     goto :goto_0
 
@@ -8490,7 +8480,7 @@
 
     if-ltz v0, :cond_0
 
-    const/4 v2, 0x1
+    move v2, v1
 
     goto :goto_0
 

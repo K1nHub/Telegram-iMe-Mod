@@ -1081,9 +1081,9 @@
 
     div-long/2addr v7, v9
 
-    long-to-int v8, v7
+    long-to-int v7, v7
 
-    iput v8, v3, Lorg/telegram/messenger/MediaController$AudioEntry;->duration:I
+    iput v7, v3, Lorg/telegram/messenger/MediaController$AudioEntry;->duration:I
 
     const/4 v7, 0x5
 
@@ -1259,9 +1259,9 @@
 
     move-result-wide v10
 
-    long-to-int v11, v10
+    long-to-int v10, v10
 
-    int-to-long v10, v11
+    int-to-long v10, v10
 
     iput-wide v10, v9, Lorg/telegram/tgnet/TLRPC$Document;->size:J
 
@@ -1640,7 +1640,7 @@
     .line 532
     invoke-virtual {p1, v3, v3}, Lorg/telegram/ui/Cells/SharedAudioCell;->setChecked(ZZ)V
 
-    const/4 v2, 0x1
+    move v2, v3
 
     .line 535
     :goto_0
@@ -2081,9 +2081,9 @@
 
     const-wide/16 v2, 0x0
 
-    cmp-long p3, p1, v2
+    cmp-long p1, p1, v2
 
-    if-eqz p3, :cond_2
+    if-eqz p1, :cond_2
 
     return-void
 
@@ -2095,7 +2095,7 @@
 
     move-result p1
 
-    const/4 p2, 0x0
+    move p2, v1
 
     :goto_0
     if-ge p2, p1, :cond_6
@@ -2139,7 +2139,7 @@
 
     move-result p1
 
-    const/4 p2, 0x0
+    move p2, v1
 
     :goto_2
     if-ge p2, p1, :cond_6
@@ -2242,7 +2242,7 @@
     goto :goto_0
 
     :cond_1
-    const/4 v3, 0x0
+    move v3, v1
 
     :goto_0
     if-ltz v0, :cond_2

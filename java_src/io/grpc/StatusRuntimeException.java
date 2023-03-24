@@ -1,5 +1,5 @@
 package io.grpc;
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public class StatusRuntimeException extends RuntimeException {
     private final boolean fillInStackTrace;
     private final Status status;

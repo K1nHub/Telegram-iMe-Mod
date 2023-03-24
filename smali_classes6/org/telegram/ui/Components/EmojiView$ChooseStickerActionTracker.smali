@@ -134,9 +134,9 @@
 
     const-wide/16 v2, -0x1
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-nez v4, :cond_0
+    if-nez v0, :cond_0
 
     .line 10238
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
@@ -159,9 +159,9 @@
 
     const-wide/16 v2, 0x7d0
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-lez v4, :cond_1
+    if-lez v0, :cond_1
 
     const/4 v0, 0x1
 

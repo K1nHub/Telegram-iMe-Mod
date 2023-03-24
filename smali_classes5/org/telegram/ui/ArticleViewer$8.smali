@@ -183,7 +183,7 @@
 
     const/4 p2, 0x0
 
-    const/4 p3, 0x0
+    move p3, p2
 
     :goto_0
     if-ge p3, p1, :cond_1
@@ -414,7 +414,7 @@
 
     int-to-float v2, v2
 
-    mul-float v2, v2, p1
+    mul-float/2addr v2, p1
 
     add-float/2addr v1, v2
 

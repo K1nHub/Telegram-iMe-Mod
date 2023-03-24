@@ -59,16 +59,16 @@
 
     if-ge p1, p2, :cond_0
 
-    mul-int p1, p1, p3
+    mul-int/2addr p1, p3
 
     goto :goto_0
 
     :cond_0
-    mul-int p3, p3, p2
+    mul-int/2addr p3, p2
 
     sub-int/2addr p1, p2
 
-    mul-int p1, p1, p4
+    mul-int/2addr p1, p4
 
     add-int/2addr p1, p3
 

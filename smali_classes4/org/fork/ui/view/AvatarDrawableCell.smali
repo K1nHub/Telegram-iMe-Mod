@@ -483,7 +483,7 @@
     goto :goto_0
 
     :cond_1
-    const/4 p2, 0x0
+    move p2, v0
 
     :goto_0
     if-eqz p2, :cond_2
@@ -572,7 +572,7 @@
 
     mul-float v5, v3, v4
 
-    mul-float v3, v3, v4
+    mul-float/2addr v3, v4
 
     invoke-virtual {p1, p2, v5, v3, v2}, Landroid/graphics/Canvas;->drawRoundRect(Landroid/graphics/RectF;FFLandroid/graphics/Paint;)V
 
@@ -718,7 +718,7 @@
     if-eqz v3, :cond_2
 
     :cond_1
-    const/4 v3, 0x1
+    move v3, v11
 
     goto :goto_0
 
@@ -731,7 +731,7 @@
     goto :goto_1
 
     :cond_3
-    const/4 v7, 0x0
+    move v7, v8
 
     .line 161
     :goto_1
@@ -749,7 +749,7 @@
 
     if-nez v5, :cond_4
 
-    const/4 v9, 0x1
+    move v9, v11
 
     goto :goto_2
 
@@ -851,7 +851,7 @@
 
     if-eqz v12, :cond_6
 
-    const/4 v12, 0x1
+    move v12, v11
 
     goto :goto_3
 
@@ -861,12 +861,12 @@
     :goto_3
     if-eqz v12, :cond_7
 
-    const/high16 v13, 0x3f800000    # 1.0f
+    move v13, v7
 
     goto :goto_4
 
     :cond_7
-    const/4 v13, 0x0
+    move v13, v8
 
     .line 174
     :goto_4
@@ -898,7 +898,7 @@
 
     iget v14, v0, Lorg/fork/ui/view/AvatarDrawableCell;->showCallProgress:F
 
-    mul-float v3, v3, v14
+    mul-float/2addr v3, v14
 
     sget-object v14, Lorg/telegram/ui/ActionBar/Theme;->dialogs_onlineCirclePaint:Landroid/graphics/Paint;
 
@@ -924,7 +924,7 @@
 
     iget v14, v0, Lorg/fork/ui/view/AvatarDrawableCell;->showCallProgress:F
 
-    mul-float v6, v6, v14
+    mul-float/2addr v6, v14
 
     sget-object v14, Lorg/telegram/ui/ActionBar/Theme;->dialogs_onlineCirclePaint:Landroid/graphics/Paint;
 
@@ -980,7 +980,7 @@
 
     iget v15, v0, Lorg/fork/ui/view/AvatarDrawableCell;->innerProgress:F
 
-    mul-float v12, v12, v15
+    mul-float/2addr v12, v15
 
     sub-float v12, v9, v12
 
@@ -1017,7 +1017,7 @@
 
     iget v9, v0, Lorg/fork/ui/view/AvatarDrawableCell;->innerProgress:F
 
-    mul-float v14, v14, v9
+    mul-float/2addr v14, v9
 
     add-float/2addr v12, v14
 
@@ -1054,7 +1054,7 @@
 
     iget v14, v0, Lorg/fork/ui/view/AvatarDrawableCell;->innerProgress:F
 
-    mul-float v12, v12, v14
+    mul-float/2addr v12, v14
 
     sub-float v12, v9, v12
 
@@ -1091,7 +1091,7 @@
 
     iget v15, v0, Lorg/fork/ui/view/AvatarDrawableCell;->innerProgress:F
 
-    mul-float v12, v12, v15
+    mul-float/2addr v12, v15
 
     add-float/2addr v12, v9
 
@@ -1128,7 +1128,7 @@
 
     iget v15, v0, Lorg/fork/ui/view/AvatarDrawableCell;->innerProgress:F
 
-    mul-float v12, v12, v15
+    mul-float/2addr v12, v15
 
     sub-float v12, v9, v12
 
@@ -1165,7 +1165,7 @@
 
     iget v14, v0, Lorg/fork/ui/view/AvatarDrawableCell;->innerProgress:F
 
-    mul-float v12, v12, v14
+    mul-float/2addr v12, v14
 
     add-float/2addr v12, v9
 
@@ -1202,7 +1202,7 @@
 
     iget v14, v0, Lorg/fork/ui/view/AvatarDrawableCell;->innerProgress:F
 
-    mul-float v12, v12, v14
+    mul-float/2addr v12, v14
 
     sub-float v12, v9, v12
 
@@ -1222,7 +1222,7 @@
     iget v15, v0, Lorg/fork/ui/view/AvatarDrawableCell;->innerProgress:F
 
     :goto_5
-    mul-float v14, v14, v15
+    mul-float/2addr v14, v15
 
     add-float/2addr v9, v14
 
@@ -1244,7 +1244,7 @@
 
     iget v15, v0, Lorg/fork/ui/view/AvatarDrawableCell;->innerProgress:F
 
-    mul-float v12, v12, v15
+    mul-float/2addr v12, v15
 
     add-float/2addr v12, v9
 
@@ -1264,7 +1264,7 @@
     iget v15, v0, Lorg/fork/ui/view/AvatarDrawableCell;->innerProgress:F
 
     :goto_6
-    mul-float v14, v14, v15
+    mul-float/2addr v14, v15
 
     sub-float/2addr v9, v14
 
@@ -1432,8 +1432,6 @@
     :goto_8
     return-void
 
-    nop
-
     :pswitch_data_0
     .packed-switch 0x0
         :pswitch_6
@@ -1475,14 +1473,14 @@
     goto :goto_0
 
     :cond_1
-    const/4 p2, 0x0
+    move p2, v0
 
     :goto_0
     const/high16 v1, 0x3f800000    # 1.0f
 
     if-eqz p2, :cond_2
 
-    const/high16 p2, 0x3f800000    # 1.0f
+    move p2, v1
 
     goto :goto_1
 
@@ -1590,7 +1588,7 @@
 
     mul-float v6, v4, v5
 
-    mul-float v4, v4, v5
+    mul-float/2addr v4, v5
 
     invoke-virtual {p1, p2, v6, v4, v3}, Landroid/graphics/Canvas;->drawRoundRect(Landroid/graphics/RectF;FFLandroid/graphics/Paint;)V
 
@@ -1605,7 +1603,7 @@
 
     int-to-float v3, v3
 
-    mul-float v1, v1, v3
+    mul-float/2addr v1, v3
 
     float-to-int v1, v1
 
@@ -1872,9 +1870,9 @@
     .line 76
     iget-wide v0, p0, Lorg/fork/ui/view/AvatarDrawableCell;->dialogId:J
 
-    cmp-long v2, v0, p1
+    cmp-long v0, v0, p1
 
-    if-eqz v2, :cond_0
+    if-eqz v0, :cond_0
 
     .line 77
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->invalidate()V

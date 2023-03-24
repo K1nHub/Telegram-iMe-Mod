@@ -69,7 +69,7 @@
 
     move-result-wide v6
 
-    mul-double v6, v6, v0
+    mul-double/2addr v6, v0
 
     float-to-double v0, p1
 
@@ -79,19 +79,19 @@
 
     move-result-wide v2
 
-    mul-double v2, v2, v8
+    mul-double/2addr v2, v8
 
     invoke-static {v2, v3}, Ljava/lang/Math;->sqrt(D)D
 
     move-result-wide v2
 
-    mul-double v0, v0, v2
+    mul-double/2addr v0, v2
 
     invoke-static {v0, v1}, Ljava/lang/Math;->log(D)D
 
     move-result-wide v0
 
-    mul-double v6, v6, v0
+    mul-double/2addr v6, v0
 
     invoke-static {v6, v7}, Ljava/lang/Math;->sqrt(D)D
 

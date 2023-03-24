@@ -1279,8 +1279,12 @@ public class RecyclerView extends ViewGroup implements NestedScrollingChild {
         } else {
             int canScrollHorizontally = layoutManager.canScrollHorizontally();
             boolean canScrollVertically = this.mLayout.canScrollVertically();
-            i = (canScrollHorizontally == 0 || Math.abs(i) < this.mMinFlingVelocity) ? 0 : 0;
-            i2 = (!canScrollVertically || Math.abs(i2) < this.mMinFlingVelocity) ? 0 : 0;
+            if (canScrollHorizontally == 0 || Math.abs(i) < this.mMinFlingVelocity) {
+                i = 0;
+            }
+            if (!canScrollVertically || Math.abs(i2) < this.mMinFlingVelocity) {
+                i2 = 0;
+            }
             if (i == 0 && i2 == 0) {
                 return false;
             }
@@ -1348,13 +1352,13 @@ public class RecyclerView extends ViewGroup implements NestedScrollingChild {
     private void pullGlows(float r7, float r8, float r9, float r10) {
         /*
             r6 = this;
-            r0 = 1065353216(0x3f800000, float:1.0)
-            r1 = 1
-            r2 = 0
-            int r3 = (r8 > r2 ? 1 : (r8 == r2 ? 0 : -1))
-            if (r3 >= 0) goto L21
+            r0 = 0
+            int r1 = (r8 > r0 ? 1 : (r8 == r0 ? 0 : -1))
+            r2 = 1065353216(0x3f800000, float:1.0)
+            r3 = 1
+            if (r1 >= 0) goto L21
             r6.ensureLeftGlow()
-            android.widget.EdgeEffect r3 = r6.mLeftGlow
+            android.widget.EdgeEffect r1 = r6.mLeftGlow
             float r4 = -r8
             int r5 = r6.getWidth()
             float r5 = (float) r5
@@ -1362,61 +1366,61 @@ public class RecyclerView extends ViewGroup implements NestedScrollingChild {
             int r5 = r6.getHeight()
             float r5 = (float) r5
             float r9 = r9 / r5
-            float r9 = r0 - r9
-            androidx.core.widget.EdgeEffectCompat.onPull(r3, r4, r9)
+            float r9 = r2 - r9
+            androidx.core.widget.EdgeEffectCompat.onPull(r1, r4, r9)
         L1f:
-            r9 = 1
+            r9 = r3
             goto L3c
         L21:
-            int r3 = (r8 > r2 ? 1 : (r8 == r2 ? 0 : -1))
-            if (r3 <= 0) goto L3b
+            int r1 = (r8 > r0 ? 1 : (r8 == r0 ? 0 : -1))
+            if (r1 <= 0) goto L3b
             r6.ensureRightGlow()
-            android.widget.EdgeEffect r3 = r6.mRightGlow
+            android.widget.EdgeEffect r1 = r6.mRightGlow
             int r4 = r6.getWidth()
             float r4 = (float) r4
             float r4 = r8 / r4
             int r5 = r6.getHeight()
             float r5 = (float) r5
             float r9 = r9 / r5
-            androidx.core.widget.EdgeEffectCompat.onPull(r3, r4, r9)
+            androidx.core.widget.EdgeEffectCompat.onPull(r1, r4, r9)
             goto L1f
         L3b:
             r9 = 0
         L3c:
-            int r3 = (r10 > r2 ? 1 : (r10 == r2 ? 0 : -1))
-            if (r3 >= 0) goto L56
+            int r1 = (r10 > r0 ? 1 : (r10 == r0 ? 0 : -1))
+            if (r1 >= 0) goto L56
             r6.ensureTopGlow()
             android.widget.EdgeEffect r9 = r6.mTopGlow
-            float r0 = -r10
-            int r3 = r6.getHeight()
-            float r3 = (float) r3
-            float r0 = r0 / r3
-            int r3 = r6.getWidth()
-            float r3 = (float) r3
-            float r7 = r7 / r3
-            androidx.core.widget.EdgeEffectCompat.onPull(r9, r0, r7)
+            float r1 = -r10
+            int r2 = r6.getHeight()
+            float r2 = (float) r2
+            float r1 = r1 / r2
+            int r2 = r6.getWidth()
+            float r2 = (float) r2
+            float r7 = r7 / r2
+            androidx.core.widget.EdgeEffectCompat.onPull(r9, r1, r7)
             goto L72
         L56:
-            int r3 = (r10 > r2 ? 1 : (r10 == r2 ? 0 : -1))
-            if (r3 <= 0) goto L71
+            int r1 = (r10 > r0 ? 1 : (r10 == r0 ? 0 : -1))
+            if (r1 <= 0) goto L71
             r6.ensureBottomGlow()
             android.widget.EdgeEffect r9 = r6.mBottomGlow
-            int r3 = r6.getHeight()
-            float r3 = (float) r3
-            float r3 = r10 / r3
+            int r1 = r6.getHeight()
+            float r1 = (float) r1
+            float r1 = r10 / r1
             int r4 = r6.getWidth()
             float r4 = (float) r4
             float r7 = r7 / r4
-            float r0 = r0 - r7
-            androidx.core.widget.EdgeEffectCompat.onPull(r9, r3, r0)
+            float r2 = r2 - r7
+            androidx.core.widget.EdgeEffectCompat.onPull(r9, r1, r2)
             goto L72
         L71:
-            r1 = r9
+            r3 = r9
         L72:
-            if (r1 != 0) goto L7c
-            int r7 = (r8 > r2 ? 1 : (r8 == r2 ? 0 : -1))
+            if (r3 != 0) goto L7c
+            int r7 = (r8 > r0 ? 1 : (r8 == r0 ? 0 : -1))
             if (r7 != 0) goto L7c
-            int r7 = (r10 > r2 ? 1 : (r10 == r2 ? 0 : -1))
+            int r7 = (r10 > r0 ? 1 : (r10 == r0 ? 0 : -1))
             if (r7 == 0) goto L7f
         L7c:
             androidx.core.view.ViewCompat.postInvalidateOnAnimation(r6)
@@ -1760,7 +1764,10 @@ public class RecyclerView extends ViewGroup implements NestedScrollingChild {
         this.mLayoutOrScrollCounter = 0;
         boolean z = true;
         this.mIsAttached = true;
-        this.mFirstLayoutComplete = (!this.mFirstLayoutComplete || isLayoutRequested()) ? false : false;
+        if (!this.mFirstLayoutComplete || isLayoutRequested()) {
+            z = false;
+        }
+        this.mFirstLayoutComplete = z;
         LayoutManager layoutManager = this.mLayout;
         if (layoutManager != null) {
             layoutManager.dispatchAttachedToWindow(this);
@@ -2012,7 +2019,7 @@ public class RecyclerView extends ViewGroup implements NestedScrollingChild {
         }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:31:0x0066  */
+    /* JADX WARN: Removed duplicated region for block: B:31:0x0068  */
     @Override // android.view.View
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -2036,7 +2043,7 @@ public class RecyclerView extends ViewGroup implements NestedScrollingChild {
             int r0 = r6.getSource()
             r0 = r0 & 2
             r2 = 0
-            if (r0 == 0) goto L3c
+            if (r0 == 0) goto L3e
             androidx.recyclerview.widget.RecyclerView$LayoutManager r0 = r5.mLayout
             boolean r0 = r0.canScrollVertically()
             if (r0 == 0) goto L2c
@@ -2045,43 +2052,45 @@ public class RecyclerView extends ViewGroup implements NestedScrollingChild {
             float r0 = -r0
             goto L2d
         L2c:
-            r0 = 0
+            r0 = r2
         L2d:
             androidx.recyclerview.widget.RecyclerView$LayoutManager r3 = r5.mLayout
             boolean r3 = r3.canScrollHorizontally()
-            if (r3 == 0) goto L61
+            if (r3 == 0) goto L3c
             r3 = 10
             float r3 = r6.getAxisValue(r3)
-            goto L62
+            goto L64
         L3c:
+            r3 = r2
+            goto L64
+        L3e:
             int r0 = r6.getSource()
             r3 = 4194304(0x400000, float:5.877472E-39)
             r0 = r0 & r3
-            if (r0 == 0) goto L60
+            if (r0 == 0) goto L62
             r0 = 26
             float r0 = r6.getAxisValue(r0)
             androidx.recyclerview.widget.RecyclerView$LayoutManager r3 = r5.mLayout
             boolean r3 = r3.canScrollVertically()
-            if (r3 == 0) goto L55
+            if (r3 == 0) goto L57
             float r0 = -r0
-            goto L61
-        L55:
+            goto L3c
+        L57:
             androidx.recyclerview.widget.RecyclerView$LayoutManager r3 = r5.mLayout
             boolean r3 = r3.canScrollHorizontally()
-            if (r3 == 0) goto L60
+            if (r3 == 0) goto L62
             r3 = r0
-            r0 = 0
-            goto L62
-        L60:
-            r0 = 0
-        L61:
-            r3 = 0
+            r0 = r2
+            goto L64
         L62:
+            r0 = r2
+            r3 = r0
+        L64:
             int r4 = (r0 > r2 ? 1 : (r0 == r2 ? 0 : -1))
-            if (r4 != 0) goto L6a
+            if (r4 != 0) goto L6c
             int r2 = (r3 > r2 ? 1 : (r3 == r2 ? 0 : -1))
             if (r2 == 0) goto L77
-        L6a:
+        L6c:
             float r2 = r5.mScaledHorizontalScrollFactor
             float r3 = r3 * r2
             int r2 = (int) r3
@@ -3929,22 +3938,20 @@ public class RecyclerView extends ViewGroup implements NestedScrollingChild {
                         this.mCachedViews.add(size, viewHolder);
                         z = true;
                     }
-                    if (!z) {
+                    if (z) {
+                        z2 = false;
+                    } else {
                         addViewHolderToRecycledViewPool(viewHolder, true);
-                        r1 = z;
-                        RecyclerView.this.mViewInfoStore.removeViewHolder(viewHolder);
-                        if (r1 && !z2 && doesTransientStatePreventRecycling) {
-                            viewHolder.mOwnerRecyclerView = null;
-                            return;
-                        }
-                        return;
                     }
                     r1 = z;
+                } else {
+                    z2 = false;
                 }
-                z2 = false;
                 RecyclerView.this.mViewInfoStore.removeViewHolder(viewHolder);
-                if (r1) {
+                if (r1 || z2 || !doesTransientStatePreventRecycling) {
+                    return;
                 }
+                viewHolder.mOwnerRecyclerView = null;
             }
         }
 
@@ -4690,31 +4697,31 @@ public class RecyclerView extends ViewGroup implements NestedScrollingChild {
                 return;
             }
             int i3 = Integer.MIN_VALUE;
-            int i4 = Integer.MIN_VALUE;
+            int i4 = Integer.MAX_VALUE;
             int i5 = Integer.MAX_VALUE;
-            int i6 = Integer.MAX_VALUE;
+            int i6 = Integer.MIN_VALUE;
             for (int i7 = 0; i7 < childCount; i7++) {
                 View childAt = getChildAt(i7);
                 Rect rect = this.mRecyclerView.mTempRect;
                 getDecoratedBoundsWithMargins(childAt, rect);
                 int i8 = rect.left;
-                if (i8 < i5) {
-                    i5 = i8;
+                if (i8 < i4) {
+                    i4 = i8;
                 }
                 int i9 = rect.right;
                 if (i9 > i3) {
                     i3 = i9;
                 }
                 int i10 = rect.top;
-                if (i10 < i6) {
-                    i6 = i10;
+                if (i10 < i5) {
+                    i5 = i10;
                 }
                 int i11 = rect.bottom;
-                if (i11 > i4) {
-                    i4 = i11;
+                if (i11 > i6) {
+                    i6 = i11;
                 }
             }
-            this.mRecyclerView.mTempRect.set(i5, i6, i3, i4);
+            this.mRecyclerView.mTempRect.set(i4, i5, i3, i6);
             setMeasuredDimension(this.mRecyclerView.mTempRect, i, i2);
         }
 
@@ -5176,34 +5183,36 @@ public class RecyclerView extends ViewGroup implements NestedScrollingChild {
                 goto L1c
             L11:
                 if (r7 != r1) goto L2f
-                if (r5 == r2) goto L21
+                if (r5 == r2) goto L20
                 if (r5 == 0) goto L2f
-                if (r5 == r3) goto L21
+                if (r5 == r3) goto L20
                 goto L2f
             L1a:
-                if (r7 < 0) goto L1f
+                if (r7 < 0) goto L1e
             L1c:
-                r5 = 1073741824(0x40000000, float:2.0)
+                r5 = r3
                 goto L31
-            L1f:
-                if (r7 != r1) goto L23
-            L21:
+            L1e:
+                if (r7 != r1) goto L22
+            L20:
                 r7 = r4
                 goto L31
-            L23:
+            L22:
                 if (r7 != r0) goto L2f
                 if (r5 == r2) goto L2c
-                if (r5 != r3) goto L2a
+                if (r5 != r3) goto L29
                 goto L2c
-            L2a:
-                r5 = 0
-                goto L21
+            L29:
+                r7 = r4
+                r5 = r6
+                goto L31
             L2c:
-                r5 = -2147483648(0xffffffff80000000, float:-0.0)
-                goto L21
+                r7 = r4
+                r5 = r2
+                goto L31
             L2f:
-                r5 = 0
-                r7 = 0
+                r5 = r6
+                r7 = r5
             L31:
                 int r4 = android.view.View.MeasureSpec.makeMeasureSpec(r7, r5)
                 return r4
@@ -5489,82 +5498,34 @@ public class RecyclerView extends ViewGroup implements NestedScrollingChild {
             return performAccessibilityAction(recyclerView.mRecycler, recyclerView.mState, i, bundle);
         }
 
-        /* JADX WARN: Removed duplicated region for block: B:26:0x0070 A[ADDED_TO_REGION] */
-        /*
-            Code decompiled incorrectly, please refer to instructions dump.
-            To view partially-correct add '--show-bad-code' argument
-        */
-        public boolean performAccessibilityAction(androidx.recyclerview.widget.RecyclerView.Recycler r2, androidx.recyclerview.widget.RecyclerView.State r3, int r4, android.os.Bundle r5) {
-            /*
-                r1 = this;
-                androidx.recyclerview.widget.RecyclerView r2 = r1.mRecyclerView
-                r3 = 0
-                if (r2 != 0) goto L6
-                return r3
-            L6:
-                r5 = 4096(0x1000, float:5.74E-42)
-                r0 = 1
-                if (r4 == r5) goto L42
-                r5 = 8192(0x2000, float:1.14794E-41)
-                if (r4 == r5) goto L12
-                r2 = 0
-            L10:
-                r4 = 0
-                goto L6e
-            L12:
-                r4 = -1
-                boolean r2 = r2.canScrollVertically(r4)
-                if (r2 == 0) goto L29
-                int r2 = r1.getHeight()
-                int r5 = r1.getPaddingTop()
-                int r2 = r2 - r5
-                int r5 = r1.getPaddingBottom()
-                int r2 = r2 - r5
-                int r2 = -r2
-                goto L2a
-            L29:
-                r2 = 0
-            L2a:
-                androidx.recyclerview.widget.RecyclerView r5 = r1.mRecyclerView
-                boolean r4 = r5.canScrollHorizontally(r4)
-                if (r4 == 0) goto L10
-                int r4 = r1.getWidth()
-                int r5 = r1.getPaddingLeft()
-                int r4 = r4 - r5
-                int r5 = r1.getPaddingRight()
-                int r4 = r4 - r5
-                int r4 = -r4
-                goto L6e
-            L42:
-                boolean r2 = r2.canScrollVertically(r0)
-                if (r2 == 0) goto L57
-                int r2 = r1.getHeight()
-                int r4 = r1.getPaddingTop()
-                int r2 = r2 - r4
-                int r4 = r1.getPaddingBottom()
-                int r2 = r2 - r4
-                goto L58
-            L57:
-                r2 = 0
-            L58:
-                androidx.recyclerview.widget.RecyclerView r4 = r1.mRecyclerView
-                boolean r4 = r4.canScrollHorizontally(r0)
-                if (r4 == 0) goto L10
-                int r4 = r1.getWidth()
-                int r5 = r1.getPaddingLeft()
-                int r4 = r4 - r5
-                int r5 = r1.getPaddingRight()
-                int r4 = r4 - r5
-            L6e:
-                if (r2 != 0) goto L73
-                if (r4 != 0) goto L73
-                return r3
-            L73:
-                androidx.recyclerview.widget.RecyclerView r3 = r1.mRecyclerView
-                r3.smoothScrollBy(r4, r2)
-                return r0
-            */
-            throw new UnsupportedOperationException("Method not decompiled: androidx.recyclerview.widget.RecyclerView.LayoutManager.performAccessibilityAction(androidx.recyclerview.widget.RecyclerView$Recycler, androidx.recyclerview.widget.RecyclerView$State, int, android.os.Bundle):boolean");
+        public boolean performAccessibilityAction(Recycler recycler, State state, int i, Bundle bundle) {
+            int height;
+            int width;
+            RecyclerView recyclerView = this.mRecyclerView;
+            if (recyclerView == null) {
+                return false;
+            }
+            if (i == 4096) {
+                height = recyclerView.canScrollVertically(1) ? (getHeight() - getPaddingTop()) - getPaddingBottom() : 0;
+                if (this.mRecyclerView.canScrollHorizontally(1)) {
+                    width = (getWidth() - getPaddingLeft()) - getPaddingRight();
+                }
+                width = 0;
+            } else if (i != 8192) {
+                height = 0;
+                width = 0;
+            } else {
+                height = recyclerView.canScrollVertically(-1) ? -((getHeight() - getPaddingTop()) - getPaddingBottom()) : 0;
+                if (this.mRecyclerView.canScrollHorizontally(-1)) {
+                    width = -((getWidth() - getPaddingLeft()) - getPaddingRight());
+                }
+                width = 0;
+            }
+            if (height == 0 && width == 0) {
+                return false;
+            }
+            this.mRecyclerView.smoothScrollBy(width, height);
+            return true;
         }
 
         /* JADX INFO: Access modifiers changed from: package-private */

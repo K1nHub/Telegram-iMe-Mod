@@ -91,26 +91,26 @@
 
     add-float/2addr v0, v1
 
-    const/4 v1, 0x1
+    const/high16 v1, 0x3f800000    # 1.0f
 
-    const/high16 v2, 0x3f800000    # 1.0f
+    cmpg-float v2, v0, v1
 
-    cmpg-float v3, v0, v2
+    const/4 v3, 0x1
 
-    if-gez v3, :cond_0
+    if-gez v2, :cond_0
 
-    const/4 v3, 0x0
+    const/4 v2, 0x0
 
     .line 547
     iget-object v4, p0, Lorg/telegram/ui/Components/LinkActionView$1;->this$0:Lorg/telegram/ui/Components/LinkActionView;
 
     iget-object v4, v4, Lorg/telegram/ui/Components/LinkActionView;->point:[F
 
-    aget v4, v4, v1
+    aget v4, v4, v3
 
     sub-float/2addr v4, v0
 
-    add-float/2addr v4, v2
+    add-float/2addr v4, v1
 
     invoke-virtual {p0}, Landroid/view/View;->getMeasuredWidth()I
 
@@ -120,11 +120,11 @@
 
     invoke-virtual {p0}, Landroid/view/View;->getMeasuredHeight()I
 
-    move-result v2
+    move-result v1
 
-    int-to-float v2, v2
+    int-to-float v1, v1
 
-    invoke-virtual {p1, v3, v4, v0, v2}, Landroid/graphics/Canvas;->clipRect(FFFF)Z
+    invoke-virtual {p1, v2, v4, v0, v1}, Landroid/graphics/Canvas;->clipRect(FFFF)Z
 
     .line 549
     :cond_0
@@ -132,13 +132,13 @@
 
     iget-object v0, v0, Lorg/telegram/ui/Components/LinkActionView;->point:[F
 
-    const/4 v2, 0x0
+    const/4 v1, 0x0
 
-    aget v2, v0, v2
+    aget v1, v0, v1
 
-    aget v0, v0, v1
+    aget v0, v0, v3
 
-    invoke-virtual {p1, v2, v0}, Landroid/graphics/Canvas;->translate(FF)V
+    invoke-virtual {p1, v1, v0}, Landroid/graphics/Canvas;->translate(FF)V
 
     .line 551
     iget-object v0, p0, Lorg/telegram/ui/Components/LinkActionView$1;->this$0:Lorg/telegram/ui/Components/LinkActionView;

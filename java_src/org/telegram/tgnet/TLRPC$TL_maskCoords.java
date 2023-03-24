@@ -4,13 +4,13 @@ public class TLRPC$TL_maskCoords extends TLObject {
     public static int constructor = -1361650766;
 
     /* renamed from: n */
-    public int f1576n;
+    public int f1577n;
 
     /* renamed from: x */
-    public double f1577x;
+    public double f1578x;
 
     /* renamed from: y */
-    public double f1578y;
+    public double f1579y;
     public double zoom;
 
     public static TLRPC$TL_maskCoords TLdeserialize(AbstractSerializedData abstractSerializedData, int i, boolean z) {
@@ -27,18 +27,18 @@ public class TLRPC$TL_maskCoords extends TLObject {
 
     @Override // org.telegram.tgnet.TLObject
     public void readParams(AbstractSerializedData abstractSerializedData, boolean z) {
-        this.f1576n = abstractSerializedData.readInt32(z);
-        this.f1577x = abstractSerializedData.readDouble(z);
-        this.f1578y = abstractSerializedData.readDouble(z);
+        this.f1577n = abstractSerializedData.readInt32(z);
+        this.f1578x = abstractSerializedData.readDouble(z);
+        this.f1579y = abstractSerializedData.readDouble(z);
         this.zoom = abstractSerializedData.readDouble(z);
     }
 
     @Override // org.telegram.tgnet.TLObject
     public void serializeToStream(AbstractSerializedData abstractSerializedData) {
         abstractSerializedData.writeInt32(constructor);
-        abstractSerializedData.writeInt32(this.f1576n);
-        abstractSerializedData.writeDouble(this.f1577x);
-        abstractSerializedData.writeDouble(this.f1578y);
+        abstractSerializedData.writeInt32(this.f1577n);
+        abstractSerializedData.writeDouble(this.f1578x);
+        abstractSerializedData.writeDouble(this.f1579y);
         abstractSerializedData.writeDouble(this.zoom);
     }
 }

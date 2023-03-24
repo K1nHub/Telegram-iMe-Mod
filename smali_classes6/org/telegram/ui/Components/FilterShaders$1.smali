@@ -124,7 +124,7 @@
 
     const v1, 0x3e99999a    # 0.3f
 
-    mul-float v0, v0, v1
+    mul-float/2addr v0, v1
 
     const/high16 v1, 0x3f800000    # 1.0f
 
@@ -192,7 +192,7 @@
 
     const v1, 0x3d23d70a    # 0.04f
 
-    mul-float v0, v0, v1
+    mul-float/2addr v0, v1
 
     return v0
 .end method
@@ -207,7 +207,7 @@
 
     const/high16 v1, 0x3f400000    # 0.75f
 
-    mul-float v0, v0, v1
+    mul-float/2addr v0, v1
 
     const/high16 v1, 0x42c80000    # 100.0f
 
@@ -238,7 +238,7 @@
 
     const v1, 0x3f866666    # 1.05f
 
-    mul-float v0, v0, v1
+    mul-float/2addr v0, v1
 
     :cond_0
     const/high16 v1, 0x3f800000    # 1.0f
@@ -258,7 +258,7 @@
 
     const v1, 0x3f0ccccd    # 0.55f
 
-    mul-float v0, v0, v1
+    mul-float/2addr v0, v1
 
     const/high16 v1, 0x42c80000    # 100.0f
 
@@ -283,7 +283,7 @@
 
     const v1, 0x3f19999a    # 0.6f
 
-    mul-float v0, v0, v1
+    mul-float/2addr v0, v1
 
     const v1, 0x3de147ae    # 0.11f
 

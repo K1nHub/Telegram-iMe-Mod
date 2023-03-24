@@ -15,7 +15,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nBackupController.kt\nKotlin\n*S Kotlin\n*F\n+ 1 BackupController.kt\norg/fork/controller/BackupController\n+ 2 KoinComponent.kt\norg/koin/core/component/KoinComponentKt\n+ 3 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 4 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 5 _Arrays.kt\nkotlin/collections/ArraysKt___ArraysKt\n*L\n1#1,571:1\n56#2,6:572\n1855#3,2:578\n1855#3,2:580\n1549#3:582\n1620#3,3:583\n1855#3,2:587\n1002#3,2:589\n1855#3,2:591\n1963#3,14:594\n1855#3,2:609\n1045#3:611\n1559#3:612\n1590#3,4:613\n1045#3:617\n1559#3:618\n1590#3,4:619\n1855#3,2:623\n1#4:586\n13579#5:593\n13580#5:608\n*S KotlinDebug\n*F\n+ 1 BackupController.kt\norg/fork/controller/BackupController\n*L\n35#1:572,6\n457#1:578,2\n461#1:580,2\n469#1:582\n469#1:583,3\n490#1:587,2\n500#1:589,2\n507#1:591,2\n516#1:594,14\n527#1:609,2\n538#1:611\n539#1:612\n539#1:613,4\n545#1:617\n546#1:618\n546#1:619,4\n248#1:623,2\n515#1:593\n515#1:608\n*E\n"
+    value = "SMAP\nBackupController.kt\nKotlin\n*S Kotlin\n*F\n+ 1 BackupController.kt\norg/fork/controller/BackupController\n+ 2 KoinComponent.kt\norg/koin/core/component/KoinComponentKt\n+ 3 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 4 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 5 _Arrays.kt\nkotlin/collections/ArraysKt___ArraysKt\n*L\n1#1,567:1\n56#2,6:568\n1855#3,2:574\n1855#3,2:576\n1549#3:578\n1620#3,3:579\n1855#3,2:583\n1002#3,2:585\n1855#3,2:587\n1963#3,14:590\n1855#3,2:605\n1045#3:607\n1559#3:608\n1590#3,4:609\n1045#3:613\n1559#3:614\n1590#3,4:615\n1855#3,2:619\n1#4:582\n13579#5:589\n13580#5:604\n*S KotlinDebug\n*F\n+ 1 BackupController.kt\norg/fork/controller/BackupController\n*L\n35#1:568,6\n453#1:574,2\n457#1:576,2\n465#1:578\n465#1:579,3\n486#1:583,2\n496#1:585,2\n503#1:587,2\n512#1:590,14\n523#1:605,2\n534#1:607\n535#1:608\n535#1:609,4\n541#1:613\n542#1:614\n542#1:615,4\n244#1:619,2\n511#1:589\n511#1:604\n*E\n"
 .end annotation
 
 
@@ -90,7 +90,7 @@
 
     sput-object v0, Lorg/fork/controller/BackupController;->Companion:Lorg/fork/controller/BackupController$Companion;
 
-    .line 561
+    .line 557
     new-instance v0, Lj$/util/concurrent/ConcurrentHashMap;
 
     const/4 v1, 0x5
@@ -165,7 +165,7 @@
 .method private final buildBackupFileName(J)Ljava/lang/String;
     .locals 3
 
-    .line 445
+    .line 441
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -174,7 +174,7 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 446
+    .line 442
     sget-object v1, Lcom/smedialink/common/Constants;->INSTANCE:Lcom/smedialink/common/Constants;
 
     invoke-virtual {v1}, Lcom/smedialink/common/Constants;->getDateDotsFormat()Ljava/text/SimpleDateFormat;
@@ -189,7 +189,7 @@
 
     move-result-object v1
 
-    .line 445
+    .line 441
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     const-string v1, "_id"
@@ -249,9 +249,9 @@
 .end method
 
 .method private final migrateToCurrentVersion(Lorg/fork/models/backup/Backup;)Lorg/fork/models/backup/Backup;
-    .locals 236
+    .locals 234
 
-    .line 454
+    .line 450
     invoke-virtual/range {p1 .. p1}, Lorg/fork/models/backup/Backup;->getVersion()Ljava/lang/Integer;
 
     move-result-object v0
@@ -281,13 +281,15 @@
 
     const/16 v15, 0xa
 
-    const/16 v119, 0x0
+    const/16 v118, 0x0
 
     packed-switch v0, :pswitch_data_0
 
-    goto/16 :goto_6
+    move v1, v2
 
-    .line 536
+    goto/16 :goto_7
+
+    .line 532
     :pswitch_0
     invoke-virtual {v3}, Lorg/fork/models/backup/Backup;->getSortingSettings()Ljava/util/List;
 
@@ -447,9 +449,7 @@
 
     const/16 v81, 0x0
 
-    const/16 v82, 0x0
-
-    .line 537
+    .line 533
     invoke-virtual {v3}, Lorg/fork/models/backup/Backup;->getSortingSettings()Ljava/util/List;
 
     move-result-object v1
@@ -486,15 +486,15 @@
     :goto_2
     invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
-    move-result v83
+    move-result v82
 
-    if-eqz v83, :cond_2
+    if-eqz v82, :cond_2
 
     invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    move-result-object v83
+    move-result-object v82
 
-    add-int/lit8 v84, v14, 0x1
+    add-int/lit8 v83, v14, 0x1
 
     if-gez v14, :cond_1
 
@@ -502,23 +502,23 @@
     invoke-static {}, Lkotlin/collections/CollectionsKt;->throwIndexOverflow()V
 
     :cond_1
-    move-object/from16 v15, v83
+    move-object/from16 v15, v82
 
     check-cast v15, Lorg/fork/models/backup/SortingTabStateBackup;
 
-    .line 539
+    .line 535
     invoke-virtual {v15, v14}, Lorg/fork/models/backup/SortingTabStateBackup;->setPosition(I)V
 
     .line 1592
     invoke-interface {v2, v15}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
-    move/from16 v14, v84
+    move/from16 v14, v83
 
     const/16 v15, 0xa
 
     goto :goto_2
 
-    .line 540
+    .line 536
     :cond_2
     invoke-static {v2}, Lkotlin/collections/CollectionsKt;->toMutableList(Ljava/util/Collection;)Ljava/util/List;
 
@@ -527,9 +527,11 @@
     goto :goto_3
 
     :cond_3
-    move-object/from16 v1, v119
+    move-object/from16 v1, v118
 
     :goto_3
+    const/16 v82, 0x0
+
     const/16 v83, 0x0
 
     const/16 v84, 0x0
@@ -590,17 +592,15 @@
 
     const/16 v112, 0x0
 
-    const/16 v113, 0x0
+    const/16 v113, -0x1
 
     const/16 v114, -0x1
 
-    const/16 v115, -0x1
+    const/16 v115, -0x2001
 
-    const/16 v116, -0x4001
+    const/16 v116, 0x1fff
 
-    const/16 v117, 0x3fff
-
-    const/16 v118, 0x0
+    const/16 v117, 0x0
 
     const/4 v2, 0x0
 
@@ -740,29 +740,29 @@
 
     move-object/from16 v80, v81
 
-    move-object/from16 v81, v82
+    move-object/from16 v81, v1
 
-    move-object/from16 v82, v1
-
-    .line 537
-    invoke-static/range {v3 .. v118}, Lorg/fork/models/backup/Backup;->copy$default(Lorg/fork/models/backup/Backup;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Lorg/fork/models/DrawerHeaderSettings;Ljava/util/Set;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/Set;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/Map;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/Set;Ljava/util/List;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/Boolean;Ljava/util/Set;Ljava/lang/Boolean;Ljava/util/Set;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/Map;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/Set;Ljava/lang/Boolean;Ljava/util/Set;Ljava/lang/Boolean;Ljava/lang/Boolean;Lorg/fork/enums/DrawerHolidayIconType;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/List;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/Set;Ljava/lang/Boolean;Ljava/util/List;Ljava/lang/Boolean;Ljava/util/List;Ljava/util/Map;Ljava/util/Map;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/List;Ljava/util/Map;Ljava/util/List;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/String;Ljava/util/Map;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Long;Ljava/util/List;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/Boolean;Ljava/util/List;Ljava/lang/Integer;Ljava/lang/String;Ljava/util/List;IIIILjava/lang/Object;)Lorg/fork/models/backup/Backup;
+    .line 533
+    invoke-static/range {v3 .. v117}, Lorg/fork/models/backup/Backup;->copy$default(Lorg/fork/models/backup/Backup;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Lorg/fork/models/DrawerHeaderSettings;Ljava/util/Set;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/Set;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/Map;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/Set;Ljava/util/List;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/Boolean;Ljava/util/Set;Ljava/lang/Boolean;Ljava/util/Set;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/Map;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/Set;Ljava/lang/Boolean;Ljava/util/Set;Ljava/lang/Boolean;Ljava/lang/Boolean;Lorg/fork/enums/DrawerHolidayIconType;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/List;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/Set;Ljava/lang/Boolean;Ljava/util/List;Ljava/lang/Boolean;Ljava/util/List;Ljava/util/Map;Ljava/util/Map;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/List;Ljava/util/Map;Ljava/util/List;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/String;Ljava/util/Map;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Long;Ljava/util/List;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/Boolean;Ljava/util/List;Ljava/lang/Integer;Ljava/lang/String;Ljava/util/List;IIIILjava/lang/Object;)Lorg/fork/models/backup/Backup;
 
     move-result-object v3
 
     goto :goto_4
 
     :cond_4
-    const/16 v2, 0xa
+    move v2, v15
 
     :goto_4
-    move-object/from16 v120, v3
+    move-object/from16 v119, v3
 
-    .line 543
-    invoke-virtual/range {v120 .. v120}, Lorg/fork/models/backup/Backup;->getArchiveSortingSettings()Ljava/util/List;
+    .line 539
+    invoke-virtual/range {v119 .. v119}, Lorg/fork/models/backup/Backup;->getArchiveSortingSettings()Ljava/util/List;
 
     move-result-object v1
 
     if-eqz v1, :cond_8
+
+    const/16 v120, 0x0
 
     const/16 v121, 0x0
 
@@ -920,12 +920,8 @@
 
     const/16 v198, 0x0
 
-    const/16 v199, 0x0
-
-    const/16 v200, 0x0
-
-    .line 544
-    invoke-virtual/range {v120 .. v120}, Lorg/fork/models/backup/Backup;->getArchiveSortingSettings()Ljava/util/List;
+    .line 540
+    invoke-virtual/range {v119 .. v119}, Lorg/fork/models/backup/Backup;->getArchiveSortingSettings()Ljava/util/List;
 
     move-result-object v1
 
@@ -979,7 +975,7 @@
     :cond_5
     check-cast v4, Lorg/fork/models/backup/SortingTabStateBackup;
 
-    .line 546
+    .line 542
     invoke-virtual {v4, v2}, Lorg/fork/models/backup/SortingTabStateBackup;->setPosition(I)V
 
     .line 1592
@@ -989,14 +985,18 @@
 
     goto :goto_5
 
-    .line 547
+    .line 543
     :cond_6
     invoke-static {v3}, Lkotlin/collections/CollectionsKt;->toMutableList(Ljava/util/Collection;)Ljava/util/List;
 
-    move-result-object v119
+    move-result-object v118
 
     :cond_7
-    move-object/from16 v201, v119
+    move-object/from16 v199, v118
+
+    const/16 v200, 0x0
+
+    const/16 v201, 0x0
 
     const/16 v202, 0x0
 
@@ -1052,22 +1052,18 @@
 
     const/16 v228, 0x0
 
-    const/16 v229, 0x0
+    const/16 v229, -0x1
 
-    const/16 v230, 0x0
+    const/16 v230, -0x1
 
-    const/16 v231, -0x1
+    const v231, -0x8001
 
-    const/16 v232, -0x1
+    const/16 v232, 0x1fff
 
-    const v233, -0x10001
+    const/16 v233, 0x0
 
-    const/16 v234, 0x3fff
-
-    const/16 v235, 0x0
-
-    .line 544
-    invoke-static/range {v120 .. v235}, Lorg/fork/models/backup/Backup;->copy$default(Lorg/fork/models/backup/Backup;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Lorg/fork/models/DrawerHeaderSettings;Ljava/util/Set;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/Set;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/Map;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/Set;Ljava/util/List;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/Boolean;Ljava/util/Set;Ljava/lang/Boolean;Ljava/util/Set;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/Map;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/Set;Ljava/lang/Boolean;Ljava/util/Set;Ljava/lang/Boolean;Ljava/lang/Boolean;Lorg/fork/enums/DrawerHolidayIconType;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/List;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/Set;Ljava/lang/Boolean;Ljava/util/List;Ljava/lang/Boolean;Ljava/util/List;Ljava/util/Map;Ljava/util/Map;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/List;Ljava/util/Map;Ljava/util/List;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/String;Ljava/util/Map;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Long;Ljava/util/List;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/Boolean;Ljava/util/List;Ljava/lang/Integer;Ljava/lang/String;Ljava/util/List;IIIILjava/lang/Object;)Lorg/fork/models/backup/Backup;
+    .line 540
+    invoke-static/range {v119 .. v233}, Lorg/fork/models/backup/Backup;->copy$default(Lorg/fork/models/backup/Backup;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Lorg/fork/models/DrawerHeaderSettings;Ljava/util/Set;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/Set;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/Map;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/Set;Ljava/util/List;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/Boolean;Ljava/util/Set;Ljava/lang/Boolean;Ljava/util/Set;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/Map;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/Set;Ljava/lang/Boolean;Ljava/util/Set;Ljava/lang/Boolean;Ljava/lang/Boolean;Lorg/fork/enums/DrawerHolidayIconType;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/List;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/Set;Ljava/lang/Boolean;Ljava/util/List;Ljava/lang/Boolean;Ljava/util/List;Ljava/util/Map;Ljava/util/Map;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/List;Ljava/util/Map;Ljava/util/List;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/String;Ljava/util/Map;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Long;Ljava/util/List;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/Boolean;Ljava/util/List;Ljava/lang/Integer;Ljava/lang/String;Ljava/util/List;IIIILjava/lang/Object;)Lorg/fork/models/backup/Backup;
 
     move-result-object v1
 
@@ -1076,17 +1072,18 @@
     goto :goto_6
 
     :cond_8
-    move-object/from16 v3, v120
+    move-object/from16 v3, v119
 
     :cond_9
     :goto_6
     const/4 v1, 0x1
 
-    const/16 v119, 0x0
+    :goto_7
+    const/16 v118, 0x0
 
-    goto/16 :goto_17
+    goto/16 :goto_18
 
-    .line 524
+    .line 520
     :pswitch_1
     invoke-virtual {v3}, Lorg/fork/models/backup/Backup;->getArchiveSortingSettings()Ljava/util/List;
 
@@ -1094,7 +1091,7 @@
 
     if-eqz v1, :cond_9
 
-    .line 525
+    .line 521
     invoke-interface {v1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v2
@@ -1126,10 +1123,10 @@
 
     if-eqz v5, :cond_a
 
-    move-object/from16 v119, v4
+    move-object/from16 v118, v4
 
     :cond_b
-    move-object/from16 v2, v119
+    move-object/from16 v2, v118
 
     check-cast v2, Lorg/fork/models/backup/SortingTabStateBackup;
 
@@ -1144,7 +1141,7 @@
     move-result-object v4
 
     :cond_d
-    :goto_7
+    :goto_8
     invoke-interface {v4}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v5
@@ -1157,7 +1154,7 @@
 
     check-cast v5, Lorg/fork/models/backup/SortingTabStateBackup;
 
-    .line 528
+    .line 524
     invoke-virtual {v5}, Lorg/fork/models/backup/SortingTabStateBackup;->getPosition()I
 
     move-result v6
@@ -1168,7 +1165,7 @@
 
     if-le v6, v7, :cond_d
 
-    .line 529
+    .line 525
     invoke-virtual {v5}, Lorg/fork/models/backup/SortingTabStateBackup;->getPosition()I
 
     move-result v6
@@ -1177,15 +1174,15 @@
 
     invoke-virtual {v5, v6}, Lorg/fork/models/backup/SortingTabStateBackup;->setPosition(I)V
 
-    goto :goto_7
+    goto :goto_8
 
-    .line 532
+    .line 528
     :cond_e
     invoke-interface {v1, v2}, Ljava/util/List;->remove(Ljava/lang/Object;)Z
 
     goto :goto_6
 
-    .line 522
+    .line 518
     :pswitch_2
     invoke-virtual {v3}, Lorg/fork/models/backup/Backup;->getMessagePopupItems()Ljava/util/List;
 
@@ -1199,7 +1196,7 @@
 
     goto :goto_6
 
-    .line 521
+    .line 517
     :pswitch_3
     invoke-virtual {v3}, Lorg/fork/models/backup/Backup;->getMessagePopupItems()Ljava/util/List;
 
@@ -1213,7 +1210,7 @@
 
     goto :goto_6
 
-    .line 505
+    .line 501
     :pswitch_4
     invoke-virtual {v3}, Lorg/fork/models/backup/Backup;->getMultiPanelSettings()Ljava/util/Map;
 
@@ -1221,7 +1218,7 @@
 
     if-eqz v1, :cond_9
 
-    .line 506
+    .line 502
     sget-object v2, Lorg/fork/enums/DialogType;->CHANNEL:Lorg/fork/enums/DialogType;
 
     invoke-virtual {v2}, Ljava/lang/Enum;->name()Ljava/lang/String;
@@ -1238,7 +1235,7 @@
 
     goto/16 :goto_6
 
-    .line 507
+    .line 503
     :cond_f
     invoke-virtual {v2}, Lorg/fork/enums/DialogType;->getMultiPanelButtons()Ljava/util/List;
 
@@ -1249,7 +1246,7 @@
 
     move-result-object v2
 
-    :goto_8
+    :goto_9
     invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v5
@@ -1262,12 +1259,12 @@
 
     check-cast v5, Lorg/fork/enums/MultiPanelButton;
 
-    .line 508
+    .line 504
     sget-object v6, Lorg/fork/enums/MultiPanelButton;->MUTE:Lorg/fork/enums/MultiPanelButton;
 
     if-eq v5, v6, :cond_13
 
-    .line 509
+    .line 505
     invoke-interface {v4}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v6
@@ -1301,19 +1298,19 @@
 
     if-eqz v8, :cond_10
 
-    goto :goto_9
+    goto :goto_a
 
     :cond_11
-    move-object/from16 v7, v119
+    move-object/from16 v7, v118
 
-    :goto_9
+    :goto_a
     check-cast v7, Lorg/fork/models/backup/MultiPanelButtonStateBackup;
 
     if-nez v7, :cond_12
 
-    goto :goto_a
+    goto :goto_b
 
-    .line 511
+    .line 507
     :cond_12
     invoke-virtual {v7}, Lorg/fork/models/backup/MultiPanelButtonStateBackup;->getPosition()I
 
@@ -1325,18 +1322,18 @@
 
     invoke-virtual {v7, v5}, Lorg/fork/models/backup/MultiPanelButtonStateBackup;->setPosition(I)V
 
-    goto :goto_8
+    goto :goto_9
 
     :cond_13
-    :goto_a
+    :goto_b
     const/4 v6, 0x1
 
-    goto :goto_8
+    goto :goto_9
 
     :cond_14
     const/4 v6, 0x1
 
-    .line 514
+    .line 510
     new-instance v2, Lorg/fork/models/backup/MultiPanelButtonStateBackup;
 
     sget-object v5, Lorg/fork/enums/MultiPanelButton;->MUTE:Lorg/fork/enums/MultiPanelButton;
@@ -1351,7 +1348,7 @@
 
     invoke-interface {v4, v7, v2}, Ljava/util/List;->add(ILjava/lang/Object;)V
 
-    .line 515
+    .line 511
     invoke-static {}, Lorg/fork/enums/DialogType;->values()[Lorg/fork/enums/DialogType;
 
     move-result-object v2
@@ -1361,12 +1358,12 @@
 
     const/4 v7, 0x0
 
-    :goto_b
+    :goto_c
     if-ge v7, v5, :cond_9
 
     aget-object v6, v2, v7
 
-    .line 516
+    .line 512
     invoke-virtual {v6}, Ljava/lang/Enum;->name()Ljava/lang/String;
 
     move-result-object v6
@@ -1401,9 +1398,9 @@
 
     if-nez v11, :cond_15
 
-    move-object/from16 v11, v119
+    move-object/from16 v11, v118
 
-    goto :goto_c
+    goto :goto_d
 
     .line 1965
     :cond_15
@@ -1418,7 +1415,7 @@
 
     if-nez v12, :cond_16
 
-    goto :goto_c
+    goto :goto_d
 
     .line 1967
     :cond_16
@@ -1426,7 +1423,7 @@
 
     check-cast v12, Lorg/fork/models/backup/MultiPanelButtonStateBackup;
 
-    .line 516
+    .line 512
     invoke-virtual {v12}, Lorg/fork/models/backup/MultiPanelButtonStateBackup;->getPosition()I
 
     move-result v12
@@ -1442,7 +1439,7 @@
 
     check-cast v14, Lorg/fork/models/backup/MultiPanelButtonStateBackup;
 
-    .line 516
+    .line 512
     invoke-virtual {v14}, Lorg/fork/models/backup/MultiPanelButtonStateBackup;->getPosition()I
 
     move-result v14
@@ -1461,8 +1458,8 @@
 
     if-nez v13, :cond_17
 
-    .line 516
-    :goto_c
+    .line 512
+    :goto_d
     check-cast v11, Lorg/fork/models/backup/MultiPanelButtonStateBackup;
 
     if-eqz v11, :cond_19
@@ -1475,12 +1472,12 @@
 
     add-int/2addr v10, v11
 
-    goto :goto_d
+    goto :goto_e
 
     :cond_19
     const/4 v10, 0x0
 
-    :goto_d
+    :goto_e
     new-instance v11, Lorg/fork/models/backup/MultiPanelButtonStateBackup;
 
     invoke-direct {v11, v9, v8, v10}, Lorg/fork/models/backup/MultiPanelButtonStateBackup;-><init>(Ljava/lang/String;ZI)V
@@ -1490,9 +1487,9 @@
     :cond_1a
     add-int/lit8 v7, v7, 0x1
 
-    goto :goto_b
+    goto :goto_c
 
-    .line 503
+    .line 499
     :pswitch_5
     invoke-virtual {v3}, Lorg/fork/models/backup/Backup;->getDrawerItems()Ljava/util/Set;
 
@@ -1506,7 +1503,7 @@
 
     goto/16 :goto_6
 
-    .line 486
+    .line 482
     :pswitch_6
     invoke-virtual {v3}, Lorg/fork/models/backup/Backup;->getMultiPanelSettings()Ljava/util/Map;
 
@@ -1514,7 +1511,7 @@
 
     if-eqz v1, :cond_9
 
-    .line 487
+    .line 483
     sget-object v2, Lorg/fork/enums/DialogType;->BOT:Lorg/fork/enums/DialogType;
 
     invoke-virtual {v2}, Ljava/lang/Enum;->name()Ljava/lang/String;
@@ -1531,7 +1528,7 @@
 
     goto/16 :goto_6
 
-    .line 488
+    .line 484
     :cond_1b
     invoke-interface {v1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
@@ -1568,12 +1565,12 @@
 
     if-eqz v5, :cond_1c
 
-    goto :goto_e
+    goto :goto_f
 
     :cond_1d
-    move-object/from16 v4, v119
+    move-object/from16 v4, v118
 
-    :goto_e
+    :goto_f
     check-cast v4, Lorg/fork/models/backup/MultiPanelButtonStateBackup;
 
     if-eqz v4, :cond_9
@@ -1582,7 +1579,7 @@
 
     move-result v2
 
-    .line 490
+    .line 486
     sget-object v4, Lorg/fork/enums/DialogType;->BOT:Lorg/fork/enums/DialogType;
 
     invoke-virtual {v4}, Lorg/fork/enums/DialogType;->getMultiPanelButtons()Ljava/util/List;
@@ -1594,7 +1591,7 @@
 
     move-result-object v4
 
-    :goto_f
+    :goto_10
     invoke-interface {v4}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v5
@@ -1607,12 +1604,12 @@
 
     check-cast v5, Lorg/fork/enums/MultiPanelButton;
 
-    .line 491
+    .line 487
     sget-object v6, Lorg/fork/enums/MultiPanelButton;->CACHE:Lorg/fork/enums/MultiPanelButton;
 
     if-eq v5, v6, :cond_21
 
-    .line 492
+    .line 488
     invoke-interface {v1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v6
@@ -1646,19 +1643,19 @@
 
     if-eqz v8, :cond_1e
 
-    goto :goto_10
+    goto :goto_11
 
     :cond_1f
-    move-object/from16 v7, v119
+    move-object/from16 v7, v118
 
-    :goto_10
+    :goto_11
     check-cast v7, Lorg/fork/models/backup/MultiPanelButtonStateBackup;
 
     if-nez v7, :cond_20
 
-    goto :goto_11
+    goto :goto_12
 
-    .line 494
+    .line 490
     :cond_20
     invoke-virtual {v7}, Lorg/fork/models/backup/MultiPanelButtonStateBackup;->getPosition()I
 
@@ -1666,7 +1663,7 @@
 
     if-lt v5, v2, :cond_21
 
-    .line 495
+    .line 491
     invoke-virtual {v7}, Lorg/fork/models/backup/MultiPanelButtonStateBackup;->getPosition()I
 
     move-result v5
@@ -1677,18 +1674,18 @@
 
     invoke-virtual {v7, v5}, Lorg/fork/models/backup/MultiPanelButtonStateBackup;->setPosition(I)V
 
-    goto :goto_f
+    goto :goto_10
 
     :cond_21
-    :goto_11
+    :goto_12
     const/4 v6, 0x1
 
-    goto :goto_f
+    goto :goto_10
 
     :cond_22
     const/4 v6, 0x1
 
-    .line 499
+    .line 495
     new-instance v4, Lorg/fork/models/backup/MultiPanelButtonStateBackup;
 
     sget-object v5, Lorg/fork/enums/MultiPanelButton;->CACHE:Lorg/fork/enums/MultiPanelButton;
@@ -1716,7 +1713,7 @@
 
     goto/16 :goto_6
 
-    .line 475
+    .line 471
     :pswitch_7
     invoke-virtual {v3}, Lorg/fork/models/backup/Backup;->getTopics()Ljava/util/List;
 
@@ -1734,7 +1731,7 @@
 
     goto/16 :goto_6
 
-    .line 474
+    .line 470
     :pswitch_8
     invoke-virtual {v3}, Lorg/fork/models/backup/Backup;->getDrawerItems()Ljava/util/Set;
 
@@ -1749,9 +1746,9 @@
     goto/16 :goto_6
 
     :pswitch_9
-    const/16 v2, 0xa
+    move v2, v15
 
-    .line 461
+    .line 457
     invoke-virtual {v3}, Lorg/fork/models/backup/Backup;->getSortingSettings()Ljava/util/List;
 
     move-result-object v1
@@ -1763,7 +1760,7 @@
 
     move-result-object v1
 
-    :goto_12
+    :goto_13
     invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v4
@@ -1776,7 +1773,7 @@
 
     check-cast v4, Lorg/fork/models/backup/SortingTabStateBackup;
 
-    .line 462
+    .line 458
     invoke-virtual {v4}, Lorg/fork/models/backup/SortingTabStateBackup;->getFabDataBackup()Lorg/fork/models/backup/FabDataBackup;
 
     move-result-object v5
@@ -1789,7 +1786,7 @@
 
     if-eqz v5, :cond_23
 
-    .line 463
+    .line 459
     invoke-virtual {v4}, Lorg/fork/models/backup/SortingTabStateBackup;->getFabDataBackup()Lorg/fork/models/backup/FabDataBackup;
 
     move-result-object v5
@@ -1798,9 +1795,9 @@
 
     move-result-object v5
 
-    goto :goto_13
+    goto :goto_14
 
-    .line 465
+    .line 461
     :cond_23
     sget-object v5, Lcom/smedialink/storage/domain/model/filters/FilterFab;->Companion:Lcom/smedialink/storage/domain/model/filters/FilterFab$Companion;
 
@@ -1820,16 +1817,16 @@
 
     move-result-object v5
 
-    .line 466
-    :goto_13
+    .line 462
+    :goto_14
     invoke-static {v5}, Lkotlin/collections/CollectionsKt;->toSet(Ljava/lang/Iterable;)Ljava/util/Set;
 
     move-result-object v5
 
-    .line 462
+    .line 458
     invoke-virtual {v4, v5}, Lorg/fork/models/backup/SortingTabStateBackup;->setFabs(Ljava/util/Set;)V
 
-    goto :goto_12
+    goto :goto_13
 
     .line 1856
     :cond_24
@@ -1984,9 +1981,7 @@
 
     const/16 v78, 0x0
 
-    const/16 v79, 0x0
-
-    .line 468
+    .line 464
     invoke-virtual {v3}, Lorg/fork/models/backup/Backup;->getAllChatsTabFab()Ljava/lang/String;
 
     move-result-object v1
@@ -1999,7 +1994,7 @@
 
     if-eqz v1, :cond_27
 
-    .line 469
+    .line 465
     invoke-virtual {v3}, Lorg/fork/models/backup/Backup;->getAllChatsTabMultiFabs()Ljava/util/List;
 
     move-result-object v1
@@ -2020,7 +2015,7 @@
 
     move-result-object v1
 
-    :goto_14
+    :goto_15
     invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v2
@@ -2034,7 +2029,7 @@
     .line 1621
     check-cast v2, Lcom/smedialink/storage/domain/model/filters/FilterFab;
 
-    .line 469
+    .line 465
     invoke-virtual {v2}, Ljava/lang/Enum;->name()Ljava/lang/String;
 
     move-result-object v2
@@ -2042,43 +2037,45 @@
     .line 1621
     invoke-interface {v15, v2}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
-    goto :goto_14
+    goto :goto_15
 
-    .line 469
+    .line 465
     :cond_26
     invoke-static {v15}, Lkotlin/collections/CollectionsKt;->toMutableSet(Ljava/lang/Iterable;)Ljava/util/Set;
 
     move-result-object v1
 
-    move-object/from16 v80, v1
+    move-object/from16 v79, v1
 
     const/4 v1, 0x1
 
-    const/16 v119, 0x0
+    const/16 v118, 0x0
 
-    goto :goto_15
+    goto :goto_16
 
     :cond_27
     const/4 v1, 0x1
 
     new-array v2, v1, [Ljava/lang/String;
 
-    .line 471
+    .line 467
     invoke-virtual {v3}, Lorg/fork/models/backup/Backup;->getAllChatsTabFab()Ljava/lang/String;
 
     move-result-object v15
 
-    const/16 v119, 0x0
+    const/16 v118, 0x0
 
-    aput-object v15, v2, v119
+    aput-object v15, v2, v118
 
     invoke-static {v2}, Lkotlin/collections/SetsKt;->mutableSetOf([Ljava/lang/Object;)Ljava/util/Set;
 
     move-result-object v2
 
-    move-object/from16 v80, v2
+    move-object/from16 v79, v2
 
-    :goto_15
+    :goto_16
+    const/16 v80, 0x0
+
     const/16 v81, 0x0
 
     const/16 v82, 0x0
@@ -2143,40 +2140,38 @@
 
     const/16 v112, 0x0
 
-    const/16 v113, 0x0
+    const/16 v113, -0x1
 
     const/16 v114, -0x1
 
-    const/16 v115, -0x1
+    const/16 v115, -0x801
 
-    const/16 v116, -0x1001
+    const/16 v116, 0x1fff
 
-    const/16 v117, 0x3fff
-
-    const/16 v118, 0x0
+    const/16 v117, 0x0
 
     const/4 v2, 0x0
 
     move-object v15, v2
 
-    .line 468
-    invoke-static/range {v3 .. v118}, Lorg/fork/models/backup/Backup;->copy$default(Lorg/fork/models/backup/Backup;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Lorg/fork/models/DrawerHeaderSettings;Ljava/util/Set;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/Set;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/Map;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/Set;Ljava/util/List;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/Boolean;Ljava/util/Set;Ljava/lang/Boolean;Ljava/util/Set;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/Map;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/Set;Ljava/lang/Boolean;Ljava/util/Set;Ljava/lang/Boolean;Ljava/lang/Boolean;Lorg/fork/enums/DrawerHolidayIconType;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/List;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/Set;Ljava/lang/Boolean;Ljava/util/List;Ljava/lang/Boolean;Ljava/util/List;Ljava/util/Map;Ljava/util/Map;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/List;Ljava/util/Map;Ljava/util/List;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/String;Ljava/util/Map;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Long;Ljava/util/List;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/Boolean;Ljava/util/List;Ljava/lang/Integer;Ljava/lang/String;Ljava/util/List;IIIILjava/lang/Object;)Lorg/fork/models/backup/Backup;
+    .line 464
+    invoke-static/range {v3 .. v117}, Lorg/fork/models/backup/Backup;->copy$default(Lorg/fork/models/backup/Backup;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Lorg/fork/models/DrawerHeaderSettings;Ljava/util/Set;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/Set;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/Map;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/Set;Ljava/util/List;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/Boolean;Ljava/util/Set;Ljava/lang/Boolean;Ljava/util/Set;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/Map;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/Set;Ljava/lang/Boolean;Ljava/util/Set;Ljava/lang/Boolean;Ljava/lang/Boolean;Lorg/fork/enums/DrawerHolidayIconType;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/List;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/Set;Ljava/lang/Boolean;Ljava/util/List;Ljava/lang/Boolean;Ljava/util/List;Ljava/util/Map;Ljava/util/Map;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/List;Ljava/util/Map;Ljava/util/List;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/String;Ljava/util/Map;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Long;Ljava/util/List;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/Boolean;Ljava/util/List;Ljava/lang/Integer;Ljava/lang/String;Ljava/util/List;IIIILjava/lang/Object;)Lorg/fork/models/backup/Backup;
 
     move-result-object v2
 
-    .line 473
+    .line 469
     sget-object v3, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
     move-object v3, v2
 
-    goto :goto_17
+    goto :goto_18
 
     :pswitch_a
-    const/4 v1, 0x1
+    move v1, v2
 
-    const/16 v119, 0x0
+    const/16 v118, 0x0
 
-    .line 457
+    .line 453
     invoke-virtual {v3}, Lorg/fork/models/backup/Backup;->getTopics()Ljava/util/List;
 
     move-result-object v2
@@ -2188,7 +2183,7 @@
 
     move-result-object v2
 
-    :goto_16
+    :goto_17
     invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v4
@@ -2201,7 +2196,7 @@
 
     check-cast v4, Lorg/fork/models/backup/TopicBackup;
 
-    .line 458
+    .line 454
     invoke-virtual {v4}, Lorg/fork/models/backup/TopicBackup;->getTopicId()Ljava/lang/String;
 
     move-result-object v5
@@ -2214,22 +2209,24 @@
 
     invoke-virtual {v4, v5}, Lorg/fork/models/backup/TopicBackup;->setIcon(Lcom/smedialink/storage/data/repository/topics/Topic;)V
 
-    goto :goto_16
+    goto :goto_17
 
     .line 1856
     :cond_28
     sget-object v2, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
     :cond_29
-    :goto_17
+    :goto_18
     add-int/lit8 v0, v0, 0x1
 
-    const/4 v2, 0x1
+    move v2, v1
 
     goto/16 :goto_1
 
     :cond_2a
     return-object v3
+
+    nop
 
     :pswitch_data_0
     .packed-switch 0x2
@@ -2254,7 +2251,7 @@
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 475
+    .line 471
     invoke-interface {p0, p1}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p0
@@ -2271,7 +2268,7 @@
 .method private final needSkipAutoBackup()Z
     .locals 6
 
-    .line 440
+    .line 436
     sget-object v0, Ljava/util/concurrent/TimeUnit;->DAYS:Ljava/util/concurrent/TimeUnit;
 
     iget-object v1, p0, Lorg/fork/controller/BackupController;->selectedAutoBackupInterval:Lorg/fork/enums/Interval;
@@ -2286,7 +2283,7 @@
 
     move-result-wide v0
 
-    .line 441
+    .line 437
     invoke-static {}, Lcom/smedialink/storage/data/utils/extentions/DateExtKt;->now()J
 
     move-result-wide v2
@@ -2295,9 +2292,9 @@
 
     sub-long/2addr v2, v4
 
-    cmp-long v4, v2, v0
+    cmp-long v0, v2, v0
 
-    if-gez v4, :cond_0
+    if-gez v0, :cond_0
 
     const/4 v0, 0x1
 
@@ -2333,7 +2330,7 @@
 
     invoke-static {p4, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 215
+    .line 214
     :try_start_0
     new-instance v0, Lcom/google/gson/stream/JsonReader;
 
@@ -2357,7 +2354,7 @@
 
     invoke-direct {v0, v1}, Lcom/google/gson/stream/JsonReader;-><init>(Ljava/io/Reader;)V
 
-    .line 216
+    .line 215
     invoke-direct {p0}, Lorg/fork/controller/BackupController;->getGson()Lcom/google/gson/Gson;
 
     move-result-object p1
@@ -2378,28 +2375,28 @@
 
     move-result-object p1
 
-    .line 218
+    .line 217
     invoke-virtual {p0}, Lorg/telegram/messenger/BaseController;->getBackupController()Lorg/fork/controller/BackupController;
 
     move-result-object v0
 
     invoke-virtual {v0, p1}, Lorg/fork/controller/BackupController;->restoreBackup(Lorg/fork/models/backup/Backup;)V
 
-    .line 219
+    .line 218
     invoke-virtual {p0}, Lorg/telegram/messenger/BaseController;->getForkCommonController()Lorg/fork/controller/ForkCommonController;
 
     move-result-object v0
 
     invoke-virtual {v0, p1}, Lorg/fork/controller/ForkCommonController;->restoreBackup(Lorg/fork/models/backup/Backup;)V
 
-    .line 220
+    .line 219
     invoke-virtual {p1}, Lorg/fork/models/backup/Backup;->isFilesSendingPreviewAndCaptionEnabled()Ljava/lang/Boolean;
 
     move-result-object v0
 
     if-eqz v0, :cond_0
 
-    .line 221
+    .line 220
     invoke-virtual {p1}, Lorg/fork/models/backup/Backup;->isFilesSendingPreviewAndCaptionEnabled()Ljava/lang/Boolean;
 
     move-result-object v0
@@ -2410,7 +2407,7 @@
 
     invoke-static {v0}, Lorg/telegram/messenger/SharedConfig;->setFilesSendingPreviewAndCaptionEnabled(Z)V
 
-    .line 223
+    .line 222
     :cond_0
     invoke-virtual {p1}, Lorg/fork/models/backup/Backup;->isVibrationEnabled()Ljava/lang/Boolean;
 
@@ -2418,7 +2415,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 224
+    .line 223
     invoke-virtual {p1}, Lorg/fork/models/backup/Backup;->isVibrationEnabled()Ljava/lang/Boolean;
 
     move-result-object v0
@@ -2429,34 +2426,15 @@
 
     invoke-static {v0}, Lorg/telegram/messenger/SharedConfig;->setVibrationEnabled(Z)V
 
-    .line 226
+    .line 225
     :cond_1
-    invoke-virtual {p1}, Lorg/fork/models/backup/Backup;->isRaiseToSwitchSpeakerEnabled()Ljava/lang/Boolean;
+    invoke-virtual {p1}, Lorg/fork/models/backup/Backup;->getSelectedStickersSize()Ljava/lang/String;
 
     move-result-object v0
 
     if-eqz v0, :cond_2
 
-    .line 227
-    invoke-virtual {p1}, Lorg/fork/models/backup/Backup;->isRaiseToSwitchSpeakerEnabled()Ljava/lang/Boolean;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
-
-    move-result v0
-
-    invoke-static {v0}, Lorg/telegram/messenger/SharedConfig;->setRaiseToSwitchSpeakerEnabled(Z)V
-
-    .line 229
-    :cond_2
-    invoke-virtual {p1}, Lorg/fork/models/backup/Backup;->getSelectedStickersSize()Ljava/lang/String;
-
-    move-result-object v0
-
-    if-eqz v0, :cond_3
-
-    .line 230
+    .line 226
     sget-object v0, Lorg/fork/enums/StickersSize;->Companion:Lorg/fork/enums/StickersSize$Companion;
 
     invoke-virtual {p1}, Lorg/fork/models/backup/Backup;->getSelectedStickersSize()Ljava/lang/String;
@@ -2469,15 +2447,15 @@
 
     invoke-static {v0}, Lorg/telegram/messenger/SharedConfig;->setSelectedStickersSize(Lorg/fork/enums/StickersSize;)V
 
-    .line 232
-    :cond_3
+    .line 228
+    :cond_2
     invoke-virtual {p1}, Lorg/fork/models/backup/Backup;->isProxyButtonForceVisible()Ljava/lang/Boolean;
 
     move-result-object v0
 
-    if-eqz v0, :cond_4
+    if-eqz v0, :cond_3
 
-    .line 233
+    .line 229
     invoke-virtual {p1}, Lorg/fork/models/backup/Backup;->isProxyButtonForceVisible()Ljava/lang/Boolean;
 
     move-result-object v0
@@ -2488,15 +2466,15 @@
 
     invoke-static {v0}, Lorg/telegram/messenger/SharedConfig;->setProxyButtonForceVisible(Z)V
 
-    .line 235
-    :cond_4
+    .line 231
+    :cond_3
     invoke-virtual {p1}, Lorg/fork/models/backup/Backup;->isReadAllChatsConfirmationShown()Ljava/lang/Boolean;
 
     move-result-object v0
 
-    if-eqz v0, :cond_5
+    if-eqz v0, :cond_4
 
-    .line 236
+    .line 232
     invoke-virtual {p1}, Lorg/fork/models/backup/Backup;->isReadAllChatsConfirmationShown()Ljava/lang/Boolean;
 
     move-result-object v0
@@ -2507,15 +2485,15 @@
 
     invoke-static {v0}, Lorg/telegram/messenger/SharedConfig;->setReadAllChatsConfirmationShown(Z)V
 
-    .line 238
-    :cond_5
+    .line 234
+    :cond_4
     invoke-virtual {p1}, Lorg/fork/models/backup/Backup;->isProfileInfoHidden()Ljava/lang/Boolean;
 
     move-result-object v0
 
-    if-eqz v0, :cond_6
+    if-eqz v0, :cond_5
 
-    .line 239
+    .line 235
     invoke-virtual {p1}, Lorg/fork/models/backup/Backup;->isProfileInfoHidden()Ljava/lang/Boolean;
 
     move-result-object v0
@@ -2526,15 +2504,15 @@
 
     invoke-static {v0}, Lorg/telegram/messenger/SharedConfig;->setProfileInfoHidden(Z)V
 
-    .line 241
-    :cond_6
+    .line 237
+    :cond_5
     invoke-virtual {p1}, Lorg/fork/models/backup/Backup;->isMultiForwardingOptionsHintShown()Ljava/lang/Boolean;
 
     move-result-object v0
 
-    if-eqz v0, :cond_7
+    if-eqz v0, :cond_6
 
-    .line 242
+    .line 238
     invoke-virtual {p1}, Lorg/fork/models/backup/Backup;->isMultiForwardingOptionsHintShown()Ljava/lang/Boolean;
 
     move-result-object v0
@@ -2545,15 +2523,15 @@
 
     invoke-static {v0}, Lorg/telegram/messenger/SharedConfig;->setMultiForwardingOptionsHintShown(Z)V
 
-    .line 244
-    :cond_7
+    .line 240
+    :cond_6
     invoke-virtual {p1}, Lorg/fork/models/backup/Backup;->isSuggestPremiumReactionsEmoji()Ljava/lang/Boolean;
 
     move-result-object v0
 
-    if-eqz v0, :cond_8
+    if-eqz v0, :cond_7
 
-    .line 245
+    .line 241
     invoke-virtual {p1}, Lorg/fork/models/backup/Backup;->isSuggestPremiumReactionsEmoji()Ljava/lang/Boolean;
 
     move-result-object v0
@@ -2565,18 +2543,18 @@
     invoke-static {v0}, Lorg/telegram/messenger/SharedConfig;->setSuggestPremiumReactionsEmoji(Z)V
 
     .line 1855
-    :cond_8
+    :cond_7
     invoke-interface {p2}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object p2
 
-    :cond_9
+    :cond_8
     :goto_0
     invoke-interface {p2}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v0
 
-    if-eqz v0, :cond_30
+    if-eqz v0, :cond_2f
 
     invoke-interface {p2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -2584,7 +2562,7 @@
 
     check-cast v0, Lorg/fork/enums/BackupComponent;
 
-    .line 249
+    .line 245
     sget-object v1, Lorg/fork/controller/BackupController$WhenMappings;->$EnumSwitchMapping$0:[I
 
     invoke-virtual {v0}, Ljava/lang/Enum;->ordinal()I
@@ -2599,7 +2577,7 @@
 
     goto :goto_0
 
-    .line 419
+    .line 415
     :pswitch_0
     invoke-virtual {p0}, Lorg/telegram/messenger/BaseController;->getForkTopicsController()Lorg/fork/controller/ForkTopicsController;
 
@@ -2609,7 +2587,7 @@
 
     goto :goto_0
 
-    .line 411
+    .line 407
     :pswitch_1
     invoke-virtual {p0}, Lorg/telegram/messenger/BaseController;->getTemplatesController()Lorg/fork/controller/TemplatesController;
 
@@ -2617,14 +2595,14 @@
 
     invoke-virtual {v0, p1}, Lorg/fork/controller/TemplatesController;->restoreBackup(Lorg/fork/models/backup/Backup;)V
 
-    .line 412
+    .line 408
     invoke-virtual {p1}, Lorg/fork/models/backup/Backup;->getTemplatesMode()Ljava/lang/String;
 
     move-result-object v0
 
-    if-eqz v0, :cond_a
+    if-eqz v0, :cond_9
 
-    .line 413
+    .line 409
     sget-object v0, Lorg/fork/enums/TemplatesMode;->Companion:Lorg/fork/enums/TemplatesMode$Companion;
 
     invoke-virtual {p1}, Lorg/fork/models/backup/Backup;->getTemplatesMode()Ljava/lang/String;
@@ -2637,15 +2615,15 @@
 
     invoke-static {v0}, Lorg/telegram/messenger/SharedConfig;->setSelectedTemplatesMode(Lorg/fork/enums/TemplatesMode;)V
 
-    .line 415
-    :cond_a
+    .line 411
+    :cond_9
     invoke-virtual {p1}, Lorg/fork/models/backup/Backup;->getSelectedTemplatesSortingType()Ljava/lang/String;
 
     move-result-object v0
 
-    if-eqz v0, :cond_9
+    if-eqz v0, :cond_8
 
-    .line 416
+    .line 412
     sget-object v0, Lorg/fork/enums/TemplatesSortingType;->Companion:Lorg/fork/enums/TemplatesSortingType$Companion;
 
     invoke-virtual {p1}, Lorg/fork/models/backup/Backup;->getSelectedTemplatesSortingType()Ljava/lang/String;
@@ -2660,7 +2638,7 @@
 
     goto :goto_0
 
-    .line 409
+    .line 405
     :pswitch_2
     invoke-virtual {p0}, Lorg/telegram/messenger/BaseController;->getDialogTranslationSettingsController()Lorg/fork/controller/DialogTranslationController;
 
@@ -2670,7 +2648,7 @@
 
     goto :goto_0
 
-    .line 392
+    .line 388
     :pswitch_3
     invoke-virtual {p0}, Lorg/telegram/messenger/BaseController;->getMusicController()Lorg/fork/controller/MusicController;
 
@@ -2678,14 +2656,14 @@
 
     invoke-virtual {v0, p1}, Lorg/fork/controller/MusicController;->restoreBackup(Lorg/fork/models/backup/Backup;)V
 
-    .line 393
+    .line 389
     invoke-virtual {p1}, Lorg/fork/models/backup/Backup;->isPlayerPinned()Ljava/lang/Boolean;
 
     move-result-object v0
 
-    if-eqz v0, :cond_b
+    if-eqz v0, :cond_a
 
-    .line 394
+    .line 390
     invoke-virtual {p1}, Lorg/fork/models/backup/Backup;->isPlayerPinned()Ljava/lang/Boolean;
 
     move-result-object v0
@@ -2696,15 +2674,15 @@
 
     invoke-static {v0}, Lorg/telegram/messenger/SharedConfig;->setPlayerPinned(Z)V
 
-    .line 396
-    :cond_b
+    .line 392
+    :cond_a
     invoke-virtual {p1}, Lorg/fork/models/backup/Backup;->isPinnedPlayerMinimized()Ljava/lang/Boolean;
 
     move-result-object v0
 
-    if-eqz v0, :cond_c
+    if-eqz v0, :cond_b
 
-    .line 397
+    .line 393
     invoke-virtual {p1}, Lorg/fork/models/backup/Backup;->isPinnedPlayerMinimized()Ljava/lang/Boolean;
 
     move-result-object v0
@@ -2715,15 +2693,15 @@
 
     invoke-static {v0}, Lorg/telegram/messenger/SharedConfig;->setPinnedPlayerMinimized(Z)V
 
-    .line 399
-    :cond_c
+    .line 395
+    :cond_b
     invoke-virtual {p1}, Lorg/fork/models/backup/Backup;->isPinnedPlayerThemeOverridden()Ljava/lang/Boolean;
 
     move-result-object v0
 
-    if-eqz v0, :cond_d
+    if-eqz v0, :cond_c
 
-    .line 400
+    .line 396
     invoke-virtual {p1}, Lorg/fork/models/backup/Backup;->isPinnedPlayerThemeOverridden()Ljava/lang/Boolean;
 
     move-result-object v0
@@ -2734,15 +2712,15 @@
 
     invoke-static {v0}, Lorg/telegram/messenger/SharedConfig;->setPinnedPlayerThemeOverridden(Z)V
 
-    .line 402
-    :cond_d
+    .line 398
+    :cond_c
     invoke-virtual {p1}, Lorg/fork/models/backup/Backup;->isPinnedPlayerNightThemeEnabled()Ljava/lang/Boolean;
 
     move-result-object v0
 
-    if-eqz v0, :cond_e
+    if-eqz v0, :cond_d
 
-    .line 403
+    .line 399
     invoke-virtual {p1}, Lorg/fork/models/backup/Backup;->isPinnedPlayerNightThemeEnabled()Ljava/lang/Boolean;
 
     move-result-object v0
@@ -2753,15 +2731,15 @@
 
     invoke-static {v0}, Lorg/telegram/messenger/SharedConfig;->setPinnedPlayerNightThemeEnabled(Z)V
 
-    .line 405
-    :cond_e
+    .line 401
+    :cond_d
     invoke-virtual {p1}, Lorg/fork/models/backup/Backup;->isMusicIntroShown()Ljava/lang/Boolean;
 
     move-result-object v0
 
-    if-eqz v0, :cond_9
+    if-eqz v0, :cond_8
 
-    .line 406
+    .line 402
     invoke-virtual {p1}, Lorg/fork/models/backup/Backup;->isMusicIntroShown()Ljava/lang/Boolean;
 
     move-result-object v0
@@ -2774,7 +2752,7 @@
 
     goto/16 :goto_0
 
-    .line 390
+    .line 386
     :pswitch_4
     invoke-virtual {p0}, Lorg/telegram/messenger/BaseController;->getBookmarksController()Lorg/fork/controller/BookmarksController;
 
@@ -2784,7 +2762,7 @@
 
     goto/16 :goto_0
 
-    .line 379
+    .line 375
     :pswitch_5
     invoke-virtual {p0}, Lorg/telegram/messenger/BaseController;->getAlbumsController()Lorg/fork/controller/AlbumsController;
 
@@ -2792,14 +2770,14 @@
 
     invoke-virtual {v0, p1}, Lorg/fork/controller/AlbumsController;->restoreBackup(Lorg/fork/models/backup/Backup;)V
 
-    .line 380
+    .line 376
     invoke-virtual {p1}, Lorg/fork/models/backup/Backup;->isCLoudAlbumsEnabled()Ljava/lang/Boolean;
 
     move-result-object v0
 
-    if-eqz v0, :cond_f
+    if-eqz v0, :cond_e
 
-    .line 381
+    .line 377
     invoke-virtual {p1}, Lorg/fork/models/backup/Backup;->isCLoudAlbumsEnabled()Ljava/lang/Boolean;
 
     move-result-object v0
@@ -2810,15 +2788,15 @@
 
     invoke-static {v0}, Lorg/telegram/messenger/SharedConfig;->setCloudAlbumsEnabled(Z)V
 
-    .line 383
-    :cond_f
+    .line 379
+    :cond_e
     invoke-virtual {p1}, Lorg/fork/models/backup/Backup;->isAlbumsIntroShown()Ljava/lang/Boolean;
 
     move-result-object v0
 
-    if-eqz v0, :cond_10
+    if-eqz v0, :cond_f
 
-    .line 384
+    .line 380
     invoke-virtual {p1}, Lorg/fork/models/backup/Backup;->isAlbumsIntroShown()Ljava/lang/Boolean;
 
     move-result-object v0
@@ -2829,15 +2807,15 @@
 
     invoke-static {v0}, Lorg/telegram/messenger/SharedConfig;->setAlbumsIntroShown(Z)V
 
-    .line 386
-    :cond_10
+    .line 382
+    :cond_f
     invoke-virtual {p1}, Lorg/fork/models/backup/Backup;->isSortCloudAlbumsByNameEnabled()Ljava/lang/Boolean;
 
     move-result-object v0
 
-    if-eqz v0, :cond_9
+    if-eqz v0, :cond_8
 
-    .line 387
+    .line 383
     invoke-virtual {p1}, Lorg/fork/models/backup/Backup;->isSortCloudAlbumsByNameEnabled()Ljava/lang/Boolean;
 
     move-result-object v0
@@ -2850,34 +2828,34 @@
 
     goto/16 :goto_0
 
-    .line 368
+    .line 364
     :pswitch_6
     invoke-virtual {p0}, Lorg/telegram/messenger/BaseController;->getFiltersController()Lorg/fork/controller/FiltersController;
 
     move-result-object v0
 
-    .line 369
+    .line 365
     invoke-virtual {v0, p1}, Lorg/fork/controller/FiltersController;->restoreAllChatsTabBackup(Lorg/fork/models/backup/Backup;)V
 
-    .line 370
+    .line 366
     invoke-virtual {v0, v1, p1, p3}, Lorg/fork/controller/FiltersController;->restoreSortingBackup(ZLorg/fork/models/backup/Backup;Lorg/telegram/ui/ActionBar/BaseFragment;)V
 
     const/4 v1, 0x1
 
-    .line 371
+    .line 367
     invoke-virtual {v0, v1, p1, p3}, Lorg/fork/controller/FiltersController;->restoreSortingBackup(ZLorg/fork/models/backup/Backup;Lorg/telegram/ui/ActionBar/BaseFragment;)V
 
-    .line 372
+    .line 368
     invoke-virtual {v0}, Lorg/fork/controller/FiltersController;->saveConfig()V
 
-    .line 374
+    .line 370
     invoke-virtual {p1}, Lorg/fork/models/backup/Backup;->isChatSortingEnabledByDefault()Ljava/lang/Boolean;
 
     move-result-object v0
 
-    if-eqz v0, :cond_9
+    if-eqz v0, :cond_8
 
-    .line 375
+    .line 371
     invoke-virtual {p1}, Lorg/fork/models/backup/Backup;->isChatSortingEnabledByDefault()Ljava/lang/Boolean;
 
     move-result-object v0
@@ -2890,7 +2868,7 @@
 
     goto/16 :goto_0
 
-    .line 353
+    .line 349
     :pswitch_7
     invoke-virtual {p0}, Lorg/telegram/messenger/BaseController;->getFiltersController()Lorg/fork/controller/FiltersController;
 
@@ -2898,14 +2876,14 @@
 
     invoke-virtual {v0, p1}, Lorg/fork/controller/FiltersController;->restoreBackup(Lorg/fork/models/backup/Backup;)V
 
-    .line 354
+    .line 350
     invoke-virtual {p1}, Lorg/fork/models/backup/Backup;->getFilterTabsAtBottom()Ljava/lang/Boolean;
 
     move-result-object v0
 
-    if-eqz v0, :cond_11
+    if-eqz v0, :cond_10
 
-    .line 355
+    .line 351
     invoke-virtual {p1}, Lorg/fork/models/backup/Backup;->getFilterTabsAtBottom()Ljava/lang/Boolean;
 
     move-result-object v0
@@ -2916,15 +2894,15 @@
 
     invoke-static {v0}, Lorg/telegram/messenger/SharedConfig;->setFilterTabsAtBottomEnabled(Z)V
 
-    .line 357
-    :cond_11
+    .line 353
+    :cond_10
     invoke-virtual {p1}, Lorg/fork/models/backup/Backup;->getFilterTabsNotificationMode()Ljava/lang/String;
 
     move-result-object v0
 
-    if-eqz v0, :cond_12
+    if-eqz v0, :cond_11
 
-    .line 358
+    .line 354
     sget-object v0, Lorg/fork/enums/FilterTabNotificationMode;->Companion:Lorg/fork/enums/FilterTabNotificationMode$Companion;
 
     invoke-virtual {p1}, Lorg/fork/models/backup/Backup;->getFilterTabsNotificationMode()Ljava/lang/String;
@@ -2937,15 +2915,15 @@
 
     invoke-static {v0}, Lorg/telegram/messenger/SharedConfig;->setSelectedFilterTabsNotificationMode(Lorg/fork/enums/FilterTabNotificationMode;)V
 
-    .line 360
-    :cond_12
+    .line 356
+    :cond_11
     invoke-virtual {p1}, Lorg/fork/models/backup/Backup;->getFilterTabsWidthMode()Ljava/lang/String;
 
     move-result-object v0
 
-    if-eqz v0, :cond_13
+    if-eqz v0, :cond_12
 
-    .line 361
+    .line 357
     sget-object v0, Lorg/fork/enums/FilterTabWidthMode;->Companion:Lorg/fork/enums/FilterTabWidthMode$Companion;
 
     invoke-virtual {p1}, Lorg/fork/models/backup/Backup;->getFilterTabsWidthMode()Ljava/lang/String;
@@ -2958,15 +2936,15 @@
 
     invoke-static {v0}, Lorg/telegram/messenger/SharedConfig;->setSelectedFilterTabsWidthMode(Lorg/fork/enums/FilterTabWidthMode;)V
 
-    .line 363
-    :cond_13
+    .line 359
+    :cond_12
     invoke-virtual {p1}, Lorg/fork/models/backup/Backup;->getRememberLastFilterTab()Ljava/lang/Boolean;
 
     move-result-object v0
 
-    if-eqz v0, :cond_9
+    if-eqz v0, :cond_8
 
-    .line 364
+    .line 360
     invoke-virtual {p1}, Lorg/fork/models/backup/Backup;->getRememberLastFilterTab()Ljava/lang/Boolean;
 
     move-result-object v0
@@ -2979,7 +2957,7 @@
 
     goto/16 :goto_0
 
-    .line 310
+    .line 306
     :pswitch_8
     invoke-virtual {p0}, Lorg/telegram/messenger/BaseController;->getToolsController()Lorg/fork/controller/ToolsController;
 
@@ -2987,21 +2965,21 @@
 
     invoke-virtual {v0, p1}, Lorg/fork/controller/ToolsController;->restoreBackup(Lorg/fork/models/backup/Backup;)V
 
-    .line 311
+    .line 307
     invoke-virtual {p0}, Lorg/telegram/messenger/BaseController;->getRecentChatsController()Lorg/fork/controller/RecentChatsController;
 
     move-result-object v0
 
     invoke-virtual {v0, p1}, Lorg/fork/controller/RecentChatsController;->restoreBackup(Lorg/fork/models/backup/Backup;)V
 
-    .line 312
+    .line 308
     invoke-virtual {p1}, Lorg/fork/models/backup/Backup;->isOpenForwardingOptionsAutomaticallyEnabled()Ljava/lang/Boolean;
 
     move-result-object v0
 
-    if-eqz v0, :cond_14
+    if-eqz v0, :cond_13
 
-    .line 313
+    .line 309
     invoke-virtual {p1}, Lorg/fork/models/backup/Backup;->isOpenForwardingOptionsAutomaticallyEnabled()Ljava/lang/Boolean;
 
     move-result-object v0
@@ -3012,15 +2990,15 @@
 
     invoke-static {v0}, Lorg/telegram/messenger/SharedConfig;->setOpenForwardingOptionsAutomaticallyEnabled(Z)V
 
-    .line 315
-    :cond_14
+    .line 311
+    :cond_13
     invoke-virtual {p1}, Lorg/fork/models/backup/Backup;->isCustomSharingModeEnabled()Ljava/lang/Boolean;
 
     move-result-object v0
 
-    if-eqz v0, :cond_15
+    if-eqz v0, :cond_14
 
-    .line 316
+    .line 312
     invoke-virtual {p1}, Lorg/fork/models/backup/Backup;->isCustomSharingModeEnabled()Ljava/lang/Boolean;
 
     move-result-object v0
@@ -3031,15 +3009,15 @@
 
     invoke-static {v0}, Lorg/telegram/messenger/SharedConfig;->setCustomSharingModeEnabled(Z)V
 
-    .line 318
-    :cond_15
+    .line 314
+    :cond_14
     invoke-virtual {p1}, Lorg/fork/models/backup/Backup;->isMultiReplyEnabled()Ljava/lang/Boolean;
 
     move-result-object v0
 
-    if-eqz v0, :cond_16
+    if-eqz v0, :cond_15
 
-    .line 319
+    .line 315
     invoke-virtual {p1}, Lorg/fork/models/backup/Backup;->isMultiReplyEnabled()Ljava/lang/Boolean;
 
     move-result-object v0
@@ -3050,15 +3028,15 @@
 
     invoke-static {v0}, Lorg/telegram/messenger/SharedConfig;->setMultiReplyEnabled(Z)V
 
-    .line 321
-    :cond_16
+    .line 317
+    :cond_15
     invoke-virtual {p1}, Lorg/fork/models/backup/Backup;->getSelectedChatProfileTelegramIdMode()Ljava/lang/String;
 
     move-result-object v0
 
-    if-eqz v0, :cond_17
+    if-eqz v0, :cond_16
 
-    .line 322
+    .line 318
     sget-object v0, Lorg/fork/enums/ChatProfileTelegramIdMode;->Companion:Lorg/fork/enums/ChatProfileTelegramIdMode$Companion;
 
     invoke-virtual {p1}, Lorg/fork/models/backup/Backup;->getSelectedChatProfileTelegramIdMode()Ljava/lang/String;
@@ -3071,15 +3049,15 @@
 
     invoke-static {v0}, Lorg/telegram/messenger/SharedConfig;->setSelectedChatProfileTelegramIdMode(Lorg/fork/enums/ChatProfileTelegramIdMode;)V
 
-    .line 324
-    :cond_17
+    .line 320
+    :cond_16
     invoke-virtual {p1}, Lorg/fork/models/backup/Backup;->isMessageQuickTranslateEnabled()Ljava/lang/Boolean;
 
     move-result-object v0
 
-    if-eqz v0, :cond_18
+    if-eqz v0, :cond_17
 
-    .line 325
+    .line 321
     invoke-virtual {p1}, Lorg/fork/models/backup/Backup;->isMessageQuickTranslateEnabled()Ljava/lang/Boolean;
 
     move-result-object v0
@@ -3090,15 +3068,15 @@
 
     invoke-static {v0}, Lorg/telegram/messenger/SharedConfig;->setMessageQuickTranslateEnabled(Z)V
 
-    .line 327
-    :cond_18
+    .line 323
+    :cond_17
     invoke-virtual {p1}, Lorg/fork/models/backup/Backup;->isBotHelpTranslateEnabled()Ljava/lang/Boolean;
 
     move-result-object v0
 
-    if-eqz v0, :cond_19
+    if-eqz v0, :cond_18
 
-    .line 328
+    .line 324
     invoke-virtual {p1}, Lorg/fork/models/backup/Backup;->isBotHelpTranslateEnabled()Ljava/lang/Boolean;
 
     move-result-object v0
@@ -3109,15 +3087,15 @@
 
     invoke-static {v0}, Lorg/telegram/messenger/SharedConfig;->setBotHelpTranslateEnabled(Z)V
 
-    .line 330
-    :cond_19
+    .line 326
+    :cond_18
     invoke-virtual {p1}, Lorg/fork/models/backup/Backup;->isTranslateInSendPopupEnabled()Ljava/lang/Boolean;
 
     move-result-object v0
 
-    if-eqz v0, :cond_1a
+    if-eqz v0, :cond_19
 
-    .line 331
+    .line 327
     invoke-virtual {p1}, Lorg/fork/models/backup/Backup;->isTranslateInSendPopupEnabled()Ljava/lang/Boolean;
 
     move-result-object v0
@@ -3128,15 +3106,15 @@
 
     invoke-static {v0}, Lorg/telegram/messenger/SharedConfig;->setTranslateInSendPopupEnabled(Z)V
 
-    .line 333
-    :cond_1a
+    .line 329
+    :cond_19
     invoke-virtual {p1}, Lorg/fork/models/backup/Backup;->isCombineMessagesEnabled()Ljava/lang/Boolean;
 
     move-result-object v0
 
-    if-eqz v0, :cond_1b
+    if-eqz v0, :cond_1a
 
-    .line 334
+    .line 330
     invoke-virtual {p1}, Lorg/fork/models/backup/Backup;->isCombineMessagesEnabled()Ljava/lang/Boolean;
 
     move-result-object v0
@@ -3147,15 +3125,15 @@
 
     invoke-static {v0}, Lorg/telegram/messenger/SharedConfig;->setCombineMessagesEnabled(Z)V
 
-    .line 336
-    :cond_1b
+    .line 332
+    :cond_1a
     invoke-virtual {p1}, Lorg/fork/models/backup/Backup;->getSelectedPhotoViewerMenuItems()Ljava/util/Set;
 
     move-result-object v0
 
-    if-eqz v0, :cond_1c
+    if-eqz v0, :cond_1b
 
-    .line 337
+    .line 333
     sget-object v0, Lorg/fork/enums/PhotoViewerMenuItem;->Companion:Lorg/fork/enums/PhotoViewerMenuItem$Companion;
 
     invoke-virtual {p1}, Lorg/fork/models/backup/Backup;->getSelectedPhotoViewerMenuItems()Ljava/util/Set;
@@ -3168,15 +3146,15 @@
 
     invoke-static {v0}, Lorg/telegram/messenger/SharedConfig;->setSelectedPhotoViewerMenuItems(Ljava/util/Set;)V
 
-    .line 339
-    :cond_1c
+    .line 335
+    :cond_1b
     invoke-virtual {p1}, Lorg/fork/models/backup/Backup;->isReactionsEnabled()Ljava/lang/Boolean;
 
     move-result-object v0
 
-    if-eqz v0, :cond_1d
+    if-eqz v0, :cond_1c
 
-    .line 340
+    .line 336
     invoke-virtual {p1}, Lorg/fork/models/backup/Backup;->isReactionsEnabled()Ljava/lang/Boolean;
 
     move-result-object v0
@@ -3187,15 +3165,15 @@
 
     invoke-static {v0}, Lorg/telegram/messenger/SharedConfig;->setReactionsEnabled(Z)V
 
-    .line 342
-    :cond_1d
+    .line 338
+    :cond_1c
     invoke-virtual {p1}, Lorg/fork/models/backup/Backup;->getSelectedDialogTypesForMessagePopupReactions()Ljava/util/Set;
 
     move-result-object v0
 
-    if-eqz v0, :cond_1e
+    if-eqz v0, :cond_1d
 
-    .line 343
+    .line 339
     sget-object v0, Lorg/fork/enums/DialogType;->Companion:Lorg/fork/enums/DialogType$Companion;
 
     invoke-virtual {p1}, Lorg/fork/models/backup/Backup;->getSelectedDialogTypesForMessagePopupReactions()Ljava/util/Set;
@@ -3208,15 +3186,15 @@
 
     invoke-static {v0}, Lorg/telegram/messenger/SharedConfig;->setSelectedDialogTypesForMessagePopupReactions(Ljava/util/Set;)V
 
-    .line 345
-    :cond_1e
+    .line 341
+    :cond_1d
     invoke-virtual {p1}, Lorg/fork/models/backup/Backup;->isReactionsInSendPopupEnabled()Ljava/lang/Boolean;
 
     move-result-object v0
 
-    if-eqz v0, :cond_1f
+    if-eqz v0, :cond_1e
 
-    .line 346
+    .line 342
     invoke-virtual {p1}, Lorg/fork/models/backup/Backup;->isReactionsInSendPopupEnabled()Ljava/lang/Boolean;
 
     move-result-object v0
@@ -3227,15 +3205,15 @@
 
     invoke-static {v0}, Lorg/telegram/messenger/SharedConfig;->setReactionsInSendPopupEnabled(Z)V
 
-    .line 348
-    :cond_1f
+    .line 344
+    :cond_1e
     invoke-virtual {p1}, Lorg/fork/models/backup/Backup;->getDrawerHolidayIconType()Lorg/fork/enums/DrawerHolidayIconType;
 
     move-result-object v0
 
-    if-eqz v0, :cond_9
+    if-eqz v0, :cond_8
 
-    .line 349
+    .line 345
     sget-object v0, Lorg/fork/enums/DrawerHolidayIconType;->Companion:Lorg/fork/enums/DrawerHolidayIconType$Companion;
 
     invoke-virtual {p1}, Lorg/fork/models/backup/Backup;->getDrawerHolidayIconType()Lorg/fork/enums/DrawerHolidayIconType;
@@ -3254,7 +3232,7 @@
 
     goto/16 :goto_0
 
-    .line 308
+    .line 304
     :pswitch_9
     invoke-virtual {p0}, Lorg/telegram/messenger/BaseController;->getMultiPanelController()Lorg/fork/controller/MultiPanelController;
 
@@ -3264,7 +3242,7 @@
 
     goto/16 :goto_0
 
-    .line 251
+    .line 247
     :pswitch_a
     invoke-virtual {p0}, Lorg/telegram/messenger/BaseController;->getToolsController()Lorg/fork/controller/ToolsController;
 
@@ -3272,36 +3250,36 @@
 
     invoke-virtual {v0, p1}, Lorg/fork/controller/ToolsController;->restoreBackup(Lorg/fork/models/backup/Backup;)V
 
-    .line 252
+    .line 248
     invoke-virtual {p0}, Lorg/telegram/messenger/BaseController;->getRecentChatsController()Lorg/fork/controller/RecentChatsController;
 
     move-result-object v0
 
     invoke-virtual {v0, p1}, Lorg/fork/controller/RecentChatsController;->restoreBackup(Lorg/fork/models/backup/Backup;)V
 
-    .line 253
+    .line 249
     invoke-virtual {p1}, Lorg/fork/models/backup/Backup;->getDrawerHeaderSettings()Lorg/fork/models/DrawerHeaderSettings;
 
     move-result-object v0
 
-    if-eqz v0, :cond_20
+    if-eqz v0, :cond_1f
 
-    .line 254
+    .line 250
     invoke-virtual {p1}, Lorg/fork/models/backup/Backup;->getDrawerHeaderSettings()Lorg/fork/models/DrawerHeaderSettings;
 
     move-result-object v0
 
     invoke-static {v0}, Lorg/telegram/messenger/SharedConfig;->setDrawerHeaderSettings(Lorg/fork/models/DrawerHeaderSettings;)V
 
-    .line 256
-    :cond_20
+    .line 252
+    :cond_1f
     invoke-virtual {p1}, Lorg/fork/models/backup/Backup;->getDrawerItems()Ljava/util/Set;
 
     move-result-object v0
 
-    if-eqz v0, :cond_21
+    if-eqz v0, :cond_20
 
-    .line 257
+    .line 253
     sget-object v0, Lcom/smedialink/ui/drawer/DrawerSwitchableItem;->Companion:Lcom/smedialink/ui/drawer/DrawerSwitchableItem$Companion;
 
     invoke-virtual {p1}, Lorg/fork/models/backup/Backup;->getDrawerItems()Ljava/util/Set;
@@ -3314,15 +3292,15 @@
 
     invoke-static {v0}, Lorg/telegram/messenger/SharedConfig;->setSelectedDrawerItems(Ljava/util/Set;)V
 
-    .line 259
-    :cond_21
+    .line 255
+    :cond_20
     invoke-virtual {p1}, Lorg/fork/models/backup/Backup;->isActionBarAccountSwitchEnabled()Ljava/lang/Boolean;
 
     move-result-object v0
 
-    if-eqz v0, :cond_22
+    if-eqz v0, :cond_21
 
-    .line 260
+    .line 256
     invoke-virtual {p1}, Lorg/fork/models/backup/Backup;->isActionBarAccountSwitchEnabled()Ljava/lang/Boolean;
 
     move-result-object v0
@@ -3333,15 +3311,15 @@
 
     invoke-static {v0}, Lorg/telegram/messenger/SharedConfig;->setActionBarAccountSwitchEnabled(Z)V
 
-    .line 262
-    :cond_22
+    .line 258
+    :cond_21
     invoke-virtual {p1}, Lorg/fork/models/backup/Backup;->isMainActionBarMenuEnabled()Ljava/lang/Boolean;
 
     move-result-object v0
 
-    if-eqz v0, :cond_23
+    if-eqz v0, :cond_22
 
-    .line 263
+    .line 259
     invoke-virtual {p1}, Lorg/fork/models/backup/Backup;->isMainActionBarMenuEnabled()Ljava/lang/Boolean;
 
     move-result-object v0
@@ -3352,15 +3330,15 @@
 
     invoke-static {v0}, Lorg/telegram/messenger/SharedConfig;->setMainActionBarMenuEnabled(Z)V
 
-    .line 265
-    :cond_23
+    .line 261
+    :cond_22
     invoke-virtual {p1}, Lorg/fork/models/backup/Backup;->isDialogsCompactModeEnabled()Ljava/lang/Boolean;
 
     move-result-object v0
 
-    if-eqz v0, :cond_24
+    if-eqz v0, :cond_23
 
-    .line 266
+    .line 262
     invoke-virtual {p1}, Lorg/fork/models/backup/Backup;->isDialogsCompactModeEnabled()Ljava/lang/Boolean;
 
     move-result-object v0
@@ -3371,7 +3349,7 @@
 
     invoke-static {v0}, Lorg/telegram/messenger/SharedConfig;->setDialogsCompactModeEnabled(Z)V
 
-    .line 267
+    .line 263
     invoke-virtual {p1}, Lorg/fork/models/backup/Backup;->isDialogsCompactModeEnabled()Ljava/lang/Boolean;
 
     move-result-object v0
@@ -3380,20 +3358,20 @@
 
     move-result v0
 
-    if-eqz v0, :cond_24
+    if-eqz v0, :cond_23
 
-    .line 268
+    .line 264
     invoke-static {v1}, Lorg/telegram/messenger/SharedConfig;->setUseThreeLinesLayout(Z)V
 
-    .line 271
-    :cond_24
+    .line 267
+    :cond_23
     invoke-virtual {p1}, Lorg/fork/models/backup/Backup;->isHideChatKeyboardOnScrollEnabled()Ljava/lang/Boolean;
 
     move-result-object v0
 
-    if-eqz v0, :cond_25
+    if-eqz v0, :cond_24
 
-    .line 272
+    .line 268
     invoke-virtual {p1}, Lorg/fork/models/backup/Backup;->isHideChatKeyboardOnScrollEnabled()Ljava/lang/Boolean;
 
     move-result-object v0
@@ -3404,15 +3382,15 @@
 
     invoke-static {v0}, Lorg/telegram/messenger/SharedConfig;->setHideChatKeyboardOnScrollEnabled(Z)V
 
-    .line 274
-    :cond_25
+    .line 270
+    :cond_24
     invoke-virtual {p1}, Lorg/fork/models/backup/Backup;->isChatThemesEnabled()Ljava/lang/Boolean;
 
     move-result-object v0
 
-    if-eqz v0, :cond_26
+    if-eqz v0, :cond_25
 
-    .line 275
+    .line 271
     invoke-virtual {p1}, Lorg/fork/models/backup/Backup;->isChatThemesEnabled()Ljava/lang/Boolean;
 
     move-result-object v0
@@ -3423,15 +3401,15 @@
 
     invoke-static {v0}, Lorg/telegram/messenger/SharedConfig;->setChatThemesEnabled(Z)V
 
-    .line 277
-    :cond_26
+    .line 273
+    :cond_25
     invoke-virtual {p1}, Lorg/fork/models/backup/Backup;->isExtendedAvatarPreviewerEnabled()Ljava/lang/Boolean;
 
     move-result-object v0
 
-    if-eqz v0, :cond_27
+    if-eqz v0, :cond_26
 
-    .line 278
+    .line 274
     invoke-virtual {p1}, Lorg/fork/models/backup/Backup;->isExtendedAvatarPreviewerEnabled()Ljava/lang/Boolean;
 
     move-result-object v0
@@ -3442,15 +3420,15 @@
 
     invoke-static {v0}, Lorg/telegram/messenger/SharedConfig;->setExtendedAvatarPreviewerEnabled(Z)V
 
-    .line 280
-    :cond_27
+    .line 276
+    :cond_26
     invoke-virtual {p1}, Lorg/fork/models/backup/Backup;->isExtendedAvatarPreviewerByTapEnabled()Ljava/lang/Boolean;
 
     move-result-object v0
 
-    if-eqz v0, :cond_28
+    if-eqz v0, :cond_27
 
-    .line 281
+    .line 277
     invoke-virtual {p1}, Lorg/fork/models/backup/Backup;->isExtendedAvatarPreviewerByTapEnabled()Ljava/lang/Boolean;
 
     move-result-object v0
@@ -3461,15 +3439,15 @@
 
     invoke-static {v0}, Lorg/telegram/messenger/SharedConfig;->setExtendedAvatarPreviewerByTapEnabled(Z)V
 
-    .line 283
-    :cond_28
+    .line 279
+    :cond_27
     invoke-virtual {p1}, Lorg/fork/models/backup/Backup;->getSelectedExtendedAvatarPreviewerItems()Ljava/util/Set;
 
     move-result-object v0
 
-    if-eqz v0, :cond_29
+    if-eqz v0, :cond_28
 
-    .line 284
+    .line 280
     sget-object v0, Lorg/fork/enums/ExtendedAvatarPreviewerItem;->Companion:Lorg/fork/enums/ExtendedAvatarPreviewerItem$Companion;
 
     invoke-virtual {p1}, Lorg/fork/models/backup/Backup;->getSelectedExtendedAvatarPreviewerItems()Ljava/util/Set;
@@ -3482,15 +3460,15 @@
 
     invoke-static {v0}, Lorg/telegram/messenger/SharedConfig;->setSelectedExtendedAvatarPreviewerItems(Ljava/util/List;)V
 
-    .line 286
-    :cond_29
+    .line 282
+    :cond_28
     invoke-virtual {p1}, Lorg/fork/models/backup/Backup;->isCallsConfirmationEnabled()Ljava/lang/Boolean;
 
     move-result-object v0
 
-    if-eqz v0, :cond_2a
+    if-eqz v0, :cond_29
 
-    .line 287
+    .line 283
     invoke-virtual {p1}, Lorg/fork/models/backup/Backup;->isCallsConfirmationEnabled()Ljava/lang/Boolean;
 
     move-result-object v0
@@ -3501,15 +3479,15 @@
 
     invoke-static {v0}, Lorg/telegram/messenger/SharedConfig;->setCallsConfirmationEnabled(Z)V
 
-    .line 289
-    :cond_2a
+    .line 285
+    :cond_29
     invoke-virtual {p1}, Lorg/fork/models/backup/Backup;->isDeleteCloudConfirmationEnabled()Ljava/lang/Boolean;
 
     move-result-object v0
 
-    if-eqz v0, :cond_2b
+    if-eqz v0, :cond_2a
 
-    .line 290
+    .line 286
     invoke-virtual {p1}, Lorg/fork/models/backup/Backup;->isDeleteCloudConfirmationEnabled()Ljava/lang/Boolean;
 
     move-result-object v0
@@ -3520,15 +3498,15 @@
 
     invoke-static {v0}, Lorg/telegram/messenger/SharedConfig;->setDeleteCloudConfirmationEnabled(Z)V
 
-    .line 292
-    :cond_2b
+    .line 288
+    :cond_2a
     invoke-virtual {p1}, Lorg/fork/models/backup/Backup;->isSendingGifConfirmationEnabled()Ljava/lang/Boolean;
 
     move-result-object v0
 
-    if-eqz v0, :cond_2c
+    if-eqz v0, :cond_2b
 
-    .line 293
+    .line 289
     invoke-virtual {p1}, Lorg/fork/models/backup/Backup;->isSendingGifConfirmationEnabled()Ljava/lang/Boolean;
 
     move-result-object v0
@@ -3539,15 +3517,15 @@
 
     invoke-static {v0}, Lorg/telegram/messenger/SharedConfig;->setSendingGifConfirmationEnabled(Z)V
 
-    .line 295
-    :cond_2c
+    .line 291
+    :cond_2b
     invoke-virtual {p1}, Lorg/fork/models/backup/Backup;->isSendingStickerConfirmationEnabled()Ljava/lang/Boolean;
 
     move-result-object v0
 
-    if-eqz v0, :cond_2d
+    if-eqz v0, :cond_2c
 
-    .line 296
+    .line 292
     invoke-virtual {p1}, Lorg/fork/models/backup/Backup;->isSendingStickerConfirmationEnabled()Ljava/lang/Boolean;
 
     move-result-object v0
@@ -3558,15 +3536,15 @@
 
     invoke-static {v0}, Lorg/telegram/messenger/SharedConfig;->setSendingStickerConfirmationEnabled(Z)V
 
-    .line 298
-    :cond_2d
+    .line 294
+    :cond_2c
     invoke-virtual {p1}, Lorg/fork/models/backup/Backup;->isSpeakWithoutHoldEnabled()Ljava/lang/Boolean;
 
     move-result-object v0
 
-    if-eqz v0, :cond_2e
+    if-eqz v0, :cond_2d
 
-    .line 299
+    .line 295
     invoke-virtual {p1}, Lorg/fork/models/backup/Backup;->isSpeakWithoutHoldEnabled()Ljava/lang/Boolean;
 
     move-result-object v0
@@ -3577,15 +3555,15 @@
 
     invoke-static {v0}, Lorg/telegram/messenger/SharedConfig;->setSpeakWithoutHoldEnabled(Z)V
 
-    .line 301
-    :cond_2e
+    .line 297
+    :cond_2d
     invoke-virtual {p1}, Lorg/fork/models/backup/Backup;->isVideoSpeakWithoutHoldEnabled()Ljava/lang/Boolean;
 
     move-result-object v0
 
-    if-eqz v0, :cond_2f
+    if-eqz v0, :cond_2e
 
-    .line 302
+    .line 298
     invoke-virtual {p1}, Lorg/fork/models/backup/Backup;->isVideoSpeakWithoutHoldEnabled()Ljava/lang/Boolean;
 
     move-result-object v0
@@ -3596,15 +3574,15 @@
 
     invoke-static {v0}, Lorg/telegram/messenger/SharedConfig;->setVideoSpeakWithoutHoldEnabled(Z)V
 
-    .line 304
-    :cond_2f
+    .line 300
+    :cond_2e
     invoke-virtual {p1}, Lorg/fork/models/backup/Backup;->getSelectedVideoVoiceCamera()Ljava/lang/String;
 
     move-result-object v0
 
-    if-eqz v0, :cond_9
+    if-eqz v0, :cond_8
 
-    .line 305
+    .line 301
     sget-object v0, Lorg/fork/enums/VideoVoiceCamera;->Companion:Lorg/fork/enums/VideoVoiceCamera$Companion;
 
     invoke-virtual {p1}, Lorg/fork/models/backup/Backup;->getSelectedVideoVoiceCamera()Ljava/lang/String;
@@ -3619,8 +3597,8 @@
 
     goto/16 :goto_0
 
-    .line 422
-    :cond_30
+    .line 418
+    :cond_2f
     new-instance p1, Lorg/fork/controller/BackupController$$ExternalSyntheticLambda1;
 
     invoke-direct {p1, p0, p4}, Lorg/fork/controller/BackupController$$ExternalSyntheticLambda1;-><init>(Lorg/fork/controller/BackupController;Lorg/fork/utils/Callbacks$Callback1;)V
@@ -3634,7 +3612,7 @@
     :catch_0
     move-exception p0
 
-    .line 427
+    .line 423
     new-instance p1, Lorg/fork/controller/BackupController$$ExternalSyntheticLambda0;
 
     invoke-direct {p1, p0, p4}, Lorg/fork/controller/BackupController$$ExternalSyntheticLambda0;-><init>(Ljava/lang/Exception;Lorg/fork/utils/Callbacks$Callback1;)V
@@ -3643,8 +3621,6 @@
 
     :goto_1
     return-void
-
-    nop
 
     :pswitch_data_0
     .packed-switch 0x1
@@ -3673,7 +3649,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 423
+    .line 419
     invoke-virtual {p0}, Lorg/telegram/messenger/BaseController;->getMessagesController()Lorg/telegram/messenger/MessagesController;
 
     move-result-object p0
@@ -3682,7 +3658,7 @@
 
     invoke-virtual {p0, v0}, Lorg/telegram/messenger/MessagesController;->sortDialogs(Landroidx/collection/LongSparseArray;)V
 
-    .line 424
+    .line 420
     sget-object p0, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;
 
     invoke-interface {p1, p0}, Lorg/fork/utils/Callbacks$Callback1;->invoke(Ljava/lang/Object;)V
@@ -3701,7 +3677,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 428
+    .line 424
     invoke-virtual {p0}, Ljava/lang/Exception;->getMessage()Ljava/lang/String;
 
     move-result-object p0
@@ -3712,7 +3688,7 @@
 
     invoke-static {p0}, Lcom/smedialink/utils/extentions/common/ContextExtKt;->toast(Ljava/lang/CharSequence;)V
 
-    .line 429
+    .line 425
     sget-object p0, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
 
     invoke-interface {p1, p0}, Lorg/fork/utils/Callbacks$Callback1;->invoke(Ljava/lang/Object;)V
@@ -3723,7 +3699,7 @@
 
 # virtual methods
 .method public final backup(Z)V
-    .locals 120
+    .locals 119
 
     move-object/from16 v1, p0
 
@@ -3785,16 +3761,22 @@
     move-result-object v6
 
     .line 84
-    sget-boolean v2, Lorg/telegram/messenger/SharedConfig;->isRaiseToSwitchSpeakerEnabled:Z
+    sget-object v2, Lorg/telegram/messenger/SharedConfig;->selectedStickersSize:Lorg/fork/enums/StickersSize;
 
-    invoke-static {v2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+    invoke-virtual {v2}, Ljava/lang/Enum;->name()Ljava/lang/String;
 
     move-result-object v7
 
     .line 85
-    sget-object v2, Lorg/telegram/messenger/SharedConfig;->selectedStickersSize:Lorg/fork/enums/StickersSize;
+    invoke-virtual/range {p0 .. p0}, Lorg/telegram/messenger/BaseController;->getForkCommonController()Lorg/fork/controller/ForkCommonController;
 
-    invoke-virtual {v2}, Ljava/lang/Enum;->name()Ljava/lang/String;
+    move-result-object v2
+
+    invoke-virtual {v2}, Lorg/fork/controller/ForkCommonController;->isQuickReactionEnabled()Z
+
+    move-result v2
+
+    invoke-static {v2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object v8
 
@@ -3803,7 +3785,7 @@
 
     move-result-object v2
 
-    invoke-virtual {v2}, Lorg/fork/controller/ForkCommonController;->isQuickReactionEnabled()Z
+    invoke-virtual {v2}, Lorg/fork/controller/ForkCommonController;->isPremiumAnimateStickers()Z
 
     move-result v2
 
@@ -3816,7 +3798,7 @@
 
     move-result-object v2
 
-    invoke-virtual {v2}, Lorg/fork/controller/ForkCommonController;->isPremiumAnimateStickers()Z
+    invoke-virtual {v2}, Lorg/fork/controller/ForkCommonController;->isShowPremiumBadgeEnabled()Z
 
     move-result v2
 
@@ -3829,7 +3811,7 @@
 
     move-result-object v2
 
-    invoke-virtual {v2}, Lorg/fork/controller/ForkCommonController;->isShowPremiumBadgeEnabled()Z
+    invoke-virtual {v2}, Lorg/fork/controller/ForkCommonController;->isShowPremiumStatusEnabled()Z
 
     move-result v2
 
@@ -3842,7 +3824,7 @@
 
     move-result-object v2
 
-    invoke-virtual {v2}, Lorg/fork/controller/ForkCommonController;->isShowPremiumStatusEnabled()Z
+    invoke-virtual {v2}, Lorg/fork/controller/ForkCommonController;->isPremiumAnimateAvatars()Z
 
     move-result v2
 
@@ -3851,26 +3833,13 @@
     move-result-object v12
 
     .line 90
-    invoke-virtual/range {p0 .. p0}, Lorg/telegram/messenger/BaseController;->getForkCommonController()Lorg/fork/controller/ForkCommonController;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Lorg/fork/controller/ForkCommonController;->isPremiumAnimateAvatars()Z
-
-    move-result v2
+    sget-boolean v2, Lorg/telegram/messenger/SharedConfig;->isProxyButtonForceVisible:Z
 
     invoke-static {v2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object v13
 
     .line 91
-    sget-boolean v2, Lorg/telegram/messenger/SharedConfig;->isProxyButtonForceVisible:Z
-
-    invoke-static {v2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
-
-    move-result-object v14
-
-    .line 92
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/messenger/BaseController;->getForkCommonController()Lorg/fork/controller/ForkCommonController;
 
     move-result-object v2
@@ -3881,42 +3850,42 @@
 
     invoke-virtual {v2}, Ljava/lang/Enum;->name()Ljava/lang/String;
 
+    move-result-object v14
+
+    .line 92
+    sget-boolean v2, Lorg/telegram/messenger/SharedConfig;->isReadAllChatsConfirmationShown:Z
+
+    invoke-static {v2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
     move-result-object v15
 
     .line 93
-    sget-boolean v2, Lorg/telegram/messenger/SharedConfig;->isReadAllChatsConfirmationShown:Z
+    sget-boolean v2, Lorg/telegram/messenger/SharedConfig;->isProfileInfoHidden:Z
 
     invoke-static {v2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object v16
 
     .line 94
-    sget-boolean v2, Lorg/telegram/messenger/SharedConfig;->isProfileInfoHidden:Z
+    sget-boolean v2, Lorg/telegram/messenger/SharedConfig;->isMultiForwardingOptionsHintShown:Z
 
     invoke-static {v2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object v17
 
     .line 95
-    sget-boolean v2, Lorg/telegram/messenger/SharedConfig;->isMultiForwardingOptionsHintShown:Z
+    sget-boolean v2, Lorg/telegram/messenger/SharedConfig;->isSuggestPremiumReactionsEmoji:Z
 
     invoke-static {v2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object v18
 
-    .line 96
-    sget-boolean v2, Lorg/telegram/messenger/SharedConfig;->isSuggestPremiumReactionsEmoji:Z
-
-    invoke-static {v2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+    .line 97
+    invoke-static {}, Lorg/telegram/messenger/SharedConfig;->getDrawerHeaderSettings()Lorg/fork/models/DrawerHeaderSettings;
 
     move-result-object v19
 
     .line 98
-    invoke-static {}, Lorg/telegram/messenger/SharedConfig;->getDrawerHeaderSettings()Lorg/fork/models/DrawerHeaderSettings;
-
-    move-result-object v20
-
-    .line 99
     sget-object v2, Lcom/smedialink/ui/drawer/DrawerSwitchableItem;->Companion:Lcom/smedialink/ui/drawer/DrawerSwitchableItem$Companion;
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_2
@@ -3924,7 +3893,7 @@
     :try_start_1
     sget-object v1, Lorg/telegram/messenger/SharedConfig;->selectedDrawerItems:Ljava/util/Set;
 
-    move-object/from16 v21, v15
+    move-object/from16 v20, v15
 
     const-string v15, "selectedDrawerItems"
 
@@ -3934,28 +3903,28 @@
 
     move-result-object v1
 
-    .line 100
+    .line 99
     sget-boolean v2, Lorg/telegram/messenger/SharedConfig;->isActionBarAccountSwitchEnabled:Z
+
+    invoke-static {v2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object v21
+
+    .line 100
+    sget-boolean v2, Lorg/telegram/messenger/SharedConfig;->isMainActionBarMenuEnabled:Z
 
     invoke-static {v2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object v22
 
     .line 101
-    sget-boolean v2, Lorg/telegram/messenger/SharedConfig;->isMainActionBarMenuEnabled:Z
+    sget-boolean v2, Lorg/telegram/messenger/SharedConfig;->isDialogsCompactModeEnabled:Z
 
     invoke-static {v2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object v23
 
     .line 102
-    sget-boolean v2, Lorg/telegram/messenger/SharedConfig;->isDialogsCompactModeEnabled:Z
-
-    invoke-static {v2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
-
-    move-result-object v24
-
-    .line 103
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/messenger/BaseController;->getToolsController()Lorg/fork/controller/ToolsController;
 
     move-result-object v2
@@ -3966,9 +3935,9 @@
 
     invoke-static {v2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
-    move-result-object v25
+    move-result-object v24
 
-    .line 104
+    .line 103
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/messenger/BaseController;->getToolsController()Lorg/fork/controller/ToolsController;
 
     move-result-object v2
@@ -3979,9 +3948,9 @@
 
     invoke-static {v2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
-    move-result-object v26
+    move-result-object v25
 
-    .line 105
+    .line 104
     sget-object v2, Lorg/fork/enums/DialogType;->Companion:Lorg/fork/enums/DialogType$Companion;
 
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/messenger/BaseController;->getToolsController()Lorg/fork/controller/ToolsController;
@@ -3994,9 +3963,9 @@
 
     invoke-virtual {v2, v15}, Lorg/fork/enums/DialogType$Companion;->mapEnumsToNames(Ljava/util/Set;)Ljava/util/Set;
 
-    move-result-object v27
+    move-result-object v26
 
-    .line 106
+    .line 105
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/messenger/BaseController;->getToolsController()Lorg/fork/controller/ToolsController;
 
     move-result-object v15
@@ -4007,53 +3976,53 @@
 
     invoke-static {v15}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
+    move-result-object v27
+
+    .line 106
+    sget-boolean v15, Lorg/telegram/messenger/SharedConfig;->isHideChatKeyboardOnScrollEnabled:Z
+
+    invoke-static {v15}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
     move-result-object v28
 
     .line 107
-    sget-boolean v15, Lorg/telegram/messenger/SharedConfig;->isHideChatKeyboardOnScrollEnabled:Z
+    sget-boolean v15, Lorg/telegram/messenger/SharedConfig;->isChatThemesEnabled:Z
 
     invoke-static {v15}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object v29
 
     .line 108
-    sget-boolean v15, Lorg/telegram/messenger/SharedConfig;->isChatThemesEnabled:Z
-
-    invoke-static {v15}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
-
-    move-result-object v30
-
-    .line 109
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/messenger/BaseController;->getToolsController()Lorg/fork/controller/ToolsController;
 
     move-result-object v15
 
     invoke-virtual {v15}, Lorg/fork/controller/ToolsController;->getChatAttachAlertButtonsBackupData()Ljava/util/Map;
 
+    move-result-object v30
+
+    .line 109
+    sget-boolean v15, Lorg/telegram/messenger/SharedConfig;->isExtendedAvatarPreviewerEnabled:Z
+
+    invoke-static {v15}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
     move-result-object v31
 
     .line 110
-    sget-boolean v15, Lorg/telegram/messenger/SharedConfig;->isExtendedAvatarPreviewerEnabled:Z
+    sget-boolean v15, Lorg/telegram/messenger/SharedConfig;->isExtendedAvatarPreviewerByTapEnabled:Z
 
     invoke-static {v15}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object v32
 
     .line 111
-    sget-boolean v15, Lorg/telegram/messenger/SharedConfig;->isExtendedAvatarPreviewerByTapEnabled:Z
-
-    invoke-static {v15}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
-
-    move-result-object v33
-
-    .line 112
     sget-object v15, Lorg/fork/enums/ExtendedAvatarPreviewerItem;->Companion:Lorg/fork/enums/ExtendedAvatarPreviewerItem$Companion;
 
-    move-object/from16 v34, v1
+    move-object/from16 v33, v1
 
     sget-object v1, Lorg/telegram/messenger/SharedConfig;->selectedExtendedAvatarPreviewerItems:Ljava/util/List;
 
-    move-object/from16 v35, v14
+    move-object/from16 v34, v14
 
     const-string v14, "selectedExtendedAvatarPreviewerItems"
 
@@ -4063,16 +4032,16 @@
 
     move-result-object v1
 
-    .line 113
+    .line 112
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/messenger/BaseController;->getToolsController()Lorg/fork/controller/ToolsController;
 
     move-result-object v14
 
     invoke-virtual {v14}, Lorg/fork/controller/ToolsController;->getMessagePopupItemBackupData()Ljava/util/List;
 
-    move-result-object v36
+    move-result-object v35
 
-    .line 114
+    .line 113
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/messenger/BaseController;->getToolsController()Lorg/fork/controller/ToolsController;
 
     move-result-object v14
@@ -4083,9 +4052,9 @@
 
     invoke-static {v14}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
-    move-result-object v37
+    move-result-object v36
 
-    .line 115
+    .line 114
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/messenger/BaseController;->getToolsController()Lorg/fork/controller/ToolsController;
 
     move-result-object v14
@@ -4096,58 +4065,58 @@
 
     invoke-static {v14}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
+    move-result-object v37
+
+    .line 115
+    sget-boolean v14, Lorg/telegram/messenger/SharedConfig;->isCallsConfirmationEnabled:Z
+
+    invoke-static {v14}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
     move-result-object v38
 
     .line 116
-    sget-boolean v14, Lorg/telegram/messenger/SharedConfig;->isCallsConfirmationEnabled:Z
+    sget-boolean v14, Lorg/telegram/messenger/SharedConfig;->isDeleteCloudConfirmationEnabled:Z
 
     invoke-static {v14}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object v39
 
     .line 117
-    sget-boolean v14, Lorg/telegram/messenger/SharedConfig;->isDeleteCloudConfirmationEnabled:Z
+    sget-boolean v14, Lorg/telegram/messenger/SharedConfig;->isSendingGifConfirmationEnabled:Z
 
     invoke-static {v14}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object v40
 
     .line 118
-    sget-boolean v14, Lorg/telegram/messenger/SharedConfig;->isSendingGifConfirmationEnabled:Z
+    sget-boolean v14, Lorg/telegram/messenger/SharedConfig;->isSendingStickerConfirmationEnabled:Z
 
     invoke-static {v14}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object v41
 
     .line 119
-    sget-boolean v14, Lorg/telegram/messenger/SharedConfig;->isSendingStickerConfirmationEnabled:Z
+    sget-boolean v14, Lorg/telegram/messenger/SharedConfig;->isSpeakWithoutHoldEnabled:Z
 
     invoke-static {v14}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object v42
 
     .line 120
-    sget-boolean v14, Lorg/telegram/messenger/SharedConfig;->isSpeakWithoutHoldEnabled:Z
+    sget-boolean v14, Lorg/telegram/messenger/SharedConfig;->isVideoSpeakWithoutHoldEnabled:Z
 
     invoke-static {v14}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object v43
 
     .line 121
-    sget-boolean v14, Lorg/telegram/messenger/SharedConfig;->isVideoSpeakWithoutHoldEnabled:Z
-
-    invoke-static {v14}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
-
-    move-result-object v44
-
-    .line 122
     sget-object v14, Lorg/telegram/messenger/SharedConfig;->selectedVideoVoiceCamera:Lorg/fork/enums/VideoVoiceCamera;
 
     invoke-virtual {v14}, Ljava/lang/Enum;->name()Ljava/lang/String;
 
-    move-result-object v45
+    move-result-object v44
 
-    .line 123
+    .line 122
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/messenger/BaseController;->getRecentChatsController()Lorg/fork/controller/RecentChatsController;
 
     move-result-object v14
@@ -4158,11 +4127,11 @@
 
     invoke-static {v14}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
-    move-result-object v46
+    move-result-object v45
 
-    const/16 v47, 0x0
+    const/16 v46, 0x0
 
-    .line 124
+    .line 123
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/messenger/BaseController;->getRecentChatsController()Lorg/fork/controller/RecentChatsController;
 
     move-result-object v14
@@ -4173,16 +4142,29 @@
 
     invoke-static {v14}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
-    move-result-object v48
+    move-result-object v47
 
-    const/16 v49, 0x0
+    const/16 v48, 0x0
+
+    .line 125
+    invoke-virtual/range {p0 .. p0}, Lorg/telegram/messenger/BaseController;->getMultiPanelController()Lorg/fork/controller/MultiPanelController;
+
+    move-result-object v14
+
+    invoke-virtual {v14}, Lorg/fork/controller/MultiPanelController;->isMultiPanelEnabled()Z
+
+    move-result v14
+
+    invoke-static {v14}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object v49
 
     .line 126
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/messenger/BaseController;->getMultiPanelController()Lorg/fork/controller/MultiPanelController;
 
     move-result-object v14
 
-    invoke-virtual {v14}, Lorg/fork/controller/MultiPanelController;->isMultiPanelEnabled()Z
+    invoke-virtual {v14}, Lorg/fork/controller/MultiPanelController;->isHideMultiPanelOnScrollEnabled()Z
 
     move-result v14
 
@@ -4195,73 +4177,60 @@
 
     move-result-object v14
 
-    invoke-virtual {v14}, Lorg/fork/controller/MultiPanelController;->isHideMultiPanelOnScrollEnabled()Z
-
-    move-result v14
-
-    invoke-static {v14}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+    invoke-virtual {v14}, Lorg/fork/controller/MultiPanelController;->getBackupData()Ljava/util/Map;
 
     move-result-object v51
 
-    .line 128
-    invoke-virtual/range {p0 .. p0}, Lorg/telegram/messenger/BaseController;->getMultiPanelController()Lorg/fork/controller/MultiPanelController;
+    .line 129
+    sget-boolean v14, Lorg/telegram/messenger/SharedConfig;->isOpenForwardingOptionsAutomaticallyEnabled:Z
 
-    move-result-object v14
-
-    invoke-virtual {v14}, Lorg/fork/controller/MultiPanelController;->getBackupData()Ljava/util/Map;
+    invoke-static {v14}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object v52
 
     .line 130
-    sget-boolean v14, Lorg/telegram/messenger/SharedConfig;->isOpenForwardingOptionsAutomaticallyEnabled:Z
+    sget-boolean v14, Lorg/telegram/messenger/SharedConfig;->isCustomSharingModeEnabled:Z
 
     invoke-static {v14}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object v53
 
     .line 131
-    sget-boolean v14, Lorg/telegram/messenger/SharedConfig;->isCustomSharingModeEnabled:Z
+    sget-boolean v14, Lorg/telegram/messenger/SharedConfig;->isMultiReplyEnabled:Z
 
     invoke-static {v14}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object v54
 
     .line 132
-    sget-boolean v14, Lorg/telegram/messenger/SharedConfig;->isMultiReplyEnabled:Z
-
-    invoke-static {v14}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
-
-    move-result-object v55
-
-    .line 133
     sget-object v14, Lorg/telegram/messenger/SharedConfig;->selectedChatProfileTelegramIdMode:Lorg/fork/enums/ChatProfileTelegramIdMode;
 
     invoke-virtual {v14}, Ljava/lang/Enum;->name()Ljava/lang/String;
 
+    move-result-object v55
+
+    .line 133
+    sget-boolean v14, Lorg/telegram/messenger/SharedConfig;->isMessageQuickTranslateEnabled:Z
+
+    invoke-static {v14}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
     move-result-object v56
 
     .line 134
-    sget-boolean v14, Lorg/telegram/messenger/SharedConfig;->isMessageQuickTranslateEnabled:Z
+    sget-boolean v14, Lorg/telegram/messenger/SharedConfig;->isBotHelpTranslateEnabled:Z
 
     invoke-static {v14}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object v57
 
     .line 135
-    sget-boolean v14, Lorg/telegram/messenger/SharedConfig;->isBotHelpTranslateEnabled:Z
+    sget-boolean v14, Lorg/telegram/messenger/SharedConfig;->isTranslateInSendPopupEnabled:Z
 
     invoke-static {v14}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object v58
 
     .line 136
-    sget-boolean v14, Lorg/telegram/messenger/SharedConfig;->isTranslateInSendPopupEnabled:Z
-
-    invoke-static {v14}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
-
-    move-result-object v59
-
-    .line 137
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/messenger/BaseController;->getToolsController()Lorg/fork/controller/ToolsController;
 
     move-result-object v14
@@ -4272,9 +4241,9 @@
 
     invoke-static {v14}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
-    move-result-object v60
+    move-result-object v59
 
-    .line 138
+    .line 137
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/messenger/BaseController;->getToolsController()Lorg/fork/controller/ToolsController;
 
     move-result-object v14
@@ -4285,9 +4254,9 @@
 
     invoke-virtual {v14}, Ljava/lang/Enum;->name()Ljava/lang/String;
 
-    move-result-object v61
+    move-result-object v60
 
-    .line 139
+    .line 138
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/messenger/BaseController;->getToolsController()Lorg/fork/controller/ToolsController;
 
     move-result-object v14
@@ -4298,21 +4267,21 @@
 
     invoke-static {v14}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
-    move-result-object v62
+    move-result-object v61
 
-    .line 140
+    .line 139
     sget-boolean v14, Lorg/telegram/messenger/SharedConfig;->isCombineMessagesEnabled:Z
 
     invoke-static {v14}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
-    move-result-object v63
+    move-result-object v62
 
-    .line 141
+    .line 140
     sget-object v14, Lorg/fork/enums/PhotoViewerMenuItem;->Companion:Lorg/fork/enums/PhotoViewerMenuItem$Companion;
 
     sget-object v15, Lorg/telegram/messenger/SharedConfig;->selectedPhotoViewerMenuItems:Ljava/util/Set;
 
-    move-object/from16 v64, v1
+    move-object/from16 v63, v1
 
     const-string v1, "selectedPhotoViewerMenuItems"
 
@@ -4322,14 +4291,14 @@
 
     move-result-object v1
 
-    .line 142
+    .line 141
     sget-boolean v14, Lorg/telegram/messenger/SharedConfig;->isReactionsEnabled:Z
 
     invoke-static {v14}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
-    move-result-object v65
+    move-result-object v64
 
-    .line 143
+    .line 142
     sget-object v14, Lorg/telegram/messenger/SharedConfig;->selectedDialogTypesForMessagePopupReactions:Ljava/util/Set;
 
     const-string v15, "selectedDialogTypesForMessagePopupReactions"
@@ -4338,42 +4307,55 @@
 
     invoke-virtual {v2, v14}, Lorg/fork/enums/DialogType$Companion;->mapEnumsToNames(Ljava/util/Set;)Ljava/util/Set;
 
-    move-result-object v66
+    move-result-object v65
 
-    .line 144
+    .line 143
     sget-boolean v2, Lorg/telegram/messenger/SharedConfig;->isReactionsInSendPopupEnabled:Z
 
     invoke-static {v2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
-    move-result-object v67
+    move-result-object v66
+
+    const/16 v67, 0x0
 
     const/16 v68, 0x0
 
-    const/16 v69, 0x0
-
-    .line 146
+    .line 145
     sget-boolean v2, Lorg/telegram/messenger/SharedConfig;->isFilterTabsAtBottomEnabled:Z
 
     invoke-static {v2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
+    move-result-object v69
+
+    .line 146
+    sget-object v2, Lorg/telegram/messenger/SharedConfig;->selectedFilterTabsNotificationMode:Lorg/fork/enums/FilterTabNotificationMode;
+
+    invoke-virtual {v2}, Ljava/lang/Enum;->name()Ljava/lang/String;
+
     move-result-object v70
 
     .line 147
-    sget-object v2, Lorg/telegram/messenger/SharedConfig;->selectedFilterTabsNotificationMode:Lorg/fork/enums/FilterTabNotificationMode;
+    sget-object v2, Lorg/telegram/messenger/SharedConfig;->selectedFilterTabWidthMode:Lorg/fork/enums/FilterTabWidthMode;
 
     invoke-virtual {v2}, Ljava/lang/Enum;->name()Ljava/lang/String;
 
     move-result-object v71
 
     .line 148
-    sget-object v2, Lorg/telegram/messenger/SharedConfig;->selectedFilterTabWidthMode:Lorg/fork/enums/FilterTabWidthMode;
+    sget-boolean v2, Lorg/telegram/messenger/SharedConfig;->isRememberLastFilterTabEnabled:Z
 
-    invoke-virtual {v2}, Ljava/lang/Enum;->name()Ljava/lang/String;
+    invoke-static {v2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object v72
 
     .line 149
-    sget-boolean v2, Lorg/telegram/messenger/SharedConfig;->isRememberLastFilterTabEnabled:Z
+    invoke-virtual/range {p0 .. p0}, Lorg/telegram/messenger/BaseController;->getFiltersController()Lorg/fork/controller/FiltersController;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Lorg/fork/controller/FiltersController;->isHideFoldersEnabled()Z
+
+    move-result v2
 
     invoke-static {v2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
@@ -4384,7 +4366,7 @@
 
     move-result-object v2
 
-    invoke-virtual {v2}, Lorg/fork/controller/FiltersController;->isHideFoldersEnabled()Z
+    invoke-virtual {v2}, Lorg/fork/controller/FiltersController;->isFoldersFirstEnabled()Z
 
     move-result v2
 
@@ -4397,31 +4379,18 @@
 
     move-result-object v2
 
-    invoke-virtual {v2}, Lorg/fork/controller/FiltersController;->isFoldersFirstEnabled()Z
-
-    move-result v2
-
-    invoke-static {v2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+    invoke-virtual {v2}, Lorg/fork/controller/FiltersController;->getFiltersBackupData()Ljava/util/List;
 
     move-result-object v75
 
-    .line 152
-    invoke-virtual/range {p0 .. p0}, Lorg/telegram/messenger/BaseController;->getFiltersController()Lorg/fork/controller/FiltersController;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Lorg/fork/controller/FiltersController;->getFiltersBackupData()Ljava/util/List;
-
-    move-result-object v76
-
-    .line 154
+    .line 153
     sget-boolean v2, Lorg/telegram/messenger/SharedConfig;->isChatSortingEnabledByDefault:Z
 
     invoke-static {v2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
-    move-result-object v77
+    move-result-object v76
 
-    .line 155
+    .line 154
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/messenger/BaseController;->getFiltersController()Lorg/fork/controller/FiltersController;
 
     move-result-object v2
@@ -4432,9 +4401,9 @@
 
     invoke-static {v2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
-    move-result-object v78
+    move-result-object v77
 
-    .line 156
+    .line 155
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/messenger/BaseController;->getFiltersController()Lorg/fork/controller/FiltersController;
 
     move-result-object v2
@@ -4445,9 +4414,9 @@
 
     invoke-static {v2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
-    move-result-object v79
+    move-result-object v78
 
-    .line 157
+    .line 156
     sget-object v2, Lcom/smedialink/storage/domain/model/filters/FilterFab;->Companion:Lcom/smedialink/storage/domain/model/filters/FilterFab$Companion;
 
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/messenger/BaseController;->getFiltersController()Lorg/fork/controller/FiltersController;
@@ -4460,9 +4429,9 @@
 
     invoke-virtual {v2, v14}, Lcom/smedialink/storage/domain/model/filters/FilterFab$Companion;->mapEnumsToNames(Ljava/util/Set;)Ljava/util/Set;
 
-    move-result-object v80
+    move-result-object v79
 
-    .line 158
+    .line 157
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/messenger/BaseController;->getFiltersController()Lorg/fork/controller/FiltersController;
 
     move-result-object v2
@@ -4475,18 +4444,18 @@
 
     invoke-static {v2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
-    move-result-object v81
+    move-result-object v80
 
-    .line 159
+    .line 158
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/messenger/BaseController;->getFiltersController()Lorg/fork/controller/FiltersController;
 
     move-result-object v2
 
     invoke-virtual {v2, v15}, Lorg/fork/controller/FiltersController;->getBackupSortingTabs(Z)Ljava/util/List;
 
-    move-result-object v82
+    move-result-object v81
 
-    .line 160
+    .line 159
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/messenger/BaseController;->getFiltersController()Lorg/fork/controller/FiltersController;
 
     move-result-object v2
@@ -4499,6 +4468,15 @@
 
     invoke-static {v2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
+    move-result-object v82
+
+    .line 160
+    invoke-virtual/range {p0 .. p0}, Lorg/telegram/messenger/BaseController;->getFiltersController()Lorg/fork/controller/FiltersController;
+
+    move-result-object v2
+
+    invoke-virtual {v2, v14}, Lorg/fork/controller/FiltersController;->getBackupSortingTabs(Z)Ljava/util/List;
+
     move-result-object v83
 
     .line 161
@@ -4506,7 +4484,7 @@
 
     move-result-object v2
 
-    invoke-virtual {v2, v14}, Lorg/fork/controller/FiltersController;->getBackupSortingTabs(Z)Ljava/util/List;
+    invoke-virtual {v2, v15}, Lorg/fork/controller/FiltersController;->getPinnedChats(Z)Ljava/util/Map;
 
     move-result-object v84
 
@@ -4515,41 +4493,32 @@
 
     move-result-object v2
 
-    invoke-virtual {v2, v15}, Lorg/fork/controller/FiltersController;->getPinnedChats(Z)Ljava/util/Map;
+    invoke-virtual {v2, v14}, Lorg/fork/controller/FiltersController;->getPinnedChats(Z)Ljava/util/Map;
 
     move-result-object v85
 
-    .line 163
-    invoke-virtual/range {p0 .. p0}, Lorg/telegram/messenger/BaseController;->getFiltersController()Lorg/fork/controller/FiltersController;
+    .line 164
+    sget-boolean v2, Lorg/telegram/messenger/SharedConfig;->isCloudAlbumsEnabled:Z
 
-    move-result-object v2
-
-    invoke-virtual {v2, v14}, Lorg/fork/controller/FiltersController;->getPinnedChats(Z)Ljava/util/Map;
+    invoke-static {v2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object v86
 
     .line 165
-    sget-boolean v2, Lorg/telegram/messenger/SharedConfig;->isCloudAlbumsEnabled:Z
+    sget-boolean v2, Lorg/telegram/messenger/SharedConfig;->isAlbumsIntroShown:Z
 
     invoke-static {v2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object v87
 
     .line 166
-    sget-boolean v2, Lorg/telegram/messenger/SharedConfig;->isAlbumsIntroShown:Z
+    sget-boolean v2, Lorg/telegram/messenger/SharedConfig;->isSortCloudAlbumsByNameEnabled:Z
 
     invoke-static {v2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object v88
 
     .line 167
-    sget-boolean v2, Lorg/telegram/messenger/SharedConfig;->isSortCloudAlbumsByNameEnabled:Z
-
-    invoke-static {v2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
-
-    move-result-object v89
-
-    .line 168
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/messenger/BaseController;->getAlbumsController()Lorg/fork/controller/AlbumsController;
 
     move-result-object v2
@@ -4560,71 +4529,71 @@
 
     invoke-static {v2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
-    move-result-object v90
+    move-result-object v89
 
-    .line 169
+    .line 168
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/messenger/BaseController;->getAlbumsController()Lorg/fork/controller/AlbumsController;
 
     move-result-object v2
 
     invoke-virtual {v2}, Lorg/fork/controller/AlbumsController;->getAlbums()Ljava/util/List;
 
-    move-result-object v91
+    move-result-object v90
 
-    .line 171
+    .line 170
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/messenger/BaseController;->getBookmarksController()Lorg/fork/controller/BookmarksController;
 
     move-result-object v2
 
     invoke-virtual {v2}, Lorg/fork/controller/BookmarksController;->getBookmarks()Ljava/util/Map;
 
-    move-result-object v92
+    move-result-object v91
 
-    .line 173
+    .line 172
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/messenger/BaseController;->getDialogTranslationSettingsController()Lorg/fork/controller/DialogTranslationController;
 
     move-result-object v2
 
     invoke-virtual {v2}, Lorg/fork/controller/DialogTranslationController;->getBackupData()Ljava/util/List;
 
+    move-result-object v92
+
+    .line 174
+    sget-boolean v2, Lorg/telegram/messenger/SharedConfig;->isPlayerPinned:Z
+
+    invoke-static {v2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
     move-result-object v93
 
     .line 175
-    sget-boolean v2, Lorg/telegram/messenger/SharedConfig;->isPlayerPinned:Z
+    sget-boolean v2, Lorg/telegram/messenger/SharedConfig;->isPinnedPlayerMinimized:Z
 
     invoke-static {v2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object v94
 
     .line 176
-    sget-boolean v2, Lorg/telegram/messenger/SharedConfig;->isPinnedPlayerMinimized:Z
+    sget-boolean v2, Lorg/telegram/messenger/SharedConfig;->isPinnedPlayerThemeOverridden:Z
 
     invoke-static {v2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object v95
 
     .line 177
-    sget-boolean v2, Lorg/telegram/messenger/SharedConfig;->isPinnedPlayerThemeOverridden:Z
+    sget-boolean v2, Lorg/telegram/messenger/SharedConfig;->isPinnedPlayerNightThemeEnabled:Z
 
     invoke-static {v2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object v96
 
     .line 178
-    sget-boolean v2, Lorg/telegram/messenger/SharedConfig;->isPinnedPlayerNightThemeEnabled:Z
+    sget-boolean v2, Lorg/telegram/messenger/SharedConfig;->isMusicIntroShown:Z
 
     invoke-static {v2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object v97
 
     .line 179
-    sget-boolean v2, Lorg/telegram/messenger/SharedConfig;->isMusicIntroShown:Z
-
-    invoke-static {v2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
-
-    move-result-object v98
-
-    .line 180
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/messenger/BaseController;->getMusicController()Lorg/fork/controller/MusicController;
 
     move-result-object v2
@@ -4635,28 +4604,41 @@
 
     invoke-virtual {v2}, Ljava/lang/Enum;->name()Ljava/lang/String;
 
-    move-result-object v99
+    move-result-object v98
 
-    .line 181
+    .line 180
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/messenger/BaseController;->getMusicController()Lorg/fork/controller/MusicController;
 
     move-result-object v2
 
     invoke-virtual {v2}, Lorg/fork/controller/MusicController;->getPlaylists()Ljava/util/Map;
 
+    move-result-object v99
+
+    .line 182
+    sget-object v2, Lorg/telegram/messenger/SharedConfig;->selectedTemplatesMode:Lorg/fork/enums/TemplatesMode;
+
+    invoke-virtual {v2}, Ljava/lang/Enum;->name()Ljava/lang/String;
+
     move-result-object v100
 
     .line 183
-    sget-object v2, Lorg/telegram/messenger/SharedConfig;->selectedTemplatesMode:Lorg/fork/enums/TemplatesMode;
+    sget-object v2, Lorg/telegram/messenger/SharedConfig;->selectedTemplatesSortingType:Lorg/fork/enums/TemplatesSortingType;
 
     invoke-virtual {v2}, Ljava/lang/Enum;->name()Ljava/lang/String;
 
     move-result-object v101
 
     .line 184
-    sget-object v2, Lorg/telegram/messenger/SharedConfig;->selectedTemplatesSortingType:Lorg/fork/enums/TemplatesSortingType;
+    invoke-virtual/range {p0 .. p0}, Lorg/telegram/messenger/BaseController;->getTemplatesController()Lorg/fork/controller/TemplatesController;
 
-    invoke-virtual {v2}, Ljava/lang/Enum;->name()Ljava/lang/String;
+    move-result-object v2
+
+    invoke-virtual {v2}, Lorg/fork/controller/TemplatesController;->getTemplatesChannelId()J
+
+    move-result-wide v102
+
+    invoke-static/range {v102 .. v103}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object v102
 
@@ -4665,20 +4647,20 @@
 
     move-result-object v2
 
-    invoke-virtual {v2}, Lorg/fork/controller/TemplatesController;->getTemplatesChannelId()J
-
-    move-result-wide v103
-
-    invoke-static/range {v103 .. v104}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+    invoke-virtual {v2}, Lorg/fork/controller/TemplatesController;->getTemplatesBackupData()Ljava/util/List;
 
     move-result-object v103
 
-    .line 186
-    invoke-virtual/range {p0 .. p0}, Lorg/telegram/messenger/BaseController;->getTemplatesController()Lorg/fork/controller/TemplatesController;
+    .line 187
+    invoke-virtual/range {p0 .. p0}, Lorg/telegram/messenger/BaseController;->getForkTopicsController()Lorg/fork/controller/ForkTopicsController;
 
     move-result-object v2
 
-    invoke-virtual {v2}, Lorg/fork/controller/TemplatesController;->getTemplatesBackupData()Ljava/util/List;
+    invoke-virtual {v2}, Lorg/fork/controller/ForkTopicsController;->isTopicsBarEnabled()Z
+
+    move-result v2
+
+    invoke-static {v2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object v104
 
@@ -4687,7 +4669,7 @@
 
     move-result-object v2
 
-    invoke-virtual {v2}, Lorg/fork/controller/ForkTopicsController;->isTopicsBarEnabled()Z
+    invoke-virtual {v2}, Lorg/fork/controller/ForkTopicsController;->isTopicsBarAtBottomEnabled()Z
 
     move-result v2
 
@@ -4700,7 +4682,7 @@
 
     move-result-object v2
 
-    invoke-virtual {v2}, Lorg/fork/controller/ForkTopicsController;->isTopicsBarAtBottomEnabled()Z
+    invoke-virtual {v2}, Lorg/fork/controller/ForkTopicsController;->isAutoUpdateTopicsCatalogEnabled()Z
 
     move-result v2
 
@@ -4713,28 +4695,15 @@
 
     move-result-object v2
 
-    invoke-virtual {v2}, Lorg/fork/controller/ForkTopicsController;->isAutoUpdateTopicsCatalogEnabled()Z
-
-    move-result v2
-
-    invoke-static {v2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
-
-    move-result-object v107
-
-    .line 191
-    invoke-virtual/range {p0 .. p0}, Lorg/telegram/messenger/BaseController;->getForkTopicsController()Lorg/fork/controller/ForkTopicsController;
-
-    move-result-object v2
-
     invoke-virtual {v2}, Lorg/fork/controller/ForkTopicsController;->getSelectedAutoUpdateTopicsCatalogInterval()Lorg/fork/enums/Interval;
 
     move-result-object v2
 
     invoke-virtual {v2}, Ljava/lang/Enum;->name()Ljava/lang/String;
 
-    move-result-object v108
+    move-result-object v107
 
-    .line 192
+    .line 191
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/messenger/BaseController;->getForkTopicsController()Lorg/fork/controller/ForkTopicsController;
 
     move-result-object v2
@@ -4745,49 +4714,51 @@
 
     invoke-static {v2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
-    move-result-object v109
+    move-result-object v108
 
-    .line 193
+    .line 192
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/messenger/BaseController;->getForkTopicsController()Lorg/fork/controller/ForkTopicsController;
 
     move-result-object v2
 
     invoke-virtual {v2}, Lorg/fork/controller/ForkTopicsController;->getTopicsBackupData()Ljava/util/List;
 
-    move-result-object v110
+    move-result-object v109
 
     const/16 v2, 0xc
 
-    .line 195
+    .line 194
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v118
+    move-result-object v117
+
+    const/16 v110, 0x0
 
     const/16 v111, 0x0
 
     const/16 v112, 0x0
 
-    const/16 v113, 0x0
+    const v113, -0x7fffec00
 
-    const/16 v114, 0x2800
+    const/16 v114, 0x1
 
-    const/16 v115, 0x3
+    const/16 v115, 0x1800
 
-    const/16 v116, 0x3000
-
-    const/16 v117, 0x0
+    const/16 v116, 0x0
 
     move-object v2, v0
 
-    move-object/from16 v14, v35
+    move-object/from16 v14, v34
 
-    const/16 v119, 0x0
+    move/from16 v118, v15
 
-    move-object/from16 v15, v21
+    move-object/from16 v15, v20
 
-    move-object/from16 v21, v34
+    move-object/from16 v20, v33
 
-    move-object/from16 v34, v64
+    move-object/from16 v33, v63
+
+    move-object/from16 v34, v35
 
     move-object/from16 v35, v36
 
@@ -4843,9 +4814,9 @@
 
     move-object/from16 v61, v62
 
-    move-object/from16 v62, v63
+    move-object/from16 v62, v1
 
-    move-object/from16 v63, v1
+    move-object/from16 v63, v64
 
     move-object/from16 v64, v65
 
@@ -4937,14 +4908,12 @@
 
     move-object/from16 v108, v109
 
-    move-object/from16 v109, v110
-
-    move-object/from16 v110, v118
+    move-object/from16 v109, v117
 
     .line 79
-    invoke-direct/range {v2 .. v117}, Lorg/fork/models/backup/Backup;-><init>(Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Lorg/fork/models/DrawerHeaderSettings;Ljava/util/Set;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/Set;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/Map;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/Set;Ljava/util/List;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/Boolean;Ljava/util/Set;Ljava/lang/Boolean;Ljava/util/Set;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/Map;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/Set;Ljava/lang/Boolean;Ljava/util/Set;Ljava/lang/Boolean;Ljava/lang/Boolean;Lorg/fork/enums/DrawerHolidayIconType;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/List;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/Set;Ljava/lang/Boolean;Ljava/util/List;Ljava/lang/Boolean;Ljava/util/List;Ljava/util/Map;Ljava/util/Map;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/List;Ljava/util/Map;Ljava/util/List;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/String;Ljava/util/Map;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Long;Ljava/util/List;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/Boolean;Ljava/util/List;Ljava/lang/Integer;Ljava/lang/String;Ljava/util/List;IIIILkotlin/jvm/internal/DefaultConstructorMarker;)V
+    invoke-direct/range {v2 .. v116}, Lorg/fork/models/backup/Backup;-><init>(Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Lorg/fork/models/DrawerHeaderSettings;Ljava/util/Set;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/Set;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/Map;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/Set;Ljava/util/List;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/Boolean;Ljava/util/Set;Ljava/lang/Boolean;Ljava/util/Set;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/Map;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/Set;Ljava/lang/Boolean;Ljava/util/Set;Ljava/lang/Boolean;Ljava/lang/Boolean;Lorg/fork/enums/DrawerHolidayIconType;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/List;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/Set;Ljava/lang/Boolean;Ljava/util/List;Ljava/lang/Boolean;Ljava/util/List;Ljava/util/Map;Ljava/util/Map;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/List;Ljava/util/Map;Ljava/util/List;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/String;Ljava/util/Map;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Long;Ljava/util/List;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/Boolean;Ljava/util/List;Ljava/lang/Integer;Ljava/lang/String;Ljava/util/List;IIIILkotlin/jvm/internal/DefaultConstructorMarker;)V
 
-    .line 197
+    .line 196
     new-instance v1, Ljava/io/File;
 
     invoke-static {}, Lorg/telegram/messenger/ApplicationLoader;->getFilesDirFixed()Ljava/io/File;
@@ -4968,7 +4937,7 @@
 
     invoke-direct {v1, v2, v3}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
 
-    .line 198
+    .line 197
     new-instance v2, Ljava/io/OutputStreamWriter;
 
     new-instance v3, Ljava/io/FileOutputStream;
@@ -4977,7 +4946,7 @@
 
     invoke-direct {v2, v3}, Ljava/io/OutputStreamWriter;-><init>(Ljava/io/OutputStream;)V
 
-    .line 199
+    .line 198
     invoke-direct/range {p0 .. p0}, Lorg/fork/controller/BackupController;->getGson()Lcom/google/gson/Gson;
 
     move-result-object v3
@@ -4988,10 +4957,10 @@
 
     invoke-virtual {v2, v0}, Ljava/io/OutputStreamWriter;->write(Ljava/lang/String;)V
 
-    .line 200
+    .line 199
     invoke-virtual {v2}, Ljava/io/OutputStreamWriter;->flush()V
 
-    .line 202
+    .line 201
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/messenger/BaseController;->getAccountInstance()Lorg/telegram/messenger/AccountInstance;
 
     move-result-object v6
@@ -5004,7 +4973,7 @@
 
     move-result-object v3
 
-    aput-object v3, v2, v119
+    aput-object v3, v2, v118
 
     invoke-static {v2}, Lkotlin/collections/CollectionsKt;->arrayListOf([Ljava/lang/Object;)Ljava/util/ArrayList;
 
@@ -5016,7 +4985,7 @@
 
     move-result-object v1
 
-    aput-object v1, v0, v119
+    aput-object v1, v0, v118
 
     invoke-static {v0}, Lkotlin/collections/CollectionsKt;->arrayListOf([Ljava/lang/Object;)Ljava/util/ArrayList;
 
@@ -5054,10 +5023,10 @@
 
     if-eqz p1, :cond_2
 
-    .line 204
+    .line 203
     invoke-virtual/range {p0 .. p0}, Lorg/fork/controller/BackupController;->resetLastAutoBackupTime()V
 
-    .line 205
+    .line 204
     invoke-virtual/range {p0 .. p0}, Lorg/fork/controller/BackupController;->saveConfig()V
     :try_end_2
     .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_0
@@ -5081,7 +5050,7 @@
 
     move-object v5, v1
 
-    .line 208
+    .line 207
     :goto_0
     invoke-virtual {v0}, Ljava/lang/Exception;->getMessage()Ljava/lang/String;
 
@@ -5242,7 +5211,7 @@
 
     invoke-static {p4, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 213
+    .line 212
     sget-object v0, Lorg/telegram/messenger/Utilities;->stageQueue:Lorg/telegram/messenger/DispatchQueue;
 
     new-instance v7, Lorg/fork/controller/BackupController$$ExternalSyntheticLambda2;

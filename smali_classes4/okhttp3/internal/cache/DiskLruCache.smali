@@ -249,19 +249,19 @@
 
     if-lez p1, :cond_0
 
-    const/4 p1, 0x1
+    move p1, v1
 
     goto :goto_0
 
     :cond_0
-    const/4 p1, 0x0
+    move p1, p3
 
     :goto_0
     if-eqz p1, :cond_3
 
     if-lez p4, :cond_1
 
-    const/4 p3, 0x1
+    move p3, v1
 
     :cond_1
     if-eqz p3, :cond_2
@@ -779,7 +779,7 @@
     goto :goto_0
 
     :cond_0
-    const/4 v8, 0x0
+    move v8, v7
 
     :goto_0
     if-nez v8, :cond_2
@@ -1464,7 +1464,7 @@
     .line 515
     iget v2, p0, Lokhttp3/internal/cache/DiskLruCache;->valueCount:I
 
-    const/4 v3, 0x0
+    move v3, v1
 
     :goto_0
     if-ge v3, v2, :cond_2
@@ -1771,9 +1771,9 @@
 
     iget-wide v0, p0, Lokhttp3/internal/cache/DiskLruCache;->maxSize:J
 
-    cmp-long v2, p1, v0
+    cmp-long p1, p1, v0
 
-    if-gtz v2, :cond_a
+    if-gtz p1, :cond_a
 
     invoke-direct {p0}, Lokhttp3/internal/cache/DiskLruCache;->journalRebuildRequired()Z
 
@@ -1850,7 +1850,7 @@
 .end method
 
 .method public final declared-synchronized edit(Ljava/lang/String;J)Lokhttp3/internal/cache/DiskLruCache$Editor;
-    .locals 10
+    .locals 9
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -1885,29 +1885,29 @@
     .line 455
     sget-wide v1, Lokhttp3/internal/cache/DiskLruCache;->ANY_SEQUENCE_NUMBER:J
 
-    const/4 v3, 0x0
+    cmp-long v1, p2, v1
 
-    cmp-long v4, p2, v1
+    const/4 v2, 0x0
 
-    if-eqz v4, :cond_1
+    if-eqz v1, :cond_1
 
     if-eqz v0, :cond_0
 
     invoke-virtual {v0}, Lokhttp3/internal/cache/DiskLruCache$Entry;->getSequenceNumber$okhttp()J
 
-    move-result-wide v1
+    move-result-wide v3
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    cmp-long v4, v1, p2
+    cmp-long p2, v3, p2
 
-    if-eqz v4, :cond_1
+    if-eqz p2, :cond_1
 
     .line 456
     :cond_0
     monitor-exit p0
 
-    return-object v3
+    return-object v2
 
     :cond_1
     if-eqz v0, :cond_2
@@ -1923,7 +1923,7 @@
     goto :goto_0
 
     :cond_2
-    move-object p2, v3
+    move-object p2, v2
 
     :goto_0
     if-eqz p2, :cond_3
@@ -1931,7 +1931,7 @@
     .line 460
     monitor-exit p0
 
-    return-object v3
+    return-object v2
 
     :cond_3
     if-eqz v0, :cond_4
@@ -1949,7 +1949,7 @@
     .line 464
     monitor-exit p0
 
-    return-object v3
+    return-object v2
 
     .line 467
     :cond_4
@@ -2007,7 +2007,7 @@
     .line 486
     monitor-exit p0
 
-    return-object v3
+    return-object v2
 
     :cond_6
     if-nez v0, :cond_7
@@ -2043,24 +2043,24 @@
     :cond_8
     :goto_1
     :try_start_5
-    iget-object v4, p0, Lokhttp3/internal/cache/DiskLruCache;->cleanupQueue:Lokhttp3/internal/concurrent/TaskQueue;
+    iget-object v3, p0, Lokhttp3/internal/cache/DiskLruCache;->cleanupQueue:Lokhttp3/internal/concurrent/TaskQueue;
 
-    iget-object v5, p0, Lokhttp3/internal/cache/DiskLruCache;->cleanupTask:Lokhttp3/internal/cache/DiskLruCache$cleanupTask$1;
+    iget-object v4, p0, Lokhttp3/internal/cache/DiskLruCache;->cleanupTask:Lokhttp3/internal/cache/DiskLruCache$cleanupTask$1;
 
-    const-wide/16 v6, 0x0
+    const-wide/16 v5, 0x0
 
-    const/4 v8, 0x2
+    const/4 v7, 0x2
 
-    const/4 v9, 0x0
+    const/4 v8, 0x0
 
-    invoke-static/range {v4 .. v9}, Lokhttp3/internal/concurrent/TaskQueue;->schedule$default(Lokhttp3/internal/concurrent/TaskQueue;Lokhttp3/internal/concurrent/Task;JILjava/lang/Object;)V
+    invoke-static/range {v3 .. v8}, Lokhttp3/internal/concurrent/TaskQueue;->schedule$default(Lokhttp3/internal/concurrent/TaskQueue;Lokhttp3/internal/concurrent/Task;JILjava/lang/Object;)V
     :try_end_5
     .catchall {:try_start_5 .. :try_end_5} :catchall_0
 
     .line 474
     monitor-exit p0
 
-    return-object v3
+    return-object v2
 
     :catchall_0
     move-exception p1
@@ -2807,7 +2807,7 @@
 .end method
 
 .method public final declared-synchronized remove(Ljava/lang/String;)Z
-    .locals 6
+    .locals 5
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -2859,9 +2859,9 @@
 
     iget-wide v3, p0, Lokhttp3/internal/cache/DiskLruCache;->maxSize:J
 
-    cmp-long v5, v1, v3
+    cmp-long v1, v1, v3
 
-    if-gtz v5, :cond_0
+    if-gtz v1, :cond_0
 
     iput-boolean v0, p0, Lokhttp3/internal/cache/DiskLruCache;->mostRecentTrimFailed:Z
     :try_end_0
@@ -3089,7 +3089,7 @@
 .end method
 
 .method public final trimToSize()V
-    .locals 5
+    .locals 4
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -3102,9 +3102,9 @@
 
     iget-wide v2, p0, Lokhttp3/internal/cache/DiskLruCache;->maxSize:J
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-lez v4, :cond_1
+    if-lez v0, :cond_1
 
     .line 687
     invoke-direct {p0}, Lokhttp3/internal/cache/DiskLruCache;->removeOldestEntry()Z

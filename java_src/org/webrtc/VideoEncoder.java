@@ -138,36 +138,36 @@ public interface VideoEncoder {
         public final Integer low;
 
         /* renamed from: on */
-        public final boolean f1849on;
+        public final boolean f1850on;
 
         public ScalingSettings(int i, int i2) {
-            this.f1849on = true;
+            this.f1850on = true;
             this.low = Integer.valueOf(i);
             this.high = Integer.valueOf(i2);
         }
 
         private ScalingSettings() {
-            this.f1849on = false;
+            this.f1850on = false;
             this.low = null;
             this.high = null;
         }
 
         @Deprecated
         public ScalingSettings(boolean z) {
-            this.f1849on = z;
+            this.f1850on = z;
             this.low = null;
             this.high = null;
         }
 
         @Deprecated
         public ScalingSettings(boolean z, int i, int i2) {
-            this.f1849on = z;
+            this.f1850on = z;
             this.low = Integer.valueOf(i);
             this.high = Integer.valueOf(i2);
         }
 
         public String toString() {
-            if (this.f1849on) {
+            if (this.f1850on) {
                 return "[ " + this.low + ", " + this.high + " ]";
             }
             return "OFF";

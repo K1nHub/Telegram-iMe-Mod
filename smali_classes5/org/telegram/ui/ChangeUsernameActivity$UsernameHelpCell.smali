@@ -124,12 +124,12 @@
 
     if-eqz v5, :cond_0
 
-    const/4 v5, 0x5
+    move v5, v6
 
     goto :goto_0
 
     :cond_0
-    const/4 v5, 0x3
+    move v5, v7
 
     :goto_0
     invoke-virtual {v1, v5}, Landroid/widget/TextView;->setGravity(I)V
@@ -202,7 +202,7 @@
     goto :goto_1
 
     :cond_1
-    const/4 v6, 0x3
+    move v6, v7
 
     :goto_1
     invoke-virtual {p1, v6}, Landroid/widget/TextView;->setGravity(I)V
@@ -509,16 +509,14 @@
 
     int-to-float v0, v0
 
-    move v4, v0
-
     goto :goto_2
 
     :cond_4
     const/4 v0, 0x0
 
-    const/4 v4, 0x0
-
     :goto_2
+    move v4, v0
+
     const/4 v0, 0x2
 
     new-array v0, v0, [F
@@ -563,8 +561,6 @@
     invoke-virtual {v0}, Landroid/animation/ValueAnimator;->start()V
 
     return-void
-
-    nop
 
     :array_0
     .array-data 4

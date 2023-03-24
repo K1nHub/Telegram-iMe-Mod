@@ -105,9 +105,9 @@
 
     int-to-long v2, v2
 
-    cmp-long v4, v0, v2
+    cmp-long v2, v0, v2
 
-    if-gtz v4, :cond_2
+    if-gtz v2, :cond_2
 
     .line 145
     invoke-virtual {p0}, Lokhttp3/ResponseBody;->source()Lokio/BufferedSource;
@@ -144,15 +144,15 @@
 
     const-wide/16 v2, -0x1
 
-    cmp-long v4, v0, v2
+    cmp-long v2, v0, v2
 
-    if-eqz v4, :cond_1
+    if-eqz v2, :cond_1
 
     int-to-long v2, p2
 
-    cmp-long v4, v0, v2
+    cmp-long v2, v0, v2
 
-    if-nez v4, :cond_0
+    if-nez v2, :cond_0
 
     goto :goto_0
 
@@ -365,9 +365,9 @@
 
     int-to-long v2, v2
 
-    cmp-long v4, v0, v2
+    cmp-long v2, v0, v2
 
-    if-gtz v4, :cond_2
+    if-gtz v2, :cond_2
 
     .line 145
     invoke-virtual {p0}, Lokhttp3/ResponseBody;->source()Lokio/BufferedSource;
@@ -496,9 +496,9 @@
 
     int-to-long v2, v2
 
-    cmp-long v4, v0, v2
+    cmp-long v2, v0, v2
 
-    if-gtz v4, :cond_2
+    if-gtz v2, :cond_2
 
     .line 145
     invoke-virtual {p0}, Lokhttp3/ResponseBody;->source()Lokio/BufferedSource;

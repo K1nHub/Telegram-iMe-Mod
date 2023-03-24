@@ -1,5 +1,6 @@
 package io.grpc.internal;
 
+import com.google.android.exoplayer2.source.rtsp.RtpPacket;
 import com.google.common.base.Preconditions;
 import java.io.Closeable;
 import java.util.zip.CRC32;
@@ -58,7 +59,7 @@ public class GzipInflatingBuffer implements Closeable {
         private GzipMetadataReader() {
         }
 
-        /* synthetic */ GzipMetadataReader(GzipInflatingBuffer gzipInflatingBuffer, C24141 c24141) {
+        /* synthetic */ GzipMetadataReader(GzipInflatingBuffer gzipInflatingBuffer, C24281 c24281) {
             this();
         }
 
@@ -175,72 +176,130 @@ public class GzipInflatingBuffer implements Closeable {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public int inflateBytes(byte[] bArr, int i, int i2) throws DataFormatException, ZipException {
-        boolean z = true;
-        Preconditions.checkState(!this.closed, "GzipInflatingBuffer is closed");
-        boolean z2 = true;
-        int i3 = 0;
-        while (z2) {
-            int i4 = i2 - i3;
-            if (i4 > 0) {
-                switch (C24141.$SwitchMap$io$grpc$internal$GzipInflatingBuffer$State[this.state.ordinal()]) {
-                    case 1:
-                        z2 = processHeader();
-                        break;
-                    case 2:
-                        z2 = processHeaderExtraLen();
-                        break;
-                    case 3:
-                        z2 = processHeaderExtra();
-                        break;
-                    case 4:
-                        z2 = processHeaderName();
-                        break;
-                    case 5:
-                        z2 = processHeaderComment();
-                        break;
-                    case 6:
-                        z2 = processHeaderCrc();
-                        break;
-                    case 7:
-                        z2 = initializeInflater();
-                        break;
-                    case 8:
-                        i3 += inflate(bArr, i + i3, i4);
-                        if (this.state != State.TRAILER) {
-                            z2 = true;
-                            break;
-                        } else {
-                            z2 = processTrailer();
-                            break;
-                        }
-                    case 9:
-                        z2 = fill();
-                        break;
-                    case 10:
-                        z2 = processTrailer();
-                        break;
-                    default:
-                        throw new AssertionError("Invalid state: " + this.state);
-                }
-            } else {
-                if (z2 && (this.state != State.HEADER || this.gzipMetadataReader.readableBytes() >= 10)) {
-                    z = false;
-                }
-                this.isStalled = z;
-                return i3;
+    /* JADX WARN: Code restructure failed: missing block: B:23:0x0077, code lost:
+        if (r2 == false) goto L53;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:25:0x007d, code lost:
+        if (r6.state != io.grpc.internal.GzipInflatingBuffer.State.HEADER) goto L52;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:27:0x0087, code lost:
+        if (r6.gzipMetadataReader.readableBytes() >= 10) goto L52;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:29:0x008a, code lost:
+        r1 = false;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:30:0x008b, code lost:
+        r6.isStalled = r1;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:31:0x008d, code lost:
+        return r3;
+     */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+        To view partially-correct add '--show-bad-code' argument
+    */
+    public int inflateBytes(byte[] r7, int r8, int r9) throws java.util.zip.DataFormatException, java.util.zip.ZipException {
+        /*
+            r6 = this;
+            boolean r0 = r6.closed
+            r1 = 1
+            r0 = r0 ^ r1
+            java.lang.String r2 = "GzipInflatingBuffer is closed"
+            com.google.common.base.Preconditions.checkState(r0, r2)
+            r0 = 0
+            r3 = r0
+        Lb:
+            r2 = r1
+        Lc:
+            if (r2 == 0) goto L77
+            int r4 = r9 - r3
+            if (r4 <= 0) goto L77
+            int[] r2 = io.grpc.internal.GzipInflatingBuffer.C24281.$SwitchMap$io$grpc$internal$GzipInflatingBuffer$State
+            io.grpc.internal.GzipInflatingBuffer$State r5 = r6.state
+            int r5 = r5.ordinal()
+            r2 = r2[r5]
+            switch(r2) {
+                case 1: goto L72;
+                case 2: goto L6d;
+                case 3: goto L68;
+                case 4: goto L63;
+                case 5: goto L5e;
+                case 6: goto L59;
+                case 7: goto L54;
+                case 8: goto L42;
+                case 9: goto L3d;
+                case 10: goto L38;
+                default: goto L1f;
             }
-        }
-        if (z2) {
-            z = false;
-        }
-        this.isStalled = z;
-        return i3;
+        L1f:
+            java.lang.AssertionError r7 = new java.lang.AssertionError
+            java.lang.StringBuilder r8 = new java.lang.StringBuilder
+            r8.<init>()
+            java.lang.String r9 = "Invalid state: "
+            r8.append(r9)
+            io.grpc.internal.GzipInflatingBuffer$State r9 = r6.state
+            r8.append(r9)
+            java.lang.String r8 = r8.toString()
+            r7.<init>(r8)
+            throw r7
+        L38:
+            boolean r2 = r6.processTrailer()
+            goto Lc
+        L3d:
+            boolean r2 = r6.fill()
+            goto Lc
+        L42:
+            int r2 = r8 + r3
+            int r2 = r6.inflate(r7, r2, r4)
+            int r3 = r3 + r2
+            io.grpc.internal.GzipInflatingBuffer$State r2 = r6.state
+            io.grpc.internal.GzipInflatingBuffer$State r4 = io.grpc.internal.GzipInflatingBuffer.State.TRAILER
+            if (r2 != r4) goto Lb
+            boolean r2 = r6.processTrailer()
+            goto Lc
+        L54:
+            boolean r2 = r6.initializeInflater()
+            goto Lc
+        L59:
+            boolean r2 = r6.processHeaderCrc()
+            goto Lc
+        L5e:
+            boolean r2 = r6.processHeaderComment()
+            goto Lc
+        L63:
+            boolean r2 = r6.processHeaderName()
+            goto Lc
+        L68:
+            boolean r2 = r6.processHeaderExtra()
+            goto Lc
+        L6d:
+            boolean r2 = r6.processHeaderExtraLen()
+            goto Lc
+        L72:
+            boolean r2 = r6.processHeader()
+            goto Lc
+        L77:
+            if (r2 == 0) goto L8b
+            io.grpc.internal.GzipInflatingBuffer$State r7 = r6.state
+            io.grpc.internal.GzipInflatingBuffer$State r8 = io.grpc.internal.GzipInflatingBuffer.State.HEADER
+            if (r7 != r8) goto L8a
+            io.grpc.internal.GzipInflatingBuffer$GzipMetadataReader r7 = r6.gzipMetadataReader
+            int r7 = io.grpc.internal.GzipInflatingBuffer.GzipMetadataReader.access$700(r7)
+            r8 = 10
+            if (r7 >= r8) goto L8a
+            goto L8b
+        L8a:
+            r1 = r0
+        L8b:
+            r6.isStalled = r1
+            return r3
+        */
+        throw new UnsupportedOperationException("Method not decompiled: io.grpc.internal.GzipInflatingBuffer.inflateBytes(byte[], int, int):int");
     }
 
     /* renamed from: io.grpc.internal.GzipInflatingBuffer$1 */
     /* loaded from: classes4.dex */
-    static /* synthetic */ class C24141 {
+    static /* synthetic */ class C24281 {
         static final /* synthetic */ int[] $SwitchMap$io$grpc$internal$GzipInflatingBuffer$State;
 
         static {
@@ -358,7 +417,7 @@ public class GzipInflatingBuffer implements Closeable {
             if (this.gzipMetadataReader.readableBytes() < 2) {
                 return false;
             }
-            if ((65535 & ((int) this.crc.getValue())) != this.gzipMetadataReader.readUnsignedShort()) {
+            if ((((int) this.crc.getValue()) & RtpPacket.MAX_SEQUENCE_NUMBER) != this.gzipMetadataReader.readUnsignedShort()) {
                 throw new ZipException("Corrupt GZIP header");
             }
             this.state = State.INITIALIZE_INFLATER;

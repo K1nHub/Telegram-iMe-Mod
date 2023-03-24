@@ -119,13 +119,13 @@
     goto :goto_0
 
     :cond_1
-    const/4 p2, 0x0
+    move p2, v0
 
     .line 251
     :goto_0
     invoke-virtual {p0, p2}, Lorg/telegram/ui/Components/SizeNotifierFrameLayout;->setBottomClip(I)V
 
-    const/4 v1, 0x0
+    move v1, v0
 
     :goto_1
     if-ge v1, p1, :cond_b

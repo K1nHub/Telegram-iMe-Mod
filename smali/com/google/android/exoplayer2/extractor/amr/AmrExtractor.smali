@@ -294,11 +294,11 @@
 
     const-wide/16 v2, 0x8
 
-    mul-long v0, v0, v2
+    mul-long/2addr v0, v2
 
     const-wide/32 v2, 0xf4240
 
-    mul-long v0, v0, v2
+    mul-long/2addr v0, v2
 
     .line 415
     div-long/2addr v0, p1
@@ -656,7 +656,7 @@
 
     if-eqz p3, :cond_3
 
-    const/4 p3, 0x1
+    move p3, v2
 
     goto :goto_0
 

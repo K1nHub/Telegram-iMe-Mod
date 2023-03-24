@@ -1390,6 +1390,8 @@
     <string name="wallet_account_level_zero_description">= 0</string>
     <string name="wallet_account_type_crypto">Криптоактивы</string>
     <string name="wallet_account_type_fiat">Фиат</string>
+    <string name="wallet_activation_confirmation_description">Вы можете создать этот кошелек с помощью той же мнемонической фразы, как в вашем EVM кошельке</string>
+    <string name="wallet_activation_confirmation_title">Быстрое создание</string>
     <string name="wallet_amount_button_calculate">Рассчитать комиссию</string>
     <string name="wallet_amount_button_txt">Отправить</string>
     <string name="wallet_amount_confirm_alert_ok_btn">Отправить</string>
@@ -1660,6 +1662,8 @@
     <string name="wallet_crypto_blockchains_title">Блокчейны</string>
     <string name="wallet_crypto_blockchains_ton_subtitle">The Open Network</string>
     <string name="wallet_crypto_blockchains_ton_title">TON</string>
+    <string name="wallet_crypto_blockchains_tron_subtitle">Сеть TRC20</string>
+    <string name="wallet_crypto_blockchains_tron_title">TRON</string>
     <string name="wallet_crypto_buy_amount_title">Сумма</string>
     <string name="wallet_crypto_buy_confirm_dialog_action_txt">Купить</string>
     <string name="wallet_crypto_buy_confirm_dialog_description">Вы точно хотите купить ~%1$s %2$s?</string>
@@ -1699,6 +1703,7 @@
     <string name="wallet_crypto_wallet_not_created_dialog_positive_btn">Создать</string>
     <string name="wallet_crypto_wallet_not_created_dialog_title">Криптокошелек не создан</string>
     <string name="wallet_dashboard_account_title">Счет %s</string>
+    <string name="wallet_dashboard_activate_wallet">Активировать %s кошелек</string>
     <string name="wallet_dashboard_balance_24h_rate">%1$.2f%% / 24ч</string>
     <string name="wallet_dashboard_create_eth_wallet">Создать</string>
     <string name="wallet_dashboard_create_eth_wallet_success_dialog_description">"Ваш кошелек был успешно создан.
@@ -1756,6 +1761,8 @@ iMe Wallet."</string>
     <string name="wallet_details_info_evm_title">EVM</string>
     <string name="wallet_details_info_ton_description">Это ваш активный аккаунт блокчейна The Open Network (TON).</string>
     <string name="wallet_details_info_ton_title">TON</string>
+    <string name="wallet_details_info_tron_description">Это ваш активный аккаунт блокчейна TRON.</string>
+    <string name="wallet_details_info_tron_title">TRON</string>
     <string name="wallet_details_reset_description">Вы уверены, что хотите сбросить этот кошелек?</string>
     <string name="wallet_details_reset_title">Сбросить кошелек</string>
     <string name="wallet_enter_eth_password_delete_wallet_dialog_description">"Вы точно хотите сбросить аккаунт до начального значения?

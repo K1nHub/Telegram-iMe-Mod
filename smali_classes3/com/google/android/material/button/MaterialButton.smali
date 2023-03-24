@@ -263,7 +263,7 @@
 
     if-eqz p2, :cond_0
 
-    const/4 p1, 0x1
+    move p1, v2
 
     :cond_0
     invoke-direct {p0, p1}, Lcom/google/android/material/button/MaterialButton;->updateIcon(Z)V
@@ -751,7 +751,7 @@
     if-eq v3, p1, :cond_8
 
     :cond_7
-    const/4 v0, 0x1
+    move v0, v2
 
     :cond_8
     if-eqz v0, :cond_9
@@ -952,7 +952,7 @@
     goto :goto_1
 
     :cond_7
-    const/4 v0, 0x0
+    move v0, v1
 
     :goto_1
     if-eq p2, v0, :cond_8

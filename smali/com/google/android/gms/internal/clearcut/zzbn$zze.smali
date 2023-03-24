@@ -97,9 +97,9 @@
 
     sub-long/2addr p1, v1
 
-    long-to-int p2, p1
+    long-to-int p1, p1
 
-    invoke-virtual {v0, p2}, Ljava/nio/ByteBuffer;->position(I)Ljava/nio/Buffer;
+    invoke-virtual {v0, p1}, Ljava/nio/ByteBuffer;->position(I)Ljava/nio/Buffer;
 
     return-void
 .end method
@@ -117,9 +117,9 @@
 
     sub-long/2addr v1, v3
 
-    long-to-int v2, v1
+    long-to-int v1, v1
 
-    invoke-virtual {v0, v2}, Ljava/nio/ByteBuffer;->position(I)Ljava/nio/Buffer;
+    invoke-virtual {v0, v1}, Ljava/nio/ByteBuffer;->position(I)Ljava/nio/Buffer;
 
     return-void
 .end method
@@ -152,9 +152,9 @@
 
     iget-wide v5, p0, Lcom/google/android/gms/internal/clearcut/zzbn$zze;->zzgi:J
 
-    cmp-long v2, v0, v5
+    cmp-long v0, v0, v5
 
-    if-ltz v2, :cond_0
+    if-ltz v0, :cond_0
 
     int-to-long v3, p2
 
@@ -223,7 +223,7 @@
 .end method
 
 .method public final zza(B)V
-    .locals 5
+    .locals 4
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -234,9 +234,9 @@
 
     iget-wide v2, p0, Lcom/google/android/gms/internal/clearcut/zzbn$zze;->zzgg:J
 
-    cmp-long v4, v0, v2
+    cmp-long v2, v0, v2
 
-    if-gez v4, :cond_0
+    if-gez v2, :cond_0
 
     const-wide/16 v2, 0x1
 
@@ -456,9 +456,9 @@
 
     sub-long/2addr v0, v2
 
-    long-to-int v1, v0
+    long-to-int v0, v0
 
-    return v1
+    return v0
 .end method
 
 .method public final zzb(II)V
@@ -563,95 +563,106 @@
 
     iget-wide v2, p0, Lcom/google/android/gms/internal/clearcut/zzbn$zze;->zzgh:J
 
-    const/4 v4, 0x7
+    cmp-long v0, v0, v2
 
-    const-wide/16 v5, 0x0
+    const/4 v1, 0x7
 
-    const-wide/16 v7, -0x80
+    const-wide/16 v2, 0x0
 
-    const-wide/16 v9, 0x1
+    const-wide/16 v4, -0x80
 
-    cmp-long v11, v0, v2
+    const-wide/16 v6, 0x1
 
-    if-gtz v11, :cond_1
+    if-gtz v0, :cond_1
 
     :goto_0
-    and-long v0, p1, v7
+    and-long v8, p1, v4
 
-    cmp-long v2, v0, v5
+    cmp-long v0, v8, v2
+
+    if-nez v0, :cond_0
 
     iget-wide v0, p0, Lcom/google/android/gms/internal/clearcut/zzbn$zze;->zzgi:J
 
-    if-nez v2, :cond_0
+    add-long/2addr v6, v0
 
-    :goto_1
-    add-long/2addr v9, v0
+    iput-wide v6, p0, Lcom/google/android/gms/internal/clearcut/zzbn$zze;->zzgi:J
 
-    iput-wide v9, p0, Lcom/google/android/gms/internal/clearcut/zzbn$zze;->zzgi:J
+    long-to-int p1, p1
 
-    long-to-int p2, p1
-
-    int-to-byte p1, p2
+    int-to-byte p1, p1
 
     invoke-static {v0, v1, p1}, Lcom/google/android/gms/internal/clearcut/zzfd;->zza(JB)V
 
     return-void
 
     :cond_0
-    add-long v2, v0, v9
+    iget-wide v8, p0, Lcom/google/android/gms/internal/clearcut/zzbn$zze;->zzgi:J
 
-    iput-wide v2, p0, Lcom/google/android/gms/internal/clearcut/zzbn$zze;->zzgi:J
+    add-long v10, v8, v6
 
-    long-to-int v2, p1
+    iput-wide v10, p0, Lcom/google/android/gms/internal/clearcut/zzbn$zze;->zzgi:J
 
-    and-int/lit8 v2, v2, 0x7f
+    long-to-int v0, p1
 
-    or-int/lit16 v2, v2, 0x80
+    and-int/lit8 v0, v0, 0x7f
 
-    int-to-byte v2, v2
+    or-int/lit16 v0, v0, 0x80
 
-    invoke-static {v0, v1, v2}, Lcom/google/android/gms/internal/clearcut/zzfd;->zza(JB)V
+    int-to-byte v0, v0
 
-    ushr-long/2addr p1, v4
+    invoke-static {v8, v9, v0}, Lcom/google/android/gms/internal/clearcut/zzfd;->zza(JB)V
+
+    ushr-long/2addr p1, v1
 
     goto :goto_0
 
     :cond_1
-    :goto_2
-    iget-wide v0, p0, Lcom/google/android/gms/internal/clearcut/zzbn$zze;->zzgi:J
+    :goto_1
+    iget-wide v8, p0, Lcom/google/android/gms/internal/clearcut/zzbn$zze;->zzgi:J
 
-    iget-wide v2, p0, Lcom/google/android/gms/internal/clearcut/zzbn$zze;->zzgg:J
+    iget-wide v10, p0, Lcom/google/android/gms/internal/clearcut/zzbn$zze;->zzgg:J
 
-    cmp-long v11, v0, v2
+    cmp-long v0, v8, v10
 
-    if-gez v11, :cond_3
+    if-gez v0, :cond_3
 
-    and-long v2, p1, v7
+    and-long v10, p1, v4
 
-    cmp-long v11, v2, v5
+    cmp-long v0, v10, v2
 
-    if-nez v11, :cond_2
+    if-nez v0, :cond_2
 
-    goto :goto_1
+    add-long/2addr v6, v8
+
+    iput-wide v6, p0, Lcom/google/android/gms/internal/clearcut/zzbn$zze;->zzgi:J
+
+    long-to-int p1, p1
+
+    int-to-byte p1, p1
+
+    invoke-static {v8, v9, p1}, Lcom/google/android/gms/internal/clearcut/zzfd;->zza(JB)V
+
+    return-void
 
     :cond_2
-    add-long v2, v0, v9
+    add-long v10, v8, v6
 
-    iput-wide v2, p0, Lcom/google/android/gms/internal/clearcut/zzbn$zze;->zzgi:J
+    iput-wide v10, p0, Lcom/google/android/gms/internal/clearcut/zzbn$zze;->zzgi:J
 
-    long-to-int v2, p1
+    long-to-int v0, p1
 
-    and-int/lit8 v2, v2, 0x7f
+    and-int/lit8 v0, v0, 0x7f
 
-    or-int/lit16 v2, v2, 0x80
+    or-int/lit16 v0, v0, 0x80
 
-    int-to-byte v2, v2
+    int-to-byte v0, v0
 
-    invoke-static {v0, v1, v2}, Lcom/google/android/gms/internal/clearcut/zzfd;->zza(JB)V
+    invoke-static {v8, v9, v0}, Lcom/google/android/gms/internal/clearcut/zzfd;->zza(JB)V
 
-    ushr-long/2addr p1, v4
+    ushr-long/2addr p1, v1
 
-    goto :goto_2
+    goto :goto_1
 
     :cond_3
     new-instance p1, Lcom/google/android/gms/internal/clearcut/zzbn$zzc;
@@ -785,9 +796,9 @@
 
     sub-long/2addr v1, v3
 
-    long-to-int v2, v1
+    long-to-int v1, v1
 
-    invoke-virtual {v0, v2, p1, p2}, Ljava/nio/ByteBuffer;->putLong(IJ)Ljava/nio/ByteBuffer;
+    invoke-virtual {v0, v1, p1, p2}, Ljava/nio/ByteBuffer;->putLong(IJ)Ljava/nio/ByteBuffer;
 
     iget-wide p1, p0, Lcom/google/android/gms/internal/clearcut/zzbn$zze;->zzgi:J
 
@@ -996,44 +1007,42 @@
 
     iget-wide v2, p0, Lcom/google/android/gms/internal/clearcut/zzbn$zze;->zzgh:J
 
-    const-wide/16 v4, 0x1
+    cmp-long v0, v0, v2
 
-    cmp-long v6, v0, v2
+    const-wide/16 v1, 0x1
 
-    if-gtz v6, :cond_1
+    if-gtz v0, :cond_1
 
     :goto_0
     and-int/lit8 v0, p1, -0x80
 
+    iget-wide v3, p0, Lcom/google/android/gms/internal/clearcut/zzbn$zze;->zzgi:J
+
     if-nez v0, :cond_0
 
-    iget-wide v0, p0, Lcom/google/android/gms/internal/clearcut/zzbn$zze;->zzgi:J
-
     :goto_1
-    add-long/2addr v4, v0
+    add-long/2addr v1, v3
 
-    iput-wide v4, p0, Lcom/google/android/gms/internal/clearcut/zzbn$zze;->zzgi:J
+    iput-wide v1, p0, Lcom/google/android/gms/internal/clearcut/zzbn$zze;->zzgi:J
 
     int-to-byte p1, p1
 
-    invoke-static {v0, v1, p1}, Lcom/google/android/gms/internal/clearcut/zzfd;->zza(JB)V
+    invoke-static {v3, v4, p1}, Lcom/google/android/gms/internal/clearcut/zzfd;->zza(JB)V
 
     return-void
 
     :cond_0
-    iget-wide v0, p0, Lcom/google/android/gms/internal/clearcut/zzbn$zze;->zzgi:J
+    add-long v5, v3, v1
 
-    add-long v2, v0, v4
+    iput-wide v5, p0, Lcom/google/android/gms/internal/clearcut/zzbn$zze;->zzgi:J
 
-    iput-wide v2, p0, Lcom/google/android/gms/internal/clearcut/zzbn$zze;->zzgi:J
+    and-int/lit8 v0, p1, 0x7f
 
-    and-int/lit8 v2, p1, 0x7f
+    or-int/lit16 v0, v0, 0x80
 
-    or-int/lit16 v2, v2, 0x80
+    int-to-byte v0, v0
 
-    int-to-byte v2, v2
-
-    invoke-static {v0, v1, v2}, Lcom/google/android/gms/internal/clearcut/zzfd;->zza(JB)V
+    invoke-static {v3, v4, v0}, Lcom/google/android/gms/internal/clearcut/zzfd;->zza(JB)V
 
     ushr-int/lit8 p1, p1, 0x7
 
@@ -1041,32 +1050,32 @@
 
     :cond_1
     :goto_2
-    iget-wide v0, p0, Lcom/google/android/gms/internal/clearcut/zzbn$zze;->zzgi:J
+    iget-wide v3, p0, Lcom/google/android/gms/internal/clearcut/zzbn$zze;->zzgi:J
 
-    iget-wide v2, p0, Lcom/google/android/gms/internal/clearcut/zzbn$zze;->zzgg:J
+    iget-wide v5, p0, Lcom/google/android/gms/internal/clearcut/zzbn$zze;->zzgg:J
 
-    cmp-long v6, v0, v2
+    cmp-long v0, v3, v5
 
-    if-gez v6, :cond_3
+    if-gez v0, :cond_3
 
-    and-int/lit8 v2, p1, -0x80
+    and-int/lit8 v0, p1, -0x80
 
-    if-nez v2, :cond_2
+    if-nez v0, :cond_2
 
     goto :goto_1
 
     :cond_2
-    add-long v2, v0, v4
+    add-long v5, v3, v1
 
-    iput-wide v2, p0, Lcom/google/android/gms/internal/clearcut/zzbn$zze;->zzgi:J
+    iput-wide v5, p0, Lcom/google/android/gms/internal/clearcut/zzbn$zze;->zzgi:J
 
-    and-int/lit8 v2, p1, 0x7f
+    and-int/lit8 v0, p1, 0x7f
 
-    or-int/lit16 v2, v2, 0x80
+    or-int/lit16 v0, v0, 0x80
 
-    int-to-byte v2, v2
+    int-to-byte v0, v0
 
-    invoke-static {v0, v1, v2}, Lcom/google/android/gms/internal/clearcut/zzfd;->zza(JB)V
+    invoke-static {v3, v4, v0}, Lcom/google/android/gms/internal/clearcut/zzfd;->zza(JB)V
 
     ushr-int/lit8 p1, p1, 0x7
 
@@ -1134,9 +1143,9 @@
 
     sub-long/2addr v1, v3
 
-    long-to-int v2, v1
+    long-to-int v1, v1
 
-    invoke-virtual {v0, v2, p1}, Ljava/nio/ByteBuffer;->putInt(II)Ljava/nio/ByteBuffer;
+    invoke-virtual {v0, v1, p1}, Ljava/nio/ByteBuffer;->putInt(II)Ljava/nio/ByteBuffer;
 
     iget-wide v0, p0, Lcom/google/android/gms/internal/clearcut/zzbn$zze;->zzgi:J
 

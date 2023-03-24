@@ -127,7 +127,10 @@ public @interface JsonFormat {
             }
             if (obj != null && obj.getClass() == Value.class) {
                 Value value = (Value) obj;
-                return this._shape == value._shape && this._features.equals(value._features) && _equal(this._timezoneStr, value._timezoneStr) && _equal(this._pattern, value._pattern) && _equal(this._timezone, value._timezone) && _equal(this._locale, value._locale);
+                if (this._shape == value._shape && this._features.equals(value._features)) {
+                    return _equal(this._timezoneStr, value._timezoneStr) && _equal(this._pattern, value._pattern) && _equal(this._timezone, value._timezone) && _equal(this._locale, value._locale);
+                }
+                return false;
             }
             return false;
         }

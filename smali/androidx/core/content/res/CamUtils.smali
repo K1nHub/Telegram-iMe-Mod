@@ -215,27 +215,27 @@
 
     const/high16 v5, 0x41000000    # 8.0f
 
+    cmpl-float v5, p0, v5
+
     const/4 v6, 0x1
 
     const/4 v7, 0x0
 
-    cmpl-float v5, p0, v5
-
     if-lez v5, :cond_2
 
-    const/4 v5, 0x1
+    move v5, v6
 
     goto :goto_0
 
     :cond_2
-    const/4 v5, 0x0
+    move v5, v7
 
     :goto_0
     if-eqz v5, :cond_3
 
     mul-float p0, v1, v1
 
-    mul-float p0, p0, v1
+    mul-float/2addr p0, v1
 
     goto :goto_1
 
@@ -245,18 +245,18 @@
     :goto_1
     mul-float v5, v1, v1
 
-    mul-float v5, v5, v1
+    mul-float/2addr v5, v1
 
     cmpl-float v4, v5, v4
 
     if-lez v4, :cond_4
 
-    const/4 v4, 0x1
+    move v4, v6
 
     goto :goto_2
 
     :cond_4
-    const/4 v4, 0x0
+    move v4, v7
 
     :goto_2
     if-eqz v4, :cond_5
@@ -278,7 +278,7 @@
     goto :goto_4
 
     :cond_6
-    mul-float v1, v1, v2
+    mul-float/2addr v1, v2
 
     sub-float/2addr v1, v0
 
@@ -290,13 +290,13 @@
 
     aget v1, v0, v7
 
-    mul-float v8, v8, v1
+    mul-float/2addr v8, v1
 
     float-to-double v9, v8
 
     aget v1, v0, v6
 
-    mul-float p0, p0, v1
+    mul-float/2addr p0, v1
 
     float-to-double v11, p0
 
@@ -304,7 +304,7 @@
 
     aget p0, v0, p0
 
-    mul-float v5, v5, p0
+    mul-float/2addr v5, p0
 
     float-to-double v13, v5
 
@@ -345,7 +345,7 @@
 
     const v0, 0x4461d2f7
 
-    mul-float p0, p0, v0
+    mul-float/2addr p0, v0
 
     return p0
 
@@ -361,7 +361,7 @@
 
     const/high16 v0, 0x42e80000    # 116.0f
 
-    mul-float p0, p0, v0
+    mul-float/2addr p0, v0
 
     const/high16 v0, 0x41800000    # 16.0f
 
@@ -375,7 +375,7 @@
 
     sub-float/2addr p1, p0
 
-    mul-float p1, p1, p2
+    mul-float/2addr p1, p2
 
     add-float/2addr p0, p1
 
@@ -383,7 +383,7 @@
 .end method
 
 .method static linearized(I)F
-    .locals 5
+    .locals 6
 
     int-to-float p0, p0
 
@@ -391,42 +391,42 @@
 
     div-float/2addr p0, v0
 
-    const/high16 v0, 0x42c80000    # 100.0f
+    const v0, 0x3d25aee6    # 0.04045f
 
-    const v1, 0x3d25aee6    # 0.04045f
+    cmpg-float v0, p0, v0
 
-    cmpg-float v1, p0, v1
+    const/high16 v1, 0x42c80000    # 100.0f
 
-    if-gtz v1, :cond_0
+    if-gtz v0, :cond_0
 
-    const v1, 0x414eb852    # 12.92f
+    const v0, 0x414eb852    # 12.92f
 
-    div-float/2addr p0, v1
+    div-float/2addr p0, v0
 
     :goto_0
-    mul-float p0, p0, v0
+    mul-float/2addr p0, v1
 
     return p0
 
     :cond_0
-    const v1, 0x3d6147ae    # 0.055f
+    const v0, 0x3d6147ae    # 0.055f
 
-    add-float/2addr p0, v1
+    add-float/2addr p0, v0
 
-    const v1, 0x3f870a3d    # 1.055f
+    const v0, 0x3f870a3d    # 1.055f
 
-    div-float/2addr p0, v1
+    div-float/2addr p0, v0
 
-    float-to-double v1, p0
+    float-to-double v2, p0
 
-    const-wide v3, 0x4003333340000000L    # 2.4000000953674316
+    const-wide v4, 0x4003333340000000L    # 2.4000000953674316
 
     .line 163
-    invoke-static {v1, v2, v3, v4}, Ljava/lang/Math;->pow(DD)D
+    invoke-static {v2, v3, v4, v5}, Ljava/lang/Math;->pow(DD)D
 
-    move-result-wide v1
+    move-result-wide v2
 
-    double-to-float p0, v1
+    double-to-float p0, v2
 
     goto :goto_0
 .end method
@@ -471,7 +471,7 @@
 
     aget v4, v4, v3
 
-    mul-float v4, v4, v0
+    mul-float/2addr v4, v0
 
     aget-object v5, v2, v3
 
@@ -479,7 +479,7 @@
 
     aget v5, v5, v6
 
-    mul-float v5, v5, v1
+    mul-float/2addr v5, v1
 
     add-float/2addr v4, v5
 
@@ -489,7 +489,7 @@
 
     aget v5, v5, v7
 
-    mul-float v5, v5, p0
+    mul-float/2addr v5, p0
 
     add-float/2addr v4, v5
 
@@ -498,13 +498,13 @@
 
     aget v5, v5, v3
 
-    mul-float v5, v5, v0
+    mul-float/2addr v5, v0
 
     aget-object v8, v2, v6
 
     aget v8, v8, v6
 
-    mul-float v8, v8, v1
+    mul-float/2addr v8, v1
 
     add-float/2addr v5, v8
 
@@ -512,7 +512,7 @@
 
     aget v8, v8, v7
 
-    mul-float v8, v8, p0
+    mul-float/2addr v8, p0
 
     add-float/2addr v5, v8
 
@@ -521,13 +521,13 @@
 
     aget v8, v8, v3
 
-    mul-float v0, v0, v8
+    mul-float/2addr v0, v8
 
     aget-object v8, v2, v7
 
     aget v8, v8, v6
 
-    mul-float v1, v1, v8
+    mul-float/2addr v1, v8
 
     add-float/2addr v0, v1
 
@@ -535,7 +535,7 @@
 
     aget v1, v1, v7
 
-    mul-float p0, p0, v1
+    mul-float/2addr p0, v1
 
     add-float/2addr v0, p0
 
@@ -594,13 +594,13 @@
 
     aget v4, v4, v5
 
-    mul-float v0, v0, v4
+    mul-float/2addr v0, v4
 
     aget-object v4, v2, v3
 
     aget v4, v4, v3
 
-    mul-float v1, v1, v4
+    mul-float/2addr v1, v4
 
     add-float/2addr v0, v1
 
@@ -610,7 +610,7 @@
 
     aget v1, v1, v2
 
-    mul-float p0, p0, v1
+    mul-float/2addr p0, v1
 
     add-float/2addr v0, p0
 
@@ -618,44 +618,44 @@
 .end method
 
 .method static yFromLStar(F)F
-    .locals 5
+    .locals 6
 
-    const/high16 v0, 0x42c80000    # 100.0f
+    const/high16 v0, 0x41000000    # 8.0f
 
-    const/high16 v1, 0x41000000    # 8.0f
+    cmpl-float v0, p0, v0
 
-    cmpl-float v1, p0, v1
+    const/high16 v1, 0x42c80000    # 100.0f
 
-    if-lez v1, :cond_0
+    if-lez v0, :cond_0
 
-    float-to-double v1, p0
+    float-to-double v2, p0
 
-    const-wide/high16 v3, 0x4030000000000000L    # 16.0
+    const-wide/high16 v4, 0x4030000000000000L    # 16.0
 
-    add-double/2addr v1, v3
+    add-double/2addr v2, v4
 
-    const-wide/high16 v3, 0x405d000000000000L    # 116.0
+    const-wide/high16 v4, 0x405d000000000000L    # 116.0
 
-    div-double/2addr v1, v3
+    div-double/2addr v2, v4
 
-    const-wide/high16 v3, 0x4008000000000000L    # 3.0
+    const-wide/high16 v4, 0x4008000000000000L    # 3.0
 
     .line 151
-    invoke-static {v1, v2, v3, v4}, Ljava/lang/Math;->pow(DD)D
+    invoke-static {v2, v3, v4, v5}, Ljava/lang/Math;->pow(DD)D
 
-    move-result-wide v1
+    move-result-wide v2
 
-    double-to-float p0, v1
+    double-to-float p0, v2
 
     :goto_0
-    mul-float p0, p0, v0
+    mul-float/2addr p0, v1
 
     return p0
 
     :cond_0
-    const v1, 0x4461d2f7
+    const v0, 0x4461d2f7
 
-    div-float/2addr p0, v1
+    div-float/2addr p0, v0
 
     goto :goto_0
 .end method

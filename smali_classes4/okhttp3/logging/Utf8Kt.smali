@@ -41,7 +41,7 @@
 
     const/16 p0, 0x10
 
-    const/4 v1, 0x0
+    move v1, v0
 
     :goto_0
     if-ge v1, p0, :cond_2

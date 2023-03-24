@@ -120,11 +120,11 @@
 
     const-string v2, ""
 
-    const/4 v3, 0x0
+    move v3, v1
 
-    const/4 v4, 0x0
+    move v4, v3
 
-    const/4 v5, 0x0
+    move v5, v4
 
     :goto_1
     const/4 v6, 0x1

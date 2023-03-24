@@ -14,11 +14,11 @@ public final class zzv implements Parcelable.Creator<zzs> {
     @Override // android.os.Parcelable.Creator
     public final /* synthetic */ zzs createFromParcel(Parcel parcel) {
         int validateObjectHeader = SafeParcelReader.validateObjectHeader(parcel);
-        long j = 0;
         int i = 0;
         int i2 = 0;
         int i3 = 0;
         int i4 = 0;
+        long j = 0;
         while (parcel.dataPosition() < validateObjectHeader) {
             int readHeader = SafeParcelReader.readHeader(parcel);
             int fieldId = SafeParcelReader.getFieldId(readHeader);

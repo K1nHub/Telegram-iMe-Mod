@@ -3,7 +3,7 @@ package org.fork.enums;
 import kotlin.NoWhenBranchMatchedException;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.messenger.C3286R;
+import org.telegram.messenger.C3301R;
 import org.telegram.messenger.LocaleController;
 /* compiled from: DrawerHolidayIconType.kt */
 /* loaded from: classes4.dex */
@@ -63,23 +63,23 @@ public enum DrawerHolidayIconType {
     public final String getTitle() {
         int i = WhenMappings.$EnumSwitchMapping$0[ordinal()];
         if (i == 1) {
-            String string = LocaleController.getString("Default", C3286R.string.Default);
+            String string = LocaleController.getString("Default", C3301R.string.Default);
             Intrinsics.checkNotNullExpressionValue(string, "getString(\"Default\", R.string.Default)");
             return string;
         } else if (i == 2) {
-            String internalString = LocaleController.getInternalString(C3286R.string.setting_tools_drawer_holiday_icon_menu_ny);
+            String internalString = LocaleController.getInternalString(C3301R.string.setting_tools_drawer_holiday_icon_menu_ny);
             Intrinsics.checkNotNullExpressionValue(internalString, "getInternalString(R.stri…wer_holiday_icon_menu_ny)");
             return internalString;
         } else if (i == 3) {
-            String internalString2 = LocaleController.getInternalString(C3286R.string.setting_tools_drawer_holiday_icon_menu_14);
+            String internalString2 = LocaleController.getInternalString(C3301R.string.setting_tools_drawer_holiday_icon_menu_14);
             Intrinsics.checkNotNullExpressionValue(internalString2, "getInternalString(R.stri…wer_holiday_icon_menu_14)");
             return internalString2;
         } else if (i == 4) {
-            String internalString3 = LocaleController.getInternalString(C3286R.string.setting_tools_drawer_holiday_icon_menu_hw);
+            String internalString3 = LocaleController.getInternalString(C3301R.string.setting_tools_drawer_holiday_icon_menu_hw);
             Intrinsics.checkNotNullExpressionValue(internalString3, "getInternalString(R.stri…wer_holiday_icon_menu_hw)");
             return internalString3;
         } else if (i == 5) {
-            String string2 = LocaleController.getString("PhoneMain", C3286R.string.PhoneMain);
+            String string2 = LocaleController.getString("PhoneMain", C3301R.string.PhoneMain);
             Intrinsics.checkNotNullExpressionValue(string2, "getString(\"PhoneMain\",R.string.PhoneMain)");
             return string2;
         } else {

@@ -738,7 +738,7 @@
 
     const-wide v3, 0x3fe51eb851eb851fL    # 0.66
 
-    mul-double v1, v1, v3
+    mul-double/2addr v1, v3
 
     double-to-int p2, v1
 
@@ -886,7 +886,7 @@
     goto :goto_0
 
     :cond_0
-    const/4 v0, 0x0
+    move v0, v2
 
     :goto_0
     if-eqz v0, :cond_1

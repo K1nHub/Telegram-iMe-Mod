@@ -59,9 +59,9 @@
 
     div-long/2addr v2, v4
 
-    long-to-int v3, v2
+    long-to-int v2, v2
 
-    if-le v1, v3, :cond_2
+    if-le v1, v2, :cond_2
 
     .line 143
     iget-wide v0, p0, Lorg/telegram/tgnet/TLRPC$TL_emojiStatusUntil;->document_id:J
@@ -479,7 +479,7 @@
 
     if-eqz v1, :cond_3
 
-    const/4 v1, 0x0
+    move v1, v0
 
     .line 88
     :goto_0
@@ -628,19 +628,19 @@
 .end method
 
 .method public static isReplyUser(J)Z
-    .locals 3
+    .locals 2
 
     const-wide/32 v0, 0xacfa1
 
-    cmp-long v2, p0, v0
+    cmp-long v0, p0, v0
 
-    if-eqz v2, :cond_1
+    if-eqz v0, :cond_1
 
     const-wide/32 v0, 0x4bc5fe8d
 
-    cmp-long v2, p0, v0
+    cmp-long p0, p0, v0
 
-    if-nez v2, :cond_0
+    if-nez p0, :cond_0
 
     goto :goto_0
 

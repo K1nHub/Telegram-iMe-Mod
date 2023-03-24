@@ -84,7 +84,7 @@
 
     move-result v3
 
-    mul-int v2, v2, v3
+    mul-int/2addr v2, v3
 
     mul-int/lit8 v2, v2, 0x4
 
@@ -93,7 +93,7 @@
     .line 50
     iget v3, p1, Lcom/bumptech/glide/load/engine/cache/MemorySizeCalculator$Builder;->bitmapPoolScreens:F
 
-    mul-float v3, v3, v2
+    mul-float/2addr v3, v2
 
     invoke-static {v3}, Ljava/lang/Math;->round(F)I
 
@@ -102,7 +102,7 @@
     .line 52
     iget v4, p1, Lcom/bumptech/glide/load/engine/cache/MemorySizeCalculator$Builder;->memoryCacheScreens:F
 
-    mul-float v2, v2, v4
+    mul-float/2addr v2, v4
 
     invoke-static {v2}, Ljava/lang/Math;->round(F)I
 
@@ -134,7 +134,7 @@
 
     div-float/2addr v2, v3
 
-    mul-float v4, v4, v2
+    mul-float/2addr v4, v2
 
     .line 60
     invoke-static {v4}, Ljava/lang/Math;->round(F)I
@@ -146,7 +146,7 @@
     .line 61
     iget v3, p1, Lcom/bumptech/glide/load/engine/cache/MemorySizeCalculator$Builder;->bitmapPoolScreens:F
 
-    mul-float v2, v2, v3
+    mul-float/2addr v2, v3
 
     invoke-static {v2}, Ljava/lang/Math;->round(F)I
 
@@ -296,7 +296,7 @@
     move p1, p2
 
     :cond_0
-    mul-float v0, v0, p1
+    mul-float/2addr v0, p1
 
     .line 104
     invoke-static {v0}, Ljava/lang/Math;->round(F)I

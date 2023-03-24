@@ -146,12 +146,12 @@
 
     if-eq v5, v6, :cond_2
 
-    const/4 v5, 0x1
+    move v5, v0
 
     goto :goto_0
 
     :cond_2
-    const/4 v5, 0x0
+    move v5, v3
 
     :goto_0
     if-eqz v5, :cond_3

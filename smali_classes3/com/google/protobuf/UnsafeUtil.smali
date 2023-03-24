@@ -15,6 +15,8 @@
 
 
 # static fields
+.field private static final BUFFER_ADDRESS_OFFSET:J
+
 .field static final BYTE_ARRAY_BASE_OFFSET:J
 
 .field private static final HAS_UNSAFE_ARRAY_OPERATIONS:Z
@@ -164,6 +166,10 @@
 
     invoke-static {v0}, Lcom/google/protobuf/UnsafeUtil;->fieldOffset(Ljava/lang/reflect/Field;)J
 
+    move-result-wide v0
+
+    sput-wide v0, Lcom/google/protobuf/UnsafeUtil;->BUFFER_ADDRESS_OFFSET:J
+
     .line 82
     invoke-static {}, Ljava/nio/ByteOrder;->nativeOrder()Ljava/nio/ByteOrder;
 
@@ -195,7 +201,27 @@
     return-void
 .end method
 
-.method static synthetic access$000(Ljava/lang/Object;J)B
+.method static synthetic access$000(Ljava/lang/Throwable;)V
+    .locals 0
+
+    .line 43
+    invoke-static {p0}, Lcom/google/protobuf/UnsafeUtil;->logMissingMethod(Ljava/lang/Throwable;)V
+
+    return-void
+.end method
+
+.method static synthetic access$100()Ljava/lang/reflect/Field;
+    .locals 1
+
+    .line 43
+    invoke-static {}, Lcom/google/protobuf/UnsafeUtil;->bufferAddressField()Ljava/lang/reflect/Field;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method static synthetic access$200(Ljava/lang/Object;J)B
     .locals 0
 
     .line 43
@@ -206,7 +232,7 @@
     return p0
 .end method
 
-.method static synthetic access$100(Ljava/lang/Object;J)B
+.method static synthetic access$300(Ljava/lang/Object;J)B
     .locals 0
 
     .line 43
@@ -217,7 +243,7 @@
     return p0
 .end method
 
-.method static synthetic access$200(Ljava/lang/Object;JB)V
+.method static synthetic access$400(Ljava/lang/Object;JB)V
     .locals 0
 
     .line 43
@@ -226,7 +252,7 @@
     return-void
 .end method
 
-.method static synthetic access$300(Ljava/lang/Object;JB)V
+.method static synthetic access$500(Ljava/lang/Object;JB)V
     .locals 0
 
     .line 43
@@ -235,7 +261,7 @@
     return-void
 .end method
 
-.method static synthetic access$400(Ljava/lang/Object;J)Z
+.method static synthetic access$600(Ljava/lang/Object;J)Z
     .locals 0
 
     .line 43
@@ -246,7 +272,7 @@
     return p0
 .end method
 
-.method static synthetic access$500(Ljava/lang/Object;J)Z
+.method static synthetic access$700(Ljava/lang/Object;J)Z
     .locals 0
 
     .line 43
@@ -257,7 +283,7 @@
     return p0
 .end method
 
-.method static synthetic access$600(Ljava/lang/Object;JZ)V
+.method static synthetic access$800(Ljava/lang/Object;JZ)V
     .locals 0
 
     .line 43
@@ -266,13 +292,28 @@
     return-void
 .end method
 
-.method static synthetic access$700(Ljava/lang/Object;JZ)V
+.method static synthetic access$900(Ljava/lang/Object;JZ)V
     .locals 0
 
     .line 43
     invoke-static {p0, p1, p2, p3}, Lcom/google/protobuf/UnsafeUtil;->putBooleanLittleEndian(Ljava/lang/Object;JZ)V
 
     return-void
+.end method
+
+.method static addressOffset(Ljava/nio/ByteBuffer;)J
+    .locals 3
+
+    .line 279
+    sget-object v0, Lcom/google/protobuf/UnsafeUtil;->MEMORY_ACCESSOR:Lcom/google/protobuf/UnsafeUtil$MemoryAccessor;
+
+    sget-wide v1, Lcom/google/protobuf/UnsafeUtil;->BUFFER_ADDRESS_OFFSET:J
+
+    invoke-virtual {v0, p0, v1, v2}, Lcom/google/protobuf/UnsafeUtil$MemoryAccessor;->getLong(Ljava/lang/Object;J)J
+
+    move-result-wide v0
+
+    return-wide v0
 .end method
 
 .method static allocateInstance(Ljava/lang/Class;)Ljava/lang/Object;
@@ -373,14 +414,14 @@
 .method private static bufferAddressField()Ljava/lang/reflect/Field;
     .locals 3
 
-    .line 436
+    .line 371
     invoke-static {}, Lcom/google/protobuf/Android;->isOnAndroidDevice()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 439
+    .line 374
     const-class v0, Ljava/nio/Buffer;
 
     const-string v1, "effectiveDirectAddress"
@@ -393,7 +434,7 @@
 
     return-object v0
 
-    .line 444
+    .line 379
     :cond_0
     const-class v0, Ljava/nio/Buffer;
 
@@ -405,7 +446,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 445
+    .line 380
     invoke-virtual {v0}, Ljava/lang/reflect/Field;->getType()Ljava/lang/Class;
 
     move-result-object v1
@@ -423,7 +464,26 @@
     return-object v0
 .end method
 
-.method private static determineAndroidSupportByAddressSize(Ljava/lang/Class;)Z
+.method static copyMemory(J[BJJ)V
+    .locals 8
+
+    .line 246
+    sget-object v0, Lcom/google/protobuf/UnsafeUtil;->MEMORY_ACCESSOR:Lcom/google/protobuf/UnsafeUtil$MemoryAccessor;
+
+    move-wide v1, p0
+
+    move-object v3, p2
+
+    move-wide v4, p3
+
+    move-wide v6, p5
+
+    invoke-virtual/range {v0 .. v7}, Lcom/google/protobuf/UnsafeUtil$MemoryAccessor;->copyMemory(J[BJJ)V
+
+    return-void
+.end method
+
+.method static determineAndroidSupportByAddressSize(Ljava/lang/Class;)Z
     .locals 10
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -433,7 +493,7 @@
         }
     .end annotation
 
-    .line 415
+    .line 350
     const-class v0, [B
 
     invoke-static {}, Lcom/google/protobuf/Android;->isOnAndroidDevice()Z
@@ -446,7 +506,7 @@
 
     return v2
 
-    .line 419
+    .line 354
     :cond_0
     :try_start_0
     sget-object v1, Lcom/google/protobuf/UnsafeUtil;->MEMORY_CLASS:Ljava/lang/Class;
@@ -459,7 +519,7 @@
 
     aput-object p0, v5, v2
 
-    .line 420
+    .line 355
     sget-object v6, Ljava/lang/Boolean;->TYPE:Ljava/lang/Class;
 
     const/4 v7, 0x1
@@ -476,7 +536,7 @@
 
     aput-object p0, v8, v2
 
-    .line 421
+    .line 356
     sget-object v9, Ljava/lang/Long;->TYPE:Ljava/lang/Class;
 
     aput-object v9, v8, v7
@@ -491,7 +551,7 @@
 
     aput-object p0, v8, v2
 
-    .line 422
+    .line 357
     sget-object v9, Ljava/lang/Integer;->TYPE:Ljava/lang/Class;
 
     aput-object v9, v8, v7
@@ -508,7 +568,7 @@
 
     aput-object v6, v8, v7
 
-    .line 423
+    .line 358
     invoke-virtual {v1, v3, v8}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
 
     const-string v3, "pokeByte"
@@ -517,7 +577,7 @@
 
     aput-object p0, v6, v2
 
-    .line 424
+    .line 359
     sget-object v8, Ljava/lang/Byte;->TYPE:Ljava/lang/Class;
 
     aput-object v8, v6, v7
@@ -530,7 +590,7 @@
 
     aput-object p0, v6, v2
 
-    .line 425
+    .line 360
     invoke-virtual {v1, v3, v6}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
 
     const-string v3, "pokeByteArray"
@@ -547,7 +607,7 @@
 
     aput-object v9, v8, v5
 
-    .line 426
+    .line 361
     invoke-virtual {v1, v3, v8}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
 
     const-string v3, "peekByteArray"
@@ -562,7 +622,7 @@
 
     aput-object v9, v6, v5
 
-    .line 427
+    .line 362
     invoke-virtual {v1, v3, v6}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
@@ -586,7 +646,7 @@
         }
     .end annotation
 
-    .line 536
+    .line 471
     :try_start_0
     invoke-virtual {p0, p1}, Ljava/lang/Class;->getDeclaredField(Ljava/lang/String;)Ljava/lang/reflect/Field;
 
@@ -608,7 +668,7 @@
 
     if-eqz p0, :cond_1
 
-    .line 527
+    .line 462
     sget-object v0, Lcom/google/protobuf/UnsafeUtil;->MEMORY_ACCESSOR:Lcom/google/protobuf/UnsafeUtil$MemoryAccessor;
 
     if-nez v0, :cond_0
@@ -646,7 +706,7 @@
 .method private static getBooleanBigEndian(Ljava/lang/Object;J)Z
     .locals 0
 
-    .line 970
+    .line 1015
     invoke-static {p0, p1, p2}, Lcom/google/protobuf/UnsafeUtil;->getByteBigEndian(Ljava/lang/Object;J)B
 
     move-result p0
@@ -667,7 +727,7 @@
 .method private static getBooleanLittleEndian(Ljava/lang/Object;J)Z
     .locals 0
 
-    .line 974
+    .line 1019
     invoke-static {p0, p1, p2}, Lcom/google/protobuf/UnsafeUtil;->getByteLittleEndian(Ljava/lang/Object;J)B
 
     move-result p0
@@ -682,6 +742,19 @@
     const/4 p0, 0x0
 
     :goto_0
+    return p0
+.end method
+
+.method static getByte(J)B
+    .locals 1
+
+    .line 254
+    sget-object v0, Lcom/google/protobuf/UnsafeUtil;->MEMORY_ACCESSOR:Lcom/google/protobuf/UnsafeUtil$MemoryAccessor;
+
+    invoke-virtual {v0, p0, p1}, Lcom/google/protobuf/UnsafeUtil$MemoryAccessor;->getByte(J)B
+
+    move-result p0
+
     return p0
 .end method
 
@@ -709,7 +782,7 @@
 
     and-long/2addr v0, p1
 
-    .line 948
+    .line 993
     invoke-static {p0, v0, v1}, Lcom/google/protobuf/UnsafeUtil;->getInt(Ljava/lang/Object;J)I
 
     move-result p0
@@ -724,9 +797,9 @@
 
     shl-long/2addr p1, v0
 
-    long-to-int p2, p1
+    long-to-int p1, p1
 
-    ushr-int/2addr p0, p2
+    ushr-int/2addr p0, p1
 
     and-int/lit16 p0, p0, 0xff
 
@@ -742,7 +815,7 @@
 
     and-long/2addr v0, p1
 
-    .line 952
+    .line 997
     invoke-static {p0, v0, v1}, Lcom/google/protobuf/UnsafeUtil;->getInt(Ljava/lang/Object;J)I
 
     move-result p0
@@ -755,9 +828,9 @@
 
     shl-long/2addr p1, v0
 
-    long-to-int p2, p1
+    long-to-int p1, p1
 
-    ushr-int/2addr p0, p2
+    ushr-int/2addr p0, p1
 
     and-int/lit16 p0, p0, 0xff
 
@@ -803,6 +876,19 @@
     move-result p0
 
     return p0
+.end method
+
+.method static getLong(J)J
+    .locals 1
+
+    .line 270
+    sget-object v0, Lcom/google/protobuf/UnsafeUtil;->MEMORY_ACCESSOR:Lcom/google/protobuf/UnsafeUtil$MemoryAccessor;
+
+    invoke-virtual {v0, p0, p1}, Lcom/google/protobuf/UnsafeUtil$MemoryAccessor;->getLong(J)J
+
+    move-result-wide p0
+
+    return-wide p0
 .end method
 
 .method static getLong(Ljava/lang/Object;J)J
@@ -931,6 +1017,42 @@
     return v0
 .end method
 
+.method private static logMissingMethod(Ljava/lang/Throwable;)V
+    .locals 4
+
+    .line 1031
+    const-class v0, Lcom/google/protobuf/UnsafeUtil;
+
+    invoke-virtual {v0}, Ljava/lang/Class;->getName()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v0}, Ljava/util/logging/Logger;->getLogger(Ljava/lang/String;)Ljava/util/logging/Logger;
+
+    move-result-object v0
+
+    sget-object v1, Ljava/util/logging/Level;->WARNING:Ljava/util/logging/Level;
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v3, "platform method missing - proto runtime falling back to safer methods: "
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p0
+
+    .line 1032
+    invoke-virtual {v0, v1, p0}, Ljava/util/logging/Logger;->log(Ljava/util/logging/Level;Ljava/lang/String;)V
+
+    return-void
+.end method
+
 .method static putBoolean(Ljava/lang/Object;JZ)V
     .locals 1
 
@@ -947,7 +1069,7 @@
 
     int-to-byte p3, p3
 
-    .line 978
+    .line 1023
     invoke-static {p0, p1, p2, p3}, Lcom/google/protobuf/UnsafeUtil;->putByteBigEndian(Ljava/lang/Object;JB)V
 
     return-void
@@ -958,7 +1080,7 @@
 
     int-to-byte p3, p3
 
-    .line 982
+    .line 1027
     invoke-static {p0, p1, p2, p3}, Lcom/google/protobuf/UnsafeUtil;->putByteLittleEndian(Ljava/lang/Object;JB)V
 
     return-void
@@ -986,14 +1108,14 @@
 
     and-long/2addr v0, p1
 
-    .line 956
+    .line 1001
     invoke-static {p0, v0, v1}, Lcom/google/protobuf/UnsafeUtil;->getInt(Ljava/lang/Object;J)I
 
     move-result v2
 
-    long-to-int p2, p1
+    long-to-int p1, p1
 
-    not-int p1, p2
+    not-int p1, p1
 
     and-int/lit8 p1, p1, 0x3
 
@@ -1013,7 +1135,7 @@
 
     or-int/2addr p1, v2
 
-    .line 959
+    .line 1004
     invoke-static {p0, v0, v1, p1}, Lcom/google/protobuf/UnsafeUtil;->putInt(Ljava/lang/Object;JI)V
 
     return-void
@@ -1026,14 +1148,14 @@
 
     and-long/2addr v0, p1
 
-    .line 963
+    .line 1008
     invoke-static {p0, v0, v1}, Lcom/google/protobuf/UnsafeUtil;->getInt(Ljava/lang/Object;J)I
 
     move-result v2
 
-    long-to-int p2, p1
+    long-to-int p1, p1
 
-    and-int/lit8 p1, p2, 0x3
+    and-int/lit8 p1, p1, 0x3
 
     shl-int/lit8 p1, p1, 0x3
 
@@ -1051,7 +1173,7 @@
 
     or-int/2addr p1, v2
 
-    .line 966
+    .line 1011
     invoke-static {p0, v0, v1, p1}, Lcom/google/protobuf/UnsafeUtil;->putInt(Ljava/lang/Object;JI)V
 
     return-void
@@ -1125,496 +1247,43 @@
 .end method
 
 .method private static supportsUnsafeArrayOperations()Z
-    .locals 10
+    .locals 1
 
-    .line 337
-    const-class v0, Ljava/lang/Object;
+    .line 336
+    sget-object v0, Lcom/google/protobuf/UnsafeUtil;->MEMORY_ACCESSOR:Lcom/google/protobuf/UnsafeUtil$MemoryAccessor;
 
-    sget-object v1, Lcom/google/protobuf/UnsafeUtil;->UNSAFE:Lsun/misc/Unsafe;
+    if-nez v0, :cond_0
 
-    const/4 v2, 0x0
+    const/4 v0, 0x0
 
-    if-nez v1, :cond_0
+    return v0
 
-    return v2
-
-    .line 341
+    .line 339
     :cond_0
-    :try_start_0
-    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    invoke-virtual {v0}, Lcom/google/protobuf/UnsafeUtil$MemoryAccessor;->supportsUnsafeArrayOperations()Z
 
-    move-result-object v1
+    move-result v0
 
-    const-string v3, "objectFieldOffset"
-
-    const/4 v4, 0x1
-
-    new-array v5, v4, [Ljava/lang/Class;
-
-    .line 342
-    const-class v6, Ljava/lang/reflect/Field;
-
-    aput-object v6, v5, v2
-
-    invoke-virtual {v1, v3, v5}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
-
-    const-string v3, "arrayBaseOffset"
-
-    new-array v5, v4, [Ljava/lang/Class;
-
-    .line 343
-    const-class v6, Ljava/lang/Class;
-
-    aput-object v6, v5, v2
-
-    invoke-virtual {v1, v3, v5}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
-
-    const-string v3, "arrayIndexScale"
-
-    new-array v5, v4, [Ljava/lang/Class;
-
-    .line 344
-    const-class v6, Ljava/lang/Class;
-
-    aput-object v6, v5, v2
-
-    invoke-virtual {v1, v3, v5}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
-
-    const-string v3, "getInt"
-
-    const/4 v5, 0x2
-
-    new-array v6, v5, [Ljava/lang/Class;
-
-    aput-object v0, v6, v2
-
-    .line 345
-    sget-object v7, Ljava/lang/Long;->TYPE:Ljava/lang/Class;
-
-    aput-object v7, v6, v4
-
-    invoke-virtual {v1, v3, v6}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
-
-    const-string v3, "putInt"
-
-    const/4 v6, 0x3
-
-    new-array v8, v6, [Ljava/lang/Class;
-
-    aput-object v0, v8, v2
-
-    aput-object v7, v8, v4
-
-    .line 346
-    sget-object v9, Ljava/lang/Integer;->TYPE:Ljava/lang/Class;
-
-    aput-object v9, v8, v5
-
-    invoke-virtual {v1, v3, v8}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
-
-    const-string v3, "getLong"
-
-    new-array v8, v5, [Ljava/lang/Class;
-
-    aput-object v0, v8, v2
-
-    aput-object v7, v8, v4
-
-    .line 347
-    invoke-virtual {v1, v3, v8}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
-
-    const-string v3, "putLong"
-
-    new-array v8, v6, [Ljava/lang/Class;
-
-    aput-object v0, v8, v2
-
-    aput-object v7, v8, v4
-
-    aput-object v7, v8, v5
-
-    .line 348
-    invoke-virtual {v1, v3, v8}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
-
-    const-string v3, "getObject"
-
-    new-array v8, v5, [Ljava/lang/Class;
-
-    aput-object v0, v8, v2
-
-    aput-object v7, v8, v4
-
-    .line 349
-    invoke-virtual {v1, v3, v8}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
-
-    const-string v3, "putObject"
-
-    new-array v8, v6, [Ljava/lang/Class;
-
-    aput-object v0, v8, v2
-
-    aput-object v7, v8, v4
-
-    aput-object v0, v8, v5
-
-    .line 350
-    invoke-virtual {v1, v3, v8}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
-
-    .line 351
-    invoke-static {}, Lcom/google/protobuf/Android;->isOnAndroidDevice()Z
-
-    move-result v3
-
-    if-eqz v3, :cond_1
-
-    return v4
-
-    :cond_1
-    const-string v3, "getByte"
-
-    new-array v8, v5, [Ljava/lang/Class;
-
-    aput-object v0, v8, v2
-
-    aput-object v7, v8, v4
-
-    .line 354
-    invoke-virtual {v1, v3, v8}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
-
-    const-string v3, "putByte"
-
-    new-array v8, v6, [Ljava/lang/Class;
-
-    aput-object v0, v8, v2
-
-    aput-object v7, v8, v4
-
-    .line 355
-    sget-object v9, Ljava/lang/Byte;->TYPE:Ljava/lang/Class;
-
-    aput-object v9, v8, v5
-
-    invoke-virtual {v1, v3, v8}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
-
-    const-string v3, "getBoolean"
-
-    new-array v8, v5, [Ljava/lang/Class;
-
-    aput-object v0, v8, v2
-
-    aput-object v7, v8, v4
-
-    .line 356
-    invoke-virtual {v1, v3, v8}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
-
-    const-string v3, "putBoolean"
-
-    new-array v8, v6, [Ljava/lang/Class;
-
-    aput-object v0, v8, v2
-
-    aput-object v7, v8, v4
-
-    .line 357
-    sget-object v9, Ljava/lang/Boolean;->TYPE:Ljava/lang/Class;
-
-    aput-object v9, v8, v5
-
-    invoke-virtual {v1, v3, v8}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
-
-    const-string v3, "getFloat"
-
-    new-array v8, v5, [Ljava/lang/Class;
-
-    aput-object v0, v8, v2
-
-    aput-object v7, v8, v4
-
-    .line 358
-    invoke-virtual {v1, v3, v8}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
-
-    const-string v3, "putFloat"
-
-    new-array v8, v6, [Ljava/lang/Class;
-
-    aput-object v0, v8, v2
-
-    aput-object v7, v8, v4
-
-    .line 359
-    sget-object v9, Ljava/lang/Float;->TYPE:Ljava/lang/Class;
-
-    aput-object v9, v8, v5
-
-    invoke-virtual {v1, v3, v8}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
-
-    const-string v3, "getDouble"
-
-    new-array v8, v5, [Ljava/lang/Class;
-
-    aput-object v0, v8, v2
-
-    aput-object v7, v8, v4
-
-    .line 360
-    invoke-virtual {v1, v3, v8}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
-
-    const-string v3, "putDouble"
-
-    new-array v6, v6, [Ljava/lang/Class;
-
-    aput-object v0, v6, v2
-
-    aput-object v7, v6, v4
-
-    .line 361
-    sget-object v0, Ljava/lang/Double;->TYPE:Ljava/lang/Class;
-
-    aput-object v0, v6, v5
-
-    invoke-virtual {v1, v3, v6}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    return v4
-
-    :catchall_0
-    move-exception v0
-
-    .line 368
-    const-class v1, Lcom/google/protobuf/UnsafeUtil;
-
-    invoke-virtual {v1}, Ljava/lang/Class;->getName()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v1}, Ljava/util/logging/Logger;->getLogger(Ljava/lang/String;)Ljava/util/logging/Logger;
-
-    move-result-object v1
-
-    sget-object v3, Ljava/util/logging/Level;->WARNING:Ljava/util/logging/Level;
-
-    new-instance v4, Ljava/lang/StringBuilder;
-
-    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v5, "platform method missing - proto runtime falling back to safer methods: "
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    .line 369
-    invoke-virtual {v1, v3, v0}, Ljava/util/logging/Logger;->log(Ljava/util/logging/Level;Ljava/lang/String;)V
-
-    return v2
+    return v0
 .end method
 
 .method private static supportsUnsafeByteBufferOperations()Z
-    .locals 11
+    .locals 1
 
-    const-string v0, "copyMemory"
+    .line 343
+    sget-object v0, Lcom/google/protobuf/UnsafeUtil;->MEMORY_ACCESSOR:Lcom/google/protobuf/UnsafeUtil$MemoryAccessor;
 
-    const-string v1, "getLong"
+    if-nez v0, :cond_0
 
-    .line 377
-    const-class v2, Ljava/lang/Object;
+    const/4 v0, 0x0
 
-    sget-object v3, Lcom/google/protobuf/UnsafeUtil;->UNSAFE:Lsun/misc/Unsafe;
+    return v0
 
-    const/4 v4, 0x0
-
-    if-nez v3, :cond_0
-
-    return v4
-
-    .line 381
+    .line 346
     :cond_0
-    :try_start_0
-    invoke-virtual {v3}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    invoke-virtual {v0}, Lcom/google/protobuf/UnsafeUtil$MemoryAccessor;->supportsUnsafeByteBufferOperations()Z
 
-    move-result-object v3
+    move-result v0
 
-    const-string v5, "objectFieldOffset"
-
-    const/4 v6, 0x1
-
-    new-array v7, v6, [Ljava/lang/Class;
-
-    .line 383
-    const-class v8, Ljava/lang/reflect/Field;
-
-    aput-object v8, v7, v4
-
-    invoke-virtual {v3, v5, v7}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
-
-    const/4 v5, 0x2
-
-    new-array v7, v5, [Ljava/lang/Class;
-
-    aput-object v2, v7, v4
-
-    .line 384
-    sget-object v8, Ljava/lang/Long;->TYPE:Ljava/lang/Class;
-
-    aput-object v8, v7, v6
-
-    invoke-virtual {v3, v1, v7}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
-
-    .line 386
-    invoke-static {}, Lcom/google/protobuf/UnsafeUtil;->bufferAddressField()Ljava/lang/reflect/Field;
-
-    move-result-object v7
-
-    if-nez v7, :cond_1
-
-    return v4
-
-    .line 390
-    :cond_1
-    invoke-static {}, Lcom/google/protobuf/Android;->isOnAndroidDevice()Z
-
-    move-result v7
-
-    if-eqz v7, :cond_2
-
-    return v6
-
-    :cond_2
-    const-string v7, "getByte"
-
-    new-array v9, v6, [Ljava/lang/Class;
-
-    aput-object v8, v9, v4
-
-    .line 393
-    invoke-virtual {v3, v7, v9}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
-
-    const-string v7, "putByte"
-
-    new-array v9, v5, [Ljava/lang/Class;
-
-    aput-object v8, v9, v4
-
-    .line 394
-    sget-object v10, Ljava/lang/Byte;->TYPE:Ljava/lang/Class;
-
-    aput-object v10, v9, v6
-
-    invoke-virtual {v3, v7, v9}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
-
-    const-string v7, "getInt"
-
-    new-array v9, v6, [Ljava/lang/Class;
-
-    aput-object v8, v9, v4
-
-    .line 395
-    invoke-virtual {v3, v7, v9}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
-
-    const-string v7, "putInt"
-
-    new-array v9, v5, [Ljava/lang/Class;
-
-    aput-object v8, v9, v4
-
-    .line 396
-    sget-object v10, Ljava/lang/Integer;->TYPE:Ljava/lang/Class;
-
-    aput-object v10, v9, v6
-
-    invoke-virtual {v3, v7, v9}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
-
-    new-array v7, v6, [Ljava/lang/Class;
-
-    aput-object v8, v7, v4
-
-    .line 397
-    invoke-virtual {v3, v1, v7}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
-
-    const-string v1, "putLong"
-
-    new-array v7, v5, [Ljava/lang/Class;
-
-    aput-object v8, v7, v4
-
-    aput-object v8, v7, v6
-
-    .line 398
-    invoke-virtual {v3, v1, v7}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
-
-    const/4 v1, 0x3
-
-    new-array v7, v1, [Ljava/lang/Class;
-
-    aput-object v8, v7, v4
-
-    aput-object v8, v7, v6
-
-    aput-object v8, v7, v5
-
-    .line 399
-    invoke-virtual {v3, v0, v7}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
-
-    const/4 v7, 0x5
-
-    new-array v7, v7, [Ljava/lang/Class;
-
-    aput-object v2, v7, v4
-
-    aput-object v8, v7, v6
-
-    aput-object v2, v7, v5
-
-    aput-object v8, v7, v1
-
-    const/4 v1, 0x4
-
-    aput-object v8, v7, v1
-
-    .line 400
-    invoke-virtual {v3, v0, v7}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    return v6
-
-    :catchall_0
-    move-exception v0
-
-    .line 406
-    const-class v1, Lcom/google/protobuf/UnsafeUtil;
-
-    invoke-virtual {v1}, Ljava/lang/Class;->getName()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v1}, Ljava/util/logging/Logger;->getLogger(Ljava/lang/String;)Ljava/util/logging/Logger;
-
-    move-result-object v1
-
-    sget-object v2, Ljava/util/logging/Level;->WARNING:Ljava/util/logging/Level;
-
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v5, "platform method missing - proto runtime falling back to safer methods: "
-
-    invoke-virtual {v3, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    .line 407
-    invoke-virtual {v1, v2, v0}, Ljava/util/logging/Logger;->log(Ljava/util/logging/Level;Ljava/lang/String;)V
-
-    return v4
+    return v0
 .end method

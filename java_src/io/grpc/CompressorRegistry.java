@@ -3,7 +3,7 @@ package io.grpc;
 import io.grpc.Codec;
 import java.util.concurrent.ConcurrentMap;
 import p034j$.util.concurrent.ConcurrentHashMap;
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public final class CompressorRegistry {
     private static final CompressorRegistry DEFAULT_INSTANCE = new CompressorRegistry(new Codec.Gzip(), Codec.Identity.NONE);
     private final ConcurrentMap<String, Compressor> compressors = new ConcurrentHashMap();

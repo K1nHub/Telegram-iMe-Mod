@@ -196,7 +196,7 @@
 
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    move v1, v0
 
     .line 2
     :goto_0
@@ -233,7 +233,7 @@
 
     invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(I)V
 
-    const/4 v2, 0x0
+    move v2, v0
 
     .line 8
     :goto_1

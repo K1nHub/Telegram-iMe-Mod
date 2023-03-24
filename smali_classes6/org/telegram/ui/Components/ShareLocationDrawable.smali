@@ -518,7 +518,7 @@
 
     const/high16 v12, 0x3f000000    # 0.5f
 
-    mul-float v11, v11, v12
+    mul-float/2addr v11, v12
 
     add-float/2addr v11, v12
 
@@ -540,7 +540,7 @@
 
     move-result v13
 
-    mul-float v11, v11, v15
+    mul-float/2addr v11, v15
 
     .line 109
     invoke-static {v11}, Lorg/telegram/messenger/AndroidUtilities;->dp(F)I
@@ -552,7 +552,7 @@
 
     aget v15, v15, v4
 
-    mul-float v15, v15, v14
+    mul-float/2addr v15, v14
 
     invoke-static {v15}, Lorg/telegram/messenger/AndroidUtilities;->dp(F)I
 
@@ -712,7 +712,7 @@
 
     move-result v13
 
-    mul-float v11, v11, v15
+    mul-float/2addr v11, v15
 
     .line 133
     invoke-static {v11}, Lorg/telegram/messenger/AndroidUtilities;->dp(F)I
@@ -724,7 +724,7 @@
 
     aget v15, v15, v4
 
-    mul-float v15, v15, v14
+    mul-float/2addr v15, v14
 
     invoke-static {v15}, Lorg/telegram/messenger/AndroidUtilities;->dp(F)I
 

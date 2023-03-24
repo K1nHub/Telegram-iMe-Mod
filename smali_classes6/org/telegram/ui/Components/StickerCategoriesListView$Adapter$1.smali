@@ -110,7 +110,7 @@
 
     add-int/lit8 v4, v4, -0x1
 
-    mul-int v4, v4, v0
+    mul-int/2addr v4, v0
 
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
@@ -130,7 +130,7 @@
 
     int-to-float v0, v0
 
-    mul-float v4, v4, v0
+    mul-float/2addr v4, v0
 
     invoke-static {v1, v4}, Ljava/lang/Math;->min(FF)F
 

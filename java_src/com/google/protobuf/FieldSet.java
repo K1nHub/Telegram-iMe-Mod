@@ -87,7 +87,7 @@ public final class FieldSet<T extends FieldDescriptorLite<T>> {
     }
 
     /* renamed from: clone */
-    public FieldSet<T> m1121clone() {
+    public FieldSet<T> m1133clone() {
         FieldSet<T> newFieldSet = newFieldSet();
         for (int i = 0; i < this.fields.getNumArrayEntries(); i++) {
             Map.Entry<T, Object> arrayEntryAt = this.fields.getArrayEntryAt(i);
@@ -128,11 +128,11 @@ public final class FieldSet<T extends FieldDescriptorLite<T>> {
             ArrayList<Object> arrayList = new ArrayList();
             arrayList.addAll((List) obj);
             for (Object obj2 : arrayList) {
-                verifyType(t.getLiteType(), obj2);
+                verifyType(t, obj2);
             }
             obj = arrayList;
         } else {
-            verifyType(t.getLiteType(), obj);
+            verifyType(t, obj);
         }
         if (obj instanceof LazyField) {
             this.hasLazyField = true;
@@ -145,7 +145,7 @@ public final class FieldSet<T extends FieldDescriptorLite<T>> {
         if (!t.isRepeated()) {
             throw new IllegalArgumentException("addRepeatedField() can only be called on repeated fields.");
         }
-        verifyType(t.getLiteType(), obj);
+        verifyType(t, obj);
         Object field = getField(t);
         if (field == null) {
             list = new ArrayList();
@@ -156,9 +156,9 @@ public final class FieldSet<T extends FieldDescriptorLite<T>> {
         list.add(obj);
     }
 
-    private void verifyType(WireFormat.FieldType fieldType, Object obj) {
-        if (!isValidType(fieldType, obj)) {
-            throw new IllegalArgumentException("Wrong object type used with protocol message reflection.");
+    private void verifyType(T t, Object obj) {
+        if (!isValidType(t.getLiteType(), obj)) {
+            throw new IllegalArgumentException(String.format("Wrong object type used with protocol message reflection.\nField number: %d, field java type: %s, value type: %s\n", Integer.valueOf(t.getNumber()), t.getLiteType().getJavaType(), obj.getClass().getName()));
         }
     }
 
@@ -206,25 +206,26 @@ public final class FieldSet<T extends FieldDescriptorLite<T>> {
         T key = entry.getKey();
         if (key.getLiteJavaType() == WireFormat.JavaType.MESSAGE) {
             if (key.isRepeated()) {
-                for (MessageLite messageLite : (List) entry.getValue()) {
-                    if (!messageLite.isInitialized()) {
+                for (Object obj : (List) entry.getValue()) {
+                    if (!isMessageFieldValueInitialized(obj)) {
                         return false;
                     }
                 }
-            } else {
-                Object value = entry.getValue();
-                if (value instanceof MessageLite) {
-                    if (!((MessageLite) value).isInitialized()) {
-                        return false;
-                    }
-                } else if (value instanceof LazyField) {
-                    return true;
-                } else {
-                    throw new IllegalArgumentException("Wrong object type used with protocol message reflection.");
-                }
+                return true;
             }
+            return isMessageFieldValueInitialized(entry.getValue());
         }
         return true;
+    }
+
+    private static boolean isMessageFieldValueInitialized(Object obj) {
+        if (obj instanceof MessageLiteOrBuilder) {
+            return ((MessageLiteOrBuilder) obj).isInitialized();
+        }
+        if (obj instanceof LazyField) {
+            return true;
+        }
+        throw new IllegalArgumentException("Wrong object type used with protocol message reflection.");
     }
 
     static int getWireFormatForFieldType(WireFormat.FieldType fieldType, boolean z) {
@@ -597,7 +598,7 @@ public final class FieldSet<T extends FieldDescriptorLite<T>> {
                 for (Object obj2 : (List) obj) {
                     i += computeElementSizeNoTag(liteType, obj2);
                 }
-                return CodedOutputStream.computeTagSize(number) + i + CodedOutputStream.computeRawVarint32Size(i);
+                return CodedOutputStream.computeTagSize(number) + i + CodedOutputStream.computeUInt32SizeNoTag(i);
             }
             for (Object obj3 : (List) obj) {
                 i += computeElementSize(liteType, number, obj3);

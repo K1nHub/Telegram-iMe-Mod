@@ -110,7 +110,7 @@
 .end method
 
 .method private final writeControlFrame(ILokio/ByteString;)V
-    .locals 6
+    .locals 5
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -131,9 +131,9 @@
 
     const-wide/16 v3, 0x7d
 
-    cmp-long v5, v1, v3
+    cmp-long v1, v1, v3
 
-    if-gtz v5, :cond_0
+    if-gtz v1, :cond_0
 
     const/4 v1, 0x1
 
@@ -443,14 +443,14 @@
     goto :goto_1
 
     :cond_2
-    const/4 v0, 0x0
+    move v0, p1
 
     :goto_1
     const-wide/16 p1, 0x7d
 
-    cmp-long v3, v1, p1
+    cmp-long p1, v1, p1
 
-    if-gtz v3, :cond_3
+    if-gtz p1, :cond_3
 
     long-to-int p1, v1
 
@@ -466,9 +466,9 @@
     :cond_3
     const-wide/32 p1, 0xffff
 
-    cmp-long v3, v1, p1
+    cmp-long p1, v1, p1
 
-    if-gtz v3, :cond_4
+    if-gtz p1, :cond_4
 
     or-int/lit8 p1, v0, 0x7e
 

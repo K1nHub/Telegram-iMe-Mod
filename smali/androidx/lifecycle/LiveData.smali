@@ -258,24 +258,24 @@
 
     if-lez v2, :cond_1
 
-    const/4 v3, 0x1
+    move v3, p1
 
     goto :goto_1
 
     :cond_1
-    const/4 v3, 0x0
+    move v3, v1
 
     :goto_1
     if-lez v0, :cond_2
 
     if-nez v2, :cond_2
 
-    const/4 v0, 0x1
+    move v0, p1
 
     goto :goto_2
 
     :cond_2
-    const/4 v0, 0x0
+    move v0, v1
 
     :goto_2
     if-eqz v3, :cond_3

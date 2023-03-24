@@ -347,12 +347,12 @@
 
     if-ne v2, v0, :cond_4
 
-    const/4 v4, 0x1
+    move v4, v0
 
     goto :goto_1
 
     :cond_4
-    const/4 v4, 0x0
+    move v4, v3
 
     :goto_1
     iput-boolean v4, v1, Lorg/telegram/tgnet/TLRPC$TL_messages_getArchivedStickers;->masks:Z
@@ -364,7 +364,7 @@
     goto :goto_2
 
     :cond_5
-    const/4 v0, 0x0
+    move v0, v3
 
     .line 211
     :goto_2
@@ -435,9 +435,9 @@
 
     const-wide/16 v2, 0x0
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-eqz v4, :cond_0
+    if-eqz v0, :cond_0
 
     .line 139
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_inputStickerSetID;
@@ -573,12 +573,12 @@
 
     if-eq p1, v0, :cond_0
 
-    const/4 p1, 0x1
+    move p1, v1
 
     goto :goto_0
 
     :cond_0
-    const/4 p1, 0x0
+    move p1, v2
 
     :goto_0
     iput-boolean p1, p0, Lorg/telegram/ui/ArchivedStickersActivity;->endReached:Z
@@ -657,7 +657,7 @@
     goto :goto_0
 
     :cond_0
-    const/4 v0, -0x1
+    move v0, v1
 
     :goto_0
     iput v0, p0, Lorg/telegram/ui/ArchivedStickersActivity;->archiveInfoRow:I
@@ -1006,7 +1006,7 @@
 
     move-result p3
 
-    const/4 v0, 0x0
+    move v0, v1
 
     :goto_1
     if-ge v0, p3, :cond_1
@@ -1034,9 +1034,9 @@
 
     iget-wide v4, v4, Lorg/telegram/tgnet/TLRPC$StickerSet;->id:J
 
-    cmp-long v6, v2, v4
+    cmp-long v2, v2, v4
 
-    if-nez v6, :cond_0
+    if-nez v2, :cond_0
 
     .line 268
     invoke-interface {p1, p2}, Ljava/util/List;->remove(I)Ljava/lang/Object;
@@ -1102,7 +1102,7 @@
 
     move-result p1
 
-    const/4 p2, 0x0
+    move p2, v1
 
     :goto_3
     if-ge p2, p1, :cond_6

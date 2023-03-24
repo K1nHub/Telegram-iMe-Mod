@@ -136,22 +136,21 @@ public final class SntpClient {
             return;
         }
         long j2 = j / 1000;
-        long j3 = j - (j2 * 1000);
-        long j4 = j2 + OFFSET_1900_TO_1970;
+        long j3 = j2 + OFFSET_1900_TO_1970;
         int i2 = i + 1;
-        bArr[i] = (byte) (j4 >> 24);
+        bArr[i] = (byte) (j3 >> 24);
         int i3 = i2 + 1;
-        bArr[i2] = (byte) (j4 >> 16);
+        bArr[i2] = (byte) (j3 >> 16);
         int i4 = i3 + 1;
-        bArr[i3] = (byte) (j4 >> 8);
+        bArr[i3] = (byte) (j3 >> 8);
         int i5 = i4 + 1;
-        bArr[i4] = (byte) (j4 >> 0);
-        long j5 = (j3 * 4294967296L) / 1000;
+        bArr[i4] = (byte) (j3 >> 0);
+        long j4 = ((j - (j2 * 1000)) * 4294967296L) / 1000;
         int i6 = i5 + 1;
-        bArr[i5] = (byte) (j5 >> 24);
+        bArr[i5] = (byte) (j4 >> 24);
         int i7 = i6 + 1;
-        bArr[i6] = (byte) (j5 >> 16);
-        bArr[i7] = (byte) (j5 >> 8);
+        bArr[i6] = (byte) (j4 >> 16);
+        bArr[i7] = (byte) (j4 >> 8);
         bArr[i7 + 1] = (byte) (Math.random() * 255.0d);
     }
 

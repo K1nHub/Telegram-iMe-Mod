@@ -326,7 +326,7 @@
 
     sub-float/2addr v2, v3
 
-    mul-float v0, v0, v2
+    mul-float/2addr v0, v2
 
     .line 2414
     iget-object v2, p0, Lorg/telegram/ui/Components/ChatAttachAlert$10;->this$0:Lorg/telegram/ui/Components/ChatAttachAlert;

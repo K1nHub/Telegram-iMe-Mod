@@ -1089,7 +1089,7 @@
     if-eq v5, v2, :cond_8
 
     :cond_7
-    const/4 v4, 0x1
+    move v4, v1
 
     :cond_8
     invoke-virtual {p1, p2, v0, v4}, Lorg/telegram/ui/Cells/TextCheckCell;->setTextAndCheck(Ljava/lang/String;ZZ)V
@@ -1132,7 +1132,7 @@
 
     if-eq v5, v2, :cond_a
 
-    const/4 v4, 0x1
+    move v4, v1
 
     :cond_a
     invoke-virtual {p1, p2, v0, v4}, Lorg/telegram/ui/Cells/TextCheckCell;->setTextAndCheck(Ljava/lang/String;ZZ)V
@@ -1181,7 +1181,7 @@
     goto :goto_0
 
     :cond_c
-    const/4 v1, 0x0
+    move v1, v4
 
     :goto_0
     invoke-virtual {p1, v1, v3}, Lorg/telegram/ui/Cells/TextCheckCell;->setEnabled(ZLjava/util/ArrayList;)V

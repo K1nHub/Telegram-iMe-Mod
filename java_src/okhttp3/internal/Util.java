@@ -396,8 +396,8 @@ public final class Util {
 
     public static final int checkDuration(String name, long j, TimeUnit timeUnit) {
         Intrinsics.checkNotNullParameter(name, "name");
-        boolean z = true;
         int i = (j > 0L ? 1 : (j == 0L ? 0 : -1));
+        boolean z = true;
         if (!(i >= 0)) {
             throw new IllegalStateException((name + " < 0").toString());
         }
@@ -479,10 +479,10 @@ public final class Util {
     /* JADX WARN: Code restructure failed: missing block: B:15:0x005b, code lost:
         r11.timeout().deadlineNanoTime(r0 + r5);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:23:0x007e, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:23:0x007d, code lost:
         if (r5 != Long.MAX_VALUE) goto L16;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:25:0x0081, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:25:0x0080, code lost:
         return r12;
      */
     /*
@@ -530,12 +530,12 @@ public final class Util {
         L53:
             okio.Timeout r11 = r11.timeout()
             r11.clearDeadline()
-            goto L81
+            goto L80
         L5b:
             okio.Timeout r11 = r11.timeout()
             long r0 = r0 + r5
             r11.deadlineNanoTime(r0)
-            goto L81
+            goto L80
         L64:
             r12 = move-exception
             int r13 = (r5 > r3 ? 1 : (r5 == r3 ? 0 : -1))
@@ -554,7 +554,7 @@ public final class Util {
             int r13 = (r5 > r3 ? 1 : (r5 == r3 ? 0 : -1))
             if (r13 != 0) goto L5b
             goto L53
-        L81:
+        L80:
             return r12
         */
         throw new UnsupportedOperationException("Method not decompiled: okhttp3.internal.Util.skipAll(okio.Source, int, java.util.concurrent.TimeUnit):boolean");

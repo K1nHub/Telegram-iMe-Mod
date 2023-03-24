@@ -271,7 +271,7 @@
 
     move-result v0
 
-    mul-float v0, v0, p2
+    mul-float/2addr v0, p2
 
     invoke-virtual {p1, v0}, Landroid/view/View;->setAlpha(F)V
 

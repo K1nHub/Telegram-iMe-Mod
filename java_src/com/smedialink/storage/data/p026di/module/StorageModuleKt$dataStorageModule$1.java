@@ -42,10 +42,10 @@ final class StorageModuleKt$dataStorageModule$1 extends Lambda implements Functi
     /* compiled from: StorageModule.kt */
     /* renamed from: com.smedialink.storage.data.di.module.StorageModuleKt$dataStorageModule$1$1 */
     /* loaded from: classes3.dex */
-    public static final class C16081 extends Lambda implements Function2<Scope, ParametersHolder, PreferenceHelper> {
-        public static final C16081 INSTANCE = new C16081();
+    public static final class C16151 extends Lambda implements Function2<Scope, ParametersHolder, PreferenceHelper> {
+        public static final C16151 INSTANCE = new C16151();
 
-        C16081() {
+        C16151() {
             super(2);
         }
 
@@ -70,39 +70,39 @@ final class StorageModuleKt$dataStorageModule$1 extends Lambda implements Functi
         List emptyList3;
         List emptyList4;
         Intrinsics.checkNotNullParameter(module, "$this$module");
-        C16081 c16081 = C16081.INSTANCE;
+        C16151 c16151 = C16151.INSTANCE;
         ScopeRegistry.Companion companion = ScopeRegistry.Companion;
         StringQualifier rootScopeQualifier = companion.getRootScopeQualifier();
         Kind kind = Kind.Singleton;
         emptyList = CollectionsKt__CollectionsKt.emptyList();
-        SingleInstanceFactory<?> singleInstanceFactory = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier, Reflection.getOrCreateKotlinClass(PreferenceHelper.class), null, c16081, kind, emptyList));
+        SingleInstanceFactory<?> singleInstanceFactory = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier, Reflection.getOrCreateKotlinClass(PreferenceHelper.class), null, c16151, kind, emptyList));
         module.indexPrimaryType(singleInstanceFactory);
         if (module.get_createdAtStart()) {
             module.prepareForCreationAtStart(singleInstanceFactory);
         }
         new Pair(module, singleInstanceFactory);
-        C16092 c16092 = C16092.INSTANCE;
+        C16162 c16162 = C16162.INSTANCE;
         StringQualifier rootScopeQualifier2 = companion.getRootScopeQualifier();
         emptyList2 = CollectionsKt__CollectionsKt.emptyList();
-        SingleInstanceFactory<?> singleInstanceFactory2 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier2, Reflection.getOrCreateKotlinClass(CryptoPreferenceHelper.class), null, c16092, kind, emptyList2));
+        SingleInstanceFactory<?> singleInstanceFactory2 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier2, Reflection.getOrCreateKotlinClass(CryptoPreferenceHelper.class), null, c16162, kind, emptyList2));
         module.indexPrimaryType(singleInstanceFactory2);
         if (module.get_createdAtStart()) {
             module.prepareForCreationAtStart(singleInstanceFactory2);
         }
         new Pair(module, singleInstanceFactory2);
-        C16103 c16103 = C16103.INSTANCE;
+        C16173 c16173 = C16173.INSTANCE;
         StringQualifier rootScopeQualifier3 = companion.getRootScopeQualifier();
         emptyList3 = CollectionsKt__CollectionsKt.emptyList();
-        SingleInstanceFactory<?> singleInstanceFactory3 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier3, Reflection.getOrCreateKotlinClass(HintsPreferenceHelper.class), null, c16103, kind, emptyList3));
+        SingleInstanceFactory<?> singleInstanceFactory3 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier3, Reflection.getOrCreateKotlinClass(HintsPreferenceHelper.class), null, c16173, kind, emptyList3));
         module.indexPrimaryType(singleInstanceFactory3);
         if (module.get_createdAtStart()) {
             module.prepareForCreationAtStart(singleInstanceFactory3);
         }
         new Pair(module, singleInstanceFactory3);
-        C16114 c16114 = C16114.INSTANCE;
+        C16184 c16184 = C16184.INSTANCE;
         StringQualifier rootScopeQualifier4 = companion.getRootScopeQualifier();
         emptyList4 = CollectionsKt__CollectionsKt.emptyList();
-        SingleInstanceFactory<?> singleInstanceFactory4 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier4, Reflection.getOrCreateKotlinClass(TwitterPreferenceHelper.class), null, c16114, kind, emptyList4));
+        SingleInstanceFactory<?> singleInstanceFactory4 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier4, Reflection.getOrCreateKotlinClass(TwitterPreferenceHelper.class), null, c16184, kind, emptyList4));
         module.indexPrimaryType(singleInstanceFactory4);
         if (module.get_createdAtStart()) {
             module.prepareForCreationAtStart(singleInstanceFactory4);
@@ -114,10 +114,10 @@ final class StorageModuleKt$dataStorageModule$1 extends Lambda implements Functi
     /* compiled from: StorageModule.kt */
     /* renamed from: com.smedialink.storage.data.di.module.StorageModuleKt$dataStorageModule$1$2 */
     /* loaded from: classes3.dex */
-    public static final class C16092 extends Lambda implements Function2<Scope, ParametersHolder, CryptoPreferenceHelper> {
-        public static final C16092 INSTANCE = new C16092();
+    public static final class C16162 extends Lambda implements Function2<Scope, ParametersHolder, CryptoPreferenceHelper> {
+        public static final C16162 INSTANCE = new C16162();
 
-        C16092() {
+        C16162() {
             super(2);
         }
 
@@ -133,10 +133,10 @@ final class StorageModuleKt$dataStorageModule$1 extends Lambda implements Functi
     /* compiled from: StorageModule.kt */
     /* renamed from: com.smedialink.storage.data.di.module.StorageModuleKt$dataStorageModule$1$3 */
     /* loaded from: classes3.dex */
-    public static final class C16103 extends Lambda implements Function2<Scope, ParametersHolder, HintsPreferenceHelper> {
-        public static final C16103 INSTANCE = new C16103();
+    public static final class C16173 extends Lambda implements Function2<Scope, ParametersHolder, HintsPreferenceHelper> {
+        public static final C16173 INSTANCE = new C16173();
 
-        C16103() {
+        C16173() {
             super(2);
         }
 
@@ -152,10 +152,10 @@ final class StorageModuleKt$dataStorageModule$1 extends Lambda implements Functi
     /* compiled from: StorageModule.kt */
     /* renamed from: com.smedialink.storage.data.di.module.StorageModuleKt$dataStorageModule$1$4 */
     /* loaded from: classes3.dex */
-    public static final class C16114 extends Lambda implements Function2<Scope, ParametersHolder, TwitterPreferenceHelper> {
-        public static final C16114 INSTANCE = new C16114();
+    public static final class C16184 extends Lambda implements Function2<Scope, ParametersHolder, TwitterPreferenceHelper> {
+        public static final C16184 INSTANCE = new C16184();
 
-        C16114() {
+        C16184() {
             super(2);
         }
 

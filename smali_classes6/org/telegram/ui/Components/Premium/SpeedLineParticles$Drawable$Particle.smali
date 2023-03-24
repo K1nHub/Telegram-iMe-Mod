@@ -92,7 +92,7 @@
 
     const/4 p3, 0x4
 
-    mul-int/lit8 p2, p2, 0x4
+    mul-int/2addr p2, p3
 
     iget p4, p0, Lorg/telegram/ui/Components/Premium/SpeedLineParticles$Drawable$Particle;->x:F
 
@@ -132,7 +132,7 @@
 
     iget v3, p0, Lorg/telegram/ui/Components/Premium/SpeedLineParticles$Drawable$Particle;->vecX:F
 
-    mul-float v2, v2, v3
+    mul-float/2addr v2, v3
 
     add-float/2addr v0, v2
 
@@ -157,7 +157,7 @@
 
     iget v1, p0, Lorg/telegram/ui/Components/Premium/SpeedLineParticles$Drawable$Particle;->vecY:F
 
-    mul-float v0, v0, v1
+    mul-float/2addr v0, v1
 
     add-float/2addr p4, v0
 
@@ -187,20 +187,20 @@
 
     div-float/2addr p2, p3
 
-    mul-float p1, p1, p2
+    mul-float/2addr p1, p2
 
     iget-object p2, p0, Lorg/telegram/ui/Components/Premium/SpeedLineParticles$Drawable$Particle;->this$0:Lorg/telegram/ui/Components/Premium/SpeedLineParticles$Drawable;
 
     iget p3, p2, Lorg/telegram/ui/Components/Premium/SpeedLineParticles$Drawable;->speedScale:F
 
-    mul-float p1, p1, p3
+    mul-float/2addr p1, p3
 
     .line 99
     iget p3, p0, Lorg/telegram/ui/Components/Premium/SpeedLineParticles$Drawable$Particle;->x:F
 
     iget p4, p0, Lorg/telegram/ui/Components/Premium/SpeedLineParticles$Drawable$Particle;->vecX:F
 
-    mul-float p4, p4, p1
+    mul-float/2addr p4, p1
 
     add-float/2addr p3, p4
 
@@ -211,7 +211,7 @@
 
     iget p4, p0, Lorg/telegram/ui/Components/Premium/SpeedLineParticles$Drawable$Particle;->vecY:F
 
-    mul-float p4, p4, p1
+    mul-float/2addr p4, p1
 
     add-float/2addr p3, p4
 

@@ -170,12 +170,12 @@
 
     if-nez v0, :cond_0
 
-    const/4 v0, 0x1
+    move v0, v1
 
     goto :goto_0
 
     :cond_0
-    const/4 v0, 0x0
+    move v0, v2
 
     :goto_0
     if-nez v0, :cond_1
@@ -229,7 +229,7 @@
     goto :goto_1
 
     :cond_4
-    const/4 v1, 0x0
+    move v1, v2
 
     :goto_1
     return v1
@@ -267,7 +267,7 @@
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_0
     if-ge v2, v0, :cond_3
@@ -325,9 +325,9 @@
     goto :goto_0
 
     :cond_3
-    const/4 v0, 0x0
+    move v0, v1
 
-    const/4 v2, 0x0
+    move v2, v0
 
     .line 180
     :goto_2
@@ -489,7 +489,7 @@
 
     const/4 p2, 0x0
 
-    const/4 p3, 0x0
+    move p3, p2
 
     :goto_0
     if-ge p3, p1, :cond_1
@@ -524,10 +524,10 @@
     goto :goto_0
 
     :cond_1
-    const/4 p3, 0x0
+    move p3, p2
 
     :goto_1
-    const/4 p4, 0x0
+    move p4, p2
 
     :goto_2
     if-ge p4, p1, :cond_3
@@ -568,7 +568,7 @@
 
     :cond_3
     :goto_3
-    const/4 p4, 0x0
+    move p4, p2
 
     :goto_4
     if-ge p4, p1, :cond_6
@@ -683,7 +683,7 @@
     goto :goto_6
 
     :cond_7
-    const/4 p4, 0x0
+    move p4, p2
 
     :goto_6
     sub-int/2addr p3, p4
@@ -799,7 +799,7 @@
     goto :goto_0
 
     :cond_0
-    const/4 v3, 0x0
+    move v3, v2
 
     .line 202
     :goto_0
@@ -829,7 +829,7 @@
 
     move-result v3
 
-    const/4 v4, 0x0
+    move v4, v2
 
     :goto_1
     const/high16 v5, 0x40000000    # 2.0f
@@ -870,10 +870,10 @@
     goto :goto_1
 
     :cond_3
-    const/4 v4, 0x0
+    move v4, v2
 
     :goto_2
-    const/4 v6, 0x0
+    move v6, v2
 
     :goto_3
     if-ge v6, v3, :cond_5
@@ -1129,7 +1129,7 @@
     if-nez v0, :cond_9
 
     :cond_3
-    const/4 v0, 0x0
+    move v0, v2
 
     .line 336
     :goto_0
@@ -1214,12 +1214,12 @@
 
     if-ne v7, v1, :cond_5
 
-    const/4 v7, 0x1
+    move v7, v3
 
     goto :goto_1
 
     :cond_5
-    const/4 v7, 0x0
+    move v7, v2
 
     .line 344
     :goto_1

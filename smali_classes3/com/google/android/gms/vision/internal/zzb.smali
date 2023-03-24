@@ -127,7 +127,7 @@
 
     const/4 v1, 0x2
 
-    mul-int/lit8 v0, v0, 0x2
+    mul-int/2addr v0, v1
 
     add-int/2addr v0, v4
 
@@ -190,12 +190,12 @@
 
     if-nez v7, :cond_0
 
-    const/4 v7, 0x1
+    move v7, v0
 
     goto :goto_0
 
     :cond_0
-    const/4 v7, 0x0
+    move v7, v10
 
     .line 35
     :goto_0
@@ -331,16 +331,16 @@
 
     const/4 p2, 0x0
 
-    const/4 v2, 0x0
+    move v2, p2
 
-    const/4 v3, 0x0
+    move v3, v2
 
     :goto_0
     if-ge v2, v1, :cond_2
 
-    move v5, v3
+    move v4, p2
 
-    const/4 v4, 0x0
+    move v5, v3
 
     :goto_1
     if-ge v4, p1, :cond_1

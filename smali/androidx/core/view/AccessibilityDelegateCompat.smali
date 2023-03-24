@@ -121,7 +121,7 @@
 
     move-result-object p2
 
-    const/4 v1, 0x0
+    move v1, v0
 
     :goto_0
     if-eqz p2, :cond_1
@@ -322,7 +322,7 @@
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     .line 361
     :goto_0

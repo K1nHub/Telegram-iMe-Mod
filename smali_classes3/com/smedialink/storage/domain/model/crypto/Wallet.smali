@@ -7,7 +7,8 @@
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
         Lcom/smedialink/storage/domain/model/crypto/Wallet$EVM;,
-        Lcom/smedialink/storage/domain/model/crypto/Wallet$TON;
+        Lcom/smedialink/storage/domain/model/crypto/Wallet$TON;,
+        Lcom/smedialink/storage/domain/model/crypto/Wallet$TRON;
     }
 .end annotation
 
@@ -26,19 +27,19 @@
 .method private constructor <init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lcom/smedialink/storage/domain/model/crypto/BlockchainType;)V
     .locals 0
 
-    .line 7
+    .line 9
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 8
+    .line 10
     iput-object p1, p0, Lcom/smedialink/storage/domain/model/crypto/Wallet;->guid:Ljava/lang/String;
 
-    .line 9
+    .line 11
     iput-object p2, p0, Lcom/smedialink/storage/domain/model/crypto/Wallet;->mnemonic:Ljava/lang/String;
 
-    .line 10
+    .line 12
     iput-object p3, p0, Lcom/smedialink/storage/domain/model/crypto/Wallet;->address:Ljava/lang/String;
 
-    .line 11
+    .line 13
     iput-object p4, p0, Lcom/smedialink/storage/domain/model/crypto/Wallet;->blockchainType:Lcom/smedialink/storage/domain/model/crypto/BlockchainType;
 
     return-void
@@ -57,7 +58,7 @@
 .method public getAddress()Ljava/lang/String;
     .locals 1
 
-    .line 10
+    .line 12
     iget-object v0, p0, Lcom/smedialink/storage/domain/model/crypto/Wallet;->address:Ljava/lang/String;
 
     return-object v0
@@ -66,7 +67,7 @@
 .method public final getBlockchainType()Lcom/smedialink/storage/domain/model/crypto/BlockchainType;
     .locals 1
 
-    .line 11
+    .line 13
     iget-object v0, p0, Lcom/smedialink/storage/domain/model/crypto/Wallet;->blockchainType:Lcom/smedialink/storage/domain/model/crypto/BlockchainType;
 
     return-object v0
@@ -75,7 +76,7 @@
 .method public getGuid()Ljava/lang/String;
     .locals 1
 
-    .line 8
+    .line 10
     iget-object v0, p0, Lcom/smedialink/storage/domain/model/crypto/Wallet;->guid:Ljava/lang/String;
 
     return-object v0
@@ -84,7 +85,7 @@
 .method public getMnemonic()Ljava/lang/String;
     .locals 1
 
-    .line 9
+    .line 11
     iget-object v0, p0, Lcom/smedialink/storage/domain/model/crypto/Wallet;->mnemonic:Ljava/lang/String;
 
     return-object v0

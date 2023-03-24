@@ -57,7 +57,7 @@
 
     const/4 v2, 0x0
 
-    const/4 v3, 0x0
+    move v3, v2
 
     :goto_0
     const/4 v4, 0x3
@@ -278,7 +278,7 @@
 
     const v2, 0x3dcccccd    # 0.1f
 
-    mul-float p1, p1, v2
+    mul-float/2addr p1, v2
 
     add-float/2addr p1, v1
 
@@ -303,7 +303,7 @@
 
     const v0, 0x3f733333    # 0.95f
 
-    mul-float v1, v1, v0
+    mul-float/2addr v1, v0
 
     float-to-int v0, v1
 
@@ -388,7 +388,7 @@
 
     const/high16 v4, 0x3fc00000    # 1.5f
 
-    mul-float v3, v3, v4
+    mul-float/2addr v3, v4
 
     add-float/2addr v2, v3
 
@@ -402,7 +402,7 @@
 
     add-float/2addr v2, v5
 
-    mul-float v2, v2, v0
+    mul-float/2addr v2, v0
 
     invoke-virtual {v1, v2}, Landroid/widget/ImageView;->setTranslationX(F)V
 
@@ -417,7 +417,7 @@
 
     int-to-float v5, v5
 
-    mul-float v5, v5, v0
+    mul-float/2addr v5, v0
 
     invoke-virtual {v1, v5}, Landroid/widget/ImageView;->setTranslationY(F)V
 
@@ -472,7 +472,7 @@
 
     const v7, 0x3fe66666    # 1.8f
 
-    mul-float v6, v6, v7
+    mul-float/2addr v6, v7
 
     sub-float/2addr v5, v6
 
@@ -484,7 +484,7 @@
 
     sub-float/2addr v5, v6
 
-    mul-float v5, v5, p1
+    mul-float/2addr v5, p1
 
     invoke-virtual {v0, v5}, Landroid/widget/ImageView;->setTranslationY(F)V
 
@@ -497,7 +497,7 @@
 
     int-to-float v2, v2
 
-    mul-float v2, v2, p1
+    mul-float/2addr v2, p1
 
     invoke-virtual {v0, v2}, Landroid/widget/ImageView;->setTranslationX(F)V
 
@@ -555,7 +555,7 @@
 
     const/high16 v7, 0x40200000    # 2.5f
 
-    mul-float v6, v6, v7
+    mul-float/2addr v6, v7
 
     sub-float/2addr v5, v6
 
@@ -567,7 +567,7 @@
 
     add-float/2addr v5, v6
 
-    mul-float v5, v5, v0
+    mul-float/2addr v5, v0
 
     invoke-virtual {v2, v5}, Landroid/widget/ImageView;->setTranslationX(F)V
 
@@ -596,7 +596,7 @@
 
     int-to-float v6, v6
 
-    mul-float v6, v6, v7
+    mul-float/2addr v6, v7
 
     add-float/2addr v5, v6
 
@@ -608,7 +608,7 @@
 
     add-float/2addr v5, v3
 
-    mul-float v0, v0, v5
+    mul-float/2addr v0, v5
 
     invoke-virtual {v2, v0}, Landroid/widget/ImageView;->setTranslationY(F)V
 

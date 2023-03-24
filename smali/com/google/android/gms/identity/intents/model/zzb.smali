@@ -70,7 +70,7 @@
 
     move-object/from16 v19, v18
 
-    const/16 v17, 0x0
+    move/from16 v17, v3
 
     .line 2
     :goto_0

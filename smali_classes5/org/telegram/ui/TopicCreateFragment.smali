@@ -239,7 +239,7 @@
 .end method
 
 .method private selectEmoji(Ljava/lang/Long;Z)V
-    .locals 7
+    .locals 6
 
     .line 504
     iget-object v0, p0, Lorg/telegram/ui/TopicCreateFragment;->selectAnimatedEmojiDialog:Lorg/telegram/ui/SelectAnimatedEmojiDialog;
@@ -280,9 +280,9 @@
     .line 509
     iget-wide v4, p0, Lorg/telegram/ui/TopicCreateFragment;->selectedEmojiDocumentId:J
 
-    cmp-long v6, v4, v2
+    cmp-long v4, v4, v2
 
-    if-nez v6, :cond_2
+    if-nez v4, :cond_2
 
     return-void
 
@@ -363,105 +363,105 @@
     :cond_4
     iput-wide v2, p0, Lorg/telegram/ui/TopicCreateFragment;->selectedEmojiDocumentId:J
 
-    const/4 p1, 0x0
+    cmp-long p1, v2, v0
 
     const/4 p2, 0x0
 
-    const/4 v4, 0x1
+    const/4 v0, 0x0
 
-    cmp-long v5, v2, v0
+    const/4 v1, 0x1
 
-    if-eqz v5, :cond_5
+    if-eqz p1, :cond_5
 
     .line 532
-    new-instance v0, Lorg/telegram/ui/Components/AnimatedEmojiDrawable;
+    new-instance p1, Lorg/telegram/ui/Components/AnimatedEmojiDrawable;
 
-    const/16 v1, 0xa
+    const/16 v4, 0xa
 
     iget v5, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->currentAccount:I
 
-    invoke-direct {v0, v1, v5, v2, v3}, Lorg/telegram/ui/Components/AnimatedEmojiDrawable;-><init>(IIJ)V
+    invoke-direct {p1, v4, v5, v2, v3}, Lorg/telegram/ui/Components/AnimatedEmojiDrawable;-><init>(IIJ)V
 
     .line 533
-    sget-object v1, Lorg/telegram/ui/ActionBar/Theme;->chat_animatedEmojiTextColorFilter:Landroid/graphics/PorterDuffColorFilter;
+    sget-object v2, Lorg/telegram/ui/ActionBar/Theme;->chat_animatedEmojiTextColorFilter:Landroid/graphics/PorterDuffColorFilter;
 
-    invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/AnimatedEmojiDrawable;->setColorFilter(Landroid/graphics/ColorFilter;)V
+    invoke-virtual {p1, v2}, Lorg/telegram/ui/Components/AnimatedEmojiDrawable;->setColorFilter(Landroid/graphics/ColorFilter;)V
 
     .line 534
-    iget-object v1, p0, Lorg/telegram/ui/TopicCreateFragment;->backupImageView:[Lorg/telegram/ui/Components/BackupImageView;
+    iget-object v2, p0, Lorg/telegram/ui/TopicCreateFragment;->backupImageView:[Lorg/telegram/ui/Components/BackupImageView;
 
-    aget-object v1, v1, v4
+    aget-object v2, v2, v1
 
-    invoke-virtual {v1, v0}, Lorg/telegram/ui/Components/BackupImageView;->setAnimatedEmojiDrawable(Lorg/telegram/ui/Components/AnimatedEmojiDrawable;)V
+    invoke-virtual {v2, p1}, Lorg/telegram/ui/Components/BackupImageView;->setAnimatedEmojiDrawable(Lorg/telegram/ui/Components/AnimatedEmojiDrawable;)V
 
     .line 535
-    iget-object v0, p0, Lorg/telegram/ui/TopicCreateFragment;->backupImageView:[Lorg/telegram/ui/Components/BackupImageView;
+    iget-object p1, p0, Lorg/telegram/ui/TopicCreateFragment;->backupImageView:[Lorg/telegram/ui/Components/BackupImageView;
 
-    aget-object v0, v0, v4
+    aget-object p1, p1, v1
 
-    invoke-virtual {v0, p1}, Lorg/telegram/ui/Components/BackupImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
+    invoke-virtual {p1, p2}, Lorg/telegram/ui/Components/BackupImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
 
     goto :goto_1
 
     .line 537
     :cond_5
-    new-instance v0, Lorg/telegram/ui/Components/LetterDrawable;
+    new-instance p1, Lorg/telegram/ui/Components/LetterDrawable;
 
-    invoke-direct {v0, p1, v4}, Lorg/telegram/ui/Components/LetterDrawable;-><init>(Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;I)V
+    invoke-direct {p1, p2, v1}, Lorg/telegram/ui/Components/LetterDrawable;-><init>(Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;I)V
 
     .line 538
-    iget-object v1, p0, Lorg/telegram/ui/TopicCreateFragment;->firstSymbol:Ljava/lang/String;
+    iget-object v2, p0, Lorg/telegram/ui/TopicCreateFragment;->firstSymbol:Ljava/lang/String;
 
-    invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/LetterDrawable;->setTitle(Ljava/lang/String;)V
+    invoke-virtual {p1, v2}, Lorg/telegram/ui/Components/LetterDrawable;->setTitle(Ljava/lang/String;)V
 
     .line 539
-    iget-object v1, p0, Lorg/telegram/ui/TopicCreateFragment;->replaceableIconDrawable:Lorg/telegram/ui/Components/ReplaceableIconDrawable;
+    iget-object v2, p0, Lorg/telegram/ui/TopicCreateFragment;->replaceableIconDrawable:Lorg/telegram/ui/Components/ReplaceableIconDrawable;
 
-    invoke-virtual {v1, v0, p2}, Lorg/telegram/ui/Components/ReplaceableIconDrawable;->setIcon(Landroid/graphics/drawable/Drawable;Z)V
+    invoke-virtual {v2, p1, v0}, Lorg/telegram/ui/Components/ReplaceableIconDrawable;->setIcon(Landroid/graphics/drawable/Drawable;Z)V
 
     .line 540
-    iget-object v0, p0, Lorg/telegram/ui/TopicCreateFragment;->backupImageView:[Lorg/telegram/ui/Components/BackupImageView;
+    iget-object p1, p0, Lorg/telegram/ui/TopicCreateFragment;->backupImageView:[Lorg/telegram/ui/Components/BackupImageView;
 
-    aget-object v0, v0, v4
+    aget-object p1, p1, v1
 
-    iget-object v1, p0, Lorg/telegram/ui/TopicCreateFragment;->defaultIconDrawable:Landroid/graphics/drawable/Drawable;
+    iget-object v2, p0, Lorg/telegram/ui/TopicCreateFragment;->defaultIconDrawable:Landroid/graphics/drawable/Drawable;
 
-    invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/BackupImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
+    invoke-virtual {p1, v2}, Lorg/telegram/ui/Components/BackupImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
 
     .line 541
-    iget-object v0, p0, Lorg/telegram/ui/TopicCreateFragment;->backupImageView:[Lorg/telegram/ui/Components/BackupImageView;
+    iget-object p1, p0, Lorg/telegram/ui/TopicCreateFragment;->backupImageView:[Lorg/telegram/ui/Components/BackupImageView;
 
-    aget-object v0, v0, v4
+    aget-object p1, p1, v1
 
-    invoke-virtual {v0, p1}, Lorg/telegram/ui/Components/BackupImageView;->setAnimatedEmojiDrawable(Lorg/telegram/ui/Components/AnimatedEmojiDrawable;)V
+    invoke-virtual {p1, p2}, Lorg/telegram/ui/Components/BackupImageView;->setAnimatedEmojiDrawable(Lorg/telegram/ui/Components/AnimatedEmojiDrawable;)V
 
     .line 544
     :goto_1
     iget-object p1, p0, Lorg/telegram/ui/TopicCreateFragment;->backupImageView:[Lorg/telegram/ui/Components/BackupImageView;
 
-    aget-object v0, p1, p2
+    aget-object p2, p1, v0
 
     .line 545
-    aget-object v1, p1, v4
+    aget-object v2, p1, v1
 
-    aput-object v1, p1, p2
+    aput-object v2, p1, v0
 
     .line 546
-    aput-object v0, p1, v4
+    aput-object p2, p1, v1
 
     .line 548
-    aget-object p1, p1, p2
+    aget-object p1, p1, v0
 
-    const/high16 v0, 0x3f000000    # 0.5f
+    const/high16 p2, 0x3f000000    # 0.5f
 
-    invoke-static {p1, v4, v0, v4}, Lorg/telegram/messenger/AndroidUtilities;->updateViewVisibilityAnimated(Landroid/view/View;ZFZ)V
+    invoke-static {p1, v1, p2, v1}, Lorg/telegram/messenger/AndroidUtilities;->updateViewVisibilityAnimated(Landroid/view/View;ZFZ)V
 
     .line 549
     iget-object p1, p0, Lorg/telegram/ui/TopicCreateFragment;->backupImageView:[Lorg/telegram/ui/Components/BackupImageView;
 
-    aget-object p1, p1, v4
+    aget-object p1, p1, v1
 
-    invoke-static {p1, p2, v0, v4}, Lorg/telegram/messenger/AndroidUtilities;->updateViewVisibilityAnimated(Landroid/view/View;ZFZ)V
+    invoke-static {p1, v0, p2, v1}, Lorg/telegram/messenger/AndroidUtilities;->updateViewVisibilityAnimated(Landroid/view/View;ZFZ)V
 
     :cond_6
     :goto_2
@@ -771,7 +771,7 @@
 
     invoke-virtual {v3, v4}, Landroid/widget/FrameLayout;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    const/4 v4, 0x0
+    move v4, v12
 
     :goto_3
     const/16 v5, 0x11

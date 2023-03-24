@@ -32,7 +32,7 @@ import androidx.core.graphics.ColorUtils;
 import androidx.core.math.MathUtils;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3286R;
+import org.telegram.messenger.C3301R;
 import org.telegram.messenger.LiteMode;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.SharedConfig;
@@ -325,7 +325,7 @@ public class ActionBarMenuSlider extends FrameLayout {
             canvas.drawRoundRect(rectF, AndroidUtilities.m51dp(this.roundRadiusDp), AndroidUtilities.m51dp(this.roundRadiusDp), this.shadowPaint);
         }
         if (this.drawBlur) {
-            float f = this.blurBitmapAlpha.set(this.blurBitmap != null ? 1.0f : BitmapDescriptorFactory.HUE_RED);
+            float f = this.blurBitmapAlpha.set(this.blurBitmap != null ? 1.0f : 0.0f);
             if (f < 1.0f) {
                 if (this.pseudoBlurMatrix == null || this.pseudoBlurWidth != ((int) rectF.width())) {
                     Matrix matrix = this.pseudoBlurMatrix;
@@ -396,7 +396,7 @@ public class ActionBarMenuSlider extends FrameLayout {
         int[] iArr = this.location;
         float f = iArr[0] / AndroidUtilities.displaySize.x;
         float measuredWidth = (iArr[0] + getMeasuredWidth()) / AndroidUtilities.displaySize.x;
-        float currentActionBarHeight = ((this.location[1] - AndroidUtilities.statusBarHeight) - C3351ActionBar.getCurrentActionBarHeight()) / AndroidUtilities.displaySize.y;
+        float currentActionBarHeight = ((this.location[1] - AndroidUtilities.statusBarHeight) - C3366ActionBar.getCurrentActionBarHeight()) / AndroidUtilities.displaySize.y;
         int width = (int) (f * bitmap.getWidth());
         int width2 = (int) (measuredWidth * bitmap.getWidth());
         int height = (int) (currentActionBarHeight * bitmap.getHeight());
@@ -521,7 +521,7 @@ public class ActionBarMenuSlider extends FrameLayout {
 
                 @Override // org.telegram.p048ui.Components.SeekBarAccessibilityDelegate
                 public CharSequence getContentDescription(View view) {
-                    return SpeedIconDrawable.formatNumber(SpeedSlider.this.getSpeed()) + "x  " + LocaleController.getString("AccDescrSpeedSlider", C3286R.string.AccDescrSpeedSlider);
+                    return SpeedIconDrawable.formatNumber(SpeedSlider.this.getSpeed()) + "x  " + LocaleController.getString("AccDescrSpeedSlider", C3301R.string.AccDescrSpeedSlider);
                 }
             };
             this.seekBarAccessibilityDelegate = floatSeekBarAccessibilityDelegate;

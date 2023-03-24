@@ -2627,23 +2627,21 @@
 .end method
 
 .method private checkForExpiredNotifications()V
-    .locals 17
+    .locals 15
 
-    move-object/from16 v0, p0
-
-    const/4 v1, 0x0
+    const/4 v0, 0x0
 
     .line 435
-    iput-object v1, v0, Lorg/telegram/messenger/NotificationCenter;->checkForExpiredNotifications:Ljava/lang/Runnable;
+    iput-object v0, p0, Lorg/telegram/messenger/NotificationCenter;->checkForExpiredNotifications:Ljava/lang/Runnable;
 
     .line 436
-    iget-object v2, v0, Lorg/telegram/messenger/NotificationCenter;->allowedNotifications:Ljava/util/HashMap;
+    iget-object v1, p0, Lorg/telegram/messenger/NotificationCenter;->allowedNotifications:Ljava/util/HashMap;
 
-    invoke-virtual {v2}, Ljava/util/HashMap;->isEmpty()Z
+    invoke-virtual {v1}, Ljava/util/HashMap;->isEmpty()Z
 
-    move-result v2
+    move-result v1
 
-    if-eqz v2, :cond_0
+    if-eqz v1, :cond_0
 
     return-void
 
@@ -2651,134 +2649,134 @@
     :cond_0
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
-    move-result-wide v2
+    move-result-wide v1
 
     .line 442
-    iget-object v4, v0, Lorg/telegram/messenger/NotificationCenter;->allowedNotifications:Ljava/util/HashMap;
+    iget-object v3, p0, Lorg/telegram/messenger/NotificationCenter;->allowedNotifications:Ljava/util/HashMap;
 
-    invoke-virtual {v4}, Ljava/util/HashMap;->entrySet()Ljava/util/Set;
+    invoke-virtual {v3}, Ljava/util/HashMap;->entrySet()Ljava/util/Set;
 
-    move-result-object v4
+    move-result-object v3
 
-    invoke-interface {v4}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
+    invoke-interface {v3}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
 
-    move-result-object v4
+    move-result-object v3
 
-    const-wide v5, 0x7fffffffffffffffL
+    const-wide v4, 0x7fffffffffffffffL
 
-    move-wide v7, v5
+    move-wide v6, v4
 
     :goto_0
-    invoke-interface {v4}, Ljava/util/Iterator;->hasNext()Z
+    invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
 
-    move-result v9
+    move-result v8
 
-    if-eqz v9, :cond_3
+    if-eqz v8, :cond_3
 
-    invoke-interface {v4}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v8
+
+    check-cast v8, Ljava/util/Map$Entry;
+
+    .line 443
+    invoke-interface {v8}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
     move-result-object v9
 
-    check-cast v9, Ljava/util/Map$Entry;
-
-    .line 443
-    invoke-interface {v9}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
-
-    move-result-object v10
-
-    check-cast v10, Lorg/telegram/messenger/NotificationCenter$AllowedNotifications;
+    check-cast v9, Lorg/telegram/messenger/NotificationCenter$AllowedNotifications;
 
     .line 444
-    iget-wide v10, v10, Lorg/telegram/messenger/NotificationCenter$AllowedNotifications;->time:J
+    iget-wide v9, v9, Lorg/telegram/messenger/NotificationCenter$AllowedNotifications;->time:J
 
-    sub-long v12, v2, v10
+    sub-long v11, v1, v9
 
-    const-wide/16 v14, 0x3e8
+    const-wide/16 v13, 0x3e8
 
-    cmp-long v16, v12, v14
+    cmp-long v11, v11, v13
 
-    if-lez v16, :cond_2
+    if-lez v11, :cond_2
 
-    if-nez v1, :cond_1
+    if-nez v0, :cond_1
 
     .line 446
-    new-instance v1, Ljava/util/ArrayList;
+    new-instance v0, Ljava/util/ArrayList;
 
-    invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     .line 448
     :cond_1
-    invoke-interface {v9}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
+    invoke-interface {v8}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
-    move-result-object v9
+    move-result-object v8
 
-    check-cast v9, Ljava/lang/Integer;
+    check-cast v8, Ljava/lang/Integer;
 
-    invoke-virtual {v1, v9}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    invoke-virtual {v0, v8}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     goto :goto_0
 
     .line 450
     :cond_2
-    invoke-static {v10, v11, v7, v8}, Ljava/lang/Math;->min(JJ)J
+    invoke-static {v9, v10, v6, v7}, Ljava/lang/Math;->min(JJ)J
 
-    move-result-wide v7
+    move-result-wide v6
 
     goto :goto_0
 
     :cond_3
-    if-eqz v1, :cond_4
+    if-eqz v0, :cond_4
 
-    const/4 v4, 0x0
+    const/4 v3, 0x0
 
     .line 454
     :goto_1
-    invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
+    invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
-    move-result v9
+    move-result v8
 
-    if-ge v4, v9, :cond_4
+    if-ge v3, v8, :cond_4
 
     .line 455
-    invoke-virtual {v1, v4}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+    invoke-virtual {v0, v3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
-    move-result-object v9
+    move-result-object v8
 
-    check-cast v9, Ljava/lang/Integer;
+    check-cast v8, Ljava/lang/Integer;
 
-    invoke-virtual {v9}, Ljava/lang/Integer;->intValue()I
+    invoke-virtual {v8}, Ljava/lang/Integer;->intValue()I
 
-    move-result v9
+    move-result v8
 
-    invoke-virtual {v0, v9}, Lorg/telegram/messenger/NotificationCenter;->onAnimationFinish(I)V
+    invoke-virtual {p0, v8}, Lorg/telegram/messenger/NotificationCenter;->onAnimationFinish(I)V
 
-    add-int/lit8 v4, v4, 0x1
+    add-int/lit8 v3, v3, 0x1
 
     goto :goto_1
 
     :cond_4
-    cmp-long v1, v7, v5
+    cmp-long v0, v6, v4
 
-    if-eqz v1, :cond_5
+    if-eqz v0, :cond_5
 
-    const-wide/16 v4, 0x1399
+    const-wide/16 v3, 0x1399
 
-    sub-long/2addr v2, v7
+    sub-long/2addr v1, v6
 
-    sub-long/2addr v4, v2
+    sub-long/2addr v3, v1
 
     .line 460
-    new-instance v1, Lorg/telegram/messenger/NotificationCenter$$ExternalSyntheticLambda0;
+    new-instance v0, Lorg/telegram/messenger/NotificationCenter$$ExternalSyntheticLambda0;
 
-    invoke-direct {v1, v0}, Lorg/telegram/messenger/NotificationCenter$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/messenger/NotificationCenter;)V
+    invoke-direct {v0, p0}, Lorg/telegram/messenger/NotificationCenter$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/messenger/NotificationCenter;)V
 
-    const-wide/16 v2, 0x11
+    const-wide/16 v1, 0x11
 
-    invoke-static {v2, v3, v4, v5}, Ljava/lang/Math;->max(JJ)J
+    invoke-static {v1, v2, v3, v4}, Ljava/lang/Math;->max(JJ)J
 
-    move-result-wide v2
+    move-result-wide v1
 
-    invoke-static {v1, v2, v3}, Lorg/telegram/messenger/AndroidUtilities;->runOnUIThread(Ljava/lang/Runnable;J)V
+    invoke-static {v0, v1, v2}, Lorg/telegram/messenger/AndroidUtilities;->runOnUIThread(Ljava/lang/Runnable;J)V
 
     :cond_5
     return-void
@@ -3443,7 +3441,7 @@
 .end method
 
 .method public varargs postNotificationName(I[Ljava/lang/Object;)V
-    .locals 18
+    .locals 17
 
     move-object/from16 v0, p0
 
@@ -3479,13 +3477,13 @@
     goto :goto_0
 
     :cond_0
-    const/4 v3, 0x0
+    move v3, v5
 
     goto :goto_1
 
     :cond_1
     :goto_0
-    const/4 v3, 0x1
+    move v3, v4
 
     :goto_1
     const/4 v6, 0x0
@@ -3524,7 +3522,7 @@
 
     move-result-object v9
 
-    const/4 v10, 0x0
+    move v10, v5
 
     :cond_2
     :goto_2
@@ -3554,9 +3552,9 @@
 
     const-wide/16 v15, 0x1399
 
-    cmp-long v17, v13, v15
+    cmp-long v13, v13, v15
 
-    if-lez v17, :cond_4
+    if-lez v13, :cond_4
 
     if-nez v6, :cond_3
 
@@ -3581,7 +3579,7 @@
 
     if-eqz v11, :cond_6
 
-    const/4 v12, 0x0
+    move v12, v5
 
     .line 543
     :goto_3
@@ -3609,7 +3607,7 @@
     goto :goto_4
 
     :cond_7
-    const/4 v4, 0x0
+    move v4, v5
 
     :goto_4
     move v3, v4
@@ -3772,7 +3770,7 @@
 
     if-nez p2, :cond_4
 
-    const/4 p2, 0x0
+    move p2, v1
 
     .line 584
     :goto_1
@@ -3843,7 +3841,7 @@
 
     if-nez v0, :cond_5
 
-    const/4 v0, 0x0
+    move v0, v1
 
     .line 594
     :goto_2
@@ -3888,7 +3886,7 @@
 
     if-eqz p1, :cond_8
 
-    const/4 p1, 0x0
+    move p1, v1
 
     .line 602
     :goto_3
@@ -3916,7 +3914,7 @@
 
     check-cast p3, Ljava/util/ArrayList;
 
-    const/4 v0, 0x0
+    move v0, v1
 
     .line 605
     :goto_4
@@ -3960,7 +3958,7 @@
 
     if-eqz p1, :cond_b
 
-    const/4 p1, 0x0
+    move p1, v1
 
     .line 612
     :goto_5
@@ -3988,7 +3986,7 @@
 
     check-cast p3, Ljava/util/ArrayList;
 
-    const/4 v0, 0x0
+    move v0, v1
 
     .line 615
     :goto_6
@@ -4237,7 +4235,7 @@
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->clear()V
 
-    const/4 v0, 0x0
+    move v0, v1
 
     .line 496
     :goto_0

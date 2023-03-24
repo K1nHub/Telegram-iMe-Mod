@@ -205,14 +205,14 @@
 .method public static getBitmapByteSize(IILandroid/graphics/Bitmap$Config;)I
     .locals 0
 
-    mul-int p0, p0, p1
+    mul-int/2addr p0, p1
 
     .line 101
     invoke-static {p2}, Lcom/bumptech/glide/util/Util;->getBytesPerPixel(Landroid/graphics/Bitmap$Config;)I
 
     move-result p1
 
-    mul-int p0, p0, p1
+    mul-int/2addr p0, p1
 
     return p0
 .end method
@@ -255,7 +255,7 @@
 
     move-result p0
 
-    mul-int v0, v0, p0
+    mul-int/2addr v0, p0
 
     return v0
 
@@ -357,12 +357,12 @@
     goto :goto_0
 
     :cond_2
-    const/4 v0, 0x2
+    move v0, v1
 
     goto :goto_0
 
     :cond_3
-    const/4 v0, 0x1
+    move v0, v2
 
     :goto_0
     return v0

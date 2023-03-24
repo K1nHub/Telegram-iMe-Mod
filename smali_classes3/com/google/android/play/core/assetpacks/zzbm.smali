@@ -135,7 +135,7 @@
 
     xor-int/2addr v0, v1
 
-    mul-int v0, v0, v1
+    mul-int/2addr v0, v1
 
     iget-object v2, p0, Lcom/google/android/play/core/assetpacks/zzbm;->zzb:Ljava/lang/String;
 
@@ -143,7 +143,7 @@
 
     if-nez v2, :cond_0
 
-    const/4 v2, 0x0
+    move v2, v3
 
     goto :goto_0
 
@@ -156,7 +156,7 @@
     :goto_0
     xor-int/2addr v0, v2
 
-    mul-int v0, v0, v1
+    mul-int/2addr v0, v1
 
     .line 2
     iget-object v1, p0, Lcom/google/android/play/core/assetpacks/zzbm;->zzc:Ljava/lang/String;

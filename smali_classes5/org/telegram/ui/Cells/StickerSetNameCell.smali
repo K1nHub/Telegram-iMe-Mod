@@ -143,40 +143,36 @@
 
     if-eqz v2, :cond_1
 
-    const/high16 v12, 0x40a00000    # 5.0f
+    move v12, v7
 
     goto :goto_0
 
     :cond_1
     const/high16 v8, 0x41880000    # 17.0f
 
-    const/high16 v12, 0x41880000    # 17.0f
+    move v12, v8
 
     :goto_0
     if-eqz v2, :cond_2
-
-    const/high16 v13, 0x40a00000    # 5.0f
 
     goto :goto_1
 
     :cond_2
     const/high16 v7, 0x40000000    # 2.0f
 
-    const/high16 v13, 0x40000000    # 2.0f
-
     :goto_1
-    if-eqz v2, :cond_3
+    move v13, v7
 
-    const/high16 v14, 0x41700000    # 15.0f
+    if-eqz v2, :cond_3
 
     goto :goto_2
 
     :cond_3
     const/high16 v6, 0x42640000    # 57.0f
 
-    const/high16 v14, 0x42640000    # 57.0f
-
     :goto_2
+    move v14, v6
+
     const/4 v15, 0x0
 
     .line 78
@@ -197,12 +193,12 @@
 
     if-eqz v2, :cond_5
 
-    const/4 v11, 0x5
+    move v11, v10
 
     goto :goto_3
 
     :cond_5
-    const/16 v11, 0x11
+    move v11, v7
 
     :goto_3
     if-eqz v2, :cond_6
@@ -212,7 +208,7 @@
     :cond_6
     const/4 v7, 0x2
 
-    const/4 v10, 0x2
+    move v10, v7
 
     :goto_4
     if-eqz v2, :cond_7
@@ -398,16 +394,14 @@
 
     const/4 v1, 0x0
 
-    const/4 v9, 0x0
-
     goto :goto_8
 
     :cond_9
     const/high16 v1, 0x41300000    # 11.0f
 
-    const/high16 v9, 0x41300000    # 11.0f
-
     :goto_8
+    move v9, v1
+
     const/4 v10, 0x0
 
     invoke-static/range {v4 .. v10}, Lorg/telegram/ui/Components/LayoutHelper;->createFrameRelatively(FFIFFFF)Landroid/widget/FrameLayout$LayoutParams;
@@ -434,16 +428,14 @@
 
     const/4 v1, 0x0
 
-    const/4 v9, 0x0
-
     goto :goto_9
 
     :cond_b
     const/16 v1, 0xb
 
-    const/16 v9, 0xb
-
     :goto_9
+    move v9, v1
+
     const/4 v10, 0x0
 
     invoke-static/range {v4 .. v10}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(IIIIIII)Landroid/widget/FrameLayout$LayoutParams;

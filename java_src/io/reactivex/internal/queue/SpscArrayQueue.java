@@ -81,7 +81,7 @@ public final class SpscArrayQueue<E> extends AtomicReferenceArray<E> implements 
     }
 
     int calcElementOffset(long j) {
-        return this.mask & ((int) j);
+        return ((int) j) & this.mask;
     }
 
     void soElement(int i, E e) {

@@ -35,23 +35,23 @@
 
     const-wide/16 v5, 0x0
 
+    move v11, v2
+
+    move v14, v11
+
     move-object v8, v3
 
     move-object/from16 v17, v8
 
+    move v12, v4
+
+    move v13, v12
+
+    move v15, v13
+
+    move/from16 v16, v15
+
     move-wide v9, v5
-
-    const/4 v11, 0x0
-
-    const/4 v12, 0x0
-
-    const/4 v13, 0x0
-
-    const/4 v14, 0x0
-
-    const/4 v15, 0x0
-
-    const/16 v16, 0x0
 
     .line 2
     :goto_0

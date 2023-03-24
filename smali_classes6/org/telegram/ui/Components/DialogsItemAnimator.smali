@@ -594,7 +594,7 @@
     .line 511
     iput-object v2, p1, Lorg/telegram/ui/Components/DialogsItemAnimator$ChangeInfo;->oldHolder:Landroidx/recyclerview/widget/RecyclerView$ViewHolder;
 
-    const/4 v3, 0x1
+    move v3, v1
 
     .line 516
     :goto_0
@@ -2451,7 +2451,7 @@
 
     move-result v0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_0
     if-ge v2, v0, :cond_0

@@ -28,14 +28,14 @@ public class StreamBitmapDecoder implements ResourceDecoder<InputStream, Bitmap>
 
     @Override // com.bumptech.glide.load.ResourceDecoder
     public Resource<Bitmap> decode(InputStream inputStream, int i, int i2, Options options) throws IOException {
-        RecyclableBufferedInputStream recyclableBufferedInputStream;
         boolean z;
+        RecyclableBufferedInputStream recyclableBufferedInputStream;
         if (inputStream instanceof RecyclableBufferedInputStream) {
             recyclableBufferedInputStream = (RecyclableBufferedInputStream) inputStream;
             z = false;
         } else {
-            recyclableBufferedInputStream = new RecyclableBufferedInputStream(inputStream, this.byteArrayPool);
             z = true;
+            recyclableBufferedInputStream = new RecyclableBufferedInputStream(inputStream, this.byteArrayPool);
         }
         ExceptionPassthroughInputStream obtain = ExceptionPassthroughInputStream.obtain(recyclableBufferedInputStream);
         try {

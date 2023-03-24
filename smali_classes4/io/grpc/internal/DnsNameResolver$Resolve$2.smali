@@ -40,7 +40,7 @@
 
 # virtual methods
 .method public run()V
-    .locals 5
+    .locals 4
 
     .line 282
     iget-object v0, p0, Lio/grpc/internal/DnsNameResolver$Resolve$2;->this$1:Lio/grpc/internal/DnsNameResolver$Resolve;
@@ -62,9 +62,9 @@
 
     const-wide/16 v2, 0x0
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-lez v4, :cond_0
+    if-lez v0, :cond_0
 
     .line 284
     iget-object v0, p0, Lio/grpc/internal/DnsNameResolver$Resolve$2;->this$1:Lio/grpc/internal/DnsNameResolver$Resolve;

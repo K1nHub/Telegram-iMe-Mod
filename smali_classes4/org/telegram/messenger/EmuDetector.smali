@@ -786,13 +786,13 @@
     goto :goto_0
 
     :cond_0
-    const/4 v0, 0x0
+    move v0, v2
 
     goto :goto_1
 
     :cond_1
     :goto_0
-    const/4 v0, 0x1
+    move v0, v5
 
     :goto_1
     if-eqz v0, :cond_2
@@ -817,7 +817,7 @@
 
     if-eqz v1, :cond_3
 
-    const/4 v2, 0x1
+    move v2, v5
 
     :cond_3
     or-int/2addr v0, v2
@@ -865,7 +865,7 @@
 
     const/4 v3, 0x0
 
-    const/4 v4, 0x0
+    move v4, v3
 
     :goto_0
     if-ge v4, v2, :cond_1
@@ -900,7 +900,7 @@
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_0
     if-ge v2, v0, :cond_5
@@ -1021,7 +1021,7 @@
 
     const/4 v3, 0x0
 
-    const/4 v4, 0x0
+    move v4, v3
 
     :goto_0
     if-ge v4, v2, :cond_1
@@ -1135,13 +1135,8 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_1
-
-    :catch_0
-    nop
-
     .line 393
-    :goto_1
+    :catch_0
     invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v0
@@ -1163,9 +1158,9 @@
     .line 399
     array-length v3, v0
 
-    const/4 v4, 0x0
+    move v4, v1
 
-    :goto_2
+    :goto_1
     if-ge v4, v3, :cond_3
 
     aget-object v5, v0, v4
@@ -1204,17 +1199,17 @@
 
     if-eqz v5, :cond_2
 
-    const/4 v1, 0x1
+    move v1, v2
 
-    goto :goto_3
+    goto :goto_2
 
     :cond_2
     add-int/lit8 v4, v4, 0x1
 
-    goto :goto_2
+    goto :goto_1
 
     :cond_3
-    :goto_3
+    :goto_2
     return v1
 .end method
 
@@ -1350,7 +1345,7 @@
 
     const/4 v3, 0x0
 
-    const/4 v4, 0x0
+    move v4, v3
 
     :goto_0
     if-ge v4, v2, :cond_1
@@ -1405,7 +1400,7 @@
 
     aput-object v2, v1, v4
 
-    const/4 v2, 0x0
+    move v2, v3
 
     :goto_0
     if-ge v2, v0, :cond_2
@@ -1462,7 +1457,7 @@
 
     array-length v7, v6
 
-    const/4 v8, 0x0
+    move v8, v3
 
     :goto_2
     if-ge v8, v7, :cond_1
@@ -1502,9 +1497,9 @@
 
     const/4 v2, 0x0
 
-    const/4 v3, 0x0
+    move v3, v2
 
-    const/4 v4, 0x0
+    move v4, v3
 
     :goto_0
     if-ge v3, v1, :cond_2

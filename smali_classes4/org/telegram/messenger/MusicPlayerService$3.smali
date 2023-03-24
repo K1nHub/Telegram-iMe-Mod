@@ -75,9 +75,9 @@
 
     const-wide v2, -0x7fffffffffffffffL    # -4.9E-324
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-nez v4, :cond_1
+    if-nez v0, :cond_1
 
     const-wide/16 v0, 0x1f4
 
@@ -117,7 +117,7 @@
 
     const-wide/16 v4, 0x3e8
 
-    mul-long v2, v2, v4
+    mul-long/2addr v2, v4
 
     invoke-virtual {v0, v1, v2, v3}, Landroid/media/RemoteControlClient$MetadataEditor;->putLong(IJ)Landroid/media/RemoteControlClient$MetadataEditor;
 
@@ -155,7 +155,7 @@
     goto :goto_0
 
     :cond_2
-    const/4 v2, 0x3
+    move v2, v3
 
     .line 441
     :goto_0
@@ -171,7 +171,7 @@
 
     int-to-long v6, v1
 
-    mul-long v6, v6, v4
+    mul-long/2addr v6, v4
 
     const-wide/16 v3, 0x64
 
@@ -224,7 +224,7 @@
     goto :goto_2
 
     :cond_5
-    const/4 v2, 0x3
+    move v2, v3
 
     :goto_2
     invoke-virtual {v0, v2}, Landroid/media/RemoteControlClient;->setPlaybackState(I)V

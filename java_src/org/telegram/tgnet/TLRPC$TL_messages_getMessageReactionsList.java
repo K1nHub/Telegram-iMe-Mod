@@ -5,7 +5,7 @@ public class TLRPC$TL_messages_getMessageReactionsList extends TLObject {
     public int flags;
 
     /* renamed from: id */
-    public int f1590id;
+    public int f1591id;
     public int limit;
     public String offset;
     public TLRPC$InputPeer peer;
@@ -21,7 +21,7 @@ public class TLRPC$TL_messages_getMessageReactionsList extends TLObject {
         abstractSerializedData.writeInt32(constructor);
         abstractSerializedData.writeInt32(this.flags);
         this.peer.serializeToStream(abstractSerializedData);
-        abstractSerializedData.writeInt32(this.f1590id);
+        abstractSerializedData.writeInt32(this.f1591id);
         if ((this.flags & 1) != 0) {
             this.reaction.serializeToStream(abstractSerializedData);
         }

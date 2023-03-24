@@ -885,9 +885,9 @@
 
     move-result-wide v1
 
-    long-to-int v2, v1
+    long-to-int v1, v1
 
-    invoke-virtual {v0, v2, p1}, Landroidx/core/app/NotificationManagerCompat;->notify(ILandroid/app/Notification;)V
+    invoke-virtual {v0, v1, p1}, Landroidx/core/app/NotificationManagerCompat;->notify(ILandroid/app/Notification;)V
 
     return-void
 .end method
@@ -977,13 +977,13 @@
     goto :goto_0
 
     :cond_0
-    const/4 v2, 0x0
+    move v2, v0
 
     goto :goto_1
 
     :cond_1
     :goto_0
-    const/4 v2, 0x1
+    move v2, v1
 
     :goto_1
     if-eqz v2, :cond_2
@@ -1147,12 +1147,12 @@
 
     if-lez v8, :cond_6
 
-    const/4 v8, 0x1
+    move v8, v1
 
     goto :goto_4
 
     :cond_6
-    const/4 v8, 0x0
+    move v8, v0
 
     :goto_4
     if-eqz v8, :cond_5
@@ -1200,7 +1200,7 @@
 
     if-eqz v5, :cond_9
 
-    const/4 v0, 0x1
+    move v0, v1
 
     .line 68
     :cond_a

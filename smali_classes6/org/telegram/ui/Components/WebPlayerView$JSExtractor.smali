@@ -134,7 +134,7 @@
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     .line 394
     :goto_0
@@ -165,7 +165,7 @@
 
     new-array p2, p2, [Z
 
-    const/4 v2, 0x0
+    move v2, v1
 
     .line 399
     :goto_1
@@ -553,7 +553,7 @@
 
     move-result-object v1
 
-    const/4 v4, 0x0
+    move v4, v0
 
     .line 218
     :cond_1
@@ -646,7 +646,7 @@
 
     :cond_5
     :goto_1
-    const/4 v1, 0x0
+    move v1, v0
 
     .line 241
     :goto_2
@@ -820,10 +820,8 @@
 
     return-void
 
-    :catch_1
-    nop
-
     .line 279
+    :catch_1
     sget-object v1, Ljava/util/Locale;->US:Ljava/util/Locale;
 
     new-array v2, v3, [Ljava/lang/Object;
@@ -1045,7 +1043,7 @@
     return-void
 
     :cond_12
-    const/4 v1, 0x0
+    move v1, v0
 
     .line 319
     :goto_5

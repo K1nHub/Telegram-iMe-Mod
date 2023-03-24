@@ -2,7 +2,7 @@ package io.grpc;
 
 import io.grpc.ManagedChannelBuilder;
 import java.util.concurrent.TimeUnit;
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public abstract class ManagedChannelBuilder<T extends ManagedChannelBuilder<T>> {
     public abstract ManagedChannel build();
 

@@ -252,7 +252,7 @@
 
     invoke-direct {v2}, Ljava/util/ArrayList;-><init>()V
 
-    const/4 v3, 0x0
+    move v3, v0
 
     .line 957
     :goto_0
@@ -640,12 +640,12 @@
 
     if-eq v1, p2, :cond_2
 
-    const/4 v1, 0x1
+    move v1, v3
 
     goto :goto_0
 
     :cond_2
-    const/4 v1, 0x0
+    move v1, v2
 
     :goto_0
     const/4 v4, -0x1
@@ -657,7 +657,7 @@
 
     if-eqz p2, :cond_5
 
-    const/4 p2, 0x0
+    move p2, v2
 
     .line 845
     :goto_1
@@ -698,7 +698,7 @@
     goto :goto_1
 
     :cond_4
-    const/4 p2, -0x1
+    move p2, v4
 
     :goto_2
     if-ltz p2, :cond_8
@@ -716,9 +716,9 @@
     goto :goto_5
 
     :cond_5
-    const/4 p2, 0x0
+    move p2, v2
 
-    const/4 v1, -0x1
+    move v1, v4
 
     .line 856
     :goto_4

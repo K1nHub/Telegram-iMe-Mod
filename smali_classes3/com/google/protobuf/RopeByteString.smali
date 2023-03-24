@@ -6,7 +6,6 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Lcom/google/protobuf/RopeByteString$RopeInputStream;,
         Lcom/google/protobuf/RopeByteString$PieceIterator;,
         Lcom/google/protobuf/RopeByteString$Balancer;
     }
@@ -411,11 +410,11 @@
 
     const/4 v1, 0x0
 
-    const/4 v4, 0x0
+    move v4, v1
 
-    const/4 v5, 0x0
+    move v5, v4
 
-    const/4 v6, 0x0
+    move v6, v5
 
     .line 551
     :goto_0
@@ -489,7 +488,7 @@
 
     check-cast v2, Lcom/google/protobuf/ByteString$LeafByteString;
 
-    const/4 v4, 0x0
+    move v4, v1
 
     goto :goto_2
 
@@ -506,7 +505,7 @@
 
     check-cast p1, Lcom/google/protobuf/ByteString$LeafByteString;
 
-    const/4 v5, 0x0
+    move v5, v1
 
     goto :goto_0
 
@@ -539,6 +538,75 @@
 
 
 # virtual methods
+.method public asReadOnlyByteBuffer()Ljava/nio/ByteBuffer;
+    .locals 1
+
+    .line 422
+    invoke-virtual {p0}, Lcom/google/protobuf/ByteString;->toByteArray()[B
+
+    move-result-object v0
+
+    invoke-static {v0}, Ljava/nio/ByteBuffer;->wrap([B)Ljava/nio/ByteBuffer;
+
+    move-result-object v0
+
+    .line 423
+    invoke-virtual {v0}, Ljava/nio/ByteBuffer;->asReadOnlyBuffer()Ljava/nio/ByteBuffer;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public asReadOnlyByteBufferList()Ljava/util/List;
+    .locals 3
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Ljava/util/List<",
+            "Ljava/nio/ByteBuffer;",
+            ">;"
+        }
+    .end annotation
+
+    .line 430
+    new-instance v0, Ljava/util/ArrayList;
+
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+
+    .line 431
+    new-instance v1, Lcom/google/protobuf/RopeByteString$PieceIterator;
+
+    const/4 v2, 0x0
+
+    invoke-direct {v1, p0, v2}, Lcom/google/protobuf/RopeByteString$PieceIterator;-><init>(Lcom/google/protobuf/ByteString;Lcom/google/protobuf/RopeByteString$1;)V
+
+    .line 432
+    :goto_0
+    invoke-virtual {v1}, Lcom/google/protobuf/RopeByteString$PieceIterator;->hasNext()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_0
+
+    .line 433
+    invoke-virtual {v1}, Lcom/google/protobuf/RopeByteString$PieceIterator;->next()Lcom/google/protobuf/ByteString$LeafByteString;
+
+    move-result-object v2
+
+    .line 434
+    invoke-virtual {v2}, Lcom/google/protobuf/ByteString;->asReadOnlyByteBuffer()Ljava/nio/ByteBuffer;
+
+    move-result-object v2
+
+    invoke-interface {v0, v2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    goto :goto_0
+
+    :cond_0
+    return-object v0
+.end method
+
 .method public byteAt(I)B
     .locals 1
 
@@ -797,14 +865,16 @@
 .end method
 
 .method public newCodedInput()Lcom/google/protobuf/CodedInputStream;
-    .locals 1
+    .locals 2
 
-    .line 606
-    new-instance v0, Lcom/google/protobuf/RopeByteString$RopeInputStream;
+    .line 611
+    invoke-virtual {p0}, Lcom/google/protobuf/RopeByteString;->asReadOnlyByteBufferList()Ljava/util/List;
 
-    invoke-direct {v0, p0}, Lcom/google/protobuf/RopeByteString$RopeInputStream;-><init>(Lcom/google/protobuf/RopeByteString;)V
+    move-result-object v0
 
-    invoke-static {v0}, Lcom/google/protobuf/CodedInputStream;->newInstance(Ljava/io/InputStream;)Lcom/google/protobuf/CodedInputStream;
+    const/4 v1, 0x1
+
+    invoke-static {v0, v1}, Lcom/google/protobuf/CodedInputStream;->newInstance(Ljava/lang/Iterable;Z)Lcom/google/protobuf/CodedInputStream;
 
     move-result-object v0
 

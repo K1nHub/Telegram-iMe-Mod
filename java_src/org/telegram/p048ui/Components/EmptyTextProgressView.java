@@ -11,7 +11,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3286R;
+import org.telegram.messenger.C3301R;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.LocaleController;
 import org.telegram.p048ui.ActionBar.Theme;
@@ -68,7 +68,7 @@ public class EmptyTextProgressView extends FrameLayout {
         textView.setTextSize(1, 20.0f);
         this.textView.setTextColor(getThemedColor("emptyListPlaceholder"));
         this.textView.setGravity(1);
-        this.textView.setText(LocaleController.getString("NoResult", C3286R.string.NoResult));
+        this.textView.setText(LocaleController.getString("NoResult", C3301R.string.NoResult));
         this.textViewLayout.addView(this.textView, LayoutHelper.createLinear(-2, -2, 17));
         addView(this.textViewLayout, LayoutHelper.createFrame(-2, -2));
         AndroidUtilities.updateViewVisibilityAnimated(this.textView, false, 2.0f, false);

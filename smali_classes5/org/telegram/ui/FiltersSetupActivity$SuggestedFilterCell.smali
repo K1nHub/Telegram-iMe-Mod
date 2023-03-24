@@ -91,12 +91,12 @@
 
     if-eqz v2, :cond_0
 
-    const/4 v2, 0x5
+    move v2, v3
 
     goto :goto_0
 
     :cond_0
-    const/4 v2, 0x3
+    move v2, v4
 
     :goto_0
     invoke-virtual {v0, v2}, Landroid/widget/TextView;->setGravity(I)V
@@ -112,12 +112,12 @@
 
     if-eqz v2, :cond_1
 
-    const/4 v7, 0x5
+    move v7, v3
 
     goto :goto_1
 
     :cond_1
-    const/4 v7, 0x3
+    move v7, v4
 
     :goto_1
     const/16 v8, 0x16
@@ -186,12 +186,12 @@
 
     if-eqz v1, :cond_2
 
-    const/4 v1, 0x5
+    move v1, v3
 
     goto :goto_2
 
     :cond_2
-    const/4 v1, 0x3
+    move v1, v4
 
     :goto_2
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setGravity(I)V
@@ -207,12 +207,12 @@
 
     if-eqz v1, :cond_3
 
-    const/4 v7, 0x5
+    move v7, v3
 
     goto :goto_3
 
     :cond_3
-    const/4 v7, 0x3
+    move v7, v4
 
     :goto_3
     const/16 v8, 0x16

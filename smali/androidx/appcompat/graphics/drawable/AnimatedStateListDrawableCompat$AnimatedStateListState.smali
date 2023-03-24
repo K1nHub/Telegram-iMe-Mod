@@ -257,9 +257,9 @@
 
     move-result-wide p1
 
-    long-to-int p2, p1
+    long-to-int p1, p1
 
-    return p2
+    return p1
 .end method
 
 .method isTransitionReversed(II)Z
@@ -295,9 +295,9 @@
 
     const-wide/16 v0, 0x0
 
-    cmp-long v2, p1, v0
+    cmp-long p1, p1, v0
 
-    if-eqz v2, :cond_0
+    if-eqz p1, :cond_0
 
     const/4 p1, 0x1
 
@@ -391,9 +391,9 @@
 
     const-wide/16 v0, 0x0
 
-    cmp-long v2, p1, v0
+    cmp-long p1, p1, v0
 
-    if-eqz v2, :cond_0
+    if-eqz p1, :cond_0
 
     const/4 p1, 0x1
 

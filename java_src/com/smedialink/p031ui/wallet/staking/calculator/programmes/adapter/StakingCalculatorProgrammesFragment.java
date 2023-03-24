@@ -34,9 +34,9 @@ import moxy.MvpDelegate;
 import moxy.ktx.MoxyKtxDelegate;
 import org.fork.utils.Callbacks$Callback1;
 import org.koin.p047mp.KoinPlatformTools;
-import org.telegram.messenger.C3286R;
+import org.telegram.messenger.C3301R;
 import org.telegram.messenger.databinding.ForkFragmentStakingCalculatorProgrammesBinding;
-import org.telegram.p048ui.ActionBar.C3351ActionBar;
+import org.telegram.p048ui.ActionBar.C3366ActionBar;
 import org.telegram.p048ui.ActionBar.ThemeDescription;
 /* compiled from: StakingCalculatorProgrammesFragment.kt */
 /* renamed from: com.smedialink.ui.wallet.staking.calculator.programmes.adapter.StakingCalculatorProgrammesFragment */
@@ -61,7 +61,7 @@ public final class StakingCalculatorProgrammesFragment extends WalletAuthFragmen
         MvpDelegate mvpDelegate = getMvpDelegate();
         Intrinsics.checkExpressionValueIsNotNull(mvpDelegate, "mvpDelegate");
         this.presenter$delegate = new MoxyKtxDelegate(mvpDelegate, StakingCalculatorProgrammesPresenter.class.getName() + ".presenter", stakingCalculatorProgrammesFragment$presenter$2);
-        lazy = LazyKt__LazyJVMKt.lazy(KoinPlatformTools.INSTANCE.defaultLazyMode(), new C2242xe19eb649(this, null, null));
+        lazy = LazyKt__LazyJVMKt.lazy(KoinPlatformTools.INSTANCE.defaultLazyMode(), new C2256xe19eb649(this, null, null));
         this.stakingProgrammesRecycleAdapter$delegate = lazy;
         this.binding$delegate = ResettableLazyDelegateKt.resettableLazy$default(this, (ResettableLazyManager) null, new StakingCalculatorProgrammesFragment$binding$2(this), 1, (Object) null);
     }
@@ -139,11 +139,11 @@ public final class StakingCalculatorProgrammesFragment extends WalletAuthFragmen
     }
 
     private final void setupActionBar() {
-        C3351ActionBar c3351ActionBar = this.actionBar;
-        c3351ActionBar.setBackButtonImage(C3286R.C3288drawable.ic_ab_back);
-        c3351ActionBar.setTitle(getResourceManager().getString(C3286R.string.staking_calculator_select_programme));
-        c3351ActionBar.setActionBarMenuOnItemClick(new C3351ActionBar.ActionBarMenuOnItemClick() { // from class: com.smedialink.ui.wallet.staking.calculator.programmes.adapter.StakingCalculatorProgrammesFragment$setupActionBar$1$1
-            @Override // org.telegram.p048ui.ActionBar.C3351ActionBar.ActionBarMenuOnItemClick
+        C3366ActionBar c3366ActionBar = this.actionBar;
+        c3366ActionBar.setBackButtonImage(C3301R.C3303drawable.ic_ab_back);
+        c3366ActionBar.setTitle(getResourceManager().getString(C3301R.string.staking_calculator_select_programme));
+        c3366ActionBar.setActionBarMenuOnItemClick(new C3366ActionBar.ActionBarMenuOnItemClick() { // from class: com.smedialink.ui.wallet.staking.calculator.programmes.adapter.StakingCalculatorProgrammesFragment$setupActionBar$1$1
+            @Override // org.telegram.p048ui.ActionBar.C3366ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i) {
                 if (i == -1) {
                     StakingCalculatorProgrammesFragment.this.finishFragment();
@@ -213,7 +213,7 @@ public final class StakingCalculatorProgrammesFragment extends WalletAuthFragmen
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         Intrinsics.checkNotNullParameter(baseQuickAdapter, "<anonymous parameter 0>");
         Intrinsics.checkNotNullParameter(view, "view");
-        if (view.getId() == C3286R.C3289id.image_info) {
+        if (view.getId() == C3301R.C3304id.image_info) {
             BaseNode baseNode = (BaseNode) this_with.getItem(i);
             if (baseNode instanceof StakingProgrammeItem) {
                 this$0.getPresenter().onStakingInfoClick((StakingProgrammeItem) baseNode);

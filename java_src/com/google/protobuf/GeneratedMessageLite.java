@@ -9,8 +9,11 @@ import com.google.protobuf.Internal;
 import com.google.protobuf.MessageLite;
 import com.google.protobuf.WireFormat;
 import java.io.IOException;
+import java.io.InputStream;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
+import java.nio.ByteBuffer;
+import java.util.Collections;
 import java.util.Map;
 import p034j$.util.concurrent.ConcurrentHashMap;
 /* loaded from: classes3.dex */
@@ -69,6 +72,30 @@ public abstract class GeneratedMessageLite<MessageType extends GeneratedMessageL
             return Protobuf.getInstance().schemaFor((Protobuf) this).equals(this, (GeneratedMessageLite) obj);
         }
         return false;
+    }
+
+    private final void ensureUnknownFieldsInitialized() {
+        if (this.unknownFields == UnknownFieldSetLite.getDefaultInstance()) {
+            this.unknownFields = UnknownFieldSetLite.newInstance();
+        }
+    }
+
+    protected boolean parseUnknownField(int i, CodedInputStream codedInputStream) throws IOException {
+        if (WireFormat.getTagWireType(i) == 4) {
+            return false;
+        }
+        ensureUnknownFieldsInitialized();
+        return this.unknownFields.mergeFieldFrom(i, codedInputStream);
+    }
+
+    protected void mergeVarintField(int i, int i2) {
+        ensureUnknownFieldsInitialized();
+        this.unknownFields.mergeVarintField(i, i2);
+    }
+
+    protected void mergeLengthDelimitedField(int i, ByteString byteString) {
+        ensureUnknownFieldsInitialized();
+        this.unknownFields.mergeLengthDelimitedField(i, byteString);
     }
 
     protected void makeImmutable() {
@@ -165,6 +192,10 @@ public abstract class GeneratedMessageLite<MessageType extends GeneratedMessageL
         return new RawMessageInfo(messageLite, str, objArr);
     }
 
+    protected final void mergeUnknownFields(UnknownFieldSetLite unknownFieldSetLite) {
+        this.unknownFields = UnknownFieldSetLite.mutableCopyOf(this.unknownFields, unknownFieldSetLite);
+    }
+
     /* loaded from: classes3.dex */
     public static abstract class Builder<MessageType extends GeneratedMessageLite<MessageType, BuilderType>, BuilderType extends Builder<MessageType, BuilderType>> extends AbstractMessageLite.Builder<MessageType, BuilderType> {
         private final MessageType defaultInstance;
@@ -197,8 +228,20 @@ public abstract class GeneratedMessageLite<MessageType extends GeneratedMessageL
             this.instance = messagetype;
         }
 
+        @Override // com.google.protobuf.MessageLiteOrBuilder
+        public final boolean isInitialized() {
+            return GeneratedMessageLite.isInitialized(this.instance, false);
+        }
+
+        /* renamed from: clear */
+        public final BuilderType m1134clear() {
+            this.instance = (MessageType) this.instance.dynamicMethod(MethodToInvoke.NEW_MUTABLE_INSTANCE);
+            return this;
+        }
+
+        @Override // com.google.protobuf.AbstractMessageLite.Builder
         /* renamed from: clone */
-        public BuilderType m1122clone() {
+        public BuilderType mo1122clone() {
             BuilderType buildertype = (BuilderType) getDefaultInstanceForType().newBuilderForType();
             buildertype.mergeFrom(buildPartial());
             return buildertype;
@@ -241,6 +284,43 @@ public abstract class GeneratedMessageLite<MessageType extends GeneratedMessageL
         public MessageType getDefaultInstanceForType() {
             return this.defaultInstance;
         }
+
+        @Override // com.google.protobuf.AbstractMessageLite.Builder
+        /* renamed from: mergeFrom */
+        public BuilderType mo1131mergeFrom(byte[] bArr, int i, int i2, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
+            copyOnWrite();
+            try {
+                Protobuf.getInstance().schemaFor((Protobuf) this.instance).mergeFrom(this.instance, bArr, i, i + i2, new ArrayDecoders.Registers(extensionRegistryLite));
+                return this;
+            } catch (InvalidProtocolBufferException e) {
+                throw e;
+            } catch (IOException e2) {
+                throw new RuntimeException("Reading from byte array should not throw IOException.", e2);
+            } catch (IndexOutOfBoundsException unused) {
+                throw InvalidProtocolBufferException.truncatedMessage();
+            }
+        }
+
+        @Override // com.google.protobuf.AbstractMessageLite.Builder
+        /* renamed from: mergeFrom */
+        public BuilderType mo1130mergeFrom(byte[] bArr, int i, int i2) throws InvalidProtocolBufferException {
+            return mo1131mergeFrom(bArr, i, i2, ExtensionRegistryLite.getEmptyRegistry());
+        }
+
+        @Override // com.google.protobuf.AbstractMessageLite.Builder
+        /* renamed from: mergeFrom */
+        public BuilderType mo1126mergeFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
+            copyOnWrite();
+            try {
+                Protobuf.getInstance().schemaFor((Protobuf) this.instance).mergeFrom(this.instance, CodedInputStreamReader.forCodedInput(codedInputStream), extensionRegistryLite);
+                return this;
+            } catch (RuntimeException e) {
+                if (e.getCause() instanceof IOException) {
+                    throw ((IOException) e.getCause());
+                }
+                throw e;
+            }
+        }
     }
 
     /* loaded from: classes3.dex */
@@ -265,10 +345,18 @@ public abstract class GeneratedMessageLite<MessageType extends GeneratedMessageL
         /* JADX INFO: Access modifiers changed from: package-private */
         public FieldSet<ExtensionDescriptor> ensureExtensionsAreMutable() {
             if (this.extensions.isImmutable()) {
-                this.extensions = this.extensions.m1121clone();
+                this.extensions = this.extensions.m1133clone();
             }
             return this.extensions;
         }
+    }
+
+    public static <ContainingType extends MessageLite, Type> GeneratedExtension<ContainingType, Type> newSingularGeneratedExtension(ContainingType containingtype, Type type, MessageLite messageLite, Internal.EnumLiteMap<?> enumLiteMap, int i, WireFormat.FieldType fieldType, Class cls) {
+        return new GeneratedExtension<>(containingtype, type, messageLite, new ExtensionDescriptor(enumLiteMap, i, fieldType, false, false), cls);
+    }
+
+    public static <ContainingType extends MessageLite, Type> GeneratedExtension<ContainingType, Type> newRepeatedGeneratedExtension(ContainingType containingtype, MessageLite messageLite, Internal.EnumLiteMap<?> enumLiteMap, int i, WireFormat.FieldType fieldType, boolean z, Class cls) {
+        return new GeneratedExtension<>(containingtype, Collections.emptyList(), messageLite, new ExtensionDescriptor(enumLiteMap, i, fieldType, true, z), cls);
     }
 
     /* loaded from: classes3.dex */
@@ -278,6 +366,14 @@ public abstract class GeneratedMessageLite<MessageType extends GeneratedMessageL
         final boolean isRepeated;
         final int number;
         final WireFormat.FieldType type;
+
+        ExtensionDescriptor(Internal.EnumLiteMap<?> enumLiteMap, int i, WireFormat.FieldType fieldType, boolean z, boolean z2) {
+            this.enumTypeMap = enumLiteMap;
+            this.number = i;
+            this.type = fieldType;
+            this.isRepeated = z;
+            this.isPacked = z2;
+        }
 
         @Override // com.google.protobuf.FieldSet.FieldDescriptorLite
         public int getNumber() {
@@ -320,6 +416,14 @@ public abstract class GeneratedMessageLite<MessageType extends GeneratedMessageL
         }
     }
 
+    static Method getMethodOrDie(Class cls, String str, Class... clsArr) {
+        try {
+            return cls.getMethod(str, clsArr);
+        } catch (NoSuchMethodException e) {
+            throw new RuntimeException("Generated message class \"" + cls.getName() + "\" missing method \"" + str + "\".", e);
+        }
+    }
+
     /* JADX INFO: Access modifiers changed from: package-private */
     public static Object invokeOrDie(Method method, Object obj, Object... objArr) {
         try {
@@ -340,8 +444,23 @@ public abstract class GeneratedMessageLite<MessageType extends GeneratedMessageL
 
     /* loaded from: classes3.dex */
     public static class GeneratedExtension<ContainingType extends MessageLite, Type> extends ExtensionLite<ContainingType, Type> {
+        final ContainingType containingTypeDefaultInstance;
+        final Type defaultValue;
         final ExtensionDescriptor descriptor;
         final MessageLite messageDefaultInstance;
+
+        GeneratedExtension(ContainingType containingtype, Type type, MessageLite messageLite, ExtensionDescriptor extensionDescriptor, Class cls) {
+            if (containingtype == null) {
+                throw new IllegalArgumentException("Null containingTypeDefaultInstance");
+            }
+            if (extensionDescriptor.getLiteType() == WireFormat.FieldType.MESSAGE && messageLite == null) {
+                throw new IllegalArgumentException("Null messageDefaultInstance");
+            }
+            this.containingTypeDefaultInstance = containingtype;
+            this.defaultValue = type;
+            this.messageDefaultInstance = messageLite;
+            this.descriptor = extensionDescriptor;
+        }
 
         public int getNumber() {
             return this.descriptor.getNumber();
@@ -358,6 +477,14 @@ public abstract class GeneratedMessageLite<MessageType extends GeneratedMessageL
         public boolean isRepeated() {
             return this.descriptor.isRepeated;
         }
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static <MessageType extends ExtendableMessage<MessageType, BuilderType>, BuilderType, T> GeneratedExtension<MessageType, T> checkIsLite(ExtensionLite<MessageType, T> extensionLite) {
+        if (!extensionLite.isLite()) {
+            throw new IllegalArgumentException("Expected a lite extension.");
+        }
+        return (GeneratedExtension) extensionLite;
     }
 
     protected static final <T extends GeneratedMessageLite<T, ?>> boolean isInitialized(T t, boolean z) {
@@ -378,6 +505,52 @@ public abstract class GeneratedMessageLite<MessageType extends GeneratedMessageL
     /* JADX INFO: Access modifiers changed from: protected */
     public static Internal.IntList emptyIntList() {
         return IntArrayList.emptyList();
+    }
+
+    /* JADX WARN: Type inference failed for: r1v1, types: [com.google.protobuf.Internal$IntList] */
+    protected static Internal.IntList mutableCopy(Internal.IntList intList) {
+        int size = intList.size();
+        return intList.mutableCopyWithCapacity(size == 0 ? 10 : size * 2);
+    }
+
+    protected static Internal.LongList emptyLongList() {
+        return LongArrayList.emptyList();
+    }
+
+    /* JADX WARN: Type inference failed for: r1v1, types: [com.google.protobuf.Internal$LongList] */
+    protected static Internal.LongList mutableCopy(Internal.LongList longList) {
+        int size = longList.size();
+        return longList.mutableCopyWithCapacity(size == 0 ? 10 : size * 2);
+    }
+
+    protected static Internal.FloatList emptyFloatList() {
+        return FloatArrayList.emptyList();
+    }
+
+    /* JADX WARN: Type inference failed for: r1v1, types: [com.google.protobuf.Internal$FloatList] */
+    protected static Internal.FloatList mutableCopy(Internal.FloatList floatList) {
+        int size = floatList.size();
+        return floatList.mutableCopyWithCapacity(size == 0 ? 10 : size * 2);
+    }
+
+    protected static Internal.DoubleList emptyDoubleList() {
+        return DoubleArrayList.emptyList();
+    }
+
+    /* JADX WARN: Type inference failed for: r1v1, types: [com.google.protobuf.Internal$DoubleList] */
+    protected static Internal.DoubleList mutableCopy(Internal.DoubleList doubleList) {
+        int size = doubleList.size();
+        return doubleList.mutableCopyWithCapacity(size == 0 ? 10 : size * 2);
+    }
+
+    protected static Internal.BooleanList emptyBooleanList() {
+        return BooleanArrayList.emptyList();
+    }
+
+    /* JADX WARN: Type inference failed for: r1v1, types: [com.google.protobuf.Internal$BooleanList] */
+    protected static Internal.BooleanList mutableCopy(Internal.BooleanList booleanList) {
+        int size = booleanList.size();
+        return booleanList.mutableCopyWithCapacity(size == 0 ? 10 : size * 2);
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
@@ -403,6 +576,11 @@ public abstract class GeneratedMessageLite<MessageType extends GeneratedMessageL
         public T parsePartialFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
             return (T) GeneratedMessageLite.parsePartialFrom(this.defaultInstance, codedInputStream, extensionRegistryLite);
         }
+
+        @Override // com.google.protobuf.AbstractParser
+        public T parsePartialFrom(byte[] bArr, int i, int i2, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
+            return (T) GeneratedMessageLite.parsePartialFrom(this.defaultInstance, bArr, i, i2, extensionRegistryLite);
+        }
     }
 
     static <T extends GeneratedMessageLite<T, ?>> T parsePartialFrom(T t, CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
@@ -412,20 +590,29 @@ public abstract class GeneratedMessageLite<MessageType extends GeneratedMessageL
             schemaFor.mergeFrom(t2, CodedInputStreamReader.forCodedInput(codedInputStream), extensionRegistryLite);
             schemaFor.makeImmutable(t2);
             return t2;
-        } catch (IOException e) {
-            if (e.getCause() instanceof InvalidProtocolBufferException) {
-                throw ((InvalidProtocolBufferException) e.getCause());
+        } catch (InvalidProtocolBufferException e) {
+            e = e;
+            if (e.getThrownFromInputStream()) {
+                e = new InvalidProtocolBufferException(e);
             }
-            throw new InvalidProtocolBufferException(e.getMessage()).setUnfinishedMessage(t2);
-        } catch (RuntimeException e2) {
-            if (e2.getCause() instanceof InvalidProtocolBufferException) {
-                throw ((InvalidProtocolBufferException) e2.getCause());
+            throw e.setUnfinishedMessage(t2);
+        } catch (UninitializedMessageException e2) {
+            throw e2.asInvalidProtocolBufferException().setUnfinishedMessage(t2);
+        } catch (IOException e3) {
+            if (e3.getCause() instanceof InvalidProtocolBufferException) {
+                throw ((InvalidProtocolBufferException) e3.getCause());
             }
-            throw e2;
+            throw new InvalidProtocolBufferException(e3).setUnfinishedMessage(t2);
+        } catch (RuntimeException e4) {
+            if (e4.getCause() instanceof InvalidProtocolBufferException) {
+                throw ((InvalidProtocolBufferException) e4.getCause());
+            }
+            throw e4;
         }
     }
 
-    static <T extends GeneratedMessageLite<T, ?>> T parsePartialFrom(T t, byte[] bArr, int i, int i2, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
+    /* JADX INFO: Access modifiers changed from: private */
+    public static <T extends GeneratedMessageLite<T, ?>> T parsePartialFrom(T t, byte[] bArr, int i, int i2, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
         T t2 = (T) t.dynamicMethod(MethodToInvoke.NEW_MUTABLE_INSTANCE);
         try {
             Schema schemaFor = Protobuf.getInstance().schemaFor((Protobuf) t2);
@@ -435,14 +622,26 @@ public abstract class GeneratedMessageLite<MessageType extends GeneratedMessageL
                 return t2;
             }
             throw new RuntimeException();
-        } catch (IOException e) {
-            if (e.getCause() instanceof InvalidProtocolBufferException) {
-                throw ((InvalidProtocolBufferException) e.getCause());
+        } catch (InvalidProtocolBufferException e) {
+            e = e;
+            if (e.getThrownFromInputStream()) {
+                e = new InvalidProtocolBufferException(e);
             }
-            throw new InvalidProtocolBufferException(e.getMessage()).setUnfinishedMessage(t2);
+            throw e.setUnfinishedMessage(t2);
+        } catch (UninitializedMessageException e2) {
+            throw e2.asInvalidProtocolBufferException().setUnfinishedMessage(t2);
+        } catch (IOException e3) {
+            if (e3.getCause() instanceof InvalidProtocolBufferException) {
+                throw ((InvalidProtocolBufferException) e3.getCause());
+            }
+            throw new InvalidProtocolBufferException(e3).setUnfinishedMessage(t2);
         } catch (IndexOutOfBoundsException unused) {
             throw InvalidProtocolBufferException.truncatedMessage().setUnfinishedMessage(t2);
         }
+    }
+
+    protected static <T extends GeneratedMessageLite<T, ?>> T parsePartialFrom(T t, CodedInputStream codedInputStream) throws InvalidProtocolBufferException {
+        return (T) parsePartialFrom(t, codedInputStream, ExtensionRegistryLite.getEmptyRegistry());
     }
 
     private static <T extends GeneratedMessageLite<T, ?>> T checkMessageInitialized(T t) throws InvalidProtocolBufferException {
@@ -453,31 +652,97 @@ public abstract class GeneratedMessageLite<MessageType extends GeneratedMessageL
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
+    public static <T extends GeneratedMessageLite<T, ?>> T parseFrom(T t, ByteBuffer byteBuffer, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
+        return (T) checkMessageInitialized(parseFrom(t, CodedInputStream.newInstance(byteBuffer), extensionRegistryLite));
+    }
+
+    /* JADX INFO: Access modifiers changed from: protected */
+    public static <T extends GeneratedMessageLite<T, ?>> T parseFrom(T t, ByteBuffer byteBuffer) throws InvalidProtocolBufferException {
+        return (T) parseFrom(t, byteBuffer, ExtensionRegistryLite.getEmptyRegistry());
+    }
+
+    /* JADX INFO: Access modifiers changed from: protected */
     public static <T extends GeneratedMessageLite<T, ?>> T parseFrom(T t, ByteString byteString) throws InvalidProtocolBufferException {
         return (T) checkMessageInitialized(parseFrom(t, byteString, ExtensionRegistryLite.getEmptyRegistry()));
     }
 
-    protected static <T extends GeneratedMessageLite<T, ?>> T parseFrom(T t, ByteString byteString, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
+    /* JADX INFO: Access modifiers changed from: protected */
+    public static <T extends GeneratedMessageLite<T, ?>> T parseFrom(T t, ByteString byteString, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
         return (T) checkMessageInitialized(parsePartialFrom(t, byteString, extensionRegistryLite));
     }
 
     private static <T extends GeneratedMessageLite<T, ?>> T parsePartialFrom(T t, ByteString byteString, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
+        CodedInputStream newCodedInput = byteString.newCodedInput();
+        T t2 = (T) parsePartialFrom(t, newCodedInput, extensionRegistryLite);
         try {
-            CodedInputStream newCodedInput = byteString.newCodedInput();
-            T t2 = (T) parsePartialFrom(t, newCodedInput, extensionRegistryLite);
-            try {
-                newCodedInput.checkLastTagWas(0);
-                return t2;
-            } catch (InvalidProtocolBufferException e) {
-                throw e.setUnfinishedMessage(t2);
-            }
-        } catch (InvalidProtocolBufferException e2) {
-            throw e2;
+            newCodedInput.checkLastTagWas(0);
+            return t2;
+        } catch (InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(t2);
         }
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
     public static <T extends GeneratedMessageLite<T, ?>> T parseFrom(T t, byte[] bArr) throws InvalidProtocolBufferException {
         return (T) checkMessageInitialized(parsePartialFrom(t, bArr, 0, bArr.length, ExtensionRegistryLite.getEmptyRegistry()));
+    }
+
+    /* JADX INFO: Access modifiers changed from: protected */
+    public static <T extends GeneratedMessageLite<T, ?>> T parseFrom(T t, byte[] bArr, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
+        return (T) checkMessageInitialized(parsePartialFrom(t, bArr, 0, bArr.length, extensionRegistryLite));
+    }
+
+    /* JADX INFO: Access modifiers changed from: protected */
+    public static <T extends GeneratedMessageLite<T, ?>> T parseFrom(T t, InputStream inputStream) throws InvalidProtocolBufferException {
+        return (T) checkMessageInitialized(parsePartialFrom(t, CodedInputStream.newInstance(inputStream), ExtensionRegistryLite.getEmptyRegistry()));
+    }
+
+    /* JADX INFO: Access modifiers changed from: protected */
+    public static <T extends GeneratedMessageLite<T, ?>> T parseFrom(T t, InputStream inputStream, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
+        return (T) checkMessageInitialized(parsePartialFrom(t, CodedInputStream.newInstance(inputStream), extensionRegistryLite));
+    }
+
+    /* JADX INFO: Access modifiers changed from: protected */
+    public static <T extends GeneratedMessageLite<T, ?>> T parseFrom(T t, CodedInputStream codedInputStream) throws InvalidProtocolBufferException {
+        return (T) parseFrom(t, codedInputStream, ExtensionRegistryLite.getEmptyRegistry());
+    }
+
+    /* JADX INFO: Access modifiers changed from: protected */
+    public static <T extends GeneratedMessageLite<T, ?>> T parseFrom(T t, CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
+        return (T) checkMessageInitialized(parsePartialFrom(t, codedInputStream, extensionRegistryLite));
+    }
+
+    /* JADX INFO: Access modifiers changed from: protected */
+    public static <T extends GeneratedMessageLite<T, ?>> T parseDelimitedFrom(T t, InputStream inputStream) throws InvalidProtocolBufferException {
+        return (T) checkMessageInitialized(parsePartialDelimitedFrom(t, inputStream, ExtensionRegistryLite.getEmptyRegistry()));
+    }
+
+    /* JADX INFO: Access modifiers changed from: protected */
+    public static <T extends GeneratedMessageLite<T, ?>> T parseDelimitedFrom(T t, InputStream inputStream, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
+        return (T) checkMessageInitialized(parsePartialDelimitedFrom(t, inputStream, extensionRegistryLite));
+    }
+
+    private static <T extends GeneratedMessageLite<T, ?>> T parsePartialDelimitedFrom(T t, InputStream inputStream, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
+        try {
+            int read = inputStream.read();
+            if (read == -1) {
+                return null;
+            }
+            CodedInputStream newInstance = CodedInputStream.newInstance(new AbstractMessageLite.Builder.LimitedInputStream(inputStream, CodedInputStream.readRawVarint32(read, inputStream)));
+            T t2 = (T) parsePartialFrom(t, newInstance, extensionRegistryLite);
+            try {
+                newInstance.checkLastTagWas(0);
+                return t2;
+            } catch (InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(t2);
+            }
+        } catch (InvalidProtocolBufferException e2) {
+            if (e2.getThrownFromInputStream()) {
+                throw new InvalidProtocolBufferException(e2);
+            }
+            throw e2;
+        } catch (IOException e3) {
+            throw new InvalidProtocolBufferException(e3);
+        }
     }
 }

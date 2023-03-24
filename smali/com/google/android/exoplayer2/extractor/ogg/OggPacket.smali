@@ -125,12 +125,12 @@
 
     if-eqz p1, :cond_0
 
-    const/4 v2, 0x1
+    move v2, v0
 
     goto :goto_0
 
     :cond_0
-    const/4 v2, 0x0
+    move v2, v1
 
     .line 60
     :goto_0
@@ -216,7 +216,7 @@
     goto :goto_2
 
     :cond_3
-    const/4 v2, 0x0
+    move v2, v1
 
     .line 81
     :goto_2
@@ -313,12 +313,12 @@
 
     if-eq v2, v4, :cond_8
 
-    const/4 v2, 0x1
+    move v2, v0
 
     goto :goto_5
 
     :cond_8
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_5
     iput-boolean v2, p0, Lcom/google/android/exoplayer2/extractor/ogg/OggPacket;->populated:Z

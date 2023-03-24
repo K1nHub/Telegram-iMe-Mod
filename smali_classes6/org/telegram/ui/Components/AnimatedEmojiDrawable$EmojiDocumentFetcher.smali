@@ -878,7 +878,7 @@
     :cond_0
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    move v1, v0
 
     .line 321
     :goto_0
@@ -927,7 +927,7 @@
 
     if-eqz v3, :cond_3
 
-    const/4 v4, 0x0
+    move v4, v0
 
     .line 328
     :goto_1

@@ -256,7 +256,7 @@
 
     const/4 v0, 0x0
 
-    const/4 v2, 0x0
+    move v2, v0
 
     :goto_0
     if-nez v2, :cond_9
@@ -481,9 +481,9 @@
 
     add-long/2addr v6, v13
 
-    cmp-long v8, v4, v6
+    cmp-long v6, v4, v6
 
-    if-lez v8, :cond_4
+    if-lez v6, :cond_4
 
     .line 1043
     iget-object v6, v1, Lcom/google/android/exoplayer2/source/ProgressiveMediaPeriod$ExtractingLoadable;->loadCondition:Lcom/google/android/exoplayer2/util/ConditionVariable;
@@ -520,7 +520,7 @@
     :cond_5
     if-ne v2, v3, :cond_6
 
-    const/4 v2, 0x0
+    move v2, v0
 
     goto :goto_2
 
@@ -534,9 +534,9 @@
 
     const-wide/16 v5, -0x1
 
-    cmp-long v7, v3, v5
+    cmp-long v3, v3, v5
 
-    if-eqz v7, :cond_7
+    if-eqz v3, :cond_7
 
     .line 1051
     iget-object v3, v1, Lcom/google/android/exoplayer2/source/ProgressiveMediaPeriod$ExtractingLoadable;->positionHolder:Lcom/google/android/exoplayer2/extractor/PositionHolder;
@@ -572,9 +572,9 @@
 
     const-wide/16 v4, -0x1
 
-    cmp-long v6, v2, v4
+    cmp-long v2, v2, v4
 
-    if-eqz v6, :cond_8
+    if-eqz v2, :cond_8
 
     .line 1051
     iget-object v2, v1, Lcom/google/android/exoplayer2/source/ProgressiveMediaPeriod$ExtractingLoadable;->positionHolder:Lcom/google/android/exoplayer2/extractor/PositionHolder;

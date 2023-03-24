@@ -9,7 +9,7 @@ import android.widget.ScrollView;
 import android.widget.TextView;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3286R;
+import org.telegram.messenger.C3301R;
 import org.telegram.messenger.Emoji;
 import org.telegram.p048ui.ActionBar.Theme;
 import org.telegram.tgnet.TLRPC$KeyboardButton;
@@ -99,33 +99,35 @@ public class BotKeyboardView extends LinearLayout {
     }
 
     public void setButtons(TLRPC$TL_replyKeyboardMarkup tLRPC$TL_replyKeyboardMarkup) {
+        int i;
         TLRPC$TL_replyKeyboardMarkup tLRPC$TL_replyKeyboardMarkup2 = tLRPC$TL_replyKeyboardMarkup;
         this.botButtons = tLRPC$TL_replyKeyboardMarkup2;
         this.container.removeAllViews();
         this.buttonViews.clear();
         this.buttonIcons.clear();
-        int i = 0;
+        int i2 = 0;
         this.scrollView.scrollTo(0, 0);
         if (tLRPC$TL_replyKeyboardMarkup2 == null || this.botButtons.rows.size() == 0) {
             return;
         }
         boolean z = !tLRPC$TL_replyKeyboardMarkup2.resize;
         this.isFullSize = z;
+        int i3 = 10;
         this.buttonHeight = !z ? 42 : (int) Math.max(42.0f, (((this.panelHeight - AndroidUtilities.m50dp(30)) - ((this.botButtons.rows.size() - 1) * AndroidUtilities.m50dp(10))) / this.botButtons.rows.size()) / AndroidUtilities.density);
-        int i2 = 0;
-        while (i2 < tLRPC$TL_replyKeyboardMarkup2.rows.size()) {
-            TLRPC$TL_keyboardButtonRow tLRPC$TL_keyboardButtonRow = tLRPC$TL_replyKeyboardMarkup2.rows.get(i2);
+        int i4 = 0;
+        while (i4 < tLRPC$TL_replyKeyboardMarkup2.rows.size()) {
+            TLRPC$TL_keyboardButtonRow tLRPC$TL_keyboardButtonRow = tLRPC$TL_replyKeyboardMarkup2.rows.get(i4);
             LinearLayout linearLayout = new LinearLayout(getContext());
-            linearLayout.setOrientation(i);
-            this.container.addView(linearLayout, LayoutHelper.createLinear(-1, this.buttonHeight, 15, i2 == 0 ? 15 : 10, 15, i2 == tLRPC$TL_replyKeyboardMarkup2.rows.size() + (-1) ? 15 : 0));
+            linearLayout.setOrientation(i2);
+            this.container.addView(linearLayout, LayoutHelper.createLinear(-1, this.buttonHeight, 15, i4 == 0 ? 15 : i3, 15, i4 == tLRPC$TL_replyKeyboardMarkup2.rows.size() + (-1) ? 15 : i2));
             float size = 1.0f / tLRPC$TL_keyboardButtonRow.buttons.size();
-            int i3 = 0;
-            while (i3 < tLRPC$TL_keyboardButtonRow.buttons.size()) {
-                TLRPC$KeyboardButton tLRPC$KeyboardButton = tLRPC$TL_keyboardButtonRow.buttons.get(i3);
+            int i5 = i2;
+            while (i5 < tLRPC$TL_keyboardButtonRow.buttons.size()) {
+                TLRPC$KeyboardButton tLRPC$KeyboardButton = tLRPC$TL_keyboardButtonRow.buttons.get(i5);
                 Button button = new Button(this, getContext(), tLRPC$KeyboardButton);
                 FrameLayout frameLayout = new FrameLayout(getContext());
                 frameLayout.addView(button, LayoutHelper.createFrame(-1, -1));
-                linearLayout.addView(frameLayout, LayoutHelper.createLinear(0, -1, size, 0, 0, i3 != tLRPC$TL_keyboardButtonRow.buttons.size() + (-1) ? 10 : 0, 0));
+                linearLayout.addView(frameLayout, LayoutHelper.createLinear(0, -1, size, 0, 0, i5 != tLRPC$TL_keyboardButtonRow.buttons.size() + (-1) ? i3 : i2, 0));
                 button.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.BotKeyboardView$$ExternalSyntheticLambda0
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view) {
@@ -136,18 +138,22 @@ public class BotKeyboardView extends LinearLayout {
                 ImageView imageView = new ImageView(getContext());
                 imageView.setColorFilter(getThemedColor("chat_botKeyboardButtonText"));
                 if ((tLRPC$KeyboardButton instanceof TLRPC$TL_keyboardButtonWebView) || (tLRPC$KeyboardButton instanceof TLRPC$TL_keyboardButtonSimpleWebView)) {
-                    imageView.setImageResource(C3286R.C3288drawable.bot_webview);
+                    imageView.setImageResource(C3301R.C3303drawable.bot_webview);
+                    i = 0;
                     imageView.setVisibility(0);
                 } else {
                     imageView.setVisibility(8);
+                    i = 0;
                 }
                 this.buttonIcons.add(imageView);
                 frameLayout.addView(imageView, LayoutHelper.createFrame(12, 12, 53, 0, 8, 8, 0));
-                i3++;
+                i5++;
+                i2 = i;
+                i3 = 10;
             }
-            i2++;
+            i4++;
+            i3 = 10;
             tLRPC$TL_replyKeyboardMarkup2 = tLRPC$TL_replyKeyboardMarkup;
-            i = 0;
         }
     }
 

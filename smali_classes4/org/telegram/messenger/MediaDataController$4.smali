@@ -25,7 +25,7 @@
 .method constructor <init>(Lorg/telegram/messenger/MediaDataController;)V
     .locals 0
 
-    .line 7869
+    .line 7902
     iput-object p1, p0, Lorg/telegram/messenger/MediaDataController$4;->this$0:Lorg/telegram/messenger/MediaDataController;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V

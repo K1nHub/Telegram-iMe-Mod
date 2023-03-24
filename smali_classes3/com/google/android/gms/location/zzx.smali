@@ -62,27 +62,27 @@
 
     move-wide/from16 v28, v26
 
+    move/from16 v32, v6
+
+    move/from16 v35, v32
+
+    move/from16 v36, v35
+
+    move/from16 v38, v36
+
+    move/from16 v19, v7
+
     move-wide/from16 v20, v8
 
     move-wide/from16 v22, v10
 
     move-wide/from16 v24, v12
 
+    move/from16 v30, v14
+
+    move/from16 v31, v15
+
     move-wide/from16 v33, v16
-
-    const/16 v19, 0x66
-
-    const v30, 0x7fffffff
-
-    const/16 v31, 0x0
-
-    const/16 v32, 0x0
-
-    const/16 v35, 0x0
-
-    const/16 v36, 0x0
-
-    const/16 v38, 0x0
 
     .line 3
     :goto_0
@@ -291,8 +291,6 @@
     invoke-direct/range {v18 .. v40}, Lcom/google/android/gms/location/LocationRequest;-><init>(IJJJJJIFZJIILjava/lang/String;ZLandroid/os/WorkSource;Lcom/google/android/gms/internal/location/zzd;)V
 
     return-object v0
-
-    nop
 
     :pswitch_data_0
     .packed-switch 0x1

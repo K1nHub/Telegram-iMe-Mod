@@ -1104,10 +1104,10 @@ public class NotificationCenter {
         private Object[] args;
 
         /* renamed from: id */
-        private int f1441id;
+        private int f1442id;
 
         private DelayedPost(int i, Object[] objArr) {
-            this.f1441id = i;
+            this.f1442id = i;
             this.args = objArr;
         }
     }
@@ -1244,7 +1244,7 @@ public class NotificationCenter {
             this.delayedPosts.clear();
             for (int i = 0; i < this.delayedPostsTmp.size(); i++) {
                 DelayedPost delayedPost = this.delayedPostsTmp.get(i);
-                postNotificationNameInternal(delayedPost.f1441id, true, delayedPost.args);
+                postNotificationNameInternal(delayedPost.f1442id, true, delayedPost.args);
             }
             this.delayedPostsTmp.clear();
         }

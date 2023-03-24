@@ -204,7 +204,7 @@
 
     move-object v3, v2
 
-    const/4 v1, 0x0
+    move v1, v0
 
     :goto_0
     const/4 v4, 0x3
@@ -279,7 +279,7 @@
 
     invoke-direct {v7, v6}, Ljava/lang/StringBuilder;-><init>(I)V
 
-    const/4 v8, 0x0
+    move v8, v0
 
     :goto_3
     if-ge v8, v6, :cond_3
@@ -381,9 +381,9 @@
 
     div-long/2addr v4, v6
 
-    long-to-int v5, v4
+    long-to-int v4, v4
 
-    iput v5, p0, Lorg/telegram/tgnet/ConnectionsManager$DnsTxtLoadTask;->responseDate:I
+    iput v4, p0, Lorg/telegram/tgnet/ConnectionsManager$DnsTxtLoadTask;->responseDate:I
 
     .line 1042
     new-instance v4, Ljava/io/ByteArrayOutputStream;
@@ -452,7 +452,7 @@
 
     invoke-direct {v6, v5}, Ljava/util/ArrayList;-><init>(I)V
 
-    const/4 v7, 0x0
+    move v7, v0
 
     :goto_6
     if-ge v7, v5, :cond_7
@@ -501,7 +501,7 @@
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    const/4 v5, 0x0
+    move v5, v0
 
     .line 1082
     :goto_8

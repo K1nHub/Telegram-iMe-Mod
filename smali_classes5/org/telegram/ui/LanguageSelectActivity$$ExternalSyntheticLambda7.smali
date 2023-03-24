@@ -2,38 +2,38 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Ljava/util/Comparator;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field public final synthetic f$0:Lorg/telegram/messenger/LocaleController$LocaleInfo;
+.field public final synthetic f$0:Lorg/telegram/ui/LanguageSelectActivity;
+
+.field public final synthetic f$1:Ljava/util/ArrayList;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/messenger/LocaleController$LocaleInfo;)V
+.method public synthetic constructor <init>(Lorg/telegram/ui/LanguageSelectActivity;Ljava/util/ArrayList;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lorg/telegram/ui/LanguageSelectActivity$$ExternalSyntheticLambda7;->f$0:Lorg/telegram/messenger/LocaleController$LocaleInfo;
+    iput-object p1, p0, Lorg/telegram/ui/LanguageSelectActivity$$ExternalSyntheticLambda7;->f$0:Lorg/telegram/ui/LanguageSelectActivity;
+
+    iput-object p2, p0, Lorg/telegram/ui/LanguageSelectActivity$$ExternalSyntheticLambda7;->f$1:Ljava/util/ArrayList;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final compare(Ljava/lang/Object;Ljava/lang/Object;)I
-    .locals 1
+.method public final run()V
+    .locals 2
 
-    iget-object v0, p0, Lorg/telegram/ui/LanguageSelectActivity$$ExternalSyntheticLambda7;->f$0:Lorg/telegram/messenger/LocaleController$LocaleInfo;
+    iget-object v0, p0, Lorg/telegram/ui/LanguageSelectActivity$$ExternalSyntheticLambda7;->f$0:Lorg/telegram/ui/LanguageSelectActivity;
 
-    check-cast p1, Lorg/telegram/messenger/LocaleController$LocaleInfo;
+    iget-object v1, p0, Lorg/telegram/ui/LanguageSelectActivity$$ExternalSyntheticLambda7;->f$1:Ljava/util/ArrayList;
 
-    check-cast p2, Lorg/telegram/messenger/LocaleController$LocaleInfo;
+    invoke-static {v0, v1}, Lorg/telegram/ui/LanguageSelectActivity;->$r8$lambda$v2JNVH8xZ0fdJ_enQ4I7Tke5Rdw(Lorg/telegram/ui/LanguageSelectActivity;Ljava/util/ArrayList;)V
 
-    invoke-static {v0, p1, p2}, Lorg/telegram/ui/LanguageSelectActivity;->$r8$lambda$ez74Ea96iZDun8-GTuq3czQcroM(Lorg/telegram/messenger/LocaleController$LocaleInfo;Lorg/telegram/messenger/LocaleController$LocaleInfo;Lorg/telegram/messenger/LocaleController$LocaleInfo;)I
-
-    move-result p1
-
-    return p1
+    return-void
 .end method

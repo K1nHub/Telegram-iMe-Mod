@@ -88,12 +88,12 @@
 
     if-ne v0, v3, :cond_0
 
-    const/4 v0, 0x1
+    move v0, v2
 
     goto :goto_0
 
     :cond_0
-    const/4 v0, 0x0
+    move v0, v1
 
     :goto_0
     invoke-static {v0}, Lcom/google/android/exoplayer2/util/Assertions;->checkState(Z)V
@@ -230,12 +230,12 @@
 
     if-ne v0, v4, :cond_0
 
-    const/4 v0, 0x1
+    move v0, v2
 
     goto :goto_0
 
     :cond_0
-    const/4 v0, 0x0
+    move v0, v1
 
     :goto_0
     invoke-static {v0}, Lcom/google/android/exoplayer2/util/Assertions;->checkArgument(Z)V
@@ -505,7 +505,7 @@
     goto :goto_1
 
     :cond_0
-    const/4 v0, 0x0
+    move v0, v1
 
     .line 384
     :goto_1

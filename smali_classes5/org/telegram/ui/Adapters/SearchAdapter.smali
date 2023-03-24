@@ -318,12 +318,12 @@
 
     if-eqz v3, :cond_3
 
-    const/4 v7, 0x1
+    move v7, v6
 
     goto :goto_0
 
     :cond_3
-    const/4 v7, 0x0
+    move v7, v4
 
     :goto_0
     add-int/2addr v7, v6
@@ -355,7 +355,7 @@
 
     invoke-direct {v11}, Ljava/util/ArrayList;-><init>()V
 
-    const/4 v12, 0x0
+    move v12, v4
 
     .line 167
     :goto_1
@@ -405,14 +405,14 @@
     goto :goto_3
 
     :cond_5
-    :goto_2
+    move/from16 v17, v4
+
     move-object/from16 v19, v8
 
     move/from16 v18, v16
 
+    :goto_2
     const/4 v5, 0x1
-
-    const/16 v17, 0x0
 
     goto/16 :goto_a
 
@@ -441,7 +441,15 @@
 
     if-ltz v4, :cond_8
 
-    goto :goto_2
+    move-object/from16 v19, v8
+
+    move/from16 v18, v16
+
+    const/4 v5, 0x1
+
+    const/16 v17, 0x0
+
+    goto/16 :goto_a
 
     :cond_8
     const/4 v4, 0x3
@@ -549,9 +557,9 @@
     :goto_4
     move/from16 v7, v16
 
-    const/4 v4, 0x0
+    move/from16 v4, v17
 
-    const/4 v15, 0x0
+    move v15, v4
 
     :goto_5
     move/from16 v18, v7
@@ -563,7 +571,7 @@
 
     move-object/from16 v19, v8
 
-    const/4 v8, 0x0
+    move/from16 v8, v17
 
     :goto_6
     const/4 v13, 0x3
@@ -728,23 +736,23 @@
     :cond_13
     move-object/from16 v19, v8
 
-    const/4 v5, 0x1
+    goto/16 :goto_2
 
     :goto_a
     add-int/lit8 v12, v12, 0x1
+
+    move v6, v5
+
+    move/from16 v4, v17
 
     move/from16 v7, v18
 
     move-object/from16 v8, v19
 
-    const/4 v4, 0x0
-
-    const/4 v6, 0x1
-
     goto/16 :goto_1
 
     :cond_14
-    const/16 v17, 0x0
+    move/from16 v17, v4
 
     .line 211
     iget-object v4, v0, Lorg/telegram/ui/Adapters/SearchAdapter;->allUnregistredContacts:Ljava/util/ArrayList;
@@ -846,7 +854,7 @@
     goto :goto_b
 
     :cond_15
-    const/4 v4, 0x0
+    move/from16 v4, v17
 
     .line 221
     :goto_c
@@ -1785,7 +1793,7 @@
     move-object v4, v1
 
     :goto_0
-    const/4 v10, 0x0
+    move v10, v2
 
     .line 378
     :goto_1
@@ -1987,7 +1995,7 @@
     goto :goto_4
 
     :cond_e
-    const/4 v3, 0x0
+    move v3, v2
 
     :goto_4
     invoke-virtual {p1, v3, v2}, Lorg/telegram/ui/Cells/UserCell;->setChecked(ZZ)V
@@ -2047,7 +2055,7 @@
 
     if-eq p2, v0, :cond_11
 
-    const/4 v2, 0x1
+    move v2, v3
 
     :cond_11
     iput-boolean v2, p1, Lorg/telegram/ui/Cells/ProfileSearchCell;->useSeparator:Z

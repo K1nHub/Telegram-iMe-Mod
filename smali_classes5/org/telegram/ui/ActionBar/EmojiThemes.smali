@@ -488,9 +488,9 @@
 
     if-nez v6, :cond_2
 
-    move-object v5, v9
+    move v6, v8
 
-    const/16 v6, 0x63
+    move-object v5, v9
 
     goto :goto_1
 
@@ -577,9 +577,9 @@
 
     if-nez v6, :cond_7
 
-    move-object v5, v10
+    move v6, v3
 
-    const/4 v6, 0x0
+    move-object v5, v10
 
     goto :goto_5
 
@@ -2098,7 +2098,7 @@
 
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    move v1, v0
 
     .line 514
     :goto_0
@@ -2691,9 +2691,9 @@
 
     const-wide/16 v7, 0x0
 
-    cmp-long v9, v5, v7
+    cmp-long v5, v5, v7
 
-    if-lez v9, :cond_2
+    if-lez v5, :cond_2
 
     .line 410
     :try_start_0

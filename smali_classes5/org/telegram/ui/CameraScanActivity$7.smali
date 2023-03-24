@@ -82,13 +82,8 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_0
-
-    :catch_0
-    nop
-
     .line 993
-    :goto_0
+    :catch_0
     iget-object v0, p0, Lorg/telegram/ui/CameraScanActivity$7;->this$0:Lorg/telegram/ui/CameraScanActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/CameraScanActivity;->access$500(Lorg/telegram/ui/CameraScanActivity;)Lorg/telegram/messenger/camera/CameraView;

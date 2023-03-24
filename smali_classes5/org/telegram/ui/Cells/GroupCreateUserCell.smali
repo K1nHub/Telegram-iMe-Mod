@@ -151,19 +151,19 @@
 
     if-eqz v5, :cond_0
 
-    const/4 v8, 0x5
+    move v8, v6
 
     goto :goto_0
 
     :cond_0
-    const/4 v8, 0x3
+    move v8, v7
 
     :goto_0
     or-int/lit8 v11, v8, 0x30
 
     if-eqz v5, :cond_1
 
-    const/4 v12, 0x0
+    move v12, v3
 
     goto :goto_1
 
@@ -188,7 +188,7 @@
     goto :goto_2
 
     :cond_2
-    const/4 v14, 0x0
+    move v14, v3
 
     :goto_2
     const/4 v15, 0x0
@@ -259,12 +259,12 @@
 
     if-eqz v5, :cond_4
 
-    const/4 v5, 0x5
+    move v5, v6
 
     goto :goto_4
 
     :cond_4
-    const/4 v5, 0x3
+    move v5, v7
 
     :goto_4
     or-int/lit8 v5, v5, 0x30
@@ -282,12 +282,12 @@
 
     if-eqz v5, :cond_5
 
-    const/4 v10, 0x5
+    move v10, v6
 
     goto :goto_5
 
     :cond_5
-    const/4 v10, 0x3
+    move v10, v7
 
     :goto_5
     or-int/lit8 v10, v10, 0x30
@@ -298,12 +298,12 @@
 
     if-eqz v5, :cond_6
 
-    const/16 v11, 0x1c
+    move v11, v15
 
     goto :goto_6
 
     :cond_6
-    const/16 v11, 0x48
+    move/from16 v11, v16
 
     :goto_6
     iget v12, v0, Lorg/telegram/ui/Cells/GroupCreateUserCell;->padding:I
@@ -314,12 +314,12 @@
 
     if-eqz v5, :cond_7
 
-    const/16 v5, 0x48
+    move/from16 v5, v16
 
     goto :goto_7
 
     :cond_7
-    const/16 v5, 0x1c
+    move v5, v15
 
     :goto_7
     add-int/2addr v5, v12
@@ -355,12 +355,12 @@
 
     if-eqz v5, :cond_8
 
-    const/4 v5, 0x5
+    move v5, v6
 
     goto :goto_8
 
     :cond_8
-    const/4 v5, 0x3
+    move v5, v7
 
     :goto_8
     or-int/lit8 v5, v5, 0x30
@@ -378,24 +378,24 @@
 
     if-eqz v5, :cond_9
 
-    const/4 v10, 0x5
+    move v10, v6
 
     goto :goto_9
 
     :cond_9
-    const/4 v10, 0x3
+    move v10, v7
 
     :goto_9
     or-int/lit8 v10, v10, 0x30
 
     if-eqz v5, :cond_a
 
-    const/16 v11, 0x1c
+    move v11, v15
 
     goto :goto_a
 
     :cond_a
-    const/16 v11, 0x48
+    move/from16 v11, v16
 
     :goto_a
     iget v12, v0, Lorg/telegram/ui/Cells/GroupCreateUserCell;->padding:I
@@ -406,7 +406,7 @@
 
     if-eqz v5, :cond_b
 
-    const/16 v15, 0x48
+    move/from16 v15, v16
 
     :cond_b
     add-int v5, v15, v12
@@ -469,14 +469,14 @@
     goto :goto_b
 
     :cond_c
-    const/4 v6, 0x3
+    move v6, v7
 
     :goto_b
     or-int/lit8 v10, v6, 0x30
 
     if-eqz v2, :cond_d
 
-    const/4 v11, 0x0
+    move v11, v3
 
     goto :goto_c
 
@@ -501,7 +501,7 @@
     goto :goto_d
 
     :cond_e
-    const/4 v13, 0x0
+    move v13, v3
 
     :goto_d
     const/4 v14, 0x0
@@ -582,7 +582,7 @@
 
     if-eqz v0, :cond_0
 
-    mul-float v2, v2, p1
+    mul-float/2addr v2, p1
 
     sub-float v0, v1, v2
 
@@ -591,7 +591,7 @@
     :cond_0
     const v0, 0x3f51eb85    # 0.82f
 
-    mul-float v2, v2, p1
+    mul-float/2addr v2, p1
 
     add-float/2addr v0, v2
 
@@ -769,7 +769,7 @@
 
     iget v4, p0, Lorg/telegram/ui/Cells/GroupCreateUserCell;->checkProgress:F
 
-    mul-float v3, v3, v4
+    mul-float/2addr v3, v4
 
     add-float/2addr v2, v3
 
@@ -790,7 +790,7 @@
 
     if-eqz v0, :cond_2
 
-    const/4 v0, 0x0
+    move v0, v1
 
     goto :goto_0
 
@@ -1100,12 +1100,12 @@
 
     if-eqz p2, :cond_4
 
-    const p2, 0x3f51eb85    # 0.82f
+    move p2, v0
 
     goto :goto_0
 
     :cond_4
-    const/high16 p2, 0x3f800000    # 1.0f
+    move p2, v1
 
     :goto_0
     invoke-virtual {p1, p2}, Landroid/view/View;->setScaleX(F)V
@@ -1120,7 +1120,7 @@
     goto :goto_1
 
     :cond_5
-    const/high16 v0, 0x3f800000    # 1.0f
+    move v0, v1
 
     :goto_1
     invoke-virtual {p1, v0}, Landroid/view/View;->setScaleY(F)V
@@ -1361,9 +1361,9 @@
     sparse-switch v8, :sswitch_data_0
 
     :goto_1
-    const/4 v4, -0x1
+    move v4, v0
 
-    goto :goto_2
+    goto/16 :goto_2
 
     :sswitch_0
     const-string v4, "channels"
@@ -1377,7 +1377,7 @@
     goto :goto_1
 
     :cond_3
-    const/4 v4, 0x7
+    move v4, v9
 
     goto :goto_2
 
@@ -1393,7 +1393,7 @@
     goto :goto_1
 
     :cond_4
-    const/4 v4, 0x6
+    move v4, v10
 
     goto :goto_2
 
@@ -1409,7 +1409,7 @@
     goto :goto_1
 
     :cond_5
-    const/4 v4, 0x5
+    move v4, v11
 
     goto :goto_2
 
@@ -1425,7 +1425,7 @@
     goto :goto_1
 
     :cond_6
-    const/4 v4, 0x4
+    move v4, v12
 
     goto :goto_2
 
@@ -1473,7 +1473,7 @@
     goto :goto_1
 
     :cond_9
-    const/4 v4, 0x1
+    move v4, v7
 
     goto :goto_2
 
@@ -1847,9 +1847,9 @@
 
     iget-wide v10, v1, Lorg/telegram/tgnet/TLRPC$FileLocation;->volume_id:J
 
-    cmp-long v12, v8, v10
+    cmp-long v8, v8, v10
 
-    if-nez v12, :cond_13
+    if-nez v8, :cond_13
 
     iget v2, v2, Lorg/telegram/tgnet/TLRPC$FileLocation;->local_id:I
 
@@ -1858,12 +1858,12 @@
     if-eq v2, v1, :cond_14
 
     :cond_13
-    const/4 v1, 0x1
+    move v1, v7
 
     goto :goto_7
 
     :cond_14
-    const/4 v1, 0x0
+    move v1, v4
 
     .line 295
     :goto_7
@@ -1890,7 +1890,7 @@
     goto :goto_8
 
     :cond_15
-    const/4 v2, 0x0
+    move v2, v4
 
     .line 300
     :goto_8
@@ -1898,7 +1898,7 @@
 
     if-eq v2, v8, :cond_16
 
-    const/4 v1, 0x1
+    move v1, v7
 
     :cond_16
     if-nez v1, :cond_17
@@ -1932,7 +1932,7 @@
 
     if-nez v2, :cond_18
 
-    const/4 v1, 0x1
+    move v1, v7
 
     goto :goto_9
 
@@ -2243,9 +2243,9 @@
 
     iget-wide v10, v1, Lorg/telegram/tgnet/TLRPC$FileLocation;->volume_id:J
 
-    cmp-long v12, v8, v10
+    cmp-long v8, v8, v10
 
-    if-nez v12, :cond_2a
+    if-nez v8, :cond_2a
 
     iget v2, v2, Lorg/telegram/tgnet/TLRPC$FileLocation;->local_id:I
 
@@ -2254,12 +2254,12 @@
     if-eq v2, v1, :cond_2b
 
     :cond_2a
-    const/4 v1, 0x1
+    move v1, v7
 
     goto :goto_10
 
     :cond_2b
-    const/4 v1, 0x0
+    move v1, v4
 
     :goto_10
     if-nez v1, :cond_2c
@@ -2289,7 +2289,7 @@
 
     if-nez v2, :cond_2d
 
-    const/4 v1, 0x1
+    move v1, v7
 
     goto :goto_11
 
@@ -2606,8 +2606,6 @@
 
     :cond_3c
     return-void
-
-    nop
 
     :sswitch_data_0
     .sparse-switch

@@ -3,14 +3,14 @@ package org.fork.enums;
 import java.util.ArrayList;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.messenger.C3286R;
+import org.telegram.messenger.C3301R;
 import org.telegram.messenger.LocaleController;
 /* compiled from: StickersSize.kt */
 /* loaded from: classes4.dex */
 public enum StickersSize {
-    SMALL(0.5d, C3286R.string.stickers_size_small),
-    MEDIUM(1.0d, C3286R.string.stickers_size_medium),
-    LARGE(1.5d, C3286R.string.stickers_size_large);
+    SMALL(0.5d, C3301R.string.stickers_size_small),
+    MEDIUM(1.0d, C3301R.string.stickers_size_medium),
+    LARGE(1.5d, C3301R.string.stickers_size_large);
     
     public static final Companion Companion = new Companion(null);
     private final double sizeRatio;

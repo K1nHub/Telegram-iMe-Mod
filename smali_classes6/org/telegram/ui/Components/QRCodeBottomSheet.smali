@@ -386,15 +386,10 @@
     :cond_4
     const/16 v7, 0x8
 
-    const/16 v16, 0x8
-
-    goto :goto_1
-
     :cond_5
     :goto_0
-    const/16 v16, 0x10
+    move/from16 v16, v7
 
-    :goto_1
     const/16 v17, 0x28
 
     const/16 v18, 0x8
@@ -582,7 +577,7 @@
 
     if-ne v1, v10, :cond_7
 
-    goto :goto_2
+    goto :goto_1
 
     .line 395
     :cond_7
@@ -598,7 +593,7 @@
     invoke-direct/range {p0 .. p0}, Lorg/telegram/ui/Components/QRCodeBottomSheet;->refreshLoginToken()V
 
     :cond_8
-    :goto_2
+    :goto_1
     return-void
 .end method
 

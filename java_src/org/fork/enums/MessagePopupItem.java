@@ -9,7 +9,7 @@ import kotlin.collections.CollectionsKt__IterablesKt;
 import kotlin.collections.CollectionsKt___CollectionsKt;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.messenger.C3286R;
+import org.telegram.messenger.C3301R;
 import org.telegram.messenger.LocaleController;
 /* compiled from: MessagePopupItem.kt */
 /* loaded from: classes4.dex */
@@ -66,31 +66,31 @@ public enum MessagePopupItem {
     public final String getTitle() {
         switch (WhenMappings.$EnumSwitchMapping$0[ordinal()]) {
             case 1:
-                String internalString = LocaleController.getInternalString(C3286R.string.chat_message_popup_option_forward_cloud);
+                String internalString = LocaleController.getInternalString(C3301R.string.chat_message_popup_option_forward_cloud);
                 Intrinsics.checkNotNullExpressionValue(internalString, "getInternalString(R.stri…pup_option_forward_cloud)");
                 return internalString;
             case 2:
-                String string = LocaleController.getString("ShareFile", C3286R.string.ShareFile);
+                String string = LocaleController.getString("ShareFile", C3301R.string.ShareFile);
                 Intrinsics.checkNotNullExpressionValue(string, "getString(\"ShareFile\", R.string.ShareFile)");
                 return string;
             case 3:
-                String internalString2 = LocaleController.getInternalString(C3286R.string.settings_interface_message_popup_item_forward_messengers);
+                String internalString2 = LocaleController.getInternalString(C3301R.string.settings_interface_message_popup_item_forward_messengers);
                 Intrinsics.checkNotNullExpressionValue(internalString2, "getInternalString(R.stri…_item_forward_messengers)");
                 return internalString2;
             case 4:
-                String internalString3 = LocaleController.getInternalString(C3286R.string.chat_long_action_translate);
+                String internalString3 = LocaleController.getInternalString(C3301R.string.chat_long_action_translate);
                 Intrinsics.checkNotNullExpressionValue(internalString3, "getInternalString(R.stri…at_long_action_translate)");
                 return internalString3;
             case 5:
-                String internalString4 = LocaleController.getInternalString(C3286R.string.chat_message_popup_option_copy_part);
+                String internalString4 = LocaleController.getInternalString(C3301R.string.chat_message_popup_option_copy_part);
                 Intrinsics.checkNotNullExpressionValue(internalString4, "getInternalString(R.stri…e_popup_option_copy_part)");
                 return internalString4;
             case 6:
-                String internalString5 = LocaleController.getInternalString(C3286R.string.chat_message_popup_option_copy_image);
+                String internalString5 = LocaleController.getInternalString(C3301R.string.chat_message_popup_option_copy_image);
                 Intrinsics.checkNotNullExpressionValue(internalString5, "getInternalString(R.stri…_popup_option_copy_image)");
                 return internalString5;
             case 7:
-                String internalString6 = LocaleController.getInternalString(C3286R.string.message_document_file_save_as);
+                String internalString6 = LocaleController.getInternalString(C3301R.string.message_document_file_save_as);
                 Intrinsics.checkNotNullExpressionValue(internalString6, "getInternalString(R.stri…ge_document_file_save_as)");
                 return internalString6;
             default:

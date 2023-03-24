@@ -35,22 +35,22 @@ public final class PhotoViewerPresenter extends BasePresenter<PhotoView> {
 
     public final void getPhotoText(Bitmap imageBitmap, boolean z) {
         Intrinsics.checkNotNullParameter(imageBitmap, "imageBitmap");
-        Observable<Result<String>> observeOn = this.googleServicesInteractor.getPhotoText(imageBitmap).observeOn(this.schedulersProvider.mo707ui());
+        Observable<Result<String>> observeOn = this.googleServicesInteractor.getPhotoText(imageBitmap).observeOn(this.schedulersProvider.mo706ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "googleServicesInteractor…(schedulersProvider.ui())");
         T viewState = getViewState();
         Intrinsics.checkNotNullExpressionValue(viewState, "viewState");
-        Disposable subscribe = RxExtKt.withLoadingDialog$default((Observable) observeOn, (BaseView) viewState, false, 2, (Object) null).subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C1945x260b9b6c(z, this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C1946x260b9b6d((BaseView) getViewState())));
+        Disposable subscribe = RxExtKt.withLoadingDialog$default((Observable) observeOn, (BaseView) viewState, false, 2, (Object) null).subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C1959x260b9b6c(z, this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C1960x260b9b6d((BaseView) getViewState())));
         Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…  onError.invoke()\n    })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }
 
     public final void getPhotoObjects(Bitmap photo) {
         Intrinsics.checkNotNullParameter(photo, "photo");
-        Observable<Result<List<RecognizedImageModel>>> observeOn = this.googleServicesInteractor.getPhotoObjects(photo).observeOn(this.schedulersProvider.mo707ui());
+        Observable<Result<List<RecognizedImageModel>>> observeOn = this.googleServicesInteractor.getPhotoObjects(photo).observeOn(this.schedulersProvider.mo706ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "googleServicesInteractor…(schedulersProvider.ui())");
         T viewState = getViewState();
         Intrinsics.checkNotNullExpressionValue(viewState, "viewState");
-        Disposable subscribe = RxExtKt.withLoadingDialog$default((Observable) observeOn, (BaseView) viewState, false, 2, (Object) null).subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C1943x1018a95b(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C1944x1018a95c((BaseView) getViewState())));
+        Disposable subscribe = RxExtKt.withLoadingDialog$default((Observable) observeOn, (BaseView) viewState, false, 2, (Object) null).subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C1957x1018a95b(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C1958x1018a95c((BaseView) getViewState())));
         Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…  onError.invoke()\n    })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }

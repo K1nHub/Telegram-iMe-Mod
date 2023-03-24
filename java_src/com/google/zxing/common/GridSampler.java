@@ -28,8 +28,8 @@ public abstract class GridSampler {
             r2 = 1
             int r1 = r1 - r2
             r3 = 0
-            r4 = 0
-            r5 = 1
+            r5 = r2
+            r4 = r3
         Le:
             r6 = 0
             r7 = -1
@@ -47,7 +47,7 @@ public abstract class GridSampler {
             if (r5 != r7) goto L2a
             r11[r4] = r6
         L28:
-            r5 = 1
+            r5 = r2
             goto L33
         L2a:
             if (r5 != r0) goto L32
@@ -56,12 +56,12 @@ public abstract class GridSampler {
             r11[r4] = r5
             goto L28
         L32:
-            r5 = 0
+            r5 = r3
         L33:
             if (r9 != r7) goto L39
             r11[r8] = r6
         L37:
-            r5 = 1
+            r5 = r2
             goto L41
         L39:
             if (r9 != r10) goto L41
@@ -78,7 +78,7 @@ public abstract class GridSampler {
         L49:
             int r1 = r11.length
             int r1 = r1 + (-2)
-            r4 = 1
+            r4 = r2
         L4d:
             if (r1 < 0) goto L86
             if (r4 == 0) goto L86
@@ -94,7 +94,7 @@ public abstract class GridSampler {
             if (r4 != r7) goto L67
             r11[r1] = r6
         L65:
-            r4 = 1
+            r4 = r2
             goto L70
         L67:
             if (r4 != r0) goto L6f
@@ -103,12 +103,12 @@ public abstract class GridSampler {
             r11[r1] = r4
             goto L65
         L6f:
-            r4 = 0
+            r4 = r3
         L70:
             if (r8 != r7) goto L76
             r11[r5] = r6
         L74:
-            r4 = 1
+            r4 = r2
             goto L7e
         L76:
             if (r8 != r10) goto L7e

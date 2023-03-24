@@ -795,7 +795,7 @@
 
     const/4 v2, 0x0
 
-    const/4 v3, 0x0
+    move v3, v2
 
     :goto_0
     if-ge v3, v0, :cond_2
@@ -1681,7 +1681,7 @@
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_0
     if-ge v2, v0, :cond_0
@@ -1707,7 +1707,7 @@
 
     move-result v0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_1
     if-ge v2, v0, :cond_1
@@ -1733,7 +1733,7 @@
 
     move-result v0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_2
     if-ge v2, v0, :cond_2
@@ -1821,7 +1821,7 @@
 
     move-result v1
 
-    const/4 v2, 0x0
+    move v2, v0
 
     :goto_0
     if-ge v2, v1, :cond_2
@@ -1969,7 +1969,7 @@
 
     const/4 p1, 0x0
 
-    const/4 v0, 0x0
+    move v0, p1
 
     .line 1904
     :goto_0
@@ -2405,7 +2405,7 @@
 
     invoke-virtual {v3}, Ljava/util/ArrayList;->clear()V
 
-    const/4 v3, 0x0
+    move v3, v15
 
     .line 208
     :goto_0
@@ -2715,7 +2715,7 @@
 
     const-wide/16 v6, 0x3e8
 
-    mul-long v4, v4, v6
+    mul-long/2addr v4, v6
 
     iput-wide v4, v0, Lorg/telegram/ui/StatisticActivity;->maxDateOverview:J
 
@@ -2724,7 +2724,7 @@
 
     int-to-long v3, v3
 
-    mul-long v3, v3, v6
+    mul-long/2addr v3, v6
 
     iput-wide v3, v0, Lorg/telegram/ui/StatisticActivity;->minDateOverview:J
 
@@ -2739,7 +2739,7 @@
 
     if-nez v3, :cond_8
 
-    const/4 v3, 0x0
+    move v3, v15
 
     .line 263
     :goto_1
@@ -2834,7 +2834,7 @@
 
     if-nez v3, :cond_9
 
-    const/4 v3, 0x0
+    move v3, v15
 
     .line 277
     :goto_2
@@ -3583,12 +3583,12 @@
 
     const/16 v4, 0x38
 
-    const/16 v11, 0x38
+    move v11, v4
 
     goto :goto_0
 
     :cond_1
-    const/4 v11, 0x0
+    move v11, v3
 
     :goto_0
     const/4 v12, 0x0
@@ -3819,7 +3819,7 @@
 
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    move v1, v0
 
     :goto_0
     if-ge v1, p3, :cond_2
@@ -4207,7 +4207,7 @@
 
     move-object v8, v10
 
-    const/4 v14, 0x1
+    move v14, v9
 
     move-object v9, v13
 
@@ -4734,7 +4734,7 @@
 
     if-eqz v1, :cond_7
 
-    const/4 v1, 0x0
+    move/from16 v1, v21
 
     :goto_1
     if-ge v1, v2, :cond_10
@@ -4791,7 +4791,7 @@
     goto :goto_1
 
     :cond_7
-    const/4 v1, 0x0
+    move/from16 v1, v21
 
     :goto_3
     const/16 v4, 0x9
@@ -4880,7 +4880,7 @@
 .end method
 
 .method public isLightStatusBar()Z
-    .locals 5
+    .locals 4
 
     const-string v0, "windowBackgroundWhite"
 
@@ -4896,9 +4896,9 @@
 
     const-wide v2, 0x3fe6666660000000L    # 0.699999988079071
 
-    cmpl-double v4, v0, v2
+    cmpl-double v0, v0, v2
 
-    if-lez v4, :cond_0
+    if-lez v0, :cond_0
 
     const/4 v0, 0x1
 

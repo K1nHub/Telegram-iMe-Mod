@@ -264,7 +264,7 @@
 
     invoke-virtual/range {v2 .. v9}, Landroid/graphics/Bitmap;->getPixels([IIIIIII)V
 
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_0
     const v13, -0xff0100

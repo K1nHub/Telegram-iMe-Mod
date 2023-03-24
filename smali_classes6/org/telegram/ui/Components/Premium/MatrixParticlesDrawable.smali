@@ -260,7 +260,7 @@
 
     iput-object v3, v0, Lorg/telegram/ui/Components/Premium/MatrixParticlesDrawable;->particles:[Ljava/util/ArrayList;
 
-    const/4 v3, 0x0
+    move v3, v13
 
     :goto_0
     if-gt v3, v1, :cond_2
@@ -321,7 +321,7 @@
 
     iput-object v3, v0, Lorg/telegram/ui/Components/Premium/MatrixParticlesDrawable;->matrixTextParticles:[[Lorg/telegram/ui/Components/Premium/MatrixParticlesDrawable$MatrixTextParticle;
 
-    const/4 v3, 0x0
+    move v3, v13
 
     :goto_1
     if-gt v3, v1, :cond_5
@@ -335,7 +335,7 @@
 
     aput-object v5, v4, v3
 
-    const/4 v4, 0x0
+    move v4, v13
 
     :goto_2
     if-gt v4, v2, :cond_4
@@ -370,7 +370,7 @@
     goto :goto_1
 
     :cond_5
-    const/4 v14, 0x0
+    move v14, v13
 
     :goto_3
     if-gt v14, v1, :cond_c
@@ -380,7 +380,7 @@
 
     aget-object v15, v3, v14
 
-    const/4 v3, 0x0
+    move v3, v13
 
     .line 76
     :goto_4
@@ -406,16 +406,16 @@
 
     const-wide/16 v6, 0x32
 
-    const/4 v8, 0x1
+    cmp-long v4, v4, v6
 
-    cmp-long v16, v4, v6
+    const/4 v7, 0x1
 
-    if-lez v16, :cond_8
+    if-lez v4, :cond_8
 
     .line 79
     iget v4, v9, Lorg/telegram/ui/Components/Premium/MatrixParticlesDrawable$Particle;->y:I
 
-    add-int/2addr v4, v8
+    add-int/2addr v4, v7
 
     iput v4, v9, Lorg/telegram/ui/Components/Premium/MatrixParticlesDrawable$Particle;->y:I
 
@@ -434,7 +434,7 @@
 
     move-result v4
 
-    if-ne v4, v8, :cond_6
+    if-ne v4, v7, :cond_6
 
     .line 83
     invoke-virtual {v9, v10, v11}, Lorg/telegram/ui/Components/Premium/MatrixParticlesDrawable$Particle;->reset(J)V
@@ -460,7 +460,7 @@
 
     move-result v4
 
-    sub-int/2addr v4, v8
+    sub-int/2addr v4, v7
 
     if-ne v3, v4, :cond_8
 
@@ -499,7 +499,7 @@
 
     invoke-static {v3, v4}, Ljava/lang/Math;->min(II)I
 
-    move-result v7
+    move-result v8
 
     .line 96
     iget v3, v9, Lorg/telegram/ui/Components/Premium/MatrixParticlesDrawable$Particle;->y:I
@@ -515,7 +515,7 @@
     move v6, v3
 
     :goto_6
-    if-ge v6, v7, :cond_a
+    if-ge v6, v8, :cond_a
 
     .line 97
     iget v3, v0, Lorg/telegram/ui/Components/Premium/MatrixParticlesDrawable;->size:I
@@ -524,7 +524,7 @@
 
     int-to-float v5, v4
 
-    mul-int v3, v3, v6
+    mul-int/2addr v3, v6
 
     int-to-float v4, v3
 
@@ -550,7 +550,7 @@
 
     iget v13, v9, Lorg/telegram/ui/Components/Premium/MatrixParticlesDrawable$Particle;->len:I
 
-    sub-int/2addr v13, v8
+    sub-int/2addr v13, v7
 
     int-to-float v13, v13
 
@@ -585,9 +585,9 @@
 
     move v6, v13
 
-    move v13, v7
+    move/from16 v18, v7
 
-    const/16 v18, 0x1
+    move v13, v8
 
     move-wide v7, v10
 
@@ -602,20 +602,20 @@
     :cond_9
     move/from16 v17, v6
 
-    move v13, v7
+    move/from16 v18, v7
+
+    move v13, v8
 
     move-object/from16 v19, v9
-
-    const/16 v18, 0x1
 
     :goto_7
     add-int/lit8 v6, v17, 0x1
 
-    move v7, v13
+    move v8, v13
+
+    move/from16 v7, v18
 
     move-object/from16 v9, v19
-
-    const/4 v8, 0x1
 
     const/4 v12, 0x0
 
@@ -624,7 +624,7 @@
     goto :goto_6
 
     :cond_a
-    const/16 v18, 0x1
+    move/from16 v18, v7
 
     add-int/lit8 v3, v16, 0x1
 

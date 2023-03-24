@@ -68,7 +68,7 @@
 
     if-eqz v3, :cond_3
 
-    const/4 v0, 0x0
+    move v0, v1
 
     goto :goto_2
 
@@ -93,7 +93,7 @@
     if-eqz v3, :cond_3
 
     :goto_0
-    const/4 v0, 0x1
+    move v0, v2
 
     goto :goto_2
 
@@ -149,7 +149,7 @@
 
     if-eqz v0, :cond_5
 
-    const/4 v1, 0x1
+    move v1, v2
 
     :cond_5
     sput-boolean v1, Lkotlinx/coroutines/DebugKt;->RECOVER_STACK_TRACES:Z

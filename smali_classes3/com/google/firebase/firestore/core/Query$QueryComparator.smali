@@ -61,7 +61,7 @@
     const/4 v1, 0x0
 
     :cond_0
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_0
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z

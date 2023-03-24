@@ -9,7 +9,7 @@ import org.fork.utils.Callbacks$Callback;
 import org.koin.core.Koin;
 import org.koin.core.component.KoinComponent;
 import org.koin.p047mp.KoinPlatformTools;
-import org.telegram.messenger.C3286R;
+import org.telegram.messenger.C3301R;
 import org.telegram.p048ui.ActionBar.BaseFragment;
 /* compiled from: GoogleServicesHelper.kt */
 /* loaded from: classes3.dex */
@@ -43,7 +43,7 @@ public final class GoogleServicesHelper implements KoinComponent {
         Intrinsics.checkNotNullParameter(fragment, "fragment");
         Intrinsics.checkNotNullParameter(activateClickAction, "activateClickAction");
         Intrinsics.checkNotNullParameter(walletAuthorizedAction, "walletAuthorizedAction");
-        WalletHelper.safeRunWalletScreen(fragment, INSTANCE.getResourceManager().getString(C3286R.string.wallet_auth_dialog_to_use_feature_description), activateClickAction, walletAuthorizedAction);
+        WalletHelper.safeRunWalletScreen(fragment, INSTANCE.getResourceManager().getString(C3301R.string.wallet_auth_dialog_to_use_feature_description), activateClickAction, walletAuthorizedAction);
     }
 
     static {

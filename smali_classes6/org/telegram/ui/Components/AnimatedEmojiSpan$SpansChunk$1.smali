@@ -120,7 +120,7 @@
 
     const/4 v0, 0x0
 
-    const/4 v9, 0x0
+    move v9, v0
 
     .line 751
     :goto_0

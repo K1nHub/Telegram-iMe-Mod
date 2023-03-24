@@ -1352,16 +1352,14 @@
 
     const/4 p1, 0x1
 
-    const/4 v5, 0x1
-
     goto :goto_0
 
     :cond_1
     const/4 p1, 0x0
 
-    const/4 v5, 0x0
-
     :goto_0
+    move v5, p1
+
     const/4 v6, 0x0
 
     const/4 v7, 0x0

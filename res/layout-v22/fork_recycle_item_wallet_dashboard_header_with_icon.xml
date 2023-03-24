@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:orientation="horizontal" android:id="@id/linear_root" android:paddingLeft="@dimen/margin_normal" android:paddingRight="@dimen/margin_normal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:paddingHorizontal="@dimen/margin_normal"
-  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
-    <androidx.appcompat.widget.AppCompatTextView android:textSize="@dimen/text_size_normal" android:textColor="#ff9a9a9a" android:layout_gravity="center_vertical" android:id="@id/text_wallet_header" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/margin_extra_small" android:layout_marginBottom="@dimen/margin_extra_small" android:text="Счета" />
-    <androidx.appcompat.widget.AppCompatImageView android:layout_gravity="center_vertical" android:id="@id/header_info_icon" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="1.0dip" android:layout_marginStart="@dimen/margin_half_small" app:srcCompat="@drawable/fork_ic_info_14" />
-</LinearLayout>

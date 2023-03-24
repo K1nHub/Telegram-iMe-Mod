@@ -736,7 +736,7 @@
 
     invoke-interface {v2, v4, v3}, Landroid/content/SharedPreferences$Editor;->putInt(Ljava/lang/String;I)Landroid/content/SharedPreferences$Editor;
 
-    const/4 v3, 0x0
+    move v3, v1
 
     .line 132
     :goto_1
@@ -1017,7 +1017,7 @@
 .end method
 
 .method public getDocument(J)Lorg/telegram/tgnet/TLRPC$Document;
-    .locals 4
+    .locals 3
 
     .line 307
     iget-boolean v0, p0, Lorg/telegram/messenger/ringtone/RingtoneDataStore;->loaded:Z
@@ -1079,9 +1079,9 @@
 
     iget-wide v1, v1, Lorg/telegram/tgnet/TLRPC$Document;->id:J
 
-    cmp-long v3, v1, p1
+    cmp-long v1, v1, p1
 
-    if-nez v3, :cond_1
+    if-nez v1, :cond_1
 
     .line 314
     iget-object p1, p0, Lorg/telegram/messenger/ringtone/RingtoneDataStore;->userRingtones:Ljava/util/ArrayList;
@@ -1116,7 +1116,7 @@
 .end method
 
 .method public getSoundPath(J)Ljava/lang/String;
-    .locals 4
+    .locals 3
 
     .line 222
     iget-boolean v0, p0, Lorg/telegram/messenger/ringtone/RingtoneDataStore;->loaded:Z
@@ -1169,9 +1169,9 @@
 
     iget-wide v1, v1, Lorg/telegram/tgnet/TLRPC$Document;->id:J
 
-    cmp-long v3, v1, p1
+    cmp-long v1, v1, p1
 
-    if-nez v3, :cond_2
+    if-nez v1, :cond_2
 
     .line 228
     iget-object p1, p0, Lorg/telegram/messenger/ringtone/RingtoneDataStore;->userRingtones:Ljava/util/ArrayList;
@@ -1252,7 +1252,7 @@
 .end method
 
 .method public loadUserRingtones()V
-    .locals 6
+    .locals 5
 
     .line 58
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
@@ -1263,15 +1263,15 @@
 
     sub-long/2addr v0, v2
 
-    const/4 v2, 0x1
+    const-wide/32 v2, 0x5265c00
 
-    const-wide/32 v3, 0x5265c00
+    cmp-long v0, v0, v2
 
-    cmp-long v5, v0, v3
+    const/4 v1, 0x1
 
-    if-lez v5, :cond_0
+    if-lez v0, :cond_0
 
-    const/4 v0, 0x1
+    move v0, v1
 
     goto :goto_0
 
@@ -1280,14 +1280,14 @@
 
     .line 59
     :goto_0
-    new-instance v1, Lorg/telegram/tgnet/TLRPC$TL_account_getSavedRingtones;
+    new-instance v2, Lorg/telegram/tgnet/TLRPC$TL_account_getSavedRingtones;
 
-    invoke-direct {v1}, Lorg/telegram/tgnet/TLRPC$TL_account_getSavedRingtones;-><init>()V
+    invoke-direct {v2}, Lorg/telegram/tgnet/TLRPC$TL_account_getSavedRingtones;-><init>()V
 
     .line 60
     sget-wide v3, Lorg/telegram/messenger/ringtone/RingtoneDataStore;->queryHash:J
 
-    iput-wide v3, v1, Lorg/telegram/tgnet/TLRPC$TL_account_getSavedRingtones;->hash:J
+    iput-wide v3, v2, Lorg/telegram/tgnet/TLRPC$TL_account_getSavedRingtones;->hash:J
 
     if-eqz v0, :cond_1
 
@@ -1298,11 +1298,11 @@
 
     move-result-object v0
 
-    new-instance v2, Lorg/telegram/messenger/ringtone/RingtoneDataStore$$ExternalSyntheticLambda5;
+    new-instance v1, Lorg/telegram/messenger/ringtone/RingtoneDataStore$$ExternalSyntheticLambda5;
 
-    invoke-direct {v2, p0}, Lorg/telegram/messenger/ringtone/RingtoneDataStore$$ExternalSyntheticLambda5;-><init>(Lorg/telegram/messenger/ringtone/RingtoneDataStore;)V
+    invoke-direct {v1, p0}, Lorg/telegram/messenger/ringtone/RingtoneDataStore$$ExternalSyntheticLambda5;-><init>(Lorg/telegram/messenger/ringtone/RingtoneDataStore;)V
 
-    invoke-virtual {v0, v1, v2}, Lorg/telegram/tgnet/ConnectionsManager;->sendRequest(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/RequestDelegate;)I
+    invoke-virtual {v0, v2, v1}, Lorg/telegram/tgnet/ConnectionsManager;->sendRequest(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/RequestDelegate;)I
 
     goto :goto_1
 
@@ -1313,10 +1313,10 @@
     if-nez v0, :cond_2
 
     .line 79
-    invoke-direct {p0, v2}, Lorg/telegram/messenger/ringtone/RingtoneDataStore;->loadFromPrefs(Z)V
+    invoke-direct {p0, v1}, Lorg/telegram/messenger/ringtone/RingtoneDataStore;->loadFromPrefs(Z)V
 
     .line 80
-    iput-boolean v2, p0, Lorg/telegram/messenger/ringtone/RingtoneDataStore;->loaded:Z
+    iput-boolean v1, p0, Lorg/telegram/messenger/ringtone/RingtoneDataStore;->loaded:Z
 
     .line 82
     :cond_2
@@ -1335,7 +1335,7 @@
 
     if-eqz p3, :cond_2
 
-    const/4 p2, 0x0
+    move p2, v1
 
     .line 196
     :goto_0
@@ -1389,12 +1389,12 @@
     goto :goto_0
 
     :cond_1
-    const/4 v0, 0x0
+    move v0, v1
 
     goto :goto_3
 
     :cond_2
-    const/4 p3, 0x0
+    move p3, v1
 
     .line 204
     :goto_1
@@ -1465,7 +1465,7 @@
     goto :goto_1
 
     :cond_4
-    const/4 v0, 0x0
+    move v0, v1
 
     :goto_2
     if-eqz v0, :cond_5
@@ -1495,7 +1495,7 @@
 .end method
 
 .method public remove(Lorg/telegram/tgnet/TLRPC$Document;)V
-    .locals 6
+    .locals 5
 
     if-nez p1, :cond_0
 
@@ -1555,9 +1555,9 @@
 
     iget-wide v3, p1, Lorg/telegram/tgnet/TLRPC$Document;->id:J
 
-    cmp-long v5, v1, v3
+    cmp-long v1, v1, v3
 
-    if-nez v5, :cond_2
+    if-nez v1, :cond_2
 
     .line 284
     iget-object p1, p0, Lorg/telegram/messenger/ringtone/RingtoneDataStore;->userRingtones:Ljava/util/ArrayList;
@@ -1602,9 +1602,9 @@
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    move v2, v1
 
-    const/4 v3, 0x0
+    move v3, v2
 
     .line 157
     :goto_0

@@ -1391,7 +1391,7 @@
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_0
     const/4 v3, 0x5
@@ -1564,7 +1564,7 @@
 
     invoke-static {v2}, Lorg/telegram/messenger/SharedPrefsHelper;->init(Landroid/content/Context;)V
 
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_5
     if-ge v2, v3, :cond_5
@@ -1893,13 +1893,8 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    goto :goto_0
-
-    :catchall_0
-    nop
-
     .line 381
-    :goto_0
+    :catchall_0
     invoke-super {p0}, Landroid/app/Application;->onCreate()V
 
     .line 383

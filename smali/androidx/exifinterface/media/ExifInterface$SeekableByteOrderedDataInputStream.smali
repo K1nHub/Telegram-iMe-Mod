@@ -77,7 +77,7 @@
 
 # virtual methods
 .method public seek(J)V
-    .locals 4
+    .locals 3
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -89,9 +89,9 @@
 
     int-to-long v1, v0
 
-    cmp-long v3, v1, p1
+    cmp-long v1, v1, p1
 
-    if-lez v3, :cond_0
+    if-lez v1, :cond_0
 
     const/4 v0, 0x0
 
@@ -111,10 +111,10 @@
     sub-long/2addr p1, v0
 
     :goto_0
-    long-to-int p2, p1
+    long-to-int p1, p1
 
     .line 7713
-    invoke-virtual {p0, p2}, Landroidx/exifinterface/media/ExifInterface$ByteOrderedDataInputStream;->skipFully(I)V
+    invoke-virtual {p0, p1}, Landroidx/exifinterface/media/ExifInterface$ByteOrderedDataInputStream;->skipFully(I)V
 
     return-void
 .end method

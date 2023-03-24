@@ -252,7 +252,7 @@
 
     sub-float/2addr v2, v4
 
-    mul-float v1, v1, v2
+    mul-float/2addr v1, v2
 
     invoke-static {v5, v1}, Ljava/lang/Math;->max(FF)F
 
@@ -425,7 +425,7 @@
 
     sub-float v1, v5, v1
 
-    mul-float v6, v6, v1
+    mul-float/2addr v6, v1
 
     invoke-virtual {p1, v2, v6}, Landroid/graphics/Canvas;->translate(FF)V
 
@@ -488,7 +488,7 @@
 
     const/high16 p3, 0x437f0000    # 255.0f
 
-    mul-float v5, v5, p3
+    mul-float/2addr v5, p3
 
     float-to-int p3, v5
 
@@ -672,7 +672,7 @@
     .line 113
     array-length v2, v0
 
-    const/4 v3, 0x0
+    move v3, v1
 
     :goto_2
     if-ge v3, v2, :cond_2
@@ -692,7 +692,7 @@
 
     iput-object v0, p0, Lorg/telegram/ui/CodeFieldContainer;->codeField:[Lorg/telegram/ui/CodeNumberField;
 
-    const/4 v0, 0x0
+    move v0, v1
 
     :goto_3
     if-ge v0, p1, :cond_7
@@ -814,11 +814,12 @@
 
     const/16 v2, 0x2f
 
-    const/16 v5, 0x2a
+    :goto_5
+    move v6, v2
 
-    const/16 v6, 0x2f
+    move v5, v3
 
-    goto :goto_5
+    goto :goto_6
 
     :cond_4
     const/16 v4, 0xb
@@ -829,21 +830,17 @@
 
     const/4 v4, 0x5
 
-    const/16 v5, 0x1c
-
-    const/16 v6, 0x22
-
     goto :goto_5
 
     :cond_5
     const/4 v4, 0x7
 
-    const/16 v5, 0x22
+    move v5, v2
 
-    const/16 v6, 0x2a
+    move v6, v3
 
     .line 200
-    :goto_5
+    :goto_6
     iget-object v2, p0, Lorg/telegram/ui/CodeFieldContainer;->codeField:[Lorg/telegram/ui/CodeNumberField;
 
     aget-object v2, v2, v0
@@ -860,12 +857,12 @@
 
     move v10, v4
 
-    goto :goto_6
+    goto :goto_7
 
     :cond_6
-    const/4 v10, 0x0
+    move v10, v1
 
-    :goto_6
+    :goto_7
     const/4 v11, 0x0
 
     invoke-static/range {v5 .. v11}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(IIIIIII)Landroid/widget/LinearLayout$LayoutParams;
@@ -930,7 +927,7 @@
 
     if-eqz p2, :cond_2
 
-    const/4 p2, 0x0
+    move p2, v0
 
     .line 289
     :goto_0

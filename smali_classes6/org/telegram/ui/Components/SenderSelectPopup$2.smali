@@ -116,13 +116,13 @@
     move-wide v2, v6
 
     :cond_1
-    const/4 v6, 0x1
+    cmp-long v4, v2, v4
 
-    const/4 v7, 0x0
+    const/4 v5, 0x1
 
-    cmp-long v8, v2, v4
+    const/4 v6, 0x0
 
-    if-gez v8, :cond_7
+    if-gez v4, :cond_7
 
     .line 173
     iget-object v4, p0, Lorg/telegram/ui/Components/SenderSelectPopup$2;->val$messagesController:Lorg/telegram/messenger/MessagesController;
@@ -153,11 +153,11 @@
 
     iget-object v4, v2, Lorg/telegram/tgnet/TLRPC$Chat;->title:Ljava/lang/String;
 
-    iget-object v5, p1, Lorg/telegram/ui/Components/SenderSelectPopup$SenderView;->title:Landroid/widget/TextView;
+    iget-object v7, p1, Lorg/telegram/ui/Components/SenderSelectPopup$SenderView;->title:Landroid/widget/TextView;
 
-    invoke-virtual {v5}, Landroid/widget/TextView;->getPaint()Landroid/text/TextPaint;
+    invoke-virtual {v7}, Landroid/widget/TextView;->getPaint()Landroid/text/TextPaint;
 
-    move-result-object v5
+    move-result-object v7
 
     iget v8, p0, Lorg/telegram/ui/Components/SenderSelectPopup$2;->val$maxWidth:I
 
@@ -173,7 +173,7 @@
 
     sget-object v9, Landroid/text/TextUtils$TruncateAt;->END:Landroid/text/TextUtils$TruncateAt;
 
-    invoke-static {v4, v5, v8, v9}, Landroid/text/TextUtils;->ellipsize(Ljava/lang/CharSequence;Landroid/text/TextPaint;FLandroid/text/TextUtils$TruncateAt;)Ljava/lang/CharSequence;
+    invoke-static {v4, v7, v8, v9}, Landroid/text/TextUtils;->ellipsize(Ljava/lang/CharSequence;Landroid/text/TextPaint;FLandroid/text/TextUtils$TruncateAt;)Ljava/lang/CharSequence;
 
     move-result-object v4
 
@@ -197,7 +197,7 @@
     invoke-direct {v3, v4}, Lorg/telegram/ui/Components/ColoredImageSpan;-><init>(I)V
 
     .line 178
-    invoke-virtual {v3, v6}, Lorg/telegram/ui/Components/ColoredImageSpan;->setTopOffset(I)V
+    invoke-virtual {v3, v5}, Lorg/telegram/ui/Components/ColoredImageSpan;->setTopOffset(I)V
 
     const/16 v4, 0xe
 
@@ -218,15 +218,15 @@
 
     move-result v4
 
-    sub-int/2addr v4, v6
+    sub-int/2addr v4, v5
 
     invoke-virtual {v0}, Landroid/text/SpannableString;->length()I
 
-    move-result v5
+    move-result v7
 
     const/16 v8, 0x21
 
-    invoke-virtual {v0, v3, v4, v5, v8}, Landroid/text/SpannableString;->setSpan(Ljava/lang/Object;III)V
+    invoke-virtual {v0, v3, v4, v7, v8}, Landroid/text/SpannableString;->setSpan(Ljava/lang/Object;III)V
 
     .line 183
     iget-object v3, p1, Lorg/telegram/ui/Components/SenderSelectPopup$SenderView;->title:Landroid/widget/TextView;
@@ -281,9 +281,9 @@
     :goto_2
     iget v4, v2, Lorg/telegram/tgnet/TLRPC$Chat;->participants_count:I
 
-    new-array v5, v7, [Ljava/lang/Object;
+    new-array v7, v6, [Ljava/lang/Object;
 
-    invoke-static {v3, v4, v5}, Lorg/telegram/messenger/LocaleController;->formatPluralString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {v3, v4, v7}, Lorg/telegram/messenger/LocaleController;->formatPluralString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v3
 
@@ -320,10 +320,10 @@
     goto :goto_3
 
     :cond_6
-    const/4 v6, 0x0
+    move v5, v6
 
     :goto_3
-    invoke-virtual {p1, v6, v7}, Lorg/telegram/ui/Components/SimpleAvatarView;->setSelected(ZZ)V
+    invoke-virtual {p1, v5, v6}, Lorg/telegram/ui/Components/SimpleAvatarView;->setSelected(ZZ)V
 
     goto :goto_5
 
@@ -394,10 +394,10 @@
     goto :goto_4
 
     :cond_a
-    const/4 v6, 0x0
+    move v5, v6
 
     :goto_4
-    invoke-virtual {p1, v6, v7}, Lorg/telegram/ui/Components/SimpleAvatarView;->setSelected(ZZ)V
+    invoke-virtual {p1, v5, v6}, Lorg/telegram/ui/Components/SimpleAvatarView;->setSelected(ZZ)V
 
     :goto_5
     return-void

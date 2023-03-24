@@ -724,17 +724,15 @@
 
     if-eqz v0, :cond_c
 
-    const/4 v11, 0x1
-
     goto :goto_7
 
     :cond_c
     const/4 v1, 0x0
 
-    const/4 v11, 0x0
+    :goto_7
+    move v11, v1
 
     .line 928
-    :goto_7
     iget v8, p0, Lorg/telegram/ui/Cells/ContextLinkCell$1;->val$localId:I
 
     iget-boolean v12, p0, Lorg/telegram/ui/Cells/ContextLinkCell$1;->val$ifSame:Z

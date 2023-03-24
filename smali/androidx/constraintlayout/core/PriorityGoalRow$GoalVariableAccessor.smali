@@ -54,7 +54,7 @@
 
     if-eqz v0, :cond_3
 
-    const/4 v0, 0x0
+    move v0, v5
 
     :goto_0
     if-ge v0, v2, :cond_1
@@ -70,7 +70,7 @@
 
     aget v8, v8, v0
 
-    mul-float v8, v8, p2
+    mul-float/2addr v8, p2
 
     add-float/2addr v7, v8
 
@@ -98,7 +98,7 @@
     goto :goto_1
 
     :cond_0
-    const/4 v4, 0x0
+    move v4, v5
 
     :goto_1
     add-int/lit8 v0, v0, 0x1
@@ -131,7 +131,7 @@
 
     if-eqz v6, :cond_5
 
-    mul-float v0, v0, p2
+    mul-float/2addr v0, p2
 
     .line 67
     invoke-static {v0}, Ljava/lang/Math;->abs(F)F
@@ -142,7 +142,7 @@
 
     if-gez v6, :cond_4
 
-    const/4 v0, 0x0
+    move v0, v3
 
     .line 70
     :cond_4

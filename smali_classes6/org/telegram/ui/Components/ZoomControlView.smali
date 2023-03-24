@@ -206,39 +206,39 @@
 
     const/4 v0, 0x0
 
+    cmpg-float v0, p1, v0
+
     const/4 v1, 0x0
 
-    cmpg-float v1, p1, v1
+    if-ltz v0, :cond_2
 
-    if-ltz v1, :cond_2
+    const/high16 v0, 0x3f800000    # 1.0f
 
-    const/high16 v1, 0x3f800000    # 1.0f
+    cmpl-float v0, p1, v0
 
-    cmpl-float v1, p1, v1
-
-    if-lez v1, :cond_0
+    if-lez v0, :cond_0
 
     goto :goto_0
 
     .line 198
     :cond_0
-    iget-object v1, p0, Lorg/telegram/ui/Components/ZoomControlView;->animatorSet:Landroid/animation/AnimatorSet;
+    iget-object v0, p0, Lorg/telegram/ui/Components/ZoomControlView;->animatorSet:Landroid/animation/AnimatorSet;
 
-    if-eqz v1, :cond_1
+    if-eqz v0, :cond_1
 
     .line 199
-    invoke-virtual {v1}, Landroid/animation/AnimatorSet;->cancel()V
+    invoke-virtual {v0}, Landroid/animation/AnimatorSet;->cancel()V
 
     .line 201
     :cond_1
     iput p1, p0, Lorg/telegram/ui/Components/ZoomControlView;->animatingToZoom:F
 
     .line 202
-    new-instance v1, Landroid/animation/AnimatorSet;
+    new-instance v0, Landroid/animation/AnimatorSet;
 
-    invoke-direct {v1}, Landroid/animation/AnimatorSet;-><init>()V
+    invoke-direct {v0}, Landroid/animation/AnimatorSet;-><init>()V
 
-    iput-object v1, p0, Lorg/telegram/ui/Components/ZoomControlView;->animatorSet:Landroid/animation/AnimatorSet;
+    iput-object v0, p0, Lorg/telegram/ui/Components/ZoomControlView;->animatorSet:Landroid/animation/AnimatorSet;
 
     const/4 v2, 0x1
 
@@ -249,15 +249,15 @@
 
     new-array v5, v2, [F
 
-    aput p1, v5, v0
+    aput p1, v5, v1
 
     invoke-static {p0, v4, v5}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
 
     move-result-object p1
 
-    aput-object p1, v3, v0
+    aput-object p1, v3, v1
 
-    invoke-virtual {v1, v3}, Landroid/animation/AnimatorSet;->playTogether([Landroid/animation/Animator;)V
+    invoke-virtual {v0, v3}, Landroid/animation/AnimatorSet;->playTogether([Landroid/animation/Animator;)V
 
     .line 204
     iget-object p1, p0, Lorg/telegram/ui/Components/ZoomControlView;->animatorSet:Landroid/animation/AnimatorSet;
@@ -284,7 +284,7 @@
 
     :cond_2
     :goto_0
-    return v0
+    return v1
 .end method
 
 
@@ -344,7 +344,7 @@
     goto :goto_0
 
     :cond_0
-    const/4 v2, 0x0
+    move v2, v4
 
     :goto_0
     const/16 v3, 0x12
@@ -572,7 +572,7 @@
     .line 251
     iget v8, p0, Lorg/telegram/ui/Components/ZoomControlView;->zoom:F
 
-    mul-float v0, v0, v8
+    mul-float/2addr v0, v8
 
     add-float/2addr v7, v0
 
@@ -582,7 +582,7 @@
 
     int-to-float v6, v6
 
-    mul-float v6, v6, v8
+    mul-float/2addr v6, v8
 
     add-float/2addr v7, v6
 
@@ -773,12 +773,12 @@
 
     if-le v3, v4, :cond_0
 
-    const/4 v3, 0x1
+    move v3, v6
 
     goto :goto_0
 
     :cond_0
-    const/4 v3, 0x0
+    move v3, v5
 
     .line 114
     :goto_0
@@ -794,7 +794,7 @@
 
     iget v10, p0, Lorg/telegram/ui/Components/ZoomControlView;->zoom:F
 
-    mul-float v9, v9, v10
+    mul-float/2addr v9, v10
 
     add-float/2addr v7, v9
 
@@ -811,7 +811,7 @@
 
     int-to-float v13, v13
 
-    mul-float v13, v13, v10
+    mul-float/2addr v13, v10
 
     add-float/2addr v11, v13
 
@@ -994,7 +994,7 @@
 
     :cond_7
     :goto_4
-    const/4 v0, 0x1
+    move v0, v6
 
     goto/16 :goto_6
 
@@ -1012,11 +1012,11 @@
 
     int-to-float v4, v4
 
+    cmpl-float v4, v0, v4
+
     const/4 v8, 0x3
 
     const/high16 v9, 0x3e800000    # 0.25f
-
-    cmpl-float v4, v0, v4
 
     if-ltz v4, :cond_a
 
@@ -1079,7 +1079,7 @@
 
     double-to-float v0, v0
 
-    mul-float v0, v0, v9
+    mul-float/2addr v0, v9
 
     sub-float/2addr v0, v9
 
@@ -1175,7 +1175,7 @@
 
     double-to-float v0, v0
 
-    mul-float v0, v0, v9
+    mul-float/2addr v0, v9
 
     add-float/2addr v0, v9
 
@@ -1360,7 +1360,7 @@
 
     :cond_12
     :goto_5
-    const/4 v0, 0x0
+    move v0, v5
 
     :goto_6
     if-ne v2, v6, :cond_13
@@ -1393,7 +1393,7 @@
     if-eqz p1, :cond_15
 
     :cond_14
-    const/4 v5, 0x1
+    move v5, v6
 
     :cond_15
     return v5
@@ -1421,24 +1421,24 @@
     return-void
 
     :cond_0
-    const/high16 v0, 0x3f800000    # 1.0f
+    const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    cmpg-float v1, p1, v0
 
-    cmpg-float v2, p1, v1
+    const/high16 v2, 0x3f800000    # 1.0f
 
-    if-gez v2, :cond_1
+    if-gez v1, :cond_1
 
-    const/4 p1, 0x0
+    move p1, v0
 
     goto :goto_0
 
     :cond_1
-    cmpl-float v1, p1, v0
+    cmpl-float v0, p1, v2
 
-    if-lez v1, :cond_2
+    if-lez v0, :cond_2
 
-    const/high16 p1, 0x3f800000    # 1.0f
+    move p1, v2
 
     .line 96
     :cond_2

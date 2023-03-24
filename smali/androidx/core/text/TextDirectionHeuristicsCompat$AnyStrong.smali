@@ -62,7 +62,7 @@
 
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    move v1, v0
 
     :goto_0
     if-ge p2, p3, :cond_3
@@ -105,7 +105,7 @@
     return v0
 
     :cond_2
-    const/4 v1, 0x1
+    move v1, v3
 
     :goto_1
     add-int/lit8 p2, p2, 0x1

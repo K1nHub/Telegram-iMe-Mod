@@ -476,7 +476,7 @@
     goto :goto_0
 
     :cond_9
-    const/4 v1, 0x0
+    move v1, v2
 
     :goto_0
     return v1
@@ -526,7 +526,7 @@
     goto :goto_1
 
     :cond_f
-    const/4 v1, 0x0
+    move v1, v2
 
     :goto_1
     return v1
@@ -851,7 +851,7 @@
 
     invoke-static {v4, v0}, Lcom/google/android/exoplayer2/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)V
 
-    const/4 v0, 0x2
+    move v0, v2
 
     .line 496
     :cond_0

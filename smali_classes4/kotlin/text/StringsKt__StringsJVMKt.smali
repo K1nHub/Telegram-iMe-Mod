@@ -55,12 +55,12 @@
 
     if-lez v0, :cond_0
 
-    const/4 v0, 0x1
+    move v0, v1
 
     goto :goto_0
 
     :cond_0
-    const/4 v0, 0x0
+    move v0, v2
 
     :goto_0
     if-eqz v0, :cond_2
@@ -336,7 +336,7 @@
     if-eqz v3, :cond_1
 
     :cond_0
-    const/4 p0, 0x1
+    move p0, v2
 
     goto :goto_0
 
@@ -372,13 +372,13 @@
 
     if-nez v3, :cond_2
 
-    const/4 p0, 0x0
+    move p0, v1
 
     :goto_0
     if-eqz p0, :cond_4
 
     :cond_3
-    const/4 v1, 0x1
+    move v1, v2
 
     :cond_4
     return v1
@@ -435,14 +435,9 @@
 
     const/4 p5, 0x0
 
-    const/4 v5, 0x0
-
-    goto :goto_0
-
     :cond_0
     move v5, p5
 
-    :goto_0
     move-object v0, p0
 
     move v1, p1
@@ -474,12 +469,12 @@
 
     if-ltz p1, :cond_0
 
-    const/4 v2, 0x1
+    move v2, v1
 
     goto :goto_0
 
     :cond_0
-    const/4 v2, 0x0
+    move v2, v0
 
     :goto_0
     if-eqz v2, :cond_6
@@ -506,7 +501,7 @@
 
     move-result v2
 
-    mul-int v2, v2, p1
+    mul-int/2addr v2, p1
 
     invoke-direct {v0, v2}, Ljava/lang/StringBuilder;-><init>(I)V
 

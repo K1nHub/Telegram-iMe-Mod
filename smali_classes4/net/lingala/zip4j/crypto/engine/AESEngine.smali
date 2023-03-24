@@ -690,7 +690,7 @@
 
     iput v1, v0, Lnet/lingala/zip4j/crypto/engine/AESEngine;->C3:I
 
-    const/4 v1, 0x1
+    move v1, v4
 
     .line 165
     :goto_0
@@ -1619,7 +1619,7 @@
 
     check-cast v4, [[I
 
-    const/4 v7, 0x0
+    move v7, v8
 
     .line 55
     :goto_0

@@ -166,7 +166,7 @@
 
     iget-object v1, p0, Lcom/smedialink/ui/wallet/crypto/wallet_connect/network_change/WalletConnectSwitchNetworkPresenter;->networkType:Lcom/smedialink/storage/domain/model/crypto/NetworkType;
 
-    invoke-virtual {v1}, Lcom/smedialink/storage/domain/model/crypto/NetworkType;->getTitle()I
+    invoke-virtual {v1}, Lcom/smedialink/storage/domain/model/crypto/NetworkType;->getTitleResId()I
 
     move-result v1
 

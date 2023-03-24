@@ -16,13 +16,21 @@ public interface CryptoAccessManager {
 
     Wallet.EVM getEVMWallet();
 
+    BlockchainType getFirstBip39PhraseBasedBlockchainType();
+
     String getLastLoggedInAddress(BlockchainType blockchainType);
 
     String getLastLoggedInGuid();
 
+    Wallet.TRON getTRONWallet();
+
+    List<BlockchainType> getUnactivatedBip39PhraseBasedBlockchainTypes();
+
     Wallet getWallet(BlockchainType blockchainType);
 
     String getWalletPassword();
+
+    boolean isAnyBip39PhraseBasedWalletCreated();
 
     boolean isAnyWalletCreated();
 
@@ -36,5 +44,5 @@ public interface CryptoAccessManager {
 
     void onUserChanged();
 
-    void setWallet(Wallet wallet, String str);
+    void setWallet(Wallet wallet2, String str);
 }

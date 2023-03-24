@@ -193,7 +193,7 @@
 
     if-eqz v2, :cond_1
 
-    const/4 v2, 0x2
+    move v2, v15
 
     goto :goto_1
 
@@ -204,7 +204,7 @@
 
     if-eqz v2, :cond_1
 
-    const/4 v2, 0x4
+    move v2, v4
 
     goto :goto_1
 
@@ -226,7 +226,7 @@
 
     if-eqz v2, :cond_1
 
-    const/4 v2, 0x1
+    move v2, v3
 
     goto :goto_1
 
@@ -237,7 +237,7 @@
 
     if-eqz v2, :cond_1
 
-    const/4 v2, 0x3
+    move v2, v5
 
     goto :goto_1
 
@@ -338,7 +338,7 @@
 
     if-eqz v0, :cond_4
 
-    const/4 v0, 0x3
+    move v0, v5
 
     goto :goto_4
 
@@ -382,7 +382,7 @@
 
     if-eqz v0, :cond_4
 
-    const/4 v0, 0x2
+    move v0, v15
 
     goto :goto_4
 
@@ -393,7 +393,7 @@
 
     if-eqz v0, :cond_4
 
-    const/4 v0, 0x1
+    move v0, v3
 
     goto :goto_4
 
@@ -588,11 +588,11 @@
 
     move-result-wide v5
 
-    mul-long v5, v5, v1
+    mul-long/2addr v5, v1
 
-    mul-long v5, v5, v1
+    mul-long/2addr v5, v1
 
-    mul-long v5, v5, v3
+    mul-long/2addr v5, v3
 
     goto :goto_0
 
@@ -617,9 +617,9 @@
 
     move-result-wide v7
 
-    mul-long v7, v7, v1
+    mul-long/2addr v7, v1
 
-    mul-long v7, v7, v3
+    mul-long/2addr v7, v3
 
     add-long/2addr v5, v7
 
@@ -640,7 +640,7 @@
 
     move-result-wide v0
 
-    mul-long v0, v0, v3
+    mul-long/2addr v0, v3
 
     add-long/2addr v5, v0
 
@@ -661,7 +661,7 @@
     add-long/2addr v5, p0
 
     :cond_1
-    mul-long v5, v5, v3
+    mul-long/2addr v5, v3
 
     return-wide v5
 .end method

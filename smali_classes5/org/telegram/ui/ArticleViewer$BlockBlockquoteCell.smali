@@ -144,7 +144,7 @@
     goto :goto_0
 
     :cond_1
-    const/4 v2, 0x0
+    move v2, v1
 
     .line 9946
     :goto_0
@@ -388,7 +388,7 @@
 
     if-lez v0, :cond_0
 
-    mul-int/lit8 v0, v0, 0xe
+    mul-int/2addr v0, v1
 
     .line 9890
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
@@ -442,15 +442,10 @@
 
     add-int/2addr v2, v0
 
+    :cond_1
     move v0, v2
 
-    goto :goto_0
-
-    :cond_1
-    const/4 v0, 0x0
-
     .line 9896
-    :goto_0
     iget-object v2, p0, Lorg/telegram/ui/ArticleViewer$BlockBlockquoteCell;->currentBlock:Lorg/telegram/tgnet/TLRPC$TL_pageBlockBlockquote;
 
     iget v2, v2, Lorg/telegram/tgnet/TLRPC$PageBlock;->level:I
@@ -473,7 +468,7 @@
 
     iget v2, v2, Lorg/telegram/tgnet/TLRPC$PageBlock;->level:I
 
-    mul-int/lit8 v2, v2, 0xe
+    mul-int/2addr v2, v1
 
     add-int/2addr v2, v1
 
@@ -483,7 +478,7 @@
 
     iput v1, p0, Lorg/telegram/ui/ArticleViewer$BlockBlockquoteCell;->textX:I
 
-    goto :goto_1
+    goto :goto_0
 
     .line 9900
     :cond_2
@@ -491,7 +486,7 @@
 
     iget v2, v2, Lorg/telegram/tgnet/TLRPC$PageBlock;->level:I
 
-    mul-int/lit8 v2, v2, 0xe
+    mul-int/2addr v2, v1
 
     invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
@@ -505,7 +500,7 @@
 
     iput v1, p0, Lorg/telegram/ui/ArticleViewer$BlockBlockquoteCell;->textX:I
 
-    goto :goto_1
+    goto :goto_0
 
     .line 9903
     :cond_3
@@ -524,7 +519,7 @@
 
     iput v1, p0, Lorg/telegram/ui/ArticleViewer$BlockBlockquoteCell;->textX:I
 
-    goto :goto_1
+    goto :goto_0
 
     .line 9906
     :cond_4
@@ -535,7 +530,7 @@
     iput v1, p0, Lorg/telegram/ui/ArticleViewer$BlockBlockquoteCell;->textX:I
 
     .line 9909
-    :goto_1
+    :goto_0
     invoke-static {v10}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v1
@@ -624,14 +619,14 @@
 
     iput v1, p2, Lorg/telegram/ui/ArticleViewer$DrawingText;->y:I
 
-    goto :goto_2
+    goto :goto_1
 
     :cond_8
     const/4 v0, 0x1
 
     .line 9930
     :cond_9
-    :goto_2
+    :goto_1
     invoke-virtual {p0, p1, v0}, Landroid/view/View;->setMeasuredDimension(II)V
 
     return-void

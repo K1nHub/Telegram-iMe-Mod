@@ -86,10 +86,6 @@ public final class TelegramPreferenceKeys {
             return TelegramPreferenceKeys.INSTANCE.withForkPrefix("allowVibration");
         }
 
-        public static final String isRaiseToSwitchSpeakerEnabled() {
-            return TelegramPreferenceKeys.INSTANCE.withForkPrefix("raiseToSwitchSpeaker");
-        }
-
         public static final String selectedStickersSize() {
             return TelegramPreferenceKeys.INSTANCE.withForkPrefix("stickersSize");
         }
@@ -451,10 +447,6 @@ public final class TelegramPreferenceKeys {
 
             public static final boolean isProxyButtonForceVisible() {
                 return false;
-            }
-
-            public static final boolean isRaiseToSwitchSpeakerEnabled() {
-                return true;
             }
 
             public static final boolean isReactionsEnabled() {

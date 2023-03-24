@@ -158,7 +158,7 @@
     goto :goto_0
 
     :cond_0
-    const/4 v4, 0x0
+    move v4, v8
 
     :goto_0
     iget-object v0, v1, Lcom/google/android/gms/measurement/internal/zzjz;->zza:Lcom/google/android/gms/measurement/internal/zzkd;

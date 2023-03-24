@@ -26,11 +26,11 @@ import org.fork.p046ui.fragment.SortingFilterSettingsActivity;
 import org.fork.p046ui.view.ArchiveSwitchTopicsBar;
 import org.fork.p046ui.view.SortingFilterCell;
 import org.fork.utils.Callbacks$Callback1;
-import org.telegram.messenger.C3286R;
+import org.telegram.messenger.C3301R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.p048ui.ActionBar.BaseFragment;
-import org.telegram.p048ui.ActionBar.C3351ActionBar;
+import org.telegram.p048ui.ActionBar.C3366ActionBar;
 import org.telegram.p048ui.ActionBar.Theme;
 import org.telegram.p048ui.ActionBar.ThemeDescription;
 import org.telegram.p048ui.Cells.ShadowSectionCell;
@@ -152,12 +152,12 @@ public final class SortingFilterSettingsActivity extends BaseFragment {
     }
 
     private final void setupActionBar() {
-        C3351ActionBar c3351ActionBar = this.actionBar;
-        c3351ActionBar.setBackButtonImage(C3286R.C3288drawable.ic_ab_back);
-        c3351ActionBar.setAllowOverlayTitle(true);
-        c3351ActionBar.setTitle(LocaleController.getInternalString(C3286R.string.folder_tabs_sorting_settings));
-        c3351ActionBar.setActionBarMenuOnItemClick(new C3351ActionBar.ActionBarMenuOnItemClick() { // from class: org.fork.ui.fragment.SortingFilterSettingsActivity$setupActionBar$1$1
-            @Override // org.telegram.p048ui.ActionBar.C3351ActionBar.ActionBarMenuOnItemClick
+        C3366ActionBar c3366ActionBar = this.actionBar;
+        c3366ActionBar.setBackButtonImage(C3301R.C3303drawable.ic_ab_back);
+        c3366ActionBar.setAllowOverlayTitle(true);
+        c3366ActionBar.setTitle(LocaleController.getInternalString(C3301R.string.folder_tabs_sorting_settings));
+        c3366ActionBar.setActionBarMenuOnItemClick(new C3366ActionBar.ActionBarMenuOnItemClick() { // from class: org.fork.ui.fragment.SortingFilterSettingsActivity$setupActionBar$1$1
+            @Override // org.telegram.p048ui.ActionBar.C3366ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i) {
                 if (i == -1) {
                     SortingFilterSettingsActivity.this.finishFragment();
@@ -254,17 +254,17 @@ public final class SortingFilterSettingsActivity extends BaseFragment {
             boolean r0 = r0.isEmpty()
             r0 = r0 ^ r1
             if (r0 == 0) goto L25
-            r0 = 1
+            r0 = r1
             goto L26
         L25:
-            r0 = 0
+            r0 = r2
         L26:
             org.fork.controller.FiltersController r3 = r4.getFiltersController()
             int r3 = r3.getActiveSortingTabsCount(r2)
             if (r3 <= 0) goto L31
             goto L32
         L31:
-            r1 = 0
+            r1 = r2
         L32:
             r2 = 5
             if (r0 != 0) goto L3f
@@ -408,19 +408,19 @@ public final class SortingFilterSettingsActivity extends BaseFragment {
                 SortingFilterSettingsActivity sortingFilterSettingsActivity = this.this$0;
                 TextCheckCell textCheckCell = (TextCheckCell) view;
                 if (i == sortingFilterSettingsActivity.enableRow) {
-                    textCheckCell.setTextAndCheck(LocaleController.getInternalString(sortingFilterSettingsActivity.getCurrentArchive() ? C3286R.string.settings_interface_archive_sorting : C3286R.string.sorting_settings_enable_item_title), sortingFilterSettingsActivity.getFiltersController().isSortingEnabled(sortingFilterSettingsActivity.getCurrentArchive()), needDivider);
+                    textCheckCell.setTextAndCheck(LocaleController.getInternalString(sortingFilterSettingsActivity.getCurrentArchive() ? C3301R.string.settings_interface_archive_sorting : C3301R.string.sorting_settings_enable_item_title), sortingFilterSettingsActivity.getFiltersController().isSortingEnabled(sortingFilterSettingsActivity.getCurrentArchive()), needDivider);
                 }
             } else if ((view instanceof TextInfoPrivacyCell) && itemViewType == IdFabric$ViewTypes.TEXT_INFO_PRIVACY) {
                 SortingFilterSettingsActivity sortingFilterSettingsActivity2 = this.this$0;
                 TextInfoPrivacyCell textInfoPrivacyCell = (TextInfoPrivacyCell) view;
                 if (i == sortingFilterSettingsActivity2.enableSectionRow && sortingFilterSettingsActivity2.getFiltersController().isSortingEnabled(sortingFilterSettingsActivity2.getCurrentArchive())) {
-                    textInfoPrivacyCell.setBackground(Theme.getThemedDrawable(this.mContext, C3286R.C3288drawable.greydivider, "windowBackgroundGrayShadow"));
+                    textInfoPrivacyCell.setBackground(Theme.getThemedDrawable(this.mContext, C3301R.C3303drawable.greydivider, "windowBackgroundGrayShadow"));
                     textInfoPrivacyCell.setText(null);
                     textInfoPrivacyCell.setFixedSize(12);
                     return;
                 }
-                textInfoPrivacyCell.setBackground(Theme.getThemedDrawable(this.mContext, C3286R.C3288drawable.greydivider_bottom, "windowBackgroundGrayShadow"));
-                textInfoPrivacyCell.setText(LocaleController.getInternalString(i == sortingFilterSettingsActivity2.enableSectionRow ? C3286R.string.sorting_settings_enable_item_hint : C3286R.string.sorting_settings_drag_and_drop_hint));
+                textInfoPrivacyCell.setBackground(Theme.getThemedDrawable(this.mContext, C3301R.C3303drawable.greydivider_bottom, "windowBackgroundGrayShadow"));
+                textInfoPrivacyCell.setText(LocaleController.getInternalString(i == sortingFilterSettingsActivity2.enableSectionRow ? C3301R.string.sorting_settings_enable_item_hint : C3301R.string.sorting_settings_drag_and_drop_hint));
                 textInfoPrivacyCell.setFixedSize(0);
             } else if ((view instanceof SortingFilterCell) && itemViewType == IdFabric$ViewTypes.SORTING_FILTER) {
                 final SortingFilterSettingsActivity sortingFilterSettingsActivity3 = this.this$0;

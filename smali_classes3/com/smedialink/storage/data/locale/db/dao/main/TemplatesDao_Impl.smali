@@ -338,12 +338,12 @@
 
     if-eqz v14, :cond_1
 
-    const/16 v26, 0x1
+    move/from16 v26, v2
 
     goto :goto_2
 
     :cond_1
-    const/16 v26, 0x0
+    move/from16 v26, v4
 
     .line 322
     :goto_2

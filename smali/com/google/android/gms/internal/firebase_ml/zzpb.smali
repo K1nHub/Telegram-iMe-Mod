@@ -70,9 +70,9 @@
     .line 6
     iget-wide v0, p0, Lcom/google/android/gms/internal/firebase_ml/zzpb;->zzavs:J
 
-    cmp-long v2, p1, v0
+    cmp-long v0, p1, v0
 
-    if-eqz v2, :cond_0
+    if-eqz v0, :cond_0
 
     return-void
 

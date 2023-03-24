@@ -755,7 +755,7 @@
     invoke-direct {p1, v1}, Lorg/telegram/ui/PremiumPreviewFragment$SubscriptionTier;-><init>(Lorg/telegram/tgnet/TLRPC$TL_premiumSubscriptionOption;)V
 
     :cond_2
-    const/4 p3, 0x1
+    move p3, v0
 
     .line 779
     :cond_3
@@ -2648,9 +2648,9 @@
 
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    move v1, v0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     .line 966
     :goto_0
@@ -3078,7 +3078,7 @@
     sparse-switch v1, :sswitch_data_0
 
     :goto_0
-    const/4 v0, -0x1
+    move/from16 v0, v16
 
     goto/16 :goto_1
 
@@ -3094,7 +3094,7 @@
     goto :goto_0
 
     :cond_0
-    const/16 v0, 0xd
+    move v0, v2
 
     goto/16 :goto_1
 
@@ -3110,7 +3110,7 @@
     goto :goto_0
 
     :cond_1
-    const/16 v0, 0xc
+    move v0, v3
 
     goto/16 :goto_1
 
@@ -3126,7 +3126,7 @@
     goto :goto_0
 
     :cond_2
-    const/16 v0, 0xb
+    move v0, v4
 
     goto/16 :goto_1
 
@@ -3142,7 +3142,7 @@
     goto :goto_0
 
     :cond_3
-    const/16 v0, 0xa
+    move v0, v5
 
     goto/16 :goto_1
 
@@ -3158,7 +3158,7 @@
     goto :goto_0
 
     :cond_4
-    const/16 v0, 0x9
+    move v0, v6
 
     goto/16 :goto_1
 
@@ -3174,7 +3174,7 @@
     goto :goto_0
 
     :cond_5
-    const/16 v0, 0x8
+    move v0, v7
 
     goto/16 :goto_1
 
@@ -3190,7 +3190,7 @@
     goto :goto_0
 
     :cond_6
-    const/4 v0, 0x7
+    move v0, v8
 
     goto :goto_1
 
@@ -3206,7 +3206,7 @@
     goto :goto_0
 
     :cond_7
-    const/4 v0, 0x6
+    move v0, v9
 
     goto :goto_1
 
@@ -3222,7 +3222,7 @@
     goto :goto_0
 
     :cond_8
-    const/4 v0, 0x5
+    move v0, v10
 
     goto :goto_1
 
@@ -3238,7 +3238,7 @@
     goto :goto_0
 
     :cond_9
-    const/4 v0, 0x4
+    move v0, v11
 
     goto :goto_1
 
@@ -3254,7 +3254,7 @@
     goto/16 :goto_0
 
     :cond_a
-    const/4 v0, 0x3
+    move v0, v12
 
     goto :goto_1
 
@@ -3270,7 +3270,7 @@
     goto/16 :goto_0
 
     :cond_b
-    const/4 v0, 0x2
+    move v0, v13
 
     goto :goto_1
 
@@ -3286,7 +3286,7 @@
     goto/16 :goto_0
 
     :cond_c
-    const/4 v0, 0x1
+    move v0, v14
 
     goto :goto_1
 
@@ -3302,7 +3302,7 @@
     goto/16 :goto_0
 
     :cond_d
-    const/4 v0, 0x0
+    move v0, v15
 
     :goto_1
     packed-switch v0, :pswitch_data_0
@@ -3350,6 +3350,8 @@
 
     :pswitch_d
     return v8
+
+    nop
 
     :sswitch_data_0
     .sparse-switch
@@ -3635,7 +3637,7 @@
 
     if-eqz v0, :cond_1
 
-    const/4 p1, 0x0
+    move p1, v1
 
     .line 1599
     :cond_1
@@ -4037,7 +4039,7 @@
     goto :goto_0
 
     :cond_1
-    const/4 v2, 0x0
+    move v2, v0
 
     :cond_2
     :goto_0
@@ -4063,7 +4065,7 @@
     goto :goto_1
 
     :cond_3
-    const/4 v1, 0x0
+    move v1, v0
 
     .line 994
     :goto_1
@@ -4339,7 +4341,7 @@
 
     if-eqz v4, :cond_0
 
-    const/4 v4, 0x0
+    move v4, v12
 
     goto :goto_0
 

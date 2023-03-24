@@ -330,7 +330,7 @@
 
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    move v1, v0
 
     :goto_0
     const/4 v2, 0x5
@@ -408,7 +408,7 @@
 
     move-result v3
 
-    const/4 v4, 0x0
+    move v4, v0
 
     :goto_2
     if-ge v4, v3, :cond_9
@@ -475,7 +475,7 @@
 .end method
 
 .method private createWallpaperForAccent(Landroid/graphics/Bitmap;ZLjava/io/File;Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;)Landroid/graphics/Bitmap;
-    .locals 18
+    .locals 17
 
     move-object/from16 v0, p3
 
@@ -513,125 +513,125 @@
     .line 1272
     iget-wide v7, v1, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->backgroundOverrideColor:J
 
-    long-to-int v8, v7
+    long-to-int v7, v7
 
     .line 1274
-    iget-wide v9, v1, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->backgroundGradientOverrideColor1:J
+    iget-wide v8, v1, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->backgroundGradientOverrideColor1:J
 
-    long-to-int v7, v9
+    long-to-int v10, v8
 
     const-wide/16 v11, 0x0
 
     const/4 v13, 0x0
 
-    if-nez v7, :cond_2
+    if-nez v10, :cond_2
 
-    cmp-long v14, v9, v11
+    cmp-long v8, v8, v11
 
-    if-nez v14, :cond_2
+    if-nez v8, :cond_2
 
-    if-eqz v8, :cond_1
+    if-eqz v7, :cond_1
 
-    move v6, v8
+    move v6, v7
 
     :cond_1
-    const-string v9, "chat_wallpaper_gradient_to"
+    const-string v8, "chat_wallpaper_gradient_to"
 
     .line 1279
-    invoke-virtual {v5, v9}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v5, v8}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
-    move-result-object v9
+    move-result-object v8
 
-    check-cast v9, Ljava/lang/Integer;
+    check-cast v8, Ljava/lang/Integer;
 
-    if-eqz v9, :cond_3
+    if-eqz v8, :cond_3
 
     .line 1281
-    invoke-virtual {v9}, Ljava/lang/Integer;->intValue()I
+    invoke-virtual {v8}, Ljava/lang/Integer;->intValue()I
 
-    move-result v7
+    move-result v8
 
-    invoke-static {v4, v6, v7}, Lorg/telegram/ui/ActionBar/Theme;->changeColorAccent(Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;II)I
+    invoke-static {v4, v6, v8}, Lorg/telegram/ui/ActionBar/Theme;->changeColorAccent(Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;II)I
 
-    move-result v7
+    move-result v10
 
     goto :goto_0
 
     :cond_2
-    const/4 v6, 0x0
+    move v6, v13
 
     .line 1287
     :cond_3
     :goto_0
-    iget-wide v9, v1, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->backgroundGradientOverrideColor2:J
+    iget-wide v8, v1, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->backgroundGradientOverrideColor2:J
 
-    long-to-int v14, v9
+    long-to-int v14, v8
 
     if-nez v14, :cond_4
 
-    cmp-long v15, v9, v11
+    cmp-long v8, v8, v11
 
-    if-nez v15, :cond_4
+    if-nez v8, :cond_4
 
-    const-string v9, "key_chat_wallpaper_gradient_to2"
+    const-string v8, "key_chat_wallpaper_gradient_to2"
 
     .line 1289
-    invoke-virtual {v5, v9}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v5, v8}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
-    move-result-object v9
+    move-result-object v8
 
-    check-cast v9, Ljava/lang/Integer;
+    check-cast v8, Ljava/lang/Integer;
 
-    if-eqz v9, :cond_4
+    if-eqz v8, :cond_4
 
     .line 1291
-    invoke-virtual {v9}, Ljava/lang/Integer;->intValue()I
+    invoke-virtual {v8}, Ljava/lang/Integer;->intValue()I
 
-    move-result v9
+    move-result v8
 
-    invoke-static {v4, v6, v9}, Lorg/telegram/ui/ActionBar/Theme;->changeColorAccent(Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;II)I
+    invoke-static {v4, v6, v8}, Lorg/telegram/ui/ActionBar/Theme;->changeColorAccent(Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;II)I
 
     move-result v14
 
     .line 1295
     :cond_4
-    iget-wide v9, v1, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->backgroundGradientOverrideColor3:J
+    iget-wide v8, v1, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->backgroundGradientOverrideColor3:J
 
-    long-to-int v15, v9
+    long-to-int v15, v8
 
     if-nez v15, :cond_5
 
-    cmp-long v16, v9, v11
+    cmp-long v8, v8, v11
 
-    if-nez v16, :cond_5
+    if-nez v8, :cond_5
 
-    const-string v9, "key_chat_wallpaper_gradient_to3"
+    const-string v8, "key_chat_wallpaper_gradient_to3"
 
     .line 1297
-    invoke-virtual {v5, v9}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v5, v8}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
-    move-result-object v9
+    move-result-object v8
 
-    check-cast v9, Ljava/lang/Integer;
+    check-cast v8, Ljava/lang/Integer;
 
-    if-eqz v9, :cond_5
+    if-eqz v8, :cond_5
 
     .line 1299
-    invoke-virtual {v9}, Ljava/lang/Integer;->intValue()I
+    invoke-virtual {v8}, Ljava/lang/Integer;->intValue()I
 
-    move-result v9
+    move-result v8
 
-    invoke-static {v4, v6, v9}, Lorg/telegram/ui/ActionBar/Theme;->changeColorAccent(Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;II)I
+    invoke-static {v4, v6, v8}, Lorg/telegram/ui/ActionBar/Theme;->changeColorAccent(Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;II)I
 
     move-result v15
 
     :cond_5
-    if-nez v8, :cond_6
+    if-nez v7, :cond_6
 
-    const-string v9, "chat_wallpaper"
+    const-string v8, "chat_wallpaper"
 
     .line 1304
-    invoke-virtual {v5, v9}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v5, v8}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v5
 
@@ -646,7 +646,7 @@
 
     invoke-static {v4, v6, v5}, Lorg/telegram/ui/ActionBar/Theme;->changeColorAccent(Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;II)I
 
-    move-result v8
+    move-result v7
 
     :cond_6
     const/4 v4, 0x2
@@ -654,14 +654,14 @@
     if-eqz v14, :cond_7
 
     .line 1314
-    invoke-static {v8, v7, v14, v15}, Lorg/telegram/ui/Components/MotionBackgroundDrawable;->getPatternColor(IIII)I
+    invoke-static {v7, v10, v14, v15}, Lorg/telegram/ui/Components/MotionBackgroundDrawable;->getPatternColor(IIII)I
 
     move-result v5
 
     goto :goto_1
 
     :cond_7
-    if-eqz v7, :cond_8
+    if-eqz v10, :cond_8
 
     .line 1316
     iget v3, v1, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->backgroundRotation:I
@@ -675,16 +675,16 @@
 
     new-array v6, v4, [I
 
-    aput v8, v6, v13
+    aput v7, v6, v13
 
-    const/4 v9, 0x1
+    const/4 v8, 0x1
 
-    aput v7, v6, v9
+    aput v10, v6, v8
 
     invoke-direct {v5, v3, v6}, Lorg/telegram/ui/Components/BackgroundGradientDrawable;-><init>(Landroid/graphics/drawable/GradientDrawable$Orientation;[I)V
 
     .line 1318
-    invoke-static {v8, v7}, Lorg/telegram/messenger/AndroidUtilities;->getAverageColor(II)I
+    invoke-static {v7, v10}, Lorg/telegram/messenger/AndroidUtilities;->getAverageColor(II)I
 
     move-result v3
 
@@ -692,11 +692,11 @@
 
     move-result v3
 
-    move-object/from16 v17, v5
+    move-object/from16 v16, v5
 
     move v5, v3
 
-    move-object/from16 v3, v17
+    move-object/from16 v3, v16
 
     goto :goto_1
 
@@ -704,10 +704,10 @@
     :cond_8
     new-instance v3, Landroid/graphics/drawable/ColorDrawable;
 
-    invoke-direct {v3, v8}, Landroid/graphics/drawable/ColorDrawable;-><init>(I)V
+    invoke-direct {v3, v7}, Landroid/graphics/drawable/ColorDrawable;-><init>(I)V
 
     .line 1321
-    invoke-static {v8}, Lorg/telegram/messenger/AndroidUtilities;->getPatternColor(I)I
+    invoke-static {v7}, Lorg/telegram/messenger/AndroidUtilities;->getPatternColor(I)I
 
     move-result v5
 
@@ -828,7 +828,7 @@
 
     move-result v1
 
-    mul-float v1, v1, v4
+    mul-float/2addr v1, v4
 
     float-to-int v1, v1
 
@@ -928,9 +928,9 @@
 
     const/4 v4, 0x0
 
-    move-object v5, v4
+    move v6, v3
 
-    const/4 v6, 0x0
+    move-object v5, v4
 
     :goto_0
     if-ge v6, v2, :cond_1
@@ -1261,7 +1261,7 @@
 
     const/4 v2, 0x0
 
-    const/4 v3, 0x0
+    move v3, v1
 
     :goto_0
     if-ge v3, v0, :cond_3

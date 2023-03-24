@@ -240,7 +240,7 @@
     goto :goto_0
 
     :cond_0
-    const/4 p1, 0x1
+    move p1, v0
 
     :goto_0
     invoke-direct {p0, p1, v0}, Lorg/telegram/ui/ChatReactionsEditActivity;->setCheckedEnableReactionCell(IZ)V
@@ -336,12 +336,12 @@
 
     if-eqz v0, :cond_0
 
-    const/4 v3, 0x1
+    move v3, v2
 
     goto :goto_0
 
     :cond_0
-    const/4 v3, 0x2
+    move v3, v1
 
     :goto_0
     if-gt p2, v3, :cond_1
@@ -357,7 +357,7 @@
 
     if-eqz v0, :cond_2
 
-    const/4 v0, 0x2
+    move v0, v1
 
     goto :goto_1
 
@@ -422,12 +422,12 @@
 
     if-eqz v3, :cond_4
 
-    const/4 v3, 0x1
+    move v3, v2
 
     goto :goto_2
 
     :cond_4
-    const/4 v3, 0x2
+    move v3, v1
 
     :goto_2
     iget-object v4, p0, Lorg/telegram/ui/ChatReactionsEditActivity;->availableReactions:Ljava/util/ArrayList;
@@ -474,12 +474,12 @@
 
     if-ne p1, v2, :cond_1
 
-    const/4 v3, 0x1
+    move v3, v2
 
     goto :goto_0
 
     :cond_1
-    const/4 v3, 0x0
+    move v3, v1
 
     .line 277
     :goto_0
@@ -520,7 +520,7 @@
     :goto_2
     iput p1, p0, Lorg/telegram/ui/ChatReactionsEditActivity;->selectedType:I
 
-    const/4 v0, 0x0
+    move v0, v1
 
     .line 286
     :goto_3
@@ -543,12 +543,12 @@
 
     if-ne p1, v0, :cond_5
 
-    const/4 v4, 0x1
+    move v4, v2
 
     goto :goto_4
 
     :cond_5
-    const/4 v4, 0x0
+    move v4, v1
 
     :goto_4
     invoke-virtual {v3, v4, p2}, Lorg/telegram/ui/Cells/RadioCell;->setChecked(ZZ)V
@@ -682,7 +682,7 @@
 
     if-eqz v1, :cond_b
 
-    const/4 v0, 0x1
+    move v0, v2
 
     :cond_b
     iget-object v1, p0, Lorg/telegram/ui/ChatReactionsEditActivity;->availableReactions:Ljava/util/ArrayList;
@@ -724,7 +724,7 @@
 
     if-eqz v1, :cond_d
 
-    const/4 v0, 0x1
+    move v0, v2
 
     :cond_d
     iget-object v1, p0, Lorg/telegram/ui/ChatReactionsEditActivity;->availableReactions:Ljava/util/ArrayList;

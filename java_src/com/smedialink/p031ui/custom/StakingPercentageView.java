@@ -27,7 +27,7 @@ import org.fork.utils.Callbacks$Callback;
 import org.koin.core.Koin;
 import org.koin.core.component.KoinComponent;
 import org.koin.p047mp.KoinPlatformTools;
-import org.telegram.messenger.C3286R;
+import org.telegram.messenger.C3301R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.databinding.ForkContentStakingCompoundBinding;
 import org.telegram.p048ui.ActionBar.Theme;
@@ -89,9 +89,9 @@ public final class StakingPercentageView extends FrameLayout implements KoinComp
             return;
         }
         AppCompatTextView appCompatTextView = forkContentStakingCompoundBinding.textApr;
-        appCompatTextView.setText(LocaleController.getInternalString(C3286R.string.staking_programme_apr) + getAnnualPercentageText(stakingAnnualPercentageData.getApr()));
+        appCompatTextView.setText(LocaleController.getInternalString(C3301R.string.staking_programme_apr) + getAnnualPercentageText(stakingAnnualPercentageData.getApr()));
         AppCompatTextView appCompatTextView2 = forkContentStakingCompoundBinding.textApy;
-        appCompatTextView2.setText(LocaleController.getInternalString(C3286R.string.staking_programme_apy) + getAnnualPercentageText(stakingAnnualPercentageData.getApy()));
+        appCompatTextView2.setText(LocaleController.getInternalString(C3301R.string.staking_programme_apy) + getAnnualPercentageText(stakingAnnualPercentageData.getApy()));
         AppCompatTextView appCompatTextView3 = forkContentStakingCompoundBinding.textThresholdValue;
         appCompatTextView3.setText(stakingAnnualPercentageData.getCompoundThreshold() + '+');
     }
@@ -148,7 +148,7 @@ public final class StakingPercentageView extends FrameLayout implements KoinComp
     }
 
     private final void setupProgressListener() {
-        Observable<Float> observeOn = this.progressSubject.debounce(200L, TimeUnit.MILLISECONDS).subscribeOn(getSchedulersProvider().mo708io()).observeOn(getSchedulersProvider().mo707ui());
+        Observable<Float> observeOn = this.progressSubject.debounce(200L, TimeUnit.MILLISECONDS).subscribeOn(getSchedulersProvider().mo707io()).observeOn(getSchedulersProvider().mo706ui());
         final StakingPercentageView$setupProgressListener$1 stakingPercentageView$setupProgressListener$1 = new StakingPercentageView$setupProgressListener$1(this);
         Disposable subscribe = observeOn.subscribe(new Consumer() { // from class: com.smedialink.ui.custom.StakingPercentageView$$ExternalSyntheticLambda0
             @Override // io.reactivex.functions.Consumer

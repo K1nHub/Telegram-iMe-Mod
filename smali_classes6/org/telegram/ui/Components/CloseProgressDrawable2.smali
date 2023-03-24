@@ -164,15 +164,15 @@
     .line 79
     iget-wide v1, v0, Lorg/telegram/ui/Components/CloseProgressDrawable2;->lastFrameTime:J
 
+    const-wide/16 v3, 0x0
+
+    cmp-long v3, v1, v3
+
     const/high16 v11, 0x44340000    # 720.0f
 
     const/4 v12, 0x0
 
-    const-wide/16 v3, 0x0
-
-    cmp-long v5, v1, v3
-
-    if-eqz v5, :cond_2
+    if-eqz v3, :cond_2
 
     sub-long v1, v9, v1
 
@@ -193,7 +193,7 @@
 
     const-wide/16 v5, 0x168
 
-    mul-long v1, v1, v5
+    mul-long/2addr v1, v5
 
     long-to-float v1, v1
 
@@ -337,196 +337,208 @@
     .line 103
     iget v1, v0, Lorg/telegram/ui/Components/CloseProgressDrawable2;->angle:F
 
+    cmpl-float v2, v1, v12
+
     const/high16 v7, 0x43b40000    # 360.0f
 
     const/high16 v13, 0x3f800000    # 1.0f
 
-    const/high16 v2, 0x42b40000    # 90.0f
+    const/high16 v3, 0x42b40000    # 90.0f
 
-    cmpl-float v3, v1, v12
+    if-ltz v2, :cond_5
 
-    if-ltz v3, :cond_5
+    cmpg-float v2, v1, v3
 
-    cmpg-float v3, v1, v2
+    if-gez v2, :cond_5
 
-    if-gez v3, :cond_5
-
-    div-float/2addr v1, v2
+    div-float/2addr v1, v3
 
     sub-float v1, v13, v1
+
+    move/from16 v16, v12
+
+    move v14, v13
 
     :goto_3
-    const/high16 v14, 0x3f800000    # 1.0f
+    move v15, v14
 
-    :goto_4
-    const/high16 v15, 0x3f800000    # 1.0f
-
-    :goto_5
-    const/16 v16, 0x0
-
-    goto/16 :goto_8
+    goto/16 :goto_6
 
     :cond_5
-    const/high16 v3, 0x43340000    # 180.0f
+    cmpl-float v2, v1, v3
 
-    cmpl-float v4, v1, v2
+    const/high16 v4, 0x43340000    # 180.0f
 
-    if-ltz v4, :cond_6
+    if-ltz v2, :cond_6
 
-    cmpg-float v4, v1, v3
+    cmpg-float v2, v1, v4
 
-    if-gez v4, :cond_6
+    if-gez v2, :cond_6
 
-    sub-float/2addr v1, v2
+    sub-float/2addr v1, v3
 
-    div-float/2addr v1, v2
+    div-float/2addr v1, v3
 
     sub-float v1, v13, v1
 
     move v14, v1
 
-    const/4 v1, 0x0
+    move v1, v12
 
-    goto :goto_4
-
-    :cond_6
-    const/high16 v4, 0x43870000    # 270.0f
-
-    cmpl-float v5, v1, v3
-
-    if-ltz v5, :cond_7
-
-    cmpg-float v5, v1, v4
-
-    if-gez v5, :cond_7
-
-    sub-float/2addr v1, v3
-
-    div-float/2addr v1, v2
-
-    sub-float v1, v13, v1
-
-    move v15, v1
-
-    const/4 v1, 0x0
-
-    const/4 v14, 0x0
-
-    goto :goto_5
-
-    :cond_7
-    cmpl-float v3, v1, v4
-
-    if-ltz v3, :cond_8
-
-    cmpg-float v3, v1, v7
-
-    if-gez v3, :cond_8
-
-    sub-float/2addr v1, v4
-
-    div-float/2addr v1, v2
-
-    :goto_6
     move/from16 v16, v1
 
-    const/4 v1, 0x0
+    move v15, v13
 
-    const/4 v14, 0x0
+    goto/16 :goto_6
 
-    const/4 v15, 0x0
+    :cond_6
+    cmpl-float v2, v1, v4
 
-    goto :goto_8
+    const/high16 v5, 0x43870000    # 270.0f
 
-    :cond_8
-    const/high16 v3, 0x43e10000    # 450.0f
+    if-ltz v2, :cond_7
 
-    cmpl-float v4, v1, v7
+    cmpg-float v2, v1, v5
 
-    if-ltz v4, :cond_9
-
-    cmpg-float v4, v1, v3
-
-    if-gez v4, :cond_9
-
-    sub-float/2addr v1, v7
-
-    div-float/2addr v1, v2
-
-    sub-float v1, v13, v1
-
-    goto :goto_6
-
-    :cond_9
-    const/high16 v4, 0x44070000    # 540.0f
-
-    cmpl-float v5, v1, v3
-
-    if-ltz v5, :cond_a
-
-    cmpg-float v5, v1, v4
-
-    if-gez v5, :cond_a
-
-    sub-float/2addr v1, v3
-
-    div-float/2addr v1, v2
-
-    const/4 v14, 0x0
-
-    :goto_7
-    const/4 v15, 0x0
-
-    goto :goto_5
-
-    :cond_a
-    const v3, 0x441d8000    # 630.0f
-
-    cmpl-float v5, v1, v4
-
-    if-ltz v5, :cond_b
-
-    cmpg-float v5, v1, v3
-
-    if-gez v5, :cond_b
+    if-gez v2, :cond_7
 
     sub-float/2addr v1, v4
 
-    div-float/2addr v1, v2
+    div-float/2addr v1, v3
 
-    move v14, v1
-
-    const/high16 v1, 0x3f800000    # 1.0f
-
-    goto :goto_7
-
-    :cond_b
-    cmpl-float v4, v1, v3
-
-    if-ltz v4, :cond_c
-
-    cmpg-float v4, v1, v11
-
-    if-gez v4, :cond_c
-
-    sub-float/2addr v1, v3
-
-    div-float/2addr v1, v2
+    sub-float v1, v13, v1
 
     move v15, v1
 
-    const/high16 v1, 0x3f800000    # 1.0f
+    move v1, v12
 
-    const/high16 v14, 0x3f800000    # 1.0f
+    move v14, v1
 
-    goto :goto_5
+    move/from16 v16, v14
 
-    :cond_c
-    const/high16 v1, 0x3f800000    # 1.0f
+    goto/16 :goto_6
+
+    :cond_7
+    cmpl-float v2, v1, v5
+
+    if-ltz v2, :cond_8
+
+    cmpg-float v2, v1, v7
+
+    if-gez v2, :cond_8
+
+    sub-float/2addr v1, v5
+
+    div-float/2addr v1, v3
+
+    :goto_4
+    move/from16 v16, v1
+
+    move v1, v12
+
+    :goto_5
+    move v14, v1
 
     goto :goto_3
 
-    :goto_8
+    :cond_8
+    cmpl-float v2, v1, v7
+
+    const/high16 v4, 0x43e10000    # 450.0f
+
+    if-ltz v2, :cond_9
+
+    cmpg-float v2, v1, v4
+
+    if-gez v2, :cond_9
+
+    sub-float/2addr v1, v7
+
+    div-float/2addr v1, v3
+
+    sub-float v1, v13, v1
+
+    goto :goto_4
+
+    :cond_9
+    cmpl-float v2, v1, v4
+
+    const/high16 v5, 0x44070000    # 540.0f
+
+    if-ltz v2, :cond_a
+
+    cmpg-float v2, v1, v5
+
+    if-gez v2, :cond_a
+
+    sub-float/2addr v1, v4
+
+    div-float/2addr v1, v3
+
+    move v14, v12
+
+    move v15, v14
+
+    move/from16 v16, v15
+
+    goto :goto_6
+
+    :cond_a
+    cmpl-float v2, v1, v5
+
+    const v4, 0x441d8000    # 630.0f
+
+    if-ltz v2, :cond_b
+
+    cmpg-float v2, v1, v4
+
+    if-gez v2, :cond_b
+
+    sub-float/2addr v1, v5
+
+    div-float/2addr v1, v3
+
+    move v14, v1
+
+    move v15, v12
+
+    move/from16 v16, v15
+
+    move v1, v13
+
+    goto :goto_6
+
+    :cond_b
+    cmpl-float v2, v1, v4
+
+    if-ltz v2, :cond_c
+
+    cmpg-float v2, v1, v11
+
+    if-gez v2, :cond_c
+
+    sub-float/2addr v1, v4
+
+    div-float/2addr v1, v3
+
+    move v15, v1
+
+    move/from16 v16, v12
+
+    move v1, v13
+
+    move v14, v1
+
+    goto :goto_6
+
+    :cond_c
+    move/from16 v16, v12
+
+    move v1, v13
+
+    goto :goto_5
+
+    :goto_6
     cmpl-float v2, v1, v12
 
     if-eqz v2, :cond_d
@@ -542,7 +554,7 @@
 
     int-to-float v5, v5
 
-    mul-float v5, v5, v1
+    mul-float/2addr v5, v1
 
     iget-object v6, v0, Lorg/telegram/ui/Components/CloseProgressDrawable2;->paint:Landroid/graphics/Paint;
 
@@ -680,12 +692,12 @@
 
     if-gez v3, :cond_11
 
-    goto :goto_9
+    goto :goto_7
 
     :cond_11
     sub-float v12, v1, v7
 
-    :goto_9
+    :goto_7
     const/high16 v3, 0x42340000    # 45.0f
 
     sub-float v3, v12, v3
@@ -696,14 +708,14 @@
 
     move v4, v1
 
-    goto :goto_a
+    goto :goto_8
 
     :cond_12
     sub-float/2addr v11, v1
 
     move v4, v11
 
-    :goto_a
+    :goto_8
     const/4 v5, 0x0
 
     iget-object v6, v0, Lorg/telegram/ui/Components/CloseProgressDrawable2;->paint:Landroid/graphics/Paint;

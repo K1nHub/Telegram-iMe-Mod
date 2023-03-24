@@ -59,7 +59,10 @@ final class EventSampleStream implements SampleStream {
         boolean z = true;
         int binarySearchCeil = Util.binarySearchCeil(this.eventTimesUs, j, true, false);
         this.currentIndex = binarySearchCeil;
-        if (!((this.eventStreamAppendable && binarySearchCeil == this.eventTimesUs.length) ? false : false)) {
+        if (!this.eventStreamAppendable || binarySearchCeil != this.eventTimesUs.length) {
+            z = false;
+        }
+        if (!z) {
             j = C0468C.TIME_UNSET;
         }
         this.pendingSeekPositionUs = j;

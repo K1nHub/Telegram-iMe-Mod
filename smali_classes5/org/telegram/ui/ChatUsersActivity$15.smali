@@ -67,7 +67,7 @@
 .end method
 
 .method public didSetRights(ILorg/telegram/tgnet/TLRPC$TL_chatAdminRights;Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;Ljava/lang/String;)V
-    .locals 8
+    .locals 7
 
     .line 1494
     iget v0, p0, Lorg/telegram/ui/ChatUsersActivity$15;->val$type:I
@@ -78,7 +78,7 @@
 
     const/4 v0, 0x0
 
-    const/4 v2, 0x0
+    move v2, v0
 
     .line 1495
     :goto_0
@@ -124,9 +124,9 @@
 
     iget-wide v5, p0, Lorg/telegram/ui/ChatUsersActivity$15;->val$peerId:J
 
-    cmp-long v7, v3, v5
+    cmp-long v3, v3, v5
 
-    if-nez v7, :cond_5
+    if-nez v3, :cond_5
 
     if-ne p1, v1, :cond_0
 
@@ -168,9 +168,9 @@
 
     const-wide/16 v4, 0x0
 
-    cmp-long v6, p2, v4
+    cmp-long p2, p2, v4
 
-    if-lez v6, :cond_1
+    if-lez p2, :cond_1
 
     .line 1510
     new-instance p2, Lorg/telegram/tgnet/TLRPC$TL_peerUser;

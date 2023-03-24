@@ -538,7 +538,7 @@
 .end method
 
 .method protected static implMulwAcc([JJ[JI)V
-    .locals 17
+    .locals 18
 
     const/16 v0, 0x8
 
@@ -626,21 +626,21 @@
     :cond_0
     ushr-long v13, v7, v3
 
-    long-to-int v14, v13
+    long-to-int v13, v13
 
-    and-int/lit8 v13, v14, 0x7
+    and-int/lit8 v14, v13, 0x7
 
-    aget-wide v15, v0, v13
+    aget-wide v14, v0, v14
 
-    ushr-int/lit8 v13, v14, 0x3
+    ushr-int/2addr v13, v5
 
     and-int/2addr v13, v6
 
-    aget-wide v13, v0, v13
+    aget-wide v16, v0, v13
 
-    shl-long/2addr v13, v5
+    shl-long v16, v16, v5
 
-    xor-long/2addr v13, v15
+    xor-long v13, v14, v16
 
     shl-long v15, v13, v3
 

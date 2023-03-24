@@ -361,7 +361,7 @@
 
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    move v1, v0
 
     .line 144
     :goto_0
@@ -450,9 +450,9 @@
 
     const-wide/16 v3, 0x0
 
-    cmp-long v5, v1, v3
+    cmp-long v3, v1, v3
 
-    if-eqz v5, :cond_1
+    if-eqz v3, :cond_1
 
     .line 183
     iget-object v3, p0, Lorg/telegram/ui/Storage/CacheModel;->dialogIdsTmp:Ljava/util/HashSet;
@@ -686,9 +686,9 @@
     return p0
 
     :cond_0
-    cmp-long v2, v0, p0
+    cmp-long p0, v0, p0
 
-    if-gez v2, :cond_1
+    if-gez p0, :cond_1
 
     const/4 p0, -0x1
 
@@ -920,7 +920,7 @@
 
     const/4 v2, 0x0
 
-    const/4 v3, 0x0
+    move v3, v2
 
     .line 314
     :goto_1
@@ -1332,7 +1332,7 @@
 
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    move v1, v0
 
     .line 268
     :goto_0
@@ -1413,7 +1413,7 @@
     goto :goto_0
 
     :cond_1
-    const/4 v1, 0x0
+    move v1, v0
 
     .line 276
     :goto_2
@@ -1460,7 +1460,7 @@
     goto :goto_2
 
     :cond_2
-    const/4 v1, 0x0
+    move v1, v0
 
     .line 280
     :goto_3

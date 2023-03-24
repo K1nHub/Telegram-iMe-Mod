@@ -48,7 +48,7 @@
 .method public final invoke()Lcom/smedialink/manager/common/MediaEditManager;
     .locals 7
 
-    .line 66
+    .line 67
     new-instance v6, Lcom/smedialink/manager/common/MediaEditManager;
 
     iget-object v1, p0, Lcom/smedialink/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoFragment$mediaEditManager$2;->this$0:Lcom/smedialink/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoFragment;
@@ -73,7 +73,7 @@
 .method public bridge synthetic invoke()Ljava/lang/Object;
     .locals 1
 
-    .line 66
+    .line 67
     invoke-virtual {p0}, Lcom/smedialink/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoFragment$mediaEditManager$2;->invoke()Lcom/smedialink/manager/common/MediaEditManager;
 
     move-result-object v0

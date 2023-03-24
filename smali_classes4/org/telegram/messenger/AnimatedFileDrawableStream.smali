@@ -447,9 +447,9 @@
 
     aget-wide v1, v3, v12
 
-    cmp-long v3, v1, v14
+    cmp-long v1, v1, v14
 
-    if-eqz v3, :cond_4
+    if-eqz v1, :cond_4
 
     .line 69
     iput-boolean v12, v10, Lorg/telegram/messenger/AnimatedFileDrawableStream;->finishedLoadingFile:Z
@@ -511,9 +511,9 @@
 
     iget-wide v1, v10, Lorg/telegram/messenger/AnimatedFileDrawableStream;->lastOffset:J
 
-    cmp-long v3, v1, v6
+    cmp-long v1, v1, v6
 
-    if-nez v3, :cond_6
+    if-nez v1, :cond_6
 
     iget-boolean v1, v10, Lorg/telegram/messenger/AnimatedFileDrawableStream;->preview:Z
 

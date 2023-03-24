@@ -84,9 +84,9 @@
 
     int-to-float v1, v1
 
-    const/4 v2, 0x0
-
     cmpl-float v0, v0, v1
+
+    const/4 v1, 0x0
 
     if-lez v0, :cond_0
 
@@ -96,11 +96,11 @@
 
     invoke-virtual {p2}, Landroid/widget/EditText;->getRight()I
 
-    move-result v1
+    move-result v2
 
-    int-to-float v1, v1
+    int-to-float v2, v2
 
-    cmpg-float v0, v0, v1
+    cmpg-float v0, v0, v2
 
     if-gez v0, :cond_0
 
@@ -111,11 +111,11 @@
 
     invoke-virtual {p2}, Landroid/widget/EditText;->getTop()I
 
-    move-result v1
+    move-result v2
 
-    int-to-float v1, v1
+    int-to-float v2, v2
 
-    cmpl-float v0, v0, v1
+    cmpl-float v0, v0, v2
 
     if-lez v0, :cond_0
 
@@ -140,9 +140,9 @@
 
     move-result-object v0
 
-    const/4 v1, 0x1
+    const/4 v2, 0x1
 
-    invoke-virtual {p1, v0, v2, p2, v1}, Lorg/telegram/ui/GroupCallActivity;->makeFocusable(Lorg/telegram/ui/ActionBar/BottomSheet;Lorg/telegram/ui/ActionBar/AlertDialog;Lorg/telegram/ui/Components/EditTextBoldCursor;Z)V
+    invoke-virtual {p1, v0, v1, p2, v2}, Lorg/telegram/ui/GroupCallActivity;->makeFocusable(Lorg/telegram/ui/ActionBar/BottomSheet;Lorg/telegram/ui/ActionBar/AlertDialog;Lorg/telegram/ui/Components/EditTextBoldCursor;Z)V
 
     goto :goto_0
 
@@ -154,9 +154,9 @@
 
     move-result-object v0
 
-    const/4 v1, 0x0
+    const/4 v2, 0x0
 
-    invoke-virtual {p1, v0, v2, p2, v1}, Lorg/telegram/ui/GroupCallActivity;->makeFocusable(Lorg/telegram/ui/ActionBar/BottomSheet;Lorg/telegram/ui/ActionBar/AlertDialog;Lorg/telegram/ui/Components/EditTextBoldCursor;Z)V
+    invoke-virtual {p1, v0, v1, p2, v2}, Lorg/telegram/ui/GroupCallActivity;->makeFocusable(Lorg/telegram/ui/ActionBar/BottomSheet;Lorg/telegram/ui/ActionBar/AlertDialog;Lorg/telegram/ui/Components/EditTextBoldCursor;Z)V
 
     :cond_1
     :goto_0

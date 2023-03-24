@@ -149,7 +149,7 @@
 .end method
 
 .method private deliver()V
-    .locals 7
+    .locals 6
 
     .line 258
     iget-boolean v0, p0, Lio/grpc/internal/MessageDeframer;->inDelivery:Z
@@ -177,9 +177,9 @@
 
     const-wide/16 v4, 0x0
 
-    cmp-long v6, v2, v4
+    cmp-long v2, v2, v4
 
-    if-lez v6, :cond_3
+    if-lez v2, :cond_3
 
     invoke-direct {p0}, Lio/grpc/internal/MessageDeframer;->readRequiredBytes()Z
 
@@ -542,12 +542,12 @@
 
     if-eqz v0, :cond_0
 
-    const/4 v0, 0x1
+    move v0, v1
 
     goto :goto_0
 
     :cond_0
-    const/4 v0, 0x0
+    move v0, v2
 
     .line 379
     :goto_0
@@ -676,9 +676,9 @@
     .catchall {:try_start_0 .. :try_end_0} :catchall_1
 
     :cond_0
-    const/4 v1, 0x0
+    move v1, v0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     .line 318
     :goto_0
@@ -1048,7 +1048,7 @@
     :catchall_1
     move-exception v1
 
-    const/4 v2, 0x0
+    move v2, v0
 
     :goto_4
     if-lez v0, :cond_e
@@ -1136,12 +1136,12 @@
 
     if-lez v0, :cond_1
 
-    const/4 v0, 0x1
+    move v0, v1
 
     goto :goto_0
 
     :cond_1
-    const/4 v0, 0x0
+    move v0, v2
 
     :goto_0
     const/4 v3, 0x0
@@ -1164,7 +1164,7 @@
     goto :goto_1
 
     :cond_2
-    const/4 v1, 0x0
+    move v1, v2
 
     .line 216
     :cond_3
@@ -1438,12 +1438,12 @@
 
     if-ne v0, v1, :cond_0
 
-    const/4 v0, 0x1
+    move v0, v2
 
     goto :goto_0
 
     :cond_0
-    const/4 v0, 0x0
+    move v0, v3
 
     :goto_0
     const-string v1, "per-message decompressor already set"
@@ -1458,7 +1458,7 @@
     goto :goto_1
 
     :cond_1
-    const/4 v2, 0x0
+    move v2, v3
 
     :goto_1
     const-string v0, "full stream decompressor already set"

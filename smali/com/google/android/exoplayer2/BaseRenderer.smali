@@ -133,8 +133,6 @@
     .line 397
     iput-boolean v0, p0, Lcom/google/android/exoplayer2/BaseRenderer;->throwRendererExceptionIsExecuting:Z
 
-    move v6, v1
-
     goto :goto_0
 
     :catchall_0
@@ -152,10 +150,10 @@
     :cond_0
     const/4 v1, 0x4
 
-    const/4 v6, 0x4
+    :goto_0
+    move v6, v1
 
     .line 401
-    :goto_0
     invoke-interface {p0}, Lcom/google/android/exoplayer2/Renderer;->getName()Ljava/lang/String;
 
     move-result-object v3
@@ -195,7 +193,7 @@
     goto :goto_0
 
     :cond_0
-    const/4 v1, 0x0
+    move v1, v2
 
     :goto_0
     invoke-static {v1}, Lcom/google/android/exoplayer2/util/Assertions;->checkState(Z)V
@@ -244,7 +242,7 @@
 
     if-nez v0, :cond_0
 
-    const/4 v0, 0x1
+    move v0, v1
 
     goto :goto_0
 
@@ -427,16 +425,16 @@
 .end method
 
 .method public final hasReadStreamToEnd()Z
-    .locals 5
+    .locals 4
 
     .line 136
     iget-wide v0, p0, Lcom/google/android/exoplayer2/BaseRenderer;->readingPositionUs:J
 
     const-wide/high16 v2, -0x8000000000000000L
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-nez v4, :cond_0
+    if-nez v0, :cond_0
 
     const/4 v0, 0x1
 
@@ -670,9 +668,9 @@
 
     const-wide v2, 0x7fffffffffffffffL
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-eqz v4, :cond_3
+    if-eqz v0, :cond_3
 
     .line 438
     invoke-virtual {p2}, Lcom/google/android/exoplayer2/Format;->buildUpon()Lcom/google/android/exoplayer2/Format$Builder;
@@ -887,7 +885,7 @@
 
     if-ne v0, v2, :cond_0
 
-    const/4 v0, 0x1
+    move v0, v1
 
     goto :goto_0
 

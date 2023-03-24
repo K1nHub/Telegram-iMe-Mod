@@ -188,7 +188,7 @@ public final class FlvExtractor implements Extractor {
             com.google.android.exoplayer2.util.ParsableByteArray r10 = r9.prepareTagData(r10)
             boolean r5 = r2.consume(r10, r0)
         L22:
-            r10 = 1
+            r10 = r6
             goto L75
         L24:
             r7 = 9
@@ -225,7 +225,7 @@ public final class FlvExtractor implements Extractor {
         L6f:
             int r0 = r9.tagDataSize
             r10.skipFully(r0)
-            r10 = 0
+            r10 = r5
         L75:
             boolean r0 = r9.outputFirstSample
             if (r0 != 0) goto L8f
@@ -233,8 +233,8 @@ public final class FlvExtractor implements Extractor {
             r9.outputFirstSample = r6
             com.google.android.exoplayer2.extractor.flv.ScriptTagPayloadReader r0 = r9.metadataReader
             long r0 = r0.getDurationUs()
-            int r2 = (r0 > r3 ? 1 : (r0 == r3 ? 0 : -1))
-            if (r2 != 0) goto L8b
+            int r0 = (r0 > r3 ? 1 : (r0 == r3 ? 0 : -1))
+            if (r0 != 0) goto L8b
             long r0 = r9.tagTimestampUs
             long r0 = -r0
             goto L8d

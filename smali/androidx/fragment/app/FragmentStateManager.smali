@@ -1493,12 +1493,12 @@
 
     if-nez v0, :cond_1
 
-    const/4 v0, 0x1
+    move v0, v2
 
     goto :goto_0
 
     :cond_1
-    const/4 v0, 0x0
+    move v0, v3
 
     :goto_0
     const/4 v1, 0x0
@@ -1541,13 +1541,13 @@
     goto :goto_1
 
     :cond_3
-    const/4 v4, 0x0
+    move v4, v3
 
     goto :goto_2
 
     :cond_4
     :goto_1
-    const/4 v4, 0x1
+    move v4, v2
 
     :goto_2
     if-eqz v4, :cond_d
@@ -2169,7 +2169,7 @@
     :try_start_0
     iput-boolean v3, p0, Landroidx/fragment/app/FragmentStateManager;->mMovingToState:Z
 
-    const/4 v4, 0x0
+    move v4, v0
 
     .line 247
     :goto_0
@@ -2453,7 +2453,7 @@
     invoke-virtual {p0}, Landroidx/fragment/app/FragmentStateManager;->detach()V
 
     :goto_2
-    const/4 v4, 0x1
+    move v4, v3
 
     goto/16 :goto_0
 

@@ -416,9 +416,9 @@
 
     sub-long/2addr v2, v4
 
-    cmp-long v4, v2, v0
+    cmp-long v0, v2, v0
 
-    if-gez v4, :cond_0
+    if-gez v0, :cond_0
 
     const/4 v0, 0x1
 
@@ -619,7 +619,7 @@
 
 # virtual methods
 .method public final addOrEditTopic(Lcom/smedialink/storage/domain/model/topics/TopicModel;)V
-    .locals 10
+    .locals 9
 
     const-string v0, "topic"
 
@@ -679,9 +679,9 @@
 
     move-result-wide v7
 
-    cmp-long v9, v5, v7
+    cmp-long v5, v5, v7
 
-    if-nez v9, :cond_1
+    if-nez v5, :cond_1
 
     const/4 v4, 0x1
 
@@ -724,9 +724,9 @@
 
     const-wide/16 v2, -0x1
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-nez v4, :cond_0
+    if-nez v0, :cond_0
 
     .line 112
     invoke-virtual {p0}, Lorg/fork/controller/ForkTopicsController;->calcNextId()J
@@ -1093,7 +1093,7 @@
     .line 150
     iput v1, p0, Lorg/fork/controller/ForkTopicsController;->lastTopicsCount:I
 
-    const/4 v1, 0x1
+    move v1, v3
 
     goto :goto_0
 
@@ -1228,7 +1228,7 @@
     .line 168
     invoke-interface {v6, v4}, Ljava/util/Set;->addAll(Ljava/util/Collection;)Z
 
-    const/4 v1, 0x1
+    move v1, v3
 
     .line 171
     :cond_5
@@ -1249,7 +1249,7 @@
     .line 174
     invoke-interface {v2, v5}, Ljava/util/Set;->addAll(Ljava/util/Collection;)Z
 
-    const/4 v1, 0x1
+    move v1, v3
 
     goto :goto_1
 
@@ -1439,7 +1439,7 @@
 
     if-ne v8, v7, :cond_5
 
-    const/4 v8, 0x1
+    move v8, v4
 
     goto :goto_3
 
@@ -1884,7 +1884,7 @@
     goto :goto_1
 
     :cond_2
-    const/4 v4, 0x0
+    move v4, v5
 
     :goto_1
     if-eqz v4, :cond_0
@@ -2871,7 +2871,7 @@
 
     if-ne v2, v14, :cond_6
 
-    const/4 v2, 0x1
+    move v2, v15
 
     goto :goto_2
 
@@ -3009,7 +3009,7 @@
     if-eqz v14, :cond_c
 
     :cond_b
-    const/4 v4, 0x1
+    move v4, v15
 
     goto :goto_6
 
@@ -3109,7 +3109,7 @@
     .line 262
     invoke-interface {v9, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    const/4 v13, 0x1
+    move v13, v15
 
     goto/16 :goto_1
 

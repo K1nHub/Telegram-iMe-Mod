@@ -30,7 +30,7 @@ public class TLRPC$TL_user extends TLRPC$User {
         this.premium = (268435456 & readInt32) != 0;
         this.attach_menu_enabled = (readInt32 & 536870912) != 0;
         this.flags2 = abstractSerializedData.readInt32(z);
-        this.f1639id = abstractSerializedData.readInt64(z);
+        this.f1640id = abstractSerializedData.readInt64(z);
         if ((this.flags & 1) != 0) {
             this.access_hash = abstractSerializedData.readInt64(z);
         }
@@ -144,7 +144,7 @@ public class TLRPC$TL_user extends TLRPC$User {
         this.flags = i18;
         abstractSerializedData.writeInt32(i18);
         abstractSerializedData.writeInt32(this.flags2);
-        abstractSerializedData.writeInt64(this.f1639id);
+        abstractSerializedData.writeInt64(this.f1640id);
         if ((this.flags & 1) != 0) {
             abstractSerializedData.writeInt64(this.access_hash);
         }

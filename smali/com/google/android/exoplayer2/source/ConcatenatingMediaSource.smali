@@ -477,22 +477,22 @@
 
     if-nez p3, :cond_0
 
-    const/4 v2, 0x1
+    move v2, v0
 
     goto :goto_0
 
     :cond_0
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_0
     if-nez p4, :cond_1
 
-    const/4 v3, 0x1
+    move v3, v0
 
     goto :goto_1
 
     :cond_1
-    const/4 v3, 0x0
+    move v3, v1
 
     :goto_1
     if-ne v2, v3, :cond_2
@@ -500,7 +500,7 @@
     goto :goto_2
 
     :cond_2
-    const/4 v0, 0x0
+    move v0, v1
 
     .line 568
     :goto_2
@@ -1234,22 +1234,22 @@
 
     if-nez p3, :cond_0
 
-    const/4 v2, 0x1
+    move v2, v0
 
     goto :goto_0
 
     :cond_0
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_0
     if-nez p4, :cond_1
 
-    const/4 v3, 0x1
+    move v3, v0
 
     goto :goto_1
 
     :cond_1
-    const/4 v3, 0x0
+    move v3, v1
 
     :goto_1
     if-ne v2, v3, :cond_2
@@ -1257,7 +1257,7 @@
     goto :goto_2
 
     :cond_2
-    const/4 v0, 0x0
+    move v0, v1
 
     .line 615
     :goto_2
@@ -1375,27 +1375,27 @@
 
     if-nez p3, :cond_0
 
-    const/4 v2, 0x1
+    move v2, v1
 
     goto :goto_0
 
     :cond_0
-    const/4 v2, 0x0
+    move v2, v0
 
     :goto_0
     if-nez p4, :cond_1
 
-    const/4 v3, 0x1
+    move v3, v1
 
     goto :goto_1
 
     :cond_1
-    const/4 v3, 0x0
+    move v3, v0
 
     :goto_1
     if-ne v2, v3, :cond_2
 
-    const/4 v0, 0x1
+    move v0, v1
 
     .line 595
     :cond_2
@@ -1506,22 +1506,22 @@
 
     if-nez p2, :cond_0
 
-    const/4 v2, 0x1
+    move v2, v0
 
     goto :goto_0
 
     :cond_0
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_0
     if-nez p3, :cond_1
 
-    const/4 v3, 0x1
+    move v3, v0
 
     goto :goto_1
 
     :cond_1
-    const/4 v3, 0x0
+    move v3, v1
 
     :goto_1
     if-ne v2, v3, :cond_2
@@ -1529,7 +1529,7 @@
     goto :goto_2
 
     :cond_2
-    const/4 v0, 0x0
+    move v0, v1
 
     .line 632
     :goto_2
@@ -2241,7 +2241,7 @@
 .end method
 
 .method protected getMediaPeriodIdForChildMediaPeriodId(Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource$MediaSourceHolder;Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;)Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;
-    .locals 6
+    .locals 5
 
     const/4 v0, 0x0
 
@@ -2268,9 +2268,9 @@
 
     iget-wide v3, p2, Lcom/google/android/exoplayer2/source/MediaPeriodId;->windowSequenceNumber:J
 
-    cmp-long v5, v1, v3
+    cmp-long v1, v1, v3
 
-    if-nez v5, :cond_0
+    if-nez v1, :cond_0
 
     .line 546
     iget-object v0, p2, Lcom/google/android/exoplayer2/source/MediaPeriodId;->periodUid:Ljava/lang/Object;

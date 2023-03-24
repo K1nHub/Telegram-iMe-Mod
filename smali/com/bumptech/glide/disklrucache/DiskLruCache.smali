@@ -385,7 +385,7 @@
 
     if-nez v2, :cond_2
 
-    const/4 v2, 0x0
+    move v2, v1
 
     .line 515
     :goto_0
@@ -652,9 +652,9 @@
 
     iget-wide v0, p0, Lcom/bumptech/glide/disklrucache/DiskLruCache;->maxSize:J
 
-    cmp-long v2, p1, v0
+    cmp-long p1, p1, v0
 
-    if-gtz v2, :cond_8
+    if-gtz p1, :cond_8
 
     invoke-direct {p0}, Lcom/bumptech/glide/disklrucache/DiskLruCache;->journalRebuildRequired()Z
 
@@ -758,30 +758,30 @@
 
     const-wide/16 v1, -0x1
 
-    const/4 v3, 0x0
+    cmp-long v1, p2, v1
 
-    cmp-long v4, p2, v1
+    const/4 v2, 0x0
 
-    if-eqz v4, :cond_1
+    if-eqz v1, :cond_1
 
     if-eqz v0, :cond_0
 
     .line 454
     invoke-static {v0}, Lcom/bumptech/glide/disklrucache/DiskLruCache$Entry;->access$1300(Lcom/bumptech/glide/disklrucache/DiskLruCache$Entry;)J
 
-    move-result-wide v1
+    move-result-wide v3
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    cmp-long v4, v1, p2
+    cmp-long p2, v3, p2
 
-    if-eqz v4, :cond_1
+    if-eqz p2, :cond_1
 
     .line 455
     :cond_0
     monitor-exit p0
 
-    return-object v3
+    return-object v2
 
     :cond_1
     if-nez v0, :cond_2
@@ -790,7 +790,7 @@
     :try_start_1
     new-instance v0, Lcom/bumptech/glide/disklrucache/DiskLruCache$Entry;
 
-    invoke-direct {v0, p0, p1, v3}, Lcom/bumptech/glide/disklrucache/DiskLruCache$Entry;-><init>(Lcom/bumptech/glide/disklrucache/DiskLruCache;Ljava/lang/String;Lcom/bumptech/glide/disklrucache/DiskLruCache$1;)V
+    invoke-direct {v0, p0, p1, v2}, Lcom/bumptech/glide/disklrucache/DiskLruCache$Entry;-><init>(Lcom/bumptech/glide/disklrucache/DiskLruCache;Ljava/lang/String;Lcom/bumptech/glide/disklrucache/DiskLruCache$1;)V
 
     .line 459
     iget-object p2, p0, Lcom/bumptech/glide/disklrucache/DiskLruCache;->lruEntries:Ljava/util/LinkedHashMap;
@@ -812,7 +812,7 @@
     .line 461
     monitor-exit p0
 
-    return-object v3
+    return-object v2
 
     .line 464
     :cond_3
@@ -820,7 +820,7 @@
     :try_start_2
     new-instance p2, Lcom/bumptech/glide/disklrucache/DiskLruCache$Editor;
 
-    invoke-direct {p2, p0, v0, v3}, Lcom/bumptech/glide/disklrucache/DiskLruCache$Editor;-><init>(Lcom/bumptech/glide/disklrucache/DiskLruCache;Lcom/bumptech/glide/disklrucache/DiskLruCache$Entry;Lcom/bumptech/glide/disklrucache/DiskLruCache$1;)V
+    invoke-direct {p2, p0, v0, v2}, Lcom/bumptech/glide/disklrucache/DiskLruCache$Editor;-><init>(Lcom/bumptech/glide/disklrucache/DiskLruCache;Lcom/bumptech/glide/disklrucache/DiskLruCache$Entry;Lcom/bumptech/glide/disklrucache/DiskLruCache$1;)V
 
     .line 465
     invoke-static {v0, p2}, Lcom/bumptech/glide/disklrucache/DiskLruCache$Entry;->access$802(Lcom/bumptech/glide/disklrucache/DiskLruCache$Entry;Lcom/bumptech/glide/disklrucache/DiskLruCache$Editor;)Lcom/bumptech/glide/disklrucache/DiskLruCache$Editor;
@@ -974,9 +974,9 @@
 
     const-wide/16 v0, 0x0
 
-    cmp-long v2, p3, v0
+    cmp-long v0, p3, v0
 
-    if-lez v2, :cond_4
+    if-lez v0, :cond_4
 
     if-lez p2, :cond_3
 
@@ -1993,7 +1993,7 @@
 .end method
 
 .method private trimToSize()V
-    .locals 5
+    .locals 4
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -2006,9 +2006,9 @@
 
     iget-wide v2, p0, Lcom/bumptech/glide/disklrucache/DiskLruCache;->maxSize:J
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-lez v4, :cond_0
+    if-lez v0, :cond_0
 
     .line 652
     iget-object v0, p0, Lcom/bumptech/glide/disklrucache/DiskLruCache;->lruEntries:Ljava/util/LinkedHashMap;

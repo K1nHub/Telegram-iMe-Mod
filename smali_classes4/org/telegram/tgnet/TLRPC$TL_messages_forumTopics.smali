@@ -163,12 +163,12 @@
 
     if-eqz v0, :cond_0
 
-    const/4 v0, 0x1
+    move v0, v1
 
     goto :goto_0
 
     :cond_0
-    const/4 v0, 0x0
+    move v0, v2
 
     :goto_0
     iput-boolean v0, p0, Lorg/telegram/tgnet/TLRPC$TL_messages_forumTopics;->order_by_create_date:Z
@@ -217,7 +217,7 @@
 
     move-result v0
 
-    const/4 v5, 0x0
+    move v5, v2
 
     :goto_1
     if-ge v5, v0, :cond_4
@@ -278,7 +278,7 @@
 
     move-result v0
 
-    const/4 v5, 0x0
+    move v5, v2
 
     :goto_2
     if-ge v5, v0, :cond_8
@@ -339,7 +339,7 @@
 
     move-result v0
 
-    const/4 v5, 0x0
+    move v5, v2
 
     :goto_3
     if-ge v5, v0, :cond_c
@@ -479,7 +479,7 @@
 
     const/4 v2, 0x0
 
-    const/4 v3, 0x0
+    move v3, v2
 
     :goto_1
     if-ge v3, v1, :cond_1
@@ -509,7 +509,7 @@
 
     invoke-virtual {p1, v1}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    const/4 v3, 0x0
+    move v3, v2
 
     :goto_2
     if-ge v3, v1, :cond_2
@@ -539,7 +539,7 @@
 
     invoke-virtual {p1, v1}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    const/4 v3, 0x0
+    move v3, v2
 
     :goto_3
     if-ge v3, v1, :cond_3

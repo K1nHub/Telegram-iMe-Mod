@@ -207,7 +207,7 @@ public final class zzcb {
         int i4 = zzcc.zzje[zzcdVar.ordinal()];
         boolean z = true;
         this.zziz = (i4 == 1 || i4 == 2) ? zzcqVar.zzbq() : null;
-        this.zzja = (zzcdVar != zzcd.SCALAR || (i3 = zzcc.zzjf[zzcqVar.ordinal()]) == 1 || i3 == 2 || i3 == 3) ? false : false;
+        this.zzja = (zzcdVar != zzcd.SCALAR || (i3 = zzcc.zzjf[zzcqVar.ordinal()]) == 1 || i3 == 2 || i3 == 3) ? false : z;
     }
 
     public static zzcb[] values() {

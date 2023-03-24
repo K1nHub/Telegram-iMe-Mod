@@ -155,7 +155,7 @@
 
     int-to-long v10, v3
 
-    mul-long v8, v8, v10
+    mul-long/2addr v8, v10
 
     iput-wide v8, p0, Lorg/telegram/messenger/VideoEditedInfo;->estimatedSize:J
 
@@ -311,7 +311,7 @@
 
     if-gez p3, :cond_2
 
-    const/high16 p1, 0x3f800000    # 1.0f
+    move p1, p2
 
     :cond_2
     float-to-int p1, p1

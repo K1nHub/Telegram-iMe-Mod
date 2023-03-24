@@ -226,7 +226,7 @@
     goto :goto_3
 
     :cond_5
-    const/4 v0, 0x0
+    move v0, v2
 
     :goto_3
     return v0
@@ -308,7 +308,7 @@
 
     if-nez v0, :cond_0
 
-    const/4 v0, 0x0
+    move v0, v1
 
     goto :goto_0
 
@@ -322,7 +322,7 @@
 
     xor-int/2addr v0, v2
 
-    mul-int v0, v0, v2
+    mul-int/2addr v0, v2
 
     .line 119
     iget-object v3, p0, Lcom/google/firebase/installations/local/AutoValue_PersistedInstallationEntry;->registrationStatus:Lcom/google/firebase/installations/local/PersistedInstallation$RegistrationStatus;
@@ -333,14 +333,14 @@
 
     xor-int/2addr v0, v3
 
-    mul-int v0, v0, v2
+    mul-int/2addr v0, v2
 
     .line 121
     iget-object v3, p0, Lcom/google/firebase/installations/local/AutoValue_PersistedInstallationEntry;->authToken:Ljava/lang/String;
 
     if-nez v3, :cond_1
 
-    const/4 v3, 0x0
+    move v3, v1
 
     goto :goto_1
 
@@ -352,14 +352,14 @@
     :goto_1
     xor-int/2addr v0, v3
 
-    mul-int v0, v0, v2
+    mul-int/2addr v0, v2
 
     .line 123
     iget-object v3, p0, Lcom/google/firebase/installations/local/AutoValue_PersistedInstallationEntry;->refreshToken:Ljava/lang/String;
 
     if-nez v3, :cond_2
 
-    const/4 v3, 0x0
+    move v3, v1
 
     goto :goto_2
 
@@ -371,7 +371,7 @@
     :goto_2
     xor-int/2addr v0, v3
 
-    mul-int v0, v0, v2
+    mul-int/2addr v0, v2
 
     .line 125
     iget-wide v3, p0, Lcom/google/firebase/installations/local/AutoValue_PersistedInstallationEntry;->expiresInSecs:J
@@ -382,11 +382,11 @@
 
     xor-long/2addr v3, v6
 
-    long-to-int v4, v3
+    long-to-int v3, v3
 
-    xor-int/2addr v0, v4
+    xor-int/2addr v0, v3
 
-    mul-int v0, v0, v2
+    mul-int/2addr v0, v2
 
     .line 127
     iget-wide v3, p0, Lcom/google/firebase/installations/local/AutoValue_PersistedInstallationEntry;->tokenCreationEpochInSecs:J
@@ -395,11 +395,11 @@
 
     xor-long/2addr v3, v5
 
-    long-to-int v4, v3
+    long-to-int v3, v3
 
-    xor-int/2addr v0, v4
+    xor-int/2addr v0, v3
 
-    mul-int v0, v0, v2
+    mul-int/2addr v0, v2
 
     .line 129
     iget-object v2, p0, Lcom/google/firebase/installations/local/AutoValue_PersistedInstallationEntry;->fisError:Ljava/lang/String;

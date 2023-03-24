@@ -89,7 +89,7 @@
 
     long-to-double v2, v2
 
-    mul-double v0, v0, v2
+    mul-double/2addr v0, v2
 
     double-to-long v0, v0
 
@@ -162,9 +162,9 @@
     .line 143
     iget-wide v8, p0, Lcom/google/firebase/firestore/util/ExponentialBackoff;->currentBaseMs:J
 
-    cmp-long v10, v8, v4
+    cmp-long v4, v8, v4
 
-    if-lez v10, :cond_0
+    if-lez v4, :cond_0
 
     .line 145
     const-class v4, Lcom/google/firebase/firestore/util/ExponentialBackoff;
@@ -244,7 +244,7 @@
 
     iget-wide v2, p0, Lcom/google/firebase/firestore/util/ExponentialBackoff;->backoffFactor:D
 
-    mul-double v0, v0, v2
+    mul-double/2addr v0, v2
 
     double-to-long v0, v0
 

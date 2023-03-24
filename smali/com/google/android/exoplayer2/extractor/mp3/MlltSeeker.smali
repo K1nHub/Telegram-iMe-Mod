@@ -211,7 +211,7 @@
 
     long-to-double p2, p2
 
-    mul-double v0, v0, p2
+    mul-double/2addr v0, p2
 
     double-to-long p2, v0
 

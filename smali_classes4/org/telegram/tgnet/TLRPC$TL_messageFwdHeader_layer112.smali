@@ -17,7 +17,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 45880
+    .line 45890
     invoke-direct {p0}, Lorg/telegram/tgnet/TLRPC$TL_messageFwdHeader;-><init>()V
 
     return-void
@@ -28,7 +28,7 @@
 .method public readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
     .locals 3
 
-    .line 45885
+    .line 45895
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
@@ -39,14 +39,14 @@
 
     if-eqz v0, :cond_0
 
-    .line 45887
+    .line 45897
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_peerUser;
 
     invoke-direct {v0}, Lorg/telegram/tgnet/TLRPC$TL_peerUser;-><init>()V
 
     iput-object v0, p0, Lorg/telegram/tgnet/TLRPC$MessageFwdHeader;->from_id:Lorg/telegram/tgnet/TLRPC$Peer;
 
-    .line 45888
+    .line 45898
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v1
@@ -55,7 +55,7 @@
 
     iput-wide v1, v0, Lorg/telegram/tgnet/TLRPC$Peer;->user_id:J
 
-    .line 45890
+    .line 45900
     :cond_0
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$MessageFwdHeader;->flags:I
 
@@ -63,14 +63,14 @@
 
     if-eqz v0, :cond_1
 
-    .line 45891
+    .line 45901
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readString(Z)Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, p0, Lorg/telegram/tgnet/TLRPC$MessageFwdHeader;->from_name:Ljava/lang/String;
 
-    .line 45893
+    .line 45903
     :cond_1
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
@@ -78,21 +78,21 @@
 
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$MessageFwdHeader;->date:I
 
-    .line 45894
+    .line 45904
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$MessageFwdHeader;->flags:I
 
     and-int/lit8 v0, v0, 0x2
 
     if-eqz v0, :cond_2
 
-    .line 45895
+    .line 45905
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_peerChannel;
 
     invoke-direct {v0}, Lorg/telegram/tgnet/TLRPC$TL_peerChannel;-><init>()V
 
     iput-object v0, p0, Lorg/telegram/tgnet/TLRPC$MessageFwdHeader;->from_id:Lorg/telegram/tgnet/TLRPC$Peer;
 
-    .line 45896
+    .line 45906
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v1
@@ -101,7 +101,7 @@
 
     iput-wide v1, v0, Lorg/telegram/tgnet/TLRPC$Peer;->channel_id:J
 
-    .line 45898
+    .line 45908
     :cond_2
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$MessageFwdHeader;->flags:I
 
@@ -109,14 +109,14 @@
 
     if-eqz v0, :cond_3
 
-    .line 45899
+    .line 45909
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
 
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$MessageFwdHeader;->channel_post:I
 
-    .line 45901
+    .line 45911
     :cond_3
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$MessageFwdHeader;->flags:I
 
@@ -124,14 +124,14 @@
 
     if-eqz v0, :cond_4
 
-    .line 45902
+    .line 45912
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readString(Z)Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, p0, Lorg/telegram/tgnet/TLRPC$MessageFwdHeader;->post_author:Ljava/lang/String;
 
-    .line 45904
+    .line 45914
     :cond_4
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$MessageFwdHeader;->flags:I
 
@@ -139,7 +139,7 @@
 
     if-eqz v0, :cond_5
 
-    .line 45905
+    .line 45915
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
@@ -150,7 +150,7 @@
 
     iput-object v0, p0, Lorg/telegram/tgnet/TLRPC$MessageFwdHeader;->saved_from_peer:Lorg/telegram/tgnet/TLRPC$Peer;
 
-    .line 45907
+    .line 45917
     :cond_5
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$MessageFwdHeader;->flags:I
 
@@ -158,7 +158,7 @@
 
     if-eqz v0, :cond_6
 
-    .line 45908
+    .line 45918
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result p1
@@ -172,33 +172,33 @@
 .method public serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
     .locals 2
 
-    .line 45913
+    .line 45923
     sget v0, Lorg/telegram/tgnet/TLRPC$TL_messageFwdHeader_layer112;->constructor:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 45914
+    .line 45924
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$MessageFwdHeader;->flags:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 45915
+    .line 45925
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$MessageFwdHeader;->flags:I
 
     and-int/lit8 v0, v0, 0x1
 
     if-eqz v0, :cond_0
 
-    .line 45916
+    .line 45926
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$MessageFwdHeader;->from_id:Lorg/telegram/tgnet/TLRPC$Peer;
 
     iget-wide v0, v0, Lorg/telegram/tgnet/TLRPC$Peer;->user_id:J
 
-    long-to-int v1, v0
+    long-to-int v0, v0
 
-    invoke-virtual {p1, v1}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
+    invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 45918
+    .line 45928
     :cond_0
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$MessageFwdHeader;->flags:I
 
@@ -206,34 +206,34 @@
 
     if-eqz v0, :cond_1
 
-    .line 45919
+    .line 45929
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$MessageFwdHeader;->from_name:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeString(Ljava/lang/String;)V
 
-    .line 45921
+    .line 45931
     :cond_1
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$MessageFwdHeader;->date:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 45922
+    .line 45932
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$MessageFwdHeader;->flags:I
 
     and-int/lit8 v0, v0, 0x2
 
     if-eqz v0, :cond_2
 
-    .line 45923
+    .line 45933
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$MessageFwdHeader;->from_id:Lorg/telegram/tgnet/TLRPC$Peer;
 
     iget-wide v0, v0, Lorg/telegram/tgnet/TLRPC$Peer;->channel_id:J
 
-    long-to-int v1, v0
+    long-to-int v0, v0
 
-    invoke-virtual {p1, v1}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
+    invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 45925
+    .line 45935
     :cond_2
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$MessageFwdHeader;->flags:I
 
@@ -241,12 +241,12 @@
 
     if-eqz v0, :cond_3
 
-    .line 45926
+    .line 45936
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$MessageFwdHeader;->channel_post:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 45928
+    .line 45938
     :cond_3
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$MessageFwdHeader;->flags:I
 
@@ -254,12 +254,12 @@
 
     if-eqz v0, :cond_4
 
-    .line 45929
+    .line 45939
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$MessageFwdHeader;->post_author:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeString(Ljava/lang/String;)V
 
-    .line 45931
+    .line 45941
     :cond_4
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$MessageFwdHeader;->flags:I
 
@@ -267,12 +267,12 @@
 
     if-eqz v0, :cond_5
 
-    .line 45932
+    .line 45942
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$MessageFwdHeader;->saved_from_peer:Lorg/telegram/tgnet/TLRPC$Peer;
 
     invoke-virtual {v0, p1}, Lorg/telegram/tgnet/TLObject;->serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
 
-    .line 45934
+    .line 45944
     :cond_5
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$MessageFwdHeader;->flags:I
 
@@ -280,7 +280,7 @@
 
     if-eqz v0, :cond_6
 
-    .line 45935
+    .line 45945
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$MessageFwdHeader;->saved_from_msg_id:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V

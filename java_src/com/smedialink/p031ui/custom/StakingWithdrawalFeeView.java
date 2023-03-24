@@ -8,7 +8,7 @@ import androidx.appcompat.widget.AppCompatTextView;
 import com.smedialink.utils.extentions.common.ViewExtKt;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.messenger.C3286R;
+import org.telegram.messenger.C3301R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.databinding.ForkContentStakingWithdrawalFeeBinding;
 /* compiled from: StakingWithdrawalFeeView.kt */
@@ -67,7 +67,7 @@ public final class StakingWithdrawalFeeView extends FrameLayout {
 
     private final void setupTexts() {
         ForkContentStakingWithdrawalFeeBinding forkContentStakingWithdrawalFeeBinding = this.binding;
-        forkContentStakingWithdrawalFeeBinding.textFeeTitle.setText(LocaleController.getInternalString(C3286R.string.staking_withdraw_fee_title));
-        forkContentStakingWithdrawalFeeBinding.textTimeTitle.setText(LocaleController.getInternalString(C3286R.string.staking_withdraw_time_title));
+        forkContentStakingWithdrawalFeeBinding.textFeeTitle.setText(LocaleController.getInternalString(C3301R.string.staking_withdraw_fee_title));
+        forkContentStakingWithdrawalFeeBinding.textTimeTitle.setText(LocaleController.getInternalString(C3301R.string.staking_withdraw_time_title));
     }
 }

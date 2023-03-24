@@ -179,7 +179,7 @@
 
     const-wide/16 v4, 0x0
 
-    const/4 v6, 0x0
+    move v6, v3
 
     :goto_0
     if-ge v6, v2, :cond_1
@@ -511,7 +511,7 @@
 
     if-eqz v1, :cond_2
 
-    const/4 v4, 0x0
+    move v4, v2
 
     :goto_0
     if-ge v4, v1, :cond_1
@@ -679,7 +679,7 @@
 
     array-length v1, p2
 
-    const/4 v2, 0x0
+    move v2, v3
 
     :goto_0
     if-ge v2, v1, :cond_1

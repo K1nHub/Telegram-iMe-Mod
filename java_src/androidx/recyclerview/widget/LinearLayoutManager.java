@@ -412,7 +412,7 @@ public class LinearLayoutManager extends RecyclerView.LayoutManager implements I
         for (int i5 = 0; i5 < size; i5++) {
             RecyclerView.ViewHolder viewHolder = scrapList.get(i5);
             if (!viewHolder.isRemoved()) {
-                if (((viewHolder.getLayoutPosition() < position) != this.mShouldReverseLayout ? (char) 65535 : (char) 1) == 65535) {
+                if ((viewHolder.getLayoutPosition() < position) != this.mShouldReverseLayout ? true : true) {
                     i3 += this.mOrientationHelper.getDecoratedMeasurement(viewHolder.itemView);
                 } else {
                     i4 += this.mOrientationHelper.getDecoratedMeasurement(viewHolder.itemView);
@@ -469,7 +469,10 @@ public class LinearLayoutManager extends RecyclerView.LayoutManager implements I
             if (findReferenceChildClosestToStart != null) {
                 anchorInfo.assignFromView(findReferenceChildClosestToStart, getPosition(findReferenceChildClosestToStart));
                 if (!state.isPreLayout() && supportsPredictiveItemAnimations()) {
-                    if ((this.mOrientationHelper.getDecoratedStart(findReferenceChildClosestToStart) >= this.mOrientationHelper.getEndAfterPadding() || this.mOrientationHelper.getDecoratedEnd(findReferenceChildClosestToStart) < this.mOrientationHelper.getStartAfterPadding()) ? true : true) {
+                    if (this.mOrientationHelper.getDecoratedStart(findReferenceChildClosestToStart) >= this.mOrientationHelper.getEndAfterPadding() || this.mOrientationHelper.getDecoratedEnd(findReferenceChildClosestToStart) < this.mOrientationHelper.getStartAfterPadding()) {
+                        z = true;
+                    }
+                    if (z) {
                         if (anchorInfo.mLayoutFromEnd) {
                             startAfterPadding = this.mOrientationHelper.getEndAfterPadding();
                         } else {
@@ -1260,14 +1263,14 @@ public class LinearLayoutManager extends RecyclerView.LayoutManager implements I
         resolveShouldLayoutReverse();
         int position = getPosition(view);
         int position2 = getPosition(view2);
-        char c = position < position2 ? (char) 1 : (char) 65535;
+        boolean z = position < position2 ? true : true;
         if (this.mShouldReverseLayout) {
-            if (c == 1) {
+            if (z) {
                 scrollToPositionWithOffset(position2, this.mOrientationHelper.getEndAfterPadding() - (this.mOrientationHelper.getDecoratedStart(view2) + this.mOrientationHelper.getDecoratedMeasurement(view)));
             } else {
                 scrollToPositionWithOffset(position2, this.mOrientationHelper.getEndAfterPadding() - this.mOrientationHelper.getDecoratedEnd(view2));
             }
-        } else if (c == 65535) {
+        } else if (z) {
             scrollToPositionWithOffset(position2, this.mOrientationHelper.getDecoratedStart(view2));
         } else {
             scrollToPositionWithOffset(position2, this.mOrientationHelper.getDecoratedEnd(view2) - this.mOrientationHelper.getDecoratedMeasurement(view));

@@ -20,6 +20,6 @@ public final class WCSessionStoreUiMappingKt {
         if (str == null) {
             str = "";
         }
-        return new WalletConnectSessionItem(key, name, url, str, DateFormatter.format$default(DateFormatter.DateType.DATE_AND_TIME, wCSessionStoreItem.getDate(), null, 4, null), resourceManager.getString(NetworkType.Companion.fromChainId(wCSessionStoreItem.getChainId()).getTitle()));
+        return new WalletConnectSessionItem(key, name, url, str, DateFormatter.format$default(DateFormatter.DateType.DATE_AND_TIME, wCSessionStoreItem.getDate(), null, 4, null), resourceManager.getString(NetworkType.Companion.fromChainId(wCSessionStoreItem.getChainId()).getTitleResId()));
     }
 }

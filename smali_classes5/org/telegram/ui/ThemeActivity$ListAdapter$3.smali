@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/ThemeActivity$ListAdapter;Landroid/content/Context;Lorg/telegram/ui/ActionBar/BaseFragment;ILjava/util/ArrayList;Ljava/util/ArrayList;)V
     .locals 6
 
-    .line 2006
+    .line 2032
     iput-object p1, p0, Lorg/telegram/ui/ThemeActivity$ListAdapter$3;->this$1:Lorg/telegram/ui/ThemeActivity$ListAdapter;
 
     move-object v0, p0
@@ -47,7 +47,7 @@
 .method protected showOptionsForTheme(Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;)V
     .locals 1
 
-    .line 2009
+    .line 2035
     iget-object v0, p0, Lorg/telegram/ui/ThemeActivity$ListAdapter$3;->this$1:Lorg/telegram/ui/ThemeActivity$ListAdapter;
 
     iget-object v0, v0, Lorg/telegram/ui/ThemeActivity$ListAdapter;->this$0:Lorg/telegram/ui/ThemeActivity;
@@ -56,7 +56,7 @@
 
     move-result-object v0
 
-    invoke-static {v0, p1}, Lorg/telegram/ui/ThemeActivity$ListAdapter;->access$3000(Lorg/telegram/ui/ThemeActivity$ListAdapter;Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;)V
+    invoke-static {v0, p1}, Lorg/telegram/ui/ThemeActivity$ListAdapter;->access$2900(Lorg/telegram/ui/ThemeActivity$ListAdapter;Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;)V
 
     return-void
 .end method
@@ -64,7 +64,7 @@
 .method protected updateRows()V
     .locals 2
 
-    .line 2014
+    .line 2040
     iget-object v0, p0, Lorg/telegram/ui/ThemeActivity$ListAdapter$3;->this$1:Lorg/telegram/ui/ThemeActivity$ListAdapter;
 
     iget-object v0, v0, Lorg/telegram/ui/ThemeActivity$ListAdapter;->this$0:Lorg/telegram/ui/ThemeActivity;

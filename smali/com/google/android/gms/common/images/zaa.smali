@@ -86,7 +86,7 @@
 
     invoke-static {v4, v3, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    const/4 v3, 0x1
+    move v3, v1
 
     .line 2
     :goto_0
@@ -108,20 +108,13 @@
     .line 5
     invoke-static {v4, v5, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
+    :cond_0
     :goto_1
     move-object v9, v2
 
     move v10, v3
 
-    goto :goto_2
-
-    :cond_0
-    move-object v9, v2
-
-    const/4 v10, 0x0
-
     .line 4
-    :goto_2
     new-instance v0, Ljava/util/concurrent/CountDownLatch;
 
     .line 6

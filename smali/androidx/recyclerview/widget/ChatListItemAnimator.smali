@@ -377,23 +377,23 @@
 
     sub-float/2addr v1, p9
 
-    mul-float p2, p2, v1
+    mul-float/2addr p2, v1
 
     add-float/2addr p1, p2
 
-    mul-float p4, p4, v1
+    mul-float/2addr p4, v1
 
     add-float/2addr p3, p4
 
-    mul-float p5, p5, v1
+    mul-float/2addr p5, v1
 
-    mul-float p6, p6, p9
+    mul-float/2addr p6, p9
 
     add-float/2addr p5, p6
 
-    mul-float p7, p7, v1
+    mul-float/2addr p7, v1
 
-    mul-float p8, p8, p9
+    mul-float/2addr p8, p9
 
     add-float/2addr p7, p8
 
@@ -426,52 +426,52 @@
 
     sub-float/2addr v1, p8
 
-    mul-float v0, v0, v1
+    mul-float/2addr v0, v1
 
     iget v2, p1, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->animateToImageX:F
 
-    mul-float v2, v2, p8
+    mul-float/2addr v2, p8
 
     add-float/2addr v0, v2
 
     .line 725
     iget v2, p0, Landroidx/recyclerview/widget/ChatListItemAnimator$MoveInfoExtended;->imageY:F
 
-    mul-float v2, v2, v1
+    mul-float/2addr v2, v1
 
     iget v3, p1, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->animateToImageY:F
 
-    mul-float v3, v3, p8
+    mul-float/2addr v3, p8
 
     add-float/2addr v2, v3
 
     .line 726
     iget v3, p0, Landroidx/recyclerview/widget/ChatListItemAnimator$MoveInfoExtended;->imageWidth:F
 
-    mul-float v3, v3, v1
+    mul-float/2addr v3, v1
 
     iget v4, p1, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->animateToImageW:F
 
-    mul-float v4, v4, p8
+    mul-float/2addr v4, p8
 
     add-float/2addr v3, v4
 
     .line 727
     iget p0, p0, Landroidx/recyclerview/widget/ChatListItemAnimator$MoveInfoExtended;->imageHeight:F
 
-    mul-float p0, p0, v1
+    mul-float/2addr p0, v1
 
     iget v4, p1, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->animateToImageH:F
 
-    mul-float v4, v4, p8
+    mul-float/2addr v4, p8
 
     add-float/2addr p0, v4
 
     if-eqz p2, :cond_0
 
-    mul-float p3, p3, v1
+    mul-float/2addr p3, v1
 
-    mul-float p4, p4, p8
+    mul-float/2addr p4, p8
 
     add-float/2addr p3, p4
 
@@ -511,7 +511,7 @@
 
     int-to-float p4, p4
 
-    mul-float p4, p4, v1
+    mul-float/2addr p4, v1
 
     iget-object p1, p1, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->animateToRadius:[I
 
@@ -519,7 +519,7 @@
 
     int-to-float p3, p3
 
-    mul-float p3, p3, p8
+    mul-float/2addr p3, p8
 
     add-float/2addr p4, p3
 
@@ -531,13 +531,13 @@
 
     int-to-float v4, v4
 
-    mul-float v4, v4, v1
+    mul-float/2addr v4, v1
 
     aget p4, p1, p4
 
     int-to-float p4, p4
 
-    mul-float p4, p4, p8
+    mul-float/2addr p4, p8
 
     add-float/2addr v4, p4
 
@@ -549,13 +549,13 @@
 
     int-to-float v5, v5
 
-    mul-float v5, v5, v1
+    mul-float/2addr v5, v1
 
     aget v4, p1, v4
 
     int-to-float v4, v4
 
-    mul-float v4, v4, p8
+    mul-float/2addr v4, p8
 
     add-float/2addr v5, v4
 
@@ -567,13 +567,13 @@
 
     int-to-float p6, p6
 
-    mul-float p6, p6, v1
+    mul-float/2addr p6, v1
 
     aget p1, p1, v5
 
     int-to-float p1, p1
 
-    mul-float p1, p1, p8
+    mul-float/2addr p1, p8
 
     add-float/2addr p6, p1
 
@@ -619,7 +619,7 @@
 
     int-to-float v0, v0
 
-    mul-float v0, v0, p3
+    mul-float/2addr v0, p3
 
     iput v0, p1, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->deltaLeft:F
 
@@ -630,7 +630,7 @@
 
     int-to-float v0, v0
 
-    mul-float v0, v0, p3
+    mul-float/2addr v0, p3
 
     iput v0, p1, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->deltaRight:F
 
@@ -641,7 +641,7 @@
 
     int-to-float v0, v0
 
-    mul-float v0, v0, p3
+    mul-float/2addr v0, p3
 
     iput v0, p1, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->deltaTop:F
 
@@ -652,7 +652,7 @@
 
     int-to-float p0, p0
 
-    mul-float p0, p0, p3
+    mul-float/2addr p0, p3
 
     iput p0, p1, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->deltaBottom:F
 
@@ -666,7 +666,7 @@
 
     int-to-float v0, v0
 
-    mul-float v0, v0, p3
+    mul-float/2addr v0, p3
 
     invoke-virtual {p2}, Lorg/telegram/ui/Cells/ChatMessageCell;->getAnimationOffsetX()F
 
@@ -683,7 +683,7 @@
 
     int-to-float v0, v0
 
-    mul-float v0, v0, p3
+    mul-float/2addr v0, p3
 
     invoke-virtual {p2}, Lorg/telegram/ui/Cells/ChatMessageCell;->getAnimationOffsetX()F
 
@@ -700,7 +700,7 @@
 
     int-to-float v0, v0
 
-    mul-float v0, v0, p3
+    mul-float/2addr v0, p3
 
     invoke-virtual {p2}, Landroid/view/ViewGroup;->getTranslationY()F
 
@@ -717,7 +717,7 @@
 
     int-to-float p0, p0
 
-    mul-float p0, p0, p3
+    mul-float/2addr p0, p3
 
     invoke-virtual {p2}, Landroid/view/ViewGroup;->getTranslationY()F
 
@@ -753,7 +753,7 @@
 
     int-to-float v0, v0
 
-    mul-float v0, v0, p6
+    mul-float/2addr v0, p6
 
     iput v0, p0, Lorg/telegram/messenger/MessageObject$GroupedMessages$TransitionParams;->offsetTop:F
 
@@ -762,7 +762,7 @@
 
     int-to-float v0, v0
 
-    mul-float v0, v0, p6
+    mul-float/2addr v0, p6
 
     iput v0, p0, Lorg/telegram/messenger/MessageObject$GroupedMessages$TransitionParams;->offsetBottom:F
 
@@ -771,7 +771,7 @@
 
     int-to-float v0, v0
 
-    mul-float v0, v0, p6
+    mul-float/2addr v0, p6
 
     iput v0, p0, Lorg/telegram/messenger/MessageObject$GroupedMessages$TransitionParams;->offsetLeft:F
 
@@ -780,19 +780,19 @@
 
     int-to-float p1, p1
 
-    mul-float p1, p1, p6
+    mul-float/2addr p1, p6
 
     iput p1, p0, Lorg/telegram/messenger/MessageObject$GroupedMessages$TransitionParams;->offsetRight:F
 
     if-eqz p2, :cond_0
 
-    mul-float p3, p3, p6
+    mul-float/2addr p3, p6
 
     const/high16 p1, 0x3f800000    # 1.0f
 
     sub-float/2addr p1, p6
 
-    mul-float p4, p4, p1
+    mul-float/2addr p4, p1
 
     add-float/2addr p3, p4
 
@@ -1308,7 +1308,7 @@
     :cond_0
     const/4 v0, 0x0
 
-    const/4 v2, 0x0
+    move v2, v0
 
     .line 203
     :goto_0
@@ -1769,7 +1769,7 @@
 
     const/high16 v1, 0x42c80000    # 100.0f
 
-    mul-float v0, v0, v1
+    mul-float/2addr v0, v1
 
     float-to-long v5, v0
 
@@ -2283,6 +2283,8 @@
 
     return-void
 
+    nop
+
     :array_0
     .array-data 4
         0x0
@@ -2427,7 +2429,7 @@
 
     const/high16 v3, 0x40400000    # 3.0f
 
-    mul-float v2, v2, v3
+    mul-float/2addr v2, v3
 
     cmpg-float p2, p2, v2
 
@@ -2571,9 +2573,9 @@
 
     const/4 p2, 0x0
 
-    const/4 p3, 0x0
+    move p3, p2
 
-    const/4 v0, 0x0
+    move v0, p3
 
     .line 245
     :goto_0
@@ -2610,9 +2612,9 @@
     :cond_1
     if-eqz v0, :cond_2
 
-    const/4 p3, 0x0
+    move p3, p2
 
-    const/4 v0, 0x0
+    move v0, p3
 
     .line 253
     :goto_1
@@ -2646,7 +2648,7 @@
     goto :goto_1
 
     :cond_2
-    const/4 v0, 0x0
+    move v0, p2
 
     .line 258
     :cond_3
@@ -3352,7 +3354,7 @@
 
     if-eqz v6, :cond_9
 
-    const/4 v6, 0x1
+    move v6, v0
 
     goto :goto_4
 
@@ -3681,7 +3683,7 @@
     if-eq v5, v6, :cond_15
 
     :cond_14
-    const/4 v5, 0x1
+    move v5, v0
 
     goto :goto_b
 
@@ -3858,6 +3860,8 @@
     .line 533
     iget-object v6, v2, Lorg/telegram/messenger/MessageObject$GroupedMessages;->transitionParams:Lorg/telegram/messenger/MessageObject$GroupedMessages$TransitionParams;
 
+    move/from16 v20, v0
+
     const/4 v4, 0x0
 
     const/4 v8, 0x0
@@ -3867,8 +3871,6 @@
     const/4 v10, 0x0
 
     const/4 v13, 0x0
-
-    const/16 v20, 0x1
 
     .line 535
     :goto_d
@@ -4766,12 +4768,12 @@
 
     if-eqz v1, :cond_4
 
-    const/16 v18, 0x1
+    move/from16 v18, v15
 
     goto :goto_2
 
     :cond_4
-    const/16 v18, 0x0
+    move/from16 v18, v9
 
     :goto_2
     const/4 v1, 0x0
@@ -4785,7 +4787,7 @@
 
     new-array v2, v1, [I
 
-    const/4 v3, 0x0
+    move v3, v9
 
     :goto_3
     if-ge v3, v1, :cond_5
@@ -4843,7 +4845,7 @@
 
     move/from16 v24, v12
 
-    const/4 v12, 0x2
+    move v12, v7
 
     move-object/from16 v7, p2
 
@@ -4851,7 +4853,7 @@
 
     move-object/from16 v8, v19
 
-    const/4 v10, 0x0
+    move v10, v9
 
     move-object/from16 v9, p1
 
@@ -4873,11 +4875,11 @@
     :cond_7
     move-object/from16 p2, v6
 
+    move v10, v9
+
     move-object/from16 v23, v11
 
     move/from16 v24, v12
-
-    const/4 v10, 0x0
 
     move-object v11, v5
 
@@ -5049,7 +5051,7 @@
 
     move-object/from16 v6, p1
 
-    const/4 v7, 0x0
+    move v7, v10
 
     .line 794
     iget-object v8, v6, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
@@ -5074,12 +5076,12 @@
 
     const/high16 v14, 0x3f800000    # 1.0f
 
-    const/high16 v21, 0x3f800000    # 1.0f
+    move/from16 v21, v14
 
     goto :goto_9
 
     :cond_c
-    const/16 v21, 0x0
+    move/from16 v21, v1
 
     :goto_9
     cmpl-float v1, v8, v21
@@ -5091,7 +5093,7 @@
     goto :goto_a
 
     :cond_d
-    const/16 v19, 0x0
+    move/from16 v19, v7
 
     .line 800
     :goto_a
@@ -5130,7 +5132,7 @@
     :cond_e
     move-object/from16 v6, p1
 
-    const/4 v7, 0x0
+    move v7, v10
 
     .line 824
     :goto_b
@@ -6044,7 +6046,7 @@
     .line 1177
     iput-object v2, p1, Landroidx/recyclerview/widget/DefaultItemAnimator$ChangeInfo;->oldHolder:Landroidx/recyclerview/widget/RecyclerView$ViewHolder;
 
-    const/4 v3, 0x1
+    move v3, v1
 
     .line 1182
     :goto_0
@@ -6541,9 +6543,9 @@
 
     if-eqz v0, :cond_5
 
-    const/4 v0, 0x0
+    move v0, v2
 
-    const/4 v3, 0x0
+    move v3, v0
 
     .line 81
     :goto_0
@@ -6569,7 +6571,7 @@
 
     if-nez v4, :cond_1
 
-    const/4 v4, 0x0
+    move v4, v2
 
     goto :goto_1
 
@@ -6621,7 +6623,7 @@
     if-nez v4, :cond_3
 
     :goto_2
-    const/4 v3, 0x1
+    move v3, v1
 
     :cond_3
     add-int/lit8 v0, v0, 0x1

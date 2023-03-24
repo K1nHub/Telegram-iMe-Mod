@@ -475,12 +475,12 @@
 
     if-eqz v2, :cond_0
 
-    const/4 v2, 0x1
+    move v2, v6
 
     goto :goto_0
 
     :cond_0
-    const/4 v2, 0x0
+    move v2, v4
 
     .line 600
     :goto_0
@@ -1081,7 +1081,7 @@
 
     iput-object v2, v0, Lorg/telegram/ui/Components/PasscodeView;->numberFrameLayouts:Ljava/util/ArrayList;
 
-    const/4 v2, 0x0
+    move v2, v4
 
     :goto_1
     const/16 v12, 0x32
@@ -2648,13 +2648,13 @@
     :cond_4
     sget-wide v0, Lorg/telegram/messenger/SharedConfig;->passcodeRetryInMs:J
 
-    const/4 v2, 0x4
+    cmp-long v0, v0, v3
 
-    const/4 v5, 0x0
+    const/4 v1, 0x4
 
-    cmp-long v6, v0, v3
+    const/4 v2, 0x0
 
-    if-lez v6, :cond_5
+    if-lez v0, :cond_5
 
     iget-object v0, p0, Lorg/telegram/ui/Components/PasscodeView;->sectionPasscodeData:Lorg/fork/controller/LockedSectionsController$SectionPasscodeData;
 
@@ -2667,11 +2667,11 @@
 
     invoke-virtual {v0}, Lorg/fork/controller/LockedSectionsController$SectionPasscodeData;->getPasscodeRetryInMs()J
 
-    move-result-wide v0
+    move-result-wide v5
 
-    cmp-long v6, v0, v3
+    cmp-long v0, v5, v3
 
-    if-lez v6, :cond_b
+    if-lez v0, :cond_b
 
     .line 1228
     :cond_6
@@ -2679,7 +2679,7 @@
 
     const-wide v3, 0x408f400000000000L    # 1000.0
 
-    const/4 v1, 0x1
+    const/4 v5, 0x1
 
     if-eqz v0, :cond_7
 
@@ -2703,7 +2703,7 @@
 
     double-to-int v0, v3
 
-    invoke-static {v1, v0}, Ljava/lang/Math;->max(II)I
+    invoke-static {v5, v0}, Ljava/lang/Math;->max(II)I
 
     move-result v0
 
@@ -2717,9 +2717,9 @@
 
     sget v4, Lorg/telegram/messenger/R$string;->TooManyTries:I
 
-    new-array v1, v1, [Ljava/lang/Object;
+    new-array v5, v5, [Ljava/lang/Object;
 
-    new-array v6, v5, [Ljava/lang/Object;
+    new-array v6, v2, [Ljava/lang/Object;
 
     const-string v7, "Seconds"
 
@@ -2727,15 +2727,15 @@
 
     move-result-object v6
 
-    aput-object v6, v1, v5
+    aput-object v6, v5, v2
 
     const-string v6, "TooManyTries"
 
-    invoke-static {v6, v4, v1}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {v6, v4, v5}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v4
 
-    invoke-virtual {v3, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+    invoke-virtual {v3, v4}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     .line 1231
     iput v0, p0, Lorg/telegram/ui/Components/PasscodeView;->lastValue:I
@@ -2753,12 +2753,12 @@
     .line 1234
     iget-object v0, p0, Lorg/telegram/ui/Components/PasscodeView;->retryTextView:Landroid/widget/TextView;
 
-    invoke-virtual {v0, v5}, Landroid/widget/TextView;->setVisibility(I)V
+    invoke-virtual {v0, v2}, Landroid/widget/TextView;->setVisibility(I)V
 
     .line 1235
     iget-object v0, p0, Lorg/telegram/ui/Components/PasscodeView;->passwordFrameLayout:Landroid/widget/FrameLayout;
 
-    invoke-virtual {v0, v2}, Landroid/widget/FrameLayout;->setVisibility(I)V
+    invoke-virtual {v0, v1}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
     .line 1236
     iget-object v0, p0, Lorg/telegram/ui/Components/PasscodeView;->numbersFrameLayout:Landroid/widget/FrameLayout;
@@ -2772,7 +2772,7 @@
     .line 1237
     iget-object v0, p0, Lorg/telegram/ui/Components/PasscodeView;->numbersFrameLayout:Landroid/widget/FrameLayout;
 
-    invoke-virtual {v0, v2}, Landroid/widget/FrameLayout;->setVisibility(I)V
+    invoke-virtual {v0, v1}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
     .line 1239
     :cond_9
@@ -2813,12 +2813,12 @@
     .line 1246
     iget-object v0, p0, Lorg/telegram/ui/Components/PasscodeView;->retryTextView:Landroid/widget/TextView;
 
-    invoke-virtual {v0, v2}, Landroid/widget/TextView;->setVisibility(I)V
+    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setVisibility(I)V
 
     .line 1247
     iget-object v0, p0, Lorg/telegram/ui/Components/PasscodeView;->passwordFrameLayout:Landroid/widget/FrameLayout;
 
-    invoke-virtual {v0, v5}, Landroid/widget/FrameLayout;->setVisibility(I)V
+    invoke-virtual {v0, v2}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
     .line 1248
     sget-object v0, Lorg/fork/enums/PasscodeType;->PIN:Lorg/fork/enums/PasscodeType;
@@ -2832,7 +2832,7 @@
     .line 1249
     iget-object v0, p0, Lorg/telegram/ui/Components/PasscodeView;->numbersFrameLayout:Landroid/widget/FrameLayout;
 
-    invoke-virtual {v0, v5}, Landroid/widget/FrameLayout;->setVisibility(I)V
+    invoke-virtual {v0, v2}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
     goto :goto_2
 
@@ -3351,7 +3351,7 @@
     invoke-virtual {v1, v2}, Lorg/telegram/ui/Components/PasscodeView$AnimatingTextView;->appendCharacter(Ljava/lang/String;)V
 
     :goto_0
-    const/4 v1, 0x0
+    move v1, v0
 
     .line 958
     :goto_1
@@ -3368,7 +3368,7 @@
 
     if-nez v3, :cond_0
 
-    const/4 v3, 0x0
+    move v3, v0
 
     goto :goto_2
 
@@ -3435,10 +3435,10 @@
     goto :goto_3
 
     :cond_4
-    const/4 v5, 0x0
+    move v5, v0
 
     :goto_3
-    const/4 p1, 0x0
+    move p1, v0
 
     goto :goto_4
 
@@ -3446,7 +3446,7 @@
     :cond_5
     invoke-virtual {v2, v5}, Lorg/telegram/ui/Components/MotionBackgroundDrawable;->switchToNextPosition(Z)V
 
-    const/4 p1, 0x1
+    move p1, v5
 
     :goto_4
     if-eqz v5, :cond_a
@@ -4552,7 +4552,7 @@
     goto :goto_0
 
     :cond_1
-    const/4 v0, 0x0
+    move v0, v2
 
     .line 1867
     :goto_0
@@ -4697,7 +4697,7 @@
 
     if-lt v2, v3, :cond_0
 
-    const/4 v5, 0x0
+    move v5, v4
 
     goto :goto_0
 
@@ -4828,7 +4828,7 @@
     goto :goto_3
 
     :cond_3
-    const/4 v7, 0x0
+    move v7, v4
 
     :goto_3
     add-int/2addr v6, v7
@@ -4867,7 +4867,7 @@
     goto :goto_4
 
     :cond_4
-    const/4 v2, 0x0
+    move v2, v4
 
     :goto_4
     add-int/2addr v1, v2
@@ -4941,7 +4941,7 @@
     goto :goto_5
 
     :cond_6
-    const/4 v2, 0x0
+    move v2, v4
 
     :goto_5
     const/16 v3, 0x210
@@ -4980,14 +4980,14 @@
     :cond_7
     move v3, v2
 
-    const/4 v2, 0x0
+    move v2, v4
 
     goto :goto_6
 
     :cond_8
-    const/4 v2, 0x0
+    move v2, v4
 
-    const/4 v3, 0x0
+    move v3, v2
 
     .line 1781
     :goto_6
@@ -5017,7 +5017,7 @@
     goto :goto_7
 
     :cond_9
-    const/4 v10, 0x0
+    move v10, v4
 
     :goto_7
     add-int/2addr v10, v6
@@ -5056,7 +5056,7 @@
 
     check-cast v5, Landroid/widget/FrameLayout$LayoutParams;
 
-    mul-int/lit8 v6, v6, 0x2
+    mul-int/2addr v6, v9
 
     .line 1790
     iput v6, v5, Landroid/widget/FrameLayout$LayoutParams;->height:I
@@ -5111,7 +5111,7 @@
     goto :goto_8
 
     :cond_b
-    const/4 v2, 0x0
+    move v2, v4
 
     :goto_8
     add-int/2addr v1, v2
@@ -5167,7 +5167,7 @@
 
     if-nez v4, :cond_c
 
-    const/16 v3, 0xa
+    move v3, v5
 
     goto :goto_c
 
@@ -5234,7 +5234,7 @@
 
     add-int/2addr v11, v2
 
-    mul-int v11, v11, v6
+    mul-int/2addr v11, v6
 
     add-int/2addr v11, v2
 
@@ -5249,7 +5249,7 @@
 
     add-int/2addr v6, v0
 
-    mul-int v6, v6, v3
+    mul-int/2addr v6, v3
 
     add-int/2addr v6, v0
 
@@ -5299,7 +5299,7 @@
 
     add-int/2addr v5, v2
 
-    mul-int v5, v5, v6
+    mul-int/2addr v5, v6
 
     add-int/2addr v5, v2
 
@@ -5318,7 +5318,7 @@
 
     add-int/2addr v6, v0
 
-    mul-int v6, v6, v3
+    mul-int/2addr v6, v3
 
     add-int/2addr v6, v0
 
@@ -5357,7 +5357,7 @@
 
     add-int/2addr v5, v2
 
-    mul-int v5, v5, v6
+    mul-int/2addr v5, v6
 
     add-int/2addr v5, v2
 
@@ -5376,7 +5376,7 @@
 
     add-int/2addr v6, v0
 
-    mul-int v6, v6, v3
+    mul-int/2addr v6, v3
 
     add-int/2addr v6, v0
 

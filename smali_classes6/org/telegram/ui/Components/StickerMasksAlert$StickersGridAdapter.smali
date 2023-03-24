@@ -256,7 +256,7 @@
 
     if-nez p1, :cond_0
 
-    const/4 p1, 0x1
+    move p1, v0
 
     .line 1367
     :cond_0
@@ -594,9 +594,9 @@
 
     const/4 v3, -0x3
 
-    const/4 v4, -0x3
+    move v5, v1
 
-    const/4 v5, 0x0
+    move v4, v3
 
     .line 1515
     :goto_1
@@ -809,7 +809,7 @@
 
     invoke-virtual {v13, v14, v5}, Landroid/util/SparseIntArray;->put(II)V
 
-    const/4 v13, 0x0
+    move v13, v1
 
     .line 1550
     :goto_5
@@ -930,7 +930,7 @@
 
     iget v6, v0, Lorg/telegram/ui/Components/StickerMasksAlert$StickersGridAdapter;->stickersPerRow:I
 
-    mul-int v12, v12, v6
+    mul-int/2addr v12, v6
 
     add-int/lit8 v12, v12, 0x1
 
@@ -1237,7 +1237,7 @@
 
     move-result v1
 
-    mul-int p2, p2, v1
+    mul-int/2addr p2, v1
 
     sub-int/2addr v0, p2
 

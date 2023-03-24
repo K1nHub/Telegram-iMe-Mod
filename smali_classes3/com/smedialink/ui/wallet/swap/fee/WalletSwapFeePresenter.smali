@@ -305,7 +305,7 @@
 
     const/4 v3, 0x0
 
-    const/4 v4, 0x0
+    move v4, v3
 
     :goto_0
     if-ge v4, v2, :cond_0
@@ -375,7 +375,7 @@
 
     const/4 v3, 0x0
 
-    const/4 v4, 0x0
+    move v4, v3
 
     :goto_0
     if-ge v4, v2, :cond_0
@@ -433,7 +433,7 @@
 
     const/4 v3, 0x0
 
-    const/4 v4, 0x0
+    move v4, v3
 
     :goto_0
     if-ge v4, v2, :cond_0
@@ -830,7 +830,7 @@
 
     iget-object v2, p0, Lcom/smedialink/ui/wallet/swap/fee/WalletSwapFeePresenter;->metadata:Lcom/smedialink/storage/domain/model/crypto/swap/CryptoSwapMetadata;
 
-    invoke-virtual {v2}, Lcom/smedialink/storage/domain/model/crypto/swap/CryptoSwapMetadata;->getTransactionParams()Lcom/smedialink/storage/domain/model/crypto/TransactionParams;
+    invoke-virtual {v2}, Lcom/smedialink/storage/domain/model/crypto/swap/CryptoSwapMetadata;->getTransactionParams()Lcom/smedialink/storage/domain/model/crypto/TransactionParams$Ether;
 
     move-result-object v2
 

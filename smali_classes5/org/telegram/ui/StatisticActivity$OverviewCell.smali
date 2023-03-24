@@ -74,7 +74,7 @@
 
     invoke-virtual {v0, v5, v8, v6, v7}, Landroid/widget/LinearLayout;->setPadding(IIII)V
 
-    const/4 v5, 0x0
+    move v5, v8
 
     :goto_0
     const/4 v6, 0x2
@@ -89,7 +89,7 @@
     .line 2396
     invoke-virtual {v7, v8}, Landroid/widget/LinearLayout;->setOrientation(I)V
 
-    const/4 v9, 0x0
+    move v9, v8
 
     :goto_1
     if-ge v9, v6, :cond_0
@@ -246,12 +246,12 @@
 
     if-nez v5, :cond_1
 
-    const/16 v16, 0x10
+    move/from16 v16, v4
 
     goto :goto_2
 
     :cond_1
-    const/16 v16, 0x0
+    move/from16 v16, v8
 
     .line 2422
     :goto_2

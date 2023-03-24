@@ -434,7 +434,7 @@
 
     const/4 v13, 0x5
 
-    const/4 v0, 0x5
+    move v0, v13
 
     :goto_0
     if-lez v0, :cond_0
@@ -604,7 +604,7 @@
 .end method
 
 .method protected static implMulwAcc(JJ[JI)V
-    .locals 16
+    .locals 17
 
     move-wide/from16 v0, p0
 
@@ -687,21 +687,21 @@
     :cond_0
     ushr-long v12, v0, v11
 
-    long-to-int v13, v12
+    long-to-int v12, v12
 
-    and-int/lit8 v12, v13, 0x7
+    and-int/lit8 v13, v12, 0x7
 
-    aget-wide v14, v2, v12
+    aget-wide v13, v2, v13
 
-    ushr-int/lit8 v12, v13, 0x3
+    ushr-int/2addr v12, v7
 
     and-int/2addr v12, v8
 
-    aget-wide v12, v2, v12
+    aget-wide v15, v2, v12
 
-    shl-long/2addr v12, v7
+    shl-long/2addr v15, v7
 
-    xor-long/2addr v12, v14
+    xor-long v12, v13, v15
 
     shl-long v14, v12, v11
 
@@ -1178,7 +1178,7 @@
 
     fill-array-data v15, :array_0
 
-    const/4 v4, 0x0
+    move v4, v1
 
     :goto_0
     if-ge v4, v14, :cond_0
@@ -1243,9 +1243,9 @@
 
     add-int/lit8 v4, v4, 0x1
 
-    const/4 v1, 0x0
+    move v14, v1
 
-    const/4 v14, 0x3
+    const/4 v1, 0x0
 
     goto :goto_0
 

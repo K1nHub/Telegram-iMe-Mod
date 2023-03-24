@@ -375,31 +375,32 @@
     :try_end_2
     .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_0
 
-    goto :goto_2
+    goto :goto_1
 
     :catch_0
     move-exception v0
 
-    goto :goto_1
+    goto :goto_0
 
     :catch_1
     move-exception v0
+
+    const/4 v2, 0x0
 
     goto :goto_0
 
     :catch_2
     move-exception v0
 
+    move v2, v10
+
     move-object/from16 p1, v13
 
-    :goto_0
-    const/4 v2, 0x0
-
     .line 211
-    :goto_1
+    :goto_0
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
-    :goto_2
+    :goto_1
     mul-int v0, v17, v16
 
     add-int/2addr v0, v2

@@ -144,7 +144,7 @@
 
     const v1, 0x3dda740e
 
-    mul-float v0, v0, v1
+    mul-float/2addr v0, v1
 
     iput v0, p0, Lorg/telegram/ui/Components/InviteMembersBottomSheet$6;->deltaOffset:F
 
@@ -295,7 +295,7 @@
 
     const/high16 v2, 0x437f0000    # 255.0f
 
-    mul-float v1, v1, v2
+    mul-float/2addr v1, v2
 
     float-to-int v1, v1
 
@@ -320,7 +320,7 @@
 
     move-result v3
 
-    mul-float v3, v3, v2
+    mul-float/2addr v3, v2
 
     float-to-int v2, v3
 

@@ -654,11 +654,11 @@
 
     mul-float v1, p0, p0
 
-    mul-float v1, v1, p0
+    mul-float/2addr v1, p0
 
-    mul-float v1, v1, p0
+    mul-float/2addr v1, p0
 
-    mul-float v1, v1, p0
+    mul-float/2addr v1, p0
 
     add-float/2addr v1, v0
 
@@ -854,7 +854,7 @@
 
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    move v1, v0
 
     .line 661
     :goto_0
@@ -901,7 +901,7 @@
     goto :goto_0
 
     :cond_1
-    const/4 v1, 0x0
+    move v1, v0
 
     :goto_1
     const/4 v2, 0x2
@@ -1248,7 +1248,7 @@
 
     invoke-virtual {v2, p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->setParentFragment(Lorg/telegram/ui/ActionBar/BaseFragment;)V
 
-    const/4 v2, 0x0
+    move v2, v1
 
     .line 482
     :goto_0
@@ -1445,7 +1445,7 @@
 
     invoke-virtual {v5, v4}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
-    const/4 v4, 0x0
+    move v4, v1
 
     :goto_2
     const/4 v5, 0x2
@@ -1534,7 +1534,7 @@
 
     if-ne p1, v0, :cond_7
 
-    const/4 v1, 0x1
+    move v1, v3
 
     :cond_7
     iput-boolean v1, p0, Lorg/telegram/ui/DialogOrContactPickerActivity;->swipeBackEnabled:Z

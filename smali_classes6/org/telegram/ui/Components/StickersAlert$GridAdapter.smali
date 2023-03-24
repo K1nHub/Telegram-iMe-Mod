@@ -298,7 +298,7 @@
     .line 1900
     iput v1, p0, Lorg/telegram/ui/Components/StickersAlert$GridAdapter;->stickersRowCount:I
 
-    const/4 v0, 0x0
+    move v0, v1
 
     .line 1901
     :goto_0
@@ -454,7 +454,7 @@
 
     double-to-int v4, v4
 
-    const/4 v5, 0x0
+    move v5, v1
 
     .line 1919
     :goto_2
@@ -494,7 +494,7 @@
     const/4 v4, 0x1
 
     :cond_4
-    const/4 v3, 0x0
+    move v3, v1
 
     .line 1926
     :goto_3
@@ -521,7 +521,7 @@
     :cond_5
     iget v2, p0, Lorg/telegram/ui/Components/StickersAlert$GridAdapter;->totalItems:I
 
-    mul-int v4, v4, v5
+    mul-int/2addr v4, v5
 
     add-int/2addr v2, v4
 

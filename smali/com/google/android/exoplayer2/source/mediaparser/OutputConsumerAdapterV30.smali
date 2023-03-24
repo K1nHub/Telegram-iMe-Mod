@@ -297,7 +297,7 @@
     goto :goto_0
 
     :cond_0
-    const/4 p2, 0x0
+    move p2, v0
 
     :goto_0
     return p2
@@ -1078,7 +1078,7 @@
 
     invoke-static {v3, v2, v1}, Lcom/google/android/exoplayer2/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
 
-    const/4 v1, 0x0
+    move v1, v0
 
     .line 410
     :goto_0
@@ -1542,7 +1542,7 @@
     sparse-switch v1, :sswitch_data_0
 
     :goto_0
-    const/4 v1, -0x1
+    move v1, v0
 
     goto :goto_1
 
@@ -1574,7 +1574,7 @@
     goto :goto_0
 
     :cond_2
-    const/4 v1, 0x3
+    move v1, v2
 
     goto :goto_1
 
@@ -1590,7 +1590,7 @@
     goto :goto_0
 
     :cond_3
-    const/4 v1, 0x2
+    move v1, v3
 
     goto :goto_1
 
@@ -1606,7 +1606,7 @@
     goto :goto_0
 
     :cond_4
-    const/4 v1, 0x1
+    move v1, v4
 
     goto :goto_1
 
@@ -1798,13 +1798,13 @@
 
     const-wide v2, -0x7fffffffffffffffL    # -4.9E-324
 
-    cmp-long v4, v0, v2
+    cmp-long v2, v0, v2
 
-    if-eqz v4, :cond_0
+    if-eqz v2, :cond_0
 
-    cmp-long v2, p2, v0
+    cmp-long v0, p2, v0
 
-    if-ltz v2, :cond_0
+    if-ltz v0, :cond_0
 
     return-void
 
@@ -1916,7 +1916,7 @@
 .end method
 
 .method public onSeekMapFound(Landroid/media/MediaParser$SeekMap;)V
-    .locals 6
+    .locals 5
 
     .line 254
     iget-boolean v0, p0, Lcom/google/android/exoplayer2/source/mediaparser/OutputConsumerAdapterV30;->expectDummySeekMap:Z
@@ -1954,9 +1954,9 @@
 
     const-wide/32 v3, -0x80000000
 
-    cmp-long v5, v0, v3
+    cmp-long v3, v0, v3
 
-    if-eqz v5, :cond_1
+    if-eqz v3, :cond_1
 
     goto :goto_0
 

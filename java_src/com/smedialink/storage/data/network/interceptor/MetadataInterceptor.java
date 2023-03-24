@@ -70,7 +70,10 @@ public final class MetadataInterceptor implements Interceptor, KoinComponent {
         }
         if (isBinanceRequest(chain.request())) {
             String accessToken = getBinancePayManager().getAccessToken();
-            if (!((accessToken == null || accessToken.length() == 0) ? true : true)) {
+            if (accessToken == null || accessToken.length() == 0) {
+                z = true;
+            }
+            if (!z) {
                 Companion companion2 = Companion;
                 String accessToken2 = getBinancePayManager().getAccessToken();
                 if (accessToken2 == null) {

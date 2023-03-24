@@ -60,7 +60,7 @@
 
     if-gez p3, :cond_1
 
-    const/4 p2, 0x0
+    move p2, p1
 
     goto :goto_0
 
@@ -72,7 +72,7 @@
 
     if-lez p1, :cond_2
 
-    const/high16 p2, 0x3f800000    # 1.0f
+    move p2, v0
 
     .line 18
     :cond_2

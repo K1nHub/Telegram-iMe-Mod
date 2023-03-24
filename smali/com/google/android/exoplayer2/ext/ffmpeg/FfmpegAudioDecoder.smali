@@ -151,9 +151,9 @@
 
     const-wide/16 v0, 0x0
 
-    cmp-long p3, p1, v0
+    cmp-long p1, p1, v0
 
-    if-eqz p3, :cond_2
+    if-eqz p1, :cond_2
 
     .line 73
     invoke-virtual {p0, p4}, Lcom/google/android/exoplayer2/decoder/SimpleDecoder;->setInitialInputBufferSize(I)V
@@ -338,7 +338,7 @@
     goto :goto_0
 
     :cond_3
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_0
     packed-switch v2, :pswitch_data_0

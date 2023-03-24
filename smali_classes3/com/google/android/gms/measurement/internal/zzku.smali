@@ -1022,7 +1022,7 @@
 
     move-result-object p2
 
-    const/4 v4, 0x0
+    move v4, v3
 
     :goto_0
     invoke-interface {p2}, Ljava/util/Iterator;->hasNext()Z
@@ -1081,7 +1081,7 @@
 
     move-result-object p2
 
-    const/4 v4, 0x0
+    move v4, v3
 
     :goto_1
     invoke-interface {p2}, Ljava/util/Iterator;->hasNext()Z
@@ -1144,7 +1144,7 @@
 
     move-result-object p2
 
-    const/4 v5, 0x0
+    move v5, v3
 
     :goto_2
     invoke-interface {p2}, Ljava/util/Iterator;->hasNext()Z
@@ -1251,7 +1251,7 @@
 
     move-result-object p2
 
-    const/4 p3, 0x0
+    move p3, v3
 
     :goto_5
     invoke-interface {p2}, Ljava/util/Iterator;->hasNext()Z
@@ -1310,7 +1310,7 @@
 
     move-result-object p3
 
-    const/4 v1, 0x0
+    move v1, v3
 
     :goto_7
     invoke-interface {p3}, Ljava/util/Iterator;->hasNext()Z
@@ -1814,14 +1814,14 @@
 
     const/4 v3, 0x0
 
-    const/4 v4, 0x0
+    move v4, v3
 
     :goto_0
     if-ge v4, v0, :cond_3
 
     const-wide/16 v5, 0x0
 
-    const/4 v7, 0x0
+    move v7, v3
 
     :goto_1
     if-ge v7, v1, :cond_2
@@ -1918,9 +1918,9 @@
 
     const-wide/16 v0, 0x0
 
-    cmp-long v2, p0, v0
+    cmp-long p0, p0, v0
 
-    if-eqz v2, :cond_0
+    if-eqz p0, :cond_0
 
     const/4 p0, 0x1
 
@@ -2146,7 +2146,7 @@
 
     const/4 v6, 0x0
 
-    const/4 v7, 0x0
+    move v7, v6
 
     :goto_1
     if-ge v7, v5, :cond_4
@@ -2960,9 +2960,9 @@
 
     const-wide/16 v7, 0x0
 
-    cmp-long v9, v4, v7
+    cmp-long v4, v4, v7
 
-    if-eqz v9, :cond_12
+    if-eqz v4, :cond_12
 
     invoke-virtual {v1}, Lcom/google/android/gms/internal/measurement/zzfy;->zzh()J
 
@@ -3907,9 +3907,9 @@
 
     const-wide/16 v3, 0x0
 
-    cmp-long v5, v1, v3
+    cmp-long v1, v1, v3
 
-    if-eqz v5, :cond_3
+    if-eqz v1, :cond_3
 
     goto :goto_2
 
@@ -4022,7 +4022,7 @@
 
     array-length v5, v3
 
-    const/4 v7, 0x0
+    move v7, v6
 
     :goto_2
     if-ge v7, v5, :cond_7
@@ -4062,7 +4062,7 @@
 
     move-result v5
 
-    const/4 v7, 0x0
+    move v7, v6
 
     :goto_3
     if-ge v7, v5, :cond_7
@@ -4301,9 +4301,9 @@
 
     if-eqz v2, :cond_1
 
-    cmp-long v2, p3, v0
+    cmp-long v0, p3, v0
 
-    if-lez v2, :cond_1
+    if-lez v0, :cond_1
 
     .line 1
     iget-object v0, p0, Lcom/google/android/gms/measurement/internal/zzgo;->zzs:Lcom/google/android/gms/measurement/internal/zzfv;
@@ -4323,9 +4323,9 @@
 
     move-result-wide p1
 
-    cmp-long v0, p1, p3
+    cmp-long p1, p1, p3
 
-    if-lez v0, :cond_0
+    if-lez p1, :cond_0
 
     goto :goto_0
 

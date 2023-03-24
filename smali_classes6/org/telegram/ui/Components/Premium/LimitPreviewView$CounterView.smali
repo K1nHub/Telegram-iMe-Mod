@@ -158,7 +158,7 @@
 
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    move v1, v0
 
     .line 500
     :goto_0
@@ -252,7 +252,7 @@
 
     iget v3, p0, Lorg/telegram/ui/Components/Premium/LimitPreviewView$CounterView;->arrowCenter:F
 
-    mul-float v2, v2, v3
+    mul-float/2addr v2, v3
 
     .line 355
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
@@ -437,11 +437,11 @@
 
     const/4 v10, 0x1
 
-    const/4 v2, 0x0
+    move v2, v1
 
-    const/4 v4, 0x1
+    move v5, v2
 
-    const/4 v5, 0x0
+    move v4, v10
 
     .line 448
     :goto_0
@@ -494,7 +494,7 @@
 
     xor-int/lit8 v4, v4, 0x1
 
-    const/4 v5, 0x0
+    move v5, v1
 
     :cond_0
     add-int/2addr v5, v10
@@ -512,17 +512,17 @@
 
     if-nez v7, :cond_1
 
-    const/16 v7, 0xa
+    move v7, v8
 
     :cond_1
-    const/4 v9, 0x1
+    move v9, v10
 
     :goto_1
     if-gt v9, v7, :cond_3
 
     if-ne v9, v8, :cond_2
 
-    const/4 v11, 0x0
+    move v11, v1
 
     goto :goto_2
 
@@ -708,7 +708,7 @@
 
     const-wide/16 v6, 0x3c
 
-    mul-long v4, v4, v6
+    mul-long/2addr v4, v6
 
     invoke-virtual {v3, v4, v5}, Landroid/animation/ValueAnimator;->setStartDelay(J)V
 
@@ -1078,7 +1078,7 @@
     invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
 
     :cond_3
-    const/4 v1, 0x0
+    move v1, v5
 
     .line 411
     :goto_1
@@ -1118,7 +1118,7 @@
 
     iget v9, v3, Lorg/telegram/ui/Components/Premium/LimitPreviewView$CounterView$AnimatedLayout;->progress:F
 
-    mul-float v8, v8, v9
+    mul-float/2addr v8, v9
 
     sub-float v8, v6, v8
 
@@ -1130,7 +1130,7 @@
 
     rsub-int/lit8 v9, v9, 0xa
 
-    mul-int v9, v9, v0
+    mul-int/2addr v9, v0
 
     int-to-float v9, v9
 
@@ -1138,7 +1138,7 @@
 
     invoke-virtual {p1, v7, v8}, Landroid/graphics/Canvas;->translate(FF)V
 
-    const/4 v7, 0x0
+    move v7, v5
 
     .line 416
     :goto_2
@@ -1182,7 +1182,7 @@
 
     iget v9, v3, Lorg/telegram/ui/Components/Premium/LimitPreviewView$CounterView$AnimatedLayout;->progress:F
 
-    mul-float v8, v8, v9
+    mul-float/2addr v8, v9
 
     add-float/2addr v8, v6
 
@@ -1194,7 +1194,7 @@
 
     rsub-int/lit8 v9, v9, 0xa
 
-    mul-int v9, v9, v0
+    mul-int/2addr v9, v0
 
     int-to-float v9, v9
 
@@ -1202,7 +1202,7 @@
 
     invoke-virtual {p1, v7, v8}, Landroid/graphics/Canvas;->translate(FF)V
 
-    const/4 v7, 0x0
+    move v7, v5
 
     .line 422
     :goto_3

@@ -168,7 +168,7 @@
 .end method
 
 .method private static alignInputToEvenPosition(Lcom/google/android/exoplayer2/extractor/ExtractorInput;)V
-    .locals 5
+    .locals 4
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -184,9 +184,9 @@
 
     and-long/2addr v0, v2
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-nez v4, :cond_0
+    if-nez v0, :cond_0
 
     const/4 v0, 0x1
 
@@ -279,7 +279,7 @@
 
     int-to-long v3, v0
 
-    mul-long v1, v1, v3
+    mul-long/2addr v1, v3
 
     iput-wide v1, p0, Lcom/google/android/exoplayer2/extractor/avi/AviExtractor;->durationUs:J
 
@@ -297,7 +297,7 @@
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     :cond_0
     :goto_0
@@ -504,7 +504,7 @@
 .end method
 
 .method private peekSeekOffset(Lcom/google/android/exoplayer2/util/ParsableByteArray;)J
-    .locals 8
+    .locals 7
 
     .line 387
     invoke-virtual {p1}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->bytesLeft()I
@@ -540,9 +540,9 @@
     .line 397
     iget-wide v5, p0, Lcom/google/android/exoplayer2/extractor/avi/AviExtractor;->moviStart:J
 
-    cmp-long v7, v3, v5
+    cmp-long v3, v3, v5
 
-    if-lez v7, :cond_1
+    if-lez v3, :cond_1
 
     goto :goto_0
 
@@ -715,9 +715,9 @@
 
     iget-wide v2, p0, Lcom/google/android/exoplayer2/extractor/avi/AviExtractor;->moviEnd:J
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-ltz v4, :cond_0
+    if-ltz v0, :cond_0
 
     const/4 p1, -0x1
 
@@ -797,7 +797,7 @@
     goto :goto_0
 
     :cond_2
-    const/16 v2, 0x8
+    move v2, v4
 
     .line 427
     :goto_0
@@ -877,7 +877,7 @@
 .end method
 
 .method private resolvePendingReposition(Lcom/google/android/exoplayer2/extractor/ExtractorInput;Lcom/google/android/exoplayer2/extractor/PositionHolder;)Z
-    .locals 9
+    .locals 8
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -889,9 +889,9 @@
 
     const-wide/16 v2, -0x1
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-eqz v4, :cond_2
+    if-eqz v0, :cond_2
 
     .line 310
     invoke-interface {p1}, Lcom/google/android/exoplayer2/extractor/ExtractorInput;->getPosition()J
@@ -909,9 +909,9 @@
 
     add-long/2addr v6, v0
 
-    cmp-long v8, v4, v6
+    cmp-long v6, v4, v6
 
-    if-lez v8, :cond_0
+    if-lez v6, :cond_0
 
     goto :goto_0
 
@@ -1455,7 +1455,7 @@
 
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    move v1, v0
 
     :goto_0
     if-ge v1, p4, :cond_0
@@ -1472,9 +1472,9 @@
     :cond_0
     const-wide/16 p3, 0x0
 
-    cmp-long v1, p1, p3
+    cmp-long p1, p1, p3
 
-    if-nez v1, :cond_2
+    if-nez p1, :cond_2
 
     .line 282
     iget-object p1, p0, Lcom/google/android/exoplayer2/extractor/avi/AviExtractor;->chunkReaders:[Lcom/google/android/exoplayer2/extractor/avi/ChunkReader;

@@ -105,7 +105,7 @@
 
 # virtual methods
 .method public compareTo(Ljava/lang/Long;)I
-    .locals 5
+    .locals 4
 
     .line 348
     iget-wide v0, p0, Lcom/google/android/exoplayer2/source/hls/playlist/HlsMediaPlaylist$SegmentBase;->relativeStartTimeUs:J
@@ -114,9 +114,9 @@
 
     move-result-wide v2
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-lez v4, :cond_0
+    if-lez v0, :cond_0
 
     const/4 p1, 0x1
 

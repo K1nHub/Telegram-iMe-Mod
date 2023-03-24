@@ -1,8 +1,8 @@
 package io.grpc;
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public abstract class ChannelLogger {
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes.dex */
     public enum ChannelLogLevel {
         DEBUG,
         INFO,

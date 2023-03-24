@@ -290,7 +290,7 @@
 
     if-nez p1, :cond_3
 
-    const/4 v2, 0x1
+    move v2, v3
 
     :cond_3
     :goto_0

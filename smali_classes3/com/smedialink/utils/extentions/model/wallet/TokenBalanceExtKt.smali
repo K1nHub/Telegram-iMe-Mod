@@ -197,7 +197,7 @@
 
     :cond_1
     :goto_0
-    const/4 p0, 0x1
+    move p0, v0
 
     :goto_1
     xor-int/2addr p0, v0

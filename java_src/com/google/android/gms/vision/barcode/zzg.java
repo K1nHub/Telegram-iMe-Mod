@@ -17,8 +17,8 @@ public final class zzg implements Parcelable.Creator<Barcode.Email> {
         int validateObjectHeader = SafeParcelReader.validateObjectHeader(parcel);
         String str = null;
         String str2 = null;
-        String str3 = null;
         int i = 0;
+        String str3 = null;
         while (parcel.dataPosition() < validateObjectHeader) {
             int readHeader = SafeParcelReader.readHeader(parcel);
             int fieldId = SafeParcelReader.getFieldId(readHeader);
@@ -27,14 +27,14 @@ public final class zzg implements Parcelable.Creator<Barcode.Email> {
             } else if (fieldId == 3) {
                 str = SafeParcelReader.createString(parcel, readHeader);
             } else if (fieldId == 4) {
-                str2 = SafeParcelReader.createString(parcel, readHeader);
-            } else if (fieldId == 5) {
                 str3 = SafeParcelReader.createString(parcel, readHeader);
+            } else if (fieldId == 5) {
+                str2 = SafeParcelReader.createString(parcel, readHeader);
             } else {
                 SafeParcelReader.skipUnknownField(parcel, readHeader);
             }
         }
         SafeParcelReader.ensureAtEnd(parcel, validateObjectHeader);
-        return new Barcode.Email(i, str, str2, str3);
+        return new Barcode.Email(i, str, str3, str2);
     }
 }

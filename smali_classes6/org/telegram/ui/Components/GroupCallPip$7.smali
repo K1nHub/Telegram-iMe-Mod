@@ -175,12 +175,12 @@
 
     if-gez v5, :cond_0
 
-    const/4 v5, 0x1
+    move v5, v2
 
     goto :goto_0
 
     :cond_0
-    const/4 v5, 0x0
+    move v5, v4
 
     .line 494
     :goto_0
@@ -222,11 +222,11 @@
 
     int-to-float v7, v7
 
-    const/high16 v9, 0x3f800000    # 1.0f
-
-    const/16 v10, 0x28
-
     cmpg-float v6, v6, v7
+
+    const/high16 v7, 0x3f800000    # 1.0f
+
+    const/16 v9, 0x28
 
     if-gez v6, :cond_1
 
@@ -261,7 +261,7 @@
     div-float v0, v3, v0
 
     .line 497
-    invoke-static {v10}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    invoke-static {v9}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v2
 
@@ -279,10 +279,10 @@
 
     div-float/2addr v2, v5
 
-    sub-float/2addr v9, v2
+    sub-float/2addr v7, v2
 
     .line 499
-    invoke-static {v0, v9}, Ljava/lang/Math;->min(FF)F
+    invoke-static {v0, v7}, Ljava/lang/Math;->min(FF)F
 
     move-result v0
 
@@ -301,7 +301,7 @@
 
     int-to-float v5, v5
 
-    mul-float v5, v5, v0
+    mul-float/2addr v5, v0
 
     sub-float v0, v3, v5
 
@@ -330,25 +330,25 @@
 
     sub-float v6, v1, v6
 
-    iget-object v7, p0, Lorg/telegram/ui/Components/GroupCallPip$7;->this$0:Lorg/telegram/ui/Components/GroupCallPip;
+    iget-object v10, p0, Lorg/telegram/ui/Components/GroupCallPip$7;->this$0:Lorg/telegram/ui/Components/GroupCallPip;
 
-    iget-object v7, v7, Lorg/telegram/ui/Components/GroupCallPip;->pipAlertView:Lorg/telegram/ui/Components/GroupCallPipAlertView;
+    iget-object v10, v10, Lorg/telegram/ui/Components/GroupCallPip;->pipAlertView:Lorg/telegram/ui/Components/GroupCallPipAlertView;
 
-    invoke-virtual {v7}, Landroid/widget/LinearLayout;->getMeasuredWidth()I
+    invoke-virtual {v10}, Landroid/widget/LinearLayout;->getMeasuredWidth()I
 
-    move-result v7
+    move-result v10
 
-    int-to-float v7, v7
+    int-to-float v10, v10
 
-    sub-float/2addr v6, v7
+    sub-float/2addr v6, v10
 
     invoke-static {v8}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
-    move-result v7
+    move-result v8
 
-    int-to-float v7, v7
+    int-to-float v8, v8
 
-    cmpl-float v6, v6, v7
+    cmpl-float v6, v6, v8
 
     if-lez v6, :cond_2
 
@@ -368,28 +368,28 @@
     div-float v5, v3, v5
 
     .line 504
-    invoke-static {v10}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    invoke-static {v9}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v6
 
     int-to-float v6, v6
 
-    iget-object v7, p0, Lorg/telegram/ui/Components/GroupCallPip$7;->this$0:Lorg/telegram/ui/Components/GroupCallPip;
+    iget-object v8, p0, Lorg/telegram/ui/Components/GroupCallPip$7;->this$0:Lorg/telegram/ui/Components/GroupCallPip;
 
-    iget-object v7, v7, Lorg/telegram/ui/Components/GroupCallPip;->pipAlertView:Lorg/telegram/ui/Components/GroupCallPipAlertView;
+    iget-object v8, v8, Lorg/telegram/ui/Components/GroupCallPip;->pipAlertView:Lorg/telegram/ui/Components/GroupCallPipAlertView;
 
-    invoke-virtual {v7}, Landroid/widget/LinearLayout;->getMeasuredHeight()I
+    invoke-virtual {v8}, Landroid/widget/LinearLayout;->getMeasuredHeight()I
 
-    move-result v7
+    move-result v8
 
-    int-to-float v7, v7
+    int-to-float v8, v8
 
-    div-float/2addr v6, v7
+    div-float/2addr v6, v8
 
-    sub-float/2addr v9, v6
+    sub-float/2addr v7, v6
 
     .line 505
-    invoke-static {v5, v9}, Ljava/lang/Math;->min(FF)F
+    invoke-static {v5, v7}, Ljava/lang/Math;->min(FF)F
 
     move-result v5
 
@@ -439,7 +439,7 @@
 
     int-to-float v6, v6
 
-    mul-float v6, v6, v5
+    mul-float/2addr v6, v5
 
     sub-float v5, v3, v6
 
@@ -472,7 +472,7 @@
 
     const v5, 0x3e99999a    # 0.3f
 
-    mul-float v2, v2, v5
+    mul-float/2addr v2, v5
 
     cmpl-float v2, v3, v2
 
@@ -492,7 +492,7 @@
     div-float v2, v1, v2
 
     .line 512
-    invoke-static {v10}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    invoke-static {v9}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v5
 
@@ -510,10 +510,10 @@
 
     div-float/2addr v5, v6
 
-    sub-float/2addr v9, v5
+    sub-float/2addr v7, v5
 
     .line 513
-    invoke-static {v2, v9}, Ljava/lang/Math;->min(FF)F
+    invoke-static {v2, v7}, Ljava/lang/Math;->min(FF)F
 
     move-result v2
 
@@ -532,7 +532,7 @@
 
     int-to-float v6, v6
 
-    mul-float v6, v6, v2
+    mul-float/2addr v6, v2
 
     sub-float v2, v1, v6
 
@@ -595,7 +595,7 @@
     div-float v2, v1, v2
 
     .line 519
-    invoke-static {v10}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    invoke-static {v9}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v5
 
@@ -613,10 +613,10 @@
 
     div-float/2addr v5, v6
 
-    sub-float/2addr v9, v5
+    sub-float/2addr v7, v5
 
     .line 520
-    invoke-static {v2, v9}, Ljava/lang/Math;->min(FF)F
+    invoke-static {v2, v7}, Ljava/lang/Math;->min(FF)F
 
     move-result v2
 
@@ -635,7 +635,7 @@
 
     int-to-float v6, v6
 
-    mul-float v6, v6, v2
+    mul-float/2addr v6, v2
 
     sub-float v2, v1, v6
 

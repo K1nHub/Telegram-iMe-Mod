@@ -110,7 +110,7 @@
 
     move-result v5
 
-    mul-int v5, v5, p1
+    mul-int/2addr v5, p1
 
     invoke-virtual {v3}, Landroid/util/Range;->getUpper()Ljava/lang/Comparable;
 
@@ -122,7 +122,7 @@
 
     move-result v3
 
-    mul-int v3, v3, p1
+    mul-int/2addr v3, p1
 
     invoke-direct {v4, v5, v3}, Lorg/webrtc/CameraEnumerationAndroid$CaptureFormat$FramerateRange;-><init>(II)V
 
@@ -428,7 +428,7 @@
 
     const/4 v5, 0x0
 
-    const/4 v6, 0x0
+    move v6, v5
 
     :goto_0
     invoke-interface {v4}, Ljava/util/Iterator;->hasNext()Z
@@ -505,11 +505,11 @@
     move-wide v10, v8
 
     :goto_2
-    cmp-long v12, v10, v8
+    cmp-long v8, v10, v8
 
-    if-nez v12, :cond_2
+    if-nez v8, :cond_2
 
-    move v9, v6
+    move v8, v6
 
     goto :goto_3
 
@@ -526,23 +526,23 @@
 
     move-result-wide v8
 
-    long-to-int v9, v8
+    long-to-int v8, v8
 
-    mul-int/lit16 v9, v9, 0x3e8
+    mul-int/lit16 v8, v8, 0x3e8
 
     .line 219
     :goto_3
-    new-instance v8, Lorg/webrtc/CameraEnumerationAndroid$CaptureFormat;
+    new-instance v9, Lorg/webrtc/CameraEnumerationAndroid$CaptureFormat;
 
     iget v10, v7, Lorg/webrtc/Size;->width:I
 
     iget v11, v7, Lorg/webrtc/Size;->height:I
 
-    invoke-direct {v8, v10, v11, v5, v9}, Lorg/webrtc/CameraEnumerationAndroid$CaptureFormat;-><init>(IIII)V
+    invoke-direct {v9, v10, v11, v5, v8}, Lorg/webrtc/CameraEnumerationAndroid$CaptureFormat;-><init>(IIII)V
 
-    invoke-interface {v4, v8}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+    invoke-interface {v4, v9}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    const-string v8, "Camera2Enumerator"
+    const-string v9, "Camera2Enumerator"
 
     .line 220
     new-instance v10, Ljava/lang/StringBuilder;
@@ -569,13 +569,13 @@
 
     invoke-virtual {v10, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v10, v9}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v10, v8}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     invoke-virtual {v10}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v7
 
-    invoke-static {v8, v7}, Lorg/webrtc/Logging;->d(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v9, v7}, Lorg/webrtc/Logging;->d(Ljava/lang/String;Ljava/lang/String;)V
 
     goto :goto_1
 
@@ -769,7 +769,7 @@
 
     iget v4, v2, Lorg/webrtc/Size;->height:I
 
-    mul-int v3, v3, v4
+    mul-int/2addr v3, v4
 
     invoke-virtual {p0}, Landroid/graphics/Rect;->height()I
 
@@ -777,7 +777,7 @@
 
     iget v5, v2, Lorg/webrtc/Size;->width:I
 
-    mul-int v4, v4, v5
+    mul-int/2addr v4, v5
 
     if-ne v3, v4, :cond_0
 
@@ -826,7 +826,7 @@
     .line 116
     array-length v2, v0
 
-    const/4 v3, 0x0
+    move v3, v1
 
     :goto_0
     if-ge v3, v2, :cond_2

@@ -25,7 +25,7 @@ import kotlin.TuplesKt;
 import kotlin.collections.MapsKt__MapsKt;
 import kotlin.jvm.internal.Intrinsics;
 import moxy.InjectViewState;
-import org.telegram.messenger.C3286R;
+import org.telegram.messenger.C3301R;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.SendMessagesHelper;
 import org.telegram.tgnet.TLRPC$messages_BotResults;
@@ -78,13 +78,13 @@ public final class ReactionPresenter extends BasePresenter<ReactionView> {
         } else {
             reactionRequestData = new ReactionRequestData(ReactionMessageTypes.TEXT, null, messageText, emojiList, buttonList, i);
         }
-        Observable<R> flatMap = this.interactor.prepareLikeMessage(reactionRequestData).flatMap(new C1942x5210a4c3(new ReactionPresenter$prepareTextMessage$$inlined$flatMapSuccess$1(this)));
+        Observable<R> flatMap = this.interactor.prepareLikeMessage(reactionRequestData).flatMap(new C1956x5210a4c3(new ReactionPresenter$prepareTextMessage$$inlined$flatMapSuccess$1(this)));
         Intrinsics.checkNotNullExpressionValue(flatMap, "crossinline body: (T) ->…e.empty()\n        }\n    }");
-        Observable observeOn = flatMap.observeOn(this.schedulersProvider.mo707ui());
+        Observable observeOn = flatMap.observeOn(this.schedulersProvider.mo706ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "interactor\n             …(schedulersProvider.ui())");
         T viewState = getViewState();
         Intrinsics.checkNotNullExpressionValue(viewState, "viewState");
-        Disposable subscribe = RxExtKt.withLoadingDialog$default(observeOn, (BaseView) viewState, false, 2, (Object) null).subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C1938x7bf70dbb(this, messageObject)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C1939x7bf70dbc((BaseView) getViewState())));
+        Disposable subscribe = RxExtKt.withLoadingDialog$default(observeOn, (BaseView) viewState, false, 2, (Object) null).subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C1952x7bf70dbb(this, messageObject)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C1953x7bf70dbc((BaseView) getViewState())));
         Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…  onError.invoke()\n    })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }
@@ -98,7 +98,7 @@ public final class ReactionPresenter extends BasePresenter<ReactionView> {
         if (Patterns.WEB_URL.matcher(url).matches()) {
             ((ReactionView) getViewState()).onUrlValid(i, url);
         } else {
-            ((ReactionView) getViewState()).showToast(this.resourceManager.getString(C3286R.string.chat_reaction_url_validation_error));
+            ((ReactionView) getViewState()).showToast(this.resourceManager.getString(C3301R.string.chat_reaction_url_validation_error));
         }
     }
 
@@ -111,7 +111,7 @@ public final class ReactionPresenter extends BasePresenter<ReactionView> {
     /* JADX INFO: Access modifiers changed from: private */
     public final HashMap<String, String> formatBotRequestParams(TLRPC$messages_BotResults tLRPC$messages_BotResults) {
         HashMap<String, String> hashMapOf;
-        hashMapOf = MapsKt__MapsKt.hashMapOf(TuplesKt.m100to(TtmlNode.ATTR_ID, this.messageId), TuplesKt.m100to("query_id", String.valueOf(tLRPC$messages_BotResults.query_id)), TuplesKt.m100to("bot", String.valueOf(AppConfiguration$Reaction.getBotId())), TuplesKt.m100to("bot_name", AppConfiguration$Reaction.getBotName()));
+        hashMapOf = MapsKt__MapsKt.hashMapOf(TuplesKt.m99to(TtmlNode.ATTR_ID, this.messageId), TuplesKt.m99to("query_id", String.valueOf(tLRPC$messages_BotResults.query_id)), TuplesKt.m99to("bot", String.valueOf(AppConfiguration$Reaction.getBotId())), TuplesKt.m99to("bot_name", AppConfiguration$Reaction.getBotName()));
         return hashMapOf;
     }
 }

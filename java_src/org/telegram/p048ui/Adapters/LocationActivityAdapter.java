@@ -10,7 +10,7 @@ import android.widget.FrameLayout;
 import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import java.util.Locale;
-import org.telegram.messenger.C3286R;
+import org.telegram.messenger.C3301R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.LocationController;
 import org.telegram.messenger.MessageObject;
@@ -141,7 +141,7 @@ public class LocationActivityAdapter extends BaseLocationAdapter implements Loca
         this.currentLiveLocations = new ArrayList<>(arrayList);
         long clientUserId = UserConfig.getInstance(this.currentAccount).getClientUserId();
         for (int i = 0; i < this.currentLiveLocations.size(); i++) {
-            if (this.currentLiveLocations.get(i).f1832id == clientUserId || this.currentLiveLocations.get(i).object.out) {
+            if (this.currentLiveLocations.get(i).f1833id == clientUserId || this.currentLiveLocations.get(i).object.out) {
                 this.currentLiveLocations.remove(i);
                 break;
             }
@@ -169,7 +169,7 @@ public class LocationActivityAdapter extends BaseLocationAdapter implements Loca
                 } else {
                     Location location = this.customLocation;
                     if ((location == null && this.gpsLocation == null) || this.fetchingLocation) {
-                        str = LocaleController.getString("Loading", C3286R.string.Loading);
+                        str = LocaleController.getString("Loading", C3301R.string.Loading);
                     } else if (location != null) {
                         str = String.format(Locale.US, "(%f,%f)", Double.valueOf(location.getLatitude()), Double.valueOf(this.customLocation.getLongitude()));
                     } else {
@@ -177,21 +177,21 @@ public class LocationActivityAdapter extends BaseLocationAdapter implements Loca
                         if (location2 != null) {
                             str = String.format(Locale.US, "(%f,%f)", Double.valueOf(location2.getLatitude()), Double.valueOf(this.gpsLocation.getLongitude()));
                         } else if (!this.myLocationDenied) {
-                            str = LocaleController.getString("Loading", C3286R.string.Loading);
+                            str = LocaleController.getString("Loading", C3301R.string.Loading);
                         }
                     }
                 }
                 if (this.locationType == 4) {
-                    this.sendLocationCell.setText(LocaleController.getString("ChatSetThisLocation", C3286R.string.ChatSetThisLocation), str);
+                    this.sendLocationCell.setText(LocaleController.getString("ChatSetThisLocation", C3301R.string.ChatSetThisLocation), str);
                 } else {
-                    this.sendLocationCell.setText(LocaleController.getString("SendSelectedLocation", C3286R.string.SendSelectedLocation), str);
+                    this.sendLocationCell.setText(LocaleController.getString("SendSelectedLocation", C3301R.string.SendSelectedLocation), str);
                 }
                 this.sendLocationCell.setHasLocation(true);
             } else if (this.gpsLocation != null) {
-                sendLocationCell.setText(LocaleController.getString("SendLocation", C3286R.string.SendLocation), LocaleController.formatString("AccurateTo", C3286R.string.AccurateTo, LocaleController.formatPluralString("Meters", (int) this.gpsLocation.getAccuracy(), new Object[0])));
+                sendLocationCell.setText(LocaleController.getString("SendLocation", C3301R.string.SendLocation), LocaleController.formatString("AccurateTo", C3301R.string.AccurateTo, LocaleController.formatPluralString("Meters", (int) this.gpsLocation.getAccuracy(), new Object[0])));
                 this.sendLocationCell.setHasLocation(true);
             } else {
-                sendLocationCell.setText(LocaleController.getString("SendLocation", C3286R.string.SendLocation), this.myLocationDenied ? "" : LocaleController.getString("Loading", C3286R.string.Loading));
+                sendLocationCell.setText(LocaleController.getString("SendLocation", C3301R.string.SendLocation), this.myLocationDenied ? "" : LocaleController.getString("Loading", C3301R.string.Loading));
                 this.sendLocationCell.setHasLocation(!this.myLocationDenied);
             }
         }
@@ -307,7 +307,7 @@ public class LocationActivityAdapter extends BaseLocationAdapter implements Loca
                 break;
             case 9:
                 View shadowSectionCell = new ShadowSectionCell(this.mContext);
-                CombinedDrawable combinedDrawable = new CombinedDrawable(new ColorDrawable(getThemedColor("windowBackgroundGray")), Theme.getThemedDrawable(this.mContext, C3286R.C3288drawable.greydivider_bottom, "windowBackgroundGrayShadow"));
+                CombinedDrawable combinedDrawable = new CombinedDrawable(new ColorDrawable(getThemedColor("windowBackgroundGray")), Theme.getThemedDrawable(this.mContext, C3301R.C3303drawable.greydivider_bottom, "windowBackgroundGrayShadow"));
                 combinedDrawable.setFullsize(true);
                 shadowSectionCell.setBackgroundDrawable(combinedDrawable);
                 view = shadowSectionCell;
@@ -340,9 +340,9 @@ public class LocationActivityAdapter extends BaseLocationAdapter implements Loca
         if (itemViewType == 2) {
             HeaderCell headerCell = (HeaderCell) viewHolder.itemView;
             if (this.currentMessageObject != null) {
-                headerCell.setText(LocaleController.getString("LiveLocations", C3286R.string.LiveLocations));
+                headerCell.setText(LocaleController.getString("LiveLocations", C3301R.string.LiveLocations));
             } else {
-                headerCell.setText(LocaleController.getString("NearbyVenue", C3286R.string.NearbyVenue));
+                headerCell.setText(LocaleController.getString("NearbyVenue", C3301R.string.NearbyVenue));
             }
         } else if (itemViewType == 3) {
             LocationCell locationCell = (LocationCell) viewHolder.itemView;

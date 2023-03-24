@@ -27,9 +27,9 @@ import kotlin.reflect.KProperty;
 import moxy.MvpDelegate;
 import moxy.ktx.MoxyKtxDelegate;
 import org.koin.p047mp.KoinPlatformTools;
-import org.telegram.messenger.C3286R;
+import org.telegram.messenger.C3301R;
 import org.telegram.messenger.databinding.ForkFragmentWalletInterfaceSettingsBinding;
-import org.telegram.p048ui.ActionBar.C3351ActionBar;
+import org.telegram.p048ui.ActionBar.C3366ActionBar;
 import org.telegram.p048ui.ActionBar.Theme;
 import org.telegram.p048ui.ActionBar.ThemeDescription;
 /* compiled from: WalletAppearanceSettingsFragment.kt */
@@ -53,7 +53,7 @@ public final class WalletAppearanceSettingsFragment extends WalletAuthFragment i
         MvpDelegate mvpDelegate = getMvpDelegate();
         Intrinsics.checkExpressionValueIsNotNull(mvpDelegate, "mvpDelegate");
         this.presenter$delegate = new MoxyKtxDelegate(mvpDelegate, WalletAppearanceSettingsPresenter.class.getName() + ".presenter", walletAppearanceSettingsFragment$presenter$2);
-        lazy = LazyKt__LazyJVMKt.lazy(KoinPlatformTools.INSTANCE.defaultLazyMode(), new C2230x1bdf1139(this, null, null));
+        lazy = LazyKt__LazyJVMKt.lazy(KoinPlatformTools.INSTANCE.defaultLazyMode(), new C2244x1bdf1139(this, null, null));
         this.appearanceSettingsRecycleAdapter$delegate = lazy;
         this.binding$delegate = ResettableLazyDelegateKt.resettableLazy$default(this, (ResettableLazyManager) null, new WalletAppearanceSettingsFragment$binding$2(this), 1, (Object) null);
     }
@@ -112,13 +112,13 @@ public final class WalletAppearanceSettingsFragment extends WalletAuthFragment i
     }
 
     private final void setupActionBar() {
-        C3351ActionBar c3351ActionBar = this.actionBar;
-        c3351ActionBar.setCastShadows(false);
-        c3351ActionBar.setBackButtonImage(C3286R.C3288drawable.ic_ab_back);
-        c3351ActionBar.setAllowOverlayTitle(true);
-        c3351ActionBar.setTitle(getResourceManager().getString(C3286R.string.wallet_settings_interface));
-        c3351ActionBar.setActionBarMenuOnItemClick(new C3351ActionBar.ActionBarMenuOnItemClick() { // from class: com.smedialink.ui.wallet.settings.appearance.WalletAppearanceSettingsFragment$setupActionBar$1$1
-            @Override // org.telegram.p048ui.ActionBar.C3351ActionBar.ActionBarMenuOnItemClick
+        C3366ActionBar c3366ActionBar = this.actionBar;
+        c3366ActionBar.setCastShadows(false);
+        c3366ActionBar.setBackButtonImage(C3301R.C3303drawable.ic_ab_back);
+        c3366ActionBar.setAllowOverlayTitle(true);
+        c3366ActionBar.setTitle(getResourceManager().getString(C3301R.string.wallet_settings_interface));
+        c3366ActionBar.setActionBarMenuOnItemClick(new C3366ActionBar.ActionBarMenuOnItemClick() { // from class: com.smedialink.ui.wallet.settings.appearance.WalletAppearanceSettingsFragment$setupActionBar$1$1
+            @Override // org.telegram.p048ui.ActionBar.C3366ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i) {
                 if (i == -1) {
                     WalletAppearanceSettingsFragment.this.finishFragment();

@@ -379,7 +379,7 @@
 
     const/4 v2, 0x1
 
-    const/4 v3, 0x1
+    move v3, v2
 
     :goto_1
     invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z

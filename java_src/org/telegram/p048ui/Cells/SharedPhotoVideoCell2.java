@@ -17,7 +17,7 @@ import androidx.core.content.ContextCompat;
 import androidx.core.math.MathUtils;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3286R;
+import org.telegram.messenger.C3301R;
 import org.telegram.messenger.DownloadController;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.MessageObject;
@@ -167,16 +167,16 @@ public class SharedPhotoVideoCell2 extends View {
         this.drawVideoIcon = z;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:120:0x0340  */
-    /* JADX WARN: Removed duplicated region for block: B:126:0x0356  */
-    /* JADX WARN: Removed duplicated region for block: B:127:0x036f  */
-    /* JADX WARN: Removed duplicated region for block: B:130:0x0388  */
-    /* JADX WARN: Removed duplicated region for block: B:51:0x0106  */
-    /* JADX WARN: Removed duplicated region for block: B:52:0x0117  */
-    /* JADX WARN: Removed duplicated region for block: B:62:0x0143  */
-    /* JADX WARN: Removed duplicated region for block: B:63:0x015f  */
-    /* JADX WARN: Removed duplicated region for block: B:74:0x0188  */
-    /* JADX WARN: Removed duplicated region for block: B:89:0x023b  */
+    /* JADX WARN: Removed duplicated region for block: B:120:0x0336  */
+    /* JADX WARN: Removed duplicated region for block: B:126:0x034c  */
+    /* JADX WARN: Removed duplicated region for block: B:127:0x0365  */
+    /* JADX WARN: Removed duplicated region for block: B:130:0x037e  */
+    /* JADX WARN: Removed duplicated region for block: B:51:0x0101  */
+    /* JADX WARN: Removed duplicated region for block: B:52:0x0112  */
+    /* JADX WARN: Removed duplicated region for block: B:62:0x013e  */
+    /* JADX WARN: Removed duplicated region for block: B:63:0x0158  */
+    /* JADX WARN: Removed duplicated region for block: B:74:0x0181  */
+    /* JADX WARN: Removed duplicated region for block: B:89:0x0231  */
     @Override // android.view.View
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -184,7 +184,7 @@ public class SharedPhotoVideoCell2 extends View {
     */
     protected void onDraw(android.graphics.Canvas r27) {
         /*
-            Method dump skipped, instructions count: 941
+            Method dump skipped, instructions count: 931
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: org.telegram.p048ui.Cells.SharedPhotoVideoCell2.onDraw(android.graphics.Canvas):void");
@@ -336,7 +336,7 @@ public class SharedPhotoVideoCell2 extends View {
         if (z2) {
             float[] fArr = new float[2];
             fArr[0] = this.checkBoxProgress;
-            fArr[1] = z ? 1.0f : BitmapDescriptorFactory.HUE_RED;
+            fArr[1] = z ? 1.0f : 0.0f;
             ValueAnimator ofFloat = ValueAnimator.ofFloat(fArr);
             this.animator = ofFloat;
             ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Cells.SharedPhotoVideoCell2.2
@@ -361,7 +361,7 @@ public class SharedPhotoVideoCell2 extends View {
             });
             this.animator.start();
         } else {
-            this.checkBoxProgress = z ? 1.0f : BitmapDescriptorFactory.HUE_RED;
+            this.checkBoxProgress = z ? 1.0f : 0.0f;
         }
         invalidate();
     }
@@ -386,7 +386,7 @@ public class SharedPhotoVideoCell2 extends View {
             this.textPaint.setTextSize(AndroidUtilities.m50dp(12));
             this.textPaint.setColor(-1);
             this.textPaint.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
-            Drawable drawable = ContextCompat.getDrawable(context, C3286R.C3288drawable.play_mini_video);
+            Drawable drawable = ContextCompat.getDrawable(context, C3301R.C3303drawable.play_mini_video);
             this.playDrawable = drawable;
             drawable.setBounds(0, 0, drawable.getIntrinsicWidth(), this.playDrawable.getIntrinsicHeight());
             this.backgroundPaint.setColor(Theme.getColor("sharedMedia_photoPlaceholder", resourcesProvider));

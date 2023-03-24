@@ -45,7 +45,7 @@
 
     iget-object v3, p0, Lorg/telegram/ui/LoginActivity$LoginActivitySmsView$$ExternalSyntheticLambda31;->f$3:Lorg/telegram/tgnet/TLRPC$TL_auth_signIn;
 
-    invoke-static {v0, v1, v2, v3}, Lorg/telegram/ui/LoginActivity$LoginActivitySmsView;->$r8$lambda$YlmapvZ384RM9BAs-ug_jsexeQE(Lorg/telegram/ui/LoginActivity$LoginActivitySmsView;Lorg/telegram/tgnet/TLRPC$TL_error;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_auth_signIn;)V
+    invoke-static {v0, v1, v2, v3}, Lorg/telegram/ui/LoginActivity$LoginActivitySmsView;->$r8$lambda$eDu6dVhUZR0jXwCICa_PkOAl4PA(Lorg/telegram/ui/LoginActivity$LoginActivitySmsView;Lorg/telegram/tgnet/TLRPC$TL_error;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_auth_signIn;)V
 
     return-void
 .end method

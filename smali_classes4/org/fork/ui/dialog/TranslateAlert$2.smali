@@ -86,7 +86,7 @@
 
     const/high16 v4, 0x41400000    # 12.0f
 
-    mul-float v2, v2, v4
+    mul-float/2addr v2, v4
 
     invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(F)I
 
@@ -136,7 +136,7 @@
 
     int-to-float v1, v1
 
-    mul-float v3, v3, v1
+    mul-float/2addr v3, v1
 
     invoke-virtual {v0, v3}, Landroid/view/ViewGroup;->setTranslationY(F)V
 
@@ -154,7 +154,7 @@
 
     int-to-float v0, v1
 
-    mul-float v3, v3, v0
+    mul-float/2addr v3, v0
 
     invoke-virtual {p1, v6, v3}, Landroid/graphics/Canvas;->translate(FF)V
 
@@ -218,7 +218,7 @@
 
     move-result v1
 
-    mul-float v0, v0, v1
+    mul-float/2addr v0, v1
 
     float-to-int v0, v0
 
@@ -343,7 +343,7 @@
 
     move-result v3
 
-    mul-float v0, v0, v3
+    mul-float/2addr v0, v3
 
     add-float/2addr v1, v0
 
@@ -362,7 +362,7 @@
 
     const v3, 0x3f4ccccd    # 0.8f
 
-    mul-float v1, v1, v3
+    mul-float/2addr v1, v3
 
     const/16 v3, 0x1e0
 

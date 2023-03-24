@@ -258,12 +258,12 @@
 
     if-ne v2, v4, :cond_6
 
-    const/4 v0, 0x1
+    move v0, v3
 
     goto :goto_3
 
     :cond_6
-    const/4 v0, 0x0
+    move v0, v1
 
     :goto_3
     aput-byte v1, v11, v1
@@ -327,9 +327,9 @@
 
     const-wide/16 v2, 0x0
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-eqz v4, :cond_a
+    if-eqz v0, :cond_a
 
     move v0, p3
 
@@ -460,7 +460,7 @@
     :cond_1
     const-wide/32 v3, 0xbb80
 
-    mul-long v1, v1, v3
+    mul-long/2addr v1, v3
 
     const-wide/32 v3, 0x3b9aca00
 
@@ -522,7 +522,7 @@
 
     const-wide/32 v2, 0xbb80
 
-    mul-long v0, v0, v2
+    mul-long/2addr v0, v2
 
     const-wide/32 v2, 0x3b9aca00
 
@@ -609,7 +609,7 @@
 
     const-wide/32 v2, 0xbb80
 
-    mul-long v0, v0, v2
+    mul-long/2addr v0, v2
 
     const-wide/32 v2, 0x3b9aca00
 
@@ -687,9 +687,9 @@
     const/4 p2, 0x2
 
     :goto_0
-    mul-int p0, p0, p1
+    mul-int/2addr p0, p1
 
-    mul-int p0, p0, p2
+    mul-int/2addr p0, p2
 
     return p0
 .end method
@@ -793,9 +793,9 @@
 
     const-wide/16 v2, 0x0
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-nez v4, :cond_0
+    if-nez v0, :cond_0
 
     iget v0, v15, Lcom/google/android/exoplayer2/ext/opus/OpusDecoder;->preSkipSamples:I
 

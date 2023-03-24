@@ -266,7 +266,7 @@
 
     move-object v9, v7
 
-    const/4 v6, 0x0
+    move v6, v2
 
     :goto_0
     if-ge v8, v5, :cond_3

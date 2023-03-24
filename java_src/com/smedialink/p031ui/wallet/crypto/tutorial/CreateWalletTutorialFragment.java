@@ -40,11 +40,11 @@ import moxy.MvpDelegate;
 import moxy.ktx.MoxyKtxDelegate;
 import org.fork.utils.Callbacks$Callback;
 import org.koin.p047mp.KoinPlatformTools;
-import org.telegram.messenger.C3286R;
+import org.telegram.messenger.C3301R;
 import org.telegram.messenger.databinding.ForkFragmentWalletEthTutorialBinding;
 import org.telegram.p048ui.ActionBar.AlertDialog;
 import org.telegram.p048ui.ActionBar.BackDrawable;
-import org.telegram.p048ui.ActionBar.C3351ActionBar;
+import org.telegram.p048ui.ActionBar.C3366ActionBar;
 import org.telegram.p048ui.ActionBar.Theme;
 import org.telegram.p048ui.ActionBar.ThemeDescription;
 import org.telegram.p048ui.PasscodeActivity;
@@ -180,15 +180,15 @@ public final class CreateWalletTutorialFragment extends WalletAuthFragment imple
     }
 
     private final void setupActionBar() {
-        C3351ActionBar setupActionBar$lambda$3 = this.actionBar;
+        C3366ActionBar setupActionBar$lambda$3 = this.actionBar;
         setupActionBar$lambda$3.setCastShadows(false);
         Intrinsics.checkNotNullExpressionValue(setupActionBar$lambda$3, "setupActionBar$lambda$3");
         ActionBarExtKt.applyColorsWithWhiteBackground(setupActionBar$lambda$3);
         setupActionBar$lambda$3.setAllowOverlayTitle(true);
         setupActionBar$lambda$3.setBackButtonDrawable(new BackDrawable(false));
         setupActionBar$lambda$3.createMenu();
-        setupActionBar$lambda$3.setActionBarMenuOnItemClick(new C3351ActionBar.ActionBarMenuOnItemClick() { // from class: com.smedialink.ui.wallet.crypto.tutorial.CreateWalletTutorialFragment$setupActionBar$1$1
-            @Override // org.telegram.p048ui.ActionBar.C3351ActionBar.ActionBarMenuOnItemClick
+        setupActionBar$lambda$3.setActionBarMenuOnItemClick(new C3366ActionBar.ActionBarMenuOnItemClick() { // from class: com.smedialink.ui.wallet.crypto.tutorial.CreateWalletTutorialFragment$setupActionBar$1$1
+            @Override // org.telegram.p048ui.ActionBar.C3366ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i) {
                 if (i == -1) {
                     CreateWalletTutorialFragment.this.handleBackPressed();
@@ -201,7 +201,7 @@ public final class CreateWalletTutorialFragment extends WalletAuthFragment imple
         if (this.tutorialType instanceof TutorialType.Backup) {
             Activity parentActivity = getParentActivity();
             Intrinsics.checkNotNullExpressionValue(parentActivity, "parentActivity");
-            AlertDialog createDialog$default = DialogUtils.createDialog$default(parentActivity, new DialogModel(getResourceManager().getString(C3286R.string.wallet_backup_quit_alert_title), getResourceManager().getString(C3286R.string.wallet_backup_quit_alert_description), getResourceManager().getString(C3286R.string.wallet_backup_quit_alert_negative_button), getResourceManager().getString(C3286R.string.wallet_backup_quit_alert_positive_button)), new Callbacks$Callback() { // from class: com.smedialink.ui.wallet.crypto.tutorial.CreateWalletTutorialFragment$$ExternalSyntheticLambda0
+            AlertDialog createDialog$default = DialogUtils.createDialog$default(parentActivity, new DialogModel(getResourceManager().getString(C3301R.string.wallet_backup_quit_alert_title), getResourceManager().getString(C3301R.string.wallet_backup_quit_alert_description), getResourceManager().getString(C3301R.string.wallet_backup_quit_alert_negative_button), getResourceManager().getString(C3301R.string.wallet_backup_quit_alert_positive_button)), new Callbacks$Callback() { // from class: com.smedialink.ui.wallet.crypto.tutorial.CreateWalletTutorialFragment$$ExternalSyntheticLambda0
                 @Override // org.fork.utils.Callbacks$Callback
                 public final void invoke() {
                     CreateWalletTutorialFragment.this.finishFragment();
@@ -237,24 +237,24 @@ public final class CreateWalletTutorialFragment extends WalletAuthFragment imple
                     ActionButton onPageSelected$lambda$0 = binding2.buttonAction;
                     CreateWalletTutorialFragment createWalletTutorialFragment = CreateWalletTutorialFragment.this;
                     resourceManager2 = createWalletTutorialFragment.getResourceManager();
-                    onPageSelected$lambda$0.setText(resourceManager2.getString(C3286R.string.common_create));
+                    onPageSelected$lambda$0.setText(resourceManager2.getString(C3301R.string.common_create));
                     Intrinsics.checkNotNullExpressionValue(onPageSelected$lambda$0, "onPageSelected$lambda$0");
-                    ViewExtKt.safeThrottledClick$default(onPageSelected$lambda$0, 0L, new C2102x2903d52b(createWalletTutorialFragment), 1, null);
+                    ViewExtKt.safeThrottledClick$default(onPageSelected$lambda$0, 0L, new C2116x2903d52b(createWalletTutorialFragment), 1, null);
                     return;
                 }
                 binding = CreateWalletTutorialFragment.this.getBinding();
                 ActionButton onPageSelected$lambda$1 = binding.buttonAction;
                 CreateWalletTutorialFragment createWalletTutorialFragment2 = CreateWalletTutorialFragment.this;
                 resourceManager = createWalletTutorialFragment2.getResourceManager();
-                onPageSelected$lambda$1.setText(resourceManager.getString(C3286R.string.common_next));
+                onPageSelected$lambda$1.setText(resourceManager.getString(C3301R.string.common_next));
                 Intrinsics.checkNotNullExpressionValue(onPageSelected$lambda$1, "onPageSelected$lambda$1");
-                ViewExtKt.safeThrottledClick$default(onPageSelected$lambda$1, 0L, new C2103x2903d8ec(createWalletTutorialFragment2), 1, null);
+                ViewExtKt.safeThrottledClick$default(onPageSelected$lambda$1, 0L, new C2117x2903d8ec(createWalletTutorialFragment2), 1, null);
             }
         });
     }
 
     private final void setupTexts() {
-        getBinding().buttonAction.setText(getResourceManager().getString(C3286R.string.common_next));
+        getBinding().buttonAction.setText(getResourceManager().getString(C3301R.string.common_next));
     }
 
     private final void setupColors() {
@@ -270,9 +270,9 @@ public final class CreateWalletTutorialFragment extends WalletAuthFragment imple
         Intrinsics.checkNotNullExpressionValue(buttonAction, "buttonAction");
         ViewExtKt.safeThrottledClick$default(buttonAction, 0L, new CreateWalletTutorialFragment$setupListeners$1$1(binding), 1, null);
         RxEventBus rxEventBus = getRxEventBus();
-        Observable observeOn = rxEventBus.getPublisher().ofType(DomainRxEvents.CryptoEvent.class).observeOn(rxEventBus.getSchedulersProvider().mo707ui());
+        Observable observeOn = rxEventBus.getPublisher().ofType(DomainRxEvents.CryptoEvent.class).observeOn(rxEventBus.getSchedulersProvider().mo706ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "publisher\n              …(schedulersProvider.ui())");
-        Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2099x88dbe126(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2100x88dbe127(null)));
+        Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2113x88dbe126(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2114x88dbe127(null)));
         Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…  onError.invoke()\n    })");
         autoDispose(subscribe);
     }

@@ -42,9 +42,9 @@
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    move v2, v1
 
-    const/4 v3, 0x0
+    move v3, v2
 
     :goto_0
     if-ge v2, v0, :cond_1
@@ -191,7 +191,7 @@
     goto :goto_3
 
     :cond_5
-    mul-int p1, p1, v3
+    mul-int/2addr p1, v3
 
     .line 6088
     invoke-virtual {p0, p1, p2}, Landroid/widget/LinearLayout;->setMeasuredDimension(II)V

@@ -146,12 +146,12 @@
 
     and-long/2addr v0, v2
 
-    long-to-int v1, v0
+    long-to-int v0, v0
 
     .line 122
-    sget-object v0, Lokio/SegmentPool;->hashBuckets:[Ljava/util/concurrent/atomic/AtomicReference;
+    sget-object v1, Lokio/SegmentPool;->hashBuckets:[Ljava/util/concurrent/atomic/AtomicReference;
 
-    aget-object v0, v0, v1
+    aget-object v0, v1, v0
 
     return-object v0
 .end method
@@ -179,7 +179,7 @@
     goto :goto_0
 
     :cond_0
-    const/4 v0, 0x0
+    move v0, v1
 
     :goto_0
     if-eqz v0, :cond_6
@@ -222,7 +222,7 @@
     goto :goto_1
 
     :cond_3
-    const/4 v3, 0x0
+    move v3, v1
 
     .line 109
     :goto_1

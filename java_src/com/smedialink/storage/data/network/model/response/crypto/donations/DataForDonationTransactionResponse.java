@@ -8,11 +8,11 @@ public final class DataForDonationTransactionResponse {
     private final String contractAddress;
     private final String feeTokenCode;
     private final String recipientAddress;
-    private final TransactionParamsResponse transactionParams;
+    private final TransactionParamsResponse.EVM transactionParams;
 
-    public static /* synthetic */ DataForDonationTransactionResponse copy$default(DataForDonationTransactionResponse dataForDonationTransactionResponse, TransactionParamsResponse transactionParamsResponse, String str, String str2, String str3, int i, Object obj) {
+    public static /* synthetic */ DataForDonationTransactionResponse copy$default(DataForDonationTransactionResponse dataForDonationTransactionResponse, TransactionParamsResponse.EVM evm, String str, String str2, String str3, int i, Object obj) {
         if ((i & 1) != 0) {
-            transactionParamsResponse = dataForDonationTransactionResponse.transactionParams;
+            evm = dataForDonationTransactionResponse.transactionParams;
         }
         if ((i & 2) != 0) {
             str = dataForDonationTransactionResponse.feeTokenCode;
@@ -23,10 +23,10 @@ public final class DataForDonationTransactionResponse {
         if ((i & 8) != 0) {
             str3 = dataForDonationTransactionResponse.recipientAddress;
         }
-        return dataForDonationTransactionResponse.copy(transactionParamsResponse, str, str2, str3);
+        return dataForDonationTransactionResponse.copy(evm, str, str2, str3);
     }
 
-    public final TransactionParamsResponse component1() {
+    public final TransactionParamsResponse.EVM component1() {
         return this.transactionParams;
     }
 
@@ -42,7 +42,7 @@ public final class DataForDonationTransactionResponse {
         return this.recipientAddress;
     }
 
-    public final DataForDonationTransactionResponse copy(TransactionParamsResponse transactionParams, String feeTokenCode, String contractAddress, String recipientAddress) {
+    public final DataForDonationTransactionResponse copy(TransactionParamsResponse.EVM transactionParams, String feeTokenCode, String contractAddress, String recipientAddress) {
         Intrinsics.checkNotNullParameter(transactionParams, "transactionParams");
         Intrinsics.checkNotNullParameter(feeTokenCode, "feeTokenCode");
         Intrinsics.checkNotNullParameter(contractAddress, "contractAddress");
@@ -69,7 +69,7 @@ public final class DataForDonationTransactionResponse {
         return "DataForDonationTransactionResponse(transactionParams=" + this.transactionParams + ", feeTokenCode=" + this.feeTokenCode + ", contractAddress=" + this.contractAddress + ", recipientAddress=" + this.recipientAddress + ')';
     }
 
-    public DataForDonationTransactionResponse(TransactionParamsResponse transactionParams, String feeTokenCode, String contractAddress, String recipientAddress) {
+    public DataForDonationTransactionResponse(TransactionParamsResponse.EVM transactionParams, String feeTokenCode, String contractAddress, String recipientAddress) {
         Intrinsics.checkNotNullParameter(transactionParams, "transactionParams");
         Intrinsics.checkNotNullParameter(feeTokenCode, "feeTokenCode");
         Intrinsics.checkNotNullParameter(contractAddress, "contractAddress");
@@ -80,7 +80,7 @@ public final class DataForDonationTransactionResponse {
         this.recipientAddress = recipientAddress;
     }
 
-    public final TransactionParamsResponse getTransactionParams() {
+    public final TransactionParamsResponse.EVM getTransactionParams() {
         return this.transactionParams;
     }
 

@@ -290,7 +290,7 @@
 
     int-to-float v0, v0
 
-    mul-float v0, v0, p1
+    mul-float/2addr v0, p1
 
     add-float/2addr p2, v0
 
@@ -390,7 +390,7 @@
 
     int-to-float v0, v0
 
-    mul-float v0, v0, p1
+    mul-float/2addr v0, p1
 
     add-float/2addr p2, v0
 
@@ -473,7 +473,7 @@
 
     iget v1, p0, Lru/tinkoff/scrollingpagerindicator/ScrollingPagerIndicator;->spaceBetweenDotCenters:I
 
-    mul-int p1, p1, v1
+    mul-int/2addr p1, v1
 
     int-to-float p1, p1
 
@@ -585,7 +585,7 @@
 
     iget v0, p0, Lru/tinkoff/scrollingpagerindicator/ScrollingPagerIndicator;->spaceBetweenDotCenters:I
 
-    mul-int p1, p1, v0
+    mul-int/2addr p1, v0
 
     iget v0, p0, Lru/tinkoff/scrollingpagerindicator/ScrollingPagerIndicator;->dotSelectedSize:I
 
@@ -861,7 +861,7 @@
 
     const v6, 0x3f333333    # 0.7f
 
-    mul-float v5, v5, v6
+    mul-float/2addr v5, v6
 
     .line 472
     div-int/lit8 v4, v4, 0x2
@@ -872,7 +872,7 @@
 
     int-to-float v7, v3
 
-    mul-float v7, v7, v6
+    mul-float/2addr v7, v6
 
     .line 475
     iget v6, v0, Lru/tinkoff/scrollingpagerindicator/ScrollingPagerIndicator;->visibleFramePosition:F
@@ -1016,7 +1016,7 @@
 
     int-to-float v10, v13
 
-    mul-float v10, v10, v9
+    mul-float/2addr v10, v9
 
     add-float/2addr v11, v10
 
@@ -1076,7 +1076,7 @@
 
     sub-float v13, v6, v13
 
-    mul-float v13, v13, v11
+    mul-float/2addr v13, v11
 
     div-float/2addr v13, v10
 
@@ -1117,7 +1117,7 @@
 
     add-float/2addr v15, v14
 
-    mul-float v15, v15, v11
+    mul-float/2addr v15, v11
 
     div-float/2addr v15, v10
 
@@ -1237,7 +1237,7 @@
 
     iget v0, p0, Lru/tinkoff/scrollingpagerindicator/ScrollingPagerIndicator;->spaceBetweenDotCenters:I
 
-    mul-int p1, p1, v0
+    mul-int/2addr p1, v0
 
     iget v0, p0, Lru/tinkoff/scrollingpagerindicator/ScrollingPagerIndicator;->dotSelectedSize:I
 
@@ -1265,7 +1265,7 @@
 
     iget v0, p0, Lru/tinkoff/scrollingpagerindicator/ScrollingPagerIndicator;->spaceBetweenDotCenters:I
 
-    mul-int p1, p1, v0
+    mul-int/2addr p1, v0
 
     iget v0, p0, Lru/tinkoff/scrollingpagerindicator/ScrollingPagerIndicator;->dotSelectedSize:I
 
@@ -1316,7 +1316,7 @@
 
     iget v0, p0, Lru/tinkoff/scrollingpagerindicator/ScrollingPagerIndicator;->spaceBetweenDotCenters:I
 
-    mul-int p2, p2, v0
+    mul-int/2addr p2, v0
 
     iget v0, p0, Lru/tinkoff/scrollingpagerindicator/ScrollingPagerIndicator;->dotSelectedSize:I
 
@@ -1344,7 +1344,7 @@
 
     iget v0, p0, Lru/tinkoff/scrollingpagerindicator/ScrollingPagerIndicator;->spaceBetweenDotCenters:I
 
-    mul-int p2, p2, v0
+    mul-int/2addr p2, v0
 
     iget v0, p0, Lru/tinkoff/scrollingpagerindicator/ScrollingPagerIndicator;->dotSelectedSize:I
 

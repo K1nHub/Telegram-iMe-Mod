@@ -26,13 +26,13 @@
 
 # virtual methods
 .method public continueLoading(J)Z
-    .locals 18
+    .locals 17
 
     move-wide/from16 v0, p1
 
     const/4 v2, 0x0
 
-    const/4 v3, 0x0
+    move v3, v2
 
     .line 68
     :cond_0
@@ -58,9 +58,9 @@
 
     array-length v10, v9
 
-    const/4 v11, 0x0
+    move v11, v2
 
-    const/4 v12, 0x0
+    move v12, v11
 
     :goto_0
     if-ge v11, v10, :cond_5
@@ -85,12 +85,12 @@
     goto :goto_1
 
     :cond_2
-    const/16 v16, 0x0
+    move/from16 v16, v2
 
     :goto_1
-    cmp-long v17, v14, v4
+    cmp-long v14, v14, v4
 
-    if-eqz v17, :cond_3
+    if-eqz v14, :cond_3
 
     if-eqz v16, :cond_4
 
@@ -117,7 +117,7 @@
 .end method
 
 .method public final getBufferedPositionUs()J
-    .locals 12
+    .locals 11
 
     .line 34
     iget-object v0, p0, Lcom/google/android/exoplayer2/source/CompositeSequenceableLoader;->loaders:[Lcom/google/android/exoplayer2/source/SequenceableLoader;
@@ -142,9 +142,9 @@
 
     move-result-wide v9
 
-    cmp-long v11, v9, v7
+    cmp-long v7, v9, v7
 
-    if-eqz v11, :cond_0
+    if-eqz v7, :cond_0
 
     .line 37
     invoke-static {v5, v6, v9, v10}, Ljava/lang/Math;->min(JJ)J
@@ -168,7 +168,7 @@
 .end method
 
 .method public final getNextLoadPositionUs()J
-    .locals 12
+    .locals 11
 
     .line 46
     iget-object v0, p0, Lcom/google/android/exoplayer2/source/CompositeSequenceableLoader;->loaders:[Lcom/google/android/exoplayer2/source/SequenceableLoader;
@@ -193,9 +193,9 @@
 
     move-result-wide v9
 
-    cmp-long v11, v9, v7
+    cmp-long v7, v9, v7
 
-    if-eqz v11, :cond_0
+    if-eqz v7, :cond_0
 
     .line 49
     invoke-static {v5, v6, v9, v10}, Ljava/lang/Math;->min(JJ)J
@@ -228,7 +228,7 @@
 
     const/4 v2, 0x0
 
-    const/4 v3, 0x0
+    move v3, v2
 
     :goto_0
     if-ge v3, v1, :cond_1

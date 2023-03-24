@@ -276,9 +276,9 @@
 
     const-wide/16 v3, 0x0
 
-    cmp-long v5, v1, v3
+    cmp-long v1, v1, v3
 
-    if-lez v5, :cond_0
+    if-lez v1, :cond_0
 
     return-void
 
@@ -403,11 +403,11 @@
 
     iput-object v6, v9, Lorg/telegram/tgnet/TLRPC$TL_stats_loadAsyncGraph;->token:Ljava/lang/String;
 
-    const/4 v6, 0x1
+    cmp-long v3, v1, v3
 
-    cmp-long v8, v1, v3
+    const/4 v4, 0x1
 
-    if-eqz v8, :cond_5
+    if-eqz v3, :cond_5
 
     .line 1150
     iput-wide v1, v9, Lorg/telegram/tgnet/TLRPC$TL_stats_loadAsyncGraph;->x:J
@@ -415,7 +415,7 @@
     .line 1151
     iget v1, v9, Lorg/telegram/tgnet/TLRPC$TL_stats_loadAsyncGraph;->flags:I
 
-    or-int/2addr v1, v6
+    or-int/2addr v1, v4
 
     iput v1, v9, Lorg/telegram/tgnet/TLRPC$TL_stats_loadAsyncGraph;->flags:I
 
@@ -447,7 +447,7 @@
 
     iget-object v1, v1, Lorg/telegram/ui/Charts/BaseChartView;->legendSignatureView:Lorg/telegram/ui/Charts/view_data/LegendSignatureView;
 
-    invoke-virtual {v1, v6, v7}, Lorg/telegram/ui/Charts/view_data/LegendSignatureView;->showProgress(ZZ)V
+    invoke-virtual {v1, v4, v7}, Lorg/telegram/ui/Charts/view_data/LegendSignatureView;->showProgress(ZZ)V
 
     .line 1159
     iget-object v1, v0, Lorg/telegram/ui/StatisticActivity$ChartCell;->this$0:Lorg/telegram/ui/StatisticActivity;

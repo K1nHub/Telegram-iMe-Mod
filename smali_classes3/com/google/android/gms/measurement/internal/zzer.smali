@@ -174,13 +174,8 @@
     :try_end_0
     .catch Ljava/lang/SecurityException; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_0
-
     :catch_0
-    nop
-
     :cond_0
-    :goto_0
     if-eqz v1, :cond_1
 
     .line 5

@@ -551,7 +551,7 @@
 
     if-eq p2, v0, :cond_1
 
-    const/4 v1, 0x1
+    move v1, v2
 
     :cond_1
     invoke-virtual {p1, v1}, Lorg/telegram/ui/Cells/GroupCreateUserCell;->setDrawDivider(Z)V

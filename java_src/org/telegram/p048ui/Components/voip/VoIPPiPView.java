@@ -28,7 +28,7 @@ import com.google.android.exoplayer2.PlaybackException;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.C3286R;
+import org.telegram.messenger.C3301R;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.NotificationCenter;
@@ -274,7 +274,7 @@ public class VoIPPiPView implements VoIPService.StateListener, NotificationCente
         this.yOffset = ((int) ((f * 1.05f) - f)) / 2;
         float f2 = i * 0.4f;
         this.xOffset = ((int) ((1.05f * f2) - f2)) / 2;
-        final Drawable drawable = ContextCompat.getDrawable(context, C3286R.C3288drawable.calls_pip_outershadow);
+        final Drawable drawable = ContextCompat.getDrawable(context, C3301R.C3303drawable.calls_pip_outershadow);
         FrameLayout frameLayout = new FrameLayout(context) { // from class: org.telegram.ui.Components.voip.VoIPPiPView.4
             @Override // android.view.View
             protected void onDraw(Canvas canvas) {
@@ -312,15 +312,15 @@ public class VoIPPiPView implements VoIPService.StateListener, NotificationCente
             this.floatingView.addView(this.topShadow, -1, AndroidUtilities.m50dp(60));
             ImageView imageView = new ImageView(context);
             this.closeIcon = imageView;
-            imageView.setImageResource(C3286R.C3288drawable.pip_close);
+            imageView.setImageResource(C3301R.C3303drawable.pip_close);
             this.closeIcon.setPadding(AndroidUtilities.m50dp(8), AndroidUtilities.m50dp(8), AndroidUtilities.m50dp(8), AndroidUtilities.m50dp(8));
-            this.closeIcon.setContentDescription(LocaleController.getString("Close", C3286R.string.Close));
+            this.closeIcon.setContentDescription(LocaleController.getString("Close", C3301R.string.Close));
             this.floatingView.addView(this.closeIcon, LayoutHelper.createFrame(40, 40, 53, 4, 4, 4, 0));
             ImageView imageView2 = new ImageView(context);
             this.enlargeIcon = imageView2;
-            imageView2.setImageResource(C3286R.C3288drawable.pip_enlarge);
+            imageView2.setImageResource(C3301R.C3303drawable.pip_enlarge);
             this.enlargeIcon.setPadding(AndroidUtilities.m50dp(8), AndroidUtilities.m50dp(8), AndroidUtilities.m50dp(8), AndroidUtilities.m50dp(8));
-            this.enlargeIcon.setContentDescription(LocaleController.getString("Open", C3286R.string.Open));
+            this.enlargeIcon.setContentDescription(LocaleController.getString("Open", C3301R.string.Open));
             this.floatingView.addView(this.enlargeIcon, LayoutHelper.createFrame(40, 40, 51, 4, 4, 4, 0));
             this.closeIcon.setOnClickListener(VoIPPiPView$$ExternalSyntheticLambda2.INSTANCE);
             this.enlargeIcon.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.voip.VoIPPiPView$$ExternalSyntheticLambda1
@@ -431,7 +431,7 @@ public class VoIPPiPView implements VoIPService.StateListener, NotificationCente
             this.currentUserTextureView.setScreenshareMiniProgress(1.0f, false);
         }
         if (!z) {
-            this.progressToCameraMini = this.callingUserIsVideo ? 1.0f : BitmapDescriptorFactory.HUE_RED;
+            this.progressToCameraMini = this.callingUserIsVideo ? 1.0f : 0.0f;
         } else if (z2 != this.callingUserIsVideo) {
             ValueAnimator valueAnimator = this.animatorToCameraMini;
             if (valueAnimator != null) {
@@ -439,7 +439,7 @@ public class VoIPPiPView implements VoIPService.StateListener, NotificationCente
             }
             float[] fArr = new float[2];
             fArr[0] = this.progressToCameraMini;
-            fArr[1] = this.callingUserIsVideo ? 1.0f : BitmapDescriptorFactory.HUE_RED;
+            fArr[1] = this.callingUserIsVideo ? 1.0f : 0.0f;
             ValueAnimator ofFloat = ValueAnimator.ofFloat(fArr);
             this.animatorToCameraMini = ofFloat;
             ofFloat.addUpdateListener(this.animatorToCameraMiniUpdater);
@@ -539,7 +539,7 @@ public class VoIPPiPView implements VoIPService.StateListener, NotificationCente
         */
         public boolean onTouchEvent(android.view.MotionEvent r15) {
             /*
-                Method dump skipped, instructions count: 583
+                Method dump skipped, instructions count: 582
                 To view this dump add '--comments-level debug' option
             */
             throw new UnsupportedOperationException("Method not decompiled: org.telegram.p048ui.Components.voip.VoIPPiPView.FloatingView.onTouchEvent(android.view.MotionEvent):boolean");
@@ -632,7 +632,7 @@ public class VoIPPiPView implements VoIPService.StateListener, NotificationCente
                     }
                 });
                 ofFloat.setDuration(300L).setInterpolator(CubicBezierInterpolator.DEFAULT);
-                ofFloat.addListener(new C54033(z));
+                ofFloat.addListener(new C54183(z));
                 ofFloat.start();
                 VoIPPiPView.this.expandAnimator = ofFloat;
             }
@@ -701,10 +701,10 @@ public class VoIPPiPView implements VoIPService.StateListener, NotificationCente
         /* JADX INFO: Access modifiers changed from: package-private */
         /* renamed from: org.telegram.ui.Components.voip.VoIPPiPView$FloatingView$3 */
         /* loaded from: classes6.dex */
-        public class C54033 extends AnimatorListenerAdapter {
+        public class C54183 extends AnimatorListenerAdapter {
             final /* synthetic */ boolean val$expanded;
 
-            C54033(boolean z) {
+            C54183(boolean z) {
                 this.val$expanded = z;
             }
 
@@ -720,7 +720,7 @@ public class VoIPPiPView implements VoIPService.StateListener, NotificationCente
                 AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.voip.VoIPPiPView$FloatingView$3$$ExternalSyntheticLambda0
                     @Override // java.lang.Runnable
                     public final void run() {
-                        VoIPPiPView.FloatingView.C54033.this.lambda$onAnimationEnd$0(z);
+                        VoIPPiPView.FloatingView.C54183.this.lambda$onAnimationEnd$0(z);
                     }
                 }, 64L);
             }
@@ -749,10 +749,10 @@ public class VoIPPiPView implements VoIPService.StateListener, NotificationCente
                 VoIPPiPView.expandedInstance.closeIcon.setAlpha(BitmapDescriptorFactory.HUE_RED);
                 VoIPPiPView.expandedInstance.enlargeIcon.setAlpha(BitmapDescriptorFactory.HUE_RED);
             }
-            ViewPropertyAnimator duration = VoIPPiPView.expandedInstance.topShadow.animate().alpha(z ? 1.0f : BitmapDescriptorFactory.HUE_RED).setDuration(300L);
+            ViewPropertyAnimator duration = VoIPPiPView.expandedInstance.topShadow.animate().alpha(z ? 1.0f : 0.0f).setDuration(300L);
             CubicBezierInterpolator cubicBezierInterpolator = CubicBezierInterpolator.DEFAULT;
             duration.setInterpolator(cubicBezierInterpolator).start();
-            VoIPPiPView.expandedInstance.closeIcon.animate().alpha(z ? 1.0f : BitmapDescriptorFactory.HUE_RED).setDuration(300L).setInterpolator(cubicBezierInterpolator).start();
+            VoIPPiPView.expandedInstance.closeIcon.animate().alpha(z ? 1.0f : 0.0f).setDuration(300L).setInterpolator(cubicBezierInterpolator).start();
             ViewPropertyAnimator animate = VoIPPiPView.expandedInstance.enlargeIcon.animate();
             if (z) {
                 f = 1.0f;

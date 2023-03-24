@@ -153,7 +153,7 @@
     goto :goto_0
 
     :cond_1
-    const/4 v0, 0x0
+    move v0, v1
 
     :goto_0
     iput v0, p0, Lorg/telegram/ui/UsersSelectActivity$GroupCreateAdapter;->usersStartRow:I
@@ -186,9 +186,9 @@
 
     move-result v0
 
-    const/4 v3, 0x0
+    move v3, v1
 
-    const/4 v4, 0x0
+    move v4, v3
 
     :goto_1
     if-ge v3, v0, :cond_a
@@ -306,7 +306,7 @@
 
     if-eqz v5, :cond_9
 
-    const/4 v4, 0x1
+    move v4, v2
 
     goto :goto_2
 
@@ -539,12 +539,12 @@
 
     if-eqz v2, :cond_3
 
-    const/4 v6, 0x1
+    move v6, v5
 
     goto :goto_0
 
     :cond_3
-    const/4 v6, 0x0
+    move v6, v3
 
     :goto_0
     add-int/2addr v6, v5
@@ -571,7 +571,7 @@
 
     invoke-direct {v2}, Ljava/util/ArrayList;-><init>()V
 
-    const/4 v8, 0x0
+    move v8, v3
 
     .line 1456
     :goto_1
@@ -722,9 +722,9 @@
     aput-object v4, v11, v5
 
     :cond_8
-    const/4 v14, 0x0
+    move v14, v3
 
-    const/4 v15, 0x0
+    move v15, v14
 
     :goto_3
     if-ge v14, v6, :cond_11
@@ -914,13 +914,13 @@
 
     add-int/lit8 v14, v14, 0x1
 
+    move v5, v4
+
     move-object v4, v6
 
     move/from16 v6, v17
 
     const/4 v3, 0x0
-
-    const/4 v5, 0x1
 
     const/4 v13, 0x2
 
@@ -931,18 +931,18 @@
 
     move-object v6, v4
 
-    const/4 v4, 0x1
+    move v4, v5
 
     :goto_9
     add-int/lit8 v8, v8, 0x1
+
+    move v5, v4
 
     move-object v4, v6
 
     move/from16 v6, v17
 
     const/4 v3, 0x0
-
-    const/4 v5, 0x1
 
     goto/16 :goto_1
 
@@ -969,14 +969,14 @@
 
     if-eq v1, v2, :cond_0
 
-    const/4 v5, 0x1
+    move v5, v2
 
     goto :goto_0
 
     :cond_0
     const/4 v1, 0x0
 
-    const/4 v5, 0x0
+    move v5, v1
 
     :goto_0
     const/4 v6, 0x0
@@ -1228,7 +1228,7 @@
 
     if-nez p1, :cond_1
 
-    const/4 v1, 0x2
+    move v1, v3
 
     :cond_1
     return v1
@@ -1291,7 +1291,7 @@
 
     int-to-float p1, p1
 
-    mul-float p1, p1, p2
+    mul-float/2addr p1, p2
 
     float-to-int p1, p1
 
@@ -1863,12 +1863,12 @@
 
     if-ne v2, v3, :cond_13
 
-    const/4 v2, 0x1
+    move v2, v5
 
     goto :goto_4
 
     :cond_13
-    const/4 v2, 0x0
+    move v2, v7
 
     :goto_4
     invoke-virtual {v1, v2, v7}, Lorg/telegram/ui/Cells/GroupCreateUserCell;->setChecked(ZZ)V
@@ -1937,7 +1937,7 @@
 
     move-result v3
 
-    if-nez v3, :cond_1d
+    if-nez v3, :cond_1c
 
     .line 1299
     iget-boolean v3, v0, Lorg/telegram/ui/UsersSelectActivity$GroupCreateAdapter;->searching:Z
@@ -1963,7 +1963,7 @@
 
     move-result v12
 
-    const/4 v13, 0x0
+    move v13, v7
 
     :goto_7
     if-ge v13, v12, :cond_1b
@@ -2012,15 +2012,14 @@
     goto :goto_7
 
     :cond_1b
-    const/4 v3, 0x0
+    move v12, v5
 
-    :cond_1c
-    const/4 v12, 0x1
+    move v3, v7
 
     goto/16 :goto_a
 
     .line 1315
-    :cond_1d
+    :cond_1c
     iget-object v3, v0, Lorg/telegram/ui/UsersSelectActivity$GroupCreateAdapter;->this$0:Lorg/telegram/ui/UsersSelectActivity;
 
     invoke-virtual {v3}, Lorg/telegram/ui/ActionBar/BaseFragment;->getMessagesController()Lorg/telegram/messenger/MessagesController;
@@ -2033,7 +2032,7 @@
 
     move-result-object v3
 
-    if-eqz v3, :cond_1e
+    if-eqz v3, :cond_1d
 
     .line 1316
     iget-object v3, v0, Lorg/telegram/ui/UsersSelectActivity$GroupCreateAdapter;->this$0:Lorg/telegram/ui/UsersSelectActivity;
@@ -2054,13 +2053,13 @@
 
     goto :goto_8
 
-    :cond_1e
-    const/4 v3, 0x0
+    :cond_1d
+    move v3, v7
 
     :goto_8
     const-string v6, "d"
 
-    if-lez v3, :cond_1f
+    if-lez v3, :cond_1e
 
     .line 1320
     new-instance v12, Landroid/text/SpannableStringBuilder;
@@ -2102,14 +2101,14 @@
 
     invoke-virtual {v12, v3}, Landroid/text/SpannableStringBuilder;->append(Ljava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;
 
-    move-object v6, v12
+    move v3, v5
 
-    const/4 v3, 0x1
+    move-object v6, v12
 
     goto :goto_9
 
     .line 1326
-    :cond_1f
+    :cond_1e
     new-instance v3, Landroid/text/SpannableStringBuilder;
 
     invoke-direct {v3}, Landroid/text/SpannableStringBuilder;-><init>()V
@@ -2141,13 +2140,13 @@
 
     move-object v6, v3
 
-    const/4 v3, 0x0
+    move v3, v7
 
     .line 1332
     :goto_9
     instance-of v12, v4, Lorg/telegram/tgnet/TLRPC$Chat;
 
-    if-eqz v12, :cond_1c
+    if-eqz v12, :cond_1f
 
     .line 1333
     move-object v12, v4
@@ -2159,6 +2158,11 @@
     invoke-static {v12, v13}, Lorg/telegram/messenger/ChatObject;->canUserDoAdminAction(Lorg/telegram/tgnet/TLRPC$Chat;I)Z
 
     move-result v12
+
+    goto :goto_a
+
+    :cond_1f
+    move v12, v5
 
     .line 1337
     :goto_a
@@ -2282,12 +2286,12 @@
 
     if-ltz v2, :cond_25
 
-    const/4 v2, 0x1
+    move v2, v5
 
     goto :goto_e
 
     :cond_25
-    const/4 v2, 0x0
+    move v2, v7
 
     :goto_e
     invoke-virtual {v1, v2, v7}, Lorg/telegram/ui/Cells/GroupCreateUserCell;->setChecked(ZZ)V

@@ -62,7 +62,7 @@
 
     aget v2, p1, v0
 
-    mul-float v1, v1, v2
+    mul-float/2addr v1, v2
 
     const/16 v2, 0x8
 
@@ -70,7 +70,7 @@
 
     aget v4, p1, v2
 
-    mul-float v3, v3, v4
+    mul-float/2addr v3, v4
 
     add-float/2addr v1, v3
 

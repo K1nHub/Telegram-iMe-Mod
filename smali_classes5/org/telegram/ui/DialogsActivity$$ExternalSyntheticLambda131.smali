@@ -6,16 +6,16 @@
 
 
 # instance fields
-.field public final synthetic f$0:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;
+.field public final synthetic f$0:Lorg/telegram/ui/DialogsActivity;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;)V
+.method public synthetic constructor <init>(Lorg/telegram/ui/DialogsActivity;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda131;->f$0:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;
+    iput-object p1, p0, Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda131;->f$0:Lorg/telegram/ui/DialogsActivity;
 
     return-void
 .end method
@@ -25,9 +25,9 @@
 .method public final onDispatchKeyEvent(Landroid/view/KeyEvent;)V
     .locals 1
 
-    iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda131;->f$0:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;
+    iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda131;->f$0:Lorg/telegram/ui/DialogsActivity;
 
-    invoke-static {v0, p1}, Lorg/telegram/ui/DialogsActivity;->$r8$lambda$MgVsQ-NwjPvfYZhhJEYSnwI1Djw(Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;Landroid/view/KeyEvent;)V
+    invoke-static {v0, p1}, Lorg/telegram/ui/DialogsActivity;->$r8$lambda$32RtK78b6skauze_E2c05tTvixs(Lorg/telegram/ui/DialogsActivity;Landroid/view/KeyEvent;)V
 
     return-void
 .end method

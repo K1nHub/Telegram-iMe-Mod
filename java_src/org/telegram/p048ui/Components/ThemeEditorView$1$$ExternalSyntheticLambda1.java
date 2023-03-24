@@ -12,6 +12,6 @@ public final /* synthetic */ class ThemeEditorView$1$$ExternalSyntheticLambda1 i
 
     @Override // android.content.DialogInterface.OnDismissListener
     public final void onDismiss(DialogInterface dialogInterface) {
-        ThemeEditorView.C52461.lambda$onTouchEvent$0(dialogInterface);
+        ThemeEditorView.C52611.lambda$onTouchEvent$0(dialogInterface);
     }
 }

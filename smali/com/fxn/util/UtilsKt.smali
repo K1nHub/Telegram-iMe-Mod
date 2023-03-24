@@ -108,7 +108,7 @@
 
     move-result v3
 
-    mul-float v1, v1, v3
+    mul-float/2addr v1, v3
 
     sub-float/2addr v2, v1
 
@@ -165,7 +165,7 @@
 
     move-result p4
 
-    mul-float p4, p4, p1
+    mul-float/2addr p4, p1
 
     sub-float/2addr p1, p4
 
@@ -285,7 +285,7 @@
 
     div-float/2addr p1, v0
 
-    mul-float p0, p0, p1
+    mul-float/2addr p0, p1
 
     invoke-static {p0}, Lkotlin/math/MathKt;->roundToInt(F)I
 
@@ -405,22 +405,22 @@
 
     move-result v0
 
+    const/4 v1, 0x0
+
+    cmpg-float v0, v0, v1
+
     const/4 v1, 0x1
 
     const/4 v2, 0x0
 
-    const/4 v3, 0x0
-
-    cmpg-float v0, v0, v3
-
     if-nez v0, :cond_0
 
-    const/4 v0, 0x1
+    move v0, v1
 
     goto :goto_0
 
     :cond_0
-    const/4 v0, 0x0
+    move v0, v2
 
     :goto_0
     if-eqz v0, :cond_1
@@ -467,7 +467,7 @@
     goto :goto_1
 
     :cond_2
-    const/4 v1, 0x0
+    move v1, v2
 
     :goto_1
     if-eqz v1, :cond_3
@@ -557,7 +557,7 @@
 
     int-to-float v1, v1
 
-    mul-float v1, v1, p2
+    mul-float/2addr v1, p2
 
     float-to-int p2, v1
 

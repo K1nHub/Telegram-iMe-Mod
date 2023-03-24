@@ -60,16 +60,16 @@
 .end method
 
 .method private getPreparePositionWithOverride(J)J
-    .locals 5
+    .locals 4
 
     .line 250
     iget-wide v0, p0, Lcom/google/android/exoplayer2/source/MaskingMediaPeriod;->preparePositionOverrideUs:J
 
     const-wide v2, -0x7fffffffffffffffL    # -4.9E-324
 
-    cmp-long v4, v0, v2
+    cmp-long v2, v0, v2
 
-    if-eqz v4, :cond_0
+    if-eqz v2, :cond_0
 
     move-wide p1, v0
 
@@ -525,7 +525,7 @@
 .end method
 
 .method public selectTracks([Lcom/google/android/exoplayer2/trackselection/ExoTrackSelection;[Z[Lcom/google/android/exoplayer2/source/SampleStream;[ZJ)J
-    .locals 15
+    .locals 13
 
     move-object v0, p0
 
@@ -540,19 +540,19 @@
 
     iget-wide v5, v0, Lcom/google/android/exoplayer2/source/MaskingMediaPeriod;->preparePositionUs:J
 
-    cmp-long v7, p5, v5
+    cmp-long v5, p5, v5
 
-    if-nez v7, :cond_0
+    if-nez v5, :cond_0
 
     .line 183
     iput-wide v3, v0, Lcom/google/android/exoplayer2/source/MaskingMediaPeriod;->preparePositionOverrideUs:J
 
-    move-wide v13, v1
+    move-wide v11, v1
 
     goto :goto_0
 
     :cond_0
-    move-wide/from16 v13, p5
+    move-wide/from16 v11, p5
 
     .line 185
     :goto_0
@@ -562,20 +562,20 @@
 
     move-result-object v1
 
-    move-object v8, v1
+    move-object v6, v1
 
-    check-cast v8, Lcom/google/android/exoplayer2/source/MediaPeriod;
+    check-cast v6, Lcom/google/android/exoplayer2/source/MediaPeriod;
 
-    move-object/from16 v9, p1
+    move-object v7, p1
 
-    move-object/from16 v10, p2
+    move-object v8, p2
 
-    move-object/from16 v11, p3
+    move-object/from16 v9, p3
 
-    move-object/from16 v12, p4
+    move-object/from16 v10, p4
 
     .line 186
-    invoke-interface/range {v8 .. v14}, Lcom/google/android/exoplayer2/source/MediaPeriod;->selectTracks([Lcom/google/android/exoplayer2/trackselection/ExoTrackSelection;[Z[Lcom/google/android/exoplayer2/source/SampleStream;[ZJ)J
+    invoke-interface/range {v6 .. v12}, Lcom/google/android/exoplayer2/source/MediaPeriod;->selectTracks([Lcom/google/android/exoplayer2/trackselection/ExoTrackSelection;[Z[Lcom/google/android/exoplayer2/source/SampleStream;[ZJ)J
 
     move-result-wide v1
 

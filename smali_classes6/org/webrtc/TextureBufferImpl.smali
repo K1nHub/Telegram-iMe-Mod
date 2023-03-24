@@ -355,7 +355,7 @@
     .line 183
     iget p1, p0, Lorg/webrtc/TextureBufferImpl;->unscaledWidth:I
 
-    mul-int p1, p1, p3
+    mul-int/2addr p1, p3
 
     int-to-float p1, p1
 
@@ -372,7 +372,7 @@
 
     iget p1, p0, Lorg/webrtc/TextureBufferImpl;->unscaledHeight:I
 
-    mul-int p1, p1, p4
+    mul-int/2addr p1, p4
 
     int-to-float p1, p1
 
@@ -575,7 +575,7 @@
 
     add-int v3, v2, v0
 
-    mul-int v3, v3, v8
+    mul-int/2addr v3, v8
 
     .line 129
     invoke-static {v3}, Lorg/webrtc/JniCommon;->nativeAllocateByteBuffer(I)Ljava/nio/ByteBuffer;
@@ -626,7 +626,7 @@
 
     add-int/lit8 v0, v0, -0x1
 
-    mul-int v0, v0, v8
+    mul-int/2addr v0, v8
 
     add-int/2addr v0, v6
 

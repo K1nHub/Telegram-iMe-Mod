@@ -19,7 +19,7 @@ import kotlin.Unit;
 import kotlin.jvm.internal.Intrinsics;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.BuildVars;
-import org.telegram.messenger.C3286R;
+import org.telegram.messenger.C3301R;
 import org.telegram.messenger.FileLoader;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.Utilities;
@@ -89,7 +89,7 @@ public final class BackupPdfHelper {
     }
 
     private final void saveAndOpenPdf(PdfDocument pdfDocument, final Activity activity) {
-        Object m1463constructorimpl;
+        Object m1479constructorimpl;
         File checkDirectory = FileLoader.checkDirectory(3);
         String absolutePath = checkDirectory != null ? checkDirectory.getAbsolutePath() : null;
         if (absolutePath == null) {
@@ -99,22 +99,22 @@ public final class BackupPdfHelper {
         try {
             Result.Companion companion = Result.Companion;
             pdfDocument.writeTo(new FileOutputStream(file));
-            m1463constructorimpl = Result.m1463constructorimpl(Unit.INSTANCE);
+            m1479constructorimpl = Result.m1479constructorimpl(Unit.INSTANCE);
         } catch (Throwable th) {
             Result.Companion companion2 = Result.Companion;
-            m1463constructorimpl = Result.m1463constructorimpl(ResultKt.createFailure(th));
+            m1479constructorimpl = Result.m1479constructorimpl(ResultKt.createFailure(th));
         }
-        final Throwable m1464exceptionOrNullimpl = Result.m1464exceptionOrNullimpl(m1463constructorimpl);
-        if (m1464exceptionOrNullimpl != null) {
+        final Throwable m1480exceptionOrNullimpl = Result.m1480exceptionOrNullimpl(m1479constructorimpl);
+        if (m1480exceptionOrNullimpl != null) {
             AndroidUtilities.runOnUIThread(new Runnable() { // from class: com.smedialink.utils.helper.wallet.BackupPdfHelper$$ExternalSyntheticLambda2
                 @Override // java.lang.Runnable
                 public final void run() {
-                    BackupPdfHelper.saveAndOpenPdf$lambda$7$lambda$6(m1464exceptionOrNullimpl);
+                    BackupPdfHelper.saveAndOpenPdf$lambda$7$lambda$6(m1480exceptionOrNullimpl);
                 }
             });
         }
-        if (Result.m1466isSuccessimpl(m1463constructorimpl)) {
-            Unit unit = (Unit) m1463constructorimpl;
+        if (Result.m1482isSuccessimpl(m1479constructorimpl)) {
+            Unit unit = (Unit) m1479constructorimpl;
             AndroidUtilities.runOnUIThread(new Runnable() { // from class: com.smedialink.utils.helper.wallet.BackupPdfHelper$$ExternalSyntheticLambda1
                 @Override // java.lang.Runnable
                 public final void run() {
@@ -129,7 +129,7 @@ public final class BackupPdfHelper {
         Intrinsics.checkNotNullParameter(it, "$it");
         String message = it.getMessage();
         if (message == null) {
-            message = LocaleController.getString("ErrorOccurred", C3286R.string.ErrorOccurred);
+            message = LocaleController.getString("ErrorOccurred", C3301R.string.ErrorOccurred);
         }
         Intrinsics.checkNotNullExpressionValue(message, "it.message ?: LocaleCont…, R.string.ErrorOccurred)");
         ContextExtKt.toast(message);

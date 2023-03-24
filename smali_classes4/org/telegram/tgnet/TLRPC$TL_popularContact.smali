@@ -23,7 +23,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 2297
+    .line 2296
     invoke-direct {p0}, Lorg/telegram/tgnet/TLObject;-><init>()V
 
     return-void
@@ -32,7 +32,7 @@
 .method public static TLdeserialize(Lorg/telegram/tgnet/AbstractSerializedData;IZ)Lorg/telegram/tgnet/TLRPC$TL_popularContact;
     .locals 1
 
-    .line 2304
+    .line 2303
     sget v0, Lorg/telegram/tgnet/TLRPC$TL_popularContact;->constructor:I
 
     if-eq v0, p1, :cond_1
@@ -43,7 +43,7 @@
 
     return-object p0
 
-    .line 2306
+    .line 2305
     :cond_0
     new-instance p0, Ljava/lang/RuntimeException;
 
@@ -69,13 +69,13 @@
 
     throw p0
 
-    .line 2311
+    .line 2310
     :cond_1
     new-instance p1, Lorg/telegram/tgnet/TLRPC$TL_popularContact;
 
     invoke-direct {p1}, Lorg/telegram/tgnet/TLRPC$TL_popularContact;-><init>()V
 
-    .line 2312
+    .line 2311
     invoke-virtual {p1, p0, p2}, Lorg/telegram/tgnet/TLRPC$TL_popularContact;->readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
 
     return-object p1
@@ -86,14 +86,14 @@
 .method public readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
     .locals 2
 
-    .line 2317
+    .line 2316
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt64(Z)J
 
     move-result-wide v0
 
     iput-wide v0, p0, Lorg/telegram/tgnet/TLRPC$TL_popularContact;->client_id:J
 
-    .line 2318
+    .line 2317
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result p1
@@ -106,17 +106,17 @@
 .method public serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
     .locals 2
 
-    .line 2322
+    .line 2321
     sget v0, Lorg/telegram/tgnet/TLRPC$TL_popularContact;->constructor:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 2323
+    .line 2322
     iget-wide v0, p0, Lorg/telegram/tgnet/TLRPC$TL_popularContact;->client_id:J
 
     invoke-virtual {p1, v0, v1}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt64(J)V
 
-    .line 2324
+    .line 2323
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$TL_popularContact;->importers:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V

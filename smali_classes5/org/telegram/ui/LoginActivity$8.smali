@@ -35,7 +35,7 @@
 .method constructor <init>(Lorg/telegram/ui/LoginActivity;Landroid/widget/EditText;Ljava/util/concurrent/atomic/AtomicReference;)V
     .locals 0
 
-    .line 1174
+    .line 1176
     iput-object p2, p0, Lorg/telegram/ui/LoginActivity$8;->val$editText:Landroid/widget/EditText;
 
     iput-object p3, p0, Lorg/telegram/ui/LoginActivity$8;->val$timeoutCallbackRef:Ljava/util/concurrent/atomic/AtomicReference;
@@ -48,10 +48,10 @@
 .method private synthetic lambda$beforeTextChanged$0(Landroid/widget/EditText;Ljava/util/concurrent/atomic/AtomicReference;)V
     .locals 1
 
-    .line 1178
+    .line 1180
     invoke-virtual {p1, p0}, Landroid/widget/EditText;->removeTextChangedListener(Landroid/text/TextWatcher;)V
 
-    .line 1179
+    .line 1181
     invoke-virtual {p2}, Ljava/util/concurrent/atomic/AtomicReference;->get()Ljava/lang/Object;
 
     move-result-object v0
@@ -60,7 +60,7 @@
 
     invoke-virtual {p1, v0}, Landroid/widget/EditText;->removeCallbacks(Ljava/lang/Runnable;)Z
 
-    .line 1180
+    .line 1182
     invoke-virtual {p2}, Ljava/util/concurrent/atomic/AtomicReference;->get()Ljava/lang/Object;
 
     move-result-object p1
@@ -83,7 +83,7 @@
 .method public beforeTextChanged(Ljava/lang/CharSequence;III)V
     .locals 0
 
-    .line 1177
+    .line 1179
     iget-object p1, p0, Lorg/telegram/ui/LoginActivity$8;->val$editText:Landroid/widget/EditText;
 
     iget-object p2, p0, Lorg/telegram/ui/LoginActivity$8;->val$timeoutCallbackRef:Ljava/util/concurrent/atomic/AtomicReference;

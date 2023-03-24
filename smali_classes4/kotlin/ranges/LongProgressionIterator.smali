@@ -15,7 +15,7 @@
 
 # direct methods
 .method public constructor <init>(JJJ)V
-    .locals 5
+    .locals 2
 
     .line 62
     invoke-direct {p0}, Lkotlin/collections/LongIterator;-><init>()V
@@ -25,35 +25,37 @@
     .line 63
     iput-wide p3, p0, Lkotlin/ranges/LongProgressionIterator;->finalElement:J
 
-    const/4 v0, 0x1
+    const-wide/16 v0, 0x0
 
-    const/4 v1, 0x0
+    cmp-long p5, p5, v0
 
-    const-wide/16 v2, 0x0
+    const/4 p6, 0x1
 
-    cmp-long v4, p5, v2
+    const/4 v0, 0x0
+
+    if-lez p5, :cond_0
 
     cmp-long p5, p1, p3
-
-    if-lez v4, :cond_0
 
     if-gtz p5, :cond_1
 
     goto :goto_0
 
     :cond_0
+    cmp-long p5, p1, p3
+
     if-ltz p5, :cond_1
 
     goto :goto_0
 
     :cond_1
-    const/4 v0, 0x0
+    move p6, v0
 
     .line 64
     :goto_0
-    iput-boolean v0, p0, Lkotlin/ranges/LongProgressionIterator;->hasNext:Z
+    iput-boolean p6, p0, Lkotlin/ranges/LongProgressionIterator;->hasNext:Z
 
-    if-eqz v0, :cond_2
+    if-eqz p6, :cond_2
 
     goto :goto_1
 
@@ -79,7 +81,7 @@
 .end method
 
 .method public nextLong()J
-    .locals 5
+    .locals 4
 
     .line 70
     iget-wide v0, p0, Lkotlin/ranges/LongProgressionIterator;->next:J
@@ -87,9 +89,9 @@
     .line 71
     iget-wide v2, p0, Lkotlin/ranges/LongProgressionIterator;->finalElement:J
 
-    cmp-long v4, v0, v2
+    cmp-long v2, v0, v2
 
-    if-nez v4, :cond_1
+    if-nez v2, :cond_1
 
     .line 72
     iget-boolean v2, p0, Lkotlin/ranges/LongProgressionIterator;->hasNext:Z

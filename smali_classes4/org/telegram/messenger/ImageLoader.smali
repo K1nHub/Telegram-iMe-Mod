@@ -659,7 +659,7 @@
     goto :goto_0
 
     :cond_0
-    const/4 v2, 0x0
+    move v2, v0
 
     .line 1954
     :goto_0
@@ -690,13 +690,13 @@
 
     const v3, 0x3f4ccccd    # 0.8f
 
-    mul-float v3, v3, v2
+    mul-float/2addr v3, v2
 
     float-to-int v3, v3
 
     const v4, 0x3e4ccccd    # 0.2f
 
-    mul-float v2, v2, v4
+    mul-float/2addr v2, v4
 
     float-to-int v2, v2
 
@@ -1499,12 +1499,12 @@
 
     if-eqz v0, :cond_2
 
-    const/4 v11, 0x1
+    move v11, v2
 
     goto :goto_0
 
     :cond_2
-    const/4 v11, 0x0
+    move v11, v1
 
     .line 2739
     :goto_0
@@ -1827,7 +1827,7 @@
 .method private static findPhotoCachedSize(Lorg/telegram/tgnet/TLRPC$Message;)Lorg/telegram/tgnet/TLRPC$PhotoSize;
     .locals 5
 
-    .line 4040
+    .line 4050
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$Message;->media:Lorg/telegram/tgnet/TLRPC$MessageMedia;
 
     instance-of v1, v0, Lorg/telegram/tgnet/TLRPC$TL_messageMediaPhoto;
@@ -1838,7 +1838,7 @@
 
     if-eqz v1, :cond_1
 
-    .line 4041
+    .line 4051
     iget-object v0, v0, Lorg/telegram/tgnet/TLRPC$MessageMedia;->photo:Lorg/telegram/tgnet/TLRPC$Photo;
 
     iget-object v0, v0, Lorg/telegram/tgnet/TLRPC$Photo;->sizes:Ljava/util/ArrayList;
@@ -1850,7 +1850,7 @@
     :goto_0
     if-ge v2, v0, :cond_6
 
-    .line 4042
+    .line 4052
     iget-object v1, p0, Lorg/telegram/tgnet/TLRPC$Message;->media:Lorg/telegram/tgnet/TLRPC$MessageMedia;
 
     iget-object v1, v1, Lorg/telegram/tgnet/TLRPC$MessageMedia;->photo:Lorg/telegram/tgnet/TLRPC$Photo;
@@ -1863,7 +1863,7 @@
 
     check-cast v1, Lorg/telegram/tgnet/TLRPC$PhotoSize;
 
-    .line 4043
+    .line 4053
     instance-of v4, v1, Lorg/telegram/tgnet/TLRPC$TL_photoCachedSize;
 
     if-eqz v4, :cond_0
@@ -1878,13 +1878,13 @@
 
     goto :goto_0
 
-    .line 4048
+    .line 4058
     :cond_1
     instance-of v1, v0, Lorg/telegram/tgnet/TLRPC$TL_messageMediaDocument;
 
     if-eqz v1, :cond_3
 
-    .line 4049
+    .line 4059
     iget-object v0, v0, Lorg/telegram/tgnet/TLRPC$MessageMedia;->document:Lorg/telegram/tgnet/TLRPC$Document;
 
     iget-object v0, v0, Lorg/telegram/tgnet/TLRPC$Document;->thumbs:Ljava/util/ArrayList;
@@ -1896,7 +1896,7 @@
     :goto_2
     if-ge v2, v0, :cond_6
 
-    .line 4050
+    .line 4060
     iget-object v1, p0, Lorg/telegram/tgnet/TLRPC$Message;->media:Lorg/telegram/tgnet/TLRPC$MessageMedia;
 
     iget-object v1, v1, Lorg/telegram/tgnet/TLRPC$MessageMedia;->document:Lorg/telegram/tgnet/TLRPC$Document;
@@ -1909,7 +1909,7 @@
 
     check-cast v1, Lorg/telegram/tgnet/TLRPC$PhotoSize;
 
-    .line 4051
+    .line 4061
     instance-of v4, v1, Lorg/telegram/tgnet/TLRPC$TL_photoCachedSize;
 
     if-eqz v4, :cond_2
@@ -1921,20 +1921,20 @@
 
     goto :goto_2
 
-    .line 4056
+    .line 4066
     :cond_3
     instance-of v1, v0, Lorg/telegram/tgnet/TLRPC$TL_messageMediaWebPage;
 
     if-eqz v1, :cond_5
 
-    .line 4057
+    .line 4067
     iget-object v0, v0, Lorg/telegram/tgnet/TLRPC$MessageMedia;->webpage:Lorg/telegram/tgnet/TLRPC$WebPage;
 
     iget-object v0, v0, Lorg/telegram/tgnet/TLRPC$WebPage;->photo:Lorg/telegram/tgnet/TLRPC$Photo;
 
     if-eqz v0, :cond_6
 
-    .line 4058
+    .line 4068
     iget-object v0, v0, Lorg/telegram/tgnet/TLRPC$Photo;->sizes:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
@@ -1944,7 +1944,7 @@
     :goto_3
     if-ge v2, v0, :cond_6
 
-    .line 4059
+    .line 4069
     iget-object v1, p0, Lorg/telegram/tgnet/TLRPC$Message;->media:Lorg/telegram/tgnet/TLRPC$MessageMedia;
 
     iget-object v1, v1, Lorg/telegram/tgnet/TLRPC$MessageMedia;->webpage:Lorg/telegram/tgnet/TLRPC$WebPage;
@@ -1959,7 +1959,7 @@
 
     check-cast v1, Lorg/telegram/tgnet/TLRPC$PhotoSize;
 
-    .line 4060
+    .line 4070
     instance-of v4, v1, Lorg/telegram/tgnet/TLRPC$TL_photoCachedSize;
 
     if-eqz v4, :cond_4
@@ -1971,7 +1971,7 @@
 
     goto :goto_3
 
-    .line 4066
+    .line 4076
     :cond_5
     instance-of p0, v0, Lorg/telegram/tgnet/TLRPC$TL_messageMediaInvoice;
 
@@ -1983,7 +1983,7 @@
 
     if-eqz v0, :cond_6
 
-    .line 4067
+    .line 4077
     check-cast p0, Lorg/telegram/tgnet/TLRPC$TL_messageExtendedMediaPreview;
 
     iget-object v3, p0, Lorg/telegram/tgnet/TLRPC$TL_messageExtendedMediaPreview;->thumb:Lorg/telegram/tgnet/TLRPC$PhotoSize;
@@ -1998,7 +1998,7 @@
 
     move-object/from16 v0, p0
 
-    .line 4083
+    .line 4093
     invoke-static/range {p0 .. p0}, Lorg/telegram/messenger/ImageLoader;->findPhotoCachedSize(Lorg/telegram/tgnet/TLRPC$Message;)Lorg/telegram/tgnet/TLRPC$PhotoSize;
 
     move-result-object v1
@@ -2015,7 +2015,7 @@
 
     if-eqz v1, :cond_1
 
-    .line 4085
+    .line 4095
     iget-object v7, v1, Lorg/telegram/tgnet/TLRPC$PhotoSize;->bytes:[B
 
     if-eqz v7, :cond_1
@@ -2024,7 +2024,7 @@
 
     if-eqz v7, :cond_1
 
-    .line 4086
+    .line 4096
     sget v7, Lorg/telegram/messenger/UserConfig;->selectedAccount:I
 
     invoke-static {v7}, Lorg/telegram/messenger/FileLoader;->getInstance(I)Lorg/telegram/messenger/FileLoader;
@@ -2035,37 +2035,37 @@
 
     move-result-object v7
 
-    .line 4088
+    .line 4098
     new-instance v8, Lorg/telegram/tgnet/TLRPC$TL_photoSize_layer127;
 
     invoke-direct {v8}, Lorg/telegram/tgnet/TLRPC$TL_photoSize_layer127;-><init>()V
 
-    .line 4089
+    .line 4099
     iget v9, v1, Lorg/telegram/tgnet/TLRPC$PhotoSize;->w:I
 
     iput v9, v8, Lorg/telegram/tgnet/TLRPC$PhotoSize;->w:I
 
-    .line 4090
+    .line 4100
     iget v9, v1, Lorg/telegram/tgnet/TLRPC$PhotoSize;->h:I
 
     iput v9, v8, Lorg/telegram/tgnet/TLRPC$PhotoSize;->h:I
 
-    .line 4091
+    .line 4101
     iget-object v9, v1, Lorg/telegram/tgnet/TLRPC$PhotoSize;->location:Lorg/telegram/tgnet/TLRPC$FileLocation;
 
     iput-object v9, v8, Lorg/telegram/tgnet/TLRPC$PhotoSize;->location:Lorg/telegram/tgnet/TLRPC$FileLocation;
 
-    .line 4092
+    .line 4102
     iget v9, v1, Lorg/telegram/tgnet/TLRPC$PhotoSize;->size:I
 
     iput v9, v8, Lorg/telegram/tgnet/TLRPC$PhotoSize;->size:I
 
-    .line 4093
+    .line 4103
     iget-object v9, v1, Lorg/telegram/tgnet/TLRPC$PhotoSize;->type:Ljava/lang/String;
 
     iput-object v9, v8, Lorg/telegram/tgnet/TLRPC$PhotoSize;->type:Ljava/lang/String;
 
-    .line 4095
+    .line 4105
     invoke-virtual {v7}, Ljava/io/File;->exists()Z
 
     move-result v8
@@ -2080,18 +2080,18 @@
 
     if-nez v0, :cond_7
 
-    .line 4096
+    .line 4106
     iget v0, v1, Lorg/telegram/tgnet/TLRPC$PhotoSize;->h:I
 
-    .line 4097
+    .line 4107
     iget v8, v1, Lorg/telegram/tgnet/TLRPC$PhotoSize;->w:I
 
-    .line 4098
+    .line 4108
     invoke-static {v8, v0}, Lorg/telegram/ui/Cells/ChatMessageCell;->getMessageSize(II)Lorg/telegram/ui/Components/Point;
 
     move-result-object v0
 
-    .line 4099
+    .line 4109
     sget-object v8, Ljava/util/Locale;->US:Ljava/util/Locale;
 
     const/4 v9, 0x4
@@ -2152,7 +2152,7 @@
 
     move-result-object v1
 
-    .line 4100
+    .line 4110
     invoke-static {}, Lorg/telegram/messenger/ImageLoader;->getInstance()Lorg/telegram/messenger/ImageLoader;
 
     move-result-object v2
@@ -2163,7 +2163,7 @@
 
     if-nez v2, :cond_7
 
-    .line 4101
+    .line 4111
     invoke-virtual {v7}, Ljava/io/File;->getPath()Ljava/lang/String;
 
     move-result-object v2
@@ -2196,7 +2196,7 @@
 
     const/4 v10, 0x1
 
-    .line 4103
+    .line 4113
     invoke-virtual {v2}, Landroid/graphics/Bitmap;->getWidth()I
 
     move-result v11
@@ -2213,7 +2213,7 @@
 
     invoke-static/range {v8 .. v13}, Lorg/telegram/messenger/Utilities;->blurBitmap(Ljava/lang/Object;IIIII)V
 
-    .line 4104
+    .line 4114
     iget v3, v0, Lorg/telegram/ui/Components/Point;->x:F
 
     sget v4, Lorg/telegram/messenger/AndroidUtilities;->density:F
@@ -2234,12 +2234,12 @@
 
     if-eq v0, v2, :cond_0
 
-    .line 4106
+    .line 4116
     invoke-virtual {v2}, Landroid/graphics/Bitmap;->recycle()V
 
     move-object v2, v0
 
-    .line 4109
+    .line 4119
     :cond_0
     new-instance v0, Lorg/telegram/messenger/ImageLoader$MessageThumb;
 
@@ -2251,7 +2251,7 @@
 
     return-object v0
 
-    .line 4113
+    .line 4123
     :cond_1
     iget-object v1, v0, Lorg/telegram/tgnet/TLRPC$Message;->media:Lorg/telegram/tgnet/TLRPC$MessageMedia;
 
@@ -2259,7 +2259,7 @@
 
     if-eqz v7, :cond_7
 
-    .line 4114
+    .line 4124
     iget-object v1, v1, Lorg/telegram/tgnet/TLRPC$MessageMedia;->document:Lorg/telegram/tgnet/TLRPC$Document;
 
     iget-object v1, v1, Lorg/telegram/tgnet/TLRPC$Document;->thumbs:Ljava/util/ArrayList;
@@ -2268,12 +2268,12 @@
 
     move-result v1
 
-    const/4 v7, 0x0
+    move v7, v6
 
     :goto_0
     if-ge v7, v1, :cond_7
 
-    .line 4115
+    .line 4125
     iget-object v8, v0, Lorg/telegram/tgnet/TLRPC$Message;->media:Lorg/telegram/tgnet/TLRPC$MessageMedia;
 
     iget-object v8, v8, Lorg/telegram/tgnet/TLRPC$MessageMedia;->document:Lorg/telegram/tgnet/TLRPC$Document;
@@ -2286,12 +2286,12 @@
 
     check-cast v8, Lorg/telegram/tgnet/TLRPC$PhotoSize;
 
-    .line 4116
+    .line 4126
     instance-of v9, v8, Lorg/telegram/tgnet/TLRPC$TL_photoStrippedSize;
 
     if-eqz v9, :cond_6
 
-    .line 4117
+    .line 4127
     iget-object v9, v0, Lorg/telegram/tgnet/TLRPC$Message;->media:Lorg/telegram/tgnet/TLRPC$MessageMedia;
 
     iget-object v9, v9, Lorg/telegram/tgnet/TLRPC$MessageMedia;->document:Lorg/telegram/tgnet/TLRPC$Document;
@@ -2306,18 +2306,18 @@
 
     if-eqz v9, :cond_2
 
-    .line 4121
+    .line 4131
     iget v10, v9, Lorg/telegram/tgnet/TLRPC$PhotoSize;->h:I
 
-    .line 4122
+    .line 4132
     iget v9, v9, Lorg/telegram/tgnet/TLRPC$PhotoSize;->w:I
 
     goto :goto_2
 
     :cond_2
-    const/4 v9, 0x0
+    move v9, v6
 
-    .line 4124
+    .line 4134
     :goto_1
     iget-object v10, v0, Lorg/telegram/tgnet/TLRPC$Message;->media:Lorg/telegram/tgnet/TLRPC$MessageMedia;
 
@@ -2331,7 +2331,7 @@
 
     if-ge v9, v10, :cond_4
 
-    .line 4125
+    .line 4135
     iget-object v10, v0, Lorg/telegram/tgnet/TLRPC$Message;->media:Lorg/telegram/tgnet/TLRPC$MessageMedia;
 
     iget-object v10, v10, Lorg/telegram/tgnet/TLRPC$MessageMedia;->document:Lorg/telegram/tgnet/TLRPC$Document;
@@ -2346,7 +2346,7 @@
 
     if-eqz v10, :cond_3
 
-    .line 4126
+    .line 4136
     iget-object v10, v0, Lorg/telegram/tgnet/TLRPC$Message;->media:Lorg/telegram/tgnet/TLRPC$MessageMedia;
 
     iget-object v10, v10, Lorg/telegram/tgnet/TLRPC$MessageMedia;->document:Lorg/telegram/tgnet/TLRPC$Document;
@@ -2359,10 +2359,10 @@
 
     check-cast v9, Lorg/telegram/tgnet/TLRPC$TL_documentAttributeVideo;
 
-    .line 4127
+    .line 4137
     iget v10, v9, Lorg/telegram/tgnet/TLRPC$DocumentAttribute;->h:I
 
-    .line 4128
+    .line 4138
     iget v9, v9, Lorg/telegram/tgnet/TLRPC$DocumentAttribute;->w:I
 
     goto :goto_2
@@ -2373,17 +2373,17 @@
     goto :goto_1
 
     :cond_4
-    const/4 v9, 0x0
+    move v9, v6
 
-    const/4 v10, 0x0
+    move v10, v9
 
-    .line 4134
+    .line 4144
     :goto_2
     invoke-static {v9, v10}, Lorg/telegram/ui/Cells/ChatMessageCell;->getMessageSize(II)Lorg/telegram/ui/Components/Point;
 
     move-result-object v9
 
-    .line 4135
+    .line 4145
     sget-object v10, Ljava/util/Locale;->US:Ljava/util/Locale;
 
     new-array v11, v2, [Ljava/lang/Object;
@@ -2428,7 +2428,7 @@
 
     move-result-object v10
 
-    .line 4136
+    .line 4146
     invoke-static {}, Lorg/telegram/messenger/ImageLoader;->getInstance()Lorg/telegram/messenger/ImageLoader;
 
     move-result-object v11
@@ -2439,7 +2439,7 @@
 
     if-nez v11, :cond_6
 
-    .line 4137
+    .line 4147
     iget-object v8, v8, Lorg/telegram/tgnet/TLRPC$PhotoSize;->bytes:[B
 
     invoke-static {v8, v4}, Lorg/telegram/messenger/ImageLoader;->getStrippedPhotoBitmap([BLjava/lang/String;)Landroid/graphics/Bitmap;
@@ -2452,7 +2452,7 @@
 
     const/4 v13, 0x1
 
-    .line 4139
+    .line 4149
     invoke-virtual {v8}, Landroid/graphics/Bitmap;->getWidth()I
 
     move-result v14
@@ -2469,7 +2469,7 @@
 
     invoke-static/range {v11 .. v16}, Lorg/telegram/messenger/Utilities;->blurBitmap(Ljava/lang/Object;IIIII)V
 
-    .line 4140
+    .line 4150
     iget v0, v9, Lorg/telegram/ui/Components/Point;->x:F
 
     sget v1, Lorg/telegram/messenger/AndroidUtilities;->density:F
@@ -2490,12 +2490,12 @@
 
     if-eq v0, v8, :cond_5
 
-    .line 4142
+    .line 4152
     invoke-virtual {v8}, Landroid/graphics/Bitmap;->recycle()V
 
     move-object v8, v0
 
-    .line 4145
+    .line 4155
     :cond_5
     new-instance v0, Lorg/telegram/messenger/ImageLoader$MessageThumb;
 
@@ -3044,7 +3044,7 @@
 
     move-result-object p0
 
-    const/4 v1, 0x0
+    move v1, v0
 
     .line 146
     :goto_0
@@ -3179,7 +3179,7 @@
 
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    move v1, v0
 
     :goto_0
     const/4 v2, 0x3
@@ -3197,14 +3197,14 @@
 
     if-nez v1, :cond_1
 
-    const/4 v2, 0x1
+    move v2, v3
 
     goto :goto_1
 
     :cond_1
     if-ne v1, v3, :cond_2
 
-    const/4 v2, 0x0
+    move v2, v0
 
     .line 2614
     :cond_2
@@ -3406,9 +3406,9 @@
     const/16 v18, 0x0
 
     :goto_0
-    const/4 v3, 0x1
+    move v8, v12
 
-    const/4 v8, 0x2
+    const/4 v3, 0x1
 
     goto :goto_2
 
@@ -3440,7 +3440,7 @@
     const/16 v18, 0x0
 
     :goto_1
-    const/4 v3, 0x0
+    move/from16 v3, v18
 
     :goto_2
     if-nez v3, :cond_4
@@ -3457,7 +3457,7 @@
 
     move/from16 v7, p8
 
-    const/4 v12, 0x2
+    move v12, v8
 
     move/from16 v8, p6
 
@@ -3469,7 +3469,7 @@
     goto :goto_3
 
     :cond_4
-    const/4 v12, 0x2
+    move v12, v8
 
     :goto_3
     if-nez v3, :cond_6
@@ -3496,13 +3496,13 @@
     goto :goto_4
 
     :cond_5
-    move-object v9, v8
+    move v12, v4
 
-    const/4 v12, 0x2
+    move-object v9, v8
 
     const/16 v18, 0x0
 
-    const/4 v3, 0x0
+    move/from16 v3, v18
 
     :cond_6
     :goto_4
@@ -3620,16 +3620,16 @@
     goto :goto_6
 
     :cond_a
-    const/4 v3, 0x0
+    move/from16 v3, v18
 
     const/4 v10, 0x0
 
     :goto_6
     move-object/from16 v20, v8
 
-    const/4 v5, 0x0
+    move v6, v12
 
-    const/4 v6, 0x2
+    move/from16 v5, v18
 
     const/4 v12, 0x1
 
@@ -3686,7 +3686,7 @@
 
     move-object v15, v6
 
-    const/4 v3, 0x0
+    move/from16 v3, v18
 
     const/4 v6, 0x1
 
@@ -3727,18 +3727,18 @@
 
     move v7, v3
 
-    const/4 v3, 0x1
+    move v3, v6
 
     goto :goto_8
 
     :cond_e
     const/4 v6, 0x1
 
+    move/from16 v3, v18
+
+    move v7, v3
+
     const/16 p13, 0x0
-
-    const/4 v3, 0x0
-
-    const/4 v7, 0x0
 
     const/4 v12, 0x0
 
@@ -3808,7 +3808,7 @@
     move-object/from16 v21, v12
 
     :goto_9
-    const/4 v5, 0x0
+    move/from16 v5, v18
 
     const/4 v6, 0x0
 
@@ -3947,20 +3947,22 @@
 
     move-object v10, v6
 
-    const/4 v3, 0x1
+    move v3, v12
 
     const/4 v6, 0x2
 
     goto :goto_d
 
     :cond_18
-    move-object/from16 v20, v8
+    move v12, v6
 
-    const/4 v12, 0x1
+    move-object/from16 v20, v8
 
     move-object/from16 v8, p7
 
-    const/4 v3, 0x1
+    move v3, v12
+
+    move/from16 v5, v18
 
     goto :goto_c
 
@@ -3971,11 +3973,11 @@
 
     move-object/from16 v8, p7
 
-    const/4 v3, 0x0
+    move/from16 v3, v18
+
+    move v5, v3
 
     :goto_c
-    const/4 v5, 0x0
-
     const/4 v6, 0x2
 
     const/4 v10, 0x0
@@ -4002,12 +4004,12 @@
 
     if-nez v15, :cond_1a
 
-    const/4 v15, 0x0
+    move/from16 v15, v18
 
     goto :goto_e
 
     :cond_1a
-    const/4 v15, 0x1
+    move v15, v12
 
     :goto_e
     iput v15, v13, Lorg/telegram/messenger/ImageLoader$CacheImage;->priority:I
@@ -4167,7 +4169,7 @@
 
     if-eqz v6, :cond_21
 
-    goto/16 :goto_20
+    goto/16 :goto_22
 
     .line 2895
     :cond_21
@@ -4192,7 +4194,7 @@
     goto :goto_12
 
     :cond_22
-    const/4 v4, 0x0
+    move/from16 v4, v18
 
     .line 2898
     :goto_12
@@ -4216,7 +4218,7 @@
 
     move-object v4, v3
 
-    goto/16 :goto_22
+    goto/16 :goto_23
 
     .line 2899
     :cond_23
@@ -4350,7 +4352,7 @@
     :goto_14
     iput v4, v13, Lorg/telegram/messenger/ImageLoader$CacheImage;->imageType:I
 
-    goto :goto_16
+    goto :goto_17
 
     .line 2913
     :cond_28
@@ -4367,11 +4369,11 @@
     .line 2914
     iput v4, v13, Lorg/telegram/messenger/ImageLoader$CacheImage;->imageType:I
 
-    move-object/from16 v4, p14
-
     move v5, v1
 
     move-object v10, v3
+
+    move v12, v4
 
     move-object v6, v8
 
@@ -4379,7 +4381,10 @@
 
     const/4 v8, 0x3
 
-    goto/16 :goto_21
+    :goto_15
+    move-object/from16 v4, p14
+
+    goto/16 :goto_23
 
     :cond_29
     const/4 v4, 0x1
@@ -4398,7 +4403,7 @@
     .line 2917
     iput v4, v13, Lorg/telegram/messenger/ImageLoader$CacheImage;->imageType:I
 
-    goto :goto_15
+    goto :goto_16
 
     .line 2918
     :cond_2a
@@ -4417,7 +4422,7 @@
     .line 2919
     iput v4, v13, Lorg/telegram/messenger/ImageLoader$CacheImage;->imageType:I
 
-    goto :goto_15
+    goto :goto_16
 
     :cond_2b
     const/4 v4, 0x3
@@ -4440,10 +4445,10 @@
     iput v4, v13, Lorg/telegram/messenger/ImageLoader$CacheImage;->imageType:I
 
     :cond_2c
-    :goto_15
+    :goto_16
     move/from16 v12, p4
 
-    :goto_16
+    :goto_17
     move-object/from16 v4, p14
 
     move v5, v1
@@ -4456,7 +4461,7 @@
 
     const/4 v8, 0x3
 
-    goto/16 :goto_22
+    goto/16 :goto_23
 
     :cond_2d
     move-object/from16 v6, p16
@@ -4489,7 +4494,7 @@
 
     invoke-direct {v4, v7, v2}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
 
-    goto :goto_17
+    goto :goto_18
 
     .line 2931
     :cond_2f
@@ -4510,7 +4515,7 @@
 
     invoke-direct {v4, v14, v2}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
 
-    goto :goto_17
+    goto :goto_18
 
     .line 2934
     :cond_30
@@ -4525,7 +4530,7 @@
     invoke-direct {v4, v14, v2}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
 
     .line 2936
-    :goto_17
+    :goto_18
     invoke-direct {v0, v8}, Lorg/telegram/messenger/ImageLoader;->isAnimatedAvatar(Ljava/lang/String;)Z
 
     move-result v7
@@ -4540,12 +4545,12 @@
 
     if-eqz v14, :cond_32
 
-    goto :goto_18
+    goto :goto_19
 
     :cond_31
     move-object/from16 v7, p14
 
-    :goto_18
+    :goto_19
     invoke-virtual {v4}, Ljava/io/File;->exists()Z
 
     move-result v14
@@ -4585,13 +4590,13 @@
 
     invoke-direct {v4, v14, v3}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
 
-    goto :goto_19
+    goto :goto_1a
 
     :cond_32
     move-object/from16 p14, v7
 
     .line 2939
-    :goto_19
+    :goto_1a
     instance-of v3, v1, Lorg/telegram/messenger/DocumentObject$ThemeDocument;
 
     if-eqz v3, :cond_34
@@ -4610,7 +4615,7 @@
 
     const/4 v12, 0x1
 
-    goto :goto_1a
+    goto :goto_1b
 
     :cond_33
     move/from16 v12, p4
@@ -4618,10 +4623,8 @@
     const/4 v3, 0x5
 
     .line 2944
-    :goto_1a
+    :goto_1b
     iput v3, v13, Lorg/telegram/messenger/ImageLoader$CacheImage;->imageType:I
-
-    const/4 v8, 0x3
 
     goto :goto_1c
 
@@ -4642,11 +4645,12 @@
     .line 2946
     iput v3, v13, Lorg/telegram/messenger/ImageLoader$CacheImage;->imageType:I
 
+    move v12, v3
+
+    :goto_1c
     const/4 v8, 0x3
 
-    const/4 v12, 0x1
-
-    goto :goto_1c
+    goto :goto_1e
 
     :cond_35
     const/4 v3, 0x1
@@ -4665,7 +4669,7 @@
 
     const/4 v8, 0x3
 
-    goto :goto_1b
+    goto :goto_1d
 
     .line 2950
     :cond_36
@@ -4682,7 +4686,7 @@
     .line 2951
     iput v8, v13, Lorg/telegram/messenger/ImageLoader$CacheImage;->imageType:I
 
-    goto :goto_1b
+    goto :goto_1d
 
     :cond_37
     const/4 v8, 0x3
@@ -4705,11 +4709,11 @@
     iput v8, v13, Lorg/telegram/messenger/ImageLoader$CacheImage;->imageType:I
 
     :cond_38
-    :goto_1b
+    :goto_1d
     move/from16 v12, p4
 
     .line 2958
-    :goto_1c
+    :goto_1e
     iget-wide v5, v1, Lorg/telegram/tgnet/TLRPC$Document;->size:J
 
     move-object v10, v4
@@ -4720,9 +4724,7 @@
 
     move/from16 v5, p13
 
-    move-object/from16 v4, p14
-
-    goto/16 :goto_22
+    goto/16 :goto_15
 
     :cond_39
     move-object/from16 v7, v19
@@ -4751,10 +4753,10 @@
 
     move-object/from16 v4, p14
 
-    :goto_1d
+    :goto_1f
     move-wide/from16 v1, v21
 
-    goto/16 :goto_22
+    goto/16 :goto_23
 
     :cond_3a
     const/4 v1, 0x1
@@ -4770,7 +4772,7 @@
 
     invoke-direct {v4, v5, v2}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
 
-    goto :goto_1e
+    goto :goto_20
 
     .line 2965
     :cond_3b
@@ -4782,7 +4784,7 @@
 
     invoke-direct {v4, v5, v2}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
 
-    :goto_1e
+    :goto_20
     move-object/from16 v6, p7
 
     move-object v10, v4
@@ -4812,13 +4814,13 @@
 
     if-nez v5, :cond_3d
 
-    goto :goto_1f
+    goto :goto_21
 
     :cond_3c
     move-object/from16 v4, p14
 
     .line 2968
-    :goto_1f
+    :goto_21
     new-instance v10, Ljava/io/File;
 
     invoke-static/range {v16 .. v16}, Lorg/telegram/messenger/FileLoader;->getDirectory(I)Ljava/io/File;
@@ -4856,10 +4858,10 @@
 
     move/from16 v5, p13
 
-    goto :goto_1d
+    goto :goto_1f
 
     :cond_3e
-    :goto_20
+    :goto_22
     move/from16 v11, p17
 
     move-object v4, v3
@@ -4874,11 +4876,10 @@
 
     move-wide/from16 v1, v21
 
-    :goto_21
     const/4 v12, 0x1
 
     .line 2971
-    :goto_22
+    :goto_23
     invoke-static/range {p7 .. p7}, Lorg/telegram/messenger/ImageLoader;->hasAutoplayFilter(Ljava/lang/String;)Z
 
     move-result v3
@@ -4913,24 +4914,24 @@
 
     if-eqz v1, :cond_40
 
-    goto :goto_23
+    goto :goto_24
 
     :cond_40
     move/from16 v2, p8
 
     move v1, v5
 
-    goto :goto_24
+    goto :goto_25
 
     :cond_41
-    :goto_23
+    :goto_24
     move/from16 v2, p8
 
     move v1, v5
 
     const/4 v12, 0x1
 
-    goto :goto_24
+    goto :goto_25
 
     :cond_42
     move/from16 v11, p17
@@ -4950,7 +4951,7 @@
     move/from16 v1, p13
 
     .line 2980
-    :goto_24
+    :goto_25
     iput v2, v13, Lorg/telegram/messenger/ImageLoader$CacheImage;->type:I
 
     move-object/from16 v9, p3
@@ -5019,12 +5020,12 @@
 
     iput-object v3, v13, Lorg/telegram/messenger/ImageLoader$CacheImage;->encryptionKeyPath:Ljava/io/File;
 
-    goto :goto_25
+    goto :goto_26
 
     :cond_44
     move-object/from16 v2, p2
 
-    :goto_25
+    :goto_26
     move-wide/from16 v4, p18
 
     move-object v3, v13
@@ -5061,7 +5062,7 @@
 
     if-eqz v1, :cond_45
 
-    goto/16 :goto_29
+    goto/16 :goto_2a
 
     .line 3007
     :cond_45
@@ -5132,15 +5133,15 @@
 
     invoke-virtual {v2, v1}, Ljava/util/LinkedList;->add(Ljava/lang/Object;)Z
 
-    const/4 v7, 0x0
+    move/from16 v7, v18
 
     .line 3018
     invoke-direct {v0, v7}, Lorg/telegram/messenger/ImageLoader;->runArtworkTasks(Z)V
 
-    goto/16 :goto_2a
+    goto/16 :goto_2b
 
     :cond_46
-    const/4 v7, 0x0
+    move/from16 v7, v18
 
     .line 3020
     new-instance v1, Lorg/telegram/messenger/ImageLoader$HttpImageTask;
@@ -5159,18 +5160,18 @@
     .line 3022
     invoke-direct {v0, v7}, Lorg/telegram/messenger/ImageLoader;->runHttpTasks(Z)V
 
-    goto/16 :goto_2a
+    goto/16 :goto_2b
 
     :cond_47
     move-wide/from16 v2, p18
 
-    const/4 v7, 0x0
+    move/from16 v7, v18
 
     if-eqz p1, :cond_48
 
-    const/4 v5, 0x3
+    move/from16 v5, v17
 
-    goto :goto_26
+    goto :goto_27
 
     .line 3025
     :cond_48
@@ -5181,7 +5182,7 @@
     move v5, v1
 
     .line 3026
-    :goto_26
+    :goto_27
     iget-object v1, v15, Lorg/telegram/messenger/ImageLocation;->location:Lorg/telegram/tgnet/TLRPC$TL_fileLocationToBeDeprecated;
 
     if-eqz v1, :cond_4b
@@ -5200,13 +5201,13 @@
     :cond_49
     const/4 v6, 0x1
 
-    goto :goto_27
+    goto :goto_28
 
     :cond_4a
     move v6, v11
 
     .line 3031
-    :goto_27
+    :goto_28
     invoke-static/range {p12 .. p12}, Lorg/telegram/messenger/FileLoader;->getInstance(I)Lorg/telegram/messenger/FileLoader;
 
     move-result-object v1
@@ -5219,7 +5220,7 @@
 
     invoke-virtual/range {v1 .. v6}, Lorg/telegram/messenger/FileLoader;->loadFile(Lorg/telegram/messenger/ImageLocation;Ljava/lang/Object;Ljava/lang/String;II)V
 
-    goto :goto_28
+    goto :goto_29
 
     .line 3032
     :cond_4b
@@ -5236,7 +5237,7 @@
 
     invoke-virtual {v1, v2, v14, v5, v11}, Lorg/telegram/messenger/FileLoader;->loadFile(Lorg/telegram/tgnet/TLRPC$Document;Ljava/lang/Object;II)V
 
-    goto :goto_28
+    goto :goto_29
 
     .line 3034
     :cond_4c
@@ -5253,7 +5254,7 @@
 
     invoke-virtual {v1, v2, v5}, Lorg/telegram/messenger/FileLoader;->loadFile(Lorg/telegram/messenger/SecureDocument;I)V
 
-    goto :goto_28
+    goto :goto_29
 
     .line 3036
     :cond_4d
@@ -5272,7 +5273,7 @@
 
     .line 3039
     :cond_4e
-    :goto_28
+    :goto_29
     invoke-virtual/range {p5 .. p5}, Lorg/telegram/messenger/ImageReceiver;->isForceLoding()Z
 
     move-result v1
@@ -5290,11 +5291,11 @@
 
     invoke-virtual {v1, v2, v3}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    goto :goto_2a
+    goto :goto_2b
 
     .line 2996
     :cond_4f
-    :goto_29
+    :goto_2a
     iput-object v10, v13, Lorg/telegram/messenger/ImageLoader$CacheImage;->finalFilePath:Ljava/io/File;
 
     .line 2997
@@ -5323,7 +5324,7 @@
 
     invoke-virtual {v1, v2}, Lorg/telegram/messenger/DispatchQueue;->postRunnable(Ljava/lang/Runnable;)Z
 
-    goto :goto_2a
+    goto :goto_2b
 
     .line 3004
     :cond_50
@@ -5340,7 +5341,7 @@
     iput-object v1, v13, Lorg/telegram/messenger/ImageLoader$CacheImage;->runningTask:Ljava/lang/Runnable;
 
     :cond_51
-    :goto_2a
+    :goto_2b
     return-void
 .end method
 
@@ -5423,7 +5424,7 @@
 
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    move v1, v0
 
     .line 3456
     :goto_0
@@ -6388,7 +6389,7 @@
 
     if-gez p4, :cond_6
 
-    const/high16 p2, 0x3f800000    # 1.0f
+    move p2, p3
 
     :cond_6
     const/4 p4, 0x0
@@ -6406,7 +6407,7 @@
 
     if-eqz v4, :cond_8
 
-    const/4 v4, 0x1
+    move v4, v1
 
     :goto_4
     mul-int/lit8 v5, v4, 0x2
@@ -6432,12 +6433,12 @@
 
     if-ge v4, v5, :cond_9
 
-    const/4 v4, 0x1
+    move v4, v1
 
     goto :goto_5
 
     :cond_9
-    const/4 v4, 0x0
+    move v4, p4
 
     :goto_5
     iput-boolean v4, v0, Landroid/graphics/BitmapFactory$Options;->inPurgeable:Z
@@ -6601,12 +6602,8 @@
     :try_end_d
     .catchall {:try_start_d .. :try_end_d} :catchall_6
 
-    goto :goto_8
-
-    :catchall_6
-    nop
-
     .line 3725
+    :catchall_6
     :goto_8
     iget v1, v0, Landroid/graphics/BitmapFactory$Options;->inSampleSize:I
 
@@ -7212,7 +7209,7 @@
 
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    move v1, v0
 
     :goto_0
     const/4 v2, 0x2
@@ -7245,7 +7242,7 @@
 
     if-eqz v3, :cond_1
 
-    const/4 v6, 0x0
+    move v6, v0
 
     .line 2665
     :goto_2
@@ -7536,18 +7533,18 @@
 
     move-result-object v0
 
-    if-eqz v0, :cond_c
+    if-eqz v0, :cond_d
 
     .line 3964
     iget-object v1, v0, Lorg/telegram/tgnet/TLRPC$PhotoSize;->bytes:[B
 
-    if-eqz v1, :cond_c
+    if-eqz v1, :cond_d
 
     array-length v1, v1
 
-    if-eqz v1, :cond_c
+    if-eqz v1, :cond_d
 
-    .line 3965
+    .line 3966
     iget-object v1, v0, Lorg/telegram/tgnet/TLRPC$PhotoSize;->location:Lorg/telegram/tgnet/TLRPC$FileLocation;
 
     if-eqz v1, :cond_1
@@ -7556,7 +7553,7 @@
 
     if-eqz v1, :cond_2
 
-    .line 3966
+    .line 3967
     :cond_1
     new-instance v1, Lorg/telegram/tgnet/TLRPC$TL_fileLocationToBeDeprecated;
 
@@ -7566,18 +7563,59 @@
 
     const-wide/32 v2, -0x80000000
 
-    .line 3967
+    .line 3968
     iput-wide v2, v1, Lorg/telegram/tgnet/TLRPC$FileLocation;->volume_id:J
 
-    .line 3968
+    .line 3969
     invoke-static {}, Lorg/telegram/messenger/SharedConfig;->getLastLocalId()I
 
     move-result v2
 
     iput v2, v1, Lorg/telegram/tgnet/TLRPC$FileLocation;->local_id:I
 
-    .line 3970
+    .line 3971
     :cond_2
+    iget v1, v0, Lorg/telegram/tgnet/TLRPC$PhotoSize;->h:I
+
+    const/16 v2, 0x32
+
+    const/4 v3, 0x0
+
+    if-gt v1, v2, :cond_3
+
+    iget v1, v0, Lorg/telegram/tgnet/TLRPC$PhotoSize;->w:I
+
+    if-gt v1, v2, :cond_3
+
+    .line 3972
+    new-instance v1, Lorg/telegram/tgnet/TLRPC$TL_photoStrippedSize;
+
+    invoke-direct {v1}, Lorg/telegram/tgnet/TLRPC$TL_photoStrippedSize;-><init>()V
+
+    .line 3973
+    iget-object v2, v0, Lorg/telegram/tgnet/TLRPC$PhotoSize;->location:Lorg/telegram/tgnet/TLRPC$FileLocation;
+
+    iput-object v2, v1, Lorg/telegram/tgnet/TLRPC$PhotoSize;->location:Lorg/telegram/tgnet/TLRPC$FileLocation;
+
+    .line 3974
+    iget-object v2, v0, Lorg/telegram/tgnet/TLRPC$PhotoSize;->bytes:[B
+
+    iput-object v2, v1, Lorg/telegram/tgnet/TLRPC$PhotoSize;->bytes:[B
+
+    .line 3975
+    iget v2, v0, Lorg/telegram/tgnet/TLRPC$PhotoSize;->h:I
+
+    iput v2, v1, Lorg/telegram/tgnet/TLRPC$PhotoSize;->h:I
+
+    .line 3976
+    iget v0, v0, Lorg/telegram/tgnet/TLRPC$PhotoSize;->w:I
+
+    iput v0, v1, Lorg/telegram/tgnet/TLRPC$PhotoSize;->w:I
+
+    goto/16 :goto_3
+
+    .line 3978
+    :cond_3
     sget v1, Lorg/telegram/messenger/UserConfig;->selectedAccount:I
 
     invoke-static {v1}, Lorg/telegram/messenger/FileLoader;->getInstance(I)Lorg/telegram/messenger/FileLoader;
@@ -7590,17 +7628,15 @@
 
     move-result-object v1
 
-    .line 3972
+    .line 3980
     invoke-static {p0}, Lorg/telegram/messenger/MessageObject;->shouldEncryptPhotoOrVideo(Lorg/telegram/tgnet/TLRPC$Message;)Z
 
-    move-result v3
+    move-result v4
 
-    const/4 v4, 0x0
+    if-eqz v4, :cond_4
 
-    if-eqz v3, :cond_3
-
-    .line 3973
-    new-instance v3, Ljava/io/File;
+    .line 3981
+    new-instance v4, Ljava/io/File;
 
     new-instance v5, Ljava/lang/StringBuilder;
 
@@ -7620,28 +7656,28 @@
 
     move-result-object v1
 
-    invoke-direct {v3, v1}, Ljava/io/File;-><init>(Ljava/lang/String;)V
+    invoke-direct {v4, v1}, Ljava/io/File;-><init>(Ljava/lang/String;)V
 
-    move-object v1, v3
+    move-object v1, v4
 
     goto :goto_0
 
-    :cond_3
-    const/4 v2, 0x0
+    :cond_4
+    move v2, v3
 
-    .line 3976
+    .line 3984
     :goto_0
     invoke-virtual {v1}, Ljava/io/File;->exists()Z
 
-    move-result v3
+    move-result v4
 
-    if-nez v3, :cond_6
+    if-nez v4, :cond_7
 
-    const-string v3, "rws"
+    const-string v4, "rws"
 
-    if-eqz v2, :cond_5
+    if-eqz v2, :cond_6
 
-    .line 3979
+    .line 3987
     :try_start_0
     new-instance v2, Ljava/io/File;
 
@@ -7669,12 +7705,12 @@
 
     invoke-direct {v2, v5, v6}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
 
-    .line 3980
+    .line 3988
     new-instance v5, Ljava/io/RandomAccessFile;
 
-    invoke-direct {v5, v2, v3}, Ljava/io/RandomAccessFile;-><init>(Ljava/io/File;Ljava/lang/String;)V
+    invoke-direct {v5, v2, v4}, Ljava/io/RandomAccessFile;-><init>(Ljava/io/File;Ljava/lang/String;)V
 
-    .line 3981
+    .line 3989
     invoke-virtual {v5}, Ljava/io/RandomAccessFile;->length()J
 
     move-result-wide v6
@@ -7691,47 +7727,47 @@
 
     cmp-long v13, v6, v11
 
-    if-lez v13, :cond_4
+    if-lez v13, :cond_5
 
     const-wide/16 v13, 0x30
 
-    .line 3984
+    .line 3992
     rem-long/2addr v6, v13
 
-    cmp-long v13, v6, v11
+    cmp-long v6, v6, v11
 
-    if-nez v13, :cond_4
+    if-nez v6, :cond_5
 
-    .line 3985
-    invoke-virtual {v5, v9, v4, v2}, Ljava/io/RandomAccessFile;->read([BII)I
+    .line 3993
+    invoke-virtual {v5, v9, v3, v2}, Ljava/io/RandomAccessFile;->read([BII)I
 
-    .line 3986
-    invoke-virtual {v5, v10, v4, v8}, Ljava/io/RandomAccessFile;->read([BII)I
+    .line 3994
+    invoke-virtual {v5, v10, v3, v8}, Ljava/io/RandomAccessFile;->read([BII)I
 
     goto :goto_1
 
-    .line 3988
-    :cond_4
+    .line 3996
+    :cond_5
     sget-object v2, Lorg/telegram/messenger/Utilities;->random:Ljava/security/SecureRandom;
 
     invoke-virtual {v2, v9}, Ljava/security/SecureRandom;->nextBytes([B)V
 
-    .line 3989
+    .line 3997
     sget-object v2, Lorg/telegram/messenger/Utilities;->random:Ljava/security/SecureRandom;
 
     invoke-virtual {v2, v10}, Ljava/security/SecureRandom;->nextBytes([B)V
 
-    .line 3990
+    .line 3998
     invoke-virtual {v5, v9}, Ljava/io/RandomAccessFile;->write([B)V
 
-    .line 3991
+    .line 3999
     invoke-virtual {v5, v10}, Ljava/io/RandomAccessFile;->write([B)V
 
-    .line 3993
+    .line 4001
     :goto_1
     invoke-virtual {v5}, Ljava/io/RandomAccessFile;->close()V
 
-    .line 3994
+    .line 4002
     iget-object v8, v0, Lorg/telegram/tgnet/TLRPC$PhotoSize;->bytes:[B
 
     const/4 v11, 0x0
@@ -7744,18 +7780,18 @@
 
     invoke-static/range {v8 .. v14}, Lorg/telegram/messenger/Utilities;->aesCtrDecryptionByteArray([B[B[BIJI)V
 
-    .line 3996
-    :cond_5
+    .line 4004
+    :cond_6
     new-instance v2, Ljava/io/RandomAccessFile;
 
-    invoke-direct {v2, v1, v3}, Ljava/io/RandomAccessFile;-><init>(Ljava/io/File;Ljava/lang/String;)V
+    invoke-direct {v2, v1, v4}, Ljava/io/RandomAccessFile;-><init>(Ljava/io/File;Ljava/lang/String;)V
 
-    .line 3997
+    .line 4005
     iget-object v1, v0, Lorg/telegram/tgnet/TLRPC$PhotoSize;->bytes:[B
 
     invoke-virtual {v2, v1}, Ljava/io/RandomAccessFile;->write([B)V
 
-    .line 3998
+    .line 4006
     invoke-virtual {v2}, Ljava/io/RandomAccessFile;->close()V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
@@ -7765,49 +7801,50 @@
     :catch_0
     move-exception v1
 
-    .line 4000
+    .line 4008
     invoke-static {v1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
-    .line 4003
-    :cond_6
+    .line 4012
+    :cond_7
     :goto_2
     new-instance v1, Lorg/telegram/tgnet/TLRPC$TL_photoSize_layer127;
 
     invoke-direct {v1}, Lorg/telegram/tgnet/TLRPC$TL_photoSize_layer127;-><init>()V
 
-    .line 4004
+    .line 4013
     iget v2, v0, Lorg/telegram/tgnet/TLRPC$PhotoSize;->w:I
 
     iput v2, v1, Lorg/telegram/tgnet/TLRPC$PhotoSize;->w:I
 
-    .line 4005
+    .line 4014
     iget v2, v0, Lorg/telegram/tgnet/TLRPC$PhotoSize;->h:I
 
     iput v2, v1, Lorg/telegram/tgnet/TLRPC$PhotoSize;->h:I
 
-    .line 4006
+    .line 4015
     iget-object v2, v0, Lorg/telegram/tgnet/TLRPC$PhotoSize;->location:Lorg/telegram/tgnet/TLRPC$FileLocation;
 
     iput-object v2, v1, Lorg/telegram/tgnet/TLRPC$PhotoSize;->location:Lorg/telegram/tgnet/TLRPC$FileLocation;
 
-    .line 4007
+    .line 4016
     iget v2, v0, Lorg/telegram/tgnet/TLRPC$PhotoSize;->size:I
 
     iput v2, v1, Lorg/telegram/tgnet/TLRPC$PhotoSize;->size:I
 
-    .line 4008
+    .line 4017
     iget-object v0, v0, Lorg/telegram/tgnet/TLRPC$PhotoSize;->type:Ljava/lang/String;
 
     iput-object v0, v1, Lorg/telegram/tgnet/TLRPC$PhotoSize;->type:Ljava/lang/String;
 
-    .line 4010
+    .line 4020
+    :goto_3
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$Message;->media:Lorg/telegram/tgnet/TLRPC$MessageMedia;
 
     instance-of v2, v0, Lorg/telegram/tgnet/TLRPC$TL_messageMediaPhoto;
 
-    if-eqz v2, :cond_8
+    if-eqz v2, :cond_9
 
-    .line 4011
+    .line 4021
     iget-object v0, v0, Lorg/telegram/tgnet/TLRPC$MessageMedia;->photo:Lorg/telegram/tgnet/TLRPC$Photo;
 
     iget-object v0, v0, Lorg/telegram/tgnet/TLRPC$Photo;->sizes:Ljava/util/ArrayList;
@@ -7816,50 +7853,50 @@
 
     move-result v0
 
-    :goto_3
-    if-ge v4, v0, :cond_c
+    :goto_4
+    if-ge v3, v0, :cond_d
 
-    .line 4012
+    .line 4022
     iget-object v2, p0, Lorg/telegram/tgnet/TLRPC$Message;->media:Lorg/telegram/tgnet/TLRPC$MessageMedia;
 
     iget-object v2, v2, Lorg/telegram/tgnet/TLRPC$MessageMedia;->photo:Lorg/telegram/tgnet/TLRPC$Photo;
 
     iget-object v2, v2, Lorg/telegram/tgnet/TLRPC$Photo;->sizes:Ljava/util/ArrayList;
 
-    invoke-virtual {v2, v4}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+    invoke-virtual {v2, v3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v2
 
     check-cast v2, Lorg/telegram/tgnet/TLRPC$PhotoSize;
 
-    .line 4013
+    .line 4023
     instance-of v2, v2, Lorg/telegram/tgnet/TLRPC$TL_photoCachedSize;
 
-    if-eqz v2, :cond_7
+    if-eqz v2, :cond_8
 
-    .line 4014
+    .line 4024
     iget-object p0, p0, Lorg/telegram/tgnet/TLRPC$Message;->media:Lorg/telegram/tgnet/TLRPC$MessageMedia;
 
     iget-object p0, p0, Lorg/telegram/tgnet/TLRPC$MessageMedia;->photo:Lorg/telegram/tgnet/TLRPC$Photo;
 
     iget-object p0, p0, Lorg/telegram/tgnet/TLRPC$Photo;->sizes:Ljava/util/ArrayList;
 
-    invoke-virtual {p0, v4, v1}, Ljava/util/ArrayList;->set(ILjava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {p0, v3, v1}, Ljava/util/ArrayList;->set(ILjava/lang/Object;)Ljava/lang/Object;
 
-    goto :goto_6
+    goto :goto_7
 
-    :cond_7
-    add-int/lit8 v4, v4, 0x1
-
-    goto :goto_3
-
-    .line 4018
     :cond_8
+    add-int/lit8 v3, v3, 0x1
+
+    goto :goto_4
+
+    .line 4028
+    :cond_9
     instance-of v2, v0, Lorg/telegram/tgnet/TLRPC$TL_messageMediaDocument;
 
-    if-eqz v2, :cond_a
+    if-eqz v2, :cond_b
 
-    .line 4019
+    .line 4029
     iget-object v0, v0, Lorg/telegram/tgnet/TLRPC$MessageMedia;->document:Lorg/telegram/tgnet/TLRPC$Document;
 
     iget-object v0, v0, Lorg/telegram/tgnet/TLRPC$Document;->thumbs:Ljava/util/ArrayList;
@@ -7868,50 +7905,50 @@
 
     move-result v0
 
-    :goto_4
-    if-ge v4, v0, :cond_c
+    :goto_5
+    if-ge v3, v0, :cond_d
 
-    .line 4020
+    .line 4030
     iget-object v2, p0, Lorg/telegram/tgnet/TLRPC$Message;->media:Lorg/telegram/tgnet/TLRPC$MessageMedia;
 
     iget-object v2, v2, Lorg/telegram/tgnet/TLRPC$MessageMedia;->document:Lorg/telegram/tgnet/TLRPC$Document;
 
     iget-object v2, v2, Lorg/telegram/tgnet/TLRPC$Document;->thumbs:Ljava/util/ArrayList;
 
-    invoke-virtual {v2, v4}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+    invoke-virtual {v2, v3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v2
 
     check-cast v2, Lorg/telegram/tgnet/TLRPC$PhotoSize;
 
-    .line 4021
+    .line 4031
     instance-of v2, v2, Lorg/telegram/tgnet/TLRPC$TL_photoCachedSize;
 
-    if-eqz v2, :cond_9
+    if-eqz v2, :cond_a
 
-    .line 4022
+    .line 4032
     iget-object p0, p0, Lorg/telegram/tgnet/TLRPC$Message;->media:Lorg/telegram/tgnet/TLRPC$MessageMedia;
 
     iget-object p0, p0, Lorg/telegram/tgnet/TLRPC$MessageMedia;->document:Lorg/telegram/tgnet/TLRPC$Document;
 
     iget-object p0, p0, Lorg/telegram/tgnet/TLRPC$Document;->thumbs:Ljava/util/ArrayList;
 
-    invoke-virtual {p0, v4, v1}, Ljava/util/ArrayList;->set(ILjava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {p0, v3, v1}, Ljava/util/ArrayList;->set(ILjava/lang/Object;)Ljava/lang/Object;
 
-    goto :goto_6
+    goto :goto_7
 
-    :cond_9
-    add-int/lit8 v4, v4, 0x1
-
-    goto :goto_4
-
-    .line 4026
     :cond_a
+    add-int/lit8 v3, v3, 0x1
+
+    goto :goto_5
+
+    .line 4036
+    :cond_b
     instance-of v2, v0, Lorg/telegram/tgnet/TLRPC$TL_messageMediaWebPage;
 
-    if-eqz v2, :cond_c
+    if-eqz v2, :cond_d
 
-    .line 4027
+    .line 4037
     iget-object v0, v0, Lorg/telegram/tgnet/TLRPC$MessageMedia;->webpage:Lorg/telegram/tgnet/TLRPC$WebPage;
 
     iget-object v0, v0, Lorg/telegram/tgnet/TLRPC$WebPage;->photo:Lorg/telegram/tgnet/TLRPC$Photo;
@@ -7922,10 +7959,10 @@
 
     move-result v0
 
-    :goto_5
-    if-ge v4, v0, :cond_c
+    :goto_6
+    if-ge v3, v0, :cond_d
 
-    .line 4028
+    .line 4038
     iget-object v2, p0, Lorg/telegram/tgnet/TLRPC$Message;->media:Lorg/telegram/tgnet/TLRPC$MessageMedia;
 
     iget-object v2, v2, Lorg/telegram/tgnet/TLRPC$MessageMedia;->webpage:Lorg/telegram/tgnet/TLRPC$WebPage;
@@ -7934,18 +7971,18 @@
 
     iget-object v2, v2, Lorg/telegram/tgnet/TLRPC$Photo;->sizes:Ljava/util/ArrayList;
 
-    invoke-virtual {v2, v4}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+    invoke-virtual {v2, v3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v2
 
     check-cast v2, Lorg/telegram/tgnet/TLRPC$PhotoSize;
 
-    .line 4029
+    .line 4039
     instance-of v2, v2, Lorg/telegram/tgnet/TLRPC$TL_photoCachedSize;
 
-    if-eqz v2, :cond_b
+    if-eqz v2, :cond_c
 
-    .line 4030
+    .line 4040
     iget-object p0, p0, Lorg/telegram/tgnet/TLRPC$Message;->media:Lorg/telegram/tgnet/TLRPC$MessageMedia;
 
     iget-object p0, p0, Lorg/telegram/tgnet/TLRPC$MessageMedia;->webpage:Lorg/telegram/tgnet/TLRPC$WebPage;
@@ -7954,17 +7991,17 @@
 
     iget-object p0, p0, Lorg/telegram/tgnet/TLRPC$Photo;->sizes:Ljava/util/ArrayList;
 
-    invoke-virtual {p0, v4, v1}, Ljava/util/ArrayList;->set(ILjava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {p0, v3, v1}, Ljava/util/ArrayList;->set(ILjava/lang/Object;)Ljava/lang/Object;
+
+    goto :goto_7
+
+    :cond_c
+    add-int/lit8 v3, v3, 0x1
 
     goto :goto_6
 
-    :cond_b
-    add-int/lit8 v4, v4, 0x1
-
-    goto :goto_5
-
-    :cond_c
-    :goto_6
+    :cond_d
+    :goto_7
     return-void
 .end method
 
@@ -7981,7 +8018,7 @@
 
     if-eqz p0, :cond_1
 
-    .line 4073
+    .line 4083
     invoke-virtual {p0}, Ljava/util/ArrayList;->isEmpty()Z
 
     move-result v0
@@ -7993,7 +8030,7 @@
     :cond_0
     const/4 v0, 0x0
 
-    .line 4076
+    .line 4086
     :goto_0
     invoke-virtual {p0}, Ljava/util/ArrayList;->size()I
 
@@ -8001,14 +8038,14 @@
 
     if-ge v0, v1, :cond_1
 
-    .line 4077
+    .line 4087
     invoke-virtual {p0, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v1
 
     check-cast v1, Lorg/telegram/tgnet/TLRPC$Message;
 
-    .line 4078
+    .line 4088
     invoke-static {v1}, Lorg/telegram/messenger/ImageLoader;->saveMessageThumbs(Lorg/telegram/tgnet/TLRPC$Message;)V
 
     add-int/lit8 v0, v0, 0x1
@@ -8296,16 +8333,16 @@
     :goto_0
     const/4 v1, 0x1
 
-    move v1, v0
+    move/from16 v16, v1
 
-    const/16 v16, 0x1
+    move v1, v0
 
     goto :goto_1
 
     :cond_5
-    move v1, v4
+    move/from16 v16, v3
 
-    const/16 v16, 0x0
+    move v1, v4
 
     :goto_1
     div-float v0, v15, v1
@@ -8642,9 +8679,9 @@
     :cond_8
     iget-wide v0, p7, Lorg/telegram/tgnet/TLRPC$FileLocation;->volume_id:J
 
-    cmp-long p7, v0, p5
+    cmp-long p5, v0, p5
 
-    if-eqz p7, :cond_9
+    if-eqz p5, :cond_9
 
     invoke-static {p4}, Lorg/telegram/messenger/FileLoader;->getDirectory(I)Ljava/io/File;
 
@@ -8682,9 +8719,9 @@
 
     move-result-wide p5
 
-    long-to-int p6, p5
+    long-to-int p5, p5
 
-    iput p6, p0, Lorg/telegram/tgnet/TLRPC$PhotoSize;->size:I
+    iput p5, p0, Lorg/telegram/tgnet/TLRPC$PhotoSize;->size:I
 
     .line 3865
     :cond_a
@@ -8861,7 +8898,7 @@
     goto :goto_2
 
     :cond_4
-    const/4 v1, 0x0
+    move v1, v2
 
     :cond_5
     :goto_2
@@ -8926,7 +8963,7 @@
     if-eqz p1, :cond_3
 
     :cond_2
-    const/4 v1, 0x1
+    move v1, v0
 
     :cond_3
     :goto_0
@@ -9277,7 +9314,7 @@
 
     move-result v6
 
-    const/4 v7, 0x0
+    move v7, v5
 
     :goto_1
     if-ge v7, v6, :cond_3
@@ -9488,7 +9525,7 @@
 
     move-result v4
 
-    const/4 v6, 0x0
+    move v6, v5
 
     :goto_7
     if-ge v6, v4, :cond_a
@@ -10130,14 +10167,14 @@
 .method public getCacheOutQueue()Lorg/telegram/DispatchQueuePriority;
     .locals 1
 
-    .line 4161
+    .line 4171
     iget-object v0, p0, Lorg/telegram/messenger/ImageLoader;->cacheOutQueue:Lorg/telegram/DispatchQueuePriority;
 
     return-object v0
 .end method
 
 .method public getFileProgress(Ljava/lang/String;)Ljava/lang/Float;
-    .locals 6
+    .locals 5
 
     const/4 v0, 0x0
 
@@ -10167,9 +10204,9 @@
 
     const-wide/16 v3, 0x0
 
-    cmp-long v5, v1, v3
+    cmp-long v1, v1, v3
 
-    if-nez v5, :cond_2
+    if-nez v1, :cond_2
 
     const/4 p1, 0x0
 
@@ -10569,7 +10606,7 @@
     goto :goto_0
 
     :cond_0
-    const/4 v0, 0x0
+    move v0, v1
 
     :goto_0
     return v0
@@ -10585,7 +10622,7 @@
     goto :goto_1
 
     :cond_2
-    const/4 v0, 0x0
+    move v0, v1
 
     :goto_1
     return v0
@@ -10844,7 +10881,7 @@
     goto :goto_2
 
     :cond_6
-    const/4 v0, 0x1
+    move v0, v8
 
     :goto_2
     if-eqz v0, :cond_8
@@ -10877,7 +10914,9 @@
     return-void
 
     :cond_7
-    const/4 v0, 0x1
+    move/from16 v16, v7
+
+    move v0, v8
 
     goto :goto_3
 
@@ -10897,20 +10936,19 @@
     .line 3128
     invoke-virtual/range {v0 .. v5}, Lorg/telegram/messenger/ImageReceiver;->setImageBitmapByKey(Landroid/graphics/drawable/Drawable;Ljava/lang/String;IZI)Z
 
-    const/4 v0, 0x0
+    move v0, v7
 
-    const/16 v16, 0x1
+    move/from16 v16, v8
 
-    goto :goto_4
+    goto :goto_3
 
     :cond_9
-    const/4 v0, 0x0
+    move v0, v7
 
-    :goto_3
-    const/16 v16, 0x0
+    move/from16 v16, v0
 
     .line 3131
-    :goto_4
+    :goto_3
     invoke-virtual/range {p1 .. p1}, Lorg/telegram/messenger/ImageReceiver;->getImageKey()Ljava/lang/String;
 
     move-result-object v2
@@ -10936,12 +10974,12 @@
 
     move-result-object v1
 
-    goto :goto_5
+    goto :goto_4
 
     :cond_a
     const/4 v1, 0x0
 
-    :goto_5
+    :goto_4
     if-nez v1, :cond_d
 
     .line 3139
@@ -11030,15 +11068,15 @@
     return-void
 
     :cond_f
-    const/16 v17, 0x1
+    move/from16 v17, v8
 
-    goto :goto_6
+    goto :goto_5
 
     :cond_10
     move/from16 v17, v0
 
     .line 3166
-    :goto_6
+    :goto_5
     invoke-virtual/range {p1 .. p1}, Lorg/telegram/messenger/ImageReceiver;->getThumbKey()Ljava/lang/String;
 
     move-result-object v2
@@ -11063,10 +11101,10 @@
     move-result-object v0
 
     :cond_11
-    :goto_7
+    :goto_6
     move-object v1, v0
 
-    goto :goto_8
+    goto :goto_7
 
     .line 3173
     :cond_12
@@ -11123,9 +11161,9 @@
 
     invoke-virtual {v1, v2}, Lorg/telegram/messenger/LruCache;->moveToFront(Ljava/lang/String;)V
 
-    goto :goto_7
+    goto :goto_6
 
-    :goto_8
+    :goto_7
     if-eqz v1, :cond_16
 
     const/4 v3, 0x1
@@ -11154,15 +11192,15 @@
     return-void
 
     :cond_15
-    const/4 v0, 0x1
+    move v0, v8
 
-    goto :goto_9
+    goto :goto_8
 
     :cond_16
-    const/4 v0, 0x0
+    move v0, v7
 
     .line 3201
-    :goto_9
+    :goto_8
     invoke-virtual/range {p1 .. p1}, Lorg/telegram/messenger/ImageReceiver;->getParentObject()Ljava/lang/Object;
 
     move-result-object v1
@@ -11236,10 +11274,10 @@
 
     move-result-object v2
 
-    :goto_a
-    const/4 v10, 0x1
+    :goto_9
+    move v10, v8
 
-    goto :goto_b
+    goto :goto_a
 
     :cond_17
     if-eqz v2, :cond_18
@@ -11249,14 +11287,14 @@
 
     move-result-object v2
 
-    goto :goto_a
+    goto :goto_9
 
     :cond_18
     move-object v2, v4
 
-    const/4 v10, 0x0
+    move v10, v7
 
-    :goto_b
+    :goto_a
     const-string v18, "mp4"
 
     const/4 v9, 0x2
@@ -11270,12 +11308,12 @@
 
     move-object/from16 v8, v18
 
-    goto :goto_c
+    goto :goto_b
 
     :cond_19
     const/4 v8, 0x0
 
-    :goto_c
+    :goto_b
     if-eqz v3, :cond_1a
 
     .line 3235
@@ -11283,13 +11321,13 @@
 
     if-ne v7, v9, :cond_1a
 
-    goto :goto_d
+    goto :goto_c
 
     :cond_1a
     const/16 v18, 0x0
 
     .line 3240
-    :goto_d
+    :goto_c
     invoke-virtual/range {p1 .. p1}, Lorg/telegram/messenger/ImageReceiver;->getExt()Ljava/lang/String;
 
     move-result-object v7
@@ -11305,12 +11343,12 @@
 
     move-object/from16 v23, v7
 
-    goto :goto_e
+    goto :goto_d
 
     :cond_1c
     move-object/from16 v23, v8
 
-    :goto_e
+    :goto_d
     if-nez v18, :cond_1d
 
     move-object/from16 v18, v7
@@ -11334,7 +11372,7 @@
 
     const/16 v28, 0x0
 
-    :goto_f
+    :goto_e
     const-string v13, "."
 
     const/4 v14, 0x2
@@ -11349,7 +11387,7 @@
 
     move-object/from16 v15, v23
 
-    goto :goto_10
+    goto :goto_f
 
     :cond_1e
     move/from16 v29, v15
@@ -11358,14 +11396,14 @@
 
     move-object/from16 v14, v26
 
-    :goto_10
+    :goto_f
     if-nez v14, :cond_1f
 
     move/from16 v30, v0
 
     move-object/from16 v31, v8
 
-    goto :goto_12
+    goto :goto_11
 
     :cond_1f
     move/from16 v30, v0
@@ -11376,14 +11414,14 @@
 
     move-object/from16 v0, v26
 
-    goto :goto_11
+    goto :goto_10
 
     :cond_20
     move-object v0, v8
 
     move-object/from16 v31, v0
 
-    :goto_11
+    :goto_10
     const/4 v8, 0x0
 
     .line 3264
@@ -11393,7 +11431,7 @@
 
     if-nez v0, :cond_22
 
-    :goto_12
+    :goto_11
     move-object/from16 v32, v6
 
     move-object/from16 v33, v11
@@ -11403,7 +11441,7 @@
     :cond_21
     move-object/from16 v8, v31
 
-    goto/16 :goto_1b
+    goto/16 :goto_1a
 
     :cond_22
     move-object/from16 v32, v6
@@ -11412,12 +11450,12 @@
 
     move-object/from16 v8, v26
 
-    goto :goto_13
+    goto :goto_12
 
     :cond_23
     move-object/from16 v8, v31
 
-    :goto_13
+    :goto_12
     const/4 v6, 0x1
 
     .line 3268
@@ -11455,7 +11493,7 @@
 
     move-object/from16 v34, v12
 
-    goto/16 :goto_19
+    goto/16 :goto_18
 
     .line 3271
     :cond_24
@@ -11471,7 +11509,7 @@
 
     if-eqz v6, :cond_25
 
-    goto/16 :goto_18
+    goto/16 :goto_17
 
     .line 3273
     :cond_25
@@ -11513,23 +11551,23 @@
 
     const-wide/32 v35, -0x80000000
 
-    cmp-long v13, v11, v35
+    cmp-long v11, v11, v35
 
-    if-nez v13, :cond_31
+    if-nez v11, :cond_31
 
     iget v6, v6, Lorg/telegram/tgnet/TLRPC$FileLocation;->local_id:I
 
     if-gez v6, :cond_31
 
-    goto :goto_14
+    goto :goto_13
 
     :cond_26
     move-object/from16 v34, v12
 
-    :goto_14
+    :goto_13
     const/16 v28, 0x1
 
-    goto/16 :goto_19
+    goto/16 :goto_18
 
     :cond_27
     move-object/from16 v34, v12
@@ -11569,7 +11607,7 @@
 
     move-result-object v8
 
-    goto/16 :goto_19
+    goto/16 :goto_18
 
     .line 3281
     :cond_28
@@ -11592,7 +11630,7 @@
 
     move-result-object v8
 
-    goto/16 :goto_19
+    goto/16 :goto_18
 
     .line 3283
     :cond_29
@@ -11642,7 +11680,7 @@
 
     move-object v6, v13
 
-    goto :goto_15
+    goto :goto_14
 
     .line 3292
     :cond_2b
@@ -11651,7 +11689,7 @@
     move-result-object v6
 
     .line 3294
-    :goto_15
+    :goto_14
     invoke-virtual {v6}, Ljava/lang/String;->length()I
 
     move-result v11
@@ -11675,7 +11713,7 @@
 
     const-string v13, ".mp4"
 
-    goto :goto_16
+    goto :goto_15
 
     .line 3297
     :cond_2c
@@ -11693,14 +11731,14 @@
 
     const-string v13, ".mkv"
 
-    goto :goto_16
+    goto :goto_15
 
     :cond_2d
     move-object v13, v6
 
     .line 3303
     :cond_2e
-    :goto_16
+    :goto_15
     new-instance v6, Ljava/lang/StringBuilder;
 
     invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
@@ -11748,18 +11786,18 @@
 
     const/4 v6, 0x1
 
-    goto :goto_17
+    goto :goto_16
 
     :cond_2f
     const/4 v6, 0x0
 
-    :goto_17
+    :goto_16
     move/from16 v28, v6
 
-    goto :goto_19
+    goto :goto_18
 
     :cond_30
-    :goto_18
+    :goto_17
     move-object/from16 v34, v12
 
     .line 3272
@@ -11778,21 +11816,21 @@
     move-result-object v8
 
     :cond_31
-    :goto_19
+    :goto_18
     if-nez v2, :cond_32
 
     move-object v4, v0
 
     move-object/from16 v24, v8
 
-    goto :goto_1a
+    goto :goto_19
 
     :cond_32
     move-object v3, v0
 
     move-object/from16 v25, v8
 
-    :goto_1a
+    :goto_19
     if-ne v14, v5, :cond_21
 
     if-nez v2, :cond_33
@@ -11803,7 +11841,7 @@
 
     const/16 v24, 0x0
 
-    goto :goto_1b
+    goto :goto_1a
 
     :cond_33
     move-object/from16 v8, v31
@@ -11814,7 +11852,7 @@
 
     const/16 v26, 0x0
 
-    :goto_1b
+    :goto_1a
     add-int/lit8 v2, v2, 0x1
 
     move-object/from16 v14, p1
@@ -11829,7 +11867,7 @@
 
     move-object/from16 v12, v34
 
-    goto/16 :goto_f
+    goto/16 :goto_e
 
     :cond_34
     move/from16 v30, v0
@@ -11902,12 +11940,12 @@
     move-result-object v0
 
     :cond_37
-    :goto_1c
+    :goto_1b
     move-object/from16 v19, v0
 
     move-object v9, v2
 
-    goto :goto_1e
+    goto :goto_1d
 
     .line 3335
     :cond_38
@@ -11921,7 +11959,7 @@
 
     if-eqz v1, :cond_39
 
-    goto :goto_1d
+    goto :goto_1c
 
     .line 3337
     :cond_39
@@ -11944,11 +11982,11 @@
 
     move-result-object v0
 
-    goto :goto_1c
+    goto :goto_1b
 
     .line 3336
     :cond_3a
-    :goto_1d
+    :goto_1c
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -11963,7 +12001,7 @@
 
     move-result-object v0
 
-    goto :goto_1c
+    goto :goto_1b
 
     :cond_3b
     const/4 v6, 0x1
@@ -11972,7 +12010,7 @@
 
     const/16 v19, 0x0
 
-    :goto_1e
+    :goto_1d
     const-string v0, "@"
 
     if-eqz v3, :cond_3c
@@ -11996,12 +12034,12 @@
 
     move-result-object v3
 
-    goto :goto_1f
+    goto :goto_1e
 
     :cond_3c
     move-object/from16 v12, v34
 
-    :goto_1f
+    :goto_1e
     if-eqz v4, :cond_3d
 
     if-eqz v33, :cond_3d
@@ -12023,12 +12061,12 @@
 
     move-result-object v4
 
-    goto :goto_20
+    goto :goto_1f
 
     :cond_3d
     move-object/from16 v11, v33
 
-    :goto_20
+    :goto_1f
     if-eqz v9, :cond_3e
 
     if-eqz v32, :cond_3e
@@ -12052,7 +12090,7 @@
 
     move-object v2, v0
 
-    goto :goto_21
+    goto :goto_20
 
     :cond_3e
     move-object/from16 v8, v32
@@ -12060,7 +12098,7 @@
     move-object v2, v9
 
     .line 3352
-    :goto_21
+    :goto_20
     invoke-virtual/range {p1 .. p1}, Lorg/telegram/messenger/ImageReceiver;->getUniqKeyPrefix()Ljava/lang/String;
 
     move-result-object v0
@@ -12088,13 +12126,13 @@
 
     move-object v13, v0
 
-    goto :goto_22
+    goto :goto_21
 
     :cond_3f
     move-object v13, v4
 
     .line 3356
-    :goto_22
+    :goto_21
     invoke-virtual/range {p1 .. p1}, Lorg/telegram/messenger/ImageReceiver;->getUniqKeyPrefix()Ljava/lang/String;
 
     move-result-object v0
@@ -12122,12 +12160,12 @@
 
     move-object v14, v0
 
-    goto :goto_23
+    goto :goto_22
 
     :cond_40
     move-object v14, v3
 
-    :goto_23
+    :goto_22
     if-eqz v31, :cond_43
 
     move-object/from16 v9, v31
@@ -12147,12 +12185,12 @@
 
     const/16 v22, 0x2
 
-    goto :goto_24
+    goto :goto_23
 
     :cond_41
-    const/16 v22, 0x1
+    move/from16 v22, v6
 
-    :goto_24
+    :goto_23
     move-object/from16 v0, p0
 
     move-object/from16 v1, p1
@@ -12203,21 +12241,21 @@
 
     invoke-direct/range {v0 .. v12}, Lorg/telegram/messenger/ImageLoader;->createLoadOperationForImageReceiver(Lorg/telegram/messenger/ImageReceiver;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lorg/telegram/messenger/ImageLocation;Ljava/lang/String;JIIII)V
 
-    goto/16 :goto_2c
+    goto/16 :goto_2b
 
     :cond_42
     move-object/from16 v20, v9
 
     move-object v15, v11
 
-    goto :goto_25
+    goto :goto_24
 
     :cond_43
     move-object v15, v11
 
     move-object/from16 v20, v31
 
-    :goto_25
+    :goto_24
     if-eqz v26, :cond_48
 
     .line 3365
@@ -12231,24 +12269,24 @@
 
     if-eqz v28, :cond_44
 
-    const/16 v22, 0x1
+    move/from16 v22, v6
 
-    goto :goto_26
+    goto :goto_25
 
     :cond_44
     move/from16 v22, v0
 
-    :goto_26
+    :goto_25
     if-nez v22, :cond_45
 
-    const/4 v9, 0x1
+    move v9, v6
 
-    goto :goto_27
+    goto :goto_26
 
     :cond_45
     move/from16 v9, v22
 
-    :goto_27
+    :goto_26
     if-nez v30, :cond_46
 
     const-wide/16 v10, 0x0
@@ -12280,12 +12318,12 @@
     .line 3372
     invoke-direct/range {v0 .. v12}, Lorg/telegram/messenger/ImageLoader;->createLoadOperationForImageReceiver(Lorg/telegram/messenger/ImageReceiver;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lorg/telegram/messenger/ImageLocation;Ljava/lang/String;JIIII)V
 
-    goto :goto_28
+    goto :goto_27
 
     :cond_46
     move-object/from16 v19, v12
 
-    :goto_28
+    :goto_27
     if-nez v17, :cond_47
 
     const-wide/16 v7, 0x0
@@ -12347,7 +12385,7 @@
 
     invoke-direct/range {v0 .. v12}, Lorg/telegram/messenger/ImageLoader;->createLoadOperationForImageReceiver(Lorg/telegram/messenger/ImageReceiver;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lorg/telegram/messenger/ImageLocation;Ljava/lang/String;JIIII)V
 
-    goto :goto_2c
+    goto :goto_2b
 
     .line 3381
     :cond_48
@@ -12359,24 +12397,24 @@
 
     if-eqz v28, :cond_49
 
-    const/4 v14, 0x1
+    move v14, v6
 
-    goto :goto_29
+    goto :goto_28
 
     :cond_49
     move v14, v0
 
-    :goto_29
+    :goto_28
     if-nez v14, :cond_4a
 
-    const/4 v9, 0x1
+    move v9, v6
 
-    goto :goto_2a
+    goto :goto_29
 
     :cond_4a
     move v9, v14
 
-    :goto_2a
+    :goto_29
     const-wide/16 v10, 0x0
 
     const/4 v12, 0x1
@@ -12385,12 +12423,12 @@
 
     const/16 v22, 0x2
 
-    goto :goto_2b
+    goto :goto_2a
 
     :cond_4b
-    const/16 v22, 0x1
+    move/from16 v22, v6
 
-    :goto_2b
+    :goto_2a
     move-object/from16 v0, p0
 
     move-object/from16 v1, p1
@@ -12436,7 +12474,7 @@
     invoke-direct/range {v0 .. v12}, Lorg/telegram/messenger/ImageLoader;->createLoadOperationForImageReceiver(Lorg/telegram/messenger/ImageReceiver;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lorg/telegram/messenger/ImageLocation;Ljava/lang/String;JIIII)V
 
     :cond_4c
-    :goto_2c
+    :goto_2b
     return-void
 .end method
 
@@ -12507,9 +12545,9 @@
 
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    move v1, v0
 
-    .line 4155
+    .line 4165
     :goto_0
     iget-object v2, p0, Lorg/telegram/messenger/ImageLoader;->cachedAnimatedFileDrawables:Ljava/util/ArrayList;
 
@@ -12519,7 +12557,7 @@
 
     if-ge v1, v2, :cond_0
 
-    .line 4156
+    .line 4166
     iget-object v2, p0, Lorg/telegram/messenger/ImageLoader;->cachedAnimatedFileDrawables:Ljava/util/ArrayList;
 
     invoke-virtual {v2, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;

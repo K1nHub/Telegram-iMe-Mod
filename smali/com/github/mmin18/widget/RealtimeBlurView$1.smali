@@ -88,12 +88,12 @@
 
     if-eq v4, v1, :cond_0
 
-    const/4 v1, 0x1
+    move v1, v3
 
     goto :goto_0
 
     :cond_0
-    const/4 v1, 0x0
+    move v1, v5
 
     .line 245
     :goto_0
@@ -184,7 +184,7 @@
 
     const/high16 v9, 0x3f800000    # 1.0f
 
-    mul-float v8, v8, v9
+    mul-float/2addr v8, v9
 
     iget-object v10, p0, Lcom/github/mmin18/widget/RealtimeBlurView$1;->this$0:Lcom/github/mmin18/widget/RealtimeBlurView;
 
@@ -208,7 +208,7 @@
 
     int-to-float v10, v10
 
-    mul-float v10, v10, v9
+    mul-float/2addr v10, v9
 
     iget-object v9, p0, Lcom/github/mmin18/widget/RealtimeBlurView$1;->this$0:Lcom/github/mmin18/widget/RealtimeBlurView;
 

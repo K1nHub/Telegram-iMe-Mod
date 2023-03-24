@@ -190,7 +190,7 @@
 .method private static calculateEac3Bitrate(III)I
     .locals 0
 
-    mul-int p0, p0, p1
+    mul-int/2addr p0, p1
 
     mul-int/lit8 p2, p2, 0x20
 
@@ -561,7 +561,7 @@
 
     if-le v3, v4, :cond_0
 
-    const/4 v3, 0x1
+    move v3, v6
 
     goto :goto_0
 
@@ -601,12 +601,12 @@
     goto :goto_1
 
     :cond_1
-    const/4 v1, 0x2
+    move v1, v10
 
     goto :goto_1
 
     :cond_2
-    const/4 v1, 0x1
+    move v1, v6
 
     goto :goto_1
 
@@ -626,7 +626,7 @@
 
     add-int/2addr v11, v6
 
-    mul-int/lit8 v11, v11, 0x2
+    mul-int/2addr v11, v10
 
     .line 286
     invoke-virtual {v0, v10}, Lcom/google/android/exoplayer2/util/ParsableBitArray;->readBits(I)I
@@ -644,7 +644,7 @@
 
     aget v13, v13, v14
 
-    const/4 v14, 0x3
+    move v14, v9
 
     const/4 v15, 0x6
 
@@ -1020,7 +1020,7 @@
     :cond_1a
     add-int/2addr v3, v10
 
-    mul-int/lit8 v3, v3, 0x8
+    mul-int/2addr v3, v7
 
     .line 387
     invoke-virtual {v0, v3}, Lcom/google/android/exoplayer2/util/ParsableBitArray;->skipBits(I)V
@@ -1223,8 +1223,6 @@
 
     move/from16 v27, v16
 
-    move/from16 v23, v19
-
     goto :goto_c
 
     :cond_2a
@@ -1317,7 +1315,7 @@
     goto :goto_b
 
     :cond_2f
-    const/4 v13, -0x1
+    move v13, v1
 
     :goto_b
     const/16 v2, 0x600
@@ -1334,6 +1332,10 @@
 
     add-int v19, v4, v0
 
+    move/from16 v22, v1
+
+    move/from16 v26, v2
+
     move-object/from16 v21, v3
 
     move/from16 v27, v5
@@ -1342,14 +1344,10 @@
 
     move/from16 v24, v13
 
+    :goto_c
     move/from16 v23, v19
 
-    const/16 v22, -0x1
-
-    const/16 v26, 0x600
-
     .line 474
-    :goto_c
     new-instance v0, Lcom/google/android/exoplayer2/audio/Ac3Util$SyncFrameInfo;
 
     const/16 v28, 0x0
@@ -1393,7 +1391,7 @@
 
     if-le v0, v3, :cond_1
 
-    const/4 v0, 0x1
+    move v0, v4
 
     goto :goto_0
 
@@ -1421,7 +1419,7 @@
 
     add-int/2addr p0, v4
 
-    mul-int/lit8 p0, p0, 0x2
+    mul-int/2addr p0, v0
 
     return p0
 

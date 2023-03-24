@@ -291,7 +291,7 @@
 .end method
 
 .method private parseStreamFragmentStartTag(Lorg/xmlpull/v1/XmlPullParser;)V
-    .locals 11
+    .locals 10
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lcom/google/android/exoplayer2/ParserException;
@@ -314,13 +314,13 @@
 
     move-result-wide v4
 
-    const/4 v1, 0x0
+    cmp-long v1, v4, v2
 
-    const/4 v6, 0x1
+    const/4 v6, 0x0
 
-    cmp-long v7, v4, v2
+    const/4 v7, 0x1
 
-    if-nez v7, :cond_2
+    if-nez v1, :cond_2
 
     if-nez v0, :cond_0
 
@@ -332,18 +332,18 @@
     :cond_0
     iget-wide v4, p0, Lcom/google/android/exoplayer2/source/smoothstreaming/manifest/SsManifestParser$StreamIndexParser;->lastChunkDuration:J
 
-    const-wide/16 v7, -0x1
+    const-wide/16 v8, -0x1
 
-    cmp-long v9, v4, v7
+    cmp-long v1, v4, v8
 
-    if-eqz v9, :cond_1
+    if-eqz v1, :cond_1
 
     .line 572
-    iget-object v4, p0, Lcom/google/android/exoplayer2/source/smoothstreaming/manifest/SsManifestParser$StreamIndexParser;->startTimes:Ljava/util/ArrayList;
+    iget-object v1, p0, Lcom/google/android/exoplayer2/source/smoothstreaming/manifest/SsManifestParser$StreamIndexParser;->startTimes:Ljava/util/ArrayList;
 
-    sub-int/2addr v0, v6
+    sub-int/2addr v0, v7
 
-    invoke-virtual {v4, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+    invoke-virtual {v1, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -351,11 +351,11 @@
 
     invoke-virtual {v0}, Ljava/lang/Long;->longValue()J
 
-    move-result-wide v4
+    move-result-wide v0
 
-    iget-wide v7, p0, Lcom/google/android/exoplayer2/source/smoothstreaming/manifest/SsManifestParser$StreamIndexParser;->lastChunkDuration:J
+    iget-wide v4, p0, Lcom/google/android/exoplayer2/source/smoothstreaming/manifest/SsManifestParser$StreamIndexParser;->lastChunkDuration:J
 
-    add-long/2addr v4, v7
+    add-long/2addr v4, v0
 
     goto :goto_0
 
@@ -363,7 +363,7 @@
     const-string p1, "Unable to infer start time"
 
     .line 575
-    invoke-static {p1, v1}, Lcom/google/android/exoplayer2/ParserException;->createForMalformedManifest(Ljava/lang/String;Ljava/lang/Throwable;)Lcom/google/android/exoplayer2/ParserException;
+    invoke-static {p1, v6}, Lcom/google/android/exoplayer2/ParserException;->createForMalformedManifest(Ljava/lang/String;Ljava/lang/Throwable;)Lcom/google/android/exoplayer2/ParserException;
 
     move-result-object p1
 
@@ -376,36 +376,36 @@
 
     invoke-static {v4, v5}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
-    move-result-object v7
+    move-result-object v1
 
-    invoke-virtual {v0, v7}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     const-string v0, "d"
 
     .line 581
     invoke-virtual {p0, p1, v0, v2, v3}, Lcom/google/android/exoplayer2/source/smoothstreaming/manifest/SsManifestParser$ElementParser;->parseLong(Lorg/xmlpull/v1/XmlPullParser;Ljava/lang/String;J)J
 
-    move-result-wide v7
+    move-result-wide v0
 
-    iput-wide v7, p0, Lcom/google/android/exoplayer2/source/smoothstreaming/manifest/SsManifestParser$StreamIndexParser;->lastChunkDuration:J
+    iput-wide v0, p0, Lcom/google/android/exoplayer2/source/smoothstreaming/manifest/SsManifestParser$StreamIndexParser;->lastChunkDuration:J
 
     const-string v0, "r"
 
-    const-wide/16 v7, 0x1
+    const-wide/16 v8, 0x1
 
     .line 583
-    invoke-virtual {p0, p1, v0, v7, v8}, Lcom/google/android/exoplayer2/source/smoothstreaming/manifest/SsManifestParser$ElementParser;->parseLong(Lorg/xmlpull/v1/XmlPullParser;Ljava/lang/String;J)J
+    invoke-virtual {p0, p1, v0, v8, v9}, Lcom/google/android/exoplayer2/source/smoothstreaming/manifest/SsManifestParser$ElementParser;->parseLong(Lorg/xmlpull/v1/XmlPullParser;Ljava/lang/String;J)J
 
-    move-result-wide v9
+    move-result-wide v0
 
-    cmp-long p1, v9, v7
+    cmp-long p1, v0, v8
 
     if-lez p1, :cond_4
 
     .line 584
-    iget-wide v7, p0, Lcom/google/android/exoplayer2/source/smoothstreaming/manifest/SsManifestParser$StreamIndexParser;->lastChunkDuration:J
+    iget-wide v8, p0, Lcom/google/android/exoplayer2/source/smoothstreaming/manifest/SsManifestParser$StreamIndexParser;->lastChunkDuration:J
 
-    cmp-long p1, v7, v2
+    cmp-long p1, v8, v2
 
     if-eqz p1, :cond_3
 
@@ -415,7 +415,7 @@
     const-string p1, "Repeated chunk with unspecified duration"
 
     .line 585
-    invoke-static {p1, v1}, Lcom/google/android/exoplayer2/ParserException;->createForMalformedManifest(Ljava/lang/String;Ljava/lang/Throwable;)Lcom/google/android/exoplayer2/ParserException;
+    invoke-static {p1, v6}, Lcom/google/android/exoplayer2/ParserException;->createForMalformedManifest(Ljava/lang/String;Ljava/lang/Throwable;)Lcom/google/android/exoplayer2/ParserException;
 
     move-result-object p1
 
@@ -423,28 +423,28 @@
 
     :cond_4
     :goto_1
-    int-to-long v0, v6
+    int-to-long v2, v7
 
-    cmp-long p1, v0, v9
+    cmp-long p1, v2, v0
 
     if-gez p1, :cond_5
 
     .line 590
     iget-object p1, p0, Lcom/google/android/exoplayer2/source/smoothstreaming/manifest/SsManifestParser$StreamIndexParser;->startTimes:Ljava/util/ArrayList;
 
-    iget-wide v2, p0, Lcom/google/android/exoplayer2/source/smoothstreaming/manifest/SsManifestParser$StreamIndexParser;->lastChunkDuration:J
+    iget-wide v8, p0, Lcom/google/android/exoplayer2/source/smoothstreaming/manifest/SsManifestParser$StreamIndexParser;->lastChunkDuration:J
 
-    mul-long v2, v2, v0
+    mul-long/2addr v8, v2
 
-    add-long/2addr v2, v4
+    add-long/2addr v8, v4
 
-    invoke-static {v2, v3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+    invoke-static {v8, v9}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
-    move-result-object v0
+    move-result-object v2
 
-    invoke-virtual {p1, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    invoke-virtual {p1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    add-int/lit8 v6, v6, 0x1
+    add-int/lit8 v7, v7, 0x1
 
     goto :goto_1
 

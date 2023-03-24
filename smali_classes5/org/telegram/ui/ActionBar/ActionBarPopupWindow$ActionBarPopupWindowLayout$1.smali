@@ -90,11 +90,11 @@
 
     move-object v9, v0
 
-    const/4 v10, 0x0
+    move v10, v8
 
-    const/4 v11, 0x0
+    move v11, v10
 
-    const/4 v12, 0x0
+    move v12, v11
 
     :goto_0
     if-ge v10, v7, :cond_6

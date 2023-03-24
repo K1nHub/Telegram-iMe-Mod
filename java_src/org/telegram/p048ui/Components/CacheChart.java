@@ -24,7 +24,7 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.zxing.common.detector.MathUtils;
 import java.util.Arrays;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3286R;
+import org.telegram.messenger.C3301R;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.LiteMode;
 import org.telegram.messenger.SvgHelper;
@@ -94,9 +94,9 @@ public class CacheChart extends View {
     }
 
     static {
-        int i = C3286R.C3291raw.cache_videos;
-        int i2 = C3286R.C3291raw.cache_other;
-        DEFAULT_PARTICLES = new int[]{C3286R.C3291raw.cache_photos, i, C3286R.C3291raw.cache_documents, C3286R.C3291raw.cache_music, i, C3286R.C3291raw.cache_stickers, C3286R.C3291raw.cache_profile_photos, i2, i2};
+        int i = C3301R.C3306raw.cache_videos;
+        int i2 = C3301R.C3306raw.cache_other;
+        DEFAULT_PARTICLES = new int[]{C3301R.C3306raw.cache_photos, i, C3301R.C3306raw.cache_documents, C3301R.C3306raw.cache_music, i, C3301R.C3306raw.cache_stickers, C3301R.C3306raw.cache_profile_photos, i2, i2};
         particlesStart = -1L;
     }
 
@@ -278,7 +278,7 @@ public class CacheChart extends View {
         void draw(Canvas canvas, RectF rectF, RectF rectF2, float f, float f2, float f3, float f4, float f5) {
             float f6;
             float f7;
-            float f8 = this.selectedAnimated.set(this.selected ? 1.0f : BitmapDescriptorFactory.HUE_RED);
+            float f8 = this.selectedAnimated.set(this.selected ? 1.0f : 0.0f);
             this.rectF.set(rectF);
             this.rectF.inset((-AndroidUtilities.m50dp(9)) * f8, f8 * (-AndroidUtilities.m50dp(9)));
             float centerX = (float) (this.rectF.centerX() + ((Math.cos(CacheChart.toRad(f)) * (this.rectF.width() + rectF2.width())) / 4.0d));
@@ -451,11 +451,11 @@ public class CacheChart extends View {
 
     @Override // android.view.View
     public boolean dispatchTouchEvent(MotionEvent motionEvent) {
+        float x;
+        float y;
         int i;
         boolean z;
-        float x = motionEvent.getX();
-        float y = motionEvent.getY();
-        float distance = MathUtils.distance(this.chartBounds.centerX(), this.chartBounds.centerY(), x, y);
+        float distance = MathUtils.distance(this.chartBounds.centerX(), this.chartBounds.centerY(), motionEvent.getX(), motionEvent.getY());
         float atan2 = (float) ((Math.atan2(y - this.chartBounds.centerY(), x - this.chartBounds.centerX()) / 3.141592653589793d) * 180.0d);
         if (atan2 < BitmapDescriptorFactory.HUE_RED) {
             atan2 += 360.0f;
@@ -549,6 +549,7 @@ public class CacheChart extends View {
     public void setSegments(long j, boolean z, SegmentSize... segmentSizeArr) {
         char c;
         String str;
+        char c2;
         SpannableString spannableString;
         SegmentSize[] segmentSizeArr2 = segmentSizeArr;
         int i = 0;
@@ -612,7 +613,7 @@ public class CacheChart extends View {
                 this.complete = j <= 0;
                 if (!z) {
                     this.loadingFloat.set(BitmapDescriptorFactory.HUE_RED, true);
-                    this.completeFloat.set(this.complete ? 1.0f : BitmapDescriptorFactory.HUE_RED, true);
+                    this.completeFloat.set(this.complete ? 1.0f : 0.0f, true);
                 }
                 this.topCompleteText.setText(this.topText.getText(), false);
                 this.topText.setText(SessionDescription.SUPPORTED_SDP_VERSION, z);
@@ -634,10 +635,10 @@ public class CacheChart extends View {
                     }
                 }
             } else {
+                float f = 0.0f;
                 int i4 = 0;
-                float f = BitmapDescriptorFactory.HUE_RED;
                 for (int i5 = 0; i5 < segmentSizeArr2.length; i5++) {
-                    float f2 = (segmentSizeArr2[i5] == null || !segmentSizeArr2[i5].selected) ? BitmapDescriptorFactory.HUE_RED : ((float) segmentSizeArr2[i5].size) / ((float) j2);
+                    float f2 = (segmentSizeArr2[i5] == null || !segmentSizeArr2[i5].selected) ? 0.0f : ((float) segmentSizeArr2[i5].size) / ((float) j2);
                     if (f2 > BitmapDescriptorFactory.HUE_RED && f2 < 0.02f) {
                         i4++;
                         f += f2;
@@ -653,7 +654,7 @@ public class CacheChart extends View {
                     this.tempFloat = new float[segmentSizeArr2.length];
                 }
                 for (int i6 = 0; i6 < segmentSizeArr2.length; i6++) {
-                    this.tempFloat[i6] = (segmentSizeArr2[i6] == null || !segmentSizeArr2[i6].selected) ? BitmapDescriptorFactory.HUE_RED : ((float) segmentSizeArr2[i6].size) / ((float) j2);
+                    this.tempFloat[i6] = (segmentSizeArr2[i6] == null || !segmentSizeArr2[i6].selected) ? 0.0f : ((float) segmentSizeArr2[i6].size) / ((float) j2);
                 }
                 AndroidUtilities.roundPercents(this.tempFloat, this.tempPercents);
                 if (this.type == 0) {
@@ -676,8 +677,8 @@ public class CacheChart extends View {
                     length = 0;
                 }
                 float f3 = 360.0f - (length * 2.0f);
+                float f4 = 0.0f;
                 int i8 = 0;
-                float f4 = BitmapDescriptorFactory.HUE_RED;
                 int i9 = 0;
                 while (i8 < segmentSizeArr2.length) {
                     int i10 = segmentSizeArr2[i8].index;
@@ -718,8 +719,10 @@ public class CacheChart extends View {
                             Sector[] sectorArr10 = this.sectors;
                             sectorArr10[i10].textAlphaAnimated.set(sectorArr10[i10].textAlpha, true);
                         }
+                        c2 = 0;
                     } else {
                         Sector[] sectorArr11 = this.sectors;
+                        c2 = 0;
                         sectorArr11[i10].angleCenter = (f7 + f8) / 2.0f;
                         sectorArr11[i10].angleSize = Math.abs(f8 - f7) / 2.0f;
                         if (!z) {
@@ -793,8 +796,8 @@ public class CacheChart extends View {
         AnimatedFloat animatedFloat = this.loadingFloat;
         boolean z2 = this.loading;
         float f8 = BitmapDescriptorFactory.HUE_RED;
-        float f9 = animatedFloat.set(z2 ? 1.0f : BitmapDescriptorFactory.HUE_RED);
-        float f10 = this.completeFloat.set(this.complete ? 1.0f : BitmapDescriptorFactory.HUE_RED);
+        float f9 = animatedFloat.set(z2 ? 1.0f : 0.0f);
+        float f10 = this.completeFloat.set(this.complete ? 1.0f : 0.0f);
         this.chartBounds.set(this.chartMeasureBounds);
         float lerp = AndroidUtilities.lerp((float) BitmapDescriptorFactory.HUE_RED, AndroidUtilities.dpf2(padInsideDp()), f10);
         this.chartBounds.inset(lerp, lerp);
@@ -916,9 +919,9 @@ public class CacheChart extends View {
                 drawable.distributionAlgorithm = false;
                 drawable.excludeRadius = AndroidUtilities.m50dp(80);
                 StarParticlesView.Drawable drawable2 = this.completeDrawable;
-                drawable2.f1786k3 = 0.85f;
-                drawable2.f1785k2 = 0.85f;
-                drawable2.f1784k1 = 0.85f;
+                drawable2.f1787k3 = 0.85f;
+                drawable2.f1786k2 = 0.85f;
+                drawable2.f1785k1 = 0.85f;
                 drawable2.init();
                 z = true;
             } else {

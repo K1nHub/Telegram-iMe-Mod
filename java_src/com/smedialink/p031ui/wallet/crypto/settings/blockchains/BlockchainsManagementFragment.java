@@ -14,6 +14,7 @@ import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.listener.OnItemChildClickListener;
 import com.chad.library.adapter.base.listener.OnItemClickListener;
 import com.smedialink.model.dialog.DialogModel;
+import com.smedialink.model.wallet.crypto.create.CreateWalletScreenType;
 import com.smedialink.model.wallet.crypto.settings.BlockchainWalletItem;
 import com.smedialink.navigation.wallet.coordinator.PinCodeCoordinator;
 import com.smedialink.p031ui.base.WalletAuthFragment;
@@ -40,10 +41,10 @@ import moxy.MvpDelegate;
 import moxy.ktx.MoxyKtxDelegate;
 import org.fork.utils.Callbacks$Callback;
 import org.koin.p047mp.KoinPlatformTools;
-import org.telegram.messenger.C3286R;
+import org.telegram.messenger.C3301R;
 import org.telegram.messenger.databinding.ForkFragmentBlockchainsManagementBinding;
 import org.telegram.p048ui.ActionBar.AlertDialog;
-import org.telegram.p048ui.ActionBar.C3351ActionBar;
+import org.telegram.p048ui.ActionBar.C3366ActionBar;
 import org.telegram.p048ui.ActionBar.INavigationLayout;
 import org.telegram.p048ui.ActionBar.ThemeDescription;
 import org.telegram.p048ui.Cells.TextCell;
@@ -147,7 +148,7 @@ public final class BlockchainsManagementFragment extends WalletAuthFragment impl
         PinCodeCoordinator pinCodeCoordinator = getPinCodeCoordinator();
         INavigationLayout parentLayout = this.parentLayout;
         Intrinsics.checkNotNullExpressionValue(parentLayout, "parentLayout");
-        PinCodeCoordinator.start$default(pinCodeCoordinator, parentLayout, CreateWalletFragment.Companion.newInstance(new CreateWalletFragment.ScreenType.SecretWords(secretWords, address, null, null, 12, null)), null, false, 12, null);
+        PinCodeCoordinator.start$default(pinCodeCoordinator, parentLayout, CreateWalletFragment.Companion.newInstance(new CreateWalletScreenType.SecretWords(secretWords, address, null, null, 12, null)), null, false, 12, null);
     }
 
     @Override // org.telegram.p048ui.ActionBar.BaseFragment
@@ -171,13 +172,13 @@ public final class BlockchainsManagementFragment extends WalletAuthFragment impl
     }
 
     private final void setupActionBar() {
-        C3351ActionBar c3351ActionBar = this.actionBar;
-        c3351ActionBar.setBackButtonImage(C3286R.C3288drawable.ic_ab_back);
-        c3351ActionBar.setTitle(getResourceManager().getString(C3286R.string.wallet_crypto_blockchains_title));
-        c3351ActionBar.setAllowOverlayTitle(true);
-        c3351ActionBar.createMenu();
-        c3351ActionBar.setActionBarMenuOnItemClick(new C3351ActionBar.ActionBarMenuOnItemClick() { // from class: com.smedialink.ui.wallet.crypto.settings.blockchains.BlockchainsManagementFragment$setupActionBar$1$1
-            @Override // org.telegram.p048ui.ActionBar.C3351ActionBar.ActionBarMenuOnItemClick
+        C3366ActionBar c3366ActionBar = this.actionBar;
+        c3366ActionBar.setBackButtonImage(C3301R.C3303drawable.ic_ab_back);
+        c3366ActionBar.setTitle(getResourceManager().getString(C3301R.string.wallet_crypto_blockchains_title));
+        c3366ActionBar.setAllowOverlayTitle(true);
+        c3366ActionBar.createMenu();
+        c3366ActionBar.setActionBarMenuOnItemClick(new C3366ActionBar.ActionBarMenuOnItemClick() { // from class: com.smedialink.ui.wallet.crypto.settings.blockchains.BlockchainsManagementFragment$setupActionBar$1$1
+            @Override // org.telegram.p048ui.ActionBar.C3366ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i) {
                 if (i == -1) {
                     BlockchainsManagementFragment.this.finishFragment();
@@ -240,7 +241,7 @@ public final class BlockchainsManagementFragment extends WalletAuthFragment impl
         Intrinsics.checkNotNullParameter(this_with, "$this_with");
         Intrinsics.checkNotNullParameter(baseQuickAdapter, "<anonymous parameter 0>");
         Intrinsics.checkNotNullParameter(view, "view");
-        if (view.getId() == C3286R.C3289id.image_info) {
+        if (view.getId() == C3301R.C3304id.image_info) {
             this$0.getPresenter().showInfoDialog(this_with.getItem(i));
         }
     }
@@ -265,12 +266,12 @@ public final class BlockchainsManagementFragment extends WalletAuthFragment impl
         ForkFragmentBlockchainsManagementBinding binding = getBinding();
         RLottieImageView rLottieImageView = binding.imageHeader;
         rLottieImageView.setAutoRepeat(true);
-        rLottieImageView.setAnimation(C3286R.C3291raw.fork_multi_networking, 300, 170);
+        rLottieImageView.setAnimation(C3301R.C3306raw.fork_multi_networking, 300, 170);
         rLottieImageView.setScaleType(ImageView.ScaleType.CENTER);
         rLottieImageView.playAnimation();
-        binding.textWalletsTitle.setText(getResourceManager().getString(C3286R.string.wallet_crypto_blockchains_active_wallets));
-        binding.textDescription.setText(getResourceManager().getString(C3286R.string.wallet_crypto_blockchains_description));
-        binding.buttonResetAll.setTextAndIcon(getResourceManager().getString(C3286R.string.wallet_reset_all_title), C3286R.C3288drawable.msg_block2, false);
+        binding.textWalletsTitle.setText(getResourceManager().getString(C3301R.string.wallet_crypto_blockchains_active_wallets));
+        binding.textDescription.setText(getResourceManager().getString(C3301R.string.wallet_crypto_blockchains_description));
+        binding.buttonResetAll.setTextAndIcon(getResourceManager().getString(C3301R.string.wallet_reset_all_title), C3301R.C3303drawable.msg_block2, false);
     }
 
     /* compiled from: BlockchainsManagementFragment.kt */

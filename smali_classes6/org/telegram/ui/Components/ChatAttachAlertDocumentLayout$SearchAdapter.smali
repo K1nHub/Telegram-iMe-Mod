@@ -491,12 +491,12 @@
 
     if-eqz v1, :cond_3
 
-    const/4 v4, 0x1
+    move v4, v3
 
     goto :goto_0
 
     :cond_3
-    const/4 v4, 0x0
+    move v4, v2
 
     :goto_0
     add-int/2addr v4, v3
@@ -520,7 +520,7 @@
 
     if-nez p2, :cond_9
 
-    const/4 p2, 0x0
+    move p2, v2
 
     .line 1618
     :goto_1
@@ -551,7 +551,7 @@
     goto :goto_4
 
     :cond_5
-    const/4 v3, 0x0
+    move v3, v2
 
     :goto_2
     if-ge v3, v4, :cond_8
@@ -576,7 +576,7 @@
     goto :goto_3
 
     :cond_6
-    const/4 v6, 0x0
+    move v6, v2
 
     :goto_3
     if-eqz v6, :cond_7
@@ -847,7 +847,7 @@
 
     move-result v8
 
-    const/4 v9, 0x0
+    move v9, v3
 
     :goto_0
     if-ge v9, v8, :cond_4
@@ -942,12 +942,12 @@
 
     if-lt v9, v7, :cond_6
 
-    const/4 v7, 0x1
+    move v7, v6
 
     goto :goto_1
 
     :cond_6
-    const/4 v7, 0x0
+    move v7, v3
 
     :goto_1
     iput-boolean v7, v0, Lorg/telegram/ui/Components/ChatAttachAlertDocumentLayout$SearchAdapter;->endReached:Z
@@ -1130,7 +1130,7 @@
     if-eqz v1, :cond_d
 
     :cond_a
-    const/4 v1, 0x0
+    move v1, v3
 
     .line 1958
     :goto_3
@@ -1180,7 +1180,7 @@
 
     if-nez v2, :cond_b
 
-    const/4 v1, 0x1
+    move v1, v6
 
     goto :goto_4
 
@@ -1190,7 +1190,7 @@
     goto :goto_3
 
     :cond_c
-    const/4 v1, 0x0
+    move v1, v3
 
     :goto_4
     if-nez v1, :cond_d
@@ -1368,7 +1368,7 @@
 
     const/4 v2, 0x0
 
-    const/4 v3, 0x0
+    move v3, v2
 
     :goto_0
     if-ge v3, v1, :cond_0
@@ -1450,71 +1450,71 @@
 
     move-object/from16 v3, p3
 
-    const/16 v0, 0x14
+    const-wide/16 v0, 0x0
 
-    const/4 v1, 0x0
+    cmp-long v2, v6, v0
 
-    const-wide/16 v4, 0x3e8
+    const/16 v4, 0x14
 
-    const-wide/16 v8, 0x0
+    const/4 v5, 0x0
 
-    const/4 v2, 0x0
+    const-wide/16 v8, 0x3e8
 
-    cmp-long v10, v6, v8
+    const/4 v10, 0x0
 
-    if-eqz v10, :cond_3
+    if-eqz v2, :cond_3
 
     .line 1818
-    new-instance v10, Lorg/telegram/tgnet/TLRPC$TL_messages_search;
+    new-instance v2, Lorg/telegram/tgnet/TLRPC$TL_messages_search;
 
-    invoke-direct {v10}, Lorg/telegram/tgnet/TLRPC$TL_messages_search;-><init>()V
+    invoke-direct {v2}, Lorg/telegram/tgnet/TLRPC$TL_messages_search;-><init>()V
 
     .line 1819
-    iput-object v3, v10, Lorg/telegram/tgnet/TLRPC$TL_messages_search;->q:Ljava/lang/String;
+    iput-object v3, v2, Lorg/telegram/tgnet/TLRPC$TL_messages_search;->q:Ljava/lang/String;
 
     .line 1820
-    iput v0, v10, Lorg/telegram/tgnet/TLRPC$TL_messages_search;->limit:I
+    iput v4, v2, Lorg/telegram/tgnet/TLRPC$TL_messages_search;->limit:I
 
     .line 1821
-    iget-object v0, v12, Lorg/telegram/ui/Components/ChatAttachAlertDocumentLayout$SearchAdapter;->currentSearchFilter:Lorg/telegram/ui/Adapters/FiltersView$MediaFilterData;
+    iget-object v4, v12, Lorg/telegram/ui/Components/ChatAttachAlertDocumentLayout$SearchAdapter;->currentSearchFilter:Lorg/telegram/ui/Adapters/FiltersView$MediaFilterData;
 
-    iget-object v0, v0, Lorg/telegram/ui/Adapters/FiltersView$MediaFilterData;->filter:Lorg/telegram/tgnet/TLRPC$MessagesFilter;
+    iget-object v4, v4, Lorg/telegram/ui/Adapters/FiltersView$MediaFilterData;->filter:Lorg/telegram/tgnet/TLRPC$MessagesFilter;
 
-    iput-object v0, v10, Lorg/telegram/tgnet/TLRPC$TL_messages_search;->filter:Lorg/telegram/tgnet/TLRPC$MessagesFilter;
+    iput-object v4, v2, Lorg/telegram/tgnet/TLRPC$TL_messages_search;->filter:Lorg/telegram/tgnet/TLRPC$MessagesFilter;
 
     .line 1822
     invoke-virtual/range {p4 .. p4}, Lorg/telegram/messenger/AccountInstance;->getMessagesController()Lorg/telegram/messenger/MessagesController;
 
-    move-result-object v0
+    move-result-object v4
 
-    invoke-virtual {v0, v6, v7}, Lorg/telegram/messenger/MessagesController;->getInputPeer(J)Lorg/telegram/tgnet/TLRPC$InputPeer;
+    invoke-virtual {v4, v6, v7}, Lorg/telegram/messenger/MessagesController;->getInputPeer(J)Lorg/telegram/tgnet/TLRPC$InputPeer;
 
-    move-result-object v0
+    move-result-object v4
 
-    iput-object v0, v10, Lorg/telegram/tgnet/TLRPC$TL_messages_search;->peer:Lorg/telegram/tgnet/TLRPC$InputPeer;
+    iput-object v4, v2, Lorg/telegram/tgnet/TLRPC$TL_messages_search;->peer:Lorg/telegram/tgnet/TLRPC$InputPeer;
 
-    cmp-long v0, p5, v8
+    cmp-long v4, p5, v0
 
-    if-lez v0, :cond_0
+    if-lez v4, :cond_0
 
     .line 1824
-    div-long v13, p5, v4
+    div-long v13, p5, v8
 
-    long-to-int v0, v13
+    long-to-int v4, v13
 
-    iput v0, v10, Lorg/telegram/tgnet/TLRPC$TL_messages_search;->min_date:I
+    iput v4, v2, Lorg/telegram/tgnet/TLRPC$TL_messages_search;->min_date:I
 
     :cond_0
-    cmp-long v0, p7, v8
+    cmp-long v0, p7, v0
 
     if-lez v0, :cond_1
 
     .line 1827
-    div-long v4, p7, v4
+    div-long v0, p7, v8
 
-    long-to-int v0, v4
+    long-to-int v0, v0
 
-    iput v0, v10, Lorg/telegram/tgnet/TLRPC$TL_messages_search;->max_date:I
+    iput v0, v2, Lorg/telegram/tgnet/TLRPC$TL_messages_search;->max_date:I
 
     :cond_1
     if-eqz p9, :cond_2
@@ -1556,18 +1556,16 @@
 
     move-result v0
 
-    iput v0, v10, Lorg/telegram/tgnet/TLRPC$TL_messages_search;->offset_id:I
+    iput v0, v2, Lorg/telegram/tgnet/TLRPC$TL_messages_search;->offset_id:I
 
     goto :goto_0
 
     .line 1833
     :cond_2
-    iput v1, v10, Lorg/telegram/tgnet/TLRPC$TL_messages_search;->offset_id:I
+    iput v5, v2, Lorg/telegram/tgnet/TLRPC$TL_messages_search;->offset_id:I
 
     :goto_0
-    move-object v13, v10
-
-    move-object v10, v2
+    move-object v13, v2
 
     goto/16 :goto_3
 
@@ -1575,14 +1573,14 @@
     :cond_3
     invoke-static/range {p3 .. p3}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
-    move-result v10
+    move-result v2
 
-    if-nez v10, :cond_4
+    if-nez v2, :cond_4
 
     .line 1838
-    new-instance v2, Ljava/util/ArrayList;
+    new-instance v10, Ljava/util/ArrayList;
 
-    invoke-direct {v2}, Ljava/util/ArrayList;-><init>()V
+    invoke-direct {v10}, Ljava/util/ArrayList;-><init>()V
 
     .line 1839
     new-instance v17, Ljava/util/ArrayList;
@@ -1609,128 +1607,128 @@
 
     move-object/from16 v15, p3
 
-    move-object/from16 v16, v2
+    move-object/from16 v16, v10
 
     invoke-virtual/range {v13 .. v21}, Lorg/telegram/messenger/MessagesStorage;->localSearch(ILjava/lang/String;Ljava/util/ArrayList;Ljava/util/ArrayList;Ljava/util/ArrayList;Ljava/util/ArrayList;IZ)V
 
     .line 1844
     :cond_4
-    new-instance v10, Lorg/telegram/tgnet/TLRPC$TL_messages_searchGlobal;
+    new-instance v2, Lorg/telegram/tgnet/TLRPC$TL_messages_searchGlobal;
 
-    invoke-direct {v10}, Lorg/telegram/tgnet/TLRPC$TL_messages_searchGlobal;-><init>()V
+    invoke-direct {v2}, Lorg/telegram/tgnet/TLRPC$TL_messages_searchGlobal;-><init>()V
 
     .line 1845
-    iput v0, v10, Lorg/telegram/tgnet/TLRPC$TL_messages_searchGlobal;->limit:I
+    iput v4, v2, Lorg/telegram/tgnet/TLRPC$TL_messages_searchGlobal;->limit:I
 
     .line 1846
-    iput-object v3, v10, Lorg/telegram/tgnet/TLRPC$TL_messages_searchGlobal;->q:Ljava/lang/String;
+    iput-object v3, v2, Lorg/telegram/tgnet/TLRPC$TL_messages_searchGlobal;->q:Ljava/lang/String;
 
     .line 1847
-    iget-object v0, v12, Lorg/telegram/ui/Components/ChatAttachAlertDocumentLayout$SearchAdapter;->currentSearchFilter:Lorg/telegram/ui/Adapters/FiltersView$MediaFilterData;
+    iget-object v4, v12, Lorg/telegram/ui/Components/ChatAttachAlertDocumentLayout$SearchAdapter;->currentSearchFilter:Lorg/telegram/ui/Adapters/FiltersView$MediaFilterData;
 
-    iget-object v0, v0, Lorg/telegram/ui/Adapters/FiltersView$MediaFilterData;->filter:Lorg/telegram/tgnet/TLRPC$MessagesFilter;
+    iget-object v4, v4, Lorg/telegram/ui/Adapters/FiltersView$MediaFilterData;->filter:Lorg/telegram/tgnet/TLRPC$MessagesFilter;
 
-    iput-object v0, v10, Lorg/telegram/tgnet/TLRPC$TL_messages_searchGlobal;->filter:Lorg/telegram/tgnet/TLRPC$MessagesFilter;
+    iput-object v4, v2, Lorg/telegram/tgnet/TLRPC$TL_messages_searchGlobal;->filter:Lorg/telegram/tgnet/TLRPC$MessagesFilter;
 
-    cmp-long v0, p5, v8
+    cmp-long v4, p5, v0
 
-    if-lez v0, :cond_5
+    if-lez v4, :cond_5
 
     .line 1849
-    div-long v13, p5, v4
+    div-long v13, p5, v8
 
-    long-to-int v0, v13
+    long-to-int v4, v13
 
-    iput v0, v10, Lorg/telegram/tgnet/TLRPC$TL_messages_searchGlobal;->min_date:I
+    iput v4, v2, Lorg/telegram/tgnet/TLRPC$TL_messages_searchGlobal;->min_date:I
 
     :cond_5
-    cmp-long v0, p7, v8
+    cmp-long v4, p7, v0
 
-    if-lez v0, :cond_6
+    if-lez v4, :cond_6
 
     .line 1852
-    div-long v4, p7, v4
+    div-long v8, p7, v8
 
-    long-to-int v0, v4
+    long-to-int v4, v8
 
-    iput v0, v10, Lorg/telegram/tgnet/TLRPC$TL_messages_searchGlobal;->max_date:I
+    iput v4, v2, Lorg/telegram/tgnet/TLRPC$TL_messages_searchGlobal;->max_date:I
 
     :cond_6
     if-eqz p9, :cond_9
 
     .line 1854
-    iget-object v0, v12, Lorg/telegram/ui/Components/ChatAttachAlertDocumentLayout$SearchAdapter;->lastMessagesSearchString:Ljava/lang/String;
+    iget-object v4, v12, Lorg/telegram/ui/Components/ChatAttachAlertDocumentLayout$SearchAdapter;->lastMessagesSearchString:Ljava/lang/String;
 
-    invoke-virtual {v3, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v3, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v0
+    move-result v4
 
-    if-eqz v0, :cond_9
+    if-eqz v4, :cond_9
 
-    iget-object v0, v12, Lorg/telegram/ui/Components/ChatAttachAlertDocumentLayout$SearchAdapter;->messages:Ljava/util/ArrayList;
+    iget-object v4, v12, Lorg/telegram/ui/Components/ChatAttachAlertDocumentLayout$SearchAdapter;->messages:Ljava/util/ArrayList;
 
-    invoke-virtual {v0}, Ljava/util/ArrayList;->isEmpty()Z
+    invoke-virtual {v4}, Ljava/util/ArrayList;->isEmpty()Z
 
-    move-result v0
+    move-result v4
 
-    if-nez v0, :cond_9
+    if-nez v4, :cond_9
 
     .line 1855
-    iget-object v0, v12, Lorg/telegram/ui/Components/ChatAttachAlertDocumentLayout$SearchAdapter;->messages:Ljava/util/ArrayList;
+    iget-object v4, v12, Lorg/telegram/ui/Components/ChatAttachAlertDocumentLayout$SearchAdapter;->messages:Ljava/util/ArrayList;
 
-    invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
+    invoke-virtual {v4}, Ljava/util/ArrayList;->size()I
 
-    move-result v1
+    move-result v5
 
-    add-int/lit8 v1, v1, -0x1
+    add-int/lit8 v5, v5, -0x1
 
-    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+    invoke-virtual {v4, v5}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
-    move-result-object v0
+    move-result-object v4
 
-    check-cast v0, Lorg/telegram/messenger/MessageObject;
+    check-cast v4, Lorg/telegram/messenger/MessageObject;
 
     .line 1856
-    invoke-virtual {v0}, Lorg/telegram/messenger/MessageObject;->getId()I
+    invoke-virtual {v4}, Lorg/telegram/messenger/MessageObject;->getId()I
 
-    move-result v1
+    move-result v5
 
-    iput v1, v10, Lorg/telegram/tgnet/TLRPC$TL_messages_searchGlobal;->offset_id:I
+    iput v5, v2, Lorg/telegram/tgnet/TLRPC$TL_messages_searchGlobal;->offset_id:I
 
     .line 1857
-    iget v1, v12, Lorg/telegram/ui/Components/ChatAttachAlertDocumentLayout$SearchAdapter;->nextSearchRate:I
+    iget v5, v12, Lorg/telegram/ui/Components/ChatAttachAlertDocumentLayout$SearchAdapter;->nextSearchRate:I
 
-    iput v1, v10, Lorg/telegram/tgnet/TLRPC$TL_messages_searchGlobal;->offset_rate:I
+    iput v5, v2, Lorg/telegram/tgnet/TLRPC$TL_messages_searchGlobal;->offset_rate:I
 
     .line 1859
-    iget-object v0, v0, Lorg/telegram/messenger/MessageObject;->messageOwner:Lorg/telegram/tgnet/TLRPC$Message;
+    iget-object v4, v4, Lorg/telegram/messenger/MessageObject;->messageOwner:Lorg/telegram/tgnet/TLRPC$Message;
 
-    iget-object v0, v0, Lorg/telegram/tgnet/TLRPC$Message;->peer_id:Lorg/telegram/tgnet/TLRPC$Peer;
+    iget-object v4, v4, Lorg/telegram/tgnet/TLRPC$Message;->peer_id:Lorg/telegram/tgnet/TLRPC$Peer;
 
-    iget-wide v4, v0, Lorg/telegram/tgnet/TLRPC$Peer;->channel_id:J
+    iget-wide v8, v4, Lorg/telegram/tgnet/TLRPC$Peer;->channel_id:J
 
-    cmp-long v1, v4, v8
+    cmp-long v5, v8, v0
 
-    if-eqz v1, :cond_7
+    if-eqz v5, :cond_7
 
     :goto_1
-    neg-long v0, v4
+    neg-long v0, v8
 
     goto :goto_2
 
     .line 1861
     :cond_7
-    iget-wide v4, v0, Lorg/telegram/tgnet/TLRPC$Peer;->chat_id:J
+    iget-wide v8, v4, Lorg/telegram/tgnet/TLRPC$Peer;->chat_id:J
 
-    cmp-long v1, v4, v8
+    cmp-long v0, v8, v0
 
-    if-eqz v1, :cond_8
+    if-eqz v0, :cond_8
 
     goto :goto_1
 
     .line 1864
     :cond_8
-    iget-wide v0, v0, Lorg/telegram/tgnet/TLRPC$Peer;->user_id:J
+    iget-wide v0, v4, Lorg/telegram/tgnet/TLRPC$Peer;->user_id:J
 
     .line 1866
     :goto_2
@@ -1742,23 +1740,23 @@
 
     move-result-object v0
 
-    iput-object v0, v10, Lorg/telegram/tgnet/TLRPC$TL_messages_searchGlobal;->offset_peer:Lorg/telegram/tgnet/TLRPC$InputPeer;
+    iput-object v0, v2, Lorg/telegram/tgnet/TLRPC$TL_messages_searchGlobal;->offset_peer:Lorg/telegram/tgnet/TLRPC$InputPeer;
 
     goto/16 :goto_0
 
     .line 1868
     :cond_9
-    iput v1, v10, Lorg/telegram/tgnet/TLRPC$TL_messages_searchGlobal;->offset_rate:I
+    iput v5, v2, Lorg/telegram/tgnet/TLRPC$TL_messages_searchGlobal;->offset_rate:I
 
     .line 1869
-    iput v1, v10, Lorg/telegram/tgnet/TLRPC$TL_messages_searchGlobal;->offset_id:I
+    iput v5, v2, Lorg/telegram/tgnet/TLRPC$TL_messages_searchGlobal;->offset_id:I
 
     .line 1870
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_inputPeerEmpty;
 
     invoke-direct {v0}, Lorg/telegram/tgnet/TLRPC$TL_inputPeerEmpty;-><init>()V
 
-    iput-object v0, v10, Lorg/telegram/tgnet/TLRPC$TL_messages_searchGlobal;->offset_peer:Lorg/telegram/tgnet/TLRPC$InputPeer;
+    iput-object v0, v2, Lorg/telegram/tgnet/TLRPC$TL_messages_searchGlobal;->offset_peer:Lorg/telegram/tgnet/TLRPC$InputPeer;
 
     goto/16 :goto_0
 
@@ -1868,7 +1866,7 @@
 .end method
 
 .method private searchGlobal(JJJLorg/telegram/ui/Adapters/FiltersView$MediaFilterData;Ljava/lang/String;Z)V
-    .locals 18
+    .locals 17
 
     move-object/from16 v13, p0
 
@@ -1942,42 +1940,42 @@
 
     if-eqz v1, :cond_0
 
-    const/4 v15, 0x1
+    move v15, v11
 
     goto :goto_0
 
     :cond_0
-    const/4 v15, 0x0
+    move v15, v10
 
     :goto_0
     if-nez v15, :cond_1
 
     if-eqz p9, :cond_1
 
-    const/4 v1, 0x1
+    move v1, v11
 
     goto :goto_1
 
     :cond_1
-    const/4 v1, 0x0
+    move v1, v10
 
     .line 1767
     :goto_1
     iget-wide v4, v13, Lorg/telegram/ui/Components/ChatAttachAlertDocumentLayout$SearchAdapter;->currentSearchDialogId:J
 
-    cmp-long v16, v2, v4
+    cmp-long v4, v2, v4
 
-    if-nez v16, :cond_2
+    if-nez v4, :cond_2
 
     iget-wide v4, v13, Lorg/telegram/ui/Components/ChatAttachAlertDocumentLayout$SearchAdapter;->currentSearchMinDate:J
 
-    cmp-long v16, v4, v6
+    cmp-long v4, v4, v6
 
-    if-nez v16, :cond_2
+    if-nez v4, :cond_2
 
     iget-wide v4, v13, Lorg/telegram/ui/Components/ChatAttachAlertDocumentLayout$SearchAdapter;->currentSearchMaxDate:J
 
-    cmp-long v16, v4, v8
+    cmp-long v4, v4, v8
 
     .line 1768
     :cond_2
@@ -2175,11 +2173,11 @@
 
     move v10, v15
 
-    move/from16 v17, v11
+    move/from16 v16, v11
 
     move-object v11, v12
 
-    move/from16 v12, v17
+    move/from16 v12, v16
 
     invoke-direct/range {v0 .. v12}, Lorg/telegram/ui/Components/ChatAttachAlertDocumentLayout$SearchAdapter$$ExternalSyntheticLambda1;-><init>(Lorg/telegram/ui/Components/ChatAttachAlertDocumentLayout$SearchAdapter;JLjava/lang/String;Lorg/telegram/messenger/AccountInstance;JJZLjava/lang/String;I)V
 
@@ -2237,13 +2235,13 @@
 
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    move v1, v0
 
-    const/4 v2, 0x0
+    move v2, v1
 
-    const/4 v3, 0x0
+    move v3, v2
 
-    const/4 v4, 0x0
+    move v4, v3
 
     .line 1699
     :goto_0
@@ -2274,7 +2272,7 @@
 
     if-eqz v5, :cond_0
 
-    const/4 v2, 0x1
+    move v2, v7
 
     goto :goto_1
 
@@ -2292,7 +2290,7 @@
 
     if-ne v5, v6, :cond_1
 
-    const/4 v3, 0x1
+    move v3, v7
 
     goto :goto_1
 
@@ -2312,7 +2310,7 @@
 
     if-ne v5, v6, :cond_2
 
-    const/4 v4, 0x1
+    move v4, v7
 
     :cond_2
     :goto_1
@@ -2340,12 +2338,12 @@
     if-nez v1, :cond_6
 
     :cond_5
-    const/4 v1, 0x1
+    move v1, v7
 
     goto :goto_2
 
     :cond_6
-    const/4 v1, 0x0
+    move v1, v0
 
     :goto_2
     const/4 v5, 0x0
@@ -2409,13 +2407,13 @@
 
     invoke-virtual {p1, p2, p3, v0}, Lorg/telegram/ui/Adapters/FiltersView;->setUsersAndDates(Ljava/util/ArrayList;Ljava/util/ArrayList;Z)V
 
-    const/4 p1, 0x1
+    move p1, v7
 
     goto :goto_6
 
     :cond_b
     :goto_5
-    const/4 p1, 0x0
+    move p1, v0
 
     :goto_6
     if-nez p1, :cond_c
@@ -2566,7 +2564,7 @@
     goto :goto_7
 
     :cond_13
-    const/4 v5, 0x0
+    move v5, p3
 
     :goto_7
     aput v5, v4, v0
@@ -2590,7 +2588,7 @@
 
     if-eqz p1, :cond_14
 
-    const/4 v5, 0x0
+    move v5, p3
 
     goto :goto_8
 
@@ -2636,7 +2634,7 @@
     goto :goto_9
 
     :cond_15
-    const/4 v6, 0x0
+    move v6, p3
 
     :goto_9
     aput v6, v5, v0
@@ -2758,7 +2756,7 @@
     goto :goto_a
 
     :cond_18
-    const/4 v1, 0x0
+    move v1, p3
 
     :goto_a
     invoke-virtual {p4, v1}, Lorg/telegram/ui/Components/RecyclerListView;->setTranslationY(F)V
@@ -2772,7 +2770,7 @@
 
     if-eqz p1, :cond_19
 
-    const/4 v1, 0x0
+    move v1, p3
 
     goto :goto_b
 
@@ -2806,7 +2804,7 @@
     goto :goto_c
 
     :cond_1a
-    const/4 v1, 0x0
+    move v1, p3
 
     :goto_c
     invoke-virtual {p4, v1}, Landroid/view/View;->setTranslationY(F)V
@@ -2841,7 +2839,7 @@
     goto :goto_d
 
     :cond_1c
-    const/4 v0, 0x4
+    move v0, v6
 
     :goto_d
     invoke-virtual {p2, v0}, Lorg/telegram/ui/Components/RecyclerListView;->setVisibility(I)V
@@ -2937,7 +2935,7 @@
 
     if-eqz p1, :cond_1
 
-    const/4 v1, 0x0
+    move v1, v2
 
     :cond_1
     add-int/2addr v0, v1
@@ -3639,12 +3637,12 @@
 
     if-ne v4, v5, :cond_8
 
-    const/4 v4, 0x1
+    move v4, v3
 
     goto :goto_1
 
     :cond_8
-    const/4 v4, 0x0
+    move v4, v1
 
     .line 2223
     :goto_1
@@ -3671,7 +3669,7 @@
     if-eqz p1, :cond_a
 
     :cond_9
-    const/4 v1, 0x1
+    move v1, v3
 
     :cond_a
     invoke-virtual {v0, v2, v1}, Lorg/telegram/ui/Cells/SharedDocumentCell;->setDocument(Lorg/telegram/messenger/MessageObject;Z)V
@@ -3825,7 +3823,7 @@
 
     if-ne p2, v0, :cond_2
 
-    const/4 p1, 0x1
+    move p1, v0
 
     :cond_2
     iget-object p2, p0, Lorg/telegram/ui/Components/ChatAttachAlertDocumentLayout$SearchAdapter;->this$0:Lorg/telegram/ui/Components/ChatAttachAlertDocumentLayout;

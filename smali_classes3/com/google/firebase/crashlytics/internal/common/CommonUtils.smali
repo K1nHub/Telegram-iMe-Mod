@@ -105,7 +105,7 @@
 
     int-to-long v3, p0
 
-    mul-long v3, v3, v1
+    mul-long/2addr v3, v1
 
     .line 330
     invoke-virtual {v0}, Landroid/os/StatFs;->getAvailableBlocks()I
@@ -114,7 +114,7 @@
 
     int-to-long v5, p0
 
-    mul-long v1, v1, v5
+    mul-long/2addr v1, v5
 
     sub-long/2addr v3, v1
 
@@ -265,7 +265,7 @@
 
     int-to-long v0, p2
 
-    mul-long p0, p0, v0
+    mul-long/2addr p0, v0
 
     return-wide p0
 .end method
@@ -867,9 +867,9 @@
 
     const-wide/16 v3, -0x1
 
-    cmp-long v5, v1, v3
+    cmp-long v1, v1, v3
 
-    if-nez v5, :cond_4
+    if-nez v1, :cond_4
 
     const-wide/16 v1, 0x0
 

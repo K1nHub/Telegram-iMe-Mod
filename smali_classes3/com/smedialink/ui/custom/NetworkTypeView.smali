@@ -241,7 +241,7 @@
 
     move-result-object v0
 
-    invoke-virtual {p1}, Lcom/smedialink/storage/domain/model/crypto/NetworkType;->getTitle()I
+    invoke-virtual {p1}, Lcom/smedialink/storage/domain/model/crypto/NetworkType;->getTitleResId()I
 
     move-result v1
 

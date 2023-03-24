@@ -749,18 +749,18 @@
 .end method
 
 .method public doAnimationFrame(J)Z
-    .locals 6
+    .locals 4
 
     .line 639
     iget-wide v0, p0, Landroidx/dynamicanimation/animation/DynamicAnimation;->mLastFrameTime:J
 
-    const/4 v2, 0x0
+    const-wide/16 v2, 0x0
 
-    const-wide/16 v3, 0x0
+    cmp-long v2, v0, v2
 
-    cmp-long v5, v0, v3
+    const/4 v3, 0x0
 
-    if-nez v5, :cond_0
+    if-nez v2, :cond_0
 
     .line 641
     iput-wide p1, p0, Landroidx/dynamicanimation/animation/DynamicAnimation;->mLastFrameTime:J
@@ -770,7 +770,7 @@
 
     invoke-virtual {p0, p1}, Landroidx/dynamicanimation/animation/DynamicAnimation;->setPropertyValue(F)V
 
-    return v2
+    return v3
 
     :cond_0
     sub-long v0, p1, v0
@@ -809,7 +809,7 @@
     if-eqz p1, :cond_1
 
     .line 655
-    invoke-direct {p0, v2}, Landroidx/dynamicanimation/animation/DynamicAnimation;->endAnimationInternal(Z)V
+    invoke-direct {p0, v3}, Landroidx/dynamicanimation/animation/DynamicAnimation;->endAnimationInternal(Z)V
 
     :cond_1
     return p1
@@ -823,7 +823,7 @@
 
     const/high16 v1, 0x3f400000    # 0.75f
 
-    mul-float v0, v0, v1
+    mul-float/2addr v0, v1
 
     return v0
 .end method
@@ -895,7 +895,7 @@
 
     const/high16 v0, 0x3f400000    # 0.75f
 
-    mul-float p1, p1, v0
+    mul-float/2addr p1, v0
 
     .line 528
     invoke-virtual {p0, p1}, Landroidx/dynamicanimation/animation/DynamicAnimation;->setValueThreshold(F)V

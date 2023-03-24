@@ -184,7 +184,7 @@
     goto :goto_1
 
     :cond_3
-    const/4 p1, 0x0
+    move p1, v3
 
     .line 916
     :goto_1
@@ -227,7 +227,7 @@
 
     move-result-wide v5
 
-    mul-double v2, v2, v5
+    mul-double/2addr v2, v5
 
     double-to-long v2, v2
 
@@ -249,7 +249,7 @@
 
     iget-wide v7, v0, Lio/grpc/internal/RetryPolicy;->backoffMultiplier:D
 
-    mul-double v5, v5, v7
+    mul-double/2addr v5, v7
 
     double-to-long v5, v5
 
@@ -306,16 +306,16 @@
     :goto_2
     move-wide v9, v2
 
-    const/4 v7, 0x1
+    move v7, v4
 
     goto :goto_3
 
     :cond_5
     const-wide/16 v4, 0x0
 
-    move-wide v9, v4
+    move v7, v3
 
-    const/4 v7, 0x0
+    move-wide v9, v4
 
     .line 933
     :goto_3
@@ -550,7 +550,7 @@
 
     if-ne p3, v2, :cond_2
 
-    const/4 v1, 0x1
+    move v1, v2
 
     .line 794
     :cond_2

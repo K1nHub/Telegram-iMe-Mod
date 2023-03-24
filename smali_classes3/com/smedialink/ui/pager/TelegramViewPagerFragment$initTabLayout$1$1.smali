@@ -42,22 +42,22 @@
 .method public onPageScrolled(F)V
     .locals 6
 
-    const/4 v0, 0x1
+    const/high16 v0, 0x3f800000    # 1.0f
 
-    const/4 v1, 0x0
+    cmpg-float v0, p1, v0
 
-    const/high16 v2, 0x3f800000    # 1.0f
+    const/4 v1, 0x1
 
-    cmpg-float v2, p1, v2
+    const/4 v2, 0x0
 
-    if-nez v2, :cond_0
+    if-nez v0, :cond_0
 
-    const/4 v3, 0x1
+    move v3, v1
 
     goto :goto_0
 
     :cond_0
-    const/4 v3, 0x0
+    move v3, v2
 
     :goto_0
     if-eqz v3, :cond_2
@@ -69,7 +69,7 @@
 
     move-result-object v3
 
-    aget-object v3, v3, v0
+    aget-object v3, v3, v1
 
     .line 302
     invoke-virtual {v3}, Landroid/view/View;->getVisibility()I
@@ -80,12 +80,12 @@
 
     if-ne v3, v4, :cond_1
 
-    const/4 v3, 0x1
+    move v3, v1
 
     goto :goto_1
 
     :cond_1
-    const/4 v3, 0x0
+    move v3, v2
 
     :goto_1
     if-eqz v3, :cond_2
@@ -109,7 +109,7 @@
 
     move-result-object v3
 
-    aget-object v3, v3, v1
+    aget-object v3, v3, v2
 
     neg-float v4, p1
 
@@ -119,7 +119,7 @@
 
     move-result-object v5
 
-    aget-object v5, v5, v1
+    aget-object v5, v5, v2
 
     invoke-virtual {v5}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
 
@@ -127,7 +127,7 @@
 
     int-to-float v5, v5
 
-    mul-float v4, v4, v5
+    mul-float/2addr v4, v5
 
     invoke-virtual {v3, v4}, Lcom/smedialink/ui/pager/TelegramViewPagerFragment$ViewPage;->setTranslationX(F)V
 
@@ -138,7 +138,7 @@
 
     move-result-object v3
 
-    aget-object v3, v3, v0
+    aget-object v3, v3, v1
 
     iget-object v4, p0, Lcom/smedialink/ui/pager/TelegramViewPagerFragment$initTabLayout$1$1;->this$0:Lcom/smedialink/ui/pager/TelegramViewPagerFragment;
 
@@ -146,7 +146,7 @@
 
     move-result-object v4
 
-    aget-object v4, v4, v1
+    aget-object v4, v4, v2
 
     invoke-virtual {v4}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
 
@@ -160,7 +160,7 @@
 
     move-result-object v5
 
-    aget-object v5, v5, v1
+    aget-object v5, v5, v2
 
     invoke-virtual {v5}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
 
@@ -168,7 +168,7 @@
 
     int-to-float v5, v5
 
-    mul-float p1, p1, v5
+    mul-float/2addr p1, v5
 
     sub-float/2addr v4, p1
 
@@ -184,7 +184,7 @@
 
     move-result-object v3
 
-    aget-object v3, v3, v1
+    aget-object v3, v3, v2
 
     iget-object v4, p0, Lcom/smedialink/ui/pager/TelegramViewPagerFragment$initTabLayout$1$1;->this$0:Lcom/smedialink/ui/pager/TelegramViewPagerFragment;
 
@@ -192,7 +192,7 @@
 
     move-result-object v4
 
-    aget-object v4, v4, v1
+    aget-object v4, v4, v2
 
     invoke-virtual {v4}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
 
@@ -200,7 +200,7 @@
 
     int-to-float v4, v4
 
-    mul-float v4, v4, p1
+    mul-float/2addr v4, p1
 
     invoke-virtual {v3, v4}, Lcom/smedialink/ui/pager/TelegramViewPagerFragment$ViewPage;->setTranslationX(F)V
 
@@ -211,7 +211,7 @@
 
     move-result-object v3
 
-    aget-object v3, v3, v0
+    aget-object v3, v3, v1
 
     iget-object v4, p0, Lcom/smedialink/ui/pager/TelegramViewPagerFragment$initTabLayout$1$1;->this$0:Lcom/smedialink/ui/pager/TelegramViewPagerFragment;
 
@@ -219,7 +219,7 @@
 
     move-result-object v4
 
-    aget-object v4, v4, v1
+    aget-object v4, v4, v2
 
     invoke-virtual {v4}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
 
@@ -227,7 +227,7 @@
 
     int-to-float v4, v4
 
-    mul-float p1, p1, v4
+    mul-float/2addr p1, v4
 
     iget-object v4, p0, Lcom/smedialink/ui/pager/TelegramViewPagerFragment$initTabLayout$1$1;->this$0:Lcom/smedialink/ui/pager/TelegramViewPagerFragment;
 
@@ -235,7 +235,7 @@
 
     move-result-object v4
 
-    aget-object v4, v4, v1
+    aget-object v4, v4, v2
 
     invoke-virtual {v4}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
 
@@ -248,14 +248,14 @@
     invoke-virtual {v3, p1}, Lcom/smedialink/ui/pager/TelegramViewPagerFragment$ViewPage;->setTranslationX(F)V
 
     :goto_2
-    if-nez v2, :cond_4
+    if-nez v0, :cond_4
 
-    const/4 p1, 0x1
+    move p1, v1
 
     goto :goto_3
 
     :cond_4
-    const/4 p1, 0x0
+    move p1, v2
 
     :goto_3
     if-eqz p1, :cond_5
@@ -267,14 +267,14 @@
 
     move-result-object p1
 
-    aget-object p1, p1, v1
+    aget-object p1, p1, v2
 
     .line 165
-    iget-object v2, p0, Lcom/smedialink/ui/pager/TelegramViewPagerFragment$initTabLayout$1$1;->this$0:Lcom/smedialink/ui/pager/TelegramViewPagerFragment;
+    iget-object v0, p0, Lcom/smedialink/ui/pager/TelegramViewPagerFragment$initTabLayout$1$1;->this$0:Lcom/smedialink/ui/pager/TelegramViewPagerFragment;
 
-    invoke-virtual {v2}, Lcom/smedialink/ui/pager/TelegramViewPagerFragment;->getViewPages()[Lcom/smedialink/ui/pager/TelegramViewPagerFragment$ViewPage;
+    invoke-virtual {v0}, Lcom/smedialink/ui/pager/TelegramViewPagerFragment;->getViewPages()[Lcom/smedialink/ui/pager/TelegramViewPagerFragment$ViewPage;
 
-    move-result-object v2
+    move-result-object v0
 
     iget-object v3, p0, Lcom/smedialink/ui/pager/TelegramViewPagerFragment$initTabLayout$1$1;->this$0:Lcom/smedialink/ui/pager/TelegramViewPagerFragment;
 
@@ -282,18 +282,18 @@
 
     move-result-object v3
 
-    aget-object v3, v3, v0
+    aget-object v3, v3, v1
 
-    aput-object v3, v2, v1
+    aput-object v3, v0, v2
 
     .line 166
-    iget-object v1, p0, Lcom/smedialink/ui/pager/TelegramViewPagerFragment$initTabLayout$1$1;->this$0:Lcom/smedialink/ui/pager/TelegramViewPagerFragment;
+    iget-object v0, p0, Lcom/smedialink/ui/pager/TelegramViewPagerFragment$initTabLayout$1$1;->this$0:Lcom/smedialink/ui/pager/TelegramViewPagerFragment;
 
-    invoke-virtual {v1}, Lcom/smedialink/ui/pager/TelegramViewPagerFragment;->getViewPages()[Lcom/smedialink/ui/pager/TelegramViewPagerFragment$ViewPage;
+    invoke-virtual {v0}, Lcom/smedialink/ui/pager/TelegramViewPagerFragment;->getViewPages()[Lcom/smedialink/ui/pager/TelegramViewPagerFragment$ViewPage;
 
-    move-result-object v1
+    move-result-object v0
 
-    aput-object p1, v1, v0
+    aput-object p1, v0, v1
 
     .line 167
     iget-object p1, p0, Lcom/smedialink/ui/pager/TelegramViewPagerFragment$initTabLayout$1$1;->this$0:Lcom/smedialink/ui/pager/TelegramViewPagerFragment;
@@ -302,7 +302,7 @@
 
     move-result-object p1
 
-    aget-object p1, p1, v0
+    aget-object p1, p1, v1
 
     invoke-static {p1}, Lcom/smedialink/utils/extentions/common/ViewExtKt;->gone(Landroid/view/View;)V
 

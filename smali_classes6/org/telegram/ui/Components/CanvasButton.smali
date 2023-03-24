@@ -248,7 +248,7 @@
 
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    move v1, v0
 
     .line 205
     :goto_0
@@ -324,13 +324,13 @@
     invoke-virtual {v0}, Landroid/graphics/Path;->rewind()V
 
     :goto_0
-    const/4 v0, 0x0
+    move v0, v2
 
-    const/4 v3, 0x0
+    move v3, v0
 
-    const/4 v4, 0x0
+    move v4, v3
 
-    const/4 v5, 0x0
+    move v5, v4
 
     .line 119
     :goto_1

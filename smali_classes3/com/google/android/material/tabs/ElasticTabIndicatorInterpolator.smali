@@ -20,7 +20,7 @@
 
     const-wide v2, 0x400921fb54442d18L    # Math.PI
 
-    mul-double v0, v0, v2
+    mul-double/2addr v0, v2
 
     const-wide/high16 v2, 0x4000000000000000L    # 2.0
 
@@ -47,7 +47,7 @@
 
     const-wide v2, 0x400921fb54442d18L    # Math.PI
 
-    mul-double v0, v0, v2
+    mul-double/2addr v0, v2
 
     const-wide/high16 v2, 0x4000000000000000L    # 2.0
 

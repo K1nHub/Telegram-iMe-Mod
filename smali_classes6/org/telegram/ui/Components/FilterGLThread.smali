@@ -567,7 +567,7 @@
     goto :goto_0
 
     :cond_0
-    mul-int v0, v0, v1
+    mul-int/2addr v0, v1
 
     mul-int/lit8 v0, v0, 0x4
 

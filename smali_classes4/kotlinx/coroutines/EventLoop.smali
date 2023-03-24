@@ -233,7 +233,7 @@
 .end method
 
 .method public final isUnconfinedLoopActive()Z
-    .locals 6
+    .locals 5
 
     .line 94
     iget-wide v0, p0, Lkotlinx/coroutines/EventLoop;->useCount:J
@@ -244,9 +244,9 @@
 
     move-result-wide v3
 
-    cmp-long v5, v0, v3
+    cmp-long v0, v0, v3
 
-    if-ltz v5, :cond_0
+    if-ltz v0, :cond_0
 
     goto :goto_0
 

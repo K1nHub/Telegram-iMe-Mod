@@ -620,7 +620,7 @@
     goto :goto_0
 
     :cond_5
-    const/4 v2, 0x0
+    move v2, v1
 
     .line 10247
     :goto_0
@@ -852,11 +852,11 @@
 
     int-to-float v2, v2
 
-    mul-float v1, v1, v2
+    mul-float/2addr v1, v2
 
     const/high16 v2, 0x3f000000    # 0.5f
 
-    mul-float v1, v1, v2
+    mul-float/2addr v1, v2
 
     float-to-double v1, v1
 
@@ -871,7 +871,7 @@
     :cond_1
     move v14, v0
 
-    const/4 v1, 0x0
+    move v1, v11
 
     .line 10110
     :goto_1
@@ -957,9 +957,9 @@
 
     move v8, v2
 
-    move v3, v14
+    move v2, v11
 
-    const/4 v2, 0x0
+    move v3, v14
 
     .line 10126
     :goto_2
@@ -1014,7 +1014,7 @@
 
     int-to-float v4, v4
 
-    mul-float v1, v1, v4
+    mul-float/2addr v1, v4
 
     float-to-int v1, v1
 
@@ -1030,7 +1030,7 @@
 
     move-result v1
 
-    goto/16 :goto_4
+    goto :goto_4
 
     .line 10138
     :cond_4
@@ -1056,7 +1056,7 @@
 
     const v5, 0x3f666666    # 0.9f
 
-    mul-float v4, v4, v5
+    mul-float/2addr v4, v5
 
     float-to-int v4, v4
 
@@ -1078,7 +1078,7 @@
 
     int-to-float v3, v3
 
-    mul-float v1, v1, v3
+    mul-float/2addr v1, v3
 
     float-to-int v3, v1
 
@@ -1144,7 +1144,7 @@
 
     if-eqz v5, :cond_8
 
-    mul-int v5, v5, v14
+    mul-int/2addr v5, v14
 
     int-to-float v5, v5
 
@@ -1293,12 +1293,12 @@
 
     if-eqz v1, :cond_d
 
-    const/4 v1, 0x1
+    move v1, v13
 
     goto :goto_9
 
     :cond_d
-    const/4 v1, 0x0
+    move v1, v11
 
     :goto_9
     iput-boolean v1, v10, Lorg/telegram/ui/ArticleViewer$BlockPhotoCell;->autoDownload:Z
@@ -1751,7 +1751,7 @@
 
     if-eqz v0, :cond_16
 
-    const/4 v11, 0x1
+    move v11, v13
 
     .line 10198
     :cond_16
@@ -2243,7 +2243,7 @@
     goto :goto_1
 
     :cond_a
-    const/4 v1, 0x0
+    move v1, v4
 
     :cond_b
     :goto_1

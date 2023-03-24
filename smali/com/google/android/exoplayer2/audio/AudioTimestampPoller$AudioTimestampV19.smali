@@ -94,9 +94,9 @@
     .line 298
     iget-wide v3, p0, Lcom/google/android/exoplayer2/audio/AudioTimestampPoller$AudioTimestampV19;->lastTimestampRawPositionFrames:J
 
-    cmp-long v5, v3, v1
+    cmp-long v3, v3, v1
 
-    if-lez v5, :cond_0
+    if-lez v3, :cond_0
 
     .line 300
     iget-wide v3, p0, Lcom/google/android/exoplayer2/audio/AudioTimestampPoller$AudioTimestampV19;->rawTimestampFramePositionWrapCount:J

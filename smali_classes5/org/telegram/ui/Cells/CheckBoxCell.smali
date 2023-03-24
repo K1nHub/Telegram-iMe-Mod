@@ -256,12 +256,12 @@
 
     if-eqz v5, :cond_4
 
-    const/4 v5, 0x5
+    move v5, v11
 
     goto :goto_2
 
     :cond_4
-    const/4 v5, 0x3
+    move v5, v7
 
     :goto_2
     or-int/2addr v5, v14
@@ -281,12 +281,12 @@
 
     if-eqz v5, :cond_5
 
-    const/4 v6, 0x5
+    move v6, v11
 
     goto :goto_3
 
     :cond_5
-    const/4 v6, 0x3
+    move v6, v7
 
     :goto_3
     or-int/lit8 v18, v6, 0x30
@@ -297,19 +297,19 @@
 
     if-eqz v5, :cond_6
 
-    const/16 v20, 0x8
+    move/from16 v20, v6
 
     goto :goto_4
 
     :cond_6
-    const/16 v20, 0x1d
+    move/from16 v20, v19
 
     :goto_4
     const/16 v21, 0x0
 
     if-eqz v5, :cond_7
 
-    const/16 v6, 0x1d
+    move/from16 v6, v19
 
     :cond_7
     const/16 v22, 0x0
@@ -346,28 +346,26 @@
 
     const/4 v6, -0x2
 
-    const/16 v16, -0x2
-
     goto :goto_6
 
     :cond_a
     const/4 v6, -0x1
 
-    const/16 v16, -0x1
-
     :goto_6
+    move/from16 v16, v6
+
     const/16 v17, -0x1
 
     sget-boolean v6, Lorg/telegram/messenger/LocaleController;->isRTL:Z
 
     if-eqz v6, :cond_b
 
-    const/16 v18, 0x5
+    move/from16 v18, v11
 
     goto :goto_7
 
     :cond_b
-    const/16 v18, 0x3
+    move/from16 v18, v7
 
     :goto_7
     or-int/lit8 v18, v18, 0x30
@@ -469,12 +467,12 @@
 
     if-eqz v4, :cond_10
 
-    const/4 v4, 0x3
+    move v4, v7
 
     goto :goto_d
 
     :cond_10
-    const/4 v4, 0x5
+    move v4, v11
 
     :goto_d
     or-int/2addr v4, v14
@@ -492,12 +490,12 @@
 
     if-eqz v5, :cond_11
 
-    const/4 v5, 0x3
+    move v5, v7
 
     goto :goto_e
 
     :cond_11
-    const/4 v5, 0x5
+    move v5, v11
 
     :goto_e
     or-int/lit8 v5, v5, 0x30
@@ -512,7 +510,7 @@
 
     move/from16 v7, v16
 
-    const/4 v11, 0x4
+    move v11, v8
 
     move/from16 v8, p3
 
@@ -642,7 +640,7 @@
 
     if-eqz v2, :cond_15
 
-    const/4 v6, 0x0
+    move v6, v15
 
     goto :goto_11
 
@@ -659,7 +657,7 @@
     goto :goto_12
 
     :cond_16
-    const/4 v8, 0x0
+    move v8, v15
 
     :goto_12
     const/4 v9, 0x0
@@ -687,7 +685,7 @@
     goto :goto_13
 
     :cond_18
-    const/4 v12, 0x0
+    move v12, v15
 
     :cond_19
     :goto_13
@@ -707,15 +705,17 @@
     .line 171
     sget-boolean v1, Lorg/telegram/messenger/LocaleController;->isRTL:Z
 
-    const/16 v2, 0x10
-
     if-eqz v1, :cond_1a
 
-    const/4 v11, 0x5
+    move v11, v4
+
+    const/16 v2, 0x10
 
     goto :goto_14
 
     :cond_1a
+    const/16 v2, 0x10
+
     const/4 v11, 0x3
 
     :goto_14
@@ -723,7 +723,7 @@
 
     if-eqz v1, :cond_1b
 
-    const/4 v8, 0x0
+    move v8, v15
 
     goto :goto_15
 
@@ -740,7 +740,7 @@
     goto :goto_16
 
     :cond_1c
-    const/4 v10, 0x0
+    move v10, v15
 
     :goto_16
     const/4 v11, 0x0
@@ -791,12 +791,12 @@
 
     if-eqz v2, :cond_1f
 
-    const/4 v11, 0x5
+    move v11, v4
 
     goto :goto_17
 
     :cond_1f
-    const/4 v11, 0x3
+    move v11, v1
 
     :goto_17
     or-int/lit8 v7, v11, 0x30
@@ -825,19 +825,19 @@
 
     if-eqz v2, :cond_21
 
-    const/4 v11, 0x5
+    move v11, v4
 
     goto :goto_18
 
     :cond_21
-    const/4 v11, 0x3
+    move v11, v1
 
     :goto_18
     or-int/lit8 v7, v11, 0x30
 
     if-eqz v2, :cond_22
 
-    const/4 v8, 0x0
+    move v8, v15
 
     goto :goto_19
 
@@ -854,7 +854,7 @@
     goto :goto_1a
 
     :cond_23
-    const/4 v10, 0x0
+    move v10, v15
 
     :goto_1a
     const/4 v11, 0x0
@@ -986,13 +986,8 @@
 
     int-to-float v0, v0
 
-    goto :goto_0
-
-    :catch_0
-    nop
-
     .line 256
-    :goto_0
+    :catch_0
     sget-boolean v1, Lorg/telegram/messenger/LocaleController;->isRTL:Z
 
     if-eqz v1, :cond_1
@@ -1018,7 +1013,7 @@
 
     sub-float/2addr v1, v0
 
-    goto :goto_1
+    goto :goto_0
 
     .line 259
     :cond_1
@@ -1043,7 +1038,7 @@
     add-float/2addr v1, v0
 
     .line 261
-    :goto_1
+    :goto_0
     iget-object v0, p0, Lorg/telegram/ui/Cells/CheckBoxCell;->collapsedArrow:Landroid/view/View;
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setTranslationX(F)V
@@ -1184,16 +1179,14 @@
 
     const/4 v1, 0x0
 
-    const/4 v3, 0x0
-
     goto :goto_1
 
     :cond_1
     int-to-float v1, v0
 
+    :goto_1
     move v3, v1
 
-    :goto_1
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredHeight()I
 
     move-result v1
@@ -1985,12 +1978,12 @@
 
     if-eqz p1, :cond_0
 
-    const/high16 v3, 0x3f800000    # 1.0f
+    move v3, v1
 
     goto :goto_0
 
     :cond_0
-    const/high16 v3, 0x3f000000    # 0.5f
+    move v3, v2
 
     :goto_0
     invoke-virtual {v0, v3}, Landroid/widget/TextView;->setAlpha(F)V
@@ -2000,12 +1993,12 @@
 
     if-eqz p1, :cond_1
 
-    const/high16 v3, 0x3f800000    # 1.0f
+    move v3, v1
 
     goto :goto_1
 
     :cond_1
-    const/high16 v3, 0x3f000000    # 0.5f
+    move v3, v2
 
     :goto_1
     invoke-virtual {v0, v3}, Landroid/widget/TextView;->setAlpha(F)V
@@ -2018,7 +2011,7 @@
     goto :goto_2
 
     :cond_2
-    const/high16 v1, 0x3f000000    # 0.5f
+    move v1, v2
 
     :goto_2
     invoke-virtual {v0, v1}, Landroid/view/View;->setAlpha(F)V
@@ -2357,7 +2350,7 @@
     const/4 v0, 0x1
 
     :goto_0
-    mul-int p1, p1, v0
+    mul-int/2addr p1, v0
 
     invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 

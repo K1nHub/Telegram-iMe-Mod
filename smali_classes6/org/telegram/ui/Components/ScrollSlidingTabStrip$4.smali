@@ -62,14 +62,14 @@
     goto :goto_0
 
     :cond_0
-    const/4 v0, 0x0
+    move v0, v1
 
     :goto_0
     iput v0, p1, Lorg/telegram/ui/Components/ScrollSlidingTabStrip;->expandProgress:F
 
     const/4 p1, 0x0
 
-    const/4 v0, 0x0
+    move v0, p1
 
     .line 543
     :goto_1
@@ -141,7 +141,7 @@
 
     int-to-float v2, v2
 
-    mul-float v0, v0, v2
+    mul-float/2addr v0, v2
 
     .line 550
     iget-object v2, p0, Lorg/telegram/ui/Components/ScrollSlidingTabStrip$4;->this$0:Lorg/telegram/ui/Components/ScrollSlidingTabStrip;
@@ -174,7 +174,7 @@
 
     int-to-float v4, v4
 
-    mul-float v3, v3, v4
+    mul-float/2addr v3, v4
 
     div-float/2addr v2, v3
 
@@ -198,12 +198,12 @@
 
     if-lez v5, :cond_2
 
+    move v4, v1
+
     move v2, v3
 
-    const/4 v4, 0x0
-
     :cond_2
-    mul-float v0, v0, v2
+    mul-float/2addr v0, v2
 
     sub-float v2, v0, v4
 
@@ -253,7 +253,7 @@
     invoke-static {v0, p1}, Lorg/telegram/ui/Components/ScrollSlidingTabStrip;->access$602(Lorg/telegram/ui/Components/ScrollSlidingTabStrip;I)I
 
     :cond_4
-    const/4 v0, 0x0
+    move v0, p1
 
     .line 568
     :goto_2

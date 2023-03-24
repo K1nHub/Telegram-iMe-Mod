@@ -21,21 +21,21 @@ public abstract class WNafUtil {
             BigInteger xor = add.xor(bigInteger);
             int i2 = bitLength - 1;
             int i3 = 0;
-            int i4 = 0;
-            int i5 = 1;
-            while (i5 < i2) {
-                if (xor.testBit(i5)) {
-                    iArr[i3] = i4 | ((bigInteger.testBit(i5) ? -1 : 1) << 16);
-                    i5++;
-                    i3++;
-                    i4 = 1;
-                } else {
+            int i4 = 1;
+            int i5 = 0;
+            while (i4 < i2) {
+                if (xor.testBit(i4)) {
+                    iArr[i3] = i5 | ((bigInteger.testBit(i4) ? -1 : 1) << 16);
                     i4++;
+                    i5 = 1;
+                    i3++;
+                } else {
+                    i5++;
                 }
-                i5++;
+                i4++;
             }
             int i6 = i3 + 1;
-            iArr[i3] = 65536 | i4;
+            iArr[i3] = 65536 | i5;
             return i > i6 ? trim(iArr, i6) : iArr;
         }
         throw new IllegalArgumentException("'k' must have bitlength < 2^16");
@@ -227,7 +227,7 @@ public abstract class WNafUtil {
                     Method dump skipped, instructions count: 260
                     To view this dump add '--comments-level debug' option
                 */
-                throw new UnsupportedOperationException("Method not decompiled: org.bouncycastle.math.p043ec.WNafUtil.C30722.precompute(org.bouncycastle.math.ec.PreCompInfo):org.bouncycastle.math.ec.PreCompInfo");
+                throw new UnsupportedOperationException("Method not decompiled: org.bouncycastle.math.p043ec.WNafUtil.C30862.precompute(org.bouncycastle.math.ec.PreCompInfo):org.bouncycastle.math.ec.PreCompInfo");
             }
         });
     }

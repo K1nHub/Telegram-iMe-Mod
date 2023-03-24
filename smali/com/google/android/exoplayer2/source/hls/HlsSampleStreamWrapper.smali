@@ -487,11 +487,11 @@
 
     const/4 v3, 0x0
 
-    const/4 v4, 0x0
+    move v5, v1
 
-    const/4 v5, -0x2
+    move v6, v2
 
-    const/4 v6, -0x1
+    move v4, v3
 
     :goto_0
     const/4 v7, 0x2
@@ -535,7 +535,7 @@
 
     if-eqz v7, :cond_1
 
-    const/4 v7, 0x1
+    move v7, v8
 
     goto :goto_1
 
@@ -552,7 +552,7 @@
     goto :goto_1
 
     :cond_2
-    const/4 v7, -0x2
+    move v7, v1
 
     .line 1385
     :goto_1
@@ -577,7 +577,7 @@
 
     if-eq v6, v2, :cond_4
 
-    const/4 v6, -0x1
+    move v6, v2
 
     :cond_4
     :goto_2
@@ -604,7 +604,7 @@
 
     iput-object v2, p0, Lcom/google/android/exoplayer2/source/hls/HlsSampleStreamWrapper;->trackGroupToSampleQueueIndex:[I
 
-    const/4 v2, 0x0
+    move v2, v3
 
     :goto_3
     if-ge v2, v0, :cond_6
@@ -622,7 +622,7 @@
     :cond_6
     new-array v2, v0, [Lcom/google/android/exoplayer2/source/TrackGroup;
 
-    const/4 v9, 0x0
+    move v9, v3
 
     :goto_4
     if-ge v9, v0, :cond_d
@@ -647,7 +647,7 @@
     .line 1411
     new-array v11, v4, [Lcom/google/android/exoplayer2/Format;
 
-    const/4 v12, 0x0
+    move v12, v3
 
     :goto_5
     if-ge v12, v4, :cond_9
@@ -791,7 +791,7 @@
 
     if-nez v0, :cond_e
 
-    const/4 v3, 0x1
+    move v3, v8
 
     :cond_e
     invoke-static {v3}, Lcom/google/android/exoplayer2/util/Assertions;->checkState(Z)V
@@ -853,7 +853,7 @@
 
     check-cast p1, Lcom/google/android/exoplayer2/source/hls/HlsMediaChunk;
 
-    const/4 v0, 0x0
+    move v0, v2
 
     .line 1258
     :goto_1
@@ -1095,7 +1095,7 @@
 
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    move v1, v0
 
     .line 1447
     :goto_0
@@ -1111,7 +1111,7 @@
 
     new-array v3, v3, [Lcom/google/android/exoplayer2/Format;
 
-    const/4 v4, 0x0
+    move v4, v0
 
     .line 1450
     :goto_1
@@ -1269,7 +1269,7 @@
     goto :goto_1
 
     :cond_2
-    const/4 v6, -0x1
+    move v6, v5
 
     :goto_1
     invoke-virtual {v4, v6}, Lcom/google/android/exoplayer2/Format$Builder;->setAverageBitrate(I)Lcom/google/android/exoplayer2/Format$Builder;
@@ -1284,7 +1284,7 @@
     goto :goto_2
 
     :cond_3
-    const/4 p2, -0x1
+    move p2, v5
 
     :goto_2
     invoke-virtual {v4, p2}, Lcom/google/android/exoplayer2/Format$Builder;->setPeakBitrate(I)Lcom/google/android/exoplayer2/Format$Builder;
@@ -1407,7 +1407,7 @@
     goto :goto_0
 
     :cond_1
-    const/4 p1, -0x1
+    move p1, v1
 
     :goto_1
     if-ne p1, v1, :cond_2
@@ -1537,7 +1537,7 @@
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_0
     if-ge v2, v0, :cond_1
@@ -1604,7 +1604,7 @@
     goto :goto_0
 
     :cond_0
-    const/4 v3, 0x0
+    move v3, v4
 
     :goto_0
     return v3
@@ -1655,7 +1655,7 @@
     goto :goto_2
 
     :cond_5
-    const/4 v3, 0x0
+    move v3, v4
 
     :goto_2
     return v3
@@ -1819,7 +1819,7 @@
 
     const/4 v3, 0x0
 
-    const/4 v4, 0x0
+    move v4, v3
 
     :goto_0
     if-ge v4, v2, :cond_0
@@ -1889,16 +1889,16 @@
 .end method
 
 .method private isPendingReset()Z
-    .locals 5
+    .locals 4
 
     .line 1464
     iget-wide v0, p0, Lcom/google/android/exoplayer2/source/hls/HlsSampleStreamWrapper;->pendingResetPositionUs:J
 
     const-wide v2, -0x7fffffffffffffffL    # -4.9E-324
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-eqz v4, :cond_0
+    if-eqz v0, :cond_0
 
     const/4 v0, 0x1
 
@@ -1931,12 +1931,12 @@
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_0
     if-ge v2, v0, :cond_2
 
-    const/4 v3, 0x0
+    move v3, v1
 
     .line 1320
     :goto_1
@@ -2122,7 +2122,7 @@
 
     const/4 v2, 0x0
 
-    const/4 v3, 0x0
+    move v3, v2
 
     :goto_0
     if-ge v3, v1, :cond_0
@@ -2155,7 +2155,7 @@
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_0
     if-ge v2, v0, :cond_2
@@ -2358,7 +2358,7 @@
 
     array-length v6, v5
 
-    const/4 v7, 0x0
+    move v7, v2
 
     :goto_0
     if-ge v7, v6, :cond_3
@@ -2435,13 +2435,13 @@
     goto :goto_2
 
     :cond_4
-    const/4 v11, 0x0
+    move v11, v2
 
     goto :goto_3
 
     :cond_5
     :goto_2
-    const/4 v11, 0x1
+    move v11, v3
 
     :goto_3
     iget-object v12, v0, Lcom/google/android/exoplayer2/source/hls/HlsSampleStreamWrapper;->nextChunkHolder:Lcom/google/android/exoplayer2/source/hls/HlsChunkSource$HlsChunkHolder;
@@ -3392,7 +3392,7 @@
     goto :goto_0
 
     :cond_2
-    const/4 v15, 0x0
+    move v15, v8
 
     :goto_0
     const/4 v6, 0x1
@@ -3424,7 +3424,7 @@
 
     if-ne v2, v1, :cond_3
 
-    const/4 v8, 0x1
+    move v8, v6
 
     .line 959
     :cond_3
@@ -3883,7 +3883,7 @@
 
     if-nez v0, :cond_3
 
-    const/4 v0, 0x0
+    move v0, v2
 
     .line 638
     :goto_0
@@ -4414,7 +4414,7 @@
 
     const/4 v14, 0x0
 
-    const/4 v4, 0x0
+    move v4, v14
 
     .line 355
     :goto_0
@@ -4476,20 +4476,20 @@
     :cond_3
     iget-wide v3, v0, Lcom/google/android/exoplayer2/source/hls/HlsSampleStreamWrapper;->lastSeekPositionUs:J
 
-    cmp-long v5, v12, v3
+    cmp-long v3, v12, v3
 
-    if-eqz v5, :cond_4
+    if-eqz v3, :cond_4
 
     goto :goto_1
 
     :cond_4
-    const/4 v3, 0x0
+    move v3, v14
 
     goto :goto_2
 
     :cond_5
     :goto_1
-    const/4 v3, 0x1
+    move v3, v15
 
     .line 373
     :goto_2
@@ -4503,7 +4503,7 @@
 
     move-object v11, v4
 
-    const/4 v3, 0x0
+    move v3, v14
 
     .line 376
     :goto_3
@@ -4602,12 +4602,12 @@
 
     if-eqz v5, :cond_8
 
-    const/4 v5, 0x1
+    move v5, v15
 
     goto :goto_4
 
     :cond_8
-    const/4 v5, 0x0
+    move v5, v14
 
     :goto_4
     move/from16 v16, v5
@@ -4769,13 +4769,13 @@
     goto :goto_7
 
     :cond_f
-    const/4 v1, 0x0
+    move v1, v14
 
     goto :goto_8
 
     :cond_10
     :goto_7
-    const/4 v1, 0x1
+    move v1, v15
 
     :goto_8
     if-eqz v1, :cond_11
@@ -4783,9 +4783,9 @@
     .line 453
     iput-boolean v15, v0, Lcom/google/android/exoplayer2/source/hls/HlsSampleStreamWrapper;->pendingResetUpstreamFormats:Z
 
-    const/4 v1, 0x1
+    move v1, v15
 
-    const/16 v16, 0x1
+    move/from16 v16, v1
 
     goto :goto_9
 
@@ -4891,9 +4891,9 @@
     .line 1183
     iget-wide v0, p0, Lcom/google/android/exoplayer2/source/hls/HlsSampleStreamWrapper;->sampleOffsetUs:J
 
-    cmp-long v2, v0, p1
+    cmp-long v0, v0, p1
 
-    if-eqz v2, :cond_0
+    if-eqz v0, :cond_0
 
     .line 1184
     iput-wide p1, p0, Lcom/google/android/exoplayer2/source/hls/HlsSampleStreamWrapper;->sampleOffsetUs:J

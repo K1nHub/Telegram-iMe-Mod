@@ -259,7 +259,7 @@
 
     invoke-interface {v0, v2}, Ljava/util/List;->remove(I)Ljava/lang/Object;
 
-    const/4 v0, 0x1
+    move v0, v1
 
     :cond_2
     add-int/lit8 v2, v2, -0x1
@@ -450,7 +450,7 @@
 .end method
 
 .method public final scheduleAndDecide$okhttp(Lokhttp3/internal/concurrent/Task;JZ)Z
-    .locals 10
+    .locals 9
 
     const-string v0, "task"
 
@@ -490,9 +490,9 @@
 
     move-result-wide v7
 
-    cmp-long v9, v7, v2
+    cmp-long v7, v7, v2
 
-    if-gtz v9, :cond_1
+    if-gtz v7, :cond_1
 
     .line 25
     sget-object p2, Lokhttp3/internal/concurrent/TaskRunner;->Companion:Lokhttp3/internal/concurrent/TaskRunner$Companion;
@@ -602,7 +602,7 @@
 
     move-result-object p4
 
-    const/4 v2, 0x0
+    move v2, v6
 
     :goto_1
     invoke-interface {p4}, Ljava/util/Iterator;->hasNext()Z
@@ -631,12 +631,12 @@
 
     if-lez v3, :cond_5
 
-    const/4 v3, 0x1
+    move v3, v4
 
     goto :goto_2
 
     :cond_5
-    const/4 v3, 0x0
+    move v3, v6
 
     :goto_2
     if-eqz v3, :cond_6
@@ -649,7 +649,7 @@
     goto :goto_1
 
     :cond_7
-    const/4 v2, -0x1
+    move v2, v5
 
     :goto_3
     if-ne v2, v5, :cond_8
@@ -669,7 +669,7 @@
 
     if-nez v2, :cond_9
 
-    const/4 v6, 0x1
+    move v6, v4
 
     :cond_9
     return v6

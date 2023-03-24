@@ -30,7 +30,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nRxExt.kt\nKotlin\n*S Kotlin\n*F\n+ 1 RxExt.kt\ncom/smedialink/utils/extentions/rx/RxExtKt$subscribeWithErrorHandle$2\n+ 2 WalletSendAmountPresenter.kt\ncom/smedialink/ui/wallet/actions/send/amount/WalletSendAmountPresenter\n*L\n1#1,111:1\n160#2,14:112\n*E\n"
+    value = "SMAP\nRxExt.kt\nKotlin\n*S Kotlin\n*F\n+ 1 RxExt.kt\ncom/smedialink/utils/extentions/rx/RxExtKt$subscribeWithErrorHandle$2\n+ 2 WalletSendAmountPresenter.kt\ncom/smedialink/ui/wallet/actions/send/amount/WalletSendAmountPresenter\n*L\n1#1,111:1\n162#2,14:112\n*E\n"
 .end annotation
 
 
@@ -126,12 +126,12 @@
 
     if-nez v0, :cond_1
 
-    const/4 v0, 0x1
+    move v0, v1
 
     goto :goto_0
 
     :cond_1
-    const/4 v0, 0x0
+    move v0, v2
 
     :goto_0
     if-nez v0, :cond_a
@@ -246,12 +246,12 @@
 
     if-nez p1, :cond_5
 
-    const/4 p1, 0x1
+    move p1, v1
 
     goto :goto_1
 
     :cond_5
-    const/4 p1, 0x0
+    move p1, v2
 
     :goto_1
     if-eqz p1, :cond_6
@@ -297,7 +297,7 @@
     goto :goto_2
 
     :cond_7
-    const/4 v1, 0x0
+    move v1, v2
 
     :goto_2
     if-eqz v1, :cond_8

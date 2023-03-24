@@ -150,7 +150,7 @@
 
     if-lez p1, :cond_2
 
-    const/4 p1, 0x1
+    move p1, v2
 
     goto :goto_0
 
@@ -197,7 +197,7 @@
 
     const/4 p2, 0x0
 
-    const/4 v0, 0x0
+    move v0, p2
 
     .line 272
     :goto_0
@@ -246,7 +246,7 @@
     goto :goto_1
 
     :cond_1
-    const/4 p1, 0x0
+    move p1, p2
 
     :goto_1
     invoke-interface {v0, p1, p2}, Lorg/telegram/ui/Adapters/DialogsSearchAdapter$DialogsSearchAdapterDelegate;->searchStateChanged(ZZ)V

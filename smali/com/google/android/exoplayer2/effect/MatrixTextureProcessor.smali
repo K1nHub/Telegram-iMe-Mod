@@ -592,7 +592,7 @@
     if-ne p3, v2, :cond_4
 
     :cond_3
-    const/4 v1, 0x1
+    move v1, v3
 
     .line 214
     :cond_4
@@ -801,7 +801,7 @@
 
     check-cast v0, [[F
 
-    const/4 v1, 0x0
+    move v1, v2
 
     .line 478
     :goto_0
@@ -847,7 +847,7 @@
     return-void
 
     :cond_1
-    const/4 v0, 0x0
+    move v0, v2
 
     .line 486
     :goto_1
@@ -937,7 +937,7 @@
 
     check-cast v0, [[F
 
-    const/4 v1, 0x0
+    move v1, v2
 
     .line 431
     :goto_0
@@ -997,7 +997,7 @@
 
     array-length p2, p1
 
-    const/4 v0, 0x0
+    move v0, v2
 
     :goto_1
     if-ge v0, p2, :cond_3
@@ -1086,9 +1086,9 @@
 
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    move v1, v0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     .line 512
     :goto_0
@@ -1118,12 +1118,12 @@
 
     if-ne v2, v5, :cond_0
 
-    const/4 v2, 0x1
+    move v2, v6
 
     goto :goto_1
 
     :cond_0
-    const/4 v2, 0x0
+    move v2, v0
 
     :goto_1
     const-string v5, "A 4x4 transformation matrix must have 16 elements"
@@ -1135,7 +1135,7 @@
 
     invoke-static {v4, v0, v3, v0, v2}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
-    const/4 v2, 0x1
+    move v2, v6
 
     :cond_1
     add-int/lit8 v1, v1, 0x1

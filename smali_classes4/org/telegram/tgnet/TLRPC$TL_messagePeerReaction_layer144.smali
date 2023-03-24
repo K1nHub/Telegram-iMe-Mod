@@ -17,7 +17,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 2759
+    .line 2758
     invoke-direct {p0}, Lorg/telegram/tgnet/TLRPC$MessagePeerReaction;-><init>()V
 
     return-void
@@ -28,7 +28,7 @@
 .method public readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
     .locals 4
 
-    .line 2763
+    .line 2762
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
@@ -43,14 +43,14 @@
 
     if-eqz v1, :cond_0
 
-    const/4 v1, 0x1
+    move v1, v3
 
     goto :goto_0
 
     :cond_0
-    const/4 v1, 0x0
+    move v1, v2
 
-    .line 2764
+    .line 2763
     :goto_0
     iput-boolean v1, p0, Lorg/telegram/tgnet/TLRPC$MessagePeerReaction;->big:Z
 
@@ -58,13 +58,13 @@
 
     if-eqz v0, :cond_1
 
-    const/4 v2, 0x1
+    move v2, v3
 
-    .line 2765
+    .line 2764
     :cond_1
     iput-boolean v2, p0, Lorg/telegram/tgnet/TLRPC$MessagePeerReaction;->unread:Z
 
-    .line 2766
+    .line 2765
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
@@ -75,14 +75,14 @@
 
     iput-object v0, p0, Lorg/telegram/tgnet/TLRPC$MessagePeerReaction;->peer_id:Lorg/telegram/tgnet/TLRPC$Peer;
 
-    .line 2767
+    .line 2766
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_reactionEmoji;
 
     invoke-direct {v0}, Lorg/telegram/tgnet/TLRPC$TL_reactionEmoji;-><init>()V
 
     iput-object v0, p0, Lorg/telegram/tgnet/TLRPC$MessagePeerReaction;->reaction:Lorg/telegram/tgnet/TLRPC$Reaction;
 
-    .line 2768
+    .line 2767
     check-cast v0, Lorg/telegram/tgnet/TLRPC$TL_reactionEmoji;
 
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readString(Z)Ljava/lang/String;
@@ -97,12 +97,12 @@
 .method public serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
     .locals 2
 
-    .line 2772
+    .line 2771
     sget v0, Lorg/telegram/tgnet/TLRPC$TL_messagePeerReaction_layer144;->constructor:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 2773
+    .line 2772
     iget-boolean v0, p0, Lorg/telegram/tgnet/TLRPC$MessagePeerReaction;->big:Z
 
     if-eqz v0, :cond_0
@@ -121,7 +121,7 @@
     :goto_0
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$MessagePeerReaction;->flags:I
 
-    .line 2774
+    .line 2773
     iget-boolean v1, p0, Lorg/telegram/tgnet/TLRPC$MessagePeerReaction;->unread:Z
 
     if-eqz v1, :cond_1
@@ -136,22 +136,22 @@
     :goto_1
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$MessagePeerReaction;->flags:I
 
-    .line 2775
+    .line 2774
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 2776
+    .line 2775
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$MessagePeerReaction;->peer_id:Lorg/telegram/tgnet/TLRPC$Peer;
 
     invoke-virtual {v0, p1}, Lorg/telegram/tgnet/TLObject;->serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
 
-    .line 2777
+    .line 2776
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$MessagePeerReaction;->reaction:Lorg/telegram/tgnet/TLRPC$Reaction;
 
     instance-of v1, v0, Lorg/telegram/tgnet/TLRPC$TL_reactionEmoji;
 
     if-eqz v1, :cond_2
 
-    .line 2778
+    .line 2777
     check-cast v0, Lorg/telegram/tgnet/TLRPC$TL_reactionEmoji;
 
     iget-object v0, v0, Lorg/telegram/tgnet/TLRPC$TL_reactionEmoji;->emoticon:Ljava/lang/String;
@@ -163,7 +163,7 @@
     :cond_2
     const-string v0, ""
 
-    .line 2780
+    .line 2779
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeString(Ljava/lang/String;)V
 
     :goto_2

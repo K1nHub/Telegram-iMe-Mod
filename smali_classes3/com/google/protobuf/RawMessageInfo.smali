@@ -20,21 +20,21 @@
 .method constructor <init>(Lcom/google/protobuf/MessageLite;Ljava/lang/String;[Ljava/lang/Object;)V
     .locals 3
 
-    .line 179
+    .line 181
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 180
+    .line 182
     iput-object p1, p0, Lcom/google/protobuf/RawMessageInfo;->defaultInstance:Lcom/google/protobuf/MessageLite;
 
-    .line 181
+    .line 183
     iput-object p2, p0, Lcom/google/protobuf/RawMessageInfo;->info:Ljava/lang/String;
 
-    .line 182
+    .line 184
     iput-object p3, p0, Lcom/google/protobuf/RawMessageInfo;->objects:[Ljava/lang/Object;
 
     const/4 p1, 0x0
 
-    .line 184
+    .line 186
     invoke-virtual {p2, p1}, Ljava/lang/String;->charAt(I)C
 
     move-result p1
@@ -43,7 +43,7 @@
 
     if-ge p1, p3, :cond_0
 
-    .line 186
+    .line 188
     iput p1, p0, Lcom/google/protobuf/RawMessageInfo;->flags:I
 
     goto :goto_1
@@ -58,7 +58,7 @@
     :goto_0
     add-int/lit8 v2, v1, 0x1
 
-    .line 190
+    .line 192
     invoke-virtual {p2, v1}, Ljava/lang/String;->charAt(I)C
 
     move-result v1
@@ -82,7 +82,7 @@
 
     or-int/2addr p1, p2
 
-    .line 194
+    .line 196
     iput p1, p0, Lcom/google/protobuf/RawMessageInfo;->flags:I
 
     :goto_1
@@ -94,7 +94,7 @@
 .method public getDefaultInstance()Lcom/google/protobuf/MessageLite;
     .locals 1
 
-    .line 208
+    .line 210
     iget-object v0, p0, Lcom/google/protobuf/RawMessageInfo;->defaultInstance:Lcom/google/protobuf/MessageLite;
 
     return-object v0
@@ -103,7 +103,7 @@
 .method getObjects()[Ljava/lang/Object;
     .locals 1
 
-    .line 203
+    .line 205
     iget-object v0, p0, Lcom/google/protobuf/RawMessageInfo;->objects:[Ljava/lang/Object;
 
     return-object v0
@@ -112,7 +112,7 @@
 .method getStringInfo()Ljava/lang/String;
     .locals 1
 
-    .line 199
+    .line 201
     iget-object v0, p0, Lcom/google/protobuf/RawMessageInfo;->info:Ljava/lang/String;
 
     return-object v0
@@ -121,7 +121,7 @@
 .method public getSyntax()Lcom/google/protobuf/ProtoSyntax;
     .locals 2
 
-    .line 213
+    .line 215
     iget v0, p0, Lcom/google/protobuf/RawMessageInfo;->flags:I
 
     const/4 v1, 0x1
@@ -144,7 +144,7 @@
 .method public isMessageSetWireFormat()Z
     .locals 2
 
-    .line 218
+    .line 220
     iget v0, p0, Lcom/google/protobuf/RawMessageInfo;->flags:I
 
     const/4 v1, 0x2

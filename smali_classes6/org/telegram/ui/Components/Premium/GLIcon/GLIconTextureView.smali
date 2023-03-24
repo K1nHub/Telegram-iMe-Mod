@@ -1287,16 +1287,16 @@
     .line 474
     iget-object v0, p0, Lorg/telegram/ui/Components/Premium/GLIcon/GLIconTextureView;->mRenderer:Lorg/telegram/ui/Components/Premium/GLIcon/GLIconRenderer;
 
-    mul-float p1, p1, p4
+    mul-float/2addr p1, p4
 
     iput p1, v0, Lorg/telegram/ui/Components/Premium/GLIcon/GLIconRenderer;->angleX:F
 
-    mul-float p2, p2, p4
+    mul-float/2addr p2, p4
 
     .line 475
     iput p2, v0, Lorg/telegram/ui/Components/Premium/GLIcon/GLIconRenderer;->angleX2:F
 
-    mul-float p4, p4, p3
+    mul-float/2addr p4, p3
 
     .line 476
     iput p4, v0, Lorg/telegram/ui/Components/Premium/GLIcon/GLIconRenderer;->angleY:F
@@ -2384,7 +2384,7 @@
 
     const/high16 p1, 0x447a0000    # 1000.0f
 
-    mul-float p2, p2, p1
+    mul-float/2addr p2, p1
 
     float-to-int p1, p2
 

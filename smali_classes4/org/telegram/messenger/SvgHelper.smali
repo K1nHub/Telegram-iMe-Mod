@@ -283,7 +283,7 @@
 
     invoke-direct {v14}, Landroid/graphics/Path;-><init>()V
 
-    const/4 v4, 0x0
+    move v4, v3
 
     const/4 v5, 0x0
 
@@ -514,11 +514,11 @@
 
     const/high16 v4, 0x40000000    # 2.0f
 
-    mul-float v5, v5, v4
+    mul-float/2addr v5, v4
 
     sub-float v5, v5, v16
 
-    mul-float v6, v6, v4
+    mul-float/2addr v6, v4
 
     sub-float v6, v6, v17
 
@@ -1268,7 +1268,7 @@
     sparse-switch v0, :sswitch_data_0
 
     :goto_0
-    const/4 p0, -0x1
+    move p0, v1
 
     goto/16 :goto_1
 
@@ -2014,18 +2014,18 @@
 
     const/4 v3, 0x1
 
-    const/4 v4, 0x1
+    move v5, v2
 
-    const/4 v5, 0x0
+    move v6, v5
 
-    const/4 v6, 0x0
+    move v4, v3
 
     :goto_0
     if-ge v4, v0, :cond_5
 
     if-eqz v6, :cond_0
 
-    const/4 v6, 0x0
+    move v6, v2
 
     goto :goto_1
 
@@ -2132,7 +2132,7 @@
     :cond_3
     add-int/lit8 v5, v4, 0x1
 
-    const/4 v6, 0x1
+    move v6, v3
 
     goto :goto_1
 
@@ -2771,7 +2771,7 @@
     goto :goto_0
 
     :cond_7
-    const/4 p0, 0x0
+    move p0, v6
 
     .line 673
     :goto_0

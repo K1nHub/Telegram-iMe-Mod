@@ -264,7 +264,7 @@
 
     const/high16 v9, 0x3f800000    # 1.0f
 
-    mul-float v6, v6, v9
+    mul-float/2addr v6, v9
 
     invoke-static {v6}, Lorg/telegram/messenger/AndroidUtilities;->dp(F)I
 
@@ -423,7 +423,7 @@
 
     if-ne v13, v12, :cond_8
 
-    const/4 v5, 0x0
+    move/from16 v5, v16
 
     goto :goto_5
 
@@ -546,7 +546,7 @@
     goto :goto_7
 
     :cond_b
-    const/16 v18, 0x0
+    move/from16 v18, v16
 
     :goto_7
     add-float v5, v5, v18
@@ -574,7 +574,7 @@
 
     if-lez v5, :cond_d
 
-    const/4 v5, 0x1
+    move v5, v15
 
     goto :goto_8
 
@@ -659,13 +659,13 @@
 
     const v15, 0x3f333333    # 0.7f
 
-    mul-float v15, v15, v4
+    mul-float/2addr v15, v4
 
     move/from16 v22, v6
 
     iget v6, v0, Lorg/telegram/ui/Components/SeekBar;->timestampsAppearing:F
 
-    mul-float v15, v15, v6
+    mul-float/2addr v15, v6
 
     aput v15, v9, v20
 
@@ -692,7 +692,7 @@
 
     aput v4, v9, v19
 
-    const/4 v6, 0x4
+    move v6, v15
 
     const/16 v16, 0x0
 
@@ -763,12 +763,12 @@
 
     const v15, 0x3f333333    # 0.7f
 
-    mul-float v15, v15, v4
+    mul-float/2addr v15, v4
 
     .line 416
     iget v6, v0, Lorg/telegram/ui/Components/SeekBar;->timestampsAppearing:F
 
-    mul-float v15, v15, v6
+    mul-float/2addr v15, v6
 
     const/4 v6, 0x5
 
@@ -902,7 +902,7 @@
 
     if-eqz v0, :cond_0
 
-    goto/16 :goto_5
+    goto/16 :goto_4
 
     .line 439
     :cond_0
@@ -1044,14 +1044,9 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_3
-
-    :catch_0
-    nop
-
     .line 466
+    :catch_0
     :cond_5
-    :goto_3
     iput v1, p0, Lorg/telegram/ui/Components/SeekBar;->currentTimestamp:I
 
     if-ltz v1, :cond_6
@@ -1086,11 +1081,11 @@
     :cond_6
     iget v0, p0, Lorg/telegram/ui/Components/SeekBar;->timestampChangeT:F
 
-    const-wide/16 v1, 0x11
+    const/high16 v1, 0x3f800000    # 1.0f
 
-    const/high16 v3, 0x3f800000    # 1.0f
+    cmpg-float v0, v0, v1
 
-    cmpg-float v0, v0, v3
+    const-wide/16 v2, 0x11
 
     if-gez v0, :cond_9
 
@@ -1107,7 +1102,7 @@
 
     move-result-wide v4
 
-    invoke-static {v1, v2, v4, v5}, Ljava/lang/Math;->min(JJ)J
+    invoke-static {v2, v3, v4, v5}, Ljava/lang/Math;->min(JJ)J
 
     move-result-wide v4
 
@@ -1124,13 +1119,13 @@
 
     const/high16 v0, 0x43200000    # 160.0f
 
-    goto :goto_4
+    goto :goto_3
 
     :cond_7
     const/high16 v0, 0x435c0000    # 220.0f
 
     .line 474
-    :goto_4
+    :goto_3
     iget v6, p0, Lorg/telegram/ui/Components/SeekBar;->timestampChangeT:F
 
     long-to-float v4, v4
@@ -1139,7 +1134,7 @@
 
     add-float/2addr v6, v4
 
-    invoke-static {v6, v3}, Ljava/lang/Math;->min(FF)F
+    invoke-static {v6, v1}, Ljava/lang/Math;->min(FF)F
 
     move-result v0
 
@@ -1165,7 +1160,7 @@
     :cond_9
     iget v0, p0, Lorg/telegram/ui/Components/SeekBar;->timestampsAppearing:F
 
-    cmpg-float v0, v0, v3
+    cmpg-float v0, v0, v1
 
     if-gez v0, :cond_b
 
@@ -1182,22 +1177,22 @@
 
     move-result-wide v4
 
-    invoke-static {v1, v2, v4, v5}, Ljava/lang/Math;->min(JJ)J
+    invoke-static {v2, v3, v4, v5}, Ljava/lang/Math;->min(JJ)J
 
-    move-result-wide v0
+    move-result-wide v2
 
     .line 482
-    iget v2, p0, Lorg/telegram/ui/Components/SeekBar;->timestampsAppearing:F
+    iget v0, p0, Lorg/telegram/ui/Components/SeekBar;->timestampsAppearing:F
 
-    long-to-float v0, v0
+    long-to-float v2, v2
 
-    const/high16 v1, 0x43480000    # 200.0f
+    const/high16 v3, 0x43480000    # 200.0f
 
-    div-float/2addr v0, v1
+    div-float/2addr v2, v3
 
-    add-float/2addr v2, v0
+    add-float/2addr v0, v2
 
-    invoke-static {v2, v3}, Ljava/lang/Math;->min(FF)F
+    invoke-static {v0, v1}, Ljava/lang/Math;->min(FF)F
 
     move-result v0
 
@@ -1216,7 +1211,7 @@
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
     :cond_b
-    :goto_5
+    :goto_4
     return-void
 .end method
 
@@ -1302,7 +1297,7 @@
 
     const/high16 v3, 0x437f0000    # 255.0f
 
-    mul-float v0, v0, v3
+    mul-float/2addr v0, v3
 
     float-to-int v9, v0
 
@@ -1433,7 +1428,7 @@
 
     int-to-float v1, v9
 
-    mul-float v8, v8, v1
+    mul-float/2addr v8, v1
 
     add-float/2addr v7, v8
 
@@ -1573,28 +1568,28 @@
     :cond_7
     iget v1, p0, Lorg/telegram/ui/Components/SeekBar;->currentRadius:F
 
-    const/high16 v5, 0x42700000    # 60.0f
+    cmpg-float v5, v1, v0
 
-    const/4 v6, 0x1
+    const/high16 v6, 0x42700000    # 60.0f
 
-    cmpg-float v7, v1, v0
+    const/4 v7, 0x1
 
-    if-gez v7, :cond_8
+    if-gez v5, :cond_8
 
     .line 214
-    invoke-static {v6}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    invoke-static {v7}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
-    move-result v6
+    move-result v5
 
-    int-to-float v6, v6
+    int-to-float v5, v5
 
     long-to-float v3, v3
 
-    div-float/2addr v3, v5
+    div-float/2addr v3, v6
 
-    mul-float v6, v6, v3
+    mul-float/2addr v5, v3
 
-    add-float/2addr v1, v6
+    add-float/2addr v1, v5
 
     iput v1, p0, Lorg/telegram/ui/Components/SeekBar;->currentRadius:F
 
@@ -1609,19 +1604,19 @@
 
     .line 219
     :cond_8
-    invoke-static {v6}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    invoke-static {v7}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
-    move-result v6
+    move-result v5
 
-    int-to-float v6, v6
+    int-to-float v5, v5
 
     long-to-float v3, v3
 
-    div-float/2addr v3, v5
+    div-float/2addr v3, v6
 
-    mul-float v6, v6, v3
+    mul-float/2addr v5, v3
 
-    sub-float/2addr v1, v6
+    sub-float/2addr v1, v5
 
     iput v1, p0, Lorg/telegram/ui/Components/SeekBar;->currentRadius:F
 
@@ -2046,7 +2041,7 @@
 
     int-to-float v0, v0
 
-    mul-float v0, v0, p1
+    mul-float/2addr v0, p1
 
     float-to-double v0, v0
 
@@ -2147,7 +2142,7 @@
 
     int-to-long v2, p2
 
-    mul-long v2, v2, v0
+    mul-long/2addr v2, v0
 
     invoke-static {v2, v3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
@@ -2163,9 +2158,9 @@
 
     const-wide/16 v4, 0x0
 
-    cmp-long v6, v2, v4
+    cmp-long v2, v2, v4
 
-    if-gez v6, :cond_2
+    if-gez v2, :cond_2
 
     goto/16 :goto_2
 
@@ -2352,7 +2347,7 @@
     invoke-virtual {v2, v4}, Landroid/text/TextPaint;->setColor(I)V
 
     :cond_8
-    const/4 v2, 0x0
+    move v2, v7
 
     .line 326
     :goto_0
@@ -2420,7 +2415,7 @@
 
     int-to-long v4, v4
 
-    mul-long v4, v4, v0
+    mul-long/2addr v4, v0
 
     long-to-float v4, v4
 

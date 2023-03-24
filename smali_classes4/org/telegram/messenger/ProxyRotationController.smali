@@ -209,7 +209,7 @@
 .end method
 
 .method private static synthetic lambda$new$0(Lorg/telegram/messenger/SharedConfig$ProxyInfo;J)V
-    .locals 5
+    .locals 3
 
     .line 35
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
@@ -223,13 +223,13 @@
     .line 36
     iput-boolean v0, p0, Lorg/telegram/messenger/SharedConfig$ProxyInfo;->checking:Z
 
-    const/4 v1, 0x1
+    const-wide/16 v1, -0x1
 
-    const-wide/16 v2, -0x1
+    cmp-long v1, p1, v1
 
-    cmp-long v4, p1, v2
+    const/4 v2, 0x1
 
-    if-nez v4, :cond_0
+    if-nez v1, :cond_0
 
     .line 38
     iput-boolean v0, p0, Lorg/telegram/messenger/SharedConfig$ProxyInfo;->available:Z
@@ -246,7 +246,7 @@
     iput-wide p1, p0, Lorg/telegram/messenger/SharedConfig$ProxyInfo;->ping:J
 
     .line 42
-    iput-boolean v1, p0, Lorg/telegram/messenger/SharedConfig$ProxyInfo;->available:Z
+    iput-boolean v2, p0, Lorg/telegram/messenger/SharedConfig$ProxyInfo;->available:Z
 
     .line 44
     :goto_0
@@ -256,7 +256,7 @@
 
     sget p2, Lorg/telegram/messenger/NotificationCenter;->proxyCheckDone:I
 
-    new-array v1, v1, [Ljava/lang/Object;
+    new-array v1, v2, [Ljava/lang/Object;
 
     aput-object p0, v1, v0
 
@@ -279,115 +279,107 @@
 .end method
 
 .method private synthetic lambda$new$2()V
-    .locals 19
+    .locals 14
 
-    move-object/from16 v0, p0
-
-    const/4 v1, 0x1
+    const/4 v0, 0x1
 
     .line 23
-    iput-boolean v1, v0, Lorg/telegram/messenger/ProxyRotationController;->isCurrentlyChecking:Z
+    iput-boolean v0, p0, Lorg/telegram/messenger/ProxyRotationController;->isCurrentlyChecking:Z
 
     .line 25
-    sget v2, Lorg/telegram/messenger/UserConfig;->selectedAccount:I
+    sget v1, Lorg/telegram/messenger/UserConfig;->selectedAccount:I
 
-    const/4 v3, 0x0
+    const/4 v2, 0x0
 
-    const/4 v4, 0x0
+    move v3, v2
 
-    const/4 v5, 0x0
+    move v4, v3
 
     .line 27
     :goto_0
-    sget-object v6, Lorg/telegram/messenger/SharedConfig;->proxyList:Ljava/util/ArrayList;
+    sget-object v5, Lorg/telegram/messenger/SharedConfig;->proxyList:Ljava/util/ArrayList;
 
-    invoke-virtual {v6}, Ljava/util/ArrayList;->size()I
+    invoke-virtual {v5}, Ljava/util/ArrayList;->size()I
 
-    move-result v6
+    move-result v5
 
-    if-ge v4, v6, :cond_2
+    if-ge v3, v5, :cond_2
 
     .line 28
-    sget-object v6, Lorg/telegram/messenger/SharedConfig;->proxyList:Ljava/util/ArrayList;
+    sget-object v5, Lorg/telegram/messenger/SharedConfig;->proxyList:Ljava/util/ArrayList;
 
-    invoke-virtual {v6, v4}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+    invoke-virtual {v5, v3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
-    move-result-object v6
+    move-result-object v5
 
-    check-cast v6, Lorg/telegram/messenger/SharedConfig$ProxyInfo;
+    check-cast v5, Lorg/telegram/messenger/SharedConfig$ProxyInfo;
 
     .line 29
-    iget-boolean v7, v6, Lorg/telegram/messenger/SharedConfig$ProxyInfo;->checking:Z
+    iget-boolean v6, v5, Lorg/telegram/messenger/SharedConfig$ProxyInfo;->checking:Z
 
-    if-nez v7, :cond_1
+    if-nez v6, :cond_1
 
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
-    move-result-wide v7
+    move-result-wide v6
 
-    iget-wide v9, v6, Lorg/telegram/messenger/SharedConfig$ProxyInfo;->availableCheckTime:J
+    iget-wide v8, v5, Lorg/telegram/messenger/SharedConfig$ProxyInfo;->availableCheckTime:J
 
-    sub-long/2addr v7, v9
+    sub-long/2addr v6, v8
 
-    const-wide/32 v9, 0x1d4c0
+    const-wide/32 v8, 0x1d4c0
 
-    cmp-long v11, v7, v9
+    cmp-long v6, v6, v8
 
-    if-gez v11, :cond_0
+    if-gez v6, :cond_0
 
     goto :goto_1
 
     .line 33
     :cond_0
-    iput-boolean v1, v6, Lorg/telegram/messenger/SharedConfig$ProxyInfo;->checking:Z
+    iput-boolean v0, v5, Lorg/telegram/messenger/SharedConfig$ProxyInfo;->checking:Z
 
     .line 34
-    invoke-static {v2}, Lorg/telegram/tgnet/ConnectionsManager;->getInstance(I)Lorg/telegram/tgnet/ConnectionsManager;
+    invoke-static {v1}, Lorg/telegram/tgnet/ConnectionsManager;->getInstance(I)Lorg/telegram/tgnet/ConnectionsManager;
 
-    move-result-object v12
+    move-result-object v7
 
-    iget-object v13, v6, Lorg/telegram/messenger/SharedConfig$ProxyInfo;->address:Ljava/lang/String;
+    iget-object v8, v5, Lorg/telegram/messenger/SharedConfig$ProxyInfo;->address:Ljava/lang/String;
 
-    iget v14, v6, Lorg/telegram/messenger/SharedConfig$ProxyInfo;->port:I
+    iget v9, v5, Lorg/telegram/messenger/SharedConfig$ProxyInfo;->port:I
 
-    iget-object v15, v6, Lorg/telegram/messenger/SharedConfig$ProxyInfo;->username:Ljava/lang/String;
+    iget-object v10, v5, Lorg/telegram/messenger/SharedConfig$ProxyInfo;->username:Ljava/lang/String;
 
-    iget-object v5, v6, Lorg/telegram/messenger/SharedConfig$ProxyInfo;->password:Ljava/lang/String;
+    iget-object v11, v5, Lorg/telegram/messenger/SharedConfig$ProxyInfo;->password:Ljava/lang/String;
 
-    iget-object v7, v6, Lorg/telegram/messenger/SharedConfig$ProxyInfo;->secret:Ljava/lang/String;
+    iget-object v12, v5, Lorg/telegram/messenger/SharedConfig$ProxyInfo;->secret:Ljava/lang/String;
 
-    new-instance v8, Lorg/telegram/messenger/ProxyRotationController$$ExternalSyntheticLambda3;
+    new-instance v13, Lorg/telegram/messenger/ProxyRotationController$$ExternalSyntheticLambda3;
 
-    invoke-direct {v8, v6}, Lorg/telegram/messenger/ProxyRotationController$$ExternalSyntheticLambda3;-><init>(Lorg/telegram/messenger/SharedConfig$ProxyInfo;)V
+    invoke-direct {v13, v5}, Lorg/telegram/messenger/ProxyRotationController$$ExternalSyntheticLambda3;-><init>(Lorg/telegram/messenger/SharedConfig$ProxyInfo;)V
 
-    move-object/from16 v16, v5
+    invoke-virtual/range {v7 .. v13}, Lorg/telegram/tgnet/ConnectionsManager;->checkProxy(Ljava/lang/String;ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Lorg/telegram/tgnet/RequestTimeDelegate;)J
 
-    move-object/from16 v17, v7
+    move-result-wide v6
 
-    move-object/from16 v18, v8
+    iput-wide v6, v5, Lorg/telegram/messenger/SharedConfig$ProxyInfo;->proxyCheckPingId:J
 
-    invoke-virtual/range {v12 .. v18}, Lorg/telegram/tgnet/ConnectionsManager;->checkProxy(Ljava/lang/String;ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Lorg/telegram/tgnet/RequestTimeDelegate;)J
-
-    move-result-wide v7
-
-    iput-wide v7, v6, Lorg/telegram/messenger/SharedConfig$ProxyInfo;->proxyCheckPingId:J
-
-    const/4 v5, 0x1
+    move v4, v0
 
     :cond_1
     :goto_1
-    add-int/lit8 v4, v4, 0x1
+    add-int/lit8 v3, v3, 0x1
 
     goto :goto_0
 
     :cond_2
-    if-nez v5, :cond_3
+    if-nez v4, :cond_3
 
     .line 49
-    iput-boolean v3, v0, Lorg/telegram/messenger/ProxyRotationController;->isCurrentlyChecking:Z
+    iput-boolean v2, p0, Lorg/telegram/messenger/ProxyRotationController;->isCurrentlyChecking:Z
 
     .line 50
-    invoke-direct/range {p0 .. p0}, Lorg/telegram/messenger/ProxyRotationController;->switchToAvailable()V
+    invoke-direct {p0}, Lorg/telegram/messenger/ProxyRotationController;->switchToAvailable()V
 
     :cond_3
     return-void
@@ -719,7 +711,7 @@
 
     const-wide/16 v0, 0x3e8
 
-    mul-long p2, p2, v0
+    mul-long/2addr p2, v0
 
     invoke-static {p1, p2, p3}, Lorg/telegram/messenger/AndroidUtilities;->runOnUIThread(Ljava/lang/Runnable;J)V
 

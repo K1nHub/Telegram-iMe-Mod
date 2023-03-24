@@ -73,8 +73,8 @@ final class MatrixUtil {
         boolean z;
         int width = byteMatrix.getWidth() - 1;
         int height = byteMatrix.getHeight() - 1;
-        int i2 = 0;
-        int i3 = -1;
+        int i2 = -1;
+        int i3 = 0;
         while (width > 0) {
             if (width == 6) {
                 width--;
@@ -83,9 +83,9 @@ final class MatrixUtil {
                 for (int i4 = 0; i4 < 2; i4++) {
                     int i5 = width - i4;
                     if (isEmpty(byteMatrix.get(i5, height))) {
-                        if (i2 < bitArray.getSize()) {
-                            z = bitArray.get(i2);
-                            i2++;
+                        if (i3 < bitArray.getSize()) {
+                            z = bitArray.get(i3);
+                            i3++;
                         } else {
                             z = false;
                         }
@@ -95,16 +95,16 @@ final class MatrixUtil {
                         byteMatrix.set(i5, height, z);
                     }
                 }
-                height += i3;
+                height += i2;
             }
-            i3 = -i3;
-            height += i3;
+            i2 = -i2;
+            height += i2;
             width -= 2;
         }
-        if (i2 == bitArray.getSize()) {
+        if (i3 == bitArray.getSize()) {
             return;
         }
-        throw new WriterException("Not all bits consumed: " + i2 + '/' + bitArray.getSize());
+        throw new WriterException("Not all bits consumed: " + i3 + '/' + bitArray.getSize());
     }
 
     static int findMSBSet(int i) {

@@ -89,7 +89,16 @@ public class LiteMode {
     }
 
     private static int preprocessFlag(int i) {
-        return i == 16388 ? UserConfig.hasPremiumOnAccounts() ? 4 : 16384 : i == 8200 ? UserConfig.hasPremiumOnAccounts() ? 8 : 8192 : i == 4112 ? UserConfig.hasPremiumOnAccounts() ? 16 : 4096 : i;
+        if ((i & FLAG_ANIMATED_EMOJI_KEYBOARD) > 0) {
+            i = (i & (-16389)) | (UserConfig.hasPremiumOnAccounts() ? 4 : 16384);
+        }
+        if ((i & FLAG_ANIMATED_EMOJI_REACTIONS) > 0) {
+            i = (i & (-8201)) | (UserConfig.hasPremiumOnAccounts() ? 8 : 8192);
+        }
+        if ((i & FLAG_ANIMATED_EMOJI_CHAT) > 0) {
+            return (i & (-4113)) | (UserConfig.hasPremiumOnAccounts() ? 16 : 4096);
+        }
+        return i;
     }
 
     public static boolean isEnabled(int i) {
@@ -182,7 +191,10 @@ public class LiteMode {
                     i = globalMainSettings.getBoolean("loopStickers", true) ? i | 2 : i & (-3);
                 }
                 if (globalMainSettings.contains("autoplay_video")) {
-                    i = (globalMainSettings.getBoolean("autoplay_video", true) || globalMainSettings.getBoolean("autoplay_video_liteforce", false)) ? true : true ? i | 1024 : i & (-1025);
+                    if (globalMainSettings.getBoolean("autoplay_video", true) || globalMainSettings.getBoolean("autoplay_video_liteforce", false)) {
+                        z = true;
+                    }
+                    i = z ? i | 1024 : i & (-1025);
                 }
                 if (globalMainSettings.contains("autoplay_gif")) {
                     i = globalMainSettings.getBoolean("autoplay_gif", true) ? i | 2048 : i & (-2049);

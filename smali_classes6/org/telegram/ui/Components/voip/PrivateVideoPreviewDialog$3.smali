@@ -177,7 +177,7 @@
 
     move-result v4
 
-    mul-float v4, v4, v3
+    mul-float/2addr v4, v3
 
     float-to-int v3, v4
 
@@ -218,7 +218,7 @@
 .end method
 
 .method protected onSizeChanged(IIII)V
-    .locals 25
+    .locals 26
 
     move-object/from16 v0, p0
 
@@ -227,7 +227,7 @@
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     .line 165
     :goto_0
@@ -256,6 +256,8 @@
 
     const v5, -0xa93802
 
+    move v6, v1
+
     goto :goto_2
 
     :cond_0
@@ -279,20 +281,21 @@
 
     const v6, -0x1b58aa
 
-    goto :goto_3
+    goto :goto_2
 
     :cond_2
     :goto_1
     const v5, -0xa85b02
 
-    const v3, -0xa85b02
+    move v6, v1
 
-    const v5, -0x899117
+    move/from16 v25, v5
+
+    move v5, v3
+
+    move/from16 v3, v25
 
     :goto_2
-    const/4 v6, 0x0
-
-    :goto_3
     const/4 v7, 0x2
 
     if-eqz v6, :cond_3
@@ -330,7 +333,7 @@
 
     invoke-direct/range {v8 .. v15}, Landroid/graphics/LinearGradient;-><init>(FFFF[I[FLandroid/graphics/Shader$TileMode;)V
 
-    goto :goto_4
+    goto :goto_3
 
     .line 186
     :cond_3
@@ -366,7 +369,7 @@
 
     invoke-direct/range {v17 .. v24}, Landroid/graphics/LinearGradient;-><init>(FFFF[I[FLandroid/graphics/Shader$TileMode;)V
 
-    :goto_4
+    :goto_3
     move-object/from16 v3, v16
 
     .line 188

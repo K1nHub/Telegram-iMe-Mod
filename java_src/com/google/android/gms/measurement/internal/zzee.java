@@ -25,7 +25,7 @@ public final class zzee extends zzf {
     /* JADX WARN: Removed duplicated region for block: B:77:0x0124  */
     /* JADX WARN: Removed duplicated region for block: B:79:0x0129  */
     /* JADX WARN: Type inference failed for: r2v0 */
-    /* JADX WARN: Type inference failed for: r2v1, types: [int, boolean] */
+    /* JADX WARN: Type inference failed for: r2v1, types: [boolean, int] */
     /* JADX WARN: Type inference failed for: r2v13 */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -109,7 +109,7 @@ public final class zzee extends zzf {
         zzg();
         if (!this.zzb && zzl()) {
             int i2 = 5;
-            while (i < 5) {
+            for (i = 0; i < 5; i = i + 1) {
                 SQLiteDatabase sQLiteDatabase = null;
                 try {
                     SQLiteDatabase zzh = zzh();

@@ -367,7 +367,7 @@
 
     const/4 p2, 0x0
 
-    const/4 p3, 0x0
+    move p3, p2
 
     :goto_0
     if-ge p3, p1, :cond_0
@@ -432,11 +432,11 @@
 
     const/4 v3, 0x0
 
-    const/4 v4, 0x0
+    move v4, v3
 
-    const/4 v5, 0x0
+    move v5, v4
 
-    const/4 v6, 0x0
+    move v6, v5
 
     :goto_0
     const/4 v7, 0x1
@@ -505,7 +505,7 @@
 
     add-int/2addr v2, v5
 
-    const/4 v5, 0x0
+    move v5, v3
 
     .line 1064
     :cond_1
@@ -530,7 +530,7 @@
 
     add-int/2addr v1, v6
 
-    const/4 v6, 0x0
+    move v6, v3
 
     :cond_2
     const/16 v9, 0xd
@@ -728,7 +728,7 @@
     goto :goto_3
 
     :cond_9
-    const/4 p2, 0x0
+    move p2, v3
 
     goto :goto_3
 
@@ -794,7 +794,7 @@
     goto :goto_4
 
     :cond_b
-    const/4 v5, 0x0
+    move v5, v3
 
     :goto_4
     invoke-static {v4, v5}, Lorg/telegram/ui/Components/InviteMembersBottomSheet;->access$2402(Lorg/telegram/ui/Components/InviteMembersBottomSheet;I)I

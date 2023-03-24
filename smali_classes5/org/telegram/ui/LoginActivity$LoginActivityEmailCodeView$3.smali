@@ -25,7 +25,7 @@
 .method constructor <init>(Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;)V
     .locals 0
 
-    .line 6096
+    .line 6119
     iput-object p1, p0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView$3;->this$1:Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -40,7 +40,7 @@
 
     const/4 p1, 0x0
 
-    .line 6099
+    .line 6122
     aget-object p1, p3, p1
 
     check-cast p1, Ljava/lang/Integer;
@@ -51,7 +51,7 @@
 
     const/4 p2, 0x1
 
-    .line 6100
+    .line 6123
     aget-object p2, p3, p2
 
     check-cast p2, Ljava/lang/Integer;
@@ -60,12 +60,12 @@
 
     const/4 p2, 0x2
 
-    .line 6101
+    .line 6124
     aget-object p2, p3, p2
 
     check-cast p2, Landroid/content/Intent;
 
-    .line 6102
+    .line 6125
     invoke-static {}, Lorg/telegram/messenger/NotificationCenter;->getGlobalInstance()Lorg/telegram/messenger/NotificationCenter;
 
     move-result-object p3
@@ -78,7 +78,7 @@
 
     if-ne p1, p3, :cond_0
 
-    .line 6106
+    .line 6129
     :try_start_0
     iget-object p1, p0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView$3;->this$1:Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;
 
@@ -94,9 +94,9 @@
 
     check-cast p2, Lcom/google/android/gms/auth/api/signin/GoogleSignInAccount;
 
-    invoke-static {p1, p2}, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->access$15002(Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;Lcom/google/android/gms/auth/api/signin/GoogleSignInAccount;)Lcom/google/android/gms/auth/api/signin/GoogleSignInAccount;
+    invoke-static {p1, p2}, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->access$15202(Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;Lcom/google/android/gms/auth/api/signin/GoogleSignInAccount;)Lcom/google/android/gms/auth/api/signin/GoogleSignInAccount;
 
-    .line 6107
+    .line 6130
     iget-object p1, p0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView$3;->this$1:Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;
 
     const/4 p2, 0x0
@@ -110,7 +110,7 @@
     :catch_0
     move-exception p1
 
-    .line 6109
+    .line 6132
     invoke-static {p1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :cond_0

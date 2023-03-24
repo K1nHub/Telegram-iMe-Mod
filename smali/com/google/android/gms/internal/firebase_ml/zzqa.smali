@@ -149,7 +149,7 @@
 
     const/4 v7, 0x0
 
-    const/4 v1, 0x0
+    move v1, v7
 
     .line 29
     :goto_0

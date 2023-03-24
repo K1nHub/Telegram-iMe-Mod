@@ -20,7 +20,7 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import moxy.InjectViewState;
 import org.fork.controller.WalletFingerprintController;
-import org.telegram.messenger.C3286R;
+import org.telegram.messenger.C3301R;
 import org.telegram.messenger.FingerprintController;
 /* compiled from: CreateWalletPinPresenter.kt */
 @InjectViewState
@@ -89,26 +89,26 @@ public final class CreateWalletPinPresenter extends BasePresenter<CreateWalletPi
     public final void validatePin(String confirmPinCode) {
         Intrinsics.checkNotNullParameter(confirmPinCode, "confirmPinCode");
         if (!Intrinsics.areEqual(this.pin, confirmPinCode)) {
-            onPinError(this.resourceManager.getString(C3286R.string.wallet_confirm_eth_pin_code_validation_not_match_error));
+            onPinError(this.resourceManager.getString(C3301R.string.wallet_confirm_eth_pin_code_validation_not_match_error));
             return;
         }
         if (!(this.guid.length() > 0)) {
             if (!(this.seed.length() > 0)) {
-                Observable<Result<String>> observeOn = this.cryptoWalletInteractor.generateMnemonic(this.guid, this.password).observeOn(this.schedulersProvider.mo707ui());
+                Observable<Result<String>> observeOn = this.cryptoWalletInteractor.generateMnemonic(this.guid, this.password).observeOn(this.schedulersProvider.mo706ui());
                 Intrinsics.checkNotNullExpressionValue(observeOn, "cryptoWalletInteractor\n …(schedulersProvider.ui())");
                 T viewState = getViewState();
                 Intrinsics.checkNotNullExpressionValue(viewState, "viewState");
-                Disposable subscribe = RxExtKt.withLoadingDialog$default((Observable) observeOn, (BaseView) viewState, false, 2, (Object) null).subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2060xe4b01fa8(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2061xe4b01fa9(null)));
+                Disposable subscribe = RxExtKt.withLoadingDialog$default((Observable) observeOn, (BaseView) viewState, false, 2, (Object) null).subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2074xe4b01fa8(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2075xe4b01fa9(null)));
                 Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…  onError.invoke()\n    })");
                 BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
                 return;
             }
         }
-        Observable<Result<Wallet>> observeOn2 = this.cryptoWalletInteractor.createWallet(this.password, this.pin, this.guid, this.seed, this.cryptoPreferenceHelper.getCurrentBlockchainType()).observeOn(this.schedulersProvider.mo707ui());
+        Observable<Result<Wallet>> observeOn2 = this.cryptoWalletInteractor.createWallet(this.password, this.pin, this.guid, this.seed, this.cryptoPreferenceHelper.getCurrentBlockchainType()).observeOn(this.schedulersProvider.mo706ui());
         Intrinsics.checkNotNullExpressionValue(observeOn2, "cryptoWalletInteractor\n …(schedulersProvider.ui())");
         T viewState2 = getViewState();
         Intrinsics.checkNotNullExpressionValue(viewState2, "viewState");
-        Disposable subscribe2 = RxExtKt.withLoadingDialog((Observable) observeOn2, (BaseView) viewState2, false).subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2058xe4b01fa6(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2059xe4b01fa7((BaseView) getViewState())));
+        Disposable subscribe2 = RxExtKt.withLoadingDialog((Observable) observeOn2, (BaseView) viewState2, false).subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2072xe4b01fa6(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2073xe4b01fa7((BaseView) getViewState())));
         Intrinsics.checkNotNullExpressionValue(subscribe2, "viewState: BaseView? = n…  onError.invoke()\n    })");
         BasePresenter.autoDispose$default(this, subscribe2, null, 1, null);
     }

@@ -31,11 +31,11 @@
     move-result-object v2
 
     .line 65
-    invoke-virtual/range {p0 .. p0}, Lcom/smedialink/storage/data/network/model/response/crypto/swap/GetQuoteToSwapResponse;->getTransactionParams()Lcom/smedialink/storage/data/network/model/response/crypto/wallet/TransactionParamsResponse;
+    invoke-virtual/range {p0 .. p0}, Lcom/smedialink/storage/data/network/model/response/crypto/swap/GetQuoteToSwapResponse;->getTransactionParams()Lcom/smedialink/storage/data/network/model/response/crypto/wallet/TransactionParamsResponse$EVM;
 
     move-result-object v0
 
-    invoke-static {v0}, Lcom/smedialink/storage/data/mapper/crypto/CryptoWalletMappingKt;->mapToDomain(Lcom/smedialink/storage/data/network/model/response/crypto/wallet/TransactionParamsResponse;)Lcom/smedialink/storage/domain/model/crypto/TransactionParams;
+    invoke-static {v0}, Lcom/smedialink/storage/data/mapper/crypto/CryptoWalletMappingKt;->mapToDomain(Lcom/smedialink/storage/data/network/model/response/crypto/wallet/TransactionParamsResponse$EVM;)Lcom/smedialink/storage/domain/model/crypto/TransactionParams$Ether;
 
     move-result-object v3
 
@@ -192,7 +192,7 @@
     move-object v13, v0
 
     .line 63
-    invoke-direct/range {v1 .. v15}, Lcom/smedialink/storage/domain/model/crypto/swap/CryptoSwapMetadata;-><init>(Ljava/lang/String;Lcom/smedialink/storage/domain/model/crypto/TransactionParams;Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;Ljava/lang/String;Lcom/smedialink/storage/domain/model/wallet/swap/SwapMethod;Ljava/math/BigDecimal;Ljava/math/BigDecimal;Ljava/math/BigInteger;Ljava/util/List;Ljava/math/BigDecimal;Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;Ljava/math/BigInteger;Ljava/lang/String;)V
+    invoke-direct/range {v1 .. v15}, Lcom/smedialink/storage/domain/model/crypto/swap/CryptoSwapMetadata;-><init>(Ljava/lang/String;Lcom/smedialink/storage/domain/model/crypto/TransactionParams$Ether;Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;Ljava/lang/String;Lcom/smedialink/storage/domain/model/wallet/swap/SwapMethod;Ljava/math/BigDecimal;Ljava/math/BigDecimal;Ljava/math/BigInteger;Ljava/util/List;Ljava/math/BigDecimal;Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;Ljava/math/BigInteger;Ljava/lang/String;)V
 
     return-object v16
 .end method
@@ -379,13 +379,13 @@
     move-result-object v10
 
     .line 54
-    invoke-virtual {v1}, Lcom/smedialink/storage/data/network/model/response/crypto/swap/GetApproveTokensInfoResponse$CryptoTokenApprovalQuote;->getTransactionParams()Lcom/smedialink/storage/data/network/model/response/crypto/wallet/TransactionParamsResponse;
+    invoke-virtual {v1}, Lcom/smedialink/storage/data/network/model/response/crypto/swap/GetApproveTokensInfoResponse$CryptoTokenApprovalQuote;->getTransactionParams()Lcom/smedialink/storage/data/network/model/response/crypto/wallet/TransactionParamsResponse$EVM;
 
     move-result-object v3
 
     invoke-static {v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;)V
 
-    invoke-static {v3}, Lcom/smedialink/storage/data/mapper/crypto/CryptoWalletMappingKt;->mapToDomain(Lcom/smedialink/storage/data/network/model/response/crypto/wallet/TransactionParamsResponse;)Lcom/smedialink/storage/domain/model/crypto/TransactionParams;
+    invoke-static {v3}, Lcom/smedialink/storage/data/mapper/crypto/CryptoWalletMappingKt;->mapToDomain(Lcom/smedialink/storage/data/network/model/response/crypto/wallet/TransactionParamsResponse$EVM;)Lcom/smedialink/storage/domain/model/crypto/TransactionParams$Ether;
 
     move-result-object v8
 
@@ -403,7 +403,7 @@
 
     move-object v4, v1
 
-    invoke-direct/range {v4 .. v11}, Lcom/smedialink/storage/domain/model/crypto/swap/CryptoTokenApproveMetadata$NeedApprove$NotAllowed;-><init>(Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;Lcom/smedialink/storage/domain/model/wallet/swap/TokenApproveStatus;Ljava/lang/String;Lcom/smedialink/storage/domain/model/crypto/TransactionParams;Ljava/lang/String;Ljava/lang/String;Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;)V
+    invoke-direct/range {v4 .. v11}, Lcom/smedialink/storage/domain/model/crypto/swap/CryptoTokenApproveMetadata$NeedApprove$NotAllowed;-><init>(Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;Lcom/smedialink/storage/domain/model/wallet/swap/TokenApproveStatus;Ljava/lang/String;Lcom/smedialink/storage/domain/model/crypto/TransactionParams$Ether;Ljava/lang/String;Ljava/lang/String;Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;)V
 
     goto :goto_2
 
@@ -467,13 +467,13 @@
     move-result-object v10
 
     .line 35
-    invoke-virtual {v1}, Lcom/smedialink/storage/data/network/model/response/crypto/swap/GetApproveTokensInfoResponse$CryptoTokenApprovalQuote;->getTransactionParams()Lcom/smedialink/storage/data/network/model/response/crypto/wallet/TransactionParamsResponse;
+    invoke-virtual {v1}, Lcom/smedialink/storage/data/network/model/response/crypto/swap/GetApproveTokensInfoResponse$CryptoTokenApprovalQuote;->getTransactionParams()Lcom/smedialink/storage/data/network/model/response/crypto/wallet/TransactionParamsResponse$EVM;
 
     move-result-object v3
 
     invoke-static {v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;)V
 
-    invoke-static {v3}, Lcom/smedialink/storage/data/mapper/crypto/CryptoWalletMappingKt;->mapToDomain(Lcom/smedialink/storage/data/network/model/response/crypto/wallet/TransactionParamsResponse;)Lcom/smedialink/storage/domain/model/crypto/TransactionParams;
+    invoke-static {v3}, Lcom/smedialink/storage/data/mapper/crypto/CryptoWalletMappingKt;->mapToDomain(Lcom/smedialink/storage/data/network/model/response/crypto/wallet/TransactionParamsResponse$EVM;)Lcom/smedialink/storage/domain/model/crypto/TransactionParams$Ether;
 
     move-result-object v8
 
@@ -503,7 +503,7 @@
 
     move-object v4, v1
 
-    invoke-direct/range {v4 .. v12}, Lcom/smedialink/storage/domain/model/crypto/swap/CryptoTokenApproveMetadata$NeedApprove$Error;-><init>(Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;Lcom/smedialink/storage/domain/model/wallet/swap/TokenApproveStatus;Ljava/lang/String;Lcom/smedialink/storage/domain/model/crypto/TransactionParams;Ljava/lang/String;Ljava/lang/String;Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;Ljava/lang/String;)V
+    invoke-direct/range {v4 .. v12}, Lcom/smedialink/storage/domain/model/crypto/swap/CryptoTokenApproveMetadata$NeedApprove$Error;-><init>(Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;Lcom/smedialink/storage/domain/model/wallet/swap/TokenApproveStatus;Ljava/lang/String;Lcom/smedialink/storage/domain/model/crypto/TransactionParams$Ether;Ljava/lang/String;Ljava/lang/String;Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;Ljava/lang/String;)V
 
     goto :goto_2
 

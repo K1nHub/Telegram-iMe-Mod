@@ -114,7 +114,7 @@
 .end method
 
 .method public constructor <init>(Ljava/lang/String;ISDDFJII)V
-    .locals 3
+    .locals 2
     .param p1    # Ljava/lang/String;
         .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Param;
             id = 0x1
@@ -184,27 +184,27 @@
 
     const-wide v0, 0x4056800000000000L    # 90.0
 
-    cmpl-double v2, p4, v0
+    cmpl-double v0, p4, v0
 
-    if-gtz v2, :cond_2
+    if-gtz v0, :cond_2
 
     const-wide v0, -0x3fa9800000000000L    # -90.0
 
-    cmpg-double v2, p4, v0
+    cmpg-double v0, p4, v0
 
-    if-ltz v2, :cond_2
+    if-ltz v0, :cond_2
 
     const-wide v0, 0x4066800000000000L    # 180.0
 
-    cmpl-double v2, p6, v0
+    cmpl-double v0, p6, v0
 
-    if-gtz v2, :cond_1
+    if-gtz v0, :cond_1
 
     const-wide v0, -0x3f99800000000000L    # -180.0
 
-    cmpg-double v2, p6, v0
+    cmpg-double v0, p6, v0
 
-    if-ltz v2, :cond_1
+    if-ltz v0, :cond_1
 
     and-int/lit8 v0, p2, 0x7
 
@@ -489,44 +489,44 @@
 
     xor-long/2addr v0, v5
 
-    long-to-int v1, v0
+    long-to-int v0, v0
 
-    add-int/lit8 v1, v1, 0x1f
+    add-int/lit8 v0, v0, 0x1f
 
-    mul-int/lit8 v1, v1, 0x1f
+    mul-int/lit8 v0, v0, 0x1f
 
     ushr-long v4, v2, v4
 
-    xor-long/2addr v2, v4
+    xor-long v1, v2, v4
 
-    long-to-int v0, v2
+    long-to-int v1, v1
 
-    add-int/2addr v1, v0
+    add-int/2addr v0, v1
 
-    mul-int/lit8 v1, v1, 0x1f
+    mul-int/lit8 v0, v0, 0x1f
 
-    iget v0, p0, Lcom/google/android/gms/internal/location/zzdh;->zzf:F
+    iget v1, p0, Lcom/google/android/gms/internal/location/zzdh;->zzf:F
 
     .line 3
-    invoke-static {v0}, Ljava/lang/Float;->floatToIntBits(F)I
+    invoke-static {v1}, Ljava/lang/Float;->floatToIntBits(F)I
 
-    move-result v0
+    move-result v1
 
-    add-int/2addr v1, v0
+    add-int/2addr v0, v1
 
-    mul-int/lit8 v1, v1, 0x1f
+    mul-int/lit8 v0, v0, 0x1f
 
-    iget-short v0, p0, Lcom/google/android/gms/internal/location/zzdh;->zzc:S
+    iget-short v1, p0, Lcom/google/android/gms/internal/location/zzdh;->zzc:S
 
-    add-int/2addr v1, v0
+    add-int/2addr v0, v1
 
-    mul-int/lit8 v1, v1, 0x1f
+    mul-int/lit8 v0, v0, 0x1f
 
-    iget v0, p0, Lcom/google/android/gms/internal/location/zzdh;->zzg:I
+    iget v1, p0, Lcom/google/android/gms/internal/location/zzdh;->zzg:I
 
-    add-int/2addr v1, v0
+    add-int/2addr v0, v1
 
-    return v1
+    return v0
 .end method
 
 .method public final toString()Ljava/lang/String;

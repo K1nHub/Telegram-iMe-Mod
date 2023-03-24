@@ -9,7 +9,7 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3286R;
+import org.telegram.messenger.C3301R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.UserConfig;
 import org.telegram.p048ui.ActionBar.SimpleTextView;
@@ -94,7 +94,7 @@ public class ManageChatUserCell extends FrameLayout {
             this.optionsButton = imageView;
             imageView.setFocusable(false);
             this.optionsButton.setBackgroundDrawable(Theme.createSelectorDrawable(Theme.getColor("stickers_menuSelector", resourcesProvider)));
-            this.optionsButton.setImageResource(C3286R.C3288drawable.ic_ab_other);
+            this.optionsButton.setImageResource(C3301R.C3303drawable.ic_ab_other);
             this.optionsButton.setColorFilter(new PorterDuffColorFilter(Theme.getColor("stickers_menu", resourcesProvider), PorterDuff.Mode.MULTIPLY));
             this.optionsButton.setScaleType(ImageView.ScaleType.CENTER);
             addView(this.optionsButton, LayoutHelper.createFrame(60, 64, (LocaleController.isRTL ? 3 : 5) | 48));
@@ -104,7 +104,7 @@ public class ManageChatUserCell extends FrameLayout {
                     ManageChatUserCell.this.lambda$new$0(view);
                 }
             });
-            this.optionsButton.setContentDescription(LocaleController.getString("AccDescrUserOptions", C3286R.string.AccDescrUserOptions));
+            this.optionsButton.setContentDescription(LocaleController.getString("AccDescrUserOptions", C3301R.string.AccDescrUserOptions));
         }
     }
 
@@ -151,34 +151,44 @@ public class ManageChatUserCell extends FrameLayout {
             this.optionsButton.setVisibility(onOptionsButtonCheck ? 0 : 4);
             SimpleTextView simpleTextView = this.nameTextView;
             boolean z2 = LocaleController.isRTL;
-            simpleTextView.setLayoutParams(LayoutHelper.createFrame(-1, 20.0f, (z2 ? 5 : 3) | 48, z2 ? onOptionsButtonCheck ? 46 : 28 : this.namePadding + 68, (charSequence2 == null || charSequence2.length() > 0) ? 11.5f : 11.5f, LocaleController.isRTL ? this.namePadding + 68 : onOptionsButtonCheck ? 46 : 28, (float) BitmapDescriptorFactory.HUE_RED));
+            int i = (z2 ? 5 : 3) | 48;
+            float f4 = z2 ? onOptionsButtonCheck ? 46 : 28 : this.namePadding + 68;
+            if (charSequence2 == null || charSequence2.length() > 0) {
+                f3 = 11.5f;
+            }
+            simpleTextView.setLayoutParams(LayoutHelper.createFrame(-1, 20.0f, i, f4, f3, LocaleController.isRTL ? this.namePadding + 68 : onOptionsButtonCheck ? 46 : 28, (float) BitmapDescriptorFactory.HUE_RED));
             SimpleTextView simpleTextView2 = this.statusTextView;
             boolean z3 = LocaleController.isRTL;
-            int i = (z3 ? 5 : 3) | 48;
-            float f4 = z3 ? onOptionsButtonCheck ? 46 : 28 : this.namePadding + 68;
+            int i2 = (z3 ? 5 : 3) | 48;
+            float f5 = z3 ? onOptionsButtonCheck ? 46 : 28 : this.namePadding + 68;
             if (z3) {
                 f2 = this.namePadding + 68;
             } else {
                 f2 = onOptionsButtonCheck ? 46 : 28;
             }
-            simpleTextView2.setLayoutParams(LayoutHelper.createFrame(-1, 20.0f, i, f4, 34.5f, f2, (float) BitmapDescriptorFactory.HUE_RED));
+            simpleTextView2.setLayoutParams(LayoutHelper.createFrame(-1, 20.0f, i2, f5, 34.5f, f2, (float) BitmapDescriptorFactory.HUE_RED));
         } else {
             ImageView imageView = this.customImageView;
             if (imageView != null) {
                 boolean z4 = imageView.getVisibility() == 0;
                 SimpleTextView simpleTextView3 = this.nameTextView;
                 boolean z5 = LocaleController.isRTL;
-                simpleTextView3.setLayoutParams(LayoutHelper.createFrame(-1, 20.0f, (z5 ? 5 : 3) | 48, z5 ? z4 ? 54 : 28 : this.namePadding + 68, (charSequence2 == null || charSequence2.length() > 0) ? 11.5f : 11.5f, LocaleController.isRTL ? this.namePadding + 68 : z4 ? 54 : 28, (float) BitmapDescriptorFactory.HUE_RED));
+                int i3 = (z5 ? 5 : 3) | 48;
+                float f6 = z5 ? z4 ? 54 : 28 : this.namePadding + 68;
+                if (charSequence2 == null || charSequence2.length() > 0) {
+                    f3 = 11.5f;
+                }
+                simpleTextView3.setLayoutParams(LayoutHelper.createFrame(-1, 20.0f, i3, f6, f3, LocaleController.isRTL ? this.namePadding + 68 : z4 ? 54 : 28, (float) BitmapDescriptorFactory.HUE_RED));
                 SimpleTextView simpleTextView4 = this.statusTextView;
                 boolean z6 = LocaleController.isRTL;
-                int i2 = (z6 ? 5 : 3) | 48;
-                float f5 = z6 ? z4 ? 54 : 28 : this.namePadding + 68;
+                int i4 = (z6 ? 5 : 3) | 48;
+                float f7 = z6 ? z4 ? 54 : 28 : this.namePadding + 68;
                 if (z6) {
                     f = this.namePadding + 68;
                 } else {
                     f = z4 ? 54 : 28;
                 }
-                simpleTextView4.setLayoutParams(LayoutHelper.createFrame(-1, 20.0f, i2, f5, 34.5f, f, (float) BitmapDescriptorFactory.HUE_RED));
+                simpleTextView4.setLayoutParams(LayoutHelper.createFrame(-1, 20.0f, i4, f7, 34.5f, f, (float) BitmapDescriptorFactory.HUE_RED));
             }
         }
         this.needDivider = z;
@@ -194,7 +204,7 @@ public class ManageChatUserCell extends FrameLayout {
     public long getUserId() {
         Object obj = this.currentObject;
         if (obj instanceof TLRPC$User) {
-            return ((TLRPC$User) obj).f1639id;
+            return ((TLRPC$User) obj).f1640id;
         }
         return 0L;
     }
@@ -221,16 +231,16 @@ public class ManageChatUserCell extends FrameLayout {
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:114:0x019f, code lost:
-        if (r12.equals(r6) == false) goto L105;
+        if (r11.equals(r6) == false) goto L105;
      */
     /* JADX WARN: Code restructure failed: missing block: B:44:0x0067, code lost:
-        if (r12.equals(r11.lastName) == false) goto L37;
+        if (r11.equals(r10.lastName) == false) goto L37;
      */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct add '--show-bad-code' argument
     */
-    public void update(int r12) {
+    public void update(int r11) {
         /*
             Method dump skipped, instructions count: 626
             To view this dump add '--comments-level debug' option

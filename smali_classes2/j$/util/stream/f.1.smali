@@ -72,7 +72,7 @@
 .end method
 
 .method public static h(J)J
-    .locals 3
+    .locals 2
 
     sget v0, Lj$/util/stream/f;->g:I
 
@@ -82,9 +82,9 @@
 
     const-wide/16 v0, 0x0
 
-    cmp-long v2, p0, v0
+    cmp-long v0, p0, v0
 
-    if-lez v2, :cond_0
+    if-lez v0, :cond_0
 
     goto :goto_0
 
@@ -134,9 +134,9 @@
 
     const-wide/16 v5, 0x0
 
-    cmp-long v7, v3, v5
+    cmp-long v5, v3, v5
 
-    if-eqz v7, :cond_0
+    if-eqz v5, :cond_0
 
     goto :goto_0
 
@@ -153,9 +153,9 @@
     move-object v6, p0
 
     :goto_1
-    cmp-long v7, v1, v3
+    cmp-long v1, v1, v3
 
-    if-lez v7, :cond_2
+    if-lez v1, :cond_2
 
     .line 2
     invoke-interface {v0}, Lj$/util/s;->trySplit()Lj$/util/s;

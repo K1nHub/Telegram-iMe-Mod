@@ -219,7 +219,7 @@
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     .line 276
     :goto_0
@@ -299,7 +299,7 @@
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     .line 290
     :goto_0
@@ -309,9 +309,9 @@
 
     const-wide/high16 v3, -0x8000000000000000L
 
-    move-wide v6, v3
+    move v5, v1
 
-    const/4 v5, 0x0
+    move-wide v6, v3
 
     .line 292
     :goto_1
@@ -334,9 +334,9 @@
 
     const-wide v10, -0x7fffffffffffffffL    # -4.9E-324
 
-    cmp-long v12, v8, v10
+    cmp-long v10, v8, v10
 
-    if-nez v12, :cond_0
+    if-nez v10, :cond_0
 
     goto :goto_2
 

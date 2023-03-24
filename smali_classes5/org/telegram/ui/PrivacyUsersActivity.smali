@@ -712,7 +712,7 @@
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_0
     if-ge v2, v0, :cond_1
@@ -1374,7 +1374,7 @@
 
     if-eqz v3, :cond_7
 
-    const/4 v2, 0x1
+    move v2, v1
 
     :cond_7
     invoke-virtual {p1, v2}, Landroid/view/ViewGroup;->setVerticalScrollbarPosition(I)V
@@ -1844,7 +1844,7 @@
 
     move-object v9, v11
 
-    const/4 v14, 0x1
+    move v14, v10
 
     move-object v10, v13
 

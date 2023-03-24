@@ -278,12 +278,12 @@
 
     if-eq v0, v3, :cond_4
 
-    const/4 v0, 0x1
+    move v0, v2
 
     goto :goto_1
 
     :cond_4
-    const/4 v0, 0x0
+    move v0, v4
 
     :goto_1
     add-int/2addr p2, v2
@@ -320,7 +320,7 @@
     goto :goto_2
 
     :cond_5
-    const/4 v2, 0x0
+    move v2, v4
 
     :goto_2
     const-string p2, "windowBackgroundGrayShadow"
@@ -475,7 +475,7 @@
     goto :goto_4
 
     :cond_c
-    const/4 v2, 0x0
+    move v2, v4
 
     .line 362
     :goto_4

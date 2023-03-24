@@ -160,7 +160,7 @@
 
     iget v2, p0, Lcom/google/zxing/qrcode/encoder/ByteMatrix;->height:I
 
-    mul-int v1, v1, v2
+    mul-int/2addr v1, v2
 
     add-int/lit8 v1, v1, 0x2
 
@@ -168,7 +168,7 @@
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     .line 79
     :goto_0
@@ -181,7 +181,7 @@
 
     aget-object v3, v3, v2
 
-    const/4 v4, 0x0
+    move v4, v1
 
     .line 81
     :goto_1

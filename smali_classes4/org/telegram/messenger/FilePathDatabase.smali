@@ -282,7 +282,7 @@
 
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    move v1, v0
 
     .line 286
     :goto_0
@@ -590,7 +590,7 @@
 .end method
 
 .method private synthetic lambda$lookupFiles$7(Ljava/util/ArrayList;Landroid/util/LongSparseArray;Ljava/util/concurrent/CountDownLatch;)V
-    .locals 8
+    .locals 7
 
     .line 433
     :try_start_0
@@ -631,9 +631,9 @@
 
     const-wide/16 v5, 0x0
 
-    cmp-long v7, v3, v5
+    cmp-long v5, v3, v5
 
-    if-eqz v7, :cond_1
+    if-eqz v5, :cond_1
 
     .line 438
     invoke-virtual {p2, v3, v4}, Landroid/util/LongSparseArray;->get(J)Ljava/lang/Object;
@@ -1185,7 +1185,7 @@
 
     invoke-virtual {p1}, Lorg/telegram/SQLite/SQLitePreparedStatement;->dispose()V
 
-    const/4 p1, 0x2
+    move p1, v0
 
     :cond_0
     const/4 v1, 0x3
@@ -1222,7 +1222,7 @@
 
     invoke-virtual {p1}, Lorg/telegram/SQLite/SQLitePreparedStatement;->dispose()V
 
-    const/4 p1, 0x3
+    move p1, v1
 
     :cond_1
     if-ne p1, v1, :cond_2
@@ -1871,7 +1871,7 @@
 
     if-nez v0, :cond_1
 
-    const/4 v0, 0x0
+    move v0, v2
 
     .line 217
     :cond_0
@@ -2018,7 +2018,7 @@
     goto :goto_1
 
     :cond_2
-    const/4 p1, 0x0
+    move p1, v3
 
     .line 394
     :goto_0
@@ -2034,7 +2034,7 @@
     :catch_1
     move-exception v4
 
-    const/4 p1, 0x0
+    move p1, v3
 
     .line 391
     :goto_1
@@ -2049,9 +2049,11 @@
     invoke-virtual {v0}, Lorg/telegram/SQLite/SQLiteCursor;->dispose()V
 
     :cond_3
+    move v7, v3
+
     move v3, p1
 
-    const/4 p1, 0x0
+    move p1, v7
 
     .line 397
     :goto_2

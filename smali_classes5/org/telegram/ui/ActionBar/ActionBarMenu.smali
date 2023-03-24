@@ -451,16 +451,14 @@
 
     const/4 v0, 0x1
 
-    const/4 v5, 0x1
-
     goto :goto_1
 
     :cond_1
     const/4 v0, 0x0
 
-    const/4 v5, 0x0
-
     :goto_1
+    move v5, v0
+
     move-object v0, v14
 
     move-object v2, p0
@@ -497,7 +495,7 @@
     :cond_2
     const/4 v2, -0x2
 
-    const/4 v12, -0x2
+    move v12, v2
 
     :goto_2
     invoke-direct {v1, v12, v0}, Landroid/widget/LinearLayout$LayoutParams;-><init>(II)V
@@ -736,7 +734,7 @@
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_0
     if-ge v2, v0, :cond_2
@@ -837,7 +835,7 @@
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_0
     if-ge v1, v0, :cond_1
@@ -878,7 +876,7 @@
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_0
     if-ge v1, v0, :cond_1
@@ -1334,7 +1332,7 @@
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_0
     if-ge v2, v0, :cond_1
@@ -1596,7 +1594,7 @@
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_0
     if-ge v2, v0, :cond_1

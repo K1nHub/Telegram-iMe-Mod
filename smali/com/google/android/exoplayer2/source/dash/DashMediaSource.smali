@@ -236,7 +236,7 @@
 
     if-eqz p2, :cond_0
 
-    const/4 p3, 0x1
+    move p3, p1
 
     goto :goto_0
 
@@ -391,7 +391,7 @@
 .end method
 
 .method private static getAvailableEndTimeInManifestUs(Lcom/google/android/exoplayer2/source/dash/manifest/Period;JJ)J
-    .locals 18
+    .locals 17
 
     move-object/from16 v0, p0
 
@@ -415,7 +415,7 @@
 
     const-wide v9, 0x7fffffffffffffffL
 
-    const/4 v11, 0x0
+    move v11, v8
 
     .line 1090
     :goto_0
@@ -453,7 +453,7 @@
     goto :goto_1
 
     :cond_0
-    const/4 v14, 0x0
+    move v14, v8
 
     :goto_1
     if-eqz v7, :cond_1
@@ -496,9 +496,9 @@
 
     const-wide/16 v15, 0x0
 
-    cmp-long v17, v13, v15
+    cmp-long v15, v13, v15
 
-    if-nez v17, :cond_4
+    if-nez v15, :cond_4
 
     return-wide v5
 
@@ -544,7 +544,7 @@
 .end method
 
 .method private static getAvailableStartTimeInManifestUs(Lcom/google/android/exoplayer2/source/dash/manifest/Period;JJ)J
-    .locals 18
+    .locals 17
 
     move-object/from16 v0, p0
 
@@ -568,7 +568,7 @@
 
     move-wide v10, v5
 
-    const/4 v9, 0x0
+    move v9, v8
 
     .line 1056
     :goto_0
@@ -606,7 +606,7 @@
     goto :goto_1
 
     :cond_0
-    const/4 v14, 0x0
+    move v14, v8
 
     :goto_1
     if-eqz v7, :cond_1
@@ -647,9 +647,9 @@
 
     const-wide/16 v15, 0x0
 
-    cmp-long v17, v13, v15
+    cmp-long v13, v13, v15
 
-    if-nez v17, :cond_4
+    if-nez v13, :cond_4
 
     return-wide v5
 
@@ -731,7 +731,7 @@
 
     const/4 v11, 0x0
 
-    const/4 v12, 0x0
+    move v12, v11
 
     .line 1028
     :goto_0
@@ -854,7 +854,7 @@
 
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    move v1, v0
 
     .line 1134
     :goto_0
@@ -905,7 +905,7 @@
 
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    move v1, v0
 
     .line 1123
     :goto_0
@@ -1029,7 +1029,7 @@
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     .line 791
     :goto_0
@@ -1150,12 +1150,12 @@
 
     if-nez v3, :cond_2
 
-    const/4 v3, 0x1
+    move v3, v4
 
     goto :goto_1
 
     :cond_2
-    const/4 v3, 0x0
+    move v3, v1
 
     :goto_1
     const-wide v12, -0x7fffffffffffffffL    # -4.9E-324
@@ -1198,11 +1198,11 @@
     .line 822
     iget-wide v1, v7, Lcom/google/android/exoplayer2/source/dash/manifest/DashManifest;->availabilityStartTimeMs:J
 
-    cmp-long v7, v1, v12
+    cmp-long v1, v1, v12
 
-    if-eqz v7, :cond_4
+    if-eqz v1, :cond_4
 
-    const/4 v1, 0x1
+    move v1, v4
 
     goto :goto_2
 
@@ -1407,9 +1407,9 @@
 
     const-wide v3, -0x7fffffffffffffffL    # -4.9E-324
 
-    cmp-long v5, v1, v3
+    cmp-long v3, v1, v3
 
-    if-eqz v5, :cond_b
+    if-eqz v3, :cond_b
 
     const-wide/16 v3, 0x0
 
@@ -2065,7 +2065,7 @@
     goto :goto_4
 
     :cond_d
-    const v6, -0x800001
+    move v6, v11
 
     .line 956
     :goto_4
@@ -2091,14 +2091,14 @@
     goto :goto_5
 
     :cond_f
-    const v5, -0x800001
+    move v5, v11
 
     :goto_5
-    const/high16 v12, 0x3f800000    # 1.0f
+    cmpl-float v12, v6, v11
 
-    cmpl-float v13, v6, v11
+    const/high16 v13, 0x3f800000    # 1.0f
 
-    if-nez v13, :cond_11
+    if-nez v12, :cond_11
 
     cmpl-float v11, v5, v11
 
@@ -2111,16 +2111,16 @@
 
     if-eqz v11, :cond_10
 
-    iget-wide v13, v11, Lcom/google/android/exoplayer2/source/dash/manifest/ServiceDescriptionElement;->targetOffsetMs:J
+    iget-wide v11, v11, Lcom/google/android/exoplayer2/source/dash/manifest/ServiceDescriptionElement;->targetOffsetMs:J
 
-    cmp-long v11, v13, v7
+    cmp-long v7, v11, v7
 
-    if-nez v11, :cond_11
+    if-nez v7, :cond_11
 
     :cond_10
-    const/high16 v5, 0x3f800000    # 1.0f
+    move v5, v13
 
-    const/high16 v6, 0x3f800000    # 1.0f
+    move v6, v5
 
     .line 971
     :cond_11
@@ -2288,20 +2288,20 @@
 .end method
 
 .method onDashManifestPublishTimeExpired(J)V
-    .locals 5
+    .locals 4
 
     .line 536
     iget-wide v0, p0, Lcom/google/android/exoplayer2/source/dash/DashMediaSource;->expiredManifestPublishTimeUs:J
 
     const-wide v2, -0x7fffffffffffffffL    # -4.9E-324
 
-    cmp-long v4, v0, v2
+    cmp-long v2, v0, v2
 
-    if-eqz v4, :cond_0
+    if-eqz v2, :cond_0
 
-    cmp-long v2, v0, p1
+    cmp-long v0, v0, p1
 
-    if-gez v2, :cond_1
+    if-gez v0, :cond_1
 
     .line 538
     :cond_0
@@ -2467,7 +2467,7 @@
 
     if-nez v3, :cond_0
 
-    const/4 v3, 0x0
+    move v3, v4
 
     goto :goto_0
 
@@ -2484,7 +2484,7 @@
 
     iget-wide v5, v5, Lcom/google/android/exoplayer2/source/dash/manifest/Period;->startMs:J
 
-    const/4 v7, 0x0
+    move v7, v4
 
     :goto_1
     if-ge v7, v3, :cond_1
@@ -2499,9 +2499,9 @@
 
     iget-wide v8, v8, Lcom/google/android/exoplayer2/source/dash/manifest/Period;->startMs:J
 
-    cmp-long v10, v8, v5
+    cmp-long v8, v8, v5
 
-    if-gez v10, :cond_1
+    if-gez v8, :cond_1
 
     add-int/lit8 v7, v7, 0x1
 
@@ -2532,7 +2532,7 @@
     invoke-static {v5, v8}, Lcom/google/android/exoplayer2/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)V
 
     :goto_2
-    const/4 v5, 0x1
+    move v5, v6
 
     goto :goto_3
 
@@ -2550,7 +2550,7 @@
 
     const-wide/16 v12, 0x3e8
 
-    mul-long v10, v10, v12
+    mul-long/2addr v10, v12
 
     cmp-long v5, v10, v8
 
@@ -2588,7 +2588,7 @@
     goto :goto_2
 
     :cond_3
-    const/4 v5, 0x0
+    move v5, v4
 
     :goto_3
     if-eqz v5, :cond_5
@@ -2673,7 +2673,7 @@
 
     if-ne v5, v8, :cond_7
 
-    const/4 v4, 0x1
+    move v4, v6
 
     :cond_7
     if-eqz v4, :cond_9
@@ -2831,9 +2831,9 @@
 
     const-wide v5, -0x7fffffffffffffffL    # -4.9E-324
 
-    cmp-long v7, v3, v5
+    cmp-long v5, v3, v5
 
-    if-nez v7, :cond_0
+    if-nez v5, :cond_0
 
     .line 659
     sget-object v3, Lcom/google/android/exoplayer2/upstream/Loader;->DONT_RETRY_FATAL:Lcom/google/android/exoplayer2/upstream/Loader$LoadErrorAction;

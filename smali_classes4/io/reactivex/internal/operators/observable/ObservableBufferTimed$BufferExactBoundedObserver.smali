@@ -572,7 +572,7 @@
 .end method
 
 .method public run()V
-    .locals 7
+    .locals 6
 
     .line 541
     :try_start_0
@@ -606,9 +606,9 @@
 
     iget-wide v4, p0, Lio/reactivex/internal/operators/observable/ObservableBufferTimed$BufferExactBoundedObserver;->consumerIndex:J
 
-    cmp-long v6, v2, v4
+    cmp-long v2, v2, v4
 
-    if-eqz v6, :cond_0
+    if-eqz v2, :cond_0
 
     goto :goto_0
 

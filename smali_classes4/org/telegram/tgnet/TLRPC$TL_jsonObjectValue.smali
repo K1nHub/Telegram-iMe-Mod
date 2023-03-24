@@ -23,7 +23,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 27174
+    .line 27184
     invoke-direct {p0}, Lorg/telegram/tgnet/TLObject;-><init>()V
 
     return-void
@@ -32,7 +32,7 @@
 .method public static TLdeserialize(Lorg/telegram/tgnet/AbstractSerializedData;IZ)Lorg/telegram/tgnet/TLRPC$TL_jsonObjectValue;
     .locals 1
 
-    .line 27181
+    .line 27191
     sget v0, Lorg/telegram/tgnet/TLRPC$TL_jsonObjectValue;->constructor:I
 
     if-eq v0, p1, :cond_1
@@ -43,7 +43,7 @@
 
     return-object p0
 
-    .line 27183
+    .line 27193
     :cond_0
     new-instance p0, Ljava/lang/RuntimeException;
 
@@ -69,13 +69,13 @@
 
     throw p0
 
-    .line 27188
+    .line 27198
     :cond_1
     new-instance p1, Lorg/telegram/tgnet/TLRPC$TL_jsonObjectValue;
 
     invoke-direct {p1}, Lorg/telegram/tgnet/TLRPC$TL_jsonObjectValue;-><init>()V
 
-    .line 27189
+    .line 27199
     invoke-virtual {p1, p0, p2}, Lorg/telegram/tgnet/TLRPC$TL_jsonObjectValue;->readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
 
     return-object p1
@@ -86,14 +86,14 @@
 .method public readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
     .locals 1
 
-    .line 27194
+    .line 27204
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readString(Z)Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, p0, Lorg/telegram/tgnet/TLRPC$TL_jsonObjectValue;->key:Ljava/lang/String;
 
-    .line 27195
+    .line 27205
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
@@ -110,17 +110,17 @@
 .method public serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
     .locals 1
 
-    .line 27199
+    .line 27209
     sget v0, Lorg/telegram/tgnet/TLRPC$TL_jsonObjectValue;->constructor:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 27200
+    .line 27210
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$TL_jsonObjectValue;->key:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeString(Ljava/lang/String;)V
 
-    .line 27201
+    .line 27211
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$TL_jsonObjectValue;->value:Lorg/telegram/tgnet/TLRPC$JSONValue;
 
     invoke-virtual {v0, p1}, Lorg/telegram/tgnet/TLObject;->serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V

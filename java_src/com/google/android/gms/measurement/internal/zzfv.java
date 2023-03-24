@@ -133,7 +133,7 @@ public final class zzfv implements zzgq {
         zzfsVar.zzv();
         this.zzn = zzfsVar;
         com.google.android.gms.internal.measurement.zzcl zzclVar2 = zzgyVar.zzg;
-        z = (zzclVar2 == null || zzclVar2.zzb == 0) ? true : true;
+        z = (zzclVar2 == null || zzclVar2.zzb == 0) ? true : z;
         if (context.getApplicationContext() instanceof Application) {
             zzia zzq = zzq();
             if (zzq.zzs.zze.getApplicationContext() instanceof Application) {

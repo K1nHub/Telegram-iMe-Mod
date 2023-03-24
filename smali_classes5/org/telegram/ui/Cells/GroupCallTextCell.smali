@@ -114,12 +114,12 @@
 
     if-eqz v1, :cond_1
 
-    const/4 v1, 0x5
+    move v1, v2
 
     goto :goto_1
 
     :cond_1
-    const/4 v1, 0x3
+    move v1, v3
 
     :goto_1
     invoke-virtual {p2, v1}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setGravity(I)V
@@ -172,7 +172,7 @@
 
     if-eqz v0, :cond_3
 
-    const/4 v2, 0x3
+    move v2, v3
 
     :cond_3
     invoke-virtual {p2, v2}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setGravity(I)V
@@ -302,9 +302,10 @@
 
     const/4 v0, 0x0
 
-    const/4 v4, 0x0
+    :goto_0
+    move v4, v0
 
-    goto :goto_1
+    goto :goto_2
 
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Cells/GroupCallTextCell;->imageView:Landroid/widget/ImageView;
@@ -315,23 +316,23 @@
 
     if-nez v0, :cond_1
 
-    const/16 v0, 0x44
+    move v0, v1
 
-    goto :goto_0
+    goto :goto_1
 
     :cond_1
-    const/16 v0, 0x14
+    move v0, v2
 
-    :goto_0
+    :goto_1
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v0
 
     int-to-float v0, v0
 
-    move v4, v0
+    goto :goto_0
 
-    :goto_1
+    :goto_2
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredHeight()I
 
     move-result v0
@@ -356,22 +357,22 @@
 
     if-nez v3, :cond_2
 
-    goto :goto_2
+    goto :goto_3
 
     :cond_2
-    const/16 v1, 0x14
+    move v1, v2
 
-    :goto_2
+    :goto_3
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v1
 
-    goto :goto_3
+    goto :goto_4
 
     :cond_3
     const/4 v1, 0x0
 
-    :goto_3
+    :goto_4
     sub-int/2addr v0, v1
 
     int-to-float v6, v0

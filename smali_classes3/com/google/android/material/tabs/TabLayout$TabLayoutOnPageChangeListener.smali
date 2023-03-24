@@ -98,13 +98,13 @@
     goto :goto_0
 
     :cond_0
-    const/4 v4, 0x0
+    move v4, v1
 
     goto :goto_1
 
     :cond_1
     :goto_0
-    const/4 v4, 0x1
+    move v4, v3
 
     :goto_1
     if-ne v0, v2, :cond_2
@@ -115,7 +115,7 @@
     if-eqz v0, :cond_3
 
     :cond_2
-    const/4 v1, 0x1
+    move v1, v3
 
     .line 3363
     :cond_3

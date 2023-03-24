@@ -449,7 +449,7 @@
 
     if-ne v0, v2, :cond_b
 
-    mul-int/lit16 v5, v5, 0x90
+    mul-int/2addr v5, v6
 
     .line 168
     div-int/2addr v5, v1
@@ -464,7 +464,7 @@
     const/16 v6, 0x48
 
     :cond_c
-    mul-int v6, v6, v5
+    mul-int/2addr v6, v5
 
     .line 171
     div-int/2addr v6, v1

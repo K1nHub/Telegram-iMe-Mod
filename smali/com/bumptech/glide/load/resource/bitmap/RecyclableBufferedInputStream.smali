@@ -928,16 +928,16 @@
 
     const-wide/16 v0, 0x1
 
-    const-wide/16 v2, 0x0
+    cmp-long v0, p1, v0
 
-    cmp-long v4, p1, v0
+    const-wide/16 v1, 0x0
 
-    if-gez v4, :cond_0
+    if-gez v0, :cond_0
 
     .line 362
     monitor-exit p0
 
-    return-wide v2
+    return-wide v1
 
     .line 365
     :cond_0
@@ -947,9 +947,9 @@
     if-eqz v0, :cond_7
 
     .line 369
-    iget-object v1, p0, Ljava/io/FilterInputStream;->in:Ljava/io/InputStream;
+    iget-object v3, p0, Ljava/io/FilterInputStream;->in:Ljava/io/InputStream;
 
-    if-eqz v1, :cond_6
+    if-eqz v3, :cond_6
 
     .line 374
     iget v4, p0, Lcom/bumptech/glide/load/resource/bitmap/RecyclableBufferedInputStream;->count:I
@@ -960,18 +960,18 @@
 
     int-to-long v6, v6
 
-    cmp-long v8, v6, p1
+    cmp-long v6, v6, p1
 
-    if-ltz v8, :cond_1
+    if-ltz v6, :cond_1
 
     int-to-long v0, v5
 
     add-long/2addr v0, p1
 
-    long-to-int v1, v0
+    long-to-int v0, v0
 
     .line 375
-    iput v1, p0, Lcom/bumptech/glide/load/resource/bitmap/RecyclableBufferedInputStream;->pos:I
+    iput v0, p0, Lcom/bumptech/glide/load/resource/bitmap/RecyclableBufferedInputStream;->pos:I
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
@@ -1007,7 +1007,7 @@
     if-gtz v4, :cond_4
 
     .line 383
-    invoke-direct {p0, v1, v0}, Lcom/bumptech/glide/load/resource/bitmap/RecyclableBufferedInputStream;->fillbuf(Ljava/io/InputStream;[B)I
+    invoke-direct {p0, v3, v0}, Lcom/bumptech/glide/load/resource/bitmap/RecyclableBufferedInputStream;->fillbuf(Ljava/io/InputStream;[B)I
 
     move-result v0
     :try_end_1
@@ -1033,9 +1033,9 @@
 
     sub-long v4, p1, v6
 
-    cmp-long v8, v2, v4
+    cmp-long v2, v2, v4
 
-    if-ltz v8, :cond_3
+    if-ltz v2, :cond_3
 
     int-to-long v0, v1
 
@@ -1043,10 +1043,10 @@
 
     sub-long/2addr v0, v6
 
-    long-to-int v1, v0
+    long-to-int v0, v0
 
     .line 388
-    iput v1, p0, Lcom/bumptech/glide/load/resource/bitmap/RecyclableBufferedInputStream;->pos:I
+    iput v0, p0, Lcom/bumptech/glide/load/resource/bitmap/RecyclableBufferedInputStream;->pos:I
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
@@ -1080,11 +1080,11 @@
 
     .line 399
     :try_start_4
-    invoke-virtual {v1, p1, p2}, Ljava/io/InputStream;->skip(J)J
+    invoke-virtual {v3, p1, p2}, Ljava/io/InputStream;->skip(J)J
 
     move-result-wide p1
 
-    cmp-long v0, p1, v2
+    cmp-long v0, p1, v1
 
     if-lez v0, :cond_5
 

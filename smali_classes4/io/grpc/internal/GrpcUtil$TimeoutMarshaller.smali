@@ -52,12 +52,12 @@
 
     if-lez v0, :cond_0
 
-    const/4 v0, 0x1
+    move v0, v2
 
     goto :goto_0
 
     :cond_0
-    const/4 v0, 0x0
+    move v0, v1
 
     :goto_0
     const-string v3, "empty timeout"
@@ -73,12 +73,12 @@
 
     if-gt v0, v3, :cond_1
 
-    const/4 v0, 0x1
+    move v0, v2
 
     goto :goto_1
 
     :cond_1
-    const/4 v0, 0x0
+    move v0, v1
 
     :goto_1
     const-string v3, "bad timeout format"
@@ -247,7 +247,7 @@
 .end method
 
 .method public toAsciiString(Ljava/lang/Long;)Ljava/lang/String;
-    .locals 6
+    .locals 5
 
     .line 645
     sget-object v0, Ljava/util/concurrent/TimeUnit;->NANOSECONDS:Ljava/util/concurrent/TimeUnit;
@@ -259,9 +259,9 @@
 
     const-wide/16 v3, 0x0
 
-    cmp-long v5, v1, v3
+    cmp-long v1, v1, v3
 
-    if-ltz v5, :cond_5
+    if-ltz v1, :cond_5
 
     .line 648
     invoke-virtual {p1}, Ljava/lang/Long;->longValue()J
@@ -270,9 +270,9 @@
 
     const-wide/32 v3, 0x5f5e100
 
-    cmp-long v5, v1, v3
+    cmp-long v1, v1, v3
 
-    if-gez v5, :cond_0
+    if-gez v1, :cond_0
 
     .line 649
     new-instance v0, Ljava/lang/StringBuilder;
@@ -299,9 +299,9 @@
 
     const-wide v3, 0x174876e800L
 
-    cmp-long v5, v1, v3
+    cmp-long v1, v1, v3
 
-    if-gez v5, :cond_1
+    if-gez v1, :cond_1
 
     .line 651
     new-instance v1, Ljava/lang/StringBuilder;
@@ -336,9 +336,9 @@
 
     const-wide v3, 0x5af3107a4000L
 
-    cmp-long v5, v1, v3
+    cmp-long v1, v1, v3
 
-    if-gez v5, :cond_2
+    if-gez v1, :cond_2
 
     .line 653
     new-instance v1, Ljava/lang/StringBuilder;
@@ -373,9 +373,9 @@
 
     const-wide v3, 0x16345785d8a0000L
 
-    cmp-long v5, v1, v3
+    cmp-long v1, v1, v3
 
-    if-gez v5, :cond_3
+    if-gez v1, :cond_3
 
     .line 655
     new-instance v1, Ljava/lang/StringBuilder;
@@ -410,9 +410,9 @@
 
     const-wide v3, 0x53444835ec580000L
 
-    cmp-long v5, v1, v3
+    cmp-long v1, v1, v3
 
-    if-gez v5, :cond_4
+    if-gez v1, :cond_4
 
     .line 657
     new-instance v1, Ljava/lang/StringBuilder;

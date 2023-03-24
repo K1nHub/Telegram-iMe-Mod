@@ -36,7 +36,7 @@ import kotlin.jvm.internal.Reflection;
 import kotlin.reflect.KProperty;
 import kotlin.text.StringsKt__StringsJVMKt;
 import moxy.ktx.MoxyKtxDelegate;
-import org.telegram.messenger.C3286R;
+import org.telegram.messenger.C3301R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.browser.Browser;
@@ -172,7 +172,7 @@ public final class ChannelDetailsBottomSheetDialog extends MvpBottomSheet implem
         String photo = campaignItem.getPhoto();
         Context context = getContext();
         Intrinsics.checkNotNullExpressionValue(context, "context");
-        ImageViewExtKt.loadFromWithPlaceholderResId(imageAvatar, photo, context, Integer.valueOf(C3286R.C3288drawable.photo_placeholder_in), true);
+        ImageViewExtKt.loadFromWithPlaceholderResId(imageAvatar, photo, context, Integer.valueOf(C3301R.C3303drawable.photo_placeholder_in), true);
         AppCompatImageView imageVerified = binding.imageVerified;
         Intrinsics.checkNotNullExpressionValue(imageVerified, "imageVerified");
         imageVerified.setVisibility(campaignItem.isVerified() ? 0 : 8);
@@ -215,14 +215,14 @@ public final class ChannelDetailsBottomSheetDialog extends MvpBottomSheet implem
                 throw new NoWhenBranchMatchedException();
             }
             if (z) {
-                string = LocaleController.getString("JoinGroup", C3286R.string.JoinGroup);
+                string = LocaleController.getString("JoinGroup", C3301R.string.JoinGroup);
             } else {
-                string = LocaleController.getString("LeaveMegaMenu", C3286R.string.LeaveMegaMenu);
+                string = LocaleController.getString("LeaveMegaMenu", C3301R.string.LeaveMegaMenu);
             }
         } else if (z) {
-            string = LocaleController.getString("ChannelJoin", C3286R.string.ChannelJoin);
+            string = LocaleController.getString("ChannelJoin", C3301R.string.ChannelJoin);
         } else {
-            string = LocaleController.getString("LeaveChannel", C3286R.string.LeaveChannel);
+            string = LocaleController.getString("LeaveChannel", C3301R.string.LeaveChannel);
         }
         bigActionButton.setText(string);
     }
@@ -285,8 +285,8 @@ public final class ChannelDetailsBottomSheetDialog extends MvpBottomSheet implem
         AppCompatTextView appCompatTextView = binding.textDescription;
         appCompatTextView.setMovementMethod(LinkMovementMethod.getInstance());
         appCompatTextView.setOnTouchListener(ChannelDetailsBottomSheetDialog$$ExternalSyntheticLambda1.INSTANCE);
-        binding.textLanguageTitle.setText(getResourceManager().getString(C3286R.string.catalog_channel_details_language));
-        binding.textTags.setText(getResourceManager().getString(C3286R.string.catalog_channel_details_tags));
+        binding.textLanguageTitle.setText(getResourceManager().getString(C3301R.string.catalog_channel_details_language));
+        binding.textTags.setText(getResourceManager().getString(C3301R.string.catalog_channel_details_tags));
         setupButtonMore();
     }
 
@@ -305,12 +305,12 @@ public final class ChannelDetailsBottomSheetDialog extends MvpBottomSheet implem
         final ActionBarMenuItem setupButtonMore$lambda$18 = getBinding().buttonMore;
         setupButtonMore$lambda$18.setLongClickEnabled(false);
         setupButtonMore$lambda$18.setSubMenuOpenSide(2);
-        setupButtonMore$lambda$18.setIcon(C3286R.C3288drawable.ic_ab_other);
+        setupButtonMore$lambda$18.setIcon(C3301R.C3303drawable.ic_ab_other);
         Intrinsics.checkNotNullExpressionValue(setupButtonMore$lambda$18, "setupButtonMore$lambda$18");
         ViewExtKt.setCircleRippleBackground(setupButtonMore$lambda$18);
-        setupButtonMore$lambda$18.addSubItem(IdFabric$Menu.SHARE, C3286R.C3288drawable.share, LocaleController.getString("ShareLink", C3286R.string.ShareLink));
-        setupButtonMore$lambda$18.addSubItem(IdFabric$Menu.COPY, C3286R.C3288drawable.msg_link2, LocaleController.getString("CopyLink", C3286R.string.CopyLink));
-        setupButtonMore$lambda$18.addSubItem(IdFabric$Menu.f257QR, C3286R.C3288drawable.msg_qrcode, LocaleController.getString("GetQRCode", C3286R.string.GetQRCode));
+        setupButtonMore$lambda$18.addSubItem(IdFabric$Menu.SHARE, C3301R.C3303drawable.share, LocaleController.getString("ShareLink", C3301R.string.ShareLink));
+        setupButtonMore$lambda$18.addSubItem(IdFabric$Menu.COPY, C3301R.C3303drawable.msg_link2, LocaleController.getString("CopyLink", C3301R.string.CopyLink));
+        setupButtonMore$lambda$18.addSubItem(IdFabric$Menu.f257QR, C3301R.C3303drawable.msg_qrcode, LocaleController.getString("GetQRCode", C3301R.string.GetQRCode));
         setupButtonMore$lambda$18.redrawPopup(getThemedColor("actionBarDefaultSubmenuBackground"));
         setupButtonMore$lambda$18.setPopupItemsColor(getThemedColor("actionBarDefaultSubmenuItem"), false);
         setupButtonMore$lambda$18.setPopupItemsColor(getThemedColor("actionBarDefaultSubmenuItemIcon"), true);
@@ -321,7 +321,7 @@ public final class ChannelDetailsBottomSheetDialog extends MvpBottomSheet implem
                 ChannelDetailsBottomSheetDialog.setupButtonMore$lambda$18$lambda$17(ActionBarMenuItem.this, view);
             }
         });
-        setupButtonMore$lambda$18.setContentDescription(LocaleController.getString("AccDescrMoreOptions", C3286R.string.AccDescrMoreOptions));
+        setupButtonMore$lambda$18.setContentDescription(LocaleController.getString("AccDescrMoreOptions", C3301R.string.AccDescrMoreOptions));
     }
 
     /* JADX INFO: Access modifiers changed from: private */

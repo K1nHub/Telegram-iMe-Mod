@@ -536,12 +536,12 @@
 
     if-ne v1, v2, :cond_0
 
-    const/4 v1, 0x1
+    move v1, v14
 
     goto :goto_0
 
     :cond_0
-    const/4 v1, 0x0
+    move v1, v11
 
     :goto_0
     iput-boolean v1, v6, Lorg/fork/ui/dialog/TranslateAlert;->shouldShowKeyboard:Z
@@ -774,7 +774,7 @@
     goto :goto_4
 
     :cond_8
-    const/4 v2, 0x0
+    move v2, v12
 
     :goto_4
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setPivotX(F)V
@@ -813,12 +813,12 @@
 
     if-eqz v2, :cond_9
 
-    const/4 v2, 0x5
+    move/from16 v2, v16
 
     goto :goto_5
 
     :cond_9
-    const/4 v2, 0x3
+    move v2, v5
 
     :goto_5
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setGravity(I)V
@@ -923,12 +923,12 @@
 
     if-eqz v2, :cond_b
 
-    const/4 v2, 0x5
+    move/from16 v2, v16
 
     goto :goto_6
 
     :cond_b
-    const/4 v2, 0x3
+    move v2, v5
 
     :goto_6
     invoke-virtual {v1, v2}, Landroid/widget/LinearLayout;->setGravity(I)V
@@ -2503,7 +2503,7 @@
 
     iget v3, p0, Lorg/fork/ui/dialog/TranslateAlert;->heightMaxPercent:F
 
-    mul-float v1, v1, v3
+    mul-float/2addr v1, v3
 
     cmpl-float v0, v0, v1
 
@@ -2947,17 +2947,15 @@
 
     const/16 v0, 0x38
 
-    const/16 v6, 0x38
-
     goto :goto_0
 
     :cond_0
     const/4 v0, 0x0
 
-    const/4 v6, 0x0
+    :goto_0
+    move v6, v0
 
     .line 381
-    :goto_0
     iget-object v0, p0, Lorg/fork/ui/dialog/TranslateAlert;->header:Landroid/widget/FrameLayout;
 
     iget-object v8, p0, Lorg/fork/ui/dialog/TranslateAlert;->changeLanguageButton:Landroid/widget/ImageView;
@@ -3563,7 +3561,7 @@
     goto :goto_0
 
     :cond_0
-    const/16 v1, 0x8
+    move v1, v2
 
     :goto_0
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setVisibility(I)V
@@ -4085,7 +4083,7 @@
 
     const/high16 v1, 0x424c0000    # 51.0f
 
-    mul-float v0, v0, v1
+    mul-float/2addr v0, v1
 
     float-to-int v0, v0
 
@@ -4114,13 +4112,13 @@
 
     iget v3, p0, Lorg/fork/ui/dialog/TranslateAlert;->heightMaxPercent:F
 
-    mul-float v2, v2, v3
+    mul-float/2addr v2, v3
 
     invoke-static {v0, v2}, Ljava/lang/Math;->min(FF)F
 
     move-result v0
 
-    mul-float v1, v1, v0
+    mul-float/2addr v1, v0
 
     invoke-virtual {p1, v1}, Landroid/widget/FrameLayout;->setTranslationY(F)V
 
@@ -4485,7 +4483,7 @@
 
     const/high16 v4, 0x3e800000    # 0.25f
 
-    mul-float v4, v4, p1
+    mul-float/2addr v4, p1
 
     add-float/2addr v4, v2
 
@@ -4779,7 +4777,7 @@
 
     const/high16 v2, 0x424c0000    # 51.0f
 
-    mul-float v1, v1, v2
+    mul-float/2addr v1, v2
 
     float-to-int v1, v1
 
@@ -4848,7 +4846,7 @@
     :goto_0
     int-to-float v0, v0
 
-    mul-float p1, p1, v0
+    mul-float/2addr p1, v0
 
     float-to-long v0, p1
 
@@ -5007,7 +5005,7 @@
 
     const/high16 v2, 0x424c0000    # 51.0f
 
-    mul-float p1, p1, v2
+    mul-float/2addr p1, v2
 
     float-to-int p1, p1
 
@@ -5039,13 +5037,13 @@
 
     iget v3, p0, Lorg/fork/ui/dialog/TranslateAlert;->heightMaxPercent:F
 
-    mul-float v2, v2, v3
+    mul-float/2addr v2, v3
 
     invoke-static {v1, v2}, Ljava/lang/Math;->min(FF)F
 
     move-result v1
 
-    mul-float v0, v0, v1
+    mul-float/2addr v0, v1
 
     invoke-virtual {p1, v0}, Landroid/widget/FrameLayout;->setTranslationY(F)V
 
@@ -5088,12 +5086,12 @@
 
     if-eqz v0, :cond_1
 
-    const/high16 v4, 0x3f800000    # 1.0f
+    move v4, v3
 
     goto :goto_0
 
     :cond_1
-    const/4 v4, 0x0
+    move v4, v2
 
     :goto_0
     invoke-virtual {v1, v4}, Landroid/view/ViewPropertyAnimator;->alpha(F)Landroid/view/ViewPropertyAnimator;
@@ -5108,7 +5106,7 @@
 
     if-eqz v0, :cond_2
 
-    const/high16 v2, 0x3f800000    # 1.0f
+    move v2, v3
 
     :cond_2
     sub-float/2addr v4, v2
@@ -5119,7 +5117,7 @@
 
     const/high16 v2, 0x435c0000    # 220.0f
 
-    mul-float v0, v0, v2
+    mul-float/2addr v0, v2
 
     float-to-long v2, v0
 
@@ -5529,12 +5527,12 @@
 
     if-nez v8, :cond_3
 
-    const/4 v8, 0x1
+    move v8, v7
 
     goto :goto_0
 
     :cond_3
-    const/4 v8, 0x0
+    move v8, v6
 
     :goto_0
     invoke-virtual {v0, v8}, Landroid/widget/TextView;->setTextIsSelectable(Z)V
@@ -5731,12 +5729,12 @@
     if-nez v0, :cond_b
 
     :cond_a
-    const/4 v0, 0x1
+    move v0, v7
 
     goto :goto_3
 
     :cond_b
-    const/4 v0, 0x0
+    move v0, v6
 
     :goto_3
     iput-boolean v0, v1, Lorg/fork/ui/dialog/TranslateAlert;->fromScrollRect:Z
@@ -5771,7 +5769,7 @@
 
     if-nez v0, :cond_c
 
-    const/4 v6, 0x1
+    move v6, v7
 
     :cond_c
     iput-boolean v6, v1, Lorg/fork/ui/dialog/TranslateAlert;->scrolling:Z
@@ -5926,7 +5924,7 @@
 
     iget v5, v1, Lorg/fork/ui/dialog/TranslateAlert;->heightMaxPercent:F
 
-    mul-float v5, v5, v2
+    mul-float/2addr v5, v2
 
     invoke-static {v4, v5}, Ljava/lang/Math;->min(FF)F
 
@@ -5951,7 +5949,7 @@
 
     sub-float v5, v9, v5
 
-    mul-float v5, v5, v4
+    mul-float/2addr v5, v4
 
     sub-float/2addr v2, v4
 
@@ -5965,7 +5963,7 @@
 
     move-result v10
 
-    mul-float v10, v10, v2
+    mul-float/2addr v10, v2
 
     add-float/2addr v5, v10
 
@@ -6030,12 +6028,12 @@
 
     if-nez v3, :cond_13
 
-    const/4 v3, 0x1
+    move v3, v7
 
     goto :goto_6
 
     :cond_13
-    const/4 v3, 0x0
+    move v3, v6
 
     :goto_6
     invoke-virtual {v2, v3}, Landroid/widget/TextView;->setTextIsSelectable(Z)V
@@ -6078,7 +6076,7 @@
 
     if-lez v3, :cond_14
 
-    const/high16 v8, 0x3f800000    # 1.0f
+    move v8, v9
 
     :cond_14
     sub-float/2addr v2, v5
@@ -6095,7 +6093,7 @@
 
     double-to-float v2, v2
 
-    mul-float v8, v8, v2
+    mul-float/2addr v8, v2
 
     add-float/2addr v0, v8
 
@@ -6144,12 +6142,12 @@
 
     if-nez v2, :cond_18
 
-    const/4 v2, 0x1
+    move v2, v7
 
     goto :goto_8
 
     :cond_18
-    const/4 v2, 0x0
+    move v2, v6
 
     :goto_8
     invoke-virtual {v0, v2}, Landroid/widget/TextView;->setTextIsSelectable(Z)V
@@ -6285,7 +6283,7 @@
 .end method
 
 .method protected onCreate(Landroid/os/Bundle;)V
-    .locals 6
+    .locals 5
 
     .line 1261
     invoke-super {p0, p1}, Lcom/smedialink/ui/base/mvp/MvpBottomSheet;->onCreate(Landroid/os/Bundle;)V
@@ -6423,9 +6421,9 @@
 
     const-wide v3, 0x3fe7126e978d4fdfL    # 0.721
 
-    cmpl-double v5, v1, v3
+    cmpl-double v1, v1, v3
 
-    if-lez v5, :cond_2
+    if-lez v1, :cond_2
 
     const/4 v0, 0x1
 

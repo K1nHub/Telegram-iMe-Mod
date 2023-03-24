@@ -195,7 +195,7 @@
 .end method
 
 .method public onNext(Ljava/lang/Object;)V
-    .locals 5
+    .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TT;)V"
@@ -216,9 +216,9 @@
     .line 83
     iget-wide v2, p0, Lio/reactivex/internal/operators/observable/ObservableElementAt$ElementAtObserver;->index:J
 
-    cmp-long v4, v0, v2
+    cmp-long v2, v0, v2
 
-    if-nez v4, :cond_1
+    if-nez v2, :cond_1
 
     const/4 v0, 0x1
 

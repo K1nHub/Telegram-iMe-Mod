@@ -306,7 +306,7 @@
 
     invoke-direct {v3}, Ljava/util/ArrayList;-><init>()V
 
-    const/4 v4, 0x0
+    move v4, v0
 
     .line 199
     :goto_0
@@ -394,7 +394,7 @@
 
     if-eqz v3, :cond_2
 
-    const/4 v3, 0x1
+    move v3, v1
 
     goto :goto_1
 
@@ -698,7 +698,7 @@
 .end method
 
 .method private isSpeedItemVisible()Z
-    .locals 7
+    .locals 6
 
     .line 517
     iget v0, p0, Lorg/telegram/ui/Components/SearchViewPager;->currentAccount:I
@@ -767,9 +767,9 @@
 
     const-wide/32 v4, 0x9600000
 
-    cmp-long v6, v2, v4
+    cmp-long v2, v2, v4
 
-    if-ltz v6, :cond_1
+    if-ltz v2, :cond_1
 
     const/4 v0, 0x1
 
@@ -981,9 +981,9 @@
 
     move-result-wide v6
 
-    cmp-long v8, v4, v6
+    cmp-long v4, v4, v6
 
-    if-eqz v8, :cond_5
+    if-eqz v4, :cond_5
 
     if-nez p3, :cond_5
 
@@ -1096,7 +1096,7 @@
     :goto_3
     invoke-virtual {v1, v14}, Lorg/telegram/ui/DialogsActivity;->getSelectedMessages(Ljava/util/ArrayList;)V
 
-    const/4 v13, 0x0
+    move v13, v3
 
     .line 591
     :goto_4
@@ -1416,7 +1416,9 @@
 
     if-ne v1, v3, :cond_10
 
-    const/4 v1, 0x0
+    const-wide/16 v3, 0x0
+
+    cmp-long v1, v8, v3
 
     const-wide/16 v2, 0x96
 
@@ -1424,102 +1426,62 @@
 
     const/4 v4, 0x0
 
-    const-wide/16 v17, 0x0
+    const-wide/16 v18, 0x0
 
-    cmp-long v5, v8, v17
+    if-nez v1, :cond_7
 
-    if-nez v5, :cond_7
+    cmp-long v1, v13, v18
 
-    cmp-long v5, v13, v17
+    if-nez v1, :cond_7
 
-    if-nez v5, :cond_7
+    cmp-long v1, v15, v18
 
-    cmp-long v5, v15, v17
-
-    if-eqz v5, :cond_8
+    if-eqz v1, :cond_8
 
     :cond_7
-    cmp-long v5, v6, v17
+    cmp-long v1, v6, v18
 
-    if-eqz v5, :cond_d
+    if-eqz v1, :cond_d
 
     :cond_8
-    const/4 v5, 0x0
+    const/4 v1, 0x0
 
     .line 364
-    iput-boolean v5, v0, Lorg/telegram/ui/Components/SearchViewPager;->lastSearchScrolledToTop:Z
+    iput-boolean v1, v0, Lorg/telegram/ui/Components/SearchViewPager;->lastSearchScrolledToTop:Z
 
     .line 365
-    iget-object v6, v0, Lorg/telegram/ui/Components/SearchViewPager;->dialogsSearchAdapter:Lorg/telegram/ui/Adapters/DialogsSearchAdapter;
+    iget-object v5, v0, Lorg/telegram/ui/Components/SearchViewPager;->dialogsSearchAdapter:Lorg/telegram/ui/Adapters/DialogsSearchAdapter;
 
-    invoke-virtual {v6, v10, v11}, Lorg/telegram/ui/Adapters/DialogsSearchAdapter;->searchDialogs(Ljava/lang/String;I)V
+    invoke-virtual {v5, v10, v11}, Lorg/telegram/ui/Adapters/DialogsSearchAdapter;->searchDialogs(Ljava/lang/String;I)V
 
     .line 366
-    iget-object v6, v0, Lorg/telegram/ui/Components/SearchViewPager;->dialogsSearchAdapter:Lorg/telegram/ui/Adapters/DialogsSearchAdapter;
+    iget-object v5, v0, Lorg/telegram/ui/Components/SearchViewPager;->dialogsSearchAdapter:Lorg/telegram/ui/Adapters/DialogsSearchAdapter;
 
-    iget-object v7, v0, Lorg/telegram/ui/Components/SearchViewPager;->filteredSearchViewDelegate:Lorg/telegram/ui/FilteredSearchView$Delegate;
+    iget-object v6, v0, Lorg/telegram/ui/Components/SearchViewPager;->filteredSearchViewDelegate:Lorg/telegram/ui/FilteredSearchView$Delegate;
 
-    invoke-virtual {v6, v7, v5}, Lorg/telegram/ui/Adapters/DialogsSearchAdapter;->setFiltersDelegate(Lorg/telegram/ui/FilteredSearchView$Delegate;Z)V
+    invoke-virtual {v5, v6, v1}, Lorg/telegram/ui/Adapters/DialogsSearchAdapter;->setFiltersDelegate(Lorg/telegram/ui/FilteredSearchView$Delegate;Z)V
 
     .line 367
-    iget-object v6, v0, Lorg/telegram/ui/Components/SearchViewPager;->noMediaFiltersSearchView:Lorg/telegram/ui/FilteredSearchView;
+    iget-object v5, v0, Lorg/telegram/ui/Components/SearchViewPager;->noMediaFiltersSearchView:Lorg/telegram/ui/FilteredSearchView;
 
-    invoke-virtual {v6}, Landroid/widget/FrameLayout;->animate()Landroid/view/ViewPropertyAnimator;
+    invoke-virtual {v5}, Landroid/widget/FrameLayout;->animate()Landroid/view/ViewPropertyAnimator;
 
-    move-result-object v6
+    move-result-object v5
 
-    invoke-virtual {v6, v4}, Landroid/view/ViewPropertyAnimator;->setListener(Landroid/animation/Animator$AnimatorListener;)Landroid/view/ViewPropertyAnimator;
+    invoke-virtual {v5, v4}, Landroid/view/ViewPropertyAnimator;->setListener(Landroid/animation/Animator$AnimatorListener;)Landroid/view/ViewPropertyAnimator;
 
-    move-result-object v6
+    move-result-object v5
 
-    invoke-virtual {v6}, Landroid/view/ViewPropertyAnimator;->cancel()V
+    invoke-virtual {v5}, Landroid/view/ViewPropertyAnimator;->cancel()V
 
     .line 368
-    iget-object v6, v0, Lorg/telegram/ui/Components/SearchViewPager;->noMediaFiltersSearchView:Lorg/telegram/ui/FilteredSearchView;
+    iget-object v5, v0, Lorg/telegram/ui/Components/SearchViewPager;->noMediaFiltersSearchView:Lorg/telegram/ui/FilteredSearchView;
 
-    invoke-virtual {v6, v4, v5}, Lorg/telegram/ui/FilteredSearchView;->setDelegate(Lorg/telegram/ui/FilteredSearchView$Delegate;Z)V
+    invoke-virtual {v5, v4, v1}, Lorg/telegram/ui/FilteredSearchView;->setDelegate(Lorg/telegram/ui/FilteredSearchView$Delegate;Z)V
 
     if-eqz p4, :cond_9
 
     .line 370
-    iget-object v6, v0, Lorg/telegram/ui/Components/SearchViewPager;->emptyView:Lorg/telegram/ui/Components/StickerEmptyView;
-
-    iget-object v7, v0, Lorg/telegram/ui/Components/SearchViewPager;->dialogsSearchAdapter:Lorg/telegram/ui/Adapters/DialogsSearchAdapter;
-
-    invoke-virtual {v7}, Lorg/telegram/ui/Adapters/DialogsSearchAdapter;->isSearching()Z
-
-    move-result v7
-
-    const/4 v8, 0x1
-
-    xor-int/2addr v7, v8
-
-    invoke-virtual {v6, v7, v5}, Lorg/telegram/ui/Components/StickerEmptyView;->showProgress(ZZ)V
-
-    .line 371
-    iget-object v6, v0, Lorg/telegram/ui/Components/SearchViewPager;->emptyView:Lorg/telegram/ui/Components/StickerEmptyView;
-
-    iget-object v7, v0, Lorg/telegram/ui/Components/SearchViewPager;->dialogsSearchAdapter:Lorg/telegram/ui/Adapters/DialogsSearchAdapter;
-
-    invoke-virtual {v7}, Lorg/telegram/ui/Adapters/DialogsSearchAdapter;->isSearching()Z
-
-    move-result v7
-
-    invoke-virtual {v6, v7, v5}, Lorg/telegram/ui/Components/StickerEmptyView;->showProgress(ZZ)V
-
-    goto :goto_4
-
-    .line 373
-    :cond_9
-    iget-object v5, v0, Lorg/telegram/ui/Components/SearchViewPager;->dialogsSearchAdapter:Lorg/telegram/ui/Adapters/DialogsSearchAdapter;
-
-    invoke-virtual {v5}, Lorg/telegram/ui/Adapters/DialogsSearchAdapter;->hasRecentSearch()Z
-
-    move-result v5
-
-    if-nez v5, :cond_a
-
-    .line 374
     iget-object v5, v0, Lorg/telegram/ui/Components/SearchViewPager;->emptyView:Lorg/telegram/ui/Components/StickerEmptyView;
 
     iget-object v6, v0, Lorg/telegram/ui/Components/SearchViewPager;->dialogsSearchAdapter:Lorg/telegram/ui/Adapters/DialogsSearchAdapter;
@@ -1530,7 +1492,45 @@
 
     const/4 v7, 0x1
 
-    invoke-virtual {v5, v6, v7}, Lorg/telegram/ui/Components/StickerEmptyView;->showProgress(ZZ)V
+    xor-int/2addr v6, v7
+
+    invoke-virtual {v5, v6, v1}, Lorg/telegram/ui/Components/StickerEmptyView;->showProgress(ZZ)V
+
+    .line 371
+    iget-object v5, v0, Lorg/telegram/ui/Components/SearchViewPager;->emptyView:Lorg/telegram/ui/Components/StickerEmptyView;
+
+    iget-object v6, v0, Lorg/telegram/ui/Components/SearchViewPager;->dialogsSearchAdapter:Lorg/telegram/ui/Adapters/DialogsSearchAdapter;
+
+    invoke-virtual {v6}, Lorg/telegram/ui/Adapters/DialogsSearchAdapter;->isSearching()Z
+
+    move-result v6
+
+    invoke-virtual {v5, v6, v1}, Lorg/telegram/ui/Components/StickerEmptyView;->showProgress(ZZ)V
+
+    goto :goto_4
+
+    .line 373
+    :cond_9
+    iget-object v1, v0, Lorg/telegram/ui/Components/SearchViewPager;->dialogsSearchAdapter:Lorg/telegram/ui/Adapters/DialogsSearchAdapter;
+
+    invoke-virtual {v1}, Lorg/telegram/ui/Adapters/DialogsSearchAdapter;->hasRecentSearch()Z
+
+    move-result v1
+
+    if-nez v1, :cond_a
+
+    .line 374
+    iget-object v1, v0, Lorg/telegram/ui/Components/SearchViewPager;->emptyView:Lorg/telegram/ui/Components/StickerEmptyView;
+
+    iget-object v5, v0, Lorg/telegram/ui/Components/SearchViewPager;->dialogsSearchAdapter:Lorg/telegram/ui/Adapters/DialogsSearchAdapter;
+
+    invoke-virtual {v5}, Lorg/telegram/ui/Adapters/DialogsSearchAdapter;->isSearching()Z
+
+    move-result v5
+
+    const/4 v6, 0x1
+
+    invoke-virtual {v1, v5, v6}, Lorg/telegram/ui/Components/StickerEmptyView;->showProgress(ZZ)V
 
     :cond_a
     :goto_4
@@ -1545,22 +1545,24 @@
 
     .line 380
     :cond_b
-    iget-object v5, v0, Lorg/telegram/ui/Components/SearchViewPager;->noMediaFiltersSearchView:Lorg/telegram/ui/FilteredSearchView;
+    iget-object v1, v0, Lorg/telegram/ui/Components/SearchViewPager;->noMediaFiltersSearchView:Lorg/telegram/ui/FilteredSearchView;
 
-    invoke-virtual {v5}, Landroid/widget/FrameLayout;->getVisibility()I
+    invoke-virtual {v1}, Landroid/widget/FrameLayout;->getVisibility()I
 
-    move-result v5
+    move-result v1
 
-    if-eq v5, v12, :cond_c
+    if-eq v1, v12, :cond_c
 
     .line 381
-    iget-object v5, v0, Lorg/telegram/ui/Components/SearchViewPager;->noMediaFiltersSearchView:Lorg/telegram/ui/FilteredSearchView;
+    iget-object v1, v0, Lorg/telegram/ui/Components/SearchViewPager;->noMediaFiltersSearchView:Lorg/telegram/ui/FilteredSearchView;
 
-    invoke-virtual {v5}, Landroid/widget/FrameLayout;->animate()Landroid/view/ViewPropertyAnimator;
+    invoke-virtual {v1}, Landroid/widget/FrameLayout;->animate()Landroid/view/ViewPropertyAnimator;
 
-    move-result-object v5
+    move-result-object v1
 
-    invoke-virtual {v5, v1}, Landroid/view/ViewPropertyAnimator;->alpha(F)Landroid/view/ViewPropertyAnimator;
+    const/4 v5, 0x0
+
+    invoke-virtual {v1, v5}, Landroid/view/ViewPropertyAnimator;->alpha(F)Landroid/view/ViewPropertyAnimator;
 
     move-result-object v1
 
@@ -1590,90 +1592,92 @@
 
     .line 391
     :cond_d
-    iget-object v5, v0, Lorg/telegram/ui/Components/SearchViewPager;->noMediaFiltersSearchView:Lorg/telegram/ui/FilteredSearchView;
+    iget-object v1, v0, Lorg/telegram/ui/Components/SearchViewPager;->noMediaFiltersSearchView:Lorg/telegram/ui/FilteredSearchView;
 
-    const/16 v19, 0x1
+    const/4 v5, 0x1
 
-    invoke-static/range {v19 .. v19}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v6
 
-    invoke-virtual {v5, v6}, Landroid/widget/FrameLayout;->setTag(Ljava/lang/Object;)V
+    invoke-virtual {v1, v6}, Landroid/widget/FrameLayout;->setTag(Ljava/lang/Object;)V
 
     .line 392
-    iget-object v5, v0, Lorg/telegram/ui/Components/SearchViewPager;->noMediaFiltersSearchView:Lorg/telegram/ui/FilteredSearchView;
+    iget-object v1, v0, Lorg/telegram/ui/Components/SearchViewPager;->noMediaFiltersSearchView:Lorg/telegram/ui/FilteredSearchView;
 
     iget-object v6, v0, Lorg/telegram/ui/Components/SearchViewPager;->filteredSearchViewDelegate:Lorg/telegram/ui/FilteredSearchView$Delegate;
 
     const/4 v7, 0x0
 
-    invoke-virtual {v5, v6, v7}, Lorg/telegram/ui/FilteredSearchView;->setDelegate(Lorg/telegram/ui/FilteredSearchView$Delegate;Z)V
+    invoke-virtual {v1, v6, v7}, Lorg/telegram/ui/FilteredSearchView;->setDelegate(Lorg/telegram/ui/FilteredSearchView$Delegate;Z)V
 
     .line 393
-    iget-object v5, v0, Lorg/telegram/ui/Components/SearchViewPager;->noMediaFiltersSearchView:Lorg/telegram/ui/FilteredSearchView;
-
-    invoke-virtual {v5}, Landroid/widget/FrameLayout;->animate()Landroid/view/ViewPropertyAnimator;
-
-    move-result-object v5
-
-    invoke-virtual {v5, v4}, Landroid/view/ViewPropertyAnimator;->setListener(Landroid/animation/Animator$AnimatorListener;)Landroid/view/ViewPropertyAnimator;
-
-    move-result-object v4
-
-    invoke-virtual {v4}, Landroid/view/ViewPropertyAnimator;->cancel()V
-
-    const/high16 v4, 0x3f800000    # 1.0f
-
-    if-eqz p4, :cond_e
-
-    .line 395
-    iget-object v1, v0, Lorg/telegram/ui/Components/SearchViewPager;->noMediaFiltersSearchView:Lorg/telegram/ui/FilteredSearchView;
-
-    invoke-virtual {v1, v7}, Landroid/widget/FrameLayout;->setVisibility(I)V
-
-    .line 396
-    iget-object v1, v0, Lorg/telegram/ui/Components/SearchViewPager;->noMediaFiltersSearchView:Lorg/telegram/ui/FilteredSearchView;
-
-    invoke-virtual {v1, v4}, Landroid/widget/FrameLayout;->setAlpha(F)V
-
-    move/from16 v19, p4
-
-    goto :goto_7
-
-    .line 398
-    :cond_e
-    iget-object v5, v0, Lorg/telegram/ui/Components/SearchViewPager;->noMediaFiltersSearchView:Lorg/telegram/ui/FilteredSearchView;
-
-    invoke-virtual {v5}, Landroid/widget/FrameLayout;->getVisibility()I
-
-    move-result v5
-
-    if-eqz v5, :cond_f
-
-    .line 399
-    iget-object v5, v0, Lorg/telegram/ui/Components/SearchViewPager;->noMediaFiltersSearchView:Lorg/telegram/ui/FilteredSearchView;
-
-    invoke-virtual {v5, v7}, Landroid/widget/FrameLayout;->setVisibility(I)V
-
-    .line 400
-    iget-object v5, v0, Lorg/telegram/ui/Components/SearchViewPager;->noMediaFiltersSearchView:Lorg/telegram/ui/FilteredSearchView;
-
-    invoke-virtual {v5, v1}, Landroid/widget/FrameLayout;->setAlpha(F)V
-
-    goto :goto_6
-
-    :cond_f
-    move/from16 v19, p4
-
-    .line 403
-    :goto_6
     iget-object v1, v0, Lorg/telegram/ui/Components/SearchViewPager;->noMediaFiltersSearchView:Lorg/telegram/ui/FilteredSearchView;
 
     invoke-virtual {v1}, Landroid/widget/FrameLayout;->animate()Landroid/view/ViewPropertyAnimator;
 
     move-result-object v1
 
-    invoke-virtual {v1, v4}, Landroid/view/ViewPropertyAnimator;->alpha(F)Landroid/view/ViewPropertyAnimator;
+    invoke-virtual {v1, v4}, Landroid/view/ViewPropertyAnimator;->setListener(Landroid/animation/Animator$AnimatorListener;)Landroid/view/ViewPropertyAnimator;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Landroid/view/ViewPropertyAnimator;->cancel()V
+
+    const/high16 v1, 0x3f800000    # 1.0f
+
+    if-eqz p4, :cond_e
+
+    .line 395
+    iget-object v2, v0, Lorg/telegram/ui/Components/SearchViewPager;->noMediaFiltersSearchView:Lorg/telegram/ui/FilteredSearchView;
+
+    invoke-virtual {v2, v7}, Landroid/widget/FrameLayout;->setVisibility(I)V
+
+    .line 396
+    iget-object v2, v0, Lorg/telegram/ui/Components/SearchViewPager;->noMediaFiltersSearchView:Lorg/telegram/ui/FilteredSearchView;
+
+    invoke-virtual {v2, v1}, Landroid/widget/FrameLayout;->setAlpha(F)V
+
+    move/from16 v18, p4
+
+    goto :goto_7
+
+    .line 398
+    :cond_e
+    iget-object v4, v0, Lorg/telegram/ui/Components/SearchViewPager;->noMediaFiltersSearchView:Lorg/telegram/ui/FilteredSearchView;
+
+    invoke-virtual {v4}, Landroid/widget/FrameLayout;->getVisibility()I
+
+    move-result v4
+
+    if-eqz v4, :cond_f
+
+    .line 399
+    iget-object v4, v0, Lorg/telegram/ui/Components/SearchViewPager;->noMediaFiltersSearchView:Lorg/telegram/ui/FilteredSearchView;
+
+    invoke-virtual {v4, v7}, Landroid/widget/FrameLayout;->setVisibility(I)V
+
+    .line 400
+    iget-object v4, v0, Lorg/telegram/ui/Components/SearchViewPager;->noMediaFiltersSearchView:Lorg/telegram/ui/FilteredSearchView;
+
+    const/4 v6, 0x0
+
+    invoke-virtual {v4, v6}, Landroid/widget/FrameLayout;->setAlpha(F)V
+
+    goto :goto_6
+
+    :cond_f
+    move/from16 v5, p4
+
+    .line 403
+    :goto_6
+    iget-object v4, v0, Lorg/telegram/ui/Components/SearchViewPager;->noMediaFiltersSearchView:Lorg/telegram/ui/FilteredSearchView;
+
+    invoke-virtual {v4}, Landroid/widget/FrameLayout;->animate()Landroid/view/ViewPropertyAnimator;
+
+    move-result-object v4
+
+    invoke-virtual {v4, v1}, Landroid/view/ViewPropertyAnimator;->alpha(F)Landroid/view/ViewPropertyAnimator;
 
     move-result-object v1
 
@@ -1683,11 +1687,13 @@
 
     invoke-virtual {v1}, Landroid/view/ViewPropertyAnimator;->start()V
 
+    move/from16 v18, v5
+
     .line 405
     :goto_7
     iget-object v1, v0, Lorg/telegram/ui/Components/SearchViewPager;->noMediaFiltersSearchView:Lorg/telegram/ui/FilteredSearchView;
 
-    const/16 v17, 0x0
+    const/16 v19, 0x0
 
     move-wide v2, v8
 
@@ -1695,13 +1701,13 @@
 
     move-wide v6, v15
 
-    move-object/from16 v8, v17
+    move-object/from16 v8, v19
 
     move v9, v11
 
     move-object/from16 v10, p3
 
-    move/from16 v11, v19
+    move/from16 v11, v18
 
     invoke-virtual/range {v1 .. v11}, Lorg/telegram/ui/FilteredSearchView;->search(JJJLorg/telegram/ui/Adapters/FiltersView$MediaFilterData;ZLjava/lang/String;Z)V
 
@@ -1732,7 +1738,7 @@
     :cond_10
     const/4 v3, 0x0
 
-    const/16 v19, 0x1
+    const/4 v5, 0x1
 
     .line 410
     instance-of v4, v1, Lorg/telegram/ui/FilteredSearchView;
@@ -1742,21 +1748,19 @@
     .line 411
     check-cast v1, Lorg/telegram/ui/FilteredSearchView;
 
-    const-wide/16 v4, 0x0
+    const-wide/16 v17, 0x0
 
-    cmp-long v12, v6, v4
+    cmp-long v4, v6, v17
 
-    if-eqz v12, :cond_11
-
-    const/4 v4, 0x1
+    if-eqz v4, :cond_11
 
     goto :goto_9
 
     :cond_11
-    const/4 v4, 0x0
+    move v5, v3
 
     :goto_9
-    invoke-virtual {v1, v4}, Lorg/telegram/ui/FilteredSearchView;->setUseFromUserAsAvatar(Z)V
+    invoke-virtual {v1, v5}, Lorg/telegram/ui/FilteredSearchView;->setUseFromUserAsAvatar(Z)V
 
     .line 412
     iget v4, v0, Lorg/telegram/ui/Components/SearchViewPager;->keyboardSize:I
@@ -2116,12 +2120,12 @@
 
     if-eqz v1, :cond_3
 
-    const/4 v1, 0x1
+    move v1, v0
 
     goto :goto_0
 
     :cond_3
-    const/4 v1, 0x0
+    move v1, v2
 
     .line 474
     :goto_0
@@ -2140,7 +2144,7 @@
     goto :goto_1
 
     :cond_4
-    const/4 v1, 0x0
+    move v1, v2
 
     :goto_1
     add-int/lit8 v1, v1, 0x48
@@ -2252,7 +2256,7 @@
 
     if-eqz v0, :cond_7
 
-    const/4 v0, 0x0
+    move v0, v2
 
     goto :goto_2
 
@@ -2294,7 +2298,7 @@
 
     invoke-virtual {p1}, Ljava/util/HashMap;->clear()V
 
-    const/4 p1, 0x0
+    move p1, v2
 
     .line 495
     :goto_3
@@ -2575,7 +2579,7 @@
 
     const/4 v2, 0x0
 
-    const/4 v3, 0x0
+    move v3, v2
 
     .line 760
     :goto_0
@@ -2635,7 +2639,7 @@
     goto :goto_0
 
     :cond_2
-    const/4 v3, 0x0
+    move v3, v2
 
     .line 767
     :goto_1
@@ -2976,7 +2980,7 @@
 .end method
 
 .method public messagesDeleted(JLjava/util/ArrayList;)V
-    .locals 11
+    .locals 10
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(J",
@@ -2995,7 +2999,7 @@
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_0
     if-ge v2, v0, :cond_1
@@ -3025,7 +3029,7 @@
     goto :goto_0
 
     :cond_1
-    const/4 v0, 0x0
+    move v0, v1
 
     .line 880
     :goto_1
@@ -3086,7 +3090,7 @@
 
     invoke-direct {v2, v3}, Ljava/util/ArrayList;-><init>(Ljava/util/Collection;)V
 
-    const/4 v3, 0x0
+    move v3, v1
 
     .line 889
     :goto_2
@@ -3121,38 +3125,38 @@
 
     const-wide/16 v8, 0x0
 
-    cmp-long v10, v6, v8
+    cmp-long v8, v6, v8
 
-    if-gez v10, :cond_4
+    if-gez v8, :cond_4
 
     neg-long v6, v6
 
-    long-to-int v7, v6
+    long-to-int v6, v6
 
-    int-to-long v8, v7
+    int-to-long v7, v6
 
     .line 894
-    iget v6, p0, Lorg/telegram/ui/Components/SearchViewPager;->currentAccount:I
+    iget v9, p0, Lorg/telegram/ui/Components/SearchViewPager;->currentAccount:I
 
-    invoke-static {v8, v9, v6}, Lorg/telegram/messenger/ChatObject;->isChannel(JI)Z
+    invoke-static {v7, v8, v9}, Lorg/telegram/messenger/ChatObject;->isChannel(JI)Z
 
-    move-result v6
+    move-result v7
 
-    if-eqz v6, :cond_4
+    if-eqz v7, :cond_4
 
     goto :goto_3
 
     :cond_4
-    const/4 v7, 0x0
+    move v6, v1
 
     :goto_3
-    int-to-long v6, v7
+    int-to-long v6, v6
 
-    cmp-long v8, v6, p1
+    cmp-long v6, v6, p1
 
-    if-nez v8, :cond_6
+    if-nez v6, :cond_6
 
-    const/4 v6, 0x0
+    move v6, v1
 
     .line 896
     :goto_4
@@ -3205,7 +3209,7 @@
 
     move-result p1
 
-    const/4 p2, 0x0
+    move p2, v1
 
     :goto_5
     if-ge p2, p1, :cond_8
@@ -3664,7 +3668,7 @@
     goto :goto_0
 
     :cond_2
-    const/4 v0, 0x0
+    move v0, v2
 
     .line 749
     :goto_0
@@ -3853,7 +3857,7 @@
     goto :goto_0
 
     :cond_0
-    const/4 v0, 0x0
+    move v0, v1
 
     .line 855
     :goto_0
@@ -4097,12 +4101,12 @@
 
     if-ne v4, v2, :cond_3
 
-    const/4 v4, 0x0
+    move v4, v1
 
     goto :goto_1
 
     :cond_3
-    const/16 v4, 0x8
+    move v4, v3
 
     :goto_1
     invoke-virtual {p1, v4}, Landroid/widget/FrameLayout;->setVisibility(I)V
@@ -4120,12 +4124,12 @@
 
     if-eqz p1, :cond_5
 
-    const/4 v4, 0x0
+    move v4, v1
 
     goto :goto_2
 
     :cond_5
-    const/16 v4, 0x8
+    move v4, v3
 
     .line 679
     :goto_2
@@ -4243,12 +4247,12 @@
 
     if-nez v4, :cond_9
 
-    const/4 p1, 0x0
+    move p1, v1
 
     goto :goto_4
 
     :cond_a
-    const/4 p1, 0x1
+    move p1, v2
 
     .line 706
     :goto_4
@@ -4259,7 +4263,7 @@
     goto :goto_5
 
     :cond_b
-    const/16 v1, 0x8
+    move v1, v3
 
     :goto_5
     invoke-virtual {v4, v1}, Landroid/widget/FrameLayout;->setVisibility(I)V
@@ -4387,7 +4391,7 @@
 
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    move v1, v0
 
     .line 794
     :goto_0
@@ -4420,7 +4424,7 @@
 
     move-result v3
 
-    const/4 v4, 0x0
+    move v4, v0
 
     :goto_1
     if-ge v4, v3, :cond_1
@@ -4458,7 +4462,7 @@
 
     move-result v1
 
-    const/4 v2, 0x0
+    move v2, v0
 
     :goto_2
     if-ge v2, v1, :cond_5
@@ -4487,7 +4491,7 @@
 
     move-result v4
 
-    const/4 v5, 0x0
+    move v5, v0
 
     :goto_3
     if-ge v5, v4, :cond_4
@@ -4531,7 +4535,7 @@
 
     move-result v2
 
-    const/4 v3, 0x0
+    move v3, v0
 
     :goto_4
     if-ge v3, v2, :cond_7

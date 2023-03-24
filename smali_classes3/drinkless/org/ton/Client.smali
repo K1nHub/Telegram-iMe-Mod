@@ -334,7 +334,7 @@
 .end method
 
 .method private processResult(JLdrinkless/org/ton/TonApi$Object;)V
-    .locals 3
+    .locals 2
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0,
@@ -348,9 +348,9 @@
 
     const-wide/16 v0, 0x0
 
-    cmp-long v2, p1, v0
+    cmp-long v0, p1, v0
 
-    if-nez v2, :cond_0
+    if-nez v0, :cond_0
 
     .line 239
     iget-object v0, p0, Ldrinkless/org/ton/Client;->handlers:Lj$/util/concurrent/ConcurrentHashMap;

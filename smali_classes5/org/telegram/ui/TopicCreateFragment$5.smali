@@ -124,7 +124,7 @@
 
     const/4 p1, 0x1
 
-    const/4 p4, 0x1
+    move p4, p1
 
     .line 437
     :cond_1

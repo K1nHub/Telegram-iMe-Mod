@@ -218,7 +218,7 @@
 
     check-cast v4, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-    const/4 v5, 0x0
+    move v5, v0
 
     .line 114
     :goto_0
@@ -369,7 +369,7 @@
 
     sget v1, Lorg/telegram/messenger/AndroidUtilities;->touchSlop:F
 
-    mul-float v1, v1, v3
+    mul-float/2addr v1, v3
 
     cmpl-float p1, p1, v1
 
@@ -390,7 +390,7 @@
 
     sget v1, Lorg/telegram/messenger/AndroidUtilities;->touchSlop:F
 
-    mul-float v1, v1, v3
+    mul-float/2addr v1, v3
 
     cmpl-float p1, p1, v1
 

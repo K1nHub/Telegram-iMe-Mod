@@ -121,12 +121,12 @@
 
     if-eqz v2, :cond_3
 
-    const/4 v6, 0x1
+    move v6, v5
 
     goto :goto_0
 
     :cond_3
-    const/4 v6, 0x0
+    move v6, v3
 
     :goto_0
     add-int/2addr v6, v5
@@ -153,7 +153,7 @@
 
     invoke-direct {v2}, Ljava/util/ArrayList;-><init>()V
 
-    const/4 v8, 0x0
+    move v8, v3
 
     .line 844
     :goto_1
@@ -218,9 +218,9 @@
     move-object v11, v4
 
     :cond_5
-    const/4 v12, 0x0
+    move v12, v3
 
-    const/4 v13, 0x0
+    move v13, v12
 
     :goto_2
     if-ge v12, v6, :cond_9
@@ -282,7 +282,7 @@
     if-eqz v3, :cond_7
 
     :cond_6
-    const/4 v13, 0x1
+    move v13, v5
 
     :cond_7
     if-eqz v13, :cond_8

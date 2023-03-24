@@ -109,14 +109,14 @@
     goto :goto_0
 
     :cond_0
-    const/4 p2, 0x0
+    move p2, v3
 
     :goto_0
     sget-boolean v4, Lorg/telegram/messenger/LocaleController;->isRTL:Z
 
     if-eqz v4, :cond_1
 
-    const/4 v2, 0x0
+    move v2, v3
 
     goto :goto_1
 

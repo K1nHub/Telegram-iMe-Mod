@@ -36,9 +36,9 @@
 
 .field public static final wallet_link_text_light:I = 0x7f06013d
 
-.field public static final wallet_primary_text_holo_light:I = 0x7f060144
+.field public static final wallet_primary_text_holo_light:I = 0x7f060145
 
-.field public static final wallet_secondary_text_holo_dark:I = 0x7f060145
+.field public static final wallet_secondary_text_holo_dark:I = 0x7f060146
 
 
 # direct methods

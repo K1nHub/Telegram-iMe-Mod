@@ -142,7 +142,7 @@
 
     sub-float v4, v5, v4
 
-    mul-float v2, v2, v4
+    mul-float/2addr v2, v4
 
     add-float/2addr v3, v2
 
@@ -162,7 +162,7 @@
 
     sub-float/2addr v5, v6
 
-    mul-float v2, v2, v5
+    mul-float/2addr v2, v5
 
     add-float/2addr v4, v2
 

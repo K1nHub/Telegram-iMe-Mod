@@ -377,7 +377,7 @@
 
     if-nez p2, :cond_0
 
-    const/4 v1, 0x0
+    move v1, v0
 
     goto :goto_0
 
@@ -1154,10 +1154,10 @@
 
     iput p1, p4, Lorg/apache/commons/codec/binary/BaseNCodec$Context;->pos:I
 
-    goto :goto_2
+    goto/16 :goto_2
 
     :cond_5
-    const/4 v2, 0x0
+    move v2, v0
 
     :goto_1
     if-ge v2, p3, :cond_8

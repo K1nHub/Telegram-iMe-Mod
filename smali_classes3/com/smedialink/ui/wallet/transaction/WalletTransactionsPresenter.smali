@@ -447,14 +447,14 @@
 
     if-eqz p5, :cond_0
 
-    const/4 p1, 0x0
+    move p1, v0
 
     :cond_0
     and-int/lit8 p5, p4, 0x2
 
     if-eqz p5, :cond_1
 
-    const/4 p2, 0x0
+    move p2, v0
 
     :cond_1
     and-int/lit8 p4, p4, 0x4
@@ -752,7 +752,7 @@
     .line 117
     new-instance v1, Lcom/smedialink/ui/wallet/transaction/WalletTransactionsPresenter$loadTransactions$1;
 
-    invoke-direct {v1, p0, v0}, Lcom/smedialink/ui/wallet/transaction/WalletTransactionsPresenter$loadTransactions$1;-><init>(Lcom/smedialink/ui/wallet/transaction/WalletTransactionsPresenter;Z)V
+    invoke-direct {v1, p0, v0, p1}, Lcom/smedialink/ui/wallet/transaction/WalletTransactionsPresenter$loadTransactions$1;-><init>(Lcom/smedialink/ui/wallet/transaction/WalletTransactionsPresenter;ZZ)V
 
     invoke-direct {p0, p1, v0, p2, v1}, Lcom/smedialink/ui/wallet/transaction/WalletTransactionsPresenter;->loadInternal(ZZLio/reactivex/Observable;Lkotlin/jvm/functions/Function1;)V
 
@@ -1264,13 +1264,29 @@
     .line 80
     invoke-direct {p0, p1, p2}, Lcom/smedialink/ui/wallet/transaction/WalletTransactionsPresenter;->loadStakingOperations(ZZ)V
 
+    goto :goto_2
+
+    :cond_1
+    if-nez p1, :cond_3
+
+    if-eqz p2, :cond_2
+
     goto :goto_0
 
+    :cond_2
+    const/4 p1, 0x0
+
+    goto :goto_1
+
+    :cond_3
+    :goto_0
+    const/4 p1, 0x1
+
     .line 82
-    :cond_1
+    :goto_1
     invoke-direct {p0, p1, p3}, Lcom/smedialink/ui/wallet/transaction/WalletTransactionsPresenter;->loadTransactions(ZLjava/lang/String;)V
 
-    :goto_0
+    :goto_2
     return-void
 .end method
 

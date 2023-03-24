@@ -12,7 +12,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3286R;
+import org.telegram.messenger.C3301R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.p048ui.ActionBar.Theme;
 import org.telegram.p048ui.Components.LayoutHelper;
@@ -68,8 +68,8 @@ public class TooManyCommunitiesHintCell extends FrameLayout {
         frameLayout.setWillNotDraw(false);
         this.imageLayout.addView(this.imageView, LayoutHelper.createFrame(-2, -2, 1));
         addView(this.imageLayout, LayoutHelper.createFrame(-2, -2, 49, 0, 12, 0, 6));
-        this.headerTextView.setText(LocaleController.getString("TooManyCommunities", C3286R.string.TooManyCommunities));
-        this.imageView.setImageResource(C3286R.C3288drawable.groups_limit1);
+        this.headerTextView.setText(LocaleController.getString("TooManyCommunities", C3301R.string.TooManyCommunities));
+        this.imageView.setImageResource(C3301R.C3303drawable.groups_limit1);
     }
 
     public void setMessageText(String str) {

@@ -60,7 +60,7 @@
 
     const/high16 v1, 0x41d00000    # 26.0f
 
-    mul-float p2, p2, v1
+    mul-float/2addr p2, v1
 
     invoke-static {p2}, Lorg/telegram/messenger/AndroidUtilities;->dp(F)I
 
@@ -69,7 +69,7 @@
     goto :goto_0
 
     :cond_0
-    const/4 p2, 0x0
+    move p2, v0
 
     :goto_0
     add-int/2addr p1, p2

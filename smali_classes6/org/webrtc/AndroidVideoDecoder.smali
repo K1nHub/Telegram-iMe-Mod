@@ -375,7 +375,7 @@
 
     add-int/lit8 v1, v10, -0x1
 
-    mul-int v1, v1, v11
+    mul-int/2addr v1, v11
 
     add-int/2addr v12, v1
 
@@ -392,7 +392,7 @@
 
     move-result v2
 
-    mul-int v2, v2, v10
+    mul-int/2addr v2, v10
 
     invoke-virtual {v1, v2}, Ljava/nio/ByteBuffer;->position(I)Ljava/nio/Buffer;
 
@@ -425,7 +425,7 @@
 
     move v7, v9
 
-    const/4 v1, 0x1
+    move v1, v8
 
     move v8, v10
 
@@ -438,7 +438,7 @@
 
     add-int/lit8 v1, v10, -0x1
 
-    mul-int v11, v11, v1
+    mul-int/2addr v11, v1
 
     add-int/2addr v13, v11
 
@@ -455,7 +455,7 @@
 
     move-result v2
 
-    mul-int v2, v2, v10
+    mul-int/2addr v2, v10
 
     invoke-virtual {v1, v2}, Ljava/nio/ByteBuffer;->position(I)Ljava/nio/Buffer;
 
@@ -698,7 +698,7 @@
 
     const-wide/16 v1, 0x3e8
 
-    mul-long p1, p1, v1
+    mul-long/2addr p1, v1
 
     .line 504
     new-instance v1, Lorg/webrtc/VideoFrame;
@@ -1051,7 +1051,7 @@
 
     const/4 v2, 0x0
 
-    const/4 v3, 0x0
+    move v3, v2
 
     :goto_0
     if-ge v3, v1, :cond_1
@@ -2252,9 +2252,9 @@
 
     sub-long/2addr v4, v6
 
-    long-to-int v5, v4
+    long-to-int v4, v4
 
-    invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v4
 
@@ -2389,7 +2389,7 @@
 
     const-wide/16 v4, 0x3e8
 
-    mul-long v2, v2, v4
+    mul-long/2addr v2, v4
 
     .line 452
     iget-object v1, v1, Lorg/webrtc/AndroidVideoDecoder$DecodedTextureMetadata;->decodeTimeMs:Ljava/lang/Integer;

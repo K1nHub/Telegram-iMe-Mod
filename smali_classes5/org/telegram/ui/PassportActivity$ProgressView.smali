@@ -82,7 +82,7 @@
 
     iget v1, p0, Lorg/telegram/ui/PassportActivity$ProgressView;->progress:F
 
-    mul-float v0, v0, v1
+    mul-float/2addr v0, v1
 
     float-to-int v0, v0
 

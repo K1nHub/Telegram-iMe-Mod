@@ -271,7 +271,7 @@
 
     invoke-virtual {v0}, Lorg/telegram/SQLite/SQLitePreparedStatement;->dispose()V
 
-    const/4 v0, 0x4
+    move v0, v3
 
     :cond_0
     const/4 v4, 0x6
@@ -353,7 +353,7 @@
 
     move-result v11
 
-    const/4 v12, 0x0
+    move v12, v7
 
     .line 62
     :goto_0
@@ -447,7 +447,7 @@
 
     invoke-virtual {v0}, Lorg/telegram/SQLite/SQLitePreparedStatement;->dispose()V
 
-    const/4 v0, 0x6
+    move v0, v4
 
     :cond_3
     const/4 v8, 0x7
@@ -532,7 +532,7 @@
 
     invoke-virtual {v0}, Lorg/telegram/SQLite/SQLitePreparedStatement;->dispose()V
 
-    const/4 v0, 0x7
+    move v0, v8
 
     :cond_4
     const/16 v9, 0x9
@@ -639,7 +639,7 @@
 
     invoke-virtual {v0}, Lorg/telegram/SQLite/SQLitePreparedStatement;->dispose()V
 
-    const/16 v0, 0xa
+    move v0, v11
 
     :cond_6
     const/16 v12, 0xb
@@ -672,7 +672,7 @@
 
     invoke-virtual {v0}, Lorg/telegram/SQLite/SQLitePreparedStatement;->dispose()V
 
-    const/16 v0, 0xb
+    move v0, v12
 
     :cond_7
     const/16 v13, 0xc
@@ -814,7 +814,7 @@
 
     invoke-virtual {v0}, Lorg/telegram/SQLite/SQLitePreparedStatement;->dispose()V
 
-    const/16 v0, 0xd
+    move v0, v14
 
     :cond_9
     const/16 v15, 0xe
@@ -847,7 +847,7 @@
 
     invoke-virtual {v0}, Lorg/telegram/SQLite/SQLitePreparedStatement;->dispose()V
 
-    const/16 v0, 0xe
+    move v0, v15
 
     :cond_a
     const/16 v14, 0xf
@@ -880,7 +880,7 @@
 
     invoke-virtual {v0}, Lorg/telegram/SQLite/SQLitePreparedStatement;->dispose()V
 
-    const/16 v0, 0xf
+    move v0, v14
 
     :cond_b
     const/16 v15, 0x10
@@ -913,7 +913,7 @@
 
     invoke-virtual {v0}, Lorg/telegram/SQLite/SQLitePreparedStatement;->dispose()V
 
-    const/16 v0, 0x10
+    move v0, v15
 
     :cond_c
     const/16 v14, 0x11
@@ -959,7 +959,7 @@
 
     invoke-virtual {v0}, Lorg/telegram/SQLite/SQLitePreparedStatement;->dispose()V
 
-    const/16 v0, 0x11
+    move v0, v14
 
     :cond_d
     const/16 v15, 0x12
@@ -979,7 +979,7 @@
 
     invoke-virtual {v0}, Lorg/telegram/SQLite/SQLitePreparedStatement;->dispose()V
 
-    const/16 v0, 0x12
+    move v0, v15
 
     :cond_e
     if-ne v0, v15, :cond_f
@@ -1720,7 +1720,7 @@
 
     invoke-virtual {v0}, Lorg/telegram/SQLite/SQLitePreparedStatement;->dispose()V
 
-    const/16 v0, 0x20
+    move v0, v11
 
     :cond_1e
     if-ne v0, v11, :cond_1f
@@ -4312,9 +4312,9 @@
 
     shr-long/2addr v11, v13
 
-    long-to-int v12, v11
+    long-to-int v11, v11
 
-    int-to-long v11, v12
+    int-to-long v11, v11
 
     .line 672
     invoke-static {v11, v12}, Lorg/telegram/messenger/DialogObject;->makeEncryptedDialogId(J)J
@@ -4516,9 +4516,9 @@
 
     shr-long/2addr v11, v13
 
-    long-to-int v12, v11
+    long-to-int v11, v11
 
-    int-to-long v11, v12
+    int-to-long v11, v11
 
     .line 728
     invoke-static {v11, v12}, Lorg/telegram/messenger/DialogObject;->makeEncryptedDialogId(J)J
@@ -4623,9 +4623,9 @@
 
     shr-long/2addr v11, v13
 
-    long-to-int v12, v11
+    long-to-int v11, v11
 
-    int-to-long v11, v12
+    int-to-long v11, v11
 
     .line 758
     invoke-static {v11, v12}, Lorg/telegram/messenger/DialogObject;->makeEncryptedDialogId(J)J
@@ -5066,116 +5066,112 @@
 
     shr-long v0, v13, v4
 
-    long-to-int v1, v0
+    long-to-int v0, v0
 
     if-gez v5, :cond_6c
 
-    const/4 v4, 0x0
+    const/4 v1, 0x0
 
     .line 837
-    invoke-virtual {v8, v4}, Lorg/telegram/tgnet/NativeByteBuffer;->readInt32(Z)I
+    invoke-virtual {v8, v1}, Lorg/telegram/tgnet/NativeByteBuffer;->readInt32(Z)I
 
-    move-result v0
+    move-result v4
 
-    invoke-static {v8, v0, v4}, Lorg/telegram/tgnet/TLRPC$Message;->TLdeserialize(Lorg/telegram/tgnet/AbstractSerializedData;IZ)Lorg/telegram/tgnet/TLRPC$Message;
+    invoke-static {v8, v4, v1}, Lorg/telegram/tgnet/TLRPC$Message;->TLdeserialize(Lorg/telegram/tgnet/AbstractSerializedData;IZ)Lorg/telegram/tgnet/TLRPC$Message;
 
-    move-result-object v0
+    move-result-object v4
 
-    move/from16 v4, v17
+    move/from16 v1, v17
 
-    move/from16 v17, v1
+    move/from16 v17, v0
 
-    if-eqz v0, :cond_6b
+    if-eqz v4, :cond_6b
 
     .line 839
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/messenger/BaseController;->getUserConfig()Lorg/telegram/messenger/UserConfig;
 
-    move-result-object v1
+    move-result-object v0
 
-    move/from16 v24, v2
+    move/from16 v24, v1
 
-    iget-wide v1, v1, Lorg/telegram/messenger/UserConfig;->clientUserId:J
+    iget-wide v0, v0, Lorg/telegram/messenger/UserConfig;->clientUserId:J
 
-    invoke-virtual {v0, v8, v1, v2}, Lorg/telegram/tgnet/TLRPC$Message;->readAttachPath(Lorg/telegram/tgnet/AbstractSerializedData;J)V
+    invoke-virtual {v4, v8, v0, v1}, Lorg/telegram/tgnet/TLRPC$Message;->readAttachPath(Lorg/telegram/tgnet/AbstractSerializedData;J)V
 
     .line 840
-    iget-object v1, v0, Lorg/telegram/tgnet/TLRPC$Message;->params:Ljava/util/HashMap;
+    iget-object v0, v4, Lorg/telegram/tgnet/TLRPC$Message;->params:Ljava/util/HashMap;
 
-    if-nez v1, :cond_6a
+    if-nez v0, :cond_6a
 
     .line 841
-    new-instance v1, Ljava/util/HashMap;
+    new-instance v0, Ljava/util/HashMap;
 
-    invoke-direct {v1}, Ljava/util/HashMap;-><init>()V
+    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
-    iput-object v1, v0, Lorg/telegram/tgnet/TLRPC$Message;->params:Ljava/util/HashMap;
+    iput-object v0, v4, Lorg/telegram/tgnet/TLRPC$Message;->params:Ljava/util/HashMap;
 
     .line 842
-    new-instance v2, Ljava/lang/StringBuilder;
+    new-instance v1, Ljava/lang/StringBuilder;
 
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    move-object/from16 v25, v15
+    move/from16 v25, v2
 
-    const-string v15, ""
+    const-string v2, ""
 
-    invoke-virtual {v2, v15}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v2, v5}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v5}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v1
 
-    const-string v5, "fwd_peer"
+    const-string v2, "fwd_peer"
 
-    invoke-virtual {v1, v5, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v0, v2, v1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     goto :goto_11
 
     :cond_6a
-    move-object/from16 v25, v15
+    move/from16 v25, v2
 
     .line 844
     :goto_11
     invoke-virtual {v8}, Lorg/telegram/tgnet/NativeByteBuffer;->reuse()V
 
     .line 845
-    new-instance v1, Lorg/telegram/tgnet/NativeByteBuffer;
+    new-instance v0, Lorg/telegram/tgnet/NativeByteBuffer;
 
-    invoke-virtual {v0}, Lorg/telegram/tgnet/TLObject;->getObjectSize()I
+    invoke-virtual {v4}, Lorg/telegram/tgnet/TLObject;->getObjectSize()I
 
-    move-result v2
+    move-result v1
 
-    invoke-direct {v1, v2}, Lorg/telegram/tgnet/NativeByteBuffer;-><init>(I)V
+    invoke-direct {v0, v1}, Lorg/telegram/tgnet/NativeByteBuffer;-><init>(I)V
 
     .line 846
-    invoke-virtual {v0, v1}, Lorg/telegram/tgnet/TLObject;->serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
+    invoke-virtual {v4, v0}, Lorg/telegram/tgnet/TLObject;->serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
 
-    move-object v8, v1
+    move-object v8, v0
 
     goto :goto_12
 
     :cond_6b
-    move/from16 v24, v2
+    move/from16 v24, v1
 
-    move-object/from16 v25, v15
+    move/from16 v25, v2
 
     :goto_12
-    const/4 v15, 0x0
+    const/4 v5, 0x0
 
     goto :goto_13
 
     :cond_6c
-    move/from16 v24, v2
+    move/from16 v25, v2
 
-    move-object/from16 v25, v15
+    move/from16 v24, v17
 
-    move/from16 v4, v17
-
-    move/from16 v17, v1
-
-    move v15, v5
+    move/from16 v17, v0
 
     .line 851
     :goto_13
@@ -5213,135 +5209,133 @@
     .line 857
     invoke-virtual {v3, v1, v8}, Lorg/telegram/SQLite/SQLitePreparedStatement;->bindByteBuffer(ILorg/telegram/tgnet/NativeByteBuffer;)V
 
+    move/from16 v0, v24
+
     const/4 v2, 0x7
 
     .line 858
-    invoke-virtual {v3, v2, v4}, Lorg/telegram/SQLite/SQLitePreparedStatement;->bindInteger(II)V
+    invoke-virtual {v3, v2, v0}, Lorg/telegram/SQLite/SQLitePreparedStatement;->bindInteger(II)V
 
     const/16 v4, 0x8
 
     .line 859
-    invoke-virtual {v3, v4, v15}, Lorg/telegram/SQLite/SQLitePreparedStatement;->bindInteger(II)V
+    invoke-virtual {v3, v4, v5}, Lorg/telegram/SQLite/SQLitePreparedStatement;->bindInteger(II)V
 
     const/16 v5, 0x9
 
     .line 860
     invoke-virtual {v3, v5, v6}, Lorg/telegram/SQLite/SQLitePreparedStatement;->bindInteger(II)V
 
-    if-eqz v25, :cond_6d
-
-    move-object/from16 v0, v25
+    if-eqz v15, :cond_6d
 
     const/16 v6, 0xa
 
     .line 862
-    invoke-virtual {v3, v6, v0}, Lorg/telegram/SQLite/SQLitePreparedStatement;->bindByteBuffer(ILorg/telegram/tgnet/NativeByteBuffer;)V
+    invoke-virtual {v3, v6, v15}, Lorg/telegram/SQLite/SQLitePreparedStatement;->bindByteBuffer(ILorg/telegram/tgnet/NativeByteBuffer;)V
 
     goto :goto_14
 
     :cond_6d
-    move-object/from16 v0, v25
-
     const/16 v6, 0xa
 
     .line 864
     invoke-virtual {v3, v6}, Lorg/telegram/SQLite/SQLitePreparedStatement;->bindNull(I)V
 
     :goto_14
-    move/from16 v7, v23
+    move/from16 v0, v23
 
-    const/16 v9, 0xb
+    const/16 v7, 0xb
 
     .line 866
-    invoke-virtual {v3, v9, v7}, Lorg/telegram/SQLite/SQLitePreparedStatement;->bindInteger(II)V
+    invoke-virtual {v3, v7, v0}, Lorg/telegram/SQLite/SQLitePreparedStatement;->bindInteger(II)V
 
-    move/from16 v7, v19
+    move/from16 v0, v19
 
-    const/16 v10, 0xc
+    const/16 v9, 0xc
 
     .line 867
-    invoke-virtual {v3, v10, v7}, Lorg/telegram/SQLite/SQLitePreparedStatement;->bindInteger(II)V
+    invoke-virtual {v3, v9, v0}, Lorg/telegram/SQLite/SQLitePreparedStatement;->bindInteger(II)V
 
-    move/from16 v7, v20
+    move/from16 v0, v20
 
-    const/16 v11, 0xd
+    const/16 v10, 0xd
 
     .line 868
-    invoke-virtual {v3, v11, v7}, Lorg/telegram/SQLite/SQLitePreparedStatement;->bindInteger(II)V
+    invoke-virtual {v3, v10, v0}, Lorg/telegram/SQLite/SQLitePreparedStatement;->bindInteger(II)V
 
     if-eqz v21, :cond_6e
 
-    move-object/from16 v7, v21
+    move-object/from16 v0, v21
 
-    const/16 v12, 0xe
+    const/16 v11, 0xe
 
     .line 870
-    invoke-virtual {v3, v12, v7}, Lorg/telegram/SQLite/SQLitePreparedStatement;->bindByteBuffer(ILorg/telegram/tgnet/NativeByteBuffer;)V
+    invoke-virtual {v3, v11, v0}, Lorg/telegram/SQLite/SQLitePreparedStatement;->bindByteBuffer(ILorg/telegram/tgnet/NativeByteBuffer;)V
 
     goto :goto_15
 
     :cond_6e
-    move-object/from16 v7, v21
+    move-object/from16 v0, v21
 
-    const/16 v12, 0xe
+    const/16 v11, 0xe
 
     .line 872
-    invoke-virtual {v3, v12}, Lorg/telegram/SQLite/SQLitePreparedStatement;->bindNull(I)V
+    invoke-virtual {v3, v11}, Lorg/telegram/SQLite/SQLitePreparedStatement;->bindNull(I)V
 
     :goto_15
-    move/from16 v13, v24
+    move/from16 v12, v25
 
-    const/16 v14, 0xf
+    const/16 v13, 0xf
 
     .line 874
-    invoke-virtual {v3, v14, v13}, Lorg/telegram/SQLite/SQLitePreparedStatement;->bindInteger(II)V
-
-    const/16 v13, 0x10
+    invoke-virtual {v3, v13, v12}, Lorg/telegram/SQLite/SQLitePreparedStatement;->bindInteger(II)V
 
     if-lez v17, :cond_6f
 
-    const/4 v15, 0x1
+    const/4 v12, 0x1
 
     goto :goto_16
 
     :cond_6f
-    const/4 v15, 0x0
+    const/4 v12, 0x0
+
+    :goto_16
+    const/16 v14, 0x10
 
     .line 875
-    :goto_16
-    invoke-virtual {v3, v13, v15}, Lorg/telegram/SQLite/SQLitePreparedStatement;->bindInteger(II)V
+    invoke-virtual {v3, v14, v12}, Lorg/telegram/SQLite/SQLitePreparedStatement;->bindInteger(II)V
 
     .line 876
     invoke-virtual {v3}, Lorg/telegram/SQLite/SQLitePreparedStatement;->step()I
 
-    if-eqz v0, :cond_70
+    if-eqz v15, :cond_70
 
     .line 878
-    invoke-virtual {v0}, Lorg/telegram/tgnet/NativeByteBuffer;->reuse()V
+    invoke-virtual {v15}, Lorg/telegram/tgnet/NativeByteBuffer;->reuse()V
 
     :cond_70
-    if-eqz v7, :cond_71
+    if-eqz v0, :cond_71
 
     .line 881
-    invoke-virtual {v7}, Lorg/telegram/tgnet/NativeByteBuffer;->reuse()V
+    invoke-virtual {v0}, Lorg/telegram/tgnet/NativeByteBuffer;->reuse()V
 
     .line 883
     :cond_71
     invoke-virtual {v8}, Lorg/telegram/tgnet/NativeByteBuffer;->reuse()V
 
-    move-object/from16 v1, p0
+    move v4, v1
 
     move-object/from16 v2, v18
 
     move-object/from16 v0, v22
-
-    const/4 v4, 0x6
 
     const/4 v5, 0x2
 
     const/4 v6, 0x1
 
     const/4 v10, 0x3
+
+    move-object/from16 v1, p0
 
     goto/16 :goto_10
 
@@ -5945,9 +5939,9 @@
 
     shr-long/2addr v7, v6
 
-    long-to-int v8, v7
+    long-to-int v7, v7
 
-    int-to-long v7, v8
+    int-to-long v7, v7
 
     .line 1009
     invoke-static {v7, v8}, Lorg/telegram/messenger/DialogObject;->makeEncryptedDialogId(J)J
@@ -7381,18 +7375,64 @@
     const/16 v0, 0x72
 
     :cond_9f
+    const/16 v1, 0x72
+
+    if-ne v0, v1, :cond_a0
+
+    const-string v0, "CREATE TABLE bot_keyboard_topics(uid INTEGER, tid INTEGER, mid INTEGER, info BLOB, PRIMARY KEY(uid, tid))"
+
+    .line 1245
+    invoke-virtual {v3, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lorg/telegram/SQLite/SQLitePreparedStatement;->stepThis()Lorg/telegram/SQLite/SQLitePreparedStatement;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lorg/telegram/SQLite/SQLitePreparedStatement;->dispose()V
+
+    const-string v0, "CREATE INDEX IF NOT EXISTS bot_keyboard_topics_idx_mid_v2 ON bot_keyboard_topics(mid, uid, tid);"
+
+    .line 1246
+    invoke-virtual {v3, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lorg/telegram/SQLite/SQLitePreparedStatement;->stepThis()Lorg/telegram/SQLite/SQLitePreparedStatement;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lorg/telegram/SQLite/SQLitePreparedStatement;->dispose()V
+
+    const-string v0, "PRAGMA user_version = 115"
+
+    .line 1247
+    invoke-virtual {v3, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lorg/telegram/SQLite/SQLitePreparedStatement;->stepThis()Lorg/telegram/SQLite/SQLitePreparedStatement;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lorg/telegram/SQLite/SQLitePreparedStatement;->dispose()V
+
+    const/16 v0, 0x73
+
+    :cond_a0
     return v0
 .end method
 
 .method public static recoverDatabase(Ljava/io/File;Ljava/io/File;Ljava/io/File;I)Z
     .locals 18
 
-    .line 1249
+    .line 1255
     invoke-static {}, Lorg/telegram/messenger/ApplicationLoader;->getFilesDirFixed()Ljava/io/File;
 
     move-result-object v0
 
-    .line 1250
+    .line 1256
     new-instance v1, Ljava/io/File;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -7417,38 +7457,38 @@
 
     invoke-direct {v1, v0, v2}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
 
-    .line 1251
+    .line 1257
     invoke-virtual {v1}, Ljava/io/File;->mkdirs()Z
 
-    .line 1253
+    .line 1259
     new-instance v2, Ljava/io/File;
 
     const-string v0, "cache4.db"
 
     invoke-direct {v2, v1, v0}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
 
-    .line 1254
+    .line 1260
     new-instance v3, Ljava/io/File;
 
     const-string v0, "cache4.db-wal"
 
     invoke-direct {v3, v1, v0}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
 
-    .line 1255
+    .line 1261
     new-instance v4, Ljava/io/File;
 
     const-string v0, "cache4.db-shm"
 
     invoke-direct {v4, v1, v0}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
 
-    .line 1257
+    .line 1263
     :try_start_0
     invoke-virtual {v2}, Ljava/io/File;->delete()Z
 
-    .line 1258
+    .line 1264
     invoke-virtual {v3}, Ljava/io/File;->delete()Z
 
-    .line 1259
+    .line 1265
     invoke-virtual {v4}, Ljava/io/File;->delete()Z
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
@@ -7458,38 +7498,38 @@
     :catch_0
     move-exception v0
 
-    .line 1261
+    .line 1267
     invoke-virtual {v0}, Ljava/lang/Exception;->printStackTrace()V
 
     :goto_0
     const-wide/16 v5, 0x0
 
-    .line 1266
+    .line 1272
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    .line 1267
+    .line 1273
     new-instance v1, Ljava/util/ArrayList;
 
     invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
 
     const-string v7, "start recover database"
 
-    .line 1269
+    .line 1275
     invoke-static {v7}, Lorg/telegram/messenger/FileLog;->d(Ljava/lang/String;)V
 
     const/4 v7, 0x1
 
     const/4 v8, 0x0
 
-    .line 1272
+    .line 1278
     :try_start_1
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v5
 
-    .line 1274
+    .line 1280
     new-instance v9, Lorg/telegram/SQLite/SQLiteDatabase;
 
     invoke-virtual {v2}, Ljava/io/File;->getPath()Ljava/lang/String;
@@ -7500,7 +7540,7 @@
 
     const-string v10, "PRAGMA secure_delete = ON"
 
-    .line 1275
+    .line 1281
     invoke-virtual {v9, v10}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v10
@@ -7513,7 +7553,7 @@
 
     const-string v10, "PRAGMA temp_store = MEMORY"
 
-    .line 1276
+    .line 1282
     invoke-virtual {v9, v10}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v10
@@ -7526,7 +7566,7 @@
 
     const-string v10, "PRAGMA journal_mode = WAL"
 
-    .line 1277
+    .line 1283
     invoke-virtual {v9, v10}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v10
@@ -7539,7 +7579,7 @@
 
     const-string v10, "PRAGMA journal_size_limit = 10485760"
 
-    .line 1278
+    .line 1284
     invoke-virtual {v9, v10}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v10
@@ -7550,10 +7590,10 @@
 
     invoke-virtual {v10}, Lorg/telegram/SQLite/SQLitePreparedStatement;->dispose()V
 
-    .line 1280
+    .line 1286
     invoke-static {v9}, Lorg/telegram/messenger/MessagesStorage;->createTables(Lorg/telegram/SQLite/SQLiteDatabase;)V
 
-    .line 1281
+    .line 1287
     new-instance v10, Ljava/lang/StringBuilder;
 
     invoke-direct {v10}, Ljava/lang/StringBuilder;-><init>()V
@@ -7590,7 +7630,7 @@
 
     new-array v11, v8, [Ljava/lang/Object;
 
-    .line 1283
+    .line 1289
     invoke-virtual {v9, v10, v11}, Lorg/telegram/SQLite/SQLiteDatabase;->executeInt(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/Integer;
 
     move-result-object v10
@@ -7599,11 +7639,11 @@
 
     move-result v10
 
-    const/16 v11, 0x72
+    const/16 v11, 0x73
 
     if-eq v10, v11, :cond_0
 
-    .line 1285
+    .line 1291
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -7622,7 +7662,7 @@
 
     return v8
 
-    .line 1288
+    .line 1294
     :cond_0
     new-instance v10, Ljava/util/HashSet;
 
@@ -7630,87 +7670,87 @@
 
     const-string v11, "messages_v2"
 
-    .line 1289
+    .line 1295
     invoke-virtual {v10, v11}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
     const-string v11, "messages_holes"
 
-    .line 1290
+    .line 1296
     invoke-virtual {v10, v11}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
     const-string v11, "scheduled_messages_v2"
 
-    .line 1291
+    .line 1297
     invoke-virtual {v10, v11}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
     const-string v11, "media_holes_v2"
 
-    .line 1292
+    .line 1298
     invoke-virtual {v10, v11}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
     const-string v11, "media_v4"
 
-    .line 1293
+    .line 1299
     invoke-virtual {v10, v11}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
     const-string v11, "messages_holes_topics"
 
-    .line 1294
+    .line 1300
     invoke-virtual {v10, v11}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
     const-string v11, "messages_topics"
 
-    .line 1295
+    .line 1301
     invoke-virtual {v10, v11}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
     const-string v11, "media_topics"
 
-    .line 1296
+    .line 1302
     invoke-virtual {v10, v11}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
     const-string v11, "media_holes_topics"
 
-    .line 1297
+    .line 1303
     invoke-virtual {v10, v11}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
     const-string v11, "topics"
 
-    .line 1298
+    .line 1304
     invoke-virtual {v10, v11}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
     const-string v11, "media_counts_v2"
 
-    .line 1299
+    .line 1305
     invoke-virtual {v10, v11}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
     const-string v11, "media_counts_topics"
 
-    .line 1300
+    .line 1306
     invoke-virtual {v10, v11}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
     const-string v11, "dialogs"
 
-    .line 1301
+    .line 1307
     invoke-virtual {v10, v11}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
     const-string v11, "dialog_filter"
 
-    .line 1302
+    .line 1308
     invoke-virtual {v10, v11}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
     const-string v11, "dialog_filter_ep"
 
-    .line 1303
+    .line 1309
     invoke-virtual {v10, v11}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
     const-string v11, "dialog_filter_pin_v2"
 
-    .line 1304
+    .line 1310
     invoke-virtual {v10, v11}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
-    const/4 v11, 0x0
+    move v11, v8
 
-    .line 1307
+    .line 1313
     :goto_1
     sget-object v12, Lorg/telegram/messenger/MessagesStorage;->DATABASE_TABLES:[Ljava/lang/String;
 
@@ -7718,10 +7758,10 @@
 
     if-ge v11, v13, :cond_2
 
-    .line 1308
+    .line 1314
     aget-object v12, v12, v11
 
-    .line 1309
+    .line 1315
     invoke-virtual {v10, v12}, Ljava/util/HashSet;->contains(Ljava/lang/Object;)Z
 
     move-result v13
@@ -7730,7 +7770,7 @@
 
     goto :goto_2
 
-    .line 1312
+    .line 1318
     :cond_1
     sget-object v13, Ljava/util/Locale;->US:Ljava/util/Locale;
 
@@ -7768,12 +7808,12 @@
 
     new-array v11, v8, [Ljava/lang/Object;
 
-    .line 1315
+    .line 1321
     invoke-virtual {v9, v10, v11}, Lorg/telegram/SQLite/SQLiteDatabase;->queryFinalized(Ljava/lang/String;[Ljava/lang/Object;)Lorg/telegram/SQLite/SQLiteCursor;
 
     move-result-object v10
 
-    .line 1317
+    .line 1323
     :goto_3
     invoke-virtual {v10}, Lorg/telegram/SQLite/SQLiteCursor;->next()Z
 
@@ -7781,19 +7821,19 @@
 
     if-eqz v11, :cond_4
 
-    .line 1318
+    .line 1324
     invoke-virtual {v10, v8}, Lorg/telegram/SQLite/SQLiteCursor;->longValue(I)J
 
     move-result-wide v11
 
-    .line 1319
+    .line 1325
     invoke-static {v11, v12}, Lorg/telegram/messenger/DialogObject;->isEncryptedDialog(J)Z
 
     move-result v13
 
     if-eqz v13, :cond_3
 
-    .line 1320
+    .line 1326
     invoke-static {v11, v12}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object v11
@@ -7802,7 +7842,7 @@
 
     goto :goto_3
 
-    .line 1322
+    .line 1328
     :cond_3
     invoke-static {v11, v12}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
@@ -7812,13 +7852,13 @@
 
     goto :goto_3
 
-    .line 1325
+    .line 1331
     :cond_4
     invoke-virtual {v10}, Lorg/telegram/SQLite/SQLiteCursor;->dispose()V
 
-    const/4 v10, 0x0
+    move v10, v8
 
-    .line 1328
+    .line 1334
     :goto_4
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
@@ -7826,7 +7866,7 @@
 
     if-ge v10, v11, :cond_5
 
-    .line 1329
+    .line 1335
     invoke-virtual {v0, v10}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v11
@@ -7837,7 +7877,7 @@
 
     move-result-wide v11
 
-    .line 1330
+    .line 1336
     sget-object v13, Ljava/util/Locale;->US:Ljava/util/Locale;
 
     const-string v14, "INSERT OR IGNORE INTO messages_v2 SELECT * FROM old.messages_v2 WHERE uid = %d;"
@@ -7868,7 +7908,7 @@
 
     new-array v15, v7, [Ljava/lang/Object;
 
-    .line 1331
+    .line 1337
     invoke-static {v11, v12}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object v16
@@ -7893,7 +7933,7 @@
 
     new-array v15, v7, [Ljava/lang/Object;
 
-    .line 1332
+    .line 1338
     invoke-static {v11, v12}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object v16
@@ -7918,7 +7958,7 @@
 
     new-array v15, v7, [Ljava/lang/Object;
 
-    .line 1333
+    .line 1339
     invoke-static {v11, v12}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object v11
@@ -7946,21 +7986,21 @@
     :cond_5
     const-string v0, "REPLACE INTO messages_holes VALUES(?, ?, ?)"
 
-    .line 1336
+    .line 1342
     invoke-virtual {v9, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
 
     const-string v10, "REPLACE INTO media_holes_v2 VALUES(?, ?, ?, ?)"
 
-    .line 1337
+    .line 1343
     invoke-virtual {v9, v10}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v16
 
-    const/4 v15, 0x0
+    move v15, v8
 
-    .line 1339
+    .line 1345
     :goto_5
     invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
 
@@ -7968,14 +8008,14 @@
 
     if-ge v15, v10, :cond_7
 
-    .line 1340
+    .line 1346
     invoke-virtual {v1, v15}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v10
 
     check-cast v10, Ljava/lang/Long;
 
-    .line 1342
+    .line 1348
     new-instance v11, Ljava/lang/StringBuilder;
 
     invoke-direct {v11}, Ljava/lang/StringBuilder;-><init>()V
@@ -7996,26 +8036,26 @@
 
     move-result-object v14
 
-    .line 1344
+    .line 1350
     invoke-virtual {v14}, Lorg/telegram/SQLite/SQLiteCursor;->next()Z
 
     move-result v11
 
     if-eqz v11, :cond_6
 
-    .line 1345
+    .line 1351
     invoke-virtual {v14, v8}, Lorg/telegram/SQLite/SQLiteCursor;->longValue(I)J
 
     move-result-wide v11
 
     move-object/from16 v17, v9
 
-    .line 1346
+    .line 1352
     invoke-virtual {v14, v7}, Lorg/telegram/SQLite/SQLiteCursor;->longValue(I)J
 
     move-result-wide v8
 
-    .line 1347
+    .line 1353
     new-instance v13, Ljava/lang/StringBuilder;
 
     invoke-direct {v13}, Ljava/lang/StringBuilder;-><init>()V
@@ -8058,7 +8098,7 @@
 
     invoke-virtual {v7}, Lorg/telegram/SQLite/SQLitePreparedStatement;->dispose()V
 
-    .line 1349
+    .line 1355
     invoke-virtual {v10}, Ljava/lang/Long;->longValue()J
 
     move-result-wide v10
@@ -8090,7 +8130,7 @@
 
     move v7, v15
 
-    .line 1352
+    .line 1358
     :goto_6
     invoke-virtual/range {v17 .. v17}, Lorg/telegram/SQLite/SQLiteCursor;->dispose()V
 
@@ -8102,16 +8142,16 @@
 
     goto/16 :goto_5
 
-    .line 1356
+    .line 1362
     :cond_7
     invoke-virtual {v0}, Lorg/telegram/SQLite/SQLitePreparedStatement;->dispose()V
 
-    .line 1357
+    .line 1363
     invoke-virtual/range {v16 .. v16}, Lorg/telegram/SQLite/SQLitePreparedStatement;->dispose()V
 
     const-string v0, "DETACH DATABASE old;"
 
-    .line 1359
+    .line 1365
     invoke-virtual {v9, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
@@ -8122,7 +8162,7 @@
 
     invoke-virtual {v0}, Lorg/telegram/SQLite/SQLitePreparedStatement;->dispose()V
 
-    .line 1360
+    .line 1366
     invoke-virtual {v9}, Lorg/telegram/SQLite/SQLiteDatabase;->close()V
     :try_end_1
     .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_1
@@ -8134,7 +8174,7 @@
     :catch_1
     move-exception v0
 
-    .line 1362
+    .line 1368
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     const/4 v0, 0x0
@@ -8146,44 +8186,44 @@
 
     return v1
 
-    .line 1369
+    .line 1375
     :cond_8
     :try_start_2
     invoke-virtual/range {p0 .. p0}, Ljava/io/File;->delete()Z
 
-    .line 1370
+    .line 1376
     invoke-virtual/range {p1 .. p1}, Ljava/io/File;->delete()Z
 
-    .line 1371
+    .line 1377
     invoke-virtual/range {p2 .. p2}, Ljava/io/File;->delete()Z
 
     move-object/from16 v1, p0
 
-    .line 1373
+    .line 1379
     invoke-static {v2, v1}, Lorg/telegram/messenger/AndroidUtilities;->copyFile(Ljava/io/File;Ljava/io/File;)Z
 
     move-object/from16 v1, p1
 
-    .line 1374
+    .line 1380
     invoke-static {v3, v1}, Lorg/telegram/messenger/AndroidUtilities;->copyFile(Ljava/io/File;Ljava/io/File;)Z
 
     move-object/from16 v1, p2
 
-    .line 1375
+    .line 1381
     invoke-static {v4, v1}, Lorg/telegram/messenger/AndroidUtilities;->copyFile(Ljava/io/File;Ljava/io/File;)Z
 
-    .line 1377
+    .line 1383
     invoke-virtual {v2}, Ljava/io/File;->delete()Z
 
-    .line 1378
+    .line 1384
     invoke-virtual {v3}, Ljava/io/File;->delete()Z
 
-    .line 1379
+    .line 1385
     invoke-virtual {v4}, Ljava/io/File;->delete()Z
     :try_end_2
     .catch Ljava/io/IOException; {:try_start_2 .. :try_end_2} :catch_2
 
-    .line 1385
+    .line 1391
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -8213,7 +8253,7 @@
     :catch_2
     move-exception v0
 
-    .line 1381
+    .line 1387
     invoke-virtual {v0}, Ljava/io/IOException;->printStackTrace()V
 
     const/4 v1, 0x0

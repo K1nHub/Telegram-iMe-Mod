@@ -10,9 +10,9 @@ public final class zza implements Parcelable.Creator {
     public final /* bridge */ /* synthetic */ Object createFromParcel(Parcel parcel) {
         int validateObjectHeader = SafeParcelReader.validateObjectHeader(parcel);
         float f = BitmapDescriptorFactory.HUE_RED;
+        float f2 = 0.0f;
         LatLng latLng = null;
-        float f2 = BitmapDescriptorFactory.HUE_RED;
-        float f3 = BitmapDescriptorFactory.HUE_RED;
+        float f3 = 0.0f;
         while (parcel.dataPosition() < validateObjectHeader) {
             int readHeader = SafeParcelReader.readHeader(parcel);
             int fieldId = SafeParcelReader.getFieldId(readHeader);
@@ -21,15 +21,15 @@ public final class zza implements Parcelable.Creator {
             } else if (fieldId == 3) {
                 f = SafeParcelReader.readFloat(parcel, readHeader);
             } else if (fieldId == 4) {
-                f2 = SafeParcelReader.readFloat(parcel, readHeader);
-            } else if (fieldId == 5) {
                 f3 = SafeParcelReader.readFloat(parcel, readHeader);
+            } else if (fieldId == 5) {
+                f2 = SafeParcelReader.readFloat(parcel, readHeader);
             } else {
                 SafeParcelReader.skipUnknownField(parcel, readHeader);
             }
         }
         SafeParcelReader.ensureAtEnd(parcel, validateObjectHeader);
-        return new CameraPosition(latLng, f, f2, f3);
+        return new CameraPosition(latLng, f, f3, f2);
     }
 
     @Override // android.os.Parcelable.Creator

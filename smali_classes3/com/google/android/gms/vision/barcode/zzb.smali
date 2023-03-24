@@ -43,6 +43,12 @@
 
     const/4 v3, 0x0
 
+    move v5, v2
+
+    move v8, v5
+
+    move/from16 v20, v8
+
     move-object v6, v3
 
     move-object v7, v6
@@ -68,12 +74,6 @@
     move-object/from16 v18, v17
 
     move-object/from16 v19, v18
-
-    const/4 v5, 0x0
-
-    const/4 v8, 0x0
-
-    const/16 v20, 0x0
 
     .line 24
     :goto_0

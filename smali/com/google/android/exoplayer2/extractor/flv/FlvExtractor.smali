@@ -178,7 +178,7 @@
 .end method
 
 .method private getCurrentTimestampUs()J
-    .locals 5
+    .locals 4
 
     .line 317
     iget-boolean v0, p0, Lcom/google/android/exoplayer2/extractor/flv/FlvExtractor;->outputFirstSample:Z
@@ -204,9 +204,9 @@
 
     const-wide v2, -0x7fffffffffffffffL    # -4.9E-324
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-nez v4, :cond_1
+    if-nez v0, :cond_1
 
     const-wide/16 v0, 0x0
 
@@ -364,19 +364,19 @@
 
     if-eqz v4, :cond_1
 
-    const/4 v4, 0x1
+    move v4, v3
 
     goto :goto_0
 
     :cond_1
-    const/4 v4, 0x0
+    move v4, v1
 
     :goto_0
     and-int/2addr p1, v3
 
     if-eqz p1, :cond_2
 
-    const/4 v1, 0x1
+    move v1, v3
 
     :cond_2
     if-eqz v4, :cond_3
@@ -497,7 +497,7 @@
 
     :cond_0
     :goto_0
-    const/4 p1, 0x1
+    move p1, v6
 
     goto :goto_1
 
@@ -594,7 +594,7 @@
 
     invoke-interface {p1, v0}, Lcom/google/android/exoplayer2/extractor/ExtractorInput;->skipFully(I)V
 
-    const/4 p1, 0x0
+    move p1, v5
 
     .line 287
     :goto_1
@@ -614,9 +614,9 @@
 
     move-result-wide v0
 
-    cmp-long v2, v0, v3
+    cmp-long v0, v0, v3
 
-    if-nez v2, :cond_4
+    if-nez v0, :cond_4
 
     iget-wide v0, p0, Lcom/google/android/exoplayer2/extractor/flv/FlvExtractor;->tagTimestampUs:J
 
@@ -725,7 +725,7 @@
 
     const-wide/16 v4, 0x3e8
 
-    mul-long v0, v0, v4
+    mul-long/2addr v0, v4
 
     iput-wide v0, p0, Lcom/google/android/exoplayer2/extractor/flv/FlvExtractor;->tagTimestampUs:J
 
@@ -870,15 +870,15 @@
 .end method
 
 .method public seek(JJ)V
-    .locals 2
+    .locals 0
 
-    const/4 p3, 0x0
+    const-wide/16 p3, 0x0
 
-    const-wide/16 v0, 0x0
+    cmp-long p1, p1, p3
 
-    cmp-long p4, p1, v0
+    const/4 p2, 0x0
 
-    if-nez p4, :cond_0
+    if-nez p1, :cond_0
 
     const/4 p1, 0x1
 
@@ -886,7 +886,7 @@
     iput p1, p0, Lcom/google/android/exoplayer2/extractor/flv/FlvExtractor;->state:I
 
     .line 142
-    iput-boolean p3, p0, Lcom/google/android/exoplayer2/extractor/flv/FlvExtractor;->outputFirstSample:Z
+    iput-boolean p2, p0, Lcom/google/android/exoplayer2/extractor/flv/FlvExtractor;->outputFirstSample:Z
 
     goto :goto_0
 
@@ -898,7 +898,7 @@
 
     .line 146
     :goto_0
-    iput p3, p0, Lcom/google/android/exoplayer2/extractor/flv/FlvExtractor;->bytesToNextTagHeader:I
+    iput p2, p0, Lcom/google/android/exoplayer2/extractor/flv/FlvExtractor;->bytesToNextTagHeader:I
 
     return-void
 .end method

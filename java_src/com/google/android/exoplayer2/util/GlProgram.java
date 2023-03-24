@@ -40,8 +40,7 @@ public final class GlProgram {
         GLES20.glLinkProgram(glCreateProgram);
         int[] iArr = {0};
         GLES20.glGetProgramiv(glCreateProgram, 35714, iArr, 0);
-        boolean z = iArr[0] == 1;
-        GlUtil.checkGlException(z, "Unable to link shader program: \n" + GLES20.glGetProgramInfoLog(glCreateProgram));
+        GlUtil.checkGlException(iArr[0] == 1, "Unable to link shader program: \n" + GLES20.glGetProgramInfoLog(glCreateProgram));
         GLES20.glUseProgram(glCreateProgram);
         this.attributeByName = new HashMap();
         int[] iArr2 = new int[1];

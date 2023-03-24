@@ -16,7 +16,7 @@ public class WallpaperParallaxEffect implements SensorEventListener {
     private SensorManager sensorManager;
 
     /* renamed from: wm */
-    private WindowManager f1825wm;
+    private WindowManager f1826wm;
     private float[] rollBuffer = new float[3];
     private float[] pitchBuffer = new float[3];
 
@@ -31,7 +31,7 @@ public class WallpaperParallaxEffect implements SensorEventListener {
     }
 
     public WallpaperParallaxEffect(Context context) {
-        this.f1825wm = (WindowManager) context.getSystemService("window");
+        this.f1826wm = (WindowManager) context.getSystemService("window");
         SensorManager sensorManager = (SensorManager) context.getSystemService("sensor");
         this.sensorManager = sensorManager;
         this.accelerometer = sensorManager.getDefaultSensor(1);
@@ -64,8 +64,8 @@ public class WallpaperParallaxEffect implements SensorEventListener {
         return Math.max(f2, (m50dp + f3) / f3);
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:23:0x00ed  */
-    /* JADX WARN: Removed duplicated region for block: B:26:0x00f4  */
+    /* JADX WARN: Removed duplicated region for block: B:23:0x00e5  */
+    /* JADX WARN: Removed duplicated region for block: B:26:0x00ec  */
     /* JADX WARN: Removed duplicated region for block: B:29:? A[RETURN, SYNTHETIC] */
     @Override // android.hardware.SensorEventListener
     /*
@@ -74,7 +74,7 @@ public class WallpaperParallaxEffect implements SensorEventListener {
     */
     public void onSensorChanged(android.hardware.SensorEvent r17) {
         /*
-            Method dump skipped, instructions count: 248
+            Method dump skipped, instructions count: 240
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: org.telegram.p048ui.Components.WallpaperParallaxEffect.onSensorChanged(android.hardware.SensorEvent):void");

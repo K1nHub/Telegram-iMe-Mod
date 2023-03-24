@@ -717,12 +717,12 @@
 
     if-eqz v5, :cond_0
 
-    const/4 v5, 0x1
+    move v5, v3
 
     goto :goto_0
 
     :cond_0
-    const/4 v5, 0x0
+    move v5, v4
 
     :goto_0
     if-eqz v5, :cond_1
@@ -741,12 +741,12 @@
 
     if-eq v5, v6, :cond_2
 
-    const/4 v14, 0x1
+    move v14, v3
 
     goto :goto_2
 
     :cond_2
-    const/4 v14, 0x0
+    move v14, v4
 
     .line 300
     :goto_2
@@ -769,12 +769,12 @@
 
     if-ne v5, v6, :cond_4
 
-    const/4 v12, 0x1
+    move v12, v3
 
     goto :goto_3
 
     :cond_4
-    const/4 v12, 0x0
+    move v12, v4
 
     .line 304
     :goto_3
@@ -994,9 +994,9 @@
 
     move-result-wide v9
 
-    cmp-long v11, v7, v9
+    cmp-long v7, v7, v9
 
-    if-nez v11, :cond_4
+    if-nez v7, :cond_4
 
     .line 155
     invoke-virtual {v2}, Lcom/google/firebase/firestore/model/DocumentSet;->getFirstDocument()Lcom/google/firebase/firestore/model/Document;

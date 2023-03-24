@@ -102,9 +102,8 @@ final class AutoValue_LogRequest extends LogRequest {
         return hashCode4 ^ (qosTier != null ? qosTier.hashCode() : 0);
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: classes.dex */
-    public static final class Builder extends LogRequest.Builder {
+    static final class Builder extends LogRequest.Builder {
         private ClientInfo clientInfo;
         private List<LogEvent> logEvents;
         private Integer logSource;

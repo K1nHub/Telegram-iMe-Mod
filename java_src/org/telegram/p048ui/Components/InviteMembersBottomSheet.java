@@ -36,7 +36,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.C3286R;
+import org.telegram.messenger.C3301R;
 import org.telegram.messenger.ChatObject;
 import org.telegram.messenger.ContactsController;
 import org.telegram.messenger.DialogObject;
@@ -109,7 +109,7 @@ public class InviteMembersBottomSheet extends UsersAlertBase implements Notifica
     private float touchSlop;
 
     /* renamed from: y */
-    float f1726y;
+    float f1727y;
 
     /* renamed from: org.telegram.ui.Components.InviteMembersBottomSheet$InviteMembersBottomSheetDelegate */
     /* loaded from: classes6.dex */
@@ -151,7 +151,7 @@ public class InviteMembersBottomSheet extends UsersAlertBase implements Notifica
         this.parentFragment = baseFragment;
         this.chatId = j;
         fixNavigationBar();
-        this.searchView.searchEditText.setHint(LocaleController.getString("SearchForChats", C3286R.string.SearchForChats));
+        this.searchView.searchEditText.setHint(LocaleController.getString("SearchForChats", C3301R.string.SearchForChats));
         this.touchSlop = ViewConfiguration.get(context).getScaledTouchSlop();
         SearchAdapter searchAdapter = new SearchAdapter();
         this.searchAdapter = searchAdapter;
@@ -201,7 +201,7 @@ public class InviteMembersBottomSheet extends UsersAlertBase implements Notifica
         Drawable createSimpleSelectorCircleDrawable = Theme.createSimpleSelectorCircleDrawable(AndroidUtilities.m50dp(56), Theme.getColor("chats_actionBackground"), Theme.getColor("chats_actionPressedBackground"));
         int i3 = Build.VERSION.SDK_INT;
         if (i3 < 21) {
-            Drawable mutate = context.getResources().getDrawable(C3286R.C3288drawable.floating_shadow).mutate();
+            Drawable mutate = context.getResources().getDrawable(C3301R.C3303drawable.floating_shadow).mutate();
             mutate.setColorFilter(new PorterDuffColorFilter(-16777216, PorterDuff.Mode.MULTIPLY));
             CombinedDrawable combinedDrawable = new CombinedDrawable(mutate, createSimpleSelectorCircleDrawable, 0, 0);
             combinedDrawable.setIconSize(AndroidUtilities.m50dp(56), AndroidUtilities.m50dp(56));
@@ -209,7 +209,7 @@ public class InviteMembersBottomSheet extends UsersAlertBase implements Notifica
         }
         imageView.setBackgroundDrawable(createSimpleSelectorCircleDrawable);
         imageView.setColorFilter(new PorterDuffColorFilter(Theme.getColor("chats_actionIcon"), PorterDuff.Mode.MULTIPLY));
-        imageView.setImageResource(C3286R.C3288drawable.floating_check);
+        imageView.setImageResource(C3301R.C3303drawable.floating_check);
         if (i3 >= 21) {
             StateListAnimator stateListAnimator = new StateListAnimator();
             stateListAnimator.addState(new int[]{16842919}, ObjectAnimator.ofFloat(imageView, "translationZ", AndroidUtilities.m50dp(2), AndroidUtilities.m50dp(4)).setDuration(200L));
@@ -235,7 +235,7 @@ public class InviteMembersBottomSheet extends UsersAlertBase implements Notifica
         imageView.setScaleX(BitmapDescriptorFactory.HUE_RED);
         imageView.setScaleY(BitmapDescriptorFactory.HUE_RED);
         imageView.setAlpha(BitmapDescriptorFactory.HUE_RED);
-        imageView.setContentDescription(LocaleController.getString("Next", C3286R.string.Next));
+        imageView.setContentDescription(LocaleController.getString("Next", C3301R.string.Next));
         inviteMembersBottomSheet.containerView.addView(imageView, LayoutHelper.createFrame(i3 >= 21 ? 56 : 60, i3 >= 21 ? 56 : 60, 85, 14, 14, 14, 14));
         ((ViewGroup.MarginLayoutParams) inviteMembersBottomSheet.emptyView.getLayoutParams()).topMargin = AndroidUtilities.m50dp(20);
         ((ViewGroup.MarginLayoutParams) inviteMembersBottomSheet.emptyView.getLayoutParams()).leftMargin = AndroidUtilities.m50dp(4);
@@ -296,15 +296,15 @@ public class InviteMembersBottomSheet extends UsersAlertBase implements Notifica
             }
             builder.setMessage(spannableStringBuilder);
         } else {
-            builder.setMessage(AndroidUtilities.replaceTags(LocaleController.formatString("AddMembersAlertNamesText", C3286R.string.AddMembersAlertNamesText, sb, chat.title)));
+            builder.setMessage(AndroidUtilities.replaceTags(LocaleController.formatString("AddMembersAlertNamesText", C3301R.string.AddMembersAlertNamesText, sb, chat.title)));
         }
-        builder.setPositiveButton(LocaleController.getString("Add", C3286R.string.Add), new DialogInterface.OnClickListener() { // from class: org.telegram.ui.Components.InviteMembersBottomSheet$$ExternalSyntheticLambda1
+        builder.setPositiveButton(LocaleController.getString("Add", C3301R.string.Add), new DialogInterface.OnClickListener() { // from class: org.telegram.ui.Components.InviteMembersBottomSheet$$ExternalSyntheticLambda1
             @Override // android.content.DialogInterface.OnClickListener
             public final void onClick(DialogInterface dialogInterface, int i3) {
                 InviteMembersBottomSheet.this.lambda$new$1(dialogInterface, i3);
             }
         });
-        builder.setNegativeButton(LocaleController.getString("Cancel", C3286R.string.Cancel), null);
+        builder.setNegativeButton(LocaleController.getString("Cancel", C3301R.string.Cancel), null);
         builder.create();
         builder.show();
     }
@@ -332,17 +332,17 @@ public class InviteMembersBottomSheet extends UsersAlertBase implements Notifica
         NotificationCenter.getInstance(this.currentAccount).removeObserver(this, NotificationCenter.dialogsNeedReload);
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:28:0x00c8  */
-    /* JADX WARN: Removed duplicated region for block: B:38:0x0116  */
-    /* JADX WARN: Removed duplicated region for block: B:42:0x0123  */
-    /* JADX WARN: Removed duplicated region for block: B:45:0x013e  */
+    /* JADX WARN: Removed duplicated region for block: B:28:0x00c6  */
+    /* JADX WARN: Removed duplicated region for block: B:38:0x0114  */
+    /* JADX WARN: Removed duplicated region for block: B:42:0x0121  */
+    /* JADX WARN: Removed duplicated region for block: B:45:0x013c  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct add '--show-bad-code' argument
     */
     public void setSelectedContacts(java.util.ArrayList<java.lang.Long> r12) {
         /*
-            Method dump skipped, instructions count: 333
+            Method dump skipped, instructions count: 331
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: org.telegram.p048ui.Components.InviteMembersBottomSheet.setSelectedContacts(java.util.ArrayList):void");
@@ -364,7 +364,7 @@ public class InviteMembersBottomSheet extends UsersAlertBase implements Notifica
             if (z) {
                 float[] fArr = new float[2];
                 fArr[0] = this.spansEnterProgress;
-                fArr[1] = z2 ? 1.0f : BitmapDescriptorFactory.HUE_RED;
+                fArr[1] = z2 ? 1.0f : 0.0f;
                 ValueAnimator ofFloat = ValueAnimator.ofFloat(fArr);
                 this.spansEnterAnimator = ofFloat;
                 ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.InviteMembersBottomSheet$$ExternalSyntheticLambda0
@@ -415,7 +415,7 @@ public class InviteMembersBottomSheet extends UsersAlertBase implements Notifica
                 this.currentDoneButtonAnimation.start();
                 return;
             }
-            this.spansEnterProgress = z2 ? 1.0f : BitmapDescriptorFactory.HUE_RED;
+            this.spansEnterProgress = z2 ? 1.0f : 0.0f;
             this.containerView.invalidate();
             if (!z2) {
                 this.spansScrollView.setVisibility(8);
@@ -529,7 +529,7 @@ public class InviteMembersBottomSheet extends UsersAlertBase implements Notifica
                 manageChatTextCell = new View(context);
             } else if (i != 5) {
                 ManageChatTextCell manageChatTextCell2 = new ManageChatTextCell(context);
-                manageChatTextCell2.setText(LocaleController.getString("VoipGroupCopyInviteLink", C3286R.string.VoipGroupCopyInviteLink), null, C3286R.C3288drawable.msg_link, 7, true);
+                manageChatTextCell2.setText(LocaleController.getString("VoipGroupCopyInviteLink", C3301R.string.VoipGroupCopyInviteLink), null, C3301R.C3303drawable.msg_link, 7, true);
                 manageChatTextCell2.setColors("dialogTextBlue2", "dialogTextBlue2");
                 manageChatTextCell = manageChatTextCell2;
             } else {
@@ -544,9 +544,9 @@ public class InviteMembersBottomSheet extends UsersAlertBase implements Notifica
                 stickerEmptyView.setLayoutParams(new RecyclerView.LayoutParams(-1, -1));
                 stickerEmptyView.subtitle.setVisibility(8);
                 if (InviteMembersBottomSheet.this.dialogsDelegate != null) {
-                    stickerEmptyView.title.setText(LocaleController.getString("FilterNoChats", C3286R.string.FilterNoChats));
+                    stickerEmptyView.title.setText(LocaleController.getString("FilterNoChats", C3301R.string.FilterNoChats));
                 } else {
-                    stickerEmptyView.title.setText(LocaleController.getString("NoContacts", C3286R.string.NoContacts));
+                    stickerEmptyView.title.setText(LocaleController.getString("NoContacts", C3301R.string.NoContacts));
                 }
                 stickerEmptyView.setAnimateLayoutChange(true);
                 manageChatTextCell = stickerEmptyView;
@@ -557,7 +557,7 @@ public class InviteMembersBottomSheet extends UsersAlertBase implements Notifica
         public TLObject getObject(int i) {
             if (InviteMembersBottomSheet.this.dialogsDelegate != null) {
                 TLRPC$Dialog tLRPC$Dialog = (TLRPC$Dialog) InviteMembersBottomSheet.this.dialogsServerOnly.get(i - InviteMembersBottomSheet.this.contactsStartRow);
-                return DialogObject.isUserDialog(tLRPC$Dialog.f1505id) ? MessagesController.getInstance(((BottomSheet) InviteMembersBottomSheet.this).currentAccount).getUser(Long.valueOf(tLRPC$Dialog.f1505id)) : MessagesController.getInstance(((BottomSheet) InviteMembersBottomSheet.this).currentAccount).getChat(Long.valueOf(-tLRPC$Dialog.f1505id));
+                return DialogObject.isUserDialog(tLRPC$Dialog.f1506id) ? MessagesController.getInstance(((BottomSheet) InviteMembersBottomSheet.this).currentAccount).getUser(Long.valueOf(tLRPC$Dialog.f1506id)) : MessagesController.getInstance(((BottomSheet) InviteMembersBottomSheet.this).currentAccount).getChat(Long.valueOf(-tLRPC$Dialog.f1506id));
             }
             return (TLObject) InviteMembersBottomSheet.this.contacts.get(i - InviteMembersBottomSheet.this.contactsStartRow);
         }
@@ -575,15 +575,15 @@ public class InviteMembersBottomSheet extends UsersAlertBase implements Notifica
                 TLObject object = getObject(i);
                 Object object2 = groupCreateUserCell.getObject();
                 if (object2 instanceof TLRPC$User) {
-                    j = ((TLRPC$User) object2).f1639id;
+                    j = ((TLRPC$User) object2).f1640id;
                 } else {
-                    j = object2 instanceof TLRPC$Chat ? -((TLRPC$Chat) object2).f1499id : 0L;
+                    j = object2 instanceof TLRPC$Chat ? -((TLRPC$Chat) object2).f1500id : 0L;
                 }
                 groupCreateUserCell.setObject(object, null, null, i != InviteMembersBottomSheet.this.contactsEndRow);
                 if (object instanceof TLRPC$User) {
-                    j2 = ((TLRPC$User) object).f1639id;
+                    j2 = ((TLRPC$User) object).f1640id;
                 } else {
-                    j2 = object instanceof TLRPC$Chat ? -((TLRPC$Chat) object).f1499id : 0L;
+                    j2 = object instanceof TLRPC$Chat ? -((TLRPC$Chat) object).f1500id : 0L;
                 }
                 if (j2 != 0) {
                     if (InviteMembersBottomSheet.this.ignoreUsers == null || InviteMembersBottomSheet.this.ignoreUsers.indexOfKey(j2) < 0) {
@@ -854,8 +854,8 @@ public class InviteMembersBottomSheet extends UsersAlertBase implements Notifica
     @Override // org.telegram.p048ui.Components.UsersAlertBase
     protected void onSearchViewTouched(MotionEvent motionEvent, final EditTextBoldCursor editTextBoldCursor) {
         if (motionEvent.getAction() == 0) {
-            this.f1726y = this.scrollOffsetY;
-        } else if (motionEvent.getAction() != 1 || Math.abs(this.scrollOffsetY - this.f1726y) >= this.touchSlop || this.enterEventSent) {
+            this.f1727y = this.scrollOffsetY;
+        } else if (motionEvent.getAction() != 1 || Math.abs(this.scrollOffsetY - this.f1727y) >= this.touchSlop || this.enterEventSent) {
         } else {
             Activity findActivity = AndroidUtilities.findActivity(getContext());
             BaseFragment baseFragment = null;

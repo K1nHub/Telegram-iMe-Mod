@@ -102,12 +102,12 @@
 
     if-ne v10, v3, :cond_0
 
-    const/4 v11, 0x1
+    move v11, v4
 
     goto :goto_0
 
     :cond_0
-    const/4 v11, 0x0
+    move v11, v2
 
     .line 749
     :goto_0
@@ -121,7 +121,7 @@
 
     if-eq p2, v3, :cond_1
 
-    const/4 v2, 0x1
+    move v2, v4
 
     .line 750
     :cond_1

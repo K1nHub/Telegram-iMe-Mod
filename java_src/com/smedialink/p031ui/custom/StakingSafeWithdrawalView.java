@@ -11,7 +11,7 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import org.fork.utils.Callbacks$Callback;
 import org.fork.utils.Callbacks$Callback1;
-import org.telegram.messenger.C3286R;
+import org.telegram.messenger.C3301R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.databinding.ForkContentStakingSafeWithdrawalBinding;
 import org.telegram.p048ui.ActionBar.Theme;
@@ -68,7 +68,7 @@ public final class StakingSafeWithdrawalView extends FrameLayout {
 
     private final void setupView() {
         setupColors();
-        this.binding.textSafeWithdrawal.setText(LocaleController.getInternalString(C3286R.string.staking_withdraw_safe_withdrawal));
+        this.binding.textSafeWithdrawal.setText(LocaleController.getInternalString(C3301R.string.staking_withdraw_safe_withdrawal));
         addView(this.binding.getRoot());
     }
 }

@@ -470,10 +470,10 @@
 
     invoke-direct {p2}, Lorg/telegram/tgnet/TLRPC$TL_messages_getEmojiStatusGroups;-><init>()V
 
-    long-to-int p4, p3
+    long-to-int p3, p3
 
     .line 859
-    iput p4, p2, Lorg/telegram/tgnet/TLRPC$TL_messages_getEmojiStatusGroups;->hash:I
+    iput p3, p2, Lorg/telegram/tgnet/TLRPC$TL_messages_getEmojiStatusGroups;->hash:I
 
     goto :goto_0
 
@@ -492,10 +492,10 @@
 
     invoke-direct {p2}, Lorg/telegram/tgnet/TLRPC$TL_messages_getEmojiProfilePhotoGroups;-><init>()V
 
-    long-to-int p4, p3
+    long-to-int p3, p3
 
     .line 862
-    iput p4, p2, Lorg/telegram/tgnet/TLRPC$TL_messages_getEmojiProfilePhotoGroups;->hash:I
+    iput p3, p2, Lorg/telegram/tgnet/TLRPC$TL_messages_getEmojiProfilePhotoGroups;->hash:I
 
     goto :goto_0
 
@@ -505,10 +505,10 @@
 
     invoke-direct {p2}, Lorg/telegram/tgnet/TLRPC$TL_messages_getEmojiGroups;-><init>()V
 
-    long-to-int p4, p3
+    long-to-int p3, p3
 
     .line 865
-    iput p4, p2, Lorg/telegram/tgnet/TLRPC$TL_messages_getEmojiGroups;->hash:I
+    iput p3, p2, Lorg/telegram/tgnet/TLRPC$TL_messages_getEmojiGroups;->hash:I
 
     .line 868
     :goto_0

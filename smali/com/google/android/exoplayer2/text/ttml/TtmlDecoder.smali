@@ -750,7 +750,7 @@
     goto :goto_1
 
     :cond_1
-    const/4 v5, 0x2
+    move v5, v2
 
     goto :goto_1
 
@@ -766,7 +766,7 @@
     goto :goto_1
 
     :cond_2
-    const/4 v5, 0x1
+    move v5, v3
 
     goto :goto_1
 
@@ -1049,7 +1049,7 @@
 
     int-to-float v0, v1
 
-    mul-float v0, v0, v2
+    mul-float/2addr v0, v2
 
     invoke-direct {p0, v0, v4, v3}, Lcom/google/android/exoplayer2/text/ttml/TtmlDecoder$FrameAndTickRate;-><init>(FII)V
 
@@ -1590,9 +1590,9 @@
     .line 703
     iget-wide v6, v9, Lcom/google/android/exoplayer2/text/ttml/TtmlNode;->endTimeUs:J
 
-    cmp-long v12, v6, v3
+    cmp-long v3, v6, v3
 
-    if-eqz v12, :cond_d
+    if-eqz v3, :cond_d
 
     move-wide v3, v6
 
@@ -2061,7 +2061,7 @@
 
     move v6, v9
 
-    const/4 v8, 0x2
+    move v8, v14
 
     goto :goto_3
 
@@ -2074,15 +2074,15 @@
 
     move v6, v9
 
-    const/4 v8, 0x1
+    move v8, v15
 
     goto :goto_3
 
     :cond_7
     :goto_2
-    move v6, v9
+    move v8, v3
 
-    const/4 v8, 0x0
+    move v6, v9
 
     :goto_3
     const/high16 v2, 0x3f800000    # 1.0f
@@ -2123,7 +2123,7 @@
     sparse-switch v9, :sswitch_data_0
 
     :goto_4
-    const/4 v3, -0x1
+    move v3, v5
 
     goto :goto_5
 
@@ -2139,7 +2139,7 @@
     goto :goto_4
 
     :cond_8
-    const/4 v3, 0x2
+    move v3, v14
 
     goto :goto_5
 
@@ -2155,7 +2155,7 @@
     goto :goto_4
 
     :cond_9
-    const/4 v3, 0x1
+    move v3, v15
 
     goto :goto_5
 
@@ -2177,18 +2177,18 @@
     goto :goto_6
 
     :pswitch_0
-    const/4 v13, 0x1
+    move v13, v15
 
     goto :goto_7
 
     :pswitch_1
-    const/4 v13, 0x2
+    move v13, v14
 
     goto :goto_7
 
     :cond_b
     :goto_6
-    const/high16 v13, -0x80000000
+    move v13, v2
 
     .line 473
     :goto_7
@@ -2301,6 +2301,8 @@
     invoke-static {v5, v0}, Lcom/google/android/exoplayer2/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)V
 
     return-object v2
+
+    nop
 
     :sswitch_data_0
     .sparse-switch
@@ -2428,7 +2430,7 @@
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_0
     if-ge v2, v0, :cond_1e
@@ -2464,7 +2466,7 @@
     sparse-switch v5, :sswitch_data_0
 
     :goto_1
-    const/4 v4, -0x1
+    move v4, v8
 
     goto/16 :goto_2
 
@@ -2624,7 +2626,7 @@
     goto :goto_1
 
     :cond_9
-    const/4 v4, 0x5
+    move v4, v6
 
     goto :goto_2
 
@@ -2640,7 +2642,7 @@
     goto/16 :goto_1
 
     :cond_a
-    const/4 v4, 0x4
+    move v4, v7
 
     goto :goto_2
 
@@ -2656,7 +2658,7 @@
     goto/16 :goto_1
 
     :cond_b
-    const/4 v4, 0x3
+    move v4, v9
 
     goto :goto_2
 
@@ -2672,7 +2674,7 @@
     goto/16 :goto_1
 
     :cond_c
-    const/4 v4, 0x2
+    move v4, v10
 
     goto :goto_2
 
@@ -2688,7 +2690,7 @@
     goto/16 :goto_1
 
     :cond_d
-    const/4 v4, 0x1
+    move v4, v11
 
     goto :goto_2
 
@@ -2704,7 +2706,7 @@
     goto/16 :goto_1
 
     :cond_e
-    const/4 v4, 0x0
+    move v4, v1
 
     :goto_2
     const-string v5, "TtmlDecoder"
@@ -2986,7 +2988,7 @@
     sparse-switch v4, :sswitch_data_1
 
     :goto_3
-    const/4 v6, -0x1
+    move v6, v8
 
     goto :goto_4
 
@@ -3013,7 +3015,7 @@
     goto :goto_3
 
     :cond_13
-    const/4 v6, 0x4
+    move v6, v7
 
     goto :goto_4
 
@@ -3029,7 +3031,7 @@
     goto :goto_3
 
     :cond_14
-    const/4 v6, 0x3
+    move v6, v9
 
     goto :goto_4
 
@@ -3045,7 +3047,7 @@
     goto :goto_3
 
     :cond_15
-    const/4 v6, 0x2
+    move v6, v10
 
     goto :goto_4
 
@@ -3061,7 +3063,7 @@
     goto :goto_3
 
     :cond_16
-    const/4 v6, 0x1
+    move v6, v11
 
     goto :goto_4
 
@@ -3077,7 +3079,7 @@
     goto :goto_3
 
     :cond_17
-    const/4 v6, 0x0
+    move v6, v1
 
     :cond_18
     :goto_4
@@ -3204,7 +3206,7 @@
     goto :goto_5
 
     :cond_19
-    const/4 v8, 0x3
+    move v8, v9
 
     goto :goto_5
 
@@ -3220,7 +3222,7 @@
     goto :goto_5
 
     :cond_1a
-    const/4 v8, 0x2
+    move v8, v10
 
     goto :goto_5
 
@@ -3236,7 +3238,7 @@
     goto :goto_5
 
     :cond_1b
-    const/4 v8, 0x1
+    move v8, v11
 
     goto :goto_5
 
@@ -3252,7 +3254,7 @@
     goto :goto_5
 
     :cond_1c
-    const/4 v8, 0x0
+    move v8, v1
 
     :goto_5
     packed-switch v8, :pswitch_data_2
@@ -3519,7 +3521,7 @@
 
     const-wide/16 v9, 0xe10
 
-    mul-long v7, v7, v9
+    mul-long/2addr v7, v9
 
     long-to-double v7, v7
 
@@ -3541,7 +3543,7 @@
 
     const-wide/16 v11, 0x3c
 
-    mul-long v9, v9, v11
+    mul-long/2addr v9, v11
 
     long-to-double v9, v9
 
@@ -3650,7 +3652,7 @@
     :cond_2
     add-double/2addr v7, v4
 
-    mul-double v7, v7, v2
+    mul-double/2addr v7, v2
 
     double-to-long p0, v7
 
@@ -3710,7 +3712,7 @@
     sparse-switch v1, :sswitch_data_0
 
     :goto_2
-    const/4 v4, -0x1
+    move v4, v0
 
     goto :goto_3
 
@@ -3737,7 +3739,7 @@
     goto :goto_2
 
     :cond_4
-    const/4 v4, 0x3
+    move v4, v5
 
     goto :goto_3
 
@@ -3753,7 +3755,7 @@
     goto :goto_2
 
     :cond_5
-    const/4 v4, 0x2
+    move v4, v6
 
     goto :goto_3
 
@@ -3769,7 +3771,7 @@
     goto :goto_2
 
     :cond_6
-    const/4 v4, 0x1
+    move v4, v7
 
     goto :goto_3
 
@@ -3818,7 +3820,7 @@
     const-wide p0, 0x40ac200000000000L    # 3600.0
 
     :goto_5
-    mul-double v8, v8, p0
+    mul-double/2addr v8, p0
 
     goto :goto_6
 
@@ -3831,7 +3833,7 @@
     goto :goto_4
 
     :goto_6
-    mul-double v8, v8, v2
+    mul-double/2addr v8, v2
 
     double-to-long p0, v8
 
@@ -3858,6 +3860,8 @@
     invoke-direct {p1, p0}, Lcom/google/android/exoplayer2/text/SubtitleDecoderException;-><init>(Ljava/lang/String;)V
 
     throw p1
+
+    nop
 
     :sswitch_data_0
     .sparse-switch
@@ -4072,9 +4076,9 @@
     .line 131
     sget-object v6, Lcom/google/android/exoplayer2/text/ttml/TtmlDecoder;->DEFAULT_CELL_RESOLUTION:Lcom/google/android/exoplayer2/text/ttml/TtmlDecoder$CellResolution;
 
-    move-object v14, v4
+    move v13, v3
 
-    const/4 v13, 0x0
+    move-object v14, v4
 
     :goto_0
     const/4 v3, 0x1

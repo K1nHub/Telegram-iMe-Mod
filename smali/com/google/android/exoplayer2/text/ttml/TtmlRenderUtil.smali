@@ -187,16 +187,16 @@
     goto :goto_0
 
     :cond_6
-    const/4 v6, 0x1
+    move v6, v5
 
     goto :goto_1
 
     :cond_7
     :goto_0
-    const/4 v6, 0x3
+    move v6, v3
 
     :goto_1
-    const/4 p6, 0x1
+    move p6, v5
 
     goto :goto_2
 
@@ -212,7 +212,7 @@
 
     if-ne v0, v7, :cond_9
 
-    const/4 v0, 0x1
+    move v0, v5
 
     .line 153
     :cond_9
@@ -320,7 +320,7 @@
     goto :goto_3
 
     :cond_f
-    const/4 p6, -0x1
+    move p6, v1
 
     :goto_3
     if-ne p6, v1, :cond_10

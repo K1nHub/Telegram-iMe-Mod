@@ -137,7 +137,7 @@
 
     div-int/lit8 v0, v0, 0x2
 
-    mul-int v2, v2, v0
+    mul-int/2addr v2, v0
 
     shl-int/lit8 v0, v2, 0x1
 
@@ -183,13 +183,13 @@
 
     int-to-float v7, v7
 
-    mul-float v9, v9, v7
+    mul-float/2addr v9, v7
 
     const v10, 0x3f1645a2    # 0.587f
 
     int-to-float v8, v8
 
-    mul-float v10, v10, v8
+    mul-float/2addr v10, v8
 
     add-float/2addr v9, v10
 
@@ -197,7 +197,7 @@
 
     int-to-float v6, v6
 
-    mul-float v10, v10, v6
+    mul-float/2addr v10, v6
 
     add-float/2addr v9, v10
 
@@ -219,11 +219,11 @@
 
     const v4, -0x41d2f1aa    # -0.169f
 
-    mul-float v4, v4, v7
+    mul-float/2addr v4, v7
 
     const v5, -0x4156872b    # -0.331f
 
-    mul-float v5, v5, v8
+    mul-float/2addr v5, v8
 
     add-float/2addr v4, v5
 
@@ -237,17 +237,17 @@
 
     add-float/2addr v4, v9
 
-    mul-float v7, v7, v5
+    mul-float/2addr v7, v5
 
     const v5, -0x412978d5    # -0.419f
 
-    mul-float v8, v8, v5
+    mul-float/2addr v8, v5
 
     add-float/2addr v7, v8
 
     const v5, -0x425a1cac    # -0.081f
 
-    mul-float v6, v6, v5
+    mul-float/2addr v6, v5
 
     add-float/2addr v7, v6
 

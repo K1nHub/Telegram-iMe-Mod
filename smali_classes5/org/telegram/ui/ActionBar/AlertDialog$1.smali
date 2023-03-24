@@ -108,12 +108,12 @@
 
     if-le v1, v4, :cond_0
 
-    const/4 v1, 0x1
+    move v1, v2
 
     goto :goto_0
 
     :cond_0
-    const/4 v1, 0x0
+    move v1, v3
 
     :goto_0
     invoke-static {v0, v3, v1}, Lorg/telegram/ui/ActionBar/AlertDialog;->access$3400(Lorg/telegram/ui/ActionBar/AlertDialog;IZ)V
@@ -157,7 +157,7 @@
 
     if-ge v1, v4, :cond_1
 
-    const/4 v3, 0x1
+    move v3, v2
 
     :cond_1
     invoke-static {v0, v2, v3}, Lorg/telegram/ui/ActionBar/AlertDialog;->access$3400(Lorg/telegram/ui/ActionBar/AlertDialog;IZ)V
@@ -491,7 +491,7 @@
 
     move-result v2
 
-    mul-float v1, v1, v2
+    mul-float/2addr v1, v2
 
     .line 557
     iget-object v2, p0, Lorg/telegram/ui/ActionBar/AlertDialog$1;->this$0:Lorg/telegram/ui/ActionBar/AlertDialog;
@@ -516,7 +516,7 @@
 
     move-result v3
 
-    mul-float v2, v2, v3
+    mul-float/2addr v2, v3
 
     .line 558
     sget-object v3, Lorg/telegram/messenger/AndroidUtilities;->rectTmp:Landroid/graphics/RectF;
@@ -637,7 +637,7 @@
 
     if-eqz v2, :cond_1
 
-    const/high16 v2, 0x3f800000    # 1.0f
+    move v2, v3
 
     goto :goto_1
 
@@ -720,7 +720,7 @@
 
     move-result v6
 
-    mul-float v6, v6, v4
+    mul-float/2addr v6, v4
 
     float-to-int v4, v6
 
@@ -770,11 +770,11 @@
 
     sub-float/2addr v6, v3
 
-    mul-float v1, v1, v6
+    mul-float/2addr v1, v6
 
     add-float/2addr v1, v3
 
-    mul-float v5, v5, v1
+    mul-float/2addr v5, v1
 
     float-to-int v1, v5
 
@@ -1209,7 +1209,7 @@
 
     move-result v5
 
-    const/4 v7, 0x0
+    move v7, v6
 
     :goto_0
     if-ge v7, v5, :cond_2
@@ -1594,7 +1594,7 @@
     move-result v2
 
     :goto_3
-    mul-float p2, p2, v2
+    mul-float/2addr p2, v2
 
     float-to-int p2, p2
 
@@ -1711,7 +1711,7 @@
     goto :goto_4
 
     :cond_c
-    const/4 v1, 0x0
+    move v1, v6
 
     :goto_4
     iput v1, p2, Landroid/widget/LinearLayout$LayoutParams;->topMargin:I
@@ -1730,7 +1730,7 @@
     goto :goto_5
 
     :cond_d
-    const/4 v1, 0x0
+    move v1, v6
 
     :goto_5
     iput v1, p2, Landroid/widget/LinearLayout$LayoutParams;->bottomMargin:I
@@ -1775,7 +1775,7 @@
     goto :goto_6
 
     :cond_f
-    const/4 v1, 0x0
+    move v1, v6
 
     :goto_6
     iput v1, p2, Landroid/widget/LinearLayout$LayoutParams;->topMargin:I
@@ -1821,7 +1821,7 @@
     goto :goto_7
 
     :cond_11
-    const/4 v1, 0x0
+    move v1, v6
 
     :goto_7
     iput v1, p2, Landroid/widget/LinearLayout$LayoutParams;->topMargin:I
@@ -2145,7 +2145,7 @@
     goto :goto_c
 
     :cond_17
-    const/4 p2, 0x0
+    move p2, v6
 
     :goto_c
     sub-int/2addr v0, p2

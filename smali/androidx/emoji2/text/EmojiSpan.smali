@@ -84,7 +84,7 @@
 
     const/high16 p2, 0x3f800000    # 1.0f
 
-    mul-float p1, p1, p2
+    mul-float/2addr p1, p2
 
     .line 90
     iget-object p2, p0, Landroidx/emoji2/text/EmojiSpan;->mMetadata:Landroidx/emoji2/text/EmojiMetadata;
@@ -115,7 +115,7 @@
 
     iget p2, p0, Landroidx/emoji2/text/EmojiSpan;->mRatio:F
 
-    mul-float p1, p1, p2
+    mul-float/2addr p1, p2
 
     float-to-int p1, p1
 

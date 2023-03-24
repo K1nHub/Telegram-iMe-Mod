@@ -83,7 +83,9 @@ public final class LatLngBounds extends AbstractSafeParcelable implements Reflec
     private final boolean zza(double d) {
         double d2 = this.southwest.longitude;
         double d3 = this.northeast.longitude;
-        return d2 <= d3 ? d2 <= d && d <= d3 : d2 <= d || d <= d3;
+        int i = (d2 > d3 ? 1 : (d2 == d3 ? 0 : -1));
+        int i2 = (d2 > d ? 1 : (d2 == d ? 0 : -1));
+        return i <= 0 ? i2 <= 0 && d <= d3 : i2 <= 0 || d <= d3;
     }
 
     public boolean contains(LatLng latLng) {

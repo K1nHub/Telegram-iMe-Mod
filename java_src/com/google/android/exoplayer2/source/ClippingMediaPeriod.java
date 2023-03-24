@@ -88,7 +88,7 @@ public final class ClippingMediaPeriod implements MediaPeriod, MediaPeriod.Callb
             int r2 = r1.length
             com.google.android.exoplayer2.source.SampleStream[] r9 = new com.google.android.exoplayer2.source.SampleStream[r2]
             r10 = 0
-            r2 = 0
+            r2 = r10
         Lc:
             int r3 = r1.length
             r11 = 0
@@ -130,17 +130,17 @@ public final class ClippingMediaPeriod implements MediaPeriod, MediaPeriod.Callb
             int r4 = (r2 > r17 ? 1 : (r2 == r17 ? 0 : -1))
             if (r4 == 0) goto L67
             long r4 = r0.startUs
-            int r6 = (r2 > r4 ? 1 : (r2 == r4 ? 0 : -1))
-            if (r6 < 0) goto L65
+            int r4 = (r2 > r4 ? 1 : (r2 == r4 ? 0 : -1))
+            if (r4 < 0) goto L65
             long r4 = r0.endUs
             r6 = -9223372036854775808
-            int r8 = (r4 > r6 ? 1 : (r4 == r6 ? 0 : -1))
-            if (r8 == 0) goto L67
-            int r6 = (r2 > r4 ? 1 : (r2 == r4 ? 0 : -1))
-            if (r6 > 0) goto L65
+            int r6 = (r4 > r6 ? 1 : (r4 == r6 ? 0 : -1))
+            if (r6 == 0) goto L67
+            int r4 = (r2 > r4 ? 1 : (r2 == r4 ? 0 : -1))
+            if (r4 > 0) goto L65
             goto L67
         L65:
-            r4 = 0
+            r4 = r10
             goto L68
         L67:
             r4 = 1
@@ -224,22 +224,22 @@ public final class ClippingMediaPeriod implements MediaPeriod, MediaPeriod.Callb
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:15:0x0032, code lost:
-        if (r0 > r7) goto L18;
+        if (r0 > r6) goto L18;
      */
     @Override // com.google.android.exoplayer2.source.MediaPeriod
     /*
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct add '--show-bad-code' argument
     */
-    public long seekToUs(long r7) {
+    public long seekToUs(long r6) {
         /*
-            r6 = this;
+            r5 = this;
             r0 = -9223372036854775807(0x8000000000000001, double:-4.9E-324)
-            r6.pendingInitialDiscontinuityPositionUs = r0
-            com.google.android.exoplayer2.source.ClippingMediaPeriod$ClippingSampleStream[] r0 = r6.sampleStreams
+            r5.pendingInitialDiscontinuityPositionUs = r0
+            com.google.android.exoplayer2.source.ClippingMediaPeriod$ClippingSampleStream[] r0 = r5.sampleStreams
             int r1 = r0.length
             r2 = 0
-            r3 = 0
+            r3 = r2
         Lc:
             if (r3 >= r1) goto L18
             r4 = r0[r3]
@@ -249,19 +249,19 @@ public final class ClippingMediaPeriod implements MediaPeriod, MediaPeriod.Callb
             int r3 = r3 + 1
             goto Lc
         L18:
-            com.google.android.exoplayer2.source.MediaPeriod r0 = r6.mediaPeriod
-            long r0 = r0.seekToUs(r7)
-            int r3 = (r0 > r7 ? 1 : (r0 == r7 ? 0 : -1))
-            if (r3 == 0) goto L34
-            long r7 = r6.startUs
-            int r3 = (r0 > r7 ? 1 : (r0 == r7 ? 0 : -1))
-            if (r3 < 0) goto L35
-            long r7 = r6.endUs
+            com.google.android.exoplayer2.source.MediaPeriod r0 = r5.mediaPeriod
+            long r0 = r0.seekToUs(r6)
+            int r6 = (r0 > r6 ? 1 : (r0 == r6 ? 0 : -1))
+            if (r6 == 0) goto L34
+            long r6 = r5.startUs
+            int r6 = (r0 > r6 ? 1 : (r0 == r6 ? 0 : -1))
+            if (r6 < 0) goto L35
+            long r6 = r5.endUs
             r3 = -9223372036854775808
-            int r5 = (r7 > r3 ? 1 : (r7 == r3 ? 0 : -1))
-            if (r5 == 0) goto L34
-            int r3 = (r0 > r7 ? 1 : (r0 == r7 ? 0 : -1))
-            if (r3 > 0) goto L35
+            int r3 = (r6 > r3 ? 1 : (r6 == r3 ? 0 : -1))
+            if (r3 == 0) goto L34
+            int r6 = (r0 > r6 ? 1 : (r0 == r6 ? 0 : -1))
+            if (r6 > 0) goto L35
         L34:
             r2 = 1
         L35:

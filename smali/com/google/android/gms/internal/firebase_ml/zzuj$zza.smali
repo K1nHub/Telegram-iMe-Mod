@@ -86,7 +86,7 @@
 
     const v1, 0xffff
 
-    mul-int v0, v0, v1
+    mul-int/2addr v0, v1
 
     iget v1, p0, Lcom/google/android/gms/internal/firebase_ml/zzuj$zza;->number:I
 

@@ -337,7 +337,7 @@
     goto :goto_3
 
     :cond_7
-    const/4 v3, 0x0
+    move v3, v4
 
     goto :goto_6
 
@@ -1116,7 +1116,7 @@
 
     if-ne v3, v14, :cond_4
 
-    goto/16 :goto_15
+    goto/16 :goto_14
 
     :cond_4
     if-ne v3, v13, :cond_7
@@ -1221,7 +1221,7 @@
     if-eqz v1, :cond_a
 
     :cond_8
-    const/4 v1, 0x0
+    move v1, v5
 
     .line 114
     :goto_0
@@ -1383,7 +1383,7 @@
 
     const-string v2, "NULL"
 
-    const/4 v3, 0x7
+    move v3, v12
 
     goto :goto_4
 
@@ -1403,7 +1403,7 @@
 
     const-string v2, "TRUE"
 
-    const/4 v3, 0x5
+    move v3, v14
 
     .line 157
     :goto_4
@@ -1411,7 +1411,7 @@
 
     move-result v4
 
-    const/4 v7, 0x1
+    move v7, v6
 
     :goto_5
     if-ge v7, v4, :cond_16
@@ -1501,7 +1501,7 @@
 
     :cond_18
     :goto_6
-    const/4 v3, 0x0
+    move v3, v5
 
     goto :goto_7
 
@@ -1533,15 +1533,15 @@
 
     const-wide/16 v7, 0x0
 
+    move v4, v5
+
+    move v9, v4
+
+    move/from16 v16, v9
+
+    move v11, v6
+
     move-wide v12, v7
-
-    const/4 v4, 0x0
-
-    const/4 v9, 0x0
-
-    const/4 v11, 0x1
-
-    const/16 v16, 0x0
 
     :goto_8
     add-int v5, v2, v9
@@ -1630,11 +1630,11 @@
 
     const-wide v5, -0xcccccccccccccccL
 
-    cmp-long v7, v12, v5
+    cmp-long v5, v12, v5
 
-    if-gtz v7, :cond_1f
+    if-gtz v5, :cond_1f
 
-    if-nez v7, :cond_1e
+    if-nez v5, :cond_1e
 
     cmp-long v5, v17, v12
 
@@ -1689,13 +1689,13 @@
 
     int-to-long v12, v4
 
-    const/4 v4, 0x2
+    move v4, v15
 
     :cond_24
     :goto_c
     const-wide/16 v7, 0x0
 
-    goto/16 :goto_12
+    goto/16 :goto_11
 
     .line 210
     :cond_25
@@ -1715,9 +1715,9 @@
 
     const-wide/high16 v1, -0x8000000000000000L
 
-    cmp-long v3, v12, v1
+    cmp-long v1, v12, v1
 
-    if-nez v3, :cond_27
+    if-nez v1, :cond_27
 
     if-eqz v16, :cond_2a
 
@@ -1754,7 +1754,7 @@
     .line 228
     iput v5, v0, Lcom/google/android/gms/internal/firebase_ml/zzre;->zzbeg:I
 
-    goto :goto_13
+    goto :goto_12
 
     :cond_2a
     if-eq v4, v15, :cond_2c
@@ -1773,7 +1773,7 @@
     :goto_f
     const/4 v5, 0x0
 
-    goto :goto_13
+    goto :goto_12
 
     .line 230
     :cond_2c
@@ -1785,16 +1785,16 @@
     .line 231
     iput v5, v0, Lcom/google/android/gms/internal/firebase_ml/zzre;->zzbeg:I
 
-    goto :goto_13
+    goto :goto_12
 
     :cond_2d
     const/4 v6, 0x6
 
     if-ne v4, v15, :cond_2b
 
-    const/4 v4, 0x3
+    move v4, v10
 
-    goto :goto_12
+    goto :goto_11
 
     :cond_2e
     const/4 v6, 0x6
@@ -1805,12 +1805,14 @@
 
     const/16 v16, 0x1
 
-    goto :goto_12
+    goto :goto_11
 
     :cond_2f
     const/4 v5, 0x5
 
     if-ne v4, v5, :cond_2b
+
+    move v4, v6
 
     goto :goto_11
 
@@ -1826,19 +1828,18 @@
     if-ne v4, v6, :cond_2b
 
     :cond_31
-    const/4 v4, 0x5
+    move v4, v5
 
-    goto :goto_12
+    goto :goto_11
 
     :cond_32
     const/4 v5, 0x5
 
     if-ne v4, v5, :cond_2b
 
-    :goto_11
     const/4 v4, 0x6
 
-    :goto_12
+    :goto_11
     add-int/lit8 v9, v9, 0x1
 
     const/4 v6, 0x1
@@ -1847,7 +1848,7 @@
 
     goto/16 :goto_8
 
-    :goto_13
+    :goto_12
     if-eqz v5, :cond_33
 
     return v5
@@ -1887,7 +1888,7 @@
     throw v1
 
     :cond_35
-    const/4 v1, 0x1
+    move v1, v6
 
     .line 140
     iput v1, v0, Lcom/google/android/gms/internal/firebase_ml/zzre;->zzbeg:I
@@ -1895,7 +1896,7 @@
     return v1
 
     :cond_36
-    const/4 v1, 0x1
+    move v1, v6
 
     if-ne v3, v1, :cond_39
 
@@ -1913,14 +1914,14 @@
     return v10
 
     :cond_38
-    const/4 v1, 0x1
+    move v1, v6
 
     :cond_39
     if-eq v3, v1, :cond_3b
 
     if-ne v3, v15, :cond_3a
 
-    goto :goto_14
+    goto :goto_13
 
     :cond_3a
     const-string v1, "Unexpected value"
@@ -1934,7 +1935,7 @@
 
     .line 132
     :cond_3b
-    :goto_14
+    :goto_13
     invoke-direct/range {p0 .. p0}, Lcom/google/android/gms/internal/firebase_ml/zzre;->zzoa()V
 
     .line 133
@@ -1979,8 +1980,8 @@
     throw v1
 
     :cond_3f
-    :goto_15
-    const/4 v4, 0x1
+    :goto_14
+    move v4, v6
 
     sub-int/2addr v2, v4
 
@@ -1993,7 +1994,7 @@
 
     const/4 v2, 0x5
 
-    if-ne v3, v2, :cond_42
+    if-ne v3, v2, :cond_43
 
     .line 80
     invoke-direct {v0, v4}, Lcom/google/android/gms/internal/firebase_ml/zzre;->zzaj(Z)I
@@ -2028,22 +2029,28 @@
     :cond_42
     const/4 v2, 0x1
 
+    goto :goto_15
+
+    :cond_43
+    move v2, v4
+
     .line 86
+    :goto_15
     invoke-direct {v0, v2}, Lcom/google/android/gms/internal/firebase_ml/zzre;->zzaj(Z)I
 
     move-result v4
 
     const/16 v5, 0x22
 
-    if-eq v4, v5, :cond_47
+    if-eq v4, v5, :cond_48
 
     const/16 v5, 0x27
 
-    if-eq v4, v5, :cond_46
+    if-eq v4, v5, :cond_47
 
     const-string v5, "Expected name"
 
-    if-eq v4, v1, :cond_44
+    if-eq v4, v1, :cond_45
 
     .line 94
     invoke-direct/range {p0 .. p0}, Lcom/google/android/gms/internal/firebase_ml/zzre;->zzoa()V
@@ -2062,7 +2069,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_43
+    if-eqz v1, :cond_44
 
     const/16 v1, 0xe
 
@@ -2072,17 +2079,17 @@
     return v1
 
     .line 98
-    :cond_43
+    :cond_44
     invoke-direct {v0, v5}, Lcom/google/android/gms/internal/firebase_ml/zzre;->zzca(Ljava/lang/String;)Ljava/io/IOException;
 
     move-result-object v1
 
     throw v1
 
-    :cond_44
+    :cond_45
     const/4 v1, 0x5
 
-    if-eq v3, v1, :cond_45
+    if-eq v3, v1, :cond_46
 
     .line 92
     iput v15, v0, Lcom/google/android/gms/internal/firebase_ml/zzre;->zzbeg:I
@@ -2090,7 +2097,7 @@
     return v15
 
     .line 93
-    :cond_45
+    :cond_46
     invoke-direct {v0, v5}, Lcom/google/android/gms/internal/firebase_ml/zzre;->zzca(Ljava/lang/String;)Ljava/io/IOException;
 
     move-result-object v1
@@ -2098,7 +2105,7 @@
     throw v1
 
     .line 89
-    :cond_46
+    :cond_47
     invoke-direct/range {p0 .. p0}, Lcom/google/android/gms/internal/firebase_ml/zzre;->zzoa()V
 
     const/16 v1, 0xc
@@ -2108,7 +2115,7 @@
 
     return v1
 
-    :cond_47
+    :cond_48
     const/16 v1, 0xd
 
     .line 88
@@ -2130,7 +2137,7 @@
     const/4 v1, 0x0
 
     :cond_0
-    const/4 v2, 0x0
+    move v2, v0
 
     .line 333
     :goto_0
@@ -3619,7 +3626,7 @@
 
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    move v1, v0
 
     .line 375
     :cond_0
@@ -3755,7 +3762,7 @@
 
     :cond_b
     :goto_4
-    const/4 v2, 0x0
+    move v2, v0
 
     .line 393
     :goto_5

@@ -109,15 +109,15 @@
 
     move v1, p1
 
-    const/4 v2, 0x0
+    move v2, v0
 
-    const/4 v3, 0x0
+    move v3, v2
 
-    const/4 v4, 0x0
+    move v4, v3
 
-    const/4 v5, 0x0
+    move v5, v4
 
-    const/4 v6, 0x0
+    move v6, v5
 
     .line 656
     :goto_0
@@ -382,9 +382,9 @@
 
     move/from16 v18, v3
 
-    const/4 v10, 0x2
+    move/from16 v16, v15
 
-    const/16 v16, 0x4
+    const/4 v10, 0x2
 
     goto :goto_2
 
@@ -393,7 +393,7 @@
 
     move/from16 v18, v3
 
-    const/4 v10, 0x4
+    move v10, v15
 
     goto :goto_2
 
@@ -419,7 +419,7 @@
 
     if-ne v4, v15, :cond_6
 
-    const/16 v17, 0x1
+    move/from16 v17, v15
 
     goto :goto_4
 
@@ -429,7 +429,7 @@
     :goto_4
     if-ge v10, v12, :cond_d
 
-    mul-int v10, v10, v11
+    mul-int/2addr v10, v11
 
     add-int v20, v10, v7
 
@@ -449,7 +449,7 @@
     .line 604
     iget v3, v1, Lcom/bumptech/glide/gifdecoder/GifFrame;->iw:I
 
-    mul-int v10, v10, v3
+    mul-int/2addr v10, v3
 
     if-eqz v17, :cond_a
 
@@ -500,7 +500,7 @@
 
     sub-int v3, v15, v20
 
-    mul-int v3, v3, v4
+    mul-int/2addr v3, v4
 
     add-int/2addr v3, v10
 
@@ -669,7 +669,7 @@
     :cond_1
     iget v9, v1, Lcom/bumptech/glide/gifdecoder/GifFrame;->iw:I
 
-    mul-int v9, v9, v14
+    mul-int/2addr v9, v14
 
     move/from16 v13, v17
 
@@ -795,7 +795,7 @@
     iget v1, v1, Lcom/bumptech/glide/gifdecoder/GifFrame;->ih:I
 
     :goto_0
-    mul-int v2, v2, v1
+    mul-int/2addr v2, v1
 
     .line 704
     iget-object v1, v0, Lcom/bumptech/glide/gifdecoder/StandardGifDecoder;->mainPixels:[B
@@ -887,7 +887,7 @@
 
     const/4 v13, 0x0
 
-    const/4 v14, 0x0
+    move v14, v13
 
     :goto_1
     if-ge v14, v9, :cond_7
@@ -916,21 +916,21 @@
 
     move/from16 v22, v12
 
-    const/16 v16, 0x0
+    move/from16 v16, v13
 
-    const/16 v17, 0x0
+    move/from16 v17, v16
 
-    const/16 v18, 0x0
+    move/from16 v18, v17
 
-    const/16 v19, 0x0
+    move/from16 v19, v18
 
-    const/16 v20, 0x0
+    move/from16 v20, v19
 
-    const/16 v24, -0x1
+    move/from16 v25, v20
 
-    const/16 v25, 0x0
+    move/from16 v26, v25
 
-    const/16 v26, 0x0
+    move/from16 v24, v15
 
     :goto_2
     if-ge v13, v2, :cond_12
@@ -1398,11 +1398,11 @@
     .line 462
     iget v2, p0, Lcom/bumptech/glide/gifdecoder/StandardGifDecoder;->downsampledWidth:I
 
-    mul-int v3, v3, v2
+    mul-int/2addr v3, v2
 
     add-int/2addr v3, p2
 
-    mul-int v1, v1, v2
+    mul-int/2addr v1, v2
 
     add-int/2addr v1, v3
 
@@ -2188,7 +2188,7 @@
     .line 386
     iget-object p3, p0, Lcom/bumptech/glide/gifdecoder/StandardGifDecoder;->bitmapProvider:Lcom/bumptech/glide/gifdecoder/GifDecoder$BitmapProvider;
 
-    mul-int p2, p2, p1
+    mul-int/2addr p2, p1
 
     invoke-interface {p3, p2}, Lcom/bumptech/glide/gifdecoder/GifDecoder$BitmapProvider;->obtainByteArray(I)[B
 
@@ -2203,7 +2203,7 @@
 
     iget p3, p0, Lcom/bumptech/glide/gifdecoder/StandardGifDecoder;->downsampledHeight:I
 
-    mul-int p2, p2, p3
+    mul-int/2addr p2, p3
 
     invoke-interface {p1, p2}, Lcom/bumptech/glide/gifdecoder/GifDecoder$BitmapProvider;->obtainIntArray(I)[I
 

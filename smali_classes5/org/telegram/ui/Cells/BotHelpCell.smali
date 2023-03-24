@@ -539,7 +539,7 @@
     goto :goto_0
 
     :cond_4
-    const/16 v1, 0xb
+    move v1, v3
 
     :goto_0
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
@@ -873,7 +873,7 @@
     :catch_1
     move-exception v0
 
-    const/4 v2, 0x1
+    move v2, v6
 
     goto :goto_2
 
@@ -882,7 +882,7 @@
     :try_start_3
     invoke-direct {p0}, Lorg/telegram/ui/Cells/BotHelpCell;->resetPressedLink()V
 
-    goto :goto_5
+    goto/16 :goto_5
 
     .line 251
     :cond_3
@@ -895,7 +895,7 @@
     :catch_2
     move-exception v0
 
-    const/4 v2, 0x0
+    move v2, v5
 
     .line 254
     :goto_2
@@ -1014,13 +1014,13 @@
     invoke-direct {p0}, Lorg/telegram/ui/Cells/BotHelpCell;->resetPressedLink()V
 
     :goto_4
-    const/4 v0, 0x1
+    move v0, v6
 
     goto :goto_6
 
     :cond_9
     :goto_5
-    const/4 v0, 0x0
+    move v0, v5
 
     .line 284
     :goto_6
@@ -1123,7 +1123,7 @@
 
     :cond_d
     :goto_7
-    const/4 v0, 0x1
+    move v0, v6
 
     :cond_e
     if-nez v0, :cond_f
@@ -1136,10 +1136,12 @@
     if-eqz p1, :cond_10
 
     :cond_f
-    const/4 v5, 0x1
+    move v5, v6
 
     :cond_10
     return v5
+
+    nop
 
     :array_0
     .array-data 4
@@ -1190,12 +1192,12 @@
 
     if-eqz v0, :cond_0
 
-    const/4 v4, 0x1
+    move v4, v2
 
     goto :goto_0
 
     :cond_0
-    const/4 v4, 0x0
+    move v4, v3
 
     .line 114
     :goto_0
@@ -1501,7 +1503,7 @@
     :goto_4
     int-to-float v0, v0
 
-    mul-float v0, v0, v4
+    mul-float/2addr v0, v4
 
     float-to-int v0, v0
 
@@ -1542,7 +1544,7 @@
     invoke-virtual {v9, v10}, Landroid/text/SpannableStringBuilder;->append(Ljava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;
 
     :cond_c
-    const/4 v10, 0x0
+    move v10, v3
 
     .line 171
     :goto_5
@@ -1634,7 +1636,7 @@
     goto :goto_6
 
     :cond_10
-    const/4 v4, 0x0
+    move v4, v3
 
     :goto_6
     sub-int v11, v0, v4
@@ -1776,7 +1778,7 @@
 
     const-wide/high16 v6, 0x3fe2000000000000L    # 0.5625
 
-    mul-double v3, v3, v6
+    mul-double/2addr v3, v6
 
     double-to-int v0, v3
 

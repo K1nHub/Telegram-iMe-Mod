@@ -49,7 +49,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 564
+    .line 560
     check-cast p1, Ljava/lang/Integer;
 
     invoke-virtual {p0, p1}, Lorg/fork/controller/BackupController$Companion$getInstance$1;->invoke(Ljava/lang/Integer;)Lorg/fork/controller/BackupController;
@@ -66,7 +66,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 564
+    .line 560
     new-instance p1, Lorg/fork/controller/BackupController;
 
     iget v0, p0, Lorg/fork/controller/BackupController$Companion$getInstance$1;->$accountIndex:I

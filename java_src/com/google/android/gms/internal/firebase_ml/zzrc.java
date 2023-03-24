@@ -17,9 +17,11 @@ public final class zzrc {
     /* JADX INFO: Access modifiers changed from: package-private */
     public static FirebaseVisionText zzb(zzjw zzjwVar, float f) {
         Iterator<zzjn> it;
+        boolean z;
         Iterator<zziy> it2;
         FirebaseVisionText.TextBlock textBlock;
         Iterator<zzjn> it3;
+        boolean z2;
         Iterator<zziy> it4;
         Iterator<zzjq> it5;
         String sb;
@@ -30,6 +32,7 @@ public final class zzrc {
             zzass.m799d("TextAnnotationConverter", "Text Annotation is null, return null");
             return null;
         }
+        boolean z3 = true;
         if (zzjwVar.getPages().size() > 1) {
             zzass.m799d("TextAnnotationConverter", "Text Annotation has more than one page, which should not happen");
         }
@@ -44,6 +47,7 @@ public final class zzrc {
                 if (next.getParagraphs() == null) {
                     it = it6;
                     textBlock = textBlock2;
+                    z = z3;
                     it2 = it7;
                 } else {
                     Iterator<zzjq> it8 = next.getParagraphs().iterator();
@@ -102,12 +106,13 @@ public final class zzrc {
                                         sb2.append(str);
                                         Preconditions.checkNotNull(zzjzVar, "Input word can not be null");
                                         String zza4 = zza(zzjzVar);
-                                        if (!(zza4 != null && (zza4.equals("EOL_SURE_SPACE") || zza4.equals("LINE_BREAK") || zza4.equals("HYPHEN"))) && i != next2.getWords().size() - 1) {
-                                            f2 = zza2;
-                                            i++;
-                                            it6 = it3;
-                                            it7 = it4;
-                                            it8 = it5;
+                                        if (zza4 != null && (zza4.equals("EOL_SURE_SPACE") || zza4.equals("LINE_BREAK") || zza4.equals("HYPHEN"))) {
+                                            z2 = true;
+                                        } else {
+                                            z2 = true;
+                                            if (i != next2.getWords().size() - 1) {
+                                                f2 = zza2;
+                                            }
                                         }
                                         Preconditions.checkNotNull(arrayList4, "Input elements can not be null");
                                         int size = arrayList4.size();
@@ -135,18 +140,23 @@ public final class zzrc {
                                         hashSet.clear();
                                         arrayList4 = arrayList6;
                                         sb2 = new StringBuilder();
-                                        f2 = BitmapDescriptorFactory.HUE_RED;
+                                        f2 = 0.0f;
                                         i++;
+                                        z3 = z2;
                                         it6 = it3;
                                         it7 = it4;
                                         it8 = it5;
+                                    } else {
+                                        z2 = true;
                                     }
                                 } else {
                                     it3 = it6;
+                                    z2 = z3;
                                     it4 = it7;
                                     it5 = it8;
                                 }
                                 i++;
+                                z3 = z2;
                                 it6 = it3;
                                 it7 = it4;
                                 it8 = it5;
@@ -155,6 +165,7 @@ public final class zzrc {
                         }
                     }
                     it = it6;
+                    z = z3;
                     it2 = it7;
                     if (arrayList2.isEmpty()) {
                         textBlock = null;
@@ -174,6 +185,7 @@ public final class zzrc {
                 if (textBlock != null) {
                     arrayList.add(textBlock);
                 }
+                z3 = z;
                 it6 = it;
                 it7 = it2;
                 textBlock2 = null;

@@ -345,7 +345,7 @@
 
     if-eqz p1, :cond_2
 
-    const/high16 v1, 0x3f800000    # 1.0f
+    move v1, v2
 
     :cond_2
     aput v1, p2, v0
@@ -401,7 +401,7 @@
 
     if-eqz p1, :cond_4
 
-    const/high16 v1, 0x3f800000    # 1.0f
+    move v1, v2
 
     :cond_4
     iput v1, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$EmojiPackButton;->lockT:F
@@ -671,7 +671,7 @@
     goto :goto_1
 
     :cond_2
-    const/high16 v2, 0x3f800000    # 1.0f
+    move v2, v3
 
     :goto_1
     aput v2, p2, v1
@@ -730,7 +730,7 @@
     goto :goto_2
 
     :cond_4
-    const/high16 v2, 0x3f800000    # 1.0f
+    move v2, v3
 
     :goto_2
     invoke-virtual {p2, v2}, Landroid/widget/FrameLayout;->setAlpha(F)V

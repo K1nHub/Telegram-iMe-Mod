@@ -148,7 +148,7 @@
 
     move-result v6
 
-    const/4 v7, 0x0
+    move v7, v2
 
     :goto_0
     if-ge v7, v6, :cond_2
@@ -277,7 +277,7 @@
 
     if-eqz p1, :cond_3
 
-    const/4 v0, 0x0
+    move v0, v1
 
     .line 129
     :goto_0
@@ -643,7 +643,7 @@
 .end method
 
 .method private updateProgress()V
-    .locals 5
+    .locals 4
 
     .line 176
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
@@ -657,9 +657,9 @@
 
     const-wide/16 v2, 0x14
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-gtz v4, :cond_0
+    if-gtz v0, :cond_0
 
     iget v0, p0, Lorg/telegram/messenger/FilesMigrationService;->movedFilesCount:I
 
@@ -723,7 +723,7 @@
 
     move-result v3
 
-    const/4 v4, 0x0
+    move v4, v2
 
     :goto_0
     if-ge v4, v3, :cond_1

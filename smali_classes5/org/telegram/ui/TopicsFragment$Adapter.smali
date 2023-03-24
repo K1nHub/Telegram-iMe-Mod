@@ -236,7 +236,7 @@
 
     if-nez v2, :cond_1
 
-    const/4 v2, 0x0
+    move v2, v9
 
     goto :goto_0
 
@@ -262,12 +262,12 @@
 
     if-eqz v2, :cond_2
 
-    const/4 v12, 0x1
+    move v12, v11
 
     goto :goto_1
 
     :cond_2
-    const/4 v12, 0x0
+    move v12, v9
 
     :goto_1
     if-eqz v1, :cond_8
@@ -330,13 +330,13 @@
     goto :goto_2
 
     :cond_3
-    const/4 v1, 0x0
+    move v1, v9
 
     goto :goto_3
 
     :cond_4
     :goto_2
-    const/4 v1, 0x1
+    move v1, v11
 
     :goto_3
     iput-boolean v1, p1, Lorg/telegram/ui/TopicsFragment$TopicDialogCell;->drawDivider:Z
@@ -353,12 +353,12 @@
     if-nez v2, :cond_6
 
     :cond_5
-    const/4 v2, 0x1
+    move v2, v11
 
     goto :goto_4
 
     :cond_6
-    const/4 v2, 0x0
+    move v2, v9
 
     :goto_4
     iput-boolean v2, p1, Lorg/telegram/ui/Cells/DialogCell;->fullSeparator:Z
@@ -370,12 +370,12 @@
 
     if-nez v1, :cond_7
 
-    const/4 v1, 0x1
+    move v1, v11
 
     goto :goto_5
 
     :cond_7
-    const/4 v1, 0x0
+    move v1, v9
 
     :goto_5
     invoke-virtual {p1, v1}, Lorg/telegram/ui/Cells/DialogCell;->setPinForced(Z)V
@@ -411,7 +411,7 @@
 
     if-ne p2, v10, :cond_9
 
-    const/4 v9, 0x1
+    move v9, v11
 
     :cond_9
     invoke-virtual {p1, v9}, Lorg/telegram/ui/Cells/DialogCell;->setDialogSelected(Z)V

@@ -60,10 +60,10 @@
 .method public constructor <init>()V
     .locals 1
 
-    .line 239
+    .line 240
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 255
+    .line 256
     new-instance v0, Lorg/telegram/ui/Components/PhotoFilterView$CurvesToolValue;
 
     invoke-direct {v0}, Lorg/telegram/ui/Components/PhotoFilterView$CurvesToolValue;-><init>()V

@@ -1923,7 +1923,7 @@ public abstract class Notification {
         /* compiled from: Notification.kt */
         /* renamed from: com.smedialink.storage.domain.model.notification.Notification$CryptoTransfer$In */
         /* loaded from: classes3.dex */
-        public static final class C1847In extends CryptoTransfer {
+        public static final class C1860In extends CryptoTransfer {
             private final String amount;
             private final String date;
             private final String fromAddress;
@@ -1977,7 +1977,7 @@ public abstract class Notification {
                 return getToAddress();
             }
 
-            public final C1847In copy(String id, boolean z, NotificationType type, String date, String userId, NetworkType networkType, TokenCode tokenCode, String fromAddress, String toAddress, String amount) {
+            public final C1860In copy(String id, boolean z, NotificationType type, String date, String userId, NetworkType networkType, TokenCode tokenCode, String fromAddress, String toAddress, String amount) {
                 Intrinsics.checkNotNullParameter(id, "id");
                 Intrinsics.checkNotNullParameter(type, "type");
                 Intrinsics.checkNotNullParameter(date, "date");
@@ -1987,16 +1987,16 @@ public abstract class Notification {
                 Intrinsics.checkNotNullParameter(fromAddress, "fromAddress");
                 Intrinsics.checkNotNullParameter(toAddress, "toAddress");
                 Intrinsics.checkNotNullParameter(amount, "amount");
-                return new C1847In(id, z, type, date, userId, networkType, tokenCode, fromAddress, toAddress, amount);
+                return new C1860In(id, z, type, date, userId, networkType, tokenCode, fromAddress, toAddress, amount);
             }
 
             public boolean equals(Object obj) {
                 if (this == obj) {
                     return true;
                 }
-                if (obj instanceof C1847In) {
-                    C1847In c1847In = (C1847In) obj;
-                    return Intrinsics.areEqual(getId(), c1847In.getId()) && isRead() == c1847In.isRead() && getType() == c1847In.getType() && Intrinsics.areEqual(getDate(), c1847In.getDate()) && Intrinsics.areEqual(getUserId(), c1847In.getUserId()) && getNetworkType() == c1847In.getNetworkType() && getTokenCode() == c1847In.getTokenCode() && Intrinsics.areEqual(getFromAddress(), c1847In.getFromAddress()) && Intrinsics.areEqual(getToAddress(), c1847In.getToAddress()) && Intrinsics.areEqual(getAmount(), c1847In.getAmount());
+                if (obj instanceof C1860In) {
+                    C1860In c1860In = (C1860In) obj;
+                    return Intrinsics.areEqual(getId(), c1860In.getId()) && isRead() == c1860In.isRead() && getType() == c1860In.getType() && Intrinsics.areEqual(getDate(), c1860In.getDate()) && Intrinsics.areEqual(getUserId(), c1860In.getUserId()) && getNetworkType() == c1860In.getNetworkType() && getTokenCode() == c1860In.getTokenCode() && Intrinsics.areEqual(getFromAddress(), c1860In.getFromAddress()) && Intrinsics.areEqual(getToAddress(), c1860In.getToAddress()) && Intrinsics.areEqual(getAmount(), c1860In.getAmount());
                 }
                 return false;
             }
@@ -2071,7 +2071,7 @@ public abstract class Notification {
             }
 
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-            public C1847In(String id, boolean z, NotificationType type, String date, String userId, NetworkType networkType, TokenCode tokenCode, String fromAddress, String toAddress, String amount) {
+            public C1860In(String id, boolean z, NotificationType type, String date, String userId, NetworkType networkType, TokenCode tokenCode, String fromAddress, String toAddress, String amount) {
                 super(id, z, type, date, userId, networkType, tokenCode, fromAddress, toAddress, amount, null);
                 Intrinsics.checkNotNullParameter(id, "id");
                 Intrinsics.checkNotNullParameter(type, "type");
@@ -2374,7 +2374,7 @@ public abstract class Notification {
         /* compiled from: Notification.kt */
         /* renamed from: com.smedialink.storage.domain.model.notification.Notification$Donation$In */
         /* loaded from: classes3.dex */
-        public static final class C1848In extends Donation {
+        public static final class C1861In extends Donation {
             private final String amount;
             private final String date;
             private final String fromAddress;
@@ -2428,7 +2428,7 @@ public abstract class Notification {
                 return getToAddress();
             }
 
-            public final C1848In copy(String id, boolean z, NotificationType type, String date, String userId, NetworkType networkType, TokenCode tokenCode, String fromAddress, String toAddress, String amount) {
+            public final C1861In copy(String id, boolean z, NotificationType type, String date, String userId, NetworkType networkType, TokenCode tokenCode, String fromAddress, String toAddress, String amount) {
                 Intrinsics.checkNotNullParameter(id, "id");
                 Intrinsics.checkNotNullParameter(type, "type");
                 Intrinsics.checkNotNullParameter(date, "date");
@@ -2438,16 +2438,16 @@ public abstract class Notification {
                 Intrinsics.checkNotNullParameter(fromAddress, "fromAddress");
                 Intrinsics.checkNotNullParameter(toAddress, "toAddress");
                 Intrinsics.checkNotNullParameter(amount, "amount");
-                return new C1848In(id, z, type, date, userId, networkType, tokenCode, fromAddress, toAddress, amount);
+                return new C1861In(id, z, type, date, userId, networkType, tokenCode, fromAddress, toAddress, amount);
             }
 
             public boolean equals(Object obj) {
                 if (this == obj) {
                     return true;
                 }
-                if (obj instanceof C1848In) {
-                    C1848In c1848In = (C1848In) obj;
-                    return Intrinsics.areEqual(getId(), c1848In.getId()) && isRead() == c1848In.isRead() && getType() == c1848In.getType() && Intrinsics.areEqual(getDate(), c1848In.getDate()) && Intrinsics.areEqual(getUserId(), c1848In.getUserId()) && getNetworkType() == c1848In.getNetworkType() && getTokenCode() == c1848In.getTokenCode() && Intrinsics.areEqual(getFromAddress(), c1848In.getFromAddress()) && Intrinsics.areEqual(getToAddress(), c1848In.getToAddress()) && Intrinsics.areEqual(getAmount(), c1848In.getAmount());
+                if (obj instanceof C1861In) {
+                    C1861In c1861In = (C1861In) obj;
+                    return Intrinsics.areEqual(getId(), c1861In.getId()) && isRead() == c1861In.isRead() && getType() == c1861In.getType() && Intrinsics.areEqual(getDate(), c1861In.getDate()) && Intrinsics.areEqual(getUserId(), c1861In.getUserId()) && getNetworkType() == c1861In.getNetworkType() && getTokenCode() == c1861In.getTokenCode() && Intrinsics.areEqual(getFromAddress(), c1861In.getFromAddress()) && Intrinsics.areEqual(getToAddress(), c1861In.getToAddress()) && Intrinsics.areEqual(getAmount(), c1861In.getAmount());
                 }
                 return false;
             }
@@ -2522,7 +2522,7 @@ public abstract class Notification {
             }
 
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-            public C1848In(String id, boolean z, NotificationType type, String date, String userId, NetworkType networkType, TokenCode tokenCode, String fromAddress, String toAddress, String amount) {
+            public C1861In(String id, boolean z, NotificationType type, String date, String userId, NetworkType networkType, TokenCode tokenCode, String fromAddress, String toAddress, String amount) {
                 super(id, z, type, date, userId, networkType, tokenCode, fromAddress, toAddress, amount, null);
                 Intrinsics.checkNotNullParameter(id, "id");
                 Intrinsics.checkNotNullParameter(type, "type");

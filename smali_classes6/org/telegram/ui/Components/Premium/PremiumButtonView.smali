@@ -463,7 +463,7 @@
     goto :goto_0
 
     :cond_1
-    const/4 v0, 0x0
+    move v0, v1
 
     :goto_0
     iput v0, p0, Lorg/telegram/ui/Components/Premium/PremiumButtonView;->overlayProgress:F
@@ -494,7 +494,7 @@
     goto :goto_1
 
     :cond_3
-    const/4 v0, 0x0
+    move v0, v1
 
     :goto_1
     aput v0, p1, v2
@@ -570,7 +570,7 @@
 
     sub-float v3, v4, v3
 
-    mul-float v2, v2, v3
+    mul-float/2addr v2, v3
 
     invoke-virtual {v0, v2}, Landroid/view/View;->setTranslationY(F)V
 
@@ -596,7 +596,7 @@
 
     iget v2, p0, Lorg/telegram/ui/Components/Premium/PremiumButtonView;->overlayProgress:F
 
-    mul-float v1, v1, v2
+    mul-float/2addr v1, v2
 
     invoke-virtual {v0, v1}, Landroid/widget/FrameLayout;->setTranslationY(F)V
 
@@ -605,20 +605,20 @@
 
     iget v1, p0, Lorg/telegram/ui/Components/Premium/PremiumButtonView;->overlayProgress:F
 
+    cmpl-float v1, v1, v4
+
     const/4 v2, 0x4
 
     const/4 v3, 0x0
 
-    cmpl-float v1, v1, v4
-
     if-nez v1, :cond_0
 
-    const/4 v1, 0x4
+    move v1, v2
 
     goto :goto_0
 
     :cond_0
-    const/4 v1, 0x0
+    move v1, v3
 
     :goto_0
     invoke-virtual {v0, v1}, Landroid/widget/FrameLayout;->setVisibility(I)V
@@ -637,7 +637,7 @@
     goto :goto_1
 
     :cond_1
-    const/4 v2, 0x0
+    move v2, v3
 
     :goto_1
     invoke-virtual {v0, v2}, Landroid/view/View;->setVisibility(I)V
@@ -759,7 +759,7 @@
 
     const v4, 0x3f59999a    # 0.85f
 
-    mul-float v0, v0, v4
+    mul-float/2addr v0, v4
 
     const/4 v4, 0x3
 
@@ -959,11 +959,11 @@
 
     const v10, 0x3dcccccd    # 0.1f
 
-    mul-float v3, v3, v10
+    mul-float/2addr v3, v10
 
     iget v10, p0, Lorg/telegram/ui/Components/Premium/PremiumButtonView;->progress:F
 
-    mul-float v10, v10, v3
+    mul-float/2addr v10, v3
 
     const/4 v11, 0x0
 
@@ -1036,7 +1036,7 @@
 
     const/high16 v5, 0x437f0000    # 255.0f
 
-    mul-float v3, v3, v5
+    mul-float/2addr v3, v5
 
     float-to-int v3, v3
 
@@ -1089,11 +1089,11 @@
 
     const v5, 0x3fb33333    # 1.4f
 
-    mul-float v2, v2, v5
+    mul-float/2addr v2, v5
 
     iget v5, p0, Lorg/telegram/ui/Components/Premium/PremiumButtonView;->overlayProgress:F
 
-    mul-float v2, v2, v5
+    mul-float/2addr v2, v5
 
     sget-object v5, Landroid/graphics/Path$Direction;->CW:Landroid/graphics/Path$Direction;
 
@@ -1226,7 +1226,7 @@
 
     if-eqz p3, :cond_0
 
-    const/4 p3, 0x1
+    move p3, v1
 
     .line 267
     :cond_0

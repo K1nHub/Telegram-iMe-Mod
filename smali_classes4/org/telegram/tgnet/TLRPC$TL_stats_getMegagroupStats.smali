@@ -25,7 +25,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 59032
+    .line 59059
     invoke-direct {p0}, Lorg/telegram/tgnet/TLObject;-><init>()V
 
     return-void
@@ -36,7 +36,7 @@
 .method public deserializeResponse(Lorg/telegram/tgnet/AbstractSerializedData;IZ)Lorg/telegram/tgnet/TLObject;
     .locals 0
 
-    .line 59040
+    .line 59067
     invoke-static {p1, p2, p3}, Lorg/telegram/tgnet/TLRPC$TL_stats_megagroupStats;->TLdeserialize(Lorg/telegram/tgnet/AbstractSerializedData;IZ)Lorg/telegram/tgnet/TLRPC$TL_stats_megagroupStats;
 
     move-result-object p1
@@ -47,12 +47,12 @@
 .method public serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
     .locals 1
 
-    .line 59044
+    .line 59071
     sget v0, Lorg/telegram/tgnet/TLRPC$TL_stats_getMegagroupStats;->constructor:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 59045
+    .line 59072
     iget-boolean v0, p0, Lorg/telegram/tgnet/TLRPC$TL_stats_getMegagroupStats;->dark:Z
 
     if-eqz v0, :cond_0
@@ -71,10 +71,10 @@
     :goto_0
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$TL_stats_getMegagroupStats;->flags:I
 
-    .line 59046
+    .line 59073
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 59047
+    .line 59074
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$TL_stats_getMegagroupStats;->channel:Lorg/telegram/tgnet/TLRPC$InputChannel;
 
     invoke-virtual {v0, p1}, Lorg/telegram/tgnet/TLObject;->serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V

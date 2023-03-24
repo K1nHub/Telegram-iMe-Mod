@@ -954,9 +954,9 @@
 
     div-long/2addr v5, v7
 
-    long-to-int v6, v5
+    long-to-int v5, v5
 
-    iput v6, v1, Lorg/telegram/tgnet/TLRPC$Message;->date:I
+    iput v5, v1, Lorg/telegram/tgnet/TLRPC$Message;->date:I
 
     const-string v5, ""
 
@@ -1564,7 +1564,7 @@
 
     if-eqz v1, :cond_2
 
-    const/16 v1, 0x8
+    move v1, v2
 
     goto :goto_0
 
@@ -1619,7 +1619,7 @@
 
     if-eqz v1, :cond_4
 
-    const/16 v1, 0x8
+    move v1, v2
 
     goto :goto_1
 
@@ -1736,7 +1736,7 @@
 
     sub-float v3, v8, v3
 
-    mul-float v3, v3, v2
+    mul-float/2addr v3, v2
 
     float-to-int v2, v3
 
@@ -2535,7 +2535,7 @@
 
     mul-float v3, v1, v2
 
-    mul-float v1, v1, v2
+    mul-float/2addr v1, v2
 
     invoke-virtual/range {p0 .. p0}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
 
@@ -2865,12 +2865,12 @@
 
     if-nez v1, :cond_0
 
-    const/4 v1, 0x1
+    move v1, v3
 
     goto :goto_1
 
     :cond_0
-    const/4 v1, 0x0
+    move v1, v2
 
     .line 1070
     :goto_1
@@ -2888,12 +2888,12 @@
 
     if-nez v4, :cond_1
 
-    const/4 v4, 0x1
+    move v4, v3
 
     goto :goto_2
 
     :cond_1
-    const/4 v4, 0x0
+    move v4, v2
 
     .line 1071
     :goto_2
@@ -3313,15 +3313,15 @@
 
     move v10, v6
 
-    const/16 v2, 0xa
+    move v2, v11
 
     move v11, v6
 
-    const/16 v14, 0x20
+    move v14, v12
 
     move v12, v0
 
-    const/4 v5, 0x1
+    move v5, v13
 
     move/from16 v13, v17
 
@@ -3376,11 +3376,11 @@
     :catch_2
     move-exception v0
 
-    const/16 v2, 0xa
+    move v2, v11
 
-    const/4 v5, 0x1
+    move v14, v12
 
-    const/16 v14, 0x20
+    move v5, v13
 
     .line 217
     :goto_3
@@ -3389,11 +3389,11 @@
     goto :goto_4
 
     :cond_4
-    const/16 v2, 0xa
+    move v2, v11
 
-    const/4 v5, 0x1
+    move v14, v12
 
-    const/16 v14, 0x20
+    move v5, v13
 
     .line 221
     :cond_5
@@ -3475,7 +3475,7 @@
     :try_end_4
     .catch Ljava/lang/Exception; {:try_start_4 .. :try_end_4} :catch_3
 
-    goto :goto_7
+    goto :goto_6
 
     :catch_3
     move-exception v0
@@ -3493,23 +3493,24 @@
     :goto_5
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
-    goto :goto_7
+    goto :goto_6
 
     :cond_6
     move-object v3, v15
 
+    const/16 v6, 0xf
+
     goto :goto_6
 
     :cond_7
+    move v5, v13
+
+    move v6, v14
+
     move-object v3, v15
 
-    const/4 v5, 0x1
-
-    :goto_6
-    const/16 v6, 0xf
-
     .line 233
-    :goto_7
+    :goto_6
     iget-object v0, v7, Lorg/telegram/ui/Cells/ContextLinkCell;->documentAttach:Lorg/telegram/tgnet/TLRPC$Document;
 
     const/4 v2, 0x3
@@ -3533,7 +3534,7 @@
 
     if-eqz v0, :cond_8
 
-    goto :goto_9
+    goto :goto_8
 
     .line 236
     :cond_8
@@ -3553,7 +3554,7 @@
 
     if-eqz v0, :cond_9
 
-    goto :goto_8
+    goto :goto_7
 
     .line 240
     :cond_9
@@ -3574,11 +3575,11 @@
 
     iput-object v0, v7, Lorg/telegram/ui/Cells/ContextLinkCell;->currentPhotoObject:Lorg/telegram/tgnet/TLRPC$PhotoSize;
 
-    goto :goto_a
+    goto :goto_9
 
     .line 237
     :cond_a
-    :goto_8
+    :goto_7
     iget-object v0, v7, Lorg/telegram/ui/Cells/ContextLinkCell;->documentAttach:Lorg/telegram/tgnet/TLRPC$Document;
 
     iget-object v0, v0, Lorg/telegram/tgnet/TLRPC$Document;->thumbs:Ljava/util/ArrayList;
@@ -3595,11 +3596,11 @@
 
     const/4 v0, 0x0
 
-    goto :goto_b
+    goto :goto_a
 
     .line 235
     :cond_b
-    :goto_9
+    :goto_8
     iget-object v0, v7, Lorg/telegram/ui/Cells/ContextLinkCell;->documentAttach:Lorg/telegram/tgnet/TLRPC$Document;
 
     iget-object v0, v0, Lorg/telegram/tgnet/TLRPC$Document;->thumbs:Ljava/util/ArrayList;
@@ -3610,7 +3611,7 @@
 
     iput-object v0, v7, Lorg/telegram/ui/Cells/ContextLinkCell;->currentPhotoObject:Lorg/telegram/tgnet/TLRPC$PhotoSize;
 
-    goto :goto_a
+    goto :goto_9
 
     .line 244
     :cond_c
@@ -3644,14 +3645,14 @@
     if-ne v0, v3, :cond_e
 
     :cond_d
-    :goto_a
+    :goto_9
     const/4 v0, 0x0
 
     :cond_e
     const/16 v28, 0x0
 
     .line 251
-    :goto_b
+    :goto_a
     iget-object v3, v7, Lorg/telegram/ui/Cells/ContextLinkCell;->inlineResult:Lorg/telegram/tgnet/TLRPC$BotInlineResult;
 
     const/4 v10, 0x2
@@ -3705,7 +3706,7 @@
 
     check-cast v3, Lorg/telegram/tgnet/TLRPC$TL_webDocument;
 
-    goto :goto_c
+    goto :goto_b
 
     .line 258
     :cond_f
@@ -3716,10 +3717,10 @@
     check-cast v3, Lorg/telegram/tgnet/TLRPC$TL_webDocument;
 
     .line 260
-    :goto_c
+    :goto_b
     iput v10, v7, Lorg/telegram/ui/Cells/ContextLinkCell;->documentAttachType:I
 
-    goto :goto_d
+    goto :goto_c
 
     .line 261
     :cond_10
@@ -3749,7 +3750,7 @@
 
     check-cast v3, Lorg/telegram/tgnet/TLRPC$TL_webDocument;
 
-    goto :goto_d
+    goto :goto_c
 
     .line 265
     :cond_11
@@ -3757,12 +3758,12 @@
 
     check-cast v3, Lorg/telegram/tgnet/TLRPC$TL_webDocument;
 
-    goto :goto_d
+    goto :goto_c
 
     :cond_12
     const/4 v3, 0x0
 
-    :goto_d
+    :goto_c
     if-nez v3, :cond_13
 
     .line 270
@@ -3853,7 +3854,7 @@
 
     const/4 v6, 0x0
 
-    goto :goto_f
+    goto :goto_e
 
     .line 280
     :cond_15
@@ -3879,15 +3880,15 @@
 
     move-result-object v6
 
-    goto :goto_e
+    goto :goto_d
 
     :cond_16
     const/4 v6, 0x0
 
-    :goto_e
+    :goto_d
     const/16 v18, 0x0
 
-    :goto_f
+    :goto_e
     if-eqz v3, :cond_18
 
     .line 285
@@ -3897,7 +3898,7 @@
 
     move-object/from16 v18, v3
 
-    goto :goto_10
+    goto :goto_f
 
     :cond_17
     const/4 v6, 0x0
@@ -3906,15 +3907,15 @@
 
     .line 293
     :cond_18
-    :goto_10
+    :goto_f
     iget-object v3, v7, Lorg/telegram/ui/Cells/ContextLinkCell;->documentAttach:Lorg/telegram/tgnet/TLRPC$Document;
 
     if-eqz v3, :cond_1b
 
-    const/4 v3, 0x0
+    move v3, v1
 
     .line 294
-    :goto_11
+    :goto_10
     iget-object v11, v7, Lorg/telegram/ui/Cells/ContextLinkCell;->documentAttach:Lorg/telegram/tgnet/TLRPC$Document;
 
     iget-object v11, v11, Lorg/telegram/tgnet/TLRPC$Document;->attributes:Ljava/util/ArrayList;
@@ -3945,29 +3946,29 @@
 
     if-eqz v12, :cond_19
 
-    goto :goto_12
+    goto :goto_11
 
     :cond_19
     add-int/lit8 v3, v3, 0x1
 
-    goto :goto_11
+    goto :goto_10
 
     .line 297
     :cond_1a
-    :goto_12
+    :goto_11
     iget v3, v11, Lorg/telegram/tgnet/TLRPC$DocumentAttribute;->w:I
 
     .line 298
     iget v11, v11, Lorg/telegram/tgnet/TLRPC$DocumentAttribute;->h:I
 
-    goto :goto_13
+    goto :goto_12
 
     :cond_1b
-    const/4 v3, 0x0
+    move v3, v1
 
-    const/4 v11, 0x0
+    move v11, v3
 
-    :goto_13
+    :goto_12
     if-eqz v3, :cond_1c
 
     if-nez v11, :cond_1f
@@ -3992,7 +3993,7 @@
     .line 309
     iget v11, v12, Lorg/telegram/tgnet/TLRPC$PhotoSize;->h:I
 
-    goto :goto_14
+    goto :goto_13
 
     .line 310
     :cond_1e
@@ -4018,7 +4019,7 @@
     move/from16 v3, v39
 
     :cond_1f
-    :goto_14
+    :goto_13
     if-eqz v3, :cond_20
 
     if-nez v11, :cond_21
@@ -4143,12 +4144,12 @@
 
     move-result-object v3
 
-    goto :goto_15
+    goto :goto_14
 
     :cond_23
     move-object/from16 v25, v3
 
-    goto :goto_16
+    goto :goto_15
 
     .line 332
     :cond_24
@@ -4197,10 +4198,10 @@
 
     move-result-object v9
 
-    :goto_15
+    :goto_14
     move-object/from16 v25, v9
 
-    goto :goto_16
+    goto :goto_15
 
     :cond_25
     const-string v3, "52_52_b"
@@ -4212,7 +4213,7 @@
     move-object v3, v9
 
     .line 338
-    :goto_16
+    :goto_15
     iget-object v9, v7, Lorg/telegram/ui/Cells/ContextLinkCell;->linkImageView:Lorg/telegram/messenger/ImageReceiver;
 
     iget v11, v7, Lorg/telegram/ui/Cells/ContextLinkCell;->documentAttachType:I
@@ -4221,14 +4222,14 @@
 
     if-ne v11, v12, :cond_26
 
-    const/4 v11, 0x1
+    move v11, v5
 
-    goto :goto_17
+    goto :goto_16
 
     :cond_26
-    const/4 v11, 0x0
+    move v11, v1
 
-    :goto_17
+    :goto_16
     invoke-virtual {v9, v11}, Lorg/telegram/messenger/ImageReceiver;->setAspectFit(Z)V
 
     .line 340
@@ -4277,12 +4278,12 @@
 
     if-nez v9, :cond_27
 
-    goto :goto_18
+    goto :goto_17
 
     :cond_27
     move-object v13, v6
 
-    :goto_18
+    :goto_17
     invoke-virtual {v0, v13}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
@@ -4311,7 +4312,7 @@
 
     invoke-virtual/range {v21 .. v30}, Lorg/telegram/messenger/ImageReceiver;->setImage(Lorg/telegram/messenger/ImageLocation;Ljava/lang/String;Lorg/telegram/messenger/ImageLocation;Ljava/lang/String;JLjava/lang/String;Ljava/lang/Object;I)V
 
-    goto/16 :goto_1a
+    goto/16 :goto_19
 
     .line 346
     :cond_28
@@ -4349,12 +4350,12 @@
 
     if-nez v9, :cond_2a
 
-    goto :goto_19
+    goto :goto_18
 
     :cond_2a
     move-object v13, v6
 
-    :goto_19
+    :goto_18
     invoke-virtual {v12, v13}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {v12}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
@@ -4389,7 +4390,7 @@
 
     invoke-virtual/range {v21 .. v30}, Lorg/telegram/messenger/ImageReceiver;->setImage(Lorg/telegram/messenger/ImageLocation;Ljava/lang/String;Lorg/telegram/messenger/ImageLocation;Ljava/lang/String;JLjava/lang/String;Ljava/lang/Object;I)V
 
-    goto/16 :goto_1a
+    goto/16 :goto_19
 
     :cond_2b
     if-eqz v18, :cond_2c
@@ -4425,7 +4426,7 @@
 
     invoke-virtual/range {v21 .. v30}, Lorg/telegram/messenger/ImageReceiver;->setImage(Lorg/telegram/messenger/ImageLocation;Ljava/lang/String;Lorg/telegram/messenger/ImageLocation;Ljava/lang/String;JLjava/lang/String;Ljava/lang/Object;I)V
 
-    goto/16 :goto_1a
+    goto/16 :goto_19
 
     .line 355
     :cond_2c
@@ -4459,7 +4460,7 @@
 
     invoke-virtual/range {v21 .. v30}, Lorg/telegram/messenger/ImageReceiver;->setImage(Lorg/telegram/messenger/ImageLocation;Ljava/lang/String;Lorg/telegram/messenger/ImageLocation;Ljava/lang/String;JLjava/lang/String;Ljava/lang/Object;I)V
 
-    goto/16 :goto_1a
+    goto/16 :goto_19
 
     .line 358
     :cond_2d
@@ -4520,7 +4521,7 @@
 
     invoke-virtual/range {v21 .. v29}, Lorg/telegram/messenger/ImageReceiver;->setImage(Lorg/telegram/messenger/ImageLocation;Ljava/lang/String;Landroid/graphics/drawable/Drawable;JLjava/lang/String;Ljava/lang/Object;I)V
 
-    goto/16 :goto_1a
+    goto/16 :goto_19
 
     .line 364
     :cond_2e
@@ -4560,7 +4561,7 @@
 
     invoke-virtual/range {v21 .. v30}, Lorg/telegram/messenger/ImageReceiver;->setImage(Lorg/telegram/messenger/ImageLocation;Ljava/lang/String;Lorg/telegram/messenger/ImageLocation;Ljava/lang/String;JLjava/lang/String;Ljava/lang/Object;I)V
 
-    goto/16 :goto_1a
+    goto/16 :goto_19
 
     .line 367
     :cond_2f
@@ -4601,7 +4602,7 @@
 
     invoke-virtual/range {v21 .. v29}, Lorg/telegram/messenger/ImageReceiver;->setImage(Lorg/telegram/messenger/ImageLocation;Ljava/lang/String;Landroid/graphics/drawable/Drawable;JLjava/lang/String;Ljava/lang/Object;I)V
 
-    goto/16 :goto_1a
+    goto/16 :goto_19
 
     .line 371
     :cond_30
@@ -4639,7 +4640,7 @@
 
     invoke-virtual/range {v21 .. v30}, Lorg/telegram/messenger/ImageReceiver;->setImage(Lorg/telegram/messenger/ImageLocation;Ljava/lang/String;Lorg/telegram/messenger/ImageLocation;Ljava/lang/String;JLjava/lang/String;Ljava/lang/Object;I)V
 
-    goto :goto_1a
+    goto :goto_19
 
     .line 374
     :cond_31
@@ -4679,7 +4680,7 @@
 
     invoke-virtual/range {v21 .. v30}, Lorg/telegram/messenger/ImageReceiver;->setImage(Lorg/telegram/messenger/ImageLocation;Ljava/lang/String;Lorg/telegram/messenger/ImageLocation;Ljava/lang/String;JLjava/lang/String;Ljava/lang/Object;I)V
 
-    goto :goto_1a
+    goto :goto_19
 
     :cond_32
     if-eqz v18, :cond_33
@@ -4711,7 +4712,7 @@
 
     invoke-virtual/range {v21 .. v30}, Lorg/telegram/messenger/ImageReceiver;->setImage(Lorg/telegram/messenger/ImageLocation;Ljava/lang/String;Lorg/telegram/messenger/ImageLocation;Ljava/lang/String;JLjava/lang/String;Ljava/lang/Object;I)V
 
-    goto :goto_1a
+    goto :goto_19
 
     .line 379
     :cond_33
@@ -4742,7 +4743,7 @@
     invoke-virtual/range {v21 .. v30}, Lorg/telegram/messenger/ImageReceiver;->setImage(Lorg/telegram/messenger/ImageLocation;Ljava/lang/String;Lorg/telegram/messenger/ImageLocation;Ljava/lang/String;JLjava/lang/String;Ljava/lang/Object;I)V
 
     .line 382
-    :goto_1a
+    :goto_19
     invoke-static {}, Lorg/telegram/messenger/SharedConfig;->isAutoplayGifs()Z
 
     move-result v0
@@ -4753,7 +4754,7 @@
 
     if-eqz v0, :cond_34
 
-    goto :goto_1b
+    goto :goto_1a
 
     .line 386
     :cond_34
@@ -4766,11 +4767,11 @@
 
     invoke-virtual {v0}, Lorg/telegram/messenger/ImageReceiver;->stopAnimation()V
 
-    goto :goto_1c
+    goto :goto_1b
 
     .line 383
     :cond_35
-    :goto_1b
+    :goto_1a
     iget-object v0, v7, Lorg/telegram/ui/Cells/ContextLinkCell;->linkImageView:Lorg/telegram/messenger/ImageReceiver;
 
     invoke-virtual {v0, v5}, Lorg/telegram/messenger/ImageReceiver;->setAllowStartAnimation(Z)V
@@ -4781,7 +4782,7 @@
     invoke-virtual {v0}, Lorg/telegram/messenger/ImageReceiver;->startAnimation()V
 
     .line 389
-    :goto_1c
+    :goto_1b
     iput-boolean v5, v7, Lorg/telegram/ui/Cells/ContextLinkCell;->drawLinkImageView:Z
 
     .line 392
@@ -4867,7 +4868,7 @@
 
     invoke-virtual {v1, v3, v3, v2, v0}, Lorg/telegram/messenger/ImageReceiver;->setImageCoords(FFFF)V
 
-    goto/16 :goto_1e
+    goto/16 :goto_1d
 
     .line 406
     :cond_38
@@ -5015,7 +5016,7 @@
 
     sub-int/2addr v1, v0
 
-    goto :goto_1d
+    goto :goto_1c
 
     :cond_3c
     const/16 v4, 0x8
@@ -5025,7 +5026,7 @@
     move-result v1
 
     .line 420
-    :goto_1d
+    :goto_1c
     iget-object v5, v7, Lorg/telegram/ui/Cells/ContextLinkCell;->letterDrawable:Lorg/telegram/ui/Components/LetterDrawable;
 
     invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
@@ -5105,7 +5106,7 @@
 
     .line 427
     :cond_3e
-    :goto_1e
+    :goto_1d
     iget-object v2, v7, Lorg/telegram/ui/Cells/ContextLinkCell;->checkBox:Lorg/telegram/ui/Components/CheckBox2;
 
     if-eqz v2, :cond_3f
@@ -5386,7 +5387,7 @@
 
     :cond_5
     :goto_0
-    const/4 v5, 0x0
+    move v5, v6
 
     goto :goto_3
 

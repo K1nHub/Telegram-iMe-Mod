@@ -220,12 +220,12 @@
 
     if-eqz v0, :cond_0
 
-    const/4 v0, 0x1
+    move v0, v1
 
     goto :goto_0
 
     :cond_0
-    const/4 v0, 0x0
+    move v0, v2
 
     :goto_0
     new-array v1, v1, [Ljava/lang/Object;
@@ -629,7 +629,7 @@
 
     if-ne v2, v4, :cond_0
 
-    const/4 v3, 0x1
+    move v3, v1
 
     .line 223
     :cond_0
@@ -1891,12 +1891,12 @@
 
     if-gt v3, v4, :cond_1
 
-    const/4 v3, 0x1
+    move v3, v4
 
     goto :goto_1
 
     :cond_1
-    const/4 v3, 0x0
+    move v3, v5
 
     :goto_1
     new-array v6, v5, [Ljava/lang/Object;
@@ -2143,7 +2143,7 @@
     goto :goto_0
 
     :cond_0
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_0
     new-array v1, v1, [Ljava/lang/Object;

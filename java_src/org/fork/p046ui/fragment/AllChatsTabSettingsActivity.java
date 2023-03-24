@@ -20,11 +20,11 @@ import org.fork.controller.FiltersController;
 import org.fork.p046ui.dialog.SelectFabsBottomSheet;
 import org.fork.p046ui.view.FabsCell;
 import org.fork.utils.Callbacks$Callback1;
-import org.telegram.messenger.C3286R;
+import org.telegram.messenger.C3301R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.p048ui.ActionBar.BaseFragment;
-import org.telegram.p048ui.ActionBar.C3351ActionBar;
+import org.telegram.p048ui.ActionBar.C3366ActionBar;
 import org.telegram.p048ui.ActionBar.Theme;
 import org.telegram.p048ui.ActionBar.ThemeDescription;
 import org.telegram.p048ui.Cells.HeaderCell;
@@ -121,12 +121,12 @@ public final class AllChatsTabSettingsActivity extends BaseFragment {
     }
 
     private final void setupActionBar() {
-        C3351ActionBar c3351ActionBar = this.actionBar;
-        c3351ActionBar.setBackButtonImage(C3286R.C3288drawable.ic_ab_back);
-        c3351ActionBar.setAllowOverlayTitle(true);
-        c3351ActionBar.setTitle(LocaleController.getInternalString(C3286R.string.folder_tabs_all_chats_tab_settings_item_title));
-        c3351ActionBar.setActionBarMenuOnItemClick(new C3351ActionBar.ActionBarMenuOnItemClick() { // from class: org.fork.ui.fragment.AllChatsTabSettingsActivity$setupActionBar$1$1
-            @Override // org.telegram.p048ui.ActionBar.C3351ActionBar.ActionBarMenuOnItemClick
+        C3366ActionBar c3366ActionBar = this.actionBar;
+        c3366ActionBar.setBackButtonImage(C3301R.C3303drawable.ic_ab_back);
+        c3366ActionBar.setAllowOverlayTitle(true);
+        c3366ActionBar.setTitle(LocaleController.getInternalString(C3301R.string.folder_tabs_all_chats_tab_settings_item_title));
+        c3366ActionBar.setActionBarMenuOnItemClick(new C3366ActionBar.ActionBarMenuOnItemClick() { // from class: org.fork.ui.fragment.AllChatsTabSettingsActivity$setupActionBar$1$1
+            @Override // org.telegram.p048ui.ActionBar.C3366ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i) {
                 if (i == -1) {
                     AllChatsTabSettingsActivity.this.finishFragment();
@@ -315,33 +315,33 @@ public final class AllChatsTabSettingsActivity extends BaseFragment {
                 if (i != allChatsTabSettingsActivity.enableRow) {
                     if (i == allChatsTabSettingsActivity.iconInsteadTitleRow) {
                         textCheckCell.setType(0);
-                        textCheckCell.setTextAndCheck(LocaleController.getInternalString(C3286R.string.all_chats_tab_settings_icon_instead_text_item_title), allChatsTabSettingsActivity.getFiltersController().isIconInsteadAllChatsTabTitleEnabled(), needDivider);
+                        textCheckCell.setTextAndCheck(LocaleController.getInternalString(C3301R.string.all_chats_tab_settings_icon_instead_text_item_title), allChatsTabSettingsActivity.getFiltersController().isIconInsteadAllChatsTabTitleEnabled(), needDivider);
                         return;
                     }
                     return;
                 }
                 textCheckCell.setType(1);
-                textCheckCell.setTextAndCheck(LocaleController.getInternalString(C3286R.string.all_chats_tab_settings_enable_item_title), allChatsTabSettingsActivity.getFiltersController().isAllChatsTabEnabled(), needDivider);
+                textCheckCell.setTextAndCheck(LocaleController.getInternalString(C3301R.string.all_chats_tab_settings_enable_item_title), allChatsTabSettingsActivity.getFiltersController().isAllChatsTabEnabled(), needDivider);
             } else if (itemViewType == IdFabric$ViewTypes.TEXT_INFO_PRIVACY && (view instanceof TextInfoPrivacyCell)) {
                 AllChatsTabSettingsActivity allChatsTabSettingsActivity2 = AllChatsTabSettingsActivity.this;
                 TextInfoPrivacyCell textInfoPrivacyCell = (TextInfoPrivacyCell) view;
                 if (i != allChatsTabSettingsActivity2.enableSectionRow) {
                     if (i == allChatsTabSettingsActivity2.fabsSectionRow) {
-                        textInfoPrivacyCell.setText(LocaleController.getInternalString(C3286R.string.create_folder_change_fab_section_description));
-                        textInfoPrivacyCell.setBackground(Theme.getThemedDrawable(allChatsTabSettingsActivity2.getParentActivity(), C3286R.C3288drawable.greydivider_bottom, "windowBackgroundGrayShadow"));
+                        textInfoPrivacyCell.setText(LocaleController.getInternalString(C3301R.string.create_folder_change_fab_section_description));
+                        textInfoPrivacyCell.setBackground(Theme.getThemedDrawable(allChatsTabSettingsActivity2.getParentActivity(), C3301R.C3303drawable.greydivider_bottom, "windowBackgroundGrayShadow"));
                     }
                 } else if (allChatsTabSettingsActivity2.getFiltersController().isAllChatsTabEnabled()) {
-                    textInfoPrivacyCell.setBackground(Theme.getThemedDrawable(allChatsTabSettingsActivity2.getParentActivity(), C3286R.C3288drawable.greydivider, "windowBackgroundGrayShadow"));
+                    textInfoPrivacyCell.setBackground(Theme.getThemedDrawable(allChatsTabSettingsActivity2.getParentActivity(), C3301R.C3303drawable.greydivider, "windowBackgroundGrayShadow"));
                     textInfoPrivacyCell.setText(null);
                     textInfoPrivacyCell.setFixedSize(12);
                 } else {
-                    textInfoPrivacyCell.setBackground(Theme.getThemedDrawable(allChatsTabSettingsActivity2.getParentActivity(), C3286R.C3288drawable.greydivider_bottom, "windowBackgroundGrayShadow"));
-                    textInfoPrivacyCell.setText(LocaleController.getInternalString(C3286R.string.all_chats_tab_settings_enable_item_hint));
+                    textInfoPrivacyCell.setBackground(Theme.getThemedDrawable(allChatsTabSettingsActivity2.getParentActivity(), C3301R.C3303drawable.greydivider_bottom, "windowBackgroundGrayShadow"));
+                    textInfoPrivacyCell.setText(LocaleController.getInternalString(C3301R.string.all_chats_tab_settings_enable_item_hint));
                 }
             } else if (itemViewType == IdFabric$ViewTypes.HEADER && (view instanceof HeaderCell)) {
                 HeaderCell headerCell = (HeaderCell) view;
                 if (i == AllChatsTabSettingsActivity.this.iconInsteadTitleHeaderRow) {
-                    headerCell.setText(LocaleController.getInternalString(C3286R.string.all_chats_tab_settings_icon_instead_text_header));
+                    headerCell.setText(LocaleController.getInternalString(C3301R.string.all_chats_tab_settings_icon_instead_text_header));
                 }
             } else if (itemViewType == IdFabric$ViewTypes.FABS && (view instanceof FabsCell)) {
                 AllChatsTabSettingsActivity allChatsTabSettingsActivity3 = AllChatsTabSettingsActivity.this;

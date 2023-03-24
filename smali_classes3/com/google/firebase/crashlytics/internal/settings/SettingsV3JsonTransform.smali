@@ -205,7 +205,7 @@
 
     const-wide/16 v2, 0x3e8
 
-    mul-long p1, p1, v2
+    mul-long/2addr p1, v2
 
     add-long p0, v0, p1
 

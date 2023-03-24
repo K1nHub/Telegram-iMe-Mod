@@ -106,7 +106,7 @@
 
 # virtual methods
 .method public final run()V
-    .locals 9
+    .locals 10
 
     .line 1
     iget-object v0, p0, Lcom/google/android/gms/measurement/internal/zzid;->zza:Lcom/google/android/gms/measurement/internal/zzie;
@@ -255,9 +255,11 @@
 
     move-object v4, v1
 
-    move-object v0, v3
+    move-object v9, v3
 
-    const/4 v3, 0x0
+    move v3, v0
+
+    move-object v0, v9
 
     goto :goto_2
 
@@ -266,20 +268,22 @@
 
     move-object v4, v1
 
-    move-object v0, v3
+    move-object v9, v3
 
-    const/4 v3, 0x0
+    move v3, v0
+
+    move-object v0, v9
 
     goto :goto_3
 
     :catchall_5
     move-exception v2
 
+    move v3, v0
+
     move-object v4, v1
 
     move-object v0, v2
-
-    const/4 v3, 0x0
 
     move-object v2, v4
 
@@ -299,11 +303,11 @@
     :catch_3
     move-exception v2
 
+    move v3, v0
+
     move-object v4, v1
 
     move-object v0, v2
-
-    const/4 v3, 0x0
 
     move-object v2, v4
 

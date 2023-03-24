@@ -6,7 +6,7 @@ public class TLRPC$TL_messages_historyImportParsed extends TLObject {
     public boolean group;
 
     /* renamed from: pm */
-    public boolean f1597pm;
+    public boolean f1598pm;
     public String title;
 
     public static TLRPC$TL_messages_historyImportParsed TLdeserialize(AbstractSerializedData abstractSerializedData, int i, boolean z) {
@@ -25,7 +25,7 @@ public class TLRPC$TL_messages_historyImportParsed extends TLObject {
     public void readParams(AbstractSerializedData abstractSerializedData, boolean z) {
         int readInt32 = abstractSerializedData.readInt32(z);
         this.flags = readInt32;
-        this.f1597pm = (readInt32 & 1) != 0;
+        this.f1598pm = (readInt32 & 1) != 0;
         this.group = (readInt32 & 2) != 0;
         if ((readInt32 & 4) != 0) {
             this.title = abstractSerializedData.readString(z);
@@ -35,7 +35,7 @@ public class TLRPC$TL_messages_historyImportParsed extends TLObject {
     @Override // org.telegram.tgnet.TLObject
     public void serializeToStream(AbstractSerializedData abstractSerializedData) {
         abstractSerializedData.writeInt32(constructor);
-        int i = this.f1597pm ? this.flags | 1 : this.flags & (-2);
+        int i = this.f1598pm ? this.flags | 1 : this.flags & (-2);
         this.flags = i;
         int i2 = this.group ? i | 2 : i & (-3);
         this.flags = i2;

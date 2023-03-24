@@ -49,15 +49,15 @@
 
     int-to-long v4, v4
 
-    cmp-long v6, v2, v4
+    cmp-long v4, v2, v4
 
-    if-gez v6, :cond_0
+    if-gez v4, :cond_0
 
     iget-object v1, v1, Lj$/util/stream/a4;->e:[Ljava/lang/Object;
 
-    long-to-int v3, v2
+    long-to-int v2, v2
 
-    aget-object v1, v1, v3
+    aget-object v1, v1, v2
 
     goto :goto_1
 
@@ -77,9 +77,9 @@
 
     move-result-wide v4
 
-    cmp-long v6, v2, v4
+    cmp-long v4, v2, v4
 
-    if-gez v6, :cond_4
+    if-gez v4, :cond_4
 
     const/4 v4, 0x0
 
@@ -102,9 +102,9 @@
 
     add-long/2addr v6, v9
 
-    cmp-long v9, v2, v6
+    cmp-long v6, v2, v6
 
-    if-gez v9, :cond_2
+    if-gez v6, :cond_2
 
     aget-object v1, v8, v4
 
@@ -112,9 +112,9 @@
 
     sub-long/2addr v2, v4
 
-    long-to-int v3, v2
+    long-to-int v2, v2
 
-    aget-object v1, v1, v3
+    aget-object v1, v1, v2
 
     .line 4
     :goto_1

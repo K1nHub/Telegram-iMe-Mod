@@ -48,8 +48,8 @@ public class ECAlgorithms {
         int max = Math.max(bArr.length, bArr2.length);
         ECPoint infinity = eCPointArr[0].getCurve().getInfinity();
         int i = max - 1;
-        ECPoint eCPoint2 = infinity;
         int i2 = 0;
+        ECPoint eCPoint2 = infinity;
         while (i >= 0) {
             byte b = i < bArr.length ? bArr[i] : (byte) 0;
             byte b2 = i < bArr2.length ? bArr2[i] : (byte) 0;
@@ -125,8 +125,8 @@ public class ECAlgorithms {
         }
         ECPoint infinity = wNafPreCompInfoArr[0].getPreComp()[0].getCurve().getInfinity();
         int i2 = i - 1;
-        ECPoint eCPoint = infinity;
         int i3 = 0;
+        ECPoint eCPoint = infinity;
         while (i2 >= 0) {
             ECPoint eCPoint2 = infinity;
             for (int i4 = 0; i4 < length; i4++) {

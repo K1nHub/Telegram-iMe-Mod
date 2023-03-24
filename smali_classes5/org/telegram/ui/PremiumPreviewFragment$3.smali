@@ -33,7 +33,7 @@
 
 # virtual methods
 .method public onScrollStateChanged(Landroidx/recyclerview/widget/RecyclerView;I)V
-    .locals 3
+    .locals 2
 
     .line 535
     invoke-super {p0, p1, p2}, Landroidx/recyclerview/widget/RecyclerView$OnScrollListener;->onScrollStateChanged(Landroidx/recyclerview/widget/RecyclerView;I)V
@@ -66,9 +66,9 @@
 
     const/high16 v1, 0x3f000000    # 0.5f
 
-    const/4 v2, 0x0
-
     cmpl-float v0, v0, v1
+
+    const/4 v1, 0x0
 
     if-lez v0, :cond_0
 
@@ -81,7 +81,7 @@
 
     sub-int/2addr p2, p1
 
-    invoke-virtual {v0, v2, p2}, Landroidx/recyclerview/widget/RecyclerView;->smoothScrollBy(II)V
+    invoke-virtual {v0, v1, p2}, Landroidx/recyclerview/widget/RecyclerView;->smoothScrollBy(II)V
 
     goto :goto_0
 
@@ -106,7 +106,7 @@
 
     move-result-object p1
 
-    invoke-virtual {p1, v2}, Landroidx/recyclerview/widget/RecyclerView$LayoutManager;->findViewByPosition(I)Landroid/view/View;
+    invoke-virtual {p1, v1}, Landroidx/recyclerview/widget/RecyclerView$LayoutManager;->findViewByPosition(I)Landroid/view/View;
 
     move-result-object p1
 
@@ -129,7 +129,7 @@
 
     move-result p1
 
-    invoke-virtual {p2, v2, p1}, Landroidx/recyclerview/widget/RecyclerView;->smoothScrollBy(II)V
+    invoke-virtual {p2, v1, p1}, Landroidx/recyclerview/widget/RecyclerView;->smoothScrollBy(II)V
 
     .line 550
     :cond_2

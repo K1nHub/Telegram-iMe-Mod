@@ -36,7 +36,7 @@
 .end method
 
 .method private getUsersCount(Ljava/util/ArrayList;)I
-    .locals 7
+    .locals 6
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -48,7 +48,7 @@
 
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    move v1, v0
 
     .line 1341
     :goto_0
@@ -71,9 +71,9 @@
 
     const-wide/16 v4, 0x0
 
-    cmp-long v6, v2, v4
+    cmp-long v4, v2, v4
 
-    if-lez v6, :cond_0
+    if-lez v4, :cond_0
 
     add-int/lit8 v1, v1, 0x1
 
@@ -595,7 +595,7 @@
 
     if-nez v0, :cond_1
 
-    const/4 v5, 0x1
+    move v5, v6
 
     :cond_1
     invoke-virtual {p1, p2, v5, v6}, Lorg/telegram/ui/Cells/RadioCell;->setText(Ljava/lang/String;ZZ)V
@@ -632,7 +632,7 @@
     goto :goto_0
 
     :cond_3
-    const/4 v6, 0x0
+    move v6, v5
 
     :goto_0
     invoke-virtual {p1, p2, v6, v5}, Lorg/telegram/ui/Cells/RadioCell;->setText(Ljava/lang/String;ZZ)V
@@ -697,7 +697,7 @@
     goto :goto_1
 
     :cond_6
-    const/4 v6, 0x0
+    move v6, v5
 
     :goto_1
     invoke-virtual {p1, p2, v6, v5}, Lorg/telegram/ui/Cells/RadioCell;->setText(Ljava/lang/String;ZZ)V
@@ -729,7 +729,7 @@
 
     if-nez v0, :cond_8
 
-    const/4 v5, 0x1
+    move v5, v6
 
     :cond_8
     invoke-virtual {p1, p2, v5, v6}, Lorg/telegram/ui/Cells/RadioCell;->setText(Ljava/lang/String;ZZ)V
@@ -773,7 +773,7 @@
 
     if-nez v0, :cond_a
 
-    const/4 v5, 0x1
+    move v5, v6
 
     :cond_a
     invoke-virtual {p1, p2, v5, v6}, Lorg/telegram/ui/Cells/RadioCell;->setText(Ljava/lang/String;ZZ)V
@@ -796,7 +796,7 @@
 
     if-nez v0, :cond_c
 
-    const/4 v5, 0x1
+    move v5, v6
 
     :cond_c
     invoke-virtual {p1, p2, v5, v6}, Lorg/telegram/ui/Cells/RadioCell;->setText(Ljava/lang/String;ZZ)V
@@ -839,12 +839,12 @@
 
     if-ne v0, v10, :cond_e
 
-    const/4 v0, 0x1
+    move v0, v6
 
     goto :goto_3
 
     :cond_e
-    const/4 v0, 0x0
+    move v0, v5
 
     :goto_3
     iget-object v2, p0, Lorg/telegram/ui/PrivacyControlActivity$ListAdapter;->this$0:Lorg/telegram/ui/PrivacyControlActivity;
@@ -855,7 +855,7 @@
 
     if-eq v2, v1, :cond_f
 
-    const/4 v5, 0x1
+    move v5, v6
 
     :cond_f
     invoke-virtual {p1, p2, v0, v5}, Lorg/telegram/ui/Cells/RadioCell;->setText(Ljava/lang/String;ZZ)V
@@ -878,12 +878,12 @@
 
     if-ne v0, v10, :cond_11
 
-    const/4 v0, 0x1
+    move v0, v6
 
     goto :goto_4
 
     :cond_11
-    const/4 v0, 0x0
+    move v0, v5
 
     :goto_4
     iget-object v2, p0, Lorg/telegram/ui/PrivacyControlActivity$ListAdapter;->this$0:Lorg/telegram/ui/PrivacyControlActivity;
@@ -894,7 +894,7 @@
 
     if-eq v2, v1, :cond_12
 
-    const/4 v5, 0x1
+    move v5, v6
 
     :cond_12
     invoke-virtual {p1, p2, v0, v5}, Lorg/telegram/ui/Cells/RadioCell;->setText(Ljava/lang/String;ZZ)V
@@ -931,7 +931,7 @@
     goto :goto_5
 
     :cond_14
-    const/4 v6, 0x0
+    move v6, v5
 
     :goto_5
     invoke-virtual {p1, p2, v6, v5}, Lorg/telegram/ui/Cells/RadioCell;->setText(Ljava/lang/String;ZZ)V
@@ -957,7 +957,7 @@
     goto :goto_6
 
     :cond_16
-    const/4 v6, 0x0
+    move v6, v5
 
     :goto_6
     invoke-virtual {p1, p2, v6, v5}, Lorg/telegram/ui/Cells/RadioCell;->setText(Ljava/lang/String;ZZ)V
@@ -1365,12 +1365,12 @@
 
     if-ne v0, v6, :cond_27
 
-    const/4 v0, 0x1
+    move v0, v6
 
     goto :goto_7
 
     :cond_27
-    const/4 v0, 0x0
+    move v0, v5
 
     :goto_7
     invoke-static {p2, v0}, Lorg/telegram/ui/PrivacyControlActivity;->access$3802(Lorg/telegram/ui/PrivacyControlActivity;Z)Z
@@ -2110,7 +2110,7 @@
 
     if-eq v2, v1, :cond_42
 
-    const/4 v5, 0x1
+    move v5, v6
 
     :cond_42
     invoke-virtual {p1, v0, p2, v5}, Lorg/telegram/ui/Cells/TextSettingsCell;->setTextAndValue(Ljava/lang/CharSequence;Ljava/lang/CharSequence;Z)V
@@ -2135,7 +2135,7 @@
 
     if-eq v2, v1, :cond_44
 
-    const/4 v5, 0x1
+    move v5, v6
 
     :cond_44
     invoke-virtual {p1, v0, p2, v5}, Lorg/telegram/ui/Cells/TextSettingsCell;->setTextAndValue(Ljava/lang/CharSequence;Ljava/lang/CharSequence;Z)V

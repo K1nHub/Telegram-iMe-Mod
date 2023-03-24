@@ -211,7 +211,7 @@
 
     if-eqz v4, :cond_2
 
-    const/4 v2, 0x0
+    move v2, v5
 
     goto :goto_0
 
@@ -234,7 +234,7 @@
 
     invoke-virtual {p1, v1, v2}, Landroid/graphics/Canvas;->translate(FF)V
 
-    const/4 v7, 0x0
+    move v7, v5
 
     :goto_1
     const/4 v1, 0x4
@@ -250,7 +250,7 @@
 
     iget v3, p0, Lorg/telegram/ui/Components/RecordStatusDrawable;->progress:F
 
-    mul-float v2, v2, v3
+    mul-float/2addr v2, v3
 
     float-to-int v2, v2
 
@@ -274,7 +274,7 @@
 
     sub-float/2addr v3, v4
 
-    mul-float v2, v2, v3
+    mul-float/2addr v2, v3
 
     float-to-int v2, v2
 
@@ -294,7 +294,7 @@
 
     move-result v2
 
-    mul-int v2, v2, v7
+    mul-int/2addr v2, v7
 
     int-to-float v2, v2
 
@@ -306,7 +306,7 @@
 
     iget v3, p0, Lorg/telegram/ui/Components/RecordStatusDrawable;->progress:F
 
-    mul-float v1, v1, v3
+    mul-float/2addr v1, v3
 
     add-float/2addr v2, v1
 

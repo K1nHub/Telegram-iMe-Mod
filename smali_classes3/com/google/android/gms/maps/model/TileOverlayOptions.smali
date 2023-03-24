@@ -264,25 +264,25 @@
 
     const/4 v0, 0x0
 
+    cmpl-float v0, p1, v0
+
     const/4 v1, 0x0
 
-    cmpl-float v1, p1, v1
+    if-ltz v0, :cond_0
 
-    if-ltz v1, :cond_0
+    const/high16 v0, 0x3f800000    # 1.0f
 
-    const/high16 v1, 0x3f800000    # 1.0f
+    cmpg-float v0, p1, v0
 
-    cmpg-float v1, p1, v1
+    if-gtz v0, :cond_0
 
-    if-gtz v1, :cond_0
-
-    const/4 v0, 0x1
+    const/4 v1, 0x1
 
     :cond_0
-    const-string v1, "Transparency must be in the range [0..1]"
+    const-string v0, "Transparency must be in the range [0..1]"
 
     .line 1
-    invoke-static {v0, v1}, Lcom/google/android/gms/common/internal/Preconditions;->checkArgument(ZLjava/lang/Object;)V
+    invoke-static {v1, v0}, Lcom/google/android/gms/common/internal/Preconditions;->checkArgument(ZLjava/lang/Object;)V
 
     iput p1, p0, Lcom/google/android/gms/maps/model/TileOverlayOptions;->zzf:F
 

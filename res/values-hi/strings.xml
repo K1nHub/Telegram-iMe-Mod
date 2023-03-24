@@ -70,6 +70,7 @@
 
 इनाम पाने के लिए, आपको यह करना होगा:"</string>
     <string name="airdrop_dialog_lime_beginner_menu_title">LIME क्या है?</string>
+    <string name="airdrop_dialog_title">LIME ग्रहण करें!</string>
     <string name="airdrop_success_dialog_description">निकट भविष्य में लिंक्ड वॉलेट पर बोनस टोकन की प्रतीक्षा करें</string>
     <string name="airdrop_success_dialog_title">एयरड्रॉप सफलतापूर्वक लिया गया</string>
     <string name="all_chats_tab_settings_enable_item_hint">चैट की एक सामान्य सूची प्रदर्शित करने के लिए इसे चालू करें और आर्काइव को नीचे की ओर खींचकर एक्सेस करें.</string>
@@ -84,6 +85,8 @@
     <string name="archive_empty_subtitle">यहां आपके द्वारा संग्रह में भेजी गई चैट संग्रहीत की जाती हैं</string>
     <string name="archive_empty_title">संग्रह खाली है</string>
     <string name="attach_menu_select_all">सभी का चयन करे</string>
+    <string name="auto_open_forwarding_options_hint">"आप इसे कभी भी बदल सकते हैं
+सेटिंग्स > टूल्स > कस्टमाइजेशन"</string>
     <string name="backup_auto_settings_delete_old_files">पुरानी फाइलें हटाएं</string>
     <string name="backup_auto_settings_delete_old_files_hint">जब आप कोई नई बैकअप फ़ाइल सहेजते हैं, तो आपकी क्लाउड चैट से पिछली सभी फ़ाइलें हटा दी जाएंगी.</string>
     <string name="backup_auto_settings_enable_item_hint">यदि आप चाहते हैं कि बैकअप फ़ाइलें आपकी क्लाउड चैट में स्वचालित रूप से सहेजी जाएं, तो इसे चालू करें.</string>
@@ -108,6 +111,7 @@
 एप्लिकेशन को पुनर्स्थापित करने के बाद, इस फ़ाइल पर क्लिक करें और सेटिंग्स को पुनर्स्थापित करें."</string>
     <string name="binance_convert_button_calculate">स्वैप की गणना करें</string>
     <string name="binance_convert_description">Binance प्लेटफॉर्म के माध्यम से एक क्रिप्टो को दूसरे के लिए स्वैप करें</string>
+    <string name="binance_convert_not_enough_money_error_description">स्पॉट बैलेंस पर स्वैप करने के लिए अपर्याप्त बैलेंस</string>
     <string name="binance_convert_toolbar_title">Binance के माध्यम से स्वैप करें</string>
     <string name="binance_not_verified_dialog_description">Binance फीचर्स का इस्तेमाल करने के लिए सभी उपयोगकर्ताओं को Binance पर सत्यापित होने की ज़रुरत है</string>
     <string name="binance_not_verified_dialog_positive_btn">अभी सत्यापन करें</string>
@@ -140,6 +144,9 @@
     <string name="catalog_user_channels_empty_description">"आपके कैटलॉग में जोड़े गए चॅनेल्स
 यहाँ प्रदर्शित हैं."</string>
     <string name="catalog_user_channels_empty_title">अभी तक कोई चैनल नहीं है</string>
+    <string name="catalog_user_groups_empty_create">अपना समूह जोड़ें</string>
+    <string name="catalog_user_groups_empty_description">"आपके समूह जिन्हें कैटलॉग में जोड़ा गया था
+यहाँ प्रदर्शित हैं."</string>
     <string name="catalog_user_groups_empty_title">अभी तक कोई ग्रुप्स नहीं है</string>
     <string name="channel_donations_address_field_hint">पता</string>
     <string name="channel_donations_address_field_title">पता दर्ज करें</string>
@@ -148,16 +155,23 @@
     <string name="channel_donations_admin_bot_link_key">बॉट को जल्दी से जोड़ने के लिए यहां क्लिक करें</string>
     <string name="channel_donations_description">LIME BEP20 में डोनेशन प्राप्त करने के लिए अपना क्रिप्टो वॉलेट पता लिंक करें.</string>
     <string name="channel_donations_incorrect_address_error">सही पता दर्ज करें</string>
+    <string name="channel_donations_link_address_dialog_description">क्या आप सुनिश्चित हैं कि आप पते (%s) को डोनेशन पते के रूप में लिंक करना चाहते हैं? आपका पता सभी के लिए सार्वजनिक होगा.</string>
+    <string name="channel_donations_link_address_dialog_positive_button">लिंक</string>
+    <string name="channel_donations_link_address_dialog_title">पता लिंक करें</string>
     <string name="channel_donations_link_non_castodial_wallet_address_dialog_title">iMe पते का उपयोग करें</string>
     <string name="channel_donations_the_same_address_error">पहले से लिंक किए गए पते से भिन्न पता दर्ज करें</string>
     <string name="channel_donations_toolbar_title">डोनेशन</string>
+    <string name="channel_donations_unlink_address_dialog_description">क्या आप वाकई लिंक किए गए पते (%s) को अनलिंक करना चाहते हैं और डोनेशन करने की प्रणाली को अक्षम करना चाहते हैं? सभी डोनेशन इतिहास हटा दिए जाएंगे.</string>
     <string name="channel_donations_unlink_address_dialog_title">पता अनलिंक करें</string>
     <string name="character_counter_content_description">%2$d वर्णों में से %1$d वर्ण दर्ज किए गए</string>
     <string name="character_counter_overflowed_content_description">अभी %1$d वर्ण हैं जबकि %2$d से ज़्यादा नहीं होने चाहिए</string>
     <string name="chat_attach_alert_bot_buttons">बॉट बटन</string>
     <string name="chat_avatar_previewer_mention_by_name">नाम से उल्लेख करें</string>
     <string name="chat_avatar_previewer_user_messages">उपयोगकर्ता के संदेश</string>
+    <string name="chat_bookmarks">बुकमार्क</string>
+    <string name="chat_bookmarks_empty">कोई बुकमार्क नहीं</string>
     <string name="chat_bookmarks_empty_subtitle">आपके पास चैट में बुकमार्क नहीं हैं</string>
+    <string name="chat_drafts_empty_subtitle">चैट में आपके पास ड्राफ़्ट संदेश नहीं हैं</string>
     <string name="chat_long_action_translate">अनुवादित करे</string>
     <string name="chat_menu_auto_translate_settings_item">अनुवाद सेटिंग्स</string>
     <string name="chat_menu_convert_to_album">एल्बम में परिवर्तित करें</string>
@@ -166,11 +180,14 @@
     <string name="chat_menu_language_settings">भाषा सेटिंग्स</string>
     <string name="chat_message_forward_media">मीडिया अग्रेषित करें</string>
     <string name="chat_message_forward_text">टेक्स्ट अग्रेषित करें</string>
+    <string name="chat_message_popup_option_add_to_bookmarks">बुकमार्क में सहेजें</string>
     <string name="chat_message_popup_option_copy_part">भाग कॉपी करें</string>
     <string name="chat_message_popup_option_forward_cloud">क्लाउड में सहेजे</string>
     <string name="chat_message_popup_option_forward_viber">Viber पर फॉरवर्ड करें</string>
     <string name="chat_message_popup_option_forward_whatsapp">व्हाट्सएप पर फॉरवर्ड करें</string>
     <string name="chat_message_popup_option_forward_whatsapp_business">WA Business पर फॉरवर्ड करें</string>
+    <string name="chat_message_popup_option_remove_all_bookmarks">सभी बुकमार्क हटाएं</string>
+    <string name="chat_message_popup_option_remove_from_bookmarks">बुकमार्क्स से निकालें</string>
     <string name="chat_message_spoiler_less">कम</string>
     <string name="chat_message_spoiler_more">ज़्यादा</string>
     <string name="chat_multi_panel_empty_cache_toast">इस चैट में cache नहीं है</string>
@@ -233,6 +250,10 @@
     <string name="chat_settings_sending_item_title">चैट्स में भेजें</string>
     <string name="chat_settings_vibration">कंपन</string>
     <string name="chat_settings_wide_posts_in_chanel">चैनलों में विस्तृत पोस्ट</string>
+    <string name="chat_template_name_info">कृपया उस टेम्पलेट का नाम दर्ज करें जिससे भेजा गया संदेश मेल खाएगा</string>
+    <string name="chat_templates_info">यहां संदेश भेजें और चैट में प्राप्त टेम्प्लेट को जल्दी भेजने के लिए इसे नाम दें</string>
+    <string name="chat_templates_mode_hint">"आप इसे कभी भी इसमें बदल सकते हैं
+सेटिंग > टूल > चैट > टेम्प्लेट"</string>
     <string name="choose_staking_order_interest_rate">ब्याज दर से</string>
     <string name="choose_tokens_order_alphabet">वर्णमाला द्वारा</string>
     <string name="choose_tokens_order_balance">शेष राशि द्वारा</string>
@@ -294,6 +315,7 @@
     <string name="common_close">बंद करे</string>
     <string name="common_confirm">पुष्टि करें</string>
     <string name="common_create">नया बनाये</string>
+    <string name="common_empty_balance_state_description">आपके वॉलेट में इस नेटवर्क पर शेष राशि वाला कोई टोकन नहीं है</string>
     <string name="common_empty_state_title">यहां कुछ नहीं है...</string>
     <string name="common_error_no_internet">इंटरनेट कनेक्शन नहीं है. कृपया पुन: प्रयास करें</string>
     <string name="common_error_unauthorized">अनधिकृत त्रुटि. कृपया पुन: प्रयास करें</string>
@@ -321,6 +343,7 @@
     <string name="common_off">बंद</string>
     <string name="common_on">चालू</string>
     <string name="common_open_on_phone">फ़ोन पर खोलें</string>
+    <string name="common_progress_state_description">कृपया डेटा लोड होने तक प्रतीक्षा करें</string>
     <string name="common_progress_state_title">लोड हो रहा है...</string>
     <string name="common_retry">दोहराइये</string>
     <string name="common_save">सहेजें</string>
@@ -355,6 +378,7 @@
     <string name="currency_sinverse">Sinverse</string>
     <string name="custom_avatar_downloading">एनएफटी छवि डाउनलोड हो रही है…</string>
     <string name="custom_avatar_success">अवतार बदल गया था</string>
+    <string name="custom_avatar_upload">अवतार अपलोड हो रहा है…</string>
     <string name="custom_forward_option_author">लेखक</string>
     <string name="custom_forward_option_link_preview">पूर्व दर्शन</string>
     <string name="custom_forward_option_media">मीडिया</string>
@@ -389,6 +413,8 @@
     <string name="dialogs_menu_scroll_to_start">सूची की शुरुआत में जाएं</string>
     <string name="dialogs_multi_clear_with_revoke">सभी के लिए वृत्तांत भी हटाएँ</string>
     <string name="dialogs_multi_delete_with_revoke">सभी के लिए भी हटाएं</string>
+    <string name="dialogs_qr_scanner_chat_link_hint">"उपयोगकर्ता नाम के क्यूआर-कोड को स्कैन करें
+इस चैट पर जल्दी जाने के लिए"</string>
     <string name="dialogs_qr_search">QR द्वारा खोजें</string>
     <string name="dialogs_tab_popup_create_folder">नया फोल्डर बनाये</string>
     <string name="dialogs_tab_popup_disable">अक्षम करे</string>
@@ -404,6 +430,7 @@
     <string name="drawer_catalog_item_title">कैटलॉग</string>
     <string name="drawer_collection_item_title">चैनल संग्रह</string>
     <string name="drawer_create_expandable_section">बनायें</string>
+    <string name="drawer_disable_archive_button">साइड मेन्यू से हटाएं</string>
     <string name="drawer_neurobots_store_item_title">न्यूरोबॉट्स स्टोर</string>
     <string name="drawer_profile_cell_alert_name">नाम</string>
     <string name="drawer_profile_cell_alert_phone_number">फ़ोन नंबर</string>
@@ -421,6 +448,7 @@
     <string name="emoji_premium_title_on_alert">सक्षम करें</string>
     <string name="enter_archive_passcode">संग्रह में अपना पासकोड दर्ज करें</string>
     <string name="enter_cloud_passcode">क्लाउड में अपना पासकोड दर्ज करें</string>
+    <string name="erasing_period">मिटाने की अवधि</string>
     <string name="error_icon_content_description">गड़बड़ी</string>
     <string name="error_while_image_recognition">इमेज को नहीं पहचाना गया</string>
     <string name="error_while_text_recognition">यह टेक्स्ट नहीं पहचाना गया</string>
@@ -604,6 +632,8 @@
     <string name="music_device_no_permission_title">डिवाइस से संगीत</string>
     <string name="music_device_tab">डिवाइस</string>
     <string name="music_intro_subtitle">आपका सारा संगीत एक ही स्थान पर! अपने डिवाइस पर और अपने क्लाउड एल्बम में संग्रहीत चैनलों से, बॉट्स से संगीत सुनें.</string>
+    <string name="music_pinned_player_enabled_toast">प्लेयर पिन किया गया है. इसे अनपिन करने के लिए 3 डॉट्स दबाएं.</string>
+    <string name="music_player_add_to_playlist">प्लेलिस्ट में जोड़ें</string>
     <string name="music_player_remove_from_playlist">प्लेलिस्ट से हटाएं</string>
     <string name="music_playlist_empty_title">"प्लेलिस्ट खाली है 
 प्लेलिस्ट में संगीत भरिये"</string>
@@ -667,6 +697,9 @@
     <string name="photo_viewer_image_copy">इमेज कॉपी करें</string>
     <string name="photo_viewer_open_recognize_photo">फोटो की जानकारी</string>
     <string name="photo_viewer_open_recognize_text">तस्वीर से टेक्स्ट</string>
+    <string name="pinned_messages_show_pin_panel_bottom_button">पैनल को चैट पर लौटाएं</string>
+    <string name="premium_settings_not_premium_animate_avatars">प्रीमियम उपयोगकर्ताओं के लिए चैट सूची और चैट में एनिमेटेड वीडियो अवतार सक्षम करें.</string>
+    <string name="premium_settings_not_premium_show_badge">प्रीमियम उपयोगकर्ताओं के लिए प्रोफ़ाइल बैज प्रदर्शन सक्षम करें.</string>
     <string name="processing_participants">प्रतिभागियों को संसाधित किया जा रहा है... %2$d में से %1$d को संसाधित किया गया</string>
     <string name="processing_participants_success">प्रतिभागियों को संसाधित किया गया है</string>
     <string name="processing_type_unknown">अनजान</string>
@@ -788,9 +821,13 @@
     <string name="settings_interface_app_icon_gray">स्लेटी</string>
     <string name="settings_interface_app_icon_green">हरा</string>
     <string name="settings_interface_app_icon_indigo">नीला</string>
+    <string name="settings_interface_app_icon_lime_aqua">लाइम एक्वा</string>
     <string name="settings_interface_app_icon_lime_bep20">Lime BEP20</string>
+    <string name="settings_interface_app_icon_lime_blue_light">लाइम ब्लूलाइट</string>
     <string name="settings_interface_app_icon_lime_erc20">Lime ERC20</string>
+    <string name="settings_interface_app_icon_lime_neuro">लाइम न्यूरो</string>
     <string name="settings_interface_app_icon_lime_polygon">Lime Polygon</string>
+    <string name="settings_interface_app_icon_lime_sunset">लाइम सनसेट</string>
     <string name="settings_interface_app_icon_melon">मेलन</string>
     <string name="settings_interface_app_icon_mint">मिंट</string>
     <string name="settings_interface_app_icon_neuro">न्यूरो</string>
@@ -987,6 +1024,7 @@ iMe की ओर से कोई अतिरिक्त शुल्क न�
     <string name="staking_programme_level_required_title">स्तर की आवश्यकता</string>
     <string name="staking_programmes_count">स्टैकिंग्स (%d)</string>
     <string name="staking_programmes_empty_state_description">कोई स्टेकिंग कार्यक्रम उपलब्ध नहीं हैं.</string>
+    <string name="staking_programmes_filter_active">सक्रिय</string>
     <string name="staking_programmes_filter_completed">खत्म हो चुका</string>
     <string name="staking_programmes_filters_info_description">"सक्रिय - स्टेकिंग प्रोग्राम जिसमें आप भाग लेते हैं और जिसकी अंतिम तिथि अभी तक नहीं आई है.
 
@@ -1044,6 +1082,7 @@ iMe की ओर से कोई अतिरिक्त शुल्क न�
     <string name="stickers_size_large">बड़ा</string>
     <string name="stickers_size_medium">स्टैण्डर्ड</string>
     <string name="stickers_size_small">छोटा</string>
+    <string name="stickers_size_title">स्टिकर का आकार</string>
     <string name="swipe_to_next_unread_dialog_consider_archive">संग्रहीत चैट पर विचार करें</string>
     <string name="swipe_to_next_unread_dialog_hint">स्वाइप द्वारा अपठित चैट में जाने के लिए इसे चालू करें</string>
     <string name="swipe_to_next_unread_dialog_types">संवाद प्रकार</string>
@@ -1070,6 +1109,7 @@ iMe की ओर से कोई अतिरिक्त शुल्क न�
     <string name="topics_catalog_auto_update_settings_interval_chooser_header">विषयों की सूची अपडेट करें</string>
     <string name="topics_catalog_update_auto">स्वचालित रूप से अपडेट करें</string>
     <string name="topics_catalog_update_manually">मैन्युअल रूप से अपडेट करें</string>
+    <string name="topics_catalog_update_not_found">नए विषय नहीं मिले</string>
     <string name="topics_create_new">नया विषय बनाएँ</string>
     <string name="topics_move_no_topic_to_beginning">शुरुआत में ले जाएँ</string>
     <string name="topics_move_no_topic_to_end">अंत तक ले जाएँ</string>
@@ -1147,6 +1187,8 @@ iMe की ओर से कोई अतिरिक्त शुल्क न�
     <string name="translation_search_language">अनुवाद भाषा खोजें</string>
     <string name="translation_search_language_empty">कोई मेल खाने वाली भाषा नहीं है</string>
     <string name="twitter_auth_title">ट्विटर प्राधिकरण</string>
+    <string name="twitter_empty_state_subtitle">अभी तक कोई ट्वीट नहीं है</string>
+    <string name="twitter_empty_state_title">उपयोगकर्ता के पास अभी तक कोई ट्वीट नहीं है</string>
     <string name="twitter_open_in_twitter">ट्विटर में खोलें</string>
     <string name="twitter_search_hint">प्राप्तकर्ता का उपयोगकर्ता नाम दर्ज करें</string>
     <string name="twitter_search_invite_confirmation_description">क्या आप वाकई %s को आमंत्रण भेजना चाहते हैं?</string>
@@ -1235,6 +1277,7 @@ iMe की ओर से कोई अतिरिक्त शुल्क न�
     <string name="wallet_backup_quit_alert_negative_button">रद्द करें</string>
     <string name="wallet_backup_quit_alert_positive_button">छोड़ दें</string>
     <string name="wallet_backup_quit_alert_title">चेतावनी</string>
+    <string name="wallet_backup_ready">जाने के लिए तैयार!</string>
     <string name="wallet_backup_ready_info">आप पूरी तरह से तैयार हो. अब आपके पास एक वॉलेट है जिसे केवल आप नियंत्रित करते हैं — सीधे, बिचौलियों या बैंकरों के बिना.</string>
     <string name="wallet_backup_scan_qr">QR स्कैन करें</string>
     <string name="wallet_backup_secret_words">24 गुप्त शब्द</string>
@@ -1359,6 +1402,7 @@ iMe की ओर से कोई अतिरिक्त शुल्क न�
     <string name="wallet_cancel_transaction_title">पुष्टि रद्द करें</string>
     <string name="wallet_centralized_exchange_ascendeex_description">डिजिटल संपत्ति के व्यापार के लिए एक वैश्विक मंच</string>
     <string name="wallet_centralized_exchange_ascendeex_name">AscendEX</string>
+    <string name="wallet_centralized_exchange_binance_description">जल्दी से एक क्रिप्टो को दूसरे से स्वैप करें</string>
     <string name="wallet_centralized_exchange_binance_name">Binance</string>
     <string name="wallet_centralized_exchange_gate_description">क्रिप्टोकरेन्सी की दुनिया में जाने के लिए आपका प्रवेश द्वार</string>
     <string name="wallet_centralized_exchange_gate_name">Gate.io</string>
@@ -1376,19 +1420,31 @@ iMe की ओर से कोई अतिरिक्त शुल्क न�
     <string name="wallet_confirm_eth_pin_code_description">यदि आप अपना पिन भूल जाते हैं, तो आप मास्टर पासवर्ड के माध्यम से अपने अकाउंट में लॉगिन कर सकते है.</string>
     <string name="wallet_confirm_eth_pin_code_title">पिन नंबर दोहराएं</string>
     <string name="wallet_confirm_eth_pin_code_validation_not_match_error">गलत पिन नंबर</string>
+    <string name="wallet_connect_description">लेन-देन करने के लिए अपने वॉलेट को WalletConnect से कनेक्ट करें</string>
     <string name="wallet_connect_error_alert_title">WalletConnect त्रुटि</string>
     <string name="wallet_connect_error_unsupported_network">iMe dApp के चयनित नेटवर्क का समर्थन नहीं करता</string>
     <string name="wallet_connect_message_sign_address_hidden">पता छिपा हुआ है क्योंकि वॉलेट लॉक है</string>
+    <string name="wallet_connect_message_sign_confirm_description">क्या आप वाकई इस संदेश पर हस्ताक्षर करना चाहते हैं?</string>
     <string name="wallet_connect_new_connection">जोड़ें</string>
+    <string name="wallet_connect_new_session_success">सफलतापूर्वक जोड़ा गया</string>
+    <string name="wallet_connect_new_session_title">%s आपके वॉलेट से जुड़ना चाहते है</string>
     <string name="wallet_connect_new_session_view_balance">अपना वॉलेट बैलेंस और गतिविधि देखें</string>
     <string name="wallet_connect_new_session_wallet">वॉलेट</string>
+    <string name="wallet_connect_new_transactions_approval">लेनदेन के लिए अनुमोदन का अनुरोध करें</string>
     <string name="wallet_connect_session_details_address">पता</string>
+    <string name="wallet_connect_session_details_connected">जोड़ा गया</string>
     <string name="wallet_connect_session_details_network">नेटवर्क</string>
     <string name="wallet_connect_switch_network">नेटवर्क बदलें</string>
     <string name="wallet_connect_switch_network_title">%s नेटवर्क बदलना चाहता है</string>
+    <string name="wallet_connect_terminate_all_description">क्या आप वाकई सभी WalletConnect सत्र समाप्त करना चाहते हैं?</string>
     <string name="wallet_connect_title">WalletConnect</string>
     <string name="wallet_connect_transaction_button_sign">हस्ताक्षर करें</string>
     <string name="wallet_connect_transaction_button_sign_and_send">हस्ताक्षर करें और भेजें</string>
+    <string name="wallet_connect_transaction_confirm_sign_description">क्या आप वाकई %1$s %2$s के हस्तांतरण पर हस्ताक्षर करना चाहते हैं?</string>
+    <string name="wallet_connect_transaction_dapp">dApp</string>
+    <string name="wallet_connect_transaction_from">द्वारा</string>
+    <string name="wallet_connect_transaction_success">लेन-देन सफलतापूर्वक संसाधित किया गया था, dApp जांचें</string>
+    <string name="wallet_connect_transaction_to">को</string>
     <string name="wallet_create_eth_account_tutorial_backup_description">"क्रिप्टो वॉलेट बनाने के बाद, सेटिंग्स में एक बैकअप कॉपी बनाना सुनिश्चित करें और इसे सावधानी से स्टोर करें।
 
 यदि आप अपना स्मार्टफोन खो देते हैं या जब आप किसी नए डिवाइस से लॉग इन करते हैं, तो आप केवल बैकअप कॉपी की सहायता से अपने वॉलेट को पुनर्स्थापित कर सकते हैं, जिसमें तृतीय-पक्ष (थर्ड पार्टी) वॉलेट के माध्यम से भी शामिल है।"</string>
@@ -1522,6 +1578,7 @@ iMe Wallet से सहमत होते हैं"</string>
 रीसेट करने के बाद, आप एक नया खाता बना सकते हैं।"</string>
     <string name="wallet_enter_eth_password_delete_wallet_dialog_submit_btn">रीसेट</string>
     <string name="wallet_enter_eth_password_delete_wallet_dialog_title">क्रिप्टो वॉलेट अकाउंट को रिसेट करे</string>
+    <string name="wallet_enter_eth_password_description">यदि आप अपना पासवर्ड भूल गए हैं, तो आप केवल पासफ़्रेज़ के माध्यम से पहुंच बहाल कर सकते हैं.</string>
     <string name="wallet_enter_eth_password_forgot">पासवर्ड भूल गए?</string>
     <string name="wallet_enter_eth_password_forgot_option_delete">रीसेट</string>
     <string name="wallet_enter_eth_password_forgot_option_restore">पुनर्स्थापित करे</string>
@@ -1621,8 +1678,12 @@ iMe Wallet से सहमत होते हैं"</string>
     <string name="wallet_restore_eth_toolbar_title">अपना पासफ़्रेज़ दर्ज करें</string>
     <string name="wallet_settings_eth_account_title">क्रिप्टो वॉलेट अकाउंट</string>
     <string name="wallet_settings_help_title">सहायता</string>
+    <string name="wallet_settings_interface">इंटरफ़ेस</string>
+    <string name="wallet_settings_interface_banners">बैनर्स</string>
+    <string name="wallet_settings_interface_title">इंटरफ़ेस</string>
     <string name="wallet_settings_pin_code_change">PIN कोड बदलें</string>
     <string name="wallet_settings_pin_code_subtitle">वॉलेट सुरक्षा</string>
+    <string name="wallet_settings_pin_code_title">PIN कोड</string>
     <string name="wallet_settings_toolbar_title">सेटिंग्स</string>
     <string name="wallet_swap_centralized_exchanges_header_title">केंद्रीकृत एक्सचैंजेस</string>
     <string name="wallet_swap_intro_description">खाता पुनःपूर्ति करने के लिए Uniswap विकेन्द्रीकृत क्रिप्टो एक्सचेंज पर स्वैप का उपयोग करें, यह कार्यप्रणाली स्मार्ट कॉन्ट्रैक्ट्स के माध्यम से संचालित होती है</string>
@@ -1665,6 +1726,7 @@ iMe Wallet से सहमत होते हैं"</string>
     <string name="wallet_swap_protocols_1inch_long_description">आप एथेरियम, BNB चेन, पॉलीगॉन नेटवर्क के लिए सर्वोत्तम कीमतों के साथ DEX एग्रीगेटर का उपयोग करके स्मार्ट कॉन्ट्रैक्ट्स के माध्यम से टोकन स्वैप कर सकते हैं</string>
     <string name="wallet_swap_protocols_cross_chain_header_title">ब्रिज</string>
     <string name="wallet_swap_protocols_header_title">विकेंद्रीकृत एक्सचेंज</string>
+    <string name="wallet_swap_protocols_pancake_swap_description">BNB चेन पर आधारित DEX प्रोटोकॉल</string>
     <string name="wallet_swap_protocols_pancake_swap_long_description">आप PancakeSwap विकेंद्रीकृत एक्सचेंज का उपयोग करके स्मार्ट कॉन्ट्रैक्ट्स के माध्यम से एक BNB और BEP20 टोकन आपस में स्वैप कर सकते हैं</string>
     <string name="wallet_swap_protocols_symbiosis_description">क्रॉस-चेन DEX</string>
     <string name="wallet_swap_protocols_symbiosis_long_description">आप BNB चेन और पॉलीगॉन नेटवर्क के लिए क्रॉस-चेन DEX का उपयोग करके स्मार्ट कॉन्ट्रैक्ट्स के माध्यम से टोकन स्वैप कर सकते हैं</string>
@@ -1691,6 +1753,7 @@ iMe Wallet से सहमत होते हैं"</string>
     <string name="wallet_token_details_action_simplex_support">सिम्पलेक्स सपोर्ट</string>
     <string name="wallet_token_details_description_action">विवरण</string>
     <string name="wallet_token_details_details_action_send">भेजिए</string>
+    <string name="wallet_token_details_distribution_action">टोकन वितरण</string>
     <string name="wallet_token_details_site_action">साइट</string>
     <string name="wallet_token_details_transactions">लेनदेन</string>
     <string name="wallet_token_details_transactions_all">सभी</string>

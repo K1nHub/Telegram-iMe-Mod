@@ -12,4 +12,5 @@ public final class R$color {
     public static final int wallet_network_type_fantom = 2131099968;
     public static final int wallet_network_type_polygon = 2131099970;
     public static final int wallet_network_type_ton = 2131099971;
+    public static final int wallet_network_type_tron = 2131099972;
 }

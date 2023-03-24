@@ -310,7 +310,7 @@
 
     move-result-object p1
 
-    const/4 v0, 0x0
+    move v0, v3
 
     .line 257
     :goto_0
@@ -646,7 +646,7 @@
 .end method
 
 .method private static writeToOutputStream(Ljava/io/InputStream;Ljava/io/OutputStream;)I
-    .locals 3
+    .locals 2
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -675,9 +675,9 @@
 
     const-wide/32 v0, 0x7fffffff
 
-    cmp-long v2, p0, v0
+    cmp-long v0, p0, v0
 
-    if-gtz v2, :cond_1
+    if-gtz v0, :cond_1
 
     const/4 v0, 0x1
 
@@ -692,9 +692,9 @@
     .line 275
     invoke-static {v0, v1, p0, p1}, Lcom/google/common/base/Preconditions;->checkArgument(ZLjava/lang/String;J)V
 
-    long-to-int p1, p0
+    long-to-int p0, p0
 
-    return p1
+    return p0
 .end method
 
 .method private writeUncompressed(Ljava/io/InputStream;I)I
@@ -972,12 +972,12 @@
 
     if-eq v1, v4, :cond_0
 
-    const/4 v1, 0x1
+    move v1, v2
 
     goto :goto_0
 
     :cond_0
-    const/4 v1, 0x0
+    move v1, v3
 
     .line 137
     :goto_0

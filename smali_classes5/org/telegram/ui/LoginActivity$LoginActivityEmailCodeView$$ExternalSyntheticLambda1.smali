@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView$$ExternalSyntheticLambda1;->f$0:Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;
 
-    invoke-static {v0, p1}, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->$r8$lambda$fe1U7w1ITTyn9KNIN96L_dqieeA(Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;Landroid/view/View;)V
+    invoke-static {v0, p1}, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->$r8$lambda$-ok6O7fpYoPySH2wZjvV7DkUUv4(Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;Landroid/view/View;)V
 
     return-void
 .end method

@@ -3529,7 +3529,7 @@
 
     if-ne p2, v1, :cond_0
 
-    const/4 p2, 0x1
+    move p2, v1
 
     goto :goto_0
 
@@ -4114,7 +4114,7 @@
     goto :goto_1
 
     :cond_6
-    const/4 v8, 0x6
+    move v8, v7
 
     .line 5935
     :goto_1
@@ -4385,7 +4385,7 @@
 
     const/4 v3, 0x2
 
-    const/4 v5, 0x2
+    move v5, v3
 
     .line 5600
     :goto_0
@@ -4762,7 +4762,7 @@
     move v5, v8
 
     :goto_6
-    const/4 v10, 0x0
+    move v10, v12
 
     :goto_7
     if-ltz v10, :cond_c
@@ -5486,9 +5486,9 @@
 
     move-result-wide v4
 
-    long-to-int v5, v4
+    long-to-int v4, v4
 
-    if-ne v5, p1, :cond_4
+    if-ne v4, p1, :cond_4
 
     .line 6179
     iput v0, p0, Landroidx/exifinterface/media/ExifInterface;->mOffsetToExifData:I
@@ -5750,7 +5750,7 @@
     :cond_1
     const/4 v0, 0x0
 
-    const/4 v3, 0x0
+    move v3, v0
 
     :goto_0
     if-ge v3, v2, :cond_4
@@ -6448,7 +6448,7 @@
 .end method
 
 .method private handleThumbnailFromStrips(Landroidx/exifinterface/media/ExifInterface$ByteOrderedDataInputStream;Ljava/util/HashMap;)V
-    .locals 18
+    .locals 17
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -6551,7 +6551,7 @@
 
     const/4 v8, 0x0
 
-    const/4 v9, 0x0
+    move v9, v8
 
     :goto_0
     if-ge v9, v7, :cond_3
@@ -6565,21 +6565,21 @@
     goto :goto_0
 
     :cond_3
-    long-to-int v6, v5
+    long-to-int v5, v5
 
     .line 7153
-    new-array v5, v6, [B
+    new-array v5, v5, [B
 
     const/4 v6, 0x1
 
     .line 7157
     iput-boolean v6, v0, Landroidx/exifinterface/media/ExifInterface;->mAreThumbnailStripsConsecutive:Z
 
-    const/4 v7, 0x0
+    move v7, v8
 
-    const/4 v9, 0x0
+    move v9, v7
 
-    const/4 v10, 0x0
+    move v10, v9
 
     .line 7158
     :goto_1
@@ -6590,12 +6590,12 @@
     .line 7159
     aget-wide v11, v3, v7
 
-    long-to-int v12, v11
+    long-to-int v11, v11
 
     .line 7160
-    aget-wide v13, v2, v7
+    aget-wide v12, v2, v7
 
-    long-to-int v11, v13
+    long-to-int v12, v12
 
     .line 7164
     array-length v13, v3
@@ -6604,7 +6604,7 @@
 
     if-ge v7, v13, :cond_4
 
-    add-int v13, v12, v11
+    add-int v13, v11, v12
 
     int-to-long v13, v13
 
@@ -6612,17 +6612,17 @@
 
     aget-wide v15, v3, v15
 
-    cmp-long v17, v13, v15
+    cmp-long v13, v13, v15
 
-    if-eqz v17, :cond_4
+    if-eqz v13, :cond_4
 
     .line 7166
     iput-boolean v8, v0, Landroidx/exifinterface/media/ExifInterface;->mAreThumbnailStripsConsecutive:Z
 
     :cond_4
-    sub-int/2addr v12, v9
+    sub-int/2addr v11, v9
 
-    if-gez v12, :cond_5
+    if-gez v11, :cond_5
 
     const-string v1, "Invalid strip offset value"
 
@@ -6632,18 +6632,18 @@
     return-void
 
     :cond_5
-    int-to-long v13, v12
+    int-to-long v13, v11
 
     .line 7175
     invoke-virtual {v1, v13, v14}, Ljava/io/InputStream;->skip(J)J
 
     move-result-wide v15
 
-    const-string v6, " bytes."
+    cmp-long v13, v15, v13
 
-    cmp-long v17, v15, v13
+    const-string v14, " bytes."
 
-    if-eqz v17, :cond_6
+    if-eqz v13, :cond_6
 
     .line 7176
     new-instance v1, Ljava/lang/StringBuilder;
@@ -6654,9 +6654,9 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1, v12}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v11}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v14}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
@@ -6667,17 +6667,17 @@
     return-void
 
     :cond_6
-    add-int/2addr v9, v12
+    add-int/2addr v9, v11
 
     .line 7181
-    new-array v12, v11, [B
+    new-array v11, v12, [B
 
     .line 7182
-    invoke-virtual {v1, v12}, Ljava/io/InputStream;->read([B)I
+    invoke-virtual {v1, v11}, Ljava/io/InputStream;->read([B)I
 
     move-result v13
 
-    if-eq v13, v11, :cond_7
+    if-eq v13, v12, :cond_7
 
     .line 7183
     new-instance v1, Ljava/lang/StringBuilder;
@@ -6688,9 +6688,9 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1, v11}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v12}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v14}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
@@ -6701,16 +6701,14 @@
     return-void
 
     :cond_7
-    add-int/2addr v9, v11
+    add-int/2addr v9, v12
 
     .line 7189
-    invoke-static {v12, v8, v5, v10, v11}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
+    invoke-static {v11, v8, v5, v10, v12}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
-    add-int/2addr v10, v11
+    add-int/2addr v10, v12
 
     add-int/lit8 v7, v7, 0x1
-
-    const/4 v6, 0x1
 
     goto :goto_1
 
@@ -6856,7 +6854,7 @@
 
     const/4 p0, 0x0
 
-    const/4 v1, 0x0
+    move v1, p0
 
     .line 5561
     :goto_0
@@ -6940,15 +6938,15 @@
     return v0
 
     :cond_0
-    const-wide/16 v5, 0x10
+    const-wide/16 v5, 0x1
 
-    const-wide/16 v7, 0x8
+    cmp-long v7, v3, v5
 
-    const-wide/16 v9, 0x1
+    const-wide/16 v8, 0x10
 
-    cmp-long v11, v3, v9
+    const-wide/16 v10, 0x8
 
-    if-nez v11, :cond_1
+    if-nez v7, :cond_1
 
     .line 5411
     :try_start_2
@@ -6959,9 +6957,9 @@
     .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_0
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
-    cmp-long v11, v3, v5
+    cmp-long v7, v3, v8
 
-    if-gez v11, :cond_2
+    if-gez v7, :cond_2
 
     .line 5458
     invoke-virtual {v2}, Ljava/io/InputStream;->close()V
@@ -6969,18 +6967,18 @@
     return v0
 
     :cond_1
-    move-wide v5, v7
+    move-wide v8, v10
 
     .line 5420
     :cond_2
     :try_start_3
-    array-length v11, p1
+    array-length v7, p1
 
-    int-to-long v11, v11
+    int-to-long v12, v7
 
-    cmp-long v13, v3, v11
+    cmp-long v7, v3, v12
 
-    if-lez v13, :cond_3
+    if-lez v7, :cond_3
 
     .line 5421
     array-length p1, p1
@@ -6991,9 +6989,9 @@
     int-to-long v3, p1
 
     :cond_3
-    sub-long/2addr v3, v5
+    sub-long/2addr v3, v8
 
-    cmp-long p1, v3, v7
+    cmp-long p1, v3, v10
 
     if-gez p1, :cond_4
 
@@ -7006,11 +7004,11 @@
     :try_start_4
     new-array p1, v1, [B
 
-    const-wide/16 v5, 0x0
+    const-wide/16 v7, 0x0
 
-    const/4 v7, 0x0
+    move v9, v0
 
-    const/4 v8, 0x0
+    move v10, v9
 
     :goto_0
     const-wide/16 v11, 0x4
@@ -7018,9 +7016,9 @@
     .line 5435
     div-long v11, v3, v11
 
-    cmp-long v13, v5, v11
+    cmp-long v11, v7, v11
 
-    if-gez v13, :cond_a
+    if-gez v11, :cond_a
 
     .line 5436
     invoke-virtual {v2, p1}, Ljava/io/InputStream;->read([B)I
@@ -7038,7 +7036,7 @@
     return v0
 
     :cond_5
-    cmp-long v11, v5, v9
+    cmp-long v11, v7, v5
 
     if-nez v11, :cond_6
 
@@ -7057,7 +7055,7 @@
 
     if-eqz v11, :cond_7
 
-    const/4 v7, 0x1
+    move v9, v12
 
     goto :goto_1
 
@@ -7074,13 +7072,13 @@
 
     if-eqz v11, :cond_8
 
-    const/4 v8, 0x1
+    move v10, v12
 
     :cond_8
     :goto_1
-    if-eqz v7, :cond_9
+    if-eqz v9, :cond_9
 
-    if-eqz v8, :cond_9
+    if-eqz v10, :cond_9
 
     .line 5458
     invoke-virtual {v2}, Ljava/io/InputStream;->close()V
@@ -7089,7 +7087,7 @@
 
     :cond_9
     :goto_2
-    add-long/2addr v5, v9
+    add-long/2addr v7, v5
 
     goto :goto_0
 
@@ -7166,7 +7164,7 @@
 
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    move v1, v0
 
     .line 5370
     :goto_0
@@ -7278,8 +7276,6 @@
     throw p1
 
     :catch_1
-    nop
-
     :goto_1
     if-eqz v1, :cond_3
 
@@ -7300,7 +7296,7 @@
 
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    move v1, v0
 
     .line 5528
     :goto_0
@@ -7351,7 +7347,7 @@
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     .line 5386
     :goto_0
@@ -7456,8 +7452,6 @@
     throw p1
 
     :catch_1
-    nop
-
     :goto_1
     if-eqz v1, :cond_2
 
@@ -7494,10 +7488,8 @@
 
     return p0
 
-    :catch_0
-    nop
-
     .line 4640
+    :catch_0
     sget-boolean p0, Landroidx/exifinterface/media/ExifInterface;->DEBUG:Z
 
     if-eqz p0, :cond_0
@@ -7697,7 +7689,7 @@
 
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    move v1, v0
 
     .line 5542
     :goto_0
@@ -7722,7 +7714,7 @@
     goto :goto_0
 
     :cond_1
-    const/4 v1, 0x0
+    move v1, v0
 
     .line 5547
     :goto_1
@@ -7770,7 +7762,7 @@
 
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    move v1, v0
 
     .line 4575
     :goto_0
@@ -8430,7 +8422,7 @@
     :cond_1
     const/4 v4, 0x0
 
-    const/4 v6, 0x0
+    move v6, v4
 
     :goto_0
     const/4 v7, 0x5
@@ -8643,7 +8635,7 @@
 
     int-to-long v6, v7
 
-    mul-long v4, v4, v6
+    mul-long/2addr v4, v6
 
     const-wide/16 v6, 0x0
 
@@ -8653,9 +8645,9 @@
 
     const-wide/32 v6, 0x7fffffff
 
-    cmp-long v26, v4, v6
+    cmp-long v6, v4, v6
 
-    if-lez v26, :cond_9
+    if-lez v6, :cond_9
 
     goto :goto_3
 
@@ -8733,16 +8725,16 @@
     goto/16 :goto_10
 
     :cond_e
-    const-string v6, "Compression"
+    cmp-long v6, v4, v18
 
-    cmp-long v7, v4, v18
+    const-string v7, "Compression"
 
-    if-lez v7, :cond_12
+    if-lez v6, :cond_12
 
     .line 6865
     invoke-virtual/range {p1 .. p1}, Landroidx/exifinterface/media/ExifInterface$ByteOrderedDataInputStream;->readInt()I
 
-    move-result v7
+    move-result v6
 
     move/from16 v26, v3
 
@@ -8759,7 +8751,7 @@
 
     invoke-virtual {v3, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v3, v7}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v3, v6}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
@@ -8792,7 +8784,7 @@
     if-eqz v3, :cond_10
 
     .line 6872
-    iput v7, v0, Landroidx/exifinterface/media/ExifInterface;->mOrfMakerNoteOffset:I
+    iput v6, v0, Landroidx/exifinterface/media/ExifInterface;->mOrfMakerNoteOffset:I
 
     goto :goto_9
 
@@ -8814,7 +8806,7 @@
     if-eqz v8, :cond_11
 
     .line 6876
-    iput v7, v0, Landroidx/exifinterface/media/ExifInterface;->mOrfThumbnailOffset:I
+    iput v6, v0, Landroidx/exifinterface/media/ExifInterface;->mOrfThumbnailOffset:I
 
     .line 6877
     iput v15, v0, Landroidx/exifinterface/media/ExifInterface;->mOrfThumbnailLength:I
@@ -8862,7 +8854,7 @@
 
     aget-object v10, v10, v15
 
-    invoke-virtual {v10, v6, v3}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v10, v7, v3}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 6887
     iget-object v3, v0, Landroidx/exifinterface/media/ExifInterface;->mAttributes:[Ljava/util/HashMap;
@@ -8891,10 +8883,10 @@
     move/from16 v18, v15
 
     :goto_a
-    int-to-long v7, v7
+    int-to-long v8, v6
 
     .line 6893
-    invoke-virtual {v1, v7, v8}, Landroidx/exifinterface/media/ExifInterface$SeekableByteOrderedDataInputStream;->seek(J)V
+    invoke-virtual {v1, v8, v9}, Landroidx/exifinterface/media/ExifInterface$SeekableByteOrderedDataInputStream;->seek(J)V
 
     goto :goto_b
 
@@ -8913,9 +8905,9 @@
 
     invoke-static {v12}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v7
+    move-result-object v6
 
-    invoke-virtual {v3, v7}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v3, v6}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v3
 
@@ -8924,29 +8916,29 @@
     if-eqz v14, :cond_13
 
     .line 6899
-    new-instance v7, Ljava/lang/StringBuilder;
+    new-instance v6, Ljava/lang/StringBuilder;
 
-    invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
 
     const-string v8, "nextIfdType: "
 
-    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v6, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v7, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {v6, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
     const-string v8, " byteCount: "
 
-    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v6, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v7, v4, v5}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+    invoke-virtual {v6, v4, v5}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v7
+    move-result-object v6
 
     move-object/from16 v8, v24
 
-    invoke-static {v8, v7}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v8, v6}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     goto :goto_c
 
@@ -8954,21 +8946,21 @@
     move-object/from16 v8, v24
 
     :goto_c
-    const/16 v7, 0x8
+    const/16 v6, 0x8
 
     if-eqz v3, :cond_1c
 
     const-wide/16 v4, -0x1
 
-    const/4 v6, 0x3
+    const/4 v7, 0x3
 
-    if-eq v13, v6, :cond_17
+    if-eq v13, v7, :cond_17
 
-    const/4 v6, 0x4
+    const/4 v7, 0x4
 
-    if-eq v13, v6, :cond_16
+    if-eq v13, v7, :cond_16
 
-    if-eq v13, v7, :cond_15
+    if-eq v13, v6, :cond_15
 
     const/16 v6, 0x9
 
@@ -9046,9 +9038,9 @@
     :cond_18
     const-wide/16 v6, 0x0
 
-    cmp-long v9, v4, v6
+    cmp-long v6, v4, v6
 
-    if-lez v9, :cond_1a
+    if-lez v6, :cond_1a
 
     .line 6936
     iget-object v6, v0, Landroidx/exifinterface/media/ExifInterface;->mAttributesOffsets:Ljava/util/Set;
@@ -9150,10 +9142,10 @@
 
     add-int/2addr v3, v12
 
-    long-to-int v5, v4
+    long-to-int v4, v4
 
     .line 6956
-    new-array v4, v5, [B
+    new-array v4, v4, [B
 
     .line 6957
     invoke-virtual {v1, v4}, Landroidx/exifinterface/media/ExifInterface$ByteOrderedDataInputStream;->readFully([B)V
@@ -9246,7 +9238,7 @@
     iget-object v3, v11, Landroidx/exifinterface/media/ExifInterface$ExifTag;->name:Ljava/lang/String;
 
     .line 6974
-    invoke-virtual {v6, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v7, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v3
 
@@ -9265,7 +9257,7 @@
 
     .line 6976
     :cond_20
-    iput v7, v0, Landroidx/exifinterface/media/ExifInterface;->mMimeType:I
+    iput v6, v0, Landroidx/exifinterface/media/ExifInterface;->mMimeType:I
 
     .line 6980
     :cond_21
@@ -9275,9 +9267,9 @@
 
     int-to-long v3, v3
 
-    cmp-long v5, v3, v9
+    cmp-long v3, v3, v9
 
-    if-eqz v5, :cond_22
+    if-eqz v3, :cond_22
 
     .line 6981
     invoke-virtual {v1, v9, v10}, Landroidx/exifinterface/media/ExifInterface$SeekableByteOrderedDataInputStream;->seek(J)V

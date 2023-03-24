@@ -997,13 +997,13 @@
 
     const/4 v6, 0x0
 
-    const/4 v7, 0x0
+    move v8, v5
 
-    const/4 v8, -0x1
+    move v7, v6
 
-    const/4 v9, 0x0
+    move v9, v7
 
-    const/4 v10, 0x0
+    move v10, v9
 
     .line 824
     :goto_0
@@ -1039,7 +1039,7 @@
 
     move-result v12
 
-    const/4 v13, 0x0
+    move v13, v6
 
     :goto_1
     if-ge v13, v12, :cond_9
@@ -1092,7 +1092,7 @@
 
     move-result v12
 
-    const/4 v13, 0x0
+    move v13, v6
 
     :goto_3
     if-ge v13, v12, :cond_9
@@ -1177,7 +1177,7 @@
 
     if-eqz v8, :cond_7
 
-    const/4 v8, 0x0
+    move v8, v6
 
     goto :goto_5
 
@@ -1187,12 +1187,12 @@
 
     if-eqz v8, :cond_8
 
-    const/4 v8, 0x1
+    move v8, v13
 
     goto :goto_5
 
     :cond_8
-    const/4 v8, 0x2
+    move v8, v12
 
     :cond_9
     :goto_5
@@ -1637,12 +1637,12 @@
 
     if-ne v3, v4, :cond_1
 
-    const/4 v5, 0x1
+    move v5, v1
 
     goto :goto_0
 
     :cond_1
-    const/4 v5, 0x0
+    move v5, v2
 
     :goto_0
     if-nez v0, :cond_2
@@ -1652,7 +1652,7 @@
     goto :goto_1
 
     :cond_2
-    const/4 v1, 0x0
+    move v1, v2
 
     :goto_1
     if-nez v5, :cond_3
@@ -2264,7 +2264,7 @@
 
     if-gt p1, p2, :cond_9
 
-    const/4 p1, 0x0
+    move p1, v8
 
     goto :goto_2
 
@@ -2273,7 +2273,7 @@
 
     if-gt p1, p2, :cond_a
 
-    const/4 p1, 0x1
+    move p1, v1
 
     goto :goto_2
 
@@ -2282,12 +2282,12 @@
 
     if-gt p1, p2, :cond_b
 
-    const/4 p1, 0x2
+    move p1, v5
 
     goto :goto_2
 
     :cond_b
-    const/4 p1, 0x3
+    move p1, v4
 
     .line 320
     :goto_2
@@ -2367,7 +2367,7 @@
     .line 330
     invoke-virtual {p2, v0}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setView(Landroid/view/View;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    const/4 v2, 0x0
+    move v2, v8
 
     :goto_3
     if-ge v2, v6, :cond_d
@@ -2419,12 +2419,12 @@
 
     if-ne p1, v2, :cond_c
 
-    const/4 v9, 0x1
+    move v9, v1
 
     goto :goto_4
 
     :cond_c
-    const/4 v9, 0x0
+    move v9, v8
 
     :goto_4
     invoke-virtual {v4, v5, v9}, Lorg/telegram/ui/Cells/RadioColorCell;->setTextAndValue(Ljava/lang/CharSequence;Z)V
@@ -2820,7 +2820,7 @@
     goto :goto_7
 
     :cond_1e
-    const/4 v2, 0x5
+    move v2, v9
 
     .line 452
     :goto_7
@@ -2924,7 +2924,7 @@
     goto :goto_9
 
     :cond_22
-    const/4 v1, 0x0
+    move v1, v8
 
     :goto_9
     invoke-virtual {p2, v1}, Lorg/telegram/ui/Cells/TextCheckCell;->setChecked(Z)V
@@ -3256,7 +3256,7 @@
     .line 541
     invoke-virtual {p1, p2}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setView(Landroid/view/View;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    const/4 p3, 0x0
+    move p3, v8
 
     :goto_a
     if-ge p3, v5, :cond_2c
@@ -3588,7 +3588,7 @@
     goto :goto_0
 
     :cond_3
-    const/4 p1, 0x0
+    move p1, v1
 
     .line 353
     :goto_0
@@ -4007,12 +4007,12 @@
 
     if-eqz v1, :cond_2
 
-    const/4 v1, 0x1
+    move v1, v2
 
     goto :goto_2
 
     :cond_2
-    const/4 v1, 0x0
+    move v1, v0
 
     .line 686
     :goto_2
@@ -5438,12 +5438,12 @@
     invoke-virtual {v0}, Landroid/widget/Toast;->show()V
 
     :cond_0
-    const/4 v0, 0x1
+    move v0, v3
 
     goto :goto_0
 
     :cond_1
-    const/4 v0, 0x0
+    move v0, v2
 
     .line 217
     :goto_0
@@ -5491,7 +5491,7 @@
 
     invoke-virtual {v1, v0, v4}, Lorg/telegram/tgnet/ConnectionsManager;->sendRequest(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/RequestDelegate;)I
 
-    const/4 v0, 0x1
+    move v0, v3
 
     .line 231
     :cond_3

@@ -550,7 +550,7 @@
     goto :goto_1
 
     :cond_3
-    const/4 v2, 0x1
+    move v2, v4
 
     :goto_1
     const/high16 v5, 0x3f800000    # 1.0f
@@ -637,7 +637,7 @@
 
     invoke-virtual {p2}, Lorg/telegram/ui/Cells/ChatMessageCell;->invalidate()V
 
-    const/4 v2, 0x1
+    move v2, v4
 
     .line 716
     :cond_6
@@ -672,13 +672,13 @@
 
     move-result v6
 
-    mul-float v6, v6, v5
+    mul-float/2addr v6, v5
 
     invoke-virtual {v0}, Lorg/telegram/messenger/ImageReceiver;->getImageHeight()F
 
     move-result v7
 
-    mul-float v7, v7, v5
+    mul-float/2addr v7, v5
 
     invoke-virtual {v1, p2, v3, v6, v7}, Lorg/telegram/messenger/ImageReceiver;->setImageCoords(FFFF)V
 
@@ -688,7 +688,7 @@
     goto :goto_4
 
     :cond_7
-    const/4 v2, 0x1
+    move v2, v4
 
     :goto_4
     if-eqz v2, :cond_8
@@ -1094,7 +1094,7 @@
 
     const v8, 0x3e1fbe77    # 0.156f
 
-    mul-float v7, v7, v8
+    mul-float/2addr v7, v8
 
     float-to-int v7, v7
 
@@ -1163,7 +1163,7 @@
 
     int-to-float v8, v8
 
-    mul-float v8, v8, v3
+    mul-float/2addr v8, v3
 
     float-to-int v8, v8
 
@@ -1184,7 +1184,7 @@
 
     int-to-float v8, v8
 
-    mul-float v8, v8, v3
+    mul-float/2addr v8, v3
 
     float-to-int v8, v8
 
@@ -1213,7 +1213,7 @@
 
     int-to-float v7, v7
 
-    mul-float v7, v7, v2
+    mul-float/2addr v7, v2
 
     .line 620
     iget v8, v0, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$ReactionButton;->animateFromWidth:I
@@ -1222,7 +1222,7 @@
 
     sub-float v9, v5, v2
 
-    mul-float v8, v8, v9
+    mul-float/2addr v8, v9
 
     add-float/2addr v7, v8
 
@@ -1282,14 +1282,14 @@
 
     int-to-float v15, v13
 
-    mul-float v15, v15, v3
+    mul-float/2addr v15, v3
 
     .line 629
     iget-object v10, v0, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$ReactionButton;->this$0:Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble;
 
     iget v10, v10, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble;->drawServiceShaderBackground:F
 
-    mul-float v15, v15, v10
+    mul-float/2addr v15, v10
 
     float-to-int v10, v15
 
@@ -1297,14 +1297,14 @@
 
     int-to-float v10, v14
 
-    mul-float v10, v10, v3
+    mul-float/2addr v10, v3
 
     .line 630
     iget-object v15, v0, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$ReactionButton;->this$0:Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble;
 
     iget v15, v15, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble;->drawServiceShaderBackground:F
 
-    mul-float v10, v10, v15
+    mul-float/2addr v10, v15
 
     float-to-int v10, v10
 
@@ -1655,7 +1655,7 @@
     invoke-virtual {v0}, Lorg/telegram/ui/Components/AvatarsDrawable;->onAttachedToWindow()V
 
     :cond_1
-    const/4 v0, 0x0
+    move v0, v1
 
     .line 746
     :goto_0

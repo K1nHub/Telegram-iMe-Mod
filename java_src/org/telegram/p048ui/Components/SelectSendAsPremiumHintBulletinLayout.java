@@ -5,7 +5,7 @@ import android.graphics.PorterDuff;
 import android.graphics.PorterDuffColorFilter;
 import androidx.core.content.ContextCompat;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3286R;
+import org.telegram.messenger.C3301R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.p048ui.ActionBar.Theme;
 import org.telegram.p048ui.Components.Bulletin;
@@ -14,11 +14,11 @@ import org.telegram.p048ui.Components.Bulletin;
 public class SelectSendAsPremiumHintBulletinLayout extends Bulletin.MultiLineLayout {
     public SelectSendAsPremiumHintBulletinLayout(Context context, Theme.ResourcesProvider resourcesProvider, Runnable runnable) {
         super(context, resourcesProvider);
-        this.imageView.setImageDrawable(ContextCompat.getDrawable(context, C3286R.C3288drawable.msg_premium_prolfilestar));
+        this.imageView.setImageDrawable(ContextCompat.getDrawable(context, C3301R.C3303drawable.msg_premium_prolfilestar));
         this.imageView.setColorFilter(new PorterDuffColorFilter(getThemedColor("undo_infoColor"), PorterDuff.Mode.SRC_IN));
-        this.textView.setText(AndroidUtilities.replaceTags(LocaleController.getString(C3286R.string.SelectSendAsPeerPremiumHint)));
+        this.textView.setText(AndroidUtilities.replaceTags(LocaleController.getString(C3301R.string.SelectSendAsPeerPremiumHint)));
         Bulletin.UndoButton undoButton = new Bulletin.UndoButton(context, true, resourcesProvider);
-        undoButton.setText(LocaleController.getString(C3286R.string.SelectSendAsPeerPremiumOpen));
+        undoButton.setText(LocaleController.getString(C3301R.string.SelectSendAsPeerPremiumOpen));
         undoButton.setUndoAction(runnable);
         setButton(undoButton);
     }

@@ -427,12 +427,12 @@
 
     if-nez v1, :cond_0
 
-    const/4 v1, 0x1
+    move v1, v2
 
     goto :goto_0
 
     :cond_0
-    const/4 v1, 0x0
+    move v1, v3
 
     :goto_0
     const-string v4, "Cannot call andFinally() twice."
@@ -446,7 +446,7 @@
     goto :goto_1
 
     :cond_1
-    const/4 v2, 0x0
+    move v2, v3
 
     :goto_1
     const-string v1, "Cannot call then() and andFinally() on the same TransformedResult."
@@ -588,12 +588,12 @@
 
     if-nez v1, :cond_0
 
-    const/4 v1, 0x1
+    move v1, v2
 
     goto :goto_0
 
     :cond_0
-    const/4 v1, 0x0
+    move v1, v3
 
     :goto_0
     const-string v4, "Cannot call then() twice."
@@ -607,7 +607,7 @@
     goto :goto_1
 
     :cond_1
-    const/4 v2, 0x0
+    move v2, v3
 
     :goto_1
     const-string v1, "Cannot call then() and andFinally() on the same TransformedResult."

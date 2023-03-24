@@ -514,7 +514,7 @@
 
     const-wide/32 v0, 0xf4240
 
-    mul-long p1, p1, v0
+    mul-long/2addr p1, v0
 
     .line 2120
     iget v0, p0, Lcom/google/android/exoplayer2/audio/DefaultAudioSink$Configuration;->outputSampleRate:I
@@ -531,7 +531,7 @@
 
     const-wide/32 v0, 0xf4240
 
-    mul-long p1, p1, v0
+    mul-long/2addr p1, v0
 
     .line 2116
     iget-object v0, p0, Lcom/google/android/exoplayer2/audio/DefaultAudioSink$Configuration;->inputFormat:Lcom/google/android/exoplayer2/Format;

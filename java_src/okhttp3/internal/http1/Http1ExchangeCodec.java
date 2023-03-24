@@ -403,7 +403,7 @@ public final class Http1ExchangeCodec implements ExchangeCodec {
             Intrinsics.checkNotNullParameter(sink, "sink");
             if (!(j >= 0)) {
                 throw new IllegalArgumentException(("byteCount < 0: " + j).toString());
-            } else if (!(true ^ getClosed())) {
+            } else if (!(!getClosed())) {
                 throw new IllegalStateException("closed".toString());
             } else {
                 long j2 = this.bytesRemaining;
@@ -463,7 +463,7 @@ public final class Http1ExchangeCodec implements ExchangeCodec {
             Intrinsics.checkNotNullParameter(sink, "sink");
             if (!(j >= 0)) {
                 throw new IllegalArgumentException(("byteCount < 0: " + j).toString());
-            } else if (!(true ^ getClosed())) {
+            } else if (!(!getClosed())) {
                 throw new IllegalStateException("closed".toString());
             } else {
                 if (this.hasMoreChunks) {
@@ -500,8 +500,8 @@ public final class Http1ExchangeCodec implements ExchangeCodec {
                 r7 = this;
                 long r0 = r7.bytesRemainingInChunk
                 r2 = -1
-                int r4 = (r0 > r2 ? 1 : (r0 == r2 ? 0 : -1))
-                if (r4 == 0) goto L11
+                int r0 = (r0 > r2 ? 1 : (r0 == r2 ? 0 : -1))
+                if (r0 == 0) goto L11
                 okhttp3.internal.http1.Http1ExchangeCodec r0 = r7.this$0
                 okio.BufferedSource r0 = okhttp3.internal.http1.Http1ExchangeCodec.access$getSource$p(r0)
                 r0.readUtf8LineStrict()
@@ -518,15 +518,15 @@ public final class Http1ExchangeCodec implements ExchangeCodec {
                 java.lang.String r0 = r0.toString()     // Catch: java.lang.NumberFormatException -> Lb1
                 long r1 = r7.bytesRemainingInChunk     // Catch: java.lang.NumberFormatException -> Lb1
                 r3 = 0
-                int r5 = (r1 > r3 ? 1 : (r1 == r3 ? 0 : -1))
-                if (r5 < 0) goto L83
+                int r1 = (r1 > r3 ? 1 : (r1 == r3 ? 0 : -1))
+                if (r1 < 0) goto L83
                 int r1 = r0.length()     // Catch: java.lang.NumberFormatException -> Lb1
                 r2 = 0
                 if (r1 <= 0) goto L42
                 r1 = 1
                 goto L43
             L42:
-                r1 = 0
+                r1 = r2
             L43:
                 if (r1 == 0) goto L4f
                 java.lang.String r1 = ";"
@@ -536,8 +536,8 @@ public final class Http1ExchangeCodec implements ExchangeCodec {
                 if (r1 == 0) goto L83
             L4f:
                 long r0 = r7.bytesRemainingInChunk
-                int r5 = (r0 > r3 ? 1 : (r0 == r3 ? 0 : -1))
-                if (r5 != 0) goto L82
+                int r0 = (r0 > r3 ? 1 : (r0 == r3 ? 0 : -1))
+                if (r0 != 0) goto L82
                 r7.hasMoreChunks = r2
                 okhttp3.internal.http1.Http1ExchangeCodec r0 = r7.this$0
                 okhttp3.internal.http1.HeadersReader r1 = okhttp3.internal.http1.Http1ExchangeCodec.access$getHeadersReader$p(r0)

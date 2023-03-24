@@ -26,6 +26,6 @@ final class AutoValue_LogResponse extends LogResponse {
 
     public int hashCode() {
         long j = this.nextRequestWaitMillis;
-        return 1000003 ^ ((int) (j ^ (j >>> 32)));
+        return ((int) (j ^ (j >>> 32))) ^ 1000003;
     }
 }

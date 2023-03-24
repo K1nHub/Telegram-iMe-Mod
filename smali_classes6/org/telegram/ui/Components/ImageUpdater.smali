@@ -295,12 +295,12 @@
 
     if-eqz v3, :cond_1
 
-    const/4 v3, 0x2
+    move v3, v1
 
     goto :goto_0
 
     :cond_1
-    const/4 v3, 0x1
+    move v3, v2
 
     :goto_0
     iget-boolean v4, p0, Lorg/telegram/ui/Components/ImageUpdater;->searchAvailable:Z
@@ -1243,14 +1243,9 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    goto :goto_1
-
-    :catchall_0
-    nop
-
     .line 852
+    :catchall_0
     :cond_2
-    :goto_1
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Bitmap;->recycle()V
 
     .line 853
@@ -1502,7 +1497,7 @@
     :cond_7
     iput-boolean v3, v0, Lorg/telegram/ui/Components/ImageUpdater;->isVideo:Z
 
-    goto :goto_2
+    goto :goto_1
 
     .line 884
     :cond_8
@@ -1518,7 +1513,7 @@
     iput-boolean v4, v0, Lorg/telegram/ui/Components/ImageUpdater;->isVideo:Z
 
     .line 889
-    :goto_2
+    :goto_1
     iget v1, v0, Lorg/telegram/ui/Components/ImageUpdater;->currentAccount:I
 
     invoke-static {v1}, Lorg/telegram/messenger/NotificationCenter;->getInstance(I)Lorg/telegram/messenger/NotificationCenter;
@@ -2146,9 +2141,9 @@
 
     const-wide/16 v4, 0x0
 
-    cmp-long v6, v0, v4
+    cmp-long v0, v0, v4
 
-    if-eqz v6, :cond_1f
+    if-eqz v0, :cond_1f
 
     const/4 v0, 0x5
 
@@ -2183,7 +2178,7 @@
 
     const-wide v4, 0x408f400000000000L    # 1000.0
 
-    mul-double v0, v0, v4
+    mul-double/2addr v0, v4
 
     double-to-long v0, v0
 
@@ -2490,9 +2485,9 @@
 
     iget-wide p1, p1, Lorg/telegram/messenger/VideoEditedInfo;->estimatedSize:J
 
-    long-to-int p2, p1
+    long-to-int p1, p1
 
-    int-to-long v4, p2
+    int-to-long v4, p1
 
     const/high16 v6, 0x2000000
 
@@ -2951,7 +2946,7 @@
     invoke-static {p1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :goto_0
-    const/4 p1, 0x0
+    move p1, v2
 
     .line 816
     :goto_1
@@ -3674,7 +3669,7 @@
 
     move-result v6
 
-    const/4 v7, 0x0
+    move v7, v0
 
     :goto_1
     if-ge v7, v6, :cond_7

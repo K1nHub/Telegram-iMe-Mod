@@ -33,7 +33,7 @@ public final class WalletConnectDataSourceImpl implements WalletConnectDataSourc
     @Override // com.smedialink.storage.data.datasource.wallet_connect.WalletConnectDataSource
     public Observable<Result<String>> sendTransaction(TransactionArgs args) {
         Intrinsics.checkNotNullParameter(args, "args");
-        Observable flatMap = sign(args).flatMap(new ObservableExtKt$sam$i$io_reactivex_functions_Function$0(new C1501x2f0ca7ae(this)));
+        Observable flatMap = sign(args).flatMap(new ObservableExtKt$sam$i$io_reactivex_functions_Function$0(new C1506x2f0ca7ae(this)));
         Intrinsics.checkNotNullExpressionValue(flatMap, "crossinline body: (T) ->…e.empty()\n        }\n    }");
         return flatMap;
     }
@@ -48,7 +48,9 @@ public final class WalletConnectDataSourceImpl implements WalletConnectDataSourc
         RawTransaction createTransactionByType = createTransactionByType(walletConnectTransactionArgs);
         long chainId = walletConnectTransactionArgs.getChainId();
         Wallet.EVM eVMWallet = this.cryptoAccessManager.getEVMWallet();
-        Observable<Result<String>> just = Observable.just(Result.Companion.success(Numeric.toHexString(TransactionEncoder.signMessage(createTransactionByType, chainId, eVMWallet != null ? eVMWallet.getCredentials() : null))));
+        String hexString = Numeric.toHexString(TransactionEncoder.signMessage(createTransactionByType, chainId, eVMWallet != null ? eVMWallet.getCredentials() : null));
+        Intrinsics.checkNotNullExpressionValue(hexString, "toHexString(signedTransaction)");
+        Observable<Result<String>> just = Observable.just(Result.Companion.success(hexString));
         Intrinsics.checkNotNullExpressionValue(just, "just(this)");
         return just;
     }

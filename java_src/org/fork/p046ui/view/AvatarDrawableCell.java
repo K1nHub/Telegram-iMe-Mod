@@ -15,7 +15,7 @@ import kotlin.jvm.internal.Intrinsics;
 import org.fork.controller.RecentChatsController;
 import org.fork.enums.DrawStatusType;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3286R;
+import org.telegram.messenger.C3301R;
 import org.telegram.messenger.DialogObject;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.UserObject;
@@ -94,7 +94,7 @@ public final class AvatarDrawableCell extends FrameLayout {
         ImageView pinnedImageView = getPinnedImageView();
         pinnedImageView.setBackground(Theme.createCircleDrawable(20, Theme.getColor(this.backgroundColorKey)));
         pinnedImageView.setColorFilter(Theme.getColor("chats_pinnedIcon"));
-        pinnedImageView.setImageResource(C3286R.C3288drawable.list_pin);
+        pinnedImageView.setImageResource(C3301R.C3303drawable.list_pin);
         CounterView counterView = getCounterView();
         counterView.setColors("chats_unreadCounterText", "chats_unreadCounter");
         counterView.setGravity(5);
@@ -149,7 +149,7 @@ public final class AvatarDrawableCell extends FrameLayout {
             if (tLRPC$Chat != null) {
                 Intrinsics.checkNotNull(tLRPC$Chat, "null cannot be cast to non-null type org.telegram.tgnet.TLRPC.Chat");
                 if (tLRPC$Chat.forum) {
-                    drawCount(MessagesController.getInstance(this.currentAccount).getTopicsController().getForumUnreadCount(tLRPC$Chat.f1499id)[0]);
+                    drawCount(MessagesController.getInstance(this.currentAccount).getTopicsController().getForumUnreadCount(tLRPC$Chat.f1500id)[0]);
                 } else {
                     drawCount(tLRPC$Dialog.unread_count);
                 }
@@ -189,7 +189,7 @@ public final class AvatarDrawableCell extends FrameLayout {
         }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:61:0x027d  */
+    /* JADX WARN: Removed duplicated region for block: B:61:0x0270  */
     /* JADX WARN: Removed duplicated region for block: B:74:? A[RETURN, SYNTHETIC] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -197,7 +197,7 @@ public final class AvatarDrawableCell extends FrameLayout {
     */
     private final void drawOnline(android.graphics.Canvas r18) {
         /*
-            Method dump skipped, instructions count: 686
+            Method dump skipped, instructions count: 672
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: org.fork.p046ui.view.AvatarDrawableCell.drawOnline(android.graphics.Canvas):void");

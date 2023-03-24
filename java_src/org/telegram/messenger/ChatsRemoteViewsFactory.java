@@ -80,14 +80,14 @@ class ChatsRemoteViewsFactory implements RemoteViewsService.RemoteViewsFactory {
         return this.dids.size() + 1;
     }
 
-    /* JADX WARN: Can't wrap try/catch for region: R(9:117|(3:119|(1:121)(1:131)|122)(2:132|(3:134|(1:136)(1:138)|137)(9:139|(2:141|(1:143)(1:145))(1:146)|144|124|125|126|127|99|100))|123|124|125|126|127|99|100) */
-    /* JADX WARN: Code restructure failed: missing block: B:161:0x0409, code lost:
+    /* JADX WARN: Can't wrap try/catch for region: R(10:117|(3:119|(1:121)(1:132)|122)(2:133|(2:135|(7:137|125|126|127|128|99|100)(1:138))(10:139|(2:141|(1:143)(1:145))(1:146)|144|124|125|126|127|128|99|100))|123|124|125|126|127|128|99|100) */
+    /* JADX WARN: Code restructure failed: missing block: B:163:0x0412, code lost:
         r0 = move-exception;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:162:0x040a, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:164:0x0413, code lost:
         org.telegram.messenger.FileLog.m45e(r0);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:93:0x0260, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:95:0x0262, code lost:
         if ((r0 instanceof org.telegram.tgnet.TLRPC$TL_messageActionChannelMigrateFrom) != false) goto L55;
      */
     @Override // android.widget.RemoteViewsService.RemoteViewsFactory
@@ -97,7 +97,7 @@ class ChatsRemoteViewsFactory implements RemoteViewsService.RemoteViewsFactory {
     */
     public android.widget.RemoteViews getViewAt(int r20) {
         /*
-            Method dump skipped, instructions count: 1553
+            Method dump skipped, instructions count: 1561
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: org.telegram.messenger.ChatsRemoteViewsFactory.getViewAt(int):android.widget.RemoteViews");

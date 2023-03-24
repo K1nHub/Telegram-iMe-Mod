@@ -160,7 +160,7 @@
 
     if-lez p2, :cond_0
 
-    const/4 v1, 0x1
+    move v1, v2
 
     :cond_0
     invoke-virtual {p1, v1}, Lorg/telegram/ui/Cells/TextCell;->setNeedDivider(Z)V
@@ -587,13 +587,13 @@
     goto :goto_1
 
     :cond_d
-    const/4 v10, 0x0
+    move v10, v1
 
     goto :goto_2
 
     :cond_e
     :goto_1
-    const/4 v10, 0x1
+    move v10, v2
 
     :goto_2
     invoke-virtual/range {v5 .. v10}, Lorg/telegram/ui/Cells/UserCell;->setData(Ljava/lang/Object;Ljava/lang/CharSequence;Ljava/lang/CharSequence;IZ)V
@@ -995,7 +995,7 @@
 
     long-to-float v5, v0
 
-    mul-float v5, v5, v2
+    mul-float/2addr v5, v2
 
     cmpl-float v4, v4, v5
 
@@ -1011,7 +1011,7 @@
 
     div-float/2addr v0, v1
 
-    mul-float v3, v3, v0
+    mul-float/2addr v3, v0
 
     add-float/2addr v3, v2
 

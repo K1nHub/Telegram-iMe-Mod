@@ -747,9 +747,9 @@
 
     const-wide/16 v0, 0x0
 
-    cmp-long v2, p1, v0
+    cmp-long v0, p1, v0
 
-    if-lez v2, :cond_0
+    if-lez v0, :cond_0
 
     const-string v0, "await must not be called on the UI thread when time is greater than zero."
 
@@ -993,7 +993,7 @@
 .end method
 
 .method public final isReady()Z
-    .locals 5
+    .locals 4
     .annotation build Lcom/google/android/gms/common/annotation/KeepForSdk;
     .end annotation
 
@@ -1006,9 +1006,9 @@
 
     const-wide/16 v2, 0x0
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-nez v4, :cond_0
+    if-nez v0, :cond_0
 
     const/4 v0, 0x1
 
@@ -1388,12 +1388,12 @@
 
     if-nez v2, :cond_0
 
-    const/4 v2, 0x1
+    move v2, v1
 
     goto :goto_0
 
     :cond_0
-    const/4 v2, 0x0
+    move v2, v3
 
     :goto_0
     const-string v4, "Cannot call then() twice."
@@ -1405,7 +1405,7 @@
 
     if-nez v2, :cond_1
 
-    const/4 v3, 0x1
+    move v3, v1
 
     :cond_1
     const-string v2, "Cannot call then() if callbacks are set."

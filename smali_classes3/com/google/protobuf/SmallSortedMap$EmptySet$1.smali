@@ -32,7 +32,7 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 633
+    .line 631
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -59,7 +59,7 @@
 .method public next()Ljava/lang/Object;
     .locals 1
 
-    .line 641
+    .line 639
     new-instance v0, Ljava/util/NoSuchElementException;
 
     invoke-direct {v0}, Ljava/util/NoSuchElementException;-><init>()V
@@ -70,7 +70,7 @@
 .method public remove()V
     .locals 1
 
-    .line 646
+    .line 644
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V

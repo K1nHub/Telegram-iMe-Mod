@@ -68,7 +68,7 @@
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     .line 243
     :goto_0
@@ -206,7 +206,7 @@
 
     invoke-virtual {v2}, Lorg/telegram/messenger/ringtone/RingtoneDataStore;->saveTones()V
 
-    const/4 v2, 0x0
+    move v2, v1
 
     .line 265
     :goto_1

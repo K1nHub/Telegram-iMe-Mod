@@ -47,54 +47,54 @@ public abstract class FourierTransform {
 
     protected void fillSpectrum() {
         float[] fArr;
-        int i = 0;
+        int i;
+        int i2 = 0;
         while (true) {
             fArr = this.spectrum;
-            if (i >= fArr.length) {
+            if (i2 >= fArr.length) {
                 break;
             }
             float[] fArr2 = this.real;
-            float f = fArr2[i] * fArr2[i];
+            float f = fArr2[i2] * fArr2[i2];
             float[] fArr3 = this.imag;
-            fArr[i] = (float) Math.sqrt(f + (fArr3[i] * fArr3[i]));
-            i++;
+            fArr[i2] = (float) Math.sqrt(f + (fArr3[i2] * fArr3[i2]));
+            i2++;
         }
-        int i2 = this.whichAverage;
-        if (i2 == 1) {
+        int i3 = this.whichAverage;
+        if (i3 == 1) {
             int length = fArr.length / this.averages.length;
-            for (int i3 = 0; i3 < this.averages.length; i3++) {
-                int i4 = 0;
-                float f2 = BitmapDescriptorFactory.HUE_RED;
-                while (i4 < length) {
-                    int i5 = (i3 * length) + i4;
+            for (int i4 = 0; i4 < this.averages.length; i4++) {
+                int i5 = 0;
+                float f2 = 0.0f;
+                while (i5 < length) {
+                    int i6 = (i4 * length) + i5;
                     float[] fArr4 = this.spectrum;
-                    if (i5 < fArr4.length) {
-                        f2 += fArr4[i5];
-                        i4++;
+                    if (i6 < fArr4.length) {
+                        f2 += fArr4[i6];
+                        i5++;
                     }
                 }
-                this.averages[i3] = f2 / (i4 + 1);
+                this.averages[i4] = f2 / (i5 + 1);
             }
-        } else if (i2 == 2) {
-            int i6 = 0;
+        } else if (i3 == 2) {
+            int i7 = 0;
             while (true) {
-                int i7 = this.octaves;
-                if (i6 >= i7) {
+                if (i7 >= this.octaves) {
                     return;
                 }
-                float pow = i6 == 0 ? BitmapDescriptorFactory.HUE_RED : (this.sampleRate / 2) / ((float) Math.pow(2.0d, i7 - i6));
-                float pow2 = (((this.sampleRate / 2) / ((float) Math.pow(2.0d, (this.octaves - i6) - 1))) - pow) / this.avgPerOctave;
+                float pow = i7 == 0 ? 0.0f : (this.sampleRate / 2) / ((float) Math.pow(2.0d, i - i7));
+                float pow2 = (((this.sampleRate / 2) / ((float) Math.pow(2.0d, (this.octaves - i7) - 1))) - pow) / this.avgPerOctave;
                 int i8 = 0;
                 while (true) {
                     int i9 = this.avgPerOctave;
                     if (i8 < i9) {
                         float f3 = pow + pow2;
-                        this.averages[(i9 * i6) + i8] = calcAvg(pow, f3);
+                        this.averages[(i9 * i7) + i8] = calcAvg(pow, f3);
                         i8++;
                         pow = f3;
                     }
                 }
-                i6++;
+                i7++;
             }
         }
     }
@@ -335,18 +335,18 @@ public abstract class FourierTransform {
 
         @Override // org.telegram.messenger.FourierTransform
         public void inverse(float[] fArr) {
+            float[] fArr2;
             if (fArr.length > this.real.length) {
                 return;
             }
             for (int i = 0; i < this.timeSize; i++) {
-                float[] fArr2 = this.imag;
-                fArr2[i] = fArr2[i] * (-1.0f);
+                float[] fArr3 = this.imag;
+                fArr3[i] = fArr3[i] * (-1.0f);
             }
             bitReverseComplex();
             fft();
             for (int i2 = 0; i2 < fArr.length; i2++) {
-                float[] fArr3 = this.real;
-                fArr[i2] = fArr3[i2] / fArr3.length;
+                fArr[i2] = this.real[i2] / fArr2.length;
             }
         }
 

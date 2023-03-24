@@ -40,7 +40,7 @@
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    move v2, v0
 
     .line 55
     :goto_0

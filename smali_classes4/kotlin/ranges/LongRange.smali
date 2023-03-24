@@ -59,7 +59,7 @@
 
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
-    .locals 5
+    .locals 4
 
     .line 116
     instance-of v0, p1, Lkotlin/ranges/LongRange;
@@ -94,9 +94,9 @@
 
     move-result-wide v2
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-nez v4, :cond_2
+    if-nez v0, :cond_2
 
     invoke-virtual {p0}, Lkotlin/ranges/LongProgression;->getLast()J
 
@@ -155,7 +155,7 @@
 
     xor-long/2addr v2, v4
 
-    mul-long v0, v0, v2
+    mul-long/2addr v0, v2
 
     invoke-virtual {p0}, Lkotlin/ranges/LongProgression;->getLast()J
 
@@ -178,7 +178,7 @@
 .end method
 
 .method public isEmpty()Z
-    .locals 5
+    .locals 4
 
     .line 113
     invoke-virtual {p0}, Lkotlin/ranges/LongProgression;->getFirst()J
@@ -189,9 +189,9 @@
 
     move-result-wide v2
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-lez v4, :cond_0
+    if-lez v0, :cond_0
 
     const/4 v0, 0x1
 

@@ -368,7 +368,7 @@ public final class DefaultMediaSourceFactory implements MediaSourceFactory {
             maybeLoadSupplier(4);
         }
 
-        /* JADX WARN: Removed duplicated region for block: B:26:0x0078  */
+        /* JADX WARN: Removed duplicated region for block: B:25:0x0076  */
         /*
             Code decompiled incorrectly, please refer to instructions dump.
             To view partially-correct add '--show-bad-code' argument
@@ -391,58 +391,56 @@ public final class DefaultMediaSourceFactory implements MediaSourceFactory {
                 com.google.android.exoplayer2.upstream.DataSource$Factory r2 = r4.dataSourceFactory
                 java.lang.Object r2 = com.google.android.exoplayer2.util.Assertions.checkNotNull(r2)
                 com.google.android.exoplayer2.upstream.DataSource$Factory r2 = (com.google.android.exoplayer2.upstream.DataSource.Factory) r2
-                if (r5 == 0) goto L61
+                if (r5 == 0) goto L5f
                 r3 = 1
-                if (r5 == r3) goto L55
+                if (r5 == r3) goto L53
                 r3 = 2
-                if (r5 == r3) goto L49
+                if (r5 == r3) goto L47
                 r3 = 3
-                if (r5 == r3) goto L3c
+                if (r5 == r3) goto L3a
                 r0 = 4
                 if (r5 == r0) goto L33
-                goto L6d
+                goto L6b
             L33:
-                com.google.android.exoplayer2.source.DefaultMediaSourceFactory$DelegateFactoryLoader$$ExternalSyntheticLambda0 r0 = new com.google.android.exoplayer2.source.DefaultMediaSourceFactory$DelegateFactoryLoader$$ExternalSyntheticLambda0     // Catch: java.lang.ClassNotFoundException -> L3a
-                r0.<init>()     // Catch: java.lang.ClassNotFoundException -> L3a
+                com.google.android.exoplayer2.source.DefaultMediaSourceFactory$DelegateFactoryLoader$$ExternalSyntheticLambda0 r0 = new com.google.android.exoplayer2.source.DefaultMediaSourceFactory$DelegateFactoryLoader$$ExternalSyntheticLambda0     // Catch: java.lang.ClassNotFoundException -> L6b
+                r0.<init>()     // Catch: java.lang.ClassNotFoundException -> L6b
                 r1 = r0
-                goto L6d
+                goto L6b
             L3a:
-                goto L6d
-            L3c:
                 java.lang.Class<com.google.android.exoplayer2.source.rtsp.RtspMediaSource$Factory> r2 = com.google.android.exoplayer2.source.rtsp.RtspMediaSource.Factory.class
-                java.lang.Class r0 = r2.asSubclass(r0)     // Catch: java.lang.ClassNotFoundException -> L3a
-                com.google.android.exoplayer2.source.DefaultMediaSourceFactory$DelegateFactoryLoader$$ExternalSyntheticLambda1 r2 = new com.google.android.exoplayer2.source.DefaultMediaSourceFactory$DelegateFactoryLoader$$ExternalSyntheticLambda1     // Catch: java.lang.ClassNotFoundException -> L3a
-                r2.<init>()     // Catch: java.lang.ClassNotFoundException -> L3a
+                java.lang.Class r0 = r2.asSubclass(r0)     // Catch: java.lang.ClassNotFoundException -> L6b
+                com.google.android.exoplayer2.source.DefaultMediaSourceFactory$DelegateFactoryLoader$$ExternalSyntheticLambda1 r2 = new com.google.android.exoplayer2.source.DefaultMediaSourceFactory$DelegateFactoryLoader$$ExternalSyntheticLambda1     // Catch: java.lang.ClassNotFoundException -> L6b
+                r2.<init>()     // Catch: java.lang.ClassNotFoundException -> L6b
                 r1 = r2
-                goto L6d
-            L49:
+                goto L6b
+            L47:
                 java.lang.Class<com.google.android.exoplayer2.source.hls.HlsMediaSource$Factory> r3 = com.google.android.exoplayer2.source.hls.HlsMediaSource.Factory.class
-                java.lang.Class r0 = r3.asSubclass(r0)     // Catch: java.lang.ClassNotFoundException -> L3a
-                com.google.android.exoplayer2.source.DefaultMediaSourceFactory$DelegateFactoryLoader$$ExternalSyntheticLambda4 r3 = new com.google.android.exoplayer2.source.DefaultMediaSourceFactory$DelegateFactoryLoader$$ExternalSyntheticLambda4     // Catch: java.lang.ClassNotFoundException -> L3a
-                r3.<init>()     // Catch: java.lang.ClassNotFoundException -> L3a
-                goto L6c
-            L55:
+                java.lang.Class r0 = r3.asSubclass(r0)     // Catch: java.lang.ClassNotFoundException -> L6b
+                com.google.android.exoplayer2.source.DefaultMediaSourceFactory$DelegateFactoryLoader$$ExternalSyntheticLambda4 r3 = new com.google.android.exoplayer2.source.DefaultMediaSourceFactory$DelegateFactoryLoader$$ExternalSyntheticLambda4     // Catch: java.lang.ClassNotFoundException -> L6b
+                r3.<init>()     // Catch: java.lang.ClassNotFoundException -> L6b
+                goto L6a
+            L53:
                 java.lang.Class<com.google.android.exoplayer2.source.smoothstreaming.SsMediaSource$Factory> r3 = com.google.android.exoplayer2.source.smoothstreaming.SsMediaSource.Factory.class
-                java.lang.Class r0 = r3.asSubclass(r0)     // Catch: java.lang.ClassNotFoundException -> L3a
-                com.google.android.exoplayer2.source.DefaultMediaSourceFactory$DelegateFactoryLoader$$ExternalSyntheticLambda2 r3 = new com.google.android.exoplayer2.source.DefaultMediaSourceFactory$DelegateFactoryLoader$$ExternalSyntheticLambda2     // Catch: java.lang.ClassNotFoundException -> L3a
-                r3.<init>()     // Catch: java.lang.ClassNotFoundException -> L3a
-                goto L6c
-            L61:
+                java.lang.Class r0 = r3.asSubclass(r0)     // Catch: java.lang.ClassNotFoundException -> L6b
+                com.google.android.exoplayer2.source.DefaultMediaSourceFactory$DelegateFactoryLoader$$ExternalSyntheticLambda2 r3 = new com.google.android.exoplayer2.source.DefaultMediaSourceFactory$DelegateFactoryLoader$$ExternalSyntheticLambda2     // Catch: java.lang.ClassNotFoundException -> L6b
+                r3.<init>()     // Catch: java.lang.ClassNotFoundException -> L6b
+                goto L6a
+            L5f:
                 java.lang.Class<com.google.android.exoplayer2.source.dash.DashMediaSource$Factory> r3 = com.google.android.exoplayer2.source.dash.DashMediaSource.Factory.class
-                java.lang.Class r0 = r3.asSubclass(r0)     // Catch: java.lang.ClassNotFoundException -> L3a
-                com.google.android.exoplayer2.source.DefaultMediaSourceFactory$DelegateFactoryLoader$$ExternalSyntheticLambda3 r3 = new com.google.android.exoplayer2.source.DefaultMediaSourceFactory$DelegateFactoryLoader$$ExternalSyntheticLambda3     // Catch: java.lang.ClassNotFoundException -> L3a
-                r3.<init>()     // Catch: java.lang.ClassNotFoundException -> L3a
-            L6c:
+                java.lang.Class r0 = r3.asSubclass(r0)     // Catch: java.lang.ClassNotFoundException -> L6b
+                com.google.android.exoplayer2.source.DefaultMediaSourceFactory$DelegateFactoryLoader$$ExternalSyntheticLambda3 r3 = new com.google.android.exoplayer2.source.DefaultMediaSourceFactory$DelegateFactoryLoader$$ExternalSyntheticLambda3     // Catch: java.lang.ClassNotFoundException -> L6b
+                r3.<init>()     // Catch: java.lang.ClassNotFoundException -> L6b
+            L6a:
                 r1 = r3
-            L6d:
+            L6b:
                 java.util.Map<java.lang.Integer, com.google.common.base.Supplier<com.google.android.exoplayer2.source.MediaSource$Factory>> r0 = r4.mediaSourceFactorySuppliers
                 java.lang.Integer r2 = java.lang.Integer.valueOf(r5)
                 r0.put(r2, r1)
-                if (r1 == 0) goto L81
+                if (r1 == 0) goto L7f
                 java.util.Set<java.lang.Integer> r0 = r4.supportedTypes
                 java.lang.Integer r5 = java.lang.Integer.valueOf(r5)
                 r0.add(r5)
-            L81:
+            L7f:
                 return r1
             */
             throw new UnsupportedOperationException("Method not decompiled: com.google.android.exoplayer2.source.DefaultMediaSourceFactory.DelegateFactoryLoader.maybeLoadSupplier(int):com.google.common.base.Supplier");

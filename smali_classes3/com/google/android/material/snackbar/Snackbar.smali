@@ -184,7 +184,7 @@
 
     if-eq v4, v1, :cond_0
 
-    const/4 v0, 0x1
+    move v0, v3
 
     :cond_0
     return v0
@@ -347,7 +347,7 @@
 
     if-eqz v2, :cond_3
 
-    const/4 v0, -0x2
+    move v0, v1
 
     :cond_3
     return v0

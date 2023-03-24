@@ -9,8 +9,8 @@ public final class zzc implements Parcelable.Creator<Configuration> {
     public final /* synthetic */ Configuration createFromParcel(Parcel parcel) {
         int validateObjectHeader = SafeParcelReader.validateObjectHeader(parcel);
         zzi[] zziVarArr = null;
-        String[] strArr = null;
         int i = 0;
+        String[] strArr = null;
         while (parcel.dataPosition() < validateObjectHeader) {
             int readHeader = SafeParcelReader.readHeader(parcel);
             int fieldId = SafeParcelReader.getFieldId(readHeader);

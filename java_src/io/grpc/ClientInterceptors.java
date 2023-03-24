@@ -4,13 +4,13 @@ import com.google.common.base.Preconditions;
 import io.grpc.ClientCall;
 import java.util.Arrays;
 import java.util.List;
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public class ClientInterceptors {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: io.grpc.ClientInterceptors$1 */
-    /* loaded from: classes3.dex */
-    public class C23441 implements ClientInterceptor {
+    /* loaded from: classes.dex */
+    public class C23581 implements ClientInterceptor {
     }
 
     public static Channel intercept(Channel channel, ClientInterceptor... clientInterceptorArr) {
@@ -26,12 +26,12 @@ public class ClientInterceptors {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes.dex */
     public static class InterceptorChannel extends Channel {
         private final Channel channel;
         private final ClientInterceptor interceptor;
 
-        /* synthetic */ InterceptorChannel(Channel channel, ClientInterceptor clientInterceptor, C23441 c23441) {
+        /* synthetic */ InterceptorChannel(Channel channel, ClientInterceptor clientInterceptor, C23581 c23581) {
             this(channel, clientInterceptor);
         }
 

@@ -62,9 +62,9 @@
 
     const-wide/16 p1, 0x0
 
-    cmp-long v0, p3, p1
+    cmp-long p1, p3, p1
 
-    if-nez v0, :cond_0
+    if-nez p1, :cond_0
 
     const/4 p1, 0x0
 
@@ -246,35 +246,35 @@
     invoke-virtual {p3, v0}, Lokhttp3/EventListener;->responseBodyStart(Lokhttp3/Call;)V
 
     :cond_0
-    const/4 p3, 0x0
-
     const-wide/16 v0, -0x1
 
-    cmp-long v2, p1, v0
+    cmp-long p3, p1, v0
 
-    if-nez v2, :cond_1
+    const/4 v2, 0x0
+
+    if-nez p3, :cond_1
 
     .line 284
-    invoke-virtual {p0, p3}, Lokhttp3/internal/connection/Exchange$ResponseBodySource;->complete(Ljava/io/IOException;)Ljava/io/IOException;
+    invoke-virtual {p0, v2}, Lokhttp3/internal/connection/Exchange$ResponseBodySource;->complete(Ljava/io/IOException;)Ljava/io/IOException;
 
     return-wide v0
 
     .line 288
     :cond_1
-    iget-wide v2, p0, Lokhttp3/internal/connection/Exchange$ResponseBodySource;->bytesReceived:J
+    iget-wide v3, p0, Lokhttp3/internal/connection/Exchange$ResponseBodySource;->bytesReceived:J
 
-    add-long/2addr v2, p1
+    add-long/2addr v3, p1
 
     .line 289
-    iget-wide v4, p0, Lokhttp3/internal/connection/Exchange$ResponseBodySource;->contentLength:J
+    iget-wide v5, p0, Lokhttp3/internal/connection/Exchange$ResponseBodySource;->contentLength:J
 
-    cmp-long v6, v4, v0
+    cmp-long p3, v5, v0
 
-    if-eqz v6, :cond_3
+    if-eqz p3, :cond_3
 
-    cmp-long v0, v2, v4
+    cmp-long p3, v3, v5
 
-    if-gtz v0, :cond_2
+    if-gtz p3, :cond_2
 
     goto :goto_0
 
@@ -298,7 +298,7 @@
 
     invoke-virtual {p2, p3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {p2, v2, v3}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+    invoke-virtual {p2, v3, v4}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
     invoke-virtual {p2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
@@ -311,14 +311,14 @@
     .line 293
     :cond_3
     :goto_0
-    iput-wide v2, p0, Lokhttp3/internal/connection/Exchange$ResponseBodySource;->bytesReceived:J
+    iput-wide v3, p0, Lokhttp3/internal/connection/Exchange$ResponseBodySource;->bytesReceived:J
 
-    cmp-long v0, v2, v4
+    cmp-long p3, v3, v5
 
-    if-nez v0, :cond_4
+    if-nez p3, :cond_4
 
     .line 295
-    invoke-virtual {p0, p3}, Lokhttp3/internal/connection/Exchange$ResponseBodySource;->complete(Ljava/io/IOException;)Ljava/io/IOException;
+    invoke-virtual {p0, v2}, Lokhttp3/internal/connection/Exchange$ResponseBodySource;->complete(Ljava/io/IOException;)Ljava/io/IOException;
     :try_end_0
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 

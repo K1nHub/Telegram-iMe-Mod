@@ -127,7 +127,7 @@
 
     int-to-float v2, v0
 
-    mul-float p1, p1, v2
+    mul-float/2addr p1, v2
 
     float-to-int p1, p1
 

@@ -1498,7 +1498,7 @@
     goto :goto_0
 
     :cond_3
-    const/4 v1, 0x0
+    move v1, v2
 
     .line 309
     :goto_0
@@ -1558,7 +1558,7 @@
 
     if-eqz v0, :cond_0
 
-    const/4 v0, 0x1
+    move v0, v3
 
     goto :goto_0
 
@@ -1578,12 +1578,12 @@
 
     :cond_1
     :goto_1
-    const v1, 0x10000555
+    move v1, v4
 
     goto :goto_2
 
     :cond_2
-    const v1, 0x10000333
+    move v1, v2
 
     goto :goto_2
 

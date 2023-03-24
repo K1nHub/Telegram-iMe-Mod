@@ -19,7 +19,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nBlockchainsManagementPresenter.kt\nKotlin\n*S Kotlin\n*F\n+ 1 BlockchainsManagementPresenter.kt\ncom/smedialink/ui/wallet/crypto/settings/blockchains/BlockchainsManagementPresenter\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 RxExt.kt\ncom/smedialink/utils/extentions/rx/RxExtKt\n*L\n1#1,135:1\n1549#2:136\n1620#2,3:137\n39#3,8:140\n*S KotlinDebug\n*F\n+ 1 BlockchainsManagementPresenter.kt\ncom/smedialink/ui/wallet/crypto/settings/blockchains/BlockchainsManagementPresenter\n*L\n85#1:136\n85#1:137,3\n102#1:140,8\n*E\n"
+    value = "SMAP\nBlockchainsManagementPresenter.kt\nKotlin\n*S Kotlin\n*F\n+ 1 BlockchainsManagementPresenter.kt\ncom/smedialink/ui/wallet/crypto/settings/blockchains/BlockchainsManagementPresenter\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 RxExt.kt\ncom/smedialink/utils/extentions/rx/RxExtKt\n*L\n1#1,140:1\n1549#2:141\n1620#2,3:142\n39#3,8:145\n*S KotlinDebug\n*F\n+ 1 BlockchainsManagementPresenter.kt\ncom/smedialink/ui/wallet/crypto/settings/blockchains/BlockchainsManagementPresenter\n*L\n85#1:141\n85#1:142,3\n102#1:145,8\n*E\n"
 .end annotation
 
 .annotation runtime Lmoxy/InjectViewState;
@@ -102,135 +102,183 @@
 .end method
 
 .method private final getInfoDialogModel(Lcom/smedialink/storage/domain/model/crypto/BlockchainType;)Lcom/smedialink/model/dialog/DialogModel;
-    .locals 9
+    .locals 17
+
+    move-object/from16 v0, p0
 
     .line 115
-    sget-object v0, Lcom/smedialink/ui/wallet/crypto/settings/blockchains/BlockchainsManagementPresenter$WhenMappings;->$EnumSwitchMapping$0:[I
+    sget-object v1, Lcom/smedialink/ui/wallet/crypto/settings/blockchains/BlockchainsManagementPresenter$WhenMappings;->$EnumSwitchMapping$0:[I
 
-    invoke-virtual {p1}, Ljava/lang/Enum;->ordinal()I
+    invoke-virtual/range {p1 .. p1}, Ljava/lang/Enum;->ordinal()I
 
-    move-result p1
+    move-result v2
 
-    aget p1, v0, p1
+    aget v1, v1, v2
 
-    const/4 v0, 0x1
+    const/4 v2, 0x1
 
-    const-string v1, "OK"
+    const-string v3, "OK"
 
-    if-eq p1, v0, :cond_1
+    if-eq v1, v2, :cond_2
 
-    const/4 v0, 0x2
+    const/4 v2, 0x2
 
-    if-ne p1, v0, :cond_0
+    if-eq v1, v2, :cond_1
 
-    .line 121
-    new-instance p1, Lcom/smedialink/model/dialog/DialogModel;
+    const/4 v2, 0x3
 
-    .line 122
-    iget-object v0, p0, Lcom/smedialink/ui/wallet/crypto/settings/blockchains/BlockchainsManagementPresenter;->resourceManager:Lcom/smedialink/storage/domain/utils/system/ResourceManager;
+    if-ne v1, v2, :cond_0
 
-    sget v2, Lorg/telegram/messenger/R$string;->wallet_details_info_ton_title:I
+    .line 126
+    new-instance v1, Lcom/smedialink/model/dialog/DialogModel;
 
-    invoke-interface {v0, v2}, Lcom/smedialink/storage/domain/utils/system/ResourceManager;->getString(I)Ljava/lang/String;
+    .line 127
+    iget-object v2, v0, Lcom/smedialink/ui/wallet/crypto/settings/blockchains/BlockchainsManagementPresenter;->resourceManager:Lcom/smedialink/storage/domain/utils/system/ResourceManager;
 
-    move-result-object v3
+    sget v4, Lorg/telegram/messenger/R$string;->wallet_details_info_tron_title:I
 
-    .line 123
-    iget-object v0, p0, Lcom/smedialink/ui/wallet/crypto/settings/blockchains/BlockchainsManagementPresenter;->resourceManager:Lcom/smedialink/storage/domain/utils/system/ResourceManager;
+    invoke-interface {v2, v4}, Lcom/smedialink/storage/domain/utils/system/ResourceManager;->getString(I)Ljava/lang/String;
 
-    sget v2, Lorg/telegram/messenger/R$string;->wallet_details_info_ton_description:I
+    move-result-object v5
 
-    invoke-interface {v0, v2}, Lcom/smedialink/storage/domain/utils/system/ResourceManager;->getString(I)Ljava/lang/String;
+    .line 128
+    iget-object v2, v0, Lcom/smedialink/ui/wallet/crypto/settings/blockchains/BlockchainsManagementPresenter;->resourceManager:Lcom/smedialink/storage/domain/utils/system/ResourceManager;
 
-    move-result-object v4
+    sget v4, Lorg/telegram/messenger/R$string;->wallet_details_info_tron_description:I
 
-    const/4 v5, 0x0
-
-    .line 124
-    sget v0, Lorg/telegram/messenger/R$string;->OK:I
-
-    invoke-static {v1, v0}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+    invoke-interface {v2, v4}, Lcom/smedialink/storage/domain/utils/system/ResourceManager;->getString(I)Ljava/lang/String;
 
     move-result-object v6
 
-    const/4 v7, 0x4
+    const/4 v7, 0x0
 
-    const/4 v8, 0x0
+    .line 129
+    sget v2, Lorg/telegram/messenger/R$string;->OK:I
 
-    move-object v2, p1
+    invoke-static {v3, v2}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+
+    move-result-object v8
+
+    const/4 v9, 0x4
+
+    const/4 v10, 0x0
+
+    move-object v4, v1
+
+    .line 126
+    invoke-direct/range {v4 .. v10}, Lcom/smedialink/model/dialog/DialogModel;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+
+    goto :goto_0
+
+    :cond_0
+    new-instance v1, Lkotlin/NoWhenBranchMatchedException;
+
+    invoke-direct {v1}, Lkotlin/NoWhenBranchMatchedException;-><init>()V
+
+    throw v1
+
+    .line 121
+    :cond_1
+    new-instance v1, Lcom/smedialink/model/dialog/DialogModel;
+
+    .line 122
+    iget-object v2, v0, Lcom/smedialink/ui/wallet/crypto/settings/blockchains/BlockchainsManagementPresenter;->resourceManager:Lcom/smedialink/storage/domain/utils/system/ResourceManager;
+
+    sget v4, Lorg/telegram/messenger/R$string;->wallet_details_info_ton_title:I
+
+    invoke-interface {v2, v4}, Lcom/smedialink/storage/domain/utils/system/ResourceManager;->getString(I)Ljava/lang/String;
+
+    move-result-object v4
+
+    .line 123
+    iget-object v2, v0, Lcom/smedialink/ui/wallet/crypto/settings/blockchains/BlockchainsManagementPresenter;->resourceManager:Lcom/smedialink/storage/domain/utils/system/ResourceManager;
+
+    sget v5, Lorg/telegram/messenger/R$string;->wallet_details_info_ton_description:I
+
+    invoke-interface {v2, v5}, Lcom/smedialink/storage/domain/utils/system/ResourceManager;->getString(I)Ljava/lang/String;
+
+    move-result-object v5
+
+    const/4 v6, 0x0
+
+    .line 124
+    sget v2, Lorg/telegram/messenger/R$string;->OK:I
+
+    invoke-static {v3, v2}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+
+    move-result-object v7
+
+    const/4 v8, 0x4
+
+    const/4 v9, 0x0
+
+    move-object v2, v1
+
+    move-object v3, v4
+
+    move-object v4, v5
+
+    move-object v5, v6
+
+    move-object v6, v7
+
+    move v7, v8
+
+    move-object v8, v9
 
     .line 121
     invoke-direct/range {v2 .. v8}, Lcom/smedialink/model/dialog/DialogModel;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
 
     goto :goto_0
 
-    :cond_0
-    new-instance p1, Lkotlin/NoWhenBranchMatchedException;
-
-    invoke-direct {p1}, Lkotlin/NoWhenBranchMatchedException;-><init>()V
-
-    throw p1
-
     .line 116
-    :cond_1
-    new-instance p1, Lcom/smedialink/model/dialog/DialogModel;
+    :cond_2
+    new-instance v1, Lcom/smedialink/model/dialog/DialogModel;
 
     .line 117
-    iget-object v0, p0, Lcom/smedialink/ui/wallet/crypto/settings/blockchains/BlockchainsManagementPresenter;->resourceManager:Lcom/smedialink/storage/domain/utils/system/ResourceManager;
+    iget-object v2, v0, Lcom/smedialink/ui/wallet/crypto/settings/blockchains/BlockchainsManagementPresenter;->resourceManager:Lcom/smedialink/storage/domain/utils/system/ResourceManager;
 
-    sget v2, Lorg/telegram/messenger/R$string;->wallet_details_info_evm_title:I
+    sget v4, Lorg/telegram/messenger/R$string;->wallet_details_info_evm_title:I
 
-    invoke-interface {v0, v2}, Lcom/smedialink/storage/domain/utils/system/ResourceManager;->getString(I)Ljava/lang/String;
+    invoke-interface {v2, v4}, Lcom/smedialink/storage/domain/utils/system/ResourceManager;->getString(I)Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v11
 
     .line 118
-    iget-object v0, p0, Lcom/smedialink/ui/wallet/crypto/settings/blockchains/BlockchainsManagementPresenter;->resourceManager:Lcom/smedialink/storage/domain/utils/system/ResourceManager;
+    iget-object v2, v0, Lcom/smedialink/ui/wallet/crypto/settings/blockchains/BlockchainsManagementPresenter;->resourceManager:Lcom/smedialink/storage/domain/utils/system/ResourceManager;
 
-    sget v3, Lorg/telegram/messenger/R$string;->wallet_details_info_evm_description:I
+    sget v4, Lorg/telegram/messenger/R$string;->wallet_details_info_evm_description:I
 
-    invoke-interface {v0, v3}, Lcom/smedialink/storage/domain/utils/system/ResourceManager;->getString(I)Ljava/lang/String;
+    invoke-interface {v2, v4}, Lcom/smedialink/storage/domain/utils/system/ResourceManager;->getString(I)Ljava/lang/String;
 
-    move-result-object v3
+    move-result-object v12
 
-    const/4 v4, 0x0
+    const/4 v13, 0x0
 
     .line 119
-    sget v0, Lorg/telegram/messenger/R$string;->OK:I
+    sget v2, Lorg/telegram/messenger/R$string;->OK:I
 
-    invoke-static {v1, v0}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+    invoke-static {v3, v2}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
-    move-result-object v5
+    move-result-object v14
 
-    const/4 v6, 0x4
+    const/4 v15, 0x4
 
-    const/4 v7, 0x0
+    const/16 v16, 0x0
 
-    move-object v0, p1
-
-    move-object v1, v2
-
-    move-object v2, v3
-
-    move-object v3, v4
-
-    move-object v4, v5
-
-    move v5, v6
-
-    move-object v6, v7
+    move-object v10, v1
 
     .line 116
-    invoke-direct/range {v0 .. v6}, Lcom/smedialink/model/dialog/DialogModel;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+    invoke-direct/range {v10 .. v16}, Lcom/smedialink/model/dialog/DialogModel;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
 
     :goto_0
-    return-object p1
+    return-object v1
 .end method
 
 .method private final getWalletCreationDateText(Lcom/smedialink/storage/domain/model/crypto/BlockchainType;)Ljava/lang/String;
     .locals 5
 
-    .line 129
+    .line 134
     iget-object v0, p0, Lcom/smedialink/ui/wallet/crypto/settings/blockchains/BlockchainsManagementPresenter;->cryptoPreferenceHelper:Lcom/smedialink/storage/domain/storage/CryptoPreferenceHelper;
 
     invoke-interface {v0}, Lcom/smedialink/storage/domain/storage/CryptoPreferenceHelper;->getWalletCreationDates()Lcom/smedialink/storage/domain/model/PreferenceBlockchainMappedData;
@@ -256,7 +304,7 @@
     :cond_0
     move-object p1, v0
 
-    .line 130
+    .line 135
     :goto_0
     sget-object v1, Lcom/smedialink/utils/formatter/DateFormatter$DateType;->DATE_AND_TIME:Lcom/smedialink/utils/formatter/DateFormatter$DateType;
 
@@ -539,26 +587,28 @@
 .end method
 
 .method public final resetWallet(Lcom/smedialink/model/wallet/crypto/settings/BlockchainWalletItem;)V
-    .locals 4
+    .locals 7
 
     const-string v0, "walletItem"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 58
-    iget-object v0, p0, Lcom/smedialink/ui/wallet/crypto/settings/blockchains/BlockchainsManagementPresenter;->cryptoWalletInteractor:Lcom/smedialink/storage/domain/interactor/crypto/CryptoWalletInteractor;
+    iget-object v1, p0, Lcom/smedialink/ui/wallet/crypto/settings/blockchains/BlockchainsManagementPresenter;->cryptoWalletInteractor:Lcom/smedialink/storage/domain/interactor/crypto/CryptoWalletInteractor;
 
     invoke-virtual {p1}, Lcom/smedialink/model/wallet/crypto/settings/BlockchainWalletItem;->getBlockchainType()Lcom/smedialink/storage/domain/model/crypto/BlockchainType;
 
-    move-result-object p1
-
-    const/4 v1, 0x0
-
-    const/4 v2, 0x2
+    move-result-object v2
 
     const/4 v3, 0x0
 
-    invoke-static {v0, p1, v1, v2, v3}, Lcom/smedialink/storage/domain/interactor/crypto/CryptoWalletInteractor;->deleteWallet$default(Lcom/smedialink/storage/domain/interactor/crypto/CryptoWalletInteractor;Lcom/smedialink/storage/domain/model/crypto/BlockchainType;ZILjava/lang/Object;)Lio/reactivex/Observable;
+    const/4 v4, 0x0
+
+    const/4 v5, 0x6
+
+    const/4 v6, 0x0
+
+    invoke-static/range {v1 .. v6}, Lcom/smedialink/storage/domain/interactor/crypto/CryptoWalletInteractor;->deleteWallet$default(Lcom/smedialink/storage/domain/interactor/crypto/CryptoWalletInteractor;Lcom/smedialink/storage/domain/model/crypto/BlockchainType;ZZILjava/lang/Object;)Lio/reactivex/Observable;
 
     move-result-object p1
 

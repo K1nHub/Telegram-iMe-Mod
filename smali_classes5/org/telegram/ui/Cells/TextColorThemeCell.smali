@@ -89,12 +89,12 @@
 
     if-eqz v0, :cond_1
 
-    const/4 v0, 0x5
+    move v0, v1
 
     goto :goto_0
 
     :cond_1
-    const/4 v0, 0x3
+    move v0, v2
 
     :goto_0
     or-int/lit8 v0, v0, 0x10
@@ -126,7 +126,7 @@
     goto :goto_1
 
     :cond_2
-    const/4 v1, 0x3
+    move v1, v2
 
     :goto_1
     or-int/lit8 v5, v1, 0x30
@@ -137,24 +137,24 @@
 
     if-eqz v0, :cond_3
 
-    const/16 v6, 0x15
+    move v6, v1
 
     goto :goto_2
 
     :cond_3
-    const/16 v6, 0x39
+    move v6, v2
 
     :goto_2
     const/4 v7, 0x0
 
     if-eqz v0, :cond_4
 
-    const/16 v8, 0x39
+    move v8, v2
 
     goto :goto_3
 
     :cond_4
-    const/16 v8, 0x15
+    move v8, v1
 
     :goto_3
     const/4 v9, 0x0
@@ -199,7 +199,7 @@
 
     iget v2, p0, Lorg/telegram/ui/Cells/TextColorThemeCell;->alpha:F
 
-    mul-float v2, v2, v1
+    mul-float/2addr v2, v1
 
     float-to-int v1, v2
 

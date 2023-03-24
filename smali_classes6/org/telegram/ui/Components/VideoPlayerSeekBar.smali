@@ -403,7 +403,7 @@
 
     int-to-float v13, v13
 
-    mul-float v13, v13, v9
+    mul-float/2addr v13, v9
 
     sub-float/2addr v12, v13
 
@@ -425,7 +425,7 @@
 
     const/high16 v12, 0x3f800000    # 1.0f
 
-    mul-float v10, v10, v12
+    mul-float/2addr v10, v12
 
     invoke-static {v10}, Lorg/telegram/messenger/AndroidUtilities;->dp(F)I
 
@@ -509,7 +509,7 @@
     goto :goto_0
 
     :cond_3
-    const/4 v15, -0x1
+    move/from16 v15, v16
 
     :goto_1
     if-gez v15, :cond_4
@@ -740,7 +740,7 @@
 
     if-lez v9, :cond_d
 
-    const/4 v9, 0x1
+    move v9, v6
 
     goto :goto_9
 
@@ -825,13 +825,13 @@
 
     const v12, 0x3f333333    # 0.7f
 
-    mul-float v12, v12, v4
+    mul-float/2addr v12, v4
 
     move/from16 v24, v5
 
     iget v5, v0, Lorg/telegram/ui/Components/VideoPlayerSeekBar;->timestampsAppearing:F
 
-    mul-float v12, v12, v5
+    mul-float/2addr v12, v5
 
     aput v12, v6, v22
 
@@ -860,7 +860,7 @@
 
     aput v4, v6, v17
 
-    const/4 v5, 0x4
+    move v5, v12
 
     const/16 v19, 0x0
 
@@ -935,12 +935,12 @@
 
     const v12, 0x3f333333    # 0.7f
 
-    mul-float v12, v12, v4
+    mul-float/2addr v12, v4
 
     .line 537
     iget v5, v0, Lorg/telegram/ui/Components/VideoPlayerSeekBar;->timestampsAppearing:F
 
-    mul-float v12, v12, v5
+    mul-float/2addr v12, v5
 
     const/4 v5, 0x5
 
@@ -1105,7 +1105,7 @@
     goto :goto_2
 
     :cond_4
-    const/4 v3, -0x1
+    move v3, v5
 
     .line 579
     :goto_3
@@ -1173,7 +1173,7 @@
 
     int-to-float v11, v11
 
-    mul-float v11, v11, v7
+    mul-float/2addr v11, v7
 
     sub-float/2addr v10, v11
 
@@ -1224,11 +1224,11 @@
     .line 588
     iget v12, v0, Lorg/telegram/ui/Components/VideoPlayerSeekBar;->lastWidth:F
 
-    const/4 v13, 0x0
+    cmpl-float v13, v12, v9
 
-    cmpl-float v14, v12, v9
+    const/4 v14, 0x0
 
-    if-lez v14, :cond_7
+    if-lez v13, :cond_7
 
     sub-float/2addr v12, v10
 
@@ -1236,56 +1236,56 @@
 
     move-result v12
 
-    const v14, 0x3c23d70a    # 0.01f
+    const v13, 0x3c23d70a    # 0.01f
 
-    cmpl-float v12, v12, v14
+    cmpl-float v12, v12, v13
 
     if-lez v12, :cond_7
 
     .line 589
     iget-object v12, v0, Lorg/telegram/ui/Components/VideoPlayerSeekBar;->timestampLabel:[Landroid/text/StaticLayout;
 
-    aget-object v14, v12, v13
+    aget-object v13, v12, v14
 
-    if-eqz v14, :cond_6
+    if-eqz v13, :cond_6
 
     .line 590
-    aget-object v14, v12, v13
+    aget-object v13, v12, v14
 
-    invoke-virtual {v14}, Landroid/text/StaticLayout;->getText()Ljava/lang/CharSequence;
+    invoke-virtual {v13}, Landroid/text/StaticLayout;->getText()Ljava/lang/CharSequence;
 
-    move-result-object v14
+    move-result-object v13
 
     float-to-int v15, v10
 
-    invoke-direct {v0, v14, v15}, Lorg/telegram/ui/Components/VideoPlayerSeekBar;->makeStaticLayout(Ljava/lang/CharSequence;I)Landroid/text/StaticLayout;
+    invoke-direct {v0, v13, v15}, Lorg/telegram/ui/Components/VideoPlayerSeekBar;->makeStaticLayout(Ljava/lang/CharSequence;I)Landroid/text/StaticLayout;
 
-    move-result-object v14
+    move-result-object v13
 
-    aput-object v14, v12, v13
+    aput-object v13, v12, v14
 
     .line 592
     :cond_6
     iget-object v12, v0, Lorg/telegram/ui/Components/VideoPlayerSeekBar;->timestampLabel:[Landroid/text/StaticLayout;
 
-    aget-object v14, v12, v4
+    aget-object v13, v12, v4
 
-    if-eqz v14, :cond_7
+    if-eqz v13, :cond_7
 
     .line 593
-    aget-object v14, v12, v4
+    aget-object v13, v12, v4
 
-    invoke-virtual {v14}, Landroid/text/StaticLayout;->getText()Ljava/lang/CharSequence;
+    invoke-virtual {v13}, Landroid/text/StaticLayout;->getText()Ljava/lang/CharSequence;
 
-    move-result-object v14
+    move-result-object v13
 
     float-to-int v15, v10
 
-    invoke-direct {v0, v14, v15}, Lorg/telegram/ui/Components/VideoPlayerSeekBar;->makeStaticLayout(Ljava/lang/CharSequence;I)Landroid/text/StaticLayout;
+    invoke-direct {v0, v13, v15}, Lorg/telegram/ui/Components/VideoPlayerSeekBar;->makeStaticLayout(Ljava/lang/CharSequence;I)Landroid/text/StaticLayout;
 
-    move-result-object v14
+    move-result-object v13
 
-    aput-object v14, v12, v4
+    aput-object v13, v12, v4
 
     .line 596
     :cond_7
@@ -1299,9 +1299,9 @@
     .line 599
     iget-object v12, v0, Lorg/telegram/ui/Components/VideoPlayerSeekBar;->timestampLabel:[Landroid/text/StaticLayout;
 
-    aget-object v14, v12, v13
+    aget-object v13, v12, v14
 
-    aput-object v14, v12, v4
+    aput-object v13, v12, v4
 
     .line 600
     iget-boolean v12, v0, Lorg/telegram/ui/Components/VideoPlayerSeekBar;->pressed:Z
@@ -1312,53 +1312,48 @@
     :try_start_0
     iget-object v12, v0, Lorg/telegram/ui/Components/VideoPlayerSeekBar;->parentView:Landroid/view/View;
 
-    const/16 v14, 0x9
+    const/16 v13, 0x9
 
-    invoke-virtual {v12, v14, v4}, Landroid/view/View;->performHapticFeedback(II)Z
+    invoke-virtual {v12, v13, v4}, Landroid/view/View;->performHapticFeedback(II)Z
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_4
-
     :catch_0
-    nop
-
     :cond_8
-    :goto_4
     const/4 v12, 0x0
 
     if-ltz v3, :cond_a
 
     .line 605
-    iget-object v14, v0, Lorg/telegram/ui/Components/VideoPlayerSeekBar;->timestamps:Ljava/util/ArrayList;
+    iget-object v13, v0, Lorg/telegram/ui/Components/VideoPlayerSeekBar;->timestamps:Ljava/util/ArrayList;
 
-    invoke-virtual {v14}, Ljava/util/ArrayList;->size()I
+    invoke-virtual {v13}, Ljava/util/ArrayList;->size()I
 
-    move-result v14
+    move-result v13
 
-    if-ge v3, v14, :cond_a
+    if-ge v3, v13, :cond_a
 
     .line 606
-    iget-object v14, v0, Lorg/telegram/ui/Components/VideoPlayerSeekBar;->timestamps:Ljava/util/ArrayList;
+    iget-object v13, v0, Lorg/telegram/ui/Components/VideoPlayerSeekBar;->timestamps:Ljava/util/ArrayList;
 
-    invoke-virtual {v14, v3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+    invoke-virtual {v13, v3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
-    move-result-object v14
+    move-result-object v13
 
-    check-cast v14, Landroid/util/Pair;
+    check-cast v13, Landroid/util/Pair;
 
-    iget-object v14, v14, Landroid/util/Pair;->second:Ljava/lang/Object;
+    iget-object v13, v13, Landroid/util/Pair;->second:Ljava/lang/Object;
 
-    check-cast v14, Ljava/lang/CharSequence;
+    check-cast v13, Ljava/lang/CharSequence;
 
-    if-nez v14, :cond_9
+    if-nez v13, :cond_9
 
     .line 608
     iget-object v10, v0, Lorg/telegram/ui/Components/VideoPlayerSeekBar;->timestampLabel:[Landroid/text/StaticLayout;
 
-    aput-object v12, v10, v13
+    aput-object v12, v10, v14
 
-    goto :goto_5
+    goto :goto_4
 
     .line 610
     :cond_9
@@ -1366,22 +1361,22 @@
 
     float-to-int v10, v10
 
-    invoke-direct {v0, v14, v10}, Lorg/telegram/ui/Components/VideoPlayerSeekBar;->makeStaticLayout(Ljava/lang/CharSequence;I)Landroid/text/StaticLayout;
+    invoke-direct {v0, v13, v10}, Lorg/telegram/ui/Components/VideoPlayerSeekBar;->makeStaticLayout(Ljava/lang/CharSequence;I)Landroid/text/StaticLayout;
 
     move-result-object v10
 
-    aput-object v10, v12, v13
+    aput-object v10, v12, v14
 
-    goto :goto_5
+    goto :goto_4
 
     .line 613
     :cond_a
     iget-object v10, v0, Lorg/telegram/ui/Components/VideoPlayerSeekBar;->timestampLabel:[Landroid/text/StaticLayout;
 
-    aput-object v12, v10, v13
+    aput-object v12, v10, v14
 
     .line 615
-    :goto_5
+    :goto_4
     iput v9, v0, Lorg/telegram/ui/Components/VideoPlayerSeekBar;->timestampChangeT:F
 
     if-ne v3, v5, :cond_b
@@ -1389,7 +1384,7 @@
     .line 617
     iput v5, v0, Lorg/telegram/ui/Components/VideoPlayerSeekBar;->timestampChangeDirection:I
 
-    goto :goto_6
+    goto :goto_5
 
     .line 618
     :cond_b
@@ -1400,7 +1395,7 @@
     .line 619
     iput v4, v0, Lorg/telegram/ui/Components/VideoPlayerSeekBar;->timestampChangeDirection:I
 
-    goto :goto_6
+    goto :goto_5
 
     :cond_c
     if-ge v3, v10, :cond_d
@@ -1408,7 +1403,7 @@
     .line 621
     iput v5, v0, Lorg/telegram/ui/Components/VideoPlayerSeekBar;->timestampChangeDirection:I
 
-    goto :goto_6
+    goto :goto_5
 
     :cond_d
     if-le v3, v10, :cond_e
@@ -1418,67 +1413,69 @@
 
     .line 626
     :cond_e
-    :goto_6
+    :goto_5
     iput v3, v0, Lorg/telegram/ui/Components/VideoPlayerSeekBar;->currentTimestamp:I
 
     .line 628
     :cond_f
     iget v3, v0, Lorg/telegram/ui/Components/VideoPlayerSeekBar;->timestampChangeT:F
 
-    const-wide/16 v14, 0x11
+    const/high16 v5, 0x3f800000    # 1.0f
 
-    const/16 v5, 0x8
+    cmpg-float v3, v3, v5
 
-    const/high16 v10, 0x3f800000    # 1.0f
+    const-wide/16 v12, 0x11
 
-    cmpg-float v3, v3, v10
+    const/16 v10, 0x8
 
     if-gez v3, :cond_11
 
     .line 629
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
-    move-result-wide v16
+    move-result-wide v15
 
-    iget-wide v11, v0, Lorg/telegram/ui/Components/VideoPlayerSeekBar;->lastTimestampUpdate:J
+    move/from16 v17, v8
 
-    sub-long v16, v16, v11
+    iget-wide v7, v0, Lorg/telegram/ui/Components/VideoPlayerSeekBar;->lastTimestampUpdate:J
 
-    invoke-static/range {v16 .. v17}, Ljava/lang/Math;->abs(J)J
+    sub-long/2addr v15, v7
 
-    move-result-wide v11
+    invoke-static/range {v15 .. v16}, Ljava/lang/Math;->abs(J)J
 
-    invoke-static {v14, v15, v11, v12}, Ljava/lang/Math;->min(JJ)J
+    move-result-wide v7
 
-    move-result-wide v11
+    invoke-static {v12, v13, v7, v8}, Ljava/lang/Math;->min(JJ)J
+
+    move-result-wide v7
 
     .line 630
-    iget-object v3, v0, Lorg/telegram/ui/Components/VideoPlayerSeekBar;->timestamps:Ljava/util/ArrayList;
+    iget-object v15, v0, Lorg/telegram/ui/Components/VideoPlayerSeekBar;->timestamps:Ljava/util/ArrayList;
 
-    invoke-virtual {v3}, Ljava/util/ArrayList;->size()I
+    invoke-virtual {v15}, Ljava/util/ArrayList;->size()I
 
-    move-result v3
+    move-result v15
 
-    if-le v3, v5, :cond_10
+    if-le v15, v10, :cond_10
 
-    const/high16 v3, 0x43200000    # 160.0f
+    const/high16 v15, 0x43200000    # 160.0f
 
-    goto :goto_7
+    goto :goto_6
 
     :cond_10
-    const/high16 v3, 0x435c0000    # 220.0f
+    const/high16 v15, 0x435c0000    # 220.0f
 
     .line 631
-    :goto_7
-    iget v13, v0, Lorg/telegram/ui/Components/VideoPlayerSeekBar;->timestampChangeT:F
+    :goto_6
+    iget v3, v0, Lorg/telegram/ui/Components/VideoPlayerSeekBar;->timestampChangeT:F
 
-    long-to-float v11, v11
+    long-to-float v7, v7
 
-    div-float/2addr v11, v3
+    div-float/2addr v7, v15
 
-    add-float/2addr v13, v11
+    add-float/2addr v3, v7
 
-    invoke-static {v13, v10}, Ljava/lang/Math;->min(FF)F
+    invoke-static {v3, v5}, Ljava/lang/Math;->min(FF)F
 
     move-result v3
 
@@ -1492,47 +1489,52 @@
     .line 633
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
-    move-result-wide v11
+    move-result-wide v7
 
-    iput-wide v11, v0, Lorg/telegram/ui/Components/VideoPlayerSeekBar;->lastTimestampUpdate:J
+    iput-wide v7, v0, Lorg/telegram/ui/Components/VideoPlayerSeekBar;->lastTimestampUpdate:J
+
+    goto :goto_7
+
+    :cond_11
+    move/from16 v17, v8
 
     .line 635
-    :cond_11
+    :goto_7
     iget v3, v0, Lorg/telegram/ui/Components/VideoPlayerSeekBar;->timestampsAppearing:F
 
-    cmpg-float v3, v3, v10
+    cmpg-float v3, v3, v5
 
     if-gez v3, :cond_12
 
     .line 636
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
-    move-result-wide v11
+    move-result-wide v7
 
-    iget-wide v4, v0, Lorg/telegram/ui/Components/VideoPlayerSeekBar;->lastTimestampUpdate:J
+    iget-wide v14, v0, Lorg/telegram/ui/Components/VideoPlayerSeekBar;->lastTimestampUpdate:J
 
-    sub-long/2addr v11, v4
+    sub-long/2addr v7, v14
 
-    invoke-static {v11, v12}, Ljava/lang/Math;->abs(J)J
+    invoke-static {v7, v8}, Ljava/lang/Math;->abs(J)J
 
-    move-result-wide v3
+    move-result-wide v7
 
-    invoke-static {v14, v15, v3, v4}, Ljava/lang/Math;->min(JJ)J
+    invoke-static {v12, v13, v7, v8}, Ljava/lang/Math;->min(JJ)J
 
-    move-result-wide v3
+    move-result-wide v7
 
     .line 637
-    iget v5, v0, Lorg/telegram/ui/Components/VideoPlayerSeekBar;->timestampsAppearing:F
+    iget v3, v0, Lorg/telegram/ui/Components/VideoPlayerSeekBar;->timestampsAppearing:F
 
-    long-to-float v3, v3
+    long-to-float v7, v7
 
-    const/high16 v4, 0x43480000    # 200.0f
+    const/high16 v8, 0x43480000    # 200.0f
 
-    div-float/2addr v3, v4
+    div-float/2addr v7, v8
 
-    add-float/2addr v5, v3
+    add-float/2addr v3, v7
 
-    invoke-static {v5, v10}, Ljava/lang/Math;->min(FF)F
+    invoke-static {v3, v5}, Ljava/lang/Math;->min(FF)F
 
     move-result v3
 
@@ -1550,71 +1552,71 @@
     :cond_12
     sget-object v3, Lorg/telegram/ui/Components/CubicBezierInterpolator;->DEFAULT:Lorg/telegram/ui/Components/CubicBezierInterpolator;
 
-    iget v4, v0, Lorg/telegram/ui/Components/VideoPlayerSeekBar;->timestampChangeT:F
+    iget v7, v0, Lorg/telegram/ui/Components/VideoPlayerSeekBar;->timestampChangeT:F
 
-    invoke-virtual {v3, v4}, Lorg/telegram/ui/Components/CubicBezierInterpolator;->getInterpolation(F)F
+    invoke-virtual {v3, v7}, Lorg/telegram/ui/Components/CubicBezierInterpolator;->getInterpolation(F)F
 
-    move-result v4
+    move-result v7
 
     .line 643
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->save()I
 
     .line 644
-    iget v3, v0, Lorg/telegram/ui/Components/VideoPlayerSeekBar;->height:I
+    iget v8, v0, Lorg/telegram/ui/Components/VideoPlayerSeekBar;->height:I
 
-    iget v5, v0, Lorg/telegram/ui/Components/VideoPlayerSeekBar;->lineHeight:I
+    iget v3, v0, Lorg/telegram/ui/Components/VideoPlayerSeekBar;->lineHeight:I
 
-    add-int/2addr v5, v3
-
-    int-to-float v5, v5
-
-    div-float/2addr v5, v7
-
-    const/4 v11, 0x3
-
-    invoke-static {v11}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
-
-    move-result v11
-
-    sub-int/2addr v3, v11
+    add-int/2addr v3, v8
 
     int-to-float v3, v3
 
-    iget v11, v0, Lorg/telegram/ui/Components/VideoPlayerSeekBar;->transitionProgress:F
+    const/high16 v12, 0x40000000    # 2.0f
 
-    invoke-static {v5, v3, v11}, Lorg/telegram/messenger/AndroidUtilities;->lerp(FFF)F
+    div-float v13, v3, v12
 
-    move-result v3
+    const/4 v12, 0x3
 
-    sub-float/2addr v6, v8
+    invoke-static {v12}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+
+    move-result v12
+
+    sub-int/2addr v8, v12
+
+    int-to-float v8, v8
+
+    iget v12, v0, Lorg/telegram/ui/Components/VideoPlayerSeekBar;->transitionProgress:F
+
+    invoke-static {v13, v8, v12}, Lorg/telegram/messenger/AndroidUtilities;->lerp(FFF)F
+
+    move-result v8
+
+    sub-float v6, v6, v17
 
     .line 645
-    iget v5, v0, Lorg/telegram/ui/Components/VideoPlayerSeekBar;->transitionProgress:F
+    iget v12, v0, Lorg/telegram/ui/Components/VideoPlayerSeekBar;->transitionProgress:F
 
-    mul-float v6, v6, v5
+    mul-float/2addr v6, v12
 
     add-float/2addr v2, v6
 
-    const/16 v5, 0xc
+    const/16 v6, 0xc
 
-    invoke-static {v5}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    invoke-static {v6}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
-    move-result v5
+    move-result v6
 
-    int-to-float v5, v5
+    int-to-float v6, v6
 
-    add-float/2addr v3, v5
+    add-float/2addr v8, v6
 
-    invoke-virtual {v1, v2, v3}, Landroid/graphics/Canvas;->translate(FF)V
+    invoke-virtual {v1, v2, v8}, Landroid/graphics/Canvas;->translate(FF)V
 
     .line 646
     iget-object v2, v0, Lorg/telegram/ui/Components/VideoPlayerSeekBar;->timestampLabel:[Landroid/text/StaticLayout;
 
-    const/4 v3, 0x1
+    aget-object v2, v2, v4
 
-    aget-object v2, v2, v3
-
-    const/high16 v5, 0x437f0000    # 255.0f
+    const/high16 v6, 0x437f0000    # 255.0f
 
     if-eqz v2, :cond_14
 
@@ -1626,32 +1628,28 @@
 
     if-eqz v2, :cond_13
 
-    const/16 v2, 0x8
-
     .line 649
-    invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    invoke-static {v10}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
-    move-result v3
+    move-result v2
 
-    int-to-float v2, v3
+    int-to-float v2, v2
 
-    const/16 v3, 0x10
+    invoke-static {v11}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
-    invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    move-result v8
 
-    move-result v6
+    iget v12, v0, Lorg/telegram/ui/Components/VideoPlayerSeekBar;->timestampChangeDirection:I
 
-    iget v8, v0, Lorg/telegram/ui/Components/VideoPlayerSeekBar;->timestampChangeDirection:I
+    neg-int v12, v12
 
-    neg-int v8, v8
+    mul-int/2addr v8, v12
 
-    mul-int v6, v6, v8
+    int-to-float v8, v8
 
-    int-to-float v6, v6
+    mul-float/2addr v8, v7
 
-    mul-float v6, v6, v4
-
-    add-float/2addr v2, v6
+    add-float/2addr v2, v8
 
     invoke-virtual {v1, v2, v9}, Landroid/graphics/Canvas;->translate(FF)V
 
@@ -1659,9 +1657,7 @@
     :cond_13
     iget-object v2, v0, Lorg/telegram/ui/Components/VideoPlayerSeekBar;->timestampLabel:[Landroid/text/StaticLayout;
 
-    const/4 v6, 0x1
-
-    aget-object v2, v2, v6
+    aget-object v2, v2, v4
 
     invoke-virtual {v2}, Landroid/text/StaticLayout;->getHeight()I
 
@@ -1671,37 +1667,37 @@
 
     int-to-float v2, v2
 
-    div-float/2addr v2, v7
+    const/high16 v3, 0x40000000    # 2.0f
+
+    div-float/2addr v2, v3
 
     invoke-virtual {v1, v9, v2}, Landroid/graphics/Canvas;->translate(FF)V
 
     .line 652
     iget-object v2, v0, Lorg/telegram/ui/Components/VideoPlayerSeekBar;->timestampLabelPaint:Landroid/text/TextPaint;
 
-    iget v6, v0, Lorg/telegram/ui/Components/VideoPlayerSeekBar;->transitionProgress:F
+    iget v8, v0, Lorg/telegram/ui/Components/VideoPlayerSeekBar;->transitionProgress:F
 
-    sub-float v6, v10, v6
+    sub-float v8, v5, v8
 
-    mul-float v6, v6, v5
+    mul-float/2addr v8, v6
 
-    sub-float v8, v10, v4
+    sub-float v12, v5, v7
 
-    mul-float v6, v6, v8
+    mul-float/2addr v8, v12
 
-    iget v8, v0, Lorg/telegram/ui/Components/VideoPlayerSeekBar;->timestampsAppearing:F
+    iget v12, v0, Lorg/telegram/ui/Components/VideoPlayerSeekBar;->timestampsAppearing:F
 
-    mul-float v6, v6, v8
+    mul-float/2addr v8, v12
 
-    float-to-int v6, v6
+    float-to-int v8, v8
 
-    invoke-virtual {v2, v6}, Landroid/text/TextPaint;->setAlpha(I)V
+    invoke-virtual {v2, v8}, Landroid/text/TextPaint;->setAlpha(I)V
 
     .line 653
     iget-object v2, v0, Lorg/telegram/ui/Components/VideoPlayerSeekBar;->timestampLabel:[Landroid/text/StaticLayout;
 
-    const/4 v6, 0x1
-
-    aget-object v2, v2, v6
+    aget-object v2, v2, v4
 
     invoke-virtual {v2, v1}, Landroid/text/StaticLayout;->draw(Landroid/graphics/Canvas;)V
 
@@ -1712,9 +1708,9 @@
     :cond_14
     iget-object v2, v0, Lorg/telegram/ui/Components/VideoPlayerSeekBar;->timestampLabel:[Landroid/text/StaticLayout;
 
-    const/4 v6, 0x0
+    const/4 v4, 0x0
 
-    aget-object v2, v2, v6
+    aget-object v2, v2, v4
 
     if-eqz v2, :cond_16
 
@@ -1726,32 +1722,28 @@
 
     if-eqz v2, :cond_15
 
-    const/16 v2, 0x8
-
     .line 659
-    invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    invoke-static {v10}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v2
 
     int-to-float v2, v2
 
-    const/16 v3, 0x10
+    invoke-static {v11}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
-    invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    move-result v4
 
-    move-result v3
+    iget v8, v0, Lorg/telegram/ui/Components/VideoPlayerSeekBar;->timestampChangeDirection:I
 
-    iget v6, v0, Lorg/telegram/ui/Components/VideoPlayerSeekBar;->timestampChangeDirection:I
+    mul-int/2addr v4, v8
 
-    mul-int v3, v3, v6
+    int-to-float v4, v4
 
-    int-to-float v3, v3
+    sub-float v8, v5, v7
 
-    sub-float v6, v10, v4
+    mul-float/2addr v4, v8
 
-    mul-float v3, v3, v6
-
-    add-float/2addr v2, v3
+    add-float/2addr v2, v4
 
     invoke-virtual {v1, v2, v9}, Landroid/graphics/Canvas;->translate(FF)V
 
@@ -1759,9 +1751,9 @@
     :cond_15
     iget-object v2, v0, Lorg/telegram/ui/Components/VideoPlayerSeekBar;->timestampLabel:[Landroid/text/StaticLayout;
 
-    const/4 v3, 0x0
+    const/4 v4, 0x0
 
-    aget-object v2, v2, v3
+    aget-object v2, v2, v4
 
     invoke-virtual {v2}, Landroid/text/StaticLayout;->getHeight()I
 
@@ -1771,7 +1763,9 @@
 
     int-to-float v2, v2
 
-    div-float/2addr v2, v7
+    const/high16 v3, 0x40000000    # 2.0f
+
+    div-float/2addr v2, v3
 
     invoke-virtual {v1, v9, v2}, Landroid/graphics/Canvas;->translate(FF)V
 
@@ -1780,17 +1774,17 @@
 
     iget v3, v0, Lorg/telegram/ui/Components/VideoPlayerSeekBar;->transitionProgress:F
 
-    sub-float/2addr v10, v3
+    sub-float/2addr v5, v3
 
-    mul-float v10, v10, v5
+    mul-float/2addr v5, v6
 
-    mul-float v10, v10, v4
+    mul-float/2addr v5, v7
 
     iget v3, v0, Lorg/telegram/ui/Components/VideoPlayerSeekBar;->timestampsAppearing:F
 
-    mul-float v10, v10, v3
+    mul-float/2addr v5, v3
 
-    float-to-int v3, v10
+    float-to-int v3, v5
 
     invoke-virtual {v2, v3}, Landroid/text/TextPaint;->setAlpha(I)V
 
@@ -2076,7 +2070,7 @@
 
     int-to-float v0, v0
 
-    mul-float v0, v0, p2
+    mul-float/2addr v0, p2
 
     float-to-int p2, v0
 
@@ -2327,9 +2321,9 @@
 
     sub-float v8, v4, v3
 
-    mul-float v6, v6, v8
+    mul-float/2addr v6, v8
 
-    mul-float v2, v2, v3
+    mul-float/2addr v2, v3
 
     add-float/2addr v2, v6
 
@@ -2347,7 +2341,7 @@
 
     if-eqz v6, :cond_3
 
-    const/4 v3, 0x0
+    move v3, v7
 
     .line 374
     :cond_3
@@ -2381,7 +2375,7 @@
 
     int-to-float v11, v11
 
-    mul-float v11, v11, v5
+    mul-float/2addr v11, v5
 
     sub-float/2addr v10, v11
 
@@ -2483,7 +2477,7 @@
 
     int-to-float v10, v12
 
-    mul-float v6, v6, v10
+    mul-float/2addr v6, v10
 
     add-float/2addr v11, v6
 
@@ -2499,7 +2493,7 @@
 
     int-to-float v10, v10
 
-    mul-float v10, v10, v5
+    mul-float/2addr v10, v5
 
     sub-float/2addr v6, v10
 
@@ -2534,7 +2528,7 @@
 
     sub-float v9, v4, v9
 
-    mul-float v8, v8, v9
+    mul-float/2addr v8, v9
 
     invoke-direct {v0, v6, v8}, Lorg/telegram/ui/Components/VideoPlayerSeekBar;->setPaintColor(IF)V
 
@@ -2572,7 +2566,7 @@
 
     int-to-float v10, v12
 
-    mul-float v6, v6, v10
+    mul-float/2addr v6, v10
 
     add-float/2addr v11, v6
 
@@ -2588,7 +2582,7 @@
 
     int-to-float v10, v10
 
-    mul-float v10, v10, v5
+    mul-float/2addr v10, v5
 
     sub-float/2addr v6, v10
 
@@ -2638,11 +2632,11 @@
 
     sub-float v9, v4, v8
 
-    mul-float v6, v6, v9
+    mul-float/2addr v6, v9
 
     iget v9, v0, Lorg/telegram/ui/Components/VideoPlayerSeekBar;->bufferedProgress:F
 
-    mul-float v9, v9, v8
+    mul-float/2addr v9, v8
 
     add-float/2addr v6, v9
 
@@ -2669,7 +2663,7 @@
 
     int-to-float v10, v12
 
-    mul-float v6, v6, v10
+    mul-float/2addr v6, v10
 
     add-float/2addr v11, v6
 
@@ -2685,7 +2679,7 @@
 
     int-to-float v10, v10
 
-    mul-float v10, v10, v5
+    mul-float/2addr v10, v5
 
     sub-float/2addr v6, v10
 
@@ -2768,9 +2762,9 @@
 
     const-wide/16 v8, 0x12
 
-    cmp-long v12, v10, v8
+    cmp-long v8, v10, v8
 
-    if-lez v12, :cond_e
+    if-lez v8, :cond_e
 
     const-wide/16 v10, 0x10
 
@@ -2778,28 +2772,28 @@
     :cond_e
     iget v8, v0, Lorg/telegram/ui/Components/VideoPlayerSeekBar;->currentRadius:F
 
-    const/high16 v9, 0x42700000    # 60.0f
+    cmpg-float v9, v8, v6
 
-    const/4 v12, 0x1
+    const/high16 v12, 0x42700000    # 60.0f
 
-    cmpg-float v13, v8, v6
+    const/4 v13, 0x1
 
-    if-gez v13, :cond_f
+    if-gez v9, :cond_f
 
     .line 417
-    invoke-static {v12}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    invoke-static {v13}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
-    move-result v12
+    move-result v9
 
-    int-to-float v12, v12
+    int-to-float v9, v9
 
     long-to-float v10, v10
 
-    div-float/2addr v10, v9
+    div-float/2addr v10, v12
 
-    mul-float v12, v12, v10
+    mul-float/2addr v9, v10
 
-    add-float/2addr v8, v12
+    add-float/2addr v8, v9
 
     iput v8, v0, Lorg/telegram/ui/Components/VideoPlayerSeekBar;->currentRadius:F
 
@@ -2814,19 +2808,19 @@
 
     .line 422
     :cond_f
-    invoke-static {v12}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    invoke-static {v13}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
-    move-result v12
+    move-result v9
 
-    int-to-float v12, v12
+    int-to-float v9, v9
 
     long-to-float v10, v10
 
-    div-float/2addr v10, v9
+    div-float/2addr v10, v12
 
-    mul-float v12, v12, v10
+    mul-float/2addr v9, v10
 
-    sub-float/2addr v8, v12
+    sub-float/2addr v8, v9
 
     iput v8, v0, Lorg/telegram/ui/Components/VideoPlayerSeekBar;->currentRadius:F
 
@@ -2857,18 +2851,18 @@
 
     move-result v6
 
-    const v8, 0x3e4ccccd    # 0.2f
+    cmpl-float v8, v3, v7
 
-    const/high16 v9, 0x437f0000    # 255.0f
+    const v9, 0x3e4ccccd    # 0.2f
 
-    cmpl-float v11, v3, v7
+    const/high16 v10, 0x437f0000    # 255.0f
 
-    if-lez v11, :cond_14
+    if-lez v8, :cond_14
 
     .line 434
-    iget-object v11, v0, Lorg/telegram/ui/Components/VideoPlayerSeekBar;->rect:Landroid/graphics/RectF;
+    iget-object v8, v0, Lorg/telegram/ui/Components/VideoPlayerSeekBar;->rect:Landroid/graphics/RectF;
 
-    iget v12, v11, Landroid/graphics/RectF;->left:F
+    iget v12, v8, Landroid/graphics/RectF;->left:F
 
     .line 435
     iget v13, v0, Lorg/telegram/ui/Components/VideoPlayerSeekBar;->horizontalPadding:I
@@ -2881,44 +2875,44 @@
 
     div-float/2addr v15, v5
 
-    iget v10, v0, Lorg/telegram/ui/Components/VideoPlayerSeekBar;->width:I
+    iget v11, v0, Lorg/telegram/ui/Components/VideoPlayerSeekBar;->width:I
 
-    sub-int/2addr v10, v14
+    sub-int/2addr v11, v14
 
-    int-to-float v10, v10
+    int-to-float v11, v11
 
-    add-float/2addr v15, v10
+    add-float/2addr v15, v11
 
-    iget-object v10, v0, Lorg/telegram/ui/Components/VideoPlayerSeekBar;->parentView:Landroid/view/View;
+    iget-object v11, v0, Lorg/telegram/ui/Components/VideoPlayerSeekBar;->parentView:Landroid/view/View;
 
-    invoke-virtual {v10}, Landroid/view/View;->getWidth()I
+    invoke-virtual {v11}, Landroid/view/View;->getWidth()I
 
-    move-result v10
+    move-result v11
 
-    int-to-float v10, v10
+    int-to-float v11, v11
 
     iget v14, v0, Lorg/telegram/ui/Components/VideoPlayerSeekBar;->horizontalPadding:I
 
     int-to-float v14, v14
 
-    mul-float v14, v14, v5
+    mul-float/2addr v14, v5
 
-    sub-float/2addr v10, v14
+    sub-float/2addr v11, v14
 
     iget v14, v0, Lorg/telegram/ui/Components/VideoPlayerSeekBar;->transitionProgress:F
 
-    invoke-static {v15, v10, v14}, Lorg/telegram/messenger/AndroidUtilities;->lerp(FFF)F
+    invoke-static {v15, v11, v14}, Lorg/telegram/messenger/AndroidUtilities;->lerp(FFF)F
 
-    move-result v10
+    move-result v11
 
-    add-float/2addr v13, v10
+    add-float/2addr v13, v11
 
-    iput v13, v11, Landroid/graphics/RectF;->right:F
+    iput v13, v8, Landroid/graphics/RectF;->right:F
 
     .line 436
-    iget-object v10, v0, Lorg/telegram/ui/Components/VideoPlayerSeekBar;->rect:Landroid/graphics/RectF;
+    iget-object v8, v0, Lorg/telegram/ui/Components/VideoPlayerSeekBar;->rect:Landroid/graphics/RectF;
 
-    iget v11, v10, Landroid/graphics/RectF;->right:F
+    iget v11, v8, Landroid/graphics/RectF;->right:F
 
     sub-float v13, v4, v3
 
@@ -2926,73 +2920,73 @@
 
     move-result v11
 
-    iput v11, v10, Landroid/graphics/RectF;->left:F
+    iput v11, v8, Landroid/graphics/RectF;->left:F
 
     .line 437
-    iget v10, v0, Lorg/telegram/ui/Components/VideoPlayerSeekBar;->transitionProgress:F
+    iget v8, v0, Lorg/telegram/ui/Components/VideoPlayerSeekBar;->transitionProgress:F
 
-    cmpl-float v10, v10, v7
+    cmpl-float v8, v8, v7
 
-    if-lez v10, :cond_12
+    if-lez v8, :cond_12
 
-    iget-object v10, v0, Lorg/telegram/ui/Components/VideoPlayerSeekBar;->rect:Landroid/graphics/RectF;
+    iget-object v8, v0, Lorg/telegram/ui/Components/VideoPlayerSeekBar;->rect:Landroid/graphics/RectF;
 
-    invoke-virtual {v10}, Landroid/graphics/RectF;->width()F
+    invoke-virtual {v8}, Landroid/graphics/RectF;->width()F
 
-    move-result v10
+    move-result v8
 
-    cmpl-float v10, v10, v7
+    cmpl-float v8, v8, v7
 
-    if-lez v10, :cond_12
+    if-lez v8, :cond_12
 
     .line 439
-    sget-object v10, Lorg/telegram/ui/Components/VideoPlayerSeekBar;->strokePaint:Landroid/graphics/Paint;
+    sget-object v8, Lorg/telegram/ui/Components/VideoPlayerSeekBar;->strokePaint:Landroid/graphics/Paint;
 
     iget v11, v0, Lorg/telegram/ui/Components/VideoPlayerSeekBar;->transitionProgress:F
 
-    mul-float v11, v11, v9
+    mul-float/2addr v11, v10
 
-    mul-float v11, v11, v8
+    mul-float/2addr v11, v9
 
     float-to-int v11, v11
 
-    invoke-virtual {v10, v11}, Landroid/graphics/Paint;->setAlpha(I)V
+    invoke-virtual {v8, v11}, Landroid/graphics/Paint;->setAlpha(I)V
 
     .line 440
-    iget-object v10, v0, Lorg/telegram/ui/Components/VideoPlayerSeekBar;->rect:Landroid/graphics/RectF;
+    iget-object v8, v0, Lorg/telegram/ui/Components/VideoPlayerSeekBar;->rect:Landroid/graphics/RectF;
 
     sget-object v11, Lorg/telegram/ui/Components/VideoPlayerSeekBar;->strokePaint:Landroid/graphics/Paint;
 
-    invoke-direct {v0, v1, v10, v11}, Lorg/telegram/ui/Components/VideoPlayerSeekBar;->drawProgressBar(Landroid/graphics/Canvas;Landroid/graphics/RectF;Landroid/graphics/Paint;)V
+    invoke-direct {v0, v1, v8, v11}, Lorg/telegram/ui/Components/VideoPlayerSeekBar;->drawProgressBar(Landroid/graphics/Canvas;Landroid/graphics/RectF;Landroid/graphics/Paint;)V
 
     .line 442
     :cond_12
-    iget v10, v0, Lorg/telegram/ui/Components/VideoPlayerSeekBar;->progressColor:I
+    iget v8, v0, Lorg/telegram/ui/Components/VideoPlayerSeekBar;->progressColor:I
 
     iget v11, v0, Lorg/telegram/ui/Components/VideoPlayerSeekBar;->smallLineColor:I
 
     iget v13, v0, Lorg/telegram/ui/Components/VideoPlayerSeekBar;->transitionProgress:F
 
-    invoke-static {v10, v11, v13}, Landroidx/core/graphics/ColorUtils;->blendARGB(IIF)I
+    invoke-static {v8, v11, v13}, Landroidx/core/graphics/ColorUtils;->blendARGB(IIF)I
 
-    move-result v10
+    move-result v8
 
-    invoke-direct {v0, v10, v4}, Lorg/telegram/ui/Components/VideoPlayerSeekBar;->setPaintColor(IF)V
+    invoke-direct {v0, v8, v4}, Lorg/telegram/ui/Components/VideoPlayerSeekBar;->setPaintColor(IF)V
 
     .line 443
-    iget-object v10, v0, Lorg/telegram/ui/Components/VideoPlayerSeekBar;->rect:Landroid/graphics/RectF;
+    iget-object v8, v0, Lorg/telegram/ui/Components/VideoPlayerSeekBar;->rect:Landroid/graphics/RectF;
 
     sget-object v11, Lorg/telegram/ui/Components/VideoPlayerSeekBar;->paint:Landroid/graphics/Paint;
 
-    invoke-direct {v0, v1, v10, v11}, Lorg/telegram/ui/Components/VideoPlayerSeekBar;->drawProgressBar(Landroid/graphics/Canvas;Landroid/graphics/RectF;Landroid/graphics/Paint;)V
+    invoke-direct {v0, v1, v8, v11}, Lorg/telegram/ui/Components/VideoPlayerSeekBar;->drawProgressBar(Landroid/graphics/Canvas;Landroid/graphics/RectF;Landroid/graphics/Paint;)V
 
     .line 445
-    iget-object v10, v0, Lorg/telegram/ui/Components/VideoPlayerSeekBar;->rect:Landroid/graphics/RectF;
+    iget-object v8, v0, Lorg/telegram/ui/Components/VideoPlayerSeekBar;->rect:Landroid/graphics/RectF;
 
-    iput v12, v10, Landroid/graphics/RectF;->left:F
+    iput v12, v8, Landroid/graphics/RectF;->left:F
 
     .line 447
-    iget v10, v0, Lorg/telegram/ui/Components/VideoPlayerSeekBar;->circleColor:I
+    iget v8, v0, Lorg/telegram/ui/Components/VideoPlayerSeekBar;->circleColor:I
 
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/ui/Components/VideoPlayerSeekBar;->getProgress()F
 
@@ -3012,20 +3006,20 @@
     :goto_9
     iget v12, v0, Lorg/telegram/ui/Components/VideoPlayerSeekBar;->transitionProgress:F
 
-    invoke-static {v10, v11, v12}, Landroidx/core/graphics/ColorUtils;->blendARGB(IIF)I
+    invoke-static {v8, v11, v12}, Landroidx/core/graphics/ColorUtils;->blendARGB(IIF)I
 
-    move-result v10
+    move-result v8
 
     iget v11, v0, Lorg/telegram/ui/Components/VideoPlayerSeekBar;->transitionProgress:F
 
     sub-float v11, v4, v11
 
-    invoke-direct {v0, v10, v11}, Lorg/telegram/ui/Components/VideoPlayerSeekBar;->setPaintColor(IF)V
+    invoke-direct {v0, v8, v11}, Lorg/telegram/ui/Components/VideoPlayerSeekBar;->setPaintColor(IF)V
 
     .line 448
-    iget v10, v0, Lorg/telegram/ui/Components/VideoPlayerSeekBar;->horizontalPadding:I
+    iget v8, v0, Lorg/telegram/ui/Components/VideoPlayerSeekBar;->horizontalPadding:I
 
-    int-to-float v10, v10
+    int-to-float v8, v8
 
     sget v11, Lorg/telegram/ui/Components/VideoPlayerSeekBar;->thumbWidth:I
 
@@ -3049,7 +3043,7 @@
 
     int-to-float v13, v13
 
-    mul-float v13, v13, v5
+    mul-float/2addr v13, v5
 
     sub-float/2addr v12, v13
 
@@ -3065,7 +3059,7 @@
 
     div-float/2addr v13, v14
 
-    mul-float v12, v12, v13
+    mul-float/2addr v12, v13
 
     iget v13, v0, Lorg/telegram/ui/Components/VideoPlayerSeekBar;->transitionProgress:F
 
@@ -3073,7 +3067,7 @@
 
     move-result v11
 
-    add-float/2addr v10, v11
+    add-float/2addr v8, v11
 
     .line 449
     iget-object v11, v0, Lorg/telegram/ui/Components/VideoPlayerSeekBar;->rect:Landroid/graphics/RectF;
@@ -3086,11 +3080,11 @@
 
     sget-object v13, Lorg/telegram/ui/Components/VideoPlayerSeekBar;->paint:Landroid/graphics/Paint;
 
-    invoke-virtual {v1, v10, v11, v12, v13}, Landroid/graphics/Canvas;->drawCircle(FFFLandroid/graphics/Paint;)V
+    invoke-virtual {v1, v8, v11, v12, v13}, Landroid/graphics/Canvas;->drawCircle(FFFLandroid/graphics/Paint;)V
 
     .line 453
     :cond_14
-    iget-object v10, v0, Lorg/telegram/ui/Components/VideoPlayerSeekBar;->rect:Landroid/graphics/RectF;
+    iget-object v8, v0, Lorg/telegram/ui/Components/VideoPlayerSeekBar;->rect:Landroid/graphics/RectF;
 
     iget v11, v0, Lorg/telegram/ui/Components/VideoPlayerSeekBar;->horizontalPadding:I
 
@@ -3125,7 +3119,7 @@
 
     int-to-float v13, v13
 
-    mul-float v13, v13, v5
+    mul-float/2addr v13, v5
 
     sub-float/2addr v2, v13
 
@@ -3133,7 +3127,7 @@
 
     move-result v5
 
-    mul-float v2, v2, v5
+    mul-float/2addr v2, v5
 
     iget v5, v0, Lorg/telegram/ui/Components/VideoPlayerSeekBar;->transitionProgress:F
 
@@ -3143,7 +3137,7 @@
 
     add-float/2addr v11, v2
 
-    iput v11, v10, Landroid/graphics/RectF;->right:F
+    iput v11, v8, Landroid/graphics/RectF;->right:F
 
     .line 454
     iget v2, v0, Lorg/telegram/ui/Components/VideoPlayerSeekBar;->transitionProgress:F
@@ -3167,9 +3161,9 @@
 
     iget v5, v0, Lorg/telegram/ui/Components/VideoPlayerSeekBar;->transitionProgress:F
 
-    mul-float v5, v5, v9
+    mul-float/2addr v5, v10
 
-    mul-float v5, v5, v8
+    mul-float/2addr v5, v9
 
     float-to-int v5, v5
 
@@ -3214,17 +3208,17 @@
 
     if-nez v5, :cond_17
 
-    const/4 v10, 0x0
+    const/4 v11, 0x0
 
     goto :goto_a
 
     :cond_17
-    iget v10, v0, Lorg/telegram/ui/Components/VideoPlayerSeekBar;->smallLineColor:I
+    iget v11, v0, Lorg/telegram/ui/Components/VideoPlayerSeekBar;->smallLineColor:I
 
     :goto_a
     iget v5, v0, Lorg/telegram/ui/Components/VideoPlayerSeekBar;->transitionProgress:F
 
-    invoke-static {v2, v10, v5}, Landroidx/core/graphics/ColorUtils;->blendARGB(IIF)I
+    invoke-static {v2, v11, v5}, Landroidx/core/graphics/ColorUtils;->blendARGB(IIF)I
 
     move-result v2
 
@@ -3245,7 +3239,7 @@
 
     sub-float/2addr v4, v3
 
-    mul-float v6, v6, v4
+    mul-float/2addr v6, v4
 
     sget-object v3, Lorg/telegram/ui/Components/VideoPlayerSeekBar;->paint:Landroid/graphics/Paint;
 
@@ -3738,7 +3732,7 @@
 
     int-to-float v0, v0
 
-    mul-float v0, v0, p1
+    mul-float/2addr v0, p1
 
     float-to-double v2, v0
 
@@ -3783,7 +3777,7 @@
 
     int-to-float v0, v0
 
-    mul-float v0, v0, p2
+    mul-float/2addr v0, p2
 
     iget v3, p0, Lorg/telegram/ui/Components/VideoPlayerSeekBar;->fromThumbX:I
 
@@ -3791,7 +3785,7 @@
 
     sub-float/2addr v1, p2
 
-    mul-float v3, v3, v1
+    mul-float/2addr v3, v1
 
     add-float/2addr v0, v3
 
@@ -3937,9 +3931,9 @@
 
     const-wide/16 v0, 0x0
 
-    cmp-long v2, p2, v0
+    cmp-long v0, p2, v0
 
-    if-gez v2, :cond_0
+    if-gez v0, :cond_0
 
     goto/16 :goto_1
 
@@ -4114,7 +4108,7 @@
     invoke-virtual {v0, v2}, Landroid/text/TextPaint;->setColor(I)V
 
     :cond_6
-    const/4 v0, 0x0
+    move v0, v5
 
     .line 319
     :goto_0
@@ -4183,7 +4177,7 @@
 
     const-wide/16 v6, 0x3e8
 
-    mul-long v2, v2, v6
+    mul-long/2addr v2, v6
 
     long-to-float v2, v2
 

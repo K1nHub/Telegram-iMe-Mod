@@ -272,7 +272,7 @@
 
     if-eqz v1, :cond_1
 
-    const/4 v11, 0x5
+    move v11, v13
 
     goto :goto_2
 
@@ -285,7 +285,7 @@
 
     if-eqz v1, :cond_1
 
-    const/4 v11, 0x6
+    move v11, v12
 
     goto :goto_2
 
@@ -298,7 +298,7 @@
 
     if-eqz v1, :cond_1
 
-    const/4 v11, 0x4
+    move v11, v14
 
     goto :goto_2
 
@@ -311,7 +311,7 @@
 
     if-eqz v1, :cond_1
 
-    const/4 v11, 0x0
+    move v11, v8
 
     goto :goto_2
 
@@ -335,7 +335,7 @@
 
     if-eqz v1, :cond_1
 
-    const/4 v11, 0x2
+    move v11, v7
 
     goto :goto_2
 
@@ -348,13 +348,13 @@
 
     if-eqz v1, :cond_1
 
-    const/4 v11, 0x7
+    move v11, v9
 
     goto :goto_2
 
     :cond_1
     :goto_1
-    const/4 v11, -0x1
+    move v11, v2
 
     :goto_2
     packed-switch v11, :pswitch_data_0
@@ -1034,16 +1034,16 @@
 .end method
 
 .method public getDialogId()J
-    .locals 5
+    .locals 4
 
     .line 57
     iget-wide v0, p0, Lorg/telegram/ui/Components/GroupCreateSpan;->uid:J
 
     const-wide/16 v2, 0x0
 
-    cmp-long v4, v0, v2
+    cmp-long v2, v0, v2
 
-    if-nez v4, :cond_0
+    if-nez v2, :cond_0
 
     iget-wide v0, p0, Lorg/telegram/ui/Components/GroupCreateSpan;->encryptedChatId:J
 
@@ -1118,18 +1118,18 @@
 
     const-wide/16 v5, 0x0
 
-    const-wide/16 v7, 0x11
-
     cmp-long v0, v3, v5
+
+    const-wide/16 v5, 0x11
 
     if-ltz v0, :cond_2
 
-    cmp-long v0, v3, v7
+    cmp-long v0, v3, v5
 
     if-lez v0, :cond_3
 
     :cond_2
-    move-wide v3, v7
+    move-wide v3, v5
 
     .line 305
     :cond_3
@@ -1227,7 +1227,7 @@
 
     iget v6, p0, Lorg/telegram/ui/Components/GroupCreateSpan;->progress:F
 
-    mul-float v4, v4, v6
+    mul-float/2addr v4, v6
 
     float-to-int v4, v4
 
@@ -1247,7 +1247,7 @@
 
     int-to-float v4, v8
 
-    mul-float v4, v4, v6
+    mul-float/2addr v4, v6
 
     float-to-int v4, v4
 
@@ -1267,7 +1267,7 @@
 
     int-to-float v4, v9
 
-    mul-float v4, v4, v6
+    mul-float/2addr v4, v6
 
     float-to-int v4, v4
 
@@ -1287,7 +1287,7 @@
 
     int-to-float v3, v10
 
-    mul-float v3, v3, v6
+    mul-float/2addr v3, v6
 
     float-to-int v3, v3
 
@@ -1368,9 +1368,9 @@
 
     iget v5, p0, Lorg/telegram/ui/Components/GroupCreateSpan;->progress:F
 
-    mul-float v5, v5, v4
+    mul-float/2addr v5, v4
 
-    mul-float v5, v5, v2
+    mul-float/2addr v5, v2
 
     float-to-int v2, v5
 
@@ -1409,7 +1409,7 @@
 
     sub-float/2addr v1, v2
 
-    mul-float v1, v1, v0
+    mul-float/2addr v1, v0
 
     invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
@@ -1455,7 +1455,7 @@
 
     iget v1, p0, Lorg/telegram/ui/Components/GroupCreateSpan;->progress:F
 
-    mul-float v1, v1, v4
+    mul-float/2addr v1, v4
 
     float-to-int v1, v1
 

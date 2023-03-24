@@ -154,12 +154,12 @@
 
     if-ne p0, v1, :cond_0
 
-    const/4 p0, 0x1
+    move p0, v1
 
     goto :goto_0
 
     :cond_0
-    const/4 p0, 0x0
+    move p0, v0
 
     :goto_0
     const-string v3, "Only supports allStreamsSameTimeFraming."
@@ -182,12 +182,12 @@
 
     if-nez v3, :cond_1
 
-    const/4 v3, 0x1
+    move v3, v1
 
     goto :goto_1
 
     :cond_1
-    const/4 v3, 0x0
+    move v3, v0
 
     :goto_1
     const-string v4, "Only suppors one program."
@@ -203,7 +203,7 @@
 
     if-nez v2, :cond_2
 
-    const/4 v0, 0x1
+    move v0, v1
 
     :cond_2
     const-string v2, "Only suppors one layer."
@@ -315,7 +315,7 @@
     :cond_0
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    move v1, v0
 
     .line 101
     :goto_0
@@ -323,7 +323,7 @@
 
     if-ge v1, v2, :cond_3
 
-    const/4 v2, 0x0
+    move v2, v0
 
     .line 105
     :cond_1

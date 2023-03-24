@@ -181,8 +181,8 @@
 
     invoke-direct {v0, p2}, Landroidx/fragment/app/FragmentAnim$AnimationOrAnimator;-><init>(Landroid/view/animation/Animation;)V
     :try_end_0
-    .catch Landroid/content/res/Resources$NotFoundException; {:try_start_0 .. :try_end_0} :catch_1
-    .catch Ljava/lang/RuntimeException; {:try_start_0 .. :try_end_0} :catch_0
+    .catch Landroid/content/res/Resources$NotFoundException; {:try_start_0 .. :try_end_0} :catch_0
+    .catch Ljava/lang/RuntimeException; {:try_start_0 .. :try_end_0} :catch_1
 
     return-object v0
 
@@ -192,16 +192,12 @@
     goto :goto_0
 
     :catch_0
-    nop
-
-    goto :goto_0
-
-    :catch_1
     move-exception p0
 
     .line 91
     throw p0
 
+    :catch_1
     :cond_6
     :goto_0
     if-nez v1, :cond_8

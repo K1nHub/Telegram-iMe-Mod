@@ -248,12 +248,12 @@
 
     if-ne v15, v5, :cond_2
 
-    const/16 v15, 0x3a
+    move/from16 v15, v18
 
     goto :goto_2
 
     :cond_2
-    const/16 v15, 0x42
+    move/from16 v15, v19
 
     :goto_2
     const/16 v16, 0x6
@@ -327,12 +327,12 @@
 
     if-ne v7, v5, :cond_4
 
-    const/16 v14, 0x3a
+    move/from16 v14, v18
 
     goto :goto_4
 
     :cond_4
-    const/16 v14, 0x42
+    move/from16 v14, v19
 
     :goto_4
     const/4 v15, 0x6
@@ -409,16 +409,14 @@
 
     const/16 v2, -0x28
 
-    const/16 v10, -0x28
-
     goto :goto_6
 
     :cond_6
     const/16 v2, 0x2a
 
-    const/16 v10, 0x2a
-
     :goto_6
+    move v10, v2
+
     const/4 v11, 0x0
 
     const/4 v12, 0x0
@@ -501,7 +499,7 @@
 
     const v0, 0x3e126e98    # 0.143f
 
-    mul-float p1, p1, v0
+    mul-float/2addr p1, v0
 
     const/high16 v0, 0x3f800000    # 1.0f
 
@@ -557,7 +555,7 @@
 
     int-to-float v1, v1
 
-    mul-float p3, p3, v1
+    mul-float/2addr p3, v1
 
     invoke-virtual {p1, p3}, Landroid/view/View;->setTranslationX(F)V
 
@@ -570,7 +568,7 @@
 
     int-to-float p3, p3
 
-    mul-float p2, p2, p3
+    mul-float/2addr p2, p3
 
     invoke-virtual {p1, p2}, Landroid/widget/TextView;->setTranslationX(F)V
 
@@ -701,7 +699,7 @@
     if-eqz p2, :cond_3
 
     :cond_2
-    const/4 p2, 0x1
+    move p2, v0
 
     goto :goto_0
 
@@ -787,7 +785,7 @@
 
     iget v5, p0, Lorg/telegram/ui/Cells/ShareDialogCell;->onlineProgress:F
 
-    mul-float v4, v4, v5
+    mul-float/2addr v4, v5
 
     sget-object v5, Lorg/telegram/ui/ActionBar/Theme;->dialogs_onlineCirclePaint:Landroid/graphics/Paint;
 
@@ -815,7 +813,7 @@
 
     iget v5, p0, Lorg/telegram/ui/Cells/ShareDialogCell;->onlineProgress:F
 
-    mul-float v4, v4, v5
+    mul-float/2addr v4, v5
 
     sget-object v5, Lorg/telegram/ui/ActionBar/Theme;->dialogs_onlineCirclePaint:Landroid/graphics/Paint;
 
@@ -969,7 +967,7 @@
 
     const/high16 v5, 0x437f0000    # 255.0f
 
-    mul-float v4, v4, v5
+    mul-float/2addr v4, v5
 
     float-to-int v4, v4
 
@@ -1532,12 +1530,12 @@
 
     if-eqz v1, :cond_4
 
-    const/4 v5, 0x0
+    move v5, v0
 
     goto :goto_1
 
     :cond_4
-    const/high16 v5, 0x447a0000    # 1000.0f
+    move v5, v4
 
     :goto_1
     invoke-direct {v3, v5}, Landroidx/dynamicanimation/animation/FloatValueHolder;-><init>(F)V
@@ -1548,7 +1546,7 @@
 
     if-eqz v1, :cond_5
 
-    const/high16 v0, 0x447a0000    # 1000.0f
+    move v0, v4
 
     .line 205
     :cond_5

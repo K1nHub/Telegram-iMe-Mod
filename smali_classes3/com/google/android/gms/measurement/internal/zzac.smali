@@ -64,7 +64,7 @@
 
     move-object/from16 v20, v17
 
-    const/4 v12, 0x0
+    move v12, v5
 
     .line 2
     :goto_0

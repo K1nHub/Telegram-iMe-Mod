@@ -584,12 +584,12 @@
 
     if-eqz v0, :cond_3
 
-    const/4 v0, 0x1
+    move v0, v10
 
     goto :goto_1
 
     :cond_3
-    const/4 v0, 0x0
+    move v0, v11
 
     :goto_1
     iput-boolean v0, v7, Lorg/telegram/ui/Components/ChatAttachAlertLocationLayout;->locationDenied:Z
@@ -641,7 +641,7 @@
     goto :goto_2
 
     :cond_4
-    const/4 v1, 0x0
+    move v1, v11
 
     :goto_2
     invoke-virtual {v0, v1}, Landroid/widget/FrameLayout;->setVisibility(I)V
@@ -852,7 +852,7 @@
 
     move v14, v6
 
-    const/4 v6, 0x4
+    move v6, v5
 
     goto :goto_3
 
@@ -1041,12 +1041,12 @@
 
     if-lt v14, v3, :cond_6
 
-    const/16 v23, 0x28
+    move/from16 v23, v16
 
     goto :goto_4
 
     :cond_6
-    const/16 v23, 0x2c
+    move/from16 v23, v29
 
     :goto_4
     const/16 v24, 0x31
@@ -1089,7 +1089,7 @@
 
     move-object v0, v3
 
-    const/4 v6, 0x2
+    move v6, v1
 
     move-object/from16 v1, p2
 
@@ -1406,22 +1406,22 @@
 
     if-lt v14, v2, :cond_8
 
-    const/16 v22, 0x28
+    move/from16 v22, v16
 
     goto :goto_6
 
     :cond_8
-    const/16 v22, 0x2c
+    move/from16 v22, v29
 
     :goto_6
     if-lt v14, v2, :cond_9
 
-    const/16 v23, 0x28
+    move/from16 v23, v16
 
     goto :goto_7
 
     :cond_9
-    const/16 v23, 0x2c
+    move/from16 v23, v29
 
     :goto_7
     const/16 v24, 0x35
@@ -1699,22 +1699,22 @@
 
     if-lt v14, v0, :cond_b
 
-    const/16 v22, 0x28
+    move/from16 v22, v16
 
     goto :goto_9
 
     :cond_b
-    const/16 v22, 0x2c
+    move/from16 v22, v29
 
     :goto_9
     if-lt v14, v0, :cond_c
 
-    const/16 v23, 0x28
+    move/from16 v23, v16
 
     goto :goto_a
 
     :cond_c
-    const/16 v23, 0x2c
+    move/from16 v23, v29
 
     :goto_a
     const/16 v24, 0x55
@@ -4686,7 +4686,7 @@
 
     if-nez v1, :cond_0
 
-    const/4 v1, 0x0
+    move v1, v0
 
     goto :goto_0
 
@@ -5602,7 +5602,7 @@
     if-gez v1, :cond_1
 
     :cond_0
-    const/4 p1, 0x0
+    move p1, v0
 
     .line 1126
     :cond_1
@@ -5637,7 +5637,7 @@
 
     if-eqz p1, :cond_4
 
-    const/4 v2, 0x0
+    move v2, v0
 
     goto :goto_0
 
@@ -5782,7 +5782,7 @@
 
     neg-int v0, v0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     .line 1380
     :goto_0
@@ -5978,7 +5978,7 @@
     :cond_5
     int-to-float v6, v3
 
-    mul-float v6, v6, v4
+    mul-float/2addr v6, v4
 
     float-to-int v4, v6
 
@@ -6365,7 +6365,7 @@
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_0
     if-ge v2, v0, :cond_1
@@ -8263,14 +8263,9 @@
     :try_end_2
     .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_2
 
-    goto :goto_1
-
-    :catch_2
-    nop
-
     .line 978
+    :catch_2
     :cond_4
-    :goto_1
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertLocationLayout;->adapter:Lorg/telegram/ui/Adapters/LocationActivityAdapter;
 
     if-eqz v0, :cond_5
@@ -8474,7 +8469,7 @@
 
     if-gez p1, :cond_2
 
-    const/4 p1, 0x0
+    move p1, v1
 
     .line 1058
     :cond_2

@@ -1271,16 +1271,11 @@
     if-lt v2, v3, :cond_3
 
     :cond_2
-    const/4 v0, 0x1
-
-    goto :goto_1
-
-    :catch_0
-    nop
+    move v0, v3
 
     .line 351
+    :catch_0
     :cond_3
-    :goto_1
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -1295,12 +1290,12 @@
 
     const-string p0, " has multidex support"
 
-    goto :goto_2
+    goto :goto_1
 
     :cond_4
     const-string p0, " does not have multidex support"
 
-    :goto_2
+    :goto_1
     invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;

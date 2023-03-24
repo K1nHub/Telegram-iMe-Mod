@@ -135,7 +135,7 @@
 
 # virtual methods
 .method public done()Z
-    .locals 5
+    .locals 4
 
     .line 105
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
@@ -148,9 +148,9 @@
 
     const-wide/16 v2, 0x9c4
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-lez v4, :cond_0
+    if-lez v0, :cond_0
 
     const/4 v0, 0x1
 
@@ -180,7 +180,7 @@
 
     if-eqz v0, :cond_1
 
-    const/4 v0, 0x0
+    move v0, v2
 
     :goto_0
     const/4 v3, 0x7
@@ -290,7 +290,7 @@
     invoke-virtual {v0, p1}, Lorg/telegram/messenger/ImageReceiver;->draw(Landroid/graphics/Canvas;)Z
 
     :cond_2
-    const/4 v0, 0x0
+    move v0, v2
 
     .line 91
     :goto_1
@@ -493,12 +493,12 @@
 
     invoke-virtual/range {v4 .. v10}, Lorg/telegram/messenger/ImageReceiver;->setImage(Lorg/telegram/messenger/ImageLocation;Ljava/lang/String;Landroid/graphics/drawable/Drawable;Ljava/lang/String;Ljava/lang/Object;I)V
 
-    const/4 p1, 0x1
+    move p1, v1
 
     goto :goto_0
 
     :cond_0
-    const/4 p1, 0x0
+    move p1, v2
 
     :goto_0
     if-nez p1, :cond_3
@@ -603,7 +603,7 @@
 
     invoke-virtual/range {v3 .. v9}, Lorg/telegram/messenger/ImageReceiver;->setImage(Lorg/telegram/messenger/ImageLocation;Ljava/lang/String;Landroid/graphics/drawable/Drawable;Ljava/lang/String;Ljava/lang/Object;I)V
 
-    const/4 p1, 0x1
+    move p1, v1
 
     :cond_3
     if-eqz p1, :cond_5

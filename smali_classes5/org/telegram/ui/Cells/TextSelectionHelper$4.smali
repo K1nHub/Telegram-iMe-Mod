@@ -563,7 +563,7 @@
 
     if-eqz v0, :cond_2
 
-    const/4 v2, 0x1
+    move v2, v1
 
     :cond_2
     invoke-interface {p1, v2}, Landroid/view/MenuItem;->setVisible(Z)Landroid/view/MenuItem;

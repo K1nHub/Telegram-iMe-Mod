@@ -406,11 +406,11 @@
 
     const/4 v0, -0x1
 
-    const/4 v2, 0x0
+    move v5, v0
 
-    const/4 v5, -0x1
+    move v8, v5
 
-    const/4 v8, -0x1
+    move v2, v1
 
     .line 576
     :goto_0
@@ -822,7 +822,7 @@
 
     iget v9, v0, Lorg/telegram/ui/Components/voip/VoIPTextureView;->scaleTextureToFill:F
 
-    mul-float v8, v8, v9
+    mul-float/2addr v8, v9
 
     invoke-virtual {v0}, Landroid/widget/FrameLayout;->getMeasuredHeight()I
 
@@ -842,7 +842,7 @@
 
     iget v10, v0, Lorg/telegram/ui/Components/voip/VoIPTextureView;->scaleTextureToFill:F
 
-    mul-float v9, v9, v10
+    mul-float/2addr v9, v10
 
     invoke-virtual {v0}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
 
@@ -1156,9 +1156,9 @@
 
     move-result-wide v2
 
-    mul-float v0, v0, v0
+    mul-float/2addr v0, v0
 
-    mul-float p1, p1, p1
+    mul-float/2addr p1, p1
 
     add-float/2addr v0, p1
 
@@ -1167,7 +1167,7 @@
 
     iget v4, p1, Lorg/telegram/ui/VoIPFragment;->touchSlop:F
 
-    mul-float v4, v4, v4
+    mul-float/2addr v4, v4
 
     cmpg-float v0, v0, v4
 
@@ -1297,7 +1297,7 @@
     if-eqz p1, :cond_17
 
     :cond_16
-    const/4 v1, 0x1
+    move v1, v7
 
     :cond_17
     return v1

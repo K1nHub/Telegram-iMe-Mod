@@ -183,7 +183,7 @@
 .end method
 
 .method private handleManifestExpiredMessage(JJ)V
-    .locals 3
+    .locals 2
 
     .line 198
     iget-object v0, p0, Lcom/google/android/exoplayer2/source/dash/PlayerEmsgHandler;->manifestPublishTimeToExpiryTimeUs:Ljava/util/TreeMap;
@@ -221,9 +221,9 @@
 
     move-result-wide v0
 
-    cmp-long v2, v0, p1
+    cmp-long v0, v0, p1
 
-    if-lez v2, :cond_1
+    if-lez v0, :cond_1
 
     .line 203
     iget-object v0, p0, Lcom/google/android/exoplayer2/source/dash/PlayerEmsgHandler;->manifestPublishTimeToExpiryTimeUs:Ljava/util/TreeMap;
@@ -335,7 +335,7 @@
 .end method
 
 .method private removePreviouslyExpiredManifestPublishTimeValues()V
-    .locals 6
+    .locals 5
 
     .line 214
     iget-object v0, p0, Lcom/google/android/exoplayer2/source/dash/PlayerEmsgHandler;->manifestPublishTimeToExpiryTimeUs:Ljava/util/TreeMap;
@@ -381,9 +381,9 @@
 
     iget-wide v3, v3, Lcom/google/android/exoplayer2/source/dash/manifest/DashManifest;->publishTimeMs:J
 
-    cmp-long v5, v1, v3
+    cmp-long v1, v1, v3
 
-    if-gez v5, :cond_0
+    if-gez v1, :cond_0
 
     .line 220
     invoke-interface {v0}, Ljava/util/Iterator;->remove()V
@@ -479,9 +479,9 @@
 
     move-result-wide v4
 
-    cmp-long v1, v4, p1
+    cmp-long p1, v4, p1
 
-    if-gez v1, :cond_2
+    if-gez p1, :cond_2
 
     .line 165
     invoke-interface {v0}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
@@ -499,7 +499,7 @@
     .line 166
     invoke-direct {p0}, Lcom/google/android/exoplayer2/source/dash/PlayerEmsgHandler;->notifyManifestPublishTimeExpired()V
 
-    const/4 v2, 0x1
+    move v2, v3
 
     :cond_2
     if-eqz v2, :cond_3

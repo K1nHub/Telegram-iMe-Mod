@@ -142,7 +142,7 @@
     goto :goto_0
 
     :cond_0
-    const/4 v0, 0x0
+    move v0, v1
 
     :goto_0
     add-int/2addr p1, v0
@@ -167,7 +167,7 @@
 
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    move v1, v0
 
     .line 522
     :goto_0
@@ -206,7 +206,7 @@
 
     invoke-virtual {v1}, Landroid/util/SparseArray;->clear()V
 
-    const/4 v1, 0x0
+    move v1, v0
 
     .line 528
     :goto_1
@@ -322,7 +322,7 @@
 
     move-result-wide v9
 
-    const/4 v1, 0x0
+    move v1, v0
 
     .line 550
     :goto_3
@@ -355,7 +355,7 @@
     .line 553
     iget v5, v4, Lorg/telegram/ui/Components/StickerMasksAlert$ImageViewEmoji;->position:I
 
-    const/4 v6, 0x0
+    move v6, v0
 
     .line 555
     :goto_4

@@ -357,10 +357,10 @@ public class SampleQueue implements TrackOutput {
             r1 = 0
             r2 = 1
             if (r0 == 0) goto L18
-            r3 = 1
+            r3 = r2
             goto L19
         L18:
-            r3 = 0
+            r3 = r1
         L19:
             boolean r4 = r8.upstreamKeyframeRequired
             if (r4 == 0) goto L22
@@ -374,8 +374,8 @@ public class SampleQueue implements TrackOutput {
             boolean r6 = r8.upstreamAllSamplesAreSyncSamples
             if (r6 == 0) goto L54
             long r6 = r8.startTimeUs
-            int r9 = (r4 > r6 ? 1 : (r4 == r6 ? 0 : -1))
-            if (r9 >= 0) goto L30
+            int r6 = (r4 > r6 ? 1 : (r4 == r6 ? 0 : -1))
+            if (r6 >= 0) goto L30
             return
         L30:
             if (r0 != 0) goto L54
@@ -616,6 +616,7 @@ public class SampleQueue implements TrackOutput {
     }
 
     private long discardUpstreamSampleMetadata(int i) {
+        int relativeIndex;
         int writeIndex = getWriteIndex() - i;
         boolean z = false;
         Assertions.checkArgument(writeIndex >= 0 && writeIndex <= this.length - this.readPosition);
@@ -629,8 +630,7 @@ public class SampleQueue implements TrackOutput {
         this.sharedSampleMetadata.discardFrom(i);
         int i3 = this.length;
         if (i3 != 0) {
-            int relativeIndex = getRelativeIndex(i3 - 1);
-            return this.offsets[relativeIndex] + this.sizes[relativeIndex];
+            return this.offsets[getRelativeIndex(i3 - 1)] + this.sizes[relativeIndex];
         }
         return 0L;
     }

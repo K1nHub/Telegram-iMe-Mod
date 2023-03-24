@@ -135,7 +135,7 @@
 
     const/high16 v0, 0x41200000    # 10.0f
 
-    mul-float p0, p0, v0
+    mul-float/2addr p0, v0
 
     .line 68
     invoke-static {p0}, Ljava/lang/Math;->round(F)I
@@ -150,9 +150,9 @@
 
     long-to-float v2, v0
 
-    const-string v3, ""
-
     cmpl-float v2, p0, v2
+
+    const-string v3, ""
 
     if-nez v2, :cond_0
 

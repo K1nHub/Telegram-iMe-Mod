@@ -82,7 +82,9 @@ public class QueryListener {
         boolean z = true;
         if (viewSnapshot.getChanges().isEmpty()) {
             ViewSnapshot viewSnapshot2 = this.snapshot;
-            z = (viewSnapshot2 == null || viewSnapshot2.hasPendingWrites() == viewSnapshot.hasPendingWrites()) ? false : false;
+            if (viewSnapshot2 == null || viewSnapshot2.hasPendingWrites() == viewSnapshot.hasPendingWrites()) {
+                z = false;
+            }
             if (viewSnapshot.didSyncStateChange() || z) {
                 return this.options.includeQueryMetadataChanges;
             }

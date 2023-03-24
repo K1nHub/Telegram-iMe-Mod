@@ -907,7 +907,7 @@
 
     if-ne v0, v1, :cond_a
 
-    const/4 v2, 0x1
+    move v2, v4
 
     .line 260
     :cond_a
@@ -1059,7 +1059,7 @@
     goto :goto_6
 
     :cond_f
-    const/4 v7, -0x1
+    move v7, v3
 
     :goto_7
     if-ltz v7, :cond_10

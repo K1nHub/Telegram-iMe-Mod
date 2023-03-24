@@ -1391,7 +1391,7 @@
 .end method
 
 .method public static getProgress([J)F
-    .locals 6
+    .locals 5
 
     if-eqz p0, :cond_1
 
@@ -1408,9 +1408,9 @@
 
     const-wide/16 v3, 0x0
 
-    cmp-long v5, v1, v3
+    cmp-long v1, v1, v3
 
-    if-nez v5, :cond_0
+    if-nez v1, :cond_0
 
     goto :goto_0
 
@@ -2208,7 +2208,7 @@
     goto :goto_0
 
     :cond_0
-    const/4 v0, 0x0
+    move v0, v4
 
     .line 1212
     :goto_0
@@ -2402,7 +2402,7 @@
 
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    move v1, v0
 
     .line 1182
     :goto_0
@@ -2456,7 +2456,7 @@
 
     invoke-virtual {v2, v1}, Ljava/util/ArrayList;->remove(I)Ljava/lang/Object;
 
-    const/4 v1, 0x1
+    move v1, v3
 
     goto :goto_1
 
@@ -2466,12 +2466,12 @@
     goto :goto_0
 
     :cond_1
-    const/4 v1, 0x0
+    move v1, v0
 
     :goto_1
     if-eqz v1, :cond_5
 
-    const/4 v1, 0x0
+    move v1, v0
 
     .line 1192
     :goto_2
@@ -2526,7 +2526,7 @@
     goto :goto_2
 
     :cond_3
-    const/4 v3, 0x0
+    move v3, v0
 
     :goto_3
     if-nez v3, :cond_4
@@ -2580,7 +2580,7 @@
 
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    move v1, v0
 
     .line 1259
     :goto_0
@@ -2634,12 +2634,12 @@
 
     invoke-virtual {p1, v1}, Ljava/util/ArrayList;->remove(I)Ljava/lang/Object;
 
-    const/4 p1, 0x1
+    move p1, v3
 
     goto :goto_2
 
     :cond_2
-    const/4 p1, 0x0
+    move p1, v0
 
     :goto_2
     if-eqz p1, :cond_4
@@ -2870,7 +2870,7 @@
 .end method
 
 .method private synthetic lambda$startDownloadFile$5(Lorg/telegram/tgnet/TLRPC$Document;Lorg/telegram/messenger/MessageObject;)V
-    .locals 9
+    .locals 8
 
     if-nez p1, :cond_0
 
@@ -2879,7 +2879,7 @@
     :cond_0
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    move v1, v0
 
     .line 1124
     :goto_0
@@ -2923,7 +2923,7 @@
 
     if-nez v2, :cond_2
 
-    const/4 v1, 0x1
+    move v1, v3
 
     goto :goto_2
 
@@ -2934,12 +2934,12 @@
     goto :goto_0
 
     :cond_3
-    const/4 v1, 0x0
+    move v1, v0
 
     :goto_2
     if-nez v1, :cond_6
 
-    const/4 v2, 0x0
+    move v2, v0
 
     .line 1137
     :goto_3
@@ -2977,9 +2977,9 @@
 
     iget-wide v6, p1, Lorg/telegram/tgnet/TLRPC$Document;->id:J
 
-    cmp-long v8, v4, v6
+    cmp-long v4, v4, v6
 
-    if-nez v8, :cond_5
+    if-nez v4, :cond_5
 
     goto :goto_5
 
@@ -3331,7 +3331,7 @@
 
     if-eqz v6, :cond_2
 
-    const/4 v6, 0x2
+    move v6, v5
 
     goto :goto_2
 
@@ -3374,7 +3374,7 @@
 
     :cond_5
     :goto_0
-    const/4 v6, 0x1
+    move v6, v4
 
     goto :goto_2
 
@@ -3393,9 +3393,9 @@
     .line 631
     iget-wide v10, v7, Lorg/telegram/tgnet/TLRPC$Peer;->user_id:J
 
-    cmp-long v12, v10, v8
+    cmp-long v10, v10, v8
 
-    if-eqz v12, :cond_7
+    if-eqz v10, :cond_7
 
     .line 632
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/messenger/BaseController;->getContactsController()Lorg/telegram/messenger/ContactsController;
@@ -3417,7 +3417,7 @@
     if-eqz v7, :cond_c
 
     :goto_3
-    const/4 v7, 0x0
+    move v7, v2
 
     goto :goto_5
 
@@ -3425,9 +3425,9 @@
     :cond_7
     iget-wide v10, v7, Lorg/telegram/tgnet/TLRPC$Peer;->chat_id:J
 
-    cmp-long v12, v10, v8
+    cmp-long v10, v10, v8
 
-    if-eqz v12, :cond_9
+    if-eqz v10, :cond_9
 
     .line 638
     iget-object v7, v1, Lorg/telegram/tgnet/TLRPC$Message;->from_id:Lorg/telegram/tgnet/TLRPC$Peer;
@@ -3459,7 +3459,7 @@
     goto :goto_3
 
     :cond_8
-    const/4 v7, 0x2
+    move v7, v5
 
     goto :goto_5
 
@@ -3539,7 +3539,7 @@
     goto :goto_5
 
     :cond_c
-    const/4 v7, 0x1
+    move v7, v4
 
     .line 659
     :goto_5
@@ -3666,7 +3666,7 @@
 
     if-eqz v1, :cond_13
 
-    const/4 v2, 0x2
+    move v2, v5
 
     :cond_13
     return v2
@@ -3690,7 +3690,7 @@
     if-eqz v1, :cond_17
 
     :cond_16
-    const/4 v2, 0x1
+    move v2, v4
 
     :cond_17
     return v2
@@ -3788,9 +3788,9 @@
 
     if-eqz v0, :cond_7
 
-    cmp-long v0, p2, v5
+    cmp-long p2, p2, v5
 
-    if-gtz v0, :cond_7
+    if-gtz p2, :cond_7
 
     :cond_5
     if-eq p1, v1, :cond_6
@@ -3800,7 +3800,7 @@
     if-eqz p1, :cond_7
 
     :cond_6
-    const/4 v2, 0x1
+    move v2, v3
 
     :cond_7
     return v2
@@ -3858,7 +3858,7 @@
 
     if-eqz v0, :cond_0
 
-    const/4 v1, 0x1
+    move v1, v2
 
     :cond_0
     return v1
@@ -3883,7 +3883,7 @@
 
     if-eqz v0, :cond_2
 
-    const/4 v1, 0x1
+    move v1, v2
 
     :cond_2
     return v1
@@ -3904,7 +3904,7 @@
 
     if-eqz v0, :cond_4
 
-    const/4 v1, 0x1
+    move v1, v2
 
     :cond_4
     return v1
@@ -4056,7 +4056,7 @@
     goto :goto_2
 
     :cond_1
-    const/4 v1, 0x0
+    move v1, v2
 
     .line 517
     :goto_0
@@ -4159,7 +4159,7 @@
     goto :goto_4
 
     :cond_6
-    const/4 v1, 0x0
+    move v1, v2
 
     .line 534
     :goto_3
@@ -4224,7 +4224,7 @@
     goto :goto_6
 
     :cond_9
-    const/4 v1, 0x0
+    move v1, v2
 
     .line 545
     :goto_5
@@ -4290,7 +4290,7 @@
     goto :goto_8
 
     :cond_c
-    const/4 v0, 0x0
+    move v0, v2
 
     .line 557
     :goto_7
@@ -4404,7 +4404,7 @@
 .end method
 
 .method public checkUnviewedDownloads(IJ)V
-    .locals 3
+    .locals 2
 
     .line 1308
     iget-object v0, p0, Lorg/telegram/messenger/DownloadController;->unviewedDownloads:Landroid/util/SparseArray;
@@ -4422,9 +4422,9 @@
 
     move-result-wide v0
 
-    cmp-long v2, v0, p2
+    cmp-long p2, v0, p2
 
-    if-nez v2, :cond_0
+    if-nez p2, :cond_0
 
     .line 1310
     iget-object p2, p0, Lorg/telegram/messenger/DownloadController;->unviewedDownloads:Landroid/util/SparseArray;
@@ -4561,7 +4561,7 @@
 
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    move v1, v0
 
     .line 1401
     :goto_0
@@ -4571,7 +4571,7 @@
 
     if-ge v1, v2, :cond_4
 
-    const/4 v2, 0x0
+    move v2, v0
 
     .line 1403
     :goto_1
@@ -4641,7 +4641,7 @@
 
     invoke-virtual {v3, v2}, Ljava/util/ArrayList;->remove(I)Ljava/lang/Object;
 
-    const/4 v2, 0x1
+    move v2, v4
 
     goto :goto_2
 
@@ -4651,12 +4651,12 @@
     goto :goto_1
 
     :cond_1
-    const/4 v2, 0x0
+    move v2, v0
 
     :goto_2
     if-nez v2, :cond_3
 
-    const/4 v2, 0x0
+    move v2, v0
 
     .line 1411
     :goto_3
@@ -4890,7 +4890,7 @@
 
     move-result v2
 
-    const/4 v9, 0x0
+    move v9, v0
 
     :goto_0
     if-ge v9, v2, :cond_3
@@ -4989,7 +4989,7 @@
 
     move-result v10
 
-    const/4 v11, 0x0
+    move v11, v0
 
     :goto_1
     if-ge v11, v10, :cond_6
@@ -5112,9 +5112,9 @@
 
     move-result-wide v3
 
-    cmp-long v6, v1, v3
+    cmp-long v1, v1, v3
 
-    if-gez v6, :cond_11
+    if-gez v1, :cond_11
 
     .line 1066
     :cond_7
@@ -5238,9 +5238,9 @@
 
     move-result-wide v3
 
-    cmp-long v6, v1, v3
+    cmp-long v1, v1, v3
 
-    if-gez v6, :cond_11
+    if-gez v1, :cond_11
 
     .line 1079
     :cond_b
@@ -5418,7 +5418,7 @@
 
     move-result p3
 
-    const/4 v2, 0x0
+    move v2, v0
 
     :goto_7
     if-ge v2, p3, :cond_13
@@ -5460,7 +5460,7 @@
 
     move-result p3
 
-    const/4 v1, 0x0
+    move v1, v0
 
     :goto_8
     if-ge v1, p3, :cond_16
@@ -5557,7 +5557,7 @@
 
     move-result v2
 
-    const/4 v3, 0x0
+    move v3, v0
 
     :goto_a
     if-ge v3, v2, :cond_1b
@@ -5589,12 +5589,12 @@
 
     if-ne v6, v1, :cond_19
 
-    const/4 v6, 0x1
+    move v6, v1
 
     goto :goto_b
 
     :cond_19
-    const/4 v6, 0x0
+    move v6, v0
 
     :goto_b
     invoke-interface {v5, p1, v6}, Lorg/telegram/messenger/DownloadController$FileDownloadProgressListener;->onFailedDownload(Ljava/lang/String;Z)V
@@ -5747,9 +5747,9 @@
     iget-object v0, v0, Lorg/telegram/messenger/DownloadController$Preset;->mask:[I
 
     :goto_0
-    const/4 v4, 0x0
+    move v4, v3
 
-    const/4 v5, 0x0
+    move v5, v4
 
     .line 465
     :goto_1
@@ -5764,12 +5764,12 @@
 
     if-eqz v6, :cond_5
 
-    const/4 v6, 0x1
+    move v6, v2
 
     goto :goto_2
 
     :cond_5
-    const/4 v6, 0x0
+    move v6, v3
 
     .line 470
     :goto_2
@@ -5843,7 +5843,7 @@
     return v1
 
     :cond_0
-    const/4 v0, 0x0
+    move v0, v1
 
     :goto_0
     const/4 v2, 0x4
@@ -6048,7 +6048,7 @@
     return v3
 
     :cond_0
-    const/4 v0, 0x0
+    move v0, v3
 
     :goto_0
     if-ge v3, v1, :cond_1
@@ -6086,7 +6086,7 @@
     return v3
 
     :cond_3
-    const/4 v0, 0x0
+    move v0, v3
 
     :goto_1
     if-ge v3, v1, :cond_4
@@ -6120,7 +6120,7 @@
     return v3
 
     :cond_6
-    const/4 v0, 0x0
+    move v0, v3
 
     :goto_2
     if-ge v3, v1, :cond_7
@@ -6338,7 +6338,7 @@
 
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    move v1, v0
 
     .line 1448
     :goto_0
@@ -6705,7 +6705,7 @@
     :goto_0
     const/4 v4, 0x0
 
-    const/4 v5, 0x0
+    move v5, v4
 
     .line 814
     :goto_1
@@ -6792,7 +6792,7 @@
 
     if-eqz v9, :cond_6
 
-    goto :goto_8
+    goto/16 :goto_8
 
     :cond_6
     if-eqz v8, :cond_9
@@ -6807,7 +6807,7 @@
 
     if-eqz v11, :cond_7
 
-    const/16 v17, 0x2
+    move/from16 v17, v2
 
     goto :goto_4
 
@@ -6817,12 +6817,12 @@
 
     if-eqz v11, :cond_8
 
-    const/16 v17, 0x1
+    move/from16 v17, v3
 
     goto :goto_4
 
     :cond_8
-    const/16 v17, 0x0
+    move/from16 v17, v4
 
     .line 842
     :goto_4
@@ -6866,23 +6866,23 @@
 
     if-eqz v12, :cond_a
 
-    const/4 v12, 0x2
+    move v12, v2
 
     goto :goto_5
 
     :cond_a
-    const/4 v12, 0x0
+    move v12, v4
 
     :goto_5
     invoke-virtual {v9, v8, v11, v4, v12}, Lorg/telegram/messenger/FileLoader;->loadFile(Lorg/telegram/tgnet/TLRPC$Document;Ljava/lang/Object;II)V
 
     :goto_6
-    const/4 v8, 0x1
+    move v8, v3
 
     goto :goto_7
 
     :cond_b
-    const/4 v8, 0x0
+    move v8, v4
 
     :goto_7
     if-eqz v8, :cond_c
@@ -7121,13 +7121,13 @@
 
     const/4 v2, 0x0
 
-    const/4 v3, 0x0
+    move v3, v2
 
-    const/4 v4, 0x0
+    move v4, v3
 
-    const/4 v5, 0x0
+    move v5, v4
 
-    const/4 v6, 0x0
+    move v6, v5
 
     .line 758
     :goto_1
@@ -7144,7 +7144,7 @@
 
     if-eqz v8, :cond_2
 
-    const/4 v4, 0x1
+    move v4, v1
 
     .line 762
     :cond_2
@@ -7154,7 +7154,7 @@
 
     if-eqz v8, :cond_3
 
-    const/4 v5, 0x1
+    move v5, v1
 
     .line 765
     :cond_3
@@ -7164,7 +7164,7 @@
 
     if-eqz v7, :cond_4
 
-    const/4 v6, 0x1
+    move v6, v1
 
     :cond_4
     if-eqz v4, :cond_5

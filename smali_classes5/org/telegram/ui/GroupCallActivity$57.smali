@@ -89,12 +89,12 @@
 
     if-eqz v1, :cond_1
 
-    const/high16 v1, 0x3f800000    # 1.0f
+    move v1, v2
 
     goto :goto_0
 
     :cond_1
-    const/4 v1, 0x0
+    move v1, v3
 
     :goto_0
     invoke-static {p1, v1}, Lorg/telegram/ui/GroupCallActivity;->access$10002(Lorg/telegram/ui/GroupCallActivity;F)F

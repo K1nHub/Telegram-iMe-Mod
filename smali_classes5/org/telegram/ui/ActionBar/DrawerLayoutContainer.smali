@@ -133,7 +133,7 @@
 
     const/high16 v1, 0x42800000    # 64.0f
 
-    mul-float v0, v0, v1
+    mul-float/2addr v0, v1
 
     const/high16 v1, 0x3f000000    # 0.5f
 
@@ -643,12 +643,12 @@
 
     if-nez v3, :cond_5
 
-    const/4 v3, 0x1
+    move v3, v4
 
     goto :goto_0
 
     :cond_5
-    const/4 v3, 0x0
+    move v3, v2
 
     :goto_0
     invoke-virtual {p1, v3}, Landroid/widget/FrameLayout;->setWillNotDraw(Z)V
@@ -675,7 +675,7 @@
 
     if-eqz p1, :cond_6
 
-    const/4 v2, 0x1
+    move v2, v4
 
     :cond_6
     iput-boolean v2, p0, Lorg/telegram/ui/ActionBar/DrawerLayoutContainer;->hasCutout:Z
@@ -856,7 +856,7 @@
 
     iget v1, p0, Lorg/telegram/ui/ActionBar/DrawerLayoutContainer;->drawerPosition:F
 
-    mul-float p1, p1, v1
+    mul-float/2addr p1, v1
 
     float-to-int p1, p1
 
@@ -919,7 +919,7 @@
 
     const/high16 v2, 0x437f0000    # 255.0f
 
-    mul-float v0, v0, v2
+    mul-float/2addr v0, v2
 
     float-to-int v0, v0
 
@@ -1055,13 +1055,13 @@
     goto :goto_0
 
     :cond_0
-    const/4 v1, 0x0
+    move v1, v4
 
     goto :goto_1
 
     :cond_1
     :goto_0
-    const/4 v1, 0x1
+    move v1, v3
 
     :goto_1
     if-nez v0, :cond_3
@@ -1216,12 +1216,12 @@
 
     if-eq v2, v5, :cond_1
 
-    const/4 v5, 0x1
+    move v5, v6
 
     goto :goto_0
 
     :cond_1
-    const/4 v5, 0x0
+    move v5, v4
 
     .line 745
     :goto_0
@@ -1241,11 +1241,11 @@
 
     move-result v9
 
-    const/4 v10, 0x0
+    move v10, v4
 
-    const/4 v11, 0x0
+    move v11, v10
 
-    const/4 v12, 0x0
+    move v12, v11
 
     :goto_1
     if-ge v10, v9, :cond_5
@@ -1342,7 +1342,7 @@
     goto :goto_3
 
     :cond_7
-    const/4 v11, 0x0
+    move v11, v4
 
     .line 768
     :goto_3
@@ -1378,7 +1378,7 @@
 
     iget v4, v0, Lorg/telegram/ui/ActionBar/DrawerLayoutContainer;->scrimOpacity:F
 
-    mul-float v4, v4, v3
+    mul-float/2addr v4, v3
 
     float-to-int v3, v4
 
@@ -1474,7 +1474,7 @@
 
     const/high16 v4, 0x437f0000    # 255.0f
 
-    mul-float v3, v3, v4
+    mul-float/2addr v3, v4
 
     float-to-int v3, v3
 
@@ -1725,7 +1725,7 @@
 
     if-lt v1, v2, :cond_2
 
-    const/4 v1, 0x0
+    move v1, v0
 
     .line 298
     :goto_0
@@ -1752,7 +1752,7 @@
     goto :goto_1
 
     :cond_0
-    const/4 v3, 0x0
+    move v3, v0
 
     .line 301
     :goto_1
@@ -1820,7 +1820,7 @@
 
     const/4 p2, 0x0
 
-    const/4 p3, 0x0
+    move p3, p2
 
     :goto_0
     if-ge p3, p1, :cond_4
@@ -2137,12 +2137,12 @@
 
     if-lt v2, v3, :cond_5
 
-    const/4 v2, 0x1
+    move v2, v4
 
     goto :goto_2
 
     :cond_5
-    const/4 v2, 0x0
+    move v2, v5
 
     .line 684
     :goto_2
@@ -2150,7 +2150,7 @@
 
     move-result v6
 
-    const/4 v7, 0x0
+    move v7, v5
 
     :goto_3
     if-ge v7, v6, :cond_c
@@ -2169,7 +2169,7 @@
 
     if-ne v9, v10, :cond_6
 
-    goto :goto_7
+    goto/16 :goto_7
 
     .line 692
     :cond_6
@@ -2214,12 +2214,12 @@
 
     if-lt v12, v3, :cond_8
 
-    const/4 v12, 0x1
+    move v12, v4
 
     goto :goto_4
 
     :cond_8
-    const/4 v12, 0x0
+    move v12, v5
 
     :goto_4
     invoke-direct {p0, v9, v10, v11, v12}, Lorg/telegram/ui/ActionBar/DrawerLayoutContainer;->applyMarginInsets(Landroid/view/ViewGroup$MarginLayoutParams;Ljava/lang/Object;IZ)V
@@ -2313,7 +2313,7 @@
     :goto_7
     add-int/lit8 v7, v7, 0x1
 
-    goto :goto_3
+    goto/16 :goto_3
 
     :cond_c
     return-void
@@ -2860,13 +2860,13 @@
 
     div-float/2addr v4, v7
 
-    const v7, 0x455ac000    # 3500.0f
-
     cmpg-float v3, v3, v4
+
+    const v4, 0x455ac000    # 3500.0f
 
     if-gez v3, :cond_10
 
-    cmpg-float v3, p1, v7
+    cmpg-float v3, p1, v4
 
     if-ltz v3, :cond_11
 
@@ -2891,17 +2891,17 @@
 
     move-result v0
 
-    cmpl-float v0, v0, v7
+    cmpl-float v0, v0, v4
 
     if-ltz v0, :cond_12
 
     :cond_11
-    const/4 v0, 0x1
+    move v0, v2
 
     goto :goto_0
 
     :cond_12
-    const/4 v0, 0x0
+    move v0, v1
 
     :goto_0
     if-nez v0, :cond_14
@@ -2915,14 +2915,14 @@
 
     move-result p1
 
-    cmpl-float p1, p1, v7
+    cmpl-float p1, p1, v4
 
     if-ltz p1, :cond_13
 
     goto :goto_1
 
     :cond_13
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_1
     invoke-virtual {p0, v2}, Lorg/telegram/ui/ActionBar/DrawerLayoutContainer;->openDrawer(Z)V
@@ -2939,14 +2939,14 @@
 
     move-result p1
 
-    cmpl-float p1, p1, v7
+    cmpl-float p1, p1, v4
 
     if-ltz p1, :cond_15
 
     goto :goto_2
 
     :cond_15
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_2
     invoke-virtual {p0, v2}, Lorg/telegram/ui/ActionBar/DrawerLayoutContainer;->closeDrawer(Z)V
@@ -3148,7 +3148,7 @@
 
     sub-float/2addr v1, v2
 
-    mul-float p1, p1, v1
+    mul-float/2addr p1, v1
 
     float-to-int p1, p1
 
@@ -3426,9 +3426,9 @@
 
     int-to-float v0, v0
 
-    const/4 v1, 0x0
-
     cmpl-float p1, p1, v0
+
+    const/4 v0, 0x0
 
     if-lez p1, :cond_1
 
@@ -3449,32 +3449,32 @@
     :cond_1
     iget p1, p0, Lorg/telegram/ui/ActionBar/DrawerLayoutContainer;->drawerPosition:F
 
-    cmpg-float p1, p1, v1
+    cmpg-float p1, p1, v0
 
     if-gez p1, :cond_2
 
     .line 209
-    iput v1, p0, Lorg/telegram/ui/ActionBar/DrawerLayoutContainer;->drawerPosition:F
+    iput v0, p0, Lorg/telegram/ui/ActionBar/DrawerLayoutContainer;->drawerPosition:F
 
     .line 211
     :cond_2
     :goto_0
     iget-object p1, p0, Lorg/telegram/ui/ActionBar/DrawerLayoutContainer;->drawerLayout:Landroid/widget/FrameLayout;
 
-    iget v0, p0, Lorg/telegram/ui/ActionBar/DrawerLayoutContainer;->drawerPosition:F
+    iget v1, p0, Lorg/telegram/ui/ActionBar/DrawerLayoutContainer;->drawerPosition:F
 
-    invoke-virtual {p1, v0}, Landroid/widget/FrameLayout;->setTranslationX(F)V
+    invoke-virtual {p1, v1}, Landroid/widget/FrameLayout;->setTranslationX(F)V
 
     .line 213
     iget p1, p0, Lorg/telegram/ui/ActionBar/DrawerLayoutContainer;->drawerPosition:F
 
-    const/4 v0, 0x0
+    cmpl-float p1, p1, v0
 
-    cmpl-float p1, p1, v1
+    const/4 v1, 0x0
 
     if-lez p1, :cond_3
 
-    const/4 p1, 0x0
+    move p1, v1
 
     goto :goto_1
 
@@ -3517,14 +3517,14 @@
 
     move-result-object p1
 
-    invoke-interface {p1, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
+    invoke-interface {p1, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object p1
 
     check-cast p1, Lorg/telegram/ui/ActionBar/BaseFragment;
 
     .line 219
-    iget v0, p0, Lorg/telegram/ui/ActionBar/DrawerLayoutContainer;->drawerPosition:F
+    iget v1, p0, Lorg/telegram/ui/ActionBar/DrawerLayoutContainer;->drawerPosition:F
 
     iget-object v2, p0, Lorg/telegram/ui/ActionBar/DrawerLayoutContainer;->drawerLayout:Landroid/widget/FrameLayout;
 
@@ -3534,9 +3534,9 @@
 
     int-to-float v2, v2
 
-    cmpl-float v0, v0, v2
+    cmpl-float v1, v1, v2
 
-    if-nez v0, :cond_5
+    if-nez v1, :cond_5
 
     const/high16 v0, 0x3f800000    # 1.0f
 
@@ -3547,30 +3547,30 @@
 
     .line 221
     :cond_5
-    iget v0, p0, Lorg/telegram/ui/ActionBar/DrawerLayoutContainer;->drawerPosition:F
+    iget v1, p0, Lorg/telegram/ui/ActionBar/DrawerLayoutContainer;->drawerPosition:F
 
-    cmpl-float v2, v0, v1
+    cmpl-float v2, v1, v0
 
     if-nez v2, :cond_6
 
     .line 222
-    invoke-virtual {p1, v1}, Lorg/telegram/ui/ActionBar/BaseFragment;->setProgressToDrawerOpened(F)V
+    invoke-virtual {p1, v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->setProgressToDrawerOpened(F)V
 
     goto :goto_2
 
     .line 224
     :cond_6
-    iget-object v1, p0, Lorg/telegram/ui/ActionBar/DrawerLayoutContainer;->drawerLayout:Landroid/widget/FrameLayout;
+    iget-object v0, p0, Lorg/telegram/ui/ActionBar/DrawerLayoutContainer;->drawerLayout:Landroid/widget/FrameLayout;
 
-    invoke-virtual {v1}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
+    invoke-virtual {v0}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
 
-    move-result v1
+    move-result v0
 
-    int-to-float v1, v1
+    int-to-float v0, v0
 
-    div-float/2addr v0, v1
+    div-float/2addr v1, v0
 
-    invoke-virtual {p1, v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->setProgressToDrawerOpened(F)V
+    invoke-virtual {p1, v1}, Lorg/telegram/ui/ActionBar/BaseFragment;->setProgressToDrawerOpened(F)V
 
     .line 227
     :cond_7

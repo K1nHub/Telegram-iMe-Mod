@@ -80,7 +80,7 @@ public final class Headers implements Iterable<Pair<? extends String, ? extends 
         int size = size();
         Pair[] pairArr = new Pair[size];
         for (int i = 0; i < size; i++) {
-            pairArr[i] = TuplesKt.m100to(name(i), value(i));
+            pairArr[i] = TuplesKt.m99to(name(i), value(i));
         }
         return ArrayIteratorKt.iterator(pairArr);
     }

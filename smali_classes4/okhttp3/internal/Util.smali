@@ -352,32 +352,32 @@
 
     const-wide/16 v0, 0x0
 
-    const/4 v2, 0x1
+    cmp-long v2, p1, v0
 
-    const/4 v3, 0x0
+    const/4 v3, 0x1
 
-    cmp-long v4, p1, v0
+    const/4 v4, 0x0
 
-    if-ltz v4, :cond_0
+    if-ltz v2, :cond_0
 
-    const/4 v5, 0x1
+    move v5, v3
 
     goto :goto_0
 
     :cond_0
-    const/4 v5, 0x0
+    move v5, v4
 
     :goto_0
     if-eqz v5, :cond_8
 
     if-eqz p3, :cond_1
 
-    const/4 v5, 0x1
+    move v5, v3
 
     goto :goto_1
 
     :cond_1
-    const/4 v5, 0x0
+    move v5, v4
 
     :goto_1
     if-eqz v5, :cond_7
@@ -395,12 +395,12 @@
 
     if-gtz p3, :cond_2
 
-    const/4 p3, 0x1
+    move p3, v3
 
     goto :goto_2
 
     :cond_2
-    const/4 p3, 0x0
+    move p3, v4
 
     :goto_2
     if-eqz p3, :cond_6
@@ -409,16 +409,16 @@
 
     if-nez p3, :cond_4
 
-    if-gtz v4, :cond_3
+    if-gtz v2, :cond_3
 
     goto :goto_3
 
     :cond_3
-    const/4 v2, 0x0
+    move v3, v4
 
     :cond_4
     :goto_3
-    if-eqz v2, :cond_5
+    if-eqz v3, :cond_5
 
     long-to-int p0, p1
 
@@ -518,15 +518,15 @@
 .end method
 
 .method public static final checkOffsetAndCount(JJJ)V
-    .locals 5
+    .locals 4
 
     or-long v0, p2, p4
 
     const-wide/16 v2, 0x0
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-ltz v4, :cond_0
+    if-ltz v0, :cond_0
 
     cmp-long v0, p2, p0
 
@@ -534,9 +534,9 @@
 
     sub-long/2addr p0, p2
 
-    cmp-long p2, p0, p4
+    cmp-long p0, p0, p4
 
-    if-ltz p2, :cond_0
+    if-ltz p0, :cond_0
 
     return-void
 
@@ -852,12 +852,12 @@
 
     if-nez v0, :cond_0
 
-    const/4 v0, 0x1
+    move v0, v1
 
     goto :goto_0
 
     :cond_0
-    const/4 v0, 0x0
+    move v0, v2
 
     :goto_0
     if-nez v0, :cond_5
@@ -868,12 +868,12 @@
 
     if-nez v0, :cond_1
 
-    const/4 v0, 0x1
+    move v0, v1
 
     goto :goto_1
 
     :cond_1
-    const/4 v0, 0x0
+    move v0, v2
 
     :goto_1
     if-eqz v0, :cond_2
@@ -884,7 +884,7 @@
     :cond_2
     array-length v0, p0
 
-    const/4 v3, 0x0
+    move v3, v2
 
     :goto_2
     if-ge v3, v0, :cond_5
@@ -894,7 +894,7 @@
     .line 144
     array-length v5, p1
 
-    const/4 v6, 0x0
+    move v6, v2
 
     :goto_3
     if-ge v6, v5, :cond_4
@@ -1029,7 +1029,7 @@
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_0
     if-ge v2, v0, :cond_2
@@ -1049,7 +1049,7 @@
     goto :goto_1
 
     :cond_0
-    const/4 v3, 0x0
+    move v3, v1
 
     :goto_1
     if-eqz v3, :cond_1
@@ -1358,7 +1358,7 @@
 
     const/4 v2, 0x0
 
-    const/4 v3, 0x0
+    move v3, v2
 
     :goto_0
     if-ge v3, v1, :cond_2
@@ -1368,7 +1368,7 @@
     .line 120
     array-length v5, p1
 
-    const/4 v6, 0x0
+    move v6, v2
 
     :goto_1
     if-ge v6, v5, :cond_1
@@ -2012,8 +2012,6 @@
     throw p1
 
     :catch_0
-    nop
-
     const/4 p1, 0x0
 
     cmp-long p2, v5, v3
@@ -2447,7 +2445,7 @@
 .end method
 
 .method public static final toNonNegativeInt(Ljava/lang/String;I)I
-    .locals 4
+    .locals 3
 
     if-eqz p0, :cond_2
 
@@ -2463,18 +2461,18 @@
 
     int-to-long v1, v0
 
-    cmp-long v3, p0, v1
+    cmp-long v1, p0, v1
 
-    if-lez v3, :cond_0
+    if-lez v1, :cond_0
 
     goto :goto_0
 
     :cond_0
     const-wide/16 v0, 0x0
 
-    cmp-long v2, p0, v0
+    cmp-long v0, p0, v0
 
-    if-gez v2, :cond_1
+    if-gez v0, :cond_1
 
     const/4 v0, 0x0
 

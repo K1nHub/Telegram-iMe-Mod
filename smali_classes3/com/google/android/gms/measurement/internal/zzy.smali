@@ -113,13 +113,13 @@
     goto :goto_0
 
     :cond_0
-    const/4 v1, 0x0
+    move v1, v4
 
     goto :goto_1
 
     :cond_1
     :goto_0
-    const/4 v1, 0x1
+    move v1, v5
 
     :goto_1
     const/4 v2, 0x0

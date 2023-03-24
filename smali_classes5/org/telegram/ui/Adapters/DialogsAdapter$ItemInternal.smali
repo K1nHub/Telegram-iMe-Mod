@@ -101,12 +101,12 @@
 
     if-ne v1, v2, :cond_2
 
-    const/4 v1, 0x1
+    move v1, v0
 
     goto :goto_1
 
     :cond_2
-    const/4 v1, 0x0
+    move v1, v3
 
     :goto_1
     aget-object p2, p2, v1
@@ -127,7 +127,7 @@
     goto :goto_2
 
     :cond_3
-    const/4 v0, 0x0
+    move v0, v3
 
     :goto_2
     iput-boolean v0, p0, Lorg/telegram/ui/Adapters/DialogsAdapter$ItemInternal;->pinned:Z
@@ -243,7 +243,7 @@
 
     if-ne v0, p1, :cond_1
 
-    const/4 v2, 0x1
+    move v2, v1
 
     :cond_1
     return v2
@@ -266,9 +266,9 @@
 
     iget-wide v5, p1, Lorg/telegram/tgnet/TLRPC$Dialog;->id:J
 
-    cmp-long v7, v3, v5
+    cmp-long v3, v3, v5
 
-    if-nez v7, :cond_3
+    if-nez v3, :cond_3
 
     iget-boolean v0, v0, Lorg/telegram/tgnet/TLRPC$Dialog;->isFolder:Z
 
@@ -276,7 +276,7 @@
 
     if-ne v0, p1, :cond_3
 
-    const/4 v2, 0x1
+    move v2, v1
 
     :cond_3
     return v2
@@ -305,7 +305,7 @@
 
     if-eqz p1, :cond_5
 
-    const/4 v2, 0x1
+    move v2, v1
 
     :cond_5
     return v2
@@ -332,7 +332,7 @@
 
     if-nez p1, :cond_7
 
-    const/4 v2, 0x1
+    move v2, v1
 
     :cond_7
     return v2

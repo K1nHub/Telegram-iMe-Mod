@@ -48,7 +48,7 @@ public final class DebugKt {
             java.lang.String r3 = "off"
             boolean r3 = r0.equals(r3)
             if (r3 == 0) goto L44
-            r0 = 0
+            r0 = r1
             goto L68
         L31:
             java.lang.String r3 = "on"
@@ -60,7 +60,7 @@ public final class DebugKt {
             boolean r3 = r0.equals(r3)
             if (r3 == 0) goto L44
         L42:
-            r0 = 1
+            r0 = r2
             goto L68
         L44:
             java.lang.StringBuilder r1 = new java.lang.StringBuilder
@@ -83,7 +83,7 @@ public final class DebugKt {
             java.lang.String r0 = "kotlinx.coroutines.stacktrace.recovery"
             boolean r0 = kotlinx.coroutines.internal.SystemPropsKt.systemProp(r0, r2)
             if (r0 == 0) goto L75
-            r1 = 1
+            r1 = r2
         L75:
             kotlinx.coroutines.DebugKt.RECOVER_STACK_TRACES = r1
             java.util.concurrent.atomic.AtomicLong r0 = new java.util.concurrent.atomic.AtomicLong

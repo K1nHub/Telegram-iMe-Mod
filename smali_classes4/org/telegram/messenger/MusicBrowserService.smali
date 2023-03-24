@@ -746,9 +746,9 @@
 
     const-wide/16 v1, 0x0
 
-    cmp-long v3, p1, v1
+    cmp-long p1, p1, v1
 
-    if-nez v3, :cond_0
+    if-nez p1, :cond_0
 
     iget-object p1, p0, Lorg/telegram/messenger/MusicBrowserService;->dialogs:Ljava/util/ArrayList;
 
@@ -1312,7 +1312,7 @@
 
     invoke-virtual {v0, v3, v5}, Lorg/telegram/messenger/MessagesStorage;->getUsersInternal(Ljava/lang/String;Ljava/util/ArrayList;)V
 
-    const/4 v3, 0x0
+    move v3, v12
 
     .line 216
     :goto_2
@@ -1690,7 +1690,7 @@
     .line 333
     invoke-static {p1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
-    const/4 p1, 0x0
+    move p1, v3
 
     .line 335
     :goto_3
@@ -1796,42 +1796,42 @@
 
     div-long/2addr v0, v2
 
-    long-to-int v1, v0
+    long-to-int v0, v0
 
     .line 278
-    sget-object v0, Lorg/telegram/messenger/SharedConfig;->passcodeHash:Ljava/lang/String;
+    sget-object v1, Lorg/telegram/messenger/SharedConfig;->passcodeHash:Ljava/lang/String;
 
     .line 279
-    invoke-virtual {v0}, Ljava/lang/String;->length()I
+    invoke-virtual {v1}, Ljava/lang/String;->length()I
 
-    move-result v0
+    move-result v1
 
-    if-lez v0, :cond_2
+    if-lez v1, :cond_2
 
-    sget-boolean v0, Lorg/telegram/messenger/SharedConfig;->appLocked:Z
+    sget-boolean v1, Lorg/telegram/messenger/SharedConfig;->appLocked:Z
 
-    if-nez v0, :cond_1
+    if-nez v1, :cond_1
 
-    sget v0, Lorg/telegram/messenger/SharedConfig;->autoLockIn:I
+    sget v1, Lorg/telegram/messenger/SharedConfig;->autoLockIn:I
 
-    if-eqz v0, :cond_0
+    if-eqz v1, :cond_0
 
-    sget v0, Lorg/telegram/messenger/SharedConfig;->lastPauseTime:I
+    sget v1, Lorg/telegram/messenger/SharedConfig;->lastPauseTime:I
 
-    if-eqz v0, :cond_0
+    if-eqz v1, :cond_0
 
     sget v2, Lorg/telegram/messenger/SharedConfig;->autoLockIn:I
 
-    add-int/2addr v0, v2
+    add-int/2addr v1, v2
 
-    if-le v0, v1, :cond_1
+    if-le v1, v0, :cond_1
 
     :cond_0
-    add-int/lit8 v1, v1, 0x5
+    add-int/lit8 v0, v0, 0x5
 
-    sget v0, Lorg/telegram/messenger/SharedConfig;->lastPauseTime:I
+    sget v1, Lorg/telegram/messenger/SharedConfig;->lastPauseTime:I
 
-    if-ge v1, v0, :cond_2
+    if-ge v0, v1, :cond_2
 
     :cond_1
     const/4 v0, 0x1
@@ -1866,7 +1866,7 @@
 
     const-wide/16 v3, 0x3e8
 
-    mul-long v1, v1, v3
+    mul-long/2addr v1, v3
 
     goto :goto_0
 
@@ -1938,7 +1938,7 @@
 
     const/4 p1, 0x7
 
-    const/4 v4, 0x7
+    move v4, p1
 
     goto :goto_2
 

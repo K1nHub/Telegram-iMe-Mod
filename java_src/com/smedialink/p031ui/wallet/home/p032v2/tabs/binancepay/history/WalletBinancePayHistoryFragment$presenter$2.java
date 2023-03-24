@@ -26,11 +26,11 @@ public final class WalletBinancePayHistoryFragment$presenter$2 extends Lambda im
     /* compiled from: WalletBinancePayHistoryFragment.kt */
     /* renamed from: com.smedialink.ui.wallet.home.v2.tabs.binancepay.history.WalletBinancePayHistoryFragment$presenter$2$1 */
     /* loaded from: classes3.dex */
-    public static final class C21751 extends Lambda implements Function0<ParametersHolder> {
+    public static final class C21891 extends Lambda implements Function0<ParametersHolder> {
         final /* synthetic */ WalletBinancePayHistoryFragment this$0;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        C21751(WalletBinancePayHistoryFragment walletBinancePayHistoryFragment) {
+        C21891(WalletBinancePayHistoryFragment walletBinancePayHistoryFragment) {
             super(0);
             this.this$0 = walletBinancePayHistoryFragment;
         }
@@ -50,7 +50,7 @@ public final class WalletBinancePayHistoryFragment$presenter$2 extends Lambda im
     public final WalletBinancePayHistoryPresenter invoke() {
         Lazy lazy;
         WalletBinancePayHistoryFragment walletBinancePayHistoryFragment = this.this$0;
-        lazy = LazyKt__LazyJVMKt.lazy(KoinPlatformTools.INSTANCE.defaultLazyMode(), new C2173xbbe1c0a5(walletBinancePayHistoryFragment, null, new C21751(walletBinancePayHistoryFragment)));
+        lazy = LazyKt__LazyJVMKt.lazy(KoinPlatformTools.INSTANCE.defaultLazyMode(), new C2187xbbe1c0a5(walletBinancePayHistoryFragment, null, new C21891(walletBinancePayHistoryFragment)));
         return (WalletBinancePayHistoryPresenter) lazy.getValue();
     }
 }

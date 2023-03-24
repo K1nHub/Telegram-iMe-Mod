@@ -1268,7 +1268,7 @@
 
     const/4 p3, 0x0
 
-    const/4 p4, 0x0
+    move p4, p3
 
     .line 297
     :goto_0
@@ -1347,7 +1347,7 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/RecyclerItemsEnterAnimator;->showItemsAnimated(I)V
 
-    const/4 v0, 0x0
+    move v0, p1
 
     .line 743
     :goto_0
@@ -1511,7 +1511,7 @@
 
     invoke-virtual {p2, v0}, Lorg/telegram/ui/Components/RecyclerItemsEnterAnimator;->showItemsAnimated(I)V
 
-    const/4 p2, 0x0
+    move p2, p1
 
     .line 882
     :goto_0
@@ -1659,7 +1659,7 @@
 
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    move v1, v0
 
     .line 850
     :goto_0

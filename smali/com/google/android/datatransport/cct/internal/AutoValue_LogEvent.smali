@@ -226,7 +226,7 @@
     goto :goto_3
 
     :cond_5
-    const/4 v0, 0x0
+    move v0, v2
 
     :goto_3
     return v0
@@ -310,13 +310,13 @@
 
     xor-long/2addr v0, v3
 
-    long-to-int v1, v0
+    long-to-int v0, v0
 
-    const v0, 0xf4243
+    const v1, 0xf4243
 
-    xor-int/2addr v1, v0
+    xor-int/2addr v0, v1
 
-    mul-int v1, v1, v0
+    mul-int/2addr v0, v1
 
     .line 120
     iget-object v3, p0, Lcom/google/android/datatransport/cct/internal/AutoValue_LogEvent;->eventCode:Ljava/lang/Integer;
@@ -325,7 +325,7 @@
 
     if-nez v3, :cond_0
 
-    const/4 v3, 0x0
+    move v3, v4
 
     goto :goto_0
 
@@ -335,9 +335,9 @@
     move-result v3
 
     :goto_0
-    xor-int/2addr v1, v3
+    xor-int/2addr v0, v3
 
-    mul-int v1, v1, v0
+    mul-int/2addr v0, v1
 
     .line 122
     iget-wide v5, p0, Lcom/google/android/datatransport/cct/internal/AutoValue_LogEvent;->eventUptimeMs:J
@@ -348,9 +348,9 @@
 
     long-to-int v3, v5
 
-    xor-int/2addr v1, v3
+    xor-int/2addr v0, v3
 
-    mul-int v1, v1, v0
+    mul-int/2addr v0, v1
 
     .line 124
     iget-object v3, p0, Lcom/google/android/datatransport/cct/internal/AutoValue_LogEvent;->sourceExtension:[B
@@ -359,16 +359,16 @@
 
     move-result v3
 
-    xor-int/2addr v1, v3
+    xor-int/2addr v0, v3
 
-    mul-int v1, v1, v0
+    mul-int/2addr v0, v1
 
     .line 126
     iget-object v3, p0, Lcom/google/android/datatransport/cct/internal/AutoValue_LogEvent;->sourceExtensionJsonProto3:Ljava/lang/String;
 
     if-nez v3, :cond_1
 
-    const/4 v3, 0x0
+    move v3, v4
 
     goto :goto_1
 
@@ -378,9 +378,9 @@
     move-result v3
 
     :goto_1
-    xor-int/2addr v1, v3
+    xor-int/2addr v0, v3
 
-    mul-int v1, v1, v0
+    mul-int/2addr v0, v1
 
     .line 128
     iget-wide v5, p0, Lcom/google/android/datatransport/cct/internal/AutoValue_LogEvent;->timezoneOffsetSeconds:J
@@ -389,26 +389,26 @@
 
     xor-long/2addr v2, v5
 
-    long-to-int v3, v2
+    long-to-int v2, v2
 
-    xor-int/2addr v1, v3
+    xor-int/2addr v0, v2
 
-    mul-int v1, v1, v0
+    mul-int/2addr v0, v1
 
     .line 130
-    iget-object v0, p0, Lcom/google/android/datatransport/cct/internal/AutoValue_LogEvent;->networkConnectionInfo:Lcom/google/android/datatransport/cct/internal/NetworkConnectionInfo;
+    iget-object v1, p0, Lcom/google/android/datatransport/cct/internal/AutoValue_LogEvent;->networkConnectionInfo:Lcom/google/android/datatransport/cct/internal/NetworkConnectionInfo;
 
-    if-nez v0, :cond_2
+    if-nez v1, :cond_2
 
     goto :goto_2
 
     :cond_2
-    invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I
+    invoke-virtual {v1}, Ljava/lang/Object;->hashCode()I
 
     move-result v4
 
     :goto_2
-    xor-int v0, v1, v4
+    xor-int/2addr v0, v4
 
     return v0
 .end method

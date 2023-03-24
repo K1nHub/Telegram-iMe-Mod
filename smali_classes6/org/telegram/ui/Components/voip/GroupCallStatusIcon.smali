@@ -244,9 +244,9 @@
 
     const/4 v1, 0x0
 
-    const/16 v1, 0x78
+    move v2, v1
 
-    const/4 v2, 0x0
+    move v1, v4
 
     goto :goto_0
 
@@ -255,9 +255,9 @@
 
     if-ge v0, v5, :cond_1
 
-    const/16 v1, 0xf0
+    move v1, v3
 
-    const/16 v2, 0x78
+    move v2, v4
 
     goto :goto_0
 
@@ -266,9 +266,9 @@
 
     if-ge v0, v4, :cond_2
 
-    const/16 v1, 0x1a4
+    move v1, v2
 
-    const/16 v2, 0xf0
+    move v2, v3
 
     goto :goto_0
 
@@ -282,9 +282,9 @@
     :cond_3
     const/16 v0, 0x2d0
 
-    const/16 v1, 0x2d0
+    move v2, v1
 
-    const/16 v2, 0x21c
+    move v1, v0
 
     .line 58
     :goto_0
@@ -407,13 +407,13 @@
 .end method
 
 .method public setAmplitude(D)V
-    .locals 3
+    .locals 2
 
     const-wide/high16 v0, 0x3ff8000000000000L    # 1.5
 
-    cmpl-double v2, p1, v0
+    cmpl-double p1, p1, v0
 
-    if-lez v2, :cond_2
+    if-lez p1, :cond_2
 
     .line 85
     iget-boolean p1, p0, Lorg/telegram/ui/Components/voip/GroupCallStatusIcon;->updateRunnableScheduled:Z
@@ -531,7 +531,7 @@
 .end method
 
 .method public updateIcon(Z)V
-    .locals 17
+    .locals 16
 
     move-object/from16 v0, p0
 
@@ -564,12 +564,12 @@
 
     if-nez v1, :cond_1
 
-    const/4 v1, 0x1
+    move v1, v3
 
     goto :goto_0
 
     :cond_1
-    const/4 v1, 0x0
+    move v1, v4
 
     .line 122
     :goto_0
@@ -585,9 +585,9 @@
 
     const-wide/16 v7, 0x1f4
 
-    cmp-long v9, v5, v7
+    cmp-long v5, v5, v7
 
-    if-gez v9, :cond_2
+    if-gez v5, :cond_2
 
     .line 123
     iget-boolean v5, v2, Lorg/telegram/tgnet/TLRPC$TL_groupCallParticipant;->hasVoiceDelayed:Z
@@ -629,12 +629,12 @@
 
     :cond_3
     :goto_2
-    const/4 v2, 0x1
+    move v2, v3
 
     goto :goto_3
 
     :cond_4
-    const/4 v2, 0x0
+    move v2, v4
 
     goto :goto_3
 
@@ -684,16 +684,16 @@
 
     iget-wide v5, v5, Lorg/telegram/tgnet/TLRPC$TL_groupCallParticipant;->raise_hand_rating:J
 
-    cmp-long v9, v5, v7
+    cmp-long v5, v5, v7
 
-    if-eqz v9, :cond_a
+    if-eqz v5, :cond_a
 
-    const/4 v5, 0x1
+    move v5, v3
 
     goto :goto_4
 
     :cond_a
-    const/4 v5, 0x0
+    move v5, v4
 
     :goto_4
     const/16 v6, 0x88
@@ -717,9 +717,9 @@
 
     sub-long/2addr v12, v14
 
-    cmp-long v16, v14, v7
+    cmp-long v7, v14, v7
 
-    if-eqz v16, :cond_c
+    if-eqz v7, :cond_c
 
     const-wide/16 v7, 0x1388
 
@@ -785,12 +785,12 @@
 
     if-eqz v2, :cond_f
 
-    const/16 v8, 0x63
+    move v8, v10
 
     goto :goto_6
 
     :cond_f
-    const/16 v8, 0x45
+    move v8, v11
 
     :goto_6
     invoke-virtual {v7, v8}, Lorg/telegram/ui/Components/RLottieDrawable;->setCustomEndFrame(I)Z

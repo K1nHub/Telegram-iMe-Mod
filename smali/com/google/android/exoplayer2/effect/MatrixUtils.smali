@@ -151,12 +151,12 @@
 
     if-lt v0, v3, :cond_0
 
-    const/4 v0, 0x1
+    move v0, v2
 
     goto :goto_0
 
     :cond_0
-    const/4 v0, 0x0
+    move v0, v1
 
     :goto_0
     const-string v3, "A polygon must have at least 3 vertices."
@@ -178,7 +178,7 @@
 
     array-length v3, v0
 
-    const/4 v4, 0x0
+    move v4, v1
 
     :goto_1
     if-ge v4, v3, :cond_5
@@ -195,7 +195,7 @@
 
     invoke-direct {v6}, Lcom/google/common/collect/ImmutableList$Builder;-><init>()V
 
-    const/4 v7, 0x0
+    move v7, v1
 
     .line 113
     :goto_2
@@ -327,12 +327,12 @@
 
     if-ne v0, v1, :cond_0
 
-    const/4 v0, 0x1
+    move v0, v2
 
     goto :goto_0
 
     :cond_0
-    const/4 v0, 0x0
+    move v0, v3
 
     :goto_0
     const-string v4, "Expecting 4 plane parameters"
@@ -348,7 +348,7 @@
 
     aget v4, p1, v3
 
-    mul-float v0, v0, v4
+    mul-float/2addr v0, v4
 
     aget v4, p0, v2
 
@@ -358,7 +358,7 @@
 
     aget v5, p1, v2
 
-    mul-float v4, v4, v5
+    mul-float/2addr v4, v5
 
     add-float/2addr v0, v4
 
@@ -372,7 +372,7 @@
 
     aget v5, p1, v4
 
-    mul-float p0, p0, v5
+    mul-float/2addr p0, v5
 
     add-float/2addr v0, p0
 
@@ -384,7 +384,7 @@
 
     aget v5, p1, v3
 
-    mul-float p0, p0, v5
+    mul-float/2addr p0, v5
 
     aget v5, p3, v2
 
@@ -394,7 +394,7 @@
 
     aget v6, p1, v2
 
-    mul-float v5, v5, v6
+    mul-float/2addr v5, v6
 
     add-float/2addr p0, v5
 
@@ -406,7 +406,7 @@
 
     aget p1, p1, v4
 
-    mul-float v5, v5, p1
+    mul-float/2addr v5, p1
 
     add-float/2addr p0, v5
 
@@ -421,7 +421,7 @@
 
     sub-float/2addr p1, v5
 
-    mul-float p1, p1, v0
+    mul-float/2addr p1, v0
 
     add-float/2addr p0, p1
 
@@ -434,7 +434,7 @@
 
     sub-float/2addr v5, v6
 
-    mul-float v5, v5, v0
+    mul-float/2addr v5, v0
 
     add-float/2addr p1, v5
 
@@ -447,7 +447,7 @@
 
     sub-float/2addr p3, p2
 
-    mul-float p3, p3, v0
+    mul-float/2addr p3, v0
 
     add-float/2addr v5, p3
 
@@ -489,12 +489,12 @@
 
     if-lez p0, :cond_0
 
-    const/4 v2, 0x1
+    move v2, v0
 
     goto :goto_0
 
     :cond_0
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_0
     const-string v3, "inputWidth must be positive"
@@ -507,7 +507,7 @@
     goto :goto_1
 
     :cond_1
-    const/4 v0, 0x0
+    move v0, v1
 
     :goto_1
     const-string v2, "inputHeight must be positive"
@@ -613,14 +613,14 @@
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_0
     const/4 v3, 0x3
 
     if-ge v2, v3, :cond_3
 
-    const/4 v4, 0x0
+    move v4, v1
 
     :goto_1
     if-ge v4, v3, :cond_2
@@ -629,7 +629,7 @@
 
     if-ne v2, v5, :cond_0
 
-    const/4 v6, 0x3
+    move v6, v3
 
     goto :goto_2
 
@@ -639,7 +639,7 @@
     :goto_2
     if-ne v4, v5, :cond_1
 
-    const/4 v5, 0x3
+    move v5, v3
 
     goto :goto_3
 
@@ -687,12 +687,12 @@
 
     if-ne v0, v3, :cond_0
 
-    const/4 v0, 0x1
+    move v0, v1
 
     goto :goto_0
 
     :cond_0
-    const/4 v0, 0x0
+    move v0, v2
 
     :goto_0
     const-string v3, "Expecting 4 plane parameters"
@@ -704,13 +704,13 @@
 
     aget v3, p0, v2
 
-    mul-float v0, v0, v3
+    mul-float/2addr v0, v3
 
     aget v3, p1, v1
 
     aget v4, p0, v1
 
-    mul-float v3, v3, v4
+    mul-float/2addr v3, v4
 
     add-float/2addr v0, v3
 
@@ -720,7 +720,7 @@
 
     aget p0, p0, v3
 
-    mul-float v4, v4, p0
+    mul-float/2addr v4, p0
 
     add-float/2addr v0, v4
 
@@ -735,7 +735,7 @@
     goto :goto_1
 
     :cond_1
-    const/4 v1, 0x0
+    move v1, v2
 
     :goto_1
     return v1
@@ -760,7 +760,7 @@
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     .line 201
     :goto_0

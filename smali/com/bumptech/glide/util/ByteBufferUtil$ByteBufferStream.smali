@@ -254,9 +254,9 @@
 
     add-long/2addr v1, p1
 
-    long-to-int v2, v1
+    long-to-int v1, v1
 
-    invoke-virtual {v0, v2}, Ljava/nio/ByteBuffer;->position(I)Ljava/nio/Buffer;
+    invoke-virtual {v0, v1}, Ljava/nio/ByteBuffer;->position(I)Ljava/nio/Buffer;
 
     return-wide p1
 .end method

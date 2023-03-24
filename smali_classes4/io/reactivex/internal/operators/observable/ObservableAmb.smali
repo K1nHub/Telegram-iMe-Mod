@@ -103,7 +103,7 @@
 
     move-result-object v2
 
-    const/4 v3, 0x0
+    move v3, v1
 
     :goto_0
     invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z

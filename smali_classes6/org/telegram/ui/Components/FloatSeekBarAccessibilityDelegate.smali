@@ -99,7 +99,7 @@
 
     const/high16 p2, -0x40800000    # -1.0f
 
-    mul-float p1, p1, p2
+    mul-float/2addr p1, p2
 
     .line 50
     :cond_0

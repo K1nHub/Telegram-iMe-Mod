@@ -115,7 +115,9 @@ public final class DexWalletSwapDataSourceImpl implements WalletSwapDataSource {
         RawTransaction createTransactionByType = createTransactionByType(dex);
         long chainId = dex.getChainId();
         Wallet.EVM eVMWallet = this.cryptoAccessManager.getEVMWallet();
-        Observable<Result<String>> just = Observable.just(Result.Companion.success(Numeric.toHexString(TransactionEncoder.signMessage(createTransactionByType, chainId, eVMWallet != null ? eVMWallet.getCredentials() : null))));
+        String hexString = Numeric.toHexString(TransactionEncoder.signMessage(createTransactionByType, chainId, eVMWallet != null ? eVMWallet.getCredentials() : null));
+        Intrinsics.checkNotNullExpressionValue(hexString, "toHexString(signedTransaction)");
+        Observable<Result<String>> just = Observable.just(Result.Companion.success(hexString));
         Intrinsics.checkNotNullExpressionValue(just, "just(this)");
         return just;
     }

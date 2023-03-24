@@ -146,7 +146,7 @@
 
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    move v1, v0
 
     .line 1172
     :goto_0
@@ -238,7 +238,7 @@
 
     move-result v1
 
-    const/4 v2, 0x0
+    move v2, v0
 
     :goto_2
     if-ge v2, v1, :cond_8
@@ -497,12 +497,12 @@
 
     if-eqz v2, :cond_3
 
-    const/4 v6, 0x1
+    move v6, v5
 
     goto :goto_0
 
     :cond_3
-    const/4 v6, 0x0
+    move v6, v3
 
     :goto_0
     add-int/2addr v6, v5
@@ -529,7 +529,7 @@
 
     invoke-direct {v2}, Ljava/util/ArrayList;-><init>()V
 
-    const/4 v8, 0x0
+    move v8, v3
 
     .line 1530
     :goto_1
@@ -614,9 +614,9 @@
     const/4 v13, 0x0
 
     :cond_6
-    const/4 v14, 0x0
+    move v14, v3
 
-    const/4 v15, 0x0
+    move v15, v14
 
     :goto_3
     if-ge v14, v6, :cond_d
@@ -798,23 +798,23 @@
 
     add-int/lit8 v14, v14, 0x1
 
-    const/4 v3, 0x0
+    move v5, v4
 
-    const/4 v5, 0x1
+    const/4 v3, 0x0
 
     goto/16 :goto_3
 
     :cond_d
-    const/4 v3, 0x0
+    move v4, v5
 
-    const/4 v4, 0x1
+    const/4 v3, 0x0
 
     :goto_8
     add-int/lit8 v8, v8, 0x1
 
-    const/4 v3, 0x0
+    move v5, v4
 
-    const/4 v5, 0x1
+    const/4 v3, 0x0
 
     goto/16 :goto_1
 
@@ -893,17 +893,15 @@
     :cond_1
     const/4 v1, 0x0
 
-    const/16 v17, 0x0
-
     goto :goto_1
 
     :cond_2
     :goto_0
     const/4 v1, 0x1
 
-    const/16 v17, 0x1
-
     :goto_1
+    move/from16 v17, v1
+
     const/16 v18, 0x1
 
     const/16 v19, 0x0
@@ -1052,7 +1050,7 @@
 
 # virtual methods
 .method public getItemCount()I
-    .locals 9
+    .locals 10
 
     const/4 v0, -0x1
 
@@ -1135,20 +1133,20 @@
 
     move-result-wide v4
 
-    const/4 v2, 0x3
-
     const-wide/16 v6, 0x0
 
-    cmp-long v8, v4, v6
+    cmp-long v2, v4, v6
 
-    if-eqz v8, :cond_2
+    const/4 v4, 0x3
+
+    if-eqz v2, :cond_2
 
     .line 1286
-    iget-object v4, p0, Lorg/telegram/ui/GroupCreateActivity$GroupCreateAdapter;->this$0:Lorg/telegram/ui/GroupCreateActivity;
+    iget-object v2, p0, Lorg/telegram/ui/GroupCreateActivity$GroupCreateAdapter;->this$0:Lorg/telegram/ui/GroupCreateActivity;
 
-    invoke-virtual {v4}, Lorg/telegram/ui/ActionBar/BaseFragment;->getMessagesController()Lorg/telegram/messenger/MessagesController;
+    invoke-virtual {v2}, Lorg/telegram/ui/ActionBar/BaseFragment;->getMessagesController()Lorg/telegram/messenger/MessagesController;
 
-    move-result-object v4
+    move-result-object v2
 
     iget-object v5, p0, Lorg/telegram/ui/GroupCreateActivity$GroupCreateAdapter;->this$0:Lorg/telegram/ui/GroupCreateActivity;
 
@@ -1160,12 +1158,12 @@
 
     move-result-object v5
 
-    invoke-virtual {v4, v5}, Lorg/telegram/messenger/MessagesController;->getChat(Ljava/lang/Long;)Lorg/telegram/tgnet/TLRPC$Chat;
+    invoke-virtual {v2, v5}, Lorg/telegram/messenger/MessagesController;->getChat(Ljava/lang/Long;)Lorg/telegram/tgnet/TLRPC$Chat;
 
-    move-result-object v4
+    move-result-object v2
 
     .line 1287
-    invoke-static {v4, v2}, Lorg/telegram/messenger/ChatObject;->canUserDoAdminAction(Lorg/telegram/tgnet/TLRPC$Chat;I)Z
+    invoke-static {v2, v4}, Lorg/telegram/messenger/ChatObject;->canUserDoAdminAction(Lorg/telegram/tgnet/TLRPC$Chat;I)Z
 
     move-result v2
 
@@ -1175,22 +1173,22 @@
 
     .line 1288
     :cond_2
-    iget-object v4, p0, Lorg/telegram/ui/GroupCreateActivity$GroupCreateAdapter;->this$0:Lorg/telegram/ui/GroupCreateActivity;
+    iget-object v2, p0, Lorg/telegram/ui/GroupCreateActivity$GroupCreateAdapter;->this$0:Lorg/telegram/ui/GroupCreateActivity;
 
-    invoke-static {v4}, Lorg/telegram/ui/GroupCreateActivity;->access$3600(Lorg/telegram/ui/GroupCreateActivity;)J
+    invoke-static {v2}, Lorg/telegram/ui/GroupCreateActivity;->access$3600(Lorg/telegram/ui/GroupCreateActivity;)J
 
-    move-result-wide v4
+    move-result-wide v8
 
-    cmp-long v8, v4, v6
+    cmp-long v2, v8, v6
 
-    if-eqz v8, :cond_4
+    if-eqz v2, :cond_4
 
     .line 1289
-    iget-object v4, p0, Lorg/telegram/ui/GroupCreateActivity$GroupCreateAdapter;->this$0:Lorg/telegram/ui/GroupCreateActivity;
+    iget-object v2, p0, Lorg/telegram/ui/GroupCreateActivity$GroupCreateAdapter;->this$0:Lorg/telegram/ui/GroupCreateActivity;
 
-    invoke-virtual {v4}, Lorg/telegram/ui/ActionBar/BaseFragment;->getMessagesController()Lorg/telegram/messenger/MessagesController;
+    invoke-virtual {v2}, Lorg/telegram/ui/ActionBar/BaseFragment;->getMessagesController()Lorg/telegram/messenger/MessagesController;
 
-    move-result-object v4
+    move-result-object v2
 
     iget-object v5, p0, Lorg/telegram/ui/GroupCreateActivity$GroupCreateAdapter;->this$0:Lorg/telegram/ui/GroupCreateActivity;
 
@@ -1202,18 +1200,18 @@
 
     move-result-object v5
 
-    invoke-virtual {v4, v5}, Lorg/telegram/messenger/MessagesController;->getChat(Ljava/lang/Long;)Lorg/telegram/tgnet/TLRPC$Chat;
+    invoke-virtual {v2, v5}, Lorg/telegram/messenger/MessagesController;->getChat(Ljava/lang/Long;)Lorg/telegram/tgnet/TLRPC$Chat;
 
-    move-result-object v4
+    move-result-object v2
 
     .line 1290
-    invoke-static {v4, v2}, Lorg/telegram/messenger/ChatObject;->canUserDoAdminAction(Lorg/telegram/tgnet/TLRPC$Chat;I)Z
+    invoke-static {v2, v4}, Lorg/telegram/messenger/ChatObject;->canUserDoAdminAction(Lorg/telegram/tgnet/TLRPC$Chat;I)Z
 
-    move-result v2
+    move-result v4
 
-    if-eqz v2, :cond_3
+    if-eqz v4, :cond_3
 
-    invoke-static {v4}, Lorg/telegram/messenger/ChatObject;->isPublic(Lorg/telegram/tgnet/TLRPC$Chat;)Z
+    invoke-static {v2}, Lorg/telegram/messenger/ChatObject;->isPublic(Lorg/telegram/tgnet/TLRPC$Chat;)Z
 
     move-result v2
 
@@ -1224,7 +1222,7 @@
     goto :goto_0
 
     :cond_3
-    const/4 v2, 0x0
+    move v2, v3
 
     :goto_0
     iput v2, p0, Lorg/telegram/ui/GroupCreateActivity$GroupCreateAdapter;->inviteViaLink:I
@@ -1495,7 +1493,7 @@
 
     int-to-float p1, p1
 
-    mul-float p1, p1, p2
+    mul-float/2addr p1, p2
 
     float-to-int p1, p1
 
@@ -2061,12 +2059,12 @@
 
     if-ltz p2, :cond_11
 
-    const/4 p2, 0x1
+    move p2, v2
 
     goto :goto_6
 
     :cond_11
-    const/4 p2, 0x0
+    move p2, v1
 
     :goto_6
     invoke-virtual {p1, p2, v1}, Lorg/telegram/ui/Cells/GroupCreateUserCell;->setChecked(ZZ)V
@@ -2323,17 +2321,15 @@
     :cond_2
     const/4 v1, 0x0
 
-    const/16 v17, 0x0
-
     goto :goto_1
 
     :cond_3
     :goto_0
     const/4 v1, 0x1
 
-    const/16 v17, 0x1
-
     :goto_1
+    move/from16 v17, v1
+
     const/16 v18, 0x0
 
     const/16 v19, 0x0

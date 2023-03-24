@@ -169,7 +169,7 @@
 
     sub-float/2addr v1, v2
 
-    mul-float v0, v0, v1
+    mul-float/2addr v0, v1
 
     float-to-int v0, v0
 
@@ -606,7 +606,7 @@
     goto :goto_2
 
     :cond_7
-    const/4 v0, 0x0
+    move v0, v3
 
     .line 2783
     :goto_2
@@ -1002,7 +1002,7 @@
     goto :goto_7
 
     :cond_13
-    const/4 v1, 0x0
+    move v1, v3
 
     :catchall_0
     :goto_7
@@ -1165,11 +1165,11 @@
 
     move-result v1
 
-    mul-float v1, v1, v2
+    mul-float/2addr v1, v2
 
     const v3, 0x3e4ccccd    # 0.2f
 
-    mul-float v1, v1, v3
+    mul-float/2addr v1, v3
 
     float-to-int v1, v1
 
@@ -1222,11 +1222,11 @@
 
     move-result v1
 
-    mul-float v1, v1, v2
+    mul-float/2addr v1, v2
 
     const v2, 0x3efef9db    # 0.498f
 
-    mul-float v1, v1, v2
+    mul-float/2addr v1, v2
 
     float-to-int v1, v1
 
@@ -1332,7 +1332,7 @@
 
     sub-float/2addr v1, v2
 
-    mul-float v0, v0, v1
+    mul-float/2addr v0, v1
 
     const/4 v2, 0x0
 
@@ -1423,7 +1423,7 @@
     goto :goto_0
 
     :cond_0
-    const/4 v2, 0x0
+    move v2, v4
 
     :goto_0
     if-ge v4, v1, :cond_13
@@ -2119,7 +2119,7 @@
     goto :goto_2
 
     :cond_4
-    const/4 v13, 0x0
+    move v13, v10
 
     .line 2516
     :goto_2
@@ -2260,7 +2260,7 @@
     goto :goto_4
 
     :cond_7
-    const/4 v14, 0x0
+    move v14, v10
 
     .line 2537
     :goto_4
@@ -2316,7 +2316,7 @@
 
     move-result v15
 
-    const/4 v5, 0x0
+    move v5, v10
 
     :goto_5
     if-ge v5, v15, :cond_1b
@@ -2381,7 +2381,7 @@
     goto :goto_6
 
     :cond_a
-    const/4 v3, 0x0
+    move v3, v10
 
     :goto_6
     add-int/2addr v0, v3
@@ -2707,7 +2707,7 @@
     goto :goto_9
 
     :cond_18
-    const/4 v3, 0x0
+    move v3, v10
 
     :goto_9
     invoke-static {}, Lorg/telegram/ui/ActionBar/ActionBar;->getCurrentActionBarHeight()I

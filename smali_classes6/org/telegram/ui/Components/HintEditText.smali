@@ -83,7 +83,7 @@
 
     const/4 v1, 0x0
 
-    const/4 v9, 0x0
+    move v9, v1
 
     .line 62
     :goto_0

@@ -8,7 +8,7 @@ import android.widget.TextView;
 import androidx.appcompat.widget.AppCompatImageView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
-import org.telegram.messenger.C3286R;
+import org.telegram.messenger.C3301R;
 /* loaded from: classes4.dex */
 public final class ForkWalletBackupPdfTemplateBinding implements ViewBinding {
     public final AppCompatImageView imageQr;
@@ -35,7 +35,7 @@ public final class ForkWalletBackupPdfTemplateBinding implements ViewBinding {
     }
 
     public static ForkWalletBackupPdfTemplateBinding inflate(LayoutInflater layoutInflater, ViewGroup viewGroup, boolean z) {
-        View inflate = layoutInflater.inflate(C3286R.layout.fork_wallet_backup_pdf_template, viewGroup, false);
+        View inflate = layoutInflater.inflate(C3301R.layout.fork_wallet_backup_pdf_template, viewGroup, false);
         if (z) {
             viewGroup.addView(inflate);
         }
@@ -43,16 +43,16 @@ public final class ForkWalletBackupPdfTemplateBinding implements ViewBinding {
     }
 
     public static ForkWalletBackupPdfTemplateBinding bind(View view) {
-        int i = C3286R.C3289id.image_qr;
+        int i = C3301R.C3304id.image_qr;
         AppCompatImageView appCompatImageView = (AppCompatImageView) ViewBindings.findChildViewById(view, i);
         if (appCompatImageView != null) {
-            i = C3286R.C3289id.text_column_left;
+            i = C3301R.C3304id.text_column_left;
             TextView textView = (TextView) ViewBindings.findChildViewById(view, i);
             if (textView != null) {
-                i = C3286R.C3289id.text_column_right;
+                i = C3301R.C3304id.text_column_right;
                 TextView textView2 = (TextView) ViewBindings.findChildViewById(view, i);
                 if (textView2 != null) {
-                    i = C3286R.C3289id.text_wallet_address;
+                    i = C3301R.C3304id.text_wallet_address;
                     TextView textView3 = (TextView) ViewBindings.findChildViewById(view, i);
                     if (textView3 != null) {
                         return new ForkWalletBackupPdfTemplateBinding((LinearLayout) view, appCompatImageView, textView, textView2, textView3);

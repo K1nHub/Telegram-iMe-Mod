@@ -373,7 +373,7 @@
 .end method
 
 .method public static readUInt64(Ljava/nio/ByteBuffer;)J
-    .locals 5
+    .locals 4
 
     .line 103
     invoke-static {p0}, Lcom/coremedia/iso/IsoTypeReader;->readUInt32(Ljava/nio/ByteBuffer;)J
@@ -388,9 +388,9 @@
 
     add-long/2addr v0, v2
 
-    cmp-long v4, v0, v2
+    cmp-long v2, v0, v2
 
-    if-ltz v4, :cond_0
+    if-ltz v2, :cond_0
 
     .line 107
     invoke-static {p0}, Lcom/coremedia/iso/IsoTypeReader;->readUInt32(Ljava/nio/ByteBuffer;)J

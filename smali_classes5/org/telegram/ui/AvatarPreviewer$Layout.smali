@@ -441,7 +441,7 @@
 
     const/4 v2, 0x0
 
-    const/4 v3, 0x0
+    move v3, v2
 
     .line 457
     :goto_0
@@ -799,7 +799,7 @@
     goto :goto_1
 
     :cond_2
-    const/4 v4, 0x0
+    move v4, v3
 
     :goto_1
     add-int/2addr v2, v4
@@ -1089,7 +1089,7 @@
 
     const/high16 v2, 0x43340000    # 180.0f
 
-    mul-float v2, v2, v0
+    mul-float/2addr v2, v0
 
     float-to-int v2, v2
 
@@ -1144,7 +1144,7 @@
     goto :goto_1
 
     :cond_5
-    const/4 v6, 0x0
+    move v6, v3
 
     :goto_1
     if-lt v1, v2, :cond_6
@@ -1159,7 +1159,7 @@
     goto :goto_2
 
     :cond_6
-    const/4 v1, 0x0
+    move v1, v3
 
     .line 560
     :goto_2
@@ -1173,7 +1173,7 @@
 
     move-result v7
 
-    mul-int v2, v2, v7
+    mul-int/2addr v2, v7
 
     const/16 v7, 0x10
 
@@ -1237,7 +1237,7 @@
 
     int-to-float v2, v2
 
-    mul-float v1, v1, v2
+    mul-float/2addr v1, v2
 
     invoke-virtual {p1, v4, v1}, Landroid/graphics/Canvas;->translate(FF)V
 
@@ -1253,7 +1253,7 @@
 
     int-to-float v6, v6
 
-    mul-float v2, v2, v6
+    mul-float/2addr v2, v6
 
     add-float/2addr v1, v2
 
@@ -1314,9 +1314,9 @@
 
     move-result v1
 
-    const/4 v2, 0x1
-
     cmpg-float v1, v1, v5
+
+    const/4 v2, 0x1
 
     if-gez v1, :cond_8
 
@@ -1497,7 +1497,7 @@
 
     sub-float/2addr v5, v1
 
-    mul-float v5, v5, v2
+    mul-float/2addr v5, v2
 
     float-to-int v1, v5
 
@@ -1509,7 +1509,7 @@
     :cond_e
     iget-object v1, p0, Lorg/telegram/ui/AvatarPreviewer$Layout;->arrowDrawable:Landroid/graphics/drawable/Drawable;
 
-    mul-float v0, v0, v2
+    mul-float/2addr v0, v2
 
     float-to-int v0, v0
 
@@ -1745,7 +1745,7 @@
 
     if-eqz v1, :cond_0
 
-    const/4 v1, 0x1
+    move v1, v2
 
     goto :goto_0
 

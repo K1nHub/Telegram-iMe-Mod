@@ -20,10 +20,10 @@ public final class BundledExtractorsAdapter implements ProgressiveMediaExtractor
     /* JADX WARN: Code restructure failed: missing block: B:18:0x003f, code lost:
         if (r6.getPosition() != r11) goto L28;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:31:0x0062, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:31:0x0061, code lost:
         if (r6.getPosition() != r11) goto L28;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:33:0x0065, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:33:0x0064, code lost:
         r1 = false;
      */
     @Override // com.google.android.exoplayer2.source.ProgressiveMediaExtractor
@@ -53,64 +53,64 @@ public final class BundledExtractorsAdapter implements ProgressiveMediaExtractor
             if (r10 != r14) goto L20
             r8 = r8[r13]
             r7.extractor = r8
-            goto L75
+            goto L74
         L20:
             int r10 = r8.length
-            r0 = 0
+            r0 = r13
         L22:
-            if (r0 >= r10) goto L71
+            if (r0 >= r10) goto L70
             r1 = r8[r0]
             boolean r2 = r1.sniff(r6)     // Catch: java.lang.Throwable -> L42 java.io.EOFException -> L57
             if (r2 == 0) goto L35
             r7.extractor = r1     // Catch: java.lang.Throwable -> L42 java.io.EOFException -> L57
             com.google.android.exoplayer2.util.Assertions.checkState(r14)
             r6.resetPeekPosition()
-            goto L71
+            goto L70
         L35:
             com.google.android.exoplayer2.extractor.Extractor r1 = r7.extractor
-            if (r1 != 0) goto L67
+            if (r1 != 0) goto L66
             long r1 = r6.getPosition()
-            int r3 = (r1 > r11 ? 1 : (r1 == r11 ? 0 : -1))
-            if (r3 != 0) goto L65
-            goto L67
+            int r1 = (r1 > r11 ? 1 : (r1 == r11 ? 0 : -1))
+            if (r1 != 0) goto L64
+            goto L66
         L42:
             r8 = move-exception
             com.google.android.exoplayer2.extractor.Extractor r9 = r7.extractor
             if (r9 != 0) goto L4f
             long r9 = r6.getPosition()
-            int r15 = (r9 > r11 ? 1 : (r9 == r11 ? 0 : -1))
-            if (r15 != 0) goto L50
+            int r9 = (r9 > r11 ? 1 : (r9 == r11 ? 0 : -1))
+            if (r9 != 0) goto L50
         L4f:
-            r13 = 1
+            r13 = r14
         L50:
             com.google.android.exoplayer2.util.Assertions.checkState(r13)
             r6.resetPeekPosition()
             throw r8
         L57:
             com.google.android.exoplayer2.extractor.Extractor r1 = r7.extractor
-            if (r1 != 0) goto L67
+            if (r1 != 0) goto L66
             long r1 = r6.getPosition()
-            int r3 = (r1 > r11 ? 1 : (r1 == r11 ? 0 : -1))
-            if (r3 != 0) goto L65
+            int r1 = (r1 > r11 ? 1 : (r1 == r11 ? 0 : -1))
+            if (r1 != 0) goto L64
+            goto L66
+        L64:
+            r1 = r13
             goto L67
-        L65:
-            r1 = 0
-            goto L68
+        L66:
+            r1 = r14
         L67:
-            r1 = 1
-        L68:
             com.google.android.exoplayer2.util.Assertions.checkState(r1)
             r6.resetPeekPosition()
             int r0 = r0 + 1
             goto L22
-        L71:
+        L70:
             com.google.android.exoplayer2.extractor.Extractor r10 = r7.extractor
-            if (r10 == 0) goto L7b
-        L75:
+            if (r10 == 0) goto L7a
+        L74:
             com.google.android.exoplayer2.extractor.Extractor r8 = r7.extractor
             r8.init(r15)
             return
-        L7b:
+        L7a:
             com.google.android.exoplayer2.source.UnrecognizedInputFormatException r10 = new com.google.android.exoplayer2.source.UnrecognizedInputFormatException
             java.lang.StringBuilder r11 = new java.lang.StringBuilder
             r11.<init>()

@@ -173,7 +173,7 @@
     goto :goto_0
 
     :cond_1
-    const/4 v4, 0x0
+    move v4, v2
 
     .line 215
     :goto_0

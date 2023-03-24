@@ -135,13 +135,13 @@ public final class DefaultHlsExtractorFactory implements HlsExtractorFactory {
     }
 
     private static boolean isFmp4Variant(Format format) {
+        Metadata.Entry entry;
         Metadata metadata = format.metadata;
         if (metadata == null) {
             return false;
         }
         for (int i = 0; i < metadata.length(); i++) {
-            Metadata.Entry entry = metadata.get(i);
-            if (entry instanceof HlsTrackMetadataEntry) {
+            if (metadata.get(i) instanceof HlsTrackMetadataEntry) {
                 return !((HlsTrackMetadataEntry) entry).variantInfos.isEmpty();
             }
         }

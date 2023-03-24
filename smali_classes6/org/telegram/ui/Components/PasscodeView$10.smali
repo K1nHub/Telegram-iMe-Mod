@@ -81,7 +81,7 @@
 .end method
 
 .method private synthetic lambda$onGlobalLayout$1(DLandroid/animation/ValueAnimator;)V
-    .locals 4
+    .locals 3
 
     .line 1666
     invoke-virtual {p3}, Landroid/animation/ValueAnimator;->getAnimatedFraction()F
@@ -90,7 +90,7 @@
 
     float-to-double v0, p3
 
-    mul-double p1, p1, v0
+    mul-double/2addr p1, v0
 
     const/4 p3, 0x0
 
@@ -128,9 +128,9 @@
 
     float-to-double v1, v1
 
-    cmpl-double v3, v1, p1
+    cmpl-double v1, v1, p1
 
-    if-lez v3, :cond_0
+    if-lez v1, :cond_0
 
     goto :goto_1
 
@@ -245,7 +245,7 @@
     goto :goto_0
 
     :cond_0
-    const/4 v12, 0x0
+    move v12, v11
 
     :goto_0
     add-int/2addr v7, v12
@@ -259,7 +259,7 @@
 
     sub-int v4, v8, v4
 
-    mul-int v5, v5, v4
+    mul-int/2addr v5, v4
 
     iget v4, v0, Lorg/telegram/ui/Components/PasscodeView$10;->val$y:I
 
@@ -267,7 +267,7 @@
 
     sub-int v4, v7, v4
 
-    mul-int v9, v9, v4
+    mul-int/2addr v9, v4
 
     add-int/2addr v5, v9
 
@@ -280,7 +280,7 @@
     .line 1607
     iget v9, v0, Lorg/telegram/ui/Components/PasscodeView$10;->val$x:I
 
-    mul-int v9, v9, v9
+    mul-int/2addr v9, v9
 
     iget v10, v0, Lorg/telegram/ui/Components/PasscodeView$10;->val$y:I
 
@@ -288,7 +288,7 @@
 
     sub-int/2addr v7, v10
 
-    mul-int v15, v15, v7
+    mul-int/2addr v15, v7
 
     add-int/2addr v9, v15
 
@@ -301,11 +301,11 @@
     .line 1608
     iget v7, v0, Lorg/telegram/ui/Components/PasscodeView$10;->val$x:I
 
-    mul-int v7, v7, v7
+    mul-int/2addr v7, v7
 
     iget v15, v0, Lorg/telegram/ui/Components/PasscodeView$10;->val$y:I
 
-    mul-int v15, v15, v15
+    mul-int/2addr v15, v15
 
     add-int/2addr v7, v15
 
@@ -326,7 +326,7 @@
 
     iget v7, v0, Lorg/telegram/ui/Components/PasscodeView$10;->val$y:I
 
-    mul-int v7, v7, v7
+    mul-int/2addr v7, v7
 
     add-int v7, v17, v7
 
@@ -371,7 +371,7 @@
 
     const/4 v9, -0x1
 
-    const/4 v10, -0x1
+    move v10, v9
 
     :goto_1
     if-ge v10, v7, :cond_9
@@ -411,7 +411,7 @@
 
     move/from16 v21, v7
 
-    const/4 v3, -0x1
+    move v3, v9
 
     goto/16 :goto_8
 
@@ -496,7 +496,7 @@
 
     sub-int/2addr v3, v14
 
-    mul-int v15, v15, v3
+    mul-int/2addr v15, v3
 
     add-int v3, v20, v15
 
@@ -618,7 +618,7 @@
     goto :goto_4
 
     :cond_4
-    const v20, 0x3f19999a    # 0.6f
+    move/from16 v20, v22
 
     :goto_4
     aput v20, v15, v11
@@ -632,7 +632,7 @@
     goto :goto_5
 
     :cond_5
-    const v16, 0x3f851eb8    # 1.04f
+    move/from16 v16, v23
 
     :goto_5
     const/16 v20, 0x1
@@ -752,13 +752,13 @@
     :goto_8
     add-int/lit8 v10, v10, 0x1
 
+    move v9, v3
+
     move/from16 v7, v21
 
     const/high16 v2, 0x3f800000    # 1.0f
 
     const/4 v3, 0x0
-
-    const/4 v9, -0x1
 
     const/4 v11, 0x0
 

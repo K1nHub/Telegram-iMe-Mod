@@ -190,7 +190,7 @@
 
     const/4 p1, 0x0
 
-    const/4 p3, 0x0
+    move p3, p1
 
     :goto_0
     if-ge p3, p2, :cond_0
@@ -1407,7 +1407,7 @@
 
     invoke-interface {v0, v1}, Ljava/util/Map;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
-    const/4 v0, 0x0
+    move v0, v4
 
     :goto_0
     if-ge v0, v3, :cond_3
@@ -1473,7 +1473,7 @@
 
     move-result v0
 
-    const/4 v1, 0x0
+    move v1, v4
 
     :goto_2
     if-ge v1, v0, :cond_5

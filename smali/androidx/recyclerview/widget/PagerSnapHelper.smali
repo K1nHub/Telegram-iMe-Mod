@@ -277,7 +277,7 @@
     goto :goto_0
 
     :cond_0
-    const/4 v0, 0x0
+    move v0, v1
 
     :goto_0
     return v0
@@ -288,7 +288,7 @@
     goto :goto_1
 
     :cond_2
-    const/4 v0, 0x0
+    move v0, v1
 
     :goto_1
     return v0
@@ -339,7 +339,7 @@
     if-gez p1, :cond_1
 
     :cond_0
-    const/4 v2, 0x1
+    move v2, v1
 
     :cond_1
     return v2
@@ -617,7 +617,7 @@
 
     if-ne p1, p2, :cond_a
 
-    const/4 p1, -0x1
+    move p1, v1
 
     goto :goto_2
 

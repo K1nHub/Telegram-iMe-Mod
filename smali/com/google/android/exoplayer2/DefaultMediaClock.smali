@@ -104,7 +104,7 @@
 .end method
 
 .method private syncClocks(Z)V
-    .locals 5
+    .locals 4
 
     .line 155
     invoke-direct {p0, p1}, Lcom/google/android/exoplayer2/DefaultMediaClock;->shouldUseStandaloneClock(Z)Z
@@ -158,9 +158,9 @@
 
     move-result-wide v2
 
-    cmp-long v4, v0, v2
+    cmp-long v2, v0, v2
 
-    if-gez v4, :cond_2
+    if-gez v2, :cond_2
 
     .line 169
     iget-object p1, p0, Lcom/google/android/exoplayer2/DefaultMediaClock;->standaloneClock:Lcom/google/android/exoplayer2/util/StandaloneMediaClock;

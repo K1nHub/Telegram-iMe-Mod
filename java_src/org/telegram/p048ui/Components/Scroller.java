@@ -184,16 +184,16 @@ public class Scroller {
         this.mDurationReciprocal = 1.0f / this.mDuration;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:15:0x009d  */
-    /* JADX WARN: Removed duplicated region for block: B:16:0x00a0  */
-    /* JADX WARN: Removed duplicated region for block: B:19:0x00a5  */
+    /* JADX WARN: Removed duplicated region for block: B:15:0x0099  */
+    /* JADX WARN: Removed duplicated region for block: B:16:0x009b  */
+    /* JADX WARN: Removed duplicated region for block: B:19:0x00a0  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct add '--show-bad-code' argument
     */
     public void fling(int r17, int r18, int r19, int r20, int r21, int r22, int r23, int r24) {
         /*
-            Method dump skipped, instructions count: 252
+            Method dump skipped, instructions count: 243
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: org.telegram.p048ui.Components.Scroller.fling(int, int, int, int, int, int, int, int):void");

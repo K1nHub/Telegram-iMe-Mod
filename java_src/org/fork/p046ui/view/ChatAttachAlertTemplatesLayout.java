@@ -27,12 +27,12 @@ import kotlin.jvm.internal.Intrinsics;
 import org.fork.controller.TemplatesController;
 import org.fork.enums.TemplatesSortingType;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3286R;
+import org.telegram.messenger.C3301R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.p048ui.ActionBar.ActionBarMenuItem;
-import org.telegram.p048ui.ActionBar.C3351ActionBar;
+import org.telegram.p048ui.ActionBar.C3366ActionBar;
 import org.telegram.p048ui.ActionBar.Theme;
 import org.telegram.p048ui.ActionBar.ThemeDescription;
 import org.telegram.p048ui.Cells.HeaderCell;
@@ -143,7 +143,7 @@ public final class ChatAttachAlertTemplatesLayout extends ChatAttachAlert.Attach
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:24:0x004d, code lost:
-        if (((r1 == null || r1.getAdapterPosition() != 1) ? false : false) != false) goto L21;
+        if (r2 != false) goto L21;
      */
     /* JADX WARN: Removed duplicated region for block: B:19:0x0043  */
     @Override // org.telegram.p048ui.Components.ChatAttachAlert.AttachAlertLayout
@@ -178,16 +178,16 @@ public final class ChatAttachAlertTemplatesLayout extends ChatAttachAlert.Attach
             if (r1 == 0) goto L3b
             int r4 = r1.getAdapterPosition()
             if (r4 != r2) goto L3b
-            r4 = 1
+            r4 = r2
             goto L3c
         L3b:
-            r4 = 0
+            r4 = r3
         L3c:
             if (r4 == 0) goto L40
             r4 = r0
             goto L41
         L40:
-            r4 = 0
+            r4 = r3
         L41:
             if (r0 < 0) goto L50
             if (r1 == 0) goto L4c
@@ -195,7 +195,7 @@ public final class ChatAttachAlertTemplatesLayout extends ChatAttachAlert.Attach
             if (r1 != r2) goto L4c
             goto L4d
         L4c:
-            r2 = 0
+            r2 = r3
         L4d:
             if (r2 == 0) goto L50
             goto L51
@@ -268,7 +268,7 @@ public final class ChatAttachAlertTemplatesLayout extends ChatAttachAlert.Attach
             int r5 = org.telegram.messenger.AndroidUtilities.m50dp(r5)
             int r4 = r4 - r5
             if (r4 >= 0) goto L40
-            r4 = 0
+            r4 = r2
         L40:
             org.telegram.ui.Components.ChatAttachAlert r5 = r3.parentAlert
             r5.setAllowNestedScroll(r1)
@@ -317,9 +317,9 @@ public final class ChatAttachAlertTemplatesLayout extends ChatAttachAlert.Attach
     @Override // org.telegram.p048ui.Components.ChatAttachAlert.AttachAlertLayout
     public void onShow(ChatAttachAlert.AttachAlertLayout attachAlertLayout) {
         ChatAttachAlert chatAttachAlert = this.parentAlert;
-        C3351ActionBar c3351ActionBar = chatAttachAlert.actionBar;
-        c3351ActionBar.setTitle(LocaleController.getInternalString(C3286R.string.chat_templates));
-        c3351ActionBar.createMenu().setPadding(0, 0, chatAttachAlert.doneItem.getMeasuredWidth() + AndroidUtilities.m50dp(24), 0);
+        C3366ActionBar c3366ActionBar = chatAttachAlert.actionBar;
+        c3366ActionBar.setTitle(LocaleController.getInternalString(C3301R.string.chat_templates));
+        c3366ActionBar.createMenu().setPadding(0, 0, chatAttachAlert.doneItem.getMeasuredWidth() + AndroidUtilities.m50dp(24), 0);
         ActionBarMenuItem doneItem = chatAttachAlert.doneItem;
         Intrinsics.checkNotNullExpressionValue(doneItem, "doneItem");
         ViewExtKt.visible(doneItem);
@@ -381,11 +381,11 @@ public final class ChatAttachAlertTemplatesLayout extends ChatAttachAlert.Attach
         linearLayout.setGravity(17);
         ImageView imageView = new ImageView(linearLayout.getContext());
         imageView.setColorFilter(new PorterDuffColorFilter(getThemedColor("dialogEmptyImage"), PorterDuff.Mode.MULTIPLY));
-        imageView.setImageResource(C3286R.C3288drawable.stickers_empty);
+        imageView.setImageResource(C3301R.C3303drawable.stickers_empty);
         linearLayout.addView(imageView, LayoutHelper.createLinear(-2, -2));
         TextView textView = new TextView(linearLayout.getContext());
         ViewExtKt.withMediumTypeface(textView);
-        textView.setText(LocaleController.getInternalString(C3286R.string.chat_templates_list_header));
+        textView.setText(LocaleController.getInternalString(C3301R.string.chat_templates_list_header));
         textView.setGravity(17);
         textView.setTextColor(getThemedColor("dialogEmptyText"));
         textView.setTextSize(1, 17.0f);
@@ -507,7 +507,7 @@ public final class ChatAttachAlertTemplatesLayout extends ChatAttachAlert.Attach
                     chatAttachAlert = ((ChatAttachAlert.AttachAlertLayout) ChatAttachAlertTemplatesLayout.this).parentAlert;
                     int backgroundPaddingTop = chatAttachAlert.getBackgroundPaddingTop();
                     chatAttachAlert2 = ((ChatAttachAlert.AttachAlertLayout) ChatAttachAlertTemplatesLayout.this).parentAlert;
-                    if (((chatAttachAlert2.scrollOffsetY[0] - backgroundPaddingTop) - m50dp) + backgroundPaddingTop >= C3351ActionBar.getCurrentActionBarHeight() || (holder = (RecyclerListView.Holder) findViewHolderForAdapterPosition(1)) == null || holder.itemView.getTop() <= AndroidUtilities.m50dp(53)) {
+                    if (((chatAttachAlert2.scrollOffsetY[0] - backgroundPaddingTop) - m50dp) + backgroundPaddingTop >= C3366ActionBar.getCurrentActionBarHeight() || (holder = (RecyclerListView.Holder) findViewHolderForAdapterPosition(1)) == null || holder.itemView.getTop() <= AndroidUtilities.m50dp(53)) {
                         return;
                     }
                     smoothScrollBy(0, holder.itemView.getTop() - AndroidUtilities.m50dp(53));
@@ -653,7 +653,7 @@ public final class ChatAttachAlertTemplatesLayout extends ChatAttachAlert.Attach
             Intrinsics.checkNotNullParameter(holder, "holder");
             View view = holder.itemView;
             if (view instanceof HeaderCell) {
-                ((HeaderCell) view).setText(LocaleController.getInternalString(ChatAttachAlertTemplatesLayout.this.templates.isEmpty() ? C3286R.string.chat_templates_list_header : C3286R.string.chat_templates));
+                ((HeaderCell) view).setText(LocaleController.getInternalString(ChatAttachAlertTemplatesLayout.this.templates.isEmpty() ? C3301R.string.chat_templates_list_header : C3301R.string.chat_templates));
             } else if (view instanceof TemplateCell) {
                 ((TemplateCell) view).bind((TemplateModel) ChatAttachAlertTemplatesLayout.this.templates.get(i - ChatAttachAlertTemplatesLayout.this.templatesStartRow), ChatAttachAlertTemplatesLayout.this.getDelegate());
             }

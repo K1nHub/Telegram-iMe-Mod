@@ -25,11 +25,11 @@ final class BuyCryptoProductFragment$presenter$2 extends Lambda implements Funct
     /* compiled from: BuyCryptoProductFragment.kt */
     /* renamed from: com.smedialink.ui.wallet.crypto.buy.BuyCryptoProductFragment$presenter$2$1 */
     /* loaded from: classes3.dex */
-    public static final class C20241 extends Lambda implements Function0<ParametersHolder> {
+    public static final class C20381 extends Lambda implements Function0<ParametersHolder> {
         final /* synthetic */ BuyCryptoProductFragment this$0;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        C20241(BuyCryptoProductFragment buyCryptoProductFragment) {
+        C20381(BuyCryptoProductFragment buyCryptoProductFragment) {
             super(0);
             this.this$0 = buyCryptoProductFragment;
         }
@@ -47,7 +47,7 @@ final class BuyCryptoProductFragment$presenter$2 extends Lambda implements Funct
     public final BuyCryptoProductPresenter invoke() {
         Lazy lazy;
         BuyCryptoProductFragment buyCryptoProductFragment = this.this$0;
-        lazy = LazyKt__LazyJVMKt.lazy(KoinPlatformTools.INSTANCE.defaultLazyMode(), new C2023xc111d906(buyCryptoProductFragment, null, new C20241(buyCryptoProductFragment)));
+        lazy = LazyKt__LazyJVMKt.lazy(KoinPlatformTools.INSTANCE.defaultLazyMode(), new C2037xc111d906(buyCryptoProductFragment, null, new C20381(buyCryptoProductFragment)));
         return (BuyCryptoProductPresenter) lazy.getValue();
     }
 }

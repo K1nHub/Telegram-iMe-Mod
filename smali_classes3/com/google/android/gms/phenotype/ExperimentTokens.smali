@@ -364,7 +364,7 @@
 
     const/4 v1, 0x1
 
-    const/4 v2, 0x0
+    move v2, v0
 
     :goto_1
     if-ge v2, p1, :cond_2
@@ -394,7 +394,7 @@
 
     add-int/lit8 v2, v2, 0x1
 
-    const/4 v1, 0x0
+    move v1, v0
 
     goto :goto_1
 
@@ -699,7 +699,7 @@
 
     const/4 v6, 0x1
 
-    const/4 v7, 0x0
+    move v7, v3
 
     :goto_2
     if-ge v7, v1, :cond_4
@@ -715,7 +715,7 @@
 
     add-int/lit8 v7, v7, 0x1
 
-    const/4 v6, 0x0
+    move v6, v3
 
     goto :goto_2
 

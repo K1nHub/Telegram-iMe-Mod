@@ -29,13 +29,13 @@
 
     const-wide/16 v2, 0x0
 
+    move v5, v1
+
+    move v6, v5
+
+    move v9, v6
+
     move-wide v7, v2
-
-    const/4 v5, 0x0
-
-    const/4 v6, 0x0
-
-    const/4 v9, 0x0
 
     .line 2
     :goto_0

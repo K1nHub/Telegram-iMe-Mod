@@ -27,6 +27,7 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.material.R$styleable;
 import com.google.android.material.animation.MotionSpec;
 import com.google.android.material.canvas.CanvasCompat;
+import com.google.android.material.color.MaterialColors;
 import com.google.android.material.drawable.DrawableUtils;
 import com.google.android.material.internal.TextDrawableHelper;
 import com.google.android.material.internal.ThemeEnforcement;
@@ -619,25 +620,90 @@ public class ChipDrawable extends MaterialShapeDrawable implements Drawable.Call
         return onStateChange(iArr, getCloseIconState());
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:71:0x00e3  */
-    /* JADX WARN: Removed duplicated region for block: B:72:0x00ea  */
-    /* JADX WARN: Removed duplicated region for block: B:75:0x00ef  */
-    /* JADX WARN: Removed duplicated region for block: B:76:0x00fc  */
-    /* JADX WARN: Removed duplicated region for block: B:79:0x0105  */
-    /* JADX WARN: Removed duplicated region for block: B:82:0x0114  */
-    /* JADX WARN: Removed duplicated region for block: B:85:0x0123  */
-    /* JADX WARN: Removed duplicated region for block: B:92:0x014d  */
-    /* JADX WARN: Removed duplicated region for block: B:94:0x0152  */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-        To view partially-correct add '--show-bad-code' argument
-    */
-    private boolean onStateChange(int[] r7, int[] r8) {
-        /*
-            Method dump skipped, instructions count: 342
-            To view this dump add '--comments-level debug' option
-        */
-        throw new UnsupportedOperationException("Method not decompiled: com.google.android.material.chip.ChipDrawable.onStateChange(int[], int[]):boolean");
+    private boolean onStateChange(int[] iArr, int[] iArr2) {
+        boolean z;
+        boolean onStateChange = super.onStateChange(iArr);
+        ColorStateList colorStateList = this.chipSurfaceColor;
+        int compositeElevationOverlayIfNeeded = compositeElevationOverlayIfNeeded(colorStateList != null ? colorStateList.getColorForState(iArr, this.currentChipSurfaceColor) : 0);
+        boolean z2 = true;
+        if (this.currentChipSurfaceColor != compositeElevationOverlayIfNeeded) {
+            this.currentChipSurfaceColor = compositeElevationOverlayIfNeeded;
+            onStateChange = true;
+        }
+        ColorStateList colorStateList2 = this.chipBackgroundColor;
+        int compositeElevationOverlayIfNeeded2 = compositeElevationOverlayIfNeeded(colorStateList2 != null ? colorStateList2.getColorForState(iArr, this.currentChipBackgroundColor) : 0);
+        if (this.currentChipBackgroundColor != compositeElevationOverlayIfNeeded2) {
+            this.currentChipBackgroundColor = compositeElevationOverlayIfNeeded2;
+            onStateChange = true;
+        }
+        int layer = MaterialColors.layer(compositeElevationOverlayIfNeeded, compositeElevationOverlayIfNeeded2);
+        if ((this.currentCompositeSurfaceBackgroundColor != layer) | (getFillColor() == null)) {
+            this.currentCompositeSurfaceBackgroundColor = layer;
+            setFillColor(ColorStateList.valueOf(layer));
+            onStateChange = true;
+        }
+        ColorStateList colorStateList3 = this.chipStrokeColor;
+        int colorForState = colorStateList3 != null ? colorStateList3.getColorForState(iArr, this.currentChipStrokeColor) : 0;
+        if (this.currentChipStrokeColor != colorForState) {
+            this.currentChipStrokeColor = colorForState;
+            onStateChange = true;
+        }
+        int colorForState2 = (this.compatRippleColor == null || !RippleUtils.shouldDrawRippleCompat(iArr)) ? 0 : this.compatRippleColor.getColorForState(iArr, this.currentCompatRippleColor);
+        if (this.currentCompatRippleColor != colorForState2) {
+            this.currentCompatRippleColor = colorForState2;
+            if (this.useCompatRipple) {
+                onStateChange = true;
+            }
+        }
+        int colorForState3 = (this.textDrawableHelper.getTextAppearance() == null || this.textDrawableHelper.getTextAppearance().textColor == null) ? 0 : this.textDrawableHelper.getTextAppearance().textColor.getColorForState(iArr, this.currentTextColor);
+        if (this.currentTextColor != colorForState3) {
+            this.currentTextColor = colorForState3;
+            onStateChange = true;
+        }
+        boolean z3 = hasState(getState(), 16842912) && this.checkable;
+        if (this.currentChecked == z3 || this.checkedIcon == null) {
+            z = false;
+        } else {
+            float calculateChipIconWidth = calculateChipIconWidth();
+            this.currentChecked = z3;
+            if (calculateChipIconWidth != calculateChipIconWidth()) {
+                onStateChange = true;
+                z = true;
+            } else {
+                z = false;
+                onStateChange = true;
+            }
+        }
+        ColorStateList colorStateList4 = this.tint;
+        int colorForState4 = colorStateList4 != null ? colorStateList4.getColorForState(iArr, this.currentTint) : 0;
+        if (this.currentTint != colorForState4) {
+            this.currentTint = colorForState4;
+            this.tintFilter = DrawableUtils.updateTintFilter(this, this.tint, this.tintMode);
+        } else {
+            z2 = onStateChange;
+        }
+        if (isStateful(this.chipIcon)) {
+            z2 |= this.chipIcon.setState(iArr);
+        }
+        if (isStateful(this.checkedIcon)) {
+            z2 |= this.checkedIcon.setState(iArr);
+        }
+        if (isStateful(this.closeIcon)) {
+            int[] iArr3 = new int[iArr.length + iArr2.length];
+            System.arraycopy(iArr, 0, iArr3, 0, iArr.length);
+            System.arraycopy(iArr2, 0, iArr3, iArr.length, iArr2.length);
+            z2 |= this.closeIcon.setState(iArr3);
+        }
+        if (RippleUtils.USE_FRAMEWORK_RIPPLE && isStateful(this.closeIconRipple)) {
+            z2 |= this.closeIconRipple.setState(iArr2);
+        }
+        if (z2) {
+            invalidateSelf();
+        }
+        if (z) {
+            onSizeChange();
+        }
+        return z2;
     }
 
     private static boolean isStateful(ColorStateList colorStateList) {

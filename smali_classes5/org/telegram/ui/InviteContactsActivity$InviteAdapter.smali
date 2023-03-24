@@ -243,7 +243,7 @@
 
     if-ne v0, v3, :cond_0
 
-    const/4 v4, 0x0
+    move v4, v2
 
     goto :goto_0
 
@@ -262,7 +262,7 @@
 
     if-ne v0, v3, :cond_1
 
-    const/4 v2, 0x1
+    move v2, v3
 
     :cond_1
     invoke-virtual {v1, v2}, Lorg/telegram/ui/Components/GroupCreateDividerItemDecoration;->setSingle(Z)V

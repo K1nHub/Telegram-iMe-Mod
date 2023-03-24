@@ -433,7 +433,7 @@
 
     const v2, 0x3f4ccccd    # 0.8f
 
-    mul-float p1, p1, v2
+    mul-float/2addr p1, v2
 
     float-to-int p1, p1
 
@@ -446,7 +446,7 @@
 
     int-to-float v2, v2
 
-    mul-float p1, p1, v2
+    mul-float/2addr p1, v2
 
     float-to-int p1, p1
 

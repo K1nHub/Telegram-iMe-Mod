@@ -114,12 +114,12 @@
 
     if-lt v1, v2, :cond_1
 
-    const/4 v1, 0x1
+    move v1, v3
 
     goto :goto_0
 
     :cond_1
-    const/4 v1, 0x0
+    move v1, v4
 
     .line 1340
     :goto_0
@@ -227,39 +227,39 @@
 
     int-to-float v7, v7
 
-    const/4 v8, 0x6
+    cmpg-float v8, v2, v7
 
-    const/high16 v9, 0x3f800000    # 1.0f
+    const/4 v9, 0x6
 
-    cmpg-float v10, v2, v7
+    const/high16 v10, 0x3f800000    # 1.0f
 
-    if-gez v10, :cond_2
+    if-gez v8, :cond_2
 
     .line 1345
-    iget-object v10, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$2;->this$1:Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView;
+    iget-object v8, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView$2;->this$1:Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView;
 
-    iget-object v10, v10, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView;->this$0:Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview;
+    iget-object v8, v8, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview$PreviewGroupsView;->this$0:Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview;
 
-    invoke-virtual {v10}, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview;->getListTopPadding()I
+    invoke-virtual {v8}, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview;->getListTopPadding()I
 
-    move-result v10
+    move-result v8
 
-    if-le v0, v10, :cond_2
+    if-le v0, v8, :cond_2
 
     div-float/2addr v2, v7
 
-    sub-float/2addr v9, v2
+    sub-float/2addr v10, v2
 
-    neg-float v0, v9
+    neg-float v0, v10
 
     .line 1346
-    invoke-static {v8}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    invoke-static {v9}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v2
 
     int-to-float v2, v2
 
-    mul-float v0, v0, v2
+    mul-float/2addr v0, v2
 
     goto :goto_1
 
@@ -270,21 +270,21 @@
 
     div-float/2addr v6, v7
 
-    sub-float/2addr v9, v6
+    sub-float/2addr v10, v6
 
     .line 1348
-    invoke-static {v8}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    invoke-static {v9}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v0
 
     int-to-float v0, v0
 
-    mul-float v0, v0, v9
+    mul-float/2addr v0, v10
 
     goto :goto_1
 
     :cond_3
-    const/4 v0, 0x0
+    move v0, v5
 
     :goto_1
     float-to-int v2, v0

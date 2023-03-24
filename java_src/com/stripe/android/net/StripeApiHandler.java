@@ -154,7 +154,7 @@ public class StripeApiHandler {
         return httpURLConnection;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:47:0x0093  */
+    /* JADX WARN: Removed duplicated region for block: B:47:0x0092  */
     /* JADX WARN: Removed duplicated region for block: B:54:0x0026 A[EXC_TOP_SPLITTER, SYNTHETIC] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -182,7 +182,7 @@ public class StripeApiHandler {
             java.lang.String r5 = r5.trim()
             boolean r5 = r5.isEmpty()
             r6 = 0
-            if (r5 != 0) goto L93
+            if (r5 != 0) goto L92
             com.stripe.android.net.StripeResponse r7 = getStripeResponse(r7, r8, r9, r10)     // Catch: java.lang.Throwable -> L71 org.json.JSONException -> L82
             int r8 = r7.getResponseCode()     // Catch: java.lang.Throwable -> L71 org.json.JSONException -> L82
             java.lang.String r9 = r7.getResponseBody()     // Catch: java.lang.Throwable -> L71 org.json.JSONException -> L82
@@ -234,15 +234,15 @@ public class StripeApiHandler {
             throw r7
         L82:
             boolean r7 = r3.booleanValue()
-            if (r7 == 0) goto L92
-            if (r4 != 0) goto L8f
+            if (r7 == 0) goto L91
+            if (r4 != 0) goto L8e
             java.security.Security.setProperty(r1, r0)
-            goto L92
-        L8f:
+            goto L91
+        L8e:
             java.security.Security.setProperty(r1, r4)
-        L92:
+        L91:
             return r2
-        L93:
+        L92:
             com.stripe.android.exception.AuthenticationException r7 = new com.stripe.android.exception.AuthenticationException
             java.lang.Integer r8 = java.lang.Integer.valueOf(r6)
             java.lang.String r9 = "No API key provided. (HINT: set your API key using 'Stripe.apiKey = <API-KEY>'. You can generate API keys from the Stripe web interface. See https://stripe.com/api for details or email support@stripe.com if you have questions."
@@ -374,13 +374,13 @@ public class StripeApiHandler {
             java.lang.String r4 = "POST"
             boolean r4 = r6.equals(r4)     // Catch: java.lang.Throwable -> L6e java.io.IOException -> L70
             if (r4 == 0) goto L26
-            r0 = 1
+            r0 = r2
             goto L26
         L1d:
             java.lang.String r4 = "GET"
             boolean r4 = r6.equals(r4)     // Catch: java.lang.Throwable -> L6e java.io.IOException -> L70
             if (r4 == 0) goto L26
-            r0 = 0
+            r0 = r1
         L26:
             if (r0 == 0) goto L3f
             if (r0 != r2) goto L2f

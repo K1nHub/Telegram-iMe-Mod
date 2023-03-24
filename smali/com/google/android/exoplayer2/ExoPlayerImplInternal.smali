@@ -733,7 +733,7 @@
 
     move-result-wide v13
 
-    mul-long v13, v13, v10
+    mul-long/2addr v13, v10
 
     .line 991
     iget-object v9, v3, Lcom/google/android/exoplayer2/MediaPeriodHolder;->mediaPeriod:Lcom/google/android/exoplayer2/source/MediaPeriod;
@@ -750,11 +750,11 @@
 
     invoke-interface {v9, v7, v8, v10}, Lcom/google/android/exoplayer2/source/MediaPeriod;->discardBuffer(JZ)V
 
-    const/4 v7, 0x0
+    move v8, v5
 
-    const/4 v8, 0x1
+    move v9, v8
 
-    const/4 v9, 0x1
+    move v7, v12
 
     .line 993
     :goto_0
@@ -796,7 +796,7 @@
     goto :goto_1
 
     :cond_3
-    const/4 v8, 0x0
+    move v8, v12
 
     .line 1008
     :goto_1
@@ -815,7 +815,7 @@
     goto :goto_2
 
     :cond_4
-    const/4 v4, 0x0
+    move v4, v12
 
     :goto_2
     if-nez v4, :cond_5
@@ -832,7 +832,7 @@
     goto :goto_3
 
     :cond_5
-    const/4 v5, 0x0
+    move v5, v12
 
     :goto_3
     if-nez v4, :cond_7
@@ -855,7 +855,7 @@
     goto :goto_4
 
     :cond_6
-    const/4 v4, 0x0
+    move v4, v12
 
     goto :goto_5
 
@@ -873,7 +873,7 @@
     goto :goto_6
 
     :cond_8
-    const/4 v9, 0x0
+    move v9, v12
 
     :goto_6
     if-nez v4, :cond_9
@@ -924,9 +924,9 @@
 
     iget-wide v7, v7, Lcom/google/android/exoplayer2/PlaybackInfo;->positionUs:J
 
-    cmp-long v10, v4, v7
+    cmp-long v4, v4, v7
 
-    if-gtz v10, :cond_d
+    if-gtz v4, :cond_d
 
     :cond_c
     const/4 v4, 0x1
@@ -934,7 +934,7 @@
     goto :goto_8
 
     :cond_d
-    const/4 v4, 0x0
+    move v4, v12
 
     :goto_8
     if-eqz v4, :cond_e
@@ -1078,7 +1078,7 @@
 
     if-ne v4, v7, :cond_17
 
-    const/4 v4, 0x0
+    move v4, v12
 
     .line 1058
     :goto_a
@@ -1136,9 +1136,9 @@
 
     const-wide/32 v7, 0x7a120
 
-    cmp-long v9, v3, v7
+    cmp-long v3, v3, v7
 
-    if-gez v9, :cond_17
+    if-gez v3, :cond_17
 
     .line 1066
     invoke-direct/range {p0 .. p0}, Lcom/google/android/exoplayer2/ExoPlayerImplInternal;->isLoadingPossible()Z
@@ -1152,7 +1152,7 @@
     goto :goto_b
 
     :cond_17
-    const/4 v3, 0x0
+    move v3, v12
 
     :goto_b
     if-nez v3, :cond_18
@@ -1166,9 +1166,9 @@
     :cond_18
     iget-wide v3, v0, Lcom/google/android/exoplayer2/ExoPlayerImplInternal;->playbackMaybeBecameStuckAtMs:J
 
-    cmp-long v7, v3, v13
+    cmp-long v3, v3, v13
 
-    if-nez v7, :cond_19
+    if-nez v3, :cond_19
 
     .line 1080
     iget-object v3, v0, Lcom/google/android/exoplayer2/ExoPlayerImplInternal;->clock:Lcom/google/android/exoplayer2/util/Clock;
@@ -1195,9 +1195,9 @@
 
     const-wide/16 v7, 0xfa0
 
-    cmp-long v9, v3, v7
+    cmp-long v3, v3, v7
 
-    if-gez v9, :cond_21
+    if-gez v3, :cond_21
 
     .line 1085
     :goto_c
@@ -1218,7 +1218,7 @@
     goto :goto_d
 
     :cond_1a
-    const/4 v3, 0x0
+    move v3, v12
 
     .line 1086
     :goto_d
@@ -1237,7 +1237,7 @@
     goto :goto_e
 
     :cond_1b
-    const/4 v15, 0x0
+    move v15, v12
 
     .line 1087
     :goto_e
@@ -1367,12 +1367,12 @@
 
     if-ne v2, v3, :cond_1
 
-    const/4 v9, 0x1
+    move v9, v5
 
     goto :goto_0
 
     :cond_1
-    const/4 v9, 0x0
+    move v9, v4
 
     .line 2464
     :goto_0
@@ -1410,24 +1410,24 @@
 
     if-ne v3, v8, :cond_2
 
-    const/4 v14, 0x1
+    move v14, v5
 
     goto :goto_1
 
     :cond_2
-    const/4 v14, 0x0
+    move v14, v4
 
     :goto_1
     if-nez p2, :cond_3
 
     if-eqz v14, :cond_3
 
-    const/4 v8, 0x1
+    move v8, v5
 
     goto :goto_2
 
     :cond_3
-    const/4 v8, 0x0
+    move v8, v4
 
     .line 2474
     :goto_2
@@ -1539,7 +1539,7 @@
 
     const/4 v2, 0x0
 
-    const/4 v3, 0x0
+    move v3, v2
 
     .line 2442
     :goto_0
@@ -1662,9 +1662,9 @@
 
     const/4 v2, 0x0
 
-    const/4 v3, 0x0
+    move v3, v2
 
-    const/4 v4, 0x0
+    move v4, v3
 
     :goto_0
     if-ge v3, v1, :cond_2
@@ -1761,7 +1761,7 @@
     goto :goto_0
 
     :cond_0
-    const/4 v1, 0x0
+    move v1, v0
 
     .line 2981
     :goto_0
@@ -2391,20 +2391,20 @@
 
     iget-wide v1, v1, Lcom/google/android/exoplayer2/PlaybackInfo;->positionUs:J
 
-    cmp-long v3, v13, v1
+    cmp-long v1, v13, v1
 
-    if-eqz v3, :cond_0
+    if-eqz v1, :cond_0
 
     goto :goto_0
 
     :cond_0
-    const/16 v16, 0x0
+    move/from16 v16, v5
 
     goto :goto_1
 
     :cond_1
     :goto_0
-    const/16 v16, 0x1
+    move/from16 v16, v15
 
     :goto_1
     const/16 v17, 0x3
@@ -2440,15 +2440,18 @@
 
     .line 1846
     iget-object v1, v11, Lcom/google/android/exoplayer2/ExoPlayerImplInternal;->queue:Lcom/google/android/exoplayer2/MediaPeriodQueue;
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_2
 
+    :try_start_1
     iget-wide v3, v11, Lcom/google/android/exoplayer2/ExoPlayerImplInternal;->rendererPositionUs:J
 
     .line 1847
     invoke-direct/range {p0 .. p0}, Lcom/google/android/exoplayer2/ExoPlayerImplInternal;->getMaxRendererReadPositionUs()J
 
     move-result-wide v21
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_1
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     move-object/from16 v2, p1
 
@@ -2456,12 +2459,12 @@
 
     const/16 v20, 0x4
 
-    const/4 v15, 0x0
+    move v15, v5
 
     move-wide/from16 v5, v21
 
     .line 1846
-    :try_start_1
+    :try_start_2
     invoke-virtual/range {v1 .. v6}, Lcom/google/android/exoplayer2/MediaPeriodQueue;->updateQueuedPeriods(Lcom/google/android/exoplayer2/Timeline;JJ)Z
 
     move-result v0
@@ -2473,10 +2476,19 @@
 
     goto :goto_3
 
-    :cond_4
-    const/4 v15, 0x0
+    :catchall_0
+    move-exception v0
+
+    move v15, v5
 
     const/16 v20, 0x4
+
+    goto/16 :goto_6
+
+    :cond_4
+    move/from16 v20, v4
+
+    move v15, v5
 
     .line 1850
     invoke-virtual/range {p1 .. p1}, Lcom/google/android/exoplayer2/Timeline;->isEmpty()Z
@@ -2533,8 +2545,8 @@
     invoke-direct {v11, v8, v13, v14, v0}, Lcom/google/android/exoplayer2/ExoPlayerImplInternal;->seekToPeriodPosition(Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;JZ)J
 
     move-result-wide v0
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_1
 
     move-wide v13, v0
 
@@ -2576,9 +2588,9 @@
 
     iget-wide v0, v0, Lcom/google/android/exoplayer2/PlaybackInfo;->requestedContentPositionUs:J
 
-    cmp-long v2, v9, v0
+    cmp-long v0, v9, v0
 
-    if-eqz v2, :cond_c
+    if-eqz v0, :cond_c
 
     .line 1874
     :cond_9
@@ -2618,7 +2630,7 @@
     goto :goto_5
 
     :cond_a
-    const/16 v23, 0x0
+    move/from16 v23, v15
 
     .line 1881
     :goto_5
@@ -2635,7 +2647,7 @@
 
     if-ne v0, v1, :cond_b
 
-    const/16 v17, 0x4
+    move/from16 v17, v20
 
     :cond_b
     move-object/from16 v1, p0
@@ -2697,19 +2709,19 @@
 
     return-void
 
-    :catchall_0
+    :catchall_1
     move-exception v0
 
     const/4 v6, 0x0
 
     goto :goto_6
 
-    :catchall_1
+    :catchall_2
     move-exception v0
 
-    const/4 v15, 0x0
+    move/from16 v20, v4
 
-    const/16 v20, 0x4
+    move v15, v5
 
     .line 1864
     :goto_6
@@ -2747,9 +2759,9 @@
 
     iget-wide v1, v1, Lcom/google/android/exoplayer2/PlaybackInfo;->requestedContentPositionUs:J
 
-    cmp-long v3, v9, v1
+    cmp-long v1, v9, v1
 
-    if-eqz v3, :cond_12
+    if-eqz v1, :cond_12
 
     .line 1874
     :cond_f
@@ -2806,7 +2818,7 @@
 
     if-ne v1, v2, :cond_11
 
-    const/16 v17, 0x4
+    move/from16 v17, v20
 
     :cond_11
     move-object/from16 v1, p0
@@ -3178,9 +3190,9 @@
 
     iget-wide v9, v8, Lcom/google/android/exoplayer2/MediaPeriodInfo;->requestedContentPositionUs:J
 
-    cmp-long v11, v9, v5
+    cmp-long v9, v9, v5
 
-    if-eqz v11, :cond_4
+    if-eqz v9, :cond_4
 
     .line 2393
     invoke-virtual {v8, v5, v6}, Lcom/google/android/exoplayer2/MediaPeriodInfo;->copyWithRequestedContentPositionUs(J)Lcom/google/android/exoplayer2/MediaPeriodInfo;
@@ -3272,7 +3284,7 @@
 .end method
 
 .method private hasReachedServerSideInsertedAdsTransition(Lcom/google/android/exoplayer2/Renderer;Lcom/google/android/exoplayer2/MediaPeriodHolder;)Z
-    .locals 3
+    .locals 2
 
     .line 2208
     invoke-virtual {p2}, Lcom/google/android/exoplayer2/MediaPeriodHolder;->getNext()Lcom/google/android/exoplayer2/MediaPeriodHolder;
@@ -3307,9 +3319,9 @@
 
     move-result-wide v0
 
-    cmp-long v2, p1, v0
+    cmp-long p1, p1, v0
 
-    if-ltz v2, :cond_1
+    if-ltz p1, :cond_1
 
     :cond_0
     const/4 p1, 0x1
@@ -3343,7 +3355,7 @@
     return v2
 
     :cond_0
-    const/4 v1, 0x0
+    move v1, v2
 
     .line 2192
     :goto_0
@@ -3470,7 +3482,7 @@
 
     if-eq p0, p1, :cond_1
 
-    const/4 v0, 0x1
+    move v0, p2
 
     :cond_1
     return v0
@@ -3491,7 +3503,7 @@
 
     if-eqz p0, :cond_3
 
-    const/4 v0, 0x1
+    move v0, p2
 
     :cond_3
     :goto_0
@@ -3864,9 +3876,9 @@
 
     iget-wide v3, v3, Lcom/google/android/exoplayer2/ExoPlayerImplInternal$PendingMessageInfo;->resolvedPeriodTimeUs:J
 
-    cmp-long v5, v3, p1
+    cmp-long v3, v3, p1
 
-    if-lez v5, :cond_4
+    if-lez v3, :cond_4
 
     :cond_3
     add-int/lit8 v1, v1, -0x1
@@ -3926,9 +3938,9 @@
 
     iget-wide v4, v3, Lcom/google/android/exoplayer2/ExoPlayerImplInternal$PendingMessageInfo;->resolvedPeriodTimeUs:J
 
-    cmp-long v6, v4, p1
+    cmp-long v4, v4, p1
 
-    if-gtz v6, :cond_7
+    if-gtz v4, :cond_7
 
     :cond_6
     add-int/lit8 v1, v1, 0x1
@@ -3972,9 +3984,9 @@
 
     if-lez v6, :cond_d
 
-    cmp-long v6, v4, p3
+    cmp-long v4, v4, p3
 
-    if-gtz v6, :cond_d
+    if-gtz v4, :cond_d
 
     .line 1636
     :try_start_0
@@ -4207,7 +4219,7 @@
 
     const/4 v1, 0x1
 
-    const/4 v2, 0x0
+    move v2, v0
 
     .line 2138
     :goto_0
@@ -4280,12 +4292,12 @@
 
     if-eq v3, v4, :cond_1
 
-    const/4 v3, 0x1
+    move v3, v1
 
     goto :goto_1
 
     :cond_1
-    const/4 v3, 0x0
+    move v3, v0
 
     .line 2150
     :goto_1
@@ -4318,7 +4330,7 @@
     .line 2159
     invoke-direct {p0}, Lcom/google/android/exoplayer2/ExoPlayerImplInternal;->updatePlaybackPositions()V
 
-    const/4 v2, 0x1
+    move v2, v1
 
     goto :goto_0
 
@@ -4461,7 +4473,7 @@
     return-void
 
     :cond_4
-    const/4 v0, 0x0
+    move v0, v4
 
     .line 2067
     :goto_0
@@ -4512,7 +4524,7 @@
     goto :goto_1
 
     :cond_5
-    const/4 v2, 0x0
+    move v2, v4
 
     .line 2072
     :goto_1
@@ -4615,9 +4627,9 @@
 
     const-wide/high16 v7, -0x8000000000000000L
 
-    cmp-long v9, v5, v7
+    cmp-long v5, v5, v7
 
-    if-eqz v9, :cond_b
+    if-eqz v5, :cond_b
 
     .line 2028
     invoke-virtual {v0}, Lcom/google/android/exoplayer2/MediaPeriodHolder;->getRendererOffset()J
@@ -4951,7 +4963,7 @@
     goto :goto_0
 
     :cond_0
-    const/4 v0, 0x2
+    move v0, v1
 
     :goto_0
     invoke-direct {p0, v0}, Lcom/google/android/exoplayer2/ExoPlayerImplInternal;->setState(I)V
@@ -5079,9 +5091,9 @@
 
     const/4 v2, 0x0
 
-    const/4 v3, 0x0
+    move v3, v2
 
-    const/4 v4, 0x0
+    move v4, v3
 
     .line 2105
     :goto_0
@@ -5117,12 +5129,12 @@
 
     if-eq v5, v6, :cond_1
 
-    const/4 v5, 0x1
+    move v5, v7
 
     goto :goto_1
 
     :cond_1
-    const/4 v5, 0x0
+    move v5, v2
 
     .line 2112
     :goto_1
@@ -5187,7 +5199,7 @@
     goto :goto_2
 
     :cond_4
-    const/4 v4, 0x1
+    move v4, v7
 
     :goto_2
     add-int/lit8 v3, v3, 0x1
@@ -5316,16 +5328,16 @@
 
     iget-wide v0, v0, Lcom/google/android/exoplayer2/PlaybackInfo;->positionUs:J
 
-    cmp-long v2, v12, v0
+    cmp-long v0, v12, v0
 
-    if-eqz v2, :cond_1
+    if-eqz v0, :cond_1
 
     const/4 v14, 0x1
 
     goto :goto_1
 
     :cond_1
-    const/4 v14, 0x0
+    move v14, v9
 
     .line 1704
     :goto_1
@@ -5505,13 +5517,13 @@
     return-void
 
     :cond_9
-    const/4 v4, 0x0
+    move v4, v9
 
     const/4 v5, 0x1
 
     if-ne v1, v2, :cond_a
 
-    const/4 v3, 0x0
+    move v3, v4
 
     .line 1689
     :cond_a
@@ -5563,7 +5575,7 @@
 
     array-length v5, v4
 
-    const/4 v6, 0x0
+    move v6, v3
 
     :goto_0
     const-string v7, "ExoPlayerImplInternal"
@@ -5608,7 +5620,7 @@
 
     array-length v5, v4
 
-    const/4 v6, 0x0
+    move v6, v3
 
     :goto_3
     if-ge v6, v5, :cond_2
@@ -5743,21 +5755,17 @@
 
     const/4 v0, 0x1
 
-    move-object/from16 v17, v4
-
-    move-wide/from16 v25, v5
-
     goto :goto_7
 
     :cond_5
+    move v0, v3
+
+    :goto_7
     move-object/from16 v17, v4
 
     move-wide/from16 v25, v5
 
-    const/4 v0, 0x0
-
     .line 1444
-    :goto_7
     iget-object v4, v1, Lcom/google/android/exoplayer2/ExoPlayerImplInternal;->queue:Lcom/google/android/exoplayer2/MediaPeriodQueue;
 
     invoke-virtual {v4}, Lcom/google/android/exoplayer2/MediaPeriodQueue;->clear()V
@@ -6062,9 +6070,9 @@
 
     move-result-wide v1
 
-    cmp-long v3, v1, v13
+    cmp-long v1, v1, v13
 
-    if-nez v3, :cond_0
+    if-nez v1, :cond_0
 
     const-wide v1, -0x7fffffffffffffffL    # -4.9E-324
 
@@ -6157,9 +6165,9 @@
 
     move-result-wide v1
 
-    cmp-long v3, v1, v13
+    cmp-long v1, v1, v13
 
-    if-nez v3, :cond_2
+    if-nez v1, :cond_2
 
     .line 2805
     invoke-static {v8, p0, v9, v10}, Lcom/google/android/exoplayer2/ExoPlayerImplInternal;->resolvePendingMessageEndOfStreamPosition(Lcom/google/android/exoplayer2/Timeline;Lcom/google/android/exoplayer2/ExoPlayerImplInternal$PendingMessageInfo;Lcom/google/android/exoplayer2/Timeline$Window;Lcom/google/android/exoplayer2/Timeline$Period;)V
@@ -6187,9 +6195,9 @@
 
     move-result-wide v3
 
-    cmp-long v5, v3, v13
+    cmp-long v3, v3, v13
 
-    if-nez v5, :cond_5
+    if-nez v3, :cond_5
 
     .line 2816
     invoke-static {v8, p0, v9, v10}, Lcom/google/android/exoplayer2/ExoPlayerImplInternal;->resolvePendingMessageEndOfStreamPosition(Lcom/google/android/exoplayer2/Timeline;Lcom/google/android/exoplayer2/ExoPlayerImplInternal$PendingMessageInfo;Lcom/google/android/exoplayer2/Timeline$Window;Lcom/google/android/exoplayer2/Timeline$Period;)V
@@ -6488,7 +6496,7 @@
 
     move-object/from16 v21, v14
 
-    const/4 v14, -0x1
+    move v14, v6
 
     move-object/from16 v6, p7
 
@@ -6508,11 +6516,11 @@
 
     move-wide v0, v15
 
-    const/4 v2, 0x0
+    move/from16 v2, v19
 
-    const/4 v3, 0x0
+    move v3, v2
 
-    const/4 v4, 0x1
+    move/from16 v4, v20
 
     goto :goto_4
 
@@ -6520,9 +6528,9 @@
     :cond_3
     iget-wide v1, v9, Lcom/google/android/exoplayer2/ExoPlayerImplInternal$SeekPosition;->windowPositionUs:J
 
-    cmp-long v3, v1, v17
+    cmp-long v1, v1, v17
 
-    if-nez v3, :cond_4
+    if-nez v1, :cond_4
 
     .line 2602
     iget-object v0, v0, Landroid/util/Pair;->first:Ljava/lang/Object;
@@ -6536,7 +6544,7 @@
 
     move-wide v0, v15
 
-    const/4 v2, 0x0
+    move/from16 v2, v19
 
     goto :goto_2
 
@@ -6553,9 +6561,9 @@
 
     move-result-wide v0
 
-    const/4 v2, 0x1
+    move v6, v14
 
-    const/4 v6, -0x1
+    move/from16 v2, v20
 
     .line 2610
     :goto_2
@@ -6565,15 +6573,15 @@
 
     if-ne v3, v4, :cond_5
 
-    const/4 v3, 0x1
+    move/from16 v3, v20
 
     goto :goto_3
 
     :cond_5
-    const/4 v3, 0x0
+    move/from16 v3, v19
 
     :goto_3
-    const/4 v4, 0x0
+    move/from16 v4, v19
 
     :goto_4
     move-object/from16 v9, p6
@@ -6586,14 +6594,12 @@
 
     move v3, v6
 
-    move-object/from16 v6, v21
-
-    goto/16 :goto_a
+    goto :goto_6
 
     :cond_6
     move-object/from16 v21, v14
 
-    const/4 v14, -0x1
+    move v14, v6
 
     .line 2612
     iget-object v0, v8, Lcom/google/android/exoplayer2/PlaybackInfo;->timeline:Lcom/google/android/exoplayer2/Timeline;
@@ -6616,17 +6622,16 @@
 
     move-wide v0, v15
 
-    move-object/from16 v6, v21
+    move/from16 v27, v19
+
+    move/from16 v28, v27
+
+    move/from16 v29, v28
 
     :goto_6
-    const/16 v27, 0x0
+    move-object/from16 v6, v21
 
-    const/16 v28, 0x0
-
-    :goto_7
-    const/16 v29, 0x0
-
-    goto/16 :goto_a
+    goto/16 :goto_9
 
     .line 2615
     :cond_7
@@ -6663,9 +6668,9 @@
 
     move-result v0
 
-    const/4 v4, 0x1
+    move/from16 v4, v20
 
-    goto :goto_8
+    goto :goto_7
 
     .line 2636
     :cond_8
@@ -6675,9 +6680,9 @@
 
     iget v0, v0, Lcom/google/android/exoplayer2/Timeline$Period;->windowIndex:I
 
-    const/4 v4, 0x0
+    move/from16 v4, v19
 
-    :goto_8
+    :goto_7
     move-object/from16 v9, p6
 
     move v3, v0
@@ -6686,11 +6691,11 @@
 
     move-wide v0, v15
 
-    move-object/from16 v6, v21
+    move/from16 v27, v19
 
-    const/16 v27, 0x0
+    move/from16 v29, v27
 
-    goto :goto_7
+    goto :goto_6
 
     :cond_9
     cmp-long v0, v15, v17
@@ -6783,34 +6788,38 @@
 
     move-wide v0, v2
 
-    goto :goto_9
+    goto :goto_8
 
     :cond_b
     move-wide v0, v15
 
-    :goto_9
-    const/4 v3, -0x1
+    :goto_8
+    move v3, v14
 
-    const/16 v27, 0x0
+    move/from16 v27, v19
 
-    const/16 v28, 0x0
+    move/from16 v28, v27
 
-    const/16 v29, 0x1
+    move/from16 v29, v20
 
-    goto :goto_a
+    goto :goto_9
 
     :cond_c
     move-object/from16 v9, p6
 
     move-object/from16 v6, v21
 
+    move v3, v14
+
     move-wide v0, v15
 
-    const/4 v3, -0x1
+    move/from16 v27, v19
 
-    goto/16 :goto_6
+    move/from16 v28, v27
 
-    :goto_a
+    move/from16 v29, v28
+
+    :goto_9
     if-eq v3, v14, :cond_d
 
     const-wide v4, -0x7fffffffffffffffL    # -4.9E-324
@@ -6842,7 +6851,7 @@
 
     move-wide/from16 v25, v17
 
-    goto :goto_b
+    goto :goto_a
 
     :cond_d
     move-object/from16 v2, p3
@@ -6850,7 +6859,7 @@
     move-wide/from16 v25, v0
 
     .line 2677
-    :goto_b
+    :goto_a
     invoke-virtual {v2, v7, v12, v0, v1}, Lcom/google/android/exoplayer2/MediaPeriodQueue;->resolveMediaPeriodIdForAdsAfterPeriodPositionChange(Lcom/google/android/exoplayer2/Timeline;Ljava/lang/Object;J)Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;
 
     move-result-object v2
@@ -6866,19 +6875,19 @@
 
     if-lt v3, v4, :cond_e
 
-    goto :goto_c
+    goto :goto_b
 
     :cond_e
-    const/4 v3, 0x0
+    move/from16 v3, v19
 
-    goto :goto_d
+    goto :goto_c
 
     :cond_f
-    :goto_c
-    const/4 v3, 0x1
+    :goto_b
+    move/from16 v3, v20
 
     .line 2686
-    :goto_d
+    :goto_c
     iget-object v4, v6, Lcom/google/android/exoplayer2/source/MediaPeriodId;->periodUid:Ljava/lang/Object;
 
     invoke-virtual {v4, v12}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
@@ -6903,13 +6912,13 @@
 
     if-eqz v3, :cond_10
 
-    goto :goto_e
+    goto :goto_d
 
     :cond_10
-    const/16 v20, 0x0
+    move/from16 v20, v19
 
     .line 2700
-    :goto_e
+    :goto_d
     invoke-virtual {v7, v12, v11}, Lcom/google/android/exoplayer2/Timeline;->getPeriodByUid(Ljava/lang/Object;Lcom/google/android/exoplayer2/Timeline$Period;)Lcom/google/android/exoplayer2/Timeline$Period;
 
     move-result-object v17
@@ -6956,7 +6965,7 @@
     .line 2708
     iget-wide v0, v8, Lcom/google/android/exoplayer2/PlaybackInfo;->positionUs:J
 
-    goto :goto_f
+    goto :goto_e
 
     .line 2710
     :cond_13
@@ -6980,13 +6989,13 @@
 
     move-result-wide v0
 
-    goto :goto_f
+    goto :goto_e
 
     :cond_14
     const-wide/16 v0, 0x0
 
     :cond_15
-    :goto_f
+    :goto_e
     move-wide/from16 v23, v0
 
     .line 2718
@@ -7225,7 +7234,7 @@
 
     move v4, p4
 
-    const/4 p4, -0x1
+    move p4, v1
 
     :goto_0
     if-ge v2, v0, :cond_1
@@ -7340,9 +7349,9 @@
 
     iget-wide v1, v1, Lcom/google/android/exoplayer2/PlaybackInfo;->positionUs:J
 
-    cmp-long v5, v3, v1
+    cmp-long v1, v3, v1
 
-    if-eqz v5, :cond_0
+    if-eqz v1, :cond_0
 
     .line 859
     iget-object v1, p0, Lcom/google/android/exoplayer2/ExoPlayerImplInternal;->playbackInfo:Lcom/google/android/exoplayer2/PlaybackInfo;
@@ -7371,7 +7380,7 @@
 .end method
 
 .method private seekToInternal(Lcom/google/android/exoplayer2/ExoPlayerImplInternal$SeekPosition;)V
-    .locals 19
+    .locals 18
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lcom/google/android/exoplayer2/ExoPlaybackException;
@@ -7456,14 +7465,14 @@
 
     move v10, v7
 
-    move-wide/from16 v17, v4
+    move-wide/from16 v16, v4
 
     :goto_0
     move-wide v4, v12
 
-    move-wide/from16 v12, v17
+    move-wide/from16 v12, v16
 
-    goto :goto_4
+    goto/16 :goto_4
 
     .line 1162
     :cond_0
@@ -7481,9 +7490,9 @@
     .line 1165
     iget-wide v9, v0, Lcom/google/android/exoplayer2/ExoPlayerImplInternal$SeekPosition;->windowPositionUs:J
 
-    cmp-long v14, v9, v4
+    cmp-long v9, v9, v4
 
-    if-nez v14, :cond_1
+    if-nez v9, :cond_1
 
     move-wide v9, v4
 
@@ -7555,9 +7564,9 @@
 
     move-wide v12, v9
 
-    const/4 v10, 0x1
-
     move-object v9, v7
+
+    move v10, v8
 
     goto :goto_4
 
@@ -7565,19 +7574,19 @@
     :cond_3
     iget-wide v14, v0, Lcom/google/android/exoplayer2/ExoPlayerImplInternal$SeekPosition;->windowPositionUs:J
 
-    cmp-long v16, v14, v4
+    cmp-long v4, v14, v4
 
-    if-nez v16, :cond_4
+    if-nez v4, :cond_4
 
-    const/4 v4, 0x1
+    move v4, v8
 
     goto :goto_3
 
     :cond_4
-    const/4 v4, 0x0
+    move v4, v6
 
     :goto_3
-    move-wide/from16 v17, v9
+    move-wide/from16 v16, v9
 
     move v10, v4
 
@@ -7653,9 +7662,9 @@
 
     if-eqz v7, :cond_8
 
-    cmp-long v7, v4, v2
+    cmp-long v2, v4, v2
 
-    if-eqz v7, :cond_8
+    if-eqz v2, :cond_8
 
     .line 1204
     iget-object v1, v1, Lcom/google/android/exoplayer2/MediaPeriodHolder;->mediaPeriod:Lcom/google/android/exoplayer2/source/MediaPeriod;
@@ -7743,7 +7752,7 @@
 
     if-ne v3, v0, :cond_c
 
-    const/4 v0, 0x1
+    move v0, v8
 
     goto :goto_7
 
@@ -7883,16 +7892,14 @@
 
     const/4 v0, 0x1
 
-    const/4 v5, 0x1
-
     goto :goto_0
 
     :cond_0
     const/4 v0, 0x0
 
-    const/4 v5, 0x0
-
     :goto_0
+    move v5, v0
+
     move-object v1, p0
 
     move-object v2, p1
@@ -8001,7 +8008,7 @@
 
     array-length p4, p1
 
-    const/4 p5, 0x0
+    move p5, v0
 
     :goto_2
     if-ge p5, p4, :cond_5
@@ -8146,9 +8153,9 @@
 
     const-wide v2, -0x7fffffffffffffffL    # -4.9E-324
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-nez v4, :cond_0
+    if-nez v0, :cond_0
 
     .line 1498
     invoke-direct {p0, p1}, Lcom/google/android/exoplayer2/ExoPlayerImplInternal;->sendMessageToTarget(Lcom/google/android/exoplayer2/PlayerMessage;)V
@@ -8899,7 +8906,7 @@
 .end method
 
 .method private shouldAdvancePlayingPeriod()Z
-    .locals 7
+    .locals 6
 
     .line 2171
     invoke-direct {p0}, Lcom/google/android/exoplayer2/ExoPlayerImplInternal;->shouldPlayWhenReady()Z
@@ -8948,9 +8955,9 @@
 
     move-result-wide v4
 
-    cmp-long v6, v2, v4
+    cmp-long v2, v2, v4
 
-    if-ltz v6, :cond_3
+    if-ltz v2, :cond_3
 
     iget-boolean v0, v0, Lcom/google/android/exoplayer2/MediaPeriodHolder;->allRenderersInCorrectState:Z
 
@@ -9054,18 +9061,18 @@
 
     const-wide/32 v4, 0x7a120
 
-    cmp-long v6, v2, v4
+    cmp-long v4, v2, v4
 
-    if-gez v6, :cond_3
+    if-gez v4, :cond_3
 
     .line 2325
     iget-wide v4, p0, Lcom/google/android/exoplayer2/ExoPlayerImplInternal;->backBufferDurationUs:J
 
     const-wide/16 v6, 0x0
 
-    cmp-long v8, v4, v6
+    cmp-long v4, v4, v6
 
-    if-gtz v8, :cond_2
+    if-gtz v4, :cond_2
 
     iget-boolean v4, p0, Lcom/google/android/exoplayer2/ExoPlayerImplInternal;->retainBackBufferFromKeyframe:Z
 
@@ -9228,12 +9235,12 @@
 
     if-eqz v1, :cond_4
 
-    const/4 v1, 0x1
+    move v1, v2
 
     goto :goto_1
 
     :cond_4
-    const/4 v1, 0x0
+    move v1, v0
 
     .line 1796
     :goto_1
@@ -9251,12 +9258,12 @@
 
     if-nez p1, :cond_5
 
-    const/4 p1, 0x1
+    move p1, v2
 
     goto :goto_2
 
     :cond_5
-    const/4 p1, 0x0
+    move p1, v0
 
     :goto_2
     if-nez v1, :cond_6
@@ -9290,7 +9297,7 @@
     if-eqz p1, :cond_7
 
     :cond_6
-    const/4 v0, 0x1
+    move v0, v2
 
     :cond_7
     return v0
@@ -9352,9 +9359,9 @@
 
     const-wide v2, -0x7fffffffffffffffL    # -4.9E-324
 
-    cmp-long v0, p1, v2
+    cmp-long p1, p1, v2
 
-    if-eqz v0, :cond_1
+    if-eqz p1, :cond_1
 
     const/4 v1, 0x1
 
@@ -9427,13 +9434,13 @@
     goto :goto_0
 
     :cond_0
-    const/4 p1, 0x0
+    move p1, v0
 
     goto :goto_1
 
     :cond_1
     :goto_0
-    const/4 p1, 0x1
+    move p1, v1
 
     :goto_1
     invoke-direct {p0, p1, v0, v1, v0}, Lcom/google/android/exoplayer2/ExoPlayerImplInternal;->resetInternal(ZZZZ)V
@@ -9659,9 +9666,9 @@
     move-wide v6, v2
 
     :goto_0
-    const/4 v10, 0x0
-
     cmp-long v1, v6, v2
+
+    const/4 v10, 0x0
 
     if-eqz v1, :cond_2
 
@@ -9673,9 +9680,9 @@
 
     iget-wide v0, v0, Lcom/google/android/exoplayer2/PlaybackInfo;->positionUs:J
 
-    cmp-long v2, v6, v0
+    cmp-long v0, v6, v0
 
-    if-eqz v2, :cond_4
+    if-eqz v0, :cond_4
 
     .line 909
     iget-object v0, p0, Lcom/google/android/exoplayer2/ExoPlayerImplInternal;->playbackInfo:Lcom/google/android/exoplayer2/PlaybackInfo;
@@ -9719,7 +9726,7 @@
     goto :goto_1
 
     :cond_3
-    const/4 v2, 0x0
+    move v2, v10
 
     .line 920
     :goto_1
@@ -10079,7 +10086,7 @@
 .end method
 
 .method private declared-synchronized waitUninterruptibly(Lcom/google/common/base/Supplier;J)V
-    .locals 6
+    .locals 5
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -10121,9 +10128,9 @@
 
     const-wide/16 v3, 0x0
 
-    cmp-long v5, p2, v3
+    cmp-long v3, p2, v3
 
-    if-lez v5, :cond_0
+    if-lez v3, :cond_0
 
     .line 668
     :try_start_1
@@ -10142,7 +10149,7 @@
     :catch_0
     const/4 p2, 0x1
 
-    const/4 v2, 0x1
+    move v2, p2
 
     .line 673
     :goto_1
@@ -10296,7 +10303,7 @@
     :pswitch_0
     invoke-direct {p0}, Lcom/google/android/exoplayer2/ExoPlayerImplInternal;->attemptRendererErrorRecovery()V
 
-    goto/16 :goto_6
+    goto/16 :goto_7
 
     .line 560
     :pswitch_1
@@ -10304,17 +10311,17 @@
 
     if-ne p1, v4, :cond_0
 
-    const/4 p1, 0x1
+    move p1, v4
 
     goto :goto_0
 
     :cond_0
-    const/4 p1, 0x0
+    move p1, v3
 
     :goto_0
     invoke-direct {p0, p1}, Lcom/google/android/exoplayer2/ExoPlayerImplInternal;->setOffloadSchedulingEnabledInternal(Z)V
 
-    goto/16 :goto_6
+    goto/16 :goto_7
 
     .line 557
     :pswitch_2
@@ -10322,23 +10329,23 @@
 
     if-eqz p1, :cond_1
 
-    const/4 p1, 0x1
+    move p1, v4
 
     goto :goto_1
 
     :cond_1
-    const/4 p1, 0x0
+    move p1, v3
 
     :goto_1
     invoke-direct {p0, p1}, Lcom/google/android/exoplayer2/ExoPlayerImplInternal;->setPauseAtEndOfWindowInternal(Z)V
 
-    goto/16 :goto_6
+    goto/16 :goto_7
 
     .line 554
     :pswitch_3
     invoke-direct {p0}, Lcom/google/android/exoplayer2/ExoPlayerImplInternal;->mediaSourceListUpdateRequestedInternal()V
 
-    goto/16 :goto_6
+    goto/16 :goto_7
 
     .line 551
     :pswitch_4
@@ -10348,7 +10355,7 @@
 
     invoke-direct {p0, p1}, Lcom/google/android/exoplayer2/ExoPlayerImplInternal;->setShuffleOrderInternal(Lcom/google/android/exoplayer2/source/ShuffleOrder;)V
 
-    goto/16 :goto_6
+    goto/16 :goto_7
 
     .line 548
     :pswitch_5
@@ -10362,7 +10369,7 @@
 
     invoke-direct {p0, v5, v6, p1}, Lcom/google/android/exoplayer2/ExoPlayerImplInternal;->removeMediaItemsInternal(IILcom/google/android/exoplayer2/source/ShuffleOrder;)V
 
-    goto/16 :goto_6
+    goto/16 :goto_7
 
     .line 545
     :pswitch_6
@@ -10372,7 +10379,7 @@
 
     invoke-direct {p0, p1}, Lcom/google/android/exoplayer2/ExoPlayerImplInternal;->moveMediaItemsInternal(Lcom/google/android/exoplayer2/ExoPlayerImplInternal$MoveMediaItemsMessage;)V
 
-    goto/16 :goto_6
+    goto/16 :goto_7
 
     .line 542
     :pswitch_7
@@ -10384,7 +10391,7 @@
 
     invoke-direct {p0, v5, p1}, Lcom/google/android/exoplayer2/ExoPlayerImplInternal;->addMediaItemsInternal(Lcom/google/android/exoplayer2/ExoPlayerImplInternal$MediaSourceListUpdateMessage;I)V
 
-    goto/16 :goto_6
+    goto/16 :goto_7
 
     .line 539
     :pswitch_8
@@ -10394,7 +10401,7 @@
 
     invoke-direct {p0, p1}, Lcom/google/android/exoplayer2/ExoPlayerImplInternal;->setMediaItemsInternal(Lcom/google/android/exoplayer2/ExoPlayerImplInternal$MediaSourceListUpdateMessage;)V
 
-    goto/16 :goto_6
+    goto/16 :goto_7
 
     .line 530
     :pswitch_9
@@ -10404,7 +10411,7 @@
 
     invoke-direct {p0, p1, v3}, Lcom/google/android/exoplayer2/ExoPlayerImplInternal;->handlePlaybackParameters(Lcom/google/android/exoplayer2/PlaybackParameters;Z)V
 
-    goto/16 :goto_6
+    goto/16 :goto_7
 
     .line 536
     :pswitch_a
@@ -10414,7 +10421,7 @@
 
     invoke-direct {p0, p1}, Lcom/google/android/exoplayer2/ExoPlayerImplInternal;->sendMessageToTargetThread(Lcom/google/android/exoplayer2/PlayerMessage;)V
 
-    goto/16 :goto_6
+    goto/16 :goto_7
 
     .line 533
     :pswitch_b
@@ -10424,7 +10431,7 @@
 
     invoke-direct {p0, p1}, Lcom/google/android/exoplayer2/ExoPlayerImplInternal;->sendMessageInternal(Lcom/google/android/exoplayer2/PlayerMessage;)V
 
-    goto/16 :goto_6
+    goto/16 :goto_7
 
     .line 514
     :pswitch_c
@@ -10432,12 +10439,12 @@
 
     if-eqz v5, :cond_2
 
-    const/4 v5, 0x1
+    move v5, v4
 
     goto :goto_2
 
     :cond_2
-    const/4 v5, 0x0
+    move v5, v3
 
     :goto_2
     iget-object p1, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
@@ -10446,7 +10453,7 @@
 
     invoke-direct {p0, v5, p1}, Lcom/google/android/exoplayer2/ExoPlayerImplInternal;->setForegroundModeInternal(ZLjava/util/concurrent/atomic/AtomicBoolean;)V
 
-    goto/16 :goto_6
+    goto/16 :goto_7
 
     .line 499
     :pswitch_d
@@ -10454,17 +10461,17 @@
 
     if-eqz p1, :cond_3
 
-    const/4 p1, 0x1
+    move p1, v4
 
     goto :goto_3
 
     :cond_3
-    const/4 p1, 0x0
+    move p1, v3
 
     :goto_3
     invoke-direct {p0, p1}, Lcom/google/android/exoplayer2/ExoPlayerImplInternal;->setShuffleModeEnabledInternal(Z)V
 
-    goto/16 :goto_6
+    goto/16 :goto_7
 
     .line 496
     :pswitch_e
@@ -10472,13 +10479,13 @@
 
     invoke-direct {p0, p1}, Lcom/google/android/exoplayer2/ExoPlayerImplInternal;->setRepeatModeInternal(I)V
 
-    goto/16 :goto_6
+    goto/16 :goto_7
 
     .line 527
     :pswitch_f
     invoke-direct {p0}, Lcom/google/android/exoplayer2/ExoPlayerImplInternal;->reselectTracksInternal()V
 
-    goto/16 :goto_6
+    goto/16 :goto_7
 
     .line 524
     :pswitch_10
@@ -10488,7 +10495,7 @@
 
     invoke-direct {p0, p1}, Lcom/google/android/exoplayer2/ExoPlayerImplInternal;->handleContinueLoadingRequested(Lcom/google/android/exoplayer2/source/MediaPeriod;)V
 
-    goto/16 :goto_6
+    goto/16 :goto_7
 
     .line 521
     :pswitch_11
@@ -10498,7 +10505,7 @@
 
     invoke-direct {p0, p1}, Lcom/google/android/exoplayer2/ExoPlayerImplInternal;->handlePeriodPrepared(Lcom/google/android/exoplayer2/source/MediaPeriod;)V
 
-    goto/16 :goto_6
+    goto/16 :goto_7
 
     .line 566
     :pswitch_12
@@ -10510,7 +10517,7 @@
     :pswitch_13
     invoke-direct {p0, v3, v4}, Lcom/google/android/exoplayer2/ExoPlayerImplInternal;->stopInternal(ZZ)V
 
-    goto/16 :goto_6
+    goto/16 :goto_7
 
     .line 511
     :pswitch_14
@@ -10520,7 +10527,7 @@
 
     invoke-direct {p0, p1}, Lcom/google/android/exoplayer2/ExoPlayerImplInternal;->setSeekParametersInternal(Lcom/google/android/exoplayer2/SeekParameters;)V
 
-    goto/16 :goto_6
+    goto/16 :goto_7
 
     .line 508
     :pswitch_15
@@ -10530,7 +10537,7 @@
 
     invoke-direct {p0, p1}, Lcom/google/android/exoplayer2/ExoPlayerImplInternal;->setPlaybackParametersInternal(Lcom/google/android/exoplayer2/PlaybackParameters;)V
 
-    goto/16 :goto_6
+    goto/16 :goto_7
 
     .line 505
     :pswitch_16
@@ -10540,13 +10547,13 @@
 
     invoke-direct {p0, p1}, Lcom/google/android/exoplayer2/ExoPlayerImplInternal;->seekToInternal(Lcom/google/android/exoplayer2/ExoPlayerImplInternal$SeekPosition;)V
 
-    goto/16 :goto_6
+    goto/16 :goto_7
 
     .line 502
     :pswitch_17
     invoke-direct {p0}, Lcom/google/android/exoplayer2/ExoPlayerImplInternal;->doSomeWork()V
 
-    goto/16 :goto_6
+    goto/16 :goto_7
 
     .line 489
     :pswitch_18
@@ -10554,19 +10561,19 @@
 
     if-eqz v5, :cond_4
 
-    const/4 v5, 0x1
+    move v5, v4
 
     goto :goto_4
 
     :cond_4
-    const/4 v5, 0x0
+    move v5, v3
 
     :goto_4
     iget p1, p1, Landroid/os/Message;->arg2:I
 
     invoke-direct {p0, v5, p1, v4, v4}, Lcom/google/android/exoplayer2/ExoPlayerImplInternal;->setPlayWhenReadyInternal(ZIZI)V
 
-    goto/16 :goto_6
+    goto/16 :goto_7
 
     .line 486
     :pswitch_19
@@ -10580,7 +10587,7 @@
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_1
     .catch Ljava/lang/RuntimeException; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto/16 :goto_6
+    goto/16 :goto_7
 
     :catch_0
     move-exception p1
@@ -10618,7 +10625,7 @@
 
     iput-object p1, p0, Lcom/google/android/exoplayer2/ExoPlayerImplInternal;->playbackInfo:Lcom/google/android/exoplayer2/PlaybackInfo;
 
-    goto/16 :goto_6
+    goto/16 :goto_7
 
     :catch_1
     move-exception p1
@@ -10628,7 +10635,7 @@
     .line 620
     invoke-direct {p0, p1, v0}, Lcom/google/android/exoplayer2/ExoPlayerImplInternal;->handleIoException(Ljava/io/IOException;I)V
 
-    goto/16 :goto_6
+    goto/16 :goto_7
 
     :catch_2
     move-exception p1
@@ -10638,7 +10645,7 @@
     .line 618
     invoke-direct {p0, p1, v0}, Lcom/google/android/exoplayer2/ExoPlayerImplInternal;->handleIoException(Ljava/io/IOException;I)V
 
-    goto/16 :goto_6
+    goto/16 :goto_7
 
     :catch_3
     move-exception p1
@@ -10648,7 +10655,7 @@
 
     invoke-direct {p0, p1, v0}, Lcom/google/android/exoplayer2/ExoPlayerImplInternal;->handleIoException(Ljava/io/IOException;I)V
 
-    goto/16 :goto_6
+    goto/16 :goto_7
 
     :catch_4
     move-exception p1
@@ -10665,16 +10672,15 @@
 
     const/16 v0, 0xbb9
 
-    const/16 v2, 0xbb9
-
     goto :goto_5
 
     :cond_7
     const/16 v0, 0xbbb
 
-    const/16 v2, 0xbbb
+    :goto_5
+    move v2, v0
 
-    goto :goto_5
+    goto :goto_6
 
     :cond_8
     const/4 v1, 0x4
@@ -10688,21 +10694,19 @@
 
     const/16 v0, 0xbba
 
-    const/16 v2, 0xbba
-
     goto :goto_5
 
     :cond_9
     const/16 v0, 0xbbc
 
-    const/16 v2, 0xbbc
+    goto :goto_5
 
     .line 614
     :cond_a
-    :goto_5
+    :goto_6
     invoke-direct {p0, p1, v2}, Lcom/google/android/exoplayer2/ExoPlayerImplInternal;->handleIoException(Ljava/io/IOException;I)V
 
-    goto :goto_6
+    goto :goto_7
 
     :catch_5
     move-exception p1
@@ -10712,7 +10716,7 @@
 
     invoke-direct {p0, p1, v0}, Lcom/google/android/exoplayer2/ExoPlayerImplInternal;->handleIoException(Ljava/io/IOException;I)V
 
-    goto :goto_6
+    goto :goto_7
 
     :catch_6
     move-exception p1
@@ -10771,7 +10775,7 @@
     .line 586
     invoke-interface {v0, p1}, Lcom/google/android/exoplayer2/util/HandlerWrapper;->sendMessageAtFrontOfQueue(Lcom/google/android/exoplayer2/util/HandlerWrapper$Message;)Z
 
-    goto :goto_6
+    goto :goto_7
 
     .line 589
     :cond_c
@@ -10802,7 +10806,7 @@
     iput-object p1, p0, Lcom/google/android/exoplayer2/ExoPlayerImplInternal;->playbackInfo:Lcom/google/android/exoplayer2/PlaybackInfo;
 
     .line 633
-    :goto_6
+    :goto_7
     invoke-direct {p0}, Lcom/google/android/exoplayer2/ExoPlayerImplInternal;->maybeNotifyPlaybackInfoChanged()V
 
     return v4

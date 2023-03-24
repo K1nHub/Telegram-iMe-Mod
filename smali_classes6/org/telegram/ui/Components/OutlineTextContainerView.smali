@@ -271,7 +271,7 @@
 
     const/high16 v0, 0x42c80000    # 100.0f
 
-    mul-float p2, p2, v0
+    mul-float/2addr p2, v0
 
     .line 123
     invoke-virtual {p1}, Landroidx/dynamicanimation/animation/SpringAnimation;->getSpring()Landroidx/dynamicanimation/animation/SpringForce;
@@ -363,7 +363,7 @@
 
     sub-float/2addr v2, v1
 
-    mul-float v2, v2, p1
+    mul-float/2addr v2, p1
 
     add-float/2addr v1, v2
 
@@ -460,7 +460,7 @@
 
     sub-float/2addr v1, v0
 
-    mul-float v1, v1, p1
+    mul-float/2addr v1, p1
 
     add-float/2addr v0, v1
 
@@ -592,16 +592,17 @@
     :cond_1
     const/4 v4, 0x1
 
-    const/4 v8, 0x1
+    :goto_0
+    move v8, v4
 
-    goto :goto_0
+    goto :goto_1
 
     :cond_2
     const/4 v4, 0x0
 
-    const/4 v8, 0x0
+    goto :goto_0
 
-    :goto_0
+    :goto_1
     const/high16 v9, 0x3f800000    # 1.0f
 
     if-eqz v8, :cond_3
@@ -613,7 +614,7 @@
 
     sub-float v4, v9, v4
 
-    mul-float v1, v1, v4
+    mul-float/2addr v1, v4
 
     add-float/2addr v3, v1
 
@@ -638,19 +639,14 @@
 
     sub-float v5, v9, v5
 
-    mul-float v5, v5, v4
+    mul-float/2addr v5, v4
 
     add-float/2addr v3, v5
 
+    :cond_4
     move v11, v3
 
-    goto :goto_1
-
-    :cond_4
-    const/high16 v11, 0x3f400000    # 0.75f
-
     .line 146
-    :goto_1
     iget-object v3, v0, Lorg/telegram/ui/Components/OutlineTextContainerView;->textPaint:Landroid/text/TextPaint;
 
     iget-object v4, v0, Lorg/telegram/ui/Components/OutlineTextContainerView;->mText:Ljava/lang/String;
@@ -659,7 +655,7 @@
 
     move-result v3
 
-    mul-float v3, v3, v11
+    mul-float/2addr v3, v11
 
     .line 148
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->save()I
@@ -877,7 +873,7 @@
     const/high16 v2, 0x3f800000    # 1.0f
 
     :goto_2
-    mul-float v1, v1, v2
+    mul-float/2addr v1, v2
 
     add-float v2, v13, v1
 
@@ -1024,7 +1020,7 @@
 
     if-eqz v2, :cond_0
 
-    const/4 v2, 0x0
+    move v2, v3
 
     goto :goto_0
 

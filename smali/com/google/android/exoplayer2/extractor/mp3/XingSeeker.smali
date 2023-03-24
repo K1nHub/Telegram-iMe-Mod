@@ -125,7 +125,7 @@
 
     const-wide/32 v11, 0xf4240
 
-    mul-long v9, v9, v11
+    mul-long/2addr v9, v11
 
     int-to-long v11, v4
 
@@ -254,7 +254,7 @@
 
     int-to-long v2, p1
 
-    mul-long v0, v0, v2
+    mul-long/2addr v0, v2
 
     const-wide/16 v2, 0x64
 
@@ -330,7 +330,7 @@
 
     const-wide/high16 v2, 0x4059000000000000L    # 100.0
 
-    mul-double v0, v0, v2
+    mul-double/2addr v0, v2
 
     .line 131
     iget-wide v4, p0, Lcom/google/android/exoplayer2/extractor/mp3/XingSeeker;->durationUs:J
@@ -341,20 +341,20 @@
 
     const-wide/16 v4, 0x0
 
-    const-wide/high16 v6, 0x4070000000000000L    # 256.0
+    cmpg-double v6, v0, v4
 
-    cmpg-double v8, v0, v4
+    const-wide/high16 v7, 0x4070000000000000L    # 256.0
 
-    if-gtz v8, :cond_1
+    if-gtz v6, :cond_1
 
     goto :goto_1
 
     :cond_1
-    cmpl-double v4, v0, v2
+    cmpl-double v2, v0, v2
 
-    if-ltz v4, :cond_2
+    if-ltz v2, :cond_2
 
-    move-wide v4, v6
+    move-wide v4, v7
 
     goto :goto_1
 
@@ -375,42 +375,42 @@
 
     long-to-double v4, v4
 
-    const/16 v8, 0x63
+    const/16 v6, 0x63
 
-    if-ne v2, v8, :cond_3
+    if-ne v2, v6, :cond_3
 
-    move-wide v8, v6
+    move-wide v9, v7
 
     goto :goto_0
 
     :cond_3
-    add-int/lit8 v8, v2, 0x1
+    add-int/lit8 v6, v2, 0x1
 
     .line 141
-    aget-wide v8, v3, v8
+    aget-wide v9, v3, v6
 
-    long-to-double v8, v8
+    long-to-double v9, v9
 
     :goto_0
     int-to-double v2, v2
 
     sub-double/2addr v0, v2
 
-    sub-double/2addr v8, v4
+    sub-double/2addr v9, v4
 
-    mul-double v0, v0, v8
+    mul-double/2addr v0, v9
 
     add-double/2addr v4, v0
 
     :goto_1
-    div-double/2addr v4, v6
+    div-double/2addr v4, v7
 
     .line 147
     iget-wide v0, p0, Lcom/google/android/exoplayer2/extractor/mp3/XingSeeker;->dataSize:J
 
     long-to-double v0, v0
 
-    mul-double v4, v4, v0
+    mul-double/2addr v4, v0
 
     invoke-static {v4, v5}, Ljava/lang/Math;->round(D)J
 
@@ -466,9 +466,9 @@
 
     int-to-long v0, v0
 
-    cmp-long v2, p1, v0
+    cmp-long v0, p1, v0
 
-    if-gtz v2, :cond_0
+    if-gtz v0, :cond_0
 
     goto :goto_2
 
@@ -486,7 +486,7 @@
 
     const-wide/high16 v1, 0x4070000000000000L    # 256.0
 
-    mul-double p1, p1, v1
+    mul-double/2addr p1, v1
 
     .line 160
     iget-wide v1, p0, Lcom/google/android/exoplayer2/extractor/mp3/XingSeeker;->dataSize:J
@@ -558,7 +558,7 @@
 
     long-to-double v0, v7
 
-    mul-double p1, p1, v0
+    mul-double/2addr p1, v0
 
     .line 171
     invoke-static {p1, p2}, Ljava/lang/Math;->round(D)J

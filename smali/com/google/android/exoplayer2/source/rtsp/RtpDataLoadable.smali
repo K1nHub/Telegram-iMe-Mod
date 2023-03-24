@@ -188,9 +188,9 @@
 
     const-wide v4, -0x7fffffffffffffffL    # -4.9E-324
 
-    cmp-long v6, v2, v4
+    cmp-long v2, v2, v4
 
-    if-eqz v6, :cond_1
+    if-eqz v2, :cond_1
 
     .line 160
     iget-object v2, p0, Lcom/google/android/exoplayer2/source/rtsp/RtpDataLoadable;->extractor:Lcom/google/android/exoplayer2/source/rtsp/RtpExtractor;
@@ -294,13 +294,13 @@
 .end method
 
 .method public setTimestamp(J)V
-    .locals 3
+    .locals 2
 
     const-wide v0, -0x7fffffffffffffffL    # -4.9E-324
 
-    cmp-long v2, p1, v0
+    cmp-long v0, p1, v0
 
-    if-eqz v2, :cond_0
+    if-eqz v0, :cond_0
 
     .line 118
     iget-object v0, p0, Lcom/google/android/exoplayer2/source/rtsp/RtpDataLoadable;->extractor:Lcom/google/android/exoplayer2/source/rtsp/RtpExtractor;

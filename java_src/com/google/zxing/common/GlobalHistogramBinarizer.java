@@ -84,18 +84,18 @@ public class GlobalHistogramBinarizer extends Binarizer {
         }
         if (i3 - i5 > length / 16) {
             int i11 = i3 - 1;
-            int i12 = i11;
-            int i13 = -1;
+            int i12 = -1;
+            int i13 = i11;
             while (i11 > i5) {
                 int i14 = i11 - i5;
                 int i15 = i14 * i14 * (i3 - i11) * (i2 - iArr[i11]);
-                if (i15 > i13) {
-                    i12 = i11;
-                    i13 = i15;
+                if (i15 > i12) {
+                    i13 = i11;
+                    i12 = i15;
                 }
                 i11--;
             }
-            return i12 << 3;
+            return i13 << 3;
         }
         throw NotFoundException.getNotFoundInstance();
     }

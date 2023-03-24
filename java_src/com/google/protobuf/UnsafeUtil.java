@@ -2,14 +2,17 @@ package com.google.protobuf;
 
 import java.lang.reflect.Field;
 import java.nio.Buffer;
+import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 import java.security.AccessController;
 import java.security.PrivilegedExceptionAction;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import sun.misc.Unsafe;
+/* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: classes3.dex */
-final class UnsafeUtil {
+public final class UnsafeUtil {
+    private static final long BUFFER_ADDRESS_OFFSET;
     static final boolean IS_BIG_ENDIAN;
     private static final Unsafe UNSAFE = getUnsafe();
     private static final Class<?> MEMORY_CLASS = Android.getMemoryClass();
@@ -33,7 +36,7 @@ final class UnsafeUtil {
         arrayIndexScale(double[].class);
         arrayBaseOffset(Object[].class);
         arrayIndexScale(Object[].class);
-        fieldOffset(bufferAddressField());
+        BUFFER_ADDRESS_OFFSET = fieldOffset(bufferAddressField());
         IS_BIG_ENDIAN = ByteOrder.nativeOrder() == ByteOrder.BIG_ENDIAN;
     }
 
@@ -144,6 +147,26 @@ final class UnsafeUtil {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
+    public static void copyMemory(long j, byte[] bArr, long j2, long j3) {
+        MEMORY_ACCESSOR.copyMemory(j, bArr, j2, j3);
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public static byte getByte(long j) {
+        return MEMORY_ACCESSOR.getByte(j);
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public static long getLong(long j) {
+        return MEMORY_ACCESSOR.getLong(j);
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public static long addressOffset(ByteBuffer byteBuffer) {
+        return MEMORY_ACCESSOR.getLong(byteBuffer, BUFFER_ADDRESS_OFFSET);
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static Unsafe getUnsafe() {
         try {
             return (Unsafe) AccessController.doPrivileged(new PrivilegedExceptionAction<Unsafe>() { // from class: com.google.protobuf.UnsafeUtil.1
@@ -183,76 +206,22 @@ final class UnsafeUtil {
     }
 
     private static boolean supportsUnsafeArrayOperations() {
-        Unsafe unsafe = UNSAFE;
-        if (unsafe == null) {
+        MemoryAccessor memoryAccessor = MEMORY_ACCESSOR;
+        if (memoryAccessor == null) {
             return false;
         }
-        try {
-            Class<?> cls = unsafe.getClass();
-            cls.getMethod("objectFieldOffset", Field.class);
-            cls.getMethod("arrayBaseOffset", Class.class);
-            cls.getMethod("arrayIndexScale", Class.class);
-            Class<?> cls2 = Long.TYPE;
-            cls.getMethod("getInt", Object.class, cls2);
-            cls.getMethod("putInt", Object.class, cls2, Integer.TYPE);
-            cls.getMethod("getLong", Object.class, cls2);
-            cls.getMethod("putLong", Object.class, cls2, cls2);
-            cls.getMethod("getObject", Object.class, cls2);
-            cls.getMethod("putObject", Object.class, cls2, Object.class);
-            if (Android.isOnAndroidDevice()) {
-                return true;
-            }
-            cls.getMethod("getByte", Object.class, cls2);
-            cls.getMethod("putByte", Object.class, cls2, Byte.TYPE);
-            cls.getMethod("getBoolean", Object.class, cls2);
-            cls.getMethod("putBoolean", Object.class, cls2, Boolean.TYPE);
-            cls.getMethod("getFloat", Object.class, cls2);
-            cls.getMethod("putFloat", Object.class, cls2, Float.TYPE);
-            cls.getMethod("getDouble", Object.class, cls2);
-            cls.getMethod("putDouble", Object.class, cls2, Double.TYPE);
-            return true;
-        } catch (Throwable th) {
-            Logger logger = Logger.getLogger(UnsafeUtil.class.getName());
-            Level level = Level.WARNING;
-            logger.log(level, "platform method missing - proto runtime falling back to safer methods: " + th);
-            return false;
-        }
+        return memoryAccessor.supportsUnsafeArrayOperations();
     }
 
     private static boolean supportsUnsafeByteBufferOperations() {
-        Unsafe unsafe = UNSAFE;
-        if (unsafe == null) {
+        MemoryAccessor memoryAccessor = MEMORY_ACCESSOR;
+        if (memoryAccessor == null) {
             return false;
         }
-        try {
-            Class<?> cls = unsafe.getClass();
-            cls.getMethod("objectFieldOffset", Field.class);
-            Class<?> cls2 = Long.TYPE;
-            cls.getMethod("getLong", Object.class, cls2);
-            if (bufferAddressField() == null) {
-                return false;
-            }
-            if (Android.isOnAndroidDevice()) {
-                return true;
-            }
-            cls.getMethod("getByte", cls2);
-            cls.getMethod("putByte", cls2, Byte.TYPE);
-            cls.getMethod("getInt", cls2);
-            cls.getMethod("putInt", cls2, Integer.TYPE);
-            cls.getMethod("getLong", cls2);
-            cls.getMethod("putLong", cls2, cls2);
-            cls.getMethod("copyMemory", cls2, cls2, cls2);
-            cls.getMethod("copyMemory", Object.class, cls2, Object.class, cls2, cls2);
-            return true;
-        } catch (Throwable th) {
-            Logger logger = Logger.getLogger(UnsafeUtil.class.getName());
-            Level level = Level.WARNING;
-            logger.log(level, "platform method missing - proto runtime falling back to safer methods: " + th);
-            return false;
-        }
+        return memoryAccessor.supportsUnsafeByteBufferOperations();
     }
 
-    private static boolean determineAndroidSupportByAddressSize(Class<?> cls) {
+    static boolean determineAndroidSupportByAddressSize(Class<?> cls) {
         if (Android.isOnAndroidDevice()) {
             try {
                 Class<?> cls2 = MEMORY_CLASS;
@@ -274,7 +243,8 @@ final class UnsafeUtil {
         return false;
     }
 
-    private static Field bufferAddressField() {
+    /* JADX INFO: Access modifiers changed from: private */
+    public static Field bufferAddressField() {
         Field field;
         if (!Android.isOnAndroidDevice() || (field = field(Buffer.class, "effectiveDirectAddress")) == null) {
             Field field2 = field(Buffer.class, "address");
@@ -307,13 +277,19 @@ final class UnsafeUtil {
     public static abstract class MemoryAccessor {
         Unsafe unsafe;
 
+        public abstract void copyMemory(long j, byte[] bArr, long j2, long j3);
+
         public abstract boolean getBoolean(Object obj, long j);
+
+        public abstract byte getByte(long j);
 
         public abstract byte getByte(Object obj, long j);
 
         public abstract double getDouble(Object obj, long j);
 
         public abstract float getFloat(Object obj, long j);
+
+        public abstract long getLong(long j);
 
         public abstract void putBoolean(Object obj, long j, boolean z);
 
@@ -329,6 +305,38 @@ final class UnsafeUtil {
 
         public final long objectFieldOffset(Field field) {
             return this.unsafe.objectFieldOffset(field);
+        }
+
+        public final int arrayBaseOffset(Class<?> cls) {
+            return this.unsafe.arrayBaseOffset(cls);
+        }
+
+        public final int arrayIndexScale(Class<?> cls) {
+            return this.unsafe.arrayIndexScale(cls);
+        }
+
+        public boolean supportsUnsafeArrayOperations() {
+            Unsafe unsafe = this.unsafe;
+            if (unsafe == null) {
+                return false;
+            }
+            try {
+                Class<?> cls = unsafe.getClass();
+                cls.getMethod("objectFieldOffset", Field.class);
+                cls.getMethod("arrayBaseOffset", Class.class);
+                cls.getMethod("arrayIndexScale", Class.class);
+                Class<?> cls2 = Long.TYPE;
+                cls.getMethod("getInt", Object.class, cls2);
+                cls.getMethod("putInt", Object.class, cls2, Integer.TYPE);
+                cls.getMethod("getLong", Object.class, cls2);
+                cls.getMethod("putLong", Object.class, cls2, cls2);
+                cls.getMethod("getObject", Object.class, cls2);
+                cls.getMethod("putObject", Object.class, cls2, Object.class);
+                return true;
+            } catch (Throwable th) {
+                UnsafeUtil.logMissingMethod(th);
+                return false;
+            }
         }
 
         public final int getInt(Object obj, long j) {
@@ -355,12 +363,20 @@ final class UnsafeUtil {
             this.unsafe.putObject(obj, j, obj2);
         }
 
-        public final int arrayBaseOffset(Class<?> cls) {
-            return this.unsafe.arrayBaseOffset(cls);
-        }
-
-        public final int arrayIndexScale(Class<?> cls) {
-            return this.unsafe.arrayIndexScale(cls);
+        public boolean supportsUnsafeByteBufferOperations() {
+            Unsafe unsafe = this.unsafe;
+            if (unsafe == null) {
+                return false;
+            }
+            try {
+                Class<?> cls = unsafe.getClass();
+                cls.getMethod("objectFieldOffset", Field.class);
+                cls.getMethod("getLong", Object.class, Long.TYPE);
+                return UnsafeUtil.bufferAddressField() != null;
+            } catch (Throwable th) {
+                UnsafeUtil.logMissingMethod(th);
+                return false;
+            }
         }
     }
 
@@ -369,6 +385,29 @@ final class UnsafeUtil {
     public static final class JvmMemoryAccessor extends MemoryAccessor {
         JvmMemoryAccessor(Unsafe unsafe) {
             super(unsafe);
+        }
+
+        @Override // com.google.protobuf.UnsafeUtil.MemoryAccessor
+        public boolean supportsUnsafeArrayOperations() {
+            if (super.supportsUnsafeArrayOperations()) {
+                try {
+                    Class<?> cls = this.unsafe.getClass();
+                    Class<?> cls2 = Long.TYPE;
+                    cls.getMethod("getByte", Object.class, cls2);
+                    cls.getMethod("putByte", Object.class, cls2, Byte.TYPE);
+                    cls.getMethod("getBoolean", Object.class, cls2);
+                    cls.getMethod("putBoolean", Object.class, cls2, Boolean.TYPE);
+                    cls.getMethod("getFloat", Object.class, cls2);
+                    cls.getMethod("putFloat", Object.class, cls2, Float.TYPE);
+                    cls.getMethod("getDouble", Object.class, cls2);
+                    cls.getMethod("putDouble", Object.class, cls2, Double.TYPE);
+                    return true;
+                } catch (Throwable th) {
+                    UnsafeUtil.logMissingMethod(th);
+                    return false;
+                }
+            }
+            return false;
         }
 
         @Override // com.google.protobuf.UnsafeUtil.MemoryAccessor
@@ -410,11 +449,54 @@ final class UnsafeUtil {
         public void putDouble(Object obj, long j, double d) {
             this.unsafe.putDouble(obj, j, d);
         }
+
+        @Override // com.google.protobuf.UnsafeUtil.MemoryAccessor
+        public boolean supportsUnsafeByteBufferOperations() {
+            if (super.supportsUnsafeByteBufferOperations()) {
+                try {
+                    Class<?> cls = this.unsafe.getClass();
+                    Class<?> cls2 = Long.TYPE;
+                    cls.getMethod("getByte", cls2);
+                    cls.getMethod("putByte", cls2, Byte.TYPE);
+                    cls.getMethod("getInt", cls2);
+                    cls.getMethod("putInt", cls2, Integer.TYPE);
+                    cls.getMethod("getLong", cls2);
+                    cls.getMethod("putLong", cls2, cls2);
+                    cls.getMethod("copyMemory", cls2, cls2, cls2);
+                    cls.getMethod("copyMemory", Object.class, cls2, Object.class, cls2, cls2);
+                    return true;
+                } catch (Throwable th) {
+                    UnsafeUtil.logMissingMethod(th);
+                    return false;
+                }
+            }
+            return false;
+        }
+
+        @Override // com.google.protobuf.UnsafeUtil.MemoryAccessor
+        public byte getByte(long j) {
+            return this.unsafe.getByte(j);
+        }
+
+        @Override // com.google.protobuf.UnsafeUtil.MemoryAccessor
+        public long getLong(long j) {
+            return this.unsafe.getLong(j);
+        }
+
+        @Override // com.google.protobuf.UnsafeUtil.MemoryAccessor
+        public void copyMemory(long j, byte[] bArr, long j2, long j3) {
+            this.unsafe.copyMemory((Object) null, j, bArr, UnsafeUtil.BYTE_ARRAY_BASE_OFFSET + j2, j3);
+        }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     /* loaded from: classes3.dex */
     public static final class Android64MemoryAccessor extends MemoryAccessor {
+        @Override // com.google.protobuf.UnsafeUtil.MemoryAccessor
+        public boolean supportsUnsafeByteBufferOperations() {
+            return false;
+        }
+
         Android64MemoryAccessor(Unsafe unsafe) {
             super(unsafe);
         }
@@ -466,11 +548,31 @@ final class UnsafeUtil {
         public void putDouble(Object obj, long j, double d) {
             putLong(obj, j, Double.doubleToLongBits(d));
         }
+
+        @Override // com.google.protobuf.UnsafeUtil.MemoryAccessor
+        public byte getByte(long j) {
+            throw new UnsupportedOperationException();
+        }
+
+        @Override // com.google.protobuf.UnsafeUtil.MemoryAccessor
+        public long getLong(long j) {
+            throw new UnsupportedOperationException();
+        }
+
+        @Override // com.google.protobuf.UnsafeUtil.MemoryAccessor
+        public void copyMemory(long j, byte[] bArr, long j2, long j3) {
+            throw new UnsupportedOperationException();
+        }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     /* loaded from: classes3.dex */
     public static final class Android32MemoryAccessor extends MemoryAccessor {
+        @Override // com.google.protobuf.UnsafeUtil.MemoryAccessor
+        public boolean supportsUnsafeByteBufferOperations() {
+            return false;
+        }
+
         Android32MemoryAccessor(Unsafe unsafe) {
             super(unsafe);
         }
@@ -522,6 +624,21 @@ final class UnsafeUtil {
         public void putDouble(Object obj, long j, double d) {
             putLong(obj, j, Double.doubleToLongBits(d));
         }
+
+        @Override // com.google.protobuf.UnsafeUtil.MemoryAccessor
+        public byte getByte(long j) {
+            throw new UnsupportedOperationException();
+        }
+
+        @Override // com.google.protobuf.UnsafeUtil.MemoryAccessor
+        public long getLong(long j) {
+            throw new UnsupportedOperationException();
+        }
+
+        @Override // com.google.protobuf.UnsafeUtil.MemoryAccessor
+        public void copyMemory(long j, byte[] bArr, long j2, long j3) {
+            throw new UnsupportedOperationException();
+        }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -567,5 +684,12 @@ final class UnsafeUtil {
     /* JADX INFO: Access modifiers changed from: private */
     public static void putBooleanLittleEndian(Object obj, long j, boolean z) {
         putByteLittleEndian(obj, j, z ? (byte) 1 : (byte) 0);
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static void logMissingMethod(Throwable th) {
+        Logger logger = Logger.getLogger(UnsafeUtil.class.getName());
+        Level level = Level.WARNING;
+        logger.log(level, "platform method missing - proto runtime falling back to safer methods: " + th);
     }
 }

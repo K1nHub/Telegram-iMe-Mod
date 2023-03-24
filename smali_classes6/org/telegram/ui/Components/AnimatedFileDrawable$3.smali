@@ -159,7 +159,7 @@
 
     invoke-static {v0, v3}, Lorg/telegram/ui/Components/AnimatedFileDrawable;->access$1502(Lorg/telegram/ui/Components/AnimatedFileDrawable;I)I
 
-    const/4 v0, 0x0
+    move v0, v1
 
     .line 253
     :goto_2
@@ -262,14 +262,14 @@
 
     const/high16 v4, 0x447a0000    # 1000.0f
 
-    mul-float v3, v3, v4
+    mul-float/2addr v3, v4
 
     float-to-int v3, v3
 
     goto :goto_3
 
     :cond_5
-    const/4 v3, 0x0
+    move v3, v1
 
     :goto_3
     invoke-static {v0, v3}, Lorg/telegram/ui/Components/AnimatedFileDrawable;->access$2102(Lorg/telegram/ui/Components/AnimatedFileDrawable;I)I

@@ -1069,7 +1069,7 @@
 
     if-nez p1, :cond_23
 
-    const/4 p1, 0x0
+    move p1, v4
 
     .line 13
     :goto_9

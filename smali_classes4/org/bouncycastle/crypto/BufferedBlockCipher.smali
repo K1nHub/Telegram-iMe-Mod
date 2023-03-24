@@ -68,12 +68,12 @@
 
     if-eqz v4, :cond_0
 
-    const/4 v4, 0x1
+    move v4, v3
 
     goto :goto_0
 
     :cond_0
-    const/4 v4, 0x0
+    move v4, v0
 
     :goto_0
     iput-boolean v4, p0, Lorg/bouncycastle/crypto/BufferedBlockCipher;->pgpCFB:Z
@@ -97,7 +97,7 @@
 
     if-eqz p1, :cond_2
 
-    const/4 v0, 0x1
+    move v0, v3
 
     :cond_2
     iput-boolean v0, p0, Lorg/bouncycastle/crypto/BufferedBlockCipher;->partialBlockOkay:Z
@@ -385,7 +385,7 @@
     goto :goto_1
 
     :cond_2
-    const/4 v1, 0x0
+    move v1, v4
 
     :cond_3
     iget-object v0, p0, Lorg/bouncycastle/crypto/BufferedBlockCipher;->buf:[B
@@ -436,7 +436,7 @@
 
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    move v1, v0
 
     :goto_0
     iget-object v2, p0, Lorg/bouncycastle/crypto/BufferedBlockCipher;->buf:[B

@@ -372,12 +372,12 @@
 
     if-ne v12, v14, :cond_3
 
-    const/4 v12, 0x1
+    move v12, v8
 
     goto :goto_0
 
     :cond_3
-    const/4 v12, 0x0
+    move v12, v0
 
     .line 165
     :goto_0
@@ -539,7 +539,7 @@
 
     if-lez v0, :cond_a
 
-    const/4 v0, 0x1
+    move v0, v8
 
     goto :goto_3
 
@@ -653,7 +653,7 @@
     goto :goto_5
 
     :cond_d
-    const/4 v0, 0x0
+    move v0, v14
 
     .line 208
     :goto_5
@@ -954,7 +954,7 @@
 
     const v13, 0x7f7fffff    # Float.MAX_VALUE
 
-    const v14, 0x7f7fffff    # Float.MAX_VALUE
+    move v14, v13
 
     const/4 v15, 0x0
 
@@ -1008,7 +1008,7 @@
 
     iget v14, v6, Lorg/telegram/ui/TextMessageEnterTransition;->scaleFrom:F
 
-    mul-float v11, v11, v14
+    mul-float/2addr v11, v14
 
     div-float/2addr v0, v11
 
@@ -1116,9 +1116,9 @@
 
     const-wide v19, 0x3fc99999a0000000L    # 0.20000000298023224
 
-    cmpl-double v21, v14, v19
+    cmpl-double v14, v14, v19
 
-    if-lez v21, :cond_13
+    if-lez v14, :cond_13
 
     const/4 v14, 0x1
 
@@ -2059,7 +2059,7 @@
 
     move-object/from16 v2, p4
 
-    const/4 v10, 0x2
+    move v10, v3
 
     move-object/from16 v3, p1
 
@@ -2101,6 +2101,8 @@
     :cond_24
     :goto_11
     return-void
+
+    nop
 
     :pswitch_data_0
     .packed-switch 0x0
@@ -2512,7 +2514,7 @@
 
     if-lez v3, :cond_3
 
-    const/high16 v6, 0x3f800000    # 1.0f
+    move v6, v11
 
     goto :goto_0
 
@@ -2559,7 +2561,7 @@
 
     mul-float v2, v2, v19
 
-    mul-float v1, v1, v5
+    mul-float/2addr v1, v5
 
     add-float/2addr v2, v1
 
@@ -2588,7 +2590,7 @@
 
     if-le v1, v2, :cond_4
 
-    const/4 v1, 0x1
+    move v1, v8
 
     goto :goto_1
 
@@ -2633,7 +2635,7 @@
 
     if-lez v1, :cond_5
 
-    const/16 v22, 0x1
+    move/from16 v22, v8
 
     goto :goto_2
 
@@ -2850,7 +2852,7 @@
 
     add-float/2addr v1, v3
 
-    mul-float v1, v1, v8
+    mul-float/2addr v1, v8
 
     add-float v5, v4, v1
 
@@ -3515,13 +3517,13 @@
 
     int-to-float v6, v6
 
-    mul-float v6, v6, v8
+    mul-float/2addr v6, v8
 
     add-float/2addr v13, v6
 
     mul-float v13, v13, v23
 
-    mul-float v15, v15, v8
+    mul-float/2addr v15, v8
 
     add-float/2addr v13, v15
 
@@ -3657,7 +3659,7 @@
 
     int-to-float v7, v7
 
-    mul-float v7, v7, v11
+    mul-float/2addr v7, v11
 
     float-to-int v7, v7
 
@@ -3681,7 +3683,7 @@
 
     int-to-float v6, v1
 
-    mul-float v6, v6, v11
+    mul-float/2addr v6, v11
 
     const/4 v7, 0x0
 
@@ -3750,11 +3752,11 @@
 
     mul-float v3, v3, v19
 
-    mul-float v2, v2, v11
+    mul-float/2addr v2, v11
 
     add-float/2addr v3, v2
 
-    mul-float v9, v9, v11
+    mul-float/2addr v9, v11
 
     add-float/2addr v4, v9
 
@@ -3856,7 +3858,7 @@
 
     move-object/from16 v1, p1
 
-    const/16 v15, 0x13
+    move v15, v4
 
     move/from16 v21, v33
 
@@ -4076,7 +4078,7 @@
 
     sub-float v2, v17, v2
 
-    mul-float v2, v2, v11
+    mul-float/2addr v2, v11
 
     add-float/2addr v2, v15
 
@@ -4378,7 +4380,7 @@
 
     sub-float v1, v17, v1
 
-    mul-float v1, v1, v11
+    mul-float/2addr v1, v11
 
     add-float/2addr v15, v1
 
@@ -4483,7 +4485,7 @@
 
     sub-float v11, v6, v12
 
-    mul-float v2, v2, v11
+    mul-float/2addr v2, v11
 
     float-to-int v2, v2
 
@@ -4536,7 +4538,7 @@
 
     sub-float v11, v4, v12
 
-    mul-float v3, v3, v11
+    mul-float/2addr v3, v11
 
     float-to-int v3, v3
 
@@ -4905,7 +4907,7 @@
 
     int-to-float v3, v3
 
-    mul-float v3, v3, v2
+    mul-float/2addr v3, v2
 
     add-float/2addr v1, v3
 

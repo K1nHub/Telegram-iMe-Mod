@@ -163,7 +163,7 @@
 
     const v6, 0x3ea66666    # 0.325f
 
-    mul-float v5, v5, v6
+    mul-float/2addr v5, v6
 
     float-to-int v5, v5
 
@@ -622,12 +622,12 @@
 
     if-eqz v1, :cond_0
 
-    const v1, 0x3f4978d5    # 0.787f
+    move v1, v2
 
     goto :goto_0
 
     :cond_0
-    const/high16 v1, 0x3f800000    # 1.0f
+    move v1, v3
 
     :goto_0
     invoke-virtual {v0, v1}, Landroid/widget/FrameLayout;->setScaleX(F)V
@@ -646,7 +646,7 @@
     goto :goto_1
 
     :cond_1
-    const/high16 v2, 0x3f800000    # 1.0f
+    move v2, v3
 
     :goto_1
     invoke-virtual {v0, v2}, Landroid/widget/FrameLayout;->setScaleY(F)V
@@ -980,7 +980,7 @@
 
     const-wide/16 v5, 0x3e8
 
-    mul-long v3, v3, v5
+    mul-long/2addr v3, v5
 
     invoke-virtual {v2, v3, v4}, Lorg/telegram/messenger/time/FastDateFormat;->format(J)Ljava/lang/String;
 
@@ -1096,7 +1096,7 @@
     goto :goto_0
 
     :cond_1
-    const/4 v0, 0x6
+    move v0, v1
 
     :goto_0
     add-int/2addr v0, v2
@@ -1122,7 +1122,7 @@
     goto :goto_1
 
     :cond_3
-    const/4 v0, 0x6
+    move v0, v1
 
     :goto_1
     add-int/2addr v0, v2
@@ -1295,7 +1295,7 @@
 
     :cond_3
     :goto_0
-    const/4 v1, 0x0
+    move v1, v2
 
     :goto_1
     if-nez v1, :cond_4
@@ -1466,12 +1466,12 @@
 
     if-eqz p2, :cond_1
 
-    const v6, 0x3f4978d5    # 0.787f
+    move v6, p1
 
     goto :goto_0
 
     :cond_1
-    const/high16 v6, 0x3f800000    # 1.0f
+    move v6, v0
 
     :goto_0
     const/4 v7, 0x0
@@ -1496,7 +1496,7 @@
     goto :goto_1
 
     :cond_2
-    const/high16 p1, 0x3f800000    # 1.0f
+    move p1, v0
 
     :goto_1
     aput p1, v5, v7
@@ -1540,12 +1540,12 @@
 
     if-eqz p2, :cond_4
 
-    const v1, 0x3f4978d5    # 0.787f
+    move v1, p1
 
     goto :goto_2
 
     :cond_4
-    const/high16 v1, 0x3f800000    # 1.0f
+    move v1, v0
 
     :goto_2
     invoke-virtual {p3, v1}, Landroid/widget/FrameLayout;->setScaleX(F)V
@@ -1558,7 +1558,7 @@
     goto :goto_3
 
     :cond_5
-    const/high16 p1, 0x3f800000    # 1.0f
+    move p1, v0
 
     :goto_3
     invoke-virtual {p3, p1}, Landroid/widget/FrameLayout;->setScaleY(F)V
@@ -1971,7 +1971,7 @@
 
     if-eqz p2, :cond_4
 
-    const/4 v0, 0x1
+    move v0, v1
 
     .line 348
     :cond_4
@@ -1994,12 +1994,12 @@
 
     if-eqz v0, :cond_5
 
-    const/4 v2, 0x0
+    move v2, p3
 
     goto :goto_2
 
     :cond_5
-    const/high16 v2, 0x3f800000    # 1.0f
+    move v2, v1
 
     :goto_2
     invoke-virtual {p2, v2}, Landroid/view/View;->setAlpha(F)V
@@ -2012,7 +2012,7 @@
     goto :goto_3
 
     :cond_6
-    const/high16 p3, 0x3f800000    # 1.0f
+    move p3, v1
 
     :goto_3
     invoke-virtual {p2, p3}, Landroid/widget/FrameLayout;->setAlpha(F)V
@@ -2283,12 +2283,12 @@
 
     if-eqz v1, :cond_8
 
-    const/4 v1, 0x1
+    move v1, v13
 
     goto :goto_2
 
     :cond_8
-    const/4 v1, 0x0
+    move v1, v12
 
     .line 387
     :goto_2
@@ -2311,12 +2311,12 @@
 
     if-eqz v1, :cond_9
 
-    const/4 v5, 0x0
+    move v5, v3
 
     goto :goto_3
 
     :cond_9
-    const/high16 v5, 0x3f800000    # 1.0f
+    move v5, v4
 
     :goto_3
     invoke-virtual {v2, v5}, Landroid/view/View;->setAlpha(F)V
@@ -2329,7 +2329,7 @@
     goto :goto_4
 
     :cond_a
-    const/high16 v3, 0x3f800000    # 1.0f
+    move v3, v4
 
     :goto_4
     invoke-virtual {v2, v3}, Landroid/widget/FrameLayout;->setAlpha(F)V
@@ -2432,12 +2432,12 @@
 
     if-eqz p1, :cond_4
 
-    const/high16 v8, 0x3f800000    # 1.0f
+    move v8, v0
 
     goto :goto_0
 
     :cond_4
-    const/4 v8, 0x0
+    move v8, v1
 
     :goto_0
     const/4 v9, 0x0
@@ -2462,7 +2462,7 @@
     goto :goto_1
 
     :cond_5
-    const/4 v0, 0x0
+    move v0, v1
 
     :goto_1
     aput v0, v7, v9

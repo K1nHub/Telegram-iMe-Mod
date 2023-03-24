@@ -110,9 +110,9 @@
 
     const-wide/16 p1, 0x0
 
-    cmp-long p5, p3, p1
+    cmp-long p1, p3, p1
 
-    if-lez p5, :cond_0
+    if-lez p1, :cond_0
 
     const/4 p1, 0x1
 
@@ -218,7 +218,7 @@
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     .line 219
     :cond_2
@@ -461,7 +461,7 @@
 
     move-object v3, v2
 
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_0
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
@@ -611,9 +611,9 @@
 
     add-long/2addr v8, v4
 
-    cmp-long v0, v8, p1
+    cmp-long p1, v8, p1
 
-    if-eqz v0, :cond_8
+    if-eqz p1, :cond_8
 
     monitor-exit v3
 

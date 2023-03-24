@@ -74,14 +74,14 @@
     goto :goto_0
 
     :cond_0
-    const/4 v1, 0x0
+    move v1, v3
 
     :goto_0
     sget-boolean v4, Lorg/telegram/messenger/LocaleController;->isRTL:Z
 
     if-eqz v4, :cond_1
 
-    const/4 v2, 0x0
+    move v2, v3
 
     goto :goto_1
 
@@ -223,12 +223,12 @@
 
     if-eqz v1, :cond_3
 
-    const/4 v1, 0x3
+    move v1, v11
 
     goto :goto_3
 
     :cond_3
-    const/4 v1, 0x5
+    move v1, v2
 
     :goto_3
     or-int/lit8 v6, v1, 0x10
@@ -287,7 +287,7 @@
     goto :goto_4
 
     :cond_4
-    const/4 v2, 0x3
+    move v2, v11
 
     :goto_4
     or-int/lit8 v5, v2, 0x30
@@ -376,17 +376,15 @@
     :cond_0
     const/4 p1, 0x0
 
-    const/4 v5, 0x0
-
     goto :goto_1
 
     :cond_1
     :goto_0
     const/4 p1, 0x1
 
-    const/4 v5, 0x1
-
     :goto_1
+    move v5, p1
+
     iget-object p1, p0, Lorg/telegram/ui/CallLogActivity$CallCell;->this$0:Lorg/telegram/ui/CallLogActivity;
 
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;

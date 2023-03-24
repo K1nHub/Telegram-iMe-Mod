@@ -111,7 +111,7 @@
 .end method
 
 .method public areItemsTheSame(II)Z
-    .locals 3
+    .locals 2
 
     .line 679
     iget-object v0, p0, Lorg/telegram/ui/StickersActivity$6;->oldList:Ljava/util/List;
@@ -138,9 +138,9 @@
 
     iget-wide p1, p1, Lorg/telegram/tgnet/TLRPC$StickerSet;->id:J
 
-    cmp-long v2, v0, p1
+    cmp-long p1, v0, p1
 
-    if-nez v2, :cond_0
+    if-nez p1, :cond_0
 
     const/4 p1, 0x1
 

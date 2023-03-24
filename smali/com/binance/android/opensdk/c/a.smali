@@ -193,13 +193,13 @@
     goto :goto_0
 
     :cond_0
-    const/4 p0, 0x0
+    move p0, v0
 
     goto :goto_1
 
     :cond_1
     :goto_0
-    const/4 p0, 0x1
+    move p0, v1
 
     :goto_1
     if-eqz p0, :cond_2

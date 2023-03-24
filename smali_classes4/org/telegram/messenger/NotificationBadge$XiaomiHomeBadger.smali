@@ -94,10 +94,8 @@
 
     goto :goto_2
 
-    :catchall_0
-    nop
-
     .line 426
+    :catchall_0
     new-instance v1, Landroid/content/Intent;
 
     const-string v2, "android.intent.action.APPLICATION_MESSAGE_UPDATE"

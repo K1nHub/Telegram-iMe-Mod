@@ -880,7 +880,7 @@
     goto :goto_1
 
     :cond_7
-    const/4 v1, 0x5
+    move v1, v3
 
     :goto_1
     iget-object v0, p0, Lorg/telegram/ui/Adapters/BaseLocationAdapter;->places:Ljava/util/ArrayList;
@@ -907,7 +907,7 @@
     goto :goto_3
 
     :cond_9
-    const/4 v1, 0x5
+    move v1, v3
 
     :goto_3
     iget-boolean v0, p0, Lorg/telegram/ui/Adapters/LocationActivityAdapter;->myLocationDenied:Z
@@ -925,12 +925,12 @@
     if-nez v4, :cond_b
 
     :cond_a
-    const/4 v4, 0x2
+    move v4, v2
 
     goto :goto_4
 
     :cond_b
-    const/4 v4, 0x0
+    move v4, v3
 
     :goto_4
     add-int/2addr v1, v4
@@ -944,7 +944,7 @@
     goto :goto_5
 
     :cond_c
-    const/4 v2, 0x0
+    move v2, v3
 
     :goto_5
     sub-int/2addr v1, v2
@@ -1261,7 +1261,7 @@
     if-eqz p1, :cond_1
 
     :cond_0
-    const/4 v0, 0x1
+    move v0, v1
 
     :cond_1
     return v0
@@ -1278,7 +1278,7 @@
     if-ne p1, v2, :cond_4
 
     :cond_3
-    const/4 v0, 0x1
+    move v0, v1
 
     :cond_4
     return v0
@@ -1930,7 +1930,7 @@
 
     if-nez v0, :cond_0
 
-    const/4 v0, 0x1
+    move v0, v1
 
     goto :goto_0
 
@@ -2000,7 +2000,7 @@
 .end method
 
 .method public setLiveLocations(Ljava/util/ArrayList;)V
-    .locals 5
+    .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -2051,9 +2051,9 @@
 
     iget-wide v2, v2, Lorg/telegram/ui/LocationActivity$LiveLocation;->id:J
 
-    cmp-long v4, v2, v0
+    cmp-long v2, v2, v0
 
-    if-eqz v4, :cond_1
+    if-eqz v2, :cond_1
 
     iget-object v2, p0, Lorg/telegram/ui/Adapters/LocationActivityAdapter;->currentLiveLocations:Ljava/util/ArrayList;
 

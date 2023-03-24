@@ -22,7 +22,7 @@
 .method static constructor <clinit>()V
     .locals 3
 
-    .line 884
+    .line 885
     invoke-static {}, Lcom/smedialink/model/wallet/home/BannerSlide;->values()[Lcom/smedialink/model/wallet/home/BannerSlide;
 
     move-result-object v0

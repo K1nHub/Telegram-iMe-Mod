@@ -43,9 +43,9 @@
 
     const/4 v1, 0x1
 
-    const/4 v2, 0x0
+    move v2, v0
 
-    const/4 v3, 0x1
+    move v3, v1
 
     .line 403
     :goto_0
@@ -83,12 +83,12 @@
 
     if-ne v3, v4, :cond_2
 
-    const/4 v3, 0x1
+    move v3, v1
 
     goto :goto_1
 
     :cond_2
-    const/4 v3, 0x0
+    move v3, v0
 
     :goto_1
     add-int/lit8 v2, v2, 0x1
@@ -121,9 +121,9 @@
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    move v2, v1
 
-    const/4 v3, 0x0
+    move v3, v2
 
     .line 417
     :goto_0
@@ -175,7 +175,7 @@
     goto :goto_1
 
     :cond_1
-    const/4 v4, 0x0
+    move v4, v1
 
     .line 424
     :goto_1
@@ -183,7 +183,7 @@
 
     aget v5, v0, v5
 
-    mul-int v4, v4, v5
+    mul-int/2addr v4, v5
 
     add-int/2addr v3, v4
 
@@ -196,6 +196,8 @@
     rem-int/lit8 v3, v3, 0xa
 
     return v3
+
+    nop
 
     :array_0
     .array-data 4
@@ -281,9 +283,9 @@
 
     const/4 v1, 0x0
 
-    move-object/from16 v1, p0
+    move v2, v1
 
-    const/4 v2, 0x0
+    move-object/from16 v1, p0
 
     :goto_0
     const/16 v3, 0x21
@@ -2320,8 +2322,6 @@
     return-object v0
 
     :catch_0
-    nop
-
     :cond_1
     if-nez p1, :cond_2
 
@@ -2372,7 +2372,7 @@
 
     const v2, 0x3f343958    # 0.704f
 
-    mul-float v0, v0, v2
+    mul-float/2addr v0, v2
 
     .line 392
     invoke-static {v0}, Ljava/lang/Math;->round(F)I
@@ -2392,7 +2392,7 @@
     goto :goto_0
 
     :cond_0
-    const/4 p3, 0x0
+    move p3, v8
 
     goto :goto_1
 
@@ -2415,12 +2415,12 @@
     goto :goto_2
 
     :cond_2
-    const/4 v2, 0x0
+    move v2, v8
 
     :goto_2
     if-eqz p3, :cond_3
 
-    const/4 v3, 0x0
+    move v3, v8
 
     goto :goto_3
 
@@ -2469,7 +2469,7 @@
 .end method
 
 .method private static recognizeBarcode(Landroid/graphics/Bitmap;)Lorg/telegram/messenger/MrzRecognizer$Result;
-    .locals 9
+    .locals 10
 
     .line 45
     new-instance v0, Lcom/google/android/gms/vision/barcode/BarcodeDetector$Builder;
@@ -2526,7 +2526,7 @@
 
     int-to-float v2, v2
 
-    mul-float v2, v2, v1
+    mul-float/2addr v2, v1
 
     invoke-static {v2}, Ljava/lang/Math;->round(F)I
 
@@ -2538,7 +2538,7 @@
 
     int-to-float v4, v4
 
-    mul-float v4, v4, v1
+    mul-float/2addr v4, v1
 
     invoke-static {v4}, Ljava/lang/Math;->round(F)I
 
@@ -2568,7 +2568,7 @@
 
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    move v1, v0
 
     .line 51
     :goto_0
@@ -2620,12 +2620,12 @@
 
     if-eqz v1, :cond_2
 
-    const/4 v1, 0x2
+    move v1, v7
 
     goto :goto_1
 
     :cond_2
-    const/4 v1, 0x4
+    move v1, v8
 
     :goto_1
     iput v1, p0, Lorg/telegram/messenger/MrzRecognizer$Result;->type:I
@@ -2761,11 +2761,13 @@
 
     if-eqz v1, :cond_8
 
-    const/4 v0, 0x4
+    move v6, v7
 
-    const/4 v6, 0x2
+    move v9, v8
 
-    const/4 v8, 0x0
+    move v8, v0
+
+    move v0, v9
 
     .line 89
     :cond_8
@@ -3175,7 +3177,7 @@
 
     int-to-float v3, v3
 
-    mul-float v3, v3, v1
+    mul-float/2addr v3, v1
 
     invoke-static {v3}, Ljava/lang/Math;->round(F)I
 
@@ -3187,7 +3189,7 @@
 
     int-to-float v4, v4
 
-    mul-float v4, v4, v1
+    mul-float/2addr v4, v1
 
     invoke-static {v4}, Ljava/lang/Math;->round(F)I
 
@@ -3433,11 +3435,11 @@
 
     move-result-wide v2
 
-    long-to-int v3, v2
+    long-to-int v2, v2
 
-    sget-object v2, Landroid/graphics/Bitmap$Config;->ARGB_8888:Landroid/graphics/Bitmap$Config;
+    sget-object v3, Landroid/graphics/Bitmap$Config;->ARGB_8888:Landroid/graphics/Bitmap$Config;
 
-    invoke-static {v1, v3, v2}, Landroid/graphics/Bitmap;->createBitmap(IILandroid/graphics/Bitmap$Config;)Landroid/graphics/Bitmap;
+    invoke-static {v1, v2, v3}, Landroid/graphics/Bitmap;->createBitmap(IILandroid/graphics/Bitmap$Config;)Landroid/graphics/Bitmap;
 
     move-result-object v2
 
@@ -3525,7 +3527,7 @@
 
     int-to-float v7, v7
 
-    mul-float v7, v7, v4
+    mul-float/2addr v7, v4
 
     const/4 v8, 0x0
 
@@ -3535,7 +3537,7 @@
 
     int-to-float v7, v7
 
-    mul-float v7, v7, v4
+    mul-float/2addr v7, v4
 
     const/4 v8, 0x1
 
@@ -3545,7 +3547,7 @@
 
     int-to-float v7, v7
 
-    mul-float v7, v7, v4
+    mul-float/2addr v7, v4
 
     const/4 v8, 0x2
 
@@ -3555,7 +3557,7 @@
 
     int-to-float v7, v7
 
-    mul-float v7, v7, v4
+    mul-float/2addr v7, v4
 
     const/4 v8, 0x3
 
@@ -3567,7 +3569,7 @@
 
     int-to-float v8, v8
 
-    mul-float v8, v8, v4
+    mul-float/2addr v8, v4
 
     aput v8, v6, v7
 
@@ -3575,7 +3577,7 @@
 
     int-to-float v7, v7
 
-    mul-float v7, v7, v4
+    mul-float/2addr v7, v4
 
     const/4 v8, 0x5
 
@@ -3587,7 +3589,7 @@
 
     int-to-float v7, v7
 
-    mul-float v7, v7, v4
+    mul-float/2addr v7, v4
 
     const/4 v1, 0x6
 
@@ -3597,7 +3599,7 @@
 
     int-to-float v7, v7
 
-    mul-float v7, v7, v4
+    mul-float/2addr v7, v4
 
     const/4 v4, 0x7
 
@@ -3690,7 +3692,7 @@
 
     int-to-float v3, v3
 
-    mul-float v3, v3, v2
+    mul-float/2addr v3, v2
 
     invoke-static {v3}, Ljava/lang/Math;->round(F)I
 
@@ -3702,7 +3704,7 @@
 
     int-to-float v4, v4
 
-    mul-float v4, v4, v2
+    mul-float/2addr v4, v2
 
     invoke-static {v4}, Ljava/lang/Math;->round(F)I
 
@@ -3909,7 +3911,7 @@
     const/4 v7, 0x2
 
     :goto_b
-    if-lt v12, v14, :cond_2d
+    if-lt v12, v14, :cond_2e
 
     if-ge v13, v7, :cond_e
 
@@ -3925,13 +3927,13 @@
 
     const/16 v3, 0xa
 
-    mul-int/lit8 v0, v0, 0xa
+    mul-int/2addr v0, v3
 
     array-length v4, v6
 
     const/16 v7, 0xf
 
-    mul-int/lit8 v4, v4, 0xf
+    mul-int/2addr v4, v7
 
     sget-object v8, Landroid/graphics/Bitmap$Config;->ALPHA_8:Landroid/graphics/Bitmap$Config;
 
@@ -4077,7 +4079,7 @@
 
     const/4 v3, 0x2
 
-    if-lt v1, v3, :cond_2c
+    if-lt v1, v3, :cond_2d
 
     const/4 v1, 0x0
 
@@ -4089,7 +4091,7 @@
 
     const/16 v4, 0x1e
 
-    if-lt v3, v4, :cond_2c
+    if-lt v3, v4, :cond_2d
 
     const/4 v3, 0x1
 
@@ -4105,7 +4107,7 @@
 
     move-result v4
 
-    if-ne v3, v4, :cond_2c
+    if-ne v3, v4, :cond_2d
 
     const-string v3, "\n"
 
@@ -4146,7 +4148,7 @@
 
     const/16 v12, 0x30
 
-    if-ne v4, v1, :cond_1a
+    if-ne v4, v1, :cond_1b
 
     const/4 v1, 0x1
 
@@ -4164,7 +4166,7 @@
 
     const/16 v13, 0x2c
 
-    if-ne v4, v13, :cond_2a
+    if-ne v4, v13, :cond_2b
 
     .line 261
     aget-object v4, v0, v1
@@ -4192,7 +4194,7 @@
 
     const/4 v14, -0x1
 
-    if-eq v4, v14, :cond_12
+    if-eq v4, v14, :cond_13
 
     .line 264
     aget-object v14, v0, v1
@@ -4271,6 +4273,11 @@
     :cond_12
     const/4 v13, 0x0
 
+    goto :goto_e
+
+    :cond_13
+    move v13, v1
+
     :goto_e
     const/4 v1, 0x1
 
@@ -4311,13 +4318,13 @@
 
     move-result v13
 
-    if-ne v9, v13, :cond_13
+    if-ne v9, v13, :cond_14
 
     .line 273
     iput-object v4, v2, Lorg/telegram/messenger/MrzRecognizer$Result;->number:Ljava/lang/String;
 
     .line 275
-    :cond_13
+    :cond_14
     aget-object v4, v0, v1
 
     const/16 v9, 0xa
@@ -4363,13 +4370,13 @@
 
     move-result v9
 
-    if-ne v5, v9, :cond_14
+    if-ne v5, v9, :cond_15
 
     .line 279
     invoke-static {v4, v2}, Lorg/telegram/messenger/MrzRecognizer;->parseBirthDate(Ljava/lang/String;Lorg/telegram/messenger/MrzRecognizer$Result;)V
 
     .line 281
-    :cond_14
+    :cond_15
     aget-object v4, v0, v1
 
     const/16 v5, 0x14
@@ -4417,7 +4424,7 @@
 
     move-result v6
 
-    if-eq v5, v6, :cond_15
+    if-eq v5, v6, :cond_16
 
     aget-object v5, v0, v1
 
@@ -4425,14 +4432,14 @@
 
     move-result v1
 
-    if-ne v1, v10, :cond_16
+    if-ne v1, v10, :cond_17
 
     .line 285
-    :cond_15
+    :cond_16
     invoke-static {v4, v2}, Lorg/telegram/messenger/MrzRecognizer;->parseExpiryDate(Ljava/lang/String;Lorg/telegram/messenger/MrzRecognizer$Result;)V
 
     .line 289
-    :cond_16
+    :cond_17
     iget-object v1, v2, Lorg/telegram/messenger/MrzRecognizer$Result;->issuingCountry:Ljava/lang/String;
 
     const-string v4, "RUS"
@@ -4441,7 +4448,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_18
+    if-eqz v1, :cond_19
 
     const/4 v1, 0x0
 
@@ -4455,7 +4462,7 @@
 
     const/16 v5, 0x4e
 
-    if-ne v4, v5, :cond_18
+    if-ne v4, v5, :cond_19
 
     const/4 v4, 0x3
 
@@ -4489,7 +4496,7 @@
 
     const/4 v5, 0x1
 
-    if-le v1, v5, :cond_17
+    if-le v1, v5, :cond_18
 
     .line 294
     aget-object v1, v4, v5
@@ -4505,7 +4512,7 @@
     iput-object v1, v2, Lorg/telegram/messenger/MrzRecognizer$Result;->middleName:Ljava/lang/String;
 
     .line 295
-    :cond_17
+    :cond_18
     iget-object v1, v2, Lorg/telegram/messenger/MrzRecognizer$Result;->lastName:Ljava/lang/String;
 
     invoke-static {v1}, Lorg/telegram/messenger/MrzRecognizer;->russianPassportTranslit(Ljava/lang/String;)Ljava/lang/String;
@@ -4521,7 +4528,7 @@
     .line 296
     iget-object v1, v2, Lorg/telegram/messenger/MrzRecognizer$Result;->number:Ljava/lang/String;
 
-    if-eqz v1, :cond_19
+    if-eqz v1, :cond_1a
 
     .line 297
     new-instance v1, Ljava/lang/StringBuilder;
@@ -4569,7 +4576,7 @@
     goto :goto_f
 
     .line 299
-    :cond_18
+    :cond_19
     iget-object v0, v2, Lorg/telegram/messenger/MrzRecognizer$Result;->firstName:Ljava/lang/String;
 
     const/16 v1, 0x38
@@ -4592,7 +4599,7 @@
     iput-object v0, v2, Lorg/telegram/messenger/MrzRecognizer$Result;->lastName:Ljava/lang/String;
 
     .line 302
-    :cond_19
+    :cond_1a
     :goto_f
     iget-object v0, v2, Lorg/telegram/messenger/MrzRecognizer$Result;->lastName:Ljava/lang/String;
 
@@ -4622,25 +4629,25 @@
 
     goto/16 :goto_12
 
-    :cond_1a
-    if-eq v4, v8, :cond_1c
+    :cond_1b
+    if-eq v4, v8, :cond_1d
 
     const/16 v13, 0x41
 
-    if-eq v4, v13, :cond_1c
+    if-eq v4, v13, :cond_1d
 
     const/16 v13, 0x43
 
-    if-ne v4, v13, :cond_1b
+    if-ne v4, v13, :cond_1c
 
     goto :goto_10
 
-    :cond_1b
+    :cond_1c
     const/4 v13, 0x0
 
     return-object v13
 
-    :cond_1c
+    :cond_1d
     :goto_10
     const/4 v13, 0x2
 
@@ -4652,7 +4659,7 @@
 
     const/4 v15, 0x3
 
-    if-ne v14, v15, :cond_21
+    if-ne v14, v15, :cond_22
 
     const/4 v14, 0x0
 
@@ -4664,7 +4671,7 @@
 
     const/16 v1, 0x1e
 
-    if-ne v15, v1, :cond_21
+    if-ne v15, v1, :cond_22
 
     aget-object v15, v0, v13
 
@@ -4672,7 +4679,7 @@
 
     move-result v15
 
-    if-ne v15, v1, :cond_21
+    if-ne v15, v1, :cond_22
 
     .line 309
     aget-object v1, v0, v14
@@ -4720,12 +4727,12 @@
 
     sub-int/2addr v7, v12
 
-    if-ne v4, v7, :cond_1d
+    if-ne v4, v7, :cond_1e
 
     .line 313
     iput-object v1, v2, Lorg/telegram/messenger/MrzRecognizer$Result;->number:Ljava/lang/String;
 
-    :cond_1d
+    :cond_1e
     const/4 v1, 0x1
 
     .line 316
@@ -4761,13 +4768,13 @@
 
     move-result v7
 
-    if-ne v13, v7, :cond_1e
+    if-ne v13, v7, :cond_1f
 
     .line 319
     invoke-static {v4, v2}, Lorg/telegram/messenger/MrzRecognizer;->parseBirthDate(Ljava/lang/String;Lorg/telegram/messenger/MrzRecognizer$Result;)V
 
     .line 321
-    :cond_1e
+    :cond_1f
     aget-object v4, v0, v1
 
     const/4 v7, 0x7
@@ -4815,7 +4822,7 @@
 
     move-result v7
 
-    if-eq v6, v7, :cond_1f
+    if-eq v6, v7, :cond_20
 
     aget-object v6, v0, v1
 
@@ -4823,14 +4830,14 @@
 
     move-result v5
 
-    if-ne v5, v10, :cond_20
+    if-ne v5, v10, :cond_21
 
     .line 325
-    :cond_1f
+    :cond_20
     invoke-static {v4, v2}, Lorg/telegram/messenger/MrzRecognizer;->parseExpiryDate(Ljava/lang/String;Lorg/telegram/messenger/MrzRecognizer$Result;)V
 
     .line 327
-    :cond_20
+    :cond_21
     aget-object v1, v0, v1
 
     const/16 v4, 0x12
@@ -4856,7 +4863,7 @@
 
     const/4 v5, -0x1
 
-    if-eq v4, v5, :cond_29
+    if-eq v4, v5, :cond_2a
 
     .line 330
     aget-object v5, v0, v1
@@ -4899,12 +4906,12 @@
     goto/16 :goto_11
 
     .line 333
-    :cond_21
+    :cond_22
     array-length v1, v0
 
     const/4 v13, 0x2
 
-    if-ne v1, v13, :cond_29
+    if-ne v1, v13, :cond_2a
 
     const/4 v1, 0x0
 
@@ -4916,7 +4923,7 @@
 
     const/16 v15, 0x24
 
-    if-ne v14, v15, :cond_29
+    if-ne v14, v15, :cond_2a
 
     .line 334
     aget-object v14, v0, v1
@@ -4936,9 +4943,9 @@
 
     move-result v13
 
-    if-eqz v13, :cond_24
+    if-eqz v13, :cond_25
 
-    if-ne v4, v8, :cond_24
+    if-ne v4, v8, :cond_25
 
     aget-object v4, v0, v1
 
@@ -4950,7 +4957,7 @@
 
     const/16 v14, 0x44
 
-    if-ne v4, v14, :cond_24
+    if-ne v4, v14, :cond_25
 
     const-string v4, "FRA"
 
@@ -5035,13 +5042,13 @@
 
     move-result v5
 
-    if-ne v4, v5, :cond_22
+    if-ne v4, v5, :cond_23
 
     .line 341
     iput-object v1, v2, Lorg/telegram/messenger/MrzRecognizer$Result;->number:Ljava/lang/String;
 
     .line 343
-    :cond_22
+    :cond_23
     aget-object v1, v0, v13
 
     const/16 v4, 0x21
@@ -5075,13 +5082,13 @@
 
     move-result v5
 
-    if-ne v4, v5, :cond_23
+    if-ne v4, v5, :cond_24
 
     .line 345
     invoke-static {v1, v2}, Lorg/telegram/messenger/MrzRecognizer;->parseBirthDate(Ljava/lang/String;Lorg/telegram/messenger/MrzRecognizer$Result;)V
 
     .line 347
-    :cond_23
+    :cond_24
     aget-object v0, v0, v13
 
     const/16 v1, 0x22
@@ -5102,7 +5109,7 @@
     goto/16 :goto_11
 
     .line 350
-    :cond_24
+    :cond_25
     aget-object v4, v0, v1
 
     const-string v13, "<<"
@@ -5113,7 +5120,7 @@
 
     const/4 v13, -0x1
 
-    if-eq v4, v13, :cond_25
+    if-eq v4, v13, :cond_26
 
     .line 352
     aget-object v13, v0, v1
@@ -5155,7 +5162,7 @@
 
     iput-object v4, v2, Lorg/telegram/messenger/MrzRecognizer$Result;->firstName:Ljava/lang/String;
 
-    :cond_25
+    :cond_26
     const/4 v4, 0x1
 
     .line 355
@@ -5195,13 +5202,13 @@
 
     move-result v13
 
-    if-ne v9, v13, :cond_26
+    if-ne v9, v13, :cond_27
 
     .line 358
     iput-object v1, v2, Lorg/telegram/messenger/MrzRecognizer$Result;->number:Ljava/lang/String;
 
     .line 360
-    :cond_26
+    :cond_27
     aget-object v1, v0, v4
 
     const/16 v9, 0xa
@@ -5246,13 +5253,13 @@
 
     move-result v9
 
-    if-ne v5, v9, :cond_27
+    if-ne v5, v9, :cond_28
 
     .line 363
     invoke-static {v1, v2}, Lorg/telegram/messenger/MrzRecognizer;->parseBirthDate(Ljava/lang/String;Lorg/telegram/messenger/MrzRecognizer$Result;)V
 
     .line 365
-    :cond_27
+    :cond_28
     aget-object v1, v0, v4
 
     const/16 v5, 0x14
@@ -5299,7 +5306,7 @@
 
     move-result v6
 
-    if-eq v5, v6, :cond_28
+    if-eq v5, v6, :cond_29
 
     aget-object v0, v0, v4
 
@@ -5307,14 +5314,14 @@
 
     move-result v0
 
-    if-ne v0, v10, :cond_29
+    if-ne v0, v10, :cond_2a
 
     .line 368
-    :cond_28
+    :cond_29
     invoke-static {v1, v2}, Lorg/telegram/messenger/MrzRecognizer;->parseExpiryDate(Ljava/lang/String;Lorg/telegram/messenger/MrzRecognizer$Result;)V
 
     .line 372
-    :cond_29
+    :cond_2a
     :goto_11
     iget-object v0, v2, Lorg/telegram/messenger/MrzRecognizer$Result;->firstName:Ljava/lang/String;
 
@@ -5354,7 +5361,7 @@
     iput-object v0, v2, Lorg/telegram/messenger/MrzRecognizer$Result;->lastName:Ljava/lang/String;
 
     .line 377
-    :cond_2a
+    :cond_2b
     :goto_12
     iget-object v0, v2, Lorg/telegram/messenger/MrzRecognizer$Result;->firstName:Ljava/lang/String;
 
@@ -5362,7 +5369,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_2b
+    if-eqz v0, :cond_2c
 
     iget-object v0, v2, Lorg/telegram/messenger/MrzRecognizer$Result;->lastName:Ljava/lang/String;
 
@@ -5370,14 +5377,14 @@
 
     move-result v0
 
-    if-eqz v0, :cond_2b
+    if-eqz v0, :cond_2c
 
     const/4 v0, 0x0
 
     return-object v0
 
     .line 379
-    :cond_2b
+    :cond_2c
     iget-object v0, v2, Lorg/telegram/messenger/MrzRecognizer$Result;->issuingCountry:Ljava/lang/String;
 
     invoke-virtual {v3, v0}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -5401,12 +5408,12 @@
 
     return-object v2
 
-    :cond_2c
+    :cond_2d
     const/4 v0, 0x0
 
     return-object v0
 
-    :cond_2d
+    :cond_2e
     :goto_13
     move-object v0, v2
 

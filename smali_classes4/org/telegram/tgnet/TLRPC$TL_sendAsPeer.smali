@@ -25,7 +25,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 59317
+    .line 59344
     invoke-direct {p0}, Lorg/telegram/tgnet/TLObject;-><init>()V
 
     return-void
@@ -34,7 +34,7 @@
 .method public static TLdeserialize(Lorg/telegram/tgnet/AbstractSerializedData;IZ)Lorg/telegram/tgnet/TLRPC$TL_sendAsPeer;
     .locals 1
 
-    .line 59325
+    .line 59352
     sget v0, Lorg/telegram/tgnet/TLRPC$TL_sendAsPeer;->constructor:I
 
     if-eq v0, p1, :cond_1
@@ -45,7 +45,7 @@
 
     return-object p0
 
-    .line 59327
+    .line 59354
     :cond_0
     new-instance p0, Ljava/lang/RuntimeException;
 
@@ -71,13 +71,13 @@
 
     throw p0
 
-    .line 59332
+    .line 59359
     :cond_1
     new-instance p1, Lorg/telegram/tgnet/TLRPC$TL_sendAsPeer;
 
     invoke-direct {p1}, Lorg/telegram/tgnet/TLRPC$TL_sendAsPeer;-><init>()V
 
-    .line 59333
+    .line 59360
     invoke-virtual {p1, p0, p2}, Lorg/telegram/tgnet/TLRPC$TL_sendAsPeer;->readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
 
     return-object p1
@@ -88,7 +88,7 @@
 .method public readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
     .locals 2
 
-    .line 59338
+    .line 59365
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
@@ -106,11 +106,11 @@
     :cond_0
     const/4 v1, 0x0
 
-    .line 59339
+    .line 59366
     :goto_0
     iput-boolean v1, p0, Lorg/telegram/tgnet/TLRPC$TL_sendAsPeer;->premium_required:Z
 
-    .line 59340
+    .line 59367
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
@@ -127,12 +127,12 @@
 .method public serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
     .locals 1
 
-    .line 59344
+    .line 59371
     sget v0, Lorg/telegram/tgnet/TLRPC$TL_sendAsPeer;->constructor:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 59345
+    .line 59372
     iget-boolean v0, p0, Lorg/telegram/tgnet/TLRPC$TL_sendAsPeer;->premium_required:Z
 
     if-eqz v0, :cond_0
@@ -151,10 +151,10 @@
     :goto_0
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$TL_sendAsPeer;->flags:I
 
-    .line 59346
+    .line 59373
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 59347
+    .line 59374
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$TL_sendAsPeer;->peer:Lorg/telegram/tgnet/TLRPC$Peer;
 
     invoke-virtual {v0, p1}, Lorg/telegram/tgnet/TLObject;->serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V

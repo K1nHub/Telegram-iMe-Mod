@@ -52,7 +52,7 @@
 
     move-object v11, v9
 
-    const/4 v10, 0x1
+    move v10, v2
 
     :goto_0
     invoke-virtual {p1}, Landroid/os/Parcel;->dataPosition()I

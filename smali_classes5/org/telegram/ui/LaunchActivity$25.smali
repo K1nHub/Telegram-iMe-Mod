@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/LaunchActivity;)V
     .locals 0
 
-    .line 6649
+    .line 6660
     iput-object p1, p0, Lorg/telegram/ui/LaunchActivity$25;->this$0:Lorg/telegram/ui/LaunchActivity;
 
     invoke-direct {p0}, Landroid/text/style/ClickableSpan;-><init>()V
@@ -35,7 +35,7 @@
 .method public onClick(Landroid/view/View;)V
     .locals 2
 
-    .line 6652
+    .line 6663
     iget-object p1, p0, Lorg/telegram/ui/LaunchActivity$25;->this$0:Lorg/telegram/ui/LaunchActivity;
 
     invoke-virtual {p1}, Lorg/telegram/ui/LaunchActivity;->getActionBarLayout()Lorg/telegram/ui/ActionBar/INavigationLayout;
@@ -56,12 +56,12 @@
 .method public updateDrawState(Landroid/text/TextPaint;)V
     .locals 1
 
-    .line 6657
+    .line 6668
     invoke-super {p0, p1}, Landroid/text/style/ClickableSpan;->updateDrawState(Landroid/text/TextPaint;)V
 
     const/4 v0, 0x0
 
-    .line 6658
+    .line 6669
     invoke-virtual {p1, v0}, Landroid/text/TextPaint;->setUnderlineText(Z)V
 
     return-void

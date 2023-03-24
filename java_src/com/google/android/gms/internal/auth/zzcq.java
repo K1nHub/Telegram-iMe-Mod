@@ -56,7 +56,7 @@ public final class zzcq {
             int r3 = android.os.Build.VERSION.SDK_INT     // Catch: java.lang.Throwable -> La2
             r4 = 29
             if (r3 >= r4) goto L66
-            r3 = 0
+            r3 = r1
             goto L68
         L66:
             r3 = 268435456(0x10000000, float:2.5243549E-29)

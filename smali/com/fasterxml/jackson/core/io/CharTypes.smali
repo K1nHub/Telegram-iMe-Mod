@@ -42,7 +42,7 @@
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_0
     if-ge v2, v0, :cond_0
@@ -67,7 +67,7 @@
 
     new-array v2, v0, [I
 
-    const/4 v3, 0x0
+    move v3, v1
 
     :goto_1
     const/16 v4, 0x20
@@ -107,7 +107,7 @@
 
     const/16 v2, 0x80
 
-    const/16 v8, 0x80
+    move v8, v2
 
     :goto_2
     if-ge v8, v0, :cond_5
@@ -145,7 +145,7 @@
     goto :goto_3
 
     :cond_4
-    const/4 v10, -0x1
+    move v10, v5
 
     .line 62
     :goto_3
@@ -266,7 +266,7 @@
 
     new-array v0, v2, [I
 
-    const/4 v6, 0x0
+    move v6, v1
 
     :goto_5
     if-ge v6, v4, :cond_8
@@ -318,7 +318,7 @@
     .line 185
     invoke-static {v0, v5}, Ljava/util/Arrays;->fill([II)V
 
-    const/4 v0, 0x0
+    move v0, v1
 
     :goto_6
     if-ge v0, v13, :cond_9

@@ -28,7 +28,7 @@
 
     :cond_1
     :goto_0
-    const/4 v0, 0x1
+    move v0, v1
 
     :cond_2
     return v0

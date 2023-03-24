@@ -233,7 +233,7 @@
 
     invoke-virtual {p2, v0, v1}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    goto :goto_2
+    goto :goto_1
 
     .line 530
     :cond_0
@@ -285,7 +285,7 @@
     if-eqz p2, :cond_2
 
     :cond_1
-    const/4 v1, 0x1
+    move v1, v2
 
     :cond_2
     invoke-virtual {v6, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
@@ -311,18 +311,13 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    goto :goto_0
-
     :catchall_0
-    nop
-
-    :goto_0
     if-eqz v3, :cond_3
 
     .line 541
     invoke-virtual {v0, v3}, Landroid/widget/ImageView;->setImageBitmap(Landroid/graphics/Bitmap;)V
 
-    goto :goto_1
+    goto :goto_0
 
     .line 543
     :cond_3
@@ -331,7 +326,7 @@
     invoke-virtual {v0, p2}, Landroid/widget/ImageView;->setImageResource(I)V
 
     .line 546
-    :goto_1
+    :goto_0
     sget-object p2, Landroid/widget/ImageView$ScaleType;->FIT_XY:Landroid/widget/ImageView$ScaleType;
 
     invoke-virtual {v0, p2}, Landroid/widget/ImageView;->setScaleType(Landroid/widget/ImageView$ScaleType;)V
@@ -339,7 +334,7 @@
     move-object p2, v0
 
     .line 549
-    :goto_2
+    :goto_1
     invoke-virtual {p2}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
 
     move-result-object v0

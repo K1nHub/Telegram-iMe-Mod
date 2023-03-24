@@ -233,12 +233,12 @@
 
     if-nez v0, :cond_1
 
-    const/4 v0, 0x1
+    move v0, v3
 
     goto :goto_0
 
     :cond_1
-    const/4 v0, 0x0
+    move v0, v4
 
     .line 129
     :goto_0
@@ -320,7 +320,7 @@
     goto :goto_2
 
     :cond_6
-    const/4 v0, 0x0
+    move v0, v4
 
     .line 139
     :goto_2
@@ -562,7 +562,7 @@
 
     if-ltz v6, :cond_10
 
-    const/4 v4, 0x1
+    move v4, v3
 
     :cond_10
     iput-boolean v4, p0, Lorg/telegram/ui/Components/Crop/CropGestureDetector;->mIsDragging:Z

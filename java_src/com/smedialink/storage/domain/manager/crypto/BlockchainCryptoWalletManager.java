@@ -64,7 +64,10 @@ public abstract class BlockchainCryptoWalletManager {
         if (obj != null) {
             throw new UnsupportedOperationException("Super calls with default arguments not supported in this target, function: saveWalletToPrefs");
         }
-        blockchainCryptoWalletManager.saveWalletToPrefs(str, str2, str3, str4, (i & 16) != 0 ? false : z);
+        if ((i & 16) != 0) {
+            z = false;
+        }
+        blockchainCryptoWalletManager.saveWalletToPrefs(str, str2, str3, str4, z);
     }
 
     protected final void saveWalletToPrefs(String guid, String address, String mnemonic, String password, boolean z) {

@@ -623,12 +623,7 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    goto :goto_0
-
     :catchall_0
-    nop
-
-    :goto_0
     const/4 v1, 0x0
 
     .line 446
@@ -773,9 +768,9 @@
 
     const-wide/16 v0, 0x0
 
-    cmp-long v2, p1, v0
+    cmp-long p1, p1, v0
 
-    if-eqz v2, :cond_2
+    if-eqz p1, :cond_2
 
     :cond_0
     const/4 p1, 0x1
@@ -1214,7 +1209,7 @@
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_0
     if-ge v2, v0, :cond_1
@@ -1246,13 +1241,13 @@
 .end method
 
 .method private synthetic lambda$linkChat$10(Lorg/telegram/ui/ActionBar/BaseFragment;J)V
-    .locals 3
+    .locals 2
 
     const-wide/16 v0, 0x0
 
-    cmp-long v2, p2, v0
+    cmp-long v0, p2, v0
 
-    if-eqz v2, :cond_0
+    if-eqz v0, :cond_0
 
     .line 558
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getMessagesController()Lorg/telegram/messenger/MessagesController;
@@ -1699,9 +1694,9 @@
 
     const-wide/16 v2, 0x0
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-eqz v4, :cond_1
+    if-eqz v0, :cond_1
 
     .line 602
     iget-object v0, p0, Lorg/telegram/ui/ChatLinkActivity;->chats:Ljava/util/ArrayList;
@@ -1757,9 +1752,9 @@
 
     iget-wide v0, v0, Lorg/telegram/tgnet/TLRPC$ChatFull;->linked_chat_id:J
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-eqz v4, :cond_2
+    if-eqz v0, :cond_2
 
     goto :goto_0
 
@@ -1893,12 +1888,12 @@
 
     if-eqz v8, :cond_2
 
-    const/4 v8, 0x5
+    move v8, v9
 
     goto :goto_0
 
     :cond_2
-    const/4 v8, 0x3
+    move v8, v4
 
     :goto_0
     or-int/lit8 v8, v8, 0x30
@@ -2084,12 +2079,12 @@
 
     if-eqz v11, :cond_6
 
-    const/4 v11, 0x5
+    move v11, v9
 
     goto :goto_2
 
     :cond_6
-    const/4 v11, 0x3
+    move v11, v4
 
     :goto_2
     or-int/lit8 v14, v11, 0x30
@@ -2154,12 +2149,12 @@
 
     if-eqz v5, :cond_7
 
-    const/4 v5, 0x5
+    move v5, v9
 
     goto :goto_3
 
     :cond_7
-    const/4 v5, 0x3
+    move v5, v4
 
     :goto_3
     or-int/lit8 v5, v5, 0x10
@@ -2185,12 +2180,12 @@
 
     if-eqz v5, :cond_8
 
-    const/4 v14, 0x5
+    move v14, v9
 
     goto :goto_4
 
     :cond_8
-    const/4 v14, 0x3
+    move v14, v4
 
     :goto_4
     or-int/lit8 v14, v14, 0x30
@@ -2201,24 +2196,24 @@
 
     if-eqz v5, :cond_9
 
-    const/16 v17, 0x15
+    move/from16 v17, v15
 
     goto :goto_5
 
     :cond_9
-    const/16 v17, 0x4c
+    move/from16 v17, v16
 
     :goto_5
     const/16 v18, 0xb
 
     if-eqz v5, :cond_a
 
-    const/16 v5, 0x4c
+    move/from16 v5, v16
 
     goto :goto_6
 
     :cond_a
-    const/16 v5, 0x15
+    move v5, v15
 
     :goto_6
     const/16 v19, 0x0
@@ -2246,7 +2241,7 @@
 
     if-eqz v5, :cond_b
 
-    const/4 v4, 0x5
+    move v4, v9
 
     :cond_b
     or-int/lit8 v14, v4, 0x30
@@ -2485,9 +2480,9 @@
 
     iget-wide v1, v1, Lorg/telegram/tgnet/TLRPC$ChatFull;->linked_chat_id:J
 
-    cmp-long v5, v1, v3
+    cmp-long v1, v1, v3
 
-    if-eqz v5, :cond_8
+    if-eqz v1, :cond_8
 
     .line 207
     :cond_4
@@ -2810,7 +2805,7 @@
 .end method
 
 .method public varargs didReceivedNotification(II[Ljava/lang/Object;)V
-    .locals 5
+    .locals 4
 
     .line 242
     sget p2, Lorg/telegram/messenger/NotificationCenter;->chatInfoDidLoad:I
@@ -2831,9 +2826,9 @@
 
     iget-wide v2, p0, Lorg/telegram/ui/ChatLinkActivity;->currentChatId:J
 
-    cmp-long v4, p2, v2
+    cmp-long v2, p2, v2
 
-    if-nez v4, :cond_0
+    if-nez v2, :cond_0
 
     .line 245
     iput-object p1, p0, Lorg/telegram/ui/ChatLinkActivity;->info:Lorg/telegram/tgnet/TLRPC$ChatFull;

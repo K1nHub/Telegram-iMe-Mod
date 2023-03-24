@@ -1670,7 +1670,7 @@
 
     const/4 p1, 0x0
 
-    const/4 v0, 0x0
+    move v0, p1
 
     .line 895
     :goto_0
@@ -1717,7 +1717,7 @@
 
     const/4 p1, 0x0
 
-    const/4 v0, 0x0
+    move v0, p1
 
     .line 915
     :goto_0
@@ -2302,7 +2302,7 @@
     goto :goto_0
 
     :cond_3
-    const/high16 v12, 0x3f800000    # 1.0f
+    move v12, v11
 
     :goto_0
     aput v12, v10, v14

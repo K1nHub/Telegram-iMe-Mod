@@ -10,6 +10,7 @@ import org.koin.dsl.ModuleDSLKt;
 public final class DataSourceModuleKt {
     private static final StringQualifier EVM_CRYPTO_TRANSFER_DATA_SOURCE = QualifierKt.named("EVM_CRYPTO_TRANSFER_DATA_SOURCE");
     private static final StringQualifier TON_CRYPTO_TRANSFER_DATA_SOURCE = QualifierKt.named("TON_CRYPTO_TRANSFER_DATA_SOURCE");
+    private static final StringQualifier TRON_CRYPTO_TRANSFER_DATA_SOURCE = QualifierKt.named("TRON_CRYPTO_TRANSFER_DATA_SOURCE");
     private static final StringQualifier DEX_SWAP_DATA_SOURCE = QualifierKt.named("DEX_SWAP_DATA_SOURCE");
     private static final StringQualifier ETH_APPROVE_DATA_SOURCE = QualifierKt.named("ETH_APPROVE_DATA_SOURCE");
     private static final StringQualifier ETH_CANCEL_DATA_SOURCE = QualifierKt.named("ETH_CANCEL_DATA_SOURCE");
@@ -21,6 +22,10 @@ public final class DataSourceModuleKt {
 
     public static final StringQualifier getTON_CRYPTO_TRANSFER_DATA_SOURCE() {
         return TON_CRYPTO_TRANSFER_DATA_SOURCE;
+    }
+
+    public static final StringQualifier getTRON_CRYPTO_TRANSFER_DATA_SOURCE() {
+        return TRON_CRYPTO_TRANSFER_DATA_SOURCE;
     }
 
     public static final StringQualifier getDEX_SWAP_DATA_SOURCE() {

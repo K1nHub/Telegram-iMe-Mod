@@ -27,7 +27,7 @@ import java.util.Iterator;
 import org.telegram.SQLite.SQLiteDatabase;
 import org.telegram.SQLite.SQLitePreparedStatement;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3286R;
+import org.telegram.messenger.C3301R;
 import org.telegram.messenger.Fetcher;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.LiteMode;
@@ -279,6 +279,7 @@ public class StickerCategoriesListView extends RecyclerListView {
     /* JADX WARN: Type inference failed for: r5v7 */
     /* JADX WARN: Type inference failed for: r5v8 */
     public void updateCategoriesShown(boolean z, boolean z2) {
+        EmojiCategory[] emojiCategoryArr;
         this.categoriesShouldShow = z;
         ?? r5 = z;
         if (this.categories == null) {
@@ -295,7 +296,7 @@ public class StickerCategoriesListView extends RecyclerListView {
         if (z2) {
             float[] fArr = new float[2];
             fArr[0] = this.categoriesShownT;
-            fArr[1] = r5 == 0 ? BitmapDescriptorFactory.HUE_RED : 1.0f;
+            fArr[1] = r5 == 0 ? 0.0f : 1.0f;
             ValueAnimator ofFloat = ValueAnimator.ofFloat(fArr);
             this.categoriesShownAnimator = ofFloat;
             ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.StickerCategoriesListView$$ExternalSyntheticLambda0
@@ -313,13 +314,11 @@ public class StickerCategoriesListView extends RecyclerListView {
                 }
             });
             this.categoriesShownAnimator.setInterpolator(CubicBezierInterpolator.EASE_OUT_QUINT);
-            ValueAnimator valueAnimator2 = this.categoriesShownAnimator;
-            EmojiCategory[] emojiCategoryArr = this.categories;
-            valueAnimator2.setDuration((emojiCategoryArr == null ? 5 : emojiCategoryArr.length) * 120);
+            this.categoriesShownAnimator.setDuration((this.categories == null ? 5 : emojiCategoryArr.length) * 120);
             this.categoriesShownAnimator.start();
             return;
         }
-        setCategoriesShownT(r5 == 0 ? BitmapDescriptorFactory.HUE_RED : 1.0f);
+        setCategoriesShownT(r5 == 0 ? 0.0f : 1.0f);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -413,10 +412,10 @@ public class StickerCategoriesListView extends RecyclerListView {
             this.backgroundPaint = new Paint(1);
         }
         this.backgroundPaint.setColor(i);
-        Drawable mutate = getContext().getResources().getDrawable(C3286R.C3288drawable.gradient_right).mutate();
+        Drawable mutate = getContext().getResources().getDrawable(C3301R.C3303drawable.gradient_right).mutate();
         this.leftBoundDrawable = mutate;
         mutate.setColorFilter(new PorterDuffColorFilter(i, PorterDuff.Mode.MULTIPLY));
-        Drawable mutate2 = getContext().getResources().getDrawable(C3286R.C3288drawable.gradient_left).mutate();
+        Drawable mutate2 = getContext().getResources().getDrawable(C3301R.C3303drawable.gradient_left).mutate();
         this.rightBoundDrawable = mutate2;
         mutate2.setColorFilter(new PorterDuffColorFilter(i, PorterDuff.Mode.MULTIPLY));
     }
@@ -464,7 +463,7 @@ public class StickerCategoriesListView extends RecyclerListView {
     }
 
     private void drawSelectedHighlight(Canvas canvas) {
-        float f = this.selectedAlpha.set(this.selectedCategoryIndex >= 0 ? 1.0f : BitmapDescriptorFactory.HUE_RED);
+        float f = this.selectedAlpha.set(this.selectedCategoryIndex >= 0 ? 1.0f : 0.0f);
         int i = this.selectedCategoryIndex;
         float f2 = i >= 0 ? this.selectedIndex.set(i) : this.selectedIndex.get();
         if (f <= BitmapDescriptorFactory.HUE_RED) {
@@ -727,7 +726,7 @@ public class StickerCategoriesListView extends RecyclerListView {
                 if (z2) {
                     float[] fArr = new float[2];
                     fArr[0] = this.selectedT;
-                    fArr[1] = z ? 1.0f : BitmapDescriptorFactory.HUE_RED;
+                    fArr[1] = z ? 1.0f : 0.0f;
                     ValueAnimator ofFloat = ValueAnimator.ofFloat(fArr);
                     this.selectedAnimator = ofFloat;
                     ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.StickerCategoriesListView$CategoryButton$$ExternalSyntheticLambda0
@@ -749,7 +748,7 @@ public class StickerCategoriesListView extends RecyclerListView {
                     this.selectedAnimator.start();
                     return;
                 }
-                updateSelectedT(z ? 1.0f : BitmapDescriptorFactory.HUE_RED);
+                updateSelectedT(z ? 1.0f : 0.0f);
             }
         }
 

@@ -402,7 +402,7 @@
 .end method
 
 .method private buildDeadlineExceededStatusWithRemainingNanos(J)Lio/grpc/Status;
-    .locals 9
+    .locals 8
 
     .line 366
     new-instance v0, Lio/grpc/internal/InsightBuilder;
@@ -452,9 +452,9 @@
 
     const-wide/16 v4, 0x0
 
-    cmp-long v8, p1, v4
+    cmp-long p1, p1, v4
 
-    if-gez v8, :cond_0
+    if-gez p1, :cond_0
 
     const/16 p1, 0x2d
 
@@ -641,7 +641,7 @@
 
     if-eqz v0, :cond_0
 
-    const/4 v0, 0x1
+    move v0, v1
 
     goto :goto_0
 
@@ -921,7 +921,7 @@
 
     if-eqz v0, :cond_0
 
-    const/4 v0, 0x1
+    move v0, v1
 
     goto :goto_0
 
@@ -1095,12 +1095,12 @@
 
     if-nez v0, :cond_0
 
-    const/4 v0, 0x1
+    move v0, v2
 
     goto :goto_0
 
     :cond_0
-    const/4 v0, 0x0
+    move v0, v1
 
     :goto_0
     const-string v3, "Already started"
@@ -1225,7 +1225,7 @@
 
     if-eqz v4, :cond_4
 
-    const/4 v1, 0x1
+    move v1, v2
 
     :cond_4
     if-nez v1, :cond_6
@@ -1591,12 +1591,12 @@
 
     if-eqz v1, :cond_0
 
-    const/4 v1, 0x1
+    move v1, v2
 
     goto :goto_0
 
     :cond_0
-    const/4 v1, 0x0
+    move v1, v3
 
     :goto_0
     const-string v4, "Not started"
@@ -1608,7 +1608,7 @@
     goto :goto_1
 
     :cond_1
-    const/4 v2, 0x0
+    move v2, v3
 
     :goto_1
     const-string v1, "Number requested must be non-negative"

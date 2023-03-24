@@ -1890,12 +1890,12 @@
     if-nez p2, :cond_4
 
     :cond_3
-    const/4 p2, 0x1
+    move p2, v0
 
     goto :goto_0
 
     :cond_4
-    const/4 p2, 0x0
+    move p2, p1
 
     :goto_0
     iput-boolean p2, p0, Lorg/telegram/ui/TwoStepVerificationActivity;->passwordEntered:Z
@@ -3189,12 +3189,7 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_0
-
     :catch_0
-    nop
-
-    :goto_0
     if-eqz p3, :cond_1
 
     const-string p3, ""
@@ -4648,13 +4643,13 @@
     goto :goto_0
 
     :cond_2
-    const/4 v10, 0x0
+    move v10, v3
 
     goto :goto_1
 
     :cond_3
     :goto_0
-    const/16 v10, 0x8
+    move v10, v13
 
     :goto_1
     invoke-virtual {v9, v10}, Landroid/widget/ImageView;->setVisibility(I)V
@@ -5010,7 +5005,7 @@
     goto :goto_2
 
     :cond_4
-    const/4 v11, 0x3
+    move v11, v15
 
     :goto_2
     or-int/lit8 v11, v11, 0x30
@@ -5046,7 +5041,7 @@
     goto :goto_3
 
     :cond_5
-    const/4 v11, 0x3
+    move v11, v15
 
     :goto_3
     or-int/lit8 v27, v11, 0x30
@@ -5098,7 +5093,7 @@
     goto :goto_4
 
     :cond_6
-    const/4 v14, 0x3
+    move v14, v15
 
     :goto_4
     or-int/lit8 v11, v14, 0x30
@@ -5627,7 +5622,7 @@
 
     if-lt v11, v13, :cond_d
 
-    const/16 v19, 0x38
+    move/from16 v19, v6
 
     goto :goto_a
 
@@ -5637,7 +5632,7 @@
     :goto_a
     if-lt v11, v13, :cond_e
 
-    const/16 v20, 0x38
+    move/from16 v20, v6
 
     goto :goto_b
 
@@ -6616,7 +6611,7 @@
 .end method
 
 .method public isLightStatusBar()Z
-    .locals 6
+    .locals 5
 
     const-string v0, "windowBackgroundWhite"
 
@@ -6636,9 +6631,9 @@
 
     const-wide v3, 0x3fe6666660000000L    # 0.699999988079071
 
-    cmpl-double v5, v0, v3
+    cmpl-double v0, v0, v3
 
-    if-lez v5, :cond_0
+    if-lez v0, :cond_0
 
     goto :goto_0
 
@@ -6859,7 +6854,7 @@
     :cond_0
     if-eqz v0, :cond_1
 
-    const/4 v0, 0x1
+    move v0, v1
 
     goto :goto_0
 

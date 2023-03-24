@@ -35,7 +35,7 @@
 
     if-eqz v1, :cond_8
 
-    const/4 v3, 0x0
+    move v3, v2
 
     .line 31
     :goto_1
@@ -301,7 +301,7 @@
 
     if-eqz v1, :cond_1
 
-    const/4 v3, 0x0
+    move v3, v2
 
     .line 104
     :goto_1
@@ -392,7 +392,7 @@
 
     if-eqz v1, :cond_2
 
-    const/4 v3, 0x0
+    move v3, v2
 
     .line 131
     :goto_1
@@ -482,7 +482,7 @@
 
     if-eqz v1, :cond_2
 
-    const/4 v3, 0x0
+    move v3, v2
 
     .line 163
     :goto_1

@@ -365,7 +365,7 @@
 
     if-gez p5, :cond_0
 
-    const/4 p5, 0x0
+    move p5, v0
 
     .line 585
     :cond_0
@@ -529,7 +529,7 @@
 
     if-gez v0, :cond_0
 
-    const/4 v0, 0x0
+    move v0, v1
 
     .line 566
     :cond_0

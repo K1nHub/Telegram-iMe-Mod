@@ -130,6 +130,7 @@ public final class TextDirectionHeuristicsCompat {
                     if (isRtlText != 1) {
                         continue;
                         i++;
+                        z = z;
                     } else if (!this.mLookForRtl) {
                         return 1;
                     }
@@ -138,6 +139,7 @@ public final class TextDirectionHeuristicsCompat {
                 }
                 z = true;
                 i++;
+                z = z;
             }
             if (z) {
                 return this.mLookForRtl ? 1 : 0;

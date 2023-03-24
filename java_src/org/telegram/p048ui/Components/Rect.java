@@ -6,17 +6,17 @@ public class Rect {
     public float width;
 
     /* renamed from: x */
-    public float f1798x;
+    public float f1799x;
 
     /* renamed from: y */
-    public float f1799y;
+    public float f1800y;
 
     public Rect() {
     }
 
     public Rect(float f, float f2, float f3, float f4) {
-        this.f1798x = f;
-        this.f1799y = f2;
+        this.f1799x = f;
+        this.f1800y = f2;
         this.width = f3;
         this.height = f4;
     }

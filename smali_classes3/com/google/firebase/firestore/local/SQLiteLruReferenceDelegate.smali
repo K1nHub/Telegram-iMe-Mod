@@ -378,28 +378,28 @@
 .end method
 
 .method public getCurrentSequenceNumber()J
-    .locals 6
+    .locals 4
 
     .line 69
     iget-wide v0, p0, Lcom/google/firebase/firestore/local/SQLiteLruReferenceDelegate;->currentSequenceNumber:J
 
-    const/4 v2, 0x0
+    const-wide/16 v2, -0x1
 
-    const-wide/16 v3, -0x1
+    cmp-long v0, v0, v2
 
-    cmp-long v5, v0, v3
+    const/4 v1, 0x0
 
-    if-eqz v5, :cond_0
+    if-eqz v0, :cond_0
 
     const/4 v0, 0x1
 
     goto :goto_0
 
     :cond_0
-    const/4 v0, 0x0
+    move v0, v1
 
     :goto_0
-    new-array v1, v2, [Ljava/lang/Object;
+    new-array v1, v1, [Ljava/lang/Object;
 
     const-string v2, "Attempting to get a sequence number outside of a transaction"
 
@@ -463,62 +463,62 @@
 .end method
 
 .method public onTransactionCommitted()V
-    .locals 6
+    .locals 5
 
     .line 61
     iget-wide v0, p0, Lcom/google/firebase/firestore/local/SQLiteLruReferenceDelegate;->currentSequenceNumber:J
 
-    const/4 v2, 0x0
+    const-wide/16 v2, -0x1
 
-    const-wide/16 v3, -0x1
+    cmp-long v0, v0, v2
 
-    cmp-long v5, v0, v3
+    const/4 v1, 0x0
 
-    if-eqz v5, :cond_0
+    if-eqz v0, :cond_0
 
     const/4 v0, 0x1
 
     goto :goto_0
 
     :cond_0
-    const/4 v0, 0x0
+    move v0, v1
 
     :goto_0
-    new-array v1, v2, [Ljava/lang/Object;
+    new-array v1, v1, [Ljava/lang/Object;
 
-    const-string v2, "Committing a transaction without having started one"
+    const-string v4, "Committing a transaction without having started one"
 
-    invoke-static {v0, v2, v1}, Lcom/google/firebase/firestore/util/Assert;->hardAssert(ZLjava/lang/String;[Ljava/lang/Object;)V
+    invoke-static {v0, v4, v1}, Lcom/google/firebase/firestore/util/Assert;->hardAssert(ZLjava/lang/String;[Ljava/lang/Object;)V
 
     .line 64
-    iput-wide v3, p0, Lcom/google/firebase/firestore/local/SQLiteLruReferenceDelegate;->currentSequenceNumber:J
+    iput-wide v2, p0, Lcom/google/firebase/firestore/local/SQLiteLruReferenceDelegate;->currentSequenceNumber:J
 
     return-void
 .end method
 
 .method public onTransactionStarted()V
-    .locals 6
+    .locals 4
 
     .line 53
     iget-wide v0, p0, Lcom/google/firebase/firestore/local/SQLiteLruReferenceDelegate;->currentSequenceNumber:J
 
-    const/4 v2, 0x0
+    const-wide/16 v2, -0x1
 
-    const-wide/16 v3, -0x1
+    cmp-long v0, v0, v2
 
-    cmp-long v5, v0, v3
+    const/4 v1, 0x0
 
-    if-nez v5, :cond_0
+    if-nez v0, :cond_0
 
     const/4 v0, 0x1
 
     goto :goto_0
 
     :cond_0
-    const/4 v0, 0x0
+    move v0, v1
 
     :goto_0
-    new-array v1, v2, [Ljava/lang/Object;
+    new-array v1, v1, [Ljava/lang/Object;
 
     const-string v2, "Starting a transaction without committing the previous one"
 
@@ -553,7 +553,7 @@
     new-array v1, v0, [I
 
     :goto_0
-    const/4 v2, 0x1
+    move v2, v0
 
     :goto_1
     const/4 v3, 0x0
@@ -607,7 +607,7 @@
     goto :goto_0
 
     :cond_0
-    const/4 v2, 0x0
+    move v2, v3
 
     goto :goto_1
 

@@ -334,7 +334,7 @@
 
     if-eqz v1, :cond_0
 
-    const/4 v1, 0x1
+    move v1, v2
 
     :cond_0
     add-int/2addr v0, v1
@@ -345,7 +345,7 @@
 
     if-eqz v1, :cond_1
 
-    const/4 v1, 0x1
+    move v1, v2
 
     :cond_1
     add-int/2addr v0, v1
@@ -356,7 +356,7 @@
 
     if-eqz v1, :cond_2
 
-    const/4 v1, 0x1
+    move v1, v2
 
     :cond_2
     add-int/2addr v0, v1

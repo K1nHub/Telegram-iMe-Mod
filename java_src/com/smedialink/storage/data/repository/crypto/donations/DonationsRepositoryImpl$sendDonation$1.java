@@ -44,7 +44,7 @@ final class DonationsRepositoryImpl$sendDonation$1 extends Lambda implements Fun
         }
         Observable<ApiBaseResponse<TransactionResponse>> sendDonationTransaction = donationsApi.sendDonationTransaction(new SendDonationTransactionRequest(valueOf, data));
         firebaseFunctionsErrorHandler = this.this$0.firebaseErrorHandler;
-        ObservableSource map = sendDonationTransaction.map(new FirebaseExtKt$sam$i$io_reactivex_functions_Function$0(new C1746x5a6924e9(firebaseFunctionsErrorHandler)));
+        ObservableSource map = sendDonationTransaction.map(new FirebaseExtKt$sam$i$io_reactivex_functions_Function$0(new C1754x5a6924e9(firebaseFunctionsErrorHandler)));
         Intrinsics.checkNotNullExpressionValue(map, "errorHandler: FirebaseFu…response).toError()\n    }");
         return map;
     }

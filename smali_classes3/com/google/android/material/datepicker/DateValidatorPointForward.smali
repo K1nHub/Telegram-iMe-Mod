@@ -113,7 +113,7 @@
     goto :goto_0
 
     :cond_2
-    const/4 v0, 0x0
+    move v0, v2
 
     :goto_0
     return v0
@@ -146,14 +146,14 @@
 .end method
 
 .method public isValid(J)Z
-    .locals 3
+    .locals 2
 
     .line 74
     iget-wide v0, p0, Lcom/google/android/material/datepicker/DateValidatorPointForward;->point:J
 
-    cmp-long v2, p1, v0
+    cmp-long p1, p1, v0
 
-    if-ltz v2, :cond_0
+    if-ltz p1, :cond_0
 
     const/4 p1, 0x1
 

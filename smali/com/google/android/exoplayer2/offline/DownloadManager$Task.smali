@@ -183,9 +183,9 @@
     .line 1388
     iget-wide p3, p0, Lcom/google/android/exoplayer2/offline/DownloadManager$Task;->contentLength:J
 
-    cmp-long p5, p1, p3
+    cmp-long p3, p1, p3
 
-    if-eqz p5, :cond_0
+    if-eqz p3, :cond_0
 
     .line 1389
     iput-wide p1, p0, Lcom/google/android/exoplayer2/offline/DownloadManager$Task;->contentLength:J
@@ -203,10 +203,10 @@
 
     long-to-int p5, v0
 
-    long-to-int p2, p1
+    long-to-int p1, p1
 
     .line 1393
-    invoke-virtual {p3, p4, p5, p2, p0}, Landroid/os/Handler;->obtainMessage(IIILjava/lang/Object;)Landroid/os/Message;
+    invoke-virtual {p3, p4, p5, p1, p0}, Landroid/os/Handler;->obtainMessage(IIILjava/lang/Object;)Landroid/os/Message;
 
     move-result-object p1
 
@@ -238,7 +238,7 @@
 
     const/4 v2, 0x0
 
-    const/4 v3, 0x0
+    move v3, v2
 
     .line 1354
     :cond_1
@@ -280,9 +280,9 @@
 
     if-eqz v7, :cond_2
 
-    move-wide v0, v5
+    move v3, v2
 
-    const/4 v3, 0x0
+    move-wide v0, v5
 
     :cond_2
     add-int/lit8 v3, v3, 0x1

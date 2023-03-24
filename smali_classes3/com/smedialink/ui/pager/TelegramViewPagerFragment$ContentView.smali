@@ -200,12 +200,12 @@
 
     if-eqz v4, :cond_0
 
-    const/4 v2, 0x1
+    move v2, v5
 
     :cond_0
     int-to-float v2, v2
 
-    mul-float v3, v3, v2
+    mul-float/2addr v3, v2
 
     invoke-virtual {v0, v3}, Lcom/smedialink/ui/pager/TelegramViewPagerFragment$ViewPage;->setTranslationX(F)V
 
@@ -267,12 +267,12 @@
     goto :goto_0
 
     :cond_2
-    const/4 v2, 0x1
+    move v2, v5
 
     :goto_0
     int-to-float v2, v2
 
-    mul-float v4, v4, v2
+    mul-float/2addr v4, v2
 
     invoke-virtual {v0, v4}, Lcom/smedialink/ui/pager/TelegramViewPagerFragment$ViewPage;->setTranslationX(F)V
 
@@ -290,7 +290,7 @@
     goto :goto_1
 
     :cond_3
-    const/4 v5, 0x0
+    move v5, v1
 
     :goto_1
     if-eqz v5, :cond_5
@@ -801,7 +801,7 @@
 
     array-length v3, v2
 
-    const/4 v5, 0x0
+    move v5, v4
 
     :goto_0
     if-ge v5, v3, :cond_0
@@ -845,7 +845,7 @@
 
     move-result v2
 
-    const/4 v3, 0x0
+    move v3, v4
 
     :goto_1
     if-ge v3, v2, :cond_3
@@ -868,12 +868,12 @@
 
     if-ne v5, v7, :cond_1
 
-    const/4 v5, 0x1
+    move v5, v1
 
     goto :goto_2
 
     :cond_1
-    const/4 v5, 0x0
+    move v5, v4
 
     :goto_2
     if-nez v5, :cond_2
@@ -1452,12 +1452,12 @@
 
     if-nez v4, :cond_9
 
-    const/4 v4, 0x1
+    move v4, v3
 
     goto :goto_3
 
     :cond_9
-    const/4 v4, 0x0
+    move v4, v0
 
     :goto_3
     if-eqz v4, :cond_a
@@ -1580,12 +1580,12 @@
     :cond_c
     if-gez v1, :cond_d
 
-    const/4 v5, 0x1
+    move v5, v3
 
     goto :goto_4
 
     :cond_d
-    const/4 v5, 0x0
+    move v5, v0
 
     .line 479
     :goto_4
@@ -1735,7 +1735,7 @@
 
     if-gez v1, :cond_10
 
-    const/4 v0, 0x1
+    move v0, v3
 
     .line 491
     :cond_10
@@ -1984,12 +1984,12 @@
 
     if-gez v7, :cond_15
 
-    const/4 v7, 0x1
+    move v7, v3
 
     goto :goto_7
 
     :cond_15
-    const/4 v7, 0x0
+    move v7, v0
 
     .line 512
     :goto_7
@@ -1998,9 +1998,9 @@
     goto :goto_8
 
     :cond_16
-    const/4 v5, 0x0
+    move v5, v2
 
-    const/4 v6, 0x0
+    move v6, v5
 
     .line 519
     :cond_17
@@ -2036,12 +2036,12 @@
 
     if-nez v7, :cond_18
 
-    const/4 v7, 0x1
+    move v7, v3
 
     goto :goto_9
 
     :cond_18
-    const/4 v7, 0x0
+    move v7, v0
 
     :goto_9
     if-nez v7, :cond_1c
@@ -2212,12 +2212,12 @@
 
     :cond_1d
     :goto_a
-    const/4 v6, 0x1
+    move v6, v3
 
     goto :goto_b
 
     :cond_1e
-    const/4 v6, 0x0
+    move v6, v0
 
     .line 522
     :goto_b
@@ -2572,7 +2572,7 @@
 
     move-result v4
 
-    mul-float v4, v4, v6
+    mul-float/2addr v4, v6
 
     add-float/2addr v6, v4
 
@@ -2594,7 +2594,7 @@
 
     move-result v1
 
-    mul-float v1, v1, p1
+    mul-float/2addr v1, p1
 
     invoke-static {v1}, Lkotlin/math/MathKt;->roundToInt(F)I
 
@@ -2618,7 +2618,7 @@
 
     const/high16 v1, 0x42c80000    # 100.0f
 
-    mul-float p1, p1, v1
+    mul-float/2addr p1, v1
 
     float-to-int p1, p1
 
@@ -2797,7 +2797,7 @@
 
     const/4 p4, 0x0
 
-    const/4 v0, 0x0
+    move v0, p4
 
     :goto_1
     if-ge v0, p3, :cond_1

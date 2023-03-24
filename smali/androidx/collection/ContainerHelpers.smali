@@ -79,7 +79,7 @@
 .end method
 
 .method static binarySearch([JIJ)I
-    .locals 5
+    .locals 4
 
     add-int/lit8 p1, p1, -0x1
 
@@ -95,9 +95,9 @@
     .line 70
     aget-wide v2, p0, v1
 
-    cmp-long v4, v2, p2
+    cmp-long v2, v2, p2
 
-    if-gez v4, :cond_0
+    if-gez v2, :cond_0
 
     add-int/lit8 v1, v1, 0x1
 
@@ -106,7 +106,7 @@
     goto :goto_0
 
     :cond_0
-    if-lez v4, :cond_1
+    if-lez v2, :cond_1
 
     add-int/lit8 v1, v1, -0x1
 

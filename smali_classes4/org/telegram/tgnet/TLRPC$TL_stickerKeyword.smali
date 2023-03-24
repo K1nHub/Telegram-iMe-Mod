@@ -31,10 +31,10 @@
 .method public constructor <init>()V
     .locals 1
 
-    .line 30266
+    .line 30276
     invoke-direct {p0}, Lorg/telegram/tgnet/TLObject;-><init>()V
 
-    .line 30270
+    .line 30280
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
@@ -47,7 +47,7 @@
 .method public static TLdeserialize(Lorg/telegram/tgnet/AbstractSerializedData;IZ)Lorg/telegram/tgnet/TLRPC$TL_stickerKeyword;
     .locals 1
 
-    .line 30273
+    .line 30283
     sget v0, Lorg/telegram/tgnet/TLRPC$TL_stickerKeyword;->constructor:I
 
     if-eq v0, p1, :cond_1
@@ -58,7 +58,7 @@
 
     return-object p0
 
-    .line 30275
+    .line 30285
     :cond_0
     new-instance p0, Ljava/lang/RuntimeException;
 
@@ -84,13 +84,13 @@
 
     throw p0
 
-    .line 30280
+    .line 30290
     :cond_1
     new-instance p1, Lorg/telegram/tgnet/TLRPC$TL_stickerKeyword;
 
     invoke-direct {p1}, Lorg/telegram/tgnet/TLRPC$TL_stickerKeyword;-><init>()V
 
-    .line 30281
+    .line 30291
     invoke-virtual {p1, p0, p2}, Lorg/telegram/tgnet/TLRPC$TL_stickerKeyword;->readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
 
     return-object p1
@@ -101,14 +101,14 @@
 .method public readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
     .locals 4
 
-    .line 30286
+    .line 30296
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt64(Z)J
 
     move-result-wide v0
 
     iput-wide v0, p0, Lorg/telegram/tgnet/TLRPC$TL_stickerKeyword;->document_id:J
 
-    .line 30287
+    .line 30297
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
@@ -123,7 +123,7 @@
 
     return-void
 
-    .line 30290
+    .line 30300
     :cond_0
     new-instance p1, Ljava/lang/RuntimeException;
 
@@ -147,7 +147,7 @@
 
     throw p1
 
-    .line 30294
+    .line 30304
     :cond_1
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
@@ -156,7 +156,7 @@
     :goto_0
     if-ge v1, v0, :cond_2
 
-    .line 30296
+    .line 30306
     iget-object v2, p0, Lorg/telegram/tgnet/TLRPC$TL_stickerKeyword;->keyword:Ljava/util/ArrayList;
 
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readString(Z)Ljava/lang/String;
@@ -176,29 +176,29 @@
 .method public serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
     .locals 3
 
-    .line 30301
+    .line 30311
     sget v0, Lorg/telegram/tgnet/TLRPC$TL_stickerKeyword;->constructor:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 30302
+    .line 30312
     iget-wide v0, p0, Lorg/telegram/tgnet/TLRPC$TL_stickerKeyword;->document_id:J
 
     invoke-virtual {p1, v0, v1}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt64(J)V
 
     const v0, 0x1cb5c415
 
-    .line 30303
+    .line 30313
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 30304
+    .line 30314
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$TL_stickerKeyword;->keyword:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
     move-result v0
 
-    .line 30305
+    .line 30315
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
     const/4 v1, 0x0
@@ -206,7 +206,7 @@
     :goto_0
     if-ge v1, v0, :cond_0
 
-    .line 30307
+    .line 30317
     iget-object v2, p0, Lorg/telegram/tgnet/TLRPC$TL_stickerKeyword;->keyword:Ljava/util/ArrayList;
 
     invoke-virtual {v2, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;

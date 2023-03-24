@@ -37,37 +37,37 @@ public final class HevcConfig {
             }
             parsableByteArray.setPosition(position);
             byte[] bArr = new byte[i4];
-            String str = null;
-            int i7 = 0;
-            int i8 = 0;
-            int i9 = -1;
-            int i10 = -1;
             float f = 1.0f;
-            while (i7 < readUnsignedByte2) {
+            String str = null;
+            int i7 = -1;
+            int i8 = -1;
+            int i9 = 0;
+            int i10 = 0;
+            while (i9 < readUnsignedByte2) {
                 int readUnsignedByte3 = parsableByteArray.readUnsignedByte() & 63;
                 int readUnsignedShort3 = parsableByteArray.readUnsignedShort();
-                int i11 = 0;
+                int i11 = i3;
                 while (i11 < readUnsignedShort3) {
                     int readUnsignedShort4 = parsableByteArray.readUnsignedShort();
                     byte[] bArr2 = NalUnitUtil.NAL_START_CODE;
                     int i12 = readUnsignedByte2;
-                    System.arraycopy(bArr2, i3, bArr, i8, bArr2.length);
-                    int length = i8 + bArr2.length;
+                    System.arraycopy(bArr2, i3, bArr, i10, bArr2.length);
+                    int length = i10 + bArr2.length;
                     System.arraycopy(parsableByteArray.getData(), parsableByteArray.getPosition(), bArr, length, readUnsignedShort4);
                     if (readUnsignedByte3 == 33 && i11 == 0) {
                         NalUnitUtil.H265SpsData parseH265SpsNalUnit = NalUnitUtil.parseH265SpsNalUnit(bArr, length, length + readUnsignedShort4);
                         int i13 = parseH265SpsNalUnit.width;
-                        i10 = parseH265SpsNalUnit.height;
+                        i8 = parseH265SpsNalUnit.height;
                         f = parseH265SpsNalUnit.pixelWidthHeightRatio;
                         i = readUnsignedByte3;
                         i2 = readUnsignedShort3;
-                        i9 = i13;
+                        i7 = i13;
                         str = CodecSpecificDataUtil.buildHevcCodecString(parseH265SpsNalUnit.generalProfileSpace, parseH265SpsNalUnit.generalTierFlag, parseH265SpsNalUnit.generalProfileIdc, parseH265SpsNalUnit.generalProfileCompatibilityFlags, parseH265SpsNalUnit.constraintBytes, parseH265SpsNalUnit.generalLevelIdc);
                     } else {
                         i = readUnsignedByte3;
                         i2 = readUnsignedShort3;
                     }
-                    i8 = length + readUnsignedShort4;
+                    i10 = length + readUnsignedShort4;
                     parsableByteArray.skipBytes(readUnsignedShort4);
                     i11++;
                     readUnsignedByte2 = i12;
@@ -75,10 +75,10 @@ public final class HevcConfig {
                     readUnsignedShort3 = i2;
                     i3 = 0;
                 }
-                i7++;
+                i9++;
                 i3 = 0;
             }
-            return new HevcConfig(i4 == 0 ? Collections.emptyList() : Collections.singletonList(bArr), readUnsignedByte + 1, i9, i10, f, str);
+            return new HevcConfig(i4 == 0 ? Collections.emptyList() : Collections.singletonList(bArr), readUnsignedByte + 1, i7, i8, f, str);
         } catch (ArrayIndexOutOfBoundsException e) {
             throw ParserException.createForMalformedContainer("Error parsing HEVC config", e);
         }

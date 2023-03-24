@@ -77,7 +77,7 @@
 
     int-to-float v3, v2
 
-    mul-float v3, v3, p3
+    mul-float/2addr v3, p3
 
     float-to-int v3, v3
 
@@ -121,7 +121,7 @@
 
     int-to-float v4, v1
 
-    mul-float v4, v4, p3
+    mul-float/2addr v4, p3
 
     float-to-int p3, v4
 

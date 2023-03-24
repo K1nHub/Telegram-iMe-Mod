@@ -72,7 +72,7 @@
 
     sub-float/2addr v0, p3
 
-    mul-float p1, p1, v0
+    mul-float/2addr p1, v0
 
     float-to-int p1, p1
 

@@ -469,7 +469,7 @@
 
     if-eq v3, v4, :cond_1
 
-    const/4 v1, 0x0
+    move v1, v0
 
     :cond_1
     add-int/lit8 v2, v2, 0x1
@@ -519,7 +519,7 @@
 
     int-to-float v1, v1
 
-    mul-float v1, v1, v3
+    mul-float/2addr v1, v3
 
     invoke-virtual {p0}, Landroid/graphics/Bitmap;->getHeight()I
 
@@ -549,7 +549,7 @@
 
     int-to-float v1, v1
 
-    mul-float v1, v1, v3
+    mul-float/2addr v1, v3
 
     invoke-virtual {p0}, Landroid/graphics/Bitmap;->getWidth()I
 
@@ -1162,10 +1162,10 @@
 
     move-result-object v0
 
-    long-to-int p3, p2
+    long-to-int p2, p2
 
     .line 375
-    invoke-virtual {v0, p0, p1, p3}, Ljava/security/MessageDigest;->update([BII)V
+    invoke-virtual {v0, p0, p1, p2}, Ljava/security/MessageDigest;->update([BII)V
 
     .line 376
     invoke-virtual {v0}, Ljava/security/MessageDigest;->digest()[B
@@ -1202,7 +1202,7 @@
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     .line 386
     :goto_0
@@ -1995,7 +1995,7 @@
 
     if-eqz p0, :cond_8
 
-    const/4 v1, 0x1
+    move v1, v4
 
     :cond_8
     :goto_0
@@ -2068,14 +2068,14 @@
 
     if-ne v2, v4, :cond_0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     goto :goto_0
 
     :cond_0
     rsub-int/lit8 v1, v2, 0x30
 
-    const/4 v2, 0x1
+    move v2, v3
 
     :goto_0
     if-ge v3, v0, :cond_1
@@ -2123,7 +2123,7 @@
     :cond_0
     const/4 v1, -0x1
 
-    const/4 v2, 0x0
+    move v2, v0
 
     .line 174
     :goto_0
@@ -2154,7 +2154,7 @@
     goto :goto_1
 
     :cond_1
-    const/4 v3, 0x0
+    move v3, v0
 
     goto :goto_2
 
@@ -2411,7 +2411,7 @@
 
     int-to-float v2, v2
 
-    mul-float v0, v0, v2
+    mul-float/2addr v0, v2
 
     invoke-virtual {p0}, Landroid/graphics/Bitmap;->getWidth()I
 
@@ -2536,7 +2536,7 @@
 
     int-to-float v2, v2
 
-    mul-float v0, v0, v2
+    mul-float/2addr v0, v2
 
     invoke-virtual {p0}, Landroid/graphics/Bitmap;->getWidth()I
 

@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/LoginActivity$PhoneNumberConfirmView;)V
     .locals 0
 
-    .line 8318
+    .line 8554
     iput-object p1, p0, Lorg/telegram/ui/LoginActivity$PhoneNumberConfirmView$3;->this$0:Lorg/telegram/ui/LoginActivity$PhoneNumberConfirmView;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
@@ -35,7 +35,7 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 5
 
-    .line 8321
+    .line 8557
     iget-object p1, p0, Lorg/telegram/ui/LoginActivity$PhoneNumberConfirmView$3;->this$0:Lorg/telegram/ui/LoginActivity$PhoneNumberConfirmView;
 
     invoke-virtual {p1}, Landroid/widget/FrameLayout;->getParent()Landroid/view/ViewParent;
@@ -46,7 +46,7 @@
 
     if-eqz p1, :cond_0
 
-    .line 8322
+    .line 8558
     iget-object p1, p0, Lorg/telegram/ui/LoginActivity$PhoneNumberConfirmView$3;->this$0:Lorg/telegram/ui/LoginActivity$PhoneNumberConfirmView;
 
     invoke-virtual {p1}, Landroid/widget/FrameLayout;->getParent()Landroid/view/ViewParent;
@@ -59,7 +59,7 @@
 
     invoke-virtual {p1, v0}, Landroid/view/ViewGroup;->removeView(Landroid/view/View;)V
 
-    .line 8325
+    .line 8561
     :cond_0
     sget p1, Landroid/os/Build$VERSION;->SDK_INT:I
 
@@ -69,10 +69,10 @@
 
     if-lt p1, v0, :cond_1
 
-    .line 8326
+    .line 8562
     iget-object p1, p0, Lorg/telegram/ui/LoginActivity$PhoneNumberConfirmView$3;->this$0:Lorg/telegram/ui/LoginActivity$PhoneNumberConfirmView;
 
-    invoke-static {p1}, Lorg/telegram/ui/LoginActivity$PhoneNumberConfirmView;->access$17900(Lorg/telegram/ui/LoginActivity$PhoneNumberConfirmView;)Landroid/view/View;
+    invoke-static {p1}, Lorg/telegram/ui/LoginActivity$PhoneNumberConfirmView;->access$18100(Lorg/telegram/ui/LoginActivity$PhoneNumberConfirmView;)Landroid/view/View;
 
     move-result-object p1
 
@@ -108,11 +108,11 @@
 
     invoke-virtual {p1}, Landroid/animation/ObjectAnimator;->start()V
 
-    .line 8328
+    .line 8564
     :cond_1
     iget-object p1, p0, Lorg/telegram/ui/LoginActivity$PhoneNumberConfirmView$3;->this$0:Lorg/telegram/ui/LoginActivity$PhoneNumberConfirmView;
 
-    invoke-static {p1}, Lorg/telegram/ui/LoginActivity$PhoneNumberConfirmView;->access$17900(Lorg/telegram/ui/LoginActivity$PhoneNumberConfirmView;)Landroid/view/View;
+    invoke-static {p1}, Lorg/telegram/ui/LoginActivity$PhoneNumberConfirmView;->access$18100(Lorg/telegram/ui/LoginActivity$PhoneNumberConfirmView;)Landroid/view/View;
 
     move-result-object p1
 

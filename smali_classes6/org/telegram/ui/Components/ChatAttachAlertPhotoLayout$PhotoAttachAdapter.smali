@@ -340,7 +340,7 @@
     goto :goto_0
 
     :cond_4
-    const/4 v6, -0x1
+    move v6, v5
 
     .line 3848
     :goto_0
@@ -442,7 +442,7 @@
     goto :goto_3
 
     :cond_8
-    const/4 v3, 0x2
+    move v3, v4
 
     :goto_3
     invoke-virtual {p2, v3}, Lorg/telegram/ui/Components/ChatAttachAlert;->updateCountButton(I)V
@@ -584,7 +584,7 @@
     goto :goto_0
 
     :cond_1
-    const/4 v1, 0x0
+    move v1, v0
 
     .line 4009
     :goto_0
@@ -919,7 +919,7 @@
     goto :goto_0
 
     :cond_1
-    const/4 v1, 0x1
+    move v1, v2
 
     :goto_0
     invoke-virtual {p1, v1}, Lorg/telegram/ui/Cells/PhotoAttachPermissionCell;->setType(I)V
@@ -1062,12 +1062,12 @@
 
     if-ne v0, v2, :cond_8
 
-    const/4 v0, 0x1
+    move v0, v2
 
     goto :goto_2
 
     :cond_8
-    const/4 v0, 0x0
+    move v0, v1
 
     :goto_2
     invoke-virtual {p1, v0}, Lorg/telegram/ui/Cells/PhotoAttachPhotoCell;->setIsVertical(Z)V
@@ -1123,12 +1123,12 @@
 
     if-ne v3, v4, :cond_b
 
-    const/4 v3, 0x1
+    move v3, v2
 
     goto :goto_4
 
     :cond_b
-    const/4 v3, 0x0
+    move v3, v1
 
     :goto_4
     invoke-virtual {p0}, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout$PhotoAttachAdapter;->getItemCount()I
@@ -1142,7 +1142,7 @@
     goto :goto_5
 
     :cond_c
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_5
     invoke-virtual {p1, v0, v3, v2}, Lorg/telegram/ui/Cells/PhotoAttachPhotoCell;->setPhotoEntry(Lorg/telegram/messenger/MediaController$PhotoEntry;ZZ)V

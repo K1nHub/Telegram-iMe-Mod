@@ -10,8 +10,6 @@
 
 .field public final synthetic f$1:Lorg/telegram/tgnet/TLRPC$messages_Dialogs;
 
-.field public final synthetic f$10:Ljava/util/HashSet;
-
 .field public final synthetic f$2:Lorg/telegram/tgnet/TLRPC$messages_Dialogs;
 
 .field public final synthetic f$3:Ljava/util/ArrayList;
@@ -26,11 +24,11 @@
 
 .field public final synthetic f$8:Ljava/util/HashMap;
 
-.field public final synthetic f$9:Ljava/util/HashMap;
+.field public final synthetic f$9:Ljava/util/HashSet;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/messenger/MessagesStorage;Lorg/telegram/tgnet/TLRPC$messages_Dialogs;Lorg/telegram/tgnet/TLRPC$messages_Dialogs;Ljava/util/ArrayList;Ljava/util/ArrayList;Ljava/util/ArrayList;Landroid/util/SparseArray;Ljava/util/ArrayList;Ljava/util/HashMap;Ljava/util/HashMap;Ljava/util/HashSet;)V
+.method public synthetic constructor <init>(Lorg/telegram/messenger/MessagesStorage;Lorg/telegram/tgnet/TLRPC$messages_Dialogs;Lorg/telegram/tgnet/TLRPC$messages_Dialogs;Ljava/util/ArrayList;Ljava/util/ArrayList;Ljava/util/ArrayList;Landroid/util/SparseArray;Ljava/util/ArrayList;Ljava/util/HashMap;Ljava/util/HashSet;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -53,9 +51,7 @@
 
     iput-object p9, p0, Lorg/telegram/messenger/MessagesStorage$$ExternalSyntheticLambda201;->f$8:Ljava/util/HashMap;
 
-    iput-object p10, p0, Lorg/telegram/messenger/MessagesStorage$$ExternalSyntheticLambda201;->f$9:Ljava/util/HashMap;
-
-    iput-object p11, p0, Lorg/telegram/messenger/MessagesStorage$$ExternalSyntheticLambda201;->f$10:Ljava/util/HashSet;
+    iput-object p10, p0, Lorg/telegram/messenger/MessagesStorage$$ExternalSyntheticLambda201;->f$9:Ljava/util/HashSet;
 
     return-void
 .end method
@@ -63,7 +59,7 @@
 
 # virtual methods
 .method public final run()V
-    .locals 11
+    .locals 10
 
     iget-object v0, p0, Lorg/telegram/messenger/MessagesStorage$$ExternalSyntheticLambda201;->f$0:Lorg/telegram/messenger/MessagesStorage;
 
@@ -83,11 +79,9 @@
 
     iget-object v8, p0, Lorg/telegram/messenger/MessagesStorage$$ExternalSyntheticLambda201;->f$8:Ljava/util/HashMap;
 
-    iget-object v9, p0, Lorg/telegram/messenger/MessagesStorage$$ExternalSyntheticLambda201;->f$9:Ljava/util/HashMap;
+    iget-object v9, p0, Lorg/telegram/messenger/MessagesStorage$$ExternalSyntheticLambda201;->f$9:Ljava/util/HashSet;
 
-    iget-object v10, p0, Lorg/telegram/messenger/MessagesStorage$$ExternalSyntheticLambda201;->f$10:Ljava/util/HashSet;
-
-    invoke-static/range {v0 .. v10}, Lorg/telegram/messenger/MessagesStorage;->$r8$lambda$WHIsK3fz-f1iSzYSEg3V3lJKFmM(Lorg/telegram/messenger/MessagesStorage;Lorg/telegram/tgnet/TLRPC$messages_Dialogs;Lorg/telegram/tgnet/TLRPC$messages_Dialogs;Ljava/util/ArrayList;Ljava/util/ArrayList;Ljava/util/ArrayList;Landroid/util/SparseArray;Ljava/util/ArrayList;Ljava/util/HashMap;Ljava/util/HashMap;Ljava/util/HashSet;)V
+    invoke-static/range {v0 .. v9}, Lorg/telegram/messenger/MessagesStorage;->$r8$lambda$JpWl38tfn_6b1zDsQi7kKfExIgc(Lorg/telegram/messenger/MessagesStorage;Lorg/telegram/tgnet/TLRPC$messages_Dialogs;Lorg/telegram/tgnet/TLRPC$messages_Dialogs;Ljava/util/ArrayList;Ljava/util/ArrayList;Ljava/util/ArrayList;Landroid/util/SparseArray;Ljava/util/ArrayList;Ljava/util/HashMap;Ljava/util/HashSet;)V
 
     return-void
 .end method

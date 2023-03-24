@@ -227,18 +227,18 @@
     .line 34
     iget v0, p0, Lorg/telegram/ui/Components/voip/VoIPOverlayBackground;->blackoutProgress:F
 
-    const/high16 v1, -0x1000000
+    const/high16 v1, 0x3f800000    # 1.0f
 
-    const/high16 v2, 0x3f800000    # 1.0f
+    cmpl-float v2, v0, v1
 
-    cmpl-float v3, v0, v2
+    const/high16 v3, -0x1000000
 
-    if-nez v3, :cond_0
+    if-nez v2, :cond_0
 
     const/16 v0, 0x66
 
     .line 35
-    invoke-static {v1, v0}, Landroidx/core/graphics/ColorUtils;->setAlphaComponent(II)I
+    invoke-static {v3, v0}, Landroidx/core/graphics/ColorUtils;->setAlphaComponent(II)I
 
     move-result v0
 
@@ -247,11 +247,11 @@
     goto :goto_0
 
     :cond_0
-    const/4 v3, 0x0
+    const/4 v2, 0x0
 
-    cmpl-float v3, v0, v3
+    cmpl-float v2, v0, v2
 
-    if-nez v3, :cond_1
+    if-nez v2, :cond_1
 
     const/16 v0, 0xff
 
@@ -264,14 +264,14 @@
     goto :goto_0
 
     :cond_1
-    const/high16 v3, 0x42cc0000    # 102.0f
+    const/high16 v2, 0x42cc0000    # 102.0f
 
-    mul-float v0, v0, v3
+    mul-float/2addr v0, v2
 
     float-to-int v0, v0
 
     .line 40
-    invoke-static {v1, v0}, Landroidx/core/graphics/ColorUtils;->setAlphaComponent(II)I
+    invoke-static {v3, v0}, Landroidx/core/graphics/ColorUtils;->setAlphaComponent(II)I
 
     move-result v0
 
@@ -280,13 +280,13 @@
     const/high16 v0, 0x437f0000    # 255.0f
 
     .line 41
-    iget v1, p0, Lorg/telegram/ui/Components/voip/VoIPOverlayBackground;->blackoutProgress:F
+    iget v2, p0, Lorg/telegram/ui/Components/voip/VoIPOverlayBackground;->blackoutProgress:F
 
-    sub-float/2addr v2, v1
+    sub-float/2addr v1, v2
 
-    mul-float v2, v2, v0
+    mul-float/2addr v1, v0
 
-    float-to-int v0, v2
+    float-to-int v0, v1
 
     invoke-virtual {p0, v0}, Landroid/widget/ImageView;->setImageAlpha(I)V
 
@@ -340,7 +340,7 @@
     goto :goto_0
 
     :cond_1
-    const/4 v0, 0x0
+    move v0, v1
 
     .line 75
     :goto_0
@@ -367,7 +367,7 @@
     goto :goto_1
 
     :cond_3
-    const/4 v0, 0x0
+    move v0, v1
 
     :goto_1
     aput v0, p2, v2

@@ -1,12 +1,12 @@
 package com.smedialink.model.wallet.settings;
 
-import org.telegram.messenger.C3286R;
+import org.telegram.messenger.C3301R;
 /* compiled from: SettingMenuItem.kt */
 /* loaded from: classes3.dex */
 public enum SettingMenuItem {
-    ETH_ACCOUNT(C3286R.string.wallet_settings_eth_account_title, null, C3286R.C3288drawable.msg_openprofile),
-    INTERFACE(C3286R.string.wallet_settings_interface_title, null, C3286R.C3288drawable.fork_interface_settings),
-    HELP(C3286R.string.wallet_settings_help_title, null, C3286R.C3288drawable.msg_help);
+    CRYPTO_ACCOUNT(C3301R.string.wallet_settings_eth_account_title, null, C3301R.C3303drawable.msg_openprofile),
+    INTERFACE(C3301R.string.wallet_settings_interface_title, null, C3301R.C3303drawable.fork_interface_settings),
+    HELP(C3301R.string.wallet_settings_help_title, null, C3301R.C3303drawable.msg_help);
     
     private final Integer description;
     private final int icon;

@@ -31,7 +31,7 @@
 .end method
 
 .method public static addToPulledDialogs(Lorg/telegram/ui/ActionBar/BaseFragment;ILorg/telegram/tgnet/TLRPC$Chat;Lorg/telegram/tgnet/TLRPC$User;JII)V
-    .locals 5
+    .locals 4
 
     if-nez p2, :cond_0
 
@@ -97,9 +97,9 @@
     .line 389
     iget-wide v2, v2, Lorg/telegram/ui/Components/BackButtonMenu$PulledDialog;->dialogId:J
 
-    cmp-long v4, v2, p4
+    cmp-long v2, v2, p4
 
-    if-nez v4, :cond_4
+    if-nez v2, :cond_4
 
     const/4 v0, 0x1
 
@@ -389,9 +389,9 @@
 
     const-wide/16 v14, 0x0
 
-    cmp-long v16, p1, v14
+    cmp-long v14, p1, v14
 
-    if-nez v16, :cond_4
+    if-nez v14, :cond_4
 
     .line 326
     invoke-static {v10}, Lorg/telegram/messenger/UserObject;->isUserSelf(Lorg/telegram/tgnet/TLRPC$User;)Z
@@ -422,11 +422,11 @@
 
     iget-wide v4, v15, Lorg/telegram/ui/Components/BackButtonMenu$PulledDialog;->dialogId:J
 
-    cmp-long v15, v4, v11
+    cmp-long v4, v4, v11
 
-    if-nez v15, :cond_5
+    if-nez v4, :cond_5
 
-    const/4 v4, 0x1
+    move v4, v3
 
     goto :goto_3
 
@@ -516,9 +516,9 @@
     .line 354
     iget-wide v5, v4, Lorg/telegram/ui/Components/BackButtonMenu$PulledDialog;->dialogId:J
 
-    cmp-long v7, v5, p1
+    cmp-long v5, v5, p1
 
-    if-nez v7, :cond_b
+    if-nez v5, :cond_b
 
     goto :goto_9
 
@@ -544,11 +544,11 @@
 
     iget-wide v8, v4, Lorg/telegram/ui/Components/BackButtonMenu$PulledDialog;->dialogId:J
 
-    cmp-long v10, v6, v8
+    cmp-long v6, v6, v8
 
-    if-nez v10, :cond_c
+    if-nez v6, :cond_c
 
-    const/4 v5, 0x1
+    move v5, v3
 
     goto :goto_8
 

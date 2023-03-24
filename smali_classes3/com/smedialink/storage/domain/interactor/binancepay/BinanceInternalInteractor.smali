@@ -592,7 +592,7 @@
 
     :cond_1
     :goto_0
-    const/4 v1, 0x1
+    move v1, v0
 
     :goto_1
     const/4 v2, 0x0

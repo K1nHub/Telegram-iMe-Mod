@@ -148,13 +148,13 @@
     goto :goto_0
 
     :cond_0
-    const/4 v2, 0x0
+    move v2, v0
 
     goto :goto_1
 
     :cond_1
     :goto_0
-    const/4 v2, 0x1
+    move v2, v1
 
     :goto_1
     invoke-static {v2}, Lcom/google/android/exoplayer2/util/Assertions;->checkState(Z)V
@@ -234,7 +234,7 @@
 
     if-eqz p2, :cond_3
 
-    const/4 v0, 0x1
+    move v0, v1
 
     .line 361
     :cond_3
@@ -266,7 +266,7 @@
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     .line 512
     :goto_0
@@ -307,9 +307,9 @@
 
     const-wide v6, 0x7fffffffffffffffL
 
-    move-wide v14, v6
+    move v8, v1
 
-    const/4 v8, 0x0
+    move-wide v14, v6
 
     :goto_1
     if-ge v8, v5, :cond_2
@@ -362,11 +362,11 @@
     goto :goto_1
 
     :cond_2
+    cmp-long v1, v14, v6
+
     const-wide/16 v4, 0x0
 
-    const-wide v8, -0x7fffffffffffffffL    # -4.9E-324
-
-    cmp-long v1, v14, v6
+    const-wide v6, -0x7fffffffffffffffL    # -4.9E-324
 
     if-nez v1, :cond_4
 
@@ -377,24 +377,24 @@
 
     if-eqz v1, :cond_3
 
-    move-wide v11, v8
+    move-wide v9, v6
 
     goto :goto_2
 
     :cond_3
-    move-wide v11, v4
+    move-wide v9, v4
 
     .line 532
     :goto_2
     new-instance v1, Lcom/google/android/exoplayer2/source/SinglePeriodTimeline;
 
+    const-wide/16 v11, 0x0
+
     const-wide/16 v13, 0x0
 
     const-wide/16 v15, 0x0
 
-    const-wide/16 v17, 0x0
-
-    const/16 v19, 0x1
+    const/16 v17, 0x1
 
     iget-object v2, v0, Lcom/google/android/exoplayer2/source/smoothstreaming/SsMediaSource;->manifest:Lcom/google/android/exoplayer2/source/smoothstreaming/manifest/SsManifest;
 
@@ -402,17 +402,17 @@
 
     iget-object v4, v0, Lcom/google/android/exoplayer2/source/smoothstreaming/SsMediaSource;->mediaItem:Lcom/google/android/exoplayer2/MediaItem;
 
-    move-object v10, v1
+    move-object v8, v1
 
-    move/from16 v20, v3
+    move/from16 v18, v3
 
-    move/from16 v21, v3
+    move/from16 v19, v3
 
-    move-object/from16 v22, v2
+    move-object/from16 v20, v2
 
-    move-object/from16 v23, v4
+    move-object/from16 v21, v4
 
-    invoke-direct/range {v10 .. v23}, Lcom/google/android/exoplayer2/source/SinglePeriodTimeline;-><init>(JJJJZZZLjava/lang/Object;Lcom/google/android/exoplayer2/MediaItem;)V
+    invoke-direct/range {v8 .. v21}, Lcom/google/android/exoplayer2/source/SinglePeriodTimeline;-><init>(JJJJZZZLjava/lang/Object;Lcom/google/android/exoplayer2/MediaItem;)V
 
     goto/16 :goto_4
 
@@ -420,22 +420,22 @@
     :cond_4
     iget-object v1, v0, Lcom/google/android/exoplayer2/source/smoothstreaming/SsMediaSource;->manifest:Lcom/google/android/exoplayer2/source/smoothstreaming/manifest/SsManifest;
 
-    iget-boolean v6, v1, Lcom/google/android/exoplayer2/source/smoothstreaming/manifest/SsManifest;->isLive:Z
+    iget-boolean v8, v1, Lcom/google/android/exoplayer2/source/smoothstreaming/manifest/SsManifest;->isLive:Z
 
-    if-eqz v6, :cond_7
+    if-eqz v8, :cond_7
 
     .line 544
-    iget-wide v6, v1, Lcom/google/android/exoplayer2/source/smoothstreaming/manifest/SsManifest;->dvrWindowLengthUs:J
+    iget-wide v8, v1, Lcom/google/android/exoplayer2/source/smoothstreaming/manifest/SsManifest;->dvrWindowLengthUs:J
 
-    cmp-long v1, v6, v8
+    cmp-long v1, v8, v6
 
     if-eqz v1, :cond_5
 
-    cmp-long v1, v6, v4
+    cmp-long v1, v8, v4
 
     if-lez v1, :cond_5
 
-    sub-long v4, v2, v6
+    sub-long v4, v2, v8
 
     .line 545
     invoke-static {v14, v15, v4, v5}, Ljava/lang/Math;->max(JJ)J
@@ -503,7 +503,7 @@
     :cond_7
     iget-wide v4, v1, Lcom/google/android/exoplayer2/source/smoothstreaming/manifest/SsManifest;->durationUs:J
 
-    cmp-long v1, v4, v8
+    cmp-long v1, v4, v6
 
     if-eqz v1, :cond_8
 
@@ -982,9 +982,9 @@
 
     const-wide v5, -0x7fffffffffffffffL    # -4.9E-324
 
-    cmp-long v7, v3, v5
+    cmp-long v5, v3, v5
 
-    if-nez v7, :cond_0
+    if-nez v5, :cond_0
 
     .line 499
     sget-object v3, Lcom/google/android/exoplayer2/upstream/Loader;->DONT_RETRY_FATAL:Lcom/google/android/exoplayer2/upstream/Loader$LoadErrorAction;

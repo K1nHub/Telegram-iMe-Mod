@@ -94,7 +94,7 @@
 
     if-ne v5, p0, :cond_1
 
-    const/4 v5, 0x1
+    move v5, v7
 
     goto :goto_1
 

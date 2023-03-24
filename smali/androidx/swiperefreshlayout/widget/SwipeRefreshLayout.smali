@@ -252,7 +252,7 @@
 
     const/high16 v3, 0x42200000    # 40.0f
 
-    mul-float v2, v2, v3
+    mul-float/2addr v2, v3
 
     float-to-int v2, v2
 
@@ -271,7 +271,7 @@
 
     const/high16 v3, 0x42800000    # 64.0f
 
-    mul-float v1, v1, v3
+    mul-float/2addr v1, v3
 
     float-to-int v1, v1
 
@@ -669,7 +669,7 @@
 
     const/high16 v3, 0x40a00000    # 5.0f
 
-    mul-float v2, v2, v3
+    mul-float/2addr v2, v3
 
     const/high16 v3, 0x40400000    # 3.0f
 
@@ -750,16 +750,16 @@
 
     double-to-float v3, v7
 
-    mul-float v3, v3, v5
+    mul-float/2addr v3, v5
 
     mul-float v7, v4, v3
 
-    mul-float v7, v7, v5
+    mul-float/2addr v7, v5
 
     .line 1158
     iget v8, p0, Landroidx/swiperefreshlayout/widget/SwipeRefreshLayout;->mOriginalOffsetTop:I
 
-    mul-float v4, v4, v0
+    mul-float/2addr v4, v0
 
     add-float/2addr v4, v7
 
@@ -900,17 +900,17 @@
 
     const v0, 0x3ecccccd    # 0.4f
 
-    mul-float v2, v2, v0
+    mul-float/2addr v2, v0
 
     add-float/2addr v2, p1
 
-    mul-float v3, v3, v5
+    mul-float/2addr v3, v5
 
     add-float/2addr v2, v3
 
     const/high16 p1, 0x3f000000    # 0.5f
 
-    mul-float v2, v2, p1
+    mul-float/2addr v2, p1
 
     .line 1188
     iget-object p1, p0, Landroidx/swiperefreshlayout/widget/SwipeRefreshLayout;->mProgress:Landroidx/swiperefreshlayout/widget/CircularProgressDrawable;
@@ -1489,7 +1489,7 @@
 
     int-to-float v1, v1
 
-    mul-float v1, v1, p1
+    mul-float/2addr v1, p1
 
     float-to-int p1, v1
 
@@ -2570,7 +2570,7 @@
 
     sub-float/2addr p1, v0
 
-    mul-float p1, p1, v3
+    mul-float/2addr p1, v3
 
     const/4 v0, 0x0
 
@@ -2628,7 +2628,7 @@
 
     sub-float/2addr p1, v0
 
-    mul-float p1, p1, v3
+    mul-float/2addr p1, v3
 
     .line 1294
     iput-boolean v2, p0, Landroidx/swiperefreshlayout/widget/SwipeRefreshLayout;->mIsBeingDragged:Z
@@ -3084,7 +3084,7 @@
     .line 386
     iget v0, v0, Landroid/util/DisplayMetrics;->density:F
 
-    mul-float v0, v0, v1
+    mul-float/2addr v0, v1
 
     float-to-int v0, v0
 
@@ -3098,7 +3098,7 @@
     .line 388
     iget v0, v0, Landroid/util/DisplayMetrics;->density:F
 
-    mul-float v0, v0, v1
+    mul-float/2addr v0, v1
 
     float-to-int v0, v0
 

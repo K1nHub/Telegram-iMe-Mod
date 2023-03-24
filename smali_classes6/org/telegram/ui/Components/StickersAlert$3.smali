@@ -75,22 +75,22 @@
 
     move-result v0
 
-    const/4 v1, 0x1
+    const v1, 0x3f389375    # 0.721f
 
-    const/4 v2, 0x0
+    cmpl-float v0, v0, v1
 
-    const v3, 0x3f389375    # 0.721f
+    const/4 v2, 0x1
 
-    cmpl-float v0, v0, v3
+    const/4 v3, 0x0
 
     if-lez v0, :cond_1
 
-    const/4 v0, 0x1
+    move v0, v2
 
     goto :goto_0
 
     :cond_1
-    const/4 v0, 0x0
+    move v0, v3
 
     .line 644
     :goto_0
@@ -112,14 +112,14 @@
 
     move-result v4
 
-    cmpl-float v3, v4, v3
+    cmpl-float v1, v4, v1
 
-    if-lez v3, :cond_2
+    if-lez v1, :cond_2
 
     goto :goto_1
 
     :cond_2
-    const/4 v1, 0x0
+    move v2, v3
 
     .line 645
     :goto_1
@@ -138,7 +138,7 @@
     goto :goto_2
 
     :cond_3
-    move v0, v1
+    move v0, v2
 
     .line 646
     :goto_2
@@ -236,7 +236,7 @@
 
     const/16 v7, 0x15
 
-    if-lt v3, v7, :cond_1
+    if-lt v3, v7, :cond_2
 
     .line 657
     sget v3, Lorg/telegram/messenger/AndroidUtilities;->statusBarHeight:I
@@ -250,7 +250,7 @@
     .line 661
     iget-boolean v3, p0, Lorg/telegram/ui/Components/StickersAlert$3;->fullHeight:Z
 
-    if-eqz v3, :cond_1
+    if-eqz v3, :cond_2
 
     .line 662
     iget-object v3, p0, Lorg/telegram/ui/Components/StickersAlert$3;->this$0:Lorg/telegram/ui/Components/StickersAlert;
@@ -288,7 +288,7 @@
 
     add-int/2addr v2, v3
 
-    mul-int/lit8 v3, v3, 0x2
+    mul-int/2addr v3, v6
 
     int-to-float v3, v3
 
@@ -308,7 +308,7 @@
     goto :goto_0
 
     :cond_0
-    const/high16 v3, 0x3f800000    # 1.0f
+    move v3, v5
 
     .line 668
     :goto_0
@@ -322,7 +322,7 @@
 
     sget v8, Lorg/telegram/messenger/AndroidUtilities;->statusBarHeight:I
 
-    if-ge v7, v8, :cond_2
+    if-ge v7, v8, :cond_1
 
     sub-int v7, v8, v1
 
@@ -342,10 +342,14 @@
     goto :goto_1
 
     :cond_1
-    const/high16 v3, 0x3f800000    # 1.0f
+    move v7, v4
+
+    goto :goto_1
 
     :cond_2
-    const/4 v7, 0x0
+    move v7, v4
+
+    move v3, v5
 
     .line 674
     :goto_1
@@ -370,25 +374,25 @@
 
     invoke-virtual {v2, p1}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
 
-    const-string v2, "dialogBackground"
+    cmpl-float v2, v3, v5
 
-    cmpl-float v8, v3, v5
+    const-string v8, "dialogBackground"
 
-    if-eqz v8, :cond_3
+    if-eqz v2, :cond_3
 
     .line 678
-    sget-object v8, Lorg/telegram/ui/ActionBar/Theme;->dialogs_onlineCirclePaint:Landroid/graphics/Paint;
+    sget-object v2, Lorg/telegram/ui/ActionBar/Theme;->dialogs_onlineCirclePaint:Landroid/graphics/Paint;
 
     iget-object v9, p0, Lorg/telegram/ui/Components/StickersAlert$3;->this$0:Lorg/telegram/ui/Components/StickersAlert;
 
-    invoke-static {v9, v2}, Lorg/telegram/ui/Components/StickersAlert;->access$3600(Lorg/telegram/ui/Components/StickersAlert;Ljava/lang/String;)I
+    invoke-static {v9, v8}, Lorg/telegram/ui/Components/StickersAlert;->access$3600(Lorg/telegram/ui/Components/StickersAlert;Ljava/lang/String;)I
 
     move-result v9
 
-    invoke-virtual {v8, v9}, Landroid/graphics/Paint;->setColor(I)V
+    invoke-virtual {v2, v9}, Landroid/graphics/Paint;->setColor(I)V
 
     .line 679
-    iget-object v8, p0, Lorg/telegram/ui/Components/StickersAlert$3;->rect:Landroid/graphics/RectF;
+    iget-object v2, p0, Lorg/telegram/ui/Components/StickersAlert$3;->rect:Landroid/graphics/RectF;
 
     iget-object v9, p0, Lorg/telegram/ui/Components/StickersAlert$3;->this$0:Lorg/telegram/ui/Components/StickersAlert;
 
@@ -440,32 +444,32 @@
 
     int-to-float v1, v12
 
-    invoke-virtual {v8, v9, v10, v11, v1}, Landroid/graphics/RectF;->set(FFFF)V
+    invoke-virtual {v2, v9, v10, v11, v1}, Landroid/graphics/RectF;->set(FFFF)V
 
     .line 680
     iget-object v1, p0, Lorg/telegram/ui/Components/StickersAlert$3;->rect:Landroid/graphics/RectF;
 
-    const/16 v8, 0xc
+    const/16 v2, 0xc
 
-    invoke-static {v8}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v9
 
     int-to-float v9, v9
 
-    mul-float v9, v9, v3
+    mul-float/2addr v9, v3
 
-    invoke-static {v8}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
-    move-result v8
+    move-result v2
 
-    int-to-float v8, v8
+    int-to-float v2, v2
 
-    mul-float v8, v8, v3
+    mul-float/2addr v2, v3
 
     sget-object v3, Lorg/telegram/ui/ActionBar/Theme;->dialogs_onlineCirclePaint:Landroid/graphics/Paint;
 
-    invoke-virtual {p1, v1, v9, v8, v3}, Landroid/graphics/Canvas;->drawRoundRect(Landroid/graphics/RectF;FFLandroid/graphics/Paint;)V
+    invoke-virtual {p1, v1, v9, v2, v3}, Landroid/graphics/Canvas;->drawRoundRect(Landroid/graphics/RectF;FFLandroid/graphics/Paint;)V
 
     .line 683
     :cond_3
@@ -479,17 +483,17 @@
     move-result v1
 
     .line 686
-    iget-object v3, p0, Lorg/telegram/ui/Components/StickersAlert$3;->rect:Landroid/graphics/RectF;
+    iget-object v2, p0, Lorg/telegram/ui/Components/StickersAlert$3;->rect:Landroid/graphics/RectF;
 
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
 
-    move-result v8
+    move-result v3
 
-    sub-int/2addr v8, v1
+    sub-int/2addr v3, v1
 
-    div-int/2addr v8, v6
+    div-int/2addr v3, v6
 
-    int-to-float v8, v8
+    int-to-float v3, v3
 
     int-to-float v9, v0
 
@@ -513,27 +517,27 @@
 
     int-to-float v10, v10
 
-    invoke-virtual {v3, v8, v9, v1, v10}, Landroid/graphics/RectF;->set(FFFF)V
+    invoke-virtual {v2, v3, v9, v1, v10}, Landroid/graphics/RectF;->set(FFFF)V
 
     .line 687
     sget-object v1, Lorg/telegram/ui/ActionBar/Theme;->dialogs_onlineCirclePaint:Landroid/graphics/Paint;
 
-    iget-object v3, p0, Lorg/telegram/ui/Components/StickersAlert$3;->this$0:Lorg/telegram/ui/Components/StickersAlert;
+    iget-object v2, p0, Lorg/telegram/ui/Components/StickersAlert$3;->this$0:Lorg/telegram/ui/Components/StickersAlert;
 
-    const-string v8, "key_sheet_scrollUp"
+    const-string v3, "key_sheet_scrollUp"
 
-    invoke-static {v3, v8}, Lorg/telegram/ui/Components/StickersAlert;->access$4100(Lorg/telegram/ui/Components/StickersAlert;Ljava/lang/String;)I
+    invoke-static {v2, v3}, Lorg/telegram/ui/Components/StickersAlert;->access$4100(Lorg/telegram/ui/Components/StickersAlert;Ljava/lang/String;)I
 
-    move-result v3
+    move-result v2
 
-    invoke-virtual {v1, v3}, Landroid/graphics/Paint;->setColor(I)V
+    invoke-virtual {v1, v2}, Landroid/graphics/Paint;->setColor(I)V
 
     .line 688
     sget-object v1, Lorg/telegram/ui/ActionBar/Theme;->dialogs_onlineCirclePaint:Landroid/graphics/Paint;
 
-    const/high16 v3, 0x437f0000    # 255.0f
+    const/high16 v2, 0x437f0000    # 255.0f
 
-    const/4 v8, 0x0
+    const/4 v3, 0x0
 
     sget v9, Lorg/telegram/messenger/AndroidUtilities;->statusBarHeight:I
 
@@ -555,11 +559,11 @@
 
     move-result v0
 
-    invoke-static {v8, v0}, Ljava/lang/Math;->max(FF)F
+    invoke-static {v3, v0}, Ljava/lang/Math;->max(FF)F
 
     move-result v0
 
-    mul-float v0, v0, v3
+    mul-float/2addr v0, v2
 
     float-to-int v0, v0
 
@@ -576,13 +580,13 @@
 
     invoke-static {v6}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
-    move-result v3
+    move-result v2
 
-    int-to-float v3, v3
+    int-to-float v2, v2
 
-    sget-object v5, Lorg/telegram/ui/ActionBar/Theme;->dialogs_onlineCirclePaint:Landroid/graphics/Paint;
+    sget-object v3, Lorg/telegram/ui/ActionBar/Theme;->dialogs_onlineCirclePaint:Landroid/graphics/Paint;
 
-    invoke-virtual {p1, v0, v1, v3, v5}, Landroid/graphics/Canvas;->drawRoundRect(Landroid/graphics/RectF;FFLandroid/graphics/Paint;)V
+    invoke-virtual {p1, v0, v1, v2, v3}, Landroid/graphics/Canvas;->drawRoundRect(Landroid/graphics/RectF;FFLandroid/graphics/Paint;)V
 
     .line 691
     sget v0, Lorg/telegram/messenger/AndroidUtilities;->statusBarHeight:I
@@ -603,7 +607,7 @@
 
     iget-object v1, p0, Lorg/telegram/ui/Components/StickersAlert$3;->this$0:Lorg/telegram/ui/Components/StickersAlert;
 
-    invoke-static {v1, v2}, Lorg/telegram/ui/Components/StickersAlert;->access$4200(Lorg/telegram/ui/Components/StickersAlert;Ljava/lang/String;)I
+    invoke-static {v1, v8}, Lorg/telegram/ui/Components/StickersAlert;->access$4200(Lorg/telegram/ui/Components/StickersAlert;Ljava/lang/String;)I
 
     move-result v1
 
@@ -847,7 +851,7 @@
 
     if-eqz v6, :cond_2
 
-    const/16 v6, 0x3c
+    move v6, v3
 
     goto :goto_0
 
@@ -1038,7 +1042,7 @@
 
     move-result v4
 
-    mul-int v0, v0, v4
+    mul-int/2addr v0, v4
 
     add-int/2addr v3, v0
 
@@ -1090,7 +1094,7 @@
 
     move-result v4
 
-    mul-int v3, v3, v4
+    mul-int/2addr v3, v4
 
     add-int/2addr v0, v3
 
@@ -1110,7 +1114,7 @@
 
     move-result v4
 
-    mul-int v3, v3, v4
+    mul-int/2addr v3, v4
 
     add-int/2addr v0, v3
 
@@ -1188,7 +1192,7 @@
     goto :goto_3
 
     :cond_7
-    const/4 v0, 0x0
+    move v0, v2
 
     :goto_3
     invoke-static {v6, v0}, Ljava/lang/Math;->max(II)I
@@ -1201,7 +1205,7 @@
 
     move-result v4
 
-    mul-int v0, v0, v4
+    mul-int/2addr v0, v4
 
     add-int/2addr v3, v0
 
@@ -1240,7 +1244,7 @@
 
     const v4, 0x3e19999a    # 0.15f
 
-    mul-float v3, v3, v4
+    mul-float/2addr v3, v4
 
     add-float/2addr v0, v3
 
@@ -1299,20 +1303,20 @@
 
     const-wide v9, 0x400999999999999aL    # 3.2
 
-    mul-double v6, v6, v9
+    mul-double/2addr v6, v9
 
-    cmpg-double v9, v4, v6
+    cmpg-double v4, v4, v6
 
-    if-gez v9, :cond_a
+    if-gez v4, :cond_a
 
-    const/4 v0, 0x0
+    move v0, v2
 
     goto :goto_5
 
     :cond_a
     const/high16 v4, 0x40000000    # 2.0f
 
-    mul-float v0, v0, v4
+    mul-float/2addr v0, v4
 
     float-to-int v0, v0
 
@@ -1445,7 +1449,7 @@
     goto :goto_6
 
     :cond_10
-    const/4 v1, 0x0
+    move v1, v2
 
     .line 614
     :goto_6

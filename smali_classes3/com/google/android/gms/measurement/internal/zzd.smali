@@ -339,7 +339,7 @@
 .end method
 
 .method private final zzh(JLcom/google/android/gms/measurement/internal/zzih;)V
-    .locals 3
+    .locals 2
 
     if-nez p3, :cond_0
 
@@ -364,9 +364,9 @@
     :cond_0
     const-wide/16 v0, 0x3e8
 
-    cmp-long v2, p1, v0
+    cmp-long v0, p1, v0
 
-    if-gez v2, :cond_1
+    if-gez v0, :cond_1
 
     iget-object p3, p0, Lcom/google/android/gms/measurement/internal/zzgo;->zzs:Lcom/google/android/gms/measurement/internal/zzfv;
 
@@ -425,7 +425,7 @@
 .end method
 
 .method private final zzi(Ljava/lang/String;JLcom/google/android/gms/measurement/internal/zzih;)V
-    .locals 3
+    .locals 2
 
     if-nez p4, :cond_0
 
@@ -450,9 +450,9 @@
     :cond_0
     const-wide/16 v0, 0x3e8
 
-    cmp-long v2, p2, v0
+    cmp-long v0, p2, v0
 
-    if-gez v2, :cond_1
+    if-gez v0, :cond_1
 
     iget-object p1, p0, Lcom/google/android/gms/measurement/internal/zzgo;->zzs:Lcom/google/android/gms/measurement/internal/zzfv;
 

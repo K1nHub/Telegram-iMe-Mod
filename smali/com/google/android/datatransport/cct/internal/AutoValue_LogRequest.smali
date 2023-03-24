@@ -259,7 +259,7 @@
     goto :goto_4
 
     :cond_6
-    const/4 v0, 0x0
+    move v0, v2
 
     :goto_4
     return v0
@@ -351,13 +351,13 @@
 
     xor-long/2addr v0, v3
 
-    long-to-int v1, v0
+    long-to-int v0, v0
 
-    const v0, 0xf4243
+    const v1, 0xf4243
 
-    xor-int/2addr v1, v0
+    xor-int/2addr v0, v1
 
-    mul-int v1, v1, v0
+    mul-int/2addr v0, v1
 
     .line 121
     iget-wide v3, p0, Lcom/google/android/datatransport/cct/internal/AutoValue_LogRequest;->requestUptimeMs:J
@@ -366,11 +366,11 @@
 
     xor-long v2, v5, v3
 
-    long-to-int v3, v2
+    long-to-int v2, v2
 
-    xor-int/2addr v1, v3
+    xor-int/2addr v0, v2
 
-    mul-int v1, v1, v0
+    mul-int/2addr v0, v1
 
     .line 123
     iget-object v2, p0, Lcom/google/android/datatransport/cct/internal/AutoValue_LogRequest;->clientInfo:Lcom/google/android/datatransport/cct/internal/ClientInfo;
@@ -379,7 +379,7 @@
 
     if-nez v2, :cond_0
 
-    const/4 v2, 0x0
+    move v2, v3
 
     goto :goto_0
 
@@ -389,16 +389,16 @@
     move-result v2
 
     :goto_0
-    xor-int/2addr v1, v2
+    xor-int/2addr v0, v2
 
-    mul-int v1, v1, v0
+    mul-int/2addr v0, v1
 
     .line 125
     iget-object v2, p0, Lcom/google/android/datatransport/cct/internal/AutoValue_LogRequest;->logSource:Ljava/lang/Integer;
 
     if-nez v2, :cond_1
 
-    const/4 v2, 0x0
+    move v2, v3
 
     goto :goto_1
 
@@ -408,16 +408,16 @@
     move-result v2
 
     :goto_1
-    xor-int/2addr v1, v2
+    xor-int/2addr v0, v2
 
-    mul-int v1, v1, v0
+    mul-int/2addr v0, v1
 
     .line 127
     iget-object v2, p0, Lcom/google/android/datatransport/cct/internal/AutoValue_LogRequest;->logSourceName:Ljava/lang/String;
 
     if-nez v2, :cond_2
 
-    const/4 v2, 0x0
+    move v2, v3
 
     goto :goto_2
 
@@ -427,16 +427,16 @@
     move-result v2
 
     :goto_2
-    xor-int/2addr v1, v2
+    xor-int/2addr v0, v2
 
-    mul-int v1, v1, v0
+    mul-int/2addr v0, v1
 
     .line 129
     iget-object v2, p0, Lcom/google/android/datatransport/cct/internal/AutoValue_LogRequest;->logEvents:Ljava/util/List;
 
     if-nez v2, :cond_3
 
-    const/4 v2, 0x0
+    move v2, v3
 
     goto :goto_3
 
@@ -446,24 +446,24 @@
     move-result v2
 
     :goto_3
-    xor-int/2addr v1, v2
+    xor-int/2addr v0, v2
 
-    mul-int v1, v1, v0
+    mul-int/2addr v0, v1
 
     .line 131
-    iget-object v0, p0, Lcom/google/android/datatransport/cct/internal/AutoValue_LogRequest;->qosTier:Lcom/google/android/datatransport/cct/internal/QosTier;
+    iget-object v1, p0, Lcom/google/android/datatransport/cct/internal/AutoValue_LogRequest;->qosTier:Lcom/google/android/datatransport/cct/internal/QosTier;
 
-    if-nez v0, :cond_4
+    if-nez v1, :cond_4
 
     goto :goto_4
 
     :cond_4
-    invoke-virtual {v0}, Ljava/lang/Enum;->hashCode()I
+    invoke-virtual {v1}, Ljava/lang/Enum;->hashCode()I
 
     move-result v3
 
     :goto_4
-    xor-int v0, v1, v3
+    xor-int/2addr v0, v3
 
     return v0
 .end method

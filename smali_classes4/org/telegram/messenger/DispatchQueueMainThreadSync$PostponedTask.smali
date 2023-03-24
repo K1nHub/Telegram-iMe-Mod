@@ -88,9 +88,9 @@
 
     iget-wide v2, p0, Lorg/telegram/messenger/DispatchQueueMainThreadSync$PostponedTask;->delay:J
 
-    long-to-int v3, v2
+    long-to-int v2, v2
 
-    invoke-virtual {v0, v1, v3}, Lorg/telegram/messenger/DispatchQueueMainThreadSync;->sendMessage(Landroid/os/Message;I)V
+    invoke-virtual {v0, v1, v2}, Lorg/telegram/messenger/DispatchQueueMainThreadSync;->sendMessage(Landroid/os/Message;I)V
 
     :goto_0
     return-void

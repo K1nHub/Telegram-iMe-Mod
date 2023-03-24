@@ -12,7 +12,7 @@ import android.view.accessibility.AccessibilityNodeInfo;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import java.io.File;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3286R;
+import org.telegram.messenger.C3301R;
 import org.telegram.messenger.DownloadController;
 import org.telegram.messenger.FileLoader;
 import org.telegram.messenger.FileLog;
@@ -184,10 +184,10 @@ public class AudioPlayerCell extends View implements DownloadController.FileDown
             int r0 = r0 + r3
             int r0 = r0 + r2
             if (r1 > r0) goto L32
-            r0 = 1
+            r0 = r4
             goto L33
         L32:
-            r0 = 0
+            r0 = r5
         L33:
             int r1 = r9.getAction()
             if (r1 != 0) goto L46
@@ -226,7 +226,7 @@ public class AudioPlayerCell extends View implements DownloadController.FileDown
             boolean r0 = r8.miniButtonPressed
             r9.setPressed(r0, r4)
         L7e:
-            r4 = 0
+            r4 = r5
         L7f:
             return r4
         */
@@ -460,7 +460,7 @@ public class AudioPlayerCell extends View implements DownloadController.FileDown
     public void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
         super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
         if (this.currentMessageObject.isMusic()) {
-            accessibilityNodeInfo.setText(LocaleController.formatString("AccDescrMusicInfo", C3286R.string.AccDescrMusicInfo, this.currentMessageObject.getMusicAuthor(), this.currentMessageObject.getMusicTitle()));
+            accessibilityNodeInfo.setText(LocaleController.formatString("AccDescrMusicInfo", C3301R.string.AccDescrMusicInfo, this.currentMessageObject.getMusicAuthor(), this.currentMessageObject.getMusicTitle()));
             return;
         }
         accessibilityNodeInfo.setText(((Object) this.titleLayout.getText()) + ", " + ((Object) this.descriptionLayout.getText()));

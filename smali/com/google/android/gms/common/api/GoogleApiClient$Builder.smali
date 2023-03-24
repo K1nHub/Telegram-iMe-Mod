@@ -533,7 +533,7 @@
 
     move-object/from16 v16, v4
 
-    const/16 v17, 0x0
+    move/from16 v17, v13
 
     :cond_0
     :goto_0
@@ -565,12 +565,12 @@
 
     if-eqz v4, :cond_1
 
-    const/4 v4, 0x1
+    move v4, v2
 
     goto :goto_1
 
     :cond_1
-    const/4 v4, 0x0
+    move v4, v13
 
     .line 9
     :goto_1
@@ -637,12 +637,12 @@
 
     if-eqz v18, :cond_2
 
-    const/16 v17, 0x1
+    move/from16 v17, v2
 
     goto :goto_2
 
     :cond_2
-    const/16 v17, 0x0
+    move/from16 v17, v13
 
     .line 15
     :cond_3
@@ -702,12 +702,12 @@
 
     if-nez v3, :cond_6
 
-    const/4 v3, 0x1
+    move v3, v2
 
     goto :goto_3
 
     :cond_6
-    const/4 v3, 0x0
+    move v3, v13
 
     :goto_3
     new-array v4, v2, [Ljava/lang/Object;

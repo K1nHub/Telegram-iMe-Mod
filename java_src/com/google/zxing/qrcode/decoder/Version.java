@@ -67,13 +67,13 @@ public final class Version {
     /* JADX INFO: Access modifiers changed from: package-private */
     public static Version decodeVersionInformation(int i) {
         int i2 = 0;
-        int i3 = 0;
-        int i4 = Integer.MAX_VALUE;
+        int i3 = Integer.MAX_VALUE;
+        int i4 = 0;
         while (true) {
             int[] iArr = VERSION_DECODE_INFO;
             if (i2 >= iArr.length) {
-                if (i4 <= 3) {
-                    return getVersionForNumber(i3);
+                if (i3 <= 3) {
+                    return getVersionForNumber(i4);
                 }
                 return null;
             }
@@ -82,9 +82,9 @@ public final class Version {
                 return getVersionForNumber(i2 + 7);
             }
             int numBitsDiffering = FormatInformation.numBitsDiffering(i, i5);
-            if (numBitsDiffering < i4) {
-                i3 = i2 + 7;
-                i4 = numBitsDiffering;
+            if (numBitsDiffering < i3) {
+                i4 = i2 + 7;
+                i3 = numBitsDiffering;
             }
             i2++;
         }

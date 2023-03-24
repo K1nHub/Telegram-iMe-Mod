@@ -34,16 +34,16 @@
 .method private constructor <init>()V
     .locals 13
 
-    .line 1044
+    .line 1083
     sget-object v1, Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;->USD:Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;
 
-    .line 1047
+    .line 1086
     sget v4, Lcom/smedialink/storage/R$string;->currency_dollar:I
 
-    .line 1048
+    .line 1087
     sget v5, Lcom/smedialink/storage/R$string;->currency_short_dollar:I
 
-    .line 1051
+    .line 1090
     invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
 
     move-result v9
@@ -66,7 +66,7 @@
 
     move-object v0, p0
 
-    .line 1043
+    .line 1082
     invoke-direct/range {v0 .. v12}, Lcom/smedialink/storage/domain/model/wallet/token/TokenInfo$Fiat;-><init>(Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;IIIILcom/smedialink/storage/domain/model/wallet/token/TokenType;IIIIILkotlin/jvm/internal/DefaultConstructorMarker;)V
 
     return-void
@@ -75,13 +75,13 @@
 
 # virtual methods
 .method public final getDollarsDecimals(D)I
-    .locals 3
+    .locals 2
 
     const-wide/high16 v0, 0x3ff0000000000000L    # 1.0
 
-    cmpg-double v2, p1, v0
+    cmpg-double v0, p1, v0
 
-    if-gez v2, :cond_0
+    if-gez v0, :cond_0
 
     const/4 p1, 0x6
 
@@ -90,15 +90,15 @@
     :cond_0
     const-wide/high16 v0, 0x4024000000000000L    # 10.0
 
-    cmpg-double v2, p1, v0
+    cmpg-double p1, p1, v0
 
-    if-gez v2, :cond_1
+    if-gez p1, :cond_1
 
     const/4 p1, 0x4
 
     goto :goto_0
 
-    .line 1058
+    .line 1097
     :cond_1
     invoke-virtual {p0}, Lcom/smedialink/storage/domain/model/wallet/token/TokenInfo$Fiat;->getDecimals()I
 

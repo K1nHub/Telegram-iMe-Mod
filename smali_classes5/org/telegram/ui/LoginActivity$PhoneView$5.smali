@@ -41,7 +41,7 @@
 .method constructor <init>(Lorg/telegram/ui/LoginActivity$PhoneView;)V
     .locals 0
 
-    .line 2331
+    .line 2339
     iput-object p1, p0, Lorg/telegram/ui/LoginActivity$PhoneView$5;->this$1:Lorg/telegram/ui/LoginActivity$PhoneView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -52,14 +52,14 @@
 .method private synthetic lambda$onTwoStepVerificationNeeded$0(Lorg/telegram/tgnet/TLRPC$TL_error;Lorg/telegram/tgnet/TLObject;)V
     .locals 4
 
-    .line 2341
+    .line 2349
     iget-object v0, p0, Lorg/telegram/ui/LoginActivity$PhoneView$5;->this$1:Lorg/telegram/ui/LoginActivity$PhoneView;
 
     const/4 v1, 0x0
 
     invoke-static {v0, v1}, Lorg/telegram/ui/LoginActivity$PhoneView;->access$9302(Lorg/telegram/ui/LoginActivity$PhoneView;Z)Z
 
-    .line 2342
+    .line 2350
     iget-object v0, p0, Lorg/telegram/ui/LoginActivity$PhoneView$5;->this$1:Lorg/telegram/ui/LoginActivity$PhoneView;
 
     iget-object v0, v0, Lorg/telegram/ui/LoginActivity$PhoneView;->this$0:Lorg/telegram/ui/LoginActivity;
@@ -70,17 +70,17 @@
 
     if-nez p1, :cond_1
 
-    .line 2344
+    .line 2352
     check-cast p2, Lorg/telegram/tgnet/TLRPC$account_Password;
 
-    .line 2345
+    .line 2353
     invoke-static {p2, v2}, Lorg/telegram/ui/TwoStepVerificationActivity;->canHandleCurrentPassword(Lorg/telegram/tgnet/TLRPC$account_Password;Z)Z
 
     move-result p1
 
     if-nez p1, :cond_0
 
-    .line 2346
+    .line 2354
     iget-object p1, p0, Lorg/telegram/ui/LoginActivity$PhoneView$5;->this$1:Lorg/telegram/ui/LoginActivity$PhoneView;
 
     iget-object p1, p1, Lorg/telegram/ui/LoginActivity$PhoneView;->this$0:Lorg/telegram/ui/LoginActivity;
@@ -101,13 +101,13 @@
 
     return-void
 
-    .line 2349
+    .line 2357
     :cond_0
     new-instance p1, Landroid/os/Bundle;
 
     invoke-direct {p1}, Landroid/os/Bundle;-><init>()V
 
-    .line 2350
+    .line 2358
     new-instance v0, Lorg/telegram/tgnet/SerializedData;
 
     invoke-virtual {p2}, Lorg/telegram/tgnet/TLObject;->getObjectSize()I
@@ -116,10 +116,10 @@
 
     invoke-direct {v0, v3}, Lorg/telegram/tgnet/SerializedData;-><init>(I)V
 
-    .line 2351
+    .line 2359
     invoke-virtual {p2, v0}, Lorg/telegram/tgnet/TLObject;->serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
 
-    .line 2352
+    .line 2360
     invoke-virtual {v0}, Lorg/telegram/tgnet/SerializedData;->toByteArray()[B
 
     move-result-object p2
@@ -132,7 +132,7 @@
 
     invoke-virtual {p1, v0, p2}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 2353
+    .line 2361
     iget-object p2, p0, Lorg/telegram/ui/LoginActivity$PhoneView$5;->this$1:Lorg/telegram/ui/LoginActivity$PhoneView;
 
     iget-object p2, p2, Lorg/telegram/ui/LoginActivity$PhoneView;->this$0:Lorg/telegram/ui/LoginActivity;
@@ -143,7 +143,7 @@
 
     goto :goto_0
 
-    .line 2355
+    .line 2363
     :cond_1
     iget-object p2, p0, Lorg/telegram/ui/LoginActivity$PhoneView$5;->this$1:Lorg/telegram/ui/LoginActivity$PhoneView;
 
@@ -166,7 +166,7 @@
 .method private synthetic lambda$onTwoStepVerificationNeeded$1(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
     .locals 1
 
-    .line 2340
+    .line 2348
     new-instance v0, Lorg/telegram/ui/LoginActivity$PhoneView$5$$ExternalSyntheticLambda0;
 
     invoke-direct {v0, p0, p2, p1}, Lorg/telegram/ui/LoginActivity$PhoneView$5$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/LoginActivity$PhoneView$5;Lorg/telegram/tgnet/TLRPC$TL_error;Lorg/telegram/tgnet/TLObject;)V
@@ -181,7 +181,7 @@
 .method public onAuthorized(Lorg/telegram/tgnet/TLRPC$TL_auth_authorization;)V
     .locals 1
 
-    .line 2334
+    .line 2342
     iget-object v0, p0, Lorg/telegram/ui/LoginActivity$PhoneView$5;->this$1:Lorg/telegram/ui/LoginActivity$PhoneView;
 
     iget-object v0, v0, Lorg/telegram/ui/LoginActivity$PhoneView;->this$0:Lorg/telegram/ui/LoginActivity;
@@ -194,12 +194,12 @@
 .method public onTwoStepVerificationNeeded()V
     .locals 4
 
-    .line 2339
+    .line 2347
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_account_getPassword;
 
     invoke-direct {v0}, Lorg/telegram/tgnet/TLRPC$TL_account_getPassword;-><init>()V
 
-    .line 2340
+    .line 2348
     iget-object v1, p0, Lorg/telegram/ui/LoginActivity$PhoneView$5;->this$1:Lorg/telegram/ui/LoginActivity$PhoneView;
 
     iget-object v1, v1, Lorg/telegram/ui/LoginActivity$PhoneView;->this$0:Lorg/telegram/ui/LoginActivity;

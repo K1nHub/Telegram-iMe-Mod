@@ -636,12 +636,12 @@
 
     if-eqz v9, :cond_0
 
-    const/16 v9, 0x18
+    move v9, v10
 
     goto :goto_0
 
     :cond_0
-    const/4 v9, 0x0
+    move v9, v11
 
     :goto_0
     invoke-static {v9}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
@@ -652,7 +652,7 @@
 
     if-eqz v12, :cond_1
 
-    const/4 v10, 0x0
+    move v10, v11
 
     :cond_1
     invoke-static {v10}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
@@ -678,12 +678,12 @@
 
     if-eqz v9, :cond_2
 
-    const/4 v9, 0x5
+    move v9, v10
 
     goto :goto_1
 
     :cond_2
-    const/4 v9, 0x3
+    move v9, v13
 
     :goto_1
     invoke-virtual {v7, v9}, Landroid/widget/EditText;->setGravity(I)V
@@ -876,12 +876,12 @@
 
     if-eqz v5, :cond_3
 
-    const/16 v16, 0x3
+    move/from16 v16, v13
 
     goto :goto_2
 
     :cond_3
-    const/16 v16, 0x5
+    move/from16 v16, v10
 
     :goto_2
     const/16 v17, 0x0
@@ -933,12 +933,12 @@
 
     if-eqz v3, :cond_4
 
-    const/4 v3, 0x5
+    move v3, v10
 
     goto :goto_3
 
     :cond_4
-    const/4 v3, 0x3
+    move v3, v13
 
     :goto_3
     invoke-virtual {v1, v3}, Landroid/widget/TextView;->setGravity(I)V
@@ -971,12 +971,12 @@
 
     if-eqz v5, :cond_5
 
-    const/4 v5, 0x5
+    move v5, v10
 
     goto :goto_4
 
     :cond_5
-    const/4 v5, 0x3
+    move v5, v13
 
     :goto_4
     const/16 v6, 0x18

@@ -914,13 +914,13 @@
     goto :goto_5
 
     :cond_b
-    const/4 v1, 0x0
+    move v1, v2
 
     goto :goto_6
 
     :cond_c
     :goto_5
-    const/4 v1, 0x1
+    move v1, v3
 
     .line 3835
     :goto_6

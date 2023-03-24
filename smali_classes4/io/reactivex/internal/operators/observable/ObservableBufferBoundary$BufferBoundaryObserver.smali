@@ -249,7 +249,7 @@
 
     invoke-static {p1}, Lio/reactivex/internal/disposables/DisposableHelper;->dispose(Ljava/util/concurrent/atomic/AtomicReference;)Z
 
-    const/4 p1, 0x1
+    move p1, v0
 
     goto :goto_0
 
@@ -400,7 +400,7 @@
 
     const/4 v2, 0x1
 
-    const/4 v3, 0x1
+    move v3, v2
 
     .line 248
     :cond_1
@@ -454,7 +454,7 @@
 
     if-nez v5, :cond_4
 
-    const/4 v6, 0x1
+    move v6, v2
 
     goto :goto_1
 

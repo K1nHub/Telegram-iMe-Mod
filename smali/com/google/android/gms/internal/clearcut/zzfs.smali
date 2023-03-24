@@ -46,7 +46,7 @@
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_0
     if-ge v2, v0, :cond_0
@@ -920,7 +920,7 @@
 .end method
 
 .method public static zzo(J)I
-    .locals 5
+    .locals 4
 
     const-wide/16 v0, -0x80
 
@@ -928,9 +928,9 @@
 
     const-wide/16 v2, 0x0
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-nez v4, :cond_0
+    if-nez v0, :cond_0
 
     const/4 p0, 0x1
 
@@ -941,9 +941,9 @@
 
     and-long/2addr v0, p0
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-nez v4, :cond_1
+    if-nez v0, :cond_1
 
     const/4 p0, 0x2
 
@@ -954,9 +954,9 @@
 
     and-long/2addr v0, p0
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-nez v4, :cond_2
+    if-nez v0, :cond_2
 
     const/4 p0, 0x3
 
@@ -967,9 +967,9 @@
 
     and-long/2addr v0, p0
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-nez v4, :cond_3
+    if-nez v0, :cond_3
 
     const/4 p0, 0x4
 
@@ -980,9 +980,9 @@
 
     and-long/2addr v0, p0
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-nez v4, :cond_4
+    if-nez v0, :cond_4
 
     const/4 p0, 0x5
 
@@ -993,9 +993,9 @@
 
     and-long/2addr v0, p0
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-nez v4, :cond_5
+    if-nez v0, :cond_5
 
     const/4 p0, 0x6
 
@@ -1006,9 +1006,9 @@
 
     and-long/2addr v0, p0
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-nez v4, :cond_6
+    if-nez v0, :cond_6
 
     const/4 p0, 0x7
 
@@ -1019,9 +1019,9 @@
 
     and-long/2addr v0, p0
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-nez v4, :cond_7
+    if-nez v0, :cond_7
 
     const/16 p0, 0x8
 
@@ -1032,9 +1032,9 @@
 
     and-long/2addr p0, v0
 
-    cmp-long v0, p0, v2
+    cmp-long p0, p0, v2
 
-    if-nez v0, :cond_8
+    if-nez p0, :cond_8
 
     const/16 p0, 0x9
 
@@ -1581,7 +1581,7 @@
 .end method
 
 .method public final zzn(J)V
-    .locals 5
+    .locals 4
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -1595,13 +1595,13 @@
 
     const-wide/16 v2, 0x0
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-nez v4, :cond_0
+    if-nez v0, :cond_0
 
-    long-to-int p2, p1
+    long-to-int p1, p1
 
-    invoke-direct {p0, p2}, Lcom/google/android/gms/internal/clearcut/zzfs;->zzao(I)V
+    invoke-direct {p0, p1}, Lcom/google/android/gms/internal/clearcut/zzfs;->zzao(I)V
 
     return-void
 

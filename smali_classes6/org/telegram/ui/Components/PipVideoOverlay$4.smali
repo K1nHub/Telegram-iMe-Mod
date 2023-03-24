@@ -84,9 +84,9 @@
 
     div-float/2addr p5, p4
 
-    const/high16 p4, 0x41800000    # 16.0f
-
     cmpl-float p1, p1, p5
+
+    const/high16 p4, 0x41800000    # 16.0f
 
     if-ltz p1, :cond_0
 
@@ -240,7 +240,7 @@
 .end method
 
 .method public onDoubleTap(Landroid/view/MotionEvent;)Z
-    .locals 13
+    .locals 12
 
     .line 707
     iget-object v0, p0, Lorg/telegram/ui/Components/PipVideoOverlay$4;->this$0:Lorg/telegram/ui/Components/PipVideoOverlay;
@@ -318,7 +318,7 @@
 
     if-nez v0, :cond_1
 
-    goto/16 :goto_6
+    goto/16 :goto_5
 
     .line 711
     :cond_1
@@ -349,161 +349,162 @@
 
     move-result v2
 
-    mul-float v0, v0, v2
+    mul-float/2addr v0, v2
 
     const/high16 v2, 0x3f000000    # 0.5f
 
-    mul-float v0, v0, v2
-
-    const/4 v2, 0x1
+    mul-float/2addr v0, v2
 
     cmpl-float p1, p1, v0
 
+    const/4 v0, 0x1
+
     if-ltz p1, :cond_2
 
-    const/4 p1, 0x1
+    move p1, v0
 
     goto :goto_0
 
     :cond_2
-    const/4 p1, 0x0
+    move p1, v1
 
     .line 714
     :goto_0
-    iget-object v0, p0, Lorg/telegram/ui/Components/PipVideoOverlay$4;->this$0:Lorg/telegram/ui/Components/PipVideoOverlay;
+    iget-object v2, p0, Lorg/telegram/ui/Components/PipVideoOverlay$4;->this$0:Lorg/telegram/ui/Components/PipVideoOverlay;
 
-    invoke-static {v0}, Lorg/telegram/ui/Components/PipVideoOverlay;->access$3700(Lorg/telegram/ui/Components/PipVideoOverlay;)J
+    invoke-static {v2}, Lorg/telegram/ui/Components/PipVideoOverlay;->access$3700(Lorg/telegram/ui/Components/PipVideoOverlay;)J
 
-    move-result-wide v3
+    move-result-wide v2
 
     .line 715
-    iget-object v0, p0, Lorg/telegram/ui/Components/PipVideoOverlay$4;->this$0:Lorg/telegram/ui/Components/PipVideoOverlay;
+    iget-object v4, p0, Lorg/telegram/ui/Components/PipVideoOverlay$4;->this$0:Lorg/telegram/ui/Components/PipVideoOverlay;
 
-    invoke-static {v0}, Lorg/telegram/ui/Components/PipVideoOverlay;->access$3800(Lorg/telegram/ui/Components/PipVideoOverlay;)J
+    invoke-static {v4}, Lorg/telegram/ui/Components/PipVideoOverlay;->access$3800(Lorg/telegram/ui/Components/PipVideoOverlay;)J
 
-    move-result-wide v5
+    move-result-wide v4
 
-    const-wide v7, -0x7fffffffffffffffL    # -4.9E-324
+    const-wide v6, -0x7fffffffffffffffL    # -4.9E-324
 
-    cmp-long v0, v3, v7
+    cmp-long v6, v2, v6
 
-    if-eqz v0, :cond_a
+    if-eqz v6, :cond_a
 
-    const-wide/16 v7, 0x3a98
+    const-wide/16 v6, 0x3a98
 
-    cmp-long v0, v5, v7
+    cmp-long v6, v4, v6
 
-    if-gez v0, :cond_3
+    if-gez v6, :cond_3
 
-    goto/16 :goto_6
+    goto/16 :goto_5
 
     :cond_3
-    const-wide/16 v7, 0x2710
+    const-wide/16 v6, 0x2710
 
     if-eqz p1, :cond_4
 
-    add-long v9, v3, v7
+    add-long v8, v2, v6
 
     goto :goto_1
 
     :cond_4
-    sub-long v9, v3, v7
+    sub-long v8, v2, v6
 
     :goto_1
-    cmp-long v0, v3, v9
+    cmp-long v2, v2, v8
 
-    if-eqz v0, :cond_a
+    if-eqz v2, :cond_a
 
-    const-wide/16 v3, 0x0
+    cmp-long v2, v8, v4
 
-    cmp-long v0, v9, v5
+    const-wide/16 v10, 0x0
 
-    if-lez v0, :cond_5
+    if-lez v2, :cond_5
 
-    move-wide v9, v5
+    move v1, v0
+
+    move-wide v8, v4
 
     goto :goto_3
 
     :cond_5
-    cmp-long v0, v9, v3
+    cmp-long v2, v8, v10
 
-    if-gez v0, :cond_7
+    if-gez v2, :cond_7
 
-    const-wide/16 v11, -0x2328
+    const-wide/16 v2, -0x2328
 
-    cmp-long v0, v9, v11
+    cmp-long v2, v8, v2
 
-    if-gez v0, :cond_6
+    if-gez v2, :cond_6
 
     goto :goto_2
 
     :cond_6
-    const/4 v1, 0x1
+    move v1, v0
 
     :goto_2
-    move-wide v9, v3
+    move-wide v8, v10
 
-    goto :goto_4
+    goto :goto_3
 
     :cond_7
-    :goto_3
-    const/4 v1, 0x1
+    move v1, v0
 
-    :goto_4
+    :goto_3
     if-eqz v1, :cond_9
 
     .line 737
-    iget-object v0, p0, Lorg/telegram/ui/Components/PipVideoOverlay$4;->this$0:Lorg/telegram/ui/Components/PipVideoOverlay;
+    iget-object v1, p0, Lorg/telegram/ui/Components/PipVideoOverlay$4;->this$0:Lorg/telegram/ui/Components/PipVideoOverlay;
 
-    invoke-static {v0}, Lorg/telegram/ui/Components/PipVideoOverlay;->access$3900(Lorg/telegram/ui/Components/PipVideoOverlay;)Lorg/telegram/ui/Components/VideoForwardDrawable;
+    invoke-static {v1}, Lorg/telegram/ui/Components/PipVideoOverlay;->access$3900(Lorg/telegram/ui/Components/PipVideoOverlay;)Lorg/telegram/ui/Components/VideoForwardDrawable;
 
-    move-result-object v0
+    move-result-object v1
 
-    invoke-virtual {v0, v2}, Lorg/telegram/ui/Components/VideoForwardDrawable;->setOneShootAnimation(Z)V
+    invoke-virtual {v1, v0}, Lorg/telegram/ui/Components/VideoForwardDrawable;->setOneShootAnimation(Z)V
 
     .line 738
-    iget-object v0, p0, Lorg/telegram/ui/Components/PipVideoOverlay$4;->this$0:Lorg/telegram/ui/Components/PipVideoOverlay;
+    iget-object v1, p0, Lorg/telegram/ui/Components/PipVideoOverlay$4;->this$0:Lorg/telegram/ui/Components/PipVideoOverlay;
 
-    invoke-static {v0}, Lorg/telegram/ui/Components/PipVideoOverlay;->access$3900(Lorg/telegram/ui/Components/PipVideoOverlay;)Lorg/telegram/ui/Components/VideoForwardDrawable;
+    invoke-static {v1}, Lorg/telegram/ui/Components/PipVideoOverlay;->access$3900(Lorg/telegram/ui/Components/PipVideoOverlay;)Lorg/telegram/ui/Components/VideoForwardDrawable;
 
-    move-result-object v0
+    move-result-object v1
 
-    xor-int/lit8 v1, p1, 0x1
+    xor-int/lit8 v2, p1, 0x1
 
-    invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/VideoForwardDrawable;->setLeftSide(Z)V
+    invoke-virtual {v1, v2}, Lorg/telegram/ui/Components/VideoForwardDrawable;->setLeftSide(Z)V
 
     .line 739
-    iget-object v0, p0, Lorg/telegram/ui/Components/PipVideoOverlay$4;->this$0:Lorg/telegram/ui/Components/PipVideoOverlay;
+    iget-object v1, p0, Lorg/telegram/ui/Components/PipVideoOverlay$4;->this$0:Lorg/telegram/ui/Components/PipVideoOverlay;
 
-    invoke-static {v0}, Lorg/telegram/ui/Components/PipVideoOverlay;->access$3900(Lorg/telegram/ui/Components/PipVideoOverlay;)Lorg/telegram/ui/Components/VideoForwardDrawable;
+    invoke-static {v1}, Lorg/telegram/ui/Components/PipVideoOverlay;->access$3900(Lorg/telegram/ui/Components/PipVideoOverlay;)Lorg/telegram/ui/Components/VideoForwardDrawable;
 
-    move-result-object v0
+    move-result-object v1
 
-    invoke-virtual {v0, v7, v8}, Lorg/telegram/ui/Components/VideoForwardDrawable;->addTime(J)V
+    invoke-virtual {v1, v6, v7}, Lorg/telegram/ui/Components/VideoForwardDrawable;->addTime(J)V
 
     .line 740
-    iget-object v0, p0, Lorg/telegram/ui/Components/PipVideoOverlay$4;->this$0:Lorg/telegram/ui/Components/PipVideoOverlay;
+    iget-object v1, p0, Lorg/telegram/ui/Components/PipVideoOverlay$4;->this$0:Lorg/telegram/ui/Components/PipVideoOverlay;
 
-    invoke-static {v0, v9, v10}, Lorg/telegram/ui/Components/PipVideoOverlay;->access$4000(Lorg/telegram/ui/Components/PipVideoOverlay;J)V
+    invoke-static {v1, v8, v9}, Lorg/telegram/ui/Components/PipVideoOverlay;->access$4000(Lorg/telegram/ui/Components/PipVideoOverlay;J)V
 
     .line 741
-    iget-object v0, p0, Lorg/telegram/ui/Components/PipVideoOverlay$4;->this$0:Lorg/telegram/ui/Components/PipVideoOverlay;
+    iget-object v1, p0, Lorg/telegram/ui/Components/PipVideoOverlay$4;->this$0:Lorg/telegram/ui/Components/PipVideoOverlay;
 
     if-eqz p1, :cond_8
 
-    goto :goto_5
+    goto :goto_4
 
     :cond_8
-    const-wide/16 v7, -0x2710
+    const-wide/16 v6, -0x2710
 
-    :goto_5
-    long-to-float p1, v9
+    :goto_4
+    long-to-float p1, v8
 
-    long-to-float v1, v5
+    long-to-float v2, v4
 
-    div-float/2addr p1, v1
+    div-float/2addr p1, v2
 
-    invoke-static {v0, v7, v8, p1, v2}, Lorg/telegram/ui/Components/PipVideoOverlay;->access$4100(Lorg/telegram/ui/Components/PipVideoOverlay;JFZ)V
+    invoke-static {v1, v6, v7, p1, v0}, Lorg/telegram/ui/Components/PipVideoOverlay;->access$4100(Lorg/telegram/ui/Components/PipVideoOverlay;JFZ)V
 
     .line 742
     iget-object p1, p0, Lorg/telegram/ui/Components/PipVideoOverlay$4;->this$0:Lorg/telegram/ui/Components/PipVideoOverlay;
@@ -517,11 +518,11 @@
     .line 743
     iget-object p1, p0, Lorg/telegram/ui/Components/PipVideoOverlay$4;->this$0:Lorg/telegram/ui/Components/PipVideoOverlay;
 
-    invoke-static {p1, v2}, Lorg/telegram/ui/Components/PipVideoOverlay;->access$2702(Lorg/telegram/ui/Components/PipVideoOverlay;Z)Z
+    invoke-static {p1, v0}, Lorg/telegram/ui/Components/PipVideoOverlay;->access$2702(Lorg/telegram/ui/Components/PipVideoOverlay;Z)Z
 
-    move-result v0
+    move-result v1
 
-    invoke-static {p1, v0}, Lorg/telegram/ui/Components/PipVideoOverlay;->access$3100(Lorg/telegram/ui/Components/PipVideoOverlay;Z)V
+    invoke-static {p1, v1}, Lorg/telegram/ui/Components/PipVideoOverlay;->access$3100(Lorg/telegram/ui/Components/PipVideoOverlay;Z)V
 
     .line 744
     iget-object p1, p0, Lorg/telegram/ui/Components/PipVideoOverlay$4;->this$0:Lorg/telegram/ui/Components/PipVideoOverlay;
@@ -535,7 +536,7 @@
     .line 745
     iget-object p1, p0, Lorg/telegram/ui/Components/PipVideoOverlay$4;->this$0:Lorg/telegram/ui/Components/PipVideoOverlay;
 
-    invoke-static {p1, v2}, Lorg/telegram/ui/Components/PipVideoOverlay;->access$2902(Lorg/telegram/ui/Components/PipVideoOverlay;Z)Z
+    invoke-static {p1, v0}, Lorg/telegram/ui/Components/PipVideoOverlay;->access$2902(Lorg/telegram/ui/Components/PipVideoOverlay;Z)Z
 
     .line 746
     iget-object p1, p0, Lorg/telegram/ui/Components/PipVideoOverlay$4;->this$0:Lorg/telegram/ui/Components/PipVideoOverlay;
@@ -544,15 +545,15 @@
 
     move-result-object p1
 
-    const-wide/16 v0, 0x9c4
+    const-wide/16 v1, 0x9c4
 
-    invoke-static {p1, v0, v1}, Lorg/telegram/messenger/AndroidUtilities;->runOnUIThread(Ljava/lang/Runnable;J)V
+    invoke-static {p1, v1, v2}, Lorg/telegram/messenger/AndroidUtilities;->runOnUIThread(Ljava/lang/Runnable;J)V
 
     :cond_9
-    return v2
+    return v0
 
     :cond_a
-    :goto_6
+    :goto_5
     return v1
 .end method
 
@@ -570,7 +571,7 @@
 
     if-eqz v0, :cond_1
 
-    const/4 v0, 0x1
+    move v0, v1
 
     .line 669
     :goto_0
@@ -724,9 +725,9 @@
 
     div-float/2addr v2, v1
 
-    const/high16 v1, 0x41800000    # 16.0f
-
     cmpl-float p2, p2, v2
+
+    const/high16 v1, 0x41800000    # 16.0f
 
     if-ltz p2, :cond_0
 
@@ -1026,7 +1027,7 @@
 
     const/high16 p2, 0x3e800000    # 0.25f
 
-    mul-float p1, p1, p2
+    mul-float/2addr p1, p2
 
     cmpg-float p1, p4, p1
 
@@ -1048,7 +1049,7 @@
 
     const/high16 v0, 0x3f400000    # 0.75f
 
-    mul-float p2, p2, v0
+    mul-float/2addr p2, v0
 
     sub-float/2addr p1, p2
 
@@ -1292,20 +1293,20 @@
 
     div-float/2addr v0, p3
 
-    const/high16 p3, 0x41800000    # 16.0f
+    cmpl-float p3, p4, v0
 
-    cmpl-float p4, p4, v0
+    const/high16 p4, 0x41800000    # 16.0f
 
-    if-ltz p4, :cond_7
+    if-ltz p3, :cond_7
 
-    invoke-static {p3}, Lorg/telegram/messenger/AndroidUtilities;->dp(F)I
+    invoke-static {p4}, Lorg/telegram/messenger/AndroidUtilities;->dp(F)I
 
     move-result p3
 
     goto :goto_2
 
     :cond_7
-    invoke-static {p3}, Lorg/telegram/messenger/AndroidUtilities;->dp(F)I
+    invoke-static {p4}, Lorg/telegram/messenger/AndroidUtilities;->dp(F)I
 
     move-result p2
 

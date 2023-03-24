@@ -128,9 +128,9 @@
     .line 12
     invoke-virtual {p1}, Lcom/google/android/gms/internal/measurement/zziv;->zzc()I
 
-    const/4 p1, 0x0
+    move p1, v2
 
-    const/4 v5, 0x0
+    move v5, p1
 
     :goto_1
     if-ge p1, v1, :cond_7
@@ -142,7 +142,7 @@
 
     if-eq v6, v7, :cond_6
 
-    const/4 v0, 0x0
+    move v0, v2
 
     goto :goto_2
 

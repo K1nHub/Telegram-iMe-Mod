@@ -92,12 +92,18 @@ public class GridLayoutManagerFixed extends GridLayoutManager {
         if (r27.mLayoutDirection != (-1)) goto L116;
      */
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r12v0 */
-    /* JADX WARN: Type inference failed for: r12v1, types: [int, boolean] */
-    /* JADX WARN: Type inference failed for: r12v5 */
+    /* JADX WARN: Type inference failed for: r0v3 */
+    /* JADX WARN: Type inference failed for: r0v31 */
+    /* JADX WARN: Type inference failed for: r0v4 */
     /* JADX WARN: Type inference failed for: r13v0 */
-    /* JADX WARN: Type inference failed for: r13v1, types: [int, boolean] */
+    /* JADX WARN: Type inference failed for: r13v1, types: [boolean, int] */
     /* JADX WARN: Type inference failed for: r13v5 */
+    /* JADX WARN: Type inference failed for: r16v0 */
+    /* JADX WARN: Type inference failed for: r16v1 */
+    /* JADX WARN: Type inference failed for: r16v2 */
+    /* JADX WARN: Type inference failed for: r16v3 */
+    /* JADX WARN: Type inference failed for: r1v2, types: [boolean] */
+    /* JADX WARN: Type inference failed for: r1v3 */
     @Override // androidx.recyclerview.widget.GridLayoutManager, androidx.recyclerview.widget.LinearLayoutManager
     /*
         Code decompiled incorrectly, please refer to instructions dump.

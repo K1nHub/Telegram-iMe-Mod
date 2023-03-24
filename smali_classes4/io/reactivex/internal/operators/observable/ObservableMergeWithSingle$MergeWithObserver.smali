@@ -196,7 +196,7 @@
 
     const/4 v1, 0x1
 
-    const/4 v2, 0x1
+    move v2, v1
 
     .line 182
     :cond_0
@@ -262,7 +262,7 @@
     .line 201
     invoke-interface {v0, v3}, Lio/reactivex/Observer;->onNext(Ljava/lang/Object;)V
 
-    const/4 v3, 0x2
+    move v3, v5
 
     .line 204
     :cond_3
@@ -286,7 +286,7 @@
     :goto_1
     if-nez v7, :cond_5
 
-    const/4 v8, 0x1
+    move v8, v1
 
     goto :goto_2
 

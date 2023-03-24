@@ -489,12 +489,12 @@
 
     if-ne v0, v2, :cond_1
 
-    const/4 v0, 0x1
+    move v0, v2
 
     goto :goto_0
 
     :cond_1
-    const/4 v0, 0x0
+    move v0, v1
 
     .line 122
     :goto_0

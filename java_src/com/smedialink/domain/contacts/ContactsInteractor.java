@@ -71,7 +71,7 @@ public final class ContactsInteractor {
                 deleteUsersById$lambda$0 = ContactsInteractor.deleteUsersById$lambda$0(Function1.this, obj);
                 return deleteUsersById$lambda$0;
             }
-        }).subscribeOn(this.schedulersProvider.mo708io());
+        }).subscribeOn(this.schedulersProvider.mo707io());
         final ContactsInteractor$deleteUsersById$2 contactsInteractor$deleteUsersById$2 = new ContactsInteractor$deleteUsersById$2(this);
         Completable flatMapCompletable = subscribeOn.flatMapCompletable(new Function() { // from class: com.smedialink.domain.contacts.ContactsInteractor$$ExternalSyntheticLambda1
             @Override // io.reactivex.functions.Function

@@ -71,9 +71,9 @@
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    move v2, v1
 
-    const/4 v3, 0x0
+    move v3, v2
 
     :goto_0
     if-ge v2, v0, :cond_0
@@ -114,9 +114,9 @@
 
     iput-object v2, p0, Lcom/google/android/exoplayer2/SimpleBasePlayer$PlaylistTimeline;->periodIndexByUid:Ljava/util/HashMap;
 
-    const/4 v2, 0x0
+    move v2, v1
 
-    const/4 v3, 0x0
+    move v3, v2
 
     :goto_1
     if-ge v2, v0, :cond_2
@@ -128,7 +128,7 @@
 
     check-cast v4, Lcom/google/android/exoplayer2/SimpleBasePlayer$MediaItemData;
 
-    const/4 v5, 0x0
+    move v5, v1
 
     .line 1120
     :goto_2

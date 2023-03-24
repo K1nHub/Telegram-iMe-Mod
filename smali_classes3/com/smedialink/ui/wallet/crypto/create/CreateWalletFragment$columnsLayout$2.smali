@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment;-><init>(Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment$ScreenType;)V
+    value = Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment;-><init>(Lcom/smedialink/model/wallet/crypto/create/CreateWalletScreenType;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -48,7 +48,7 @@
 .method public final invoke()Landroid/widget/LinearLayout;
     .locals 2
 
-    .line 88
+    .line 89
     new-instance v0, Landroid/widget/LinearLayout;
 
     iget-object v1, p0, Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment$columnsLayout$2;->this$0:Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment;
@@ -65,7 +65,7 @@
 .method public bridge synthetic invoke()Ljava/lang/Object;
     .locals 1
 
-    .line 88
+    .line 89
     invoke-virtual {p0}, Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment$columnsLayout$2;->invoke()Landroid/widget/LinearLayout;
 
     move-result-object v0

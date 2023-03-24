@@ -149,7 +149,7 @@ public final class Cea708Decoder extends CeaDecoder {
     public Cea708Decoder(int i, List<byte[]> list) {
         boolean z = true;
         this.selectedServiceNumber = i == -1 ? 1 : i;
-        this.isWideAspectRatio = (list == null || !CodecSpecificDataUtil.parseCea708InitializationData(list)) ? false : false;
+        this.isWideAspectRatio = (list == null || !CodecSpecificDataUtil.parseCea708InitializationData(list)) ? false : z;
         this.cueInfoBuilders = new CueInfoBuilder[8];
         for (int i2 = 0; i2 < 8; i2++) {
             this.cueInfoBuilders[i2] = new CueInfoBuilder();
@@ -946,18 +946,18 @@ public final class Cea708Decoder extends CeaDecoder {
 
         /* JADX WARN: Removed duplicated region for block: B:23:0x0065  */
         /* JADX WARN: Removed duplicated region for block: B:24:0x0070  */
-        /* JADX WARN: Removed duplicated region for block: B:27:0x0091  */
-        /* JADX WARN: Removed duplicated region for block: B:28:0x0093  */
-        /* JADX WARN: Removed duplicated region for block: B:34:0x009e  */
-        /* JADX WARN: Removed duplicated region for block: B:35:0x00a0  */
-        /* JADX WARN: Removed duplicated region for block: B:41:0x00ac  */
+        /* JADX WARN: Removed duplicated region for block: B:27:0x008f  */
+        /* JADX WARN: Removed duplicated region for block: B:28:0x0091  */
+        /* JADX WARN: Removed duplicated region for block: B:34:0x009c  */
+        /* JADX WARN: Removed duplicated region for block: B:35:0x009e  */
+        /* JADX WARN: Removed duplicated region for block: B:41:0x00aa  */
         /*
             Code decompiled incorrectly, please refer to instructions dump.
             To view partially-correct add '--show-bad-code' argument
         */
         public com.google.android.exoplayer2.text.cea.Cea708Decoder.Cea708CueInfo build() {
             /*
-                Method dump skipped, instructions count: 197
+                Method dump skipped, instructions count: 195
                 To view this dump add '--comments-level debug' option
             */
             throw new UnsupportedOperationException("Method not decompiled: com.google.android.exoplayer2.text.cea.Cea708Decoder.CueInfoBuilder.build():com.google.android.exoplayer2.text.cea.Cea708Decoder$Cea708CueInfo");
@@ -967,11 +967,11 @@ public final class Cea708Decoder extends CeaDecoder {
             return getArgbColorFromCeaColor(i, i2, i3, 0);
         }
 
-        /* JADX WARN: Removed duplicated region for block: B:14:0x0025  */
-        /* JADX WARN: Removed duplicated region for block: B:15:0x0028  */
-        /* JADX WARN: Removed duplicated region for block: B:17:0x002b  */
-        /* JADX WARN: Removed duplicated region for block: B:18:0x002e  */
-        /* JADX WARN: Removed duplicated region for block: B:20:0x0031  */
+        /* JADX WARN: Removed duplicated region for block: B:14:0x0024  */
+        /* JADX WARN: Removed duplicated region for block: B:15:0x0026  */
+        /* JADX WARN: Removed duplicated region for block: B:17:0x0029  */
+        /* JADX WARN: Removed duplicated region for block: B:18:0x002b  */
+        /* JADX WARN: Removed duplicated region for block: B:20:0x002e  */
         /*
             Code decompiled incorrectly, please refer to instructions dump.
             To view partially-correct add '--show-bad-code' argument
@@ -994,29 +994,29 @@ public final class Cea708Decoder extends CeaDecoder {
                 if (r7 == r3) goto L1c
                 goto L21
             L1c:
-                r7 = 0
-                goto L23
+                r7 = r0
+                goto L22
             L1e:
                 r7 = 127(0x7f, float:1.78E-43)
-                goto L23
+                goto L22
             L21:
-                r7 = 255(0xff, float:3.57E-43)
-            L23:
-                if (r4 <= r1) goto L28
-                r4 = 255(0xff, float:3.57E-43)
-                goto L29
-            L28:
-                r4 = 0
-            L29:
-                if (r5 <= r1) goto L2e
-                r5 = 255(0xff, float:3.57E-43)
-                goto L2f
-            L2e:
-                r5 = 0
+                r7 = r2
+            L22:
+                if (r4 <= r1) goto L26
+                r4 = r2
+                goto L27
+            L26:
+                r4 = r0
+            L27:
+                if (r5 <= r1) goto L2b
+                r5 = r2
+                goto L2c
+            L2b:
+                r5 = r0
+            L2c:
+                if (r6 <= r1) goto L2f
+                r0 = r2
             L2f:
-                if (r6 <= r1) goto L33
-                r0 = 255(0xff, float:3.57E-43)
-            L33:
                 int r4 = android.graphics.Color.argb(r7, r4, r5, r0)
                 return r4
             */

@@ -429,9 +429,9 @@
 
     const-wide/16 v4, 0x0
 
-    cmp-long v6, v2, v4
+    cmp-long v4, v2, v4
 
-    if-lez v6, :cond_7
+    if-lez v4, :cond_7
 
     .line 1428
     iget-object v4, v0, Landroidx/room/RoomDatabase$Builder;->mName:Ljava/lang/String;
@@ -493,12 +493,12 @@
 
     if-nez v2, :cond_9
 
-    const/4 v5, 0x0
+    move v5, v3
 
     goto :goto_3
 
     :cond_9
-    const/4 v5, 0x1
+    move v5, v4
 
     .line 1448
     :goto_3
@@ -506,12 +506,12 @@
 
     if-nez v6, :cond_a
 
-    const/4 v7, 0x0
+    move v7, v3
 
     goto :goto_4
 
     :cond_a
-    const/4 v7, 0x1
+    move v7, v4
 
     :goto_4
     add-int/2addr v5, v7
@@ -524,7 +524,7 @@
     goto :goto_5
 
     :cond_b
-    const/4 v3, 0x1
+    move v3, v4
 
     :goto_5
     add-int/2addr v5, v3

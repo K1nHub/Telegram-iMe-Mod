@@ -311,7 +311,7 @@
     aget v2, v2, v1
 
     :goto_1
-    mul-float v0, v0, v2
+    mul-float/2addr v0, v2
 
     add-int/lit8 v1, v1, 0x1
 
@@ -326,7 +326,7 @@
 
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    move v1, v0
 
     .line 2023
     :goto_0
@@ -372,7 +372,7 @@
 .end method
 
 .method private updateAnimation(Z)V
-    .locals 12
+    .locals 11
 
     .line 1892
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
@@ -424,7 +424,7 @@
     goto :goto_0
 
     :cond_1
-    const/4 p1, 0x0
+    move p1, v0
 
     goto :goto_2
 
@@ -435,7 +435,7 @@
 
     const-wide/16 v7, 0x168
 
-    mul-long v7, v7, v2
+    mul-long/2addr v7, v2
 
     long-to-float v7, v7
 
@@ -472,9 +472,9 @@
 
     const-wide/16 v9, 0x12c
 
-    cmp-long v11, v7, v9
+    cmp-long v7, v7, v9
 
-    if-ltz v11, :cond_3
+    if-ltz v7, :cond_3
 
     .line 1908
     iget p1, p0, Lorg/telegram/ui/PhotoViewer$PhotoProgressView;->currentProgress:F
@@ -511,7 +511,7 @@
 
     move-result v8
 
-    mul-float p1, p1, v8
+    mul-float/2addr p1, v8
 
     add-float/2addr v7, p1
 
@@ -519,7 +519,7 @@
 
     :cond_4
     :goto_1
-    const/4 p1, 0x1
+    move p1, v5
 
     .line 1918
     :goto_2
@@ -555,12 +555,12 @@
     iput v9, p0, Lorg/telegram/ui/PhotoViewer$PhotoProgressView;->previousBackgroundState:I
 
     :cond_5
-    const/4 p1, 0x1
+    move p1, v5
 
     goto :goto_3
 
     :cond_6
-    const/4 p1, 0x0
+    move p1, v0
 
     .line 1928
     :cond_7
@@ -598,7 +598,7 @@
     aput p1, v9, v0
 
     :goto_4
-    const/4 p1, 0x1
+    move p1, v5
 
     goto :goto_5
 
@@ -669,7 +669,7 @@
 
     iget v2, p0, Lorg/telegram/ui/PhotoViewer$PhotoProgressView;->scale:F
 
-    mul-float v1, v1, v2
+    mul-float/2addr v1, v2
 
     float-to-int v1, v1
 
@@ -712,7 +712,7 @@
 
     iget v2, p0, Lorg/telegram/ui/PhotoViewer$PhotoProgressView;->scale:F
 
-    mul-float v1, v1, v2
+    mul-float/2addr v1, v2
 
     float-to-int v1, v1
 
@@ -784,7 +784,7 @@
 
     iget v1, p0, Lorg/telegram/ui/PhotoViewer$PhotoProgressView;->scale:F
 
-    mul-float v0, v0, v1
+    mul-float/2addr v0, v1
 
     float-to-int v0, v0
 
@@ -852,9 +852,9 @@
     .line 2070
     iget v6, p0, Lorg/telegram/ui/PhotoViewer$PhotoProgressView;->animatedAlphaValue:F
 
-    mul-float v6, v6, v5
+    mul-float/2addr v6, v5
 
-    mul-float v6, v6, v3
+    mul-float/2addr v6, v3
 
     float-to-int v6, v6
 
@@ -929,9 +929,9 @@
 
     sub-float/2addr v7, v8
 
-    mul-float v7, v7, v5
+    mul-float/2addr v7, v5
 
-    mul-float v7, v7, v3
+    mul-float/2addr v7, v3
 
     float-to-int v7, v7
 
@@ -1005,9 +1005,9 @@
 
     iget v8, p0, Lorg/telegram/ui/PhotoViewer$PhotoProgressView;->animatedAlphaValue:F
 
-    mul-float v8, v8, v5
+    mul-float/2addr v8, v5
 
-    mul-float v8, v8, v3
+    mul-float/2addr v8, v3
 
     float-to-int v3, v8
 
@@ -1021,7 +1021,7 @@
 
     move-result-object v6
 
-    mul-float v3, v3, v5
+    mul-float/2addr v3, v5
 
     float-to-int v3, v3
 
@@ -1068,7 +1068,7 @@
 
     iget v2, p0, Lorg/telegram/ui/PhotoViewer$PhotoProgressView;->animatedProgressValue:F
 
-    mul-float v2, v2, v1
+    mul-float/2addr v2, v1
 
     invoke-static {v0, v2}, Ljava/lang/Math;->max(FF)F
 
@@ -1174,12 +1174,12 @@
     if-ne v0, v2, :cond_2
 
     :cond_1
-    const/4 p3, 0x1
+    move p3, v3
 
     goto :goto_0
 
     :cond_2
-    const/4 p3, 0x0
+    move p3, v5
 
     :goto_0
     if-ne p1, v4, :cond_3

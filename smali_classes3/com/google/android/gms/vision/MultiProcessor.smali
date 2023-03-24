@@ -122,7 +122,7 @@
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     .line 9
     :goto_0
@@ -195,7 +195,7 @@
 
     invoke-direct {v2}, Ljava/util/HashSet;-><init>()V
 
-    const/4 v3, 0x0
+    move v3, v1
 
     .line 21
     :goto_1
@@ -308,7 +308,7 @@
 
     move-result-object v0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     .line 36
     :goto_4

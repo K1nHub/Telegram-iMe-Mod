@@ -41,7 +41,7 @@ import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import moxy.InjectViewState;
-import org.telegram.messenger.C3286R;
+import org.telegram.messenger.C3301R;
 import org.telegram.tgnet.TLRPC$Chat;
 /* compiled from: CatalogCategoriesPresenter.kt */
 @InjectViewState
@@ -179,20 +179,20 @@ public final class CatalogCategoriesPresenter extends BasePresenter<CatalogCateg
     }
 
     public final void loadChannels(boolean z) {
-        Observable<Result<CampaignsCursored>> observeOn = getChannelsObservable().observeOn(this.schedulersProvider.mo707ui());
+        Observable<Result<CampaignsCursored>> observeOn = getChannelsObservable().observeOn(this.schedulersProvider.mo706ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "getChannelsObservable()\n…(schedulersProvider.ui())");
-        Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C1880xb19ad2ea(this, z)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C1881xb19ad2eb(null)));
+        Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C1894xb19ad2ea(this, z)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C1895xb19ad2eb(null)));
         Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…  onError.invoke()\n    })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }
 
     public final void onChannelClick(CampaignItem campaign) {
         Intrinsics.checkNotNullParameter(campaign, "campaign");
-        Observable<TLRPC$Chat> observeOn = this.telegramApi.getChatInfoByUsername(campaign.getShortname()).observeOn(this.schedulersProvider.mo707ui());
+        Observable<TLRPC$Chat> observeOn = this.telegramApi.getChatInfoByUsername(campaign.getShortname()).observeOn(this.schedulersProvider.mo706ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "telegramApi\n            …(schedulersProvider.ui())");
         T viewState = getViewState();
         Intrinsics.checkNotNullExpressionValue(viewState, "viewState");
-        Intrinsics.checkNotNullExpressionValue(RxExtKt.withLoadingDialog$default((Observable) observeOn, (BaseView) viewState, false, 2, (Object) null).subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C1884xc0315c98(this, campaign)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C1885xc0315c99(null))), "viewState: BaseView? = n…  onError.invoke()\n    })");
+        Intrinsics.checkNotNullExpressionValue(RxExtKt.withLoadingDialog$default((Observable) observeOn, (BaseView) viewState, false, 2, (Object) null).subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C1898xc0315c98(this, campaign)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C1899xc0315c99(null))), "viewState: BaseView? = n…  onError.invoke()\n    })");
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
@@ -218,9 +218,9 @@ public final class CatalogCategoriesPresenter extends BasePresenter<CatalogCateg
                 loadInitial$lambda$4 = CatalogCategoriesPresenter.loadInitial$lambda$4(Function1.this, obj);
                 return loadInitial$lambda$4;
             }
-        }).observeOn(this.schedulersProvider.mo707ui());
+        }).observeOn(this.schedulersProvider.mo706ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "private fun loadInitial(…     .autoDispose()\n    }");
-        Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C1882x9d757cd0(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C1883x9d757cd1(null)));
+        Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C1896x9d757cd0(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C1897x9d757cd1(null)));
         Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…  onError.invoke()\n    })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }
@@ -312,15 +312,15 @@ public final class CatalogCategoriesPresenter extends BasePresenter<CatalogCateg
 
     /* JADX INFO: Access modifiers changed from: private */
     public final Observable<Result<CampaignsCursored>> getCategoriesObservable(Result<CampaignsCursored> result, boolean z) {
-        Observable<Result<List<CategoryWithCounter>>> observeOn = this.catalogInteractor.getCategories(this.chatType, z).observeOn(this.schedulersProvider.mo707ui());
+        Observable<Result<List<CategoryWithCounter>>> observeOn = this.catalogInteractor.getCategories(this.chatType, z).observeOn(this.schedulersProvider.mo706ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "catalogInteractor\n      …(schedulersProvider.ui())");
-        final C1879xf97b28f1 c1879xf97b28f1 = new C1879xf97b28f1(this, result);
-        Observable map = observeOn.map(new Function(c1879xf97b28f1) { // from class: com.smedialink.ui.catalog.tabs.categories.CatalogCategoriesPresenter$inlined$sam$i$io_reactivex_functions_Function$0
+        final C1893xf97b28f1 c1893xf97b28f1 = new C1893xf97b28f1(this, result);
+        Observable map = observeOn.map(new Function(c1893xf97b28f1) { // from class: com.smedialink.ui.catalog.tabs.categories.CatalogCategoriesPresenter$inlined$sam$i$io_reactivex_functions_Function$0
             private final /* synthetic */ Function1 function;
 
             {
-                Intrinsics.checkNotNullParameter(c1879xf97b28f1, "function");
-                this.function = c1879xf97b28f1;
+                Intrinsics.checkNotNullParameter(c1893xf97b28f1, "function");
+                this.function = c1893xf97b28f1;
             }
 
             @Override // io.reactivex.functions.Function
@@ -350,7 +350,7 @@ public final class CatalogCategoriesPresenter extends BasePresenter<CatalogCateg
 
     /* JADX INFO: Access modifiers changed from: private */
     public final FilterItem getCategoryAll() {
-        String upperCase = this.resourceManager.getString(C3286R.string.catalog_all).toUpperCase(Locale.ROOT);
+        String upperCase = this.resourceManager.getString(C3301R.string.catalog_all).toUpperCase(Locale.ROOT);
         Intrinsics.checkNotNullExpressionValue(upperCase, "this as java.lang.String).toUpperCase(Locale.ROOT)");
         return new FilterItem(-1L, upperCase, true);
     }

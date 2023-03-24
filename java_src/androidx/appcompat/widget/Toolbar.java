@@ -1026,21 +1026,20 @@ public class Toolbar extends ViewGroup {
         if (shouldLayout(this.mTitleTextView)) {
             measureChildCollapseMargins(this.mTitleTextView, i, max2 + i13, i2, i12, iArr);
             int measuredWidth = this.mTitleTextView.getMeasuredWidth() + getHorizontalMargins(this.mTitleTextView);
-            i9 = this.mTitleTextView.getMeasuredHeight() + getVerticalMargins(this.mTitleTextView);
-            i7 = View.combineMeasuredStates(i5, this.mTitleTextView.getMeasuredState());
-            i8 = measuredWidth;
+            i7 = this.mTitleTextView.getMeasuredHeight() + getVerticalMargins(this.mTitleTextView);
+            i8 = View.combineMeasuredStates(i5, this.mTitleTextView.getMeasuredState());
+            i9 = measuredWidth;
         } else {
-            i7 = i5;
-            i8 = 0;
+            i7 = 0;
+            i8 = i5;
             i9 = 0;
         }
         if (shouldLayout(this.mSubtitleTextView)) {
-            i8 = Math.max(i8, measureChildCollapseMargins(this.mSubtitleTextView, i, max2 + i13, i2, i9 + i12, iArr));
-            i9 += this.mSubtitleTextView.getMeasuredHeight() + getVerticalMargins(this.mSubtitleTextView);
-            i7 = View.combineMeasuredStates(i7, this.mSubtitleTextView.getMeasuredState());
+            i9 = Math.max(i9, measureChildCollapseMargins(this.mSubtitleTextView, i, max2 + i13, i2, i7 + i12, iArr));
+            i7 += this.mSubtitleTextView.getMeasuredHeight() + getVerticalMargins(this.mSubtitleTextView);
+            i8 = View.combineMeasuredStates(i8, this.mSubtitleTextView.getMeasuredState());
         }
-        int max3 = Math.max(i4, i9);
-        setMeasuredDimension(View.resolveSizeAndState(Math.max(max2 + i8 + getPaddingLeft() + getPaddingRight(), getSuggestedMinimumWidth()), i, (-16777216) & i7), shouldCollapse() ? 0 : View.resolveSizeAndState(Math.max(max3 + getPaddingTop() + getPaddingBottom(), getSuggestedMinimumHeight()), i2, i7 << 16));
+        setMeasuredDimension(View.resolveSizeAndState(Math.max(max2 + i9 + getPaddingLeft() + getPaddingRight(), getSuggestedMinimumWidth()), i, (-16777216) & i8), shouldCollapse() ? 0 : View.resolveSizeAndState(Math.max(Math.max(i4, i7) + getPaddingTop() + getPaddingBottom(), getSuggestedMinimumHeight()), i2, i8 << 16));
     }
 
     /* JADX INFO: Access modifiers changed from: protected */

@@ -125,9 +125,9 @@
 
     const-wide/16 v4, -0x1
 
-    cmp-long v6, v0, v4
+    cmp-long v4, v0, v4
 
-    if-eqz v6, :cond_0
+    if-eqz v4, :cond_0
 
     .line 100
     iget-wide v4, p0, Lcom/google/android/exoplayer2/source/chunk/SingleSampleMediaChunk;->nextLoadPosition:J

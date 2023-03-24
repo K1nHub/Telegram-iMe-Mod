@@ -823,7 +823,7 @@
     goto :goto_1
 
     :cond_5
-    const/4 v3, 0x0
+    move v3, v4
 
     :goto_1
     iput-boolean v3, v0, Lorg/telegram/ui/Components/RecyclerListView$FastScroll;->fromTop:Z
@@ -1081,7 +1081,7 @@
 
     iget v1, p0, Lorg/telegram/ui/Components/RecyclerListView$FastScroll;->progress:F
 
-    mul-float v0, v0, v1
+    mul-float/2addr v0, v1
 
     float-to-double v0, v0
 
@@ -1166,7 +1166,7 @@
 
     iget v4, v0, Lorg/telegram/ui/Components/RecyclerListView$FastScroll;->progress:F
 
-    mul-float v3, v3, v4
+    mul-float/2addr v3, v4
 
     float-to-double v3, v3
 
@@ -1427,7 +1427,7 @@
 
     iget v12, v0, Lorg/telegram/ui/Components/RecyclerListView$FastScroll;->bubbleProgress:F
 
-    mul-float v8, v8, v12
+    mul-float/2addr v8, v12
 
     add-float/2addr v4, v8
 
@@ -1473,7 +1473,7 @@
 
     iget v12, v0, Lorg/telegram/ui/Components/RecyclerListView$FastScroll;->bubbleProgress:F
 
-    mul-float v8, v8, v12
+    mul-float/2addr v8, v12
 
     sub-float/2addr v4, v8
 
@@ -1535,7 +1535,7 @@
 
     iget v6, v0, Lorg/telegram/ui/Components/RecyclerListView$FastScroll;->bubbleProgress:F
 
-    mul-float v6, v6, v8
+    mul-float/2addr v6, v8
 
     float-to-int v6, v6
 
@@ -1587,7 +1587,7 @@
     goto :goto_1
 
     :cond_2
-    const/4 v4, 0x0
+    move v4, v11
 
     :goto_1
     const/16 v5, 0xa
@@ -1612,11 +1612,11 @@
 
     int-to-float v7, v7
 
+    cmpg-float v7, v4, v7
+
     const/16 v8, 0x28
 
     const/16 v15, 0x2c
-
-    cmpg-float v7, v4, v7
 
     if-gtz v7, :cond_3
 
@@ -1648,7 +1648,7 @@
 
     int-to-float v6, v6
 
-    mul-float v4, v4, v6
+    mul-float/2addr v4, v6
 
     add-float/2addr v15, v4
 
@@ -1694,7 +1694,7 @@
 
     int-to-float v6, v6
 
-    mul-float v4, v4, v6
+    mul-float/2addr v4, v6
 
     add-float/2addr v7, v4
 
@@ -1797,7 +1797,7 @@
     goto :goto_4
 
     :cond_7
-    const/4 v5, 0x0
+    move v5, v11
 
     :goto_4
     iget-boolean v6, v0, Lorg/telegram/ui/Components/RecyclerListView$FastScroll;->isRtl:Z
@@ -1920,7 +1920,7 @@
     .line 865
     iget v15, v0, Lorg/telegram/ui/Components/RecyclerListView$FastScroll;->floatingDateProgress:F
 
-    mul-float v15, v15, v3
+    mul-float/2addr v15, v3
 
     add-float/2addr v15, v2
 
@@ -1965,7 +1965,7 @@
 
     iget v15, v0, Lorg/telegram/ui/Components/RecyclerListView$FastScroll;->bubbleProgress:F
 
-    mul-float v4, v4, v15
+    mul-float/2addr v4, v15
 
     sub-float/2addr v3, v4
 
@@ -1995,7 +1995,7 @@
 
     int-to-float v12, v12
 
-    mul-float v4, v4, v12
+    mul-float/2addr v4, v12
 
     iget v12, v0, Lorg/telegram/ui/Components/RecyclerListView$FastScroll;->fromWidth:F
 
@@ -2003,7 +2003,7 @@
 
     sub-float v15, v14, v15
 
-    mul-float v12, v12, v15
+    mul-float/2addr v12, v15
 
     add-float/2addr v4, v12
 
@@ -2095,7 +2095,7 @@
 
     iget v13, v0, Lorg/telegram/ui/Components/RecyclerListView$FastScroll;->floatingDateProgress:F
 
-    mul-float v12, v12, v13
+    mul-float/2addr v12, v13
 
     float-to-int v12, v12
 
@@ -2129,7 +2129,7 @@
 
     iget v11, v0, Lorg/telegram/ui/Components/RecyclerListView$FastScroll;->floatingDateProgress:F
 
-    mul-float v11, v11, v8
+    mul-float/2addr v11, v8
 
     float-to-int v8, v11
 
@@ -2172,9 +2172,9 @@
     :goto_7
     iget v6, v0, Lorg/telegram/ui/Components/RecyclerListView$FastScroll;->replaceLayoutProgress:F
 
-    const/16 v8, 0xf
-
     cmpl-float v6, v6, v14
+
+    const/16 v8, 0xf
 
     if-eqz v6, :cond_13
 
@@ -2215,13 +2215,13 @@
 
     iget v10, v0, Lorg/telegram/ui/Components/RecyclerListView$FastScroll;->floatingDateProgress:F
 
-    mul-float v9, v9, v10
+    mul-float/2addr v9, v10
 
     iget v10, v0, Lorg/telegram/ui/Components/RecyclerListView$FastScroll;->replaceLayoutProgress:F
 
     sub-float v10, v14, v10
 
-    mul-float v9, v9, v10
+    mul-float/2addr v9, v10
 
     float-to-int v9, v9
 
@@ -2277,13 +2277,13 @@
 
     move-result v11
 
-    mul-int v10, v10, v11
+    mul-int/2addr v10, v11
 
     int-to-float v10, v10
 
     iget v11, v0, Lorg/telegram/ui/Components/RecyclerListView$FastScroll;->replaceLayoutProgress:F
 
-    mul-float v10, v10, v11
+    mul-float/2addr v10, v11
 
     add-float/2addr v9, v10
 
@@ -2310,11 +2310,11 @@
 
     iget v10, v0, Lorg/telegram/ui/Components/RecyclerListView$FastScroll;->floatingDateProgress:F
 
-    mul-float v9, v9, v10
+    mul-float/2addr v9, v10
 
     iget v10, v0, Lorg/telegram/ui/Components/RecyclerListView$FastScroll;->replaceLayoutProgress:F
 
-    mul-float v9, v9, v10
+    mul-float/2addr v9, v10
 
     float-to-int v9, v9
 
@@ -2378,7 +2378,7 @@
 
     sub-float v10, v14, v10
 
-    mul-float v8, v8, v10
+    mul-float/2addr v8, v10
 
     add-float/2addr v9, v8
 
@@ -2405,7 +2405,7 @@
 
     iget v9, v0, Lorg/telegram/ui/Components/RecyclerListView$FastScroll;->floatingDateProgress:F
 
-    mul-float v8, v8, v9
+    mul-float/2addr v8, v9
 
     float-to-int v8, v8
 
@@ -2469,7 +2469,7 @@
 
     iget v10, v0, Lorg/telegram/ui/Components/RecyclerListView$FastScroll;->floatingDateProgress:F
 
-    mul-float v9, v9, v10
+    mul-float/2addr v9, v10
 
     float-to-int v9, v9
 
@@ -2519,7 +2519,7 @@
 
     sub-float v7, v14, v7
 
-    mul-float v6, v6, v7
+    mul-float/2addr v6, v7
 
     add-float/2addr v2, v6
 
@@ -2561,18 +2561,18 @@
 
     const-wide/16 v5, 0x0
 
-    const-wide/16 v7, 0x11
+    cmp-long v5, v3, v5
 
-    cmp-long v9, v3, v5
+    const-wide/16 v6, 0x11
 
-    if-ltz v9, :cond_15
+    if-ltz v5, :cond_15
 
-    cmp-long v5, v3, v7
+    cmp-long v5, v3, v6
 
     if-lez v5, :cond_16
 
     :cond_15
-    move-wide v3, v7
+    move-wide v3, v6
 
     .line 938
     :cond_16
@@ -3127,7 +3127,7 @@
 
     iget v3, p0, Lorg/telegram/ui/Components/RecyclerListView$FastScroll;->progress:F
 
-    mul-float p1, p1, v3
+    mul-float/2addr p1, v3
 
     float-to-double v5, p1
 
@@ -3345,7 +3345,7 @@
     .line 1019
     iget v0, p0, Lorg/telegram/ui/Components/RecyclerListView$FastScroll;->visibilityAlpha:F
 
-    mul-float p1, p1, v0
+    mul-float/2addr p1, v0
 
     invoke-super {p0, p1}, Landroid/view/View;->setAlpha(F)V
 
@@ -3380,7 +3380,7 @@
     .line 1004
     iget v0, p0, Lorg/telegram/ui/Components/RecyclerListView$FastScroll;->viewAlpha:F
 
-    mul-float v0, v0, p1
+    mul-float/2addr v0, p1
 
     invoke-super {p0, v0}, Landroid/view/View;->setAlpha(F)V
 
@@ -3416,7 +3416,7 @@
     .line 1011
     iget v0, p0, Lorg/telegram/ui/Components/RecyclerListView$FastScroll;->viewAlpha:F
 
-    mul-float v0, v0, p1
+    mul-float/2addr v0, p1
 
     invoke-super {p0, v0}, Landroid/view/View;->setAlpha(F)V
 

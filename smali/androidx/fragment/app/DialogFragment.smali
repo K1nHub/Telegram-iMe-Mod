@@ -604,12 +604,12 @@
 
     if-nez v0, :cond_0
 
-    const/4 v0, 0x1
+    move v0, v1
 
     goto :goto_0
 
     :cond_0
-    const/4 v0, 0x0
+    move v0, v2
 
     :goto_0
     iput-boolean v0, p0, Landroidx/fragment/app/DialogFragment;->mShowsDialog:Z

@@ -417,7 +417,7 @@
 
     iget p1, p1, Landroidx/constraintlayout/core/widgets/analyzer/DependencyNode;->value:I
 
-    mul-int v1, v1, p1
+    mul-int/2addr v1, p1
 
     iput v1, p0, Landroidx/constraintlayout/core/widgets/analyzer/DependencyNode;->margin:I
 

@@ -296,7 +296,7 @@
 
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    move v1, v0
 
     :goto_0
     if-ge v1, p1, :cond_1
@@ -344,7 +344,7 @@
 
     const/4 v0, 0x1
 
-    const/4 v1, 0x1
+    move v1, v0
 
     :goto_0
     if-gt v1, p2, :cond_1
@@ -427,7 +427,7 @@
 
     move-result v3
 
-    const/4 v4, 0x0
+    move v4, v1
 
     :goto_0
     if-ge v4, v3, :cond_a
@@ -441,7 +441,7 @@
 
     check-cast v5, Lcom/google/android/flexbox/FlexLine;
 
-    const/4 v6, 0x0
+    move v6, v1
 
     .line 965
     :goto_1
@@ -695,7 +695,7 @@
 
     move-result v3
 
-    const/4 v4, 0x0
+    move v4, v1
 
     :goto_0
     if-ge v4, v3, :cond_a
@@ -709,7 +709,7 @@
 
     check-cast v5, Lcom/google/android/flexbox/FlexLine;
 
-    const/4 v6, 0x0
+    move v6, v1
 
     .line 1047
     :goto_1
@@ -1039,7 +1039,7 @@
 
     if-eqz p1, :cond_0
 
-    const/4 p2, 0x1
+    move p2, v0
 
     :cond_0
     return p2
@@ -1052,7 +1052,7 @@
 
     if-eqz p1, :cond_2
 
-    const/4 p2, 0x1
+    move p2, v0
 
     :cond_2
     return p2
@@ -1072,7 +1072,7 @@
 
     if-eqz p1, :cond_4
 
-    const/4 p2, 0x1
+    move p2, v0
 
     :cond_4
     return p2
@@ -1085,7 +1085,7 @@
 
     if-eqz p1, :cond_6
 
-    const/4 p2, 0x1
+    move p2, v0
 
     :cond_6
     return p2
@@ -1141,7 +1141,7 @@
 
     if-eqz p1, :cond_1
 
-    const/4 v0, 0x1
+    move v0, v1
 
     :cond_1
     return v0
@@ -1154,7 +1154,7 @@
 
     if-eqz p1, :cond_3
 
-    const/4 v0, 0x1
+    move v0, v1
 
     :cond_3
     return v0
@@ -1174,7 +1174,7 @@
 
     if-eqz p1, :cond_5
 
-    const/4 v0, 0x1
+    move v0, v1
 
     :cond_5
     return v0
@@ -1187,7 +1187,7 @@
 
     if-eqz p1, :cond_7
 
-    const/4 v0, 0x1
+    move v0, v1
 
     :cond_7
     :goto_0
@@ -1272,7 +1272,7 @@
 
     if-eqz p1, :cond_3
 
-    const/4 v0, 0x1
+    move v0, v1
 
     :cond_3
     return v0
@@ -1285,7 +1285,7 @@
 
     if-eqz p1, :cond_5
 
-    const/4 v0, 0x1
+    move v0, v1
 
     :cond_5
     :goto_1
@@ -1427,7 +1427,7 @@
     goto :goto_1
 
     :cond_1
-    const/4 v10, 0x0
+    move v10, v11
 
     :goto_1
     int-to-float v7, v1
@@ -1440,7 +1440,7 @@
 
     sub-float/2addr v12, v10
 
-    goto :goto_5
+    goto/16 :goto_5
 
     .line 681
     :cond_2
@@ -1488,7 +1488,7 @@
     goto :goto_2
 
     :cond_4
-    const/4 v10, 0x0
+    move v10, v11
 
     :goto_2
     int-to-float v7, v1
@@ -1594,7 +1594,7 @@
     int-to-float v12, v10
 
     :goto_4
-    const/4 v10, 0x0
+    move v10, v11
 
     .line 684
     :goto_5
@@ -1630,6 +1630,16 @@
     const/16 v15, 0x8
 
     if-ne v11, v15, :cond_a
+
+    move/from16 v23, v1
+
+    move/from16 v26, v13
+
+    move/from16 v22, v14
+
+    const/16 v25, 0x2
+
+    const/16 v27, 0x4
 
     goto/16 :goto_b
 
@@ -1750,11 +1760,11 @@
 
     move-object/from16 v11, v18
 
-    const/16 v25, 0x2
+    move/from16 v25, v12
 
     move-object v12, v9
 
-    const/16 v26, 0x1
+    move/from16 v26, v13
 
     move/from16 v13, v22
 
@@ -1766,7 +1776,7 @@
 
     move-object v1, v15
 
-    const/16 v27, 0x4
+    move/from16 v27, v16
 
     move/from16 v15, v24
 
@@ -1780,15 +1790,15 @@
     :cond_e
     move/from16 v23, v1
 
+    move/from16 v25, v12
+
+    move/from16 v26, v13
+
     move/from16 v22, v14
 
     move-object v1, v15
 
-    const/16 v25, 0x2
-
-    const/16 v26, 0x1
-
-    const/16 v27, 0x4
+    move/from16 v27, v16
 
     .line 713
     iget-object v10, v0, Lcom/google/android/flexbox/FlexboxLayout;->mFlexboxHelper:Lcom/google/android/flexbox/FlexboxHelper;
@@ -1829,15 +1839,15 @@
     :cond_f
     move/from16 v23, v1
 
+    move/from16 v25, v12
+
+    move/from16 v26, v13
+
     move/from16 v22, v14
 
     move-object v1, v15
 
-    const/16 v25, 0x2
-
-    const/16 v26, 0x1
-
-    const/16 v27, 0x4
+    move/from16 v27, v16
 
     if-eqz p1, :cond_10
 
@@ -1987,28 +1997,27 @@
     :goto_a
     move/from16 v12, v19
 
-    goto :goto_c
+    goto :goto_b
 
     :cond_12
-    :goto_b
     move/from16 v23, v1
+
+    move/from16 v26, v13
 
     move/from16 v22, v14
 
+    move/from16 v27, v15
+
     const/16 v25, 0x2
 
-    const/16 v26, 0x1
-
-    const/16 v27, 0x4
-
-    :goto_c
+    :goto_b
     add-int/lit8 v14, v22, 0x1
 
     move/from16 v1, v23
 
-    const/4 v13, 0x1
+    move/from16 v13, v26
 
-    const/4 v15, 0x4
+    move/from16 v15, v27
 
     goto/16 :goto_6
 
@@ -2169,7 +2178,7 @@
     goto :goto_1
 
     :cond_1
-    const/4 v12, 0x0
+    move v12, v11
 
     :goto_1
     int-to-float v10, v1
@@ -2182,7 +2191,7 @@
 
     sub-float/2addr v13, v12
 
-    goto :goto_6
+    goto/16 :goto_6
 
     .line 838
     :cond_2
@@ -2230,7 +2239,7 @@
     goto :goto_2
 
     :cond_4
-    const/4 v12, 0x0
+    move v12, v11
 
     :goto_2
     int-to-float v10, v1
@@ -2335,7 +2344,7 @@
     int-to-float v13, v7
 
     :goto_5
-    const/4 v12, 0x0
+    move v12, v11
 
     .line 841
     :goto_6
@@ -2371,6 +2380,12 @@
     const/16 v14, 0x8
 
     if-ne v15, v14, :cond_a
+
+    move/from16 v25, v12
+
+    const/16 v26, 0x1
+
+    const/16 v28, 0x4
 
     goto/16 :goto_c
 
@@ -2499,13 +2514,13 @@
 
     move-object v12, v9
 
-    const/16 v26, 0x1
+    move/from16 v26, v14
 
     move/from16 v14, v17
 
     move-object/from16 v27, v15
 
-    const/16 v28, 0x4
+    move/from16 v28, v16
 
     move/from16 v15, v23
 
@@ -2521,11 +2536,11 @@
     :cond_e
     move/from16 v25, v12
 
+    move/from16 v26, v14
+
     move-object/from16 v27, v15
 
-    const/16 v26, 0x1
-
-    const/16 v28, 0x4
+    move/from16 v28, v16
 
     .line 870
     iget-object v10, v0, Lcom/google/android/flexbox/FlexboxLayout;->mFlexboxHelper:Lcom/google/android/flexbox/FlexboxHelper;
@@ -2568,11 +2583,11 @@
     :cond_f
     move/from16 v25, v12
 
+    move/from16 v26, v14
+
     move-object/from16 v27, v15
 
-    const/16 v26, 0x1
-
-    const/16 v28, 0x4
+    move/from16 v28, v16
 
     if-eqz p2, :cond_10
 
@@ -2729,22 +2744,21 @@
 
     move/from16 v13, v20
 
-    goto :goto_d
+    goto :goto_c
 
     :cond_12
-    :goto_c
     move/from16 v25, v12
 
-    const/16 v26, 0x1
+    move/from16 v26, v14
 
-    const/16 v28, 0x4
+    move/from16 v28, v15
 
-    :goto_d
+    :goto_c
     add-int/lit8 v12, v25, 0x1
 
-    const/4 v14, 0x1
+    move/from16 v14, v26
 
-    const/4 v15, 0x4
+    move/from16 v15, v28
 
     goto/16 :goto_7
 
@@ -3998,7 +4012,7 @@
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_0
     if-ge v1, v0, :cond_4
@@ -4165,7 +4179,7 @@
     :cond_2
     if-ne v0, v4, :cond_3
 
-    const/4 v3, 0x1
+    move v3, v4
 
     .line 940
     :cond_3
@@ -4187,7 +4201,7 @@
     goto :goto_0
 
     :cond_6
-    const/4 v4, 0x0
+    move v4, v3
 
     .line 933
     :goto_0
@@ -4206,12 +4220,12 @@
     :cond_8
     if-eq v0, v4, :cond_9
 
-    const/4 v0, 0x1
+    move v0, v4
 
     goto :goto_1
 
     :cond_9
-    const/4 v0, 0x0
+    move v0, v3
 
     .line 926
     :goto_1
@@ -4219,7 +4233,7 @@
 
     if-ne v1, v2, :cond_a
 
-    const/4 v3, 0x1
+    move v3, v4
 
     .line 929
     :cond_a
@@ -4230,12 +4244,12 @@
     :cond_b
     if-ne v0, v4, :cond_c
 
-    const/4 v0, 0x1
+    move v0, v4
 
     goto :goto_2
 
     :cond_c
-    const/4 v0, 0x0
+    move v0, v3
 
     .line 919
     :goto_2
@@ -4243,7 +4257,7 @@
 
     if-ne v1, v2, :cond_d
 
-    const/4 v3, 0x1
+    move v3, v4
 
     .line 922
     :cond_d
@@ -4298,7 +4312,7 @@
 
     if-ne v0, v3, :cond_0
 
-    const/4 v2, 0x1
+    move v2, v3
 
     .line 585
     :cond_0
@@ -4331,7 +4345,7 @@
     .line 588
     invoke-direct/range {v0 .. v6}, Lcom/google/android/flexbox/FlexboxLayout;->layoutVertical(ZZIIII)V
 
-    goto :goto_4
+    goto/16 :goto_4
 
     .line 591
     :cond_2
@@ -4360,7 +4374,7 @@
     :cond_3
     if-ne v0, v3, :cond_4
 
-    const/4 v2, 0x1
+    move v2, v3
 
     .line 578
     :cond_4
@@ -4398,12 +4412,12 @@
     :cond_6
     if-eq v0, v3, :cond_7
 
-    const/4 v1, 0x1
+    move v1, v3
 
     goto :goto_2
 
     :cond_7
-    const/4 v1, 0x0
+    move v1, v2
 
     :goto_2
     move-object v0, p0
@@ -4424,12 +4438,12 @@
     :cond_8
     if-ne v0, v3, :cond_9
 
-    const/4 v1, 0x1
+    move v1, v3
 
     goto :goto_3
 
     :cond_9
-    const/4 v1, 0x0
+    move v1, v2
 
     :goto_3
     move-object v0, p0

@@ -58,15 +58,15 @@
 .end method
 
 .method private final clampToInt(J)I
-    .locals 4
+    .locals 3
 
     const v0, 0x7fffffff
 
     int-to-long v1, v0
 
-    cmp-long v3, p1, v1
+    cmp-long v1, p1, v1
 
-    if-lez v3, :cond_0
+    if-lez v1, :cond_0
 
     goto :goto_0
 

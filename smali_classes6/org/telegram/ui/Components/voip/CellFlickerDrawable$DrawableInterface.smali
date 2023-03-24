@@ -102,7 +102,7 @@
 
     iget v0, v0, Lorg/telegram/ui/Components/voip/CellFlickerDrawable;->progress:F
 
-    mul-float v3, v3, v0
+    mul-float/2addr v3, v0
 
     int-to-float v0, v2
 
@@ -112,7 +112,7 @@
 
     const/high16 v1, 0x3f000000    # 0.5f
 
-    mul-float v0, v0, v1
+    mul-float/2addr v0, v1
 
     float-to-int v0, v0
 

@@ -834,8 +834,6 @@
     goto :goto_1
 
     :catch_0
-    nop
-
     const-string p1, "Rpc"
 
     .line 20

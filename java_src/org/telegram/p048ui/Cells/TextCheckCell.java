@@ -422,22 +422,30 @@ public class TextCheckCell extends FrameLayout {
     /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
     public void onDraw(Canvas canvas) {
+        int switchDividerX;
+        int measuredHeight;
         if (this.drawSwitchDivider) {
             int m50dp = AndroidUtilities.m50dp(this.height / 3);
-            int switchDividerX = getSwitchDividerX();
-            int measuredHeight = (getMeasuredHeight() - m50dp) / 2;
-            canvas.drawRect(switchDividerX, measuredHeight, switchDividerX + 2, measuredHeight + m50dp, Theme.dividerPaint);
+            canvas.drawRect(getSwitchDividerX(), (getMeasuredHeight() - m50dp) / 2, switchDividerX + 2, measuredHeight + m50dp, Theme.dividerPaint);
         }
         if (this.animatedColorBackground != 0) {
             float lastTouchX = getLastTouchX();
             canvas.drawCircle(lastTouchX, getMeasuredHeight() / 2, (Math.max(lastTouchX, getMeasuredWidth() - lastTouchX) + AndroidUtilities.m50dp(40)) * this.animationProgress, this.animationPaint);
         }
         if (this.needDivider) {
-            if (this.imageView != null) {
-                canvas.drawLine(LocaleController.isRTL ? BitmapDescriptorFactory.HUE_RED : this.padding, getMeasuredHeight() - 1, getMeasuredWidth() - (LocaleController.isRTL ? this.padding : 0), getMeasuredHeight() - 1, Theme.dividerPaint);
-            } else {
-                canvas.drawLine(LocaleController.isRTL ? BitmapDescriptorFactory.HUE_RED : AndroidUtilities.m50dp(20), getMeasuredHeight() - 1, getMeasuredWidth() - (LocaleController.isRTL ? AndroidUtilities.m50dp(20) : 0), getMeasuredHeight() - 1, Theme.dividerPaint);
+            ImageView imageView = this.imageView;
+            float f = BitmapDescriptorFactory.HUE_RED;
+            if (imageView != null) {
+                if (!LocaleController.isRTL) {
+                    f = this.padding;
+                }
+                canvas.drawLine(f, getMeasuredHeight() - 1, getMeasuredWidth() - (LocaleController.isRTL ? this.padding : 0), getMeasuredHeight() - 1, Theme.dividerPaint);
+                return;
             }
+            if (!LocaleController.isRTL) {
+                f = AndroidUtilities.m50dp(20);
+            }
+            canvas.drawLine(f, getMeasuredHeight() - 1, getMeasuredWidth() - (LocaleController.isRTL ? AndroidUtilities.m50dp(20) : 0), getMeasuredHeight() - 1, Theme.dividerPaint);
         }
     }
 

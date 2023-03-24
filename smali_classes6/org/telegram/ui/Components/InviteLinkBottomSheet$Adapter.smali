@@ -463,7 +463,7 @@
 
     const-wide/16 v6, 0x3e8
 
-    mul-long v4, v4, v6
+    mul-long/2addr v4, v6
 
     add-long/2addr v0, v4
 
@@ -476,7 +476,7 @@
 
     int-to-long v4, p2
 
-    mul-long v4, v4, v6
+    mul-long/2addr v4, v6
 
     sub-long/2addr v4, v0
 
@@ -491,9 +491,9 @@
     :cond_6
     const-wide/32 v0, 0x5265c00
 
-    cmp-long v8, v4, v0
+    cmp-long v0, v4, v0
 
-    if-lez v8, :cond_7
+    if-lez v0, :cond_7
 
     int-to-long v0, p2
 
@@ -534,7 +534,7 @@
 
     rem-long v6, v4, v0
 
-    long-to-int v7, v6
+    long-to-int v6, v6
 
     .line 814
     div-long/2addr v4, v0
@@ -566,7 +566,7 @@
 
     new-array v0, v3, [Ljava/lang/Object;
 
-    invoke-static {v7}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-static {v6}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v5
 

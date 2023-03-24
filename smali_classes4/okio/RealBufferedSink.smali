@@ -46,7 +46,7 @@
 
 # virtual methods
 .method public close()V
-    .locals 6
+    .locals 5
 
     .line 189
     iget-boolean v0, p0, Lokio/RealBufferedSink;->closed:Z
@@ -69,9 +69,9 @@
 
     const-wide/16 v3, 0x0
 
-    cmp-long v5, v1, v3
+    cmp-long v1, v1, v3
 
-    if-lez v5, :cond_1
+    if-lez v1, :cond_1
 
     .line 196
     iget-object v1, p0, Lokio/RealBufferedSink;->sink:Lokio/Sink;
@@ -130,7 +130,7 @@
 .end method
 
 .method public emit()Lokio/BufferedSink;
-    .locals 5
+    .locals 4
 
     .line 174
     iget-boolean v0, p0, Lokio/RealBufferedSink;->closed:Z
@@ -148,9 +148,9 @@
 
     const-wide/16 v2, 0x0
 
-    cmp-long v4, v0, v2
+    cmp-long v2, v0, v2
 
-    if-lez v4, :cond_0
+    if-lez v2, :cond_0
 
     .line 176
     iget-object v2, p0, Lokio/RealBufferedSink;->sink:Lokio/Sink;
@@ -180,7 +180,7 @@
 .end method
 
 .method public emitCompleteSegments()Lokio/BufferedSink;
-    .locals 5
+    .locals 4
 
     .line 167
     iget-boolean v0, p0, Lokio/RealBufferedSink;->closed:Z
@@ -199,9 +199,9 @@
 
     const-wide/16 v2, 0x0
 
-    cmp-long v4, v0, v2
+    cmp-long v2, v0, v2
 
-    if-lez v4, :cond_0
+    if-lez v2, :cond_0
 
     .line 169
     iget-object v2, p0, Lokio/RealBufferedSink;->sink:Lokio/Sink;
@@ -231,7 +231,7 @@
 .end method
 
 .method public flush()V
-    .locals 5
+    .locals 4
 
     .line 181
     iget-boolean v0, p0, Lokio/RealBufferedSink;->closed:Z
@@ -250,9 +250,9 @@
 
     const-wide/16 v2, 0x0
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-lez v4, :cond_0
+    if-lez v0, :cond_0
 
     .line 183
     iget-object v0, p0, Lokio/RealBufferedSink;->sink:Lokio/Sink;
@@ -559,7 +559,7 @@
 .end method
 
 .method public writeAll(Lokio/Source;)J
-    .locals 7
+    .locals 6
 
     const-string v0, "source"
 
@@ -582,9 +582,9 @@
 
     const-wide/16 v4, -0x1
 
-    cmp-long v6, v2, v4
+    cmp-long v4, v2, v4
 
-    if-nez v6, :cond_0
+    if-nez v4, :cond_0
 
     return-wide v0
 

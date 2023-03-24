@@ -47,7 +47,7 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Objects;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3286R;
+import org.telegram.messenger.C3301R;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.NotificationCenter;
@@ -603,7 +603,7 @@ public class RecyclerListView extends RecyclerView {
                 this.letterPaint.setTextSize(AndroidUtilities.m50dp(13));
                 this.letterPaint.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
                 this.paint2.setColor(Theme.getColor("windowBackgroundWhite"));
-                Drawable mutate = ContextCompat.getDrawable(context, C3286R.C3288drawable.calendar_date).mutate();
+                Drawable mutate = ContextCompat.getDrawable(context, C3301R.C3303drawable.calendar_date).mutate();
                 this.fastScrollBackgroundDrawable = mutate;
                 mutate.setColorFilter(new PorterDuffColorFilter(ColorUtils.blendARGB(Theme.getColor("windowBackgroundWhite"), -1, 0.1f), PorterDuff.Mode.MULTIPLY));
             }
@@ -614,7 +614,7 @@ public class RecyclerListView extends RecyclerView {
             updateColors();
             setFocusableInTouchMode(true);
             this.touchSlop = ViewConfiguration.get(context).getScaledTouchSlop();
-            this.fastScrollShadowDrawable = ContextCompat.getDrawable(context, C3286R.C3288drawable.fast_scroll_shadow);
+            this.fastScrollShadowDrawable = ContextCompat.getDrawable(context, C3301R.C3303drawable.fast_scroll_shadow);
         }
 
         /* JADX INFO: Access modifiers changed from: private */
@@ -630,7 +630,7 @@ public class RecyclerListView extends RecyclerView {
             invalidate();
         }
 
-        /* JADX WARN: Code restructure failed: missing block: B:79:0x015a, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:79:0x0159, code lost:
             if (r0 <= (org.telegram.messenger.AndroidUtilities.m50dp(30) + r8)) goto L81;
          */
         @Override // android.view.View
@@ -640,7 +640,7 @@ public class RecyclerListView extends RecyclerView {
         */
         public boolean onTouchEvent(android.view.MotionEvent r8) {
             /*
-                Method dump skipped, instructions count: 393
+                Method dump skipped, instructions count: 392
                 To view this dump add '--comments-level debug' option
             */
             throw new UnsupportedOperationException("Method not decompiled: org.telegram.p048ui.Components.RecyclerListView.FastScroll.onTouchEvent(android.view.MotionEvent):boolean");
@@ -727,20 +727,20 @@ public class RecyclerListView extends RecyclerView {
             this.arrowPath.close();
         }
 
-        /* JADX WARN: Code restructure failed: missing block: B:25:0x01e2, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:25:0x01dc, code lost:
             if (r6[6] == r15) goto L85;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:30:0x01f2, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:30:0x01ec, code lost:
             if (r6[4] == r15) goto L77;
          */
-        /* JADX WARN: Removed duplicated region for block: B:32:0x01f6  */
-        /* JADX WARN: Removed duplicated region for block: B:33:0x0203  */
-        /* JADX WARN: Removed duplicated region for block: B:36:0x021a  */
-        /* JADX WARN: Removed duplicated region for block: B:37:0x0220  */
-        /* JADX WARN: Removed duplicated region for block: B:40:0x0225  */
-        /* JADX WARN: Removed duplicated region for block: B:41:0x0228  */
-        /* JADX WARN: Removed duplicated region for block: B:46:0x024e  */
-        /* JADX WARN: Removed duplicated region for block: B:48:0x0252  */
+        /* JADX WARN: Removed duplicated region for block: B:32:0x01f0  */
+        /* JADX WARN: Removed duplicated region for block: B:33:0x01fd  */
+        /* JADX WARN: Removed duplicated region for block: B:36:0x0214  */
+        /* JADX WARN: Removed duplicated region for block: B:37:0x021a  */
+        /* JADX WARN: Removed duplicated region for block: B:40:0x021f  */
+        /* JADX WARN: Removed duplicated region for block: B:41:0x0222  */
+        /* JADX WARN: Removed duplicated region for block: B:46:0x0248  */
+        /* JADX WARN: Removed duplicated region for block: B:48:0x024c  */
         @Override // android.view.View
         /*
             Code decompiled incorrectly, please refer to instructions dump.
@@ -748,7 +748,7 @@ public class RecyclerListView extends RecyclerView {
         */
         protected void onDraw(android.graphics.Canvas r20) {
             /*
-                Method dump skipped, instructions count: 1328
+                Method dump skipped, instructions count: 1306
                 To view this dump add '--comments-level debug' option
             */
             throw new UnsupportedOperationException("Method not decompiled: org.telegram.p048ui.Components.RecyclerListView.FastScroll.onDraw(android.graphics.Canvas):void");
@@ -1088,7 +1088,7 @@ public class RecyclerListView extends RecyclerView {
             for (int i2 = childCount - 1; i2 >= 0; i2--) {
                 View childAt = getChildAt(i2);
                 float f3 = BitmapDescriptorFactory.HUE_RED;
-                float translationX = i == 0 ? childAt.getTranslationX() : BitmapDescriptorFactory.HUE_RED;
+                float translationX = i == 0 ? childAt.getTranslationX() : 0.0f;
                 if (i == 0) {
                     f3 = childAt.getTranslationY();
                 }
@@ -1305,7 +1305,9 @@ public class RecyclerListView extends RecyclerView {
                     RecyclerListView.this.onScrollListener.onScrollStateChanged(recyclerView, i);
                 }
                 RecyclerListView recyclerListView2 = RecyclerListView.this;
-                z = (i == 1 || i == 2) ? true : true;
+                if (i == 1 || i == 2) {
+                    z = true;
+                }
                 recyclerListView2.scrollingByUser = z;
                 if (z) {
                     recyclerListView2.scrolledByUserOnce = true;
@@ -1536,10 +1538,10 @@ public class RecyclerListView extends RecyclerView {
                                     return;
                                 }
                                 int childCount = getChildCount();
+                                int i5 = 0;
+                                int i6 = Integer.MAX_VALUE;
                                 View view2 = null;
-                                int i5 = Integer.MAX_VALUE;
                                 View view3 = null;
-                                int i6 = 0;
                                 for (int i7 = 0; i7 < childCount; i7++) {
                                     View childAt = getChildAt(i7);
                                     int bottom = childAt.getBottom();
@@ -1548,10 +1550,10 @@ public class RecyclerListView extends RecyclerView {
                                             view3 = childAt;
                                             i4 = bottom;
                                         }
-                                        i6 = Math.max(i6, bottom);
-                                        if (bottom >= this.sectionOffset + paddingTop + AndroidUtilities.m50dp(32) && bottom < i5) {
+                                        i5 = Math.max(i5, bottom);
+                                        if (bottom >= this.sectionOffset + paddingTop + AndroidUtilities.m50dp(32) && bottom < i6) {
                                             view2 = childAt;
-                                            i5 = bottom;
+                                            i6 = bottom;
                                         }
                                     }
                                 }
@@ -1571,7 +1573,7 @@ public class RecyclerListView extends RecyclerView {
                                 }
                                 int countForSection = this.sectionsAdapter.getCountForSection(sectionForPosition);
                                 int positionInSectionForPosition = this.sectionsAdapter.getPositionInSectionForPosition(adapterPosition);
-                                if (i6 == 0 || i6 >= getMeasuredHeight() - getPaddingBottom()) {
+                                if (i5 == 0 || i5 >= getMeasuredHeight() - getPaddingBottom()) {
                                     i2 = this.sectionOffset;
                                 }
                                 if (positionInSectionForPosition == countForSection - 1) {
@@ -1592,9 +1594,9 @@ public class RecyclerListView extends RecyclerView {
                             return;
                         }
                         int childCount2 = getChildCount();
-                        int i9 = Integer.MAX_VALUE;
+                        int i9 = 0;
+                        int i10 = Integer.MAX_VALUE;
                         View view5 = null;
-                        int i10 = 0;
                         for (int i11 = 0; i11 < childCount2; i11++) {
                             View childAt2 = getChildAt(i11);
                             int bottom2 = childAt2.getBottom();
@@ -1603,9 +1605,9 @@ public class RecyclerListView extends RecyclerView {
                                     i4 = bottom2;
                                     view5 = childAt2;
                                 }
-                                i10 = Math.max(i10, bottom2);
-                                if (bottom2 >= this.sectionOffset + paddingTop + AndroidUtilities.m50dp(32) && bottom2 < i9) {
-                                    i9 = bottom2;
+                                i9 = Math.max(i9, bottom2);
+                                if (bottom2 >= this.sectionOffset + paddingTop + AndroidUtilities.m50dp(32) && bottom2 < i10) {
+                                    i10 = bottom2;
                                 }
                             }
                         }
@@ -1944,7 +1946,10 @@ public class RecyclerListView extends RecyclerView {
         }
         boolean emptyViewIsVisible = emptyViewIsVisible();
         int i = emptyViewIsVisible ? 0 : 8;
-        if ((this.animateEmptyView && SharedConfig.animationsEnabled()) ? false : false) {
+        if (!this.animateEmptyView || !SharedConfig.animationsEnabled()) {
+            z = false;
+        }
+        if (z) {
             if (this.emptyViewAnimateToVisibility != i) {
                 this.emptyViewAnimateToVisibility = i;
                 if (i == 0) {
@@ -2375,7 +2380,7 @@ public class RecyclerListView extends RecyclerView {
             for (int i2 = 0; i2 < this.headers.size(); i2++) {
                 View view2 = this.headers.get(i2);
                 int save = canvas.save();
-                canvas.translate(LocaleController.isRTL ? getWidth() - view2.getWidth() : BitmapDescriptorFactory.HUE_RED, ((Integer) view2.getTag()).intValue());
+                canvas.translate(LocaleController.isRTL ? getWidth() - view2.getWidth() : 0.0f, ((Integer) view2.getTag()).intValue());
                 canvas.clipRect(0, 0, getWidth(), view2.getMeasuredHeight());
                 view2.draw(canvas);
                 canvas.restoreToCount(save);
@@ -2498,10 +2503,10 @@ public class RecyclerListView extends RecyclerView {
         private boolean onFocus;
 
         /* renamed from: x */
-        private float f1800x;
+        private float f1801x;
 
         /* renamed from: y */
-        private float f1801y;
+        private float f1802y;
 
         @Override // android.view.View.OnTouchListener
         public boolean onTouch(View view, MotionEvent motionEvent) {
@@ -2510,14 +2515,14 @@ public class RecyclerListView extends RecyclerView {
                 return false;
             }
             if (motionEvent.getAction() == 0) {
-                this.f1800x = motionEvent.getX();
-                this.f1801y = motionEvent.getY();
+                this.f1801x = motionEvent.getX();
+                this.f1802y = motionEvent.getY();
                 this.onFocus = true;
                 parent.requestDisallowInterceptTouchEvent(true);
             }
             if (motionEvent.getAction() == 2) {
-                float x = this.f1800x - motionEvent.getX();
-                float y = this.f1801y - motionEvent.getY();
+                float x = this.f1801x - motionEvent.getX();
+                float y = this.f1802y - motionEvent.getY();
                 float scaledTouchSlop = ViewConfiguration.get(view.getContext()).getScaledTouchSlop();
                 if (this.onFocus && Math.sqrt((x * x) + (y * y)) > scaledTouchSlop) {
                     this.onFocus = false;

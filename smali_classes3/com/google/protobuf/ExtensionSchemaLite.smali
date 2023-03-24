@@ -17,7 +17,7 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 41
+    .line 42
     invoke-direct {p0}, Lcom/google/protobuf/ExtensionSchema;-><init>()V
 
     return-void
@@ -35,14 +35,14 @@
         }
     .end annotation
 
-    .line 294
+    .line 295
     invoke-interface {p1}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
     move-result-object p1
 
     check-cast p1, Lcom/google/protobuf/GeneratedMessageLite$ExtensionDescriptor;
 
-    .line 295
+    .line 296
     invoke-virtual {p1}, Lcom/google/protobuf/GeneratedMessageLite$ExtensionDescriptor;->getNumber()I
 
     move-result p1
@@ -53,7 +53,7 @@
 .method findExtensionByNumber(Lcom/google/protobuf/ExtensionRegistryLite;Lcom/google/protobuf/MessageLite;I)Ljava/lang/Object;
     .locals 0
 
-    .line 504
+    .line 505
     invoke-virtual {p1, p2, p3}, Lcom/google/protobuf/ExtensionRegistryLite;->findLiteExtensionByNumber(Lcom/google/protobuf/MessageLite;I)Lcom/google/protobuf/GeneratedMessageLite$GeneratedExtension;
 
     move-result-object p1
@@ -74,7 +74,7 @@
         }
     .end annotation
 
-    .line 50
+    .line 51
     check-cast p1, Lcom/google/protobuf/GeneratedMessageLite$ExtendableMessage;
 
     iget-object p1, p1, Lcom/google/protobuf/GeneratedMessageLite$ExtendableMessage;->extensions:Lcom/google/protobuf/FieldSet;
@@ -95,7 +95,7 @@
         }
     .end annotation
 
-    .line 60
+    .line 61
     check-cast p1, Lcom/google/protobuf/GeneratedMessageLite$ExtendableMessage;
 
     invoke-virtual {p1}, Lcom/google/protobuf/GeneratedMessageLite$ExtendableMessage;->ensureExtensionsAreMutable()Lcom/google/protobuf/FieldSet;
@@ -108,7 +108,7 @@
 .method hasExtensions(Lcom/google/protobuf/MessageLite;)Z
     .locals 0
 
-    .line 45
+    .line 46
     instance-of p1, p1, Lcom/google/protobuf/GeneratedMessageLite$ExtendableMessage;
 
     return p1
@@ -117,7 +117,7 @@
 .method makeImmutable(Ljava/lang/Object;)V
     .locals 0
 
-    .line 65
+    .line 66
     invoke-virtual {p0, p1}, Lcom/google/protobuf/ExtensionSchemaLite;->getExtensions(Ljava/lang/Object;)Lcom/google/protobuf/FieldSet;
 
     move-result-object p1
@@ -153,15 +153,15 @@
         }
     .end annotation
 
-    .line 77
+    .line 78
     check-cast p2, Lcom/google/protobuf/GeneratedMessageLite$GeneratedExtension;
 
-    .line 79
+    .line 80
     invoke-virtual {p2}, Lcom/google/protobuf/GeneratedMessageLite$GeneratedExtension;->getNumber()I
 
     move-result v0
 
-    .line 81
+    .line 82
     iget-object v1, p2, Lcom/google/protobuf/GeneratedMessageLite$GeneratedExtension;->descriptor:Lcom/google/protobuf/GeneratedMessageLite$ExtensionDescriptor;
 
     invoke-virtual {v1}, Lcom/google/protobuf/GeneratedMessageLite$ExtensionDescriptor;->isRepeated()Z
@@ -178,7 +178,7 @@
 
     if-eqz v1, :cond_0
 
-    .line 83
+    .line 84
     sget-object p3, Lcom/google/protobuf/ExtensionSchemaLite$1;->$SwitchMap$com$google$protobuf$WireFormat$FieldType:[I
 
     invoke-virtual {p2}, Lcom/google/protobuf/GeneratedMessageLite$GeneratedExtension;->getLiteType()Lcom/google/protobuf/WireFormat$FieldType;
@@ -193,7 +193,7 @@
 
     packed-switch p3, :pswitch_data_0
 
-    .line 190
+    .line 191
     new-instance p1, Ljava/lang/IllegalStateException;
 
     new-instance p3, Ljava/lang/StringBuilder;
@@ -206,7 +206,7 @@
 
     iget-object p2, p2, Lcom/google/protobuf/GeneratedMessageLite$GeneratedExtension;->descriptor:Lcom/google/protobuf/GeneratedMessageLite$ExtensionDescriptor;
 
-    .line 191
+    .line 192
     invoke-virtual {p2}, Lcom/google/protobuf/GeneratedMessageLite$ExtensionDescriptor;->getLiteType()Lcom/google/protobuf/WireFormat$FieldType;
 
     move-result-object p2
@@ -221,172 +221,172 @@
 
     throw p1
 
-    .line 177
+    .line 178
     :pswitch_0
     new-instance p3, Ljava/util/ArrayList;
 
     invoke-direct {p3}, Ljava/util/ArrayList;-><init>()V
 
-    .line 178
+    .line 179
     invoke-interface {p1, p3}, Lcom/google/protobuf/Reader;->readEnumList(Ljava/util/List;)V
 
-    .line 179
+    .line 180
     iget-object p1, p2, Lcom/google/protobuf/GeneratedMessageLite$GeneratedExtension;->descriptor:Lcom/google/protobuf/GeneratedMessageLite$ExtensionDescriptor;
 
-    .line 183
+    .line 184
     invoke-virtual {p1}, Lcom/google/protobuf/GeneratedMessageLite$ExtensionDescriptor;->getEnumType()Lcom/google/protobuf/Internal$EnumLiteMap;
 
     move-result-object p1
 
-    .line 180
+    .line 181
     invoke-static {v0, p3, p1, p5, p6}, Lcom/google/protobuf/SchemaUtil;->filterUnknownEnumList(ILjava/util/List;Lcom/google/protobuf/Internal$EnumLiteMap;Ljava/lang/Object;Lcom/google/protobuf/UnknownFieldSchema;)Ljava/lang/Object;
 
     move-result-object p5
 
     goto/16 :goto_0
 
-    .line 170
+    .line 171
     :pswitch_1
     new-instance p3, Ljava/util/ArrayList;
 
     invoke-direct {p3}, Ljava/util/ArrayList;-><init>()V
 
-    .line 171
+    .line 172
     invoke-interface {p1, p3}, Lcom/google/protobuf/Reader;->readSInt64List(Ljava/util/List;)V
 
     goto/16 :goto_0
 
-    .line 163
+    .line 164
     :pswitch_2
     new-instance p3, Ljava/util/ArrayList;
 
     invoke-direct {p3}, Ljava/util/ArrayList;-><init>()V
 
-    .line 164
+    .line 165
     invoke-interface {p1, p3}, Lcom/google/protobuf/Reader;->readSInt32List(Ljava/util/List;)V
 
     goto :goto_0
 
-    .line 156
+    .line 157
     :pswitch_3
     new-instance p3, Ljava/util/ArrayList;
 
     invoke-direct {p3}, Ljava/util/ArrayList;-><init>()V
 
-    .line 157
+    .line 158
     invoke-interface {p1, p3}, Lcom/google/protobuf/Reader;->readSFixed64List(Ljava/util/List;)V
 
     goto :goto_0
 
-    .line 149
+    .line 150
     :pswitch_4
     new-instance p3, Ljava/util/ArrayList;
 
     invoke-direct {p3}, Ljava/util/ArrayList;-><init>()V
 
-    .line 150
+    .line 151
     invoke-interface {p1, p3}, Lcom/google/protobuf/Reader;->readSFixed32List(Ljava/util/List;)V
 
     goto :goto_0
 
-    .line 142
+    .line 143
     :pswitch_5
     new-instance p3, Ljava/util/ArrayList;
 
     invoke-direct {p3}, Ljava/util/ArrayList;-><init>()V
 
-    .line 143
+    .line 144
     invoke-interface {p1, p3}, Lcom/google/protobuf/Reader;->readUInt32List(Ljava/util/List;)V
 
     goto :goto_0
 
-    .line 135
+    .line 136
     :pswitch_6
     new-instance p3, Ljava/util/ArrayList;
 
     invoke-direct {p3}, Ljava/util/ArrayList;-><init>()V
 
-    .line 136
+    .line 137
     invoke-interface {p1, p3}, Lcom/google/protobuf/Reader;->readBoolList(Ljava/util/List;)V
 
     goto :goto_0
 
-    .line 128
+    .line 129
     :pswitch_7
     new-instance p3, Ljava/util/ArrayList;
 
     invoke-direct {p3}, Ljava/util/ArrayList;-><init>()V
 
-    .line 129
+    .line 130
     invoke-interface {p1, p3}, Lcom/google/protobuf/Reader;->readFixed32List(Ljava/util/List;)V
 
     goto :goto_0
 
-    .line 121
+    .line 122
     :pswitch_8
     new-instance p3, Ljava/util/ArrayList;
 
     invoke-direct {p3}, Ljava/util/ArrayList;-><init>()V
 
-    .line 122
+    .line 123
     invoke-interface {p1, p3}, Lcom/google/protobuf/Reader;->readFixed64List(Ljava/util/List;)V
 
     goto :goto_0
 
-    .line 114
+    .line 115
     :pswitch_9
     new-instance p3, Ljava/util/ArrayList;
 
     invoke-direct {p3}, Ljava/util/ArrayList;-><init>()V
 
-    .line 115
+    .line 116
     invoke-interface {p1, p3}, Lcom/google/protobuf/Reader;->readInt32List(Ljava/util/List;)V
 
     goto :goto_0
 
-    .line 107
+    .line 108
     :pswitch_a
     new-instance p3, Ljava/util/ArrayList;
 
     invoke-direct {p3}, Ljava/util/ArrayList;-><init>()V
 
-    .line 108
+    .line 109
     invoke-interface {p1, p3}, Lcom/google/protobuf/Reader;->readUInt64List(Ljava/util/List;)V
 
     goto :goto_0
 
-    .line 100
+    .line 101
     :pswitch_b
     new-instance p3, Ljava/util/ArrayList;
 
     invoke-direct {p3}, Ljava/util/ArrayList;-><init>()V
 
-    .line 101
+    .line 102
     invoke-interface {p1, p3}, Lcom/google/protobuf/Reader;->readInt64List(Ljava/util/List;)V
 
     goto :goto_0
 
-    .line 93
+    .line 94
     :pswitch_c
     new-instance p3, Ljava/util/ArrayList;
 
     invoke-direct {p3}, Ljava/util/ArrayList;-><init>()V
 
-    .line 94
+    .line 95
     invoke-interface {p1, p3}, Lcom/google/protobuf/Reader;->readFloatList(Ljava/util/List;)V
 
     goto :goto_0
 
-    .line 86
+    .line 87
     :pswitch_d
     new-instance p3, Ljava/util/ArrayList;
 
     invoke-direct {p3}, Ljava/util/ArrayList;-><init>()V
 
-    .line 87
+    .line 88
     invoke-interface {p1, p3}, Lcom/google/protobuf/Reader;->readDoubleList(Ljava/util/List;)V
 
-    .line 193
+    .line 194
     :goto_0
     iget-object p1, p2, Lcom/google/protobuf/GeneratedMessageLite$GeneratedExtension;->descriptor:Lcom/google/protobuf/GeneratedMessageLite$ExtensionDescriptor;
 
@@ -397,7 +397,7 @@
     :cond_0
     const/4 v1, 0x0
 
-    .line 197
+    .line 198
     invoke-virtual {p2}, Lcom/google/protobuf/GeneratedMessageLite$GeneratedExtension;->getLiteType()Lcom/google/protobuf/WireFormat$FieldType;
 
     move-result-object v2
@@ -406,12 +406,12 @@
 
     if-ne v2, v3, :cond_2
 
-    .line 198
+    .line 199
     invoke-interface {p1}, Lcom/google/protobuf/Reader;->readInt32()I
 
     move-result p1
 
-    .line 199
+    .line 200
     iget-object p3, p2, Lcom/google/protobuf/GeneratedMessageLite$GeneratedExtension;->descriptor:Lcom/google/protobuf/GeneratedMessageLite$ExtensionDescriptor;
 
     invoke-virtual {p3}, Lcom/google/protobuf/GeneratedMessageLite$ExtensionDescriptor;->getEnumType()Lcom/google/protobuf/Internal$EnumLiteMap;
@@ -424,14 +424,14 @@
 
     if-nez p3, :cond_1
 
-    .line 201
+    .line 202
     invoke-static {v0, p1, p5, p6}, Lcom/google/protobuf/SchemaUtil;->storeUnknownEnum(IILjava/lang/Object;Lcom/google/protobuf/UnknownFieldSchema;)Ljava/lang/Object;
 
     move-result-object p1
 
     return-object p1
 
-    .line 206
+    .line 207
     :cond_1
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -439,7 +439,7 @@
 
     goto/16 :goto_1
 
-    .line 208
+    .line 209
     :cond_2
     sget-object p6, Lcom/google/protobuf/ExtensionSchemaLite$1;->$SwitchMap$com$google$protobuf$WireFormat$FieldType:[I
 
@@ -457,7 +457,7 @@
 
     goto/16 :goto_1
 
-    .line 264
+    .line 265
     :pswitch_e
     invoke-virtual {p2}, Lcom/google/protobuf/GeneratedMessageLite$GeneratedExtension;->getMessageDefaultInstance()Lcom/google/protobuf/MessageLite;
 
@@ -467,14 +467,14 @@
 
     move-result-object p6
 
-    .line 263
+    .line 264
     invoke-interface {p1, p6, p3}, Lcom/google/protobuf/Reader;->readMessage(Ljava/lang/Class;Lcom/google/protobuf/ExtensionRegistryLite;)Ljava/lang/Object;
 
     move-result-object v1
 
     goto/16 :goto_1
 
-    .line 258
+    .line 259
     :pswitch_f
     invoke-virtual {p2}, Lcom/google/protobuf/GeneratedMessageLite$GeneratedExtension;->getMessageDefaultInstance()Lcom/google/protobuf/MessageLite;
 
@@ -484,14 +484,14 @@
 
     move-result-object p6
 
-    .line 257
+    .line 258
     invoke-interface {p1, p6, p3}, Lcom/google/protobuf/Reader;->readGroup(Ljava/lang/Class;Lcom/google/protobuf/ExtensionRegistryLite;)Ljava/lang/Object;
 
     move-result-object v1
 
     goto/16 :goto_1
 
-    .line 253
+    .line 254
     :pswitch_10
     invoke-interface {p1}, Lcom/google/protobuf/Reader;->readString()Ljava/lang/String;
 
@@ -499,7 +499,7 @@
 
     goto/16 :goto_1
 
-    .line 234
+    .line 235
     :pswitch_11
     invoke-interface {p1}, Lcom/google/protobuf/Reader;->readBytes()Lcom/google/protobuf/ByteString;
 
@@ -507,7 +507,7 @@
 
     goto/16 :goto_1
 
-    .line 268
+    .line 269
     :pswitch_12
     new-instance p1, Ljava/lang/IllegalStateException;
 
@@ -517,7 +517,7 @@
 
     throw p1
 
-    .line 249
+    .line 250
     :pswitch_13
     invoke-interface {p1}, Lcom/google/protobuf/Reader;->readSInt64()J
 
@@ -529,7 +529,7 @@
 
     goto/16 :goto_1
 
-    .line 246
+    .line 247
     :pswitch_14
     invoke-interface {p1}, Lcom/google/protobuf/Reader;->readSInt32()I
 
@@ -541,7 +541,7 @@
 
     goto :goto_1
 
-    .line 243
+    .line 244
     :pswitch_15
     invoke-interface {p1}, Lcom/google/protobuf/Reader;->readSFixed64()J
 
@@ -553,7 +553,7 @@
 
     goto :goto_1
 
-    .line 240
+    .line 241
     :pswitch_16
     invoke-interface {p1}, Lcom/google/protobuf/Reader;->readSFixed32()I
 
@@ -565,7 +565,7 @@
 
     goto :goto_1
 
-    .line 237
+    .line 238
     :pswitch_17
     invoke-interface {p1}, Lcom/google/protobuf/Reader;->readUInt32()I
 
@@ -577,7 +577,7 @@
 
     goto :goto_1
 
-    .line 231
+    .line 232
     :pswitch_18
     invoke-interface {p1}, Lcom/google/protobuf/Reader;->readBool()Z
 
@@ -589,7 +589,7 @@
 
     goto :goto_1
 
-    .line 228
+    .line 229
     :pswitch_19
     invoke-interface {p1}, Lcom/google/protobuf/Reader;->readFixed32()I
 
@@ -601,7 +601,7 @@
 
     goto :goto_1
 
-    .line 225
+    .line 226
     :pswitch_1a
     invoke-interface {p1}, Lcom/google/protobuf/Reader;->readFixed64()J
 
@@ -613,7 +613,7 @@
 
     goto :goto_1
 
-    .line 222
+    .line 223
     :pswitch_1b
     invoke-interface {p1}, Lcom/google/protobuf/Reader;->readInt32()I
 
@@ -625,7 +625,7 @@
 
     goto :goto_1
 
-    .line 219
+    .line 220
     :pswitch_1c
     invoke-interface {p1}, Lcom/google/protobuf/Reader;->readUInt64()J
 
@@ -637,7 +637,7 @@
 
     goto :goto_1
 
-    .line 216
+    .line 217
     :pswitch_1d
     invoke-interface {p1}, Lcom/google/protobuf/Reader;->readInt64()J
 
@@ -649,7 +649,7 @@
 
     goto :goto_1
 
-    .line 213
+    .line 214
     :pswitch_1e
     invoke-interface {p1}, Lcom/google/protobuf/Reader;->readFloat()F
 
@@ -661,7 +661,7 @@
 
     goto :goto_1
 
-    .line 210
+    .line 211
     :pswitch_1f
     invoke-interface {p1}, Lcom/google/protobuf/Reader;->readDouble()D
 
@@ -671,7 +671,7 @@
 
     move-result-object v1
 
-    .line 271
+    .line 272
     :goto_1
     invoke-virtual {p2}, Lcom/google/protobuf/GeneratedMessageLite$GeneratedExtension;->isRepeated()Z
 
@@ -679,14 +679,14 @@
 
     if-eqz p1, :cond_3
 
-    .line 272
+    .line 273
     iget-object p1, p2, Lcom/google/protobuf/GeneratedMessageLite$GeneratedExtension;->descriptor:Lcom/google/protobuf/GeneratedMessageLite$ExtensionDescriptor;
 
     invoke-virtual {p4, p1, v1}, Lcom/google/protobuf/FieldSet;->addRepeatedField(Lcom/google/protobuf/FieldSet$FieldDescriptorLite;Ljava/lang/Object;)V
 
     goto :goto_3
 
-    .line 274
+    .line 275
     :cond_3
     sget-object p1, Lcom/google/protobuf/ExtensionSchemaLite$1;->$SwitchMap$com$google$protobuf$WireFormat$FieldType:[I
 
@@ -710,7 +710,7 @@
 
     goto :goto_2
 
-    .line 277
+    .line 278
     :cond_4
     iget-object p1, p2, Lcom/google/protobuf/GeneratedMessageLite$GeneratedExtension;->descriptor:Lcom/google/protobuf/GeneratedMessageLite$ExtensionDescriptor;
 
@@ -720,12 +720,12 @@
 
     if-eqz p1, :cond_5
 
-    .line 279
+    .line 280
     invoke-static {p1, v1}, Lcom/google/protobuf/Internal;->mergeMessage(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v1
 
-    .line 285
+    .line 286
     :cond_5
     :goto_2
     iget-object p1, p2, Lcom/google/protobuf/GeneratedMessageLite$GeneratedExtension;->descriptor:Lcom/google/protobuf/GeneratedMessageLite$ExtensionDescriptor;
@@ -798,10 +798,10 @@
         }
     .end annotation
 
-    .line 514
+    .line 515
     check-cast p2, Lcom/google/protobuf/GeneratedMessageLite$GeneratedExtension;
 
-    .line 517
+    .line 518
     invoke-virtual {p2}, Lcom/google/protobuf/GeneratedMessageLite$GeneratedExtension;->getMessageDefaultInstance()Lcom/google/protobuf/MessageLite;
 
     move-result-object v0
@@ -814,7 +814,7 @@
 
     move-result-object p1
 
-    .line 518
+    .line 519
     iget-object p2, p2, Lcom/google/protobuf/GeneratedMessageLite$GeneratedExtension;->descriptor:Lcom/google/protobuf/GeneratedMessageLite$ExtensionDescriptor;
 
     invoke-virtual {p4, p2, p1}, Lcom/google/protobuf/FieldSet;->setField(Lcom/google/protobuf/FieldSet$FieldDescriptorLite;Ljava/lang/Object;)V
@@ -842,10 +842,10 @@
         }
     .end annotation
 
-    .line 528
+    .line 529
     check-cast p2, Lcom/google/protobuf/GeneratedMessageLite$GeneratedExtension;
 
-    .line 530
+    .line 531
     invoke-virtual {p2}, Lcom/google/protobuf/GeneratedMessageLite$GeneratedExtension;->getMessageDefaultInstance()Lcom/google/protobuf/MessageLite;
 
     move-result-object v0
@@ -858,7 +858,7 @@
 
     move-result-object v0
 
-    .line 532
+    .line 533
     invoke-virtual {p1}, Lcom/google/protobuf/ByteString;->toByteArray()[B
 
     move-result-object p1
@@ -873,19 +873,19 @@
 
     move-result-object p1
 
-    .line 534
+    .line 535
     invoke-static {}, Lcom/google/protobuf/Protobuf;->getInstance()Lcom/google/protobuf/Protobuf;
 
     move-result-object v1
 
     invoke-virtual {v1, v0, p1, p3}, Lcom/google/protobuf/Protobuf;->mergeFrom(Ljava/lang/Object;Lcom/google/protobuf/Reader;Lcom/google/protobuf/ExtensionRegistryLite;)V
 
-    .line 535
+    .line 536
     iget-object p2, p2, Lcom/google/protobuf/GeneratedMessageLite$GeneratedExtension;->descriptor:Lcom/google/protobuf/GeneratedMessageLite$ExtensionDescriptor;
 
     invoke-virtual {p4, p2, v0}, Lcom/google/protobuf/FieldSet;->setField(Lcom/google/protobuf/FieldSet$FieldDescriptorLite;Ljava/lang/Object;)V
 
-    .line 537
+    .line 538
     invoke-interface {p1}, Lcom/google/protobuf/Reader;->getFieldNumber()I
 
     move-result p1
@@ -896,7 +896,7 @@
 
     return-void
 
-    .line 538
+    .line 539
     :cond_0
     invoke-static {}, Lcom/google/protobuf/InvalidProtocolBufferException;->invalidEndTag()Lcom/google/protobuf/InvalidProtocolBufferException;
 
@@ -922,21 +922,21 @@
         }
     .end annotation
 
-    .line 301
+    .line 302
     invoke-interface {p2}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Lcom/google/protobuf/GeneratedMessageLite$ExtensionDescriptor;
 
-    .line 302
+    .line 303
     invoke-virtual {v0}, Lcom/google/protobuf/GeneratedMessageLite$ExtensionDescriptor;->isRepeated()Z
 
     move-result v1
 
     if-eqz v1, :cond_0
 
-    .line 303
+    .line 304
     sget-object v1, Lcom/google/protobuf/ExtensionSchemaLite$1;->$SwitchMap$com$google$protobuf$WireFormat$FieldType:[I
 
     invoke-virtual {v0}, Lcom/google/protobuf/GeneratedMessageLite$ExtensionDescriptor;->getLiteType()Lcom/google/protobuf/WireFormat$FieldType;
@@ -955,7 +955,7 @@
 
     goto/16 :goto_0
 
-    .line 424
+    .line 425
     :pswitch_0
     invoke-interface {p2}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
@@ -965,26 +965,26 @@
 
     if-eqz v1, :cond_1
 
-    .line 425
+    .line 426
     invoke-interface {v1}, Ljava/util/List;->isEmpty()Z
 
     move-result v3
 
     if-nez v3, :cond_1
 
-    .line 427
+    .line 428
     invoke-virtual {v0}, Lcom/google/protobuf/GeneratedMessageLite$ExtensionDescriptor;->getNumber()I
 
     move-result v0
 
-    .line 428
+    .line 429
     invoke-interface {p2}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
     move-result-object p2
 
     check-cast p2, Ljava/util/List;
 
-    .line 430
+    .line 431
     invoke-static {}, Lcom/google/protobuf/Protobuf;->getInstance()Lcom/google/protobuf/Protobuf;
 
     move-result-object v3
@@ -1001,12 +1001,12 @@
 
     move-result-object v1
 
-    .line 426
+    .line 427
     invoke-static {v0, p2, p1, v1}, Lcom/google/protobuf/SchemaUtil;->writeMessageList(ILjava/util/List;Lcom/google/protobuf/Writer;Lcom/google/protobuf/Schema;)V
 
     goto/16 :goto_0
 
-    .line 412
+    .line 413
     :pswitch_1
     invoke-interface {p2}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
@@ -1016,26 +1016,26 @@
 
     if-eqz v1, :cond_1
 
-    .line 413
+    .line 414
     invoke-interface {v1}, Ljava/util/List;->isEmpty()Z
 
     move-result v3
 
     if-nez v3, :cond_1
 
-    .line 415
+    .line 416
     invoke-virtual {v0}, Lcom/google/protobuf/GeneratedMessageLite$ExtensionDescriptor;->getNumber()I
 
     move-result v0
 
-    .line 416
+    .line 417
     invoke-interface {p2}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
     move-result-object p2
 
     check-cast p2, Ljava/util/List;
 
-    .line 418
+    .line 419
     invoke-static {}, Lcom/google/protobuf/Protobuf;->getInstance()Lcom/google/protobuf/Protobuf;
 
     move-result-object v3
@@ -1052,12 +1052,12 @@
 
     move-result-object v1
 
-    .line 414
+    .line 415
     invoke-static {v0, p2, p1, v1}, Lcom/google/protobuf/SchemaUtil;->writeGroupList(ILjava/util/List;Lcom/google/protobuf/Writer;Lcom/google/protobuf/Schema;)V
 
     goto/16 :goto_0
 
-    .line 408
+    .line 409
     :pswitch_2
     invoke-virtual {v0}, Lcom/google/protobuf/GeneratedMessageLite$ExtensionDescriptor;->getNumber()I
 
@@ -1069,12 +1069,12 @@
 
     check-cast p2, Ljava/util/List;
 
-    .line 407
+    .line 408
     invoke-static {v0, p2, p1}, Lcom/google/protobuf/SchemaUtil;->writeStringList(ILjava/util/List;Lcom/google/protobuf/Writer;)V
 
     goto/16 :goto_0
 
-    .line 362
+    .line 363
     :pswitch_3
     invoke-virtual {v0}, Lcom/google/protobuf/GeneratedMessageLite$ExtensionDescriptor;->getNumber()I
 
@@ -1086,334 +1086,334 @@
 
     check-cast p2, Ljava/util/List;
 
-    .line 361
+    .line 362
     invoke-static {v0, p2, p1}, Lcom/google/protobuf/SchemaUtil;->writeBytesList(ILjava/util/List;Lcom/google/protobuf/Writer;)V
 
     goto/16 :goto_0
 
-    .line 401
+    .line 402
     :pswitch_4
     invoke-virtual {v0}, Lcom/google/protobuf/GeneratedMessageLite$ExtensionDescriptor;->getNumber()I
 
     move-result v1
 
-    .line 402
+    .line 403
     invoke-interface {p2}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
     move-result-object p2
 
     check-cast p2, Ljava/util/List;
 
-    .line 404
+    .line 405
     invoke-virtual {v0}, Lcom/google/protobuf/GeneratedMessageLite$ExtensionDescriptor;->isPacked()Z
 
     move-result v0
 
-    .line 400
+    .line 401
     invoke-static {v1, p2, p1, v0}, Lcom/google/protobuf/SchemaUtil;->writeInt32List(ILjava/util/List;Lcom/google/protobuf/Writer;Z)V
 
     goto/16 :goto_0
 
-    .line 394
+    .line 395
     :pswitch_5
     invoke-virtual {v0}, Lcom/google/protobuf/GeneratedMessageLite$ExtensionDescriptor;->getNumber()I
 
     move-result v1
 
-    .line 395
+    .line 396
     invoke-interface {p2}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
     move-result-object p2
 
     check-cast p2, Ljava/util/List;
 
-    .line 397
+    .line 398
     invoke-virtual {v0}, Lcom/google/protobuf/GeneratedMessageLite$ExtensionDescriptor;->isPacked()Z
 
     move-result v0
 
-    .line 393
+    .line 394
     invoke-static {v1, p2, p1, v0}, Lcom/google/protobuf/SchemaUtil;->writeSInt64List(ILjava/util/List;Lcom/google/protobuf/Writer;Z)V
 
     goto/16 :goto_0
 
-    .line 387
+    .line 388
     :pswitch_6
     invoke-virtual {v0}, Lcom/google/protobuf/GeneratedMessageLite$ExtensionDescriptor;->getNumber()I
 
     move-result v1
 
-    .line 388
+    .line 389
     invoke-interface {p2}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
     move-result-object p2
 
     check-cast p2, Ljava/util/List;
 
-    .line 390
+    .line 391
     invoke-virtual {v0}, Lcom/google/protobuf/GeneratedMessageLite$ExtensionDescriptor;->isPacked()Z
 
     move-result v0
 
-    .line 386
+    .line 387
     invoke-static {v1, p2, p1, v0}, Lcom/google/protobuf/SchemaUtil;->writeSInt32List(ILjava/util/List;Lcom/google/protobuf/Writer;Z)V
 
     goto/16 :goto_0
 
-    .line 380
+    .line 381
     :pswitch_7
     invoke-virtual {v0}, Lcom/google/protobuf/GeneratedMessageLite$ExtensionDescriptor;->getNumber()I
 
     move-result v1
 
-    .line 381
+    .line 382
     invoke-interface {p2}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
     move-result-object p2
 
     check-cast p2, Ljava/util/List;
 
-    .line 383
+    .line 384
     invoke-virtual {v0}, Lcom/google/protobuf/GeneratedMessageLite$ExtensionDescriptor;->isPacked()Z
 
     move-result v0
 
-    .line 379
+    .line 380
     invoke-static {v1, p2, p1, v0}, Lcom/google/protobuf/SchemaUtil;->writeSFixed64List(ILjava/util/List;Lcom/google/protobuf/Writer;Z)V
 
     goto/16 :goto_0
 
-    .line 373
+    .line 374
     :pswitch_8
     invoke-virtual {v0}, Lcom/google/protobuf/GeneratedMessageLite$ExtensionDescriptor;->getNumber()I
 
     move-result v1
 
-    .line 374
+    .line 375
     invoke-interface {p2}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
     move-result-object p2
 
     check-cast p2, Ljava/util/List;
 
-    .line 376
+    .line 377
     invoke-virtual {v0}, Lcom/google/protobuf/GeneratedMessageLite$ExtensionDescriptor;->isPacked()Z
 
     move-result v0
 
-    .line 372
+    .line 373
     invoke-static {v1, p2, p1, v0}, Lcom/google/protobuf/SchemaUtil;->writeSFixed32List(ILjava/util/List;Lcom/google/protobuf/Writer;Z)V
 
     goto/16 :goto_0
 
-    .line 366
+    .line 367
     :pswitch_9
     invoke-virtual {v0}, Lcom/google/protobuf/GeneratedMessageLite$ExtensionDescriptor;->getNumber()I
 
     move-result v1
 
-    .line 367
+    .line 368
     invoke-interface {p2}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
     move-result-object p2
 
     check-cast p2, Ljava/util/List;
 
-    .line 369
+    .line 370
     invoke-virtual {v0}, Lcom/google/protobuf/GeneratedMessageLite$ExtensionDescriptor;->isPacked()Z
 
     move-result v0
 
-    .line 365
+    .line 366
     invoke-static {v1, p2, p1, v0}, Lcom/google/protobuf/SchemaUtil;->writeUInt32List(ILjava/util/List;Lcom/google/protobuf/Writer;Z)V
 
     goto/16 :goto_0
 
-    .line 355
+    .line 356
     :pswitch_a
     invoke-virtual {v0}, Lcom/google/protobuf/GeneratedMessageLite$ExtensionDescriptor;->getNumber()I
 
     move-result v1
 
-    .line 356
+    .line 357
     invoke-interface {p2}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
     move-result-object p2
 
     check-cast p2, Ljava/util/List;
 
-    .line 358
+    .line 359
     invoke-virtual {v0}, Lcom/google/protobuf/GeneratedMessageLite$ExtensionDescriptor;->isPacked()Z
 
     move-result v0
 
-    .line 354
+    .line 355
     invoke-static {v1, p2, p1, v0}, Lcom/google/protobuf/SchemaUtil;->writeBoolList(ILjava/util/List;Lcom/google/protobuf/Writer;Z)V
 
     goto/16 :goto_0
 
-    .line 348
+    .line 349
     :pswitch_b
     invoke-virtual {v0}, Lcom/google/protobuf/GeneratedMessageLite$ExtensionDescriptor;->getNumber()I
 
     move-result v1
 
-    .line 349
+    .line 350
     invoke-interface {p2}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
     move-result-object p2
 
     check-cast p2, Ljava/util/List;
 
-    .line 351
+    .line 352
     invoke-virtual {v0}, Lcom/google/protobuf/GeneratedMessageLite$ExtensionDescriptor;->isPacked()Z
 
     move-result v0
 
-    .line 347
+    .line 348
     invoke-static {v1, p2, p1, v0}, Lcom/google/protobuf/SchemaUtil;->writeFixed32List(ILjava/util/List;Lcom/google/protobuf/Writer;Z)V
 
     goto/16 :goto_0
 
-    .line 341
+    .line 342
     :pswitch_c
     invoke-virtual {v0}, Lcom/google/protobuf/GeneratedMessageLite$ExtensionDescriptor;->getNumber()I
 
     move-result v1
 
-    .line 342
+    .line 343
     invoke-interface {p2}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
     move-result-object p2
 
     check-cast p2, Ljava/util/List;
 
-    .line 344
+    .line 345
     invoke-virtual {v0}, Lcom/google/protobuf/GeneratedMessageLite$ExtensionDescriptor;->isPacked()Z
 
     move-result v0
 
-    .line 340
+    .line 341
     invoke-static {v1, p2, p1, v0}, Lcom/google/protobuf/SchemaUtil;->writeFixed64List(ILjava/util/List;Lcom/google/protobuf/Writer;Z)V
 
     goto/16 :goto_0
 
-    .line 334
+    .line 335
     :pswitch_d
     invoke-virtual {v0}, Lcom/google/protobuf/GeneratedMessageLite$ExtensionDescriptor;->getNumber()I
 
     move-result v1
 
-    .line 335
+    .line 336
     invoke-interface {p2}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
     move-result-object p2
 
     check-cast p2, Ljava/util/List;
 
-    .line 337
+    .line 338
     invoke-virtual {v0}, Lcom/google/protobuf/GeneratedMessageLite$ExtensionDescriptor;->isPacked()Z
 
     move-result v0
 
-    .line 333
+    .line 334
     invoke-static {v1, p2, p1, v0}, Lcom/google/protobuf/SchemaUtil;->writeInt32List(ILjava/util/List;Lcom/google/protobuf/Writer;Z)V
 
     goto/16 :goto_0
 
-    .line 327
+    .line 328
     :pswitch_e
     invoke-virtual {v0}, Lcom/google/protobuf/GeneratedMessageLite$ExtensionDescriptor;->getNumber()I
 
     move-result v1
 
-    .line 328
+    .line 329
     invoke-interface {p2}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
     move-result-object p2
 
     check-cast p2, Ljava/util/List;
 
-    .line 330
+    .line 331
     invoke-virtual {v0}, Lcom/google/protobuf/GeneratedMessageLite$ExtensionDescriptor;->isPacked()Z
 
     move-result v0
 
-    .line 326
+    .line 327
     invoke-static {v1, p2, p1, v0}, Lcom/google/protobuf/SchemaUtil;->writeUInt64List(ILjava/util/List;Lcom/google/protobuf/Writer;Z)V
 
     goto/16 :goto_0
 
-    .line 320
+    .line 321
     :pswitch_f
     invoke-virtual {v0}, Lcom/google/protobuf/GeneratedMessageLite$ExtensionDescriptor;->getNumber()I
 
     move-result v1
 
-    .line 321
+    .line 322
     invoke-interface {p2}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
     move-result-object p2
 
     check-cast p2, Ljava/util/List;
 
-    .line 323
+    .line 324
     invoke-virtual {v0}, Lcom/google/protobuf/GeneratedMessageLite$ExtensionDescriptor;->isPacked()Z
 
     move-result v0
 
-    .line 319
+    .line 320
     invoke-static {v1, p2, p1, v0}, Lcom/google/protobuf/SchemaUtil;->writeInt64List(ILjava/util/List;Lcom/google/protobuf/Writer;Z)V
 
     goto/16 :goto_0
 
-    .line 313
+    .line 314
     :pswitch_10
     invoke-virtual {v0}, Lcom/google/protobuf/GeneratedMessageLite$ExtensionDescriptor;->getNumber()I
 
     move-result v1
 
-    .line 314
+    .line 315
     invoke-interface {p2}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
     move-result-object p2
 
     check-cast p2, Ljava/util/List;
 
-    .line 316
+    .line 317
     invoke-virtual {v0}, Lcom/google/protobuf/GeneratedMessageLite$ExtensionDescriptor;->isPacked()Z
 
     move-result v0
 
-    .line 312
+    .line 313
     invoke-static {v1, p2, p1, v0}, Lcom/google/protobuf/SchemaUtil;->writeFloatList(ILjava/util/List;Lcom/google/protobuf/Writer;Z)V
 
     goto/16 :goto_0
 
-    .line 306
+    .line 307
     :pswitch_11
     invoke-virtual {v0}, Lcom/google/protobuf/GeneratedMessageLite$ExtensionDescriptor;->getNumber()I
 
     move-result v1
 
-    .line 307
+    .line 308
     invoke-interface {p2}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
     move-result-object p2
 
     check-cast p2, Ljava/util/List;
 
-    .line 309
+    .line 310
     invoke-virtual {v0}, Lcom/google/protobuf/GeneratedMessageLite$ExtensionDescriptor;->isPacked()Z
 
     move-result v0
 
-    .line 305
+    .line 306
     invoke-static {v1, p2, p1, v0}, Lcom/google/protobuf/SchemaUtil;->writeDoubleList(ILjava/util/List;Lcom/google/protobuf/Writer;Z)V
 
     goto/16 :goto_0
 
-    .line 436
+    .line 437
     :cond_0
     sget-object v1, Lcom/google/protobuf/ExtensionSchemaLite$1;->$SwitchMap$com$google$protobuf$WireFormat$FieldType:[I
 
@@ -1431,18 +1431,18 @@
 
     goto/16 :goto_0
 
-    .line 493
+    .line 494
     :pswitch_12
     invoke-virtual {v0}, Lcom/google/protobuf/GeneratedMessageLite$ExtensionDescriptor;->getNumber()I
 
     move-result v0
 
-    .line 494
+    .line 495
     invoke-interface {p2}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
     move-result-object v1
 
-    .line 495
+    .line 496
     invoke-static {}, Lcom/google/protobuf/Protobuf;->getInstance()Lcom/google/protobuf/Protobuf;
 
     move-result-object v2
@@ -1459,23 +1459,23 @@
 
     move-result-object p2
 
-    .line 492
+    .line 493
     invoke-interface {p1, v0, v1, p2}, Lcom/google/protobuf/Writer;->writeMessage(ILjava/lang/Object;Lcom/google/protobuf/Schema;)V
 
     goto/16 :goto_0
 
-    .line 487
+    .line 488
     :pswitch_13
     invoke-virtual {v0}, Lcom/google/protobuf/GeneratedMessageLite$ExtensionDescriptor;->getNumber()I
 
     move-result v0
 
-    .line 488
+    .line 489
     invoke-interface {p2}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
     move-result-object v1
 
-    .line 489
+    .line 490
     invoke-static {}, Lcom/google/protobuf/Protobuf;->getInstance()Lcom/google/protobuf/Protobuf;
 
     move-result-object v2
@@ -1492,12 +1492,12 @@
 
     move-result-object p2
 
-    .line 486
+    .line 487
     invoke-interface {p1, v0, v1, p2}, Lcom/google/protobuf/Writer;->writeGroup(ILjava/lang/Object;Lcom/google/protobuf/Schema;)V
 
     goto/16 :goto_0
 
-    .line 483
+    .line 484
     :pswitch_14
     invoke-virtual {v0}, Lcom/google/protobuf/GeneratedMessageLite$ExtensionDescriptor;->getNumber()I
 
@@ -1513,7 +1513,7 @@
 
     goto/16 :goto_0
 
-    .line 462
+    .line 463
     :pswitch_15
     invoke-virtual {v0}, Lcom/google/protobuf/GeneratedMessageLite$ExtensionDescriptor;->getNumber()I
 
@@ -1529,7 +1529,7 @@
 
     goto/16 :goto_0
 
-    .line 480
+    .line 481
     :pswitch_16
     invoke-virtual {v0}, Lcom/google/protobuf/GeneratedMessageLite$ExtensionDescriptor;->getNumber()I
 
@@ -1549,7 +1549,7 @@
 
     goto/16 :goto_0
 
-    .line 477
+    .line 478
     :pswitch_17
     invoke-virtual {v0}, Lcom/google/protobuf/GeneratedMessageLite$ExtensionDescriptor;->getNumber()I
 
@@ -1569,7 +1569,7 @@
 
     goto/16 :goto_0
 
-    .line 474
+    .line 475
     :pswitch_18
     invoke-virtual {v0}, Lcom/google/protobuf/GeneratedMessageLite$ExtensionDescriptor;->getNumber()I
 
@@ -1589,7 +1589,7 @@
 
     goto/16 :goto_0
 
-    .line 471
+    .line 472
     :pswitch_19
     invoke-virtual {v0}, Lcom/google/protobuf/GeneratedMessageLite$ExtensionDescriptor;->getNumber()I
 
@@ -1609,7 +1609,7 @@
 
     goto/16 :goto_0
 
-    .line 468
+    .line 469
     :pswitch_1a
     invoke-virtual {v0}, Lcom/google/protobuf/GeneratedMessageLite$ExtensionDescriptor;->getNumber()I
 
@@ -1629,7 +1629,7 @@
 
     goto/16 :goto_0
 
-    .line 465
+    .line 466
     :pswitch_1b
     invoke-virtual {v0}, Lcom/google/protobuf/GeneratedMessageLite$ExtensionDescriptor;->getNumber()I
 
@@ -1649,7 +1649,7 @@
 
     goto/16 :goto_0
 
-    .line 459
+    .line 460
     :pswitch_1c
     invoke-virtual {v0}, Lcom/google/protobuf/GeneratedMessageLite$ExtensionDescriptor;->getNumber()I
 
@@ -1669,7 +1669,7 @@
 
     goto/16 :goto_0
 
-    .line 456
+    .line 457
     :pswitch_1d
     invoke-virtual {v0}, Lcom/google/protobuf/GeneratedMessageLite$ExtensionDescriptor;->getNumber()I
 
@@ -1689,7 +1689,7 @@
 
     goto :goto_0
 
-    .line 453
+    .line 454
     :pswitch_1e
     invoke-virtual {v0}, Lcom/google/protobuf/GeneratedMessageLite$ExtensionDescriptor;->getNumber()I
 
@@ -1709,7 +1709,7 @@
 
     goto :goto_0
 
-    .line 450
+    .line 451
     :pswitch_1f
     invoke-virtual {v0}, Lcom/google/protobuf/GeneratedMessageLite$ExtensionDescriptor;->getNumber()I
 
@@ -1729,7 +1729,7 @@
 
     goto :goto_0
 
-    .line 447
+    .line 448
     :pswitch_20
     invoke-virtual {v0}, Lcom/google/protobuf/GeneratedMessageLite$ExtensionDescriptor;->getNumber()I
 
@@ -1749,7 +1749,7 @@
 
     goto :goto_0
 
-    .line 444
+    .line 445
     :pswitch_21
     invoke-virtual {v0}, Lcom/google/protobuf/GeneratedMessageLite$ExtensionDescriptor;->getNumber()I
 
@@ -1769,7 +1769,7 @@
 
     goto :goto_0
 
-    .line 441
+    .line 442
     :pswitch_22
     invoke-virtual {v0}, Lcom/google/protobuf/GeneratedMessageLite$ExtensionDescriptor;->getNumber()I
 
@@ -1789,7 +1789,7 @@
 
     goto :goto_0
 
-    .line 438
+    .line 439
     :pswitch_23
     invoke-virtual {v0}, Lcom/google/protobuf/GeneratedMessageLite$ExtensionDescriptor;->getNumber()I
 

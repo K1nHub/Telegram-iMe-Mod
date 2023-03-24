@@ -12,7 +12,7 @@ import android.widget.ImageView;
 import java.io.File;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.C3286R;
+import org.telegram.messenger.C3301R;
 import org.telegram.p048ui.ActionBar.Theme;
 import org.telegram.p048ui.Components.LayoutHelper;
 /* renamed from: org.telegram.ui.Cells.PhotoAttachCameraCell */
@@ -33,7 +33,7 @@ public class PhotoAttachCameraCell extends FrameLayout {
         ImageView imageView2 = new ImageView(context);
         this.imageView = imageView2;
         imageView2.setScaleType(ImageView.ScaleType.CENTER);
-        this.imageView.setImageResource(C3286R.C3288drawable.instant_camera);
+        this.imageView.setImageResource(C3301R.C3303drawable.instant_camera);
         addView(this.imageView, LayoutHelper.createFrame(80, 80));
         setFocusable(true);
         this.itemSize = AndroidUtilities.m50dp(0);
@@ -76,7 +76,7 @@ public class PhotoAttachCameraCell extends FrameLayout {
         if (bitmap != null) {
             this.backgroundView.setImageBitmap(bitmap);
         } else {
-            this.backgroundView.setImageResource(C3286R.C3288drawable.icplaceholder);
+            this.backgroundView.setImageResource(C3301R.C3303drawable.icplaceholder);
         }
     }
 

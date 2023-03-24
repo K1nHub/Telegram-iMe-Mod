@@ -76,12 +76,12 @@
 
     if-ne v5, p1, :cond_2
 
-    const/4 v5, 0x1
+    move v5, v3
 
     goto :goto_0
 
     :cond_2
-    const/4 v5, 0x0
+    move v5, v4
 
     :goto_0
     if-eqz v5, :cond_1
@@ -129,7 +129,7 @@
     goto :goto_2
 
     :cond_5
-    const/4 v3, 0x0
+    move v3, v4
 
     :goto_2
     invoke-virtual {v0, v3}, Lorg/telegram/ui/ActionBar/ActionBar;->setCastShadows(Z)V

@@ -56,12 +56,12 @@
 
     if-eqz v2, :cond_0
 
-    const/4 v2, 0x5
+    move v2, v3
 
     goto :goto_0
 
     :cond_0
-    const/4 v2, 0x3
+    move v2, v4
 
     :goto_0
     invoke-virtual {v0, v2}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setGravity(I)V
@@ -99,7 +99,7 @@
 
     if-eqz v1, :cond_1
 
-    const/4 v3, 0x3
+    move v3, v4
 
     :cond_1
     invoke-virtual {v0, v3}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setGravity(I)V

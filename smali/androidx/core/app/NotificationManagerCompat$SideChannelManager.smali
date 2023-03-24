@@ -487,10 +487,8 @@
 
     goto :goto_1
 
-    :catch_1
-    nop
-
     .line 935
+    :catch_1
     invoke-static {v0, v1}, Landroid/util/Log;->isLoggable(Ljava/lang/String;I)Z
 
     move-result v1

@@ -241,7 +241,7 @@
     goto :goto_1
 
     :cond_1
-    const/4 v4, 0x0
+    move v4, v5
 
     :goto_1
     invoke-virtual {p1, v0, v2, v1, v4}, Lorg/telegram/ui/Cells/GroupCreateUserCell;->setObject(Lorg/telegram/tgnet/TLObject;Ljava/lang/CharSequence;Ljava/lang/CharSequence;Z)V

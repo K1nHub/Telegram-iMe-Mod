@@ -415,7 +415,7 @@
     if-le v1, v2, :cond_1
 
     :goto_0
-    const/4 v0, 0x1
+    move v0, v3
 
     goto :goto_1
 

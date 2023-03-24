@@ -191,7 +191,7 @@
 
     const/high16 v4, 0x437f0000    # 255.0f
 
-    mul-float v3, v3, v4
+    mul-float/2addr v3, v4
 
     float-to-int v3, v3
 
@@ -249,7 +249,7 @@
 
     const-wide/16 v6, 0x168
 
-    mul-long v6, v6, v4
+    mul-long/2addr v6, v4
 
     long-to-float p1, v6
 

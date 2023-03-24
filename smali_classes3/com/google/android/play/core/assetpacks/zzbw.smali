@@ -147,7 +147,7 @@
 .end method
 
 .method public final read([BII)I
-    .locals 5
+    .locals 4
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -159,9 +159,9 @@
 
     const-wide/16 v2, 0x0
 
-    cmp-long v4, v0, v2
+    cmp-long v2, v0, v2
 
-    if-lez v4, :cond_2
+    if-lez v2, :cond_2
 
     iget-boolean v2, p0, Lcom/google/android/play/core/assetpacks/zzbw;->zzd:Z
 
@@ -230,9 +230,9 @@
 
     const-wide/16 v2, 0x0
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-lez v4, :cond_1
+    if-lez v0, :cond_1
 
     :cond_0
     iget-object v0, p0, Lcom/google/android/play/core/assetpacks/zzbw;->zzb:[B
@@ -330,18 +330,18 @@
 
     int-to-long v5, v4
 
-    cmp-long v7, v2, v5
+    cmp-long v5, v2, v5
 
-    if-lez v7, :cond_6
+    if-lez v5, :cond_6
 
     :cond_5
     add-int/2addr v4, v4
 
     int-to-long v5, v4
 
-    cmp-long v7, v5, v2
+    cmp-long v5, v5, v2
 
-    if-ltz v7, :cond_5
+    if-ltz v5, :cond_5
 
     iget-object v2, p0, Lcom/google/android/play/core/assetpacks/zzbw;->zzb:[B
 

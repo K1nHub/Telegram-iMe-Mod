@@ -11,7 +11,7 @@ import com.smedialink.storage.domain.utils.system.ResourceManager;
 import kotlin.jvm.internal.Intrinsics;
 import moxy.InjectViewState;
 import org.fork.utils.Callbacks$Callback;
-import org.telegram.messenger.C3286R;
+import org.telegram.messenger.C3301R;
 /* compiled from: DebugPresenter.kt */
 @InjectViewState
 /* renamed from: com.smedialink.ui.debug.DebugPresenter */
@@ -66,6 +66,6 @@ public final class DebugPresenter extends BasePresenter<DebugView> {
     }
 
     private final DialogModel getConfirmSwitchEnvironmentDialogModel() {
-        return new DialogModel(this.resourceManager.getString(C3286R.string.debug_option_choose_wallet_environment_dialog_title), this.resourceManager.getString(C3286R.string.debug_option_choose_wallet_environment_dialog_message), this.resourceManager.getString(C3286R.string.common_cancel), this.resourceManager.getString(C3286R.string.common_confirm));
+        return new DialogModel(this.resourceManager.getString(C3301R.string.debug_option_choose_wallet_environment_dialog_title), this.resourceManager.getString(C3301R.string.debug_option_choose_wallet_environment_dialog_message), this.resourceManager.getString(C3301R.string.common_cancel), this.resourceManager.getString(C3301R.string.common_confirm));
     }
 }

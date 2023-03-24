@@ -185,9 +185,9 @@
 
     const-wide/16 v3, 0x0
 
-    cmp-long v5, v1, v3
+    cmp-long v1, v1, v3
 
-    if-nez v5, :cond_1
+    if-nez v1, :cond_1
 
     .line 299
     invoke-direct {p0, p1}, Lcom/google/android/exoplayer2/extractor/ts/AdtsExtractor;->peekId3Header(Lcom/google/android/exoplayer2/extractor/ExtractorInput;)I
@@ -195,7 +195,7 @@
     :cond_1
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     :cond_2
     const/4 v5, 0x1
@@ -362,11 +362,11 @@
 
     const-wide/16 v2, 0x8
 
-    mul-long v0, v0, v2
+    mul-long/2addr v0, v2
 
     const-wide/32 v2, 0xf4240
 
-    mul-long v0, v0, v2
+    mul-long/2addr v0, v2
 
     .line 366
     div-long/2addr v0, p1
@@ -430,7 +430,7 @@
 .end method
 
 .method private maybeOutputSeekMap(JZ)V
-    .locals 8
+    .locals 7
 
     .line 267
     iget-boolean v0, p0, Lcom/google/android/exoplayer2/extractor/ts/AdtsExtractor;->hasOutputSeekMap:Z
@@ -455,12 +455,12 @@
 
     if-lez v0, :cond_1
 
-    const/4 v0, 0x1
+    move v0, v1
 
     goto :goto_0
 
     :cond_1
-    const/4 v0, 0x0
+    move v0, v2
 
     :goto_0
     const-wide v3, -0x7fffffffffffffffL    # -4.9E-324
@@ -475,9 +475,9 @@
 
     move-result-wide v5
 
-    cmp-long v7, v5, v3
+    cmp-long v5, v5, v3
 
-    if-nez v7, :cond_2
+    if-nez v5, :cond_2
 
     if-nez p3, :cond_2
 
@@ -506,7 +506,7 @@
 
     if-eqz v0, :cond_3
 
-    const/4 v2, 0x1
+    move v2, v1
 
     .line 283
     :cond_3
@@ -546,7 +546,7 @@
 
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    move v1, v0
 
     .line 247
     :goto_0
@@ -693,13 +693,13 @@
     goto :goto_0
 
     :cond_0
-    const/4 p2, 0x0
+    move p2, v4
 
     goto :goto_1
 
     :cond_1
     :goto_0
-    const/4 p2, 0x1
+    move p2, v3
 
     :goto_1
     if-eqz p2, :cond_2
@@ -725,12 +725,12 @@
 
     if-ne p1, p2, :cond_3
 
-    const/4 v2, 0x1
+    move v2, v3
 
     goto :goto_2
 
     :cond_3
-    const/4 v2, 0x0
+    move v2, v4
 
     .line 224
     :goto_2
@@ -821,9 +821,9 @@
 
     move v3, v0
 
-    const/4 v2, 0x0
+    move v2, v1
 
-    const/4 v4, 0x0
+    move v4, v2
 
     .line 151
     :cond_0
@@ -865,9 +865,9 @@
     invoke-interface {p1, v3}, Lcom/google/android/exoplayer2/extractor/ExtractorInput;->advancePeekPosition(I)V
 
     :goto_0
-    const/4 v2, 0x0
+    move v2, v1
 
-    const/4 v4, 0x0
+    move v4, v2
 
     goto :goto_1
 

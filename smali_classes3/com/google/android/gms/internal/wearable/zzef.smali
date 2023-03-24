@@ -198,7 +198,7 @@
 
     iget-object v4, p1, Lcom/google/android/gms/internal/wearable/zzef;->zzc:[I
 
-    const/4 v5, 0x0
+    move v5, v1
 
     :goto_0
     if-ge v5, v2, :cond_4
@@ -224,7 +224,7 @@
 
     iget v3, p0, Lcom/google/android/gms/internal/wearable/zzef;->zzb:I
 
-    const/4 v4, 0x0
+    move v4, v1
 
     :goto_1
     if-ge v4, v3, :cond_5
@@ -268,9 +268,9 @@
 
     const/16 v4, 0x11
 
-    const/4 v5, 0x0
+    move v5, v3
 
-    const/16 v6, 0x11
+    move v6, v4
 
     :goto_0
     if-ge v5, v0, :cond_0
@@ -330,7 +330,7 @@
 
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    move v1, v0
 
     :goto_0
     iget v2, p0, Lcom/google/android/gms/internal/wearable/zzef;->zzb:I
@@ -521,7 +521,7 @@
 
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    move v1, v0
 
     :goto_0
     iget v2, p0, Lcom/google/android/gms/internal/wearable/zzef;->zzb:I

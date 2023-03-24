@@ -171,9 +171,9 @@
     :cond_1
     const-wide v0, -0x7fffffffffffffffL    # -4.9E-324
 
-    cmp-long v4, p1, v0
+    cmp-long v0, p1, v0
 
-    if-eqz v4, :cond_2
+    if-eqz v0, :cond_2
 
     .line 460
     invoke-static {p1, p2}, Ljava/math/BigInteger;->valueOf(J)Ljava/math/BigInteger;
@@ -240,9 +240,9 @@
 
     sub-long v2, p2, v2
 
-    long-to-int v3, v2
+    long-to-int v2, v2
 
-    invoke-interface {v1, v3}, Ljava/util/List;->get(I)Ljava/lang/Object;
+    invoke-interface {v1, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v1
 
@@ -260,7 +260,7 @@
 
     iget-wide v3, v0, Lcom/google/android/exoplayer2/source/dash/manifest/SegmentBase$MultiSegmentBase;->duration:J
 
-    mul-long v1, v1, v3
+    mul-long/2addr v1, v3
 
     :goto_0
     move-wide v6, v1

@@ -217,7 +217,7 @@
 
     int-to-float v2, v2
 
-    mul-float v2, v2, v0
+    mul-float/2addr v2, v0
 
     float-to-int v4, v2
 
@@ -498,9 +498,9 @@
 
     const/4 v4, 0x1
 
-    const/4 v4, 0x0
+    move v8, v4
 
-    const/4 v8, 0x1
+    move v4, v3
 
     .line 176
     :goto_0
@@ -630,7 +630,7 @@
 
     invoke-direct {v2}, Lcom/google/common/collect/ImmutableList$Builder;-><init>()V
 
-    const/4 v8, 0x0
+    move v8, v3
 
     .line 212
     :goto_4

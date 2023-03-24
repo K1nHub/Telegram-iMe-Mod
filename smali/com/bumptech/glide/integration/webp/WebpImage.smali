@@ -42,7 +42,7 @@
 .end method
 
 .method constructor <init>(JIIII[III)V
-    .locals 3
+    .locals 2
     .annotation build Landroidx/annotation/Keep;
     .end annotation
 
@@ -51,9 +51,9 @@
 
     const-wide/16 v0, 0x0
 
-    cmp-long v2, p1, v0
+    cmp-long v0, p1, v0
 
-    if-eqz v2, :cond_0
+    if-eqz v0, :cond_0
 
     .line 63
     iput p3, p0, Lcom/bumptech/glide/integration/webp/WebpImage;->mWidth:I

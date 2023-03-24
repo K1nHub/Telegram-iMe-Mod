@@ -40,13 +40,13 @@ public class SecT131R1Point extends ECPoint.AbstractF2m {
             return this;
         }
         ECCurve curve = getCurve();
-        ECFieldElement eCFieldElement7 = this.f1310x;
+        ECFieldElement eCFieldElement7 = this.f1311x;
         ECFieldElement rawXCoord = eCPoint.getRawXCoord();
         if (eCFieldElement7.isZero()) {
             return rawXCoord.isZero() ? curve.getInfinity() : eCPoint.add(this);
         }
-        ECFieldElement eCFieldElement8 = this.f1311y;
-        ECFieldElement eCFieldElement9 = this.f1312zs[0];
+        ECFieldElement eCFieldElement8 = this.f1312y;
+        ECFieldElement eCFieldElement9 = this.f1313zs[0];
         ECFieldElement rawYCoord = eCPoint.getRawYCoord();
         ECFieldElement zCoord = eCPoint.getZCoord(0);
         boolean isOne = eCFieldElement9.isOne();
@@ -110,13 +110,13 @@ public class SecT131R1Point extends ECPoint.AbstractF2m {
 
     @Override // org.bouncycastle.math.p043ec.ECPoint
     public ECFieldElement getYCoord() {
-        ECFieldElement eCFieldElement = this.f1310x;
-        ECFieldElement eCFieldElement2 = this.f1311y;
+        ECFieldElement eCFieldElement = this.f1311x;
+        ECFieldElement eCFieldElement2 = this.f1312y;
         if (isInfinity() || eCFieldElement.isZero()) {
             return eCFieldElement2;
         }
         ECFieldElement multiply = eCFieldElement2.add(eCFieldElement).multiply(eCFieldElement);
-        ECFieldElement eCFieldElement3 = this.f1312zs[0];
+        ECFieldElement eCFieldElement3 = this.f1313zs[0];
         return !eCFieldElement3.isOne() ? multiply.divide(eCFieldElement3) : multiply;
     }
 
@@ -125,12 +125,12 @@ public class SecT131R1Point extends ECPoint.AbstractF2m {
         if (isInfinity()) {
             return this;
         }
-        ECFieldElement eCFieldElement = this.f1310x;
+        ECFieldElement eCFieldElement = this.f1311x;
         if (eCFieldElement.isZero()) {
             return this;
         }
-        ECFieldElement eCFieldElement2 = this.f1311y;
-        ECFieldElement eCFieldElement3 = this.f1312zs[0];
+        ECFieldElement eCFieldElement2 = this.f1312y;
+        ECFieldElement eCFieldElement3 = this.f1313zs[0];
         return new SecT131R1Point(this.curve, eCFieldElement, eCFieldElement2.add(eCFieldElement3), new ECFieldElement[]{eCFieldElement3}, this.withCompression);
     }
 
@@ -140,12 +140,12 @@ public class SecT131R1Point extends ECPoint.AbstractF2m {
             return this;
         }
         ECCurve curve = getCurve();
-        ECFieldElement eCFieldElement = this.f1310x;
+        ECFieldElement eCFieldElement = this.f1311x;
         if (eCFieldElement.isZero()) {
             return curve.getInfinity();
         }
-        ECFieldElement eCFieldElement2 = this.f1311y;
-        ECFieldElement eCFieldElement3 = this.f1312zs[0];
+        ECFieldElement eCFieldElement2 = this.f1312y;
+        ECFieldElement eCFieldElement3 = this.f1313zs[0];
         boolean isOne = eCFieldElement3.isOne();
         ECFieldElement multiply = isOne ? eCFieldElement2 : eCFieldElement2.multiply(eCFieldElement3);
         ECFieldElement square = isOne ? eCFieldElement3 : eCFieldElement3.square();
@@ -174,7 +174,7 @@ public class SecT131R1Point extends ECPoint.AbstractF2m {
             return twice();
         }
         ECCurve curve = getCurve();
-        ECFieldElement eCFieldElement = this.f1310x;
+        ECFieldElement eCFieldElement = this.f1311x;
         if (eCFieldElement.isZero()) {
             return eCPoint;
         }
@@ -183,8 +183,8 @@ public class SecT131R1Point extends ECPoint.AbstractF2m {
         if (rawXCoord.isZero() || !zCoord.isOne()) {
             return twice().add(eCPoint);
         }
-        ECFieldElement eCFieldElement2 = this.f1311y;
-        ECFieldElement eCFieldElement3 = this.f1312zs[0];
+        ECFieldElement eCFieldElement2 = this.f1312y;
+        ECFieldElement eCFieldElement3 = this.f1313zs[0];
         ECFieldElement rawYCoord = eCPoint.getRawYCoord();
         ECFieldElement square = eCFieldElement.square();
         ECFieldElement square2 = eCFieldElement2.square();

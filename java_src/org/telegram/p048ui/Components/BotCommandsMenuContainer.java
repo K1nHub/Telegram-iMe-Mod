@@ -18,7 +18,7 @@ import androidx.core.view.NestedScrollingParent;
 import androidx.core.view.NestedScrollingParentHelper;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3286R;
+import org.telegram.messenger.C3301R;
 import org.telegram.p048ui.ActionBar.Theme;
 /* renamed from: org.telegram.ui.Components.BotCommandsMenuContainer */
 /* loaded from: classes6.dex */
@@ -54,7 +54,7 @@ public class BotCommandsMenuContainer extends FrameLayout implements NestedScrol
         this.topBackground = new Paint(1);
         this.dismissed = true;
         this.nestedScrollingParentHelper = new NestedScrollingParentHelper(this);
-        this.shadowDrawable = context.getResources().getDrawable(C3286R.C3288drawable.sheet_shadow_round).mutate();
+        this.shadowDrawable = context.getResources().getDrawable(C3301R.C3303drawable.sheet_shadow_round).mutate();
         RecyclerListView recyclerListView = new RecyclerListView(context) { // from class: org.telegram.ui.Components.BotCommandsMenuContainer.1
             /* JADX INFO: Access modifiers changed from: protected */
             @Override // org.telegram.p048ui.Components.RecyclerListView, android.view.ViewGroup, android.view.View
@@ -64,9 +64,9 @@ public class BotCommandsMenuContainer extends FrameLayout implements NestedScrol
                     return;
                 }
                 View findViewByPosition = BotCommandsMenuContainer.this.listView.getLayoutManager().findViewByPosition(0);
-                float y = findViewByPosition != null ? findViewByPosition.getY() : BitmapDescriptorFactory.HUE_RED;
+                float y = findViewByPosition != null ? findViewByPosition.getY() : 0.0f;
                 if (y < BitmapDescriptorFactory.HUE_RED) {
-                    y = BitmapDescriptorFactory.HUE_RED;
+                    y = 0.0f;
                 }
                 BotCommandsMenuContainer.this.scrollYOffset = y;
                 float m50dp = y - AndroidUtilities.m50dp(8);
@@ -133,7 +133,7 @@ public class BotCommandsMenuContainer extends FrameLayout implements NestedScrol
         if (i4 != 0) {
             float translationY = this.listView.getTranslationY() - i4;
             if (translationY < BitmapDescriptorFactory.HUE_RED) {
-                translationY = BitmapDescriptorFactory.HUE_RED;
+                translationY = 0.0f;
             }
             this.listView.setTranslationY(translationY);
             invalidate();

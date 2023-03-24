@@ -691,7 +691,7 @@
     .line 337
     iget v3, v0, Lorg/telegram/ui/Components/Reactions/ReactionsEffectOverlay$1;->val$fromScale:F
 
-    mul-float v3, v3, v7
+    mul-float/2addr v3, v7
 
     add-float/2addr v3, v15
 
@@ -707,7 +707,7 @@
 
     if-ne v5, v10, :cond_f
 
-    const/high16 v3, 0x3f800000    # 1.0f
+    move v3, v4
 
     goto :goto_4
 
@@ -715,9 +715,9 @@
     :cond_f
     iget v5, v0, Lorg/telegram/ui/Components/Reactions/ReactionsEffectOverlay$1;->val$fromX:F
 
-    mul-float v5, v5, v7
+    mul-float/2addr v5, v7
 
-    mul-float v8, v8, v15
+    mul-float/2addr v8, v15
 
     add-float/2addr v8, v5
 
@@ -728,7 +728,7 @@
 
     mul-float v5, v5, v18
 
-    mul-float v14, v14, v2
+    mul-float/2addr v14, v2
 
     add-float/2addr v14, v5
 
@@ -788,18 +788,18 @@
     .line 360
     iget v3, v0, Lorg/telegram/ui/Components/Reactions/ReactionsEffectOverlay$1;->val$fromScale:F
 
-    mul-float v3, v3, v7
+    mul-float/2addr v3, v7
 
-    mul-float v6, v6, v15
+    mul-float/2addr v6, v15
 
     add-float/2addr v3, v6
 
     .line 361
     iget v6, v0, Lorg/telegram/ui/Components/Reactions/ReactionsEffectOverlay$1;->val$fromX:F
 
-    mul-float v6, v6, v7
+    mul-float/2addr v6, v7
 
-    mul-float v13, v13, v15
+    mul-float/2addr v13, v15
 
     add-float v8, v6, v13
 
@@ -808,9 +808,9 @@
 
     sub-float v7, v4, v2
 
-    mul-float v6, v6, v7
+    mul-float/2addr v6, v7
 
-    mul-float v12, v12, v2
+    mul-float/2addr v12, v2
 
     add-float v14, v6, v12
 
@@ -823,21 +823,21 @@
 
     if-eqz v7, :cond_11
 
-    mul-float v3, v3, v10
+    mul-float/2addr v3, v10
 
-    mul-float v6, v6, v11
+    mul-float/2addr v6, v11
 
     add-float/2addr v3, v6
 
-    mul-float v8, v8, v10
+    mul-float/2addr v8, v10
 
-    mul-float v13, v13, v11
+    mul-float/2addr v13, v11
 
     add-float/2addr v8, v13
 
-    mul-float v14, v14, v10
+    mul-float/2addr v14, v10
 
-    mul-float v12, v12, v11
+    mul-float/2addr v12, v11
 
     add-float/2addr v14, v12
 
@@ -1051,34 +1051,34 @@
 
     iget-wide v7, v3, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$VisibleReaction;->documentId:J
 
-    const-wide/16 v10, 0x7d0
+    const-wide/16 v10, 0x0
 
-    const-wide/16 v12, 0x0
+    cmp-long v3, v7, v10
 
-    cmp-long v3, v7, v12
+    const-wide/16 v7, 0x7d0
 
     if-eqz v3, :cond_19
 
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
-    move-result-wide v7
+    move-result-wide v12
 
     iget-object v3, v0, Lorg/telegram/ui/Components/Reactions/ReactionsEffectOverlay$1;->this$0:Lorg/telegram/ui/Components/Reactions/ReactionsEffectOverlay;
 
     iget-wide v14, v3, Lorg/telegram/ui/Components/Reactions/ReactionsEffectOverlay;->startTime:J
 
-    sub-long/2addr v7, v14
+    sub-long/2addr v12, v14
 
-    cmp-long v3, v7, v10
+    cmp-long v3, v12, v7
 
     if-gtz v3, :cond_1b
 
     :cond_19
     iget v3, v0, Lorg/telegram/ui/Components/Reactions/ReactionsEffectOverlay$1;->val$animationType:I
 
-    const/4 v7, 0x1
+    const/4 v12, 0x1
 
-    if-ne v3, v7, :cond_1a
+    if-ne v3, v12, :cond_1a
 
     iget-object v3, v0, Lorg/telegram/ui/Components/Reactions/ReactionsEffectOverlay$1;->this$0:Lorg/telegram/ui/Components/Reactions/ReactionsEffectOverlay;
 
@@ -1130,23 +1130,23 @@
     :cond_1a
     iget-object v3, v0, Lorg/telegram/ui/Components/Reactions/ReactionsEffectOverlay$1;->val$visibleReaction:Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$VisibleReaction;
 
-    iget-wide v7, v3, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$VisibleReaction;->documentId:J
+    iget-wide v12, v3, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$VisibleReaction;->documentId:J
 
-    cmp-long v3, v7, v12
+    cmp-long v3, v12, v10
 
     if-eqz v3, :cond_23
 
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
-    move-result-wide v7
+    move-result-wide v10
 
     iget-object v3, v0, Lorg/telegram/ui/Components/Reactions/ReactionsEffectOverlay$1;->this$0:Lorg/telegram/ui/Components/Reactions/ReactionsEffectOverlay;
 
     iget-wide v12, v3, Lorg/telegram/ui/Components/Reactions/ReactionsEffectOverlay;->startTime:J
 
-    sub-long/2addr v7, v12
+    sub-long/2addr v10, v12
 
-    cmp-long v3, v7, v10
+    cmp-long v3, v10, v7
 
     if-lez v3, :cond_23
 
@@ -1441,7 +1441,7 @@
 
     div-float/2addr v10, v11
 
-    mul-float v10, v10, v9
+    mul-float/2addr v10, v9
 
     sub-float/2addr v9, v10
 
@@ -1496,6 +1496,8 @@
 
     add-int/lit8 v3, v3, -0x1
 
+    move v11, v6
+
     const/4 v6, 0x0
 
     const/16 v8, 0x14
@@ -1503,8 +1505,6 @@
     const/4 v9, 0x1
 
     const/4 v10, 0x0
-
-    const/high16 v11, 0x41800000    # 16.0f
 
     const/high16 v16, 0x40000000    # 2.0f
 
@@ -1537,41 +1537,41 @@
 
     sub-float v12, v4, v8
 
-    mul-float v11, v11, v12
+    mul-float/2addr v11, v12
 
     iget v13, v7, Lorg/telegram/ui/Components/Reactions/ReactionsEffectOverlay$AvatarParticle;->toX:F
 
-    mul-float v13, v13, v8
+    mul-float/2addr v13, v8
 
     add-float/2addr v11, v13
 
     .line 456
     iget v13, v7, Lorg/telegram/ui/Components/Reactions/ReactionsEffectOverlay$AvatarParticle;->fromY:F
 
-    mul-float v13, v13, v12
+    mul-float/2addr v13, v12
 
     iget v12, v7, Lorg/telegram/ui/Components/Reactions/ReactionsEffectOverlay$AvatarParticle;->toY:F
 
-    mul-float v12, v12, v8
+    mul-float/2addr v12, v8
 
     add-float/2addr v13, v12
 
     iget v12, v7, Lorg/telegram/ui/Components/Reactions/ReactionsEffectOverlay$AvatarParticle;->jumpY:F
 
-    mul-float v12, v12, v9
+    mul-float/2addr v12, v9
 
     sub-float/2addr v13, v12
 
     .line 458
     iget v9, v7, Lorg/telegram/ui/Components/Reactions/ReactionsEffectOverlay$AvatarParticle;->randomScale:F
 
-    mul-float v9, v9, v8
+    mul-float/2addr v9, v8
 
     iget v12, v7, Lorg/telegram/ui/Components/Reactions/ReactionsEffectOverlay$AvatarParticle;->outProgress:F
 
     sub-float v12, v4, v12
 
-    mul-float v9, v9, v12
+    mul-float/2addr v9, v12
 
     .line 459
     iget-object v12, v0, Lorg/telegram/ui/Components/Reactions/ReactionsEffectOverlay$1;->this$0:Lorg/telegram/ui/Components/Reactions/ReactionsEffectOverlay;
@@ -1606,9 +1606,9 @@
 
     move-result v15
 
-    mul-float v14, v14, v15
+    mul-float/2addr v14, v15
 
-    mul-float v14, v14, v11
+    mul-float/2addr v14, v11
 
     add-float/2addr v12, v14
 
@@ -1645,9 +1645,9 @@
 
     move-result v15
 
-    mul-float v14, v14, v15
+    mul-float/2addr v14, v15
 
-    mul-float v14, v14, v13
+    mul-float/2addr v14, v13
 
     add-float/2addr v11, v14
 
@@ -1775,7 +1775,7 @@
 
     const/high16 v11, 0x41800000    # 16.0f
 
-    mul-float v9, v9, v11
+    mul-float/2addr v9, v11
 
     const/high16 v12, 0x43fa0000    # 500.0f
 
@@ -1861,7 +1861,7 @@
     :goto_11
     add-int/2addr v3, v9
 
-    const/high16 v6, 0x41800000    # 16.0f
+    move v6, v11
 
     goto/16 :goto_b
 

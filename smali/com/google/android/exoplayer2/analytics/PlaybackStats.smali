@@ -1003,9 +1003,9 @@
 
     const-wide/16 v2, 0x0
 
-    cmp-long v4, v0, v2
+    cmp-long v2, v0, v2
 
-    if-nez v4, :cond_0
+    if-nez v2, :cond_0
 
     const/4 v0, 0x0
 
@@ -1019,7 +1019,7 @@
 
     long-to-float v3, v3
 
-    mul-float v3, v3, v2
+    mul-float/2addr v3, v2
 
     long-to-float v0, v0
 
@@ -1039,9 +1039,9 @@
 
     const-wide/16 v2, 0x0
 
-    cmp-long v4, v0, v2
+    cmp-long v2, v0, v2
 
-    if-nez v4, :cond_0
+    if-nez v2, :cond_0
 
     const/4 v0, 0x0
 
@@ -1055,7 +1055,7 @@
 
     long-to-float v3, v3
 
-    mul-float v3, v3, v2
+    mul-float/2addr v3, v2
 
     long-to-float v0, v0
 
@@ -1091,7 +1091,7 @@
 .end method
 
 .method public getFatalErrorRate()F
-    .locals 5
+    .locals 4
 
     .line 1066
     invoke-virtual {p0}, Lcom/google/android/exoplayer2/analytics/PlaybackStats;->getTotalPlayTimeMs()J
@@ -1100,9 +1100,9 @@
 
     const-wide/16 v2, 0x0
 
-    cmp-long v4, v0, v2
+    cmp-long v2, v0, v2
 
-    if-nez v4, :cond_0
+    if-nez v2, :cond_0
 
     const/4 v0, 0x0
 
@@ -1116,7 +1116,7 @@
 
     int-to-float v3, v3
 
-    mul-float v3, v3, v2
+    mul-float/2addr v3, v2
 
     long-to-float v0, v0
 
@@ -1153,7 +1153,7 @@
 .end method
 
 .method public getJoinTimeRatio()F
-    .locals 5
+    .locals 4
 
     .line 919
     invoke-virtual {p0}, Lcom/google/android/exoplayer2/analytics/PlaybackStats;->getTotalPlayAndWaitTimeMs()J
@@ -1162,9 +1162,9 @@
 
     const-wide/16 v2, 0x0
 
-    cmp-long v4, v0, v2
+    cmp-long v2, v0, v2
 
-    if-nez v4, :cond_0
+    if-nez v2, :cond_0
 
     const/4 v0, 0x0
 
@@ -1187,16 +1187,16 @@
 .end method
 
 .method public getMeanAudioFormatBitrate()I
-    .locals 5
+    .locals 4
 
     .line 1018
     iget-wide v0, p0, Lcom/google/android/exoplayer2/analytics/PlaybackStats;->totalAudioFormatTimeMs:J
 
     const-wide/16 v2, 0x0
 
-    cmp-long v4, v0, v2
+    cmp-long v2, v0, v2
 
-    if-nez v4, :cond_0
+    if-nez v2, :cond_0
 
     const/4 v0, -0x1
 
@@ -1222,9 +1222,9 @@
 
     const-wide/16 v2, 0x0
 
-    cmp-long v4, v0, v2
+    cmp-long v2, v0, v2
 
-    if-nez v4, :cond_0
+    if-nez v2, :cond_0
 
     const/4 v0, -0x1
 
@@ -1236,7 +1236,7 @@
 
     const-wide/16 v4, 0x1f40
 
-    mul-long v2, v2, v4
+    mul-long/2addr v2, v4
 
     div-long/2addr v2, v0
 
@@ -1748,16 +1748,16 @@
 .end method
 
 .method public getMeanVideoFormatBitrate()I
-    .locals 5
+    .locals 4
 
     .line 1007
     iget-wide v0, p0, Lcom/google/android/exoplayer2/analytics/PlaybackStats;->totalVideoFormatBitrateTimeMs:J
 
     const-wide/16 v2, 0x0
 
-    cmp-long v4, v0, v2
+    cmp-long v2, v0, v2
 
-    if-nez v4, :cond_0
+    if-nez v2, :cond_0
 
     const/4 v0, -0x1
 
@@ -1776,16 +1776,16 @@
 .end method
 
 .method public getMeanVideoFormatHeight()I
-    .locals 5
+    .locals 4
 
     .line 996
     iget-wide v0, p0, Lcom/google/android/exoplayer2/analytics/PlaybackStats;->totalVideoFormatHeightTimeMs:J
 
     const-wide/16 v2, 0x0
 
-    cmp-long v4, v0, v2
+    cmp-long v2, v0, v2
 
-    if-nez v4, :cond_0
+    if-nez v2, :cond_0
 
     const/4 v0, -0x1
 
@@ -1850,7 +1850,7 @@
     :cond_0
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    move v1, v0
 
     .line 664
     :goto_0
@@ -1998,7 +1998,7 @@
 
     long-to-float p2, v1
 
-    mul-float p2, p2, p1
+    mul-float/2addr p2, p1
 
     float-to-long p1, p2
 
@@ -2008,7 +2008,7 @@
 .end method
 
 .method public getNonFatalErrorRate()F
-    .locals 5
+    .locals 4
 
     .line 1091
     invoke-virtual {p0}, Lcom/google/android/exoplayer2/analytics/PlaybackStats;->getTotalPlayTimeMs()J
@@ -2017,9 +2017,9 @@
 
     const-wide/16 v2, 0x0
 
-    cmp-long v4, v0, v2
+    cmp-long v2, v0, v2
 
-    if-nez v4, :cond_0
+    if-nez v2, :cond_0
 
     const/4 v0, 0x0
 
@@ -2033,7 +2033,7 @@
 
     int-to-float v3, v3
 
-    mul-float v3, v3, v2
+    mul-float/2addr v3, v2
 
     long-to-float v0, v0
 
@@ -2044,7 +2044,7 @@
 .end method
 
 .method public getPlaybackStateAtTime(J)I
-    .locals 6
+    .locals 5
 
     .line 642
     iget-object v0, p0, Lcom/google/android/exoplayer2/analytics/PlaybackStats;->playbackStateHistory:Ljava/util/List;
@@ -2073,9 +2073,9 @@
 
     iget-wide v3, v3, Lcom/google/android/exoplayer2/analytics/AnalyticsListener$EventTime;->realtimeMs:J
 
-    cmp-long v5, v3, p1
+    cmp-long v3, v3, p1
 
-    if-lez v5, :cond_0
+    if-lez v3, :cond_0
 
     goto :goto_1
 
@@ -2102,7 +2102,7 @@
 .end method
 
 .method public getRebufferRate()F
-    .locals 5
+    .locals 4
 
     .line 948
     invoke-virtual {p0}, Lcom/google/android/exoplayer2/analytics/PlaybackStats;->getTotalPlayTimeMs()J
@@ -2111,9 +2111,9 @@
 
     const-wide/16 v2, 0x0
 
-    cmp-long v4, v0, v2
+    cmp-long v2, v0, v2
 
-    if-nez v4, :cond_0
+    if-nez v2, :cond_0
 
     const/4 v0, 0x0
 
@@ -2127,7 +2127,7 @@
 
     int-to-float v3, v3
 
-    mul-float v3, v3, v2
+    mul-float/2addr v3, v2
 
     long-to-float v0, v0
 
@@ -2138,7 +2138,7 @@
 .end method
 
 .method public getRebufferTimeRatio()F
-    .locals 5
+    .locals 4
 
     .line 929
     invoke-virtual {p0}, Lcom/google/android/exoplayer2/analytics/PlaybackStats;->getTotalPlayAndWaitTimeMs()J
@@ -2147,9 +2147,9 @@
 
     const-wide/16 v2, 0x0
 
-    cmp-long v4, v0, v2
+    cmp-long v2, v0, v2
 
-    if-nez v4, :cond_0
+    if-nez v2, :cond_0
 
     const/4 v0, 0x0
 
@@ -2172,7 +2172,7 @@
 .end method
 
 .method public getSeekTimeRatio()F
-    .locals 5
+    .locals 4
 
     .line 939
     invoke-virtual {p0}, Lcom/google/android/exoplayer2/analytics/PlaybackStats;->getTotalPlayAndWaitTimeMs()J
@@ -2181,9 +2181,9 @@
 
     const-wide/16 v2, 0x0
 
-    cmp-long v4, v0, v2
+    cmp-long v2, v0, v2
 
-    if-nez v4, :cond_0
+    if-nez v2, :cond_0
 
     const/4 v0, 0x0
 
@@ -2355,7 +2355,7 @@
 .end method
 
 .method public getWaitTimeRatio()F
-    .locals 5
+    .locals 4
 
     .line 909
     invoke-virtual {p0}, Lcom/google/android/exoplayer2/analytics/PlaybackStats;->getTotalPlayAndWaitTimeMs()J
@@ -2364,9 +2364,9 @@
 
     const-wide/16 v2, 0x0
 
-    cmp-long v4, v0, v2
+    cmp-long v2, v0, v2
 
-    if-nez v4, :cond_0
+    if-nez v2, :cond_0
 
     const/4 v0, 0x0
 

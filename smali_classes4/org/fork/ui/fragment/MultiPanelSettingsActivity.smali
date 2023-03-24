@@ -598,7 +598,7 @@
     if-eqz v1, :cond_1
 
     :cond_0
-    const/4 v0, 0x0
+    move v0, v3
 
     goto :goto_0
 
@@ -657,13 +657,13 @@
 
     if-eqz v1, :cond_2
 
-    const/4 v0, 0x1
+    move v0, v4
 
     :goto_0
     if-eqz v0, :cond_5
 
     :cond_4
-    const/4 v3, 0x1
+    move v3, v4
 
     :cond_5
     return v3

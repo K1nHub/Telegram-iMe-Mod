@@ -93,7 +93,7 @@
 
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    move v1, v0
 
     :goto_0
     const/16 v2, 0xb
@@ -167,7 +167,7 @@
     goto :goto_2
 
     :cond_1
-    const/4 v3, 0x0
+    move v3, v0
 
     .line 103
     :goto_2
@@ -546,7 +546,7 @@
 
     if-ne v0, v3, :cond_2
 
-    const/4 v0, -0x1
+    move v0, v4
 
     goto :goto_0
 
@@ -774,7 +774,7 @@
 
     add-int/2addr v1, p1
 
-    mul-int p4, p4, v1
+    mul-int/2addr p4, v1
 
     const/16 v1, 0xa
 
@@ -791,7 +791,7 @@
 
     add-int/2addr v0, p2
 
-    mul-int p5, p5, v0
+    mul-int/2addr p5, v0
 
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 

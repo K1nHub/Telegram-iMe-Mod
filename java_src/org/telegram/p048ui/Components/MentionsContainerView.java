@@ -153,14 +153,14 @@ public class MentionsContainerView extends BlurredFrameLayout {
                         if (tLRPC$Document != null) {
                             TLRPC$PhotoSize closestPhotoSizeWithSize2 = FileLoader.getClosestPhotoSizeWithSize(tLRPC$Document.thumbs, 90);
                             Size size2 = this.size;
-                            size2.width = closestPhotoSizeWithSize2 != null ? closestPhotoSizeWithSize2.f1530w : 100.0f;
-                            size2.height = closestPhotoSizeWithSize2 != null ? closestPhotoSizeWithSize2.f1529h : 100.0f;
+                            size2.width = closestPhotoSizeWithSize2 != null ? closestPhotoSizeWithSize2.f1531w : 100.0f;
+                            size2.height = closestPhotoSizeWithSize2 != null ? closestPhotoSizeWithSize2.f1530h : 100.0f;
                             while (i4 < tLRPC$BotInlineResult.document.attributes.size()) {
                                 TLRPC$DocumentAttribute tLRPC$DocumentAttribute = tLRPC$BotInlineResult.document.attributes.get(i4);
                                 if ((tLRPC$DocumentAttribute instanceof TLRPC$TL_documentAttributeImageSize) || (tLRPC$DocumentAttribute instanceof TLRPC$TL_documentAttributeVideo)) {
                                     Size size3 = this.size;
-                                    size3.width = tLRPC$DocumentAttribute.f1510w;
-                                    size3.height = tLRPC$DocumentAttribute.f1509h;
+                                    size3.width = tLRPC$DocumentAttribute.f1511w;
+                                    size3.height = tLRPC$DocumentAttribute.f1510h;
                                     break;
                                 }
                                 i4++;
@@ -170,8 +170,8 @@ public class MentionsContainerView extends BlurredFrameLayout {
                                 TLRPC$DocumentAttribute tLRPC$DocumentAttribute2 = tLRPC$BotInlineResult.content.attributes.get(i4);
                                 if ((tLRPC$DocumentAttribute2 instanceof TLRPC$TL_documentAttributeImageSize) || (tLRPC$DocumentAttribute2 instanceof TLRPC$TL_documentAttributeVideo)) {
                                     Size size4 = this.size;
-                                    size4.width = tLRPC$DocumentAttribute2.f1510w;
-                                    size4.height = tLRPC$DocumentAttribute2.f1509h;
+                                    size4.width = tLRPC$DocumentAttribute2.f1511w;
+                                    size4.height = tLRPC$DocumentAttribute2.f1510h;
                                     break;
                                 }
                                 i4++;
@@ -181,8 +181,8 @@ public class MentionsContainerView extends BlurredFrameLayout {
                                 TLRPC$DocumentAttribute tLRPC$DocumentAttribute3 = tLRPC$BotInlineResult.thumb.attributes.get(i4);
                                 if ((tLRPC$DocumentAttribute3 instanceof TLRPC$TL_documentAttributeImageSize) || (tLRPC$DocumentAttribute3 instanceof TLRPC$TL_documentAttributeVideo)) {
                                     Size size5 = this.size;
-                                    size5.width = tLRPC$DocumentAttribute3.f1510w;
-                                    size5.height = tLRPC$DocumentAttribute3.f1509h;
+                                    size5.width = tLRPC$DocumentAttribute3.f1511w;
+                                    size5.height = tLRPC$DocumentAttribute3.f1510h;
                                     break;
                                 }
                                 i4++;
@@ -191,8 +191,8 @@ public class MentionsContainerView extends BlurredFrameLayout {
                             TLRPC$Photo tLRPC$Photo = tLRPC$BotInlineResult.photo;
                             if (tLRPC$Photo != null && (closestPhotoSizeWithSize = FileLoader.getClosestPhotoSizeWithSize(tLRPC$Photo.sizes, AndroidUtilities.photoSize.intValue())) != null) {
                                 Size size6 = this.size;
-                                size6.width = closestPhotoSizeWithSize.f1530w;
-                                size6.height = closestPhotoSizeWithSize.f1529h;
+                                size6.width = closestPhotoSizeWithSize.f1531w;
+                                size6.height = closestPhotoSizeWithSize.f1530h;
                             }
                         }
                     }
@@ -515,7 +515,7 @@ public class MentionsContainerView extends BlurredFrameLayout {
                 this.listViewHiding = z;
                 final float translationY = this.listView.getTranslationY();
                 final float f5 = this.hideT;
-                final float f6 = z ? 1.0f : BitmapDescriptorFactory.HUE_RED;
+                final float f6 = z ? 1.0f : 0.0f;
                 if (translationY == f4) {
                     this.listViewTranslationAnimator = null;
                     Integer valueOf = Integer.valueOf(z ? 8 : 0);

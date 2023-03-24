@@ -107,7 +107,7 @@
 
     if-le v7, v6, :cond_6
 
-    const/4 v7, -0x1
+    move v7, v3
 
     :cond_6
     add-int/lit8 v6, v7, 0x2
@@ -132,12 +132,12 @@
 
     if-ne v6, v5, :cond_7
 
-    const/4 v6, 0x1
+    move v6, v8
 
     goto :goto_1
 
     :cond_7
-    const/4 v6, 0x0
+    move v6, v2
 
     :goto_1
     if-eqz v6, :cond_9

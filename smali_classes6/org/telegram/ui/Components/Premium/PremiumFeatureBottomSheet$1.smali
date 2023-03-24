@@ -67,7 +67,7 @@
 
     const v2, 0x3f266666    # 0.65f
 
-    mul-float v1, v1, v2
+    mul-float/2addr v1, v2
 
     float-to-int v1, v1
 

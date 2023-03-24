@@ -116,15 +116,15 @@
 
     iget v1, p0, Lorg/telegram/ui/Components/AnimatedArrowDrawable;->animateToProgress:F
 
-    const/high16 v4, 0x43340000    # 180.0f
+    cmpg-float v4, v0, v1
 
-    cmpg-float v5, v0, v1
+    const/high16 v5, 0x43340000    # 180.0f
 
-    if-gez v5, :cond_0
+    if-gez v4, :cond_0
 
     long-to-float v2, v2
 
-    div-float/2addr v2, v4
+    div-float/2addr v2, v5
 
     add-float/2addr v0, v2
 
@@ -143,7 +143,7 @@
     :cond_0
     long-to-float v2, v2
 
-    div-float/2addr v2, v4
+    div-float/2addr v2, v5
 
     sub-float/2addr v0, v2
 
@@ -182,7 +182,7 @@
 
     const/high16 v1, 0x40000000    # 2.0f
 
-    mul-float v0, v0, v1
+    mul-float/2addr v0, v1
 
     const/high16 v1, 0x3f800000    # 1.0f
 
@@ -222,7 +222,7 @@
 
     int-to-float v7, v7
 
-    mul-float v7, v7, v0
+    mul-float/2addr v7, v0
 
     sub-float/2addr v5, v7
 
@@ -251,7 +251,7 @@
 
     int-to-float v7, v7
 
-    mul-float v7, v7, v0
+    mul-float/2addr v7, v0
 
     add-float/2addr v5, v7
 
@@ -278,7 +278,7 @@
 
     int-to-float v4, v4
 
-    mul-float v4, v4, v0
+    mul-float/2addr v4, v0
 
     sub-float/2addr v3, v4
 
@@ -314,7 +314,7 @@
 
     int-to-float v7, v7
 
-    mul-float v7, v7, v0
+    mul-float/2addr v7, v0
 
     sub-float/2addr v5, v7
 
@@ -341,7 +341,7 @@
 
     int-to-float v5, v5
 
-    mul-float v5, v5, v0
+    mul-float/2addr v5, v0
 
     add-float/2addr v3, v5
 
@@ -370,7 +370,7 @@
 
     int-to-float v4, v4
 
-    mul-float v4, v4, v0
+    mul-float/2addr v4, v0
 
     sub-float/2addr v3, v4
 

@@ -463,7 +463,7 @@
 
     long-to-float v0, v0
 
-    mul-float p1, p1, v0
+    mul-float/2addr p1, v0
 
     float-to-int p1, p1
 
@@ -486,22 +486,22 @@
 
     iget-wide v0, v0, Lcom/google/firebase/firestore/local/LruGarbageCollector$Params;->minBytesThreshold:J
 
-    const/4 v2, 0x0
+    const-wide/16 v2, -0x1
 
-    const-string v3, "LruGarbageCollector"
+    cmp-long v0, v0, v2
 
-    const-wide/16 v4, -0x1
+    const/4 v1, 0x0
 
-    cmp-long v6, v0, v4
+    const-string v2, "LruGarbageCollector"
 
-    if-nez v6, :cond_0
+    if-nez v0, :cond_0
 
-    new-array p1, v2, [Ljava/lang/Object;
+    new-array p1, v1, [Ljava/lang/Object;
 
     const-string v0, "Garbage collection skipped; disabled"
 
     .line 233
-    invoke-static {v3, v0, p1}, Lcom/google/firebase/firestore/util/Logger;->debug(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-static {v2, v0, p1}, Lcom/google/firebase/firestore/util/Logger;->debug(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
 
     .line 234
     invoke-static {}, Lcom/google/firebase/firestore/local/LruGarbageCollector$Results;->DidNotRun()Lcom/google/firebase/firestore/local/LruGarbageCollector$Results;
@@ -514,27 +514,27 @@
     :cond_0
     invoke-virtual {p0}, Lcom/google/firebase/firestore/local/LruGarbageCollector;->getByteSize()J
 
-    move-result-wide v0
+    move-result-wide v3
 
     .line 238
-    iget-object v4, p0, Lcom/google/firebase/firestore/local/LruGarbageCollector;->params:Lcom/google/firebase/firestore/local/LruGarbageCollector$Params;
+    iget-object v0, p0, Lcom/google/firebase/firestore/local/LruGarbageCollector;->params:Lcom/google/firebase/firestore/local/LruGarbageCollector$Params;
 
-    iget-wide v4, v4, Lcom/google/firebase/firestore/local/LruGarbageCollector$Params;->minBytesThreshold:J
+    iget-wide v5, v0, Lcom/google/firebase/firestore/local/LruGarbageCollector$Params;->minBytesThreshold:J
 
-    cmp-long v6, v0, v4
+    cmp-long v0, v3, v5
 
-    if-gez v6, :cond_1
+    if-gez v0, :cond_1
 
     .line 239
     new-instance p1, Ljava/lang/StringBuilder;
 
     invoke-direct {p1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v4, "Garbage collection skipped; Cache size "
+    const-string v0, "Garbage collection skipped; Cache size "
 
-    invoke-virtual {p1, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {p1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {p1, v0, v1}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+    invoke-virtual {p1, v3, v4}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
     const-string v0, " is lower than threshold "
 
@@ -542,17 +542,17 @@
 
     iget-object v0, p0, Lcom/google/firebase/firestore/local/LruGarbageCollector;->params:Lcom/google/firebase/firestore/local/LruGarbageCollector$Params;
 
-    iget-wide v0, v0, Lcom/google/firebase/firestore/local/LruGarbageCollector$Params;->minBytesThreshold:J
+    iget-wide v3, v0, Lcom/google/firebase/firestore/local/LruGarbageCollector$Params;->minBytesThreshold:J
 
-    invoke-virtual {p1, v0, v1}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+    invoke-virtual {p1, v3, v4}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
     invoke-virtual {p1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p1
 
-    new-array v0, v2, [Ljava/lang/Object;
+    new-array v0, v1, [Ljava/lang/Object;
 
-    invoke-static {v3, p1, v0}, Lcom/google/firebase/firestore/util/Logger;->debug(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-static {v2, p1, v0}, Lcom/google/firebase/firestore/util/Logger;->debug(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
 
     .line 245
     invoke-static {}, Lcom/google/firebase/firestore/local/LruGarbageCollector$Results;->DidNotRun()Lcom/google/firebase/firestore/local/LruGarbageCollector$Results;

@@ -75,7 +75,7 @@
 
     iget v0, p0, Lorg/telegram/ui/DefaultThemesPreviewCell$1$3;->val$fullDuration:F
 
-    mul-float p1, p1, v0
+    mul-float/2addr p1, v0
 
     iget v0, p0, Lorg/telegram/ui/DefaultThemesPreviewCell$1$3;->val$startDelay:F
 

@@ -244,7 +244,7 @@
 
     const/4 v4, 0x1
 
-    const/4 v5, 0x1
+    move v5, v4
 
     .line 248
     :cond_1
@@ -489,12 +489,12 @@
 
     if-nez v8, :cond_9
 
-    const/4 v9, 0x1
+    move v9, v4
 
     goto :goto_3
 
     :cond_9
-    const/4 v9, 0x0
+    move v9, v7
 
     :goto_3
     if-eqz v6, :cond_b
@@ -619,12 +619,12 @@
 
     if-nez v11, :cond_10
 
-    const/4 v12, 0x1
+    move v12, v4
 
     goto :goto_6
 
     :cond_10
-    const/4 v12, 0x0
+    move v12, v7
 
     :goto_6
     if-eqz v9, :cond_11

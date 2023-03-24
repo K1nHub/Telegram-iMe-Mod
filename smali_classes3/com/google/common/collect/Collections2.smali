@@ -72,7 +72,7 @@
 
     const-wide/16 v3, 0x8
 
-    mul-long v1, v1, v3
+    mul-long/2addr v1, v3
 
     const-wide/32 v3, 0x40000000
 

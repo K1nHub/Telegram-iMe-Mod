@@ -127,12 +127,13 @@ public class Detector {
         int i7;
         int i8;
         int i9;
+        int i10;
         Detector detector;
         boolean z;
         boolean z2;
-        int i10 = 1;
-        boolean z3 = Math.abs(i4 - i2) > Math.abs(i3 - i);
-        if (z3) {
+        boolean z3 = true;
+        boolean z4 = Math.abs(i4 - i2) > Math.abs(i3 - i);
+        if (z4) {
             i6 = i;
             i5 = i2;
             i8 = i3;
@@ -145,51 +146,55 @@ public class Detector {
         }
         int abs = Math.abs(i7 - i5);
         int abs2 = Math.abs(i8 - i6);
-        int i11 = (-abs) / 2;
-        int i12 = i5 < i7 ? 1 : -1;
-        int i13 = i6 < i8 ? 1 : -1;
-        int i14 = i7 + i12;
-        int i15 = i5;
-        int i16 = i6;
-        int i17 = 0;
+        int i11 = 2;
+        int i12 = (-abs) / 2;
+        int i13 = i5 < i7 ? 1 : -1;
+        int i14 = i6 < i8 ? 1 : -1;
+        int i15 = i7 + i13;
+        int i16 = i5;
+        int i17 = i6;
+        int i18 = 0;
         while (true) {
-            if (i15 == i14) {
-                i9 = i14;
+            if (i16 == i15) {
+                i9 = i15;
+                i10 = i11;
                 break;
             }
-            int i18 = z3 ? i16 : i15;
-            int i19 = z3 ? i15 : i16;
-            if (i17 == i10) {
+            int i19 = z4 ? i17 : i16;
+            int i20 = z4 ? i16 : i17;
+            if (i18 == z3) {
+                z = z4;
+                z2 = z3;
+                i9 = i15;
                 detector = this;
-                z = z3;
-                i9 = i14;
-                z2 = true;
             } else {
                 detector = this;
-                z = z3;
-                i9 = i14;
+                z = z4;
+                i9 = i15;
                 z2 = false;
             }
-            if (z2 == detector.image.get(i18, i19)) {
-                if (i17 == 2) {
-                    return MathUtils.distance(i15, i16, i5, i6);
+            if (z2 == detector.image.get(i19, i20)) {
+                if (i18 == 2) {
+                    return MathUtils.distance(i16, i17, i5, i6);
                 }
-                i17++;
+                i18++;
             }
-            i11 += abs2;
-            if (i11 > 0) {
-                if (i16 == i8) {
+            i12 += abs2;
+            if (i12 > 0) {
+                if (i17 == i8) {
+                    i10 = 2;
                     break;
                 }
-                i16 += i13;
-                i11 -= abs;
+                i17 += i14;
+                i12 -= abs;
             }
-            i15 += i12;
-            i14 = i9;
-            z3 = z;
-            i10 = 1;
+            i16 += i13;
+            i15 = i9;
+            z4 = z;
+            z3 = true;
+            i11 = 2;
         }
-        if (i17 == 2) {
+        if (i18 == i10) {
             return MathUtils.distance(i9, i8, i5, i6);
         }
         return Float.NaN;

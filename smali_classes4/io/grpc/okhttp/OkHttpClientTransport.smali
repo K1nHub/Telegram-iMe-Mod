@@ -1187,7 +1187,7 @@
 
     move-result p3
 
-    const/4 p4, 0x0
+    move p4, v7
 
     :goto_1
     if-ge p4, p3, :cond_1
@@ -1584,7 +1584,7 @@
 .end method
 
 .method private static readUtf8LineStrictUnbuffered(Lokio/Source;)Ljava/lang/String;
-    .locals 8
+    .locals 7
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -1606,9 +1606,9 @@
 
     const-wide/16 v5, -0x1
 
-    cmp-long v7, v3, v5
+    cmp-long v3, v3, v5
 
-    if-eqz v7, :cond_1
+    if-eqz v3, :cond_1
 
     .line 733
     invoke-virtual {v0}, Lokio/Buffer;->size()J
@@ -2696,12 +2696,12 @@
 
     if-eqz v1, :cond_0
 
-    const/4 v1, 0x1
+    move v1, v2
 
     goto :goto_0
 
     :cond_0
-    const/4 v1, 0x0
+    move v1, v3
 
     :goto_0
     invoke-static {v1}, Lcom/google/common/base/Preconditions;->checkState(Z)V
@@ -2731,7 +2731,7 @@
 
     const-wide/16 v4, 0x0
 
-    const/4 v2, 0x0
+    move v2, v3
 
     goto :goto_1
 
@@ -2779,11 +2779,11 @@
 
     ushr-long v6, v4, v6
 
-    long-to-int v7, v6
+    long-to-int v6, v6
 
-    long-to-int v5, v4
+    long-to-int v4, v4
 
-    invoke-virtual {v2, v3, v7, v5}, Lio/grpc/okhttp/ExceptionHandlingFrameWriter;->ping(ZII)V
+    invoke-virtual {v2, v3, v6, v4}, Lio/grpc/okhttp/ExceptionHandlingFrameWriter;->ping(ZII)V
 
     .line 382
     :cond_3

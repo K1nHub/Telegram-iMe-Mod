@@ -81,7 +81,7 @@
 
     div-float v8, v2, v4
 
-    mul-float v3, v3, v8
+    mul-float/2addr v3, v8
 
     .line 24
     sget v2, Lorg/telegram/ui/Charts/BaseChartView;->HORIZONTAL_PADDING:F
@@ -99,7 +99,7 @@
 
     if-gez v2, :cond_0
 
-    const/4 v12, 0x0
+    move v12, v11
 
     goto :goto_0
 
@@ -198,7 +198,7 @@
 
     sub-float v3, v5, v2
 
-    mul-float v2, v2, v15
+    mul-float/2addr v2, v15
 
     add-float/2addr v2, v5
 
@@ -232,10 +232,10 @@
     goto :goto_1
 
     :cond_3
-    const/high16 v16, 0x3f800000    # 1.0f
+    move/from16 v16, v5
 
     :goto_2
-    const/4 v4, 0x0
+    move v4, v11
 
     .line 59
     :goto_3
@@ -271,14 +271,13 @@
 
     move/from16 v18, v4
 
-    const/4 v10, 0x0
+    move v15, v5
 
-    const/high16 v15, 0x3f800000    # 1.0f
+    move/from16 v17, v6
 
-    :goto_4
-    const/16 v17, 0x2
+    move v10, v11
 
-    goto/16 :goto_c
+    goto/16 :goto_b
 
     .line 64
     :cond_4
@@ -290,18 +289,18 @@
 
     if-ge v2, v6, :cond_5
 
-    const/high16 v1, 0x3f800000    # 1.0f
+    move v1, v5
 
-    goto :goto_5
+    goto :goto_4
 
     .line 67
     :cond_5
     aget v1, v1, v10
 
-    mul-float v1, v1, v8
+    mul-float/2addr v1, v8
 
     .line 69
-    :goto_5
+    :goto_4
     iget-object v2, v3, Lorg/telegram/ui/Charts/view_data/LineViewData;->line:Lorg/telegram/ui/Charts/data/ChartData$Line;
 
     iget-object v2, v2, Lorg/telegram/ui/Charts/data/ChartData$Line;->y:[I
@@ -309,15 +308,15 @@
     .line 75
     iget v6, v3, Lorg/telegram/ui/Charts/view_data/LineViewData;->alpha:F
 
+    move/from16 v20, v11
+
     move v10, v12
 
-    const/16 v18, 0x0
+    move/from16 v18, v14
 
-    const/16 v19, 0x0
+    move/from16 v19, v18
 
-    const/16 v20, 0x0
-
-    :goto_6
+    :goto_5
     if-gt v10, v13, :cond_7
 
     div-float v21, v1, v15
@@ -329,7 +328,7 @@
 
     aget v15, v15, v10
 
-    mul-float v15, v15, v8
+    mul-float/2addr v15, v8
 
     add-float v21, v21, v15
 
@@ -344,7 +343,7 @@
 
     div-float/2addr v15, v14
 
-    mul-float v15, v15, v6
+    mul-float/2addr v15, v6
 
     .line 80
     invoke-virtual/range {p0 .. p0}, Landroid/view/View;->getMeasuredHeight()I
@@ -373,7 +372,7 @@
 
     int-to-float v2, v14
 
-    mul-float v15, v15, v2
+    mul-float/2addr v15, v2
 
     sub-float/2addr v5, v15
 
@@ -392,7 +391,7 @@
 
     const/16 v20, 0x1
 
-    goto :goto_7
+    goto :goto_6
 
     .line 89
     :cond_6
@@ -427,7 +426,7 @@
 
     aput v14, v2, v5
 
-    :goto_7
+    :goto_6
     add-int/lit8 v10, v10, 0x1
 
     move-object/from16 v2, v22
@@ -438,7 +437,7 @@
 
     const/high16 v15, 0x40000000    # 2.0f
 
-    goto :goto_6
+    goto :goto_5
 
     :cond_7
     if-nez v20, :cond_9
@@ -448,19 +447,19 @@
 
     if-eqz v2, :cond_8
 
-    goto :goto_8
+    goto :goto_7
 
     :cond_8
     iget-object v2, v3, Lorg/telegram/ui/Charts/view_data/LineViewData;->paint:Landroid/graphics/Paint;
 
-    goto :goto_9
+    goto :goto_8
 
     :cond_9
-    :goto_8
+    :goto_7
     iget-object v2, v3, Lorg/telegram/ui/Charts/view_data/BarViewData;->unselectedPaint:Landroid/graphics/Paint;
 
     .line 97
-    :goto_9
+    :goto_8
     invoke-virtual {v2, v1}, Landroid/graphics/Paint;->setStrokeWidth(F)V
 
     if-eqz v20, :cond_a
@@ -484,13 +483,13 @@
 
     invoke-virtual {v5, v6}, Landroid/graphics/Paint;->setColor(I)V
 
-    goto :goto_a
+    goto :goto_9
 
     :cond_a
     const/high16 v15, 0x3f800000    # 1.0f
 
     .line 103
-    :goto_a
+    :goto_9
     iget-boolean v5, v0, Lorg/telegram/ui/Charts/BaseChartView;->postTransition:Z
 
     if-eqz v5, :cond_b
@@ -510,12 +509,12 @@
 
     invoke-virtual {v5, v6}, Landroid/graphics/Paint;->setColor(I)V
 
-    goto :goto_b
+    goto :goto_a
 
     :cond_b
     const/4 v14, 0x0
 
-    :goto_b
+    :goto_a
     const/high16 v5, 0x437f0000    # 255.0f
 
     mul-float v5, v5, v16
@@ -581,23 +580,23 @@
 
     invoke-virtual {v1, v2}, Landroid/graphics/Paint;->setAlpha(I)V
 
-    goto :goto_c
+    goto :goto_b
 
     :cond_c
     move/from16 v18, v4
 
-    goto/16 :goto_4
+    const/16 v17, 0x2
 
-    :goto_c
+    :goto_b
     add-int/lit8 v4, v18, 0x1
 
-    const/high16 v5, 0x3f800000    # 1.0f
+    move v11, v10
 
-    const/4 v6, 0x2
+    move v5, v15
+
+    move/from16 v6, v17
 
     const/4 v10, 0x1
-
-    const/4 v11, 0x0
 
     const/high16 v15, 0x40000000    # 2.0f
 
@@ -706,7 +705,7 @@
 
     if-ge v9, v10, :cond_1
 
-    const/high16 v7, 0x3f800000    # 1.0f
+    move v7, v11
 
     goto :goto_1
 
@@ -718,7 +717,7 @@
 
     iget v9, v0, Lorg/telegram/ui/Charts/BaseChartView;->pickerWidth:F
 
-    mul-float v7, v7, v9
+    mul-float/2addr v7, v9
 
     .line 151
     :goto_1
@@ -753,7 +752,7 @@
 
     iget v4, v0, Lorg/telegram/ui/Charts/BaseChartView;->pickerWidth:F
 
-    mul-float v15, v15, v4
+    mul-float/2addr v15, v4
 
     .line 158
     sget-boolean v4, Lorg/telegram/ui/Charts/BaseChartView;->ANIMATE_PICKER_SIZES:Z
@@ -777,7 +776,7 @@
 
     div-float/2addr v14, v4
 
-    mul-float v14, v14, v10
+    mul-float/2addr v14, v10
 
     sub-float v4, v11, v14
 
@@ -785,7 +784,7 @@
 
     int-to-float v14, v14
 
-    mul-float v4, v4, v14
+    mul-float/2addr v4, v14
 
     .line 162
     iget-object v14, v6, Lorg/telegram/ui/Charts/view_data/LineViewData;->linesPath:[F

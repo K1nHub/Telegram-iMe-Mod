@@ -14,7 +14,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nTwitterFragment.kt\nKotlin\n*S Kotlin\n*F\n+ 1 TwitterFragment.kt\ncom/smedialink/ui/twitter/TwitterFragment\n+ 2 Delegates.kt\nmoxy/ktx/DelegatesKt\n+ 3 KoinComponent.kt\norg/koin/core/component/KoinComponentKt\n*L\n1#1,198:1\n13#2,4:199\n56#3,6:203\n56#3,6:209\n*S KotlinDebug\n*F\n+ 1 TwitterFragment.kt\ncom/smedialink/ui/twitter/TwitterFragment\n*L\n35#1:199,4\n40#1:203,6\n41#1:209,6\n*E\n"
+    value = "SMAP\nTwitterFragment.kt\nKotlin\n*S Kotlin\n*F\n+ 1 TwitterFragment.kt\ncom/smedialink/ui/twitter/TwitterFragment\n+ 2 Delegates.kt\nmoxy/ktx/DelegatesKt\n+ 3 KoinComponent.kt\norg/koin/core/component/KoinComponentKt\n*L\n1#1,201:1\n13#2,4:202\n56#3,6:206\n56#3,6:212\n*S KotlinDebug\n*F\n+ 1 TwitterFragment.kt\ncom/smedialink/ui/twitter/TwitterFragment\n*L\n35#1:202,4\n40#1:206,6\n41#1:212,6\n*E\n"
 .end annotation
 
 
@@ -326,10 +326,10 @@
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 102
+    .line 106
     invoke-direct {p0}, Lcom/smedialink/ui/twitter/TwitterFragment;->setupColors()V
 
-    .line 103
+    .line 107
     invoke-direct {p0}, Lcom/smedialink/ui/twitter/TwitterFragment;->getTweetsRecycleAdapter()Lcom/smedialink/ui/twitter/adapter/TweetsRecycleAdapter;
 
     move-result-object p0
@@ -375,20 +375,20 @@
 .method private final setupActionBar()V
     .locals 6
 
-    .line 112
+    .line 116
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
-    .line 113
+    .line 117
     sget v1, Lorg/telegram/messenger/R$drawable;->ic_ab_back:I
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/ActionBar;->setBackButtonImage(I)V
 
     const/4 v1, 0x1
 
-    .line 114
+    .line 118
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/ActionBar;->setAllowOverlayTitle(Z)V
 
-    .line 115
+    .line 119
     sget v1, Lorg/telegram/messenger/R$string;->twitter_title:I
 
     invoke-static {v1}, Lorg/telegram/messenger/LocaleController;->getInternalString(I)Ljava/lang/String;
@@ -397,12 +397,12 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/ActionBar;->setTitle(Ljava/lang/CharSequence;)V
 
-    .line 116
+    .line 120
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/ActionBar;->createMenu()Lorg/telegram/ui/ActionBar/ActionBarMenu;
 
     move-result-object v1
 
-    .line 117
+    .line 121
     sget v2, Lcom/smedialink/common/IdFabric$Menu;->OPTIONS:I
 
     sget v3, Lorg/telegram/messenger/R$drawable;->ic_ab_other:I
@@ -411,7 +411,7 @@
 
     move-result-object v1
 
-    .line 118
+    .line 122
     sget v2, Lorg/telegram/messenger/R$string;->AccDescrMoreOptions:I
 
     const-string v3, "AccDescrMoreOptions"
@@ -422,13 +422,13 @@
 
     invoke-virtual {v1, v2}, Landroid/widget/FrameLayout;->setContentDescription(Ljava/lang/CharSequence;)V
 
-    .line 120
+    .line 124
     sget v2, Lcom/smedialink/common/IdFabric$Menu;->OPEN_IN_TWITTER:I
 
-    .line 121
+    .line 125
     sget v3, Lorg/telegram/messenger/R$drawable;->fork_drawer_social_twitter:I
 
-    .line 122
+    .line 126
     invoke-direct {p0}, Lcom/smedialink/ui/twitter/TwitterFragment;->getResourceManager()Lcom/smedialink/storage/domain/utils/system/ResourceManager;
 
     move-result-object v4
@@ -439,10 +439,10 @@
 
     move-result-object v4
 
-    .line 119
+    .line 123
     invoke-virtual {v1, v2, v3, v4}, Lorg/telegram/ui/ActionBar/ActionBarMenuItem;->addSubItem(IILjava/lang/CharSequence;)Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;
 
-    .line 126
+    .line 130
     new-instance v1, Lcom/smedialink/ui/twitter/TwitterFragment$setupActionBar$1$2;
 
     invoke-direct {v1, p0}, Lcom/smedialink/ui/twitter/TwitterFragment$setupActionBar$1$2;-><init>(Lcom/smedialink/ui/twitter/TwitterFragment;)V
@@ -455,19 +455,19 @@
 .method private final setupColors()V
     .locals 4
 
-    .line 138
+    .line 142
     invoke-direct {p0}, Lcom/smedialink/ui/twitter/TwitterFragment;->getBinding()Lorg/telegram/messenger/databinding/ForkFragmentTwitterBinding;
 
     move-result-object v0
 
-    .line 139
+    .line 143
     invoke-virtual {v0}, Lorg/telegram/messenger/databinding/ForkFragmentTwitterBinding;->getRoot()Landroidx/swiperefreshlayout/widget/SwipeRefreshLayout;
 
     move-result-object v0
 
     const-string v1, "windowBackgroundGray"
 
-    .line 140
+    .line 144
     invoke-virtual {p0, v1}, Lorg/telegram/ui/ActionBar/BaseFragment;->getThemedColor(Ljava/lang/String;)I
 
     move-result v1
@@ -480,7 +480,7 @@
 
     const-string v2, "chats_actionBackground"
 
-    .line 141
+    .line 145
     invoke-virtual {p0, v2}, Lorg/telegram/ui/ActionBar/BaseFragment;->getThemedColor(Ljava/lang/String;)I
 
     move-result v2
@@ -497,19 +497,19 @@
 .method private final setupListeners()V
     .locals 2
 
-    .line 171
+    .line 174
     invoke-direct {p0}, Lcom/smedialink/ui/twitter/TwitterFragment;->getTweetsRecycleAdapter()Lcom/smedialink/ui/twitter/adapter/TweetsRecycleAdapter;
 
     move-result-object v0
 
-    .line 172
+    .line 175
     new-instance v1, Lcom/smedialink/ui/twitter/TwitterFragment$$ExternalSyntheticLambda1;
 
     invoke-direct {v1, v0, p0}, Lcom/smedialink/ui/twitter/TwitterFragment$$ExternalSyntheticLambda1;-><init>(Lcom/smedialink/ui/twitter/adapter/TweetsRecycleAdapter;Lcom/smedialink/ui/twitter/TwitterFragment;)V
 
     invoke-virtual {v0, v1}, Lcom/chad/library/adapter/base/BaseQuickAdapter;->setOnItemChildClickListener(Lcom/chad/library/adapter/base/listener/OnItemChildClickListener;)V
 
-    .line 182
+    .line 185
     invoke-direct {p0}, Lcom/smedialink/ui/twitter/TwitterFragment;->getBinding()Lorg/telegram/messenger/databinding/ForkFragmentTwitterBinding;
 
     move-result-object v0
@@ -518,7 +518,7 @@
 
     move-result-object v0
 
-    .line 183
+    .line 186
     new-instance v1, Lcom/smedialink/ui/twitter/TwitterFragment$$ExternalSyntheticLambda0;
 
     invoke-direct {v1, p0}, Lcom/smedialink/ui/twitter/TwitterFragment$$ExternalSyntheticLambda0;-><init>(Lcom/smedialink/ui/twitter/TwitterFragment;)V
@@ -547,14 +547,14 @@
 
     invoke-static {p3, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 173
+    .line 176
     invoke-virtual {p0, p4}, Lcom/chad/library/adapter/base/BaseQuickAdapter;->getItem(I)Ljava/lang/Object;
 
     move-result-object p0
 
     check-cast p0, Lcom/chad/library/adapter/base/entity/node/BaseNode;
 
-    .line 174
+    .line 177
     instance-of p2, p0, Lcom/smedialink/model/twitter/TweetItem;
 
     if-eqz p2, :cond_0
@@ -563,7 +563,7 @@
 
     move-result p2
 
-    .line 176
+    .line 179
     sget p3, Lorg/telegram/messenger/R$id;->image_share:I
 
     if-ne p2, p3, :cond_0
@@ -587,7 +587,7 @@
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 183
+    .line 186
     invoke-direct {p0}, Lcom/smedialink/ui/twitter/TwitterFragment;->getPresenter()Lcom/smedialink/ui/twitter/TwitterPresenter;
 
     move-result-object p0
@@ -598,29 +598,24 @@
 .end method
 
 .method private final setupLoadMore(Lcom/smedialink/ui/twitter/adapter/TweetsRecycleAdapter;)V
-    .locals 2
+    .locals 1
 
-    .line 162
+    .line 166
     invoke-virtual {p1}, Lcom/chad/library/adapter/base/BaseQuickAdapter;->getLoadMoreModule()Lcom/chad/library/adapter/base/module/BaseLoadMoreModule;
 
-    move-result-object v0
+    move-result-object p1
 
-    const/4 v1, 0x5
+    const/4 v0, 0x5
 
-    .line 163
-    invoke-virtual {v0, v1}, Lcom/chad/library/adapter/base/module/BaseLoadMoreModule;->setPreLoadNumber(I)V
+    .line 167
+    invoke-virtual {p1, v0}, Lcom/chad/library/adapter/base/module/BaseLoadMoreModule;->setPreLoadNumber(I)V
 
-    .line 164
-    new-instance v1, Lcom/smedialink/ui/twitter/TwitterFragment$$ExternalSyntheticLambda2;
+    .line 168
+    new-instance v0, Lcom/smedialink/ui/twitter/TwitterFragment$$ExternalSyntheticLambda2;
 
-    invoke-direct {v1, p0}, Lcom/smedialink/ui/twitter/TwitterFragment$$ExternalSyntheticLambda2;-><init>(Lcom/smedialink/ui/twitter/TwitterFragment;)V
+    invoke-direct {v0, p0}, Lcom/smedialink/ui/twitter/TwitterFragment$$ExternalSyntheticLambda2;-><init>(Lcom/smedialink/ui/twitter/TwitterFragment;)V
 
-    invoke-virtual {v0, v1}, Lcom/chad/library/adapter/base/module/BaseLoadMoreModule;->setOnLoadMoreListener(Lcom/chad/library/adapter/base/listener/OnLoadMoreListener;)V
-
-    const/4 v0, 0x0
-
-    .line 165
-    invoke-virtual {p1, v0}, Lcom/chad/library/adapter/base/BaseQuickAdapter;->setAnimationEnable(Z)V
+    invoke-virtual {p1, v0}, Lcom/chad/library/adapter/base/module/BaseLoadMoreModule;->setOnLoadMoreListener(Lcom/chad/library/adapter/base/listener/OnLoadMoreListener;)V
 
     return-void
 .end method
@@ -632,7 +627,7 @@
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 164
+    .line 168
     invoke-direct {p0}, Lcom/smedialink/ui/twitter/TwitterFragment;->getPresenter()Lcom/smedialink/ui/twitter/TwitterPresenter;
 
     move-result-object p0
@@ -651,49 +646,49 @@
 .method private final setupRecycleView()V
     .locals 4
 
-    .line 147
+    .line 151
     invoke-direct {p0}, Lcom/smedialink/ui/twitter/TwitterFragment;->getBinding()Lorg/telegram/messenger/databinding/ForkFragmentTwitterBinding;
 
     move-result-object v0
 
     iget-object v0, v0, Lorg/telegram/messenger/databinding/ForkFragmentTwitterBinding;->recycleTweets:Landroidx/recyclerview/widget/RecyclerView;
 
-    .line 148
+    .line 152
     invoke-direct {p0}, Lcom/smedialink/ui/twitter/TwitterFragment;->getTweetsRecycleAdapter()Lcom/smedialink/ui/twitter/adapter/TweetsRecycleAdapter;
 
     move-result-object v1
 
-    .line 149
+    .line 153
     invoke-virtual {v1}, Lcom/smedialink/ui/twitter/adapter/TweetsRecycleAdapter;->getGlobalStateProvider()Lcom/smedialink/ui/adapter/provider/GlobalStateProvider;
 
     move-result-object v2
 
     const/4 v3, 0x1
 
-    .line 150
+    .line 154
     invoke-virtual {v2, v3}, Lcom/smedialink/ui/adapter/provider/GlobalStateProvider;->setMatchParentHeight(Z)V
 
-    .line 151
+    .line 155
     new-instance v3, Lcom/smedialink/ui/twitter/TwitterFragment$setupRecycleView$1$1$1$1;
 
     invoke-direct {v3, p0}, Lcom/smedialink/ui/twitter/TwitterFragment$setupRecycleView$1$1$1$1;-><init>(Lcom/smedialink/ui/twitter/TwitterFragment;)V
 
     invoke-virtual {v2, v3}, Lcom/smedialink/ui/adapter/provider/GlobalStateProvider;->setOnRetryButtonClickAction(Lkotlin/jvm/functions/Function0;)V
 
-    .line 153
+    .line 157
     new-instance v2, Lcom/smedialink/ui/twitter/adapter/diff/TweetsDiffCallback;
 
     invoke-direct {v2}, Lcom/smedialink/ui/twitter/adapter/diff/TweetsDiffCallback;-><init>()V
 
     invoke-virtual {v1, v2}, Lcom/chad/library/adapter/base/BaseQuickAdapter;->setDiffCallback(Landroidx/recyclerview/widget/DiffUtil$ItemCallback;)V
 
-    .line 154
+    .line 158
     invoke-direct {p0, v1}, Lcom/smedialink/ui/twitter/TwitterFragment;->setupLoadMore(Lcom/smedialink/ui/twitter/adapter/TweetsRecycleAdapter;)V
 
-    .line 148
+    .line 152
     invoke-virtual {v0, v1}, Landroidx/recyclerview/widget/RecyclerView;->setAdapter(Landroidx/recyclerview/widget/RecyclerView$Adapter;)V
 
-    .line 156
+    .line 160
     new-instance v1, Landroidx/recyclerview/widget/LinearLayoutManager;
 
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
@@ -726,7 +721,7 @@
 
     new-array v1, v1, [Lorg/telegram/ui/ActionBar/ThemeDescription;
 
-    .line 97
+    .line 101
     new-instance v10, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v3, v0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
@@ -751,7 +746,7 @@
 
     aput-object v10, v1, v2
 
-    .line 98
+    .line 102
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v12, v0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
@@ -776,7 +771,7 @@
 
     aput-object v2, v1, v3
 
-    .line 99
+    .line 103
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v5, v0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
@@ -797,7 +792,7 @@
 
     aput-object v2, v1, v3
 
-    .line 100
+    .line 104
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v5, v0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
@@ -814,7 +809,7 @@
 
     aput-object v2, v1, v3
 
-    .line 101
+    .line 105
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     invoke-direct/range {p0 .. p0}, Lcom/smedialink/ui/twitter/TwitterFragment;->getBinding()Lorg/telegram/messenger/databinding/ForkFragmentTwitterBinding;
@@ -827,7 +822,7 @@
 
     sget v6, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_BACKGROUND:I
 
-    .line 96
+    .line 100
     new-instance v10, Lcom/smedialink/ui/twitter/TwitterFragment$$ExternalSyntheticLambda3;
 
     invoke-direct {v10, v0}, Lcom/smedialink/ui/twitter/TwitterFragment$$ExternalSyntheticLambda3;-><init>(Lcom/smedialink/ui/twitter/TwitterFragment;)V
@@ -836,14 +831,14 @@
 
     move-object v4, v2
 
-    .line 101
+    .line 105
     invoke-direct/range {v4 .. v11}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;Ljava/lang/String;)V
 
     const/4 v3, 0x4
 
     aput-object v2, v1, v3
 
-    .line 96
+    .line 100
     invoke-static {v1}, Lkotlin/collections/CollectionsKt;->arrayListOf([Ljava/lang/Object;)Ljava/util/ArrayList;
 
     move-result-object v1
@@ -889,7 +884,7 @@
 .method public onLoadMoreComplete()V
     .locals 2
 
-    .line 77
+    .line 81
     invoke-direct {p0}, Lcom/smedialink/ui/twitter/TwitterFragment;->getTweetsRecycleAdapter()Lcom/smedialink/ui/twitter/adapter/TweetsRecycleAdapter;
 
     move-result-object v0
@@ -908,7 +903,7 @@
 .method public onLoadMoreError()V
     .locals 1
 
-    .line 81
+    .line 85
     invoke-direct {p0}, Lcom/smedialink/ui/twitter/TwitterFragment;->getTweetsRecycleAdapter()Lcom/smedialink/ui/twitter/adapter/TweetsRecycleAdapter;
 
     move-result-object v0
@@ -918,6 +913,43 @@
     move-result-object v0
 
     invoke-virtual {v0}, Lcom/chad/library/adapter/base/module/BaseLoadMoreModule;->loadMoreFail()V
+
+    return-void
+.end method
+
+.method public onLoadMoreItems(Ljava/util/List;)V
+    .locals 3
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/util/List<",
+            "Lcom/chad/library/adapter/base/entity/node/BaseNode;",
+            ">;)V"
+        }
+    .end annotation
+
+    const-string v0, "items"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 74
+    invoke-direct {p0}, Lcom/smedialink/ui/twitter/TwitterFragment;->getTweetsRecycleAdapter()Lcom/smedialink/ui/twitter/adapter/TweetsRecycleAdapter;
+
+    move-result-object v0
+
+    .line 75
+    invoke-virtual {v0}, Lcom/chad/library/adapter/base/BaseQuickAdapter;->getLoadMoreModule()Lcom/chad/library/adapter/base/module/BaseLoadMoreModule;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Lcom/chad/library/adapter/base/module/BaseLoadMoreModule;->loadMoreComplete()V
+
+    const/4 v1, 0x0
+
+    const/4 v2, 0x2
+
+    .line 76
+    invoke-static {v0, p1, v1, v2, v1}, Lcom/chad/library/adapter/base/BaseQuickAdapter;->setDiffNewData$default(Lcom/chad/library/adapter/base/BaseQuickAdapter;Ljava/util/List;Ljava/lang/Runnable;ILjava/lang/Object;)V
 
     return-void
 .end method
@@ -935,12 +967,37 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 89
+    .line 93
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
 
     move-result-object v0
 
     invoke-static {v0, p1}, Lorg/telegram/messenger/browser/Browser;->openUrl(Landroid/content/Context;Ljava/lang/String;)V
+
+    return-void
+.end method
+
+.method public renderInitialItems(Ljava/util/List;)V
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/util/List<",
+            "Lcom/chad/library/adapter/base/entity/node/BaseNode;",
+            ">;)V"
+        }
+    .end annotation
+
+    const-string v0, "items"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 66
+    invoke-direct {p0}, Lcom/smedialink/ui/twitter/TwitterFragment;->getTweetsRecycleAdapter()Lcom/smedialink/ui/twitter/adapter/TweetsRecycleAdapter;
+
+    move-result-object v0
+
+    invoke-virtual {v0, p1}, Lcom/chad/library/adapter/base/BaseNodeAdapter;->setNewInstance(Ljava/util/List;)V
 
     return-void
 .end method
@@ -960,7 +1017,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 66
+    .line 70
     invoke-direct {p0}, Lcom/smedialink/ui/twitter/TwitterFragment;->getTweetsRecycleAdapter()Lcom/smedialink/ui/twitter/adapter/TweetsRecycleAdapter;
 
     move-result-object v0
@@ -981,7 +1038,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 93
+    .line 97
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
 
     move-result-object v0

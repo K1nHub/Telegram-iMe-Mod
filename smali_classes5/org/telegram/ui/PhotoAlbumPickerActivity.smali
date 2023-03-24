@@ -829,7 +829,7 @@
     .line 469
     iput-object v2, p0, Lorg/telegram/ui/PhotoAlbumPickerActivity;->itemCells:[Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;
 
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_0
     if-ge v2, v4, :cond_9
@@ -868,22 +868,22 @@
 
     if-nez v2, :cond_3
 
-    const/4 v8, 0x1
+    move v8, v3
 
     goto :goto_1
 
     :cond_3
-    const/4 v8, 0x0
+    move v8, v1
 
     :goto_1
     if-ne v2, v3, :cond_4
 
-    const/4 v9, 0x1
+    move v9, v3
 
     goto :goto_2
 
     :cond_4
-    const/4 v9, 0x0
+    move v9, v1
 
     :goto_2
     invoke-direct {v6, v7, v8, v9}, Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;-><init>(Landroid/content/Context;ZZ)V
@@ -1607,9 +1607,9 @@
 
     div-long/2addr v4, v6
 
-    long-to-int v5, v4
+    long-to-int v4, v4
 
-    iput v5, v3, Lorg/telegram/messenger/MediaController$SearchImage;->date:I
+    iput v4, v3, Lorg/telegram/messenger/MediaController$SearchImage;->date:I
 
     :cond_7
     :goto_3
@@ -1644,12 +1644,12 @@
 
     if-eqz v0, :cond_0
 
-    const/4 v0, 0x1
+    move v0, v1
 
     goto :goto_0
 
     :cond_0
-    const/4 v0, 0x0
+    move v0, v2
 
     :goto_0
     if-ne p1, v0, :cond_1
@@ -1739,12 +1739,12 @@
 
     if-eqz p1, :cond_5
 
-    const/high16 v4, 0x3f800000    # 1.0f
+    move v4, v3
 
     goto :goto_3
 
     :cond_5
-    const v4, 0x3e4ccccd    # 0.2f
+    move v4, v2
 
     :goto_3
     invoke-virtual {v0, v4}, Landroid/widget/FrameLayout;->setScaleX(F)V
@@ -1754,12 +1754,12 @@
 
     if-eqz p1, :cond_6
 
-    const/high16 v4, 0x3f800000    # 1.0f
+    move v4, v3
 
     goto :goto_4
 
     :cond_6
-    const v4, 0x3e4ccccd    # 0.2f
+    move v4, v2
 
     :goto_4
     invoke-virtual {v0, v4}, Landroid/widget/FrameLayout;->setScaleY(F)V
@@ -1771,12 +1771,12 @@
 
     if-eqz p1, :cond_7
 
-    const/high16 v5, 0x3f800000    # 1.0f
+    move v5, v3
 
     goto :goto_5
 
     :cond_7
-    const/4 v5, 0x0
+    move v5, v4
 
     :goto_5
     invoke-virtual {v0, v5}, Landroid/widget/FrameLayout;->setAlpha(F)V
@@ -1786,12 +1786,12 @@
 
     if-eqz p1, :cond_8
 
-    const/high16 v5, 0x3f800000    # 1.0f
+    move v5, v3
 
     goto :goto_6
 
     :cond_8
-    const v5, 0x3e4ccccd    # 0.2f
+    move v5, v2
 
     :goto_6
     invoke-virtual {v0, v5}, Landroid/view/View;->setScaleX(F)V
@@ -1801,7 +1801,7 @@
 
     if-eqz p1, :cond_9
 
-    const/high16 v2, 0x3f800000    # 1.0f
+    move v2, v3
 
     :cond_9
     invoke-virtual {v0, v2}, Landroid/view/View;->setScaleY(F)V
@@ -1814,7 +1814,7 @@
     goto :goto_7
 
     :cond_a
-    const/4 v3, 0x0
+    move v3, v4
 
     :goto_7
     invoke-virtual {v0, v3}, Landroid/view/View;->setAlpha(F)V
@@ -1826,7 +1826,7 @@
 
     if-eqz p1, :cond_b
 
-    const/4 v3, 0x0
+    move v3, v4
 
     goto :goto_8
 
@@ -2707,34 +2707,34 @@
 
     if-lt v10, v11, :cond_6
 
-    const/16 v13, 0x38
+    move v13, v1
 
     goto :goto_0
 
     :cond_6
-    const/16 v13, 0x3c
+    move v13, v6
 
     :goto_0
     if-lt v10, v11, :cond_7
 
-    const/16 v14, 0x38
+    move v14, v1
 
     goto :goto_1
 
     :cond_7
-    const/16 v14, 0x3c
+    move v14, v6
 
     :goto_1
     const/16 v15, 0x33
 
     if-lt v10, v11, :cond_8
 
-    const/16 v16, 0x2
+    move/from16 v16, v9
 
     goto :goto_2
 
     :cond_8
-    const/16 v16, 0x0
+    move/from16 v16, v8
 
     :goto_2
     const/16 v17, 0x0

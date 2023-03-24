@@ -2,44 +2,32 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lorg/telegram/ui/Components/FiltersListBottomSheet$FiltersListBottomSheetDelegate;
+.implements Lorg/telegram/ui/Components/RecyclerListView$OnItemClickListener;
 
 
 # instance fields
 .field public final synthetic f$0:Lorg/telegram/ui/DialogsActivity;
 
-.field public final synthetic f$1:Ljava/util/ArrayList;
-
-.field public final synthetic f$2:Lorg/telegram/messenger/MessagesController$DialogFilter;
-
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/DialogsActivity;Ljava/util/ArrayList;Lorg/telegram/messenger/MessagesController$DialogFilter;)V
+.method public synthetic constructor <init>(Lorg/telegram/ui/DialogsActivity;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda137;->f$0:Lorg/telegram/ui/DialogsActivity;
 
-    iput-object p2, p0, Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda137;->f$1:Ljava/util/ArrayList;
-
-    iput-object p3, p0, Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda137;->f$2:Lorg/telegram/messenger/MessagesController$DialogFilter;
-
     return-void
 .end method
 
 
 # virtual methods
-.method public final didSelectFilter(Lorg/telegram/messenger/MessagesController$DialogFilter;)V
-    .locals 3
+.method public final onItemClick(Landroid/view/View;I)V
+    .locals 1
 
     iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda137;->f$0:Lorg/telegram/ui/DialogsActivity;
 
-    iget-object v1, p0, Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda137;->f$1:Ljava/util/ArrayList;
-
-    iget-object v2, p0, Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda137;->f$2:Lorg/telegram/messenger/MessagesController$DialogFilter;
-
-    invoke-static {v0, v1, v2, p1}, Lorg/telegram/ui/DialogsActivity;->$r8$lambda$gnPsIu6B7nRr4I2c7lwFwhi2gsc(Lorg/telegram/ui/DialogsActivity;Ljava/util/ArrayList;Lorg/telegram/messenger/MessagesController$DialogFilter;Lorg/telegram/messenger/MessagesController$DialogFilter;)V
+    invoke-static {v0, p1, p2}, Lorg/telegram/ui/DialogsActivity;->$r8$lambda$J7EFSNgSQTAy_GH7nsEHzgSp49E(Lorg/telegram/ui/DialogsActivity;Landroid/view/View;I)V
 
     return-void
 .end method

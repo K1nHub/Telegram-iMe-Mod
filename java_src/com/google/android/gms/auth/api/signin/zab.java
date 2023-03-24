@@ -22,8 +22,8 @@ public final class zab implements Parcelable.Creator {
         ArrayList arrayList = null;
         String str7 = null;
         String str8 = null;
-        long j = 0;
         int i = 0;
+        long j = 0;
         while (parcel.dataPosition() < validateObjectHeader) {
             int readHeader = SafeParcelReader.readHeader(parcel);
             switch (SafeParcelReader.getFieldId(readHeader)) {

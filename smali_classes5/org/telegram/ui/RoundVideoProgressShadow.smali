@@ -152,7 +152,7 @@
 
     const/high16 v1, 0x437f0000    # 255.0f
 
-    mul-float p5, p5, v1
+    mul-float/2addr p5, v1
 
     float-to-int p5, p5
 

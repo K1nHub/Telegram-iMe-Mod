@@ -367,7 +367,7 @@
     if-eq p2, v5, :cond_8
 
     :cond_7
-    const/4 v2, 0x1
+    move v2, v3
 
     :cond_8
     invoke-virtual {p1, v1, v0, v4, v2}, Lorg/telegram/ui/Cells/NotificationsCheckCell;->setTextAndValueAndCheck(Ljava/lang/String;Ljava/lang/CharSequence;ZZ)V

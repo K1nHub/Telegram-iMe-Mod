@@ -19,14 +19,14 @@ public final class Bytes {
             if (r0 != 0) goto Lf
             return r1
         Lf:
-            r0 = 0
+            r0 = r1
         L10:
             int r2 = r5.length
             int r3 = r6.length
             int r2 = r2 - r3
             int r2 = r2 + 1
             if (r0 >= r2) goto L2a
-            r2 = 0
+            r2 = r1
         L18:
             int r3 = r6.length
             if (r2 >= r3) goto L29

@@ -194,7 +194,7 @@
 
 # virtual methods
 .method public updateColors()V
-    .locals 5
+    .locals 4
 
     .line 63
     iget-object v0, p0, Lorg/telegram/ui/Charts/view_data/LineViewData;->line:Lorg/telegram/ui/Charts/data/ChartData$Line;
@@ -237,9 +237,9 @@
 
     const-wide/high16 v2, 0x3fe0000000000000L    # 0.5
 
-    cmpg-double v4, v0, v2
+    cmpg-double v0, v0, v2
 
-    if-gez v4, :cond_1
+    if-gez v0, :cond_1
 
     const/4 v0, 0x1
 

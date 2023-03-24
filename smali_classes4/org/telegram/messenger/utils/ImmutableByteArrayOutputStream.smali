@@ -322,9 +322,9 @@
 
     ushr-long v3, p1, v3
 
-    long-to-int v4, v3
+    long-to-int v3, v3
 
-    int-to-byte v3, v4
+    int-to-byte v3, v3
 
     aput-byte v3, v0, v2
 
@@ -334,9 +334,9 @@
 
     ushr-long v4, p1, v4
 
-    long-to-int v5, v4
+    long-to-int v4, v4
 
-    int-to-byte v4, v5
+    int-to-byte v4, v4
 
     .line 65
     aput-byte v4, v0, v3
@@ -347,9 +347,9 @@
 
     ushr-long v4, p1, v4
 
-    long-to-int v5, v4
+    long-to-int v4, v4
 
-    int-to-byte v4, v5
+    int-to-byte v4, v4
 
     .line 66
     aput-byte v4, v0, v3
@@ -360,9 +360,9 @@
 
     ushr-long v4, p1, v4
 
-    long-to-int v5, v4
+    long-to-int v4, v4
 
-    int-to-byte v4, v5
+    int-to-byte v4, v4
 
     .line 67
     aput-byte v4, v0, v3
@@ -373,9 +373,9 @@
 
     ushr-long v4, p1, v4
 
-    long-to-int v5, v4
+    long-to-int v4, v4
 
-    int-to-byte v4, v5
+    int-to-byte v4, v4
 
     .line 68
     aput-byte v4, v0, v3
@@ -386,9 +386,9 @@
 
     ushr-long v4, p1, v4
 
-    long-to-int v5, v4
+    long-to-int v4, v4
 
-    int-to-byte v4, v5
+    int-to-byte v4, v4
 
     .line 69
     aput-byte v4, v0, v3
@@ -397,18 +397,18 @@
 
     ushr-long v4, p1, v1
 
-    long-to-int v5, v4
+    long-to-int v4, v4
 
-    int-to-byte v4, v5
+    int-to-byte v4, v4
 
     .line 70
     aput-byte v4, v0, v3
 
     add-int/lit8 v3, v2, 0x7
 
-    long-to-int p2, p1
+    long-to-int p1, p1
 
-    int-to-byte p1, p2
+    int-to-byte p1, p1
 
     .line 71
     aput-byte p1, v0, v3

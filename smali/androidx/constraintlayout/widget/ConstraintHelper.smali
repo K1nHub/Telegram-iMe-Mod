@@ -473,7 +473,7 @@
 
     if-nez p1, :cond_0
 
-    goto :goto_2
+    goto :goto_1
 
     .line 390
     :cond_0
@@ -493,7 +493,7 @@
 
     move-result v2
 
-    const/4 v3, 0x0
+    move v3, v0
 
     :goto_0
     if-ge v3, v2, :cond_3
@@ -526,13 +526,8 @@
     :try_end_0
     .catch Landroid/content/res/Resources$NotFoundException; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_1
-
-    :catch_0
-    nop
-
     .line 404
-    :goto_1
+    :catch_0
     invoke-virtual {p2, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v5
@@ -552,7 +547,7 @@
     goto :goto_0
 
     :cond_3
-    :goto_2
+    :goto_1
     return v0
 .end method
 
@@ -648,13 +643,8 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_1
-
     :catch_0
-    nop
-
     :cond_3
-    :goto_1
     if-nez v3, :cond_4
 
     .line 371
@@ -741,7 +731,7 @@
     goto :goto_0
 
     :cond_0
-    const/4 v1, 0x0
+    move v1, v3
 
     :goto_0
     const/4 v4, 0x0

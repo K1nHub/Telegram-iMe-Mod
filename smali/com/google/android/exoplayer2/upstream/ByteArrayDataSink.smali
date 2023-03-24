@@ -66,16 +66,16 @@
 .end method
 
 .method public open(Lcom/google/android/exoplayer2/upstream/DataSpec;)V
-    .locals 5
+    .locals 4
 
     .line 34
     iget-wide v0, p1, Lcom/google/android/exoplayer2/upstream/DataSpec;->length:J
 
     const-wide/16 v2, -0x1
 
-    cmp-long v4, v0, v2
+    cmp-long v2, v0, v2
 
-    if-nez v4, :cond_0
+    if-nez v2, :cond_0
 
     .line 35
     new-instance p1, Ljava/io/ByteArrayOutputStream;
@@ -89,9 +89,9 @@
     :cond_0
     const-wide/32 v2, 0x7fffffff
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-gtz v4, :cond_1
+    if-gtz v0, :cond_1
 
     const/4 v0, 0x1
 

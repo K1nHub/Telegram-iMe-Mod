@@ -411,11 +411,11 @@
 
     const/high16 v8, 0x42c80000    # 100.0f
 
-    const/4 v9, 0x1
+    move v9, v5
 
     move v5, v1
 
-    const/4 v1, 0x0
+    move v1, v6
 
     move v6, v8
 

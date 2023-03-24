@@ -110,7 +110,7 @@
 .end method
 
 .method public static readFormat(Lcom/google/android/exoplayer2/extractor/ExtractorInput;)Lcom/google/android/exoplayer2/extractor/wav/WavFormat;
-    .locals 14
+    .locals 13
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -134,20 +134,20 @@
     .line 100
     iget-wide v3, v2, Lcom/google/android/exoplayer2/extractor/wav/WavHeaderReader$ChunkHeader;->size:J
 
-    const/4 v5, 0x0
+    const-wide/16 v5, 0x10
 
-    const-wide/16 v6, 0x10
+    cmp-long v3, v3, v5
 
-    cmp-long v8, v3, v6
+    const/4 v4, 0x0
 
-    if-ltz v8, :cond_0
+    if-ltz v3, :cond_0
 
     const/4 v3, 0x1
 
     goto :goto_0
 
     :cond_0
-    const/4 v3, 0x0
+    move v3, v4
 
     :goto_0
     invoke-static {v3}, Lcom/google/android/exoplayer2/util/Assertions;->checkState(Z)V
@@ -157,40 +157,40 @@
 
     move-result-object v3
 
-    invoke-interface {p0, v3, v5, v1}, Lcom/google/android/exoplayer2/extractor/ExtractorInput;->peekFully([BII)V
+    invoke-interface {p0, v3, v4, v1}, Lcom/google/android/exoplayer2/extractor/ExtractorInput;->peekFully([BII)V
 
     .line 102
-    invoke-virtual {v0, v5}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->setPosition(I)V
+    invoke-virtual {v0, v4}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->setPosition(I)V
 
     .line 103
     invoke-virtual {v0}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->readLittleEndianUnsignedShort()I
 
-    move-result v7
+    move-result v6
 
     .line 104
     invoke-virtual {v0}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->readLittleEndianUnsignedShort()I
 
-    move-result v8
+    move-result v7
 
     .line 105
     invoke-virtual {v0}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->readLittleEndianUnsignedIntToInt()I
 
-    move-result v9
+    move-result v8
 
     .line 106
     invoke-virtual {v0}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->readLittleEndianUnsignedIntToInt()I
 
-    move-result v10
+    move-result v9
 
     .line 107
     invoke-virtual {v0}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->readLittleEndianUnsignedShort()I
 
-    move-result v11
+    move-result v10
 
     .line 108
     invoke-virtual {v0}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->readLittleEndianUnsignedShort()I
 
-    move-result v12
+    move-result v11
 
     .line 110
     iget-wide v2, v2, Lcom/google/android/exoplayer2/extractor/wav/WavHeaderReader$ChunkHeader;->size:J
@@ -205,9 +205,9 @@
     new-array v1, v0, [B
 
     .line 114
-    invoke-interface {p0, v1, v5, v0}, Lcom/google/android/exoplayer2/extractor/ExtractorInput;->peekFully([BII)V
+    invoke-interface {p0, v1, v4, v0}, Lcom/google/android/exoplayer2/extractor/ExtractorInput;->peekFully([BII)V
 
-    move-object v13, v1
+    move-object v12, v1
 
     goto :goto_1
 
@@ -215,7 +215,7 @@
     :cond_1
     sget-object v0, Lcom/google/android/exoplayer2/util/Util;->EMPTY_BYTE_ARRAY:[B
 
-    move-object v13, v0
+    move-object v12, v0
 
     .line 119
     :goto_1
@@ -229,16 +229,16 @@
 
     sub-long/2addr v0, v2
 
-    long-to-int v1, v0
+    long-to-int v0, v0
 
-    invoke-interface {p0, v1}, Lcom/google/android/exoplayer2/extractor/ExtractorInput;->skipFully(I)V
+    invoke-interface {p0, v0}, Lcom/google/android/exoplayer2/extractor/ExtractorInput;->skipFully(I)V
 
     .line 120
     new-instance p0, Lcom/google/android/exoplayer2/extractor/wav/WavFormat;
 
-    move-object v6, p0
+    move-object v5, p0
 
-    invoke-direct/range {v6 .. v13}, Lcom/google/android/exoplayer2/extractor/wav/WavFormat;-><init>(IIIIII[B)V
+    invoke-direct/range {v5 .. v12}, Lcom/google/android/exoplayer2/extractor/wav/WavFormat;-><init>(IIIIII[B)V
 
     return-object p0
 .end method
@@ -311,7 +311,7 @@
 .end method
 
 .method private static skipToChunk(ILcom/google/android/exoplayer2/extractor/ExtractorInput;Lcom/google/android/exoplayer2/util/ParsableByteArray;)Lcom/google/android/exoplayer2/extractor/wav/WavHeaderReader$ChunkHeader;
-    .locals 6
+    .locals 5
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -359,9 +359,9 @@
 
     const-wide/32 v1, 0x7fffffff
 
-    cmp-long v5, v3, v1
+    cmp-long v1, v3, v1
 
-    if-gtz v5, :cond_0
+    if-gtz v1, :cond_0
 
     long-to-int v0, v3
 

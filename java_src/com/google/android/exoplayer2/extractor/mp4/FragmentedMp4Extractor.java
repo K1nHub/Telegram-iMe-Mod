@@ -817,6 +817,7 @@ public class FragmentedMp4Extractor implements Extractor {
     private static Pair<Long, ChunkIndex> parseSidx(ParsableByteArray parsableByteArray, long j) throws ParserException {
         long readUnsignedLongToLong;
         long readUnsignedLongToLong2;
+        int[] iArr;
         parsableByteArray.setPosition(8);
         int parseFullAtomVersion = Atom.parseFullAtomVersion(parsableByteArray.readInt());
         parsableByteArray.skipBytes(4);
@@ -833,41 +834,40 @@ public class FragmentedMp4Extractor implements Extractor {
         long scaleLargeTimestamp = Util.scaleLargeTimestamp(j2, 1000000L, readUnsignedInt);
         parsableByteArray.skipBytes(2);
         int readUnsignedShort = parsableByteArray.readUnsignedShort();
-        int[] iArr = new int[readUnsignedShort];
+        int[] iArr2 = new int[readUnsignedShort];
         long[] jArr = new long[readUnsignedShort];
         long[] jArr2 = new long[readUnsignedShort];
         long[] jArr3 = new long[readUnsignedShort];
-        long j4 = j2;
-        long j5 = scaleLargeTimestamp;
+        long j4 = scaleLargeTimestamp;
         int i = 0;
+        long j5 = j2;
         while (i < readUnsignedShort) {
             int readInt = parsableByteArray.readInt();
             if ((readInt & Integer.MIN_VALUE) != 0) {
                 throw ParserException.createForMalformedContainer("Unhandled indirect reference", null);
             }
             long readUnsignedInt2 = parsableByteArray.readUnsignedInt();
-            iArr[i] = readInt & Integer.MAX_VALUE;
+            iArr2[i] = readInt & Integer.MAX_VALUE;
             jArr[i] = j3;
-            jArr3[i] = j5;
-            long j6 = j4 + readUnsignedInt2;
+            jArr3[i] = j4;
+            long j6 = j5 + readUnsignedInt2;
             long[] jArr4 = jArr2;
             long[] jArr5 = jArr3;
             int i2 = readUnsignedShort;
-            int[] iArr2 = iArr;
             long scaleLargeTimestamp2 = Util.scaleLargeTimestamp(j6, 1000000L, readUnsignedInt);
             jArr4[i] = scaleLargeTimestamp2 - jArr5[i];
             parsableByteArray.skipBytes(4);
-            j3 += iArr2[i];
+            j3 += iArr[i];
             i++;
-            iArr = iArr2;
+            iArr2 = iArr2;
             jArr3 = jArr5;
             jArr2 = jArr4;
             jArr = jArr;
             readUnsignedShort = i2;
-            j4 = j6;
-            j5 = scaleLargeTimestamp2;
+            j5 = j6;
+            j4 = scaleLargeTimestamp2;
         }
-        return Pair.create(Long.valueOf(scaleLargeTimestamp), new ChunkIndex(iArr, jArr, jArr2, jArr3));
+        return Pair.create(Long.valueOf(scaleLargeTimestamp), new ChunkIndex(iArr2, jArr, jArr2, jArr3));
     }
 
     private void readEncryptionData(ExtractorInput extractorInput) throws IOException {
@@ -896,6 +896,7 @@ public class FragmentedMp4Extractor implements Extractor {
         trackBundle.fragment.fillEncryptionData(extractorInput);
     }
 
+    /* JADX WARN: Multi-variable type inference failed */
     private boolean readSample(ExtractorInput extractorInput) throws IOException {
         int sampleData;
         TrackBundle trackBundle = this.currentTrackBundle;
@@ -987,7 +988,7 @@ public class FragmentedMp4Extractor implements Extractor {
                     this.nalStartCode.setPosition(0);
                     trackOutput.sampleData(this.nalStartCode, i);
                     trackOutput.sampleData(this.nalPrefix, i2);
-                    this.processSeiNalUnitPayload = this.ceaTrackOutputs.length > 0 && NalUnitUtil.isNalUnitSei(track.format.sampleMimeType, data[i]);
+                    this.processSeiNalUnitPayload = (this.ceaTrackOutputs.length <= 0 || !NalUnitUtil.isNalUnitSei(track.format.sampleMimeType, data[i])) ? 0 : i2;
                     this.sampleBytesWritten += 5;
                     this.sampleSize += i7;
                 } else {

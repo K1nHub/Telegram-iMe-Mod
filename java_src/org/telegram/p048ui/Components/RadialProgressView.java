@@ -116,15 +116,15 @@ public class RadialProgressView extends View {
         updateAnimation(j);
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:17:0x004c  */
-    /* JADX WARN: Removed duplicated region for block: B:40:0x00f0  */
+    /* JADX WARN: Removed duplicated region for block: B:17:0x004b  */
+    /* JADX WARN: Removed duplicated region for block: B:40:0x00e9  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct add '--show-bad-code' argument
     */
     private void updateAnimation(long r9) {
         /*
-            Method dump skipped, instructions count: 299
+            Method dump skipped, instructions count: 290
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: org.telegram.p048ui.Components.RadialProgressView.updateAnimation(long):void");

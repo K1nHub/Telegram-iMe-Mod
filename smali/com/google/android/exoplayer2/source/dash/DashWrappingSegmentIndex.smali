@@ -51,9 +51,9 @@
 
     iget-object p3, p3, Lcom/google/android/exoplayer2/extractor/ChunkIndex;->durationsUs:[J
 
-    long-to-int p2, p1
+    long-to-int p1, p1
 
-    aget-wide p1, p3, p2
+    aget-wide p1, p3, p1
 
     return-wide p1
 .end method
@@ -124,13 +124,13 @@
 
     iget-object v1, v0, Lcom/google/android/exoplayer2/extractor/ChunkIndex;->offsets:[J
 
-    long-to-int p2, p1
+    long-to-int p1, p1
 
-    aget-wide v2, v1, p2
+    aget-wide v2, v1, p1
 
-    iget-object p1, v0, Lcom/google/android/exoplayer2/extractor/ChunkIndex;->sizes:[I
+    iget-object p2, v0, Lcom/google/android/exoplayer2/extractor/ChunkIndex;->sizes:[I
 
-    aget p1, p1, p2
+    aget p1, p2, p1
 
     int-to-long v4, p1
 
@@ -151,9 +151,9 @@
 
     iget-object v0, v0, Lcom/google/android/exoplayer2/extractor/ChunkIndex;->timesUs:[J
 
-    long-to-int p2, p1
+    long-to-int p1, p1
 
-    aget-wide p1, v0, p2
+    aget-wide p1, v0, p1
 
     iget-wide v0, p0, Lcom/google/android/exoplayer2/source/dash/DashWrappingSegmentIndex;->timeOffsetUs:J
 

@@ -23,7 +23,7 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 121
+    .line 146
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -34,7 +34,7 @@
 .method public final getServerUrl()Ljava/lang/String;
     .locals 1
 
-    .line 129
+    .line 154
     sget-object v0, Lcom/smedialink/storage/data/manager/common/EnvironmentManager;->INSTANCE:Lcom/smedialink/storage/data/manager/common/EnvironmentManager;
 
     invoke-virtual {v0}, Lcom/smedialink/storage/data/manager/common/EnvironmentManager;->getEnvironmentInformation()Lcom/smedialink/storage/domain/model/common/EnvironmentInformation;

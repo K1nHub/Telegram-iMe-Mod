@@ -5,5 +5,7 @@ public interface Parser<MessageType> {
 
     MessageType parseFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException;
 
+    MessageType parseFrom(byte[] bArr) throws InvalidProtocolBufferException;
+
     MessageType parsePartialFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException;
 }

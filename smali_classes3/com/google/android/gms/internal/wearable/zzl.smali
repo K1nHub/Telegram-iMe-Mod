@@ -566,7 +566,7 @@
 
     const/4 v4, 0x0
 
-    const/16 v9, 0xe
+    move v9, v2
 
     :goto_1
     if-ge v7, v1, :cond_14
@@ -657,7 +657,7 @@
     goto :goto_3
 
     :cond_11
-    const/16 v9, 0xe
+    move v9, v2
 
     .line 64
     :cond_12
@@ -1109,7 +1109,7 @@
 
     move-result-object v0
 
-    const/16 v6, 0xe
+    move v6, v2
 
     :goto_3
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z

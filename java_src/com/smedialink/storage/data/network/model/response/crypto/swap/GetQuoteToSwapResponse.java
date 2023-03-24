@@ -19,7 +19,7 @@ public final class GetQuoteToSwapResponse {
     private final String quoteId;
     private final String spenderContractAddress;
     private final String swapMethod;
-    private final TransactionParamsResponse transactionParams;
+    private final TransactionParamsResponse.EVM transactionParams;
     private final String value;
 
     public final String component1() {
@@ -46,7 +46,7 @@ public final class GetQuoteToSwapResponse {
         return this.callData;
     }
 
-    public final TransactionParamsResponse component2() {
+    public final TransactionParamsResponse.EVM component2() {
         return this.transactionParams;
     }
 
@@ -78,7 +78,7 @@ public final class GetQuoteToSwapResponse {
         return this.amountBound;
     }
 
-    public final GetQuoteToSwapResponse copy(String quoteId, TransactionParamsResponse transactionParams, String inputCryptoTokenCode, String outputCryptoTokenCode, String swapMethod, String spenderContractAddress, String amountIn, String amountOut, String amountBound, List<String> path, BigDecimal executionPrice, String feeTokenCode, String str, String str2) {
+    public final GetQuoteToSwapResponse copy(String quoteId, TransactionParamsResponse.EVM transactionParams, String inputCryptoTokenCode, String outputCryptoTokenCode, String swapMethod, String spenderContractAddress, String amountIn, String amountOut, String amountBound, List<String> path, BigDecimal executionPrice, String feeTokenCode, String str, String str2) {
         Intrinsics.checkNotNullParameter(quoteId, "quoteId");
         Intrinsics.checkNotNullParameter(transactionParams, "transactionParams");
         Intrinsics.checkNotNullParameter(inputCryptoTokenCode, "inputCryptoTokenCode");
@@ -117,7 +117,7 @@ public final class GetQuoteToSwapResponse {
         return "GetQuoteToSwapResponse(quoteId=" + this.quoteId + ", transactionParams=" + this.transactionParams + ", inputCryptoTokenCode=" + this.inputCryptoTokenCode + ", outputCryptoTokenCode=" + this.outputCryptoTokenCode + ", swapMethod=" + this.swapMethod + ", spenderContractAddress=" + this.spenderContractAddress + ", amountIn=" + this.amountIn + ", amountOut=" + this.amountOut + ", amountBound=" + this.amountBound + ", path=" + this.path + ", executionPrice=" + this.executionPrice + ", feeTokenCode=" + this.feeTokenCode + ", value=" + this.value + ", callData=" + this.callData + ')';
     }
 
-    public GetQuoteToSwapResponse(String quoteId, TransactionParamsResponse transactionParams, String inputCryptoTokenCode, String outputCryptoTokenCode, String swapMethod, String spenderContractAddress, String amountIn, String amountOut, String amountBound, List<String> path, BigDecimal executionPrice, String feeTokenCode, String str, String str2) {
+    public GetQuoteToSwapResponse(String quoteId, TransactionParamsResponse.EVM transactionParams, String inputCryptoTokenCode, String outputCryptoTokenCode, String swapMethod, String spenderContractAddress, String amountIn, String amountOut, String amountBound, List<String> path, BigDecimal executionPrice, String feeTokenCode, String str, String str2) {
         Intrinsics.checkNotNullParameter(quoteId, "quoteId");
         Intrinsics.checkNotNullParameter(transactionParams, "transactionParams");
         Intrinsics.checkNotNullParameter(inputCryptoTokenCode, "inputCryptoTokenCode");
@@ -150,7 +150,7 @@ public final class GetQuoteToSwapResponse {
         return this.quoteId;
     }
 
-    public final TransactionParamsResponse getTransactionParams() {
+    public final TransactionParamsResponse.EVM getTransactionParams() {
         return this.transactionParams;
     }
 

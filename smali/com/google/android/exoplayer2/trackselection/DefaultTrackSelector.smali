@@ -521,7 +521,7 @@
 
     const/4 v2, 0x0
 
-    const/4 v3, 0x0
+    move v3, v2
 
     :goto_0
     if-ge v3, v0, :cond_0
@@ -886,7 +886,7 @@
 
     const v7, 0x3f7ae148    # 0.98f
 
-    mul-float v6, v6, v7
+    mul-float/2addr v6, v7
 
     float-to-int v6, v6
 
@@ -896,7 +896,7 @@
 
     int-to-float v3, v3
 
-    mul-float v3, v3, v7
+    mul-float/2addr v3, v7
 
     float-to-int v3, v3
 
@@ -927,12 +927,12 @@
 
     if-le p3, p4, :cond_0
 
-    const/4 v1, 0x1
+    move v1, p0
 
     goto :goto_0
 
     :cond_0
-    const/4 v1, 0x0
+    move v1, v0
 
     :goto_0
     if-le p1, p2, :cond_1
@@ -940,7 +940,7 @@
     goto :goto_1
 
     :cond_1
-    const/4 p0, 0x0
+    move p0, v0
 
     :goto_1
     if-eq v1, p0, :cond_2
@@ -1048,7 +1048,7 @@
     goto :goto_0
 
     :cond_1
-    const/4 v1, 0x4
+    move v1, v3
 
     goto :goto_0
 
@@ -1064,7 +1064,7 @@
     goto :goto_0
 
     :cond_2
-    const/4 v1, 0x3
+    move v1, v4
 
     goto :goto_0
 
@@ -1080,7 +1080,7 @@
     goto :goto_0
 
     :cond_3
-    const/4 v1, 0x2
+    move v1, v5
 
     goto :goto_0
 
@@ -1096,7 +1096,7 @@
     goto :goto_0
 
     :cond_4
-    const/4 v1, 0x1
+    move v1, v6
 
     goto :goto_0
 
@@ -1112,7 +1112,7 @@
     goto :goto_0
 
     :cond_5
-    const/4 v1, 0x0
+    move v1, v0
 
     :goto_0
     packed-switch v1, :pswitch_data_0
@@ -1351,7 +1351,7 @@
     goto :goto_0
 
     :cond_3
-    const/4 v1, 0x1
+    move v1, v3
 
     goto :goto_0
 
@@ -1367,7 +1367,7 @@
     goto :goto_0
 
     :cond_4
-    const/4 v1, 0x0
+    move v1, v0
 
     :goto_0
     packed-switch v1, :pswitch_data_0
@@ -1544,11 +1544,11 @@
 
     const/4 v1, -0x1
 
-    const/4 v2, 0x0
+    move v2, v0
 
-    const/4 v3, -0x1
+    move v3, v1
 
-    const/4 v4, -0x1
+    move v4, v3
 
     .line 2879
     :goto_0
@@ -1607,7 +1607,7 @@
     if-eq v3, v1, :cond_3
 
     :goto_1
-    const/4 p0, 0x0
+    move p0, v0
 
     goto :goto_3
 
@@ -1621,14 +1621,14 @@
     goto :goto_0
 
     :cond_5
-    const/4 p0, 0x1
+    move p0, v6
 
     :goto_3
     if-eq v4, v1, :cond_6
 
     if-eq v3, v1, :cond_6
 
-    const/4 v0, 0x1
+    move v0, v6
 
     :cond_6
     and-int/2addr p0, v0
@@ -1764,7 +1764,7 @@
 
     move-result p1
 
-    const/4 v1, 0x0
+    move v1, v0
 
     .line 2930
     :goto_0
@@ -2494,7 +2494,7 @@
 
     const/4 p3, 0x0
 
-    const/4 v0, 0x0
+    move v0, p3
 
     .line 2561
     :goto_0
@@ -2571,9 +2571,9 @@
 
     move-object v4, v2
 
-    const/4 v1, 0x0
+    move v1, v0
 
-    const/4 v3, 0x0
+    move v3, v1
 
     .line 2673
     :goto_0
@@ -2589,7 +2589,7 @@
     .line 2675
     aget-object v6, p3, v1
 
-    const/4 v7, 0x0
+    move v7, v0
 
     .line 2676
     :goto_1
@@ -2798,7 +2798,7 @@
 
     const/4 v2, 0x0
 
-    const/4 v3, 0x0
+    move v3, v2
 
     :goto_0
     const/4 v4, 0x0
@@ -2856,7 +2856,7 @@
     .line 2406
     new-array p4, v0, [Lcom/google/android/exoplayer2/RendererConfiguration;
 
-    const/4 p5, 0x0
+    move p5, v2
 
     :goto_1
     if-ge p5, v0, :cond_9
@@ -2890,13 +2890,13 @@
     goto :goto_2
 
     :cond_4
-    const/4 v3, 0x0
+    move v3, v2
 
     goto :goto_3
 
     :cond_5
     :goto_2
-    const/4 v3, 0x1
+    move v3, v6
 
     :goto_3
     if-nez v3, :cond_6
@@ -2917,7 +2917,7 @@
     goto :goto_4
 
     :cond_6
-    const/4 v6, 0x0
+    move v6, v2
 
     :cond_7
     :goto_4

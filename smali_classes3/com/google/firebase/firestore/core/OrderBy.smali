@@ -80,7 +80,7 @@
     move-result p1
 
     :goto_0
-    mul-int v0, v0, p1
+    mul-int/2addr v0, p1
 
     return v0
 
@@ -110,7 +110,7 @@
     goto :goto_1
 
     :cond_1
-    const/4 v1, 0x0
+    move v1, v0
 
     :goto_1
     new-array v0, v0, [Ljava/lang/Object;

@@ -189,7 +189,7 @@
 
     if-ne v2, v3, :cond_a
 
-    const/4 v2, 0x0
+    move v2, v1
 
     .line 7
     :goto_1

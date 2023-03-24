@@ -382,7 +382,7 @@
 
     if-ne v0, v4, :cond_1
 
-    const/4 v0, 0x0
+    move v0, v2
 
     .line 837
     :goto_0

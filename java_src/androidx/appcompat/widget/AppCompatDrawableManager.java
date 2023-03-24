@@ -229,9 +229,9 @@ public final class AppCompatDrawableManager {
                             if (r1 == 0) goto L17
                             int r2 = androidx.appcompat.R$attr.colorControlNormal
                         L14:
-                            r8 = -1
+                            r8 = r3
                         L15:
-                            r1 = 1
+                            r1 = r5
                             goto L44
                         L17:
                             int[] r1 = r6.COLORFILTER_COLOR_CONTROL_ACTIVATED
@@ -257,9 +257,9 @@ public final class AppCompatDrawableManager {
                             if (r8 != r1) goto L41
                             goto L14
                         L41:
-                            r8 = -1
-                            r1 = 0
-                            r2 = 0
+                            r8 = r3
+                            r1 = r4
+                            r2 = r1
                         L44:
                             if (r1 == 0) goto L61
                             boolean r1 = androidx.appcompat.widget.DrawableUtils.canSafelyMutateDrawable(r9)

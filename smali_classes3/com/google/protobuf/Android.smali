@@ -4,6 +4,8 @@
 
 
 # static fields
+.field private static ASSUME_ANDROID:Z
+
 .field private static final IS_ROBOLECTRIC:Z
 
 .field private static final MEMORY_CLASS:Ljava/lang/Class;
@@ -22,16 +24,21 @@
 
     const-string v0, "libcore.io.Memory"
 
-    .line 35
+    .line 41
     invoke-static {v0}, Lcom/google/protobuf/Android;->getClassForName(Ljava/lang/String;)Ljava/lang/Class;
 
     move-result-object v0
 
     sput-object v0, Lcom/google/protobuf/Android;->MEMORY_CLASS:Ljava/lang/Class;
 
+    .line 43
+    sget-boolean v0, Lcom/google/protobuf/Android;->ASSUME_ANDROID:Z
+
+    if-nez v0, :cond_0
+
     const-string v0, "org.robolectric.Robolectric"
 
-    .line 37
+    .line 44
     invoke-static {v0}, Lcom/google/protobuf/Android;->getClassForName(Ljava/lang/String;)Ljava/lang/Class;
 
     move-result-object v0
@@ -65,7 +72,7 @@
         }
     .end annotation
 
-    .line 52
+    .line 59
     :try_start_0
     invoke-static {p0}, Ljava/lang/Class;->forName(Ljava/lang/String;)Ljava/lang/Class;
 
@@ -91,7 +98,7 @@
         }
     .end annotation
 
-    .line 46
+    .line 53
     sget-object v0, Lcom/google/protobuf/Android;->MEMORY_CLASS:Ljava/lang/Class;
 
     return-object v0
@@ -100,7 +107,11 @@
 .method static isOnAndroidDevice()Z
     .locals 1
 
-    .line 41
+    .line 48
+    sget-boolean v0, Lcom/google/protobuf/Android;->ASSUME_ANDROID:Z
+
+    if-nez v0, :cond_1
+
     sget-object v0, Lcom/google/protobuf/Android;->MEMORY_CLASS:Ljava/lang/Class;
 
     if-eqz v0, :cond_0
@@ -109,13 +120,17 @@
 
     if-nez v0, :cond_0
 
-    const/4 v0, 0x1
-
     goto :goto_0
 
     :cond_0
     const/4 v0, 0x0
 
+    goto :goto_1
+
+    :cond_1
     :goto_0
+    const/4 v0, 0x1
+
+    :goto_1
     return v0
 .end method

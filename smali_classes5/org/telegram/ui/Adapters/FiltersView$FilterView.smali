@@ -240,7 +240,7 @@
 
 # virtual methods
 .method public setData(Lorg/telegram/ui/Adapters/FiltersView$MediaFilterData;)V
-    .locals 11
+    .locals 10
 
     .line 734
     iput-object p1, p0, Lorg/telegram/ui/Adapters/FiltersView$FilterView;->data:Lorg/telegram/ui/Adapters/FiltersView$MediaFilterData;
@@ -395,9 +395,9 @@
 
     iget-wide v8, v0, Lorg/telegram/tgnet/TLRPC$User;->id:J
 
-    cmp-long v10, v6, v8
+    cmp-long v6, v6, v8
 
-    if-nez v10, :cond_1
+    if-nez v6, :cond_1
 
     .line 752
     invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I

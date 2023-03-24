@@ -105,7 +105,7 @@
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_0
     if-ge v2, v0, :cond_2
@@ -151,7 +151,7 @@
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_0
     if-ge v2, p1, :cond_0
@@ -198,9 +198,9 @@
     goto :goto_4
 
     :cond_1
-    const/4 v4, 0x0
+    move v4, v1
 
-    const/4 v5, 0x0
+    move v5, v4
 
     .line 136
     :goto_2
@@ -290,9 +290,9 @@
     return-object p0
 
     :cond_0
-    const/4 v1, 0x0
+    move v1, v0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     .line 57
     :goto_0
@@ -431,7 +431,7 @@
 
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    move v1, v0
 
     .line 101
     :goto_0
@@ -456,7 +456,7 @@
 
     if-eqz v2, :cond_2
 
-    const/4 v2, 0x0
+    move v2, v0
 
     .line 106
     :goto_1

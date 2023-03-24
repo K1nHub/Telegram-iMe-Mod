@@ -215,17 +215,19 @@ public class SlideChooseView extends View {
     protected void onDraw(Canvas canvas) {
         float f;
         int i;
+        float f2;
+        float f3;
         int m50dp;
         int m50dp2;
-        float f2;
+        float f4;
         int i2;
         int i3;
-        float f3 = this.selectedIndexAnimatedHolder.set(this.selectedIndex);
+        float f5 = this.selectedIndexAnimatedHolder.set(this.selectedIndex);
         AnimatedFloat animatedFloat = this.movingAnimatedHolder;
         boolean z = this.moving;
-        float f4 = BitmapDescriptorFactory.HUE_RED;
-        float f5 = 1.0f;
-        float f6 = animatedFloat.set(z ? 1.0f : BitmapDescriptorFactory.HUE_RED);
+        float f6 = BitmapDescriptorFactory.HUE_RED;
+        float f7 = 1.0f;
+        float f8 = animatedFloat.set(z ? 1.0f : 0.0f);
         int measuredHeight = (getMeasuredHeight() / 2) + AndroidUtilities.m50dp(11);
         int i4 = 0;
         while (i4 < this.optionsStr.length) {
@@ -233,14 +235,14 @@ public class SlideChooseView extends View {
             int i6 = this.lineSize + (this.gapSize * 2);
             int i7 = this.circleSize;
             int i8 = i5 + ((i6 + i7) * i4) + (i7 / 2);
-            float f7 = i4;
-            float f8 = f7 - f3;
-            float max = Math.max(f4, f5 - Math.abs(f8));
-            int blendARGB = ColorUtils.blendARGB(getThemedColor("switchTrack"), getThemedColor("switchTrackChecked"), MathUtils.clamp((f3 - f7) + f5, f4, f5));
+            float f9 = i4;
+            float f10 = f9 - f5;
+            float max = Math.max(f6, f7 - Math.abs(f10));
+            int blendARGB = ColorUtils.blendARGB(getThemedColor("switchTrack"), getThemedColor("switchTrackChecked"), MathUtils.clamp((f5 - f9) + f7, f6, f7));
             this.paint.setColor(blendARGB);
             this.linePaint.setColor(blendARGB);
-            float f9 = measuredHeight;
-            canvas.drawCircle(i8, f9, AndroidUtilities.lerp(this.circleSize / 2, AndroidUtilities.m50dp(6), max), this.paint);
+            float f11 = measuredHeight;
+            canvas.drawCircle(i8, f11, AndroidUtilities.lerp(this.circleSize / 2, AndroidUtilities.m50dp(6), max), this.paint);
             if (i4 != 0) {
                 int i9 = (i8 - (this.circleSize / 2)) - this.gapSize;
                 int i10 = this.lineSize;
@@ -250,30 +252,36 @@ public class SlideChooseView extends View {
                     int m50dp3 = i11 + AndroidUtilities.m50dp(3);
                     int m50dp4 = (i10 - AndroidUtilities.m50dp(3)) / AndroidUtilities.m50dp(13);
                     if (this.lastDash != m50dp4) {
-                        f2 = max;
+                        f4 = max;
                         i2 = i8;
                         i3 = 1;
                         this.linePaint.setPathEffect(new DashPathEffect(new float[]{AndroidUtilities.m50dp(6), (m50dp2 - (AndroidUtilities.m50dp(8) * m50dp4)) / (m50dp4 - 1)}, BitmapDescriptorFactory.HUE_RED));
                         this.lastDash = m50dp4;
                     } else {
-                        f2 = max;
+                        f4 = max;
                         i2 = i8;
                         i3 = 1;
                     }
-                    f = f2;
+                    f = f4;
                     i = i2;
-                    canvas.drawLine(AndroidUtilities.m50dp(i3) + m50dp3, f9, (m50dp3 + m50dp2) - AndroidUtilities.m50dp(i3), f9, this.linePaint);
+                    canvas.drawLine(AndroidUtilities.m50dp(i3) + m50dp3, f11, (m50dp3 + m50dp2) - AndroidUtilities.m50dp(i3), f11, this.linePaint);
+                    f2 = 1.0f;
+                    f3 = BitmapDescriptorFactory.HUE_RED;
                 } else {
                     f = max;
                     i = i8;
-                    float f10 = f8 - 1.0f;
-                    float clamp = MathUtils.clamp(1.0f - Math.abs(f10), (float) BitmapDescriptorFactory.HUE_RED, 1.0f);
-                    int m50dp5 = (int) (i10 - (AndroidUtilities.m50dp(3) * MathUtils.clamp(1.0f - Math.min(Math.abs(f8), Math.abs(f10)), (float) BitmapDescriptorFactory.HUE_RED, 1.0f)));
+                    f2 = 1.0f;
+                    float f12 = f10 - 1.0f;
+                    float clamp = MathUtils.clamp(1.0f - Math.abs(f12), (float) BitmapDescriptorFactory.HUE_RED, 1.0f);
+                    int m50dp5 = (int) (i10 - (AndroidUtilities.m50dp(3) * MathUtils.clamp(1.0f - Math.min(Math.abs(f10), Math.abs(f12)), (float) BitmapDescriptorFactory.HUE_RED, 1.0f)));
+                    f3 = 0.0f;
                     canvas.drawRect((int) (i11 + (AndroidUtilities.m50dp(3) * clamp)), measuredHeight - AndroidUtilities.m50dp(1), m50dp + m50dp5, AndroidUtilities.m50dp(1) + measuredHeight, this.paint);
                 }
             } else {
                 f = max;
                 i = i8;
+                f2 = 1.0f;
+                f3 = BitmapDescriptorFactory.HUE_RED;
             }
             int i13 = this.optionsSizes[i4];
             String str = this.optionsStr[i4];
@@ -286,17 +294,17 @@ public class SlideChooseView extends View {
                 canvas.drawText(str, i - (i13 / 2), AndroidUtilities.m50dp(28), this.textPaint);
             }
             i4++;
-            f4 = BitmapDescriptorFactory.HUE_RED;
-            f5 = 1.0f;
+            f7 = f2;
+            f6 = f3;
         }
         int i14 = this.lineSize + (this.gapSize * 2);
         int i15 = this.circleSize;
-        float f11 = this.sideSide + ((i14 + i15) * f3) + (i15 / 2);
+        float f13 = this.sideSide + ((i14 + i15) * f5) + (i15 / 2);
         this.paint.setColor(ColorUtils.setAlphaComponent(getThemedColor("switchTrackChecked"), 80));
-        float f12 = measuredHeight;
-        canvas.drawCircle(f11, f12, AndroidUtilities.m51dp(f6 * 12.0f), this.paint);
+        float f14 = measuredHeight;
+        canvas.drawCircle(f13, f14, AndroidUtilities.m51dp(f8 * 12.0f), this.paint);
         this.paint.setColor(getThemedColor("switchTrackChecked"));
-        canvas.drawCircle(f11, f12, AndroidUtilities.m50dp(6), this.paint);
+        canvas.drawCircle(f13, f14, AndroidUtilities.m50dp(6), this.paint);
     }
 
     @Override // android.view.View

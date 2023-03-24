@@ -246,7 +246,7 @@
 
     if-nez v0, :cond_0
 
-    const/4 v0, 0x1
+    move v0, v2
 
     goto :goto_0
 
@@ -371,7 +371,7 @@
 
     if-nez v2, :cond_2
 
-    const/4 v2, 0x1
+    move v2, v4
 
     goto :goto_0
 
@@ -484,7 +484,7 @@
 
     if-ge p2, p3, :cond_4
 
-    const/4 v0, 0x1
+    move v0, v3
 
     goto :goto_2
 
@@ -1328,9 +1328,9 @@
     invoke-virtual {v0, v2}, Lokhttp3/HttpUrl$Builder;->encodedQuery(Ljava/lang/String;)Lokhttp3/HttpUrl$Builder;
 
     :cond_5
-    move/from16 v20, v15
+    move/from16 v19, v10
 
-    const/16 v19, 0x1
+    move/from16 v20, v15
 
     goto/16 :goto_a
 
@@ -1340,9 +1340,9 @@
 
     move v7, v1
 
-    const/16 v16, 0x0
+    move/from16 v16, v14
 
-    const/16 v17, 0x0
+    move/from16 v17, v16
 
     :goto_2
     const-string v1, "@/\\?#"
@@ -1362,7 +1362,7 @@
     goto :goto_3
 
     :cond_7
-    const/4 v1, -0x1
+    move v1, v11
 
     :goto_3
     if-eq v1, v11, :cond_c
@@ -1383,11 +1383,11 @@
 
     if-eq v1, v2, :cond_8
 
+    move/from16 v19, v10
+
     move-object/from16 v18, v12
 
     move/from16 v20, v15
-
-    const/16 v19, 0x1
 
     goto/16 :goto_6
 
@@ -1446,7 +1446,7 @@
 
     move/from16 v9, v22
 
-    const/16 v19, 0x1
+    move/from16 v19, v10
 
     move-object/from16 v10, v23
 
@@ -1522,7 +1522,7 @@
 
     iput-object v1, v0, Lokhttp3/HttpUrl$Builder;->encodedPassword:Ljava/lang/String;
 
-    const/4 v10, 0x1
+    move/from16 v10, v19
 
     goto :goto_4
 
@@ -1534,7 +1534,7 @@
 
     move-object/from16 v18, v15
 
-    const/4 v10, 0x1
+    move/from16 v10, v19
 
     move v15, v14
 
@@ -1543,9 +1543,9 @@
     :cond_b
     move-object v14, v5
 
-    move/from16 v20, v15
+    move/from16 v19, v10
 
-    const/16 v19, 0x1
+    move/from16 v20, v15
 
     move-object v15, v12
 
@@ -1626,13 +1626,13 @@
     :goto_6
     move-object/from16 v12, v18
 
+    move/from16 v10, v19
+
     move/from16 v15, v20
 
     const/16 v8, 0x23
 
     const/16 v9, 0x3f
-
-    const/4 v10, 0x1
 
     const/4 v11, -0x1
 
@@ -1641,11 +1641,11 @@
     goto/16 :goto_2
 
     :cond_c
+    move/from16 v19, v10
+
     move-object/from16 v18, v12
 
     move/from16 v20, v15
-
-    const/16 v19, 0x1
 
     move v15, v6
 
@@ -1702,7 +1702,7 @@
 
     if-eq v1, v2, :cond_d
 
-    const/4 v1, 0x1
+    move/from16 v1, v19
 
     goto :goto_7
 
@@ -1802,7 +1802,7 @@
 
     if-eqz v1, :cond_10
 
-    const/16 v27, 0x1
+    move/from16 v27, v19
 
     goto :goto_9
 
@@ -2118,7 +2118,7 @@
 
     const/4 v3, 0x0
 
-    const/4 v4, 0x0
+    move v4, v3
 
     :goto_1
     if-ge v4, v1, :cond_1
@@ -2430,12 +2430,12 @@
 
     if-lez v1, :cond_1
 
-    const/4 v1, 0x1
+    move v1, v2
 
     goto :goto_1
 
     :cond_1
-    const/4 v1, 0x0
+    move v1, v3
 
     :goto_1
     const/16 v4, 0x3a
@@ -2450,12 +2450,12 @@
 
     if-lez v1, :cond_2
 
-    const/4 v1, 0x1
+    move v1, v2
 
     goto :goto_2
 
     :cond_2
-    const/4 v1, 0x0
+    move v1, v3
 
     :goto_2
     if-eqz v1, :cond_6
@@ -2478,7 +2478,7 @@
     goto :goto_3
 
     :cond_4
-    const/4 v2, 0x0
+    move v2, v3
 
     :goto_3
     if-eqz v2, :cond_5

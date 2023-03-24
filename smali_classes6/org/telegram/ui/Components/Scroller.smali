@@ -65,7 +65,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 14
+    .locals 13
 
     const-wide/high16 v0, 0x3fe8000000000000L    # 0.75
 
@@ -120,7 +120,7 @@
 
     div-float v4, v3, v4
 
-    const/high16 v3, 0x3f800000    # 1.0f
+    move v3, v1
 
     :goto_1
     sub-float v5, v3, v0
@@ -133,28 +133,28 @@
 
     const/high16 v6, 0x40400000    # 3.0f
 
-    mul-float v6, v6, v5
+    mul-float/2addr v6, v5
 
     sub-float v7, v1, v5
 
-    mul-float v6, v6, v7
+    mul-float/2addr v6, v7
 
     .line 81
     sget v8, Lorg/telegram/ui/Components/Scroller;->START_TENSION:F
 
-    mul-float v7, v7, v8
+    mul-float/2addr v7, v8
 
     sget v8, Lorg/telegram/ui/Components/Scroller;->END_TENSION:F
 
-    mul-float v8, v8, v5
+    mul-float/2addr v8, v5
 
     add-float/2addr v7, v8
 
-    mul-float v7, v7, v6
+    mul-float/2addr v7, v6
 
     mul-float v8, v5, v5
 
-    mul-float v8, v8, v5
+    mul-float/2addr v8, v5
 
     add-float/2addr v7, v8
 
@@ -169,9 +169,9 @@
 
     const-wide v11, 0x3ee4f8b588e368f1L    # 1.0E-5
 
-    cmpg-double v13, v9, v11
+    cmpg-double v9, v9, v11
 
-    if-gez v13, :cond_0
+    if-gez v9, :cond_0
 
     add-float/2addr v6, v8
 
@@ -273,7 +273,7 @@
 
     const/high16 p2, 0x43200000    # 160.0f
 
-    mul-float p1, p1, p2
+    mul-float/2addr p1, p2
 
     iput p1, p0, Lorg/telegram/ui/Components/Scroller;->mPpi:F
 
@@ -302,9 +302,9 @@
 
     const v1, 0x43c10b3d
 
-    mul-float v0, v0, v1
+    mul-float/2addr v0, v1
 
-    mul-float v0, v0, p1
+    mul-float/2addr v0, p1
 
     return v0
 .end method
@@ -315,7 +315,7 @@
     .line 422
     sget v0, Lorg/telegram/ui/Components/Scroller;->sViscousFluidScale:F
 
-    mul-float p0, p0, v0
+    mul-float/2addr p0, v0
 
     const/high16 v0, 0x3f800000    # 1.0f
 
@@ -358,7 +358,7 @@
 
     const p0, 0x3f21d2a7
 
-    mul-float v0, v0, p0
+    mul-float/2addr v0, p0
 
     add-float p0, v0, v1
 
@@ -366,7 +366,7 @@
     :goto_0
     sget v0, Lorg/telegram/ui/Components/Scroller;->sViscousFluidNormalize:F
 
-    mul-float p0, p0, v0
+    mul-float/2addr p0, v0
 
     return p0
 .end method
@@ -416,14 +416,14 @@
 
     sub-long/2addr v0, v2
 
-    long-to-int v1, v0
+    long-to-int v0, v0
 
     .line 252
-    iget v0, p0, Lorg/telegram/ui/Components/Scroller;->mDuration:I
+    iget v1, p0, Lorg/telegram/ui/Components/Scroller;->mDuration:I
 
     const/4 v2, 0x1
 
-    if-ge v1, v0, :cond_4
+    if-ge v0, v1, :cond_4
 
     .line 253
     iget v3, p0, Lorg/telegram/ui/Components/Scroller;->mMode:I
@@ -435,47 +435,47 @@
     goto/16 :goto_1
 
     :cond_1
-    int-to-float v1, v1
-
     int-to-float v0, v0
 
-    div-float/2addr v1, v0
+    int-to-float v1, v1
 
-    const/high16 v0, 0x42c80000    # 100.0f
+    div-float/2addr v0, v1
 
-    mul-float v3, v1, v0
+    const/high16 v1, 0x42c80000    # 100.0f
+
+    mul-float v3, v0, v1
 
     float-to-int v3, v3
 
     int-to-float v4, v3
 
-    div-float/2addr v4, v0
+    div-float/2addr v4, v1
 
     add-int/lit8 v5, v3, 0x1
 
     int-to-float v6, v5
 
-    div-float/2addr v6, v0
+    div-float/2addr v6, v1
 
     .line 270
-    sget-object v0, Lorg/telegram/ui/Components/Scroller;->SPLINE:[F
+    sget-object v1, Lorg/telegram/ui/Components/Scroller;->SPLINE:[F
 
-    aget v3, v0, v3
+    aget v3, v1, v3
 
     .line 271
-    aget v0, v0, v5
+    aget v1, v1, v5
 
-    sub-float/2addr v1, v4
+    sub-float/2addr v0, v4
 
     sub-float/2addr v6, v4
 
-    div-float/2addr v1, v6
+    div-float/2addr v0, v6
 
-    sub-float/2addr v0, v3
+    sub-float/2addr v1, v3
 
-    mul-float v1, v1, v0
+    mul-float/2addr v0, v1
 
-    add-float/2addr v3, v1
+    add-float/2addr v3, v0
 
     .line 274
     iget v0, p0, Lorg/telegram/ui/Components/Scroller;->mStartX:I
@@ -486,7 +486,7 @@
 
     int-to-float v1, v1
 
-    mul-float v1, v1, v3
+    mul-float/2addr v1, v3
 
     invoke-static {v1}, Ljava/lang/Math;->round(F)I
 
@@ -523,7 +523,7 @@
 
     int-to-float v1, v1
 
-    mul-float v3, v3, v1
+    mul-float/2addr v3, v1
 
     invoke-static {v3}, Ljava/lang/Math;->round(F)I
 
@@ -568,12 +568,12 @@
     goto :goto_1
 
     :cond_2
-    int-to-float v0, v1
+    int-to-float v0, v0
 
     .line 255
     iget v1, p0, Lorg/telegram/ui/Components/Scroller;->mDurationReciprocal:F
 
-    mul-float v0, v0, v1
+    mul-float/2addr v0, v1
 
     .line 257
     iget-object v1, p0, Lorg/telegram/ui/Components/Scroller;->mInterpolator:Landroid/view/animation/Interpolator;
@@ -599,7 +599,7 @@
 
     iget v3, p0, Lorg/telegram/ui/Components/Scroller;->mDeltaX:F
 
-    mul-float v3, v3, v0
+    mul-float/2addr v3, v0
 
     invoke-static {v3}, Ljava/lang/Math;->round(F)I
 
@@ -614,7 +614,7 @@
 
     iget v3, p0, Lorg/telegram/ui/Components/Scroller;->mDeltaY:F
 
-    mul-float v0, v0, v3
+    mul-float/2addr v0, v3
 
     invoke-static {v0}, Ljava/lang/Math;->round(F)I
 
@@ -705,9 +705,9 @@
 
     div-float/2addr v5, v6
 
-    mul-float v4, v4, v3
+    mul-float/2addr v4, v3
 
-    mul-float v5, v5, v3
+    mul-float/2addr v5, v3
 
     move/from16 v3, p3
 
@@ -796,7 +796,7 @@
     .line 392
     sget v6, Lorg/telegram/ui/Components/Scroller;->START_TENSION:F
 
-    mul-float v6, v6, v4
+    mul-float/2addr v6, v4
 
     div-float/2addr v6, v5
 
@@ -823,7 +823,7 @@
 
     move-result-wide v12
 
-    mul-double v12, v12, v10
+    mul-double/2addr v12, v10
 
     double-to-int v6, v12
 
@@ -844,13 +844,13 @@
 
     const/4 v6, 0x0
 
-    const/high16 v10, 0x3f800000    # 1.0f
-
     cmpl-float v6, v4, v6
+
+    const/high16 v10, 0x3f800000    # 1.0f
 
     if-nez v6, :cond_3
 
-    const/high16 v3, 0x3f800000    # 1.0f
+    move v3, v10
 
     goto :goto_1
 
@@ -883,14 +883,14 @@
 
     div-double/2addr v11, v6
 
-    mul-double v11, v11, v8
+    mul-double/2addr v11, v8
 
     .line 402
     invoke-static {v11, v12}, Ljava/lang/Math;->exp(D)D
 
     move-result-wide v6
 
-    mul-double v4, v4, v6
+    mul-double/2addr v4, v6
 
     double-to-int v4, v4
 
@@ -916,7 +916,7 @@
 
     int-to-float v4, v4
 
-    mul-float v3, v3, v4
+    mul-float/2addr v3, v4
 
     .line 409
     invoke-static {v3}, Ljava/lang/Math;->round(F)I
@@ -945,7 +945,7 @@
 
     iput v1, v0, Lorg/telegram/ui/Components/Scroller;->mFinalX:I
 
-    mul-float v4, v4, v10
+    mul-float/2addr v4, v10
 
     .line 414
     invoke-static {v4}, Ljava/lang/Math;->round(F)I
@@ -1000,7 +1000,7 @@
 
     int-to-float v2, v2
 
-    mul-float v1, v1, v2
+    mul-float/2addr v1, v2
 
     const/high16 v2, 0x44fa0000    # 2000.0f
 
@@ -1138,7 +1138,7 @@
 
     sub-long/2addr v0, v2
 
-    long-to-int v1, v0
+    long-to-int v0, v0
 
-    return v1
+    return v0
 .end method

@@ -722,16 +722,16 @@
     :cond_0
     iget v0, p0, Lorg/telegram/ui/Components/PacmanAnimation;->progress:F
 
-    const/4 v1, 0x0
+    const/high16 v1, 0x3f800000    # 1.0f
 
-    const/high16 v4, 0x3f800000    # 1.0f
+    cmpl-float v0, v0, v1
 
-    cmpl-float v0, v0, v4
+    const/4 v4, 0x0
 
     if-ltz v0, :cond_1
 
     .line 47
-    iput v1, p0, Lorg/telegram/ui/Components/PacmanAnimation;->progress:F
+    iput v4, p0, Lorg/telegram/ui/Components/PacmanAnimation;->progress:F
 
     .line 49
     :cond_1
@@ -747,12 +747,12 @@
 
     iput v0, p0, Lorg/telegram/ui/Components/PacmanAnimation;->progress:F
 
-    cmpl-float v0, v0, v4
+    cmpl-float v0, v0, v1
 
     if-lez v0, :cond_2
 
     .line 51
-    iput v4, p0, Lorg/telegram/ui/Components/PacmanAnimation;->progress:F
+    iput v1, p0, Lorg/telegram/ui/Components/PacmanAnimation;->progress:F
 
     .line 53
     :cond_2
@@ -766,12 +766,12 @@
 
     iput v0, p0, Lorg/telegram/ui/Components/PacmanAnimation;->translationProgress:F
 
-    cmpl-float v0, v0, v4
+    cmpl-float v0, v0, v1
 
     if-lez v0, :cond_3
 
     .line 55
-    iput v4, p0, Lorg/telegram/ui/Components/PacmanAnimation;->translationProgress:F
+    iput v1, p0, Lorg/telegram/ui/Components/PacmanAnimation;->translationProgress:F
 
     .line 57
     :cond_3
@@ -785,7 +785,7 @@
 
     iput v0, p0, Lorg/telegram/ui/Components/PacmanAnimation;->ghostProgress:F
 
-    cmpl-float v0, v0, v4
+    cmpl-float v0, v0, v1
 
     if-ltz v0, :cond_4
 
@@ -797,7 +797,7 @@
     iput-boolean v0, p0, Lorg/telegram/ui/Components/PacmanAnimation;->ghostWalk:Z
 
     .line 60
-    iput v1, p0, Lorg/telegram/ui/Components/PacmanAnimation;->ghostProgress:F
+    iput v4, p0, Lorg/telegram/ui/Components/PacmanAnimation;->ghostProgress:F
 
     .line 62
     :cond_4
@@ -859,7 +859,7 @@
 
     const/4 v10, 0x3
 
-    mul-int/lit8 v2, v2, 0x3
+    mul-int/2addr v2, v10
 
     add-int/2addr v2, v8
 
@@ -877,7 +877,7 @@
     .line 131
     iget v4, v0, Lorg/telegram/ui/Components/PacmanAnimation;->translationProgress:F
 
-    mul-float v3, v3, v4
+    mul-float/2addr v3, v4
 
     int-to-float v2, v2
 
@@ -955,30 +955,30 @@
     .line 141
     iget v1, v0, Lorg/telegram/ui/Components/PacmanAnimation;->progress:F
 
+    const/high16 v2, 0x3f000000    # 0.5f
+
+    cmpg-float v3, v1, v2
+
     const/high16 v11, 0x3f800000    # 1.0f
 
-    const/high16 v2, 0x420c0000    # 35.0f
+    const/high16 v4, 0x420c0000    # 35.0f
 
-    const/high16 v3, 0x3f000000    # 0.5f
+    if-gez v3, :cond_2
 
-    cmpg-float v4, v1, v3
-
-    if-gez v4, :cond_2
-
-    div-float/2addr v1, v3
+    div-float/2addr v1, v2
 
     sub-float v1, v11, v1
 
-    mul-float v1, v1, v2
+    mul-float/2addr v1, v4
 
     goto :goto_1
 
     :cond_2
-    sub-float/2addr v1, v3
+    sub-float/2addr v1, v2
 
-    mul-float v1, v1, v2
+    mul-float/2addr v1, v4
 
-    div-float/2addr v1, v3
+    div-float/2addr v1, v2
 
     :goto_1
     float-to-int v1, v1

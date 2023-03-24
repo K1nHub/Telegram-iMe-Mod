@@ -252,7 +252,11 @@ public class WindowDecorActionBar extends AbstractC0019ActionBar implements Acti
             }
         }
         this.mDecorToolbar.setCollapsible(!this.mHasEmbeddedTabs && z3);
-        this.mOverlayLayout.setHasNonEmbeddedTabs((this.mHasEmbeddedTabs || !z3) ? false : false);
+        ActionBarOverlayLayout actionBarOverlayLayout2 = this.mOverlayLayout;
+        if (this.mHasEmbeddedTabs || !z3) {
+            z2 = false;
+        }
+        actionBarOverlayLayout2.setHasNonEmbeddedTabs(z2);
     }
 
     void completeDeferredDestroyActionMode() {

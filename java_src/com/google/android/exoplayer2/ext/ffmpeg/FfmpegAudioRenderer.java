@@ -60,7 +60,10 @@ public final class FfmpegAudioRenderer extends DecoderAudioRenderer<FfmpegAudioD
     public FfmpegAudioDecoder createDecoder(Format format, CryptoConfig cryptoConfig) throws FfmpegDecoderException {
         TraceUtil.beginSection("createFfmpegAudioDecoder");
         int i = format.maxInputSize;
-        FfmpegAudioDecoder ffmpegAudioDecoder = new FfmpegAudioDecoder(format, 16, 16, i != -1 ? i : DEFAULT_INPUT_BUFFER_SIZE, shouldOutputFloat(format));
+        if (i == -1) {
+            i = DEFAULT_INPUT_BUFFER_SIZE;
+        }
+        FfmpegAudioDecoder ffmpegAudioDecoder = new FfmpegAudioDecoder(format, 16, 16, i, shouldOutputFloat(format));
         TraceUtil.endSection();
         return ffmpegAudioDecoder;
     }

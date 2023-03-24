@@ -25,7 +25,7 @@ public final class ProtobufArrayList<E> extends AbstractProtobufList<E> implemen
         this.size = i;
     }
 
-    @Override // com.google.protobuf.Internal.ProtobufList
+    @Override // com.google.protobuf.Internal.ProtobufList, com.google.protobuf.Internal.BooleanList
     public ProtobufArrayList<E> mutableCopyWithCapacity(int i) {
         if (i < this.size) {
             throw new IllegalArgumentException();

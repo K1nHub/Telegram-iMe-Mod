@@ -196,12 +196,12 @@
 
     if-ne p0, v1, :cond_0
 
-    const/4 v4, 0x1
+    move v4, v2
 
     goto :goto_0
 
     :cond_0
-    const/4 v4, 0x0
+    move v4, v3
 
     :goto_0
     iput-boolean v4, v0, Lcom/google/firebase/firestore/core/EventManager$ListenOptions;->includeDocumentMetadataChanges:Z
@@ -211,7 +211,7 @@
     goto :goto_1
 
     :cond_1
-    const/4 v2, 0x0
+    move v2, v3
 
     .line 548
     :goto_1
@@ -242,12 +242,12 @@
 
     if-eqz p2, :cond_1
 
-    const/4 v2, 0x1
+    move v2, p3
 
     goto :goto_0
 
     :cond_1
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_0
     new-array v3, v1, [Ljava/lang/Object;
@@ -271,7 +271,7 @@
     goto :goto_1
 
     :cond_2
-    const/4 p3, 0x0
+    move p3, v1
 
     :goto_1
     new-array v1, v1, [Ljava/lang/Object;
@@ -459,7 +459,7 @@
     goto :goto_0
 
     :cond_2
-    const/4 v0, 0x0
+    move v0, v2
 
     :goto_0
     return v0

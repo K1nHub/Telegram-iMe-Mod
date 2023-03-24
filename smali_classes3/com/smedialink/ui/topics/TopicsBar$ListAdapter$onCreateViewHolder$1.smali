@@ -78,12 +78,12 @@
 
     if-nez v0, :cond_0
 
-    const/4 v0, 0x1
+    move v0, v1
 
     goto :goto_0
 
     :cond_0
-    const/4 v0, 0x0
+    move v0, v2
 
     :goto_0
     if-nez v0, :cond_3
@@ -103,7 +103,7 @@
     goto :goto_1
 
     :cond_1
-    const/4 v1, 0x0
+    move v1, v2
 
     :goto_1
     if-nez v1, :cond_3
@@ -129,7 +129,7 @@
     const/high16 v1, -0x40800000    # -1.0f
 
     :goto_2
-    mul-float v0, v0, v1
+    mul-float/2addr v0, v1
 
     const v1, 0x3f28f5c3    # 0.66f
 
@@ -140,7 +140,7 @@
 
     int-to-float v1, v1
 
-    mul-float v1, v1, v0
+    mul-float/2addr v1, v0
 
     invoke-virtual {p1, v1, v3}, Landroid/graphics/Canvas;->translate(FF)V
 

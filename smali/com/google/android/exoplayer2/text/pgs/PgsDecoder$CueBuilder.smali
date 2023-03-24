@@ -283,7 +283,7 @@
     .line 144
     div-int/lit8 v2, p2, 0x5
 
-    const/4 v4, 0x0
+    move v4, v3
 
     :goto_0
     if-ge v4, v2, :cond_1
@@ -321,7 +321,7 @@
 
     int-to-double v6, v7
 
-    mul-double v12, v12, v6
+    mul-double/2addr v12, v6
 
     add-double/2addr v12, v10
 
@@ -335,13 +335,13 @@
 
     int-to-double v3, v8
 
-    mul-double v13, v13, v3
+    mul-double/2addr v13, v3
 
     sub-double v13, v10, v13
 
     const-wide v15, 0x3fe6da3c21187e7cL    # 0.71414
 
-    mul-double v6, v6, v15
+    mul-double/2addr v6, v15
 
     sub-double/2addr v13, v6
 
@@ -349,7 +349,7 @@
 
     const-wide v7, 0x3ffc5a1cac083127L    # 1.772
 
-    mul-double v3, v3, v7
+    mul-double/2addr v3, v7
 
     add-double/2addr v10, v3
 
@@ -393,7 +393,7 @@
 
     add-int/lit8 v4, p2, 0x1
 
-    const/4 v3, 0x0
+    move v3, v9
 
     goto :goto_0
 
@@ -471,11 +471,11 @@
 
     iget v2, p0, Lcom/google/android/exoplayer2/text/pgs/PgsDecoder$CueBuilder;->bitmapHeight:I
 
-    mul-int v0, v0, v2
+    mul-int/2addr v0, v2
 
     new-array v2, v0, [I
 
-    const/4 v3, 0x0
+    move v3, v1
 
     :cond_1
     :goto_0
@@ -541,7 +541,7 @@
 
     if-nez v4, :cond_4
 
-    const/4 v4, 0x0
+    move v4, v1
 
     goto :goto_3
 

@@ -338,10 +338,8 @@
 
     return-object v0
 
-    :catch_0
-    nop
-
     .line 103
+    :catch_0
     iget-object v0, p0, Landroidx/core/util/AtomicFile;->mNewName:Ljava/io/File;
 
     invoke-virtual {v0}, Ljava/io/File;->getParentFile()Ljava/io/File;

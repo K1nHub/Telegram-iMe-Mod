@@ -100,7 +100,7 @@ public class MusicPlayerService extends Service implements NotificationCenter.No
             this.mediaSession = new MediaSession(this, "telegramAudioPlayer");
             this.playbackState = new PlaybackState.Builder();
             this.albumArtPlaceholder = Bitmap.createBitmap(AndroidUtilities.m50dp(102), AndroidUtilities.m50dp(102), Bitmap.Config.ARGB_8888);
-            Drawable drawable = getResources().getDrawable(C3286R.C3288drawable.nocover_big);
+            Drawable drawable = getResources().getDrawable(C3301R.C3303drawable.nocover_big);
             drawable.setBounds(0, 0, this.albumArtPlaceholder.getWidth(), this.albumArtPlaceholder.getHeight());
             drawable.draw(new Canvas(this.albumArtPlaceholder));
             this.mediaSession.setCallback(new MediaSession.Callback() { // from class: org.telegram.messenger.MusicPlayerService.2
@@ -218,9 +218,10 @@ public class MusicPlayerService extends Service implements NotificationCenter.No
         String str;
         float f;
         int i;
+        int i2;
         String str2;
         String str3;
-        int i2;
+        int i3;
         String str4;
         String musicTitle = messageObject.getMusicTitle();
         String musicAuthor = messageObject.getMusicAuthor();
@@ -247,9 +248,9 @@ public class MusicPlayerService extends Service implements NotificationCenter.No
         } else {
             this.loadingFilePath = FileLoader.getInstance(UserConfig.selectedAccount).getPathToAttach(messageObject.getDocument()).getAbsolutePath();
         }
-        int i3 = Build.VERSION.SDK_INT;
+        int i4 = Build.VERSION.SDK_INT;
         Bitmap bitmap = smallCover;
-        if (i3 >= 21) {
+        if (i4 >= 21) {
             boolean z2 = !MediaController.getInstance().isMessagePaused();
             PendingIntent broadcast = PendingIntent.getBroadcast(getApplicationContext(), 0, new Intent(NOTIFY_PREVIOUS).setComponent(new ComponentName(this, MusicPlayerReceiver.class)), fixIntentFlags(301989888));
             PendingIntent service = PendingIntent.getService(getApplicationContext(), 0, new Intent(this, getClass()).setAction(getPackageName() + ".STOP_PLAYER"), fixIntentFlags(301989888));
@@ -257,8 +258,8 @@ public class MusicPlayerService extends Service implements NotificationCenter.No
             PendingIntent broadcast3 = PendingIntent.getBroadcast(getApplicationContext(), 0, new Intent(NOTIFY_NEXT).setComponent(new ComponentName(this, MusicPlayerReceiver.class)), fixIntentFlags(301989888));
             PendingIntent.getBroadcast(getApplicationContext(), 0, new Intent(NOTIFY_SEEK).setComponent(new ComponentName(this, MusicPlayerReceiver.class)), fixIntentFlags(301989888));
             Notification.Builder builder = new Notification.Builder(this);
-            builder.setSmallIcon(C3286R.C3288drawable.player).setOngoing(z2).setContentTitle(musicTitle).setContentText(musicAuthor).setSubText(audioInfo != null ? audioInfo.getAlbum() : null).setContentIntent(activity).setDeleteIntent(service).setShowWhen(false).setCategory("transport").setPriority(2).setStyle(new Notification.MediaStyle().setMediaSession(this.mediaSession.getSessionToken()).setShowActionsInCompactView(0, 1, 2));
-            if (i3 >= 26) {
+            builder.setSmallIcon(C3301R.C3303drawable.player).setOngoing(z2).setContentTitle(musicTitle).setContentText(musicAuthor).setSubText(audioInfo != null ? audioInfo.getAlbum() : null).setContentIntent(activity).setDeleteIntent(service).setShowWhen(false).setCategory("transport").setPriority(2).setStyle(new Notification.MediaStyle().setMediaSession(this.mediaSession.getSessionToken()).setShowActionsInCompactView(0, 1, 2));
+            if (i4 >= 26) {
                 NotificationsController.checkOtherNotificationsChannel();
                 builder.setChannelId(NotificationsController.OTHER_NOTIFICATIONS_CHANNEL);
             }
@@ -267,12 +268,12 @@ public class MusicPlayerService extends Service implements NotificationCenter.No
             } else {
                 builder.setLargeIcon(this.albumArtPlaceholder);
             }
-            String string = LocaleController.getString("Next", C3286R.string.Next);
-            String string2 = LocaleController.getString("AccDescrPrevious", C3286R.string.AccDescrPrevious);
+            String string = LocaleController.getString("Next", C3301R.string.Next);
+            String string2 = LocaleController.getString("AccDescrPrevious", C3301R.string.AccDescrPrevious);
             if (MediaController.getInstance().isDownloadingCurrentMessage()) {
                 f = 1.0f;
                 this.playbackState.setState(6, 0L, 1.0f).setActions(0L);
-                builder.addAction(new Notification.Action.Builder(C3286R.C3288drawable.ic_action_previous, string2, broadcast).build()).addAction(new Notification.Action.Builder(C3286R.C3288drawable.loading_animation2, LocaleController.getString("Loading", C3286R.string.Loading), (PendingIntent) null).build()).addAction(new Notification.Action.Builder(C3286R.C3288drawable.ic_action_next, string, broadcast3).build());
+                builder.addAction(new Notification.Action.Builder(C3301R.C3303drawable.ic_action_previous, string2, broadcast).build()).addAction(new Notification.Action.Builder(C3301R.C3303drawable.loading_animation2, LocaleController.getString("Loading", C3301R.string.Loading), (PendingIntent) null).build()).addAction(new Notification.Action.Builder(C3301R.C3303drawable.ic_action_next, string, broadcast3).build());
                 str2 = musicTitle;
                 str3 = musicAuthor;
             } else {
@@ -281,13 +282,13 @@ public class MusicPlayerService extends Service implements NotificationCenter.No
                 str3 = musicAuthor;
                 this.playbackState.setState(z2 ? 3 : 2, MediaController.getInstance().getPlayingMessageObject().audioProgressSec * 1000, z2 ? 1.0f : BitmapDescriptorFactory.HUE_RED).setActions(822L);
                 if (z2) {
-                    i2 = C3286R.string.AccActionPause;
+                    i3 = C3301R.string.AccActionPause;
                     str4 = "AccActionPause";
                 } else {
-                    i2 = C3286R.string.AccActionPlay;
+                    i3 = C3301R.string.AccActionPlay;
                     str4 = "AccActionPlay";
                 }
-                builder.addAction(new Notification.Action.Builder(C3286R.C3288drawable.ic_action_previous, string2, broadcast).build()).addAction(new Notification.Action.Builder(z2 ? C3286R.C3288drawable.ic_action_pause : C3286R.C3288drawable.ic_action_play, LocaleController.getString(str4, i2), broadcast2).build()).addAction(new Notification.Action.Builder(C3286R.C3288drawable.ic_action_next, string, broadcast3).build());
+                builder.addAction(new Notification.Action.Builder(C3301R.C3303drawable.ic_action_previous, string2, broadcast).build()).addAction(new Notification.Action.Builder(z2 ? C3301R.C3303drawable.ic_action_pause : C3301R.C3303drawable.ic_action_play, LocaleController.getString(str4, i3), broadcast2).build()).addAction(new Notification.Action.Builder(C3301R.C3303drawable.ic_action_next, string, broadcast3).build());
             }
             this.mediaSession.setPlaybackState(this.playbackState.build());
             musicAuthor = str3;
@@ -304,9 +305,9 @@ public class MusicPlayerService extends Service implements NotificationCenter.No
         } else {
             str = musicTitle;
             f = 1.0f;
-            RemoteViews remoteViews = new RemoteViews(getApplicationContext().getPackageName(), C3286R.layout.player_small_notification);
-            RemoteViews remoteViews2 = supportBigNotifications ? new RemoteViews(getApplicationContext().getPackageName(), C3286R.layout.player_big_notification) : null;
-            Notification build2 = new NotificationCompat.Builder(getApplicationContext()).setSmallIcon(C3286R.C3288drawable.player).setContentIntent(activity).setChannelId(NotificationsController.OTHER_NOTIFICATIONS_CHANNEL).setContentTitle(str).build();
+            RemoteViews remoteViews = new RemoteViews(getApplicationContext().getPackageName(), C3301R.layout.player_small_notification);
+            RemoteViews remoteViews2 = supportBigNotifications ? new RemoteViews(getApplicationContext().getPackageName(), C3301R.layout.player_big_notification) : null;
+            Notification build2 = new NotificationCompat.Builder(getApplicationContext()).setSmallIcon(C3301R.C3303drawable.player).setContentIntent(activity).setChannelId(NotificationsController.OTHER_NOTIFICATIONS_CHANNEL).setContentTitle(str).build();
             build2.contentView = remoteViews;
             if (supportBigNotifications) {
                 build2.bigContentView = remoteViews2;
@@ -317,94 +318,94 @@ public class MusicPlayerService extends Service implements NotificationCenter.No
             }
             if (bitmap != null) {
                 RemoteViews remoteViews3 = build2.contentView;
-                int i4 = C3286R.C3289id.player_album_art;
-                remoteViews3.setImageViewBitmap(i4, bitmap);
+                int i5 = C3301R.C3304id.player_album_art;
+                remoteViews3.setImageViewBitmap(i5, bitmap);
                 if (supportBigNotifications) {
-                    build2.bigContentView.setImageViewBitmap(i4, bitmap);
+                    build2.bigContentView.setImageViewBitmap(i5, bitmap);
                 }
             } else {
                 RemoteViews remoteViews4 = build2.contentView;
-                int i5 = C3286R.C3289id.player_album_art;
-                remoteViews4.setImageViewResource(i5, C3286R.C3288drawable.nocover_small);
+                int i6 = C3301R.C3304id.player_album_art;
+                remoteViews4.setImageViewResource(i6, C3301R.C3303drawable.nocover_small);
                 if (supportBigNotifications) {
-                    build2.bigContentView.setImageViewResource(i5, C3286R.C3288drawable.nocover_big);
+                    build2.bigContentView.setImageViewResource(i6, C3301R.C3303drawable.nocover_big);
                 }
             }
             if (MediaController.getInstance().isDownloadingCurrentMessage()) {
                 RemoteViews remoteViews5 = build2.contentView;
-                int i6 = C3286R.C3289id.player_pause;
-                remoteViews5.setViewVisibility(i6, 8);
+                int i7 = C3301R.C3304id.player_pause;
+                remoteViews5.setViewVisibility(i7, 8);
                 RemoteViews remoteViews6 = build2.contentView;
-                int i7 = C3286R.C3289id.player_play;
-                remoteViews6.setViewVisibility(i7, 8);
+                int i8 = C3301R.C3304id.player_play;
+                remoteViews6.setViewVisibility(i8, 8);
                 RemoteViews remoteViews7 = build2.contentView;
-                int i8 = C3286R.C3289id.player_next;
-                remoteViews7.setViewVisibility(i8, 8);
+                int i9 = C3301R.C3304id.player_next;
+                remoteViews7.setViewVisibility(i9, 8);
                 RemoteViews remoteViews8 = build2.contentView;
-                int i9 = C3286R.C3289id.player_previous;
-                remoteViews8.setViewVisibility(i9, 8);
+                int i10 = C3301R.C3304id.player_previous;
+                remoteViews8.setViewVisibility(i10, 8);
                 RemoteViews remoteViews9 = build2.contentView;
-                int i10 = C3286R.C3289id.player_progress_bar;
-                remoteViews9.setViewVisibility(i10, 0);
+                int i11 = C3301R.C3304id.player_progress_bar;
+                remoteViews9.setViewVisibility(i11, 0);
                 if (supportBigNotifications) {
-                    build2.bigContentView.setViewVisibility(i6, 8);
                     build2.bigContentView.setViewVisibility(i7, 8);
                     build2.bigContentView.setViewVisibility(i8, 8);
                     build2.bigContentView.setViewVisibility(i9, 8);
-                    build2.bigContentView.setViewVisibility(i10, 0);
+                    build2.bigContentView.setViewVisibility(i10, 8);
+                    build2.bigContentView.setViewVisibility(i11, 0);
                 }
             } else {
                 RemoteViews remoteViews10 = build2.contentView;
-                int i11 = C3286R.C3289id.player_progress_bar;
-                remoteViews10.setViewVisibility(i11, 8);
+                int i12 = C3301R.C3304id.player_progress_bar;
+                remoteViews10.setViewVisibility(i12, 8);
                 RemoteViews remoteViews11 = build2.contentView;
-                int i12 = C3286R.C3289id.player_next;
-                remoteViews11.setViewVisibility(i12, 0);
+                int i13 = C3301R.C3304id.player_next;
+                remoteViews11.setViewVisibility(i13, 0);
                 RemoteViews remoteViews12 = build2.contentView;
-                int i13 = C3286R.C3289id.player_previous;
-                remoteViews12.setViewVisibility(i13, 0);
+                int i14 = C3301R.C3304id.player_previous;
+                remoteViews12.setViewVisibility(i14, 0);
                 if (supportBigNotifications) {
-                    build2.bigContentView.setViewVisibility(i12, 0);
                     build2.bigContentView.setViewVisibility(i13, 0);
+                    build2.bigContentView.setViewVisibility(i14, 0);
                     i = 8;
-                    build2.bigContentView.setViewVisibility(i11, 8);
+                    build2.bigContentView.setViewVisibility(i12, 8);
                 } else {
                     i = 8;
                 }
                 if (MediaController.getInstance().isMessagePaused()) {
                     RemoteViews remoteViews13 = build2.contentView;
-                    int i14 = C3286R.C3289id.player_pause;
-                    remoteViews13.setViewVisibility(i14, i);
+                    int i15 = C3301R.C3304id.player_pause;
+                    remoteViews13.setViewVisibility(i15, i);
                     RemoteViews remoteViews14 = build2.contentView;
-                    int i15 = C3286R.C3289id.player_play;
-                    remoteViews14.setViewVisibility(i15, 0);
+                    int i16 = C3301R.C3304id.player_play;
+                    remoteViews14.setViewVisibility(i16, 0);
                     if (supportBigNotifications) {
-                        build2.bigContentView.setViewVisibility(i14, i);
-                        build2.bigContentView.setViewVisibility(i15, 0);
+                        build2.bigContentView.setViewVisibility(i15, i);
+                        build2.bigContentView.setViewVisibility(i16, 0);
                     }
                 } else {
                     RemoteViews remoteViews15 = build2.contentView;
-                    int i16 = C3286R.C3289id.player_pause;
-                    remoteViews15.setViewVisibility(i16, 0);
+                    int i17 = C3301R.C3304id.player_pause;
+                    remoteViews15.setViewVisibility(i17, 0);
                     RemoteViews remoteViews16 = build2.contentView;
-                    int i17 = C3286R.C3289id.player_play;
-                    remoteViews16.setViewVisibility(i17, i);
+                    int i18 = C3301R.C3304id.player_play;
+                    remoteViews16.setViewVisibility(i18, i);
                     if (supportBigNotifications) {
-                        build2.bigContentView.setViewVisibility(i16, 0);
-                        build2.bigContentView.setViewVisibility(i17, i);
+                        build2.bigContentView.setViewVisibility(i17, 0);
+                        build2.bigContentView.setViewVisibility(i18, i);
                     }
                 }
             }
             RemoteViews remoteViews17 = build2.contentView;
-            int i18 = C3286R.C3289id.player_song_name;
-            remoteViews17.setTextViewText(i18, str);
+            int i19 = C3301R.C3304id.player_song_name;
+            remoteViews17.setTextViewText(i19, str);
             RemoteViews remoteViews18 = build2.contentView;
-            int i19 = C3286R.C3289id.player_author_name;
-            remoteViews18.setTextViewText(i19, musicAuthor);
+            int i20 = C3301R.C3304id.player_author_name;
+            remoteViews18.setTextViewText(i20, musicAuthor);
             if (supportBigNotifications) {
-                build2.bigContentView.setTextViewText(i18, str);
-                build2.bigContentView.setTextViewText(i19, musicAuthor);
-                build2.bigContentView.setTextViewText(C3286R.C3289id.player_album_title, (audioInfo == null || TextUtils.isEmpty(audioInfo.getAlbum())) ? "" : audioInfo.getAlbum());
+                build2.bigContentView.setTextViewText(i19, str);
+                build2.bigContentView.setTextViewText(i20, musicAuthor);
+                build2.bigContentView.setTextViewText(C3301R.C3304id.player_album_title, (audioInfo == null || TextUtils.isEmpty(audioInfo.getAlbum())) ? "" : audioInfo.getAlbum());
             }
             build2.flags |= 2;
             startForeground(5, build2);
@@ -414,6 +415,7 @@ public class MusicPlayerService extends Service implements NotificationCenter.No
             if (this.notificationMessageID != id) {
                 this.notificationMessageID = id;
                 RemoteControlClient.MetadataEditor editMetadata = this.remoteControlClient.editMetadata(true);
+                i2 = 2;
                 editMetadata.putString(2, musicAuthor);
                 editMetadata.putString(7, str);
                 if (audioInfo != null && !TextUtils.isEmpty(audioInfo.getAlbum())) {
@@ -449,6 +451,8 @@ public class MusicPlayerService extends Service implements NotificationCenter.No
                         AndroidUtilities.runOnUIThread(this, 500L);
                     }
                 }, 1000L);
+            } else {
+                i2 = 2;
             }
             if (MediaController.getInstance().isDownloadingCurrentMessage()) {
                 this.remoteControlClient.setPlaybackState(8);
@@ -459,15 +463,15 @@ public class MusicPlayerService extends Service implements NotificationCenter.No
             editMetadata2.apply();
             if (Build.VERSION.SDK_INT >= 18) {
                 RemoteControlClient remoteControlClient = this.remoteControlClient;
-                int i20 = MediaController.getInstance().isMessagePaused() ? 2 : 3;
+                int i21 = MediaController.getInstance().isMessagePaused() ? i2 : 3;
                 long max = Math.max(MediaController.getInstance().getPlayingMessageObject().audioProgressSec * 1000, 100L);
                 if (MediaController.getInstance().isMessagePaused()) {
                     f = BitmapDescriptorFactory.HUE_RED;
                 }
-                remoteControlClient.setPlaybackState(i20, max, f);
+                remoteControlClient.setPlaybackState(i21, max, f);
                 return;
             }
-            this.remoteControlClient.setPlaybackState(MediaController.getInstance().isMessagePaused() ? 2 : 3);
+            this.remoteControlClient.setPlaybackState(MediaController.getInstance().isMessagePaused() ? i2 : 3);
         }
     }
 
@@ -486,11 +490,11 @@ public class MusicPlayerService extends Service implements NotificationCenter.No
     }
 
     public void setListeners(RemoteViews remoteViews) {
-        remoteViews.setOnClickPendingIntent(C3286R.C3289id.player_previous, PendingIntent.getBroadcast(getApplicationContext(), 0, new Intent(NOTIFY_PREVIOUS), fixIntentFlags(167772160)));
-        remoteViews.setOnClickPendingIntent(C3286R.C3289id.player_close, PendingIntent.getBroadcast(getApplicationContext(), 0, new Intent(NOTIFY_CLOSE), fixIntentFlags(167772160)));
-        remoteViews.setOnClickPendingIntent(C3286R.C3289id.player_pause, PendingIntent.getBroadcast(getApplicationContext(), 0, new Intent(NOTIFY_PAUSE), fixIntentFlags(167772160)));
-        remoteViews.setOnClickPendingIntent(C3286R.C3289id.player_next, PendingIntent.getBroadcast(getApplicationContext(), 0, new Intent(NOTIFY_NEXT), fixIntentFlags(167772160)));
-        remoteViews.setOnClickPendingIntent(C3286R.C3289id.player_play, PendingIntent.getBroadcast(getApplicationContext(), 0, new Intent(NOTIFY_PLAY), fixIntentFlags(167772160)));
+        remoteViews.setOnClickPendingIntent(C3301R.C3304id.player_previous, PendingIntent.getBroadcast(getApplicationContext(), 0, new Intent(NOTIFY_PREVIOUS), fixIntentFlags(167772160)));
+        remoteViews.setOnClickPendingIntent(C3301R.C3304id.player_close, PendingIntent.getBroadcast(getApplicationContext(), 0, new Intent(NOTIFY_CLOSE), fixIntentFlags(167772160)));
+        remoteViews.setOnClickPendingIntent(C3301R.C3304id.player_pause, PendingIntent.getBroadcast(getApplicationContext(), 0, new Intent(NOTIFY_PAUSE), fixIntentFlags(167772160)));
+        remoteViews.setOnClickPendingIntent(C3301R.C3304id.player_next, PendingIntent.getBroadcast(getApplicationContext(), 0, new Intent(NOTIFY_NEXT), fixIntentFlags(167772160)));
+        remoteViews.setOnClickPendingIntent(C3301R.C3304id.player_play, PendingIntent.getBroadcast(getApplicationContext(), 0, new Intent(NOTIFY_PLAY), fixIntentFlags(167772160)));
     }
 
     private int fixIntentFlags(int i) {

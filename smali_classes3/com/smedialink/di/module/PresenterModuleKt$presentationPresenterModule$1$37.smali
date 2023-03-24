@@ -75,7 +75,7 @@
     invoke-static {p2, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 42
-    const-class v1, Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment$ScreenType;
+    const-class v1, Lcom/smedialink/model/wallet/crypto/create/CreateWalletScreenType;
 
     invoke-static {v1}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
 
@@ -89,7 +89,7 @@
 
     move-object v2, p2
 
-    check-cast v2, Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment$ScreenType;
+    check-cast v2, Lcom/smedialink/model/wallet/crypto/create/CreateWalletScreenType;
 
     .line 131
     invoke-static {v0}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
@@ -206,7 +206,7 @@
 
     move-object v1, p1
 
-    invoke-direct/range {v1 .. v9}, Lcom/smedialink/ui/wallet/crypto/create/CreateWalletPresenter;-><init>(Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment$ScreenType;Lcom/smedialink/storage/domain/manager/crypto/CryptoAccessManager;Lcom/smedialink/storage/domain/storage/CryptoPreferenceHelper;Lcom/smedialink/storage/domain/interactor/crypto/CryptoWalletInteractor;Lcom/smedialink/storage/domain/utils/system/ResourceManager;Lcom/smedialink/storage/domain/utils/rx/RxEventBus;Lcom/smedialink/storage/domain/utils/rx/SchedulersProvider;Lcom/smedialink/storage/domain/interactor/crypto/CryptoWalletInteractor;)V
+    invoke-direct/range {v1 .. v9}, Lcom/smedialink/ui/wallet/crypto/create/CreateWalletPresenter;-><init>(Lcom/smedialink/model/wallet/crypto/create/CreateWalletScreenType;Lcom/smedialink/storage/domain/manager/crypto/CryptoAccessManager;Lcom/smedialink/storage/domain/storage/CryptoPreferenceHelper;Lcom/smedialink/storage/domain/interactor/crypto/CryptoWalletInteractor;Lcom/smedialink/storage/domain/utils/system/ResourceManager;Lcom/smedialink/storage/domain/utils/rx/RxEventBus;Lcom/smedialink/storage/domain/utils/rx/SchedulersProvider;Lcom/smedialink/storage/domain/interactor/crypto/CryptoWalletInteractor;)V
 
     return-object p1
 .end method

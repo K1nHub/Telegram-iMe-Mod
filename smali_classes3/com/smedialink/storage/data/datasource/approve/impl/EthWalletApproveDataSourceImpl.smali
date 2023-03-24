@@ -14,7 +14,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nEthWalletApproveDataSourceImpl.kt\nKotlin\n*S Kotlin\n*F\n+ 1 EthWalletApproveDataSourceImpl.kt\ncom/smedialink/storage/data/datasource/approve/impl/EthWalletApproveDataSourceImpl\n+ 2 ObservableExt.kt\ncom/smedialink/storage/domain/utils/extentions/ObservableExtKt\n+ 3 ResultExt.kt\ncom/smedialink/storage/domain/utils/extentions/ResultExtKt\n+ 4 RxExt.kt\ncom/smedialink/storage/data/utils/extentions/RxExtKt\n*L\n1#1,84:1\n15#2:85\n8#3:86\n18#4:87\n*S KotlinDebug\n*F\n+ 1 EthWalletApproveDataSourceImpl.kt\ncom/smedialink/storage/data/datasource/approve/impl/EthWalletApproveDataSourceImpl\n*L\n36#1:85\n60#1:86\n60#1:87\n*E\n"
+    value = "SMAP\nEthWalletApproveDataSourceImpl.kt\nKotlin\n*S Kotlin\n*F\n+ 1 EthWalletApproveDataSourceImpl.kt\ncom/smedialink/storage/data/datasource/approve/impl/EthWalletApproveDataSourceImpl\n+ 2 ObservableExt.kt\ncom/smedialink/storage/domain/utils/extentions/ObservableExtKt\n+ 3 ResultExt.kt\ncom/smedialink/storage/domain/utils/extentions/ResultExtKt\n+ 4 RxExt.kt\ncom/smedialink/storage/data/utils/extentions/RxExtKt\n*L\n1#1,83:1\n15#2:84\n11#3:85\n18#4:86\n*S KotlinDebug\n*F\n+ 1 EthWalletApproveDataSourceImpl.kt\ncom/smedialink/storage/data/datasource/approve/impl/EthWalletApproveDataSourceImpl\n*L\n35#1:84\n59#1:85\n59#1:86\n*E\n"
 .end annotation
 
 
@@ -54,16 +54,16 @@
 
     invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 25
+    .line 24
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 26
+    .line 25
     iput-object p1, p0, Lcom/smedialink/storage/data/datasource/approve/impl/EthWalletApproveDataSourceImpl;->swapApi:Lcom/smedialink/storage/data/network/api/own/SwapApi;
 
-    .line 27
+    .line 26
     iput-object p2, p0, Lcom/smedialink/storage/data/datasource/approve/impl/EthWalletApproveDataSourceImpl;->cryptoAccessManager:Lcom/smedialink/storage/domain/manager/crypto/CryptoAccessManager;
 
-    .line 28
+    .line 27
     iput-object p3, p0, Lcom/smedialink/storage/data/datasource/approve/impl/EthWalletApproveDataSourceImpl;->firebaseErrorHandler:Lcom/smedialink/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler;
 
     return-void
@@ -72,7 +72,7 @@
 .method public static final synthetic access$getFirebaseErrorHandler$p(Lcom/smedialink/storage/data/datasource/approve/impl/EthWalletApproveDataSourceImpl;)Lcom/smedialink/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler;
     .locals 0
 
-    .line 25
+    .line 24
     iget-object p0, p0, Lcom/smedialink/storage/data/datasource/approve/impl/EthWalletApproveDataSourceImpl;->firebaseErrorHandler:Lcom/smedialink/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler;
 
     return-object p0
@@ -81,7 +81,7 @@
 .method public static final synthetic access$getSwapApi$p(Lcom/smedialink/storage/data/datasource/approve/impl/EthWalletApproveDataSourceImpl;)Lcom/smedialink/storage/data/network/api/own/SwapApi;
     .locals 0
 
-    .line 25
+    .line 24
     iget-object p0, p0, Lcom/smedialink/storage/data/datasource/approve/impl/EthWalletApproveDataSourceImpl;->swapApi:Lcom/smedialink/storage/data/network/api/own/SwapApi;
 
     return-object p0
@@ -94,7 +94,7 @@
 
     new-array v0, v0, [Lorg/web3j/abi/datatypes/Type;
 
-    .line 75
+    .line 74
     new-instance v1, Lorg/web3j/abi/datatypes/Address;
 
     invoke-direct {v1, p1}, Lorg/web3j/abi/datatypes/Address;-><init>(Ljava/lang/String;)V
@@ -131,7 +131,7 @@
 .method private final createTransactionByType(Lcom/smedialink/storage/domain/model/crypto/swap/ApproveArgs$Dex;)Lorg/web3j/crypto/RawTransaction;
     .locals 6
 
-    .line 69
+    .line 68
     invoke-virtual {p1}, Lcom/smedialink/storage/domain/model/crypto/swap/ApproveArgs$Dex;->getNonce()Ljava/math/BigInteger;
 
     move-result-object v0
@@ -144,7 +144,7 @@
 
     move-result-object v2
 
-    .line 70
+    .line 69
     invoke-virtual {p1}, Lcom/smedialink/storage/domain/model/crypto/swap/ApproveArgs$Dex;->getTokenContractAddress()Ljava/lang/String;
 
     move-result-object v3
@@ -163,7 +163,7 @@
 
     move-result-object v5
 
-    .line 68
+    .line 67
     invoke-static/range {v0 .. v5}, Lorg/web3j/crypto/RawTransaction;->createTransaction(Ljava/math/BigInteger;Ljava/math/BigInteger;Ljava/math/BigInteger;Ljava/lang/String;Ljava/math/BigInteger;Ljava/lang/String;)Lorg/web3j/crypto/RawTransaction;
 
     move-result-object p1
@@ -195,12 +195,12 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 34
+    .line 33
     instance-of v0, p1, Lcom/smedialink/storage/domain/model/crypto/swap/ApproveArgs$Dex;
 
     if-eqz v0, :cond_0
 
-    .line 36
+    .line 35
     invoke-virtual {p0, p1}, Lcom/smedialink/storage/data/datasource/approve/impl/EthWalletApproveDataSourceImpl;->sign(Lcom/smedialink/storage/domain/model/crypto/send/TransactionArgs;)Lio/reactivex/Observable;
 
     move-result-object v0
@@ -224,7 +224,7 @@
 
     return-object p1
 
-    .line 34
+    .line 33
     :cond_0
     new-instance p1, Ljava/lang/IllegalStateException;
 
@@ -253,24 +253,24 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 50
+    .line 49
     instance-of v0, p1, Lcom/smedialink/storage/domain/model/crypto/swap/ApproveArgs$Dex;
 
     if-eqz v0, :cond_1
 
-    .line 52
+    .line 51
     check-cast p1, Lcom/smedialink/storage/domain/model/crypto/swap/ApproveArgs$Dex;
 
     invoke-direct {p0, p1}, Lcom/smedialink/storage/data/datasource/approve/impl/EthWalletApproveDataSourceImpl;->createTransactionByType(Lcom/smedialink/storage/domain/model/crypto/swap/ApproveArgs$Dex;)Lorg/web3j/crypto/RawTransaction;
 
     move-result-object v0
 
-    .line 55
+    .line 54
     invoke-virtual {p1}, Lcom/smedialink/storage/domain/model/crypto/swap/ApproveArgs$Dex;->getChainId()J
 
     move-result-wide v1
 
-    .line 56
+    .line 55
     iget-object p1, p0, Lcom/smedialink/storage/data/datasource/approve/impl/EthWalletApproveDataSourceImpl;->cryptoAccessManager:Lcom/smedialink/storage/domain/manager/crypto/CryptoAccessManager;
 
     invoke-interface {p1}, Lcom/smedialink/storage/domain/manager/crypto/CryptoAccessManager;->getEVMWallet()Lcom/smedialink/storage/domain/model/crypto/Wallet$EVM;
@@ -288,18 +288,22 @@
     :cond_0
     const/4 p1, 0x0
 
-    .line 53
+    .line 52
     :goto_0
     invoke-static {v0, v1, v2, p1}, Lorg/web3j/crypto/TransactionEncoder;->signMessage(Lorg/web3j/crypto/RawTransaction;JLorg/web3j/crypto/Credentials;)[B
 
     move-result-object p1
 
-    .line 60
+    .line 59
     invoke-static {p1}, Lorg/web3j/utils/Numeric;->toHexString([B)Ljava/lang/String;
 
     move-result-object p1
 
-    .line 8
+    const-string v0, "toHexString(signedTransaction)"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 11
     sget-object v0, Lcom/smedialink/storage/domain/model/Result;->Companion:Lcom/smedialink/storage/domain/model/Result$Companion;
 
     invoke-virtual {v0, p1}, Lcom/smedialink/storage/domain/model/Result$Companion;->success(Ljava/lang/Object;)Lcom/smedialink/storage/domain/model/Result;
@@ -317,7 +321,7 @@
 
     return-object p1
 
-    .line 50
+    .line 49
     :cond_1
     new-instance p1, Ljava/lang/IllegalStateException;
 
@@ -331,7 +335,7 @@
 .method public bridge synthetic sign(Ljava/lang/Object;)Lio/reactivex/Observable;
     .locals 0
 
-    .line 25
+    .line 24
     check-cast p1, Lcom/smedialink/storage/domain/model/crypto/send/TransactionArgs;
 
     invoke-virtual {p0, p1}, Lcom/smedialink/storage/data/datasource/approve/impl/EthWalletApproveDataSourceImpl;->sign(Lcom/smedialink/storage/domain/model/crypto/send/TransactionArgs;)Lio/reactivex/Observable;

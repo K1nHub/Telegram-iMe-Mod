@@ -464,9 +464,9 @@
 
     move-result v9
 
-    const/4 v5, 0x0
+    move v5, v6
 
-    const/4 v10, 0x0
+    move v10, v5
 
     :goto_0
     const/16 v11, 0x20
@@ -496,7 +496,7 @@
 
     new-array v11, v5, [I
 
-    const/4 v13, 0x0
+    move v13, v6
 
     :goto_1
     const/16 v14, 0x8
@@ -520,9 +520,9 @@
 
     move-result v5
 
-    const/4 v13, 0x0
+    move v13, v6
 
-    const/4 v15, 0x0
+    move v15, v13
 
     :goto_2
     if-ge v13, v2, :cond_5
@@ -559,7 +559,7 @@
 
     rsub-int/lit8 v13, v2, 0x8
 
-    mul-int/lit8 v13, v13, 0x2
+    mul-int/2addr v13, v3
 
     .line 277
     invoke-virtual {v0, v13}, Lcom/google/android/exoplayer2/util/ParsableNalUnitBitArray;->skipBits(I)V
@@ -623,23 +623,23 @@
     goto :goto_3
 
     :cond_8
-    const/16 v20, 0x1
+    move/from16 v20, v12
 
     goto :goto_4
 
     :cond_9
     :goto_3
-    const/16 v20, 0x2
+    move/from16 v20, v3
 
     :goto_4
     if-ne v13, v12, :cond_a
 
-    const/4 v13, 0x2
+    move v13, v3
 
     goto :goto_5
 
     :cond_a
-    const/4 v13, 0x1
+    move v13, v12
 
     :goto_5
     add-int v16, v16, v17
@@ -673,7 +673,7 @@
 
     if-eqz v16, :cond_c
 
-    const/16 v16, 0x0
+    move/from16 v16, v6
 
     goto :goto_6
 
@@ -1011,14 +1011,14 @@
 
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    move v1, v0
 
     :goto_0
     const/4 v2, 0x4
 
     if-ge v1, v2, :cond_5
 
-    const/4 v3, 0x0
+    move v3, v0
 
     :goto_1
     const/4 v4, 0x6
@@ -1059,7 +1059,7 @@
     invoke-virtual {p0}, Lcom/google/android/exoplayer2/util/ParsableNalUnitBitArray;->readSignedExpGolombCodedInt()I
 
     :cond_1
-    const/4 v6, 0x0
+    move v6, v0
 
     :goto_2
     if-ge v6, v4, :cond_2
@@ -1077,7 +1077,7 @@
 
     if-ne v1, v4, :cond_3
 
-    const/4 v5, 0x3
+    move v5, v4
 
     :cond_3
     add-int/2addr v3, v5
@@ -1103,11 +1103,11 @@
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    move v2, v1
 
-    const/4 v3, 0x0
+    move v3, v2
 
-    const/4 v4, 0x0
+    move v4, v3
 
     :goto_0
     if-ge v2, v0, :cond_6
@@ -1128,7 +1128,7 @@
     .line 435
     invoke-virtual {p0}, Lcom/google/android/exoplayer2/util/ParsableNalUnitBitArray;->readUnsignedExpGolombCodedInt()I
 
-    const/4 v5, 0x0
+    move v5, v1
 
     :goto_1
     if-gt v5, v4, :cond_5
@@ -1161,7 +1161,7 @@
 
     add-int v6, v4, v5
 
-    const/4 v7, 0x0
+    move v7, v1
 
     :goto_2
     if-ge v7, v4, :cond_3
@@ -1177,7 +1177,7 @@
     goto :goto_2
 
     :cond_3
-    const/4 v4, 0x0
+    move v4, v1
 
     :goto_3
     if-ge v4, v5, :cond_4
@@ -1357,17 +1357,15 @@
 
     neg-int v0, v1
 
-    move v4, v0
-
     goto :goto_1
 
     :cond_3
     const/4 v0, 0x0
 
-    const/4 v4, 0x0
+    :goto_1
+    move v4, v0
 
     .line 167
-    :goto_1
     iget-wide v5, v7, Lcom/google/android/exoplayer2/extractor/ts/H265Reader;->pesTimeUs:J
 
     move-object/from16 v0, p0

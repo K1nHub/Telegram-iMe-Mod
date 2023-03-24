@@ -464,12 +464,12 @@
 
     if-ltz v1, :cond_0
 
-    const/high16 v1, 0x3f800000    # 1.0f
+    move v1, v2
 
     goto :goto_0
 
     :cond_0
-    const/4 v1, 0x0
+    move v1, v3
 
     :goto_0
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/AnimatedFloat;->set(F)F
@@ -593,7 +593,7 @@
 
     int-to-float v8, v3
 
-    mul-float v8, v8, v0
+    mul-float/2addr v8, v0
 
     float-to-int v0, v8
 
@@ -741,7 +741,7 @@
     const/high16 p1, 0x3f800000    # 1.0f
 
     :goto_0
-    mul-float v3, v3, p1
+    mul-float/2addr v3, p1
 
     sub-float p1, v0, v3
 
@@ -792,7 +792,7 @@
 
     move-result v4
 
-    mul-int v3, v3, v4
+    mul-int/2addr v3, v4
 
     invoke-static {v1, v3}, Ljava/lang/Math;->max(II)I
 
@@ -842,7 +842,7 @@
 
     if-nez p1, :cond_0
 
-    const/4 v1, 0x0
+    move v1, v0
 
     goto :goto_0
 
@@ -863,7 +863,7 @@
 
     iput-object v1, p0, Lorg/telegram/ui/Components/StickerCategoriesListView;->categories:[Lorg/telegram/ui/Components/StickerCategoriesListView$EmojiCategory;
 
-    const/4 v1, 0x0
+    move v1, v0
 
     if-eqz p1, :cond_1
 
@@ -885,7 +885,7 @@
     goto :goto_1
 
     :cond_1
-    const/4 p1, 0x0
+    move p1, v0
 
     .line 148
     :goto_2
@@ -942,9 +942,9 @@
 
     const-wide/16 p2, 0x10
 
-    cmp-long p4, v1, p2
+    cmp-long p2, v1, p2
 
-    if-lez p4, :cond_3
+    if-lez p2, :cond_3
 
     const/4 v0, 0x1
 
@@ -1308,7 +1308,7 @@
 
     const/high16 v3, -0x80000000
 
-    const/4 v4, 0x0
+    move v4, v2
 
     .line 386
     :goto_0
@@ -1375,7 +1375,7 @@
 
     sub-float v6, v1, v6
 
-    mul-float v4, v4, v6
+    mul-float/2addr v4, v6
 
     add-float/2addr v0, v4
 
@@ -1400,7 +1400,7 @@
 
     sub-float v5, v1, v5
 
-    mul-float v4, v4, v5
+    mul-float/2addr v4, v5
 
     add-float/2addr v3, v4
 
@@ -1500,11 +1500,11 @@
 
     move-result v1
 
-    mul-float v3, v3, v1
+    mul-float/2addr v3, v1
 
     iget v1, p0, Lorg/telegram/ui/Components/StickerCategoriesListView;->categoriesShownT:F
 
-    mul-float v3, v3, v1
+    mul-float/2addr v3, v1
 
     float-to-int v1, v3
 
@@ -1690,7 +1690,7 @@
 
     if-eqz v1, :cond_0
 
-    const/4 p1, 0x1
+    move p1, p2
 
     goto :goto_1
 
@@ -1707,17 +1707,17 @@
     goto :goto_0
 
     :cond_1
-    const/4 p2, 0x0
+    move p2, v0
 
     :goto_0
-    const/4 p1, 0x0
+    move p1, v0
 
     goto :goto_1
 
     :cond_2
-    const/4 p1, 0x0
+    move p1, v0
 
-    const/4 p2, 0x0
+    move p2, p1
 
     .line 326
     :goto_1
@@ -1868,7 +1868,7 @@
 
     const/4 p1, 0x0
 
-    const/4 v0, 0x0
+    move v0, p1
 
     .line 217
     :goto_0
@@ -1902,12 +1902,12 @@
 
     if-ne v4, v3, :cond_1
 
-    const/4 v3, 0x1
+    move v3, v1
 
     goto :goto_1
 
     :cond_1
-    const/4 v3, 0x0
+    move v3, p1
 
     :goto_1
     invoke-virtual {v2, v3, v1}, Lorg/telegram/ui/Components/StickerCategoriesListView$CategoryButton;->setSelected(ZZ)V
@@ -2132,7 +2132,7 @@
 
     if-nez v0, :cond_0
 
-    const/4 p1, 0x0
+    move p1, v1
 
     .line 258
     :cond_0
@@ -2183,7 +2183,7 @@
     goto :goto_0
 
     :cond_3
-    const/4 v0, 0x0
+    move v0, v2
 
     :goto_0
     aput v0, p2, v1
@@ -2236,7 +2236,7 @@
 
     const-wide/16 v2, 0x78
 
-    mul-long v0, v0, v2
+    mul-long/2addr v0, v2
 
     invoke-virtual {p1, v0, v1}, Landroid/animation/ValueAnimator;->setDuration(J)Landroid/animation/ValueAnimator;
 
@@ -2253,7 +2253,7 @@
     goto :goto_2
 
     :cond_6
-    const/4 v0, 0x0
+    move v0, v2
 
     .line 283
     :goto_2

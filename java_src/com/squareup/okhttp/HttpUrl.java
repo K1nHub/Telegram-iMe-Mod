@@ -229,9 +229,9 @@ public final class HttpUrl {
                 byte[] r1 = new byte[r0]
                 r2 = -1
                 r3 = 0
-                r4 = 0
-                r5 = -1
-                r6 = -1
+                r5 = r2
+                r6 = r5
+                r4 = r3
             L9:
                 r7 = 0
                 if (r12 >= r13) goto L7a
@@ -278,8 +278,8 @@ public final class HttpUrl {
             L4a:
                 r6 = r12
             L4b:
+                r8 = r3
                 r12 = r6
-                r8 = 0
             L4d:
                 if (r12 >= r13) goto L60
                 char r9 = r11.charAt(r12)

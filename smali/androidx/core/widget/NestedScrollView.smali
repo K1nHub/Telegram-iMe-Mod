@@ -228,15 +228,15 @@
 
     const/high16 v3, 0x43200000    # 160.0f
 
-    mul-float v2, v2, v3
+    mul-float/2addr v2, v3
 
     const v3, 0x43c10b3d
 
-    mul-float v2, v2, v3
+    mul-float/2addr v2, v3
 
     const v3, 0x3f570a3d    # 0.84f
 
-    mul-float v2, v2, v3
+    mul-float/2addr v2, v3
 
     .line 236
     iput v2, p0, Landroidx/core/widget/NestedScrollView;->mPhysicalCoeff:F
@@ -581,9 +581,9 @@
 
     const/4 v3, 0x0
 
-    const/4 v4, 0x0
+    move v4, v2
 
-    const/4 v5, 0x0
+    move v5, v4
 
     :goto_0
     if-ge v4, v1, :cond_8
@@ -615,12 +615,12 @@
 
     if-ge v8, p3, :cond_0
 
-    const/4 v10, 0x1
+    move v10, v9
 
     goto :goto_1
 
     :cond_0
-    const/4 v10, 0x0
+    move v10, v2
 
     :goto_1
     if-nez v3, :cond_1
@@ -652,12 +652,12 @@
     if-le v8, v7, :cond_4
 
     :cond_3
-    const/4 v7, 0x1
+    move v7, v9
 
     goto :goto_2
 
     :cond_4
-    const/4 v7, 0x0
+    move v7, v2
 
     :goto_2
     if-eqz v5, :cond_5
@@ -673,7 +673,7 @@
 
     move-object v3, v6
 
-    const/4 v5, 0x1
+    move v5, v9
 
     goto :goto_4
 
@@ -705,13 +705,13 @@
 
     const v0, 0x3eb33333    # 0.35f
 
-    mul-float p1, p1, v0
+    mul-float/2addr p1, v0
 
     iget v0, p0, Landroidx/core/widget/NestedScrollView;->mPhysicalCoeff:F
 
     const v1, 0x3c75c28f    # 0.015f
 
-    mul-float v0, v0, v1
+    mul-float/2addr v0, v1
 
     div-float/2addr p1, v0
 
@@ -733,7 +733,7 @@
     .line 1102
     iget v0, p0, Landroidx/core/widget/NestedScrollView;->mPhysicalCoeff:F
 
-    mul-float v0, v0, v1
+    mul-float/2addr v0, v1
 
     float-to-double v0, v0
 
@@ -741,14 +741,14 @@
 
     div-double/2addr v6, v4
 
-    mul-double v6, v6, v2
+    mul-double/2addr v6, v2
 
     .line 1103
     invoke-static {v6, v7}, Ljava/lang/Math;->exp(D)D
 
     move-result-wide v2
 
-    mul-double v0, v0, v2
+    mul-double/2addr v0, v2
 
     double-to-float p1, v0
 
@@ -1349,7 +1349,7 @@
 
     int-to-float p1, p1
 
-    mul-float v1, v1, p1
+    mul-float/2addr v1, p1
 
     invoke-static {v1}, Ljava/lang/Math;->round(F)I
 
@@ -1419,12 +1419,12 @@
 
     if-ne p1, v4, :cond_0
 
-    const/4 v4, 0x1
+    move v4, v3
 
     goto :goto_0
 
     :cond_0
-    const/4 v4, 0x0
+    move v4, v2
 
     .line 1492
     :goto_0
@@ -1457,7 +1457,7 @@
     :goto_1
     invoke-direct {p0, p2}, Landroidx/core/widget/NestedScrollView;->doScrollY(I)V
 
-    const/4 v2, 0x1
+    move v2, v3
 
     .line 1504
     :goto_2
@@ -1521,7 +1521,7 @@
     goto :goto_0
 
     :cond_0
-    const/4 v1, 0x0
+    move v1, v0
 
     :goto_0
     if-eqz v1, :cond_2
@@ -1563,7 +1563,7 @@
 
     int-to-float v1, v1
 
-    mul-float p1, p1, v1
+    mul-float/2addr p1, v1
 
     neg-int p2, p2
 
@@ -1609,9 +1609,9 @@
 
     const-wide/16 v2, 0xfa
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-lez v4, :cond_1
+    if-lez v0, :cond_1
 
     const/4 p1, 0x0
 
@@ -1738,11 +1738,11 @@
 
     move-result v0
 
-    const/4 v1, 0x1
+    const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    cmpl-float v0, v0, v1
 
-    cmpl-float v0, v0, v2
+    const/4 v2, 0x1
 
     if-eqz v0, :cond_0
 
@@ -1761,9 +1761,9 @@
 
     div-float/2addr v3, v4
 
-    invoke-static {v0, v2, v3}, Landroidx/core/widget/EdgeEffectCompat;->onPullDistance(Landroid/widget/EdgeEffect;FF)F
+    invoke-static {v0, v1, v3}, Landroidx/core/widget/EdgeEffectCompat;->onPullDistance(Landroid/widget/EdgeEffect;FF)F
 
-    const/4 v0, 0x1
+    move v0, v2
 
     goto :goto_0
 
@@ -1778,7 +1778,7 @@
 
     move-result v3
 
-    cmpl-float v3, v3, v2
+    cmpl-float v3, v3, v1
 
     if-eqz v3, :cond_1
 
@@ -1801,15 +1801,15 @@
 
     sub-float/2addr v3, p1
 
-    invoke-static {v0, v2, v3}, Landroidx/core/widget/EdgeEffectCompat;->onPullDistance(Landroid/widget/EdgeEffect;FF)F
+    invoke-static {v0, v1, v3}, Landroidx/core/widget/EdgeEffectCompat;->onPullDistance(Landroid/widget/EdgeEffect;FF)F
 
     goto :goto_1
 
     :cond_1
-    move v1, v0
+    move v2, v0
 
     :goto_1
-    return v1
+    return v2
 .end method
 
 
@@ -2307,7 +2307,7 @@
     if-lez v14, :cond_3
 
     :cond_2
-    const/4 v12, 0x1
+    move v12, v11
 
     :cond_3
     if-eqz v12, :cond_5
@@ -2707,7 +2707,7 @@
 
     int-to-float v2, v2
 
-    mul-float v2, v2, v3
+    mul-float/2addr v2, v3
 
     int-to-float v4, v0
 
@@ -2727,7 +2727,7 @@
 
     move-result v1
 
-    mul-float v0, v0, v1
+    mul-float/2addr v0, v1
 
     .line 1073
     invoke-static {v0}, Ljava/lang/Math;->round(F)I
@@ -2762,7 +2762,7 @@
 
     int-to-float v2, p1
 
-    mul-float v2, v2, v3
+    mul-float/2addr v2, v3
 
     int-to-float v0, v0
 
@@ -2778,7 +2778,7 @@
 
     move-result v1
 
-    mul-float v0, v0, v1
+    mul-float/2addr v0, v1
 
     .line 1082
     invoke-static {v0}, Ljava/lang/Math;->round(F)I
@@ -3009,7 +3009,7 @@
     goto :goto_0
 
     :cond_0
-    const/4 v8, 0x0
+    move v8, v2
 
     goto :goto_1
 
@@ -3343,7 +3343,7 @@
 
     if-eqz p1, :cond_4
 
-    const/16 v2, 0x21
+    move v2, v4
 
     :cond_4
     invoke-virtual {p0, v2}, Landroidx/core/widget/NestedScrollView;->pageScroll(I)Z
@@ -3458,12 +3458,12 @@
 
     if-ne p1, v2, :cond_0
 
-    const/4 v2, 0x1
+    move v2, v0
 
     goto :goto_0
 
     :cond_0
-    const/4 v2, 0x0
+    move v2, v1
 
     .line 1454
     :goto_0
@@ -3635,7 +3635,7 @@
 
     const/high16 v1, 0x3f000000    # 0.5f
 
-    mul-float v0, v0, v1
+    mul-float/2addr v0, v1
 
     float-to-int v0, v0
 
@@ -3969,7 +3969,7 @@
     goto :goto_0
 
     :cond_1
-    const/4 v0, 0x0
+    move v0, v2
 
     :goto_0
     cmpl-float v2, v0, v2
@@ -3981,7 +3981,7 @@
 
     move-result v2
 
-    mul-float v0, v0, v2
+    mul-float/2addr v0, v2
 
     float-to-int v0, v0
 
@@ -4003,7 +4003,7 @@
 
     const/4 v6, 0x1
 
-    if-gez v0, :cond_3
+    if-gez v0, :cond_4
 
     .line 1185
     invoke-direct {p0}, Landroidx/core/widget/NestedScrollView;->canOverScroll()Z
@@ -4019,15 +4019,15 @@
 
     if-nez p1, :cond_2
 
-    const/4 p1, 0x1
+    move p1, v6
 
     goto :goto_1
 
     :cond_2
-    const/4 p1, 0x0
+    move p1, v1
 
     :goto_1
-    if-eqz p1, :cond_7
+    if-eqz p1, :cond_3
 
     .line 1188
     iget-object p1, p0, Landroidx/core/widget/NestedScrollView;->mEdgeGlowTop:Landroid/widget/EdgeEffect;
@@ -4056,36 +4056,41 @@
     .line 1192
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->invalidate()V
 
-    const/4 p1, 0x1
+    move p1, v6
 
     goto :goto_3
 
     :cond_3
-    if-le v0, v2, :cond_6
+    move p1, v1
+
+    goto :goto_3
+
+    :cond_4
+    if-le v0, v2, :cond_7
 
     .line 1198
     invoke-direct {p0}, Landroidx/core/widget/NestedScrollView;->canOverScroll()Z
 
     move-result v7
 
-    if-eqz v7, :cond_4
+    if-eqz v7, :cond_5
 
     .line 1199
     invoke-static {p1, v5}, Landroidx/core/view/MotionEventCompat;->isFromSource(Landroid/view/MotionEvent;I)Z
 
     move-result p1
 
-    if-nez p1, :cond_4
+    if-nez p1, :cond_5
 
-    const/4 p1, 0x1
+    move p1, v6
 
     goto :goto_2
 
-    :cond_4
-    const/4 p1, 0x0
+    :cond_5
+    move p1, v1
 
     :goto_2
-    if-eqz p1, :cond_5
+    if-eqz p1, :cond_6
 
     .line 1201
     iget-object p1, p0, Landroidx/core/widget/NestedScrollView;->mEdgeGlowBottom:Landroid/widget/EdgeEffect;
@@ -4114,20 +4119,19 @@
     .line 1205
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->invalidate()V
 
-    const/4 v1, 0x1
+    move v1, v6
 
-    :cond_5
+    :cond_6
     move p1, v1
 
     move v1, v2
 
     goto :goto_3
 
-    :cond_6
-    move v1, v0
-
     :cond_7
-    const/4 p1, 0x0
+    move p1, v1
+
+    move v1, v0
 
     :goto_3
     if-eq v1, v3, :cond_8
@@ -4384,7 +4388,7 @@
     goto :goto_0
 
     :cond_8
-    const/4 v2, 0x0
+    move v2, v3
 
     :cond_9
     :goto_0
@@ -4437,7 +4441,7 @@
     goto :goto_1
 
     :cond_b
-    const/4 v2, 0x0
+    move v2, v3
 
     :cond_c
     :goto_1
@@ -5474,13 +5478,13 @@
     goto :goto_1
 
     :cond_b
-    const/16 v18, 0x0
+    move/from16 v18, v12
 
     goto :goto_2
 
     :cond_c
     :goto_1
-    const/16 v18, 0x1
+    move/from16 v18, v14
 
     :goto_2
     const/4 v1, 0x0
@@ -5523,12 +5527,12 @@
 
     if-nez v0, :cond_d
 
-    const/4 v8, 0x1
+    move v8, v14
 
     goto :goto_3
 
     :cond_d
-    const/4 v8, 0x0
+    move v8, v12
 
     .line 953
     :goto_3
@@ -5931,12 +5935,12 @@
 
     if-le v2, v3, :cond_0
 
-    const/4 v2, 0x1
+    move v2, v5
 
     goto :goto_0
 
     :cond_0
-    const/4 v2, 0x0
+    move v2, v4
 
     .line 1260
     :goto_0
@@ -5950,12 +5954,12 @@
 
     if-le v3, v6, :cond_1
 
-    const/4 v3, 0x1
+    move v3, v5
 
     goto :goto_1
 
     :cond_1
-    const/4 v3, 0x0
+    move v3, v4
 
     :goto_1
     if-eqz v1, :cond_3
@@ -5967,13 +5971,13 @@
     goto :goto_2
 
     :cond_2
-    const/4 v2, 0x0
+    move v2, v4
 
     goto :goto_3
 
     :cond_3
     :goto_2
-    const/4 v2, 0x1
+    move v2, v5
 
     :goto_3
     if-eqz v1, :cond_5
@@ -5985,20 +5989,20 @@
     goto :goto_4
 
     :cond_4
-    const/4 v1, 0x0
+    move v1, v4
 
     goto :goto_5
 
     :cond_5
     :goto_4
-    const/4 v1, 0x1
+    move v1, v5
 
     :goto_5
     add-int v3, p3, p1
 
     if-nez v2, :cond_6
 
-    const/4 v2, 0x0
+    move v2, v4
 
     goto :goto_6
 
@@ -6010,7 +6014,7 @@
 
     if-nez v1, :cond_7
 
-    const/4 v1, 0x0
+    move v1, v4
 
     goto :goto_7
 
@@ -6030,42 +6034,44 @@
 
     move v3, v2
 
-    :goto_8
-    const/4 v2, 0x1
+    move v2, v5
 
-    goto :goto_9
+    goto :goto_8
 
     :cond_8
     if-ge v3, v7, :cond_9
+
+    move v2, v5
 
     move v3, v7
 
     goto :goto_8
 
     :cond_9
-    const/4 v2, 0x0
+    move v2, v4
 
-    :goto_9
+    :goto_8
     if-le v6, v1, :cond_a
 
     move v6, v1
 
-    :goto_a
-    const/4 v1, 0x1
+    move v1, v5
 
-    goto :goto_b
+    goto :goto_9
 
     :cond_a
     if-ge v6, v8, :cond_b
 
+    move v1, v5
+
     move v6, v8
 
-    goto :goto_a
+    goto :goto_9
 
     :cond_b
-    const/4 v1, 0x0
+    move v1, v4
 
-    :goto_b
+    :goto_9
     if-eqz v1, :cond_c
 
     .line 1300
@@ -6113,7 +6119,7 @@
     if-eqz v1, :cond_e
 
     :cond_d
-    const/4 v4, 0x1
+    move v4, v5
 
     :cond_e
     return v4
@@ -6130,12 +6136,12 @@
 
     if-ne p1, v2, :cond_0
 
-    const/4 v2, 0x1
+    move v2, v0
 
     goto :goto_0
 
     :cond_0
-    const/4 v2, 0x0
+    move v2, v1
 
     .line 1416
     :goto_0

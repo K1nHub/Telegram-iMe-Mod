@@ -122,7 +122,7 @@
     :cond_0
     const/4 p3, 0x0
 
-    const/4 v0, 0x0
+    move v0, p3
 
     .line 2183
     :goto_0
@@ -788,7 +788,7 @@
 
     if-eq v2, v5, :cond_8
 
-    const/4 v6, 0x1
+    move v6, v7
 
     :cond_8
     invoke-virtual {v1, v3, v6}, Lorg/telegram/ui/SelectAnimatedEmojiDialog$HeaderView;->setText(Ljava/lang/String;Z)V
@@ -1459,7 +1459,7 @@
 
     if-nez v5, :cond_16
 
-    const/4 v6, 0x1
+    move v6, v7
 
     :cond_16
     iget-boolean v5, v3, Lorg/telegram/ui/Components/EmojiView$EmojiPack;->installed:Z
@@ -1765,12 +1765,12 @@
 
     if-eq v9, v11, :cond_22
 
-    const/4 v9, 0x1
+    move v9, v7
 
     goto :goto_c
 
     :cond_22
-    const/4 v9, 0x0
+    move v9, v6
 
     :goto_c
     iget-object v10, v0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$Adapter;->this$0:Lorg/telegram/ui/SelectAnimatedEmojiDialog;
@@ -1781,12 +1781,12 @@
 
     if-eq v10, v11, :cond_23
 
-    const/4 v10, 0x1
+    move v10, v7
 
     goto :goto_d
 
     :cond_23
-    const/4 v10, 0x0
+    move v10, v6
 
     :goto_d
     add-int/2addr v9, v10
@@ -1853,12 +1853,12 @@
 
     if-eq v9, v11, :cond_25
 
-    const/4 v9, 0x1
+    move v9, v7
 
     goto :goto_e
 
     :cond_25
-    const/4 v9, 0x0
+    move v9, v6
 
     :goto_e
     sub-int v9, v2, v9
@@ -1871,12 +1871,12 @@
 
     if-eq v10, v11, :cond_26
 
-    const/4 v10, 0x1
+    move v10, v7
 
     goto :goto_f
 
     :cond_26
-    const/4 v10, 0x0
+    move v10, v6
 
     :goto_f
     sub-int/2addr v9, v10
@@ -1892,12 +1892,12 @@
 
     if-eq v3, v11, :cond_27
 
-    const/4 v3, 0x1
+    move v3, v7
 
     goto :goto_10
 
     :cond_27
-    const/4 v3, 0x0
+    move v3, v6
 
     :goto_10
     sub-int/2addr v2, v3
@@ -1910,12 +1910,12 @@
 
     if-eq v3, v11, :cond_28
 
-    const/4 v3, 0x1
+    move v3, v7
 
     goto :goto_11
 
     :cond_28
-    const/4 v3, 0x0
+    move v3, v6
 
     :goto_11
     sub-int/2addr v2, v3
@@ -1965,7 +1965,7 @@
 
     invoke-virtual {v1, v2, v3}, Lorg/telegram/ui/SelectAnimatedEmojiDialog$ImageViewEmoji;->setSticker(Lorg/telegram/tgnet/TLRPC$Document;Landroid/view/View;)V
 
-    const/4 v2, 0x0
+    move v2, v6
 
     goto/16 :goto_22
 
@@ -2022,7 +2022,7 @@
     goto :goto_13
 
     :cond_2b
-    const/4 v7, 0x0
+    move v7, v6
 
     .line 2260
     :goto_13
@@ -2060,12 +2060,12 @@
 
     if-eq v5, v11, :cond_2d
 
-    const/4 v5, 0x1
+    move v5, v7
 
     goto :goto_14
 
     :cond_2d
-    const/4 v5, 0x0
+    move v5, v6
 
     :goto_14
     sub-int v5, v2, v5
@@ -2078,12 +2078,12 @@
 
     if-eq v9, v11, :cond_2e
 
-    const/4 v9, 0x1
+    move v9, v7
 
     goto :goto_15
 
     :cond_2e
-    const/4 v9, 0x0
+    move v9, v6
 
     :goto_15
     sub-int/2addr v5, v9
@@ -2102,12 +2102,12 @@
 
     if-eq v5, v11, :cond_2f
 
-    const/4 v5, 0x1
+    move v5, v7
 
     goto :goto_16
 
     :cond_2f
-    const/4 v5, 0x0
+    move v5, v6
 
     :goto_16
     sub-int v5, v2, v5
@@ -2120,12 +2120,12 @@
 
     if-eq v9, v11, :cond_30
 
-    const/4 v9, 0x1
+    move v9, v7
 
     goto :goto_17
 
     :cond_30
-    const/4 v9, 0x0
+    move v9, v6
 
     :goto_17
     sub-int/2addr v5, v9
@@ -2155,12 +2155,12 @@
 
     if-eq v4, v11, :cond_31
 
-    const/4 v4, 0x1
+    move v4, v7
 
     goto :goto_18
 
     :cond_31
-    const/4 v4, 0x0
+    move v4, v6
 
     :goto_18
     sub-int/2addr v2, v4
@@ -2173,12 +2173,12 @@
 
     if-eq v4, v11, :cond_32
 
-    const/4 v4, 0x1
+    move v4, v7
 
     goto :goto_19
 
     :cond_32
-    const/4 v4, 0x0
+    move v4, v6
 
     :goto_19
     sub-int/2addr v2, v4
@@ -2239,7 +2239,7 @@
     goto :goto_1b
 
     :cond_34
-    const/4 v7, 0x0
+    move v7, v6
 
     .line 2270
     :goto_1b
@@ -2256,7 +2256,7 @@
     goto/16 :goto_21
 
     :cond_35
-    const/4 v3, 0x0
+    move v3, v6
 
     .line 2275
     :goto_1c
@@ -2447,7 +2447,7 @@
     goto :goto_21
 
     :cond_3d
-    const/4 v7, 0x0
+    move v7, v6
 
     :cond_3e
     :goto_21

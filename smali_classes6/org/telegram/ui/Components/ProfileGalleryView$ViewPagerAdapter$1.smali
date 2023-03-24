@@ -25,7 +25,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/ProfileGalleryView$ViewPagerAdapter;)V
     .locals 0
 
-    .line 1144
+    .line 1160
     iput-object p1, p0, Lorg/telegram/ui/Components/ProfileGalleryView$ViewPagerAdapter$1;->this$1:Lorg/telegram/ui/Components/ProfileGalleryView$ViewPagerAdapter;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -44,7 +44,7 @@
 .method public onAnimationReady(Lorg/telegram/messenger/ImageReceiver;)V
     .locals 0
 
-    .line 1152
+    .line 1168
     iget-object p1, p0, Lorg/telegram/ui/Components/ProfileGalleryView$ViewPagerAdapter$1;->this$1:Lorg/telegram/ui/Components/ProfileGalleryView$ViewPagerAdapter;
 
     iget-object p1, p1, Lorg/telegram/ui/Components/ProfileGalleryView$ViewPagerAdapter;->this$0:Lorg/telegram/ui/Components/ProfileGalleryView;

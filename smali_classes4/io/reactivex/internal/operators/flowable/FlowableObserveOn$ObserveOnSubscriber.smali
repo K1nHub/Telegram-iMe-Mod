@@ -165,7 +165,7 @@
 .end method
 
 .method public poll()Ljava/lang/Object;
-    .locals 6
+    .locals 5
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()TT;"
@@ -206,9 +206,9 @@
 
     int-to-long v3, v3
 
-    cmp-long v5, v1, v3
+    cmp-long v3, v1, v3
 
-    if-nez v5, :cond_0
+    if-nez v3, :cond_0
 
     const-wide/16 v3, 0x0
 
@@ -245,7 +245,7 @@
 
     const/4 v4, 0x1
 
-    const/4 v5, 0x1
+    move v5, v4
 
     .line 377
     :cond_0
@@ -275,7 +275,7 @@
 
     if-nez v10, :cond_2
 
-    const/4 v11, 0x1
+    move v11, v4
 
     goto :goto_2
 
@@ -310,15 +310,15 @@
 
     int-to-long v8, v8
 
-    cmp-long v10, v2, v8
+    cmp-long v8, v2, v8
 
-    if-nez v10, :cond_1
+    if-nez v8, :cond_1
 
     const-wide v8, 0x7fffffffffffffffL
 
-    cmp-long v10, v6, v8
+    cmp-long v8, v6, v8
 
-    if-eqz v10, :cond_5
+    if-eqz v8, :cond_5
 
     .line 412
     iget-object v6, p0, Lio/reactivex/internal/operators/flowable/FlowableObserveOn$BaseObserveOnSubscriber;->requested:Ljava/util/concurrent/atomic/AtomicLong;
@@ -418,7 +418,7 @@
 
     const/4 v0, 0x1
 
-    const/4 v1, 0x1
+    move v1, v0
 
     .line 442
     :cond_0
@@ -497,7 +497,7 @@
 
     const/4 v4, 0x1
 
-    const/4 v5, 0x1
+    move v5, v4
 
     .line 311
     :cond_0

@@ -61,6 +61,6 @@ public final class WalletConnectNewSessionPresenter extends BasePresenter<Wallet
         String url = wCSessionStoreItem.getRemotePeerMeta().getUrl();
         Wallet.EVM eVMWallet = this.cryptoAccessManager.getEVMWallet();
         String address = eVMWallet != null ? eVMWallet.getAddress() : null;
-        walletConnectNewSessionView.setupScreenWithData(str, name, url, StringExtKt.shortened$default(address != null ? address : "", 0, 1, null), this.resourceManager.getString(this.cryptoPreferenceHelper.getNetworkType().getTitle()));
+        walletConnectNewSessionView.setupScreenWithData(str, name, url, StringExtKt.shortened$default(address != null ? address : "", 0, 1, null), this.resourceManager.getString(this.cryptoPreferenceHelper.getNetworkType().getTitleResId()));
     }
 }

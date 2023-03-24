@@ -225,7 +225,7 @@
     if-eq v0, p1, :cond_7
 
     :cond_6
-    const/4 v1, 0x1
+    move v1, v2
 
     :cond_7
     return v1

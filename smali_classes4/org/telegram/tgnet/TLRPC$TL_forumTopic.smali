@@ -183,12 +183,12 @@
 
     if-eqz v1, :cond_0
 
-    const/4 v1, 0x1
+    move v1, v3
 
     goto :goto_0
 
     :cond_0
-    const/4 v1, 0x0
+    move v1, v2
 
     :goto_0
     iput-boolean v1, p0, Lorg/telegram/tgnet/TLRPC$TL_forumTopic;->my:Z
@@ -197,12 +197,12 @@
 
     if-eqz v1, :cond_1
 
-    const/4 v1, 0x1
+    move v1, v3
 
     goto :goto_1
 
     :cond_1
-    const/4 v1, 0x0
+    move v1, v2
 
     :goto_1
     iput-boolean v1, p0, Lorg/telegram/tgnet/TLRPC$TL_forumTopic;->closed:Z
@@ -211,12 +211,12 @@
 
     if-eqz v1, :cond_2
 
-    const/4 v1, 0x1
+    move v1, v3
 
     goto :goto_2
 
     :cond_2
-    const/4 v1, 0x0
+    move v1, v2
 
     :goto_2
     iput-boolean v1, p0, Lorg/telegram/tgnet/TLRPC$TL_forumTopic;->pinned:Z
@@ -225,12 +225,12 @@
 
     if-eqz v1, :cond_3
 
-    const/4 v1, 0x1
+    move v1, v3
 
     goto :goto_3
 
     :cond_3
-    const/4 v1, 0x0
+    move v1, v2
 
     :goto_3
     iput-boolean v1, p0, Lorg/telegram/tgnet/TLRPC$TL_forumTopic;->isShort:Z
@@ -239,7 +239,7 @@
 
     if-eqz v0, :cond_4
 
-    const/4 v2, 0x1
+    move v2, v3
 
     :cond_4
     iput-boolean v2, p0, Lorg/telegram/tgnet/TLRPC$TL_forumTopic;->hidden:Z

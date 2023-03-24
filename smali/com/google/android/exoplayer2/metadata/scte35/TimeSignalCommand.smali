@@ -81,7 +81,7 @@
 .end method
 
 .method static parseSpliceTime(Lcom/google/android/exoplayer2/util/ParsableByteArray;J)J
-    .locals 7
+    .locals 6
 
     .line 53
     invoke-virtual {p0}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->readUnsignedByte()I
@@ -96,9 +96,9 @@
 
     const-wide/16 v4, 0x0
 
-    cmp-long v6, v2, v4
+    cmp-long v2, v2, v4
 
-    if-eqz v6, :cond_0
+    if-eqz v2, :cond_0
 
     const-wide/16 v2, 0x1
 

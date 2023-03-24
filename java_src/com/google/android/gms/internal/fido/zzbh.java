@@ -29,17 +29,17 @@ final class zzbh {
             r2 = -1
             java.util.Arrays.fill(r1, r2)
             r3 = 0
-            r4 = 0
+            r4 = r3
         La:
             int r5 = r11.length
             if (r4 >= r5) goto L2b
             char r5 = r11[r4]
             r6 = 1
             if (r5 >= r0) goto L14
-            r7 = 1
+            r7 = r6
             goto L15
         L14:
-            r7 = 0
+            r7 = r3
         L15:
             java.lang.String r8 = "Non-ASCII character: %s"
             com.google.android.gms.internal.fido.zzas.zzd(r7, r8, r5)
@@ -47,7 +47,7 @@ final class zzbh {
             if (r7 != r2) goto L1f
             goto L20
         L1f:
-            r6 = 0
+            r6 = r3
         L20:
             java.lang.String r7 = "Duplicate character: %s"
             com.google.android.gms.internal.fido.zzas.zzd(r6, r7, r5)

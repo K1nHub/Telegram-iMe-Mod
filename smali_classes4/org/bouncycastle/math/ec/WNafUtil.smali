@@ -117,9 +117,9 @@
 
     const/4 v5, 0x0
 
-    const/4 v6, 0x0
+    move v7, v0
 
-    const/4 v7, 0x1
+    move v6, v5
 
     :goto_0
     if-ge v7, v2, :cond_3
@@ -146,7 +146,7 @@
     goto :goto_1
 
     :cond_2
-    const/4 v8, 0x1
+    move v8, v0
 
     :goto_1
     add-int/lit8 v9, v5, 0x1
@@ -159,9 +159,9 @@
 
     add-int/lit8 v7, v7, 0x1
 
-    move v5, v9
+    move v6, v0
 
-    const/4 v6, 0x1
+    move v5, v9
 
     :goto_2
     add-int/2addr v7, v0
@@ -255,11 +255,11 @@
 
     const/4 v7, 0x0
 
-    const/4 v8, 0x0
+    move v8, v7
 
-    const/4 v9, 0x0
+    move v9, v8
 
-    const/4 v10, 0x0
+    move v10, v9
 
     :goto_0
     invoke-virtual {p1}, Ljava/math/BigInteger;->bitLength()I
@@ -298,12 +298,12 @@
 
     if-eqz v10, :cond_4
 
-    const/4 v10, 0x1
+    move v10, v2
 
     goto :goto_1
 
     :cond_4
-    const/4 v10, 0x0
+    move v10, v7
 
     :goto_1
     if-eqz v10, :cond_5
@@ -395,7 +395,7 @@
 
     move-result-object v1
 
-    const/4 v4, 0x1
+    move v4, v0
 
     :goto_0
     if-ge v4, v2, :cond_3
@@ -419,7 +419,7 @@
     goto :goto_1
 
     :cond_1
-    const/4 v6, 0x1
+    move v6, v0
 
     :goto_1
     int-to-byte v6, v6
@@ -490,11 +490,11 @@
 
     const/4 v6, 0x0
 
-    const/4 v7, 0x0
+    move v7, v6
 
-    const/4 v8, 0x0
+    move v8, v7
 
-    const/4 v9, 0x0
+    move v9, v8
 
     :goto_0
     invoke-virtual {p1}, Ljava/math/BigInteger;->bitLength()I
@@ -533,12 +533,12 @@
 
     if-eqz v9, :cond_4
 
-    const/4 v9, 0x1
+    move v9, v1
 
     goto :goto_1
 
     :cond_4
-    const/4 v9, 0x0
+    move v9, v6
 
     :goto_1
     if-eqz v9, :cond_5

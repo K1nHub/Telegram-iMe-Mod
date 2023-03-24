@@ -247,7 +247,7 @@
 
     if-ne p1, v4, :cond_3
 
-    const/4 v0, 0x1
+    move v0, v1
 
     :cond_3
     invoke-static {v3, v0}, Lorg/telegram/ui/FiltersSetupActivity;->access$4100(Lorg/telegram/ui/FiltersSetupActivity;Z)V
@@ -1021,12 +1021,12 @@
 
     if-ne v4, v3, :cond_0
 
-    const/4 v4, 0x1
+    move v4, v1
 
     goto :goto_0
 
     :cond_0
-    const/4 v4, 0x0
+    move v4, v2
 
     .line 1240
     :goto_0
@@ -1143,9 +1143,9 @@
     invoke-virtual {p1, v0}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->notifyItemInserted(I)V
 
     :cond_3
-    const/4 p1, 0x0
+    move p1, v2
 
-    const/4 v0, 0x0
+    move v0, p1
 
     .line 1258
     :goto_2
@@ -1311,7 +1311,7 @@
 
     const/4 v4, 0x0
 
-    const/4 v6, 0x0
+    move v6, v4
 
     :goto_1
     if-ge v6, v3, :cond_6
@@ -1345,7 +1345,7 @@
 
     move-result v9
 
-    const/4 v10, 0x0
+    move v10, v4
 
     :goto_4
     if-ge v10, v9, :cond_5
@@ -1372,9 +1372,9 @@
     :cond_3
     iget-wide v12, v11, Lorg/telegram/tgnet/TLRPC$InputPeer;->chat_id:J
 
-    cmp-long v16, v12, v14
+    cmp-long v14, v12, v14
 
-    if-eqz v16, :cond_4
+    if-eqz v14, :cond_4
 
     neg-long v12, v12
 
@@ -1948,7 +1948,7 @@
 
     if-lez p1, :cond_1
 
-    const/4 v2, 0x1
+    move v2, v3
 
     :cond_1
     return v2
@@ -1964,7 +1964,7 @@
 
     if-lez p1, :cond_3
 
-    const/4 v2, 0x1
+    move v2, v3
 
     :cond_3
     return v2
@@ -2015,7 +2015,7 @@
 
     if-lez p1, :cond_6
 
-    const/4 v2, 0x1
+    move v2, v3
 
     :cond_6
     return v2
@@ -2033,7 +2033,7 @@
 
     if-eq v0, v3, :cond_8
 
-    const/4 v2, 0x1
+    move v2, v3
 
     :cond_8
     return v2
@@ -2175,12 +2175,12 @@
 
     if-eq v0, v1, :cond_0
 
-    const/4 v0, 0x1
+    move v0, v3
 
     goto :goto_0
 
     :cond_0
-    const/4 v0, 0x0
+    move v0, v2
 
     .line 1285
     :goto_0
@@ -2461,7 +2461,7 @@
 
     if-eq v0, v1, :cond_8
 
-    const/4 v2, 0x1
+    move v2, v3
 
     :cond_8
     invoke-virtual {p1, p2, v2}, Lorg/telegram/ui/FiltersSetupActivity$SuggestedFilterCell;->setFilter(Lorg/telegram/tgnet/TLRPC$TL_dialogFilterSuggested;Z)V
@@ -2843,7 +2843,7 @@
 
     if-lez p2, :cond_14
 
-    const/4 v2, 0x1
+    move v2, v3
 
     :cond_14
     invoke-virtual {p1, v2, v4}, Lorg/telegram/ui/Cells/TextSettingsCell;->setEnabled(ZLjava/util/ArrayList;)V
@@ -2869,7 +2869,7 @@
 
     if-lez p2, :cond_16
 
-    const/4 v2, 0x1
+    move v2, v3
 
     :cond_16
     if-eqz v2, :cond_17
@@ -2958,7 +2958,7 @@
 
     if-lez p2, :cond_19
 
-    const/4 v2, 0x1
+    move v2, v3
 
     :cond_19
     invoke-virtual {p1, v2, v4}, Lorg/telegram/ui/Cells/TextSettingsCell;->setEnabled(ZLjava/util/ArrayList;)V
@@ -2981,12 +2981,12 @@
 
     if-ne p2, v1, :cond_1b
 
-    const/4 v1, 0x1
+    move v1, v3
 
     goto :goto_4
 
     :cond_1b
-    const/4 v1, 0x0
+    move v1, v2
 
     :goto_4
     invoke-virtual {p1, v1}, Lorg/telegram/ui/Cells/TextCheckCell;->setDrawSwitchDivider(Z)V
@@ -3063,7 +3063,7 @@
 
     if-lez p2, :cond_1e
 
-    const/4 v2, 0x1
+    move v2, v3
 
     :cond_1e
     invoke-virtual {p1, v2, v4}, Lorg/telegram/ui/Cells/TextCheckCell;->setEnabled(ZLjava/util/ArrayList;)V
@@ -3100,7 +3100,7 @@
 
     if-lez p2, :cond_20
 
-    const/4 v2, 0x1
+    move v2, v3
 
     :cond_20
     invoke-virtual {p1, v2, v4}, Lorg/telegram/ui/Cells/TextCheckCell;->setEnabled(ZLjava/util/ArrayList;)V
@@ -3162,7 +3162,7 @@
 
     if-lez p2, :cond_23
 
-    const/4 v2, 0x1
+    move v2, v3
 
     :cond_23
     invoke-virtual {p1, v2, v4}, Lorg/telegram/ui/Cells/TextCheckCell;->setEnabled(ZLjava/util/ArrayList;)V

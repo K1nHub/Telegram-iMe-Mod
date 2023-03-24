@@ -119,7 +119,7 @@
 
     if-nez p1, :cond_3
 
-    const/4 v3, 0x1
+    move v3, v0
 
     :cond_3
     invoke-static {p2, v3}, Lorg/telegram/ui/Components/EmojiView;->access$12400(Lorg/telegram/ui/Components/EmojiView;Z)V
@@ -205,7 +205,7 @@
 
     move-result-object v4
 
-    const/4 v5, 0x0
+    move v5, v3
 
     :goto_1
     const/4 v6, 0x4
@@ -326,7 +326,7 @@
     if-ne p1, v0, :cond_10
 
     :cond_f
-    const/4 v3, 0x1
+    move v3, v0
 
     :cond_10
     invoke-static {v1, v3}, Lorg/telegram/ui/Components/EmojiView;->access$12400(Lorg/telegram/ui/Components/EmojiView;Z)V
@@ -361,12 +361,12 @@
 
     if-nez p1, :cond_0
 
-    const/4 v3, 0x1
+    move v3, v2
 
     goto :goto_0
 
     :cond_0
-    const/4 v3, 0x0
+    move v3, v1
 
     :goto_0
     invoke-static {v0, v3, v2}, Lorg/telegram/ui/Components/EmojiView;->access$13600(Lorg/telegram/ui/Components/EmojiView;ZZ)V
@@ -378,7 +378,7 @@
 
     if-ne p1, v3, :cond_1
 
-    const/4 v1, 0x1
+    move v1, v2
 
     :cond_1
     invoke-static {v0, v1, v2}, Lorg/telegram/ui/Components/EmojiView;->access$13700(Lorg/telegram/ui/Components/EmojiView;ZZ)V

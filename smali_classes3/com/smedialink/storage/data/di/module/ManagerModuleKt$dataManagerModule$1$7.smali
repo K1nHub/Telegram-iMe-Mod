@@ -22,13 +22,13 @@
         "Lkotlin/jvm/functions/Function2<",
         "Lorg/koin/core/scope/Scope;",
         "Lorg/koin/core/parameter/ParametersHolder;",
-        "Lcom/smedialink/storage/domain/manager/auth/AuthManager;",
+        "Lcom/smedialink/storage/domain/manager/binancepay/BinancePayManager;",
         ">;"
     }
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nManagerModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ManagerModule.kt\ncom/smedialink/storage/data/di/module/ManagerModuleKt$dataManagerModule$1$7\n+ 2 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,68:1\n127#2,5:69\n*S KotlinDebug\n*F\n+ 1 ManagerModule.kt\ncom/smedialink/storage/data/di/module/ManagerModuleKt$dataManagerModule$1$7\n*L\n50#1:69,5\n*E\n"
+    value = "SMAP\nManagerModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ManagerModule.kt\ncom/smedialink/storage/data/di/module/ManagerModuleKt$dataManagerModule$1$7\n+ 2 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,70:1\n127#2,5:71\n*S KotlinDebug\n*F\n+ 1 ManagerModule.kt\ncom/smedialink/storage/data/di/module/ManagerModuleKt$dataManagerModule$1$7\n*L\n51#1:71,5\n*E\n"
 .end annotation
 
 
@@ -61,7 +61,7 @@
 
 
 # virtual methods
-.method public final invoke(Lorg/koin/core/scope/Scope;Lorg/koin/core/parameter/ParametersHolder;)Lcom/smedialink/storage/domain/manager/auth/AuthManager;
+.method public final invoke(Lorg/koin/core/scope/Scope;Lorg/koin/core/parameter/ParametersHolder;)Lcom/smedialink/storage/domain/manager/binancepay/BinancePayManager;
     .locals 2
 
     const-string v0, "$this$single"
@@ -72,52 +72,39 @@
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 131
-    const-class p2, Lcom/smedialink/storage/domain/storage/CryptoPreferenceHelper;
-
-    invoke-static {p2}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
-
-    move-result-object p2
-
-    const/4 v0, 0x0
-
-    invoke-virtual {p1, p2, v0, v0}, Lorg/koin/core/scope/Scope;->get(Lkotlin/reflect/KClass;Lorg/koin/core/qualifier/Qualifier;Lkotlin/jvm/functions/Function0;)Ljava/lang/Object;
-
-    move-result-object p2
-
-    .line 50
-    check-cast p2, Lcom/smedialink/storage/domain/storage/CryptoPreferenceHelper;
+    .line 51
+    new-instance p2, Lcom/smedialink/storage/data/manager/binancepay/BinancePayManagerImpl;
 
     .line 131
-    const-class v1, Lcom/smedialink/storage/domain/gateway/TelegramGateway;
+    const-class v0, Lcom/smedialink/storage/domain/storage/CryptoPreferenceHelper;
 
-    invoke-static {v1}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
+    invoke-static {v0}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
 
-    move-result-object v1
+    move-result-object v0
 
-    invoke-virtual {p1, v1, v0, v0}, Lorg/koin/core/scope/Scope;->get(Lkotlin/reflect/KClass;Lorg/koin/core/qualifier/Qualifier;Lkotlin/jvm/functions/Function0;)Ljava/lang/Object;
+    const/4 v1, 0x0
+
+    invoke-virtual {p1, v0, v1, v1}, Lorg/koin/core/scope/Scope;->get(Lkotlin/reflect/KClass;Lorg/koin/core/qualifier/Qualifier;Lkotlin/jvm/functions/Function0;)Ljava/lang/Object;
 
     move-result-object p1
 
-    .line 50
-    check-cast p1, Lcom/smedialink/storage/domain/gateway/TelegramGateway;
+    check-cast p1, Lcom/smedialink/storage/domain/storage/CryptoPreferenceHelper;
 
-    new-instance v0, Lcom/smedialink/storage/data/manager/auth/AuthManagerImpl;
+    .line 51
+    invoke-direct {p2, p1}, Lcom/smedialink/storage/data/manager/binancepay/BinancePayManagerImpl;-><init>(Lcom/smedialink/storage/domain/storage/CryptoPreferenceHelper;)V
 
-    invoke-direct {v0, p1, p2}, Lcom/smedialink/storage/data/manager/auth/AuthManagerImpl;-><init>(Lcom/smedialink/storage/domain/gateway/TelegramGateway;Lcom/smedialink/storage/domain/storage/CryptoPreferenceHelper;)V
-
-    return-object v0
+    return-object p2
 .end method
 
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 50
+    .line 51
     check-cast p1, Lorg/koin/core/scope/Scope;
 
     check-cast p2, Lorg/koin/core/parameter/ParametersHolder;
 
-    invoke-virtual {p0, p1, p2}, Lcom/smedialink/storage/data/di/module/ManagerModuleKt$dataManagerModule$1$7;->invoke(Lorg/koin/core/scope/Scope;Lorg/koin/core/parameter/ParametersHolder;)Lcom/smedialink/storage/domain/manager/auth/AuthManager;
+    invoke-virtual {p0, p1, p2}, Lcom/smedialink/storage/data/di/module/ManagerModuleKt$dataManagerModule$1$7;->invoke(Lorg/koin/core/scope/Scope;Lorg/koin/core/parameter/ParametersHolder;)Lcom/smedialink/storage/domain/manager/binancepay/BinancePayManager;
 
     move-result-object p1
 

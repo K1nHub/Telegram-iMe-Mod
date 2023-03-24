@@ -1346,18 +1346,18 @@ public class ExifInterface {
         }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:46:0x0133  */
-    /* JADX WARN: Removed duplicated region for block: B:47:0x013b  */
-    /* JADX WARN: Removed duplicated region for block: B:88:0x0229  */
-    /* JADX WARN: Removed duplicated region for block: B:91:0x0247  */
-    /* JADX WARN: Removed duplicated region for block: B:96:0x0283  */
+    /* JADX WARN: Removed duplicated region for block: B:46:0x0132  */
+    /* JADX WARN: Removed duplicated region for block: B:47:0x013a  */
+    /* JADX WARN: Removed duplicated region for block: B:88:0x0228  */
+    /* JADX WARN: Removed duplicated region for block: B:91:0x0246  */
+    /* JADX WARN: Removed duplicated region for block: B:96:0x0282  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct add '--show-bad-code' argument
     */
     private void readImageFileDirectory(androidx.exifinterface.media.ExifInterface.SeekableByteOrderedDataInputStream r30, int r31) throws java.io.IOException {
         /*
-            Method dump skipped, instructions count: 928
+            Method dump skipped, instructions count: 927
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: androidx.exifinterface.media.ExifInterface.readImageFileDirectory(androidx.exifinterface.media.ExifInterface$SeekableByteOrderedDataInputStream, int):void");
@@ -1445,38 +1445,34 @@ public class ExifInterface {
                 j += j2;
             }
             byte[] bArr = new byte[(int) j];
-            int i = 1;
             this.mAreThumbnailStripsConsecutive = true;
+            int i = 0;
             int i2 = 0;
-            int i3 = 0;
-            int i4 = 0;
-            while (i2 < convertToLongArray.length) {
-                int i5 = (int) convertToLongArray[i2];
-                int i6 = (int) convertToLongArray2[i2];
-                if (i2 < convertToLongArray.length - i && i5 + i6 != convertToLongArray[i2 + 1]) {
+            for (int i3 = 0; i3 < convertToLongArray.length; i3++) {
+                int i4 = (int) convertToLongArray[i3];
+                int i5 = (int) convertToLongArray2[i3];
+                if (i3 < convertToLongArray.length - 1 && i4 + i5 != convertToLongArray[i3 + 1]) {
                     this.mAreThumbnailStripsConsecutive = false;
                 }
-                int i7 = i5 - i3;
-                if (i7 < 0) {
+                int i6 = i4 - i;
+                if (i6 < 0) {
                     Log.d("ExifInterface", "Invalid strip offset value");
                     return;
                 }
-                long j3 = i7;
+                long j3 = i6;
                 if (byteOrderedDataInputStream.skip(j3) != j3) {
-                    Log.d("ExifInterface", "Failed to skip " + i7 + " bytes.");
+                    Log.d("ExifInterface", "Failed to skip " + i6 + " bytes.");
                     return;
                 }
-                int i8 = i3 + i7;
-                byte[] bArr2 = new byte[i6];
-                if (byteOrderedDataInputStream.read(bArr2) != i6) {
-                    Log.d("ExifInterface", "Failed to read " + i6 + " bytes.");
+                int i7 = i + i6;
+                byte[] bArr2 = new byte[i5];
+                if (byteOrderedDataInputStream.read(bArr2) != i5) {
+                    Log.d("ExifInterface", "Failed to read " + i5 + " bytes.");
                     return;
                 }
-                i3 = i8 + i6;
-                System.arraycopy(bArr2, 0, bArr, i4, i6);
-                i4 += i6;
-                i2++;
-                i = 1;
+                i = i7 + i5;
+                System.arraycopy(bArr2, 0, bArr, i2, i5);
+                i2 += i5;
             }
             if (this.mAreThumbnailStripsConsecutive) {
                 long j4 = convertToLongArray[0];

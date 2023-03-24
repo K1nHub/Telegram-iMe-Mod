@@ -312,10 +312,10 @@
 
     if-eqz v4, :cond_0
 
-    const/4 v2, 0x1
+    move v2, v5
 
     :cond_0
-    mul-int v3, v3, v2
+    mul-int/2addr v3, v2
 
     int-to-float v2, v3
 
@@ -377,10 +377,10 @@
     goto :goto_0
 
     :cond_2
-    const/4 v2, 0x1
+    move v2, v5
 
     :goto_0
-    mul-int v4, v4, v2
+    mul-int/2addr v4, v2
 
     int-to-float v2, v4
 
@@ -400,7 +400,7 @@
     goto :goto_1
 
     :cond_3
-    const/4 v5, 0x0
+    move v5, v1
 
     :goto_1
     if-eqz v5, :cond_5
@@ -677,7 +677,7 @@
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     .line 253
     :goto_0
@@ -1012,12 +1012,12 @@
     :cond_4
     if-gez v2, :cond_5
 
-    const/4 v5, 0x1
+    move v5, v0
 
     goto :goto_0
 
     :cond_5
-    const/4 v5, 0x0
+    move v5, v1
 
     .line 348
     :goto_0
@@ -1152,7 +1152,7 @@
 
     if-gez v2, :cond_8
 
-    const/4 v1, 0x1
+    move v1, v0
 
     .line 359
     :cond_8
@@ -1397,12 +1397,12 @@
 
     if-gez v6, :cond_d
 
-    const/4 v6, 0x1
+    move v6, v0
 
     goto :goto_3
 
     :cond_d
-    const/4 v6, 0x0
+    move v6, v1
 
     .line 380
     :goto_3
@@ -1411,9 +1411,9 @@
     goto :goto_4
 
     :cond_e
-    const/4 v4, 0x0
+    move v4, v3
 
-    const/4 v5, 0x0
+    move v5, v4
 
     .line 387
     :cond_f
@@ -1496,12 +1496,12 @@
     if-gez v5, :cond_11
 
     :cond_10
-    const/4 v5, 0x1
+    move v5, v0
 
     goto :goto_5
 
     :cond_11
-    const/4 v5, 0x0
+    move v5, v1
 
     :goto_5
     invoke-static {v6, v5}, Lorg/telegram/ui/DialogOrContactPickerActivity;->access$2002(Lorg/telegram/ui/DialogOrContactPickerActivity;Z)Z
@@ -1886,7 +1886,7 @@
 
     move-result v2
 
-    mul-float v2, v2, v5
+    mul-float/2addr v2, v5
 
     add-float/2addr v5, v2
 
@@ -1908,7 +1908,7 @@
 
     move-result v2
 
-    mul-float v2, v2, p1
+    mul-float/2addr v2, p1
 
     invoke-static {v2}, Ljava/lang/Math;->round(F)I
 
@@ -1932,7 +1932,7 @@
 
     const/high16 v2, 0x42c80000    # 100.0f
 
-    mul-float p1, p1, v2
+    mul-float/2addr p1, v2
 
     float-to-int p1, p1
 

@@ -654,7 +654,7 @@
 
     if-eqz v11, :cond_1
 
-    const/4 v11, 0x5
+    move v11, v15
 
     goto :goto_0
 

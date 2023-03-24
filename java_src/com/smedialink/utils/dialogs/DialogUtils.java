@@ -158,7 +158,7 @@ public final class DialogUtils {
             radioColorCell.setOnClickListener(new View.OnClickListener() { // from class: com.smedialink.utils.dialogs.DialogUtils$$ExternalSyntheticLambda9
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    DialogUtils.m705x4de0a121(Callbacks$Callback1.this, i, builder, view);
+                    DialogUtils.m704x4de0a121(Callbacks$Callback1.this, i, builder, view);
                 }
             });
             linearLayout.addView(radioColorCell);
@@ -177,7 +177,7 @@ public final class DialogUtils {
     }
 
     /* renamed from: createDialogWithRadioCellsList$lambda$15$lambda$13$lambda$12$lambda$11$lambda$10 */
-    public static final void m705x4de0a121(Callbacks$Callback1 itemSelectedListener, int i, AlertDialog.Builder this_apply, View view) {
+    public static final void m704x4de0a121(Callbacks$Callback1 itemSelectedListener, int i, AlertDialog.Builder this_apply, View view) {
         Intrinsics.checkNotNullParameter(itemSelectedListener, "$itemSelectedListener");
         Intrinsics.checkNotNullParameter(this_apply, "$this_apply");
         itemSelectedListener.invoke(Integer.valueOf(i));

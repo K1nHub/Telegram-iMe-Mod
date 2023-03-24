@@ -57,7 +57,7 @@
 .end method
 
 .method public constructor <init>(Ljava/util/List;)V
-    .locals 7
+    .locals 6
     .param p1    # Ljava/util/List;
         .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Param;
             id = 0x1
@@ -93,7 +93,7 @@
 
     const/4 v0, 0x1
 
-    const/4 v1, 0x1
+    move v1, v0
 
     .line 4
     :goto_0
@@ -127,11 +127,11 @@
 
     move-result-wide v4
 
-    cmp-long v6, v2, v4
+    cmp-long v2, v2, v4
 
-    if-ltz v6, :cond_0
+    if-ltz v2, :cond_0
 
-    const/4 v2, 0x1
+    move v2, v0
 
     goto :goto_1
 

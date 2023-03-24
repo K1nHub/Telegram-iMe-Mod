@@ -41,7 +41,7 @@ public final class LockFreeTaskQueueCore<E> {
 
     public final int getSize() {
         long j = this._state;
-        return 1073741823 & (((int) ((j & 1152921503533105152L) >> 30)) - ((int) ((1073741823 & j) >> 0)));
+        return (((int) ((j & 1152921503533105152L) >> 30)) - ((int) ((1073741823 & j) >> 0))) & IdFabric$RequestCode.file_saving_directory;
     }
 
     private final LockFreeTaskQueueCore<E> fillPlaceholder(int i, E e) {
@@ -72,7 +72,7 @@ public final class LockFreeTaskQueueCore<E> {
                 lockFreeTaskQueueCore.array.set(lockFreeTaskQueueCore.mask & i, obj);
                 i++;
             } else {
-                lockFreeTaskQueueCore._state = Companion.m94wo(j, 1152921504606846976L);
+                lockFreeTaskQueueCore._state = Companion.m93wo(j, 1152921504606846976L);
                 return lockFreeTaskQueueCore;
             }
         }
@@ -100,7 +100,7 @@ public final class LockFreeTaskQueueCore<E> {
         }
 
         /* renamed from: wo */
-        public final long m94wo(long j, long j2) {
+        public final long m93wo(long j, long j2) {
             return j & (~j2);
         }
 
@@ -108,11 +108,11 @@ public final class LockFreeTaskQueueCore<E> {
         }
 
         public final long updateHead(long j, int i) {
-            return m94wo(j, 1073741823L) | (i << 0);
+            return m93wo(j, 1073741823L) | (i << 0);
         }
 
         public final long updateTail(long j, int i) {
-            return m94wo(j, 1152921503533105152L) | (i << 30);
+            return m93wo(j, 1152921503533105152L) | (i << 30);
         }
     }
 
@@ -145,8 +145,8 @@ public final class LockFreeTaskQueueCore<E> {
             r0 = 3458764513820540928(0x3000000000000000, double:1.727233711018889E-77)
             long r0 = r0 & r2
             r6 = 0
-            int r4 = (r0 > r6 ? 1 : (r0 == r6 ? 0 : -1))
-            if (r4 == 0) goto L12
+            int r0 = (r0 > r6 ? 1 : (r0 == r6 ? 0 : -1))
+            if (r0 == 0) goto L12
             kotlinx.coroutines.internal.LockFreeTaskQueueCore$Companion r14 = kotlinx.coroutines.internal.LockFreeTaskQueueCore.Companion
             int r14 = r14.addFailReason(r2)
             return r14
@@ -204,8 +204,8 @@ public final class LockFreeTaskQueueCore<E> {
             long r1 = r0._state
             r3 = 1152921504606846976(0x1000000000000000, double:1.2882297539194267E-231)
             long r1 = r1 & r3
-            int r3 = (r1 > r6 ? 1 : (r1 == r6 ? 0 : -1))
-            if (r3 != 0) goto L73
+            int r1 = (r1 > r6 ? 1 : (r1 == r6 ? 0 : -1))
+            if (r1 != 0) goto L73
             goto L7d
         L73:
             kotlinx.coroutines.internal.LockFreeTaskQueueCore r0 = r0.next()

@@ -346,7 +346,7 @@
 .end method
 
 .method public postRunnable(Ljava/lang/Runnable;J)Z
-    .locals 3
+    .locals 2
 
     .line 81
     invoke-direct {p0}, Lorg/telegram/messenger/DispatchQueueMainThreadSync;->checkThread()V
@@ -382,9 +382,9 @@
     :cond_1
     const-wide/16 v0, 0x0
 
-    cmp-long v2, p2, v0
+    cmp-long v0, p2, v0
 
-    if-gtz v2, :cond_2
+    if-gtz v0, :cond_2
 
     .line 90
     iget-object p2, p0, Lorg/telegram/messenger/DispatchQueueMainThreadSync;->handler:Landroid/os/Handler;

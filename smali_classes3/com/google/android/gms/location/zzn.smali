@@ -31,9 +31,9 @@
 
     const/4 v3, 0x0
 
-    move-object v3, v2
+    move v4, v3
 
-    const/4 v4, 0x0
+    move-object v3, v2
 
     move-object v2, v1
 

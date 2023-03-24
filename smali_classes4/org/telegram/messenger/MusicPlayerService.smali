@@ -69,12 +69,12 @@
 
     if-lt v0, v3, :cond_0
 
-    const/4 v3, 0x1
+    move v3, v1
 
     goto :goto_0
 
     :cond_0
-    const/4 v3, 0x0
+    move v3, v2
 
     :goto_0
     sput-boolean v3, Lorg/telegram/messenger/MusicPlayerService;->supportBigNotifications:Z
@@ -99,7 +99,7 @@
     goto :goto_1
 
     :cond_1
-    const/4 v1, 0x0
+    move v1, v2
 
     :cond_2
     :goto_1
@@ -801,7 +801,7 @@
 
     if-eqz v7, :cond_a
 
-    const/high16 v12, 0x3f800000    # 1.0f
+    move v12, v15
 
     goto :goto_7
 
@@ -1543,7 +1543,7 @@
 
     const-wide/16 v9, 0x3e8
 
-    mul-long v2, v2, v9
+    mul-long/2addr v2, v9
 
     invoke-virtual {v7, v5, v2, v3}, Landroid/media/RemoteControlClient$MetadataEditor;->putLong(IJ)Landroid/media/RemoteControlClient$MetadataEditor;
 
@@ -1632,7 +1632,7 @@
 
     const-wide/16 v6, 0x3e8
 
-    mul-long v2, v2, v6
+    mul-long/2addr v2, v6
 
     invoke-virtual {v0, v5, v2, v3}, Landroid/media/RemoteControlClient$MetadataEditor;->putLong(IJ)Landroid/media/RemoteControlClient$MetadataEditor;
 
@@ -1659,7 +1659,7 @@
 
     if-eqz v2, :cond_1f
 
-    const/4 v9, 0x2
+    move v9, v8
 
     goto :goto_14
 
@@ -1682,7 +1682,7 @@
 
     const-wide/16 v4, 0x3e8
 
-    mul-long v2, v2, v4
+    mul-long/2addr v2, v4
 
     const-wide/16 v4, 0x64
 
@@ -1723,7 +1723,7 @@
 
     if-eqz v2, :cond_22
 
-    const/4 v9, 0x2
+    move v9, v8
 
     goto :goto_15
 
@@ -1844,12 +1844,12 @@
 
     if-eqz p2, :cond_0
 
-    const/high16 v1, 0x44160000    # 600.0f
+    move v1, p3
 
     goto :goto_0
 
     :cond_0
-    const/high16 v1, 0x42c80000    # 100.0f
+    move v1, v0
 
     :goto_0
     if-eqz p2, :cond_1
@@ -1857,7 +1857,7 @@
     goto :goto_1
 
     :cond_1
-    const/high16 p3, 0x42c80000    # 100.0f
+    move p3, v0
 
     :goto_1
     const/4 p2, 0x0
@@ -2079,7 +2079,7 @@
 
     move-result p2
 
-    mul-float p1, p1, p2
+    mul-float/2addr p1, p2
 
     invoke-static {p1}, Ljava/lang/Math;->round(F)I
 
@@ -2089,7 +2089,7 @@
 
     const-wide/16 v0, 0x3e8
 
-    mul-long p1, p1, v0
+    mul-long/2addr p1, v0
 
     .line 537
     iget-object p3, p0, Lorg/telegram/messenger/MusicPlayerService;->remoteControlClient:Landroid/media/RemoteControlClient;
@@ -2239,7 +2239,7 @@
 
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    move v1, v0
 
     :goto_0
     const/4 v2, 0x5

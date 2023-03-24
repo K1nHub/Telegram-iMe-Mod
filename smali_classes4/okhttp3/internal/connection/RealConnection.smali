@@ -167,7 +167,7 @@
     goto :goto_0
 
     :cond_0
-    const/4 v1, 0x0
+    move v1, v2
 
     :goto_0
     return v1
@@ -1418,7 +1418,7 @@
     if-eqz v0, :cond_1
 
     :cond_0
-    const/4 v1, 0x0
+    move v1, v2
 
     goto :goto_1
 
@@ -1485,12 +1485,12 @@
 
     if-eqz v0, :cond_3
 
-    const/4 v0, 0x1
+    move v0, v1
 
     goto :goto_0
 
     :cond_3
-    const/4 v0, 0x0
+    move v0, v2
 
     :goto_0
     if-eqz v0, :cond_2
@@ -1718,7 +1718,7 @@
 
     if-eqz p1, :cond_4
 
-    const/4 v3, 0x1
+    move v3, v1
 
     :cond_4
     return v3
@@ -1764,7 +1764,7 @@
 
     if-nez v0, :cond_0
 
-    const/4 v0, 0x1
+    move v0, v10
 
     goto :goto_0
 
@@ -2686,9 +2686,9 @@
 
     const-wide v5, 0x2540be400L
 
-    cmp-long v2, v0, v5
+    cmp-long v0, v0, v5
 
-    if-ltz v2, :cond_4
+    if-ltz v0, :cond_4
 
     if-eqz p1, :cond_4
 

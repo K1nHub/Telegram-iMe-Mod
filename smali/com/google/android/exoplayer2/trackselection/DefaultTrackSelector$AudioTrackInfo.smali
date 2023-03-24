@@ -108,7 +108,7 @@
 
     iput-boolean p2, p0, Lcom/google/android/exoplayer2/trackselection/DefaultTrackSelector$AudioTrackInfo;->isWithinRendererCapabilities:Z
 
-    const/4 p2, 0x0
+    move p2, p1
 
     .line 3408
     :goto_0
@@ -149,9 +149,9 @@
     goto :goto_0
 
     :cond_1
-    const p2, 0x7fffffff
+    move p3, p1
 
-    const/4 p3, 0x0
+    move p2, v0
 
     .line 3420
     :goto_1
@@ -190,13 +190,13 @@
     goto :goto_2
 
     :cond_2
-    const/4 p3, 0x0
+    move p3, p1
 
     goto :goto_3
 
     :cond_3
     :goto_2
-    const/4 p3, 0x1
+    move p3, v1
 
     :goto_3
     iput-boolean p3, p0, Lcom/google/android/exoplayer2/trackselection/DefaultTrackSelector$AudioTrackInfo;->hasMainOrNoRoleFlag:Z
@@ -208,12 +208,12 @@
 
     if-eqz p3, :cond_4
 
-    const/4 p3, 0x1
+    move p3, v1
 
     goto :goto_4
 
     :cond_4
-    const/4 p3, 0x0
+    move p3, p1
 
     :goto_4
     iput-boolean p3, p0, Lcom/google/android/exoplayer2/trackselection/DefaultTrackSelector$AudioTrackInfo;->isDefaultSelectionFlag:Z
@@ -257,12 +257,12 @@
 
     if-eqz p2, :cond_7
 
-    const/4 p2, 0x1
+    move p2, v1
 
     goto :goto_5
 
     :cond_7
-    const/4 p2, 0x0
+    move p2, p1
 
     :goto_5
     iput-boolean p2, p0, Lcom/google/android/exoplayer2/trackselection/DefaultTrackSelector$AudioTrackInfo;->isWithinConstraints:Z
@@ -272,7 +272,7 @@
 
     move-result-object p2
 
-    const/4 p3, 0x0
+    move p3, p1
 
     .line 3437
     :goto_6
@@ -300,9 +300,9 @@
     goto :goto_6
 
     :cond_9
-    const p3, 0x7fffffff
+    move p7, p1
 
-    const/4 p7, 0x0
+    move p3, v0
 
     .line 3447
     :goto_7
@@ -311,7 +311,7 @@
     .line 3448
     iput p7, p0, Lcom/google/android/exoplayer2/trackselection/DefaultTrackSelector$AudioTrackInfo;->localeLanguageScore:I
 
-    const/4 p2, 0x0
+    move p2, p1
 
     .line 3450
     :goto_8
@@ -366,12 +366,12 @@
 
     if-ne p2, p3, :cond_c
 
-    const/4 p2, 0x1
+    move p2, v1
 
     goto :goto_a
 
     :cond_c
-    const/4 p2, 0x0
+    move p2, p1
 
     :goto_a
     iput-boolean p2, p0, Lcom/google/android/exoplayer2/trackselection/DefaultTrackSelector$AudioTrackInfo;->usesPrimaryDecoder:Z
@@ -385,7 +385,7 @@
 
     if-ne p2, p3, :cond_d
 
-    const/4 p1, 0x1
+    move p1, v1
 
     :cond_d
     iput-boolean p1, p0, Lcom/google/android/exoplayer2/trackselection/DefaultTrackSelector$AudioTrackInfo;->usesHardwareAcceleration:Z

@@ -61,7 +61,7 @@
 
     if-ne v4, v5, :cond_0
 
-    const/4 v2, 0x1
+    move v2, v3
 
     :cond_0
     :goto_0

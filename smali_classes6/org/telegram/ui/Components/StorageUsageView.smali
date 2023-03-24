@@ -1243,9 +1243,9 @@
     .line 234
     iget p2, p0, Lorg/telegram/ui/Components/StorageUsageView;->progress:F
 
-    const/4 p4, 0x2
-
     cmpl-float p2, p2, p1
+
+    const/4 p4, 0x2
 
     if-eqz p2, :cond_4
 

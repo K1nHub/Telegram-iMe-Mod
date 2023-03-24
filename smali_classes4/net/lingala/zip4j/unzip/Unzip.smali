@@ -52,7 +52,7 @@
 .end method
 
 .method private calculateTotalWork(Ljava/util/ArrayList;)J
-    .locals 9
+    .locals 8
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lnet/lingala/zip4j/exception/ZipException;
@@ -98,9 +98,9 @@
 
     move-result-wide v6
 
-    cmp-long v8, v6, v1
+    cmp-long v6, v6, v1
 
-    if-lez v8, :cond_0
+    if-lez v6, :cond_0
 
     .line 227
     invoke-virtual {v5}, Lnet/lingala/zip4j/model/FileHeader;->getZip64ExtendedInfo()Lnet/lingala/zip4j/model/Zip64ExtendedInfo;
@@ -260,7 +260,7 @@
 
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    move v1, v0
 
     .line 81
     :goto_0

@@ -171,26 +171,26 @@
 
     const-wide/16 v6, 0x0
 
-    const/4 v8, 0x0
+    cmp-long v2, v2, v6
 
-    cmp-long v9, v2, v6
+    const/4 v3, 0x0
 
-    if-eqz v9, :cond_3
+    if-eqz v2, :cond_3
 
-    const/4 p3, 0x0
+    move p3, v3
 
     .line 334
     :cond_3
     iget-wide v1, v1, Lcom/google/android/exoplayer2/source/ClippingMediaPeriod;->endUs:J
 
-    cmp-long v3, v1, v4
+    cmp-long v1, v1, v4
 
-    if-eqz v3, :cond_4
+    if-eqz v1, :cond_4
 
     goto :goto_0
 
     :cond_4
-    iget v8, p2, Lcom/google/android/exoplayer2/Format;->encoderPadding:I
+    iget v3, p2, Lcom/google/android/exoplayer2/Format;->encoderPadding:I
 
     .line 337
     :goto_0
@@ -204,7 +204,7 @@
     move-result-object p2
 
     .line 339
-    invoke-virtual {p2, v8}, Lcom/google/android/exoplayer2/Format$Builder;->setEncoderPadding(I)Lcom/google/android/exoplayer2/Format$Builder;
+    invoke-virtual {p2, v3}, Lcom/google/android/exoplayer2/Format$Builder;->setEncoderPadding(I)Lcom/google/android/exoplayer2/Format$Builder;
 
     move-result-object p2
 

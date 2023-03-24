@@ -95,15 +95,15 @@
 
     iget-wide v8, p0, Lio/reactivex/Scheduler$Worker$PeriodicTask;->lastNowNanoseconds:J
 
-    const-wide/16 v10, 0x1
-
     cmp-long v0, v6, v8
+
+    const-wide/16 v6, 0x1
 
     if-ltz v0, :cond_1
 
-    iget-wide v6, p0, Lio/reactivex/Scheduler$Worker$PeriodicTask;->periodInNanoseconds:J
+    iget-wide v10, p0, Lio/reactivex/Scheduler$Worker$PeriodicTask;->periodInNanoseconds:J
 
-    add-long/2addr v8, v6
+    add-long/2addr v8, v10
 
     add-long/2addr v8, v4
 
@@ -119,11 +119,11 @@
 
     iget-wide v8, p0, Lio/reactivex/Scheduler$Worker$PeriodicTask;->count:J
 
-    add-long/2addr v8, v10
+    add-long/2addr v8, v6
 
     iput-wide v8, p0, Lio/reactivex/Scheduler$Worker$PeriodicTask;->count:J
 
-    mul-long v8, v8, v6
+    mul-long/2addr v8, v10
 
     add-long/2addr v4, v8
 
@@ -134,22 +134,22 @@
     :goto_0
     iget-wide v4, p0, Lio/reactivex/Scheduler$Worker$PeriodicTask;->periodInNanoseconds:J
 
-    add-long v6, v2, v4
+    add-long v8, v2, v4
 
     .line 494
-    iget-wide v8, p0, Lio/reactivex/Scheduler$Worker$PeriodicTask;->count:J
+    iget-wide v10, p0, Lio/reactivex/Scheduler$Worker$PeriodicTask;->count:J
 
-    add-long/2addr v8, v10
+    add-long/2addr v10, v6
 
-    iput-wide v8, p0, Lio/reactivex/Scheduler$Worker$PeriodicTask;->count:J
+    iput-wide v10, p0, Lio/reactivex/Scheduler$Worker$PeriodicTask;->count:J
 
-    mul-long v4, v4, v8
+    mul-long/2addr v4, v10
 
-    sub-long v4, v6, v4
+    sub-long v4, v8, v4
 
     iput-wide v4, p0, Lio/reactivex/Scheduler$Worker$PeriodicTask;->startInNanoseconds:J
 
-    move-wide v4, v6
+    move-wide v4, v8
 
     .line 498
     :goto_1

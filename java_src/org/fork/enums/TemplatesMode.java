@@ -2,13 +2,13 @@ package org.fork.enums;
 
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.messenger.C3286R;
+import org.telegram.messenger.C3301R;
 /* compiled from: TemplatesMode.kt */
 /* loaded from: classes4.dex */
 public enum TemplatesMode {
-    OVAL(C3286R.string.chat_templates_mode_oval),
-    ATTACH(C3286R.string.chat_templates_mode_attach),
-    OFF(C3286R.string.common_off);
+    OVAL(C3301R.string.chat_templates_mode_oval),
+    ATTACH(C3301R.string.chat_templates_mode_attach),
+    OFF(C3301R.string.common_off);
     
     public static final Companion Companion = new Companion(null);
     private final int textResId;

@@ -160,18 +160,18 @@
 
     const-wide/16 v4, 0x3
 
-    mul-long v2, v2, v4
+    mul-long/2addr v2, v4
 
     add-long v8, v0, v2
 
     .line 429
     iget-wide v0, p0, Lcom/google/android/exoplayer2/DefaultLivePlaybackSpeedControl;->currentTargetLiveOffsetUs:J
 
-    const/high16 v2, 0x3f800000    # 1.0f
+    cmp-long v0, v0, v8
 
-    cmp-long v3, v0, v8
+    const/high16 v1, 0x3f800000    # 1.0f
 
-    if-lez v3, :cond_0
+    if-lez v0, :cond_0
 
     .line 433
     iget-wide p1, p0, Lcom/google/android/exoplayer2/DefaultLivePlaybackSpeedControl;->minUpdateIntervalMs:J
@@ -183,24 +183,24 @@
     .line 434
     iget v0, p0, Lcom/google/android/exoplayer2/DefaultLivePlaybackSpeedControl;->adjustedPlaybackSpeed:F
 
-    sub-float/2addr v0, v2
+    sub-float/2addr v0, v1
 
     long-to-float p1, p1
 
-    mul-float v0, v0, p1
+    mul-float/2addr v0, p1
 
-    float-to-long v0, v0
+    float-to-long v2, v0
 
     .line 436
     iget p2, p0, Lcom/google/android/exoplayer2/DefaultLivePlaybackSpeedControl;->maxPlaybackSpeed:F
 
-    sub-float/2addr p2, v2
+    sub-float/2addr p2, v1
 
-    mul-float p2, p2, p1
+    mul-float/2addr p2, p1
 
     float-to-long p1, p2
 
-    add-long/2addr v0, p1
+    add-long/2addr v2, p1
 
     const/4 p1, 0x3
 
@@ -213,17 +213,17 @@
     const/4 p2, 0x1
 
     .line 438
-    iget-wide v2, p0, Lcom/google/android/exoplayer2/DefaultLivePlaybackSpeedControl;->idealTargetLiveOffsetUs:J
+    iget-wide v0, p0, Lcom/google/android/exoplayer2/DefaultLivePlaybackSpeedControl;->idealTargetLiveOffsetUs:J
 
-    aput-wide v2, p1, p2
+    aput-wide v0, p1, p2
 
     const/4 p2, 0x2
 
-    iget-wide v2, p0, Lcom/google/android/exoplayer2/DefaultLivePlaybackSpeedControl;->currentTargetLiveOffsetUs:J
+    iget-wide v0, p0, Lcom/google/android/exoplayer2/DefaultLivePlaybackSpeedControl;->currentTargetLiveOffsetUs:J
 
-    sub-long/2addr v2, v0
+    sub-long/2addr v0, v2
 
-    aput-wide v2, p1, p2
+    aput-wide v0, p1, p2
 
     .line 439
     invoke-static {p1}, Lcom/google/common/primitives/Longs;->max([J)J
@@ -238,12 +238,12 @@
     const/4 v0, 0x0
 
     .line 444
-    iget v1, p0, Lcom/google/android/exoplayer2/DefaultLivePlaybackSpeedControl;->adjustedPlaybackSpeed:F
+    iget v2, p0, Lcom/google/android/exoplayer2/DefaultLivePlaybackSpeedControl;->adjustedPlaybackSpeed:F
 
-    sub-float/2addr v1, v2
+    sub-float/2addr v2, v1
 
     .line 445
-    invoke-static {v0, v1}, Ljava/lang/Math;->max(FF)F
+    invoke-static {v0, v2}, Ljava/lang/Math;->max(FF)F
 
     move-result v0
 
@@ -270,13 +270,13 @@
 
     const-wide v2, -0x7fffffffffffffffL    # -4.9E-324
 
-    cmp-long v4, v0, v2
+    cmp-long v2, v0, v2
 
-    if-eqz v4, :cond_1
+    if-eqz v2, :cond_1
 
-    cmp-long v2, p1, v0
+    cmp-long p1, p1, v0
 
-    if-lez v2, :cond_1
+    if-lez p1, :cond_1
 
     .line 450
     iput-wide v0, p0, Lcom/google/android/exoplayer2/DefaultLivePlaybackSpeedControl;->currentTargetLiveOffsetUs:J
@@ -345,9 +345,9 @@
     :goto_0
     iget-wide v4, p0, Lcom/google/android/exoplayer2/DefaultLivePlaybackSpeedControl;->idealTargetLiveOffsetUs:J
 
-    cmp-long v6, v4, v0
+    cmp-long v4, v4, v0
 
-    if-nez v6, :cond_4
+    if-nez v4, :cond_4
 
     return-void
 
@@ -375,7 +375,7 @@
 
     long-to-float p0, p0
 
-    mul-float p0, p0, p4
+    mul-float/2addr p0, p4
 
     const/high16 p1, 0x3f800000    # 1.0f
 
@@ -383,7 +383,7 @@
 
     long-to-float p2, p2
 
-    mul-float p1, p1, p2
+    mul-float/2addr p1, p2
 
     add-float/2addr p0, p1
 
@@ -393,7 +393,7 @@
 .end method
 
 .method private updateSmoothedMinPossibleLiveOffsetUs(JJ)V
-    .locals 3
+    .locals 2
 
     sub-long/2addr p1, p3
 
@@ -402,9 +402,9 @@
 
     const-wide v0, -0x7fffffffffffffffL    # -4.9E-324
 
-    cmp-long v2, p3, v0
+    cmp-long v0, p3, v0
 
-    if-nez v2, :cond_0
+    if-nez v0, :cond_0
 
     .line 403
     iput-wide p1, p0, Lcom/google/android/exoplayer2/DefaultLivePlaybackSpeedControl;->smoothedMinPossibleLiveOffsetUs:J
@@ -458,20 +458,20 @@
 
 # virtual methods
 .method public getAdjustedPlaybackSpeed(JJ)F
-    .locals 6
+    .locals 4
 
     .line 347
     iget-wide v0, p0, Lcom/google/android/exoplayer2/DefaultLivePlaybackSpeedControl;->mediaConfigurationTargetLiveOffsetUs:J
 
     const-wide v2, -0x7fffffffffffffffL    # -4.9E-324
 
-    const/high16 v4, 0x3f800000    # 1.0f
+    cmp-long v0, v0, v2
 
-    cmp-long v5, v0, v2
+    const/high16 v1, 0x3f800000    # 1.0f
 
-    if-nez v5, :cond_0
+    if-nez v0, :cond_0
 
-    return v4
+    return v1
 
     .line 351
     :cond_0
@@ -480,24 +480,24 @@
     .line 353
     iget-wide p3, p0, Lcom/google/android/exoplayer2/DefaultLivePlaybackSpeedControl;->lastPlaybackSpeedUpdateMs:J
 
-    cmp-long v0, p3, v2
+    cmp-long p3, p3, v2
 
-    if-eqz v0, :cond_1
+    if-eqz p3, :cond_1
 
     .line 354
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
     move-result-wide p3
 
-    iget-wide v0, p0, Lcom/google/android/exoplayer2/DefaultLivePlaybackSpeedControl;->lastPlaybackSpeedUpdateMs:J
+    iget-wide v2, p0, Lcom/google/android/exoplayer2/DefaultLivePlaybackSpeedControl;->lastPlaybackSpeedUpdateMs:J
 
-    sub-long/2addr p3, v0
+    sub-long/2addr p3, v2
 
-    iget-wide v0, p0, Lcom/google/android/exoplayer2/DefaultLivePlaybackSpeedControl;->minUpdateIntervalMs:J
+    iget-wide v2, p0, Lcom/google/android/exoplayer2/DefaultLivePlaybackSpeedControl;->minUpdateIntervalMs:J
 
-    cmp-long v2, p3, v0
+    cmp-long p3, p3, v2
 
-    if-gez v2, :cond_1
+    if-gez p3, :cond_1
 
     .line 355
     iget p1, p0, Lcom/google/android/exoplayer2/DefaultLivePlaybackSpeedControl;->adjustedPlaybackSpeed:F
@@ -525,14 +525,14 @@
 
     move-result-wide p3
 
-    iget-wide v0, p0, Lcom/google/android/exoplayer2/DefaultLivePlaybackSpeedControl;->maxLiveOffsetErrorUsForUnitSpeed:J
+    iget-wide v2, p0, Lcom/google/android/exoplayer2/DefaultLivePlaybackSpeedControl;->maxLiveOffsetErrorUsForUnitSpeed:J
 
-    cmp-long v2, p3, v0
+    cmp-long p3, p3, v2
 
-    if-gez v2, :cond_2
+    if-gez p3, :cond_2
 
     .line 362
-    iput v4, p0, Lcom/google/android/exoplayer2/DefaultLivePlaybackSpeedControl;->adjustedPlaybackSpeed:F
+    iput v1, p0, Lcom/google/android/exoplayer2/DefaultLivePlaybackSpeedControl;->adjustedPlaybackSpeed:F
 
     goto :goto_0
 
@@ -542,9 +542,9 @@
 
     long-to-float p1, p1
 
-    mul-float p3, p3, p1
+    mul-float/2addr p3, p1
 
-    add-float/2addr p3, v4
+    add-float/2addr p3, v1
 
     .line 365
     iget p1, p0, Lcom/google/android/exoplayer2/DefaultLivePlaybackSpeedControl;->minPlaybackSpeed:F
@@ -603,9 +603,9 @@
 
     if-eqz v6, :cond_1
 
-    cmp-long v6, v0, v4
+    cmp-long v0, v0, v4
 
-    if-lez v6, :cond_1
+    if-lez v0, :cond_1
 
     .line 340
     iput-wide v4, p0, Lcom/google/android/exoplayer2/DefaultLivePlaybackSpeedControl;->currentTargetLiveOffsetUs:J

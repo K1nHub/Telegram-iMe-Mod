@@ -51,7 +51,7 @@
 .end method
 
 .method public onAvatarClick()V
-    .locals 6
+    .locals 5
 
     .line 1296
     iget-object v0, p0, Lorg/telegram/ui/CacheControlActivity$6;->this$0:Lorg/telegram/ui/CacheControlActivity;
@@ -74,9 +74,9 @@
 
     const-wide/16 v3, 0x0
 
-    cmp-long v5, v1, v3
+    cmp-long v3, v1, v3
 
-    if-lez v5, :cond_0
+    if-lez v3, :cond_0
 
     const-string v3, "user_id"
 

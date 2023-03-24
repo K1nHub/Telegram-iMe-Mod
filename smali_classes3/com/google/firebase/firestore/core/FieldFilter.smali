@@ -82,7 +82,7 @@
     goto :goto_0
 
     :cond_2
-    const/4 v0, 0x0
+    move v0, v1
 
     :goto_0
     new-instance v2, Ljava/lang/StringBuilder;
@@ -439,7 +439,7 @@
     goto :goto_0
 
     :cond_0
-    const/4 v2, 0x0
+    move v2, v3
 
     :goto_0
     return v2
@@ -476,7 +476,7 @@
     goto :goto_1
 
     :cond_2
-    const/4 v2, 0x0
+    move v2, v3
 
     :goto_1
     return v2
@@ -520,7 +520,7 @@
     :pswitch_0
     if-ltz p1, :cond_0
 
-    const/4 v1, 0x1
+    move v1, v2
 
     :cond_0
     return v1
@@ -528,7 +528,7 @@
     :pswitch_1
     if-lez p1, :cond_1
 
-    const/4 v1, 0x1
+    move v1, v2
 
     :cond_1
     return v1
@@ -536,7 +536,7 @@
     :pswitch_2
     if-eqz p1, :cond_2
 
-    const/4 v1, 0x1
+    move v1, v2
 
     :cond_2
     return v1
@@ -544,7 +544,7 @@
     :pswitch_3
     if-nez p1, :cond_3
 
-    const/4 v1, 0x1
+    move v1, v2
 
     :cond_3
     return v1
@@ -552,7 +552,7 @@
     :pswitch_4
     if-gtz p1, :cond_4
 
-    const/4 v1, 0x1
+    move v1, v2
 
     :cond_4
     return v1
@@ -560,7 +560,7 @@
     :pswitch_5
     if-gez p1, :cond_5
 
-    const/4 v1, 0x1
+    move v1, v2
 
     :cond_5
     return v1

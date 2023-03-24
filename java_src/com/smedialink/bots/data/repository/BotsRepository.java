@@ -259,7 +259,7 @@ public final class BotsRepository {
                 fetchVotes$lambda$7 = BotsRepository.fetchVotes$lambda$7(Function1.this, obj);
                 return fetchVotes$lambda$7;
             }
-        }).subscribeOn(Schedulers.m694io());
+        }).subscribeOn(Schedulers.m693io());
         Intrinsics.checkNotNullExpressionValue(subscribeOn, "fun fetchVotes(userId: L…scribeOn(Schedulers.io())");
         return subscribeOn;
     }
@@ -456,7 +456,7 @@ public final class BotsRepository {
             public final void subscribe(SingleEmitter singleEmitter) {
                 BotsRepository.updateRemoteBotHash$lambda$18(BotsRepository.this, botId, singleEmitter);
             }
-        }).observeOn(Schedulers.m694io());
+        }).observeOn(Schedulers.m693io());
         final BotsRepository$updateRemoteBotHash$2 botsRepository$updateRemoteBotHash$2 = new BotsRepository$updateRemoteBotHash$2(this, botId);
         Completable flatMapCompletable = observeOn.flatMapCompletable(new Function() { // from class: com.smedialink.bots.data.repository.BotsRepository$$ExternalSyntheticLambda18
             @Override // io.reactivex.functions.Function

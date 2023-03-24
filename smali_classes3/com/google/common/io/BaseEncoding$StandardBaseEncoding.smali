@@ -122,9 +122,9 @@
 
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    move v1, v0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     .line 712
     :goto_0
@@ -136,9 +136,9 @@
 
     const-wide/16 v3, 0x0
 
-    const/4 v5, 0x0
+    move v5, v0
 
-    const/4 v6, 0x0
+    move v6, v5
 
     .line 715
     :goto_1
@@ -196,7 +196,7 @@
 
     iget v7, v7, Lcom/google/common/io/BaseEncoding$Alphabet;->bitsPerChar:I
 
-    mul-int v6, v6, v7
+    mul-int/2addr v6, v7
 
     sub-int/2addr v8, v6
 
@@ -302,14 +302,14 @@
     goto :goto_0
 
     :cond_0
-    const/4 v0, 0x0
+    move v0, v1
 
     :goto_0
     invoke-static {v0}, Lcom/google/common/base/Preconditions;->checkArgument(Z)V
 
     const-wide/16 v2, 0x0
 
-    const/4 v0, 0x0
+    move v0, v1
 
     :goto_1
     const/16 v4, 0x8
@@ -336,7 +336,7 @@
     :cond_1
     add-int/lit8 p2, p4, 0x1
 
-    mul-int/lit8 p2, p2, 0x8
+    mul-int/2addr p2, v4
 
     .line 653
     iget-object p3, p0, Lcom/google/common/io/BaseEncoding$StandardBaseEncoding;->alphabet:Lcom/google/common/io/BaseEncoding$Alphabet;
@@ -391,7 +391,7 @@
 
     iget p2, p2, Lcom/google/common/io/BaseEncoding$Alphabet;->bytesPerChunk:I
 
-    mul-int/lit8 p2, p2, 0x8
+    mul-int/2addr p2, v4
 
     if-ge v1, p2, :cond_3
 
@@ -550,7 +550,7 @@
 
     int-to-long v2, p1
 
-    mul-long v0, v0, v2
+    mul-long/2addr v0, v2
 
     const-wide/16 v2, 0x7
 
@@ -581,7 +581,7 @@
 
     move-result p1
 
-    mul-int v1, v1, p1
+    mul-int/2addr v1, p1
 
     return v1
 .end method

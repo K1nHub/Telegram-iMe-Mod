@@ -57,9 +57,9 @@
 
     move-result-wide v0
 
-    cmp-long v2, p1, v0
+    cmp-long v0, p1, v0
 
-    if-lez v2, :cond_1
+    if-lez v0, :cond_1
 
     iget-object p1, p0, Lcom/google/android/play/core/internal/zzcn;->zza:Lcom/google/android/play/core/internal/zzcm;
 

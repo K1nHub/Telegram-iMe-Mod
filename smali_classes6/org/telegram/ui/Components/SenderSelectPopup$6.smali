@@ -53,13 +53,8 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_0
-
-    :catch_0
-    nop
-
     .line 334
-    :goto_0
+    :catch_0
     iget-object p1, p0, Lorg/telegram/ui/Components/SenderSelectPopup$6;->this$0:Lorg/telegram/ui/Components/SenderSelectPopup;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/SenderSelectPopup;->access$400(Lorg/telegram/ui/Components/SenderSelectPopup;)Ljava/lang/Runnable;

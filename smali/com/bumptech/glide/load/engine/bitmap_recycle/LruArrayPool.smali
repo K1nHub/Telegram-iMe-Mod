@@ -244,7 +244,7 @@
 
     move-result v4
 
-    mul-int v3, v3, v4
+    mul-int/2addr v3, v4
 
     sub-int/2addr v2, v3
 
@@ -483,7 +483,7 @@
 
     move-result v4
 
-    mul-int v3, v3, v4
+    mul-int/2addr v3, v4
 
     sub-int/2addr v2, v3
 
@@ -854,7 +854,7 @@
 
     move-result v1
 
-    mul-int v1, v1, v2
+    mul-int/2addr v1, v2
 
     .line 64
     invoke-direct {p0, v1}, Lcom/bumptech/glide/load/engine/bitmap_recycle/LruArrayPool;->isSmallEnoughForReuse(I)Z

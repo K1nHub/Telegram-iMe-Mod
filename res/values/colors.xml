@@ -227,6 +227,7 @@
     <color name="wallet_network_type_nft">#ffd274f9</color>
     <color name="wallet_network_type_polygon">#ff8247e5</color>
     <color name="wallet_network_type_ton">#ff0088cc</color>
+    <color name="wallet_network_type_tron">#ffb73e31</color>
     <color name="widget_action_text">#ff8b8d8f</color>
     <color name="widget_badge">#ffffffff</color>
     <color name="widget_divider">#ffd9d9d9</color>

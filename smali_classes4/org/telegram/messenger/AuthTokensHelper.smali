@@ -392,7 +392,7 @@
 
     invoke-interface {v3}, Landroid/content/SharedPreferences$Editor;->apply()V
 
-    const/4 v3, 0x0
+    move v3, v2
 
     :goto_0
     const/16 v4, 0x14
@@ -564,7 +564,7 @@
 
     div-long/2addr v3, v5
 
-    const/4 v3, 0x0
+    move v3, v2
 
     :goto_0
     const/16 v4, 0x14

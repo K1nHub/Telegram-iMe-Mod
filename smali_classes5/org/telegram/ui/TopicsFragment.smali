@@ -1538,7 +1538,7 @@
 
     if-eqz p1, :cond_3
 
-    const/high16 v3, 0x3f800000    # 1.0f
+    move v3, v2
 
     goto :goto_0
 
@@ -1597,12 +1597,12 @@
 
     if-nez v0, :cond_5
 
-    const/4 v0, 0x1
+    move v0, v4
 
     goto :goto_1
 
     :cond_5
-    const/4 v0, 0x0
+    move v0, v1
 
     :goto_1
     iput-boolean v0, p0, Lorg/telegram/ui/TopicsFragment;->animateSearchWithScale:Z
@@ -2357,12 +2357,12 @@
 
     if-eqz p2, :cond_1
 
-    const/4 p2, 0x1
+    move p2, v2
 
     goto :goto_0
 
     :cond_1
-    const/4 p2, 0x0
+    move p2, v1
 
     :goto_0
     const/high16 v0, 0x3f800000    # 1.0f
@@ -2392,7 +2392,7 @@
     goto :goto_1
 
     :cond_2
-    const/4 v0, 0x0
+    move v0, v3
 
     :goto_1
     aput v0, v4, v2
@@ -2436,7 +2436,7 @@
     goto :goto_2
 
     :cond_4
-    const/4 v0, 0x0
+    move v0, v3
 
     .line 3070
     :goto_2
@@ -2724,9 +2724,9 @@
 
     neg-long v4, v4
 
-    cmp-long v6, v2, v4
+    cmp-long v2, v2, v4
 
-    if-nez v6, :cond_7
+    if-nez v2, :cond_7
 
     iget v1, v1, Lorg/telegram/messenger/MessagesStorage$TopicKey;->topicId:I
 
@@ -2920,7 +2920,7 @@
 
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    move v1, v0
 
     :goto_0
     const/4 v2, 0x2
@@ -2957,7 +2957,7 @@
 
     move-result v3
 
-    const/4 v4, 0x0
+    move v4, v0
 
     :goto_2
     if-ge v4, v3, :cond_6
@@ -3855,7 +3855,7 @@
 
     :cond_1
     :goto_0
-    const/4 v0, 0x1
+    move v0, v2
 
     goto :goto_1
 
@@ -4121,7 +4121,7 @@
 
     sub-float v1, v2, v1
 
-    mul-float v1, v1, v0
+    mul-float/2addr v1, v0
 
     sub-float/2addr v2, v1
 
@@ -4726,13 +4726,13 @@
 
     move-result-object v0
 
-    const/4 v2, 0x0
+    move v2, v3
 
-    const/4 v4, 0x0
+    move v4, v2
 
-    const/4 v5, 0x0
+    move v5, v4
 
-    const/4 v6, 0x0
+    move v6, v5
 
     .line 2113
     :cond_3
@@ -4910,12 +4910,12 @@
 
     if-nez v6, :cond_a
 
-    const/4 v4, 0x0
+    move v4, v3
 
     goto :goto_4
 
     :cond_a
-    const/16 v4, 0x8
+    move v4, v0
 
     :goto_4
     invoke-virtual {v2, v4}, Landroid/widget/FrameLayout;->setVisibility(I)V
@@ -4927,12 +4927,12 @@
 
     if-nez v5, :cond_b
 
-    const/4 v4, 0x0
+    move v4, v3
 
     goto :goto_5
 
     :cond_b
-    const/16 v4, 0x8
+    move v4, v0
 
     :goto_5
     invoke-virtual {v2, v4}, Landroid/widget/FrameLayout;->setVisibility(I)V
@@ -4955,15 +4955,15 @@
 
     move-result-object v2
 
-    const/4 v4, 0x0
+    move v4, v3
 
-    const/4 v5, 0x0
+    move v5, v4
 
-    const/4 v6, 0x0
+    move v6, v5
 
-    const/4 v7, 0x0
+    move v7, v6
 
-    const/4 v8, 0x0
+    move v8, v7
 
     .line 2168
     :cond_c
@@ -5063,12 +5063,12 @@
 
     if-lez v5, :cond_12
 
-    const/4 v2, 0x0
+    move v2, v3
 
     goto :goto_8
 
     :cond_12
-    const/16 v2, 0x8
+    move v2, v0
 
     :goto_8
     invoke-virtual {p1, v2}, Landroid/widget/FrameLayout;->setVisibility(I)V
@@ -5103,12 +5103,12 @@
 
     if-lez v4, :cond_14
 
-    const/4 v2, 0x0
+    move v2, v3
 
     goto :goto_a
 
     :cond_14
-    const/16 v2, 0x8
+    move v2, v0
 
     :goto_a
     invoke-virtual {p1, v2}, Landroid/widget/FrameLayout;->setVisibility(I)V
@@ -5147,12 +5147,12 @@
 
     if-ne v6, v2, :cond_16
 
-    const/4 v2, 0x0
+    move v2, v3
 
     goto :goto_c
 
     :cond_16
-    const/16 v2, 0x8
+    move v2, v0
 
     :goto_c
     invoke-virtual {p1, v2}, Landroid/widget/FrameLayout;->setVisibility(I)V
@@ -5170,12 +5170,12 @@
 
     if-ne v2, v1, :cond_17
 
-    const/4 v2, 0x0
+    move v2, v3
 
     goto :goto_d
 
     :cond_17
-    const/16 v2, 0x8
+    move v2, v0
 
     :goto_d
     invoke-virtual {p1, v2}, Landroid/widget/FrameLayout;->setVisibility(I)V
@@ -5196,7 +5196,7 @@
     goto :goto_e
 
     :cond_18
-    const/16 v3, 0x8
+    move v3, v0
 
     :goto_e
     invoke-virtual {p1, v3}, Landroid/widget/FrameLayout;->setVisibility(I)V
@@ -5234,7 +5234,7 @@
 .end method
 
 .method private updateChatInfo(Z)V
-    .locals 14
+    .locals 13
 
     .line 2361
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->fragmentView:Landroid/view/View;
@@ -5307,12 +5307,12 @@
 
     if-ne v1, v4, :cond_1
 
-    const/4 v1, 0x1
+    move v1, v5
 
     goto :goto_0
 
     :cond_1
-    const/4 v1, 0x0
+    move v1, v2
 
     .line 2371
     :goto_0
@@ -5527,13 +5527,13 @@
     goto :goto_5
 
     :cond_8
-    const/4 p1, 0x0
+    move p1, v2
 
     goto :goto_6
 
     :cond_9
     :goto_5
-    const/4 p1, 0x1
+    move p1, v5
 
     .line 2399
     :goto_6
@@ -5580,9 +5580,9 @@
 
     const-wide/16 v11, 0x0
 
-    cmp-long v13, v9, v11
+    cmp-long v11, v9, v11
 
-    if-lez v13, :cond_a
+    if-lez v11, :cond_a
 
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
@@ -5592,9 +5592,9 @@
 
     const-wide/32 v9, 0x1d4c0
 
-    cmp-long v13, v11, v9
+    cmp-long v9, v11, v9
 
-    if-gez v13, :cond_a
+    if-gez v9, :cond_a
 
     .line 2403
     iget-object v1, p0, Lorg/telegram/ui/TopicsFragment;->bottomOverlayChatText:Lorg/telegram/ui/Components/UnreadCounterTextView;
@@ -5669,7 +5669,7 @@
 
     if-eqz v1, :cond_c
 
-    const/4 v1, 0x1
+    move v1, v5
 
     goto :goto_8
 
@@ -5719,7 +5719,7 @@
 
     invoke-virtual {v1, v5}, Landroid/view/View;->setEnabled(Z)V
 
-    const/4 v1, 0x0
+    move v1, v2
 
     .line 2424
     :goto_8
@@ -5784,12 +5784,12 @@
     invoke-direct {p0, v5}, Lorg/telegram/ui/TopicsFragment;->setButtonType(I)V
 
     :goto_9
-    const/4 v1, 0x1
+    move v1, v5
 
     goto :goto_a
 
     :cond_10
-    const/4 v1, 0x0
+    move v1, v2
 
     .line 2441
     :goto_a
@@ -5824,12 +5824,12 @@
 
     if-eqz v1, :cond_11
 
-    const/4 v6, 0x0
+    move v6, v2
 
     goto :goto_b
 
     :cond_11
-    const/16 v6, 0x8
+    move v6, v8
 
     :goto_b
     invoke-virtual {p1, v6}, Landroid/widget/FrameLayout;->setVisibility(I)V
@@ -5895,12 +5895,12 @@
 
     if-eqz v1, :cond_16
 
-    const/16 v1, 0x8
+    move v1, v8
 
     goto :goto_f
 
     :cond_16
-    const/4 v1, 0x0
+    move v1, v2
 
     :goto_f
     invoke-virtual {p1, v1}, Landroid/widget/FrameLayout;->setVisibility(I)V
@@ -5914,12 +5914,12 @@
 
     if-eqz v1, :cond_17
 
-    const/4 v1, 0x0
+    move v1, v2
 
     goto :goto_10
 
     :cond_17
-    const/16 v1, 0x8
+    move v1, v8
 
     :goto_10
     invoke-virtual {p1, v1}, Landroid/widget/FrameLayout;->setVisibility(I)V
@@ -5942,7 +5942,7 @@
     goto :goto_11
 
     :cond_18
-    const/16 v2, 0x8
+    move v2, v8
 
     :goto_11
     invoke-virtual {p1, v2}, Landroid/widget/FrameLayout;->setVisibility(I)V
@@ -6123,12 +6123,12 @@
 
     if-nez v0, :cond_1
 
-    const/4 v0, 0x1
+    move v0, v2
 
     goto :goto_0
 
     :cond_1
-    const/4 v0, 0x0
+    move v0, v3
 
     :goto_0
     iput-boolean v0, p0, Lorg/telegram/ui/TopicsFragment;->canShowCreateTopic:Z
@@ -6170,7 +6170,7 @@
 
     iget v1, p0, Lorg/telegram/ui/TopicsFragment;->floatingButtonHideProgress:F
 
-    mul-float v0, v0, v1
+    mul-float/2addr v0, v1
 
     iget v1, p0, Lorg/telegram/ui/TopicsFragment;->transitionPadding:F
 
@@ -6331,7 +6331,7 @@
 
     int-to-float v4, v4
 
-    mul-float v4, v4, v2
+    mul-float/2addr v4, v2
 
     invoke-virtual {v0, v4}, Landroid/widget/FrameLayout;->setTranslationY(F)V
 
@@ -6352,7 +6352,7 @@
 
     int-to-float v3, v3
 
-    mul-float v3, v3, v2
+    mul-float/2addr v3, v2
 
     invoke-virtual {v0, v3}, Landroid/widget/FrameLayout;->setTranslationY(F)V
 
@@ -6398,7 +6398,7 @@
 
     sub-float/2addr v1, v2
 
-    mul-float v1, v1, v0
+    mul-float/2addr v1, v0
 
     add-float/2addr v1, p1
 
@@ -6515,7 +6515,7 @@
     goto :goto_0
 
     :cond_0
-    const/4 v0, 0x0
+    move v0, v1
 
     .line 1430
     :goto_0
@@ -6589,7 +6589,7 @@
     goto :goto_2
 
     :cond_3
-    const/4 v2, 0x0
+    move v2, v3
 
     :goto_2
     invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
@@ -6765,7 +6765,7 @@
 
     if-eqz v1, :cond_0
 
-    const/4 p1, 0x1
+    move p1, v0
 
     :cond_0
     const/4 v1, 0x0
@@ -6803,7 +6803,7 @@
 
     invoke-virtual {v5}, Ljava/util/ArrayList;->clear()V
 
-    const/4 v5, 0x0
+    move v5, v1
 
     .line 2571
     :goto_0
@@ -6918,13 +6918,13 @@
 
     invoke-virtual {p1, p2}, Lorg/telegram/ui/Components/RecyclerItemsEnterAnimator;->showItemsAnimated(I)V
 
-    const/4 p1, 0x0
+    move p1, v1
 
     .line 2587
     :cond_4
     iput v1, p0, Lorg/telegram/ui/TopicsFragment;->hiddenCount:I
 
-    const/4 p2, 0x0
+    move p2, v1
 
     .line 2588
     :goto_2
@@ -7113,12 +7113,12 @@
 
     if-nez v1, :cond_0
 
-    const/4 v1, 0x1
+    move v1, v8
 
     goto :goto_0
 
     :cond_0
-    const/4 v1, 0x0
+    move v1, v9
 
     :goto_0
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/ActionBar;->setOccupyStatusBar(Z)V
@@ -7393,12 +7393,12 @@
 
     if-nez v5, :cond_3
 
-    const/4 v5, 0x1
+    move v5, v8
 
     goto :goto_2
 
     :cond_3
-    const/4 v5, 0x0
+    move v5, v9
 
     :goto_2
     invoke-virtual {v0, v5}, Lorg/telegram/ui/Components/ChatAvatarContainer;->setOccupyStatusBar(Z)V
@@ -7535,12 +7535,12 @@
 
     if-eqz v0, :cond_4
 
-    const/4 v0, 0x2
+    move v0, v10
 
     goto :goto_3
 
     :cond_4
-    const/4 v0, 0x0
+    move v0, v9
 
     :goto_3
     iput v0, v6, Lorg/telegram/ui/TopicsFragment;->pullViewState:I
@@ -7550,12 +7550,12 @@
 
     if-eqz v0, :cond_5
 
-    const/4 v0, 0x1
+    move v0, v8
 
     goto :goto_4
 
     :cond_5
-    const/4 v0, 0x0
+    move v0, v9
 
     :goto_4
     invoke-virtual {v1, v0}, Lorg/telegram/ui/Components/PullForegroundDrawable;->setWillDraw(Z)V
@@ -7754,22 +7754,22 @@
 
     if-lt v5, v15, :cond_6
 
-    const/16 v16, 0x38
+    move/from16 v16, v2
 
     goto :goto_5
 
     :cond_6
-    const/16 v16, 0x3c
+    move/from16 v16, v13
 
     :goto_5
     if-lt v5, v15, :cond_7
 
-    const/16 v17, 0x38
+    move/from16 v17, v2
 
     goto :goto_6
 
     :cond_7
-    const/16 v17, 0x3c
+    move/from16 v17, v13
 
     :goto_6
     sget-boolean v13, Lorg/telegram/messenger/LocaleController;->isRTL:Z
@@ -7790,24 +7790,24 @@
 
     if-eqz v13, :cond_9
 
-    const/16 v19, 0xe
+    move/from16 v19, v11
 
     goto :goto_8
 
     :cond_9
-    const/16 v19, 0x0
+    move/from16 v19, v9
 
     :goto_8
     const/16 v20, 0x0
 
     if-eqz v13, :cond_a
 
-    const/16 v21, 0x0
+    move/from16 v21, v9
 
     goto :goto_9
 
     :cond_a
-    const/16 v21, 0xe
+    move/from16 v21, v11
 
     :goto_9
     const/16 v22, 0xe
@@ -8097,13 +8097,8 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_b
-
-    :catch_0
-    nop
-
     .line 1173
-    :goto_b
+    :catch_0
     iget-object v0, v6, Lorg/telegram/ui/TopicsFragment;->topicsEmptyView:Lorg/telegram/ui/Components/StickerEmptyView;
 
     iget-boolean v1, v6, Lorg/telegram/ui/TopicsFragment;->loadingTopics:Z
@@ -8541,12 +8536,12 @@
 
     invoke-virtual {v0, v13, v1}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    goto :goto_c
+    goto :goto_b
 
     :cond_f
     const/4 v2, -0x1
 
-    :goto_c
+    :goto_b
     const/4 v0, -0x2
 
     .line 1287
@@ -8709,9 +8704,9 @@
 
     neg-long v4, v4
 
-    cmp-long v7, v2, v4
+    cmp-long v2, v2, v4
 
-    if-nez v7, :cond_13
+    if-nez v2, :cond_13
 
     .line 1323
     iget v0, v1, Lorg/telegram/messenger/MessagesStorage$TopicKey;->topicId:I
@@ -8736,7 +8731,7 @@
 .end method
 
 .method public varargs didReceivedNotification(II[Ljava/lang/Object;)V
-    .locals 7
+    .locals 6
 
     .line 2615
     sget p2, Lorg/telegram/messenger/NotificationCenter;->chatInfoDidLoad:I
@@ -8770,9 +8765,9 @@
 
     iget-wide v4, p0, Lorg/telegram/ui/TopicsFragment;->chatId:J
 
-    cmp-long v6, v2, v4
+    cmp-long v2, v2, v4
 
-    if-nez v6, :cond_a
+    if-nez v2, :cond_a
 
     .line 2621
     invoke-direct {p0}, Lorg/telegram/ui/TopicsFragment;->updateChatInfo()V
@@ -8932,9 +8927,9 @@
 
     move-result-wide v4
 
-    cmp-long v6, v2, v4
+    cmp-long v2, v2, v4
 
-    if-nez v6, :cond_a
+    if-nez v2, :cond_a
 
     .line 2653
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getMessagesController()Lorg/telegram/messenger/MessagesController;
@@ -9375,7 +9370,7 @@
 .end method
 
 .method public isLightStatusBar()Z
-    .locals 5
+    .locals 4
 
     .line 3139
     iget-boolean v0, p0, Lorg/telegram/ui/TopicsFragment;->searching:Z
@@ -9418,9 +9413,9 @@
 
     const-wide v2, 0x3fe6666660000000L    # 0.699999988079071
 
-    cmpl-double v4, v0, v2
+    cmpl-double v0, v0, v2
 
-    if-lez v4, :cond_2
+    if-lez v0, :cond_2
 
     const/4 v0, 0x1
 
@@ -10445,7 +10440,7 @@
 
     int-to-float p1, p1
 
-    mul-float v1, v1, p1
+    mul-float/2addr v1, p1
 
     invoke-virtual {v0, v1}, Landroid/widget/FrameLayout;->setTranslationX(F)V
 
@@ -10541,7 +10536,7 @@
     goto :goto_0
 
     :cond_0
-    const/4 v0, 0x0
+    move v0, v1
 
     .line 2210
     :goto_0

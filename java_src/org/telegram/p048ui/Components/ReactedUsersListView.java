@@ -22,7 +22,7 @@ import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3286R;
+import org.telegram.messenger.C3301R;
 import org.telegram.messenger.Emoji;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessageObject;
@@ -237,7 +237,7 @@ public class ReactedUsersListView extends FrameLayout {
                             break;
                         }
                         TLRPC$MessagePeerReaction tLRPC$MessagePeerReaction = this.userReactions.get(i);
-                        if (tLRPC$MessagePeerReaction != null && tLRPC$MessagePeerReaction.date <= 0 && tLRPC$MessagePeerReaction.peer_id.user_id == tLRPC$User.f1639id) {
+                        if (tLRPC$MessagePeerReaction != null && tLRPC$MessagePeerReaction.date <= 0 && tLRPC$MessagePeerReaction.peer_id.user_id == tLRPC$User.f1640id) {
                             tLRPC$MessagePeerReaction.date = userSeen.date;
                             tLRPC$MessagePeerReaction.dateIsSeen = true;
                             break;
@@ -249,12 +249,12 @@ public class ReactedUsersListView extends FrameLayout {
         }
         ArrayList arrayList = new ArrayList(list.size());
         for (ReactedHeaderView.UserSeen userSeen2 : list) {
-            if (this.peerReactionMap.get(userSeen2.user.f1639id) == null) {
+            if (this.peerReactionMap.get(userSeen2.user.f1640id) == null) {
                 TLRPC$TL_messagePeerReaction tLRPC$TL_messagePeerReaction = new TLRPC$TL_messagePeerReaction();
                 tLRPC$TL_messagePeerReaction.reaction = null;
                 TLRPC$TL_peerUser tLRPC$TL_peerUser = new TLRPC$TL_peerUser();
                 tLRPC$TL_messagePeerReaction.peer_id = tLRPC$TL_peerUser;
-                tLRPC$TL_peerUser.user_id = userSeen2.user.f1639id;
+                tLRPC$TL_peerUser.user_id = userSeen2.user.f1640id;
                 tLRPC$TL_messagePeerReaction.date = userSeen2.date;
                 tLRPC$TL_messagePeerReaction.dateIsSeen = true;
                 ArrayList<TLRPC$MessagePeerReaction> arrayList2 = new ArrayList<>();
@@ -295,7 +295,7 @@ public class ReactedUsersListView extends FrameLayout {
         MessagesController messagesController = MessagesController.getInstance(this.currentAccount);
         TLRPC$TL_messages_getMessageReactionsList tLRPC$TL_messages_getMessageReactionsList = new TLRPC$TL_messages_getMessageReactionsList();
         tLRPC$TL_messages_getMessageReactionsList.peer = messagesController.getInputPeer(this.message.getDialogId());
-        tLRPC$TL_messages_getMessageReactionsList.f1590id = this.message.getId();
+        tLRPC$TL_messages_getMessageReactionsList.f1591id = this.message.getId();
         tLRPC$TL_messages_getMessageReactionsList.limit = getLoadCount();
         TLRPC$Reaction tLRPC$Reaction = this.filter;
         tLRPC$TL_messages_getMessageReactionsList.reaction = tLRPC$Reaction;
@@ -426,9 +426,9 @@ public class ReactedUsersListView extends FrameLayout {
         HashSet hashSet = new HashSet();
         for (int i = 0; i < this.customReactionsEmoji.size(); i++) {
             TLRPC$InputStickerSet inputStickerSet = MessageObject.getInputStickerSet(AnimatedEmojiDrawable.findDocument(this.currentAccount, this.customReactionsEmoji.get(i).documentId));
-            if (inputStickerSet != null && !hashSet.contains(Long.valueOf(inputStickerSet.f1522id))) {
+            if (inputStickerSet != null && !hashSet.contains(Long.valueOf(inputStickerSet.f1523id))) {
                 arrayList.add(inputStickerSet);
-                hashSet.add(Long.valueOf(inputStickerSet.f1522id));
+                hashSet.add(Long.valueOf(inputStickerSet.f1523id));
             }
         }
         if (MessagesController.getInstance(this.currentAccount).premiumLocked) {
@@ -475,8 +475,8 @@ public class ReactedUsersListView extends FrameLayout {
         AnimatedEmojiDrawable.SwapAnimatedEmojiDrawable rightDrawable;
         SimpleTextView subtitleView;
         SimpleTextView titleView;
-        private static final MessageSeenCheckDrawable seenDrawable = new MessageSeenCheckDrawable(C3286R.C3288drawable.msg_mini_checks, "windowBackgroundWhiteGrayText");
-        private static final MessageSeenCheckDrawable reactDrawable = new MessageSeenCheckDrawable(C3286R.C3288drawable.msg_reactions, "windowBackgroundWhiteGrayText", 16, 16, 5.66f);
+        private static final MessageSeenCheckDrawable seenDrawable = new MessageSeenCheckDrawable(C3301R.C3303drawable.msg_mini_checks, "windowBackgroundWhiteGrayText");
+        private static final MessageSeenCheckDrawable reactDrawable = new MessageSeenCheckDrawable(C3301R.C3303drawable.msg_reactions, "windowBackgroundWhiteGrayText", 16, 16, 5.66f);
 
         ReactedUserHolderView(int i, Context context) {
             super(context);
@@ -503,7 +503,7 @@ public class ReactedUsersListView extends FrameLayout {
             SimpleTextView simpleTextView2 = this.titleView;
             boolean z = LocaleController.isRTL;
             float f = BitmapDescriptorFactory.HUE_RED;
-            simpleTextView2.setTranslationX(z ? AndroidUtilities.m50dp(30) : BitmapDescriptorFactory.HUE_RED);
+            simpleTextView2.setTranslationX(z ? AndroidUtilities.m50dp(30) : 0.0f);
             this.titleView.setRightDrawableOutside(true);
             addView(this.titleView, LayoutHelper.createFrameRelatively(-1.0f, -2.0f, 55, 55.0f, 5.33f, 12.0f, BitmapDescriptorFactory.HUE_RED));
             this.rightDrawable = new AnimatedEmojiDrawable.SwapAnimatedEmojiDrawable(this, AndroidUtilities.m50dp(18));
@@ -533,7 +533,7 @@ public class ReactedUsersListView extends FrameLayout {
         */
         void setUserReaction(org.telegram.tgnet.TLRPC$MessagePeerReaction r14) {
             /*
-                Method dump skipped, instructions count: 423
+                Method dump skipped, instructions count: 422
                 To view this dump add '--comments-level debug' option
             */
             throw new UnsupportedOperationException("Method not decompiled: org.telegram.p048ui.Components.ReactedUsersListView.ReactedUserHolderView.setUserReaction(org.telegram.tgnet.TLRPC$MessagePeerReaction):void");

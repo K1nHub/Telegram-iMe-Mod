@@ -167,16 +167,14 @@
 
     const v0, 0x7fffffff
 
-    const v5, 0x7fffffff
-
     goto :goto_0
 
     :cond_0
     const/4 v0, 0x0
 
-    const/4 v5, 0x0
-
     :goto_0
+    move v5, v0
+
     const/4 v6, 0x0
 
     move-object v1, p0
@@ -715,9 +713,9 @@
 
     iput-object p5, p0, Lorg/telegram/ui/Components/EmojiView$GifAdapter;->nextSearchOffset:Ljava/lang/String;
 
-    const/4 p5, 0x0
+    move p5, p8
 
-    const/4 p6, 0x0
+    move p6, p5
 
     .line 9312
     :goto_0
@@ -797,7 +795,7 @@
     if-eqz p5, :cond_9
 
     :cond_8
-    const/4 p8, 0x1
+    move p8, p7
 
     :cond_9
     iput-boolean p8, p0, Lorg/telegram/ui/Components/EmojiView$GifAdapter;->searchEndReached:Z
@@ -1281,11 +1279,11 @@
 
     move v7, v2
 
-    const/4 v6, 0x0
+    move v6, v4
 
-    const/4 v8, 0x0
+    move v8, v6
 
-    const/4 v9, 0x0
+    move v9, v8
 
     :goto_2
     if-ge v6, v5, :cond_7
@@ -1322,13 +1320,13 @@
 
     int-to-float v10, v3
 
-    mul-float v12, v12, v10
+    mul-float/2addr v12, v10
 
     int-to-float v10, v0
 
     div-float/2addr v12, v10
 
-    mul-float v11, v11, v12
+    mul-float/2addr v11, v12
 
     float-to-double v10, v11
 
@@ -1363,7 +1361,7 @@
     :cond_5
     move v7, v2
 
-    const/4 v8, 0x0
+    move v8, v4
 
     :cond_6
     add-int/lit8 v8, v8, 0x1
@@ -1880,7 +1878,7 @@
 
     iput-boolean v2, p0, Lorg/telegram/ui/Components/EmojiView$GifAdapter;->searchEndReached:Z
 
-    const/4 v2, 0x0
+    move v2, v1
 
     .line 8841
     :goto_0

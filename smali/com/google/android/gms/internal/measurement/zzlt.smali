@@ -156,7 +156,7 @@
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_0
     if-ge v1, v0, :cond_3
@@ -426,7 +426,7 @@
 
     :cond_1
     :goto_0
-    const/4 v0, 0x1
+    move v0, v1
 
     :cond_2
     return v0
@@ -1128,7 +1128,7 @@
 
     add-int/lit8 p0, p0, 0x1
 
-    mul-int p1, p1, p0
+    mul-int/2addr p1, p0
 
     return p1
 .end method
@@ -1285,7 +1285,7 @@
 
     move-result p0
 
-    mul-int v0, v0, p0
+    mul-int/2addr v0, p0
 
     .line 3
     :goto_0
@@ -1349,7 +1349,7 @@
 
     move-result p0
 
-    mul-int p2, p2, p0
+    mul-int/2addr p2, p0
 
     add-int/2addr p1, p2
 
@@ -1387,7 +1387,7 @@
     .line 4
     check-cast p0, Lcom/google/android/gms/internal/measurement/zzka;
 
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_0
     if-ge v1, v0, :cond_2
@@ -1408,7 +1408,7 @@
     goto :goto_0
 
     :cond_1
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_1
     if-ge v1, v0, :cond_2
@@ -1469,7 +1469,7 @@
 
     add-int/lit8 p0, p0, 0x4
 
-    mul-int p1, p1, p0
+    mul-int/2addr p1, p0
 
     return p1
 .end method
@@ -1525,7 +1525,7 @@
 
     add-int/lit8 p0, p0, 0x8
 
-    mul-int p1, p1, p0
+    mul-int/2addr p1, p0
 
     return p1
 .end method
@@ -1572,7 +1572,7 @@
 
     if-eqz v0, :cond_1
 
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_0
     if-ge v1, v0, :cond_0
@@ -1634,7 +1634,7 @@
 
     move-result p0
 
-    mul-int p2, p2, p0
+    mul-int/2addr p2, p0
 
     add-int/2addr p1, p2
 
@@ -1672,7 +1672,7 @@
     .line 4
     check-cast p0, Lcom/google/android/gms/internal/measurement/zzka;
 
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_0
     if-ge v1, v0, :cond_2
@@ -1693,7 +1693,7 @@
     goto :goto_0
 
     :cond_1
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_1
     if-ge v1, v0, :cond_2
@@ -1760,7 +1760,7 @@
 
     move-result p0
 
-    mul-int p1, p1, p0
+    mul-int/2addr p1, p0
 
     add-int/2addr p2, p1
 
@@ -1798,7 +1798,7 @@
     .line 4
     check-cast p0, Lcom/google/android/gms/internal/measurement/zzkv;
 
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_0
     if-ge v1, v0, :cond_2
@@ -1819,7 +1819,7 @@
     goto :goto_0
 
     :cond_1
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_1
     if-ge v1, v0, :cond_2
@@ -1930,7 +1930,7 @@
 
     move-result p0
 
-    mul-int p0, p0, v0
+    mul-int/2addr p0, v0
 
     :goto_0
     if-ge v1, v0, :cond_2
@@ -2006,7 +2006,7 @@
 
     move-result p0
 
-    mul-int p2, p2, p0
+    mul-int/2addr p2, p0
 
     add-int/2addr p1, p2
 
@@ -2044,7 +2044,7 @@
     .line 4
     check-cast p0, Lcom/google/android/gms/internal/measurement/zzka;
 
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_0
     if-ge v1, v0, :cond_2
@@ -2071,7 +2071,7 @@
     goto :goto_0
 
     :cond_1
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_1
     if-ge v1, v0, :cond_2
@@ -2140,7 +2140,7 @@
 
     move-result p0
 
-    mul-int p2, p2, p0
+    mul-int/2addr p2, p0
 
     add-int/2addr p1, p2
 
@@ -2180,7 +2180,7 @@
     .line 4
     check-cast p0, Lcom/google/android/gms/internal/measurement/zzkv;
 
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_0
     if-ge v1, v0, :cond_2
@@ -2207,7 +2207,7 @@
     goto :goto_0
 
     :cond_1
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_1
     if-ge v1, v0, :cond_2
@@ -2270,7 +2270,7 @@
 
     move-result p0
 
-    mul-int p0, p0, v0
+    mul-int/2addr p0, v0
 
     .line 3
     instance-of v2, p1, Lcom/google/android/gms/internal/measurement/zzko;
@@ -2392,7 +2392,7 @@
 
     move-result p0
 
-    mul-int p2, p2, p0
+    mul-int/2addr p2, p0
 
     add-int/2addr p1, p2
 
@@ -2430,7 +2430,7 @@
     .line 4
     check-cast p0, Lcom/google/android/gms/internal/measurement/zzka;
 
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_0
     if-ge v1, v0, :cond_2
@@ -2451,7 +2451,7 @@
     goto :goto_0
 
     :cond_1
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_1
     if-ge v1, v0, :cond_2
@@ -2514,7 +2514,7 @@
 
     move-result p0
 
-    mul-int p2, p2, p0
+    mul-int/2addr p2, p0
 
     add-int/2addr p1, p2
 
@@ -2552,7 +2552,7 @@
     .line 4
     check-cast p0, Lcom/google/android/gms/internal/measurement/zzkv;
 
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_0
     if-ge v1, v0, :cond_2
@@ -2573,7 +2573,7 @@
     goto :goto_0
 
     :cond_1
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_1
     if-ge v1, v0, :cond_2

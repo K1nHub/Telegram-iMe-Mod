@@ -969,7 +969,7 @@
 
     move-result v1
 
-    mul-float v0, v0, v1
+    mul-float/2addr v0, v1
 
     invoke-virtual {p0}, Landroid/widget/RatingBar;->getNumStars()I
 
@@ -977,7 +977,7 @@
 
     int-to-float v1, v1
 
-    mul-float v0, v0, v1
+    mul-float/2addr v0, v1
 
     invoke-static {v0}, Ljava/lang/Math;->round(F)I
 

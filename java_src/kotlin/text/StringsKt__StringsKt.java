@@ -348,7 +348,10 @@ public class StringsKt__StringsKt extends StringsKt__StringsJVMKt {
     }
 
     static /* synthetic */ int indexOf$StringsKt__StringsKt$default(CharSequence charSequence, CharSequence charSequence2, int i, int i2, boolean z, boolean z2, int i3, Object obj) {
-        return indexOf$StringsKt__StringsKt(charSequence, charSequence2, i, i2, z, (i3 & 16) != 0 ? false : z2);
+        if ((i3 & 16) != 0) {
+            z2 = false;
+        }
+        return indexOf$StringsKt__StringsKt(charSequence, charSequence2, i, i2, z, z2);
     }
 
     private static final int indexOf$StringsKt__StringsKt(CharSequence charSequence, CharSequence charSequence2, int i, int i2, boolean z, boolean z2) {
@@ -409,7 +412,7 @@ public class StringsKt__StringsKt extends StringsKt__StringsJVMKt {
             if (indexOf$default < 0) {
                 return null;
             }
-            return TuplesKt.m100to(Integer.valueOf(indexOf$default), str);
+            return TuplesKt.m99to(Integer.valueOf(indexOf$default), str);
         }
         if (z2) {
             coerceAtMost = RangesKt___RangesKt.coerceAtMost(i, StringsKt.getLastIndex(charSequence));
@@ -443,7 +446,7 @@ public class StringsKt__StringsKt extends StringsKt__StringsJVMKt {
                         }
                         first += step;
                     } else {
-                        return TuplesKt.m100to(Integer.valueOf(first), str3);
+                        return TuplesKt.m99to(Integer.valueOf(first), str3);
                     }
                 }
             }
@@ -472,7 +475,7 @@ public class StringsKt__StringsKt extends StringsKt__StringsJVMKt {
                         }
                         first2 += step2;
                     } else {
-                        return TuplesKt.m100to(Integer.valueOf(first2), str5);
+                        return TuplesKt.m99to(Integer.valueOf(first2), str5);
                     }
                 }
             }

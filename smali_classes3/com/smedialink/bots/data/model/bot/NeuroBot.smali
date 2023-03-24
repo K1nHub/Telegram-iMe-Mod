@@ -547,7 +547,7 @@
 
     move-object/from16 v16, v8
 
-    const/4 v14, 0x1
+    move v14, v15
 
     goto/16 :goto_a
 
@@ -1245,9 +1245,9 @@
     .line 13695
     array-length v5, v2
 
-    const/4 v7, 0x0
+    move v7, v11
 
-    const/4 v8, 0x0
+    move v8, v7
 
     :goto_b
     if-ge v8, v5, :cond_10
@@ -1317,12 +1317,12 @@
 
     if-lez v5, :cond_12
 
-    const/4 v5, 0x1
+    move v5, v14
 
     goto :goto_d
 
     :cond_12
-    const/4 v5, 0x0
+    move v5, v11
 
     :goto_d
     if-eqz v5, :cond_11

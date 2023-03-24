@@ -13,7 +13,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nTwitterPresenter.kt\nKotlin\n*S Kotlin\n*F\n+ 1 TwitterPresenter.kt\ncom/smedialink/ui/twitter/TwitterPresenter\n+ 2 RxExt.kt\ncom/smedialink/utils/extentions/rx/RxExtKt\n+ 3 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,183:1\n39#2,8:184\n39#2,8:192\n39#2,8:207\n350#3,7:200\n*S KotlinDebug\n*F\n+ 1 TwitterPresenter.kt\ncom/smedialink/ui/twitter/TwitterPresenter\n*L\n62#1:184,8\n135#1:192,8\n164#1:207,8\n142#1:200,7\n*E\n"
+    value = "SMAP\nTwitterPresenter.kt\nKotlin\n*S Kotlin\n*F\n+ 1 TwitterPresenter.kt\ncom/smedialink/ui/twitter/TwitterPresenter\n+ 2 RxExt.kt\ncom/smedialink/utils/extentions/rx/RxExtKt\n+ 3 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,186:1\n39#2,8:187\n39#2,8:195\n39#2,8:210\n350#3,7:203\n*S KotlinDebug\n*F\n+ 1 TwitterPresenter.kt\ncom/smedialink/ui/twitter/TwitterPresenter\n*L\n62#1:187,8\n138#1:195,8\n167#1:210,8\n145#1:203,7\n*E\n"
 .end annotation
 
 .annotation runtime Lmoxy/InjectViewState;
@@ -189,14 +189,14 @@
 
     if-eqz p4, :cond_0
 
-    const/4 p1, 0x0
+    move p1, v0
 
     :cond_0
     and-int/lit8 p3, p3, 0x2
 
     if-eqz p3, :cond_1
 
-    const/4 p2, 0x0
+    move p2, v0
 
     .line 49
     :cond_1
@@ -208,7 +208,7 @@
 .method private final renderGlobalState(Lcom/smedialink/model/state/GlobalState;)V
     .locals 3
 
-    .line 178
+    .line 181
     invoke-virtual {p0}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
 
     move-result-object v0
@@ -239,10 +239,10 @@
 .method private final subscribeToLikeToggles()V
     .locals 5
 
-    .line 130
+    .line 133
     iget-object v0, p0, Lcom/smedialink/ui/twitter/TwitterPresenter;->likeToggleSubject:Lio/reactivex/subjects/PublishSubject;
 
-    .line 131
+    .line 134
     sget-object v1, Ljava/util/concurrent/TimeUnit;->MILLISECONDS:Ljava/util/concurrent/TimeUnit;
 
     const-wide/16 v2, 0xc8
@@ -251,12 +251,12 @@
 
     move-result-object v0
 
-    .line 132
+    .line 135
     invoke-virtual {v0}, Lio/reactivex/Observable;->distinctUntilChanged()Lio/reactivex/Observable;
 
     move-result-object v0
 
-    .line 133
+    .line 136
     iget-object v1, p0, Lcom/smedialink/ui/twitter/TwitterPresenter;->schedulersProvider:Lcom/smedialink/storage/domain/utils/rx/SchedulersProvider;
 
     invoke-interface {v1}, Lcom/smedialink/storage/domain/utils/rx/SchedulersProvider;->io()Lio/reactivex/Scheduler;
@@ -267,7 +267,7 @@
 
     move-result-object v0
 
-    .line 134
+    .line 137
     iget-object v1, p0, Lcom/smedialink/ui/twitter/TwitterPresenter;->schedulersProvider:Lcom/smedialink/storage/domain/utils/rx/SchedulersProvider;
 
     invoke-interface {v1}, Lcom/smedialink/storage/domain/utils/rx/SchedulersProvider;->ui()Lio/reactivex/Scheduler;
@@ -314,7 +314,7 @@
 
     const/4 v1, 0x1
 
-    .line 138
+    .line 141
     invoke-static {p0, v0, v3, v1, v3}, Lcom/smedialink/ui/base/mvp/base/BasePresenter;->autoDispose$default(Lcom/smedialink/ui/base/mvp/base/BasePresenter;Lio/reactivex/disposables/Disposable;Lio/reactivex/disposables/CompositeDisposable;ILjava/lang/Object;)V
 
     return-void
@@ -325,7 +325,7 @@
 
     move-object/from16 v0, p0
 
-    .line 142
+    .line 145
     iget-object v1, v0, Lcom/smedialink/ui/twitter/TwitterPresenter;->tweets:Ljava/util/List;
 
     .line 351
@@ -335,7 +335,7 @@
 
     const/4 v2, 0x0
 
-    const/4 v3, 0x0
+    move v3, v2
 
     :goto_0
     invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
@@ -355,7 +355,7 @@
     .line 352
     check-cast v4, Lcom/smedialink/storage/domain/model/twitter/TweetInfo;
 
-    .line 142
+    .line 145
     invoke-virtual {v4}, Lcom/smedialink/storage/domain/model/twitter/TweetInfo;->getId()J
 
     move-result-wide v7
@@ -368,12 +368,12 @@
 
     if-nez v4, :cond_0
 
-    const/4 v4, 0x1
+    move v4, v5
 
     goto :goto_1
 
     :cond_0
-    const/4 v4, 0x0
+    move v4, v2
 
     :goto_1
     if-eqz v4, :cond_1
@@ -386,14 +386,14 @@
     goto :goto_0
 
     :cond_2
-    const/4 v3, -0x1
+    move v3, v6
 
     :goto_2
     if-ne v3, v6, :cond_3
 
     return-void
 
-    .line 145
+    .line 148
     :cond_3
     iget-object v1, v0, Lcom/smedialink/ui/twitter/TwitterPresenter;->tweets:Ljava/util/List;
 
@@ -415,7 +415,7 @@
 
     return-void
 
-    .line 147
+    .line 150
     :cond_4
     iget-object v1, v0, Lcom/smedialink/ui/twitter/TwitterPresenter;->items:Ljava/util/List;
 
@@ -429,7 +429,7 @@
 
     return-void
 
-    .line 150
+    .line 153
     :cond_5
     iget-object v2, v0, Lcom/smedialink/ui/twitter/TwitterPresenter;->tweets:Ljava/util/List;
 
@@ -449,7 +449,7 @@
 
     const/4 v12, 0x0
 
-    .line 152
+    .line 155
     invoke-virtual {v7}, Lcom/smedialink/storage/domain/model/twitter/TweetInfo;->getLikesCount()I
 
     move-result v4
@@ -463,7 +463,7 @@
     goto :goto_3
 
     :cond_6
-    const/4 v6, 0x1
+    move v6, v5
 
     :goto_3
     add-int v13, v4, v6
@@ -476,7 +476,7 @@
 
     const-wide/16 v17, 0x0
 
-    .line 153
+    .line 156
     invoke-virtual {v7}, Lcom/smedialink/storage/domain/model/twitter/TweetInfo;->isLiked()Z
 
     move-result v4
@@ -487,15 +487,15 @@
 
     const/16 v21, 0x0
 
-    .line 151
+    .line 154
     invoke-static/range {v7 .. v21}, Lcom/smedialink/storage/domain/model/twitter/TweetInfo;->copy$default(Lcom/smedialink/storage/domain/model/twitter/TweetInfo;JLjava/lang/String;Ljava/lang/String;Ljava/lang/String;IIILjava/lang/String;JZILjava/lang/Object;)Lcom/smedialink/storage/domain/model/twitter/TweetInfo;
 
     move-result-object v4
 
-    .line 150
+    .line 153
     invoke-interface {v2, v3, v4}, Ljava/util/List;->set(ILjava/lang/Object;)Ljava/lang/Object;
 
-    .line 156
+    .line 159
     iget-object v2, v0, Lcom/smedialink/ui/twitter/TwitterPresenter;->items:Ljava/util/List;
 
     iget-object v4, v0, Lcom/smedialink/ui/twitter/TwitterPresenter;->tweets:Ljava/util/List;
@@ -512,7 +512,7 @@
 
     invoke-interface {v2, v1, v3}, Ljava/util/List;->set(ILjava/lang/Object;)Ljava/lang/Object;
 
-    .line 157
+    .line 160
     invoke-virtual/range {p0 .. p0}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
 
     move-result-object v1
@@ -537,7 +537,7 @@
 
     if-nez p2, :cond_0
 
-    const/4 p2, 0x1
+    move p2, v0
 
     goto :goto_0
 
@@ -626,7 +626,7 @@
     .line 46
     invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 100
+    .line 103
     invoke-static {p0, p1, v2, v0, v2}, Lcom/smedialink/ui/base/mvp/base/BasePresenter;->autoDispose$default(Lcom/smedialink/ui/base/mvp/base/BasePresenter;Lio/reactivex/disposables/Disposable;Lio/reactivex/disposables/CompositeDisposable;ILjava/lang/Object;)V
 
     return-void
@@ -635,7 +635,7 @@
 .method protected onFirstViewAttach()V
     .locals 4
 
-    .line 121
+    .line 124
     invoke-direct {p0}, Lcom/smedialink/ui/twitter/TwitterPresenter;->subscribeToLikeToggles()V
 
     const/4 v0, 0x1
@@ -646,7 +646,7 @@
 
     const/4 v3, 0x0
 
-    .line 122
+    .line 125
     invoke-static {p0, v0, v1, v2, v3}, Lcom/smedialink/ui/twitter/TwitterPresenter;->loadTweets$default(Lcom/smedialink/ui/twitter/TwitterPresenter;ZZILjava/lang/Object;)V
 
     return-void
@@ -655,7 +655,7 @@
 .method public final onOpenInTwitterClick()V
     .locals 3
 
-    .line 104
+    .line 107
     invoke-virtual {p0}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
 
     move-result-object v0
@@ -682,7 +682,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 113
+    .line 116
     invoke-virtual {p0}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
 
     move-result-object v0

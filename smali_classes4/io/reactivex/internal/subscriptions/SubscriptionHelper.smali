@@ -179,7 +179,7 @@
 .end method
 
 .method public static deferredSetOnce(Ljava/util/concurrent/atomic/AtomicReference;Ljava/util/concurrent/atomic/AtomicLong;Lorg/reactivestreams/Subscription;)Z
-    .locals 3
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -206,9 +206,9 @@
 
     move-result-wide p0
 
-    cmp-long v2, p0, v0
+    cmp-long v0, p0, v0
 
-    if-eqz v2, :cond_0
+    if-eqz v0, :cond_0
 
     .line 202
     invoke-interface {p2, p0, p1}, Lorg/reactivestreams/Subscription;->request(J)V
@@ -461,9 +461,9 @@
 
     const-wide/16 v0, 0x0
 
-    cmp-long v2, p0, v0
+    cmp-long v0, p0, v0
 
-    if-gtz v2, :cond_0
+    if-gtz v0, :cond_0
 
     .line 81
     new-instance v0, Ljava/lang/IllegalArgumentException;

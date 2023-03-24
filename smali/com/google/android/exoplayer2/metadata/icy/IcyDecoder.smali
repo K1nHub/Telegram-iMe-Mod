@@ -217,9 +217,9 @@
 
     move-result-object p1
 
-    move-object v3, v2
+    move v4, v1
 
-    const/4 v4, 0x0
+    move-object v3, v2
 
     .line 59
     :goto_0

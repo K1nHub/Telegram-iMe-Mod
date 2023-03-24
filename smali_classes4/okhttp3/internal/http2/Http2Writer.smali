@@ -109,7 +109,7 @@
 .end method
 
 .method private final writeContinuationFrames(IJ)V
-    .locals 7
+    .locals 6
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -138,9 +138,9 @@
 
     const/16 v5, 0x9
 
-    cmp-long v6, p2, v0
+    cmp-long v0, p2, v0
 
-    if-nez v6, :cond_0
+    if-nez v0, :cond_0
 
     const/4 v0, 0x4
 
@@ -577,12 +577,12 @@
 
     if-gt p2, v0, :cond_1
 
-    const/4 v0, 0x1
+    move v0, v1
 
     goto :goto_0
 
     :cond_1
-    const/4 v0, 0x0
+    move v0, v2
 
     :goto_0
     if-eqz v0, :cond_4
@@ -598,7 +598,7 @@
     goto :goto_1
 
     :cond_2
-    const/4 v1, 0x0
+    move v1, v2
 
     :goto_1
     if-eqz v1, :cond_3
@@ -731,12 +731,12 @@
 
     if-eq v0, v1, :cond_0
 
-    const/4 v0, 0x1
+    move v0, v2
 
     goto :goto_0
 
     :cond_0
-    const/4 v0, 0x0
+    move v0, v3
 
     :goto_0
     if-eqz v0, :cond_3
@@ -770,7 +770,7 @@
 
     if-nez p1, :cond_1
 
-    const/4 v3, 0x1
+    move v3, v2
 
     :cond_1
     xor-int/lit8 p1, v3, 0x1
@@ -985,7 +985,7 @@
     goto :goto_0
 
     :cond_0
-    const/4 p1, 0x0
+    move p1, v2
 
     .line 199
     :goto_0
@@ -1199,7 +1199,7 @@
     goto :goto_0
 
     :cond_0
-    const/4 v0, 0x0
+    move v0, v2
 
     :goto_0
     if-eqz v0, :cond_1
@@ -1327,7 +1327,7 @@
     goto :goto_1
 
     :cond_1
-    const/4 v3, 0x4
+    move v3, v1
 
     goto :goto_1
 
@@ -1406,41 +1406,41 @@
 
     const-wide/16 v0, 0x0
 
-    const/4 v2, 0x0
+    cmp-long v0, p2, v0
 
-    cmp-long v3, p2, v0
+    const/4 v1, 0x0
 
-    if-eqz v3, :cond_0
+    if-eqz v0, :cond_0
 
-    const-wide/32 v0, 0x7fffffff
+    const-wide/32 v2, 0x7fffffff
 
-    cmp-long v3, p2, v0
+    cmp-long v0, p2, v2
 
-    if-gtz v3, :cond_0
+    if-gtz v0, :cond_0
 
     const/4 v0, 0x1
 
     goto :goto_0
 
     :cond_0
-    const/4 v0, 0x0
+    move v0, v1
 
     :goto_0
     if-eqz v0, :cond_1
 
     const/4 v0, 0x4
 
-    const/16 v1, 0x8
+    const/16 v2, 0x8
 
     .line 246
-    invoke-virtual {p0, p1, v0, v1, v2}, Lokhttp3/internal/http2/Http2Writer;->frameHeader(IIII)V
+    invoke-virtual {p0, p1, v0, v2, v1}, Lokhttp3/internal/http2/Http2Writer;->frameHeader(IIII)V
 
     .line 252
     iget-object p1, p0, Lokhttp3/internal/http2/Http2Writer;->sink:Lokio/BufferedSink;
 
-    long-to-int p3, p2
+    long-to-int p2, p2
 
-    invoke-interface {p1, p3}, Lokio/BufferedSink;->writeInt(I)Lokio/BufferedSink;
+    invoke-interface {p1, p2}, Lokio/BufferedSink;->writeInt(I)Lokio/BufferedSink;
 
     .line 253
     iget-object p1, p0, Lokhttp3/internal/http2/Http2Writer;->sink:Lokio/BufferedSink;

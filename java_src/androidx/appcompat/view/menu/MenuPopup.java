@@ -68,9 +68,9 @@ public abstract class MenuPopup implements ShowableListMenu, MenuPresenter, Adap
         int makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(0, 0);
         int makeMeasureSpec2 = View.MeasureSpec.makeMeasureSpec(0, 0);
         int count = listAdapter.getCount();
-        View view = null;
         int i2 = 0;
         int i3 = 0;
+        View view = null;
         for (int i4 = 0; i4 < count; i4++) {
             int itemViewType = listAdapter.getItemViewType(i4);
             if (itemViewType != i3) {

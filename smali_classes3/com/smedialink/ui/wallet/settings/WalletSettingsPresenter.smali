@@ -53,13 +53,13 @@
     .line 18
     iget-object v1, p0, Lcom/smedialink/ui/wallet/settings/WalletSettingsPresenter;->cryptoAccessManager:Lcom/smedialink/storage/domain/manager/crypto/CryptoAccessManager;
 
-    invoke-interface {v1}, Lcom/smedialink/storage/domain/manager/crypto/CryptoAccessManager;->isCurrentBlockchainWalletCreated()Z
+    invoke-interface {v1}, Lcom/smedialink/storage/domain/manager/crypto/CryptoAccessManager;->isAnyWalletCreated()Z
 
     move-result v1
 
     if-eqz v1, :cond_0
 
-    sget-object v1, Lcom/smedialink/model/wallet/settings/SettingMenuItem;->ETH_ACCOUNT:Lcom/smedialink/model/wallet/settings/SettingMenuItem;
+    sget-object v1, Lcom/smedialink/model/wallet/settings/SettingMenuItem;->CRYPTO_ACCOUNT:Lcom/smedialink/model/wallet/settings/SettingMenuItem;
 
     goto :goto_0
 
