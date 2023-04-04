@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/InstantCameraView;I)V
     .locals 0
 
-    .line 258
+    .line 256
     iput-object p1, p0, Lorg/telegram/ui/Components/InstantCameraView$1;->this$0:Lorg/telegram/ui/Components/InstantCameraView;
 
     invoke-direct {p0, p2}, Landroid/graphics/Paint;-><init>(I)V
@@ -35,10 +35,10 @@
 .method public setAlpha(I)V
     .locals 0
 
-    .line 261
+    .line 259
     invoke-super {p0, p1}, Landroid/graphics/Paint;->setAlpha(I)V
 
-    .line 262
+    .line 260
     iget-object p1, p0, Lorg/telegram/ui/Components/InstantCameraView$1;->this$0:Lorg/telegram/ui/Components/InstantCameraView;
 
     invoke-virtual {p1}, Landroid/widget/FrameLayout;->invalidate()V

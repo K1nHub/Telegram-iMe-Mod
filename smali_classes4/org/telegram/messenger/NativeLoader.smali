@@ -141,7 +141,7 @@
     const/4 v1, 0x1
 
     :try_start_1
-    const-string v2, "tmessages.43"
+    const-string/jumbo v2, "tmessages.43"
 
     .line 120
     invoke-static {v2}, Ljava/lang/System;->loadLibrary(Ljava/lang/String;)V
@@ -450,7 +450,7 @@
 
     :cond_d
     :try_start_8
-    const-string p0, "tmessages.43"
+    const-string/jumbo p0, "tmessages.43"
 
     .line 205
     invoke-static {p0}, Ljava/lang/System;->loadLibrary(Ljava/lang/String;)V
@@ -694,7 +694,7 @@
 
     invoke-virtual {p2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string p3, "tmessages.43"
+    const-string/jumbo p3, "tmessages.43"
 
     invoke-virtual {p2, p3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 

@@ -184,11 +184,11 @@
 
     iget v1, v1, Lorg/telegram/ui/BasePermissionsActivity;->currentAccount:I
 
-    invoke-static {v1}, Lorg/fork/controller/ForkCommonController;->getInstance(I)Lorg/fork/controller/ForkCommonController;
+    invoke-static {v1}, Lcom/iMe/fork/controller/ForkCommonController;->getInstance(I)Lcom/iMe/fork/controller/ForkCommonController;
 
     move-result-object v1
 
-    invoke-virtual {v1}, Lorg/fork/controller/ForkCommonController;->isShowPremiumStatusEnabled()Z
+    invoke-virtual {v1}, Lcom/iMe/fork/controller/ForkCommonController;->isShowPremiumStatusEnabled()Z
 
     move-result v1
 

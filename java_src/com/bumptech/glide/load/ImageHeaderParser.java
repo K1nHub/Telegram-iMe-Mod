@@ -8,6 +8,8 @@ import java.nio.ByteBuffer;
 public interface ImageHeaderParser {
     int getOrientation(InputStream inputStream, ArrayPool arrayPool) throws IOException;
 
+    int getOrientation(ByteBuffer byteBuffer, ArrayPool arrayPool) throws IOException;
+
     ImageType getType(InputStream inputStream) throws IOException;
 
     ImageType getType(ByteBuffer byteBuffer) throws IOException;
@@ -21,6 +23,9 @@ public interface ImageHeaderParser {
         PNG(false),
         WEBP_A(true),
         WEBP(false),
+        ANIMATED_WEBP(true),
+        AVIF(true),
+        ANIMATED_AVIF(true),
         UNKNOWN(false);
         
         private final boolean hasAlpha;
@@ -31,6 +36,34 @@ public interface ImageHeaderParser {
 
         public boolean hasAlpha() {
             return this.hasAlpha;
+        }
+
+        public boolean isWebp() {
+            int i = C04001.$SwitchMap$com$bumptech$glide$load$ImageHeaderParser$ImageType[ordinal()];
+            return i == 1 || i == 2 || i == 3;
+        }
+    }
+
+    /* renamed from: com.bumptech.glide.load.ImageHeaderParser$1 */
+    /* loaded from: classes.dex */
+    static /* synthetic */ class C04001 {
+        static final /* synthetic */ int[] $SwitchMap$com$bumptech$glide$load$ImageHeaderParser$ImageType;
+
+        static {
+            int[] iArr = new int[ImageType.values().length];
+            $SwitchMap$com$bumptech$glide$load$ImageHeaderParser$ImageType = iArr;
+            try {
+                iArr[ImageType.WEBP.ordinal()] = 1;
+            } catch (NoSuchFieldError unused) {
+            }
+            try {
+                $SwitchMap$com$bumptech$glide$load$ImageHeaderParser$ImageType[ImageType.WEBP_A.ordinal()] = 2;
+            } catch (NoSuchFieldError unused2) {
+            }
+            try {
+                $SwitchMap$com$bumptech$glide$load$ImageHeaderParser$ImageType[ImageType.ANIMATED_WEBP.ordinal()] = 3;
+            } catch (NoSuchFieldError unused3) {
+            }
         }
     }
 }

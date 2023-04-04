@@ -39,7 +39,7 @@
         }
     .end annotation
 
-    const-string v0, "url"
+    const-string/jumbo v0, "url"
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -436,7 +436,7 @@
     .line 415
     new-instance p1, Ljava/net/ProtocolException;
 
-    const-string p2, "unexpected end of stream"
+    const-string/jumbo p2, "unexpected end of stream"
 
     invoke-direct {p1, p2}, Ljava/net/ProtocolException;-><init>(Ljava/lang/String;)V
 

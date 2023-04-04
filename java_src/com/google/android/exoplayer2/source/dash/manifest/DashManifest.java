@@ -1,7 +1,7 @@
 package com.google.android.exoplayer2.source.dash.manifest;
 
 import android.net.Uri;
-import com.google.android.exoplayer2.C0468C;
+import com.google.android.exoplayer2.C0482C;
 import com.google.android.exoplayer2.offline.FilterableManifest;
 import com.google.android.exoplayer2.offline.StreamKey;
 import com.google.android.exoplayer2.util.Util;
@@ -57,7 +57,7 @@ public class DashManifest implements FilterableManifest<DashManifest> {
     public final long getPeriodDurationMs(int i) {
         if (i == this.periods.size() - 1) {
             long j = this.durationMs;
-            return j == C0468C.TIME_UNSET ? C0468C.TIME_UNSET : j - this.periods.get(i).startMs;
+            return j == C0482C.TIME_UNSET ? C0482C.TIME_UNSET : j - this.periods.get(i).startMs;
         }
         return this.periods.get(i + 1).startMs - this.periods.get(i).startMs;
     }
@@ -78,13 +78,13 @@ public class DashManifest implements FilterableManifest<DashManifest> {
         int i = 0;
         while (true) {
             int periodCount = getPeriodCount();
-            j = C0468C.TIME_UNSET;
+            j = C0482C.TIME_UNSET;
             if (i >= periodCount) {
                 break;
             }
             if (((StreamKey) linkedList.peek()).periodIndex != i) {
                 long periodDurationMs = getPeriodDurationMs(i);
-                if (periodDurationMs != C0468C.TIME_UNSET) {
+                if (periodDurationMs != C0482C.TIME_UNSET) {
                     j2 += periodDurationMs;
                 }
             } else {
@@ -94,7 +94,7 @@ public class DashManifest implements FilterableManifest<DashManifest> {
             i++;
         }
         long j3 = this.durationMs;
-        if (j3 != C0468C.TIME_UNSET) {
+        if (j3 != C0482C.TIME_UNSET) {
             j = j3 - j2;
         }
         return new DashManifest(this.availabilityStartTimeMs, j, this.minBufferTimeMs, this.dynamic, this.minUpdatePeriodMs, this.timeShiftBufferDepthMs, this.suggestedPresentationDelayMs, this.publishTimeMs, this.programInformation, this.utcTiming, this.serviceDescription, this.location, arrayList);

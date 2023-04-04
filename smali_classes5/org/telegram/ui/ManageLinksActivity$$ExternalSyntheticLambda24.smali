@@ -2,34 +2,50 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lorg/fork/utils/Callbacks$Callback1;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field public final synthetic f$0:Lorg/telegram/ui/Components/LinkActionView;
+.field public final synthetic f$0:Lorg/telegram/ui/ManageLinksActivity;
+
+.field public final synthetic f$1:Lorg/telegram/tgnet/TLRPC$TL_error;
+
+.field public final synthetic f$2:Lorg/telegram/tgnet/TLObject;
+
+.field public final synthetic f$3:Lorg/telegram/tgnet/TLRPC$TL_chatInviteExported;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/Components/LinkActionView;)V
+.method public synthetic constructor <init>(Lorg/telegram/ui/ManageLinksActivity;Lorg/telegram/tgnet/TLRPC$TL_error;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_chatInviteExported;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lorg/telegram/ui/ManageLinksActivity$$ExternalSyntheticLambda24;->f$0:Lorg/telegram/ui/Components/LinkActionView;
+    iput-object p1, p0, Lorg/telegram/ui/ManageLinksActivity$$ExternalSyntheticLambda24;->f$0:Lorg/telegram/ui/ManageLinksActivity;
+
+    iput-object p2, p0, Lorg/telegram/ui/ManageLinksActivity$$ExternalSyntheticLambda24;->f$1:Lorg/telegram/tgnet/TLRPC$TL_error;
+
+    iput-object p3, p0, Lorg/telegram/ui/ManageLinksActivity$$ExternalSyntheticLambda24;->f$2:Lorg/telegram/tgnet/TLObject;
+
+    iput-object p4, p0, Lorg/telegram/ui/ManageLinksActivity$$ExternalSyntheticLambda24;->f$3:Lorg/telegram/tgnet/TLRPC$TL_chatInviteExported;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;)V
-    .locals 1
+.method public final run()V
+    .locals 4
 
-    iget-object v0, p0, Lorg/telegram/ui/ManageLinksActivity$$ExternalSyntheticLambda24;->f$0:Lorg/telegram/ui/Components/LinkActionView;
+    iget-object v0, p0, Lorg/telegram/ui/ManageLinksActivity$$ExternalSyntheticLambda24;->f$0:Lorg/telegram/ui/ManageLinksActivity;
 
-    check-cast p1, Landroid/graphics/Bitmap;
+    iget-object v1, p0, Lorg/telegram/ui/ManageLinksActivity$$ExternalSyntheticLambda24;->f$1:Lorg/telegram/tgnet/TLRPC$TL_error;
 
-    invoke-static {v0, p1}, Lorg/telegram/ui/ManageLinksActivity;->$r8$lambda$XFZmvdE4KDTBFn5yaqRuzcaC13s(Lorg/telegram/ui/Components/LinkActionView;Landroid/graphics/Bitmap;)V
+    iget-object v2, p0, Lorg/telegram/ui/ManageLinksActivity$$ExternalSyntheticLambda24;->f$2:Lorg/telegram/tgnet/TLObject;
+
+    iget-object v3, p0, Lorg/telegram/ui/ManageLinksActivity$$ExternalSyntheticLambda24;->f$3:Lorg/telegram/tgnet/TLRPC$TL_chatInviteExported;
+
+    invoke-static {v0, v1, v2, v3}, Lorg/telegram/ui/ManageLinksActivity;->$r8$lambda$Sdh3cBa--LZNU20EnEvz-Gv6g6E(Lorg/telegram/ui/ManageLinksActivity;Lorg/telegram/tgnet/TLRPC$TL_error;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_chatInviteExported;)V
 
     return-void
 .end method

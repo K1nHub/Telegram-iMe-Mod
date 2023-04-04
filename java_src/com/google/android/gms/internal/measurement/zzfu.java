@@ -17,6 +17,10 @@ public final class zzfu extends zzjz<zzfu, zzft> implements zzlh {
     private zzfu() {
     }
 
+    public static /* synthetic */ zzfu zza() {
+        return zza;
+    }
+
     @Override // com.google.android.gms.internal.measurement.zzjz
     public final Object zzl(int i, Object obj, Object obj2) {
         int i2 = i - 1;

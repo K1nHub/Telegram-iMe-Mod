@@ -192,13 +192,13 @@
     return-void
 .end method
 
-.method public static $default$showKiklikoReportAlert(Lorg/telegram/ui/Components/EmojiView$EmojiViewDelegate;Ljava/lang/String;Lorg/fork/utils/Callbacks$Callback1;)V
+.method public static $default$showKiklikoReportAlert(Lorg/telegram/ui/Components/EmojiView$EmojiViewDelegate;Ljava/lang/String;Lcom/iMe/fork/utils/Callbacks$Callback1;)V
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Ljava/lang/String;",
-            "Lorg/fork/utils/Callbacks$Callback1<",
+            "Lcom/iMe/fork/utils/Callbacks$Callback1<",
             "Ljava/lang/String;",
             ">;)V"
         }

@@ -42,7 +42,7 @@
 
 .field protected parentLayout:Lorg/telegram/ui/ActionBar/INavigationLayout;
 
-.field protected pinnedPlayerView:Lorg/fork/ui/view/PinnedPlayerView;
+.field protected pinnedPlayerView:Lcom/iMe/fork/ui/view/PinnedPlayerView;
 
 .field private final pos:[I
 
@@ -398,7 +398,7 @@
 
     .line 354
     :cond_3
-    iget-object v0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->pinnedPlayerView:Lorg/fork/ui/view/PinnedPlayerView;
+    iget-object v0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->pinnedPlayerView:Lcom/iMe/fork/ui/view/PinnedPlayerView;
 
     if-eqz v0, :cond_5
 
@@ -413,7 +413,7 @@
 
     .line 358
     :try_start_2
-    iget-object v2, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->pinnedPlayerView:Lorg/fork/ui/view/PinnedPlayerView;
+    iget-object v2, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->pinnedPlayerView:Lcom/iMe/fork/ui/view/PinnedPlayerView;
 
     invoke-virtual {v0, v2}, Landroid/view/ViewGroup;->removeViewInLayout(Landroid/view/View;)V
     :try_end_2
@@ -430,7 +430,7 @@
     .line 363
     :cond_4
     :goto_2
-    iput-object v1, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->pinnedPlayerView:Lorg/fork/ui/view/PinnedPlayerView;
+    iput-object v1, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->pinnedPlayerView:Lcom/iMe/fork/ui/view/PinnedPlayerView;
 
     .line 366
     :cond_5
@@ -690,7 +690,7 @@
     return-object v0
 .end method
 
-.method public getAlbumsController()Lorg/fork/controller/AlbumsController;
+.method public getAlbumsController()Lcom/iMe/fork/controller/AlbumsController;
     .locals 1
 
     .line 138
@@ -698,7 +698,7 @@
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lorg/telegram/messenger/AccountInstance;->getAlbumsController()Lorg/fork/controller/AlbumsController;
+    invoke-virtual {v0}, Lorg/telegram/messenger/AccountInstance;->getAlbumsController()Lcom/iMe/fork/controller/AlbumsController;
 
     move-result-object v0
 
@@ -714,7 +714,7 @@
     return-object v0
 .end method
 
-.method public getBackupController()Lorg/fork/controller/BackupController;
+.method public getBackupController()Lcom/iMe/fork/controller/BackupController;
     .locals 1
 
     .line 142
@@ -722,14 +722,14 @@
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lorg/telegram/messenger/AccountInstance;->getBackupController()Lorg/fork/controller/BackupController;
+    invoke-virtual {v0}, Lorg/telegram/messenger/AccountInstance;->getBackupController()Lcom/iMe/fork/controller/BackupController;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method public getBookmarksController()Lorg/fork/controller/BookmarksController;
+.method public getBookmarksController()Lcom/iMe/fork/controller/BookmarksController;
     .locals 1
 
     .line 146
@@ -737,7 +737,7 @@
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lorg/telegram/messenger/AccountInstance;->getBookmarksController()Lorg/fork/controller/BookmarksController;
+    invoke-virtual {v0}, Lorg/telegram/messenger/AccountInstance;->getBookmarksController()Lcom/iMe/fork/controller/BookmarksController;
 
     move-result-object v0
 
@@ -811,7 +811,7 @@
     return-object p1
 .end method
 
-.method public getDialogTranslationSettingsController()Lorg/fork/controller/DialogTranslationController;
+.method public getDialogTranslationSettingsController()Lcom/iMe/fork/controller/DialogTranslationController;
     .locals 1
 
     .line 150
@@ -819,7 +819,7 @@
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lorg/telegram/messenger/AccountInstance;->getDialogTranslationSettingsController()Lorg/fork/controller/DialogTranslationController;
+    invoke-virtual {v0}, Lorg/telegram/messenger/AccountInstance;->getDialogTranslationSettingsController()Lcom/iMe/fork/controller/DialogTranslationController;
 
     move-result-object v0
 
@@ -856,7 +856,7 @@
     return-object v0
 .end method
 
-.method public getFiltersController()Lorg/fork/controller/FiltersController;
+.method public getFiltersController()Lcom/iMe/fork/controller/FiltersController;
     .locals 1
 
     .line 154
@@ -864,14 +864,14 @@
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lorg/telegram/messenger/AccountInstance;->getFiltersController()Lorg/fork/controller/FiltersController;
+    invoke-virtual {v0}, Lorg/telegram/messenger/AccountInstance;->getFiltersController()Lcom/iMe/fork/controller/FiltersController;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method public getForkCommonController()Lorg/fork/controller/ForkCommonController;
+.method public getForkCommonController()Lcom/iMe/fork/controller/ForkCommonController;
     .locals 1
 
     .line 158
@@ -879,7 +879,7 @@
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lorg/telegram/messenger/AccountInstance;->getForkCommonController()Lorg/fork/controller/ForkCommonController;
+    invoke-virtual {v0}, Lorg/telegram/messenger/AccountInstance;->getForkCommonController()Lcom/iMe/fork/controller/ForkCommonController;
 
     move-result-object v0
 
@@ -1005,7 +1005,7 @@
     return-object v0
 .end method
 
-.method public getLockedSectionsController()Lorg/fork/controller/LockedSectionsController;
+.method public getLockedSectionsController()Lcom/iMe/fork/controller/LockedSectionsController;
     .locals 1
 
     .line 162
@@ -1013,7 +1013,7 @@
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lorg/telegram/messenger/AccountInstance;->getLockedSectionsController()Lorg/fork/controller/LockedSectionsController;
+    invoke-virtual {v0}, Lorg/telegram/messenger/AccountInstance;->getLockedSectionsController()Lcom/iMe/fork/controller/LockedSectionsController;
 
     move-result-object v0
 
@@ -1076,7 +1076,7 @@
     return-object v0
 .end method
 
-.method public getMultiPanelController()Lorg/fork/controller/MultiPanelController;
+.method public getMultiPanelController()Lcom/iMe/fork/controller/MultiPanelController;
     .locals 1
 
     .line 166
@@ -1084,14 +1084,14 @@
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lorg/telegram/messenger/AccountInstance;->getMultiPanelController()Lorg/fork/controller/MultiPanelController;
+    invoke-virtual {v0}, Lorg/telegram/messenger/AccountInstance;->getMultiPanelController()Lcom/iMe/fork/controller/MultiPanelController;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method public getMusicController()Lorg/fork/controller/MusicController;
+.method public getMusicController()Lcom/iMe/fork/controller/MusicController;
     .locals 1
 
     .line 170
@@ -1099,7 +1099,7 @@
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lorg/telegram/messenger/AccountInstance;->getMusicController()Lorg/fork/controller/MusicController;
+    invoke-virtual {v0}, Lorg/telegram/messenger/AccountInstance;->getMusicController()Lcom/iMe/fork/controller/MusicController;
 
     move-result-object v0
 
@@ -1119,7 +1119,7 @@
     return v0
 .end method
 
-.method public getNeuroBotsController()Lorg/fork/controller/NeuroBotsController;
+.method public getNeuroBotsController()Lcom/iMe/fork/controller/NeuroBotsController;
     .locals 1
 
     .line 174
@@ -1127,7 +1127,7 @@
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lorg/telegram/messenger/AccountInstance;->getNeuroBotsController()Lorg/fork/controller/NeuroBotsController;
+    invoke-virtual {v0}, Lorg/telegram/messenger/AccountInstance;->getNeuroBotsController()Lcom/iMe/fork/controller/NeuroBotsController;
 
     move-result-object v0
 
@@ -1209,6 +1209,15 @@
     return-object v0
 .end method
 
+.method public getPinnedPlayerView()Lcom/iMe/fork/ui/view/PinnedPlayerView;
+    .locals 1
+
+    .line 120
+    iget-object v0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->pinnedPlayerView:Lcom/iMe/fork/ui/view/PinnedPlayerView;
+
+    return-object v0
+.end method
+
 .method public getPreviewHeight()I
     .locals 1
 
@@ -1217,7 +1226,7 @@
     return v0
 .end method
 
-.method public getRecentChatsController()Lorg/fork/controller/RecentChatsController;
+.method public getRecentChatsController()Lcom/iMe/fork/controller/RecentChatsController;
     .locals 1
 
     .line 178
@@ -1225,7 +1234,7 @@
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lorg/telegram/messenger/AccountInstance;->getRecentChatsController()Lorg/fork/controller/RecentChatsController;
+    invoke-virtual {v0}, Lorg/telegram/messenger/AccountInstance;->getRecentChatsController()Lcom/iMe/fork/controller/RecentChatsController;
 
     move-result-object v0
 
@@ -1240,7 +1249,7 @@
     return-object v0
 .end method
 
-.method public getScreenLockedSection()Lorg/fork/enums/LockedSection;
+.method public getScreenLockedSection()Lcom/iMe/fork/enums/LockedSection;
     .locals 1
 
     const/4 v0, 0x0
@@ -1278,7 +1287,7 @@
     return-object v0
 .end method
 
-.method public getTemplatesController()Lorg/fork/controller/TemplatesController;
+.method public getTemplatesController()Lcom/iMe/fork/controller/TemplatesController;
     .locals 1
 
     .line 182
@@ -1286,7 +1295,7 @@
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lorg/telegram/messenger/AccountInstance;->getTemplatesController()Lorg/fork/controller/TemplatesController;
+    invoke-virtual {v0}, Lorg/telegram/messenger/AccountInstance;->getTemplatesController()Lcom/iMe/fork/controller/TemplatesController;
 
     move-result-object v0
 
@@ -1338,7 +1347,7 @@
     return-object p1
 .end method
 
-.method public getToolsController()Lorg/fork/controller/ToolsController;
+.method public getToolsController()Lcom/iMe/fork/controller/ToolsController;
     .locals 1
 
     .line 186
@@ -1346,14 +1355,14 @@
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lorg/telegram/messenger/AccountInstance;->getToolsController()Lorg/fork/controller/ToolsController;
+    invoke-virtual {v0}, Lorg/telegram/messenger/AccountInstance;->getToolsController()Lcom/iMe/fork/controller/ToolsController;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method public getTopicsController()Lorg/fork/controller/ForkTopicsController;
+.method public getTopicsController()Lcom/iMe/fork/controller/ForkTopicsController;
     .locals 1
 
     .line 190
@@ -1361,7 +1370,7 @@
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lorg/telegram/messenger/AccountInstance;->getTopicsController()Lorg/fork/controller/ForkTopicsController;
+    invoke-virtual {v0}, Lorg/telegram/messenger/AccountInstance;->getTopicsController()Lcom/iMe/fork/controller/ForkTopicsController;
 
     move-result-object v0
 
@@ -1392,7 +1401,7 @@
     return-object v0
 .end method
 
-.method public getWalletFingerprintController()Lorg/fork/controller/WalletFingerprintController;
+.method public getWalletFingerprintController()Lcom/iMe/fork/controller/WalletFingerprintController;
     .locals 1
 
     .line 194
@@ -1400,7 +1409,7 @@
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lorg/telegram/messenger/AccountInstance;->getWalletFingerprintController()Lorg/fork/controller/WalletFingerprintController;
+    invoke-virtual {v0}, Lorg/telegram/messenger/AccountInstance;->getWalletFingerprintController()Lcom/iMe/fork/controller/WalletFingerprintController;
 
     move-result-object v0
 
@@ -2747,7 +2756,7 @@
 
     .line 420
     :cond_7
-    iget-object p1, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->pinnedPlayerView:Lorg/fork/ui/view/PinnedPlayerView;
+    iget-object p1, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->pinnedPlayerView:Lcom/iMe/fork/ui/view/PinnedPlayerView;
 
     if-eqz p1, :cond_9
 
@@ -2762,7 +2771,7 @@
 
     .line 424
     :try_start_2
-    iget-object v0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->pinnedPlayerView:Lorg/fork/ui/view/PinnedPlayerView;
+    iget-object v0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->pinnedPlayerView:Lcom/iMe/fork/ui/view/PinnedPlayerView;
 
     invoke-virtual {p1, v0}, Landroid/view/ViewGroup;->removeViewInLayout(Landroid/view/View;)V
     :try_end_2
@@ -2791,7 +2800,7 @@
 
     move-result-object p1
 
-    iget-object v0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->pinnedPlayerView:Lorg/fork/ui/view/PinnedPlayerView;
+    iget-object v0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->pinnedPlayerView:Lcom/iMe/fork/ui/view/PinnedPlayerView;
 
     invoke-virtual {v0}, Landroid/widget/FrameLayout;->getContext()Landroid/content/Context;
 
@@ -2800,7 +2809,7 @@
     if-eq p1, v0, :cond_9
 
     .line 430
-    iput-object v2, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->pinnedPlayerView:Lorg/fork/ui/view/PinnedPlayerView;
+    iput-object v2, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->pinnedPlayerView:Lcom/iMe/fork/ui/view/PinnedPlayerView;
 
     .line 433
     :cond_9
@@ -2808,7 +2817,7 @@
 
     if-eqz p1, :cond_b
 
-    iget-object p1, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->pinnedPlayerView:Lorg/fork/ui/view/PinnedPlayerView;
+    iget-object p1, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->pinnedPlayerView:Lcom/iMe/fork/ui/view/PinnedPlayerView;
 
     if-nez p1, :cond_b
 
@@ -2821,7 +2830,7 @@
     if-eqz p1, :cond_b
 
     .line 434
-    new-instance p1, Lorg/fork/ui/view/PinnedPlayerView;
+    new-instance p1, Lcom/iMe/fork/ui/view/PinnedPlayerView;
 
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->parentLayout:Lorg/telegram/ui/ActionBar/INavigationLayout;
 
@@ -2841,9 +2850,9 @@
 
     check-cast v3, Lorg/telegram/ui/LaunchActivity;
 
-    invoke-direct {p1, v0, v2, v3}, Lorg/fork/ui/view/PinnedPlayerView;-><init>(Landroid/content/Context;Lorg/telegram/ui/ActionBar/INavigationLayout;Lorg/telegram/ui/LaunchActivity;)V
+    invoke-direct {p1, v0, v2, v3}, Lcom/iMe/fork/ui/view/PinnedPlayerView;-><init>(Landroid/content/Context;Lorg/telegram/ui/ActionBar/INavigationLayout;Lorg/telegram/ui/LaunchActivity;)V
 
-    iput-object p1, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->pinnedPlayerView:Lorg/fork/ui/view/PinnedPlayerView;
+    iput-object p1, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->pinnedPlayerView:Lcom/iMe/fork/ui/view/PinnedPlayerView;
 
     .line 435
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->parentLayout:Lorg/telegram/ui/ActionBar/INavigationLayout;
@@ -2876,7 +2885,7 @@
     const/16 v1, 0x8
 
     :goto_5
-    invoke-virtual {p1, v1}, Lorg/fork/ui/view/PinnedPlayerView;->setVisibility(I)V
+    invoke-virtual {p1, v1}, Lcom/iMe/fork/ui/view/PinnedPlayerView;->setVisibility(I)V
 
     :cond_b
     return-void

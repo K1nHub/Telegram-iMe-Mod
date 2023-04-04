@@ -32,7 +32,7 @@ import kotlin.collections.IntIterator;
 import kotlin.collections.MapsKt__MapsKt;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.StringCompanionObject;
-import kotlin.p035io.CloseableKt;
+import kotlin.p036io.CloseableKt;
 import kotlin.ranges.IntRange;
 import kotlin.ranges.RangesKt___RangesKt;
 import kotlin.text.Charsets;
@@ -49,7 +49,7 @@ import okhttp3.RequestBody;
 import okhttp3.Response;
 import okhttp3.ResponseBody;
 import okhttp3.internal.http2.Header;
-import okhttp3.internal.p037io.FileSystem;
+import okhttp3.internal.p038io.FileSystem;
 import okio.Buffer;
 import okio.BufferedSink;
 import okio.BufferedSource;
@@ -57,12 +57,12 @@ import okio.ByteString;
 import okio.Options;
 import okio.Sink;
 import okio.Source;
-import p034j$.util.DesugarTimeZone;
+import p035j$.util.DesugarTimeZone;
 /* compiled from: Util.kt */
 /* loaded from: classes4.dex */
 public final class Util {
     public static final byte[] EMPTY_BYTE_ARRAY;
-    public static final Headers EMPTY_HEADERS = Headers.Companion.m90of(new String[0]);
+    public static final Headers EMPTY_HEADERS = Headers.Companion.m85of(new String[0]);
     public static final ResponseBody EMPTY_RESPONSE;
     private static final Options UNICODE_BOMS;
     public static final TimeZone UTC;
@@ -105,7 +105,7 @@ public final class Util {
         RequestBody.Companion.create$default(RequestBody.Companion, bArr, (MediaType) null, 0, 0, 7, (Object) null);
         Options.Companion companion = Options.Companion;
         ByteString.Companion companion2 = ByteString.Companion;
-        UNICODE_BOMS = companion.m86of(companion2.decodeHex("efbbbf"), companion2.decodeHex("feff"), companion2.decodeHex("fffe"), companion2.decodeHex("0000ffff"), companion2.decodeHex("ffff0000"));
+        UNICODE_BOMS = companion.m81of(companion2.decodeHex("efbbbf"), companion2.decodeHex("feff"), companion2.decodeHex("fffe"), companion2.decodeHex("0000ffff"), companion2.decodeHex("ffff0000"));
         TimeZone timeZone = DesugarTimeZone.getTimeZone("GMT");
         Intrinsics.checkNotNull(timeZone);
         UTC = timeZone;

@@ -15,7 +15,7 @@ import androidx.core.graphics.ColorUtils;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3301R;
+import org.telegram.messenger.C3316R;
 import org.telegram.messenger.SvgHelper;
 import org.telegram.p048ui.ActionBar.Theme;
 /* renamed from: org.telegram.ui.Components.Forum.ForumBubbleDrawable */
@@ -58,7 +58,7 @@ public class ForumBubbleDrawable extends Drawable {
     }
 
     public ForumBubbleDrawable(int i) {
-        SvgHelper.SvgDrawable drawable = SvgHelper.getDrawable(C3301R.C3306raw.topic_bubble, -1);
+        SvgHelper.SvgDrawable drawable = SvgHelper.getDrawable(C3316R.C3321raw.topic_bubble, -1);
         this.svgDrawable = drawable;
         drawable.copyCommandFromPosition(0);
         Paint paint = new Paint(1);

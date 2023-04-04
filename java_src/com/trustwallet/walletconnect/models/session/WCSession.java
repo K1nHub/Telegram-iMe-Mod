@@ -5,7 +5,7 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.text.StringsKt__StringsJVMKt;
 /* compiled from: WCSession.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class WCSession {
     public static final Companion Companion = new Companion(null);
     private final String bridge;
@@ -60,7 +60,7 @@ public final class WCSession {
     }
 
     /* compiled from: WCSession.kt */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();

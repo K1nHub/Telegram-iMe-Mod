@@ -155,6 +155,7 @@
     <string name="channel_donations_admin_bot_link_key">बॉट को जल्दी से जोड़ने के लिए यहां क्लिक करें</string>
     <string name="channel_donations_description">LIME BEP20 में डोनेशन प्राप्त करने के लिए अपना क्रिप्टो वॉलेट पता लिंक करें.</string>
     <string name="channel_donations_incorrect_address_error">सही पता दर्ज करें</string>
+    <string name="channel_donations_latest_donations_title">नवीनतम डोनेशंस</string>
     <string name="channel_donations_link_address_dialog_description">क्या आप सुनिश्चित हैं कि आप पते (%s) को डोनेशन पते के रूप में लिंक करना चाहते हैं? आपका पता सभी के लिए सार्वजनिक होगा.</string>
     <string name="channel_donations_link_address_dialog_positive_button">लिंक</string>
     <string name="channel_donations_link_address_dialog_title">पता लिंक करें</string>
@@ -162,6 +163,7 @@
     <string name="channel_donations_the_same_address_error">पहले से लिंक किए गए पते से भिन्न पता दर्ज करें</string>
     <string name="channel_donations_toolbar_title">डोनेशन</string>
     <string name="channel_donations_unlink_address_dialog_description">क्या आप वाकई लिंक किए गए पते (%s) को अनलिंक करना चाहते हैं और डोनेशन करने की प्रणाली को अक्षम करना चाहते हैं? सभी डोनेशन इतिहास हटा दिए जाएंगे.</string>
+    <string name="channel_donations_unlink_address_dialog_positive_button">अनलिंक करें</string>
     <string name="channel_donations_unlink_address_dialog_title">पता अनलिंक करें</string>
     <string name="character_counter_content_description">%2$d वर्णों में से %1$d वर्ण दर्ज किए गए</string>
     <string name="character_counter_overflowed_content_description">अभी %1$d वर्ण हैं जबकि %2$d से ज़्यादा नहीं होने चाहिए</string>
@@ -178,10 +180,13 @@
     <string name="chat_menu_convert_to_channel">चैनल में परिवर्तित करें</string>
     <string name="chat_menu_jump_to_start_item">शुरुआत में जाइये</string>
     <string name="chat_menu_language_settings">भाषा सेटिंग्स</string>
+    <string name="chat_menu_quote">क्वोट</string>
     <string name="chat_message_forward_media">मीडिया अग्रेषित करें</string>
     <string name="chat_message_forward_text">टेक्स्ट अग्रेषित करें</string>
     <string name="chat_message_popup_option_add_to_bookmarks">बुकमार्क में सहेजें</string>
+    <string name="chat_message_popup_option_copy_image">इमेज कॉपी करें</string>
     <string name="chat_message_popup_option_copy_part">भाग कॉपी करें</string>
+    <string name="chat_message_popup_option_copy_text">टेक्स्ट कॉपी करें</string>
     <string name="chat_message_popup_option_forward_cloud">क्लाउड में सहेजे</string>
     <string name="chat_message_popup_option_forward_viber">Viber पर फॉरवर्ड करें</string>
     <string name="chat_message_popup_option_forward_whatsapp">व्हाट्सएप पर फॉरवर्ड करें</string>
@@ -244,6 +249,7 @@
     <string name="chat_settings_app_icon_winter">सर्दी</string>
     <string name="chat_settings_app_icon_yellow">पीला</string>
     <string name="chat_settings_chat_list_compact_mode">एक पंक्ति</string>
+    <string name="chat_settings_files_sending_preview_description">पूर्वावलोकन भेजने और भेजने से पहले कैप्शन जोड़ने वाली फ़ाइलों को सक्षम करें</string>
     <string name="chat_settings_raise_to_switch_speaker">स्पीकर स्विच करने के लिए उठाएं</string>
     <string name="chat_settings_round_user_counter_item_subtitle">राउंड उप करें</string>
     <string name="chat_settings_round_user_counter_item_title">यूजर काउंटर</string>
@@ -251,9 +257,12 @@
     <string name="chat_settings_vibration">कंपन</string>
     <string name="chat_settings_wide_posts_in_chanel">चैनलों में विस्तृत पोस्ट</string>
     <string name="chat_template_name_info">कृपया उस टेम्पलेट का नाम दर्ज करें जिससे भेजा गया संदेश मेल खाएगा</string>
+    <string name="chat_template_subtitle_created_at">बनाया गया</string>
+    <string name="chat_template_subtitle_sent">भेज दिया गया</string>
     <string name="chat_templates_info">यहां संदेश भेजें और चैट में प्राप्त टेम्प्लेट को जल्दी भेजने के लिए इसे नाम दें</string>
     <string name="chat_templates_mode_hint">"आप इसे कभी भी इसमें बदल सकते हैं
 सेटिंग > टूल > चैट > टेम्प्लेट"</string>
+    <string name="chat_templates_mode_oval">ओवल</string>
     <string name="choose_staking_order_interest_rate">ब्याज दर से</string>
     <string name="choose_tokens_order_alphabet">वर्णमाला द्वारा</string>
     <string name="choose_tokens_order_balance">शेष राशि द्वारा</string>
@@ -287,6 +296,7 @@
     <string name="cloud_filter_music">संगीत</string>
     <string name="cloud_filter_music_placeholder">आपके क्लाउड में संगीत वाला कोई संदेश नहीं</string>
     <string name="cloud_filter_my">मेरा</string>
+    <string name="cloud_filter_poll">चुनाव</string>
     <string name="cloud_filter_sticker_placeholder">आपके क्लाउड में कोई एनिमेटेड स्टिकर नहीं है</string>
     <string name="cloud_filter_text_placeholder">आपके क्लाउड में केवल टेक्स्ट वाला कोई संदेश नहीं</string>
     <string name="cloud_filter_video_placeholder">आपके क्लाउड में वीडियोस वाला कोई संदेश नहीं</string>
@@ -316,6 +326,7 @@
     <string name="common_confirm">पुष्टि करें</string>
     <string name="common_create">नया बनाये</string>
     <string name="common_empty_balance_state_description">आपके वॉलेट में इस नेटवर्क पर शेष राशि वाला कोई टोकन नहीं है</string>
+    <string name="common_empty_state_description">दुर्भाग्य से, डेटा अभी तक प्रस्तुत नहीं किया गया है</string>
     <string name="common_empty_state_title">यहां कुछ नहीं है...</string>
     <string name="common_error_no_internet">इंटरनेट कनेक्शन नहीं है. कृपया पुन: प्रयास करें</string>
     <string name="common_error_unauthorized">अनधिकृत त्रुटि. कृपया पुन: प्रयास करें</string>
@@ -364,11 +375,14 @@
     <string name="contacts_filter_confirm_unblock">क्या आप वाकई इन सभी उपयोगकर्ताओं को अनवरोधित करना चाहते हैं?</string>
     <string name="contacts_filter_header">फ़िल्टर चुनें</string>
     <string name="contacts_filter_mutual">आपसी</string>
+    <string name="contacts_filter_not_mutual">अनम्यूच्यूअल</string>
     <string name="contacts_filter_online">ऑनलाइन</string>
     <string name="contacts_processing">संपर्क संसाधित हो रहें हैं... %2$d में से %1$d संसाधित किये गये</string>
     <string name="contacts_processing_already_started">अन्य संपर्कों का संसाधन पहले ही प्रारंभ हो चुका है, बाद में पुनः प्रयास करें</string>
     <string name="contacts_processing_error">संपर्क संसाधित करने में त्रुटि, बाद में पुन: प्रयास करें</string>
     <string name="contacts_processing_success">संपर्कों को संसाधित किया गया है</string>
+    <string name="content_preview_disable_preview">पूर्वावलोकन अक्षम करें</string>
+    <string name="content_preview_enable_preview">पूर्वावलोकन सक्षम करें</string>
     <string name="content_preview_make_an_avatar">एक अवतार बनायें</string>
     <string name="create_folder_change_fab_section_description">इस फ़ोल्डर में दिखाई देने वाले FAB बटन का प्रकार चुनें.</string>
     <string name="create_folder_change_fab_title">FAB बटन</string>
@@ -383,6 +397,7 @@
     <string name="custom_forward_option_link_preview">पूर्व दर्शन</string>
     <string name="custom_forward_option_media">मीडिया</string>
     <string name="custom_forward_option_text">टेक्स्ट</string>
+    <string name="custom_mention_change">उल्लेख बदलें</string>
     <string name="custom_mention_hint">नाम दर्ज करें</string>
     <string name="custom_qr_error">क्यूआर-कोड पढ़ने में त्रुटि. कोई दूसरा आज़माएं!</string>
     <string name="data_settings_storage_path_no_flash_drive">कोई फ्लैश ड्राइव नहीं</string>
@@ -501,6 +516,7 @@
     <string name="forwarding_editor_group">सन्देश एकत्रित करें</string>
     <string name="forwarding_editor_move_down">नीचे ले जाएँ</string>
     <string name="forwarding_editor_move_up">ऊपर ले जाएँ</string>
+    <string name="forwarding_editor_ungroup">संदेशों को अनग्रुप करें</string>
     <string name="frontal_camera_popup_text">आगे वाला कैमरा</string>
     <string name="gif_sticker_preview_choose_alert_message">क्या आप चैट में भेजने से पहले स्टिकर और GIF का पूर्वावलोकन करना चाहते हैं? आप इंटरफ़ेस सेटिंग्स में इस विकल्प को हमेशा कॉन्फ़िगर कर सकते हैं.</string>
     <string name="google_assistant_verification_channel_name">Assistant की पुष्टि करने की सुविधा</string>
@@ -515,6 +531,8 @@
     <string name="info_votes_other">%d वोट</string>
     <string name="info_votes_two">%d वोट</string>
     <string name="info_votes_zero">%d वोट</string>
+    <string name="invite_link_created_date">लिंक %s बनाया गया</string>
+    <string name="invite_link_joined_date">%s से जुड़े</string>
     <string name="item_view_role_description">टैब</string>
     <string name="kikliko_name">KikLiko</string>
     <string name="kikliko_search_hint">KikLiko द्वारा वीडियो खोजें</string>
@@ -548,6 +566,7 @@
     <string name="material_timepicker_pm">अपराह्न</string>
     <string name="material_timepicker_select_time">समय चुनें</string>
     <string name="material_timepicker_text_input_mode_description">समय इनपुट के लिए लेख इनपुट मोड पर जाएं.</string>
+    <string name="message_document_file_save_as">सहेजें...</string>
     <string name="message_document_file_save_as_choose">डायरेक्टरी चुनें</string>
     <string name="message_document_file_save_as_choose_directory">फ़ाइल सहेजने के लिए निर्देशिका चुनें</string>
     <string name="message_document_file_save_as_empty_filename">फ़ाइल नाम खाली नहीं हो सकता</string>
@@ -693,11 +712,13 @@
     <string name="phone_contact_call">%s वॉयस कॉल</string>
     <string name="phone_contact_profile">%s प्रोफ़ाइल</string>
     <string name="phone_contact_video_call">%s वीडियो कॉल</string>
+    <string name="photo_viewer_clear_cache">कैश से हटाएं</string>
     <string name="photo_viewer_image_copied">छवि क्लिपबोर्ड पर कॉपी की गई</string>
     <string name="photo_viewer_image_copy">इमेज कॉपी करें</string>
     <string name="photo_viewer_open_recognize_photo">फोटो की जानकारी</string>
     <string name="photo_viewer_open_recognize_text">तस्वीर से टेक्स्ट</string>
     <string name="pinned_messages_show_pin_panel_bottom_button">पैनल को चैट पर लौटाएं</string>
+    <string name="premium_settings_animate_stickers">प्रीमियम उपयोगकर्ताओं के लिए अतिरिक्त प्रभावों की विशेषता वाले विशिष्ट बढ़े हुए स्टिकर सक्षम करें.</string>
     <string name="premium_settings_not_premium_animate_avatars">प्रीमियम उपयोगकर्ताओं के लिए चैट सूची और चैट में एनिमेटेड वीडियो अवतार सक्षम करें.</string>
     <string name="premium_settings_not_premium_show_badge">प्रीमियम उपयोगकर्ताओं के लिए प्रोफ़ाइल बैज प्रदर्शन सक्षम करें.</string>
     <string name="processing_participants">प्रतिभागियों को संसाधित किया जा रहा है... %2$d में से %1$d को संसाधित किया गया</string>
@@ -757,6 +778,7 @@
     <string name="push_notification_staking_safe_withdrawal_started">आपका निकासी अनुरोध बनाया गया है. आप %1s पर अपने टोकन का दावा कर सकते हैं.</string>
     <string name="push_notification_staking_started">नया %1s स्टेकिंग अब आपके वॉलेट में उपलब्ध है!</string>
     <string name="push_notification_staking_title">iMe स्टेकिंग प्लेटफॉर्म</string>
+    <string name="push_notification_wallet_approve_category_title">टोकन अनुमोदन</string>
     <string name="push_notification_wallet_approve_failed_description">%1$s टोकन अनुमोदन लेन-देन विफल रहा</string>
     <string name="push_notification_wallet_approve_success_description">%1$s टोकन अनुमोदन लेन-देन सफल रहा</string>
     <string name="push_notification_wallet_binance_pay_request_created_description">आपको उपयोगकर्ता आईडी %3$s से %1$s %2$s भुगतान अनुरोध प्राप्त हुआ है.</string>
@@ -770,6 +792,7 @@
     <string name="push_notification_wallet_unsupported">असमर्थित अधिसूचना</string>
     <string name="quick_reaction_settings_enable_item_hint">चैट संदेशों के लिए त्वरित प्रतिक्रियाओं का उपयोग करने के लिए इसे चालू करें</string>
     <string name="recent_chats_clear_history">क्या आप वाकई हाल के चैट इतिहास को साफ़ करना चाहते हैं?</string>
+    <string name="recent_chats_counters_and_reactions">काउंटर और प्रतिक्रियाएं</string>
     <string name="recent_chats_hint">यदि आप अपनी चैट सूची पर वापस जाए बिना अपनी चैट को स्क्रॉल करना चाहते हैं तो इसे चालू करें. जब आप किसी चैट के निचले भाग पर पहुँचते हैं, तो अगली अपठित चैट पर जाने के लिए ऊपर खींचें.</string>
     <string name="recent_chats_live">वीडियो चैट्स</string>
     <string name="recent_chats_mentions">उल्लेख</string>
@@ -847,6 +870,8 @@
     <string name="settings_interface_chat_attach_alert_buttons">अटैचमेंट आइटम</string>
     <string name="settings_interface_chat_header">चैट्स</string>
     <string name="settings_interface_chat_hide_keyboard_on_scroll">चैट स्क्रॉल करते समय कीबोर्ड छुपाएं</string>
+    <string name="settings_interface_chat_list_mode">मोड</string>
+    <string name="settings_interface_chat_themes">टू-वे थीम्स</string>
     <string name="settings_interface_chat_user_options_by_avatar_click_hint">समूहों में अपने अवतार पर लघु टैप द्वारा उपयोगकर्ता के साथ क्रियाएं प्रदर्शित करना.</string>
     <string name="settings_interface_chat_user_options_by_avatar_click_subtitle">उपयोगकर्ता के साथ क्रियाएँ</string>
     <string name="settings_interface_chat_user_options_by_avatar_click_title">समूहों में अवतार पर टैप करना</string>
@@ -858,6 +883,7 @@
     <string name="settings_interface_drawer_items">साइड मेनू आइटम</string>
     <string name="settings_interface_message_context_menu">संदर्भ मेनू</string>
     <string name="settings_interface_message_header">सन्देश</string>
+    <string name="settings_interface_message_popup_aggregator">संदर्भ मेनू एग्रीगेटर</string>
     <string name="settings_interface_message_popup_aggregator_hint">यदि विकल्प सक्षम है, तो संदेश के कुछ पॉपअप आइटम सामान्य अनुभागों में एकत्र किए जाते हैं.</string>
     <string name="settings_interface_message_popup_item_forward_messengers">मेसेंजर्स पर अग्रेषित करें</string>
     <string name="settings_interface_message_popup_items">पॉपअप आइटम</string>
@@ -880,12 +906,16 @@
     <string name="settings_multi_panel_item_title">चैट में बहु-पैनल</string>
     <string name="settings_neurobots_item_title">न्यूरोबॉट्स सेटिंग्स</string>
     <string name="settings_proxy_button_in_toolbar">प्रॉक्सी बटन</string>
+    <string name="settings_reactions_enable_hint">चैट में प्रतिक्रियाओं की कार्यक्षमता प्रदर्शित करने के लिए इसे चालू करें</string>
     <string name="settings_revoke_by_default">दूसरी तरफ से हटाएं</string>
     <string name="settings_section_passcode_archive">संग्रह में पासकोड</string>
     <string name="settings_section_passcode_cloud">क्लाउड में पासकोड</string>
+    <string name="settings_speed_mega_fast">मेगा फ़ास्ट</string>
+    <string name="settings_speed_super_fast">सुपर फ़ास्ट</string>
     <string name="settings_tools">टूल्स</string>
     <string name="settings_tools_base_toolbar">बेसिक टूलबार</string>
     <string name="settings_tools_bot_help_translate">बॉट्स में अभिवादन का अनुवाद</string>
+    <string name="settings_tools_chat_profile">चैट प्रोफाइल</string>
     <string name="settings_tools_chat_profile_id_telegram">ID टेलीग्राम</string>
     <string name="settings_tools_chat_profile_id_telegram_bot_api">बॉट API</string>
     <string name="settings_tools_chat_profile_id_telegram_description">"मानक आईडी प्रदर्शित करने के लिए टेलीग्राम एपीआई का चयन करें.
@@ -898,6 +928,7 @@
     <string name="settings_tools_combine_messages_hint">"जब आप एक के बाद एक अनेक संदेश भेजते हैं तो इससे अन्य उपयोगकर्ता नाराज़ हो सकते हैं.
 
 इस विकल्प को सक्षम करें ताकि 30 सेकंड के भीतर एक पंक्ति में भेजे गए आपके सारे संदेशों को एक ही संदेश में जोड़ दिया जाएगा."</string>
+    <string name="settings_tools_custom_sharing">मल्टी-शेयरिंग</string>
     <string name="settings_tools_custom_sharing_hint">बाहर से साझा करते समय मुख्य और संग्रह चैट सूची के सॉर्टिंग टैब प्रदर्शित हो रहें है. उदाहरण के लिए, जब आप iMe में डिवाइस गैलरी से कोई फ़ोटो साझा करते हैं.</string>
     <string name="settings_tools_customization">अनुकूलन</string>
     <string name="settings_tools_design_icon">प्रतीक डिजाइन</string>
@@ -921,6 +952,7 @@
     <string name="short_number_k">हज़ार</string>
     <string name="short_number_m">दस लाख</string>
     <string name="short_number_t">एक लाख करोड़</string>
+    <string name="sort_by_usage">हाल ही में उपयोग किया गया</string>
     <string name="sorting_enable_alert_message">"क्या आप स्वचालित चैट छँटाई सक्षम करना चाहते हैं?
 
 आप इसे कभी भी फोल्डर सेक्शन (चैट सॉर्टिंग) में संपादित कर सकते हैं."</string>
@@ -985,6 +1017,7 @@
     <string name="staking_details_profit">मुनाफा</string>
     <string name="staking_details_replenish">जमा करें</string>
     <string name="staking_details_status_active">सक्रिय</string>
+    <string name="staking_details_status_finished">एक्सपायर्ड</string>
     <string name="staking_details_status_short_of_funds">भागीदार से टोकन की प्रतीक्षा कर रहें है</string>
     <string name="staking_details_status_withdrawal_available">निकासी उपलब्ध</string>
     <string name="staking_details_withdraw">निकास करें</string>
@@ -1025,12 +1058,14 @@ iMe की ओर से कोई अतिरिक्त शुल्क न�
     <string name="staking_programmes_count">स्टैकिंग्स (%d)</string>
     <string name="staking_programmes_empty_state_description">कोई स्टेकिंग कार्यक्रम उपलब्ध नहीं हैं.</string>
     <string name="staking_programmes_filter_active">सक्रिय</string>
+    <string name="staking_programmes_filter_archive">पुरालेख</string>
     <string name="staking_programmes_filter_completed">खत्म हो चुका</string>
     <string name="staking_programmes_filters_info_description">"सक्रिय - स्टेकिंग प्रोग्राम जिसमें आप भाग लेते हैं और जिसकी अंतिम तिथि अभी तक नहीं आई है.
 
 एक्सपायर्ड - स्टेकिंग प्रोग्राम जो पहले ही अपनी अंतिम तिथि तक पहुँच चुके हैं, लेकिन अभी भी आपके टोकन वापस लेने के लिए बाकी हैं
 
 आर्काइव - एक्सपायर्ड स्टेकिंग प्रोग्राम जिसमें आपने भाग लिया है और जिसमें निकासी के लिए कोई टोकन नहीं बचा है"</string>
+    <string name="staking_programmes_filters_info_title">स्टेकिंग फिल्टर्स</string>
     <string name="staking_replenishment_already_finished">स्टेकिंग कार्यक्रम पहले ही समाप्त हो चुका है</string>
     <string name="staking_replenishment_confirm_description">क्या आप वाकई %1$s %2$s जमा करना चाहते हैं?</string>
     <string name="staking_replenishment_confirm_title">जमा होने की पुष्टि</string>
@@ -1221,6 +1256,7 @@ iMe की ओर से कोई अतिरिक्त शुल्क न�
     <string name="wallet_account_level_zero_description">0</string>
     <string name="wallet_account_type_crypto">क्रिप्टो संपत्ति</string>
     <string name="wallet_account_type_fiat">फिएट पैसे</string>
+    <string name="wallet_activation_confirmation_description">आप इस वॉलेट को अपने ईवीएम वॉलेट की तरह ही मेमोनिक का उपयोग करके बना सकते हैं</string>
     <string name="wallet_amount_button_calculate">शुल्क की गणना करें</string>
     <string name="wallet_amount_button_txt">भेजें</string>
     <string name="wallet_amount_confirm_alert_ok_btn">स्थानांतरण करे</string>
@@ -1293,6 +1329,7 @@ iMe की ओर से कोई अतिरिक्त शुल्क न�
     <string name="wallet_backup_secret_words_qr_description">आप इस QR कोड का उपयोग अपने वॉलेट को किसी अन्य डिवाइस पर पुनर्स्थापित करने के लिए कर सकते हैं</string>
     <string name="wallet_backup_secret_words_qr_title">QR कोड</string>
     <string name="wallet_backup_secret_words_title">गुप्त शब्द</string>
+    <string name="wallet_backup_test_time">परीक्षण समय!</string>
     <string name="wallet_backup_test_time_alert_button_see">शब्द देखें</string>
     <string name="wallet_backup_test_time_alert_button_try">पुनः प्रयास करें</string>
     <string name="wallet_backup_test_time_alert_text">आपके द्वारा दर्ज किए गए गुप्त शब्द सूची में दिए गए शब्दों से मेल नहीं खाते.</string>
@@ -1300,6 +1337,7 @@ iMe की ओर से कोई अतिरिक्त शुल्क न�
     <string name="wallet_backup_test_time_info" formatted="false">"अब देखते हैं कि आपने अपने गुप्त शब्दों को सही लिखा है या नहीं.
 
 कृपया नीचे **%d**, **%d** और **%d** शब्द दर्ज करें:"</string>
+    <string name="wallet_backup_test_time_title">परीक्षण समय!</string>
     <string name="wallet_backup_view">मेरा वॉलेट देखें</string>
     <string name="wallet_banner_slide_ascendeex_description">वैश्विक क्रिप्टो ट्रेडिंग प्लेटफॉर्म</string>
     <string name="wallet_banner_slide_ascendeex_long_description">AscendEX एक्सचेंज के लिए साइन अप करें और 60 दिनों के लिए VIP2 स्थिति प्राप्त करें. LIME और अन्य क्रिप्टो एसेट्स का अनुकूल शर्तों पर व्यापार करें.</string>
@@ -1327,6 +1365,7 @@ iMe की ओर से कोई अतिरिक्त शुल्क न�
     <string name="wallet_banner_slide_gate_title">Gate.io</string>
     <string name="wallet_banner_slide_multi_networks_description">Ethereum, BNB Chain, Polygon, Fantom, TON, NFT</string>
     <string name="wallet_banner_slide_multi_networks_long_description">एक वॉलेट में विभिन्न प्लेटफार्मों के टोकन के सुविधाजनक उपयोग के लिए एथेरियम, बीएनबी चेन, पॉलीगॉन, फैंटम, टॉन और एनएफटी नेटवर्क स्विच करने हेतु.</string>
+    <string name="wallet_banner_slide_multi_networks_title">मल्टी-नेटवर्किंग</string>
     <string name="wallet_banner_slide_non_custodial_description">केवल आप ही अपना वॉलेट ऑपरेट कर सकते हैं</string>
     <string name="wallet_banner_slide_non_custodial_long_description">केवल आप ही अपने वॉलेट एक्सेस कर सकते हैं. अपने वॉलेट को पुनर्स्थापित या आयात करने में सक्षम होने के लिए पासफ़्रेज़ को सहेजें.</string>
     <string name="wallet_banner_slide_non_custodial_title">गैर-अभिरक्षित</string>
@@ -1338,6 +1377,7 @@ iMe की ओर से कोई अतिरिक्त शुल्क न�
     <string name="wallet_banner_slide_staking_title">स्टैकिंग</string>
     <string name="wallet_banner_slide_swap_description">Uniswap, PancakeSwap, 1inch</string>
     <string name="wallet_banner_slide_swap_long_description">स्मार्ट कॉन्ट्रैक्ट्स द्वारा संचालित विकेन्द्रीकृत एक्सचेंज प्रोटोकॉल का उपयोग करके क्रिप्टोकोर्रेंसी एवं टोकन स्वैप करें.</string>
+    <string name="wallet_banner_slide_swap_title">एक्सचेंज</string>
     <string name="wallet_binance_logout_confirm_dialog_description">क्या आप लॉग आउट करना चाहते हैं?</string>
     <string name="wallet_binance_logout_confirm_dialog_title">लोग आउट करें</string>
     <string name="wallet_binance_pay_account_header">Binance खाता</string>
@@ -1420,11 +1460,13 @@ iMe की ओर से कोई अतिरिक्त शुल्क न�
     <string name="wallet_confirm_eth_pin_code_description">यदि आप अपना पिन भूल जाते हैं, तो आप मास्टर पासवर्ड के माध्यम से अपने अकाउंट में लॉगिन कर सकते है.</string>
     <string name="wallet_confirm_eth_pin_code_title">पिन नंबर दोहराएं</string>
     <string name="wallet_confirm_eth_pin_code_validation_not_match_error">गलत पिन नंबर</string>
+    <string name="wallet_connect_active_sessions">सक्रिय सत्र</string>
     <string name="wallet_connect_description">लेन-देन करने के लिए अपने वॉलेट को WalletConnect से कनेक्ट करें</string>
     <string name="wallet_connect_error_alert_title">WalletConnect त्रुटि</string>
     <string name="wallet_connect_error_unsupported_network">iMe dApp के चयनित नेटवर्क का समर्थन नहीं करता</string>
     <string name="wallet_connect_message_sign_address_hidden">पता छिपा हुआ है क्योंकि वॉलेट लॉक है</string>
     <string name="wallet_connect_message_sign_confirm_description">क्या आप वाकई इस संदेश पर हस्ताक्षर करना चाहते हैं?</string>
+    <string name="wallet_connect_message_sign_confirm_title">पुष्टि को हस्ताक्षरित करें</string>
     <string name="wallet_connect_new_connection">जोड़ें</string>
     <string name="wallet_connect_new_session_success">सफलतापूर्वक जोड़ा गया</string>
     <string name="wallet_connect_new_session_title">%s आपके वॉलेट से जुड़ना चाहते है</string>
@@ -1436,6 +1478,7 @@ iMe की ओर से कोई अतिरिक्त शुल्क न�
     <string name="wallet_connect_session_details_network">नेटवर्क</string>
     <string name="wallet_connect_switch_network">नेटवर्क बदलें</string>
     <string name="wallet_connect_switch_network_title">%s नेटवर्क बदलना चाहता है</string>
+    <string name="wallet_connect_terminate_all">सभी समाप्त करें</string>
     <string name="wallet_connect_terminate_all_description">क्या आप वाकई सभी WalletConnect सत्र समाप्त करना चाहते हैं?</string>
     <string name="wallet_connect_title">WalletConnect</string>
     <string name="wallet_connect_transaction_button_sign">हस्ताक्षर करें</string>
@@ -1479,6 +1522,8 @@ iMe की ओर से कोई अतिरिक्त शुल्क न�
     <string name="wallet_crypto_blockchains_title">ब्लॉकचेन्स</string>
     <string name="wallet_crypto_blockchains_ton_subtitle">The Open Network</string>
     <string name="wallet_crypto_blockchains_ton_title">TON</string>
+    <string name="wallet_crypto_blockchains_tron_subtitle">TRC20 नेटवर्क</string>
+    <string name="wallet_crypto_blockchains_tron_title">TRON</string>
     <string name="wallet_crypto_buy_amount_title">राशि</string>
     <string name="wallet_crypto_buy_confirm_dialog_action_txt">खरीदें</string>
     <string name="wallet_crypto_buy_confirm_dialog_description">क्या आप वाकई ~%1$s %2$s खरीदना चाहते हैं?</string>
@@ -1515,6 +1560,7 @@ iMe की ओर से कोई अतिरिक्त शुल्क न�
     <string name="wallet_crypto_wallet_not_created_dialog_positive_btn">बनायें</string>
     <string name="wallet_crypto_wallet_not_created_dialog_title">क्रिप्टो वॉलेट नहीं बनाया गया है</string>
     <string name="wallet_dashboard_account_title">%s अकाउंट</string>
+    <string name="wallet_dashboard_activate_wallet">%s वॉलेट सक्रिय करें</string>
     <string name="wallet_dashboard_balance_24h_rate">%1$.2f%% / 24h</string>
     <string name="wallet_dashboard_create_eth_wallet">नया बनाये</string>
     <string name="wallet_dashboard_create_eth_wallet_success_dialog_description">"आपका वॉलेट सफलतापूर्वक बन गया है. 
@@ -1571,6 +1617,8 @@ iMe Wallet से सहमत होते हैं"</string>
     <string name="wallet_details_info_evm_title">EVM</string>
     <string name="wallet_details_info_ton_description">यह ओपन नेटवर्क (TON) ब्लॉकचेन पर आपका सक्रिय खाता है.</string>
     <string name="wallet_details_info_ton_title">TON</string>
+    <string name="wallet_details_info_tron_description">यह TRON ब्लॉकचेन पर आपका सक्रिय खाता है.</string>
+    <string name="wallet_details_info_tron_title">TRON</string>
     <string name="wallet_details_reset_description">क्या आप वाकई इस वॉलेट को रीसेट करना चाहते हैं?</string>
     <string name="wallet_details_reset_title">वॉलेट रिसेट करें</string>
     <string name="wallet_enter_eth_password_delete_wallet_dialog_description">"क्या आप वाकई अपने खाते को प्रारंभिक मान पर रीसेट करना चाहते हैं?
@@ -1613,6 +1661,7 @@ iMe Wallet से सहमत होते हैं"</string>
     <string name="wallet_home_crypto_account">खाता</string>
     <string name="wallet_home_crypto_account_telegram_id">टेलीग्राम आईडी: %d</string>
     <string name="wallet_home_crypto_select_tokens">टोकंस चुने</string>
+    <string name="wallet_home_crypto_tokens_settings_only_positive">शेष राशि</string>
     <string name="wallet_home_crypto_tokens_settings_toolbar_title">टोकंस</string>
     <string name="wallet_home_navigation_binance_pay">Binance</string>
     <string name="wallet_home_navigation_crypto">क्रिप्टो</string>
@@ -1620,6 +1669,7 @@ iMe Wallet से सहमत होते हैं"</string>
     <string name="wallet_import_alert_text">क्षमा करें, आपने गलत गुप्त शब्द डाले हैं. कृपया दोबारा जांचें और पुनः प्रयास करें.</string>
     <string name="wallet_import_alert_title">गलत शब्द</string>
     <string name="wallet_import_change_words_count">शब्दों की गिनती बदलें</string>
+    <string name="wallet_import_change_words_count_dialog_title">स्मरक शब्द गिनती चुनें</string>
     <string name="wallet_import_dont_have">मेरे पास नहीं है</string>
     <string name="wallet_import_info">वॉलेट बनाते समय आपके द्वारा लिखे गए शब्दों को दर्ज करके आप अपने वॉलेट तक पहुंच सकते हैं.</string>
     <string name="wallet_import_paste">चिपकाएं</string>
@@ -1627,6 +1677,7 @@ iMe Wallet से सहमत होते हैं"</string>
     <string name="wallet_import_perfect_info">अब अपने लेन-देन को सुरक्षित करने के लिए एक पासकोड सेट करें.</string>
     <string name="wallet_import_perfect_set_passcode">पासकोड सेट करें</string>
     <string name="wallet_import_secret_words">गुप्त शब्द</string>
+    <string name="wallet_import_too_bad">बहुत बुरा!</string>
     <string name="wallet_import_too_bad_create">इसके बजाय नया खाली वॉलेट बनाएं</string>
     <string name="wallet_import_too_bad_enter">गुप्त शब्द दर्ज करें</string>
     <string name="wallet_import_too_bad_info">गुप्त शब्दों के बिना आप वॉलेट तक पहुंच बहाल नहीं कर सकते.</string>

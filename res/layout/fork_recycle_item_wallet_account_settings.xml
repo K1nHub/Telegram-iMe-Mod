@@ -11,5 +11,5 @@
         </LinearLayout>
         <androidx.appcompat.widget.AppCompatImageView android:id="@id/image_backup_status" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginEnd="@dimen/margin_half_small" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintTop_toTopOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
-    <com.smedialink.ui.custom.DividerView android:id="@id/view_divider" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginStart="@dimen/divider_margin_start" />
+    <com.iMe.ui.custom.DividerView android:id="@id/view_divider" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginStart="@dimen/divider_margin_start" />
 </LinearLayout>

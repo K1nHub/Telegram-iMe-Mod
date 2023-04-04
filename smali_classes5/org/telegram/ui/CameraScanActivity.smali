@@ -1179,7 +1179,7 @@
 
     if-eq v0, v2, :cond_1
 
-    sget v2, Lcom/smedialink/common/IdFabric$CustomType;->QR_CODE_SCANNER_CHAT_LINK:I
+    sget v2, Lcom/iMe/common/IdFabric$CustomType;->QR_CODE_SCANNER_CHAT_LINK:I
 
     if-ne v0, v2, :cond_0
 
@@ -3873,7 +3873,7 @@
 
     .line 627
     :cond_6
-    sget v12, Lcom/smedialink/common/IdFabric$CustomType;->QR_CODE_SCANNER_CHAT_LINK:I
+    sget v12, Lcom/iMe/common/IdFabric$CustomType;->QR_CODE_SCANNER_CHAT_LINK:I
 
     if-ne v5, v12, :cond_7
 

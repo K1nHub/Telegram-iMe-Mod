@@ -9,9 +9,9 @@
 # instance fields
 .field public final cardStakingDashboard:Landroidx/cardview/widget/CardView;
 
-.field public final divider:Lcom/smedialink/ui/custom/DividerView;
+.field public final divider:Lcom/iMe/ui/custom/DividerView;
 
-.field public final horizontalActionButtons:Lcom/smedialink/ui/custom/HorizontalActionButtonsView;
+.field public final horizontalActionButtons:Lcom/iMe/ui/custom/HorizontalActionButtonsView;
 
 .field private final rootView:Landroid/widget/LinearLayout;
 
@@ -33,7 +33,7 @@
 
 
 # direct methods
-.method private constructor <init>(Landroid/widget/LinearLayout;Landroidx/cardview/widget/CardView;Lcom/smedialink/ui/custom/DividerView;Lcom/smedialink/ui/custom/HorizontalActionButtonsView;Landroid/widget/LinearLayout;Landroid/widget/LinearLayout;Landroidx/appcompat/widget/AppCompatTextView;Landroid/widget/TextView;Landroid/widget/TextView;Landroid/widget/TextView;Landroid/widget/TextView;Lorg/telegram/ui/Components/StorageDiagramView;Landroid/view/View;Landroid/view/View;)V
+.method private constructor <init>(Landroid/widget/LinearLayout;Landroidx/cardview/widget/CardView;Lcom/iMe/ui/custom/DividerView;Lcom/iMe/ui/custom/HorizontalActionButtonsView;Landroid/widget/LinearLayout;Landroid/widget/LinearLayout;Landroidx/appcompat/widget/AppCompatTextView;Landroid/widget/TextView;Landroid/widget/TextView;Landroid/widget/TextView;Landroid/widget/TextView;Lorg/telegram/ui/Components/StorageDiagramView;Landroid/view/View;Landroid/view/View;)V
     .locals 0
 
     .line 73
@@ -46,10 +46,10 @@
     iput-object p2, p0, Lorg/telegram/messenger/databinding/ForkContentStakingDashboardBinding;->cardStakingDashboard:Landroidx/cardview/widget/CardView;
 
     .line 76
-    iput-object p3, p0, Lorg/telegram/messenger/databinding/ForkContentStakingDashboardBinding;->divider:Lcom/smedialink/ui/custom/DividerView;
+    iput-object p3, p0, Lorg/telegram/messenger/databinding/ForkContentStakingDashboardBinding;->divider:Lcom/iMe/ui/custom/DividerView;
 
     .line 77
-    iput-object p4, p0, Lorg/telegram/messenger/databinding/ForkContentStakingDashboardBinding;->horizontalActionButtons:Lcom/smedialink/ui/custom/HorizontalActionButtonsView;
+    iput-object p4, p0, Lorg/telegram/messenger/databinding/ForkContentStakingDashboardBinding;->horizontalActionButtons:Lcom/iMe/ui/custom/HorizontalActionButtonsView;
 
     .line 80
     iput-object p7, p0, Lorg/telegram/messenger/databinding/ForkContentStakingDashboardBinding;->textHeader:Landroidx/appcompat/widget/AppCompatTextView;
@@ -107,7 +107,7 @@
 
     move-object v6, v2
 
-    check-cast v6, Lcom/smedialink/ui/custom/DividerView;
+    check-cast v6, Lcom/iMe/ui/custom/DividerView;
 
     if-eqz v6, :cond_0
 
@@ -121,7 +121,7 @@
 
     move-object v7, v2
 
-    check-cast v7, Lcom/smedialink/ui/custom/HorizontalActionButtonsView;
+    check-cast v7, Lcom/iMe/ui/custom/HorizontalActionButtonsView;
 
     if-eqz v7, :cond_0
 
@@ -266,7 +266,7 @@
 
     move-object v3, v1
 
-    invoke-direct/range {v3 .. v17}, Lorg/telegram/messenger/databinding/ForkContentStakingDashboardBinding;-><init>(Landroid/widget/LinearLayout;Landroidx/cardview/widget/CardView;Lcom/smedialink/ui/custom/DividerView;Lcom/smedialink/ui/custom/HorizontalActionButtonsView;Landroid/widget/LinearLayout;Landroid/widget/LinearLayout;Landroidx/appcompat/widget/AppCompatTextView;Landroid/widget/TextView;Landroid/widget/TextView;Landroid/widget/TextView;Landroid/widget/TextView;Lorg/telegram/ui/Components/StorageDiagramView;Landroid/view/View;Landroid/view/View;)V
+    invoke-direct/range {v3 .. v17}, Lorg/telegram/messenger/databinding/ForkContentStakingDashboardBinding;-><init>(Landroid/widget/LinearLayout;Landroidx/cardview/widget/CardView;Lcom/iMe/ui/custom/DividerView;Lcom/iMe/ui/custom/HorizontalActionButtonsView;Landroid/widget/LinearLayout;Landroid/widget/LinearLayout;Landroidx/appcompat/widget/AppCompatTextView;Landroid/widget/TextView;Landroid/widget/TextView;Landroid/widget/TextView;Landroid/widget/TextView;Lorg/telegram/ui/Components/StorageDiagramView;Landroid/view/View;Landroid/view/View;)V
 
     return-object v1
 

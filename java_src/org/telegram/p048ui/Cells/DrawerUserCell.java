@@ -11,11 +11,11 @@ import android.view.accessibility.AccessibilityNodeInfo;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.Toast;
-import com.smedialink.common.IdFabric$CustomType;
-import org.fork.controller.ForkCommonController;
+import com.iMe.common.IdFabric$CustomType;
+import com.iMe.fork.controller.ForkCommonController;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.C3301R;
+import org.telegram.messenger.C3316R;
 import org.telegram.messenger.ContactsController;
 import org.telegram.messenger.Emoji;
 import org.telegram.messenger.LocaleController;
@@ -59,7 +59,7 @@ public class DrawerUserCell extends FrameLayout implements NotificationCenter.No
     private void addMuteButton() {
         ImageView imageView = new ImageView(getContext());
         this.muteButton = imageView;
-        imageView.setImageResource(C3301R.C3303drawable.msg_unmute);
+        imageView.setImageResource(C3316R.C3318drawable.msg_unmute);
         this.muteButton.setScaleType(ImageView.ScaleType.CENTER_INSIDE);
         this.muteButton.setColorFilter(new PorterDuffColorFilter(Theme.getColor("chats_menuItemIcon"), PorterDuff.Mode.MULTIPLY));
         this.muteButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Cells.DrawerUserCell$$ExternalSyntheticLambda0
@@ -82,9 +82,9 @@ public class DrawerUserCell extends FrameLayout implements NotificationCenter.No
             toast.cancel();
         }
         if (getForkCommonController().isAccountMuted()) {
-            string = LocaleController.getString("NotificationsMutedHint", C3301R.string.NotificationsMutedHint);
+            string = LocaleController.getString("NotificationsMutedHint", C3316R.string.NotificationsMutedHint);
         } else {
-            string = LocaleController.getString("NotificationsUnmutedHint", C3301R.string.NotificationsUnmutedHint);
+            string = LocaleController.getString("NotificationsUnmutedHint", C3316R.string.NotificationsUnmutedHint);
         }
         Toast makeText = Toast.makeText(ApplicationLoader.applicationContext, string, 0);
         this.currentMuteToast = makeText;
@@ -94,7 +94,7 @@ public class DrawerUserCell extends FrameLayout implements NotificationCenter.No
     private void updateMuteButtonIcon() {
         ImageView imageView = this.muteButton;
         if (imageView != null) {
-            imageView.setImageResource(getForkCommonController().isAccountMuted() ? C3301R.C3303drawable.msg_mute : C3301R.C3303drawable.msg_unmute);
+            imageView.setImageResource(getForkCommonController().isAccountMuted() ? C3316R.C3318drawable.msg_mute : C3316R.C3318drawable.msg_unmute);
         }
     }
 

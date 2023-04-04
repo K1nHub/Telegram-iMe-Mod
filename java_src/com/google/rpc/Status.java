@@ -29,7 +29,7 @@ public final class Status extends GeneratedMessageLite<Status, Builder> implemen
 
     /* loaded from: classes3.dex */
     public static final class Builder extends GeneratedMessageLite.Builder<Status, Builder> implements MessageLiteOrBuilder {
-        /* synthetic */ Builder(C12141 c12141) {
+        /* synthetic */ Builder(C12281 c12281) {
             this();
         }
 
@@ -40,7 +40,7 @@ public final class Status extends GeneratedMessageLite<Status, Builder> implemen
 
     /* renamed from: com.google.rpc.Status$1 */
     /* loaded from: classes3.dex */
-    static /* synthetic */ class C12141 {
+    static /* synthetic */ class C12281 {
 
         /* renamed from: $SwitchMap$com$google$protobuf$GeneratedMessageLite$MethodToInvoke */
         static final /* synthetic */ int[] f228xa1df5c61;
@@ -81,7 +81,7 @@ public final class Status extends GeneratedMessageLite<Status, Builder> implemen
 
     @Override // com.google.protobuf.GeneratedMessageLite
     protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke methodToInvoke, Object obj, Object obj2) {
-        switch (C12141.f228xa1df5c61[methodToInvoke.ordinal()]) {
+        switch (C12281.f228xa1df5c61[methodToInvoke.ordinal()]) {
             case 1:
                 return new Status();
             case 2:

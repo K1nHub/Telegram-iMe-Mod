@@ -12,13 +12,9 @@
 
 .field public final synthetic f$2:Ljava/util/HashMap;
 
-.field public final synthetic f$3:Ljava/util/HashMap;
-
-.field public final synthetic f$4:Ljava/util/ArrayList;
-
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/messenger/ContactsController;Ljava/util/ArrayList;Ljava/util/HashMap;Ljava/util/HashMap;Ljava/util/ArrayList;)V
+.method public synthetic constructor <init>(Lorg/telegram/messenger/ContactsController;Ljava/util/ArrayList;Ljava/util/HashMap;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -29,17 +25,13 @@
 
     iput-object p3, p0, Lorg/telegram/messenger/ContactsController$$ExternalSyntheticLambda24;->f$2:Ljava/util/HashMap;
 
-    iput-object p4, p0, Lorg/telegram/messenger/ContactsController$$ExternalSyntheticLambda24;->f$3:Ljava/util/HashMap;
-
-    iput-object p5, p0, Lorg/telegram/messenger/ContactsController$$ExternalSyntheticLambda24;->f$4:Ljava/util/ArrayList;
-
     return-void
 .end method
 
 
 # virtual methods
 .method public final run()V
-    .locals 5
+    .locals 3
 
     iget-object v0, p0, Lorg/telegram/messenger/ContactsController$$ExternalSyntheticLambda24;->f$0:Lorg/telegram/messenger/ContactsController;
 
@@ -47,11 +39,7 @@
 
     iget-object v2, p0, Lorg/telegram/messenger/ContactsController$$ExternalSyntheticLambda24;->f$2:Ljava/util/HashMap;
 
-    iget-object v3, p0, Lorg/telegram/messenger/ContactsController$$ExternalSyntheticLambda24;->f$3:Ljava/util/HashMap;
-
-    iget-object v4, p0, Lorg/telegram/messenger/ContactsController$$ExternalSyntheticLambda24;->f$4:Ljava/util/ArrayList;
-
-    invoke-static {v0, v1, v2, v3, v4}, Lorg/telegram/messenger/ContactsController;->$r8$lambda$S5uCuT5AcG1GAwjmleO2h9clKN4(Lorg/telegram/messenger/ContactsController;Ljava/util/ArrayList;Ljava/util/HashMap;Ljava/util/HashMap;Ljava/util/ArrayList;)V
+    invoke-static {v0, v1, v2}, Lorg/telegram/messenger/ContactsController;->$r8$lambda$1FhMO46xL3rKzMp72B08DLGfH4k(Lorg/telegram/messenger/ContactsController;Ljava/util/ArrayList;Ljava/util/HashMap;)V
 
     return-void
 .end method

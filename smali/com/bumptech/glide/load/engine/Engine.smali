@@ -823,7 +823,7 @@
 
     monitor-enter p0
 
-    .line 383
+    .line 387
     :try_start_0
     iget-object v0, p0, Lcom/bumptech/glide/load/engine/Engine;->jobs:Lcom/bumptech/glide/load/engine/Jobs;
 
@@ -831,7 +831,7 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 384
+    .line 388
     monitor-exit p0
 
     return-void
@@ -861,7 +861,7 @@
 
     if-eqz p3, :cond_0
 
-    .line 374
+    .line 378
     :try_start_0
     invoke-virtual {p3}, Lcom/bumptech/glide/load/engine/EngineResource;->isMemoryCacheable()Z
 
@@ -869,12 +869,12 @@
 
     if-eqz v0, :cond_0
 
-    .line 375
+    .line 379
     iget-object v0, p0, Lcom/bumptech/glide/load/engine/Engine;->activeResources:Lcom/bumptech/glide/load/engine/ActiveResources;
 
     invoke-virtual {v0, p2, p3}, Lcom/bumptech/glide/load/engine/ActiveResources;->activate(Lcom/bumptech/glide/load/Key;Lcom/bumptech/glide/load/engine/EngineResource;)V
 
-    .line 378
+    .line 382
     :cond_0
     iget-object p3, p0, Lcom/bumptech/glide/load/engine/Engine;->jobs:Lcom/bumptech/glide/load/engine/Jobs;
 
@@ -882,7 +882,7 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 379
+    .line 383
     monitor-exit p0
 
     return-void
@@ -906,26 +906,26 @@
         }
     .end annotation
 
-    .line 395
+    .line 399
     iget-object v0, p0, Lcom/bumptech/glide/load/engine/Engine;->activeResources:Lcom/bumptech/glide/load/engine/ActiveResources;
 
     invoke-virtual {v0, p1}, Lcom/bumptech/glide/load/engine/ActiveResources;->deactivate(Lcom/bumptech/glide/load/Key;)V
 
-    .line 396
+    .line 400
     invoke-virtual {p2}, Lcom/bumptech/glide/load/engine/EngineResource;->isMemoryCacheable()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 397
+    .line 401
     iget-object v0, p0, Lcom/bumptech/glide/load/engine/Engine;->cache:Lcom/bumptech/glide/load/engine/cache/MemoryCache;
 
     invoke-interface {v0, p1, p2}, Lcom/bumptech/glide/load/engine/cache/MemoryCache;->put(Lcom/bumptech/glide/load/Key;Lcom/bumptech/glide/load/engine/Resource;)Lcom/bumptech/glide/load/engine/Resource;
 
     goto :goto_0
 
-    .line 399
+    .line 403
     :cond_0
     iget-object p1, p0, Lcom/bumptech/glide/load/engine/Engine;->resourceRecycler:Lcom/bumptech/glide/load/engine/ResourceRecycler;
 
@@ -947,7 +947,7 @@
         }
     .end annotation
 
-    .line 390
+    .line 394
     iget-object v0, p0, Lcom/bumptech/glide/load/engine/Engine;->resourceRecycler:Lcom/bumptech/glide/load/engine/ResourceRecycler;
 
     const/4 v1, 0x1
@@ -967,19 +967,19 @@
         }
     .end annotation
 
-    .line 362
+    .line 366
     instance-of v0, p1, Lcom/bumptech/glide/load/engine/EngineResource;
 
     if-eqz v0, :cond_0
 
-    .line 363
+    .line 367
     check-cast p1, Lcom/bumptech/glide/load/engine/EngineResource;
 
     invoke-virtual {p1}, Lcom/bumptech/glide/load/engine/EngineResource;->release()V
 
     return-void
 
-    .line 365
+    .line 369
     :cond_0
     new-instance p1, Ljava/lang/IllegalArgumentException;
 

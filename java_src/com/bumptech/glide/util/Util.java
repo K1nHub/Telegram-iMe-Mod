@@ -20,7 +20,7 @@ public final class Util {
         return (i2 * 31) + i;
     }
 
-    private static boolean isValidDimension(int i) {
+    public static boolean isValidDimension(int i) {
         return i > 0 || i == Integer.MIN_VALUE;
     }
 
@@ -64,11 +64,11 @@ public final class Util {
         return i * i2 * getBytesPerPixel(config);
     }
 
-    private static int getBytesPerPixel(Bitmap.Config config) {
+    public static int getBytesPerPixel(Bitmap.Config config) {
         if (config == null) {
             config = Bitmap.Config.ARGB_8888;
         }
-        int i = C04451.$SwitchMap$android$graphics$Bitmap$Config[config.ordinal()];
+        int i = C04591.$SwitchMap$android$graphics$Bitmap$Config[config.ordinal()];
         if (i != 1) {
             if (i == 2 || i == 3) {
                 return 2;
@@ -81,7 +81,7 @@ public final class Util {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.bumptech.glide.util.Util$1 */
     /* loaded from: classes.dex */
-    public static /* synthetic */ class C04451 {
+    public static /* synthetic */ class C04591 {
         static final /* synthetic */ int[] $SwitchMap$android$graphics$Bitmap$Config;
 
         static {

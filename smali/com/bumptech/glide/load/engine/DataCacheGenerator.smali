@@ -83,7 +83,7 @@
         }
     .end annotation
 
-    .line 33
+    .line 34
     invoke-virtual {p1}, Lcom/bumptech/glide/load/engine/DecodeHelper;->getCacheKeys()Ljava/util/List;
 
     move-result-object v0
@@ -108,21 +108,21 @@
         }
     .end annotation
 
-    .line 38
+    .line 39
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     const/4 v0, -0x1
 
-    .line 22
+    .line 23
     iput v0, p0, Lcom/bumptech/glide/load/engine/DataCacheGenerator;->sourceIdIndex:I
 
-    .line 39
+    .line 40
     iput-object p1, p0, Lcom/bumptech/glide/load/engine/DataCacheGenerator;->cacheKeys:Ljava/util/List;
 
-    .line 40
+    .line 41
     iput-object p2, p0, Lcom/bumptech/glide/load/engine/DataCacheGenerator;->helper:Lcom/bumptech/glide/load/engine/DecodeHelper;
 
-    .line 41
+    .line 42
     iput-object p3, p0, Lcom/bumptech/glide/load/engine/DataCacheGenerator;->cb:Lcom/bumptech/glide/load/engine/DataFetcherGenerator$FetcherReadyCallback;
 
     return-void
@@ -131,7 +131,7 @@
 .method private hasNextModelLoader()Z
     .locals 2
 
-    .line 81
+    .line 87
     iget v0, p0, Lcom/bumptech/glide/load/engine/DataCacheGenerator;->modelLoaderIndex:I
 
     iget-object v1, p0, Lcom/bumptech/glide/load/engine/DataCacheGenerator;->modelLoaders:Ljava/util/List;
@@ -158,12 +158,12 @@
 .method public cancel()V
     .locals 1
 
-    .line 86
+    .line 92
     iget-object v0, p0, Lcom/bumptech/glide/load/engine/DataCacheGenerator;->loadData:Lcom/bumptech/glide/load/model/ModelLoader$LoadData;
 
     if-eqz v0, :cond_0
 
-    .line 88
+    .line 94
     iget-object v0, v0, Lcom/bumptech/glide/load/model/ModelLoader$LoadData;->fetcher:Lcom/bumptech/glide/load/data/DataFetcher;
 
     invoke-interface {v0}, Lcom/bumptech/glide/load/data/DataFetcher;->cancel()V
@@ -175,7 +175,7 @@
 .method public onDataReady(Ljava/lang/Object;)V
     .locals 6
 
-    .line 94
+    .line 100
     iget-object v0, p0, Lcom/bumptech/glide/load/engine/DataCacheGenerator;->cb:Lcom/bumptech/glide/load/engine/DataFetcherGenerator$FetcherReadyCallback;
 
     iget-object v1, p0, Lcom/bumptech/glide/load/engine/DataCacheGenerator;->sourceKey:Lcom/bumptech/glide/load/Key;
@@ -198,7 +198,7 @@
 .method public onLoadFailed(Ljava/lang/Exception;)V
     .locals 4
 
-    .line 99
+    .line 105
     iget-object v0, p0, Lcom/bumptech/glide/load/engine/DataCacheGenerator;->cb:Lcom/bumptech/glide/load/engine/DataFetcherGenerator$FetcherReadyCallback;
 
     iget-object v1, p0, Lcom/bumptech/glide/load/engine/DataCacheGenerator;->sourceKey:Lcom/bumptech/glide/load/Key;
@@ -217,9 +217,15 @@
 .method public startNext()Z
     .locals 7
 
-    .line 46
+    const-string v0, "DataCacheGenerator.startNext"
+
+    .line 47
+    invoke-static {v0}, Lcom/bumptech/glide/util/pool/GlideTrace;->beginSection(Ljava/lang/String;)V
+
+    .line 49
     :cond_0
     :goto_0
+    :try_start_0
     iget-object v0, p0, Lcom/bumptech/glide/load/engine/DataCacheGenerator;->modelLoaders:Ljava/util/List;
 
     const/4 v1, 0x0
@@ -239,21 +245,21 @@
     :cond_1
     const/4 v0, 0x0
 
-    .line 65
+    .line 68
     iput-object v0, p0, Lcom/bumptech/glide/load/engine/DataCacheGenerator;->loadData:Lcom/bumptech/glide/load/model/ModelLoader$LoadData;
 
     :cond_2
     :goto_1
     if-nez v1, :cond_3
 
-    .line 67
+    .line 70
     invoke-direct {p0}, Lcom/bumptech/glide/load/engine/DataCacheGenerator;->hasNextModelLoader()Z
 
     move-result v0
 
     if-eqz v0, :cond_3
 
-    .line 68
+    .line 71
     iget-object v0, p0, Lcom/bumptech/glide/load/engine/DataCacheGenerator;->modelLoaders:Ljava/util/List;
 
     iget v3, p0, Lcom/bumptech/glide/load/engine/DataCacheGenerator;->modelLoaderIndex:I
@@ -268,12 +274,12 @@
 
     check-cast v0, Lcom/bumptech/glide/load/model/ModelLoader;
 
-    .line 69
+    .line 72
     iget-object v3, p0, Lcom/bumptech/glide/load/engine/DataCacheGenerator;->cacheFile:Ljava/io/File;
 
     iget-object v4, p0, Lcom/bumptech/glide/load/engine/DataCacheGenerator;->helper:Lcom/bumptech/glide/load/engine/DecodeHelper;
 
-    .line 71
+    .line 74
     invoke-virtual {v4}, Lcom/bumptech/glide/load/engine/DecodeHelper;->getWidth()I
 
     move-result v4
@@ -290,14 +296,14 @@
 
     move-result-object v6
 
-    .line 70
+    .line 73
     invoke-interface {v0, v3, v4, v5, v6}, Lcom/bumptech/glide/load/model/ModelLoader;->buildLoadData(Ljava/lang/Object;IILcom/bumptech/glide/load/Options;)Lcom/bumptech/glide/load/model/ModelLoader$LoadData;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/bumptech/glide/load/engine/DataCacheGenerator;->loadData:Lcom/bumptech/glide/load/model/ModelLoader$LoadData;
 
-    .line 72
+    .line 75
     iget-object v0, p0, Lcom/bumptech/glide/load/engine/DataCacheGenerator;->loadData:Lcom/bumptech/glide/load/model/ModelLoader$LoadData;
 
     if-eqz v0, :cond_2
@@ -318,7 +324,7 @@
 
     if-eqz v0, :cond_2
 
-    .line 74
+    .line 77
     iget-object v0, p0, Lcom/bumptech/glide/load/engine/DataCacheGenerator;->loadData:Lcom/bumptech/glide/load/model/ModelLoader$LoadData;
 
     iget-object v0, v0, Lcom/bumptech/glide/load/model/ModelLoader$LoadData;->fetcher:Lcom/bumptech/glide/load/data/DataFetcher;
@@ -330,36 +336,48 @@
     move-result-object v1
 
     invoke-interface {v0, v1, p0}, Lcom/bumptech/glide/load/data/DataFetcher;->loadData(Lcom/bumptech/glide/Priority;Lcom/bumptech/glide/load/data/DataFetcher$DataCallback;)V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     move v1, v2
 
     goto :goto_1
 
+    .line 82
     :cond_3
+    invoke-static {}, Lcom/bumptech/glide/util/pool/GlideTrace;->endSection()V
+
     return v1
 
-    .line 47
+    .line 50
     :cond_4
     :goto_2
+    :try_start_1
     iget v0, p0, Lcom/bumptech/glide/load/engine/DataCacheGenerator;->sourceIdIndex:I
 
     add-int/2addr v0, v2
 
     iput v0, p0, Lcom/bumptech/glide/load/engine/DataCacheGenerator;->sourceIdIndex:I
 
-    .line 48
+    .line 51
     iget-object v2, p0, Lcom/bumptech/glide/load/engine/DataCacheGenerator;->cacheKeys:Ljava/util/List;
 
     invoke-interface {v2}, Ljava/util/List;->size()I
 
     move-result v2
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     if-lt v0, v2, :cond_5
 
+    .line 82
+    invoke-static {}, Lcom/bumptech/glide/util/pool/GlideTrace;->endSection()V
+
     return v1
 
-    .line 52
+    .line 55
     :cond_5
+    :try_start_2
     iget-object v0, p0, Lcom/bumptech/glide/load/engine/DataCacheGenerator;->cacheKeys:Ljava/util/List;
 
     iget v2, p0, Lcom/bumptech/glide/load/engine/DataCacheGenerator;->sourceIdIndex:I
@@ -370,7 +388,7 @@
 
     check-cast v0, Lcom/bumptech/glide/load/Key;
 
-    .line 56
+    .line 59
     new-instance v2, Lcom/bumptech/glide/load/engine/DataCacheKey;
 
     iget-object v3, p0, Lcom/bumptech/glide/load/engine/DataCacheGenerator;->helper:Lcom/bumptech/glide/load/engine/DecodeHelper;
@@ -381,7 +399,7 @@
 
     invoke-direct {v2, v0, v3}, Lcom/bumptech/glide/load/engine/DataCacheKey;-><init>(Lcom/bumptech/glide/load/Key;Lcom/bumptech/glide/load/Key;)V
 
-    .line 57
+    .line 60
     iget-object v3, p0, Lcom/bumptech/glide/load/engine/DataCacheGenerator;->helper:Lcom/bumptech/glide/load/engine/DecodeHelper;
 
     invoke-virtual {v3}, Lcom/bumptech/glide/load/engine/DecodeHelper;->getDiskCache()Lcom/bumptech/glide/load/engine/cache/DiskCache;
@@ -396,10 +414,10 @@
 
     if-eqz v2, :cond_0
 
-    .line 59
+    .line 62
     iput-object v0, p0, Lcom/bumptech/glide/load/engine/DataCacheGenerator;->sourceKey:Lcom/bumptech/glide/load/Key;
 
-    .line 60
+    .line 63
     iget-object v0, p0, Lcom/bumptech/glide/load/engine/DataCacheGenerator;->helper:Lcom/bumptech/glide/load/engine/DecodeHelper;
 
     invoke-virtual {v0, v2}, Lcom/bumptech/glide/load/engine/DecodeHelper;->getModelLoaders(Ljava/io/File;)Ljava/util/List;
@@ -408,8 +426,19 @@
 
     iput-object v0, p0, Lcom/bumptech/glide/load/engine/DataCacheGenerator;->modelLoaders:Ljava/util/List;
 
-    .line 61
+    .line 64
     iput v1, p0, Lcom/bumptech/glide/load/engine/DataCacheGenerator;->modelLoaderIndex:I
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
     goto/16 :goto_0
+
+    :catchall_0
+    move-exception v0
+
+    .line 82
+    invoke-static {}, Lcom/bumptech/glide/util/pool/GlideTrace;->endSection()V
+
+    .line 83
+    throw v0
 .end method

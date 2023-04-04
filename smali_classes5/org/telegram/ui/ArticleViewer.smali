@@ -13187,7 +13187,7 @@
     :goto_0
     iget-object v2, p0, Lorg/telegram/ui/ArticleViewer;->parentActivity:Landroid/app/Activity;
 
-    invoke-static {v0}, Lcom/smedialink/common/Constants;->generateGoogleTranslateUrl(Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v0}, Lcom/iMe/common/Constants;->generateGoogleTranslateUrl(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -16644,18 +16644,18 @@
     .line 202
     iget-object v0, p0, Lorg/telegram/ui/ArticleViewer;->parentFragment:Lorg/telegram/ui/ActionBar/BaseFragment;
 
-    new-instance v1, Lcom/smedialink/model/translation/TranslationArgs;
+    new-instance v1, Lcom/iMe/model/translation/TranslationArgs;
 
-    sget-object v2, Lorg/fork/enums/TranslationDialogType;->INCOMING:Lorg/fork/enums/TranslationDialogType;
+    sget-object v2, Lcom/iMe/fork/enums/TranslationDialogType;->INCOMING:Lcom/iMe/fork/enums/TranslationDialogType;
 
     const/4 v3, 0x0
 
-    invoke-direct {v1, v2, p1, v3}, Lcom/smedialink/model/translation/TranslationArgs;-><init>(Lorg/fork/enums/TranslationDialogType;Ljava/lang/String;Lcom/smedialink/storage/domain/model/dialogs/DialogTranslationSettings;)V
+    invoke-direct {v1, v2, p1, v3}, Lcom/iMe/model/translation/TranslationArgs;-><init>(Lcom/iMe/fork/enums/TranslationDialogType;Ljava/lang/String;Lcom/iMe/storage/domain/model/dialogs/DialogTranslationSettings;)V
 
     const/4 p1, 0x0
 
     .line 203
-    invoke-static {v0, v1, v3, p1}, Lorg/fork/ui/dialog/TranslateAlert;->createInstanceForForkTranslation(Lorg/telegram/ui/ActionBar/BaseFragment;Lcom/smedialink/model/translation/TranslationArgs;Lorg/fork/ui/dialog/TranslateAlert$TranslatorActionsDelegate;Z)Lorg/fork/ui/dialog/TranslateAlert;
+    invoke-static {v0, v1, v3, p1}, Lcom/iMe/fork/ui/dialog/TranslateAlert;->createInstanceForForkTranslation(Lorg/telegram/ui/ActionBar/BaseFragment;Lcom/iMe/model/translation/TranslationArgs;Lcom/iMe/fork/ui/dialog/TranslateAlert$TranslatorActionsDelegate;Z)Lcom/iMe/fork/ui/dialog/TranslateAlert;
 
     move-result-object p1
 

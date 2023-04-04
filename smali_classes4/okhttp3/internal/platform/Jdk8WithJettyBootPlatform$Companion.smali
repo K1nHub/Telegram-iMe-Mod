@@ -40,7 +40,7 @@
 
     const-string v0, "java.specification.version"
 
-    const-string v1, "unknown"
+    const-string/jumbo v1, "unknown"
 
     .line 125
     invoke-static {v0, v1}, Ljava/lang/System;->getProperty(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;

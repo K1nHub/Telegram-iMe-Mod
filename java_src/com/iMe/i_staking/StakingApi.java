@@ -15,7 +15,7 @@ import com.iMe.i_staking.response.StakingOperationsPagedResponse;
 import com.iMe.i_staking.response.StakingProgrammesResponse;
 import com.iMe.i_staking.response.StakingTotalStatsResponse;
 import com.iMe.i_staking.response.StakingWrappedActionResponse;
-import com.smedialink.storage.data.network.model.response.base.ApiBaseResponse;
+import com.iMe.storage.data.network.model.response.base.ApiBaseResponse;
 import io.reactivex.Observable;
 import retrofit2.http.Body;
 import retrofit2.http.POST;

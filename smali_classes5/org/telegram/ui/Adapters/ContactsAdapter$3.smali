@@ -15,7 +15,7 @@
 
 
 # static fields
-.field static final synthetic $SwitchMap$com$smedialink$model$contacts$ContactsFilter:[I
+.field static final synthetic $SwitchMap$com$iMe$model$contacts$ContactsFilter:[I
 
 
 # direct methods
@@ -23,7 +23,7 @@
     .locals 3
 
     .line 168
-    invoke-static {}, Lcom/smedialink/model/contacts/ContactsFilter;->values()[Lcom/smedialink/model/contacts/ContactsFilter;
+    invoke-static {}, Lcom/iMe/model/contacts/ContactsFilter;->values()[Lcom/iMe/model/contacts/ContactsFilter;
 
     move-result-object v0
 
@@ -31,10 +31,10 @@
 
     new-array v0, v0, [I
 
-    sput-object v0, Lorg/telegram/ui/Adapters/ContactsAdapter$3;->$SwitchMap$com$smedialink$model$contacts$ContactsFilter:[I
+    sput-object v0, Lorg/telegram/ui/Adapters/ContactsAdapter$3;->$SwitchMap$com$iMe$model$contacts$ContactsFilter:[I
 
     :try_start_0
-    sget-object v1, Lcom/smedialink/model/contacts/ContactsFilter;->ONLINE:Lcom/smedialink/model/contacts/ContactsFilter;
+    sget-object v1, Lcom/iMe/model/contacts/ContactsFilter;->ONLINE:Lcom/iMe/model/contacts/ContactsFilter;
 
     invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
 
@@ -48,9 +48,9 @@
 
     :catch_0
     :try_start_1
-    sget-object v0, Lorg/telegram/ui/Adapters/ContactsAdapter$3;->$SwitchMap$com$smedialink$model$contacts$ContactsFilter:[I
+    sget-object v0, Lorg/telegram/ui/Adapters/ContactsAdapter$3;->$SwitchMap$com$iMe$model$contacts$ContactsFilter:[I
 
-    sget-object v1, Lcom/smedialink/model/contacts/ContactsFilter;->MUTUAL:Lcom/smedialink/model/contacts/ContactsFilter;
+    sget-object v1, Lcom/iMe/model/contacts/ContactsFilter;->MUTUAL:Lcom/iMe/model/contacts/ContactsFilter;
 
     invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
 
@@ -64,9 +64,9 @@
 
     :catch_1
     :try_start_2
-    sget-object v0, Lorg/telegram/ui/Adapters/ContactsAdapter$3;->$SwitchMap$com$smedialink$model$contacts$ContactsFilter:[I
+    sget-object v0, Lorg/telegram/ui/Adapters/ContactsAdapter$3;->$SwitchMap$com$iMe$model$contacts$ContactsFilter:[I
 
-    sget-object v1, Lcom/smedialink/model/contacts/ContactsFilter;->NOT_MUTUAL:Lcom/smedialink/model/contacts/ContactsFilter;
+    sget-object v1, Lcom/iMe/model/contacts/ContactsFilter;->NOT_MUTUAL:Lcom/iMe/model/contacts/ContactsFilter;
 
     invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
 
@@ -80,9 +80,9 @@
 
     :catch_2
     :try_start_3
-    sget-object v0, Lorg/telegram/ui/Adapters/ContactsAdapter$3;->$SwitchMap$com$smedialink$model$contacts$ContactsFilter:[I
+    sget-object v0, Lorg/telegram/ui/Adapters/ContactsAdapter$3;->$SwitchMap$com$iMe$model$contacts$ContactsFilter:[I
 
-    sget-object v1, Lcom/smedialink/model/contacts/ContactsFilter;->BLOCKED:Lcom/smedialink/model/contacts/ContactsFilter;
+    sget-object v1, Lcom/iMe/model/contacts/ContactsFilter;->BLOCKED:Lcom/iMe/model/contacts/ContactsFilter;
 
     invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
 
@@ -96,9 +96,9 @@
 
     :catch_3
     :try_start_4
-    sget-object v0, Lorg/telegram/ui/Adapters/ContactsAdapter$3;->$SwitchMap$com$smedialink$model$contacts$ContactsFilter:[I
+    sget-object v0, Lorg/telegram/ui/Adapters/ContactsAdapter$3;->$SwitchMap$com$iMe$model$contacts$ContactsFilter:[I
 
-    sget-object v1, Lcom/smedialink/model/contacts/ContactsFilter;->ALL:Lcom/smedialink/model/contacts/ContactsFilter;
+    sget-object v1, Lcom/iMe/model/contacts/ContactsFilter;->ALL:Lcom/iMe/model/contacts/ContactsFilter;
 
     invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
 

@@ -507,7 +507,7 @@
     if-eqz v0, :cond_0
 
     .line 210
-    invoke-virtual {p0, p0}, Lcom/chad/library/adapter/base/BaseQuickAdapter;->addLoadMoreModule(Lcom/chad/library/adapter/base/BaseQuickAdapter;)Lcom/chad/library/adapter/base/module/BaseLoadMoreModule;
+    invoke-interface {p0, p0}, Lcom/chad/library/adapter/base/BaseQuickAdapterModuleImp;->addLoadMoreModule(Lcom/chad/library/adapter/base/BaseQuickAdapter;)Lcom/chad/library/adapter/base/module/BaseLoadMoreModule;
 
     move-result-object v0
 
@@ -963,19 +963,10 @@
     return-void
 .end method
 
-.method public addLoadMoreModule(Lcom/chad/library/adapter/base/BaseQuickAdapter;)Lcom/chad/library/adapter/base/module/BaseLoadMoreModule;
+.method public synthetic addLoadMoreModule(Lcom/chad/library/adapter/base/BaseQuickAdapter;)Lcom/chad/library/adapter/base/module/BaseLoadMoreModule;
     .locals 0
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Lcom/chad/library/adapter/base/BaseQuickAdapter<",
-            "**>;)",
-            "Lcom/chad/library/adapter/base/module/BaseLoadMoreModule;"
-        }
-    .end annotation
 
-    .line 76
-    invoke-static {p0, p1}, Lcom/chad/library/adapter/base/BaseQuickAdapterModuleImp$DefaultImpls;->addLoadMoreModule(Lcom/chad/library/adapter/base/BaseQuickAdapterModuleImp;Lcom/chad/library/adapter/base/BaseQuickAdapter;)Lcom/chad/library/adapter/base/module/BaseLoadMoreModule;
+    invoke-static {p0, p1}, Lcom/chad/library/adapter/base/BaseQuickAdapterModuleImp$-CC;->$default$addLoadMoreModule(Lcom/chad/library/adapter/base/BaseQuickAdapterModuleImp;Lcom/chad/library/adapter/base/BaseQuickAdapter;)Lcom/chad/library/adapter/base/module/BaseLoadMoreModule;
 
     move-result-object p1
 

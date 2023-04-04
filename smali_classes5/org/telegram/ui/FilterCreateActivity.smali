@@ -1,5 +1,5 @@
 .class public Lorg/telegram/ui/FilterCreateActivity;
-.super Lcom/smedialink/ui/base/mvp/JavaMvpFragment;
+.super Lcom/iMe/ui/base/mvp/JavaMvpFragment;
 .source "FilterCreateActivity.java"
 
 
@@ -99,7 +99,7 @@
 
 .field private newFilterName:Ljava/lang/String;
 
-.field private newFilterSettings:Lcom/smedialink/storage/domain/model/filters/FilterSettingsModel;
+.field private newFilterSettings:Lcom/iMe/storage/domain/model/filters/FilterSettingsModel;
 
 .field private newNeverShow:Ljava/util/ArrayList;
     .annotation system Ldalvik/annotation/Signature;
@@ -113,9 +113,9 @@
 
 .field private newPinned:Lorg/telegram/messenger/support/LongSparseIntArray;
 
-.field private onDoneCallback:Lorg/fork/utils/Callbacks$Callback;
+.field private onDoneCallback:Lcom/iMe/fork/utils/Callbacks$Callback;
 
-.field private pollEditTextCellWrapper:Lorg/fork/ui/view/PollEditTextCellWrapper;
+.field private pollEditTextCellWrapper:Lcom/iMe/fork/ui/view/PollEditTextCellWrapper;
 
 .field private removeRow:I
 
@@ -123,11 +123,11 @@
 
 .field private rowCount:I
 
-.field private topic:Lcom/smedialink/storage/domain/model/topics/TopicModel;
+.field private topic:Lcom/iMe/storage/domain/model/topics/TopicModel;
 
-.field private topicNewIcon:Lcom/smedialink/storage/data/repository/topics/Topic;
+.field private topicNewIcon:Lcom/iMe/storage/data/repository/topics/Topic;
 
-.field private final type:Lorg/fork/enums/FilterActivityType;
+.field private final type:Lcom/iMe/fork/enums/FilterActivityType;
 
 
 # direct methods
@@ -171,14 +171,6 @@
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$86NEcbP8v0Z5DBmpZiXYcorQ9GU(Lorg/telegram/ui/FilterCreateActivity;Lcom/smedialink/storage/domain/model/filters/FilterIcon;Lcom/smedialink/storage/data/repository/topics/Topic;)V
-    .locals 0
-
-    invoke-direct {p0, p1, p2}, Lorg/telegram/ui/FilterCreateActivity;->lambda$showIconSelectAlert$0(Lcom/smedialink/storage/domain/model/filters/FilterIcon;Lcom/smedialink/storage/data/repository/topics/Topic;)V
-
-    return-void
-.end method
-
 .method public static synthetic $r8$lambda$D2XeSwbEh0NA9NJ_OxIsXZ8nCo8(Lorg/telegram/ui/FilterCreateActivity;Landroid/view/View;I)Z
     .locals 0
 
@@ -197,14 +189,6 @@
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$HbiGgIxRLsAOYpl6zP1Z5QhpEL0(Lorg/telegram/ui/FilterCreateActivity;Ljava/util/Set;)V
-    .locals 0
-
-    invoke-direct {p0, p1}, Lorg/telegram/ui/FilterCreateActivity;->lambda$createView$1(Ljava/util/Set;)V
-
-    return-void
-.end method
-
 .method public static synthetic $r8$lambda$JYaajbc7tSx4epzPJQvK2rTgRvc(Lorg/telegram/ui/FilterCreateActivity;Landroid/content/DialogInterface;I)V
     .locals 0
 
@@ -217,6 +201,14 @@
     .locals 0
 
     invoke-direct {p0, p1, p2}, Lorg/telegram/ui/FilterCreateActivity;->lambda$createView$5(Landroid/content/DialogInterface;I)V
+
+    return-void
+.end method
+
+.method public static synthetic $r8$lambda$SBUMwXL6ALSD6YkANKljpyVHNUs(Lorg/telegram/ui/FilterCreateActivity;Ljava/util/Set;)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Lorg/telegram/ui/FilterCreateActivity;->lambda$createView$1(Ljava/util/Set;)V
 
     return-void
 .end method
@@ -263,6 +255,14 @@
     return-void
 .end method
 
+.method public static synthetic $r8$lambda$wTwFg9kXM1JczH3_j3gZ6zAvoVo(Lorg/telegram/ui/FilterCreateActivity;Lcom/iMe/storage/domain/model/filters/FilterIcon;Lcom/iMe/storage/data/repository/topics/Topic;)V
+    .locals 0
+
+    invoke-direct {p0, p1, p2}, Lorg/telegram/ui/FilterCreateActivity;->lambda$showIconSelectAlert$0(Lcom/iMe/storage/domain/model/filters/FilterIcon;Lcom/iMe/storage/data/repository/topics/Topic;)V
+
+    return-void
+.end method
+
 .method public static synthetic $r8$lambda$y3BHd7GR0GlUTagVKeYB3VY8Zo4(Lorg/telegram/ui/FilterCreateActivity;Landroid/content/DialogInterface;I)V
     .locals 0
 
@@ -275,7 +275,7 @@
     .locals 6
 
     .line 92
-    sget-object v5, Lorg/fork/enums/FilterActivityType;->FILTER:Lorg/fork/enums/FilterActivityType;
+    sget-object v5, Lcom/iMe/fork/enums/FilterActivityType;->FILTER:Lcom/iMe/fork/enums/FilterActivityType;
 
     const/4 v1, 0x0
 
@@ -287,21 +287,21 @@
 
     move-object v0, p0
 
-    invoke-direct/range {v0 .. v5}, Lorg/telegram/ui/FilterCreateActivity;-><init>(Lorg/telegram/messenger/MessagesController$DialogFilter;Ljava/util/ArrayList;Lcom/smedialink/storage/domain/model/topics/TopicModel;Ljava/util/Set;Lorg/fork/enums/FilterActivityType;)V
+    invoke-direct/range {v0 .. v5}, Lorg/telegram/ui/FilterCreateActivity;-><init>(Lorg/telegram/messenger/MessagesController$DialogFilter;Ljava/util/ArrayList;Lcom/iMe/storage/domain/model/topics/TopicModel;Ljava/util/Set;Lcom/iMe/fork/enums/FilterActivityType;)V
 
     return-void
 .end method
 
-.method public constructor <init>(Lcom/smedialink/storage/domain/model/topics/TopicModel;Ljava/util/Set;Lorg/fork/enums/FilterActivityType;)V
+.method public constructor <init>(Lcom/iMe/storage/domain/model/topics/TopicModel;Ljava/util/Set;Lcom/iMe/fork/enums/FilterActivityType;)V
     .locals 6
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Lcom/smedialink/storage/domain/model/topics/TopicModel;",
+            "Lcom/iMe/storage/domain/model/topics/TopicModel;",
             "Ljava/util/Set<",
             "Ljava/lang/Long;",
             ">;",
-            "Lorg/fork/enums/FilterActivityType;",
+            "Lcom/iMe/fork/enums/FilterActivityType;",
             ")V"
         }
     .end annotation
@@ -319,7 +319,7 @@
     move-object v5, p3
 
     .line 228
-    invoke-direct/range {v0 .. v5}, Lorg/telegram/ui/FilterCreateActivity;-><init>(Lorg/telegram/messenger/MessagesController$DialogFilter;Ljava/util/ArrayList;Lcom/smedialink/storage/domain/model/topics/TopicModel;Ljava/util/Set;Lorg/fork/enums/FilterActivityType;)V
+    invoke-direct/range {v0 .. v5}, Lorg/telegram/ui/FilterCreateActivity;-><init>(Lorg/telegram/messenger/MessagesController$DialogFilter;Ljava/util/ArrayList;Lcom/iMe/storage/domain/model/topics/TopicModel;Ljava/util/Set;Lcom/iMe/fork/enums/FilterActivityType;)V
 
     return-void
 .end method
@@ -328,7 +328,7 @@
     .locals 6
 
     .line 97
-    sget-object v5, Lorg/fork/enums/FilterActivityType;->FILTER:Lorg/fork/enums/FilterActivityType;
+    sget-object v5, Lcom/iMe/fork/enums/FilterActivityType;->FILTER:Lcom/iMe/fork/enums/FilterActivityType;
 
     const/4 v2, 0x0
 
@@ -340,7 +340,7 @@
 
     move-object v1, p1
 
-    invoke-direct/range {v0 .. v5}, Lorg/telegram/ui/FilterCreateActivity;-><init>(Lorg/telegram/messenger/MessagesController$DialogFilter;Ljava/util/ArrayList;Lcom/smedialink/storage/domain/model/topics/TopicModel;Ljava/util/Set;Lorg/fork/enums/FilterActivityType;)V
+    invoke-direct/range {v0 .. v5}, Lorg/telegram/ui/FilterCreateActivity;-><init>(Lorg/telegram/messenger/MessagesController$DialogFilter;Ljava/util/ArrayList;Lcom/iMe/storage/domain/model/topics/TopicModel;Ljava/util/Set;Lcom/iMe/fork/enums/FilterActivityType;)V
 
     return-void
 .end method
@@ -358,7 +358,7 @@
     .end annotation
 
     .line 102
-    sget-object v5, Lorg/fork/enums/FilterActivityType;->FILTER:Lorg/fork/enums/FilterActivityType;
+    sget-object v5, Lcom/iMe/fork/enums/FilterActivityType;->FILTER:Lcom/iMe/fork/enums/FilterActivityType;
 
     const/4 v3, 0x0
 
@@ -370,12 +370,12 @@
 
     move-object v2, p2
 
-    invoke-direct/range {v0 .. v5}, Lorg/telegram/ui/FilterCreateActivity;-><init>(Lorg/telegram/messenger/MessagesController$DialogFilter;Ljava/util/ArrayList;Lcom/smedialink/storage/domain/model/topics/TopicModel;Ljava/util/Set;Lorg/fork/enums/FilterActivityType;)V
+    invoke-direct/range {v0 .. v5}, Lorg/telegram/ui/FilterCreateActivity;-><init>(Lorg/telegram/messenger/MessagesController$DialogFilter;Ljava/util/ArrayList;Lcom/iMe/storage/domain/model/topics/TopicModel;Ljava/util/Set;Lcom/iMe/fork/enums/FilterActivityType;)V
 
     return-void
 .end method
 
-.method public constructor <init>(Lorg/telegram/messenger/MessagesController$DialogFilter;Ljava/util/ArrayList;Lcom/smedialink/storage/domain/model/topics/TopicModel;Ljava/util/Set;Lorg/fork/enums/FilterActivityType;)V
+.method public constructor <init>(Lorg/telegram/messenger/MessagesController$DialogFilter;Ljava/util/ArrayList;Lcom/iMe/storage/domain/model/topics/TopicModel;Ljava/util/Set;Lcom/iMe/fork/enums/FilterActivityType;)V
     .locals 17
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -384,11 +384,11 @@
             "Ljava/util/ArrayList<",
             "Ljava/lang/Long;",
             ">;",
-            "Lcom/smedialink/storage/domain/model/topics/TopicModel;",
+            "Lcom/iMe/storage/domain/model/topics/TopicModel;",
             "Ljava/util/Set<",
             "Ljava/lang/Long;",
             ">;",
-            "Lorg/fork/enums/FilterActivityType;",
+            "Lcom/iMe/fork/enums/FilterActivityType;",
             ")V"
         }
     .end annotation
@@ -404,7 +404,7 @@
     move-object/from16 v4, p5
 
     .line 236
-    invoke-direct/range {p0 .. p0}, Lcom/smedialink/ui/base/mvp/JavaMvpFragment;-><init>()V
+    invoke-direct/range {p0 .. p0}, Lcom/iMe/ui/base/mvp/JavaMvpFragment;-><init>()V
 
     const/4 v5, 0x0
 
@@ -412,10 +412,10 @@
     iput v5, v0, Lorg/telegram/ui/FilterCreateActivity;->rowCount:I
 
     .line 238
-    iput-object v4, v0, Lorg/telegram/ui/FilterCreateActivity;->type:Lorg/fork/enums/FilterActivityType;
+    iput-object v4, v0, Lorg/telegram/ui/FilterCreateActivity;->type:Lcom/iMe/fork/enums/FilterActivityType;
 
     .line 239
-    sget-object v5, Lorg/fork/enums/FilterActivityType;->TOPIC:Lorg/fork/enums/FilterActivityType;
+    sget-object v5, Lcom/iMe/fork/enums/FilterActivityType;->TOPIC:Lcom/iMe/fork/enums/FilterActivityType;
 
     const/4 v6, 0x1
 
@@ -497,13 +497,13 @@
 
     .line 254
     :cond_1
-    new-instance v2, Lcom/smedialink/storage/domain/model/topics/TopicModel;
+    new-instance v2, Lcom/iMe/storage/domain/model/topics/TopicModel;
 
-    invoke-virtual/range {p0 .. p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getTopicsController()Lorg/fork/controller/ForkTopicsController;
+    invoke-virtual/range {p0 .. p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getTopicsController()Lcom/iMe/fork/controller/ForkTopicsController;
 
     move-result-object v3
 
-    invoke-virtual {v3}, Lorg/fork/controller/ForkTopicsController;->calcNextId()J
+    invoke-virtual {v3}, Lcom/iMe/fork/controller/ForkTopicsController;->calcNextId()J
 
     move-result-wide v8
 
@@ -511,11 +511,11 @@
 
     const/4 v11, 0x0
 
-    invoke-virtual/range {p0 .. p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getTopicsController()Lorg/fork/controller/ForkTopicsController;
+    invoke-virtual/range {p0 .. p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getTopicsController()Lcom/iMe/fork/controller/ForkTopicsController;
 
     move-result-object v3
 
-    invoke-virtual {v3}, Lorg/fork/controller/ForkTopicsController;->calcNextOrder()I
+    invoke-virtual {v3}, Lcom/iMe/fork/controller/ForkTopicsController;->calcNextOrder()I
 
     move-result v12
 
@@ -527,7 +527,7 @@
 
     move-object/from16 v16, v1
 
-    invoke-direct/range {v7 .. v16}, Lcom/smedialink/storage/domain/model/topics/TopicModel;-><init>(JLjava/lang/String;Lcom/smedialink/storage/data/repository/topics/Topic;ILjava/util/Set;Ljava/util/Set;Ljava/util/Set;Ljava/util/Set;)V
+    invoke-direct/range {v7 .. v16}, Lcom/iMe/storage/domain/model/topics/TopicModel;-><init>(JLjava/lang/String;Lcom/iMe/storage/data/repository/topics/Topic;ILjava/util/Set;Ljava/util/Set;Ljava/util/Set;Ljava/util/Set;)V
 
     .line 255
     iput-boolean v6, v0, Lorg/telegram/ui/FilterCreateActivity;->creatingNew:Z
@@ -536,7 +536,7 @@
 
     .line 257
     :cond_2
-    invoke-virtual/range {p3 .. p3}, Lcom/smedialink/storage/domain/model/topics/TopicModel;->isAutoTopic()Z
+    invoke-virtual/range {p3 .. p3}, Lcom/iMe/storage/domain/model/topics/TopicModel;->isAutoTopic()Z
 
     move-result v1
 
@@ -546,11 +546,11 @@
 
     .line 259
     :goto_1
-    invoke-virtual {v2}, Lcom/smedialink/storage/domain/model/topics/TopicModel;->getIcon()Lcom/smedialink/storage/data/repository/topics/Topic;
+    invoke-virtual {v2}, Lcom/iMe/storage/domain/model/topics/TopicModel;->getIcon()Lcom/iMe/storage/data/repository/topics/Topic;
 
     move-result-object v1
 
-    iput-object v1, v0, Lorg/telegram/ui/FilterCreateActivity;->topicNewIcon:Lcom/smedialink/storage/data/repository/topics/Topic;
+    iput-object v1, v0, Lorg/telegram/ui/FilterCreateActivity;->topicNewIcon:Lcom/iMe/storage/data/repository/topics/Topic;
 
     .line 260
     new-instance v1, Lorg/telegram/messenger/MessagesController$DialogFilter;
@@ -560,7 +560,7 @@
     iput-object v1, v0, Lorg/telegram/ui/FilterCreateActivity;->filter:Lorg/telegram/messenger/MessagesController$DialogFilter;
 
     .line 261
-    invoke-virtual {v2}, Lcom/smedialink/storage/domain/model/topics/TopicModel;->getName()Ljava/lang/String;
+    invoke-virtual {v2}, Lcom/iMe/storage/domain/model/topics/TopicModel;->getName()Ljava/lang/String;
 
     move-result-object v3
 
@@ -571,7 +571,7 @@
 
     iget-object v1, v1, Lorg/telegram/messenger/MessagesController$DialogFilter;->alwaysShow:Ljava/util/ArrayList;
 
-    invoke-virtual {v2}, Lcom/smedialink/storage/domain/model/topics/TopicModel;->getFilterDialogs()Ljava/util/Set;
+    invoke-virtual {v2}, Lcom/iMe/storage/domain/model/topics/TopicModel;->getFilterDialogs()Ljava/util/Set;
 
     move-result-object v3
 
@@ -582,7 +582,7 @@
 
     iget-object v1, v1, Lorg/telegram/messenger/MessagesController$DialogFilter;->neverShow:Ljava/util/ArrayList;
 
-    invoke-virtual {v2}, Lcom/smedialink/storage/domain/model/topics/TopicModel;->getFilterArchivedDialogs()Ljava/util/Set;
+    invoke-virtual {v2}, Lcom/iMe/storage/domain/model/topics/TopicModel;->getFilterArchivedDialogs()Ljava/util/Set;
 
     move-result-object v3
 
@@ -625,7 +625,7 @@
     iput-object v1, v0, Lorg/telegram/ui/FilterCreateActivity;->newPinned:Lorg/telegram/messenger/support/LongSparseIntArray;
 
     .line 268
-    iput-object v2, v0, Lorg/telegram/ui/FilterCreateActivity;->topic:Lcom/smedialink/storage/domain/model/topics/TopicModel;
+    iput-object v2, v0, Lorg/telegram/ui/FilterCreateActivity;->topic:Lcom/iMe/storage/domain/model/topics/TopicModel;
 
     return-void
 
@@ -689,7 +689,7 @@
 
     .line 283
     :cond_5
-    invoke-virtual/range {p0 .. p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getFiltersController()Lorg/fork/controller/FiltersController;
+    invoke-virtual/range {p0 .. p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getFiltersController()Lcom/iMe/fork/controller/FiltersController;
 
     move-result-object v1
 
@@ -697,15 +697,15 @@
 
     iget v3, v3, Lorg/telegram/messenger/MessagesController$DialogFilter;->id:I
 
-    invoke-virtual {v1, v3}, Lorg/fork/controller/FiltersController;->getSettings(I)Lcom/smedialink/storage/domain/model/filters/FilterSettingsModel;
+    invoke-virtual {v1, v3}, Lcom/iMe/fork/controller/FiltersController;->getSettings(I)Lcom/iMe/storage/domain/model/filters/FilterSettingsModel;
 
     move-result-object v1
 
-    invoke-virtual {v1}, Lcom/smedialink/storage/domain/model/filters/FilterSettingsModel;->getCopy()Lcom/smedialink/storage/domain/model/filters/FilterSettingsModel;
+    invoke-virtual {v1}, Lcom/iMe/storage/domain/model/filters/FilterSettingsModel;->getCopy()Lcom/iMe/storage/domain/model/filters/FilterSettingsModel;
 
     move-result-object v1
 
-    iput-object v1, v0, Lorg/telegram/ui/FilterCreateActivity;->newFilterSettings:Lcom/smedialink/storage/domain/model/filters/FilterSettingsModel;
+    iput-object v1, v0, Lorg/telegram/ui/FilterCreateActivity;->newFilterSettings:Lcom/iMe/storage/domain/model/filters/FilterSettingsModel;
 
     .line 284
     iget-object v1, v0, Lorg/telegram/ui/FilterCreateActivity;->filter:Lorg/telegram/messenger/MessagesController$DialogFilter;
@@ -761,11 +761,11 @@
     return-void
 .end method
 
-.method static synthetic access$000(Lorg/telegram/ui/FilterCreateActivity;)Lorg/fork/enums/FilterActivityType;
+.method static synthetic access$000(Lorg/telegram/ui/FilterCreateActivity;)Lcom/iMe/fork/enums/FilterActivityType;
     .locals 0
 
     .line 75
-    iget-object p0, p0, Lorg/telegram/ui/FilterCreateActivity;->type:Lorg/fork/enums/FilterActivityType;
+    iget-object p0, p0, Lorg/telegram/ui/FilterCreateActivity;->type:Lcom/iMe/fork/enums/FilterActivityType;
 
     return-object p0
 .end method
@@ -799,20 +799,20 @@
     return p0
 .end method
 
-.method static synthetic access$1200(Lorg/telegram/ui/FilterCreateActivity;)Lcom/smedialink/storage/domain/model/filters/FilterSettingsModel;
+.method static synthetic access$1200(Lorg/telegram/ui/FilterCreateActivity;)Lcom/iMe/storage/domain/model/filters/FilterSettingsModel;
     .locals 0
 
     .line 75
-    iget-object p0, p0, Lorg/telegram/ui/FilterCreateActivity;->newFilterSettings:Lcom/smedialink/storage/domain/model/filters/FilterSettingsModel;
+    iget-object p0, p0, Lorg/telegram/ui/FilterCreateActivity;->newFilterSettings:Lcom/iMe/storage/domain/model/filters/FilterSettingsModel;
 
     return-object p0
 .end method
 
-.method static synthetic access$1300(Lorg/telegram/ui/FilterCreateActivity;)Lcom/smedialink/storage/data/repository/topics/Topic;
+.method static synthetic access$1300(Lorg/telegram/ui/FilterCreateActivity;)Lcom/iMe/storage/data/repository/topics/Topic;
     .locals 0
 
     .line 75
-    iget-object p0, p0, Lorg/telegram/ui/FilterCreateActivity;->topicNewIcon:Lcom/smedialink/storage/data/repository/topics/Topic;
+    iget-object p0, p0, Lorg/telegram/ui/FilterCreateActivity;->topicNewIcon:Lcom/iMe/storage/data/repository/topics/Topic;
 
     return-object p0
 .end method
@@ -1069,11 +1069,11 @@
     return p0
 .end method
 
-.method static synthetic access$400(Lorg/telegram/ui/FilterCreateActivity;)Lorg/fork/ui/view/PollEditTextCellWrapper;
+.method static synthetic access$400(Lorg/telegram/ui/FilterCreateActivity;)Lcom/iMe/fork/ui/view/PollEditTextCellWrapper;
     .locals 0
 
     .line 75
-    iget-object p0, p0, Lorg/telegram/ui/FilterCreateActivity;->pollEditTextCellWrapper:Lorg/fork/ui/view/PollEditTextCellWrapper;
+    iget-object p0, p0, Lorg/telegram/ui/FilterCreateActivity;->pollEditTextCellWrapper:Lcom/iMe/fork/ui/view/PollEditTextCellWrapper;
 
     return-object p0
 .end method
@@ -1087,11 +1087,11 @@
     return p0
 .end method
 
-.method static synthetic access$402(Lorg/telegram/ui/FilterCreateActivity;Lorg/fork/ui/view/PollEditTextCellWrapper;)Lorg/fork/ui/view/PollEditTextCellWrapper;
+.method static synthetic access$402(Lorg/telegram/ui/FilterCreateActivity;Lcom/iMe/fork/ui/view/PollEditTextCellWrapper;)Lcom/iMe/fork/ui/view/PollEditTextCellWrapper;
     .locals 0
 
     .line 75
-    iput-object p1, p0, Lorg/telegram/ui/FilterCreateActivity;->pollEditTextCellWrapper:Lorg/fork/ui/view/PollEditTextCellWrapper;
+    iput-object p1, p0, Lorg/telegram/ui/FilterCreateActivity;->pollEditTextCellWrapper:Lcom/iMe/fork/ui/view/PollEditTextCellWrapper;
 
     return-object p1
 .end method
@@ -1230,9 +1230,9 @@
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setMessage(Ljava/lang/CharSequence;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
     .line 672
-    iget-object v1, p0, Lorg/telegram/ui/FilterCreateActivity;->type:Lorg/fork/enums/FilterActivityType;
+    iget-object v1, p0, Lorg/telegram/ui/FilterCreateActivity;->type:Lcom/iMe/fork/enums/FilterActivityType;
 
-    sget-object v2, Lorg/fork/enums/FilterActivityType;->TOPIC:Lorg/fork/enums/FilterActivityType;
+    sget-object v2, Lcom/iMe/fork/enums/FilterActivityType;->TOPIC:Lcom/iMe/fork/enums/FilterActivityType;
 
     if-ne v1, v2, :cond_0
 
@@ -1285,9 +1285,9 @@
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setTitle(Ljava/lang/CharSequence;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
     .line 681
-    iget-object v1, p0, Lorg/telegram/ui/FilterCreateActivity;->type:Lorg/fork/enums/FilterActivityType;
+    iget-object v1, p0, Lorg/telegram/ui/FilterCreateActivity;->type:Lcom/iMe/fork/enums/FilterActivityType;
 
-    sget-object v2, Lorg/fork/enums/FilterActivityType;->TOPIC:Lorg/fork/enums/FilterActivityType;
+    sget-object v2, Lcom/iMe/fork/enums/FilterActivityType;->TOPIC:Lcom/iMe/fork/enums/FilterActivityType;
 
     if-ne v1, v2, :cond_2
 
@@ -1398,9 +1398,9 @@
 
     .line 981
     :goto_0
-    iget-object v3, p0, Lorg/telegram/ui/FilterCreateActivity;->type:Lorg/fork/enums/FilterActivityType;
+    iget-object v3, p0, Lorg/telegram/ui/FilterCreateActivity;->type:Lcom/iMe/fork/enums/FilterActivityType;
 
-    sget-object v4, Lorg/fork/enums/FilterActivityType;->TOPIC:Lorg/fork/enums/FilterActivityType;
+    sget-object v4, Lcom/iMe/fork/enums/FilterActivityType;->TOPIC:Lcom/iMe/fork/enums/FilterActivityType;
 
     if-ne v3, v4, :cond_1
 
@@ -1430,7 +1430,7 @@
 
     if-eqz v0, :cond_2
 
-    iget-object v0, p0, Lorg/telegram/ui/FilterCreateActivity;->type:Lorg/fork/enums/FilterActivityType;
+    iget-object v0, p0, Lorg/telegram/ui/FilterCreateActivity;->type:Lcom/iMe/fork/enums/FilterActivityType;
 
     if-ne v0, v4, :cond_3
 
@@ -1952,20 +1952,20 @@
 
     .line 948
     :cond_3
-    iget-object v0, p0, Lorg/telegram/ui/FilterCreateActivity;->type:Lorg/fork/enums/FilterActivityType;
+    iget-object v0, p0, Lorg/telegram/ui/FilterCreateActivity;->type:Lcom/iMe/fork/enums/FilterActivityType;
 
-    sget-object v1, Lorg/fork/enums/FilterActivityType;->TOPIC:Lorg/fork/enums/FilterActivityType;
+    sget-object v1, Lcom/iMe/fork/enums/FilterActivityType;->TOPIC:Lcom/iMe/fork/enums/FilterActivityType;
 
     if-ne v0, v1, :cond_4
 
     .line 949
-    iget-object v0, p0, Lorg/telegram/ui/FilterCreateActivity;->topic:Lcom/smedialink/storage/domain/model/topics/TopicModel;
+    iget-object v0, p0, Lorg/telegram/ui/FilterCreateActivity;->topic:Lcom/iMe/storage/domain/model/topics/TopicModel;
 
-    invoke-virtual {v0}, Lcom/smedialink/storage/domain/model/topics/TopicModel;->getIcon()Lcom/smedialink/storage/data/repository/topics/Topic;
+    invoke-virtual {v0}, Lcom/iMe/storage/domain/model/topics/TopicModel;->getIcon()Lcom/iMe/storage/data/repository/topics/Topic;
 
     move-result-object v0
 
-    iget-object v1, p0, Lorg/telegram/ui/FilterCreateActivity;->topicNewIcon:Lcom/smedialink/storage/data/repository/topics/Topic;
+    iget-object v1, p0, Lorg/telegram/ui/FilterCreateActivity;->topicNewIcon:Lcom/iMe/storage/data/repository/topics/Topic;
 
     if-eq v0, v1, :cond_7
 
@@ -1973,12 +1973,12 @@
 
     .line 952
     :cond_4
-    sget-object v1, Lorg/fork/enums/FilterActivityType;->FILTER:Lorg/fork/enums/FilterActivityType;
+    sget-object v1, Lcom/iMe/fork/enums/FilterActivityType;->FILTER:Lcom/iMe/fork/enums/FilterActivityType;
 
     if-ne v0, v1, :cond_7
 
     .line 953
-    invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getFiltersController()Lorg/fork/controller/FiltersController;
+    invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getFiltersController()Lcom/iMe/fork/controller/FiltersController;
 
     move-result-object v0
 
@@ -1986,22 +1986,22 @@
 
     iget v1, v1, Lorg/telegram/messenger/MessagesController$DialogFilter;->id:I
 
-    invoke-virtual {v0, v1}, Lorg/fork/controller/FiltersController;->getSettings(I)Lcom/smedialink/storage/domain/model/filters/FilterSettingsModel;
+    invoke-virtual {v0, v1}, Lcom/iMe/fork/controller/FiltersController;->getSettings(I)Lcom/iMe/storage/domain/model/filters/FilterSettingsModel;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lcom/smedialink/storage/domain/model/filters/FilterSettingsModel;->getCopy()Lcom/smedialink/storage/domain/model/filters/FilterSettingsModel;
+    invoke-virtual {v0}, Lcom/iMe/storage/domain/model/filters/FilterSettingsModel;->getCopy()Lcom/iMe/storage/domain/model/filters/FilterSettingsModel;
 
     move-result-object v0
 
     .line 954
-    invoke-virtual {v0}, Lcom/smedialink/storage/domain/model/filters/FilterSettingsModel;->getIcon()Lcom/smedialink/storage/domain/model/filters/FilterIcon;
+    invoke-virtual {v0}, Lcom/iMe/storage/domain/model/filters/FilterSettingsModel;->getIcon()Lcom/iMe/storage/domain/model/filters/FilterIcon;
 
     move-result-object v1
 
-    iget-object v3, p0, Lorg/telegram/ui/FilterCreateActivity;->newFilterSettings:Lcom/smedialink/storage/domain/model/filters/FilterSettingsModel;
+    iget-object v3, p0, Lorg/telegram/ui/FilterCreateActivity;->newFilterSettings:Lcom/iMe/storage/domain/model/filters/FilterSettingsModel;
 
-    invoke-virtual {v3}, Lcom/smedialink/storage/domain/model/filters/FilterSettingsModel;->getIcon()Lcom/smedialink/storage/domain/model/filters/FilterIcon;
+    invoke-virtual {v3}, Lcom/iMe/storage/domain/model/filters/FilterSettingsModel;->getIcon()Lcom/iMe/storage/domain/model/filters/FilterIcon;
 
     move-result-object v3
 
@@ -2013,7 +2013,7 @@
     :cond_5
     new-instance v1, Ljava/util/ArrayList;
 
-    invoke-virtual {v0}, Lcom/smedialink/storage/domain/model/filters/FilterSettingsModel;->getFabs()Ljava/util/Set;
+    invoke-virtual {v0}, Lcom/iMe/storage/domain/model/filters/FilterSettingsModel;->getFabs()Ljava/util/Set;
 
     move-result-object v0
 
@@ -2022,9 +2022,9 @@
     .line 958
     new-instance v0, Ljava/util/ArrayList;
 
-    iget-object v3, p0, Lorg/telegram/ui/FilterCreateActivity;->newFilterSettings:Lcom/smedialink/storage/domain/model/filters/FilterSettingsModel;
+    iget-object v3, p0, Lorg/telegram/ui/FilterCreateActivity;->newFilterSettings:Lcom/iMe/storage/domain/model/filters/FilterSettingsModel;
 
-    invoke-virtual {v3}, Lcom/smedialink/storage/domain/model/filters/FilterSettingsModel;->getFabs()Ljava/util/Set;
+    invoke-virtual {v3}, Lcom/iMe/storage/domain/model/filters/FilterSettingsModel;->getFabs()Ljava/util/Set;
 
     move-result-object v3
 
@@ -2125,9 +2125,9 @@
     .locals 1
 
     .line 475
-    iget-object v0, p0, Lorg/telegram/ui/FilterCreateActivity;->newFilterSettings:Lcom/smedialink/storage/domain/model/filters/FilterSettingsModel;
+    iget-object v0, p0, Lorg/telegram/ui/FilterCreateActivity;->newFilterSettings:Lcom/iMe/storage/domain/model/filters/FilterSettingsModel;
 
-    invoke-virtual {v0, p1}, Lcom/smedialink/storage/domain/model/filters/FilterSettingsModel;->setFabs(Ljava/util/Set;)V
+    invoke-virtual {v0, p1}, Lcom/iMe/storage/domain/model/filters/FilterSettingsModel;->setFabs(Ljava/util/Set;)V
 
     .line 476
     invoke-direct {p0}, Lorg/telegram/ui/FilterCreateActivity;->updateRows()V
@@ -2381,9 +2381,9 @@
     .locals 0
 
     .line 557
-    new-instance p2, Lorg/telegram/ui/FilterCreateActivity$$ExternalSyntheticLambda6;
+    new-instance p2, Lorg/telegram/ui/FilterCreateActivity$$ExternalSyntheticLambda8;
 
-    invoke-direct {p2, p0, p1}, Lorg/telegram/ui/FilterCreateActivity$$ExternalSyntheticLambda6;-><init>(Lorg/telegram/ui/FilterCreateActivity;Lorg/telegram/ui/ActionBar/AlertDialog;)V
+    invoke-direct {p2, p0, p1}, Lorg/telegram/ui/FilterCreateActivity$$ExternalSyntheticLambda8;-><init>(Lorg/telegram/ui/FilterCreateActivity;Lorg/telegram/ui/ActionBar/AlertDialog;)V
 
     invoke-static {p2}, Lorg/telegram/messenger/AndroidUtilities;->runOnUIThread(Ljava/lang/Runnable;)V
 
@@ -2394,20 +2394,20 @@
     .locals 2
 
     .line 542
-    iget-object p1, p0, Lorg/telegram/ui/FilterCreateActivity;->type:Lorg/fork/enums/FilterActivityType;
+    iget-object p1, p0, Lorg/telegram/ui/FilterCreateActivity;->type:Lcom/iMe/fork/enums/FilterActivityType;
 
-    sget-object p2, Lorg/fork/enums/FilterActivityType;->TOPIC:Lorg/fork/enums/FilterActivityType;
+    sget-object p2, Lcom/iMe/fork/enums/FilterActivityType;->TOPIC:Lcom/iMe/fork/enums/FilterActivityType;
 
     if-ne p1, p2, :cond_0
 
     .line 543
-    invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getTopicsController()Lorg/fork/controller/ForkTopicsController;
+    invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getTopicsController()Lcom/iMe/fork/controller/ForkTopicsController;
 
     move-result-object p1
 
-    iget-object p2, p0, Lorg/telegram/ui/FilterCreateActivity;->topic:Lcom/smedialink/storage/domain/model/topics/TopicModel;
+    iget-object p2, p0, Lorg/telegram/ui/FilterCreateActivity;->topic:Lcom/iMe/storage/domain/model/topics/TopicModel;
 
-    invoke-virtual {p1, p2}, Lorg/fork/controller/ForkTopicsController;->removeTopicFilterDialogs(Lcom/smedialink/storage/domain/model/topics/TopicModel;)V
+    invoke-virtual {p1, p2}, Lcom/iMe/fork/controller/ForkTopicsController;->removeTopicFilterDialogs(Lcom/iMe/storage/domain/model/topics/TopicModel;)V
 
     .line 544
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->finishFragment()V
@@ -2489,7 +2489,7 @@
     if-ne p2, p4, :cond_1
 
     .line 474
-    new-instance p1, Lorg/fork/ui/dialog/SelectFabsBottomSheet;
+    new-instance p1, Lcom/iMe/fork/ui/dialog/SelectFabsBottomSheet;
 
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
 
@@ -2497,19 +2497,19 @@
 
     new-instance p3, Ljava/util/HashSet;
 
-    iget-object p4, p0, Lorg/telegram/ui/FilterCreateActivity;->newFilterSettings:Lcom/smedialink/storage/domain/model/filters/FilterSettingsModel;
+    iget-object p4, p0, Lorg/telegram/ui/FilterCreateActivity;->newFilterSettings:Lcom/iMe/storage/domain/model/filters/FilterSettingsModel;
 
-    invoke-virtual {p4}, Lcom/smedialink/storage/domain/model/filters/FilterSettingsModel;->getFabs()Ljava/util/Set;
+    invoke-virtual {p4}, Lcom/iMe/storage/domain/model/filters/FilterSettingsModel;->getFabs()Ljava/util/Set;
 
     move-result-object p4
 
     invoke-direct {p3, p4}, Ljava/util/HashSet;-><init>(Ljava/util/Collection;)V
 
-    new-instance p4, Lorg/telegram/ui/FilterCreateActivity$$ExternalSyntheticLambda9;
+    new-instance p4, Lorg/telegram/ui/FilterCreateActivity$$ExternalSyntheticLambda5;
 
-    invoke-direct {p4, p0}, Lorg/telegram/ui/FilterCreateActivity$$ExternalSyntheticLambda9;-><init>(Lorg/telegram/ui/FilterCreateActivity;)V
+    invoke-direct {p4, p0}, Lorg/telegram/ui/FilterCreateActivity$$ExternalSyntheticLambda5;-><init>(Lorg/telegram/ui/FilterCreateActivity;)V
 
-    invoke-direct {p1, p2, p3, p4}, Lorg/fork/ui/dialog/SelectFabsBottomSheet;-><init>(Landroid/content/Context;Ljava/util/Set;Lorg/fork/utils/Callbacks$Callback1;)V
+    invoke-direct {p1, p2, p3, p4}, Lcom/iMe/fork/ui/dialog/SelectFabsBottomSheet;-><init>(Landroid/content/Context;Ljava/util/Set;Lcom/iMe/fork/utils/Callbacks$Callback1;)V
 
     invoke-virtual {p0, p1}, Lorg/telegram/ui/ActionBar/BaseFragment;->showDialog(Landroid/app/Dialog;)Landroid/app/Dialog;
 
@@ -2597,9 +2597,9 @@
     invoke-virtual {p1, p2}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setMessage(Ljava/lang/CharSequence;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
     .line 534
-    iget-object p2, p0, Lorg/telegram/ui/FilterCreateActivity;->type:Lorg/fork/enums/FilterActivityType;
+    iget-object p2, p0, Lorg/telegram/ui/FilterCreateActivity;->type:Lcom/iMe/fork/enums/FilterActivityType;
 
-    sget-object p3, Lorg/fork/enums/FilterActivityType;->TOPIC:Lorg/fork/enums/FilterActivityType;
+    sget-object p3, Lcom/iMe/fork/enums/FilterActivityType;->TOPIC:Lcom/iMe/fork/enums/FilterActivityType;
 
     if-ne p2, p3, :cond_5
 
@@ -2687,9 +2687,9 @@
     if-ne p2, p4, :cond_8
 
     .line 579
-    iget-object p1, p0, Lorg/telegram/ui/FilterCreateActivity;->pollEditTextCellWrapper:Lorg/fork/ui/view/PollEditTextCellWrapper;
+    iget-object p1, p0, Lorg/telegram/ui/FilterCreateActivity;->pollEditTextCellWrapper:Lcom/iMe/fork/ui/view/PollEditTextCellWrapper;
 
-    invoke-virtual {p1, p3}, Lorg/fork/ui/view/PollEditTextCellWrapper;->checkEditTextTouch(F)Z
+    invoke-virtual {p1, p3}, Lcom/iMe/fork/ui/view/PollEditTextCellWrapper;->checkEditTextTouch(F)Z
 
     move-result p1
 
@@ -2699,9 +2699,9 @@
 
     .line 582
     :cond_7
-    iget-object p1, p0, Lorg/telegram/ui/FilterCreateActivity;->pollEditTextCellWrapper:Lorg/fork/ui/view/PollEditTextCellWrapper;
+    iget-object p1, p0, Lorg/telegram/ui/FilterCreateActivity;->pollEditTextCellWrapper:Lcom/iMe/fork/ui/view/PollEditTextCellWrapper;
 
-    invoke-virtual {p1}, Lorg/fork/ui/view/PollEditTextCellWrapper;->getPollEditTextCell()Lorg/telegram/ui/Cells/PollEditTextCell;
+    invoke-virtual {p1}, Lcom/iMe/fork/ui/view/PollEditTextCellWrapper;->getPollEditTextCell()Lorg/telegram/ui/Cells/PollEditTextCell;
 
     move-result-object p1
 
@@ -2793,9 +2793,9 @@
     invoke-virtual {p3, p1}, Lorg/telegram/ui/UsersSelectActivity;->setDelegate(Lorg/telegram/ui/UsersSelectActivity$FilterUsersActivityDelegate;)V
 
     .line 523
-    iget-object p1, p0, Lorg/telegram/ui/FilterCreateActivity;->type:Lorg/fork/enums/FilterActivityType;
+    iget-object p1, p0, Lorg/telegram/ui/FilterCreateActivity;->type:Lcom/iMe/fork/enums/FilterActivityType;
 
-    sget-object p4, Lorg/fork/enums/FilterActivityType;->TOPIC:Lorg/fork/enums/FilterActivityType;
+    sget-object p4, Lcom/iMe/fork/enums/FilterActivityType;->TOPIC:Lcom/iMe/fork/enums/FilterActivityType;
 
     if-ne p1, p4, :cond_e
 
@@ -2888,27 +2888,27 @@
     move-result-object v3
 
     .line 1387
-    instance-of v4, v3, Lorg/fork/ui/view/FabsCell;
+    instance-of v4, v3, Lcom/iMe/fork/ui/view/FabsCell;
 
     if-eqz v4, :cond_0
 
     .line 1388
-    check-cast v3, Lorg/fork/ui/view/FabsCell;
+    check-cast v3, Lcom/iMe/fork/ui/view/FabsCell;
 
-    invoke-virtual {v3}, Lorg/fork/ui/view/FabsCell;->updateColors()V
+    invoke-virtual {v3}, Lcom/iMe/fork/ui/view/FabsCell;->updateColors()V
 
     goto :goto_1
 
     .line 1389
     :cond_0
-    instance-of v4, v3, Lorg/fork/ui/view/PollEditTextCellWrapper;
+    instance-of v4, v3, Lcom/iMe/fork/ui/view/PollEditTextCellWrapper;
 
     if-eqz v4, :cond_1
 
     .line 1390
-    check-cast v3, Lorg/fork/ui/view/PollEditTextCellWrapper;
+    check-cast v3, Lcom/iMe/fork/ui/view/PollEditTextCellWrapper;
 
-    invoke-virtual {v3}, Lorg/fork/ui/view/PollEditTextCellWrapper;->updateColors()V
+    invoke-virtual {v3}, Lcom/iMe/fork/ui/view/PollEditTextCellWrapper;->updateColors()V
 
     goto :goto_1
 
@@ -3029,7 +3029,7 @@
     .locals 15
 
     .line 905
-    new-instance v14, Lorg/telegram/ui/FilterCreateActivity$$ExternalSyntheticLambda7;
+    new-instance v14, Lorg/telegram/ui/FilterCreateActivity$$ExternalSyntheticLambda9;
 
     move-object v0, v14
 
@@ -3059,63 +3059,63 @@
 
     move-object/from16 v13, p12
 
-    invoke-direct/range {v0 .. v13}, Lorg/telegram/ui/FilterCreateActivity$$ExternalSyntheticLambda7;-><init>(ZLorg/telegram/ui/ActionBar/AlertDialog;Lorg/telegram/messenger/MessagesController$DialogFilter;ILjava/lang/String;Ljava/util/ArrayList;Ljava/util/ArrayList;ZZZZLorg/telegram/ui/ActionBar/BaseFragment;Ljava/lang/Runnable;)V
+    invoke-direct/range {v0 .. v13}, Lorg/telegram/ui/FilterCreateActivity$$ExternalSyntheticLambda9;-><init>(ZLorg/telegram/ui/ActionBar/AlertDialog;Lorg/telegram/messenger/MessagesController$DialogFilter;ILjava/lang/String;Ljava/util/ArrayList;Ljava/util/ArrayList;ZZZZLorg/telegram/ui/ActionBar/BaseFragment;Ljava/lang/Runnable;)V
 
     invoke-static {v14}, Lorg/telegram/messenger/AndroidUtilities;->runOnUIThread(Ljava/lang/Runnable;)V
 
     return-void
 .end method
 
-.method private synthetic lambda$showIconSelectAlert$0(Lcom/smedialink/storage/domain/model/filters/FilterIcon;Lcom/smedialink/storage/data/repository/topics/Topic;)V
+.method private synthetic lambda$showIconSelectAlert$0(Lcom/iMe/storage/domain/model/filters/FilterIcon;Lcom/iMe/storage/data/repository/topics/Topic;)V
     .locals 2
 
     .line 127
-    iget-object v0, p0, Lorg/telegram/ui/FilterCreateActivity;->newFilterSettings:Lcom/smedialink/storage/domain/model/filters/FilterSettingsModel;
+    iget-object v0, p0, Lorg/telegram/ui/FilterCreateActivity;->newFilterSettings:Lcom/iMe/storage/domain/model/filters/FilterSettingsModel;
 
     const/4 v1, -0x1
 
     if-eqz v0, :cond_1
 
     .line 128
-    invoke-virtual {v0, p1}, Lcom/smedialink/storage/domain/model/filters/FilterSettingsModel;->setIcon(Lcom/smedialink/storage/domain/model/filters/FilterIcon;)V
+    invoke-virtual {v0, p1}, Lcom/iMe/storage/domain/model/filters/FilterSettingsModel;->setIcon(Lcom/iMe/storage/domain/model/filters/FilterIcon;)V
 
     .line 129
-    iget-object p2, p0, Lorg/telegram/ui/FilterCreateActivity;->pollEditTextCellWrapper:Lorg/fork/ui/view/PollEditTextCellWrapper;
+    iget-object p2, p0, Lorg/telegram/ui/FilterCreateActivity;->pollEditTextCellWrapper:Lcom/iMe/fork/ui/view/PollEditTextCellWrapper;
 
     if-eqz p1, :cond_0
 
-    invoke-static {p1}, Lcom/smedialink/utils/extentions/model/filter/FilterIconExtKt;->iconInfo(Lcom/smedialink/storage/domain/model/filters/FilterIcon;)Lcom/smedialink/ui/folder/FilterIconInfo;
+    invoke-static {p1}, Lcom/iMe/utils/extentions/model/filter/FilterIconExtKt;->iconInfo(Lcom/iMe/storage/domain/model/filters/FilterIcon;)Lcom/iMe/ui/folder/FilterIconInfo;
 
     move-result-object p1
 
-    invoke-virtual {p1}, Lcom/smedialink/ui/folder/FilterIconInfo;->getOutlinedIcon()I
+    invoke-virtual {p1}, Lcom/iMe/ui/folder/FilterIconInfo;->getOutlinedIcon()I
 
     move-result v1
 
     :cond_0
-    invoke-virtual {p2, v1}, Lorg/fork/ui/view/PollEditTextCellWrapper;->setIcon(I)V
+    invoke-virtual {p2, v1}, Lcom/iMe/fork/ui/view/PollEditTextCellWrapper;->setIcon(I)V
 
     goto :goto_0
 
     .line 131
     :cond_1
-    iput-object p2, p0, Lorg/telegram/ui/FilterCreateActivity;->topicNewIcon:Lcom/smedialink/storage/data/repository/topics/Topic;
+    iput-object p2, p0, Lorg/telegram/ui/FilterCreateActivity;->topicNewIcon:Lcom/iMe/storage/data/repository/topics/Topic;
 
     .line 132
-    iget-object p1, p0, Lorg/telegram/ui/FilterCreateActivity;->pollEditTextCellWrapper:Lorg/fork/ui/view/PollEditTextCellWrapper;
+    iget-object p1, p0, Lorg/telegram/ui/FilterCreateActivity;->pollEditTextCellWrapper:Lcom/iMe/fork/ui/view/PollEditTextCellWrapper;
 
     if-eqz p2, :cond_2
 
-    invoke-static {p2}, Lcom/smedialink/utils/extentions/model/topic/TopicExtKt;->info(Lcom/smedialink/storage/data/repository/topics/Topic;)Lcom/smedialink/ui/topics/TopicInfo;
+    invoke-static {p2}, Lcom/iMe/utils/extentions/model/topic/TopicExtKt;->info(Lcom/iMe/storage/data/repository/topics/Topic;)Lcom/iMe/ui/topics/TopicInfo;
 
     move-result-object p2
 
-    invoke-virtual {p2}, Lcom/smedialink/ui/topics/TopicInfo;->getIconResId()I
+    invoke-virtual {p2}, Lcom/iMe/ui/topics/TopicInfo;->getIconResId()I
 
     move-result v1
 
     :cond_2
-    invoke-virtual {p1, v1}, Lorg/fork/ui/view/PollEditTextCellWrapper;->setIcon(I)V
+    invoke-virtual {p1, v1}, Lcom/iMe/fork/ui/view/PollEditTextCellWrapper;->setIcon(I)V
 
     :goto_0
     const/4 p1, 0x0
@@ -3412,9 +3412,9 @@
     .locals 15
 
     .line 760
-    iget-object v0, p0, Lorg/telegram/ui/FilterCreateActivity;->type:Lorg/fork/enums/FilterActivityType;
+    iget-object v0, p0, Lorg/telegram/ui/FilterCreateActivity;->type:Lcom/iMe/fork/enums/FilterActivityType;
 
-    sget-object v1, Lorg/fork/enums/FilterActivityType;->TOPIC:Lorg/fork/enums/FilterActivityType;
+    sget-object v1, Lcom/iMe/fork/enums/FilterActivityType;->TOPIC:Lcom/iMe/fork/enums/FilterActivityType;
 
     if-ne v0, v1, :cond_1
 
@@ -3424,40 +3424,40 @@
     if-nez v0, :cond_0
 
     .line 762
-    iget-object v0, p0, Lorg/telegram/ui/FilterCreateActivity;->topic:Lcom/smedialink/storage/domain/model/topics/TopicModel;
+    iget-object v0, p0, Lorg/telegram/ui/FilterCreateActivity;->topic:Lcom/iMe/storage/domain/model/topics/TopicModel;
 
     iget-object v1, p0, Lorg/telegram/ui/FilterCreateActivity;->newFilterName:Ljava/lang/String;
 
-    invoke-virtual {v0, v1}, Lcom/smedialink/storage/domain/model/topics/TopicModel;->setName(Ljava/lang/String;)V
+    invoke-virtual {v0, v1}, Lcom/iMe/storage/domain/model/topics/TopicModel;->setName(Ljava/lang/String;)V
 
     .line 763
-    iget-object v0, p0, Lorg/telegram/ui/FilterCreateActivity;->topic:Lcom/smedialink/storage/domain/model/topics/TopicModel;
+    iget-object v0, p0, Lorg/telegram/ui/FilterCreateActivity;->topic:Lcom/iMe/storage/domain/model/topics/TopicModel;
 
-    iget-object v1, p0, Lorg/telegram/ui/FilterCreateActivity;->topicNewIcon:Lcom/smedialink/storage/data/repository/topics/Topic;
+    iget-object v1, p0, Lorg/telegram/ui/FilterCreateActivity;->topicNewIcon:Lcom/iMe/storage/data/repository/topics/Topic;
 
-    invoke-virtual {v0, v1}, Lcom/smedialink/storage/domain/model/topics/TopicModel;->setIcon(Lcom/smedialink/storage/data/repository/topics/Topic;)V
+    invoke-virtual {v0, v1}, Lcom/iMe/storage/domain/model/topics/TopicModel;->setIcon(Lcom/iMe/storage/data/repository/topics/Topic;)V
 
     .line 765
     :cond_0
-    iget-object v0, p0, Lorg/telegram/ui/FilterCreateActivity;->topic:Lcom/smedialink/storage/domain/model/topics/TopicModel;
+    iget-object v0, p0, Lorg/telegram/ui/FilterCreateActivity;->topic:Lcom/iMe/storage/domain/model/topics/TopicModel;
 
-    invoke-virtual {v0}, Lcom/smedialink/storage/domain/model/topics/TopicModel;->getDialogs()Ljava/util/Set;
+    invoke-virtual {v0}, Lcom/iMe/storage/domain/model/topics/TopicModel;->getDialogs()Ljava/util/Set;
 
     move-result-object v0
 
     .line 766
-    iget-object v1, p0, Lorg/telegram/ui/FilterCreateActivity;->topic:Lcom/smedialink/storage/domain/model/topics/TopicModel;
+    iget-object v1, p0, Lorg/telegram/ui/FilterCreateActivity;->topic:Lcom/iMe/storage/domain/model/topics/TopicModel;
 
-    invoke-virtual {v1}, Lcom/smedialink/storage/domain/model/topics/TopicModel;->getFilterDialogs()Ljava/util/Set;
+    invoke-virtual {v1}, Lcom/iMe/storage/domain/model/topics/TopicModel;->getFilterDialogs()Ljava/util/Set;
 
     move-result-object v1
 
     invoke-interface {v0, v1}, Ljava/util/Set;->removeAll(Ljava/util/Collection;)Z
 
     .line 767
-    iget-object v1, p0, Lorg/telegram/ui/FilterCreateActivity;->topic:Lcom/smedialink/storage/domain/model/topics/TopicModel;
+    iget-object v1, p0, Lorg/telegram/ui/FilterCreateActivity;->topic:Lcom/iMe/storage/domain/model/topics/TopicModel;
 
-    invoke-virtual {v1}, Lcom/smedialink/storage/domain/model/topics/TopicModel;->getFilterArchivedDialogs()Ljava/util/Set;
+    invoke-virtual {v1}, Lcom/iMe/storage/domain/model/topics/TopicModel;->getFilterArchivedDialogs()Ljava/util/Set;
 
     move-result-object v1
 
@@ -3474,25 +3474,25 @@
     invoke-interface {v0, v1}, Ljava/util/Set;->addAll(Ljava/util/Collection;)Z
 
     .line 770
-    iget-object v0, p0, Lorg/telegram/ui/FilterCreateActivity;->topic:Lcom/smedialink/storage/domain/model/topics/TopicModel;
+    iget-object v0, p0, Lorg/telegram/ui/FilterCreateActivity;->topic:Lcom/iMe/storage/domain/model/topics/TopicModel;
 
-    invoke-virtual {v0}, Lcom/smedialink/storage/domain/model/topics/TopicModel;->getPresets()Ljava/util/Set;
+    invoke-virtual {v0}, Lcom/iMe/storage/domain/model/topics/TopicModel;->getPresets()Ljava/util/Set;
 
     move-result-object v0
 
     .line 771
-    iget-object v1, p0, Lorg/telegram/ui/FilterCreateActivity;->topic:Lcom/smedialink/storage/domain/model/topics/TopicModel;
+    iget-object v1, p0, Lorg/telegram/ui/FilterCreateActivity;->topic:Lcom/iMe/storage/domain/model/topics/TopicModel;
 
-    invoke-virtual {v1}, Lcom/smedialink/storage/domain/model/topics/TopicModel;->getFilterDialogs()Ljava/util/Set;
+    invoke-virtual {v1}, Lcom/iMe/storage/domain/model/topics/TopicModel;->getFilterDialogs()Ljava/util/Set;
 
     move-result-object v1
 
     invoke-interface {v0, v1}, Ljava/util/Set;->removeAll(Ljava/util/Collection;)Z
 
     .line 772
-    iget-object v1, p0, Lorg/telegram/ui/FilterCreateActivity;->topic:Lcom/smedialink/storage/domain/model/topics/TopicModel;
+    iget-object v1, p0, Lorg/telegram/ui/FilterCreateActivity;->topic:Lcom/iMe/storage/domain/model/topics/TopicModel;
 
-    invoke-virtual {v1}, Lcom/smedialink/storage/domain/model/topics/TopicModel;->getFilterArchivedDialogs()Ljava/util/Set;
+    invoke-virtual {v1}, Lcom/iMe/storage/domain/model/topics/TopicModel;->getFilterArchivedDialogs()Ljava/util/Set;
 
     move-result-object v1
 
@@ -3509,13 +3509,13 @@
     invoke-interface {v0, v1}, Ljava/util/Set;->addAll(Ljava/util/Collection;)Z
 
     .line 775
-    invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getTopicsController()Lorg/fork/controller/ForkTopicsController;
+    invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getTopicsController()Lcom/iMe/fork/controller/ForkTopicsController;
 
     move-result-object v0
 
-    iget-object v1, p0, Lorg/telegram/ui/FilterCreateActivity;->topic:Lcom/smedialink/storage/domain/model/topics/TopicModel;
+    iget-object v1, p0, Lorg/telegram/ui/FilterCreateActivity;->topic:Lcom/iMe/storage/domain/model/topics/TopicModel;
 
-    invoke-virtual {v0, v1}, Lorg/fork/controller/ForkTopicsController;->addOrEditTopic(Lcom/smedialink/storage/domain/model/topics/TopicModel;)V
+    invoke-virtual {v0, v1}, Lcom/iMe/fork/controller/ForkTopicsController;->addOrEditTopic(Lcom/iMe/storage/domain/model/topics/TopicModel;)V
 
     .line 776
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getNotificationCenter()Lorg/telegram/messenger/NotificationCenter;
@@ -3537,22 +3537,22 @@
 
     .line 780
     :cond_1
-    iget-object v0, p0, Lorg/telegram/ui/FilterCreateActivity;->onDoneCallback:Lorg/fork/utils/Callbacks$Callback;
+    iget-object v0, p0, Lorg/telegram/ui/FilterCreateActivity;->onDoneCallback:Lcom/iMe/fork/utils/Callbacks$Callback;
 
     if-eqz v0, :cond_2
 
     .line 781
-    invoke-interface {v0}, Lorg/fork/utils/Callbacks$Callback;->invoke()V
+    invoke-interface {v0}, Lcom/iMe/fork/utils/Callbacks$Callback;->invoke()V
 
     .line 783
     :cond_2
-    invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getFiltersController()Lorg/fork/controller/FiltersController;
+    invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getFiltersController()Lcom/iMe/fork/controller/FiltersController;
 
     move-result-object v0
 
-    iget-object v1, p0, Lorg/telegram/ui/FilterCreateActivity;->newFilterSettings:Lcom/smedialink/storage/domain/model/filters/FilterSettingsModel;
+    iget-object v1, p0, Lorg/telegram/ui/FilterCreateActivity;->newFilterSettings:Lcom/iMe/storage/domain/model/filters/FilterSettingsModel;
 
-    invoke-virtual {v0, v1}, Lorg/fork/controller/FiltersController;->addOrEditFilterSettings(Lcom/smedialink/storage/domain/model/filters/FilterSettingsModel;)V
+    invoke-virtual {v0, v1}, Lcom/iMe/fork/controller/FiltersController;->addOrEditFilterSettings(Lcom/iMe/storage/domain/model/filters/FilterSettingsModel;)V
 
     .line 785
     iget-object v2, p0, Lorg/telegram/ui/FilterCreateActivity;->filter:Lorg/telegram/messenger/MessagesController$DialogFilter;
@@ -3577,9 +3577,9 @@
 
     const/4 v12, 0x1
 
-    new-instance v14, Lorg/telegram/ui/FilterCreateActivity$$ExternalSyntheticLambda5;
+    new-instance v14, Lorg/telegram/ui/FilterCreateActivity$$ExternalSyntheticLambda7;
 
-    invoke-direct {v14, p0}, Lorg/telegram/ui/FilterCreateActivity$$ExternalSyntheticLambda5;-><init>(Lorg/telegram/ui/FilterCreateActivity;)V
+    invoke-direct {v14, p0}, Lorg/telegram/ui/FilterCreateActivity$$ExternalSyntheticLambda7;-><init>(Lorg/telegram/ui/FilterCreateActivity;)V
 
     move-object v13, p0
 
@@ -3881,9 +3881,9 @@
 
     .line 849
     :cond_b
-    new-instance v7, Lorg/telegram/ui/FilterCreateActivity$$ExternalSyntheticLambda8;
+    new-instance v7, Lorg/telegram/ui/FilterCreateActivity$$ExternalSyntheticLambda10;
 
-    invoke-direct {v7, v0}, Lorg/telegram/ui/FilterCreateActivity$$ExternalSyntheticLambda8;-><init>(Lorg/telegram/messenger/support/LongSparseIntArray;)V
+    invoke-direct {v7, v0}, Lorg/telegram/ui/FilterCreateActivity$$ExternalSyntheticLambda10;-><init>(Lorg/telegram/messenger/support/LongSparseIntArray;)V
 
     invoke-static {v6, v7}, Ljava/util/Collections;->sort(Ljava/util/List;Ljava/util/Comparator;)V
 
@@ -4158,12 +4158,12 @@
     .locals 4
 
     .line 1006
-    iget-object v0, p0, Lorg/telegram/ui/FilterCreateActivity;->pollEditTextCellWrapper:Lorg/fork/ui/view/PollEditTextCellWrapper;
+    iget-object v0, p0, Lorg/telegram/ui/FilterCreateActivity;->pollEditTextCellWrapper:Lcom/iMe/fork/ui/view/PollEditTextCellWrapper;
 
     if-ne p1, v0, :cond_0
 
     .line 1007
-    invoke-virtual {v0}, Lorg/fork/ui/view/PollEditTextCellWrapper;->getPollEditTextCell()Lorg/telegram/ui/Cells/PollEditTextCell;
+    invoke-virtual {v0}, Lcom/iMe/fork/ui/view/PollEditTextCellWrapper;->getPollEditTextCell()Lorg/telegram/ui/Cells/PollEditTextCell;
 
     move-result-object p1
 
@@ -4295,19 +4295,19 @@
     .locals 7
 
     .line 126
-    new-instance v6, Lorg/fork/ui/dialog/SelectIconBottomSheet;
+    new-instance v6, Lcom/iMe/fork/ui/dialog/SelectIconBottomSheet;
 
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
 
     move-result-object v1
 
-    iget-object v2, p0, Lorg/telegram/ui/FilterCreateActivity;->type:Lorg/fork/enums/FilterActivityType;
+    iget-object v2, p0, Lorg/telegram/ui/FilterCreateActivity;->type:Lcom/iMe/fork/enums/FilterActivityType;
 
-    iget-object v0, p0, Lorg/telegram/ui/FilterCreateActivity;->newFilterSettings:Lcom/smedialink/storage/domain/model/filters/FilterSettingsModel;
+    iget-object v0, p0, Lorg/telegram/ui/FilterCreateActivity;->newFilterSettings:Lcom/iMe/storage/domain/model/filters/FilterSettingsModel;
 
     if-eqz v0, :cond_0
 
-    invoke-virtual {v0}, Lcom/smedialink/storage/domain/model/filters/FilterSettingsModel;->getIcon()Lcom/smedialink/storage/domain/model/filters/FilterIcon;
+    invoke-virtual {v0}, Lcom/iMe/storage/domain/model/filters/FilterSettingsModel;->getIcon()Lcom/iMe/storage/domain/model/filters/FilterIcon;
 
     move-result-object v0
 
@@ -4319,15 +4319,15 @@
     :goto_0
     move-object v3, v0
 
-    iget-object v4, p0, Lorg/telegram/ui/FilterCreateActivity;->topicNewIcon:Lcom/smedialink/storage/data/repository/topics/Topic;
+    iget-object v4, p0, Lorg/telegram/ui/FilterCreateActivity;->topicNewIcon:Lcom/iMe/storage/data/repository/topics/Topic;
 
-    new-instance v5, Lorg/telegram/ui/FilterCreateActivity$$ExternalSyntheticLambda10;
+    new-instance v5, Lorg/telegram/ui/FilterCreateActivity$$ExternalSyntheticLambda6;
 
-    invoke-direct {v5, p0}, Lorg/telegram/ui/FilterCreateActivity$$ExternalSyntheticLambda10;-><init>(Lorg/telegram/ui/FilterCreateActivity;)V
+    invoke-direct {v5, p0}, Lorg/telegram/ui/FilterCreateActivity$$ExternalSyntheticLambda6;-><init>(Lorg/telegram/ui/FilterCreateActivity;)V
 
     move-object v0, v6
 
-    invoke-direct/range {v0 .. v5}, Lorg/fork/ui/dialog/SelectIconBottomSheet;-><init>(Landroid/app/Activity;Lorg/fork/enums/FilterActivityType;Lcom/smedialink/storage/domain/model/filters/FilterIcon;Lcom/smedialink/storage/data/repository/topics/Topic;Lorg/fork/utils/Callbacks$Callback2;)V
+    invoke-direct/range {v0 .. v5}, Lcom/iMe/fork/ui/dialog/SelectIconBottomSheet;-><init>(Landroid/app/Activity;Lcom/iMe/fork/enums/FilterActivityType;Lcom/iMe/storage/domain/model/filters/FilterIcon;Lcom/iMe/storage/data/repository/topics/Topic;Lcom/iMe/fork/utils/Callbacks$Callback2;)V
 
     invoke-virtual {p0, v6}, Lorg/telegram/ui/ActionBar/BaseFragment;->showDialog(Landroid/app/Dialog;)Landroid/app/Dialog;
 
@@ -4501,9 +4501,9 @@
 
     .line 716
     :goto_0
-    iget-object p3, p0, Lorg/telegram/ui/FilterCreateActivity;->type:Lorg/fork/enums/FilterActivityType;
+    iget-object p3, p0, Lorg/telegram/ui/FilterCreateActivity;->type:Lcom/iMe/fork/enums/FilterActivityType;
 
-    sget-object v3, Lorg/fork/enums/FilterActivityType;->TOPIC:Lorg/fork/enums/FilterActivityType;
+    sget-object v3, Lcom/iMe/fork/enums/FilterActivityType;->TOPIC:Lcom/iMe/fork/enums/FilterActivityType;
 
     if-ne p3, v3, :cond_5
 
@@ -4650,9 +4650,9 @@
     iput v1, p0, Lorg/telegram/ui/FilterCreateActivity;->nameSectionRow:I
 
     .line 313
-    iget-object v1, p0, Lorg/telegram/ui/FilterCreateActivity;->type:Lorg/fork/enums/FilterActivityType;
+    iget-object v1, p0, Lorg/telegram/ui/FilterCreateActivity;->type:Lcom/iMe/fork/enums/FilterActivityType;
 
-    sget-object v4, Lorg/fork/enums/FilterActivityType;->FILTER:Lorg/fork/enums/FilterActivityType;
+    sget-object v4, Lcom/iMe/fork/enums/FilterActivityType;->FILTER:Lcom/iMe/fork/enums/FilterActivityType;
 
     if-ne v1, v4, :cond_1
 
@@ -5183,7 +5183,7 @@
     .locals 7
 
     .line 417
-    invoke-super {p0, p1}, Lcom/smedialink/ui/base/mvp/MvpFragment;->createView(Landroid/content/Context;)Landroid/view/View;
+    invoke-super {p0, p1}, Lcom/iMe/ui/base/mvp/MvpFragment;->createView(Landroid/content/Context;)Landroid/view/View;
 
     .line 418
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
@@ -5214,9 +5214,9 @@
     if-eqz v2, :cond_1
 
     .line 423
-    iget-object v2, p0, Lorg/telegram/ui/FilterCreateActivity;->type:Lorg/fork/enums/FilterActivityType;
+    iget-object v2, p0, Lorg/telegram/ui/FilterCreateActivity;->type:Lcom/iMe/fork/enums/FilterActivityType;
 
-    sget-object v4, Lorg/fork/enums/FilterActivityType;->TOPIC:Lorg/fork/enums/FilterActivityType;
+    sget-object v4, Lcom/iMe/fork/enums/FilterActivityType;->TOPIC:Lcom/iMe/fork/enums/FilterActivityType;
 
     if-ne v2, v4, :cond_0
 
@@ -5267,16 +5267,16 @@
     invoke-virtual {v2, v5}, Landroid/text/TextPaint;->setTextSize(F)V
 
     .line 431
-    iget-object v5, p0, Lorg/telegram/ui/FilterCreateActivity;->type:Lorg/fork/enums/FilterActivityType;
+    iget-object v5, p0, Lorg/telegram/ui/FilterCreateActivity;->type:Lcom/iMe/fork/enums/FilterActivityType;
 
-    sget-object v6, Lorg/fork/enums/FilterActivityType;->TOPIC:Lorg/fork/enums/FilterActivityType;
+    sget-object v6, Lcom/iMe/fork/enums/FilterActivityType;->TOPIC:Lcom/iMe/fork/enums/FilterActivityType;
 
     if-ne v5, v6, :cond_3
 
     .line 432
-    iget-object v5, p0, Lorg/telegram/ui/FilterCreateActivity;->topic:Lcom/smedialink/storage/domain/model/topics/TopicModel;
+    iget-object v5, p0, Lorg/telegram/ui/FilterCreateActivity;->topic:Lcom/iMe/storage/domain/model/topics/TopicModel;
 
-    invoke-virtual {v5}, Lcom/smedialink/storage/domain/model/topics/TopicModel;->isUserTopic()Z
+    invoke-virtual {v5}, Lcom/iMe/storage/domain/model/topics/TopicModel;->isUserTopic()Z
 
     move-result v5
 
@@ -5285,9 +5285,9 @@
     .line 433
     iget-object v5, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
-    iget-object v6, p0, Lorg/telegram/ui/FilterCreateActivity;->topic:Lcom/smedialink/storage/domain/model/topics/TopicModel;
+    iget-object v6, p0, Lorg/telegram/ui/FilterCreateActivity;->topic:Lcom/iMe/storage/domain/model/topics/TopicModel;
 
-    invoke-virtual {v6}, Lcom/smedialink/storage/domain/model/topics/TopicModel;->getName()Ljava/lang/String;
+    invoke-virtual {v6}, Lcom/iMe/storage/domain/model/topics/TopicModel;->getName()Ljava/lang/String;
 
     move-result-object v6
 
@@ -5309,9 +5309,9 @@
 
     .line 434
     :cond_2
-    iget-object v2, p0, Lorg/telegram/ui/FilterCreateActivity;->topic:Lcom/smedialink/storage/domain/model/topics/TopicModel;
+    iget-object v2, p0, Lorg/telegram/ui/FilterCreateActivity;->topic:Lcom/iMe/storage/domain/model/topics/TopicModel;
 
-    invoke-virtual {v2}, Lcom/smedialink/storage/domain/model/topics/TopicModel;->isAutoTopic()Z
+    invoke-virtual {v2}, Lcom/iMe/storage/domain/model/topics/TopicModel;->isAutoTopic()Z
 
     move-result v2
 
@@ -5320,17 +5320,17 @@
     .line 435
     iget-object v2, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
-    iget-object v4, p0, Lorg/telegram/ui/FilterCreateActivity;->topic:Lcom/smedialink/storage/domain/model/topics/TopicModel;
+    iget-object v4, p0, Lorg/telegram/ui/FilterCreateActivity;->topic:Lcom/iMe/storage/domain/model/topics/TopicModel;
 
-    invoke-virtual {v4}, Lcom/smedialink/storage/domain/model/topics/TopicModel;->getIcon()Lcom/smedialink/storage/data/repository/topics/Topic;
-
-    move-result-object v4
-
-    invoke-static {v4}, Lcom/smedialink/utils/extentions/model/topic/TopicExtKt;->info(Lcom/smedialink/storage/data/repository/topics/Topic;)Lcom/smedialink/ui/topics/TopicInfo;
+    invoke-virtual {v4}, Lcom/iMe/storage/domain/model/topics/TopicModel;->getIcon()Lcom/iMe/storage/data/repository/topics/Topic;
 
     move-result-object v4
 
-    invoke-virtual {v4}, Lcom/smedialink/ui/topics/TopicInfo;->getTitleResId()I
+    invoke-static {v4}, Lcom/iMe/utils/extentions/model/topic/TopicExtKt;->info(Lcom/iMe/storage/data/repository/topics/Topic;)Lcom/iMe/ui/topics/TopicInfo;
+
+    move-result-object v4
+
+    invoke-virtual {v4}, Lcom/iMe/ui/topics/TopicInfo;->getTitleResId()I
 
     move-result v4
 
@@ -5510,7 +5510,7 @@
 
     new-array v5, v11, [Ljava/lang/Class;
 
-    const-class v2, Lorg/fork/ui/view/FabsCell;
+    const-class v2, Lcom/iMe/fork/ui/view/FabsCell;
 
     const/4 v12, 0x0
 
@@ -6298,7 +6298,7 @@
     .locals 1
 
     .line 606
-    invoke-super {p0}, Lcom/smedialink/ui/base/mvp/MvpFragment;->onResume()V
+    invoke-super {p0}, Lcom/iMe/ui/base/mvp/MvpFragment;->onResume()V
 
     .line 607
     iget-object v0, p0, Lorg/telegram/ui/FilterCreateActivity;->adapter:Lorg/telegram/ui/FilterCreateActivity$ListAdapter;
@@ -6312,11 +6312,11 @@
     return-void
 .end method
 
-.method public setOnDoneCallback(Lorg/fork/utils/Callbacks$Callback;)V
+.method public setOnDoneCallback(Lcom/iMe/fork/utils/Callbacks$Callback;)V
     .locals 0
 
     .line 108
-    iput-object p1, p0, Lorg/telegram/ui/FilterCreateActivity;->onDoneCallback:Lorg/fork/utils/Callbacks$Callback;
+    iput-object p1, p0, Lorg/telegram/ui/FilterCreateActivity;->onDoneCallback:Lcom/iMe/fork/utils/Callbacks$Callback;
 
     return-void
 .end method

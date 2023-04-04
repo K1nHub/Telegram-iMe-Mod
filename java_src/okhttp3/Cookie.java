@@ -1,7 +1,7 @@
 package okhttp3;
 
-import com.iMe.i_staking.request.StakingApprovalPrepareRequest$$ExternalSyntheticBackport0;
-import com.smedialink.model.twitter.TweetItem$$ExternalSyntheticBackport0;
+import com.iMe.bots.data.model.database.BotsDbModel$$ExternalSyntheticBackport0;
+import com.iMe.model.twitter.TweetItem$$ExternalSyntheticBackport0;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Date;
@@ -73,7 +73,7 @@ public final class Cookie {
     }
 
     public int hashCode() {
-        return ((((((((((((((((527 + this.name.hashCode()) * 31) + this.value.hashCode()) * 31) + StakingApprovalPrepareRequest$$ExternalSyntheticBackport0.m716m(this.expiresAt)) * 31) + this.domain.hashCode()) * 31) + this.path.hashCode()) * 31) + TweetItem$$ExternalSyntheticBackport0.m708m(this.secure)) * 31) + TweetItem$$ExternalSyntheticBackport0.m708m(this.httpOnly)) * 31) + TweetItem$$ExternalSyntheticBackport0.m708m(this.persistent)) * 31) + TweetItem$$ExternalSyntheticBackport0.m708m(this.hostOnly);
+        return ((((((((((((((((527 + this.name.hashCode()) * 31) + this.value.hashCode()) * 31) + BotsDbModel$$ExternalSyntheticBackport0.m716m(this.expiresAt)) * 31) + this.domain.hashCode()) * 31) + this.path.hashCode()) * 31) + TweetItem$$ExternalSyntheticBackport0.m709m(this.secure)) * 31) + TweetItem$$ExternalSyntheticBackport0.m709m(this.httpOnly)) * 31) + TweetItem$$ExternalSyntheticBackport0.m709m(this.persistent)) * 31) + TweetItem$$ExternalSyntheticBackport0.m709m(this.hostOnly);
     }
 
     public String toString() {
@@ -138,20 +138,20 @@ public final class Cookie {
             return parse$okhttp(System.currentTimeMillis(), url, setCookie);
         }
 
-        /* JADX WARN: Code restructure failed: missing block: B:56:0x0102, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:56:0x0103, code lost:
             if (r1 > 253402300799999L) goto L86;
          */
-        /* JADX WARN: Removed duplicated region for block: B:63:0x0114  */
-        /* JADX WARN: Removed duplicated region for block: B:64:0x0117  */
-        /* JADX WARN: Removed duplicated region for block: B:76:0x013e  */
-        /* JADX WARN: Removed duplicated region for block: B:82:0x015a  */
+        /* JADX WARN: Removed duplicated region for block: B:63:0x0115  */
+        /* JADX WARN: Removed duplicated region for block: B:64:0x0118  */
+        /* JADX WARN: Removed duplicated region for block: B:76:0x013f  */
+        /* JADX WARN: Removed duplicated region for block: B:82:0x015b  */
         /*
             Code decompiled incorrectly, please refer to instructions dump.
             To view partially-correct add '--show-bad-code' argument
         */
         public final okhttp3.Cookie parse$okhttp(long r26, okhttp3.HttpUrl r28, java.lang.String r29) {
             /*
-                Method dump skipped, instructions count: 373
+                Method dump skipped, instructions count: 374
                 To view this dump add '--comments-level debug' option
             */
             throw new UnsupportedOperationException("Method not decompiled: okhttp3.Cookie.Companion.parse$okhttp(long, okhttp3.HttpUrl, java.lang.String):okhttp3.Cookie");

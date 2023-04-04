@@ -35,7 +35,7 @@ public class SearchCounterView extends View {
     String currentString;
 
     /* renamed from: dx */
-    float f1803dx;
+    float f1806dx;
     int gravity;
     public float horizontalPadding;
     int lastH;
@@ -46,7 +46,7 @@ public class SearchCounterView extends View {
     TextPaint textPaint;
 
     /* renamed from: x */
-    float f1804x;
+    float f1807x;
 
     public SearchCounterView(Context context, Theme.ResourcesProvider resourcesProvider) {
         super(context);
@@ -55,7 +55,7 @@ public class SearchCounterView extends View {
         this.countChangeProgress = 1.0f;
         this.textColorKey = "chat_searchPanelText";
         this.gravity = 17;
-        this.f1803dx = BitmapDescriptorFactory.HUE_RED;
+        this.f1806dx = BitmapDescriptorFactory.HUE_RED;
         this.resourcesProvider = resourcesProvider;
         this.textPaint.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
         this.textPaint.setTextSize(AndroidUtilities.m50dp(15));
@@ -101,7 +101,7 @@ public class SearchCounterView extends View {
                 }
                 invalidate();
             }
-            this.f1803dx = BitmapDescriptorFactory.HUE_RED;
+            this.f1806dx = BitmapDescriptorFactory.HUE_RED;
             if (z3) {
                 ValueAnimator valueAnimator2 = this.countAnimator;
                 if (valueAnimator2 != null) {
@@ -193,7 +193,7 @@ public class SearchCounterView extends View {
                         z2 = false;
                         this.countAnimationStableLayout2 = null;
                     }
-                    this.f1803dx = this.countOldLayout.getPrimaryHorizontal(i3) - this.countAnimationStableLayout.getPrimaryHorizontal(i4);
+                    this.f1806dx = this.countOldLayout.getPrimaryHorizontal(i3) - this.countAnimationStableLayout.getPrimaryHorizontal(i4);
                 } else {
                     z2 = false;
                 }
@@ -238,7 +238,7 @@ public class SearchCounterView extends View {
             }
             updateX(f);
             RectF rectF = this.rectF;
-            float f3 = this.f1804x;
+            float f3 = this.f1807x;
             rectF.set(f3, measuredHeight, f + f3 + AndroidUtilities.m50dp(11), AndroidUtilities.m50dp(23) + measuredHeight);
             boolean z = this.countAnimationIncrement;
             if (this.countAnimationInLayout != null) {
@@ -275,7 +275,7 @@ public class SearchCounterView extends View {
             }
             if (this.countAnimationStableLayout != null) {
                 canvas.save();
-                canvas.translate(this.countLeft + (this.f1803dx * (1.0f - this.countChangeProgress)), AndroidUtilities.m50dp(2) + measuredHeight);
+                canvas.translate(this.countLeft + (this.f1806dx * (1.0f - this.countChangeProgress)), AndroidUtilities.m50dp(2) + measuredHeight);
                 this.textPaint.setAlpha(255);
                 this.countAnimationStableLayout.draw(canvas);
                 canvas.restore();
@@ -309,7 +309,7 @@ public class SearchCounterView extends View {
         } else {
             this.countLeft = (int) ((getMeasuredWidth() - f) / 2.0f);
         }
-        this.f1804x = this.countLeft - AndroidUtilities.m51dp(5.5f);
+        this.f1807x = this.countLeft - AndroidUtilities.m51dp(5.5f);
     }
 
     private void drawInternal(Canvas canvas) {

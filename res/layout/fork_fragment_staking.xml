@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.swiperefreshlayout.widget.SwipeRefreshLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
   xmlns:android="http://schemas.android.com/apk/res/android">
-    <org.fork.ui.view.CollapsableHeaderTabbedViewPager android:id="@id/staking_pager" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+    <com.iMe.fork.ui.view.CollapsableHeaderTabbedViewPager android:id="@id/staking_pager" android:layout_width="fill_parent" android:layout_height="fill_parent" />
 </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>

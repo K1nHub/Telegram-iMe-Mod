@@ -16,31 +16,31 @@ public class MessageSeenCheckDrawable {
     private Drawable drawable;
 
     /* renamed from: h */
-    private int f1729h;
+    private int f1732h;
     private int lastColor;
     private float lastDensity;
     private CharSequence lastSpanned;
 
     /* renamed from: oy */
-    private float f1730oy;
+    private float f1733oy;
     private int resId;
 
     /* renamed from: w */
-    private int f1731w;
+    private int f1734w;
 
     public MessageSeenCheckDrawable(int i, String str) {
-        this.f1731w = -1;
-        this.f1729h = -1;
-        this.f1730oy = 4.66f;
+        this.f1734w = -1;
+        this.f1732h = -1;
+        this.f1733oy = 4.66f;
         this.resId = i;
         this.colorKey = str;
     }
 
     public MessageSeenCheckDrawable(int i, String str, int i2, int i3, float f) {
         this(i, str);
-        this.f1731w = i2;
-        this.f1729h = i3;
-        this.f1730oy = f;
+        this.f1734w = i2;
+        this.f1732h = i3;
+        this.f1733oy = f;
     }
 
     public CharSequence getSpanned(Context context) {
@@ -62,11 +62,11 @@ public class MessageSeenCheckDrawable {
             int color2 = Theme.getColor(this.colorKey);
             this.lastColor = color2;
             mutate.setColorFilter(new PorterDuffColorFilter(color2, PorterDuff.Mode.SRC_IN));
-            int i = this.f1731w;
+            int i = this.f1734w;
             int intrinsicWidth = i <= 0 ? this.drawable.getIntrinsicWidth() : AndroidUtilities.m50dp(i);
-            int i2 = this.f1729h;
+            int i2 = this.f1732h;
             int intrinsicHeight = i2 <= 0 ? this.drawable.getIntrinsicHeight() : AndroidUtilities.m50dp(i2);
-            int m51dp = AndroidUtilities.m51dp(this.f1730oy);
+            int m51dp = AndroidUtilities.m51dp(this.f1733oy);
             this.drawable.setBounds(0, m51dp, intrinsicWidth, intrinsicHeight + m51dp);
             spannableStringBuilder.setSpan(new ImageSpan(this.drawable, 2), 0, 1, 33);
             spannableStringBuilder.setSpan(new DialogCell.FixedWidthSpan(AndroidUtilities.m50dp(2)), 1, 2, 33);

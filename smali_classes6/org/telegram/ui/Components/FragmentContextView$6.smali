@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/FragmentContextView;Landroid/content/Context;)V
     .locals 0
 
-    .line 465
+    .line 459
     iput-object p1, p0, Lorg/telegram/ui/Components/FragmentContextView$6;->this$0:Lorg/telegram/ui/Components/FragmentContextView;
 
     invoke-direct {p0, p2}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
@@ -33,7 +33,7 @@
 .method private updateJoinButtonWidth(I)V
     .locals 5
 
-    .line 501
+    .line 495
     iget-object v0, p0, Lorg/telegram/ui/Components/FragmentContextView$6;->this$0:Lorg/telegram/ui/Components/FragmentContextView;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/FragmentContextView;->access$1800(Lorg/telegram/ui/Components/FragmentContextView;)I
@@ -42,7 +42,7 @@
 
     if-eq v0, p1, :cond_0
 
-    .line 502
+    .line 496
     iget-object v0, p0, Lorg/telegram/ui/Components/FragmentContextView$6;->this$0:Lorg/telegram/ui/Components/FragmentContextView;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/FragmentContextView;->access$1900(Lorg/telegram/ui/Components/FragmentContextView;)Lorg/telegram/ui/Components/AudioPlayerAlert$ClippingTextViewSwitcher;
@@ -51,7 +51,7 @@
 
     iget-object v1, p0, Lorg/telegram/ui/Components/FragmentContextView$6;->this$0:Lorg/telegram/ui/Components/FragmentContextView;
 
-    .line 503
+    .line 497
     invoke-static {v1}, Lorg/telegram/ui/Components/FragmentContextView;->access$1900(Lorg/telegram/ui/Components/FragmentContextView;)Lorg/telegram/ui/Components/AudioPlayerAlert$ClippingTextViewSwitcher;
 
     move-result-object v1
@@ -62,7 +62,7 @@
 
     iget-object v2, p0, Lorg/telegram/ui/Components/FragmentContextView$6;->this$0:Lorg/telegram/ui/Components/FragmentContextView;
 
-    .line 504
+    .line 498
     invoke-static {v2}, Lorg/telegram/ui/Components/FragmentContextView;->access$1900(Lorg/telegram/ui/Components/FragmentContextView;)Lorg/telegram/ui/Components/AudioPlayerAlert$ClippingTextViewSwitcher;
 
     move-result-object v2
@@ -73,7 +73,7 @@
 
     iget-object v3, p0, Lorg/telegram/ui/Components/FragmentContextView$6;->this$0:Lorg/telegram/ui/Components/FragmentContextView;
 
-    .line 505
+    .line 499
     invoke-static {v3}, Lorg/telegram/ui/Components/FragmentContextView;->access$1900(Lorg/telegram/ui/Components/FragmentContextView;)Lorg/telegram/ui/Components/AudioPlayerAlert$ClippingTextViewSwitcher;
 
     move-result-object v3
@@ -94,7 +94,7 @@
 
     iget-object v4, p0, Lorg/telegram/ui/Components/FragmentContextView$6;->this$0:Lorg/telegram/ui/Components/FragmentContextView;
 
-    .line 506
+    .line 500
     invoke-static {v4}, Lorg/telegram/ui/Components/FragmentContextView;->access$1900(Lorg/telegram/ui/Components/FragmentContextView;)Lorg/telegram/ui/Components/AudioPlayerAlert$ClippingTextViewSwitcher;
 
     move-result-object v4
@@ -103,10 +103,10 @@
 
     move-result v4
 
-    .line 502
+    .line 496
     invoke-virtual {v0, v1, v2, v3, v4}, Landroid/widget/FrameLayout;->setPadding(IIII)V
 
-    .line 508
+    .line 502
     iget-object v0, p0, Lorg/telegram/ui/Components/FragmentContextView$6;->this$0:Lorg/telegram/ui/Components/FragmentContextView;
 
     invoke-static {v0, p1}, Lorg/telegram/ui/Components/FragmentContextView;->access$1802(Lorg/telegram/ui/Components/FragmentContextView;I)I
@@ -120,17 +120,17 @@
 .method public draw(Landroid/graphics/Canvas;)V
     .locals 5
 
-    .line 468
+    .line 462
     invoke-super {p0, p1}, Landroid/widget/TextView;->draw(Landroid/graphics/Canvas;)V
 
     const/4 v0, 0x1
 
-    .line 470
+    .line 464
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v0
 
-    .line 471
+    .line 465
     sget-object v1, Lorg/telegram/messenger/AndroidUtilities;->rectTmp:Landroid/graphics/RectF;
 
     int-to-float v2, v0
@@ -153,7 +153,7 @@
 
     invoke-virtual {v1, v2, v2, v3, v0}, Landroid/graphics/RectF;->set(FFFF)V
 
-    .line 472
+    .line 466
     iget-object v0, p0, Lorg/telegram/ui/Components/FragmentContextView$6;->this$0:Lorg/telegram/ui/Components/FragmentContextView;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/FragmentContextView;->access$1700(Lorg/telegram/ui/Components/FragmentContextView;)Lorg/telegram/ui/Components/voip/CellFlickerDrawable;
@@ -170,7 +170,7 @@
 
     invoke-virtual {v0, p1, v1, v2, p0}, Lorg/telegram/ui/Components/voip/CellFlickerDrawable;->draw(Landroid/graphics/Canvas;Landroid/graphics/RectF;FLandroid/view/View;)V
 
-    .line 473
+    .line 467
     iget-object p1, p0, Lorg/telegram/ui/Components/FragmentContextView$6;->this$0:Lorg/telegram/ui/Components/FragmentContextView;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/FragmentContextView;->access$1700(Lorg/telegram/ui/Components/FragmentContextView;)Lorg/telegram/ui/Components/voip/CellFlickerDrawable;
@@ -197,7 +197,7 @@
 
     if-nez p1, :cond_0
 
-    .line 474
+    .line 468
     invoke-virtual {p0}, Landroid/widget/TextView;->invalidate()V
 
     :cond_0
@@ -207,10 +207,10 @@
 .method protected onMeasure(II)V
     .locals 0
 
-    .line 487
+    .line 481
     invoke-super {p0, p1, p2}, Landroid/widget/TextView;->onMeasure(II)V
 
-    .line 488
+    .line 482
     invoke-virtual {p0}, Landroid/widget/TextView;->getMeasuredWidth()I
 
     move-result p1
@@ -223,10 +223,10 @@
 .method protected onSizeChanged(IIII)V
     .locals 0
 
-    .line 480
+    .line 474
     invoke-super {p0, p1, p2, p3, p4}, Landroid/widget/TextView;->onSizeChanged(IIII)V
 
-    .line 482
+    .line 476
     iget-object p1, p0, Lorg/telegram/ui/Components/FragmentContextView$6;->this$0:Lorg/telegram/ui/Components/FragmentContextView;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/FragmentContextView;->access$1700(Lorg/telegram/ui/Components/FragmentContextView;)Lorg/telegram/ui/Components/voip/CellFlickerDrawable;
@@ -245,17 +245,17 @@
 .method public setVisibility(I)V
     .locals 1
 
-    .line 493
+    .line 487
     invoke-super {p0, p1}, Landroid/widget/TextView;->setVisibility(I)V
 
     if-eqz p1, :cond_0
 
     const/4 p1, 0x0
 
-    .line 495
+    .line 489
     invoke-direct {p0, p1}, Lorg/telegram/ui/Components/FragmentContextView$6;->updateJoinButtonWidth(I)V
 
-    .line 496
+    .line 490
     iget-object v0, p0, Lorg/telegram/ui/Components/FragmentContextView$6;->this$0:Lorg/telegram/ui/Components/FragmentContextView;
 
     invoke-static {v0, p1}, Lorg/telegram/ui/Components/FragmentContextView;->access$1802(Lorg/telegram/ui/Components/FragmentContextView;I)I

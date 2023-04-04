@@ -7,7 +7,7 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3301R;
+import org.telegram.messenger.C3316R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.p048ui.ActionBar.Theme;
 import org.telegram.p048ui.Components.LayoutHelper;
@@ -41,23 +41,23 @@ public class ArchiveHintInnerCell extends FrameLayout {
             addView(this.imageView, LayoutHelper.createFrame(-2, -2, 49, 0, 20, 8, 0));
             ImageView imageView2 = new ImageView(context);
             this.imageView2 = imageView2;
-            imageView2.setImageResource(C3301R.C3303drawable.chats_archive_arrow);
+            imageView2.setImageResource(C3316R.C3318drawable.chats_archive_arrow);
             this.imageView2.setColorFilter(new PorterDuffColorFilter(Theme.getColor("chats_unreadCounter"), PorterDuff.Mode.MULTIPLY));
             addView(this.imageView2, LayoutHelper.createFrame(-2, -2, 49, 0, 20, 8, 0));
-            this.headerTextView.setText(LocaleController.getString("ArchiveHintHeader1", C3301R.string.ArchiveHintHeader1));
-            this.messageTextView.setText(LocaleController.getString("ArchiveHintText1", C3301R.string.ArchiveHintText1));
-            this.imageView.setImageResource(C3301R.C3303drawable.chats_archive_box);
+            this.headerTextView.setText(LocaleController.getString("ArchiveHintHeader1", C3316R.string.ArchiveHintHeader1));
+            this.messageTextView.setText(LocaleController.getString("ArchiveHintText1", C3316R.string.ArchiveHintText1));
+            this.imageView.setImageResource(C3316R.C3318drawable.chats_archive_box);
         } else if (i == 1) {
             addView(this.imageView, LayoutHelper.createFrame(-2, -2, 49, 0, 18, 0, 0));
-            this.headerTextView.setText(LocaleController.getString("ArchiveHintHeader2", C3301R.string.ArchiveHintHeader2));
-            this.messageTextView.setText(LocaleController.getString("ArchiveHintText2", C3301R.string.ArchiveHintText2));
-            this.imageView.setImageResource(C3301R.C3303drawable.chats_archive_muted);
+            this.headerTextView.setText(LocaleController.getString("ArchiveHintHeader2", C3316R.string.ArchiveHintHeader2));
+            this.messageTextView.setText(LocaleController.getString("ArchiveHintText2", C3316R.string.ArchiveHintText2));
+            this.imageView.setImageResource(C3316R.C3318drawable.chats_archive_muted);
         } else if (i != 2) {
         } else {
             addView(this.imageView, LayoutHelper.createFrame(-2, -2, 49, 0, 18, 0, 0));
-            this.headerTextView.setText(LocaleController.getString("ArchiveHintHeader3", C3301R.string.ArchiveHintHeader3));
-            this.messageTextView.setText(LocaleController.getString("ArchiveHintText3", C3301R.string.ArchiveHintText3));
-            this.imageView.setImageResource(C3301R.C3303drawable.chats_archive_pin);
+            this.headerTextView.setText(LocaleController.getString("ArchiveHintHeader3", C3316R.string.ArchiveHintHeader3));
+            this.messageTextView.setText(LocaleController.getString("ArchiveHintText3", C3316R.string.ArchiveHintText3));
+            this.imageView.setImageResource(C3316R.C3318drawable.chats_archive_pin);
         }
     }
 }

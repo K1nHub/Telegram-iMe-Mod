@@ -223,7 +223,7 @@ public final class Value extends GeneratedMessageLite<Value, Builder> implements
     /* renamed from: com.google.firestore.v1.Value$Builder */
     /* loaded from: classes3.dex */
     public static final class Builder extends GeneratedMessageLite.Builder<Value, Builder> implements MessageLiteOrBuilder {
-        /* synthetic */ Builder(C10691 c10691) {
+        /* synthetic */ Builder(C10831 c10831) {
             this();
         }
 
@@ -282,7 +282,7 @@ public final class Value extends GeneratedMessageLite<Value, Builder> implements
 
     /* renamed from: com.google.firestore.v1.Value$1 */
     /* loaded from: classes3.dex */
-    static /* synthetic */ class C10691 {
+    static /* synthetic */ class C10831 {
 
         /* renamed from: $SwitchMap$com$google$protobuf$GeneratedMessageLite$MethodToInvoke */
         static final /* synthetic */ int[] f218xa1df5c61;
@@ -323,7 +323,7 @@ public final class Value extends GeneratedMessageLite<Value, Builder> implements
 
     @Override // com.google.protobuf.GeneratedMessageLite
     protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke methodToInvoke, Object obj, Object obj2) {
-        switch (C10691.f218xa1df5c61[methodToInvoke.ordinal()]) {
+        switch (C10831.f218xa1df5c61[methodToInvoke.ordinal()]) {
             case 1:
                 return new Value();
             case 2:

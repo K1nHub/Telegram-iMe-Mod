@@ -2,14 +2,14 @@ package org.web3j.crypto;
 
 import java.math.BigInteger;
 import java.util.Arrays;
-import org.bouncycastle.asn1.p041x9.X9ECParameters;
-import org.bouncycastle.asn1.p041x9.X9IntegerConverter;
-import org.bouncycastle.crypto.p042ec.CustomNamedCurves;
+import org.bouncycastle.asn1.p042x9.X9ECParameters;
+import org.bouncycastle.asn1.p042x9.X9IntegerConverter;
+import org.bouncycastle.crypto.p043ec.CustomNamedCurves;
 import org.bouncycastle.crypto.params.ECDomainParameters;
-import org.bouncycastle.math.p043ec.ECAlgorithms;
-import org.bouncycastle.math.p043ec.ECPoint;
-import org.bouncycastle.math.p043ec.FixedPointCombMultiplier;
-import org.bouncycastle.math.p043ec.custom.sec.SecP256K1Curve;
+import org.bouncycastle.math.p044ec.ECAlgorithms;
+import org.bouncycastle.math.p044ec.ECPoint;
+import org.bouncycastle.math.p044ec.FixedPointCombMultiplier;
+import org.bouncycastle.math.p044ec.custom.sec.SecP256K1Curve;
 import org.web3j.utils.Assertions;
 import org.web3j.utils.Numeric;
 /* loaded from: classes6.dex */
@@ -66,25 +66,25 @@ public class Sign {
         if (i == -1) {
             throw new RuntimeException("Could not construct a recoverable key. Are your credentials valid?");
         }
-        return new SignatureData(new byte[]{(byte) (i + 27)}, Numeric.toBytesPadded(sign.f1835r, 32), Numeric.toBytesPadded(sign.f1836s, 32));
+        return new SignatureData(new byte[]{(byte) (i + 27)}, Numeric.toBytesPadded(sign.f1838r, 32), Numeric.toBytesPadded(sign.f1839s, 32));
     }
 
     public static BigInteger recoverFromSignature(int i, ECDSASignature eCDSASignature, byte[] bArr) {
         Assertions.verifyPrecondition(i >= 0, "recId must be positive");
-        Assertions.verifyPrecondition(eCDSASignature.f1835r.signum() >= 0, "r must be positive");
-        Assertions.verifyPrecondition(eCDSASignature.f1836s.signum() >= 0, "s must be positive");
+        Assertions.verifyPrecondition(eCDSASignature.f1838r.signum() >= 0, "r must be positive");
+        Assertions.verifyPrecondition(eCDSASignature.f1839s.signum() >= 0, "s must be positive");
         Assertions.verifyPrecondition(bArr != null, "message cannot be null");
         ECDomainParameters eCDomainParameters = CURVE;
         BigInteger n = eCDomainParameters.getN();
-        BigInteger add = eCDSASignature.f1835r.add(BigInteger.valueOf(i / 2).multiply(n));
-        if (add.compareTo(SecP256K1Curve.f1353q) >= 0) {
+        BigInteger add = eCDSASignature.f1838r.add(BigInteger.valueOf(i / 2).multiply(n));
+        if (add.compareTo(SecP256K1Curve.f1358q) >= 0) {
             return null;
         }
         ECPoint decompressKey = decompressKey(add, (i & 1) == 1);
         if (decompressKey.multiply(n).isInfinity()) {
             BigInteger mod = BigInteger.ZERO.subtract(new BigInteger(1, bArr)).mod(n);
-            BigInteger modInverse = eCDSASignature.f1835r.modInverse(n);
-            byte[] encoded = ECAlgorithms.sumOfTwoMultiplies(eCDomainParameters.getG(), modInverse.multiply(mod).mod(n), decompressKey, modInverse.multiply(eCDSASignature.f1836s).mod(n)).getEncoded(false);
+            BigInteger modInverse = eCDSASignature.f1838r.modInverse(n);
+            byte[] encoded = ECAlgorithms.sumOfTwoMultiplies(eCDomainParameters.getG(), modInverse.multiply(mod).mod(n), decompressKey, modInverse.multiply(eCDSASignature.f1839s).mod(n)).getEncoded(false);
             return new BigInteger(1, Arrays.copyOfRange(encoded, 1, encoded.length));
         }
         return null;
@@ -120,30 +120,30 @@ public class Sign {
     public static class SignatureData {
 
         /* renamed from: r */
-        private final byte[] f1838r;
+        private final byte[] f1841r;
 
         /* renamed from: s */
-        private final byte[] f1839s;
+        private final byte[] f1842s;
 
         /* renamed from: v */
-        private final byte[] f1840v;
+        private final byte[] f1843v;
 
         public SignatureData(byte[] bArr, byte[] bArr2, byte[] bArr3) {
-            this.f1840v = bArr;
-            this.f1838r = bArr2;
-            this.f1839s = bArr3;
+            this.f1843v = bArr;
+            this.f1841r = bArr2;
+            this.f1842s = bArr3;
         }
 
         public byte[] getV() {
-            return this.f1840v;
+            return this.f1843v;
         }
 
         public byte[] getR() {
-            return this.f1838r;
+            return this.f1841r;
         }
 
         public byte[] getS() {
-            return this.f1839s;
+            return this.f1842s;
         }
 
         public boolean equals(Object obj) {
@@ -154,14 +154,14 @@ public class Sign {
                 return false;
             }
             SignatureData signatureData = (SignatureData) obj;
-            if (Arrays.equals(this.f1840v, signatureData.f1840v) && Arrays.equals(this.f1838r, signatureData.f1838r)) {
-                return Arrays.equals(this.f1839s, signatureData.f1839s);
+            if (Arrays.equals(this.f1843v, signatureData.f1843v) && Arrays.equals(this.f1841r, signatureData.f1841r)) {
+                return Arrays.equals(this.f1842s, signatureData.f1842s);
             }
             return false;
         }
 
         public int hashCode() {
-            return (((Arrays.hashCode(this.f1840v) * 31) + Arrays.hashCode(this.f1838r)) * 31) + Arrays.hashCode(this.f1839s);
+            return (((Arrays.hashCode(this.f1843v) * 31) + Arrays.hashCode(this.f1841r)) * 31) + Arrays.hashCode(this.f1842s);
         }
     }
 }

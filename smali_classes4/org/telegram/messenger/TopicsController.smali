@@ -541,7 +541,7 @@
 
     check-cast v2, Ljava/lang/String;
 
-    const-string v3, "topics_load_offset_message_id_"
+    const-string/jumbo v3, "topics_load_offset_message_id_"
 
     .line 891
     invoke-virtual {v2, v3}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
@@ -554,7 +554,7 @@
     invoke-interface {v0, v2}, Landroid/content/SharedPreferences$Editor;->remove(Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
     :cond_1
-    const-string v3, "topics_load_offset_date_"
+    const-string/jumbo v3, "topics_load_offset_date_"
 
     .line 894
     invoke-virtual {v2, v3}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
@@ -567,7 +567,7 @@
     invoke-interface {v0, v2}, Landroid/content/SharedPreferences$Editor;->remove(Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
     :cond_2
-    const-string v3, "topics_load_offset_topic_id_"
+    const-string/jumbo v3, "topics_load_offset_topic_id_"
 
     .line 897
     invoke-virtual {v2, v3}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
@@ -580,7 +580,7 @@
     invoke-interface {v0, v2}, Landroid/content/SharedPreferences$Editor;->remove(Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
     :cond_3
-    const-string v3, "topics_end_reached_"
+    const-string/jumbo v3, "topics_end_reached_"
 
     .line 900
     invoke-virtual {v2, v3}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
@@ -2042,7 +2042,7 @@
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v2, "topics_end_reached_"
+    const-string/jumbo v2, "topics_end_reached_"
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -4931,7 +4931,7 @@
 
     invoke-direct {v8}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v9, "topics_end_reached_"
+    const-string/jumbo v9, "topics_end_reached_"
 
     invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 

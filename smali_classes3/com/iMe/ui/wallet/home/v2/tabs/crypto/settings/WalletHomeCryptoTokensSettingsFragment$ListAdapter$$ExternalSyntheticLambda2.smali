@@ -1,0 +1,35 @@
+.class public final synthetic Lcom/iMe/ui/wallet/home/v2/tabs/crypto/settings/WalletHomeCryptoTokensSettingsFragment$ListAdapter$$ExternalSyntheticLambda2;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Lcom/iMe/fork/utils/Callbacks$Callback1;
+
+
+# instance fields
+.field public final synthetic f$0:Lcom/iMe/fork/ui/view/MovingCheckCell;
+
+
+# direct methods
+.method public synthetic constructor <init>(Lcom/iMe/fork/ui/view/MovingCheckCell;)V
+    .locals 0
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lcom/iMe/ui/wallet/home/v2/tabs/crypto/settings/WalletHomeCryptoTokensSettingsFragment$ListAdapter$$ExternalSyntheticLambda2;->f$0:Lcom/iMe/fork/ui/view/MovingCheckCell;
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public final invoke(Ljava/lang/Object;)V
+    .locals 1
+
+    iget-object v0, p0, Lcom/iMe/ui/wallet/home/v2/tabs/crypto/settings/WalletHomeCryptoTokensSettingsFragment$ListAdapter$$ExternalSyntheticLambda2;->f$0:Lcom/iMe/fork/ui/view/MovingCheckCell;
+
+    check-cast p1, Landroid/graphics/Bitmap;
+
+    invoke-static {v0, p1}, Lcom/iMe/ui/wallet/home/v2/tabs/crypto/settings/WalletHomeCryptoTokensSettingsFragment$ListAdapter;->$r8$lambda$UhJ8JzCKj9RtHrbb-o282OdhSlw(Lcom/iMe/fork/ui/view/MovingCheckCell;Landroid/graphics/Bitmap;)V
+
+    return-void
+.end method

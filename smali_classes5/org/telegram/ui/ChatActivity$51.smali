@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/ChatActivity;[Landroid/graphics/drawable/Drawable;Landroid/graphics/Rect;)V
     .locals 0
 
-    .line 9545
+    .line 9491
     iput-object p3, p0, Lorg/telegram/ui/ChatActivity$51;->val$rect:Landroid/graphics/Rect;
 
     invoke-direct {p0, p2}, Landroid/graphics/drawable/LayerDrawable;-><init>([Landroid/graphics/drawable/Drawable;)V
@@ -35,10 +35,10 @@
 .method public draw(Landroid/graphics/Canvas;)V
     .locals 4
 
-    .line 9548
+    .line 9494
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 9549
+    .line 9495
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$51;->val$rect:Landroid/graphics/Rect;
 
     iget v1, v0, Landroid/graphics/Rect;->left:I
@@ -77,10 +77,37 @@
 
     invoke-virtual {p1, v0, v1, v3}, Landroid/graphics/Canvas;->rotate(FFF)V
 
-    .line 9550
+    .line 9496
+    iget-object v0, p0, Lorg/telegram/ui/ChatActivity$51;->val$rect:Landroid/graphics/Rect;
+
+    invoke-virtual {v0}, Landroid/graphics/Rect;->width()I
+
+    move-result v0
+
+    int-to-float v0, v0
+
+    div-float/2addr v0, v2
+
+    iget-object v1, p0, Lorg/telegram/ui/ChatActivity$51;->val$rect:Landroid/graphics/Rect;
+
+    invoke-virtual {v1}, Landroid/graphics/Rect;->width()I
+
+    move-result v1
+
+    int-to-float v1, v1
+
+    div-float/2addr v1, v2
+
+    const/high16 v2, 0x3f800000    # 1.0f
+
+    const/high16 v3, -0x40800000    # -1.0f
+
+    invoke-virtual {p1, v2, v3, v0, v1}, Landroid/graphics/Canvas;->scale(FFFF)V
+
+    .line 9497
     invoke-super {p0, p1}, Landroid/graphics/drawable/LayerDrawable;->draw(Landroid/graphics/Canvas;)V
 
-    .line 9551
+    .line 9498
     invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
 
     return-void

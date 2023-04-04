@@ -7,7 +7,7 @@
 
 
 # instance fields
-.field public final networkTypeView:Lcom/smedialink/ui/custom/NetworkTypeView;
+.field public final networkTypeView:Lcom/iMe/ui/custom/NetworkTypeView;
 
 .field public final networkTypeViewContainer:Landroid/widget/FrameLayout;
 
@@ -21,7 +21,7 @@
 
 
 # direct methods
-.method private constructor <init>(Landroid/widget/RelativeLayout;Lcom/smedialink/ui/custom/NetworkTypeView;Landroid/widget/FrameLayout;Lorg/telegram/ui/Components/CheckBoxSquare;Landroid/widget/LinearLayout;Landroidx/appcompat/widget/AppCompatTextView;)V
+.method private constructor <init>(Landroid/widget/RelativeLayout;Lcom/iMe/ui/custom/NetworkTypeView;Landroid/widget/FrameLayout;Lorg/telegram/ui/Components/CheckBoxSquare;Landroid/widget/LinearLayout;Landroidx/appcompat/widget/AppCompatTextView;)V
     .locals 0
 
     .line 45
@@ -31,7 +31,7 @@
     iput-object p1, p0, Lorg/telegram/messenger/databinding/ForkItemWalletHomeCryptoTokensSettingsHeaderBinding;->rootView:Landroid/widget/RelativeLayout;
 
     .line 47
-    iput-object p2, p0, Lorg/telegram/messenger/databinding/ForkItemWalletHomeCryptoTokensSettingsHeaderBinding;->networkTypeView:Lcom/smedialink/ui/custom/NetworkTypeView;
+    iput-object p2, p0, Lorg/telegram/messenger/databinding/ForkItemWalletHomeCryptoTokensSettingsHeaderBinding;->networkTypeView:Lcom/iMe/ui/custom/NetworkTypeView;
 
     .line 48
     iput-object p3, p0, Lorg/telegram/messenger/databinding/ForkItemWalletHomeCryptoTokensSettingsHeaderBinding;->networkTypeViewContainer:Landroid/widget/FrameLayout;
@@ -61,7 +61,7 @@
 
     move-object v4, v1
 
-    check-cast v4, Lcom/smedialink/ui/custom/NetworkTypeView;
+    check-cast v4, Lcom/iMe/ui/custom/NetworkTypeView;
 
     if-eqz v4, :cond_0
 
@@ -130,7 +130,7 @@
 
     move-object v2, v0
 
-    invoke-direct/range {v2 .. v8}, Lorg/telegram/messenger/databinding/ForkItemWalletHomeCryptoTokensSettingsHeaderBinding;-><init>(Landroid/widget/RelativeLayout;Lcom/smedialink/ui/custom/NetworkTypeView;Landroid/widget/FrameLayout;Lorg/telegram/ui/Components/CheckBoxSquare;Landroid/widget/LinearLayout;Landroidx/appcompat/widget/AppCompatTextView;)V
+    invoke-direct/range {v2 .. v8}, Lorg/telegram/messenger/databinding/ForkItemWalletHomeCryptoTokensSettingsHeaderBinding;-><init>(Landroid/widget/RelativeLayout;Lcom/iMe/ui/custom/NetworkTypeView;Landroid/widget/FrameLayout;Lorg/telegram/ui/Components/CheckBoxSquare;Landroid/widget/LinearLayout;Landroidx/appcompat/widget/AppCompatTextView;)V
 
     return-object v0
 

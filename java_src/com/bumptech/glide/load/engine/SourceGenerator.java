@@ -5,9 +5,12 @@ import com.bumptech.glide.load.DataSource;
 import com.bumptech.glide.load.Encoder;
 import com.bumptech.glide.load.Key;
 import com.bumptech.glide.load.data.DataFetcher;
+import com.bumptech.glide.load.data.DataRewinder;
 import com.bumptech.glide.load.engine.DataFetcherGenerator;
+import com.bumptech.glide.load.engine.cache.DiskCache;
 import com.bumptech.glide.load.model.ModelLoader;
 import com.bumptech.glide.util.LogTime;
+import java.io.IOException;
 import java.util.Collections;
 import java.util.List;
 /* JADX INFO: Access modifiers changed from: package-private */
@@ -16,12 +19,12 @@ public class SourceGenerator implements DataFetcherGenerator, DataFetcherGenerat
 
     /* renamed from: cb */
     private final DataFetcherGenerator.FetcherReadyCallback f87cb;
-    private Object dataToCache;
+    private volatile Object dataToCache;
     private final DecodeHelper<?> helper;
     private volatile ModelLoader.LoadData<?> loadData;
-    private int loadDataListIndex;
-    private DataCacheKey originalKey;
-    private DataCacheGenerator sourceCacheGenerator;
+    private volatile int loadDataListIndex;
+    private volatile DataCacheKey originalKey;
+    private volatile DataCacheGenerator sourceCacheGenerator;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public SourceGenerator(DecodeHelper<?> decodeHelper, DataFetcherGenerator.FetcherReadyCallback fetcherReadyCallback) {
@@ -31,13 +34,20 @@ public class SourceGenerator implements DataFetcherGenerator, DataFetcherGenerat
 
     @Override // com.bumptech.glide.load.engine.DataFetcherGenerator
     public boolean startNext() {
-        Object obj = this.dataToCache;
-        if (obj != null) {
+        if (this.dataToCache != null) {
+            Object obj = this.dataToCache;
             this.dataToCache = null;
-            cacheData(obj);
+            try {
+                if (!cacheData(obj)) {
+                    return true;
+                }
+            } catch (IOException e) {
+                if (Log.isLoggable("SourceGenerator", 3)) {
+                    Log.d("SourceGenerator", "Failed to properly rewind or write data to cache", e);
+                }
+            }
         }
-        DataCacheGenerator dataCacheGenerator = this.sourceCacheGenerator;
-        if (dataCacheGenerator == null || !dataCacheGenerator.startNext()) {
+        if (this.sourceCacheGenerator == null || !this.sourceCacheGenerator.startNext()) {
             this.sourceCacheGenerator = null;
             this.loadData = null;
             boolean z = false;
@@ -83,21 +93,42 @@ public class SourceGenerator implements DataFetcherGenerator, DataFetcherGenerat
         return this.loadDataListIndex < this.helper.getLoadData().size();
     }
 
-    private void cacheData(Object obj) {
+    private boolean cacheData(Object obj) throws IOException {
         long logTime = LogTime.getLogTime();
+        boolean z = true;
         try {
-            Encoder<X> sourceEncoder = this.helper.getSourceEncoder(obj);
-            DataCacheWriter dataCacheWriter = new DataCacheWriter(sourceEncoder, obj, this.helper.getOptions());
-            this.originalKey = new DataCacheKey(this.loadData.sourceKey, this.helper.getSignature());
-            this.helper.getDiskCache().put(this.originalKey, dataCacheWriter);
+            DataRewinder<T> rewinder = this.helper.getRewinder(obj);
+            Object rewindAndGet = rewinder.rewindAndGet();
+            Encoder<X> sourceEncoder = this.helper.getSourceEncoder(rewindAndGet);
+            DataCacheWriter dataCacheWriter = new DataCacheWriter(sourceEncoder, rewindAndGet, this.helper.getOptions());
+            DataCacheKey dataCacheKey = new DataCacheKey(this.loadData.sourceKey, this.helper.getSignature());
+            DiskCache diskCache = this.helper.getDiskCache();
+            diskCache.put(dataCacheKey, dataCacheWriter);
             if (Log.isLoggable("SourceGenerator", 2)) {
-                Log.v("SourceGenerator", "Finished encoding source to cache, key: " + this.originalKey + ", data: " + obj + ", encoder: " + sourceEncoder + ", duration: " + LogTime.getElapsedMillis(logTime));
+                Log.v("SourceGenerator", "Finished encoding source to cache, key: " + dataCacheKey + ", data: " + obj + ", encoder: " + sourceEncoder + ", duration: " + LogTime.getElapsedMillis(logTime));
             }
-            this.loadData.fetcher.cleanup();
-            this.sourceCacheGenerator = new DataCacheGenerator(Collections.singletonList(this.loadData.sourceKey), this.helper, this);
-        } catch (Throwable th) {
-            this.loadData.fetcher.cleanup();
-            throw th;
+            if (diskCache.get(dataCacheKey) != null) {
+                this.originalKey = dataCacheKey;
+                this.sourceCacheGenerator = new DataCacheGenerator(Collections.singletonList(this.loadData.sourceKey), this.helper, this);
+                this.loadData.fetcher.cleanup();
+                return true;
+            }
+            if (Log.isLoggable("SourceGenerator", 3)) {
+                Log.d("SourceGenerator", "Attempt to write: " + this.originalKey + ", data: " + obj + " to the disk cache failed, maybe the disk cache is disabled? Trying to decode the data directly...");
+            }
+            try {
+                this.f87cb.onDataFetcherReady(this.loadData.sourceKey, rewinder.rewindAndGet(), this.loadData.fetcher, this.loadData.fetcher.getDataSource(), this.loadData.sourceKey);
+                return false;
+            } catch (Throwable th) {
+                th = th;
+                if (!z) {
+                    this.loadData.fetcher.cleanup();
+                }
+                throw th;
+            }
+        } catch (Throwable th2) {
+            th = th2;
+            z = false;
         }
     }
 

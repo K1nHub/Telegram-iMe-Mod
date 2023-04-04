@@ -27,7 +27,7 @@
     .locals 2
 
     .line 39
-    const-class p1, Lcom/smedialink/ui/debug/DebugPresenter;
+    const-class p1, Lcom/iMe/ui/debug/DebugPresenter;
 
     const-string v0, "debugPresenter"
 
@@ -55,9 +55,9 @@
     .locals 0
 
     .line 44
-    check-cast p2, Lcom/smedialink/ui/debug/DebugPresenter;
+    check-cast p2, Lcom/iMe/ui/debug/DebugPresenter;
 
-    iput-object p2, p1, Lorg/telegram/ui/ProfileActivity;->debugPresenter:Lcom/smedialink/ui/debug/DebugPresenter;
+    iput-object p2, p1, Lorg/telegram/ui/ProfileActivity;->debugPresenter:Lcom/iMe/ui/debug/DebugPresenter;
 
     return-void
 .end method
@@ -88,7 +88,7 @@
     .end annotation
 
     .line 49
-    invoke-virtual {p1}, Lorg/telegram/ui/ProfileActivity;->provideDebugPresenter()Lcom/smedialink/ui/debug/DebugPresenter;
+    invoke-virtual {p1}, Lorg/telegram/ui/ProfileActivity;->provideDebugPresenter()Lcom/iMe/ui/debug/DebugPresenter;
 
     move-result-object p1
 

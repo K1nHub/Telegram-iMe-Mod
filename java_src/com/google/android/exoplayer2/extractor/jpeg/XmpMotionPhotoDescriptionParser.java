@@ -1,6 +1,6 @@
 package com.google.android.exoplayer2.extractor.jpeg;
 
-import com.google.android.exoplayer2.C0468C;
+import com.google.android.exoplayer2.C0482C;
 import com.google.android.exoplayer2.ParserException;
 import com.google.android.exoplayer2.extractor.jpeg.MotionPhotoDescription;
 import com.google.android.exoplayer2.util.Log;
@@ -35,7 +35,7 @@ final class XmpMotionPhotoDescriptionParser {
         if (!XmlPullParserUtil.isStartTag(newPullParser, "x:xmpmeta")) {
             throw ParserException.createForMalformedContainer("Couldn't find xmp metadata", null);
         }
-        long j = C0468C.TIME_UNSET;
+        long j = C0482C.TIME_UNSET;
         ImmutableList<MotionPhotoDescription.ContainerItem> m754of = ImmutableList.m754of();
         do {
             newPullParser.next();
@@ -72,10 +72,10 @@ final class XmpMotionPhotoDescriptionParser {
             String attributeValue = XmlPullParserUtil.getAttributeValue(xmlPullParser, str);
             if (attributeValue != null) {
                 long parseLong = Long.parseLong(attributeValue);
-                return parseLong == -1 ? C0468C.TIME_UNSET : parseLong;
+                return parseLong == -1 ? C0482C.TIME_UNSET : parseLong;
             }
         }
-        return C0468C.TIME_UNSET;
+        return C0482C.TIME_UNSET;
     }
 
     private static ImmutableList<MotionPhotoDescription.ContainerItem> parseMicroVideoOffsetFromDescription(XmlPullParser xmlPullParser) {

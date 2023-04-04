@@ -15,7 +15,7 @@
 
 
 # virtual methods
-.method public abstract getType(Lcom/bumptech/glide/load/ImageHeaderParser;)Lcom/bumptech/glide/load/ImageHeaderParser$ImageType;
+.method public abstract getTypeAndRewind(Lcom/bumptech/glide/load/ImageHeaderParser;)Lcom/bumptech/glide/load/ImageHeaderParser$ImageType;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;

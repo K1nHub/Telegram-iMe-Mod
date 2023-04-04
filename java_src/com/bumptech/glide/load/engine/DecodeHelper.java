@@ -8,6 +8,7 @@ import com.bumptech.glide.load.Key;
 import com.bumptech.glide.load.Options;
 import com.bumptech.glide.load.ResourceEncoder;
 import com.bumptech.glide.load.Transformation;
+import com.bumptech.glide.load.data.DataRewinder;
 import com.bumptech.glide.load.engine.DecodeJob;
 import com.bumptech.glide.load.engine.bitmap_recycle.ArrayPool;
 import com.bumptech.glide.load.engine.cache.DiskCache;
@@ -84,6 +85,11 @@ public final class DecodeHelper<Transcode> {
     /* JADX INFO: Access modifiers changed from: package-private */
     public DiskCacheStrategy getDiskCacheStrategy() {
         return this.diskCacheStrategy;
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public <T> DataRewinder<T> getRewinder(T t) {
+        return this.glideContext.getRegistry().getRewinder(t);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */

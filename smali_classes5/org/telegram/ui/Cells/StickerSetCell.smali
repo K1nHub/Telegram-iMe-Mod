@@ -14,7 +14,7 @@
 
 .field private needDivider:Z
 
-.field private onAddButtonClick:Lorg/fork/utils/Callbacks$Callback;
+.field private onAddButtonClick:Lcom/iMe/fork/utils/Callbacks$Callback;
 
 .field private final option:I
 
@@ -142,7 +142,7 @@
     const/4 v4, 0x0
 
     .line 66
-    iput-object v4, v0, Lorg/telegram/ui/Cells/StickerSetCell;->onAddButtonClick:Lorg/fork/utils/Callbacks$Callback;
+    iput-object v4, v0, Lorg/telegram/ui/Cells/StickerSetCell;->onAddButtonClick:Lcom/iMe/fork/utils/Callbacks$Callback;
 
     .line 97
     new-instance v5, Landroid/graphics/Rect;
@@ -1454,11 +1454,11 @@
     .locals 1
 
     .line 232
-    iget-object v0, p0, Lorg/telegram/ui/Cells/StickerSetCell;->onAddButtonClick:Lorg/fork/utils/Callbacks$Callback;
+    iget-object v0, p0, Lorg/telegram/ui/Cells/StickerSetCell;->onAddButtonClick:Lcom/iMe/fork/utils/Callbacks$Callback;
 
     if-eqz v0, :cond_0
 
-    invoke-interface {v0}, Lorg/fork/utils/Callbacks$Callback;->invoke()V
+    invoke-interface {v0}, Lcom/iMe/fork/utils/Callbacks$Callback;->invoke()V
 
     :cond_0
     return-void
@@ -1976,11 +1976,11 @@
     return-void
 .end method
 
-.method public setCustomButtonAction(Lorg/fork/utils/Callbacks$Callback;)V
+.method public setCustomButtonAction(Lcom/iMe/fork/utils/Callbacks$Callback;)V
     .locals 0
 
     .line 76
-    iput-object p1, p0, Lorg/telegram/ui/Cells/StickerSetCell;->onAddButtonClick:Lorg/fork/utils/Callbacks$Callback;
+    iput-object p1, p0, Lorg/telegram/ui/Cells/StickerSetCell;->onAddButtonClick:Lcom/iMe/fork/utils/Callbacks$Callback;
 
     return-void
 .end method

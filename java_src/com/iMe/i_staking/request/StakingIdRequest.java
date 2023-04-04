@@ -1,4 +1,6 @@
 package com.iMe.i_staking.request;
+
+import com.iMe.bots.data.model.database.BotsDbModel$$ExternalSyntheticBackport0;
 /* compiled from: StakingIdRequest.kt */
 /* loaded from: classes3.dex */
 public final class StakingIdRequest {
@@ -27,7 +29,7 @@ public final class StakingIdRequest {
     }
 
     public int hashCode() {
-        return StakingApprovalPrepareRequest$$ExternalSyntheticBackport0.m716m(this.stakingId);
+        return BotsDbModel$$ExternalSyntheticBackport0.m716m(this.stakingId);
     }
 
     public String toString() {

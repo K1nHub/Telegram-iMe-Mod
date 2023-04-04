@@ -3852,11 +3852,11 @@
 
     if-eqz v0, :cond_0
 
-    invoke-static {p0}, Lorg/fork/controller/TemplatesController;->getInstance(I)Lorg/fork/controller/TemplatesController;
+    invoke-static {p0}, Lcom/iMe/fork/controller/TemplatesController;->getInstance(I)Lcom/iMe/fork/controller/TemplatesController;
 
     move-result-object p0
 
-    invoke-virtual {p0}, Lorg/fork/controller/TemplatesController;->getTemplatesChannelId()J
+    invoke-virtual {p0}, Lcom/iMe/fork/controller/TemplatesController;->getTemplatesChannelId()J
 
     move-result-wide v0
 

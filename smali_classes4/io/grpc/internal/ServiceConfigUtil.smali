@@ -811,7 +811,7 @@
 
     move-result v0
 
-    const-string v1, "tokenRatio"
+    const-string/jumbo v1, "tokenRatio"
 
     .line 103
     invoke-static {p0, v1}, Lio/grpc/internal/JsonUtil;->getNumber(Ljava/util/Map;Ljava/lang/String;)Ljava/lang/Double;
@@ -855,7 +855,7 @@
     move v3, v4
 
     :goto_1
-    const-string v1, "tokenRatio should be greater than zero"
+    const-string/jumbo v1, "tokenRatio should be greater than zero"
 
     .line 105
     invoke-static {v3, v1}, Lcom/google/common/base/Preconditions;->checkState(ZLjava/lang/Object;)V

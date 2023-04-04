@@ -2,38 +2,36 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Lcom/iMe/fork/utils/Callbacks$Callback2;
 
 
 # instance fields
 .field public final synthetic f$0:Lorg/telegram/ui/FilterCreateActivity;
 
-.field public final synthetic f$1:Lorg/telegram/ui/ActionBar/AlertDialog;
-
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/FilterCreateActivity;Lorg/telegram/ui/ActionBar/AlertDialog;)V
+.method public synthetic constructor <init>(Lorg/telegram/ui/FilterCreateActivity;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/ui/FilterCreateActivity$$ExternalSyntheticLambda6;->f$0:Lorg/telegram/ui/FilterCreateActivity;
 
-    iput-object p2, p0, Lorg/telegram/ui/FilterCreateActivity$$ExternalSyntheticLambda6;->f$1:Lorg/telegram/ui/ActionBar/AlertDialog;
-
     return-void
 .end method
 
 
 # virtual methods
-.method public final run()V
-    .locals 2
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)V
+    .locals 1
 
     iget-object v0, p0, Lorg/telegram/ui/FilterCreateActivity$$ExternalSyntheticLambda6;->f$0:Lorg/telegram/ui/FilterCreateActivity;
 
-    iget-object v1, p0, Lorg/telegram/ui/FilterCreateActivity$$ExternalSyntheticLambda6;->f$1:Lorg/telegram/ui/ActionBar/AlertDialog;
+    check-cast p1, Lcom/iMe/storage/domain/model/filters/FilterIcon;
 
-    invoke-static {v0, v1}, Lorg/telegram/ui/FilterCreateActivity;->$r8$lambda$Gyja80LQ3qPTal-Bc39Tw74uj5Q(Lorg/telegram/ui/FilterCreateActivity;Lorg/telegram/ui/ActionBar/AlertDialog;)V
+    check-cast p2, Lcom/iMe/storage/data/repository/topics/Topic;
+
+    invoke-static {v0, p1, p2}, Lorg/telegram/ui/FilterCreateActivity;->$r8$lambda$wTwFg9kXM1JczH3_j3gZ6zAvoVo(Lorg/telegram/ui/FilterCreateActivity;Lcom/iMe/storage/domain/model/filters/FilterIcon;Lcom/iMe/storage/data/repository/topics/Topic;)V
 
     return-void
 .end method

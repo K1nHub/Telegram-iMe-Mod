@@ -49,7 +49,7 @@
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/List<",
-            "Lcom/smedialink/storage/domain/model/templates/TemplateModel;",
+            "Lcom/iMe/storage/domain/model/templates/TemplateModel;",
             ">;"
         }
     .end annotation
@@ -227,11 +227,11 @@
     .line 308
     sget v0, Lorg/telegram/messenger/UserConfig;->selectedAccount:I
 
-    invoke-static {v0}, Lorg/fork/controller/TemplatesController;->getInstance(I)Lorg/fork/controller/TemplatesController;
+    invoke-static {v0}, Lcom/iMe/fork/controller/TemplatesController;->getInstance(I)Lcom/iMe/fork/controller/TemplatesController;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lorg/fork/controller/TemplatesController;->getTemplatesList()Ljava/util/List;
+    invoke-virtual {v0}, Lcom/iMe/fork/controller/TemplatesController;->getTemplatesList()Ljava/util/List;
 
     move-result-object v0
 
@@ -259,12 +259,12 @@
     .line 400
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
-    instance-of v0, p1, Lorg/fork/ui/view/TemplatesHeaderCell;
+    instance-of v0, p1, Lcom/iMe/fork/ui/view/TemplatesHeaderCell;
 
     if-eqz v0, :cond_0
 
     .line 401
-    check-cast p1, Lorg/fork/ui/view/TemplatesHeaderCell;
+    check-cast p1, Lcom/iMe/fork/ui/view/TemplatesHeaderCell;
 
     .line 402
     iget-object p2, p0, Lorg/telegram/ui/Components/BotCommandsMenuView$BotCommandsAdapter;->templates:Ljava/util/List;
@@ -275,18 +275,18 @@
 
     iget-object v0, p0, Lorg/telegram/ui/Components/BotCommandsMenuView$BotCommandsAdapter;->templatesDelegate:Lorg/telegram/ui/Components/BotCommandsMenuView$BotCommandsAdapter$TemplatesDelegate;
 
-    invoke-virtual {p1, p2, v0}, Lorg/fork/ui/view/TemplatesHeaderCell;->bind(ILorg/telegram/ui/Components/BotCommandsMenuView$BotCommandsAdapter$TemplatesDelegate;)V
+    invoke-virtual {p1, p2, v0}, Lcom/iMe/fork/ui/view/TemplatesHeaderCell;->bind(ILorg/telegram/ui/Components/BotCommandsMenuView$BotCommandsAdapter$TemplatesDelegate;)V
 
     goto :goto_0
 
     .line 403
     :cond_0
-    instance-of v0, p1, Lorg/fork/ui/view/TemplateCell;
+    instance-of v0, p1, Lcom/iMe/fork/ui/view/TemplateCell;
 
     if-eqz v0, :cond_1
 
     .line 404
-    check-cast p1, Lorg/fork/ui/view/TemplateCell;
+    check-cast p1, Lcom/iMe/fork/ui/view/TemplateCell;
 
     .line 405
     iget-object v0, p0, Lorg/telegram/ui/Components/BotCommandsMenuView$BotCommandsAdapter;->templates:Ljava/util/List;
@@ -299,12 +299,12 @@
 
     move-result-object p2
 
-    check-cast p2, Lcom/smedialink/storage/domain/model/templates/TemplateModel;
+    check-cast p2, Lcom/iMe/storage/domain/model/templates/TemplateModel;
 
     .line 406
     iget-object v0, p0, Lorg/telegram/ui/Components/BotCommandsMenuView$BotCommandsAdapter;->templatesDelegate:Lorg/telegram/ui/Components/BotCommandsMenuView$BotCommandsAdapter$TemplatesDelegate;
 
-    invoke-virtual {p1, p2, v0}, Lorg/fork/ui/view/TemplateCell;->bind(Lcom/smedialink/storage/domain/model/templates/TemplateModel;Lorg/telegram/ui/Components/BotCommandsMenuView$BotCommandsAdapter$TemplatesDelegate;)V
+    invoke-virtual {p1, p2, v0}, Lcom/iMe/fork/ui/view/TemplateCell;->bind(Lcom/iMe/storage/domain/model/templates/TemplateModel;Lorg/telegram/ui/Components/BotCommandsMenuView$BotCommandsAdapter$TemplatesDelegate;)V
 
     :cond_1
     :goto_0
@@ -364,13 +364,13 @@
     if-ne p2, v0, :cond_0
 
     .line 385
-    new-instance p2, Lorg/fork/ui/view/TemplatesHeaderCell;
+    new-instance p2, Lcom/iMe/fork/ui/view/TemplatesHeaderCell;
 
     invoke-virtual {p1}, Landroid/view/ViewGroup;->getContext()Landroid/content/Context;
 
     move-result-object p1
 
-    invoke-direct {p2, p1}, Lorg/fork/ui/view/TemplatesHeaderCell;-><init>(Landroid/content/Context;)V
+    invoke-direct {p2, p1}, Lcom/iMe/fork/ui/view/TemplatesHeaderCell;-><init>(Landroid/content/Context;)V
 
     goto :goto_0
 
@@ -380,13 +380,13 @@
     if-ne p2, v0, :cond_1
 
     .line 387
-    new-instance p2, Lorg/fork/ui/view/TemplateCell;
+    new-instance p2, Lcom/iMe/fork/ui/view/TemplateCell;
 
     invoke-virtual {p1}, Landroid/view/ViewGroup;->getContext()Landroid/content/Context;
 
     move-result-object p1
 
-    invoke-direct {p2, p1}, Lorg/fork/ui/view/TemplateCell;-><init>(Landroid/content/Context;)V
+    invoke-direct {p2, p1}, Lcom/iMe/fork/ui/view/TemplateCell;-><init>(Landroid/content/Context;)V
 
     goto :goto_0
 

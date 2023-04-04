@@ -2,40 +2,34 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lorg/fork/utils/Callbacks$Callback;
+.implements Lkotlin/jvm/functions/Function0;
 
 
-# static fields
-.field public static final synthetic INSTANCE:Lorg/telegram/ui/ProfileActivity$$ExternalSyntheticLambda56;
+# instance fields
+.field public final synthetic f$0:Lorg/telegram/ui/ProfileActivity;
 
 
 # direct methods
-.method static synthetic constructor <clinit>()V
-    .locals 1
-
-    new-instance v0, Lorg/telegram/ui/ProfileActivity$$ExternalSyntheticLambda56;
-
-    invoke-direct {v0}, Lorg/telegram/ui/ProfileActivity$$ExternalSyntheticLambda56;-><init>()V
-
-    sput-object v0, Lorg/telegram/ui/ProfileActivity$$ExternalSyntheticLambda56;->INSTANCE:Lorg/telegram/ui/ProfileActivity$$ExternalSyntheticLambda56;
-
-    return-void
-.end method
-
-.method private synthetic constructor <init>()V
+.method public synthetic constructor <init>(Lorg/telegram/ui/ProfileActivity;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lorg/telegram/ui/ProfileActivity$$ExternalSyntheticLambda56;->f$0:Lorg/telegram/ui/ProfileActivity;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke()V
-    .locals 0
+.method public final invoke()Ljava/lang/Object;
+    .locals 1
 
-    invoke-static {}, Lorg/telegram/ui/ProfileActivity;->$r8$lambda$Tolv8TRZ_SvzPfK5hWxxxvqefhI()V
+    iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$$ExternalSyntheticLambda56;->f$0:Lorg/telegram/ui/ProfileActivity;
 
-    return-void
+    invoke-static {v0}, Lorg/telegram/ui/ProfileActivity;->$r8$lambda$m5ThFS9NZm07vr1Z6kw3cJzFeKo(Lorg/telegram/ui/ProfileActivity;)Lorg/koin/core/parameter/ParametersHolder;
+
+    move-result-object v0
+
+    return-object v0
 .end method

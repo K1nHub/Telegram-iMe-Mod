@@ -19,13 +19,13 @@ import androidx.core.graphics.ColorUtils;
 import androidx.core.math.MathUtils;
 import androidx.interpolator.view.animation.FastOutSlowInInterpolator;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
+import com.iMe.fork.utils.Callbacks$Callback;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Objects;
-import org.fork.utils.Callbacks$Callback;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.BuildVars;
-import org.telegram.messenger.C3301R;
+import org.telegram.messenger.C3316R;
 import org.telegram.messenger.DialogObject;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.MessageObject;
@@ -52,10 +52,10 @@ public class TranscribeButton {
     private static ArrayList<Integer> videoTranscriptionsOpen;
 
     /* renamed from: a */
-    private float f1821a;
+    private float f1824a;
 
     /* renamed from: b */
-    private float f1822b;
+    private float f1825b;
     private float backgroundBack;
     private int backgroundColor;
     private Paint backgroundPaint;
@@ -111,23 +111,23 @@ public class TranscribeButton {
         Rect rect = new Rect(this.bounds);
         this.pressBounds = rect;
         rect.inset(AndroidUtilities.m50dp(8), AndroidUtilities.m50dp(8));
-        RLottieDrawable rLottieDrawable = new RLottieDrawable(C3301R.C3306raw.transcribe_out, "transcribe_out", AndroidUtilities.m50dp(26), AndroidUtilities.m50dp(26));
+        RLottieDrawable rLottieDrawable = new RLottieDrawable(C3316R.C3321raw.transcribe_out, "transcribe_out", AndroidUtilities.m50dp(26), AndroidUtilities.m50dp(26));
         this.outIconDrawable = rLottieDrawable;
         rLottieDrawable.setCurrentFrame(0);
         this.outIconDrawable.setCallback(chatMessageCell);
-        this.outIconDrawable.setOnFinishCallback(new Runnable() { // from class: org.telegram.ui.Components.TranscribeButton$$ExternalSyntheticLambda6
+        this.outIconDrawable.setOnFinishCallback(new Runnable() { // from class: org.telegram.ui.Components.TranscribeButton$$ExternalSyntheticLambda7
             @Override // java.lang.Runnable
             public final void run() {
                 TranscribeButton.this.lambda$new$0();
             }
         }, 19);
         this.outIconDrawable.setAllowDecodeSingleFrame(true);
-        RLottieDrawable rLottieDrawable2 = new RLottieDrawable(C3301R.C3306raw.transcribe_in, "transcribe_in", AndroidUtilities.m50dp(26), AndroidUtilities.m50dp(26));
+        RLottieDrawable rLottieDrawable2 = new RLottieDrawable(C3316R.C3321raw.transcribe_in, "transcribe_in", AndroidUtilities.m50dp(26), AndroidUtilities.m50dp(26));
         this.inIconDrawable = rLottieDrawable2;
         rLottieDrawable2.setCurrentFrame(0);
         this.inIconDrawable.setCallback(chatMessageCell);
         this.inIconDrawable.setMasterParent(chatMessageCell);
-        this.inIconDrawable.setOnFinishCallback(new Runnable() { // from class: org.telegram.ui.Components.TranscribeButton$$ExternalSyntheticLambda5
+        this.inIconDrawable.setOnFinishCallback(new Runnable() { // from class: org.telegram.ui.Components.TranscribeButton$$ExternalSyntheticLambda6
             @Override // java.lang.Runnable
             public final void run() {
                 TranscribeButton.this.lambda$new$1();
@@ -243,8 +243,8 @@ public class TranscribeButton {
     public void onTap(boolean z) {
         boolean z2;
         if (this.isForkTranscribe && z) {
-            this.parent.getDelegate().runWithActivationCheck(new Callbacks$Callback() { // from class: org.telegram.ui.Components.TranscribeButton$$ExternalSyntheticLambda7
-                @Override // org.fork.utils.Callbacks$Callback
+            this.parent.getDelegate().runWithActivationCheck(new Callbacks$Callback() { // from class: org.telegram.ui.Components.TranscribeButton$$ExternalSyntheticLambda0
+                @Override // com.iMe.fork.utils.Callbacks$Callback
                 public final void invoke() {
                     TranscribeButton.this.lambda$onTap$2();
                 }
@@ -345,8 +345,8 @@ public class TranscribeButton {
             float f = i3 / 2.0f;
             float f2 = i5;
             float f3 = i4 / 2.0f;
-            this.f1821a = (float) ((Math.atan((f - f2) / f3) * 180.0d) / 3.141592653589793d);
-            this.f1822b = (float) ((Math.atan(f / (f3 - f2)) * 180.0d) / 3.141592653589793d);
+            this.f1824a = (float) ((Math.atan((f - f2) / f3) * 180.0d) / 3.141592653589793d);
+            this.f1825b = (float) ((Math.atan(f / (f3 - f2)) * 180.0d) / 3.141592653589793d);
         }
         this.bounds.set(i, i2, i + i3, i2 + i4);
         int min = Math.min(Math.min(i3, i4) / 2, i5);
@@ -420,45 +420,45 @@ public class TranscribeButton {
             int centerX = this.bounds.centerX();
             Rect rect = this.bounds;
             int i2 = rect.top;
-            addLine(path4, centerX, i2, rect.right - this.radius, i2, f8, f9, BitmapDescriptorFactory.HUE_RED, this.f1821a);
+            addLine(path4, centerX, i2, rect.right - this.radius, i2, f8, f9, BitmapDescriptorFactory.HUE_RED, this.f1824a);
             Path path5 = this.progressClipPath;
             Rect rect2 = this.bounds;
-            addCorner(path5, rect2.right, rect2.top, this.diameter, 1, f8, f9, this.f1821a, this.f1822b);
+            addCorner(path5, rect2.right, rect2.top, this.diameter, 1, f8, f9, this.f1824a, this.f1825b);
             Path path6 = this.progressClipPath;
             Rect rect3 = this.bounds;
             int i3 = rect3.right;
             int i4 = rect3.top;
             int i5 = this.radius;
-            float f10 = this.f1822b;
+            float f10 = this.f1825b;
             addLine(path6, i3, i4 + i5, i3, rect3.bottom - i5, f8, f9, f10, 180.0f - f10);
             Path path7 = this.progressClipPath;
             Rect rect4 = this.bounds;
-            addCorner(path7, rect4.right, rect4.bottom, this.diameter, 2, f8, f9, 180.0f - this.f1822b, 180.0f - this.f1821a);
+            addCorner(path7, rect4.right, rect4.bottom, this.diameter, 2, f8, f9, 180.0f - this.f1825b, 180.0f - this.f1824a);
             Path path8 = this.progressClipPath;
             Rect rect5 = this.bounds;
             int i6 = rect5.right;
             int i7 = this.radius;
             int i8 = rect5.bottom;
             int i9 = rect5.left + i7;
-            float f11 = this.f1821a;
+            float f11 = this.f1824a;
             addLine(path8, i6 - i7, i8, i9, i8, f8, f9, 180.0f - f11, f11 + 180.0f);
             Path path9 = this.progressClipPath;
             Rect rect6 = this.bounds;
-            addCorner(path9, rect6.left, rect6.bottom, this.diameter, 3, f8, f9, this.f1821a + 180.0f, this.f1822b + 180.0f);
+            addCorner(path9, rect6.left, rect6.bottom, this.diameter, 3, f8, f9, this.f1824a + 180.0f, this.f1825b + 180.0f);
             Path path10 = this.progressClipPath;
             Rect rect7 = this.bounds;
             int i10 = rect7.left;
             int i11 = rect7.bottom;
             int i12 = this.radius;
             int i13 = rect7.top + i12;
-            float f12 = this.f1822b;
+            float f12 = this.f1825b;
             addLine(path10, i10, i11 - i12, i10, i13, f8, f9, f12 + 180.0f, 360.0f - f12);
             Path path11 = this.progressClipPath;
             Rect rect8 = this.bounds;
-            addCorner(path11, rect8.left, rect8.top, this.diameter, 4, f8, f9, 360.0f - this.f1822b, 360.0f - this.f1821a);
+            addCorner(path11, rect8.left, rect8.top, this.diameter, 4, f8, f9, 360.0f - this.f1825b, 360.0f - this.f1824a);
             Path path12 = this.progressClipPath;
             Rect rect9 = this.bounds;
-            addLine(path12, rect9.left + this.radius, rect9.top, rect9.centerX(), this.bounds.top, f8, f9, 360.0f - this.f1821a, 360.0f);
+            addLine(path12, rect9.left + this.radius, rect9.top, rect9.centerX(), this.bounds.top, f8, f9, 360.0f - this.f1824a, 360.0f);
             this.strokePaint.setStrokeWidth(AndroidUtilities.m51dp(1.5f));
             int alpha2 = this.strokePaint.getAlpha();
             this.strokePaint.setAlpha((int) (alpha2 * f));
@@ -626,7 +626,7 @@ public class TranscribeButton {
         public LoadingPointsDrawable(TextPaint textPaint) {
             this.paint = textPaint;
             float textSize = textPaint.getTextSize() * 0.89f;
-            RLottieDrawable rLottieDrawable = new RLottieDrawable(this, C3301R.C3306raw.dots_loading, "dots_loading", (int) textSize, (int) (textSize * 1.25f)) { // from class: org.telegram.ui.Components.TranscribeButton.LoadingPointsDrawable.1
+            RLottieDrawable rLottieDrawable = new RLottieDrawable(this, C3316R.C3321raw.dots_loading, "dots_loading", (int) textSize, (int) (textSize * 1.25f)) { // from class: org.telegram.ui.Components.TranscribeButton.LoadingPointsDrawable.1
                 /* JADX INFO: Access modifiers changed from: protected */
                 @Override // org.telegram.p048ui.Components.RLottieDrawable
                 public boolean hasParentView() {
@@ -703,13 +703,13 @@ public class TranscribeButton {
         TLRPC$InputPeer inputPeer = MessagesController.getInstance(i).getInputPeer(messageObject.messageOwner.peer_id);
         final long peerDialogId = DialogObject.getPeerDialogId(inputPeer);
         TLRPC$Message tLRPC$Message = messageObject.messageOwner;
-        final int i2 = tLRPC$Message.f1524id;
+        final int i2 = tLRPC$Message.f1526id;
         if (z) {
             if (tLRPC$Message.voiceTranscription != null && tLRPC$Message.voiceTranscriptionFinal) {
                 openVideoTranscription(messageObject);
                 messageObject.messageOwner.voiceTranscriptionOpen = true;
                 MessagesStorage.getInstance(i).updateMessageVoiceTranscriptionOpen(peerDialogId, i2, messageObject.messageOwner);
-                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.TranscribeButton$$ExternalSyntheticLambda0
+                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.TranscribeButton$$ExternalSyntheticLambda1
                     @Override // java.lang.Runnable
                     public final void run() {
                         TranscribeButton.lambda$transcribePressed$3(i, messageObject);
@@ -746,7 +746,7 @@ public class TranscribeButton {
         }
         messageObject.messageOwner.voiceTranscriptionOpen = false;
         MessagesStorage.getInstance(i).updateMessageVoiceTranscriptionOpen(peerDialogId, i2, messageObject.messageOwner);
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.TranscribeButton$$ExternalSyntheticLambda1
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.TranscribeButton$$ExternalSyntheticLambda2
             @Override // java.lang.Runnable
             public final void run() {
                 TranscribeButton.lambda$transcribePressed$6(i, messageObject);
@@ -797,7 +797,7 @@ public class TranscribeButton {
         }
         MessagesStorage.getInstance(i).updateMessageVoiceTranscription(j2, i2, str, messageObject.messageOwner);
         if (z) {
-            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.TranscribeButton$$ExternalSyntheticLambda3
+            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.TranscribeButton$$ExternalSyntheticLambda4
                 @Override // java.lang.Runnable
                 public final void run() {
                     TranscribeButton.finishTranscription(MessageObject.this, j3, str);
@@ -829,7 +829,7 @@ public class TranscribeButton {
                 if (!z2) {
                     MessagesStorage.getInstance(messageObject3.currentAccount).updateMessageVoiceTranscription(messageObject3.getDialogId(), messageObject3.getId(), str, messageObject3.messageOwner);
                 }
-                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.TranscribeButton$$ExternalSyntheticLambda4
+                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.TranscribeButton$$ExternalSyntheticLambda5
                     @Override // java.lang.Runnable
                     public final void run() {
                         TranscribeButton.lambda$finishTranscription$7(MessageObject.this, j, str, z2);
@@ -867,7 +867,7 @@ public class TranscribeButton {
         tLRPC$Message.voiceTranscriptionForce = true;
         MessagesStorage.getInstance(messageObject.currentAccount).updateMessageVoiceTranscriptionOpen(messageObject.getDialogId(), messageObject.getId(), messageObject.messageOwner);
         if (z) {
-            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.TranscribeButton$$ExternalSyntheticLambda2
+            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.TranscribeButton$$ExternalSyntheticLambda3
                 @Override // java.lang.Runnable
                 public final void run() {
                     TranscribeButton.lambda$showOffTranscribe$8(MessageObject.this);

@@ -2,38 +2,38 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Ljava/util/Comparator;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field public final synthetic f$0:Lorg/telegram/messenger/support/LongSparseIntArray;
+.field public final synthetic f$0:Lorg/telegram/ui/FilterCreateActivity;
+
+.field public final synthetic f$1:Lorg/telegram/ui/ActionBar/AlertDialog;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/messenger/support/LongSparseIntArray;)V
+.method public synthetic constructor <init>(Lorg/telegram/ui/FilterCreateActivity;Lorg/telegram/ui/ActionBar/AlertDialog;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lorg/telegram/ui/FilterCreateActivity$$ExternalSyntheticLambda8;->f$0:Lorg/telegram/messenger/support/LongSparseIntArray;
+    iput-object p1, p0, Lorg/telegram/ui/FilterCreateActivity$$ExternalSyntheticLambda8;->f$0:Lorg/telegram/ui/FilterCreateActivity;
+
+    iput-object p2, p0, Lorg/telegram/ui/FilterCreateActivity$$ExternalSyntheticLambda8;->f$1:Lorg/telegram/ui/ActionBar/AlertDialog;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final compare(Ljava/lang/Object;Ljava/lang/Object;)I
-    .locals 1
+.method public final run()V
+    .locals 2
 
-    iget-object v0, p0, Lorg/telegram/ui/FilterCreateActivity$$ExternalSyntheticLambda8;->f$0:Lorg/telegram/messenger/support/LongSparseIntArray;
+    iget-object v0, p0, Lorg/telegram/ui/FilterCreateActivity$$ExternalSyntheticLambda8;->f$0:Lorg/telegram/ui/FilterCreateActivity;
 
-    check-cast p1, Ljava/lang/Long;
+    iget-object v1, p0, Lorg/telegram/ui/FilterCreateActivity$$ExternalSyntheticLambda8;->f$1:Lorg/telegram/ui/ActionBar/AlertDialog;
 
-    check-cast p2, Ljava/lang/Long;
+    invoke-static {v0, v1}, Lorg/telegram/ui/FilterCreateActivity;->$r8$lambda$Gyja80LQ3qPTal-Bc39Tw74uj5Q(Lorg/telegram/ui/FilterCreateActivity;Lorg/telegram/ui/ActionBar/AlertDialog;)V
 
-    invoke-static {v0, p1, p2}, Lorg/telegram/ui/FilterCreateActivity;->$r8$lambda$fLnDPer4cU2YYcRgwIwLMdMe2rY(Lorg/telegram/messenger/support/LongSparseIntArray;Ljava/lang/Long;Ljava/lang/Long;)I
-
-    move-result p1
-
-    return p1
+    return-void
 .end method

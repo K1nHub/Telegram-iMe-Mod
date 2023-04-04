@@ -5,7 +5,7 @@ import kotlin.collections.IntIterator;
 import kotlin.ranges.IntRange;
 import kotlin.ranges.RangesKt___RangesKt;
 /* compiled from: OnPageChangeListenerHelper.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public abstract class OnPageChangeListenerHelper {
     private int lastLeftPosition = -1;
     private int lastRightPosition = -1;

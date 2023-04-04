@@ -18,7 +18,7 @@ public final class ObservableRefCount<T> extends Observable<T> {
     RefConnection connection;
 
     /* renamed from: n */
-    final int f457n;
+    final int f462n;
     final Scheduler scheduler;
     final ConnectableObservable<T> source;
     final long timeout;
@@ -30,7 +30,7 @@ public final class ObservableRefCount<T> extends Observable<T> {
 
     public ObservableRefCount(ConnectableObservable<T> connectableObservable, int i, long j, TimeUnit timeUnit, Scheduler scheduler) {
         this.source = connectableObservable;
-        this.f457n = i;
+        this.f462n = i;
         this.timeout = j;
         this.unit = timeUnit;
         this.scheduler = scheduler;
@@ -54,7 +54,7 @@ public final class ObservableRefCount<T> extends Observable<T> {
             long j2 = j + 1;
             refConnection.subscriberCount = j2;
             z = true;
-            if (refConnection.connected || j2 != this.f457n) {
+            if (refConnection.connected || j2 != this.f462n) {
                 z = false;
             } else {
                 refConnection.connected = true;

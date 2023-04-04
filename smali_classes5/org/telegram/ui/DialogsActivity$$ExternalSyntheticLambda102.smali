@@ -2,46 +2,56 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Ljava/util/Comparator;
+.implements Ljava/lang/Runnable;
 
 
-# static fields
-.field public static final synthetic INSTANCE:Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda102;
+# instance fields
+.field public final synthetic f$0:Lorg/telegram/ui/DialogsActivity;
+
+.field public final synthetic f$1:Lorg/telegram/tgnet/TLRPC$Chat;
+
+.field public final synthetic f$2:J
+
+.field public final synthetic f$3:Z
+
+.field public final synthetic f$4:Lorg/telegram/tgnet/TLRPC$User;
 
 
 # direct methods
-.method static synthetic constructor <clinit>()V
-    .locals 1
-
-    new-instance v0, Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda102;
-
-    invoke-direct {v0}, Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda102;-><init>()V
-
-    sput-object v0, Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda102;->INSTANCE:Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda102;
-
-    return-void
-.end method
-
-.method private synthetic constructor <init>()V
+.method public synthetic constructor <init>(Lorg/telegram/ui/DialogsActivity;Lorg/telegram/tgnet/TLRPC$Chat;JZLorg/telegram/tgnet/TLRPC$User;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda102;->f$0:Lorg/telegram/ui/DialogsActivity;
+
+    iput-object p2, p0, Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda102;->f$1:Lorg/telegram/tgnet/TLRPC$Chat;
+
+    iput-wide p3, p0, Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda102;->f$2:J
+
+    iput-boolean p5, p0, Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda102;->f$3:Z
+
+    iput-object p6, p0, Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda102;->f$4:Lorg/telegram/tgnet/TLRPC$User;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final compare(Ljava/lang/Object;Ljava/lang/Object;)I
-    .locals 0
+.method public final run()V
+    .locals 6
 
-    check-cast p1, Ljava/lang/Integer;
+    iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda102;->f$0:Lorg/telegram/ui/DialogsActivity;
 
-    check-cast p2, Ljava/lang/Integer;
+    iget-object v1, p0, Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda102;->f$1:Lorg/telegram/tgnet/TLRPC$Chat;
 
-    invoke-static {p1, p2}, Lorg/telegram/ui/DialogsActivity;->$r8$lambda$zF8iDdb6eoRBZHWi7gvpEnjoLvw(Ljava/lang/Integer;Ljava/lang/Integer;)I
+    iget-wide v2, p0, Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda102;->f$2:J
 
-    move-result p1
+    iget-boolean v4, p0, Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda102;->f$3:Z
 
-    return p1
+    iget-object v5, p0, Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda102;->f$4:Lorg/telegram/tgnet/TLRPC$User;
+
+    invoke-static/range {v0 .. v5}, Lorg/telegram/ui/DialogsActivity;->$r8$lambda$U-R92EFpfgMskF9T-SW1zOV7bU0(Lorg/telegram/ui/DialogsActivity;Lorg/telegram/tgnet/TLRPC$Chat;JZLorg/telegram/tgnet/TLRPC$User;)V
+
+    return-void
 .end method

@@ -245,7 +245,7 @@
     .catch Ljava/lang/NoSuchMethodException; {:try_start_0 .. :try_end_0} :catch_0
 
     :try_start_1
-    const-string v10, "untagSocket"
+    const-string/jumbo v10, "untagSocket"
 
     new-array v1, v1, [Ljava/lang/Class;
 

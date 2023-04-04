@@ -6,16 +6,16 @@
 
 
 # instance fields
-.field public final synthetic f$0:Lorg/fork/utils/Callbacks$Callback;
+.field public final synthetic f$0:Lcom/iMe/fork/utils/Callbacks$Callback;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/fork/utils/Callbacks$Callback;)V
+.method public synthetic constructor <init>(Lcom/iMe/fork/utils/Callbacks$Callback;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lorg/telegram/ui/Components/LinkActionView$$ExternalSyntheticLambda2;->f$0:Lorg/fork/utils/Callbacks$Callback;
+    iput-object p1, p0, Lorg/telegram/ui/Components/LinkActionView$$ExternalSyntheticLambda2;->f$0:Lcom/iMe/fork/utils/Callbacks$Callback;
 
     return-void
 .end method
@@ -25,9 +25,9 @@
 .method public final onClick(Landroid/view/View;)V
     .locals 1
 
-    iget-object v0, p0, Lorg/telegram/ui/Components/LinkActionView$$ExternalSyntheticLambda2;->f$0:Lorg/fork/utils/Callbacks$Callback;
+    iget-object v0, p0, Lorg/telegram/ui/Components/LinkActionView$$ExternalSyntheticLambda2;->f$0:Lcom/iMe/fork/utils/Callbacks$Callback;
 
-    invoke-static {v0, p1}, Lorg/telegram/ui/Components/LinkActionView;->$r8$lambda$v_bB53oNQ2_hbSZwCJOhNaLGAz4(Lorg/fork/utils/Callbacks$Callback;Landroid/view/View;)V
+    invoke-static {v0, p1}, Lorg/telegram/ui/Components/LinkActionView;->$r8$lambda$D72T89fzE8jsci3mh7S9-5xtOlk(Lcom/iMe/fork/utils/Callbacks$Callback;Landroid/view/View;)V
 
     return-void
 .end method

@@ -2,46 +2,50 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Ljava/util/Comparator;
+.implements Ljava/lang/Runnable;
 
 
-# static fields
-.field public static final synthetic INSTANCE:Lorg/telegram/ui/CacheControlActivity$$ExternalSyntheticLambda17;
+# instance fields
+.field public final synthetic f$0:Lorg/telegram/ui/CacheControlActivity;
+
+.field public final synthetic f$1:Z
+
+.field public final synthetic f$2:J
+
+.field public final synthetic f$3:Ljava/lang/Runnable;
 
 
 # direct methods
-.method static synthetic constructor <clinit>()V
-    .locals 1
-
-    new-instance v0, Lorg/telegram/ui/CacheControlActivity$$ExternalSyntheticLambda17;
-
-    invoke-direct {v0}, Lorg/telegram/ui/CacheControlActivity$$ExternalSyntheticLambda17;-><init>()V
-
-    sput-object v0, Lorg/telegram/ui/CacheControlActivity$$ExternalSyntheticLambda17;->INSTANCE:Lorg/telegram/ui/CacheControlActivity$$ExternalSyntheticLambda17;
-
-    return-void
-.end method
-
-.method private synthetic constructor <init>()V
+.method public synthetic constructor <init>(Lorg/telegram/ui/CacheControlActivity;ZJLjava/lang/Runnable;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lorg/telegram/ui/CacheControlActivity$$ExternalSyntheticLambda17;->f$0:Lorg/telegram/ui/CacheControlActivity;
+
+    iput-boolean p2, p0, Lorg/telegram/ui/CacheControlActivity$$ExternalSyntheticLambda17;->f$1:Z
+
+    iput-wide p3, p0, Lorg/telegram/ui/CacheControlActivity$$ExternalSyntheticLambda17;->f$2:J
+
+    iput-object p5, p0, Lorg/telegram/ui/CacheControlActivity$$ExternalSyntheticLambda17;->f$3:Ljava/lang/Runnable;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final compare(Ljava/lang/Object;Ljava/lang/Object;)I
-    .locals 0
+.method public final run()V
+    .locals 5
 
-    check-cast p1, Lorg/telegram/ui/CacheControlActivity$DialogFileEntities;
+    iget-object v0, p0, Lorg/telegram/ui/CacheControlActivity$$ExternalSyntheticLambda17;->f$0:Lorg/telegram/ui/CacheControlActivity;
 
-    check-cast p2, Lorg/telegram/ui/CacheControlActivity$DialogFileEntities;
+    iget-boolean v1, p0, Lorg/telegram/ui/CacheControlActivity$$ExternalSyntheticLambda17;->f$1:Z
 
-    invoke-static {p1, p2}, Lorg/telegram/ui/CacheControlActivity;->$r8$lambda$-GdIJJygK_lmViOL0UmzgYwAi3U(Lorg/telegram/ui/CacheControlActivity$DialogFileEntities;Lorg/telegram/ui/CacheControlActivity$DialogFileEntities;)I
+    iget-wide v2, p0, Lorg/telegram/ui/CacheControlActivity$$ExternalSyntheticLambda17;->f$2:J
 
-    move-result p1
+    iget-object v4, p0, Lorg/telegram/ui/CacheControlActivity$$ExternalSyntheticLambda17;->f$3:Ljava/lang/Runnable;
 
-    return p1
+    invoke-static {v0, v1, v2, v3, v4}, Lorg/telegram/ui/CacheControlActivity;->$r8$lambda$Q7mhC7jMES9oA8fZ-W9YCiGnQkM(Lorg/telegram/ui/CacheControlActivity;ZJLjava/lang/Runnable;)V
+
+    return-void
 .end method

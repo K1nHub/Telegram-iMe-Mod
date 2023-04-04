@@ -16,15 +16,9 @@
 
 .field public final synthetic f$4:Z
 
-.field public final synthetic f$5:Z
-
-.field public final synthetic f$6:Z
-
-.field public final synthetic f$7:Z
-
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/messenger/ContactsController;Ljava/util/HashMap;ZZZZZZ)V
+.method public synthetic constructor <init>(Lorg/telegram/messenger/ContactsController;Ljava/util/HashMap;ZZZ)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,19 +33,13 @@
 
     iput-boolean p5, p0, Lorg/telegram/messenger/ContactsController$$ExternalSyntheticLambda38;->f$4:Z
 
-    iput-boolean p6, p0, Lorg/telegram/messenger/ContactsController$$ExternalSyntheticLambda38;->f$5:Z
-
-    iput-boolean p7, p0, Lorg/telegram/messenger/ContactsController$$ExternalSyntheticLambda38;->f$6:Z
-
-    iput-boolean p8, p0, Lorg/telegram/messenger/ContactsController$$ExternalSyntheticLambda38;->f$7:Z
-
     return-void
 .end method
 
 
 # virtual methods
 .method public final run()V
-    .locals 8
+    .locals 5
 
     iget-object v0, p0, Lorg/telegram/messenger/ContactsController$$ExternalSyntheticLambda38;->f$0:Lorg/telegram/messenger/ContactsController;
 
@@ -63,13 +51,7 @@
 
     iget-boolean v4, p0, Lorg/telegram/messenger/ContactsController$$ExternalSyntheticLambda38;->f$4:Z
 
-    iget-boolean v5, p0, Lorg/telegram/messenger/ContactsController$$ExternalSyntheticLambda38;->f$5:Z
-
-    iget-boolean v6, p0, Lorg/telegram/messenger/ContactsController$$ExternalSyntheticLambda38;->f$6:Z
-
-    iget-boolean v7, p0, Lorg/telegram/messenger/ContactsController$$ExternalSyntheticLambda38;->f$7:Z
-
-    invoke-static/range {v0 .. v7}, Lorg/telegram/messenger/ContactsController;->$r8$lambda$jyKb-gmr8qVpi2vTt-xcRWAOBjU(Lorg/telegram/messenger/ContactsController;Ljava/util/HashMap;ZZZZZZ)V
+    invoke-static {v0, v1, v2, v3, v4}, Lorg/telegram/messenger/ContactsController;->$r8$lambda$98kczgRStFMidA2NFANEUGY0rFU(Lorg/telegram/messenger/ContactsController;Ljava/util/HashMap;ZZZ)V
 
     return-void
 .end method

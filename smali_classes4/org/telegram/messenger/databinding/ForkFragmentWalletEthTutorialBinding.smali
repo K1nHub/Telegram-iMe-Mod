@@ -7,17 +7,17 @@
 
 
 # instance fields
-.field public final buttonAction:Lcom/smedialink/ui/custom/ActionButton;
+.field public final buttonAction:Lcom/iMe/ui/custom/ActionButton;
 
 .field public final dotsIndicatorTutorial:Lcom/tbuonomo/viewpagerdotsindicator/DotsIndicator;
 
 .field private final rootView:Landroid/widget/RelativeLayout;
 
-.field public final viewPagerTutorial:Lcom/smedialink/ui/custom/WrapContentViewPager;
+.field public final viewPagerTutorial:Lcom/iMe/ui/custom/WrapContentViewPager;
 
 
 # direct methods
-.method private constructor <init>(Landroid/widget/RelativeLayout;Lcom/smedialink/ui/custom/ActionButton;Lcom/tbuonomo/viewpagerdotsindicator/DotsIndicator;Lcom/smedialink/ui/custom/WrapContentViewPager;)V
+.method private constructor <init>(Landroid/widget/RelativeLayout;Lcom/iMe/ui/custom/ActionButton;Lcom/tbuonomo/viewpagerdotsindicator/DotsIndicator;Lcom/iMe/ui/custom/WrapContentViewPager;)V
     .locals 0
 
     .line 35
@@ -27,13 +27,13 @@
     iput-object p1, p0, Lorg/telegram/messenger/databinding/ForkFragmentWalletEthTutorialBinding;->rootView:Landroid/widget/RelativeLayout;
 
     .line 37
-    iput-object p2, p0, Lorg/telegram/messenger/databinding/ForkFragmentWalletEthTutorialBinding;->buttonAction:Lcom/smedialink/ui/custom/ActionButton;
+    iput-object p2, p0, Lorg/telegram/messenger/databinding/ForkFragmentWalletEthTutorialBinding;->buttonAction:Lcom/iMe/ui/custom/ActionButton;
 
     .line 38
     iput-object p3, p0, Lorg/telegram/messenger/databinding/ForkFragmentWalletEthTutorialBinding;->dotsIndicatorTutorial:Lcom/tbuonomo/viewpagerdotsindicator/DotsIndicator;
 
     .line 39
-    iput-object p4, p0, Lorg/telegram/messenger/databinding/ForkFragmentWalletEthTutorialBinding;->viewPagerTutorial:Lcom/smedialink/ui/custom/WrapContentViewPager;
+    iput-object p4, p0, Lorg/telegram/messenger/databinding/ForkFragmentWalletEthTutorialBinding;->viewPagerTutorial:Lcom/iMe/ui/custom/WrapContentViewPager;
 
     return-void
 .end method
@@ -49,7 +49,7 @@
 
     move-result-object v1
 
-    check-cast v1, Lcom/smedialink/ui/custom/ActionButton;
+    check-cast v1, Lcom/iMe/ui/custom/ActionButton;
 
     if-eqz v1, :cond_0
 
@@ -73,7 +73,7 @@
 
     move-result-object v3
 
-    check-cast v3, Lcom/smedialink/ui/custom/WrapContentViewPager;
+    check-cast v3, Lcom/iMe/ui/custom/WrapContentViewPager;
 
     if-eqz v3, :cond_0
 
@@ -82,7 +82,7 @@
 
     check-cast p0, Landroid/widget/RelativeLayout;
 
-    invoke-direct {v0, p0, v1, v2, v3}, Lorg/telegram/messenger/databinding/ForkFragmentWalletEthTutorialBinding;-><init>(Landroid/widget/RelativeLayout;Lcom/smedialink/ui/custom/ActionButton;Lcom/tbuonomo/viewpagerdotsindicator/DotsIndicator;Lcom/smedialink/ui/custom/WrapContentViewPager;)V
+    invoke-direct {v0, p0, v1, v2, v3}, Lorg/telegram/messenger/databinding/ForkFragmentWalletEthTutorialBinding;-><init>(Landroid/widget/RelativeLayout;Lcom/iMe/ui/custom/ActionButton;Lcom/tbuonomo/viewpagerdotsindicator/DotsIndicator;Lcom/iMe/ui/custom/WrapContentViewPager;)V
 
     return-object v0
 

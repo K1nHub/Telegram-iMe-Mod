@@ -25,7 +25,7 @@
 .method constructor <init>(Lorg/telegram/ui/TopicsFragment;)V
     .locals 0
 
-    .line 717
+    .line 720
     iput-object p1, p0, Lorg/telegram/ui/TopicsFragment$4;->this$0:Lorg/telegram/ui/TopicsFragment;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,7 +38,7 @@
 .method public onClick(Landroid/view/View;)V
     .locals 1
 
-    .line 720
+    .line 723
     iget-object p1, p0, Lorg/telegram/ui/TopicsFragment$4;->this$0:Lorg/telegram/ui/TopicsFragment;
 
     const/4 v0, 0x1

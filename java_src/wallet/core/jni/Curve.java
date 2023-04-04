@@ -42,7 +42,7 @@ public enum Curve {
 
     /* renamed from: wallet.core.jni.Curve$1 */
     /* loaded from: classes6.dex */
-    static /* synthetic */ class C67621 {
+    static /* synthetic */ class C67861 {
         static final /* synthetic */ int[] $SwitchMap$wallet$core$jni$Curve;
 
         static {
@@ -81,7 +81,7 @@ public enum Curve {
 
     @Override // java.lang.Enum
     public String toString() {
-        switch (C67621.$SwitchMap$wallet$core$jni$Curve[ordinal()]) {
+        switch (C67861.$SwitchMap$wallet$core$jni$Curve[ordinal()]) {
             case 1:
                 return "secp256k1";
             case 2:

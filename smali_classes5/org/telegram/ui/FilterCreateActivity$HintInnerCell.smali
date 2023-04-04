@@ -41,11 +41,11 @@
     iput-object v0, p0, Lorg/telegram/ui/FilterCreateActivity$HintInnerCell;->imageView:Lorg/telegram/ui/Components/RLottieImageView;
 
     .line 202
-    invoke-static {p1}, Lorg/telegram/ui/FilterCreateActivity;->access$000(Lorg/telegram/ui/FilterCreateActivity;)Lorg/fork/enums/FilterActivityType;
+    invoke-static {p1}, Lorg/telegram/ui/FilterCreateActivity;->access$000(Lorg/telegram/ui/FilterCreateActivity;)Lcom/iMe/fork/enums/FilterActivityType;
 
     move-result-object p2
 
-    sget-object v0, Lorg/fork/enums/FilterActivityType;->TOPIC:Lorg/fork/enums/FilterActivityType;
+    sget-object v0, Lcom/iMe/fork/enums/FilterActivityType;->TOPIC:Lcom/iMe/fork/enums/FilterActivityType;
 
     if-ne p2, v0, :cond_0
 
@@ -84,7 +84,7 @@
     invoke-virtual {p2}, Lorg/telegram/ui/Components/RLottieImageView;->playAnimation()V
 
     .line 209
-    invoke-static {p1}, Lorg/telegram/ui/FilterCreateActivity;->access$000(Lorg/telegram/ui/FilterCreateActivity;)Lorg/fork/enums/FilterActivityType;
+    invoke-static {p1}, Lorg/telegram/ui/FilterCreateActivity;->access$000(Lorg/telegram/ui/FilterCreateActivity;)Lcom/iMe/fork/enums/FilterActivityType;
 
     move-result-object p1
 

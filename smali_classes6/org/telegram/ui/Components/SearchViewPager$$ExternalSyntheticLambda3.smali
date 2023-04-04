@@ -2,7 +2,7 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lorg/fork/ui/dialog/ForwardCloudBottomSheet$Delegate;
+.implements Lcom/iMe/fork/ui/dialog/ForwardCloudBottomSheet$Delegate;
 
 
 # instance fields
@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lorg/telegram/ui/Components/SearchViewPager$$ExternalSyntheticLambda3;->f$0:Lorg/telegram/ui/Components/SearchViewPager;
 
-    invoke-static {v0, p1, p2}, Lorg/telegram/ui/Components/SearchViewPager;->$r8$lambda$DeFoUtRLWUR_dgQ8Try-1utANoo(Lorg/telegram/ui/Components/SearchViewPager;J)V
+    invoke-static {v0, p1, p2}, Lorg/telegram/ui/Components/SearchViewPager;->$r8$lambda$Uv8e_Adu7RPdP_mexG07XfYL-Qs(Lorg/telegram/ui/Components/SearchViewPager;J)V
 
     return-void
 .end method
@@ -35,7 +35,7 @@
 .method public synthetic onAlbumCreatorOpened()V
     .locals 0
 
-    invoke-static {p0}, Lorg/fork/ui/dialog/ForwardCloudBottomSheet$Delegate$-CC;->$default$onAlbumCreatorOpened(Lorg/fork/ui/dialog/ForwardCloudBottomSheet$Delegate;)V
+    invoke-static {p0}, Lcom/iMe/fork/ui/dialog/ForwardCloudBottomSheet$Delegate$-CC;->$default$onAlbumCreatorOpened(Lcom/iMe/fork/ui/dialog/ForwardCloudBottomSheet$Delegate;)V
 
     return-void
 .end method

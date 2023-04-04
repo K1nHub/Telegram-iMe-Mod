@@ -38,9 +38,10 @@ public final class UtilsKt {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void colorAnimator$lambda$2$lambda$1(ValueAnimator valueAnimator, ImageView this_colorAnimator, ValueAnimator valueAnimator2) {
+    public static final void colorAnimator$lambda$2$lambda$1(ValueAnimator valueAnimator, ImageView this_colorAnimator, ValueAnimator animator) {
         Intrinsics.checkNotNullParameter(this_colorAnimator, "$this_colorAnimator");
-        Object animatedValue = valueAnimator2.getAnimatedValue();
+        Intrinsics.checkNotNullParameter(animator, "animator");
+        Object animatedValue = animator.getAnimatedValue();
         Intrinsics.checkNotNull(animatedValue, "null cannot be cast to non-null type kotlin.Int");
         this_colorAnimator.setColorFilter(((Integer) animatedValue).intValue());
     }
@@ -73,16 +74,17 @@ public final class UtilsKt {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void expand$lambda$7$lambda$6$lambda$5(TextView this_expand, ValueAnimator valueAnimator) {
+    public static final void expand$lambda$7$lambda$6$lambda$5(TextView this_expand, ValueAnimator it) {
         Intrinsics.checkNotNullParameter(this_expand, "$this_expand");
-        if (valueAnimator.getAnimatedFraction() == BitmapDescriptorFactory.HUE_RED) {
+        Intrinsics.checkNotNullParameter(it, "it");
+        if (it.getAnimatedFraction() == BitmapDescriptorFactory.HUE_RED) {
             this_expand.setVisibility(4);
         }
         ViewGroup.LayoutParams layoutParams = this_expand.getLayoutParams();
-        Object animatedValue = valueAnimator.getAnimatedValue();
+        Object animatedValue = it.getAnimatedValue();
         Intrinsics.checkNotNull(animatedValue, "null cannot be cast to non-null type kotlin.Int");
         layoutParams.width = ((Integer) animatedValue).intValue();
-        if (valueAnimator.getAnimatedFraction() == 1.0f) {
+        if (it.getAnimatedFraction() == 1.0f) {
             this_expand.setVisibility(0);
         }
         this_expand.requestLayout();
@@ -102,20 +104,22 @@ public final class UtilsKt {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void collapse$lambda$10$lambda$9(TextView this_collapse, ViewPropertyAnimator viewPropertyAnimator, LinearLayout container, int i, ValueAnimator valueAnimator) {
+    public static final void collapse$lambda$10$lambda$9(TextView this_collapse, ViewPropertyAnimator this_apply, LinearLayout container, int i, ValueAnimator it) {
         Intrinsics.checkNotNullParameter(this_collapse, "$this_collapse");
+        Intrinsics.checkNotNullParameter(this_apply, "$this_apply");
         Intrinsics.checkNotNullParameter(container, "$container");
+        Intrinsics.checkNotNullParameter(it, "it");
         ViewGroup.LayoutParams layoutParams = this_collapse.getLayoutParams();
         int i2 = layoutParams.width;
-        layoutParams.width = (int) (i2 - (i2 * valueAnimator.getAnimatedFraction()));
-        if (valueAnimator.getAnimatedFraction() == 1.0f) {
+        layoutParams.width = (int) (i2 - (i2 * it.getAnimatedFraction()));
+        if (it.getAnimatedFraction() == 1.0f) {
             this_collapse.setVisibility(8);
             this_collapse.setAlpha(1.0f);
         }
-        viewPropertyAnimator.setInterpolator(new LinearInterpolator());
-        viewPropertyAnimator.setDuration(DURATION);
+        this_apply.setInterpolator(new LinearInterpolator());
+        this_apply.setDuration(DURATION);
         float f = ALPHA;
-        setCustomBackground(container, i, f - (valueAnimator.getAnimatedFraction() * f));
+        setCustomBackground(container, i, f - (it.getAnimatedFraction() * f));
         this_collapse.requestLayout();
     }
 

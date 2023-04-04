@@ -1,5 +1,6 @@
 package com.iMe.i_staking.request;
 
+import com.iMe.bots.data.model.database.BotsDbModel$$ExternalSyntheticBackport0;
 import java.math.BigDecimal;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: StakingDepositPrepareRequest.kt */
@@ -43,7 +44,7 @@ public final class StakingDepositPrepareRequest {
     }
 
     public int hashCode() {
-        return (StakingApprovalPrepareRequest$$ExternalSyntheticBackport0.m716m(this.stakingId) * 31) + this.amount.hashCode();
+        return (BotsDbModel$$ExternalSyntheticBackport0.m716m(this.stakingId) * 31) + this.amount.hashCode();
     }
 
     public String toString() {

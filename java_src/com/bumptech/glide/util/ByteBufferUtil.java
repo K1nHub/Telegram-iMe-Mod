@@ -61,7 +61,7 @@ public final class ByteBufferUtil {
 
     public static void toFile(ByteBuffer byteBuffer, File file) throws IOException {
         RandomAccessFile randomAccessFile;
-        byteBuffer.position(0);
+        rewind(byteBuffer);
         FileChannel fileChannel = null;
         try {
             randomAccessFile = new RandomAccessFile(file, "rw");
@@ -108,7 +108,7 @@ public final class ByteBufferUtil {
         }
         ByteBuffer asReadOnlyBuffer = byteBuffer.asReadOnlyBuffer();
         byte[] bArr = new byte[asReadOnlyBuffer.limit()];
-        asReadOnlyBuffer.position(0);
+        rewind(asReadOnlyBuffer);
         asReadOnlyBuffer.get(bArr);
         return bArr;
     }
@@ -130,9 +130,13 @@ public final class ByteBufferUtil {
             } else {
                 BUFFER_REF.set(andSet);
                 byte[] byteArray = byteArrayOutputStream.toByteArray();
-                return (ByteBuffer) ByteBuffer.allocateDirect(byteArray.length).put(byteArray).position(0);
+                return rewind(ByteBuffer.allocateDirect(byteArray.length).put(byteArray));
             }
         }
+    }
+
+    public static ByteBuffer rewind(ByteBuffer byteBuffer) {
+        return (ByteBuffer) byteBuffer.position(0);
     }
 
     private static SafeArray getSafeArray(ByteBuffer byteBuffer) {
@@ -189,7 +193,7 @@ public final class ByteBufferUtil {
         }
 
         @Override // java.io.InputStream
-        public int read(byte[] bArr, int i, int i2) throws IOException {
+        public int read(byte[] bArr, int i, int i2) {
             if (this.byteBuffer.hasRemaining()) {
                 int min = Math.min(i2, available());
                 this.byteBuffer.get(bArr, i, min);
@@ -208,7 +212,7 @@ public final class ByteBufferUtil {
         }
 
         @Override // java.io.InputStream
-        public long skip(long j) throws IOException {
+        public long skip(long j) {
             if (this.byteBuffer.hasRemaining()) {
                 long min = Math.min(j, available());
                 ByteBuffer byteBuffer = this.byteBuffer;

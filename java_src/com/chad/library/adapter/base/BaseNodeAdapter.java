@@ -58,8 +58,9 @@ public abstract class BaseNodeAdapter<T extends BaseNode> extends BaseProviderMu
         throw new IllegalStateException("Please add BaseNodeProvider, no BaseItemProvider!");
     }
 
+    /* JADX INFO: Access modifiers changed from: protected */
     @Override // com.chad.library.adapter.base.BaseQuickAdapter
-    protected boolean isFixedViewType(int i) {
+    public boolean isFixedViewType(int i) {
         return super.isFixedViewType(i) || this.fullSpanNodeTypeSet.contains(Integer.valueOf(i));
     }
 

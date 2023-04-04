@@ -481,7 +481,7 @@ public final class Cosmos {
 
         /* loaded from: classes6.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<Amount, Builder> implements AmountOrBuilder {
-            /* synthetic */ Builder(C67741 c67741) {
+            /* synthetic */ Builder(C67981 c67981) {
                 this();
             }
 
@@ -548,7 +548,7 @@ public final class Cosmos {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C67741.f1862xa1df5c61[method.ordinal()]) {
+            switch (C67981.f1865xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new Amount();
                 case 2:
@@ -595,40 +595,40 @@ public final class Cosmos {
 
     /* renamed from: wallet.core.jni.proto.Cosmos$1 */
     /* loaded from: classes6.dex */
-    static /* synthetic */ class C67741 {
+    static /* synthetic */ class C67981 {
 
         /* renamed from: $SwitchMap$com$google$protobuf$GeneratedMessageLite$MethodToInvoke */
-        static final /* synthetic */ int[] f1862xa1df5c61;
+        static final /* synthetic */ int[] f1865xa1df5c61;
 
         static {
             int[] iArr = new int[GeneratedMessageLite.MethodToInvoke.values().length];
-            f1862xa1df5c61 = iArr;
+            f1865xa1df5c61 = iArr;
             try {
                 iArr[GeneratedMessageLite.MethodToInvoke.NEW_MUTABLE_INSTANCE.ordinal()] = 1;
             } catch (NoSuchFieldError unused) {
             }
             try {
-                f1862xa1df5c61[GeneratedMessageLite.MethodToInvoke.NEW_BUILDER.ordinal()] = 2;
+                f1865xa1df5c61[GeneratedMessageLite.MethodToInvoke.NEW_BUILDER.ordinal()] = 2;
             } catch (NoSuchFieldError unused2) {
             }
             try {
-                f1862xa1df5c61[GeneratedMessageLite.MethodToInvoke.BUILD_MESSAGE_INFO.ordinal()] = 3;
+                f1865xa1df5c61[GeneratedMessageLite.MethodToInvoke.BUILD_MESSAGE_INFO.ordinal()] = 3;
             } catch (NoSuchFieldError unused3) {
             }
             try {
-                f1862xa1df5c61[GeneratedMessageLite.MethodToInvoke.GET_DEFAULT_INSTANCE.ordinal()] = 4;
+                f1865xa1df5c61[GeneratedMessageLite.MethodToInvoke.GET_DEFAULT_INSTANCE.ordinal()] = 4;
             } catch (NoSuchFieldError unused4) {
             }
             try {
-                f1862xa1df5c61[GeneratedMessageLite.MethodToInvoke.GET_PARSER.ordinal()] = 5;
+                f1865xa1df5c61[GeneratedMessageLite.MethodToInvoke.GET_PARSER.ordinal()] = 5;
             } catch (NoSuchFieldError unused5) {
             }
             try {
-                f1862xa1df5c61[GeneratedMessageLite.MethodToInvoke.GET_MEMOIZED_IS_INITIALIZED.ordinal()] = 6;
+                f1865xa1df5c61[GeneratedMessageLite.MethodToInvoke.GET_MEMOIZED_IS_INITIALIZED.ordinal()] = 6;
             } catch (NoSuchFieldError unused6) {
             }
             try {
-                f1862xa1df5c61[GeneratedMessageLite.MethodToInvoke.SET_MEMOIZED_IS_INITIALIZED.ordinal()] = 7;
+                f1865xa1df5c61[GeneratedMessageLite.MethodToInvoke.SET_MEMOIZED_IS_INITIALIZED.ordinal()] = 7;
             } catch (NoSuchFieldError unused7) {
             }
         }
@@ -788,7 +788,7 @@ public final class Cosmos {
 
         /* loaded from: classes6.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<Fee, Builder> implements FeeOrBuilder {
-            /* synthetic */ Builder(C67741 c67741) {
+            /* synthetic */ Builder(C67981 c67981) {
                 this();
             }
 
@@ -885,7 +885,7 @@ public final class Cosmos {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C67741.f1862xa1df5c61[method.ordinal()]) {
+            switch (C67981.f1865xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new Fee();
                 case 2:
@@ -1030,7 +1030,7 @@ public final class Cosmos {
 
         /* loaded from: classes6.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<Height, Builder> implements HeightOrBuilder {
-            /* synthetic */ Builder(C67741 c67741) {
+            /* synthetic */ Builder(C67981 c67981) {
                 this();
             }
 
@@ -1075,7 +1075,7 @@ public final class Cosmos {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C67741.f1862xa1df5c61[method.ordinal()]) {
+            switch (C67981.f1865xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new Height();
                 case 2:
@@ -2000,7 +2000,7 @@ public final class Cosmos {
 
             /* loaded from: classes6.dex */
             public static final class Builder extends GeneratedMessageLite.Builder<Send, Builder> implements SendOrBuilder {
-                /* synthetic */ Builder(C67741 c67741) {
+                /* synthetic */ Builder(C67981 c67981) {
                     this();
                 }
 
@@ -2164,7 +2164,7 @@ public final class Cosmos {
 
             @Override // com.google.protobuf.GeneratedMessageLite
             protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-                switch (C67741.f1862xa1df5c61[method.ordinal()]) {
+                switch (C67981.f1865xa1df5c61[method.ordinal()]) {
                     case 1:
                         return new Send();
                     case 2:
@@ -2478,7 +2478,7 @@ public final class Cosmos {
 
             /* loaded from: classes6.dex */
             public static final class Builder extends GeneratedMessageLite.Builder<Transfer, Builder> implements TransferOrBuilder {
-                /* synthetic */ Builder(C67741 c67741) {
+                /* synthetic */ Builder(C67981 c67981) {
                     this();
                 }
 
@@ -2686,7 +2686,7 @@ public final class Cosmos {
 
             @Override // com.google.protobuf.GeneratedMessageLite
             protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-                switch (C67741.f1862xa1df5c61[method.ordinal()]) {
+                switch (C67981.f1865xa1df5c61[method.ordinal()]) {
                     case 1:
                         return new Transfer();
                     case 2:
@@ -2919,7 +2919,7 @@ public final class Cosmos {
 
             /* loaded from: classes6.dex */
             public static final class Builder extends GeneratedMessageLite.Builder<Delegate, Builder> implements DelegateOrBuilder {
-                /* synthetic */ Builder(C67741 c67741) {
+                /* synthetic */ Builder(C67981 c67981) {
                     this();
                 }
 
@@ -3048,7 +3048,7 @@ public final class Cosmos {
 
             @Override // com.google.protobuf.GeneratedMessageLite
             protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-                switch (C67741.f1862xa1df5c61[method.ordinal()]) {
+                switch (C67981.f1865xa1df5c61[method.ordinal()]) {
                     case 1:
                         return new Delegate();
                     case 2:
@@ -3281,7 +3281,7 @@ public final class Cosmos {
 
             /* loaded from: classes6.dex */
             public static final class Builder extends GeneratedMessageLite.Builder<Undelegate, Builder> implements UndelegateOrBuilder {
-                /* synthetic */ Builder(C67741 c67741) {
+                /* synthetic */ Builder(C67981 c67981) {
                     this();
                 }
 
@@ -3410,7 +3410,7 @@ public final class Cosmos {
 
             @Override // com.google.protobuf.GeneratedMessageLite
             protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-                switch (C67741.f1862xa1df5c61[method.ordinal()]) {
+                switch (C67981.f1865xa1df5c61[method.ordinal()]) {
                     case 1:
                         return new Undelegate();
                     case 2:
@@ -3672,7 +3672,7 @@ public final class Cosmos {
 
             /* loaded from: classes6.dex */
             public static final class Builder extends GeneratedMessageLite.Builder<BeginRedelegate, Builder> implements BeginRedelegateOrBuilder {
-                /* synthetic */ Builder(C67741 c67741) {
+                /* synthetic */ Builder(C67981 c67981) {
                     this();
                 }
 
@@ -3829,7 +3829,7 @@ public final class Cosmos {
 
             @Override // com.google.protobuf.GeneratedMessageLite
             protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-                switch (C67741.f1862xa1df5c61[method.ordinal()]) {
+                switch (C67981.f1865xa1df5c61[method.ordinal()]) {
                     case 1:
                         return new BeginRedelegate();
                     case 2:
@@ -4027,7 +4027,7 @@ public final class Cosmos {
 
             /* loaded from: classes6.dex */
             public static final class Builder extends GeneratedMessageLite.Builder<WithdrawDelegationReward, Builder> implements WithdrawDelegationRewardOrBuilder {
-                /* synthetic */ Builder(C67741 c67741) {
+                /* synthetic */ Builder(C67981 c67981) {
                     this();
                 }
 
@@ -4122,7 +4122,7 @@ public final class Cosmos {
 
             @Override // com.google.protobuf.GeneratedMessageLite
             protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-                switch (C67741.f1862xa1df5c61[method.ordinal()]) {
+                switch (C67981.f1865xa1df5c61[method.ordinal()]) {
                     case 1:
                         return new WithdrawDelegationReward();
                     case 2:
@@ -4338,7 +4338,7 @@ public final class Cosmos {
 
             /* loaded from: classes6.dex */
             public static final class Builder extends GeneratedMessageLite.Builder<WasmTerraExecuteContractTransfer, Builder> implements WasmTerraExecuteContractTransferOrBuilder {
-                /* synthetic */ Builder(C67741 c67741) {
+                /* synthetic */ Builder(C67981 c67981) {
                     this();
                 }
 
@@ -4450,7 +4450,7 @@ public final class Cosmos {
 
             @Override // com.google.protobuf.GeneratedMessageLite
             protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-                switch (C67741.f1862xa1df5c61[method.ordinal()]) {
+                switch (C67981.f1865xa1df5c61[method.ordinal()]) {
                     case 1:
                         return new WasmTerraExecuteContractTransfer();
                     case 2:
@@ -4757,7 +4757,7 @@ public final class Cosmos {
 
             /* loaded from: classes6.dex */
             public static final class Builder extends GeneratedMessageLite.Builder<WasmTerraExecuteContractSend, Builder> implements WasmTerraExecuteContractSendOrBuilder {
-                /* synthetic */ Builder(C67741 c67741) {
+                /* synthetic */ Builder(C67981 c67981) {
                     this();
                 }
 
@@ -4947,7 +4947,7 @@ public final class Cosmos {
 
             @Override // com.google.protobuf.GeneratedMessageLite
             protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-                switch (C67741.f1862xa1df5c61[method.ordinal()]) {
+                switch (C67981.f1865xa1df5c61[method.ordinal()]) {
                     case 1:
                         return new WasmTerraExecuteContractSend();
                     case 2:
@@ -5169,7 +5169,7 @@ public final class Cosmos {
 
             /* loaded from: classes6.dex */
             public static final class Builder extends GeneratedMessageLite.Builder<THORChainSend, Builder> implements THORChainSendOrBuilder {
-                /* synthetic */ Builder(C67741 c67741) {
+                /* synthetic */ Builder(C67981 c67981) {
                     this();
                 }
 
@@ -5283,7 +5283,7 @@ public final class Cosmos {
 
             @Override // com.google.protobuf.GeneratedMessageLite
             protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-                switch (C67741.f1862xa1df5c61[method.ordinal()]) {
+                switch (C67981.f1865xa1df5c61[method.ordinal()]) {
                     case 1:
                         return new THORChainSend();
                     case 2:
@@ -5552,7 +5552,7 @@ public final class Cosmos {
 
             /* loaded from: classes6.dex */
             public static final class Builder extends GeneratedMessageLite.Builder<WasmTerraExecuteContractGeneric, Builder> implements WasmTerraExecuteContractGenericOrBuilder {
-                /* synthetic */ Builder(C67741 c67741) {
+                /* synthetic */ Builder(C67981 c67981) {
                     this();
                 }
 
@@ -5716,7 +5716,7 @@ public final class Cosmos {
 
             @Override // com.google.protobuf.GeneratedMessageLite
             protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-                switch (C67741.f1862xa1df5c61[method.ordinal()]) {
+                switch (C67981.f1865xa1df5c61[method.ordinal()]) {
                     case 1:
                         return new WasmTerraExecuteContractGeneric();
                     case 2:
@@ -5932,7 +5932,7 @@ public final class Cosmos {
 
             /* loaded from: classes6.dex */
             public static final class Builder extends GeneratedMessageLite.Builder<WasmExecuteContractTransfer, Builder> implements WasmExecuteContractTransferOrBuilder {
-                /* synthetic */ Builder(C67741 c67741) {
+                /* synthetic */ Builder(C67981 c67981) {
                     this();
                 }
 
@@ -6044,7 +6044,7 @@ public final class Cosmos {
 
             @Override // com.google.protobuf.GeneratedMessageLite
             protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-                switch (C67741.f1862xa1df5c61[method.ordinal()]) {
+                switch (C67981.f1865xa1df5c61[method.ordinal()]) {
                     case 1:
                         return new WasmExecuteContractTransfer();
                     case 2:
@@ -6351,7 +6351,7 @@ public final class Cosmos {
 
             /* loaded from: classes6.dex */
             public static final class Builder extends GeneratedMessageLite.Builder<WasmExecuteContractSend, Builder> implements WasmExecuteContractSendOrBuilder {
-                /* synthetic */ Builder(C67741 c67741) {
+                /* synthetic */ Builder(C67981 c67981) {
                     this();
                 }
 
@@ -6541,7 +6541,7 @@ public final class Cosmos {
 
             @Override // com.google.protobuf.GeneratedMessageLite
             protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-                switch (C67741.f1862xa1df5c61[method.ordinal()]) {
+                switch (C67981.f1865xa1df5c61[method.ordinal()]) {
                     case 1:
                         return new WasmExecuteContractSend();
                     case 2:
@@ -6810,7 +6810,7 @@ public final class Cosmos {
 
             /* loaded from: classes6.dex */
             public static final class Builder extends GeneratedMessageLite.Builder<WasmExecuteContractGeneric, Builder> implements WasmExecuteContractGenericOrBuilder {
-                /* synthetic */ Builder(C67741 c67741) {
+                /* synthetic */ Builder(C67981 c67981) {
                     this();
                 }
 
@@ -6974,7 +6974,7 @@ public final class Cosmos {
 
             @Override // com.google.protobuf.GeneratedMessageLite
             protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-                switch (C67741.f1862xa1df5c61[method.ordinal()]) {
+                switch (C67981.f1865xa1df5c61[method.ordinal()]) {
                     case 1:
                         return new WasmExecuteContractGeneric();
                     case 2:
@@ -7143,7 +7143,7 @@ public final class Cosmos {
 
             /* loaded from: classes6.dex */
             public static final class Builder extends GeneratedMessageLite.Builder<RawJSON, Builder> implements RawJSONOrBuilder {
-                /* synthetic */ Builder(C67741 c67741) {
+                /* synthetic */ Builder(C67981 c67981) {
                     this();
                 }
 
@@ -7210,7 +7210,7 @@ public final class Cosmos {
 
             @Override // com.google.protobuf.GeneratedMessageLite
             protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-                switch (C67741.f1862xa1df5c61[method.ordinal()]) {
+                switch (C67981.f1865xa1df5c61[method.ordinal()]) {
                     case 1:
                         return new RawJSON();
                     case 2:
@@ -7360,7 +7360,7 @@ public final class Cosmos {
 
             /* loaded from: classes6.dex */
             public static final class Builder extends GeneratedMessageLite.Builder<SignDirect, Builder> implements SignDirectOrBuilder {
-                /* synthetic */ Builder(C67741 c67741) {
+                /* synthetic */ Builder(C67981 c67981) {
                     this();
                 }
 
@@ -7405,7 +7405,7 @@ public final class Cosmos {
 
             @Override // com.google.protobuf.GeneratedMessageLite
             protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-                switch (C67741.f1862xa1df5c61[method.ordinal()]) {
+                switch (C67981.f1865xa1df5c61[method.ordinal()]) {
                     case 1:
                         return new SignDirect();
                     case 2:
@@ -7611,7 +7611,7 @@ public final class Cosmos {
 
                 /* loaded from: classes6.dex */
                 public static final class Builder extends GeneratedMessageLite.Builder<Validators, Builder> implements ValidatorsOrBuilder {
-                    /* synthetic */ Builder(C67741 c67741) {
+                    /* synthetic */ Builder(C67981 c67981) {
                         this();
                     }
 
@@ -7672,7 +7672,7 @@ public final class Cosmos {
 
                 @Override // com.google.protobuf.GeneratedMessageLite
                 protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-                    switch (C67741.f1862xa1df5c61[method.ordinal()]) {
+                    switch (C67981.f1865xa1df5c61[method.ordinal()]) {
                         case 1:
                             return new Validators();
                         case 2:
@@ -7958,7 +7958,7 @@ public final class Cosmos {
 
             /* loaded from: classes6.dex */
             public static final class Builder extends GeneratedMessageLite.Builder<StakeAuthorization, Builder> implements StakeAuthorizationOrBuilder {
-                /* synthetic */ Builder(C67741 c67741) {
+                /* synthetic */ Builder(C67981 c67981) {
                     this();
                 }
 
@@ -8110,7 +8110,7 @@ public final class Cosmos {
 
             @Override // com.google.protobuf.GeneratedMessageLite
             protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-                switch (C67741.f1862xa1df5c61[method.ordinal()]) {
+                switch (C67981.f1865xa1df5c61[method.ordinal()]) {
                     case 1:
                         return new StakeAuthorization();
                     case 2:
@@ -8380,7 +8380,7 @@ public final class Cosmos {
 
             /* loaded from: classes6.dex */
             public static final class Builder extends GeneratedMessageLite.Builder<AuthGrant, Builder> implements AuthGrantOrBuilder {
-                /* synthetic */ Builder(C67741 c67741) {
+                /* synthetic */ Builder(C67981 c67981) {
                     this();
                 }
 
@@ -8509,7 +8509,7 @@ public final class Cosmos {
 
             @Override // com.google.protobuf.GeneratedMessageLite
             protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-                switch (C67741.f1862xa1df5c61[method.ordinal()]) {
+                switch (C67981.f1865xa1df5c61[method.ordinal()]) {
                     case 1:
                         return new AuthGrant();
                     case 2:
@@ -8707,7 +8707,7 @@ public final class Cosmos {
 
             /* loaded from: classes6.dex */
             public static final class Builder extends GeneratedMessageLite.Builder<AuthRevoke, Builder> implements AuthRevokeOrBuilder {
-                /* synthetic */ Builder(C67741 c67741) {
+                /* synthetic */ Builder(C67981 c67981) {
                     this();
                 }
 
@@ -8802,7 +8802,7 @@ public final class Cosmos {
 
             @Override // com.google.protobuf.GeneratedMessageLite
             protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-                switch (C67741.f1862xa1df5c61[method.ordinal()]) {
+                switch (C67981.f1865xa1df5c61[method.ordinal()]) {
                     case 1:
                         return new AuthRevoke();
                     case 2:
@@ -8987,7 +8987,7 @@ public final class Cosmos {
 
             /* loaded from: classes6.dex */
             public static final class Builder extends GeneratedMessageLite.Builder<MsgVote, Builder> implements MsgVoteOrBuilder {
-                /* synthetic */ Builder(C67741 c67741) {
+                /* synthetic */ Builder(C67981 c67981) {
                     this();
                 }
 
@@ -9071,7 +9071,7 @@ public final class Cosmos {
 
             @Override // com.google.protobuf.GeneratedMessageLite
             protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-                switch (C67741.f1862xa1df5c61[method.ordinal()]) {
+                switch (C67981.f1865xa1df5c61[method.ordinal()]) {
                     case 1:
                         return new MsgVote();
                     case 2:
@@ -9970,7 +9970,7 @@ public final class Cosmos {
 
         /* loaded from: classes6.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<Message, Builder> implements MessageOrBuilder {
-            /* synthetic */ Builder(C67741 c67741) {
+            /* synthetic */ Builder(C67981 c67981) {
                 this();
             }
 
@@ -10604,7 +10604,7 @@ public final class Cosmos {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C67741.f1862xa1df5c61[method.ordinal()]) {
+            switch (C67981.f1865xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new Message();
                 case 2:
@@ -10987,7 +10987,7 @@ public final class Cosmos {
 
         /* loaded from: classes6.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<SigningInput, Builder> implements SigningInputOrBuilder {
-            /* synthetic */ Builder(C67741 c67741) {
+            /* synthetic */ Builder(C67981 c67981) {
                 this();
             }
 
@@ -11264,7 +11264,7 @@ public final class Cosmos {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C67741.f1862xa1df5c61[method.ordinal()]) {
+            switch (C67981.f1865xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new SigningInput();
                 case 2:
@@ -11509,7 +11509,7 @@ public final class Cosmos {
 
         /* loaded from: classes6.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<SigningOutput, Builder> implements SigningOutputOrBuilder {
-            /* synthetic */ Builder(C67741 c67741) {
+            /* synthetic */ Builder(C67981 c67981) {
                 this();
             }
 
@@ -11649,7 +11649,7 @@ public final class Cosmos {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C67741.f1862xa1df5c61[method.ordinal()]) {
+            switch (C67981.f1865xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new SigningOutput();
                 case 2:

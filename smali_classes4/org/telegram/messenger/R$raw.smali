@@ -198,367 +198,367 @@
 
 .field public static final fork_safe:I = 0x7f0f005b
 
-.field public static final fork_save_code_phrase:I = 0x7f0f005c
+.field public static final fork_staking_banner:I = 0x7f0f005c
 
-.field public static final fork_staking_banner:I = 0x7f0f005d
+.field public static final fork_staking_calculator:I = 0x7f0f005d
 
-.field public static final fork_staking_calculator:I = 0x7f0f005e
+.field public static final fork_staking_replenish:I = 0x7f0f005e
 
-.field public static final fork_staking_replenish:I = 0x7f0f005f
+.field public static final fork_staking_withdraw:I = 0x7f0f005f
 
-.field public static final fork_staking_withdraw:I = 0x7f0f0060
+.field public static final fork_state_empty_balance:I = 0x7f0f0060
 
-.field public static final fork_state_empty_balance:I = 0x7f0f0061
+.field public static final fork_state_empty_common:I = 0x7f0f0061
 
-.field public static final fork_state_empty_common:I = 0x7f0f0062
+.field public static final fork_state_no_internet:I = 0x7f0f0062
 
-.field public static final fork_state_no_internet:I = 0x7f0f0063
+.field public static final fork_state_progress:I = 0x7f0f0063
 
-.field public static final fork_state_progress:I = 0x7f0f0064
+.field public static final fork_state_unexpected:I = 0x7f0f0064
 
-.field public static final fork_state_unexpected:I = 0x7f0f0065
+.field public static final fork_swap:I = 0x7f0f0065
 
-.field public static final fork_swap:I = 0x7f0f0066
+.field public static final fork_template_name_input:I = 0x7f0f0066
 
-.field public static final fork_template_name_input:I = 0x7f0f0067
+.field public static final fork_topic_new:I = 0x7f0f0067
 
-.field public static final fork_topic_new:I = 0x7f0f0068
+.field public static final fork_topics:I = 0x7f0f0068
 
-.field public static final fork_topics:I = 0x7f0f0069
+.field public static final fork_tutorial_be_carefull:I = 0x7f0f0069
 
-.field public static final fork_tutorial_be_carefull:I = 0x7f0f006a
+.field public static final fork_tutorial_check_data:I = 0x7f0f006a
 
-.field public static final fork_tutorial_check_data:I = 0x7f0f006b
+.field public static final fork_wallet_connect:I = 0x7f0f006b
 
-.field public static final fork_wallet_connect:I = 0x7f0f006c
+.field public static final fork_wallet_import:I = 0x7f0f006c
 
-.field public static final fork_wallet_import:I = 0x7f0f006d
+.field public static final fork_wallet_note:I = 0x7f0f006d
 
-.field public static final fork_wallet_note:I = 0x7f0f006e
+.field public static final fork_wallet_too_bad:I = 0x7f0f006e
 
-.field public static final fork_wallet_too_bad:I = 0x7f0f006f
+.field public static final forward:I = 0x7f0f006f
 
-.field public static final forward:I = 0x7f0f0070
+.field public static final fragment:I = 0x7f0f0070
 
-.field public static final fragment:I = 0x7f0f0071
+.field public static final gif_to_keyboard:I = 0x7f0f0071
 
-.field public static final gif_to_keyboard:I = 0x7f0f0072
+.field public static final gif_to_smile:I = 0x7f0f0072
 
-.field public static final gif_to_smile:I = 0x7f0f0073
+.field public static final gigagroup:I = 0x7f0f0073
 
-.field public static final gigagroup:I = 0x7f0f0074
+.field public static final gigagroup_convert:I = 0x7f0f0074
 
-.field public static final gigagroup_convert:I = 0x7f0f0075
+.field public static final group_pip_delete_icon:I = 0x7f0f0075
 
-.field public static final group_pip_delete_icon:I = 0x7f0f0076
+.field public static final hand_1:I = 0x7f0f0076
 
-.field public static final hand_1:I = 0x7f0f0077
+.field public static final hand_2:I = 0x7f0f0077
 
-.field public static final hand_2:I = 0x7f0f0078
+.field public static final hint_swipe_reply:I = 0x7f0f0078
 
-.field public static final hint_swipe_reply:I = 0x7f0f0079
+.field public static final ic_admin:I = 0x7f0f0079
 
-.field public static final ic_admin:I = 0x7f0f007a
+.field public static final ic_ban:I = 0x7f0f007a
 
-.field public static final ic_ban:I = 0x7f0f007b
+.field public static final ic_delete:I = 0x7f0f007b
 
-.field public static final ic_delete:I = 0x7f0f007c
+.field public static final ic_download:I = 0x7f0f007c
 
-.field public static final ic_download:I = 0x7f0f007d
+.field public static final ic_mute:I = 0x7f0f007d
 
-.field public static final ic_mute:I = 0x7f0f007e
+.field public static final ic_pin:I = 0x7f0f007e
 
-.field public static final ic_pin:I = 0x7f0f007f
+.field public static final ic_save_to_gallery:I = 0x7f0f007f
 
-.field public static final ic_save_to_gallery:I = 0x7f0f0080
+.field public static final ic_save_to_gifs:I = 0x7f0f0080
 
-.field public static final ic_save_to_gifs:I = 0x7f0f0081
+.field public static final ic_save_to_music:I = 0x7f0f0081
 
-.field public static final ic_save_to_music:I = 0x7f0f0082
+.field public static final ic_unban:I = 0x7f0f0082
 
-.field public static final ic_unban:I = 0x7f0f0083
+.field public static final ic_unmute:I = 0x7f0f0083
 
-.field public static final ic_unmute:I = 0x7f0f0084
+.field public static final ic_unpin:I = 0x7f0f0084
 
-.field public static final ic_unpin:I = 0x7f0f0085
+.field public static final import_check:I = 0x7f0f0085
 
-.field public static final import_check:I = 0x7f0f0086
+.field public static final import_finish:I = 0x7f0f0086
 
-.field public static final import_finish:I = 0x7f0f0087
+.field public static final import_loop:I = 0x7f0f0087
 
-.field public static final import_loop:I = 0x7f0f0088
+.field public static final import_progress:I = 0x7f0f0088
 
-.field public static final import_progress:I = 0x7f0f0089
+.field public static final imported:I = 0x7f0f0089
 
-.field public static final imported:I = 0x7f0f008a
+.field public static final incoming_calls:I = 0x7f0f008a
 
-.field public static final incoming_calls:I = 0x7f0f008b
+.field public static final info:I = 0x7f0f008b
 
-.field public static final info:I = 0x7f0f008c
+.field public static final ipad_30:I = 0x7f0f008c
 
-.field public static final ipad_30:I = 0x7f0f008d
+.field public static final iphone_30:I = 0x7f0f008d
 
-.field public static final iphone_30:I = 0x7f0f008e
+.field public static final keyboard_to_gif:I = 0x7f0f008e
 
-.field public static final keyboard_to_gif:I = 0x7f0f008f
+.field public static final keyboard_to_smile:I = 0x7f0f008f
 
-.field public static final keyboard_to_smile:I = 0x7f0f0090
+.field public static final keyboard_to_sticker:I = 0x7f0f0090
 
-.field public static final keyboard_to_sticker:I = 0x7f0f0091
+.field public static final linkbroken:I = 0x7f0f0091
 
-.field public static final linkbroken:I = 0x7f0f0092
+.field public static final linux_30:I = 0x7f0f0092
 
-.field public static final linux_30:I = 0x7f0f0093
+.field public static final mac_30:I = 0x7f0f0093
 
-.field public static final mac_30:I = 0x7f0f0094
+.field public static final map_placeholder:I = 0x7f0f0094
 
-.field public static final map_placeholder:I = 0x7f0f0095
+.field public static final mapstyle_night:I = 0x7f0f0095
 
-.field public static final mapstyle_night:I = 0x7f0f0096
+.field public static final media_forbidden:I = 0x7f0f0096
 
-.field public static final media_forbidden:I = 0x7f0f0097
+.field public static final msg_antispam:I = 0x7f0f0097
 
-.field public static final msg_antispam:I = 0x7f0f0098
+.field public static final msg_emoji_activities:I = 0x7f0f0098
 
-.field public static final msg_emoji_activities:I = 0x7f0f0099
+.field public static final msg_emoji_cat:I = 0x7f0f0099
 
-.field public static final msg_emoji_cat:I = 0x7f0f009a
+.field public static final msg_emoji_flags:I = 0x7f0f009a
 
-.field public static final msg_emoji_flags:I = 0x7f0f009b
+.field public static final msg_emoji_food:I = 0x7f0f009b
 
-.field public static final msg_emoji_food:I = 0x7f0f009c
+.field public static final msg_emoji_objects:I = 0x7f0f009c
 
-.field public static final msg_emoji_objects:I = 0x7f0f009d
+.field public static final msg_emoji_other:I = 0x7f0f009d
 
-.field public static final msg_emoji_other:I = 0x7f0f009e
+.field public static final msg_emoji_smiles:I = 0x7f0f009e
 
-.field public static final msg_emoji_smiles:I = 0x7f0f009f
+.field public static final msg_emoji_travel:I = 0x7f0f009f
 
-.field public static final msg_emoji_travel:I = 0x7f0f00a0
+.field public static final msg_translate:I = 0x7f0f00a0
 
-.field public static final msg_translate:I = 0x7f0f00a1
+.field public static final mute_for:I = 0x7f0f00a1
 
-.field public static final mute_for:I = 0x7f0f00a2
+.field public static final not_available:I = 0x7f0f00a2
 
-.field public static final not_available:I = 0x7f0f00a3
+.field public static final passcode_lock_close:I = 0x7f0f00a3
 
-.field public static final passcode_lock_close:I = 0x7f0f00a4
+.field public static final payment_success:I = 0x7f0f00a4
 
-.field public static final payment_success:I = 0x7f0f00a5
+.field public static final permission_map:I = 0x7f0f00a5
 
-.field public static final permission_map:I = 0x7f0f00a6
+.field public static final permission_map_dark:I = 0x7f0f00a6
 
-.field public static final permission_map_dark:I = 0x7f0f00a7
+.field public static final permission_pin:I = 0x7f0f00a7
 
-.field public static final permission_pin:I = 0x7f0f00a8
+.field public static final permission_pin_dark:I = 0x7f0f00a8
 
-.field public static final permission_pin_dark:I = 0x7f0f00a9
+.field public static final permission_request_apk:I = 0x7f0f00a9
 
-.field public static final permission_request_apk:I = 0x7f0f00aa
+.field public static final permission_request_camera:I = 0x7f0f00aa
 
-.field public static final permission_request_camera:I = 0x7f0f00ab
+.field public static final permission_request_contacts:I = 0x7f0f00ab
 
-.field public static final permission_request_contacts:I = 0x7f0f00ac
+.field public static final permission_request_folder:I = 0x7f0f00ac
 
-.field public static final permission_request_folder:I = 0x7f0f00ad
+.field public static final permission_request_location:I = 0x7f0f00ad
 
-.field public static final permission_request_location:I = 0x7f0f00ae
+.field public static final permission_request_microphone:I = 0x7f0f00ae
 
-.field public static final permission_request_microphone:I = 0x7f0f00af
+.field public static final phone_dots:I = 0x7f0f00af
 
-.field public static final phone_dots:I = 0x7f0f00b0
+.field public static final phone_dots_to_stars:I = 0x7f0f00b0
 
-.field public static final phone_dots_to_stars:I = 0x7f0f00b1
+.field public static final phone_flash_call:I = 0x7f0f00b1
 
-.field public static final phone_flash_call:I = 0x7f0f00b2
+.field public static final phone_stars_to_dots:I = 0x7f0f00b2
 
-.field public static final phone_stars_to_dots:I = 0x7f0f00b3
+.field public static final photo_arrow:I = 0x7f0f00b3
 
-.field public static final photo_arrow:I = 0x7f0f00b4
+.field public static final photo_blur:I = 0x7f0f00b4
 
-.field public static final photo_blur:I = 0x7f0f00b5
+.field public static final photo_eraser:I = 0x7f0f00b5
 
-.field public static final photo_eraser:I = 0x7f0f00b6
+.field public static final photo_marker:I = 0x7f0f00b6
 
-.field public static final photo_marker:I = 0x7f0f00b7
+.field public static final photo_neon:I = 0x7f0f00b7
 
-.field public static final photo_neon:I = 0x7f0f00b8
+.field public static final photo_pen:I = 0x7f0f00b8
 
-.field public static final photo_pen:I = 0x7f0f00b9
+.field public static final photo_spoiler:I = 0x7f0f00b9
 
-.field public static final photo_spoiler:I = 0x7f0f00ba
+.field public static final photo_suggest_icon:I = 0x7f0f00ba
 
-.field public static final photo_suggest_icon:I = 0x7f0f00bb
+.field public static final photo_text_allign:I = 0x7f0f00bb
 
-.field public static final photo_text_allign:I = 0x7f0f00bc
+.field public static final pip_video_request:I = 0x7f0f00bc
 
-.field public static final pip_video_request:I = 0x7f0f00bd
+.field public static final pip_voice_request:I = 0x7f0f00bd
 
-.field public static final pip_voice_request:I = 0x7f0f00be
+.field public static final player_prev:I = 0x7f0f00be
 
-.field public static final player_prev:I = 0x7f0f00bf
+.field public static final premium_gift:I = 0x7f0f00bf
 
-.field public static final premium_gift:I = 0x7f0f00c0
+.field public static final premium_object_adsbubble:I = 0x7f0f00c0
 
-.field public static final premium_object_adsbubble:I = 0x7f0f00c1
+.field public static final premium_object_bubble:I = 0x7f0f00c1
 
-.field public static final premium_object_bubble:I = 0x7f0f00c2
+.field public static final premium_object_fire:I = 0x7f0f00c2
 
-.field public static final premium_object_fire:I = 0x7f0f00c3
+.field public static final premium_object_folder:I = 0x7f0f00c3
 
-.field public static final premium_object_folder:I = 0x7f0f00c4
+.field public static final premium_object_like:I = 0x7f0f00c4
 
-.field public static final premium_object_like:I = 0x7f0f00c5
+.field public static final premium_object_noads:I = 0x7f0f00c5
 
-.field public static final premium_object_noads:I = 0x7f0f00c6
+.field public static final premium_object_settings:I = 0x7f0f00c6
 
-.field public static final premium_object_settings:I = 0x7f0f00c7
+.field public static final premium_object_smile1:I = 0x7f0f00c7
 
-.field public static final premium_object_smile1:I = 0x7f0f00c8
+.field public static final premium_object_smile2:I = 0x7f0f00c8
 
-.field public static final premium_object_smile2:I = 0x7f0f00c9
+.field public static final premium_object_star2:I = 0x7f0f00c9
 
-.field public static final premium_object_star2:I = 0x7f0f00ca
+.field public static final premium_object_user:I = 0x7f0f00ca
 
-.field public static final premium_object_user:I = 0x7f0f00cb
+.field public static final premium_object_video:I = 0x7f0f00cb
 
-.field public static final premium_object_video:I = 0x7f0f00cc
+.field public static final premium_object_video2:I = 0x7f0f00cc
 
-.field public static final premium_object_video2:I = 0x7f0f00cd
+.field public static final qr_code_logo:I = 0x7f0f00cd
 
-.field public static final qr_code_logo:I = 0x7f0f00ce
+.field public static final qr_code_logo_2:I = 0x7f0f00ce
 
-.field public static final qr_code_logo_2:I = 0x7f0f00cf
+.field public static final qr_dog:I = 0x7f0f00cf
 
-.field public static final qr_dog:I = 0x7f0f00d0
+.field public static final qr_login:I = 0x7f0f00d0
 
-.field public static final qr_login:I = 0x7f0f00d1
+.field public static final qr_logo:I = 0x7f0f00d1
 
-.field public static final qr_logo:I = 0x7f0f00d2
+.field public static final qr_matrix:I = 0x7f0f00d2
 
-.field public static final qr_matrix:I = 0x7f0f00d3
+.field public static final record_audio:I = 0x7f0f00d3
 
-.field public static final record_audio:I = 0x7f0f00d4
+.field public static final record_video_l:I = 0x7f0f00d4
 
-.field public static final record_video_l:I = 0x7f0f00d5
+.field public static final record_video_p:I = 0x7f0f00d5
 
-.field public static final record_video_p:I = 0x7f0f00d6
+.field public static final report_police:I = 0x7f0f00d6
 
-.field public static final report_police:I = 0x7f0f00d7
+.field public static final safari_30:I = 0x7f0f00d7
 
-.field public static final safari_30:I = 0x7f0f00d8
+.field public static final sandclock:I = 0x7f0f00d8
 
-.field public static final sandclock:I = 0x7f0f00d9
+.field public static final saved_messages:I = 0x7f0f00d9
 
-.field public static final saved_messages:I = 0x7f0f00da
+.field public static final shared_link_enter:I = 0x7f0f00da
 
-.field public static final shared_link_enter:I = 0x7f0f00db
+.field public static final silent_mute:I = 0x7f0f00db
 
-.field public static final silent_mute:I = 0x7f0f00dc
+.field public static final silent_unmute:I = 0x7f0f00dc
 
-.field public static final silent_unmute:I = 0x7f0f00dd
+.field public static final smile_to_gif:I = 0x7f0f00dd
 
-.field public static final smile_to_gif:I = 0x7f0f00de
+.field public static final smile_to_keyboard:I = 0x7f0f00de
 
-.field public static final smile_to_keyboard:I = 0x7f0f00df
+.field public static final smile_to_sticker:I = 0x7f0f00df
 
-.field public static final smile_to_sticker:I = 0x7f0f00e0
+.field public static final sms_incoming_info:I = 0x7f0f00e0
 
-.field public static final sms_incoming_info:I = 0x7f0f00e1
+.field public static final sound_download:I = 0x7f0f00e1
 
-.field public static final sound_download:I = 0x7f0f00e2
+.field public static final sound_in:I = 0x7f0f00e2
 
-.field public static final sound_in:I = 0x7f0f00e3
+.field public static final sound_off:I = 0x7f0f00e3
 
-.field public static final sound_off:I = 0x7f0f00e4
+.field public static final sound_on:I = 0x7f0f00e4
 
-.field public static final sound_on:I = 0x7f0f00e5
+.field public static final sound_out:I = 0x7f0f00e5
 
-.field public static final sound_out:I = 0x7f0f00e6
+.field public static final speaker:I = 0x7f0f00e6
 
-.field public static final speaker:I = 0x7f0f00e7
+.field public static final speed_15to2:I = 0x7f0f00e7
 
-.field public static final speed_15to2:I = 0x7f0f00e8
+.field public static final speed_1to15:I = 0x7f0f00e8
 
-.field public static final speed_1to15:I = 0x7f0f00e9
+.field public static final speed_1to2:I = 0x7f0f00e9
 
-.field public static final speed_1to2:I = 0x7f0f00ea
+.field public static final speed_2to1:I = 0x7f0f00ea
 
-.field public static final speed_2to1:I = 0x7f0f00eb
+.field public static final speed_fast:I = 0x7f0f00eb
 
-.field public static final speed_fast:I = 0x7f0f00ec
+.field public static final speed_slow:I = 0x7f0f00ec
 
-.field public static final speed_slow:I = 0x7f0f00ed
+.field public static final star_loader:I = 0x7f0f00ed
 
-.field public static final star_loader:I = 0x7f0f00ee
+.field public static final start_texture:I = 0x7f0f00ee
 
-.field public static final start_texture:I = 0x7f0f00ef
+.field public static final statistic_preload:I = 0x7f0f00ef
 
-.field public static final statistic_preload:I = 0x7f0f00f0
+.field public static final sticker_to_keyboard:I = 0x7f0f00f0
 
-.field public static final sticker_to_keyboard:I = 0x7f0f00f1
+.field public static final sticker_to_smile:I = 0x7f0f00f1
 
-.field public static final sticker_to_smile:I = 0x7f0f00f2
+.field public static final sun:I = 0x7f0f00f2
 
-.field public static final sun:I = 0x7f0f00f3
+.field public static final sun_outline:I = 0x7f0f00f3
 
-.field public static final sun_outline:I = 0x7f0f00f4
+.field public static final swipe_delete:I = 0x7f0f00f4
 
-.field public static final swipe_delete:I = 0x7f0f00f5
+.field public static final swipe_disabled:I = 0x7f0f00f5
 
-.field public static final swipe_disabled:I = 0x7f0f00f6
+.field public static final swipe_mute:I = 0x7f0f00f6
 
-.field public static final swipe_mute:I = 0x7f0f00f7
+.field public static final swipe_pin:I = 0x7f0f00f7
 
-.field public static final swipe_pin:I = 0x7f0f00f8
+.field public static final swipe_read:I = 0x7f0f00f8
 
-.field public static final swipe_read:I = 0x7f0f00f9
+.field public static final swipe_unmute:I = 0x7f0f00f9
 
-.field public static final swipe_unmute:I = 0x7f0f00fa
+.field public static final swipe_unpin:I = 0x7f0f00fa
 
-.field public static final swipe_unpin:I = 0x7f0f00fb
+.field public static final swipe_unread:I = 0x7f0f00fb
 
-.field public static final swipe_unread:I = 0x7f0f00fc
+.field public static final ticks_double:I = 0x7f0f00fc
 
-.field public static final ticks_double:I = 0x7f0f00fd
+.field public static final ticks_single:I = 0x7f0f00fd
 
-.field public static final ticks_single:I = 0x7f0f00fe
+.field public static final timer_3:I = 0x7f0f00fe
 
-.field public static final timer_3:I = 0x7f0f00ff
+.field public static final topic_bubble:I = 0x7f0f00ff
 
-.field public static final topic_bubble:I = 0x7f0f0100
+.field public static final topics:I = 0x7f0f0100
 
-.field public static final topics:I = 0x7f0f0101
+.field public static final transcribe_in:I = 0x7f0f0101
 
-.field public static final transcribe_in:I = 0x7f0f0102
+.field public static final transcribe_out:I = 0x7f0f0102
 
-.field public static final transcribe_out:I = 0x7f0f0103
+.field public static final tsv_monkey_close:I = 0x7f0f0103
 
-.field public static final tsv_monkey_close:I = 0x7f0f0104
+.field public static final tsv_setup_email_sent:I = 0x7f0f0104
 
-.field public static final tsv_setup_email_sent:I = 0x7f0f0105
+.field public static final tsv_setup_hint:I = 0x7f0f0105
 
-.field public static final tsv_setup_hint:I = 0x7f0f0106
+.field public static final tsv_setup_intro:I = 0x7f0f0106
 
-.field public static final tsv_setup_intro:I = 0x7f0f0107
+.field public static final tsv_setup_mail:I = 0x7f0f0107
 
-.field public static final tsv_setup_mail:I = 0x7f0f0108
+.field public static final tsv_setup_monkey_close_and_peek:I = 0x7f0f0108
 
-.field public static final tsv_setup_monkey_close_and_peek:I = 0x7f0f0109
+.field public static final tsv_setup_monkey_close_and_peek_to_idle:I = 0x7f0f0109
 
-.field public static final tsv_setup_monkey_close_and_peek_to_idle:I = 0x7f0f010a
+.field public static final tsv_setup_monkey_idle1:I = 0x7f0f010a
 
-.field public static final tsv_setup_monkey_idle1:I = 0x7f0f010b
+.field public static final tsv_setup_monkey_idle2:I = 0x7f0f010b
 
-.field public static final tsv_setup_monkey_idle2:I = 0x7f0f010c
+.field public static final tsv_setup_monkey_peek:I = 0x7f0f010c
 
-.field public static final tsv_setup_monkey_peek:I = 0x7f0f010d
+.field public static final tsv_setup_monkey_tracking:I = 0x7f0f010d
 
-.field public static final tsv_setup_monkey_tracking:I = 0x7f0f010e
+.field public static final ubuntu_30:I = 0x7f0f010e
 
-.field public static final ubuntu_30:I = 0x7f0f010f
+.field public static final unlock_icon:I = 0x7f0f010f
 
-.field public static final unlock_icon:I = 0x7f0f0110
+.field public static final utyan_cache:I = 0x7f0f0110
 
 .field public static final utyan_call:I = 0x7f0f0111
 

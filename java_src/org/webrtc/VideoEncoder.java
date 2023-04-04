@@ -138,36 +138,36 @@ public interface VideoEncoder {
         public final Integer low;
 
         /* renamed from: on */
-        public final boolean f1850on;
+        public final boolean f1853on;
 
         public ScalingSettings(int i, int i2) {
-            this.f1850on = true;
+            this.f1853on = true;
             this.low = Integer.valueOf(i);
             this.high = Integer.valueOf(i2);
         }
 
         private ScalingSettings() {
-            this.f1850on = false;
+            this.f1853on = false;
             this.low = null;
             this.high = null;
         }
 
         @Deprecated
         public ScalingSettings(boolean z) {
-            this.f1850on = z;
+            this.f1853on = z;
             this.low = null;
             this.high = null;
         }
 
         @Deprecated
         public ScalingSettings(boolean z, int i, int i2) {
-            this.f1850on = z;
+            this.f1853on = z;
             this.low = Integer.valueOf(i);
             this.high = Integer.valueOf(i2);
         }
 
         public String toString() {
-            if (this.f1850on) {
+            if (this.f1853on) {
                 return "[ " + this.low + ", " + this.high + " ]";
             }
             return "OFF";
@@ -258,6 +258,11 @@ public interface VideoEncoder {
         @CalledByNative
         public static boolean $default$isHardwareEncoder(VideoEncoder videoEncoder) {
             return true;
+        }
+
+        @CalledByNative
+        public static VideoCodecStatus $default$setRates(VideoEncoder _this, RateControlParameters rateControlParameters) {
+            return _this.setRateAllocation(rateControlParameters.bitrate, (int) Math.ceil(rateControlParameters.framerateFps));
         }
 
         @CalledByNative

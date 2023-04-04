@@ -72,7 +72,7 @@
         }
     .end annotation
 
-    const-string v0, "tlsVersion"
+    const-string/jumbo v0, "tlsVersion"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -137,7 +137,7 @@
 
     move-result-object p1
 
-    const-string v0, "type"
+    const-string/jumbo v0, "type"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -378,7 +378,7 @@
 
     invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string v3, "tlsVersion="
+    const-string/jumbo v3, "tlsVersion="
 
     invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 

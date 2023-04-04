@@ -2,8 +2,8 @@ package com.google.protobuf;
 
 import java.util.Iterator;
 import java.util.Map;
-import p034j$.util.Iterator;
-import p034j$.util.function.Consumer;
+import p035j$.util.Iterator;
+import p035j$.util.function.Consumer;
 /* loaded from: classes3.dex */
 public class LazyField extends LazyFieldLite {
     private final MessageLite defaultInstance;
@@ -64,10 +64,10 @@ public class LazyField extends LazyFieldLite {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: classes3.dex */
-    public static class LazyIterator<K> implements Iterator<Map.Entry<K, Object>>, p034j$.util.Iterator {
+    public static class LazyIterator<K> implements Iterator<Map.Entry<K, Object>>, p035j$.util.Iterator {
         private Iterator<Map.Entry<K, Object>> iterator;
 
-        @Override // p034j$.util.Iterator
+        @Override // p035j$.util.Iterator
         public /* synthetic */ void forEachRemaining(Consumer consumer) {
             Iterator.CC.$default$forEachRemaining(this, consumer);
         }
@@ -76,18 +76,18 @@ public class LazyField extends LazyFieldLite {
             this.iterator = it;
         }
 
-        @Override // java.util.Iterator, p034j$.util.Iterator
+        @Override // java.util.Iterator, p035j$.util.Iterator
         public boolean hasNext() {
             return this.iterator.hasNext();
         }
 
-        @Override // java.util.Iterator, p034j$.util.Iterator
+        @Override // java.util.Iterator, p035j$.util.Iterator
         public Map.Entry<K, Object> next() {
             Map.Entry<K, Object> next = this.iterator.next();
             return next.getValue() instanceof LazyField ? new LazyEntry(next) : next;
         }
 
-        @Override // java.util.Iterator, p034j$.util.Iterator
+        @Override // java.util.Iterator, p035j$.util.Iterator
         public void remove() {
             this.iterator.remove();
         }

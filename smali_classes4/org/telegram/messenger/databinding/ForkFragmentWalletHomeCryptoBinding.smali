@@ -9,18 +9,18 @@
 # instance fields
 .field public final recycleWalletHomeCryptoDashboard:Landroidx/recyclerview/widget/RecyclerView;
 
-.field private final rootView:Lcom/smedialink/ui/custom/SlopSwipeRefreshLayout;
+.field private final rootView:Lcom/iMe/ui/custom/SlopSwipeRefreshLayout;
 
 
 # direct methods
-.method private constructor <init>(Lcom/smedialink/ui/custom/SlopSwipeRefreshLayout;Landroidx/recyclerview/widget/RecyclerView;)V
+.method private constructor <init>(Lcom/iMe/ui/custom/SlopSwipeRefreshLayout;Landroidx/recyclerview/widget/RecyclerView;)V
     .locals 0
 
     .line 26
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 27
-    iput-object p1, p0, Lorg/telegram/messenger/databinding/ForkFragmentWalletHomeCryptoBinding;->rootView:Lcom/smedialink/ui/custom/SlopSwipeRefreshLayout;
+    iput-object p1, p0, Lorg/telegram/messenger/databinding/ForkFragmentWalletHomeCryptoBinding;->rootView:Lcom/iMe/ui/custom/SlopSwipeRefreshLayout;
 
     .line 28
     iput-object p2, p0, Lorg/telegram/messenger/databinding/ForkFragmentWalletHomeCryptoBinding;->recycleWalletHomeCryptoDashboard:Landroidx/recyclerview/widget/RecyclerView;
@@ -46,9 +46,9 @@
     .line 64
     new-instance v0, Lorg/telegram/messenger/databinding/ForkFragmentWalletHomeCryptoBinding;
 
-    check-cast p0, Lcom/smedialink/ui/custom/SlopSwipeRefreshLayout;
+    check-cast p0, Lcom/iMe/ui/custom/SlopSwipeRefreshLayout;
 
-    invoke-direct {v0, p0, v1}, Lorg/telegram/messenger/databinding/ForkFragmentWalletHomeCryptoBinding;-><init>(Lcom/smedialink/ui/custom/SlopSwipeRefreshLayout;Landroidx/recyclerview/widget/RecyclerView;)V
+    invoke-direct {v0, p0, v1}, Lorg/telegram/messenger/databinding/ForkFragmentWalletHomeCryptoBinding;-><init>(Lcom/iMe/ui/custom/SlopSwipeRefreshLayout;Landroidx/recyclerview/widget/RecyclerView;)V
 
     return-object v0
 
@@ -123,18 +123,18 @@
     .locals 1
 
     .line 18
-    invoke-virtual {p0}, Lorg/telegram/messenger/databinding/ForkFragmentWalletHomeCryptoBinding;->getRoot()Lcom/smedialink/ui/custom/SlopSwipeRefreshLayout;
+    invoke-virtual {p0}, Lorg/telegram/messenger/databinding/ForkFragmentWalletHomeCryptoBinding;->getRoot()Lcom/iMe/ui/custom/SlopSwipeRefreshLayout;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method public getRoot()Lcom/smedialink/ui/custom/SlopSwipeRefreshLayout;
+.method public getRoot()Lcom/iMe/ui/custom/SlopSwipeRefreshLayout;
     .locals 1
 
     .line 34
-    iget-object v0, p0, Lorg/telegram/messenger/databinding/ForkFragmentWalletHomeCryptoBinding;->rootView:Lcom/smedialink/ui/custom/SlopSwipeRefreshLayout;
+    iget-object v0, p0, Lorg/telegram/messenger/databinding/ForkFragmentWalletHomeCryptoBinding;->rootView:Lcom/iMe/ui/custom/SlopSwipeRefreshLayout;
 
     return-object v0
 .end method

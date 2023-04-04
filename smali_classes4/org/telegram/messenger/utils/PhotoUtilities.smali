@@ -224,7 +224,7 @@
 
     iget-wide v1, p0, Lorg/telegram/messenger/UserConfig;->clientUserId:J
 
-    const-string p0, "user_id"
+    const-string/jumbo p0, "user_id"
 
     invoke-virtual {v0, p0, v1, v2}, Landroid/os/Bundle;->putLong(Ljava/lang/String;J)V
 
@@ -685,7 +685,7 @@
 
     invoke-direct {v0}, Landroid/os/Bundle;-><init>()V
 
-    const-string v1, "user_id"
+    const-string/jumbo v1, "user_id"
 
     .line 224
     invoke-virtual {v0, v1, p0, p1}, Landroid/os/Bundle;->putLong(Ljava/lang/String;J)V

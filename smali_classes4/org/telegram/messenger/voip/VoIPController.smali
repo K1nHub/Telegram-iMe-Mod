@@ -811,7 +811,7 @@
 
     if-eqz v2, :cond_2
 
-    const-string v2, "use_system_aec"
+    const-string/jumbo v2, "use_system_aec"
 
     .line 160
     invoke-static {v2, v8}, Lorg/telegram/messenger/voip/VoIPServerConfig;->getBoolean(Ljava/lang/String;Z)Z
@@ -834,7 +834,7 @@
     :goto_2
     if-eqz v4, :cond_4
 
-    const-string v2, "use_system_ns"
+    const-string/jumbo v2, "use_system_ns"
 
     .line 161
     invoke-static {v2, v8}, Lorg/telegram/messenger/voip/VoIPServerConfig;->getBoolean(Ljava/lang/String;Z)Z

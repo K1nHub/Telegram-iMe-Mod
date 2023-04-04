@@ -79,7 +79,7 @@ public class ChartPickerDelegate {
     public class CapturesData {
 
         /* renamed from: a */
-        ValueAnimator f1671a;
+        ValueAnimator f1674a;
         public float aValue = BitmapDescriptorFactory.HUE_RED;
         public int capturedX;
         public float end;
@@ -94,16 +94,16 @@ public class ChartPickerDelegate {
 
         public void captured() {
             ValueAnimator ofFloat = ValueAnimator.ofFloat(BitmapDescriptorFactory.HUE_RED, 1.0f);
-            this.f1671a = ofFloat;
+            this.f1674a = ofFloat;
             ofFloat.setDuration(600L);
-            this.f1671a.setInterpolator(BaseChartView.INTERPOLATOR);
-            this.f1671a.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Charts.ChartPickerDelegate$CapturesData$$ExternalSyntheticLambda0
+            this.f1674a.setInterpolator(BaseChartView.INTERPOLATOR);
+            this.f1674a.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Charts.ChartPickerDelegate$CapturesData$$ExternalSyntheticLambda0
                 @Override // android.animation.ValueAnimator.AnimatorUpdateListener
                 public final void onAnimationUpdate(ValueAnimator valueAnimator) {
                     ChartPickerDelegate.CapturesData.this.lambda$captured$0(valueAnimator);
                 }
             });
-            this.f1671a.start();
+            this.f1674a.start();
         }
 
         /* JADX INFO: Access modifiers changed from: private */
@@ -113,7 +113,7 @@ public class ChartPickerDelegate {
         }
 
         public void uncapture() {
-            ValueAnimator valueAnimator = this.f1671a;
+            ValueAnimator valueAnimator = this.f1674a;
             if (valueAnimator != null) {
                 valueAnimator.cancel();
             }

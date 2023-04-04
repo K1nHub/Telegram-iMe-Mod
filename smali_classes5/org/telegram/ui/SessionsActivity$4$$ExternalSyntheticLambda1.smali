@@ -5,27 +5,21 @@
 .implements Lorg/telegram/tgnet/RequestDelegate;
 
 
-# static fields
-.field public static final synthetic INSTANCE:Lorg/telegram/ui/SessionsActivity$4$$ExternalSyntheticLambda1;
+# instance fields
+.field public final synthetic f$0:Lorg/telegram/ui/SessionsActivity$4;
+
+.field public final synthetic f$1:Lorg/telegram/tgnet/TLRPC$TL_authorization;
 
 
 # direct methods
-.method static synthetic constructor <clinit>()V
-    .locals 1
-
-    new-instance v0, Lorg/telegram/ui/SessionsActivity$4$$ExternalSyntheticLambda1;
-
-    invoke-direct {v0}, Lorg/telegram/ui/SessionsActivity$4$$ExternalSyntheticLambda1;-><init>()V
-
-    sput-object v0, Lorg/telegram/ui/SessionsActivity$4$$ExternalSyntheticLambda1;->INSTANCE:Lorg/telegram/ui/SessionsActivity$4$$ExternalSyntheticLambda1;
-
-    return-void
-.end method
-
-.method private synthetic constructor <init>()V
+.method public synthetic constructor <init>(Lorg/telegram/ui/SessionsActivity$4;Lorg/telegram/tgnet/TLRPC$TL_authorization;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lorg/telegram/ui/SessionsActivity$4$$ExternalSyntheticLambda1;->f$0:Lorg/telegram/ui/SessionsActivity$4;
+
+    iput-object p2, p0, Lorg/telegram/ui/SessionsActivity$4$$ExternalSyntheticLambda1;->f$1:Lorg/telegram/tgnet/TLRPC$TL_authorization;
 
     return-void
 .end method
@@ -33,9 +27,13 @@
 
 # virtual methods
 .method public final run(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
-    .locals 0
+    .locals 2
 
-    invoke-static {p1, p2}, Lorg/telegram/ui/SessionsActivity$4;->$r8$lambda$Dv8IsHk4vfKX-hAuar0K_BKYUrQ(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
+    iget-object v0, p0, Lorg/telegram/ui/SessionsActivity$4$$ExternalSyntheticLambda1;->f$0:Lorg/telegram/ui/SessionsActivity$4;
+
+    iget-object v1, p0, Lorg/telegram/ui/SessionsActivity$4$$ExternalSyntheticLambda1;->f$1:Lorg/telegram/tgnet/TLRPC$TL_authorization;
+
+    invoke-static {v0, v1, p1, p2}, Lorg/telegram/ui/SessionsActivity$4;->$r8$lambda$vjp99B0qFsM9P6_ZC5EoZDGFLJY(Lorg/telegram/ui/SessionsActivity$4;Lorg/telegram/tgnet/TLRPC$TL_authorization;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
 
     return-void
 .end method

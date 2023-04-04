@@ -335,7 +335,7 @@
     :cond_2
     new-instance p1, Ljava/lang/RuntimeException;
 
-    const-string p2, "unable to find RGB888+pbuffer EGL config"
+    const-string/jumbo p2, "unable to find RGB888+pbuffer EGL config"
 
     invoke-direct {p1, p2}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
 
@@ -348,7 +348,7 @@
     .line 57
     new-instance p1, Ljava/lang/RuntimeException;
 
-    const-string p2, "unable to initialize EGL10"
+    const-string/jumbo p2, "unable to initialize EGL10"
 
     invoke-direct {p1, p2}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
 
@@ -358,11 +358,13 @@
     :cond_4
     new-instance p1, Ljava/lang/RuntimeException;
 
-    const-string p2, "unable to get EGL10 display"
+    const-string/jumbo p2, "unable to get EGL10 display"
 
     invoke-direct {p1, p2}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
 
     throw p1
+
+    nop
 
     :array_0
     .array-data 4

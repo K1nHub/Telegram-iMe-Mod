@@ -55,6 +55,14 @@
     return-object p0
 .end method
 
+.method public static synthetic $r8$lambda$3Wdop9PzW4_YnlDxae8trKNH2WA(Lorg/telegram/ui/PhotoViewer$14;)V
+    .locals 0
+
+    invoke-direct {p0}, Lorg/telegram/ui/PhotoViewer$14;->lambda$onItemClick$1()V
+
+    return-void
+.end method
+
 .method public static synthetic $r8$lambda$62aOhR9vEQ3tSXx1YDbnV8HJpLE(Lorg/telegram/ui/PhotoViewer$14;Ljava/util/ArrayList;Landroid/content/DialogInterface;I)V
     .locals 0
 
@@ -63,15 +71,7 @@
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$86mTwHaCF_pIuNFvTgACkp0KIOg(Lorg/telegram/ui/PhotoViewer$14;)V
-    .locals 0
-
-    invoke-direct {p0}, Lorg/telegram/ui/PhotoViewer$14;->lambda$onItemClick$0()V
-
-    return-void
-.end method
-
-.method public static synthetic $r8$lambda$B8CDK0hSvQYqNBBvVQ65mWnDQ2Y(Lorg/telegram/ui/PhotoViewer$14;)V
+.method public static synthetic $r8$lambda$C0omNqWYq88qezxbd-x0VJwncao(Lorg/telegram/ui/PhotoViewer$14;)V
     .locals 0
 
     invoke-direct {p0}, Lorg/telegram/ui/PhotoViewer$14;->lambda$onItemClick$3()V
@@ -95,14 +95,6 @@
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$KwAeHf0XJ-Wtl7SeLdc7XQVHe3Y(Lorg/telegram/ui/PhotoViewer$14;)V
-    .locals 0
-
-    invoke-direct {p0}, Lorg/telegram/ui/PhotoViewer$14;->lambda$onItemClick$2()V
-
-    return-void
-.end method
-
 .method public static synthetic $r8$lambda$R4mMEkuisIjsslhYeSy8hHHQlGM(Lorg/telegram/ui/PhotoViewer$14;Landroid/content/DialogInterface;I)V
     .locals 0
 
@@ -119,10 +111,10 @@
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$TDkBHz-fqRWdRk8MPN2Lm_XNvUU(Lorg/telegram/ui/PhotoViewer$14;)V
+.method public static synthetic $r8$lambda$UMV4AJs-PL0SYct8u2Do1_c9vyA(Lorg/telegram/ui/PhotoViewer$14;)V
     .locals 0
 
-    invoke-direct {p0}, Lorg/telegram/ui/PhotoViewer$14;->lambda$onItemClick$4()V
+    invoke-direct {p0}, Lorg/telegram/ui/PhotoViewer$14;->lambda$onItemClick$5()V
 
     return-void
 .end method
@@ -135,10 +127,18 @@
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$_LLAGMjppkDgOE0c8H2EvFZ1AiI(Lorg/telegram/ui/PhotoViewer$14;)V
+.method public static synthetic $r8$lambda$aHmVubv-3Cb4asGjRT8v7VChhCU(Lorg/telegram/ui/PhotoViewer$14;)V
     .locals 0
 
-    invoke-direct {p0}, Lorg/telegram/ui/PhotoViewer$14;->lambda$onItemClick$1()V
+    invoke-direct {p0}, Lorg/telegram/ui/PhotoViewer$14;->lambda$onItemClick$0()V
+
+    return-void
+.end method
+
+.method public static synthetic $r8$lambda$cY5UGlhkUeJfG-Ggbq6Dh0L8R2Q(Lorg/telegram/ui/PhotoViewer$14;)V
+    .locals 0
+
+    invoke-direct {p0}, Lorg/telegram/ui/PhotoViewer$14;->lambda$onItemClick$4()V
 
     return-void
 .end method
@@ -193,18 +193,18 @@
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$vfxDX0I9mt6tMSfOSKSO7k8xK4Q(Lorg/telegram/ui/PhotoViewer$14;Landroid/content/DialogInterface;I)V
+.method public static synthetic $r8$lambda$uswLFV-XG2LZNNU_28RCmDmcWVw(Lorg/telegram/ui/PhotoViewer$14;)V
     .locals 0
 
-    invoke-direct {p0, p1, p2}, Lorg/telegram/ui/PhotoViewer$14;->lambda$onItemClick$13(Landroid/content/DialogInterface;I)V
+    invoke-direct {p0}, Lorg/telegram/ui/PhotoViewer$14;->lambda$onItemClick$2()V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$xnLh-sdSvjYsbXKmY3XJc26NlOE(Lorg/telegram/ui/PhotoViewer$14;)V
+.method public static synthetic $r8$lambda$vfxDX0I9mt6tMSfOSKSO7k8xK4Q(Lorg/telegram/ui/PhotoViewer$14;Landroid/content/DialogInterface;I)V
     .locals 0
 
-    invoke-direct {p0}, Lorg/telegram/ui/PhotoViewer$14;->lambda$onItemClick$5()V
+    invoke-direct {p0, p1, p2}, Lorg/telegram/ui/PhotoViewer$14;->lambda$onItemClick$13(Landroid/content/DialogInterface;I)V
 
     return-void
 .end method
@@ -241,7 +241,7 @@
     .line 4424
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$14;->this$0:Lorg/telegram/ui/PhotoViewer;
 
-    iget-object v1, v0, Lorg/telegram/ui/PhotoViewer;->recognitionPresenter:Lcom/smedialink/ui/recognition/PhotoViewerPresenter;
+    iget-object v1, v0, Lorg/telegram/ui/PhotoViewer;->recognitionPresenter:Lcom/iMe/ui/recognition/PhotoViewerPresenter;
 
     invoke-static {v0}, Lorg/telegram/ui/PhotoViewer;->access$9900(Lorg/telegram/ui/PhotoViewer;)Lorg/telegram/messenger/ImageReceiver;
 
@@ -253,7 +253,7 @@
 
     const/4 v2, 0x0
 
-    invoke-virtual {v1, v0, v2}, Lcom/smedialink/ui/recognition/PhotoViewerPresenter;->getPhotoText(Landroid/graphics/Bitmap;Z)V
+    invoke-virtual {v1, v0, v2}, Lcom/iMe/ui/recognition/PhotoViewerPresenter;->getPhotoText(Landroid/graphics/Bitmap;Z)V
 
     return-void
 .end method
@@ -277,9 +277,9 @@
     new-array v0, p3, [I
 
     .line 4530
-    new-instance v1, Lorg/telegram/ui/PhotoViewer$14$$ExternalSyntheticLambda13;
+    new-instance v1, Lorg/telegram/ui/PhotoViewer$14$$ExternalSyntheticLambda19;
 
-    invoke-direct {v1, p0, v0, p4, p1}, Lorg/telegram/ui/PhotoViewer$14$$ExternalSyntheticLambda13;-><init>(Lorg/telegram/ui/PhotoViewer$14;[I[IZ)V
+    invoke-direct {v1, p0, v0, p4, p1}, Lorg/telegram/ui/PhotoViewer$14$$ExternalSyntheticLambda19;-><init>(Lorg/telegram/ui/PhotoViewer$14;[I[IZ)V
 
     const/4 p1, 0x0
 
@@ -422,9 +422,9 @@
 
     const/4 v8, 0x0
 
-    new-instance v9, Lorg/telegram/ui/PhotoViewer$14$$ExternalSyntheticLambda8;
+    new-instance v9, Lorg/telegram/ui/PhotoViewer$14$$ExternalSyntheticLambda14;
 
-    invoke-direct {v9, v1}, Lorg/telegram/ui/PhotoViewer$14$$ExternalSyntheticLambda8;-><init>(Ljava/lang/Runnable;)V
+    invoke-direct {v9, v1}, Lorg/telegram/ui/PhotoViewer$14$$ExternalSyntheticLambda14;-><init>(Ljava/lang/Runnable;)V
 
     invoke-static/range {v4 .. v9}, Lorg/telegram/messenger/MediaController;->saveFile(Ljava/lang/String;Landroid/content/Context;ILjava/lang/String;Ljava/lang/String;Ljava/lang/Runnable;)V
 
@@ -1837,9 +1837,9 @@
     .locals 0
 
     .line 5034
-    new-instance p4, Lorg/telegram/ui/PhotoViewer$14$$ExternalSyntheticLambda10;
+    new-instance p4, Lorg/telegram/ui/PhotoViewer$14$$ExternalSyntheticLambda16;
 
-    invoke-direct {p4, p0, p3, p1, p2}, Lorg/telegram/ui/PhotoViewer$14$$ExternalSyntheticLambda10;-><init>(Lorg/telegram/ui/PhotoViewer$14;Lorg/telegram/tgnet/TLObject;Lorg/telegram/messenger/UserConfig;Lorg/telegram/tgnet/TLRPC$Photo;)V
+    invoke-direct {p4, p0, p3, p1, p2}, Lorg/telegram/ui/PhotoViewer$14$$ExternalSyntheticLambda16;-><init>(Lorg/telegram/ui/PhotoViewer$14;Lorg/telegram/tgnet/TLObject;Lorg/telegram/messenger/UserConfig;Lorg/telegram/tgnet/TLRPC$Photo;)V
 
     invoke-static {p4}, Lorg/telegram/messenger/AndroidUtilities;->runOnUIThread(Ljava/lang/Runnable;)V
 
@@ -1881,7 +1881,7 @@
     .line 4428
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$14;->this$0:Lorg/telegram/ui/PhotoViewer;
 
-    iget-object v1, v0, Lorg/telegram/ui/PhotoViewer;->recognitionPresenter:Lcom/smedialink/ui/recognition/PhotoViewerPresenter;
+    iget-object v1, v0, Lorg/telegram/ui/PhotoViewer;->recognitionPresenter:Lcom/iMe/ui/recognition/PhotoViewerPresenter;
 
     invoke-static {v0}, Lorg/telegram/ui/PhotoViewer;->access$9900(Lorg/telegram/ui/PhotoViewer;)Lorg/telegram/messenger/ImageReceiver;
 
@@ -1891,7 +1891,7 @@
 
     move-result-object v0
 
-    invoke-virtual {v1, v0}, Lcom/smedialink/ui/recognition/PhotoViewerPresenter;->getPhotoObjects(Landroid/graphics/Bitmap;)V
+    invoke-virtual {v1, v0}, Lcom/iMe/ui/recognition/PhotoViewerPresenter;->getPhotoObjects(Landroid/graphics/Bitmap;)V
 
     return-void
 .end method
@@ -1915,7 +1915,7 @@
     .line 4432
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$14;->this$0:Lorg/telegram/ui/PhotoViewer;
 
-    iget-object v1, v0, Lorg/telegram/ui/PhotoViewer;->recognitionPresenter:Lcom/smedialink/ui/recognition/PhotoViewerPresenter;
+    iget-object v1, v0, Lorg/telegram/ui/PhotoViewer;->recognitionPresenter:Lcom/iMe/ui/recognition/PhotoViewerPresenter;
 
     invoke-static {v0}, Lorg/telegram/ui/PhotoViewer;->access$9900(Lorg/telegram/ui/PhotoViewer;)Lorg/telegram/messenger/ImageReceiver;
 
@@ -1927,7 +1927,7 @@
 
     const/4 v2, 0x1
 
-    invoke-virtual {v1, v0, v2}, Lcom/smedialink/ui/recognition/PhotoViewerPresenter;->getPhotoText(Landroid/graphics/Bitmap;Z)V
+    invoke-virtual {v1, v0, v2}, Lcom/iMe/ui/recognition/PhotoViewerPresenter;->getPhotoText(Landroid/graphics/Bitmap;Z)V
 
     return-void
 .end method
@@ -2136,9 +2136,9 @@
 
     const/4 v4, 0x0
 
-    new-instance v5, Lorg/telegram/ui/PhotoViewer$14$$ExternalSyntheticLambda12;
+    new-instance v5, Lorg/telegram/ui/PhotoViewer$14$$ExternalSyntheticLambda18;
 
-    invoke-direct {v5, p0, v2}, Lorg/telegram/ui/PhotoViewer$14$$ExternalSyntheticLambda12;-><init>(Lorg/telegram/ui/PhotoViewer$14;Z)V
+    invoke-direct {v5, p0, v2}, Lorg/telegram/ui/PhotoViewer$14$$ExternalSyntheticLambda18;-><init>(Lorg/telegram/ui/PhotoViewer$14;Z)V
 
     invoke-static/range {v0 .. v5}, Lorg/telegram/messenger/MediaController;->saveFile(Ljava/lang/String;Landroid/content/Context;ILjava/lang/String;Ljava/lang/String;Ljava/lang/Runnable;)V
 
@@ -2366,7 +2366,7 @@
     move/from16 v0, p1
 
     .line 4406
-    sget v1, Lcom/smedialink/common/IdFabric$Menu;->PHOTO_COPY:I
+    sget v1, Lcom/iMe/common/IdFabric$Menu;->PHOTO_COPY:I
 
     if-ne v0, v1, :cond_0
 
@@ -2389,7 +2389,7 @@
 
     .line 4408
     :cond_0
-    sget v1, Lcom/smedialink/common/IdFabric$Menu;->MESSAGE_DELETE_FROM_CACHE:I
+    sget v1, Lcom/iMe/common/IdFabric$Menu;->MESSAGE_DELETE_FROM_CACHE:I
 
     if-ne v0, v1, :cond_1
 
@@ -2402,7 +2402,7 @@
 
     .line 4410
     :cond_1
-    sget v1, Lcom/smedialink/common/IdFabric$Menu;->MESSAGE_FORWARD_CLOUD:I
+    sget v1, Lcom/iMe/common/IdFabric$Menu;->MESSAGE_FORWARD_CLOUD:I
 
     if-ne v0, v1, :cond_2
 
@@ -2415,15 +2415,15 @@
 
     .line 4412
     :cond_2
-    sget v1, Lcom/smedialink/common/IdFabric$Menu;->MESSAGE_FORWARD_WHATSAPP:I
+    sget v1, Lcom/iMe/common/IdFabric$Menu;->MESSAGE_FORWARD_WHATSAPP:I
 
     if-eq v0, v1, :cond_75
 
-    sget v2, Lcom/smedialink/common/IdFabric$Menu;->MESSAGE_FORWARD_WHATSAPP_BUSINESS:I
+    sget v2, Lcom/iMe/common/IdFabric$Menu;->MESSAGE_FORWARD_WHATSAPP_BUSINESS:I
 
     if-eq v0, v2, :cond_75
 
-    sget v2, Lcom/smedialink/common/IdFabric$Menu;->MESSAGE_FORWARD_VIBER:I
+    sget v2, Lcom/iMe/common/IdFabric$Menu;->MESSAGE_FORWARD_VIBER:I
 
     if-ne v0, v2, :cond_3
 
@@ -2431,7 +2431,7 @@
 
     .line 4422
     :cond_3
-    sget v1, Lcom/smedialink/common/IdFabric$Menu;->PHOTO_TEXT:I
+    sget v1, Lcom/iMe/common/IdFabric$Menu;->PHOTO_TEXT:I
 
     if-ne v0, v1, :cond_4
 
@@ -2442,21 +2442,21 @@
 
     move-result-object v0
 
-    new-instance v1, Lorg/telegram/ui/PhotoViewer$14$$ExternalSyntheticLambda14;
+    new-instance v1, Lorg/telegram/ui/PhotoViewer$14$$ExternalSyntheticLambda11;
 
-    invoke-direct {v1, v7}, Lorg/telegram/ui/PhotoViewer$14$$ExternalSyntheticLambda14;-><init>(Lorg/telegram/ui/PhotoViewer$14;)V
+    invoke-direct {v1, v7}, Lorg/telegram/ui/PhotoViewer$14$$ExternalSyntheticLambda11;-><init>(Lorg/telegram/ui/PhotoViewer$14;)V
 
-    new-instance v2, Lorg/telegram/ui/PhotoViewer$14$$ExternalSyntheticLambda18;
+    new-instance v2, Lorg/telegram/ui/PhotoViewer$14$$ExternalSyntheticLambda8;
 
-    invoke-direct {v2, v7}, Lorg/telegram/ui/PhotoViewer$14$$ExternalSyntheticLambda18;-><init>(Lorg/telegram/ui/PhotoViewer$14;)V
+    invoke-direct {v2, v7}, Lorg/telegram/ui/PhotoViewer$14$$ExternalSyntheticLambda8;-><init>(Lorg/telegram/ui/PhotoViewer$14;)V
 
-    invoke-static {v0, v1, v2}, Lcom/smedialink/utils/helper/google/GoogleServicesHelper;->runWithActivationCheck(Lorg/telegram/ui/ActionBar/BaseFragment;Lorg/fork/utils/Callbacks$Callback;Lorg/fork/utils/Callbacks$Callback;)V
+    invoke-static {v0, v1, v2}, Lcom/iMe/utils/helper/google/GoogleServicesHelper;->runWithActivationCheck(Lorg/telegram/ui/ActionBar/BaseFragment;Lcom/iMe/fork/utils/Callbacks$Callback;Lcom/iMe/fork/utils/Callbacks$Callback;)V
 
     goto/16 :goto_2d
 
     .line 4426
     :cond_4
-    sget v1, Lcom/smedialink/common/IdFabric$Menu;->PHOTO_OBJECTS:I
+    sget v1, Lcom/iMe/common/IdFabric$Menu;->PHOTO_OBJECTS:I
 
     if-ne v0, v1, :cond_5
 
@@ -2467,21 +2467,21 @@
 
     move-result-object v0
 
-    new-instance v1, Lorg/telegram/ui/PhotoViewer$14$$ExternalSyntheticLambda16;
+    new-instance v1, Lorg/telegram/ui/PhotoViewer$14$$ExternalSyntheticLambda13;
 
-    invoke-direct {v1, v7}, Lorg/telegram/ui/PhotoViewer$14$$ExternalSyntheticLambda16;-><init>(Lorg/telegram/ui/PhotoViewer$14;)V
+    invoke-direct {v1, v7}, Lorg/telegram/ui/PhotoViewer$14$$ExternalSyntheticLambda13;-><init>(Lorg/telegram/ui/PhotoViewer$14;)V
 
-    new-instance v2, Lorg/telegram/ui/PhotoViewer$14$$ExternalSyntheticLambda15;
+    new-instance v2, Lorg/telegram/ui/PhotoViewer$14$$ExternalSyntheticLambda9;
 
-    invoke-direct {v2, v7}, Lorg/telegram/ui/PhotoViewer$14$$ExternalSyntheticLambda15;-><init>(Lorg/telegram/ui/PhotoViewer$14;)V
+    invoke-direct {v2, v7}, Lorg/telegram/ui/PhotoViewer$14$$ExternalSyntheticLambda9;-><init>(Lorg/telegram/ui/PhotoViewer$14;)V
 
-    invoke-static {v0, v1, v2}, Lcom/smedialink/utils/helper/google/GoogleServicesHelper;->runWithActivationCheck(Lorg/telegram/ui/ActionBar/BaseFragment;Lorg/fork/utils/Callbacks$Callback;Lorg/fork/utils/Callbacks$Callback;)V
+    invoke-static {v0, v1, v2}, Lcom/iMe/utils/helper/google/GoogleServicesHelper;->runWithActivationCheck(Lorg/telegram/ui/ActionBar/BaseFragment;Lcom/iMe/fork/utils/Callbacks$Callback;Lcom/iMe/fork/utils/Callbacks$Callback;)V
 
     goto/16 :goto_2d
 
     .line 4430
     :cond_5
-    sget v1, Lcom/smedialink/common/IdFabric$Menu;->TRANSLATE:I
+    sget v1, Lcom/iMe/common/IdFabric$Menu;->TRANSLATE:I
 
     if-ne v0, v1, :cond_6
 
@@ -2492,15 +2492,15 @@
 
     move-result-object v0
 
-    new-instance v1, Lorg/telegram/ui/PhotoViewer$14$$ExternalSyntheticLambda17;
+    new-instance v1, Lorg/telegram/ui/PhotoViewer$14$$ExternalSyntheticLambda12;
 
-    invoke-direct {v1, v7}, Lorg/telegram/ui/PhotoViewer$14$$ExternalSyntheticLambda17;-><init>(Lorg/telegram/ui/PhotoViewer$14;)V
+    invoke-direct {v1, v7}, Lorg/telegram/ui/PhotoViewer$14$$ExternalSyntheticLambda12;-><init>(Lorg/telegram/ui/PhotoViewer$14;)V
 
-    new-instance v2, Lorg/telegram/ui/PhotoViewer$14$$ExternalSyntheticLambda19;
+    new-instance v2, Lorg/telegram/ui/PhotoViewer$14$$ExternalSyntheticLambda10;
 
-    invoke-direct {v2, v7}, Lorg/telegram/ui/PhotoViewer$14$$ExternalSyntheticLambda19;-><init>(Lorg/telegram/ui/PhotoViewer$14;)V
+    invoke-direct {v2, v7}, Lorg/telegram/ui/PhotoViewer$14$$ExternalSyntheticLambda10;-><init>(Lorg/telegram/ui/PhotoViewer$14;)V
 
-    invoke-static {v0, v1, v2}, Lcom/smedialink/utils/helper/google/GoogleServicesHelper;->runWithActivationCheck(Lorg/telegram/ui/ActionBar/BaseFragment;Lorg/fork/utils/Callbacks$Callback;Lorg/fork/utils/Callbacks$Callback;)V
+    invoke-static {v0, v1, v2}, Lcom/iMe/utils/helper/google/GoogleServicesHelper;->runWithActivationCheck(Lorg/telegram/ui/ActionBar/BaseFragment;Lcom/iMe/fork/utils/Callbacks$Callback;Lcom/iMe/fork/utils/Callbacks$Callback;)V
 
     goto/16 :goto_2d
 
@@ -3104,9 +3104,9 @@
 
     const/4 v12, 0x0
 
-    new-instance v13, Lorg/telegram/ui/PhotoViewer$14$$ExternalSyntheticLambda11;
+    new-instance v13, Lorg/telegram/ui/PhotoViewer$14$$ExternalSyntheticLambda17;
 
-    invoke-direct {v13, v7, v10}, Lorg/telegram/ui/PhotoViewer$14$$ExternalSyntheticLambda11;-><init>(Lorg/telegram/ui/PhotoViewer$14;Z)V
+    invoke-direct {v13, v7, v10}, Lorg/telegram/ui/PhotoViewer$14$$ExternalSyntheticLambda17;-><init>(Lorg/telegram/ui/PhotoViewer$14;Z)V
 
     invoke-static/range {v8 .. v13}, Lorg/telegram/messenger/MediaController;->saveFile(Ljava/lang/String;Landroid/content/Context;ILjava/lang/String;Ljava/lang/String;Ljava/lang/Runnable;)V
 
@@ -6375,9 +6375,9 @@
     invoke-virtual {v0, v1, v2, v4, v3}, Lorg/telegram/ui/Components/UndoView;->showWithAction(JILjava/lang/Object;)V
 
     .line 5105
-    new-instance v0, Lorg/telegram/ui/PhotoViewer$14$$ExternalSyntheticLambda9;
+    new-instance v0, Lorg/telegram/ui/PhotoViewer$14$$ExternalSyntheticLambda15;
 
-    invoke-direct {v0, v7}, Lorg/telegram/ui/PhotoViewer$14$$ExternalSyntheticLambda9;-><init>(Lorg/telegram/ui/PhotoViewer$14;)V
+    invoke-direct {v0, v7}, Lorg/telegram/ui/PhotoViewer$14$$ExternalSyntheticLambda15;-><init>(Lorg/telegram/ui/PhotoViewer$14;)V
 
     const-wide/16 v1, 0x12c
 
@@ -6657,9 +6657,9 @@
     if-ne v0, v1, :cond_76
 
     .line 4415
-    sget-object v0, Lorg/fork/enums/ExternalApp;->WHATSAPP:Lorg/fork/enums/ExternalApp;
+    sget-object v0, Lcom/iMe/fork/enums/ExternalApp;->WHATSAPP:Lcom/iMe/fork/enums/ExternalApp;
 
-    invoke-virtual {v0}, Lorg/fork/enums/ExternalApp;->getPackageName()Ljava/lang/String;
+    invoke-virtual {v0}, Lcom/iMe/fork/enums/ExternalApp;->getPackageName()Ljava/lang/String;
 
     move-result-object v0
 
@@ -6667,14 +6667,14 @@
 
     .line 4416
     :cond_76
-    sget v1, Lcom/smedialink/common/IdFabric$Menu;->MESSAGE_FORWARD_WHATSAPP_BUSINESS:I
+    sget v1, Lcom/iMe/common/IdFabric$Menu;->MESSAGE_FORWARD_WHATSAPP_BUSINESS:I
 
     if-ne v0, v1, :cond_77
 
     .line 4417
-    sget-object v0, Lorg/fork/enums/ExternalApp;->WHATSAPP_BUSINESS:Lorg/fork/enums/ExternalApp;
+    sget-object v0, Lcom/iMe/fork/enums/ExternalApp;->WHATSAPP_BUSINESS:Lcom/iMe/fork/enums/ExternalApp;
 
-    invoke-virtual {v0}, Lorg/fork/enums/ExternalApp;->getPackageName()Ljava/lang/String;
+    invoke-virtual {v0}, Lcom/iMe/fork/enums/ExternalApp;->getPackageName()Ljava/lang/String;
 
     move-result-object v0
 
@@ -6682,9 +6682,9 @@
 
     .line 4419
     :cond_77
-    sget-object v0, Lorg/fork/enums/ExternalApp;->VIBER:Lorg/fork/enums/ExternalApp;
+    sget-object v0, Lcom/iMe/fork/enums/ExternalApp;->VIBER:Lcom/iMe/fork/enums/ExternalApp;
 
-    invoke-virtual {v0}, Lorg/fork/enums/ExternalApp;->getPackageName()Ljava/lang/String;
+    invoke-virtual {v0}, Lcom/iMe/fork/enums/ExternalApp;->getPackageName()Ljava/lang/String;
 
     move-result-object v0
 

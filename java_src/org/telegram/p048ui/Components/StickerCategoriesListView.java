@@ -27,7 +27,7 @@ import java.util.Iterator;
 import org.telegram.SQLite.SQLiteDatabase;
 import org.telegram.SQLite.SQLitePreparedStatement;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3301R;
+import org.telegram.messenger.C3316R;
 import org.telegram.messenger.Fetcher;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.LiteMode;
@@ -412,10 +412,10 @@ public class StickerCategoriesListView extends RecyclerListView {
             this.backgroundPaint = new Paint(1);
         }
         this.backgroundPaint.setColor(i);
-        Drawable mutate = getContext().getResources().getDrawable(C3301R.C3303drawable.gradient_right).mutate();
+        Drawable mutate = getContext().getResources().getDrawable(C3316R.C3318drawable.gradient_right).mutate();
         this.leftBoundDrawable = mutate;
         mutate.setColorFilter(new PorterDuffColorFilter(i, PorterDuff.Mode.MULTIPLY));
-        Drawable mutate2 = getContext().getResources().getDrawable(C3301R.C3303drawable.gradient_left).mutate();
+        Drawable mutate2 = getContext().getResources().getDrawable(C3316R.C3318drawable.gradient_left).mutate();
         this.rightBoundDrawable = mutate2;
         mutate2.setColorFilter(new PorterDuffColorFilter(i, PorterDuff.Mode.MULTIPLY));
     }

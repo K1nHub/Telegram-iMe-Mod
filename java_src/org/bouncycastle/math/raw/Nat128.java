@@ -57,7 +57,7 @@ public abstract class Nat128 {
     }
 
     /* renamed from: eq */
-    public static boolean m68eq(int[] iArr, int[] iArr2) {
+    public static boolean m63eq(int[] iArr, int[] iArr2) {
         for (int i = 3; i >= 0; i--) {
             if (iArr[i] != iArr2[i]) {
                 return false;

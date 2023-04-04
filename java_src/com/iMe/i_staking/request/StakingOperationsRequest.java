@@ -1,8 +1,8 @@
 package com.iMe.i_staking.request;
 
-import com.smedialink.storage.domain.model.crypto.NetworkType;
-import com.smedialink.storage.domain.model.staking.StakingOperationStatus;
-import com.smedialink.storage.domain.model.staking.StakingOperationType;
+import com.iMe.storage.domain.model.crypto.NetworkType;
+import com.iMe.storage.domain.model.staking.StakingOperationStatus;
+import com.iMe.storage.domain.model.staking.StakingOperationType;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: StakingOperationsRequest.kt */

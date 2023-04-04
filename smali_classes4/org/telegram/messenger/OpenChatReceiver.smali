@@ -18,7 +18,7 @@
 .method protected onCreate(Landroid/os/Bundle;)V
     .locals 7
 
-    const-string v0, "userId"
+    const-string/jumbo v0, "userId"
 
     const-string v1, "chatId"
 

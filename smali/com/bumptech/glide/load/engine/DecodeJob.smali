@@ -234,19 +234,19 @@
 
     const/4 p2, 0x0
 
-    .line 485
+    .line 495
     invoke-interface {p1}, Lcom/bumptech/glide/load/data/DataFetcher;->cleanup()V
 
     return-object p2
 
-    .line 478
+    .line 488
     :cond_0
     :try_start_0
     invoke-static {}, Lcom/bumptech/glide/util/LogTime;->getLogTime()J
 
     move-result-wide v0
 
-    .line 479
+    .line 489
     invoke-direct {p0, p2, p3}, Lcom/bumptech/glide/load/engine/DecodeJob;->decodeFromFetcher(Ljava/lang/Object;Lcom/bumptech/glide/load/DataSource;)Lcom/bumptech/glide/load/engine/Resource;
 
     move-result-object p2
@@ -255,14 +255,14 @@
 
     const/4 v2, 0x2
 
-    .line 480
+    .line 490
     invoke-static {p3, v2}, Landroid/util/Log;->isLoggable(Ljava/lang/String;I)Z
 
     move-result p3
 
     if-eqz p3, :cond_1
 
-    .line 481
+    .line 491
     new-instance p3, Ljava/lang/StringBuilder;
 
     invoke-direct {p3}, Ljava/lang/StringBuilder;-><init>()V
@@ -281,7 +281,7 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 485
+    .line 495
     :cond_1
     invoke-interface {p1}, Lcom/bumptech/glide/load/data/DataFetcher;->cleanup()V
 
@@ -292,6 +292,7 @@
 
     invoke-interface {p1}, Lcom/bumptech/glide/load/data/DataFetcher;->cleanup()V
 
+    .line 496
     throw p2
 .end method
 
@@ -315,7 +316,7 @@
         }
     .end annotation
 
-    .line 492
+    .line 502
     iget-object v0, p0, Lcom/bumptech/glide/load/engine/DecodeJob;->decodeHelper:Lcom/bumptech/glide/load/engine/DecodeHelper;
 
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
@@ -326,7 +327,7 @@
 
     move-result-object v0
 
-    .line 493
+    .line 503
     invoke-direct {p0, p1, p2, v0}, Lcom/bumptech/glide/load/engine/DecodeJob;->runLoadPath(Ljava/lang/Object;Lcom/bumptech/glide/load/DataSource;Lcom/bumptech/glide/load/engine/LoadPath;)Lcom/bumptech/glide/load/engine/Resource;
 
     move-result-object p1
@@ -341,14 +342,14 @@
 
     const/4 v1, 0x2
 
-    .line 417
+    .line 421
     invoke-static {v0, v1}, Landroid/util/Log;->isLoggable(Ljava/lang/String;I)Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 418
+    .line 422
     iget-wide v0, p0, Lcom/bumptech/glide/load/engine/DecodeJob;->startFetchTime:J
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -390,7 +391,7 @@
     :cond_0
     const/4 v0, 0x0
 
-    .line 430
+    .line 434
     :try_start_0
     iget-object v1, p0, Lcom/bumptech/glide/load/engine/DecodeJob;->currentFetcher:Lcom/bumptech/glide/load/data/DataFetcher;
 
@@ -409,14 +410,14 @@
     :catch_0
     move-exception v1
 
-    .line 432
+    .line 436
     iget-object v2, p0, Lcom/bumptech/glide/load/engine/DecodeJob;->currentAttemptingKey:Lcom/bumptech/glide/load/Key;
 
     iget-object v3, p0, Lcom/bumptech/glide/load/engine/DecodeJob;->currentDataSource:Lcom/bumptech/glide/load/DataSource;
 
     invoke-virtual {v1, v2, v3}, Lcom/bumptech/glide/load/engine/GlideException;->setLoggingDetails(Lcom/bumptech/glide/load/Key;Lcom/bumptech/glide/load/DataSource;)V
 
-    .line 433
+    .line 437
     iget-object v2, p0, Lcom/bumptech/glide/load/engine/DecodeJob;->throwables:Ljava/util/List;
 
     invoke-interface {v2, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
@@ -424,7 +425,7 @@
     :goto_0
     if-eqz v0, :cond_1
 
-    .line 436
+    .line 440
     iget-object v1, p0, Lcom/bumptech/glide/load/engine/DecodeJob;->currentDataSource:Lcom/bumptech/glide/load/DataSource;
 
     iget-boolean v2, p0, Lcom/bumptech/glide/load/engine/DecodeJob;->isLoadingFromAlternateCacheKey:Z
@@ -433,7 +434,7 @@
 
     goto :goto_1
 
-    .line 438
+    .line 442
     :cond_1
     invoke-direct {p0}, Lcom/bumptech/glide/load/engine/DecodeJob;->runGenerators()V
 
@@ -661,10 +662,10 @@
 .method private getOptionsWithHardwareConfig(Lcom/bumptech/glide/load/DataSource;)Lcom/bumptech/glide/load/Options;
     .locals 3
 
-    .line 498
+    .line 508
     iget-object v0, p0, Lcom/bumptech/glide/load/engine/DecodeJob;->options:Lcom/bumptech/glide/load/Options;
 
-    .line 499
+    .line 509
     sget v1, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v2, 0x1a
@@ -673,7 +674,7 @@
 
     return-object v0
 
-    .line 503
+    .line 513
     :cond_0
     sget-object v1, Lcom/bumptech/glide/load/DataSource;->RESOURCE_DISK_CACHE:Lcom/bumptech/glide/load/DataSource;
 
@@ -681,7 +682,7 @@
 
     iget-object p1, p0, Lcom/bumptech/glide/load/engine/DecodeJob;->decodeHelper:Lcom/bumptech/glide/load/engine/DecodeHelper;
 
-    .line 504
+    .line 514
     invoke-virtual {p1}, Lcom/bumptech/glide/load/engine/DecodeHelper;->isScaleOnlyOrNoTransform()Z
 
     move-result p1
@@ -699,7 +700,7 @@
     :goto_0
     const/4 p1, 0x1
 
-    .line 505
+    .line 515
     :goto_1
     sget-object v1, Lcom/bumptech/glide/load/resource/bitmap/Downsampler;->ALLOW_HARDWARE_CONFIG:Lcom/bumptech/glide/load/Option;
 
@@ -711,7 +712,7 @@
 
     if-eqz v2, :cond_4
 
-    .line 509
+    .line 519
     invoke-virtual {v2}, Ljava/lang/Boolean;->booleanValue()Z
 
     move-result v2
@@ -723,18 +724,18 @@
     :cond_3
     return-object v0
 
-    .line 515
+    .line 525
     :cond_4
     new-instance v0, Lcom/bumptech/glide/load/Options;
 
     invoke-direct {v0}, Lcom/bumptech/glide/load/Options;-><init>()V
 
-    .line 516
+    .line 526
     iget-object v2, p0, Lcom/bumptech/glide/load/engine/DecodeJob;->options:Lcom/bumptech/glide/load/Options;
 
     invoke-virtual {v0, v2}, Lcom/bumptech/glide/load/Options;->putAll(Lcom/bumptech/glide/load/Options;)V
 
-    .line 517
+    .line 527
     invoke-static {p1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object p1
@@ -762,7 +763,7 @@
 
     const/4 v0, 0x0
 
-    .line 537
+    .line 547
     invoke-direct {p0, p1, p2, p3, v0}, Lcom/bumptech/glide/load/engine/DecodeJob;->logWithTimeAndKey(Ljava/lang/String;JLjava/lang/String;)V
 
     return-void
@@ -771,7 +772,7 @@
 .method private logWithTimeAndKey(Ljava/lang/String;JLjava/lang/String;)V
     .locals 1
 
-    .line 541
+    .line 551
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -782,7 +783,7 @@
 
     invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 545
+    .line 555
     invoke-static {p2, p3}, Lcom/bumptech/glide/util/LogTime;->getElapsedMillis(J)D
 
     move-result-wide p1
@@ -799,7 +800,7 @@
 
     if-eqz p4, :cond_0
 
-    .line 548
+    .line 558
     new-instance p1, Ljava/lang/StringBuilder;
 
     invoke-direct {p1}, Ljava/lang/StringBuilder;-><init>()V
@@ -826,7 +827,7 @@
 
     invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 550
+    .line 560
     invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
 
     move-result-object p1
@@ -843,7 +844,7 @@
 
     const-string p2, "DecodeJob"
 
-    .line 541
+    .line 551
     invoke-static {p2, p1}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
     return-void
@@ -884,12 +885,18 @@
         }
     .end annotation
 
-    .line 444
+    const-string v0, "DecodeJob.notifyEncodeAndRelease"
+
+    .line 448
+    invoke-static {v0}, Lcom/bumptech/glide/util/pool/GlideTrace;->beginSection(Ljava/lang/String;)V
+
+    .line 450
+    :try_start_0
     instance-of v0, p1, Lcom/bumptech/glide/load/engine/Initializable;
 
     if-eqz v0, :cond_0
 
-    .line 445
+    .line 451
     move-object v0, p1
 
     check-cast v0, Lcom/bumptech/glide/load/engine/Initializable;
@@ -899,7 +906,7 @@
     :cond_0
     const/4 v0, 0x0
 
-    .line 450
+    .line 456
     iget-object v1, p0, Lcom/bumptech/glide/load/engine/DecodeJob;->deferredEncodeManager:Lcom/bumptech/glide/load/engine/DecodeJob$DeferredEncodeManager;
 
     invoke-virtual {v1}, Lcom/bumptech/glide/load/engine/DecodeJob$DeferredEncodeManager;->hasResourceToEncode()Z
@@ -908,24 +915,26 @@
 
     if-eqz v1, :cond_1
 
-    .line 451
+    .line 457
     invoke-static {p1}, Lcom/bumptech/glide/load/engine/LockedResource;->obtain(Lcom/bumptech/glide/load/engine/Resource;)Lcom/bumptech/glide/load/engine/LockedResource;
 
     move-result-object p1
 
     move-object v0, p1
 
-    .line 455
+    .line 461
     :cond_1
     invoke-direct {p0, p1, p2, p3}, Lcom/bumptech/glide/load/engine/DecodeJob;->notifyComplete(Lcom/bumptech/glide/load/engine/Resource;Lcom/bumptech/glide/load/DataSource;Z)V
 
-    .line 457
+    .line 463
     sget-object p1, Lcom/bumptech/glide/load/engine/DecodeJob$Stage;->ENCODE:Lcom/bumptech/glide/load/engine/DecodeJob$Stage;
 
     iput-object p1, p0, Lcom/bumptech/glide/load/engine/DecodeJob;->stage:Lcom/bumptech/glide/load/engine/DecodeJob$Stage;
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_1
 
-    .line 459
-    :try_start_0
+    .line 465
+    :try_start_1
     iget-object p1, p0, Lcom/bumptech/glide/load/engine/DecodeJob;->deferredEncodeManager:Lcom/bumptech/glide/load/engine/DecodeJob$DeferredEncodeManager;
 
     invoke-virtual {p1}, Lcom/bumptech/glide/load/engine/DecodeJob$DeferredEncodeManager;->hasResourceToEncode()Z
@@ -934,7 +943,7 @@
 
     if-eqz p1, :cond_2
 
-    .line 460
+    .line 466
     iget-object p1, p0, Lcom/bumptech/glide/load/engine/DecodeJob;->deferredEncodeManager:Lcom/bumptech/glide/load/engine/DecodeJob$DeferredEncodeManager;
 
     iget-object p2, p0, Lcom/bumptech/glide/load/engine/DecodeJob;->diskCacheProvider:Lcom/bumptech/glide/load/engine/DecodeJob$DiskCacheProvider;
@@ -942,18 +951,24 @@
     iget-object p3, p0, Lcom/bumptech/glide/load/engine/DecodeJob;->options:Lcom/bumptech/glide/load/Options;
 
     invoke-virtual {p1, p2, p3}, Lcom/bumptech/glide/load/engine/DecodeJob$DeferredEncodeManager;->encode(Lcom/bumptech/glide/load/engine/DecodeJob$DiskCacheProvider;Lcom/bumptech/glide/load/Options;)V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     :cond_2
     if-eqz v0, :cond_3
 
-    .line 464
+    .line 470
+    :try_start_2
     invoke-virtual {v0}, Lcom/bumptech/glide/load/engine/LockedResource;->unlock()V
 
-    .line 469
+    .line 476
     :cond_3
     invoke-direct {p0}, Lcom/bumptech/glide/load/engine/DecodeJob;->onEncodeComplete()V
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_1
+
+    .line 478
+    invoke-static {}, Lcom/bumptech/glide/util/pool/GlideTrace;->endSection()V
 
     return-void
 
@@ -962,10 +977,23 @@
 
     if-eqz v0, :cond_4
 
-    .line 464
+    .line 470
+    :try_start_3
     invoke-virtual {v0}, Lcom/bumptech/glide/load/engine/LockedResource;->unlock()V
 
+    .line 472
     :cond_4
+    throw p1
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_1
+
+    :catchall_1
+    move-exception p1
+
+    .line 478
+    invoke-static {}, Lcom/bumptech/glide/util/pool/GlideTrace;->endSection()V
+
+    .line 479
     throw p1
 .end method
 
@@ -1125,6 +1153,20 @@
     return-void
 .end method
 
+.method private reschedule(Lcom/bumptech/glide/load/engine/DecodeJob$RunReason;)V
+    .locals 0
+
+    .line 373
+    iput-object p1, p0, Lcom/bumptech/glide/load/engine/DecodeJob;->runReason:Lcom/bumptech/glide/load/engine/DecodeJob$RunReason;
+
+    .line 374
+    iget-object p1, p0, Lcom/bumptech/glide/load/engine/DecodeJob;->callback:Lcom/bumptech/glide/load/engine/DecodeJob$Callback;
+
+    invoke-interface {p1, p0}, Lcom/bumptech/glide/load/engine/DecodeJob$Callback;->reschedule(Lcom/bumptech/glide/load/engine/DecodeJob;)V
+
+    return-void
+.end method
+
 .method private runGenerators()V
     .locals 3
 
@@ -1187,7 +1229,9 @@
     if-ne v1, v2, :cond_0
 
     .line 316
-    invoke-virtual {p0}, Lcom/bumptech/glide/load/engine/DecodeJob;->reschedule()V
+    sget-object v0, Lcom/bumptech/glide/load/engine/DecodeJob$RunReason;->SWITCH_TO_SOURCE_SERVICE:Lcom/bumptech/glide/load/engine/DecodeJob$RunReason;
+
+    invoke-direct {p0, v0}, Lcom/bumptech/glide/load/engine/DecodeJob;->reschedule(Lcom/bumptech/glide/load/engine/DecodeJob$RunReason;)V
 
     return-void
 
@@ -1236,12 +1280,12 @@
         }
     .end annotation
 
-    .line 525
+    .line 535
     invoke-direct {p0, p2}, Lcom/bumptech/glide/load/engine/DecodeJob;->getOptionsWithHardwareConfig(Lcom/bumptech/glide/load/DataSource;)Lcom/bumptech/glide/load/Options;
 
     move-result-object v2
 
-    .line 526
+    .line 536
     iget-object v0, p0, Lcom/bumptech/glide/load/engine/DecodeJob;->glideContext:Lcom/bumptech/glide/GlideContext;
 
     invoke-virtual {v0}, Lcom/bumptech/glide/GlideContext;->getRegistry()Lcom/bumptech/glide/Registry;
@@ -1252,7 +1296,7 @@
 
     move-result-object p1
 
-    .line 529
+    .line 539
     :try_start_0
     iget v3, p0, Lcom/bumptech/glide/load/engine/DecodeJob;->width:I
 
@@ -1272,7 +1316,7 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 532
+    .line 542
     invoke-interface {p1}, Lcom/bumptech/glide/load/data/DataRewinder;->cleanup()V
 
     return-object p2
@@ -1282,6 +1326,7 @@
 
     invoke-interface {p1}, Lcom/bumptech/glide/load/data/DataRewinder;->cleanup()V
 
+    .line 543
     throw p2
 .end method
 
@@ -1502,7 +1547,7 @@
 .method public getVerifier()Lcom/bumptech/glide/util/pool/StateVerifier;
     .locals 1
 
-    .line 556
+    .line 566
     iget-object v0, p0, Lcom/bumptech/glide/load/engine/DecodeJob;->stateVerifier:Lcom/bumptech/glide/util/pool/StateVerifier;
 
     return-object v0
@@ -1654,29 +1699,29 @@
         }
     .end annotation
 
-    .line 404
+    .line 409
     invoke-interface {p3}, Lcom/bumptech/glide/load/data/DataFetcher;->cleanup()V
 
-    .line 405
+    .line 410
     new-instance v0, Lcom/bumptech/glide/load/engine/GlideException;
 
     const-string v1, "Fetching data failed"
 
     invoke-direct {v0, v1, p2}, Lcom/bumptech/glide/load/engine/GlideException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
 
-    .line 406
+    .line 411
     invoke-interface {p3}, Lcom/bumptech/glide/load/data/DataFetcher;->getDataClass()Ljava/lang/Class;
 
     move-result-object p2
 
     invoke-virtual {v0, p1, p4, p2}, Lcom/bumptech/glide/load/engine/GlideException;->setLoggingDetails(Lcom/bumptech/glide/load/Key;Lcom/bumptech/glide/load/DataSource;Ljava/lang/Class;)V
 
-    .line 407
+    .line 412
     iget-object p1, p0, Lcom/bumptech/glide/load/engine/DecodeJob;->throwables:Ljava/util/List;
 
     invoke-interface {p1, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 408
+    .line 413
     invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
 
     move-result-object p1
@@ -1685,19 +1730,14 @@
 
     if-eq p1, p2, :cond_0
 
-    .line 409
+    .line 414
     sget-object p1, Lcom/bumptech/glide/load/engine/DecodeJob$RunReason;->SWITCH_TO_SOURCE_SERVICE:Lcom/bumptech/glide/load/engine/DecodeJob$RunReason;
 
-    iput-object p1, p0, Lcom/bumptech/glide/load/engine/DecodeJob;->runReason:Lcom/bumptech/glide/load/engine/DecodeJob$RunReason;
-
-    .line 410
-    iget-object p1, p0, Lcom/bumptech/glide/load/engine/DecodeJob;->callback:Lcom/bumptech/glide/load/engine/DecodeJob$Callback;
-
-    invoke-interface {p1, p0}, Lcom/bumptech/glide/load/engine/DecodeJob$Callback;->reschedule(Lcom/bumptech/glide/load/engine/DecodeJob;)V
+    invoke-direct {p0, p1}, Lcom/bumptech/glide/load/engine/DecodeJob;->reschedule(Lcom/bumptech/glide/load/engine/DecodeJob$RunReason;)V
 
     goto :goto_0
 
-    .line 412
+    .line 416
     :cond_0
     invoke-direct {p0}, Lcom/bumptech/glide/load/engine/DecodeJob;->runGenerators()V
 
@@ -1720,22 +1760,22 @@
         }
     .end annotation
 
-    .line 381
+    .line 387
     iput-object p1, p0, Lcom/bumptech/glide/load/engine/DecodeJob;->currentSourceKey:Lcom/bumptech/glide/load/Key;
 
-    .line 382
+    .line 388
     iput-object p2, p0, Lcom/bumptech/glide/load/engine/DecodeJob;->currentData:Ljava/lang/Object;
 
-    .line 383
+    .line 389
     iput-object p3, p0, Lcom/bumptech/glide/load/engine/DecodeJob;->currentFetcher:Lcom/bumptech/glide/load/data/DataFetcher;
 
-    .line 384
+    .line 390
     iput-object p4, p0, Lcom/bumptech/glide/load/engine/DecodeJob;->currentDataSource:Lcom/bumptech/glide/load/DataSource;
 
-    .line 385
+    .line 391
     iput-object p5, p0, Lcom/bumptech/glide/load/engine/DecodeJob;->currentAttemptingKey:Lcom/bumptech/glide/load/Key;
 
-    .line 386
+    .line 392
     iget-object p2, p0, Lcom/bumptech/glide/load/engine/DecodeJob;->decodeHelper:Lcom/bumptech/glide/load/engine/DecodeHelper;
 
     invoke-virtual {p2}, Lcom/bumptech/glide/load/engine/DecodeHelper;->getCacheKeys()Ljava/util/List;
@@ -1755,7 +1795,7 @@
     :cond_0
     iput-boolean p3, p0, Lcom/bumptech/glide/load/engine/DecodeJob;->isLoadingFromAlternateCacheKey:Z
 
-    .line 388
+    .line 394
     invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
 
     move-result-object p1
@@ -1764,31 +1804,26 @@
 
     if-eq p1, p2, :cond_1
 
-    .line 389
+    .line 395
     sget-object p1, Lcom/bumptech/glide/load/engine/DecodeJob$RunReason;->DECODE_DATA:Lcom/bumptech/glide/load/engine/DecodeJob$RunReason;
 
-    iput-object p1, p0, Lcom/bumptech/glide/load/engine/DecodeJob;->runReason:Lcom/bumptech/glide/load/engine/DecodeJob$RunReason;
-
-    .line 390
-    iget-object p1, p0, Lcom/bumptech/glide/load/engine/DecodeJob;->callback:Lcom/bumptech/glide/load/engine/DecodeJob$Callback;
-
-    invoke-interface {p1, p0}, Lcom/bumptech/glide/load/engine/DecodeJob$Callback;->reschedule(Lcom/bumptech/glide/load/engine/DecodeJob;)V
+    invoke-direct {p0, p1}, Lcom/bumptech/glide/load/engine/DecodeJob;->reschedule(Lcom/bumptech/glide/load/engine/DecodeJob$RunReason;)V
 
     goto :goto_0
 
     :cond_1
     const-string p1, "DecodeJob.decodeFromRetrievedData"
 
-    .line 392
+    .line 397
     invoke-static {p1}, Lcom/bumptech/glide/util/pool/GlideTrace;->beginSection(Ljava/lang/String;)V
 
-    .line 394
+    .line 399
     :try_start_0
     invoke-direct {p0}, Lcom/bumptech/glide/load/engine/DecodeJob;->decodeFromRetrievedData()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 396
+    .line 401
     invoke-static {}, Lcom/bumptech/glide/util/pool/GlideTrace;->endSection()V
 
     :goto_0
@@ -1799,6 +1834,7 @@
 
     invoke-static {}, Lcom/bumptech/glide/util/pool/GlideTrace;->endSection()V
 
+    .line 402
     throw p1
 .end method
 
@@ -1817,7 +1853,7 @@
         }
     .end annotation
 
-    .line 563
+    .line 573
     invoke-interface {p2}, Lcom/bumptech/glide/load/engine/Resource;->get()Ljava/lang/Object;
 
     move-result-object v0
@@ -1826,21 +1862,21 @@
 
     move-result-object v8
 
-    .line 566
+    .line 576
     sget-object v0, Lcom/bumptech/glide/load/DataSource;->RESOURCE_DISK_CACHE:Lcom/bumptech/glide/load/DataSource;
 
     const/4 v1, 0x0
 
     if-eq p1, v0, :cond_0
 
-    .line 567
+    .line 577
     iget-object v0, p0, Lcom/bumptech/glide/load/engine/DecodeJob;->decodeHelper:Lcom/bumptech/glide/load/engine/DecodeHelper;
 
     invoke-virtual {v0, v8}, Lcom/bumptech/glide/load/engine/DecodeHelper;->getTransformation(Ljava/lang/Class;)Lcom/bumptech/glide/load/Transformation;
 
     move-result-object v0
 
-    .line 568
+    .line 578
     iget-object v2, p0, Lcom/bumptech/glide/load/engine/DecodeJob;->glideContext:Lcom/bumptech/glide/GlideContext;
 
     iget v3, p0, Lcom/bumptech/glide/load/engine/DecodeJob;->width:I
@@ -1862,7 +1898,7 @@
 
     move-object v7, v1
 
-    .line 571
+    .line 581
     :goto_0
     invoke-virtual {p2, v0}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
 
@@ -1870,10 +1906,10 @@
 
     if-nez v2, :cond_1
 
-    .line 572
+    .line 582
     invoke-interface {p2}, Lcom/bumptech/glide/load/engine/Resource;->recycle()V
 
-    .line 577
+    .line 587
     :cond_1
     iget-object p2, p0, Lcom/bumptech/glide/load/engine/DecodeJob;->decodeHelper:Lcom/bumptech/glide/load/engine/DecodeHelper;
 
@@ -1883,14 +1919,14 @@
 
     if-eqz p2, :cond_2
 
-    .line 578
+    .line 588
     iget-object p2, p0, Lcom/bumptech/glide/load/engine/DecodeJob;->decodeHelper:Lcom/bumptech/glide/load/engine/DecodeHelper;
 
     invoke-virtual {p2, v0}, Lcom/bumptech/glide/load/engine/DecodeHelper;->getResultEncoder(Lcom/bumptech/glide/load/engine/Resource;)Lcom/bumptech/glide/load/ResourceEncoder;
 
     move-result-object v1
 
-    .line 579
+    .line 589
     iget-object p2, p0, Lcom/bumptech/glide/load/engine/DecodeJob;->options:Lcom/bumptech/glide/load/Options;
 
     invoke-interface {v1, p2}, Lcom/bumptech/glide/load/ResourceEncoder;->getEncodeStrategy(Lcom/bumptech/glide/load/Options;)Lcom/bumptech/glide/load/EncodeStrategy;
@@ -1899,14 +1935,14 @@
 
     goto :goto_1
 
-    .line 582
+    .line 592
     :cond_2
     sget-object p2, Lcom/bumptech/glide/load/EncodeStrategy;->NONE:Lcom/bumptech/glide/load/EncodeStrategy;
 
     :goto_1
     move-object v10, v1
 
-    .line 586
+    .line 596
     iget-object v1, p0, Lcom/bumptech/glide/load/engine/DecodeJob;->decodeHelper:Lcom/bumptech/glide/load/engine/DecodeHelper;
 
     iget-object v2, p0, Lcom/bumptech/glide/load/engine/DecodeJob;->currentSourceKey:Lcom/bumptech/glide/load/Key;
@@ -1919,7 +1955,7 @@
 
     xor-int/2addr v1, v2
 
-    .line 587
+    .line 597
     iget-object v3, p0, Lcom/bumptech/glide/load/engine/DecodeJob;->diskCacheStrategy:Lcom/bumptech/glide/load/engine/DiskCacheStrategy;
 
     invoke-virtual {v3, v1, p1, p2}, Lcom/bumptech/glide/load/engine/DiskCacheStrategy;->isResourceCacheable(ZLcom/bumptech/glide/load/DataSource;Lcom/bumptech/glide/load/EncodeStrategy;)Z
@@ -1930,7 +1966,7 @@
 
     if-eqz v10, :cond_5
 
-    .line 593
+    .line 603
     sget-object p1, Lcom/bumptech/glide/load/engine/DecodeJob$1;->$SwitchMap$com$bumptech$glide$load$EncodeStrategy:[I
 
     invoke-virtual {p2}, Ljava/lang/Enum;->ordinal()I
@@ -1945,12 +1981,12 @@
 
     if-ne p1, v1, :cond_3
 
-    .line 598
+    .line 608
     new-instance p1, Lcom/bumptech/glide/load/engine/ResourceCacheKey;
 
     iget-object p2, p0, Lcom/bumptech/glide/load/engine/DecodeJob;->decodeHelper:Lcom/bumptech/glide/load/engine/DecodeHelper;
 
-    .line 600
+    .line 610
     invoke-virtual {p2}, Lcom/bumptech/glide/load/engine/DecodeHelper;->getArrayPool()Lcom/bumptech/glide/load/engine/bitmap_recycle/ArrayPool;
 
     move-result-object v2
@@ -1971,7 +2007,7 @@
 
     goto :goto_2
 
-    .line 610
+    .line 620
     :cond_3
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
@@ -1993,7 +2029,7 @@
 
     throw p1
 
-    .line 595
+    .line 605
     :cond_4
     new-instance p1, Lcom/bumptech/glide/load/engine/DataCacheKey;
 
@@ -2003,20 +2039,20 @@
 
     invoke-direct {p1, p2, v1}, Lcom/bumptech/glide/load/engine/DataCacheKey;-><init>(Lcom/bumptech/glide/load/Key;Lcom/bumptech/glide/load/Key;)V
 
-    .line 613
+    .line 623
     :goto_2
     invoke-static {v0}, Lcom/bumptech/glide/load/engine/LockedResource;->obtain(Lcom/bumptech/glide/load/engine/Resource;)Lcom/bumptech/glide/load/engine/LockedResource;
 
     move-result-object v0
 
-    .line 614
+    .line 624
     iget-object p2, p0, Lcom/bumptech/glide/load/engine/DecodeJob;->deferredEncodeManager:Lcom/bumptech/glide/load/engine/DecodeJob$DeferredEncodeManager;
 
     invoke-virtual {p2, p1, v10, v0}, Lcom/bumptech/glide/load/engine/DecodeJob$DeferredEncodeManager;->init(Lcom/bumptech/glide/load/Key;Lcom/bumptech/glide/load/ResourceEncoder;Lcom/bumptech/glide/load/engine/LockedResource;)V
 
     goto :goto_3
 
-    .line 590
+    .line 600
     :cond_5
     new-instance p1, Lcom/bumptech/glide/Registry$NoResultEncoderAvailableException;
 
@@ -2059,15 +2095,10 @@
 .method public reschedule()V
     .locals 1
 
-    .line 374
+    .line 381
     sget-object v0, Lcom/bumptech/glide/load/engine/DecodeJob$RunReason;->SWITCH_TO_SOURCE_SERVICE:Lcom/bumptech/glide/load/engine/DecodeJob$RunReason;
 
-    iput-object v0, p0, Lcom/bumptech/glide/load/engine/DecodeJob;->runReason:Lcom/bumptech/glide/load/engine/DecodeJob$RunReason;
-
-    .line 375
-    iget-object v0, p0, Lcom/bumptech/glide/load/engine/DecodeJob;->callback:Lcom/bumptech/glide/load/engine/DecodeJob$Callback;
-
-    invoke-interface {v0, p0}, Lcom/bumptech/glide/load/engine/DecodeJob$Callback;->reschedule(Lcom/bumptech/glide/load/engine/DecodeJob;)V
+    invoke-direct {p0, v0}, Lcom/bumptech/glide/load/engine/DecodeJob;->reschedule(Lcom/bumptech/glide/load/engine/DecodeJob$RunReason;)V
 
     return-void
 .end method
@@ -2078,11 +2109,13 @@
     const-string v0, "DecodeJob"
 
     .line 226
-    iget-object v1, p0, Lcom/bumptech/glide/load/engine/DecodeJob;->model:Ljava/lang/Object;
+    iget-object v1, p0, Lcom/bumptech/glide/load/engine/DecodeJob;->runReason:Lcom/bumptech/glide/load/engine/DecodeJob$RunReason;
 
-    const-string v2, "DecodeJob#run(model=%s)"
+    iget-object v2, p0, Lcom/bumptech/glide/load/engine/DecodeJob;->model:Ljava/lang/Object;
 
-    invoke-static {v2, v1}, Lcom/bumptech/glide/util/pool/GlideTrace;->beginSectionFormat(Ljava/lang/String;Ljava/lang/Object;)V
+    const-string v3, "DecodeJob#run(reason=%s, model=%s)"
+
+    invoke-static {v3, v1, v2}, Lcom/bumptech/glide/util/pool/GlideTrace;->beginSectionFormat(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/Object;)V
 
     .line 229
     iget-object v1, p0, Lcom/bumptech/glide/load/engine/DecodeJob;->currentFetcher:Lcom/bumptech/glide/load/data/DataFetcher;
@@ -2218,6 +2251,7 @@
     :cond_6
     invoke-static {}, Lcom/bumptech/glide/util/pool/GlideTrace;->endSection()V
 
+    .line 269
     throw v0
 .end method
 

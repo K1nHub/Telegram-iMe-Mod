@@ -6,7 +6,7 @@ import androidx.collection.SimpleArrayMap;
 public final class CachedHashCodeArrayMap<K, V> extends ArrayMap<K, V> {
     private int hashCode;
 
-    @Override // androidx.collection.SimpleArrayMap, java.util.Map, p034j$.util.Map
+    @Override // androidx.collection.SimpleArrayMap, java.util.Map, p035j$.util.Map
     public void clear() {
         this.hashCode = 0;
         super.clear();
@@ -18,7 +18,7 @@ public final class CachedHashCodeArrayMap<K, V> extends ArrayMap<K, V> {
         return (V) super.setValueAt(i, v);
     }
 
-    @Override // androidx.collection.SimpleArrayMap, java.util.Map, p034j$.util.Map
+    @Override // androidx.collection.SimpleArrayMap, java.util.Map, p035j$.util.Map
     public V put(K k, V v) {
         this.hashCode = 0;
         return (V) super.put(k, v);
@@ -36,7 +36,7 @@ public final class CachedHashCodeArrayMap<K, V> extends ArrayMap<K, V> {
         return (V) super.removeAt(i);
     }
 
-    @Override // androidx.collection.SimpleArrayMap, java.util.Map, p034j$.util.Map
+    @Override // androidx.collection.SimpleArrayMap, java.util.Map, p035j$.util.Map
     public int hashCode() {
         if (this.hashCode == 0) {
             this.hashCode = super.hashCode();

@@ -21,7 +21,7 @@
 .method constructor <init>(Lorg/telegram/ui/PrivacyControlActivity$MessageCell;Lorg/telegram/ui/PrivacyControlActivity;)V
     .locals 0
 
-    .line 358
+    .line 357
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -469,10 +469,10 @@
     return-void
 .end method
 
-.method public synthetic runWithActivationCheck(Lorg/fork/utils/Callbacks$Callback;)V
+.method public synthetic runWithActivationCheck(Lcom/iMe/fork/utils/Callbacks$Callback;)V
     .locals 0
 
-    invoke-static {p0, p1}, Lorg/telegram/ui/Cells/ChatMessageCell$ChatMessageCellDelegate$-CC;->$default$runWithActivationCheck(Lorg/telegram/ui/Cells/ChatMessageCell$ChatMessageCellDelegate;Lorg/fork/utils/Callbacks$Callback;)V
+    invoke-static {p0, p1}, Lorg/telegram/ui/Cells/ChatMessageCell$ChatMessageCellDelegate$-CC;->$default$runWithActivationCheck(Lorg/telegram/ui/Cells/ChatMessageCell$ChatMessageCellDelegate;Lcom/iMe/fork/utils/Callbacks$Callback;)V
 
     return-void
 .end method

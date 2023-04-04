@@ -24,7 +24,7 @@
 
 .field private accountsShown:Z
 
-.field private createButton:Lorg/fork/ui/view/DrawerExpandableCell;
+.field private createButton:Lcom/iMe/fork/ui/view/DrawerExpandableCell;
 
 .field private final createGroupItems:Ljava/util/ArrayList;
     .annotation system Ldalvik/annotation/Signature;
@@ -594,11 +594,11 @@
 
     sget v18, Lorg/telegram/messenger/UserConfig;->selectedAccount:I
 
-    invoke-static/range {v18 .. v18}, Lorg/fork/controller/ForkCommonController;->getInstance(I)Lorg/fork/controller/ForkCommonController;
+    invoke-static/range {v18 .. v18}, Lcom/iMe/fork/controller/ForkCommonController;->getInstance(I)Lcom/iMe/fork/controller/ForkCommonController;
 
     move-result-object v18
 
-    invoke-virtual/range {v18 .. v18}, Lorg/fork/controller/ForkCommonController;->isShowPremiumBadgeEnabled()Z
+    invoke-virtual/range {v18 .. v18}, Lcom/iMe/fork/controller/ForkCommonController;->isShowPremiumBadgeEnabled()Z
 
     move-result v18
 
@@ -606,11 +606,11 @@
 
     sget v18, Lorg/telegram/messenger/UserConfig;->selectedAccount:I
 
-    invoke-static/range {v18 .. v18}, Lorg/fork/controller/ForkCommonController;->getInstance(I)Lorg/fork/controller/ForkCommonController;
+    invoke-static/range {v18 .. v18}, Lcom/iMe/fork/controller/ForkCommonController;->getInstance(I)Lcom/iMe/fork/controller/ForkCommonController;
 
     move-result-object v18
 
-    invoke-virtual/range {v18 .. v18}, Lorg/fork/controller/ForkCommonController;->isShowPremiumStatusEnabled()Z
+    invoke-virtual/range {v18 .. v18}, Lcom/iMe/fork/controller/ForkCommonController;->isShowPremiumStatusEnabled()Z
 
     move-result v18
 
@@ -719,7 +719,7 @@
     .line 527
     sget-object v1, Lorg/telegram/messenger/SharedConfig;->selectedDrawerItems:Ljava/util/Set;
 
-    sget-object v3, Lcom/smedialink/ui/drawer/DrawerSwitchableItem;->WALLET:Lcom/smedialink/ui/drawer/DrawerSwitchableItem;
+    sget-object v3, Lcom/iMe/ui/drawer/DrawerSwitchableItem;->WALLET:Lcom/iMe/ui/drawer/DrawerSwitchableItem;
 
     invoke-interface {v1, v3}, Ljava/util/Set;->contains(Ljava/lang/Object;)Z
 
@@ -732,9 +732,9 @@
 
     new-instance v5, Lorg/telegram/ui/Adapters/DrawerLayoutAdapter$Item;
 
-    sget v6, Lcom/smedialink/common/IdFabric$ViewTypes;->DRAWER_WALLET:I
+    sget v6, Lcom/iMe/common/IdFabric$ViewTypes;->DRAWER_WALLET:I
 
-    invoke-direct {v5, v6, v9, v3}, Lorg/telegram/ui/Adapters/DrawerLayoutAdapter$Item;-><init>(IILcom/smedialink/ui/drawer/DrawerSwitchableItem;)V
+    invoke-direct {v5, v6, v9, v3}, Lorg/telegram/ui/Adapters/DrawerLayoutAdapter$Item;-><init>(IILcom/iMe/ui/drawer/DrawerSwitchableItem;)V
 
     invoke-virtual {v1, v5}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
@@ -742,7 +742,7 @@
     :cond_9
     sget-object v1, Lorg/telegram/messenger/SharedConfig;->selectedDrawerItems:Ljava/util/Set;
 
-    sget-object v3, Lcom/smedialink/ui/drawer/DrawerSwitchableItem;->CATALOG:Lcom/smedialink/ui/drawer/DrawerSwitchableItem;
+    sget-object v3, Lcom/iMe/ui/drawer/DrawerSwitchableItem;->CATALOG:Lcom/iMe/ui/drawer/DrawerSwitchableItem;
 
     invoke-interface {v1, v3}, Ljava/util/Set;->contains(Ljava/lang/Object;)Z
 
@@ -755,9 +755,9 @@
 
     new-instance v5, Lorg/telegram/ui/Adapters/DrawerLayoutAdapter$Item;
 
-    sget v6, Lcom/smedialink/common/IdFabric$ViewTypes;->DRAWER_CATALOG:I
+    sget v6, Lcom/iMe/common/IdFabric$ViewTypes;->DRAWER_CATALOG:I
 
-    invoke-direct {v5, v6, v10, v3}, Lorg/telegram/ui/Adapters/DrawerLayoutAdapter$Item;-><init>(IILcom/smedialink/ui/drawer/DrawerSwitchableItem;)V
+    invoke-direct {v5, v6, v10, v3}, Lorg/telegram/ui/Adapters/DrawerLayoutAdapter$Item;-><init>(IILcom/iMe/ui/drawer/DrawerSwitchableItem;)V
 
     invoke-virtual {v1, v5}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
@@ -765,7 +765,7 @@
     :cond_a
     sget-object v1, Lorg/telegram/messenger/SharedConfig;->selectedDrawerItems:Ljava/util/Set;
 
-    sget-object v3, Lcom/smedialink/ui/drawer/DrawerSwitchableItem;->MANAGEMENT:Lcom/smedialink/ui/drawer/DrawerSwitchableItem;
+    sget-object v3, Lcom/iMe/ui/drawer/DrawerSwitchableItem;->MANAGEMENT:Lcom/iMe/ui/drawer/DrawerSwitchableItem;
 
     invoke-interface {v1, v3}, Ljava/util/Set;->contains(Ljava/lang/Object;)Z
 
@@ -778,9 +778,9 @@
 
     new-instance v5, Lorg/telegram/ui/Adapters/DrawerLayoutAdapter$Item;
 
-    sget v6, Lcom/smedialink/common/IdFabric$ViewTypes;->DRAWER_MANAGEMENT:I
+    sget v6, Lcom/iMe/common/IdFabric$ViewTypes;->DRAWER_MANAGEMENT:I
 
-    invoke-direct {v5, v6, v11, v3}, Lorg/telegram/ui/Adapters/DrawerLayoutAdapter$Item;-><init>(IILcom/smedialink/ui/drawer/DrawerSwitchableItem;)V
+    invoke-direct {v5, v6, v11, v3}, Lorg/telegram/ui/Adapters/DrawerLayoutAdapter$Item;-><init>(IILcom/iMe/ui/drawer/DrawerSwitchableItem;)V
 
     invoke-virtual {v1, v5}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
@@ -788,7 +788,7 @@
     :cond_b
     sget-object v1, Lorg/telegram/messenger/SharedConfig;->selectedDrawerItems:Ljava/util/Set;
 
-    sget-object v3, Lcom/smedialink/ui/drawer/DrawerSwitchableItem;->MUSIC:Lcom/smedialink/ui/drawer/DrawerSwitchableItem;
+    sget-object v3, Lcom/iMe/ui/drawer/DrawerSwitchableItem;->MUSIC:Lcom/iMe/ui/drawer/DrawerSwitchableItem;
 
     invoke-interface {v1, v3}, Ljava/util/Set;->contains(Ljava/lang/Object;)Z
 
@@ -801,9 +801,9 @@
 
     new-instance v5, Lorg/telegram/ui/Adapters/DrawerLayoutAdapter$Item;
 
-    sget v6, Lcom/smedialink/common/IdFabric$ViewTypes;->DRAWER_MUSIC:I
+    sget v6, Lcom/iMe/common/IdFabric$ViewTypes;->DRAWER_MUSIC:I
 
-    invoke-direct {v5, v6, v12, v3}, Lorg/telegram/ui/Adapters/DrawerLayoutAdapter$Item;-><init>(IILcom/smedialink/ui/drawer/DrawerSwitchableItem;)V
+    invoke-direct {v5, v6, v12, v3}, Lorg/telegram/ui/Adapters/DrawerLayoutAdapter$Item;-><init>(IILcom/iMe/ui/drawer/DrawerSwitchableItem;)V
 
     invoke-virtual {v1, v5}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
@@ -887,7 +887,7 @@
 
     new-instance v2, Lorg/telegram/ui/Adapters/DrawerLayoutAdapter$Item;
 
-    sget v3, Lcom/smedialink/common/IdFabric$ViewTypes;->DRAWER_GROUP_CREATE:I
+    sget v3, Lcom/iMe/common/IdFabric$ViewTypes;->DRAWER_GROUP_CREATE:I
 
     sget v5, Lorg/telegram/messenger/R$string;->drawer_create_expandable_section:I
 
@@ -909,7 +909,7 @@
     .line 549
     sget-object v1, Lorg/telegram/messenger/SharedConfig;->selectedDrawerItems:Ljava/util/Set;
 
-    sget-object v2, Lcom/smedialink/ui/drawer/DrawerSwitchableItem;->CONTACTS:Lcom/smedialink/ui/drawer/DrawerSwitchableItem;
+    sget-object v2, Lcom/iMe/ui/drawer/DrawerSwitchableItem;->CONTACTS:Lcom/iMe/ui/drawer/DrawerSwitchableItem;
 
     invoke-interface {v1, v2}, Ljava/util/Set;->contains(Ljava/lang/Object;)Z
 
@@ -940,7 +940,7 @@
     :cond_e
     sget-object v1, Lorg/telegram/messenger/SharedConfig;->selectedDrawerItems:Ljava/util/Set;
 
-    sget-object v2, Lcom/smedialink/ui/drawer/DrawerSwitchableItem;->CALLS:Lcom/smedialink/ui/drawer/DrawerSwitchableItem;
+    sget-object v2, Lcom/iMe/ui/drawer/DrawerSwitchableItem;->CALLS:Lcom/iMe/ui/drawer/DrawerSwitchableItem;
 
     invoke-interface {v1, v2}, Ljava/util/Set;->contains(Ljava/lang/Object;)Z
 
@@ -973,7 +973,7 @@
     :cond_f
     sget-object v1, Lorg/telegram/messenger/SharedConfig;->selectedDrawerItems:Ljava/util/Set;
 
-    sget-object v2, Lcom/smedialink/ui/drawer/DrawerSwitchableItem;->PEOPLE_NEARBY:Lcom/smedialink/ui/drawer/DrawerSwitchableItem;
+    sget-object v2, Lcom/iMe/ui/drawer/DrawerSwitchableItem;->PEOPLE_NEARBY:Lcom/iMe/ui/drawer/DrawerSwitchableItem;
 
     invoke-interface {v1, v2}, Ljava/util/Set;->contains(Ljava/lang/Object;)Z
 
@@ -1011,7 +1011,7 @@
     :cond_10
     sget-object v1, Lorg/telegram/messenger/SharedConfig;->selectedDrawerItems:Ljava/util/Set;
 
-    sget-object v2, Lcom/smedialink/ui/drawer/DrawerSwitchableItem;->CLOUD:Lcom/smedialink/ui/drawer/DrawerSwitchableItem;
+    sget-object v2, Lcom/iMe/ui/drawer/DrawerSwitchableItem;->CLOUD:Lcom/iMe/ui/drawer/DrawerSwitchableItem;
 
     invoke-interface {v1, v2}, Ljava/util/Set;->contains(Ljava/lang/Object;)Z
 
@@ -1044,7 +1044,7 @@
     :cond_11
     sget-object v1, Lorg/telegram/messenger/SharedConfig;->selectedDrawerItems:Ljava/util/Set;
 
-    sget-object v2, Lcom/smedialink/ui/drawer/DrawerSwitchableItem;->ALBUMS:Lcom/smedialink/ui/drawer/DrawerSwitchableItem;
+    sget-object v2, Lcom/iMe/ui/drawer/DrawerSwitchableItem;->ALBUMS:Lcom/iMe/ui/drawer/DrawerSwitchableItem;
 
     invoke-interface {v1, v2}, Ljava/util/Set;->contains(Ljava/lang/Object;)Z
 
@@ -1057,7 +1057,7 @@
 
     new-instance v2, Lorg/telegram/ui/Adapters/DrawerLayoutAdapter$Item;
 
-    sget v3, Lcom/smedialink/common/IdFabric$ViewTypes;->DRAWER_ALBUMS:I
+    sget v3, Lcom/iMe/common/IdFabric$ViewTypes;->DRAWER_ALBUMS:I
 
     sget v4, Lorg/telegram/messenger/R$string;->cloud_albums_toolbar_title:I
 
@@ -1200,7 +1200,7 @@
     if-nez p1, :cond_4
 
     .line 595
-    sget p1, Lcom/smedialink/common/IdFabric$ViewTypes;->DRAWER_GROUP_CREATE:I
+    sget p1, Lcom/iMe/common/IdFabric$ViewTypes;->DRAWER_GROUP_CREATE:I
 
     return p1
 
@@ -1772,7 +1772,7 @@
     .line 254
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
-    check-cast p1, Lorg/fork/ui/view/DrawerExpandableCell;
+    check-cast p1, Lcom/iMe/fork/ui/view/DrawerExpandableCell;
 
     .line 255
     iget-object p2, p0, Lorg/telegram/ui/Adapters/DrawerLayoutAdapter;->items:Ljava/util/ArrayList;
@@ -1794,12 +1794,12 @@
 
     iget p2, p2, Lorg/telegram/ui/Adapters/DrawerLayoutAdapter$Item;->icon:I
 
-    invoke-virtual {p1, v0, p2}, Lorg/fork/ui/view/DrawerExpandableCell;->setTextAndIcon(Ljava/lang/String;I)V
+    invoke-virtual {p1, v0, p2}, Lcom/iMe/fork/ui/view/DrawerExpandableCell;->setTextAndIcon(Ljava/lang/String;I)V
 
     .line 257
     iget-boolean p2, p0, Lorg/telegram/ui/Adapters/DrawerLayoutAdapter;->isCreateGroupExpanded:Z
 
-    invoke-virtual {p1, p2}, Lorg/fork/ui/view/DrawerExpandableCell;->setExpandedState(Z)V
+    invoke-virtual {p1, p2}, Lcom/iMe/fork/ui/view/DrawerExpandableCell;->setExpandedState(Z)V
 
     goto/16 :goto_0
 
@@ -2047,13 +2047,13 @@
     if-ne p2, p1, :cond_0
 
     .line 206
-    new-instance p1, Lorg/fork/ui/view/DrawerExpandableCell;
+    new-instance p1, Lcom/iMe/fork/ui/view/DrawerExpandableCell;
 
     iget-object p2, p0, Lorg/telegram/ui/Adapters/DrawerLayoutAdapter;->mContext:Landroid/content/Context;
 
-    invoke-direct {p1, p2}, Lorg/fork/ui/view/DrawerExpandableCell;-><init>(Landroid/content/Context;)V
+    invoke-direct {p1, p2}, Lcom/iMe/fork/ui/view/DrawerExpandableCell;-><init>(Landroid/content/Context;)V
 
-    iput-object p1, p0, Lorg/telegram/ui/Adapters/DrawerLayoutAdapter;->createButton:Lorg/fork/ui/view/DrawerExpandableCell;
+    iput-object p1, p0, Lorg/telegram/ui/Adapters/DrawerLayoutAdapter;->createButton:Lcom/iMe/fork/ui/view/DrawerExpandableCell;
 
     goto :goto_1
 
@@ -2442,9 +2442,9 @@
     if-eqz v2, :cond_2
 
     .line 90
-    iget-object v2, p0, Lorg/telegram/ui/Adapters/DrawerLayoutAdapter;->createButton:Lorg/fork/ui/view/DrawerExpandableCell;
+    iget-object v2, p0, Lorg/telegram/ui/Adapters/DrawerLayoutAdapter;->createButton:Lcom/iMe/fork/ui/view/DrawerExpandableCell;
 
-    invoke-virtual {v2, v1}, Lorg/fork/ui/view/DrawerExpandableCell;->setExpandedState(Z)V
+    invoke-virtual {v2, v1}, Lcom/iMe/fork/ui/view/DrawerExpandableCell;->setExpandedState(Z)V
 
     .line 91
     iget-object v1, p0, Lorg/telegram/ui/Adapters/DrawerLayoutAdapter;->createGroupItems:Ljava/util/ArrayList;
@@ -2459,11 +2459,11 @@
 
     .line 93
     :cond_2
-    iget-object v1, p0, Lorg/telegram/ui/Adapters/DrawerLayoutAdapter;->createButton:Lorg/fork/ui/view/DrawerExpandableCell;
+    iget-object v1, p0, Lorg/telegram/ui/Adapters/DrawerLayoutAdapter;->createButton:Lcom/iMe/fork/ui/view/DrawerExpandableCell;
 
     const/4 v2, 0x0
 
-    invoke-virtual {v1, v2}, Lorg/fork/ui/view/DrawerExpandableCell;->setExpandedState(Z)V
+    invoke-virtual {v1, v2}, Lcom/iMe/fork/ui/view/DrawerExpandableCell;->setExpandedState(Z)V
 
     .line 94
     iget-object v1, p0, Lorg/telegram/ui/Adapters/DrawerLayoutAdapter;->createGroupItems:Ljava/util/ArrayList;

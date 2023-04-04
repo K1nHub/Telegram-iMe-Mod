@@ -7,7 +7,7 @@
 
 
 # instance fields
-.field public final accountRankBadge:Lorg/fork/ui/view/AccountLevelBadgeView;
+.field public final accountRankBadge:Lcom/iMe/fork/ui/view/AccountLevelBadgeView;
 
 .field public final appbar:Lcom/google/android/material/appbar/AppBarLayout;
 
@@ -19,7 +19,7 @@
 
 .field public final headerUnderlay:Landroid/view/View;
 
-.field public final horizontalActionButtons:Lcom/smedialink/ui/custom/HorizontalActionButtonsView;
+.field public final horizontalActionButtons:Lcom/iMe/ui/custom/HorizontalActionButtonsView;
 
 .field public final imageCoinIcon:Landroidx/appcompat/widget/AppCompatImageView;
 
@@ -47,7 +47,7 @@
 
 .field public final toolbar:Lcom/google/android/material/appbar/MaterialToolbar;
 
-.field public final transactionsPager:Lorg/fork/ui/view/TabbedViewPager;
+.field public final transactionsPager:Lcom/iMe/fork/ui/view/TabbedViewPager;
 
 .field public final viewAnnualPercentageCell:Lorg/telegram/ui/Cells/TextDetailCell;
 
@@ -57,7 +57,7 @@
 
 
 # direct methods
-.method private constructor <init>(Landroidx/swiperefreshlayout/widget/SwipeRefreshLayout;Lorg/fork/ui/view/AccountLevelBadgeView;Lcom/google/android/material/appbar/AppBarLayout;Landroidx/constraintlayout/widget/ConstraintLayout;Landroidx/coordinatorlayout/widget/CoordinatorLayout;Landroid/view/View;Landroid/view/View;Landroid/view/View;Lcom/smedialink/ui/custom/HorizontalActionButtonsView;Landroidx/appcompat/widget/AppCompatImageView;Landroidx/appcompat/widget/AppCompatImageView;Lorg/telegram/ui/ActionBar/ActionBarMenuItem;Lorg/telegram/ui/ActionBar/ActionBarMenuItem;Landroid/widget/LinearLayout;Landroid/widget/LinearLayout;Landroidx/appcompat/widget/LinearLayoutCompat;Landroidx/appcompat/widget/AppCompatTextView;Landroidx/appcompat/widget/AppCompatTextView;Landroidx/appcompat/widget/AppCompatTextView;Landroidx/appcompat/widget/AppCompatTextView;Lcom/google/android/material/appbar/MaterialToolbar;Lorg/fork/ui/view/TabbedViewPager;Lorg/telegram/ui/Cells/TextDetailCell;Lorg/telegram/ui/Cells/TextDetailCell;Lorg/telegram/ui/Cells/TextDetailCell;)V
+.method private constructor <init>(Landroidx/swiperefreshlayout/widget/SwipeRefreshLayout;Lcom/iMe/fork/ui/view/AccountLevelBadgeView;Lcom/google/android/material/appbar/AppBarLayout;Landroidx/constraintlayout/widget/ConstraintLayout;Landroidx/coordinatorlayout/widget/CoordinatorLayout;Landroid/view/View;Landroid/view/View;Landroid/view/View;Lcom/iMe/ui/custom/HorizontalActionButtonsView;Landroidx/appcompat/widget/AppCompatImageView;Landroidx/appcompat/widget/AppCompatImageView;Lorg/telegram/ui/ActionBar/ActionBarMenuItem;Lorg/telegram/ui/ActionBar/ActionBarMenuItem;Landroid/widget/LinearLayout;Landroid/widget/LinearLayout;Landroidx/appcompat/widget/LinearLayoutCompat;Landroidx/appcompat/widget/AppCompatTextView;Landroidx/appcompat/widget/AppCompatTextView;Landroidx/appcompat/widget/AppCompatTextView;Landroidx/appcompat/widget/AppCompatTextView;Lcom/google/android/material/appbar/MaterialToolbar;Lcom/iMe/fork/ui/view/TabbedViewPager;Lorg/telegram/ui/Cells/TextDetailCell;Lorg/telegram/ui/Cells/TextDetailCell;Lorg/telegram/ui/Cells/TextDetailCell;)V
     .locals 2
 
     move-object v0, p0
@@ -73,7 +73,7 @@
     move-object v1, p2
 
     .line 120
-    iput-object v1, v0, Lorg/telegram/messenger/databinding/ForkFragmentWalletTokenDetailsBinding;->accountRankBadge:Lorg/fork/ui/view/AccountLevelBadgeView;
+    iput-object v1, v0, Lorg/telegram/messenger/databinding/ForkFragmentWalletTokenDetailsBinding;->accountRankBadge:Lcom/iMe/fork/ui/view/AccountLevelBadgeView;
 
     move-object v1, p3
 
@@ -103,7 +103,7 @@
     move-object v1, p9
 
     .line 127
-    iput-object v1, v0, Lorg/telegram/messenger/databinding/ForkFragmentWalletTokenDetailsBinding;->horizontalActionButtons:Lcom/smedialink/ui/custom/HorizontalActionButtonsView;
+    iput-object v1, v0, Lorg/telegram/messenger/databinding/ForkFragmentWalletTokenDetailsBinding;->horizontalActionButtons:Lcom/iMe/ui/custom/HorizontalActionButtonsView;
 
     move-object v1, p10
 
@@ -168,7 +168,7 @@
     move-object/from16 v1, p22
 
     .line 140
-    iput-object v1, v0, Lorg/telegram/messenger/databinding/ForkFragmentWalletTokenDetailsBinding;->transactionsPager:Lorg/fork/ui/view/TabbedViewPager;
+    iput-object v1, v0, Lorg/telegram/messenger/databinding/ForkFragmentWalletTokenDetailsBinding;->transactionsPager:Lcom/iMe/fork/ui/view/TabbedViewPager;
 
     move-object/from16 v1, p23
 
@@ -203,7 +203,7 @@
 
     move-object v5, v2
 
-    check-cast v5, Lorg/fork/ui/view/AccountLevelBadgeView;
+    check-cast v5, Lcom/iMe/fork/ui/view/AccountLevelBadgeView;
 
     if-eqz v5, :cond_0
 
@@ -289,7 +289,7 @@
 
     move-object v12, v2
 
-    check-cast v12, Lcom/smedialink/ui/custom/HorizontalActionButtonsView;
+    check-cast v12, Lcom/iMe/ui/custom/HorizontalActionButtonsView;
 
     if-eqz v12, :cond_0
 
@@ -471,7 +471,7 @@
 
     move-object/from16 v25, v2
 
-    check-cast v25, Lorg/fork/ui/view/TabbedViewPager;
+    check-cast v25, Lcom/iMe/fork/ui/view/TabbedViewPager;
 
     if-eqz v25, :cond_0
 
@@ -526,7 +526,7 @@
 
     check-cast v4, Landroidx/swiperefreshlayout/widget/SwipeRefreshLayout;
 
-    invoke-direct/range {v3 .. v28}, Lorg/telegram/messenger/databinding/ForkFragmentWalletTokenDetailsBinding;-><init>(Landroidx/swiperefreshlayout/widget/SwipeRefreshLayout;Lorg/fork/ui/view/AccountLevelBadgeView;Lcom/google/android/material/appbar/AppBarLayout;Landroidx/constraintlayout/widget/ConstraintLayout;Landroidx/coordinatorlayout/widget/CoordinatorLayout;Landroid/view/View;Landroid/view/View;Landroid/view/View;Lcom/smedialink/ui/custom/HorizontalActionButtonsView;Landroidx/appcompat/widget/AppCompatImageView;Landroidx/appcompat/widget/AppCompatImageView;Lorg/telegram/ui/ActionBar/ActionBarMenuItem;Lorg/telegram/ui/ActionBar/ActionBarMenuItem;Landroid/widget/LinearLayout;Landroid/widget/LinearLayout;Landroidx/appcompat/widget/LinearLayoutCompat;Landroidx/appcompat/widget/AppCompatTextView;Landroidx/appcompat/widget/AppCompatTextView;Landroidx/appcompat/widget/AppCompatTextView;Landroidx/appcompat/widget/AppCompatTextView;Lcom/google/android/material/appbar/MaterialToolbar;Lorg/fork/ui/view/TabbedViewPager;Lorg/telegram/ui/Cells/TextDetailCell;Lorg/telegram/ui/Cells/TextDetailCell;Lorg/telegram/ui/Cells/TextDetailCell;)V
+    invoke-direct/range {v3 .. v28}, Lorg/telegram/messenger/databinding/ForkFragmentWalletTokenDetailsBinding;-><init>(Landroidx/swiperefreshlayout/widget/SwipeRefreshLayout;Lcom/iMe/fork/ui/view/AccountLevelBadgeView;Lcom/google/android/material/appbar/AppBarLayout;Landroidx/constraintlayout/widget/ConstraintLayout;Landroidx/coordinatorlayout/widget/CoordinatorLayout;Landroid/view/View;Landroid/view/View;Landroid/view/View;Lcom/iMe/ui/custom/HorizontalActionButtonsView;Landroidx/appcompat/widget/AppCompatImageView;Landroidx/appcompat/widget/AppCompatImageView;Lorg/telegram/ui/ActionBar/ActionBarMenuItem;Lorg/telegram/ui/ActionBar/ActionBarMenuItem;Landroid/widget/LinearLayout;Landroid/widget/LinearLayout;Landroidx/appcompat/widget/LinearLayoutCompat;Landroidx/appcompat/widget/AppCompatTextView;Landroidx/appcompat/widget/AppCompatTextView;Landroidx/appcompat/widget/AppCompatTextView;Landroidx/appcompat/widget/AppCompatTextView;Lcom/google/android/material/appbar/MaterialToolbar;Lcom/iMe/fork/ui/view/TabbedViewPager;Lorg/telegram/ui/Cells/TextDetailCell;Lorg/telegram/ui/Cells/TextDetailCell;Lorg/telegram/ui/Cells/TextDetailCell;)V
 
     return-object v1
 

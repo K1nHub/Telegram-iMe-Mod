@@ -78,42 +78,42 @@
 .method public constructor <init>(Lorg/telegram/ui/SelectAnimatedEmojiDialog;Landroid/content/Context;)V
     .locals 0
 
-    .line 2601
+    .line 2600
     iput-object p1, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$ImageViewEmoji;->this$0:Lorg/telegram/ui/SelectAnimatedEmojiDialog;
 
-    .line 2602
+    .line 2601
     invoke-direct {p0, p2}, Landroid/view/View;-><init>(Landroid/content/Context;)V
 
     const/4 p1, 0x0
 
-    .line 2568
+    .line 2567
     iput-boolean p1, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$ImageViewEmoji;->empty:Z
 
-    .line 2569
+    .line 2568
     iput-boolean p1, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$ImageViewEmoji;->notDraw:Z
 
     const/4 p1, 0x2
 
     new-array p1, p1, [Lorg/telegram/messenger/ImageReceiver$BackgroundThreadDrawHolder;
 
-    .line 2573
+    .line 2572
     iput-object p1, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$ImageViewEmoji;->backgroundThreadDrawHolder:[Lorg/telegram/messenger/ImageReceiver$BackgroundThreadDrawHolder;
 
-    .line 2575
+    .line 2574
     new-instance p1, Lorg/telegram/messenger/ImageReceiver;
 
     invoke-direct {p1}, Lorg/telegram/messenger/ImageReceiver;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$ImageViewEmoji;->preloadEffectImageReceiver:Lorg/telegram/messenger/ImageReceiver;
 
-    .line 2592
+    .line 2591
     new-instance p1, Lorg/telegram/ui/SelectAnimatedEmojiDialog$ImageViewEmoji$1;
 
     invoke-direct {p1, p0}, Lorg/telegram/ui/SelectAnimatedEmojiDialog$ImageViewEmoji$1;-><init>(Lorg/telegram/ui/SelectAnimatedEmojiDialog$ImageViewEmoji;)V
 
     iput-object p1, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$ImageViewEmoji;->invalidateHolder:Lorg/telegram/ui/Components/AnimatedEmojiSpan$InvalidateHolder;
 
-    .line 2603
+    .line 2602
     iget-object p1, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$ImageViewEmoji;->preloadEffectImageReceiver:Lorg/telegram/messenger/ImageReceiver;
 
     const/4 p2, 0x1
@@ -126,7 +126,7 @@
 .method static synthetic access$7600(Lorg/telegram/ui/SelectAnimatedEmojiDialog$ImageViewEmoji;)F
     .locals 0
 
-    .line 2567
+    .line 2566
     iget p0, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$ImageViewEmoji;->pressedProgress:F
 
     return p0
@@ -135,7 +135,7 @@
 .method private synthetic lambda$setPressed$0(Landroid/animation/ValueAnimator;)V
     .locals 0
 
-    .line 2625
+    .line 2624
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
 
     move-result-object p1
@@ -148,7 +148,7 @@
 
     iput p1, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$ImageViewEmoji;->pressedProgress:F
 
-    .line 2626
+    .line 2625
     iget-object p1, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$ImageViewEmoji;->this$0:Lorg/telegram/ui/SelectAnimatedEmojiDialog;
 
     iget-object p1, p1, Lorg/telegram/ui/SelectAnimatedEmojiDialog;->emojiGridView:Lorg/telegram/ui/SelectAnimatedEmojiDialog$EmojiListView;
@@ -163,12 +163,12 @@
 .method public createImageReceiver(Landroid/view/View;)V
     .locals 1
 
-    .line 2747
+    .line 2746
     iget-object v0, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$ImageViewEmoji;->imageReceiver:Lorg/telegram/messenger/ImageReceiver;
 
     if-nez v0, :cond_1
 
-    .line 2748
+    .line 2747
     new-instance v0, Lorg/telegram/messenger/ImageReceiver;
 
     invoke-direct {v0, p1}, Lorg/telegram/messenger/ImageReceiver;-><init>(Landroid/view/View;)V
@@ -177,20 +177,20 @@
 
     const/4 p1, 0x7
 
-    .line 2749
+    .line 2748
     invoke-virtual {v0, p1}, Lorg/telegram/messenger/ImageReceiver;->setLayerNum(I)V
 
-    .line 2750
+    .line 2749
     iget-boolean p1, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$ImageViewEmoji;->attached:Z
 
     if-eqz p1, :cond_0
 
-    .line 2751
+    .line 2750
     iget-object p1, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$ImageViewEmoji;->imageReceiver:Lorg/telegram/messenger/ImageReceiver;
 
     invoke-virtual {p1}, Lorg/telegram/messenger/ImageReceiver;->onAttachedToWindow()Z
 
-    .line 2753
+    .line 2752
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$ImageViewEmoji;->imageReceiver:Lorg/telegram/messenger/ImageReceiver;
 
@@ -205,12 +205,12 @@
 .method public createPremiumLockView()V
     .locals 4
 
-    .line 2765
+    .line 2764
     iget-object v0, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$ImageViewEmoji;->premiumLockIconView:Lorg/telegram/ui/Components/Premium/PremiumLockIconView;
 
     if-nez v0, :cond_0
 
-    .line 2766
+    .line 2765
     new-instance v0, Lorg/telegram/ui/Components/Premium/PremiumLockIconView;
 
     invoke-virtual {p0}, Landroid/view/View;->getContext()Landroid/content/Context;
@@ -225,7 +225,7 @@
 
     const/16 v0, 0xc
 
-    .line 2767
+    .line 2766
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v0
@@ -236,12 +236,12 @@
 
     move-result v0
 
-    .line 2768
+    .line 2767
     iget-object v1, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$ImageViewEmoji;->premiumLockIconView:Lorg/telegram/ui/Components/Premium/PremiumLockIconView;
 
     invoke-virtual {v1, v0, v0}, Landroid/widget/ImageView;->measure(II)V
 
-    .line 2769
+    .line 2768
     iget-object v0, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$ImageViewEmoji;->premiumLockIconView:Lorg/telegram/ui/Components/Premium/PremiumLockIconView;
 
     invoke-virtual {v0}, Landroid/widget/ImageView;->getMeasuredWidth()I
@@ -265,7 +265,7 @@
 .method public drawSelected(Landroid/graphics/Canvas;Landroid/view/View;)V
     .locals 5
 
-    .line 2670
+    .line 2669
     iget-boolean v0, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$ImageViewEmoji;->selected:Z
 
     const/4 v1, 0x0
@@ -289,7 +289,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 2671
+    .line 2670
     iget v0, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$ImageViewEmoji;->selectedProgress:F
 
     cmpg-float v4, v0, v3
@@ -298,13 +298,13 @@
 
     add-float/2addr v0, v2
 
-    .line 2672
+    .line 2671
     iput v0, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$ImageViewEmoji;->selectedProgress:F
 
-    .line 2673
+    .line 2672
     invoke-virtual {p2}, Landroid/view/View;->invalidate()V
 
-    .line 2675
+    .line 2674
     :cond_1
     iget-boolean v0, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$ImageViewEmoji;->selected:Z
 
@@ -318,13 +318,13 @@
 
     sub-float/2addr v0, v2
 
-    .line 2676
+    .line 2675
     iput v0, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$ImageViewEmoji;->selectedProgress:F
 
-    .line 2677
+    .line 2676
     invoke-virtual {p2}, Landroid/view/View;->invalidate()V
 
-    .line 2679
+    .line 2678
     :cond_2
     iget p2, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$ImageViewEmoji;->selectedProgress:F
 
@@ -334,7 +334,7 @@
 
     iput p2, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$ImageViewEmoji;->selectedProgress:F
 
-    .line 2681
+    .line 2680
     sget-object p2, Lorg/telegram/messenger/AndroidUtilities;->rectTmp:Landroid/graphics/RectF;
 
     invoke-virtual {p0}, Landroid/view/View;->getMeasuredWidth()I
@@ -353,7 +353,7 @@
 
     const/4 v0, 0x1
 
-    .line 2682
+    .line 2681
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v1
@@ -368,7 +368,7 @@
 
     invoke-virtual {p2, v1, v0}, Landroid/graphics/RectF;->inset(FF)V
 
-    .line 2683
+    .line 2682
     iget-boolean v0, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$ImageViewEmoji;->empty:Z
 
     if-nez v0, :cond_4
@@ -402,7 +402,7 @@
 
     iget-object v0, v0, Lorg/telegram/ui/SelectAnimatedEmojiDialog;->selectorAccentPaint:Landroid/graphics/Paint;
 
-    .line 2684
+    .line 2683
     :goto_1
     invoke-virtual {v0}, Landroid/graphics/Paint;->getAlpha()I
 
@@ -410,7 +410,7 @@
 
     int-to-float v2, v1
 
-    .line 2685
+    .line 2684
     invoke-virtual {p0}, Landroid/view/View;->getAlpha()F
 
     move-result v3
@@ -427,7 +427,7 @@
 
     const/4 v2, 0x4
 
-    .line 2686
+    .line 2685
     invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v3
@@ -442,7 +442,7 @@
 
     invoke-virtual {p1, p2, v3, v2, v0}, Landroid/graphics/Canvas;->drawRoundRect(Landroid/graphics/RectF;FFLandroid/graphics/Paint;)V
 
-    .line 2687
+    .line 2686
     invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setAlpha(I)V
 
     :cond_5
@@ -452,14 +452,14 @@
 .method public invalidate()V
     .locals 1
 
-    .line 2759
+    .line 2758
     invoke-virtual {p0}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
 
     move-result-object v0
 
     if-eqz v0, :cond_0
 
-    .line 2760
+    .line 2759
     invoke-virtual {p0}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
 
     move-result-object v0
@@ -475,10 +475,10 @@
 .method protected onAttachedToWindow()V
     .locals 2
 
-    .line 2693
+    .line 2692
     invoke-super {p0}, Landroid/view/View;->onAttachedToWindow()V
 
-    .line 2694
+    .line 2693
     iget-boolean v0, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$ImageViewEmoji;->attached:Z
 
     if-eqz v0, :cond_0
@@ -488,30 +488,30 @@
     :cond_0
     const/4 v0, 0x1
 
-    .line 2697
+    .line 2696
     iput-boolean v0, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$ImageViewEmoji;->attached:Z
 
-    .line 2698
+    .line 2697
     iget-object v0, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$ImageViewEmoji;->drawable:Landroid/graphics/drawable/Drawable;
 
     instance-of v1, v0, Lorg/telegram/ui/Components/AnimatedEmojiDrawable;
 
     if-eqz v1, :cond_1
 
-    .line 2699
+    .line 2698
     check-cast v0, Lorg/telegram/ui/Components/AnimatedEmojiDrawable;
 
     iget-object v1, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$ImageViewEmoji;->invalidateHolder:Lorg/telegram/ui/Components/AnimatedEmojiSpan$InvalidateHolder;
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/AnimatedEmojiDrawable;->addView(Lorg/telegram/ui/Components/AnimatedEmojiSpan$InvalidateHolder;)V
 
-    .line 2701
+    .line 2700
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$ImageViewEmoji;->imageReceiver:Lorg/telegram/messenger/ImageReceiver;
 
     if-eqz v0, :cond_2
 
-    .line 2702
+    .line 2701
     invoke-virtual {p0}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
 
     move-result-object v1
@@ -520,12 +520,12 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/messenger/ImageReceiver;->setParentView(Landroid/view/View;)V
 
-    .line 2703
+    .line 2702
     iget-object v0, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$ImageViewEmoji;->imageReceiver:Lorg/telegram/messenger/ImageReceiver;
 
     invoke-virtual {v0}, Lorg/telegram/messenger/ImageReceiver;->onAttachedToWindow()Z
 
-    .line 2705
+    .line 2704
     :cond_2
     iget-object v0, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$ImageViewEmoji;->preloadEffectImageReceiver:Lorg/telegram/messenger/ImageReceiver;
 
@@ -537,10 +537,10 @@
 .method protected onDetachedFromWindow()V
     .locals 2
 
-    .line 2710
+    .line 2709
     invoke-super {p0}, Landroid/view/View;->onDetachedFromWindow()V
 
-    .line 2711
+    .line 2710
     iget-boolean v0, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$ImageViewEmoji;->attached:Z
 
     if-nez v0, :cond_0
@@ -550,33 +550,33 @@
     :cond_0
     const/4 v0, 0x0
 
-    .line 2714
+    .line 2713
     iput-boolean v0, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$ImageViewEmoji;->attached:Z
 
-    .line 2715
+    .line 2714
     iget-object v0, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$ImageViewEmoji;->drawable:Landroid/graphics/drawable/Drawable;
 
     instance-of v1, v0, Lorg/telegram/ui/Components/AnimatedEmojiDrawable;
 
     if-eqz v1, :cond_1
 
-    .line 2716
+    .line 2715
     check-cast v0, Lorg/telegram/ui/Components/AnimatedEmojiDrawable;
 
     iget-object v1, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$ImageViewEmoji;->invalidateHolder:Lorg/telegram/ui/Components/AnimatedEmojiSpan$InvalidateHolder;
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/AnimatedEmojiDrawable;->removeView(Lorg/telegram/ui/Components/AnimatedEmojiSpan$InvalidateHolder;)V
 
-    .line 2718
+    .line 2717
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$ImageViewEmoji;->imageReceiver:Lorg/telegram/messenger/ImageReceiver;
 
     if-eqz v0, :cond_2
 
-    .line 2719
+    .line 2718
     invoke-virtual {v0}, Lorg/telegram/messenger/ImageReceiver;->onDetachedFromWindow()V
 
-    .line 2721
+    .line 2720
     :cond_2
     iget-object v0, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$ImageViewEmoji;->preloadEffectImageReceiver:Lorg/telegram/messenger/ImageReceiver;
 
@@ -588,7 +588,7 @@
 .method public onMeasure(II)V
     .locals 1
 
-    .line 2608
+    .line 2607
     invoke-static {p1}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
     move-result p2
@@ -615,12 +615,12 @@
 .method public setDrawable(Landroid/graphics/drawable/Drawable;)V
     .locals 2
 
-    .line 2725
+    .line 2724
     iget-object v0, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$ImageViewEmoji;->drawable:Landroid/graphics/drawable/Drawable;
 
     if-eq v0, p1, :cond_1
 
-    .line 2726
+    .line 2725
     iget-boolean v1, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$ImageViewEmoji;->attached:Z
 
     if-eqz v1, :cond_0
@@ -631,18 +631,18 @@
 
     if-eqz v1, :cond_0
 
-    .line 2727
+    .line 2726
     check-cast v0, Lorg/telegram/ui/Components/AnimatedEmojiDrawable;
 
     iget-object v1, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$ImageViewEmoji;->invalidateHolder:Lorg/telegram/ui/Components/AnimatedEmojiSpan$InvalidateHolder;
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/AnimatedEmojiDrawable;->removeView(Lorg/telegram/ui/Components/AnimatedEmojiSpan$InvalidateHolder;)V
 
-    .line 2729
+    .line 2728
     :cond_0
     iput-object p1, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$ImageViewEmoji;->drawable:Landroid/graphics/drawable/Drawable;
 
-    .line 2730
+    .line 2729
     iget-boolean v0, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$ImageViewEmoji;->attached:Z
 
     if-eqz v0, :cond_1
@@ -651,7 +651,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 2731
+    .line 2730
     check-cast p1, Lorg/telegram/ui/Components/AnimatedEmojiDrawable;
 
     iget-object v0, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$ImageViewEmoji;->invalidateHolder:Lorg/telegram/ui/Components/AnimatedEmojiSpan$InvalidateHolder;
@@ -665,30 +665,30 @@
 .method public setPressed(Z)V
     .locals 3
 
-    .line 2613
+    .line 2612
     invoke-virtual {p0}, Landroid/view/View;->isPressed()Z
 
     move-result v0
 
     if-eq v0, p1, :cond_1
 
-    .line 2614
+    .line 2613
     invoke-super {p0, p1}, Landroid/view/View;->setPressed(Z)V
 
-    .line 2615
+    .line 2614
     invoke-virtual {p0}, Lorg/telegram/ui/SelectAnimatedEmojiDialog$ImageViewEmoji;->invalidate()V
 
     if-eqz p1, :cond_0
 
-    .line 2617
+    .line 2616
     iget-object v0, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$ImageViewEmoji;->backAnimator:Landroid/animation/ValueAnimator;
 
     if-eqz v0, :cond_0
 
-    .line 2618
+    .line 2617
     invoke-virtual {v0}, Landroid/animation/ValueAnimator;->removeAllListeners()V
 
-    .line 2619
+    .line 2618
     iget-object v0, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$ImageViewEmoji;->backAnimator:Landroid/animation/ValueAnimator;
 
     invoke-virtual {v0}, Landroid/animation/ValueAnimator;->cancel()V
@@ -696,7 +696,7 @@
     :cond_0
     if-nez p1, :cond_1
 
-    .line 2622
+    .line 2621
     iget p1, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$ImageViewEmoji;->pressedProgress:F
 
     const/4 v0, 0x0
@@ -717,21 +717,21 @@
 
     aput v0, v1, p1
 
-    .line 2623
+    .line 2622
     invoke-static {v1}, Landroid/animation/ValueAnimator;->ofFloat([F)Landroid/animation/ValueAnimator;
 
     move-result-object p1
 
     iput-object p1, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$ImageViewEmoji;->backAnimator:Landroid/animation/ValueAnimator;
 
-    .line 2624
+    .line 2623
     new-instance v0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$ImageViewEmoji$$ExternalSyntheticLambda0;
 
     invoke-direct {v0, p0}, Lorg/telegram/ui/SelectAnimatedEmojiDialog$ImageViewEmoji$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/SelectAnimatedEmojiDialog$ImageViewEmoji;)V
 
     invoke-virtual {p1, v0}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
-    .line 2628
+    .line 2627
     iget-object p1, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$ImageViewEmoji;->backAnimator:Landroid/animation/ValueAnimator;
 
     new-instance v0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$ImageViewEmoji$2;
@@ -740,7 +740,7 @@
 
     invoke-virtual {p1, v0}, Landroid/animation/ValueAnimator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 2635
+    .line 2634
     iget-object p1, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$ImageViewEmoji;->backAnimator:Landroid/animation/ValueAnimator;
 
     new-instance v0, Landroid/view/animation/OvershootInterpolator;
@@ -751,14 +751,14 @@
 
     invoke-virtual {p1, v0}, Landroid/animation/ValueAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 2636
+    .line 2635
     iget-object p1, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$ImageViewEmoji;->backAnimator:Landroid/animation/ValueAnimator;
 
     const-wide/16 v0, 0x15e
 
     invoke-virtual {p1, v0, v1}, Landroid/animation/ValueAnimator;->setDuration(J)Landroid/animation/ValueAnimator;
 
-    .line 2637
+    .line 2636
     iget-object p1, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$ImageViewEmoji;->backAnimator:Landroid/animation/ValueAnimator;
 
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->start()V
@@ -770,22 +770,22 @@
 .method public setSticker(Lorg/telegram/tgnet/TLRPC$Document;Landroid/view/View;)V
     .locals 12
 
-    .line 2738
+    .line 2737
     iput-object p1, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$ImageViewEmoji;->document:Lorg/telegram/tgnet/TLRPC$Document;
 
-    .line 2739
+    .line 2738
     invoke-virtual {p0, p2}, Lorg/telegram/ui/SelectAnimatedEmojiDialog$ImageViewEmoji;->createImageReceiver(Landroid/view/View;)V
 
     const-string p2, "windowBackgroundWhiteGrayIcon"
 
     const v0, 0x3e4ccccd    # 0.2f
 
-    .line 2740
+    .line 2739
     invoke-static {p1, p2, v0}, Lorg/telegram/messenger/DocumentObject;->getSvgThumb(Lorg/telegram/tgnet/TLRPC$Document;Ljava/lang/String;F)Lorg/telegram/messenger/SvgHelper$SvgDrawable;
 
     move-result-object v6
 
-    .line 2741
+    .line 2740
     iget-object v1, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$ImageViewEmoji;->imageReceiver:Lorg/telegram/messenger/ImageReceiver;
 
     invoke-static {p1}, Lorg/telegram/messenger/ImageLocation;->getForDocument(Lorg/telegram/tgnet/TLRPC$Document;)Lorg/telegram/messenger/ImageLocation;
@@ -810,12 +810,12 @@
 
     const/4 p1, 0x1
 
-    .line 2742
+    .line 2741
     iput-boolean p1, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$ImageViewEmoji;->isStaticIcon:Z
 
     const/4 p1, 0x0
 
-    .line 2743
+    .line 2742
     iput-object p1, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$ImageViewEmoji;->span:Lorg/telegram/ui/Components/AnimatedEmojiSpan;
 
     return-void
@@ -824,12 +824,12 @@
 .method public setViewSelected(ZZ)V
     .locals 1
 
-    .line 2661
+    .line 2660
     iget-boolean v0, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$ImageViewEmoji;->selected:Z
 
     if-eq v0, p1, :cond_1
 
-    .line 2662
+    .line 2661
     iput-boolean p1, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$ImageViewEmoji;->selected:Z
 
     if-nez p2, :cond_1
@@ -843,7 +843,7 @@
     :cond_0
     const/4 p1, 0x0
 
-    .line 2664
+    .line 2663
     :goto_0
     iput p1, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$ImageViewEmoji;->selectedProgress:F
 
@@ -854,12 +854,12 @@
 .method public update(J)V
     .locals 2
 
-    .line 2650
+    .line 2649
     iget-object v0, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$ImageViewEmoji;->imageReceiverToDraw:Lorg/telegram/messenger/ImageReceiver;
 
     if-eqz v0, :cond_1
 
-    .line 2651
+    .line 2650
     invoke-virtual {v0}, Lorg/telegram/messenger/ImageReceiver;->getLottieAnimation()Lorg/telegram/ui/Components/RLottieDrawable;
 
     move-result-object v0
@@ -868,7 +868,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 2652
+    .line 2651
     iget-object v0, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$ImageViewEmoji;->imageReceiverToDraw:Lorg/telegram/messenger/ImageReceiver;
 
     invoke-virtual {v0}, Lorg/telegram/messenger/ImageReceiver;->getLottieAnimation()Lorg/telegram/ui/Components/RLottieDrawable;
@@ -877,7 +877,7 @@
 
     invoke-virtual {v0, p1, p2, v1}, Lorg/telegram/ui/Components/RLottieDrawable;->updateCurrentFrame(JZ)V
 
-    .line 2654
+    .line 2653
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$ImageViewEmoji;->imageReceiverToDraw:Lorg/telegram/messenger/ImageReceiver;
 
@@ -887,7 +887,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 2655
+    .line 2654
     iget-object v0, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$ImageViewEmoji;->imageReceiverToDraw:Lorg/telegram/messenger/ImageReceiver;
 
     invoke-virtual {v0}, Lorg/telegram/messenger/ImageReceiver;->getAnimation()Lorg/telegram/ui/Components/AnimatedFileDrawable;
@@ -903,7 +903,7 @@
 .method public updatePressedProgress()V
     .locals 3
 
-    .line 2643
+    .line 2642
     invoke-virtual {p0}, Landroid/view/View;->isPressed()Z
 
     move-result v0
@@ -924,14 +924,14 @@
 
     const/4 v2, 0x0
 
-    .line 2644
+    .line 2643
     invoke-static {v0, v1, v2}, Lorg/telegram/messenger/Utilities;->clamp(FFF)F
 
     move-result v0
 
     iput v0, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$ImageViewEmoji;->pressedProgress:F
 
-    .line 2645
+    .line 2644
     invoke-virtual {p0}, Lorg/telegram/ui/SelectAnimatedEmojiDialog$ImageViewEmoji;->invalidate()V
 
     :cond_0

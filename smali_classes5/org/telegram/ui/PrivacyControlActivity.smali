@@ -1,10 +1,10 @@
 .class public Lorg/telegram/ui/PrivacyControlActivity;
-.super Lcom/smedialink/ui/base/mvp/JavaMvpFragment;
+.super Lcom/iMe/ui/base/mvp/JavaMvpFragment;
 .source "PrivacyControlActivity.java"
 
 # interfaces
 .implements Lorg/telegram/messenger/NotificationCenter$NotificationCenterDelegate;
-.implements Lcom/smedialink/ui/wallet/crypto/settings/privacy/WalletPrivacySettingsView;
+.implements Lcom/iMe/ui/wallet/crypto/settings/privacy/WalletPrivacySettingsView;
 .implements Lorg/telegram/ui/Components/ImageUpdater$ImageUpdaterDelegate;
 
 
@@ -125,7 +125,7 @@
 
 .field private photoForRestRow:I
 
-.field public presenter:Lcom/smedialink/ui/wallet/crypto/settings/privacy/WalletPrivacySettingPresenter;
+.field public presenter:Lcom/iMe/ui/wallet/crypto/settings/privacy/WalletPrivacySettingPresenter;
     .annotation runtime Lmoxy/presenter/InjectPresenter;
     .end annotation
 .end field
@@ -309,7 +309,7 @@
 
     const/4 v0, 0x0
 
-    .line 460
+    .line 459
     invoke-direct {p0, p1, v0}, Lorg/telegram/ui/PrivacyControlActivity;-><init>(IZ)V
 
     return-void
@@ -318,47 +318,47 @@
 .method public constructor <init>(IZ)V
     .locals 2
 
-    .line 464
-    invoke-direct {p0}, Lcom/smedialink/ui/base/mvp/JavaMvpFragment;-><init>()V
+    .line 463
+    invoke-direct {p0}, Lcom/iMe/ui/base/mvp/JavaMvpFragment;-><init>()V
 
     const/4 v0, 0x1
 
-    .line 121
+    .line 120
     iput v0, p0, Lorg/telegram/ui/PrivacyControlActivity;->walletAccess:I
 
-    .line 122
+    .line 121
     iput v0, p0, Lorg/telegram/ui/PrivacyControlActivity;->initialAccountRankAccess:I
 
-    .line 123
+    .line 122
     iput v0, p0, Lorg/telegram/ui/PrivacyControlActivity;->currentAccountRankAccess:I
 
-    .line 124
+    .line 123
     new-instance v1, Ljava/util/ArrayList;
 
     invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v1, p0, Lorg/telegram/ui/PrivacyControlActivity;->walletWhitelist:Ljava/util/List;
 
-    .line 167
+    .line 166
     new-instance v1, Ljava/util/ArrayList;
 
     invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v1, p0, Lorg/telegram/ui/PrivacyControlActivity;->initialPlus:Ljava/util/ArrayList;
 
-    .line 168
+    .line 167
     new-instance v1, Ljava/util/ArrayList;
 
     invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v1, p0, Lorg/telegram/ui/PrivacyControlActivity;->initialMinus:Ljava/util/ArrayList;
 
-    .line 465
+    .line 464
     iput p1, p0, Lorg/telegram/ui/PrivacyControlActivity;->rulesType:I
 
     if-eqz p2, :cond_0
 
-    .line 467
+    .line 466
     iget p1, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->currentAccount:I
 
     invoke-static {p1}, Lorg/telegram/messenger/ContactsController;->getInstance(I)Lorg/telegram/messenger/ContactsController;
@@ -367,7 +367,7 @@
 
     invoke-virtual {p1}, Lorg/telegram/messenger/ContactsController;->loadPrivacySettings()V
 
-    .line 469
+    .line 468
     :cond_0
     iget p1, p0, Lorg/telegram/ui/PrivacyControlActivity;->rulesType:I
 
@@ -375,7 +375,7 @@
 
     if-ne p1, p2, :cond_1
 
-    .line 470
+    .line 469
     new-instance p1, Lorg/telegram/ui/Components/ImageUpdater;
 
     const/4 p2, 0x0
@@ -384,13 +384,13 @@
 
     iput-object p1, p0, Lorg/telegram/ui/PrivacyControlActivity;->imageUpdater:Lorg/telegram/ui/Components/ImageUpdater;
 
-    .line 471
+    .line 470
     iput-object p0, p1, Lorg/telegram/ui/Components/ImageUpdater;->parentFragment:Lorg/telegram/ui/ActionBar/BaseFragment;
 
-    .line 472
+    .line 471
     invoke-virtual {p1, p0}, Lorg/telegram/ui/Components/ImageUpdater;->setDelegate(Lorg/telegram/ui/Components/ImageUpdater$ImageUpdaterDelegate;)V
 
-    .line 473
+    .line 472
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getMessagesController()Lorg/telegram/messenger/MessagesController;
 
     move-result-object p1
@@ -405,14 +405,14 @@
 
     move-result-object p1
 
-    .line 474
+    .line 473
     invoke-static {p1}, Lorg/telegram/messenger/UserObject;->hasFallbackPhoto(Lorg/telegram/tgnet/TLRPC$UserFull;)Z
 
     move-result p2
 
     if-eqz p2, :cond_1
 
-    .line 475
+    .line 474
     iget-object p2, p1, Lorg/telegram/tgnet/TLRPC$UserFull;->fallback_photo:Lorg/telegram/tgnet/TLRPC$Photo;
 
     iget-object p2, p2, Lorg/telegram/tgnet/TLRPC$Photo;->sizes:Ljava/util/ArrayList;
@@ -425,10 +425,10 @@
 
     if-eqz p2, :cond_1
 
-    .line 477
+    .line 476
     iput-object p2, p0, Lorg/telegram/ui/PrivacyControlActivity;->avatarForRest:Lorg/telegram/tgnet/TLRPC$PhotoSize;
 
-    .line 478
+    .line 477
     iget-object p1, p1, Lorg/telegram/tgnet/TLRPC$UserFull;->fallback_photo:Lorg/telegram/tgnet/TLRPC$Photo;
 
     iput-object p1, p0, Lorg/telegram/ui/PrivacyControlActivity;->avatarForRestPhoto:Lorg/telegram/tgnet/TLRPC$Photo;
@@ -440,7 +440,7 @@
 .method static synthetic access$000(Lorg/telegram/ui/PrivacyControlActivity;)I
     .locals 0
 
-    .line 98
+    .line 97
     iget p0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->currentAccount:I
 
     return p0
@@ -449,7 +449,7 @@
 .method static synthetic access$100(Lorg/telegram/ui/PrivacyControlActivity;)I
     .locals 0
 
-    .line 98
+    .line 97
     iget p0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->currentAccount:I
 
     return p0
@@ -458,7 +458,7 @@
 .method static synthetic access$1000(Lorg/telegram/ui/PrivacyControlActivity;)I
     .locals 0
 
-    .line 98
+    .line 97
     iget p0, p0, Lorg/telegram/ui/PrivacyControlActivity;->rankNobodyRow:I
 
     return p0
@@ -467,7 +467,7 @@
 .method static synthetic access$1100(Lorg/telegram/ui/PrivacyControlActivity;)I
     .locals 0
 
-    .line 98
+    .line 97
     iget p0, p0, Lorg/telegram/ui/PrivacyControlActivity;->rankEverybodyRow:I
 
     return p0
@@ -476,7 +476,7 @@
 .method static synthetic access$1200(Lorg/telegram/ui/PrivacyControlActivity;)I
     .locals 0
 
-    .line 98
+    .line 97
     iget p0, p0, Lorg/telegram/ui/PrivacyControlActivity;->nobodyRow:I
 
     return p0
@@ -485,7 +485,7 @@
 .method static synthetic access$1300(Lorg/telegram/ui/PrivacyControlActivity;)I
     .locals 0
 
-    .line 98
+    .line 97
     iget p0, p0, Lorg/telegram/ui/PrivacyControlActivity;->everybodyRow:I
 
     return p0
@@ -494,7 +494,7 @@
 .method static synthetic access$1400(Lorg/telegram/ui/PrivacyControlActivity;)I
     .locals 0
 
-    .line 98
+    .line 97
     iget p0, p0, Lorg/telegram/ui/PrivacyControlActivity;->myContactsRow:I
 
     return p0
@@ -503,7 +503,7 @@
 .method static synthetic access$1500(Lorg/telegram/ui/PrivacyControlActivity;)I
     .locals 0
 
-    .line 98
+    .line 97
     iget p0, p0, Lorg/telegram/ui/PrivacyControlActivity;->neverShareRow:I
 
     return p0
@@ -512,7 +512,7 @@
 .method static synthetic access$1600(Lorg/telegram/ui/PrivacyControlActivity;)I
     .locals 0
 
-    .line 98
+    .line 97
     iget p0, p0, Lorg/telegram/ui/PrivacyControlActivity;->alwaysShareRow:I
 
     return p0
@@ -521,7 +521,7 @@
 .method static synthetic access$1700(Lorg/telegram/ui/PrivacyControlActivity;)I
     .locals 0
 
-    .line 98
+    .line 97
     iget p0, p0, Lorg/telegram/ui/PrivacyControlActivity;->p2pRow:I
 
     return p0
@@ -530,7 +530,7 @@
 .method static synthetic access$1800(Lorg/telegram/ui/PrivacyControlActivity;)I
     .locals 0
 
-    .line 98
+    .line 97
     iget p0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->currentAccount:I
 
     return p0
@@ -539,7 +539,7 @@
 .method static synthetic access$1900(Lorg/telegram/ui/PrivacyControlActivity;)I
     .locals 0
 
-    .line 98
+    .line 97
     iget p0, p0, Lorg/telegram/ui/PrivacyControlActivity;->currentPhotoForRestRow:I
 
     return p0
@@ -548,7 +548,7 @@
 .method static synthetic access$200(Lorg/telegram/ui/PrivacyControlActivity;)I
     .locals 0
 
-    .line 98
+    .line 97
     iget p0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->currentAccount:I
 
     return p0
@@ -557,7 +557,7 @@
 .method static synthetic access$2000(Lorg/telegram/ui/PrivacyControlActivity;)I
     .locals 0
 
-    .line 98
+    .line 97
     iget p0, p0, Lorg/telegram/ui/PrivacyControlActivity;->photoForRestDescriptionRow:I
 
     return p0
@@ -566,7 +566,7 @@
 .method static synthetic access$2100(Lorg/telegram/ui/PrivacyControlActivity;)I
     .locals 0
 
-    .line 98
+    .line 97
     iget p0, p0, Lorg/telegram/ui/PrivacyControlActivity;->photoForRestRow:I
 
     return p0
@@ -575,7 +575,7 @@
 .method static synthetic access$2200(Lorg/telegram/ui/PrivacyControlActivity;)I
     .locals 0
 
-    .line 98
+    .line 97
     iget p0, p0, Lorg/telegram/ui/PrivacyControlActivity;->rowCount:I
 
     return p0
@@ -584,7 +584,7 @@
 .method static synthetic access$2300(Lorg/telegram/ui/PrivacyControlActivity;)Lorg/telegram/ui/PrivacyControlActivity$MessageCell;
     .locals 0
 
-    .line 98
+    .line 97
     iget-object p0, p0, Lorg/telegram/ui/PrivacyControlActivity;->messageCell:Lorg/telegram/ui/PrivacyControlActivity$MessageCell;
 
     return-object p0
@@ -593,7 +593,7 @@
 .method static synthetic access$2400(Lorg/telegram/ui/PrivacyControlActivity;)Lorg/telegram/ui/Cells/TextCell;
     .locals 0
 
-    .line 98
+    .line 97
     iget-object p0, p0, Lorg/telegram/ui/PrivacyControlActivity;->setAvatarCell:Lorg/telegram/ui/Cells/TextCell;
 
     return-object p0
@@ -602,7 +602,7 @@
 .method static synthetic access$2402(Lorg/telegram/ui/PrivacyControlActivity;Lorg/telegram/ui/Cells/TextCell;)Lorg/telegram/ui/Cells/TextCell;
     .locals 0
 
-    .line 98
+    .line 97
     iput-object p1, p0, Lorg/telegram/ui/PrivacyControlActivity;->setAvatarCell:Lorg/telegram/ui/Cells/TextCell;
 
     return-object p1
@@ -611,7 +611,7 @@
 .method static synthetic access$2500(Lorg/telegram/ui/PrivacyControlActivity;)Lorg/telegram/tgnet/TLRPC$PhotoSize;
     .locals 0
 
-    .line 98
+    .line 97
     iget-object p0, p0, Lorg/telegram/ui/PrivacyControlActivity;->avatarForRest:Lorg/telegram/tgnet/TLRPC$PhotoSize;
 
     return-object p0
@@ -620,7 +620,7 @@
 .method static synthetic access$2600(Lorg/telegram/ui/PrivacyControlActivity;)Lorg/telegram/ui/Components/RLottieDrawable;
     .locals 0
 
-    .line 98
+    .line 97
     iget-object p0, p0, Lorg/telegram/ui/PrivacyControlActivity;->cameraDrawable:Lorg/telegram/ui/Components/RLottieDrawable;
 
     return-object p0
@@ -629,7 +629,7 @@
 .method static synthetic access$2602(Lorg/telegram/ui/PrivacyControlActivity;Lorg/telegram/ui/Components/RLottieDrawable;)Lorg/telegram/ui/Components/RLottieDrawable;
     .locals 0
 
-    .line 98
+    .line 97
     iput-object p1, p0, Lorg/telegram/ui/PrivacyControlActivity;->cameraDrawable:Lorg/telegram/ui/Components/RLottieDrawable;
 
     return-object p1
@@ -638,7 +638,7 @@
 .method static synthetic access$2700(Lorg/telegram/ui/PrivacyControlActivity;)Lorg/telegram/ui/Components/BackupImageView;
     .locals 0
 
-    .line 98
+    .line 97
     iget-object p0, p0, Lorg/telegram/ui/PrivacyControlActivity;->oldAvatarView:Lorg/telegram/ui/Components/BackupImageView;
 
     return-object p0
@@ -647,7 +647,7 @@
 .method static synthetic access$2702(Lorg/telegram/ui/PrivacyControlActivity;Lorg/telegram/ui/Components/BackupImageView;)Lorg/telegram/ui/Components/BackupImageView;
     .locals 0
 
-    .line 98
+    .line 97
     iput-object p1, p0, Lorg/telegram/ui/PrivacyControlActivity;->oldAvatarView:Lorg/telegram/ui/Components/BackupImageView;
 
     return-object p1
@@ -656,7 +656,7 @@
 .method static synthetic access$2800(Lorg/telegram/ui/PrivacyControlActivity;)Lorg/telegram/ui/Cells/TextCell;
     .locals 0
 
-    .line 98
+    .line 97
     iget-object p0, p0, Lorg/telegram/ui/PrivacyControlActivity;->oldPhotoCell:Lorg/telegram/ui/Cells/TextCell;
 
     return-object p0
@@ -665,7 +665,7 @@
 .method static synthetic access$2802(Lorg/telegram/ui/PrivacyControlActivity;Lorg/telegram/ui/Cells/TextCell;)Lorg/telegram/ui/Cells/TextCell;
     .locals 0
 
-    .line 98
+    .line 97
     iput-object p1, p0, Lorg/telegram/ui/PrivacyControlActivity;->oldPhotoCell:Lorg/telegram/ui/Cells/TextCell;
 
     return-object p1
@@ -674,7 +674,7 @@
 .method static synthetic access$2900(Lorg/telegram/ui/PrivacyControlActivity;)Lorg/telegram/tgnet/TLRPC$Photo;
     .locals 0
 
-    .line 98
+    .line 97
     iget-object p0, p0, Lorg/telegram/ui/PrivacyControlActivity;->avatarForRestPhoto:Lorg/telegram/tgnet/TLRPC$Photo;
 
     return-object p0
@@ -683,7 +683,7 @@
 .method static synthetic access$300(Lorg/telegram/ui/PrivacyControlActivity;)I
     .locals 0
 
-    .line 98
+    .line 97
     iget p0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->currentAccount:I
 
     return p0
@@ -692,7 +692,7 @@
 .method static synthetic access$3000(Lorg/telegram/ui/PrivacyControlActivity;)I
     .locals 0
 
-    .line 98
+    .line 97
     iget p0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->currentAccount:I
 
     return p0
@@ -701,7 +701,7 @@
 .method static synthetic access$3100(Lorg/telegram/ui/PrivacyControlActivity;)I
     .locals 0
 
-    .line 98
+    .line 97
     iget p0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->currentAccount:I
 
     return p0
@@ -710,7 +710,7 @@
 .method static synthetic access$3200(Lorg/telegram/ui/PrivacyControlActivity;)Ljava/util/ArrayList;
     .locals 0
 
-    .line 98
+    .line 97
     iget-object p0, p0, Lorg/telegram/ui/PrivacyControlActivity;->currentPlus:Ljava/util/ArrayList;
 
     return-object p0
@@ -719,7 +719,7 @@
 .method static synthetic access$3300(Lorg/telegram/ui/PrivacyControlActivity;)I
     .locals 0
 
-    .line 98
+    .line 97
     iget p0, p0, Lorg/telegram/ui/PrivacyControlActivity;->rulesType:I
 
     return p0
@@ -728,7 +728,7 @@
 .method static synthetic access$3400(Lorg/telegram/ui/PrivacyControlActivity;)Ljava/util/ArrayList;
     .locals 0
 
-    .line 98
+    .line 97
     iget-object p0, p0, Lorg/telegram/ui/PrivacyControlActivity;->currentMinus:Ljava/util/ArrayList;
 
     return-object p0
@@ -737,7 +737,7 @@
 .method static synthetic access$3500(Lorg/telegram/ui/PrivacyControlActivity;)I
     .locals 0
 
-    .line 98
+    .line 97
     iget p0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->currentAccount:I
 
     return p0
@@ -746,7 +746,7 @@
 .method static synthetic access$3600(Lorg/telegram/ui/PrivacyControlActivity;)I
     .locals 0
 
-    .line 98
+    .line 97
     iget p0, p0, Lorg/telegram/ui/PrivacyControlActivity;->rankDetailsRow:I
 
     return p0
@@ -755,7 +755,7 @@
 .method static synthetic access$3700(Lorg/telegram/ui/PrivacyControlActivity;)I
     .locals 0
 
-    .line 98
+    .line 97
     iget p0, p0, Lorg/telegram/ui/PrivacyControlActivity;->detailRow:I
 
     return p0
@@ -764,7 +764,7 @@
 .method static synthetic access$3802(Lorg/telegram/ui/PrivacyControlActivity;Z)Z
     .locals 0
 
-    .line 98
+    .line 97
     iput-boolean p1, p0, Lorg/telegram/ui/PrivacyControlActivity;->prevSubtypeContacts:Z
 
     return p1
@@ -773,7 +773,7 @@
 .method static synthetic access$3900(Lorg/telegram/ui/PrivacyControlActivity;)I
     .locals 0
 
-    .line 98
+    .line 97
     iget p0, p0, Lorg/telegram/ui/PrivacyControlActivity;->currentType:I
 
     return p0
@@ -782,7 +782,7 @@
 .method static synthetic access$400(Lorg/telegram/ui/PrivacyControlActivity;)Z
     .locals 0
 
-    .line 98
+    .line 97
     invoke-direct {p0}, Lorg/telegram/ui/PrivacyControlActivity;->checkDiscard()Z
 
     move-result p0
@@ -793,7 +793,7 @@
 .method static synthetic access$4000(Lorg/telegram/ui/PrivacyControlActivity;)I
     .locals 0
 
-    .line 98
+    .line 97
     iget p0, p0, Lorg/telegram/ui/PrivacyControlActivity;->currentSubType:I
 
     return p0
@@ -802,7 +802,7 @@
 .method static synthetic access$4100(Lorg/telegram/ui/PrivacyControlActivity;)I
     .locals 0
 
-    .line 98
+    .line 97
     iget p0, p0, Lorg/telegram/ui/PrivacyControlActivity;->shareDetailRow:I
 
     return p0
@@ -811,7 +811,7 @@
 .method static synthetic access$4200(Lorg/telegram/ui/PrivacyControlActivity;)I
     .locals 0
 
-    .line 98
+    .line 97
     iget p0, p0, Lorg/telegram/ui/PrivacyControlActivity;->p2pDetailRow:I
 
     return p0
@@ -820,7 +820,7 @@
 .method static synthetic access$4300(Lorg/telegram/ui/PrivacyControlActivity;)I
     .locals 0
 
-    .line 98
+    .line 97
     iget p0, p0, Lorg/telegram/ui/PrivacyControlActivity;->rankSectionRow:I
 
     return p0
@@ -829,7 +829,7 @@
 .method static synthetic access$4400(Lorg/telegram/ui/PrivacyControlActivity;)I
     .locals 0
 
-    .line 98
+    .line 97
     iget p0, p0, Lorg/telegram/ui/PrivacyControlActivity;->sectionRow:I
 
     return p0
@@ -838,7 +838,7 @@
 .method static synthetic access$4500(Lorg/telegram/ui/PrivacyControlActivity;)I
     .locals 0
 
-    .line 98
+    .line 97
     iget p0, p0, Lorg/telegram/ui/PrivacyControlActivity;->shareSectionRow:I
 
     return p0
@@ -847,7 +847,7 @@
 .method static synthetic access$4600(Lorg/telegram/ui/PrivacyControlActivity;)I
     .locals 0
 
-    .line 98
+    .line 97
     iget p0, p0, Lorg/telegram/ui/PrivacyControlActivity;->p2pSectionRow:I
 
     return p0
@@ -856,7 +856,7 @@
 .method static synthetic access$4700(Lorg/telegram/ui/PrivacyControlActivity;)I
     .locals 0
 
-    .line 98
+    .line 97
     iget p0, p0, Lorg/telegram/ui/PrivacyControlActivity;->phoneSectionRow:I
 
     return p0
@@ -865,7 +865,7 @@
 .method static synthetic access$4800(Lorg/telegram/ui/PrivacyControlActivity;)I
     .locals 0
 
-    .line 98
+    .line 97
     iget p0, p0, Lorg/telegram/ui/PrivacyControlActivity;->currentAccountRankAccess:I
 
     return p0
@@ -874,7 +874,7 @@
 .method static synthetic access$4900(Lorg/telegram/ui/PrivacyControlActivity;)I
     .locals 0
 
-    .line 98
+    .line 97
     iget p0, p0, Lorg/telegram/ui/PrivacyControlActivity;->phoneContactsRow:I
 
     return p0
@@ -883,7 +883,7 @@
 .method static synthetic access$500(Lorg/telegram/ui/PrivacyControlActivity;)V
     .locals 0
 
-    .line 98
+    .line 97
     invoke-direct {p0}, Lorg/telegram/ui/PrivacyControlActivity;->processDone()V
 
     return-void
@@ -892,7 +892,7 @@
 .method static synthetic access$5000(Lorg/telegram/ui/PrivacyControlActivity;)I
     .locals 0
 
-    .line 98
+    .line 97
     iget p0, p0, Lorg/telegram/ui/PrivacyControlActivity;->phoneEverybodyRow:I
 
     return p0
@@ -901,7 +901,7 @@
 .method static synthetic access$5100(Lorg/telegram/ui/PrivacyControlActivity;)I
     .locals 0
 
-    .line 98
+    .line 97
     iget p0, p0, Lorg/telegram/ui/PrivacyControlActivity;->messageRow:I
 
     return p0
@@ -910,7 +910,7 @@
 .method static synthetic access$5200(Lorg/telegram/ui/PrivacyControlActivity;)I
     .locals 0
 
-    .line 98
+    .line 97
     iget p0, p0, Lorg/telegram/ui/PrivacyControlActivity;->phoneDetailRow:I
 
     return p0
@@ -919,12 +919,12 @@
 .method private applyCurrentPrivacySettings()V
     .locals 11
 
-    .line 750
+    .line 749
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_account_setPrivacy;
 
     invoke-direct {v0}, Lorg/telegram/tgnet/TLRPC$TL_account_setPrivacy;-><init>()V
 
-    .line 751
+    .line 750
     iget v1, p0, Lorg/telegram/ui/PrivacyControlActivity;->rulesType:I
 
     const/4 v2, 0x3
@@ -937,36 +937,36 @@
 
     if-ne v1, v5, :cond_1
 
-    .line 752
+    .line 751
     new-instance v1, Lorg/telegram/tgnet/TLRPC$TL_inputPrivacyKeyPhoneNumber;
 
     invoke-direct {v1}, Lorg/telegram/tgnet/TLRPC$TL_inputPrivacyKeyPhoneNumber;-><init>()V
 
     iput-object v1, v0, Lorg/telegram/tgnet/TLRPC$TL_account_setPrivacy;->key:Lorg/telegram/tgnet/TLRPC$InputPrivacyKey;
 
-    .line 753
+    .line 752
     iget v1, p0, Lorg/telegram/ui/PrivacyControlActivity;->currentType:I
 
     if-ne v1, v4, :cond_8
 
-    .line 754
+    .line 753
     new-instance v1, Lorg/telegram/tgnet/TLRPC$TL_account_setPrivacy;
 
     invoke-direct {v1}, Lorg/telegram/tgnet/TLRPC$TL_account_setPrivacy;-><init>()V
 
-    .line 755
+    .line 754
     new-instance v5, Lorg/telegram/tgnet/TLRPC$TL_inputPrivacyKeyAddedByPhone;
 
     invoke-direct {v5}, Lorg/telegram/tgnet/TLRPC$TL_inputPrivacyKeyAddedByPhone;-><init>()V
 
     iput-object v5, v1, Lorg/telegram/tgnet/TLRPC$TL_account_setPrivacy;->key:Lorg/telegram/tgnet/TLRPC$InputPrivacyKey;
 
-    .line 756
+    .line 755
     iget v5, p0, Lorg/telegram/ui/PrivacyControlActivity;->currentSubType:I
 
     if-nez v5, :cond_0
 
-    .line 757
+    .line 756
     iget-object v5, v1, Lorg/telegram/tgnet/TLRPC$TL_account_setPrivacy;->rules:Ljava/util/ArrayList;
 
     new-instance v6, Lorg/telegram/tgnet/TLRPC$TL_inputPrivacyValueAllowAll;
@@ -977,7 +977,7 @@
 
     goto :goto_0
 
-    .line 759
+    .line 758
     :cond_0
     iget-object v5, v1, Lorg/telegram/tgnet/TLRPC$TL_account_setPrivacy;->rules:Ljava/util/ArrayList;
 
@@ -987,7 +987,7 @@
 
     invoke-virtual {v5, v6}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 761
+    .line 760
     :goto_0
     iget v5, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->currentAccount:I
 
@@ -1008,7 +1008,7 @@
 
     if-ne v1, v5, :cond_2
 
-    .line 769
+    .line 768
     new-instance v1, Lorg/telegram/tgnet/TLRPC$TL_inputPrivacyKeyForwards;
 
     invoke-direct {v1}, Lorg/telegram/tgnet/TLRPC$TL_inputPrivacyKeyForwards;-><init>()V
@@ -1022,7 +1022,7 @@
 
     if-ne v1, v5, :cond_3
 
-    .line 771
+    .line 770
     new-instance v1, Lorg/telegram/tgnet/TLRPC$TL_inputPrivacyKeyProfilePhoto;
 
     invoke-direct {v1}, Lorg/telegram/tgnet/TLRPC$TL_inputPrivacyKeyProfilePhoto;-><init>()V
@@ -1034,7 +1034,7 @@
     :cond_3
     if-ne v1, v2, :cond_4
 
-    .line 773
+    .line 772
     new-instance v1, Lorg/telegram/tgnet/TLRPC$TL_inputPrivacyKeyPhoneP2P;
 
     invoke-direct {v1}, Lorg/telegram/tgnet/TLRPC$TL_inputPrivacyKeyPhoneP2P;-><init>()V
@@ -1046,7 +1046,7 @@
     :cond_4
     if-ne v1, v3, :cond_5
 
-    .line 775
+    .line 774
     new-instance v1, Lorg/telegram/tgnet/TLRPC$TL_inputPrivacyKeyPhoneCall;
 
     invoke-direct {v1}, Lorg/telegram/tgnet/TLRPC$TL_inputPrivacyKeyPhoneCall;-><init>()V
@@ -1058,7 +1058,7 @@
     :cond_5
     if-ne v1, v4, :cond_6
 
-    .line 777
+    .line 776
     new-instance v1, Lorg/telegram/tgnet/TLRPC$TL_inputPrivacyKeyChatInvite;
 
     invoke-direct {v1}, Lorg/telegram/tgnet/TLRPC$TL_inputPrivacyKeyChatInvite;-><init>()V
@@ -1072,7 +1072,7 @@
 
     if-ne v1, v5, :cond_7
 
-    .line 779
+    .line 778
     new-instance v1, Lorg/telegram/tgnet/TLRPC$TL_inputPrivacyKeyVoiceMessages;
 
     invoke-direct {v1}, Lorg/telegram/tgnet/TLRPC$TL_inputPrivacyKeyVoiceMessages;-><init>()V
@@ -1081,7 +1081,7 @@
 
     goto :goto_1
 
-    .line 781
+    .line 780
     :cond_7
     new-instance v1, Lorg/telegram/tgnet/TLRPC$TL_inputPrivacyKeyStatusTimestamp;
 
@@ -1089,7 +1089,7 @@
 
     iput-object v1, v0, Lorg/telegram/tgnet/TLRPC$TL_account_setPrivacy;->key:Lorg/telegram/tgnet/TLRPC$InputPrivacyKey;
 
-    .line 783
+    .line 782
     :cond_8
     :goto_1
     iget v1, p0, Lorg/telegram/ui/PrivacyControlActivity;->currentType:I
@@ -1106,19 +1106,19 @@
 
     if-lez v1, :cond_c
 
-    .line 784
+    .line 783
     new-instance v1, Lorg/telegram/tgnet/TLRPC$TL_inputPrivacyValueAllowUsers;
 
     invoke-direct {v1}, Lorg/telegram/tgnet/TLRPC$TL_inputPrivacyValueAllowUsers;-><init>()V
 
-    .line 785
+    .line 784
     new-instance v6, Lorg/telegram/tgnet/TLRPC$TL_inputPrivacyValueAllowChatParticipants;
 
     invoke-direct {v6}, Lorg/telegram/tgnet/TLRPC$TL_inputPrivacyValueAllowChatParticipants;-><init>()V
 
     move v7, v5
 
-    .line 786
+    .line 785
     :goto_2
     iget-object v8, p0, Lorg/telegram/ui/PrivacyControlActivity;->currentPlus:Ljava/util/ArrayList;
 
@@ -1128,7 +1128,7 @@
 
     if-ge v7, v8, :cond_b
 
-    .line 787
+    .line 786
     iget-object v8, p0, Lorg/telegram/ui/PrivacyControlActivity;->currentPlus:Ljava/util/ArrayList;
 
     invoke-virtual {v8, v7}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -1141,14 +1141,14 @@
 
     move-result-wide v8
 
-    .line 788
+    .line 787
     invoke-static {v8, v9}, Lorg/telegram/messenger/DialogObject;->isUserDialog(J)Z
 
     move-result v10
 
     if-eqz v10, :cond_9
 
-    .line 789
+    .line 788
     iget v10, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->currentAccount:I
 
     invoke-static {v10}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
@@ -1165,7 +1165,7 @@
 
     if-eqz v8, :cond_a
 
-    .line 791
+    .line 790
     iget v9, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->currentAccount:I
 
     invoke-static {v9}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
@@ -1178,14 +1178,14 @@
 
     if-eqz v8, :cond_a
 
-    .line 793
+    .line 792
     iget-object v9, v1, Lorg/telegram/tgnet/TLRPC$TL_inputPrivacyValueAllowUsers;->users:Ljava/util/ArrayList;
 
     invoke-virtual {v9, v8}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     goto :goto_3
 
-    .line 797
+    .line 796
     :cond_9
     iget-object v10, v6, Lorg/telegram/tgnet/TLRPC$TL_inputPrivacyValueAllowChatParticipants;->chats:Ljava/util/ArrayList;
 
@@ -1203,18 +1203,18 @@
 
     goto :goto_2
 
-    .line 800
+    .line 799
     :cond_b
     iget-object v7, v0, Lorg/telegram/tgnet/TLRPC$TL_account_setPrivacy;->rules:Ljava/util/ArrayList;
 
     invoke-virtual {v7, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 801
+    .line 800
     iget-object v1, v0, Lorg/telegram/tgnet/TLRPC$TL_account_setPrivacy;->rules:Ljava/util/ArrayList;
 
     invoke-virtual {v1, v6}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 803
+    .line 802
     :cond_c
     iget v1, p0, Lorg/telegram/ui/PrivacyControlActivity;->currentType:I
 
@@ -1228,19 +1228,19 @@
 
     if-lez v1, :cond_10
 
-    .line 804
+    .line 803
     new-instance v1, Lorg/telegram/tgnet/TLRPC$TL_inputPrivacyValueDisallowUsers;
 
     invoke-direct {v1}, Lorg/telegram/tgnet/TLRPC$TL_inputPrivacyValueDisallowUsers;-><init>()V
 
-    .line 805
+    .line 804
     new-instance v6, Lorg/telegram/tgnet/TLRPC$TL_inputPrivacyValueDisallowChatParticipants;
 
     invoke-direct {v6}, Lorg/telegram/tgnet/TLRPC$TL_inputPrivacyValueDisallowChatParticipants;-><init>()V
 
     move v7, v5
 
-    .line 806
+    .line 805
     :goto_4
     iget-object v8, p0, Lorg/telegram/ui/PrivacyControlActivity;->currentMinus:Ljava/util/ArrayList;
 
@@ -1250,7 +1250,7 @@
 
     if-ge v7, v8, :cond_f
 
-    .line 807
+    .line 806
     iget-object v8, p0, Lorg/telegram/ui/PrivacyControlActivity;->currentMinus:Ljava/util/ArrayList;
 
     invoke-virtual {v8, v7}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -1263,14 +1263,14 @@
 
     move-result-wide v8
 
-    .line 808
+    .line 807
     invoke-static {v8, v9}, Lorg/telegram/messenger/DialogObject;->isUserDialog(J)Z
 
     move-result v10
 
     if-eqz v10, :cond_d
 
-    .line 809
+    .line 808
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getMessagesController()Lorg/telegram/messenger/MessagesController;
 
     move-result-object v10
@@ -1285,7 +1285,7 @@
 
     if-eqz v8, :cond_e
 
-    .line 811
+    .line 810
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getMessagesController()Lorg/telegram/messenger/MessagesController;
 
     move-result-object v9
@@ -1296,14 +1296,14 @@
 
     if-eqz v8, :cond_e
 
-    .line 813
+    .line 812
     iget-object v9, v1, Lorg/telegram/tgnet/TLRPC$TL_inputPrivacyValueDisallowUsers;->users:Ljava/util/ArrayList;
 
     invoke-virtual {v9, v8}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     goto :goto_5
 
-    .line 817
+    .line 816
     :cond_d
     iget-object v10, v6, Lorg/telegram/tgnet/TLRPC$TL_inputPrivacyValueDisallowChatParticipants;->chats:Ljava/util/ArrayList;
 
@@ -1321,24 +1321,24 @@
 
     goto :goto_4
 
-    .line 820
+    .line 819
     :cond_f
     iget-object v7, v0, Lorg/telegram/tgnet/TLRPC$TL_account_setPrivacy;->rules:Ljava/util/ArrayList;
 
     invoke-virtual {v7, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 821
+    .line 820
     iget-object v1, v0, Lorg/telegram/tgnet/TLRPC$TL_account_setPrivacy;->rules:Ljava/util/ArrayList;
 
     invoke-virtual {v1, v6}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 823
+    .line 822
     :cond_10
     iget v1, p0, Lorg/telegram/ui/PrivacyControlActivity;->currentType:I
 
     if-nez v1, :cond_11
 
-    .line 824
+    .line 823
     iget-object v1, v0, Lorg/telegram/tgnet/TLRPC$TL_account_setPrivacy;->rules:Ljava/util/ArrayList;
 
     new-instance v4, Lorg/telegram/tgnet/TLRPC$TL_inputPrivacyValueAllowAll;
@@ -1352,7 +1352,7 @@
     :cond_11
     if-ne v1, v4, :cond_12
 
-    .line 826
+    .line 825
     iget-object v1, v0, Lorg/telegram/tgnet/TLRPC$TL_account_setPrivacy;->rules:Ljava/util/ArrayList;
 
     new-instance v4, Lorg/telegram/tgnet/TLRPC$TL_inputPrivacyValueDisallowAll;
@@ -1366,7 +1366,7 @@
     :cond_12
     if-ne v1, v3, :cond_13
 
-    .line 828
+    .line 827
     iget-object v1, v0, Lorg/telegram/tgnet/TLRPC$TL_account_setPrivacy;->rules:Ljava/util/ArrayList;
 
     new-instance v4, Lorg/telegram/tgnet/TLRPC$TL_inputPrivacyValueAllowContacts;
@@ -1379,14 +1379,14 @@
     :goto_6
     const/4 v1, 0x0
 
-    .line 831
+    .line 830
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
 
     move-result-object v4
 
     if-eqz v4, :cond_14
 
-    .line 832
+    .line 831
     new-instance v1, Lorg/telegram/ui/ActionBar/AlertDialog;
 
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
@@ -1395,13 +1395,13 @@
 
     invoke-direct {v1, v4, v2}, Lorg/telegram/ui/ActionBar/AlertDialog;-><init>(Landroid/content/Context;I)V
 
-    .line 833
+    .line 832
     invoke-virtual {v1, v5}, Lorg/telegram/ui/ActionBar/AlertDialog;->setCanCancel(Z)V
 
-    .line 834
+    .line 833
     invoke-virtual {v1}, Lorg/telegram/ui/ActionBar/AlertDialog;->show()V
 
-    .line 837
+    .line 836
     :cond_14
     iget v2, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->currentAccount:I
 
@@ -1421,7 +1421,7 @@
 .method private checkDiscard()Z
     .locals 3
 
-    .line 1213
+    .line 1212
     iget-object v0, p0, Lorg/telegram/ui/PrivacyControlActivity;->doneButton:Landroid/view/View;
 
     invoke-virtual {v0}, Landroid/view/View;->getAlpha()F
@@ -1434,7 +1434,7 @@
 
     if-nez v0, :cond_0
 
-    .line 1214
+    .line 1213
     new-instance v0, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
@@ -1443,7 +1443,7 @@
 
     invoke-direct {v0, v1}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
-    .line 1215
+    .line 1214
     sget v1, Lorg/telegram/messenger/R$string;->UserRestrictionsApplyChanges:I
 
     const-string v2, "UserRestrictionsApplyChanges"
@@ -1454,7 +1454,7 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setTitle(Ljava/lang/CharSequence;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 1216
+    .line 1215
     sget v1, Lorg/telegram/messenger/R$string;->PrivacySettingsChangedAlert:I
 
     const-string v2, "PrivacySettingsChangedAlert"
@@ -1465,7 +1465,7 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setMessage(Ljava/lang/CharSequence;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 1217
+    .line 1216
     sget v1, Lorg/telegram/messenger/R$string;->ApplyTheme:I
 
     const-string v2, "ApplyTheme"
@@ -1480,7 +1480,7 @@
 
     invoke-virtual {v0, v1, v2}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setPositiveButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 1218
+    .line 1217
     sget v1, Lorg/telegram/messenger/R$string;->PassportDiscard:I
 
     const-string v2, "PassportDiscard"
@@ -1495,7 +1495,7 @@
 
     invoke-virtual {v0, v1, v2}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setNegativeButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 1219
+    .line 1218
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->create()Lorg/telegram/ui/ActionBar/AlertDialog;
 
     move-result-object v0
@@ -1515,21 +1515,21 @@
 .method private checkPrivacy()V
     .locals 13
 
-    .line 869
+    .line 868
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lorg/telegram/ui/PrivacyControlActivity;->currentPlus:Ljava/util/ArrayList;
 
-    .line 870
+    .line 869
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lorg/telegram/ui/PrivacyControlActivity;->currentMinus:Ljava/util/ArrayList;
 
-    .line 871
+    .line 870
     iget v0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->currentAccount:I
 
     invoke-static {v0}, Lorg/telegram/messenger/ContactsController;->getInstance(I)Lorg/telegram/messenger/ContactsController;
@@ -1542,7 +1542,7 @@
 
     move-result-object v0
 
-    .line 873
+    .line 872
     iget v1, p0, Lorg/telegram/ui/PrivacyControlActivity;->rulesType:I
 
     const/4 v2, 0x2
@@ -1555,12 +1555,12 @@
 
     if-ne v1, v5, :cond_0
 
-    .line 874
+    .line 873
     iget v0, p0, Lorg/telegram/ui/PrivacyControlActivity;->walletAccess:I
 
     iput v0, p0, Lorg/telegram/ui/PrivacyControlActivity;->currentType:I
 
-    .line 875
+    .line 874
     iget-object v0, p0, Lorg/telegram/ui/PrivacyControlActivity;->currentPlus:Ljava/util/ArrayList;
 
     iget-object v1, p0, Lorg/telegram/ui/PrivacyControlActivity;->walletWhitelist:Ljava/util/List;
@@ -1572,7 +1572,7 @@
     :cond_0
     if-eqz v0, :cond_10
 
-    .line 877
+    .line 876
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
     move-result v1
@@ -1588,7 +1588,7 @@
 
     move v5, v4
 
-    .line 881
+    .line 880
     :goto_0
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
@@ -1596,22 +1596,22 @@
 
     if-ge v5, v7, :cond_9
 
-    .line 882
+    .line 881
     invoke-virtual {v0, v5}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v7
 
     check-cast v7, Lorg/telegram/tgnet/TLRPC$PrivacyRule;
 
-    .line 883
+    .line 882
     instance-of v8, v7, Lorg/telegram/tgnet/TLRPC$TL_privacyValueAllowChatParticipants;
 
     if-eqz v8, :cond_2
 
-    .line 884
+    .line 883
     check-cast v7, Lorg/telegram/tgnet/TLRPC$TL_privacyValueAllowChatParticipants;
 
-    .line 885
+    .line 884
     iget-object v8, v7, Lorg/telegram/tgnet/TLRPC$TL_privacyValueAllowChatParticipants;->chats:Ljava/util/ArrayList;
 
     invoke-virtual {v8}, Ljava/util/ArrayList;->size()I
@@ -1623,7 +1623,7 @@
     :goto_1
     if-ge v9, v8, :cond_8
 
-    .line 886
+    .line 885
     iget-object v10, p0, Lorg/telegram/ui/PrivacyControlActivity;->currentPlus:Ljava/util/ArrayList;
 
     iget-object v11, v7, Lorg/telegram/tgnet/TLRPC$TL_privacyValueAllowChatParticipants;->chats:Ljava/util/ArrayList;
@@ -1650,16 +1650,16 @@
 
     goto :goto_1
 
-    .line 888
+    .line 887
     :cond_2
     instance-of v8, v7, Lorg/telegram/tgnet/TLRPC$TL_privacyValueDisallowChatParticipants;
 
     if-eqz v8, :cond_3
 
-    .line 889
+    .line 888
     check-cast v7, Lorg/telegram/tgnet/TLRPC$TL_privacyValueDisallowChatParticipants;
 
-    .line 890
+    .line 889
     iget-object v8, v7, Lorg/telegram/tgnet/TLRPC$TL_privacyValueDisallowChatParticipants;->chats:Ljava/util/ArrayList;
 
     invoke-virtual {v8}, Ljava/util/ArrayList;->size()I
@@ -1671,7 +1671,7 @@
     :goto_2
     if-ge v9, v8, :cond_8
 
-    .line 891
+    .line 890
     iget-object v10, p0, Lorg/telegram/ui/PrivacyControlActivity;->currentMinus:Ljava/util/ArrayList;
 
     iget-object v11, v7, Lorg/telegram/tgnet/TLRPC$TL_privacyValueDisallowChatParticipants;->chats:Ljava/util/ArrayList;
@@ -1698,16 +1698,16 @@
 
     goto :goto_2
 
-    .line 893
+    .line 892
     :cond_3
     instance-of v8, v7, Lorg/telegram/tgnet/TLRPC$TL_privacyValueAllowUsers;
 
     if-eqz v8, :cond_4
 
-    .line 894
+    .line 893
     check-cast v7, Lorg/telegram/tgnet/TLRPC$TL_privacyValueAllowUsers;
 
-    .line 895
+    .line 894
     iget-object v8, p0, Lorg/telegram/ui/PrivacyControlActivity;->currentPlus:Ljava/util/ArrayList;
 
     iget-object v7, v7, Lorg/telegram/tgnet/TLRPC$TL_privacyValueAllowUsers;->users:Ljava/util/ArrayList;
@@ -1716,16 +1716,16 @@
 
     goto :goto_3
 
-    .line 896
+    .line 895
     :cond_4
     instance-of v8, v7, Lorg/telegram/tgnet/TLRPC$TL_privacyValueDisallowUsers;
 
     if-eqz v8, :cond_5
 
-    .line 897
+    .line 896
     check-cast v7, Lorg/telegram/tgnet/TLRPC$TL_privacyValueDisallowUsers;
 
-    .line 898
+    .line 897
     iget-object v8, p0, Lorg/telegram/ui/PrivacyControlActivity;->currentMinus:Ljava/util/ArrayList;
 
     iget-object v7, v7, Lorg/telegram/tgnet/TLRPC$TL_privacyValueDisallowUsers;->users:Ljava/util/ArrayList;
@@ -1737,7 +1737,7 @@
     :cond_5
     if-ne v6, v1, :cond_8
 
-    .line 900
+    .line 899
     instance-of v6, v7, Lorg/telegram/tgnet/TLRPC$TL_privacyValueAllowAll;
 
     if-eqz v6, :cond_6
@@ -1746,7 +1746,7 @@
 
     goto :goto_3
 
-    .line 902
+    .line 901
     :cond_6
     instance-of v6, v7, Lorg/telegram/tgnet/TLRPC$TL_privacyValueDisallowAll;
 
@@ -1770,7 +1770,7 @@
 
     if-ne v6, v1, :cond_a
 
-    .line 909
+    .line 908
     iget-object v0, p0, Lorg/telegram/ui/PrivacyControlActivity;->currentMinus:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
@@ -1786,7 +1786,7 @@
 
     if-ne v6, v1, :cond_b
 
-    .line 911
+    .line 910
     iget-object v0, p0, Lorg/telegram/ui/PrivacyControlActivity;->currentMinus:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
@@ -1810,7 +1810,7 @@
 
     if-ne v6, v1, :cond_f
 
-    .line 913
+    .line 912
     iget-object v0, p0, Lorg/telegram/ui/PrivacyControlActivity;->currentPlus:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
@@ -1819,25 +1819,25 @@
 
     if-lez v0, :cond_f
 
-    .line 914
+    .line 913
     :cond_c
     iput v3, p0, Lorg/telegram/ui/PrivacyControlActivity;->currentType:I
 
     goto :goto_6
 
-    .line 912
+    .line 911
     :cond_d
     :goto_4
     iput v2, p0, Lorg/telegram/ui/PrivacyControlActivity;->currentType:I
 
     goto :goto_6
 
-    .line 910
+    .line 909
     :cond_e
     :goto_5
     iput v4, p0, Lorg/telegram/ui/PrivacyControlActivity;->currentType:I
 
-    .line 916
+    .line 915
     :cond_f
     :goto_6
     iget-object v0, p0, Lorg/telegram/ui/PrivacyControlActivity;->doneButton:Landroid/view/View;
@@ -1846,70 +1846,70 @@
 
     const/4 v1, 0x0
 
-    .line 917
+    .line 916
     invoke-virtual {v0, v1}, Landroid/view/View;->setAlpha(F)V
 
-    .line 918
+    .line 917
     iget-object v0, p0, Lorg/telegram/ui/PrivacyControlActivity;->doneButton:Landroid/view/View;
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setScaleX(F)V
 
-    .line 919
+    .line 918
     iget-object v0, p0, Lorg/telegram/ui/PrivacyControlActivity;->doneButton:Landroid/view/View;
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setScaleY(F)V
 
-    .line 920
+    .line 919
     iget-object v0, p0, Lorg/telegram/ui/PrivacyControlActivity;->doneButton:Landroid/view/View;
 
     invoke-virtual {v0, v4}, Landroid/view/View;->setEnabled(Z)V
 
     goto :goto_8
 
-    .line 878
+    .line 877
     :cond_10
     :goto_7
     iput v3, p0, Lorg/telegram/ui/PrivacyControlActivity;->currentType:I
 
-    .line 923
+    .line 922
     :cond_11
     :goto_8
     iget-object v0, p0, Lorg/telegram/ui/PrivacyControlActivity;->initialPlus:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->clear()V
 
-    .line 924
+    .line 923
     iget-object v0, p0, Lorg/telegram/ui/PrivacyControlActivity;->initialMinus:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->clear()V
 
-    .line 925
+    .line 924
     iget v0, p0, Lorg/telegram/ui/PrivacyControlActivity;->currentType:I
 
     iput v0, p0, Lorg/telegram/ui/PrivacyControlActivity;->initialRulesType:I
 
-    .line 926
+    .line 925
     iget-object v0, p0, Lorg/telegram/ui/PrivacyControlActivity;->initialPlus:Ljava/util/ArrayList;
 
     iget-object v1, p0, Lorg/telegram/ui/PrivacyControlActivity;->currentPlus:Ljava/util/ArrayList;
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->addAll(Ljava/util/Collection;)Z
 
-    .line 927
+    .line 926
     iget-object v0, p0, Lorg/telegram/ui/PrivacyControlActivity;->initialMinus:Ljava/util/ArrayList;
 
     iget-object v1, p0, Lorg/telegram/ui/PrivacyControlActivity;->currentMinus:Ljava/util/ArrayList;
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->addAll(Ljava/util/Collection;)Z
 
-    .line 929
+    .line 928
     iget v0, p0, Lorg/telegram/ui/PrivacyControlActivity;->rulesType:I
 
     const/4 v1, 0x6
 
     if-ne v0, v1, :cond_18
 
-    .line 930
+    .line 929
     iget v0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->currentAccount:I
 
     invoke-static {v0}, Lorg/telegram/messenger/ContactsController;->getInstance(I)Lorg/telegram/messenger/ContactsController;
@@ -1924,7 +1924,7 @@
 
     if-eqz v0, :cond_16
 
-    .line 931
+    .line 930
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
     move-result v1
@@ -1936,7 +1936,7 @@
     :cond_12
     move v1, v4
 
-    .line 934
+    .line 933
     :goto_9
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
@@ -1944,41 +1944,41 @@
 
     if-ge v1, v5, :cond_17
 
-    .line 935
+    .line 934
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v5
 
     check-cast v5, Lorg/telegram/tgnet/TLRPC$PrivacyRule;
 
-    .line 936
+    .line 935
     instance-of v6, v5, Lorg/telegram/tgnet/TLRPC$TL_privacyValueAllowAll;
 
     if-eqz v6, :cond_13
 
-    .line 937
+    .line 936
     iput v4, p0, Lorg/telegram/ui/PrivacyControlActivity;->currentSubType:I
 
     goto :goto_b
 
-    .line 939
+    .line 938
     :cond_13
     instance-of v6, v5, Lorg/telegram/tgnet/TLRPC$TL_privacyValueDisallowAll;
 
     if-eqz v6, :cond_14
 
-    .line 940
+    .line 939
     iput v2, p0, Lorg/telegram/ui/PrivacyControlActivity;->currentSubType:I
 
     goto :goto_b
 
-    .line 942
+    .line 941
     :cond_14
     instance-of v5, v5, Lorg/telegram/tgnet/TLRPC$TL_privacyValueAllowContacts;
 
     if-eqz v5, :cond_15
 
-    .line 943
+    .line 942
     iput v3, p0, Lorg/telegram/ui/PrivacyControlActivity;->currentSubType:I
 
     goto :goto_b
@@ -1988,19 +1988,19 @@
 
     goto :goto_9
 
-    .line 932
+    .line 931
     :cond_16
     :goto_a
     iput v4, p0, Lorg/telegram/ui/PrivacyControlActivity;->currentSubType:I
 
-    .line 948
+    .line 947
     :cond_17
     :goto_b
     iget v0, p0, Lorg/telegram/ui/PrivacyControlActivity;->currentSubType:I
 
     iput v0, p0, Lorg/telegram/ui/PrivacyControlActivity;->initialRulesSubType:I
 
-    .line 951
+    .line 950
     :cond_18
     invoke-direct {p0, v4}, Lorg/telegram/ui/PrivacyControlActivity;->updateRows(Z)V
 
@@ -2010,7 +2010,7 @@
 .method private hasChanges()Z
     .locals 4
 
-    .line 956
+    .line 955
     iget v0, p0, Lorg/telegram/ui/PrivacyControlActivity;->initialAccountRankAccess:I
 
     iget v1, p0, Lorg/telegram/ui/PrivacyControlActivity;->currentAccountRankAccess:I
@@ -2021,7 +2021,7 @@
 
     return v2
 
-    .line 960
+    .line 959
     :cond_0
     iget v0, p0, Lorg/telegram/ui/PrivacyControlActivity;->initialRulesType:I
 
@@ -2031,7 +2031,7 @@
 
     return v2
 
-    .line 963
+    .line 962
     :cond_1
     iget v0, p0, Lorg/telegram/ui/PrivacyControlActivity;->rulesType:I
 
@@ -2049,7 +2049,7 @@
 
     return v2
 
-    .line 966
+    .line 965
     :cond_2
     iget-object v0, p0, Lorg/telegram/ui/PrivacyControlActivity;->initialMinus:Ljava/util/ArrayList;
 
@@ -2067,7 +2067,7 @@
 
     return v2
 
-    .line 969
+    .line 968
     :cond_3
     iget-object v0, p0, Lorg/telegram/ui/PrivacyControlActivity;->initialPlus:Ljava/util/ArrayList;
 
@@ -2085,18 +2085,18 @@
 
     return v2
 
-    .line 972
+    .line 971
     :cond_4
     iget-object v0, p0, Lorg/telegram/ui/PrivacyControlActivity;->initialPlus:Ljava/util/ArrayList;
 
     invoke-static {v0}, Ljava/util/Collections;->sort(Ljava/util/List;)V
 
-    .line 973
+    .line 972
     iget-object v0, p0, Lorg/telegram/ui/PrivacyControlActivity;->currentPlus:Ljava/util/ArrayList;
 
     invoke-static {v0}, Ljava/util/Collections;->sort(Ljava/util/List;)V
 
-    .line 974
+    .line 973
     iget-object v0, p0, Lorg/telegram/ui/PrivacyControlActivity;->initialPlus:Ljava/util/ArrayList;
 
     iget-object v1, p0, Lorg/telegram/ui/PrivacyControlActivity;->currentPlus:Ljava/util/ArrayList;
@@ -2109,18 +2109,18 @@
 
     return v2
 
-    .line 977
+    .line 976
     :cond_5
     iget-object v0, p0, Lorg/telegram/ui/PrivacyControlActivity;->initialMinus:Ljava/util/ArrayList;
 
     invoke-static {v0}, Ljava/util/Collections;->sort(Ljava/util/List;)V
 
-    .line 978
+    .line 977
     iget-object v0, p0, Lorg/telegram/ui/PrivacyControlActivity;->currentMinus:Ljava/util/ArrayList;
 
     invoke-static {v0}, Ljava/util/Collections;->sort(Ljava/util/List;)V
 
-    .line 979
+    .line 978
     iget-object v0, p0, Lorg/telegram/ui/PrivacyControlActivity;->initialMinus:Ljava/util/ArrayList;
 
     iget-object v1, p0, Lorg/telegram/ui/PrivacyControlActivity;->currentMinus:Ljava/util/ArrayList;
@@ -2144,10 +2144,10 @@
 
     if-nez p1, :cond_0
 
-    .line 763
+    .line 762
     check-cast p2, Lorg/telegram/tgnet/TLRPC$TL_account_privacyRules;
 
-    .line 764
+    .line 763
     iget p1, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->currentAccount:I
 
     invoke-static {p1}, Lorg/telegram/messenger/ContactsController;->getInstance(I)Lorg/telegram/messenger/ContactsController;
@@ -2167,7 +2167,7 @@
 .method private synthetic lambda$applyCurrentPrivacySettings$11(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
     .locals 1
 
-    .line 761
+    .line 760
     new-instance v0, Lorg/telegram/ui/PrivacyControlActivity$$ExternalSyntheticLambda7;
 
     invoke-direct {v0, p0, p2, p1}, Lorg/telegram/ui/PrivacyControlActivity$$ExternalSyntheticLambda7;-><init>(Lorg/telegram/ui/PrivacyControlActivity;Lorg/telegram/tgnet/TLRPC$TL_error;Lorg/telegram/tgnet/TLObject;)V
@@ -2182,7 +2182,7 @@
 
     if-eqz p1, :cond_0
 
-    .line 840
+    .line 839
     :try_start_0
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/AlertDialog;->dismiss()V
     :try_end_0
@@ -2193,17 +2193,17 @@
     :catch_0
     move-exception p1
 
-    .line 843
+    .line 842
     invoke-static {p1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :cond_0
     :goto_0
     if-nez p2, :cond_1
 
-    .line 846
+    .line 845
     check-cast p3, Lorg/telegram/tgnet/TLRPC$TL_account_privacyRules;
 
-    .line 847
+    .line 846
     iget p1, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->currentAccount:I
 
     invoke-static {p1}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
@@ -2216,7 +2216,7 @@
 
     invoke-virtual {p1, p2, v0}, Lorg/telegram/messenger/MessagesController;->putUsers(Ljava/util/ArrayList;Z)V
 
-    .line 848
+    .line 847
     iget p1, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->currentAccount:I
 
     invoke-static {p1}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
@@ -2227,7 +2227,7 @@
 
     invoke-virtual {p1, p2, v0}, Lorg/telegram/messenger/MessagesController;->putChats(Ljava/util/ArrayList;Z)V
 
-    .line 849
+    .line 848
     iget p1, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->currentAccount:I
 
     invoke-static {p1}, Lorg/telegram/messenger/ContactsController;->getInstance(I)Lorg/telegram/messenger/ContactsController;
@@ -2240,12 +2240,12 @@
 
     invoke-virtual {p1, p2, p3}, Lorg/telegram/messenger/ContactsController;->setPrivacyRules(Ljava/util/ArrayList;I)V
 
-    .line 850
+    .line 849
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->finishFragment()V
 
     goto :goto_1
 
-    .line 852
+    .line 851
     :cond_1
     invoke-direct {p0}, Lorg/telegram/ui/PrivacyControlActivity;->showErrorAlert()V
 
@@ -2256,7 +2256,7 @@
 .method private synthetic lambda$applyCurrentPrivacySettings$13(Lorg/telegram/ui/ActionBar/AlertDialog;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
     .locals 1
 
-    .line 837
+    .line 836
     new-instance v0, Lorg/telegram/ui/PrivacyControlActivity$$ExternalSyntheticLambda8;
 
     invoke-direct {v0, p0, p1, p3, p2}, Lorg/telegram/ui/PrivacyControlActivity$$ExternalSyntheticLambda8;-><init>(Lorg/telegram/ui/PrivacyControlActivity;Lorg/telegram/ui/ActionBar/AlertDialog;Lorg/telegram/tgnet/TLRPC$TL_error;Lorg/telegram/tgnet/TLObject;)V
@@ -2269,7 +2269,7 @@
 .method private synthetic lambda$checkDiscard$15(Landroid/content/DialogInterface;I)V
     .locals 0
 
-    .line 1217
+    .line 1216
     invoke-direct {p0}, Lorg/telegram/ui/PrivacyControlActivity;->processDone()V
 
     return-void
@@ -2278,7 +2278,7 @@
 .method private synthetic lambda$checkDiscard$16(Landroid/content/DialogInterface;I)V
     .locals 0
 
-    .line 1218
+    .line 1217
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->finishFragment()V
 
     return-void
@@ -2289,13 +2289,13 @@
 
     const/4 v0, 0x0
 
-    .line 591
+    .line 590
     iput-object v0, p0, Lorg/telegram/ui/PrivacyControlActivity;->avatarForRest:Lorg/telegram/tgnet/TLRPC$PhotoSize;
 
-    .line 592
+    .line 591
     iput-object v0, p0, Lorg/telegram/ui/PrivacyControlActivity;->avatarForRestPhoto:Lorg/telegram/tgnet/TLRPC$Photo;
 
-    .line 593
+    .line 592
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getMessagesController()Lorg/telegram/messenger/MessagesController;
 
     move-result-object v1
@@ -2312,14 +2312,14 @@
 
     if-eqz v1, :cond_2
 
-    .line 594
+    .line 593
     iget-object v2, v1, Lorg/telegram/tgnet/TLRPC$UserFull;->fallback_photo:Lorg/telegram/tgnet/TLRPC$Photo;
 
     if-nez v2, :cond_0
 
     goto :goto_0
 
-    .line 598
+    .line 597
     :cond_0
     iget v3, v1, Lorg/telegram/tgnet/TLRPC$UserFull;->flags:I
 
@@ -2329,10 +2329,10 @@
 
     iput v3, v1, Lorg/telegram/tgnet/TLRPC$UserFull;->flags:I
 
-    .line 599
+    .line 598
     iput-object v0, v1, Lorg/telegram/tgnet/TLRPC$UserFull;->fallback_photo:Lorg/telegram/tgnet/TLRPC$Photo;
 
-    .line 600
+    .line 599
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getMessagesStorage()Lorg/telegram/messenger/MessagesStorage;
 
     move-result-object v0
@@ -2341,28 +2341,28 @@
 
     invoke-virtual {v0, v1, v3}, Lorg/telegram/messenger/MessagesStorage;->updateUserInfo(Lorg/telegram/tgnet/TLRPC$UserFull;Z)V
 
-    .line 601
+    .line 600
     invoke-direct {p0}, Lorg/telegram/ui/PrivacyControlActivity;->updateAvatarForRestInfo()V
 
-    .line 602
+    .line 601
     invoke-direct {p0, v3}, Lorg/telegram/ui/PrivacyControlActivity;->updateRows(Z)V
 
-    .line 604
+    .line 603
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_inputPhoto;
 
     invoke-direct {v0}, Lorg/telegram/tgnet/TLRPC$TL_inputPhoto;-><init>()V
 
-    .line 605
+    .line 604
     iget-wide v3, v2, Lorg/telegram/tgnet/TLRPC$Photo;->id:J
 
     iput-wide v3, v0, Lorg/telegram/tgnet/TLRPC$InputPhoto;->id:J
 
-    .line 606
+    .line 605
     iget-wide v3, v2, Lorg/telegram/tgnet/TLRPC$Photo;->access_hash:J
 
     iput-wide v3, v0, Lorg/telegram/tgnet/TLRPC$InputPhoto;->access_hash:J
 
-    .line 607
+    .line 606
     iget-object v1, v2, Lorg/telegram/tgnet/TLRPC$Photo;->file_reference:[B
 
     iput-object v1, v0, Lorg/telegram/tgnet/TLRPC$InputPhoto;->file_reference:[B
@@ -2373,10 +2373,10 @@
 
     new-array v1, v2, [B
 
-    .line 609
+    .line 608
     iput-object v1, v0, Lorg/telegram/tgnet/TLRPC$InputPhoto;->file_reference:[B
 
-    .line 612
+    .line 611
     :cond_1
     iget v1, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->currentAccount:I
 
@@ -2386,7 +2386,7 @@
 
     invoke-virtual {v1, v0}, Lorg/telegram/messenger/MessagesController;->deleteUserPhoto(Lorg/telegram/tgnet/TLRPC$InputPhoto;)V
 
-    .line 613
+    .line 612
     iget v0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->currentAccount:I
 
     invoke-static {v0}, Lorg/telegram/messenger/NotificationCenter;->getInstance(I)Lorg/telegram/messenger/NotificationCenter;
@@ -2413,7 +2413,7 @@
 .method private synthetic lambda$createView$6(Landroid/content/DialogInterface;)V
     .locals 1
 
-    .line 623
+    .line 622
     iget-object p1, p0, Lorg/telegram/ui/PrivacyControlActivity;->imageUpdater:Lorg/telegram/ui/Components/ImageUpdater;
 
     invoke-virtual {p1}, Lorg/telegram/ui/Components/ImageUpdater;->isUploadingImage()Z
@@ -2422,14 +2422,14 @@
 
     if-nez p1, :cond_0
 
-    .line 624
+    .line 623
     iget-object p1, p0, Lorg/telegram/ui/PrivacyControlActivity;->cameraDrawable:Lorg/telegram/ui/Components/RLottieDrawable;
 
     const/16 v0, 0x56
 
     invoke-virtual {p1, v0}, Lorg/telegram/ui/Components/RLottieDrawable;->setCustomEndFrame(I)Z
 
-    .line 625
+    .line 624
     iget-object p1, p0, Lorg/telegram/ui/PrivacyControlActivity;->setAvatarCell:Lorg/telegram/ui/Cells/TextCell;
 
     iget-object p1, p1, Lorg/telegram/ui/Cells/TextCell;->imageView:Lorg/telegram/ui/Components/RLottieImageView;
@@ -2438,7 +2438,7 @@
 
     goto :goto_0
 
-    .line 627
+    .line 626
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/PrivacyControlActivity;->cameraDrawable:Lorg/telegram/ui/Components/RLottieDrawable;
 
@@ -2453,17 +2453,17 @@
 .method private synthetic lambda$createView$7(ILjava/util/ArrayList;)V
     .locals 2
 
-    .line 680
+    .line 679
     iget v0, p0, Lorg/telegram/ui/PrivacyControlActivity;->neverShareRow:I
 
     const/4 v1, 0x0
 
     if-ne p1, v0, :cond_0
 
-    .line 681
+    .line 680
     iput-object p2, p0, Lorg/telegram/ui/PrivacyControlActivity;->currentMinus:Ljava/util/ArrayList;
 
-    .line 682
+    .line 681
     :goto_0
     iget-object p1, p0, Lorg/telegram/ui/PrivacyControlActivity;->currentMinus:Ljava/util/ArrayList;
 
@@ -2473,7 +2473,7 @@
 
     if-ge v1, p1, :cond_1
 
-    .line 683
+    .line 682
     iget-object p1, p0, Lorg/telegram/ui/PrivacyControlActivity;->currentPlus:Ljava/util/ArrayList;
 
     iget-object p2, p0, Lorg/telegram/ui/PrivacyControlActivity;->currentMinus:Ljava/util/ArrayList;
@@ -2488,11 +2488,11 @@
 
     goto :goto_0
 
-    .line 686
+    .line 685
     :cond_0
     iput-object p2, p0, Lorg/telegram/ui/PrivacyControlActivity;->currentPlus:Ljava/util/ArrayList;
 
-    .line 687
+    .line 686
     :goto_1
     iget-object p1, p0, Lorg/telegram/ui/PrivacyControlActivity;->currentPlus:Ljava/util/ArrayList;
 
@@ -2502,7 +2502,7 @@
 
     if-ge v1, p1, :cond_1
 
-    .line 688
+    .line 687
     iget-object p1, p0, Lorg/telegram/ui/PrivacyControlActivity;->currentMinus:Ljava/util/ArrayList;
 
     iget-object p2, p0, Lorg/telegram/ui/PrivacyControlActivity;->currentPlus:Ljava/util/ArrayList;
@@ -2517,11 +2517,11 @@
 
     goto :goto_1
 
-    .line 691
+    .line 690
     :cond_1
     invoke-direct {p0}, Lorg/telegram/ui/PrivacyControlActivity;->updateDoneButton()V
 
-    .line 692
+    .line 691
     iget-object p1, p0, Lorg/telegram/ui/PrivacyControlActivity;->listAdapter:Lorg/telegram/ui/PrivacyControlActivity$ListAdapter;
 
     invoke-virtual {p1}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->notifyDataSetChanged()V
@@ -2532,19 +2532,19 @@
 .method private synthetic lambda$createView$8(ILjava/util/ArrayList;Z)V
     .locals 2
 
-    .line 698
+    .line 697
     iget v0, p0, Lorg/telegram/ui/PrivacyControlActivity;->neverShareRow:I
 
     const/4 v1, 0x0
 
     if-ne p1, v0, :cond_0
 
-    .line 699
+    .line 698
     iput-object p2, p0, Lorg/telegram/ui/PrivacyControlActivity;->currentMinus:Ljava/util/ArrayList;
 
     if-eqz p3, :cond_1
 
-    .line 701
+    .line 700
     :goto_0
     iget-object p1, p0, Lorg/telegram/ui/PrivacyControlActivity;->currentMinus:Ljava/util/ArrayList;
 
@@ -2554,7 +2554,7 @@
 
     if-ge v1, p1, :cond_1
 
-    .line 702
+    .line 701
     iget-object p1, p0, Lorg/telegram/ui/PrivacyControlActivity;->currentPlus:Ljava/util/ArrayList;
 
     iget-object p2, p0, Lorg/telegram/ui/PrivacyControlActivity;->currentMinus:Ljava/util/ArrayList;
@@ -2569,13 +2569,13 @@
 
     goto :goto_0
 
-    .line 706
+    .line 705
     :cond_0
     iput-object p2, p0, Lorg/telegram/ui/PrivacyControlActivity;->currentPlus:Ljava/util/ArrayList;
 
     if-eqz p3, :cond_1
 
-    .line 708
+    .line 707
     :goto_1
     iget-object p1, p0, Lorg/telegram/ui/PrivacyControlActivity;->currentPlus:Ljava/util/ArrayList;
 
@@ -2585,7 +2585,7 @@
 
     if-ge v1, p1, :cond_1
 
-    .line 709
+    .line 708
     iget-object p1, p0, Lorg/telegram/ui/PrivacyControlActivity;->currentMinus:Ljava/util/ArrayList;
 
     iget-object p2, p0, Lorg/telegram/ui/PrivacyControlActivity;->currentPlus:Ljava/util/ArrayList;
@@ -2600,11 +2600,11 @@
 
     goto :goto_1
 
-    .line 713
+    .line 712
     :cond_1
     invoke-direct {p0}, Lorg/telegram/ui/PrivacyControlActivity;->updateDoneButton()V
 
-    .line 714
+    .line 713
     iget-object p1, p0, Lorg/telegram/ui/PrivacyControlActivity;->listAdapter:Lorg/telegram/ui/PrivacyControlActivity$ListAdapter;
 
     invoke-virtual {p1}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->notifyDataSetChanged()V
@@ -2615,7 +2615,7 @@
 .method private synthetic lambda$createView$9(Landroid/view/View;I)V
     .locals 8
 
-    .line 571
+    .line 570
     iget p1, p0, Lorg/telegram/ui/PrivacyControlActivity;->rankNobodyRow:I
 
     const/4 v0, 0x0
@@ -2630,13 +2630,13 @@
 
     goto/16 :goto_9
 
-    .line 585
+    .line 584
     :cond_0
     iget p1, p0, Lorg/telegram/ui/PrivacyControlActivity;->currentPhotoForRestRow:I
 
     if-ne p2, p1, :cond_1
 
-    .line 586
+    .line 585
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getContext()Landroid/content/Context;
 
     move-result-object v2
@@ -2645,7 +2645,7 @@
 
     const-string p2, "RemovePublicPhoto"
 
-    .line 587
+    .line 586
     invoke-static {p2, p1}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v3
@@ -2654,7 +2654,7 @@
 
     const-string p2, "RemovePhotoForRestDescription"
 
-    .line 588
+    .line 587
     invoke-static {p2, p1}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v4
@@ -2663,7 +2663,7 @@
 
     const-string p2, "Remove"
 
-    .line 589
+    .line 588
     invoke-static {p2, p1}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v5
@@ -2674,36 +2674,36 @@
 
     const/4 v7, 0x0
 
-    .line 586
+    .line 585
     invoke-static/range {v2 .. v7}, Lorg/telegram/ui/Components/AlertsCreator;->createSimpleAlert(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Runnable;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
     move-result-object p1
 
-    .line 614
+    .line 613
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->create()Lorg/telegram/ui/ActionBar/AlertDialog;
 
     move-result-object p1
 
-    .line 615
+    .line 614
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/AlertDialog;->show()V
 
-    .line 616
+    .line 615
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/AlertDialog;->redPositive()V
 
     goto/16 :goto_a
 
-    .line 618
+    .line 617
     :cond_1
     iget p1, p0, Lorg/telegram/ui/PrivacyControlActivity;->photoForRestRow:I
 
     if-ne p2, p1, :cond_2
 
-    .line 619
+    .line 618
     iget-object p1, p0, Lorg/telegram/ui/PrivacyControlActivity;->imageUpdater:Lorg/telegram/ui/Components/ImageUpdater;
 
     if-eqz p1, :cond_19
 
-    .line 620
+    .line 619
     sget-object p2, Lorg/telegram/ui/PrivacyControlActivity$$ExternalSyntheticLambda9;->INSTANCE:Lorg/telegram/ui/PrivacyControlActivity$$ExternalSyntheticLambda9;
 
     new-instance v1, Lorg/telegram/ui/PrivacyControlActivity$$ExternalSyntheticLambda3;
@@ -2712,19 +2712,19 @@
 
     invoke-virtual {p1, v0, p2, v1, v0}, Lorg/telegram/ui/Components/ImageUpdater;->openMenu(ZLjava/lang/Runnable;Landroid/content/DialogInterface$OnDismissListener;I)V
 
-    .line 630
+    .line 629
     iget-object p1, p0, Lorg/telegram/ui/PrivacyControlActivity;->cameraDrawable:Lorg/telegram/ui/Components/RLottieDrawable;
 
     invoke-virtual {p1, v0}, Lorg/telegram/ui/Components/RLottieDrawable;->setCurrentFrame(I)V
 
-    .line 631
+    .line 630
     iget-object p1, p0, Lorg/telegram/ui/PrivacyControlActivity;->cameraDrawable:Lorg/telegram/ui/Components/RLottieDrawable;
 
     const/16 p2, 0x2b
 
     invoke-virtual {p1, p2}, Lorg/telegram/ui/Components/RLottieDrawable;->setCustomEndFrame(I)Z
 
-    .line 632
+    .line 631
     iget-object p1, p0, Lorg/telegram/ui/PrivacyControlActivity;->setAvatarCell:Lorg/telegram/ui/Cells/TextCell;
 
     iget-object p1, p1, Lorg/telegram/ui/Cells/TextCell;->imageView:Lorg/telegram/ui/Components/RLottieImageView;
@@ -2733,7 +2733,7 @@
 
     goto/16 :goto_a
 
-    .line 634
+    .line 633
     :cond_2
     iget p1, p0, Lorg/telegram/ui/PrivacyControlActivity;->nobodyRow:I
 
@@ -2749,7 +2749,7 @@
 
     goto/16 :goto_7
 
-    .line 649
+    .line 648
     :cond_3
     iget p1, p0, Lorg/telegram/ui/PrivacyControlActivity;->phoneContactsRow:I
 
@@ -2761,7 +2761,7 @@
 
     goto/16 :goto_5
 
-    .line 662
+    .line 661
     :cond_4
     iget p1, p0, Lorg/telegram/ui/PrivacyControlActivity;->neverShareRow:I
 
@@ -2773,13 +2773,13 @@
 
     goto :goto_0
 
-    .line 718
+    .line 717
     :cond_5
     iget p1, p0, Lorg/telegram/ui/PrivacyControlActivity;->p2pRow:I
 
     if-ne p2, p1, :cond_19
 
-    .line 719
+    .line 718
     new-instance p1, Lorg/telegram/ui/PrivacyControlActivity;
 
     const/4 p2, 0x3
@@ -2794,19 +2794,19 @@
     :goto_0
     if-ne p2, p1, :cond_7
 
-    .line 665
+    .line 664
     iget-object p1, p0, Lorg/telegram/ui/PrivacyControlActivity;->currentMinus:Ljava/util/ArrayList;
 
     goto :goto_1
 
-    .line 667
+    .line 666
     :cond_7
     iget-object p1, p0, Lorg/telegram/ui/PrivacyControlActivity;->currentPlus:Ljava/util/ArrayList;
 
     :goto_1
     move-object v4, p1
 
-    .line 669
+    .line 668
     invoke-virtual {v4}, Ljava/util/ArrayList;->isEmpty()Z
 
     move-result p1
@@ -2815,12 +2815,12 @@
 
     if-eqz p1, :cond_b
 
-    .line 670
+    .line 669
     new-instance p1, Landroid/os/Bundle;
 
     invoke-direct {p1}, Landroid/os/Bundle;-><init>()V
 
-    .line 671
+    .line 670
     iget v3, p0, Lorg/telegram/ui/PrivacyControlActivity;->neverShareRow:I
 
     if-ne p2, v3, :cond_8
@@ -2835,7 +2835,7 @@
     :goto_2
     invoke-virtual {p1, v3, v1}, Landroid/os/Bundle;->putBoolean(Ljava/lang/String;Z)V
 
-    .line 672
+    .line 671
     iget v3, p0, Lorg/telegram/ui/PrivacyControlActivity;->rulesType:I
 
     if-eqz v3, :cond_9
@@ -2847,35 +2847,35 @@
 
     invoke-virtual {p1, v3, v0}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
 
-    .line 674
+    .line 673
     iget v0, p0, Lorg/telegram/ui/PrivacyControlActivity;->rulesType:I
 
     if-ne v0, v2, :cond_a
 
     const-string v0, "isOnlyUsers"
 
-    .line 675
+    .line 674
     invoke-virtual {p1, v0, v1}, Landroid/os/Bundle;->putBoolean(Ljava/lang/String;Z)V
 
-    .line 678
+    .line 677
     :cond_a
     new-instance v0, Lorg/telegram/ui/GroupCreateActivity;
 
     invoke-direct {v0, p1}, Lorg/telegram/ui/GroupCreateActivity;-><init>(Landroid/os/Bundle;)V
 
-    .line 679
+    .line 678
     new-instance p1, Lorg/telegram/ui/PrivacyControlActivity$$ExternalSyntheticLambda15;
 
     invoke-direct {p1, p0, p2}, Lorg/telegram/ui/PrivacyControlActivity$$ExternalSyntheticLambda15;-><init>(Lorg/telegram/ui/PrivacyControlActivity;I)V
 
     invoke-virtual {v0, p1}, Lorg/telegram/ui/GroupCreateActivity;->setDelegate(Lorg/telegram/ui/GroupCreateActivity$GroupCreateActivityDelegate;)V
 
-    .line 694
+    .line 693
     invoke-virtual {p0, v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->presentFragment(Lorg/telegram/ui/ActionBar/BaseFragment;)Z
 
     goto/16 :goto_a
 
-    .line 696
+    .line 695
     :cond_b
     new-instance p1, Lorg/telegram/ui/PrivacyUsersActivity;
 
@@ -2924,19 +2924,19 @@
 
     invoke-direct/range {v2 .. v7}, Lorg/telegram/ui/PrivacyUsersActivity;-><init>(ILjava/util/ArrayList;ZZZ)V
 
-    .line 697
+    .line 696
     new-instance v0, Lorg/telegram/ui/PrivacyControlActivity$$ExternalSyntheticLambda16;
 
     invoke-direct {v0, p0, p2}, Lorg/telegram/ui/PrivacyControlActivity$$ExternalSyntheticLambda16;-><init>(Lorg/telegram/ui/PrivacyControlActivity;I)V
 
     invoke-virtual {p1, v0}, Lorg/telegram/ui/PrivacyUsersActivity;->setDelegate(Lorg/telegram/ui/PrivacyUsersActivity$PrivacyActivityDelegate;)V
 
-    .line 716
+    .line 715
     invoke-virtual {p0, p1}, Lorg/telegram/ui/ActionBar/BaseFragment;->presentFragment(Lorg/telegram/ui/ActionBar/BaseFragment;)Z
 
     goto :goto_a
 
-    .line 651
+    .line 650
     :cond_f
     :goto_5
     iget p1, p0, Lorg/telegram/ui/PrivacyControlActivity;->phoneEverybodyRow:I
@@ -2948,7 +2948,7 @@
     :cond_10
     move v0, v1
 
-    .line 656
+    .line 655
     :goto_6
     iget p1, p0, Lorg/telegram/ui/PrivacyControlActivity;->currentSubType:I
 
@@ -2956,14 +2956,14 @@
 
     return-void
 
-    .line 659
+    .line 658
     :cond_11
     iput v0, p0, Lorg/telegram/ui/PrivacyControlActivity;->currentSubType:I
 
-    .line 660
+    .line 659
     invoke-direct {p0}, Lorg/telegram/ui/PrivacyControlActivity;->updateDoneButton()V
 
-    .line 661
+    .line 660
     invoke-direct {p0, v1}, Lorg/telegram/ui/PrivacyControlActivity;->updateRows(Z)V
 
     goto :goto_a
@@ -2976,7 +2976,7 @@
 
     goto :goto_8
 
-    .line 638
+    .line 637
     :cond_13
     iget p1, p0, Lorg/telegram/ui/PrivacyControlActivity;->everybodyRow:I
 
@@ -2987,7 +2987,7 @@
     :cond_14
     const/4 v0, 0x2
 
-    .line 643
+    .line 642
     :goto_8
     iget p1, p0, Lorg/telegram/ui/PrivacyControlActivity;->currentType:I
 
@@ -2995,14 +2995,14 @@
 
     return-void
 
-    .line 646
+    .line 645
     :cond_15
     iput v0, p0, Lorg/telegram/ui/PrivacyControlActivity;->currentType:I
 
-    .line 647
+    .line 646
     invoke-direct {p0}, Lorg/telegram/ui/PrivacyControlActivity;->updateDoneButton()V
 
-    .line 648
+    .line 647
     invoke-direct {p0, v1}, Lorg/telegram/ui/PrivacyControlActivity;->updateRows(Z)V
 
     goto :goto_a
@@ -3013,7 +3013,7 @@
 
     move v0, v1
 
-    .line 578
+    .line 577
     :cond_17
     iget p1, p0, Lorg/telegram/ui/PrivacyControlActivity;->currentAccountRankAccess:I
 
@@ -3021,14 +3021,14 @@
 
     return-void
 
-    .line 581
+    .line 580
     :cond_18
     iput v0, p0, Lorg/telegram/ui/PrivacyControlActivity;->currentAccountRankAccess:I
 
-    .line 582
+    .line 581
     invoke-direct {p0}, Lorg/telegram/ui/PrivacyControlActivity;->updateDoneButton()V
 
-    .line 583
+    .line 582
     invoke-direct {p0, v1}, Lorg/telegram/ui/PrivacyControlActivity;->updateRows(Z)V
 
     :cond_19
@@ -3041,10 +3041,10 @@
 
     if-eqz p1, :cond_1
 
-    .line 252
+    .line 251
     check-cast p1, Lorg/telegram/tgnet/TLRPC$TL_photos_photo;
 
-    .line 253
+    .line 252
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getMessagesController()Lorg/telegram/messenger/MessagesController;
 
     move-result-object v0
@@ -3059,7 +3059,7 @@
 
     move-result-object v0
 
-    .line 254
+    .line 253
     iget v1, v0, Lorg/telegram/tgnet/TLRPC$UserFull;->flags:I
 
     const/high16 v2, 0x400000
@@ -3068,12 +3068,12 @@
 
     iput v1, v0, Lorg/telegram/tgnet/TLRPC$UserFull;->flags:I
 
-    .line 255
+    .line 254
     iget-object v1, p1, Lorg/telegram/tgnet/TLRPC$TL_photos_photo;->photo:Lorg/telegram/tgnet/TLRPC$Photo;
 
     iput-object v1, v0, Lorg/telegram/tgnet/TLRPC$UserFull;->fallback_photo:Lorg/telegram/tgnet/TLRPC$Photo;
 
-    .line 256
+    .line 255
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getMessagesStorage()Lorg/telegram/messenger/MessagesStorage;
 
     move-result-object v1
@@ -3082,7 +3082,7 @@
 
     invoke-virtual {v1, v0, v2}, Lorg/telegram/messenger/MessagesStorage;->updateUserInfo(Lorg/telegram/tgnet/TLRPC$UserFull;Z)V
 
-    .line 257
+    .line 256
     iget v0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->currentAccount:I
 
     invoke-static {v0}, Lorg/telegram/messenger/NotificationCenter;->getInstance(I)Lorg/telegram/messenger/NotificationCenter;
@@ -3097,7 +3097,7 @@
 
     invoke-virtual {v0, v1, v4}, Lorg/telegram/messenger/NotificationCenter;->postNotificationName(I[Ljava/lang/Object;)V
 
-    .line 259
+    .line 258
     iget-object v0, p1, Lorg/telegram/tgnet/TLRPC$TL_photos_photo;->photo:Lorg/telegram/tgnet/TLRPC$Photo;
 
     iget-object v0, v0, Lorg/telegram/tgnet/TLRPC$Photo;->sizes:Ljava/util/ArrayList;
@@ -3108,7 +3108,7 @@
 
     move-result-object v0
 
-    .line 260
+    .line 259
     iget-object p1, p1, Lorg/telegram/tgnet/TLRPC$TL_photos_photo;->photo:Lorg/telegram/tgnet/TLRPC$Photo;
 
     iget-object p1, p1, Lorg/telegram/tgnet/TLRPC$Photo;->sizes:Ljava/util/ArrayList;
@@ -3121,12 +3121,12 @@
 
     if-eqz v0, :cond_0
 
-    .line 261
+    .line 260
     iget-object v1, p0, Lorg/telegram/ui/PrivacyControlActivity;->avatarForRest:Lorg/telegram/tgnet/TLRPC$PhotoSize;
 
     if-eqz v1, :cond_0
 
-    .line 262
+    .line 261
     iget v1, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->currentAccount:I
 
     invoke-static {v1}, Lorg/telegram/messenger/FileLoader;->getInstance(I)Lorg/telegram/messenger/FileLoader;
@@ -3137,7 +3137,7 @@
 
     move-result-object v1
 
-    .line 263
+    .line 262
     iget v4, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->currentAccount:I
 
     invoke-static {v4}, Lorg/telegram/messenger/FileLoader;->getInstance(I)Lorg/telegram/messenger/FileLoader;
@@ -3150,10 +3150,10 @@
 
     move-result-object v4
 
-    .line 264
+    .line 263
     invoke-virtual {v4, v1}, Ljava/io/File;->renameTo(Ljava/io/File;)Z
 
-    .line 265
+    .line 264
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -3186,7 +3186,7 @@
 
     move-result-object v1
 
-    .line 266
+    .line 265
     new-instance v6, Ljava/lang/StringBuilder;
 
     invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
@@ -3211,7 +3211,7 @@
 
     move-result-object v4
 
-    .line 267
+    .line 266
     invoke-static {}, Lorg/telegram/messenger/ImageLoader;->getInstance()Lorg/telegram/messenger/ImageLoader;
 
     move-result-object v5
@@ -3227,12 +3227,12 @@
     :cond_0
     if-eqz p1, :cond_1
 
-    .line 270
+    .line 269
     iget-object v0, p0, Lorg/telegram/ui/PrivacyControlActivity;->avatarForRest:Lorg/telegram/tgnet/TLRPC$PhotoSize;
 
     if-eqz v0, :cond_1
 
-    .line 271
+    .line 270
     iget v0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->currentAccount:I
 
     invoke-static {v0}, Lorg/telegram/messenger/FileLoader;->getInstance(I)Lorg/telegram/messenger/FileLoader;
@@ -3243,7 +3243,7 @@
 
     move-result-object p1
 
-    .line 272
+    .line 271
     iget v0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->currentAccount:I
 
     invoke-static {v0}, Lorg/telegram/messenger/FileLoader;->getInstance(I)Lorg/telegram/messenger/FileLoader;
@@ -3258,7 +3258,7 @@
 
     move-result-object v0
 
-    .line 273
+    .line 272
     invoke-virtual {v0, p1}, Ljava/io/File;->renameTo(Ljava/io/File;)Z
 
     :cond_1
@@ -3268,7 +3268,7 @@
 .method private synthetic lambda$didUploadPhoto$2(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
     .locals 0
 
-    .line 250
+    .line 249
     new-instance p2, Lorg/telegram/ui/PrivacyControlActivity$$ExternalSyntheticLambda5;
 
     invoke-direct {p2, p0, p1}, Lorg/telegram/ui/PrivacyControlActivity$$ExternalSyntheticLambda5;-><init>(Lorg/telegram/ui/PrivacyControlActivity;Lorg/telegram/tgnet/TLObject;)V
@@ -3281,22 +3281,22 @@
 .method private synthetic lambda$didUploadPhoto$3(Lorg/telegram/tgnet/TLRPC$PhotoSize;Lorg/telegram/tgnet/TLRPC$InputFile;Lorg/telegram/tgnet/TLRPC$InputFile;DLorg/telegram/tgnet/TLRPC$VideoSize;Lorg/telegram/tgnet/TLRPC$PhotoSize;)V
     .locals 2
 
-    .line 227
+    .line 226
     iput-object p1, p0, Lorg/telegram/ui/PrivacyControlActivity;->avatarForRest:Lorg/telegram/tgnet/TLRPC$PhotoSize;
 
     const/4 v0, 0x0
 
-    .line 228
+    .line 227
     iput-object v0, p0, Lorg/telegram/ui/PrivacyControlActivity;->avatarForRestPhoto:Lorg/telegram/tgnet/TLRPC$Photo;
 
-    .line 229
+    .line 228
     invoke-direct {p0}, Lorg/telegram/ui/PrivacyControlActivity;->updateAvatarForRestInfo()V
 
     if-nez p2, :cond_0
 
     if-eqz p3, :cond_4
 
-    .line 231
+    .line 230
     :cond_0
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_photos_uploadProfilePhoto;
 
@@ -3306,10 +3306,10 @@
 
     if-eqz p2, :cond_1
 
-    .line 233
+    .line 232
     iput-object p2, v0, Lorg/telegram/tgnet/TLRPC$TL_photos_uploadProfilePhoto;->file:Lorg/telegram/tgnet/TLRPC$InputFile;
 
-    .line 234
+    .line 233
     iget p2, v0, Lorg/telegram/tgnet/TLRPC$TL_photos_uploadProfilePhoto;->flags:I
 
     or-int/2addr p2, v1
@@ -3319,49 +3319,49 @@
     :cond_1
     if-eqz p3, :cond_2
 
-    .line 237
+    .line 236
     iput-object p3, v0, Lorg/telegram/tgnet/TLRPC$TL_photos_uploadProfilePhoto;->video:Lorg/telegram/tgnet/TLRPC$InputFile;
 
-    .line 238
+    .line 237
     iget p2, v0, Lorg/telegram/tgnet/TLRPC$TL_photos_uploadProfilePhoto;->flags:I
 
     or-int/lit8 p2, p2, 0x2
 
     iput p2, v0, Lorg/telegram/tgnet/TLRPC$TL_photos_uploadProfilePhoto;->flags:I
 
-    .line 239
+    .line 238
     iput-wide p4, v0, Lorg/telegram/tgnet/TLRPC$TL_photos_uploadProfilePhoto;->video_start_ts:D
 
     or-int/lit8 p2, p2, 0x4
 
-    .line 240
+    .line 239
     iput p2, v0, Lorg/telegram/tgnet/TLRPC$TL_photos_uploadProfilePhoto;->flags:I
 
     :cond_2
     if-eqz p6, :cond_3
 
-    .line 243
+    .line 242
     iput-object p6, v0, Lorg/telegram/tgnet/TLRPC$TL_photos_uploadProfilePhoto;->video_emoji_markup:Lorg/telegram/tgnet/TLRPC$VideoSize;
 
-    .line 244
+    .line 243
     iget p2, v0, Lorg/telegram/tgnet/TLRPC$TL_photos_uploadProfilePhoto;->flags:I
 
     or-int/lit8 p2, p2, 0x10
 
     iput p2, v0, Lorg/telegram/tgnet/TLRPC$TL_photos_uploadProfilePhoto;->flags:I
 
-    .line 246
+    .line 245
     :cond_3
     iput-boolean v1, v0, Lorg/telegram/tgnet/TLRPC$TL_photos_uploadProfilePhoto;->fallback:Z
 
-    .line 247
+    .line 246
     iget p2, v0, Lorg/telegram/tgnet/TLRPC$TL_photos_uploadProfilePhoto;->flags:I
 
     or-int/lit8 p2, p2, 0x8
 
     iput p2, v0, Lorg/telegram/tgnet/TLRPC$TL_photos_uploadProfilePhoto;->flags:I
 
-    .line 250
+    .line 249
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getConnectionsManager()Lorg/telegram/tgnet/ConnectionsManager;
 
     move-result-object p2
@@ -3372,29 +3372,29 @@
 
     invoke-virtual {p2, v0, p3}, Lorg/telegram/tgnet/ConnectionsManager;->sendRequest(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/RequestDelegate;)I
 
-    .line 278
+    .line 277
     new-instance p2, Lorg/telegram/tgnet/TLRPC$TL_user;
 
     invoke-direct {p2}, Lorg/telegram/tgnet/TLRPC$TL_user;-><init>()V
 
-    .line 279
+    .line 278
     new-instance p3, Lorg/telegram/tgnet/TLRPC$TL_userProfilePhoto;
 
     invoke-direct {p3}, Lorg/telegram/tgnet/TLRPC$TL_userProfilePhoto;-><init>()V
 
     iput-object p3, p2, Lorg/telegram/tgnet/TLRPC$User;->photo:Lorg/telegram/tgnet/TLRPC$UserProfilePhoto;
 
-    .line 280
+    .line 279
     iget-object p1, p1, Lorg/telegram/tgnet/TLRPC$PhotoSize;->location:Lorg/telegram/tgnet/TLRPC$FileLocation;
 
     iput-object p1, p3, Lorg/telegram/tgnet/TLRPC$UserProfilePhoto;->photo_small:Lorg/telegram/tgnet/TLRPC$FileLocation;
 
-    .line 281
+    .line 280
     iget-object p1, p7, Lorg/telegram/tgnet/TLRPC$PhotoSize;->location:Lorg/telegram/tgnet/TLRPC$FileLocation;
 
     iput-object p1, p3, Lorg/telegram/tgnet/TLRPC$UserProfilePhoto;->photo_big:Lorg/telegram/tgnet/TLRPC$FileLocation;
 
-    .line 282
+    .line 281
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getUserConfig()Lorg/telegram/messenger/UserConfig;
 
     move-result-object p1
@@ -3407,7 +3407,7 @@
 
     iput-object p1, p2, Lorg/telegram/tgnet/TLRPC$User;->first_name:Ljava/lang/String;
 
-    .line 283
+    .line 282
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getUserConfig()Lorg/telegram/messenger/UserConfig;
 
     move-result-object p1
@@ -3420,7 +3420,7 @@
 
     iput-object p1, p2, Lorg/telegram/tgnet/TLRPC$User;->last_name:Ljava/lang/String;
 
-    .line 284
+    .line 283
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getUserConfig()Lorg/telegram/messenger/UserConfig;
 
     move-result-object p1
@@ -3433,7 +3433,7 @@
 
     iput-wide p3, p2, Lorg/telegram/tgnet/TLRPC$User;->access_hash:J
 
-    .line 285
+    .line 284
     invoke-static {p0}, Lorg/telegram/ui/Components/BulletinFactory;->of(Lorg/telegram/ui/ActionBar/BaseFragment;)Lorg/telegram/ui/Components/BulletinFactory;
 
     move-result-object p1
@@ -3459,7 +3459,7 @@
     :cond_4
     const/4 p1, 0x0
 
-    .line 287
+    .line 286
     invoke-direct {p0, p1}, Lorg/telegram/ui/PrivacyControlActivity;->updateRows(Z)V
 
     return-void
@@ -3468,10 +3468,10 @@
 .method private synthetic lambda$processDone$14(Landroid/content/SharedPreferences;Landroid/content/DialogInterface;I)V
     .locals 0
 
-    .line 1201
+    .line 1200
     invoke-direct {p0}, Lorg/telegram/ui/PrivacyControlActivity;->applyCurrentPrivacySettings()V
 
-    .line 1202
+    .line 1201
     invoke-interface {p1}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
 
     move-result-object p1
@@ -3496,7 +3496,7 @@
 
     new-array v0, v0, [Ljava/lang/Object;
 
-    .line 114
+    .line 113
     iget v1, p0, Lorg/telegram/ui/PrivacyControlActivity;->rulesType:I
 
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -3517,7 +3517,7 @@
 .method private processDone()V
     .locals 4
 
-    .line 1179
+    .line 1178
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
 
     move-result-object v0
@@ -3526,7 +3526,7 @@
 
     return-void
 
-    .line 1184
+    .line 1183
     :cond_0
     iget v0, p0, Lorg/telegram/ui/PrivacyControlActivity;->rulesType:I
 
@@ -3534,12 +3534,12 @@
 
     if-ne v0, v1, :cond_1
 
-    .line 1185
+    .line 1184
     invoke-direct {p0}, Lorg/telegram/ui/PrivacyControlActivity;->processWalletPrivacyChanges()V
 
     return-void
 
-    .line 1189
+    .line 1188
     :cond_1
     iget v1, p0, Lorg/telegram/ui/PrivacyControlActivity;->currentType:I
 
@@ -3547,7 +3547,7 @@
 
     if-nez v0, :cond_3
 
-    .line 1190
+    .line 1189
     invoke-static {}, Lorg/telegram/messenger/MessagesController;->getGlobalMainSettings()Landroid/content/SharedPreferences;
 
     move-result-object v0
@@ -3556,14 +3556,14 @@
 
     const-string v2, "privacyAlertShowed"
 
-    .line 1191
+    .line 1190
     invoke-interface {v0, v2, v1}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
 
     move-result v1
 
     if-nez v1, :cond_3
 
-    .line 1193
+    .line 1192
     new-instance v1, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
@@ -3572,14 +3572,14 @@
 
     invoke-direct {v1, v2}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
-    .line 1194
+    .line 1193
     iget v2, p0, Lorg/telegram/ui/PrivacyControlActivity;->rulesType:I
 
     const/4 v3, 0x1
 
     if-ne v2, v3, :cond_2
 
-    .line 1195
+    .line 1194
     sget v2, Lorg/telegram/messenger/R$string;->WhoCanAddMeInfo:I
 
     const-string v3, "WhoCanAddMeInfo"
@@ -3592,7 +3592,7 @@
 
     goto :goto_0
 
-    .line 1197
+    .line 1196
     :cond_2
     sget v2, Lorg/telegram/messenger/R$string;->CustomHelp:I
 
@@ -3604,7 +3604,7 @@
 
     invoke-virtual {v1, v2}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setMessage(Ljava/lang/CharSequence;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 1199
+    .line 1198
     :goto_0
     sget v2, Lorg/telegram/messenger/R$string;->AppName:I
 
@@ -3616,7 +3616,7 @@
 
     invoke-virtual {v1, v2}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setTitle(Ljava/lang/CharSequence;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 1200
+    .line 1199
     sget v2, Lorg/telegram/messenger/R$string;->OK:I
 
     const-string v3, "OK"
@@ -3631,7 +3631,7 @@
 
     invoke-virtual {v1, v2, v3}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setPositiveButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 1204
+    .line 1203
     sget v0, Lorg/telegram/messenger/R$string;->Cancel:I
 
     const-string v2, "Cancel"
@@ -3644,7 +3644,7 @@
 
     invoke-virtual {v1, v0, v2}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setNegativeButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 1205
+    .line 1204
     invoke-virtual {v1}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->create()Lorg/telegram/ui/ActionBar/AlertDialog;
 
     move-result-object v0
@@ -3653,7 +3653,7 @@
 
     return-void
 
-    .line 1209
+    .line 1208
     :cond_3
     invoke-direct {p0}, Lorg/telegram/ui/PrivacyControlActivity;->applyCurrentPrivacySettings()V
 
@@ -3663,12 +3663,12 @@
 .method private processWalletPrivacyChanges()V
     .locals 7
 
-    .line 151
-    iget-object v0, p0, Lorg/telegram/ui/PrivacyControlActivity;->presenter:Lcom/smedialink/ui/wallet/crypto/settings/privacy/WalletPrivacySettingPresenter;
+    .line 150
+    iget-object v0, p0, Lorg/telegram/ui/PrivacyControlActivity;->presenter:Lcom/iMe/ui/wallet/crypto/settings/privacy/WalletPrivacySettingPresenter;
 
     if-eqz v0, :cond_0
 
-    .line 152
+    .line 151
     iget-object v1, p0, Lorg/telegram/ui/PrivacyControlActivity;->initialPlus:Ljava/util/ArrayList;
 
     iget-object v2, p0, Lorg/telegram/ui/PrivacyControlActivity;->currentPlus:Ljava/util/ArrayList;
@@ -3681,7 +3681,7 @@
 
     iget v6, p0, Lorg/telegram/ui/PrivacyControlActivity;->currentAccountRankAccess:I
 
-    invoke-virtual/range {v0 .. v6}, Lcom/smedialink/ui/wallet/crypto/settings/privacy/WalletPrivacySettingPresenter;->savePrivacySettings(Ljava/util/ArrayList;Ljava/util/ArrayList;IIII)V
+    invoke-virtual/range {v0 .. v6}, Lcom/iMe/ui/wallet/crypto/settings/privacy/WalletPrivacySettingPresenter;->savePrivacySettings(Ljava/util/ArrayList;Ljava/util/ArrayList;IIII)V
 
     :cond_0
     return-void
@@ -3690,12 +3690,12 @@
 .method private setMessageText()V
     .locals 5
 
-    .line 1139
+    .line 1138
     iget-object v0, p0, Lorg/telegram/ui/PrivacyControlActivity;->messageCell:Lorg/telegram/ui/PrivacyControlActivity$MessageCell;
 
     if-eqz v0, :cond_2
 
-    .line 1140
+    .line 1139
     invoke-static {v0}, Lorg/telegram/ui/PrivacyControlActivity$MessageCell;->access$700(Lorg/telegram/ui/PrivacyControlActivity$MessageCell;)Lorg/telegram/messenger/MessageObject;
 
     move-result-object v0
@@ -3710,14 +3710,14 @@
 
     iput-object v1, v0, Lorg/telegram/tgnet/TLRPC$MessageFwdHeader;->from_id:Lorg/telegram/tgnet/TLRPC$Peer;
 
-    .line 1141
+    .line 1140
     iget v0, p0, Lorg/telegram/ui/PrivacyControlActivity;->currentType:I
 
     const-wide/16 v1, 0x1
 
     if-nez v0, :cond_0
 
-    .line 1142
+    .line 1141
     iget-object v0, p0, Lorg/telegram/ui/PrivacyControlActivity;->messageCell:Lorg/telegram/ui/PrivacyControlActivity$MessageCell;
 
     invoke-static {v0}, Lorg/telegram/ui/PrivacyControlActivity$MessageCell;->access$800(Lorg/telegram/ui/PrivacyControlActivity$MessageCell;)Lorg/telegram/ui/Components/HintView;
@@ -3734,7 +3734,7 @@
 
     invoke-virtual {v0, v3}, Lorg/telegram/ui/Components/HintView;->setOverrideText(Ljava/lang/String;)V
 
-    .line 1143
+    .line 1142
     iget-object v0, p0, Lorg/telegram/ui/PrivacyControlActivity;->messageCell:Lorg/telegram/ui/PrivacyControlActivity$MessageCell;
 
     invoke-static {v0}, Lorg/telegram/ui/PrivacyControlActivity$MessageCell;->access$700(Lorg/telegram/ui/PrivacyControlActivity$MessageCell;)Lorg/telegram/messenger/MessageObject;
@@ -3756,7 +3756,7 @@
 
     if-ne v0, v3, :cond_1
 
-    .line 1145
+    .line 1144
     iget-object v0, p0, Lorg/telegram/ui/PrivacyControlActivity;->messageCell:Lorg/telegram/ui/PrivacyControlActivity$MessageCell;
 
     invoke-static {v0}, Lorg/telegram/ui/PrivacyControlActivity$MessageCell;->access$800(Lorg/telegram/ui/PrivacyControlActivity$MessageCell;)Lorg/telegram/ui/Components/HintView;
@@ -3773,7 +3773,7 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/HintView;->setOverrideText(Ljava/lang/String;)V
 
-    .line 1146
+    .line 1145
     iget-object v0, p0, Lorg/telegram/ui/PrivacyControlActivity;->messageCell:Lorg/telegram/ui/PrivacyControlActivity$MessageCell;
 
     invoke-static {v0}, Lorg/telegram/ui/PrivacyControlActivity$MessageCell;->access$700(Lorg/telegram/ui/PrivacyControlActivity$MessageCell;)Lorg/telegram/messenger/MessageObject;
@@ -3792,7 +3792,7 @@
 
     goto :goto_0
 
-    .line 1148
+    .line 1147
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/PrivacyControlActivity;->messageCell:Lorg/telegram/ui/PrivacyControlActivity$MessageCell;
 
@@ -3810,7 +3810,7 @@
 
     invoke-virtual {v0, v3}, Lorg/telegram/ui/Components/HintView;->setOverrideText(Ljava/lang/String;)V
 
-    .line 1149
+    .line 1148
     iget-object v0, p0, Lorg/telegram/ui/PrivacyControlActivity;->messageCell:Lorg/telegram/ui/PrivacyControlActivity$MessageCell;
 
     invoke-static {v0}, Lorg/telegram/ui/PrivacyControlActivity$MessageCell;->access$700(Lorg/telegram/ui/PrivacyControlActivity$MessageCell;)Lorg/telegram/messenger/MessageObject;
@@ -3825,7 +3825,7 @@
 
     iput-wide v1, v0, Lorg/telegram/tgnet/TLRPC$Peer;->user_id:J
 
-    .line 1151
+    .line 1150
     :goto_0
     iget-object v0, p0, Lorg/telegram/ui/PrivacyControlActivity;->messageCell:Lorg/telegram/ui/PrivacyControlActivity$MessageCell;
 
@@ -3842,7 +3842,7 @@
 .method private showErrorAlert()V
     .locals 3
 
-    .line 858
+    .line 857
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
 
     move-result-object v0
@@ -3851,7 +3851,7 @@
 
     return-void
 
-    .line 861
+    .line 860
     :cond_0
     new-instance v0, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
@@ -3861,7 +3861,7 @@
 
     invoke-direct {v0, v1}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
-    .line 862
+    .line 861
     sget v1, Lorg/telegram/messenger/R$string;->AppName:I
 
     const-string v2, "AppName"
@@ -3872,7 +3872,7 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setTitle(Ljava/lang/CharSequence;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 863
+    .line 862
     sget v1, Lorg/telegram/messenger/R$string;->PrivacyFloodControlError:I
 
     const-string v2, "PrivacyFloodControlError"
@@ -3883,7 +3883,7 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setMessage(Ljava/lang/CharSequence;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 864
+    .line 863
     sget v1, Lorg/telegram/messenger/R$string;->OK:I
 
     const-string v2, "OK"
@@ -3896,7 +3896,7 @@
 
     invoke-virtual {v0, v1, v2}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setPositiveButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 865
+    .line 864
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->create()Lorg/telegram/ui/ActionBar/AlertDialog;
 
     move-result-object v0
@@ -3909,19 +3909,19 @@
 .method private updateAvatarForRestInfo()V
     .locals 5
 
-    .line 292
+    .line 291
     iget-object v0, p0, Lorg/telegram/ui/PrivacyControlActivity;->setAvatarCell:Lorg/telegram/ui/Cells/TextCell;
 
     if-eqz v0, :cond_1
 
-    .line 293
+    .line 292
     iget-object v1, p0, Lorg/telegram/ui/PrivacyControlActivity;->avatarForRest:Lorg/telegram/tgnet/TLRPC$PhotoSize;
 
     const/4 v2, 0x0
 
     if-nez v1, :cond_0
 
-    .line 294
+    .line 293
     invoke-virtual {v0}, Lorg/telegram/ui/Cells/TextCell;->getTextView()Lorg/telegram/ui/ActionBar/SimpleTextView;
 
     move-result-object v0
@@ -3938,14 +3938,14 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setText(Ljava/lang/CharSequence;)Z
 
-    .line 295
+    .line 294
     iget-object v0, p0, Lorg/telegram/ui/PrivacyControlActivity;->setAvatarCell:Lorg/telegram/ui/Cells/TextCell;
 
     invoke-virtual {v0, v2}, Lorg/telegram/ui/Cells/TextCell;->setNeedDivider(Z)V
 
     goto :goto_0
 
-    .line 297
+    .line 296
     :cond_0
     invoke-virtual {v0}, Lorg/telegram/ui/Cells/TextCell;->getTextView()Lorg/telegram/ui/ActionBar/SimpleTextView;
 
@@ -3963,14 +3963,14 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setText(Ljava/lang/CharSequence;)Z
 
-    .line 298
+    .line 297
     iget-object v0, p0, Lorg/telegram/ui/PrivacyControlActivity;->setAvatarCell:Lorg/telegram/ui/Cells/TextCell;
 
     const/4 v1, 0x1
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Cells/TextCell;->setNeedDivider(Z)V
 
-    .line 301
+    .line 300
     :cond_1
     :goto_0
     iget-object v0, p0, Lorg/telegram/ui/PrivacyControlActivity;->oldAvatarView:Lorg/telegram/ui/Components/BackupImageView;
@@ -3981,7 +3981,7 @@
 
     if-eqz v1, :cond_3
 
-    .line 302
+    .line 301
     iget-object v2, p0, Lorg/telegram/ui/PrivacyControlActivity;->avatarForRestPhoto:Lorg/telegram/tgnet/TLRPC$Photo;
 
     const/4 v3, 0x0
@@ -3990,7 +3990,7 @@
 
     if-eqz v2, :cond_2
 
-    .line 303
+    .line 302
     invoke-static {v1, v2}, Lorg/telegram/messenger/ImageLocation;->getForPhoto(Lorg/telegram/tgnet/TLRPC$PhotoSize;Lorg/telegram/tgnet/TLRPC$Photo;)Lorg/telegram/messenger/ImageLocation;
 
     move-result-object v1
@@ -4009,7 +4009,7 @@
 
     goto :goto_1
 
-    .line 305
+    .line 304
     :cond_2
     iget-object v1, v1, Lorg/telegram/tgnet/TLRPC$PhotoSize;->location:Lorg/telegram/tgnet/TLRPC$FileLocation;
 
@@ -4037,17 +4037,17 @@
 .method private updateDoneButton()V
     .locals 5
 
-    .line 744
+    .line 743
     invoke-direct {p0}, Lorg/telegram/ui/PrivacyControlActivity;->hasChanges()Z
 
     move-result v0
 
-    .line 745
+    .line 744
     iget-object v1, p0, Lorg/telegram/ui/PrivacyControlActivity;->doneButton:Landroid/view/View;
 
     invoke-virtual {v1, v0}, Landroid/view/View;->setEnabled(Z)V
 
-    .line 746
+    .line 745
     iget-object v1, p0, Lorg/telegram/ui/PrivacyControlActivity;->doneButton:Landroid/view/View;
 
     invoke-virtual {v1}, Landroid/view/View;->animate()Landroid/view/ViewPropertyAnimator;
@@ -4116,17 +4116,17 @@
 
     if-eqz p1, :cond_0
 
-    .line 988
+    .line 987
     new-instance v1, Lorg/telegram/ui/PrivacyControlActivity$DiffCallback;
 
     invoke-direct {v1, p0, v0}, Lorg/telegram/ui/PrivacyControlActivity$DiffCallback;-><init>(Lorg/telegram/ui/PrivacyControlActivity;Lorg/telegram/ui/PrivacyControlActivity$1;)V
 
-    .line 989
+    .line 988
     iget-object v0, v1, Lorg/telegram/ui/PrivacyControlActivity$DiffCallback;->oldPositionToItem:Landroid/util/SparseIntArray;
 
     invoke-virtual {v1, v0}, Lorg/telegram/ui/PrivacyControlActivity$DiffCallback;->fillPositions(Landroid/util/SparseIntArray;)V
 
-    .line 990
+    .line 989
     iget v0, p0, Lorg/telegram/ui/PrivacyControlActivity;->rowCount:I
 
     iput v0, v1, Lorg/telegram/ui/PrivacyControlActivity$DiffCallback;->oldRowCount:I
@@ -4136,21 +4136,21 @@
     :cond_0
     const/4 v1, -0x1
 
-    .line 992
+    .line 991
     iput v1, p0, Lorg/telegram/ui/PrivacyControlActivity;->photoForRestRow:I
 
-    .line 993
+    .line 992
     iput v1, p0, Lorg/telegram/ui/PrivacyControlActivity;->currentPhotoForRestRow:I
 
-    .line 994
+    .line 993
     iput v1, p0, Lorg/telegram/ui/PrivacyControlActivity;->photoForRestDescriptionRow:I
 
     const/4 v2, 0x0
 
-    .line 995
+    .line 994
     iput v2, p0, Lorg/telegram/ui/PrivacyControlActivity;->rowCount:I
 
-    .line 996
+    .line 995
     iget v3, p0, Lorg/telegram/ui/PrivacyControlActivity;->rulesType:I
 
     const/4 v4, 0x5
@@ -4163,18 +4163,18 @@
 
     add-int/2addr v6, v5
 
-    .line 997
+    .line 996
     iput v6, p0, Lorg/telegram/ui/PrivacyControlActivity;->rowCount:I
 
     iput v2, p0, Lorg/telegram/ui/PrivacyControlActivity;->messageRow:I
 
     goto :goto_0
 
-    .line 999
+    .line 998
     :cond_1
     iput v1, p0, Lorg/telegram/ui/PrivacyControlActivity;->messageRow:I
 
-    .line 1001
+    .line 1000
     :goto_0
     iget v6, p0, Lorg/telegram/ui/PrivacyControlActivity;->rowCount:I
 
@@ -4186,7 +4186,7 @@
 
     add-int/lit8 v6, v7, 0x1
 
-    .line 1002
+    .line 1001
     iput v6, p0, Lorg/telegram/ui/PrivacyControlActivity;->rowCount:I
 
     iput v7, p0, Lorg/telegram/ui/PrivacyControlActivity;->everybodyRow:I
@@ -4195,7 +4195,7 @@
 
     if-ne v3, v7, :cond_2
 
-    .line 1005
+    .line 1004
     iput v1, p0, Lorg/telegram/ui/PrivacyControlActivity;->myContactsRow:I
 
     goto :goto_1
@@ -4203,7 +4203,7 @@
     :cond_2
     add-int/lit8 v8, v6, 0x1
 
-    .line 1007
+    .line 1006
     iput v8, p0, Lorg/telegram/ui/PrivacyControlActivity;->rowCount:I
 
     iput v6, p0, Lorg/telegram/ui/PrivacyControlActivity;->myContactsRow:I
@@ -4235,12 +4235,12 @@
 
     if-eq v3, v4, :cond_3
 
-    .line 1010
+    .line 1009
     iput v1, p0, Lorg/telegram/ui/PrivacyControlActivity;->nobodyRow:I
 
     goto :goto_2
 
-    .line 1012
+    .line 1011
     :cond_3
     iget v4, p0, Lorg/telegram/ui/PrivacyControlActivity;->rowCount:I
 
@@ -4253,12 +4253,12 @@
     :goto_2
     if-ne v3, v6, :cond_4
 
-    .line 1014
+    .line 1013
     iget v4, p0, Lorg/telegram/ui/PrivacyControlActivity;->currentType:I
 
     if-ne v4, v5, :cond_4
 
-    .line 1015
+    .line 1014
     iget v4, p0, Lorg/telegram/ui/PrivacyControlActivity;->rowCount:I
 
     add-int/lit8 v6, v4, 0x1
@@ -4269,41 +4269,41 @@
 
     add-int/lit8 v4, v6, 0x1
 
-    .line 1016
+    .line 1015
     iput v4, p0, Lorg/telegram/ui/PrivacyControlActivity;->rowCount:I
 
     iput v6, p0, Lorg/telegram/ui/PrivacyControlActivity;->phoneSectionRow:I
 
     add-int/lit8 v6, v4, 0x1
 
-    .line 1017
+    .line 1016
     iput v6, p0, Lorg/telegram/ui/PrivacyControlActivity;->rowCount:I
 
     iput v4, p0, Lorg/telegram/ui/PrivacyControlActivity;->phoneEverybodyRow:I
 
     add-int/lit8 v4, v6, 0x1
 
-    .line 1018
+    .line 1017
     iput v4, p0, Lorg/telegram/ui/PrivacyControlActivity;->rowCount:I
 
     iput v6, p0, Lorg/telegram/ui/PrivacyControlActivity;->phoneContactsRow:I
 
     goto :goto_3
 
-    .line 1020
+    .line 1019
     :cond_4
     iput v1, p0, Lorg/telegram/ui/PrivacyControlActivity;->phoneDetailRow:I
 
-    .line 1021
+    .line 1020
     iput v1, p0, Lorg/telegram/ui/PrivacyControlActivity;->phoneSectionRow:I
 
-    .line 1022
+    .line 1021
     iput v1, p0, Lorg/telegram/ui/PrivacyControlActivity;->phoneEverybodyRow:I
 
-    .line 1023
+    .line 1022
     iput v1, p0, Lorg/telegram/ui/PrivacyControlActivity;->phoneContactsRow:I
 
-    .line 1025
+    .line 1024
     :goto_3
     iget v4, p0, Lorg/telegram/ui/PrivacyControlActivity;->rowCount:I
 
@@ -4315,12 +4315,12 @@
 
     if-ne v3, v7, :cond_5
 
-    .line 1027
+    .line 1026
     iget v4, p0, Lorg/telegram/ui/PrivacyControlActivity;->currentType:I
 
     if-nez v4, :cond_5
 
-    .line 1028
+    .line 1027
     iput v1, p0, Lorg/telegram/ui/PrivacyControlActivity;->shareSectionRow:I
 
     goto :goto_4
@@ -4328,7 +4328,7 @@
     :cond_5
     add-int/lit8 v4, v6, 0x1
 
-    .line 1030
+    .line 1029
     iput v4, p0, Lorg/telegram/ui/PrivacyControlActivity;->rowCount:I
 
     iput v6, p0, Lorg/telegram/ui/PrivacyControlActivity;->shareSectionRow:I
@@ -4336,12 +4336,12 @@
     :goto_4
     if-ne v3, v7, :cond_6
 
-    .line 1032
+    .line 1031
     iget v4, p0, Lorg/telegram/ui/PrivacyControlActivity;->currentType:I
 
     if-ne v4, v5, :cond_6
 
-    .line 1033
+    .line 1032
     iget v4, p0, Lorg/telegram/ui/PrivacyControlActivity;->rowCount:I
 
     add-int/lit8 v6, v4, 0x1
@@ -4352,7 +4352,7 @@
 
     goto :goto_6
 
-    .line 1035
+    .line 1034
     :cond_6
     iget v4, p0, Lorg/telegram/ui/PrivacyControlActivity;->currentType:I
 
@@ -4362,13 +4362,13 @@
 
     goto :goto_5
 
-    .line 1038
+    .line 1037
     :cond_7
     iput v1, p0, Lorg/telegram/ui/PrivacyControlActivity;->alwaysShareRow:I
 
     goto :goto_6
 
-    .line 1036
+    .line 1035
     :cond_8
     :goto_5
     iget v4, p0, Lorg/telegram/ui/PrivacyControlActivity;->rowCount:I
@@ -4382,12 +4382,12 @@
     :goto_6
     if-ne v3, v7, :cond_9
 
-    .line 1042
+    .line 1041
     iput v1, p0, Lorg/telegram/ui/PrivacyControlActivity;->neverShareRow:I
 
     goto :goto_8
 
-    .line 1044
+    .line 1043
     :cond_9
     iget v4, p0, Lorg/telegram/ui/PrivacyControlActivity;->currentType:I
 
@@ -4397,13 +4397,13 @@
 
     goto :goto_7
 
-    .line 1047
+    .line 1046
     :cond_a
     iput v1, p0, Lorg/telegram/ui/PrivacyControlActivity;->neverShareRow:I
 
     goto :goto_8
 
-    .line 1045
+    .line 1044
     :cond_b
     :goto_7
     iget v4, p0, Lorg/telegram/ui/PrivacyControlActivity;->rowCount:I
@@ -4417,17 +4417,17 @@
     :goto_8
     if-ne v3, v7, :cond_c
 
-    .line 1050
+    .line 1049
     iget v4, p0, Lorg/telegram/ui/PrivacyControlActivity;->currentType:I
 
     if-nez v4, :cond_c
 
-    .line 1051
+    .line 1050
     iput v1, p0, Lorg/telegram/ui/PrivacyControlActivity;->shareSectionRow:I
 
     goto :goto_9
 
-    .line 1053
+    .line 1052
     :cond_c
     iget v4, p0, Lorg/telegram/ui/PrivacyControlActivity;->rowCount:I
 
@@ -4440,7 +4440,7 @@
     :goto_9
     if-ne v3, v9, :cond_d
 
-    .line 1055
+    .line 1054
     iget v4, p0, Lorg/telegram/ui/PrivacyControlActivity;->rowCount:I
 
     add-int/lit8 v6, v4, 0x1
@@ -4451,34 +4451,34 @@
 
     add-int/lit8 v4, v6, 0x1
 
-    .line 1056
+    .line 1055
     iput v4, p0, Lorg/telegram/ui/PrivacyControlActivity;->rowCount:I
 
     iput v6, p0, Lorg/telegram/ui/PrivacyControlActivity;->p2pRow:I
 
     add-int/lit8 v6, v4, 0x1
 
-    .line 1057
+    .line 1056
     iput v6, p0, Lorg/telegram/ui/PrivacyControlActivity;->rowCount:I
 
     iput v4, p0, Lorg/telegram/ui/PrivacyControlActivity;->p2pDetailRow:I
 
     goto :goto_a
 
-    .line 1059
+    .line 1058
     :cond_d
     iput v1, p0, Lorg/telegram/ui/PrivacyControlActivity;->p2pSectionRow:I
 
-    .line 1060
+    .line 1059
     iput v1, p0, Lorg/telegram/ui/PrivacyControlActivity;->p2pRow:I
 
-    .line 1061
+    .line 1060
     iput v1, p0, Lorg/telegram/ui/PrivacyControlActivity;->p2pDetailRow:I
 
     :goto_a
     if-ne v3, v8, :cond_10
 
-    .line 1064
+    .line 1063
     iget-object v3, p0, Lorg/telegram/ui/PrivacyControlActivity;->currentMinus:Ljava/util/ArrayList;
 
     invoke-virtual {v3}, Ljava/util/ArrayList;->size()I
@@ -4493,7 +4493,7 @@
 
     if-ne v3, v5, :cond_10
 
-    .line 1065
+    .line 1064
     :cond_e
     iget v3, p0, Lorg/telegram/ui/PrivacyControlActivity;->rowCount:I
 
@@ -4503,19 +4503,19 @@
 
     iput v3, p0, Lorg/telegram/ui/PrivacyControlActivity;->photoForRestRow:I
 
-    .line 1066
+    .line 1065
     iget-object v3, p0, Lorg/telegram/ui/PrivacyControlActivity;->avatarForRest:Lorg/telegram/tgnet/TLRPC$PhotoSize;
 
     if-eqz v3, :cond_f
 
     add-int/lit8 v3, v4, 0x1
 
-    .line 1067
+    .line 1066
     iput v3, p0, Lorg/telegram/ui/PrivacyControlActivity;->rowCount:I
 
     iput v4, p0, Lorg/telegram/ui/PrivacyControlActivity;->currentPhotoForRestRow:I
 
-    .line 1069
+    .line 1068
     :cond_f
     iget v3, p0, Lorg/telegram/ui/PrivacyControlActivity;->rowCount:I
 
@@ -4525,13 +4525,13 @@
 
     iput v3, p0, Lorg/telegram/ui/PrivacyControlActivity;->photoForRestDescriptionRow:I
 
-    .line 1073
+    .line 1072
     :cond_10
     iget v3, p0, Lorg/telegram/ui/PrivacyControlActivity;->rulesType:I
 
     if-ne v3, v7, :cond_11
 
-    .line 1074
+    .line 1073
     iget v1, p0, Lorg/telegram/ui/PrivacyControlActivity;->rowCount:I
 
     add-int/lit8 v3, v1, 0x1
@@ -4542,28 +4542,28 @@
 
     add-int/lit8 v1, v3, 0x1
 
-    .line 1075
+    .line 1074
     iput v1, p0, Lorg/telegram/ui/PrivacyControlActivity;->rowCount:I
 
     iput v3, p0, Lorg/telegram/ui/PrivacyControlActivity;->rankEverybodyRow:I
 
     add-int/lit8 v3, v1, 0x1
 
-    .line 1076
+    .line 1075
     iput v3, p0, Lorg/telegram/ui/PrivacyControlActivity;->rowCount:I
 
     iput v1, p0, Lorg/telegram/ui/PrivacyControlActivity;->rankNobodyRow:I
 
     add-int/lit8 v1, v3, 0x1
 
-    .line 1077
+    .line 1076
     iput v1, p0, Lorg/telegram/ui/PrivacyControlActivity;->rowCount:I
 
     iput v3, p0, Lorg/telegram/ui/PrivacyControlActivity;->rankDetailsRow:I
 
     goto :goto_b
 
-    .line 1079
+    .line 1078
     :cond_11
     iput v1, p0, Lorg/telegram/ui/PrivacyControlActivity;->rankDetailsRow:I
 
@@ -4573,18 +4573,18 @@
 
     iput v1, p0, Lorg/telegram/ui/PrivacyControlActivity;->rankSectionRow:I
 
-    .line 1082
+    .line 1081
     :goto_b
     invoke-direct {p0}, Lorg/telegram/ui/PrivacyControlActivity;->setMessageText()V
 
-    .line 1084
+    .line 1083
     iget-object v1, p0, Lorg/telegram/ui/PrivacyControlActivity;->listAdapter:Lorg/telegram/ui/PrivacyControlActivity$ListAdapter;
 
     if-eqz v1, :cond_21
 
     if-eqz p1, :cond_20
 
-    .line 1086
+    .line 1085
     iget-object p1, p0, Lorg/telegram/ui/PrivacyControlActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-virtual {p1}, Landroid/view/ViewGroup;->getChildCount()I
@@ -4596,21 +4596,21 @@
     :goto_c
     if-ge v1, p1, :cond_1f
 
-    .line 1088
+    .line 1087
     iget-object v3, p0, Lorg/telegram/ui/PrivacyControlActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-virtual {v3, v1}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
     move-result-object v3
 
-    .line 1089
+    .line 1088
     instance-of v4, v3, Lorg/telegram/ui/Cells/RadioCell;
 
     if-nez v4, :cond_12
 
     goto/16 :goto_15
 
-    .line 1092
+    .line 1091
     :cond_12
     iget-object v4, p0, Lorg/telegram/ui/PrivacyControlActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
 
@@ -4622,16 +4622,16 @@
 
     goto/16 :goto_15
 
-    .line 1096
+    .line 1095
     :cond_13
     invoke-virtual {v4}, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->getAdapterPosition()I
 
     move-result v4
 
-    .line 1097
+    .line 1096
     check-cast v3, Lorg/telegram/ui/Cells/RadioCell;
 
-    .line 1099
+    .line 1098
     iget v6, p0, Lorg/telegram/ui/PrivacyControlActivity;->rankEverybodyRow:I
 
     if-eq v4, v6, :cond_1c
@@ -4642,7 +4642,7 @@
 
     goto :goto_12
 
-    .line 1108
+    .line 1107
     :cond_14
     iget v6, p0, Lorg/telegram/ui/PrivacyControlActivity;->everybodyRow:I
 
@@ -4658,7 +4658,7 @@
 
     goto :goto_f
 
-    .line 1120
+    .line 1119
     :cond_15
     iget v6, p0, Lorg/telegram/ui/PrivacyControlActivity;->phoneContactsRow:I
 
@@ -4671,7 +4671,7 @@
     :cond_16
     move v4, v2
 
-    .line 1125
+    .line 1124
     :goto_d
     iget v6, p0, Lorg/telegram/ui/PrivacyControlActivity;->currentSubType:I
 
@@ -4697,7 +4697,7 @@
 
     goto :goto_10
 
-    .line 1112
+    .line 1111
     :cond_19
     iget v6, p0, Lorg/telegram/ui/PrivacyControlActivity;->myContactsRow:I
 
@@ -4710,7 +4710,7 @@
     :cond_1a
     move v4, v5
 
-    .line 1117
+    .line 1116
     :goto_10
     iget v6, p0, Lorg/telegram/ui/PrivacyControlActivity;->currentType:I
 
@@ -4739,7 +4739,7 @@
     :cond_1d
     move v4, v5
 
-    .line 1106
+    .line 1105
     :goto_13
     iget v6, p0, Lorg/telegram/ui/PrivacyControlActivity;->currentAccountRankAccess:I
 
@@ -4760,13 +4760,13 @@
 
     goto :goto_c
 
-    .line 1129
+    .line 1128
     :cond_1f
     iget-object p1, v0, Lorg/telegram/ui/PrivacyControlActivity$DiffCallback;->newPositionToItem:Landroid/util/SparseIntArray;
 
     invoke-virtual {v0, p1}, Lorg/telegram/ui/PrivacyControlActivity$DiffCallback;->fillPositions(Landroid/util/SparseIntArray;)V
 
-    .line 1130
+    .line 1129
     invoke-static {v0}, Landroidx/recyclerview/widget/DiffUtil;->calculateDiff(Landroidx/recyclerview/widget/DiffUtil$Callback;)Landroidx/recyclerview/widget/DiffUtil$DiffResult;
 
     move-result-object p1
@@ -4775,14 +4775,14 @@
 
     invoke-virtual {p1, v0}, Landroidx/recyclerview/widget/DiffUtil$DiffResult;->dispatchUpdatesTo(Landroidx/recyclerview/widget/RecyclerView$Adapter;)V
 
-    .line 1131
+    .line 1130
     iget-object p1, p0, Lorg/telegram/ui/PrivacyControlActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->updateVisibleRows(Lorg/telegram/ui/Components/RecyclerListView;)V
 
     goto :goto_16
 
-    .line 1133
+    .line 1132
     :cond_20
     invoke-virtual {v1}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->notifyDataSetChanged()V
 
@@ -4796,7 +4796,7 @@
 .method public canBeginSlide()Z
     .locals 1
 
-    .line 1227
+    .line 1226
     invoke-direct {p0}, Lorg/telegram/ui/PrivacyControlActivity;->checkDiscard()Z
 
     move-result v0
@@ -4817,24 +4817,24 @@
 .method public createView(Landroid/content/Context;)Landroid/view/View;
     .locals 6
 
-    .line 508
-    invoke-super {p0, p1}, Lcom/smedialink/ui/base/mvp/MvpFragment;->createView(Landroid/content/Context;)Landroid/view/View;
+    .line 507
+    invoke-super {p0, p1}, Lcom/iMe/ui/base/mvp/MvpFragment;->createView(Landroid/content/Context;)Landroid/view/View;
 
-    .line 509
+    .line 508
     iget v0, p0, Lorg/telegram/ui/PrivacyControlActivity;->rulesType:I
 
     const/4 v1, 0x5
 
     if-ne v0, v1, :cond_0
 
-    .line 510
+    .line 509
     new-instance v0, Lorg/telegram/ui/PrivacyControlActivity$MessageCell;
 
     invoke-direct {v0, p0, p1}, Lorg/telegram/ui/PrivacyControlActivity$MessageCell;-><init>(Lorg/telegram/ui/PrivacyControlActivity;Landroid/content/Context;)V
 
     iput-object v0, p0, Lorg/telegram/ui/PrivacyControlActivity;->messageCell:Lorg/telegram/ui/PrivacyControlActivity$MessageCell;
 
-    .line 513
+    .line 512
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
@@ -4842,21 +4842,21 @@
 
     invoke-virtual {v0, v2}, Lorg/telegram/ui/ActionBar/ActionBar;->setBackButtonImage(I)V
 
-    .line 514
+    .line 513
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
     const/4 v2, 0x1
 
     invoke-virtual {v0, v2}, Lorg/telegram/ui/ActionBar/ActionBar;->setAllowOverlayTitle(Z)V
 
-    .line 516
+    .line 515
     iget v0, p0, Lorg/telegram/ui/PrivacyControlActivity;->rulesType:I
 
     const/16 v3, 0x65
 
     if-ne v0, v3, :cond_1
 
-    .line 517
+    .line 516
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
     sget v1, Lorg/telegram/messenger/R$string;->wallet_crypto_privacy_toolbar_title:I
@@ -4874,7 +4874,7 @@
 
     if-ne v0, v3, :cond_2
 
-    .line 520
+    .line 519
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
     sget v1, Lorg/telegram/messenger/R$string;->PrivacyPhone:I
@@ -4892,7 +4892,7 @@
     :cond_2
     if-ne v0, v1, :cond_3
 
-    .line 522
+    .line 521
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
     sget v1, Lorg/telegram/messenger/R$string;->PrivacyForwards:I
@@ -4912,7 +4912,7 @@
 
     if-ne v0, v1, :cond_4
 
-    .line 524
+    .line 523
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
     sget v1, Lorg/telegram/messenger/R$string;->PrivacyProfilePhoto:I
@@ -4932,7 +4932,7 @@
 
     if-ne v0, v1, :cond_5
 
-    .line 526
+    .line 525
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
     sget v1, Lorg/telegram/messenger/R$string;->PrivacyP2P:I
@@ -4952,7 +4952,7 @@
 
     if-ne v0, v1, :cond_6
 
-    .line 528
+    .line 527
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
     sget v1, Lorg/telegram/messenger/R$string;->Calls:I
@@ -4970,7 +4970,7 @@
     :cond_6
     if-ne v0, v2, :cond_7
 
-    .line 530
+    .line 529
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
     sget v1, Lorg/telegram/messenger/R$string;->GroupsAndChannels:I
@@ -4990,7 +4990,7 @@
 
     if-ne v0, v1, :cond_8
 
-    .line 532
+    .line 531
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
     sget v1, Lorg/telegram/messenger/R$string;->PrivacyVoiceMessages:I
@@ -5005,7 +5005,7 @@
 
     goto :goto_0
 
-    .line 534
+    .line 533
     :cond_8
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
@@ -5019,7 +5019,7 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/ActionBar;->setTitle(Ljava/lang/CharSequence;)V
 
-    .line 536
+    .line 535
     :goto_0
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
@@ -5029,14 +5029,14 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/ActionBar;->setActionBarMenuOnItemClick(Lorg/telegram/ui/ActionBar/ActionBar$ActionBarMenuOnItemClick;)V
 
-    .line 549
+    .line 548
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/ActionBar;->createMenu()Lorg/telegram/ui/ActionBar/ActionBarMenu;
 
     move-result-object v0
 
-    .line 550
+    .line 549
     sget v1, Lorg/telegram/messenger/R$drawable;->ic_ab_done:I
 
     const/16 v3, 0x38
@@ -5059,12 +5059,12 @@
 
     iput-object v0, p0, Lorg/telegram/ui/PrivacyControlActivity;->doneButton:Landroid/view/View;
 
-    .line 551
+    .line 550
     invoke-direct {p0}, Lorg/telegram/ui/PrivacyControlActivity;->hasChanges()Z
 
     move-result v0
 
-    .line 552
+    .line 551
     iget-object v1, p0, Lorg/telegram/ui/PrivacyControlActivity;->doneButton:Landroid/view/View;
 
     const/high16 v3, 0x3f800000    # 1.0f
@@ -5083,7 +5083,7 @@
     :goto_1
     invoke-virtual {v1, v5}, Landroid/view/View;->setAlpha(F)V
 
-    .line 553
+    .line 552
     iget-object v1, p0, Lorg/telegram/ui/PrivacyControlActivity;->doneButton:Landroid/view/View;
 
     if-eqz v0, :cond_a
@@ -5098,7 +5098,7 @@
     :goto_2
     invoke-virtual {v1, v5}, Landroid/view/View;->setScaleX(F)V
 
-    .line 554
+    .line 553
     iget-object v1, p0, Lorg/telegram/ui/PrivacyControlActivity;->doneButton:Landroid/view/View;
 
     if-eqz v0, :cond_b
@@ -5111,45 +5111,45 @@
     :goto_3
     invoke-virtual {v1, v3}, Landroid/view/View;->setScaleY(F)V
 
-    .line 555
+    .line 554
     iget-object v1, p0, Lorg/telegram/ui/PrivacyControlActivity;->doneButton:Landroid/view/View;
 
     invoke-virtual {v1, v0}, Landroid/view/View;->setEnabled(Z)V
 
-    .line 557
+    .line 556
     new-instance v0, Lorg/telegram/ui/PrivacyControlActivity$ListAdapter;
 
     invoke-direct {v0, p0, p1}, Lorg/telegram/ui/PrivacyControlActivity$ListAdapter;-><init>(Lorg/telegram/ui/PrivacyControlActivity;Landroid/content/Context;)V
 
     iput-object v0, p0, Lorg/telegram/ui/PrivacyControlActivity;->listAdapter:Lorg/telegram/ui/PrivacyControlActivity$ListAdapter;
 
-    .line 559
+    .line 558
     new-instance v0, Landroid/widget/FrameLayout;
 
     invoke-direct {v0, p1}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
     iput-object v0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->fragmentView:Landroid/view/View;
 
-    .line 560
+    .line 559
     check-cast v0, Landroid/widget/FrameLayout;
 
     const-string v1, "windowBackgroundGray"
 
-    .line 561
+    .line 560
     invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
 
     move-result v1
 
     invoke-virtual {v0, v1}, Landroid/widget/FrameLayout;->setBackgroundColor(I)V
 
-    .line 563
+    .line 562
     new-instance v1, Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-direct {v1, p1}, Lorg/telegram/ui/Components/RecyclerListView;-><init>(Landroid/content/Context;)V
 
     iput-object v1, p0, Lorg/telegram/ui/PrivacyControlActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
 
-    .line 564
+    .line 563
     new-instance v3, Landroidx/recyclerview/widget/LinearLayoutManager;
 
     const/4 v4, 0x0
@@ -5158,12 +5158,12 @@
 
     invoke-virtual {v1, v3}, Landroidx/recyclerview/widget/RecyclerView;->setLayoutManager(Landroidx/recyclerview/widget/RecyclerView$LayoutManager;)V
 
-    .line 565
+    .line 564
     iget-object p1, p0, Lorg/telegram/ui/PrivacyControlActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-virtual {p1, v4}, Lorg/telegram/ui/Components/RecyclerListView;->setVerticalScrollBarEnabled(Z)V
 
-    .line 566
+    .line 565
     iget-object p1, p0, Lorg/telegram/ui/PrivacyControlActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-virtual {p1}, Landroidx/recyclerview/widget/RecyclerView;->getItemAnimator()Landroidx/recyclerview/widget/RecyclerView$ItemAnimator;
@@ -5174,7 +5174,7 @@
 
     invoke-virtual {p1, v4}, Landroidx/recyclerview/widget/DefaultItemAnimator;->setDelayAnimations(Z)V
 
-    .line 567
+    .line 566
     iget-object p1, p0, Lorg/telegram/ui/PrivacyControlActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
 
     const/4 v1, -0x1
@@ -5185,14 +5185,14 @@
 
     invoke-virtual {v0, p1, v1}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 568
+    .line 567
     iget-object p1, p0, Lorg/telegram/ui/PrivacyControlActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
 
     iget-object v0, p0, Lorg/telegram/ui/PrivacyControlActivity;->listAdapter:Lorg/telegram/ui/PrivacyControlActivity$ListAdapter;
 
     invoke-virtual {p1, v0}, Lorg/telegram/ui/Components/RecyclerListView;->setAdapter(Landroidx/recyclerview/widget/RecyclerView$Adapter;)V
 
-    .line 569
+    .line 568
     iget-object p1, p0, Lorg/telegram/ui/PrivacyControlActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
 
     new-instance v0, Lorg/telegram/ui/PrivacyControlActivity$$ExternalSyntheticLambda14;
@@ -5201,10 +5201,10 @@
 
     invoke-virtual {p1, v0}, Lorg/telegram/ui/Components/RecyclerListView;->setOnItemClickListener(Lorg/telegram/ui/Components/RecyclerListView$OnItemClickListener;)V
 
-    .line 723
+    .line 722
     invoke-direct {p0}, Lorg/telegram/ui/PrivacyControlActivity;->setMessageText()V
 
-    .line 725
+    .line 724
     iget-object p1, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->fragmentView:Landroid/view/View;
 
     return-object p1
@@ -5213,48 +5213,48 @@
 .method public varargs didReceivedNotification(II[Ljava/lang/Object;)V
     .locals 0
 
-    .line 730
+    .line 729
     sget p2, Lorg/telegram/messenger/NotificationCenter;->privacyRulesUpdated:I
 
     if-ne p1, p2, :cond_0
 
-    .line 732
+    .line 731
     iget p1, p0, Lorg/telegram/ui/PrivacyControlActivity;->rulesType:I
 
     const/16 p2, 0x65
 
     if-eq p1, p2, :cond_2
 
-    .line 733
+    .line 732
     invoke-direct {p0}, Lorg/telegram/ui/PrivacyControlActivity;->checkPrivacy()V
 
     goto :goto_0
 
-    .line 734
+    .line 733
     :cond_0
     sget p2, Lorg/telegram/messenger/NotificationCenter;->emojiLoaded:I
 
     if-ne p1, p2, :cond_1
 
-    .line 735
+    .line 734
     iget-object p1, p0, Lorg/telegram/ui/PrivacyControlActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-virtual {p1}, Lorg/telegram/ui/Components/RecyclerListView;->invalidateViews()V
 
     goto :goto_0
 
-    .line 736
+    .line 735
     :cond_1
     sget p2, Lorg/telegram/messenger/NotificationCenter;->didSetNewWallpapper:I
 
     if-ne p1, p2, :cond_2
 
-    .line 737
+    .line 736
     iget-object p1, p0, Lorg/telegram/ui/PrivacyControlActivity;->messageCell:Lorg/telegram/ui/PrivacyControlActivity$MessageCell;
 
     if-eqz p1, :cond_2
 
-    .line 738
+    .line 737
     invoke-virtual {p1}, Lorg/telegram/ui/PrivacyControlActivity$MessageCell;->invalidate()V
 
     :cond_2
@@ -5279,7 +5279,7 @@
 .method public didUploadPhoto(Lorg/telegram/tgnet/TLRPC$InputFile;Lorg/telegram/tgnet/TLRPC$InputFile;DLjava/lang/String;Lorg/telegram/tgnet/TLRPC$PhotoSize;Lorg/telegram/tgnet/TLRPC$PhotoSize;ZLorg/telegram/tgnet/TLRPC$VideoSize;)V
     .locals 10
 
-    .line 226
+    .line 225
     new-instance v9, Lorg/telegram/ui/PrivacyControlActivity$$ExternalSyntheticLambda6;
 
     move-object v0, v9
@@ -5328,12 +5328,12 @@
 
     move-object/from16 v0, p0
 
-    .line 1662
+    .line 1661
     new-instance v1, Ljava/util/ArrayList;
 
     invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
 
-    .line 1664
+    .line 1663
     new-instance v10, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v3, v0, Lorg/telegram/ui/PrivacyControlActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -5376,7 +5376,7 @@
 
     invoke-virtual {v1, v10}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1665
+    .line 1664
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v15, v0, Lorg/telegram/ui/ActionBar/BaseFragment;->fragmentView:Landroid/view/View;
@@ -5399,7 +5399,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1667
+    .line 1666
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v4, v0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
@@ -5416,7 +5416,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1668
+    .line 1667
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v15, v0, Lorg/telegram/ui/PrivacyControlActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -5431,7 +5431,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1669
+    .line 1668
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v4, v0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
@@ -5446,7 +5446,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1670
+    .line 1669
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v15, v0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
@@ -5461,7 +5461,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1671
+    .line 1670
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v4, v0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
@@ -5476,7 +5476,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1673
+    .line 1672
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v15, v0, Lorg/telegram/ui/PrivacyControlActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -5491,7 +5491,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1675
+    .line 1674
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v4, v0, Lorg/telegram/ui/PrivacyControlActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -5514,7 +5514,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1677
+    .line 1676
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v15, v0, Lorg/telegram/ui/PrivacyControlActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -5545,7 +5545,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1678
+    .line 1677
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v3, v0, Lorg/telegram/ui/PrivacyControlActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -5582,7 +5582,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1680
+    .line 1679
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v15, v0, Lorg/telegram/ui/PrivacyControlActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -5607,7 +5607,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1681
+    .line 1680
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v3, v0, Lorg/telegram/ui/PrivacyControlActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -5634,7 +5634,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1682
+    .line 1681
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v15, v0, Lorg/telegram/ui/PrivacyControlActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -5663,7 +5663,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1684
+    .line 1683
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v3, v0, Lorg/telegram/ui/PrivacyControlActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -5690,7 +5690,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1685
+    .line 1684
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v15, v0, Lorg/telegram/ui/PrivacyControlActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -5717,7 +5717,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1687
+    .line 1686
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v3, v0, Lorg/telegram/ui/PrivacyControlActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -5748,7 +5748,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1689
+    .line 1688
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v15, v0, Lorg/telegram/ui/PrivacyControlActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -5777,7 +5777,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1690
+    .line 1689
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v3, v0, Lorg/telegram/ui/PrivacyControlActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -5810,7 +5810,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1691
+    .line 1690
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v15, v0, Lorg/telegram/ui/PrivacyControlActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -5837,7 +5837,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1693
+    .line 1692
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v3, v0, Lorg/telegram/ui/PrivacyControlActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -5870,7 +5870,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1694
+    .line 1693
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v15, v0, Lorg/telegram/ui/PrivacyControlActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -5901,7 +5901,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1695
+    .line 1694
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v3, v0, Lorg/telegram/ui/PrivacyControlActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -5928,7 +5928,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1696
+    .line 1695
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v15, v0, Lorg/telegram/ui/PrivacyControlActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -5947,7 +5947,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1697
+    .line 1696
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v4, v0, Lorg/telegram/ui/PrivacyControlActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -5976,7 +5976,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1698
+    .line 1697
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v15, v0, Lorg/telegram/ui/PrivacyControlActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -6001,7 +6001,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1699
+    .line 1698
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v3, v0, Lorg/telegram/ui/PrivacyControlActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -6028,7 +6028,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1700
+    .line 1699
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v15, v0, Lorg/telegram/ui/PrivacyControlActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -6053,7 +6053,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1701
+    .line 1700
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v3, v0, Lorg/telegram/ui/PrivacyControlActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -6080,7 +6080,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1702
+    .line 1701
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v15, v0, Lorg/telegram/ui/PrivacyControlActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -6099,7 +6099,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1703
+    .line 1702
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v4, v0, Lorg/telegram/ui/PrivacyControlActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -6120,7 +6120,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1704
+    .line 1703
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v15, v0, Lorg/telegram/ui/PrivacyControlActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -6135,7 +6135,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1705
+    .line 1704
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v4, v0, Lorg/telegram/ui/PrivacyControlActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -6150,7 +6150,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1706
+    .line 1705
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v15, v0, Lorg/telegram/ui/PrivacyControlActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -6171,7 +6171,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1707
+    .line 1706
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v3, v0, Lorg/telegram/ui/PrivacyControlActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -6194,7 +6194,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1708
+    .line 1707
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v15, v0, Lorg/telegram/ui/PrivacyControlActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -6219,7 +6219,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1709
+    .line 1708
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v3, v0, Lorg/telegram/ui/PrivacyControlActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -6246,7 +6246,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1710
+    .line 1709
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v15, v0, Lorg/telegram/ui/PrivacyControlActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -6271,7 +6271,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1711
+    .line 1710
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v5, v0, Lorg/telegram/ui/PrivacyControlActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -6288,7 +6288,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1712
+    .line 1711
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v13, v0, Lorg/telegram/ui/PrivacyControlActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -6307,7 +6307,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1713
+    .line 1712
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v4, v0, Lorg/telegram/ui/PrivacyControlActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -6324,7 +6324,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1714
+    .line 1713
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v12, v0, Lorg/telegram/ui/PrivacyControlActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -6341,7 +6341,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1715
+    .line 1714
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v4, v0, Lorg/telegram/ui/PrivacyControlActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -6354,7 +6354,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1716
+    .line 1715
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v12, v0, Lorg/telegram/ui/PrivacyControlActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -6367,7 +6367,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1717
+    .line 1716
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v4, v0, Lorg/telegram/ui/PrivacyControlActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -6380,7 +6380,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1718
+    .line 1717
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v12, v0, Lorg/telegram/ui/PrivacyControlActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -6393,7 +6393,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1719
+    .line 1718
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v4, v0, Lorg/telegram/ui/PrivacyControlActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -6406,7 +6406,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1720
+    .line 1719
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v12, v0, Lorg/telegram/ui/PrivacyControlActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -6419,7 +6419,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1721
+    .line 1720
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v4, v0, Lorg/telegram/ui/PrivacyControlActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -6432,7 +6432,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1722
+    .line 1721
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v12, v0, Lorg/telegram/ui/PrivacyControlActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -6451,7 +6451,7 @@
 .method public onBackPressed()Z
     .locals 1
 
-    .line 1175
+    .line 1174
     invoke-direct {p0}, Lorg/telegram/ui/PrivacyControlActivity;->checkDiscard()Z
 
     move-result v0
@@ -6462,18 +6462,18 @@
 .method public onFragmentCreate()Z
     .locals 2
 
-    .line 489
+    .line 488
     invoke-super {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->onFragmentCreate()Z
 
-    .line 490
+    .line 489
     invoke-direct {p0}, Lorg/telegram/ui/PrivacyControlActivity;->checkPrivacy()V
 
     const/4 v0, 0x0
 
-    .line 491
+    .line 490
     invoke-direct {p0, v0}, Lorg/telegram/ui/PrivacyControlActivity;->updateRows(Z)V
 
-    .line 492
+    .line 491
     iget v0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->currentAccount:I
 
     invoke-static {v0}, Lorg/telegram/messenger/NotificationCenter;->getInstance(I)Lorg/telegram/messenger/NotificationCenter;
@@ -6484,7 +6484,7 @@
 
     invoke-virtual {v0, p0, v1}, Lorg/telegram/messenger/NotificationCenter;->addObserver(Lorg/telegram/messenger/NotificationCenter$NotificationCenterDelegate;I)V
 
-    .line 493
+    .line 492
     invoke-static {}, Lorg/telegram/messenger/NotificationCenter;->getGlobalInstance()Lorg/telegram/messenger/NotificationCenter;
 
     move-result-object v0
@@ -6493,7 +6493,7 @@
 
     invoke-virtual {v0, p0, v1}, Lorg/telegram/messenger/NotificationCenter;->addObserver(Lorg/telegram/messenger/NotificationCenter$NotificationCenterDelegate;I)V
 
-    .line 494
+    .line 493
     invoke-static {}, Lorg/telegram/messenger/NotificationCenter;->getGlobalInstance()Lorg/telegram/messenger/NotificationCenter;
 
     move-result-object v0
@@ -6510,10 +6510,10 @@
 .method public onFragmentDestroy()V
     .locals 2
 
-    .line 500
-    invoke-super {p0}, Lcom/smedialink/ui/base/mvp/MvpFragment;->onFragmentDestroy()V
+    .line 499
+    invoke-super {p0}, Lcom/iMe/ui/base/mvp/MvpFragment;->onFragmentDestroy()V
 
-    .line 501
+    .line 500
     iget v0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->currentAccount:I
 
     invoke-static {v0}, Lorg/telegram/messenger/NotificationCenter;->getInstance(I)Lorg/telegram/messenger/NotificationCenter;
@@ -6524,7 +6524,7 @@
 
     invoke-virtual {v0, p0, v1}, Lorg/telegram/messenger/NotificationCenter;->removeObserver(Lorg/telegram/messenger/NotificationCenter$NotificationCenterDelegate;I)V
 
-    .line 502
+    .line 501
     invoke-static {}, Lorg/telegram/messenger/NotificationCenter;->getGlobalInstance()Lorg/telegram/messenger/NotificationCenter;
 
     move-result-object v0
@@ -6533,7 +6533,7 @@
 
     invoke-virtual {v0, p0, v1}, Lorg/telegram/messenger/NotificationCenter;->removeObserver(Lorg/telegram/messenger/NotificationCenter$NotificationCenterDelegate;I)V
 
-    .line 503
+    .line 502
     invoke-static {}, Lorg/telegram/messenger/NotificationCenter;->getGlobalInstance()Lorg/telegram/messenger/NotificationCenter;
 
     move-result-object v0
@@ -6548,15 +6548,15 @@
 .method public onPause()V
     .locals 1
 
-    .line 1167
-    invoke-super {p0}, Lcom/smedialink/ui/base/mvp/MvpFragment;->onPause()V
+    .line 1166
+    invoke-super {p0}, Lcom/iMe/ui/base/mvp/MvpFragment;->onPause()V
 
-    .line 1168
+    .line 1167
     iget-object v0, p0, Lorg/telegram/ui/PrivacyControlActivity;->imageUpdater:Lorg/telegram/ui/Components/ImageUpdater;
 
     if-eqz v0, :cond_0
 
-    .line 1169
+    .line 1168
     invoke-virtual {v0}, Lorg/telegram/ui/Components/ImageUpdater;->onPause()V
 
     :cond_0
@@ -6566,20 +6566,20 @@
 .method public onResume()V
     .locals 1
 
-    .line 1157
-    invoke-super {p0}, Lcom/smedialink/ui/base/mvp/MvpFragment;->onResume()V
+    .line 1156
+    invoke-super {p0}, Lcom/iMe/ui/base/mvp/MvpFragment;->onResume()V
 
     const/4 v0, 0x0
 
-    .line 1158
+    .line 1157
     invoke-direct {p0, v0}, Lorg/telegram/ui/PrivacyControlActivity;->updateRows(Z)V
 
-    .line 1160
+    .line 1159
     iget-object v0, p0, Lorg/telegram/ui/PrivacyControlActivity;->imageUpdater:Lorg/telegram/ui/Components/ImageUpdater;
 
     if-eqz v0, :cond_0
 
-    .line 1161
+    .line 1160
     invoke-virtual {v0}, Lorg/telegram/ui/Components/ImageUpdater;->onResume()V
 
     :cond_0
@@ -6597,18 +6597,18 @@
         }
     .end annotation
 
-    .line 130
+    .line 129
     iput-object p1, p0, Lorg/telegram/ui/PrivacyControlActivity;->walletWhitelist:Ljava/util/List;
 
-    .line 131
+    .line 130
     iput p2, p0, Lorg/telegram/ui/PrivacyControlActivity;->walletAccess:I
 
-    .line 132
+    .line 131
     iput p3, p0, Lorg/telegram/ui/PrivacyControlActivity;->currentAccountRankAccess:I
 
     iput p3, p0, Lorg/telegram/ui/PrivacyControlActivity;->initialAccountRankAccess:I
 
-    .line 133
+    .line 132
     invoke-direct {p0}, Lorg/telegram/ui/PrivacyControlActivity;->checkPrivacy()V
 
     return-void
@@ -6617,7 +6617,7 @@
 .method public onSuccessSaveCryptoSettings()V
     .locals 0
 
-    .line 138
+    .line 137
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->finishFragment()V
 
     return-void
@@ -6631,13 +6631,13 @@
     return-void
 .end method
 
-.method providePresenter()Lcom/smedialink/ui/wallet/crypto/settings/privacy/WalletPrivacySettingPresenter;
+.method providePresenter()Lcom/iMe/ui/wallet/crypto/settings/privacy/WalletPrivacySettingPresenter;
     .locals 3
     .annotation runtime Lmoxy/presenter/ProvidePresenter;
     .end annotation
 
-    .line 114
-    const-class v0, Lcom/smedialink/ui/wallet/crypto/settings/privacy/WalletPrivacySettingPresenter;
+    .line 113
+    const-class v0, Lcom/iMe/ui/wallet/crypto/settings/privacy/WalletPrivacySettingPresenter;
 
     new-instance v1, Lorg/telegram/ui/PrivacyControlActivity$$ExternalSyntheticLambda10;
 
@@ -6649,22 +6649,22 @@
 
     move-result-object v0
 
-    check-cast v0, Lcom/smedialink/ui/wallet/crypto/settings/privacy/WalletPrivacySettingPresenter;
+    check-cast v0, Lcom/iMe/ui/wallet/crypto/settings/privacy/WalletPrivacySettingPresenter;
 
     return-object v0
 .end method
 
-.method public showConfirmDialog(Lcom/smedialink/model/dialog/DialogModel;Lorg/fork/utils/Callbacks$Callback;)V
+.method public showConfirmDialog(Lcom/iMe/model/dialog/DialogModel;Lcom/iMe/fork/utils/Callbacks$Callback;)V
     .locals 2
 
-    .line 143
+    .line 142
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
 
     move-result-object v0
 
     const/4 v1, 0x0
 
-    invoke-static {v0, p1, p2, v1}, Lcom/smedialink/utils/dialogs/DialogUtils;->createDialog(Landroid/content/Context;Lcom/smedialink/model/dialog/DialogModel;Lorg/fork/utils/Callbacks$Callback;Lorg/fork/utils/Callbacks$Callback;)Lorg/telegram/ui/ActionBar/AlertDialog;
+    invoke-static {v0, p1, p2, v1}, Lcom/iMe/utils/dialogs/DialogUtils;->createDialog(Landroid/content/Context;Lcom/iMe/model/dialog/DialogModel;Lcom/iMe/fork/utils/Callbacks$Callback;Lcom/iMe/fork/utils/Callbacks$Callback;)Lorg/telegram/ui/ActionBar/AlertDialog;
 
     move-result-object p1
 

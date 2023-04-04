@@ -3,16 +3,15 @@ package com.bumptech.glide.manager;
 import android.util.Log;
 import com.bumptech.glide.request.Request;
 import com.bumptech.glide.util.Util;
-import java.util.ArrayList;
 import java.util.Collections;
-import java.util.List;
+import java.util.HashSet;
 import java.util.Set;
 import java.util.WeakHashMap;
 /* loaded from: classes.dex */
 public class RequestTracker {
     private boolean isPaused;
     private final Set<Request> requests = Collections.newSetFromMap(new WeakHashMap());
-    private final List<Request> pendingRequests = new ArrayList();
+    private final Set<Request> pendingRequests = new HashSet();
 
     public void runRequest(Request request) {
         this.requests.add(request);

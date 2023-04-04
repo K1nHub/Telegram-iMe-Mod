@@ -3,7 +3,7 @@
 .source "ChatActivityEnterView.java"
 
 # interfaces
-.implements Lcom/smedialink/ui/smartpanel/SmartBotsView$Listener;
+.implements Lcom/iMe/ui/smartpanel/SmartBotsView$Listener;
 
 
 # annotations
@@ -53,9 +53,9 @@
 
     move-result-object v0
 
-    new-instance v1, Lcom/smedialink/ui/shop/NeurobotsStoreActivity;
+    new-instance v1, Lcom/iMe/ui/shop/NeurobotsStoreActivity;
 
-    invoke-direct {v1}, Lcom/smedialink/ui/shop/NeurobotsStoreActivity;-><init>()V
+    invoke-direct {v1}, Lcom/iMe/ui/shop/NeurobotsStoreActivity;-><init>()V
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/BaseFragment;->presentFragment(Lorg/telegram/ui/ActionBar/BaseFragment;)Z
 
@@ -76,9 +76,9 @@
 
     move-result-object v0
 
-    new-instance v1, Lcom/smedialink/ui/shop/BotSettingsActivity;
+    new-instance v1, Lcom/iMe/ui/shop/BotSettingsActivity;
 
-    invoke-direct {v1}, Lcom/smedialink/ui/shop/BotSettingsActivity;-><init>()V
+    invoke-direct {v1}, Lcom/iMe/ui/shop/BotSettingsActivity;-><init>()V
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/BaseFragment;->presentFragment(Lorg/telegram/ui/ActionBar/BaseFragment;)Z
 
@@ -177,16 +177,16 @@
 
     invoke-direct {v2, p0}, Lorg/telegram/ui/Components/ChatActivityEnterView$2$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/Components/ChatActivityEnterView$2;)V
 
-    invoke-static {v0, v1, v2}, Lcom/smedialink/utils/helper/neurobot/SmartBotHelper;->runSafeSmartBotAction(ILandroid/content/Context;Lkotlin/jvm/functions/Function0;)V
+    invoke-static {v0, v1, v2}, Lcom/iMe/utils/helper/neurobot/SmartBotHelper;->runSafeSmartBotAction(ILandroid/content/Context;Lkotlin/jvm/functions/Function0;)V
 
     return-void
 .end method
 
-.method public onTextAnswerSelected(Lcom/smedialink/ui/smartpanel/model/content/TabBotAnswerItem;I)V
+.method public onTextAnswerSelected(Lcom/iMe/ui/smartpanel/model/content/TabBotAnswerItem;I)V
     .locals 8
 
     .line 471
-    invoke-virtual {p1}, Lcom/smedialink/ui/smartpanel/model/content/TabBotAnswerItem;->getPhrase()Ljava/lang/String;
+    invoke-virtual {p1}, Lcom/iMe/ui/smartpanel/model/content/TabBotAnswerItem;->getPhrase()Ljava/lang/String;
 
     move-result-object v0
 
@@ -203,7 +203,7 @@
 
     iget-object v0, v0, Lorg/telegram/ui/Components/ChatActivityEnterView;->messageEditText:Lorg/telegram/ui/Components/EditTextCaption;
 
-    invoke-virtual {p1}, Lcom/smedialink/ui/smartpanel/model/content/TabBotAnswerItem;->getPhrase()Ljava/lang/String;
+    invoke-virtual {p1}, Lcom/iMe/ui/smartpanel/model/content/TabBotAnswerItem;->getPhrase()Ljava/lang/String;
 
     move-result-object v2
 
@@ -314,13 +314,13 @@
 
     const/4 v6, 0x0
 
-    invoke-virtual {p1}, Lcom/smedialink/ui/smartpanel/model/content/TabBotAnswerItem;->getBotId()Ljava/lang/String;
+    invoke-virtual {p1}, Lcom/iMe/ui/smartpanel/model/content/TabBotAnswerItem;->getBotId()Ljava/lang/String;
 
     move-result-object v7
 
     aput-object v7, v5, v6
 
-    invoke-virtual {p1}, Lcom/smedialink/ui/smartpanel/model/content/TabBotAnswerItem;->getTag()Ljava/lang/String;
+    invoke-virtual {p1}, Lcom/iMe/ui/smartpanel/model/content/TabBotAnswerItem;->getTag()Ljava/lang/String;
 
     move-result-object p1
 

@@ -6,13 +6,13 @@ import org.bouncycastle.crypto.CipherParameters;
 public class DHParameters implements CipherParameters {
 
     /* renamed from: g */
-    private BigInteger f1294g;
+    private BigInteger f1299g;
 
     /* renamed from: p */
-    private BigInteger f1295p;
+    private BigInteger f1300p;
 
     /* renamed from: q */
-    private BigInteger f1296q;
+    private BigInteger f1301q;
 
     public DHParameters(BigInteger bigInteger, BigInteger bigInteger2, BigInteger bigInteger3, int i, int i2, BigInteger bigInteger4, DHValidationParameters dHValidationParameters) {
         if (i2 != 0) {
@@ -26,9 +26,9 @@ public class DHParameters implements CipherParameters {
         if (i > bigInteger.bitLength()) {
             throw new IllegalArgumentException("unsafe p value so small specific l required");
         }
-        this.f1294g = bigInteger2;
-        this.f1295p = bigInteger;
-        this.f1296q = bigInteger3;
+        this.f1299g = bigInteger2;
+        this.f1300p = bigInteger;
+        this.f1301q = bigInteger3;
     }
 
     public boolean equals(Object obj) {
@@ -41,21 +41,21 @@ public class DHParameters implements CipherParameters {
             } else if (dHParameters.getQ() != null) {
                 return false;
             }
-            return dHParameters.getP().equals(this.f1295p) && dHParameters.getG().equals(this.f1294g);
+            return dHParameters.getP().equals(this.f1300p) && dHParameters.getG().equals(this.f1299g);
         }
         return false;
     }
 
     public BigInteger getG() {
-        return this.f1294g;
+        return this.f1299g;
     }
 
     public BigInteger getP() {
-        return this.f1295p;
+        return this.f1300p;
     }
 
     public BigInteger getQ() {
-        return this.f1296q;
+        return this.f1301q;
     }
 
     public int hashCode() {

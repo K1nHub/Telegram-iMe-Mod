@@ -3,40 +3,40 @@ package androidx.collection;
 import java.util.Collection;
 import java.util.Map;
 import java.util.Set;
-import p034j$.util.Map;
-import p034j$.util.function.BiConsumer;
-import p034j$.util.function.BiFunction;
-import p034j$.util.function.Function;
+import p035j$.util.Map;
+import p035j$.util.function.BiConsumer;
+import p035j$.util.function.BiFunction;
+import p035j$.util.function.Function;
 /* loaded from: classes.dex */
-public class ArrayMap<K, V> extends SimpleArrayMap<K, V> implements Map<K, V>, p034j$.util.Map {
+public class ArrayMap<K, V> extends SimpleArrayMap<K, V> implements Map<K, V>, p035j$.util.Map {
     MapCollections<K, V> mCollections;
 
-    @Override // p034j$.util.Map
+    @Override // p035j$.util.Map
     public /* synthetic */ Object compute(Object obj, BiFunction biFunction) {
         return Map.CC.$default$compute(this, obj, biFunction);
     }
 
-    @Override // p034j$.util.Map
+    @Override // p035j$.util.Map
     public /* synthetic */ Object computeIfAbsent(Object obj, Function function) {
         return Map.CC.$default$computeIfAbsent(this, obj, function);
     }
 
-    @Override // p034j$.util.Map
+    @Override // p035j$.util.Map
     public /* synthetic */ Object computeIfPresent(Object obj, BiFunction biFunction) {
         return Map.CC.$default$computeIfPresent(this, obj, biFunction);
     }
 
-    @Override // p034j$.util.Map
+    @Override // p035j$.util.Map
     public /* synthetic */ void forEach(BiConsumer biConsumer) {
         Map.CC.$default$forEach(this, biConsumer);
     }
 
-    @Override // p034j$.util.Map
+    @Override // p035j$.util.Map
     public /* synthetic */ Object merge(Object obj, Object obj2, BiFunction biFunction) {
         return Map.CC.$default$merge(this, obj, obj2, biFunction);
     }
 
-    @Override // p034j$.util.Map
+    @Override // p035j$.util.Map
     public /* synthetic */ void replaceAll(BiFunction biFunction) {
         Map.CC.$default$replaceAll(this, biFunction);
     }
@@ -104,7 +104,7 @@ public class ArrayMap<K, V> extends SimpleArrayMap<K, V> implements Map<K, V>, p
         return this.mCollections;
     }
 
-    @Override // java.util.Map, p034j$.util.Map
+    @Override // java.util.Map, p035j$.util.Map
     public void putAll(java.util.Map<? extends K, ? extends V> map) {
         ensureCapacity(this.mSize + map.size());
         for (Map.Entry<? extends K, ? extends V> entry : map.entrySet()) {
@@ -116,17 +116,17 @@ public class ArrayMap<K, V> extends SimpleArrayMap<K, V> implements Map<K, V>, p
         return MapCollections.retainAllHelper(this, collection);
     }
 
-    @Override // java.util.Map, p034j$.util.Map
+    @Override // java.util.Map, p035j$.util.Map
     public Set<Map.Entry<K, V>> entrySet() {
         return getCollection().getEntrySet();
     }
 
-    @Override // java.util.Map, p034j$.util.Map
+    @Override // java.util.Map, p035j$.util.Map
     public Set<K> keySet() {
         return getCollection().getKeySet();
     }
 
-    @Override // java.util.Map, p034j$.util.Map
+    @Override // java.util.Map, p035j$.util.Map
     public Collection<V> values() {
         return getCollection().getValues();
     }

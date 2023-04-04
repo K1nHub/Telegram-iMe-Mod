@@ -20,7 +20,7 @@
 
     const-string v0, "Unexpectedly reached end of a file"
 
-    .line 451
+    .line 510
     invoke-direct {p0, v0}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
 
     return-void

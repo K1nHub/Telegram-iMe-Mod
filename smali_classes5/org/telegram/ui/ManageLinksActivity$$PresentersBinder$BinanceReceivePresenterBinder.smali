@@ -27,7 +27,7 @@
     .locals 2
 
     .line 29
-    const-class p1, Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/receive/WalletReceiveBinancePayPresenter;
+    const-class p1, Lcom/iMe/ui/wallet/home/v2/tabs/binancepay/receive/WalletReceiveBinancePayPresenter;
 
     const-string v0, "binanceReceivePresenter"
 
@@ -55,9 +55,9 @@
     .locals 0
 
     .line 34
-    check-cast p2, Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/receive/WalletReceiveBinancePayPresenter;
+    check-cast p2, Lcom/iMe/ui/wallet/home/v2/tabs/binancepay/receive/WalletReceiveBinancePayPresenter;
 
-    iput-object p2, p1, Lorg/telegram/ui/ManageLinksActivity;->binanceReceivePresenter:Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/receive/WalletReceiveBinancePayPresenter;
+    iput-object p2, p1, Lorg/telegram/ui/ManageLinksActivity;->binanceReceivePresenter:Lcom/iMe/ui/wallet/home/v2/tabs/binancepay/receive/WalletReceiveBinancePayPresenter;
 
     return-void
 .end method
@@ -88,7 +88,7 @@
     .end annotation
 
     .line 39
-    invoke-virtual {p1}, Lorg/telegram/ui/ManageLinksActivity;->provideBinanceReceivePresenter()Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/receive/WalletReceiveBinancePayPresenter;
+    invoke-virtual {p1}, Lorg/telegram/ui/ManageLinksActivity;->provideBinanceReceivePresenter()Lcom/iMe/ui/wallet/home/v2/tabs/binancepay/receive/WalletReceiveBinancePayPresenter;
 
     move-result-object p1
 

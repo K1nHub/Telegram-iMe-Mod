@@ -76,7 +76,7 @@
     new-instance p2, Lcom/iMe/i_staking/StakingInteractor;
 
     .line 131
-    const-class v0, Lcom/smedialink/storage/domain/utils/rx/SchedulersProvider;
+    const-class v0, Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
 
     invoke-static {v0}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
 
@@ -88,7 +88,7 @@
 
     move-result-object v0
 
-    check-cast v0, Lcom/smedialink/storage/domain/utils/rx/SchedulersProvider;
+    check-cast v0, Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
 
     const-class v2, Lcom/iMe/i_staking/repository/StakingRepository;
 
@@ -103,7 +103,7 @@
     check-cast p1, Lcom/iMe/i_staking/repository/StakingRepository;
 
     .line 49
-    invoke-direct {p2, v0, p1}, Lcom/iMe/i_staking/StakingInteractor;-><init>(Lcom/smedialink/storage/domain/utils/rx/SchedulersProvider;Lcom/iMe/i_staking/repository/StakingRepository;)V
+    invoke-direct {p2, v0, p1}, Lcom/iMe/i_staking/StakingInteractor;-><init>(Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;Lcom/iMe/i_staking/repository/StakingRepository;)V
 
     return-object p2
 .end method

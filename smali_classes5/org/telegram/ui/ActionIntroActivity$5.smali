@@ -15,7 +15,7 @@
 
 
 # static fields
-.field static final synthetic $SwitchMap$com$smedialink$model$wallet$home$BannerSlide:[I
+.field static final synthetic $SwitchMap$com$iMe$model$wallet$home$BannerSlide:[I
 
 
 # direct methods
@@ -23,7 +23,7 @@
     .locals 3
 
     .line 885
-    invoke-static {}, Lcom/smedialink/model/wallet/home/BannerSlide;->values()[Lcom/smedialink/model/wallet/home/BannerSlide;
+    invoke-static {}, Lcom/iMe/model/wallet/home/BannerSlide;->values()[Lcom/iMe/model/wallet/home/BannerSlide;
 
     move-result-object v0
 
@@ -31,10 +31,10 @@
 
     new-array v0, v0, [I
 
-    sput-object v0, Lorg/telegram/ui/ActionIntroActivity$5;->$SwitchMap$com$smedialink$model$wallet$home$BannerSlide:[I
+    sput-object v0, Lorg/telegram/ui/ActionIntroActivity$5;->$SwitchMap$com$iMe$model$wallet$home$BannerSlide:[I
 
     :try_start_0
-    sget-object v1, Lcom/smedialink/model/wallet/home/BannerSlide;->FAQ:Lcom/smedialink/model/wallet/home/BannerSlide;
+    sget-object v1, Lcom/iMe/model/wallet/home/BannerSlide;->FAQ:Lcom/iMe/model/wallet/home/BannerSlide;
 
     invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
 
@@ -48,9 +48,9 @@
 
     :catch_0
     :try_start_1
-    sget-object v0, Lorg/telegram/ui/ActionIntroActivity$5;->$SwitchMap$com$smedialink$model$wallet$home$BannerSlide:[I
+    sget-object v0, Lorg/telegram/ui/ActionIntroActivity$5;->$SwitchMap$com$iMe$model$wallet$home$BannerSlide:[I
 
-    sget-object v1, Lcom/smedialink/model/wallet/home/BannerSlide;->SWAP:Lcom/smedialink/model/wallet/home/BannerSlide;
+    sget-object v1, Lcom/iMe/model/wallet/home/BannerSlide;->SWAP:Lcom/iMe/model/wallet/home/BannerSlide;
 
     invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
 
@@ -64,9 +64,9 @@
 
     :catch_1
     :try_start_2
-    sget-object v0, Lorg/telegram/ui/ActionIntroActivity$5;->$SwitchMap$com$smedialink$model$wallet$home$BannerSlide:[I
+    sget-object v0, Lorg/telegram/ui/ActionIntroActivity$5;->$SwitchMap$com$iMe$model$wallet$home$BannerSlide:[I
 
-    sget-object v1, Lcom/smedialink/model/wallet/home/BannerSlide;->NON_CUSTODIAL:Lcom/smedialink/model/wallet/home/BannerSlide;
+    sget-object v1, Lcom/iMe/model/wallet/home/BannerSlide;->NON_CUSTODIAL:Lcom/iMe/model/wallet/home/BannerSlide;
 
     invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
 
@@ -80,9 +80,9 @@
 
     :catch_2
     :try_start_3
-    sget-object v0, Lorg/telegram/ui/ActionIntroActivity$5;->$SwitchMap$com$smedialink$model$wallet$home$BannerSlide:[I
+    sget-object v0, Lorg/telegram/ui/ActionIntroActivity$5;->$SwitchMap$com$iMe$model$wallet$home$BannerSlide:[I
 
-    sget-object v1, Lcom/smedialink/model/wallet/home/BannerSlide;->SAFE:Lcom/smedialink/model/wallet/home/BannerSlide;
+    sget-object v1, Lcom/iMe/model/wallet/home/BannerSlide;->SAFE:Lcom/iMe/model/wallet/home/BannerSlide;
 
     invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
 
@@ -96,9 +96,9 @@
 
     :catch_3
     :try_start_4
-    sget-object v0, Lorg/telegram/ui/ActionIntroActivity$5;->$SwitchMap$com$smedialink$model$wallet$home$BannerSlide:[I
+    sget-object v0, Lorg/telegram/ui/ActionIntroActivity$5;->$SwitchMap$com$iMe$model$wallet$home$BannerSlide:[I
 
-    sget-object v1, Lcom/smedialink/model/wallet/home/BannerSlide;->MULTI_NETWORKS:Lcom/smedialink/model/wallet/home/BannerSlide;
+    sget-object v1, Lcom/iMe/model/wallet/home/BannerSlide;->MULTI_NETWORKS:Lcom/iMe/model/wallet/home/BannerSlide;
 
     invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
 
@@ -112,9 +112,9 @@
 
     :catch_4
     :try_start_5
-    sget-object v0, Lorg/telegram/ui/ActionIntroActivity$5;->$SwitchMap$com$smedialink$model$wallet$home$BannerSlide:[I
+    sget-object v0, Lorg/telegram/ui/ActionIntroActivity$5;->$SwitchMap$com$iMe$model$wallet$home$BannerSlide:[I
 
-    sget-object v1, Lcom/smedialink/model/wallet/home/BannerSlide;->GATE:Lcom/smedialink/model/wallet/home/BannerSlide;
+    sget-object v1, Lcom/iMe/model/wallet/home/BannerSlide;->GATE:Lcom/iMe/model/wallet/home/BannerSlide;
 
     invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
 
@@ -128,9 +128,9 @@
 
     :catch_5
     :try_start_6
-    sget-object v0, Lorg/telegram/ui/ActionIntroActivity$5;->$SwitchMap$com$smedialink$model$wallet$home$BannerSlide:[I
+    sget-object v0, Lorg/telegram/ui/ActionIntroActivity$5;->$SwitchMap$com$iMe$model$wallet$home$BannerSlide:[I
 
-    sget-object v1, Lcom/smedialink/model/wallet/home/BannerSlide;->CRYPTO_TRANSFERS:Lcom/smedialink/model/wallet/home/BannerSlide;
+    sget-object v1, Lcom/iMe/model/wallet/home/BannerSlide;->CRYPTO_TRANSFERS:Lcom/iMe/model/wallet/home/BannerSlide;
 
     invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
 
@@ -144,9 +144,9 @@
 
     :catch_6
     :try_start_7
-    sget-object v0, Lorg/telegram/ui/ActionIntroActivity$5;->$SwitchMap$com$smedialink$model$wallet$home$BannerSlide:[I
+    sget-object v0, Lorg/telegram/ui/ActionIntroActivity$5;->$SwitchMap$com$iMe$model$wallet$home$BannerSlide:[I
 
-    sget-object v1, Lcom/smedialink/model/wallet/home/BannerSlide;->BINANCE_PAY_INFORMATION:Lcom/smedialink/model/wallet/home/BannerSlide;
+    sget-object v1, Lcom/iMe/model/wallet/home/BannerSlide;->BINANCE_PAY_INFORMATION:Lcom/iMe/model/wallet/home/BannerSlide;
 
     invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
 
@@ -160,9 +160,9 @@
 
     :catch_7
     :try_start_8
-    sget-object v0, Lorg/telegram/ui/ActionIntroActivity$5;->$SwitchMap$com$smedialink$model$wallet$home$BannerSlide:[I
+    sget-object v0, Lorg/telegram/ui/ActionIntroActivity$5;->$SwitchMap$com$iMe$model$wallet$home$BannerSlide:[I
 
-    sget-object v1, Lcom/smedialink/model/wallet/home/BannerSlide;->BINANCE_PAY_OPERATION_WITHOUT_FEE:Lcom/smedialink/model/wallet/home/BannerSlide;
+    sget-object v1, Lcom/iMe/model/wallet/home/BannerSlide;->BINANCE_PAY_OPERATION_WITHOUT_FEE:Lcom/iMe/model/wallet/home/BannerSlide;
 
     invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
 
@@ -176,9 +176,9 @@
 
     :catch_8
     :try_start_9
-    sget-object v0, Lorg/telegram/ui/ActionIntroActivity$5;->$SwitchMap$com$smedialink$model$wallet$home$BannerSlide:[I
+    sget-object v0, Lorg/telegram/ui/ActionIntroActivity$5;->$SwitchMap$com$iMe$model$wallet$home$BannerSlide:[I
 
-    sget-object v1, Lcom/smedialink/model/wallet/home/BannerSlide;->ASCENDEEX:Lcom/smedialink/model/wallet/home/BannerSlide;
+    sget-object v1, Lcom/iMe/model/wallet/home/BannerSlide;->ASCENDEEX:Lcom/iMe/model/wallet/home/BannerSlide;
 
     invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
 
@@ -192,9 +192,9 @@
 
     :catch_9
     :try_start_a
-    sget-object v0, Lorg/telegram/ui/ActionIntroActivity$5;->$SwitchMap$com$smedialink$model$wallet$home$BannerSlide:[I
+    sget-object v0, Lorg/telegram/ui/ActionIntroActivity$5;->$SwitchMap$com$iMe$model$wallet$home$BannerSlide:[I
 
-    sget-object v1, Lcom/smedialink/model/wallet/home/BannerSlide;->STAKING:Lcom/smedialink/model/wallet/home/BannerSlide;
+    sget-object v1, Lcom/iMe/model/wallet/home/BannerSlide;->STAKING:Lcom/iMe/model/wallet/home/BannerSlide;
 
     invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
 
@@ -208,9 +208,9 @@
 
     :catch_a
     :try_start_b
-    sget-object v0, Lorg/telegram/ui/ActionIntroActivity$5;->$SwitchMap$com$smedialink$model$wallet$home$BannerSlide:[I
+    sget-object v0, Lorg/telegram/ui/ActionIntroActivity$5;->$SwitchMap$com$iMe$model$wallet$home$BannerSlide:[I
 
-    sget-object v1, Lcom/smedialink/model/wallet/home/BannerSlide;->BINANCE_PAY_FAQ:Lcom/smedialink/model/wallet/home/BannerSlide;
+    sget-object v1, Lcom/iMe/model/wallet/home/BannerSlide;->BINANCE_PAY_FAQ:Lcom/iMe/model/wallet/home/BannerSlide;
 
     invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
 
@@ -224,9 +224,9 @@
 
     :catch_b
     :try_start_c
-    sget-object v0, Lorg/telegram/ui/ActionIntroActivity$5;->$SwitchMap$com$smedialink$model$wallet$home$BannerSlide:[I
+    sget-object v0, Lorg/telegram/ui/ActionIntroActivity$5;->$SwitchMap$com$iMe$model$wallet$home$BannerSlide:[I
 
-    sget-object v1, Lcom/smedialink/model/wallet/home/BannerSlide;->BINANCE_PAY_MARKETPLACE:Lcom/smedialink/model/wallet/home/BannerSlide;
+    sget-object v1, Lcom/iMe/model/wallet/home/BannerSlide;->BINANCE_PAY_MARKETPLACE:Lcom/iMe/model/wallet/home/BannerSlide;
 
     invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
 

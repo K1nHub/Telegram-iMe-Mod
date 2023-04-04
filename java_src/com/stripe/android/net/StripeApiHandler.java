@@ -29,7 +29,7 @@ import java.util.Scanner;
 import javax.net.ssl.HttpsURLConnection;
 import javax.net.ssl.SSLSocketFactory;
 import org.json.JSONObject;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class StripeApiHandler {
     public static final String CHARSET = "UTF-8";
     private static final String DNS_CACHE_TTL_PROPERTY_NAME = "networkaddress.cache.ttl";
@@ -41,7 +41,7 @@ public class StripeApiHandler {
     public static final String VERSION = "3.5.0";
 
     @Retention(RetentionPolicy.SOURCE)
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     @interface RestMethod {
     }
 
@@ -447,7 +447,7 @@ public class StripeApiHandler {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Parameter {
         public final String key;
         public final String value;

@@ -1,13 +1,13 @@
 package com.squareup.okhttp;
 
-import com.google.android.exoplayer2.C0468C;
+import com.google.android.exoplayer2.C0482C;
 import java.io.UnsupportedEncodingException;
 import okio.ByteString;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class Credentials {
     public static String basic(String str, String str2) {
         try {
-            String base64 = ByteString.m89of((str + ":" + str2).getBytes(C0468C.ISO88591_NAME)).base64();
+            String base64 = ByteString.m84of((str + ":" + str2).getBytes(C0482C.ISO88591_NAME)).base64();
             return "Basic " + base64;
         } catch (UnsupportedEncodingException unused) {
             throw new AssertionError();

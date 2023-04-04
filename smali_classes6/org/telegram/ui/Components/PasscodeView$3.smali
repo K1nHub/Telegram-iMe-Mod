@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lorg/telegram/ui/Components/PasscodeView;-><init>(Landroid/content/Context;Lorg/fork/enums/LockedSection;Landroid/util/AttributeSet;)V
+    value = Lorg/telegram/ui/Components/PasscodeView;-><init>(Landroid/content/Context;Lcom/iMe/fork/enums/LockedSection;Landroid/util/AttributeSet;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -88,9 +88,9 @@
 
     iget-object p1, p0, Lorg/telegram/ui/Components/PasscodeView$3;->this$0:Lorg/telegram/ui/Components/PasscodeView;
 
-    sget-object v0, Lorg/fork/enums/PasscodeType;->PIN:Lorg/fork/enums/PasscodeType;
+    sget-object v0, Lcom/iMe/fork/enums/PasscodeType;->PIN:Lcom/iMe/fork/enums/PasscodeType;
 
-    invoke-static {p1, v0}, Lorg/telegram/ui/Components/PasscodeView;->access$1100(Lorg/telegram/ui/Components/PasscodeView;Lorg/fork/enums/PasscodeType;)Z
+    invoke-static {p1, v0}, Lorg/telegram/ui/Components/PasscodeView;->access$1100(Lorg/telegram/ui/Components/PasscodeView;Lcom/iMe/fork/enums/PasscodeType;)Z
 
     move-result p1
 

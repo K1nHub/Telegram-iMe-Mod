@@ -5,7 +5,7 @@ import com.google.gson.JsonDeserializer;
 import com.google.gson.JsonSerializer;
 import com.trustwallet.walletconnect.models.binance.WCBinanceTransferOrder;
 /* compiled from: WCBinanceTransferOrder.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class WCBinanceTransferOrderKt {
     private static final JsonDeserializer<WCBinanceTransferOrder.Message> transferOrderDeserializer = GsonBuilderKt.jsonDeserializer(WCBinanceTransferOrderKt$transferOrderDeserializer$1.INSTANCE);
     private static final JsonSerializer<WCBinanceTransferOrder.Message> transferOrderSerializer = GsonBuilderKt.jsonSerializer(WCBinanceTransferOrderKt$transferOrderSerializer$1.INSTANCE);

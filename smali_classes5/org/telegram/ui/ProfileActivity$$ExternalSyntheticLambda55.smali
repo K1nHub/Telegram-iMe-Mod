@@ -2,40 +2,44 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lorg/fork/utils/Callbacks$Callback;
+.implements Lj$/util/function/Consumer;
 
 
-# static fields
-.field public static final synthetic INSTANCE:Lorg/telegram/ui/ProfileActivity$$ExternalSyntheticLambda55;
+# instance fields
+.field public final synthetic f$0:Lorg/telegram/ui/ProfileActivity;
 
 
 # direct methods
-.method static synthetic constructor <clinit>()V
-    .locals 1
-
-    new-instance v0, Lorg/telegram/ui/ProfileActivity$$ExternalSyntheticLambda55;
-
-    invoke-direct {v0}, Lorg/telegram/ui/ProfileActivity$$ExternalSyntheticLambda55;-><init>()V
-
-    sput-object v0, Lorg/telegram/ui/ProfileActivity$$ExternalSyntheticLambda55;->INSTANCE:Lorg/telegram/ui/ProfileActivity$$ExternalSyntheticLambda55;
-
-    return-void
-.end method
-
-.method private synthetic constructor <init>()V
+.method public synthetic constructor <init>(Lorg/telegram/ui/ProfileActivity;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lorg/telegram/ui/ProfileActivity$$ExternalSyntheticLambda55;->f$0:Lorg/telegram/ui/ProfileActivity;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke()V
-    .locals 0
+.method public final accept(Ljava/lang/Object;)V
+    .locals 1
 
-    invoke-static {}, Lorg/telegram/ui/ProfileActivity;->$r8$lambda$MKWozBU6qCOrFiDSu-f2Y_J84GM()V
+    iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$$ExternalSyntheticLambda55;->f$0:Lorg/telegram/ui/ProfileActivity;
+
+    check-cast p1, Ljava/util/HashSet;
+
+    invoke-static {v0, p1}, Lorg/telegram/ui/ProfileActivity;->$r8$lambda$bgv9xcLpnoCVtRG7E3_MSAwTSS4(Lorg/telegram/ui/ProfileActivity;Ljava/util/HashSet;)V
 
     return-void
+.end method
+
+.method public synthetic andThen(Lj$/util/function/Consumer;)Lj$/util/function/Consumer;
+    .locals 0
+
+    invoke-static {p0, p1}, Lj$/util/function/Consumer$-CC;->$default$andThen(Lj$/util/function/Consumer;Lj$/util/function/Consumer;)Lj$/util/function/Consumer;
+
+    move-result-object p1
+
+    return-object p1
 .end method

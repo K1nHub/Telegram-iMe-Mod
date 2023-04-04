@@ -12,6 +12,6 @@ public final /* synthetic */ class Bulletin$ParentLayout$1$$ExternalSyntheticLam
 
     @Override // androidx.dynamicanimation.animation.DynamicAnimation.OnAnimationUpdateListener
     public final void onAnimationUpdate(DynamicAnimation dynamicAnimation, float f, float f2) {
-        Bulletin.ParentLayout.C41641.lambda$onFling$3(dynamicAnimation, f, f2);
+        Bulletin.ParentLayout.C41851.lambda$onFling$3(dynamicAnimation, f, f2);
     }
 }

@@ -523,13 +523,13 @@
     :goto_0
     sget v3, Lorg/telegram/messenger/UserConfig;->selectedAccount:I
 
-    invoke-static {v3}, Lorg/fork/controller/FiltersController;->getInstance(I)Lorg/fork/controller/FiltersController;
+    invoke-static {v3}, Lcom/iMe/fork/controller/FiltersController;->getInstance(I)Lcom/iMe/fork/controller/FiltersController;
 
     move-result-object v3
 
     const/4 v4, 0x0
 
-    invoke-virtual {v3, v4}, Lorg/fork/controller/FiltersController;->getActiveSortingTabsCount(Z)I
+    invoke-virtual {v3, v4}, Lcom/iMe/fork/controller/FiltersController;->getActiveSortingTabsCount(Z)I
 
     move-result v3
 

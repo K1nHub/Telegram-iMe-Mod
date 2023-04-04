@@ -1,5 +1,5 @@
 .class Lorg/telegram/ui/SessionsActivity$2;
-.super Landroidx/recyclerview/widget/LinearLayoutManager;
+.super Lorg/telegram/ui/Components/RecyclerListView;
 .source "SessionsActivity.java"
 
 
@@ -14,22 +14,66 @@
 .end annotation
 
 
+# instance fields
+.field final synthetic this$0:Lorg/telegram/ui/SessionsActivity;
+
+
 # direct methods
-.method constructor <init>(Lorg/telegram/ui/SessionsActivity;Landroid/content/Context;IZ)V
+.method constructor <init>(Lorg/telegram/ui/SessionsActivity;Landroid/content/Context;)V
     .locals 0
 
-    .line 219
-    invoke-direct {p0, p2, p3, p4}, Landroidx/recyclerview/widget/LinearLayoutManager;-><init>(Landroid/content/Context;IZ)V
+    .line 218
+    iput-object p1, p0, Lorg/telegram/ui/SessionsActivity$2;->this$0:Lorg/telegram/ui/SessionsActivity;
+
+    invoke-direct {p0, p2}, Lorg/telegram/ui/Components/RecyclerListView;-><init>(Landroid/content/Context;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public supportsPredictiveItemAnimations()Z
+.method public getSelectorColor(I)Ljava/lang/Integer;
     .locals 1
 
-    const/4 v0, 0x1
+    .line 221
+    iget-object v0, p0, Lorg/telegram/ui/SessionsActivity$2;->this$0:Lorg/telegram/ui/SessionsActivity;
 
-    return v0
+    invoke-static {v0}, Lorg/telegram/ui/SessionsActivity;->access$000(Lorg/telegram/ui/SessionsActivity;)I
+
+    move-result v0
+
+    if-ne p1, v0, :cond_0
+
+    const-string p1, "windowBackgroundWhiteRedText2"
+
+    .line 222
+    invoke-virtual {p0, p1}, Lorg/telegram/ui/Components/RecyclerListView;->getThemedColor(Ljava/lang/String;)I
+
+    move-result p1
+
+    const v0, 0x3dcccccd    # 0.1f
+
+    invoke-static {p1, v0}, Lorg/telegram/ui/ActionBar/Theme;->multAlpha(IF)I
+
+    move-result p1
+
+    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object p1
+
+    return-object p1
+
+    :cond_0
+    const-string p1, "listSelectorSDK21"
+
+    .line 224
+    invoke-virtual {p0, p1}, Lorg/telegram/ui/Components/RecyclerListView;->getThemedColor(Ljava/lang/String;)I
+
+    move-result p1
+
+    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object p1
+
+    return-object p1
 .end method

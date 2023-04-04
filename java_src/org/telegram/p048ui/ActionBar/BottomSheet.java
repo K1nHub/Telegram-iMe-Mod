@@ -39,7 +39,7 @@ import androidx.core.view.NestedScrollingParentHelper;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3301R;
+import org.telegram.messenger.C3316R;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.NotificationCenter;
@@ -280,7 +280,7 @@ public class BottomSheet extends Dialog {
         private VelocityTracker velocityTracker;
 
         /* renamed from: y */
-        private float f1655y;
+        private float f1657y;
 
         @Override // android.view.View
         public boolean hasOverlappingRendering() {
@@ -306,7 +306,7 @@ public class BottomSheet extends Dialog {
             this.currentAnimation = null;
             this.rect = new Rect();
             this.backgroundPaint = new Paint();
-            this.f1655y = BitmapDescriptorFactory.HUE_RED;
+            this.f1657y = BitmapDescriptorFactory.HUE_RED;
             this.nestedScrollingParentHelper = new NestedScrollingParentHelper(this);
             setWillNotDraw(false);
         }
@@ -452,7 +452,7 @@ public class BottomSheet extends Dialog {
                     BottomSheet.this.onDismissWithTouchOutside();
                     return true;
                 }
-                BottomSheet.this.onScrollUpBegin(this.f1655y);
+                BottomSheet.this.onScrollUpBegin(this.f1657y);
                 this.startedTrackingPointerId = motionEvent.getPointerId(0);
                 this.maybeStartTracking = true;
                 cancelCurrentAnimation();
@@ -466,7 +466,7 @@ public class BottomSheet extends Dialog {
                 }
                 float abs = Math.abs((int) (motionEvent.getX() - this.startedTrackingX));
                 float y2 = ((int) motionEvent.getY()) - this.startedTrackingY;
-                boolean onScrollUp = BottomSheet.this.onScrollUp(this.f1655y + y2);
+                boolean onScrollUp = BottomSheet.this.onScrollUp(this.f1657y + y2);
                 this.velocityTracker.addMovement(motionEvent);
                 if (!BottomSheet.this.disableScroll && this.maybeStartTracking && !this.startedTracking && y2 > BitmapDescriptorFactory.HUE_RED && y2 / 3.0f > Math.abs(abs) && Math.abs(y2) >= BottomSheet.this.touchSlop) {
                     this.startedTrackingY = (int) motionEvent.getY();
@@ -474,12 +474,12 @@ public class BottomSheet extends Dialog {
                     this.startedTracking = true;
                     requestDisallowInterceptTouchEvent(true);
                 } else if (this.startedTracking) {
-                    float f = this.f1655y + y2;
-                    this.f1655y = f;
+                    float f = this.f1657y + y2;
+                    this.f1657y = f;
                     if (!onScrollUp) {
-                        this.f1655y = Math.max(f, (float) BitmapDescriptorFactory.HUE_RED);
+                        this.f1657y = Math.max(f, (float) BitmapDescriptorFactory.HUE_RED);
                     }
-                    BottomSheet.this.containerView.setTranslationY(Math.max(this.f1655y, (float) BitmapDescriptorFactory.HUE_RED));
+                    BottomSheet.this.containerView.setTranslationY(Math.max(this.f1657y, (float) BitmapDescriptorFactory.HUE_RED));
                     this.startedTrackingY = (int) motionEvent.getY();
                     BottomSheet.this.container.invalidate();
                 }
@@ -488,8 +488,8 @@ public class BottomSheet extends Dialog {
                     this.velocityTracker = VelocityTracker.obtain();
                 }
                 this.velocityTracker.computeCurrentVelocity(1000);
-                BottomSheet.this.onScrollUpEnd(this.f1655y);
-                if (this.startedTracking || this.f1655y > BitmapDescriptorFactory.HUE_RED) {
+                BottomSheet.this.onScrollUpEnd(this.f1657y);
+                if (this.startedTracking || this.f1657y > BitmapDescriptorFactory.HUE_RED) {
                     checkDismiss(this.velocityTracker.getXVelocity(), this.velocityTracker.getYVelocity());
                 } else {
                     this.maybeStartTracking = false;
@@ -866,7 +866,7 @@ public class BottomSheet extends Dialog {
     }
 
     public BottomSheet(Context context, boolean z, Theme.ResourcesProvider resourcesProvider) {
-        super(context, C3301R.style.TransparentDialog);
+        super(context, C3316R.style.TransparentDialog);
         this.currentAccount = UserConfig.selectedAccount;
         this.allowDrawContent = true;
         this.useHardwareLayer = true;
@@ -909,7 +909,7 @@ public class BottomSheet extends Dialog {
         }
         this.touchSlop = ViewConfiguration.get(context).getScaledTouchSlop();
         Rect rect = new Rect();
-        Drawable mutate = context.getResources().getDrawable(C3301R.C3303drawable.sheet_shadow_round).mutate();
+        Drawable mutate = context.getResources().getDrawable(C3316R.C3318drawable.sheet_shadow_round).mutate();
         this.shadowDrawable = mutate;
         mutate.setColorFilter(new PorterDuffColorFilter(getThemedColor("dialogBackground"), PorterDuff.Mode.MULTIPLY));
         this.shadowDrawable.getPadding(rect);
@@ -999,7 +999,7 @@ public class BottomSheet extends Dialog {
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
         Window window = getWindow();
-        window.setWindowAnimations(C3301R.style.DialogNoAnimation);
+        window.setWindowAnimations(C3316R.style.DialogNoAnimation);
         setContentView(this.container, new ViewGroup.LayoutParams(-1, -1));
         if (this.useLightStatusBar && Build.VERSION.SDK_INT >= 23 && Theme.getColor("actionBarDefault", null, true) == -1) {
             this.container.setSystemUiVisibility(this.container.getSystemUiVisibility() | 8192);
@@ -1504,7 +1504,7 @@ public class BottomSheet extends Dialog {
         animatorSet.playTogether(animatorArr);
         this.currentSheetAnimation.setDuration(180L);
         this.currentSheetAnimation.setInterpolator(CubicBezierInterpolator.EASE_OUT);
-        this.currentSheetAnimation.addListener(new C34327(i));
+        this.currentSheetAnimation.addListener(new C34477(i));
         NotificationCenter.getGlobalInstance().postNotificationName(NotificationCenter.stopAllHeavyOperations, 512);
         this.currentSheetAnimation.start();
     }
@@ -1512,10 +1512,10 @@ public class BottomSheet extends Dialog {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: org.telegram.ui.ActionBar.BottomSheet$7 */
     /* loaded from: classes5.dex */
-    public class C34327 extends AnimatorListenerAdapter {
+    public class C34477 extends AnimatorListenerAdapter {
         final /* synthetic */ int val$item;
 
-        C34327(int i) {
+        C34477(int i) {
             this.val$item = i;
         }
 
@@ -1532,7 +1532,7 @@ public class BottomSheet extends Dialog {
                 AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.ActionBar.BottomSheet$7$$ExternalSyntheticLambda0
                     @Override // java.lang.Runnable
                     public final void run() {
-                        BottomSheet.C34327.this.lambda$onAnimationEnd$0();
+                        BottomSheet.C34477.this.lambda$onAnimationEnd$0();
                     }
                 });
             }
@@ -1581,7 +1581,6 @@ public class BottomSheet extends Dialog {
 
     @Override // android.app.Dialog, android.content.DialogInterface
     public void dismiss() {
-        ObjectAnimator ofFloat;
         long j;
         BottomSheetDelegateInterface bottomSheetDelegateInterface = this.delegate;
         if ((bottomSheetDelegateInterface == null || bottomSheetDelegateInterface.canDismiss()) && !this.dismissed) {
@@ -1596,38 +1595,34 @@ public class BottomSheet extends Dialog {
                 j = 0;
             } else {
                 this.currentSheetAnimationType = 2;
-                this.currentSheetAnimation = new AnimatorSet();
                 ValueAnimator valueAnimator = this.navigationBarAnimation;
                 if (valueAnimator != null) {
                     valueAnimator.cancel();
                 }
-                ValueAnimator ofFloat2 = ValueAnimator.ofFloat(this.navigationBarAlpha, BitmapDescriptorFactory.HUE_RED);
-                this.navigationBarAnimation = ofFloat2;
-                ofFloat2.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.ActionBar.BottomSheet$$ExternalSyntheticLambda2
+                ValueAnimator ofFloat = ValueAnimator.ofFloat(this.navigationBarAlpha, BitmapDescriptorFactory.HUE_RED);
+                this.navigationBarAnimation = ofFloat;
+                ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.ActionBar.BottomSheet$$ExternalSyntheticLambda2
                     @Override // android.animation.ValueAnimator.AnimatorUpdateListener
                     public final void onAnimationUpdate(ValueAnimator valueAnimator2) {
                         BottomSheet.this.lambda$dismiss$5(valueAnimator2);
                     }
                 });
-                AnimatorSet animatorSet = this.currentSheetAnimation;
-                Animator[] animatorArr = new Animator[3];
+                this.currentSheetAnimation = new AnimatorSet();
+                ArrayList arrayList = new ArrayList();
                 ViewGroup viewGroup = this.containerView;
-                if (viewGroup == null) {
-                    ofFloat = null;
-                } else {
+                if (viewGroup != null) {
                     Property property = View.TRANSLATION_Y;
                     float[] fArr = new float[1];
                     fArr[0] = getContainerViewHeight() + this.container.keyboardHeight + AndroidUtilities.m50dp(10) + (this.scrollNavBar ? getBottomInset() : 0);
-                    ofFloat = ObjectAnimator.ofFloat(viewGroup, property, fArr);
+                    arrayList.add(ObjectAnimator.ofFloat(viewGroup, property, fArr));
                 }
-                animatorArr[0] = ofFloat;
-                animatorArr[1] = ObjectAnimator.ofInt(this.backDrawable, AnimationProperties.COLOR_DRAWABLE_ALPHA, 0);
-                animatorArr[2] = this.navigationBarAnimation;
-                animatorSet.playTogether(animatorArr);
+                arrayList.add(ObjectAnimator.ofInt(this.backDrawable, AnimationProperties.COLOR_DRAWABLE_ALPHA, 0));
+                arrayList.add(this.navigationBarAnimation);
+                this.currentSheetAnimation.playTogether(arrayList);
                 j = 250;
                 this.currentSheetAnimation.setDuration(250L);
                 this.currentSheetAnimation.setInterpolator(CubicBezierInterpolator.EASE_OUT);
-                this.currentSheetAnimation.addListener(new C34338());
+                this.currentSheetAnimation.addListener(new C34488());
                 NotificationCenter.getGlobalInstance().postNotificationName(NotificationCenter.stopAllHeavyOperations, 512);
                 this.currentSheetAnimation.start();
             }
@@ -1655,8 +1650,8 @@ public class BottomSheet extends Dialog {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: org.telegram.ui.ActionBar.BottomSheet$8 */
     /* loaded from: classes5.dex */
-    public class C34338 extends AnimatorListenerAdapter {
-        C34338() {
+    public class C34488 extends AnimatorListenerAdapter {
+        C34488() {
         }
 
         @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
@@ -1669,7 +1664,7 @@ public class BottomSheet extends Dialog {
                 AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.ActionBar.BottomSheet$8$$ExternalSyntheticLambda0
                     @Override // java.lang.Runnable
                     public final void run() {
-                        BottomSheet.C34338.this.lambda$onAnimationEnd$0();
+                        BottomSheet.C34488.this.lambda$onAnimationEnd$0();
                     }
                 });
             }

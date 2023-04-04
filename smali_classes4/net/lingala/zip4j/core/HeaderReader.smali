@@ -1902,7 +1902,7 @@
     :cond_0
     new-instance p1, Lnet/lingala/zip4j/exception/ZipException;
 
-    const-string p2, "unexpected end of file when reading short buff"
+    const-string/jumbo p2, "unexpected end of file when reading short buff"
 
     invoke-direct {p1, p2}, Lnet/lingala/zip4j/exception/ZipException;-><init>(Ljava/lang/String;)V
 

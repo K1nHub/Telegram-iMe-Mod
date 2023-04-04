@@ -5,7 +5,7 @@ import kotlin.jvm.functions.Function2;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.Lambda;
 /* compiled from: WCClient.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 final class WCClient$onDisconnect$1 extends Lambda implements Function2<Integer, String, Unit> {
     public static final WCClient$onDisconnect$1 INSTANCE = new WCClient$onDisconnect$1();
 

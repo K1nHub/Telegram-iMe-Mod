@@ -417,13 +417,13 @@
     return-void
 .end method
 
-.method private getForkCommonController()Lorg/fork/controller/ForkCommonController;
+.method private getForkCommonController()Lcom/iMe/fork/controller/ForkCommonController;
     .locals 1
 
     .line 69
     iget v0, p0, Lorg/telegram/ui/Cells/DrawerUserCell;->accountNumber:I
 
-    invoke-static {v0}, Lorg/fork/controller/ForkCommonController;->getInstance(I)Lorg/fork/controller/ForkCommonController;
+    invoke-static {v0}, Lcom/iMe/fork/controller/ForkCommonController;->getInstance(I)Lcom/iMe/fork/controller/ForkCommonController;
 
     move-result-object v0
 
@@ -436,7 +436,7 @@
     .line 100
     iget v0, p0, Lorg/telegram/ui/Cells/DrawerUserCell;->customType:I
 
-    sget v1, Lcom/smedialink/common/IdFabric$CustomType;->DRAWER_USER_CELL_ACTION_BAR_ACCOUNT_SWITCH:I
+    sget v1, Lcom/iMe/common/IdFabric$CustomType;->DRAWER_USER_CELL_ACTION_BAR_ACCOUNT_SWITCH:I
 
     if-ne v0, v1, :cond_0
 
@@ -455,28 +455,28 @@
     .locals 2
 
     .line 78
-    invoke-direct {p0}, Lorg/telegram/ui/Cells/DrawerUserCell;->getForkCommonController()Lorg/fork/controller/ForkCommonController;
+    invoke-direct {p0}, Lorg/telegram/ui/Cells/DrawerUserCell;->getForkCommonController()Lcom/iMe/fork/controller/ForkCommonController;
 
     move-result-object p1
 
-    invoke-direct {p0}, Lorg/telegram/ui/Cells/DrawerUserCell;->getForkCommonController()Lorg/fork/controller/ForkCommonController;
+    invoke-direct {p0}, Lorg/telegram/ui/Cells/DrawerUserCell;->getForkCommonController()Lcom/iMe/fork/controller/ForkCommonController;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lorg/fork/controller/ForkCommonController;->isAccountMuted()Z
+    invoke-virtual {v0}, Lcom/iMe/fork/controller/ForkCommonController;->isAccountMuted()Z
 
     move-result v0
 
     xor-int/lit8 v0, v0, 0x1
 
-    invoke-virtual {p1, v0}, Lorg/fork/controller/ForkCommonController;->setAccountMuted(Z)V
+    invoke-virtual {p1, v0}, Lcom/iMe/fork/controller/ForkCommonController;->setAccountMuted(Z)V
 
     .line 79
-    invoke-direct {p0}, Lorg/telegram/ui/Cells/DrawerUserCell;->getForkCommonController()Lorg/fork/controller/ForkCommonController;
+    invoke-direct {p0}, Lorg/telegram/ui/Cells/DrawerUserCell;->getForkCommonController()Lcom/iMe/fork/controller/ForkCommonController;
 
     move-result-object p1
 
-    invoke-virtual {p1}, Lorg/fork/controller/ForkCommonController;->saveConfig()V
+    invoke-virtual {p1}, Lcom/iMe/fork/controller/ForkCommonController;->saveConfig()V
 
     .line 80
     invoke-direct {p0}, Lorg/telegram/ui/Cells/DrawerUserCell;->updateMuteButtonIcon()V
@@ -491,11 +491,11 @@
 
     .line 84
     :cond_0
-    invoke-direct {p0}, Lorg/telegram/ui/Cells/DrawerUserCell;->getForkCommonController()Lorg/fork/controller/ForkCommonController;
+    invoke-direct {p0}, Lorg/telegram/ui/Cells/DrawerUserCell;->getForkCommonController()Lcom/iMe/fork/controller/ForkCommonController;
 
     move-result-object p1
 
-    invoke-virtual {p1}, Lorg/fork/controller/ForkCommonController;->isAccountMuted()Z
+    invoke-virtual {p1}, Lcom/iMe/fork/controller/ForkCommonController;->isAccountMuted()Z
 
     move-result p1
 
@@ -549,11 +549,11 @@
     if-eqz v0, :cond_1
 
     .line 95
-    invoke-direct {p0}, Lorg/telegram/ui/Cells/DrawerUserCell;->getForkCommonController()Lorg/fork/controller/ForkCommonController;
+    invoke-direct {p0}, Lorg/telegram/ui/Cells/DrawerUserCell;->getForkCommonController()Lcom/iMe/fork/controller/ForkCommonController;
 
     move-result-object v1
 
-    invoke-virtual {v1}, Lorg/fork/controller/ForkCommonController;->isAccountMuted()Z
+    invoke-virtual {v1}, Lcom/iMe/fork/controller/ForkCommonController;->isAccountMuted()Z
 
     move-result v1
 
@@ -1184,20 +1184,20 @@
     invoke-virtual {v3, v1}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setText(Ljava/lang/CharSequence;)Z
 
     .line 223
-    invoke-static {p1}, Lorg/fork/controller/ForkCommonController;->getInstance(I)Lorg/fork/controller/ForkCommonController;
+    invoke-static {p1}, Lcom/iMe/fork/controller/ForkCommonController;->getInstance(I)Lcom/iMe/fork/controller/ForkCommonController;
 
     move-result-object v1
 
-    invoke-virtual {v1}, Lorg/fork/controller/ForkCommonController;->isShowPremiumBadgeEnabled()Z
+    invoke-virtual {v1}, Lcom/iMe/fork/controller/ForkCommonController;->isShowPremiumBadgeEnabled()Z
 
     move-result v1
 
     .line 224
-    invoke-static {p1}, Lorg/fork/controller/ForkCommonController;->getInstance(I)Lorg/fork/controller/ForkCommonController;
+    invoke-static {p1}, Lcom/iMe/fork/controller/ForkCommonController;->getInstance(I)Lcom/iMe/fork/controller/ForkCommonController;
 
     move-result-object v3
 
-    invoke-virtual {v3}, Lorg/fork/controller/ForkCommonController;->isShowPremiumStatusEnabled()Z
+    invoke-virtual {v3}, Lcom/iMe/fork/controller/ForkCommonController;->isShowPremiumStatusEnabled()Z
 
     move-result v3
 

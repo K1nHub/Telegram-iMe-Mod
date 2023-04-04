@@ -2749,7 +2749,7 @@
 .end method
 
 .method protected onDraw(Landroid/graphics/Canvas;)V
-    .locals 18
+    .locals 17
 
     move-object/from16 v0, p0
 
@@ -3522,8 +3522,6 @@
     :cond_15
     iget-object v1, v0, Lorg/telegram/ui/ActionBar/SimpleTextView;->layout:Landroid/text/Layout;
 
-    const/16 v17, 0x4
-
     if-eqz v1, :cond_2a
 
     .line 829
@@ -3762,7 +3760,9 @@
     goto :goto_a
 
     :cond_1c
-    invoke-static/range {v17 .. v17}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    const/4 v4, 0x4
+
+    invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v4
 
@@ -4305,12 +4305,6 @@
     iget v2, v0, Lorg/telegram/ui/ActionBar/SimpleTextView;->drawablePadding:I
 
     add-int/2addr v1, v2
-
-    invoke-static/range {v17 .. v17}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
-
-    move-result v2
-
-    sub-int/2addr v1, v2
 
     invoke-static {v15, v1}, Ljava/lang/Math;->min(II)I
 

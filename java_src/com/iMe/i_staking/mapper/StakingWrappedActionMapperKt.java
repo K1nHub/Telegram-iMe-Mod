@@ -2,9 +2,9 @@ package com.iMe.i_staking.mapper;
 
 import com.auth0.android.jwt.JWT;
 import com.iMe.i_staking.response.StakingWrappedActionResponse;
-import com.smedialink.storage.domain.model.staking.StakingTransactionAction;
-import com.smedialink.storage.domain.model.staking.StakingTransactionArgs;
-import com.smedialink.storage.domain.model.staking.StakingTransactionGas;
+import com.iMe.storage.domain.model.staking.StakingTransactionAction;
+import com.iMe.storage.domain.model.staking.StakingTransactionArgs;
+import com.iMe.storage.domain.model.staking.StakingTransactionGas;
 import kotlin.Pair;
 import kotlin.TuplesKt;
 import kotlin.jvm.internal.Intrinsics;
@@ -24,12 +24,12 @@ public final class StakingWrappedActionMapperKt {
             StakingTransactionGas stakingTransactionGas = (StakingTransactionGas) jwt.getClaim("gas").asObject(StakingTransactionGas.class);
             if (stakingTransactionGas != null) {
                 Intrinsics.checkNotNullExpressionValue(stakingTransactionGas, "jwt.getClaim(GAS_KEY).as…     ?: throw Throwable()");
-                return TuplesKt.m99to(stakingWrappedActionResponse.getWrappedAction(), new StakingTransactionAction(stakingTransactionArgs, stakingTransactionGas));
+                return TuplesKt.m94to(stakingWrappedActionResponse.getWrappedAction(), new StakingTransactionAction(stakingTransactionArgs, stakingTransactionGas));
             }
             throw new Throwable();
         } catch (Exception e) {
             Timber.m4e(e);
-            return TuplesKt.m99to(stakingWrappedActionResponse.getWrappedAction(), null);
+            return TuplesKt.m94to(stakingWrappedActionResponse.getWrappedAction(), null);
         }
     }
 }

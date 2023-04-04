@@ -62,12 +62,12 @@
 .method public constructor <init>(Lorg/telegram/ui/DialogsActivity;Lorg/telegram/ui/DialogsActivity$ViewPage;)V
     .locals 0
 
-    .line 3627
+    .line 3628
     iput-object p1, p0, Lorg/telegram/ui/DialogsActivity$SwipeController;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-direct {p0}, Landroidx/recyclerview/widget/ItemTouchHelper$Callback;-><init>()V
 
-    .line 3628
+    .line 3629
     iput-object p2, p0, Lorg/telegram/ui/DialogsActivity$SwipeController;->parentPage:Lorg/telegram/ui/DialogsActivity$ViewPage;
 
     return-void
@@ -76,7 +76,7 @@
 .method static synthetic access$17400(Lorg/telegram/ui/DialogsActivity$SwipeController;)Z
     .locals 0
 
-    .line 3619
+    .line 3620
     iget-boolean p0, p0, Lorg/telegram/ui/DialogsActivity$SwipeController;->swipingFolder:Z
 
     return p0
@@ -85,7 +85,7 @@
 .method static synthetic access$17502(Lorg/telegram/ui/DialogsActivity$SwipeController;Z)Z
     .locals 0
 
-    .line 3619
+    .line 3620
     iput-boolean p1, p0, Lorg/telegram/ui/DialogsActivity$SwipeController;->swipeFolderBack:Z
 
     return p1
@@ -94,7 +94,7 @@
 .method static synthetic access$17600(Lorg/telegram/ui/DialogsActivity$SwipeController;)Landroidx/recyclerview/widget/RecyclerView$ViewHolder;
     .locals 0
 
-    .line 3619
+    .line 3620
     iget-object p0, p0, Lorg/telegram/ui/DialogsActivity$SwipeController;->currentItemViewHolder:Landroidx/recyclerview/widget/RecyclerView$ViewHolder;
 
     return-object p0
@@ -105,7 +105,7 @@
 
     const/4 v0, 0x0
 
-    .line 3887
+    .line 3888
     invoke-virtual {p0, v0}, Landroid/view/View;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
 
     return-void
@@ -114,7 +114,7 @@
 .method private synthetic lambda$onSwiped$0()V
     .locals 2
 
-    .line 3809
+    .line 3810
     iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$SwipeController;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     const/4 v1, 0x0
@@ -127,14 +127,14 @@
 .method private synthetic lambda$onSwiped$1(Lorg/telegram/tgnet/TLRPC$Dialog;I)V
     .locals 9
 
-    .line 3817
+    .line 3818
     iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$SwipeController;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     const/4 v1, 0x1
 
     invoke-static {v0, v1}, Lorg/telegram/ui/DialogsActivity;->access$21602(Lorg/telegram/ui/DialogsActivity;Z)Z
 
-    .line 3818
+    .line 3819
     iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$SwipeController;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getMessagesController()Lorg/telegram/messenger/MessagesController;
@@ -151,14 +151,14 @@
 
     invoke-virtual/range {v2 .. v8}, Lorg/telegram/messenger/MessagesController;->addDialogToFolder(JIIJ)I
 
-    .line 3819
+    .line 3820
     iget-object p2, p0, Lorg/telegram/ui/DialogsActivity$SwipeController;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     const/4 v0, 0x0
 
     invoke-static {p2, v0}, Lorg/telegram/ui/DialogsActivity;->access$21602(Lorg/telegram/ui/DialogsActivity;Z)Z
 
-    .line 3820
+    .line 3821
     iget-object p2, p0, Lorg/telegram/ui/DialogsActivity$SwipeController;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-virtual {p2}, Lorg/telegram/ui/ActionBar/BaseFragment;->getMessagesController()Lorg/telegram/messenger/MessagesController;
@@ -169,14 +169,14 @@
 
     move-result-object p2
 
-    .line 3821
+    .line 3822
     invoke-virtual {p2, p1}, Ljava/util/ArrayList;->indexOf(Ljava/lang/Object;)I
 
     move-result p1
 
     if-ltz p1, :cond_3
 
-    .line 3823
+    .line 3824
     iget-object v2, p0, Lorg/telegram/ui/DialogsActivity$SwipeController;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-virtual {v2}, Lorg/telegram/ui/ActionBar/BaseFragment;->getMessagesController()Lorg/telegram/messenger/MessagesController;
@@ -187,7 +187,7 @@
 
     move-result-object v2
 
-    .line 3824
+    .line 3825
     invoke-virtual {v2}, Ljava/util/ArrayList;->isEmpty()Z
 
     move-result v3
@@ -196,13 +196,13 @@
 
     if-eq p1, v1, :cond_1
 
-    .line 3825
+    .line 3826
     :cond_0
     iget-object v3, p0, Lorg/telegram/ui/DialogsActivity$SwipeController;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-static {v3, v1}, Lorg/telegram/ui/DialogsActivity;->access$21200(Lorg/telegram/ui/DialogsActivity;Z)V
 
-    .line 3826
+    .line 3827
     iget-object v3, p0, Lorg/telegram/ui/DialogsActivity$SwipeController;->parentPage:Lorg/telegram/ui/DialogsActivity$ViewPage;
 
     invoke-static {v3}, Lorg/telegram/ui/DialogsActivity$ViewPage;->access$19000(Lorg/telegram/ui/DialogsActivity$ViewPage;)Lorg/telegram/ui/Components/DialogsItemAnimator;
@@ -211,17 +211,17 @@
 
     invoke-virtual {v3}, Lorg/telegram/ui/Components/DialogsItemAnimator;->prepareForRemove()V
 
-    .line 3827
+    .line 3828
     iget-object v3, p0, Lorg/telegram/ui/DialogsActivity$SwipeController;->parentPage:Lorg/telegram/ui/DialogsActivity$ViewPage;
 
     invoke-virtual {v3, v1}, Lorg/telegram/ui/DialogsActivity$ViewPage;->updateList(Z)V
 
-    .line 3828
+    .line 3829
     iget-object v3, p0, Lorg/telegram/ui/DialogsActivity$SwipeController;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-static {v3}, Lorg/telegram/ui/DialogsActivity;->access$21400(Lorg/telegram/ui/DialogsActivity;)V
 
-    .line 3830
+    .line 3831
     :cond_1
     invoke-virtual {v2}, Ljava/util/ArrayList;->isEmpty()Z
 
@@ -229,29 +229,29 @@
 
     if-eqz v2, :cond_4
 
-    .line 3831
+    .line 3832
     invoke-virtual {p2, v0}, Ljava/util/ArrayList;->remove(I)Ljava/lang/Object;
 
     if-ne p1, v1, :cond_2
 
-    .line 3833
+    .line 3834
     iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$SwipeController;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-static {p1, v1}, Lorg/telegram/ui/DialogsActivity;->access$21200(Lorg/telegram/ui/DialogsActivity;Z)V
 
-    .line 3834
+    .line 3835
     iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$SwipeController;->parentPage:Lorg/telegram/ui/DialogsActivity$ViewPage;
 
     invoke-virtual {p1, v1}, Lorg/telegram/ui/DialogsActivity$ViewPage;->updateList(Z)V
 
-    .line 3835
+    .line 3836
     iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$SwipeController;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/DialogsActivity;->access$21400(Lorg/telegram/ui/DialogsActivity;)V
 
     goto :goto_0
 
-    .line 3837
+    .line 3838
     :cond_2
     iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$SwipeController;->this$0:Lorg/telegram/ui/DialogsActivity;
 
@@ -261,7 +261,7 @@
 
     invoke-virtual {p1, v0}, Ljava/util/ArrayList;->remove(I)Ljava/lang/Object;
 
-    .line 3838
+    .line 3839
     iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$SwipeController;->parentPage:Lorg/telegram/ui/DialogsActivity$ViewPage;
 
     invoke-static {p1}, Lorg/telegram/ui/DialogsActivity$ViewPage;->access$19000(Lorg/telegram/ui/DialogsActivity$ViewPage;)Lorg/telegram/ui/Components/DialogsItemAnimator;
@@ -270,14 +270,14 @@
 
     invoke-virtual {p1}, Lorg/telegram/ui/Components/DialogsItemAnimator;->prepareForRemove()V
 
-    .line 3839
+    .line 3840
     iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$SwipeController;->parentPage:Lorg/telegram/ui/DialogsActivity$ViewPage;
 
     invoke-virtual {p1, v1}, Lorg/telegram/ui/DialogsActivity$ViewPage;->updateList(Z)V
 
     goto :goto_0
 
-    .line 3843
+    .line 3844
     :cond_3
     iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$SwipeController;->parentPage:Lorg/telegram/ui/DialogsActivity$ViewPage;
 
@@ -291,7 +291,7 @@
 .method private synthetic lambda$onSwiped$2(Lorg/telegram/tgnet/TLRPC$Dialog;II)V
     .locals 11
 
-    .line 3763
+    .line 3764
     iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$SwipeController;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/DialogsActivity;->access$21300(Lorg/telegram/ui/DialogsActivity;)Ljava/util/ArrayList;
@@ -302,7 +302,7 @@
 
     return-void
 
-    .line 3766
+    .line 3767
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$SwipeController;->this$0:Lorg/telegram/ui/DialogsActivity;
 
@@ -312,17 +312,17 @@
 
     invoke-virtual {v0, p1}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
 
-    .line 3767
+    .line 3768
     iget v0, p1, Lorg/telegram/tgnet/TLRPC$Dialog;->pinnedNum:I
 
-    .line 3768
+    .line 3769
     iget-object v1, p0, Lorg/telegram/ui/DialogsActivity$SwipeController;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     const/4 v2, 0x0
 
     invoke-static {v1, v2}, Lorg/telegram/ui/DialogsActivity;->access$15702(Lorg/telegram/ui/DialogsActivity;Lorg/telegram/ui/Cells/DialogCell;)Lorg/telegram/ui/Cells/DialogCell;
 
-    .line 3769
+    .line 3770
     iget-object v1, p0, Lorg/telegram/ui/DialogsActivity$SwipeController;->parentPage:Lorg/telegram/ui/DialogsActivity$ViewPage;
 
     invoke-static {v1}, Lorg/telegram/ui/DialogsActivity$ViewPage;->access$15200(Lorg/telegram/ui/DialogsActivity$ViewPage;)Lorg/telegram/ui/DialogsActivity$DialogsRecyclerView;
@@ -331,7 +331,7 @@
 
     invoke-virtual {v1}, Landroid/view/ViewGroup;->invalidate()V
 
-    .line 3770
+    .line 3771
     iget-object v1, p0, Lorg/telegram/ui/DialogsActivity$SwipeController;->parentPage:Lorg/telegram/ui/DialogsActivity$ViewPage;
 
     invoke-static {v1}, Lorg/telegram/ui/DialogsActivity$ViewPage;->access$16000(Lorg/telegram/ui/DialogsActivity$ViewPage;)Landroidx/recyclerview/widget/LinearLayoutManager;
@@ -348,7 +348,7 @@
 
     if-ne v1, p2, :cond_1
 
-    .line 3772
+    .line 3773
     iget-object p2, p0, Lorg/telegram/ui/DialogsActivity$SwipeController;->parentPage:Lorg/telegram/ui/DialogsActivity$ViewPage;
 
     invoke-static {p2}, Lorg/telegram/ui/DialogsActivity$ViewPage;->access$16000(Lorg/telegram/ui/DialogsActivity$ViewPage;)Landroidx/recyclerview/widget/LinearLayoutManager;
@@ -361,7 +361,7 @@
 
     invoke-virtual {p2}, Landroid/view/View;->requestLayout()V
 
-    .line 3774
+    .line 3775
     :cond_1
     iget-object p2, p0, Lorg/telegram/ui/DialogsActivity$SwipeController;->this$0:Lorg/telegram/ui/DialogsActivity;
 
@@ -379,7 +379,7 @@
 
     if-eqz p2, :cond_2
 
-    .line 3775
+    .line 3776
     iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$SwipeController;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/BaseFragment;->getMessagesController()Lorg/telegram/messenger/MessagesController;
@@ -388,7 +388,7 @@
 
     invoke-virtual {p1}, Lorg/telegram/messenger/MessagesController;->hidePromoDialog()V
 
-    .line 3776
+    .line 3777
     iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$SwipeController;->parentPage:Lorg/telegram/ui/DialogsActivity$ViewPage;
 
     invoke-static {p1}, Lorg/telegram/ui/DialogsActivity$ViewPage;->access$19000(Lorg/telegram/ui/DialogsActivity$ViewPage;)Lorg/telegram/ui/Components/DialogsItemAnimator;
@@ -397,14 +397,14 @@
 
     invoke-virtual {p1}, Lorg/telegram/ui/Components/DialogsItemAnimator;->prepareForRemove()V
 
-    .line 3777
+    .line 3778
     iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$SwipeController;->parentPage:Lorg/telegram/ui/DialogsActivity$ViewPage;
 
     invoke-virtual {p1, v3}, Lorg/telegram/ui/DialogsActivity$ViewPage;->updateList(Z)V
 
     goto/16 :goto_5
 
-    .line 3779
+    .line 3780
     :cond_2
     iget-object p2, p0, Lorg/telegram/ui/DialogsActivity$SwipeController;->this$0:Lorg/telegram/ui/DialogsActivity;
 
@@ -444,7 +444,7 @@
 
     if-eqz p3, :cond_5
 
-    .line 3781
+    .line 3782
     :cond_4
     iget-object v5, p0, Lorg/telegram/ui/DialogsActivity$SwipeController;->parentPage:Lorg/telegram/ui/DialogsActivity$ViewPage;
 
@@ -454,12 +454,12 @@
 
     invoke-virtual {v5}, Lorg/telegram/ui/Components/DialogsItemAnimator;->prepareForRemove()V
 
-    .line 3782
+    .line 3783
     iget-object v5, p0, Lorg/telegram/ui/DialogsActivity$SwipeController;->parentPage:Lorg/telegram/ui/DialogsActivity$ViewPage;
 
     invoke-virtual {v5, v3}, Lorg/telegram/ui/DialogsActivity$ViewPage;->updateList(Z)V
 
-    .line 3784
+    .line 3785
     :cond_5
     iget-object v5, p0, Lorg/telegram/ui/DialogsActivity$SwipeController;->this$0:Lorg/telegram/ui/DialogsActivity;
 
@@ -471,7 +471,7 @@
 
     if-ne p2, v4, :cond_a
 
-    .line 3786
+    .line 3787
     iget-object p2, p0, Lorg/telegram/ui/DialogsActivity$SwipeController;->parentPage:Lorg/telegram/ui/DialogsActivity$ViewPage;
 
     invoke-static {p2}, Lorg/telegram/ui/DialogsActivity$ViewPage;->access$19000(Lorg/telegram/ui/DialogsActivity$ViewPage;)Lorg/telegram/ui/Components/DialogsItemAnimator;
@@ -482,30 +482,30 @@
 
     if-nez p3, :cond_6
 
-    .line 3788
+    .line 3789
     iget-object p2, p0, Lorg/telegram/ui/DialogsActivity$SwipeController;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-static {p2, v3}, Lorg/telegram/ui/DialogsActivity;->access$21200(Lorg/telegram/ui/DialogsActivity;Z)V
 
-    .line 3789
+    .line 3790
     iget-object p2, p0, Lorg/telegram/ui/DialogsActivity$SwipeController;->parentPage:Lorg/telegram/ui/DialogsActivity$ViewPage;
 
     invoke-virtual {p2, v3}, Lorg/telegram/ui/DialogsActivity$ViewPage;->updateList(Z)V
 
-    .line 3790
+    .line 3791
     iget-object p2, p0, Lorg/telegram/ui/DialogsActivity$SwipeController;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-static {p2}, Lorg/telegram/ui/DialogsActivity;->access$21400(Lorg/telegram/ui/DialogsActivity;)V
 
     goto :goto_2
 
-    .line 3792
+    .line 3793
     :cond_6
     iget-object p2, p0, Lorg/telegram/ui/DialogsActivity$SwipeController;->parentPage:Lorg/telegram/ui/DialogsActivity$ViewPage;
 
     invoke-virtual {p2, v3}, Lorg/telegram/ui/DialogsActivity$ViewPage;->updateList(Z)V
 
-    .line 3793
+    .line 3794
     sget-boolean p2, Lorg/telegram/messenger/SharedConfig;->archiveHidden:Z
 
     if-nez p2, :cond_9
@@ -522,12 +522,12 @@
 
     if-nez p2, :cond_9
 
-    .line 3794
+    .line 3795
     iget-object p2, p0, Lorg/telegram/ui/DialogsActivity$SwipeController;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-static {p2, v3}, Lorg/telegram/ui/DialogsActivity;->access$16902(Lorg/telegram/ui/DialogsActivity;Z)Z
 
-    .line 3795
+    .line 3796
     iget-object p2, p0, Lorg/telegram/ui/DialogsActivity$SwipeController;->parentPage:Lorg/telegram/ui/DialogsActivity$ViewPage;
 
     invoke-static {p2}, Lorg/telegram/ui/DialogsActivity$ViewPage;->access$15200(Lorg/telegram/ui/DialogsActivity$ViewPage;)Lorg/telegram/ui/DialogsActivity$DialogsRecyclerView;
@@ -563,7 +563,7 @@
 
     invoke-virtual {p2, v1, p3}, Landroidx/recyclerview/widget/RecyclerView;->smoothScrollBy(II)V
 
-    .line 3798
+    .line 3799
     :cond_9
     :goto_2
     iget-object p2, p0, Lorg/telegram/ui/DialogsActivity$SwipeController;->this$0:Lorg/telegram/ui/DialogsActivity;
@@ -588,14 +588,14 @@
 
     move-result-object p2
 
-    .line 3800
+    .line 3801
     invoke-virtual {p2}, Ljava/util/ArrayList;->isEmpty()Z
 
     move-result p3
 
     if-nez p3, :cond_c
 
-    .line 3801
+    .line 3802
     iget-object p3, p0, Lorg/telegram/ui/DialogsActivity$SwipeController;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-static {p3}, Lorg/telegram/ui/DialogsActivity;->access$21300(Lorg/telegram/ui/DialogsActivity;)Ljava/util/ArrayList;
@@ -615,7 +615,7 @@
     :cond_a
     if-ne p2, v3, :cond_c
 
-    .line 3803
+    .line 3804
     iget-object p2, p0, Lorg/telegram/ui/DialogsActivity$SwipeController;->parentPage:Lorg/telegram/ui/DialogsActivity$ViewPage;
 
     invoke-static {p2}, Lorg/telegram/ui/DialogsActivity$ViewPage;->access$15200(Lorg/telegram/ui/DialogsActivity$ViewPage;)Lorg/telegram/ui/DialogsActivity$DialogsRecyclerView;
@@ -628,23 +628,23 @@
 
     if-eqz p2, :cond_b
 
-    .line 3804
+    .line 3805
     iget-object p2, p2, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     instance-of p3, p2, Lorg/telegram/ui/Cells/DialogCell;
 
     if-eqz p3, :cond_b
 
-    .line 3805
+    .line 3806
     check-cast p2, Lorg/telegram/ui/Cells/DialogCell;
 
-    .line 3806
+    .line 3807
     invoke-virtual {p2, v3}, Lorg/telegram/ui/Cells/DialogCell;->checkCurrentDialogIndex(Z)Z
 
-    .line 3807
+    .line 3808
     invoke-virtual {p2}, Lorg/telegram/ui/Cells/DialogCell;->animateArchiveAvatar()V
 
-    .line 3809
+    .line 3810
     :cond_b
     new-instance p2, Lorg/telegram/ui/DialogsActivity$SwipeController$$ExternalSyntheticLambda1;
 
@@ -654,7 +654,7 @@
 
     invoke-static {p2, v5, v6}, Lorg/telegram/messenger/AndroidUtilities;->runOnUIThread(Ljava/lang/Runnable;J)V
 
-    .line 3811
+    .line 3812
     :cond_c
     :goto_3
     invoke-static {}, Lorg/telegram/messenger/MessagesController;->getGlobalMainSettings()Landroid/content/SharedPreferences;
@@ -663,7 +663,7 @@
 
     const-string p3, "archivehint_l"
 
-    .line 3812
+    .line 3813
     invoke-interface {p2, p3, v1}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
 
     move-result v5
@@ -680,7 +680,7 @@
     :cond_e
     if-nez v1, :cond_f
 
-    .line 3814
+    .line 3815
     invoke-interface {p2}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
 
     move-result-object p2
@@ -691,7 +691,7 @@
 
     invoke-interface {p2}, Landroid/content/SharedPreferences$Editor;->commit()Z
 
-    .line 3816
+    .line 3817
     :cond_f
     iget-object p2, p0, Lorg/telegram/ui/DialogsActivity$SwipeController;->this$0:Lorg/telegram/ui/DialogsActivity;
 
@@ -719,7 +719,7 @@
 
     invoke-virtual/range {v5 .. v10}, Lorg/telegram/ui/Components/UndoView;->showWithAction(JILjava/lang/Runnable;Ljava/lang/Runnable;)V
 
-    .line 3847
+    .line 3848
     :cond_11
     iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$SwipeController;->this$0:Lorg/telegram/ui/DialogsActivity;
 
@@ -741,7 +741,7 @@
 
     if-eqz p1, :cond_12
 
-    .line 3848
+    .line 3849
     iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$SwipeController;->parentPage:Lorg/telegram/ui/DialogsActivity$ViewPage;
 
     invoke-static {p1}, Lorg/telegram/ui/DialogsActivity$ViewPage;->access$15200(Lorg/telegram/ui/DialogsActivity$ViewPage;)Lorg/telegram/ui/DialogsActivity$DialogsRecyclerView;
@@ -750,7 +750,7 @@
 
     invoke-virtual {p1, v2}, Lorg/telegram/ui/Components/RecyclerListView;->setEmptyView(Landroid/view/View;)V
 
-    .line 3849
+    .line 3850
     iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$SwipeController;->parentPage:Lorg/telegram/ui/DialogsActivity$ViewPage;
 
     invoke-static {p1}, Lorg/telegram/ui/DialogsActivity$ViewPage;->access$16700(Lorg/telegram/ui/DialogsActivity$ViewPage;)Lorg/telegram/ui/Components/FlickerLoadingView;
@@ -771,7 +771,7 @@
 .method public convertToAbsoluteDirection(II)I
     .locals 1
 
-    .line 3731
+    .line 3732
     iget-boolean v0, p0, Lorg/telegram/ui/DialogsActivity$SwipeController;->swipeFolderBack:Z
 
     if-eqz v0, :cond_0
@@ -780,7 +780,7 @@
 
     return p1
 
-    .line 3734
+    .line 3735
     :cond_0
     invoke-super {p0, p1, p2}, Landroidx/recyclerview/widget/ItemTouchHelper$Callback;->convertToAbsoluteDirection(II)I
 
@@ -805,7 +805,7 @@
 
     if-ne p2, v0, :cond_1
 
-    .line 3885
+    .line 3886
     iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$SwipeController;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/DialogsActivity;->access$19700(Lorg/telegram/ui/DialogsActivity;)Lorg/telegram/ui/Cells/DialogCell;
@@ -814,14 +814,14 @@
 
     if-eqz v0, :cond_1
 
-    .line 3886
+    .line 3887
     iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$SwipeController;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/DialogsActivity;->access$19700(Lorg/telegram/ui/DialogsActivity;)Lorg/telegram/ui/Cells/DialogCell;
 
     move-result-object v0
 
-    .line 3887
+    .line 3888
     new-instance v1, Lorg/telegram/ui/DialogsActivity$SwipeController$$ExternalSyntheticLambda0;
 
     invoke-direct {v1, v0}, Lorg/telegram/ui/DialogsActivity$SwipeController$$ExternalSyntheticLambda0;-><init>(Landroid/view/View;)V
@@ -838,14 +838,14 @@
 
     invoke-static {v1, v2, v3}, Lorg/telegram/messenger/AndroidUtilities;->runOnUIThread(Ljava/lang/Runnable;J)V
 
-    .line 3888
+    .line 3889
     iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$SwipeController;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     const/4 v1, 0x0
 
     invoke-static {v0, v1}, Lorg/telegram/ui/DialogsActivity;->access$19702(Lorg/telegram/ui/DialogsActivity;Lorg/telegram/ui/Cells/DialogCell;)Lorg/telegram/ui/Cells/DialogCell;
 
-    .line 3891
+    .line 3892
     :cond_1
     invoke-super {p0, p1, p2, p3, p4}, Landroidx/recyclerview/widget/ItemTouchHelper$Callback;->getAnimationDuration(Landroidx/recyclerview/widget/RecyclerView;IFF)J
 
@@ -857,7 +857,7 @@
 .method public getMovementFlags(Landroidx/recyclerview/widget/RecyclerView;Landroidx/recyclerview/widget/RecyclerView$ViewHolder;)I
     .locals 11
 
-    .line 3633
+    .line 3634
     iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$SwipeController;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$SwipeController;->parentPage:Lorg/telegram/ui/DialogsActivity$ViewPage;
@@ -903,7 +903,7 @@
 
     goto/16 :goto_4
 
-    .line 3636
+    .line 3637
     :cond_1
     iget-boolean p1, p0, Lorg/telegram/ui/DialogsActivity$SwipeController;->swipingFolder:Z
 
@@ -915,25 +915,25 @@
 
     if-eqz p1, :cond_3
 
-    .line 3637
+    .line 3638
     iget-object p1, p2, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     instance-of p2, p1, Lorg/telegram/ui/Cells/DialogCell;
 
     if-eqz p2, :cond_2
 
-    .line 3638
+    .line 3639
     check-cast p1, Lorg/telegram/ui/Cells/DialogCell;
 
     iput-boolean v1, p1, Lorg/telegram/ui/Cells/DialogCell;->swipeCanceled:Z
 
-    .line 3640
+    .line 3641
     :cond_2
     iput-boolean v0, p0, Lorg/telegram/ui/DialogsActivity$SwipeController;->swipingFolder:Z
 
     return v0
 
-    .line 3643
+    .line 3644
     :cond_3
     iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$SwipeController;->this$0:Lorg/telegram/ui/DialogsActivity;
 
@@ -978,15 +978,15 @@
 
     if-eqz v2, :cond_17
 
-    .line 3644
+    .line 3645
     check-cast p1, Lorg/telegram/ui/Cells/DialogCell;
 
-    .line 3645
+    .line 3646
     invoke-virtual {p1}, Lorg/telegram/ui/Cells/DialogCell;->getDialogId()J
 
     move-result-wide v2
 
-    .line 3646
+    .line 3647
     iget-object v4, p0, Lorg/telegram/ui/DialogsActivity$SwipeController;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-static {v4}, Lorg/telegram/ui/DialogsActivity;->access$19600(Lorg/telegram/ui/DialogsActivity;)Lorg/telegram/ui/ActionBar/ActionBar;
@@ -1003,7 +1003,7 @@
 
     if-eqz v4, :cond_7
 
-    .line 3647
+    .line 3648
     iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$SwipeController;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/BaseFragment;->getMessagesController()Lorg/telegram/messenger/MessagesController;
@@ -1018,7 +1018,7 @@
 
     check-cast p1, Lorg/telegram/tgnet/TLRPC$Dialog;
 
-    .line 3648
+    .line 3649
     iget-object v1, p0, Lorg/telegram/ui/DialogsActivity$SwipeController;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-static {v1}, Lorg/telegram/ui/DialogsActivity;->access$12800(Lorg/telegram/ui/DialogsActivity;)Z
@@ -1045,7 +1045,7 @@
 
     goto :goto_0
 
-    .line 3651
+    .line 3652
     :cond_5
     iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$SwipeController;->this$0:Lorg/telegram/ui/DialogsActivity;
 
@@ -1055,7 +1055,7 @@
 
     invoke-static {p1, p2}, Lorg/telegram/ui/DialogsActivity;->access$19702(Lorg/telegram/ui/DialogsActivity;Lorg/telegram/ui/Cells/DialogCell;)Lorg/telegram/ui/Cells/DialogCell;
 
-    .line 3652
+    .line 3653
     iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$SwipeController;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/DialogsActivity;->access$19700(Lorg/telegram/ui/DialogsActivity;)Lorg/telegram/ui/Cells/DialogCell;
@@ -1070,10 +1070,10 @@
 
     invoke-virtual {p1, p2}, Landroid/view/ViewGroup;->setBackgroundColor(I)V
 
-    .line 3653
+    .line 3654
     iput-boolean v0, p0, Lorg/telegram/ui/DialogsActivity$SwipeController;->swipeFolderBack:Z
 
-    .line 3654
+    .line 3655
     invoke-static {v6, v0}, Landroidx/recyclerview/widget/ItemTouchHelper$Callback;->makeMovementFlags(II)I
 
     move-result p1
@@ -1084,11 +1084,11 @@
     :goto_0
     return v0
 
-    .line 3657
+    .line 3658
     :cond_7
     iget-object p2, p0, Lorg/telegram/ui/DialogsActivity$SwipeController;->this$0:Lorg/telegram/ui/DialogsActivity;
 
-    invoke-virtual {p2}, Lorg/telegram/ui/ActionBar/BaseFragment;->getTopicsController()Lorg/fork/controller/ForkTopicsController;
+    invoke-virtual {p2}, Lorg/telegram/ui/ActionBar/BaseFragment;->getTopicsController()Lcom/iMe/fork/controller/ForkTopicsController;
 
     move-result-object p2
 
@@ -1098,7 +1098,7 @@
 
     move-result v4
 
-    invoke-virtual {p2, v4}, Lorg/fork/controller/ForkTopicsController;->hasSelectedTopic(Z)Z
+    invoke-virtual {p2, v4}, Lcom/iMe/fork/controller/ForkTopicsController;->hasSelectedTopic(Z)Z
 
     move-result p2
 
@@ -1148,7 +1148,7 @@
 
     goto/16 :goto_4
 
-    .line 3661
+    .line 3662
     :cond_8
     iget-object p2, p0, Lorg/telegram/ui/DialogsActivity$SwipeController;->this$0:Lorg/telegram/ui/DialogsActivity;
 
@@ -1156,7 +1156,7 @@
 
     move-result p2
 
-    .line 3663
+    .line 3664
     :try_start_0
     iget-object v7, p0, Lorg/telegram/ui/DialogsActivity$SwipeController;->parentPage:Lorg/telegram/ui/DialogsActivity$ViewPage;
 
@@ -1170,7 +1170,7 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 3665
+    .line 3666
     :catch_0
     iget-object v7, p0, Lorg/telegram/ui/DialogsActivity$SwipeController;->this$0:Lorg/telegram/ui/DialogsActivity;
 
@@ -1281,7 +1281,7 @@
 
     goto/16 :goto_4
 
-    .line 3668
+    .line 3669
     :cond_c
     iget-object p2, p0, Lorg/telegram/ui/DialogsActivity$SwipeController;->this$0:Lorg/telegram/ui/DialogsActivity;
 
@@ -1359,7 +1359,7 @@
     :cond_e
     move p2, v0
 
-    .line 3669
+    .line 3670
     :goto_1
     iget-object v6, p0, Lorg/telegram/ui/DialogsActivity$SwipeController;->this$0:Lorg/telegram/ui/DialogsActivity;
 
@@ -1373,7 +1373,7 @@
 
     if-ne v6, v1, :cond_13
 
-    .line 3671
+    .line 3672
     iget-object v6, p0, Lorg/telegram/ui/DialogsActivity$SwipeController;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-static {v6}, Lorg/telegram/ui/DialogsActivity;->access$3700(Lorg/telegram/ui/DialogsActivity;)[Lorg/telegram/ui/DialogsActivity$ViewPage;
@@ -1402,7 +1402,7 @@
 
     if-ne v6, v8, :cond_11
 
-    .line 3672
+    .line 3673
     :cond_f
     iget-object v5, p0, Lorg/telegram/ui/DialogsActivity$SwipeController;->this$0:Lorg/telegram/ui/DialogsActivity;
 
@@ -1439,7 +1439,7 @@
     :cond_11
     if-eqz v5, :cond_13
 
-    .line 3674
+    .line 3675
     iget v6, v5, Lorg/telegram/messenger/MessagesController$DialogFilter;->flags:I
 
     sget v7, Lorg/telegram/messenger/MessagesController;->DIALOG_FILTER_FLAG_EXCLUDE_READ:I
@@ -1448,7 +1448,7 @@
 
     if-eqz v6, :cond_13
 
-    .line 3675
+    .line 3676
     iget-object v6, p0, Lorg/telegram/ui/DialogsActivity$SwipeController;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-virtual {v6}, Lorg/telegram/ui/ActionBar/BaseFragment;->getMessagesController()Lorg/telegram/messenger/MessagesController;
@@ -1465,7 +1465,7 @@
 
     if-eqz v2, :cond_13
 
-    .line 3676
+    .line 3677
     iget-object v3, p0, Lorg/telegram/ui/DialogsActivity$SwipeController;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-static {v3}, Lorg/telegram/ui/DialogsActivity;->access$20700(Lorg/telegram/ui/DialogsActivity;)I
@@ -1489,13 +1489,13 @@
     :cond_12
     move p2, v0
 
-    .line 3681
+    .line 3682
     :cond_13
     iput-boolean v0, p0, Lorg/telegram/ui/DialogsActivity$SwipeController;->swipeFolderBack:Z
 
     if-eqz p2, :cond_14
 
-    .line 3682
+    .line 3683
     invoke-virtual {p1}, Lorg/telegram/ui/Cells/DialogCell;->getDialogId()J
 
     move-result-wide v2
@@ -1532,10 +1532,10 @@
     :goto_3
     iput-boolean p2, p0, Lorg/telegram/ui/DialogsActivity$SwipeController;->swipingFolder:Z
 
-    .line 3683
+    .line 3684
     invoke-virtual {p1, v1}, Lorg/telegram/ui/Cells/DialogCell;->setSliding(Z)V
 
-    .line 3684
+    .line 3685
     invoke-static {v0, v4}, Landroidx/recyclerview/widget/ItemTouchHelper$Callback;->makeMovementFlags(II)I
 
     move-result p1
@@ -1574,7 +1574,7 @@
 .method public onMove(Landroidx/recyclerview/widget/RecyclerView;Landroidx/recyclerview/widget/RecyclerView$ViewHolder;Landroidx/recyclerview/widget/RecyclerView$ViewHolder;)Z
     .locals 4
 
-    .line 3692
+    .line 3693
     iget-object p1, p3, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     instance-of v0, p1, Lorg/telegram/ui/Cells/DialogCell;
@@ -1585,16 +1585,16 @@
 
     return v1
 
-    .line 3695
+    .line 3696
     :cond_0
     check-cast p1, Lorg/telegram/ui/Cells/DialogCell;
 
-    .line 3696
+    .line 3697
     invoke-virtual {p1}, Lorg/telegram/ui/Cells/DialogCell;->getDialogId()J
 
     move-result-wide v2
 
-    .line 3697
+    .line 3698
     iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$SwipeController;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/BaseFragment;->getMessagesController()Lorg/telegram/messenger/MessagesController;
@@ -1611,7 +1611,7 @@
 
     if-eqz p1, :cond_b
 
-    .line 3698
+    .line 3699
     iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$SwipeController;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-static {v0, p1}, Lorg/telegram/ui/DialogsActivity;->access$18500(Lorg/telegram/ui/DialogsActivity;Lorg/telegram/tgnet/TLRPC$Dialog;)Z
@@ -1628,18 +1628,18 @@
 
     goto/16 :goto_3
 
-    .line 3701
+    .line 3702
     :cond_1
     invoke-virtual {p2}, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->getAdapterPosition()I
 
     move-result p1
 
-    .line 3702
+    .line 3703
     invoke-virtual {p3}, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->getAdapterPosition()I
 
     move-result p2
 
-    .line 3703
+    .line 3704
     iget-object p3, p0, Lorg/telegram/ui/DialogsActivity$SwipeController;->parentPage:Lorg/telegram/ui/DialogsActivity$ViewPage;
 
     invoke-static {p3}, Lorg/telegram/ui/DialogsActivity$ViewPage;->access$15200(Lorg/telegram/ui/DialogsActivity$ViewPage;)Lorg/telegram/ui/DialogsActivity$DialogsRecyclerView;
@@ -1652,7 +1652,7 @@
 
     if-nez p3, :cond_2
 
-    .line 3704
+    .line 3705
     iget-object p3, p0, Lorg/telegram/ui/DialogsActivity$SwipeController;->parentPage:Lorg/telegram/ui/DialogsActivity$ViewPage;
 
     invoke-static {p3}, Lorg/telegram/ui/DialogsActivity$ViewPage;->access$15200(Lorg/telegram/ui/DialogsActivity$ViewPage;)Lorg/telegram/ui/DialogsActivity$DialogsRecyclerView;
@@ -1667,7 +1667,7 @@
 
     invoke-virtual {p3, v0}, Landroidx/recyclerview/widget/RecyclerView;->setItemAnimator(Landroidx/recyclerview/widget/RecyclerView$ItemAnimator;)V
 
-    .line 3706
+    .line 3707
     :cond_2
     iget-object p3, p0, Lorg/telegram/ui/DialogsActivity$SwipeController;->parentPage:Lorg/telegram/ui/DialogsActivity$ViewPage;
 
@@ -1683,7 +1683,7 @@
 
     invoke-virtual {p3, v0, p1, p2}, Lorg/telegram/ui/Adapters/DialogsAdapter;->moveDialogs(Lorg/telegram/ui/Components/RecyclerListView;II)V
 
-    .line 3708
+    .line 3709
     iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$SwipeController;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/DialogsActivity;->access$3700(Lorg/telegram/ui/DialogsActivity;)[Lorg/telegram/ui/DialogsActivity$ViewPage;
@@ -1756,7 +1756,7 @@
 
     goto :goto_0
 
-    .line 3724
+    .line 3725
     :cond_3
     iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$SwipeController;->this$0:Lorg/telegram/ui/DialogsActivity;
 
@@ -1764,7 +1764,7 @@
 
     goto/16 :goto_2
 
-    .line 3712
+    .line 3713
     :cond_4
     :goto_0
     iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$SwipeController;->this$0:Lorg/telegram/ui/DialogsActivity;
@@ -1785,7 +1785,7 @@
 
     if-eqz p1, :cond_6
 
-    .line 3713
+    .line 3714
     iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$SwipeController;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/BaseFragment;->getMessagesController()Lorg/telegram/messenger/MessagesController;
@@ -1817,7 +1817,7 @@
 
     goto :goto_1
 
-    .line 3714
+    .line 3715
     :cond_6
     iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$SwipeController;->this$0:Lorg/telegram/ui/DialogsActivity;
 
@@ -1837,7 +1837,7 @@
 
     if-eqz p1, :cond_8
 
-    .line 3715
+    .line 3716
     iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$SwipeController;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/BaseFragment;->getMessagesController()Lorg/telegram/messenger/MessagesController;
@@ -1869,7 +1869,7 @@
 
     goto :goto_1
 
-    .line 3717
+    .line 3718
     :cond_8
     iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$SwipeController;->this$0:Lorg/telegram/ui/DialogsActivity;
 
@@ -1898,7 +1898,7 @@
     :cond_9
     aget-object p1, p1, v1
 
-    .line 3720
+    .line 3721
     :goto_1
     iget-object p2, p0, Lorg/telegram/ui/DialogsActivity$SwipeController;->this$0:Lorg/telegram/ui/DialogsActivity;
 
@@ -1912,7 +1912,7 @@
 
     if-nez p2, :cond_a
 
-    .line 3721
+    .line 3722
     iget-object p2, p0, Lorg/telegram/ui/DialogsActivity$SwipeController;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-static {p2}, Lorg/telegram/ui/DialogsActivity;->access$20800(Lorg/telegram/ui/DialogsActivity;)Ljava/util/ArrayList;
@@ -1937,7 +1937,7 @@
 
     if-eqz p1, :cond_0
 
-    .line 3871
+    .line 3872
     iget-object v1, p0, Lorg/telegram/ui/DialogsActivity$SwipeController;->parentPage:Lorg/telegram/ui/DialogsActivity$ViewPage;
 
     invoke-static {v1}, Lorg/telegram/ui/DialogsActivity$ViewPage;->access$15200(Lorg/telegram/ui/DialogsActivity$ViewPage;)Lorg/telegram/ui/DialogsActivity$DialogsRecyclerView;
@@ -1946,25 +1946,25 @@
 
     invoke-virtual {v1, v0}, Lorg/telegram/ui/Components/RecyclerListView;->hideSelector(Z)V
 
-    .line 3873
+    .line 3874
     :cond_0
     iput-object p1, p0, Lorg/telegram/ui/DialogsActivity$SwipeController;->currentItemViewHolder:Landroidx/recyclerview/widget/RecyclerView$ViewHolder;
 
     if-eqz p1, :cond_1
 
-    .line 3874
+    .line 3875
     iget-object v1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     instance-of v2, v1, Lorg/telegram/ui/Cells/DialogCell;
 
     if-eqz v2, :cond_1
 
-    .line 3875
+    .line 3876
     check-cast v1, Lorg/telegram/ui/Cells/DialogCell;
 
     iput-boolean v0, v1, Lorg/telegram/ui/Cells/DialogCell;->swipeCanceled:Z
 
-    .line 3877
+    .line 3878
     :cond_1
     invoke-super {p0, p1, p2}, Landroidx/recyclerview/widget/ItemTouchHelper$Callback;->onSelectedChanged(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;I)V
 
@@ -1976,17 +1976,17 @@
 
     if-eqz p1, :cond_7
 
-    .line 3740
+    .line 3741
     iget-object p2, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     check-cast p2, Lorg/telegram/ui/Cells/DialogCell;
 
-    .line 3741
+    .line 3742
     invoke-virtual {p2}, Lorg/telegram/ui/Cells/DialogCell;->getDialogId()J
 
     move-result-wide v0
 
-    .line 3742
+    .line 3743
     invoke-static {v0, v1}, Lorg/telegram/messenger/DialogObject;->isFolderDialogId(J)Z
 
     move-result v2
@@ -1995,7 +1995,7 @@
 
     if-eqz v2, :cond_0
 
-    .line 3743
+    .line 3744
     iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$SwipeController;->parentPage:Lorg/telegram/ui/DialogsActivity$ViewPage;
 
     invoke-static {p1}, Lorg/telegram/ui/DialogsActivity$ViewPage;->access$15200(Lorg/telegram/ui/DialogsActivity$ViewPage;)Lorg/telegram/ui/DialogsActivity$DialogsRecyclerView;
@@ -2006,7 +2006,7 @@
 
     return-void
 
-    .line 3746
+    .line 3747
     :cond_0
     iget-object v2, p0, Lorg/telegram/ui/DialogsActivity$SwipeController;->this$0:Lorg/telegram/ui/DialogsActivity;
 
@@ -2026,7 +2026,7 @@
 
     return-void
 
-    .line 3751
+    .line 3752
     :cond_1
     iget-object v4, p0, Lorg/telegram/ui/DialogsActivity$SwipeController;->this$0:Lorg/telegram/ui/DialogsActivity;
 
@@ -2062,19 +2062,19 @@
 
     if-ne v4, v5, :cond_4
 
-    .line 3752
+    .line 3753
     new-instance p1, Ljava/util/ArrayList;
 
     invoke-direct {p1}, Ljava/util/ArrayList;-><init>()V
 
-    .line 3753
+    .line 3754
     invoke-static {v0, v1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object p2
 
     invoke-virtual {p1, p2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 3754
+    .line 3755
     iget-object p2, p0, Lorg/telegram/ui/DialogsActivity$SwipeController;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     iget v0, v2, Lorg/telegram/tgnet/TLRPC$Dialog;->unread_count:I
@@ -2099,7 +2099,7 @@
     :goto_1
     invoke-static {p2, v0}, Lorg/telegram/ui/DialogsActivity;->access$17802(Lorg/telegram/ui/DialogsActivity;I)I
 
-    .line 3755
+    .line 3756
     iget-object p2, p0, Lorg/telegram/ui/DialogsActivity$SwipeController;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     const/16 v0, 0x65
@@ -2108,18 +2108,18 @@
 
     return-void
 
-    .line 3759
+    .line 3760
     :cond_4
     iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$SwipeController;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-static {v0, p2}, Lorg/telegram/ui/DialogsActivity;->access$15702(Lorg/telegram/ui/DialogsActivity;Lorg/telegram/ui/Cells/DialogCell;)Lorg/telegram/ui/Cells/DialogCell;
 
-    .line 3760
+    .line 3761
     invoke-virtual {p1}, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->getAdapterPosition()I
 
     move-result p1
 
-    .line 3761
+    .line 3762
     iget-object p2, p0, Lorg/telegram/ui/DialogsActivity$SwipeController;->parentPage:Lorg/telegram/ui/DialogsActivity$ViewPage;
 
     invoke-static {p2}, Lorg/telegram/ui/DialogsActivity$ViewPage;->access$14100(Lorg/telegram/ui/DialogsActivity$ViewPage;)Lorg/telegram/ui/Adapters/DialogsAdapter;
@@ -2130,17 +2130,17 @@
 
     move-result p2
 
-    .line 3762
+    .line 3763
     new-instance v0, Lorg/telegram/ui/DialogsActivity$SwipeController$$ExternalSyntheticLambda3;
 
     invoke-direct {v0, p0, v2, p2, p1}, Lorg/telegram/ui/DialogsActivity$SwipeController$$ExternalSyntheticLambda3;-><init>(Lorg/telegram/ui/DialogsActivity$SwipeController;Lorg/telegram/tgnet/TLRPC$Dialog;II)V
 
-    .line 3853
+    .line 3854
     iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$SwipeController;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-static {p1, v5}, Lorg/telegram/ui/DialogsActivity;->access$21200(Lorg/telegram/ui/DialogsActivity;Z)V
 
-    .line 3854
+    .line 3855
     sget-object p1, Lorg/telegram/messenger/Utilities;->random:Ljava/security/SecureRandom;
 
     const/16 p2, 0x3e8
@@ -2151,7 +2151,7 @@
 
     if-ne p1, v5, :cond_6
 
-    .line 3855
+    .line 3856
     iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$SwipeController;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/DialogsActivity;->access$15800(Lorg/telegram/ui/DialogsActivity;)Lorg/telegram/ui/Components/PacmanAnimation;
@@ -2160,7 +2160,7 @@
 
     if-nez p1, :cond_5
 
-    .line 3856
+    .line 3857
     iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$SwipeController;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     new-instance p2, Lorg/telegram/ui/Components/PacmanAnimation;
@@ -2175,7 +2175,7 @@
 
     invoke-static {p1, p2}, Lorg/telegram/ui/DialogsActivity;->access$15802(Lorg/telegram/ui/DialogsActivity;Lorg/telegram/ui/Components/PacmanAnimation;)Lorg/telegram/ui/Components/PacmanAnimation;
 
-    .line 3858
+    .line 3859
     :cond_5
     iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$SwipeController;->this$0:Lorg/telegram/ui/DialogsActivity;
 
@@ -2185,7 +2185,7 @@
 
     invoke-virtual {p1, v0}, Lorg/telegram/ui/Components/PacmanAnimation;->setFinishRunnable(Ljava/lang/Runnable;)V
 
-    .line 3859
+    .line 3860
     iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$SwipeController;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/DialogsActivity;->access$15800(Lorg/telegram/ui/DialogsActivity;)Lorg/telegram/ui/Components/PacmanAnimation;
@@ -2196,13 +2196,13 @@
 
     goto :goto_2
 
-    .line 3861
+    .line 3862
     :cond_6
     invoke-interface {v0}, Ljava/lang/Runnable;->run()V
 
     goto :goto_2
 
-    .line 3864
+    .line 3865
     :cond_7
     iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$SwipeController;->this$0:Lorg/telegram/ui/DialogsActivity;
 

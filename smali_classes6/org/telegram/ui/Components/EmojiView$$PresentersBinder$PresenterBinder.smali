@@ -27,7 +27,7 @@
     .locals 2
 
     .line 21
-    const-class p1, Lcom/smedialink/ui/kikliko/EmojiViewPresenter;
+    const-class p1, Lcom/iMe/ui/kikliko/EmojiViewPresenter;
 
     const-string v0, "presenter"
 
@@ -55,9 +55,9 @@
     .locals 0
 
     .line 26
-    check-cast p2, Lcom/smedialink/ui/kikliko/EmojiViewPresenter;
+    check-cast p2, Lcom/iMe/ui/kikliko/EmojiViewPresenter;
 
-    iput-object p2, p1, Lorg/telegram/ui/Components/EmojiView;->presenter:Lcom/smedialink/ui/kikliko/EmojiViewPresenter;
+    iput-object p2, p1, Lorg/telegram/ui/Components/EmojiView;->presenter:Lcom/iMe/ui/kikliko/EmojiViewPresenter;
 
     return-void
 .end method
@@ -88,7 +88,7 @@
     .end annotation
 
     .line 31
-    invoke-virtual {p1}, Lorg/telegram/ui/Components/EmojiView;->providePresenter()Lcom/smedialink/ui/kikliko/EmojiViewPresenter;
+    invoke-virtual {p1}, Lorg/telegram/ui/Components/EmojiView;->providePresenter()Lcom/iMe/ui/kikliko/EmojiViewPresenter;
 
     move-result-object p1
 

@@ -457,7 +457,7 @@
 
     invoke-virtual {v1, v2, v3}, Ljava/util/logging/Logger;->log(Ljava/util/logging/Level;Ljava/lang/String;)V
 
-    const-string v1, "too_many_pings"
+    const-string/jumbo v1, "too_many_pings"
 
     .line 1332
     invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -579,7 +579,7 @@
 
     if-eqz p2, :cond_0
 
-    const-string v3, "trailer"
+    const-string/jumbo v3, "trailer"
 
     goto :goto_0
 

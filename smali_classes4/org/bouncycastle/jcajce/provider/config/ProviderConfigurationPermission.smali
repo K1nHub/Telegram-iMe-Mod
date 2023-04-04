@@ -150,7 +150,7 @@
     :cond_8
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
-    const-string v0, "unknown permissions passed to mask"
+    const-string/jumbo v0, "unknown permissions passed to mask"
 
     invoke-direct {p1, v0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 

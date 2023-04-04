@@ -1,5 +1,5 @@
 .class Lorg/telegram/ui/ManageLinksActivity$ListAdapter$3;
-.super Lcom/smedialink/ui/common/SimpleTextWatcher;
+.super Lcom/iMe/ui/common/SimpleTextWatcher;
 .source "ManageLinksActivity.java"
 
 
@@ -22,10 +22,10 @@
 .method constructor <init>(Lorg/telegram/ui/ManageLinksActivity$ListAdapter;)V
     .locals 0
 
-    .line 2286
+    .line 2285
     iput-object p1, p0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter$3;->this$1:Lorg/telegram/ui/ManageLinksActivity$ListAdapter;
 
-    invoke-direct {p0}, Lcom/smedialink/ui/common/SimpleTextWatcher;-><init>()V
+    invoke-direct {p0}, Lcom/iMe/ui/common/SimpleTextWatcher;-><init>()V
 
     return-void
 .end method
@@ -35,7 +35,7 @@
 .method public onTextChanged(Ljava/lang/CharSequence;III)V
     .locals 0
 
-    .line 2289
+    .line 2288
     iget-object p2, p0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter$3;->this$1:Lorg/telegram/ui/ManageLinksActivity$ListAdapter;
 
     iget-object p2, p2, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->this$0:Lorg/telegram/ui/ManageLinksActivity;
@@ -48,19 +48,19 @@
 
     return-void
 
-    .line 2290
+    .line 2289
     :cond_0
     iget-object p2, p0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter$3;->this$1:Lorg/telegram/ui/ManageLinksActivity$ListAdapter;
 
     iget-object p2, p2, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
-    iget-object p2, p2, Lorg/telegram/ui/ManageLinksActivity;->stakingTransactionPresenter:Lcom/smedialink/ui/wallet/staking/transaction/StakingTransactionPresenter;
+    iget-object p2, p2, Lorg/telegram/ui/ManageLinksActivity;->stakingTransactionPresenter:Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;
 
     invoke-interface {p1}, Ljava/lang/CharSequence;->toString()Ljava/lang/String;
 
     move-result-object p1
 
-    invoke-virtual {p2, p1}, Lcom/smedialink/ui/wallet/staking/transaction/StakingTransactionPresenter;->onAmountChanged(Ljava/lang/String;)V
+    invoke-virtual {p2, p1}, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;->onAmountChanged(Ljava/lang/String;)V
 
     return-void
 .end method

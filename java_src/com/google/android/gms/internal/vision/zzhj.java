@@ -4,10 +4,9 @@ import java.util.AbstractList;
 import java.util.Collection;
 import java.util.List;
 import java.util.RandomAccess;
-/* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: com.google.android.gms:play-services-vision-common@@19.1.3 */
 /* loaded from: classes3.dex */
-public abstract class zzhj<E> extends AbstractList<E> implements zzjl<E> {
+abstract class zzhj<E> extends AbstractList<E> implements zzjl<E> {
     private boolean zza = true;
 
     @Override // java.util.AbstractList, java.util.Collection, java.util.List

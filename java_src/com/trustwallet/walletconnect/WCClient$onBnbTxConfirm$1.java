@@ -6,7 +6,7 @@ import kotlin.jvm.functions.Function2;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.Lambda;
 /* compiled from: WCClient.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 final class WCClient$onBnbTxConfirm$1 extends Lambda implements Function2<Long, WCBinanceTxConfirmParam, Unit> {
     public static final WCClient$onBnbTxConfirm$1 INSTANCE = new WCClient$onBnbTxConfirm$1();
 

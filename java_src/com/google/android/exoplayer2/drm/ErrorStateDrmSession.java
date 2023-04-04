@@ -1,6 +1,6 @@
 package com.google.android.exoplayer2.drm;
 
-import com.google.android.exoplayer2.C0468C;
+import com.google.android.exoplayer2.C0482C;
 import com.google.android.exoplayer2.decoder.CryptoConfig;
 import com.google.android.exoplayer2.drm.DrmSession;
 import com.google.android.exoplayer2.drm.DrmSessionEventListener;
@@ -60,6 +60,6 @@ public final class ErrorStateDrmSession implements DrmSession {
 
     @Override // com.google.android.exoplayer2.drm.DrmSession
     public final UUID getSchemeUuid() {
-        return C0468C.UUID_NIL;
+        return C0482C.UUID_NIL;
     }
 }

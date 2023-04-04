@@ -940,7 +940,7 @@
 
     .line 484
     :cond_6
-    invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getToolsController()Lorg/fork/controller/ToolsController;
+    invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getToolsController()Lcom/iMe/fork/controller/ToolsController;
 
     move-result-object v5
 
@@ -950,7 +950,7 @@
 
     move-result-wide v6
 
-    invoke-virtual {v5, v6, v7}, Lorg/fork/controller/ToolsController;->isSilentSendingEnabledForDialog(J)Z
+    invoke-virtual {v5, v6, v7}, Lcom/iMe/fork/controller/ToolsController;->isSilentSendingEnabledForDialog(J)Z
 
     move-result v5
 

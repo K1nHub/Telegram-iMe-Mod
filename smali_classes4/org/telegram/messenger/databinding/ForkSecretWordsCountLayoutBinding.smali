@@ -19,7 +19,7 @@
 
 
 # direct methods
-.method private constructor <init>(Landroid/widget/LinearLayout;Landroidx/constraintlayout/widget/ConstraintLayout;Landroidx/recyclerview/widget/RecyclerView;Landroid/widget/LinearLayout;Landroidx/appcompat/widget/AppCompatTextView;Landroidx/appcompat/widget/AppCompatTextView;Lcom/smedialink/ui/custom/DividerView;)V
+.method private constructor <init>(Landroid/widget/LinearLayout;Landroidx/constraintlayout/widget/ConstraintLayout;Landroidx/recyclerview/widget/RecyclerView;Landroid/widget/LinearLayout;Landroidx/appcompat/widget/AppCompatTextView;Landroidx/appcompat/widget/AppCompatTextView;Lcom/iMe/ui/custom/DividerView;)V
     .locals 0
 
     .line 46
@@ -117,7 +117,7 @@
 
     move-object v9, v1
 
-    check-cast v9, Lcom/smedialink/ui/custom/DividerView;
+    check-cast v9, Lcom/iMe/ui/custom/DividerView;
 
     if-eqz v9, :cond_0
 
@@ -128,7 +128,7 @@
 
     move-object v3, v6
 
-    invoke-direct/range {v2 .. v9}, Lorg/telegram/messenger/databinding/ForkSecretWordsCountLayoutBinding;-><init>(Landroid/widget/LinearLayout;Landroidx/constraintlayout/widget/ConstraintLayout;Landroidx/recyclerview/widget/RecyclerView;Landroid/widget/LinearLayout;Landroidx/appcompat/widget/AppCompatTextView;Landroidx/appcompat/widget/AppCompatTextView;Lcom/smedialink/ui/custom/DividerView;)V
+    invoke-direct/range {v2 .. v9}, Lorg/telegram/messenger/databinding/ForkSecretWordsCountLayoutBinding;-><init>(Landroid/widget/LinearLayout;Landroidx/constraintlayout/widget/ConstraintLayout;Landroidx/recyclerview/widget/RecyclerView;Landroid/widget/LinearLayout;Landroidx/appcompat/widget/AppCompatTextView;Landroidx/appcompat/widget/AppCompatTextView;Lcom/iMe/ui/custom/DividerView;)V
 
     return-object p0
 

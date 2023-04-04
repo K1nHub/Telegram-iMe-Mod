@@ -125,7 +125,7 @@
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$F2uj462SuJREH7QNZVkwEGmlskg(Lorg/telegram/ui/Components/TranscribeButton;)V
+.method public static synthetic $r8$lambda$1IZV0gnFUt4q8Bqsm_iHnLwYOGc(Lorg/telegram/ui/Components/TranscribeButton;)V
     .locals 0
 
     invoke-direct {p0}, Lorg/telegram/ui/Components/TranscribeButton;->lambda$onTap$2()V
@@ -317,9 +317,9 @@
     .line 108
     iget-object p2, p0, Lorg/telegram/ui/Components/TranscribeButton;->outIconDrawable:Lorg/telegram/ui/Components/RLottieDrawable;
 
-    new-instance v1, Lorg/telegram/ui/Components/TranscribeButton$$ExternalSyntheticLambda6;
+    new-instance v1, Lorg/telegram/ui/Components/TranscribeButton$$ExternalSyntheticLambda7;
 
-    invoke-direct {v1, p0}, Lorg/telegram/ui/Components/TranscribeButton$$ExternalSyntheticLambda6;-><init>(Lorg/telegram/ui/Components/TranscribeButton;)V
+    invoke-direct {v1, p0}, Lorg/telegram/ui/Components/TranscribeButton$$ExternalSyntheticLambda7;-><init>(Lorg/telegram/ui/Components/TranscribeButton;)V
 
     const/16 v3, 0x13
 
@@ -367,9 +367,9 @@
     .line 120
     iget-object p2, p0, Lorg/telegram/ui/Components/TranscribeButton;->inIconDrawable:Lorg/telegram/ui/Components/RLottieDrawable;
 
-    new-instance v2, Lorg/telegram/ui/Components/TranscribeButton$$ExternalSyntheticLambda5;
+    new-instance v2, Lorg/telegram/ui/Components/TranscribeButton$$ExternalSyntheticLambda6;
 
-    invoke-direct {v2, p0}, Lorg/telegram/ui/Components/TranscribeButton$$ExternalSyntheticLambda5;-><init>(Lorg/telegram/ui/Components/TranscribeButton;)V
+    invoke-direct {v2, p0}, Lorg/telegram/ui/Components/TranscribeButton$$ExternalSyntheticLambda6;-><init>(Lorg/telegram/ui/Components/TranscribeButton;)V
 
     invoke-virtual {p2, v2, v3}, Lorg/telegram/ui/Components/RLottieDrawable;->setOnFinishCallback(Ljava/lang/Runnable;I)V
 
@@ -994,7 +994,7 @@
 
     .line 712
     :cond_5
-    new-instance v0, Lorg/telegram/ui/Components/TranscribeButton$$ExternalSyntheticLambda4;
+    new-instance v0, Lorg/telegram/ui/Components/TranscribeButton$$ExternalSyntheticLambda5;
 
     move-object v2, v0
 
@@ -1002,7 +1002,7 @@
 
     move-object/from16 v6, p3
 
-    invoke-direct/range {v2 .. v7}, Lorg/telegram/ui/Components/TranscribeButton$$ExternalSyntheticLambda4;-><init>(Lorg/telegram/messenger/MessageObject;JLjava/lang/String;Z)V
+    invoke-direct/range {v2 .. v7}, Lorg/telegram/ui/Components/TranscribeButton$$ExternalSyntheticLambda5;-><init>(Lorg/telegram/messenger/MessageObject;JLjava/lang/String;Z)V
 
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->runOnUIThread(Ljava/lang/Runnable;)V
     :try_end_0
@@ -1609,9 +1609,9 @@
     if-eqz v1, :cond_5
 
     .line 675
-    new-instance v1, Lorg/telegram/ui/Components/TranscribeButton$$ExternalSyntheticLambda3;
+    new-instance v1, Lorg/telegram/ui/Components/TranscribeButton$$ExternalSyntheticLambda4;
 
-    invoke-direct {v1, v0, v13, v14, v3}, Lorg/telegram/ui/Components/TranscribeButton$$ExternalSyntheticLambda3;-><init>(Lorg/telegram/messenger/MessageObject;JLjava/lang/String;)V
+    invoke-direct {v1, v0, v13, v14, v3}, Lorg/telegram/ui/Components/TranscribeButton$$ExternalSyntheticLambda4;-><init>(Lorg/telegram/messenger/MessageObject;JLjava/lang/String;)V
 
     const-wide/16 v2, 0x15e
 
@@ -1838,9 +1838,9 @@
     if-eqz p1, :cond_1
 
     .line 732
-    new-instance p1, Lorg/telegram/ui/Components/TranscribeButton$$ExternalSyntheticLambda2;
+    new-instance p1, Lorg/telegram/ui/Components/TranscribeButton$$ExternalSyntheticLambda3;
 
-    invoke-direct {p1, p0}, Lorg/telegram/ui/Components/TranscribeButton$$ExternalSyntheticLambda2;-><init>(Lorg/telegram/messenger/MessageObject;)V
+    invoke-direct {p1, p0}, Lorg/telegram/ui/Components/TranscribeButton$$ExternalSyntheticLambda3;-><init>(Lorg/telegram/messenger/MessageObject;)V
 
     invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->runOnUIThread(Ljava/lang/Runnable;)V
 
@@ -1930,9 +1930,9 @@
     invoke-virtual {p1, v6, v7, v8, p2}, Lorg/telegram/messenger/MessagesStorage;->updateMessageVoiceTranscriptionOpen(JILorg/telegram/tgnet/TLRPC$Message;)V
 
     .line 624
-    new-instance p1, Lorg/telegram/ui/Components/TranscribeButton$$ExternalSyntheticLambda0;
+    new-instance p1, Lorg/telegram/ui/Components/TranscribeButton$$ExternalSyntheticLambda1;
 
-    invoke-direct {p1, v5, p0}, Lorg/telegram/ui/Components/TranscribeButton$$ExternalSyntheticLambda0;-><init>(ILorg/telegram/messenger/MessageObject;)V
+    invoke-direct {p1, v5, p0}, Lorg/telegram/ui/Components/TranscribeButton$$ExternalSyntheticLambda1;-><init>(ILorg/telegram/messenger/MessageObject;)V
 
     invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->runOnUIThread(Ljava/lang/Runnable;)V
 
@@ -2069,9 +2069,9 @@
     invoke-virtual {p1, v6, v7, v8, p2}, Lorg/telegram/messenger/MessagesStorage;->updateMessageVoiceTranscriptionOpen(JILorg/telegram/tgnet/TLRPC$Message;)V
 
     .line 685
-    new-instance p1, Lorg/telegram/ui/Components/TranscribeButton$$ExternalSyntheticLambda1;
+    new-instance p1, Lorg/telegram/ui/Components/TranscribeButton$$ExternalSyntheticLambda2;
 
-    invoke-direct {p1, v5, p0}, Lorg/telegram/ui/Components/TranscribeButton$$ExternalSyntheticLambda1;-><init>(ILorg/telegram/messenger/MessageObject;)V
+    invoke-direct {p1, v5, p0}, Lorg/telegram/ui/Components/TranscribeButton$$ExternalSyntheticLambda2;-><init>(ILorg/telegram/messenger/MessageObject;)V
 
     invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->runOnUIThread(Ljava/lang/Runnable;)V
 
@@ -2837,11 +2837,11 @@
 
     move-result-object p1
 
-    new-instance v0, Lorg/telegram/ui/Components/TranscribeButton$$ExternalSyntheticLambda7;
+    new-instance v0, Lorg/telegram/ui/Components/TranscribeButton$$ExternalSyntheticLambda0;
 
-    invoke-direct {v0, p0}, Lorg/telegram/ui/Components/TranscribeButton$$ExternalSyntheticLambda7;-><init>(Lorg/telegram/ui/Components/TranscribeButton;)V
+    invoke-direct {v0, p0}, Lorg/telegram/ui/Components/TranscribeButton$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/Components/TranscribeButton;)V
 
-    invoke-interface {p1, v0}, Lorg/telegram/ui/Cells/ChatMessageCell$ChatMessageCellDelegate;->runWithActivationCheck(Lorg/fork/utils/Callbacks$Callback;)V
+    invoke-interface {p1, v0}, Lorg/telegram/ui/Cells/ChatMessageCell$ChatMessageCellDelegate;->runWithActivationCheck(Lcom/iMe/fork/utils/Callbacks$Callback;)V
 
     return-void
 

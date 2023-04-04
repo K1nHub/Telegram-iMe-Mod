@@ -60,7 +60,7 @@ import android.widget.TextView;
 import android.widget.ViewSwitcher;
 import androidx.core.graphics.ColorUtils;
 import androidx.dynamicanimation.animation.DynamicAnimation;
-import com.google.android.exoplayer2.C0468C;
+import com.google.android.exoplayer2.C0482C;
 import com.google.android.exoplayer2.ExoPlayer;
 import com.google.android.exoplayer2.extractor.p016ts.TsExtractor;
 import com.google.android.exoplayer2.source.rtsp.RtspHeaders;
@@ -76,10 +76,10 @@ import com.google.android.gms.common.internal.ImagesContract;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
-import com.smedialink.common.IdFabric$CustomType;
-import com.smedialink.utils.extentions.common.ContextExtKt;
-import com.smedialink.utils.helper.telegram.TelegramTestAuthHelper;
-import com.smedialink.utils.helper.telegram.TelegramTestPhoneNumber;
+import com.iMe.common.IdFabric$CustomType;
+import com.iMe.utils.extentions.common.ContextExtKt;
+import com.iMe.utils.helper.telegram.TelegramTestAuthHelper;
+import com.iMe.utils.helper.telegram.TelegramTestPhoneNumber;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
@@ -94,14 +94,14 @@ import java.util.Timer;
 import java.util.TimerTask;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicReference;
-import org.telegram.PhoneFormat.C3218PhoneFormat;
+import org.telegram.PhoneFormat.C3233PhoneFormat;
 import org.telegram.messenger.AccountInstance;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.AuthTokensHelper;
 import org.telegram.messenger.BuildConfig;
 import org.telegram.messenger.BuildVars;
-import org.telegram.messenger.C3301R;
+import org.telegram.messenger.C3316R;
 import org.telegram.messenger.CallReceiver;
 import org.telegram.messenger.ContactsController;
 import org.telegram.messenger.Emoji;
@@ -154,7 +154,7 @@ import org.telegram.p048ui.Components.TransformableLoginButtonView;
 import org.telegram.p048ui.Components.VerticalPositionAutoAnimator;
 import org.telegram.p048ui.CountrySelectActivity;
 import org.telegram.p048ui.LoginActivity;
-import org.telegram.tgnet.C3365x72c667f;
+import org.telegram.tgnet.C3380x72c667f;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.SerializedData;
@@ -221,7 +221,7 @@ import org.telegram.tgnet.TLRPC$auth_Authorization;
 import org.telegram.tgnet.TLRPC$auth_CodeType;
 import org.telegram.tgnet.TLRPC$auth_SentCode;
 import org.telegram.tgnet.TLRPC$auth_SentCodeType;
-import p034j$.util.Comparator;
+import p035j$.util.Comparator;
 /* renamed from: org.telegram.ui.LoginActivity */
 /* loaded from: classes5.dex */
 public class LoginActivity extends BaseFragment {
@@ -338,7 +338,7 @@ public class LoginActivity extends BaseFragment {
             }
         }
         if (!arrayList.isEmpty()) {
-            Intent createChooser = Intent.createChooser((Intent) arrayList.get(0), LocaleController.getInternalString(C3301R.string.DidNotGetTheCodeSms));
+            Intent createChooser = Intent.createChooser((Intent) arrayList.get(0), LocaleController.getInternalString(C3316R.string.DidNotGetTheCodeSms));
             createChooser.putExtra("android.intent.extra.INITIAL_INTENTS", (Parcelable[]) arrayList.toArray(new Parcelable[0]));
             createChooser.setFlags(268435456);
             getContext().startActivity(createChooser);
@@ -868,7 +868,7 @@ public class LoginActivity extends BaseFragment {
         AlertDialog.Builder builder = new AlertDialog.Builder(getParentActivity());
         builder.setTitle(str);
         builder.setMessage(str2);
-        builder.setPositiveButton(LocaleController.getString("OK", C3301R.string.OK), null);
+        builder.setPositiveButton(LocaleController.getString("OK", C3316R.string.OK), null);
         showDialog(builder.create());
     }
 
@@ -877,7 +877,7 @@ public class LoginActivity extends BaseFragment {
         view.performHapticFeedback(3, 2);
         AndroidUtilities.shakeViewSpring(view, 3.5f);
         if (z && (view instanceof OutlineTextContainerView)) {
-            int i = C3301R.C3304id.timeout_callback;
+            int i = C3316R.C3319id.timeout_callback;
             Runnable runnable = (Runnable) view.getTag(i);
             if (runnable != null) {
                 view.removeCallbacks(runnable);
@@ -885,19 +885,19 @@ public class LoginActivity extends BaseFragment {
             final OutlineTextContainerView outlineTextContainerView = (OutlineTextContainerView) view;
             AtomicReference atomicReference = new AtomicReference();
             final EditText attachedEditText = outlineTextContainerView.getAttachedEditText();
-            final C58508 c58508 = new C58508(this, attachedEditText, atomicReference);
+            final C58738 c58738 = new C58738(this, attachedEditText, atomicReference);
             outlineTextContainerView.animateError(1.0f);
             Runnable runnable2 = new Runnable() { // from class: org.telegram.ui.LoginActivity$$ExternalSyntheticLambda14
                 @Override // java.lang.Runnable
                 public final void run() {
-                    LoginActivity.lambda$onFieldError$10(OutlineTextContainerView.this, view, attachedEditText, c58508);
+                    LoginActivity.lambda$onFieldError$10(OutlineTextContainerView.this, view, attachedEditText, c58738);
                 }
             };
             atomicReference.set(runnable2);
             view.postDelayed(runnable2, ExoPlayer.DEFAULT_DETACH_SURFACE_TIMEOUT_MS);
             view.setTag(i, runnable2);
             if (attachedEditText != null) {
-                attachedEditText.addTextChangedListener(c58508);
+                attachedEditText.addTextChangedListener(c58738);
             }
         }
     }
@@ -905,7 +905,7 @@ public class LoginActivity extends BaseFragment {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: org.telegram.ui.LoginActivity$8 */
     /* loaded from: classes5.dex */
-    public class C58508 implements TextWatcher {
+    public class C58738 implements TextWatcher {
         final /* synthetic */ EditText val$editText;
         final /* synthetic */ AtomicReference val$timeoutCallbackRef;
 
@@ -917,7 +917,7 @@ public class LoginActivity extends BaseFragment {
         public void onTextChanged(CharSequence charSequence, int i, int i2, int i3) {
         }
 
-        C58508(LoginActivity loginActivity, EditText editText, AtomicReference atomicReference) {
+        C58738(LoginActivity loginActivity, EditText editText, AtomicReference atomicReference) {
             this.val$editText = editText;
             this.val$timeoutCallbackRef = atomicReference;
         }
@@ -929,7 +929,7 @@ public class LoginActivity extends BaseFragment {
             editText.post(new Runnable() { // from class: org.telegram.ui.LoginActivity$8$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    LoginActivity.C58508.this.lambda$beforeTextChanged$0(editText, atomicReference);
+                    LoginActivity.C58738.this.lambda$beforeTextChanged$0(editText, atomicReference);
                 }
             });
         }
@@ -945,7 +945,7 @@ public class LoginActivity extends BaseFragment {
     /* JADX INFO: Access modifiers changed from: private */
     public static /* synthetic */ void lambda$onFieldError$10(OutlineTextContainerView outlineTextContainerView, View view, final EditText editText, final TextWatcher textWatcher) {
         outlineTextContainerView.animateError(BitmapDescriptorFactory.HUE_RED);
-        view.setTag(C3301R.C3304id.timeout_callback, null);
+        view.setTag(C3316R.C3319id.timeout_callback, null);
         if (editText != null) {
             editText.post(new Runnable() { // from class: org.telegram.ui.LoginActivity$$ExternalSyntheticLambda13
                 @Override // java.lang.Runnable
@@ -966,11 +966,11 @@ public class LoginActivity extends BaseFragment {
         }
         AlertDialog.Builder builder = new AlertDialog.Builder(baseFragment.getParentActivity());
         if (z) {
-            builder.setTitle(LocaleController.getString(C3301R.string.RestorePasswordNoEmailTitle));
-            builder.setMessage(LocaleController.getString("BannedPhoneNumber", C3301R.string.BannedPhoneNumber));
+            builder.setTitle(LocaleController.getString(C3316R.string.RestorePasswordNoEmailTitle));
+            builder.setMessage(LocaleController.getString("BannedPhoneNumber", C3316R.string.BannedPhoneNumber));
         } else if (phoneInputData == null || phoneInputData.patterns == null || phoneInputData.patterns.isEmpty() || phoneInputData.country == null) {
-            builder.setTitle(LocaleController.getString(C3301R.string.RestorePasswordNoEmailTitle));
-            builder.setMessage(LocaleController.getString(C3301R.string.InvalidPhoneNumber));
+            builder.setTitle(LocaleController.getString(C3316R.string.RestorePasswordNoEmailTitle));
+            builder.setMessage(LocaleController.getString(C3316R.string.InvalidPhoneNumber));
         } else {
             int i = Integer.MAX_VALUE;
             for (String str2 : phoneInputData.patterns) {
@@ -979,21 +979,21 @@ public class LoginActivity extends BaseFragment {
                     i = length;
                 }
             }
-            if (C3218PhoneFormat.stripExceptNumbers(str).length() - phoneInputData.country.code.length() < i) {
-                builder.setTitle(LocaleController.getString(C3301R.string.WrongNumberFormat));
-                builder.setMessage(AndroidUtilities.replaceTags(LocaleController.formatString("ShortNumberInfo", C3301R.string.ShortNumberInfo, phoneInputData.country.name, phoneInputData.phoneNumber)));
+            if (C3233PhoneFormat.stripExceptNumbers(str).length() - phoneInputData.country.code.length() < i) {
+                builder.setTitle(LocaleController.getString(C3316R.string.WrongNumberFormat));
+                builder.setMessage(AndroidUtilities.replaceTags(LocaleController.formatString("ShortNumberInfo", C3316R.string.ShortNumberInfo, phoneInputData.country.name, phoneInputData.phoneNumber)));
             } else {
-                builder.setTitle(LocaleController.getString(C3301R.string.RestorePasswordNoEmailTitle));
-                builder.setMessage(LocaleController.getString(C3301R.string.InvalidPhoneNumber));
+                builder.setTitle(LocaleController.getString(C3316R.string.RestorePasswordNoEmailTitle));
+                builder.setMessage(LocaleController.getString(C3316R.string.InvalidPhoneNumber));
             }
         }
-        builder.setNeutralButton(LocaleController.getString("BotHelp", C3301R.string.BotHelp), new DialogInterface.OnClickListener() { // from class: org.telegram.ui.LoginActivity$$ExternalSyntheticLambda8
+        builder.setNeutralButton(LocaleController.getString("BotHelp", C3316R.string.BotHelp), new DialogInterface.OnClickListener() { // from class: org.telegram.ui.LoginActivity$$ExternalSyntheticLambda8
             @Override // android.content.DialogInterface.OnClickListener
             public final void onClick(DialogInterface dialogInterface, int i2) {
                 LoginActivity.lambda$needShowInvalidAlert$11(z, str, baseFragment, dialogInterface, i2);
             }
         });
-        builder.setPositiveButton(LocaleController.getString("OK", C3301R.string.OK), null);
+        builder.setPositiveButton(LocaleController.getString("OK", C3316R.string.OK), null);
         baseFragment.showDialog(builder.create());
     }
 
@@ -1017,9 +1017,9 @@ public class LoginActivity extends BaseFragment {
             baseFragment.getParentActivity().startActivity(Intent.createChooser(intent, "Send email..."));
         } catch (Exception unused) {
             AlertDialog.Builder builder = new AlertDialog.Builder(baseFragment.getParentActivity());
-            builder.setTitle(LocaleController.getString(C3301R.string.RestorePasswordNoEmailTitle));
-            builder.setMessage(LocaleController.getString("NoMailInstalled", C3301R.string.NoMailInstalled));
-            builder.setPositiveButton(LocaleController.getString("OK", C3301R.string.OK), null);
+            builder.setTitle(LocaleController.getString(C3316R.string.RestorePasswordNoEmailTitle));
+            builder.setMessage(LocaleController.getString("NoMailInstalled", C3316R.string.NoMailInstalled));
+            builder.setPositiveButton(LocaleController.getString("OK", C3316R.string.OK), null);
             baseFragment.showDialog(builder.create());
         }
     }
@@ -1151,10 +1151,10 @@ public class LoginActivity extends BaseFragment {
                     return;
                 }
                 AlertDialog.Builder builder = new AlertDialog.Builder(getParentActivity());
-                builder.setTitle(LocaleController.getString("StopLoadingTitle", C3301R.string.StopLoadingTitle));
-                builder.setMessage(LocaleController.getString("StopLoading", C3301R.string.StopLoading));
-                builder.setPositiveButton(LocaleController.getString("WaitMore", C3301R.string.WaitMore), null);
-                builder.setNegativeButton(LocaleController.getString("Stop", C3301R.string.Stop), new DialogInterface.OnClickListener() { // from class: org.telegram.ui.LoginActivity$$ExternalSyntheticLambda6
+                builder.setTitle(LocaleController.getString("StopLoadingTitle", C3316R.string.StopLoadingTitle));
+                builder.setMessage(LocaleController.getString("StopLoading", C3316R.string.StopLoading));
+                builder.setPositiveButton(LocaleController.getString("WaitMore", C3316R.string.WaitMore), null);
+                builder.setNegativeButton(LocaleController.getString("Stop", C3316R.string.Stop), new DialogInterface.OnClickListener() { // from class: org.telegram.ui.LoginActivity$$ExternalSyntheticLambda6
                     @Override // android.content.DialogInterface.OnClickListener
                     public final void onClick(DialogInterface dialogInterface, int i) {
                         LoginActivity.this.lambda$onDoneButtonPressed$14(dialogInterface, i);
@@ -1543,7 +1543,7 @@ public class LoginActivity extends BaseFragment {
     /* JADX INFO: Access modifiers changed from: private */
     public void onAuthSuccess(TLRPC$TL_auth_authorization tLRPC$TL_auth_authorization, boolean z) {
         MessagesController.getInstance(this.currentAccount).cleanup();
-        ConnectionsManager.getInstance(this.currentAccount).setUserId(tLRPC$TL_auth_authorization.user.f1640id);
+        ConnectionsManager.getInstance(this.currentAccount).setUserId(tLRPC$TL_auth_authorization.user.f1642id);
         UserConfig.getInstance(this.currentAccount).clearConfig();
         MessagesController.getInstance(this.currentAccount).cleanup();
         UserConfig.getInstance(this.currentAccount).syncContacts = this.syncContacts;
@@ -1741,9 +1741,9 @@ public class LoginActivity extends BaseFragment {
             textView.setTextSize(1, 18.0f);
             this.titleView.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
             if (LoginActivity.this.isSearchByTelType()) {
-                this.titleView.setText(LocaleController.getInternalString(C3301R.string.dialogs_tel_search));
+                this.titleView.setText(LocaleController.getInternalString(C3316R.string.dialogs_tel_search));
             } else {
-                this.titleView.setText(LocaleController.getString(LoginActivity.this.activityMode == 2 ? C3301R.string.ChangePhoneNewNumber : C3301R.string.YourNumber));
+                this.titleView.setText(LocaleController.getString(LoginActivity.this.activityMode == 2 ? C3316R.string.ChangePhoneNewNumber : C3316R.string.YourNumber));
             }
             this.titleView.setGravity(17);
             this.titleView.setLineSpacing(AndroidUtilities.m50dp(2), 1.0f);
@@ -1758,9 +1758,9 @@ public class LoginActivity extends BaseFragment {
             addView(this.titleView, LayoutHelper.createFrame(-1, -2, 1, 32, 0, 32, 0));
             this.subtitleView = new TextView(context);
             if (LoginActivity.this.isSearchByTelType()) {
-                this.subtitleView.setText(LocaleController.getInternalString(C3301R.string.dialogs_tel_search_hint));
+                this.subtitleView.setText(LocaleController.getInternalString(C3316R.string.dialogs_tel_search_hint));
             } else {
-                this.subtitleView.setText(LocaleController.getString(LoginActivity.this.activityMode == 2 ? C3301R.string.ChangePhoneHelp : C3301R.string.StartText));
+                this.subtitleView.setText(LocaleController.getString(LoginActivity.this.activityMode == 2 ? C3316R.string.ChangePhoneHelp : C3316R.string.StartText));
             }
             this.subtitleView.setTextSize(1, 14.0f);
             this.subtitleView.setGravity(17);
@@ -1776,12 +1776,12 @@ public class LoginActivity extends BaseFragment {
                     return lambda$new$2;
                 }
             });
-            Animation loadAnimation = AnimationUtils.loadAnimation(context, C3301R.anim.text_in);
+            Animation loadAnimation = AnimationUtils.loadAnimation(context, C3316R.anim.text_in);
             loadAnimation.setInterpolator(Easings.easeInOutQuad);
             this.countryButton.setInAnimation(loadAnimation);
             ImageView imageView = new ImageView(context);
             this.chevronRight = imageView;
-            imageView.setImageResource(C3301R.C3303drawable.msg_inputarrow);
+            imageView.setImageResource(C3316R.C3318drawable.msg_inputarrow);
             LinearLayout linearLayout = new LinearLayout(context);
             linearLayout.setOrientation(0);
             linearLayout.setGravity(16);
@@ -1789,7 +1789,7 @@ public class LoginActivity extends BaseFragment {
             linearLayout.addView(this.chevronRight, LayoutHelper.createLinearRelatively(24.0f, 24.0f, 0, BitmapDescriptorFactory.HUE_RED, BitmapDescriptorFactory.HUE_RED, 14.0f, BitmapDescriptorFactory.HUE_RED));
             OutlineTextContainerView outlineTextContainerView = new OutlineTextContainerView(context);
             this.countryOutlineView = outlineTextContainerView;
-            int i = C3301R.string.Country;
+            int i = C3316R.string.Country;
             outlineTextContainerView.setText(LocaleController.getString(i));
             this.countryOutlineView.addView(linearLayout, LayoutHelper.createFrame(-1, -1, 48, 0, 0, 0, 0));
             this.countryOutlineView.setForceUseCenter(true);
@@ -1819,7 +1819,7 @@ public class LoginActivity extends BaseFragment {
                 linearLayout2.setLayoutParams(layoutParams);
             }
             OutlineTextContainerView outlineTextContainerView3 = this.phoneOutlineView;
-            int i2 = C3301R.string.PhoneNumber;
+            int i2 = C3316R.string.PhoneNumber;
             outlineTextContainerView3.setText(LocaleController.getString(i2));
             addView(this.phoneOutlineView, LayoutHelper.createLinear(-1, 58, 16, 8, 16, 8));
             TextView textView2 = new TextView(context);
@@ -1853,7 +1853,7 @@ public class LoginActivity extends BaseFragment {
             if (i3 >= 21) {
                 this.codeField.setShowSoftInputOnFocus(!hasCustomKeyboard() || LoginActivity.this.isCustomKeyboardForceDisabled());
             }
-            this.codeField.setContentDescription(LocaleController.getString(C3301R.string.LoginAccessibilityCountryCode));
+            this.codeField.setContentDescription(LocaleController.getString(C3316R.string.LoginAccessibilityCountryCode));
             linearLayout2.addView(this.codeField, LayoutHelper.createLinear(55, 36, -9, 0, 0, 0));
             this.codeField.addTextChangedListener(new TextWatcher(LoginActivity.this) { // from class: org.telegram.ui.LoginActivity.PhoneView.2
                 @Override // android.text.TextWatcher
@@ -1874,7 +1874,7 @@ public class LoginActivity extends BaseFragment {
                         return;
                     }
                     PhoneView.this.ignoreOnTextChange = true;
-                    String stripExceptNumbers = C3218PhoneFormat.stripExceptNumbers(PhoneView.this.codeField.getText().toString());
+                    String stripExceptNumbers = C3233PhoneFormat.stripExceptNumbers(PhoneView.this.codeField.getText().toString());
                     PhoneView.this.codeField.setText(stripExceptNumbers);
                     if (stripExceptNumbers.length() == 0) {
                         PhoneView.this.setCountryButtonText(null);
@@ -2039,7 +2039,7 @@ public class LoginActivity extends BaseFragment {
                         LoginActivity.this.keyboardView.setEditText(this);
                         LoginActivity.this.keyboardView.setDispatchBackWhenEmpty(true);
                         if (PhoneView.this.countryState == 2) {
-                            PhoneView.this.setCountryButtonText(LocaleController.getString(C3301R.string.WrongCountry));
+                            PhoneView.this.setCountryButtonText(LocaleController.getString(C3316R.string.WrongCountry));
                         }
                     } else if (PhoneView.this.countryState == 2) {
                         PhoneView.this.setCountryButtonText(null);
@@ -2065,7 +2065,7 @@ public class LoginActivity extends BaseFragment {
                 this.phoneField.setLayoutParams(LayoutHelper.createLinear(-1, 36, 1.0f, 0, 0, 7, 0));
                 ImageView imageView2 = new ImageView(getContext());
                 imageView2.setBackground(Theme.createCircleSelectorDrawable(LoginActivity.this.getThemedColor("dialogButtonSelector"), 0, 0));
-                imageView2.setImageResource(C3301R.C3303drawable.msg_qr_mini);
+                imageView2.setImageResource(C3316R.C3318drawable.msg_qr_mini);
                 imageView2.setColorFilter(new PorterDuffColorFilter(Theme.getColor("windowBackgroundWhiteInputFieldActivated"), PorterDuff.Mode.MULTIPLY));
                 imageView2.setScaleType(ImageView.ScaleType.CENTER);
                 imageView2.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.LoginActivity$PhoneView$$ExternalSyntheticLambda3
@@ -2170,7 +2170,7 @@ public class LoginActivity extends BaseFragment {
                 if (LoginActivity.this.newAccount && LoginActivity.this.activityMode == 0) {
                     CheckBoxCell checkBoxCell = new CheckBoxCell(context, 2);
                     this.syncContactsBox = checkBoxCell;
-                    checkBoxCell.setText(LocaleController.getString("SyncContacts", C3301R.string.SyncContacts), "", LoginActivity.this.syncContacts, false);
+                    checkBoxCell.setText(LocaleController.getString("SyncContacts", C3316R.string.SyncContacts), "", LoginActivity.this.syncContacts, false);
                     addView(this.syncContactsBox, LayoutHelper.createLinear(-2, -1, 51, 16, 0, 16 + ((LocaleController.isRTL && AndroidUtilities.isSmallScreen()) ? i3 >= 21 ? 56 : 60 : 0), 0));
                     i4 = 48;
                     this.syncContactsBox.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.LoginActivity$PhoneView$$ExternalSyntheticLambda5
@@ -2183,7 +2183,7 @@ public class LoginActivity extends BaseFragment {
             } else {
                 TextView textView3 = new TextView(context);
                 this.searchByTelWarningTextView = textView3;
-                textView3.setText(LocaleController.getInternalString(C3301R.string.dialogs_tel_search_warning));
+                textView3.setText(LocaleController.getInternalString(C3316R.string.dialogs_tel_search_warning));
                 this.searchByTelWarningTextView.setTextSize(1, 14.0f);
                 this.searchByTelWarningTextView.setGravity(17);
                 this.searchByTelWarningTextView.setLineSpacing(AndroidUtilities.m50dp(2), 1.0f);
@@ -2192,7 +2192,7 @@ public class LoginActivity extends BaseFragment {
             if (BuildVars.DEBUG_VERSION && LoginActivity.this.activityMode == 0) {
                 CheckBoxCell checkBoxCell2 = new CheckBoxCell(context, 2);
                 this.testBackendCheckBox = checkBoxCell2;
-                checkBoxCell2.setText(LocaleController.getString(C3301R.string.DebugTestBackend), "", LoginActivity.this.testBackend, false);
+                checkBoxCell2.setText(LocaleController.getString(C3316R.string.DebugTestBackend), "", LoginActivity.this.testBackend, false);
                 View view = this.testBackendCheckBox;
                 if (!LocaleController.isRTL || !AndroidUtilities.isSmallScreen()) {
                     i5 = 0;
@@ -2353,7 +2353,7 @@ public class LoginActivity extends BaseFragment {
 
         /* JADX INFO: Access modifiers changed from: private */
         public /* synthetic */ void lambda$new$8(View view) {
-            QRCodeBottomSheet qRCodeBottomSheet = new QRCodeBottomSheet(this, getContext(), null, null, LocaleController.getInternalString(C3301R.string.login_token_help), false, ((BaseFragment) LoginActivity.this).currentAccount) { // from class: org.telegram.ui.LoginActivity.PhoneView.4
+            QRCodeBottomSheet qRCodeBottomSheet = new QRCodeBottomSheet(this, getContext(), null, null, LocaleController.getInternalString(C3316R.string.login_token_help), false, ((BaseFragment) LoginActivity.this).currentAccount) { // from class: org.telegram.ui.LoginActivity.PhoneView.4
                 @Override // org.telegram.p048ui.Components.QRCodeBottomSheet
                 public int getType() {
                     return 3;
@@ -2361,18 +2361,18 @@ public class LoginActivity extends BaseFragment {
 
                 @Override // org.telegram.p048ui.Components.QRCodeBottomSheet
                 public int getCustomQrCenterImageRes() {
-                    return C3301R.C3303drawable.fork_ic_internal_logo;
+                    return C3316R.C3318drawable.fork_ic_internal_logo;
                 }
             };
-            qRCodeBottomSheet.setupLoginTokenType(new C58885());
+            qRCodeBottomSheet.setupLoginTokenType(new C59115());
             LoginActivity.this.showDialog(qRCodeBottomSheet);
         }
 
         /* JADX INFO: Access modifiers changed from: package-private */
         /* renamed from: org.telegram.ui.LoginActivity$PhoneView$5 */
         /* loaded from: classes5.dex */
-        public class C58885 implements QRCodeBottomSheet.LoginTokenCallback {
-            C58885() {
+        public class C59115 implements QRCodeBottomSheet.LoginTokenCallback {
+            C59115() {
             }
 
             @Override // org.telegram.p048ui.Components.QRCodeBottomSheet.LoginTokenCallback
@@ -2385,7 +2385,7 @@ public class LoginActivity extends BaseFragment {
                 ConnectionsManager.getInstance(((BaseFragment) LoginActivity.this).currentAccount).sendRequest(new TLRPC$TL_account_getPassword(), new RequestDelegate() { // from class: org.telegram.ui.LoginActivity$PhoneView$5$$ExternalSyntheticLambda1
                     @Override // org.telegram.tgnet.RequestDelegate
                     public final void run(TLObject tLObject, TLRPC$TL_error tLRPC$TL_error) {
-                        LoginActivity.PhoneView.C58885.this.lambda$onTwoStepVerificationNeeded$1(tLObject, tLRPC$TL_error);
+                        LoginActivity.PhoneView.C59115.this.lambda$onTwoStepVerificationNeeded$1(tLObject, tLRPC$TL_error);
                     }
                 }, 10);
             }
@@ -2395,7 +2395,7 @@ public class LoginActivity extends BaseFragment {
                 AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.LoginActivity$PhoneView$5$$ExternalSyntheticLambda0
                     @Override // java.lang.Runnable
                     public final void run() {
-                        LoginActivity.PhoneView.C58885.this.lambda$onTwoStepVerificationNeeded$0(tLRPC$TL_error, tLObject);
+                        LoginActivity.PhoneView.C59115.this.lambda$onTwoStepVerificationNeeded$0(tLRPC$TL_error, tLObject);
                     }
                 });
             }
@@ -2405,12 +2405,12 @@ public class LoginActivity extends BaseFragment {
                 PhoneView.this.nextPressed = false;
                 LoginActivity.this.showDoneButton(false, true);
                 if (tLRPC$TL_error != null) {
-                    LoginActivity.this.needShowAlert(LocaleController.getString(C3301R.string.RestorePasswordNoEmailTitle), tLRPC$TL_error.text);
+                    LoginActivity.this.needShowAlert(LocaleController.getString(C3316R.string.RestorePasswordNoEmailTitle), tLRPC$TL_error.text);
                     return;
                 }
                 TLRPC$account_Password tLRPC$account_Password = (TLRPC$account_Password) tLObject;
                 if (!TwoStepVerificationActivity.canHandleCurrentPassword(tLRPC$account_Password, true)) {
-                    AlertsCreator.showUpdateAppAlert(LoginActivity.this.getParentActivity(), LocaleController.getString("UpdateAppAlert", C3301R.string.UpdateAppAlert), true);
+                    AlertsCreator.showUpdateAppAlert(LoginActivity.this.getParentActivity(), LocaleController.getString("UpdateAppAlert", C3316R.string.UpdateAppAlert), true);
                     return;
                 }
                 Bundle bundle = new Bundle();
@@ -2443,9 +2443,9 @@ public class LoginActivity extends BaseFragment {
             loginActivity.syncContacts = !loginActivity.syncContacts;
             ((CheckBoxCell) view).setChecked(LoginActivity.this.syncContacts, true);
             if (LoginActivity.this.syncContacts) {
-                BulletinFactory.m28of(LoginActivity.this.slideViewsContainer, null).createSimpleBulletin(C3301R.C3306raw.contacts_sync_on, LocaleController.getString("SyncContactsOn", C3301R.string.SyncContactsOn)).show();
+                BulletinFactory.m28of(LoginActivity.this.slideViewsContainer, null).createSimpleBulletin(C3316R.C3321raw.contacts_sync_on, LocaleController.getString("SyncContactsOn", C3316R.string.SyncContactsOn)).show();
             } else {
-                BulletinFactory.m28of(LoginActivity.this.slideViewsContainer, null).createSimpleBulletin(C3301R.C3306raw.contacts_sync_off, LocaleController.getString("SyncContactsOff", C3301R.string.SyncContactsOff)).show();
+                BulletinFactory.m28of(LoginActivity.this.slideViewsContainer, null).createSimpleBulletin(C3316R.C3321raw.contacts_sync_off, LocaleController.getString("SyncContactsOff", C3316R.string.SyncContactsOff)).show();
             }
         }
 
@@ -2550,7 +2550,7 @@ public class LoginActivity extends BaseFragment {
                     }
                 }
                 if (LoginActivity.this.activityMode == 2) {
-                    String stripExceptNumbers = C3218PhoneFormat.stripExceptNumbers(UserConfig.getInstance(((BaseFragment) LoginActivity.this).currentAccount).getClientPhone());
+                    String stripExceptNumbers = C3233PhoneFormat.stripExceptNumbers(UserConfig.getInstance(((BaseFragment) LoginActivity.this).currentAccount).getClientPhone());
                     if (TextUtils.isEmpty(stripExceptNumbers)) {
                         return;
                     }
@@ -2816,7 +2816,7 @@ public class LoginActivity extends BaseFragment {
 
         /* JADX INFO: Access modifiers changed from: private */
         public void setCountryButtonText(CharSequence charSequence) {
-            Animation loadAnimation = AnimationUtils.loadAnimation(ApplicationLoader.applicationContext, (this.countryButton.getCurrentView().getText() == null || charSequence != null) ? C3301R.anim.text_out : C3301R.anim.text_out_down);
+            Animation loadAnimation = AnimationUtils.loadAnimation(ApplicationLoader.applicationContext, (this.countryButton.getCurrentView().getText() == null || charSequence != null) ? C3316R.anim.text_out : C3316R.anim.text_out_down);
             loadAnimation.setInterpolator(Easings.easeInOutQuad);
             this.countryButton.setOutAnimation(loadAnimation);
             CharSequence text = this.countryButton.getCurrentView().getText();
@@ -2893,10 +2893,10 @@ public class LoginActivity extends BaseFragment {
         /* JADX INFO: Access modifiers changed from: package-private */
         /* renamed from: org.telegram.ui.LoginActivity$PhoneView$8 */
         /* loaded from: classes5.dex */
-        public class C58918 implements PhoneNumberConfirmView.IConfirmDialogCallback {
+        public class C59148 implements PhoneNumberConfirmView.IConfirmDialogCallback {
             final /* synthetic */ String val$code;
 
-            C58918(String str) {
+            C59148(String str) {
                 this.val$code = str;
             }
 
@@ -2958,16 +2958,16 @@ public class LoginActivity extends BaseFragment {
                             }
                             globalMainSettings.edit().putBoolean("firstlogin", false).commit();
                             AlertDialog.Builder builder = new AlertDialog.Builder(LoginActivity.this.getParentActivity());
-                            builder.setPositiveButton(LocaleController.getString("Continue", C3301R.string.Continue), null);
+                            builder.setPositiveButton(LocaleController.getString("Continue", C3316R.string.Continue), null);
                             if (!z && (!z2 || !z3)) {
-                                builder.setMessage(LocaleController.getString("AllowReadCallAndLog", C3301R.string.AllowReadCallAndLog));
-                                i = C3301R.C3306raw.calls_log;
+                                builder.setMessage(LocaleController.getString("AllowReadCallAndLog", C3316R.string.AllowReadCallAndLog));
+                                i = C3316R.C3321raw.calls_log;
                             } else if (!z2 || !z3) {
-                                builder.setMessage(LocaleController.getString("AllowReadCallLog", C3301R.string.AllowReadCallLog));
-                                i = C3301R.C3306raw.calls_log;
+                                builder.setMessage(LocaleController.getString("AllowReadCallLog", C3316R.string.AllowReadCallLog));
+                                i = C3316R.C3321raw.calls_log;
                             } else {
-                                builder.setMessage(LocaleController.getString("AllowReadCall", C3301R.string.AllowReadCall));
-                                i = C3301R.C3306raw.incoming_calls;
+                                builder.setMessage(LocaleController.getString("AllowReadCall", C3316R.string.AllowReadCall));
+                                i = C3316R.C3321raw.incoming_calls;
                             }
                             builder.setTopAnimation(i, 46, false, Theme.getColor("dialogTopBackground"));
                             LoginActivity loginActivity = LoginActivity.this;
@@ -2981,7 +2981,7 @@ public class LoginActivity extends BaseFragment {
                 phoneNumberConfirmView.animateProgress(new Runnable() { // from class: org.telegram.ui.LoginActivity$PhoneView$8$$ExternalSyntheticLambda1
                     @Override // java.lang.Runnable
                     public final void run() {
-                        LoginActivity.PhoneView.C58918.this.lambda$onConfirm$1(phoneNumberConfirmView, str);
+                        LoginActivity.PhoneView.C59148.this.lambda$onConfirm$1(phoneNumberConfirmView, str);
                     }
                 });
             }
@@ -2992,7 +2992,7 @@ public class LoginActivity extends BaseFragment {
                 AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.LoginActivity$PhoneView$8$$ExternalSyntheticLambda0
                     @Override // java.lang.Runnable
                     public final void run() {
-                        LoginActivity.PhoneView.C58918.this.lambda$onConfirm$0(str, phoneNumberConfirmView);
+                        LoginActivity.PhoneView.C59148.this.lambda$onConfirm$0(str, phoneNumberConfirmView);
                     }
                 }, 150L);
             }
@@ -3045,9 +3045,9 @@ public class LoginActivity extends BaseFragment {
                 if (str2 != null) {
                     if (str2.contains("UPDATE_APP_TO_LOGIN")) {
                         AlertDialog.Builder builder = new AlertDialog.Builder(LoginActivity.this.getParentActivity());
-                        builder.setTitle(LocaleController.getString("UpdateApp", C3301R.string.UpdateApp));
-                        builder.setMessage(LocaleController.getString("UpdateAppAlert", C3301R.string.UpdateAppAlert).replaceAll("Telegram", "iMe"));
-                        builder.setPositiveButton(LocaleController.getString("Update", C3301R.string.Update), new DialogInterface.OnClickListener() { // from class: org.telegram.ui.LoginActivity$PhoneView$$ExternalSyntheticLambda0
+                        builder.setTitle(LocaleController.getString("UpdateApp", C3316R.string.UpdateApp));
+                        builder.setMessage(LocaleController.getString("UpdateAppAlert", C3316R.string.UpdateAppAlert).replaceAll("Telegram", "iMe"));
+                        builder.setPositiveButton(LocaleController.getString("Update", C3316R.string.Update), new DialogInterface.OnClickListener() { // from class: org.telegram.ui.LoginActivity$PhoneView$$ExternalSyntheticLambda0
                             @Override // android.content.DialogInterface.OnClickListener
                             public final void onClick(DialogInterface dialogInterface, int i) {
                                 LoginActivity.PhoneView.this.lambda$onNextPressed$20(dialogInterface, i);
@@ -3064,19 +3064,19 @@ public class LoginActivity extends BaseFragment {
                     } else if (tLRPC$TL_error.text.contains("PHONE_NUMBER_INVALID")) {
                         LoginActivity.needShowInvalidAlert(LoginActivity.this, str, phoneInputData, false);
                     } else if (tLRPC$TL_error.text.contains("PHONE_PASSWORD_FLOOD")) {
-                        LoginActivity.this.needShowAlert(LocaleController.getString(C3301R.string.RestorePasswordNoEmailTitle), LocaleController.getString("FloodWait", C3301R.string.FloodWait));
+                        LoginActivity.this.needShowAlert(LocaleController.getString(C3316R.string.RestorePasswordNoEmailTitle), LocaleController.getString("FloodWait", C3316R.string.FloodWait));
                     } else if (tLRPC$TL_error.text.contains("PHONE_NUMBER_FLOOD")) {
-                        LoginActivity.this.needShowAlert(LocaleController.getString(C3301R.string.RestorePasswordNoEmailTitle), LocaleController.getString("PhoneNumberFlood", C3301R.string.PhoneNumberFlood));
+                        LoginActivity.this.needShowAlert(LocaleController.getString(C3316R.string.RestorePasswordNoEmailTitle), LocaleController.getString("PhoneNumberFlood", C3316R.string.PhoneNumberFlood));
                     } else if (tLRPC$TL_error.text.contains("PHONE_NUMBER_BANNED")) {
                         LoginActivity.needShowInvalidAlert(LoginActivity.this, str, phoneInputData, true);
                     } else if (tLRPC$TL_error.text.contains("PHONE_CODE_EMPTY") || tLRPC$TL_error.text.contains("PHONE_CODE_INVALID")) {
-                        LoginActivity.this.needShowAlert(LocaleController.getString(C3301R.string.RestorePasswordNoEmailTitle), LocaleController.getString("InvalidCode", C3301R.string.InvalidCode));
+                        LoginActivity.this.needShowAlert(LocaleController.getString(C3316R.string.RestorePasswordNoEmailTitle), LocaleController.getString("InvalidCode", C3316R.string.InvalidCode));
                     } else if (tLRPC$TL_error.text.contains("PHONE_CODE_EXPIRED")) {
                         onBackPressed(true);
                         LoginActivity.this.setPage(0, true, null, true);
-                        LoginActivity.this.needShowAlert(LocaleController.getString(C3301R.string.RestorePasswordNoEmailTitle), LocaleController.getString("CodeExpired", C3301R.string.CodeExpired));
+                        LoginActivity.this.needShowAlert(LocaleController.getString(C3316R.string.RestorePasswordNoEmailTitle), LocaleController.getString("CodeExpired", C3316R.string.CodeExpired));
                     } else if (tLRPC$TL_error.text.startsWith("FLOOD_WAIT")) {
-                        LoginActivity.this.needShowAlert(LocaleController.getString(C3301R.string.RestorePasswordNoEmailTitle), LocaleController.getString("FloodWait", C3301R.string.FloodWait));
+                        LoginActivity.this.needShowAlert(LocaleController.getString(C3316R.string.RestorePasswordNoEmailTitle), LocaleController.getString("FloodWait", C3316R.string.FloodWait));
                     } else if (tLRPC$TL_error.code != -1000) {
                         AlertsCreator.processError(((BaseFragment) LoginActivity.this).currentAccount, tLRPC$TL_error, LoginActivity.this, tLObject2, phoneInputData.phoneNumber);
                     }
@@ -3108,12 +3108,12 @@ public class LoginActivity extends BaseFragment {
             this.nextPressed = false;
             LoginActivity.this.showDoneButton(false, true);
             if (tLRPC$TL_error != null) {
-                LoginActivity.this.needShowAlert(LocaleController.getString(C3301R.string.RestorePasswordNoEmailTitle), tLRPC$TL_error.text);
+                LoginActivity.this.needShowAlert(LocaleController.getString(C3316R.string.RestorePasswordNoEmailTitle), tLRPC$TL_error.text);
                 return;
             }
             TLRPC$account_Password tLRPC$account_Password = (TLRPC$account_Password) tLObject;
             if (!TwoStepVerificationActivity.canHandleCurrentPassword(tLRPC$account_Password, true)) {
-                AlertsCreator.showUpdateAppAlert(LoginActivity.this.getParentActivity(), LocaleController.getString("UpdateAppAlert", C3301R.string.UpdateAppAlert), true);
+                AlertsCreator.showUpdateAppAlert(LoginActivity.this.getParentActivity(), LocaleController.getString("UpdateAppAlert", C3316R.string.UpdateAppAlert), true);
                 return;
             }
             Bundle bundle = new Bundle();
@@ -3145,9 +3145,9 @@ public class LoginActivity extends BaseFragment {
             if (globalMainSettings.getBoolean("firstloginshow", true) || LoginActivity.this.getParentActivity().shouldShowRequestPermissionRationale("android.permission.READ_PHONE_STATE")) {
                 globalMainSettings.edit().putBoolean("firstloginshow", false).commit();
                 AlertDialog.Builder builder = new AlertDialog.Builder(LoginActivity.this.getParentActivity());
-                builder.setTopAnimation(C3301R.C3306raw.incoming_calls, 46, false, Theme.getColor("dialogTopBackground"));
-                builder.setPositiveButton(LocaleController.getString("Continue", C3301R.string.Continue), null);
-                builder.setMessage(LocaleController.getString("AllowFillNumber", C3301R.string.AllowFillNumber));
+                builder.setTopAnimation(C3316R.C3321raw.incoming_calls, 46, false, Theme.getColor("dialogTopBackground"));
+                builder.setPositiveButton(LocaleController.getString("Continue", C3316R.string.Continue), null);
+                builder.setMessage(LocaleController.getString("AllowFillNumber", C3316R.string.AllowFillNumber));
                 LoginActivity loginActivity = LoginActivity.this;
                 loginActivity.permissionsShowDialog = loginActivity.showDialog(builder.create(), true, null);
                 LoginActivity.this.needRequestPermissions = true;
@@ -3194,7 +3194,7 @@ public class LoginActivity extends BaseFragment {
 
         @Override // org.telegram.p048ui.Components.SlideView
         public String getHeaderName() {
-            return LocaleController.getString("YourPhone", C3301R.string.YourPhone);
+            return LocaleController.getString("YourPhone", C3316R.string.YourPhone);
         }
 
         @Override // org.telegram.p048ui.Components.SlideView
@@ -3365,20 +3365,20 @@ public class LoginActivity extends BaseFragment {
         /* JADX INFO: Access modifiers changed from: package-private */
         /* renamed from: org.telegram.ui.LoginActivity$LoginActivitySmsView$1 */
         /* loaded from: classes5.dex */
-        public class C58711 extends ClickableSpan {
+        public class C58941 extends ClickableSpan {
             final /* synthetic */ Context val$context;
 
-            C58711(LoginActivity loginActivity, Context context) {
+            C58941(LoginActivity loginActivity, Context context) {
                 this.val$context = context;
             }
 
             @Override // android.text.style.ClickableSpan
             public void onClick(View view) {
                 SharedConfig.setNewTelegramAuthorizationRulesRead(true);
-                new AlertDialog.Builder(this.val$context).setTitle(LocaleController.getString(C3301R.string.RestorePasswordNoEmailTitle)).setMessage(LocaleController.getInternalString(C3301R.string.new_telegram_authorization_rules_alert)).setNegativeButton(LocaleController.getString(C3301R.string.Close), null).setPositiveButton(LocaleController.getInternalString(C3301R.string.DidNotGetTheCodeSms), new DialogInterface.OnClickListener() { // from class: org.telegram.ui.LoginActivity$LoginActivitySmsView$1$$ExternalSyntheticLambda0
+                new AlertDialog.Builder(this.val$context).setTitle(LocaleController.getString(C3316R.string.RestorePasswordNoEmailTitle)).setMessage(LocaleController.getInternalString(C3316R.string.new_telegram_authorization_rules_alert)).setNegativeButton(LocaleController.getString(C3316R.string.Close), null).setPositiveButton(LocaleController.getInternalString(C3316R.string.DidNotGetTheCodeSms), new DialogInterface.OnClickListener() { // from class: org.telegram.ui.LoginActivity$LoginActivitySmsView$1$$ExternalSyntheticLambda0
                     @Override // android.content.DialogInterface.OnClickListener
                     public final void onClick(DialogInterface dialogInterface, int i) {
-                        LoginActivity.LoginActivitySmsView.C58711.this.lambda$onClick$0(dialogInterface, i);
+                        LoginActivity.LoginActivitySmsView.C58941.this.lambda$onClick$0(dialogInterface, i);
                     }
                 }).show();
             }
@@ -3410,9 +3410,9 @@ public class LoginActivity extends BaseFragment {
                 this.timeText.setTextColor(Theme.getColor("windowBackgroundWhiteGrayText6"));
                 int i2 = this.nextType;
                 if (i2 == 4 || i2 == 11) {
-                    this.timeText.setText(LocaleController.getString("Calling", C3301R.string.Calling));
+                    this.timeText.setText(LocaleController.getString("Calling", C3316R.string.Calling));
                 } else {
-                    this.timeText.setText(LocaleController.getString("SendingSms", C3301R.string.SendingSms));
+                    this.timeText.setText(LocaleController.getString("SendingSms", C3316R.string.SendingSms));
                 }
                 final Bundle bundle = new Bundle();
                 bundle.putString("phone", this.phone);
@@ -3565,19 +3565,19 @@ public class LoginActivity extends BaseFragment {
                 String str = tLRPC$TL_error.text;
                 if (str != null) {
                     if (str.contains("PHONE_NUMBER_INVALID")) {
-                        LoginActivity.this.needShowAlert(LocaleController.getString(C3301R.string.RestorePasswordNoEmailTitle), LocaleController.getString("InvalidPhoneNumber", C3301R.string.InvalidPhoneNumber));
+                        LoginActivity.this.needShowAlert(LocaleController.getString(C3316R.string.RestorePasswordNoEmailTitle), LocaleController.getString("InvalidPhoneNumber", C3316R.string.InvalidPhoneNumber));
                     } else if (tLRPC$TL_error.text.contains("PHONE_CODE_EMPTY") || tLRPC$TL_error.text.contains("PHONE_CODE_INVALID")) {
-                        LoginActivity.this.needShowAlert(LocaleController.getString(C3301R.string.RestorePasswordNoEmailTitle), LocaleController.getString("InvalidCode", C3301R.string.InvalidCode));
+                        LoginActivity.this.needShowAlert(LocaleController.getString(C3316R.string.RestorePasswordNoEmailTitle), LocaleController.getString("InvalidCode", C3316R.string.InvalidCode));
                     } else if (tLRPC$TL_error.text.contains("PHONE_CODE_EXPIRED")) {
                         onBackPressed(true);
                         LoginActivity.this.setPage(0, true, null, true);
-                        LoginActivity.this.needShowAlert(LocaleController.getString(C3301R.string.RestorePasswordNoEmailTitle), LocaleController.getString("CodeExpired", C3301R.string.CodeExpired));
+                        LoginActivity.this.needShowAlert(LocaleController.getString(C3316R.string.RestorePasswordNoEmailTitle), LocaleController.getString("CodeExpired", C3316R.string.CodeExpired));
                     } else if (tLRPC$TL_error.text.startsWith("FLOOD_WAIT")) {
-                        LoginActivity.this.needShowAlert(LocaleController.getString(C3301R.string.RestorePasswordNoEmailTitle), LocaleController.getString("FloodWait", C3301R.string.FloodWait));
+                        LoginActivity.this.needShowAlert(LocaleController.getString(C3316R.string.RestorePasswordNoEmailTitle), LocaleController.getString("FloodWait", C3316R.string.FloodWait));
                     } else if (tLRPC$TL_error.code != -1000) {
                         LoginActivity loginActivity = LoginActivity.this;
-                        String string = LocaleController.getString(C3301R.string.RestorePasswordNoEmailTitle);
-                        loginActivity.needShowAlert(string, LocaleController.getString("ErrorOccurred", C3301R.string.ErrorOccurred) + "\n" + tLRPC$TL_error.text);
+                        String string = LocaleController.getString(C3316R.string.RestorePasswordNoEmailTitle);
+                        loginActivity.needShowAlert(string, LocaleController.getString("ErrorOccurred", C3316R.string.ErrorOccurred) + "\n" + tLRPC$TL_error.text);
                     }
                 }
             }
@@ -3728,7 +3728,7 @@ public class LoginActivity extends BaseFragment {
             if (i == 3 || i == 11) {
                 return this.phone;
             }
-            return LocaleController.getString("YourCode", C3301R.string.YourCode);
+            return LocaleController.getString("YourCode", C3316R.string.YourCode);
         }
 
         /* JADX WARN: Removed duplicated region for block: B:108:0x0330  */
@@ -3774,14 +3774,14 @@ public class LoginActivity extends BaseFragment {
             this.codeTime = 15000;
             this.codeTimer = new Timer();
             this.lastCodeTime = System.currentTimeMillis();
-            this.codeTimer.schedule(new C58809(), 0L, 1000L);
+            this.codeTimer.schedule(new C59039(), 0L, 1000L);
         }
 
         /* JADX INFO: Access modifiers changed from: package-private */
         /* renamed from: org.telegram.ui.LoginActivity$LoginActivitySmsView$9 */
         /* loaded from: classes5.dex */
-        public class C58809 extends TimerTask {
-            C58809() {
+        public class C59039 extends TimerTask {
+            C59039() {
             }
 
             @Override // java.util.TimerTask, java.lang.Runnable
@@ -3789,7 +3789,7 @@ public class LoginActivity extends BaseFragment {
                 AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.LoginActivity$LoginActivitySmsView$9$$ExternalSyntheticLambda0
                     @Override // java.lang.Runnable
                     public final void run() {
-                        LoginActivity.LoginActivitySmsView.C58809.this.lambda$run$0();
+                        LoginActivity.LoginActivitySmsView.C59039.this.lambda$run$0();
                     }
                 });
             }
@@ -3831,17 +3831,17 @@ public class LoginActivity extends BaseFragment {
                 return;
             }
             this.timeText.setTextColor(Theme.getColor("windowBackgroundWhiteGrayText6"));
-            this.timeText.setTag(C3301R.C3304id.color_key_tag, "windowBackgroundWhiteGrayText6");
+            this.timeText.setTag(C3316R.C3319id.color_key_tag, "windowBackgroundWhiteGrayText6");
             Timer timer = new Timer();
             this.timeTimer = timer;
-            timer.schedule(new C587210(), 0L, 1000L);
+            timer.schedule(new C589510(), 0L, 1000L);
         }
 
         /* JADX INFO: Access modifiers changed from: package-private */
         /* renamed from: org.telegram.ui.LoginActivity$LoginActivitySmsView$10 */
         /* loaded from: classes5.dex */
-        public class C587210 extends TimerTask {
-            C587210() {
+        public class C589510 extends TimerTask {
+            C589510() {
             }
 
             @Override // java.util.TimerTask, java.lang.Runnable
@@ -3852,7 +3852,7 @@ public class LoginActivity extends BaseFragment {
                 AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.LoginActivity$LoginActivitySmsView$10$$ExternalSyntheticLambda0
                     @Override // java.lang.Runnable
                     public final void run() {
-                        LoginActivity.LoginActivitySmsView.C587210.this.lambda$run$0();
+                        LoginActivity.LoginActivitySmsView.C589510.this.lambda$run$0();
                     }
                 });
             }
@@ -3867,9 +3867,9 @@ public class LoginActivity extends BaseFragment {
                     int i = (LoginActivitySmsView.this.time / 1000) / 60;
                     int i2 = (LoginActivitySmsView.this.time / 1000) - (i * 60);
                     if (LoginActivitySmsView.this.nextType == 4 || LoginActivitySmsView.this.nextType == 3 || LoginActivitySmsView.this.nextType == 11) {
-                        LoginActivitySmsView.this.timeText.setText(LocaleController.formatString("CallAvailableIn", C3301R.string.CallAvailableIn, Integer.valueOf(i), Integer.valueOf(i2)));
+                        LoginActivitySmsView.this.timeText.setText(LocaleController.formatString("CallAvailableIn", C3316R.string.CallAvailableIn, Integer.valueOf(i), Integer.valueOf(i2)));
                     } else if (LoginActivitySmsView.this.nextType == 2) {
-                        LoginActivitySmsView.this.timeText.setText(LocaleController.formatString("SmsAvailableIn", C3301R.string.SmsAvailableIn, Integer.valueOf(i), Integer.valueOf(i2)));
+                        LoginActivitySmsView.this.timeText.setText(LocaleController.formatString("SmsAvailableIn", C3316R.string.SmsAvailableIn, Integer.valueOf(i), Integer.valueOf(i2)));
                     }
                     ProgressView unused = LoginActivitySmsView.this.progressView;
                     return;
@@ -3877,14 +3877,14 @@ public class LoginActivity extends BaseFragment {
                 LoginActivitySmsView.this.destroyTimer();
                 if (LoginActivitySmsView.this.nextType == 3 || LoginActivitySmsView.this.nextType == 4 || LoginActivitySmsView.this.nextType == 2 || LoginActivitySmsView.this.nextType == 11) {
                     if (LoginActivitySmsView.this.nextType == 4) {
-                        LoginActivitySmsView.this.timeText.setText(LocaleController.getString("RequestCallButton", C3301R.string.RequestCallButton));
+                        LoginActivitySmsView.this.timeText.setText(LocaleController.getString("RequestCallButton", C3316R.string.RequestCallButton));
                     } else if (LoginActivitySmsView.this.nextType == 11 || LoginActivitySmsView.this.nextType == 3) {
-                        LoginActivitySmsView.this.timeText.setText(LocaleController.getString("RequestMissedCall", C3301R.string.RequestMissedCall));
+                        LoginActivitySmsView.this.timeText.setText(LocaleController.getString("RequestMissedCall", C3316R.string.RequestMissedCall));
                     } else {
-                        LoginActivitySmsView.this.timeText.setText(LocaleController.getString("RequestSmsButton", C3301R.string.RequestSmsButton));
+                        LoginActivitySmsView.this.timeText.setText(LocaleController.getString("RequestSmsButton", C3316R.string.RequestSmsButton));
                     }
                     LoginActivitySmsView.this.timeText.setTextColor(Theme.getColor("chats_actionBackground"));
-                    LoginActivitySmsView.this.timeText.setTag(C3301R.C3304id.color_key_tag, "chats_actionBackground");
+                    LoginActivitySmsView.this.timeText.setTag(C3316R.C3319id.color_key_tag, "chats_actionBackground");
                 }
             }
         }
@@ -3892,7 +3892,7 @@ public class LoginActivity extends BaseFragment {
         /* JADX INFO: Access modifiers changed from: private */
         public void destroyTimer() {
             this.timeText.setTextColor(Theme.getColor("windowBackgroundWhiteGrayText6"));
-            this.timeText.setTag(C3301R.C3304id.color_key_tag, "windowBackgroundWhiteGrayText6");
+            this.timeText.setTag(C3316R.C3319id.color_key_tag, "windowBackgroundWhiteGrayText6");
             try {
                 synchronized (this.timerSync) {
                     Timer timer = this.timeTimer;
@@ -4037,10 +4037,10 @@ public class LoginActivity extends BaseFragment {
                 ((BaseFragment) LoginActivity.this).fragmentView.performHapticFeedback(3, 2);
             } catch (Exception unused) {
             }
-            AlertDialog.Builder title = new AlertDialog.Builder(getContext()).setTitle(LocaleController.getString(C3301R.string.YourPasswordSuccess));
-            int i = C3301R.string.ChangePhoneNumberSuccessWithPhone;
-            C3218PhoneFormat c3218PhoneFormat = C3218PhoneFormat.getInstance();
-            title.setMessage(LocaleController.formatString(i, c3218PhoneFormat.format("+" + this.requestPhone))).setPositiveButton(LocaleController.getString(C3301R.string.OK), null).setOnDismissListener(new DialogInterface.OnDismissListener() { // from class: org.telegram.ui.LoginActivity$LoginActivitySmsView$$ExternalSyntheticLambda1
+            AlertDialog.Builder title = new AlertDialog.Builder(getContext()).setTitle(LocaleController.getString(C3316R.string.YourPasswordSuccess));
+            int i = C3316R.string.ChangePhoneNumberSuccessWithPhone;
+            C3233PhoneFormat c3233PhoneFormat = C3233PhoneFormat.getInstance();
+            title.setMessage(LocaleController.formatString(i, c3233PhoneFormat.format("+" + this.requestPhone))).setPositiveButton(LocaleController.getString(C3316R.string.OK), null).setOnDismissListener(new DialogInterface.OnDismissListener() { // from class: org.telegram.ui.LoginActivity$LoginActivitySmsView$$ExternalSyntheticLambda1
                 @Override // android.content.DialogInterface.OnDismissListener
                 public final void onDismiss(DialogInterface dialogInterface) {
                     LoginActivity.LoginActivitySmsView.this.lambda$onNextPressed$21(dialogInterface);
@@ -4106,10 +4106,10 @@ public class LoginActivity extends BaseFragment {
 
         /* JADX INFO: Access modifiers changed from: private */
         public /* synthetic */ void lambda$onNextPressed$26() {
-            AlertDialog.Builder title = new AlertDialog.Builder(LoginActivity.this.getParentActivity()).setTitle(LocaleController.getString(C3301R.string.CancelLinkSuccessTitle));
-            int i = C3301R.string.CancelLinkSuccess;
-            C3218PhoneFormat c3218PhoneFormat = C3218PhoneFormat.getInstance();
-            title.setMessage(LocaleController.formatString("CancelLinkSuccess", i, c3218PhoneFormat.format("+" + this.phone))).setPositiveButton(LocaleController.getString(C3301R.string.Close), null).setOnDismissListener(new DialogInterface.OnDismissListener() { // from class: org.telegram.ui.LoginActivity$LoginActivitySmsView$$ExternalSyntheticLambda2
+            AlertDialog.Builder title = new AlertDialog.Builder(LoginActivity.this.getParentActivity()).setTitle(LocaleController.getString(C3316R.string.CancelLinkSuccessTitle));
+            int i = C3316R.string.CancelLinkSuccess;
+            C3233PhoneFormat c3233PhoneFormat = C3233PhoneFormat.getInstance();
+            title.setMessage(LocaleController.formatString("CancelLinkSuccess", i, c3233PhoneFormat.format("+" + this.phone))).setPositiveButton(LocaleController.getString(C3316R.string.Close), null).setOnDismissListener(new DialogInterface.OnDismissListener() { // from class: org.telegram.ui.LoginActivity$LoginActivitySmsView$$ExternalSyntheticLambda2
                 @Override // android.content.DialogInterface.OnDismissListener
                 public final void onDismiss(DialogInterface dialogInterface) {
                     LoginActivity.LoginActivitySmsView.this.lambda$onNextPressed$25(dialogInterface);
@@ -4171,12 +4171,12 @@ public class LoginActivity extends BaseFragment {
             this.nextPressed = false;
             LoginActivity.this.showDoneButton(false, true);
             if (tLRPC$TL_error != null) {
-                LoginActivity.this.needShowAlert(LocaleController.getString(C3301R.string.RestorePasswordNoEmailTitle), tLRPC$TL_error.text);
+                LoginActivity.this.needShowAlert(LocaleController.getString(C3316R.string.RestorePasswordNoEmailTitle), tLRPC$TL_error.text);
                 return;
             }
             TLRPC$account_Password tLRPC$account_Password = (TLRPC$account_Password) tLObject;
             if (!TwoStepVerificationActivity.canHandleCurrentPassword(tLRPC$account_Password, true)) {
-                AlertsCreator.showUpdateAppAlert(LoginActivity.this.getParentActivity(), LocaleController.getString("UpdateAppAlert", C3301R.string.UpdateAppAlert), true);
+                AlertsCreator.showUpdateAppAlert(LoginActivity.this.getParentActivity(), LocaleController.getString("UpdateAppAlert", C3316R.string.UpdateAppAlert), true);
                 return;
             }
             final Bundle bundle = new Bundle();
@@ -4313,7 +4313,7 @@ public class LoginActivity extends BaseFragment {
                 return false;
             } else if (!z) {
                 LoginActivity loginActivity = LoginActivity.this;
-                loginActivity.showDialog(new AlertDialog.Builder(loginActivity.getParentActivity()).setTitle(LocaleController.getString(C3301R.string.EditNumber)).setMessage(AndroidUtilities.replaceTags(LocaleController.formatString("EditNumberInfo", C3301R.string.EditNumberInfo, this.phone))).setPositiveButton(LocaleController.getString(C3301R.string.Close), null).setNegativeButton(LocaleController.getString(C3301R.string.Edit), new DialogInterface.OnClickListener() { // from class: org.telegram.ui.LoginActivity$LoginActivitySmsView$$ExternalSyntheticLambda0
+                loginActivity.showDialog(new AlertDialog.Builder(loginActivity.getParentActivity()).setTitle(LocaleController.getString(C3316R.string.EditNumber)).setMessage(AndroidUtilities.replaceTags(LocaleController.formatString("EditNumberInfo", C3316R.string.EditNumberInfo, this.phone))).setPositiveButton(LocaleController.getString(C3316R.string.Close), null).setNegativeButton(LocaleController.getString(C3316R.string.Edit), new DialogInterface.OnClickListener() { // from class: org.telegram.ui.LoginActivity$LoginActivitySmsView$$ExternalSyntheticLambda0
                     @Override // android.content.DialogInterface.OnClickListener
                     public final void onClick(DialogInterface dialogInterface, int i) {
                         LoginActivity.LoginActivitySmsView.this.lambda$onBackPressed$40(dialogInterface, i);
@@ -4560,7 +4560,7 @@ public class LoginActivity extends BaseFragment {
                 return;
             }
             AndroidUtilities.hideKeyboard(this.codeField);
-            new AlertDialog.Builder(context).setTitle(LocaleController.getString(C3301R.string.RestorePasswordNoEmailTitle)).setMessage(LocaleController.getString(C3301R.string.RestorePasswordNoEmailText)).setPositiveButton(LocaleController.getString(C3301R.string.Close), null).setNegativeButton(LocaleController.getString(C3301R.string.ResetAccount), new DialogInterface.OnClickListener() { // from class: org.telegram.ui.LoginActivity$LoginActivityPasswordView$$ExternalSyntheticLambda0
+            new AlertDialog.Builder(context).setTitle(LocaleController.getString(C3316R.string.RestorePasswordNoEmailTitle)).setMessage(LocaleController.getString(C3316R.string.RestorePasswordNoEmailText)).setPositiveButton(LocaleController.getString(C3316R.string.Close), null).setNegativeButton(LocaleController.getString(C3316R.string.ResetAccount), new DialogInterface.OnClickListener() { // from class: org.telegram.ui.LoginActivity$LoginActivityPasswordView$$ExternalSyntheticLambda0
                 @Override // android.content.DialogInterface.OnClickListener
                 public final void onClick(DialogInterface dialogInterface, int i) {
                     LoginActivity.LoginActivityPasswordView.this.lambda$new$5(dialogInterface, i);
@@ -4597,9 +4597,9 @@ public class LoginActivity extends BaseFragment {
                     textStyleRun.end = i;
                     valueOf.setSpan(new TextStyleSpan(textStyleRun), indexOf, i, 0);
                 }
-                builder.setMessage(AndroidUtilities.formatSpannable(LocaleController.getString(C3301R.string.RestoreEmailSent), valueOf));
-                builder.setTitle(LocaleController.getString("RestoreEmailSentTitle", C3301R.string.RestoreEmailSentTitle));
-                builder.setPositiveButton(LocaleController.getString(C3301R.string.Continue), new DialogInterface.OnClickListener() { // from class: org.telegram.ui.LoginActivity$LoginActivityPasswordView$$ExternalSyntheticLambda1
+                builder.setMessage(AndroidUtilities.formatSpannable(LocaleController.getString(C3316R.string.RestoreEmailSent), valueOf));
+                builder.setTitle(LocaleController.getString("RestoreEmailSentTitle", C3316R.string.RestoreEmailSentTitle));
+                builder.setPositiveButton(LocaleController.getString(C3316R.string.Continue), new DialogInterface.OnClickListener() { // from class: org.telegram.ui.LoginActivity$LoginActivityPasswordView$$ExternalSyntheticLambda1
                     @Override // android.content.DialogInterface.OnClickListener
                     public final void onClick(DialogInterface dialogInterface, int i2) {
                         LoginActivity.LoginActivityPasswordView.this.lambda$new$2(tLRPC$TL_auth_passwordRecovery, dialogInterface, i2);
@@ -4611,7 +4611,7 @@ public class LoginActivity extends BaseFragment {
                     showDialog.setCancelable(false);
                 }
             } else if (!tLRPC$TL_error.text.startsWith("FLOOD_WAIT")) {
-                LoginActivity.this.needShowAlert(LocaleController.getString(C3301R.string.RestorePasswordNoEmailTitle), tLRPC$TL_error.text);
+                LoginActivity.this.needShowAlert(LocaleController.getString(C3316R.string.RestorePasswordNoEmailTitle), tLRPC$TL_error.text);
             } else {
                 int intValue = Utilities.parseInt((CharSequence) tLRPC$TL_error.text).intValue();
                 if (intValue < 60) {
@@ -4619,7 +4619,7 @@ public class LoginActivity extends BaseFragment {
                 } else {
                     formatPluralString = LocaleController.formatPluralString("Minutes", intValue / 60, new Object[0]);
                 }
-                LoginActivity.this.needShowAlert(LocaleController.getString(C3301R.string.WrongCodeTitle), LocaleController.formatString("FloodWaitTime", C3301R.string.FloodWaitTime, formatPluralString));
+                LoginActivity.this.needShowAlert(LocaleController.getString(C3316R.string.WrongCodeTitle), LocaleController.formatString("FloodWaitTime", C3316R.string.FloodWaitTime, formatPluralString));
             }
         }
 
@@ -4652,7 +4652,7 @@ public class LoginActivity extends BaseFragment {
 
         @Override // org.telegram.p048ui.Components.SlideView
         public String getHeaderName() {
-            return LocaleController.getString("LoginPassword", C3301R.string.LoginPassword);
+            return LocaleController.getString("LoginPassword", C3316R.string.LoginPassword);
         }
 
         @Override // org.telegram.p048ui.Components.SlideView
@@ -4722,8 +4722,8 @@ public class LoginActivity extends BaseFragment {
         public /* synthetic */ void lambda$onNextPressed$12(String str) {
             TLRPC$account_Password tLRPC$account_Password = this.currentPassword;
             TLRPC$PasswordKdfAlgo tLRPC$PasswordKdfAlgo = tLRPC$account_Password == null ? null : tLRPC$account_Password.current_algo;
-            boolean z = tLRPC$PasswordKdfAlgo instanceof C3365x72c667f;
-            byte[] x = z ? SRPHelper.getX(AndroidUtilities.getStringBytes(str), (C3365x72c667f) tLRPC$PasswordKdfAlgo) : null;
+            boolean z = tLRPC$PasswordKdfAlgo instanceof C3380x72c667f;
+            byte[] x = z ? SRPHelper.getX(AndroidUtilities.getStringBytes(str), (C3380x72c667f) tLRPC$PasswordKdfAlgo) : null;
             TLRPC$TL_auth_checkPassword tLRPC$TL_auth_checkPassword = new TLRPC$TL_auth_checkPassword();
             RequestDelegate requestDelegate = new RequestDelegate() { // from class: org.telegram.ui.LoginActivity$LoginActivityPasswordView$$ExternalSyntheticLambda13
                 @Override // org.telegram.tgnet.RequestDelegate
@@ -4733,7 +4733,7 @@ public class LoginActivity extends BaseFragment {
             };
             if (z) {
                 TLRPC$account_Password tLRPC$account_Password2 = this.currentPassword;
-                TLRPC$TL_inputCheckPasswordSRP startCheck = SRPHelper.startCheck(x, tLRPC$account_Password2.srp_id, tLRPC$account_Password2.srp_B, (C3365x72c667f) tLRPC$PasswordKdfAlgo);
+                TLRPC$TL_inputCheckPasswordSRP startCheck = SRPHelper.startCheck(x, tLRPC$account_Password2.srp_id, tLRPC$account_Password2.srp_B, (C3380x72c667f) tLRPC$PasswordKdfAlgo);
                 tLRPC$TL_auth_checkPassword.password = startCheck;
                 if (startCheck != null) {
                     ConnectionsManager.getInstance(((BaseFragment) LoginActivity.this).currentAccount).sendRequest(tLRPC$TL_auth_checkPassword, requestDelegate, 10);
@@ -4779,7 +4779,7 @@ public class LoginActivity extends BaseFragment {
                 if (tLRPC$TL_error.text.equals("PASSWORD_HASH_INVALID")) {
                     onPasscodeError(true);
                 } else if (!tLRPC$TL_error.text.startsWith("FLOOD_WAIT")) {
-                    LoginActivity.this.needShowAlert(LocaleController.getString(C3301R.string.RestorePasswordNoEmailTitle), tLRPC$TL_error.text);
+                    LoginActivity.this.needShowAlert(LocaleController.getString(C3316R.string.RestorePasswordNoEmailTitle), tLRPC$TL_error.text);
                 } else {
                     int intValue = Utilities.parseInt((CharSequence) tLRPC$TL_error.text).intValue();
                     if (intValue < 60) {
@@ -4787,7 +4787,7 @@ public class LoginActivity extends BaseFragment {
                     } else {
                         formatPluralString = LocaleController.formatPluralString("Minutes", intValue / 60, new Object[0]);
                     }
-                    LoginActivity.this.needShowAlert(LocaleController.getString(C3301R.string.RestorePasswordNoEmailTitle), LocaleController.formatString("FloodWaitTime", C3301R.string.FloodWaitTime, formatPluralString));
+                    LoginActivity.this.needShowAlert(LocaleController.getString(C3316R.string.RestorePasswordNoEmailTitle), LocaleController.formatString("FloodWaitTime", C3316R.string.FloodWaitTime, formatPluralString));
                 }
             }
         }
@@ -4908,7 +4908,7 @@ public class LoginActivity extends BaseFragment {
             RLottieImageView rLottieImageView = new RLottieImageView(context);
             this.waitImageView = rLottieImageView;
             rLottieImageView.setAutoRepeat(true);
-            this.waitImageView.setAnimation(C3301R.C3306raw.sandclock, 120, 120);
+            this.waitImageView.setAnimation(C3316R.C3321raw.sandclock, 120, 120);
             frameLayout.addView(this.waitImageView, LayoutHelper.createFrame(120, 120, 1));
             Point point = AndroidUtilities.displaySize;
             frameLayout.setVisibility((point.x <= point.y || AndroidUtilities.isTablet()) ? 0 : 8);
@@ -4918,7 +4918,7 @@ public class LoginActivity extends BaseFragment {
             textView.setTextSize(1, 18.0f);
             this.titleView.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
             TextView textView2 = this.titleView;
-            int i = C3301R.string.ResetAccount;
+            int i = C3316R.string.ResetAccount;
             textView2.setText(LocaleController.getString(i));
             this.titleView.setGravity(17);
             this.titleView.setLineSpacing(AndroidUtilities.m50dp(2), 1.0f);
@@ -4933,7 +4933,7 @@ public class LoginActivity extends BaseFragment {
             TextView textView4 = new TextView(context);
             this.resetAccountText = textView4;
             textView4.setGravity(1);
-            this.resetAccountText.setText(LocaleController.getString("ResetAccountStatus", C3301R.string.ResetAccountStatus));
+            this.resetAccountText.setText(LocaleController.getString("ResetAccountStatus", C3316R.string.ResetAccountStatus));
             this.resetAccountText.setTextSize(1, 14.0f);
             this.resetAccountText.setLineSpacing(AndroidUtilities.m50dp(2), 1.0f);
             addView(this.resetAccountText, LayoutHelper.createLinear(-2, -2, 49, 0, 24, 0, 0));
@@ -4968,12 +4968,12 @@ public class LoginActivity extends BaseFragment {
                 return;
             }
             LoginActivity loginActivity = LoginActivity.this;
-            loginActivity.showDialog(new AlertDialog.Builder(loginActivity.getParentActivity()).setTitle(LocaleController.getString("ResetMyAccountWarning", C3301R.string.ResetMyAccountWarning)).setMessage(LocaleController.getString("ResetMyAccountWarningText", C3301R.string.ResetMyAccountWarningText)).setPositiveButton(LocaleController.getString("ResetMyAccountWarningReset", C3301R.string.ResetMyAccountWarningReset), new DialogInterface.OnClickListener() { // from class: org.telegram.ui.LoginActivity$LoginActivityResetWaitView$$ExternalSyntheticLambda0
+            loginActivity.showDialog(new AlertDialog.Builder(loginActivity.getParentActivity()).setTitle(LocaleController.getString("ResetMyAccountWarning", C3316R.string.ResetMyAccountWarning)).setMessage(LocaleController.getString("ResetMyAccountWarningText", C3316R.string.ResetMyAccountWarningText)).setPositiveButton(LocaleController.getString("ResetMyAccountWarningReset", C3316R.string.ResetMyAccountWarningReset), new DialogInterface.OnClickListener() { // from class: org.telegram.ui.LoginActivity$LoginActivityResetWaitView$$ExternalSyntheticLambda0
                 @Override // android.content.DialogInterface.OnClickListener
                 public final void onClick(DialogInterface dialogInterface, int i) {
                     LoginActivity.LoginActivityResetWaitView.this.lambda$new$2(dialogInterface, i);
                 }
-            }).setNegativeButton(LocaleController.getString("Cancel", C3301R.string.Cancel), null).create());
+            }).setNegativeButton(LocaleController.getString("Cancel", C3316R.string.Cancel), null).create());
         }
 
         /* JADX INFO: Access modifiers changed from: private */
@@ -5013,9 +5013,9 @@ public class LoginActivity extends BaseFragment {
                 bundle.putString("code", this.phoneCode);
                 LoginActivity.this.setPage(5, true, bundle, false);
             } else if (tLRPC$TL_error.text.equals("2FA_RECENT_CONFIRM")) {
-                LoginActivity.this.needShowAlert(LocaleController.getString(C3301R.string.RestorePasswordNoEmailTitle), LocaleController.getString("ResetAccountCancelledAlert", C3301R.string.ResetAccountCancelledAlert));
+                LoginActivity.this.needShowAlert(LocaleController.getString(C3316R.string.RestorePasswordNoEmailTitle), LocaleController.getString("ResetAccountCancelledAlert", C3316R.string.ResetAccountCancelledAlert));
             } else {
-                LoginActivity.this.needShowAlert(LocaleController.getString(C3301R.string.RestorePasswordNoEmailTitle), tLRPC$TL_error.text);
+                LoginActivity.this.needShowAlert(LocaleController.getString(C3316R.string.RestorePasswordNoEmailTitle), tLRPC$TL_error.text);
             }
         }
 
@@ -5030,7 +5030,7 @@ public class LoginActivity extends BaseFragment {
 
         @Override // org.telegram.p048ui.Components.SlideView
         public String getHeaderName() {
-            return LocaleController.getString("ResetAccount", C3301R.string.ResetAccount);
+            return LocaleController.getString("ResetAccount", C3316R.string.ResetAccount);
         }
 
         /* JADX INFO: Access modifiers changed from: private */
@@ -5076,9 +5076,9 @@ public class LoginActivity extends BaseFragment {
             this.startTime = bundle.getInt("startTime");
             this.waitTime = bundle.getInt("waitTime");
             TextView textView = this.confirmTextView;
-            int i = C3301R.string.ResetAccountInfo;
-            C3218PhoneFormat c3218PhoneFormat = C3218PhoneFormat.getInstance();
-            textView.setText(AndroidUtilities.replaceTags(LocaleController.formatString("ResetAccountInfo", i, LocaleController.addNbsp(c3218PhoneFormat.format("+" + this.requestPhone)))));
+            int i = C3316R.string.ResetAccountInfo;
+            C3233PhoneFormat c3233PhoneFormat = C3233PhoneFormat.getInstance();
+            textView.setText(AndroidUtilities.replaceTags(LocaleController.formatString("ResetAccountInfo", i, LocaleController.addNbsp(c3233PhoneFormat.format("+" + this.requestPhone)))));
             updateTimeText();
             Runnable runnable = new Runnable() { // from class: org.telegram.ui.LoginActivity.LoginActivityResetWaitView.1
                 @Override // java.lang.Runnable
@@ -5219,7 +5219,7 @@ public class LoginActivity extends BaseFragment {
 
         @Override // org.telegram.p048ui.Components.SlideView
         public String getHeaderName() {
-            return LocaleController.getString("AddEmailTitle", C3301R.string.AddEmailTitle);
+            return LocaleController.getString("AddEmailTitle", C3316R.string.AddEmailTitle);
         }
 
         @Override // org.telegram.p048ui.Components.SlideView
@@ -5345,9 +5345,9 @@ public class LoginActivity extends BaseFragment {
                 LoginActivity.this.fillNextCodeParams(bundle, tLRPC$TL_account_emailVerifiedLogin.sent_code);
             } else if (tLRPC$TL_error != null) {
                 if (tLRPC$TL_error.text.contains("EMAIL_NOT_ALLOWED")) {
-                    LoginActivity.this.needShowAlert(LocaleController.getString(C3301R.string.RestorePasswordNoEmailTitle), LocaleController.getString(C3301R.string.EmailNotAllowed));
+                    LoginActivity.this.needShowAlert(LocaleController.getString(C3316R.string.RestorePasswordNoEmailTitle), LocaleController.getString(C3316R.string.EmailNotAllowed));
                 } else if (tLRPC$TL_error.text.contains("EMAIL_TOKEN_INVALID")) {
-                    LoginActivity.this.needShowAlert(LocaleController.getString(C3301R.string.RestorePasswordNoEmailTitle), LocaleController.getString(C3301R.string.EmailTokenInvalid));
+                    LoginActivity.this.needShowAlert(LocaleController.getString(C3316R.string.RestorePasswordNoEmailTitle), LocaleController.getString(C3316R.string.EmailTokenInvalid));
                 } else if (tLRPC$TL_error.code != -1000) {
                     AlertsCreator.processError(((BaseFragment) LoginActivity.this).currentAccount, tLRPC$TL_error, LoginActivity.this, tLRPC$TL_account_verifyEmail, new Object[0]);
                 }
@@ -5377,19 +5377,19 @@ public class LoginActivity extends BaseFragment {
                 if (str.contains("EMAIL_INVALID")) {
                     onPasscodeError(false);
                 } else if (tLRPC$TL_error.text.contains("EMAIL_NOT_ALLOWED")) {
-                    LoginActivity.this.needShowAlert(LocaleController.getString(C3301R.string.RestorePasswordNoEmailTitle), LocaleController.getString(C3301R.string.EmailNotAllowed));
+                    LoginActivity.this.needShowAlert(LocaleController.getString(C3316R.string.RestorePasswordNoEmailTitle), LocaleController.getString(C3316R.string.EmailNotAllowed));
                 } else if (tLRPC$TL_error.text.contains("PHONE_PASSWORD_FLOOD")) {
-                    LoginActivity.this.needShowAlert(LocaleController.getString(C3301R.string.RestorePasswordNoEmailTitle), LocaleController.getString("FloodWait", C3301R.string.FloodWait));
+                    LoginActivity.this.needShowAlert(LocaleController.getString(C3316R.string.RestorePasswordNoEmailTitle), LocaleController.getString("FloodWait", C3316R.string.FloodWait));
                 } else if (tLRPC$TL_error.text.contains("PHONE_NUMBER_FLOOD")) {
-                    LoginActivity.this.needShowAlert(LocaleController.getString(C3301R.string.RestorePasswordNoEmailTitle), LocaleController.getString("PhoneNumberFlood", C3301R.string.PhoneNumberFlood));
+                    LoginActivity.this.needShowAlert(LocaleController.getString(C3316R.string.RestorePasswordNoEmailTitle), LocaleController.getString("PhoneNumberFlood", C3316R.string.PhoneNumberFlood));
                 } else if (tLRPC$TL_error.text.contains("PHONE_CODE_EMPTY") || tLRPC$TL_error.text.contains("PHONE_CODE_INVALID")) {
-                    LoginActivity.this.needShowAlert(LocaleController.getString(C3301R.string.RestorePasswordNoEmailTitle), LocaleController.getString("InvalidCode", C3301R.string.InvalidCode));
+                    LoginActivity.this.needShowAlert(LocaleController.getString(C3316R.string.RestorePasswordNoEmailTitle), LocaleController.getString("InvalidCode", C3316R.string.InvalidCode));
                 } else if (tLRPC$TL_error.text.contains("PHONE_CODE_EXPIRED")) {
                     onBackPressed(true);
                     LoginActivity.this.setPage(0, true, null, true);
-                    LoginActivity.this.needShowAlert(LocaleController.getString(C3301R.string.RestorePasswordNoEmailTitle), LocaleController.getString("CodeExpired", C3301R.string.CodeExpired));
+                    LoginActivity.this.needShowAlert(LocaleController.getString(C3316R.string.RestorePasswordNoEmailTitle), LocaleController.getString("CodeExpired", C3316R.string.CodeExpired));
                 } else if (tLRPC$TL_error.text.startsWith("FLOOD_WAIT")) {
-                    LoginActivity.this.needShowAlert(LocaleController.getString(C3301R.string.RestorePasswordNoEmailTitle), LocaleController.getString("FloodWait", C3301R.string.FloodWait));
+                    LoginActivity.this.needShowAlert(LocaleController.getString(C3316R.string.RestorePasswordNoEmailTitle), LocaleController.getString("FloodWait", C3316R.string.FloodWait));
                 } else if (tLRPC$TL_error.code != -1000) {
                     AlertsCreator.processError(((BaseFragment) LoginActivity.this).currentAccount, tLRPC$TL_error, LoginActivity.this, tLRPC$TL_account_sendVerifyEmailCode, this.requestPhone);
                 }
@@ -5580,12 +5580,12 @@ public class LoginActivity extends BaseFragment {
                 textStyleRun.end = i;
                 spannableStringBuilder.setSpan(new TextStyleSpan(textStyleRun), indexOf, i, 0);
             }
-            new AlertDialog.Builder(context).setTitle(LocaleController.getString(C3301R.string.LoginEmailResetTitle)).setMessage(AndroidUtilities.formatSpannable(AndroidUtilities.replaceTags(LocaleController.getString(C3301R.string.LoginEmailResetMessage)), spannableStringBuilder, getTimePattern(this.resetAvailablePeriod))).setPositiveButton(LocaleController.getString(C3301R.string.LoginEmailResetButton), new DialogInterface.OnClickListener() { // from class: org.telegram.ui.LoginActivity$LoginActivityEmailCodeView$$ExternalSyntheticLambda0
+            new AlertDialog.Builder(context).setTitle(LocaleController.getString(C3316R.string.LoginEmailResetTitle)).setMessage(AndroidUtilities.formatSpannable(AndroidUtilities.replaceTags(LocaleController.getString(C3316R.string.LoginEmailResetMessage)), spannableStringBuilder, getTimePattern(this.resetAvailablePeriod))).setPositiveButton(LocaleController.getString(C3316R.string.LoginEmailResetButton), new DialogInterface.OnClickListener() { // from class: org.telegram.ui.LoginActivity$LoginActivityEmailCodeView$$ExternalSyntheticLambda0
                 @Override // android.content.DialogInterface.OnClickListener
                 public final void onClick(DialogInterface dialogInterface, int i2) {
                     LoginActivity.LoginActivityEmailCodeView.this.lambda$new$6(dialogInterface, i2);
                 }
-            }).setNegativeButton(LocaleController.getString(C3301R.string.Cancel), null).show();
+            }).setNegativeButton(LocaleController.getString(C3316R.string.Cancel), null).show();
         }
 
         /* JADX INFO: Access modifiers changed from: private */
@@ -5634,7 +5634,7 @@ public class LoginActivity extends BaseFragment {
                 }
                 onBackPressed(true);
                 LoginActivity.this.setPage(0, true, null, true);
-                LoginActivity.this.needShowAlert(LocaleController.getString(C3301R.string.RestorePasswordNoEmailTitle), LocaleController.getString("CodeExpired", C3301R.string.CodeExpired));
+                LoginActivity.this.needShowAlert(LocaleController.getString(C3316R.string.RestorePasswordNoEmailTitle), LocaleController.getString("CodeExpired", C3316R.string.CodeExpired));
             }
         }
 
@@ -5723,16 +5723,16 @@ public class LoginActivity extends BaseFragment {
             } else if (tLRPC$TL_error == null || (str = tLRPC$TL_error.text) == null) {
             } else {
                 if (str.contains("TASK_ALREADY_EXISTS")) {
-                    AlertDialog.Builder title = new AlertDialog.Builder(getContext()).setTitle(LocaleController.getString(C3301R.string.LoginEmailResetPremiumRequiredTitle));
-                    int i = C3301R.string.LoginEmailResetPremiumRequiredMessage;
-                    C3218PhoneFormat c3218PhoneFormat = C3218PhoneFormat.getInstance();
-                    title.setMessage(AndroidUtilities.replaceTags(LocaleController.formatString(i, LocaleController.addNbsp(c3218PhoneFormat.format("+" + this.requestPhone))))).setPositiveButton(LocaleController.getString(C3301R.string.OK), null).show();
+                    AlertDialog.Builder title = new AlertDialog.Builder(getContext()).setTitle(LocaleController.getString(C3316R.string.LoginEmailResetPremiumRequiredTitle));
+                    int i = C3316R.string.LoginEmailResetPremiumRequiredMessage;
+                    C3233PhoneFormat c3233PhoneFormat = C3233PhoneFormat.getInstance();
+                    title.setMessage(AndroidUtilities.replaceTags(LocaleController.formatString(i, LocaleController.addNbsp(c3233PhoneFormat.format("+" + this.requestPhone))))).setPositiveButton(LocaleController.getString(C3316R.string.OK), null).show();
                 } else if (!tLRPC$TL_error.text.contains("PHONE_CODE_EXPIRED")) {
                     AlertsCreator.processError(((BaseFragment) LoginActivity.this).currentAccount, tLRPC$TL_error, LoginActivity.this, tLRPC$TL_auth_resetLoginEmail, new Object[0]);
                 } else {
                     onBackPressed(true);
                     LoginActivity.this.setPage(0, true, null, true);
-                    LoginActivity.this.needShowAlert(LocaleController.getString(C3301R.string.RestorePasswordNoEmailTitle), LocaleController.getString("CodeExpired", C3301R.string.CodeExpired));
+                    LoginActivity.this.needShowAlert(LocaleController.getString(C3316R.string.RestorePasswordNoEmailTitle), LocaleController.getString("CodeExpired", C3316R.string.CodeExpired));
                 }
             }
         }
@@ -5768,7 +5768,7 @@ public class LoginActivity extends BaseFragment {
 
         @Override // org.telegram.p048ui.Components.SlideView
         public String getHeaderName() {
-            return LocaleController.getString(C3301R.string.VerificationCode);
+            return LocaleController.getString(C3316R.string.VerificationCode);
         }
 
         @Override // org.telegram.p048ui.Components.SlideView
@@ -5789,10 +5789,10 @@ public class LoginActivity extends BaseFragment {
             this.resetPendingDate = this.currentParams.getInt("resetPendingDate");
             int i = 8;
             if (LoginActivity.this.activityMode == 3) {
-                this.confirmTextView.setText(LocaleController.formatString(C3301R.string.CheckYourNewEmailSubtitle, this.email));
+                this.confirmTextView.setText(LocaleController.formatString(C3316R.string.CheckYourNewEmailSubtitle, this.email));
                 AndroidUtilities.updateViewVisibilityAnimated(this.cantAccessEmailFrameLayout, false, 1.0f, false);
             } else if (this.isSetup) {
-                this.confirmTextView.setText(LocaleController.formatString(C3301R.string.VerificationCodeSubtitle, this.email));
+                this.confirmTextView.setText(LocaleController.formatString(C3316R.string.VerificationCodeSubtitle, this.email));
                 AndroidUtilities.updateViewVisibilityAnimated(this.cantAccessEmailFrameLayout, false, 1.0f, false);
             } else {
                 AndroidUtilities.updateViewVisibilityAnimated(this.cantAccessEmailFrameLayout, true, 1.0f, false);
@@ -5844,7 +5844,7 @@ public class LoginActivity extends BaseFragment {
                     textStyleRun.end = i2;
                     spannableStringBuilder.setSpan(new TextStyleSpan(textStyleRun), indexOf, i2, 0);
                 }
-                this.confirmTextView.setText(AndroidUtilities.formatSpannable(LocaleController.getString(C3301R.string.CheckYourEmailSubtitle), spannableStringBuilder));
+                this.confirmTextView.setText(AndroidUtilities.formatSpannable(LocaleController.getString(C3316R.string.CheckYourEmailSubtitle), spannableStringBuilder));
             }
             if (bundle.getBoolean("googleSignInAllowed") && PushListenerController.GooglePushListenerServiceProvider.INSTANCE.hasServices()) {
                 i = 0;
@@ -5884,15 +5884,18 @@ public class LoginActivity extends BaseFragment {
             int i5 = i3 % 3600;
             int i6 = i5 / 60;
             int i7 = i5 % 60;
+            if (i4 >= 16) {
+                i2++;
+            }
             if (i2 != 0) {
-                return LocaleController.formatString(C3301R.string.LoginEmailResetInSinglePattern, LocaleController.formatPluralString("Days", i2, new Object[0]));
+                return LocaleController.formatString(C3316R.string.LoginEmailResetInSinglePattern, LocaleController.formatPluralString("Days", i2, new Object[0]));
             }
             StringBuilder sb = new StringBuilder();
             sb.append(i4 != 0 ? String.format(Locale.ROOT, "%02d:", Integer.valueOf(i4)) : "");
             Locale locale = Locale.ROOT;
             sb.append(String.format(locale, "%02d:", Integer.valueOf(i6)));
             sb.append(String.format(locale, "%02d", Integer.valueOf(i7)));
-            return LocaleController.formatString(C3301R.string.LoginEmailResetInSinglePattern, sb.toString());
+            return LocaleController.formatString(C3316R.string.LoginEmailResetInSinglePattern, sb.toString());
         }
 
         private String getTimePattern(int i) {
@@ -5903,7 +5906,7 @@ public class LoginActivity extends BaseFragment {
             if (i2 == 0 && i4 == 0) {
                 i5 = Math.max(1, i5);
             }
-            return (i2 == 0 || i4 == 0) ? (i4 == 0 || i5 == 0) ? i2 != 0 ? LocaleController.formatString(C3301R.string.LoginEmailResetInSinglePattern, LocaleController.formatPluralString("Days", i2, new Object[0])) : i4 != 0 ? LocaleController.formatString(C3301R.string.LoginEmailResetInSinglePattern, LocaleController.formatPluralString("Hours", i2, new Object[0])) : LocaleController.formatString(C3301R.string.LoginEmailResetInSinglePattern, LocaleController.formatPluralString("Minutes", i5, new Object[0])) : LocaleController.formatString(C3301R.string.LoginEmailResetInDoublePattern, LocaleController.formatPluralString("Hours", i4, new Object[0]), LocaleController.formatPluralString("Minutes", i5, new Object[0])) : LocaleController.formatString(C3301R.string.LoginEmailResetInDoublePattern, LocaleController.formatPluralString("Days", i2, new Object[0]), LocaleController.formatPluralString("Hours", i4, new Object[0]));
+            return (i2 == 0 || i4 == 0) ? (i4 == 0 || i5 == 0) ? i2 != 0 ? LocaleController.formatString(C3316R.string.LoginEmailResetInSinglePattern, LocaleController.formatPluralString("Days", i2, new Object[0])) : i4 != 0 ? LocaleController.formatString(C3316R.string.LoginEmailResetInSinglePattern, LocaleController.formatPluralString("Hours", i2, new Object[0])) : LocaleController.formatString(C3316R.string.LoginEmailResetInSinglePattern, LocaleController.formatPluralString("Minutes", i5, new Object[0])) : LocaleController.formatString(C3316R.string.LoginEmailResetInDoublePattern, LocaleController.formatPluralString("Hours", i4, new Object[0]), LocaleController.formatPluralString("Minutes", i5, new Object[0])) : LocaleController.formatString(C3316R.string.LoginEmailResetInDoublePattern, LocaleController.formatPluralString("Days", i2, new Object[0]), LocaleController.formatPluralString("Hours", i4, new Object[0]));
         }
 
         /* JADX INFO: Access modifiers changed from: private */
@@ -5911,7 +5914,7 @@ public class LoginActivity extends BaseFragment {
             int currentTimeMillis = (int) (this.resetPendingDate - (System.currentTimeMillis() / 1000));
             if (this.resetPendingDate <= 0 || currentTimeMillis <= 0) {
                 this.emailResetInView.setVisibility(0);
-                this.emailResetInView.setText(LocaleController.getString(C3301R.string.LoginEmailResetPleaseWait));
+                this.emailResetInView.setText(LocaleController.getString(C3316R.string.LoginEmailResetPleaseWait));
                 AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.LoginActivity$LoginActivityEmailCodeView$$ExternalSyntheticLambda8
                     @Override // java.lang.Runnable
                     public final void run() {
@@ -5920,7 +5923,7 @@ public class LoginActivity extends BaseFragment {
                 }, 1000L);
                 return;
             }
-            String formatString = LocaleController.formatString(C3301R.string.LoginEmailResetInTime, getTimePatternForTimer(currentTimeMillis));
+            String formatString = LocaleController.formatString(C3316R.string.LoginEmailResetInTime, getTimePatternForTimer(currentTimeMillis));
             SpannableStringBuilder valueOf = SpannableStringBuilder.valueOf(formatString);
             int indexOf = formatString.indexOf(42);
             int lastIndexOf = formatString.lastIndexOf(42);
@@ -5967,7 +5970,7 @@ public class LoginActivity extends BaseFragment {
                 }
             }, 150L);
             removeCallbacks(this.errorColorTimeout);
-            postDelayed(this.errorColorTimeout, C0468C.DEFAULT_MAX_SEEK_TO_PREVIOUS_POSITION_MS);
+            postDelayed(this.errorColorTimeout, C0482C.DEFAULT_MAX_SEEK_TO_PREVIOUS_POSITION_MS);
             this.postedErrorColorTimeout = true;
         }
 
@@ -6115,12 +6118,12 @@ public class LoginActivity extends BaseFragment {
             this.nextPressed = false;
             LoginActivity.this.showDoneButton(false, true);
             if (tLRPC$TL_error != null) {
-                LoginActivity.this.needShowAlert(LocaleController.getString(C3301R.string.RestorePasswordNoEmailTitle), tLRPC$TL_error.text);
+                LoginActivity.this.needShowAlert(LocaleController.getString(C3316R.string.RestorePasswordNoEmailTitle), tLRPC$TL_error.text);
                 return;
             }
             TLRPC$account_Password tLRPC$account_Password = (TLRPC$account_Password) tLObject;
             if (!TwoStepVerificationActivity.canHandleCurrentPassword(tLRPC$account_Password, true)) {
-                AlertsCreator.showUpdateAppAlert(LoginActivity.this.getParentActivity(), LocaleController.getString("UpdateAppAlert", C3301R.string.UpdateAppAlert), true);
+                AlertsCreator.showUpdateAppAlert(LoginActivity.this.getParentActivity(), LocaleController.getString("UpdateAppAlert", C3316R.string.UpdateAppAlert), true);
                 return;
             }
             final Bundle bundle = new Bundle();
@@ -6366,12 +6369,12 @@ public class LoginActivity extends BaseFragment {
 
         /* JADX INFO: Access modifiers changed from: private */
         public /* synthetic */ void lambda$new$4(View view) {
-            Dialog showDialog = LoginActivity.this.showDialog(new AlertDialog.Builder(LoginActivity.this.getParentActivity()).setTitle(LocaleController.getString("RestorePasswordNoEmailTitle", C3301R.string.RestorePasswordNoEmailTitle)).setMessage(LocaleController.getString("RestoreEmailTroubleText", C3301R.string.RestoreEmailTroubleText)).setPositiveButton(LocaleController.getString(C3301R.string.OK), new DialogInterface.OnClickListener() { // from class: org.telegram.ui.LoginActivity$LoginActivityRecoverView$$ExternalSyntheticLambda1
+            Dialog showDialog = LoginActivity.this.showDialog(new AlertDialog.Builder(LoginActivity.this.getParentActivity()).setTitle(LocaleController.getString("RestorePasswordNoEmailTitle", C3316R.string.RestorePasswordNoEmailTitle)).setMessage(LocaleController.getString("RestoreEmailTroubleText", C3316R.string.RestoreEmailTroubleText)).setPositiveButton(LocaleController.getString(C3316R.string.OK), new DialogInterface.OnClickListener() { // from class: org.telegram.ui.LoginActivity$LoginActivityRecoverView$$ExternalSyntheticLambda1
                 @Override // android.content.DialogInterface.OnClickListener
                 public final void onClick(DialogInterface dialogInterface, int i) {
                     LoginActivity.LoginActivityRecoverView.this.lambda$new$2(dialogInterface, i);
                 }
-            }).setNegativeButton(LocaleController.getString(C3301R.string.ResetAccount), new DialogInterface.OnClickListener() { // from class: org.telegram.ui.LoginActivity$LoginActivityRecoverView$$ExternalSyntheticLambda0
+            }).setNegativeButton(LocaleController.getString(C3316R.string.ResetAccount), new DialogInterface.OnClickListener() { // from class: org.telegram.ui.LoginActivity$LoginActivityRecoverView$$ExternalSyntheticLambda0
                 @Override // android.content.DialogInterface.OnClickListener
                 public final void onClick(DialogInterface dialogInterface, int i) {
                     LoginActivity.LoginActivityRecoverView.this.lambda$new$3(dialogInterface, i);
@@ -6414,7 +6417,7 @@ public class LoginActivity extends BaseFragment {
 
         @Override // org.telegram.p048ui.Components.SlideView
         public String getHeaderName() {
-            return LocaleController.getString("LoginPassword", C3301R.string.LoginPassword);
+            return LocaleController.getString("LoginPassword", C3316R.string.LoginPassword);
         }
 
         @Override // org.telegram.p048ui.Components.SlideView
@@ -6440,7 +6443,7 @@ public class LoginActivity extends BaseFragment {
                 textStyleRun.end = i;
                 valueOf.setSpan(new TextStyleSpan(textStyleRun), indexOf, i, 0);
             }
-            this.troubleButton.setText(AndroidUtilities.formatSpannable(LocaleController.getString(C3301R.string.RestoreEmailNoAccess), valueOf));
+            this.troubleButton.setText(AndroidUtilities.formatSpannable(LocaleController.getString(C3316R.string.RestoreEmailNoAccess), valueOf));
             LoginActivity.this.showKeyboard(this.codeFieldContainer);
             this.codeFieldContainer.requestFocus();
         }
@@ -6479,7 +6482,7 @@ public class LoginActivity extends BaseFragment {
                 }
             }, 150L);
             removeCallbacks(this.errorColorTimeout);
-            postDelayed(this.errorColorTimeout, C0468C.DEFAULT_MAX_SEEK_TO_PREVIOUS_POSITION_MS);
+            postDelayed(this.errorColorTimeout, C0482C.DEFAULT_MAX_SEEK_TO_PREVIOUS_POSITION_MS);
             this.postedErrorColorTimeout = true;
         }
 
@@ -6549,7 +6552,7 @@ public class LoginActivity extends BaseFragment {
             } else if (tLRPC$TL_error == null || tLRPC$TL_error.text.startsWith("CODE_INVALID")) {
                 onPasscodeError(true);
             } else if (!tLRPC$TL_error.text.startsWith("FLOOD_WAIT")) {
-                LoginActivity.this.needShowAlert(LocaleController.getString(C3301R.string.RestorePasswordNoEmailTitle), tLRPC$TL_error.text);
+                LoginActivity.this.needShowAlert(LocaleController.getString(C3316R.string.RestorePasswordNoEmailTitle), tLRPC$TL_error.text);
             } else {
                 int intValue = Utilities.parseInt((CharSequence) tLRPC$TL_error.text).intValue();
                 if (intValue < 60) {
@@ -6557,7 +6560,7 @@ public class LoginActivity extends BaseFragment {
                 } else {
                     formatPluralString = LocaleController.formatPluralString("Minutes", intValue / 60, new Object[0]);
                 }
-                LoginActivity.this.needShowAlert(LocaleController.getString(C3301R.string.RestorePasswordNoEmailTitle), LocaleController.formatString("FloodWaitTime", C3301R.string.FloodWaitTime, formatPluralString));
+                LoginActivity.this.needShowAlert(LocaleController.getString(C3316R.string.RestorePasswordNoEmailTitle), LocaleController.formatString("FloodWaitTime", C3316R.string.FloodWaitTime, formatPluralString));
             }
         }
 
@@ -6655,7 +6658,7 @@ public class LoginActivity extends BaseFragment {
             this.titleTextView.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
             this.titleTextView.setLineSpacing(AndroidUtilities.m50dp(2), 1.0f);
             this.titleTextView.setGravity(49);
-            this.titleTextView.setText(LocaleController.getString(C3301R.string.SetNewPassword));
+            this.titleTextView.setText(LocaleController.getString(C3316R.string.SetNewPassword));
             int i4 = 16;
             addView(this.titleTextView, LayoutHelper.createLinear(-2, -2, 1, 8, AndroidUtilities.isSmallScreen() ? 16 : 72, 8, 0));
             TextView textView2 = new TextView(context);
@@ -6669,9 +6672,9 @@ public class LoginActivity extends BaseFragment {
                 final OutlineTextContainerView outlineTextContainerView = new OutlineTextContainerView(context);
                 this.outlineFields[i5] = outlineTextContainerView;
                 if (i == 0) {
-                    i2 = i5 == 0 ? C3301R.string.PleaseEnterNewFirstPasswordHint : C3301R.string.PleaseEnterNewSecondPasswordHint;
+                    i2 = i5 == 0 ? C3316R.string.PleaseEnterNewFirstPasswordHint : C3316R.string.PleaseEnterNewSecondPasswordHint;
                 } else {
-                    i2 = C3301R.string.PasswordHintPlaceholder;
+                    i2 = C3316R.string.PasswordHintPlaceholder;
                 }
                 outlineTextContainerView.setText(LocaleController.getString(i2));
                 this.codeField[i5] = new EditTextBoldCursor(context);
@@ -6737,7 +6740,7 @@ public class LoginActivity extends BaseFragment {
                     linearLayout.addView(this.codeField[i5], LayoutHelper.createLinear(0, -2, 1.0f));
                     ImageView imageView = new ImageView(context);
                     this.passwordButton = imageView;
-                    imageView.setImageResource(C3301R.C3303drawable.msg_message);
+                    imageView.setImageResource(C3316R.C3318drawable.msg_message);
                     AndroidUtilities.updateViewVisibilityAnimated(this.passwordButton, true, 0.1f, false);
                     this.passwordButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.LoginActivity$LoginActivityNewPasswordView$$ExternalSyntheticLambda1
                         @Override // android.view.View.OnClickListener
@@ -6767,9 +6770,9 @@ public class LoginActivity extends BaseFragment {
             }
             int i6 = i4;
             if (i == 0) {
-                this.confirmTextView.setText(LocaleController.getString("PleaseEnterNewFirstPasswordLogin", C3301R.string.PleaseEnterNewFirstPasswordLogin));
+                this.confirmTextView.setText(LocaleController.getString("PleaseEnterNewFirstPasswordLogin", C3316R.string.PleaseEnterNewFirstPasswordLogin));
             } else {
-                this.confirmTextView.setText(LocaleController.getString("PasswordHintTextLogin", C3301R.string.PasswordHintTextLogin));
+                this.confirmTextView.setText(LocaleController.getString("PasswordHintTextLogin", C3316R.string.PasswordHintTextLogin));
             }
             TextView textView3 = new TextView(context);
             this.cancelButton = textView3;
@@ -6777,7 +6780,7 @@ public class LoginActivity extends BaseFragment {
             this.cancelButton.setTextSize(1, 15.0f);
             this.cancelButton.setLineSpacing(AndroidUtilities.m50dp(2), 1.0f);
             this.cancelButton.setPadding(AndroidUtilities.m50dp(i6), 0, AndroidUtilities.m50dp(i6), 0);
-            this.cancelButton.setText(LocaleController.getString(C3301R.string.YourEmailSkip));
+            this.cancelButton.setText(LocaleController.getString(C3316R.string.YourEmailSkip));
             FrameLayout frameLayout = new FrameLayout(context);
             frameLayout.addView(this.cancelButton, LayoutHelper.createFrame(-1, Build.VERSION.SDK_INT >= 21 ? 56 : 60, 80, 0, 0, 0, 32));
             addView(frameLayout, LayoutHelper.createLinear(-1, -1, 80));
@@ -6873,7 +6876,7 @@ public class LoginActivity extends BaseFragment {
 
         @Override // org.telegram.p048ui.Components.SlideView
         public String getHeaderName() {
-            return LocaleController.getString("NewPassword", C3301R.string.NewPassword);
+            return LocaleController.getString("NewPassword", C3316R.string.NewPassword);
         }
 
         @Override // org.telegram.p048ui.Components.SlideView
@@ -6974,9 +6977,9 @@ public class LoginActivity extends BaseFragment {
                 }
             };
             TLRPC$PasswordKdfAlgo tLRPC$PasswordKdfAlgo = this.currentPassword.new_algo;
-            if (tLRPC$PasswordKdfAlgo instanceof C3365x72c667f) {
+            if (tLRPC$PasswordKdfAlgo instanceof C3380x72c667f) {
                 if (str != null) {
-                    tLRPC$TL_auth_recoverPassword.new_settings.new_password_hash = SRPHelper.getVBytes(stringBytes, (C3365x72c667f) tLRPC$PasswordKdfAlgo);
+                    tLRPC$TL_auth_recoverPassword.new_settings.new_password_hash = SRPHelper.getVBytes(stringBytes, (C3380x72c667f) tLRPC$PasswordKdfAlgo);
                     if (tLRPC$TL_auth_recoverPassword.new_settings.new_password_hash == null) {
                         TLRPC$TL_error tLRPC$TL_error = new TLRPC$TL_error();
                         tLRPC$TL_error.text = "ALGO_INVALID";
@@ -7008,18 +7011,18 @@ public class LoginActivity extends BaseFragment {
                 LoginActivity.this.needHideProgress(false);
                 if (tLObject instanceof TLRPC$auth_Authorization) {
                     AlertDialog.Builder builder = new AlertDialog.Builder(LoginActivity.this.getParentActivity());
-                    builder.setPositiveButton(LocaleController.getString(C3301R.string.Continue), new DialogInterface.OnClickListener() { // from class: org.telegram.ui.LoginActivity$LoginActivityNewPasswordView$$ExternalSyntheticLambda0
+                    builder.setPositiveButton(LocaleController.getString(C3316R.string.Continue), new DialogInterface.OnClickListener() { // from class: org.telegram.ui.LoginActivity$LoginActivityNewPasswordView$$ExternalSyntheticLambda0
                         @Override // android.content.DialogInterface.OnClickListener
                         public final void onClick(DialogInterface dialogInterface, int i) {
                             LoginActivity.LoginActivityNewPasswordView.this.lambda$recoverPassword$6(tLObject, dialogInterface, i);
                         }
                     });
                     if (TextUtils.isEmpty(str)) {
-                        builder.setMessage(LocaleController.getString(C3301R.string.YourPasswordReset));
+                        builder.setMessage(LocaleController.getString(C3316R.string.YourPasswordReset));
                     } else {
-                        builder.setMessage(LocaleController.getString(C3301R.string.YourPasswordChangedSuccessText));
+                        builder.setMessage(LocaleController.getString(C3316R.string.YourPasswordChangedSuccessText));
                     }
-                    builder.setTitle(LocaleController.getString(C3301R.string.TwoStepVerificationTitle));
+                    builder.setTitle(LocaleController.getString(C3316R.string.TwoStepVerificationTitle));
                     Dialog showDialog = LoginActivity.this.showDialog(builder.create());
                     if (showDialog != null) {
                         showDialog.setCanceledOnTouchOutside(false);
@@ -7030,7 +7033,7 @@ public class LoginActivity extends BaseFragment {
                 } else if (tLRPC$TL_error != null) {
                     this.nextPressed = false;
                     if (!tLRPC$TL_error.text.startsWith("FLOOD_WAIT")) {
-                        LoginActivity.this.needShowAlert(LocaleController.getString(C3301R.string.RestorePasswordNoEmailTitle), tLRPC$TL_error.text);
+                        LoginActivity.this.needShowAlert(LocaleController.getString(C3316R.string.RestorePasswordNoEmailTitle), tLRPC$TL_error.text);
                         return;
                     }
                     int intValue = Utilities.parseInt((CharSequence) tLRPC$TL_error.text).intValue();
@@ -7039,7 +7042,7 @@ public class LoginActivity extends BaseFragment {
                     } else {
                         formatPluralString = LocaleController.formatPluralString("Minutes", intValue / 60, new Object[0]);
                     }
-                    LoginActivity.this.needShowAlert(LocaleController.getString(C3301R.string.RestorePasswordNoEmailTitle), LocaleController.formatString("FloodWaitTime", C3301R.string.FloodWaitTime, formatPluralString));
+                    LoginActivity.this.needShowAlert(LocaleController.getString(C3316R.string.RestorePasswordNoEmailTitle), LocaleController.formatString("FloodWaitTime", C3316R.string.FloodWaitTime, formatPluralString));
                     return;
                 } else {
                     return;
@@ -7208,22 +7211,22 @@ public class LoginActivity extends BaseFragment {
                 return;
             }
             AlertDialog.Builder builder = new AlertDialog.Builder(LoginActivity.this.getParentActivity());
-            builder.setTitle(LocaleController.getString("TermsOfService", C3301R.string.TermsOfService));
+            builder.setTitle(LocaleController.getString("TermsOfService", C3316R.string.TermsOfService));
             if (z) {
-                builder.setPositiveButton(LocaleController.getString(RtspHeaders.ACCEPT, C3301R.string.Accept), new DialogInterface.OnClickListener() { // from class: org.telegram.ui.LoginActivity$LoginActivityRegisterView$$ExternalSyntheticLambda0
+                builder.setPositiveButton(LocaleController.getString(RtspHeaders.ACCEPT, C3316R.string.Accept), new DialogInterface.OnClickListener() { // from class: org.telegram.ui.LoginActivity$LoginActivityRegisterView$$ExternalSyntheticLambda0
                     @Override // android.content.DialogInterface.OnClickListener
                     public final void onClick(DialogInterface dialogInterface, int i) {
                         LoginActivity.LoginActivityRegisterView.this.lambda$showTermsOfService$0(dialogInterface, i);
                     }
                 });
-                builder.setNegativeButton(LocaleController.getString("Decline", C3301R.string.Decline), new DialogInterface.OnClickListener() { // from class: org.telegram.ui.LoginActivity$LoginActivityRegisterView$$ExternalSyntheticLambda3
+                builder.setNegativeButton(LocaleController.getString("Decline", C3316R.string.Decline), new DialogInterface.OnClickListener() { // from class: org.telegram.ui.LoginActivity$LoginActivityRegisterView$$ExternalSyntheticLambda3
                     @Override // android.content.DialogInterface.OnClickListener
                     public final void onClick(DialogInterface dialogInterface, int i) {
                         LoginActivity.LoginActivityRegisterView.this.lambda$showTermsOfService$3(dialogInterface, i);
                     }
                 });
             } else {
-                builder.setPositiveButton(LocaleController.getString("OK", C3301R.string.OK), null);
+                builder.setPositiveButton(LocaleController.getString("OK", C3316R.string.OK), null);
             }
             SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(LoginActivity.this.currentTermsOfService.text);
             MessageObject.addEntitiesToText(spannableStringBuilder, LoginActivity.this.currentTermsOfService.entities, false, false, false, false);
@@ -7240,15 +7243,15 @@ public class LoginActivity extends BaseFragment {
         /* JADX INFO: Access modifiers changed from: private */
         public /* synthetic */ void lambda$showTermsOfService$3(DialogInterface dialogInterface, int i) {
             AlertDialog.Builder builder = new AlertDialog.Builder(LoginActivity.this.getParentActivity());
-            builder.setTitle(LocaleController.getString("TermsOfService", C3301R.string.TermsOfService));
-            builder.setMessage(LocaleController.getString("TosDecline", C3301R.string.TosDecline));
-            builder.setPositiveButton(LocaleController.getString("SignUp", C3301R.string.SignUp), new DialogInterface.OnClickListener() { // from class: org.telegram.ui.LoginActivity$LoginActivityRegisterView$$ExternalSyntheticLambda4
+            builder.setTitle(LocaleController.getString("TermsOfService", C3316R.string.TermsOfService));
+            builder.setMessage(LocaleController.getString("TosDecline", C3316R.string.TosDecline));
+            builder.setPositiveButton(LocaleController.getString("SignUp", C3316R.string.SignUp), new DialogInterface.OnClickListener() { // from class: org.telegram.ui.LoginActivity$LoginActivityRegisterView$$ExternalSyntheticLambda4
                 @Override // android.content.DialogInterface.OnClickListener
                 public final void onClick(DialogInterface dialogInterface2, int i2) {
                     LoginActivity.LoginActivityRegisterView.this.lambda$showTermsOfService$1(dialogInterface2, i2);
                 }
             });
-            builder.setNegativeButton(LocaleController.getString("Decline", C3301R.string.Decline), new DialogInterface.OnClickListener() { // from class: org.telegram.ui.LoginActivity$LoginActivityRegisterView$$ExternalSyntheticLambda1
+            builder.setNegativeButton(LocaleController.getString("Decline", C3316R.string.Decline), new DialogInterface.OnClickListener() { // from class: org.telegram.ui.LoginActivity$LoginActivityRegisterView$$ExternalSyntheticLambda1
                 @Override // android.content.DialogInterface.OnClickListener
                 public final void onClick(DialogInterface dialogInterface2, int i2) {
                     LoginActivity.LoginActivityRegisterView.this.lambda$showTermsOfService$2(dialogInterface2, i2);
@@ -7334,9 +7337,9 @@ public class LoginActivity extends BaseFragment {
                     LoginActivity.LoginActivityRegisterView.this.lambda$new$7(view2);
                 }
             });
-            int i = C3301R.C3306raw.camera;
+            int i = C3316R.C3321raw.camera;
             this.cameraDrawable = new RLottieDrawable(i, String.valueOf(i), AndroidUtilities.m50dp(70), AndroidUtilities.m50dp(70), false, null);
-            int i2 = C3301R.C3306raw.camera_wait;
+            int i2 = C3316R.C3321raw.camera_wait;
             this.cameraWaitDrawable = new RLottieDrawable(i2, String.valueOf(i2), AndroidUtilities.m50dp(70), AndroidUtilities.m50dp(70), false, null);
             RLottieImageView rLottieImageView = new RLottieImageView(context, LoginActivity.this) { // from class: org.telegram.ui.LoginActivity.LoginActivityRegisterView.3
                 @Override // android.view.View
@@ -7357,7 +7360,7 @@ public class LoginActivity extends BaseFragment {
             this.avatarEditor.setEnabled(false);
             this.avatarEditor.setClickable(false);
             frameLayout.addView(this.avatarEditor, LayoutHelper.createFrame(-1, -1));
-            this.avatarEditor.addOnAttachStateChangeListener(new View$OnAttachStateChangeListenerC58654(LoginActivity.this));
+            this.avatarEditor.addOnAttachStateChangeListener(new View$OnAttachStateChangeListenerC58884(LoginActivity.this));
             RadialProgressView radialProgressView = new RadialProgressView(context, LoginActivity.this) { // from class: org.telegram.ui.LoginActivity.LoginActivityRegisterView.5
                 @Override // org.telegram.p048ui.Components.RadialProgressView, android.view.View
                 public void setAlpha(float f) {
@@ -7372,7 +7375,7 @@ public class LoginActivity extends BaseFragment {
             showAvatarProgress(false, false);
             TextView textView = new TextView(context);
             this.titleTextView = textView;
-            textView.setText(LocaleController.getString(C3301R.string.RegistrationProfileInfo));
+            textView.setText(LocaleController.getString(C3316R.string.RegistrationProfileInfo));
             this.titleTextView.setTextSize(1, 18.0f);
             this.titleTextView.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
             this.titleTextView.setLineSpacing(AndroidUtilities.m50dp(2), 1.0f);
@@ -7380,7 +7383,7 @@ public class LoginActivity extends BaseFragment {
             addView(this.titleTextView, LayoutHelper.createLinear(-2, -2, 1, 8, 12, 8, 0));
             TextView textView2 = new TextView(context);
             this.descriptionTextView = textView2;
-            textView2.setText(LocaleController.getString("RegisterText2", C3301R.string.RegisterText2));
+            textView2.setText(LocaleController.getString("RegisterText2", C3316R.string.RegisterText2));
             this.descriptionTextView.setGravity(1);
             this.descriptionTextView.setTextSize(1, 14.0f);
             this.descriptionTextView.setLineSpacing(AndroidUtilities.m50dp(2), 1.0f);
@@ -7390,7 +7393,7 @@ public class LoginActivity extends BaseFragment {
             addView(frameLayout2, LayoutHelper.createLinear(-1, -2, 8, 21, 8, 0));
             OutlineTextContainerView outlineTextContainerView = new OutlineTextContainerView(context);
             this.firstNameOutlineView = outlineTextContainerView;
-            outlineTextContainerView.setText(LocaleController.getString(C3301R.string.FirstName));
+            outlineTextContainerView.setText(LocaleController.getString(C3316R.string.FirstName));
             EditTextBoldCursor editTextBoldCursor = new EditTextBoldCursor(context);
             this.firstNameField = editTextBoldCursor;
             editTextBoldCursor.setCursorSize(AndroidUtilities.m50dp(20));
@@ -7419,7 +7422,7 @@ public class LoginActivity extends BaseFragment {
             });
             OutlineTextContainerView outlineTextContainerView2 = new OutlineTextContainerView(context);
             this.lastNameOutlineView = outlineTextContainerView2;
-            outlineTextContainerView2.setText(LocaleController.getString(C3301R.string.LastName));
+            outlineTextContainerView2.setText(LocaleController.getString(C3316R.string.LastName));
             EditTextBoldCursor editTextBoldCursor2 = new EditTextBoldCursor(context);
             this.lastNameField = editTextBoldCursor2;
             editTextBoldCursor2.setCursorSize(AndroidUtilities.m50dp(20));
@@ -7449,7 +7452,7 @@ public class LoginActivity extends BaseFragment {
             buildEditTextLayout(AndroidUtilities.isSmallScreen());
             TextView textView3 = new TextView(context);
             this.wrongNumber = textView3;
-            textView3.setText(LocaleController.getString("CancelRegistration", C3301R.string.CancelRegistration));
+            textView3.setText(LocaleController.getString("CancelRegistration", C3316R.string.CancelRegistration));
             this.wrongNumber.setGravity((LocaleController.isRTL ? 5 : 3) | 1);
             this.wrongNumber.setTextSize(1, 14.0f);
             this.wrongNumber.setLineSpacing(AndroidUtilities.m50dp(2), 1.0f);
@@ -7472,7 +7475,7 @@ public class LoginActivity extends BaseFragment {
             this.privacyView.setGravity(16);
             frameLayout3.addView(this.privacyView, LayoutHelper.createFrame(-2, Build.VERSION.SDK_INT >= 21 ? 56 : 60, 83, 14, 0, 70, 32));
             VerticalPositionAutoAnimator.attach(this.privacyView);
-            String string = LocaleController.getString("TermsOfServiceLogin", C3301R.string.TermsOfServiceLogin);
+            String string = LocaleController.getString("TermsOfServiceLogin", C3316R.string.TermsOfServiceLogin);
             SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(string);
             int indexOf = string.indexOf(42);
             int lastIndexOf = string.lastIndexOf(42);
@@ -7542,17 +7545,17 @@ public class LoginActivity extends BaseFragment {
         /* JADX INFO: Access modifiers changed from: package-private */
         /* renamed from: org.telegram.ui.LoginActivity$LoginActivityRegisterView$4 */
         /* loaded from: classes5.dex */
-        public class View$OnAttachStateChangeListenerC58654 implements View.OnAttachStateChangeListener {
+        public class View$OnAttachStateChangeListenerC58884 implements View.OnAttachStateChangeListener {
             private boolean isAttached;
             private long lastRun = System.currentTimeMillis();
             private Runnable cameraWaitCallback = new Runnable() { // from class: org.telegram.ui.LoginActivity$LoginActivityRegisterView$4$$ExternalSyntheticLambda2
                 @Override // java.lang.Runnable
                 public final void run() {
-                    LoginActivity.LoginActivityRegisterView.View$OnAttachStateChangeListenerC58654.this.lambda$$2();
+                    LoginActivity.LoginActivityRegisterView.View$OnAttachStateChangeListenerC58884.this.lambda$$2();
                 }
             };
 
-            View$OnAttachStateChangeListenerC58654(LoginActivity loginActivity) {
+            View$OnAttachStateChangeListenerC58884(LoginActivity loginActivity) {
             }
 
             /* JADX INFO: Access modifiers changed from: private */
@@ -7564,7 +7567,7 @@ public class LoginActivity extends BaseFragment {
                         LoginActivityRegisterView.this.cameraWaitDrawable.setOnAnimationEndListener(new Runnable() { // from class: org.telegram.ui.LoginActivity$LoginActivityRegisterView$4$$ExternalSyntheticLambda1
                             @Override // java.lang.Runnable
                             public final void run() {
-                                LoginActivity.LoginActivityRegisterView.View$OnAttachStateChangeListenerC58654.this.lambda$$1();
+                                LoginActivity.LoginActivityRegisterView.View$OnAttachStateChangeListenerC58884.this.lambda$$1();
                             }
                         });
                         LoginActivityRegisterView.this.avatarEditor.playAnimation();
@@ -7579,7 +7582,7 @@ public class LoginActivity extends BaseFragment {
                 AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.LoginActivity$LoginActivityRegisterView$4$$ExternalSyntheticLambda0
                     @Override // java.lang.Runnable
                     public final void run() {
-                        LoginActivity.LoginActivityRegisterView.View$OnAttachStateChangeListenerC58654.this.lambda$$0();
+                        LoginActivity.LoginActivityRegisterView.View$OnAttachStateChangeListenerC58884.this.lambda$$0();
                     }
                 });
             }
@@ -7662,8 +7665,8 @@ public class LoginActivity extends BaseFragment {
             if (z) {
                 LinearLayout linearLayout = new LinearLayout(LoginActivity.this.getParentActivity());
                 linearLayout.setOrientation(0);
-                this.firstNameOutlineView.setText(LocaleController.getString(C3301R.string.FirstNameSmall));
-                this.lastNameOutlineView.setText(LocaleController.getString(C3301R.string.LastNameSmall));
+                this.firstNameOutlineView.setText(LocaleController.getString(C3316R.string.FirstNameSmall));
+                this.lastNameOutlineView.setText(LocaleController.getString(C3316R.string.LastNameSmall));
                 linearLayout.addView(this.firstNameOutlineView, LayoutHelper.createLinear(0, -2, 1.0f, 0, 0, 8, 0));
                 linearLayout.addView(this.lastNameOutlineView, LayoutHelper.createLinear(0, -2, 1.0f, 8, 0, 0, 0));
                 this.editTextContainer.addView(linearLayout);
@@ -7679,8 +7682,8 @@ public class LoginActivity extends BaseFragment {
                     return;
                 }
             }
-            this.firstNameOutlineView.setText(LocaleController.getString(C3301R.string.FirstName));
-            this.lastNameOutlineView.setText(LocaleController.getString(C3301R.string.LastName));
+            this.firstNameOutlineView.setText(LocaleController.getString(C3316R.string.FirstName));
+            this.lastNameOutlineView.setText(LocaleController.getString(C3316R.string.LastName));
             this.editTextContainer.addView(this.firstNameOutlineView, LayoutHelper.createFrame(-1, -2, 48, 8, 0, 8, 0));
             this.editTextContainer.addView(this.lastNameOutlineView, LayoutHelper.createFrame(-1, -2, 48, 8, 82, 8, 0));
         }
@@ -7764,15 +7767,15 @@ public class LoginActivity extends BaseFragment {
                 return true;
             }
             AlertDialog.Builder builder = new AlertDialog.Builder(LoginActivity.this.getParentActivity());
-            builder.setTitle(LocaleController.getString(C3301R.string.Warning));
-            builder.setMessage(LocaleController.getString("AreYouSureRegistration", C3301R.string.AreYouSureRegistration));
-            builder.setNegativeButton(LocaleController.getString("Stop", C3301R.string.Stop), new DialogInterface.OnClickListener() { // from class: org.telegram.ui.LoginActivity$LoginActivityRegisterView$$ExternalSyntheticLambda2
+            builder.setTitle(LocaleController.getString(C3316R.string.Warning));
+            builder.setMessage(LocaleController.getString("AreYouSureRegistration", C3316R.string.AreYouSureRegistration));
+            builder.setNegativeButton(LocaleController.getString("Stop", C3316R.string.Stop), new DialogInterface.OnClickListener() { // from class: org.telegram.ui.LoginActivity$LoginActivityRegisterView$$ExternalSyntheticLambda2
                 @Override // android.content.DialogInterface.OnClickListener
                 public final void onClick(DialogInterface dialogInterface, int i) {
                     LoginActivity.LoginActivityRegisterView.this.lambda$onBackPressed$14(dialogInterface, i);
                 }
             });
-            builder.setPositiveButton(LocaleController.getString("Continue", C3301R.string.Continue), null);
+            builder.setPositiveButton(LocaleController.getString("Continue", C3316R.string.Continue), null);
             LoginActivity.this.showDialog(builder.create());
             return false;
         }
@@ -7786,7 +7789,7 @@ public class LoginActivity extends BaseFragment {
 
         @Override // org.telegram.p048ui.Components.SlideView
         public String getHeaderName() {
-            return LocaleController.getString("YourName", C3301R.string.YourName);
+            return LocaleController.getString("YourName", C3316R.string.YourName);
         }
 
         @Override // org.telegram.p048ui.Components.SlideView
@@ -7885,24 +7888,24 @@ public class LoginActivity extends BaseFragment {
             if (!(tLObject instanceof TLRPC$TL_auth_authorization)) {
                 LoginActivity.this.needHideProgress(false);
                 if (tLRPC$TL_error.text.contains("PHONE_NUMBER_INVALID")) {
-                    LoginActivity.this.needShowAlert(LocaleController.getString(C3301R.string.RestorePasswordNoEmailTitle), LocaleController.getString("InvalidPhoneNumber", C3301R.string.InvalidPhoneNumber));
+                    LoginActivity.this.needShowAlert(LocaleController.getString(C3316R.string.RestorePasswordNoEmailTitle), LocaleController.getString("InvalidPhoneNumber", C3316R.string.InvalidPhoneNumber));
                     return;
                 } else if (tLRPC$TL_error.text.contains("PHONE_CODE_EMPTY") || tLRPC$TL_error.text.contains("PHONE_CODE_INVALID")) {
-                    LoginActivity.this.needShowAlert(LocaleController.getString(C3301R.string.RestorePasswordNoEmailTitle), LocaleController.getString("InvalidCode", C3301R.string.InvalidCode));
+                    LoginActivity.this.needShowAlert(LocaleController.getString(C3316R.string.RestorePasswordNoEmailTitle), LocaleController.getString("InvalidCode", C3316R.string.InvalidCode));
                     return;
                 } else if (tLRPC$TL_error.text.contains("PHONE_CODE_EXPIRED")) {
                     onBackPressed(true);
                     LoginActivity.this.setPage(0, true, null, true);
-                    LoginActivity.this.needShowAlert(LocaleController.getString(C3301R.string.RestorePasswordNoEmailTitle), LocaleController.getString("CodeExpired", C3301R.string.CodeExpired));
+                    LoginActivity.this.needShowAlert(LocaleController.getString(C3316R.string.RestorePasswordNoEmailTitle), LocaleController.getString("CodeExpired", C3316R.string.CodeExpired));
                     return;
                 } else if (tLRPC$TL_error.text.contains("FIRSTNAME_INVALID")) {
-                    LoginActivity.this.needShowAlert(LocaleController.getString(C3301R.string.RestorePasswordNoEmailTitle), LocaleController.getString("InvalidFirstName", C3301R.string.InvalidFirstName));
+                    LoginActivity.this.needShowAlert(LocaleController.getString(C3316R.string.RestorePasswordNoEmailTitle), LocaleController.getString("InvalidFirstName", C3316R.string.InvalidFirstName));
                     return;
                 } else if (tLRPC$TL_error.text.contains("LASTNAME_INVALID")) {
-                    LoginActivity.this.needShowAlert(LocaleController.getString(C3301R.string.RestorePasswordNoEmailTitle), LocaleController.getString("InvalidLastName", C3301R.string.InvalidLastName));
+                    LoginActivity.this.needShowAlert(LocaleController.getString(C3316R.string.RestorePasswordNoEmailTitle), LocaleController.getString("InvalidLastName", C3316R.string.InvalidLastName));
                     return;
                 } else {
-                    LoginActivity.this.needShowAlert(LocaleController.getString(C3301R.string.RestorePasswordNoEmailTitle), tLRPC$TL_error.text);
+                    LoginActivity.this.needShowAlert(LocaleController.getString(C3316R.string.RestorePasswordNoEmailTitle), tLRPC$TL_error.text);
                     return;
                 }
             }
@@ -8105,7 +8108,7 @@ public class LoginActivity extends BaseFragment {
         Activity parentActivity = getParentActivity();
         Drawable createSimpleSelectorCircleDrawable = Theme.createSimpleSelectorCircleDrawable(AndroidUtilities.m50dp(56), Theme.getColor("chats_actionBackground"), Theme.getColor("chats_actionPressedBackground"));
         if (Build.VERSION.SDK_INT < 21) {
-            Drawable mutate = parentActivity.getResources().getDrawable(C3301R.C3303drawable.floating_shadow).mutate();
+            Drawable mutate = parentActivity.getResources().getDrawable(C3316R.C3318drawable.floating_shadow).mutate();
             mutate.setColorFilter(new PorterDuffColorFilter(-16777216, PorterDuff.Mode.MULTIPLY));
             CombinedDrawable combinedDrawable = new CombinedDrawable(mutate, createSimpleSelectorCircleDrawable, 0, 0);
             combinedDrawable.setIconSize(AndroidUtilities.m50dp(56), AndroidUtilities.m50dp(56));
@@ -8154,15 +8157,15 @@ public class LoginActivity extends BaseFragment {
             return;
         }
         AlertDialog.Builder builder = new AlertDialog.Builder(getParentActivity());
-        builder.setMessage(LocaleController.getString("ResetMyAccountWarningText", C3301R.string.ResetMyAccountWarningText));
-        builder.setTitle(LocaleController.getString("ResetMyAccountWarning", C3301R.string.ResetMyAccountWarning));
-        builder.setPositiveButton(LocaleController.getString("ResetMyAccountWarningReset", C3301R.string.ResetMyAccountWarningReset), new DialogInterface.OnClickListener() { // from class: org.telegram.ui.LoginActivity$$ExternalSyntheticLambda7
+        builder.setMessage(LocaleController.getString("ResetMyAccountWarningText", C3316R.string.ResetMyAccountWarningText));
+        builder.setTitle(LocaleController.getString("ResetMyAccountWarning", C3316R.string.ResetMyAccountWarning));
+        builder.setPositiveButton(LocaleController.getString("ResetMyAccountWarningReset", C3316R.string.ResetMyAccountWarningReset), new DialogInterface.OnClickListener() { // from class: org.telegram.ui.LoginActivity$$ExternalSyntheticLambda7
             @Override // android.content.DialogInterface.OnClickListener
             public final void onClick(DialogInterface dialogInterface, int i) {
                 LoginActivity.this.lambda$tryResetAccount$26(str, str2, str3, dialogInterface, i);
             }
         });
-        builder.setNegativeButton(LocaleController.getString("Cancel", C3301R.string.Cancel), null);
+        builder.setNegativeButton(LocaleController.getString("Cancel", C3316R.string.Cancel), null);
         showDialog(builder.create());
     }
 
@@ -8203,7 +8206,7 @@ public class LoginActivity extends BaseFragment {
             bundle.putString("code", str3);
             setPage(5, true, bundle, false);
         } else if (tLRPC$TL_error.text.equals("2FA_RECENT_CONFIRM")) {
-            needShowAlert(LocaleController.getString(C3301R.string.RestorePasswordNoEmailTitle), LocaleController.getString("ResetAccountCancelledAlert", C3301R.string.ResetAccountCancelledAlert));
+            needShowAlert(LocaleController.getString(C3316R.string.RestorePasswordNoEmailTitle), LocaleController.getString("ResetAccountCancelledAlert", C3316R.string.ResetAccountCancelledAlert));
         } else if (tLRPC$TL_error.text.startsWith("2FA_CONFIRM_WAIT_")) {
             Bundle bundle2 = new Bundle();
             bundle2.putString("phoneFormated", str);
@@ -8213,7 +8216,7 @@ public class LoginActivity extends BaseFragment {
             bundle2.putInt("waitTime", Utilities.parseInt((CharSequence) tLRPC$TL_error.text.replace("2FA_CONFIRM_WAIT_", "")).intValue());
             setPage(8, true, bundle2, false);
         } else {
-            needShowAlert(LocaleController.getString(C3301R.string.RestorePasswordNoEmailTitle), tLRPC$TL_error.text);
+            needShowAlert(LocaleController.getString(C3316R.string.RestorePasswordNoEmailTitle), tLRPC$TL_error.text);
         }
     }
 
@@ -8288,7 +8291,7 @@ public class LoginActivity extends BaseFragment {
             this.floatingProgressView.setScaleX(0.1f);
             this.floatingProgressView.setScaleY(0.1f);
             this.popupFabContainer.addView(this.floatingProgressView, LayoutHelper.createFrame(-1, -1));
-            this.popupFabContainer.setContentDescription(LocaleController.getString(C3301R.string.Done));
+            this.popupFabContainer.setContentDescription(LocaleController.getString(C3316R.string.Done));
             View view4 = this.popupFabContainer;
             int i = Build.VERSION.SDK_INT;
             addView(view4, LayoutHelper.createFrame(i >= 21 ? 56 : 60, i < 21 ? 60 : 56));
@@ -8297,7 +8300,7 @@ public class LoginActivity extends BaseFragment {
             addView(frameLayout2, LayoutHelper.createFrame(-1, 140, 49, 24, 0, 24, 0));
             TextView textView = new TextView(context);
             this.confirmMessageView = textView;
-            textView.setText(LocaleController.getString(C3301R.string.ConfirmCorrectNumber));
+            textView.setText(LocaleController.getString(C3316R.string.ConfirmCorrectNumber));
             this.confirmMessageView.setTextSize(1, 14.0f);
             this.confirmMessageView.setSingleLine();
             this.popupLayout.addView(this.confirmMessageView, LayoutHelper.createFrame(-1, -2, LocaleController.isRTL ? 5 : 3, 24, 20, 24, 0));
@@ -8311,7 +8314,7 @@ public class LoginActivity extends BaseFragment {
             int m50dp = AndroidUtilities.m50dp(16);
             TextView textView3 = new TextView(context);
             this.editTextView = textView3;
-            textView3.setText(LocaleController.getString(C3301R.string.Edit));
+            textView3.setText(LocaleController.getString(C3316R.string.Edit));
             this.editTextView.setSingleLine();
             this.editTextView.setTextSize(1, 16.0f);
             this.editTextView.setBackground(Theme.getRoundRectSelectorDrawable(AndroidUtilities.m50dp(6), Theme.getColor("changephoneinfo_image2")));
@@ -8327,7 +8330,7 @@ public class LoginActivity extends BaseFragment {
             this.popupLayout.addView(this.editTextView, LayoutHelper.createFrame(-2, -2, (LocaleController.isRTL ? 5 : 3) | 80, 8, 8, 8, 8));
             TextView textView4 = new TextView(context);
             this.confirmTextView = textView4;
-            textView4.setText(LocaleController.getString(C3301R.string.CheckPhoneNumberYes));
+            textView4.setText(LocaleController.getString(C3316R.string.CheckPhoneNumberYes));
             this.confirmTextView.setSingleLine();
             this.confirmTextView.setTextSize(1, 16.0f);
             this.confirmTextView.setBackground(Theme.getRoundRectSelectorDrawable(AndroidUtilities.m50dp(6), Theme.getColor("changephoneinfo_image2")));

@@ -3,7 +3,7 @@ package org.telegram.messenger;
 import com.google.android.exoplayer2.text.ttml.TtmlNode;
 import com.google.firebase.messaging.FirebaseMessagingService;
 import com.google.firebase.messaging.RemoteMessage;
-import com.smedialink.manager.notifications.PushNotificationsManager;
+import com.iMe.manager.notifications.PushNotificationsManager;
 import java.util.Map;
 import kotlin.Lazy;
 import org.koin.java.KoinJavaComponent;

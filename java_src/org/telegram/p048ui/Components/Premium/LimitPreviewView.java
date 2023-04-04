@@ -23,7 +23,7 @@ import android.widget.TextView;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3301R;
+import org.telegram.messenger.C3316R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
@@ -110,7 +110,7 @@ public class LimitPreviewView extends LinearLayout {
         FrameLayout frameLayout = new FrameLayout(context);
         TextView textView = new TextView(context);
         textView.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
-        textView.setText(LocaleController.getString("LimitFree", C3301R.string.LimitFree));
+        textView.setText(LocaleController.getString("LimitFree", C3316R.string.LimitFree));
         textView.setGravity(16);
         textView.setTextColor(Theme.getColor("windowBackgroundWhiteBlackText"));
         textView.setPadding(AndroidUtilities.m50dp(12), 0, 0, 0);
@@ -126,7 +126,7 @@ public class LimitPreviewView extends LinearLayout {
         FrameLayout frameLayout2 = new FrameLayout(context);
         TextView textView3 = new TextView(context);
         textView3.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
-        textView3.setText(LocaleController.getString("LimitPremium", C3301R.string.LimitPremium));
+        textView3.setText(LocaleController.getString("LimitPremium", C3316R.string.LimitPremium));
         textView3.setGravity(16);
         textView3.setTextColor(-1);
         textView3.setPadding(AndroidUtilities.m50dp(12), 0, 0, 0);
@@ -415,13 +415,13 @@ public class LimitPreviewView extends LinearLayout {
                 AnimatedLayout animatedLayout = this.animatedLayouts.get(i);
                 canvas.save();
                 if (animatedLayout.direction) {
-                    canvas.translate(animatedLayout.f1770x + measuredWidth, (height - ((measuredHeight * 10) * animatedLayout.progress)) + ((10 - animatedLayout.staticLayouts.size()) * measuredHeight));
+                    canvas.translate(animatedLayout.f1773x + measuredWidth, (height - ((measuredHeight * 10) * animatedLayout.progress)) + ((10 - animatedLayout.staticLayouts.size()) * measuredHeight));
                     for (int i2 = 0; i2 < animatedLayout.staticLayouts.size(); i2++) {
                         canvas.translate(BitmapDescriptorFactory.HUE_RED, measuredHeight);
                         animatedLayout.staticLayouts.get(i2).draw(canvas);
                     }
                 } else {
-                    canvas.translate(animatedLayout.f1770x + measuredWidth, (((measuredHeight * 10) * animatedLayout.progress) + height) - ((10 - animatedLayout.staticLayouts.size()) * measuredHeight));
+                    canvas.translate(animatedLayout.f1773x + measuredWidth, (((measuredHeight * 10) * animatedLayout.progress) + height) - ((10 - animatedLayout.staticLayouts.size()) * measuredHeight));
                     for (int i3 = 0; i3 < animatedLayout.staticLayouts.size(); i3++) {
                         canvas.translate(BitmapDescriptorFactory.HUE_RED, -measuredHeight);
                         animatedLayout.staticLayouts.get(i3).draw(canvas);
@@ -449,7 +449,7 @@ public class LimitPreviewView extends LinearLayout {
                 if (Character.isDigit(this.text.charAt(i2))) {
                     AnimatedLayout animatedLayout = new AnimatedLayout();
                     this.animatedLayouts.add(animatedLayout);
-                    animatedLayout.f1770x = this.textLayout.getSecondaryHorizontal(i2);
+                    animatedLayout.f1773x = this.textLayout.getSecondaryHorizontal(i2);
                     animatedLayout.direction = z;
                     if (i >= 1) {
                         z = !z;
@@ -534,7 +534,7 @@ public class LimitPreviewView extends LinearLayout {
             ValueAnimator valueAnimator;
 
             /* renamed from: x */
-            float f1770x;
+            float f1773x;
 
             private AnimatedLayout(CounterView counterView) {
                 this.staticLayouts = new ArrayList<>();

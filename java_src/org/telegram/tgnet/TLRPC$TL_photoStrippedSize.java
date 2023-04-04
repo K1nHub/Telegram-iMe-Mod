@@ -7,8 +7,8 @@ public class TLRPC$TL_photoStrippedSize extends TLRPC$PhotoSize {
     public void readParams(AbstractSerializedData abstractSerializedData, boolean z) {
         this.type = abstractSerializedData.readString(z);
         this.bytes = abstractSerializedData.readByteArray(z);
-        this.f1530h = 50;
-        this.f1531w = 50;
+        this.f1532h = 50;
+        this.f1533w = 50;
     }
 
     @Override // org.telegram.tgnet.TLObject

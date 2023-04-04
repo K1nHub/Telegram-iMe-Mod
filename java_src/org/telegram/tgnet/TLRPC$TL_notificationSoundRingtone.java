@@ -4,16 +4,16 @@ public class TLRPC$TL_notificationSoundRingtone extends TLRPC$NotificationSound 
     public static int constructor = -9666487;
 
     /* renamed from: id */
-    public long f1613id;
+    public long f1615id;
 
     @Override // org.telegram.tgnet.TLObject
     public void readParams(AbstractSerializedData abstractSerializedData, boolean z) {
-        this.f1613id = abstractSerializedData.readInt64(z);
+        this.f1615id = abstractSerializedData.readInt64(z);
     }
 
     @Override // org.telegram.tgnet.TLObject
     public void serializeToStream(AbstractSerializedData abstractSerializedData) {
         abstractSerializedData.writeInt32(constructor);
-        abstractSerializedData.writeInt64(this.f1613id);
+        abstractSerializedData.writeInt64(this.f1615id);
     }
 }

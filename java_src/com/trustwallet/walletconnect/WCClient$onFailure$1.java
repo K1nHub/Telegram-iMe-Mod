@@ -5,7 +5,7 @@ import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.Lambda;
 /* compiled from: WCClient.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 final class WCClient$onFailure$1 extends Lambda implements Function1<Throwable, Unit> {
     public static final WCClient$onFailure$1 INSTANCE = new WCClient$onFailure$1();
 

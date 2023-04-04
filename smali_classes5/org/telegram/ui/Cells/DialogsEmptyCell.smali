@@ -903,7 +903,7 @@
     if-lt p1, v1, :cond_1
 
     .line 140
-    invoke-static {}, Lcom/smedialink/ui/dialogs/EmptyCellType;->values()[Lcom/smedialink/ui/dialogs/EmptyCellType;
+    invoke-static {}, Lcom/iMe/ui/dialogs/EmptyCellType;->values()[Lcom/iMe/ui/dialogs/EmptyCellType;
 
     move-result-object v3
 
@@ -912,12 +912,12 @@
     aget-object p1, v3, p1
 
     .line 141
-    invoke-virtual {p1}, Lcom/smedialink/ui/dialogs/EmptyCellType;->getIconResId()I
+    invoke-virtual {p1}, Lcom/iMe/ui/dialogs/EmptyCellType;->getIconResId()I
 
     move-result v3
 
     .line 142
-    invoke-virtual {p1}, Lcom/smedialink/ui/dialogs/EmptyCellType;->getSubtitleResId()I
+    invoke-virtual {p1}, Lcom/iMe/ui/dialogs/EmptyCellType;->getSubtitleResId()I
 
     move-result v4
 
@@ -928,7 +928,7 @@
     .line 143
     iget-object v5, p0, Lorg/telegram/ui/Cells/DialogsEmptyCell;->titleView:Landroid/widget/TextView;
 
-    invoke-virtual {p1}, Lcom/smedialink/ui/dialogs/EmptyCellType;->getTitleResId()I
+    invoke-virtual {p1}, Lcom/iMe/ui/dialogs/EmptyCellType;->getTitleResId()I
 
     move-result p1
 

@@ -13,6 +13,6 @@ public final /* synthetic */ class ChatUsersActivity$9$$ExternalSyntheticLambda1
 
     @Override // androidx.core.util.Consumer
     public final void accept(Object obj) {
-        ChatUsersActivity.C39869.lambda$didSelectUsers$1((TLRPC$User) obj);
+        ChatUsersActivity.C40079.lambda$didSelectUsers$1((TLRPC$User) obj);
     }
 }

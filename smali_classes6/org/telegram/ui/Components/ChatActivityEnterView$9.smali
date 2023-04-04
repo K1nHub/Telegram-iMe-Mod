@@ -36,7 +36,7 @@
 
 # virtual methods
 .method public run()V
-    .locals 11
+    .locals 12
 
     .line 1099
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$9;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
@@ -380,7 +380,9 @@
 
     move-result v10
 
-    invoke-virtual/range {v4 .. v10}, Lorg/telegram/messenger/MediaController;->startRecording(IJLorg/telegram/messenger/MessageObject;Lorg/telegram/messenger/MessageObject;I)V
+    const/4 v11, 0x1
+
+    invoke-virtual/range {v4 .. v11}, Lorg/telegram/messenger/MediaController;->startRecording(IJLorg/telegram/messenger/MessageObject;Lorg/telegram/messenger/MessageObject;IZ)V
 
     .line 1155
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$9;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;

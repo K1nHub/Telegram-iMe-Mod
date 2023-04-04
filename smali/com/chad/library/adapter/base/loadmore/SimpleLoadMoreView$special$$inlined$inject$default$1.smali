@@ -20,7 +20,7 @@
     value = {
         "Lkotlin/jvm/internal/Lambda;",
         "Lkotlin/jvm/functions/Function0<",
-        "Lcom/smedialink/storage/domain/utils/system/ResourceManager;",
+        "Lcom/iMe/storage/domain/utils/system/ResourceManager;",
         ">;"
     }
 .end annotation
@@ -62,12 +62,12 @@
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
-            "Lcom/smedialink/storage/domain/utils/system/ResourceManager;"
+            "Lcom/iMe/storage/domain/utils/system/ResourceManager;"
         }
     .end annotation
 
     .line 61
-    const-class v0, Lcom/smedialink/storage/domain/utils/system/ResourceManager;
+    const-class v0, Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
     iget-object v1, p0, Lcom/chad/library/adapter/base/loadmore/SimpleLoadMoreView$special$$inlined$inject$default$1;->$this_inject:Lorg/koin/core/component/KoinComponent;
 

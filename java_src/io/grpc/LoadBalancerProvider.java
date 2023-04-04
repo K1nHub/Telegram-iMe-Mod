@@ -4,7 +4,7 @@ import com.google.common.base.MoreObjects;
 import io.grpc.LoadBalancer;
 import io.grpc.NameResolver;
 import java.util.Map;
-/* loaded from: classes.dex */
+/* loaded from: classes4.dex */
 public abstract class LoadBalancerProvider extends LoadBalancer.Factory {
     private static final NameResolver.ConfigOrError UNKNOWN_CONFIG = NameResolver.ConfigOrError.fromConfig(new UnknownConfig());
 
@@ -30,7 +30,7 @@ public abstract class LoadBalancerProvider extends LoadBalancer.Factory {
         return super.hashCode();
     }
 
-    /* loaded from: classes.dex */
+    /* loaded from: classes4.dex */
     private static final class UnknownConfig {
         public String toString() {
             return "service config is unused";

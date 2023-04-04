@@ -24,7 +24,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 7755
+    .line 7749
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -35,7 +35,7 @@
 .method public getDocument()Lorg/telegram/tgnet/TLRPC$Document;
     .locals 7
 
-    .line 7761
+    .line 7755
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiView$CustomEmoji;->stickerSet:Lorg/telegram/tgnet/TLRPC$TL_messages_stickerSet;
 
     const/4 v1, 0x0
@@ -51,7 +51,7 @@
     :cond_0
     const/4 v0, 0x0
 
-    .line 7764
+    .line 7758
     :goto_0
     iget-object v2, p0, Lorg/telegram/ui/Components/EmojiView$CustomEmoji;->stickerSet:Lorg/telegram/tgnet/TLRPC$TL_messages_stickerSet;
 
@@ -63,7 +63,7 @@
 
     if-ge v0, v2, :cond_2
 
-    .line 7765
+    .line 7759
     iget-object v2, p0, Lorg/telegram/ui/Components/EmojiView$CustomEmoji;->stickerSet:Lorg/telegram/tgnet/TLRPC$TL_messages_stickerSet;
 
     iget-object v2, v2, Lorg/telegram/tgnet/TLRPC$messages_StickerSet;->documents:Ljava/util/ArrayList;
@@ -76,7 +76,7 @@
 
     if-eqz v2, :cond_1
 
-    .line 7766
+    .line 7760
     iget-wide v3, v2, Lorg/telegram/tgnet/TLRPC$Document;->id:J
 
     iget-wide v5, p0, Lorg/telegram/ui/Components/EmojiView$CustomEmoji;->documentId:J

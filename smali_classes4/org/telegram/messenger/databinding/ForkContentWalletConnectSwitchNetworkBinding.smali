@@ -7,19 +7,19 @@
 
 
 # instance fields
-.field public final buttonChangeNetwork:Lcom/smedialink/ui/custom/BigActionButton;
+.field public final buttonChangeNetwork:Lcom/iMe/ui/custom/BigActionButton;
 
 .field public final buttonClose:Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
 
 .field private final rootView:Landroidx/constraintlayout/widget/ConstraintLayout;
 
-.field public final viewHeader:Lcom/smedialink/ui/custom/ImageHeaderView;
+.field public final viewHeader:Lcom/iMe/ui/custom/ImageHeaderView;
 
-.field public final viewNetworkCell:Lcom/smedialink/ui/custom/DetailsIconCellView;
+.field public final viewNetworkCell:Lcom/iMe/ui/custom/DetailsIconCellView;
 
 
 # direct methods
-.method private constructor <init>(Landroidx/constraintlayout/widget/ConstraintLayout;Lcom/smedialink/ui/custom/BigActionButton;Lorg/telegram/ui/ActionBar/ActionBarMenuItem;Lcom/smedialink/ui/custom/ImageHeaderView;Lcom/smedialink/ui/custom/DetailsIconCellView;)V
+.method private constructor <init>(Landroidx/constraintlayout/widget/ConstraintLayout;Lcom/iMe/ui/custom/BigActionButton;Lorg/telegram/ui/ActionBar/ActionBarMenuItem;Lcom/iMe/ui/custom/ImageHeaderView;Lcom/iMe/ui/custom/DetailsIconCellView;)V
     .locals 0
 
     .line 39
@@ -29,16 +29,16 @@
     iput-object p1, p0, Lorg/telegram/messenger/databinding/ForkContentWalletConnectSwitchNetworkBinding;->rootView:Landroidx/constraintlayout/widget/ConstraintLayout;
 
     .line 41
-    iput-object p2, p0, Lorg/telegram/messenger/databinding/ForkContentWalletConnectSwitchNetworkBinding;->buttonChangeNetwork:Lcom/smedialink/ui/custom/BigActionButton;
+    iput-object p2, p0, Lorg/telegram/messenger/databinding/ForkContentWalletConnectSwitchNetworkBinding;->buttonChangeNetwork:Lcom/iMe/ui/custom/BigActionButton;
 
     .line 42
     iput-object p3, p0, Lorg/telegram/messenger/databinding/ForkContentWalletConnectSwitchNetworkBinding;->buttonClose:Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
 
     .line 43
-    iput-object p4, p0, Lorg/telegram/messenger/databinding/ForkContentWalletConnectSwitchNetworkBinding;->viewHeader:Lcom/smedialink/ui/custom/ImageHeaderView;
+    iput-object p4, p0, Lorg/telegram/messenger/databinding/ForkContentWalletConnectSwitchNetworkBinding;->viewHeader:Lcom/iMe/ui/custom/ImageHeaderView;
 
     .line 44
-    iput-object p5, p0, Lorg/telegram/messenger/databinding/ForkContentWalletConnectSwitchNetworkBinding;->viewNetworkCell:Lcom/smedialink/ui/custom/DetailsIconCellView;
+    iput-object p5, p0, Lorg/telegram/messenger/databinding/ForkContentWalletConnectSwitchNetworkBinding;->viewNetworkCell:Lcom/iMe/ui/custom/DetailsIconCellView;
 
     return-void
 .end method
@@ -56,7 +56,7 @@
 
     move-object v4, v1
 
-    check-cast v4, Lcom/smedialink/ui/custom/BigActionButton;
+    check-cast v4, Lcom/iMe/ui/custom/BigActionButton;
 
     if-eqz v4, :cond_0
 
@@ -84,7 +84,7 @@
 
     move-object v6, v1
 
-    check-cast v6, Lcom/smedialink/ui/custom/ImageHeaderView;
+    check-cast v6, Lcom/iMe/ui/custom/ImageHeaderView;
 
     if-eqz v6, :cond_0
 
@@ -98,7 +98,7 @@
 
     move-object v7, v1
 
-    check-cast v7, Lcom/smedialink/ui/custom/DetailsIconCellView;
+    check-cast v7, Lcom/iMe/ui/custom/DetailsIconCellView;
 
     if-eqz v7, :cond_0
 
@@ -111,7 +111,7 @@
 
     move-object v2, v0
 
-    invoke-direct/range {v2 .. v7}, Lorg/telegram/messenger/databinding/ForkContentWalletConnectSwitchNetworkBinding;-><init>(Landroidx/constraintlayout/widget/ConstraintLayout;Lcom/smedialink/ui/custom/BigActionButton;Lorg/telegram/ui/ActionBar/ActionBarMenuItem;Lcom/smedialink/ui/custom/ImageHeaderView;Lcom/smedialink/ui/custom/DetailsIconCellView;)V
+    invoke-direct/range {v2 .. v7}, Lorg/telegram/messenger/databinding/ForkContentWalletConnectSwitchNetworkBinding;-><init>(Landroidx/constraintlayout/widget/ConstraintLayout;Lcom/iMe/ui/custom/BigActionButton;Lorg/telegram/ui/ActionBar/ActionBarMenuItem;Lcom/iMe/ui/custom/ImageHeaderView;Lcom/iMe/ui/custom/DetailsIconCellView;)V
 
     return-object v0
 

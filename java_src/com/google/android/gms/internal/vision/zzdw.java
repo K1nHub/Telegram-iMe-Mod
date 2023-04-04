@@ -3,12 +3,12 @@ package com.google.android.gms.internal.vision;
 import java.util.ConcurrentModificationException;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
-import p034j$.util.Iterator;
-import p034j$.util.function.Consumer;
+import p035j$.util.Iterator;
+import p035j$.util.function.Consumer;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: com.google.android.gms:play-services-vision-common@@19.1.3 */
 /* loaded from: classes3.dex */
-public abstract class zzdw<T> implements Iterator<T>, p034j$.util.Iterator {
+public abstract class zzdw<T> implements Iterator<T>, p035j$.util.Iterator {
     private int zza;
     private int zzb;
     private int zzc;
@@ -23,19 +23,19 @@ public abstract class zzdw<T> implements Iterator<T>, p034j$.util.Iterator {
         this.zzc = -1;
     }
 
-    @Override // p034j$.util.Iterator
+    @Override // p035j$.util.Iterator
     public /* synthetic */ void forEachRemaining(Consumer consumer) {
         Iterator.CC.$default$forEachRemaining(this, consumer);
     }
 
     abstract T zza(int i);
 
-    @Override // java.util.Iterator, p034j$.util.Iterator
+    @Override // java.util.Iterator, p035j$.util.Iterator
     public boolean hasNext() {
         return this.zzb >= 0;
     }
 
-    @Override // java.util.Iterator, p034j$.util.Iterator
+    @Override // java.util.Iterator, p035j$.util.Iterator
     public T next() {
         zza();
         if (!hasNext()) {
@@ -48,7 +48,7 @@ public abstract class zzdw<T> implements Iterator<T>, p034j$.util.Iterator {
         return zza;
     }
 
-    @Override // java.util.Iterator, p034j$.util.Iterator
+    @Override // java.util.Iterator, p035j$.util.Iterator
     public void remove() {
         zza();
         zzde.zzb(this.zzc >= 0, "no calls to next() since the last call to remove()");

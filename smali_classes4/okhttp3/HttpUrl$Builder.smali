@@ -1095,7 +1095,7 @@
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v2, "unexpected host: "
+    const-string/jumbo v2, "unexpected host: "
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -2056,7 +2056,7 @@
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v1, "unexpected port: "
+    const-string/jumbo v1, "unexpected port: "
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -2310,7 +2310,7 @@
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v2, "unexpected scheme: "
+    const-string/jumbo v2, "unexpected scheme: "
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -2637,7 +2637,7 @@
 .method public final username(Ljava/lang/String;)Lokhttp3/HttpUrl$Builder;
     .locals 13
 
-    const-string v0, "username"
+    const-string/jumbo v0, "username"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 

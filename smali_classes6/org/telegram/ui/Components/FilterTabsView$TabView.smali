@@ -614,9 +614,9 @@
 
     if-eqz v6, :cond_7
 
-    sget-object v8, Lorg/telegram/messenger/SharedConfig;->selectedFilterTabWidthMode:Lorg/fork/enums/FilterTabWidthMode;
+    sget-object v8, Lorg/telegram/messenger/SharedConfig;->selectedFilterTabWidthMode:Lcom/iMe/fork/enums/FilterTabWidthMode;
 
-    invoke-virtual {v8}, Lorg/fork/enums/FilterTabWidthMode;->getMarginIconAndCount()I
+    invoke-virtual {v8}, Lcom/iMe/fork/enums/FilterTabWidthMode;->getMarginIconAndCount()I
 
     move-result v8
 
@@ -1995,9 +1995,9 @@
 
     if-nez v13, :cond_1b
 
-    sget-object v15, Lorg/telegram/messenger/SharedConfig;->selectedFilterTabWidthMode:Lorg/fork/enums/FilterTabWidthMode;
+    sget-object v15, Lorg/telegram/messenger/SharedConfig;->selectedFilterTabWidthMode:Lcom/iMe/fork/enums/FilterTabWidthMode;
 
-    invoke-virtual {v15}, Lorg/fork/enums/FilterTabWidthMode;->getMarginIconAndCount()I
+    invoke-virtual {v15}, Lcom/iMe/fork/enums/FilterTabWidthMode;->getMarginIconAndCount()I
 
     move-result v15
 
@@ -2841,9 +2841,9 @@
     if-eqz v5, :cond_2e
 
     .line 711
-    sget-object v5, Lorg/telegram/messenger/SharedConfig;->selectedFilterTabWidthMode:Lorg/fork/enums/FilterTabWidthMode;
+    sget-object v5, Lorg/telegram/messenger/SharedConfig;->selectedFilterTabWidthMode:Lcom/iMe/fork/enums/FilterTabWidthMode;
 
-    sget-object v10, Lorg/fork/enums/FilterTabWidthMode;->MINIMUM:Lorg/fork/enums/FilterTabWidthMode;
+    sget-object v10, Lcom/iMe/fork/enums/FilterTabWidthMode;->MINIMUM:Lcom/iMe/fork/enums/FilterTabWidthMode;
 
     if-ne v5, v10, :cond_2d
 
@@ -3179,9 +3179,9 @@
 
     add-float/2addr v1, v4
 
-    sget-object v3, Lorg/telegram/messenger/SharedConfig;->selectedFilterTabWidthMode:Lorg/fork/enums/FilterTabWidthMode;
+    sget-object v3, Lorg/telegram/messenger/SharedConfig;->selectedFilterTabWidthMode:Lcom/iMe/fork/enums/FilterTabWidthMode;
 
-    invoke-virtual {v3}, Lorg/fork/enums/FilterTabWidthMode;->getMarginIconAndCount()I
+    invoke-virtual {v3}, Lcom/iMe/fork/enums/FilterTabWidthMode;->getMarginIconAndCount()I
 
     move-result v3
 
@@ -3199,9 +3199,9 @@
     add-float/2addr v4, v13
 
     .line 748
-    sget-object v1, Lorg/telegram/messenger/SharedConfig;->selectedFilterTabWidthMode:Lorg/fork/enums/FilterTabWidthMode;
+    sget-object v1, Lorg/telegram/messenger/SharedConfig;->selectedFilterTabWidthMode:Lcom/iMe/fork/enums/FilterTabWidthMode;
 
-    invoke-virtual {v1}, Lorg/fork/enums/FilterTabWidthMode;->getMarginIconAndCount()I
+    invoke-virtual {v1}, Lcom/iMe/fork/enums/FilterTabWidthMode;->getMarginIconAndCount()I
 
     move-result v1
 

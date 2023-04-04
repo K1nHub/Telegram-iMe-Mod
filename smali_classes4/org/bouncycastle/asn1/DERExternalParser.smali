@@ -63,7 +63,7 @@
 .method public toASN1Primitive()Lorg/bouncycastle/asn1/ASN1Primitive;
     .locals 3
 
-    const-string v0, "unable to get DER object"
+    const-string/jumbo v0, "unable to get DER object"
 
     :try_start_0
     invoke-virtual {p0}, Lorg/bouncycastle/asn1/DERExternalParser;->getLoadedObject()Lorg/bouncycastle/asn1/ASN1Primitive;

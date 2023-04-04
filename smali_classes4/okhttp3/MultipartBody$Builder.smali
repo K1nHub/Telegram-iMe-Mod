@@ -192,7 +192,7 @@
 .method public final setType(Lokhttp3/MediaType;)Lokhttp3/MultipartBody$Builder;
     .locals 2
 
-    const-string v0, "type"
+    const-string/jumbo v0, "type"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 

@@ -5,17 +5,17 @@ import java.util.Vector;
 public class ASN1EncodableVector {
 
     /* renamed from: v */
-    private final Vector f1232v = new Vector();
+    private final Vector f1237v = new Vector();
 
     public void add(ASN1Encodable aSN1Encodable) {
-        this.f1232v.addElement(aSN1Encodable);
+        this.f1237v.addElement(aSN1Encodable);
     }
 
     public ASN1Encodable get(int i) {
-        return (ASN1Encodable) this.f1232v.elementAt(i);
+        return (ASN1Encodable) this.f1237v.elementAt(i);
     }
 
     public int size() {
-        return this.f1232v.size();
+        return this.f1237v.size();
     }
 }

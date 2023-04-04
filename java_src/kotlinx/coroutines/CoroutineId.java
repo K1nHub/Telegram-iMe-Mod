@@ -1,6 +1,6 @@
 package kotlinx.coroutines;
 
-import com.iMe.i_staking.request.StakingApprovalPrepareRequest$$ExternalSyntheticBackport0;
+import com.iMe.bots.data.model.database.BotsDbModel$$ExternalSyntheticBackport0;
 import java.util.Objects;
 import kotlin.Unit;
 import kotlin.coroutines.AbstractCoroutineContextElement;
@@ -14,21 +14,21 @@ public final class CoroutineId extends AbstractCoroutineContextElement implement
     public static final Key Key = new Key(null);
 
     /* renamed from: id */
-    private final long f1218id;
+    private final long f1223id;
 
     public boolean equals(Object obj) {
         if (this == obj) {
             return true;
         }
-        return (obj instanceof CoroutineId) && this.f1218id == ((CoroutineId) obj).f1218id;
+        return (obj instanceof CoroutineId) && this.f1223id == ((CoroutineId) obj).f1223id;
     }
 
     public int hashCode() {
-        return StakingApprovalPrepareRequest$$ExternalSyntheticBackport0.m716m(this.f1218id);
+        return BotsDbModel$$ExternalSyntheticBackport0.m716m(this.f1223id);
     }
 
     public final long getId() {
-        return this.f1218id;
+        return this.f1223id;
     }
 
     /* compiled from: CoroutineContext.kt */
@@ -44,11 +44,11 @@ public final class CoroutineId extends AbstractCoroutineContextElement implement
 
     public CoroutineId(long j) {
         super(Key);
-        this.f1218id = j;
+        this.f1223id = j;
     }
 
     public String toString() {
-        return "CoroutineId(" + this.f1218id + ')';
+        return "CoroutineId(" + this.f1223id + ')';
     }
 
     @Override // kotlinx.coroutines.ThreadContextElement

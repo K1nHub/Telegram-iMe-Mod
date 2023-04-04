@@ -9,6 +9,6 @@ public final /* synthetic */ class ChatActivityEnterView$$ExternalSyntheticLambd
 
     @Override // java.lang.Runnable
     public final void run() {
-        ChatActivityEnterView.lambda$new$9();
+        ChatActivityEnterView.lambda$new$12();
     }
 }

@@ -3,6 +3,7 @@ package com.bumptech.glide.load.resource.drawable;
 import android.content.Context;
 import android.content.res.Resources;
 import android.graphics.drawable.Drawable;
+import android.os.Build;
 import androidx.appcompat.content.res.AppCompatResources;
 import androidx.appcompat.view.ContextThemeWrapper;
 import androidx.core.content.ContextCompat;
@@ -40,8 +41,10 @@ public final class DrawableDecoderCompat {
     }
 
     private static Drawable loadDrawableV7(Context context, int i, Resources.Theme theme) {
-        if (theme != null) {
-            context = new ContextThemeWrapper(context, theme);
+        if (theme != null && Build.VERSION.SDK_INT >= 21) {
+            ContextThemeWrapper contextThemeWrapper = new ContextThemeWrapper(context, theme);
+            contextThemeWrapper.applyOverrideConfiguration(theme.getResources().getConfiguration());
+            context = contextThemeWrapper;
         }
         return AppCompatResources.getDrawable(context, i);
     }

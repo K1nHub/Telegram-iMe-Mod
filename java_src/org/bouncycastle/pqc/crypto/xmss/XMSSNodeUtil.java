@@ -81,7 +81,7 @@ public class XMSSNodeUtil {
             for (int i2 = 0; i2 < digestSize; i2++) {
                 bArr[i2 + digestSize] = (byte) (xMSSNode2.getValue()[i2] ^ PRF3[i2]);
             }
-            return new XMSSNode(xMSSNode.getHeight(), wOTSPlus.getKhf().m62H(PRF, bArr));
+            return new XMSSNode(xMSSNode.getHeight(), wOTSPlus.getKhf().m57H(PRF, bArr));
         }
         throw new IllegalStateException("height of both nodes must be equal");
     }

@@ -718,7 +718,7 @@
 
     if-eqz p0, :cond_0
 
-    .line 474
+    .line 476
     invoke-static {}, Lorg/telegram/ui/ActionBar/Theme;->getCurrentNightTheme()Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;
 
     move-result-object v0
@@ -730,7 +730,7 @@
 
     move-result-object v0
 
-    .line 475
+    .line 477
     :goto_0
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;->isDark()Z
 
@@ -738,7 +738,7 @@
 
     if-eq p0, v1, :cond_3
 
-    .line 476
+    .line 478
     sget-object v0, Lorg/telegram/messenger/ApplicationLoader;->applicationContext:Landroid/content/Context;
 
     const/4 v1, 0x0
@@ -757,7 +757,7 @@
 
     const-string v3, "lastDarkTheme"
 
-    .line 478
+    .line 480
     invoke-interface {v0, v3, v1}, Landroid/content/SharedPreferences;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
@@ -767,12 +767,12 @@
     :cond_1
     const-string v3, "lastDayTheme"
 
-    .line 479
+    .line 481
     invoke-interface {v0, v3, v2}, Landroid/content/SharedPreferences;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 480
+    .line 482
     :goto_1
     invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getTheme(Ljava/lang/String;)Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;
 
@@ -787,13 +787,13 @@
     :cond_2
     move-object v1, v2
 
-    .line 482
+    .line 484
     :goto_2
     invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getTheme(Ljava/lang/String;)Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;
 
     move-result-object v0
 
-    .line 485
+    .line 487
     :cond_3
     new-instance p0, Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;
 
@@ -805,7 +805,7 @@
 .method private getWallpaperThumbFile(J)Ljava/io/File;
     .locals 4
 
-    .line 470
+    .line 472
     new-instance v0, Ljava/io/File;
 
     invoke-static {}, Lorg/telegram/messenger/ApplicationLoader;->getFilesDirFixed()Ljava/io/File;
@@ -838,7 +838,7 @@
 .method private static synthetic lambda$loadWallpaper$0(Lorg/telegram/tgnet/ResultCallback;JLorg/telegram/messenger/ImageReceiver;ZZZ)V
     .locals 0
 
-    .line 379
+    .line 380
     invoke-virtual {p3}, Lorg/telegram/messenger/ImageReceiver;->getBitmapSafe()Lorg/telegram/messenger/ImageReceiver$BitmapHolder;
 
     move-result-object p3
@@ -849,20 +849,20 @@
 
     goto :goto_0
 
-    .line 383
+    .line 384
     :cond_0
     iget-object p4, p3, Lorg/telegram/messenger/ImageReceiver$BitmapHolder;->bitmap:Landroid/graphics/Bitmap;
 
     if-nez p4, :cond_1
 
-    .line 384
+    .line 385
     iget-object p3, p3, Lorg/telegram/messenger/ImageReceiver$BitmapHolder;->drawable:Landroid/graphics/drawable/Drawable;
 
     instance-of p5, p3, Landroid/graphics/drawable/BitmapDrawable;
 
     if-eqz p5, :cond_1
 
-    .line 385
+    .line 386
     check-cast p3, Landroid/graphics/drawable/BitmapDrawable;
 
     invoke-virtual {p3}, Landroid/graphics/drawable/BitmapDrawable;->getBitmap()Landroid/graphics/Bitmap;
@@ -872,7 +872,7 @@
     :cond_1
     if-eqz p0, :cond_2
 
-    .line 388
+    .line 389
     new-instance p3, Landroid/util/Pair;
 
     invoke-static {p1, p2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
@@ -883,7 +883,7 @@
 
     invoke-interface {p0, p3}, Lorg/telegram/tgnet/ResultCallback;->onComplete(Ljava/lang/Object;)V
 
-    .line 390
+    .line 391
     :cond_2
     invoke-static {p4, p1, p2}, Lorg/telegram/messenger/ChatThemeController;->saveWallpaperBitmap(Landroid/graphics/Bitmap;J)V
 
@@ -925,7 +925,12 @@
 
     invoke-direct {p4}, Lorg/telegram/messenger/ImageReceiver;-><init>()V
 
-    .line 373
+    const/4 v0, 0x0
+
+    .line 371
+    invoke-virtual {p4, v0}, Lorg/telegram/messenger/ImageReceiver;->setAllowLoadingOnAttachedOnly(Z)V
+
+    .line 374
     sget-object v0, Lorg/telegram/messenger/AndroidUtilities;->displaySize:Landroid/graphics/Point;
 
     iget v2, v0, Landroid/graphics/Point;->x:I
@@ -936,7 +941,7 @@
 
     move-result v0
 
-    .line 374
+    .line 375
     sget-object v2, Lorg/telegram/messenger/AndroidUtilities;->displaySize:Landroid/graphics/Point;
 
     iget v3, v2, Landroid/graphics/Point;->x:I
@@ -947,7 +952,7 @@
 
     move-result v2
 
-    .line 375
+    .line 376
     new-instance v3, Ljava/lang/StringBuilder;
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
@@ -994,17 +999,17 @@
 
     move-object v5, p3
 
-    .line 377
+    .line 378
     invoke-virtual/range {v0 .. v6}, Lorg/telegram/messenger/ImageReceiver;->setImage(Lorg/telegram/messenger/ImageLocation;Ljava/lang/String;Landroid/graphics/drawable/Drawable;Ljava/lang/String;Ljava/lang/Object;I)V
 
-    .line 378
+    .line 379
     new-instance p3, Lorg/telegram/ui/ActionBar/EmojiThemes$$ExternalSyntheticLambda1;
 
     invoke-direct {p3, p0, p1, p2}, Lorg/telegram/ui/ActionBar/EmojiThemes$$ExternalSyntheticLambda1;-><init>(Lorg/telegram/tgnet/ResultCallback;J)V
 
     invoke-virtual {p4, p3}, Lorg/telegram/messenger/ImageReceiver;->setDelegate(Lorg/telegram/messenger/ImageReceiver$ImageReceiverDelegate;)V
 
-    .line 392
+    .line 393
     invoke-static {}, Lorg/telegram/messenger/ImageLoader;->getInstance()Lorg/telegram/messenger/ImageLoader;
 
     move-result-object p0
@@ -1017,7 +1022,7 @@
 .method private static synthetic lambda$loadWallpaperThumb$2(Ljava/io/File;Landroid/graphics/Bitmap;)V
     .locals 2
 
-    .line 447
+    .line 449
     :try_start_0
     new-instance v0, Ljava/io/FileOutputStream;
 
@@ -1025,7 +1030,7 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 448
+    .line 450
     :try_start_1
     sget-object p0, Landroid/graphics/Bitmap$CompressFormat;->PNG:Landroid/graphics/Bitmap$CompressFormat;
 
@@ -1035,7 +1040,7 @@
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 449
+    .line 451
     :try_start_2
     invoke-virtual {v0}, Ljava/io/FileOutputStream;->close()V
     :try_end_2
@@ -1046,7 +1051,7 @@
     :catchall_0
     move-exception p0
 
-    .line 447
+    .line 449
     :try_start_3
     invoke-virtual {v0}, Ljava/io/FileOutputStream;->close()V
     :try_end_3
@@ -1068,7 +1073,7 @@
     :catch_0
     move-exception p0
 
-    .line 450
+    .line 452
     invoke-static {p0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :goto_1
@@ -1078,7 +1083,7 @@
 .method private static synthetic lambda$loadWallpaperThumb$3(Lorg/telegram/tgnet/ResultCallback;JLjava/io/File;Lorg/telegram/messenger/ImageReceiver;ZZZ)V
     .locals 0
 
-    .line 433
+    .line 435
     invoke-virtual {p4}, Lorg/telegram/messenger/ImageReceiver;->getBitmapSafe()Lorg/telegram/messenger/ImageReceiver$BitmapHolder;
 
     move-result-object p4
@@ -1087,7 +1092,7 @@
 
     if-eqz p4, :cond_4
 
-    .line 434
+    .line 436
     iget-object p5, p4, Lorg/telegram/messenger/ImageReceiver$BitmapHolder;->bitmap:Landroid/graphics/Bitmap;
 
     invoke-virtual {p5}, Landroid/graphics/Bitmap;->isRecycled()Z
@@ -1098,20 +1103,20 @@
 
     goto :goto_0
 
-    .line 437
+    .line 439
     :cond_0
     iget-object p5, p4, Lorg/telegram/messenger/ImageReceiver$BitmapHolder;->bitmap:Landroid/graphics/Bitmap;
 
     if-nez p5, :cond_1
 
-    .line 438
+    .line 440
     iget-object p4, p4, Lorg/telegram/messenger/ImageReceiver$BitmapHolder;->drawable:Landroid/graphics/drawable/Drawable;
 
     instance-of p6, p4, Landroid/graphics/drawable/BitmapDrawable;
 
     if-eqz p6, :cond_1
 
-    .line 439
+    .line 441
     check-cast p4, Landroid/graphics/drawable/BitmapDrawable;
 
     invoke-virtual {p4}, Landroid/graphics/drawable/BitmapDrawable;->getBitmap()Landroid/graphics/Bitmap;
@@ -1123,7 +1128,7 @@
 
     if-eqz p0, :cond_2
 
-    .line 443
+    .line 445
     new-instance p4, Landroid/util/Pair;
 
     invoke-static {p1, p2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
@@ -1134,7 +1139,7 @@
 
     invoke-interface {p0, p4}, Lorg/telegram/tgnet/ResultCallback;->onComplete(Ljava/lang/Object;)V
 
-    .line 446
+    .line 448
     :cond_2
     sget-object p0, Lorg/telegram/messenger/Utilities;->globalQueue:Lorg/telegram/messenger/DispatchQueue;
 
@@ -1151,7 +1156,7 @@
 
     const/4 p1, 0x0
 
-    .line 455
+    .line 457
     invoke-interface {p0, p1}, Lorg/telegram/tgnet/ResultCallback;->onComplete(Ljava/lang/Object;)V
 
     :cond_4
@@ -1169,12 +1174,12 @@
     :cond_0
     if-ltz p1, :cond_2
 
-    .line 584
+    .line 586
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;->themeAccentsMap:Landroid/util/SparseArray;
 
     if-eqz v0, :cond_2
 
-    .line 585
+    .line 587
     invoke-virtual {v0, p1}, Landroid/util/SparseArray;->get(I)Ljava/lang/Object;
 
     move-result-object v0
@@ -1183,7 +1188,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 586
+    .line 588
     iget-boolean v0, v0, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->isDefault:Z
 
     if-eqz v0, :cond_2
@@ -1191,7 +1196,7 @@
     :cond_1
     return-void
 
-    .line 590
+    .line 592
     :cond_2
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;->getKey()Ljava/lang/String;
 
@@ -1211,7 +1216,7 @@
 
     return-void
 
-    .line 593
+    .line 595
     :cond_3
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;->getKey()Ljava/lang/String;
 
@@ -1231,7 +1236,7 @@
 
     return-void
 
-    .line 596
+    .line 598
     :cond_4
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;->getKey()Ljava/lang/String;
 
@@ -1249,7 +1254,7 @@
 
     return-void
 
-    .line 599
+    .line 601
     :cond_5
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;->getKey()Ljava/lang/String;
 
@@ -1267,7 +1272,7 @@
 
     return-void
 
-    .line 603
+    .line 605
     :cond_6
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;->isDark()Z
 
@@ -1292,7 +1297,7 @@
     :cond_8
     const-string v0, "lastDayCustomThemeAccentId"
 
-    .line 606
+    .line 608
     :goto_1
     sget-object v2, Lorg/telegram/messenger/ApplicationLoader;->applicationContext:Landroid/content/Context;
 
@@ -1308,7 +1313,7 @@
 
     move-result-object v2
 
-    .line 607
+    .line 609
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;->getKey()Ljava/lang/String;
 
     move-result-object p0
@@ -1317,12 +1322,12 @@
 
     move-result-object p0
 
-    .line 608
+    .line 610
     invoke-interface {p0, v0, p1}, Landroid/content/SharedPreferences$Editor;->putInt(Ljava/lang/String;I)Landroid/content/SharedPreferences$Editor;
 
     move-result-object p0
 
-    .line 609
+    .line 611
     invoke-interface {p0}, Landroid/content/SharedPreferences$Editor;->apply()V
 
     return-void
@@ -1623,7 +1628,7 @@
 .method public getAccentId(I)I
     .locals 1
 
-    .line 510
+    .line 512
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/EmojiThemes;->items:Ljava/util/ArrayList;
 
     invoke-virtual {v0, p1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -1987,7 +1992,7 @@
 .method public getThemeItem(I)Lorg/telegram/ui/ActionBar/EmojiThemes$ThemeItem;
     .locals 1
 
-    .line 577
+    .line 579
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/EmojiThemes;->items:Ljava/util/ArrayList;
 
     invoke-virtual {v0, p1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -2100,7 +2105,7 @@
 
     move v1, v0
 
-    .line 514
+    .line 516
     :goto_0
     iget-object v2, p0, Lorg/telegram/ui/ActionBar/EmojiThemes;->items:Ljava/util/ArrayList;
 
@@ -2110,7 +2115,7 @@
 
     if-ge v1, v2, :cond_b
 
-    .line 515
+    .line 517
     iget-object v2, p0, Lorg/telegram/ui/ActionBar/EmojiThemes;->items:Ljava/util/ArrayList;
 
     invoke-virtual {v2, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -2121,7 +2126,7 @@
 
     goto/16 :goto_7
 
-    .line 518
+    .line 520
     :cond_0
     invoke-virtual {p0, p1, v1}, Lorg/telegram/ui/ActionBar/EmojiThemes;->getPreviewColors(II)Ljava/util/HashMap;
 
@@ -2129,7 +2134,7 @@
 
     const-string v3, "chat_inBubble"
 
-    .line 519
+    .line 521
     invoke-virtual {v2, v3}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v4
@@ -2138,7 +2143,7 @@
 
     if-nez v4, :cond_1
 
-    .line 521
+    .line 523
     invoke-static {v3}, Lorg/telegram/ui/ActionBar/Theme;->getDefaultColor(Ljava/lang/String;)I
 
     move-result v3
@@ -2147,7 +2152,7 @@
 
     move-result-object v4
 
-    .line 523
+    .line 525
     :cond_1
     iget-object v3, p0, Lorg/telegram/ui/ActionBar/EmojiThemes;->items:Ljava/util/ArrayList;
 
@@ -2165,7 +2170,7 @@
 
     const-string v3, "chat_outBubble"
 
-    .line 524
+    .line 526
     invoke-virtual {v2, v3}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v4
@@ -2174,7 +2179,7 @@
 
     if-nez v4, :cond_2
 
-    .line 526
+    .line 528
     invoke-static {v3}, Lorg/telegram/ui/ActionBar/Theme;->getDefaultColor(Ljava/lang/String;)I
 
     move-result v3
@@ -2183,7 +2188,7 @@
 
     move-result-object v4
 
-    .line 528
+    .line 530
     :cond_2
     iget-object v3, p0, Lorg/telegram/ui/ActionBar/EmojiThemes;->items:Ljava/util/ArrayList;
 
@@ -2201,7 +2206,7 @@
 
     const-string v3, "featuredStickers_addButton"
 
-    .line 529
+    .line 531
     invoke-virtual {v2, v3}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v4
@@ -2210,7 +2215,7 @@
 
     if-nez v4, :cond_3
 
-    .line 531
+    .line 533
     invoke-static {v3}, Lorg/telegram/ui/ActionBar/Theme;->getDefaultColor(Ljava/lang/String;)I
 
     move-result v3
@@ -2219,7 +2224,7 @@
 
     move-result-object v4
 
-    .line 533
+    .line 535
     :cond_3
     iget-object v3, p0, Lorg/telegram/ui/ActionBar/EmojiThemes;->items:Ljava/util/ArrayList;
 
@@ -2237,7 +2242,7 @@
 
     const-string v3, "chat_wallpaper"
 
-    .line 534
+    .line 536
     invoke-virtual {v2, v3}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v3
@@ -2246,7 +2251,7 @@
 
     if-nez v3, :cond_4
 
-    .line 536
+    .line 538
     iget-object v3, p0, Lorg/telegram/ui/ActionBar/EmojiThemes;->items:Ljava/util/ArrayList;
 
     invoke-virtual {v3, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -2259,7 +2264,7 @@
 
     goto :goto_1
 
-    .line 538
+    .line 540
     :cond_4
     iget-object v4, p0, Lorg/telegram/ui/ActionBar/EmojiThemes;->items:Ljava/util/ArrayList;
 
@@ -2278,7 +2283,7 @@
     :goto_1
     const-string v3, "chat_wallpaper_gradient_to"
 
-    .line 540
+    .line 542
     invoke-virtual {v2, v3}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v3
@@ -2287,7 +2292,7 @@
 
     if-nez v3, :cond_5
 
-    .line 542
+    .line 544
     iget-object v3, p0, Lorg/telegram/ui/ActionBar/EmojiThemes;->items:Ljava/util/ArrayList;
 
     invoke-virtual {v3, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -2300,7 +2305,7 @@
 
     goto :goto_2
 
-    .line 544
+    .line 546
     :cond_5
     iget-object v4, p0, Lorg/telegram/ui/ActionBar/EmojiThemes;->items:Ljava/util/ArrayList;
 
@@ -2319,7 +2324,7 @@
     :goto_2
     const-string v3, "key_chat_wallpaper_gradient_to2"
 
-    .line 546
+    .line 548
     invoke-virtual {v2, v3}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v3
@@ -2328,7 +2333,7 @@
 
     if-nez v3, :cond_6
 
-    .line 548
+    .line 550
     iget-object v3, p0, Lorg/telegram/ui/ActionBar/EmojiThemes;->items:Ljava/util/ArrayList;
 
     invoke-virtual {v3, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -2341,7 +2346,7 @@
 
     goto :goto_3
 
-    .line 550
+    .line 552
     :cond_6
     iget-object v4, p0, Lorg/telegram/ui/ActionBar/EmojiThemes;->items:Ljava/util/ArrayList;
 
@@ -2360,7 +2365,7 @@
     :goto_3
     const-string v3, "key_chat_wallpaper_gradient_to3"
 
-    .line 552
+    .line 554
     invoke-virtual {v2, v3}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v3
@@ -2369,7 +2374,7 @@
 
     if-nez v3, :cond_7
 
-    .line 554
+    .line 556
     iget-object v3, p0, Lorg/telegram/ui/ActionBar/EmojiThemes;->items:Ljava/util/ArrayList;
 
     invoke-virtual {v3, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -2382,7 +2387,7 @@
 
     goto :goto_4
 
-    .line 556
+    .line 558
     :cond_7
     iget-object v4, p0, Lorg/telegram/ui/ActionBar/EmojiThemes;->items:Ljava/util/ArrayList;
 
@@ -2401,7 +2406,7 @@
     :goto_4
     const-string v3, "chat_wallpaper_gradient_rotation"
 
-    .line 558
+    .line 560
     invoke-virtual {v2, v3}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v2
@@ -2410,7 +2415,7 @@
 
     if-nez v2, :cond_8
 
-    .line 560
+    .line 562
     iget-object v2, p0, Lorg/telegram/ui/ActionBar/EmojiThemes;->items:Ljava/util/ArrayList;
 
     invoke-virtual {v2, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -2423,7 +2428,7 @@
 
     goto :goto_5
 
-    .line 562
+    .line 564
     :cond_8
     iget-object v3, p0, Lorg/telegram/ui/ActionBar/EmojiThemes;->items:Ljava/util/ArrayList;
 
@@ -2439,7 +2444,7 @@
 
     iput v2, v3, Lorg/telegram/ui/ActionBar/EmojiThemes$ThemeItem;->patternBgRotation:I
 
-    .line 564
+    .line 566
     :goto_5
     iget-object v2, p0, Lorg/telegram/ui/ActionBar/EmojiThemes;->items:Ljava/util/ArrayList;
 
@@ -2475,7 +2480,7 @@
 
     if-eqz v2, :cond_a
 
-    .line 565
+    .line 567
     iget-object v2, p0, Lorg/telegram/ui/ActionBar/EmojiThemes;->items:Ljava/util/ArrayList;
 
     invoke-virtual {v2, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -2518,7 +2523,7 @@
 
     if-ne v2, v3, :cond_a
 
-    .line 567
+    .line 569
     iget-object v2, p0, Lorg/telegram/ui/ActionBar/EmojiThemes;->items:Ljava/util/ArrayList;
 
     invoke-virtual {v2, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -2531,7 +2536,7 @@
 
     iput v3, v2, Lorg/telegram/ui/ActionBar/EmojiThemes$ThemeItem;->patternBgColor:I
 
-    .line 568
+    .line 570
     iget-object v2, p0, Lorg/telegram/ui/ActionBar/EmojiThemes;->items:Ljava/util/ArrayList;
 
     invoke-virtual {v2, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -2544,7 +2549,7 @@
 
     iput v3, v2, Lorg/telegram/ui/ActionBar/EmojiThemes$ThemeItem;->patternBgGradientColor1:I
 
-    .line 569
+    .line 571
     iget-object v2, p0, Lorg/telegram/ui/ActionBar/EmojiThemes;->items:Ljava/util/ArrayList;
 
     invoke-virtual {v2, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -2557,7 +2562,7 @@
 
     iput v3, v2, Lorg/telegram/ui/ActionBar/EmojiThemes$ThemeItem;->patternBgGradientColor2:I
 
-    .line 570
+    .line 572
     iget-object v2, p0, Lorg/telegram/ui/ActionBar/EmojiThemes;->items:Ljava/util/ArrayList;
 
     invoke-virtual {v2, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -2641,7 +2646,7 @@
         }
     .end annotation
 
-    .line 397
+    .line 398
     invoke-virtual {p0, p1}, Lorg/telegram/ui/ActionBar/EmojiThemes;->getWallpaper(I)Lorg/telegram/tgnet/TLRPC$WallPaper;
 
     move-result-object v0
@@ -2652,13 +2657,13 @@
 
     if-eqz p2, :cond_0
 
-    .line 400
+    .line 401
     invoke-interface {p2, v1}, Lorg/telegram/tgnet/ResultCallback;->onComplete(Ljava/lang/Object;)V
 
     :cond_0
     return-void
 
-    .line 405
+    .line 406
     :cond_1
     invoke-virtual {p0, p1}, Lorg/telegram/ui/ActionBar/EmojiThemes;->getTlTheme(I)Lorg/telegram/tgnet/TLRPC$TL_theme;
 
@@ -2666,19 +2671,19 @@
 
     iget-wide v2, p1, Lorg/telegram/tgnet/TLRPC$TL_theme;->id:J
 
-    .line 406
+    .line 407
     invoke-static {v2, v3}, Lorg/telegram/messenger/ChatThemeController;->getWallpaperThumbBitmap(J)Landroid/graphics/Bitmap;
 
     move-result-object p1
 
-    .line 407
+    .line 408
     invoke-direct {p0, v2, v3}, Lorg/telegram/ui/ActionBar/EmojiThemes;->getWallpaperThumbFile(J)Ljava/io/File;
 
     move-result-object v4
 
     if-nez p1, :cond_2
 
-    .line 408
+    .line 409
     invoke-virtual {v4}, Ljava/io/File;->exists()Z
 
     move-result v5
@@ -2695,7 +2700,7 @@
 
     if-lez v5, :cond_2
 
-    .line 410
+    .line 411
     :try_start_0
     invoke-virtual {v4}, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
 
@@ -2712,7 +2717,7 @@
     :catch_0
     move-exception v5
 
-    .line 412
+    .line 413
     invoke-static {v5}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :cond_2
@@ -2721,7 +2726,7 @@
 
     if-eqz p2, :cond_3
 
-    .line 417
+    .line 418
     new-instance v0, Landroid/util/Pair;
 
     invoke-static {v2, v3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
@@ -2735,7 +2740,7 @@
     :cond_3
     return-void
 
-    .line 422
+    .line 423
     :cond_4
     iget-object p1, v0, Lorg/telegram/tgnet/TLRPC$WallPaper;->document:Lorg/telegram/tgnet/TLRPC$Document;
 
@@ -2743,7 +2748,7 @@
 
     if-eqz p2, :cond_5
 
-    .line 424
+    .line 425
     new-instance p1, Landroid/util/Pair;
 
     invoke-static {v2, v3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
@@ -2757,7 +2762,7 @@
     :cond_5
     return-void
 
-    .line 428
+    .line 429
     :cond_6
     iget-object p1, p1, Lorg/telegram/tgnet/TLRPC$Document;->thumbs:Ljava/util/ArrayList;
 
@@ -2767,17 +2772,22 @@
 
     move-result-object p1
 
-    .line 429
+    .line 430
     iget-object v0, v0, Lorg/telegram/tgnet/TLRPC$WallPaper;->document:Lorg/telegram/tgnet/TLRPC$Document;
 
     invoke-static {p1, v0}, Lorg/telegram/messenger/ImageLocation;->getForDocument(Lorg/telegram/tgnet/TLRPC$PhotoSize;Lorg/telegram/tgnet/TLRPC$Document;)Lorg/telegram/messenger/ImageLocation;
 
     move-result-object v6
 
-    .line 430
+    .line 431
     new-instance p1, Lorg/telegram/messenger/ImageReceiver;
 
     invoke-direct {p1}, Lorg/telegram/messenger/ImageReceiver;-><init>()V
+
+    const/4 v0, 0x0
+
+    .line 432
+    invoke-virtual {p1, v0}, Lorg/telegram/messenger/ImageReceiver;->setAllowLoadingOnAttachedOnly(Z)V
 
     const/4 v8, 0x0
 
@@ -2791,17 +2801,17 @@
 
     move-object v5, p1
 
-    .line 431
+    .line 433
     invoke-virtual/range {v5 .. v11}, Lorg/telegram/messenger/ImageReceiver;->setImage(Lorg/telegram/messenger/ImageLocation;Ljava/lang/String;Landroid/graphics/drawable/Drawable;Ljava/lang/String;Ljava/lang/Object;I)V
 
-    .line 432
+    .line 434
     new-instance v0, Lorg/telegram/ui/ActionBar/EmojiThemes$$ExternalSyntheticLambda2;
 
     invoke-direct {v0, p2, v2, v3, v4}, Lorg/telegram/ui/ActionBar/EmojiThemes$$ExternalSyntheticLambda2;-><init>(Lorg/telegram/tgnet/ResultCallback;JLjava/io/File;)V
 
     invoke-virtual {p1, v0}, Lorg/telegram/messenger/ImageReceiver;->setDelegate(Lorg/telegram/messenger/ImageReceiver$ImageReceiverDelegate;)V
 
-    .line 459
+    .line 461
     invoke-static {}, Lorg/telegram/messenger/ImageLoader;->getInstance()Lorg/telegram/messenger/ImageLoader;
 
     move-result-object p2
@@ -2818,18 +2828,18 @@
 
     const/4 v1, 0x0
 
-    .line 463
+    .line 465
     invoke-virtual {p0, v0, v1}, Lorg/telegram/ui/ActionBar/EmojiThemes;->loadWallpaperThumb(ILorg/telegram/tgnet/ResultCallback;)V
 
     const/4 v2, 0x1
 
-    .line 464
+    .line 466
     invoke-virtual {p0, v2, v1}, Lorg/telegram/ui/ActionBar/EmojiThemes;->loadWallpaperThumb(ILorg/telegram/tgnet/ResultCallback;)V
 
-    .line 465
+    .line 467
     invoke-virtual {p0, v0, v1}, Lorg/telegram/ui/ActionBar/EmojiThemes;->loadWallpaper(ILorg/telegram/tgnet/ResultCallback;)V
 
-    .line 466
+    .line 468
     invoke-virtual {p0, v2, v1}, Lorg/telegram/ui/ActionBar/EmojiThemes;->loadWallpaper(ILorg/telegram/tgnet/ResultCallback;)V
 
     return-void

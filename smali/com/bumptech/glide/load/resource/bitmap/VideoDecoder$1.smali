@@ -34,12 +34,12 @@
 .method constructor <init>()V
     .locals 1
 
-    .line 60
+    .line 67
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     const/16 v0, 0x8
 
-    .line 61
+    .line 68
     invoke-static {v0}, Ljava/nio/ByteBuffer;->allocate(I)Ljava/nio/ByteBuffer;
 
     move-result-object v0
@@ -54,15 +54,15 @@
 .method public update([BLjava/lang/Long;Ljava/security/MessageDigest;)V
     .locals 3
 
-    .line 68
+    .line 75
     invoke-virtual {p3, p1}, Ljava/security/MessageDigest;->update([B)V
 
-    .line 69
+    .line 76
     iget-object p1, p0, Lcom/bumptech/glide/load/resource/bitmap/VideoDecoder$1;->buffer:Ljava/nio/ByteBuffer;
 
     monitor-enter p1
 
-    .line 70
+    .line 77
     :try_start_0
     iget-object v0, p0, Lcom/bumptech/glide/load/resource/bitmap/VideoDecoder$1;->buffer:Ljava/nio/ByteBuffer;
 
@@ -70,7 +70,7 @@
 
     invoke-virtual {v0, v1}, Ljava/nio/ByteBuffer;->position(I)Ljava/nio/Buffer;
 
-    .line 71
+    .line 78
     iget-object v0, p0, Lcom/bumptech/glide/load/resource/bitmap/VideoDecoder$1;->buffer:Ljava/nio/ByteBuffer;
 
     invoke-virtual {p2}, Ljava/lang/Long;->longValue()J
@@ -87,7 +87,7 @@
 
     invoke-virtual {p3, p2}, Ljava/security/MessageDigest;->update([B)V
 
-    .line 72
+    .line 79
     monitor-exit p1
 
     return-void
@@ -105,7 +105,7 @@
 .method public bridge synthetic update([BLjava/lang/Object;Ljava/security/MessageDigest;)V
     .locals 0
 
-    .line 60
+    .line 67
     check-cast p2, Ljava/lang/Long;
 
     invoke-virtual {p0, p1, p2, p3}, Lcom/bumptech/glide/load/resource/bitmap/VideoDecoder$1;->update([BLjava/lang/Long;Ljava/security/MessageDigest;)V

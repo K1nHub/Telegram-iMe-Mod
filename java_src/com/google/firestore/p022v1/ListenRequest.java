@@ -73,7 +73,7 @@ public final class ListenRequest extends GeneratedMessageLite<ListenRequest, Bui
     /* renamed from: com.google.firestore.v1.ListenRequest$Builder */
     /* loaded from: classes3.dex */
     public static final class Builder extends GeneratedMessageLite.Builder<ListenRequest, Builder> implements MessageLiteOrBuilder {
-        /* synthetic */ Builder(C10571 c10571) {
+        /* synthetic */ Builder(C10711 c10711) {
             this();
         }
 
@@ -108,7 +108,7 @@ public final class ListenRequest extends GeneratedMessageLite<ListenRequest, Bui
 
     /* renamed from: com.google.firestore.v1.ListenRequest$1 */
     /* loaded from: classes3.dex */
-    static /* synthetic */ class C10571 {
+    static /* synthetic */ class C10711 {
 
         /* renamed from: $SwitchMap$com$google$protobuf$GeneratedMessageLite$MethodToInvoke */
         static final /* synthetic */ int[] f210xa1df5c61;
@@ -149,7 +149,7 @@ public final class ListenRequest extends GeneratedMessageLite<ListenRequest, Bui
 
     @Override // com.google.protobuf.GeneratedMessageLite
     protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke methodToInvoke, Object obj, Object obj2) {
-        switch (C10571.f210xa1df5c61[methodToInvoke.ordinal()]) {
+        switch (C10711.f210xa1df5c61[methodToInvoke.ordinal()]) {
             case 1:
                 return new ListenRequest();
             case 2:

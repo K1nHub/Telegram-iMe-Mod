@@ -44,9 +44,9 @@
     .line 658
     iget-object v0, p0, Lorg/telegram/ui/ContactsActivity$2;->this$0:Lorg/telegram/ui/ContactsActivity;
 
-    iget-object v0, v0, Lorg/telegram/ui/ContactsActivity;->presenter:Lcom/smedialink/ui/contacts/ContactsPresenter;
+    iget-object v0, v0, Lorg/telegram/ui/ContactsActivity;->presenter:Lcom/iMe/ui/contacts/ContactsPresenter;
 
-    invoke-virtual {v0}, Lcom/smedialink/ui/contacts/ContactsPresenter;->deleteSelectedContacts()V
+    invoke-virtual {v0}, Lcom/iMe/ui/contacts/ContactsPresenter;->deleteSelectedContacts()V
 
     return-void
 .end method
@@ -84,15 +84,15 @@
     .line 652
     iget-object p1, p0, Lorg/telegram/ui/ContactsActivity$2;->this$0:Lorg/telegram/ui/ContactsActivity;
 
-    iget-object p1, p1, Lorg/telegram/ui/ContactsActivity;->presenter:Lcom/smedialink/ui/contacts/ContactsPresenter;
+    iget-object p1, p1, Lorg/telegram/ui/ContactsActivity;->presenter:Lcom/iMe/ui/contacts/ContactsPresenter;
 
-    invoke-virtual {p1}, Lcom/smedialink/ui/contacts/ContactsPresenter;->closeActionMode()V
+    invoke-virtual {p1}, Lcom/iMe/ui/contacts/ContactsPresenter;->closeActionMode()V
 
     goto :goto_2
 
     .line 653
     :cond_0
-    sget v1, Lcom/smedialink/common/IdFabric$Menu;->CONTACTS_PRIVACY_SETTINGS:I
+    sget v1, Lcom/iMe/common/IdFabric$Menu;->CONTACTS_PRIVACY_SETTINGS:I
 
     if-ne p1, v1, :cond_1
 
@@ -102,7 +102,7 @@
     invoke-direct {p1}, Landroid/os/Bundle;-><init>()V
 
     .line 655
-    sget v0, Lcom/smedialink/common/IdFabric$CustomType;->CONTACTS_PRIVACY_SETTINGS:I
+    sget v0, Lcom/iMe/common/IdFabric$CustomType;->CONTACTS_PRIVACY_SETTINGS:I
 
     const-string v1, "custom_screen_type"
 
@@ -121,7 +121,7 @@
 
     .line 657
     :cond_1
-    sget v1, Lcom/smedialink/common/IdFabric$Menu;->DELETE:I
+    sget v1, Lcom/iMe/common/IdFabric$Menu;->DELETE:I
 
     if-ne p1, v1, :cond_2
 

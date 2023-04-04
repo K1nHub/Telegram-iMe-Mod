@@ -215,7 +215,7 @@
     :cond_0
     new-instance v0, Ljava/lang/IllegalStateException;
 
-    const-string v1, "url == null"
+    const-string/jumbo v1, "url == null"
 
     invoke-virtual {v1}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
@@ -436,7 +436,7 @@
         }
     .end annotation
 
-    const-string v0, "type"
+    const-string/jumbo v0, "type"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -485,7 +485,7 @@
 .method public url(Ljava/lang/String;)Lokhttp3/Request$Builder;
     .locals 3
 
-    const-string v0, "url"
+    const-string/jumbo v0, "url"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -579,7 +579,7 @@
 .method public url(Lokhttp3/HttpUrl;)Lokhttp3/Request$Builder;
     .locals 1
 
-    const-string v0, "url"
+    const-string/jumbo v0, "url"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 

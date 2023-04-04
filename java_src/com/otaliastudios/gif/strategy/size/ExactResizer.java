@@ -1,5 +1,5 @@
 package com.otaliastudios.gif.strategy.size;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class ExactResizer implements Resizer {
     private final Size output;
 

@@ -10,7 +10,7 @@ public final class DefaultScheduler extends ExperimentalCoroutineDispatcher {
     public static final DefaultScheduler INSTANCE;
 
     /* renamed from: IO */
-    private static final CoroutineDispatcher f1222IO;
+    private static final CoroutineDispatcher f1227IO;
 
     @Override // kotlinx.coroutines.CoroutineDispatcher
     public String toString() {
@@ -28,11 +28,11 @@ public final class DefaultScheduler extends ExperimentalCoroutineDispatcher {
         INSTANCE = defaultScheduler;
         coerceAtLeast = RangesKt___RangesKt.coerceAtLeast(64, SystemPropsKt.getAVAILABLE_PROCESSORS());
         systemProp$default = SystemPropsKt__SystemProps_commonKt.systemProp$default("kotlinx.coroutines.io.parallelism", coerceAtLeast, 0, 0, 12, (Object) null);
-        f1222IO = new LimitingDispatcher(defaultScheduler, systemProp$default, "Dispatchers.IO", 1);
+        f1227IO = new LimitingDispatcher(defaultScheduler, systemProp$default, "Dispatchers.IO", 1);
     }
 
     public final CoroutineDispatcher getIO() {
-        return f1222IO;
+        return f1227IO;
     }
 
     @Override // java.io.Closeable, java.lang.AutoCloseable

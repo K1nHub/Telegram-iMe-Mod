@@ -107,7 +107,7 @@ public class HintDialogCell extends FrameLayout {
     public void update(int i) {
         int i2;
         if ((MessagesController.UPDATE_MASK_STATUS & i) != 0 && this.currentUser != null) {
-            this.currentUser = MessagesController.getInstance(this.currentAccount).getUser(Long.valueOf(this.currentUser.f1640id));
+            this.currentUser = MessagesController.getInstance(this.currentAccount).getUser(Long.valueOf(this.currentUser.f1642id));
             this.imageView.invalidate();
             invalidate();
         }
@@ -209,7 +209,7 @@ public class HintDialogCell extends FrameLayout {
             org.telegram.messenger.MessagesController r7 = org.telegram.messenger.MessagesController.getInstance(r7)
             j$.util.concurrent.ConcurrentHashMap<java.lang.Long, java.lang.Integer> r7 = r7.onlinePrivacy
             org.telegram.tgnet.TLRPC$User r0 = r5.currentUser
-            long r0 = r0.f1640id
+            long r0 = r0.f1642id
             java.lang.Long r0 = java.lang.Long.valueOf(r0)
             boolean r7 = r7.containsKey(r0)
             if (r7 == 0) goto L3b

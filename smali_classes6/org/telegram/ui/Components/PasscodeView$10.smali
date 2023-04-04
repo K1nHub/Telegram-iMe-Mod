@@ -902,9 +902,9 @@
     .line 1705
     iget-object v2, v0, Lorg/telegram/ui/Components/PasscodeView$10;->this$0:Lorg/telegram/ui/Components/PasscodeView;
 
-    sget-object v5, Lorg/fork/enums/PasscodeType;->PIN:Lorg/fork/enums/PasscodeType;
+    sget-object v5, Lcom/iMe/fork/enums/PasscodeType;->PIN:Lcom/iMe/fork/enums/PasscodeType;
 
-    invoke-static {v2, v5}, Lorg/telegram/ui/Components/PasscodeView;->access$1100(Lorg/telegram/ui/Components/PasscodeView;Lorg/fork/enums/PasscodeType;)Z
+    invoke-static {v2, v5}, Lorg/telegram/ui/Components/PasscodeView;->access$1100(Lorg/telegram/ui/Components/PasscodeView;Lcom/iMe/fork/enums/PasscodeType;)Z
 
     move-result v2
 

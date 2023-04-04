@@ -960,7 +960,7 @@ public class SimpleTextView extends View {
         }
         int i27 = i16 + this.textWidth + this.drawablePadding;
         float f6 = this.scrollingOffset;
-        int min = Math.min(i27 + (f6 == BitmapDescriptorFactory.HUE_RED ? -m50dp : (int) (-f6)) + m50dp, ((getMaxTextWidth() - this.paddingRight) + this.drawablePadding) - AndroidUtilities.m50dp(4));
+        int min = Math.min(i27 + (f6 == BitmapDescriptorFactory.HUE_RED ? -m50dp : (int) (-f6)) + m50dp, (getMaxTextWidth() - this.paddingRight) + this.drawablePadding);
         int intrinsicWidth3 = (int) (this.rightDrawable.getIntrinsicWidth() * this.rightDrawableScale);
         int intrinsicHeight4 = (int) (this.rightDrawable.getIntrinsicHeight() * this.rightDrawableScale);
         if ((this.gravity & 112) == 16) {

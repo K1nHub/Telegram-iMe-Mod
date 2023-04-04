@@ -244,7 +244,7 @@
 
     sput-object v1, Lio/grpc/internal/GrpcUtil;->TE_HEADER:Lio/grpc/Metadata$Key;
 
-    const-string v1, "user-agent"
+    const-string/jumbo v1, "user-agent"
 
     .line 134
     invoke-static {v1, v0}, Lio/grpc/Metadata$Key;->of(Ljava/lang/String;Lio/grpc/Metadata$AsciiMarshaller;)Lio/grpc/Metadata$Key;

@@ -2,40 +2,38 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lorg/fork/utils/Callbacks$Callback1;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
 .field public final synthetic f$0:Lorg/telegram/ui/ContactsActivity;
 
-.field public final synthetic f$1:Lorg/fork/enums/ContactsActionType;
+.field public final synthetic f$1:Lcom/iMe/fork/enums/ContactsActionType;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/ContactsActivity;Lorg/fork/enums/ContactsActionType;)V
+.method public synthetic constructor <init>(Lorg/telegram/ui/ContactsActivity;Lcom/iMe/fork/enums/ContactsActionType;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/ui/ContactsActivity$$ExternalSyntheticLambda13;->f$0:Lorg/telegram/ui/ContactsActivity;
 
-    iput-object p2, p0, Lorg/telegram/ui/ContactsActivity$$ExternalSyntheticLambda13;->f$1:Lorg/fork/enums/ContactsActionType;
+    iput-object p2, p0, Lorg/telegram/ui/ContactsActivity$$ExternalSyntheticLambda13;->f$1:Lcom/iMe/fork/enums/ContactsActionType;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;)V
+.method public final run()V
     .locals 2
 
     iget-object v0, p0, Lorg/telegram/ui/ContactsActivity$$ExternalSyntheticLambda13;->f$0:Lorg/telegram/ui/ContactsActivity;
 
-    iget-object v1, p0, Lorg/telegram/ui/ContactsActivity$$ExternalSyntheticLambda13;->f$1:Lorg/fork/enums/ContactsActionType;
+    iget-object v1, p0, Lorg/telegram/ui/ContactsActivity$$ExternalSyntheticLambda13;->f$1:Lcom/iMe/fork/enums/ContactsActionType;
 
-    check-cast p1, Ljava/lang/Boolean;
-
-    invoke-static {v0, v1, p1}, Lorg/telegram/ui/ContactsActivity;->$r8$lambda$TXhmmIPYBuxtOsdpnGA1GEXxhEs(Lorg/telegram/ui/ContactsActivity;Lorg/fork/enums/ContactsActionType;Ljava/lang/Boolean;)V
+    invoke-static {v0, v1}, Lorg/telegram/ui/ContactsActivity;->$r8$lambda$JeUWesf6IkVwX5toQtam0yevzWw(Lorg/telegram/ui/ContactsActivity;Lcom/iMe/fork/enums/ContactsActionType;)V
 
     return-void
 .end method

@@ -1,6 +1,6 @@
 package org.telegram.p048ui.Components;
 
-import com.smedialink.p031ui.kikliko.EmojiViewPresenter;
+import com.iMe.p032ui.kikliko.EmojiViewPresenter;
 import java.util.ArrayList;
 import java.util.List;
 import moxy.MvpPresenter;

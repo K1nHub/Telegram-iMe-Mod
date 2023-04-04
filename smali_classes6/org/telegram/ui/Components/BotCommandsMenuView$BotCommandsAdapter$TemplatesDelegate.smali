@@ -21,5 +21,5 @@
 .method public abstract didPressOpenTemplates(Z)V
 .end method
 
-.method public abstract didPressSendMessage(Lcom/smedialink/storage/domain/model/templates/TemplateModel;Z)V
+.method public abstract didPressSendMessage(Lcom/iMe/storage/domain/model/templates/TemplateModel;Z)V
 .end method

@@ -50,96 +50,96 @@
 .method public constructor <init>()V
     .locals 3
 
-    .line 59
+    .line 65
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 54
+    .line 60
     new-instance v0, Lcom/bumptech/glide/provider/ModelToResourceClassCache;
 
     invoke-direct {v0}, Lcom/bumptech/glide/provider/ModelToResourceClassCache;-><init>()V
 
     iput-object v0, p0, Lcom/bumptech/glide/Registry;->modelToResourceClassCache:Lcom/bumptech/glide/provider/ModelToResourceClassCache;
 
-    .line 56
+    .line 62
     new-instance v0, Lcom/bumptech/glide/provider/LoadPathCache;
 
     invoke-direct {v0}, Lcom/bumptech/glide/provider/LoadPathCache;-><init>()V
 
     iput-object v0, p0, Lcom/bumptech/glide/Registry;->loadPathCache:Lcom/bumptech/glide/provider/LoadPathCache;
 
-    .line 57
+    .line 63
     invoke-static {}, Lcom/bumptech/glide/util/pool/FactoryPools;->threadSafeList()Landroidx/core/util/Pools$Pool;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/bumptech/glide/Registry;->throwableListPool:Landroidx/core/util/Pools$Pool;
 
-    .line 60
+    .line 66
     new-instance v1, Lcom/bumptech/glide/load/model/ModelLoaderRegistry;
 
     invoke-direct {v1, v0}, Lcom/bumptech/glide/load/model/ModelLoaderRegistry;-><init>(Landroidx/core/util/Pools$Pool;)V
 
     iput-object v1, p0, Lcom/bumptech/glide/Registry;->modelLoaderRegistry:Lcom/bumptech/glide/load/model/ModelLoaderRegistry;
 
-    .line 61
+    .line 67
     new-instance v0, Lcom/bumptech/glide/provider/EncoderRegistry;
 
     invoke-direct {v0}, Lcom/bumptech/glide/provider/EncoderRegistry;-><init>()V
 
     iput-object v0, p0, Lcom/bumptech/glide/Registry;->encoderRegistry:Lcom/bumptech/glide/provider/EncoderRegistry;
 
-    .line 62
+    .line 68
     new-instance v0, Lcom/bumptech/glide/provider/ResourceDecoderRegistry;
 
     invoke-direct {v0}, Lcom/bumptech/glide/provider/ResourceDecoderRegistry;-><init>()V
 
     iput-object v0, p0, Lcom/bumptech/glide/Registry;->decoderRegistry:Lcom/bumptech/glide/provider/ResourceDecoderRegistry;
 
-    .line 63
+    .line 69
     new-instance v0, Lcom/bumptech/glide/provider/ResourceEncoderRegistry;
 
     invoke-direct {v0}, Lcom/bumptech/glide/provider/ResourceEncoderRegistry;-><init>()V
 
     iput-object v0, p0, Lcom/bumptech/glide/Registry;->resourceEncoderRegistry:Lcom/bumptech/glide/provider/ResourceEncoderRegistry;
 
-    .line 64
+    .line 70
     new-instance v0, Lcom/bumptech/glide/load/data/DataRewinderRegistry;
 
     invoke-direct {v0}, Lcom/bumptech/glide/load/data/DataRewinderRegistry;-><init>()V
 
     iput-object v0, p0, Lcom/bumptech/glide/Registry;->dataRewinderRegistry:Lcom/bumptech/glide/load/data/DataRewinderRegistry;
 
-    .line 65
+    .line 71
     new-instance v0, Lcom/bumptech/glide/load/resource/transcode/TranscoderRegistry;
 
     invoke-direct {v0}, Lcom/bumptech/glide/load/resource/transcode/TranscoderRegistry;-><init>()V
 
     iput-object v0, p0, Lcom/bumptech/glide/Registry;->transcoderRegistry:Lcom/bumptech/glide/load/resource/transcode/TranscoderRegistry;
 
-    .line 66
+    .line 72
     new-instance v0, Lcom/bumptech/glide/provider/ImageHeaderParserRegistry;
 
     invoke-direct {v0}, Lcom/bumptech/glide/provider/ImageHeaderParserRegistry;-><init>()V
 
     iput-object v0, p0, Lcom/bumptech/glide/Registry;->imageHeaderParserRegistry:Lcom/bumptech/glide/provider/ImageHeaderParserRegistry;
 
-    const-string v0, "Gif"
+    const-string v0, "Animation"
 
     const-string v1, "Bitmap"
 
     const-string v2, "BitmapDrawable"
 
-    .line 67
+    .line 73
     filled-new-array {v0, v1, v2}, [Ljava/lang/String;
 
     move-result-object v0
 
-    .line 68
+    .line 74
     invoke-static {v0}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
 
     move-result-object v0
 
-    .line 67
+    .line 73
     invoke-virtual {p0, v0}, Lcom/bumptech/glide/Registry;->setResourceDecoderBucketPriorityList(Ljava/util/List;)Lcom/bumptech/glide/Registry;
 
     return-void
@@ -168,20 +168,20 @@
         }
     .end annotation
 
-    .line 499
+    .line 505
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    .line 500
+    .line 506
     iget-object v1, p0, Lcom/bumptech/glide/Registry;->decoderRegistry:Lcom/bumptech/glide/provider/ResourceDecoderRegistry;
 
-    .line 501
+    .line 507
     invoke-virtual {v1, p1, p2}, Lcom/bumptech/glide/provider/ResourceDecoderRegistry;->getResourceClasses(Ljava/lang/Class;Ljava/lang/Class;)Ljava/util/List;
 
     move-result-object p2
 
-    .line 503
+    .line 509
     invoke-interface {p2}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object p2
@@ -199,15 +199,15 @@
 
     check-cast v1, Ljava/lang/Class;
 
-    .line 504
+    .line 510
     iget-object v2, p0, Lcom/bumptech/glide/Registry;->transcoderRegistry:Lcom/bumptech/glide/load/resource/transcode/TranscoderRegistry;
 
-    .line 505
+    .line 511
     invoke-virtual {v2, v1, p3}, Lcom/bumptech/glide/load/resource/transcode/TranscoderRegistry;->getTranscodeClasses(Ljava/lang/Class;Ljava/lang/Class;)Ljava/util/List;
 
     move-result-object v2
 
-    .line 507
+    .line 513
     invoke-interface {v2}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object v9
@@ -227,23 +227,23 @@
 
     check-cast v5, Ljava/lang/Class;
 
-    .line 509
+    .line 515
     iget-object v2, p0, Lcom/bumptech/glide/Registry;->decoderRegistry:Lcom/bumptech/glide/provider/ResourceDecoderRegistry;
 
-    .line 510
+    .line 516
     invoke-virtual {v2, p1, v1}, Lcom/bumptech/glide/provider/ResourceDecoderRegistry;->getDecoders(Ljava/lang/Class;Ljava/lang/Class;)Ljava/util/List;
 
     move-result-object v6
 
-    .line 511
+    .line 517
     iget-object v2, p0, Lcom/bumptech/glide/Registry;->transcoderRegistry:Lcom/bumptech/glide/load/resource/transcode/TranscoderRegistry;
 
-    .line 512
+    .line 518
     invoke-virtual {v2, v1, v5}, Lcom/bumptech/glide/load/resource/transcode/TranscoderRegistry;->get(Ljava/lang/Class;Ljava/lang/Class;)Lcom/bumptech/glide/load/resource/transcode/ResourceTranscoder;
 
     move-result-object v7
 
-    .line 514
+    .line 520
     new-instance v10, Lcom/bumptech/glide/load/engine/DecodePath;
 
     iget-object v8, p0, Lcom/bumptech/glide/Registry;->throwableListPool:Landroidx/core/util/Pools$Pool;
@@ -256,7 +256,7 @@
 
     invoke-direct/range {v2 .. v8}, Lcom/bumptech/glide/load/engine/DecodePath;-><init>(Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/util/List;Lcom/bumptech/glide/load/resource/transcode/ResourceTranscoder;Landroidx/core/util/Pools$Pool;)V
 
-    .line 522
+    .line 528
     invoke-interface {v0, v10}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     goto :goto_0
@@ -282,7 +282,7 @@
         }
     .end annotation
 
-    .line 109
+    .line 115
     iget-object v0, p0, Lcom/bumptech/glide/Registry;->encoderRegistry:Lcom/bumptech/glide/provider/EncoderRegistry;
 
     invoke-virtual {v0, p1, p2}, Lcom/bumptech/glide/provider/EncoderRegistry;->append(Ljava/lang/Class;Lcom/bumptech/glide/load/Encoder;)V
@@ -305,7 +305,7 @@
         }
     .end annotation
 
-    .line 316
+    .line 322
     iget-object v0, p0, Lcom/bumptech/glide/Registry;->resourceEncoderRegistry:Lcom/bumptech/glide/provider/ResourceEncoderRegistry;
 
     invoke-virtual {v0, p1, p2}, Lcom/bumptech/glide/provider/ResourceEncoderRegistry;->append(Ljava/lang/Class;Lcom/bumptech/glide/load/ResourceEncoder;)V
@@ -334,7 +334,7 @@
 
     const-string v0, "legacy_append"
 
-    .line 153
+    .line 159
     invoke-virtual {p0, v0, p1, p2, p3}, Lcom/bumptech/glide/Registry;->append(Ljava/lang/String;Ljava/lang/Class;Ljava/lang/Class;Lcom/bumptech/glide/load/ResourceDecoder;)Lcom/bumptech/glide/Registry;
 
     return-object p0
@@ -359,7 +359,7 @@
         }
     .end annotation
 
-    .line 403
+    .line 409
     iget-object v0, p0, Lcom/bumptech/glide/Registry;->modelLoaderRegistry:Lcom/bumptech/glide/load/model/ModelLoaderRegistry;
 
     invoke-virtual {v0, p1, p2, p3}, Lcom/bumptech/glide/load/model/ModelLoaderRegistry;->append(Ljava/lang/Class;Ljava/lang/Class;Lcom/bumptech/glide/load/model/ModelLoaderFactory;)V
@@ -387,7 +387,7 @@
         }
     .end annotation
 
-    .line 183
+    .line 189
     iget-object v0, p0, Lcom/bumptech/glide/Registry;->decoderRegistry:Lcom/bumptech/glide/provider/ResourceDecoderRegistry;
 
     invoke-virtual {v0, p1, p4, p2, p3}, Lcom/bumptech/glide/provider/ResourceDecoderRegistry;->append(Ljava/lang/String;Lcom/bumptech/glide/load/ResourceDecoder;Ljava/lang/Class;Ljava/lang/Class;)V
@@ -406,14 +406,14 @@
         }
     .end annotation
 
-    .line 593
+    .line 599
     iget-object v0, p0, Lcom/bumptech/glide/Registry;->imageHeaderParserRegistry:Lcom/bumptech/glide/provider/ImageHeaderParserRegistry;
 
     invoke-virtual {v0}, Lcom/bumptech/glide/provider/ImageHeaderParserRegistry;->getParsers()Ljava/util/List;
 
     move-result-object v0
 
-    .line 594
+    .line 600
     invoke-interface {v0}, Ljava/util/List;->isEmpty()Z
 
     move-result v1
@@ -422,7 +422,7 @@
 
     return-object v0
 
-    .line 595
+    .line 601
     :cond_0
     new-instance v0, Lcom/bumptech/glide/Registry$NoImageHeaderParserException;
 
@@ -453,15 +453,15 @@
         }
     .end annotation
 
-    .line 473
+    .line 479
     iget-object v0, p0, Lcom/bumptech/glide/Registry;->loadPathCache:Lcom/bumptech/glide/provider/LoadPathCache;
 
-    .line 474
+    .line 480
     invoke-virtual {v0, p1, p2, p3}, Lcom/bumptech/glide/provider/LoadPathCache;->get(Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;)Lcom/bumptech/glide/load/engine/LoadPath;
 
     move-result-object v0
 
-    .line 475
+    .line 481
     iget-object v1, p0, Lcom/bumptech/glide/Registry;->loadPathCache:Lcom/bumptech/glide/provider/LoadPathCache;
 
     invoke-virtual {v1, v0}, Lcom/bumptech/glide/provider/LoadPathCache;->isEmptyLoadPath(Lcom/bumptech/glide/load/engine/LoadPath;)Z
@@ -477,12 +477,12 @@
     :cond_0
     if-nez v0, :cond_2
 
-    .line 479
+    .line 485
     invoke-direct {p0, p1, p2, p3}, Lcom/bumptech/glide/Registry;->getDecodePaths(Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;)Ljava/util/List;
 
     move-result-object v7
 
-    .line 482
+    .line 488
     invoke-interface {v7}, Ljava/util/List;->isEmpty()Z
 
     move-result v0
@@ -493,7 +493,7 @@
 
     goto :goto_0
 
-    .line 485
+    .line 491
     :cond_1
     new-instance v0, Lcom/bumptech/glide/load/engine/LoadPath;
 
@@ -509,7 +509,7 @@
 
     invoke-direct/range {v3 .. v8}, Lcom/bumptech/glide/load/engine/LoadPath;-><init>(Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/util/List;Landroidx/core/util/Pools$Pool;)V
 
-    .line 489
+    .line 495
     :goto_0
     iget-object v1, p0, Lcom/bumptech/glide/Registry;->loadPathCache:Lcom/bumptech/glide/provider/LoadPathCache;
 
@@ -532,7 +532,7 @@
         }
     .end annotation
 
-    .line 588
+    .line 594
     iget-object v0, p0, Lcom/bumptech/glide/Registry;->modelLoaderRegistry:Lcom/bumptech/glide/load/model/ModelLoaderRegistry;
 
     invoke-virtual {v0, p1}, Lcom/bumptech/glide/load/model/ModelLoaderRegistry;->getModelLoaders(Ljava/lang/Object;)Ljava/util/List;
@@ -565,29 +565,29 @@
         }
     .end annotation
 
-    .line 533
+    .line 539
     iget-object v0, p0, Lcom/bumptech/glide/Registry;->modelToResourceClassCache:Lcom/bumptech/glide/provider/ModelToResourceClassCache;
 
-    .line 534
+    .line 540
     invoke-virtual {v0, p1, p2, p3}, Lcom/bumptech/glide/provider/ModelToResourceClassCache;->get(Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;)Ljava/util/List;
 
     move-result-object v0
 
     if-nez v0, :cond_3
 
-    .line 537
+    .line 543
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    .line 538
+    .line 544
     iget-object v1, p0, Lcom/bumptech/glide/Registry;->modelLoaderRegistry:Lcom/bumptech/glide/load/model/ModelLoaderRegistry;
 
     invoke-virtual {v1, p1}, Lcom/bumptech/glide/load/model/ModelLoaderRegistry;->getDataClasses(Ljava/lang/Class;)Ljava/util/List;
 
     move-result-object v1
 
-    .line 539
+    .line 545
     invoke-interface {v1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object v1
@@ -605,15 +605,15 @@
 
     check-cast v2, Ljava/lang/Class;
 
-    .line 540
+    .line 546
     iget-object v3, p0, Lcom/bumptech/glide/Registry;->decoderRegistry:Lcom/bumptech/glide/provider/ResourceDecoderRegistry;
 
-    .line 541
+    .line 547
     invoke-virtual {v3, v2, p2}, Lcom/bumptech/glide/provider/ResourceDecoderRegistry;->getResourceClasses(Ljava/lang/Class;Ljava/lang/Class;)Ljava/util/List;
 
     move-result-object v2
 
-    .line 542
+    .line 548
     invoke-interface {v2}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object v2
@@ -632,15 +632,15 @@
 
     check-cast v3, Ljava/lang/Class;
 
-    .line 543
+    .line 549
     iget-object v4, p0, Lcom/bumptech/glide/Registry;->transcoderRegistry:Lcom/bumptech/glide/load/resource/transcode/TranscoderRegistry;
 
-    .line 544
+    .line 550
     invoke-virtual {v4, v3, p3}, Lcom/bumptech/glide/load/resource/transcode/TranscoderRegistry;->getTranscodeClasses(Ljava/lang/Class;Ljava/lang/Class;)Ljava/util/List;
 
     move-result-object v4
 
-    .line 545
+    .line 551
     invoke-interface {v4}, Ljava/util/List;->isEmpty()Z
 
     move-result v4
@@ -653,21 +653,21 @@
 
     if-nez v4, :cond_1
 
-    .line 546
+    .line 552
     invoke-interface {v0, v3}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     goto :goto_0
 
-    .line 550
+    .line 556
     :cond_2
     iget-object v1, p0, Lcom/bumptech/glide/Registry;->modelToResourceClassCache:Lcom/bumptech/glide/provider/ModelToResourceClassCache;
 
-    .line 551
+    .line 557
     invoke-static {v0}, Ljava/util/Collections;->unmodifiableList(Ljava/util/List;)Ljava/util/List;
 
     move-result-object v2
 
-    .line 550
+    .line 556
     invoke-virtual {v1, p1, p2, p3, v2}, Lcom/bumptech/glide/provider/ModelToResourceClassCache;->put(Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/util/List;)V
 
     :cond_3
@@ -694,7 +694,7 @@
         }
     .end annotation
 
-    .line 564
+    .line 570
     iget-object v0, p0, Lcom/bumptech/glide/Registry;->resourceEncoderRegistry:Lcom/bumptech/glide/provider/ResourceEncoderRegistry;
 
     invoke-interface {p1}, Lcom/bumptech/glide/load/engine/Resource;->getResourceClass()Ljava/lang/Class;
@@ -709,7 +709,7 @@
 
     return-object v0
 
-    .line 568
+    .line 574
     :cond_0
     new-instance v0, Lcom/bumptech/glide/Registry$NoResultEncoderAvailableException;
 
@@ -734,7 +734,7 @@
         }
     .end annotation
 
-    .line 583
+    .line 589
     iget-object v0, p0, Lcom/bumptech/glide/Registry;->dataRewinderRegistry:Lcom/bumptech/glide/load/data/DataRewinderRegistry;
 
     invoke-virtual {v0, p1}, Lcom/bumptech/glide/load/data/DataRewinderRegistry;->build(Ljava/lang/Object;)Lcom/bumptech/glide/load/data/DataRewinder;
@@ -762,7 +762,7 @@
         }
     .end annotation
 
-    .line 574
+    .line 580
     iget-object v0, p0, Lcom/bumptech/glide/Registry;->encoderRegistry:Lcom/bumptech/glide/provider/EncoderRegistry;
 
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
@@ -777,7 +777,7 @@
 
     return-object v0
 
-    .line 578
+    .line 584
     :cond_0
     new-instance v0, Lcom/bumptech/glide/Registry$NoSourceEncoderAvailableException;
 
@@ -800,7 +800,7 @@
         }
     .end annotation
 
-    .line 558
+    .line 564
     iget-object v0, p0, Lcom/bumptech/glide/Registry;->resourceEncoderRegistry:Lcom/bumptech/glide/provider/ResourceEncoderRegistry;
 
     invoke-interface {p1}, Lcom/bumptech/glide/load/engine/Resource;->getResourceClass()Ljava/lang/Class;
@@ -839,7 +839,7 @@
         }
     .end annotation
 
-    .line 335
+    .line 341
     iget-object v0, p0, Lcom/bumptech/glide/Registry;->resourceEncoderRegistry:Lcom/bumptech/glide/provider/ResourceEncoderRegistry;
 
     invoke-virtual {v0, p1, p2}, Lcom/bumptech/glide/provider/ResourceEncoderRegistry;->prepend(Ljava/lang/Class;Lcom/bumptech/glide/load/ResourceEncoder;)V
@@ -868,7 +868,7 @@
 
     const-string v0, "legacy_prepend_all"
 
-    .line 210
+    .line 216
     invoke-virtual {p0, v0, p1, p2, p3}, Lcom/bumptech/glide/Registry;->prepend(Ljava/lang/String;Ljava/lang/Class;Ljava/lang/Class;Lcom/bumptech/glide/load/ResourceDecoder;)Lcom/bumptech/glide/Registry;
 
     return-object p0
@@ -894,7 +894,7 @@
         }
     .end annotation
 
-    .line 240
+    .line 246
     iget-object v0, p0, Lcom/bumptech/glide/Registry;->decoderRegistry:Lcom/bumptech/glide/provider/ResourceDecoderRegistry;
 
     invoke-virtual {v0, p1, p4, p2, p3}, Lcom/bumptech/glide/provider/ResourceDecoderRegistry;->prepend(Ljava/lang/String;Lcom/bumptech/glide/load/ResourceDecoder;Ljava/lang/Class;Ljava/lang/Class;)V
@@ -905,7 +905,7 @@
 .method public register(Lcom/bumptech/glide/load/ImageHeaderParser;)Lcom/bumptech/glide/Registry;
     .locals 1
 
-    .line 374
+    .line 380
     iget-object v0, p0, Lcom/bumptech/glide/Registry;->imageHeaderParserRegistry:Lcom/bumptech/glide/provider/ImageHeaderParserRegistry;
 
     invoke-virtual {v0, p1}, Lcom/bumptech/glide/provider/ImageHeaderParserRegistry;->add(Lcom/bumptech/glide/load/ImageHeaderParser;)V
@@ -924,7 +924,7 @@
         }
     .end annotation
 
-    .line 345
+    .line 351
     iget-object v0, p0, Lcom/bumptech/glide/Registry;->dataRewinderRegistry:Lcom/bumptech/glide/load/data/DataRewinderRegistry;
 
     invoke-virtual {v0, p1}, Lcom/bumptech/glide/load/data/DataRewinderRegistry;->register(Lcom/bumptech/glide/load/data/DataRewinder$Factory;)V
@@ -951,7 +951,7 @@
         }
     .end annotation
 
-    .line 364
+    .line 370
     iget-object v0, p0, Lcom/bumptech/glide/Registry;->transcoderRegistry:Lcom/bumptech/glide/load/resource/transcode/TranscoderRegistry;
 
     invoke-virtual {v0, p1, p2, p3}, Lcom/bumptech/glide/load/resource/transcode/TranscoderRegistry;->register(Ljava/lang/Class;Ljava/lang/Class;Lcom/bumptech/glide/load/resource/transcode/ResourceTranscoder;)V
@@ -971,7 +971,7 @@
         }
     .end annotation
 
-    .line 263
+    .line 269
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-interface {p1}, Ljava/util/List;->size()I
@@ -982,10 +982,10 @@
 
     const-string v1, "legacy_prepend_all"
 
-    .line 264
+    .line 270
     invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 266
+    .line 272
     invoke-interface {p1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object p1
@@ -1003,7 +1003,7 @@
 
     check-cast v1, Ljava/lang/String;
 
-    .line 267
+    .line 273
     invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     goto :goto_0
@@ -1011,10 +1011,10 @@
     :cond_0
     const-string p1, "legacy_append"
 
-    .line 269
+    .line 275
     invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 270
+    .line 276
     iget-object p1, p0, Lcom/bumptech/glide/Registry;->decoderRegistry:Lcom/bumptech/glide/provider/ResourceDecoderRegistry;
 
     invoke-virtual {p1, v0}, Lcom/bumptech/glide/provider/ResourceDecoderRegistry;->setBucketPriorityList(Ljava/util/List;)V

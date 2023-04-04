@@ -9,7 +9,7 @@
 # instance fields
 .field public final buttonMore:Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
 
-.field public final buttonSubscribe:Lcom/smedialink/ui/custom/BigActionButton;
+.field public final buttonSubscribe:Lcom/iMe/ui/custom/BigActionButton;
 
 .field public final constraintTags:Landroidx/constraintlayout/widget/ConstraintLayout;
 
@@ -39,11 +39,11 @@
 
 .field public final textTags:Landroidx/appcompat/widget/AppCompatTextView;
 
-.field public final topic:Lcom/smedialink/ui/topics/TopicView;
+.field public final topic:Lcom/iMe/ui/topics/TopicView;
 
 
 # direct methods
-.method private constructor <init>(Landroidx/core/widget/NestedScrollView;Lorg/telegram/ui/ActionBar/ActionBarMenuItem;Lcom/smedialink/ui/custom/BigActionButton;Landroidx/constraintlayout/widget/ConstraintLayout;Landroidx/constraintlayout/widget/ConstraintLayout;Lcom/google/android/flexbox/FlexboxLayout;Landroidx/appcompat/widget/AppCompatImageView;Landroidx/appcompat/widget/AppCompatImageView;Landroidx/appcompat/widget/AppCompatImageView;Landroidx/appcompat/widget/AppCompatImageView;Landroidx/appcompat/widget/AppCompatTextView;Landroidx/appcompat/widget/AppCompatTextView;Landroidx/appcompat/widget/AppCompatTextView;Landroidx/appcompat/widget/AppCompatTextView;Landroidx/appcompat/widget/AppCompatTextView;Landroidx/appcompat/widget/AppCompatTextView;Landroidx/appcompat/widget/AppCompatTextView;Lcom/smedialink/ui/topics/TopicView;)V
+.method private constructor <init>(Landroidx/core/widget/NestedScrollView;Lorg/telegram/ui/ActionBar/ActionBarMenuItem;Lcom/iMe/ui/custom/BigActionButton;Landroidx/constraintlayout/widget/ConstraintLayout;Landroidx/constraintlayout/widget/ConstraintLayout;Lcom/google/android/flexbox/FlexboxLayout;Landroidx/appcompat/widget/AppCompatImageView;Landroidx/appcompat/widget/AppCompatImageView;Landroidx/appcompat/widget/AppCompatImageView;Landroidx/appcompat/widget/AppCompatImageView;Landroidx/appcompat/widget/AppCompatTextView;Landroidx/appcompat/widget/AppCompatTextView;Landroidx/appcompat/widget/AppCompatTextView;Landroidx/appcompat/widget/AppCompatTextView;Landroidx/appcompat/widget/AppCompatTextView;Landroidx/appcompat/widget/AppCompatTextView;Landroidx/appcompat/widget/AppCompatTextView;Lcom/iMe/ui/topics/TopicView;)V
     .locals 2
 
     move-object v0, p0
@@ -64,7 +64,7 @@
     move-object v1, p3
 
     .line 91
-    iput-object v1, v0, Lorg/telegram/messenger/databinding/ForkContentChannelDetailsBinding;->buttonSubscribe:Lcom/smedialink/ui/custom/BigActionButton;
+    iput-object v1, v0, Lorg/telegram/messenger/databinding/ForkContentChannelDetailsBinding;->buttonSubscribe:Lcom/iMe/ui/custom/BigActionButton;
 
     move-object v1, p5
 
@@ -134,7 +134,7 @@
     move-object/from16 v1, p18
 
     .line 106
-    iput-object v1, v0, Lorg/telegram/messenger/databinding/ForkContentChannelDetailsBinding;->topic:Lcom/smedialink/ui/topics/TopicView;
+    iput-object v1, v0, Lorg/telegram/messenger/databinding/ForkContentChannelDetailsBinding;->topic:Lcom/iMe/ui/topics/TopicView;
 
     return-void
 .end method
@@ -168,7 +168,7 @@
 
     move-object v6, v2
 
-    check-cast v6, Lcom/smedialink/ui/custom/BigActionButton;
+    check-cast v6, Lcom/iMe/ui/custom/BigActionButton;
 
     if-eqz v6, :cond_0
 
@@ -378,7 +378,7 @@
 
     move-object/from16 v21, v2
 
-    check-cast v21, Lcom/smedialink/ui/topics/TopicView;
+    check-cast v21, Lcom/iMe/ui/topics/TopicView;
 
     if-eqz v21, :cond_0
 
@@ -391,7 +391,7 @@
 
     check-cast v4, Landroidx/core/widget/NestedScrollView;
 
-    invoke-direct/range {v3 .. v21}, Lorg/telegram/messenger/databinding/ForkContentChannelDetailsBinding;-><init>(Landroidx/core/widget/NestedScrollView;Lorg/telegram/ui/ActionBar/ActionBarMenuItem;Lcom/smedialink/ui/custom/BigActionButton;Landroidx/constraintlayout/widget/ConstraintLayout;Landroidx/constraintlayout/widget/ConstraintLayout;Lcom/google/android/flexbox/FlexboxLayout;Landroidx/appcompat/widget/AppCompatImageView;Landroidx/appcompat/widget/AppCompatImageView;Landroidx/appcompat/widget/AppCompatImageView;Landroidx/appcompat/widget/AppCompatImageView;Landroidx/appcompat/widget/AppCompatTextView;Landroidx/appcompat/widget/AppCompatTextView;Landroidx/appcompat/widget/AppCompatTextView;Landroidx/appcompat/widget/AppCompatTextView;Landroidx/appcompat/widget/AppCompatTextView;Landroidx/appcompat/widget/AppCompatTextView;Landroidx/appcompat/widget/AppCompatTextView;Lcom/smedialink/ui/topics/TopicView;)V
+    invoke-direct/range {v3 .. v21}, Lorg/telegram/messenger/databinding/ForkContentChannelDetailsBinding;-><init>(Landroidx/core/widget/NestedScrollView;Lorg/telegram/ui/ActionBar/ActionBarMenuItem;Lcom/iMe/ui/custom/BigActionButton;Landroidx/constraintlayout/widget/ConstraintLayout;Landroidx/constraintlayout/widget/ConstraintLayout;Lcom/google/android/flexbox/FlexboxLayout;Landroidx/appcompat/widget/AppCompatImageView;Landroidx/appcompat/widget/AppCompatImageView;Landroidx/appcompat/widget/AppCompatImageView;Landroidx/appcompat/widget/AppCompatImageView;Landroidx/appcompat/widget/AppCompatTextView;Landroidx/appcompat/widget/AppCompatTextView;Landroidx/appcompat/widget/AppCompatTextView;Landroidx/appcompat/widget/AppCompatTextView;Landroidx/appcompat/widget/AppCompatTextView;Landroidx/appcompat/widget/AppCompatTextView;Landroidx/appcompat/widget/AppCompatTextView;Lcom/iMe/ui/topics/TopicView;)V
 
     return-object v1
 

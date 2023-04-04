@@ -29,7 +29,7 @@ import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
-import com.google.android.exoplayer2.C0468C;
+import com.google.android.exoplayer2.C0482C;
 import com.google.android.exoplayer2.analytics.AnalyticsListener;
 import com.google.android.exoplayer2.p017ui.AspectRatioFrameLayout;
 import com.google.android.gms.common.internal.ImagesContract;
@@ -47,7 +47,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.Bitmaps;
 import org.telegram.messenger.BuildVars;
-import org.telegram.messenger.C3301R;
+import org.telegram.messenger.C3316R;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.p048ui.Components.VideoPlayer;
@@ -1166,7 +1166,7 @@ public class WebPlayerView extends ViewGroup implements VideoPlayer.VideoPlayerD
         public void checkNeedHide() {
             AndroidUtilities.cancelRunOnUIThread(this.hideRunnable);
             if (this.isVisible && WebPlayerView.this.videoPlayer.isPlaying()) {
-                AndroidUtilities.runOnUIThread(this.hideRunnable, C0468C.DEFAULT_MAX_SEEK_TO_PREVIOUS_POSITION_MS);
+                AndroidUtilities.runOnUIThread(this.hideRunnable, C0482C.DEFAULT_MAX_SEEK_TO_PREVIOUS_POSITION_MS);
             }
         }
 
@@ -1224,7 +1224,7 @@ public class WebPlayerView extends ViewGroup implements VideoPlayer.VideoPlayerD
                 AndroidUtilities.cancelRunOnUIThread(this.hideRunnable);
             } else if (motionEvent.getAction() == 1 || motionEvent.getAction() == 3) {
                 if (WebPlayerView.this.initied && WebPlayerView.this.videoPlayer.isPlaying()) {
-                    AndroidUtilities.runOnUIThread(this.hideRunnable, C0468C.DEFAULT_MAX_SEEK_TO_PREVIOUS_POSITION_MS);
+                    AndroidUtilities.runOnUIThread(this.hideRunnable, C0482C.DEFAULT_MAX_SEEK_TO_PREVIOUS_POSITION_MS);
                 }
                 if (this.progressPressed) {
                     this.progressPressed = false;
@@ -1374,8 +1374,8 @@ public class WebPlayerView extends ViewGroup implements VideoPlayer.VideoPlayerD
             /* JADX INFO: Access modifiers changed from: package-private */
             /* renamed from: org.telegram.ui.Components.WebPlayerView$2$1 */
             /* loaded from: classes6.dex */
-            public class ViewTreeObserver$OnPreDrawListenerC53511 implements ViewTreeObserver.OnPreDrawListener {
-                ViewTreeObserver$OnPreDrawListenerC53511() {
+            public class ViewTreeObserver$OnPreDrawListenerC53721 implements ViewTreeObserver.OnPreDrawListener {
+                ViewTreeObserver$OnPreDrawListenerC53721() {
                 }
 
                 @Override // android.view.ViewTreeObserver.OnPreDrawListener
@@ -1392,7 +1392,7 @@ public class WebPlayerView extends ViewGroup implements VideoPlayer.VideoPlayerD
                     AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.WebPlayerView$2$1$$ExternalSyntheticLambda0
                         @Override // java.lang.Runnable
                         public final void run() {
-                            WebPlayerView.TextureView$SurfaceTextureListenerC53502.ViewTreeObserver$OnPreDrawListenerC53511.this.lambda$onPreDraw$0();
+                            WebPlayerView.TextureView$SurfaceTextureListenerC53712.ViewTreeObserver$OnPreDrawListenerC53721.this.lambda$onPreDraw$0();
                         }
                     });
                     WebPlayerView.this.waitingForFirstTextureUpload = 0;
@@ -1408,7 +1408,7 @@ public class WebPlayerView extends ViewGroup implements VideoPlayer.VideoPlayerD
             @Override // android.view.TextureView.SurfaceTextureListener
             public void onSurfaceTextureUpdated(SurfaceTexture surfaceTexture) {
                 if (WebPlayerView.this.waitingForFirstTextureUpload == 1) {
-                    WebPlayerView.this.changedTextureView.getViewTreeObserver().addOnPreDrawListener(new ViewTreeObserver$OnPreDrawListenerC53511());
+                    WebPlayerView.this.changedTextureView.getViewTreeObserver().addOnPreDrawListener(new ViewTreeObserver$OnPreDrawListenerC53721());
                     WebPlayerView.this.changedTextureView.invalidate();
                 }
             }
@@ -1566,7 +1566,7 @@ public class WebPlayerView extends ViewGroup implements VideoPlayer.VideoPlayerD
             ImageView imageView5 = new ImageView(context);
             this.shareButton = imageView5;
             imageView5.setScaleType(ImageView.ScaleType.CENTER);
-            this.shareButton.setImageResource(C3301R.C3303drawable.ic_share_video);
+            this.shareButton.setImageResource(C3316R.C3318drawable.ic_share_video);
             this.controlsView.addView(this.shareButton, LayoutHelper.createFrame(56, 48, 53));
             this.shareButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.WebPlayerView$$ExternalSyntheticLambda1
                 @Override // android.view.View.OnClickListener
@@ -1719,7 +1719,7 @@ public class WebPlayerView extends ViewGroup implements VideoPlayer.VideoPlayerD
     @Override // org.telegram.p048ui.Components.VideoPlayer.VideoPlayerDelegate
     public void onStateChanged(boolean z, int i) {
         if (i != 2) {
-            if (this.videoPlayer.getDuration() != C0468C.TIME_UNSET) {
+            if (this.videoPlayer.getDuration() != C0482C.TIME_UNSET) {
                 this.controlsView.setDuration((int) (this.videoPlayer.getDuration() / 1000));
             } else {
                 this.controlsView.setDuration(0);
@@ -1851,14 +1851,14 @@ public class WebPlayerView extends ViewGroup implements VideoPlayer.VideoPlayerD
         AndroidUtilities.cancelRunOnUIThread(this.progressRunnable);
         if (!this.videoPlayer.isPlaying()) {
             if (this.isCompleted) {
-                this.playButton.setImageResource(this.isInline ? C3301R.C3303drawable.ic_againinline : C3301R.C3303drawable.ic_again);
+                this.playButton.setImageResource(this.isInline ? C3316R.C3318drawable.ic_againinline : C3316R.C3318drawable.ic_again);
                 return;
             } else {
-                this.playButton.setImageResource(this.isInline ? C3301R.C3303drawable.ic_playinline : C3301R.C3303drawable.ic_play);
+                this.playButton.setImageResource(this.isInline ? C3316R.C3318drawable.ic_playinline : C3316R.C3318drawable.ic_play);
                 return;
             }
         }
-        this.playButton.setImageResource(this.isInline ? C3301R.C3303drawable.ic_pauseinline : C3301R.C3303drawable.ic_pause);
+        this.playButton.setImageResource(this.isInline ? C3316R.C3318drawable.ic_pauseinline : C3316R.C3318drawable.ic_pause);
         AndroidUtilities.runOnUIThread(this.progressRunnable, 500L);
         checkAudioFocus();
     }
@@ -1909,11 +1909,11 @@ public class WebPlayerView extends ViewGroup implements VideoPlayer.VideoPlayerD
         }
         this.fullscreenButton.setVisibility(0);
         if (!this.inFullscreen) {
-            this.fullscreenButton.setImageResource(C3301R.C3303drawable.ic_gofullscreen);
+            this.fullscreenButton.setImageResource(C3316R.C3318drawable.ic_gofullscreen);
             this.fullscreenButton.setLayoutParams(LayoutHelper.createFrame(56, 56, 85, 0, 0, 0, 5));
             return;
         }
-        this.fullscreenButton.setImageResource(C3301R.C3303drawable.ic_outfullscreen);
+        this.fullscreenButton.setImageResource(C3316R.C3318drawable.ic_outfullscreen);
         this.fullscreenButton.setLayoutParams(LayoutHelper.createFrame(56, 56, 85, 0, 0, 0, 1));
     }
 
@@ -1940,7 +1940,7 @@ public class WebPlayerView extends ViewGroup implements VideoPlayer.VideoPlayerD
         if (imageView == null) {
             return;
         }
-        imageView.setImageResource(this.isInline ? C3301R.C3303drawable.ic_goinline : C3301R.C3303drawable.ic_outinline);
+        imageView.setImageResource(this.isInline ? C3316R.C3318drawable.ic_goinline : C3316R.C3318drawable.ic_outinline);
         this.inlineButton.setVisibility(this.videoPlayer.isPlayerPrepared() ? 0 : 8);
         if (this.isInline) {
             this.inlineButton.setLayoutParams(LayoutHelper.createFrame(40, 40, 53));
@@ -1961,7 +1961,7 @@ public class WebPlayerView extends ViewGroup implements VideoPlayer.VideoPlayerD
             this.videoPlayer.preparePlayer(Uri.parse(str), this.playVideoType);
         }
         this.videoPlayer.setPlayWhenReady(this.isAutoplay);
-        if (this.videoPlayer.getDuration() != C0468C.TIME_UNSET) {
+        if (this.videoPlayer.getDuration() != C0482C.TIME_UNSET) {
             this.controlsView.setDuration((int) (this.videoPlayer.getDuration() / 1000));
         } else {
             this.controlsView.setDuration(0);

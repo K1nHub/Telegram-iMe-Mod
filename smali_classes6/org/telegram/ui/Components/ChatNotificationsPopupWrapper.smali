@@ -513,33 +513,33 @@
 .method private formatMuteForTime(I)Ljava/lang/String;
     .locals 4
 
-    .line 238
+    .line 239
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
     const v1, 0x15180
 
-    .line 239
+    .line 240
     div-int v2, p1, v1
 
     mul-int/2addr v1, v2
 
     sub-int/2addr p1, v1
 
-    .line 241
+    .line 242
     div-int/lit16 v1, p1, 0xe10
 
     mul-int/lit16 v3, v1, 0xe10
 
     sub-int/2addr p1, v3
 
-    .line 243
+    .line 244
     div-int/lit8 p1, p1, 0x3c
 
     if-eqz v2, :cond_0
 
-    .line 246
+    .line 247
     invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     sget v2, Lorg/telegram/messenger/R$string;->SecretChatTimerDays:I
@@ -557,17 +557,17 @@
 
     if-eqz v1, :cond_2
 
-    .line 249
+    .line 250
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->length()I
 
     move-result v3
 
     if-lez v3, :cond_1
 
-    .line 250
+    .line 251
     invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 252
+    .line 253
     :cond_1
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
@@ -584,17 +584,17 @@
     :cond_2
     if-eqz p1, :cond_4
 
-    .line 255
+    .line 256
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->length()I
 
     move-result v1
 
     if-lez v1, :cond_3
 
-    .line 256
+    .line 257
     invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 258
+    .line 259
     :cond_3
     invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
@@ -608,7 +608,7 @@
 
     invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 260
+    .line 261
     :cond_4
     sget p1, Lorg/telegram/messenger/R$string;->MuteForButton:I
 
@@ -827,7 +827,7 @@
 
     if-eqz p1, :cond_3
 
-    .line 264
+    .line 265
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/BaseFragment;->getFragmentView()Landroid/view/View;
 
     move-result-object v0
@@ -836,7 +836,7 @@
 
     goto/16 :goto_1
 
-    .line 267
+    .line 268
     :cond_0
     new-instance v0, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;
 
@@ -850,39 +850,39 @@
 
     const/4 v1, 0x1
 
-    .line 268
+    .line 269
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;->setPauseNotifications(Z)V
 
-    .line 269
+    .line 270
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatNotificationsPopupWrapper;->popupWindow:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;
 
     const/16 v2, 0xdc
 
     invoke-virtual {v0, v2}, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;->setDismissAnimationDuration(I)V
 
-    .line 270
+    .line 271
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatNotificationsPopupWrapper;->popupWindow:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;
 
     invoke-virtual {v0, v1}, Landroid/widget/PopupWindow;->setOutsideTouchable(Z)V
 
-    .line 271
+    .line 272
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatNotificationsPopupWrapper;->popupWindow:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;
 
     invoke-virtual {v0, v1}, Landroid/widget/PopupWindow;->setClippingEnabled(Z)V
 
-    .line 272
+    .line 273
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatNotificationsPopupWrapper;->popupWindow:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;
 
     sget v2, Lorg/telegram/messenger/R$style;->PopupContextAnimation:I
 
     invoke-virtual {v0, v2}, Landroid/widget/PopupWindow;->setAnimationStyle(I)V
 
-    .line 273
+    .line 274
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatNotificationsPopupWrapper;->popupWindow:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;
 
     invoke-virtual {v0, v1}, Landroid/widget/PopupWindow;->setFocusable(Z)V
 
-    .line 274
+    .line 275
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatNotificationsPopupWrapper;->windowLayout:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
     const/16 v2, 0x3e8
@@ -907,14 +907,14 @@
 
     invoke-virtual {v0, v3, v2}, Landroid/widget/FrameLayout;->measure(II)V
 
-    .line 275
+    .line 276
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatNotificationsPopupWrapper;->popupWindow:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;
 
     const/4 v2, 0x2
 
     invoke-virtual {v0, v2}, Landroid/widget/PopupWindow;->setInputMethodMode(I)V
 
-    .line 276
+    .line 277
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatNotificationsPopupWrapper;->popupWindow:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;
 
     invoke-virtual {v0}, Landroid/widget/PopupWindow;->getContentView()Landroid/view/View;
@@ -926,14 +926,14 @@
     :goto_0
     if-eqz p2, :cond_2
 
-    .line 280
+    .line 281
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/BaseFragment;->getFragmentView()Landroid/view/View;
 
     move-result-object v0
 
     if-eq p2, v0, :cond_2
 
-    .line 281
+    .line 282
     invoke-virtual {p2}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
 
     move-result-object v0
@@ -942,7 +942,7 @@
 
     return-void
 
-    .line 284
+    .line 285
     :cond_1
     invoke-virtual {p2}, Landroid/view/View;->getX()F
 
@@ -950,14 +950,14 @@
 
     add-float/2addr p3, v0
 
-    .line 285
+    .line 286
     invoke-virtual {p2}, Landroid/view/View;->getY()F
 
     move-result v0
 
     add-float/2addr p4, v0
 
-    .line 286
+    .line 287
     invoke-virtual {p2}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
 
     move-result-object p2
@@ -966,7 +966,7 @@
 
     goto :goto_0
 
-    .line 288
+    .line 289
     :cond_2
     iget-object p2, p0, Lorg/telegram/ui/Components/ChatNotificationsPopupWrapper;->windowLayout:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
@@ -982,7 +982,7 @@
 
     sub-float/2addr p3, p2
 
-    .line 289
+    .line 290
     iget-object p2, p0, Lorg/telegram/ui/Components/ChatNotificationsPopupWrapper;->windowLayout:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
     invoke-virtual {p2}, Landroid/widget/FrameLayout;->getMeasuredHeight()I
@@ -995,7 +995,7 @@
 
     sub-float/2addr p4, p2
 
-    .line 290
+    .line 291
     iget-object p2, p0, Lorg/telegram/ui/Components/ChatNotificationsPopupWrapper;->popupWindow:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;
 
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/BaseFragment;->getFragmentView()Landroid/view/View;
@@ -1010,7 +1010,7 @@
 
     invoke-virtual {p2, p1, v0, p3, p4}, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;->showAtLocation(Landroid/view/View;III)V
 
-    .line 291
+    .line 292
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatNotificationsPopupWrapper;->popupWindow:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;
 
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;->dimBehind()V
@@ -1330,9 +1330,20 @@
 
     invoke-virtual {p2, p1, p1}, Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;->setColors(II)Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;
 
+    .line 221
+    iget-object p2, p0, Lorg/telegram/ui/Components/ChatNotificationsPopupWrapper;->muteUnmuteButton:Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;
+
+    const v0, 0x3dcccccd    # 0.1f
+
+    invoke-static {p1, v0}, Lorg/telegram/ui/ActionBar/Theme;->multAlpha(IF)I
+
+    move-result p1
+
+    invoke-virtual {p2, p1}, Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;->setSelectorColor(I)V
+
     if-eqz p4, :cond_9
 
-    .line 222
+    .line 223
     invoke-virtual {p4}, Ljava/util/HashSet;->isEmpty()Z
 
     move-result p1
@@ -1341,21 +1352,21 @@
 
     goto :goto_6
 
-    .line 226
+    .line 227
     :cond_8
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatNotificationsPopupWrapper;->gap:Landroid/view/View;
 
     invoke-virtual {p1, v2}, Landroid/view/View;->setVisibility(I)V
 
-    .line 227
+    .line 228
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatNotificationsPopupWrapper;->topicsExceptionsTextView:Landroid/widget/TextView;
 
     invoke-virtual {p1, v2}, Landroid/widget/TextView;->setVisibility(I)V
 
-    .line 228
+    .line 229
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatNotificationsPopupWrapper;->topicsExceptionsTextView:Landroid/widget/TextView;
 
-    .line 229
+    .line 230
     invoke-virtual {p4}, Ljava/util/HashSet;->size()I
 
     move-result p2
@@ -1372,7 +1383,7 @@
 
     const-string v0, "windowBackgroundWhiteBlueText"
 
-    .line 228
+    .line 229
     invoke-static {p2, v0, p3, p4}, Lorg/telegram/messenger/AndroidUtilities;->replaceSingleTag(Ljava/lang/String;Ljava/lang/String;ILjava/lang/Runnable;)Ljava/lang/CharSequence;
 
     move-result-object p2
@@ -1381,14 +1392,14 @@
 
     goto :goto_7
 
-    .line 223
+    .line 224
     :cond_9
     :goto_6
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatNotificationsPopupWrapper;->gap:Landroid/view/View;
 
     invoke-virtual {p1, v1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 224
+    .line 225
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatNotificationsPopupWrapper;->topicsExceptionsTextView:Landroid/widget/TextView;
 
     invoke-virtual {p1, v1}, Landroid/widget/TextView;->setVisibility(I)V

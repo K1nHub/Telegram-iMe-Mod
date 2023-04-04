@@ -179,7 +179,7 @@ public final class RemoteSerializer {
         for (DocumentTransform.FieldTransform fieldTransform : write.getUpdateTransformsList()) {
             arrayList.add(decodeFieldTransform(fieldTransform));
         }
-        int i = C10231.$SwitchMap$com$google$firestore$v1$Write$OperationCase[write.getOperationCase().ordinal()];
+        int i = C10371.$SwitchMap$com$google$firestore$v1$Write$OperationCase[write.getOperationCase().ordinal()];
         if (i == 1) {
             if (write.hasUpdateMask()) {
                 return new PatchMutation(decodeKey(write.getUpdate().getName()), ObjectValue.fromMap(write.getUpdate().getFieldsMap()), decodeDocumentMask(write.getUpdateMask()), precondition2, arrayList);
@@ -208,7 +208,7 @@ public final class RemoteSerializer {
     }
 
     private com.google.firebase.firestore.model.mutation.Precondition decodePrecondition(com.google.firestore.p022v1.Precondition precondition) {
-        int i = C10231.f189x8f18ca41[precondition.getConditionTypeCase().ordinal()];
+        int i = C10371.f189x8f18ca41[precondition.getConditionTypeCase().ordinal()];
         if (i != 1) {
             if (i != 2) {
                 if (i == 3) {
@@ -256,7 +256,7 @@ public final class RemoteSerializer {
     }
 
     private FieldTransform decodeFieldTransform(DocumentTransform.FieldTransform fieldTransform) {
-        int i = C10231.f187xdd498c9f[fieldTransform.getTransformTypeCase().ordinal()];
+        int i = C10371.f187xdd498c9f[fieldTransform.getTransformTypeCase().ordinal()];
         if (i == 1) {
             Assert.hardAssert(fieldTransform.getSetToServerValue() == DocumentTransform.FieldTransform.ServerValue.REQUEST_TIME, "Unknown transform setToServerValue: %s", fieldTransform.getSetToServerValue());
             return new FieldTransform(FieldPath.fromServerFormat(fieldTransform.getFieldPath()), ServerTimestampOperation.getInstance());
@@ -297,7 +297,7 @@ public final class RemoteSerializer {
     }
 
     private String encodeLabel(QueryPurpose queryPurpose) {
-        int i = C10231.$SwitchMap$com$google$firebase$firestore$local$QueryPurpose[queryPurpose.ordinal()];
+        int i = C10371.$SwitchMap$com$google$firebase$firestore$local$QueryPurpose[queryPurpose.ordinal()];
         if (i != 1) {
             if (i != 2) {
                 if (i == 3) {
@@ -523,7 +523,7 @@ public final class RemoteSerializer {
         }
         ArrayList arrayList = new ArrayList(singletonList.size());
         for (StructuredQuery.Filter filter2 : singletonList) {
-            int i = C10231.f191x9d2ee979[filter2.getFilterTypeCase().ordinal()];
+            int i = C10371.f191x9d2ee979[filter2.getFilterTypeCase().ordinal()];
             if (i == 1) {
                 throw Assert.fail("Nested composite filters are not supported.", new Object[0]);
             }
@@ -577,7 +577,7 @@ public final class RemoteSerializer {
 
     private Filter decodeUnaryFilter(StructuredQuery.UnaryFilter unaryFilter) {
         FieldPath fromServerFormat = FieldPath.fromServerFormat(unaryFilter.getField().getFieldPath());
-        int i = C10231.f192xf473b456[unaryFilter.getOp().ordinal()];
+        int i = C10371.f192xf473b456[unaryFilter.getOp().ordinal()];
         if (i != 1) {
             if (i != 2) {
                 if (i != 3) {
@@ -598,7 +598,7 @@ public final class RemoteSerializer {
     }
 
     private StructuredQuery.FieldFilter.Operator encodeFieldFilterOperator(Filter.Operator operator) {
-        switch (C10231.$SwitchMap$com$google$firebase$firestore$core$Filter$Operator[operator.ordinal()]) {
+        switch (C10371.$SwitchMap$com$google$firebase$firestore$core$Filter$Operator[operator.ordinal()]) {
             case 1:
                 return StructuredQuery.FieldFilter.Operator.LESS_THAN;
             case 2:
@@ -625,7 +625,7 @@ public final class RemoteSerializer {
     }
 
     private Filter.Operator decodeFieldFilterOperator(StructuredQuery.FieldFilter.Operator operator) {
-        switch (C10231.f190xaf95d2b[operator.ordinal()]) {
+        switch (C10371.f190xaf95d2b[operator.ordinal()]) {
             case 1:
                 return Filter.Operator.LESS_THAN;
             case 2:
@@ -665,7 +665,7 @@ public final class RemoteSerializer {
     private OrderBy decodeOrderBy(StructuredQuery.Order order) {
         OrderBy.Direction direction;
         FieldPath fromServerFormat = FieldPath.fromServerFormat(order.getField().getFieldPath());
-        int i = C10231.$SwitchMap$com$google$firestore$v1$StructuredQuery$Direction[order.getDirection().ordinal()];
+        int i = C10371.$SwitchMap$com$google$firestore$v1$StructuredQuery$Direction[order.getDirection().ordinal()];
         if (i == 1) {
             direction = OrderBy.Direction.ASCENDING;
         } else if (i != 2) {
@@ -679,7 +679,7 @@ public final class RemoteSerializer {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.google.firebase.firestore.remote.RemoteSerializer$1 */
     /* loaded from: classes3.dex */
-    public static /* synthetic */ class C10231 {
+    public static /* synthetic */ class C10371 {
         static final /* synthetic */ int[] $SwitchMap$com$google$firebase$firestore$core$Filter$Operator;
         static final /* synthetic */ int[] $SwitchMap$com$google$firebase$firestore$local$QueryPurpose;
 
@@ -949,11 +949,11 @@ public final class RemoteSerializer {
     public WatchChange decodeWatchChange(ListenResponse listenResponse) {
         WatchChange.WatchTargetChangeType watchTargetChangeType;
         WatchChange watchTargetChange;
-        int i = C10231.f188x1837d9f[listenResponse.getResponseTypeCase().ordinal()];
+        int i = C10371.f188x1837d9f[listenResponse.getResponseTypeCase().ordinal()];
         Status status = null;
         if (i == 1) {
             com.google.firestore.p022v1.TargetChange targetChange = listenResponse.getTargetChange();
-            int i2 = C10231.$SwitchMap$com$google$firestore$v1$TargetChange$TargetChangeType[targetChange.getTargetChangeType().ordinal()];
+            int i2 = C10371.$SwitchMap$com$google$firestore$v1$TargetChange$TargetChangeType[targetChange.getTargetChangeType().ordinal()];
             if (i2 == 1) {
                 watchTargetChangeType = WatchChange.WatchTargetChangeType.NoChange;
             } else if (i2 == 2) {

@@ -62,23 +62,23 @@
 
 .field public static final material:I = 0x7f090219
 
-.field public static final monochrome:I = 0x7f09023e
+.field public static final monochrome:I = 0x7f09023d
 
-.field public static final none:I = 0x7f090270
+.field public static final none:I = 0x7f09026f
 
-.field public static final production:I = 0x7f0902b1
+.field public static final production:I = 0x7f0902b0
 
-.field public static final sandbox:I = 0x7f0902e3
+.field public static final sandbox:I = 0x7f0902e2
 
-.field public static final selectionDetails:I = 0x7f0902fe
+.field public static final selectionDetails:I = 0x7f0902fd
 
-.field public static final slide:I = 0x7f090312
+.field public static final slide:I = 0x7f090311
 
-.field public static final strict_sandbox:I = 0x7f09033c
+.field public static final strict_sandbox:I = 0x7f09033b
 
-.field public static final test:I = 0x7f090353
+.field public static final test:I = 0x7f090352
 
-.field public static final wrap_content:I = 0x7f090466
+.field public static final wrap_content:I = 0x7f090465
 
 
 # direct methods

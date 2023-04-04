@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Set;
 import org.telegram.messenger.CacheByChatsController;
-import p034j$.util.concurrent.ConcurrentHashMap;
+import p035j$.util.concurrent.ConcurrentHashMap;
 /* loaded from: classes4.dex */
 public class AutoDeleteMediaTask {
     public static Set<String> usingFilePaths = Collections.newSetFromMap(new ConcurrentHashMap());
@@ -25,16 +25,18 @@ public class AutoDeleteMediaTask {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* JADX WARN: Removed duplicated region for block: B:132:0x026e  */
-    /* JADX WARN: Removed duplicated region for block: B:139:0x0297  */
-    /* JADX WARN: Removed duplicated region for block: B:181:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:140:0x02b6  */
+    /* JADX WARN: Removed duplicated region for block: B:147:0x02df  */
+    /* JADX WARN: Removed duplicated region for block: B:154:0x0169 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:181:0x01af A[SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:191:? A[RETURN, SYNTHETIC] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct add '--show-bad-code' argument
     */
     public static /* synthetic */ void lambda$run$1(int r26, java.io.File r27) {
         /*
-            Method dump skipped, instructions count: 735
+            Method dump skipped, instructions count: 807
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: org.telegram.messenger.AutoDeleteMediaTask.lambda$run$1(int, java.io.File):void");

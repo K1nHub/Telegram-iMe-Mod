@@ -2,40 +2,74 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lorg/fork/utils/Callbacks$Callback1;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
 .field public final synthetic f$0:Lorg/telegram/ui/ProfileActivity;
 
-.field public final synthetic f$1:Lorg/fork/enums/ParticipantsActionType;
+.field public final synthetic f$1:Lorg/telegram/tgnet/TLRPC$InputFile;
+
+.field public final synthetic f$2:Lorg/telegram/tgnet/TLRPC$InputFile;
+
+.field public final synthetic f$3:Lorg/telegram/tgnet/TLRPC$VideoSize;
+
+.field public final synthetic f$4:D
+
+.field public final synthetic f$5:Ljava/lang/String;
+
+.field public final synthetic f$6:Lorg/telegram/tgnet/TLRPC$PhotoSize;
+
+.field public final synthetic f$7:Lorg/telegram/tgnet/TLRPC$PhotoSize;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/ProfileActivity;Lorg/fork/enums/ParticipantsActionType;)V
+.method public synthetic constructor <init>(Lorg/telegram/ui/ProfileActivity;Lorg/telegram/tgnet/TLRPC$InputFile;Lorg/telegram/tgnet/TLRPC$InputFile;Lorg/telegram/tgnet/TLRPC$VideoSize;DLjava/lang/String;Lorg/telegram/tgnet/TLRPC$PhotoSize;Lorg/telegram/tgnet/TLRPC$PhotoSize;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/ui/ProfileActivity$$ExternalSyntheticLambda47;->f$0:Lorg/telegram/ui/ProfileActivity;
 
-    iput-object p2, p0, Lorg/telegram/ui/ProfileActivity$$ExternalSyntheticLambda47;->f$1:Lorg/fork/enums/ParticipantsActionType;
+    iput-object p2, p0, Lorg/telegram/ui/ProfileActivity$$ExternalSyntheticLambda47;->f$1:Lorg/telegram/tgnet/TLRPC$InputFile;
+
+    iput-object p3, p0, Lorg/telegram/ui/ProfileActivity$$ExternalSyntheticLambda47;->f$2:Lorg/telegram/tgnet/TLRPC$InputFile;
+
+    iput-object p4, p0, Lorg/telegram/ui/ProfileActivity$$ExternalSyntheticLambda47;->f$3:Lorg/telegram/tgnet/TLRPC$VideoSize;
+
+    iput-wide p5, p0, Lorg/telegram/ui/ProfileActivity$$ExternalSyntheticLambda47;->f$4:D
+
+    iput-object p7, p0, Lorg/telegram/ui/ProfileActivity$$ExternalSyntheticLambda47;->f$5:Ljava/lang/String;
+
+    iput-object p8, p0, Lorg/telegram/ui/ProfileActivity$$ExternalSyntheticLambda47;->f$6:Lorg/telegram/tgnet/TLRPC$PhotoSize;
+
+    iput-object p9, p0, Lorg/telegram/ui/ProfileActivity$$ExternalSyntheticLambda47;->f$7:Lorg/telegram/tgnet/TLRPC$PhotoSize;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;)V
-    .locals 2
+.method public final run()V
+    .locals 9
 
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$$ExternalSyntheticLambda47;->f$0:Lorg/telegram/ui/ProfileActivity;
 
-    iget-object v1, p0, Lorg/telegram/ui/ProfileActivity$$ExternalSyntheticLambda47;->f$1:Lorg/fork/enums/ParticipantsActionType;
+    iget-object v1, p0, Lorg/telegram/ui/ProfileActivity$$ExternalSyntheticLambda47;->f$1:Lorg/telegram/tgnet/TLRPC$InputFile;
 
-    check-cast p1, Ljava/lang/Boolean;
+    iget-object v2, p0, Lorg/telegram/ui/ProfileActivity$$ExternalSyntheticLambda47;->f$2:Lorg/telegram/tgnet/TLRPC$InputFile;
 
-    invoke-static {v0, v1, p1}, Lorg/telegram/ui/ProfileActivity;->$r8$lambda$t7H2qP3lpTBPZNVVDcfrbGjIR_4(Lorg/telegram/ui/ProfileActivity;Lorg/fork/enums/ParticipantsActionType;Ljava/lang/Boolean;)V
+    iget-object v3, p0, Lorg/telegram/ui/ProfileActivity$$ExternalSyntheticLambda47;->f$3:Lorg/telegram/tgnet/TLRPC$VideoSize;
+
+    iget-wide v4, p0, Lorg/telegram/ui/ProfileActivity$$ExternalSyntheticLambda47;->f$4:D
+
+    iget-object v6, p0, Lorg/telegram/ui/ProfileActivity$$ExternalSyntheticLambda47;->f$5:Ljava/lang/String;
+
+    iget-object v7, p0, Lorg/telegram/ui/ProfileActivity$$ExternalSyntheticLambda47;->f$6:Lorg/telegram/tgnet/TLRPC$PhotoSize;
+
+    iget-object v8, p0, Lorg/telegram/ui/ProfileActivity$$ExternalSyntheticLambda47;->f$7:Lorg/telegram/tgnet/TLRPC$PhotoSize;
+
+    invoke-static/range {v0 .. v8}, Lorg/telegram/ui/ProfileActivity;->$r8$lambda$Z6rk__G2cg6R0Lc8oMvxUgLTIec(Lorg/telegram/ui/ProfileActivity;Lorg/telegram/tgnet/TLRPC$InputFile;Lorg/telegram/tgnet/TLRPC$InputFile;Lorg/telegram/tgnet/TLRPC$VideoSize;DLjava/lang/String;Lorg/telegram/tgnet/TLRPC$PhotoSize;Lorg/telegram/tgnet/TLRPC$PhotoSize;)V
 
     return-void
 .end method

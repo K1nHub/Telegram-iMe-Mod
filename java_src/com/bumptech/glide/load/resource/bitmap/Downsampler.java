@@ -2,7 +2,6 @@ package com.bumptech.glide.load.resource.bitmap;
 
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.graphics.ColorSpace;
 import android.os.Build;
 import android.os.ParcelFileDescriptor;
 import android.util.DisplayMetrics;
@@ -46,7 +45,7 @@ public final class Downsampler {
     private final HardwareConfigState hardwareConfigState = HardwareConfigState.getInstance();
     private final List<ImageHeaderParser> parsers;
     public static final Option<DecodeFormat> DECODE_FORMAT = Option.memory("com.bumptech.glide.load.resource.bitmap.Downsampler.DecodeFormat", DecodeFormat.DEFAULT);
-    public static final Option<PreferredColorSpace> PREFERRED_COLOR_SPACE = Option.memory("com.bumptech.glide.load.resource.bitmap.Downsampler.PreferredColorSpace", PreferredColorSpace.SRGB);
+    public static final Option<PreferredColorSpace> PREFERRED_COLOR_SPACE = Option.memory("com.bumptech.glide.load.resource.bitmap.Downsampler.PreferredColorSpace");
     @Deprecated
     public static final Option<DownsampleStrategy> DOWNSAMPLE_STRATEGY = DownsampleStrategy.OPTION;
 
@@ -102,8 +101,8 @@ public final class Downsampler {
         return ParcelFileDescriptorRewinder.isSupported();
     }
 
-    public Resource<Bitmap> decode(InputStream inputStream, int i, int i2, Options options) throws IOException {
-        return decode(inputStream, i, i2, options, EMPTY_CALLBACKS);
+    public Resource<Bitmap> decode(ByteBuffer byteBuffer, int i, int i2, Options options) throws IOException {
+        return decode(new ImageReader.ByteBufferReader(byteBuffer, this.parsers, this.byteArrayPool), i, i2, options, EMPTY_CALLBACKS);
     }
 
     public Resource<Bitmap> decode(InputStream inputStream, int i, int i2, Options options, DecodeCallbacks decodeCallbacks) throws IOException {
@@ -131,91 +130,19 @@ public final class Downsampler {
         }
     }
 
-    private Bitmap decodeFromWrappedStreams(ImageReader imageReader, BitmapFactory.Options options, DownsampleStrategy downsampleStrategy, DecodeFormat decodeFormat, PreferredColorSpace preferredColorSpace, boolean z, int i, int i2, boolean z2, DecodeCallbacks decodeCallbacks) throws IOException {
-        int i3;
-        int i4;
-        int i5;
-        Downsampler downsampler;
-        int round;
-        int round2;
-        int i6;
-        ColorSpace colorSpace;
-        long logTime = LogTime.getLogTime();
-        int[] dimensions = getDimensions(imageReader, options, decodeCallbacks, this.bitmapPool);
-        boolean z3 = false;
-        int i7 = dimensions[0];
-        int i8 = dimensions[1];
-        String str = options.outMimeType;
-        boolean z4 = (i7 == -1 || i8 == -1) ? false : z;
-        int imageOrientation = imageReader.getImageOrientation();
-        int exifOrientationDegrees = TransformationUtils.getExifOrientationDegrees(imageOrientation);
-        boolean isExifOrientationRequired = TransformationUtils.isExifOrientationRequired(imageOrientation);
-        if (i == Integer.MIN_VALUE) {
-            i3 = i2;
-            i4 = isRotationRequired(exifOrientationDegrees) ? i8 : i7;
-        } else {
-            i3 = i2;
-            i4 = i;
-        }
-        if (i3 == Integer.MIN_VALUE) {
-            i5 = isRotationRequired(exifOrientationDegrees) ? i7 : i8;
-        } else {
-            i5 = i3;
-        }
-        ImageHeaderParser.ImageType imageType = imageReader.getImageType();
-        calculateScaling(imageType, imageReader, decodeCallbacks, this.bitmapPool, downsampleStrategy, exifOrientationDegrees, i7, i8, i4, i5, options);
-        calculateConfig(imageReader, decodeFormat, z4, isExifOrientationRequired, options, i4, i5);
-        int i9 = Build.VERSION.SDK_INT;
-        boolean z5 = i9 >= 19;
-        if (options.inSampleSize == 1 || z5) {
-            downsampler = this;
-            if (downsampler.shouldUsePool(imageType)) {
-                if (i7 < 0 || i8 < 0 || !z2 || !z5) {
-                    float f = isScaling(options) ? options.inTargetDensity / options.inDensity : 1.0f;
-                    int i10 = options.inSampleSize;
-                    float f2 = i10;
-                    float f3 = f;
-                    round = Math.round(((int) Math.ceil(i7 / f2)) * f3);
-                    round2 = Math.round(((int) Math.ceil(i8 / f2)) * f3);
-                    if (Log.isLoggable("Downsampler", 2)) {
-                        Log.v("Downsampler", "Calculated target [" + round + "x" + round2 + "] for source [" + i7 + "x" + i8 + "], sampleSize: " + i10 + ", targetDensity: " + options.inTargetDensity + ", density: " + options.inDensity + ", density multiplier: " + f3);
-                    }
-                } else {
-                    round = i4;
-                    round2 = i5;
-                }
-                if (round > 0 && round2 > 0) {
-                    setInBitmap(options, downsampler.bitmapPool, round, round2);
-                }
-            }
-        } else {
-            downsampler = this;
-        }
-        if (i9 >= 28) {
-            if (preferredColorSpace == PreferredColorSpace.DISPLAY_P3 && (colorSpace = options.outColorSpace) != null && colorSpace.isWideGamut()) {
-                z3 = true;
-            }
-            options.inPreferredColorSpace = ColorSpace.get(z3 ? ColorSpace.Named.DISPLAY_P3 : ColorSpace.Named.SRGB);
-        } else if (i9 >= 26) {
-            options.inPreferredColorSpace = ColorSpace.get(ColorSpace.Named.SRGB);
-        }
-        Bitmap decodeStream = decodeStream(imageReader, options, decodeCallbacks, downsampler.bitmapPool);
-        decodeCallbacks.onDecodeComplete(downsampler.bitmapPool, decodeStream);
-        if (Log.isLoggable("Downsampler", 2)) {
-            i6 = imageOrientation;
-            logDecode(i7, i8, str, options, decodeStream, i, i2, logTime);
-        } else {
-            i6 = imageOrientation;
-        }
-        Bitmap bitmap = null;
-        if (decodeStream != null) {
-            decodeStream.setDensity(downsampler.displayMetrics.densityDpi);
-            bitmap = TransformationUtils.rotateImageExif(downsampler.bitmapPool, decodeStream, i6);
-            if (!decodeStream.equals(bitmap)) {
-                downsampler.bitmapPool.put(decodeStream);
-            }
-        }
-        return bitmap;
+    /* JADX WARN: Removed duplicated region for block: B:51:0x0163  */
+    /* JADX WARN: Removed duplicated region for block: B:69:0x01a5  */
+    /* JADX WARN: Removed duplicated region for block: B:72:0x01b5  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+        To view partially-correct add '--show-bad-code' argument
+    */
+    private android.graphics.Bitmap decodeFromWrappedStreams(com.bumptech.glide.load.resource.bitmap.ImageReader r28, android.graphics.BitmapFactory.Options r29, com.bumptech.glide.load.resource.bitmap.DownsampleStrategy r30, com.bumptech.glide.load.DecodeFormat r31, com.bumptech.glide.load.PreferredColorSpace r32, boolean r33, int r34, int r35, boolean r36, com.bumptech.glide.load.resource.bitmap.Downsampler.DecodeCallbacks r37) throws java.io.IOException {
+        /*
+            Method dump skipped, instructions count: 462
+            To view this dump add '--comments-level debug' option
+        */
+        throw new UnsupportedOperationException("Method not decompiled: com.bumptech.glide.load.resource.bitmap.Downsampler.decodeFromWrappedStreams(com.bumptech.glide.load.resource.bitmap.ImageReader, android.graphics.BitmapFactory$Options, com.bumptech.glide.load.resource.bitmap.DownsampleStrategy, com.bumptech.glide.load.DecodeFormat, com.bumptech.glide.load.PreferredColorSpace, boolean, int, int, boolean, com.bumptech.glide.load.resource.bitmap.Downsampler$DecodeCallbacks):android.graphics.Bitmap");
     }
 
     private static void calculateScaling(ImageHeaderParser.ImageType imageType, ImageReader imageReader, DecodeCallbacks decodeCallbacks, BitmapPool bitmapPool, DownsampleStrategy downsampleStrategy, int i, int i2, int i3, int i4, int i5, BitmapFactory.Options options) throws IOException {
@@ -283,7 +210,7 @@ public final class Downsampler {
                 float f3 = i8;
                 floor = (int) Math.floor(f / f3);
                 floor2 = Math.floor(f2 / f3);
-            } else if (imageType == ImageHeaderParser.ImageType.WEBP || imageType == ImageHeaderParser.ImageType.WEBP_A) {
+            } else if (imageType.isWebp()) {
                 if (i10 >= 24) {
                     float f4 = i8;
                     floor = Math.round(f / f4);

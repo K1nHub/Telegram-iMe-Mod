@@ -4,6 +4,7 @@ import android.content.Context;
 import android.graphics.Rect;
 import android.graphics.Typeface;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
+import org.telegram.messenger.AndroidUtilities;
 import org.telegram.p048ui.ActionBar.Theme;
 /* renamed from: org.telegram.ui.Components.OutlineEditText */
 /* loaded from: classes6.dex */
@@ -30,6 +31,7 @@ public class OutlineEditText extends OutlineTextContainerView {
         this.editText.setTypeface(Typeface.DEFAULT);
         this.editText.setCursorColor(Theme.getColor("windowBackgroundWhiteInputFieldActivated"));
         this.editText.setCursorWidth(1.5f);
+        this.editText.setPadding(AndroidUtilities.m50dp(15), 0, AndroidUtilities.m50dp(15), 0);
         attachEditText(this.editText);
         addView(this.editText, LayoutHelper.createFrame(-1, -2, 16));
     }

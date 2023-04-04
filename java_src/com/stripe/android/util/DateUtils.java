@@ -3,7 +3,7 @@ package com.stripe.android.util;
 import com.stripe.android.time.Clock;
 import java.util.Calendar;
 import java.util.Locale;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class DateUtils {
     public static boolean hasYearPassed(int i) {
         return normalizeYear(i) < Clock.getCalendarInstance().get(1);

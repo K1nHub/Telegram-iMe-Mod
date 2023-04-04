@@ -108,11 +108,11 @@ public final class ErrorRequestCoordinator implements RequestCoordinator, Reques
 
     @Override // com.bumptech.glide.request.RequestCoordinator
     public boolean canSetImage(Request request) {
-        boolean z;
+        boolean parentCanSetImage;
         synchronized (this.requestLock) {
-            z = parentCanSetImage() && isValidRequest(request);
+            parentCanSetImage = parentCanSetImage();
         }
-        return z;
+        return parentCanSetImage;
     }
 
     private boolean parentCanSetImage() {
@@ -124,7 +124,7 @@ public final class ErrorRequestCoordinator implements RequestCoordinator, Reques
     public boolean canNotifyStatusChanged(Request request) {
         boolean z;
         synchronized (this.requestLock) {
-            z = parentCanNotifyStatusChanged() && isValidRequest(request);
+            z = parentCanNotifyStatusChanged() && isValidRequestForStatusChanged(request);
         }
         return z;
     }
@@ -133,7 +133,7 @@ public final class ErrorRequestCoordinator implements RequestCoordinator, Reques
     public boolean canNotifyCleared(Request request) {
         boolean z;
         synchronized (this.requestLock) {
-            z = parentCanNotifyCleared() && isValidRequest(request);
+            z = parentCanNotifyCleared() && request.equals(this.primary);
         }
         return z;
     }
@@ -148,8 +148,14 @@ public final class ErrorRequestCoordinator implements RequestCoordinator, Reques
         return requestCoordinator == null || requestCoordinator.canNotifyStatusChanged(this);
     }
 
-    private boolean isValidRequest(Request request) {
-        return request.equals(this.primary) || (this.primaryState == RequestCoordinator.RequestState.FAILED && request.equals(this.error));
+    private boolean isValidRequestForStatusChanged(Request request) {
+        RequestCoordinator.RequestState requestState;
+        RequestCoordinator.RequestState requestState2 = this.primaryState;
+        RequestCoordinator.RequestState requestState3 = RequestCoordinator.RequestState.FAILED;
+        if (requestState2 != requestState3) {
+            return request.equals(this.primary);
+        }
+        return request.equals(this.error) && ((requestState = this.errorState) == RequestCoordinator.RequestState.SUCCESS || requestState == requestState3);
     }
 
     @Override // com.bumptech.glide.request.RequestCoordinator, com.bumptech.glide.request.Request

@@ -59,11 +59,11 @@
     .line 678
     iget-object v0, p0, Lorg/telegram/ui/LaunchActivity$3;->this$0:Lorg/telegram/ui/LaunchActivity;
 
-    invoke-static {v0}, Lorg/telegram/ui/LaunchActivity;->access$700(Lorg/telegram/ui/LaunchActivity;)Lorg/fork/enums/LockedSection;
+    invoke-static {v0}, Lorg/telegram/ui/LaunchActivity;->access$700(Lorg/telegram/ui/LaunchActivity;)Lcom/iMe/fork/enums/LockedSection;
 
     move-result-object v0
 
-    invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->needShowSectionPasscodeActivity(Lorg/fork/enums/LockedSection;)Z
+    invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->needShowSectionPasscodeActivity(Lcom/iMe/fork/enums/LockedSection;)Z
 
     move-result v0
 

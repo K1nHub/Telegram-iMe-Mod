@@ -1,6 +1,6 @@
 package com.google.android.gms.internal.vision;
 
-import com.smedialink.common.IdFabric$RequestCode;
+import com.iMe.common.IdFabric$RequestCode;
 import java.io.Serializable;
 import java.util.AbstractMap;
 import java.util.Arrays;

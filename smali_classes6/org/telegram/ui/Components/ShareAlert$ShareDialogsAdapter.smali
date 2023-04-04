@@ -301,13 +301,13 @@
 
     move-result v9
 
-    invoke-static {v9}, Lorg/fork/controller/AlbumsController;->getInstance(I)Lorg/fork/controller/AlbumsController;
+    invoke-static {v9}, Lcom/iMe/fork/controller/AlbumsController;->getInstance(I)Lcom/iMe/fork/controller/AlbumsController;
 
     move-result-object v9
 
     iget-wide v10, v6, Lorg/telegram/tgnet/TLRPC$Dialog;->id:J
 
-    invoke-virtual {v9, v10, v11}, Lorg/fork/controller/AlbumsController;->isDialogAlbum(J)Z
+    invoke-virtual {v9, v10, v11}, Lcom/iMe/fork/controller/AlbumsController;->isDialogAlbum(J)Z
 
     move-result v9
 

@@ -5,27 +5,29 @@
 .implements Ljava/lang/Runnable;
 
 
-# static fields
-.field public static final synthetic INSTANCE:Lorg/telegram/messenger/LocaleController$$ExternalSyntheticLambda14;
+# instance fields
+.field public final synthetic f$0:Lorg/telegram/messenger/LocaleController;
+
+.field public final synthetic f$1:Lorg/telegram/tgnet/TLObject;
+
+.field public final synthetic f$2:Z
+
+.field public final synthetic f$3:I
 
 
 # direct methods
-.method static synthetic constructor <clinit>()V
-    .locals 1
-
-    new-instance v0, Lorg/telegram/messenger/LocaleController$$ExternalSyntheticLambda14;
-
-    invoke-direct {v0}, Lorg/telegram/messenger/LocaleController$$ExternalSyntheticLambda14;-><init>()V
-
-    sput-object v0, Lorg/telegram/messenger/LocaleController$$ExternalSyntheticLambda14;->INSTANCE:Lorg/telegram/messenger/LocaleController$$ExternalSyntheticLambda14;
-
-    return-void
-.end method
-
-.method private synthetic constructor <init>()V
+.method public synthetic constructor <init>(Lorg/telegram/messenger/LocaleController;Lorg/telegram/tgnet/TLObject;ZI)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lorg/telegram/messenger/LocaleController$$ExternalSyntheticLambda14;->f$0:Lorg/telegram/messenger/LocaleController;
+
+    iput-object p2, p0, Lorg/telegram/messenger/LocaleController$$ExternalSyntheticLambda14;->f$1:Lorg/telegram/tgnet/TLObject;
+
+    iput-boolean p3, p0, Lorg/telegram/messenger/LocaleController$$ExternalSyntheticLambda14;->f$2:Z
+
+    iput p4, p0, Lorg/telegram/messenger/LocaleController$$ExternalSyntheticLambda14;->f$3:I
 
     return-void
 .end method
@@ -33,9 +35,17 @@
 
 # virtual methods
 .method public final run()V
-    .locals 0
+    .locals 4
 
-    invoke-static {}, Lorg/telegram/messenger/LocaleController;->$r8$lambda$A2SyBmi7VFltYu8Oj8n9at-jQIU()V
+    iget-object v0, p0, Lorg/telegram/messenger/LocaleController$$ExternalSyntheticLambda14;->f$0:Lorg/telegram/messenger/LocaleController;
+
+    iget-object v1, p0, Lorg/telegram/messenger/LocaleController$$ExternalSyntheticLambda14;->f$1:Lorg/telegram/tgnet/TLObject;
+
+    iget-boolean v2, p0, Lorg/telegram/messenger/LocaleController$$ExternalSyntheticLambda14;->f$2:Z
+
+    iget v3, p0, Lorg/telegram/messenger/LocaleController$$ExternalSyntheticLambda14;->f$3:I
+
+    invoke-static {v0, v1, v2, v3}, Lorg/telegram/messenger/LocaleController;->$r8$lambda$7CYZns2L32xoO_UgJWIiSEkIUDk(Lorg/telegram/messenger/LocaleController;Lorg/telegram/tgnet/TLObject;ZI)V
 
     return-void
 .end method

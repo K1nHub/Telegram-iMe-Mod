@@ -97,7 +97,7 @@ class ChatsRemoteViewsFactory implements RemoteViewsService.RemoteViewsFactory {
     */
     public android.widget.RemoteViews getViewAt(int r20) {
         /*
-            Method dump skipped, instructions count: 1561
+            Method dump skipped, instructions count: 1562
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: org.telegram.messenger.ChatsRemoteViewsFactory.getViewAt(int):android.widget.RemoteViews");

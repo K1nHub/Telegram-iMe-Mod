@@ -2,7 +2,7 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lorg/fork/utils/Callbacks$Callback2;
+.implements Lkotlin/jvm/functions/Function0;
 
 
 # instance fields
@@ -22,16 +22,14 @@
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)V
+.method public final invoke()Ljava/lang/Object;
     .locals 1
 
     iget-object v0, p0, Lorg/telegram/ui/ManageLinksActivity$$ExternalSyntheticLambda28;->f$0:Lorg/telegram/ui/ManageLinksActivity;
 
-    check-cast p1, Lorg/telegram/tgnet/TLRPC$User;
+    invoke-static {v0}, Lorg/telegram/ui/ManageLinksActivity;->$r8$lambda$Moln46v3781LkzXt4naupm9IKI0(Lorg/telegram/ui/ManageLinksActivity;)Lorg/koin/core/parameter/ParametersHolder;
 
-    check-cast p2, Ljava/lang/String;
+    move-result-object v0
 
-    invoke-static {v0, p1, p2}, Lorg/telegram/ui/ManageLinksActivity;->$r8$lambda$Fg73auogTzuUja66KIxHaBu3Rao(Lorg/telegram/ui/ManageLinksActivity;Lorg/telegram/tgnet/TLRPC$User;Ljava/lang/String;)V
-
-    return-void
+    return-object v0
 .end method

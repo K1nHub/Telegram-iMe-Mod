@@ -27,7 +27,7 @@
     .locals 2
 
     .line 23
-    const-class p1, Lcom/smedialink/ui/profile/ProfilePresenter;
+    const-class p1, Lcom/iMe/ui/profile/ProfilePresenter;
 
     const-string v0, "presenter"
 
@@ -55,9 +55,9 @@
     .locals 0
 
     .line 28
-    check-cast p2, Lcom/smedialink/ui/profile/ProfilePresenter;
+    check-cast p2, Lcom/iMe/ui/profile/ProfilePresenter;
 
-    iput-object p2, p1, Lorg/telegram/ui/ProfileActivity;->presenter:Lcom/smedialink/ui/profile/ProfilePresenter;
+    iput-object p2, p1, Lorg/telegram/ui/ProfileActivity;->presenter:Lcom/iMe/ui/profile/ProfilePresenter;
 
     return-void
 .end method
@@ -88,7 +88,7 @@
     .end annotation
 
     .line 33
-    invoke-virtual {p1}, Lorg/telegram/ui/ProfileActivity;->providePresenter()Lcom/smedialink/ui/profile/ProfilePresenter;
+    invoke-virtual {p1}, Lorg/telegram/ui/ProfileActivity;->providePresenter()Lcom/iMe/ui/profile/ProfilePresenter;
 
     move-result-object p1
 

@@ -121,11 +121,11 @@ public class BackButtonMenu {
             Bundle bundle = new Bundle();
             TLRPC$Chat tLRPC$Chat = pulledDialog.chat;
             if (tLRPC$Chat != null) {
-                bundle.putLong("chat_id", tLRPC$Chat.f1500id);
+                bundle.putLong("chat_id", tLRPC$Chat.f1502id);
             } else {
                 TLRPC$User tLRPC$User = pulledDialog.user;
                 if (tLRPC$User != null) {
-                    bundle.putLong("user_id", tLRPC$User.f1640id);
+                    bundle.putLong("user_id", tLRPC$User.f1642id);
                 }
             }
             bundle.putInt("dialog_folder_id", pulledDialog.folderId);
@@ -138,7 +138,7 @@ public class BackButtonMenu {
         }
         if (pulledDialog.activity == TopicsFragment.class) {
             Bundle bundle3 = new Bundle();
-            bundle3.putLong("chat_id", pulledDialog.chat.f1500id);
+            bundle3.putLong("chat_id", pulledDialog.chat.f1502id);
             baseFragment.presentFragment(new TopicsFragment(bundle3), true);
         }
         if (pulledDialog.activity == DialogsActivity.class) {

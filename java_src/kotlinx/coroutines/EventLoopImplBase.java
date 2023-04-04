@@ -18,7 +18,7 @@ public abstract class EventLoopImplBase extends EventLoopImplPlatform {
     private volatile /* synthetic */ int _isCompleted = 0;
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* JADX WARN: Type inference failed for: r0v0, types: [boolean, int] */
+    /* JADX WARN: Type inference failed for: r0v0, types: [int, boolean] */
     public final boolean isCompleted() {
         return this._isCompleted;
     }
@@ -150,7 +150,7 @@ public abstract class EventLoopImplBase extends EventLoopImplPlatform {
 
     @Override // kotlinx.coroutines.CoroutineDispatcher
     /* renamed from: dispatch */
-    public final void mo1487dispatch(CoroutineContext coroutineContext, Runnable runnable) {
+    public final void mo1585dispatch(CoroutineContext coroutineContext, Runnable runnable) {
         enqueue(runnable);
     }
 

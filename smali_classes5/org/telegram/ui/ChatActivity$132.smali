@@ -3,12 +3,12 @@
 .source "ChatActivity.java"
 
 # interfaces
-.implements Lorg/telegram/messenger/NotificationCenter$NotificationCenterDelegate;
+.implements Lorg/telegram/ui/ChatActivity$ChatActivityDelegate;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lorg/telegram/ui/ChatActivity;->processLoadedDiscussionMessage(ZLorg/telegram/tgnet/TLRPC$TL_messages_discussionMessage;ZLorg/telegram/tgnet/TLRPC$messages_Messages;ILorg/telegram/messenger/MessageObject;Lorg/telegram/tgnet/TLRPC$TL_messages_getDiscussionMessage;Lorg/telegram/tgnet/TLRPC$Chat;ILorg/telegram/messenger/MessageObject;)V
+    value = Lorg/telegram/ui/ChatActivity;->openReportChat(I)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -20,101 +20,87 @@
 # instance fields
 .field final synthetic this$0:Lorg/telegram/ui/ChatActivity;
 
-.field final synthetic val$chatActivity:Lorg/telegram/ui/ChatActivity;
-
-.field final synthetic val$commentsClassGuid:I
-
-.field final synthetic val$openCommentsChat:Ljava/lang/Runnable;
-
 
 # direct methods
-.method public static synthetic $r8$lambda$r6WyF__VI-kcG7zmx327IZq4Nts(Lorg/telegram/ui/ChatActivity;II[Ljava/lang/Object;)V
+.method constructor <init>(Lorg/telegram/ui/ChatActivity;)V
     .locals 0
 
-    invoke-static {p0, p1, p2, p3}, Lorg/telegram/ui/ChatActivity$132;->lambda$didReceivedNotification$0(Lorg/telegram/ui/ChatActivity;II[Ljava/lang/Object;)V
-
-    return-void
-.end method
-
-.method constructor <init>(Lorg/telegram/ui/ChatActivity;ILjava/lang/Runnable;Lorg/telegram/ui/ChatActivity;)V
-    .locals 0
-
-    .line 30392
+    .line 28759
     iput-object p1, p0, Lorg/telegram/ui/ChatActivity$132;->this$0:Lorg/telegram/ui/ChatActivity;
-
-    iput p2, p0, Lorg/telegram/ui/ChatActivity$132;->val$commentsClassGuid:I
-
-    iput-object p3, p0, Lorg/telegram/ui/ChatActivity$132;->val$openCommentsChat:Ljava/lang/Runnable;
-
-    iput-object p4, p0, Lorg/telegram/ui/ChatActivity$132;->val$chatActivity:Lorg/telegram/ui/ChatActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
-.method private static synthetic lambda$didReceivedNotification$0(Lorg/telegram/ui/ChatActivity;II[Ljava/lang/Object;)V
+
+# virtual methods
+.method public synthetic onCompleteForwardingEditing(Ljava/util/ArrayList;)V
     .locals 0
 
-    .line 30398
-    invoke-virtual {p0, p1, p2, p3}, Lorg/telegram/ui/ChatActivity;->didReceivedNotification(II[Ljava/lang/Object;)V
+    invoke-static {p0, p1}, Lorg/telegram/ui/ChatActivity$ChatActivityDelegate$-CC;->$default$onCompleteForwardingEditing(Lorg/telegram/ui/ChatActivity$ChatActivityDelegate;Ljava/util/ArrayList;)V
 
     return-void
 .end method
 
+.method public onReport()V
+    .locals 5
 
-# virtual methods
-.method public varargs didReceivedNotification(II[Ljava/lang/Object;)V
-    .locals 3
+    .line 28762
+    iget-object v0, p0, Lorg/telegram/ui/ChatActivity$132;->this$0:Lorg/telegram/ui/ChatActivity;
 
-    .line 30395
-    sget v0, Lorg/telegram/messenger/NotificationCenter;->messagesDidLoad:I
+    invoke-static {v0}, Lorg/telegram/ui/ChatActivity;->access$13600(Lorg/telegram/ui/ChatActivity;)V
 
-    if-ne p1, v0, :cond_0
+    .line 28763
+    iget-object v0, p0, Lorg/telegram/ui/ChatActivity$132;->this$0:Lorg/telegram/ui/ChatActivity;
 
-    const/16 v1, 0xa
+    invoke-static {v0}, Lorg/telegram/ui/ChatActivity;->access$13700(Lorg/telegram/ui/ChatActivity;)Lorg/telegram/ui/Components/UndoView;
 
-    aget-object v1, p3, v1
+    move-result-object v0
 
-    check-cast v1, Ljava/lang/Integer;
+    if-nez v0, :cond_0
 
-    invoke-virtual {v1}, Ljava/lang/Integer;->intValue()I
+    return-void
 
-    move-result v1
-
-    iget v2, p0, Lorg/telegram/ui/ChatActivity$132;->val$commentsClassGuid:I
-
-    if-ne v1, v2, :cond_0
-
-    .line 30396
-    iget-object v1, p0, Lorg/telegram/ui/ChatActivity$132;->val$openCommentsChat:Ljava/lang/Runnable;
-
-    invoke-interface {v1}, Ljava/lang/Runnable;->run()V
-
-    .line 30397
-    iget-object v1, p0, Lorg/telegram/ui/ChatActivity$132;->val$chatActivity:Lorg/telegram/ui/ChatActivity;
-
-    new-instance v2, Lorg/telegram/ui/ChatActivity$132$$ExternalSyntheticLambda0;
-
-    invoke-direct {v2, v1, p1, p2, p3}, Lorg/telegram/ui/ChatActivity$132$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/ChatActivity;II[Ljava/lang/Object;)V
-
-    const-wide/16 p1, 0x32
-
-    invoke-static {v2, p1, p2}, Lorg/telegram/messenger/AndroidUtilities;->runOnUIThread(Ljava/lang/Runnable;J)V
-
-    .line 30400
-    iget-object p1, p0, Lorg/telegram/ui/ChatActivity$132;->this$0:Lorg/telegram/ui/ChatActivity;
-
-    invoke-static {p1}, Lorg/telegram/ui/ChatActivity;->access$47700(Lorg/telegram/ui/ChatActivity;)I
-
-    move-result p1
-
-    invoke-static {p1}, Lorg/telegram/messenger/NotificationCenter;->getInstance(I)Lorg/telegram/messenger/NotificationCenter;
-
-    move-result-object p1
-
-    invoke-virtual {p1, p0, v0}, Lorg/telegram/messenger/NotificationCenter;->removeObserver(Lorg/telegram/messenger/NotificationCenter$NotificationCenterDelegate;I)V
-
+    .line 28766
     :cond_0
+    iget-object v0, p0, Lorg/telegram/ui/ChatActivity$132;->this$0:Lorg/telegram/ui/ChatActivity;
+
+    invoke-static {v0}, Lorg/telegram/ui/ChatActivity;->access$13700(Lorg/telegram/ui/ChatActivity;)Lorg/telegram/ui/Components/UndoView;
+
+    move-result-object v0
+
+    const-wide/16 v1, 0x0
+
+    const/16 v3, 0x4a
+
+    const/4 v4, 0x0
+
+    invoke-virtual {v0, v1, v2, v3, v4}, Lorg/telegram/ui/Components/UndoView;->showWithAction(JILjava/lang/Runnable;)V
+
+    return-void
+.end method
+
+.method public synthetic onUnpin(ZZZZLorg/telegram/ui/ChatActivity;Ljava/util/ArrayList;Ljava/util/HashMap;)V
+    .locals 0
+
+    invoke-static/range {p0 .. p7}, Lorg/telegram/ui/ChatActivity$ChatActivityDelegate$-CC;->$default$onUnpin(Lorg/telegram/ui/ChatActivity$ChatActivityDelegate;ZZZZLorg/telegram/ui/ChatActivity;Ljava/util/ArrayList;Ljava/util/HashMap;)V
+
+    return-void
+.end method
+
+.method public synthetic openReplyMessage(I)V
+    .locals 0
+
+    invoke-static {p0, p1}, Lorg/telegram/ui/ChatActivity$ChatActivityDelegate$-CC;->$default$openReplyMessage(Lorg/telegram/ui/ChatActivity$ChatActivityDelegate;I)V
+
+    return-void
+.end method
+
+.method public synthetic openSearch(Ljava/lang/String;)V
+    .locals 0
+
+    invoke-static {p0, p1}, Lorg/telegram/ui/ChatActivity$ChatActivityDelegate$-CC;->$default$openSearch(Lorg/telegram/ui/ChatActivity$ChatActivityDelegate;Ljava/lang/String;)V
+
     return-void
 .end method

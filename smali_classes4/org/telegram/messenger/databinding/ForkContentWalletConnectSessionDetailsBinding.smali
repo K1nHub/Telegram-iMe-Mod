@@ -7,21 +7,21 @@
 
 
 # instance fields
-.field public final buttonDisconnect:Lcom/smedialink/ui/custom/BigActionButton;
+.field public final buttonDisconnect:Lcom/iMe/ui/custom/BigActionButton;
 
 .field private final rootView:Landroidx/appcompat/widget/LinearLayoutCompat;
 
-.field public final viewAddressCell:Lcom/smedialink/ui/custom/DetailsIconCellView;
+.field public final viewAddressCell:Lcom/iMe/ui/custom/DetailsIconCellView;
 
-.field public final viewConnectedCell:Lcom/smedialink/ui/custom/DetailsIconCellView;
+.field public final viewConnectedCell:Lcom/iMe/ui/custom/DetailsIconCellView;
 
-.field public final viewHeader:Lcom/smedialink/ui/custom/ImageHeaderView;
+.field public final viewHeader:Lcom/iMe/ui/custom/ImageHeaderView;
 
-.field public final viewNetworkCell:Lcom/smedialink/ui/custom/DetailsIconCellView;
+.field public final viewNetworkCell:Lcom/iMe/ui/custom/DetailsIconCellView;
 
 
 # direct methods
-.method private constructor <init>(Landroidx/appcompat/widget/LinearLayoutCompat;Lcom/smedialink/ui/custom/BigActionButton;Landroidx/appcompat/widget/LinearLayoutCompat;Lcom/smedialink/ui/custom/DetailsIconCellView;Lcom/smedialink/ui/custom/DetailsIconCellView;Lcom/smedialink/ui/custom/ImageHeaderView;Lcom/smedialink/ui/custom/DetailsIconCellView;)V
+.method private constructor <init>(Landroidx/appcompat/widget/LinearLayoutCompat;Lcom/iMe/ui/custom/BigActionButton;Landroidx/appcompat/widget/LinearLayoutCompat;Lcom/iMe/ui/custom/DetailsIconCellView;Lcom/iMe/ui/custom/DetailsIconCellView;Lcom/iMe/ui/custom/ImageHeaderView;Lcom/iMe/ui/custom/DetailsIconCellView;)V
     .locals 0
 
     .line 45
@@ -31,19 +31,19 @@
     iput-object p1, p0, Lorg/telegram/messenger/databinding/ForkContentWalletConnectSessionDetailsBinding;->rootView:Landroidx/appcompat/widget/LinearLayoutCompat;
 
     .line 47
-    iput-object p2, p0, Lorg/telegram/messenger/databinding/ForkContentWalletConnectSessionDetailsBinding;->buttonDisconnect:Lcom/smedialink/ui/custom/BigActionButton;
+    iput-object p2, p0, Lorg/telegram/messenger/databinding/ForkContentWalletConnectSessionDetailsBinding;->buttonDisconnect:Lcom/iMe/ui/custom/BigActionButton;
 
     .line 49
-    iput-object p4, p0, Lorg/telegram/messenger/databinding/ForkContentWalletConnectSessionDetailsBinding;->viewAddressCell:Lcom/smedialink/ui/custom/DetailsIconCellView;
+    iput-object p4, p0, Lorg/telegram/messenger/databinding/ForkContentWalletConnectSessionDetailsBinding;->viewAddressCell:Lcom/iMe/ui/custom/DetailsIconCellView;
 
     .line 50
-    iput-object p5, p0, Lorg/telegram/messenger/databinding/ForkContentWalletConnectSessionDetailsBinding;->viewConnectedCell:Lcom/smedialink/ui/custom/DetailsIconCellView;
+    iput-object p5, p0, Lorg/telegram/messenger/databinding/ForkContentWalletConnectSessionDetailsBinding;->viewConnectedCell:Lcom/iMe/ui/custom/DetailsIconCellView;
 
     .line 51
-    iput-object p6, p0, Lorg/telegram/messenger/databinding/ForkContentWalletConnectSessionDetailsBinding;->viewHeader:Lcom/smedialink/ui/custom/ImageHeaderView;
+    iput-object p6, p0, Lorg/telegram/messenger/databinding/ForkContentWalletConnectSessionDetailsBinding;->viewHeader:Lcom/iMe/ui/custom/ImageHeaderView;
 
     .line 52
-    iput-object p7, p0, Lorg/telegram/messenger/databinding/ForkContentWalletConnectSessionDetailsBinding;->viewNetworkCell:Lcom/smedialink/ui/custom/DetailsIconCellView;
+    iput-object p7, p0, Lorg/telegram/messenger/databinding/ForkContentWalletConnectSessionDetailsBinding;->viewNetworkCell:Lcom/iMe/ui/custom/DetailsIconCellView;
 
     return-void
 .end method
@@ -61,7 +61,7 @@
 
     move-object v4, v1
 
-    check-cast v4, Lcom/smedialink/ui/custom/BigActionButton;
+    check-cast v4, Lcom/iMe/ui/custom/BigActionButton;
 
     if-eqz v4, :cond_0
 
@@ -80,7 +80,7 @@
 
     move-object v6, v1
 
-    check-cast v6, Lcom/smedialink/ui/custom/DetailsIconCellView;
+    check-cast v6, Lcom/iMe/ui/custom/DetailsIconCellView;
 
     if-eqz v6, :cond_0
 
@@ -94,7 +94,7 @@
 
     move-object v7, v1
 
-    check-cast v7, Lcom/smedialink/ui/custom/DetailsIconCellView;
+    check-cast v7, Lcom/iMe/ui/custom/DetailsIconCellView;
 
     if-eqz v7, :cond_0
 
@@ -108,7 +108,7 @@
 
     move-object v8, v1
 
-    check-cast v8, Lcom/smedialink/ui/custom/ImageHeaderView;
+    check-cast v8, Lcom/iMe/ui/custom/ImageHeaderView;
 
     if-eqz v8, :cond_0
 
@@ -122,7 +122,7 @@
 
     move-object v9, v1
 
-    check-cast v9, Lcom/smedialink/ui/custom/DetailsIconCellView;
+    check-cast v9, Lcom/iMe/ui/custom/DetailsIconCellView;
 
     if-eqz v9, :cond_0
 
@@ -133,7 +133,7 @@
 
     move-object v3, v5
 
-    invoke-direct/range {v2 .. v9}, Lorg/telegram/messenger/databinding/ForkContentWalletConnectSessionDetailsBinding;-><init>(Landroidx/appcompat/widget/LinearLayoutCompat;Lcom/smedialink/ui/custom/BigActionButton;Landroidx/appcompat/widget/LinearLayoutCompat;Lcom/smedialink/ui/custom/DetailsIconCellView;Lcom/smedialink/ui/custom/DetailsIconCellView;Lcom/smedialink/ui/custom/ImageHeaderView;Lcom/smedialink/ui/custom/DetailsIconCellView;)V
+    invoke-direct/range {v2 .. v9}, Lorg/telegram/messenger/databinding/ForkContentWalletConnectSessionDetailsBinding;-><init>(Landroidx/appcompat/widget/LinearLayoutCompat;Lcom/iMe/ui/custom/BigActionButton;Landroidx/appcompat/widget/LinearLayoutCompat;Lcom/iMe/ui/custom/DetailsIconCellView;Lcom/iMe/ui/custom/DetailsIconCellView;Lcom/iMe/ui/custom/ImageHeaderView;Lcom/iMe/ui/custom/DetailsIconCellView;)V
 
     return-object p0
 

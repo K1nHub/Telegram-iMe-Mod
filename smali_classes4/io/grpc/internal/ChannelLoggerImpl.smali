@@ -16,7 +16,7 @@
     .line 32
     invoke-direct {p0}, Lio/grpc/ChannelLogger;-><init>()V
 
-    const-string v0, "tracer"
+    const-string/jumbo v0, "tracer"
 
     .line 33
     invoke-static {p1, v0}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;

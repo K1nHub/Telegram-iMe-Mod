@@ -61,7 +61,7 @@ import kotlin.collections.MapsKt__MapsKt;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.ranges.RangesKt___RangesKt;
-import p034j$.util.DesugarCollections;
+import p035j$.util.DesugarCollections;
 /* loaded from: classes.dex */
 public abstract class FragmentManager {
     private static boolean DEBUG = false;
@@ -1409,8 +1409,8 @@ public abstract class FragmentManager {
                         coerceAtLeast = RangesKt___RangesKt.coerceAtLeast(mapCapacity, 16);
                         LinkedHashMap linkedHashMap = new LinkedHashMap(coerceAtLeast);
                         for (String str3 : input) {
-                            Pair m99to = TuplesKt.m99to(str3, Boolean.TRUE);
-                            linkedHashMap.put(m99to.getFirst(), m99to.getSecond());
+                            Pair m94to = TuplesKt.m94to(str3, Boolean.TRUE);
+                            linkedHashMap.put(m94to.getFirst(), m94to.getSecond());
                         }
                         return new ActivityResultContract.SynchronousResult<>(linkedHashMap);
                     }

@@ -5859,9 +5859,15 @@
 
     move-result p5
 
-    const-string v1, "listSelectorSDK21"
+    const-string v1, "dialogTextRed"
 
     invoke-virtual {p0, v1}, Lorg/telegram/ui/ActionBar/BottomSheet;->getThemedColor(Ljava/lang/String;)I
+
+    move-result v1
+
+    const v2, 0x3dcccccd    # 0.1f
+
+    invoke-static {v1, v2}, Lorg/telegram/ui/ActionBar/Theme;->multAlpha(IF)I
 
     move-result v1
 

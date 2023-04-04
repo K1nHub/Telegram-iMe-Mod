@@ -9599,7 +9599,7 @@
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v2, "unknown message "
+    const-string/jumbo v2, "unknown message "
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -9619,7 +9619,7 @@
 
     if-eqz v1, :cond_5d
 
-    const-string v1, "unknown TLObject"
+    const-string/jumbo v1, "unknown TLObject"
 
     .line 1335
     invoke-static {v1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/String;)V

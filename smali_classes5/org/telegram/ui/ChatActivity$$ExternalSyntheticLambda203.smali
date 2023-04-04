@@ -8,30 +8,14 @@
 # instance fields
 .field public final synthetic f$0:Lorg/telegram/ui/ChatActivity;
 
-.field public final synthetic f$1:I
-
-.field public final synthetic f$2:I
-
-.field public final synthetic f$3:Z
-
-.field public final synthetic f$4:Lorg/telegram/ui/Components/ReactionsContainerLayout;
-
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/ChatActivity;IIZLorg/telegram/ui/Components/ReactionsContainerLayout;)V
+.method public synthetic constructor <init>(Lorg/telegram/ui/ChatActivity;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda203;->f$0:Lorg/telegram/ui/ChatActivity;
-
-    iput p2, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda203;->f$1:I
-
-    iput p3, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda203;->f$2:I
-
-    iput-boolean p4, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda203;->f$3:Z
-
-    iput-object p5, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda203;->f$4:Lorg/telegram/ui/Components/ReactionsContainerLayout;
 
     return-void
 .end method
@@ -39,19 +23,11 @@
 
 # virtual methods
 .method public final run()V
-    .locals 5
+    .locals 1
 
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda203;->f$0:Lorg/telegram/ui/ChatActivity;
 
-    iget v1, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda203;->f$1:I
-
-    iget v2, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda203;->f$2:I
-
-    iget-boolean v3, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda203;->f$3:Z
-
-    iget-object v4, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda203;->f$4:Lorg/telegram/ui/Components/ReactionsContainerLayout;
-
-    invoke-static {v0, v1, v2, v3, v4}, Lorg/telegram/ui/ChatActivity;->$r8$lambda$C9LCOMRfCsp-sLW-NU8H7YVlsmY(Lorg/telegram/ui/ChatActivity;IIZLorg/telegram/ui/Components/ReactionsContainerLayout;)V
+    invoke-static {v0}, Lorg/telegram/ui/ChatActivity;->$r8$lambda$fU0id15xBM52kujHvF_Pg2UGSWM(Lorg/telegram/ui/ChatActivity;)V
 
     return-void
 .end method

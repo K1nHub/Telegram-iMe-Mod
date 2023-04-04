@@ -6,7 +6,7 @@ import android.util.AttributeSet;
 import android.util.Log;
 import android.view.View;
 import android.widget.FrameLayout;
-import com.google.android.gms.base.C0690R;
+import com.google.android.gms.base.C0704R;
 import com.google.android.gms.common.api.Scope;
 import com.google.android.gms.common.internal.zaaa;
 import com.google.android.gms.common.internal.zaz;
@@ -118,10 +118,10 @@ public final class SignInButton extends FrameLayout implements View.OnClickListe
     public SignInButton(Context context, AttributeSet attributeSet, int i) {
         super(context, attributeSet, i);
         this.zad = null;
-        TypedArray obtainStyledAttributes = context.getTheme().obtainStyledAttributes(attributeSet, C0690R.styleable.SignInButton, 0, 0);
+        TypedArray obtainStyledAttributes = context.getTheme().obtainStyledAttributes(attributeSet, C0704R.styleable.SignInButton, 0, 0);
         try {
-            this.zaa = obtainStyledAttributes.getInt(C0690R.styleable.SignInButton_buttonSize, 0);
-            this.zab = obtainStyledAttributes.getInt(C0690R.styleable.SignInButton_colorScheme, 2);
+            this.zaa = obtainStyledAttributes.getInt(C0704R.styleable.SignInButton_buttonSize, 0);
+            this.zab = obtainStyledAttributes.getInt(C0704R.styleable.SignInButton_colorScheme, 2);
             obtainStyledAttributes.recycle();
             setStyle(this.zaa, this.zab);
         } catch (Throwable th) {

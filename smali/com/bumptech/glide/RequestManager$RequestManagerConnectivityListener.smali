@@ -27,12 +27,12 @@
 .method constructor <init>(Lcom/bumptech/glide/RequestManager;Lcom/bumptech/glide/manager/RequestTracker;)V
     .locals 0
 
-    .line 712
+    .line 714
     iput-object p1, p0, Lcom/bumptech/glide/RequestManager$RequestManagerConnectivityListener;->this$0:Lcom/bumptech/glide/RequestManager;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 713
+    .line 715
     iput-object p2, p0, Lcom/bumptech/glide/RequestManager$RequestManagerConnectivityListener;->requestTracker:Lcom/bumptech/glide/manager/RequestTracker;
 
     return-void
@@ -45,18 +45,18 @@
 
     if-eqz p1, :cond_0
 
-    .line 719
+    .line 721
     iget-object p1, p0, Lcom/bumptech/glide/RequestManager$RequestManagerConnectivityListener;->this$0:Lcom/bumptech/glide/RequestManager;
 
     monitor-enter p1
 
-    .line 720
+    .line 722
     :try_start_0
     iget-object v0, p0, Lcom/bumptech/glide/RequestManager$RequestManagerConnectivityListener;->requestTracker:Lcom/bumptech/glide/manager/RequestTracker;
 
     invoke-virtual {v0}, Lcom/bumptech/glide/manager/RequestTracker;->restartRequests()V
 
-    .line 721
+    .line 723
     monitor-exit p1
 
     goto :goto_0

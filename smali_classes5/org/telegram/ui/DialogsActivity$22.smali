@@ -27,7 +27,7 @@
 .method constructor <init>(Lorg/telegram/ui/DialogsActivity;Lorg/telegram/ui/DialogsActivity$ViewPage;)V
     .locals 0
 
-    .line 5675
+    .line 5684
     iput-object p1, p0, Lorg/telegram/ui/DialogsActivity$22;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     iput-object p2, p0, Lorg/telegram/ui/DialogsActivity$22;->val$viewPage:Lorg/telegram/ui/DialogsActivity$ViewPage;
@@ -42,7 +42,7 @@
 .method public onItemClick(Landroid/view/View;IFF)Z
     .locals 8
 
-    .line 5679
+    .line 5688
     iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$22;->val$viewPage:Lorg/telegram/ui/DialogsActivity$ViewPage;
 
     invoke-static {v0}, Lorg/telegram/ui/DialogsActivity$ViewPage;->access$16200(Lorg/telegram/ui/DialogsActivity$ViewPage;)I
@@ -57,11 +57,11 @@
 
     return v2
 
-    .line 5682
+    .line 5691
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$22;->this$0:Lorg/telegram/ui/DialogsActivity;
 
-    invoke-static {v0}, Lorg/telegram/ui/DialogsActivity;->access$300(Lorg/telegram/ui/DialogsActivity;)Lcom/smedialink/ui/topics/TopicsBar;
+    invoke-static {v0}, Lorg/telegram/ui/DialogsActivity;->access$300(Lorg/telegram/ui/DialogsActivity;)Lcom/iMe/ui/topics/TopicsBar;
 
     move-result-object v0
 
@@ -69,11 +69,11 @@
 
     iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$22;->this$0:Lorg/telegram/ui/DialogsActivity;
 
-    invoke-static {v0}, Lorg/telegram/ui/DialogsActivity;->access$300(Lorg/telegram/ui/DialogsActivity;)Lcom/smedialink/ui/topics/TopicsBar;
+    invoke-static {v0}, Lorg/telegram/ui/DialogsActivity;->access$300(Lorg/telegram/ui/DialogsActivity;)Lcom/iMe/ui/topics/TopicsBar;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lcom/smedialink/ui/topics/TopicsBar;->isEditing()Z
+    invoke-virtual {v0}, Lcom/iMe/ui/topics/TopicsBar;->isEditing()Z
 
     move-result v0
 
@@ -81,7 +81,7 @@
 
     return v2
 
-    .line 5686
+    .line 5695
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$22;->this$0:Lorg/telegram/ui/DialogsActivity;
 
@@ -117,7 +117,7 @@
 
     return v2
 
-    .line 5690
+    .line 5699
     :cond_2
     iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$22;->this$0:Lorg/telegram/ui/DialogsActivity;
 
@@ -127,7 +127,7 @@
 
     if-eqz v0, :cond_3
 
-    .line 5691
+    .line 5700
     iget-object p3, p0, Lorg/telegram/ui/DialogsActivity$22;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     iget-object p4, p0, Lorg/telegram/ui/DialogsActivity$22;->val$viewPage:Lorg/telegram/ui/DialogsActivity$ViewPage;
@@ -142,7 +142,7 @@
 
     return p1
 
-    .line 5695
+    .line 5704
     :cond_3
     iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$22;->this$0:Lorg/telegram/ui/DialogsActivity;
 
@@ -182,7 +182,7 @@
 .method public onLongClickRelease()V
     .locals 2
 
-    .line 5707
+    .line 5716
     sget-object v0, Lorg/telegram/messenger/AndroidUtilities;->displaySize:Landroid/graphics/Point;
 
     iget v1, v0, Landroid/graphics/Point;->x:I
@@ -191,7 +191,7 @@
 
     if-le v1, v0, :cond_0
 
-    .line 5708
+    .line 5717
     iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$22;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->finishPreviewFragment()V
@@ -203,7 +203,7 @@
 .method public onMove(FF)V
     .locals 1
 
-    .line 5700
+    .line 5709
     sget-object p1, Lorg/telegram/messenger/AndroidUtilities;->displaySize:Landroid/graphics/Point;
 
     iget v0, p1, Landroid/graphics/Point;->x:I
@@ -212,7 +212,7 @@
 
     if-le v0, p1, :cond_0
 
-    .line 5701
+    .line 5710
     iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$22;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-virtual {p1, p2}, Lorg/telegram/ui/ActionBar/BaseFragment;->movePreviewFragment(F)V

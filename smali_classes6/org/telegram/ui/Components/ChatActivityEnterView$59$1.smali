@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lorg/telegram/ui/Components/ChatActivityEnterView$59;->lambda$showKiklikoReportAlert$1([Ljava/lang/CharSequence;Lorg/fork/utils/Callbacks$Callback1;Landroid/content/DialogInterface;I)V
+    value = Lorg/telegram/ui/Components/ChatActivityEnterView$59;->lambda$showKiklikoReportAlert$1([Ljava/lang/CharSequence;Lcom/iMe/fork/utils/Callbacks$Callback1;Landroid/content/DialogInterface;I)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -17,17 +17,17 @@
 # instance fields
 .field final synthetic this$1:Lorg/telegram/ui/Components/ChatActivityEnterView$59;
 
-.field final synthetic val$reasonCallback:Lorg/fork/utils/Callbacks$Callback1;
+.field final synthetic val$reasonCallback:Lcom/iMe/fork/utils/Callbacks$Callback1;
 
 
 # direct methods
-.method constructor <init>(Lorg/telegram/ui/Components/ChatActivityEnterView$59;Landroid/content/Context;ILorg/fork/utils/Callbacks$Callback1;)V
+.method constructor <init>(Lorg/telegram/ui/Components/ChatActivityEnterView$59;Landroid/content/Context;ILcom/iMe/fork/utils/Callbacks$Callback1;)V
     .locals 0
 
     .line 8933
     iput-object p1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$59$1;->this$1:Lorg/telegram/ui/Components/ChatActivityEnterView$59;
 
-    iput-object p4, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$59$1;->val$reasonCallback:Lorg/fork/utils/Callbacks$Callback1;
+    iput-object p4, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$59$1;->val$reasonCallback:Lcom/iMe/fork/utils/Callbacks$Callback1;
 
     invoke-direct {p0, p2, p3}, Lorg/telegram/ui/Components/ReportAlert;-><init>(Landroid/content/Context;I)V
 
@@ -72,9 +72,9 @@
     .locals 3
 
     .line 8945
-    iget-object p1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$59$1;->val$reasonCallback:Lorg/fork/utils/Callbacks$Callback1;
+    iget-object p1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$59$1;->val$reasonCallback:Lcom/iMe/fork/utils/Callbacks$Callback1;
 
-    invoke-interface {p1, p2}, Lorg/fork/utils/Callbacks$Callback1;->invoke(Ljava/lang/Object;)V
+    invoke-interface {p1, p2}, Lcom/iMe/fork/utils/Callbacks$Callback1;->invoke(Ljava/lang/Object;)V
 
     .line 8946
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$59$1;->this$1:Lorg/telegram/ui/Components/ChatActivityEnterView$59;

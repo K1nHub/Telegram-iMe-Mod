@@ -1,6 +1,6 @@
 package com.google.android.gms.internal.firebase_ml;
 
-import com.google.android.exoplayer2.C0468C;
+import com.google.android.exoplayer2.C0482C;
 import java.nio.ByteBuffer;
 import java.nio.charset.Charset;
 import java.util.Objects;
@@ -10,7 +10,7 @@ public final class zzuw {
     private static final ByteBuffer zzbtl;
     private static final zztz zzbtm;
     static final Charset UTF_8 = Charset.forName("UTF-8");
-    private static final Charset ISO_8859_1 = Charset.forName(C0468C.ISO88591_NAME);
+    private static final Charset ISO_8859_1 = Charset.forName(C0482C.ISO88591_NAME);
 
     public static int zzab(long j) {
         return (int) (j ^ (j >>> 32));

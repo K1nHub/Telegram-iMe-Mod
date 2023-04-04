@@ -2,34 +2,40 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lkotlin/jvm/functions/Function0;
+.implements Lcom/iMe/fork/utils/Callbacks$Callback;
 
 
-# instance fields
-.field public final synthetic f$0:Lorg/telegram/ui/ManageLinksActivity;
+# static fields
+.field public static final synthetic INSTANCE:Lorg/telegram/ui/ManageLinksActivity$$ExternalSyntheticLambda17;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/ManageLinksActivity;)V
+.method static synthetic constructor <clinit>()V
+    .locals 1
+
+    new-instance v0, Lorg/telegram/ui/ManageLinksActivity$$ExternalSyntheticLambda17;
+
+    invoke-direct {v0}, Lorg/telegram/ui/ManageLinksActivity$$ExternalSyntheticLambda17;-><init>()V
+
+    sput-object v0, Lorg/telegram/ui/ManageLinksActivity$$ExternalSyntheticLambda17;->INSTANCE:Lorg/telegram/ui/ManageLinksActivity$$ExternalSyntheticLambda17;
+
+    return-void
+.end method
+
+.method private synthetic constructor <init>()V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lorg/telegram/ui/ManageLinksActivity$$ExternalSyntheticLambda17;->f$0:Lorg/telegram/ui/ManageLinksActivity;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke()Ljava/lang/Object;
-    .locals 1
+.method public final invoke()V
+    .locals 0
 
-    iget-object v0, p0, Lorg/telegram/ui/ManageLinksActivity$$ExternalSyntheticLambda17;->f$0:Lorg/telegram/ui/ManageLinksActivity;
+    invoke-static {}, Lorg/telegram/ui/ManageLinksActivity;->$r8$lambda$hHW_mYo551rDn2d2d1EDC3j97r0()V
 
-    invoke-static {v0}, Lorg/telegram/ui/ManageLinksActivity;->$r8$lambda$-1rDk1mtxX96pp8fQb4-I_pFhOo(Lorg/telegram/ui/ManageLinksActivity;)Lorg/koin/core/parameter/ParametersHolder;
-
-    move-result-object v0
-
-    return-object v0
+    return-void
 .end method

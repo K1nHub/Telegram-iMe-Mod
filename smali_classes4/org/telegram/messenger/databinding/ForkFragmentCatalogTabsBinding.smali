@@ -7,13 +7,13 @@
 
 
 # instance fields
-.field public final catalogPager:Lorg/fork/ui/view/TabbedViewPager;
+.field public final catalogPager:Lcom/iMe/fork/ui/view/TabbedViewPager;
 
 .field private final rootView:Landroid/widget/FrameLayout;
 
 
 # direct methods
-.method private constructor <init>(Landroid/widget/FrameLayout;Lorg/fork/ui/view/TabbedViewPager;)V
+.method private constructor <init>(Landroid/widget/FrameLayout;Lcom/iMe/fork/ui/view/TabbedViewPager;)V
     .locals 0
 
     .line 26
@@ -23,7 +23,7 @@
     iput-object p1, p0, Lorg/telegram/messenger/databinding/ForkFragmentCatalogTabsBinding;->rootView:Landroid/widget/FrameLayout;
 
     .line 28
-    iput-object p2, p0, Lorg/telegram/messenger/databinding/ForkFragmentCatalogTabsBinding;->catalogPager:Lorg/fork/ui/view/TabbedViewPager;
+    iput-object p2, p0, Lorg/telegram/messenger/databinding/ForkFragmentCatalogTabsBinding;->catalogPager:Lcom/iMe/fork/ui/view/TabbedViewPager;
 
     return-void
 .end method
@@ -39,7 +39,7 @@
 
     move-result-object v1
 
-    check-cast v1, Lorg/fork/ui/view/TabbedViewPager;
+    check-cast v1, Lcom/iMe/fork/ui/view/TabbedViewPager;
 
     if-eqz v1, :cond_0
 
@@ -48,7 +48,7 @@
 
     check-cast p0, Landroid/widget/FrameLayout;
 
-    invoke-direct {v0, p0, v1}, Lorg/telegram/messenger/databinding/ForkFragmentCatalogTabsBinding;-><init>(Landroid/widget/FrameLayout;Lorg/fork/ui/view/TabbedViewPager;)V
+    invoke-direct {v0, p0, v1}, Lorg/telegram/messenger/databinding/ForkFragmentCatalogTabsBinding;-><init>(Landroid/widget/FrameLayout;Lcom/iMe/fork/ui/view/TabbedViewPager;)V
 
     return-object v0
 

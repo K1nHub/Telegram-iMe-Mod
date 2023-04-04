@@ -59,7 +59,7 @@
 
     move v5, p4
 
-    invoke-static/range {v0 .. v5}, Lorg/telegram/ui/DataSettingsActivity;->$r8$lambda$pFISYSIHJCWf0B9bB0ViQ7YkPy4(Lorg/telegram/ui/DataSettingsActivity;Landroid/content/Context;Landroid/view/View;IFF)V
+    invoke-static/range {v0 .. v5}, Lorg/telegram/ui/DataSettingsActivity;->$r8$lambda$qJljBAj1E9bF_dVX27TVV3Zb1bA(Lorg/telegram/ui/DataSettingsActivity;Landroid/content/Context;Landroid/view/View;IFF)V
 
     return-void
 .end method

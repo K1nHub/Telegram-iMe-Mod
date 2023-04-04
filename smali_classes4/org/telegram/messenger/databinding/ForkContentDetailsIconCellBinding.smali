@@ -7,7 +7,7 @@
 
 
 # instance fields
-.field public final divider:Lcom/smedialink/ui/custom/DividerView;
+.field public final divider:Lcom/iMe/ui/custom/DividerView;
 
 .field public final imageIcon:Landroidx/appcompat/widget/AppCompatImageView;
 
@@ -19,7 +19,7 @@
 
 
 # direct methods
-.method private constructor <init>(Landroidx/constraintlayout/widget/ConstraintLayout;Lcom/smedialink/ui/custom/DividerView;Landroidx/appcompat/widget/AppCompatImageView;Landroidx/appcompat/widget/AppCompatTextView;Landroidx/appcompat/widget/AppCompatTextView;)V
+.method private constructor <init>(Landroidx/constraintlayout/widget/ConstraintLayout;Lcom/iMe/ui/custom/DividerView;Landroidx/appcompat/widget/AppCompatImageView;Landroidx/appcompat/widget/AppCompatTextView;Landroidx/appcompat/widget/AppCompatTextView;)V
     .locals 0
 
     .line 38
@@ -29,7 +29,7 @@
     iput-object p1, p0, Lorg/telegram/messenger/databinding/ForkContentDetailsIconCellBinding;->rootView:Landroidx/constraintlayout/widget/ConstraintLayout;
 
     .line 40
-    iput-object p2, p0, Lorg/telegram/messenger/databinding/ForkContentDetailsIconCellBinding;->divider:Lcom/smedialink/ui/custom/DividerView;
+    iput-object p2, p0, Lorg/telegram/messenger/databinding/ForkContentDetailsIconCellBinding;->divider:Lcom/iMe/ui/custom/DividerView;
 
     .line 41
     iput-object p3, p0, Lorg/telegram/messenger/databinding/ForkContentDetailsIconCellBinding;->imageIcon:Landroidx/appcompat/widget/AppCompatImageView;
@@ -56,7 +56,7 @@
 
     move-object v4, v1
 
-    check-cast v4, Lcom/smedialink/ui/custom/DividerView;
+    check-cast v4, Lcom/iMe/ui/custom/DividerView;
 
     if-eqz v4, :cond_0
 
@@ -111,7 +111,7 @@
 
     move-object v2, v0
 
-    invoke-direct/range {v2 .. v7}, Lorg/telegram/messenger/databinding/ForkContentDetailsIconCellBinding;-><init>(Landroidx/constraintlayout/widget/ConstraintLayout;Lcom/smedialink/ui/custom/DividerView;Landroidx/appcompat/widget/AppCompatImageView;Landroidx/appcompat/widget/AppCompatTextView;Landroidx/appcompat/widget/AppCompatTextView;)V
+    invoke-direct/range {v2 .. v7}, Lorg/telegram/messenger/databinding/ForkContentDetailsIconCellBinding;-><init>(Landroidx/constraintlayout/widget/ConstraintLayout;Lcom/iMe/ui/custom/DividerView;Landroidx/appcompat/widget/AppCompatImageView;Landroidx/appcompat/widget/AppCompatTextView;Landroidx/appcompat/widget/AppCompatTextView;)V
 
     return-object v0
 

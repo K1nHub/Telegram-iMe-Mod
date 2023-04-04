@@ -6,58 +6,58 @@ import org.bouncycastle.util.Pack;
 public class SHA1Digest extends GeneralDigest {
 
     /* renamed from: H1 */
-    private int f1258H1;
+    private int f1263H1;
 
     /* renamed from: H2 */
-    private int f1259H2;
+    private int f1264H2;
 
     /* renamed from: H3 */
-    private int f1260H3;
+    private int f1265H3;
 
     /* renamed from: H4 */
-    private int f1261H4;
+    private int f1266H4;
 
     /* renamed from: H5 */
-    private int f1262H5;
+    private int f1267H5;
 
     /* renamed from: X */
-    private int[] f1263X;
+    private int[] f1268X;
     private int xOff;
 
     public SHA1Digest() {
-        this.f1263X = new int[80];
+        this.f1268X = new int[80];
         reset();
     }
 
     public SHA1Digest(SHA1Digest sHA1Digest) {
         super(sHA1Digest);
-        this.f1263X = new int[80];
+        this.f1268X = new int[80];
         copyIn(sHA1Digest);
     }
 
     private void copyIn(SHA1Digest sHA1Digest) {
-        this.f1258H1 = sHA1Digest.f1258H1;
-        this.f1259H2 = sHA1Digest.f1259H2;
-        this.f1260H3 = sHA1Digest.f1260H3;
-        this.f1261H4 = sHA1Digest.f1261H4;
-        this.f1262H5 = sHA1Digest.f1262H5;
-        int[] iArr = sHA1Digest.f1263X;
-        System.arraycopy(iArr, 0, this.f1263X, 0, iArr.length);
+        this.f1263H1 = sHA1Digest.f1263H1;
+        this.f1264H2 = sHA1Digest.f1264H2;
+        this.f1265H3 = sHA1Digest.f1265H3;
+        this.f1266H4 = sHA1Digest.f1266H4;
+        this.f1267H5 = sHA1Digest.f1267H5;
+        int[] iArr = sHA1Digest.f1268X;
+        System.arraycopy(iArr, 0, this.f1268X, 0, iArr.length);
         this.xOff = sHA1Digest.xOff;
     }
 
     /* renamed from: f */
-    private int m78f(int i, int i2, int i3) {
+    private int m73f(int i, int i2, int i3) {
         return ((~i) & i3) | (i2 & i);
     }
 
     /* renamed from: g */
-    private int m77g(int i, int i2, int i3) {
+    private int m72g(int i, int i2, int i3) {
         return (i & i3) | (i & i2) | (i2 & i3);
     }
 
     /* renamed from: h */
-    private int m76h(int i, int i2, int i3) {
+    private int m71h(int i, int i2, int i3) {
         return (i ^ i2) ^ i3;
     }
 
@@ -69,11 +69,11 @@ public class SHA1Digest extends GeneralDigest {
     @Override // org.bouncycastle.crypto.Digest
     public int doFinal(byte[] bArr, int i) {
         finish();
-        Pack.intToBigEndian(this.f1258H1, bArr, i);
-        Pack.intToBigEndian(this.f1259H2, bArr, i + 4);
-        Pack.intToBigEndian(this.f1260H3, bArr, i + 8);
-        Pack.intToBigEndian(this.f1261H4, bArr, i + 12);
-        Pack.intToBigEndian(this.f1262H5, bArr, i + 16);
+        Pack.intToBigEndian(this.f1263H1, bArr, i);
+        Pack.intToBigEndian(this.f1264H2, bArr, i + 4);
+        Pack.intToBigEndian(this.f1265H3, bArr, i + 8);
+        Pack.intToBigEndian(this.f1266H4, bArr, i + 12);
+        Pack.intToBigEndian(this.f1267H5, bArr, i + 16);
         reset();
         return 20;
     }
@@ -103,88 +103,88 @@ public class SHA1Digest extends GeneralDigest {
         int i11;
         int i12;
         for (int i13 = 16; i13 < 80; i13++) {
-            int[] iArr = this.f1263X;
+            int[] iArr = this.f1268X;
             int i14 = ((iArr[i13 - 3] ^ iArr[i13 - 8]) ^ iArr[i13 - 14]) ^ iArr[i13 - 16];
             iArr[i13] = (i14 >>> 31) | (i14 << 1);
         }
-        int i15 = this.f1258H1;
-        int i16 = this.f1259H2;
-        int i17 = this.f1260H3;
-        int i18 = this.f1261H4;
-        int i19 = this.f1262H5;
+        int i15 = this.f1263H1;
+        int i16 = this.f1264H2;
+        int i17 = this.f1265H3;
+        int i18 = this.f1266H4;
+        int i19 = this.f1267H5;
         int i20 = 0;
         int i21 = 0;
         while (i20 < 4) {
             int i22 = i21 + 1;
-            int m78f = i19 + ((i15 << 5) | (i15 >>> 27)) + m78f(i16, i17, i18) + this.f1263X[i21] + 1518500249;
+            int m73f = i19 + ((i15 << 5) | (i15 >>> 27)) + m73f(i16, i17, i18) + this.f1268X[i21] + 1518500249;
             int i23 = (i16 >>> 2) | (i16 << 30);
             int i24 = i22 + 1;
-            int m78f2 = i18 + ((m78f << 5) | (m78f >>> 27)) + m78f(i15, i23, i17) + this.f1263X[i22] + 1518500249;
+            int m73f2 = i18 + ((m73f << 5) | (m73f >>> 27)) + m73f(i15, i23, i17) + this.f1268X[i22] + 1518500249;
             int i25 = (i15 >>> 2) | (i15 << 30);
             int i26 = i24 + 1;
-            int m78f3 = i17 + ((m78f2 << 5) | (m78f2 >>> 27)) + m78f(m78f, i25, i23) + this.f1263X[i24] + 1518500249;
-            i19 = (m78f >>> 2) | (m78f << 30);
+            int m73f3 = i17 + ((m73f2 << 5) | (m73f2 >>> 27)) + m73f(m73f, i25, i23) + this.f1268X[i24] + 1518500249;
+            i19 = (m73f >>> 2) | (m73f << 30);
             int i27 = i26 + 1;
-            i16 = i23 + ((m78f3 << 5) | (m78f3 >>> 27)) + m78f(m78f2, i19, i25) + this.f1263X[i26] + 1518500249;
-            i18 = (m78f2 >>> 2) | (m78f2 << 30);
-            i15 = i25 + ((i16 << 5) | (i16 >>> 27)) + m78f(m78f3, i18, i19) + this.f1263X[i27] + 1518500249;
-            i17 = (m78f3 >>> 2) | (m78f3 << 30);
+            i16 = i23 + ((m73f3 << 5) | (m73f3 >>> 27)) + m73f(m73f2, i19, i25) + this.f1268X[i26] + 1518500249;
+            i18 = (m73f2 >>> 2) | (m73f2 << 30);
+            i15 = i25 + ((i16 << 5) | (i16 >>> 27)) + m73f(m73f3, i18, i19) + this.f1268X[i27] + 1518500249;
+            i17 = (m73f3 >>> 2) | (m73f3 << 30);
             i20++;
             i21 = i27 + 1;
         }
         int i28 = 0;
         while (i28 < 4) {
             int i29 = i21 + 1;
-            int m76h = i19 + ((i15 << 5) | (i15 >>> 27)) + m76h(i16, i17, i18) + this.f1263X[i21] + 1859775393;
+            int m71h = i19 + ((i15 << 5) | (i15 >>> 27)) + m71h(i16, i17, i18) + this.f1268X[i21] + 1859775393;
             int i30 = (i16 >>> 2) | (i16 << 30);
             int i31 = i29 + 1;
-            int m76h2 = i18 + ((m76h << 5) | (m76h >>> 27)) + m76h(i15, i30, i17) + this.f1263X[i29] + 1859775393;
+            int m71h2 = i18 + ((m71h << 5) | (m71h >>> 27)) + m71h(i15, i30, i17) + this.f1268X[i29] + 1859775393;
             int i32 = (i15 >>> 2) | (i15 << 30);
             int i33 = i31 + 1;
-            int m76h3 = i17 + ((m76h2 << 5) | (m76h2 >>> 27)) + m76h(m76h, i32, i30) + this.f1263X[i31] + 1859775393;
-            i19 = (m76h >>> 2) | (m76h << 30);
+            int m71h3 = i17 + ((m71h2 << 5) | (m71h2 >>> 27)) + m71h(m71h, i32, i30) + this.f1268X[i31] + 1859775393;
+            i19 = (m71h >>> 2) | (m71h << 30);
             int i34 = i33 + 1;
-            i16 = i30 + ((m76h3 << 5) | (m76h3 >>> 27)) + m76h(m76h2, i19, i32) + this.f1263X[i33] + 1859775393;
-            i18 = (m76h2 >>> 2) | (m76h2 << 30);
-            i15 = i32 + ((i16 << 5) | (i16 >>> 27)) + m76h(m76h3, i18, i19) + this.f1263X[i34] + 1859775393;
-            i17 = (m76h3 >>> 2) | (m76h3 << 30);
+            i16 = i30 + ((m71h3 << 5) | (m71h3 >>> 27)) + m71h(m71h2, i19, i32) + this.f1268X[i33] + 1859775393;
+            i18 = (m71h2 >>> 2) | (m71h2 << 30);
+            i15 = i32 + ((i16 << 5) | (i16 >>> 27)) + m71h(m71h3, i18, i19) + this.f1268X[i34] + 1859775393;
+            i17 = (m71h3 >>> 2) | (m71h3 << 30);
             i28++;
             i21 = i34 + 1;
         }
         int i35 = 0;
         while (i35 < 4) {
-            int m77g = i19 + (((((i15 << 5) | (i15 >>> 27)) + m77g(i16, i17, i18)) + this.f1263X[i21]) - 1894007588);
-            int m77g2 = i18 + (((((m77g << 5) | (m77g >>> 27)) + m77g(i15, i8, i17)) + this.f1263X[i7]) - 1894007588);
-            int m77g3 = i17 + (((((m77g2 << 5) | (m77g2 >>> 27)) + m77g(m77g, i10, i8)) + this.f1263X[i9]) - 1894007588);
-            i19 = (m77g >>> 2) | (m77g << 30);
-            i16 = ((i16 >>> 2) | (i16 << 30)) + (((((m77g3 << 5) | (m77g3 >>> 27)) + m77g(m77g2, i19, i10)) + this.f1263X[i11]) - 1894007588);
-            i18 = (m77g2 >>> 2) | (m77g2 << 30);
-            i15 = ((i15 >>> 2) | (i15 << 30)) + (((((i16 << 5) | (i16 >>> 27)) + m77g(m77g3, i18, i19)) + this.f1263X[i12]) - 1894007588);
-            i17 = (m77g3 >>> 2) | (m77g3 << 30);
+            int m72g = i19 + (((((i15 << 5) | (i15 >>> 27)) + m72g(i16, i17, i18)) + this.f1268X[i21]) - 1894007588);
+            int m72g2 = i18 + (((((m72g << 5) | (m72g >>> 27)) + m72g(i15, i8, i17)) + this.f1268X[i7]) - 1894007588);
+            int m72g3 = i17 + (((((m72g2 << 5) | (m72g2 >>> 27)) + m72g(m72g, i10, i8)) + this.f1268X[i9]) - 1894007588);
+            i19 = (m72g >>> 2) | (m72g << 30);
+            i16 = ((i16 >>> 2) | (i16 << 30)) + (((((m72g3 << 5) | (m72g3 >>> 27)) + m72g(m72g2, i19, i10)) + this.f1268X[i11]) - 1894007588);
+            i18 = (m72g2 >>> 2) | (m72g2 << 30);
+            i15 = ((i15 >>> 2) | (i15 << 30)) + (((((i16 << 5) | (i16 >>> 27)) + m72g(m72g3, i18, i19)) + this.f1268X[i12]) - 1894007588);
+            i17 = (m72g3 >>> 2) | (m72g3 << 30);
             i35++;
             i21 = i21 + 1 + 1 + 1 + 1 + 1;
         }
         int i36 = 0;
         while (i36 <= 3) {
-            int m76h4 = i19 + (((((i15 << 5) | (i15 >>> 27)) + m76h(i16, i17, i18)) + this.f1263X[i21]) - 899497514);
-            int m76h5 = i18 + (((((m76h4 << 5) | (m76h4 >>> 27)) + m76h(i15, i2, i17)) + this.f1263X[i]) - 899497514);
-            int m76h6 = i17 + (((((m76h5 << 5) | (m76h5 >>> 27)) + m76h(m76h4, i4, i2)) + this.f1263X[i3]) - 899497514);
-            i19 = (m76h4 >>> 2) | (m76h4 << 30);
-            i16 = ((i16 >>> 2) | (i16 << 30)) + (((((m76h6 << 5) | (m76h6 >>> 27)) + m76h(m76h5, i19, i4)) + this.f1263X[i5]) - 899497514);
-            i18 = (m76h5 >>> 2) | (m76h5 << 30);
-            i15 = ((i15 >>> 2) | (i15 << 30)) + (((((i16 << 5) | (i16 >>> 27)) + m76h(m76h6, i18, i19)) + this.f1263X[i6]) - 899497514);
-            i17 = (m76h6 >>> 2) | (m76h6 << 30);
+            int m71h4 = i19 + (((((i15 << 5) | (i15 >>> 27)) + m71h(i16, i17, i18)) + this.f1268X[i21]) - 899497514);
+            int m71h5 = i18 + (((((m71h4 << 5) | (m71h4 >>> 27)) + m71h(i15, i2, i17)) + this.f1268X[i]) - 899497514);
+            int m71h6 = i17 + (((((m71h5 << 5) | (m71h5 >>> 27)) + m71h(m71h4, i4, i2)) + this.f1268X[i3]) - 899497514);
+            i19 = (m71h4 >>> 2) | (m71h4 << 30);
+            i16 = ((i16 >>> 2) | (i16 << 30)) + (((((m71h6 << 5) | (m71h6 >>> 27)) + m71h(m71h5, i19, i4)) + this.f1268X[i5]) - 899497514);
+            i18 = (m71h5 >>> 2) | (m71h5 << 30);
+            i15 = ((i15 >>> 2) | (i15 << 30)) + (((((i16 << 5) | (i16 >>> 27)) + m71h(m71h6, i18, i19)) + this.f1268X[i6]) - 899497514);
+            i17 = (m71h6 >>> 2) | (m71h6 << 30);
             i36++;
             i21 = i21 + 1 + 1 + 1 + 1 + 1;
         }
-        this.f1258H1 += i15;
-        this.f1259H2 += i16;
-        this.f1260H3 += i17;
-        this.f1261H4 += i18;
-        this.f1262H5 += i19;
+        this.f1263H1 += i15;
+        this.f1264H2 += i16;
+        this.f1265H3 += i17;
+        this.f1266H4 += i18;
+        this.f1267H5 += i19;
         this.xOff = 0;
         for (int i37 = 0; i37 < 16; i37++) {
-            this.f1263X[i37] = 0;
+            this.f1268X[i37] = 0;
         }
     }
 
@@ -193,7 +193,7 @@ public class SHA1Digest extends GeneralDigest {
         if (this.xOff > 14) {
             processBlock();
         }
-        int[] iArr = this.f1263X;
+        int[] iArr = this.f1268X;
         iArr[14] = (int) (j >>> 32);
         iArr[15] = (int) j;
     }
@@ -203,7 +203,7 @@ public class SHA1Digest extends GeneralDigest {
         int i2 = i + 1;
         int i3 = i2 + 1;
         int i4 = (bArr[i3 + 1] & 255) | (bArr[i] << 24) | ((bArr[i2] & 255) << 16) | ((bArr[i3] & 255) << 8);
-        int[] iArr = this.f1263X;
+        int[] iArr = this.f1268X;
         int i5 = this.xOff;
         iArr[i5] = i4;
         int i6 = i5 + 1;
@@ -216,15 +216,15 @@ public class SHA1Digest extends GeneralDigest {
     @Override // org.bouncycastle.crypto.digests.GeneralDigest, org.bouncycastle.crypto.Digest
     public void reset() {
         super.reset();
-        this.f1258H1 = 1732584193;
-        this.f1259H2 = -271733879;
-        this.f1260H3 = -1732584194;
-        this.f1261H4 = 271733878;
-        this.f1262H5 = -1009589776;
+        this.f1263H1 = 1732584193;
+        this.f1264H2 = -271733879;
+        this.f1265H3 = -1732584194;
+        this.f1266H4 = 271733878;
+        this.f1267H5 = -1009589776;
         this.xOff = 0;
         int i = 0;
         while (true) {
-            int[] iArr = this.f1263X;
+            int[] iArr = this.f1268X;
             if (i == iArr.length) {
                 return;
             }

@@ -22,18 +22,18 @@
 
 
 # direct methods
-.method public static synthetic $r8$lambda$Rk5iDC8hS9IxIIvOns5h0ezdzho(Lorg/telegram/ui/Components/EmojiView$4;Lorg/telegram/tgnet/TLRPC$EmojiStatus;)V
+.method public static synthetic $r8$lambda$QFg5ZzD6JaMbQHswkoVRwBj6cjY(Lorg/telegram/ui/Components/EmojiView$4;Ljava/lang/String;Ljava/lang/String;)V
     .locals 0
 
-    invoke-direct {p0, p1}, Lorg/telegram/ui/Components/EmojiView$4;->lambda$setAsEmojiStatus$1(Lorg/telegram/tgnet/TLRPC$EmojiStatus;)V
+    invoke-direct {p0, p1, p2}, Lorg/telegram/ui/Components/EmojiView$4;->lambda$openKiklikoReport$0(Ljava/lang/String;Ljava/lang/String;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$gDoMAzeqf98-50hdStI4cvrBLKc(Lorg/telegram/ui/Components/EmojiView$4;Ljava/lang/String;Ljava/lang/String;)V
+.method public static synthetic $r8$lambda$Rk5iDC8hS9IxIIvOns5h0ezdzho(Lorg/telegram/ui/Components/EmojiView$4;Lorg/telegram/tgnet/TLRPC$EmojiStatus;)V
     .locals 0
 
-    invoke-direct {p0, p1, p2}, Lorg/telegram/ui/Components/EmojiView$4;->lambda$openKiklikoReport$0(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-direct {p0, p1}, Lorg/telegram/ui/Components/EmojiView$4;->lambda$setAsEmojiStatus$1(Lorg/telegram/tgnet/TLRPC$EmojiStatus;)V
 
     return-void
 .end method
@@ -55,12 +55,12 @@
     .line 786
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiView$4;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
-    iget-object v0, v0, Lorg/telegram/ui/Components/EmojiView;->presenter:Lcom/smedialink/ui/kikliko/EmojiViewPresenter;
+    iget-object v0, v0, Lorg/telegram/ui/Components/EmojiView;->presenter:Lcom/iMe/ui/kikliko/EmojiViewPresenter;
 
     if-eqz v0, :cond_0
 
     .line 787
-    invoke-virtual {v0, p1, p2}, Lcom/smedialink/ui/kikliko/EmojiViewPresenter;->report(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-virtual {v0, p1, p2}, Lcom/iMe/ui/kikliko/EmojiViewPresenter;->report(Ljava/lang/String;Ljava/lang/String;)V
 
     :cond_0
     return-void
@@ -617,11 +617,11 @@
 
     move-result-object v0
 
-    new-instance v1, Lorg/telegram/ui/Components/EmojiView$4$$ExternalSyntheticLambda1;
+    new-instance v1, Lorg/telegram/ui/Components/EmojiView$4$$ExternalSyntheticLambda0;
 
-    invoke-direct {v1, p0, p1}, Lorg/telegram/ui/Components/EmojiView$4$$ExternalSyntheticLambda1;-><init>(Lorg/telegram/ui/Components/EmojiView$4;Ljava/lang/String;)V
+    invoke-direct {v1, p0, p1}, Lorg/telegram/ui/Components/EmojiView$4$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/Components/EmojiView$4;Ljava/lang/String;)V
 
-    invoke-interface {v0, p1, v1}, Lorg/telegram/ui/Components/EmojiView$EmojiViewDelegate;->showKiklikoReportAlert(Ljava/lang/String;Lorg/fork/utils/Callbacks$Callback1;)V
+    invoke-interface {v0, p1, v1}, Lorg/telegram/ui/Components/EmojiView$EmojiViewDelegate;->showKiklikoReportAlert(Ljava/lang/String;Lcom/iMe/fork/utils/Callbacks$Callback1;)V
 
     return-void
 .end method
@@ -880,12 +880,12 @@
     .line 778
     iget-object p1, p0, Lorg/telegram/ui/Components/EmojiView$4;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
-    iget-object p1, p1, Lorg/telegram/ui/Components/EmojiView;->presenter:Lcom/smedialink/ui/kikliko/EmojiViewPresenter;
+    iget-object p1, p1, Lorg/telegram/ui/Components/EmojiView;->presenter:Lcom/iMe/ui/kikliko/EmojiViewPresenter;
 
     if-eqz p1, :cond_0
 
     .line 779
-    invoke-virtual {p1, p2}, Lcom/smedialink/ui/kikliko/EmojiViewPresenter;->onGifWasSent(Ljava/lang/String;)V
+    invoke-virtual {p1, p2}, Lcom/iMe/ui/kikliko/EmojiViewPresenter;->onGifWasSent(Ljava/lang/String;)V
 
     :cond_0
     return-void
@@ -1006,9 +1006,9 @@
     invoke-virtual {v1, p2}, Lorg/telegram/messenger/MessagesController;->updateEmojiStatus(Lorg/telegram/tgnet/TLRPC$EmojiStatus;)V
 
     .line 852
-    new-instance p2, Lorg/telegram/ui/Components/EmojiView$4$$ExternalSyntheticLambda0;
+    new-instance p2, Lorg/telegram/ui/Components/EmojiView$4$$ExternalSyntheticLambda1;
 
-    invoke-direct {p2, p0, v0}, Lorg/telegram/ui/Components/EmojiView$4$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/Components/EmojiView$4;Lorg/telegram/tgnet/TLRPC$EmojiStatus;)V
+    invoke-direct {p2, p0, v0}, Lorg/telegram/ui/Components/EmojiView$4$$ExternalSyntheticLambda1;-><init>(Lorg/telegram/ui/Components/EmojiView$4;Lorg/telegram/tgnet/TLRPC$EmojiStatus;)V
 
     if-nez p1, :cond_4
 

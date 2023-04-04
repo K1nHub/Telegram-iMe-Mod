@@ -1,6 +1,6 @@
 package com.trustwallet.walletconnect.exceptions;
 /* compiled from: InvalidJsonRpcParamsException.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class InvalidJsonRpcParamsException extends Exception {
     private final long requestId;
 

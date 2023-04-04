@@ -268,7 +268,7 @@
 
     if-eqz v2, :cond_1
 
-    const-string v4, "url(#"
+    const-string/jumbo v4, "url(#"
 
     .line 1120
     invoke-virtual {v2, v4}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
@@ -591,7 +591,7 @@
 .method private pushTransform(Lorg/xml/sax/Attributes;)V
     .locals 1
 
-    const-string v0, "transform"
+    const-string/jumbo v0, "transform"
 
     .line 1198
     invoke-static {v0, p1}, Lorg/telegram/messenger/SvgHelper;->access$200(Ljava/lang/String;Lorg/xml/sax/Attributes;)Ljava/lang/String;

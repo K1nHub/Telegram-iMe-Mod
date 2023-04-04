@@ -22,10 +22,10 @@
         "Ljava/lang/Object;",
         "Lcom/bumptech/glide/load/model/ModelLoaderFactory<",
         "Landroid/net/Uri;",
-        "Landroid/os/ParcelFileDescriptor;",
+        "Landroid/content/res/AssetFileDescriptor;",
         ">;",
         "Lcom/bumptech/glide/load/model/AssetUriLoader$AssetFetcherFactory<",
-        "Landroid/os/ParcelFileDescriptor;",
+        "Landroid/content/res/AssetFileDescriptor;",
         ">;"
     }
 .end annotation
@@ -59,7 +59,7 @@
             ")",
             "Lcom/bumptech/glide/load/model/ModelLoader<",
             "Landroid/net/Uri;",
-            "Landroid/os/ParcelFileDescriptor;",
+            "Landroid/content/res/AssetFileDescriptor;",
             ">;"
         }
     .end annotation
@@ -83,7 +83,7 @@
             "Ljava/lang/String;",
             ")",
             "Lcom/bumptech/glide/load/data/DataFetcher<",
-            "Landroid/os/ParcelFileDescriptor;",
+            "Landroid/content/res/AssetFileDescriptor;",
             ">;"
         }
     .end annotation

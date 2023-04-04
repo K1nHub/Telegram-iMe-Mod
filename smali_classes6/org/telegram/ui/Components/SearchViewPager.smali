@@ -105,14 +105,6 @@
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$DeFoUtRLWUR_dgQ8Try-1utANoo(Lorg/telegram/ui/Components/SearchViewPager;J)V
-    .locals 0
-
-    invoke-direct {p0, p1, p2}, Lorg/telegram/ui/Components/SearchViewPager;->lambda$forwardCloud$0(J)V
-
-    return-void
-.end method
-
 .method public static synthetic $r8$lambda$E7vJbavNxtDcFIOwF9QQabe35yU(Lorg/telegram/ui/Components/SearchViewPager;Lorg/telegram/ui/DialogsActivity;Ljava/util/ArrayList;Ljava/lang/CharSequence;ZLorg/telegram/ui/TopicsFragment;)Z
     .locals 0
 
@@ -127,6 +119,14 @@
     .locals 0
 
     invoke-static {p0, p1}, Lorg/telegram/ui/Components/SearchViewPager;->lambda$onActionBarItemClick$2(Landroid/content/DialogInterface;I)V
+
+    return-void
+.end method
+
+.method public static synthetic $r8$lambda$Uv8e_Adu7RPdP_mexG07XfYL-Qs(Lorg/telegram/ui/Components/SearchViewPager;J)V
+    .locals 0
+
+    invoke-direct {p0, p1, p2}, Lorg/telegram/ui/Components/SearchViewPager;->lambda$forwardCloud$0(J)V
 
     return-void
 .end method
@@ -665,11 +665,11 @@
     .line 94
     iget-object v1, p0, Lorg/telegram/ui/Components/SearchViewPager;->parent:Lorg/telegram/ui/ActionBar/BaseFragment;
 
-    new-instance v2, Lorg/fork/ui/dialog/ForwardCloudBottomSheet;
+    new-instance v2, Lcom/iMe/fork/ui/dialog/ForwardCloudBottomSheet;
 
     iget-object v3, p0, Lorg/telegram/ui/Components/SearchViewPager;->parent:Lorg/telegram/ui/ActionBar/BaseFragment;
 
-    invoke-direct {v2, v3, v0}, Lorg/fork/ui/dialog/ForwardCloudBottomSheet;-><init>(Lorg/telegram/ui/ActionBar/BaseFragment;Lorg/fork/ui/dialog/ForwardCloudBottomSheet$Delegate;)V
+    invoke-direct {v2, v3, v0}, Lcom/iMe/fork/ui/dialog/ForwardCloudBottomSheet;-><init>(Lorg/telegram/ui/ActionBar/BaseFragment;Lcom/iMe/fork/ui/dialog/ForwardCloudBottomSheet$Delegate;)V
 
     invoke-virtual {v1, v2}, Lorg/telegram/ui/ActionBar/BaseFragment;->showDialog(Landroid/app/Dialog;)Landroid/app/Dialog;
 
@@ -691,7 +691,7 @@
 
     move-result-wide v1
 
-    invoke-interface {v0, v1, v2}, Lorg/fork/ui/dialog/ForwardCloudBottomSheet$Delegate;->didSelectCloudDialog(J)V
+    invoke-interface {v0, v1, v2}, Lcom/iMe/fork/ui/dialog/ForwardCloudBottomSheet$Delegate;->didSelectCloudDialog(J)V
 
     :goto_0
     return-void
@@ -2029,7 +2029,7 @@
     .line 468
     iget-object v1, p0, Lorg/telegram/ui/Components/SearchViewPager;->actionMode:Lorg/telegram/ui/ActionBar/ActionBarMenu;
 
-    sget v2, Lcom/smedialink/common/IdFabric$Menu;->MESSAGE_FORWARD_CLOUD:I
+    sget v2, Lcom/iMe/common/IdFabric$Menu;->MESSAGE_FORWARD_CLOUD:I
 
     sget v3, Lorg/telegram/messenger/R$drawable;->fork_forward_cloud:I
 
@@ -3271,7 +3271,7 @@
     .locals 5
 
     .line 530
-    sget v0, Lcom/smedialink/common/IdFabric$Menu;->MESSAGE_FORWARD_CLOUD:I
+    sget v0, Lcom/iMe/common/IdFabric$Menu;->MESSAGE_FORWARD_CLOUD:I
 
     if-ne p1, v0, :cond_0
 

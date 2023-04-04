@@ -8,7 +8,7 @@ import android.os.IInterface;
 import android.os.Looper;
 import android.os.RemoteException;
 import android.util.Log;
-import com.google.android.gms.auth.api.signin.internal.C0689Storage;
+import com.google.android.gms.auth.api.signin.internal.C0703Storage;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GooglePlayServicesUtilLight;
 import com.google.android.gms.common.annotation.KeepForSdk;
@@ -124,7 +124,7 @@ public class SignInClientImpl extends GmsClient<zaf> implements com.google.andro
         Preconditions.checkNotNull(zaeVar, "Expecting a valid ISignInCallbacks");
         try {
             Account accountOrDefault = this.zac.getAccountOrDefault();
-            ((zaf) getService()).zag(new zai(1, new zat(accountOrDefault, ((Integer) Preconditions.checkNotNull(this.zae)).intValue(), "<<default account>>".equals(accountOrDefault.name) ? C0689Storage.getInstance(getContext()).getSavedDefaultGoogleSignInAccount() : null)), zaeVar);
+            ((zaf) getService()).zag(new zai(1, new zat(accountOrDefault, ((Integer) Preconditions.checkNotNull(this.zae)).intValue(), "<<default account>>".equals(accountOrDefault.name) ? C0703Storage.getInstance(getContext()).getSavedDefaultGoogleSignInAccount() : null)), zaeVar);
         } catch (RemoteException e) {
             Log.w("SignInClientImpl", "Remote service probably died when signIn is called");
             try {

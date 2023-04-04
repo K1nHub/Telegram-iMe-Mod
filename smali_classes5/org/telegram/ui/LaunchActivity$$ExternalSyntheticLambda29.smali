@@ -2,32 +2,40 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Lcom/iMe/fork/utils/Callbacks$Callback;
 
 
-# instance fields
-.field public final synthetic f$0:Landroid/view/View;
+# static fields
+.field public static final synthetic INSTANCE:Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda29;
 
 
 # direct methods
-.method public synthetic constructor <init>(Landroid/view/View;)V
+.method static synthetic constructor <clinit>()V
+    .locals 1
+
+    new-instance v0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda29;
+
+    invoke-direct {v0}, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda29;-><init>()V
+
+    sput-object v0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda29;->INSTANCE:Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda29;
+
+    return-void
+.end method
+
+.method private synthetic constructor <init>()V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda29;->f$0:Landroid/view/View;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final run()V
-    .locals 1
+.method public final invoke()V
+    .locals 0
 
-    iget-object v0, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda29;->f$0:Landroid/view/View;
-
-    invoke-static {v0}, Lorg/telegram/ui/LaunchActivity;->$r8$lambda$tkd_Dlgbdt4TbgDA7ATBqkg1XSE(Landroid/view/View;)V
+    invoke-static {}, Lorg/telegram/ui/LaunchActivity;->$r8$lambda$D953YV8Jw36FoeiZPfNpmqrh11E()V
 
     return-void
 .end method

@@ -8,7 +8,7 @@ import android.graphics.RectF;
 import android.util.Pair;
 import android.view.View;
 import android.view.ViewGroup;
-import com.google.android.exoplayer2.C0468C;
+import com.google.android.exoplayer2.C0482C;
 import com.google.android.exoplayer2.audio.AacUtil;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import java.lang.reflect.Array;
@@ -99,10 +99,10 @@ public class TableLayout extends View {
         public int textY;
 
         /* renamed from: x */
-        public int f1814x;
+        public int f1817x;
 
         /* renamed from: y */
-        public int f1815y;
+        public int f1818y;
 
         static /* synthetic */ int access$1520(Child child, int i) {
             int i2 = child.measuredHeight - i;
@@ -261,16 +261,16 @@ public class TableLayout extends View {
         }
 
         public void layout(int i, int i2, int i3, int i4) {
-            this.f1814x = i;
-            this.f1815y = i2;
+            this.f1817x = i;
+            this.f1818y = i2;
         }
 
         public int getTextX() {
-            return this.f1814x + this.textX;
+            return this.f1817x + this.textX;
         }
 
         public int getTextY() {
-            return this.f1815y + this.textY;
+            return this.f1818y + this.textY;
         }
 
         public void setFixedHeight(int i) {
@@ -301,11 +301,11 @@ public class TableLayout extends View {
             }
             boolean z = false;
             boolean z2 = true;
-            boolean z3 = this.f1814x + this.measuredWidth == TableLayout.this.getMeasuredWidth();
-            boolean z4 = this.f1815y + this.measuredHeight == TableLayout.this.getMeasuredHeight();
+            boolean z3 = this.f1817x + this.measuredWidth == TableLayout.this.getMeasuredWidth();
+            boolean z4 = this.f1818y + this.measuredHeight == TableLayout.this.getMeasuredHeight();
             int m50dp = AndroidUtilities.m50dp(3);
             if (this.cell.header || (TableLayout.this.isStriped && this.layoutParams.rowSpec.span.min % 2 == 0)) {
-                if (this.f1814x != 0 || this.f1815y != 0) {
+                if (this.f1817x != 0 || this.f1818y != 0) {
                     float[] fArr = TableLayout.this.radii;
                     TableLayout.this.radii[1] = 0.0f;
                     fArr[0] = 0.0f;
@@ -316,7 +316,7 @@ public class TableLayout extends View {
                     fArr2[0] = f3;
                     z = true;
                 }
-                if (!z3 || this.f1815y != 0) {
+                if (!z3 || this.f1818y != 0) {
                     float[] fArr3 = TableLayout.this.radii;
                     TableLayout.this.radii[3] = 0.0f;
                     fArr3[2] = 0.0f;
@@ -338,7 +338,7 @@ public class TableLayout extends View {
                     fArr6[4] = f5;
                     z = true;
                 }
-                if (this.f1814x != 0 || !z4) {
+                if (this.f1817x != 0 || !z4) {
                     float[] fArr7 = TableLayout.this.radii;
                     TableLayout.this.radii[7] = 0.0f;
                     fArr7[6] = 0.0f;
@@ -350,7 +350,7 @@ public class TableLayout extends View {
                     fArr8[6] = f6;
                 }
                 if (z2) {
-                    TableLayout.this.rect.set(this.f1814x, this.f1815y, i5 + this.measuredWidth, i6 + this.measuredHeight);
+                    TableLayout.this.rect.set(this.f1817x, this.f1818y, i5 + this.measuredWidth, i6 + this.measuredHeight);
                     TableLayout.this.backgroundPath.reset();
                     TableLayout.this.backgroundPath.addRoundRect(TableLayout.this.rect, TableLayout.this.radii, Path.Direction.CW);
                     if (this.cell.header) {
@@ -359,9 +359,9 @@ public class TableLayout extends View {
                         canvas.drawPath(TableLayout.this.backgroundPath, TableLayout.this.delegate.getStripPaint());
                     }
                 } else if (this.cell.header) {
-                    canvas.drawRect(this.f1814x, this.f1815y, i3 + this.measuredWidth, i4 + this.measuredHeight, TableLayout.this.delegate.getHeaderPaint());
+                    canvas.drawRect(this.f1817x, this.f1818y, i3 + this.measuredWidth, i4 + this.measuredHeight, TableLayout.this.delegate.getHeaderPaint());
                 } else {
-                    canvas.drawRect(this.f1814x, this.f1815y, i + this.measuredWidth, i2 + this.measuredHeight, TableLayout.this.delegate.getStripPaint());
+                    canvas.drawRect(this.f1817x, this.f1818y, i + this.measuredWidth, i2 + this.measuredHeight, TableLayout.this.delegate.getStripPaint());
                 }
             }
             if (this.textLayout != null) {
@@ -378,9 +378,9 @@ public class TableLayout extends View {
                 Paint linePaint2 = TableLayout.this.delegate.getLinePaint();
                 float strokeWidth = linePaint.getStrokeWidth() / 2.0f;
                 float strokeWidth2 = linePaint2.getStrokeWidth() / 2.0f;
-                int i10 = this.f1814x;
+                int i10 = this.f1817x;
                 if (i10 == 0) {
-                    int i11 = this.f1815y;
+                    int i11 = this.f1818y;
                     float f7 = i11;
                     float f8 = this.measuredHeight + i11;
                     if (i11 == 0) {
@@ -390,14 +390,14 @@ public class TableLayout extends View {
                     if (f8 == TableLayout.this.getMeasuredHeight()) {
                         f8 -= m50dp;
                     }
-                    int i12 = this.f1814x;
+                    int i12 = this.f1817x;
                     canvas.drawLine(i12 + strokeWidth, f9, i12 + strokeWidth, f8, linePaint);
                 } else {
-                    canvas.drawLine(i10 - strokeWidth2, this.f1815y, i10 - strokeWidth2, i7 + this.measuredHeight, linePaint2);
+                    canvas.drawLine(i10 - strokeWidth2, this.f1818y, i10 - strokeWidth2, i7 + this.measuredHeight, linePaint2);
                 }
-                int i13 = this.f1815y;
+                int i13 = this.f1818y;
                 if (i13 == 0) {
-                    int i14 = this.f1814x;
+                    int i14 = this.f1817x;
                     float f10 = i14;
                     float f11 = this.measuredWidth + i14;
                     if (i14 == 0) {
@@ -406,22 +406,22 @@ public class TableLayout extends View {
                     if (f11 == TableLayout.this.getMeasuredWidth()) {
                         f11 -= m50dp;
                     }
-                    int i15 = this.f1815y;
+                    int i15 = this.f1818y;
                     canvas.drawLine(f10, i15 + strokeWidth, f11, i15 + strokeWidth, linePaint);
                 } else {
-                    canvas.drawLine(this.f1814x, i13 - strokeWidth2, i8 + this.measuredWidth, i13 - strokeWidth2, linePaint2);
+                    canvas.drawLine(this.f1817x, i13 - strokeWidth2, i8 + this.measuredWidth, i13 - strokeWidth2, linePaint2);
                 }
-                float f12 = (z3 && (i9 = this.f1815y) == 0) ? i9 + m50dp : this.f1815y - strokeWidth;
+                float f12 = (z3 && (i9 = this.f1818y) == 0) ? i9 + m50dp : this.f1818y - strokeWidth;
                 if (z3 && z4) {
-                    f = (this.f1815y + this.measuredHeight) - m50dp;
+                    f = (this.f1818y + this.measuredHeight) - m50dp;
                 } else {
-                    f = (this.f1815y + this.measuredHeight) - strokeWidth;
+                    f = (this.f1818y + this.measuredHeight) - strokeWidth;
                 }
                 float f13 = f;
-                int i16 = this.f1814x;
+                int i16 = this.f1817x;
                 int i17 = this.measuredWidth;
                 canvas.drawLine((i16 + i17) - strokeWidth, f12, (i16 + i17) - strokeWidth, f13, linePaint);
-                int i18 = this.f1814x;
+                int i18 = this.f1817x;
                 float f14 = (i18 == 0 && z4) ? i18 + m50dp : i18 - strokeWidth;
                 if (z3 && z4) {
                     f2 = (i18 + this.measuredWidth) - m50dp;
@@ -429,30 +429,30 @@ public class TableLayout extends View {
                     f2 = (i18 + this.measuredWidth) - strokeWidth;
                 }
                 float f15 = f2;
-                int i19 = this.f1815y;
+                int i19 = this.f1818y;
                 int i20 = this.measuredHeight;
                 canvas.drawLine(f14, (i19 + i20) - strokeWidth, f15, (i19 + i20) - strokeWidth, linePaint);
-                if (this.f1814x == 0 && this.f1815y == 0) {
+                if (this.f1817x == 0 && this.f1818y == 0) {
                     RectF rectF = TableLayout.this.rect;
-                    int i21 = this.f1814x;
-                    int i22 = this.f1815y;
+                    int i21 = this.f1817x;
+                    int i22 = this.f1818y;
                     float f16 = m50dp * 2;
                     rectF.set(i21 + strokeWidth, i22 + strokeWidth, i21 + strokeWidth + f16, i22 + strokeWidth + f16);
                     canvas.drawArc(TableLayout.this.rect, -180.0f, 90.0f, false, linePaint);
                 }
-                if (z3 && this.f1815y == 0) {
+                if (z3 && this.f1818y == 0) {
                     RectF rectF2 = TableLayout.this.rect;
-                    int i23 = this.f1814x;
+                    int i23 = this.f1817x;
                     int i24 = this.measuredWidth;
                     float f17 = m50dp * 2;
-                    int i25 = this.f1815y;
+                    int i25 = this.f1818y;
                     rectF2.set(((i23 + i24) - strokeWidth) - f17, i25 + strokeWidth, (i23 + i24) - strokeWidth, i25 + strokeWidth + f17);
                     canvas.drawArc(TableLayout.this.rect, BitmapDescriptorFactory.HUE_RED, -90.0f, false, linePaint);
                 }
-                if (this.f1814x == 0 && z4) {
+                if (this.f1817x == 0 && z4) {
                     RectF rectF3 = TableLayout.this.rect;
-                    int i26 = this.f1814x;
-                    int i27 = this.f1815y;
+                    int i26 = this.f1817x;
+                    int i27 = this.f1818y;
                     int i28 = this.measuredHeight;
                     float f18 = m50dp * 2;
                     rectF3.set(i26 + strokeWidth, ((i27 + i28) - strokeWidth) - f18, i26 + strokeWidth + f18, (i27 + i28) - strokeWidth);
@@ -460,10 +460,10 @@ public class TableLayout extends View {
                 }
                 if (z3 && z4) {
                     RectF rectF4 = TableLayout.this.rect;
-                    int i29 = this.f1814x;
+                    int i29 = this.f1817x;
                     int i30 = this.measuredWidth;
                     float f19 = m50dp * 2;
-                    int i31 = this.f1815y;
+                    int i31 = this.f1818y;
                     int i32 = this.measuredHeight;
                     rectF4.set(((i29 + i30) - strokeWidth) - f19, ((i31 + i32) - strokeWidth) - f19, (i29 + i30) - strokeWidth, (i31 + i32) - strokeWidth);
                     canvas.drawArc(TableLayout.this.rect, BitmapDescriptorFactory.HUE_RED, 90.0f, false, linePaint);
@@ -953,7 +953,7 @@ public class TableLayout extends View {
                             break;
                         }
                         Point point = this.rowSpans.get(i17);
-                        if (point.f1758x <= childAt.layoutParams.rowSpec.span.min && point.f1759y > childAt.layoutParams.rowSpec.span.min) {
+                        if (point.f1761x <= childAt.layoutParams.rowSpec.span.min && point.f1762y > childAt.layoutParams.rowSpec.span.min) {
                             z2 = true;
                             break;
                         }
@@ -1031,7 +1031,7 @@ public class TableLayout extends View {
                             Child.access$1520(child4, i19);
                             child4.measure(child4.measuredWidth, child4.measuredHeight, true);
                         } else if (child.layoutParams.rowSpec.span.min < child4.layoutParams.rowSpec.span.min) {
-                            child4.f1815y -= i19;
+                            child4.f1818y -= i19;
                         }
                     }
                 }
@@ -1654,7 +1654,7 @@ public class TableLayout extends View {
         public Spec rowSpec;
 
         static {
-            Interval interval = new Interval(Integer.MIN_VALUE, C0468C.RATE_UNSET_INT);
+            Interval interval = new Interval(Integer.MIN_VALUE, C0482C.RATE_UNSET_INT);
             DEFAULT_SPAN = interval;
             interval.size();
         }

@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lorg/telegram/ui/CacheControlActivity$ClearCacheButtonInternal$$ExternalSyntheticLambda0;->f$0:Lorg/telegram/ui/CacheControlActivity$ClearCacheButtonInternal;
 
-    invoke-static {v0, p1}, Lorg/telegram/ui/CacheControlActivity$ClearCacheButtonInternal;->$r8$lambda$Ryle1MkR1hmjkZvqnwyqZZ6exDY(Lorg/telegram/ui/CacheControlActivity$ClearCacheButtonInternal;Landroid/view/View;)V
+    invoke-static {v0, p1}, Lorg/telegram/ui/CacheControlActivity$ClearCacheButtonInternal;->$r8$lambda$inc9wJiv4cBWeI-HU5NqytFztw4(Lorg/telegram/ui/CacheControlActivity$ClearCacheButtonInternal;Landroid/view/View;)V
 
     return-void
 .end method

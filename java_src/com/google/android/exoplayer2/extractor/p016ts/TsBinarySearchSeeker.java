@@ -1,6 +1,6 @@
 package com.google.android.exoplayer2.extractor.p016ts;
 
-import com.google.android.exoplayer2.C0468C;
+import com.google.android.exoplayer2.C0482C;
 import com.google.android.exoplayer2.extractor.BinarySearchSeeker;
 import com.google.android.exoplayer2.extractor.ExtractorInput;
 import com.google.android.exoplayer2.util.ParsableByteArray;
@@ -50,10 +50,10 @@ public final class TsBinarySearchSeeker extends BinarySearchSeeker {
             long j5 = -9223372036854775807L;
             while (parsableByteArray.bytesLeft() >= 188 && (findSyncBytePosition2 = (findSyncBytePosition = TsUtil.findSyncBytePosition(parsableByteArray.getData(), parsableByteArray.getPosition(), limit)) + TsExtractor.TS_PACKET_SIZE) <= limit) {
                 long readPcrFromPacket = TsUtil.readPcrFromPacket(parsableByteArray, findSyncBytePosition, this.pcrPid);
-                if (readPcrFromPacket != C0468C.TIME_UNSET) {
+                if (readPcrFromPacket != C0482C.TIME_UNSET) {
                     long adjustTsTimestamp = this.pcrTimestampAdjuster.adjustTsTimestamp(readPcrFromPacket);
                     if (adjustTsTimestamp > j) {
-                        if (j5 == C0468C.TIME_UNSET) {
+                        if (j5 == C0482C.TIME_UNSET) {
                             return BinarySearchSeeker.TimestampSearchResult.overestimatedResult(adjustTsTimestamp, j2);
                         }
                         return BinarySearchSeeker.TimestampSearchResult.targetFoundResult(j2 + j4);
@@ -67,7 +67,7 @@ public final class TsBinarySearchSeeker extends BinarySearchSeeker {
                 parsableByteArray.setPosition(findSyncBytePosition2);
                 j3 = findSyncBytePosition2;
             }
-            if (j5 != C0468C.TIME_UNSET) {
+            if (j5 != C0482C.TIME_UNSET) {
                 return BinarySearchSeeker.TimestampSearchResult.underestimatedResult(j5, j2 + j3);
             }
             return BinarySearchSeeker.TimestampSearchResult.NO_TIMESTAMP_IN_RANGE_RESULT;

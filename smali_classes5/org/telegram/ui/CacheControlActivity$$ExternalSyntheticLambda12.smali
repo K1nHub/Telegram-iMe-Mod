@@ -51,7 +51,7 @@
 
     iget-object v4, p0, Lorg/telegram/ui/CacheControlActivity$$ExternalSyntheticLambda12;->f$4:Lorg/telegram/ui/Storage/CacheModel;
 
-    invoke-static {v0, v1, v2, v3, v4}, Lorg/telegram/ui/CacheControlActivity;->$r8$lambda$937i_IzOaB3ZKHrP0ffdXwjOjB8(Lorg/telegram/ui/CacheControlActivity;Ljava/util/ArrayList;Ljava/util/ArrayList;Ljava/util/ArrayList;Lorg/telegram/ui/Storage/CacheModel;)V
+    invoke-static {v0, v1, v2, v3, v4}, Lorg/telegram/ui/CacheControlActivity;->$r8$lambda$BJxDSoYVuTfaygG8U-lRq00SDZ0(Lorg/telegram/ui/CacheControlActivity;Ljava/util/ArrayList;Ljava/util/ArrayList;Ljava/util/ArrayList;Lorg/telegram/ui/Storage/CacheModel;)V
 
     return-void
 .end method

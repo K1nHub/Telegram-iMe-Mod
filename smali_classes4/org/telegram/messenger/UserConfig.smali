@@ -66,7 +66,7 @@
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lkotlin/Lazy<",
-            "Lcom/smedialink/storage/domain/manager/crypto/CryptoAccessManager;",
+            "Lcom/iMe/storage/domain/manager/crypto/CryptoAccessManager;",
             ">;"
         }
     .end annotation
@@ -234,7 +234,7 @@
     invoke-direct {p0, p1}, Lorg/telegram/messenger/BaseController;-><init>(I)V
 
     .line 38
-    const-class p1, Lcom/smedialink/storage/domain/manager/crypto/CryptoAccessManager;
+    const-class p1, Lcom/iMe/storage/domain/manager/crypto/CryptoAccessManager;
 
     invoke-static {p1}, Lorg/koin/java/KoinJavaComponent;->inject(Ljava/lang/Class;)Lkotlin/Lazy;
 
@@ -735,7 +735,7 @@
 
     invoke-interface {v1, v2, v3}, Landroid/content/SharedPreferences$Editor;->putBoolean(Ljava/lang/String;Z)Landroid/content/SharedPreferences$Editor;
 
-    const-string v2, "unreadDialogsLoaded"
+    const-string/jumbo v2, "unreadDialogsLoaded"
 
     .line 211
     iget-boolean v3, p0, Lorg/telegram/messenger/UserConfig;->unreadDialogsLoaded:Z
@@ -1055,7 +1055,7 @@
 
     move-result-object v4
 
-    const-string v5, "tmpPassword"
+    const-string/jumbo v5, "tmpPassword"
 
     .line 269
     invoke-interface {v1, v5, v4}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
@@ -1066,7 +1066,7 @@
     goto :goto_2
 
     :cond_5
-    const-string v2, "tmpPassword"
+    const-string/jumbo v2, "tmpPassword"
 
     .line 272
     invoke-interface {v1, v2}, Landroid/content/SharedPreferences$Editor;->remove(Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
@@ -1098,7 +1098,7 @@
 
     move-result-object v2
 
-    const-string v3, "user"
+    const-string/jumbo v3, "user"
 
     .line 280
     invoke-interface {v1, v3, v2}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
@@ -1109,7 +1109,7 @@
     goto :goto_3
 
     :cond_6
-    const-string p1, "user"
+    const-string/jumbo p1, "user"
 
     .line 284
     invoke-interface {v1, p1}, Landroid/content/SharedPreferences$Editor;->remove(Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
@@ -1154,21 +1154,21 @@
     .locals 4
 
     .line 65
-    invoke-virtual {p0}, Lorg/telegram/messenger/BaseController;->getAlbumsController()Lorg/fork/controller/AlbumsController;
+    invoke-virtual {p0}, Lorg/telegram/messenger/BaseController;->getAlbumsController()Lcom/iMe/fork/controller/AlbumsController;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lorg/fork/controller/AlbumsController;->loadAlbums()V
+    invoke-virtual {v0}, Lcom/iMe/fork/controller/AlbumsController;->loadAlbums()V
 
     .line 66
-    invoke-virtual {p0}, Lorg/telegram/messenger/BaseController;->getForkTopicsController()Lorg/fork/controller/ForkTopicsController;
+    invoke-virtual {p0}, Lorg/telegram/messenger/BaseController;->getForkTopicsController()Lcom/iMe/fork/controller/ForkTopicsController;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lorg/fork/controller/ForkTopicsController;->loadTopics()V
+    invoke-virtual {v0}, Lcom/iMe/fork/controller/ForkTopicsController;->loadTopics()V
 
     .line 67
-    invoke-virtual {p0}, Lorg/telegram/messenger/BaseController;->getForkTopicsController()Lorg/fork/controller/ForkTopicsController;
+    invoke-virtual {p0}, Lorg/telegram/messenger/BaseController;->getForkTopicsController()Lcom/iMe/fork/controller/ForkTopicsController;
 
     move-result-object v0
 
@@ -1176,61 +1176,61 @@
 
     const/4 v2, 0x0
 
-    invoke-virtual {v0, v1, v2}, Lorg/fork/controller/ForkTopicsController;->updateCatalog(ZLorg/fork/utils/Callbacks$Callback1;)V
+    invoke-virtual {v0, v1, v2}, Lcom/iMe/fork/controller/ForkTopicsController;->updateCatalog(ZLcom/iMe/fork/utils/Callbacks$Callback1;)V
 
     .line 68
-    invoke-virtual {p0}, Lorg/telegram/messenger/BaseController;->getRecentChatsController()Lorg/fork/controller/RecentChatsController;
+    invoke-virtual {p0}, Lorg/telegram/messenger/BaseController;->getRecentChatsController()Lcom/iMe/fork/controller/RecentChatsController;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lorg/fork/controller/RecentChatsController;->loadRecentChats()V
+    invoke-virtual {v0}, Lcom/iMe/fork/controller/RecentChatsController;->loadRecentChats()V
 
     .line 69
-    invoke-virtual {p0}, Lorg/telegram/messenger/BaseController;->getFiltersController()Lorg/fork/controller/FiltersController;
+    invoke-virtual {p0}, Lorg/telegram/messenger/BaseController;->getFiltersController()Lcom/iMe/fork/controller/FiltersController;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lorg/fork/controller/FiltersController;->loadFilterSettings()V
+    invoke-virtual {v0}, Lcom/iMe/fork/controller/FiltersController;->loadFilterSettings()V
 
     .line 70
-    invoke-virtual {p0}, Lorg/telegram/messenger/BaseController;->getDialogTranslationSettingsController()Lorg/fork/controller/DialogTranslationController;
+    invoke-virtual {p0}, Lorg/telegram/messenger/BaseController;->getDialogTranslationSettingsController()Lcom/iMe/fork/controller/DialogTranslationController;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lorg/fork/controller/DialogTranslationController;->loadDialogTranslationSettings()V
+    invoke-virtual {v0}, Lcom/iMe/fork/controller/DialogTranslationController;->loadDialogTranslationSettings()V
 
     .line 71
-    invoke-virtual {p0}, Lorg/telegram/messenger/BaseController;->getTemplatesController()Lorg/fork/controller/TemplatesController;
+    invoke-virtual {p0}, Lorg/telegram/messenger/BaseController;->getTemplatesController()Lcom/iMe/fork/controller/TemplatesController;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lorg/fork/controller/TemplatesController;->loadTemplates()V
+    invoke-virtual {v0}, Lcom/iMe/fork/controller/TemplatesController;->loadTemplates()V
 
     .line 72
-    invoke-virtual {p0}, Lorg/telegram/messenger/BaseController;->getBookmarksController()Lorg/fork/controller/BookmarksController;
+    invoke-virtual {p0}, Lorg/telegram/messenger/BaseController;->getBookmarksController()Lcom/iMe/fork/controller/BookmarksController;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lorg/fork/controller/BookmarksController;->loadBookmarks()V
+    invoke-virtual {v0}, Lcom/iMe/fork/controller/BookmarksController;->loadBookmarks()V
 
     .line 73
-    invoke-virtual {p0}, Lorg/telegram/messenger/BaseController;->getMusicController()Lorg/fork/controller/MusicController;
+    invoke-virtual {p0}, Lorg/telegram/messenger/BaseController;->getMusicController()Lcom/iMe/fork/controller/MusicController;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lorg/fork/controller/MusicController;->loadPlaylists()V
+    invoke-virtual {v0}, Lcom/iMe/fork/controller/MusicController;->loadPlaylists()V
 
     .line 74
     iget-wide v2, p0, Lorg/telegram/messenger/UserConfig;->clientUserId:J
 
-    invoke-static {v2, v3}, Lcom/smedialink/storage/data/locale/prefs/migration/PreferencesMigrationManager$Crypto;->migrateCryptoPrefs(J)V
+    invoke-static {v2, v3}, Lcom/iMe/storage/data/locale/prefs/migration/PreferencesMigrationManager$Crypto;->migrateCryptoPrefs(J)V
 
     .line 75
-    invoke-virtual {p0}, Lorg/telegram/messenger/BaseController;->getBackupController()Lorg/fork/controller/BackupController;
+    invoke-virtual {p0}, Lorg/telegram/messenger/BaseController;->getBackupController()Lcom/iMe/fork/controller/BackupController;
 
     move-result-object v0
 
-    invoke-virtual {v0, v1}, Lorg/fork/controller/BackupController;->backup(Z)V
+    invoke-virtual {v0, v1}, Lcom/iMe/fork/controller/BackupController;->backup(Z)V
 
     return-void
 .end method
@@ -1272,9 +1272,9 @@
 
     move-result-object v1
 
-    check-cast v1, Lcom/smedialink/storage/domain/manager/crypto/CryptoAccessManager;
+    check-cast v1, Lcom/iMe/storage/domain/manager/crypto/CryptoAccessManager;
 
-    invoke-interface {v1}, Lcom/smedialink/storage/domain/manager/crypto/CryptoAccessManager;->onUserChanged()V
+    invoke-interface {v1}, Lcom/iMe/storage/domain/manager/crypto/CryptoAccessManager;->onUserChanged()V
 
     .line 64
     sget-object v1, Lorg/telegram/messenger/Utilities;->stageQueue:Lorg/telegram/messenger/DispatchQueue;
@@ -2106,7 +2106,7 @@
     .line 494
     sget-object v0, Lorg/telegram/messenger/ApplicationLoader;->applicationContext:Landroid/content/Context;
 
-    const-string v2, "userconfing"
+    const-string/jumbo v2, "userconfing"
 
     invoke-virtual {v0, v2, v1}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
 
@@ -2122,7 +2122,7 @@
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v3, "userconfig"
+    const-string/jumbo v3, "userconfig"
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -2510,93 +2510,93 @@
 
     .line 357
     :cond_1
-    invoke-virtual {p0}, Lorg/telegram/messenger/BaseController;->getAlbumsController()Lorg/fork/controller/AlbumsController;
+    invoke-virtual {p0}, Lorg/telegram/messenger/BaseController;->getAlbumsController()Lcom/iMe/fork/controller/AlbumsController;
 
     move-result-object v2
 
-    invoke-virtual {v2, v1}, Lorg/fork/controller/AlbumsController;->loadConfig(Landroid/content/SharedPreferences;)V
+    invoke-virtual {v2, v1}, Lcom/iMe/fork/controller/AlbumsController;->loadConfig(Landroid/content/SharedPreferences;)V
 
     .line 358
-    invoke-virtual {p0}, Lorg/telegram/messenger/BaseController;->getBackupController()Lorg/fork/controller/BackupController;
+    invoke-virtual {p0}, Lorg/telegram/messenger/BaseController;->getBackupController()Lcom/iMe/fork/controller/BackupController;
 
     move-result-object v2
 
-    invoke-virtual {v2, v1}, Lorg/fork/controller/BackupController;->loadConfig(Landroid/content/SharedPreferences;)V
+    invoke-virtual {v2, v1}, Lcom/iMe/fork/controller/BackupController;->loadConfig(Landroid/content/SharedPreferences;)V
 
     .line 359
-    invoke-virtual {p0}, Lorg/telegram/messenger/BaseController;->getFiltersController()Lorg/fork/controller/FiltersController;
+    invoke-virtual {p0}, Lorg/telegram/messenger/BaseController;->getFiltersController()Lcom/iMe/fork/controller/FiltersController;
 
     move-result-object v2
 
-    invoke-virtual {v2, v1}, Lorg/fork/controller/FiltersController;->loadConfig(Landroid/content/SharedPreferences;)V
+    invoke-virtual {v2, v1}, Lcom/iMe/fork/controller/FiltersController;->loadConfig(Landroid/content/SharedPreferences;)V
 
     .line 360
-    invoke-virtual {p0}, Lorg/telegram/messenger/BaseController;->getForkCommonController()Lorg/fork/controller/ForkCommonController;
+    invoke-virtual {p0}, Lorg/telegram/messenger/BaseController;->getForkCommonController()Lcom/iMe/fork/controller/ForkCommonController;
 
     move-result-object v2
 
-    invoke-virtual {v2, v1}, Lorg/fork/controller/ForkCommonController;->loadConfig(Landroid/content/SharedPreferences;)V
+    invoke-virtual {v2, v1}, Lcom/iMe/fork/controller/ForkCommonController;->loadConfig(Landroid/content/SharedPreferences;)V
 
     .line 361
-    invoke-virtual {p0}, Lorg/telegram/messenger/BaseController;->getLockedSectionsController()Lorg/fork/controller/LockedSectionsController;
+    invoke-virtual {p0}, Lorg/telegram/messenger/BaseController;->getLockedSectionsController()Lcom/iMe/fork/controller/LockedSectionsController;
 
     move-result-object v2
 
-    invoke-virtual {v2, v1}, Lorg/fork/controller/LockedSectionsController;->loadConfig(Landroid/content/SharedPreferences;)V
+    invoke-virtual {v2, v1}, Lcom/iMe/fork/controller/LockedSectionsController;->loadConfig(Landroid/content/SharedPreferences;)V
 
     .line 362
-    invoke-virtual {p0}, Lorg/telegram/messenger/BaseController;->getMultiPanelController()Lorg/fork/controller/MultiPanelController;
+    invoke-virtual {p0}, Lorg/telegram/messenger/BaseController;->getMultiPanelController()Lcom/iMe/fork/controller/MultiPanelController;
 
     move-result-object v2
 
-    invoke-virtual {v2, v1}, Lorg/fork/controller/MultiPanelController;->loadConfig(Landroid/content/SharedPreferences;)V
+    invoke-virtual {v2, v1}, Lcom/iMe/fork/controller/MultiPanelController;->loadConfig(Landroid/content/SharedPreferences;)V
 
     .line 363
-    invoke-virtual {p0}, Lorg/telegram/messenger/BaseController;->getNeuroBotsController()Lorg/fork/controller/NeuroBotsController;
+    invoke-virtual {p0}, Lorg/telegram/messenger/BaseController;->getNeuroBotsController()Lcom/iMe/fork/controller/NeuroBotsController;
 
     move-result-object v2
 
-    invoke-virtual {v2, v1}, Lorg/fork/controller/NeuroBotsController;->loadConfig(Landroid/content/SharedPreferences;)V
+    invoke-virtual {v2, v1}, Lcom/iMe/fork/controller/NeuroBotsController;->loadConfig(Landroid/content/SharedPreferences;)V
 
     .line 364
-    invoke-virtual {p0}, Lorg/telegram/messenger/BaseController;->getTemplatesController()Lorg/fork/controller/TemplatesController;
+    invoke-virtual {p0}, Lorg/telegram/messenger/BaseController;->getTemplatesController()Lcom/iMe/fork/controller/TemplatesController;
 
     move-result-object v2
 
-    invoke-virtual {v2, v1}, Lorg/fork/controller/TemplatesController;->loadConfig(Landroid/content/SharedPreferences;)V
+    invoke-virtual {v2, v1}, Lcom/iMe/fork/controller/TemplatesController;->loadConfig(Landroid/content/SharedPreferences;)V
 
     .line 365
-    invoke-virtual {p0}, Lorg/telegram/messenger/BaseController;->getForkTopicsController()Lorg/fork/controller/ForkTopicsController;
+    invoke-virtual {p0}, Lorg/telegram/messenger/BaseController;->getForkTopicsController()Lcom/iMe/fork/controller/ForkTopicsController;
 
     move-result-object v2
 
-    invoke-virtual {v2, v1}, Lorg/fork/controller/ForkTopicsController;->loadConfig(Landroid/content/SharedPreferences;)V
+    invoke-virtual {v2, v1}, Lcom/iMe/fork/controller/ForkTopicsController;->loadConfig(Landroid/content/SharedPreferences;)V
 
     .line 366
-    invoke-virtual {p0}, Lorg/telegram/messenger/BaseController;->getRecentChatsController()Lorg/fork/controller/RecentChatsController;
+    invoke-virtual {p0}, Lorg/telegram/messenger/BaseController;->getRecentChatsController()Lcom/iMe/fork/controller/RecentChatsController;
 
     move-result-object v2
 
-    invoke-virtual {v2, v1}, Lorg/fork/controller/RecentChatsController;->loadConfig(Landroid/content/SharedPreferences;)V
+    invoke-virtual {v2, v1}, Lcom/iMe/fork/controller/RecentChatsController;->loadConfig(Landroid/content/SharedPreferences;)V
 
     .line 367
-    invoke-virtual {p0}, Lorg/telegram/messenger/BaseController;->getToolsController()Lorg/fork/controller/ToolsController;
+    invoke-virtual {p0}, Lorg/telegram/messenger/BaseController;->getToolsController()Lcom/iMe/fork/controller/ToolsController;
 
     move-result-object v2
 
-    invoke-virtual {v2, v1}, Lorg/fork/controller/ToolsController;->loadConfig(Landroid/content/SharedPreferences;)V
+    invoke-virtual {v2, v1}, Lcom/iMe/fork/controller/ToolsController;->loadConfig(Landroid/content/SharedPreferences;)V
 
     .line 368
-    invoke-virtual {p0}, Lorg/telegram/messenger/BaseController;->getWalletFingerprintController()Lorg/fork/controller/WalletFingerprintController;
+    invoke-virtual {p0}, Lorg/telegram/messenger/BaseController;->getWalletFingerprintController()Lcom/iMe/fork/controller/WalletFingerprintController;
 
     move-result-object v2
 
-    invoke-virtual {v2, v1}, Lorg/fork/controller/WalletFingerprintController;->loadConfig(Landroid/content/SharedPreferences;)V
+    invoke-virtual {v2, v1}, Lcom/iMe/fork/controller/WalletFingerprintController;->loadConfig(Landroid/content/SharedPreferences;)V
 
     .line 369
     iget v2, p0, Lorg/telegram/messenger/BaseController;->currentAccount:I
 
-    invoke-static {v2, v1}, Lcom/smedialink/common/TelegramPreferenceMigrationManager;->migrateUserPreferences(ILandroid/content/SharedPreferences;)V
+    invoke-static {v2, v1}, Lcom/iMe/common/TelegramPreferenceMigrationManager;->migrateUserPreferences(ILandroid/content/SharedPreferences;)V
 
     const-string v2, "registeredForPush"
 
@@ -2691,7 +2691,7 @@
 
     iput-boolean v2, p0, Lorg/telegram/messenger/UserConfig;->draftsLoaded:Z
 
-    const-string v2, "unreadDialogsLoaded"
+    const-string/jumbo v2, "unreadDialogsLoaded"
 
     .line 378
     invoke-interface {v1, v2, v3}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
@@ -3063,7 +3063,7 @@
     iput-wide v6, p0, Lorg/telegram/messenger/UserConfig;->migrateOffsetAccess:J
 
     :cond_6
-    const-string v2, "tmpPassword"
+    const-string/jumbo v2, "tmpPassword"
 
     .line 435
     invoke-interface {v1, v2, v8}, Landroid/content/SharedPreferences;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
@@ -3099,7 +3099,7 @@
     invoke-virtual {v4}, Lorg/telegram/tgnet/SerializedData;->cleanup()V
 
     :cond_7
-    const-string v2, "user"
+    const-string/jumbo v2, "user"
 
     .line 445
     invoke-interface {v1, v2, v8}, Landroid/content/SharedPreferences;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;

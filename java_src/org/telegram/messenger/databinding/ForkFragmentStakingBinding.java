@@ -6,8 +6,8 @@ import android.view.ViewGroup;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
-import org.fork.p046ui.view.CollapsableHeaderTabbedViewPager;
-import org.telegram.messenger.C3301R;
+import com.iMe.fork.p025ui.view.CollapsableHeaderTabbedViewPager;
+import org.telegram.messenger.C3316R;
 /* loaded from: classes4.dex */
 public final class ForkFragmentStakingBinding implements ViewBinding {
     private final SwipeRefreshLayout rootView;
@@ -28,7 +28,7 @@ public final class ForkFragmentStakingBinding implements ViewBinding {
     }
 
     public static ForkFragmentStakingBinding inflate(LayoutInflater layoutInflater, ViewGroup viewGroup, boolean z) {
-        View inflate = layoutInflater.inflate(C3301R.layout.fork_fragment_staking, viewGroup, false);
+        View inflate = layoutInflater.inflate(C3316R.layout.fork_fragment_staking, viewGroup, false);
         if (z) {
             viewGroup.addView(inflate);
         }
@@ -36,7 +36,7 @@ public final class ForkFragmentStakingBinding implements ViewBinding {
     }
 
     public static ForkFragmentStakingBinding bind(View view) {
-        int i = C3301R.C3304id.staking_pager;
+        int i = C3316R.C3319id.staking_pager;
         CollapsableHeaderTabbedViewPager collapsableHeaderTabbedViewPager = (CollapsableHeaderTabbedViewPager) ViewBindings.findChildViewById(view, i);
         if (collapsableHeaderTabbedViewPager != null) {
             return new ForkFragmentStakingBinding((SwipeRefreshLayout) view, collapsableHeaderTabbedViewPager);

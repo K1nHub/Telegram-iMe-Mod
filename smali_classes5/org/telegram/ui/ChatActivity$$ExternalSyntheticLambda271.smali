@@ -2,36 +2,44 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lorg/fork/utils/Callbacks$Callback2;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
 .field public final synthetic f$0:Lorg/telegram/ui/ChatActivity;
 
+.field public final synthetic f$1:[Ljava/lang/Object;
+
+.field public final synthetic f$2:J
+
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/ChatActivity;)V
+.method public synthetic constructor <init>(Lorg/telegram/ui/ChatActivity;[Ljava/lang/Object;J)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda271;->f$0:Lorg/telegram/ui/ChatActivity;
 
+    iput-object p2, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda271;->f$1:[Ljava/lang/Object;
+
+    iput-wide p3, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda271;->f$2:J
+
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)V
-    .locals 1
+.method public final run()V
+    .locals 4
 
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda271;->f$0:Lorg/telegram/ui/ChatActivity;
 
-    check-cast p1, Ljava/util/List;
+    iget-object v1, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda271;->f$1:[Ljava/lang/Object;
 
-    check-cast p2, Ljava/lang/Boolean;
+    iget-wide v2, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda271;->f$2:J
 
-    invoke-static {v0, p1, p2}, Lorg/telegram/ui/ChatActivity;->$r8$lambda$JThng596cegy4mZluAZYcq5dNrI(Lorg/telegram/ui/ChatActivity;Ljava/util/List;Ljava/lang/Boolean;)V
+    invoke-static {v0, v1, v2, v3}, Lorg/telegram/ui/ChatActivity;->$r8$lambda$dpuyKG8fO8ZoMa5RzfjyKmsV1eQ(Lorg/telegram/ui/ChatActivity;[Ljava/lang/Object;J)V
 
     return-void
 .end method

@@ -12,7 +12,7 @@ import kotlin.reflect.KClass;
 import kotlin.text.StringsKt;
 import org.koin.core.context.GlobalContext;
 import org.koin.core.context.KoinContext;
-import p034j$.util.concurrent.ConcurrentHashMap;
+import p035j$.util.concurrent.ConcurrentHashMap;
 /* compiled from: KoinPlatformTools.kt */
 /* renamed from: org.koin.mp.KoinPlatformTools */
 /* loaded from: classes4.dex */
@@ -66,7 +66,7 @@ public final class KoinPlatformTools {
     }
 
     /* renamed from: synchronized  reason: not valid java name */
-    public final <R> R m1566synchronized(Object lock, Function0<? extends R> block) {
+    public final <R> R m1592synchronized(Object lock, Function0<? extends R> block) {
         R invoke;
         Intrinsics.checkNotNullParameter(lock, "lock");
         Intrinsics.checkNotNullParameter(block, "block");

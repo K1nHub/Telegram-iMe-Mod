@@ -2,7 +2,7 @@ package org.bouncycastle.pqc.asn1;
 
 import com.google.android.exoplayer2.metadata.icy.IcyHeaders;
 import org.bouncycastle.asn1.ASN1ObjectIdentifier;
-import org.bouncycastle.asn1.p039bc.BCObjectIdentifiers;
+import org.bouncycastle.asn1.p040bc.BCObjectIdentifiers;
 /* loaded from: classes4.dex */
 public interface PQCObjectIdentifiers {
     public static final ASN1ObjectIdentifier gmss;

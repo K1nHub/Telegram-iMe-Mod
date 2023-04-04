@@ -246,28 +246,28 @@
     move-result p2
 
     .line 225
-    invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getForkCommonController()Lorg/fork/controller/ForkCommonController;
+    invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getForkCommonController()Lcom/iMe/fork/controller/ForkCommonController;
 
     move-result-object v1
 
-    invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getForkCommonController()Lorg/fork/controller/ForkCommonController;
+    invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getForkCommonController()Lcom/iMe/fork/controller/ForkCommonController;
 
     move-result-object v2
 
-    invoke-virtual {v2}, Lorg/fork/controller/ForkCommonController;->isQuickReactionEnabled()Z
+    invoke-virtual {v2}, Lcom/iMe/fork/controller/ForkCommonController;->isQuickReactionEnabled()Z
 
     move-result v2
 
     xor-int/2addr v2, v0
 
-    invoke-virtual {v1, v2}, Lorg/fork/controller/ForkCommonController;->setQuickReactionEnabled(Z)V
+    invoke-virtual {v1, v2}, Lcom/iMe/fork/controller/ForkCommonController;->setQuickReactionEnabled(Z)V
 
     .line 226
-    invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getForkCommonController()Lorg/fork/controller/ForkCommonController;
+    invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getForkCommonController()Lcom/iMe/fork/controller/ForkCommonController;
 
     move-result-object v1
 
-    invoke-virtual {v1}, Lorg/fork/controller/ForkCommonController;->saveConfig()V
+    invoke-virtual {v1}, Lcom/iMe/fork/controller/ForkCommonController;->saveConfig()V
 
     .line 227
     invoke-direct {p0}, Lorg/telegram/ui/ReactionsDoubleTapManageActivity;->updateRows()V
@@ -458,11 +458,11 @@
     iput v1, p0, Lorg/telegram/ui/ReactionsDoubleTapManageActivity;->enableSectionRow:I
 
     .line 410
-    invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getForkCommonController()Lorg/fork/controller/ForkCommonController;
+    invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getForkCommonController()Lcom/iMe/fork/controller/ForkCommonController;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lorg/fork/controller/ForkCommonController;->isQuickReactionEnabled()Z
+    invoke-virtual {v0}, Lcom/iMe/fork/controller/ForkCommonController;->isQuickReactionEnabled()Z
 
     move-result v0
 

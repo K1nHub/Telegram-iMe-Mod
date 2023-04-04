@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.smedialink.ui.custom.SlopSwipeRefreshLayout android:descendantFocusability="blocksDescendants" android:layout_width="fill_parent" android:layout_height="fill_parent"
+<com.iMe.ui.custom.SlopSwipeRefreshLayout android:descendantFocusability="blocksDescendants" android:layout_width="fill_parent" android:layout_height="fill_parent"
   xmlns:android="http://schemas.android.com/apk/res/android">
     <androidx.recyclerview.widget.RecyclerView android:id="@id/recycle_wallet_home_services_dashboard" android:paddingTop="@dimen/margin_normal_2" android:clipToPadding="false" android:layout_width="fill_parent" android:layout_height="fill_parent" android:overScrollMode="never" />
-</com.smedialink.ui.custom.SlopSwipeRefreshLayout>
+</com.iMe.ui.custom.SlopSwipeRefreshLayout>

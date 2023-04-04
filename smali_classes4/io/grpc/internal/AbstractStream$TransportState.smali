@@ -55,7 +55,7 @@
 
     check-cast v0, Lio/grpc/internal/StatsTraceContext;
 
-    const-string v0, "transportTracer"
+    const-string/jumbo v0, "transportTracer"
 
     .line 140
     invoke-static {p3, v0}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;

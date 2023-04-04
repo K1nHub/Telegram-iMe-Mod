@@ -1,14 +1,14 @@
 package com.trustwallet.walletconnect.jsonrpc;
 
-import com.iMe.i_staking.request.StakingApprovalPrepareRequest$$ExternalSyntheticBackport0;
+import com.iMe.bots.data.model.database.BotsDbModel$$ExternalSyntheticBackport0;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: JsonRpcResponse.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class JsonRpcResponse<T> {
 
     /* renamed from: id */
-    private final long f386id;
+    private final long f391id;
     private final String jsonrpc;
     private final T result;
 
@@ -18,25 +18,25 @@ public final class JsonRpcResponse<T> {
         }
         if (obj instanceof JsonRpcResponse) {
             JsonRpcResponse jsonRpcResponse = (JsonRpcResponse) obj;
-            return Intrinsics.areEqual(this.jsonrpc, jsonRpcResponse.jsonrpc) && this.f386id == jsonRpcResponse.f386id && Intrinsics.areEqual(this.result, jsonRpcResponse.result);
+            return Intrinsics.areEqual(this.jsonrpc, jsonRpcResponse.jsonrpc) && this.f391id == jsonRpcResponse.f391id && Intrinsics.areEqual(this.result, jsonRpcResponse.result);
         }
         return false;
     }
 
     public int hashCode() {
-        int hashCode = ((this.jsonrpc.hashCode() * 31) + StakingApprovalPrepareRequest$$ExternalSyntheticBackport0.m716m(this.f386id)) * 31;
+        int hashCode = ((this.jsonrpc.hashCode() * 31) + BotsDbModel$$ExternalSyntheticBackport0.m716m(this.f391id)) * 31;
         T t = this.result;
         return hashCode + (t == null ? 0 : t.hashCode());
     }
 
     public String toString() {
-        return "JsonRpcResponse(jsonrpc=" + this.jsonrpc + ", id=" + this.f386id + ", result=" + this.result + ')';
+        return "JsonRpcResponse(jsonrpc=" + this.jsonrpc + ", id=" + this.f391id + ", result=" + this.result + ')';
     }
 
     public JsonRpcResponse(String jsonrpc, long j, T t) {
         Intrinsics.checkNotNullParameter(jsonrpc, "jsonrpc");
         this.jsonrpc = jsonrpc;
-        this.f386id = j;
+        this.f391id = j;
         this.result = t;
     }
 

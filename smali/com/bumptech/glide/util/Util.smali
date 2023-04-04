@@ -46,7 +46,7 @@
 .method public static assertMainThread()V
     .locals 2
 
-    .line 165
+    .line 174
     invoke-static {}, Lcom/bumptech/glide/util/Util;->isOnMainThread()Z
 
     move-result v0
@@ -55,7 +55,7 @@
 
     return-void
 
-    .line 166
+    .line 175
     :cond_0
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -83,13 +83,13 @@
     :goto_0
     return p0
 
-    .line 228
+    .line 237
     :cond_1
     instance-of v0, p0, Lcom/bumptech/glide/load/model/Model;
 
     if-eqz v0, :cond_2
 
-    .line 229
+    .line 238
     check-cast p0, Lcom/bumptech/glide/load/model/Model;
 
     invoke-interface {p0, p1}, Lcom/bumptech/glide/load/model/Model;->isEquivalentTo(Ljava/lang/Object;)Z
@@ -98,7 +98,7 @@
 
     return p0
 
-    .line 231
+    .line 240
     :cond_2
     invoke-virtual {p0, p1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
 
@@ -123,7 +123,7 @@
 
     goto :goto_0
 
-    .line 221
+    .line 230
     :cond_1
     invoke-virtual {p0, p1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
 
@@ -194,7 +194,7 @@
         }
     .end annotation
 
-    .line 190
+    .line 199
     new-instance v0, Ljava/util/ArrayDeque;
 
     invoke-direct {v0, p0}, Ljava/util/ArrayDeque;-><init>(I)V
@@ -315,15 +315,15 @@
     throw v0
 .end method
 
-.method private static getBytesPerPixel(Landroid/graphics/Bitmap$Config;)I
+.method public static getBytesPerPixel(Landroid/graphics/Bitmap$Config;)I
     .locals 3
 
     if-nez p0, :cond_0
 
-    .line 107
+    .line 113
     sget-object p0, Landroid/graphics/Bitmap$Config;->ARGB_8888:Landroid/graphics/Bitmap$Config;
 
-    .line 111
+    .line 117
     :cond_0
     sget-object v0, Lcom/bumptech/glide/util/Util$1;->$SwitchMap$android$graphics$Bitmap$Config:[I
 
@@ -382,7 +382,7 @@
         }
     .end annotation
 
-    .line 206
+    .line 215
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-interface {p0}, Ljava/util/Collection;->size()I
@@ -391,7 +391,7 @@
 
     invoke-direct {v0, v1}, Ljava/util/ArrayList;-><init>(I)V
 
-    .line 207
+    .line 216
     invoke-interface {p0}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
 
     move-result-object p0
@@ -410,7 +410,7 @@
 
     if-eqz v1, :cond_0
 
-    .line 209
+    .line 218
     invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     goto :goto_0
@@ -422,23 +422,23 @@
 .method private static getUiThreadHandler()Landroid/os/Handler;
     .locals 3
 
-    .line 150
+    .line 159
     sget-object v0, Lcom/bumptech/glide/util/Util;->mainThreadHandler:Landroid/os/Handler;
 
     if-nez v0, :cond_1
 
-    .line 151
+    .line 160
     const-class v0, Lcom/bumptech/glide/util/Util;
 
     monitor-enter v0
 
-    .line 152
+    .line 161
     :try_start_0
     sget-object v1, Lcom/bumptech/glide/util/Util;->mainThreadHandler:Landroid/os/Handler;
 
     if-nez v1, :cond_0
 
-    .line 153
+    .line 162
     new-instance v1, Landroid/os/Handler;
 
     invoke-static {}, Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;
@@ -449,7 +449,7 @@
 
     sput-object v1, Lcom/bumptech/glide/util/Util;->mainThreadHandler:Landroid/os/Handler;
 
-    .line 155
+    .line 164
     :cond_0
     monitor-exit v0
 
@@ -464,7 +464,7 @@
 
     throw v1
 
-    .line 157
+    .line 166
     :cond_1
     :goto_0
     sget-object v0, Lcom/bumptech/glide/util/Util;->mainThreadHandler:Landroid/os/Handler;
@@ -477,7 +477,7 @@
 
     const/16 v0, 0x11
 
-    .line 243
+    .line 252
     invoke-static {p0, v0}, Lcom/bumptech/glide/util/Util;->hashCode(FI)I
 
     move-result p0
@@ -488,7 +488,7 @@
 .method public static hashCode(FI)I
     .locals 0
 
-    .line 247
+    .line 256
     invoke-static {p0}, Ljava/lang/Float;->floatToIntBits(F)I
 
     move-result p0
@@ -519,7 +519,7 @@
 
     goto :goto_0
 
-    .line 251
+    .line 260
     :cond_0
     invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
 
@@ -536,7 +536,7 @@
 .method public static hashCode(ZI)I
     .locals 0
 
-    .line 255
+    .line 264
     invoke-static {p0, p1}, Lcom/bumptech/glide/util/Util;->hashCode(II)I
 
     move-result p0
@@ -547,7 +547,7 @@
 .method public static isOnBackgroundThread()Z
     .locals 1
 
-    .line 184
+    .line 193
     invoke-static {}, Lcom/bumptech/glide/util/Util;->isOnMainThread()Z
 
     move-result v0
@@ -560,7 +560,7 @@
 .method public static isOnMainThread()Z
     .locals 2
 
-    .line 179
+    .line 188
     invoke-static {}, Landroid/os/Looper;->myLooper()Landroid/os/Looper;
 
     move-result-object v0
@@ -582,7 +582,7 @@
     return v0
 .end method
 
-.method private static isValidDimension(I)Z
+.method public static isValidDimension(I)Z
     .locals 1
 
     if-gtz p0, :cond_1
@@ -609,7 +609,7 @@
 .method public static isValidDimensions(II)Z
     .locals 0
 
-    .line 132
+    .line 141
     invoke-static {p0}, Lcom/bumptech/glide/util/Util;->isValidDimension(I)Z
 
     move-result p0
@@ -636,7 +636,7 @@
 .method public static postOnUiThread(Ljava/lang/Runnable;)V
     .locals 1
 
-    .line 141
+    .line 150
     invoke-static {}, Lcom/bumptech/glide/util/Util;->getUiThreadHandler()Landroid/os/Handler;
 
     move-result-object v0
@@ -649,7 +649,7 @@
 .method public static removeCallbacksOnUiThread(Ljava/lang/Runnable;)V
     .locals 1
 
-    .line 146
+    .line 155
     invoke-static {}, Lcom/bumptech/glide/util/Util;->getUiThreadHandler()Landroid/os/Handler;
 
     move-result-object v0

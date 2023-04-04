@@ -1,5 +1,5 @@
 package io.grpc;
-/* loaded from: classes.dex */
+/* loaded from: classes4.dex */
 public abstract class Channel {
     public abstract String authority();
 

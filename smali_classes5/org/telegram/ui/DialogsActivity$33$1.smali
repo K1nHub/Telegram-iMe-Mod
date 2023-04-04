@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lorg/telegram/ui/DialogsActivity$33;->didSelectTab(Lcom/smedialink/ui/topics/TopicView;)Z
+    value = Lorg/telegram/ui/DialogsActivity$33;->didSelectTab(Lcom/iMe/ui/topics/TopicView;)Z
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -29,7 +29,7 @@
 .method constructor <init>(Lorg/telegram/ui/DialogsActivity$33;Landroid/graphics/Rect;)V
     .locals 0
 
-    .line 6582
+    .line 6597
     iput-object p1, p0, Lorg/telegram/ui/DialogsActivity$33$1;->this$1:Lorg/telegram/ui/DialogsActivity$33;
 
     iput-object p2, p0, Lorg/telegram/ui/DialogsActivity$33$1;->val$rect:Landroid/graphics/Rect;
@@ -40,7 +40,7 @@
 
     new-array p1, p1, [I
 
-    .line 6584
+    .line 6599
     iput-object p1, p0, Lorg/telegram/ui/DialogsActivity$33$1;->pos:[I
 
     return-void
@@ -51,7 +51,7 @@
 .method public onTouch(Landroid/view/View;Landroid/view/MotionEvent;)Z
     .locals 7
 
-    .line 6588
+    .line 6603
     invoke-virtual {p2}, Landroid/view/MotionEvent;->getActionMasked()I
 
     move-result p1
@@ -60,7 +60,7 @@
 
     if-nez p1, :cond_0
 
-    .line 6589
+    .line 6604
     iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$33$1;->this$1:Lorg/telegram/ui/DialogsActivity$33;
 
     iget-object p1, p1, Lorg/telegram/ui/DialogsActivity$33;->this$0:Lorg/telegram/ui/DialogsActivity;
@@ -85,7 +85,7 @@
 
     if-eqz p1, :cond_1
 
-    .line 6590
+    .line 6605
     iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$33$1;->this$1:Lorg/telegram/ui/DialogsActivity$33;
 
     iget-object p1, p1, Lorg/telegram/ui/DialogsActivity$33;->this$0:Lorg/telegram/ui/DialogsActivity;
@@ -98,12 +98,12 @@
 
     move-result-object p1
 
-    .line 6591
+    .line 6606
     iget-object v1, p0, Lorg/telegram/ui/DialogsActivity$33$1;->pos:[I
 
     invoke-virtual {p1, v1}, Landroid/view/View;->getLocationInWindow([I)V
 
-    .line 6592
+    .line 6607
     iget-object v1, p0, Lorg/telegram/ui/DialogsActivity$33$1;->val$rect:Landroid/graphics/Rect;
 
     iget-object v2, p0, Lorg/telegram/ui/DialogsActivity$33$1;->pos:[I
@@ -134,7 +134,7 @@
 
     invoke-virtual {v1, v3, v5, v2, v4}, Landroid/graphics/Rect;->set(IIII)V
 
-    .line 6593
+    .line 6608
     iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$33$1;->val$rect:Landroid/graphics/Rect;
 
     invoke-virtual {p2}, Landroid/view/MotionEvent;->getX()F
@@ -155,7 +155,7 @@
 
     if-nez p1, :cond_1
 
-    .line 6594
+    .line 6609
     iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$33$1;->this$1:Lorg/telegram/ui/DialogsActivity$33;
 
     iget-object p1, p1, Lorg/telegram/ui/DialogsActivity$33;->this$0:Lorg/telegram/ui/DialogsActivity;
@@ -168,7 +168,7 @@
 
     goto :goto_0
 
-    .line 6597
+    .line 6612
     :cond_0
     invoke-virtual {p2}, Landroid/view/MotionEvent;->getActionMasked()I
 
@@ -178,7 +178,7 @@
 
     if-ne p1, p2, :cond_1
 
-    .line 6598
+    .line 6613
     iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$33$1;->this$1:Lorg/telegram/ui/DialogsActivity$33;
 
     iget-object p1, p1, Lorg/telegram/ui/DialogsActivity$33;->this$0:Lorg/telegram/ui/DialogsActivity;
@@ -203,7 +203,7 @@
 
     if-eqz p1, :cond_1
 
-    .line 6599
+    .line 6614
     iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$33$1;->this$1:Lorg/telegram/ui/DialogsActivity$33;
 
     iget-object p1, p1, Lorg/telegram/ui/DialogsActivity$33;->this$0:Lorg/telegram/ui/DialogsActivity;

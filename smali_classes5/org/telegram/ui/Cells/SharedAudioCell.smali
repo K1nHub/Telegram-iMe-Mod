@@ -116,14 +116,6 @@
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$WyKfPY7F7YIeUCclegZ55By0yz0(Lorg/telegram/ui/Cells/SharedAudioCell;J)V
-    .locals 0
-
-    invoke-direct {p0, p1, p2}, Lorg/telegram/ui/Cells/SharedAudioCell;->lambda$onSubItemClick$0(J)V
-
-    return-void
-.end method
-
 .method public static synthetic $r8$lambda$YKcXOdHqKWF5nInDa9I_72VJUIM(Lorg/telegram/ui/Cells/SharedAudioCell;I)V
     .locals 0
 
@@ -140,6 +132,14 @@
     move-result p0
 
     return p0
+.end method
+
+.method public static synthetic $r8$lambda$p5G5Qnpx-jLCfJWycCD_OaxhMT8(Lorg/telegram/ui/Cells/SharedAudioCell;J)V
+    .locals 0
+
+    invoke-direct {p0, p1, p2}, Lorg/telegram/ui/Cells/SharedAudioCell;->lambda$onSubItemClick$0(J)V
+
+    return-void
 .end method
 
 .method public constructor <init>(Landroid/content/Context;)V
@@ -347,7 +347,7 @@
     invoke-virtual {v0, v6, v4}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
     .line 327
-    sget v4, Lcom/smedialink/common/IdFabric$ViewTypes;->SHARED_AUDIO_CELL_MUSIC:I
+    sget v4, Lcom/iMe/common/IdFabric$ViewTypes;->SHARED_AUDIO_CELL_MUSIC:I
 
     if-ne v1, v4, :cond_3
 
@@ -419,7 +419,7 @@
     .line 335
     iget-object v4, v0, Lorg/telegram/ui/Cells/SharedAudioCell;->optionsButton:Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
 
-    sget v6, Lcom/smedialink/common/IdFabric$Menu;->TOGGLE_MUSIC_PLAYLIST:I
+    sget v6, Lcom/iMe/common/IdFabric$Menu;->TOGGLE_MUSIC_PLAYLIST:I
 
     invoke-virtual {v4, v6, v5, v7}, Lorg/telegram/ui/ActionBar/ActionBarMenuItem;->addSubItem(IILjava/lang/CharSequence;)Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;
 
@@ -445,7 +445,7 @@
     .line 337
     iget-object v4, v0, Lorg/telegram/ui/Cells/SharedAudioCell;->optionsButton:Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
 
-    sget v6, Lcom/smedialink/common/IdFabric$Menu;->MESSAGE_FORWARD_CLOUD:I
+    sget v6, Lcom/iMe/common/IdFabric$Menu;->MESSAGE_FORWARD_CLOUD:I
 
     sget v7, Lorg/telegram/messenger/R$drawable;->fork_forward_cloud:I
 
@@ -2189,7 +2189,7 @@
     check-cast v2, Lorg/telegram/ui/LaunchActivity;
 
     .line 99
-    sget v0, Lcom/smedialink/common/IdFabric$Menu;->TOGGLE_MUSIC_PLAYLIST:I
+    sget v0, Lcom/iMe/common/IdFabric$Menu;->TOGGLE_MUSIC_PLAYLIST:I
 
     const/4 v1, 0x1
 
@@ -2198,7 +2198,7 @@
     .line 100
     iget p1, p0, Lorg/telegram/ui/Cells/SharedAudioCell;->currentAccount:I
 
-    invoke-static {p1}, Lorg/fork/controller/MusicController;->getInstance(I)Lorg/fork/controller/MusicController;
+    invoke-static {p1}, Lcom/iMe/fork/controller/MusicController;->getInstance(I)Lcom/iMe/fork/controller/MusicController;
 
     move-result-object p1
 
@@ -2229,7 +2229,7 @@
 
     move-result-object v0
 
-    invoke-virtual {p1, v2, v3, v0}, Lorg/fork/controller/MusicController;->removePlaylistMessage(JLjava/util/List;)V
+    invoke-virtual {p1, v2, v3, v0}, Lcom/iMe/fork/controller/MusicController;->removePlaylistMessage(JLjava/util/List;)V
 
     goto :goto_0
 
@@ -2241,7 +2241,7 @@
 
     move-result-object v0
 
-    invoke-virtual {p1, v2, v3, v0}, Lorg/fork/controller/MusicController;->addPlaylistMessage(JLjava/util/List;)V
+    invoke-virtual {p1, v2, v3, v0}, Lcom/iMe/fork/controller/MusicController;->addPlaylistMessage(JLjava/util/List;)V
 
     .line 107
     :goto_0
@@ -2258,14 +2258,14 @@
 
     .line 109
     :cond_2
-    sget v0, Lcom/smedialink/common/IdFabric$Menu;->MESSAGE_FORWARD_CLOUD:I
+    sget v0, Lcom/iMe/common/IdFabric$Menu;->MESSAGE_FORWARD_CLOUD:I
 
     if-ne p1, v0, :cond_4
 
     .line 110
-    new-instance p1, Lorg/telegram/ui/Cells/SharedAudioCell$$ExternalSyntheticLambda2;
+    new-instance p1, Lorg/telegram/ui/Cells/SharedAudioCell$$ExternalSyntheticLambda1;
 
-    invoke-direct {p1, p0}, Lorg/telegram/ui/Cells/SharedAudioCell$$ExternalSyntheticLambda2;-><init>(Lorg/telegram/ui/Cells/SharedAudioCell;)V
+    invoke-direct {p1, p0}, Lorg/telegram/ui/Cells/SharedAudioCell$$ExternalSyntheticLambda1;-><init>(Lorg/telegram/ui/Cells/SharedAudioCell;)V
 
     .line 111
     sget-boolean v0, Lorg/telegram/messenger/SharedConfig;->isCloudAlbumsEnabled:Z
@@ -2282,9 +2282,9 @@
     move-result-object v0
 
     .line 113
-    new-instance v1, Lorg/fork/ui/dialog/ForwardCloudBottomSheet;
+    new-instance v1, Lcom/iMe/fork/ui/dialog/ForwardCloudBottomSheet;
 
-    invoke-direct {v1, v0, p1}, Lorg/fork/ui/dialog/ForwardCloudBottomSheet;-><init>(Lorg/telegram/ui/ActionBar/BaseFragment;Lorg/fork/ui/dialog/ForwardCloudBottomSheet$Delegate;)V
+    invoke-direct {v1, v0, p1}, Lcom/iMe/fork/ui/dialog/ForwardCloudBottomSheet;-><init>(Lorg/telegram/ui/ActionBar/BaseFragment;Lcom/iMe/fork/ui/dialog/ForwardCloudBottomSheet$Delegate;)V
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/BaseFragment;->showDialog(Landroid/app/Dialog;)Landroid/app/Dialog;
 
@@ -2302,7 +2302,7 @@
 
     move-result-wide v0
 
-    invoke-interface {p1, v0, v1}, Lorg/fork/ui/dialog/ForwardCloudBottomSheet$Delegate;->didSelectCloudDialog(J)V
+    invoke-interface {p1, v0, v1}, Lcom/iMe/fork/ui/dialog/ForwardCloudBottomSheet$Delegate;->didSelectCloudDialog(J)V
 
     goto/16 :goto_7
 
@@ -2904,9 +2904,9 @@
     :goto_6
     move-object v5, p1
 
-    new-instance v6, Lorg/telegram/ui/Cells/SharedAudioCell$$ExternalSyntheticLambda1;
+    new-instance v6, Lorg/telegram/ui/Cells/SharedAudioCell$$ExternalSyntheticLambda2;
 
-    invoke-direct {v6, p0}, Lorg/telegram/ui/Cells/SharedAudioCell$$ExternalSyntheticLambda1;-><init>(Lorg/telegram/ui/Cells/SharedAudioCell;)V
+    invoke-direct {v6, p0}, Lorg/telegram/ui/Cells/SharedAudioCell$$ExternalSyntheticLambda2;-><init>(Lorg/telegram/ui/Cells/SharedAudioCell;)V
 
     invoke-static/range {v1 .. v6}, Lorg/telegram/messenger/MediaController;->saveFile(Ljava/lang/String;Landroid/content/Context;ILjava/lang/String;Ljava/lang/String;Ljava/lang/Runnable;)V
 
@@ -4697,7 +4697,7 @@
     .line 466
     iget p2, p0, Lorg/telegram/ui/Cells/SharedAudioCell;->viewType:I
 
-    sget v0, Lcom/smedialink/common/IdFabric$ViewTypes;->SHARED_AUDIO_CELL_MUSIC:I
+    sget v0, Lcom/iMe/common/IdFabric$ViewTypes;->SHARED_AUDIO_CELL_MUSIC:I
 
     const/4 v1, 0x1
 
@@ -4706,7 +4706,7 @@
     .line 467
     iget p2, p0, Lorg/telegram/ui/Cells/SharedAudioCell;->currentAccount:I
 
-    invoke-static {p2}, Lorg/fork/controller/MusicController;->getInstance(I)Lorg/fork/controller/MusicController;
+    invoke-static {p2}, Lcom/iMe/fork/controller/MusicController;->getInstance(I)Lcom/iMe/fork/controller/MusicController;
 
     move-result-object p2
 
@@ -4714,7 +4714,7 @@
 
     move-result-wide v2
 
-    invoke-virtual {p2, v2, v3}, Lorg/fork/controller/MusicController;->getPlaylistForDialog(J)Ljava/util/ArrayList;
+    invoke-virtual {p2, v2, v3}, Lcom/iMe/fork/controller/MusicController;->getPlaylistForDialog(J)Ljava/util/ArrayList;
 
     move-result-object p2
 
@@ -4771,7 +4771,7 @@
     .line 472
     iget-object p2, p0, Lorg/telegram/ui/Cells/SharedAudioCell;->optionsButton:Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
 
-    sget v0, Lcom/smedialink/common/IdFabric$Menu;->MESSAGE_FORWARD_CLOUD:I
+    sget v0, Lcom/iMe/common/IdFabric$Menu;->MESSAGE_FORWARD_CLOUD:I
 
     invoke-virtual {p2, v0}, Lorg/telegram/ui/ActionBar/ActionBarMenuItem;->hideSubItem(I)V
 
@@ -4803,7 +4803,7 @@
     .line 478
     iget-object p2, p0, Lorg/telegram/ui/Cells/SharedAudioCell;->optionsButton:Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
 
-    sget v0, Lcom/smedialink/common/IdFabric$Menu;->MESSAGE_FORWARD_CLOUD:I
+    sget v0, Lcom/iMe/common/IdFabric$Menu;->MESSAGE_FORWARD_CLOUD:I
 
     invoke-virtual {p2, v0}, Lorg/telegram/ui/ActionBar/ActionBarMenuItem;->showSubItem(I)V
 

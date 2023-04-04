@@ -1,6 +1,6 @@
 package com.trustwallet.walletconnect.models;
 /* compiled from: WCMethod.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public enum WCMethod {
     SESSION_REQUEST,
     SESSION_UPDATE,

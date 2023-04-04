@@ -28,12 +28,12 @@
 .method constructor <init>(Lorg/telegram/ui/Components/FiltersListBottomSheet;Landroid/content/Context;)V
     .locals 0
 
-    .line 84
+    .line 82
     iput-object p1, p0, Lorg/telegram/ui/Components/FiltersListBottomSheet$1;->this$0:Lorg/telegram/ui/Components/FiltersListBottomSheet;
 
     invoke-direct {p0, p2}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
-    .line 86
+    .line 84
     new-instance p1, Landroid/graphics/RectF;
 
     invoke-direct {p1}, Landroid/graphics/RectF;-><init>()V
@@ -46,7 +46,7 @@
 .method private updateLightStatusBar(Z)V
     .locals 6
 
-    .line 183
+    .line 181
     iget-object v0, p0, Lorg/telegram/ui/Components/FiltersListBottomSheet$1;->statusBarOpen:Ljava/lang/Boolean;
 
     if-eqz v0, :cond_0
@@ -59,7 +59,7 @@
 
     return-void
 
-    .line 186
+    .line 184
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Components/FiltersListBottomSheet$1;->this$0:Lorg/telegram/ui/Components/FiltersListBottomSheet;
 
@@ -90,7 +90,7 @@
     :cond_1
     move v0, v3
 
-    .line 187
+    .line 185
     :goto_0
     iget-object v4, p0, Lorg/telegram/ui/Components/FiltersListBottomSheet$1;->this$0:Lorg/telegram/ui/Components/FiltersListBottomSheet;
 
@@ -119,7 +119,7 @@
     :cond_2
     move v2, v3
 
-    .line 188
+    .line 186
     :goto_1
     invoke-static {p1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
@@ -138,7 +138,7 @@
     :cond_3
     move v0, v2
 
-    .line 189
+    .line 187
     :goto_2
     iget-object p1, p0, Lorg/telegram/ui/Components/FiltersListBottomSheet$1;->this$0:Lorg/telegram/ui/Components/FiltersListBottomSheet;
 
@@ -156,7 +156,7 @@
 .method protected onDraw(Landroid/graphics/Canvas;)V
     .locals 12
 
-    .line 144
+    .line 142
     iget-object v0, p0, Lorg/telegram/ui/Components/FiltersListBottomSheet$1;->this$0:Lorg/telegram/ui/Components/FiltersListBottomSheet;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/FiltersListBottomSheet;->access$000(Lorg/telegram/ui/Components/FiltersListBottomSheet;)I
@@ -179,7 +179,7 @@
 
     sub-int/2addr v0, v1
 
-    .line 145
+    .line 143
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredHeight()I
 
     move-result v1
@@ -200,7 +200,7 @@
 
     add-int/2addr v1, v2
 
-    .line 148
+    .line 146
     sget v2, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/4 v3, 0x0
@@ -211,19 +211,19 @@
 
     if-lt v2, v5, :cond_2
 
-    .line 149
+    .line 147
     sget v2, Lorg/telegram/messenger/AndroidUtilities;->statusBarHeight:I
 
     add-int/2addr v0, v2
 
     sub-int/2addr v1, v2
 
-    .line 152
+    .line 150
     iget-boolean v2, p0, Lorg/telegram/ui/Components/FiltersListBottomSheet$1;->fullHeight:Z
 
     if-eqz v2, :cond_2
 
-    .line 153
+    .line 151
     iget-object v2, p0, Lorg/telegram/ui/Components/FiltersListBottomSheet$1;->this$0:Lorg/telegram/ui/Components/FiltersListBottomSheet;
 
     invoke-static {v2}, Lorg/telegram/ui/Components/FiltersListBottomSheet;->access$1100(Lorg/telegram/ui/Components/FiltersListBottomSheet;)I
@@ -242,7 +242,7 @@
 
     sub-int/2addr v2, v0
 
-    .line 154
+    .line 152
     iget-object v6, p0, Lorg/telegram/ui/Components/FiltersListBottomSheet$1;->this$0:Lorg/telegram/ui/Components/FiltersListBottomSheet;
 
     invoke-static {v6}, Lorg/telegram/ui/Components/FiltersListBottomSheet;->access$1200(Lorg/telegram/ui/Components/FiltersListBottomSheet;)I
@@ -263,7 +263,7 @@
 
     int-to-float v2, v2
 
-    .line 157
+    .line 155
     sget v5, Lorg/telegram/messenger/AndroidUtilities;->statusBarHeight:I
 
     int-to-float v5, v5
@@ -281,7 +281,7 @@
     :cond_0
     move v2, v4
 
-    .line 159
+    .line 157
     :goto_0
     iget-object v5, p0, Lorg/telegram/ui/Components/FiltersListBottomSheet$1;->this$0:Lorg/telegram/ui/Components/FiltersListBottomSheet;
 
@@ -297,7 +297,7 @@
 
     sub-int v5, v6, v0
 
-    .line 160
+    .line 158
     iget-object v7, p0, Lorg/telegram/ui/Components/FiltersListBottomSheet$1;->this$0:Lorg/telegram/ui/Components/FiltersListBottomSheet;
 
     invoke-static {v7}, Lorg/telegram/ui/Components/FiltersListBottomSheet;->access$1400(Lorg/telegram/ui/Components/FiltersListBottomSheet;)I
@@ -322,7 +322,7 @@
 
     move v2, v4
 
-    .line 165
+    .line 163
     :goto_1
     iget-object v6, p0, Lorg/telegram/ui/Components/FiltersListBottomSheet$1;->this$0:Lorg/telegram/ui/Components/FiltersListBottomSheet;
 
@@ -336,7 +336,7 @@
 
     invoke-virtual {v6, v3, v0, v7, v1}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
 
-    .line 166
+    .line 164
     iget-object v1, p0, Lorg/telegram/ui/Components/FiltersListBottomSheet$1;->this$0:Lorg/telegram/ui/Components/FiltersListBottomSheet;
 
     invoke-static {v1}, Lorg/telegram/ui/Components/FiltersListBottomSheet;->access$1600(Lorg/telegram/ui/Components/FiltersListBottomSheet;)Landroid/graphics/drawable/Drawable;
@@ -351,7 +351,7 @@
 
     if-eqz v1, :cond_3
 
-    .line 169
+    .line 167
     sget-object v1, Lorg/telegram/ui/ActionBar/Theme;->dialogs_onlineCirclePaint:Landroid/graphics/Paint;
 
     invoke-static {v4}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
@@ -360,7 +360,7 @@
 
     invoke-virtual {v1, v6}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 170
+    .line 168
     iget-object v1, p0, Lorg/telegram/ui/Components/FiltersListBottomSheet$1;->rect:Landroid/graphics/RectF;
 
     iget-object v6, p0, Lorg/telegram/ui/Components/FiltersListBottomSheet$1;->this$0:Lorg/telegram/ui/Components/FiltersListBottomSheet;
@@ -415,7 +415,7 @@
 
     invoke-virtual {v1, v6, v7, v8, v0}, Landroid/graphics/RectF;->set(FFFF)V
 
-    .line 171
+    .line 169
     iget-object v0, p0, Lorg/telegram/ui/Components/FiltersListBottomSheet$1;->rect:Landroid/graphics/RectF;
 
     const/16 v1, 0xc
@@ -443,7 +443,7 @@
     :cond_3
     if-lez v5, :cond_4
 
-    .line 175
+    .line 173
     sget-object v0, Lorg/telegram/ui/ActionBar/Theme;->dialogs_onlineCirclePaint:Landroid/graphics/Paint;
 
     invoke-static {v4}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
@@ -452,7 +452,7 @@
 
     invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 176
+    .line 174
     iget-object v0, p0, Lorg/telegram/ui/Components/FiltersListBottomSheet$1;->this$0:Lorg/telegram/ui/Components/FiltersListBottomSheet;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/FiltersListBottomSheet;->access$2100(Lorg/telegram/ui/Components/FiltersListBottomSheet;)I
@@ -491,7 +491,7 @@
 
     invoke-virtual/range {v6 .. v11}, Landroid/graphics/Canvas;->drawRect(FFFFLandroid/graphics/Paint;)V
 
-    .line 178
+    .line 176
     :cond_4
     sget p1, Lorg/telegram/messenger/AndroidUtilities;->statusBarHeight:I
 
@@ -510,7 +510,7 @@
 .method public onInterceptTouchEvent(Landroid/view/MotionEvent;)Z
     .locals 2
 
-    .line 91
+    .line 89
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
 
     move-result v0
@@ -541,7 +541,7 @@
 
     if-gez v0, :cond_0
 
-    .line 92
+    .line 90
     iget-object p1, p0, Lorg/telegram/ui/Components/FiltersListBottomSheet$1;->this$0:Lorg/telegram/ui/Components/FiltersListBottomSheet;
 
     invoke-virtual {p1}, Lorg/telegram/ui/Components/FiltersListBottomSheet;->dismiss()V
@@ -550,7 +550,7 @@
 
     return p1
 
-    .line 95
+    .line 93
     :cond_0
     invoke-super {p0, p1}, Landroid/widget/FrameLayout;->onInterceptTouchEvent(Landroid/view/MotionEvent;)Z
 
@@ -562,10 +562,10 @@
 .method protected onLayout(ZIIII)V
     .locals 0
 
-    .line 130
+    .line 128
     invoke-super/range {p0 .. p5}, Landroid/widget/FrameLayout;->onLayout(ZIIII)V
 
-    .line 131
+    .line 129
     iget-object p1, p0, Lorg/telegram/ui/Components/FiltersListBottomSheet$1;->this$0:Lorg/telegram/ui/Components/FiltersListBottomSheet;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/FiltersListBottomSheet;->access$800(Lorg/telegram/ui/Components/FiltersListBottomSheet;)V
@@ -576,12 +576,12 @@
 .method protected onMeasure(II)V
     .locals 10
 
-    .line 105
+    .line 103
     invoke-static {p2}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
     move-result p2
 
-    .line 106
+    .line 104
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/4 v1, 0x1
@@ -592,12 +592,12 @@
 
     if-lt v0, v3, :cond_0
 
-    .line 107
+    .line 105
     iget-object v0, p0, Lorg/telegram/ui/Components/FiltersListBottomSheet$1;->this$0:Lorg/telegram/ui/Components/FiltersListBottomSheet;
 
     invoke-static {v0, v1}, Lorg/telegram/ui/Components/FiltersListBottomSheet;->access$102(Lorg/telegram/ui/Components/FiltersListBottomSheet;Z)Z
 
-    .line 108
+    .line 106
     iget-object v0, p0, Lorg/telegram/ui/Components/FiltersListBottomSheet$1;->this$0:Lorg/telegram/ui/Components/FiltersListBottomSheet;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/FiltersListBottomSheet;->access$200(Lorg/telegram/ui/Components/FiltersListBottomSheet;)I
@@ -614,7 +614,7 @@
 
     invoke-virtual {p0, v0, v3, v4, v2}, Landroid/widget/FrameLayout;->setPadding(IIII)V
 
-    .line 109
+    .line 107
     iget-object v0, p0, Lorg/telegram/ui/Components/FiltersListBottomSheet$1;->this$0:Lorg/telegram/ui/Components/FiltersListBottomSheet;
 
     invoke-static {v0, v2}, Lorg/telegram/ui/Components/FiltersListBottomSheet;->access$102(Lorg/telegram/ui/Components/FiltersListBottomSheet;Z)Z
@@ -622,7 +622,7 @@
     :cond_0
     const/16 v0, 0x30
 
-    .line 111
+    .line 109
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v3
@@ -659,7 +659,7 @@
 
     int-to-double v4, v3
 
-    .line 112
+    .line 110
     div-int/lit8 v0, p2, 0x5
 
     int-to-double v6, v0
@@ -691,14 +691,14 @@
     :cond_2
     if-nez v0, :cond_3
 
-    .line 117
+    .line 115
     iget-object v0, p0, Lorg/telegram/ui/Components/FiltersListBottomSheet$1;->this$0:Lorg/telegram/ui/Components/FiltersListBottomSheet;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/FiltersListBottomSheet;->access$600(Lorg/telegram/ui/Components/FiltersListBottomSheet;)I
 
     move-result v0
 
-    .line 119
+    .line 117
     :cond_3
     iget-object v4, p0, Lorg/telegram/ui/Components/FiltersListBottomSheet$1;->this$0:Lorg/telegram/ui/Components/FiltersListBottomSheet;
 
@@ -712,12 +712,12 @@
 
     if-eq v4, v0, :cond_4
 
-    .line 120
+    .line 118
     iget-object v4, p0, Lorg/telegram/ui/Components/FiltersListBottomSheet$1;->this$0:Lorg/telegram/ui/Components/FiltersListBottomSheet;
 
     invoke-static {v4, v1}, Lorg/telegram/ui/Components/FiltersListBottomSheet;->access$102(Lorg/telegram/ui/Components/FiltersListBottomSheet;Z)Z
 
-    .line 121
+    .line 119
     iget-object v4, p0, Lorg/telegram/ui/Components/FiltersListBottomSheet$1;->this$0:Lorg/telegram/ui/Components/FiltersListBottomSheet;
 
     invoke-static {v4}, Lorg/telegram/ui/Components/FiltersListBottomSheet;->access$700(Lorg/telegram/ui/Components/FiltersListBottomSheet;)Lorg/telegram/ui/Components/RecyclerListView;
@@ -736,7 +736,7 @@
 
     invoke-virtual {v4, v6, v0, v5, v2}, Landroid/view/ViewGroup;->setPadding(IIII)V
 
-    .line 122
+    .line 120
     iget-object v0, p0, Lorg/telegram/ui/Components/FiltersListBottomSheet$1;->this$0:Lorg/telegram/ui/Components/FiltersListBottomSheet;
 
     invoke-static {v0, v2}, Lorg/telegram/ui/Components/FiltersListBottomSheet;->access$102(Lorg/telegram/ui/Components/FiltersListBottomSheet;Z)Z
@@ -749,11 +749,11 @@
     :cond_5
     move v1, v2
 
-    .line 124
+    .line 122
     :goto_1
     iput-boolean v1, p0, Lorg/telegram/ui/Components/FiltersListBottomSheet$1;->fullHeight:Z
 
-    .line 125
+    .line 123
     invoke-static {v3, p2}, Ljava/lang/Math;->min(II)I
 
     move-result p2
@@ -772,7 +772,7 @@
 .method public onTouchEvent(Landroid/view/MotionEvent;)Z
     .locals 1
 
-    .line 100
+    .line 98
     iget-object v0, p0, Lorg/telegram/ui/Components/FiltersListBottomSheet$1;->this$0:Lorg/telegram/ui/Components/FiltersListBottomSheet;
 
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/BottomSheet;->isDismissed()Z
@@ -801,7 +801,7 @@
 .method public requestLayout()V
     .locals 1
 
-    .line 136
+    .line 134
     iget-object v0, p0, Lorg/telegram/ui/Components/FiltersListBottomSheet$1;->this$0:Lorg/telegram/ui/Components/FiltersListBottomSheet;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/FiltersListBottomSheet;->access$100(Lorg/telegram/ui/Components/FiltersListBottomSheet;)Z
@@ -812,7 +812,7 @@
 
     return-void
 
-    .line 139
+    .line 137
     :cond_0
     invoke-super {p0}, Landroid/widget/FrameLayout;->requestLayout()V
 

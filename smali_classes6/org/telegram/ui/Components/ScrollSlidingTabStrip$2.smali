@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/ScrollSlidingTabStrip;Landroid/content/Context;)V
     .locals 0
 
-    .line 230
+    .line 223
     iput-object p1, p0, Lorg/telegram/ui/Components/ScrollSlidingTabStrip$2;->this$0:Lorg/telegram/ui/Components/ScrollSlidingTabStrip;
 
     invoke-direct {p0, p2}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;)V
@@ -35,12 +35,12 @@
 .method protected drawChild(Landroid/graphics/Canvas;Landroid/view/View;J)Z
     .locals 2
 
-    .line 234
+    .line 227
     instance-of v0, p2, Lorg/telegram/ui/Components/StickerTabView;
 
     if-eqz v0, :cond_0
 
-    .line 235
+    .line 228
     move-object v0, p2
 
     check-cast v0, Lorg/telegram/ui/Components/StickerTabView;
@@ -51,7 +51,7 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/StickerTabView;->updateExpandProgress(F)V
 
-    .line 237
+    .line 230
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Components/ScrollSlidingTabStrip$2;->this$0:Lorg/telegram/ui/Components/ScrollSlidingTabStrip;
 
@@ -63,7 +63,7 @@
 
     return p1
 
-    .line 240
+    .line 233
     :cond_1
     invoke-super {p0, p1, p2, p3, p4}, Landroid/widget/LinearLayout;->drawChild(Landroid/graphics/Canvas;Landroid/view/View;J)Z
 

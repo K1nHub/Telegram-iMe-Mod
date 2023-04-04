@@ -27,7 +27,7 @@
     .locals 2
 
     .line 61
-    const-class p1, Lcom/smedialink/ui/wallet/staking/transaction/StakingTransactionPresenter;
+    const-class p1, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;
 
     const-string v0, "stakingTransactionPresenter"
 
@@ -55,9 +55,9 @@
     .locals 0
 
     .line 66
-    check-cast p2, Lcom/smedialink/ui/wallet/staking/transaction/StakingTransactionPresenter;
+    check-cast p2, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;
 
-    iput-object p2, p1, Lorg/telegram/ui/ManageLinksActivity;->stakingTransactionPresenter:Lcom/smedialink/ui/wallet/staking/transaction/StakingTransactionPresenter;
+    iput-object p2, p1, Lorg/telegram/ui/ManageLinksActivity;->stakingTransactionPresenter:Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;
 
     return-void
 .end method
@@ -88,7 +88,7 @@
     .end annotation
 
     .line 71
-    invoke-virtual {p1}, Lorg/telegram/ui/ManageLinksActivity;->provideStakingTransactionPresenter()Lcom/smedialink/ui/wallet/staking/transaction/StakingTransactionPresenter;
+    invoke-virtual {p1}, Lorg/telegram/ui/ManageLinksActivity;->provideStakingTransactionPresenter()Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;
 
     move-result-object p1
 

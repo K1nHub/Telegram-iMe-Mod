@@ -16,32 +16,36 @@ public final class ManifestParser {
         this.context = context;
     }
 
+    private ApplicationInfo getOurApplicationInfo() throws PackageManager.NameNotFoundException {
+        return this.context.getPackageManager().getApplicationInfo(this.context.getPackageName(), 128);
+    }
+
     public List<GlideModule> parse() {
         if (Log.isLoggable("ManifestParser", 3)) {
             Log.d("ManifestParser", "Loading Glide modules");
         }
         ArrayList arrayList = new ArrayList();
         try {
-            ApplicationInfo applicationInfo = this.context.getPackageManager().getApplicationInfo(this.context.getPackageName(), 128);
-            if (applicationInfo.metaData == null) {
+            ApplicationInfo ourApplicationInfo = getOurApplicationInfo();
+            if (ourApplicationInfo != null && ourApplicationInfo.metaData != null) {
+                if (Log.isLoggable("ManifestParser", 2)) {
+                    Log.v("ManifestParser", "Got app info metadata: " + ourApplicationInfo.metaData);
+                }
+                for (String str : ourApplicationInfo.metaData.keySet()) {
+                    if ("GlideModule".equals(ourApplicationInfo.metaData.get(str))) {
+                        arrayList.add(parseModule(str));
+                        if (Log.isLoggable("ManifestParser", 3)) {
+                            Log.d("ManifestParser", "Loaded Glide module: " + str);
+                        }
+                    }
+                }
                 if (Log.isLoggable("ManifestParser", 3)) {
-                    Log.d("ManifestParser", "Got null app info metadata");
+                    Log.d("ManifestParser", "Finished loading Glide modules");
                 }
                 return arrayList;
             }
-            if (Log.isLoggable("ManifestParser", 2)) {
-                Log.v("ManifestParser", "Got app info metadata: " + applicationInfo.metaData);
-            }
-            for (String str : applicationInfo.metaData.keySet()) {
-                if ("GlideModule".equals(applicationInfo.metaData.get(str))) {
-                    arrayList.add(parseModule(str));
-                    if (Log.isLoggable("ManifestParser", 3)) {
-                        Log.d("ManifestParser", "Loaded Glide module: " + str);
-                    }
-                }
-            }
             if (Log.isLoggable("ManifestParser", 3)) {
-                Log.d("ManifestParser", "Finished loading Glide modules");
+                Log.d("ManifestParser", "Got null app info metadata");
             }
             return arrayList;
         } catch (PackageManager.NameNotFoundException e) {

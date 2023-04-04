@@ -21,7 +21,7 @@
 .method constructor <init>(Lcom/bumptech/glide/GlideBuilder;)V
     .locals 0
 
-    .line 56
+    .line 58
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -32,7 +32,7 @@
 .method public build()Lcom/bumptech/glide/request/RequestOptions;
     .locals 1
 
-    .line 60
+    .line 62
     new-instance v0, Lcom/bumptech/glide/request/RequestOptions;
 
     invoke-direct {v0}, Lcom/bumptech/glide/request/RequestOptions;-><init>()V

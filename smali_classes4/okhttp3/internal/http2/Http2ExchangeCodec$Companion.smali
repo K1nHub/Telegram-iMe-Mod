@@ -193,7 +193,7 @@
 
     move-result-object v4
 
-    const-string v5, "trailers"
+    const-string/jumbo v5, "trailers"
 
     invoke-static {v4, v5}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 

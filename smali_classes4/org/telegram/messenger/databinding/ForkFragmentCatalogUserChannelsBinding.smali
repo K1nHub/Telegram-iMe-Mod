@@ -7,7 +7,7 @@
 
 
 # instance fields
-.field public final buttonAdd:Lcom/smedialink/ui/custom/ActionButton;
+.field public final buttonAdd:Lcom/iMe/ui/custom/ActionButton;
 
 .field public final imageEmpty:Lorg/telegram/ui/Components/RLottieImageView;
 
@@ -23,7 +23,7 @@
 
 
 # direct methods
-.method private constructor <init>(Landroid/widget/FrameLayout;Lcom/smedialink/ui/custom/ActionButton;Lorg/telegram/ui/Components/RLottieImageView;Landroidx/recyclerview/widget/RecyclerView;Landroidx/appcompat/widget/AppCompatTextView;Landroidx/appcompat/widget/AppCompatTextView;Landroidx/core/widget/NestedScrollView;)V
+.method private constructor <init>(Landroid/widget/FrameLayout;Lcom/iMe/ui/custom/ActionButton;Lorg/telegram/ui/Components/RLottieImageView;Landroidx/recyclerview/widget/RecyclerView;Landroidx/appcompat/widget/AppCompatTextView;Landroidx/appcompat/widget/AppCompatTextView;Landroidx/core/widget/NestedScrollView;)V
     .locals 0
 
     .line 47
@@ -33,7 +33,7 @@
     iput-object p1, p0, Lorg/telegram/messenger/databinding/ForkFragmentCatalogUserChannelsBinding;->rootView:Landroid/widget/FrameLayout;
 
     .line 49
-    iput-object p2, p0, Lorg/telegram/messenger/databinding/ForkFragmentCatalogUserChannelsBinding;->buttonAdd:Lcom/smedialink/ui/custom/ActionButton;
+    iput-object p2, p0, Lorg/telegram/messenger/databinding/ForkFragmentCatalogUserChannelsBinding;->buttonAdd:Lcom/iMe/ui/custom/ActionButton;
 
     .line 50
     iput-object p3, p0, Lorg/telegram/messenger/databinding/ForkFragmentCatalogUserChannelsBinding;->imageEmpty:Lorg/telegram/ui/Components/RLottieImageView;
@@ -66,7 +66,7 @@
 
     move-object v4, v1
 
-    check-cast v4, Lcom/smedialink/ui/custom/ActionButton;
+    check-cast v4, Lcom/iMe/ui/custom/ActionButton;
 
     if-eqz v4, :cond_0
 
@@ -149,7 +149,7 @@
 
     move-object v2, v0
 
-    invoke-direct/range {v2 .. v9}, Lorg/telegram/messenger/databinding/ForkFragmentCatalogUserChannelsBinding;-><init>(Landroid/widget/FrameLayout;Lcom/smedialink/ui/custom/ActionButton;Lorg/telegram/ui/Components/RLottieImageView;Landroidx/recyclerview/widget/RecyclerView;Landroidx/appcompat/widget/AppCompatTextView;Landroidx/appcompat/widget/AppCompatTextView;Landroidx/core/widget/NestedScrollView;)V
+    invoke-direct/range {v2 .. v9}, Lorg/telegram/messenger/databinding/ForkFragmentCatalogUserChannelsBinding;-><init>(Landroid/widget/FrameLayout;Lcom/iMe/ui/custom/ActionButton;Lorg/telegram/ui/Components/RLottieImageView;Landroidx/recyclerview/widget/RecyclerView;Landroidx/appcompat/widget/AppCompatTextView;Landroidx/appcompat/widget/AppCompatTextView;Landroidx/core/widget/NestedScrollView;)V
 
     return-object v0
 

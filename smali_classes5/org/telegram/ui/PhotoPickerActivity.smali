@@ -225,18 +225,18 @@
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$QJDYa19hhgGrmjognDa5dl1OASk(Lorg/telegram/ui/PhotoPickerActivity;Ljava/lang/String;IZLorg/telegram/tgnet/TLRPC$User;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
+.method public static synthetic $r8$lambda$OPRm_ci9Rgha4V6wnPadLeO6EJg(Lorg/telegram/ui/PhotoPickerActivity;Ljava/lang/String;)V
     .locals 0
 
-    invoke-direct/range {p0 .. p6}, Lorg/telegram/ui/PhotoPickerActivity;->lambda$searchImages$12(Ljava/lang/String;IZLorg/telegram/tgnet/TLRPC$User;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
+    invoke-direct {p0, p1}, Lorg/telegram/ui/PhotoPickerActivity;->lambda$createView$6(Ljava/lang/String;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$Uks65Wghh1US8uZ-YTo6E9bgFR8(Lorg/telegram/ui/PhotoPickerActivity;Ljava/lang/String;)V
+.method public static synthetic $r8$lambda$QJDYa19hhgGrmjognDa5dl1OASk(Lorg/telegram/ui/PhotoPickerActivity;Ljava/lang/String;IZLorg/telegram/tgnet/TLRPC$User;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
     .locals 0
 
-    invoke-direct {p0, p1}, Lorg/telegram/ui/PhotoPickerActivity;->lambda$createView$6(Ljava/lang/String;)V
+    invoke-direct/range {p0 .. p6}, Lorg/telegram/ui/PhotoPickerActivity;->lambda$searchImages$12(Ljava/lang/String;IZLorg/telegram/tgnet/TLRPC$User;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
 
     return-void
 .end method
@@ -1933,7 +1933,7 @@
 
     .line 1190
     :cond_0
-    sget p3, Lcom/smedialink/common/IdFabric$Menu;->REACTIONS:I
+    sget p3, Lcom/iMe/common/IdFabric$Menu;->REACTIONS:I
 
     const/4 v0, 0x0
 
@@ -1950,18 +1950,18 @@
 
     .line 1192
     :cond_1
-    sget p3, Lcom/smedialink/common/IdFabric$Menu;->TRANSLATE:I
+    sget p3, Lcom/iMe/common/IdFabric$Menu;->TRANSLATE:I
 
     if-ne p1, p3, :cond_2
 
     .line 1193
     iget-object p1, p0, Lorg/telegram/ui/PhotoPickerActivity;->chatActivity:Lorg/telegram/ui/ChatActivity;
 
-    new-instance p3, Lorg/telegram/ui/PhotoPickerActivity$$ExternalSyntheticLambda7;
+    new-instance p3, Lorg/telegram/ui/PhotoPickerActivity$$ExternalSyntheticLambda5;
 
-    invoke-direct {p3, p0}, Lorg/telegram/ui/PhotoPickerActivity$$ExternalSyntheticLambda7;-><init>(Lorg/telegram/ui/PhotoPickerActivity;)V
+    invoke-direct {p3, p0}, Lorg/telegram/ui/PhotoPickerActivity$$ExternalSyntheticLambda5;-><init>(Lorg/telegram/ui/PhotoPickerActivity;)V
 
-    invoke-virtual {p1, p2, p3}, Lorg/telegram/ui/ChatActivity;->createTranslateOutgoingDialog(Ljava/lang/String;Lorg/fork/utils/Callbacks$Callback1;)Lorg/fork/ui/dialog/TranslateAlert;
+    invoke-virtual {p1, p2, p3}, Lorg/telegram/ui/ChatActivity;->createTranslateOutgoingDialog(Ljava/lang/String;Lcom/iMe/fork/utils/Callbacks$Callback1;)Lcom/iMe/fork/ui/dialog/TranslateAlert;
 
     move-result-object p1
 
@@ -2102,11 +2102,11 @@
     new-array v7, v6, [I
 
     .line 1130
-    sget v8, Lcom/smedialink/common/IdFabric$Menu;->REACTIONS:I
+    sget v8, Lcom/iMe/common/IdFabric$Menu;->REACTIONS:I
 
     aput v8, v7, v3
 
-    sget v8, Lcom/smedialink/common/IdFabric$Menu;->TRANSLATE:I
+    sget v8, Lcom/iMe/common/IdFabric$Menu;->TRANSLATE:I
 
     aput v8, v7, v5
 
@@ -2145,7 +2145,7 @@
     aget v11, v7, v10
 
     .line 1140
-    sget v12, Lcom/smedialink/common/IdFabric$Menu;->REACTIONS:I
+    sget v12, Lcom/iMe/common/IdFabric$Menu;->REACTIONS:I
 
     if-ne v11, v12, :cond_2
 
@@ -2170,7 +2170,7 @@
 
     .line 1144
     :cond_2
-    sget v13, Lcom/smedialink/common/IdFabric$Menu;->TRANSLATE:I
+    sget v13, Lcom/iMe/common/IdFabric$Menu;->TRANSLATE:I
 
     if-ne v11, v13, :cond_3
 
@@ -2301,7 +2301,7 @@
 
     .line 1166
     :cond_c
-    sget v4, Lcom/smedialink/common/IdFabric$Menu;->TRANSLATE:I
+    sget v4, Lcom/iMe/common/IdFabric$Menu;->TRANSLATE:I
 
     if-ne v11, v4, :cond_d
 
@@ -2373,7 +2373,7 @@
 
     .line 1177
     :cond_f
-    invoke-virtual/range {p0 .. p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getToolsController()Lorg/fork/controller/ToolsController;
+    invoke-virtual/range {p0 .. p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getToolsController()Lcom/iMe/fork/controller/ToolsController;
 
     move-result-object v4
 
@@ -2383,7 +2383,7 @@
 
     move-result-wide v12
 
-    invoke-virtual {v4, v12, v13}, Lorg/fork/controller/ToolsController;->isSilentSendingEnabledForDialog(J)Z
+    invoke-virtual {v4, v12, v13}, Lcom/iMe/fork/controller/ToolsController;->isSilentSendingEnabledForDialog(J)Z
 
     move-result v4
 
@@ -2644,9 +2644,9 @@
     if-eqz p2, :cond_0
 
     .line 1666
-    new-instance p3, Lorg/telegram/ui/PhotoPickerActivity$$ExternalSyntheticLambda6;
+    new-instance p3, Lorg/telegram/ui/PhotoPickerActivity$$ExternalSyntheticLambda7;
 
-    invoke-direct {p3, p0, p2, p1}, Lorg/telegram/ui/PhotoPickerActivity$$ExternalSyntheticLambda6;-><init>(Lorg/telegram/ui/PhotoPickerActivity;Lorg/telegram/tgnet/TLObject;Z)V
+    invoke-direct {p3, p0, p2, p1}, Lorg/telegram/ui/PhotoPickerActivity$$ExternalSyntheticLambda7;-><init>(Lorg/telegram/ui/PhotoPickerActivity;Lorg/telegram/tgnet/TLObject;Z)V
 
     invoke-static {p3}, Lorg/telegram/messenger/AndroidUtilities;->runOnUIThread(Ljava/lang/Runnable;)V
 
@@ -3254,7 +3254,7 @@
     .locals 7
 
     .line 1717
-    new-instance p6, Lorg/telegram/ui/PhotoPickerActivity$$ExternalSyntheticLambda5;
+    new-instance p6, Lorg/telegram/ui/PhotoPickerActivity$$ExternalSyntheticLambda6;
 
     move-object v0, p6
 
@@ -3270,7 +3270,7 @@
 
     move-object v6, p4
 
-    invoke-direct/range {v0 .. v6}, Lorg/telegram/ui/PhotoPickerActivity$$ExternalSyntheticLambda5;-><init>(Lorg/telegram/ui/PhotoPickerActivity;Ljava/lang/String;ILorg/telegram/tgnet/TLObject;ZLorg/telegram/tgnet/TLRPC$User;)V
+    invoke-direct/range {v0 .. v6}, Lorg/telegram/ui/PhotoPickerActivity$$ExternalSyntheticLambda6;-><init>(Lorg/telegram/ui/PhotoPickerActivity;Ljava/lang/String;ILorg/telegram/tgnet/TLObject;ZLorg/telegram/tgnet/TLRPC$User;)V
 
     invoke-static {p6}, Lorg/telegram/messenger/AndroidUtilities;->runOnUIThread(Ljava/lang/Runnable;)V
 

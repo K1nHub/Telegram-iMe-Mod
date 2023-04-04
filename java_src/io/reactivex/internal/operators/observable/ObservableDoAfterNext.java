@@ -46,7 +46,7 @@ public final class ObservableDoAfterNext<T> extends AbstractObservableWithUpstre
 
         @Override // io.reactivex.internal.fuseable.SimpleQueue
         public T poll() throws Exception {
-            T poll = this.f444qd.poll();
+            T poll = this.f449qd.poll();
             if (poll != null) {
                 this.onAfterNext.accept(poll);
             }

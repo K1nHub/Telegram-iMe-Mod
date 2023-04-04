@@ -25,7 +25,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/AudioPlayerAlert;)V
     .locals 0
 
-    .line 691
+    .line 692
     iput-object p1, p0, Lorg/telegram/ui/Components/AudioPlayerAlert$11;->this$0:Lorg/telegram/ui/Components/AudioPlayerAlert;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,7 +38,7 @@
 .method public getContentDescription()Ljava/lang/CharSequence;
     .locals 8
 
-    .line 710
+    .line 711
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -89,7 +89,7 @@
 
     move-result-object v0
 
-    .line 711
+    .line 712
     new-instance v3, Ljava/lang/StringBuilder;
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
@@ -132,7 +132,7 @@
 
     move-result-object v1
 
-    .line 712
+    .line 713
     sget v3, Lorg/telegram/messenger/R$string;->AccDescrPlayerDuration:I
 
     const/4 v4, 0x2
@@ -169,7 +169,7 @@
 
     if-eqz p1, :cond_0
 
-    .line 695
+    .line 696
     invoke-static {}, Lorg/telegram/messenger/MediaController;->getInstance()Lorg/telegram/messenger/MediaController;
 
     move-result-object p1
@@ -184,7 +184,7 @@
 
     invoke-virtual {p1, v0, p2}, Lorg/telegram/messenger/MediaController;->seekToProgress(Lorg/telegram/messenger/MessageObject;F)Z
 
-    .line 697
+    .line 698
     :cond_0
     invoke-static {}, Lorg/telegram/messenger/MediaController;->getInstance()Lorg/telegram/messenger/MediaController;
 
@@ -196,14 +196,14 @@
 
     if-eqz p1, :cond_1
 
-    .line 698
+    .line 699
     invoke-virtual {p1}, Lorg/telegram/messenger/MessageObject;->isMusic()Z
 
     move-result p2
 
     if-eqz p2, :cond_1
 
-    .line 699
+    .line 700
     iget-object p2, p0, Lorg/telegram/ui/Components/AudioPlayerAlert$11;->this$0:Lorg/telegram/ui/Components/AudioPlayerAlert;
 
     invoke-static {p2, p1}, Lorg/telegram/ui/Components/AudioPlayerAlert;->access$000(Lorg/telegram/ui/Components/AudioPlayerAlert;Lorg/telegram/messenger/MessageObject;)V
@@ -215,7 +215,7 @@
 .method public onSeekBarPressed(Z)V
     .locals 1
 
-    .line 705
+    .line 706
     iget-object v0, p0, Lorg/telegram/ui/Components/AudioPlayerAlert$11;->this$0:Lorg/telegram/ui/Components/AudioPlayerAlert;
 
     invoke-static {v0, p1}, Lorg/telegram/ui/Components/AudioPlayerAlert;->access$5002(Lorg/telegram/ui/Components/AudioPlayerAlert;Z)Z

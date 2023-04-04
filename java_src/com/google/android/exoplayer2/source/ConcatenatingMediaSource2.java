@@ -5,7 +5,7 @@ import android.net.Uri;
 import android.os.Handler;
 import android.os.Message;
 import android.util.Pair;
-import com.google.android.exoplayer2.C0468C;
+import com.google.android.exoplayer2.C0482C;
 import com.google.android.exoplayer2.MediaItem;
 import com.google.android.exoplayer2.Timeline;
 import com.google.android.exoplayer2.source.MediaSource;
@@ -61,7 +61,7 @@ public final class ConcatenatingMediaSource2 extends CompositeMediaSource<Intege
         }
 
         public Builder add(MediaItem mediaItem) {
-            return add(mediaItem, C0468C.TIME_UNSET);
+            return add(mediaItem, C0482C.TIME_UNSET);
         }
 
         public Builder add(MediaItem mediaItem, long j) {
@@ -71,12 +71,12 @@ public final class ConcatenatingMediaSource2 extends CompositeMediaSource<Intege
         }
 
         public Builder add(MediaSource mediaSource) {
-            return add(mediaSource, C0468C.TIME_UNSET);
+            return add(mediaSource, C0482C.TIME_UNSET);
         }
 
         public Builder add(MediaSource mediaSource, long j) {
             Assertions.checkNotNull(mediaSource);
-            Assertions.checkState(((mediaSource instanceof ProgressiveMediaSource) && j == C0468C.TIME_UNSET) ? false : true, "Progressive media source must define an initial placeholder duration.");
+            Assertions.checkState(((mediaSource instanceof ProgressiveMediaSource) && j == C0482C.TIME_UNSET) ? false : true, "Progressive media source must define an initial placeholder duration.");
             ImmutableList.Builder<MediaSourceHolder> builder = this.mediaSourceHoldersBuilder;
             int i = this.index;
             this.index = i + 1;
@@ -254,9 +254,9 @@ public final class ConcatenatingMediaSource2 extends CompositeMediaSource<Intege
                     z2 = false;
                 }
                 long j4 = window.durationUs;
-                if (j4 == C0468C.TIME_UNSET) {
+                if (j4 == C0482C.TIME_UNSET) {
                     j4 = mediaSourceHolder.initialPlaceholderDurationUs;
-                    if (j4 == C0468C.TIME_UNSET) {
+                    if (j4 == C0482C.TIME_UNSET) {
                         return null;
                     }
                 }
@@ -284,11 +284,11 @@ public final class ConcatenatingMediaSource2 extends CompositeMediaSource<Intege
                 Timeline timeline4 = timeline3;
                 timeline4.getPeriod(i6, period2);
                 long j5 = period2.durationUs;
-                if (j5 == C0468C.TIME_UNSET) {
+                if (j5 == C0482C.TIME_UNSET) {
                     period = period2;
                     Assertions.checkArgument(periodCount == 1, "Can't concatenate multiple periods with unknown duration in one window.");
                     long j6 = window.durationUs;
-                    if (j6 == C0468C.TIME_UNSET) {
+                    if (j6 == C0482C.TIME_UNSET) {
                         j6 = mediaSourceHolder.initialPlaceholderDurationUs;
                     }
                     builder = builder2;
@@ -384,7 +384,7 @@ public final class ConcatenatingMediaSource2 extends CompositeMediaSource<Intege
 
         @Override // com.google.android.exoplayer2.Timeline
         public final Timeline.Window getWindow(int i, Timeline.Window window, long j) {
-            return window.set(Timeline.Window.SINGLE_WINDOW_UID, this.mediaItem, this.manifest, C0468C.TIME_UNSET, C0468C.TIME_UNSET, C0468C.TIME_UNSET, this.isSeekable, this.isDynamic, null, this.defaultPositionUs, this.durationUs, 0, getPeriodCount() - 1, -this.periodOffsetsInWindowUs.get(0).longValue());
+            return window.set(Timeline.Window.SINGLE_WINDOW_UID, this.mediaItem, this.manifest, C0482C.TIME_UNSET, C0482C.TIME_UNSET, C0482C.TIME_UNSET, this.isSeekable, this.isDynamic, null, this.defaultPositionUs, this.durationUs, 0, getPeriodCount() - 1, -this.periodOffsetsInWindowUs.get(0).longValue());
         }
 
         @Override // com.google.android.exoplayer2.Timeline

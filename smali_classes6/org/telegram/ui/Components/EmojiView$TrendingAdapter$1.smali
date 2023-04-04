@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/EmojiView$TrendingAdapter;Landroid/content/Context;)V
     .locals 0
 
-    .line 7184
+    .line 7178
     iput-object p1, p0, Lorg/telegram/ui/Components/EmojiView$TrendingAdapter$1;->this$1:Lorg/telegram/ui/Components/EmojiView$TrendingAdapter;
 
     invoke-direct {p0, p2}, Lorg/telegram/ui/Components/BackupImageView;-><init>(Landroid/content/Context;)V
@@ -35,10 +35,10 @@
 .method protected onDraw(Landroid/graphics/Canvas;)V
     .locals 5
 
-    .line 7187
+    .line 7181
     invoke-super {p0, p1}, Lorg/telegram/ui/Components/BackupImageView;->onDraw(Landroid/graphics/Canvas;)V
 
-    .line 7188
+    .line 7182
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiView$TrendingAdapter$1;->this$1:Lorg/telegram/ui/Components/EmojiView$TrendingAdapter;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/EmojiView$TrendingAdapter;->access$17900(Lorg/telegram/ui/Components/EmojiView$TrendingAdapter;)Z
@@ -47,14 +47,14 @@
 
     if-nez v0, :cond_0
 
-    .line 7189
+    .line 7183
     invoke-virtual {p0}, Landroid/view/View;->getTag()Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Lorg/telegram/tgnet/TLRPC$StickerSetCovered;
 
-    .line 7190
+    .line 7184
     iget-object v1, p0, Lorg/telegram/ui/Components/EmojiView$TrendingAdapter$1;->this$1:Lorg/telegram/ui/Components/EmojiView$TrendingAdapter;
 
     iget-object v1, v1, Lorg/telegram/ui/Components/EmojiView$TrendingAdapter;->this$0:Lorg/telegram/ui/Components/EmojiView;
@@ -91,7 +91,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 7191
+    .line 7185
     invoke-virtual {p1}, Landroid/graphics/Canvas;->getWidth()I
 
     move-result v0
@@ -106,7 +106,7 @@
 
     const/16 v1, 0xe
 
-    .line 7192
+    .line 7186
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v1
@@ -117,7 +117,7 @@
 
     const/4 v2, 0x3
 
-    .line 7193
+    .line 7187
     invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v2

@@ -1,7 +1,7 @@
 package com.google.android.exoplayer2.source;
 
 import android.os.Looper;
-import com.google.android.exoplayer2.C0468C;
+import com.google.android.exoplayer2.C0482C;
 import com.google.android.exoplayer2.MediaItem;
 import com.google.android.exoplayer2.Timeline;
 import com.google.android.exoplayer2.analytics.PlayerId;
@@ -134,7 +134,7 @@ public final class ProgressiveMediaSource extends BaseMediaSource implements Pro
         this.loadableLoadErrorHandlingPolicy = loadErrorHandlingPolicy;
         this.continueLoadingCheckIntervalBytes = i;
         this.timelineIsPlaceholder = true;
-        this.timelineDurationUs = C0468C.TIME_UNSET;
+        this.timelineDurationUs = C0482C.TIME_UNSET;
     }
 
     @Override // com.google.android.exoplayer2.source.MediaSource
@@ -172,7 +172,7 @@ public final class ProgressiveMediaSource extends BaseMediaSource implements Pro
 
     @Override // com.google.android.exoplayer2.source.ProgressiveMediaPeriod.Listener
     public void onSourceInfoRefreshed(long j, boolean z, boolean z2) {
-        if (j == C0468C.TIME_UNSET) {
+        if (j == C0482C.TIME_UNSET) {
             j = this.timelineDurationUs;
         }
         if (!this.timelineIsPlaceholder && this.timelineDurationUs == j && this.timelineIsSeekable == z && this.timelineIsLive == z2) {

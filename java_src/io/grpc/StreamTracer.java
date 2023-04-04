@@ -1,5 +1,5 @@
 package io.grpc;
-/* loaded from: classes.dex */
+/* loaded from: classes4.dex */
 public abstract class StreamTracer {
     public void inboundMessage(int i) {
     }

@@ -57,6 +57,7 @@ import androidx.vectordrawable.graphics.drawable.VectorDrawableCompat;
 import com.google.android.exoplayer2.DefaultLoadControl;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.measurement.api.AppMeasurementSdk;
+import com.iMe.fork.enums.DrawerHolidayIconType;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -74,13 +75,12 @@ import java.util.HashSet;
 import java.util.Locale;
 import java.util.Map;
 import java.util.concurrent.CountDownLatch;
-import org.fork.enums.DrawerHolidayIconType;
 import org.json.JSONArray;
 import org.json.JSONObject;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.BuildVars;
-import org.telegram.messenger.C3301R;
+import org.telegram.messenger.C3316R;
 import org.telegram.messenger.DispatchQueue;
 import org.telegram.messenger.FileLoader;
 import org.telegram.messenger.FileLog;
@@ -1443,7 +1443,7 @@ public class Theme {
                         int size = themeInfo.themeAccents.size();
                         for (int i2 = 0; i2 < size; i2++) {
                             ThemeAccent themeAccent = themeInfo.themeAccents.get(i2);
-                            if (themeAccent.f1656id != Theme.DEFALT_THEME_ACCENT_ID && !TextUtils.isEmpty(themeAccent.patternSlug)) {
+                            if (themeAccent.f1658id != Theme.DEFALT_THEME_ACCENT_ID && !TextUtils.isEmpty(themeAccent.patternSlug)) {
                                 if (arrayList2 == null) {
                                     arrayList2 = new ArrayList();
                                 }
@@ -1529,7 +1529,7 @@ public class Theme {
                             Bitmap bitmap2 = bitmap;
                             Boolean bool = bitmap2;
                             int i2 = 0;
-                            RunnableC34561 runnableC34561 = bitmap;
+                            RunnableC34711 runnableC34711 = bitmap;
                             while (i2 < size2) {
                                 ThemeAccent themeAccent = (ThemeAccent) arrayList.get(i2);
                                 bool = bool;
@@ -1558,7 +1558,7 @@ public class Theme {
                                     }
                                 }
                                 i2++;
-                                runnableC34561 = 0;
+                                runnableC34711 = 0;
                                 bool = bool;
                             }
                             if (bitmap2 != null) {
@@ -1764,7 +1764,7 @@ public class Theme {
         public long backgroundOverrideColor;
 
         /* renamed from: id */
-        public int f1656id;
+        public int f1658id;
         public TLRPC$TL_theme info;
         public boolean isDefault;
         public int myMessagesAccentColor;
@@ -1908,15 +1908,15 @@ public class Theme {
         }
 
         public File getPathToWallpaper() {
-            if (this.f1656id < 100) {
+            if (this.f1658id < 100) {
                 if (TextUtils.isEmpty(this.patternSlug)) {
                     return null;
                 }
-                return new File(ApplicationLoader.getFilesDirFixed(), String.format(Locale.US, "%s_%d_%s_v5.jpg", this.parentTheme.getKey(), Integer.valueOf(this.f1656id), this.patternSlug));
+                return new File(ApplicationLoader.getFilesDirFixed(), String.format(Locale.US, "%s_%d_%s_v5.jpg", this.parentTheme.getKey(), Integer.valueOf(this.f1658id), this.patternSlug));
             } else if (TextUtils.isEmpty(this.patternSlug)) {
                 return null;
             } else {
-                return new File(ApplicationLoader.getFilesDirFixed(), String.format(Locale.US, "%s_%d_%s_v8_debug.jpg", this.parentTheme.getKey(), Integer.valueOf(this.f1656id), this.patternSlug));
+                return new File(ApplicationLoader.getFilesDirFixed(), String.format(Locale.US, "%s_%d_%s_v8_debug.jpg", this.parentTheme.getKey(), Integer.valueOf(this.f1658id), this.patternSlug));
             }
         }
 
@@ -2081,7 +2081,7 @@ public class Theme {
 
         private String getKey() {
             if (this.parentAccent != null) {
-                return this.parentTheme.name + "_" + this.parentAccent.f1656id + "_owp";
+                return this.parentTheme.name + "_" + this.parentAccent.f1658id + "_owp";
             }
             return this.parentTheme.name + "_owp";
         }
@@ -2264,7 +2264,7 @@ public class Theme {
                 int size = this.themeAccents.size();
                 for (int i = 0; i < size; i++) {
                     ThemeAccent themeAccent = this.themeAccents.get(i);
-                    loadOverrideWallpaper(sharedPreferences, themeAccent, this.name + "_" + themeAccent.f1656id + "_owp");
+                    loadOverrideWallpaper(sharedPreferences, themeAccent, this.name + "_" + themeAccent.f1658id + "_owp");
                 }
                 return;
             }
@@ -2327,19 +2327,19 @@ public class Theme {
 
         public String getName() {
             if ("Blue".equals(this.name)) {
-                return LocaleController.getString("ThemeClassic", C3301R.string.ThemeClassic);
+                return LocaleController.getString("ThemeClassic", C3316R.string.ThemeClassic);
             }
             if ("Dark Blue".equals(this.name)) {
-                return LocaleController.getString("ThemeDark", C3301R.string.ThemeDark);
+                return LocaleController.getString("ThemeDark", C3316R.string.ThemeDark);
             }
             if ("Arctic Blue".equals(this.name)) {
-                return LocaleController.getString("ThemeArcticBlue", C3301R.string.ThemeArcticBlue);
+                return LocaleController.getString("ThemeArcticBlue", C3316R.string.ThemeArcticBlue);
             }
             if ("Day".equals(this.name)) {
-                return LocaleController.getString("ThemeDay", C3301R.string.ThemeDay);
+                return LocaleController.getString("ThemeDay", C3316R.string.ThemeDay);
             }
             if ("Night".equals(this.name)) {
-                return LocaleController.getString("ThemeNight", C3301R.string.ThemeNight);
+                return LocaleController.getString("ThemeNight", C3316R.string.ThemeNight);
             }
             TLRPC$TL_theme tLRPC$TL_theme = this.info;
             return tLRPC$TL_theme != null ? tLRPC$TL_theme.title : this.name;
@@ -2365,13 +2365,13 @@ public class Theme {
                     sb2 = new StringBuilder();
                     sb2.append(this.name);
                     sb2.append("_");
-                    sb2.append(themeAccent.f1656id);
+                    sb2.append(themeAccent.f1658id);
                     sb2.append("_wp_o");
                 } else {
                     sb2 = new StringBuilder();
                     sb2.append(this.name);
                     sb2.append("_");
-                    sb2.append(themeAccent.f1656id);
+                    sb2.append(themeAccent.f1658id);
                     sb2.append("_wp");
                 }
                 sb3.append(sb2.toString());
@@ -2499,7 +2499,7 @@ public class Theme {
 
         public String getKey() {
             if (this.info != null) {
-                return "remote" + this.info.f1631id;
+                return "remote" + this.info.f1633id;
             }
             return this.name;
         }
@@ -2551,7 +2551,7 @@ public class Theme {
             this.accentsByThemeId = new LongSparseArray<>();
             for (int i = 0; i < iArr.length; i++) {
                 ThemeAccent themeAccent = new ThemeAccent();
-                themeAccent.f1656id = iArr8 != null ? iArr8[i] : i;
+                themeAccent.f1658id = iArr8 != null ? iArr8[i] : i;
                 if (Theme.isHome(themeAccent)) {
                     themeAccent.isDefault = true;
                 }
@@ -2565,28 +2565,28 @@ public class Theme {
                 }
                 if (iArr4 != null) {
                     themeAccent.backgroundOverrideColor = iArr4[i];
-                    if (this.firstAccentIsDefault && themeAccent.f1656id == Theme.DEFALT_THEME_ACCENT_ID) {
+                    if (this.firstAccentIsDefault && themeAccent.f1658id == Theme.DEFALT_THEME_ACCENT_ID) {
                         themeAccent.backgroundOverrideColor = 4294967296L;
                     } else {
                         themeAccent.backgroundOverrideColor = iArr4[i];
                     }
                 }
                 if (iArr5 != null) {
-                    if (this.firstAccentIsDefault && themeAccent.f1656id == Theme.DEFALT_THEME_ACCENT_ID) {
+                    if (this.firstAccentIsDefault && themeAccent.f1658id == Theme.DEFALT_THEME_ACCENT_ID) {
                         themeAccent.backgroundGradientOverrideColor1 = 4294967296L;
                     } else {
                         themeAccent.backgroundGradientOverrideColor1 = iArr5[i];
                     }
                 }
                 if (iArr6 != null) {
-                    if (this.firstAccentIsDefault && themeAccent.f1656id == Theme.DEFALT_THEME_ACCENT_ID) {
+                    if (this.firstAccentIsDefault && themeAccent.f1658id == Theme.DEFALT_THEME_ACCENT_ID) {
                         themeAccent.backgroundGradientOverrideColor2 = 4294967296L;
                     } else {
                         themeAccent.backgroundGradientOverrideColor2 = iArr6[i];
                     }
                 }
                 if (iArr7 != null) {
-                    if (this.firstAccentIsDefault && themeAccent.f1656id == Theme.DEFALT_THEME_ACCENT_ID) {
+                    if (this.firstAccentIsDefault && themeAccent.f1658id == Theme.DEFALT_THEME_ACCENT_ID) {
                         themeAccent.backgroundGradientOverrideColor3 = 4294967296L;
                     } else {
                         themeAccent.backgroundGradientOverrideColor3 = iArr7[i];
@@ -2610,7 +2610,7 @@ public class Theme {
                         themeAccent.backgroundGradientOverrideColor3 = -13421992L;
                     }
                 }
-                this.themeAccentsMap.put(themeAccent.f1656id, themeAccent);
+                this.themeAccentsMap.put(themeAccent.f1658id, themeAccent);
                 this.themeAccents.add(themeAccent);
             }
             this.accentBaseColor = this.themeAccentsMap.get(0).accentColor;
@@ -2779,33 +2779,33 @@ public class Theme {
             }
             TLRPC$ThemeSettings tLRPC$ThemeSettings = i2 < tLRPC$TL_theme.settings.size() ? tLRPC$TL_theme.settings.get(i2) : null;
             if (z) {
-                ThemeAccent themeAccent = this.chatAccentsByThemeId.get(tLRPC$TL_theme.f1631id);
+                ThemeAccent themeAccent = this.chatAccentsByThemeId.get(tLRPC$TL_theme.f1633id);
                 if (themeAccent != null) {
                     return themeAccent;
                 }
                 int i3 = this.lastChatThemeId + 1;
                 this.lastChatThemeId = i3;
                 ThemeAccent createNewAccent = createNewAccent(tLRPC$ThemeSettings);
-                createNewAccent.f1656id = i3;
+                createNewAccent.f1658id = i3;
                 createNewAccent.info = tLRPC$TL_theme;
                 createNewAccent.account = i;
                 this.chatAccentsByThemeId.put(i3, createNewAccent);
                 return createNewAccent;
             }
-            ThemeAccent themeAccent2 = this.accentsByThemeId.get(tLRPC$TL_theme.f1631id);
+            ThemeAccent themeAccent2 = this.accentsByThemeId.get(tLRPC$TL_theme.f1633id);
             if (themeAccent2 != null) {
                 return themeAccent2;
             }
             int i4 = this.lastAccentId + 1;
             this.lastAccentId = i4;
             ThemeAccent createNewAccent2 = createNewAccent(tLRPC$ThemeSettings);
-            createNewAccent2.f1656id = i4;
+            createNewAccent2.f1658id = i4;
             createNewAccent2.info = tLRPC$TL_theme;
             createNewAccent2.account = i;
             this.themeAccentsMap.put(i4, createNewAccent2);
             this.themeAccents.add(0, createNewAccent2);
             Theme.sortAccents(this);
-            this.accentsByThemeId.put(tLRPC$TL_theme.f1631id, createNewAccent2);
+            this.accentsByThemeId.put(tLRPC$TL_theme.f1633id, createNewAccent2);
             return createNewAccent2;
         }
 
@@ -2839,7 +2839,7 @@ public class Theme {
                     themeAccent2.overrideWallpaper = new OverrideWallpaperInfo(overrideWallpaperInfo, this, themeAccent2);
                 }
                 this.prevAccentId = this.currentAccentId;
-                themeAccent2.f1656id = i;
+                themeAccent2.f1658id = i;
                 this.currentAccentId = i;
                 this.overrideWallpaper = themeAccent2.overrideWallpaper;
                 this.themeAccentsMap.put(i, themeAccent2);
@@ -3049,15 +3049,15 @@ public class Theme {
         if (r0 != r3) {
             return r0 > r3 ? -1 : 1;
         } else if (r0 != 0) {
-            int i = themeAccent.f1656id;
-            int i2 = themeAccent2.f1656id;
+            int i = themeAccent.f1658id;
+            int i2 = themeAccent2.f1658id;
             if (i > i2) {
                 return 1;
             }
             return i < i2 ? -1 : 0;
         } else {
-            int i3 = themeAccent.f1656id;
-            int i4 = themeAccent2.f1656id;
+            int i3 = themeAccent.f1658id;
+            int i4 = themeAccent2.f1658id;
             if (i3 > i4) {
                 return -1;
             }
@@ -3152,9 +3152,9 @@ public class Theme {
 
     public static Drawable createEditTextDrawable(Context context, int i, int i2) {
         Resources resources = context.getResources();
-        Drawable mutate = resources.getDrawable(C3301R.C3303drawable.search_dark).mutate();
+        Drawable mutate = resources.getDrawable(C3316R.C3318drawable.search_dark).mutate();
         mutate.setColorFilter(new PorterDuffColorFilter(i, PorterDuff.Mode.MULTIPLY));
-        Drawable mutate2 = resources.getDrawable(C3301R.C3303drawable.search_dark_activated).mutate();
+        Drawable mutate2 = resources.getDrawable(C3316R.C3318drawable.search_dark_activated).mutate();
         mutate2.setColorFilter(new PorterDuffColorFilter(i2, PorterDuff.Mode.MULTIPLY));
         StateListDrawable stateListDrawable = new StateListDrawable() { // from class: org.telegram.ui.ActionBar.Theme.4
             @Override // android.graphics.drawable.DrawableContainer
@@ -3215,7 +3215,7 @@ public class Theme {
         if (r2 == 1) goto L17;
      */
     /* JADX WARN: Code restructure failed: missing block: B:22:0x005b, code lost:
-        org.telegram.p048ui.ActionBar.Theme.dialogs_holidayDrawable = org.telegram.messenger.ApplicationLoader.applicationContext.getResources().getDrawable(org.telegram.messenger.C3301R.C3303drawable.newyear);
+        org.telegram.p048ui.ActionBar.Theme.dialogs_holidayDrawable = org.telegram.messenger.ApplicationLoader.applicationContext.getResources().getDrawable(org.telegram.messenger.C3316R.C3318drawable.newyear);
         org.telegram.p048ui.ActionBar.Theme.dialogs_holidayDrawableOffsetX = -org.telegram.messenger.AndroidUtilities.m50dp(3);
         org.telegram.p048ui.ActionBar.Theme.dialogs_holidayDrawableOffsetY = -org.telegram.messenger.AndroidUtilities.m50dp(-7);
      */
@@ -3274,7 +3274,7 @@ public class Theme {
         L5b:
             android.content.Context r0 = org.telegram.messenger.ApplicationLoader.applicationContext
             android.content.res.Resources r0 = r0.getResources()
-            int r1 = org.telegram.messenger.C3301R.C3303drawable.newyear
+            int r1 = org.telegram.messenger.C3316R.C3318drawable.newyear
             android.graphics.drawable.Drawable r0 = r0.getDrawable(r1)
             org.telegram.p048ui.ActionBar.Theme.dialogs_holidayDrawable = r0
             r0 = 3
@@ -4146,7 +4146,7 @@ public class Theme {
                 return themeInfo;
             }
             if (tLRPC$TL_theme != null) {
-                str2 = "remote" + tLRPC$TL_theme.f1631id;
+                str2 = "remote" + tLRPC$TL_theme.f1633id;
                 file2 = new File(ApplicationLoader.getFilesDirFixed(), str2 + ".attheme");
             } else {
                 file2 = new File(ApplicationLoader.getFilesDirFixed(), str);
@@ -4564,23 +4564,23 @@ public class Theme {
         if (themeAccent == null || themeInfo == null || themeInfo.themeAccents == null) {
             return false;
         }
-        boolean z3 = themeAccent.f1656id == themeInfo.currentAccentId;
+        boolean z3 = themeAccent.f1658id == themeInfo.currentAccentId;
         File pathToWallpaper = themeAccent.getPathToWallpaper();
         if (pathToWallpaper != null) {
             pathToWallpaper.delete();
         }
-        themeInfo.themeAccentsMap.remove(themeAccent.f1656id);
+        themeInfo.themeAccentsMap.remove(themeAccent.f1658id);
         themeInfo.themeAccents.remove(themeAccent);
         TLRPC$TL_theme tLRPC$TL_theme = themeAccent.info;
         if (tLRPC$TL_theme != null) {
-            themeInfo.accentsByThemeId.remove(tLRPC$TL_theme.f1631id);
+            themeInfo.accentsByThemeId.remove(tLRPC$TL_theme.f1633id);
         }
         OverrideWallpaperInfo overrideWallpaperInfo = themeAccent.overrideWallpaper;
         if (overrideWallpaperInfo != null) {
             overrideWallpaperInfo.delete();
         }
         if (z3) {
-            themeInfo.setCurrentAccentId(themeInfo.themeAccents.get(0).f1656id);
+            themeInfo.setCurrentAccentId(themeInfo.themeAccents.get(0).f1658id);
         }
         if (z) {
             saveThemeAccents(themeInfo, true, false, false, false);
@@ -4610,7 +4610,7 @@ public class Theme {
                 serializedData.writeInt32(max);
                 for (int i = 0; i < size; i++) {
                     ThemeAccent themeAccent = themeInfo.themeAccents.get(i);
-                    int i2 = themeAccent.f1656id;
+                    int i2 = themeAccent.f1658id;
                     if (i2 >= 100) {
                         serializedData.writeInt32(i2);
                         serializedData.writeInt32(themeAccent.accentColor);
@@ -4650,11 +4650,11 @@ public class Theme {
             if (themeInfo.prevAccentId != -1) {
                 if (z2) {
                     ThemeAccent themeAccent2 = themeInfo.themeAccentsMap.get(themeInfo.currentAccentId);
-                    themeInfo.themeAccentsMap.remove(themeAccent2.f1656id);
+                    themeInfo.themeAccentsMap.remove(themeAccent2.f1658id);
                     themeInfo.themeAccents.remove(themeAccent2);
                     TLRPC$TL_theme tLRPC$TL_theme = themeAccent2.info;
                     if (tLRPC$TL_theme != null) {
-                        themeInfo.accentsByThemeId.remove(tLRPC$TL_theme.f1631id);
+                        themeInfo.accentsByThemeId.remove(tLRPC$TL_theme.f1633id);
                     }
                 }
                 themeInfo.currentAccentId = themeInfo.prevAccentId;
@@ -5050,11 +5050,11 @@ public class Theme {
                         if (tLRPC$TL_theme != null && tLRPC$TL_theme.document != null) {
                             loadingCurrentTheme++;
                             TLRPC$TL_account_getTheme tLRPC$TL_account_getTheme = new TLRPC$TL_account_getTheme();
-                            tLRPC$TL_account_getTheme.document_id = tLRPC$TL_theme.document.f1508id;
+                            tLRPC$TL_account_getTheme.document_id = tLRPC$TL_theme.document.f1510id;
                             tLRPC$TL_account_getTheme.format = "android";
                             TLRPC$TL_inputTheme tLRPC$TL_inputTheme = new TLRPC$TL_inputTheme();
                             tLRPC$TL_inputTheme.access_hash = tLRPC$TL_theme.access_hash;
-                            tLRPC$TL_inputTheme.f1572id = tLRPC$TL_theme.f1631id;
+                            tLRPC$TL_inputTheme.f1574id = tLRPC$TL_theme.f1633id;
                             tLRPC$TL_account_getTheme.theme = tLRPC$TL_inputTheme;
                             ConnectionsManager.getInstance(i).sendRequest(tLRPC$TL_account_getTheme, new RequestDelegate() { // from class: org.telegram.ui.ActionBar.Theme$$ExternalSyntheticLambda15
                                 @Override // org.telegram.tgnet.RequestDelegate
@@ -5120,7 +5120,7 @@ public class Theme {
             org.telegram.ui.ActionBar.Theme$ThemeInfo r7 = org.telegram.p048ui.ActionBar.Theme.currentTheme
             if (r7 != r9) goto L70
             int r7 = r7.currentAccentId
-            int r9 = r8.f1656id
+            int r9 = r8.f1658id
             if (r7 != r9) goto L70
             refreshThemeColors()
             android.content.Context r7 = org.telegram.messenger.ApplicationLoader.applicationContext
@@ -5170,9 +5170,9 @@ public class Theme {
         L88:
             org.telegram.tgnet.TLRPC$Document r0 = r7.document
             if (r0 == 0) goto La1
-            long r3 = r0.f1508id
+            long r3 = r0.f1510id
             org.telegram.tgnet.TLRPC$Document r10 = r10.document
-            long r5 = r10.f1508id
+            long r5 = r10.f1510id
             int r10 = (r3 > r5 ? 1 : (r3 == r5 ? 0 : -1))
             if (r10 == 0) goto La1
             if (r8 == 0) goto L9b
@@ -5291,7 +5291,7 @@ public class Theme {
         int size = themes.size();
         for (int i = 0; i < size; i++) {
             TLRPC$TL_theme tLRPC$TL_theme2 = themes.get(i).info;
-            if (tLRPC$TL_theme2 != null && tLRPC$TL_theme2.f1631id == tLRPC$TL_theme.f1631id) {
+            if (tLRPC$TL_theme2 != null && tLRPC$TL_theme2.f1633id == tLRPC$TL_theme.f1633id) {
                 TLRPC$Document tLRPC$Document2 = tLRPC$TL_theme2.document;
                 if (tLRPC$Document2 == null || (tLRPC$Document = tLRPC$TL_theme.document) == null) {
                     return;
@@ -5320,18 +5320,18 @@ public class Theme {
                 if (baseThemeKey == null || (themeInfo = themesDict.get(baseThemeKey)) == null) {
                     return;
                 }
-                themeAccent = themeInfo.accentsByThemeId.get(tLRPC$TL_theme.f1631id);
+                themeAccent = themeInfo.accentsByThemeId.get(tLRPC$TL_theme.f1633id);
             }
             if (themeAccent == null) {
                 return;
             }
             TLRPC$TL_theme tLRPC$TL_theme2 = themeAccent.info;
             if (tLRPC$TL_theme2 != null) {
-                themeInfo.accentsByThemeId.remove(tLRPC$TL_theme2.f1631id);
+                themeInfo.accentsByThemeId.remove(tLRPC$TL_theme2.f1633id);
             }
             themeAccent.info = tLRPC$TL_theme;
             themeAccent.account = i;
-            themeInfo.accentsByThemeId.put(tLRPC$TL_theme.f1631id, themeAccent);
+            themeInfo.accentsByThemeId.put(tLRPC$TL_theme.f1633id, themeAccent);
             if (!ThemeInfo.accentEquals(themeAccent, tLRPC$ThemeSettings)) {
                 File pathToWallpaper = themeAccent.getPathToWallpaper();
                 if (pathToWallpaper != null) {
@@ -5339,7 +5339,7 @@ public class Theme {
                 }
                 ThemeInfo.fillAccentValues(themeAccent, tLRPC$ThemeSettings);
                 ThemeInfo themeInfo2 = currentTheme;
-                if (themeInfo2 == themeInfo && themeInfo2.currentAccentId == themeAccent.f1656id) {
+                if (themeInfo2 == themeInfo && themeInfo2.currentAccentId == themeAccent.f1658id) {
                     refreshThemeColors();
                     NotificationCenter globalInstance = NotificationCenter.getGlobalInstance();
                     int i2 = NotificationCenter.needSetDayNightTheme;
@@ -5362,7 +5362,7 @@ public class Theme {
                 str = themeInfo.getKey();
                 hashMap.remove(str);
             } else {
-                str = "remote" + tLRPC$TL_theme.f1631id;
+                str = "remote" + tLRPC$TL_theme.f1633id;
                 themeInfo = themesDict.get(str);
             }
             if (themeInfo == null) {
@@ -5617,22 +5617,22 @@ public class Theme {
             linkSelectionPaint = paint5;
             paint5.setPathEffect(LinkPath.getRoundedEffect());
             Resources resources = context.getResources();
-            avatarDrawables[0] = resources.getDrawable(C3301R.C3303drawable.chats_saved);
-            avatarDrawables[0] = AppCompatResources.getDrawable(context, C3301R.C3303drawable.fork_ic_cloud);
-            avatarDrawables[1] = resources.getDrawable(C3301R.C3303drawable.ghost);
+            avatarDrawables[0] = resources.getDrawable(C3316R.C3318drawable.chats_saved);
+            avatarDrawables[0] = AppCompatResources.getDrawable(context, C3316R.C3318drawable.fork_ic_cloud);
+            avatarDrawables[1] = resources.getDrawable(C3316R.C3318drawable.ghost);
             Drawable[] drawableArr = avatarDrawables;
-            int i = C3301R.C3303drawable.msg_folders_private;
+            int i = C3316R.C3318drawable.msg_folders_private;
             drawableArr[2] = resources.getDrawable(i);
-            avatarDrawables[3] = resources.getDrawable(C3301R.C3303drawable.msg_folders_requests);
-            avatarDrawables[4] = resources.getDrawable(C3301R.C3303drawable.msg_folders_groups);
-            avatarDrawables[5] = resources.getDrawable(C3301R.C3303drawable.msg_folders_channels);
-            avatarDrawables[6] = resources.getDrawable(C3301R.C3303drawable.msg_folders_bots);
-            avatarDrawables[7] = resources.getDrawable(C3301R.C3303drawable.msg_folders_muted);
-            avatarDrawables[8] = resources.getDrawable(C3301R.C3303drawable.msg_folders_read);
-            avatarDrawables[9] = resources.getDrawable(C3301R.C3303drawable.msg_folders_archive);
+            avatarDrawables[3] = resources.getDrawable(C3316R.C3318drawable.msg_folders_requests);
+            avatarDrawables[4] = resources.getDrawable(C3316R.C3318drawable.msg_folders_groups);
+            avatarDrawables[5] = resources.getDrawable(C3316R.C3318drawable.msg_folders_channels);
+            avatarDrawables[6] = resources.getDrawable(C3316R.C3318drawable.msg_folders_bots);
+            avatarDrawables[7] = resources.getDrawable(C3316R.C3318drawable.msg_folders_muted);
+            avatarDrawables[8] = resources.getDrawable(C3316R.C3318drawable.msg_folders_read);
+            avatarDrawables[9] = resources.getDrawable(C3316R.C3318drawable.msg_folders_archive);
             avatarDrawables[10] = resources.getDrawable(i);
-            avatarDrawables[11] = resources.getDrawable(C3301R.C3303drawable.chats_replies);
-            avatarDrawables[12] = resources.getDrawable(C3301R.C3303drawable.other_chats);
+            avatarDrawables[11] = resources.getDrawable(C3316R.C3318drawable.chats_replies);
+            avatarDrawables[12] = resources.getDrawable(C3316R.C3318drawable.other_chats);
             RLottieDrawable rLottieDrawable = dialogs_archiveAvatarDrawable;
             if (rLottieDrawable != null) {
                 rLottieDrawable.setCallback(null);
@@ -5658,19 +5658,19 @@ public class Theme {
             if (rLottieDrawable6 != null) {
                 rLottieDrawable6.recycle(false);
             }
-            dialogs_archiveAvatarDrawable = new RLottieDrawable(C3301R.C3306raw.chats_archiveavatar, "chats_archiveavatar", AndroidUtilities.m50dp(36), AndroidUtilities.m50dp(36), false, null);
-            dialogs_archiveDrawable = new RLottieDrawable(C3301R.C3306raw.chats_archive, "chats_archive", AndroidUtilities.m50dp(36), AndroidUtilities.m50dp(36), false, null);
-            dialogs_unarchiveDrawable = new RLottieDrawable(C3301R.C3306raw.chats_unarchive, "chats_unarchive", AndroidUtilities.m50dp(AndroidUtilities.m50dp(36)), AndroidUtilities.m50dp(36), false, null);
-            dialogs_pinArchiveDrawable = new RLottieDrawable(C3301R.C3306raw.chats_hide, "chats_hide", AndroidUtilities.m50dp(36), AndroidUtilities.m50dp(36), false, null);
-            dialogs_unpinArchiveDrawable = new RLottieDrawable(C3301R.C3306raw.chats_unhide, "chats_unhide", AndroidUtilities.m50dp(36), AndroidUtilities.m50dp(36), false, null);
-            dialogs_hidePsaDrawable = new RLottieDrawable(C3301R.C3306raw.chat_audio_record_delete, "chats_psahide", AndroidUtilities.m50dp(30), AndroidUtilities.m50dp(30), false, null);
-            dialogs_swipeMuteDrawable = new RLottieDrawable(C3301R.C3306raw.swipe_mute, "swipe_mute", AndroidUtilities.m50dp(36), AndroidUtilities.m50dp(36), false, null);
-            dialogs_swipeUnmuteDrawable = new RLottieDrawable(C3301R.C3306raw.swipe_unmute, "swipe_unmute", AndroidUtilities.m50dp(36), AndroidUtilities.m50dp(36), false, null);
-            dialogs_swipeReadDrawable = new RLottieDrawable(C3301R.C3306raw.swipe_read, "swipe_read", AndroidUtilities.m50dp(36), AndroidUtilities.m50dp(36), false, null);
-            dialogs_swipeUnreadDrawable = new RLottieDrawable(C3301R.C3306raw.swipe_unread, "swipe_unread", AndroidUtilities.m50dp(36), AndroidUtilities.m50dp(36), false, null);
-            dialogs_swipeDeleteDrawable = new RLottieDrawable(C3301R.C3306raw.swipe_delete, "swipe_delete", AndroidUtilities.m50dp(36), AndroidUtilities.m50dp(36), false, null);
-            dialogs_swipeUnpinDrawable = new RLottieDrawable(C3301R.C3306raw.swipe_unpin, "swipe_unpin", AndroidUtilities.m50dp(36), AndroidUtilities.m50dp(36), false, null);
-            dialogs_swipePinDrawable = new RLottieDrawable(C3301R.C3306raw.swipe_pin, "swipe_pin", AndroidUtilities.m50dp(36), AndroidUtilities.m50dp(36), false, null);
+            dialogs_archiveAvatarDrawable = new RLottieDrawable(C3316R.C3321raw.chats_archiveavatar, "chats_archiveavatar", AndroidUtilities.m50dp(36), AndroidUtilities.m50dp(36), false, null);
+            dialogs_archiveDrawable = new RLottieDrawable(C3316R.C3321raw.chats_archive, "chats_archive", AndroidUtilities.m50dp(36), AndroidUtilities.m50dp(36), false, null);
+            dialogs_unarchiveDrawable = new RLottieDrawable(C3316R.C3321raw.chats_unarchive, "chats_unarchive", AndroidUtilities.m50dp(AndroidUtilities.m50dp(36)), AndroidUtilities.m50dp(36), false, null);
+            dialogs_pinArchiveDrawable = new RLottieDrawable(C3316R.C3321raw.chats_hide, "chats_hide", AndroidUtilities.m50dp(36), AndroidUtilities.m50dp(36), false, null);
+            dialogs_unpinArchiveDrawable = new RLottieDrawable(C3316R.C3321raw.chats_unhide, "chats_unhide", AndroidUtilities.m50dp(36), AndroidUtilities.m50dp(36), false, null);
+            dialogs_hidePsaDrawable = new RLottieDrawable(C3316R.C3321raw.chat_audio_record_delete, "chats_psahide", AndroidUtilities.m50dp(30), AndroidUtilities.m50dp(30), false, null);
+            dialogs_swipeMuteDrawable = new RLottieDrawable(C3316R.C3321raw.swipe_mute, "swipe_mute", AndroidUtilities.m50dp(36), AndroidUtilities.m50dp(36), false, null);
+            dialogs_swipeUnmuteDrawable = new RLottieDrawable(C3316R.C3321raw.swipe_unmute, "swipe_unmute", AndroidUtilities.m50dp(36), AndroidUtilities.m50dp(36), false, null);
+            dialogs_swipeReadDrawable = new RLottieDrawable(C3316R.C3321raw.swipe_read, "swipe_read", AndroidUtilities.m50dp(36), AndroidUtilities.m50dp(36), false, null);
+            dialogs_swipeUnreadDrawable = new RLottieDrawable(C3316R.C3321raw.swipe_unread, "swipe_unread", AndroidUtilities.m50dp(36), AndroidUtilities.m50dp(36), false, null);
+            dialogs_swipeDeleteDrawable = new RLottieDrawable(C3316R.C3321raw.swipe_delete, "swipe_delete", AndroidUtilities.m50dp(36), AndroidUtilities.m50dp(36), false, null);
+            dialogs_swipeUnpinDrawable = new RLottieDrawable(C3316R.C3321raw.swipe_unpin, "swipe_unpin", AndroidUtilities.m50dp(36), AndroidUtilities.m50dp(36), false, null);
+            dialogs_swipePinDrawable = new RLottieDrawable(C3316R.C3321raw.swipe_pin, "swipe_pin", AndroidUtilities.m50dp(36), AndroidUtilities.m50dp(36), false, null);
             applyCommonTheme();
         }
     }
@@ -5785,27 +5785,27 @@ public class Theme {
             dialogs_countGrayPaint = new Paint(1);
             dialogs_errorPaint = new Paint(1);
             dialogs_actionMessagePaint = new Paint(1);
-            dialogs_lockDrawable = resources.getDrawable(C3301R.C3303drawable.list_secret);
-            dialogs_lock2Drawable = resources.getDrawable(C3301R.C3303drawable.msg_mini_lock2);
-            int i2 = C3301R.C3303drawable.list_check;
+            dialogs_lockDrawable = resources.getDrawable(C3316R.C3318drawable.list_secret);
+            dialogs_lock2Drawable = resources.getDrawable(C3316R.C3318drawable.msg_mini_lock2);
+            int i2 = C3316R.C3318drawable.list_check;
             dialogs_checkDrawable = resources.getDrawable(i2).mutate();
-            dialogs_playDrawable = resources.getDrawable(C3301R.C3303drawable.minithumb_play).mutate();
+            dialogs_playDrawable = resources.getDrawable(C3316R.C3318drawable.minithumb_play).mutate();
             dialogs_checkReadDrawable = resources.getDrawable(i2).mutate();
-            dialogs_halfCheckDrawable = resources.getDrawable(C3301R.C3303drawable.list_halfcheck);
+            dialogs_halfCheckDrawable = resources.getDrawable(C3316R.C3318drawable.list_halfcheck);
             dialogs_clockDrawable = new MsgClockDrawable();
-            dialogs_errorDrawable = resources.getDrawable(C3301R.C3303drawable.list_warning_sign);
-            dialogs_reorderDrawable = resources.getDrawable(C3301R.C3303drawable.list_reorder).mutate();
-            dialogs_muteDrawable = resources.getDrawable(C3301R.C3303drawable.list_mute).mutate();
-            dialogs_unmuteDrawable = resources.getDrawable(C3301R.C3303drawable.list_unmute).mutate();
-            dialogs_verifiedDrawable = resources.getDrawable(C3301R.C3303drawable.verified_area).mutate();
+            dialogs_errorDrawable = resources.getDrawable(C3316R.C3318drawable.list_warning_sign);
+            dialogs_reorderDrawable = resources.getDrawable(C3316R.C3318drawable.list_reorder).mutate();
+            dialogs_muteDrawable = resources.getDrawable(C3316R.C3318drawable.list_mute).mutate();
+            dialogs_unmuteDrawable = resources.getDrawable(C3316R.C3318drawable.list_unmute).mutate();
+            dialogs_verifiedDrawable = resources.getDrawable(C3316R.C3318drawable.verified_area).mutate();
             dialogs_scamDrawable = new ScamDrawable(11, 0);
             dialogs_fakeDrawable = new ScamDrawable(11, 1);
-            dialogs_verifiedCheckDrawable = resources.getDrawable(C3301R.C3303drawable.verified_check).mutate();
-            dialogs_mentionDrawable = resources.getDrawable(C3301R.C3303drawable.mentionchatslist);
-            dialogs_reactionsMentionDrawable = resources.getDrawable(C3301R.C3303drawable.reactionchatslist);
-            dialogs_pinnedDrawable = resources.getDrawable(C3301R.C3303drawable.list_pin);
-            dialogs_forum_arrowDrawable = resources.getDrawable(C3301R.C3303drawable.msg_mini_forumarrow);
-            moveUpDrawable = resources.getDrawable(C3301R.C3303drawable.preview_arrow);
+            dialogs_verifiedCheckDrawable = resources.getDrawable(C3316R.C3318drawable.verified_check).mutate();
+            dialogs_mentionDrawable = resources.getDrawable(C3316R.C3318drawable.mentionchatslist);
+            dialogs_reactionsMentionDrawable = resources.getDrawable(C3316R.C3318drawable.reactionchatslist);
+            dialogs_pinnedDrawable = resources.getDrawable(C3316R.C3318drawable.list_pin);
+            dialogs_forum_arrowDrawable = resources.getDrawable(C3316R.C3318drawable.msg_mini_forumarrow);
+            moveUpDrawable = resources.getDrawable(C3316R.C3318drawable.preview_arrow);
             RectF rectF = new RectF();
             chat_updatePath[0] = new Path();
             chat_updatePath[2] = new Path();
@@ -6084,17 +6084,17 @@ public class Theme {
         createCommonChatResources();
         if (!z && chat_msgInDrawable == null) {
             Resources resources = context.getResources();
-            int i = C3301R.C3303drawable.arrow_more;
+            int i = C3316R.C3318drawable.arrow_more;
             chat_msgInSpoilerDrawable = resources.getDrawable(i).mutate();
             chat_msgOutSpoilerDrawable = resources.getDrawable(i).mutate();
-            int i2 = C3301R.C3303drawable.fork_chat_bookmarks_mark;
+            int i2 = C3316R.C3318drawable.fork_chat_bookmarks_mark;
             chat_msgInBookmarkDrawable = resources.getDrawable(i2).mutate();
             chat_msgInBookmarkSelectedDrawable = resources.getDrawable(i2).mutate();
             chat_msgOutBookmarkDrawable = resources.getDrawable(i2).mutate();
             chat_msgOutBookmarkSelectedDrawable = resources.getDrawable(i2).mutate();
             chat_msgMediaBookmarkDrawable = resources.getDrawable(i2).mutate();
             chat_msgStickerBookmarkDrawable = resources.getDrawable(i2).mutate();
-            chat_msgNoSoundDrawable = resources.getDrawable(C3301R.C3303drawable.video_muted);
+            chat_msgNoSoundDrawable = resources.getDrawable(C3316R.C3318drawable.video_muted);
             chat_msgInDrawable = new MessageDrawable(0, false, false);
             chat_msgInSelectedDrawable = new MessageDrawable(0, false, true);
             chat_msgOutDrawable = new MessageDrawable(0, true, false);
@@ -6112,33 +6112,33 @@ public class Theme {
             playPauseAnimator.addSvgKeyFrame("M 47.421 16.941 C 50.544 18.191 50.783 19.91 50.769 22.706 C 50.761 24.484 50.76 23.953 50.79 26.073 C 50.814 27.835 49.334 30 47.124 30 L 5 30.01 C 2.79 30.01 1 28.22 1 26.01 L 1.001 10.823 C 1.001 8.218 3.532 6.895 5.572 7.26 C 7.493 8.01 47.421 16.941 47.421 16.941 Z", 267.0f);
             playPauseAnimator.addSvgKeyFrame("M 47.641 17.125 C 50.641 18.207 51.09 19.935 51.078 22.653 C 51.07 24.191 51.062 21.23 51.088 23.063 C 51.109 24.886 49.587 27 47.377 27 L 5 27.009 C 2.79 27.009 1 25.219 1 23.009 L 0.983 11.459 C 0.983 8.908 3.414 7.522 5.476 7.838 C 7.138 8.486 47.641 17.125 47.641 17.125 Z", 300.0f);
             playPauseAnimator.addSvgKeyFrame("M 48 7 C 50.21 7 52 8.79 52 11 C 52 19 52 19 52 19 C 52 21.21 50.21 23 48 23 L 4 23 C 1.79 23 0 21.21 0 19 L 0 11 C 0 8.79 1.79 7 4 7 C 48 7 48 7 48 7 Z", 383.0f);
-            int i3 = C3301R.C3303drawable.msg_check_s;
+            int i3 = C3316R.C3318drawable.msg_check_s;
             chat_msgOutCheckDrawable = resources.getDrawable(i3).mutate();
             chat_msgOutCheckSelectedDrawable = resources.getDrawable(i3).mutate();
             chat_msgOutCheckReadDrawable = resources.getDrawable(i3).mutate();
             chat_msgOutCheckReadSelectedDrawable = resources.getDrawable(i3).mutate();
             chat_msgMediaCheckDrawable = resources.getDrawable(i3).mutate();
             chat_msgStickerCheckDrawable = resources.getDrawable(i3).mutate();
-            int i4 = C3301R.C3303drawable.msg_halfcheck;
+            int i4 = C3316R.C3318drawable.msg_halfcheck;
             chat_msgOutHalfCheckDrawable = resources.getDrawable(i4).mutate();
             chat_msgOutHalfCheckSelectedDrawable = resources.getDrawable(i4).mutate();
-            int i5 = C3301R.C3303drawable.msg_halfcheck_s;
+            int i5 = C3316R.C3318drawable.msg_halfcheck_s;
             chat_msgMediaHalfCheckDrawable = resources.getDrawable(i5).mutate();
             chat_msgStickerHalfCheckDrawable = resources.getDrawable(i5).mutate();
             chat_msgClockDrawable = new MsgClockDrawable();
-            int i6 = C3301R.C3303drawable.ic_lock_header;
+            int i6 = C3316R.C3318drawable.ic_lock_header;
             chat_msgUnlockDrawable = resources.getDrawable(i6).mutate();
-            int i7 = C3301R.C3303drawable.msg_views;
+            int i7 = C3316R.C3318drawable.msg_views;
             chat_msgInViewsDrawable = resources.getDrawable(i7).mutate();
             chat_msgInViewsSelectedDrawable = resources.getDrawable(i7).mutate();
             chat_msgOutViewsDrawable = resources.getDrawable(i7).mutate();
             chat_msgOutViewsSelectedDrawable = resources.getDrawable(i7).mutate();
-            int i8 = C3301R.C3303drawable.msg_reply_small;
+            int i8 = C3316R.C3318drawable.msg_reply_small;
             chat_msgInRepliesDrawable = resources.getDrawable(i8).mutate();
             chat_msgInRepliesSelectedDrawable = resources.getDrawable(i8).mutate();
             chat_msgOutRepliesDrawable = resources.getDrawable(i8).mutate();
             chat_msgOutRepliesSelectedDrawable = resources.getDrawable(i8).mutate();
-            int i9 = C3301R.C3303drawable.msg_pin_mini;
+            int i9 = C3316R.C3318drawable.msg_pin_mini;
             chat_msgInPinnedDrawable = resources.getDrawable(i9).mutate();
             chat_msgInPinnedSelectedDrawable = resources.getDrawable(i9).mutate();
             chat_msgOutPinnedDrawable = resources.getDrawable(i9).mutate();
@@ -6149,75 +6149,75 @@ public class Theme {
             chat_msgMediaRepliesDrawable = resources.getDrawable(i8).mutate();
             chat_msgStickerViewsDrawable = resources.getDrawable(i7).mutate();
             chat_msgStickerRepliesDrawable = resources.getDrawable(i8).mutate();
-            int i10 = C3301R.C3303drawable.msg_actions;
+            int i10 = C3316R.C3318drawable.msg_actions;
             chat_msgInMenuDrawable = resources.getDrawable(i10).mutate();
             chat_msgInMenuSelectedDrawable = resources.getDrawable(i10).mutate();
             chat_msgOutMenuDrawable = resources.getDrawable(i10).mutate();
             chat_msgOutMenuSelectedDrawable = resources.getDrawable(i10).mutate();
-            chat_msgMediaMenuDrawable = resources.getDrawable(C3301R.C3303drawable.video_actions);
-            int i11 = C3301R.C3303drawable.msg_instant;
+            chat_msgMediaMenuDrawable = resources.getDrawable(C3316R.C3318drawable.video_actions);
+            int i11 = C3316R.C3318drawable.msg_instant;
             chat_msgInInstantDrawable = resources.getDrawable(i11).mutate();
             chat_msgOutInstantDrawable = resources.getDrawable(i11).mutate();
-            chat_msgErrorDrawable = resources.getDrawable(C3301R.C3303drawable.msg_warning);
-            chat_muteIconDrawable = resources.getDrawable(C3301R.C3303drawable.list_mute).mutate();
+            chat_msgErrorDrawable = resources.getDrawable(C3316R.C3318drawable.msg_warning);
+            chat_muteIconDrawable = resources.getDrawable(C3316R.C3318drawable.list_mute).mutate();
             chat_lockIconDrawable = resources.getDrawable(i6);
             Drawable[] drawableArr = chat_msgInCallDrawable;
-            int i12 = C3301R.C3303drawable.chat_calls_voice;
+            int i12 = C3316R.C3318drawable.chat_calls_voice;
             drawableArr[0] = resources.getDrawable(i12).mutate();
             chat_msgInCallSelectedDrawable[0] = resources.getDrawable(i12).mutate();
             chat_msgOutCallDrawable[0] = resources.getDrawable(i12).mutate();
             chat_msgOutCallSelectedDrawable[0] = resources.getDrawable(i12).mutate();
             Drawable[] drawableArr2 = chat_msgInCallDrawable;
-            int i13 = C3301R.C3303drawable.chat_calls_video;
+            int i13 = C3316R.C3318drawable.chat_calls_video;
             drawableArr2[1] = resources.getDrawable(i13).mutate();
             chat_msgInCallSelectedDrawable[1] = resources.getDrawable(i13).mutate();
             chat_msgOutCallDrawable[1] = resources.getDrawable(i13).mutate();
             chat_msgOutCallSelectedDrawable[1] = resources.getDrawable(i13).mutate();
-            chat_msgCallUpGreenDrawable = resources.getDrawable(C3301R.C3303drawable.chat_calls_outgoing).mutate();
-            int i14 = C3301R.C3303drawable.chat_calls_incoming;
+            chat_msgCallUpGreenDrawable = resources.getDrawable(C3316R.C3318drawable.chat_calls_outgoing).mutate();
+            int i14 = C3316R.C3318drawable.chat_calls_incoming;
             chat_msgCallDownRedDrawable = resources.getDrawable(i14).mutate();
             chat_msgCallDownGreenDrawable = resources.getDrawable(i14).mutate();
             for (int i15 = 0; i15 < 2; i15++) {
-                chat_pollCheckDrawable[i15] = resources.getDrawable(C3301R.C3303drawable.poll_right).mutate();
-                chat_pollCrossDrawable[i15] = resources.getDrawable(C3301R.C3303drawable.poll_wrong).mutate();
-                chat_pollHintDrawable[i15] = resources.getDrawable(C3301R.C3303drawable.msg_emoji_objects).mutate();
-                chat_psaHelpDrawable[i15] = resources.getDrawable(C3301R.C3303drawable.msg_psa).mutate();
+                chat_pollCheckDrawable[i15] = resources.getDrawable(C3316R.C3318drawable.poll_right).mutate();
+                chat_pollCrossDrawable[i15] = resources.getDrawable(C3316R.C3318drawable.poll_wrong).mutate();
+                chat_pollHintDrawable[i15] = resources.getDrawable(C3316R.C3318drawable.msg_emoji_objects).mutate();
+                chat_psaHelpDrawable[i15] = resources.getDrawable(C3316R.C3318drawable.msg_psa).mutate();
             }
-            int i16 = C3301R.C3303drawable.ic_call_made_green_18dp;
+            int i16 = C3316R.C3318drawable.ic_call_made_green_18dp;
             calllog_msgCallUpRedDrawable = resources.getDrawable(i16).mutate();
             calllog_msgCallUpGreenDrawable = resources.getDrawable(i16).mutate();
-            int i17 = C3301R.C3303drawable.ic_call_received_green_18dp;
+            int i17 = C3316R.C3318drawable.ic_call_received_green_18dp;
             calllog_msgCallDownRedDrawable = resources.getDrawable(i17).mutate();
             calllog_msgCallDownGreenDrawable = resources.getDrawable(i17).mutate();
-            chat_msgAvatarLiveLocationDrawable = resources.getDrawable(C3301R.C3303drawable.livepin).mutate();
-            chat_inlineResultFile = resources.getDrawable(C3301R.C3303drawable.bot_file);
-            chat_inlineResultAudio = resources.getDrawable(C3301R.C3303drawable.bot_music);
-            chat_inlineResultLocation = resources.getDrawable(C3301R.C3303drawable.bot_location);
-            chat_redLocationIcon = resources.getDrawable(C3301R.C3303drawable.map_pin).mutate();
-            chat_botLinkDrawable = resources.getDrawable(C3301R.C3303drawable.bot_link);
-            chat_botInlineDrawable = resources.getDrawable(C3301R.C3303drawable.bot_lines);
-            chat_botCardDrawable = resources.getDrawable(C3301R.C3303drawable.bot_card);
-            chat_botWebViewDrawable = resources.getDrawable(C3301R.C3303drawable.bot_webview);
-            chat_botInviteDrawable = resources.getDrawable(C3301R.C3303drawable.bot_invite);
-            chat_commentDrawable = resources.getDrawable(C3301R.C3303drawable.msg_msgbubble);
-            chat_commentStickerDrawable = resources.getDrawable(C3301R.C3303drawable.msg_msgbubble2);
-            chat_commentArrowDrawable = resources.getDrawable(C3301R.C3303drawable.msg_arrowright);
-            chat_gradientLeftDrawable = resources.getDrawable(C3301R.C3303drawable.gradient_left);
-            chat_gradientRightDrawable = resources.getDrawable(C3301R.C3303drawable.gradient_right);
-            chat_contextResult_shadowUnderSwitchDrawable = resources.getDrawable(C3301R.C3303drawable.header_shadow).mutate();
-            chat_attachButtonDrawables[0] = new RLottieDrawable(C3301R.C3306raw.attach_gallery, "attach_gallery", AndroidUtilities.m50dp(26), AndroidUtilities.m50dp(26));
-            chat_attachButtonDrawables[1] = new RLottieDrawable(C3301R.C3306raw.attach_music, "attach_music", AndroidUtilities.m50dp(26), AndroidUtilities.m50dp(26));
-            chat_attachButtonDrawables[2] = new RLottieDrawable(C3301R.C3306raw.attach_file, "attach_file", AndroidUtilities.m50dp(26), AndroidUtilities.m50dp(26));
-            chat_attachButtonDrawables[3] = new RLottieDrawable(C3301R.C3306raw.attach_contact, "attach_contact", AndroidUtilities.m50dp(26), AndroidUtilities.m50dp(26));
-            chat_attachButtonDrawables[4] = new RLottieDrawable(C3301R.C3306raw.attach_location, "attach_location", AndroidUtilities.m50dp(26), AndroidUtilities.m50dp(26));
-            chat_attachButtonDrawables[5] = new RLottieDrawable(C3301R.C3306raw.attach_poll, "attach_poll", AndroidUtilities.m50dp(26), AndroidUtilities.m50dp(26));
-            chat_attachButtonDrawables[6] = new RLottieDrawable(C3301R.C3306raw.fork_attach_wallet, "attach_wallet", AndroidUtilities.m50dp(26), AndroidUtilities.m50dp(26));
-            chat_attachButtonDrawables[7] = new RLottieDrawable(C3301R.C3306raw.fork_attach_binance, "attach_binance", AndroidUtilities.m50dp(26), AndroidUtilities.m50dp(26));
-            chat_attachButtonDrawables[8] = new RLottieDrawable(C3301R.C3306raw.fork_attach_templates, "attach_templates", AndroidUtilities.m50dp(26), AndroidUtilities.m50dp(26));
-            chat_attachEmptyDrawable = resources.getDrawable(C3301R.C3303drawable.nophotos3);
-            chat_shareIconDrawable = resources.getDrawable(C3301R.C3303drawable.share_arrow).mutate();
-            chat_replyIconDrawable = resources.getDrawable(C3301R.C3303drawable.fast_reply);
-            chat_goIconDrawable = resources.getDrawable(C3301R.C3303drawable.message_arrow);
+            chat_msgAvatarLiveLocationDrawable = resources.getDrawable(C3316R.C3318drawable.livepin).mutate();
+            chat_inlineResultFile = resources.getDrawable(C3316R.C3318drawable.bot_file);
+            chat_inlineResultAudio = resources.getDrawable(C3316R.C3318drawable.bot_music);
+            chat_inlineResultLocation = resources.getDrawable(C3316R.C3318drawable.bot_location);
+            chat_redLocationIcon = resources.getDrawable(C3316R.C3318drawable.map_pin).mutate();
+            chat_botLinkDrawable = resources.getDrawable(C3316R.C3318drawable.bot_link);
+            chat_botInlineDrawable = resources.getDrawable(C3316R.C3318drawable.bot_lines);
+            chat_botCardDrawable = resources.getDrawable(C3316R.C3318drawable.bot_card);
+            chat_botWebViewDrawable = resources.getDrawable(C3316R.C3318drawable.bot_webview);
+            chat_botInviteDrawable = resources.getDrawable(C3316R.C3318drawable.bot_invite);
+            chat_commentDrawable = resources.getDrawable(C3316R.C3318drawable.msg_msgbubble);
+            chat_commentStickerDrawable = resources.getDrawable(C3316R.C3318drawable.msg_msgbubble2);
+            chat_commentArrowDrawable = resources.getDrawable(C3316R.C3318drawable.msg_arrowright);
+            chat_gradientLeftDrawable = resources.getDrawable(C3316R.C3318drawable.gradient_left);
+            chat_gradientRightDrawable = resources.getDrawable(C3316R.C3318drawable.gradient_right);
+            chat_contextResult_shadowUnderSwitchDrawable = resources.getDrawable(C3316R.C3318drawable.header_shadow).mutate();
+            chat_attachButtonDrawables[0] = new RLottieDrawable(C3316R.C3321raw.attach_gallery, "attach_gallery", AndroidUtilities.m50dp(26), AndroidUtilities.m50dp(26));
+            chat_attachButtonDrawables[1] = new RLottieDrawable(C3316R.C3321raw.attach_music, "attach_music", AndroidUtilities.m50dp(26), AndroidUtilities.m50dp(26));
+            chat_attachButtonDrawables[2] = new RLottieDrawable(C3316R.C3321raw.attach_file, "attach_file", AndroidUtilities.m50dp(26), AndroidUtilities.m50dp(26));
+            chat_attachButtonDrawables[3] = new RLottieDrawable(C3316R.C3321raw.attach_contact, "attach_contact", AndroidUtilities.m50dp(26), AndroidUtilities.m50dp(26));
+            chat_attachButtonDrawables[4] = new RLottieDrawable(C3316R.C3321raw.attach_location, "attach_location", AndroidUtilities.m50dp(26), AndroidUtilities.m50dp(26));
+            chat_attachButtonDrawables[5] = new RLottieDrawable(C3316R.C3321raw.attach_poll, "attach_poll", AndroidUtilities.m50dp(26), AndroidUtilities.m50dp(26));
+            chat_attachButtonDrawables[6] = new RLottieDrawable(C3316R.C3321raw.fork_attach_wallet, "attach_wallet", AndroidUtilities.m50dp(26), AndroidUtilities.m50dp(26));
+            chat_attachButtonDrawables[7] = new RLottieDrawable(C3316R.C3321raw.fork_attach_binance, "attach_binance", AndroidUtilities.m50dp(26), AndroidUtilities.m50dp(26));
+            chat_attachButtonDrawables[8] = new RLottieDrawable(C3316R.C3321raw.fork_attach_templates, "attach_templates", AndroidUtilities.m50dp(26), AndroidUtilities.m50dp(26));
+            chat_attachEmptyDrawable = resources.getDrawable(C3316R.C3318drawable.nophotos3);
+            chat_shareIconDrawable = resources.getDrawable(C3316R.C3318drawable.share_arrow).mutate();
+            chat_replyIconDrawable = resources.getDrawable(C3316R.C3318drawable.fast_reply);
+            chat_goIconDrawable = resources.getDrawable(C3316R.C3318drawable.message_arrow);
             int m50dp = AndroidUtilities.m50dp(2);
             RectF rectF = new RectF();
             chat_filePath[0] = new Path();
@@ -6240,47 +6240,47 @@ public class Theme {
             chat_filePath[1].lineTo(AndroidUtilities.m50dp(19), AndroidUtilities.m50dp(10));
             chat_filePath[1].lineTo(AndroidUtilities.m50dp(14), AndroidUtilities.m50dp(10));
             chat_filePath[1].close();
-            chat_backupIconDrawable = resources.getDrawable(C3301R.C3303drawable.fork_settings_filled).mutate();
-            chat_flameIcon = resources.getDrawable(C3301R.C3303drawable.burn).mutate();
-            chat_gifIcon = resources.getDrawable(C3301R.C3303drawable.msg_round_gif_m).mutate();
+            chat_backupIconDrawable = resources.getDrawable(C3316R.C3318drawable.fork_settings_filled).mutate();
+            chat_flameIcon = resources.getDrawable(C3316R.C3318drawable.burn).mutate();
+            chat_gifIcon = resources.getDrawable(C3316R.C3318drawable.msg_round_gif_m).mutate();
             Drawable[] drawableArr3 = chat_fileStatesDrawable[0];
             int m50dp2 = AndroidUtilities.m50dp(44);
-            int i19 = C3301R.C3303drawable.msg_round_play_m;
+            int i19 = C3316R.C3318drawable.msg_round_play_m;
             drawableArr3[0] = createCircleDrawableWithIcon(m50dp2, i19);
             chat_fileStatesDrawable[0][1] = createCircleDrawableWithIcon(AndroidUtilities.m50dp(44), i19);
             Drawable[] drawableArr4 = chat_fileStatesDrawable[1];
             int m50dp3 = AndroidUtilities.m50dp(44);
-            int i20 = C3301R.C3303drawable.msg_round_pause_m;
+            int i20 = C3316R.C3318drawable.msg_round_pause_m;
             drawableArr4[0] = createCircleDrawableWithIcon(m50dp3, i20);
             chat_fileStatesDrawable[1][1] = createCircleDrawableWithIcon(AndroidUtilities.m50dp(44), i20);
             Drawable[] drawableArr5 = chat_fileStatesDrawable[2];
             int m50dp4 = AndroidUtilities.m50dp(44);
-            int i21 = C3301R.C3303drawable.msg_round_load_m;
+            int i21 = C3316R.C3318drawable.msg_round_load_m;
             drawableArr5[0] = createCircleDrawableWithIcon(m50dp4, i21);
             chat_fileStatesDrawable[2][1] = createCircleDrawableWithIcon(AndroidUtilities.m50dp(44), i21);
             Drawable[] drawableArr6 = chat_fileStatesDrawable[3];
             int m50dp5 = AndroidUtilities.m50dp(44);
-            int i22 = C3301R.C3303drawable.msg_round_file_s;
+            int i22 = C3316R.C3318drawable.msg_round_file_s;
             drawableArr6[0] = createCircleDrawableWithIcon(m50dp5, i22);
             chat_fileStatesDrawable[3][1] = createCircleDrawableWithIcon(AndroidUtilities.m50dp(44), i22);
             Drawable[] drawableArr7 = chat_fileStatesDrawable[4];
             int m50dp6 = AndroidUtilities.m50dp(44);
-            int i23 = C3301R.C3303drawable.msg_round_cancel_m;
+            int i23 = C3316R.C3318drawable.msg_round_cancel_m;
             drawableArr7[0] = createCircleDrawableWithIcon(m50dp6, i23);
             chat_fileStatesDrawable[4][1] = createCircleDrawableWithIcon(AndroidUtilities.m50dp(44), i23);
             Drawable[] drawableArr8 = chat_contactDrawable;
             int m50dp7 = AndroidUtilities.m50dp(44);
-            int i24 = C3301R.C3303drawable.msg_contact;
+            int i24 = C3316R.C3318drawable.msg_contact;
             drawableArr8[0] = createCircleDrawableWithIcon(m50dp7, i24);
             chat_contactDrawable[1] = createCircleDrawableWithIcon(AndroidUtilities.m50dp(44), i24);
             Drawable[] drawableArr9 = chat_locationDrawable;
-            int i25 = C3301R.C3303drawable.msg_location;
+            int i25 = C3316R.C3318drawable.msg_location;
             drawableArr9[0] = resources.getDrawable(i25).mutate();
             chat_locationDrawable[1] = resources.getDrawable(i25).mutate();
-            chat_composeShadowDrawable = context.getResources().getDrawable(C3301R.C3303drawable.compose_panel_shadow).mutate();
-            chat_composeShadowRoundDrawable = context.getResources().getDrawable(C3301R.C3303drawable.sheet_shadow_round).mutate();
-            chat_translateIconDrawable = AppCompatResources.getDrawable(context, C3301R.C3303drawable.msg_translate);
-            chat_editIconDrawable = AppCompatResources.getDrawable(context, C3301R.C3303drawable.msg_edit);
+            chat_composeShadowDrawable = context.getResources().getDrawable(C3316R.C3318drawable.compose_panel_shadow).mutate();
+            chat_composeShadowRoundDrawable = context.getResources().getDrawable(C3316R.C3318drawable.sheet_shadow_round).mutate();
+            chat_translateIconDrawable = AppCompatResources.getDrawable(context, C3316R.C3318drawable.msg_translate);
+            chat_editIconDrawable = AppCompatResources.getDrawable(context, C3316R.C3318drawable.msg_edit);
             try {
                 int m50dp8 = AndroidUtilities.roundMessageSize + AndroidUtilities.m50dp(6);
                 Bitmap createBitmap = Bitmap.createBitmap(m50dp8, m50dp8, Bitmap.Config.ARGB_8888);
@@ -6772,8 +6772,8 @@ public class Theme {
         if (profile_verifiedDrawable == null) {
             profile_aboutTextPaint = new TextPaint(1);
             Resources resources = context.getResources();
-            profile_verifiedDrawable = resources.getDrawable(C3301R.C3303drawable.verified_area).mutate();
-            profile_verifiedCheckDrawable = resources.getDrawable(C3301R.C3303drawable.verified_check).mutate();
+            profile_verifiedDrawable = resources.getDrawable(C3316R.C3318drawable.verified_area).mutate();
+            profile_verifiedCheckDrawable = resources.getDrawable(C3316R.C3318drawable.verified_check).mutate();
             applyProfileTheme();
         }
         profile_aboutTextPaint.setTextSize(AndroidUtilities.m50dp(16));
@@ -7402,7 +7402,7 @@ public class Theme {
             Point point2 = AndroidUtilities.displaySize;
             i2 = Math.max(point2.x, point2.y);
         }
-        motionBackgroundDrawable.setPatternBitmap(34, SvgHelper.getBitmap(C3301R.C3306raw.default_pattern, i, i2, -16777216));
+        motionBackgroundDrawable.setPatternBitmap(34, SvgHelper.getBitmap(C3316R.C3321raw.default_pattern, i, i2, -16777216));
         motionBackgroundDrawable.setPatternColorFilter(motionBackgroundDrawable.getPatternColor());
         return motionBackgroundDrawable;
     }
@@ -7811,13 +7811,13 @@ public class Theme {
     public static boolean isHome(ThemeAccent themeAccent) {
         ThemeInfo themeInfo = themeAccent.parentTheme;
         if (themeInfo != null) {
-            if (themeInfo.getKey().equals("Blue") && themeAccent.f1656id == 99) {
+            if (themeInfo.getKey().equals("Blue") && themeAccent.f1658id == 99) {
                 return true;
             }
-            if (themeAccent.parentTheme.getKey().equals("Day") && themeAccent.f1656id == 9) {
+            if (themeAccent.parentTheme.getKey().equals("Day") && themeAccent.f1658id == 9) {
                 return true;
             }
-            return (themeAccent.parentTheme.getKey().equals("Night") || themeAccent.parentTheme.getKey().equals("Dark Blue")) && themeAccent.f1656id == 0;
+            return (themeAccent.parentTheme.getKey().equals("Night") || themeAccent.parentTheme.getKey().equals("Dark Blue")) && themeAccent.f1658id == 0;
         }
         return false;
     }
@@ -7845,13 +7845,13 @@ public class Theme {
             if (frameLayout != null && runnable != null) {
                 try {
                     BulletinFactory m28of = BulletinFactory.m28of(frameLayout, null);
-                    int i = C3301R.C3306raw.auto_night_off;
+                    int i = C3316R.C3321raw.auto_night_off;
                     if (selectedAutoNightType == 3) {
-                        string = LocaleController.getString("AutoNightSystemModeOff", C3301R.string.AutoNightSystemModeOff);
+                        string = LocaleController.getString("AutoNightSystemModeOff", C3316R.string.AutoNightSystemModeOff);
                     } else {
-                        string = LocaleController.getString("AutoNightModeOff", C3301R.string.AutoNightModeOff);
+                        string = LocaleController.getString("AutoNightModeOff", C3316R.string.AutoNightModeOff);
                     }
-                    m28of.createSimpleBulletin(i, string, LocaleController.getString("Settings", C3301R.string.Settings), DefaultLoadControl.DEFAULT_BUFFER_FOR_PLAYBACK_AFTER_REBUFFER_MS, runnable).show();
+                    m28of.createSimpleBulletin(i, string, LocaleController.getString("Settings", C3316R.string.Settings), DefaultLoadControl.DEFAULT_BUFFER_FOR_PLAYBACK_AFTER_REBUFFER_MS, runnable).show();
                 } catch (Exception e) {
                     FileLog.m45e(e);
                 }

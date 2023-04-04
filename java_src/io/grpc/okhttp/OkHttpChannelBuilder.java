@@ -120,7 +120,7 @@ public class OkHttpChannelBuilder extends AbstractManagedChannelImplBuilder<OkHt
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: io.grpc.okhttp.OkHttpChannelBuilder$2 */
     /* loaded from: classes4.dex */
-    public static /* synthetic */ class C24782 {
+    public static /* synthetic */ class C25542 {
         static final /* synthetic */ int[] $SwitchMap$io$grpc$okhttp$NegotiationType;
         static final /* synthetic */ int[] $SwitchMap$io$grpc$okhttp$OkHttpChannelBuilder$NegotiationType;
 
@@ -150,7 +150,7 @@ public class OkHttpChannelBuilder extends AbstractManagedChannelImplBuilder<OkHt
 
     @Override // io.grpc.internal.AbstractManagedChannelImplBuilder
     protected int getDefaultPort() {
-        int i = C24782.$SwitchMap$io$grpc$okhttp$OkHttpChannelBuilder$NegotiationType[this.negotiationType.ordinal()];
+        int i = C25542.$SwitchMap$io$grpc$okhttp$OkHttpChannelBuilder$NegotiationType[this.negotiationType.ordinal()];
         if (i != 1) {
             if (i == 2) {
                 return 443;
@@ -161,7 +161,7 @@ public class OkHttpChannelBuilder extends AbstractManagedChannelImplBuilder<OkHt
     }
 
     SSLSocketFactory createSslSocketFactory() {
-        int i = C24782.$SwitchMap$io$grpc$okhttp$OkHttpChannelBuilder$NegotiationType[this.negotiationType.ordinal()];
+        int i = C25542.$SwitchMap$io$grpc$okhttp$OkHttpChannelBuilder$NegotiationType[this.negotiationType.ordinal()];
         if (i != 1) {
             if (i == 2) {
                 try {

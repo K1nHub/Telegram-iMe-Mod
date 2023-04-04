@@ -29,10 +29,26 @@
     return-void
 .end method
 
+.method public static synthetic $r8$lambda$5UeZ0jWCfFdYCvUpUF3s_IZAQbQ(Lorg/telegram/ui/FiltersSetupActivity$ListAdapter;Lcom/iMe/storage/domain/model/topics/TopicModel;Lorg/telegram/messenger/MessagesController$DialogFilter;Landroid/content/DialogInterface;I)V
+    .locals 0
+
+    invoke-direct {p0, p1, p2, p3, p4}, Lorg/telegram/ui/FiltersSetupActivity$ListAdapter;->lambda$onCreateViewHolder$3(Lcom/iMe/storage/domain/model/topics/TopicModel;Lorg/telegram/messenger/MessagesController$DialogFilter;Landroid/content/DialogInterface;I)V
+
+    return-void
+.end method
+
 .method public static synthetic $r8$lambda$ABcE1ua8HAHKxqw17fMHo5NhHso(Lorg/telegram/ui/FiltersSetupActivity$ListAdapter;Lorg/telegram/ui/FiltersSetupActivity$SuggestedFilterCell;Landroid/view/View;)V
     .locals 0
 
     invoke-direct {p0, p1, p2}, Lorg/telegram/ui/FiltersSetupActivity$ListAdapter;->lambda$onCreateViewHolder$7(Lorg/telegram/ui/FiltersSetupActivity$SuggestedFilterCell;Landroid/view/View;)V
+
+    return-void
+.end method
+
+.method public static synthetic $r8$lambda$PuG__QWmO-AiShSpPdNTHFyMSAQ(Lorg/telegram/ui/FiltersSetupActivity$ListAdapter;Lcom/iMe/storage/domain/model/topics/TopicModel;Lorg/telegram/messenger/MessagesController$DialogFilter;Landroid/content/DialogInterface;I)V
+    .locals 0
+
+    invoke-direct {p0, p1, p2, p3, p4}, Lorg/telegram/ui/FiltersSetupActivity$ListAdapter;->lambda$onCreateViewHolder$4(Lcom/iMe/storage/domain/model/topics/TopicModel;Lorg/telegram/messenger/MessagesController$DialogFilter;Landroid/content/DialogInterface;I)V
 
     return-void
 .end method
@@ -53,14 +69,6 @@
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$lI_qs9lfL9ALig_wRCRviNKDzKw(Lorg/telegram/ui/FiltersSetupActivity$ListAdapter;Lcom/smedialink/storage/domain/model/topics/TopicModel;Lorg/telegram/messenger/MessagesController$DialogFilter;Landroid/content/DialogInterface;I)V
-    .locals 0
-
-    invoke-direct {p0, p1, p2, p3, p4}, Lorg/telegram/ui/FiltersSetupActivity$ListAdapter;->lambda$onCreateViewHolder$3(Lcom/smedialink/storage/domain/model/topics/TopicModel;Lorg/telegram/messenger/MessagesController$DialogFilter;Landroid/content/DialogInterface;I)V
-
-    return-void
-.end method
-
 .method public static synthetic $r8$lambda$nbLCvgf75X7Mi1Xl1eBvN4xs2EA(Lorg/telegram/ui/FiltersSetupActivity$ListAdapter;Lorg/telegram/ui/FiltersSetupActivity$FilterCell;Landroid/view/View;Landroid/view/MotionEvent;)Z
     .locals 0
 
@@ -69,14 +77,6 @@
     move-result p0
 
     return p0
-.end method
-
-.method public static synthetic $r8$lambda$o8DlTJiGUYn2yPjwJyUDWUBIxkY(Lorg/telegram/ui/FiltersSetupActivity$ListAdapter;Lcom/smedialink/storage/domain/model/topics/TopicModel;Lorg/telegram/messenger/MessagesController$DialogFilter;Landroid/content/DialogInterface;I)V
-    .locals 0
-
-    invoke-direct {p0, p1, p2, p3, p4}, Lorg/telegram/ui/FiltersSetupActivity$ListAdapter;->lambda$onCreateViewHolder$4(Lcom/smedialink/storage/domain/model/topics/TopicModel;Lorg/telegram/messenger/MessagesController$DialogFilter;Landroid/content/DialogInterface;I)V
-
-    return-void
 .end method
 
 .method public static synthetic $r8$lambda$rcr_8D2TFivctG11X2_OmGjJSRk(Lorg/telegram/ui/FiltersSetupActivity$ListAdapter;Lorg/telegram/ui/ActionBar/AlertDialog;Lorg/telegram/messenger/MessagesController$DialogFilter;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
@@ -90,12 +90,12 @@
 .method public constructor <init>(Lorg/telegram/ui/FiltersSetupActivity;Landroid/content/Context;)V
     .locals 0
 
-    .line 981
+    .line 987
     iput-object p1, p0, Lorg/telegram/ui/FiltersSetupActivity$ListAdapter;->this$0:Lorg/telegram/ui/FiltersSetupActivity;
 
     invoke-direct {p0}, Lorg/telegram/ui/Components/RecyclerListView$SelectionAdapter;-><init>()V
 
-    .line 982
+    .line 988
     iput-object p2, p0, Lorg/telegram/ui/FiltersSetupActivity$ListAdapter;->mContext:Landroid/content/Context;
 
     return-void
@@ -104,14 +104,14 @@
 .method private synthetic lambda$onCreateViewHolder$0(Lorg/telegram/ui/FiltersSetupActivity$FilterCell;Landroid/view/View;Landroid/view/MotionEvent;)Z
     .locals 0
 
-    .line 1044
+    .line 1050
     invoke-virtual {p3}, Landroid/view/MotionEvent;->getAction()I
 
     move-result p2
 
     if-nez p2, :cond_0
 
-    .line 1045
+    .line 1051
     iget-object p2, p0, Lorg/telegram/ui/FiltersSetupActivity$ListAdapter;->this$0:Lorg/telegram/ui/FiltersSetupActivity;
 
     invoke-static {p2}, Lorg/telegram/ui/FiltersSetupActivity;->access$4500(Lorg/telegram/ui/FiltersSetupActivity;)Landroidx/recyclerview/widget/ItemTouchHelper;
@@ -141,7 +141,7 @@
 
     if-eqz p1, :cond_0
 
-    .line 1114
+    .line 1120
     :try_start_0
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/AlertDialog;->dismiss()V
     :try_end_0
@@ -152,10 +152,10 @@
     :catch_0
     move-exception p1
 
-    .line 1117
+    .line 1123
     invoke-static {p1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
-    .line 1119
+    .line 1125
     :cond_0
     :goto_0
     iget-object p1, p0, Lorg/telegram/ui/FiltersSetupActivity$ListAdapter;->this$0:Lorg/telegram/ui/FiltersSetupActivity;
@@ -172,7 +172,7 @@
 
     if-ltz p1, :cond_1
 
-    .line 1121
+    .line 1127
     iget-object v0, p0, Lorg/telegram/ui/FiltersSetupActivity$ListAdapter;->this$0:Lorg/telegram/ui/FiltersSetupActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/FiltersSetupActivity;->access$100(Lorg/telegram/ui/FiltersSetupActivity;)I
@@ -181,7 +181,7 @@
 
     add-int/2addr p1, v0
 
-    .line 1123
+    .line 1129
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/FiltersSetupActivity$ListAdapter;->this$0:Lorg/telegram/ui/FiltersSetupActivity;
 
@@ -193,7 +193,7 @@
 
     add-int/lit8 p1, p1, -0x1
 
-    .line 1126
+    .line 1132
     :cond_2
     iget-object v0, p0, Lorg/telegram/ui/FiltersSetupActivity$ListAdapter;->this$0:Lorg/telegram/ui/FiltersSetupActivity;
 
@@ -201,7 +201,7 @@
 
     invoke-static {v0, v1}, Lorg/telegram/ui/FiltersSetupActivity;->access$4002(Lorg/telegram/ui/FiltersSetupActivity;Z)Z
 
-    .line 1127
+    .line 1133
     iget-object v0, p0, Lorg/telegram/ui/FiltersSetupActivity$ListAdapter;->this$0:Lorg/telegram/ui/FiltersSetupActivity;
 
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getMessagesController()Lorg/telegram/messenger/MessagesController;
@@ -210,7 +210,7 @@
 
     invoke-virtual {v0, p2}, Lorg/telegram/messenger/MessagesController;->removeFilter(Lorg/telegram/messenger/MessagesController$DialogFilter;)V
 
-    .line 1128
+    .line 1134
     iget-object v0, p0, Lorg/telegram/ui/FiltersSetupActivity$ListAdapter;->this$0:Lorg/telegram/ui/FiltersSetupActivity;
 
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getMessagesStorage()Lorg/telegram/messenger/MessagesStorage;
@@ -219,28 +219,28 @@
 
     invoke-virtual {v0, p2}, Lorg/telegram/messenger/MessagesStorage;->deleteDialogFilter(Lorg/telegram/messenger/MessagesController$DialogFilter;)V
 
-    .line 1129
+    .line 1135
     iget-object p2, p0, Lorg/telegram/ui/FiltersSetupActivity$ListAdapter;->this$0:Lorg/telegram/ui/FiltersSetupActivity;
 
     const/4 v0, 0x0
 
     invoke-static {p2, v0}, Lorg/telegram/ui/FiltersSetupActivity;->access$4002(Lorg/telegram/ui/FiltersSetupActivity;Z)Z
 
-    .line 1131
+    .line 1137
     iget-object p2, p0, Lorg/telegram/ui/FiltersSetupActivity$ListAdapter;->this$0:Lorg/telegram/ui/FiltersSetupActivity;
 
     invoke-static {p2}, Lorg/telegram/ui/FiltersSetupActivity;->access$3000(Lorg/telegram/ui/FiltersSetupActivity;)I
 
     move-result p2
 
-    .line 1132
+    .line 1138
     iget-object v2, p0, Lorg/telegram/ui/FiltersSetupActivity$ListAdapter;->this$0:Lorg/telegram/ui/FiltersSetupActivity;
 
     invoke-static {v2}, Lorg/telegram/ui/FiltersSetupActivity;->access$2600(Lorg/telegram/ui/FiltersSetupActivity;)I
 
     move-result v2
 
-    .line 1133
+    .line 1139
     iget-object v3, p0, Lorg/telegram/ui/FiltersSetupActivity$ListAdapter;->this$0:Lorg/telegram/ui/FiltersSetupActivity;
 
     const/4 v4, -0x1
@@ -254,7 +254,7 @@
 
     if-eq p1, v4, :cond_6
 
-    .line 1135
+    .line 1141
     iget-object v0, p0, Lorg/telegram/ui/FiltersSetupActivity$ListAdapter;->this$0:Lorg/telegram/ui/FiltersSetupActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/FiltersSetupActivity;->access$100(Lorg/telegram/ui/FiltersSetupActivity;)I
@@ -263,7 +263,7 @@
 
     if-ne v0, v4, :cond_4
 
-    .line 1138
+    .line 1144
     iget-object v0, p0, Lorg/telegram/ui/FiltersSetupActivity$ListAdapter;->this$0:Lorg/telegram/ui/FiltersSetupActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/FiltersSetupActivity;->access$4200(Lorg/telegram/ui/FiltersSetupActivity;)Lorg/telegram/ui/FiltersSetupActivity$ListAdapter;
@@ -276,7 +276,7 @@
 
     invoke-virtual {v0, p1, v3}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->notifyItemRangeRemoved(II)V
 
-    .line 1139
+    .line 1145
     iget-object p1, p0, Lorg/telegram/ui/FiltersSetupActivity$ListAdapter;->this$0:Lorg/telegram/ui/FiltersSetupActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/FiltersSetupActivity;->access$4200(Lorg/telegram/ui/FiltersSetupActivity;)Lorg/telegram/ui/FiltersSetupActivity$ListAdapter;
@@ -291,7 +291,7 @@
 
     invoke-virtual {p1, v0}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->notifyItemChanged(I)V
 
-    .line 1140
+    .line 1146
     iget-object p1, p0, Lorg/telegram/ui/FiltersSetupActivity$ListAdapter;->this$0:Lorg/telegram/ui/FiltersSetupActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/FiltersSetupActivity;->access$4200(Lorg/telegram/ui/FiltersSetupActivity;)Lorg/telegram/ui/FiltersSetupActivity$ListAdapter;
@@ -306,7 +306,7 @@
 
     invoke-virtual {p1, v0}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->notifyItemChanged(I)V
 
-    .line 1141
+    .line 1147
     iget-object p1, p0, Lorg/telegram/ui/FiltersSetupActivity$ListAdapter;->this$0:Lorg/telegram/ui/FiltersSetupActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/FiltersSetupActivity;->access$4200(Lorg/telegram/ui/FiltersSetupActivity;)Lorg/telegram/ui/FiltersSetupActivity$ListAdapter;
@@ -321,7 +321,7 @@
 
     invoke-virtual {p1, v0}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->notifyItemChanged(I)V
 
-    .line 1142
+    .line 1148
     iget-object p1, p0, Lorg/telegram/ui/FiltersSetupActivity$ListAdapter;->this$0:Lorg/telegram/ui/FiltersSetupActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/FiltersSetupActivity;->access$4200(Lorg/telegram/ui/FiltersSetupActivity;)Lorg/telegram/ui/FiltersSetupActivity$ListAdapter;
@@ -338,7 +338,7 @@
 
     goto :goto_1
 
-    .line 1145
+    .line 1151
     :cond_4
     iget-object v0, p0, Lorg/telegram/ui/FiltersSetupActivity$ListAdapter;->this$0:Lorg/telegram/ui/FiltersSetupActivity;
 
@@ -348,7 +348,7 @@
 
     invoke-virtual {v0, p1}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->notifyItemRemoved(I)V
 
-    .line 1146
+    .line 1152
     iget-object p1, p0, Lorg/telegram/ui/FiltersSetupActivity$ListAdapter;->this$0:Lorg/telegram/ui/FiltersSetupActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/FiltersSetupActivity;->access$4200(Lorg/telegram/ui/FiltersSetupActivity;)Lorg/telegram/ui/FiltersSetupActivity$ListAdapter;
@@ -379,7 +379,7 @@
 
     invoke-virtual {p1, v0, v3}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->notifyItemRangeChanged(II)V
 
-    .line 1148
+    .line 1154
     :goto_1
     iget-object p1, p0, Lorg/telegram/ui/FiltersSetupActivity$ListAdapter;->this$0:Lorg/telegram/ui/FiltersSetupActivity;
 
@@ -397,7 +397,7 @@
 
     if-ne v2, v4, :cond_5
 
-    .line 1149
+    .line 1155
     iget-object p1, p0, Lorg/telegram/ui/FiltersSetupActivity$ListAdapter;->this$0:Lorg/telegram/ui/FiltersSetupActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/FiltersSetupActivity;->access$2600(Lorg/telegram/ui/FiltersSetupActivity;)I
@@ -406,7 +406,7 @@
 
     if-eq p1, v4, :cond_5
 
-    .line 1150
+    .line 1156
     iget-object p1, p0, Lorg/telegram/ui/FiltersSetupActivity$ListAdapter;->this$0:Lorg/telegram/ui/FiltersSetupActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/FiltersSetupActivity;->access$4200(Lorg/telegram/ui/FiltersSetupActivity;)Lorg/telegram/ui/FiltersSetupActivity$ListAdapter;
@@ -434,7 +434,7 @@
     :cond_5
     if-ne p2, v4, :cond_6
 
-    .line 1152
+    .line 1158
     iget-object p1, p0, Lorg/telegram/ui/FiltersSetupActivity$ListAdapter;->this$0:Lorg/telegram/ui/FiltersSetupActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/FiltersSetupActivity;->access$3000(Lorg/telegram/ui/FiltersSetupActivity;)I
@@ -443,7 +443,7 @@
 
     if-eq p1, v4, :cond_6
 
-    .line 1153
+    .line 1159
     iget-object p1, p0, Lorg/telegram/ui/FiltersSetupActivity$ListAdapter;->this$0:Lorg/telegram/ui/FiltersSetupActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/FiltersSetupActivity;->access$4200(Lorg/telegram/ui/FiltersSetupActivity;)Lorg/telegram/ui/FiltersSetupActivity$ListAdapter;
@@ -465,7 +465,7 @@
 .method private synthetic lambda$onCreateViewHolder$2(Lorg/telegram/ui/ActionBar/AlertDialog;Lorg/telegram/messenger/MessagesController$DialogFilter;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
     .locals 0
 
-    .line 1111
+    .line 1117
     new-instance p3, Lorg/telegram/ui/FiltersSetupActivity$ListAdapter$$ExternalSyntheticLambda6;
 
     invoke-direct {p3, p0, p1, p2}, Lorg/telegram/ui/FiltersSetupActivity$ListAdapter$$ExternalSyntheticLambda6;-><init>(Lorg/telegram/ui/FiltersSetupActivity$ListAdapter;Lorg/telegram/ui/ActionBar/AlertDialog;Lorg/telegram/messenger/MessagesController$DialogFilter;)V
@@ -475,35 +475,35 @@
     return-void
 .end method
 
-.method private synthetic lambda$onCreateViewHolder$3(Lcom/smedialink/storage/domain/model/topics/TopicModel;Lorg/telegram/messenger/MessagesController$DialogFilter;Landroid/content/DialogInterface;I)V
+.method private synthetic lambda$onCreateViewHolder$3(Lcom/iMe/storage/domain/model/topics/TopicModel;Lorg/telegram/messenger/MessagesController$DialogFilter;Landroid/content/DialogInterface;I)V
     .locals 1
 
-    .line 1097
+    .line 1103
     iget-object p3, p0, Lorg/telegram/ui/FiltersSetupActivity$ListAdapter;->this$0:Lorg/telegram/ui/FiltersSetupActivity;
 
-    invoke-static {p3}, Lorg/telegram/ui/FiltersSetupActivity;->access$000(Lorg/telegram/ui/FiltersSetupActivity;)Lorg/fork/enums/FilterActivityType;
+    invoke-static {p3}, Lorg/telegram/ui/FiltersSetupActivity;->access$000(Lorg/telegram/ui/FiltersSetupActivity;)Lcom/iMe/fork/enums/FilterActivityType;
 
     move-result-object p3
 
-    sget-object p4, Lorg/fork/enums/FilterActivityType;->TOPIC:Lorg/fork/enums/FilterActivityType;
+    sget-object p4, Lcom/iMe/fork/enums/FilterActivityType;->TOPIC:Lcom/iMe/fork/enums/FilterActivityType;
 
     if-ne p3, p4, :cond_0
 
-    .line 1098
+    .line 1104
     iget-object p2, p0, Lorg/telegram/ui/FiltersSetupActivity$ListAdapter;->this$0:Lorg/telegram/ui/FiltersSetupActivity;
 
-    invoke-virtual {p2}, Lorg/telegram/ui/ActionBar/BaseFragment;->getTopicsController()Lorg/fork/controller/ForkTopicsController;
+    invoke-virtual {p2}, Lorg/telegram/ui/ActionBar/BaseFragment;->getTopicsController()Lcom/iMe/fork/controller/ForkTopicsController;
 
     move-result-object p2
 
-    invoke-virtual {p2, p1}, Lorg/fork/controller/ForkTopicsController;->removeTopicFilterDialogs(Lcom/smedialink/storage/domain/model/topics/TopicModel;)V
+    invoke-virtual {p2, p1}, Lcom/iMe/fork/controller/ForkTopicsController;->removeTopicFilterDialogs(Lcom/iMe/storage/domain/model/topics/TopicModel;)V
 
     return-void
 
     :cond_0
     const/4 p1, 0x0
 
-    .line 1103
+    .line 1109
     iget-object p3, p0, Lorg/telegram/ui/FiltersSetupActivity$ListAdapter;->this$0:Lorg/telegram/ui/FiltersSetupActivity;
 
     invoke-virtual {p3}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
@@ -512,7 +512,7 @@
 
     if-eqz p3, :cond_1
 
-    .line 1104
+    .line 1110
     new-instance p1, Lorg/telegram/ui/ActionBar/AlertDialog;
 
     iget-object p3, p0, Lorg/telegram/ui/FiltersSetupActivity$ListAdapter;->this$0:Lorg/telegram/ui/FiltersSetupActivity;
@@ -527,24 +527,24 @@
 
     const/4 p3, 0x0
 
-    .line 1105
+    .line 1111
     invoke-virtual {p1, p3}, Lorg/telegram/ui/ActionBar/AlertDialog;->setCanCancel(Z)V
 
-    .line 1106
+    .line 1112
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/AlertDialog;->show()V
 
-    .line 1109
+    .line 1115
     :cond_1
     new-instance p3, Lorg/telegram/tgnet/TLRPC$TL_messages_updateDialogFilter;
 
     invoke-direct {p3}, Lorg/telegram/tgnet/TLRPC$TL_messages_updateDialogFilter;-><init>()V
 
-    .line 1110
+    .line 1116
     iget p4, p2, Lorg/telegram/messenger/MessagesController$DialogFilter;->id:I
 
     iput p4, p3, Lorg/telegram/tgnet/TLRPC$TL_messages_updateDialogFilter;->id:I
 
-    .line 1111
+    .line 1117
     iget-object p4, p0, Lorg/telegram/ui/FiltersSetupActivity$ListAdapter;->this$0:Lorg/telegram/ui/FiltersSetupActivity;
 
     invoke-virtual {p4}, Lorg/telegram/ui/ActionBar/BaseFragment;->getConnectionsManager()Lorg/telegram/tgnet/ConnectionsManager;
@@ -560,42 +560,42 @@
     return-void
 .end method
 
-.method private synthetic lambda$onCreateViewHolder$4(Lcom/smedialink/storage/domain/model/topics/TopicModel;Lorg/telegram/messenger/MessagesController$DialogFilter;Landroid/content/DialogInterface;I)V
+.method private synthetic lambda$onCreateViewHolder$4(Lcom/iMe/storage/domain/model/topics/TopicModel;Lorg/telegram/messenger/MessagesController$DialogFilter;Landroid/content/DialogInterface;I)V
     .locals 2
 
     const/4 p3, 0x0
 
     if-nez p4, :cond_2
 
-    .line 1076
+    .line 1082
     iget-object p4, p0, Lorg/telegram/ui/FiltersSetupActivity$ListAdapter;->this$0:Lorg/telegram/ui/FiltersSetupActivity;
 
-    invoke-static {p4}, Lorg/telegram/ui/FiltersSetupActivity;->access$000(Lorg/telegram/ui/FiltersSetupActivity;)Lorg/fork/enums/FilterActivityType;
+    invoke-static {p4}, Lorg/telegram/ui/FiltersSetupActivity;->access$000(Lorg/telegram/ui/FiltersSetupActivity;)Lcom/iMe/fork/enums/FilterActivityType;
 
     move-result-object p4
 
-    sget-object v0, Lorg/fork/enums/FilterActivityType;->TOPIC:Lorg/fork/enums/FilterActivityType;
+    sget-object v0, Lcom/iMe/fork/enums/FilterActivityType;->TOPIC:Lcom/iMe/fork/enums/FilterActivityType;
 
     if-ne p4, v0, :cond_0
 
-    .line 1077
+    .line 1083
     iget-object p2, p0, Lorg/telegram/ui/FiltersSetupActivity$ListAdapter;->this$0:Lorg/telegram/ui/FiltersSetupActivity;
 
     new-instance p4, Lorg/telegram/ui/FilterCreateActivity;
 
-    invoke-direct {p4, p1, p3, v0}, Lorg/telegram/ui/FilterCreateActivity;-><init>(Lcom/smedialink/storage/domain/model/topics/TopicModel;Ljava/util/Set;Lorg/fork/enums/FilterActivityType;)V
+    invoke-direct {p4, p1, p3, v0}, Lorg/telegram/ui/FilterCreateActivity;-><init>(Lcom/iMe/storage/domain/model/topics/TopicModel;Ljava/util/Set;Lcom/iMe/fork/enums/FilterActivityType;)V
 
     invoke-virtual {p2, p4}, Lorg/telegram/ui/ActionBar/BaseFragment;->presentFragment(Lorg/telegram/ui/ActionBar/BaseFragment;)Z
 
     goto/16 :goto_0
 
-    .line 1079
+    .line 1085
     :cond_0
     iget-boolean p1, p2, Lorg/telegram/messenger/MessagesController$DialogFilter;->locked:Z
 
     if-eqz p1, :cond_1
 
-    .line 1080
+    .line 1086
     iget-object p1, p0, Lorg/telegram/ui/FiltersSetupActivity$ListAdapter;->this$0:Lorg/telegram/ui/FiltersSetupActivity;
 
     new-instance p2, Lorg/telegram/ui/Components/Premium/LimitReachedBottomSheet;
@@ -616,7 +616,7 @@
 
     goto/16 :goto_0
 
-    .line 1082
+    .line 1088
     :cond_1
     iget-object p1, p0, Lorg/telegram/ui/FiltersSetupActivity$ListAdapter;->this$0:Lorg/telegram/ui/FiltersSetupActivity;
 
@@ -633,7 +633,7 @@
 
     if-ne p4, v0, :cond_4
 
-    .line 1085
+    .line 1091
     new-instance p4, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
     iget-object v0, p0, Lorg/telegram/ui/FiltersSetupActivity$ListAdapter;->this$0:Lorg/telegram/ui/FiltersSetupActivity;
@@ -644,7 +644,7 @@
 
     invoke-direct {p4, v0}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
-    .line 1086
+    .line 1092
     sget v0, Lorg/telegram/messenger/R$string;->FilterDelete:I
 
     const-string v1, "FilterDelete"
@@ -655,7 +655,7 @@
 
     invoke-virtual {p4, v0}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setTitle(Ljava/lang/CharSequence;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 1087
+    .line 1093
     sget v0, Lorg/telegram/messenger/R$string;->FilterDeleteAlert:I
 
     const-string v1, "FilterDeleteAlert"
@@ -666,18 +666,18 @@
 
     invoke-virtual {p4, v0}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setMessage(Ljava/lang/CharSequence;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 1089
+    .line 1095
     iget-object v0, p0, Lorg/telegram/ui/FiltersSetupActivity$ListAdapter;->this$0:Lorg/telegram/ui/FiltersSetupActivity;
 
-    invoke-static {v0}, Lorg/telegram/ui/FiltersSetupActivity;->access$000(Lorg/telegram/ui/FiltersSetupActivity;)Lorg/fork/enums/FilterActivityType;
+    invoke-static {v0}, Lorg/telegram/ui/FiltersSetupActivity;->access$000(Lorg/telegram/ui/FiltersSetupActivity;)Lcom/iMe/fork/enums/FilterActivityType;
 
     move-result-object v0
 
-    sget-object v1, Lorg/fork/enums/FilterActivityType;->TOPIC:Lorg/fork/enums/FilterActivityType;
+    sget-object v1, Lcom/iMe/fork/enums/FilterActivityType;->TOPIC:Lcom/iMe/fork/enums/FilterActivityType;
 
     if-ne v0, v1, :cond_3
 
-    .line 1090
+    .line 1096
     sget v0, Lorg/telegram/messenger/R$string;->topics_remove:I
 
     invoke-static {v0}, Lorg/telegram/messenger/LocaleController;->getInternalString(I)Ljava/lang/String;
@@ -686,7 +686,7 @@
 
     invoke-virtual {p4, v0}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setTitle(Ljava/lang/CharSequence;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 1091
+    .line 1097
     sget v0, Lorg/telegram/messenger/R$string;->topics_remove_alert:I
 
     invoke-static {v0}, Lorg/telegram/messenger/LocaleController;->getInternalString(I)Ljava/lang/String;
@@ -695,7 +695,7 @@
 
     invoke-virtual {p4, v0}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setMessage(Ljava/lang/CharSequence;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 1094
+    .line 1100
     :cond_3
     sget v0, Lorg/telegram/messenger/R$string;->Cancel:I
 
@@ -707,7 +707,7 @@
 
     invoke-virtual {p4, v0, p3}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setNegativeButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 1095
+    .line 1101
     sget p3, Lorg/telegram/messenger/R$string;->Delete:I
 
     const-string v0, "Delete"
@@ -718,23 +718,23 @@
 
     new-instance v0, Lorg/telegram/ui/FiltersSetupActivity$ListAdapter$$ExternalSyntheticLambda0;
 
-    invoke-direct {v0, p0, p1, p2}, Lorg/telegram/ui/FiltersSetupActivity$ListAdapter$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/FiltersSetupActivity$ListAdapter;Lcom/smedialink/storage/domain/model/topics/TopicModel;Lorg/telegram/messenger/MessagesController$DialogFilter;)V
+    invoke-direct {v0, p0, p1, p2}, Lorg/telegram/ui/FiltersSetupActivity$ListAdapter$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/FiltersSetupActivity$ListAdapter;Lcom/iMe/storage/domain/model/topics/TopicModel;Lorg/telegram/messenger/MessagesController$DialogFilter;)V
 
     invoke-virtual {p4, p3, v0}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setPositiveButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 1158
+    .line 1164
     invoke-virtual {p4}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->create()Lorg/telegram/ui/ActionBar/AlertDialog;
 
     move-result-object p1
 
-    .line 1159
+    .line 1165
     iget-object p2, p0, Lorg/telegram/ui/FiltersSetupActivity$ListAdapter;->this$0:Lorg/telegram/ui/FiltersSetupActivity;
 
     invoke-virtual {p2, p1}, Lorg/telegram/ui/ActionBar/BaseFragment;->showDialog(Landroid/app/Dialog;)Landroid/app/Dialog;
 
     const/4 p2, -0x1
 
-    .line 1160
+    .line 1166
     invoke-virtual {p1, p2}, Lorg/telegram/ui/ActionBar/AlertDialog;->getButton(I)Landroid/view/View;
 
     move-result-object p1
@@ -745,7 +745,7 @@
 
     const-string p2, "dialogTextRed"
 
-    .line 1162
+    .line 1168
     invoke-static {p2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
 
     move-result p2
@@ -760,24 +760,24 @@
 .method private synthetic lambda$onCreateViewHolder$5(Landroid/view/View;)V
     .locals 8
 
-    .line 1050
+    .line 1056
     invoke-virtual {p1}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
 
     move-result-object p1
 
     check-cast p1, Lorg/telegram/ui/FiltersSetupActivity$FilterCell;
 
-    .line 1051
-    invoke-virtual {p1}, Lorg/telegram/ui/FiltersSetupActivity$FilterCell;->getCurrentTopic()Lcom/smedialink/storage/domain/model/topics/TopicModel;
+    .line 1057
+    invoke-virtual {p1}, Lorg/telegram/ui/FiltersSetupActivity$FilterCell;->getCurrentTopic()Lcom/iMe/storage/domain/model/topics/TopicModel;
 
     move-result-object v0
 
-    .line 1052
+    .line 1058
     invoke-virtual {p1}, Lorg/telegram/ui/FiltersSetupActivity$FilterCell;->getCurrentFilter()Lorg/telegram/messenger/MessagesController$DialogFilter;
 
     move-result-object p1
 
-    .line 1053
+    .line 1059
     new-instance v1, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
     iget-object v2, p0, Lorg/telegram/ui/FiltersSetupActivity$ListAdapter;->this$0:Lorg/telegram/ui/FiltersSetupActivity;
@@ -788,7 +788,7 @@
 
     invoke-direct {v1, v2}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
-    .line 1054
+    .line 1060
     new-instance v2, Landroid/text/TextPaint;
 
     const/4 v3, 0x1
@@ -797,7 +797,7 @@
 
     const/16 v4, 0x14
 
-    .line 1055
+    .line 1061
     invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v5
@@ -806,28 +806,28 @@
 
     invoke-virtual {v2, v5}, Landroid/text/TextPaint;->setTextSize(F)V
 
-    .line 1057
+    .line 1063
     iget-object v5, p0, Lorg/telegram/ui/FiltersSetupActivity$ListAdapter;->this$0:Lorg/telegram/ui/FiltersSetupActivity;
 
-    invoke-static {v5}, Lorg/telegram/ui/FiltersSetupActivity;->access$000(Lorg/telegram/ui/FiltersSetupActivity;)Lorg/fork/enums/FilterActivityType;
+    invoke-static {v5}, Lorg/telegram/ui/FiltersSetupActivity;->access$000(Lorg/telegram/ui/FiltersSetupActivity;)Lcom/iMe/fork/enums/FilterActivityType;
 
     move-result-object v5
 
-    sget-object v6, Lorg/fork/enums/FilterActivityType;->TOPIC:Lorg/fork/enums/FilterActivityType;
+    sget-object v6, Lcom/iMe/fork/enums/FilterActivityType;->TOPIC:Lcom/iMe/fork/enums/FilterActivityType;
 
     const/4 v7, 0x0
 
     if-ne v5, v6, :cond_1
 
-    .line 1058
-    invoke-virtual {v0}, Lcom/smedialink/storage/domain/model/topics/TopicModel;->isUserTopic()Z
+    .line 1064
+    invoke-virtual {v0}, Lcom/iMe/storage/domain/model/topics/TopicModel;->isUserTopic()Z
 
     move-result v5
 
     if-eqz v5, :cond_0
 
-    .line 1059
-    invoke-virtual {v0}, Lcom/smedialink/storage/domain/model/topics/TopicModel;->getName()Ljava/lang/String;
+    .line 1065
+    invoke-virtual {v0}, Lcom/iMe/storage/domain/model/topics/TopicModel;->getName()Ljava/lang/String;
 
     move-result-object v5
 
@@ -847,24 +847,24 @@
 
     goto :goto_0
 
-    .line 1060
+    .line 1066
     :cond_0
-    invoke-virtual {v0}, Lcom/smedialink/storage/domain/model/topics/TopicModel;->isAutoTopic()Z
+    invoke-virtual {v0}, Lcom/iMe/storage/domain/model/topics/TopicModel;->isAutoTopic()Z
 
     move-result v2
 
     if-eqz v2, :cond_2
 
-    .line 1061
-    invoke-virtual {v0}, Lcom/smedialink/storage/domain/model/topics/TopicModel;->getIcon()Lcom/smedialink/storage/data/repository/topics/Topic;
+    .line 1067
+    invoke-virtual {v0}, Lcom/iMe/storage/domain/model/topics/TopicModel;->getIcon()Lcom/iMe/storage/data/repository/topics/Topic;
 
     move-result-object v2
 
-    invoke-static {v2}, Lcom/smedialink/utils/extentions/model/topic/TopicExtKt;->info(Lcom/smedialink/storage/data/repository/topics/Topic;)Lcom/smedialink/ui/topics/TopicInfo;
+    invoke-static {v2}, Lcom/iMe/utils/extentions/model/topic/TopicExtKt;->info(Lcom/iMe/storage/data/repository/topics/Topic;)Lcom/iMe/ui/topics/TopicInfo;
 
     move-result-object v2
 
-    invoke-virtual {v2}, Lcom/smedialink/ui/topics/TopicInfo;->getTitleResId()I
+    invoke-virtual {v2}, Lcom/iMe/ui/topics/TopicInfo;->getTitleResId()I
 
     move-result v2
 
@@ -876,7 +876,7 @@
 
     goto :goto_0
 
-    .line 1064
+    .line 1070
     :cond_1
     iget-object v5, p1, Lorg/telegram/messenger/MessagesController$DialogFilter;->name:Ljava/lang/String;
 
@@ -900,12 +900,12 @@
 
     new-array v4, v2, [Ljava/lang/CharSequence;
 
-    .line 1065
+    .line 1071
     sget v5, Lorg/telegram/messenger/R$string;->FilterEditItem:I
 
     const-string v6, "FilterEditItem"
 
-    .line 1066
+    .line 1072
     invoke-static {v6, v5}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v5
@@ -916,7 +916,7 @@
 
     const-string v6, "FilterDeleteItem"
 
-    .line 1067
+    .line 1073
     invoke-static {v6, v5}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v5
@@ -925,7 +925,7 @@
 
     new-array v2, v2, [I
 
-    .line 1069
+    .line 1075
     sget v5, Lorg/telegram/messenger/R$drawable;->msg_edit:I
 
     aput v5, v2, v7
@@ -934,26 +934,26 @@
 
     aput v5, v2, v3
 
-    .line 1073
+    .line 1079
     new-instance v5, Lorg/telegram/ui/FiltersSetupActivity$ListAdapter$$ExternalSyntheticLambda1;
 
-    invoke-direct {v5, p0, v0, p1}, Lorg/telegram/ui/FiltersSetupActivity$ListAdapter$$ExternalSyntheticLambda1;-><init>(Lorg/telegram/ui/FiltersSetupActivity$ListAdapter;Lcom/smedialink/storage/domain/model/topics/TopicModel;Lorg/telegram/messenger/MessagesController$DialogFilter;)V
+    invoke-direct {v5, p0, v0, p1}, Lorg/telegram/ui/FiltersSetupActivity$ListAdapter$$ExternalSyntheticLambda1;-><init>(Lorg/telegram/ui/FiltersSetupActivity$ListAdapter;Lcom/iMe/storage/domain/model/topics/TopicModel;Lorg/telegram/messenger/MessagesController$DialogFilter;)V
 
     invoke-virtual {v1, v4, v2, v5}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setItems([Ljava/lang/CharSequence;[ILandroid/content/DialogInterface$OnClickListener;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 1166
+    .line 1172
     invoke-virtual {v1}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->create()Lorg/telegram/ui/ActionBar/AlertDialog;
 
     move-result-object p1
 
-    .line 1167
+    .line 1173
     iget-object v0, p0, Lorg/telegram/ui/FiltersSetupActivity$ListAdapter;->this$0:Lorg/telegram/ui/FiltersSetupActivity;
 
     invoke-virtual {v0, p1}, Lorg/telegram/ui/ActionBar/BaseFragment;->showDialog(Landroid/app/Dialog;)Landroid/app/Dialog;
 
     const-string v0, "dialogTextRed"
 
-    .line 1168
+    .line 1174
     invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
 
     move-result v0
@@ -972,7 +972,7 @@
 .method private synthetic lambda$onCreateViewHolder$6(Lorg/telegram/tgnet/TLRPC$TL_dialogFilterSuggested;Lorg/telegram/messenger/MessagesController$DialogFilter;)V
     .locals 8
 
-    .line 1234
+    .line 1241
     iget-object v0, p0, Lorg/telegram/ui/FiltersSetupActivity$ListAdapter;->this$0:Lorg/telegram/ui/FiltersSetupActivity;
 
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getNotificationCenter()Lorg/telegram/messenger/NotificationCenter;
@@ -987,12 +987,12 @@
 
     invoke-virtual {v0, v1, v3}, Lorg/telegram/messenger/NotificationCenter;->postNotificationName(I[Ljava/lang/Object;)V
 
-    .line 1235
+    .line 1242
     iget-object v0, p0, Lorg/telegram/ui/FiltersSetupActivity$ListAdapter;->this$0:Lorg/telegram/ui/FiltersSetupActivity;
 
     invoke-static {v0, v2}, Lorg/telegram/ui/FiltersSetupActivity;->access$4002(Lorg/telegram/ui/FiltersSetupActivity;Z)Z
 
-    .line 1236
+    .line 1243
     iget-object v0, p0, Lorg/telegram/ui/FiltersSetupActivity$ListAdapter;->this$0:Lorg/telegram/ui/FiltersSetupActivity;
 
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getMessagesController()Lorg/telegram/messenger/MessagesController;
@@ -1001,7 +1001,7 @@
 
     iget-object v0, v0, Lorg/telegram/messenger/MessagesController;->suggestedFilters:Ljava/util/ArrayList;
 
-    .line 1237
+    .line 1244
     invoke-virtual {v0, p1}, Ljava/util/ArrayList;->indexOf(Ljava/lang/Object;)I
 
     move-result p1
@@ -1012,7 +1012,7 @@
 
     if-eq p1, v3, :cond_8
 
-    .line 1239
+    .line 1246
     iget-object v4, p0, Lorg/telegram/ui/FiltersSetupActivity$ListAdapter;->this$0:Lorg/telegram/ui/FiltersSetupActivity;
 
     invoke-static {v4}, Lorg/telegram/ui/FiltersSetupActivity;->access$100(Lorg/telegram/ui/FiltersSetupActivity;)I
@@ -1028,11 +1028,11 @@
     :cond_0
     move v4, v2
 
-    .line 1240
+    .line 1247
     :goto_0
     invoke-virtual {v0, p1}, Ljava/util/ArrayList;->remove(I)Ljava/lang/Object;
 
-    .line 1241
+    .line 1248
     iget-object v0, p0, Lorg/telegram/ui/FiltersSetupActivity$ListAdapter;->this$0:Lorg/telegram/ui/FiltersSetupActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/FiltersSetupActivity;->access$3100(Lorg/telegram/ui/FiltersSetupActivity;)I
@@ -1041,35 +1041,35 @@
 
     add-int/2addr p1, v0
 
-    .line 1242
+    .line 1249
     iget-object v0, p0, Lorg/telegram/ui/FiltersSetupActivity$ListAdapter;->this$0:Lorg/telegram/ui/FiltersSetupActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/FiltersSetupActivity;->access$3000(Lorg/telegram/ui/FiltersSetupActivity;)I
 
     move-result v0
 
-    .line 1243
+    .line 1250
     iget-object v5, p0, Lorg/telegram/ui/FiltersSetupActivity$ListAdapter;->this$0:Lorg/telegram/ui/FiltersSetupActivity;
 
     invoke-static {v5}, Lorg/telegram/ui/FiltersSetupActivity;->access$2600(Lorg/telegram/ui/FiltersSetupActivity;)I
 
     move-result v5
 
-    .line 1244
+    .line 1251
     iget-object v6, p0, Lorg/telegram/ui/FiltersSetupActivity$ListAdapter;->this$0:Lorg/telegram/ui/FiltersSetupActivity;
 
     invoke-static {v6}, Lorg/telegram/ui/FiltersSetupActivity;->access$3800(Lorg/telegram/ui/FiltersSetupActivity;)I
 
     move-result v6
 
-    .line 1245
+    .line 1252
     iget-object v7, p0, Lorg/telegram/ui/FiltersSetupActivity$ListAdapter;->this$0:Lorg/telegram/ui/FiltersSetupActivity;
 
     invoke-static {v7, v2}, Lorg/telegram/ui/FiltersSetupActivity;->access$4100(Lorg/telegram/ui/FiltersSetupActivity;Z)V
 
     if-eq v0, v3, :cond_1
 
-    .line 1246
+    .line 1253
     iget-object v7, p0, Lorg/telegram/ui/FiltersSetupActivity$ListAdapter;->this$0:Lorg/telegram/ui/FiltersSetupActivity;
 
     invoke-static {v7}, Lorg/telegram/ui/FiltersSetupActivity;->access$3000(Lorg/telegram/ui/FiltersSetupActivity;)I
@@ -1078,7 +1078,7 @@
 
     if-ne v7, v3, :cond_1
 
-    .line 1247
+    .line 1254
     iget-object v7, p0, Lorg/telegram/ui/FiltersSetupActivity$ListAdapter;->this$0:Lorg/telegram/ui/FiltersSetupActivity;
 
     invoke-static {v7}, Lorg/telegram/ui/FiltersSetupActivity;->access$4200(Lorg/telegram/ui/FiltersSetupActivity;)Lorg/telegram/ui/FiltersSetupActivity$ListAdapter;
@@ -1090,7 +1090,7 @@
     :cond_1
     if-eq v5, v3, :cond_2
 
-    .line 1249
+    .line 1256
     iget-object v0, p0, Lorg/telegram/ui/FiltersSetupActivity$ListAdapter;->this$0:Lorg/telegram/ui/FiltersSetupActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/FiltersSetupActivity;->access$2600(Lorg/telegram/ui/FiltersSetupActivity;)I
@@ -1099,7 +1099,7 @@
 
     if-ne v0, v3, :cond_2
 
-    .line 1250
+    .line 1257
     iget-object p1, p0, Lorg/telegram/ui/FiltersSetupActivity$ListAdapter;->this$0:Lorg/telegram/ui/FiltersSetupActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/FiltersSetupActivity;->access$4200(Lorg/telegram/ui/FiltersSetupActivity;)Lorg/telegram/ui/FiltersSetupActivity$ListAdapter;
@@ -1114,7 +1114,7 @@
 
     goto :goto_1
 
-    .line 1252
+    .line 1259
     :cond_2
     iget-object v0, p0, Lorg/telegram/ui/FiltersSetupActivity$ListAdapter;->this$0:Lorg/telegram/ui/FiltersSetupActivity;
 
@@ -1127,7 +1127,7 @@
     :goto_1
     if-eqz v4, :cond_3
 
-    .line 1255
+    .line 1262
     iget-object p1, p0, Lorg/telegram/ui/FiltersSetupActivity$ListAdapter;->this$0:Lorg/telegram/ui/FiltersSetupActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/FiltersSetupActivity;->access$4200(Lorg/telegram/ui/FiltersSetupActivity;)Lorg/telegram/ui/FiltersSetupActivity$ListAdapter;
@@ -1147,7 +1147,7 @@
 
     move v0, p1
 
-    .line 1258
+    .line 1265
     :goto_2
     iget-object v1, p0, Lorg/telegram/ui/FiltersSetupActivity$ListAdapter;->this$0:Lorg/telegram/ui/FiltersSetupActivity;
 
@@ -1163,7 +1163,7 @@
 
     if-ge p1, v1, :cond_5
 
-    .line 1259
+    .line 1266
     iget v1, p2, Lorg/telegram/messenger/MessagesController$DialogFilter;->id:I
 
     iget-object v3, p0, Lorg/telegram/ui/FiltersSetupActivity$ListAdapter;->this$0:Lorg/telegram/ui/FiltersSetupActivity;
@@ -1191,7 +1191,7 @@
 
     goto :goto_2
 
-    .line 1263
+    .line 1270
     :cond_5
     iget-object p1, p0, Lorg/telegram/ui/FiltersSetupActivity$ListAdapter;->this$0:Lorg/telegram/ui/FiltersSetupActivity;
 
@@ -1215,7 +1215,7 @@
     :cond_7
     move v2, v0
 
-    .line 1269
+    .line 1276
     :goto_3
     iget-object p1, p0, Lorg/telegram/ui/FiltersSetupActivity$ListAdapter;->this$0:Lorg/telegram/ui/FiltersSetupActivity;
 
@@ -1235,7 +1235,7 @@
 
     goto :goto_4
 
-    .line 1271
+    .line 1278
     :cond_8
     iget-object p1, p0, Lorg/telegram/ui/FiltersSetupActivity$ListAdapter;->this$0:Lorg/telegram/ui/FiltersSetupActivity;
 
@@ -1250,17 +1250,17 @@
 
     move-object/from16 v0, p0
 
-    .line 1184
+    .line 1190
     invoke-virtual/range {p1 .. p1}, Lorg/telegram/ui/FiltersSetupActivity$SuggestedFilterCell;->getSuggestedFilter()Lorg/telegram/tgnet/TLRPC$TL_dialogFilterSuggested;
 
     move-result-object v1
 
-    .line 1185
+    .line 1191
     new-instance v2, Lorg/telegram/messenger/MessagesController$DialogFilter;
 
     invoke-direct {v2}, Lorg/telegram/messenger/MessagesController$DialogFilter;-><init>()V
 
-    .line 1186
+    .line 1192
     iget-object v3, v1, Lorg/telegram/tgnet/TLRPC$TL_dialogFilterSuggested;->filter:Lorg/telegram/tgnet/TLRPC$DialogFilter;
 
     iget-object v3, v3, Lorg/telegram/tgnet/TLRPC$DialogFilter;->title:Ljava/lang/String;
@@ -1269,10 +1269,10 @@
 
     const/4 v3, 0x2
 
-    .line 1187
+    .line 1193
     iput v3, v2, Lorg/telegram/messenger/MessagesController$DialogFilter;->id:I
 
-    .line 1188
+    .line 1194
     :goto_0
     iget-object v4, v0, Lorg/telegram/ui/FiltersSetupActivity$ListAdapter;->this$0:Lorg/telegram/ui/FiltersSetupActivity;
 
@@ -1292,7 +1292,7 @@
 
     if-eqz v4, :cond_0
 
-    .line 1189
+    .line 1195
     iget v4, v2, Lorg/telegram/messenger/MessagesController$DialogFilter;->id:I
 
     add-int/2addr v4, v5
@@ -1301,10 +1301,25 @@
 
     goto :goto_0
 
+    .line 1197
     :cond_0
+    iget-object v4, v0, Lorg/telegram/ui/FiltersSetupActivity$ListAdapter;->this$0:Lorg/telegram/ui/FiltersSetupActivity;
+
+    invoke-virtual {v4}, Lorg/telegram/ui/ActionBar/BaseFragment;->getMessagesController()Lorg/telegram/messenger/MessagesController;
+
+    move-result-object v4
+
+    iget-object v4, v4, Lorg/telegram/messenger/MessagesController;->dialogFilters:Ljava/util/ArrayList;
+
+    invoke-virtual {v4}, Ljava/util/ArrayList;->size()I
+
+    move-result v4
+
+    iput v4, v2, Lorg/telegram/messenger/MessagesController$DialogFilter;->order:I
+
     const/4 v4, -0x1
 
-    .line 1191
+    .line 1198
     iput v4, v2, Lorg/telegram/messenger/MessagesController$DialogFilter;->unreadCount:I
 
     iput v4, v2, Lorg/telegram/messenger/MessagesController$DialogFilter;->pendingUnreadCount:I
@@ -1316,7 +1331,7 @@
     :goto_1
     if-ge v6, v3, :cond_6
 
-    .line 1193
+    .line 1200
     iget-object v7, v1, Lorg/telegram/tgnet/TLRPC$TL_dialogFilterSuggested;->filter:Lorg/telegram/tgnet/TLRPC$DialogFilter;
 
     if-nez v6, :cond_1
@@ -1331,7 +1346,7 @@
     :goto_2
     if-nez v6, :cond_2
 
-    .line 1194
+    .line 1201
     iget-object v8, v2, Lorg/telegram/messenger/MessagesController$DialogFilter;->alwaysShow:Ljava/util/ArrayList;
 
     goto :goto_3
@@ -1339,7 +1354,7 @@
     :cond_2
     iget-object v8, v2, Lorg/telegram/messenger/MessagesController$DialogFilter;->neverShow:Ljava/util/ArrayList;
 
-    .line 1195
+    .line 1202
     :goto_3
     invoke-virtual {v7}, Ljava/util/ArrayList;->size()I
 
@@ -1350,14 +1365,14 @@
     :goto_4
     if-ge v10, v9, :cond_5
 
-    .line 1196
+    .line 1203
     invoke-virtual {v7, v10}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v11
 
     check-cast v11, Lorg/telegram/tgnet/TLRPC$InputPeer;
 
-    .line 1198
+    .line 1205
     iget-wide v12, v11, Lorg/telegram/tgnet/TLRPC$InputPeer;->user_id:J
 
     const-wide/16 v14, 0x0
@@ -1368,7 +1383,7 @@
 
     goto :goto_5
 
-    .line 1200
+    .line 1207
     :cond_3
     iget-wide v12, v11, Lorg/telegram/tgnet/TLRPC$InputPeer;->chat_id:J
 
@@ -1380,13 +1395,13 @@
 
     goto :goto_5
 
-    .line 1203
+    .line 1210
     :cond_4
     iget-wide v11, v11, Lorg/telegram/tgnet/TLRPC$InputPeer;->channel_id:J
 
     neg-long v12, v11
 
-    .line 1205
+    .line 1212
     :goto_5
     invoke-static {v12, v13}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
@@ -1403,7 +1418,7 @@
 
     goto :goto_1
 
-    .line 1208
+    .line 1215
     :cond_6
     iget-object v3, v1, Lorg/telegram/tgnet/TLRPC$TL_dialogFilterSuggested;->filter:Lorg/telegram/tgnet/TLRPC$DialogFilter;
 
@@ -1411,7 +1426,7 @@
 
     if-eqz v4, :cond_7
 
-    .line 1209
+    .line 1216
     iget v4, v2, Lorg/telegram/messenger/MessagesController$DialogFilter;->flags:I
 
     sget v6, Lorg/telegram/messenger/MessagesController;->DIALOG_FILTER_FLAG_GROUPS:I
@@ -1420,13 +1435,13 @@
 
     iput v4, v2, Lorg/telegram/messenger/MessagesController$DialogFilter;->flags:I
 
-    .line 1211
+    .line 1218
     :cond_7
     iget-boolean v4, v3, Lorg/telegram/tgnet/TLRPC$DialogFilter;->bots:Z
 
     if-eqz v4, :cond_8
 
-    .line 1212
+    .line 1219
     iget v4, v2, Lorg/telegram/messenger/MessagesController$DialogFilter;->flags:I
 
     sget v6, Lorg/telegram/messenger/MessagesController;->DIALOG_FILTER_FLAG_BOTS:I
@@ -1435,13 +1450,13 @@
 
     iput v4, v2, Lorg/telegram/messenger/MessagesController$DialogFilter;->flags:I
 
-    .line 1214
+    .line 1221
     :cond_8
     iget-boolean v4, v3, Lorg/telegram/tgnet/TLRPC$DialogFilter;->contacts:Z
 
     if-eqz v4, :cond_9
 
-    .line 1215
+    .line 1222
     iget v4, v2, Lorg/telegram/messenger/MessagesController$DialogFilter;->flags:I
 
     sget v6, Lorg/telegram/messenger/MessagesController;->DIALOG_FILTER_FLAG_CONTACTS:I
@@ -1450,13 +1465,13 @@
 
     iput v4, v2, Lorg/telegram/messenger/MessagesController$DialogFilter;->flags:I
 
-    .line 1217
+    .line 1224
     :cond_9
     iget-boolean v4, v3, Lorg/telegram/tgnet/TLRPC$DialogFilter;->non_contacts:Z
 
     if-eqz v4, :cond_a
 
-    .line 1218
+    .line 1225
     iget v4, v2, Lorg/telegram/messenger/MessagesController$DialogFilter;->flags:I
 
     sget v6, Lorg/telegram/messenger/MessagesController;->DIALOG_FILTER_FLAG_NON_CONTACTS:I
@@ -1465,13 +1480,13 @@
 
     iput v4, v2, Lorg/telegram/messenger/MessagesController$DialogFilter;->flags:I
 
-    .line 1220
+    .line 1227
     :cond_a
     iget-boolean v4, v3, Lorg/telegram/tgnet/TLRPC$DialogFilter;->broadcasts:Z
 
     if-eqz v4, :cond_b
 
-    .line 1221
+    .line 1228
     iget v4, v2, Lorg/telegram/messenger/MessagesController$DialogFilter;->flags:I
 
     sget v6, Lorg/telegram/messenger/MessagesController;->DIALOG_FILTER_FLAG_CHANNELS:I
@@ -1480,13 +1495,13 @@
 
     iput v4, v2, Lorg/telegram/messenger/MessagesController$DialogFilter;->flags:I
 
-    .line 1223
+    .line 1230
     :cond_b
     iget-boolean v4, v3, Lorg/telegram/tgnet/TLRPC$DialogFilter;->exclude_archived:Z
 
     if-eqz v4, :cond_c
 
-    .line 1224
+    .line 1231
     iget v4, v2, Lorg/telegram/messenger/MessagesController$DialogFilter;->flags:I
 
     sget v6, Lorg/telegram/messenger/MessagesController;->DIALOG_FILTER_FLAG_EXCLUDE_ARCHIVED:I
@@ -1495,13 +1510,13 @@
 
     iput v4, v2, Lorg/telegram/messenger/MessagesController$DialogFilter;->flags:I
 
-    .line 1226
+    .line 1233
     :cond_c
     iget-boolean v4, v3, Lorg/telegram/tgnet/TLRPC$DialogFilter;->exclude_read:Z
 
     if-eqz v4, :cond_d
 
-    .line 1227
+    .line 1234
     iget v4, v2, Lorg/telegram/messenger/MessagesController$DialogFilter;->flags:I
 
     sget v6, Lorg/telegram/messenger/MessagesController;->DIALOG_FILTER_FLAG_EXCLUDE_READ:I
@@ -1510,13 +1525,13 @@
 
     iput v4, v2, Lorg/telegram/messenger/MessagesController$DialogFilter;->flags:I
 
-    .line 1229
+    .line 1236
     :cond_d
     iget-boolean v3, v3, Lorg/telegram/tgnet/TLRPC$DialogFilter;->exclude_muted:Z
 
     if-eqz v3, :cond_e
 
-    .line 1230
+    .line 1237
     iget v3, v2, Lorg/telegram/messenger/MessagesController$DialogFilter;->flags:I
 
     sget v4, Lorg/telegram/messenger/MessagesController;->DIALOG_FILTER_FLAG_EXCLUDE_MUTED:I
@@ -1525,13 +1540,13 @@
 
     iput v3, v2, Lorg/telegram/messenger/MessagesController$DialogFilter;->flags:I
 
-    .line 1232
+    .line 1239
     :cond_e
     iget-object v3, v0, Lorg/telegram/ui/FiltersSetupActivity$ListAdapter;->this$0:Lorg/telegram/ui/FiltersSetupActivity;
 
     invoke-static {v3, v5}, Lorg/telegram/ui/FiltersSetupActivity;->access$4002(Lorg/telegram/ui/FiltersSetupActivity;Z)Z
 
-    .line 1233
+    .line 1240
     iget v3, v2, Lorg/telegram/messenger/MessagesController$DialogFilter;->flags:I
 
     iget-object v4, v2, Lorg/telegram/messenger/MessagesController$DialogFilter;->name:Ljava/lang/String;
@@ -1544,7 +1559,7 @@
 
     const/4 v8, 0x1
 
-    const/4 v9, 0x1
+    const/4 v9, 0x0
 
     const/4 v10, 0x1
 
@@ -1568,7 +1583,7 @@
 .method public getItemCount()I
     .locals 1
 
-    .line 1009
+    .line 1015
     iget-object v0, p0, Lorg/telegram/ui/FiltersSetupActivity$ListAdapter;->this$0:Lorg/telegram/ui/FiltersSetupActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/FiltersSetupActivity;->access$1100(Lorg/telegram/ui/FiltersSetupActivity;)I
@@ -1581,7 +1596,7 @@
 .method public getItemViewType(I)I
     .locals 1
 
-    .line 1420
+    .line 1427
     iget-object v0, p0, Lorg/telegram/ui/FiltersSetupActivity$ListAdapter;->this$0:Lorg/telegram/ui/FiltersSetupActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/FiltersSetupActivity;->access$2000(Lorg/telegram/ui/FiltersSetupActivity;)I
@@ -1632,7 +1647,7 @@
 
     goto/16 :goto_4
 
-    .line 1423
+    .line 1430
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/FiltersSetupActivity$ListAdapter;->this$0:Lorg/telegram/ui/FiltersSetupActivity;
 
@@ -1660,7 +1675,7 @@
 
     goto/16 :goto_3
 
-    .line 1426
+    .line 1433
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/FiltersSetupActivity$ListAdapter;->this$0:Lorg/telegram/ui/FiltersSetupActivity;
 
@@ -1680,7 +1695,7 @@
 
     goto/16 :goto_2
 
-    .line 1429
+    .line 1436
     :cond_2
     iget-object v0, p0, Lorg/telegram/ui/FiltersSetupActivity$ListAdapter;->this$0:Lorg/telegram/ui/FiltersSetupActivity;
 
@@ -1690,12 +1705,12 @@
 
     if-ne p1, v0, :cond_3
 
-    .line 1430
-    sget p1, Lcom/smedialink/common/IdFabric$ViewTypes;->NOTIFICATION_CHECK:I
+    .line 1437
+    sget p1, Lcom/iMe/common/IdFabric$ViewTypes;->NOTIFICATION_CHECK:I
 
     return p1
 
-    .line 1433
+    .line 1440
     :cond_3
     iget-object v0, p0, Lorg/telegram/ui/FiltersSetupActivity$ListAdapter;->this$0:Lorg/telegram/ui/FiltersSetupActivity;
 
@@ -1747,7 +1762,7 @@
 
     goto :goto_1
 
-    .line 1435
+    .line 1442
     :cond_4
     iget-object v0, p0, Lorg/telegram/ui/FiltersSetupActivity$ListAdapter;->this$0:Lorg/telegram/ui/FiltersSetupActivity;
 
@@ -1761,7 +1776,7 @@
 
     return p1
 
-    .line 1437
+    .line 1444
     :cond_5
     iget-object v0, p0, Lorg/telegram/ui/FiltersSetupActivity$ListAdapter;->this$0:Lorg/telegram/ui/FiltersSetupActivity;
 
@@ -1783,7 +1798,7 @@
 
     return p1
 
-    .line 1439
+    .line 1446
     :cond_6
     iget-object v0, p0, Lorg/telegram/ui/FiltersSetupActivity$ListAdapter;->this$0:Lorg/telegram/ui/FiltersSetupActivity;
 
@@ -1835,7 +1850,7 @@
 
     goto :goto_0
 
-    .line 1441
+    .line 1448
     :cond_7
     iget-object v0, p0, Lorg/telegram/ui/FiltersSetupActivity$ListAdapter;->this$0:Lorg/telegram/ui/FiltersSetupActivity;
 
@@ -1866,24 +1881,24 @@
 
     return p1
 
-    .line 1427
+    .line 1434
     :cond_b
     :goto_2
-    sget p1, Lcom/smedialink/common/IdFabric$ViewTypes;->TEXT:I
+    sget p1, Lcom/iMe/common/IdFabric$ViewTypes;->TEXT:I
 
     return p1
 
-    .line 1424
+    .line 1431
     :cond_c
     :goto_3
-    sget p1, Lcom/smedialink/common/IdFabric$ViewTypes;->TEXT_SETTINGS:I
+    sget p1, Lcom/iMe/common/IdFabric$ViewTypes;->TEXT_SETTINGS:I
 
     return p1
 
-    .line 1421
+    .line 1428
     :cond_d
     :goto_4
-    sget p1, Lcom/smedialink/common/IdFabric$ViewTypes;->TEXT_CHECK:I
+    sget p1, Lcom/iMe/common/IdFabric$ViewTypes;->TEXT_CHECK:I
 
     return p1
 .end method
@@ -1891,13 +1906,13 @@
 .method public isEnabled(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;)Z
     .locals 4
 
-    .line 987
+    .line 993
     invoke-virtual {p1}, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->getItemViewType()I
 
     move-result v0
 
-    .line 989
-    sget v1, Lcom/smedialink/common/IdFabric$ViewTypes;->TEXT_CHECK:I
+    .line 995
+    sget v1, Lcom/iMe/common/IdFabric$ViewTypes;->TEXT_CHECK:I
 
     const/4 v2, 0x0
 
@@ -1905,12 +1920,12 @@
 
     if-ne v0, v1, :cond_4
 
-    .line 990
+    .line 996
     invoke-virtual {p1}, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->getAdapterPosition()I
 
     move-result p1
 
-    .line 991
+    .line 997
     iget-object v1, p0, Lorg/telegram/ui/FiltersSetupActivity$ListAdapter;->this$0:Lorg/telegram/ui/FiltersSetupActivity;
 
     invoke-static {v1}, Lorg/telegram/ui/FiltersSetupActivity;->access$300(Lorg/telegram/ui/FiltersSetupActivity;)I
@@ -1929,7 +1944,7 @@
 
     goto :goto_0
 
-    .line 994
+    .line 1000
     :cond_0
     iget-object v1, p0, Lorg/telegram/ui/FiltersSetupActivity$ListAdapter;->this$0:Lorg/telegram/ui/FiltersSetupActivity;
 
@@ -1939,7 +1954,7 @@
 
     if-ne p1, v1, :cond_7
 
-    .line 995
+    .line 1001
     iget-object p1, p0, Lorg/telegram/ui/FiltersSetupActivity$ListAdapter;->this$0:Lorg/telegram/ui/FiltersSetupActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/FiltersSetupActivity;->access$700(Lorg/telegram/ui/FiltersSetupActivity;)I
@@ -1953,7 +1968,7 @@
     :cond_1
     return v2
 
-    .line 992
+    .line 998
     :cond_2
     :goto_0
     iget-object p1, p0, Lorg/telegram/ui/FiltersSetupActivity$ListAdapter;->this$0:Lorg/telegram/ui/FiltersSetupActivity;
@@ -1969,18 +1984,18 @@
     :cond_3
     return v2
 
-    .line 997
+    .line 1003
     :cond_4
-    sget v1, Lcom/smedialink/common/IdFabric$ViewTypes;->TEXT_SETTINGS:I
+    sget v1, Lcom/iMe/common/IdFabric$ViewTypes;->TEXT_SETTINGS:I
 
     if-ne v0, v1, :cond_7
 
-    .line 998
+    .line 1004
     invoke-virtual {p1}, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->getAdapterPosition()I
 
     move-result p1
 
-    .line 999
+    .line 1005
     iget-object v1, p0, Lorg/telegram/ui/FiltersSetupActivity$ListAdapter;->this$0:Lorg/telegram/ui/FiltersSetupActivity;
 
     invoke-static {v1}, Lorg/telegram/ui/FiltersSetupActivity;->access$800(Lorg/telegram/ui/FiltersSetupActivity;)I
@@ -2005,7 +2020,7 @@
 
     if-ne p1, v1, :cond_7
 
-    .line 1000
+    .line 1006
     :cond_5
     iget-object p1, p0, Lorg/telegram/ui/FiltersSetupActivity$ListAdapter;->this$0:Lorg/telegram/ui/FiltersSetupActivity;
 
@@ -2042,7 +2057,7 @@
 .method public moveElementToStart(I)V
     .locals 3
 
-    .line 1488
+    .line 1495
     iget-object v0, p0, Lorg/telegram/ui/FiltersSetupActivity$ListAdapter;->this$0:Lorg/telegram/ui/FiltersSetupActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/FiltersSetupActivity;->access$200(Lorg/telegram/ui/FiltersSetupActivity;)I
@@ -2057,7 +2072,7 @@
 
     sub-int/2addr v0, v1
 
-    .line 1489
+    .line 1496
     iget-object v1, p0, Lorg/telegram/ui/FiltersSetupActivity$ListAdapter;->this$0:Lorg/telegram/ui/FiltersSetupActivity;
 
     invoke-static {v1}, Lorg/telegram/ui/FiltersSetupActivity;->access$2800(Lorg/telegram/ui/FiltersSetupActivity;)Z
@@ -2082,7 +2097,7 @@
 
     goto :goto_2
 
-    .line 1497
+    .line 1504
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/FiltersSetupActivity$ListAdapter;->this$0:Lorg/telegram/ui/FiltersSetupActivity;
 
@@ -2092,7 +2107,7 @@
 
     iget-object v0, v0, Lorg/telegram/messenger/MessagesController;->dialogFilters:Ljava/util/ArrayList;
 
-    .line 1498
+    .line 1505
     invoke-virtual {v0, p1}, Ljava/util/ArrayList;->remove(I)Ljava/lang/Object;
 
     move-result-object v1
@@ -2106,7 +2121,7 @@
     :goto_1
     if-gt v2, p1, :cond_2
 
-    .line 1500
+    .line 1507
     invoke-virtual {v0, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v1
@@ -2119,7 +2134,7 @@
 
     goto :goto_1
 
-    .line 1502
+    .line 1509
     :cond_2
     iget-object v0, p0, Lorg/telegram/ui/FiltersSetupActivity$ListAdapter;->this$0:Lorg/telegram/ui/FiltersSetupActivity;
 
@@ -2127,7 +2142,7 @@
 
     invoke-static {v0, v1}, Lorg/telegram/ui/FiltersSetupActivity;->access$3902(Lorg/telegram/ui/FiltersSetupActivity;Z)Z
 
-    .line 1503
+    .line 1510
     iget-object v0, p0, Lorg/telegram/ui/FiltersSetupActivity$ListAdapter;->this$0:Lorg/telegram/ui/FiltersSetupActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/FiltersSetupActivity;->access$100(Lorg/telegram/ui/FiltersSetupActivity;)I
@@ -2154,7 +2169,7 @@
 
     add-int/lit8 v0, p2, 0x1
 
-    .line 1283
+    .line 1290
     invoke-virtual {p0, v0}, Lorg/telegram/ui/FiltersSetupActivity$ListAdapter;->getItemViewType(I)I
 
     move-result v0
@@ -2182,7 +2197,7 @@
     :cond_0
     move v0, v2
 
-    .line 1285
+    .line 1292
     :goto_0
     iget-object v1, p0, Lorg/telegram/ui/FiltersSetupActivity$ListAdapter;->this$0:Lorg/telegram/ui/FiltersSetupActivity;
 
@@ -2192,43 +2207,43 @@
 
     if-ne p2, v1, :cond_2
 
-    .line 1286
+    .line 1293
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     check-cast p1, Lorg/telegram/ui/Cells/NotificationsCheckCell;
 
-    .line 1287
+    .line 1294
     sget p2, Lorg/telegram/messenger/R$string;->topics_catalog_update_auto:I
 
     invoke-static {p2}, Lorg/telegram/messenger/LocaleController;->getInternalString(I)Ljava/lang/String;
 
     move-result-object p2
 
-    .line 1288
+    .line 1295
     iget-object v1, p0, Lorg/telegram/ui/FiltersSetupActivity$ListAdapter;->this$0:Lorg/telegram/ui/FiltersSetupActivity;
 
-    invoke-virtual {v1}, Lorg/telegram/ui/ActionBar/BaseFragment;->getTopicsController()Lorg/fork/controller/ForkTopicsController;
+    invoke-virtual {v1}, Lorg/telegram/ui/ActionBar/BaseFragment;->getTopicsController()Lcom/iMe/fork/controller/ForkTopicsController;
 
     move-result-object v1
 
-    invoke-virtual {v1}, Lorg/fork/controller/ForkTopicsController;->isAutoUpdateTopicsCatalogEnabled()Z
+    invoke-virtual {v1}, Lcom/iMe/fork/controller/ForkTopicsController;->isAutoUpdateTopicsCatalogEnabled()Z
 
     move-result v1
 
     if-eqz v1, :cond_1
 
-    .line 1289
+    .line 1296
     iget-object v1, p0, Lorg/telegram/ui/FiltersSetupActivity$ListAdapter;->this$0:Lorg/telegram/ui/FiltersSetupActivity;
 
-    invoke-virtual {v1}, Lorg/telegram/ui/ActionBar/BaseFragment;->getTopicsController()Lorg/fork/controller/ForkTopicsController;
+    invoke-virtual {v1}, Lorg/telegram/ui/ActionBar/BaseFragment;->getTopicsController()Lcom/iMe/fork/controller/ForkTopicsController;
 
     move-result-object v1
 
-    invoke-virtual {v1}, Lorg/fork/controller/ForkTopicsController;->getSelectedAutoUpdateTopicsCatalogInterval()Lorg/fork/enums/Interval;
+    invoke-virtual {v1}, Lcom/iMe/fork/controller/ForkTopicsController;->getSelectedAutoUpdateTopicsCatalogInterval()Lcom/iMe/fork/enums/Interval;
 
     move-result-object v1
 
-    invoke-virtual {v1}, Lorg/fork/enums/Interval;->getNameResId()I
+    invoke-virtual {v1}, Lcom/iMe/fork/enums/Interval;->getNameResId()I
 
     move-result v1
 
@@ -2240,7 +2255,7 @@
 
     goto/16 :goto_7
 
-    .line 1291
+    .line 1298
     :cond_1
     sget v1, Lorg/telegram/messenger/R$string;->common_off:I
 
@@ -2252,7 +2267,7 @@
 
     goto/16 :goto_7
 
-    .line 1293
+    .line 1300
     :cond_2
     iget-object v1, p0, Lorg/telegram/ui/FiltersSetupActivity$ListAdapter;->this$0:Lorg/telegram/ui/FiltersSetupActivity;
 
@@ -2272,7 +2287,7 @@
 
     goto/16 :goto_6
 
-    .line 1300
+    .line 1307
     :cond_3
     iget-object v1, p0, Lorg/telegram/ui/FiltersSetupActivity$ListAdapter;->this$0:Lorg/telegram/ui/FiltersSetupActivity;
 
@@ -2308,7 +2323,7 @@
 
     goto/16 :goto_5
 
-    .line 1311
+    .line 1318
     :cond_4
     iget-object v1, p0, Lorg/telegram/ui/FiltersSetupActivity$ListAdapter;->this$0:Lorg/telegram/ui/FiltersSetupActivity;
 
@@ -2362,7 +2377,7 @@
 
     goto/16 :goto_3
 
-    .line 1331
+    .line 1338
     :cond_5
     iget-object v1, p0, Lorg/telegram/ui/FiltersSetupActivity$ListAdapter;->this$0:Lorg/telegram/ui/FiltersSetupActivity;
 
@@ -2390,7 +2405,7 @@
 
     goto/16 :goto_1
 
-    .line 1354
+    .line 1361
     :cond_6
     invoke-virtual {p1}, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->getItemViewType()I
 
@@ -2416,13 +2431,13 @@
 
     goto/16 :goto_7
 
-    .line 1410
+    .line 1417
     :cond_7
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     check-cast p1, Lorg/telegram/ui/FiltersSetupActivity$SuggestedFilterCell;
 
-    .line 1411
+    .line 1418
     iget-object v0, p0, Lorg/telegram/ui/FiltersSetupActivity$ListAdapter;->this$0:Lorg/telegram/ui/FiltersSetupActivity;
 
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getMessagesController()Lorg/telegram/messenger/MessagesController;
@@ -2437,19 +2452,13 @@
 
     move-result v1
 
-    sub-int/2addr p2, v1
+    sub-int v1, p2, v1
 
-    invoke-virtual {v0, p2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
-    move-result-object p2
+    move-result-object v0
 
-    check-cast p2, Lorg/telegram/tgnet/TLRPC$TL_dialogFilterSuggested;
-
-    iget-object v0, p0, Lorg/telegram/ui/FiltersSetupActivity$ListAdapter;->this$0:Lorg/telegram/ui/FiltersSetupActivity;
-
-    invoke-static {v0}, Lorg/telegram/ui/FiltersSetupActivity;->access$3100(Lorg/telegram/ui/FiltersSetupActivity;)I
-
-    move-result v0
+    check-cast v0, Lorg/telegram/tgnet/TLRPC$TL_dialogFilterSuggested;
 
     iget-object v1, p0, Lorg/telegram/ui/FiltersSetupActivity$ListAdapter;->this$0:Lorg/telegram/ui/FiltersSetupActivity;
 
@@ -2459,22 +2468,22 @@
 
     sub-int/2addr v1, v3
 
-    if-eq v0, v1, :cond_8
+    if-ge p2, v1, :cond_8
 
     move v2, v3
 
     :cond_8
-    invoke-virtual {p1, p2, v2}, Lorg/telegram/ui/FiltersSetupActivity$SuggestedFilterCell;->setFilter(Lorg/telegram/tgnet/TLRPC$TL_dialogFilterSuggested;Z)V
+    invoke-virtual {p1, v0, v2}, Lorg/telegram/ui/FiltersSetupActivity$SuggestedFilterCell;->setFilter(Lorg/telegram/tgnet/TLRPC$TL_dialogFilterSuggested;Z)V
 
     goto/16 :goto_7
 
-    .line 1392
+    .line 1399
     :cond_9
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     check-cast p1, Lorg/telegram/ui/FiltersSetupActivity$TextCell;
 
-    .line 1393
+    .line 1400
     iget-object v0, p0, Lorg/telegram/ui/FiltersSetupActivity$ListAdapter;->this$0:Lorg/telegram/ui/FiltersSetupActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/FiltersSetupActivity;->access$2900(Lorg/telegram/ui/FiltersSetupActivity;)I
@@ -2483,7 +2492,7 @@
 
     invoke-static {v0}, Lorg/telegram/messenger/MessagesController;->getNotificationsSettings(I)Landroid/content/SharedPreferences;
 
-    .line 1394
+    .line 1401
     iget-object v0, p0, Lorg/telegram/ui/FiltersSetupActivity$ListAdapter;->this$0:Lorg/telegram/ui/FiltersSetupActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/FiltersSetupActivity;->access$3000(Lorg/telegram/ui/FiltersSetupActivity;)I
@@ -2492,7 +2501,7 @@
 
     if-ne p2, v0, :cond_2a
 
-    .line 1395
+    .line 1402
     iget-object p2, p0, Lorg/telegram/ui/FiltersSetupActivity$ListAdapter;->mContext:Landroid/content/Context;
 
     invoke-virtual {p2}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
@@ -2505,7 +2514,7 @@
 
     move-result-object p2
 
-    .line 1396
+    .line 1403
     iget-object v0, p0, Lorg/telegram/ui/FiltersSetupActivity$ListAdapter;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
@@ -2518,7 +2527,7 @@
 
     move-result-object v0
 
-    .line 1397
+    .line 1404
     new-instance v1, Landroid/graphics/PorterDuffColorFilter;
 
     const-string v3, "switchTrackChecked"
@@ -2533,7 +2542,7 @@
 
     invoke-virtual {p2, v1}, Landroid/graphics/drawable/Drawable;->setColorFilter(Landroid/graphics/ColorFilter;)V
 
-    .line 1398
+    .line 1405
     new-instance v1, Landroid/graphics/PorterDuffColorFilter;
 
     const-string v3, "checkboxCheck"
@@ -2548,23 +2557,23 @@
 
     invoke-virtual {v0, v1}, Landroid/graphics/drawable/Drawable;->setColorFilter(Landroid/graphics/ColorFilter;)V
 
-    .line 1399
+    .line 1406
     new-instance v1, Lorg/telegram/ui/Components/CombinedDrawable;
 
     invoke-direct {v1, p2, v0}, Lorg/telegram/ui/Components/CombinedDrawable;-><init>(Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;)V
 
-    .line 1402
+    .line 1409
     iget-object p2, p0, Lorg/telegram/ui/FiltersSetupActivity$ListAdapter;->this$0:Lorg/telegram/ui/FiltersSetupActivity;
 
-    invoke-static {p2}, Lorg/telegram/ui/FiltersSetupActivity;->access$000(Lorg/telegram/ui/FiltersSetupActivity;)Lorg/fork/enums/FilterActivityType;
+    invoke-static {p2}, Lorg/telegram/ui/FiltersSetupActivity;->access$000(Lorg/telegram/ui/FiltersSetupActivity;)Lcom/iMe/fork/enums/FilterActivityType;
 
     move-result-object p2
 
-    sget-object v0, Lorg/fork/enums/FilterActivityType;->TOPIC:Lorg/fork/enums/FilterActivityType;
+    sget-object v0, Lcom/iMe/fork/enums/FilterActivityType;->TOPIC:Lcom/iMe/fork/enums/FilterActivityType;
 
     if-ne p2, v0, :cond_a
 
-    .line 1403
+    .line 1410
     sget p2, Lorg/telegram/messenger/R$string;->topics_create_new:I
 
     invoke-static {p2}, Lorg/telegram/messenger/LocaleController;->getInternalString(I)Ljava/lang/String;
@@ -2575,7 +2584,7 @@
 
     goto/16 :goto_7
 
-    .line 1405
+    .line 1412
     :cond_a
     sget p2, Lorg/telegram/messenger/R$string;->CreateNewFilter:I
 
@@ -2589,7 +2598,7 @@
 
     goto/16 :goto_7
 
-    .line 1384
+    .line 1391
     :cond_b
     iget-object v0, p0, Lorg/telegram/ui/FiltersSetupActivity$ListAdapter;->this$0:Lorg/telegram/ui/FiltersSetupActivity;
 
@@ -2601,7 +2610,7 @@
 
     if-ne p2, v0, :cond_c
 
-    .line 1385
+    .line 1392
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     iget-object p2, p0, Lorg/telegram/ui/FiltersSetupActivity$ListAdapter;->mContext:Landroid/content/Context;
@@ -2612,11 +2621,11 @@
 
     move-result-object p2
 
-    invoke-virtual {p1, p2}, Landroid/view/View;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
+    invoke-virtual {p1, p2}, Landroid/view/View;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
     goto/16 :goto_7
 
-    .line 1387
+    .line 1394
     :cond_c
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
@@ -2628,28 +2637,28 @@
 
     move-result-object p2
 
-    invoke-virtual {p1, p2}, Landroid/view/View;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
+    invoke-virtual {p1, p2}, Landroid/view/View;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
     goto/16 :goto_7
 
-    .line 1369
+    .line 1376
     :cond_d
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     check-cast p1, Lorg/telegram/ui/FiltersSetupActivity$FilterCell;
 
-    .line 1371
+    .line 1378
     iget-object v0, p0, Lorg/telegram/ui/FiltersSetupActivity$ListAdapter;->this$0:Lorg/telegram/ui/FiltersSetupActivity;
 
-    invoke-static {v0}, Lorg/telegram/ui/FiltersSetupActivity;->access$000(Lorg/telegram/ui/FiltersSetupActivity;)Lorg/fork/enums/FilterActivityType;
+    invoke-static {v0}, Lorg/telegram/ui/FiltersSetupActivity;->access$000(Lorg/telegram/ui/FiltersSetupActivity;)Lcom/iMe/fork/enums/FilterActivityType;
 
     move-result-object v0
 
-    sget-object v1, Lorg/fork/enums/FilterActivityType;->TOPIC:Lorg/fork/enums/FilterActivityType;
+    sget-object v1, Lcom/iMe/fork/enums/FilterActivityType;->TOPIC:Lcom/iMe/fork/enums/FilterActivityType;
 
     if-ne v0, v1, :cond_e
 
-    .line 1372
+    .line 1379
     iget-object v0, p0, Lorg/telegram/ui/FiltersSetupActivity$ListAdapter;->this$0:Lorg/telegram/ui/FiltersSetupActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/FiltersSetupActivity;->access$2700(Lorg/telegram/ui/FiltersSetupActivity;)Ljava/util/List;
@@ -2668,13 +2677,13 @@
 
     move-result-object p2
 
-    check-cast p2, Lcom/smedialink/storage/domain/model/topics/TopicModel;
+    check-cast p2, Lcom/iMe/storage/domain/model/topics/TopicModel;
 
-    invoke-virtual {p1, p2, v3}, Lorg/telegram/ui/FiltersSetupActivity$FilterCell;->setTopic(Lcom/smedialink/storage/domain/model/topics/TopicModel;Z)V
+    invoke-virtual {p1, p2, v3}, Lorg/telegram/ui/FiltersSetupActivity$FilterCell;->setTopic(Lcom/iMe/storage/domain/model/topics/TopicModel;Z)V
 
     goto/16 :goto_7
 
-    .line 1376
+    .line 1383
     :cond_e
     iget-object v0, p0, Lorg/telegram/ui/FiltersSetupActivity$ListAdapter;->this$0:Lorg/telegram/ui/FiltersSetupActivity;
 
@@ -2684,7 +2693,7 @@
 
     sub-int/2addr p2, v0
 
-    .line 1377
+    .line 1384
     iget-object v0, p0, Lorg/telegram/ui/FiltersSetupActivity$ListAdapter;->this$0:Lorg/telegram/ui/FiltersSetupActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/FiltersSetupActivity;->access$2800(Lorg/telegram/ui/FiltersSetupActivity;)Z
@@ -2695,7 +2704,7 @@
 
     add-int/lit8 p2, p2, 0x1
 
-    .line 1380
+    .line 1387
     :cond_f
     iget-object v0, p0, Lorg/telegram/ui/FiltersSetupActivity$ListAdapter;->this$0:Lorg/telegram/ui/FiltersSetupActivity;
 
@@ -2715,13 +2724,13 @@
 
     goto/16 :goto_7
 
-    .line 1356
+    .line 1363
     :cond_10
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     check-cast p1, Lorg/telegram/ui/Cells/HeaderCell;
 
-    .line 1357
+    .line 1364
     iget-object v0, p0, Lorg/telegram/ui/FiltersSetupActivity$ListAdapter;->this$0:Lorg/telegram/ui/FiltersSetupActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/FiltersSetupActivity;->access$2500(Lorg/telegram/ui/FiltersSetupActivity;)I
@@ -2730,18 +2739,18 @@
 
     if-ne p2, v0, :cond_12
 
-    .line 1359
+    .line 1366
     iget-object p2, p0, Lorg/telegram/ui/FiltersSetupActivity$ListAdapter;->this$0:Lorg/telegram/ui/FiltersSetupActivity;
 
-    invoke-static {p2}, Lorg/telegram/ui/FiltersSetupActivity;->access$000(Lorg/telegram/ui/FiltersSetupActivity;)Lorg/fork/enums/FilterActivityType;
+    invoke-static {p2}, Lorg/telegram/ui/FiltersSetupActivity;->access$000(Lorg/telegram/ui/FiltersSetupActivity;)Lcom/iMe/fork/enums/FilterActivityType;
 
     move-result-object p2
 
-    sget-object v0, Lorg/fork/enums/FilterActivityType;->TOPIC:Lorg/fork/enums/FilterActivityType;
+    sget-object v0, Lcom/iMe/fork/enums/FilterActivityType;->TOPIC:Lcom/iMe/fork/enums/FilterActivityType;
 
     if-ne p2, v0, :cond_11
 
-    .line 1360
+    .line 1367
     sget p2, Lorg/telegram/messenger/R$string;->topics:I
 
     invoke-static {p2}, Lorg/telegram/messenger/LocaleController;->getInternalString(I)Ljava/lang/String;
@@ -2752,7 +2761,7 @@
 
     goto/16 :goto_7
 
-    .line 1362
+    .line 1369
     :cond_11
     sget p2, Lorg/telegram/messenger/R$string;->Filters:I
 
@@ -2766,7 +2775,7 @@
 
     goto/16 :goto_7
 
-    .line 1363
+    .line 1370
     :cond_12
     iget-object v0, p0, Lorg/telegram/ui/FiltersSetupActivity$ListAdapter;->this$0:Lorg/telegram/ui/FiltersSetupActivity;
 
@@ -2776,7 +2785,7 @@
 
     if-ne p2, v0, :cond_2a
 
-    .line 1364
+    .line 1371
     sget p2, Lorg/telegram/messenger/R$string;->FilterRecommended:I
 
     const-string v0, "FilterRecommended"
@@ -2789,7 +2798,7 @@
 
     goto/16 :goto_7
 
-    .line 1332
+    .line 1339
     :cond_13
     :goto_1
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
@@ -2798,14 +2807,14 @@
 
     const-string v1, "windowBackgroundWhiteBlackText"
 
-    .line 1333
+    .line 1340
     invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
 
     move-result v1
 
     invoke-virtual {p1, v1}, Lorg/telegram/ui/Cells/TextSettingsCell;->setTextColor(I)V
 
-    .line 1334
+    .line 1341
     iget-object v1, p0, Lorg/telegram/ui/FiltersSetupActivity$ListAdapter;->this$0:Lorg/telegram/ui/FiltersSetupActivity;
 
     invoke-static {v1}, Lorg/telegram/ui/FiltersSetupActivity;->access$800(Lorg/telegram/ui/FiltersSetupActivity;)I
@@ -2814,10 +2823,10 @@
 
     if-ne p2, v1, :cond_15
 
-    .line 1335
-    sget-object p2, Lorg/telegram/messenger/SharedConfig;->selectedFilterTabsNotificationMode:Lorg/fork/enums/FilterTabNotificationMode;
+    .line 1342
+    sget-object p2, Lorg/telegram/messenger/SharedConfig;->selectedFilterTabsNotificationMode:Lcom/iMe/fork/enums/FilterTabNotificationMode;
 
-    invoke-virtual {p2}, Lorg/fork/enums/FilterTabNotificationMode;->getTitleResId()I
+    invoke-virtual {p2}, Lcom/iMe/fork/enums/FilterTabNotificationMode;->getTitleResId()I
 
     move-result p2
 
@@ -2825,7 +2834,7 @@
 
     move-result-object p2
 
-    .line 1336
+    .line 1343
     sget v1, Lorg/telegram/messenger/R$string;->folder_tabs_notification_mode_item_title:I
 
     invoke-static {v1}, Lorg/telegram/messenger/LocaleController;->getInternalString(I)Ljava/lang/String;
@@ -2834,7 +2843,7 @@
 
     invoke-virtual {p1, v1, p2, v0}, Lorg/telegram/ui/Cells/TextSettingsCell;->setTextAndValue(Ljava/lang/CharSequence;Ljava/lang/CharSequence;Z)V
 
-    .line 1337
+    .line 1344
     iget-object p2, p0, Lorg/telegram/ui/FiltersSetupActivity$ListAdapter;->this$0:Lorg/telegram/ui/FiltersSetupActivity;
 
     invoke-static {p2}, Lorg/telegram/ui/FiltersSetupActivity;->access$500(Lorg/telegram/ui/FiltersSetupActivity;)I
@@ -2850,7 +2859,7 @@
 
     goto/16 :goto_7
 
-    .line 1338
+    .line 1345
     :cond_15
     iget-object v1, p0, Lorg/telegram/ui/FiltersSetupActivity$ListAdapter;->this$0:Lorg/telegram/ui/FiltersSetupActivity;
 
@@ -2860,7 +2869,7 @@
 
     if-ne p2, v1, :cond_18
 
-    .line 1339
+    .line 1346
     iget-object p2, p0, Lorg/telegram/ui/FiltersSetupActivity$ListAdapter;->this$0:Lorg/telegram/ui/FiltersSetupActivity;
 
     invoke-static {p2}, Lorg/telegram/ui/FiltersSetupActivity;->access$500(Lorg/telegram/ui/FiltersSetupActivity;)I
@@ -2874,20 +2883,20 @@
     :cond_16
     if-eqz v2, :cond_17
 
-    .line 1341
+    .line 1348
     iget-object p2, p0, Lorg/telegram/ui/FiltersSetupActivity$ListAdapter;->this$0:Lorg/telegram/ui/FiltersSetupActivity;
 
-    invoke-virtual {p2}, Lorg/telegram/ui/ActionBar/BaseFragment;->getFiltersController()Lorg/fork/controller/FiltersController;
+    invoke-virtual {p2}, Lorg/telegram/ui/ActionBar/BaseFragment;->getFiltersController()Lcom/iMe/fork/controller/FiltersController;
 
     move-result-object p2
 
-    invoke-virtual {p2}, Lorg/fork/controller/FiltersController;->isAllChatsTabEnabled()Z
+    invoke-virtual {p2}, Lcom/iMe/fork/controller/FiltersController;->isAllChatsTabEnabled()Z
 
     move-result p2
 
     if-nez p2, :cond_17
 
-    .line 1342
+    .line 1349
     sget p2, Lorg/telegram/messenger/R$string;->common_off:I
 
     invoke-static {p2}, Lorg/telegram/messenger/LocaleController;->getInternalString(I)Ljava/lang/String;
@@ -2896,7 +2905,7 @@
 
     goto :goto_2
 
-    .line 1344
+    .line 1351
     :cond_17
     sget p2, Lorg/telegram/messenger/R$string;->common_on:I
 
@@ -2904,7 +2913,7 @@
 
     move-result-object p2
 
-    .line 1346
+    .line 1353
     :goto_2
     sget v1, Lorg/telegram/messenger/R$string;->folder_tabs_all_chats_tab_settings_item_title:I
 
@@ -2914,12 +2923,12 @@
 
     invoke-virtual {p1, v1, p2, v0}, Lorg/telegram/ui/Cells/TextSettingsCell;->setTextAndValue(Ljava/lang/CharSequence;Ljava/lang/CharSequence;Z)V
 
-    .line 1347
+    .line 1354
     invoke-virtual {p1, v2}, Lorg/telegram/ui/Cells/TextSettingsCell;->setEnabled(Z)V
 
     goto/16 :goto_7
 
-    .line 1348
+    .line 1355
     :cond_18
     iget-object v1, p0, Lorg/telegram/ui/FiltersSetupActivity$ListAdapter;->this$0:Lorg/telegram/ui/FiltersSetupActivity;
 
@@ -2929,10 +2938,10 @@
 
     if-ne p2, v1, :cond_2a
 
-    .line 1349
-    sget-object p2, Lorg/telegram/messenger/SharedConfig;->selectedFilterTabWidthMode:Lorg/fork/enums/FilterTabWidthMode;
+    .line 1356
+    sget-object p2, Lorg/telegram/messenger/SharedConfig;->selectedFilterTabWidthMode:Lcom/iMe/fork/enums/FilterTabWidthMode;
 
-    invoke-virtual {p2}, Lorg/fork/enums/FilterTabWidthMode;->getTitleResId()I
+    invoke-virtual {p2}, Lcom/iMe/fork/enums/FilterTabWidthMode;->getTitleResId()I
 
     move-result p2
 
@@ -2940,7 +2949,7 @@
 
     move-result-object p2
 
-    .line 1350
+    .line 1357
     sget v1, Lorg/telegram/messenger/R$string;->folder_tabs_width_mode_item_title:I
 
     invoke-static {v1}, Lorg/telegram/messenger/LocaleController;->getInternalString(I)Ljava/lang/String;
@@ -2949,7 +2958,7 @@
 
     invoke-virtual {p1, v1, p2, v0}, Lorg/telegram/ui/Cells/TextSettingsCell;->setTextAndValue(Ljava/lang/CharSequence;Ljava/lang/CharSequence;Z)V
 
-    .line 1351
+    .line 1358
     iget-object p2, p0, Lorg/telegram/ui/FiltersSetupActivity$ListAdapter;->this$0:Lorg/telegram/ui/FiltersSetupActivity;
 
     invoke-static {p2}, Lorg/telegram/ui/FiltersSetupActivity;->access$500(Lorg/telegram/ui/FiltersSetupActivity;)I
@@ -2965,14 +2974,14 @@
 
     goto/16 :goto_7
 
-    .line 1312
+    .line 1319
     :cond_1a
     :goto_3
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     check-cast p1, Lorg/telegram/ui/Cells/TextCheckCell;
 
-    .line 1313
+    .line 1320
     iget-object v1, p0, Lorg/telegram/ui/FiltersSetupActivity$ListAdapter;->this$0:Lorg/telegram/ui/FiltersSetupActivity;
 
     invoke-static {v1}, Lorg/telegram/ui/FiltersSetupActivity;->access$400(Lorg/telegram/ui/FiltersSetupActivity;)I
@@ -2991,7 +3000,7 @@
     :goto_4
     invoke-virtual {p1, v1}, Lorg/telegram/ui/Cells/TextCheckCell;->setDrawSwitchDivider(Z)V
 
-    .line 1314
+    .line 1321
     iget-object v1, p0, Lorg/telegram/ui/FiltersSetupActivity$ListAdapter;->this$0:Lorg/telegram/ui/FiltersSetupActivity;
 
     invoke-static {v1}, Lorg/telegram/ui/FiltersSetupActivity;->access$2000(Lorg/telegram/ui/FiltersSetupActivity;)I
@@ -3000,7 +3009,7 @@
 
     if-ne p2, v1, :cond_1c
 
-    .line 1315
+    .line 1322
     sget p2, Lorg/telegram/messenger/R$string;->topics_settings_enable:I
 
     invoke-static {p2}, Lorg/telegram/messenger/LocaleController;->getInternalString(I)Ljava/lang/String;
@@ -3017,7 +3026,7 @@
 
     goto/16 :goto_7
 
-    .line 1316
+    .line 1323
     :cond_1c
     iget-object v1, p0, Lorg/telegram/ui/FiltersSetupActivity$ListAdapter;->this$0:Lorg/telegram/ui/FiltersSetupActivity;
 
@@ -3027,7 +3036,7 @@
 
     if-ne p2, v1, :cond_1d
 
-    .line 1317
+    .line 1324
     sget p2, Lorg/telegram/messenger/R$string;->topics_settings_topics_bar_at_bottom:I
 
     invoke-static {p2}, Lorg/telegram/messenger/LocaleController;->getInternalString(I)Ljava/lang/String;
@@ -3044,7 +3053,7 @@
 
     goto/16 :goto_7
 
-    .line 1318
+    .line 1325
     :cond_1d
     iget-object v1, p0, Lorg/telegram/ui/FiltersSetupActivity$ListAdapter;->this$0:Lorg/telegram/ui/FiltersSetupActivity;
 
@@ -3054,7 +3063,7 @@
 
     if-ne p2, v1, :cond_1f
 
-    .line 1319
+    .line 1326
     iget-object p2, p0, Lorg/telegram/ui/FiltersSetupActivity$ListAdapter;->this$0:Lorg/telegram/ui/FiltersSetupActivity;
 
     invoke-static {p2}, Lorg/telegram/ui/FiltersSetupActivity;->access$500(Lorg/telegram/ui/FiltersSetupActivity;)I
@@ -3068,7 +3077,7 @@
     :cond_1e
     invoke-virtual {p1, v2, v4}, Lorg/telegram/ui/Cells/TextCheckCell;->setEnabled(ZLjava/util/ArrayList;)V
 
-    .line 1320
+    .line 1327
     sget p2, Lorg/telegram/messenger/R$string;->folder_tabs_at_bottom_enable_item_title:I
 
     invoke-static {p2}, Lorg/telegram/messenger/LocaleController;->getInternalString(I)Ljava/lang/String;
@@ -3081,7 +3090,7 @@
 
     goto/16 :goto_7
 
-    .line 1321
+    .line 1328
     :cond_1f
     iget-object v1, p0, Lorg/telegram/ui/FiltersSetupActivity$ListAdapter;->this$0:Lorg/telegram/ui/FiltersSetupActivity;
 
@@ -3091,7 +3100,7 @@
 
     if-ne p2, v1, :cond_21
 
-    .line 1322
+    .line 1329
     iget-object p2, p0, Lorg/telegram/ui/FiltersSetupActivity$ListAdapter;->this$0:Lorg/telegram/ui/FiltersSetupActivity;
 
     invoke-static {p2}, Lorg/telegram/ui/FiltersSetupActivity;->access$500(Lorg/telegram/ui/FiltersSetupActivity;)I
@@ -3105,7 +3114,7 @@
     :cond_20
     invoke-virtual {p1, v2, v4}, Lorg/telegram/ui/Cells/TextCheckCell;->setEnabled(ZLjava/util/ArrayList;)V
 
-    .line 1323
+    .line 1330
     sget p2, Lorg/telegram/messenger/R$string;->folder_tabs_remember_last_filter_tab_item_title:I
 
     invoke-static {p2}, Lorg/telegram/messenger/LocaleController;->getInternalString(I)Ljava/lang/String;
@@ -3118,7 +3127,7 @@
 
     goto/16 :goto_7
 
-    .line 1324
+    .line 1331
     :cond_21
     iget-object v1, p0, Lorg/telegram/ui/FiltersSetupActivity$ListAdapter;->this$0:Lorg/telegram/ui/FiltersSetupActivity;
 
@@ -3128,10 +3137,10 @@
 
     if-ne p2, v1, :cond_22
 
-    .line 1325
+    .line 1332
     invoke-virtual {p1, v3, v4}, Lorg/telegram/ui/Cells/TextCheckCell;->setEnabled(ZLjava/util/ArrayList;)V
 
-    .line 1326
+    .line 1333
     sget p2, Lorg/telegram/messenger/R$string;->folder_tabs_settings_hide_folders:I
 
     invoke-static {p2}, Lorg/telegram/messenger/LocaleController;->getInternalString(I)Ljava/lang/String;
@@ -3140,11 +3149,11 @@
 
     iget-object v1, p0, Lorg/telegram/ui/FiltersSetupActivity$ListAdapter;->this$0:Lorg/telegram/ui/FiltersSetupActivity;
 
-    invoke-virtual {v1}, Lorg/telegram/ui/ActionBar/BaseFragment;->getFiltersController()Lorg/fork/controller/FiltersController;
+    invoke-virtual {v1}, Lorg/telegram/ui/ActionBar/BaseFragment;->getFiltersController()Lcom/iMe/fork/controller/FiltersController;
 
     move-result-object v1
 
-    invoke-virtual {v1}, Lorg/fork/controller/FiltersController;->isHideFoldersEnabled()Z
+    invoke-virtual {v1}, Lcom/iMe/fork/controller/FiltersController;->isHideFoldersEnabled()Z
 
     move-result v1
 
@@ -3152,7 +3161,7 @@
 
     goto/16 :goto_7
 
-    .line 1328
+    .line 1335
     :cond_22
     iget-object p2, p0, Lorg/telegram/ui/FiltersSetupActivity$ListAdapter;->this$0:Lorg/telegram/ui/FiltersSetupActivity;
 
@@ -3167,7 +3176,7 @@
     :cond_23
     invoke-virtual {p1, v2, v4}, Lorg/telegram/ui/Cells/TextCheckCell;->setEnabled(ZLjava/util/ArrayList;)V
 
-    .line 1329
+    .line 1336
     sget p2, Lorg/telegram/messenger/R$string;->folder_tabs_settings_folders_first:I
 
     invoke-static {p2}, Lorg/telegram/messenger/LocaleController;->getInternalString(I)Ljava/lang/String;
@@ -3176,11 +3185,11 @@
 
     iget-object v1, p0, Lorg/telegram/ui/FiltersSetupActivity$ListAdapter;->this$0:Lorg/telegram/ui/FiltersSetupActivity;
 
-    invoke-virtual {v1}, Lorg/telegram/ui/ActionBar/BaseFragment;->getFiltersController()Lorg/fork/controller/FiltersController;
+    invoke-virtual {v1}, Lorg/telegram/ui/ActionBar/BaseFragment;->getFiltersController()Lcom/iMe/fork/controller/FiltersController;
 
     move-result-object v1
 
-    invoke-virtual {v1}, Lorg/fork/controller/FiltersController;->isFoldersFirstEnabled()Z
+    invoke-virtual {v1}, Lcom/iMe/fork/controller/FiltersController;->isFoldersFirstEnabled()Z
 
     move-result v1
 
@@ -3188,14 +3197,14 @@
 
     goto :goto_7
 
-    .line 1301
+    .line 1308
     :cond_24
     :goto_5
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     check-cast p1, Lorg/telegram/ui/Cells/HeaderCell;
 
-    .line 1302
+    .line 1309
     iget-object v0, p0, Lorg/telegram/ui/FiltersSetupActivity$ListAdapter;->this$0:Lorg/telegram/ui/FiltersSetupActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/FiltersSetupActivity;->access$1600(Lorg/telegram/ui/FiltersSetupActivity;)I
@@ -3204,7 +3213,7 @@
 
     if-ne p2, v0, :cond_25
 
-    .line 1303
+    .line 1310
     sget p2, Lorg/telegram/messenger/R$string;->Settings:I
 
     const-string v0, "Settings"
@@ -3217,7 +3226,7 @@
 
     goto :goto_7
 
-    .line 1304
+    .line 1311
     :cond_25
     iget-object v0, p0, Lorg/telegram/ui/FiltersSetupActivity$ListAdapter;->this$0:Lorg/telegram/ui/FiltersSetupActivity;
 
@@ -3227,7 +3236,7 @@
 
     if-ne p2, v0, :cond_26
 
-    .line 1305
+    .line 1312
     sget p2, Lorg/telegram/messenger/R$string;->topics_catalog:I
 
     invoke-static {p2}, Lorg/telegram/messenger/LocaleController;->getInternalString(I)Ljava/lang/String;
@@ -3238,7 +3247,7 @@
 
     goto :goto_7
 
-    .line 1306
+    .line 1313
     :cond_26
     iget-object v0, p0, Lorg/telegram/ui/FiltersSetupActivity$ListAdapter;->this$0:Lorg/telegram/ui/FiltersSetupActivity;
 
@@ -3248,7 +3257,7 @@
 
     if-ne p2, v0, :cond_27
 
-    .line 1307
+    .line 1314
     sget p2, Lorg/telegram/messenger/R$string;->folder_tabs_settings_header:I
 
     invoke-static {p2}, Lorg/telegram/messenger/LocaleController;->getInternalString(I)Ljava/lang/String;
@@ -3259,7 +3268,7 @@
 
     goto :goto_7
 
-    .line 1309
+    .line 1316
     :cond_27
     sget p2, Lorg/telegram/messenger/R$string;->folder_tabs_sorting_settings_item_title:I
 
@@ -3271,14 +3280,14 @@
 
     goto :goto_7
 
-    .line 1294
+    .line 1301
     :cond_28
     :goto_6
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     check-cast p1, Lorg/telegram/ui/Cells/TextCell;
 
-    .line 1295
+    .line 1302
     iget-object v1, p0, Lorg/telegram/ui/FiltersSetupActivity$ListAdapter;->this$0:Lorg/telegram/ui/FiltersSetupActivity;
 
     invoke-static {v1}, Lorg/telegram/ui/FiltersSetupActivity;->access$1400(Lorg/telegram/ui/FiltersSetupActivity;)I
@@ -3287,7 +3296,7 @@
 
     if-ne p2, v1, :cond_29
 
-    .line 1296
+    .line 1303
     sget p2, Lorg/telegram/messenger/R$string;->topics_catalog_update_manually:I
 
     invoke-static {p2}, Lorg/telegram/messenger/LocaleController;->getInternalString(I)Ljava/lang/String;
@@ -3298,7 +3307,7 @@
 
     goto :goto_7
 
-    .line 1298
+    .line 1305
     :cond_29
     sget p2, Lorg/telegram/messenger/R$string;->folder_tabs_sorting_settings:I
 
@@ -3316,21 +3325,21 @@
 .method public onCreateViewHolder(Landroid/view/ViewGroup;I)Landroidx/recyclerview/widget/RecyclerView$ViewHolder;
     .locals 2
 
-    .line 1016
-    sget p1, Lcom/smedialink/common/IdFabric$ViewTypes;->TEXT_CHECK:I
+    .line 1022
+    sget p1, Lcom/iMe/common/IdFabric$ViewTypes;->TEXT_CHECK:I
 
     const-string v0, "windowBackgroundWhite"
 
     if-ne p2, p1, :cond_0
 
-    .line 1017
+    .line 1023
     new-instance p1, Lorg/telegram/ui/Cells/TextCheckCell;
 
     iget-object p2, p0, Lorg/telegram/ui/FiltersSetupActivity$ListAdapter;->mContext:Landroid/content/Context;
 
     invoke-direct {p1, p2}, Lorg/telegram/ui/Cells/TextCheckCell;-><init>(Landroid/content/Context;)V
 
-    .line 1018
+    .line 1024
     invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
 
     move-result p2
@@ -3339,47 +3348,47 @@
 
     goto/16 :goto_0
 
-    .line 1019
+    .line 1025
     :cond_0
-    sget p1, Lcom/smedialink/common/IdFabric$ViewTypes;->TEXT_SETTINGS:I
+    sget p1, Lcom/iMe/common/IdFabric$ViewTypes;->TEXT_SETTINGS:I
 
     const/4 v1, 0x1
 
     if-ne p2, p1, :cond_1
 
-    .line 1020
+    .line 1026
     new-instance p1, Lorg/telegram/ui/Cells/TextSettingsCell;
 
     iget-object p2, p0, Lorg/telegram/ui/FiltersSetupActivity$ListAdapter;->mContext:Landroid/content/Context;
 
     invoke-direct {p1, p2}, Lorg/telegram/ui/Cells/TextSettingsCell;-><init>(Landroid/content/Context;)V
 
-    .line 1021
+    .line 1027
     invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
 
     move-result p2
 
     invoke-virtual {p1, p2}, Landroid/widget/FrameLayout;->setBackgroundColor(I)V
 
-    .line 1022
+    .line 1028
     invoke-virtual {p1, v1}, Lorg/telegram/ui/Cells/TextSettingsCell;->setCanDisable(Z)V
 
     goto/16 :goto_0
 
-    .line 1024
+    .line 1030
     :cond_1
-    sget p1, Lcom/smedialink/common/IdFabric$ViewTypes;->TEXT:I
+    sget p1, Lcom/iMe/common/IdFabric$ViewTypes;->TEXT:I
 
     if-ne p2, p1, :cond_2
 
-    .line 1025
+    .line 1031
     new-instance p1, Lorg/telegram/ui/Cells/TextCell;
 
     iget-object p2, p0, Lorg/telegram/ui/FiltersSetupActivity$ListAdapter;->mContext:Landroid/content/Context;
 
     invoke-direct {p1, p2}, Lorg/telegram/ui/Cells/TextCell;-><init>(Landroid/content/Context;)V
 
-    .line 1026
+    .line 1032
     invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
 
     move-result p2
@@ -3388,20 +3397,20 @@
 
     goto/16 :goto_0
 
-    .line 1027
+    .line 1033
     :cond_2
-    sget p1, Lcom/smedialink/common/IdFabric$ViewTypes;->NOTIFICATION_CHECK:I
+    sget p1, Lcom/iMe/common/IdFabric$ViewTypes;->NOTIFICATION_CHECK:I
 
     if-ne p2, p1, :cond_3
 
-    .line 1028
+    .line 1034
     new-instance p1, Lorg/telegram/ui/Cells/NotificationsCheckCell;
 
     iget-object p2, p0, Lorg/telegram/ui/FiltersSetupActivity$ListAdapter;->mContext:Landroid/content/Context;
 
     invoke-direct {p1, p2}, Lorg/telegram/ui/Cells/NotificationsCheckCell;-><init>(Landroid/content/Context;)V
 
-    .line 1029
+    .line 1035
     invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
 
     move-result p2
@@ -3427,21 +3436,21 @@
 
     if-eq p2, p1, :cond_4
 
-    .line 1181
+    .line 1187
     new-instance p1, Lorg/telegram/ui/FiltersSetupActivity$SuggestedFilterCell;
 
     iget-object p2, p0, Lorg/telegram/ui/FiltersSetupActivity$ListAdapter;->mContext:Landroid/content/Context;
 
     invoke-direct {p1, p2}, Lorg/telegram/ui/FiltersSetupActivity$SuggestedFilterCell;-><init>(Landroid/content/Context;)V
 
-    .line 1182
+    .line 1188
     invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
 
     move-result p2
 
     invoke-virtual {p1, p2}, Landroid/widget/FrameLayout;->setBackgroundColor(I)V
 
-    .line 1183
+    .line 1189
     new-instance p2, Lorg/telegram/ui/FiltersSetupActivity$ListAdapter$$ExternalSyntheticLambda3;
 
     invoke-direct {p2, p0, p1}, Lorg/telegram/ui/FiltersSetupActivity$ListAdapter$$ExternalSyntheticLambda3;-><init>(Lorg/telegram/ui/FiltersSetupActivity$ListAdapter;Lorg/telegram/ui/FiltersSetupActivity$SuggestedFilterCell;)V
@@ -3450,7 +3459,7 @@
 
     goto :goto_0
 
-    .line 1176
+    .line 1182
     :cond_4
     new-instance p1, Lorg/telegram/ui/FiltersSetupActivity$TextCell;
 
@@ -3460,7 +3469,7 @@
 
     invoke-direct {p1, p2, v1}, Lorg/telegram/ui/FiltersSetupActivity$TextCell;-><init>(Lorg/telegram/ui/FiltersSetupActivity;Landroid/content/Context;)V
 
-    .line 1177
+    .line 1183
     invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
 
     move-result p2
@@ -3469,7 +3478,7 @@
 
     goto :goto_0
 
-    .line 1173
+    .line 1179
     :cond_5
     new-instance p1, Lorg/telegram/ui/Cells/ShadowSectionCell;
 
@@ -3479,7 +3488,7 @@
 
     goto :goto_0
 
-    .line 1041
+    .line 1047
     :cond_6
     new-instance p1, Lorg/telegram/ui/FiltersSetupActivity$FilterCell;
 
@@ -3489,21 +3498,21 @@
 
     invoke-direct {p1, p2, v1}, Lorg/telegram/ui/FiltersSetupActivity$FilterCell;-><init>(Lorg/telegram/ui/FiltersSetupActivity;Landroid/content/Context;)V
 
-    .line 1042
+    .line 1048
     invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
 
     move-result p2
 
     invoke-virtual {p1, p2}, Landroid/widget/FrameLayout;->setBackgroundColor(I)V
 
-    .line 1043
+    .line 1049
     new-instance p2, Lorg/telegram/ui/FiltersSetupActivity$ListAdapter$$ExternalSyntheticLambda4;
 
     invoke-direct {p2, p0, p1}, Lorg/telegram/ui/FiltersSetupActivity$ListAdapter$$ExternalSyntheticLambda4;-><init>(Lorg/telegram/ui/FiltersSetupActivity$ListAdapter;Lorg/telegram/ui/FiltersSetupActivity$FilterCell;)V
 
     invoke-virtual {p1, p2}, Lorg/telegram/ui/FiltersSetupActivity$FilterCell;->setOnReorderButtonTouchListener(Landroid/view/View$OnTouchListener;)V
 
-    .line 1049
+    .line 1055
     new-instance p2, Lorg/telegram/ui/FiltersSetupActivity$ListAdapter$$ExternalSyntheticLambda2;
 
     invoke-direct {p2, p0}, Lorg/telegram/ui/FiltersSetupActivity$ListAdapter$$ExternalSyntheticLambda2;-><init>(Lorg/telegram/ui/FiltersSetupActivity$ListAdapter;)V
@@ -3512,7 +3521,7 @@
 
     goto :goto_0
 
-    .line 1037
+    .line 1043
     :cond_7
     new-instance p1, Lorg/telegram/ui/FiltersSetupActivity$HintInnerCell;
 
@@ -3522,7 +3531,7 @@
 
     invoke-direct {p1, p2, v0}, Lorg/telegram/ui/FiltersSetupActivity$HintInnerCell;-><init>(Lorg/telegram/ui/FiltersSetupActivity;Landroid/content/Context;)V
 
-    .line 1038
+    .line 1044
     iget-object p2, p0, Lorg/telegram/ui/FiltersSetupActivity$ListAdapter;->mContext:Landroid/content/Context;
 
     sget v0, Lorg/telegram/messenger/R$drawable;->greydivider_top:I
@@ -3537,7 +3546,7 @@
 
     goto :goto_0
 
-    .line 1033
+    .line 1039
     :cond_8
     new-instance p1, Lorg/telegram/ui/Cells/HeaderCell;
 
@@ -3545,14 +3554,14 @@
 
     invoke-direct {p1, p2}, Lorg/telegram/ui/Cells/HeaderCell;-><init>(Landroid/content/Context;)V
 
-    .line 1034
+    .line 1040
     invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
 
     move-result p2
 
     invoke-virtual {p1, p2}, Landroid/view/View;->setBackgroundColor(I)V
 
-    .line 1278
+    .line 1285
     :goto_0
     new-instance p2, Lorg/telegram/ui/Components/RecyclerListView$Holder;
 
@@ -3564,7 +3573,7 @@
 .method public swapElements(II)V
     .locals 8
 
-    .line 1449
+    .line 1456
     iget-object v0, p0, Lorg/telegram/ui/FiltersSetupActivity$ListAdapter;->this$0:Lorg/telegram/ui/FiltersSetupActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/FiltersSetupActivity;->access$100(Lorg/telegram/ui/FiltersSetupActivity;)I
@@ -3573,7 +3582,7 @@
 
     sub-int v0, p1, v0
 
-    .line 1450
+    .line 1457
     iget-object v1, p0, Lorg/telegram/ui/FiltersSetupActivity$ListAdapter;->this$0:Lorg/telegram/ui/FiltersSetupActivity;
 
     invoke-static {v1}, Lorg/telegram/ui/FiltersSetupActivity;->access$100(Lorg/telegram/ui/FiltersSetupActivity;)I
@@ -3582,7 +3591,7 @@
 
     sub-int v1, p2, v1
 
-    .line 1451
+    .line 1458
     iget-object v2, p0, Lorg/telegram/ui/FiltersSetupActivity$ListAdapter;->this$0:Lorg/telegram/ui/FiltersSetupActivity;
 
     invoke-static {v2}, Lorg/telegram/ui/FiltersSetupActivity;->access$200(Lorg/telegram/ui/FiltersSetupActivity;)I
@@ -3597,18 +3606,18 @@
 
     sub-int/2addr v2, v3
 
-    .line 1453
+    .line 1460
     iget-object v3, p0, Lorg/telegram/ui/FiltersSetupActivity$ListAdapter;->this$0:Lorg/telegram/ui/FiltersSetupActivity;
 
-    invoke-static {v3}, Lorg/telegram/ui/FiltersSetupActivity;->access$000(Lorg/telegram/ui/FiltersSetupActivity;)Lorg/fork/enums/FilterActivityType;
+    invoke-static {v3}, Lorg/telegram/ui/FiltersSetupActivity;->access$000(Lorg/telegram/ui/FiltersSetupActivity;)Lcom/iMe/fork/enums/FilterActivityType;
 
     move-result-object v3
 
-    sget-object v4, Lorg/fork/enums/FilterActivityType;->FILTER:Lorg/fork/enums/FilterActivityType;
+    sget-object v4, Lcom/iMe/fork/enums/FilterActivityType;->FILTER:Lcom/iMe/fork/enums/FilterActivityType;
 
     if-ne v3, v4, :cond_0
 
-    .line 1454
+    .line 1461
     iget-object v3, p0, Lorg/telegram/ui/FiltersSetupActivity$ListAdapter;->this$0:Lorg/telegram/ui/FiltersSetupActivity;
 
     invoke-static {v3}, Lorg/telegram/ui/FiltersSetupActivity;->access$2800(Lorg/telegram/ui/FiltersSetupActivity;)Z
@@ -3634,21 +3643,21 @@
 
     goto :goto_0
 
-    .line 1464
+    .line 1471
     :cond_1
     iget-object v2, p0, Lorg/telegram/ui/FiltersSetupActivity$ListAdapter;->this$0:Lorg/telegram/ui/FiltersSetupActivity;
 
-    invoke-static {v2}, Lorg/telegram/ui/FiltersSetupActivity;->access$000(Lorg/telegram/ui/FiltersSetupActivity;)Lorg/fork/enums/FilterActivityType;
+    invoke-static {v2}, Lorg/telegram/ui/FiltersSetupActivity;->access$000(Lorg/telegram/ui/FiltersSetupActivity;)Lcom/iMe/fork/enums/FilterActivityType;
 
     move-result-object v2
 
-    sget-object v3, Lorg/fork/enums/FilterActivityType;->TOPIC:Lorg/fork/enums/FilterActivityType;
+    sget-object v3, Lcom/iMe/fork/enums/FilterActivityType;->TOPIC:Lcom/iMe/fork/enums/FilterActivityType;
 
     const/4 v4, 0x1
 
     if-ne v2, v3, :cond_2
 
-    .line 1465
+    .line 1472
     iget-object v2, p0, Lorg/telegram/ui/FiltersSetupActivity$ListAdapter;->this$0:Lorg/telegram/ui/FiltersSetupActivity;
 
     invoke-static {v2}, Lorg/telegram/ui/FiltersSetupActivity;->access$2700(Lorg/telegram/ui/FiltersSetupActivity;)Ljava/util/List;
@@ -3659,13 +3668,13 @@
 
     move-result-object v2
 
-    check-cast v2, Lcom/smedialink/storage/domain/model/topics/TopicModel;
+    check-cast v2, Lcom/iMe/storage/domain/model/topics/TopicModel;
 
-    invoke-virtual {v2}, Lcom/smedialink/storage/domain/model/topics/TopicModel;->getTopicId()J
+    invoke-virtual {v2}, Lcom/iMe/storage/domain/model/topics/TopicModel;->getTopicId()J
 
     move-result-wide v2
 
-    .line 1466
+    .line 1473
     iget-object v5, p0, Lorg/telegram/ui/FiltersSetupActivity$ListAdapter;->this$0:Lorg/telegram/ui/FiltersSetupActivity;
 
     invoke-static {v5}, Lorg/telegram/ui/FiltersSetupActivity;->access$2700(Lorg/telegram/ui/FiltersSetupActivity;)Ljava/util/List;
@@ -3676,22 +3685,22 @@
 
     move-result-object v5
 
-    check-cast v5, Lcom/smedialink/storage/domain/model/topics/TopicModel;
+    check-cast v5, Lcom/iMe/storage/domain/model/topics/TopicModel;
 
-    invoke-virtual {v5}, Lcom/smedialink/storage/domain/model/topics/TopicModel;->getTopicId()J
+    invoke-virtual {v5}, Lcom/iMe/storage/domain/model/topics/TopicModel;->getTopicId()J
 
     move-result-wide v5
 
-    .line 1467
+    .line 1474
     iget-object v7, p0, Lorg/telegram/ui/FiltersSetupActivity$ListAdapter;->this$0:Lorg/telegram/ui/FiltersSetupActivity;
 
-    invoke-virtual {v7}, Lorg/telegram/ui/ActionBar/BaseFragment;->getTopicsController()Lorg/fork/controller/ForkTopicsController;
+    invoke-virtual {v7}, Lorg/telegram/ui/ActionBar/BaseFragment;->getTopicsController()Lcom/iMe/fork/controller/ForkTopicsController;
 
     move-result-object v7
 
-    invoke-virtual {v7, v2, v3, v5, v6}, Lorg/fork/controller/ForkTopicsController;->swapTopics(JJ)V
+    invoke-virtual {v7, v2, v3, v5, v6}, Lcom/iMe/fork/controller/ForkTopicsController;->swapTopics(JJ)V
 
-    .line 1468
+    .line 1475
     iget-object v2, p0, Lorg/telegram/ui/FiltersSetupActivity$ListAdapter;->this$0:Lorg/telegram/ui/FiltersSetupActivity;
 
     invoke-static {v2}, Lorg/telegram/ui/FiltersSetupActivity;->access$2700(Lorg/telegram/ui/FiltersSetupActivity;)Ljava/util/List;
@@ -3700,17 +3709,17 @@
 
     invoke-static {v2, v0, v1}, Ljava/util/Collections;->swap(Ljava/util/List;II)V
 
-    .line 1469
+    .line 1476
     invoke-virtual {p0, p1, p2}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->notifyItemMoved(II)V
 
-    .line 1470
+    .line 1477
     iget-object p1, p0, Lorg/telegram/ui/FiltersSetupActivity$ListAdapter;->this$0:Lorg/telegram/ui/FiltersSetupActivity;
 
     invoke-static {p1, v4}, Lorg/telegram/ui/FiltersSetupActivity;->access$3902(Lorg/telegram/ui/FiltersSetupActivity;Z)Z
 
     return-void
 
-    .line 1474
+    .line 1481
     :cond_2
     iget-object v2, p0, Lorg/telegram/ui/FiltersSetupActivity$ListAdapter;->this$0:Lorg/telegram/ui/FiltersSetupActivity;
 
@@ -3720,43 +3729,43 @@
 
     iget-object v2, v2, Lorg/telegram/messenger/MessagesController;->dialogFilters:Ljava/util/ArrayList;
 
-    .line 1475
+    .line 1482
     invoke-virtual {v2, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v3
 
     check-cast v3, Lorg/telegram/messenger/MessagesController$DialogFilter;
 
-    .line 1476
+    .line 1483
     invoke-virtual {v2, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v5
 
     check-cast v5, Lorg/telegram/messenger/MessagesController$DialogFilter;
 
-    .line 1477
+    .line 1484
     iget v6, v3, Lorg/telegram/messenger/MessagesController$DialogFilter;->order:I
 
-    .line 1478
+    .line 1485
     iget v7, v5, Lorg/telegram/messenger/MessagesController$DialogFilter;->order:I
 
     iput v7, v3, Lorg/telegram/messenger/MessagesController$DialogFilter;->order:I
 
-    .line 1479
+    .line 1486
     iput v6, v5, Lorg/telegram/messenger/MessagesController$DialogFilter;->order:I
 
-    .line 1480
+    .line 1487
     invoke-virtual {v2, v0, v5}, Ljava/util/ArrayList;->set(ILjava/lang/Object;)Ljava/lang/Object;
 
-    .line 1481
+    .line 1488
     invoke-virtual {v2, v1, v3}, Ljava/util/ArrayList;->set(ILjava/lang/Object;)Ljava/lang/Object;
 
-    .line 1482
+    .line 1489
     iget-object v0, p0, Lorg/telegram/ui/FiltersSetupActivity$ListAdapter;->this$0:Lorg/telegram/ui/FiltersSetupActivity;
 
     invoke-static {v0, v4}, Lorg/telegram/ui/FiltersSetupActivity;->access$3902(Lorg/telegram/ui/FiltersSetupActivity;Z)Z
 
-    .line 1483
+    .line 1490
     invoke-virtual {p0, p1, p2}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->notifyItemMoved(II)V
 
     :cond_3

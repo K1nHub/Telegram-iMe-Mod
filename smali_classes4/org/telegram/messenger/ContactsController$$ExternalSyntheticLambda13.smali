@@ -10,15 +10,17 @@
 
 .field public final synthetic f$1:I
 
-.field public final synthetic f$2:Ljava/util/HashMap;
+.field public final synthetic f$2:Ljava/util/ArrayList;
 
-.field public final synthetic f$3:Z
+.field public final synthetic f$3:Landroidx/collection/LongSparseArray;
 
-.field public final synthetic f$4:Z
+.field public final synthetic f$4:Ljava/util/ArrayList;
+
+.field public final synthetic f$5:Z
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/messenger/ContactsController;ILjava/util/HashMap;ZZ)V
+.method public synthetic constructor <init>(Lorg/telegram/messenger/ContactsController;ILjava/util/ArrayList;Landroidx/collection/LongSparseArray;Ljava/util/ArrayList;Z)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -27,11 +29,13 @@
 
     iput p2, p0, Lorg/telegram/messenger/ContactsController$$ExternalSyntheticLambda13;->f$1:I
 
-    iput-object p3, p0, Lorg/telegram/messenger/ContactsController$$ExternalSyntheticLambda13;->f$2:Ljava/util/HashMap;
+    iput-object p3, p0, Lorg/telegram/messenger/ContactsController$$ExternalSyntheticLambda13;->f$2:Ljava/util/ArrayList;
 
-    iput-boolean p4, p0, Lorg/telegram/messenger/ContactsController$$ExternalSyntheticLambda13;->f$3:Z
+    iput-object p4, p0, Lorg/telegram/messenger/ContactsController$$ExternalSyntheticLambda13;->f$3:Landroidx/collection/LongSparseArray;
 
-    iput-boolean p5, p0, Lorg/telegram/messenger/ContactsController$$ExternalSyntheticLambda13;->f$4:Z
+    iput-object p5, p0, Lorg/telegram/messenger/ContactsController$$ExternalSyntheticLambda13;->f$4:Ljava/util/ArrayList;
+
+    iput-boolean p6, p0, Lorg/telegram/messenger/ContactsController$$ExternalSyntheticLambda13;->f$5:Z
 
     return-void
 .end method
@@ -39,19 +43,21 @@
 
 # virtual methods
 .method public final run()V
-    .locals 5
+    .locals 6
 
     iget-object v0, p0, Lorg/telegram/messenger/ContactsController$$ExternalSyntheticLambda13;->f$0:Lorg/telegram/messenger/ContactsController;
 
     iget v1, p0, Lorg/telegram/messenger/ContactsController$$ExternalSyntheticLambda13;->f$1:I
 
-    iget-object v2, p0, Lorg/telegram/messenger/ContactsController$$ExternalSyntheticLambda13;->f$2:Ljava/util/HashMap;
+    iget-object v2, p0, Lorg/telegram/messenger/ContactsController$$ExternalSyntheticLambda13;->f$2:Ljava/util/ArrayList;
 
-    iget-boolean v3, p0, Lorg/telegram/messenger/ContactsController$$ExternalSyntheticLambda13;->f$3:Z
+    iget-object v3, p0, Lorg/telegram/messenger/ContactsController$$ExternalSyntheticLambda13;->f$3:Landroidx/collection/LongSparseArray;
 
-    iget-boolean v4, p0, Lorg/telegram/messenger/ContactsController$$ExternalSyntheticLambda13;->f$4:Z
+    iget-object v4, p0, Lorg/telegram/messenger/ContactsController$$ExternalSyntheticLambda13;->f$4:Ljava/util/ArrayList;
 
-    invoke-static {v0, v1, v2, v3, v4}, Lorg/telegram/messenger/ContactsController;->$r8$lambda$kdRprHydgFo0GvQhAdQb0y1uLCk(Lorg/telegram/messenger/ContactsController;ILjava/util/HashMap;ZZ)V
+    iget-boolean v5, p0, Lorg/telegram/messenger/ContactsController$$ExternalSyntheticLambda13;->f$5:Z
+
+    invoke-static/range {v0 .. v5}, Lorg/telegram/messenger/ContactsController;->$r8$lambda$F_7nCxDXdmIy7jFPrgNLn1rlkbE(Lorg/telegram/messenger/ContactsController;ILjava/util/ArrayList;Landroidx/collection/LongSparseArray;Ljava/util/ArrayList;Z)V
 
     return-void
 .end method

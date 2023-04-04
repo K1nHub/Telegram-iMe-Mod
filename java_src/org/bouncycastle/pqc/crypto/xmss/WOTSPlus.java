@@ -40,7 +40,7 @@ final class WOTSPlus {
             for (int i4 = 0; i4 < digestSize; i4++) {
                 bArr2[i4] = (byte) (chain[i4] ^ PRF2[i4]);
             }
-            return this.khf.m63F(PRF, bArr2);
+            return this.khf.m58F(PRF, bArr2);
         }
         throw new IllegalArgumentException("max chain length must not be greater than w");
     }

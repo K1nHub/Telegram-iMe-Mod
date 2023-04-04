@@ -15,7 +15,7 @@ public abstract class CoroutineDispatcher extends AbstractCoroutineContextElemen
     public static final Key Key = new Key(null);
 
     /* renamed from: dispatch */
-    public abstract void mo1487dispatch(CoroutineContext coroutineContext, Runnable runnable);
+    public abstract void mo1585dispatch(CoroutineContext coroutineContext, Runnable runnable);
 
     public boolean isDispatchNeeded(CoroutineContext coroutineContext) {
         return true;
@@ -45,10 +45,10 @@ public abstract class CoroutineDispatcher extends AbstractCoroutineContextElemen
         /* compiled from: CoroutineDispatcher.kt */
         /* renamed from: kotlinx.coroutines.CoroutineDispatcher$Key$1 */
         /* loaded from: classes4.dex */
-        static final class C30351 extends Lambda implements Function1<CoroutineContext.Element, CoroutineDispatcher> {
-            public static final C30351 INSTANCE = new C30351();
+        static final class C31111 extends Lambda implements Function1<CoroutineContext.Element, CoroutineDispatcher> {
+            public static final C31111 INSTANCE = new C31111();
 
-            C30351() {
+            C31111() {
                 super(1);
             }
 
@@ -62,7 +62,7 @@ public abstract class CoroutineDispatcher extends AbstractCoroutineContextElemen
         }
 
         private Key() {
-            super(ContinuationInterceptor.Key, C30351.INSTANCE);
+            super(ContinuationInterceptor.Key, C31111.INSTANCE);
         }
     }
 

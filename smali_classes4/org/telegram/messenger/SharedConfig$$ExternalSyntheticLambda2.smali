@@ -35,7 +35,7 @@
 .method public final run()V
     .locals 0
 
-    invoke-static {}, Lorg/telegram/messenger/SharedConfig;->saveConfig()V
+    invoke-static {}, Lorg/telegram/messenger/SharedConfig;->$r8$lambda$5oW1MY_rORS8gfAUxI_pQesim5c()V
 
     return-void
 .end method

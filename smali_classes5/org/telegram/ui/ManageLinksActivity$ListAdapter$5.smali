@@ -1,5 +1,5 @@
 .class Lorg/telegram/ui/ManageLinksActivity$ListAdapter$5;
-.super Lcom/smedialink/ui/common/SimpleTextWatcher;
+.super Lcom/iMe/ui/common/SimpleTextWatcher;
 .source "ManageLinksActivity.java"
 
 
@@ -24,12 +24,12 @@
 .method constructor <init>(Lorg/telegram/ui/ManageLinksActivity$ListAdapter;Lorg/telegram/ui/Components/LinkActionView;)V
     .locals 0
 
-    .line 2335
+    .line 2334
     iput-object p1, p0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter$5;->this$1:Lorg/telegram/ui/ManageLinksActivity$ListAdapter;
 
     iput-object p2, p0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter$5;->val$linkActionView:Lorg/telegram/ui/Components/LinkActionView;
 
-    invoke-direct {p0}, Lcom/smedialink/ui/common/SimpleTextWatcher;-><init>()V
+    invoke-direct {p0}, Lcom/iMe/ui/common/SimpleTextWatcher;-><init>()V
 
     return-void
 .end method
@@ -39,7 +39,7 @@
 .method public onTextChanged(Ljava/lang/CharSequence;III)V
     .locals 0
 
-    .line 2338
+    .line 2337
     iget-object p1, p0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter$5;->this$1:Lorg/telegram/ui/ManageLinksActivity$ListAdapter;
 
     iget-object p1, p1, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->this$0:Lorg/telegram/ui/ManageLinksActivity;

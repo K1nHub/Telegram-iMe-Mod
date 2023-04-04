@@ -24,7 +24,7 @@
 .method constructor <init>(Lorg/telegram/ui/Cells/ChatMessageCell;Z)V
     .locals 0
 
-    .line 16508
+    .line 16515
     iput-object p1, p0, Lorg/telegram/ui/Cells/ChatMessageCell$11;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     iput-boolean p2, p0, Lorg/telegram/ui/Cells/ChatMessageCell$11;->val$fromParent:Z
@@ -39,7 +39,7 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 3
 
-    .line 16511
+    .line 16518
     iget-object p1, p0, Lorg/telegram/ui/Cells/ChatMessageCell$11;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     invoke-static {p1}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$7900(Lorg/telegram/ui/Cells/ChatMessageCell;)Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;
@@ -50,7 +50,7 @@
 
     move-result p1
 
-    .line 16512
+    .line 16519
     iget-object v0, p0, Lorg/telegram/ui/Cells/ChatMessageCell$11;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     invoke-static {v0}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$8000(Lorg/telegram/ui/Cells/ChatMessageCell;)I
@@ -59,7 +59,7 @@
 
     if-eq v0, p1, :cond_0
 
-    .line 16513
+    .line 16520
     iget-object v0, p0, Lorg/telegram/ui/Cells/ChatMessageCell$11;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     invoke-static {v0}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$8000(Lorg/telegram/ui/Cells/ChatMessageCell;)I
@@ -72,7 +72,7 @@
 
     goto :goto_0
 
-    .line 16515
+    .line 16522
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/Cells/ChatMessageCell$11;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
@@ -80,7 +80,7 @@
 
     invoke-static {p1, v0}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$8202(Lorg/telegram/ui/Cells/ChatMessageCell;Z)Z
 
-    .line 16516
+    .line 16523
     iget-object p1, p0, Lorg/telegram/ui/Cells/ChatMessageCell$11;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     invoke-static {p1}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$7900(Lorg/telegram/ui/Cells/ChatMessageCell;)Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;

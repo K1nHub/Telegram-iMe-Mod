@@ -6,9 +6,9 @@ import java.util.Iterator;
 import java.util.Map;
 import java.util.NoSuchElementException;
 import java.util.Set;
-import p034j$.util.Iterator;
-import p034j$.util.Map;
-import p034j$.util.function.Consumer;
+import p035j$.util.Iterator;
+import p035j$.util.Map;
+import p035j$.util.function.Consumer;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: classes.dex */
 public abstract class MapCollections<K, V> {
@@ -35,13 +35,13 @@ public abstract class MapCollections<K, V> {
     protected abstract V colSetValue(int i, V v);
 
     /* loaded from: classes.dex */
-    final class ArrayIterator<T> implements Iterator<T>, p034j$.util.Iterator {
+    final class ArrayIterator<T> implements Iterator<T>, p035j$.util.Iterator {
         boolean mCanRemove = false;
         int mIndex;
         final int mOffset;
         int mSize;
 
-        @Override // p034j$.util.Iterator
+        @Override // p035j$.util.Iterator
         public /* synthetic */ void forEachRemaining(Consumer consumer) {
             Iterator.CC.$default$forEachRemaining(this, consumer);
         }
@@ -51,12 +51,12 @@ public abstract class MapCollections<K, V> {
             this.mSize = MapCollections.this.colGetSize();
         }
 
-        @Override // java.util.Iterator, p034j$.util.Iterator
+        @Override // java.util.Iterator, p035j$.util.Iterator
         public boolean hasNext() {
             return this.mIndex < this.mSize;
         }
 
-        @Override // java.util.Iterator, p034j$.util.Iterator
+        @Override // java.util.Iterator, p035j$.util.Iterator
         public T next() {
             if (!hasNext()) {
                 throw new NoSuchElementException();
@@ -67,7 +67,7 @@ public abstract class MapCollections<K, V> {
             return t;
         }
 
-        @Override // java.util.Iterator, p034j$.util.Iterator
+        @Override // java.util.Iterator, p035j$.util.Iterator
         public void remove() {
             if (!this.mCanRemove) {
                 throw new IllegalStateException();
@@ -81,12 +81,12 @@ public abstract class MapCollections<K, V> {
     }
 
     /* loaded from: classes.dex */
-    final class MapIterator implements java.util.Iterator<Map.Entry<K, V>>, Map.Entry<K, V>, p034j$.util.Iterator, Map.Entry {
+    final class MapIterator implements java.util.Iterator<Map.Entry<K, V>>, Map.Entry<K, V>, p035j$.util.Iterator, Map.Entry {
         int mEnd;
         boolean mEntryValid = false;
         int mIndex = -1;
 
-        @Override // p034j$.util.Iterator
+        @Override // p035j$.util.Iterator
         public /* synthetic */ void forEachRemaining(Consumer consumer) {
             Iterator.CC.$default$forEachRemaining(this, consumer);
         }
@@ -95,12 +95,12 @@ public abstract class MapCollections<K, V> {
             this.mEnd = MapCollections.this.colGetSize() - 1;
         }
 
-        @Override // java.util.Iterator, p034j$.util.Iterator
+        @Override // java.util.Iterator, p035j$.util.Iterator
         public boolean hasNext() {
             return this.mIndex < this.mEnd;
         }
 
-        @Override // java.util.Iterator, p034j$.util.Iterator
+        @Override // java.util.Iterator, p035j$.util.Iterator
         public Map.Entry<K, V> next() {
             if (!hasNext()) {
                 throw new NoSuchElementException();
@@ -110,7 +110,7 @@ public abstract class MapCollections<K, V> {
             return this;
         }
 
-        @Override // java.util.Iterator, p034j$.util.Iterator
+        @Override // java.util.Iterator, p035j$.util.Iterator
         public void remove() {
             if (!this.mEntryValid) {
                 throw new IllegalStateException();
@@ -121,7 +121,7 @@ public abstract class MapCollections<K, V> {
             this.mEntryValid = false;
         }
 
-        @Override // java.util.Map.Entry, p034j$.util.Map.Entry
+        @Override // java.util.Map.Entry, p035j$.util.Map.Entry
         public K getKey() {
             if (!this.mEntryValid) {
                 throw new IllegalStateException("This container does not support retaining Map.Entry objects");
@@ -129,7 +129,7 @@ public abstract class MapCollections<K, V> {
             return (K) MapCollections.this.colGetEntry(this.mIndex, 0);
         }
 
-        @Override // java.util.Map.Entry, p034j$.util.Map.Entry
+        @Override // java.util.Map.Entry, p035j$.util.Map.Entry
         public V getValue() {
             if (!this.mEntryValid) {
                 throw new IllegalStateException("This container does not support retaining Map.Entry objects");
@@ -137,7 +137,7 @@ public abstract class MapCollections<K, V> {
             return (V) MapCollections.this.colGetEntry(this.mIndex, 1);
         }
 
-        @Override // java.util.Map.Entry, p034j$.util.Map.Entry
+        @Override // java.util.Map.Entry, p035j$.util.Map.Entry
         public V setValue(V v) {
             if (!this.mEntryValid) {
                 throw new IllegalStateException("This container does not support retaining Map.Entry objects");
@@ -145,7 +145,7 @@ public abstract class MapCollections<K, V> {
             return (V) MapCollections.this.colSetValue(this.mIndex, v);
         }
 
-        @Override // java.util.Map.Entry, p034j$.util.Map.Entry
+        @Override // java.util.Map.Entry, p035j$.util.Map.Entry
         public boolean equals(Object obj) {
             if (!this.mEntryValid) {
                 throw new IllegalStateException("This container does not support retaining Map.Entry objects");
@@ -157,7 +157,7 @@ public abstract class MapCollections<K, V> {
             return false;
         }
 
-        @Override // java.util.Map.Entry, p034j$.util.Map.Entry
+        @Override // java.util.Map.Entry, p035j$.util.Map.Entry
         public int hashCode() {
             if (!this.mEntryValid) {
                 throw new IllegalStateException("This container does not support retaining Map.Entry objects");

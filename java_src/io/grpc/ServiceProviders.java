@@ -6,10 +6,10 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.ServiceConfigurationError;
 import java.util.ServiceLoader;
-/* loaded from: classes.dex */
+/* loaded from: classes4.dex */
 final class ServiceProviders {
 
-    /* loaded from: classes.dex */
+    /* loaded from: classes4.dex */
     public interface PriorityAccessor<T> {
         int getPriority(T t);
 

@@ -48,11 +48,11 @@
 
     if-gez v2, :cond_0
 
-    invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getForkCommonController()Lorg/fork/controller/ForkCommonController;
+    invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getForkCommonController()Lcom/iMe/fork/controller/ForkCommonController;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lorg/fork/controller/ForkCommonController;->isQuickReactionEnabled()Z
+    invoke-virtual {v0}, Lcom/iMe/fork/controller/ForkCommonController;->isQuickReactionEnabled()Z
 
     move-result v0
 
@@ -94,7 +94,7 @@
     if-ne p1, v0, :cond_0
 
     .line 201
-    sget p1, Lcom/smedialink/common/IdFabric$ViewTypes;->TEXT_CHECK:I
+    sget p1, Lcom/iMe/common/IdFabric$ViewTypes;->TEXT_CHECK:I
 
     return p1
 
@@ -206,7 +206,7 @@
     move-result v0
 
     .line 161
-    sget v1, Lcom/smedialink/common/IdFabric$ViewTypes;->TEXT_CHECK:I
+    sget v1, Lcom/iMe/common/IdFabric$ViewTypes;->TEXT_CHECK:I
 
     const/4 v2, 0x0
 
@@ -233,11 +233,11 @@
 
     iget-object v0, p0, Lorg/telegram/ui/ReactionsDoubleTapManageActivity$2;->this$0:Lorg/telegram/ui/ReactionsDoubleTapManageActivity;
 
-    invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getForkCommonController()Lorg/fork/controller/ForkCommonController;
+    invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getForkCommonController()Lcom/iMe/fork/controller/ForkCommonController;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lorg/fork/controller/ForkCommonController;->isQuickReactionEnabled()Z
+    invoke-virtual {v0}, Lcom/iMe/fork/controller/ForkCommonController;->isQuickReactionEnabled()Z
 
     move-result v0
 
@@ -268,11 +268,11 @@
 
     iget-object v0, p0, Lorg/telegram/ui/ReactionsDoubleTapManageActivity$2;->this$0:Lorg/telegram/ui/ReactionsDoubleTapManageActivity;
 
-    invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getForkCommonController()Lorg/fork/controller/ForkCommonController;
+    invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getForkCommonController()Lcom/iMe/fork/controller/ForkCommonController;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lorg/fork/controller/ForkCommonController;->isQuickReactionEnabled()Z
+    invoke-virtual {v0}, Lcom/iMe/fork/controller/ForkCommonController;->isQuickReactionEnabled()Z
 
     move-result v0
 
@@ -444,7 +444,7 @@
     .locals 3
 
     .line 113
-    sget p1, Lcom/smedialink/common/IdFabric$ViewTypes;->TEXT_CHECK:I
+    sget p1, Lcom/iMe/common/IdFabric$ViewTypes;->TEXT_CHECK:I
 
     if-ne p2, p1, :cond_0
 

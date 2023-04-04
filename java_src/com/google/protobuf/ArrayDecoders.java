@@ -712,7 +712,7 @@ public final class ArrayDecoders {
         FieldSet<GeneratedMessageLite.ExtensionDescriptor> fieldSet = extendableMessage.extensions;
         int i4 = i >>> 3;
         if (generatedExtension.descriptor.isRepeated() && generatedExtension.descriptor.isPacked()) {
-            switch (C11831.$SwitchMap$com$google$protobuf$WireFormat$FieldType[generatedExtension.getLiteType().ordinal()]) {
+            switch (C11971.$SwitchMap$com$google$protobuf$WireFormat$FieldType[generatedExtension.getLiteType().ordinal()]) {
                 case 1:
                     DoubleArrayList doubleArrayList = new DoubleArrayList();
                     int decodePackedDoubleList = decodePackedDoubleList(bArr, i2, doubleArrayList, registers);
@@ -789,7 +789,7 @@ public final class ArrayDecoders {
             }
             r2 = Integer.valueOf(registers.int1);
         } else {
-            switch (C11831.$SwitchMap$com$google$protobuf$WireFormat$FieldType[generatedExtension.getLiteType().ordinal()]) {
+            switch (C11971.$SwitchMap$com$google$protobuf$WireFormat$FieldType[generatedExtension.getLiteType().ordinal()]) {
                 case 1:
                     r2 = Double.valueOf(decodeDouble(bArr, i2));
                     i2 += 8;
@@ -853,7 +853,7 @@ public final class ArrayDecoders {
         if (generatedExtension.isRepeated()) {
             fieldSet.addRepeatedField(generatedExtension.descriptor, r2);
         } else {
-            int i5 = C11831.$SwitchMap$com$google$protobuf$WireFormat$FieldType[generatedExtension.getLiteType().ordinal()];
+            int i5 = C11971.$SwitchMap$com$google$protobuf$WireFormat$FieldType[generatedExtension.getLiteType().ordinal()];
             if ((i5 == 17 || i5 == 18) && (field = fieldSet.getField(generatedExtension.descriptor)) != null) {
                 r2 = Internal.mergeMessage(field, r2);
             }
@@ -865,7 +865,7 @@ public final class ArrayDecoders {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.google.protobuf.ArrayDecoders$1 */
     /* loaded from: classes3.dex */
-    public static /* synthetic */ class C11831 {
+    public static /* synthetic */ class C11971 {
         static final /* synthetic */ int[] $SwitchMap$com$google$protobuf$WireFormat$FieldType;
 
         static {

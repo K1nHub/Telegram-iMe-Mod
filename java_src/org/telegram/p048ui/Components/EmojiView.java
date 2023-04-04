@@ -60,13 +60,15 @@ import androidx.viewpager.widget.ViewPager;
 import com.google.android.exoplayer2.ExoPlayer;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
-import com.smedialink.p031ui.base.mvp.view.MvpFrameLayout;
-import com.smedialink.p031ui.kikliko.EmojiViewPresenter;
-import com.smedialink.p031ui.kikliko.EmojiViewView;
-import com.smedialink.storage.data.network.model.response.kikliko.GifResponse;
-import com.smedialink.storage.data.network.model.response.kikliko.SearchResponse;
-import com.smedialink.storage.data.network.model.response.kikliko.TagResponse;
-import com.smedialink.utils.extentions.common.ContextExtKt;
+import com.iMe.fork.p025ui.view.KiklikoGifView;
+import com.iMe.fork.utils.Callbacks$Callback1;
+import com.iMe.p032ui.base.mvp.view.MvpFrameLayout;
+import com.iMe.p032ui.kikliko.EmojiViewPresenter;
+import com.iMe.p032ui.kikliko.EmojiViewView;
+import com.iMe.storage.data.network.model.response.kikliko.GifResponse;
+import com.iMe.storage.data.network.model.response.kikliko.SearchResponse;
+import com.iMe.storage.data.network.model.response.kikliko.TagResponse;
+import com.iMe.utils.extentions.common.ContextExtKt;
 import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -79,14 +81,14 @@ import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import moxy.MvpDelegate;
 import moxy.presenter.InjectPresenter;
 import moxy.presenter.ProvidePresenter;
-import org.fork.p046ui.view.KiklikoGifView;
-import org.fork.utils.Callbacks$Callback1;
+import org.koin.core.Koin;
 import org.koin.java.KoinJavaComponent;
 import org.telegram.messenger.AccountInstance;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3301R;
+import org.telegram.messenger.C3316R;
 import org.telegram.messenger.ChatObject;
 import org.telegram.messenger.DocumentObject;
 import org.telegram.messenger.Emoji;
@@ -556,6 +558,20 @@ public class EmojiView extends MvpFrameLayout implements NotificationCenter.Noti
     public static /* synthetic */ void lambda$static$3() {
     }
 
+    @Override // com.iMe.p032ui.base.mvp.view.MvpFrameLayout, org.koin.core.component.KoinComponent
+    public /* bridge */ /* synthetic */ Koin getKoin() {
+        Koin koin;
+        koin = KoinJavaComponent.getKoin();
+        return koin;
+    }
+
+    @Override // com.iMe.p032ui.base.mvp.view.MvpFrameLayout, com.iMe.p032ui.base.mvp.view.ICustomMvpView, moxy.MvpDelegateHolder
+    public /* bridge */ /* synthetic */ MvpDelegate<T> getMvpDelegate() {
+        MvpDelegate<T> mMvpDelegate;
+        mMvpDelegate = getMMvpDelegate();
+        return mMvpDelegate;
+    }
+
     @ProvidePresenter
     public EmojiViewPresenter providePresenter() {
         return (EmojiViewPresenter) KoinJavaComponent.get(EmojiViewPresenter.class);
@@ -665,7 +681,7 @@ public class EmojiView extends MvpFrameLayout implements NotificationCenter.Noti
         }
     }
 
-    @Override // com.smedialink.p031ui.kikliko.EmojiViewView
+    @Override // com.iMe.p032ui.kikliko.EmojiViewView
     public void onKiklikoTagsLoaded(List<TagResponse> list) {
         this.isKiklikoPrepareLoading = false;
         this.isKiklikoPrepared = true;
@@ -674,7 +690,7 @@ public class EmojiView extends MvpFrameLayout implements NotificationCenter.Noti
         updateKiklikoTabs();
     }
 
-    @Override // com.smedialink.p031ui.kikliko.EmojiViewView
+    @Override // com.iMe.p032ui.kikliko.EmojiViewView
     public void onKiklikoSearchResultsLoaded(String str, String str2, boolean z, SearchResponse searchResponse) {
         this.lastKiklikoSearchAdapter.processKiklikoResponse(str, str2, z, searchResponse);
     }
@@ -725,7 +741,7 @@ public class EmojiView extends MvpFrameLayout implements NotificationCenter.Noti
         this.setAvatarPreviewImage.setLayerNum(7);
         this.setAvatarPreviewLayout.addView(this.setAvatarPreviewImage);
         TextView textView = new TextView(context);
-        textView.setText(LocaleController.getInternalString(C3301R.string.content_preview_make_an_avatar).toUpperCase());
+        textView.setText(LocaleController.getInternalString(C3316R.string.content_preview_make_an_avatar).toUpperCase());
         textView.setTextSize(1, 14.0f);
         textView.setTextColor(Theme.getColor("dialogTextBlue2"));
         textView.setBackground(Theme.createSelectorWithBackgroundDrawable(Theme.getColor("dialogBackground"), Theme.getColor("listSelectorSDK21")));
@@ -805,7 +821,7 @@ public class EmojiView extends MvpFrameLayout implements NotificationCenter.Noti
 
     /* renamed from: org.telegram.ui.Components.EmojiView$4 */
     /* loaded from: classes6.dex */
-    public class C45524 implements ContentPreviewViewer.ContentPreviewViewerDelegate {
+    public class C45734 implements ContentPreviewViewer.ContentPreviewViewerDelegate {
         @Override // org.telegram.p048ui.ContentPreviewViewer.ContentPreviewViewerDelegate
         public boolean needCopy() {
             return true;
@@ -831,7 +847,7 @@ public class EmojiView extends MvpFrameLayout implements NotificationCenter.Noti
             ContentPreviewViewer.ContentPreviewViewerDelegate.CC.$default$remove(this, importingSticker);
         }
 
-        C45524() {
+        C45734() {
             EmojiView.this = r1;
         }
 
@@ -846,10 +862,10 @@ public class EmojiView extends MvpFrameLayout implements NotificationCenter.Noti
 
         @Override // org.telegram.p048ui.ContentPreviewViewer.ContentPreviewViewerDelegate
         public void openKiklikoReport(final String str) {
-            EmojiView.this.delegate.showKiklikoReportAlert(str, new Callbacks$Callback1() { // from class: org.telegram.ui.Components.EmojiView$4$$ExternalSyntheticLambda1
-                @Override // org.fork.utils.Callbacks$Callback1
+            EmojiView.this.delegate.showKiklikoReportAlert(str, new Callbacks$Callback1() { // from class: org.telegram.ui.Components.EmojiView$4$$ExternalSyntheticLambda0
+                @Override // com.iMe.fork.utils.Callbacks$Callback1
                 public final void invoke(Object obj) {
-                    EmojiView.C45524.this.lambda$openKiklikoReport$0(str, (String) obj);
+                    EmojiView.C45734.this.lambda$openKiklikoReport$0(str, (String) obj);
                 }
             });
         }
@@ -907,27 +923,27 @@ public class EmojiView extends MvpFrameLayout implements NotificationCenter.Noti
                 tLRPC$TL_emojiStatusUntil = new TLRPC$TL_emojiStatusEmpty();
             } else if (num != null) {
                 TLRPC$TL_emojiStatusUntil tLRPC$TL_emojiStatusUntil2 = new TLRPC$TL_emojiStatusUntil();
-                tLRPC$TL_emojiStatusUntil2.document_id = tLRPC$Document.f1508id;
+                tLRPC$TL_emojiStatusUntil2.document_id = tLRPC$Document.f1510id;
                 tLRPC$TL_emojiStatusUntil2.until = num.intValue();
                 tLRPC$TL_emojiStatusUntil = tLRPC$TL_emojiStatusUntil2;
             } else {
                 TLRPC$TL_emojiStatus tLRPC$TL_emojiStatus = new TLRPC$TL_emojiStatus();
-                tLRPC$TL_emojiStatus.document_id = tLRPC$Document.f1508id;
+                tLRPC$TL_emojiStatus.document_id = tLRPC$Document.f1510id;
                 tLRPC$TL_emojiStatusUntil = tLRPC$TL_emojiStatus;
             }
             TLRPC$User currentUser = UserConfig.getInstance(UserConfig.selectedAccount).getCurrentUser();
             final TLRPC$EmojiStatus tLRPC$TL_emojiStatusEmpty = currentUser == null ? new TLRPC$TL_emojiStatusEmpty() : currentUser.emoji_status;
             MessagesController.getInstance(EmojiView.this.currentAccount).updateEmojiStatus(tLRPC$TL_emojiStatusUntil);
-            Runnable runnable = new Runnable() { // from class: org.telegram.ui.Components.EmojiView$4$$ExternalSyntheticLambda0
+            Runnable runnable = new Runnable() { // from class: org.telegram.ui.Components.EmojiView$4$$ExternalSyntheticLambda1
                 @Override // java.lang.Runnable
                 public final void run() {
-                    EmojiView.C45524.this.lambda$setAsEmojiStatus$1(tLRPC$TL_emojiStatusEmpty);
+                    EmojiView.C45734.this.lambda$setAsEmojiStatus$1(tLRPC$TL_emojiStatusEmpty);
                 }
             };
             if (tLRPC$Document == null) {
                 Bulletin.SimpleLayout simpleLayout = new Bulletin.SimpleLayout(EmojiView.this.getContext(), EmojiView.this.resourcesProvider);
-                simpleLayout.textView.setText(LocaleController.getString("RemoveStatusInfo", C3301R.string.RemoveStatusInfo));
-                simpleLayout.imageView.setImageResource(C3301R.C3303drawable.msg_settings_premium);
+                simpleLayout.textView.setText(LocaleController.getString("RemoveStatusInfo", C3316R.string.RemoveStatusInfo));
+                simpleLayout.imageView.setImageResource(C3316R.C3318drawable.msg_settings_premium);
                 simpleLayout.imageView.setScaleX(0.8f);
                 simpleLayout.imageView.setScaleY(0.8f);
                 simpleLayout.imageView.setColorFilter(new PorterDuffColorFilter(Theme.getColor("chats_verifiedBackground", EmojiView.this.resourcesProvider), PorterDuff.Mode.MULTIPLY));
@@ -942,7 +958,7 @@ public class EmojiView extends MvpFrameLayout implements NotificationCenter.Noti
                     return;
                 }
             }
-            (EmojiView.this.fragment != null ? BulletinFactory.m27of(EmojiView.this.fragment) : BulletinFactory.m28of(EmojiView.this.bulletinContainer, EmojiView.this.resourcesProvider)).createEmojiBulletin(tLRPC$Document, LocaleController.getString("SetAsEmojiStatusInfo", C3301R.string.SetAsEmojiStatusInfo), LocaleController.getString("Undo", C3301R.string.Undo), runnable).show();
+            (EmojiView.this.fragment != null ? BulletinFactory.m27of(EmojiView.this.fragment) : BulletinFactory.m28of(EmojiView.this.bulletinContainer, EmojiView.this.resourcesProvider)).createEmojiBulletin(tLRPC$Document, LocaleController.getString("SetAsEmojiStatusInfo", C3316R.string.SetAsEmojiStatusInfo), LocaleController.getString("Undo", C3316R.string.Undo), runnable).show();
         }
 
         public /* synthetic */ void lambda$setAsEmojiStatus$1(TLRPC$EmojiStatus tLRPC$EmojiStatus) {
@@ -954,7 +970,7 @@ public class EmojiView extends MvpFrameLayout implements NotificationCenter.Noti
             SpannableStringBuilder valueOf = SpannableStringBuilder.valueOf(MessageObject.findAnimatedEmojiEmoticon(tLRPC$Document));
             valueOf.setSpan(new AnimatedEmojiSpan(tLRPC$Document, (Paint.FontMetricsInt) null), 0, valueOf.length(), 33);
             if (AndroidUtilities.addToClipboard(valueOf)) {
-                (EmojiView.this.fragment != null ? BulletinFactory.m27of(EmojiView.this.fragment) : BulletinFactory.m28of(EmojiView.this.bulletinContainer, EmojiView.this.resourcesProvider)).createCopyBulletin(LocaleController.getString("EmojiCopied", C3301R.string.EmojiCopied)).show();
+                (EmojiView.this.fragment != null ? BulletinFactory.m27of(EmojiView.this.fragment) : BulletinFactory.m28of(EmojiView.this.bulletinContainer, EmojiView.this.resourcesProvider)).createCopyBulletin(LocaleController.getString("EmojiCopied", C3316R.string.EmojiCopied)).show();
             }
         }
 
@@ -962,7 +978,7 @@ public class EmojiView extends MvpFrameLayout implements NotificationCenter.Noti
         public boolean needRemoveFromRecent(TLRPC$Document tLRPC$Document) {
             if (tLRPC$Document != null) {
                 ArrayList<String> arrayList = Emoji.recentEmoji;
-                if (arrayList.contains("animated_" + tLRPC$Document.f1508id)) {
+                if (arrayList.contains("animated_" + tLRPC$Document.f1510id)) {
                     return true;
                 }
             }
@@ -972,7 +988,7 @@ public class EmojiView extends MvpFrameLayout implements NotificationCenter.Noti
         @Override // org.telegram.p048ui.ContentPreviewViewer.ContentPreviewViewerDelegate
         public void removeFromRecent(TLRPC$Document tLRPC$Document) {
             if (tLRPC$Document != null) {
-                Emoji.removeRecentEmoji("animated_" + tLRPC$Document.f1508id);
+                Emoji.removeRecentEmoji("animated_" + tLRPC$Document.f1510id);
                 if (EmojiView.this.emojiAdapter != null) {
                     EmojiView.this.emojiAdapter.notifyDataSetChanged();
                 }
@@ -984,7 +1000,7 @@ public class EmojiView extends MvpFrameLayout implements NotificationCenter.Noti
             TLRPC$User currentUser;
             if (UserConfig.getInstance(UserConfig.selectedAccount).isPremium() && (currentUser = UserConfig.getInstance(UserConfig.selectedAccount).getCurrentUser()) != null) {
                 Long emojiStatusDocumentId = UserObject.getEmojiStatusDocumentId(currentUser);
-                return Boolean.valueOf(tLRPC$Document != null && (emojiStatusDocumentId == null || emojiStatusDocumentId.longValue() != tLRPC$Document.f1508id));
+                return Boolean.valueOf(tLRPC$Document != null && (emojiStatusDocumentId == null || emojiStatusDocumentId.longValue() != tLRPC$Document.f1510id));
             }
             return null;
         }
@@ -1191,9 +1207,9 @@ public class EmojiView extends MvpFrameLayout implements NotificationCenter.Noti
             this.searchEditText.setSingleLine(true);
             this.searchEditText.setImeOptions(268435459);
             if (i == 3) {
-                this.searchEditText.setHint(LocaleController.getInternalString(C3301R.string.kikliko_search_hint));
+                this.searchEditText.setHint(LocaleController.getInternalString(C3316R.string.kikliko_search_hint));
             } else {
-                this.searchEditText.setHint(LocaleController.getString("Search", C3301R.string.Search));
+                this.searchEditText.setHint(LocaleController.getString("Search", C3316R.string.Search));
             }
             this.searchEditText.setCursorColor(r24.getThemedColor("featuredStickers_addedIcon"));
             this.searchEditText.setCursorSize(AndroidUtilities.m50dp(20));
@@ -1231,7 +1247,7 @@ public class EmojiView extends MvpFrameLayout implements NotificationCenter.Noti
                 }
             });
             this.inputBoxGradient = new View(context);
-            Drawable mutate = context.getResources().getDrawable(C3301R.C3303drawable.gradient_right).mutate();
+            Drawable mutate = context.getResources().getDrawable(C3316R.C3318drawable.gradient_right).mutate();
             mutate.setColorFilter(new PorterDuffColorFilter(Theme.blendOver(r24.getThemedColor("chat_emojiPanelBackground"), r24.getThemedColor("chat_emojiSearchBackground")), PorterDuff.Mode.MULTIPLY));
             this.inputBoxGradient.setBackground(mutate);
             this.inputBoxGradient.setAlpha(BitmapDescriptorFactory.HUE_RED);
@@ -1763,7 +1779,7 @@ public class EmojiView extends MvpFrameLayout implements NotificationCenter.Noti
                         while (true) {
                             ArrayList<TLRPC$Document> arrayList = emojiPack.documents;
                             if (arrayList != null && i2 < arrayList.size()) {
-                                if (emojiPack.documents.get(i2).f1508id == j) {
+                                if (emojiPack.documents.get(i2).f1510id == j) {
                                     tLRPC$Document = emojiPack.documents.get(i2);
                                     break;
                                 }
@@ -1782,14 +1798,14 @@ public class EmojiView extends MvpFrameLayout implements NotificationCenter.Noti
                     BaseFragment baseFragment = this.fragment;
                     BulletinFactory m27of = baseFragment != null ? BulletinFactory.m27of(baseFragment) : BulletinFactory.m28of(this.bulletinContainer, this.resourcesProvider);
                     if (this.premiumBulletin || this.fragment == null) {
-                        m27of.createEmojiBulletin(tLRPC$Document2, AndroidUtilities.replaceTags(LocaleController.getString("UnlockPremiumEmojiHint", C3301R.string.UnlockPremiumEmojiHint)), LocaleController.getString("PremiumMore", C3301R.string.PremiumMore), new Runnable() { // from class: org.telegram.ui.Components.EmojiView$$ExternalSyntheticLambda13
+                        m27of.createEmojiBulletin(tLRPC$Document2, AndroidUtilities.replaceTags(LocaleController.getString("UnlockPremiumEmojiHint", C3316R.string.UnlockPremiumEmojiHint)), LocaleController.getString("PremiumMore", C3316R.string.PremiumMore), new Runnable() { // from class: org.telegram.ui.Components.EmojiView$$ExternalSyntheticLambda13
                             @Override // java.lang.Runnable
                             public final void run() {
                                 EmojiView.this.openPremiumAnimatedEmojiFeature();
                             }
                         }).show();
                     } else {
-                        m27of.createSimpleBulletin(C3301R.C3306raw.saved_messages, AndroidUtilities.replaceTags(LocaleController.getString("UnlockPremiumEmojiHint2", C3301R.string.UnlockPremiumEmojiHint2)), LocaleController.getString("Open", C3301R.string.Open), new Runnable() { // from class: org.telegram.ui.Components.EmojiView$$ExternalSyntheticLambda12
+                        m27of.createSimpleBulletin(C3316R.C3321raw.saved_messages, AndroidUtilities.replaceTags(LocaleController.getString("UnlockPremiumEmojiHint2", C3316R.string.UnlockPremiumEmojiHint2)), LocaleController.getString("Open", C3316R.string.Open), new Runnable() { // from class: org.telegram.ui.Components.EmojiView$$ExternalSyntheticLambda12
                             @Override // java.lang.Runnable
                             public final void run() {
                                 EmojiView.this.lambda$sendEmoji$4();
@@ -1832,13 +1848,13 @@ public class EmojiView extends MvpFrameLayout implements NotificationCenter.Noti
     public /* synthetic */ void lambda$sendEmoji$4() {
         Bundle bundle = new Bundle();
         bundle.putLong("user_id", UserConfig.getInstance(this.currentAccount).getClientUserId());
-        this.fragment.presentFragment(new C45615(this, bundle));
+        this.fragment.presentFragment(new C45825(this, bundle));
     }
 
     /* renamed from: org.telegram.ui.Components.EmojiView$5 */
     /* loaded from: classes6.dex */
-    public class C45615 extends ChatActivity {
-        C45615(EmojiView emojiView, Bundle bundle) {
+    public class C45825 extends ChatActivity {
+        C45825(EmojiView emojiView, Bundle bundle) {
             super(bundle);
         }
 
@@ -1853,7 +1869,7 @@ public class EmojiView extends MvpFrameLayout implements NotificationCenter.Noti
             this.chatActivityEnterView.postDelayed(new Runnable() { // from class: org.telegram.ui.Components.EmojiView$5$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    EmojiView.C45615.this.lambda$onTransitionAnimationEnd$0();
+                    EmojiView.C45825.this.lambda$onTransitionAnimationEnd$0();
                 }
             }, 100L);
         }
@@ -2112,8 +2128,8 @@ public class EmojiView extends MvpFrameLayout implements NotificationCenter.Noti
             this.rectPaint = new Paint(1);
             this.rect = new RectF();
             this.selectionAnimated = new AnimatedFloat(this, 125L, CubicBezierInterpolator.EASE_OUT_QUINT);
-            this.backgroundDrawable = getResources().getDrawable(C3301R.C3303drawable.stickers_back_all);
-            this.arrowDrawable = getResources().getDrawable(C3301R.C3303drawable.stickers_back_arrow);
+            this.backgroundDrawable = getResources().getDrawable(C3316R.C3318drawable.stickers_back_all);
+            this.arrowDrawable = getResources().getDrawable(C3316R.C3318drawable.stickers_back_arrow);
             Theme.setDrawableColor(this.backgroundDrawable, r4.getThemedColor("dialogBackground"));
             Theme.setDrawableColor(this.arrowDrawable, r4.getThemedColor("dialogBackground"));
         }
@@ -2150,30 +2166,33 @@ public class EmojiView extends MvpFrameLayout implements NotificationCenter.Noti
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:211:0x086e  */
-    /* JADX WARN: Removed duplicated region for block: B:212:0x0890  */
-    /* JADX WARN: Removed duplicated region for block: B:215:0x0909  */
-    /* JADX WARN: Removed duplicated region for block: B:216:0x092a  */
-    /* JADX WARN: Removed duplicated region for block: B:219:0x0984  */
-    /* JADX WARN: Removed duplicated region for block: B:230:0x0adc  */
-    /* JADX WARN: Removed duplicated region for block: B:256:0x0c8a  */
-    /* JADX WARN: Removed duplicated region for block: B:257:0x0c8d  */
-    /* JADX WARN: Removed duplicated region for block: B:260:0x0ca6  */
-    /* JADX WARN: Removed duplicated region for block: B:261:0x0ca9  */
-    /* JADX WARN: Removed duplicated region for block: B:264:0x0cbd  */
-    /* JADX WARN: Removed duplicated region for block: B:265:0x0cc0  */
-    /* JADX WARN: Removed duplicated region for block: B:268:0x0cfb  */
-    /* JADX WARN: Removed duplicated region for block: B:273:0x0d2f  */
-    /* JADX WARN: Type inference failed for: r6v11 */
-    /* JADX WARN: Type inference failed for: r6v12, types: [boolean, int] */
+    /* JADX WARN: Removed duplicated region for block: B:200:0x0823  */
+    /* JADX WARN: Removed duplicated region for block: B:203:0x08b0  */
+    /* JADX WARN: Removed duplicated region for block: B:204:0x08d0  */
+    /* JADX WARN: Removed duplicated region for block: B:207:0x092a  */
+    /* JADX WARN: Removed duplicated region for block: B:218:0x0a7f  */
+    /* JADX WARN: Removed duplicated region for block: B:244:0x0c1c  */
+    /* JADX WARN: Removed duplicated region for block: B:245:0x0c1e  */
+    /* JADX WARN: Removed duplicated region for block: B:249:0x0c38  */
+    /* JADX WARN: Removed duplicated region for block: B:252:0x0c4c  */
+    /* JADX WARN: Removed duplicated region for block: B:253:0x0c4f  */
+    /* JADX WARN: Removed duplicated region for block: B:256:0x0c89  */
+    /* JADX WARN: Removed duplicated region for block: B:261:0x0cbc  */
+    /* JADX WARN: Type inference failed for: r1v39 */
+    /* JADX WARN: Type inference failed for: r1v72 */
+    /* JADX WARN: Type inference failed for: r4v64 */
+    /* JADX WARN: Type inference failed for: r4v65, types: [int, boolean] */
+    /* JADX WARN: Type inference failed for: r4v84 */
     /* JADX WARN: Type inference failed for: r6v24 */
+    /* JADX WARN: Type inference failed for: r6v25, types: [int, boolean] */
+    /* JADX WARN: Type inference failed for: r6v69 */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct add '--show-bad-code' argument
     */
-    public EmojiView(org.telegram.p048ui.ActionBar.BaseFragment r42, boolean r43, boolean r44, boolean r45, android.content.Context r46, boolean r47, org.telegram.tgnet.TLRPC$ChatFull r48, android.view.ViewGroup r49, final org.telegram.p048ui.ActionBar.Theme.ResourcesProvider r50, int r51) {
+    public EmojiView(org.telegram.p048ui.ActionBar.BaseFragment r47, boolean r48, boolean r49, boolean r50, android.content.Context r51, boolean r52, org.telegram.tgnet.TLRPC$ChatFull r53, android.view.ViewGroup r54, final org.telegram.p048ui.ActionBar.Theme.ResourcesProvider r55, int r56) {
         /*
-            Method dump skipped, instructions count: 3400
+            Method dump skipped, instructions count: 3288
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: org.telegram.p048ui.Components.EmojiView.<init>(org.telegram.ui.ActionBar.BaseFragment, boolean, boolean, boolean, android.content.Context, boolean, org.telegram.tgnet.TLRPC$ChatFull, android.view.ViewGroup, org.telegram.ui.ActionBar.Theme$ResourcesProvider, int):void");
@@ -2192,11 +2211,11 @@ public class EmojiView extends MvpFrameLayout implements NotificationCenter.Noti
 
     /* renamed from: org.telegram.ui.Components.EmojiView$12 */
     /* loaded from: classes6.dex */
-    public class C452212 extends EmojiTabsStrip {
+    public class C454312 extends EmojiTabsStrip {
         final /* synthetic */ Context val$context;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        C452212(Context context, Theme.ResourcesProvider resourcesProvider, boolean z, boolean z2, int i, Runnable runnable, Context context2) {
+        C454312(Context context, Theme.ResourcesProvider resourcesProvider, boolean z, boolean z2, int i, Runnable runnable, Context context2) {
             super(context, resourcesProvider, z, z2, i, runnable);
             EmojiView.this = r8;
             this.val$context = context2;
@@ -2205,12 +2224,12 @@ public class EmojiView extends MvpFrameLayout implements NotificationCenter.Noti
         /* JADX INFO: Access modifiers changed from: protected */
         @Override // org.telegram.p048ui.Components.EmojiTabsStrip
         public boolean onTabClickLong(int i) {
-            AlertDialog create = new AlertDialog.Builder(this.val$context).setTitle(LocaleController.getInternalString(C3301R.string.settings_emoji_premium_suggest_sets)).setMessage(LocaleController.getInternalString(SharedConfig.isSuggestPremiumReactionsEmoji ? C3301R.string.emoji_premium_message_off_alert : C3301R.string.emoji_premium_message_on_alert)).setPositiveButton(LocaleController.getInternalString(SharedConfig.isSuggestPremiumReactionsEmoji ? C3301R.string.emoji_premium_title_off_alert : C3301R.string.emoji_premium_title_on_alert), new DialogInterface.OnClickListener() { // from class: org.telegram.ui.Components.EmojiView$12$$ExternalSyntheticLambda0
+            AlertDialog create = new AlertDialog.Builder(this.val$context).setTitle(LocaleController.getInternalString(C3316R.string.settings_emoji_premium_suggest_sets)).setMessage(LocaleController.getInternalString(SharedConfig.isSuggestPremiumReactionsEmoji ? C3316R.string.emoji_premium_message_off_alert : C3316R.string.emoji_premium_message_on_alert)).setPositiveButton(LocaleController.getInternalString(SharedConfig.isSuggestPremiumReactionsEmoji ? C3316R.string.emoji_premium_title_off_alert : C3316R.string.emoji_premium_title_on_alert), new DialogInterface.OnClickListener() { // from class: org.telegram.ui.Components.EmojiView$12$$ExternalSyntheticLambda0
                 @Override // android.content.DialogInterface.OnClickListener
                 public final void onClick(DialogInterface dialogInterface, int i2) {
-                    EmojiView.C452212.this.lambda$onTabClickLong$0(dialogInterface, i2);
+                    EmojiView.C454312.this.lambda$onTabClickLong$0(dialogInterface, i2);
                 }
-            }).setNegativeButton(LocaleController.getString(C3301R.string.Cancel), null).create();
+            }).setNegativeButton(LocaleController.getString(C3316R.string.Cancel), null).create();
             create.show();
             TextView textView = (TextView) create.getButton(-1);
             if (textView != null) {
@@ -2226,7 +2245,7 @@ public class EmojiView extends MvpFrameLayout implements NotificationCenter.Noti
 
         @Override // org.telegram.p048ui.Components.EmojiTabsStrip
         protected boolean isInstalled(EmojiPack emojiPack) {
-            return emojiPack.installed || EmojiView.this.installedEmojiSets.contains(Long.valueOf(emojiPack.set.f1533id));
+            return emojiPack.installed || EmojiView.this.installedEmojiSets.contains(Long.valueOf(emojiPack.set.f1535id));
         }
 
         @Override // org.telegram.p048ui.Components.EmojiTabsStrip
@@ -2244,7 +2263,7 @@ public class EmojiView extends MvpFrameLayout implements NotificationCenter.Noti
 
         @Override // org.telegram.p048ui.Components.EmojiTabsStrip
         protected boolean doIncludeFeatured() {
-            return EmojiView.this.featuredEmojiSets.size() <= 0 || ((TLRPC$StickerSetCovered) EmojiView.this.featuredEmojiSets.get(0)).set == null || MessagesController.getEmojiSettings(EmojiView.this.currentAccount).getLong("emoji_featured_hidden", 0L) == ((TLRPC$StickerSetCovered) EmojiView.this.featuredEmojiSets.get(0)).set.f1533id || !UserConfig.getInstance(UserConfig.selectedAccount).isPremium();
+            return EmojiView.this.featuredEmojiSets.size() <= 0 || ((TLRPC$StickerSetCovered) EmojiView.this.featuredEmojiSets.get(0)).set == null || MessagesController.getEmojiSettings(EmojiView.this.currentAccount).getLong("emoji_featured_hidden", 0L) == ((TLRPC$StickerSetCovered) EmojiView.this.featuredEmojiSets.get(0)).set.f1535id || !UserConfig.getInstance(UserConfig.selectedAccount).isPremium();
         }
 
         /* JADX WARN: Removed duplicated region for block: B:84:0x00dc  */
@@ -2259,7 +2278,7 @@ public class EmojiView extends MvpFrameLayout implements NotificationCenter.Noti
                 Method dump skipped, instructions count: 254
                 To view this dump add '--comments-level debug' option
             */
-            throw new UnsupportedOperationException("Method not decompiled: org.telegram.p048ui.Components.EmojiView.C452212.onTabClick(int):boolean");
+            throw new UnsupportedOperationException("Method not decompiled: org.telegram.p048ui.Components.EmojiView.C454312.onTabClick(int):boolean");
         }
 
         @Override // org.telegram.p048ui.Components.EmojiTabsStrip
@@ -2416,14 +2435,14 @@ public class EmojiView extends MvpFrameLayout implements NotificationCenter.Noti
 
     /* renamed from: org.telegram.ui.Components.EmojiView$21 */
     /* loaded from: classes6.dex */
-    public class C453221 extends DraggableScrollSlidingTabStrip {
+    public class C455321 extends DraggableScrollSlidingTabStrip {
         final /* synthetic */ BaseFragment val$fragment;
 
         public static /* synthetic */ void lambda$sendReorder$2(TLObject tLObject, TLRPC$TL_error tLRPC$TL_error) {
         }
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        C453221(Context context, Theme.ResourcesProvider resourcesProvider, BaseFragment baseFragment) {
+        C455321(Context context, Theme.ResourcesProvider resourcesProvider, BaseFragment baseFragment) {
             super(context, resourcesProvider);
             EmojiView.this = r1;
             this.val$fragment = baseFragment;
@@ -2454,7 +2473,7 @@ public class EmojiView extends MvpFrameLayout implements NotificationCenter.Noti
                 @Override // java.util.Comparator
                 public final int compare(Object obj, Object obj2) {
                     int lambda$stickerSetPositionChanged$0;
-                    lambda$stickerSetPositionChanged$0 = EmojiView.C453221.this.lambda$stickerSetPositionChanged$0((TLRPC$TL_messages_stickerSet) obj, (TLRPC$TL_messages_stickerSet) obj2);
+                    lambda$stickerSetPositionChanged$0 = EmojiView.C455321.this.lambda$stickerSetPositionChanged$0((TLRPC$TL_messages_stickerSet) obj, (TLRPC$TL_messages_stickerSet) obj2);
                     return lambda$stickerSetPositionChanged$0;
                 }
             });
@@ -2474,21 +2493,21 @@ public class EmojiView extends MvpFrameLayout implements NotificationCenter.Noti
                 BaseFragment baseFragment = this.val$fragment;
                 if (baseFragment == null) {
                     if (EmojiView.this.bulletinContainer != null) {
-                        BulletinFactory.m28of(EmojiView.this.bulletinContainer, EmojiView.this.resourcesProvider).createSimpleBulletin(C3301R.C3306raw.filter_reorder, LocaleController.getString("DynamicPackOrderOff", C3301R.string.DynamicPackOrderOff), LocaleController.getString("DynamicPackOrderOffInfo", C3301R.string.DynamicPackOrderOffInfo)).show();
+                        BulletinFactory.m28of(EmojiView.this.bulletinContainer, EmojiView.this.resourcesProvider).createSimpleBulletin(C3316R.C3321raw.filter_reorder, LocaleController.getString("DynamicPackOrderOff", C3316R.string.DynamicPackOrderOff), LocaleController.getString("DynamicPackOrderOffInfo", C3316R.string.DynamicPackOrderOffInfo)).show();
                         return;
                     }
                     return;
                 }
                 BulletinFactory m27of = BulletinFactory.m27of(baseFragment);
-                int i5 = C3301R.C3306raw.filter_reorder;
-                String string = LocaleController.getString("DynamicPackOrderOff", C3301R.string.DynamicPackOrderOff);
-                String string2 = LocaleController.getString("DynamicPackOrderOffInfo", C3301R.string.DynamicPackOrderOffInfo);
+                int i5 = C3316R.C3321raw.filter_reorder;
+                String string = LocaleController.getString("DynamicPackOrderOff", C3316R.string.DynamicPackOrderOff);
+                String string2 = LocaleController.getString("DynamicPackOrderOffInfo", C3316R.string.DynamicPackOrderOffInfo);
                 String string3 = LocaleController.getString("Settings");
                 final BaseFragment baseFragment2 = this.val$fragment;
                 m27of.createSimpleBulletin(i5, string, string2, string3, new Runnable() { // from class: org.telegram.ui.Components.EmojiView$21$$ExternalSyntheticLambda0
                     @Override // java.lang.Runnable
                     public final void run() {
-                        EmojiView.C453221.lambda$stickerSetPositionChanged$1(BaseFragment.this);
+                        EmojiView.C455321.lambda$stickerSetPositionChanged$1(BaseFragment.this);
                     }
                 }).show();
             }
@@ -2521,7 +2540,7 @@ public class EmojiView extends MvpFrameLayout implements NotificationCenter.Noti
             tLRPC$TL_messages_reorderStickerSets.masks = false;
             tLRPC$TL_messages_reorderStickerSets.emojis = false;
             for (int i = EmojiView.this.hasChatStickers; i < EmojiView.this.stickerSets.size(); i++) {
-                tLRPC$TL_messages_reorderStickerSets.order.add(Long.valueOf(((TLRPC$TL_messages_stickerSet) EmojiView.this.stickerSets.get(i)).set.f1533id));
+                tLRPC$TL_messages_reorderStickerSets.order.add(Long.valueOf(((TLRPC$TL_messages_stickerSet) EmojiView.this.stickerSets.get(i)).set.f1535id));
             }
             ConnectionsManager.getInstance(EmojiView.this.currentAccount).sendRequest(tLRPC$TL_messages_reorderStickerSets, EmojiView$21$$ExternalSyntheticLambda2.INSTANCE);
             NotificationCenter.getInstance(EmojiView.this.currentAccount).postNotificationName(NotificationCenter.stickersDidLoad, 0, Boolean.TRUE);
@@ -2890,10 +2909,10 @@ public class EmojiView extends MvpFrameLayout implements NotificationCenter.Noti
             View view;
 
             /* renamed from: x */
-            float f1712x;
+            float f1715x;
 
             /* renamed from: y */
-            float f1713y;
+            float f1716y;
 
             TouchDownInfo(EmojiGridView emojiGridView) {
             }
@@ -3155,7 +3174,7 @@ public class EmojiView extends MvpFrameLayout implements NotificationCenter.Noti
                 if (!z) {
                     TouchDownInfo touchDownInfo = this.touches.get(pointerId);
                     this.touches.remove(pointerId);
-                    if (findChildViewUnder != null && touchDownInfo != null && Math.sqrt(Math.pow(x - touchDownInfo.f1712x, 2.0d) + Math.pow(y - touchDownInfo.f1713y, 2.0d)) < AndroidUtilities.touchSlop * 3.0f && !z3 && (!EmojiView.this.pickerViewPopup.isShowing() || SystemClock.elapsedRealtime() - touchDownInfo.time < ViewConfiguration.getLongPressTimeout())) {
+                    if (findChildViewUnder != null && touchDownInfo != null && Math.sqrt(Math.pow(x - touchDownInfo.f1715x, 2.0d) + Math.pow(y - touchDownInfo.f1716y, 2.0d)) < AndroidUtilities.touchSlop * 3.0f && !z3 && (!EmojiView.this.pickerViewPopup.isShowing() || SystemClock.elapsedRealtime() - touchDownInfo.time < ViewConfiguration.getLongPressTimeout())) {
                         View view3 = touchDownInfo.view;
                         int childAdapterPosition = getChildAdapterPosition(view3);
                         try {
@@ -3179,8 +3198,8 @@ public class EmojiView extends MvpFrameLayout implements NotificationCenter.Noti
                     }
                 } else if (findChildViewUnder != null) {
                     TouchDownInfo touchDownInfo2 = new TouchDownInfo(this);
-                    touchDownInfo2.f1712x = x;
-                    touchDownInfo2.f1713y = y;
+                    touchDownInfo2.f1715x = x;
+                    touchDownInfo2.f1716y = y;
                     touchDownInfo2.time = SystemClock.elapsedRealtime();
                     touchDownInfo2.view = findChildViewUnder;
                     if (Build.VERSION.SDK_INT >= 21 && (findChildViewUnder.getBackground() instanceof RippleDrawable)) {
@@ -3245,8 +3264,8 @@ public class EmojiView extends MvpFrameLayout implements NotificationCenter.Noti
                         } else if (((Integer) this.emojiAdapter.packStartPosition.get(size2)).intValue() <= i) {
                             EmojiPack emojiPack = this.emojipacksProcessed.get(size2);
                             while (i3 < emojipacks.size()) {
-                                long j = emojipacks.get(i3).set.f1533id;
-                                long j2 = emojiPack.set.f1533id;
+                                long j = emojipacks.get(i3).set.f1535id;
+                                long j2 = emojiPack.set.f1535id;
                                 if (j == j2 && (!emojiPack.featured || (!emojiPack.installed && !this.installedEmojiSets.contains(Long.valueOf(j2))))) {
                                     i3 = EmojiData.dataColored.length + 1 + i3;
                                     break;
@@ -3344,7 +3363,7 @@ public class EmojiView extends MvpFrameLayout implements NotificationCenter.Noti
             addView(this.addButtonView, LayoutHelper.createFrame(-1, -1));
             PremiumButtonView premiumButtonView = new PremiumButtonView(getContext(), false);
             this.premiumButtonView = premiumButtonView;
-            premiumButtonView.setIcon(C3301R.C3306raw.unlock_icon);
+            premiumButtonView.setIcon(C3316R.C3321raw.unlock_icon);
             addView(this.premiumButtonView, LayoutHelper.createFrame(-1, -1));
         }
 
@@ -3378,7 +3397,7 @@ public class EmojiView extends MvpFrameLayout implements NotificationCenter.Noti
             EmojiView.this = r17;
             RLottieImageView rLottieImageView = new RLottieImageView(context);
             this.lockView = rLottieImageView;
-            int i = C3301R.C3306raw.unlock_icon;
+            int i = C3316R.C3321raw.unlock_icon;
             rLottieImageView.setAnimation(i, 24, 24);
             this.lockView.setColorFilter(r17.getThemedColor("chat_emojiPanelStickerSetName"));
             addView(this.lockView, LayoutHelper.createFrameRelatively(20.0f, 20.0f, 8388611, 10.0f, 15.0f, BitmapDescriptorFactory.HUE_RED, BitmapDescriptorFactory.HUE_RED));
@@ -3410,7 +3429,7 @@ public class EmojiView extends MvpFrameLayout implements NotificationCenter.Noti
             this.addButtonView = textView;
             textView.setTextSize(1, 14.0f);
             this.addButtonView.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
-            this.addButtonView.setText(LocaleController.getString("Add", C3301R.string.Add));
+            this.addButtonView.setText(LocaleController.getString("Add", C3316R.string.Add));
             this.addButtonView.setTextColor(r17.getThemedColor("featuredStickers_buttonText"));
             this.addButtonView.setBackground(Theme.AdaptiveRipple.createRect(r17.getThemedColor("featuredStickers_addButton"), r17.getThemedColor("featuredStickers_addButtonPressed"), 16.0f));
             this.addButtonView.setPadding(AndroidUtilities.m50dp(14), 0, AndroidUtilities.m50dp(14), 0);
@@ -3426,7 +3445,7 @@ public class EmojiView extends MvpFrameLayout implements NotificationCenter.Noti
             this.removeButtonView = textView2;
             textView2.setTextSize(1, 14.0f);
             this.removeButtonView.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
-            this.removeButtonView.setText(LocaleController.getString("StickersRemove", C3301R.string.StickersRemove));
+            this.removeButtonView.setText(LocaleController.getString("StickersRemove", C3316R.string.StickersRemove));
             this.removeButtonView.setTextColor(r17.getThemedColor("featuredStickers_removeButtonText"));
             this.removeButtonView.setBackground(Theme.AdaptiveRipple.createRect(0, r17.getThemedColor("featuredStickers_addButton") & 452984831, 16.0f));
             this.removeButtonView.setPadding(AndroidUtilities.m50dp(12), 0, AndroidUtilities.m50dp(12), 0);
@@ -3442,7 +3461,7 @@ public class EmojiView extends MvpFrameLayout implements NotificationCenter.Noti
             PremiumButtonView premiumButtonView = new PremiumButtonView(context, AndroidUtilities.m50dp(16), false);
             this.premiumButtonView = premiumButtonView;
             premiumButtonView.setIcon(i);
-            this.premiumButtonView.setButton(LocaleController.getString("Unlock", C3301R.string.Unlock), new View.OnClickListener() { // from class: org.telegram.ui.Components.EmojiView$EmojiPackHeader$$ExternalSyntheticLambda4
+            this.premiumButtonView.setButton(LocaleController.getString("Unlock", C3316R.string.Unlock), new View.OnClickListener() { // from class: org.telegram.ui.Components.EmojiView$EmojiPackHeader$$ExternalSyntheticLambda4
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
                     EmojiView.EmojiPackHeader.this.lambda$new$4(view);
@@ -3503,8 +3522,8 @@ public class EmojiView extends MvpFrameLayout implements NotificationCenter.Noti
                 return;
             }
             emojiPack.installed = true;
-            if (!EmojiView.this.installedEmojiSets.contains(Long.valueOf(tLRPC$StickerSet.f1533id))) {
-                EmojiView.this.installedEmojiSets.add(Long.valueOf(this.pack.set.f1533id));
+            if (!EmojiView.this.installedEmojiSets.contains(Long.valueOf(tLRPC$StickerSet.f1535id))) {
+                EmojiView.this.installedEmojiSets.add(Long.valueOf(this.pack.set.f1535id));
             }
             updateState(true);
             int i2 = 0;
@@ -3513,7 +3532,7 @@ public class EmojiView extends MvpFrameLayout implements NotificationCenter.Noti
                 if (i2 >= EmojiView.this.emojiGridView.getChildCount()) {
                     view2 = null;
                     break;
-                } else if ((EmojiView.this.emojiGridView.getChildAt(i2) instanceof EmojiPackExpand) && (childAdapterPosition = EmojiView.this.emojiGridView.getChildAdapterPosition((childAt = EmojiView.this.emojiGridView.getChildAt(i2)))) >= 0 && (i = EmojiView.this.emojiAdapter.positionToExpand.get(childAdapterPosition)) >= 0 && i < EmojiView.this.emojipacksProcessed.size() && EmojiView.this.emojipacksProcessed.get(i) != null && this.pack != null && ((EmojiPack) EmojiView.this.emojipacksProcessed.get(i)).set.f1533id == this.pack.set.f1533id) {
+                } else if ((EmojiView.this.emojiGridView.getChildAt(i2) instanceof EmojiPackExpand) && (childAdapterPosition = EmojiView.this.emojiGridView.getChildAdapterPosition((childAt = EmojiView.this.emojiGridView.getChildAt(i2)))) >= 0 && (i = EmojiView.this.emojiAdapter.positionToExpand.get(childAdapterPosition)) >= 0 && i < EmojiView.this.emojipacksProcessed.size() && EmojiView.this.emojipacksProcessed.get(i) != null && this.pack != null && ((EmojiPack) EmojiView.this.emojipacksProcessed.get(i)).set.f1535id == this.pack.set.f1535id) {
                     num = Integer.valueOf(childAdapterPosition);
                     view2 = childAt;
                     break;
@@ -3529,7 +3548,7 @@ public class EmojiView extends MvpFrameLayout implements NotificationCenter.Noti
             }
             TLRPC$TL_inputStickerSetID tLRPC$TL_inputStickerSetID = new TLRPC$TL_inputStickerSetID();
             TLRPC$StickerSet tLRPC$StickerSet2 = this.pack.set;
-            tLRPC$TL_inputStickerSetID.f1523id = tLRPC$StickerSet2.f1533id;
+            tLRPC$TL_inputStickerSetID.f1525id = tLRPC$StickerSet2.f1535id;
             tLRPC$TL_inputStickerSetID.access_hash = tLRPC$StickerSet2.access_hash;
             TLRPC$TL_messages_stickerSet stickerSet = MediaDataController.getInstance(EmojiView.this.currentAccount).getStickerSet(tLRPC$TL_inputStickerSetID, true);
             if (stickerSet == null || stickerSet.set == null) {
@@ -3549,7 +3568,7 @@ public class EmojiView extends MvpFrameLayout implements NotificationCenter.Noti
                 return;
             }
             emojiPack.installed = false;
-            EmojiView.this.installedEmojiSets.remove(Long.valueOf(tLRPC$StickerSet.f1533id));
+            EmojiView.this.installedEmojiSets.remove(Long.valueOf(tLRPC$StickerSet.f1535id));
             updateState(true);
             if (EmojiView.this.emojiTabs != null) {
                 EmojiView.this.emojiTabs.updateEmojiPacks(EmojiView.this.getEmojipacks());
@@ -3560,7 +3579,7 @@ public class EmojiView extends MvpFrameLayout implements NotificationCenter.Noti
             }
             TLRPC$TL_inputStickerSetID tLRPC$TL_inputStickerSetID = new TLRPC$TL_inputStickerSetID();
             TLRPC$StickerSet tLRPC$StickerSet2 = this.pack.set;
-            tLRPC$TL_inputStickerSetID.f1523id = tLRPC$StickerSet2.f1533id;
+            tLRPC$TL_inputStickerSetID.f1525id = tLRPC$StickerSet2.f1535id;
             tLRPC$TL_inputStickerSetID.access_hash = tLRPC$StickerSet2.access_hash;
             TLRPC$TL_messages_stickerSet stickerSet = MediaDataController.getInstance(EmojiView.this.currentAccount).getStickerSet(tLRPC$TL_inputStickerSetID, true);
             if (stickerSet == null || stickerSet.set == null) {
@@ -3597,14 +3616,14 @@ public class EmojiView extends MvpFrameLayout implements NotificationCenter.Noti
             this.divider = z;
             this.headerView.setText(emojiPack.set.title);
             if (emojiPack.installed && !emojiPack.set.official) {
-                this.premiumButtonView.setButton(LocaleController.getString("Restore", C3301R.string.Restore), new View.OnClickListener() { // from class: org.telegram.ui.Components.EmojiView$EmojiPackHeader$$ExternalSyntheticLambda5
+                this.premiumButtonView.setButton(LocaleController.getString("Restore", C3316R.string.Restore), new View.OnClickListener() { // from class: org.telegram.ui.Components.EmojiView$EmojiPackHeader$$ExternalSyntheticLambda5
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view) {
                         EmojiView.EmojiPackHeader.this.lambda$setStickerSet$5(view);
                     }
                 });
             } else {
-                this.premiumButtonView.setButton(LocaleController.getString("Unlock", C3301R.string.Unlock), new View.OnClickListener() { // from class: org.telegram.ui.Components.EmojiView$EmojiPackHeader$$ExternalSyntheticLambda3
+                this.premiumButtonView.setButton(LocaleController.getString("Unlock", C3316R.string.Unlock), new View.OnClickListener() { // from class: org.telegram.ui.Components.EmojiView$EmojiPackHeader$$ExternalSyntheticLambda3
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view) {
                         EmojiView.EmojiPackHeader.this.lambda$setStickerSet$6(view);
@@ -3627,11 +3646,11 @@ public class EmojiView extends MvpFrameLayout implements NotificationCenter.Noti
             TLRPC$TL_messages_stickerSet stickerSetById;
             TLRPC$TL_messages_stickerSet stickerSetById2;
             if (i == NotificationCenter.groupStickersDidLoad) {
-                if (this.toInstall != null && (stickerSetById2 = MediaDataController.getInstance(EmojiView.this.currentAccount).getStickerSetById(this.toInstall.f1523id)) != null && stickerSetById2.set != null) {
+                if (this.toInstall != null && (stickerSetById2 = MediaDataController.getInstance(EmojiView.this.currentAccount).getStickerSetById(this.toInstall.f1525id)) != null && stickerSetById2.set != null) {
                     install(stickerSetById2);
                     this.toInstall = null;
                 }
-                if (this.toUninstall == null || (stickerSetById = MediaDataController.getInstance(EmojiView.this.currentAccount).getStickerSetById(this.toUninstall.f1523id)) == null || stickerSetById.set == null) {
+                if (this.toUninstall == null || (stickerSetById = MediaDataController.getInstance(EmojiView.this.currentAccount).getStickerSetById(this.toUninstall.f1525id)) == null || stickerSetById.set == null) {
                     return;
                 }
                 uninstall(stickerSetById);
@@ -3695,8 +3714,8 @@ public class EmojiView extends MvpFrameLayout implements NotificationCenter.Noti
 
         public /* synthetic */ void lambda$uninstall$8(TLRPC$TL_messages_stickerSet tLRPC$TL_messages_stickerSet) {
             this.pack.installed = true;
-            if (!EmojiView.this.installedEmojiSets.contains(Long.valueOf(tLRPC$TL_messages_stickerSet.set.f1533id))) {
-                EmojiView.this.installedEmojiSets.add(Long.valueOf(tLRPC$TL_messages_stickerSet.set.f1533id));
+            if (!EmojiView.this.installedEmojiSets.contains(Long.valueOf(tLRPC$TL_messages_stickerSet.set.f1535id))) {
+                EmojiView.this.installedEmojiSets.add(Long.valueOf(tLRPC$TL_messages_stickerSet.set.f1535id));
             }
             updateState(true);
         }
@@ -3727,7 +3746,7 @@ public class EmojiView extends MvpFrameLayout implements NotificationCenter.Noti
                 return;
             }
             int i = 1;
-            boolean z2 = emojiPack.installed || EmojiView.this.installedEmojiSets.contains(Long.valueOf(emojiPack.set.f1533id));
+            boolean z2 = emojiPack.installed || EmojiView.this.installedEmojiSets.contains(Long.valueOf(emojiPack.set.f1535id));
             if (this.pack.free || UserConfig.getInstance(EmojiView.this.currentAccount).isPremium() || EmojiView.this.allowEmojisForNonPremium) {
                 i = this.pack.featured ? z2 ? 3 : 2 : 0;
             }
@@ -3869,7 +3888,7 @@ public class EmojiView extends MvpFrameLayout implements NotificationCenter.Noti
         this.emojiPackAlertOpened = true;
         ArrayList arrayList = new ArrayList(1);
         TLRPC$TL_inputStickerSetID tLRPC$TL_inputStickerSetID = new TLRPC$TL_inputStickerSetID();
-        tLRPC$TL_inputStickerSetID.f1523id = tLRPC$StickerSet.f1533id;
+        tLRPC$TL_inputStickerSetID.f1525id = tLRPC$StickerSet.f1535id;
         tLRPC$TL_inputStickerSetID.access_hash = tLRPC$StickerSet.access_hash;
         arrayList.add(tLRPC$TL_inputStickerSetID);
         new EmojiPacksAlert(this.fragment, getContext(), this.resourcesProvider, arrayList) { // from class: org.telegram.ui.Components.EmojiView.38
@@ -3886,11 +3905,11 @@ public class EmojiView extends MvpFrameLayout implements NotificationCenter.Noti
             @Override // org.telegram.p048ui.Components.EmojiPacksAlert
             protected void onButtonClicked(boolean z) {
                 if (z) {
-                    if (!EmojiView.this.installedEmojiSets.contains(Long.valueOf(tLRPC$StickerSet.f1533id))) {
-                        EmojiView.this.installedEmojiSets.add(Long.valueOf(tLRPC$StickerSet.f1533id));
+                    if (!EmojiView.this.installedEmojiSets.contains(Long.valueOf(tLRPC$StickerSet.f1535id))) {
+                        EmojiView.this.installedEmojiSets.add(Long.valueOf(tLRPC$StickerSet.f1535id));
                     }
                 } else {
-                    EmojiView.this.installedEmojiSets.remove(Long.valueOf(tLRPC$StickerSet.f1533id));
+                    EmojiView.this.installedEmojiSets.remove(Long.valueOf(tLRPC$StickerSet.f1535id));
                 }
                 EmojiView.this.updateEmojiHeaders();
             }
@@ -5094,7 +5113,7 @@ public class EmojiView extends MvpFrameLayout implements NotificationCenter.Noti
         int size = featuredStickerSets.size();
         for (int i = 0; i < size; i++) {
             TLRPC$StickerSetCovered tLRPC$StickerSetCovered = featuredStickerSets.get(i);
-            if (!mediaDataController.isStickerPackInstalled(tLRPC$StickerSetCovered.set.f1533id)) {
+            if (!mediaDataController.isStickerPackInstalled(tLRPC$StickerSetCovered.set.f1535id)) {
                 this.featuredStickerSets.add(tLRPC$StickerSetCovered);
             }
         }
@@ -5102,11 +5121,11 @@ public class EmojiView extends MvpFrameLayout implements NotificationCenter.Noti
         if (trendingAdapter != null) {
             trendingAdapter.notifyDataSetChanged();
         }
-        if (!this.isAvatarMode && !featuredStickerSets.isEmpty() && (this.featuredStickerSets.isEmpty() || emojiSettings.getLong("featured_hidden", 0L) == featuredStickerSets.get(0).set.f1533id)) {
+        if (!this.isAvatarMode && !featuredStickerSets.isEmpty() && (this.featuredStickerSets.isEmpty() || emojiSettings.getLong("featured_hidden", 0L) == featuredStickerSets.get(0).set.f1535id)) {
             int i2 = mediaDataController.getUnreadStickerSets().isEmpty() ? 2 : 3;
             StickerTabView addStickerIconTab = this.stickersTab.addStickerIconTab(i2, this.stickerIcons[i2]);
-            addStickerIconTab.textView.setText(LocaleController.getString("FeaturedStickersShort", C3301R.string.FeaturedStickersShort));
-            addStickerIconTab.setContentDescription(LocaleController.getString("FeaturedStickers", C3301R.string.FeaturedStickers));
+            addStickerIconTab.textView.setText(LocaleController.getString("FeaturedStickersShort", C3316R.string.FeaturedStickersShort));
+            addStickerIconTab.setContentDescription(LocaleController.getString("FeaturedStickers", C3316R.string.FeaturedStickers));
             int i3 = this.stickersTabOffset;
             this.trendingTabNum = i3;
             this.stickersTabOffset = i3 + 1;
@@ -5116,16 +5135,16 @@ public class EmojiView extends MvpFrameLayout implements NotificationCenter.Noti
             this.favTabNum = i4;
             this.stickersTabOffset = i4 + 1;
             StickerTabView addStickerIconTab2 = this.stickersTab.addStickerIconTab(1, this.stickerIcons[1]);
-            addStickerIconTab2.textView.setText(LocaleController.getString("FavoriteStickersShort", C3301R.string.FavoriteStickersShort));
-            addStickerIconTab2.setContentDescription(LocaleController.getString("FavoriteStickers", C3301R.string.FavoriteStickers));
+            addStickerIconTab2.textView.setText(LocaleController.getString("FavoriteStickersShort", C3316R.string.FavoriteStickersShort));
+            addStickerIconTab2.setContentDescription(LocaleController.getString("FavoriteStickers", C3316R.string.FavoriteStickers));
         }
         if (!this.recentStickers.isEmpty()) {
             int i5 = this.stickersTabOffset;
             this.recentTabNum = i5;
             this.stickersTabOffset = i5 + 1;
             StickerTabView addStickerIconTab3 = this.stickersTab.addStickerIconTab(0, this.stickerIcons[0]);
-            addStickerIconTab3.textView.setText(LocaleController.getString("RecentStickersShort", C3301R.string.RecentStickersShort));
-            addStickerIconTab3.setContentDescription(LocaleController.getString("RecentStickers", C3301R.string.RecentStickers));
+            addStickerIconTab3.textView.setText(LocaleController.getString("RecentStickersShort", C3316R.string.RecentStickersShort));
+            addStickerIconTab3.setContentDescription(LocaleController.getString("RecentStickers", C3316R.string.RecentStickers));
         }
         this.stickerSets.clear();
         this.groupStickerSet = null;
@@ -5143,7 +5162,7 @@ public class EmojiView extends MvpFrameLayout implements NotificationCenter.Noti
             }
             TLRPC$StickerSetCovered tLRPC$StickerSetCovered2 = tLRPC$StickerSetCoveredArr[i6];
             if (tLRPC$StickerSetCovered2 != null) {
-                TLRPC$TL_messages_stickerSet stickerSetById = mediaDataController.getStickerSetById(tLRPC$StickerSetCovered2.set.f1533id);
+                TLRPC$TL_messages_stickerSet stickerSetById = mediaDataController.getStickerSetById(tLRPC$StickerSetCovered2.set.f1535id);
                 if (stickerSetById != null && !stickerSetById.set.archived) {
                     this.primaryInstallingStickerSets[i6] = null;
                 } else {
@@ -5170,14 +5189,14 @@ public class EmojiView extends MvpFrameLayout implements NotificationCenter.Noti
             }
         }
         if (this.info != null) {
-            long j = MessagesController.getEmojiSettings(this.currentAccount).getLong("group_hide_stickers_" + this.info.f1501id, -1L);
-            TLRPC$Chat chat = MessagesController.getInstance(this.currentAccount).getChat(Long.valueOf(this.info.f1501id));
+            long j = MessagesController.getEmojiSettings(this.currentAccount).getLong("group_hide_stickers_" + this.info.f1503id, -1L);
+            TLRPC$Chat chat = MessagesController.getInstance(this.currentAccount).getChat(Long.valueOf(this.info.f1503id));
             if (chat == null || this.info.stickerset == null || !ChatObject.hasAdminRights(chat)) {
                 this.groupStickersHidden = j != -1;
             } else {
                 TLRPC$StickerSet tLRPC$StickerSet = this.info.stickerset;
                 if (tLRPC$StickerSet != null) {
-                    this.groupStickersHidden = j == tLRPC$StickerSet.f1533id;
+                    this.groupStickersHidden = j == tLRPC$StickerSet.f1535id;
                 }
             }
             TLRPC$ChatFull tLRPC$ChatFull = this.info;
@@ -5215,7 +5234,7 @@ public class EmojiView extends MvpFrameLayout implements NotificationCenter.Noti
         int i8 = 0;
         while (i8 < this.stickerSets.size()) {
             if (i8 == this.groupStickerPackNum) {
-                TLRPC$Chat chat2 = MessagesController.getInstance(this.currentAccount).getChat(Long.valueOf(this.info.f1501id));
+                TLRPC$Chat chat2 = MessagesController.getInstance(this.currentAccount).getChat(Long.valueOf(this.info.f1503id));
                 if (chat2 == null) {
                     this.stickerSets.remove(0);
                     i8--;
@@ -5229,7 +5248,7 @@ public class EmojiView extends MvpFrameLayout implements NotificationCenter.Noti
                 if (tLRPC$StickerSet3 != null && tLRPC$StickerSet3.thumb_document_id != 0) {
                     for (int i9 = 0; i9 < tLRPC$TL_messages_stickerSet5.documents.size(); i9++) {
                         tLRPC$Document = tLRPC$TL_messages_stickerSet5.documents.get(i9);
-                        if (tLRPC$Document != null && tLRPC$TL_messages_stickerSet5.set.thumb_document_id == tLRPC$Document.f1508id) {
+                        if (tLRPC$Document != null && tLRPC$TL_messages_stickerSet5.set.thumb_document_id == tLRPC$Document.f1510id) {
                             break;
                         }
                     }
@@ -5242,7 +5261,7 @@ public class EmojiView extends MvpFrameLayout implements NotificationCenter.Noti
                 if (closestPhotoSizeWithSize == null || tLRPC$TL_messages_stickerSet5.set.gifs) {
                     closestPhotoSizeWithSize = tLRPC$Document;
                 }
-                this.stickersTab.addStickerTab(closestPhotoSizeWithSize, tLRPC$Document, tLRPC$TL_messages_stickerSet5).setContentDescription(tLRPC$TL_messages_stickerSet5.set.title + ", " + LocaleController.getString("AccDescrStickerSet", C3301R.string.AccDescrStickerSet));
+                this.stickersTab.addStickerTab(closestPhotoSizeWithSize, tLRPC$Document, tLRPC$TL_messages_stickerSet5).setContentDescription(tLRPC$TL_messages_stickerSet5.set.title + ", " + LocaleController.getString("AccDescrStickerSet", C3316R.string.AccDescrStickerSet));
             }
             i8++;
         }
@@ -5279,13 +5298,13 @@ public class EmojiView extends MvpFrameLayout implements NotificationCenter.Noti
         this.gifFirstEmojiTabNum = -2;
         if (z3) {
             this.gifRecentTabNum = 0;
-            this.gifTabs.addIconTab(0, this.gifIcons[0]).setContentDescription(LocaleController.getString("RecentStickers", C3301R.string.RecentStickers));
+            this.gifTabs.addIconTab(0, this.gifIcons[0]).setContentDescription(LocaleController.getString("RecentStickers", C3316R.string.RecentStickers));
             i = 1;
         } else {
             i = 0;
         }
         this.gifTrendingTabNum = i;
-        this.gifTabs.addIconTab(1, this.gifIcons[1]).setContentDescription(LocaleController.getString("FeaturedGifs", C3301R.string.FeaturedGifs));
+        this.gifTabs.addIconTab(1, this.gifIcons[1]).setContentDescription(LocaleController.getString("FeaturedGifs", C3316R.string.FeaturedGifs));
         this.gifFirstEmojiTabNum = i + 1;
         AndroidUtilities.m50dp(13);
         AndroidUtilities.m50dp(11);
@@ -5558,7 +5577,7 @@ public class EmojiView extends MvpFrameLayout implements NotificationCenter.Noti
                     setClipToOutline(true);
                     setElevation(AndroidUtilities.m50dp(2));
                 }
-                setBackgroundResource(C3301R.C3303drawable.smiles_popup);
+                setBackgroundResource(C3316R.C3318drawable.smiles_popup);
                 if (this.isAvatarMode) {
                     getBackground().setColorFilter(new PorterDuffColorFilter(getThemedColor("windowBackgroundWhite"), PorterDuff.Mode.MULTIPLY));
                 } else {
@@ -5830,7 +5849,7 @@ public class EmojiView extends MvpFrameLayout implements NotificationCenter.Noti
             while (true) {
                 if (i2 < this.recentStickers.size()) {
                     TLRPC$Document tLRPC$Document2 = this.recentStickers.get(i2);
-                    if (tLRPC$Document2.dc_id == tLRPC$Document.dc_id && tLRPC$Document2.f1508id == tLRPC$Document.f1508id) {
+                    if (tLRPC$Document2.dc_id == tLRPC$Document.dc_id && tLRPC$Document2.f1510id == tLRPC$Document.f1510id) {
                         this.recentStickers.remove(i2);
                         break;
                     }
@@ -5927,26 +5946,26 @@ public class EmojiView extends MvpFrameLayout implements NotificationCenter.Noti
                 }
                 if (!AndroidUtilities.isBannedForever(tLRPC$TL_chatBannedRights2)) {
                     if (z2) {
-                        this.mediaBanTooltip.setText(LocaleController.formatString("AttachPlainRestricted", C3301R.string.AttachPlainRestricted, LocaleController.formatDateForBan(chat.banned_rights.until_date)));
+                        this.mediaBanTooltip.setText(LocaleController.formatString("AttachPlainRestricted", C3316R.string.AttachPlainRestricted, LocaleController.formatDateForBan(chat.banned_rights.until_date)));
                     }
                     if (z3) {
-                        this.mediaBanTooltip.setText(LocaleController.formatString("AttachGifRestricted", C3301R.string.AttachGifRestricted, LocaleController.formatDateForBan(chat.banned_rights.until_date)));
+                        this.mediaBanTooltip.setText(LocaleController.formatString("AttachGifRestricted", C3316R.string.AttachGifRestricted, LocaleController.formatDateForBan(chat.banned_rights.until_date)));
                     } else {
-                        this.mediaBanTooltip.setText(LocaleController.formatString("AttachStickersRestricted", C3301R.string.AttachStickersRestricted, LocaleController.formatDateForBan(chat.banned_rights.until_date)));
+                        this.mediaBanTooltip.setText(LocaleController.formatString("AttachStickersRestricted", C3316R.string.AttachStickersRestricted, LocaleController.formatDateForBan(chat.banned_rights.until_date)));
                     }
                 } else if (z2) {
-                    this.mediaBanTooltip.setText(LocaleController.getString("AttachPlainRestrictedForever", C3301R.string.AttachPlainRestrictedForever));
+                    this.mediaBanTooltip.setText(LocaleController.getString("AttachPlainRestrictedForever", C3316R.string.AttachPlainRestrictedForever));
                 } else if (z3) {
-                    this.mediaBanTooltip.setText(LocaleController.getString("AttachGifRestrictedForever", C3301R.string.AttachGifRestrictedForever));
+                    this.mediaBanTooltip.setText(LocaleController.getString("AttachGifRestrictedForever", C3316R.string.AttachGifRestrictedForever));
                 } else {
-                    this.mediaBanTooltip.setText(LocaleController.getString("AttachStickersRestrictedForever", C3301R.string.AttachStickersRestrictedForever));
+                    this.mediaBanTooltip.setText(LocaleController.getString("AttachStickersRestrictedForever", C3316R.string.AttachStickersRestrictedForever));
                 }
             } else if (z2) {
-                this.mediaBanTooltip.setText(LocaleController.getString("GlobalAttachEmojiRestricted", C3301R.string.GlobalAttachEmojiRestricted));
+                this.mediaBanTooltip.setText(LocaleController.getString("GlobalAttachEmojiRestricted", C3316R.string.GlobalAttachEmojiRestricted));
             } else if (z3) {
-                this.mediaBanTooltip.setText(LocaleController.getString("GlobalAttachGifRestricted", C3301R.string.GlobalAttachGifRestricted));
+                this.mediaBanTooltip.setText(LocaleController.getString("GlobalAttachGifRestricted", C3316R.string.GlobalAttachGifRestricted));
             } else {
-                this.mediaBanTooltip.setText(LocaleController.getString("GlobalAttachStickersRestricted", C3301R.string.GlobalAttachStickersRestricted));
+                this.mediaBanTooltip.setText(LocaleController.getString("GlobalAttachStickersRestricted", C3316R.string.GlobalAttachStickersRestricted));
             }
             this.mediaBanTooltip.setVisibility(0);
         }
@@ -6012,14 +6031,14 @@ public class EmojiView extends MvpFrameLayout implements NotificationCenter.Noti
                     FeaturedStickerSetInfoCell featuredStickerSetInfoCell = (FeaturedStickerSetInfoCell) childAt;
                     ArrayList<Long> unreadStickerSets = MediaDataController.getInstance(this.currentAccount).getUnreadStickerSets();
                     TLRPC$StickerSetCovered stickerSet = featuredStickerSetInfoCell.getStickerSet();
-                    boolean z2 = unreadStickerSets != null && unreadStickerSets.contains(Long.valueOf(stickerSet.set.f1533id));
+                    boolean z2 = unreadStickerSets != null && unreadStickerSets.contains(Long.valueOf(stickerSet.set.f1535id));
                     int i2 = 0;
                     while (true) {
                         TLRPC$StickerSetCovered[] tLRPC$StickerSetCoveredArr = this.primaryInstallingStickerSets;
                         if (i2 >= tLRPC$StickerSetCoveredArr.length) {
                             z = false;
                             break;
-                        } else if (tLRPC$StickerSetCoveredArr[i2] != null && tLRPC$StickerSetCoveredArr[i2].set.f1533id == stickerSet.set.f1533id) {
+                        } else if (tLRPC$StickerSetCoveredArr[i2] != null && tLRPC$StickerSetCoveredArr[i2].set.f1535id == stickerSet.set.f1535id) {
                             z = true;
                             break;
                         } else {
@@ -6028,16 +6047,16 @@ public class EmojiView extends MvpFrameLayout implements NotificationCenter.Noti
                     }
                     featuredStickerSetInfoCell.setStickerSet(stickerSet, z2, true, 0, 0, z);
                     if (z2) {
-                        MediaDataController.getInstance(this.currentAccount).markFeaturedStickersByIdAsRead(false, stickerSet.set.f1533id);
+                        MediaDataController.getInstance(this.currentAccount).markFeaturedStickersByIdAsRead(false, stickerSet.set.f1535id);
                     }
-                    boolean z3 = this.installingStickerSets.indexOfKey(stickerSet.set.f1533id) >= 0;
-                    boolean z4 = this.removingStickerSets.indexOfKey(stickerSet.set.f1533id) >= 0;
+                    boolean z3 = this.installingStickerSets.indexOfKey(stickerSet.set.f1535id) >= 0;
+                    boolean z4 = this.removingStickerSets.indexOfKey(stickerSet.set.f1535id) >= 0;
                     if (z3 || z4) {
                         if (z3 && featuredStickerSetInfoCell.isInstalled()) {
-                            this.installingStickerSets.remove(stickerSet.set.f1533id);
+                            this.installingStickerSets.remove(stickerSet.set.f1535id);
                             z3 = false;
                         } else if (z4 && !featuredStickerSetInfoCell.isInstalled()) {
-                            this.removingStickerSets.remove(stickerSet.set.f1533id);
+                            this.removingStickerSets.remove(stickerSet.set.f1535id);
                         }
                     }
                     featuredStickerSetInfoCell.setAddDrawProgress(!z && z3, true);
@@ -6079,7 +6098,7 @@ public class EmojiView extends MvpFrameLayout implements NotificationCenter.Noti
                 ContentPreviewViewer.getInstance().showInstantly(this.kiklikoLoadingPreviewView, 0, this.contentPreviewViewerDelegate, this.resourcesProvider);
                 return;
             }
-            ContextExtKt.toast(LocaleController.getInternalString(C3301R.string.common_unexpected_error_title));
+            ContextExtKt.toast(LocaleController.getInternalString(C3316R.string.common_unexpected_error_title));
         } else if (i == NotificationCenter.stickersDidLoad) {
             if (((Integer) objArr[0]).intValue() == 0) {
                 if (this.stickersGridAdapter != null) {
@@ -6114,7 +6133,7 @@ public class EmojiView extends MvpFrameLayout implements NotificationCenter.Noti
             }
         } else if (i == NotificationCenter.groupStickersDidLoad) {
             TLRPC$ChatFull tLRPC$ChatFull = this.info;
-            if (tLRPC$ChatFull != null && (tLRPC$StickerSet = tLRPC$ChatFull.stickerset) != null && tLRPC$StickerSet.f1533id == ((Long) objArr[0]).longValue()) {
+            if (tLRPC$ChatFull != null && (tLRPC$StickerSet = tLRPC$ChatFull.stickerset) != null && tLRPC$StickerSet.f1535id == ((Long) objArr[0]).longValue()) {
                 updateStickerTabs(false);
             }
             if (this.toInstall.containsKey((Long) objArr[0]) && objArr.length >= 2) {
@@ -6214,7 +6233,7 @@ public class EmojiView extends MvpFrameLayout implements NotificationCenter.Noti
                 @Override // org.telegram.p048ui.Components.BackupImageView, android.view.View
                 public void onDraw(Canvas canvas) {
                     super.onDraw(canvas);
-                    if (TrendingAdapter.this.emoji || !MediaDataController.getInstance(EmojiView.this.currentAccount).isStickerPackUnread(TrendingAdapter.this.emoji, ((TLRPC$StickerSetCovered) getTag()).set.f1533id) || EmojiView.this.dotPaint == null) {
+                    if (TrendingAdapter.this.emoji || !MediaDataController.getInstance(EmojiView.this.currentAccount).isStickerPackUnread(TrendingAdapter.this.emoji, ((TLRPC$StickerSetCovered) getTag()).set.f1535id) || EmojiView.this.dotPaint == null) {
                         return;
                     }
                     canvas.drawCircle(canvas.getWidth() - AndroidUtilities.m50dp(8), AndroidUtilities.m50dp(14), AndroidUtilities.m50dp(3), EmojiView.this.dotPaint);
@@ -6249,7 +6268,7 @@ public class EmojiView extends MvpFrameLayout implements NotificationCenter.Noti
                 } else {
                     if (tLRPC$StickerSetCovered.set != null) {
                         for (int i2 = 0; i2 < arrayList.size(); i2++) {
-                            if (arrayList.get(i2).f1508id == tLRPC$StickerSetCovered.set.thumb_document_id) {
+                            if (arrayList.get(i2).f1510id == tLRPC$StickerSetCovered.set.thumb_document_id) {
                                 tLRPC$Document = arrayList.get(i2);
                                 break;
                             }
@@ -6443,24 +6462,24 @@ public class EmojiView extends MvpFrameLayout implements NotificationCenter.Noti
             if (childViewHolder.getAdapterPosition() == EmojiView.this.groupStickerPackPosition) {
                 if (EmojiView.this.groupStickerSet != null) {
                     if (EmojiView.this.delegate != null) {
-                        EmojiView.this.delegate.onStickersGroupClick(EmojiView.this.info.f1501id);
+                        EmojiView.this.delegate.onStickersGroupClick(EmojiView.this.info.f1503id);
                         return;
                     }
                     return;
                 }
                 SharedPreferences.Editor edit = MessagesController.getEmojiSettings(EmojiView.this.currentAccount).edit();
-                edit.putLong("group_hide_stickers_" + EmojiView.this.info.f1501id, EmojiView.this.info.stickerset != null ? EmojiView.this.info.stickerset.f1533id : 0L).apply();
+                edit.putLong("group_hide_stickers_" + EmojiView.this.info.f1503id, EmojiView.this.info.stickerset != null ? EmojiView.this.info.stickerset.f1535id : 0L).apply();
                 EmojiView.this.updateStickerTabs(false);
                 if (EmojiView.this.stickersGridAdapter != null) {
                     EmojiView.this.stickersGridAdapter.notifyDataSetChanged();
                 }
             } else if (this.cache.get(childViewHolder.getAdapterPosition()) == EmojiView.this.recentStickers) {
-                AlertDialog create = new AlertDialog.Builder(this.context).setTitle(LocaleController.getString(C3301R.string.ClearRecentStickersAlertTitle)).setMessage(LocaleController.getString(C3301R.string.ClearRecentStickersAlertMessage)).setPositiveButton(LocaleController.getString(C3301R.string.ClearButton), new DialogInterface.OnClickListener() { // from class: org.telegram.ui.Components.EmojiView$StickersGridAdapter$$ExternalSyntheticLambda0
+                AlertDialog create = new AlertDialog.Builder(this.context).setTitle(LocaleController.getString(C3316R.string.ClearRecentStickersAlertTitle)).setMessage(LocaleController.getString(C3316R.string.ClearRecentStickersAlertMessage)).setPositiveButton(LocaleController.getString(C3316R.string.ClearButton), new DialogInterface.OnClickListener() { // from class: org.telegram.ui.Components.EmojiView$StickersGridAdapter$$ExternalSyntheticLambda0
                     @Override // android.content.DialogInterface.OnClickListener
                     public final void onClick(DialogInterface dialogInterface, int i) {
                         EmojiView.StickersGridAdapter.this.lambda$onCreateViewHolder$0(dialogInterface, i);
                     }
-                }).setNegativeButton(LocaleController.getString(C3301R.string.Cancel), null).create();
+                }).setNegativeButton(LocaleController.getString(C3316R.string.Cancel), null).create();
                 create.show();
                 TextView textView = (TextView) create.getButton(-1);
                 if (textView != null) {
@@ -6475,7 +6494,7 @@ public class EmojiView extends MvpFrameLayout implements NotificationCenter.Noti
 
         public /* synthetic */ void lambda$onCreateViewHolder$2(View view) {
             if (EmojiView.this.delegate != null) {
-                EmojiView.this.delegate.onStickersGroupClick(EmojiView.this.info.f1501id);
+                EmojiView.this.delegate.onStickersGroupClick(EmojiView.this.info.f1503id);
             }
         }
 
@@ -6484,7 +6503,7 @@ public class EmojiView extends MvpFrameLayout implements NotificationCenter.Noti
             if (featuredStickerSets.isEmpty()) {
                 return;
             }
-            MessagesController.getEmojiSettings(EmojiView.this.currentAccount).edit().putLong("featured_hidden", featuredStickerSets.get(0).set.f1533id).commit();
+            MessagesController.getEmojiSettings(EmojiView.this.currentAccount).edit().putLong("featured_hidden", featuredStickerSets.get(0).set.f1535id).commit();
             if (EmojiView.this.stickersGridAdapter != null) {
                 EmojiView.this.stickersGridAdapter.notifyItemRangeRemoved(1, 2);
             }
@@ -6623,13 +6642,13 @@ public class EmojiView extends MvpFrameLayout implements NotificationCenter.Noti
                 } else {
                     StickerSetNameCell stickerSetNameCell = (StickerSetNameCell) viewHolder.itemView;
                     if (MediaDataController.getInstance(EmojiView.this.currentAccount).loadFeaturedPremium) {
-                        i3 = C3301R.string.FeaturedStickersPremium;
+                        i3 = C3316R.string.FeaturedStickersPremium;
                         str = "FeaturedStickersPremium";
                     } else {
-                        i3 = C3301R.string.FeaturedStickers;
+                        i3 = C3316R.string.FeaturedStickers;
                         str = "FeaturedStickers";
                     }
-                    stickerSetNameCell.setText(LocaleController.getString(str, i3), C3301R.C3303drawable.msg_close, LocaleController.getString("AccDescrCloseTrendingStickers", C3301R.string.AccDescrCloseTrendingStickers));
+                    stickerSetNameCell.setText(LocaleController.getString(str, i3), C3316R.C3318drawable.msg_close, LocaleController.getString("AccDescrCloseTrendingStickers", C3316R.string.AccDescrCloseTrendingStickers));
                 }
             } else {
                 StickerSetNameCell stickerSetNameCell2 = (StickerSetNameCell) viewHolder.itemView;
@@ -6637,10 +6656,10 @@ public class EmojiView extends MvpFrameLayout implements NotificationCenter.Noti
                     if (EmojiView.this.groupStickersHidden && EmojiView.this.groupStickerSet == null) {
                         i2 = 0;
                     } else {
-                        i2 = EmojiView.this.groupStickerSet != null ? C3301R.C3303drawable.msg_mini_customize : C3301R.C3303drawable.msg_close;
+                        i2 = EmojiView.this.groupStickerSet != null ? C3316R.C3318drawable.msg_mini_customize : C3316R.C3318drawable.msg_close;
                     }
-                    TLRPC$Chat chat = EmojiView.this.info != null ? MessagesController.getInstance(EmojiView.this.currentAccount).getChat(Long.valueOf(EmojiView.this.info.f1501id)) : null;
-                    int i5 = C3301R.string.CurrentGroupStickers;
+                    TLRPC$Chat chat = EmojiView.this.info != null ? MessagesController.getInstance(EmojiView.this.currentAccount).getChat(Long.valueOf(EmojiView.this.info.f1503id)) : null;
+                    int i5 = C3316R.string.CurrentGroupStickers;
                     Object[] objArr = new Object[1];
                     objArr[0] = chat != null ? chat.title : "Group Stickers";
                     stickerSetNameCell2.setText(LocaleController.formatString("CurrentGroupStickers", i5, objArr), i2);
@@ -6651,15 +6670,15 @@ public class EmojiView extends MvpFrameLayout implements NotificationCenter.Noti
                     if (obj2 != EmojiView.this.recentStickers) {
                         if (obj2 != EmojiView.this.favouriteStickers) {
                             if (obj2 == EmojiView.this.premiumStickers) {
-                                stickerSetNameCell2.setText(LocaleController.getString("PremiumStickers", C3301R.string.PremiumStickers), 0);
+                                stickerSetNameCell2.setText(LocaleController.getString("PremiumStickers", C3316R.string.PremiumStickers), 0);
                                 return;
                             }
                             return;
                         }
-                        stickerSetNameCell2.setText(LocaleController.getString("FavoriteStickers", C3301R.string.FavoriteStickers), 0);
+                        stickerSetNameCell2.setText(LocaleController.getString("FavoriteStickers", C3316R.string.FavoriteStickers), 0);
                         return;
                     }
-                    stickerSetNameCell2.setText(LocaleController.getString("RecentStickers", C3301R.string.RecentStickers), C3301R.C3303drawable.msg_close, LocaleController.getString(C3301R.string.ClearRecentStickersAlertTitle));
+                    stickerSetNameCell2.setText(LocaleController.getString("RecentStickers", C3316R.string.RecentStickers), C3316R.C3318drawable.msg_close, LocaleController.getString(C3316R.string.ClearRecentStickersAlertTitle));
                     return;
                 }
                 TLRPC$StickerSet tLRPC$StickerSet = ((TLRPC$TL_messages_stickerSet) obj2).set;
@@ -6783,7 +6802,7 @@ public class EmojiView extends MvpFrameLayout implements NotificationCenter.Noti
                     MediaDataController mediaDataController = MediaDataController.getInstance(EmojiView.this.currentAccount);
                     SharedPreferences emojiSettings = MessagesController.getEmojiSettings(EmojiView.this.currentAccount);
                     ArrayList<TLRPC$StickerSetCovered> featuredStickerSets = mediaDataController.getFeaturedStickerSets();
-                    if (!EmojiView.this.featuredStickerSets.isEmpty() && emojiSettings.getLong("featured_hidden", 0L) != featuredStickerSets.get(i2).set.f1533id) {
+                    if (!EmojiView.this.featuredStickerSets.isEmpty() && emojiSettings.getLong("featured_hidden", 0L) != featuredStickerSets.get(i2).set.f1535id) {
                         SparseArray<Object> sparseArray4 = this.cache;
                         int i14 = this.totalItems;
                         this.totalItems = i14 + 1;
@@ -6843,7 +6862,7 @@ public class EmojiView extends MvpFrameLayout implements NotificationCenter.Noti
             if (tLRPC$TL_messages_stickerSet != null && tLRPC$TL_messages_stickerSet.documents != null) {
                 for (int i = 0; i < this.stickerSet.documents.size(); i++) {
                     TLRPC$Document tLRPC$Document = this.stickerSet.documents.get(i);
-                    if (tLRPC$Document != null && tLRPC$Document.f1508id == this.documentId) {
+                    if (tLRPC$Document != null && tLRPC$Document.f1510id == this.documentId) {
                         return tLRPC$Document;
                     }
                 }
@@ -6893,7 +6912,7 @@ public class EmojiView extends MvpFrameLayout implements NotificationCenter.Noti
             if (EmojiView.this.featuredEmojiSets == null || EmojiView.this.featuredEmojiSets.isEmpty() || ((TLRPC$StickerSetCovered) EmojiView.this.featuredEmojiSets.get(0)).set == null) {
                 return;
             }
-            MessagesController.getEmojiSettings(EmojiView.this.currentAccount).edit().putLong("emoji_featured_hidden", ((TLRPC$StickerSetCovered) EmojiView.this.featuredEmojiSets.get(0)).set.f1533id).commit();
+            MessagesController.getEmojiSettings(EmojiView.this.currentAccount).edit().putLong("emoji_featured_hidden", ((TLRPC$StickerSetCovered) EmojiView.this.featuredEmojiSets.get(0)).set.f1535id).commit();
             if (EmojiView.this.emojiAdapter != null) {
                 EmojiView.this.emojiAdapter.notifyItemRangeRemoved(1, 3);
             }
@@ -6915,10 +6934,10 @@ public class EmojiView extends MvpFrameLayout implements NotificationCenter.Noti
                     if (tLRPC$StickerSetCovered2 != null && tLRPC$StickerSetCovered2.set != null) {
                         TLRPC$TL_inputStickerSetID tLRPC$TL_inputStickerSetID = new TLRPC$TL_inputStickerSetID();
                         TLRPC$StickerSet tLRPC$StickerSet2 = tLRPC$StickerSetCovered2.set;
-                        tLRPC$TL_inputStickerSetID.f1523id = tLRPC$StickerSet2.f1533id;
+                        tLRPC$TL_inputStickerSetID.f1525id = tLRPC$StickerSet2.f1535id;
                         tLRPC$TL_inputStickerSetID.access_hash = tLRPC$StickerSet2.access_hash;
                         arrayList.add(tLRPC$TL_inputStickerSetID);
-                        if (tLRPC$StickerSetCovered != null && (tLRPC$StickerSet = tLRPC$StickerSetCovered.set) != null && tLRPC$StickerSet.f1533id == tLRPC$StickerSetCovered2.set.f1533id) {
+                        if (tLRPC$StickerSetCovered != null && (tLRPC$StickerSet = tLRPC$StickerSetCovered.set) != null && tLRPC$StickerSet.f1535id == tLRPC$StickerSetCovered2.set.f1535id) {
                             i2 = i3;
                         }
                     }
@@ -7008,7 +7027,7 @@ public class EmojiView extends MvpFrameLayout implements NotificationCenter.Noti
                     stickerSetNameCell.position = i;
                     int i2 = this.positionToSection.get(i);
                     if (i == this.trendingHeaderRow) {
-                        stickerSetNameCell.setText(LocaleController.getString("FeaturedEmojiPacks", C3301R.string.FeaturedEmojiPacks), C3301R.C3303drawable.msg_close, LocaleController.getString("AccDescrCloseTrendingEmoji", C3301R.string.AccDescrCloseTrendingEmoji));
+                        stickerSetNameCell.setText(LocaleController.getString("FeaturedEmojiPacks", C3316R.string.FeaturedEmojiPacks), C3316R.C3318drawable.msg_close, LocaleController.getString("AccDescrCloseTrendingEmoji", C3316R.string.AccDescrCloseTrendingEmoji));
                         return;
                     } else if (i != this.recentlyUsedHeaderRow) {
                         if (i2 >= EmojiView.this.emojiTitles.length) {
@@ -7023,7 +7042,7 @@ public class EmojiView extends MvpFrameLayout implements NotificationCenter.Noti
                         stickerSetNameCell.setText(EmojiView.this.emojiTitles[i2], 0);
                         return;
                     } else {
-                        stickerSetNameCell.setText(LocaleController.getString("RecentlyUsed", C3301R.string.RecentlyUsed), 0);
+                        stickerSetNameCell.setText(LocaleController.getString("RecentlyUsed", C3316R.string.RecentlyUsed), 0);
                         return;
                     }
                 } else if (itemViewType != 5) {
@@ -7122,7 +7141,7 @@ public class EmojiView extends MvpFrameLayout implements NotificationCenter.Noti
                             imageViewEmoji.pack = emojiPack2;
                             TLRPC$Document tLRPC$Document3 = emojiPack2.documents.get(imageViewEmoji.position - intValue);
                             tLRPC$Document = tLRPC$Document3;
-                            l = tLRPC$Document3 == null ? null : Long.valueOf(tLRPC$Document3.f1508id);
+                            l = tLRPC$Document3 == null ? null : Long.valueOf(tLRPC$Document3.f1510id);
                             str3 = str2;
                             tLRPC$Document2 = tLRPC$Document;
                             z = false;
@@ -7196,7 +7215,7 @@ public class EmojiView extends MvpFrameLayout implements NotificationCenter.Noti
                             emojiPack.set = tLRPC$TL_messages_stickerSet.set;
                             emojiPack.documents = new ArrayList<>(tLRPC$TL_messages_stickerSet.documents);
                             emojiPack.free = true;
-                            emojiPack.installed = mediaDataController.isStickerPackInstalled(tLRPC$TL_messages_stickerSet.set.f1533id);
+                            emojiPack.installed = mediaDataController.isStickerPackInstalled(tLRPC$TL_messages_stickerSet.set.f1535id);
                             emojiPack.featured = false;
                             emojiPack.expanded = true;
                             EmojiView.this.emojipacksProcessed.add(emojiPack);
@@ -7214,7 +7233,7 @@ public class EmojiView extends MvpFrameLayout implements NotificationCenter.Noti
                         emojiPack2.set = tLRPC$StickerSet;
                         emojiPack2.documents = tLRPC$TL_messages_stickerSet2.documents;
                         emojiPack2.free = false;
-                        emojiPack2.installed = mediaDataController.isStickerPackInstalled(tLRPC$StickerSet.f1533id);
+                        emojiPack2.installed = mediaDataController.isStickerPackInstalled(tLRPC$StickerSet.f1535id);
                         emojiPack2.featured = false;
                         emojiPack2.expanded = true;
                         EmojiView.this.emojipacksProcessed.add(emojiPack2);
@@ -7235,7 +7254,7 @@ public class EmojiView extends MvpFrameLayout implements NotificationCenter.Noti
                             emojiPack3.set = tLRPC$TL_messages_stickerSet2.set;
                             emojiPack3.documents = new ArrayList<>(arrayList2);
                             emojiPack3.free = true;
-                            emojiPack3.installed = mediaDataController.isStickerPackInstalled(tLRPC$TL_messages_stickerSet2.set.f1533id);
+                            emojiPack3.installed = mediaDataController.isStickerPackInstalled(tLRPC$TL_messages_stickerSet2.set.f1535id);
                             emojiPack3.featured = false;
                             emojiPack3.expanded = true;
                             EmojiView.this.emojipacksProcessed.add(emojiPack3);
@@ -7245,9 +7264,9 @@ public class EmojiView extends MvpFrameLayout implements NotificationCenter.Noti
                             emojiPack4.set = tLRPC$TL_messages_stickerSet2.set;
                             emojiPack4.documents = new ArrayList<>(arrayList3);
                             emojiPack4.free = false;
-                            emojiPack4.installed = mediaDataController.isStickerPackInstalled(tLRPC$TL_messages_stickerSet2.set.f1533id);
+                            emojiPack4.installed = mediaDataController.isStickerPackInstalled(tLRPC$TL_messages_stickerSet2.set.f1535id);
                             emojiPack4.featured = false;
-                            emojiPack4.expanded = EmojiView.this.expandedEmojiSets.contains(Long.valueOf(emojiPack4.set.f1533id));
+                            emojiPack4.expanded = EmojiView.this.expandedEmojiSets.contains(Long.valueOf(emojiPack4.set.f1535id));
                             EmojiView.this.emojipacksProcessed.add(emojiPack4);
                         }
                     }
@@ -7256,7 +7275,7 @@ public class EmojiView extends MvpFrameLayout implements NotificationCenter.Noti
                     for (int i4 = 0; i4 < EmojiView.this.featuredEmojiSets.size(); i4++) {
                         TLRPC$StickerSetCovered tLRPC$StickerSetCovered = (TLRPC$StickerSetCovered) EmojiView.this.featuredEmojiSets.get(i4);
                         EmojiPack emojiPack5 = new EmojiPack();
-                        emojiPack5.installed = mediaDataController.isStickerPackInstalled(tLRPC$StickerSetCovered.set.f1533id);
+                        emojiPack5.installed = mediaDataController.isStickerPackInstalled(tLRPC$StickerSetCovered.set.f1535id);
                         TLRPC$StickerSet tLRPC$StickerSet2 = tLRPC$StickerSetCovered.set;
                         emojiPack5.set = tLRPC$StickerSet2;
                         if (tLRPC$StickerSetCovered instanceof TLRPC$TL_stickerSetFullCovered) {
@@ -7282,7 +7301,7 @@ public class EmojiView extends MvpFrameLayout implements NotificationCenter.Noti
                             }
                         }
                         emojiPack5.free = !z2;
-                        emojiPack5.expanded = EmojiView.this.expandedEmojiSets.contains(Long.valueOf(emojiPack5.set.f1533id));
+                        emojiPack5.expanded = EmojiView.this.expandedEmojiSets.contains(Long.valueOf(emojiPack5.set.f1535id));
                         emojiPack5.featured = true;
                         EmojiView.this.emojipacksProcessed.add(emojiPack5);
                     }
@@ -7304,7 +7323,7 @@ public class EmojiView extends MvpFrameLayout implements NotificationCenter.Noti
             }
             boolean z = i2 + 1 == EmojiView.this.emojipacksProcessed.size();
             int intValue = this.packStartPosition.get(i2).intValue();
-            EmojiView.this.expandedEmojiSets.add(Long.valueOf(emojiPack.set.f1533id));
+            EmojiView.this.expandedEmojiSets.add(Long.valueOf(emojiPack.set.f1535id));
             boolean z2 = UserConfig.getInstance(EmojiView.this.currentAccount).isPremium() || EmojiView.this.allowEmojisForNonPremium;
             int spanCount = EmojiView.this.emojiLayoutManager.getSpanCount() * 3;
             int size = ((emojiPack.installed && !emojiPack.featured && (emojiPack.free || z2)) || emojiPack.expanded) ? emojiPack.documents.size() : Math.min(spanCount, emojiPack.documents.size());
@@ -7362,7 +7381,7 @@ public class EmojiView extends MvpFrameLayout implements NotificationCenter.Noti
                 this.itemCount++;
                 this.rowHashCodes.add(-1);
             }
-            if (z && EmojiView.this.allowAnimatedEmoji && EmojiView.this.featuredEmojiSets.size() > 0 && ((TLRPC$StickerSetCovered) EmojiView.this.featuredEmojiSets.get(0)).set != null && MessagesController.getEmojiSettings(EmojiView.this.currentAccount).getLong("emoji_featured_hidden", 0L) != ((TLRPC$StickerSetCovered) EmojiView.this.featuredEmojiSets.get(0)).set.f1533id) {
+            if (z && EmojiView.this.allowAnimatedEmoji && EmojiView.this.featuredEmojiSets.size() > 0 && ((TLRPC$StickerSetCovered) EmojiView.this.featuredEmojiSets.get(0)).set != null && MessagesController.getEmojiSettings(EmojiView.this.currentAccount).getLong("emoji_featured_hidden", 0L) != ((TLRPC$StickerSetCovered) EmojiView.this.featuredEmojiSets.get(0)).set.f1535id) {
                 int i = this.itemCount;
                 int i2 = i + 1;
                 this.itemCount = i2;
@@ -7429,19 +7448,19 @@ public class EmojiView extends MvpFrameLayout implements NotificationCenter.Noti
                     Object[] objArr = new Object[2];
                     objArr[0] = Integer.valueOf(emojiPack.featured ? 56345 : -645231);
                     TLRPC$StickerSet tLRPC$StickerSet = emojiPack.set;
-                    objArr[1] = Long.valueOf(tLRPC$StickerSet == null ? i8 : tLRPC$StickerSet.f1533id);
+                    objArr[1] = Long.valueOf(tLRPC$StickerSet == null ? i8 : tLRPC$StickerSet.f1535id);
                     arrayList.add(Integer.valueOf(Objects.hash(objArr)));
                     for (int i9 = 1; i9 < size; i9++) {
                         ArrayList<Integer> arrayList2 = this.rowHashCodes;
                         Object[] objArr2 = new Object[2];
                         objArr2[0] = Integer.valueOf(emojiPack.featured ? 3442 : 3213);
-                        objArr2[1] = Long.valueOf(emojiPack.documents.get(i9 - 1).f1508id);
+                        objArr2[1] = Long.valueOf(emojiPack.documents.get(i9 - 1).f1510id);
                         arrayList2.add(Integer.valueOf(Objects.hash(objArr2)));
                     }
                     this.itemCount += size;
                     if (!emojiPack.expanded && emojiPack.documents.size() > spanCount) {
                         this.positionToExpand.put(this.itemCount, i8);
-                        this.rowHashCodes.add(Integer.valueOf(Objects.hash(-65174, Long.valueOf(emojiPack.set.f1533id))));
+                        this.rowHashCodes.add(Integer.valueOf(Objects.hash(-65174, Long.valueOf(emojiPack.set.f1535id))));
                         this.itemCount++;
                     }
                     i8++;
@@ -7463,7 +7482,7 @@ public class EmojiView extends MvpFrameLayout implements NotificationCenter.Noti
             int size = featuredEmojiSets.size();
             for (int i = 0; i < size; i++) {
                 TLRPC$StickerSetCovered tLRPC$StickerSetCovered = featuredEmojiSets.get(i);
-                if (!mediaDataController.isStickerPackInstalled(tLRPC$StickerSetCovered.set.f1533id) || EmojiView.this.installedEmojiSets.contains(Long.valueOf(tLRPC$StickerSetCovered.set.f1533id))) {
+                if (!mediaDataController.isStickerPackInstalled(tLRPC$StickerSetCovered.set.f1535id) || EmojiView.this.installedEmojiSets.contains(Long.valueOf(tLRPC$StickerSetCovered.set.f1535id))) {
                     EmojiView.this.featuredEmojiSets.add(tLRPC$StickerSetCovered);
                 }
             }
@@ -7504,7 +7523,7 @@ public class EmojiView extends MvpFrameLayout implements NotificationCenter.Noti
         ArrayList<EmojiPack> arrayList = new ArrayList<>();
         for (int i = 0; i < this.emojipacksProcessed.size(); i++) {
             EmojiPack emojiPack = this.emojipacksProcessed.get(i);
-            if ((!emojiPack.featured && (emojiPack.installed || this.installedEmojiSets.contains(Long.valueOf(emojiPack.set.f1533id)))) || (emojiPack.featured && !emojiPack.installed && !this.installedEmojiSets.contains(Long.valueOf(emojiPack.set.f1533id)))) {
+            if ((!emojiPack.featured && (emojiPack.installed || this.installedEmojiSets.contains(Long.valueOf(emojiPack.set.f1535id)))) || (emojiPack.featured && !emojiPack.installed && !this.installedEmojiSets.contains(Long.valueOf(emojiPack.set.f1535id)))) {
                 arrayList.add(emojiPack);
             }
         }
@@ -7573,13 +7592,13 @@ public class EmojiView extends MvpFrameLayout implements NotificationCenter.Noti
                     }
                 };
                 TextView textView = new TextView(EmojiView.this.getContext());
-                textView.setText(LocaleController.getString("NoEmojiFound", C3301R.string.NoEmojiFound));
+                textView.setText(LocaleController.getString("NoEmojiFound", C3316R.string.NoEmojiFound));
                 textView.setTextSize(1, 16.0f);
                 textView.setTextColor(EmojiView.this.getThemedColor("chat_emojiPanelEmptyText"));
                 frameLayout2.addView(textView, LayoutHelper.createFrame(-2, -2, 49, 0, 10, 0, 0));
                 ImageView imageView = new ImageView(EmojiView.this.getContext());
                 imageView.setScaleType(ImageView.ScaleType.CENTER);
-                imageView.setImageResource(C3301R.C3303drawable.msg_emoji_question);
+                imageView.setImageResource(C3316R.C3318drawable.msg_emoji_question);
                 imageView.setColorFilter(new PorterDuffColorFilter(EmojiView.this.getThemedColor("chat_emojiPanelEmptyText"), PorterDuff.Mode.MULTIPLY));
                 frameLayout2.addView(imageView, LayoutHelper.createFrame(48, 48, 85));
                 imageView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.EmojiView.EmojiSearchAdapter.2
@@ -7596,23 +7615,23 @@ public class EmojiView extends MvpFrameLayout implements NotificationCenter.Noti
                         linearLayout.setOrientation(1);
                         linearLayout.setPadding(AndroidUtilities.m50dp(21), 0, AndroidUtilities.m50dp(21), 0);
                         ImageView imageView2 = new ImageView(EmojiView.this.getContext());
-                        imageView2.setImageResource(C3301R.C3303drawable.smiles_info);
+                        imageView2.setImageResource(C3316R.C3318drawable.smiles_info);
                         linearLayout.addView(imageView2, LayoutHelper.createLinear(-2, -2, 49, 0, 15, 0, 0));
                         TextView textView2 = new TextView(EmojiView.this.getContext());
-                        textView2.setText(LocaleController.getString("EmojiSuggestions", C3301R.string.EmojiSuggestions));
+                        textView2.setText(LocaleController.getString("EmojiSuggestions", C3316R.string.EmojiSuggestions));
                         textView2.setTextSize(1, 15.0f);
                         textView2.setTextColor(EmojiView.this.getThemedColor("dialogTextBlue2"));
                         textView2.setGravity(LocaleController.isRTL ? 5 : 3);
                         textView2.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
                         linearLayout.addView(textView2, LayoutHelper.createLinear(-2, -2, 51, 0, 24, 0, 0));
                         TextView textView3 = new TextView(EmojiView.this.getContext());
-                        textView3.setText(AndroidUtilities.replaceTags(LocaleController.getString("EmojiSuggestionsInfo", C3301R.string.EmojiSuggestionsInfo)));
+                        textView3.setText(AndroidUtilities.replaceTags(LocaleController.getString("EmojiSuggestionsInfo", C3316R.string.EmojiSuggestionsInfo)));
                         textView3.setTextSize(1, 15.0f);
                         textView3.setTextColor(EmojiView.this.getThemedColor("dialogTextBlack"));
                         textView3.setGravity(LocaleController.isRTL ? 5 : 3);
                         linearLayout.addView(textView3, LayoutHelper.createLinear(-2, -2, 51, 0, 11, 0, 0));
                         TextView textView4 = new TextView(EmojiView.this.getContext());
-                        int i2 = C3301R.string.EmojiSuggestionsUrl;
+                        int i2 = C3316R.string.EmojiSuggestionsUrl;
                         Object[] objArr = new Object[1];
                         if (EmojiSearchAdapter.this.lastSearchAlias == null) {
                             obj = EmojiView.this.lastSearchKeyboardLanguage;
@@ -7625,19 +7644,19 @@ public class EmojiView extends MvpFrameLayout implements NotificationCenter.Noti
                         textView4.setTextColor(EmojiView.this.getThemedColor("dialogTextLink"));
                         textView4.setGravity(LocaleController.isRTL ? 5 : 3);
                         linearLayout.addView(textView4, LayoutHelper.createLinear(-2, -2, 51, 0, 18, 0, 16));
-                        textView4.setOnClickListener(new View$OnClickListenerC45731(zArr, builder));
+                        textView4.setOnClickListener(new View$OnClickListenerC45941(zArr, builder));
                         builder.setCustomView(linearLayout);
                         builder.show();
                     }
 
                     /* renamed from: org.telegram.ui.Components.EmojiView$EmojiSearchAdapter$2$1 */
                     /* loaded from: classes6.dex */
-                    public class View$OnClickListenerC45731 implements View.OnClickListener {
+                    public class View$OnClickListenerC45941 implements View.OnClickListener {
                         final /* synthetic */ BottomSheet.Builder val$builder;
                         final /* synthetic */ boolean[] val$loadingUrl;
 
-                        View$OnClickListenerC45731(boolean[] zArr, BottomSheet.Builder builder) {
-                            View$OnClickListenerC45722.this = r1;
+                        View$OnClickListenerC45941(boolean[] zArr, BottomSheet.Builder builder) {
+                            View$OnClickListenerC45932.this = r1;
                             this.val$loadingUrl = zArr;
                             this.val$builder = builder;
                         }
@@ -7663,13 +7682,13 @@ public class EmojiView extends MvpFrameLayout implements NotificationCenter.Noti
                             final int sendRequest = connectionsManager.sendRequest(tLRPC$TL_messages_getEmojiURL, new RequestDelegate() { // from class: org.telegram.ui.Components.EmojiView$EmojiSearchAdapter$2$1$$ExternalSyntheticLambda3
                                 @Override // org.telegram.tgnet.RequestDelegate
                                 public final void run(TLObject tLObject, TLRPC$TL_error tLRPC$TL_error) {
-                                    EmojiView.EmojiSearchAdapter.View$OnClickListenerC45722.View$OnClickListenerC45731.this.lambda$onClick$1(alertDialogArr, builder, tLObject, tLRPC$TL_error);
+                                    EmojiView.EmojiSearchAdapter.View$OnClickListenerC45932.View$OnClickListenerC45941.this.lambda$onClick$1(alertDialogArr, builder, tLObject, tLRPC$TL_error);
                                 }
                             });
                             AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.EmojiView$EmojiSearchAdapter$2$1$$ExternalSyntheticLambda1
                                 @Override // java.lang.Runnable
                                 public final void run() {
-                                    EmojiView.EmojiSearchAdapter.View$OnClickListenerC45722.View$OnClickListenerC45731.this.lambda$onClick$3(alertDialogArr, sendRequest);
+                                    EmojiView.EmojiSearchAdapter.View$OnClickListenerC45932.View$OnClickListenerC45941.this.lambda$onClick$3(alertDialogArr, sendRequest);
                                 }
                             }, 1000L);
                         }
@@ -7678,7 +7697,7 @@ public class EmojiView extends MvpFrameLayout implements NotificationCenter.Noti
                             AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.EmojiView$EmojiSearchAdapter$2$1$$ExternalSyntheticLambda2
                                 @Override // java.lang.Runnable
                                 public final void run() {
-                                    EmojiView.EmojiSearchAdapter.View$OnClickListenerC45722.View$OnClickListenerC45731.this.lambda$onClick$0(alertDialogArr, tLObject, builder);
+                                    EmojiView.EmojiSearchAdapter.View$OnClickListenerC45932.View$OnClickListenerC45941.this.lambda$onClick$0(alertDialogArr, tLObject, builder);
                                 }
                             });
                         }
@@ -7702,7 +7721,7 @@ public class EmojiView extends MvpFrameLayout implements NotificationCenter.Noti
                             alertDialogArr[0].setOnCancelListener(new DialogInterface.OnCancelListener() { // from class: org.telegram.ui.Components.EmojiView$EmojiSearchAdapter$2$1$$ExternalSyntheticLambda0
                                 @Override // android.content.DialogInterface.OnCancelListener
                                 public final void onCancel(DialogInterface dialogInterface) {
-                                    EmojiView.EmojiSearchAdapter.View$OnClickListenerC45722.View$OnClickListenerC45731.this.lambda$onClick$2(i, dialogInterface);
+                                    EmojiView.EmojiSearchAdapter.View$OnClickListenerC45932.View$OnClickListenerC45941.this.lambda$onClick$2(i, dialogInterface);
                                 }
                             });
                             alertDialogArr[0].show();
@@ -7949,7 +7968,7 @@ public class EmojiView extends MvpFrameLayout implements NotificationCenter.Noti
                         checkAddPackToResults(tLRPC$StickerSet, ((TLRPC$TL_stickerSetFullCovered) tLRPC$StickerSetCovered).documents, lowerCase, linkedHashSet);
                     } else if (tLRPC$StickerSetCovered instanceof TLRPC$TL_stickerSetNoCovered) {
                         TLRPC$TL_inputStickerSetID tLRPC$TL_inputStickerSetID = new TLRPC$TL_inputStickerSetID();
-                        tLRPC$TL_inputStickerSetID.f1523id = tLRPC$StickerSetCovered.set.f1533id;
+                        tLRPC$TL_inputStickerSetID.f1525id = tLRPC$StickerSetCovered.set.f1535id;
                         TLRPC$TL_messages_stickerSet stickerSet = MediaDataController.getInstance(EmojiView.this.currentAccount).getStickerSet(tLRPC$TL_inputStickerSetID, true);
                         if (stickerSet != null) {
                             checkAddPackToResults(stickerSet.set, stickerSet.documents, lowerCase, linkedHashSet);
@@ -7962,17 +7981,17 @@ public class EmojiView extends MvpFrameLayout implements NotificationCenter.Noti
         }
 
         private void checkAddPackToResults(TLRPC$StickerSet tLRPC$StickerSet, ArrayList<TLRPC$Document> arrayList, String str, LinkedHashSet<Long> linkedHashSet) {
-            if (tLRPC$StickerSet.title == null || this.addedSets.contains(Long.valueOf(tLRPC$StickerSet.f1533id)) || !LocaleController.getInstance().getTranslitString(tLRPC$StickerSet.title.toLowerCase()).contains(str)) {
+            if (tLRPC$StickerSet.title == null || this.addedSets.contains(Long.valueOf(tLRPC$StickerSet.f1535id)) || !LocaleController.getInstance().getTranslitString(tLRPC$StickerSet.title.toLowerCase()).contains(str)) {
                 return;
             }
             Iterator<TLRPC$Document> it = arrayList.iterator();
             while (it.hasNext()) {
                 TLRPC$Document next = it.next();
                 if (next != null) {
-                    linkedHashSet.add(Long.valueOf(next.f1508id));
+                    linkedHashSet.add(Long.valueOf(next.f1510id));
                 }
             }
-            this.addedSets.add(Long.valueOf(tLRPC$StickerSet.f1533id));
+            this.addedSets.add(Long.valueOf(tLRPC$StickerSet.f1535id));
         }
     }
 
@@ -8026,18 +8045,18 @@ public class EmojiView extends MvpFrameLayout implements NotificationCenter.Noti
         @Override // androidx.viewpager.widget.PagerAdapter
         public CharSequence getPageTitle(int i) {
             if (i == 3) {
-                return LocaleController.getInternalString(C3301R.string.kikliko_name);
+                return LocaleController.getInternalString(C3316R.string.kikliko_name);
             }
             if (i != 0) {
                 if (i != 1) {
                     if (i != 2) {
                         return null;
                     }
-                    return LocaleController.getString("AccDescrStickers", C3301R.string.AccDescrStickers);
+                    return LocaleController.getString("AccDescrStickers", C3316R.string.AccDescrStickers);
                 }
-                return LocaleController.getString("AccDescrGIFs", C3301R.string.AccDescrGIFs);
+                return LocaleController.getString("AccDescrGIFs", C3316R.string.AccDescrGIFs);
             }
-            return LocaleController.getString("Emoji", C3301R.string.Emoji);
+            return LocaleController.getString("Emoji", C3316R.string.Emoji);
         }
 
         @Override // org.telegram.p048ui.Components.PagerSlidingTabStrip.IconTabProvider
@@ -8190,7 +8209,7 @@ public class EmojiView extends MvpFrameLayout implements NotificationCenter.Noti
                 stickerSetNameCell = view;
             } else if (i == 2) {
                 StickerSetNameCell stickerSetNameCell2 = new StickerSetNameCell(this.context, false, EmojiView.this.resourcesProvider);
-                stickerSetNameCell2.setText(LocaleController.getString("FeaturedGifs", C3301R.string.FeaturedGifs), 0);
+                stickerSetNameCell2.setText(LocaleController.getString("FeaturedGifs", C3316R.string.FeaturedGifs), 0);
                 RecyclerView.LayoutParams layoutParams = new RecyclerView.LayoutParams(-1, -2);
                 ((ViewGroup.MarginLayoutParams) layoutParams).topMargin = AndroidUtilities.m51dp(2.5f);
                 ((ViewGroup.MarginLayoutParams) layoutParams).bottomMargin = AndroidUtilities.m51dp(5.5f);
@@ -8556,10 +8575,10 @@ public class EmojiView extends MvpFrameLayout implements NotificationCenter.Noti
                 int i = 0;
                 for (int i2 = 0; i2 < tLRPC$messages_BotResults.results.size(); i2++) {
                     TLRPC$BotInlineResult tLRPC$BotInlineResult = tLRPC$messages_BotResults.results.get(i2);
-                    if (!this.resultsMap.containsKey(tLRPC$BotInlineResult.f1498id)) {
+                    if (!this.resultsMap.containsKey(tLRPC$BotInlineResult.f1500id)) {
                         tLRPC$BotInlineResult.query_id = tLRPC$messages_BotResults.query_id;
                         this.results.add(tLRPC$BotInlineResult);
-                        this.resultsMap.put(tLRPC$BotInlineResult.f1498id, tLRPC$BotInlineResult);
+                        this.resultsMap.put(tLRPC$BotInlineResult.f1500id, tLRPC$BotInlineResult);
                         i++;
                     }
                 }
@@ -8825,7 +8844,7 @@ public class EmojiView extends MvpFrameLayout implements NotificationCenter.Noti
             Size size = this.size;
             size.height = 100.0f;
             size.width = 100.0f;
-            if (tLRPC$Document != null && (closestPhotoSizeWithSize = FileLoader.getClosestPhotoSizeWithSize(tLRPC$Document.thumbs, 90)) != null && (i = closestPhotoSizeWithSize.f1531w) != 0 && (i2 = closestPhotoSizeWithSize.f1530h) != 0) {
+            if (tLRPC$Document != null && (closestPhotoSizeWithSize = FileLoader.getClosestPhotoSizeWithSize(tLRPC$Document.thumbs, 90)) != null && (i = closestPhotoSizeWithSize.f1533w) != 0 && (i2 = closestPhotoSizeWithSize.f1532h) != 0) {
                 Size size2 = this.size;
                 size2.width = i;
                 size2.height = i2;
@@ -8835,8 +8854,8 @@ public class EmojiView extends MvpFrameLayout implements NotificationCenter.Noti
                     TLRPC$DocumentAttribute tLRPC$DocumentAttribute = list.get(i3);
                     if ((tLRPC$DocumentAttribute instanceof TLRPC$TL_documentAttributeImageSize) || (tLRPC$DocumentAttribute instanceof TLRPC$TL_documentAttributeVideo)) {
                         Size size3 = this.size;
-                        size3.width = tLRPC$DocumentAttribute.f1511w;
-                        size3.height = tLRPC$DocumentAttribute.f1510h;
+                        size3.width = tLRPC$DocumentAttribute.f1513w;
+                        size3.height = tLRPC$DocumentAttribute.f1512h;
                         break;
                     }
                 }
@@ -8862,12 +8881,12 @@ public class EmojiView extends MvpFrameLayout implements NotificationCenter.Noti
             ImageView imageView = new ImageView(getContext());
             this.imageView = imageView;
             imageView.setScaleType(ImageView.ScaleType.CENTER);
-            imageView.setImageResource(C3301R.C3303drawable.gif_empty);
+            imageView.setImageResource(C3316R.C3318drawable.gif_empty);
             imageView.setColorFilter(new PorterDuffColorFilter(r12.getThemedColor("chat_emojiPanelEmptyText"), PorterDuff.Mode.MULTIPLY));
             addView(imageView, LayoutHelper.createFrame(-2, -2, 17, 0, 8, 0, 0));
             TextView textView = new TextView(getContext());
             this.textView = textView;
-            textView.setText(LocaleController.getString("NoGIFsFound", C3301R.string.NoGIFsFound));
+            textView.setText(LocaleController.getString("NoGIFsFound", C3316R.string.NoGIFsFound));
             textView.setTextSize(1, 16.0f);
             textView.setTextColor(r12.getThemedColor("chat_emojiPanelEmptyText"));
             addView(textView, LayoutHelper.createFrame(-2, -2, 17, 0, 42, 0, 0));
@@ -8921,7 +8940,7 @@ public class EmojiView extends MvpFrameLayout implements NotificationCenter.Noti
         private HashMap<ArrayList<TLRPC$Document>, String> emojiStickers = new HashMap<>();
         private ArrayList<ArrayList<TLRPC$Document>> emojiArrays = new ArrayList<>();
         private SparseArray<TLRPC$StickerSetCovered> positionsToSets = new SparseArray<>();
-        private Runnable searchRunnable = new RunnableC45861();
+        private Runnable searchRunnable = new RunnableC46071();
 
         @Override // org.telegram.p048ui.Components.RecyclerListView.SelectionAdapter
         public boolean isEnabled(RecyclerView.ViewHolder viewHolder) {
@@ -8936,7 +8955,7 @@ public class EmojiView extends MvpFrameLayout implements NotificationCenter.Noti
 
         /* renamed from: org.telegram.ui.Components.EmojiView$StickersSearchGridAdapter$1 */
         /* loaded from: classes6.dex */
-        public class RunnableC45861 implements Runnable {
+        public class RunnableC46071 implements Runnable {
             int lastId;
             String query;
             final ArrayList<TLRPC$StickerSetCovered> serverPacks = new ArrayList<>();
@@ -8948,7 +8967,7 @@ public class EmojiView extends MvpFrameLayout implements NotificationCenter.Noti
             final ArrayList<TLRPC$Document> emojiStickersArray = new ArrayList<>(0);
             final LongSparseArray<TLRPC$Document> emojiStickersMap = new LongSparseArray<>(0);
 
-            RunnableC45861() {
+            RunnableC46071() {
                 StickersSearchGridAdapter.this = r2;
             }
 
@@ -9071,7 +9090,7 @@ public class EmojiView extends MvpFrameLayout implements NotificationCenter.Noti
                     java.lang.Object r2 = r0.get(r3)
                     org.telegram.tgnet.TLRPC$Document r2 = (org.telegram.tgnet.TLRPC$Document) r2
                     android.util.LongSparseArray<org.telegram.tgnet.TLRPC$Document> r4 = r10.emojiStickersMap
-                    long r5 = r2.f1508id
+                    long r5 = r2.f1510id
                     r4.put(r5, r2)
                     int r3 = r3 + 1
                     goto Lc1
@@ -9088,7 +9107,7 @@ public class EmojiView extends MvpFrameLayout implements NotificationCenter.Noti
                     r11.run()
                     return
                 */
-                throw new UnsupportedOperationException("Method not decompiled: org.telegram.p048ui.Components.EmojiView.StickersSearchGridAdapter.RunnableC45861.addFromAllStickers(java.lang.Runnable):void");
+                throw new UnsupportedOperationException("Method not decompiled: org.telegram.p048ui.Components.EmojiView.StickersSearchGridAdapter.RunnableC46071.addFromAllStickers(java.lang.Runnable):void");
             }
 
             public void addFromSuggestions(final Runnable runnable) {
@@ -9102,7 +9121,7 @@ public class EmojiView extends MvpFrameLayout implements NotificationCenter.Noti
                     MediaDataController.getInstance(EmojiView.this.currentAccount).getEmojiSuggestions(EmojiView.this.lastSearchKeyboardLanguage, StickersSearchGridAdapter.this.searchQuery, false, new MediaDataController.KeywordResultCallback() { // from class: org.telegram.ui.Components.EmojiView$StickersSearchGridAdapter$1$$ExternalSyntheticLambda3
                         @Override // org.telegram.messenger.MediaDataController.KeywordResultCallback
                         public final void run(ArrayList arrayList, String str) {
-                            EmojiView.StickersSearchGridAdapter.RunnableC45861.this.lambda$addFromSuggestions$0(allStickers, runnable, arrayList, str);
+                            EmojiView.StickersSearchGridAdapter.RunnableC46071.this.lambda$addFromSuggestions$0(allStickers, runnable, arrayList, str);
                         }
                     }, false);
                     return;
@@ -9172,12 +9191,12 @@ public class EmojiView extends MvpFrameLayout implements NotificationCenter.Noti
 
             public void searchStickerSets(final Runnable runnable) {
                 TLRPC$TL_messages_searchStickerSets tLRPC$TL_messages_searchStickerSets = new TLRPC$TL_messages_searchStickerSets();
-                tLRPC$TL_messages_searchStickerSets.f1607q = this.query;
+                tLRPC$TL_messages_searchStickerSets.f1609q = this.query;
                 StickersSearchGridAdapter stickersSearchGridAdapter = StickersSearchGridAdapter.this;
                 stickersSearchGridAdapter.reqId = ConnectionsManager.getInstance(EmojiView.this.currentAccount).sendRequest(tLRPC$TL_messages_searchStickerSets, new RequestDelegate() { // from class: org.telegram.ui.Components.EmojiView$StickersSearchGridAdapter$1$$ExternalSyntheticLambda9
                     @Override // org.telegram.tgnet.RequestDelegate
                     public final void run(TLObject tLObject, TLRPC$TL_error tLRPC$TL_error) {
-                        EmojiView.StickersSearchGridAdapter.RunnableC45861.this.lambda$searchStickerSets$2(runnable, tLObject, tLRPC$TL_error);
+                        EmojiView.StickersSearchGridAdapter.RunnableC46071.this.lambda$searchStickerSets$2(runnable, tLObject, tLRPC$TL_error);
                     }
                 });
             }
@@ -9186,7 +9205,7 @@ public class EmojiView extends MvpFrameLayout implements NotificationCenter.Noti
                 AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.EmojiView$StickersSearchGridAdapter$1$$ExternalSyntheticLambda1
                     @Override // java.lang.Runnable
                     public final void run() {
-                        EmojiView.StickersSearchGridAdapter.RunnableC45861.this.lambda$searchStickerSets$1(tLObject, runnable);
+                        EmojiView.StickersSearchGridAdapter.RunnableC46071.this.lambda$searchStickerSets$1(tLObject, runnable);
                     }
                 });
             }
@@ -9211,7 +9230,7 @@ public class EmojiView extends MvpFrameLayout implements NotificationCenter.Noti
                     stickersSearchGridAdapter.reqId2 = ConnectionsManager.getInstance(EmojiView.this.currentAccount).sendRequest(tLRPC$TL_messages_getStickers, new RequestDelegate() { // from class: org.telegram.ui.Components.EmojiView$StickersSearchGridAdapter$1$$ExternalSyntheticLambda10
                         @Override // org.telegram.tgnet.RequestDelegate
                         public final void run(TLObject tLObject, TLRPC$TL_error tLRPC$TL_error) {
-                            EmojiView.StickersSearchGridAdapter.RunnableC45861.this.lambda$searchStickers$4(tLRPC$TL_messages_getStickers, runnable, tLObject, tLRPC$TL_error);
+                            EmojiView.StickersSearchGridAdapter.RunnableC46071.this.lambda$searchStickers$4(tLRPC$TL_messages_getStickers, runnable, tLObject, tLRPC$TL_error);
                         }
                     });
                     return;
@@ -9223,7 +9242,7 @@ public class EmojiView extends MvpFrameLayout implements NotificationCenter.Noti
                 AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.EmojiView$StickersSearchGridAdapter$1$$ExternalSyntheticLambda2
                     @Override // java.lang.Runnable
                     public final void run() {
-                        EmojiView.StickersSearchGridAdapter.RunnableC45861.this.lambda$searchStickers$3(tLRPC$TL_messages_getStickers, tLObject, runnable);
+                        EmojiView.StickersSearchGridAdapter.RunnableC46071.this.lambda$searchStickers$3(tLRPC$TL_messages_getStickers, tLObject, runnable);
                     }
                 });
             }
@@ -9243,7 +9262,7 @@ public class EmojiView extends MvpFrameLayout implements NotificationCenter.Noti
                     int size2 = tLRPC$TL_messages_stickers.stickers.size();
                     for (int i = 0; i < size2; i++) {
                         TLRPC$Document tLRPC$Document = tLRPC$TL_messages_stickers.stickers.get(i);
-                        if (this.emojiStickersMap.indexOfKey(tLRPC$Document.f1508id) < 0) {
+                        if (this.emojiStickersMap.indexOfKey(tLRPC$Document.f1510id) < 0) {
                             this.emojiStickersArray.add(tLRPC$Document);
                         }
                     }
@@ -9280,32 +9299,32 @@ public class EmojiView extends MvpFrameLayout implements NotificationCenter.Noti
                 Utilities.raceCallbacks(new Runnable() { // from class: org.telegram.ui.Components.EmojiView$StickersSearchGridAdapter$1$$ExternalSyntheticLambda0
                     @Override // java.lang.Runnable
                     public final void run() {
-                        EmojiView.StickersSearchGridAdapter.RunnableC45861.this.searchFinish();
+                        EmojiView.StickersSearchGridAdapter.RunnableC46071.this.searchFinish();
                     }
                 }, new Utilities.Callback() { // from class: org.telegram.ui.Components.EmojiView$StickersSearchGridAdapter$1$$ExternalSyntheticLambda5
                     @Override // org.telegram.messenger.Utilities.Callback
                     public final void run(Object obj) {
-                        EmojiView.StickersSearchGridAdapter.RunnableC45861.this.addFromAllStickers((Runnable) obj);
+                        EmojiView.StickersSearchGridAdapter.RunnableC46071.this.addFromAllStickers((Runnable) obj);
                     }
                 }, new Utilities.Callback() { // from class: org.telegram.ui.Components.EmojiView$StickersSearchGridAdapter$1$$ExternalSyntheticLambda6
                     @Override // org.telegram.messenger.Utilities.Callback
                     public final void run(Object obj) {
-                        EmojiView.StickersSearchGridAdapter.RunnableC45861.this.addFromSuggestions((Runnable) obj);
+                        EmojiView.StickersSearchGridAdapter.RunnableC46071.this.addFromSuggestions((Runnable) obj);
                     }
                 }, new Utilities.Callback() { // from class: org.telegram.ui.Components.EmojiView$StickersSearchGridAdapter$1$$ExternalSyntheticLambda7
                     @Override // org.telegram.messenger.Utilities.Callback
                     public final void run(Object obj) {
-                        EmojiView.StickersSearchGridAdapter.RunnableC45861.this.addLocalPacks((Runnable) obj);
+                        EmojiView.StickersSearchGridAdapter.RunnableC46071.this.addLocalPacks((Runnable) obj);
                     }
                 }, new Utilities.Callback() { // from class: org.telegram.ui.Components.EmojiView$StickersSearchGridAdapter$1$$ExternalSyntheticLambda4
                     @Override // org.telegram.messenger.Utilities.Callback
                     public final void run(Object obj) {
-                        EmojiView.StickersSearchGridAdapter.RunnableC45861.this.searchStickerSets((Runnable) obj);
+                        EmojiView.StickersSearchGridAdapter.RunnableC46071.this.searchStickerSets((Runnable) obj);
                     }
                 }, new Utilities.Callback() { // from class: org.telegram.ui.Components.EmojiView$StickersSearchGridAdapter$1$$ExternalSyntheticLambda8
                     @Override // org.telegram.messenger.Utilities.Callback
                     public final void run(Object obj) {
-                        EmojiView.StickersSearchGridAdapter.RunnableC45861.this.searchStickers((Runnable) obj);
+                        EmojiView.StickersSearchGridAdapter.RunnableC46071.this.searchStickers((Runnable) obj);
                     }
                 });
             }
@@ -9373,16 +9392,16 @@ public class EmojiView extends MvpFrameLayout implements NotificationCenter.Noti
         public /* synthetic */ void lambda$onCreateViewHolder$0(View view) {
             FeaturedStickerSetInfoCell featuredStickerSetInfoCell = (FeaturedStickerSetInfoCell) view.getParent();
             TLRPC$StickerSetCovered stickerSet = featuredStickerSetInfoCell.getStickerSet();
-            if (EmojiView.this.installingStickerSets.indexOfKey(stickerSet.set.f1533id) >= 0 || EmojiView.this.removingStickerSets.indexOfKey(stickerSet.set.f1533id) >= 0) {
+            if (EmojiView.this.installingStickerSets.indexOfKey(stickerSet.set.f1535id) >= 0 || EmojiView.this.removingStickerSets.indexOfKey(stickerSet.set.f1535id) >= 0) {
                 return;
             }
             if (featuredStickerSetInfoCell.isInstalled()) {
-                EmojiView.this.removingStickerSets.put(stickerSet.set.f1533id, stickerSet);
+                EmojiView.this.removingStickerSets.put(stickerSet.set.f1535id, stickerSet);
                 EmojiView.this.delegate.onStickerSetRemove(featuredStickerSetInfoCell.getStickerSet());
                 return;
             }
             featuredStickerSetInfoCell.setAddDrawProgress(true, true);
-            EmojiView.this.installingStickerSets.put(stickerSet.set.f1533id, stickerSet);
+            EmojiView.this.installingStickerSets.put(stickerSet.set.f1535id, stickerSet);
             EmojiView.this.delegate.onStickerSetAdd(featuredStickerSetInfoCell.getStickerSet());
         }
 
@@ -9434,12 +9453,12 @@ public class EmojiView extends MvpFrameLayout implements NotificationCenter.Noti
                     };
                     ImageView imageView = new ImageView(this.context);
                     imageView.setScaleType(ImageView.ScaleType.CENTER);
-                    imageView.setImageResource(C3301R.C3303drawable.stickers_empty);
+                    imageView.setImageResource(C3316R.C3318drawable.stickers_empty);
                     imageView.setColorFilter(new PorterDuffColorFilter(EmojiView.this.getThemedColor("chat_emojiPanelEmptyText"), PorterDuff.Mode.MULTIPLY));
                     imageView.setTranslationY(-AndroidUtilities.m50dp(24));
                     r14.addView(imageView, LayoutHelper.createFrame(-2, -2, 17, 0, 42, 0, 28));
                     TextView textView = new TextView(this.context);
-                    textView.setText(LocaleController.getString("NoStickersFound", C3301R.string.NoStickersFound));
+                    textView.setText(LocaleController.getString("NoStickersFound", C3316R.string.NoStickersFound));
                     textView.setTextSize(1, 16.0f);
                     textView.setTextColor(EmojiView.this.getThemedColor("chat_emojiPanelEmptyText"));
                     r14.addView(textView, LayoutHelper.createFrame(-2, -2, 17, 0, 42, 0, 9));
@@ -9518,14 +9537,14 @@ public class EmojiView extends MvpFrameLayout implements NotificationCenter.Noti
             } else {
                 TLRPC$StickerSetCovered tLRPC$StickerSetCovered = (TLRPC$StickerSetCovered) this.cache.get(i);
                 FeaturedStickerSetInfoCell featuredStickerSetInfoCell = (FeaturedStickerSetInfoCell) viewHolder.itemView;
-                boolean z2 = EmojiView.this.installingStickerSets.indexOfKey(tLRPC$StickerSetCovered.set.f1533id) >= 0;
-                char c = EmojiView.this.removingStickerSets.indexOfKey(tLRPC$StickerSetCovered.set.f1533id) < 0 ? (char) 0 : (char) 1;
+                boolean z2 = EmojiView.this.installingStickerSets.indexOfKey(tLRPC$StickerSetCovered.set.f1535id) >= 0;
+                char c = EmojiView.this.removingStickerSets.indexOfKey(tLRPC$StickerSetCovered.set.f1535id) < 0 ? (char) 0 : (char) 1;
                 if (z2 || c != 0) {
                     if (z2 && featuredStickerSetInfoCell.isInstalled()) {
-                        EmojiView.this.installingStickerSets.remove(tLRPC$StickerSetCovered.set.f1533id);
+                        EmojiView.this.installingStickerSets.remove(tLRPC$StickerSetCovered.set.f1535id);
                         z2 = false;
                     } else if (c != 0 && !featuredStickerSetInfoCell.isInstalled()) {
-                        EmojiView.this.removingStickerSets.remove(tLRPC$StickerSetCovered.set.f1533id);
+                        EmojiView.this.removingStickerSets.remove(tLRPC$StickerSetCovered.set.f1535id);
                     }
                 }
                 featuredStickerSetInfoCell.setAddDrawProgress(z2, false);

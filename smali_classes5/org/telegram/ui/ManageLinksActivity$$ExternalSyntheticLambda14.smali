@@ -2,50 +2,36 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Lcom/iMe/fork/utils/Callbacks$Callback2;
 
 
 # instance fields
 .field public final synthetic f$0:Lorg/telegram/ui/ManageLinksActivity;
 
-.field public final synthetic f$1:Lorg/telegram/tgnet/TLRPC$TL_error;
-
-.field public final synthetic f$2:Lorg/telegram/tgnet/TLObject;
-
-.field public final synthetic f$3:Lorg/telegram/tgnet/TLRPC$TL_chatInviteExported;
-
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/ManageLinksActivity;Lorg/telegram/tgnet/TLRPC$TL_error;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_chatInviteExported;)V
+.method public synthetic constructor <init>(Lorg/telegram/ui/ManageLinksActivity;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/ui/ManageLinksActivity$$ExternalSyntheticLambda14;->f$0:Lorg/telegram/ui/ManageLinksActivity;
 
-    iput-object p2, p0, Lorg/telegram/ui/ManageLinksActivity$$ExternalSyntheticLambda14;->f$1:Lorg/telegram/tgnet/TLRPC$TL_error;
-
-    iput-object p3, p0, Lorg/telegram/ui/ManageLinksActivity$$ExternalSyntheticLambda14;->f$2:Lorg/telegram/tgnet/TLObject;
-
-    iput-object p4, p0, Lorg/telegram/ui/ManageLinksActivity$$ExternalSyntheticLambda14;->f$3:Lorg/telegram/tgnet/TLRPC$TL_chatInviteExported;
-
     return-void
 .end method
 
 
 # virtual methods
-.method public final run()V
-    .locals 4
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)V
+    .locals 1
 
     iget-object v0, p0, Lorg/telegram/ui/ManageLinksActivity$$ExternalSyntheticLambda14;->f$0:Lorg/telegram/ui/ManageLinksActivity;
 
-    iget-object v1, p0, Lorg/telegram/ui/ManageLinksActivity$$ExternalSyntheticLambda14;->f$1:Lorg/telegram/tgnet/TLRPC$TL_error;
+    check-cast p1, Lorg/telegram/tgnet/TLRPC$User;
 
-    iget-object v2, p0, Lorg/telegram/ui/ManageLinksActivity$$ExternalSyntheticLambda14;->f$2:Lorg/telegram/tgnet/TLObject;
+    check-cast p2, Ljava/lang/String;
 
-    iget-object v3, p0, Lorg/telegram/ui/ManageLinksActivity$$ExternalSyntheticLambda14;->f$3:Lorg/telegram/tgnet/TLRPC$TL_chatInviteExported;
-
-    invoke-static {v0, v1, v2, v3}, Lorg/telegram/ui/ManageLinksActivity;->$r8$lambda$Sdh3cBa--LZNU20EnEvz-Gv6g6E(Lorg/telegram/ui/ManageLinksActivity;Lorg/telegram/tgnet/TLRPC$TL_error;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_chatInviteExported;)V
+    invoke-static {v0, p1, p2}, Lorg/telegram/ui/ManageLinksActivity;->$r8$lambda$r5OqC6ssXY3mOjU3UP5Gi3I8I9Y(Lorg/telegram/ui/ManageLinksActivity;Lorg/telegram/tgnet/TLRPC$User;Ljava/lang/String;)V
 
     return-void
 .end method

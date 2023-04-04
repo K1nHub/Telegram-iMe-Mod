@@ -10,7 +10,7 @@ public class TLRPC$TL_webAuthorization extends TLObject {
     public long hash;
 
     /* renamed from: ip */
-    public String f1638ip;
+    public String f1640ip;
     public String platform;
     public String region;
 
@@ -35,7 +35,7 @@ public class TLRPC$TL_webAuthorization extends TLObject {
         this.platform = abstractSerializedData.readString(z);
         this.date_created = abstractSerializedData.readInt32(z);
         this.date_active = abstractSerializedData.readInt32(z);
-        this.f1638ip = abstractSerializedData.readString(z);
+        this.f1640ip = abstractSerializedData.readString(z);
         this.region = abstractSerializedData.readString(z);
     }
 
@@ -49,7 +49,7 @@ public class TLRPC$TL_webAuthorization extends TLObject {
         abstractSerializedData.writeString(this.platform);
         abstractSerializedData.writeInt32(this.date_created);
         abstractSerializedData.writeInt32(this.date_active);
-        abstractSerializedData.writeString(this.f1638ip);
+        abstractSerializedData.writeString(this.f1640ip);
         abstractSerializedData.writeString(this.region);
     }
 }

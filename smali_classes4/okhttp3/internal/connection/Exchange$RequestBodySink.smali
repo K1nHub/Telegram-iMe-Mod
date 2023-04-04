@@ -141,7 +141,7 @@
     :cond_1
     new-instance v0, Ljava/net/ProtocolException;
 
-    const-string v1, "unexpected end of stream"
+    const-string/jumbo v1, "unexpected end of stream"
 
     invoke-direct {v0, v1}, Ljava/net/ProtocolException;-><init>(Ljava/lang/String;)V
 

@@ -195,7 +195,7 @@ public final class ManagedChannelImpl extends ManagedChannel implements Internal
         }
         LbHelperImpl lbHelperImpl = this.lbHelper;
         if (lbHelperImpl != null) {
-            lbHelperImpl.f431lb.shutdown();
+            lbHelperImpl.f436lb.shutdown();
             this.lbHelper = null;
         }
         this.subchannelPicker = null;
@@ -216,7 +216,7 @@ public final class ManagedChannelImpl extends ManagedChannel implements Internal
         }
         this.channelLogger.log(ChannelLogger.ChannelLogLevel.INFO, "Exiting idle mode");
         LbHelperImpl lbHelperImpl = new LbHelperImpl();
-        lbHelperImpl.f431lb = this.loadBalancerFactory.newLoadBalancer(lbHelperImpl);
+        lbHelperImpl.f436lb = this.loadBalancerFactory.newLoadBalancer(lbHelperImpl);
         this.lbHelper = lbHelperImpl;
         this.nameResolver.start((NameResolver.Listener2) new NameResolverListener(lbHelperImpl, this.nameResolver));
         this.nameResolverStarted = true;
@@ -352,7 +352,7 @@ public final class ManagedChannelImpl extends ManagedChannel implements Internal
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public ManagedChannelImpl(AbstractManagedChannelImplBuilder<?> abstractManagedChannelImplBuilder, ClientTransportFactory clientTransportFactory, BackoffPolicy.Provider provider, ObjectPool<? extends Executor> objectPool, Supplier<Stopwatch> supplier, List<ClientInterceptor> list, final TimeProvider timeProvider) {
-        C24491 c24491;
+        C25251 c25251;
         SynchronizationContext synchronizationContext = new SynchronizationContext(new Thread.UncaughtExceptionHandler() { // from class: io.grpc.internal.ManagedChannelImpl.1
             @Override // java.lang.Thread.UncaughtExceptionHandler
             public void uncaughtException(Thread thread, Throwable th) {
@@ -430,9 +430,9 @@ public final class ManagedChannelImpl extends ManagedChannel implements Internal
             ServiceConfigHolder serviceConfigHolder = new ServiceConfigHolder(abstractManagedChannelImplBuilder.defaultServiceConfig, (ManagedChannelServiceConfig) parseServiceConfig.getConfig());
             this.defaultServiceConfig = serviceConfigHolder;
             this.lastServiceConfig = serviceConfigHolder;
-            c24491 = null;
+            c25251 = null;
         } else {
-            c24491 = null;
+            c25251 = null;
             this.defaultServiceConfig = null;
         }
         boolean z2 = abstractManagedChannelImplBuilder.lookUpServiceConfig;
@@ -655,7 +655,7 @@ public final class ManagedChannelImpl extends ManagedChannel implements Internal
                         ManagedChannelImpl.this.subchannelPicker.requestConnection();
                     }
                     if (ManagedChannelImpl.this.lbHelper != null) {
-                        ManagedChannelImpl.this.lbHelper.f431lb.requestConnection();
+                        ManagedChannelImpl.this.lbHelper.f436lb.requestConnection();
                     }
                 }
             });
@@ -779,7 +779,7 @@ public final class ManagedChannelImpl extends ManagedChannel implements Internal
     public class LbHelperImpl extends LoadBalancer.Helper {
 
         /* renamed from: lb */
-        AutoConfiguredLoadBalancerFactory.AutoConfiguredLoadBalancer f431lb;
+        AutoConfiguredLoadBalancerFactory.AutoConfiguredLoadBalancer f436lb;
 
         private LbHelperImpl() {
         }
@@ -904,7 +904,7 @@ public final class ManagedChannelImpl extends ManagedChannel implements Internal
                         if (serviceConfigHolder != r4) {
                             attributes = attributes.toBuilder().set(GrpcAttributes.NAME_RESOLVER_SERVICE_CONFIG, serviceConfigHolder.rawServiceConfig).build();
                         }
-                        Status tryHandleResolvedAddresses = NameResolverListener.this.helper.f431lb.tryHandleResolvedAddresses(LoadBalancer.ResolvedAddresses.newBuilder().setAddresses(addresses).setAttributes(attributes).setLoadBalancingPolicyConfig(serviceConfigHolder.managedChannelServiceConfig.getLoadBalancingConfig()).build());
+                        Status tryHandleResolvedAddresses = NameResolverListener.this.helper.f436lb.tryHandleResolvedAddresses(LoadBalancer.ResolvedAddresses.newBuilder().setAddresses(addresses).setAttributes(attributes).setLoadBalancingPolicyConfig(serviceConfigHolder.managedChannelServiceConfig.getLoadBalancingConfig()).build());
                         if (tryHandleResolvedAddresses.isOk()) {
                             return;
                         }
@@ -941,7 +941,7 @@ public final class ManagedChannelImpl extends ManagedChannel implements Internal
             if (this.helper != ManagedChannelImpl.this.lbHelper) {
                 return;
             }
-            this.helper.f431lb.handleNameResolutionError(status);
+            this.helper.f436lb.handleNameResolutionError(status);
             scheduleExponentialBackOffInSyncContext();
         }
 

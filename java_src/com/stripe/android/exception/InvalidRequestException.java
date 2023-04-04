@@ -1,5 +1,5 @@
 package com.stripe.android.exception;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class InvalidRequestException extends StripeException {
     private final String param;
 

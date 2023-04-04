@@ -545,7 +545,7 @@
 
     if-eq v7, v8, :cond_7
 
-    sget v8, Lcom/smedialink/common/IdFabric$CustomType;->MEDIA_TAB_PLAYLIST:I
+    sget v8, Lcom/iMe/common/IdFabric$CustomType;->MEDIA_TAB_PLAYLIST:I
 
     if-ne v7, v8, :cond_e
 
@@ -699,7 +699,7 @@
     .line 6321
     iget v0, p0, Lorg/telegram/ui/Components/SharedMediaLayout$MediaSearchAdapter;->currentType:I
 
-    sget v1, Lcom/smedialink/common/IdFabric$CustomType;->MEDIA_TAB_PLAYLIST:I
+    sget v1, Lcom/iMe/common/IdFabric$CustomType;->MEDIA_TAB_PLAYLIST:I
 
     const/4 v2, 0x4
 
@@ -1409,7 +1409,7 @@
     if-eq v0, v3, :cond_a
 
     .line 6515
-    sget v3, Lcom/smedialink/common/IdFabric$CustomType;->MEDIA_TAB_PLAYLIST:I
+    sget v3, Lcom/iMe/common/IdFabric$CustomType;->MEDIA_TAB_PLAYLIST:I
 
     if-ne v0, v3, :cond_f
 
@@ -1558,7 +1558,7 @@
     if-eq p1, v0, :cond_2
 
     .line 6470
-    sget v0, Lcom/smedialink/common/IdFabric$CustomType;->MEDIA_TAB_PLAYLIST:I
+    sget v0, Lcom/iMe/common/IdFabric$CustomType;->MEDIA_TAB_PLAYLIST:I
 
     if-ne p1, v0, :cond_1
 
@@ -1606,7 +1606,7 @@
 
     if-eqz v1, :cond_3
 
-    sget p2, Lcom/smedialink/common/IdFabric$ViewTypes;->SHARED_AUDIO_CELL_MUSIC:I
+    sget p2, Lcom/iMe/common/IdFabric$ViewTypes;->SHARED_AUDIO_CELL_MUSIC:I
 
     :cond_3
     iget-object v1, p0, Lorg/telegram/ui/Components/SharedMediaLayout$MediaSearchAdapter;->this$0:Lorg/telegram/ui/Components/SharedMediaLayout;

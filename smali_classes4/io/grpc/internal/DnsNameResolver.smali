@@ -150,7 +150,7 @@
 
     const-string v1, "io.grpc.internal.DnsNameResolverProvider.enable_jndi"
 
-    const-string v2, "true"
+    const-string/jumbo v2, "true"
 
     .line 92
     invoke-static {v1, v2}, Ljava/lang/System;->getProperty(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;

@@ -30,7 +30,7 @@ import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.HashMap;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3301R;
+import org.telegram.messenger.C3316R;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.NotificationCenter;
@@ -133,7 +133,7 @@ public class ActionBarPopupWindow extends PopupWindow {
         }
 
         public ActionBarPopupWindowLayout(Context context, Theme.ResourcesProvider resourcesProvider) {
-            this(context, C3301R.C3303drawable.popup_fixed_alert2, resourcesProvider);
+            this(context, C3316R.C3318drawable.popup_fixed_alert2, resourcesProvider);
         }
 
         public ActionBarPopupWindowLayout(Context context, int i, Theme.ResourcesProvider resourcesProvider) {
@@ -199,9 +199,9 @@ public class ActionBarPopupWindow extends PopupWindow {
                         for (int i7 = 0; i7 < childCount; i7++) {
                             View childAt = getChildAt(i7);
                             if (childAt.getVisibility() != 8) {
-                                Object tag = childAt.getTag(C3301R.C3304id.width_tag);
-                                Object tag2 = childAt.getTag(C3301R.C3304id.object_tag);
-                                Object tag3 = childAt.getTag(C3301R.C3304id.fit_width_tag);
+                                Object tag = childAt.getTag(C3316R.C3319id.width_tag);
+                                Object tag2 = childAt.getTag(C3316R.C3319id.object_tag);
+                                Object tag3 = childAt.getTag(C3316R.C3319id.fit_width_tag);
                                 if (tag != null) {
                                     childAt.getLayoutParams().width = -2;
                                 }
@@ -513,7 +513,7 @@ public class ActionBarPopupWindow extends PopupWindow {
             for (int i2 = 0; i2 < childCount; i2++) {
                 View childAt2 = this.linearLayout.getChildAt(i2);
                 if (childAt2.getVisibility() == 0) {
-                    Object tag = childAt2.getTag(C3301R.C3304id.object_tag);
+                    Object tag = childAt2.getTag(C3316R.C3319id.object_tag);
                     if (childAt2 instanceof ActionBarMenuSubItem) {
                         ((ActionBarMenuSubItem) childAt2).updateSelectorBackground(childAt2 == view || z, childAt2 == view2);
                     }
@@ -973,7 +973,7 @@ public class ActionBarPopupWindow extends PopupWindow {
 
         public GapView(Context context, int i, int i2) {
             super(context);
-            this.shadowDrawable = Theme.getThemedDrawable(getContext(), C3301R.C3303drawable.greydivider, i2);
+            this.shadowDrawable = Theme.getThemedDrawable(getContext(), C3316R.C3318drawable.greydivider, i2);
             setBackgroundColor(i);
         }
 

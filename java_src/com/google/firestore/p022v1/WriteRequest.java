@@ -72,7 +72,7 @@ public final class WriteRequest extends GeneratedMessageLite<WriteRequest, Build
     /* renamed from: com.google.firestore.v1.WriteRequest$Builder */
     /* loaded from: classes3.dex */
     public static final class Builder extends GeneratedMessageLite.Builder<WriteRequest, Builder> implements MessageLiteOrBuilder {
-        /* synthetic */ Builder(C10711 c10711) {
+        /* synthetic */ Builder(C10851 c10851) {
             this();
         }
 
@@ -101,7 +101,7 @@ public final class WriteRequest extends GeneratedMessageLite<WriteRequest, Build
 
     /* renamed from: com.google.firestore.v1.WriteRequest$1 */
     /* loaded from: classes3.dex */
-    static /* synthetic */ class C10711 {
+    static /* synthetic */ class C10851 {
 
         /* renamed from: $SwitchMap$com$google$protobuf$GeneratedMessageLite$MethodToInvoke */
         static final /* synthetic */ int[] f220xa1df5c61;
@@ -142,7 +142,7 @@ public final class WriteRequest extends GeneratedMessageLite<WriteRequest, Build
 
     @Override // com.google.protobuf.GeneratedMessageLite
     protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke methodToInvoke, Object obj, Object obj2) {
-        switch (C10711.f220xa1df5c61[methodToInvoke.ordinal()]) {
+        switch (C10851.f220xa1df5c61[methodToInvoke.ordinal()]) {
             case 1:
                 return new WriteRequest();
             case 2:

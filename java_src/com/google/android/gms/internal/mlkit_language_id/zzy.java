@@ -10,7 +10,7 @@ public final class zzy {
 
     /* compiled from: com.google.mlkit:language-id@@16.1.1 */
     /* loaded from: classes.dex */
-    public static final class zza extends zzeo<zza, C6853zza> implements zzgb {
+    public static final class zza extends zzeo<zza, C6877zza> implements zzgb {
         private static final zza zzg;
         private static volatile zzgj<zza> zzh;
         private int zzc;
@@ -20,7 +20,7 @@ public final class zzy {
 
         /* compiled from: com.google.mlkit:language-id@@16.1.1 */
         /* loaded from: classes.dex */
-        public static final class zzb extends zzeo<zzb, C6854zza> implements zzgb {
+        public static final class zzb extends zzeo<zzb, C6878zza> implements zzgb {
             private static final zzb zzh;
             private static volatile zzgj<zzb> zzi;
             private int zzc;
@@ -35,12 +35,12 @@ public final class zzy {
             /* compiled from: com.google.mlkit:language-id@@16.1.1 */
             /* renamed from: com.google.android.gms.internal.mlkit_language_id.zzy$zza$zzb$zza  reason: collision with other inner class name */
             /* loaded from: classes.dex */
-            public static final class C6854zza extends zzeo.zzb<zzb, C6854zza> implements zzgb {
-                private C6854zza() {
+            public static final class C6878zza extends zzeo.zzb<zzb, C6878zza> implements zzgb {
+                private C6878zza() {
                     super(zzb.zzh);
                 }
 
-                /* synthetic */ C6854zza(com.google.android.gms.internal.mlkit_language_id.zzx zzxVar) {
+                /* synthetic */ C6878zza(com.google.android.gms.internal.mlkit_language_id.zzx zzxVar) {
                     this();
                 }
             }
@@ -54,7 +54,7 @@ public final class zzy {
                     case 1:
                         return new zzb();
                     case 2:
-                        return new C6854zza(null);
+                        return new C6878zza(null);
                     case 3:
                         return zzeo.zza(zzh, "\u0001\u0004\u0000\u0001\u0001\u0004\u0004\u0000\u0000\u0000\u0001ဌ\u0000\u0002ဇ\u0001\u0003ဉ\u0002\u0004ဉ\u0003", new Object[]{"zzc", "zzd", com.google.android.gms.internal.mlkit_language_id.zzai.zzb(), "zze", "zzf", "zzg"});
                     case 4:
@@ -97,12 +97,12 @@ public final class zzy {
         /* compiled from: com.google.mlkit:language-id@@16.1.1 */
         /* renamed from: com.google.android.gms.internal.mlkit_language_id.zzy$zza$zza  reason: collision with other inner class name */
         /* loaded from: classes.dex */
-        public static final class C6853zza extends zzeo.zzb<zza, C6853zza> implements zzgb {
-            private C6853zza() {
+        public static final class C6877zza extends zzeo.zzb<zza, C6877zza> implements zzgb {
+            private C6877zza() {
                 super(zza.zzg);
             }
 
-            /* synthetic */ C6853zza(com.google.android.gms.internal.mlkit_language_id.zzx zzxVar) {
+            /* synthetic */ C6877zza(com.google.android.gms.internal.mlkit_language_id.zzx zzxVar) {
                 this();
             }
         }
@@ -116,7 +116,7 @@ public final class zzy {
                 case 1:
                     return new zza();
                 case 2:
-                    return new C6853zza(null);
+                    return new C6877zza(null);
                 case 3:
                     return zzeo.zza(zzg, "\u0001\u0003\u0000\u0001\u0001\u0003\u0003\u0000\u0000\u0000\u0001ဉ\u0000\u0002ဋ\u0001\u0003ဉ\u0002", new Object[]{"zzc", "zzd", "zze", "zzf"});
                 case 4:
@@ -527,7 +527,7 @@ public final class zzy {
         private boolean zzh;
         private zzak zzi;
         private zzz zzj;
-        private C6856zzy zzk;
+        private C6880zzy zzk;
         private zzx zzl;
         private zzap zzm;
         private zzbd zzn;
@@ -2919,32 +2919,32 @@ public final class zzy {
         private static final zzb zzg;
         private static volatile zzgj<zzb> zzh;
         private int zzc;
-        private C6855zzb zzd;
+        private C6879zzb zzd;
         private int zze;
         private zzab zzf;
 
         /* compiled from: com.google.mlkit:language-id@@16.1.1 */
         /* renamed from: com.google.android.gms.internal.mlkit_language_id.zzy$zzb$zzb  reason: collision with other inner class name */
         /* loaded from: classes.dex */
-        public static final class C6855zzb extends zzeo<C6855zzb, zza> implements zzgb {
-            private static final C6855zzb zzi;
-            private static volatile zzgj<C6855zzb> zzj;
+        public static final class C6879zzb extends zzeo<C6879zzb, zza> implements zzgb {
+            private static final C6879zzb zzi;
+            private static volatile zzgj<C6879zzb> zzj;
             private int zzc;
             private int zzd;
             private boolean zze;
-            private zzew<C6856zzy.zzb> zzf = zzeo.zzl();
-            private zzew<C6856zzy.zzb> zzg = zzeo.zzl();
+            private zzew<C6880zzy.zzb> zzf = zzeo.zzl();
+            private zzew<C6880zzy.zzb> zzg = zzeo.zzl();
             private zzam zzh;
 
-            private C6855zzb() {
+            private C6879zzb() {
             }
 
             /* compiled from: com.google.mlkit:language-id@@16.1.1 */
             /* renamed from: com.google.android.gms.internal.mlkit_language_id.zzy$zzb$zzb$zza */
             /* loaded from: classes.dex */
-            public static final class zza extends zzeo.zzb<C6855zzb, zza> implements zzgb {
+            public static final class zza extends zzeo.zzb<C6879zzb, zza> implements zzgb {
                 private zza() {
-                    super(C6855zzb.zzi);
+                    super(C6879zzb.zzi);
                 }
 
                 /* synthetic */ zza(com.google.android.gms.internal.mlkit_language_id.zzx zzxVar) {
@@ -2956,22 +2956,22 @@ public final class zzy {
             /* JADX WARN: Type inference failed for: r3v14, types: [com.google.android.gms.internal.mlkit_language_id.zzgj<com.google.android.gms.internal.mlkit_language_id.zzy$zzb$zzb>, com.google.android.gms.internal.mlkit_language_id.zzeo$zza] */
             @Override // com.google.android.gms.internal.mlkit_language_id.zzeo
             public final Object zza(int i, Object obj, Object obj2) {
-                zzgj<C6855zzb> zzgjVar;
+                zzgj<C6879zzb> zzgjVar;
                 switch (com.google.android.gms.internal.mlkit_language_id.zzx.zza[i - 1]) {
                     case 1:
-                        return new C6855zzb();
+                        return new C6879zzb();
                     case 2:
                         return new zza(null);
                     case 3:
-                        return zzeo.zza(zzi, "\u0001\u0005\u0000\u0001\u0001\u0005\u0005\u0000\u0002\u0000\u0001ဌ\u0000\u0002ဇ\u0001\u0003\u001b\u0004\u001b\u0005ဉ\u0002", new Object[]{"zzc", "zzd", com.google.android.gms.internal.mlkit_language_id.zzai.zzb(), "zze", "zzf", C6856zzy.zzb.class, "zzg", C6856zzy.zzb.class, "zzh"});
+                        return zzeo.zza(zzi, "\u0001\u0005\u0000\u0001\u0001\u0005\u0005\u0000\u0002\u0000\u0001ဌ\u0000\u0002ဇ\u0001\u0003\u001b\u0004\u001b\u0005ဉ\u0002", new Object[]{"zzc", "zzd", com.google.android.gms.internal.mlkit_language_id.zzai.zzb(), "zze", "zzf", C6880zzy.zzb.class, "zzg", C6880zzy.zzb.class, "zzh"});
                     case 4:
                         return zzi;
                     case 5:
-                        zzgj<C6855zzb> zzgjVar2 = zzj;
-                        zzgj<C6855zzb> zzgjVar3 = zzgjVar2;
+                        zzgj<C6879zzb> zzgjVar2 = zzj;
+                        zzgj<C6879zzb> zzgjVar3 = zzgjVar2;
                         if (zzgjVar2 == null) {
-                            synchronized (C6855zzb.class) {
-                                zzgj<C6855zzb> zzgjVar4 = zzj;
+                            synchronized (C6879zzb.class) {
+                                zzgj<C6879zzb> zzgjVar4 = zzj;
                                 zzgjVar = zzgjVar4;
                                 if (zzgjVar4 == null) {
                                     ?? zzaVar = new zzeo.zza(zzi);
@@ -2992,9 +2992,9 @@ public final class zzy {
             }
 
             static {
-                C6855zzb c6855zzb = new C6855zzb();
-                zzi = c6855zzb;
-                zzeo.zza(C6855zzb.class, c6855zzb);
+                C6879zzb c6879zzb = new C6879zzb();
+                zzi = c6879zzb;
+                zzeo.zza(C6879zzb.class, c6879zzb);
             }
         }
 
@@ -6034,9 +6034,9 @@ public final class zzy {
     /* compiled from: com.google.mlkit:language-id@@16.1.1 */
     /* renamed from: com.google.android.gms.internal.mlkit_language_id.zzy$zzy  reason: collision with other inner class name */
     /* loaded from: classes.dex */
-    public static final class C6856zzy extends zzeo<C6856zzy, zza> implements zzgb {
-        private static final C6856zzy zzi;
-        private static volatile zzgj<C6856zzy> zzj;
+    public static final class C6880zzy extends zzeo<C6880zzy, zza> implements zzgb {
+        private static final C6880zzy zzi;
+        private static volatile zzgj<C6880zzy> zzj;
         private int zzc;
         private zzaf zzd;
         private zzam zze;
@@ -6057,14 +6057,14 @@ public final class zzy {
             /* compiled from: com.google.mlkit:language-id@@16.1.1 */
             /* renamed from: com.google.android.gms.internal.mlkit_language_id.zzy$zzy$zzb$zzb  reason: collision with other inner class name */
             /* loaded from: classes.dex */
-            public enum EnumC6857zzb implements zzet {
+            public enum EnumC6881zzb implements zzet {
                 UNKNOWN_DATA_TYPE(0),
                 TYPE_FLOAT32(1),
                 TYPE_INT32(2),
                 TYPE_BYTE(3),
                 TYPE_LONG(4);
                 
-                private static final zzes<EnumC6857zzb> zzf = new com.google.android.gms.internal.mlkit_language_id.zzae();
+                private static final zzes<EnumC6881zzb> zzf = new com.google.android.gms.internal.mlkit_language_id.zzae();
                 private final int zzg;
 
                 @Override // com.google.android.gms.internal.mlkit_language_id.zzet
@@ -6078,10 +6078,10 @@ public final class zzy {
 
                 @Override // java.lang.Enum
                 public final String toString() {
-                    return "<" + EnumC6857zzb.class.getName() + '@' + Integer.toHexString(System.identityHashCode(this)) + " number=" + this.zzg + " name=" + name() + '>';
+                    return "<" + EnumC6881zzb.class.getName() + '@' + Integer.toHexString(System.identityHashCode(this)) + " number=" + this.zzg + " name=" + name() + '>';
                 }
 
-                EnumC6857zzb(int i) {
+                EnumC6881zzb(int i) {
                     this.zzg = i;
                 }
             }
@@ -6113,7 +6113,7 @@ public final class zzy {
                     case 2:
                         return new zza(null);
                     case 3:
-                        return zzeo.zza(zzf, "\u0001\u0002\u0000\u0001\u0001\u0002\u0002\u0000\u0001\u0000\u0001ဌ\u0000\u0002\u0016", new Object[]{"zzc", "zzd", EnumC6857zzb.zzb(), "zze"});
+                        return zzeo.zza(zzf, "\u0001\u0002\u0000\u0001\u0001\u0002\u0002\u0000\u0001\u0000\u0001ဌ\u0000\u0002\u0016", new Object[]{"zzc", "zzd", EnumC6881zzb.zzb(), "zze"});
                     case 4:
                         return zzf;
                     case 5:
@@ -6148,15 +6148,15 @@ public final class zzy {
             }
         }
 
-        private C6856zzy() {
+        private C6880zzy() {
         }
 
         /* compiled from: com.google.mlkit:language-id@@16.1.1 */
         /* renamed from: com.google.android.gms.internal.mlkit_language_id.zzy$zzy$zza */
         /* loaded from: classes.dex */
-        public static final class zza extends zzeo.zzb<C6856zzy, zza> implements zzgb {
+        public static final class zza extends zzeo.zzb<C6880zzy, zza> implements zzgb {
             private zza() {
-                super(C6856zzy.zzi);
+                super(C6880zzy.zzi);
             }
 
             /* synthetic */ zza(com.google.android.gms.internal.mlkit_language_id.zzx zzxVar) {
@@ -6168,10 +6168,10 @@ public final class zzy {
         /* JADX WARN: Type inference failed for: r3v14, types: [com.google.android.gms.internal.mlkit_language_id.zzgj<com.google.android.gms.internal.mlkit_language_id.zzy$zzy>, com.google.android.gms.internal.mlkit_language_id.zzeo$zza] */
         @Override // com.google.android.gms.internal.mlkit_language_id.zzeo
         public final Object zza(int i, Object obj, Object obj2) {
-            zzgj<C6856zzy> zzgjVar;
+            zzgj<C6880zzy> zzgjVar;
             switch (com.google.android.gms.internal.mlkit_language_id.zzx.zza[i - 1]) {
                 case 1:
-                    return new C6856zzy();
+                    return new C6880zzy();
                 case 2:
                     return new zza(null);
                 case 3:
@@ -6179,11 +6179,11 @@ public final class zzy {
                 case 4:
                     return zzi;
                 case 5:
-                    zzgj<C6856zzy> zzgjVar2 = zzj;
-                    zzgj<C6856zzy> zzgjVar3 = zzgjVar2;
+                    zzgj<C6880zzy> zzgjVar2 = zzj;
+                    zzgj<C6880zzy> zzgjVar3 = zzgjVar2;
                     if (zzgjVar2 == null) {
-                        synchronized (C6856zzy.class) {
-                            zzgj<C6856zzy> zzgjVar4 = zzj;
+                        synchronized (C6880zzy.class) {
+                            zzgj<C6880zzy> zzgjVar4 = zzj;
                             zzgjVar = zzgjVar4;
                             if (zzgjVar4 == null) {
                                 ?? zzaVar = new zzeo.zza(zzi);
@@ -6204,9 +6204,9 @@ public final class zzy {
         }
 
         static {
-            C6856zzy c6856zzy = new C6856zzy();
-            zzi = c6856zzy;
-            zzeo.zza(C6856zzy.class, c6856zzy);
+            C6880zzy c6880zzy = new C6880zzy();
+            zzi = c6880zzy;
+            zzeo.zza(C6880zzy.class, c6880zzy);
         }
     }
 

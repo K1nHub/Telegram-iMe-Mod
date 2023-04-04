@@ -416,15 +416,15 @@ public final class ExecutorScheduler extends Scheduler {
     final class DelayedDispose implements Runnable {
 
         /* renamed from: dr */
-        private final DelayedRunnable f472dr;
+        private final DelayedRunnable f477dr;
 
         DelayedDispose(DelayedRunnable delayedRunnable) {
-            this.f472dr = delayedRunnable;
+            this.f477dr = delayedRunnable;
         }
 
         @Override // java.lang.Runnable
         public void run() {
-            DelayedRunnable delayedRunnable = this.f472dr;
+            DelayedRunnable delayedRunnable = this.f477dr;
             delayedRunnable.direct.replace(ExecutorScheduler.this.scheduleDirect(delayedRunnable));
         }
     }

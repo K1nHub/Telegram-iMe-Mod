@@ -48,7 +48,7 @@
     .line 40
     iput-wide p2, p0, Lio/reactivex/schedulers/Timed;->time:J
 
-    const-string p1, "unit is null"
+    const-string/jumbo p1, "unit is null"
 
     .line 41
     invoke-static {p4, p1}, Lio/reactivex/internal/functions/ObjectHelper;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;

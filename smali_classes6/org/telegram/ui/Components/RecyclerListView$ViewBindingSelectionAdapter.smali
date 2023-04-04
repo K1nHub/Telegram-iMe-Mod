@@ -19,7 +19,7 @@
         "Landroidx/viewbinding/ViewBinding;",
         ">",
         "Landroidx/recyclerview/widget/RecyclerView$Adapter<",
-        "Lcom/smedialink/utils/common/ViewBindingAdapterHolder<",
+        "Lcom/iMe/utils/common/ViewBindingAdapterHolder<",
         "TT;>;>;"
     }
 .end annotation

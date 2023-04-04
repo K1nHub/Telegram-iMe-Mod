@@ -1523,7 +1523,7 @@
 
     const/4 v1, 0x1
 
-    invoke-static {v0, p1, v2, v1}, Lcom/smedialink/utils/helper/GlideHelper;->loadImageAsBitmap(Landroid/content/Context;Ljava/lang/String;Lorg/fork/utils/Callbacks$Callback1;Z)V
+    invoke-static {v0, p1, v2, v1}, Lcom/iMe/utils/helper/GlideHelper;->loadImageAsBitmap(Landroid/content/Context;Ljava/lang/String;Lcom/iMe/fork/utils/Callbacks$Callback1;Z)V
 
     return-void
 .end method
@@ -3116,22 +3116,22 @@
     :goto_b
     iget v5, v0, Lorg/telegram/ui/Cells/UserCell;->currentAccount:I
 
-    invoke-static {v5}, Lorg/fork/controller/ForkCommonController;->getInstance(I)Lorg/fork/controller/ForkCommonController;
+    invoke-static {v5}, Lcom/iMe/fork/controller/ForkCommonController;->getInstance(I)Lcom/iMe/fork/controller/ForkCommonController;
 
     move-result-object v5
 
-    invoke-virtual {v5}, Lorg/fork/controller/ForkCommonController;->isShowPremiumBadgeEnabled()Z
+    invoke-virtual {v5}, Lcom/iMe/fork/controller/ForkCommonController;->isShowPremiumBadgeEnabled()Z
 
     move-result v5
 
     .line 509
     iget v6, v0, Lorg/telegram/ui/Cells/UserCell;->currentAccount:I
 
-    invoke-static {v6}, Lorg/fork/controller/ForkCommonController;->getInstance(I)Lorg/fork/controller/ForkCommonController;
+    invoke-static {v6}, Lcom/iMe/fork/controller/ForkCommonController;->getInstance(I)Lcom/iMe/fork/controller/ForkCommonController;
 
     move-result-object v6
 
-    invoke-virtual {v6}, Lorg/fork/controller/ForkCommonController;->isShowPremiumStatusEnabled()Z
+    invoke-virtual {v6}, Lcom/iMe/fork/controller/ForkCommonController;->isShowPremiumStatusEnabled()Z
 
     move-result v6
 

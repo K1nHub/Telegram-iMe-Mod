@@ -118,7 +118,7 @@
 
     move-result-object p1
 
-    const-string p2, "unmodifiableMap<String?, String>(newAuthParams)"
+    const-string/jumbo p2, "unmodifiableMap<String?, String>(newAuthParams)"
 
     invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 

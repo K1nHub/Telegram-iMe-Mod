@@ -8,7 +8,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Locale;
 import okio.Buffer;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class HttpUrl {
     private final String host;
     private final List<String> pathSegments;
@@ -97,7 +97,7 @@ public final class HttpUrl {
         return this.url;
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Builder {
         String encodedFragment;
         final List<String> encodedPathSegments;

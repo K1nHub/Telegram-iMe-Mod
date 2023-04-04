@@ -80,7 +80,7 @@
 
 .field public selectedIds:Landroid/util/SparseBooleanArray;
 
-.field public template:Lcom/smedialink/storage/domain/model/templates/TemplateModel;
+.field public template:Lcom/iMe/storage/domain/model/templates/TemplateModel;
 
 .field public willSeeSenders:Z
 
@@ -861,11 +861,11 @@
 
 
 # virtual methods
-.method public enableTemplatePreviewMode(Lcom/smedialink/storage/domain/model/templates/TemplateModel;)V
+.method public enableTemplatePreviewMode(Lcom/iMe/storage/domain/model/templates/TemplateModel;)V
     .locals 0
 
     .line 35
-    iput-object p1, p0, Lorg/telegram/messenger/ForwardingMessagesParams;->template:Lcom/smedialink/storage/domain/model/templates/TemplateModel;
+    iput-object p1, p0, Lorg/telegram/messenger/ForwardingMessagesParams;->template:Lcom/iMe/storage/domain/model/templates/TemplateModel;
 
     const/4 p1, 0x1
 
@@ -983,7 +983,7 @@
     .locals 1
 
     .line 41
-    iget-object v0, p0, Lorg/telegram/messenger/ForwardingMessagesParams;->template:Lcom/smedialink/storage/domain/model/templates/TemplateModel;
+    iget-object v0, p0, Lorg/telegram/messenger/ForwardingMessagesParams;->template:Lcom/iMe/storage/domain/model/templates/TemplateModel;
 
     if-eqz v0, :cond_0
 

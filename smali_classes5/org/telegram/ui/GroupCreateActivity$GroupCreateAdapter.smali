@@ -300,13 +300,13 @@
 
     .line 1193
     :cond_5
-    invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/BaseFragment;->getAlbumsController()Lorg/fork/controller/AlbumsController;
+    invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/BaseFragment;->getAlbumsController()Lcom/iMe/fork/controller/AlbumsController;
 
     move-result-object v5
 
     iget-wide v6, v3, Lorg/telegram/tgnet/TLRPC$Dialog;->id:J
 
-    invoke-virtual {v5, v6, v7}, Lorg/fork/controller/AlbumsController;->isDialogAlbum(J)Z
+    invoke-virtual {v5, v6, v7}, Lcom/iMe/fork/controller/AlbumsController;->isDialogAlbum(J)Z
 
     move-result v3
 

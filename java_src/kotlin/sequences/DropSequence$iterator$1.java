@@ -2,20 +2,20 @@ package kotlin.sequences;
 
 import java.util.Iterator;
 import kotlin.jvm.internal.markers.KMappedMarker;
-import p034j$.util.Iterator;
-import p034j$.util.function.Consumer;
+import p035j$.util.Iterator;
+import p035j$.util.function.Consumer;
 /* compiled from: Sequences.kt */
 /* loaded from: classes4.dex */
-public final class DropSequence$iterator$1 implements Iterator<T>, KMappedMarker, p034j$.util.Iterator {
+public final class DropSequence$iterator$1 implements Iterator<T>, KMappedMarker, p035j$.util.Iterator {
     private final Iterator<T> iterator;
     private int left;
 
-    @Override // p034j$.util.Iterator
+    @Override // p035j$.util.Iterator
     public /* synthetic */ void forEachRemaining(Consumer consumer) {
         Iterator.CC.$default$forEachRemaining(this, consumer);
     }
 
-    @Override // java.util.Iterator, p034j$.util.Iterator
+    @Override // java.util.Iterator, p035j$.util.Iterator
     public void remove() {
         throw new UnsupportedOperationException("Operation is not supported for read-only collection");
     }
@@ -38,13 +38,13 @@ public final class DropSequence$iterator$1 implements Iterator<T>, KMappedMarker
     }
 
     /* JADX WARN: Type inference failed for: r0v1, types: [T, java.lang.Object] */
-    @Override // java.util.Iterator, p034j$.util.Iterator
+    @Override // java.util.Iterator, p035j$.util.Iterator
     public T next() {
         drop();
         return this.iterator.next();
     }
 
-    @Override // java.util.Iterator, p034j$.util.Iterator
+    @Override // java.util.Iterator, p035j$.util.Iterator
     public boolean hasNext() {
         drop();
         return this.iterator.hasNext();

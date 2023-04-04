@@ -2,7 +2,7 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Landroid/view/animation/Interpolator;
+.implements Landroid/view/View$OnTouchListener;
 
 
 # static fields
@@ -32,10 +32,10 @@
 
 
 # virtual methods
-.method public final getInterpolation(F)F
+.method public final onTouch(Landroid/view/View;Landroid/view/MotionEvent;)Z
     .locals 0
 
-    invoke-static {p1}, Lorg/telegram/ui/DialogsActivity;->$r8$lambda$OfEbzch4-IkltALjQOyi6nwsoiI(F)F
+    invoke-static {p1, p2}, Lorg/telegram/ui/DialogsActivity;->$r8$lambda$_LeCK3f4vgmumyDAd39csRillA0(Landroid/view/View;Landroid/view/MotionEvent;)Z
 
     move-result p1
 

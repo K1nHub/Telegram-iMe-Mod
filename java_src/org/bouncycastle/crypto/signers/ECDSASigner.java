@@ -9,9 +9,9 @@ import org.bouncycastle.crypto.params.ECKeyParameters;
 import org.bouncycastle.crypto.params.ECPrivateKeyParameters;
 import org.bouncycastle.crypto.params.ECPublicKeyParameters;
 import org.bouncycastle.crypto.params.ParametersWithRandom;
-import org.bouncycastle.math.p043ec.ECConstants;
-import org.bouncycastle.math.p043ec.ECMultiplier;
-import org.bouncycastle.math.p043ec.FixedPointCombMultiplier;
+import org.bouncycastle.math.p044ec.ECConstants;
+import org.bouncycastle.math.p044ec.ECMultiplier;
+import org.bouncycastle.math.p044ec.FixedPointCombMultiplier;
 /* loaded from: classes4.dex */
 public class ECDSASigner implements ECConstants {
     private final DSAKCalculator kCalculator;

@@ -126,7 +126,7 @@
 
     iget-boolean v0, p0, Lorg/bouncycastle/pqc/crypto/xmss/XMSSUtil$CheckingStream;->found:Z
 
-    const-string v1, "unexpected class: "
+    const-string/jumbo v1, "unexpected class: "
 
     if-nez v0, :cond_1
 

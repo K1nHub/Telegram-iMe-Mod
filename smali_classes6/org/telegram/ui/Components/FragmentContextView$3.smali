@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/FragmentContextView;Landroid/content/Context;Lorg/telegram/ui/Components/SizeNotifierFrameLayout;)V
     .locals 0
 
-    .line 334
+    .line 328
     iput-object p1, p0, Lorg/telegram/ui/Components/FragmentContextView$3;->this$0:Lorg/telegram/ui/Components/FragmentContextView;
 
     invoke-direct {p0, p2, p3}, Lorg/telegram/ui/Components/BlurredFrameLayout;-><init>(Landroid/content/Context;Lorg/telegram/ui/Components/SizeNotifierFrameLayout;)V
@@ -35,10 +35,10 @@
 .method protected dispatchDraw(Landroid/graphics/Canvas;)V
     .locals 12
 
-    .line 346
+    .line 340
     invoke-super {p0, p1}, Lorg/telegram/ui/Components/BlurredFrameLayout;->dispatchDraw(Landroid/graphics/Canvas;)V
 
-    .line 347
+    .line 341
     iget-object v0, p0, Lorg/telegram/ui/Components/FragmentContextView$3;->this$0:Lorg/telegram/ui/Components/FragmentContextView;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/FragmentContextView;->access$1000(Lorg/telegram/ui/Components/FragmentContextView;)I
@@ -57,7 +57,7 @@
 
     if-eqz v0, :cond_5
 
-    .line 348
+    .line 342
     iget-object v0, p0, Lorg/telegram/ui/Components/FragmentContextView$3;->this$0:Lorg/telegram/ui/Components/FragmentContextView;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/FragmentContextView;->access$400(Lorg/telegram/ui/Components/FragmentContextView;)Landroid/text/StaticLayout;
@@ -86,7 +86,7 @@
 
     add-int/2addr v0, v2
 
-    .line 349
+    .line 343
     iget-object v2, p0, Lorg/telegram/ui/Components/FragmentContextView$3;->this$0:Lorg/telegram/ui/Components/FragmentContextView;
 
     invoke-static {v2}, Lorg/telegram/ui/Components/FragmentContextView;->access$1100(Lorg/telegram/ui/Components/FragmentContextView;)I
@@ -95,7 +95,7 @@
 
     if-eq v0, v2, :cond_0
 
-    .line 350
+    .line 344
     iget-object v2, p0, Lorg/telegram/ui/Components/FragmentContextView$3;->this$0:Lorg/telegram/ui/Components/FragmentContextView;
 
     new-instance v11, Landroid/graphics/LinearGradient;
@@ -128,7 +128,7 @@
 
     invoke-static {v2, v11}, Lorg/telegram/ui/Components/FragmentContextView;->access$1202(Lorg/telegram/ui/Components/FragmentContextView;Landroid/graphics/LinearGradient;)Landroid/graphics/LinearGradient;
 
-    .line 351
+    .line 345
     iget-object v1, p0, Lorg/telegram/ui/Components/FragmentContextView$3;->this$0:Lorg/telegram/ui/Components/FragmentContextView;
 
     invoke-static {v1}, Lorg/telegram/ui/Components/FragmentContextView;->access$1300(Lorg/telegram/ui/Components/FragmentContextView;)Landroid/graphics/Paint;
@@ -143,12 +143,12 @@
 
     invoke-virtual {v1, v2}, Landroid/graphics/Paint;->setShader(Landroid/graphics/Shader;)Landroid/graphics/Shader;
 
-    .line 352
+    .line 346
     iget-object v1, p0, Lorg/telegram/ui/Components/FragmentContextView$3;->this$0:Lorg/telegram/ui/Components/FragmentContextView;
 
     invoke-static {v1, v0}, Lorg/telegram/ui/Components/FragmentContextView;->access$1102(Lorg/telegram/ui/Components/FragmentContextView;I)I
 
-    .line 354
+    .line 348
     :cond_0
     iget-object v1, p0, Lorg/telegram/ui/Components/FragmentContextView$3;->this$0:Lorg/telegram/ui/Components/FragmentContextView;
 
@@ -160,7 +160,7 @@
 
     move-result-object v1
 
-    .line 356
+    .line 350
     iget-object v2, p0, Lorg/telegram/ui/Components/FragmentContextView$3;->this$0:Lorg/telegram/ui/Components/FragmentContextView;
 
     invoke-static {v2}, Lorg/telegram/ui/Components/FragmentContextView;->access$100(Lorg/telegram/ui/Components/FragmentContextView;)Lorg/telegram/ui/ActionBar/BaseFragment;
@@ -179,7 +179,7 @@
 
     if-eqz v2, :cond_3
 
-    .line 357
+    .line 351
     iget-object v1, v1, Lorg/telegram/messenger/ChatObject$Call;->call:Lorg/telegram/tgnet/TLRPC$GroupCall;
 
     iget v1, v1, Lorg/telegram/tgnet/TLRPC$GroupCall;->schedule_date:I
@@ -243,7 +243,7 @@
 
     if-gez v1, :cond_4
 
-    .line 364
+    .line 358
     invoke-virtual {p0}, Lorg/telegram/ui/Components/FragmentContextView$3;->invalidate()V
 
     goto :goto_1
@@ -251,7 +251,7 @@
     :cond_3
     move v5, v3
 
-    .line 367
+    .line 361
     :cond_4
     :goto_1
     iget-object v1, p0, Lorg/telegram/ui/Components/FragmentContextView$3;->this$0:Lorg/telegram/ui/Components/FragmentContextView;
@@ -262,7 +262,7 @@
 
     invoke-virtual {v1}, Landroid/graphics/Matrix;->reset()V
 
-    .line 368
+    .line 362
     iget-object v1, p0, Lorg/telegram/ui/Components/FragmentContextView$3;->this$0:Lorg/telegram/ui/Components/FragmentContextView;
 
     invoke-static {v1}, Lorg/telegram/ui/Components/FragmentContextView;->access$1400(Lorg/telegram/ui/Components/FragmentContextView;)Landroid/graphics/Matrix;
@@ -287,7 +287,7 @@
 
     invoke-virtual {v1, v2, v3}, Landroid/graphics/Matrix;->postTranslate(FF)Z
 
-    .line 369
+    .line 363
     iget-object v1, p0, Lorg/telegram/ui/Components/FragmentContextView$3;->this$0:Lorg/telegram/ui/Components/FragmentContextView;
 
     invoke-static {v1}, Lorg/telegram/ui/Components/FragmentContextView;->access$1200(Lorg/telegram/ui/Components/FragmentContextView;)Landroid/graphics/LinearGradient;
@@ -302,7 +302,7 @@
 
     invoke-virtual {v1, v2}, Landroid/graphics/LinearGradient;->setLocalMatrix(Landroid/graphics/Matrix;)V
 
-    .line 370
+    .line 364
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
 
     move-result v1
@@ -317,12 +317,12 @@
 
     sub-int/2addr v1, v4
 
-    .line 371
+    .line 365
     invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v2
 
-    .line 372
+    .line 366
     iget-object v4, p0, Lorg/telegram/ui/Components/FragmentContextView$3;->this$0:Lorg/telegram/ui/Components/FragmentContextView;
 
     invoke-static {v4}, Lorg/telegram/ui/Components/FragmentContextView;->access$1500(Lorg/telegram/ui/Components/FragmentContextView;)Landroid/graphics/RectF;
@@ -341,17 +341,17 @@
 
     invoke-virtual {v4, v3, v3, v0, v5}, Landroid/graphics/RectF;->set(FFFF)V
 
-    .line 373
+    .line 367
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
     int-to-float v0, v1
 
     int-to-float v1, v2
 
-    .line 374
+    .line 368
     invoke-virtual {p1, v0, v1}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 375
+    .line 369
     iget-object v0, p0, Lorg/telegram/ui/Components/FragmentContextView$3;->this$0:Lorg/telegram/ui/Components/FragmentContextView;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/FragmentContextView;->access$1500(Lorg/telegram/ui/Components/FragmentContextView;)Landroid/graphics/RectF;
@@ -382,7 +382,7 @@
 
     const/16 v0, 0xc
 
-    .line 376
+    .line 370
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v0
@@ -399,7 +399,7 @@
 
     invoke-virtual {p1, v0, v1}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 377
+    .line 371
     iget-object v0, p0, Lorg/telegram/ui/Components/FragmentContextView$3;->this$0:Lorg/telegram/ui/Components/FragmentContextView;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/FragmentContextView;->access$400(Lorg/telegram/ui/Components/FragmentContextView;)Landroid/text/StaticLayout;
@@ -408,7 +408,7 @@
 
     invoke-virtual {v0, p1}, Landroid/text/StaticLayout;->draw(Landroid/graphics/Canvas;)V
 
-    .line 378
+    .line 372
     invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
 
     :cond_5
@@ -434,10 +434,10 @@
 .method public invalidate()V
     .locals 1
 
-    .line 338
+    .line 332
     invoke-super {p0}, Landroid/widget/FrameLayout;->invalidate()V
 
-    .line 339
+    .line 333
     iget-object v0, p0, Lorg/telegram/ui/Components/FragmentContextView$3;->this$0:Lorg/telegram/ui/Components/FragmentContextView;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/FragmentContextView;->access$900(Lorg/telegram/ui/Components/FragmentContextView;)Lorg/telegram/ui/Components/AvatarsImageView;
@@ -458,7 +458,7 @@
 
     if-nez v0, :cond_0
 
-    .line 340
+    .line 334
     iget-object v0, p0, Lorg/telegram/ui/Components/FragmentContextView$3;->this$0:Lorg/telegram/ui/Components/FragmentContextView;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/FragmentContextView;->access$900(Lorg/telegram/ui/Components/FragmentContextView;)Lorg/telegram/ui/Components/AvatarsImageView;

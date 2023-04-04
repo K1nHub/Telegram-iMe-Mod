@@ -2,38 +2,32 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lorg/fork/utils/Callbacks$Callback;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field public final synthetic f$0:Lorg/telegram/ui/ChatActivity;
-
-.field public final synthetic f$1:Lorg/telegram/tgnet/TLRPC$KeyboardButton;
+.field public final synthetic f$0:[Lorg/telegram/ui/ActionBar/AlertDialog;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/ChatActivity;Lorg/telegram/tgnet/TLRPC$KeyboardButton;)V
+.method public synthetic constructor <init>([Lorg/telegram/ui/ActionBar/AlertDialog;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda280;->f$0:Lorg/telegram/ui/ChatActivity;
-
-    iput-object p2, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda280;->f$1:Lorg/telegram/tgnet/TLRPC$KeyboardButton;
+    iput-object p1, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda280;->f$0:[Lorg/telegram/ui/ActionBar/AlertDialog;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke()V
-    .locals 2
+.method public final run()V
+    .locals 1
 
-    iget-object v0, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda280;->f$0:Lorg/telegram/ui/ChatActivity;
+    iget-object v0, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda280;->f$0:[Lorg/telegram/ui/ActionBar/AlertDialog;
 
-    iget-object v1, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda280;->f$1:Lorg/telegram/tgnet/TLRPC$KeyboardButton;
-
-    invoke-static {v0, v1}, Lorg/telegram/ui/ChatActivity;->$r8$lambda$N2YRqg1Pm6trrX7-a-Kty-K5YRM(Lorg/telegram/ui/ChatActivity;Lorg/telegram/tgnet/TLRPC$KeyboardButton;)V
+    invoke-static {v0}, Lorg/telegram/ui/ChatActivity;->$r8$lambda$U9ddtKL_5jkYdJ6p0PI2l0rD3A8([Lorg/telegram/ui/ActionBar/AlertDialog;)V
 
     return-void
 .end method

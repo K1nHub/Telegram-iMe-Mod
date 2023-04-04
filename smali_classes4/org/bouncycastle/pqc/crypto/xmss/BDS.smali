@@ -1679,7 +1679,7 @@
     :cond_2
     new-instance v0, Ljava/lang/IllegalStateException;
 
-    const-string v1, "treeHashInstances == null"
+    const-string/jumbo v1, "treeHashInstances == null"
 
     invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 

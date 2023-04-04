@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3301R;
+import org.telegram.messenger.C3316R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.p048ui.ActionBar.AlertDialog;
 import org.telegram.p048ui.ActionBar.BaseFragment;
@@ -30,10 +30,10 @@ public class StickersArchiveAlert extends AlertDialog.Builder {
         TLRPC$StickerSetCovered tLRPC$StickerSetCovered = arrayList.get(0);
         if (tLRPC$StickerSetCovered.set.masks) {
             this.currentType = 1;
-            setTitle(LocaleController.getString("ArchivedMasksAlertTitle", C3301R.string.ArchivedMasksAlertTitle));
+            setTitle(LocaleController.getString("ArchivedMasksAlertTitle", C3316R.string.ArchivedMasksAlertTitle));
         } else {
             this.currentType = 0;
-            setTitle(LocaleController.getString("ArchivedStickersAlertTitle", C3301R.string.ArchivedStickersAlertTitle));
+            setTitle(LocaleController.getString("ArchivedStickersAlertTitle", C3316R.string.ArchivedStickersAlertTitle));
         }
         this.stickerSets = new ArrayList<>(arrayList);
         this.parentFragment = baseFragment;
@@ -46,9 +46,9 @@ public class StickersArchiveAlert extends AlertDialog.Builder {
         textView.setTextSize(1, 16.0f);
         textView.setPadding(AndroidUtilities.m50dp(23), AndroidUtilities.m50dp(10), AndroidUtilities.m50dp(23), 0);
         if (tLRPC$StickerSetCovered.set.masks) {
-            textView.setText(LocaleController.getString("ArchivedMasksAlertInfo", C3301R.string.ArchivedMasksAlertInfo));
+            textView.setText(LocaleController.getString("ArchivedMasksAlertInfo", C3316R.string.ArchivedMasksAlertInfo));
         } else {
-            textView.setText(LocaleController.getString("ArchivedStickersAlertInfo", C3301R.string.ArchivedStickersAlertInfo));
+            textView.setText(LocaleController.getString("ArchivedStickersAlertInfo", C3316R.string.ArchivedStickersAlertInfo));
         }
         linearLayout.addView(textView, LayoutHelper.createLinear(-2, -2));
         RecyclerListView recyclerListView = new RecyclerListView(context);
@@ -58,9 +58,9 @@ public class StickersArchiveAlert extends AlertDialog.Builder {
         recyclerListView.setPadding(AndroidUtilities.m50dp(10), 0, AndroidUtilities.m50dp(10), 0);
         recyclerListView.setGlowColor(-657673);
         linearLayout.addView(recyclerListView, LayoutHelper.createLinear(-1, -2, 0, 10, 0, 0));
-        setNegativeButton(LocaleController.getString("Close", C3301R.string.Close), StickersArchiveAlert$$ExternalSyntheticLambda1.INSTANCE);
+        setNegativeButton(LocaleController.getString("Close", C3316R.string.Close), StickersArchiveAlert$$ExternalSyntheticLambda1.INSTANCE);
         if (this.parentFragment != null) {
-            setPositiveButton(LocaleController.getString("Settings", C3301R.string.Settings), new DialogInterface.OnClickListener() { // from class: org.telegram.ui.Components.StickersArchiveAlert$$ExternalSyntheticLambda0
+            setPositiveButton(LocaleController.getString("Settings", C3316R.string.Settings), new DialogInterface.OnClickListener() { // from class: org.telegram.ui.Components.StickersArchiveAlert$$ExternalSyntheticLambda0
                 @Override // android.content.DialogInterface.OnClickListener
                 public final void onClick(DialogInterface dialogInterface, int i) {
                     StickersArchiveAlert.this.lambda$new$1(dialogInterface, i);

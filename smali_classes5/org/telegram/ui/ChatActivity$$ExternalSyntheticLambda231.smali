@@ -8,22 +8,30 @@
 # instance fields
 .field public final synthetic f$0:Lorg/telegram/ui/ChatActivity;
 
-.field public final synthetic f$1:Lorg/telegram/tgnet/TLRPC$TL_error;
+.field public final synthetic f$1:I
 
-.field public final synthetic f$2:Lorg/telegram/tgnet/TLRPC$User;
+.field public final synthetic f$2:I
+
+.field public final synthetic f$3:Z
+
+.field public final synthetic f$4:Lorg/telegram/ui/Components/ReactionsContainerLayout;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/ChatActivity;Lorg/telegram/tgnet/TLRPC$TL_error;Lorg/telegram/tgnet/TLRPC$User;)V
+.method public synthetic constructor <init>(Lorg/telegram/ui/ChatActivity;IIZLorg/telegram/ui/Components/ReactionsContainerLayout;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda231;->f$0:Lorg/telegram/ui/ChatActivity;
 
-    iput-object p2, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda231;->f$1:Lorg/telegram/tgnet/TLRPC$TL_error;
+    iput p2, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda231;->f$1:I
 
-    iput-object p3, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda231;->f$2:Lorg/telegram/tgnet/TLRPC$User;
+    iput p3, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda231;->f$2:I
+
+    iput-boolean p4, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda231;->f$3:Z
+
+    iput-object p5, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda231;->f$4:Lorg/telegram/ui/Components/ReactionsContainerLayout;
 
     return-void
 .end method
@@ -31,15 +39,19 @@
 
 # virtual methods
 .method public final run()V
-    .locals 3
+    .locals 5
 
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda231;->f$0:Lorg/telegram/ui/ChatActivity;
 
-    iget-object v1, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda231;->f$1:Lorg/telegram/tgnet/TLRPC$TL_error;
+    iget v1, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda231;->f$1:I
 
-    iget-object v2, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda231;->f$2:Lorg/telegram/tgnet/TLRPC$User;
+    iget v2, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda231;->f$2:I
 
-    invoke-static {v0, v1, v2}, Lorg/telegram/ui/ChatActivity;->$r8$lambda$nTKN3SZzWkQ0W2hBL4dx89aVwp4(Lorg/telegram/ui/ChatActivity;Lorg/telegram/tgnet/TLRPC$TL_error;Lorg/telegram/tgnet/TLRPC$User;)V
+    iget-boolean v3, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda231;->f$3:Z
+
+    iget-object v4, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda231;->f$4:Lorg/telegram/ui/Components/ReactionsContainerLayout;
+
+    invoke-static {v0, v1, v2, v3, v4}, Lorg/telegram/ui/ChatActivity;->$r8$lambda$N8vo8D5jipyhZCPw4f6E6m7IyPc(Lorg/telegram/ui/ChatActivity;IIZLorg/telegram/ui/Components/ReactionsContainerLayout;)V
 
     return-void
 .end method

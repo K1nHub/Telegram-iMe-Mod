@@ -1,6 +1,6 @@
 package org.telegram.p048ui;
 
-import com.smedialink.p031ui.wallet.airdrop.WalletAirdropPresenter;
+import com.iMe.p032ui.wallet.airdrop.WalletAirdropPresenter;
 import java.util.ArrayList;
 import java.util.List;
 import moxy.MvpPresenter;

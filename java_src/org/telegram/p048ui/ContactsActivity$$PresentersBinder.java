@@ -1,7 +1,7 @@
 package org.telegram.p048ui;
 
-import com.smedialink.p031ui.contacts.ContactsPresenter;
-import com.smedialink.p031ui.wallet.actions.send.recipient.WalletSendRecipientPresenter;
+import com.iMe.p032ui.contacts.ContactsPresenter;
+import com.iMe.p032ui.wallet.actions.send.recipient.WalletSendRecipientPresenter;
 import java.util.ArrayList;
 import java.util.List;
 import moxy.MvpPresenter;

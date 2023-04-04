@@ -51,7 +51,7 @@
 
     iget-object v4, p0, Lorg/telegram/messenger/LocaleController$$ExternalSyntheticLambda10;->f$4:Ljava/lang/Runnable;
 
-    invoke-static {v0, v1, v2, v3, v4}, Lorg/telegram/messenger/LocaleController;->$r8$lambda$JWrajmnOY1Pkn6owT0klrTIgXpw(Lorg/telegram/messenger/LocaleController;Lorg/telegram/messenger/LocaleController$LocaleInfo;Lorg/telegram/tgnet/TLObject;ILjava/lang/Runnable;)V
+    invoke-static {v0, v1, v2, v3, v4}, Lorg/telegram/messenger/LocaleController;->$r8$lambda$7FCM4dZAYqL4m3Us8Fbt4Fkyy5I(Lorg/telegram/messenger/LocaleController;Lorg/telegram/messenger/LocaleController$LocaleInfo;Lorg/telegram/tgnet/TLObject;ILjava/lang/Runnable;)V
 
     return-void
 .end method

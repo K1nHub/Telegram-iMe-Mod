@@ -52,7 +52,7 @@
         }
     .end annotation
 
-    .line 61
+    .line 68
     invoke-virtual {p0, p1, p2}, Lcom/bumptech/glide/load/Option;->update(Ljava/lang/Object;Ljava/security/MessageDigest;)V
 
     return-void
@@ -63,15 +63,15 @@
 .method public equals(Ljava/lang/Object;)Z
     .locals 1
 
-    .line 32
+    .line 39
     instance-of v0, p1, Lcom/bumptech/glide/load/Options;
 
     if-eqz v0, :cond_0
 
-    .line 33
+    .line 40
     check-cast p1, Lcom/bumptech/glide/load/Options;
 
-    .line 34
+    .line 41
     iget-object v0, p0, Lcom/bumptech/glide/load/Options;->values:Landroidx/collection/ArrayMap;
 
     iget-object p1, p1, Lcom/bumptech/glide/load/Options;->values:Landroidx/collection/ArrayMap;
@@ -100,7 +100,7 @@
         }
     .end annotation
 
-    .line 27
+    .line 34
     iget-object v0, p0, Lcom/bumptech/glide/load/Options;->values:Landroidx/collection/ArrayMap;
 
     invoke-virtual {v0, p1}, Landroidx/collection/SimpleArrayMap;->containsKey(Ljava/lang/Object;)Z
@@ -129,7 +129,7 @@
 .method public hashCode()I
     .locals 1
 
-    .line 41
+    .line 48
     iget-object v0, p0, Lcom/bumptech/glide/load/Options;->values:Landroidx/collection/ArrayMap;
 
     invoke-virtual {v0}, Landroidx/collection/SimpleArrayMap;->hashCode()I
@@ -176,7 +176,7 @@
 .method public toString()Ljava/lang/String;
     .locals 2
 
-    .line 55
+    .line 62
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -205,7 +205,7 @@
 
     const/4 v0, 0x0
 
-    .line 46
+    .line 53
     :goto_0
     iget-object v1, p0, Lcom/bumptech/glide/load/Options;->values:Landroidx/collection/ArrayMap;
 
@@ -215,7 +215,7 @@
 
     if-ge v0, v1, :cond_0
 
-    .line 47
+    .line 54
     iget-object v1, p0, Lcom/bumptech/glide/load/Options;->values:Landroidx/collection/ArrayMap;
 
     invoke-virtual {v1, v0}, Landroidx/collection/SimpleArrayMap;->keyAt(I)Ljava/lang/Object;
@@ -224,14 +224,14 @@
 
     check-cast v1, Lcom/bumptech/glide/load/Option;
 
-    .line 48
+    .line 55
     iget-object v2, p0, Lcom/bumptech/glide/load/Options;->values:Landroidx/collection/ArrayMap;
 
     invoke-virtual {v2, v0}, Landroidx/collection/SimpleArrayMap;->valueAt(I)Ljava/lang/Object;
 
     move-result-object v2
 
-    .line 49
+    .line 56
     invoke-static {v1, v2, p1}, Lcom/bumptech/glide/load/Options;->updateDiskCacheKey(Lcom/bumptech/glide/load/Option;Ljava/lang/Object;Ljava/security/MessageDigest;)V
 
     add-int/lit8 v0, v0, 0x1

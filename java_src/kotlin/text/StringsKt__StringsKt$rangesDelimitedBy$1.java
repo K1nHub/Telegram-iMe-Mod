@@ -31,6 +31,6 @@ public final class StringsKt__StringsKt$rangesDelimitedBy$1 extends Lambda imple
         if (indexOfAny < 0) {
             return null;
         }
-        return TuplesKt.m99to(Integer.valueOf(indexOfAny), 1);
+        return TuplesKt.m94to(Integer.valueOf(indexOfAny), 1);
     }
 }

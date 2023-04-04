@@ -5,12 +5,16 @@ import android.content.pm.PackageManager;
 import android.content.res.Resources;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
+import android.text.TextUtils;
+import com.bumptech.glide.load.Option;
 import com.bumptech.glide.load.Options;
 import com.bumptech.glide.load.ResourceDecoder;
 import com.bumptech.glide.load.engine.Resource;
+import com.bumptech.glide.util.Preconditions;
 import java.util.List;
 /* loaded from: classes.dex */
 public class ResourceDrawableDecoder implements ResourceDecoder<Uri, Drawable> {
+    public static final Option<Resources.Theme> THEME = Option.memory("com.bumptech.glide.load.resource.bitmap.Downsampler.Theme");
     private final Context context;
 
     public ResourceDrawableDecoder(Context context) {
@@ -19,13 +23,26 @@ public class ResourceDrawableDecoder implements ResourceDecoder<Uri, Drawable> {
 
     @Override // com.bumptech.glide.load.ResourceDecoder
     public boolean handles(Uri uri, Options options) {
-        return uri.getScheme().equals("android.resource");
+        String scheme = uri.getScheme();
+        return scheme != null && scheme.equals("android.resource");
     }
 
     @Override // com.bumptech.glide.load.ResourceDecoder
     public Resource<Drawable> decode(Uri uri, int i, int i2, Options options) {
-        Context findContextForPackage = findContextForPackage(uri, uri.getAuthority());
-        return NonOwnedDrawableResource.newInstance(DrawableDecoderCompat.getDrawable(this.context, findContextForPackage, findResourceIdFromUri(findContextForPackage, uri)));
+        Drawable drawable;
+        String authority = uri.getAuthority();
+        if (TextUtils.isEmpty(authority)) {
+            throw new IllegalStateException("Package name for " + uri + " is null or empty");
+        }
+        Context findContextForPackage = findContextForPackage(uri, authority);
+        int findResourceIdFromUri = findResourceIdFromUri(findContextForPackage, uri);
+        Resources.Theme theme = ((String) Preconditions.checkNotNull(authority)).equals(this.context.getPackageName()) ? (Resources.Theme) options.get(THEME) : null;
+        if (theme == null) {
+            drawable = DrawableDecoderCompat.getDrawable(this.context, findContextForPackage, findResourceIdFromUri);
+        } else {
+            drawable = DrawableDecoderCompat.getDrawable(this.context, findResourceIdFromUri, theme);
+        }
+        return NonOwnedDrawableResource.newInstance(drawable);
     }
 
     private Context findContextForPackage(Uri uri, String str) {

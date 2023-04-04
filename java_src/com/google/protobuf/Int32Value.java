@@ -26,7 +26,7 @@ public final class Int32Value extends GeneratedMessageLite<Int32Value, Builder> 
 
     /* loaded from: classes3.dex */
     public static final class Builder extends GeneratedMessageLite.Builder<Int32Value, Builder> implements MessageLiteOrBuilder {
-        /* synthetic */ Builder(C11941 c11941) {
+        /* synthetic */ Builder(C12081 c12081) {
             this();
         }
 
@@ -43,7 +43,7 @@ public final class Int32Value extends GeneratedMessageLite<Int32Value, Builder> 
 
     /* renamed from: com.google.protobuf.Int32Value$1 */
     /* loaded from: classes3.dex */
-    static /* synthetic */ class C11941 {
+    static /* synthetic */ class C12081 {
 
         /* renamed from: $SwitchMap$com$google$protobuf$GeneratedMessageLite$MethodToInvoke */
         static final /* synthetic */ int[] f226xa1df5c61;
@@ -84,7 +84,7 @@ public final class Int32Value extends GeneratedMessageLite<Int32Value, Builder> 
 
     @Override // com.google.protobuf.GeneratedMessageLite
     protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke methodToInvoke, Object obj, Object obj2) {
-        switch (C11941.f226xa1df5c61[methodToInvoke.ordinal()]) {
+        switch (C12081.f226xa1df5c61[methodToInvoke.ordinal()]) {
             case 1:
                 return new Int32Value();
             case 2:

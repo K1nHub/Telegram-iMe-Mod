@@ -7,7 +7,7 @@
 
 
 # instance fields
-.field public final buttonDeposit:Lcom/smedialink/ui/custom/BigActionButton;
+.field public final buttonDeposit:Lcom/iMe/ui/custom/BigActionButton;
 
 .field public final constraintStatistics:Landroidx/constraintlayout/widget/ConstraintLayout;
 
@@ -35,11 +35,11 @@
 
 .field public final textStatistics:Landroid/widget/TextView;
 
-.field public final viewChart:Lcom/smedialink/ui/custom/ChartCellView;
+.field public final viewChart:Lcom/iMe/ui/custom/ChartCellView;
 
 
 # direct methods
-.method private constructor <init>(Landroid/widget/LinearLayout;Lcom/smedialink/ui/custom/BigActionButton;Landroidx/constraintlayout/widget/ConstraintLayout;Landroid/widget/LinearLayout;Landroid/widget/TextView;Landroid/widget/TextView;Landroid/widget/TextView;Landroid/widget/TextView;Landroid/widget/TextView;Landroid/widget/TextView;Landroid/widget/TextView;Landroid/widget/TextView;Landroid/widget/TextView;Landroid/widget/TextView;Lcom/smedialink/ui/custom/ChartCellView;)V
+.method private constructor <init>(Landroid/widget/LinearLayout;Lcom/iMe/ui/custom/BigActionButton;Landroidx/constraintlayout/widget/ConstraintLayout;Landroid/widget/LinearLayout;Landroid/widget/TextView;Landroid/widget/TextView;Landroid/widget/TextView;Landroid/widget/TextView;Landroid/widget/TextView;Landroid/widget/TextView;Landroid/widget/TextView;Landroid/widget/TextView;Landroid/widget/TextView;Landroid/widget/TextView;Lcom/iMe/ui/custom/ChartCellView;)V
     .locals 0
 
     .line 74
@@ -49,7 +49,7 @@
     iput-object p1, p0, Lorg/telegram/messenger/databinding/ForkContentStakingPrognosisBinding;->rootView:Landroid/widget/LinearLayout;
 
     .line 76
-    iput-object p2, p0, Lorg/telegram/messenger/databinding/ForkContentStakingPrognosisBinding;->buttonDeposit:Lcom/smedialink/ui/custom/BigActionButton;
+    iput-object p2, p0, Lorg/telegram/messenger/databinding/ForkContentStakingPrognosisBinding;->buttonDeposit:Lcom/iMe/ui/custom/BigActionButton;
 
     .line 77
     iput-object p3, p0, Lorg/telegram/messenger/databinding/ForkContentStakingPrognosisBinding;->constraintStatistics:Landroidx/constraintlayout/widget/ConstraintLayout;
@@ -88,7 +88,7 @@
     iput-object p14, p0, Lorg/telegram/messenger/databinding/ForkContentStakingPrognosisBinding;->textStatistics:Landroid/widget/TextView;
 
     .line 89
-    iput-object p15, p0, Lorg/telegram/messenger/databinding/ForkContentStakingPrognosisBinding;->viewChart:Lcom/smedialink/ui/custom/ChartCellView;
+    iput-object p15, p0, Lorg/telegram/messenger/databinding/ForkContentStakingPrognosisBinding;->viewChart:Lcom/iMe/ui/custom/ChartCellView;
 
     return-void
 .end method
@@ -108,7 +108,7 @@
 
     move-object v5, v2
 
-    check-cast v5, Lcom/smedialink/ui/custom/BigActionButton;
+    check-cast v5, Lcom/iMe/ui/custom/BigActionButton;
 
     if-eqz v5, :cond_0
 
@@ -290,7 +290,7 @@
 
     move-object/from16 v18, v2
 
-    check-cast v18, Lcom/smedialink/ui/custom/ChartCellView;
+    check-cast v18, Lcom/iMe/ui/custom/ChartCellView;
 
     if-eqz v18, :cond_0
 
@@ -303,7 +303,7 @@
 
     move-object v3, v1
 
-    invoke-direct/range {v3 .. v18}, Lorg/telegram/messenger/databinding/ForkContentStakingPrognosisBinding;-><init>(Landroid/widget/LinearLayout;Lcom/smedialink/ui/custom/BigActionButton;Landroidx/constraintlayout/widget/ConstraintLayout;Landroid/widget/LinearLayout;Landroid/widget/TextView;Landroid/widget/TextView;Landroid/widget/TextView;Landroid/widget/TextView;Landroid/widget/TextView;Landroid/widget/TextView;Landroid/widget/TextView;Landroid/widget/TextView;Landroid/widget/TextView;Landroid/widget/TextView;Lcom/smedialink/ui/custom/ChartCellView;)V
+    invoke-direct/range {v3 .. v18}, Lorg/telegram/messenger/databinding/ForkContentStakingPrognosisBinding;-><init>(Landroid/widget/LinearLayout;Lcom/iMe/ui/custom/BigActionButton;Landroidx/constraintlayout/widget/ConstraintLayout;Landroid/widget/LinearLayout;Landroid/widget/TextView;Landroid/widget/TextView;Landroid/widget/TextView;Landroid/widget/TextView;Landroid/widget/TextView;Landroid/widget/TextView;Landroid/widget/TextView;Landroid/widget/TextView;Landroid/widget/TextView;Landroid/widget/TextView;Lcom/iMe/ui/custom/ChartCellView;)V
 
     return-object v1
 

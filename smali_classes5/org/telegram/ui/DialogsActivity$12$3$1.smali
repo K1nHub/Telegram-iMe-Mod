@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/DialogsActivity$12$3;)V
     .locals 0
 
-    .line 5134
+    .line 5135
     iput-object p1, p0, Lorg/telegram/ui/DialogsActivity$12$3$1;->this$2:Lorg/telegram/ui/DialogsActivity$12$3;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
@@ -35,7 +35,7 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 1
 
-    .line 5137
+    .line 5138
     iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$12$3$1;->this$2:Lorg/telegram/ui/DialogsActivity$12$3;
 
     iget-object p1, p1, Lorg/telegram/ui/DialogsActivity$12$3;->this$1:Lorg/telegram/ui/DialogsActivity$12;
@@ -48,7 +48,7 @@
 
     if-eqz p1, :cond_0
 
-    .line 5138
+    .line 5139
     iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$12$3$1;->this$2:Lorg/telegram/ui/DialogsActivity$12$3;
 
     iget-object p1, p1, Lorg/telegram/ui/DialogsActivity$12$3;->this$1:Lorg/telegram/ui/DialogsActivity$12;
@@ -63,7 +63,7 @@
 
     invoke-virtual {p1, v0}, Landroid/view/View;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
-    .line 5139
+    .line 5140
     iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$12$3$1;->this$2:Lorg/telegram/ui/DialogsActivity$12$3;
 
     iget-object p1, p1, Lorg/telegram/ui/DialogsActivity$12$3;->this$1:Lorg/telegram/ui/DialogsActivity$12;
@@ -72,7 +72,7 @@
 
     invoke-static {p1, v0}, Lorg/telegram/ui/DialogsActivity;->access$9102(Lorg/telegram/ui/DialogsActivity;Landroid/view/View;)Landroid/view/View;
 
-    .line 5141
+    .line 5142
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$12$3$1;->this$2:Lorg/telegram/ui/DialogsActivity$12$3;
 
@@ -86,7 +86,7 @@
 
     if-eqz p1, :cond_1
 
-    .line 5142
+    .line 5143
     iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$12$3$1;->this$2:Lorg/telegram/ui/DialogsActivity$12$3;
 
     iget-object p1, p1, Lorg/telegram/ui/DialogsActivity$12$3;->this$1:Lorg/telegram/ui/DialogsActivity$12;

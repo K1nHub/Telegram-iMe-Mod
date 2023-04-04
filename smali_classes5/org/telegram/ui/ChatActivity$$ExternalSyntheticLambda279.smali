@@ -2,38 +2,50 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lorg/fork/utils/Callbacks$Callback;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field public final synthetic f$0:Lorg/telegram/ui/ChatActivity;
+.field public final synthetic f$0:[J
 
-.field public final synthetic f$1:Lorg/telegram/tgnet/TLRPC$KeyboardButton;
+.field public final synthetic f$1:[Z
+
+.field public final synthetic f$2:Landroid/widget/ImageView;
+
+.field public final synthetic f$3:Landroid/widget/ImageView;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/ChatActivity;Lorg/telegram/tgnet/TLRPC$KeyboardButton;)V
+.method public synthetic constructor <init>([J[ZLandroid/widget/ImageView;Landroid/widget/ImageView;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda279;->f$0:Lorg/telegram/ui/ChatActivity;
+    iput-object p1, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda279;->f$0:[J
 
-    iput-object p2, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda279;->f$1:Lorg/telegram/tgnet/TLRPC$KeyboardButton;
+    iput-object p2, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda279;->f$1:[Z
+
+    iput-object p3, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda279;->f$2:Landroid/widget/ImageView;
+
+    iput-object p4, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda279;->f$3:Landroid/widget/ImageView;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke()V
-    .locals 2
+.method public final run()V
+    .locals 4
 
-    iget-object v0, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda279;->f$0:Lorg/telegram/ui/ChatActivity;
+    iget-object v0, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda279;->f$0:[J
 
-    iget-object v1, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda279;->f$1:Lorg/telegram/tgnet/TLRPC$KeyboardButton;
+    iget-object v1, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda279;->f$1:[Z
 
-    invoke-static {v0, v1}, Lorg/telegram/ui/ChatActivity;->$r8$lambda$1MKdljvvJGAfruUBrd4qD-EZIRU(Lorg/telegram/ui/ChatActivity;Lorg/telegram/tgnet/TLRPC$KeyboardButton;)V
+    iget-object v2, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda279;->f$2:Landroid/widget/ImageView;
+
+    iget-object v3, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda279;->f$3:Landroid/widget/ImageView;
+
+    invoke-static {v0, v1, v2, v3}, Lorg/telegram/ui/ChatActivity;->$r8$lambda$3gYJ8SJme4foHj37avJVrX_ucV8([J[ZLandroid/widget/ImageView;Landroid/widget/ImageView;)V
 
     return-void
 .end method

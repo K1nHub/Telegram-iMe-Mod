@@ -15,7 +15,7 @@
 
 
 # virtual methods
-.method public abstract getOrientation(Lcom/bumptech/glide/load/ImageHeaderParser;)I
+.method public abstract getOrientationAndRewind(Lcom/bumptech/glide/load/ImageHeaderParser;)I
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;

@@ -18,7 +18,7 @@ import java.util.HashSet;
 import java.util.Set;
 /* loaded from: classes.dex */
 public class UriLoader<Data> implements ModelLoader<Uri, Data> {
-    private static final Set<String> SCHEMES = Collections.unmodifiableSet(new HashSet(Arrays.asList("file", "android.resource", "content")));
+    private static final Set<String> SCHEMES = Collections.unmodifiableSet(new HashSet(Arrays.asList("file", "content", "android.resource")));
     private final LocalUriFetcherFactory<Data> factory;
 
     /* loaded from: classes.dex */

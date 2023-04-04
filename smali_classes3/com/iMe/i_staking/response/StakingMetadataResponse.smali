@@ -1370,7 +1370,7 @@
 
     iget-wide v0, p0, Lcom/iMe/i_staking/response/StakingMetadataResponse;->id:J
 
-    invoke-static {v0, v1}, Lcom/iMe/i_staking/request/StakingApprovalPrepareRequest$$ExternalSyntheticBackport0;->m(J)I
+    invoke-static {v0, v1}, Lcom/iMe/bots/data/model/database/BotsDbModel$$ExternalSyntheticBackport0;->m(J)I
 
     move-result v0
 
@@ -1488,7 +1488,7 @@
 
     iget-wide v1, p0, Lcom/iMe/i_staking/response/StakingMetadataResponse;->incomePeriod:J
 
-    invoke-static {v1, v2}, Lcom/iMe/i_staking/request/StakingApprovalPrepareRequest$$ExternalSyntheticBackport0;->m(J)I
+    invoke-static {v1, v2}, Lcom/iMe/bots/data/model/database/BotsDbModel$$ExternalSyntheticBackport0;->m(J)I
 
     move-result v1
 
@@ -1538,7 +1538,7 @@
 
     iget-wide v1, p0, Lcom/iMe/i_staking/response/StakingMetadataResponse;->safeWithdrawalDuration:J
 
-    invoke-static {v1, v2}, Lcom/iMe/i_staking/request/StakingApprovalPrepareRequest$$ExternalSyntheticBackport0;->m(J)I
+    invoke-static {v1, v2}, Lcom/iMe/bots/data/model/database/BotsDbModel$$ExternalSyntheticBackport0;->m(J)I
 
     move-result v1
 

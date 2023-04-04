@@ -1329,11 +1329,11 @@
     .line 214
     sget v0, Lorg/telegram/messenger/UserConfig;->selectedAccount:I
 
-    invoke-static {v0}, Lorg/fork/controller/FiltersController;->getInstance(I)Lorg/fork/controller/FiltersController;
+    invoke-static {v0}, Lcom/iMe/fork/controller/FiltersController;->getInstance(I)Lcom/iMe/fork/controller/FiltersController;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lorg/fork/controller/FiltersController;->isAllChatsTabEnabled()Z
+    invoke-virtual {v0}, Lcom/iMe/fork/controller/FiltersController;->isAllChatsTabEnabled()Z
 
     move-result v0
 
@@ -1369,9 +1369,9 @@
     .line 200
     :cond_1
     :goto_0
-    sget-object v0, Lorg/telegram/messenger/SharedConfig;->selectedFilterTabWidthMode:Lorg/fork/enums/FilterTabWidthMode;
+    sget-object v0, Lorg/telegram/messenger/SharedConfig;->selectedFilterTabWidthMode:Lcom/iMe/fork/enums/FilterTabWidthMode;
 
-    sget-object v1, Lorg/fork/enums/FilterTabWidthMode;->DEFAULT:Lorg/fork/enums/FilterTabWidthMode;
+    sget-object v1, Lcom/iMe/fork/enums/FilterTabWidthMode;->DEFAULT:Lcom/iMe/fork/enums/FilterTabWidthMode;
 
     if-eq v0, v1, :cond_2
 
@@ -1426,11 +1426,11 @@
     .line 221
     sget v0, Lorg/telegram/messenger/UserConfig;->selectedAccount:I
 
-    invoke-static {v0}, Lorg/fork/controller/FiltersController;->getInstance(I)Lorg/fork/controller/FiltersController;
+    invoke-static {v0}, Lcom/iMe/fork/controller/FiltersController;->getInstance(I)Lcom/iMe/fork/controller/FiltersController;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lorg/fork/controller/FiltersController;->isFoldersFirstEnabled()Z
+    invoke-virtual {v0}, Lcom/iMe/fork/controller/FiltersController;->isFoldersFirstEnabled()Z
 
     move-result v0
 
@@ -1466,9 +1466,9 @@
     .line 193
     :cond_1
     :goto_0
-    sget-object v0, Lorg/telegram/messenger/SharedConfig;->selectedFilterTabsNotificationMode:Lorg/fork/enums/FilterTabNotificationMode;
+    sget-object v0, Lorg/telegram/messenger/SharedConfig;->selectedFilterTabsNotificationMode:Lcom/iMe/fork/enums/FilterTabNotificationMode;
 
-    sget-object v1, Lorg/fork/enums/FilterTabNotificationMode;->NUMBER:Lorg/fork/enums/FilterTabNotificationMode;
+    sget-object v1, Lcom/iMe/fork/enums/FilterTabNotificationMode;->NUMBER:Lcom/iMe/fork/enums/FilterTabNotificationMode;
 
     if-eq v0, v1, :cond_2
 
@@ -1505,9 +1505,9 @@
     .line 207
     :cond_1
     :goto_0
-    sget-object v0, Lorg/telegram/messenger/SharedConfig;->selectedFilterTabsNotificationMode:Lorg/fork/enums/FilterTabNotificationMode;
+    sget-object v0, Lorg/telegram/messenger/SharedConfig;->selectedFilterTabsNotificationMode:Lcom/iMe/fork/enums/FilterTabNotificationMode;
 
-    sget-object v1, Lorg/fork/enums/FilterTabNotificationMode;->POINT:Lorg/fork/enums/FilterTabNotificationMode;
+    sget-object v1, Lcom/iMe/fork/enums/FilterTabNotificationMode;->POINT:Lcom/iMe/fork/enums/FilterTabNotificationMode;
 
     if-ne v0, v1, :cond_2
 
@@ -1562,9 +1562,9 @@
 
     .line 1397
     :cond_1
-    sget-object p2, Lorg/telegram/messenger/SharedConfig;->selectedFilterTabWidthMode:Lorg/fork/enums/FilterTabWidthMode;
+    sget-object p2, Lorg/telegram/messenger/SharedConfig;->selectedFilterTabWidthMode:Lcom/iMe/fork/enums/FilterTabWidthMode;
 
-    invoke-virtual {p2}, Lorg/fork/enums/FilterTabWidthMode;->getMarginIconAndCount()I
+    invoke-virtual {p2}, Lcom/iMe/fork/enums/FilterTabWidthMode;->getMarginIconAndCount()I
 
     move-result p2
 
@@ -2141,7 +2141,7 @@
         value = {
             "(",
             "Ljava/util/List<",
-            "Lorg/fork/models/SortingTabState;",
+            "Lcom/iMe/fork/models/SortingTabState;",
             ">;)V"
         }
     .end annotation
@@ -2161,23 +2161,23 @@
 
     move-result-object v2
 
-    check-cast v2, Lorg/fork/models/SortingTabState;
+    check-cast v2, Lcom/iMe/fork/models/SortingTabState;
 
-    invoke-virtual {v2}, Lorg/fork/models/SortingTabState;->getType()Lorg/fork/enums/SortingFilter;
+    invoke-virtual {v2}, Lcom/iMe/fork/models/SortingTabState;->getType()Lcom/iMe/fork/enums/SortingFilter;
 
     move-result-object v2
 
     .line 158
-    invoke-virtual {v2}, Lorg/fork/enums/SortingFilter;->generateIdWithExtra()I
+    invoke-virtual {v2}, Lcom/iMe/fork/enums/SortingFilter;->generateIdWithExtra()I
 
     move-result v5
 
     .line 159
-    invoke-virtual {v2}, Lorg/fork/enums/SortingFilter;->getDefaultIconResId()I
+    invoke-virtual {v2}, Lcom/iMe/fork/enums/SortingFilter;->getDefaultIconResId()I
 
     move-result v6
 
-    invoke-virtual {v2}, Lorg/fork/enums/SortingFilter;->getFilledIconResId()I
+    invoke-virtual {v2}, Lcom/iMe/fork/enums/SortingFilter;->getFilledIconResId()I
 
     move-result v7
 
@@ -3660,18 +3660,18 @@
     .locals 1
 
     .line 227
-    sget-object v0, Lorg/telegram/messenger/SharedConfig;->selectedFilterTabWidthMode:Lorg/fork/enums/FilterTabWidthMode;
+    sget-object v0, Lorg/telegram/messenger/SharedConfig;->selectedFilterTabWidthMode:Lcom/iMe/fork/enums/FilterTabWidthMode;
 
-    invoke-virtual {v0}, Lorg/fork/enums/FilterTabWidthMode;->getTabDefaultMargin()I
+    invoke-virtual {v0}, Lcom/iMe/fork/enums/FilterTabWidthMode;->getTabDefaultMargin()I
 
     move-result v0
 
     iput v0, p0, Lorg/telegram/ui/Components/FilterTabsView;->tabDefaultMargin:I
 
     .line 228
-    sget-object v0, Lorg/telegram/messenger/SharedConfig;->selectedFilterTabWidthMode:Lorg/fork/enums/FilterTabWidthMode;
+    sget-object v0, Lorg/telegram/messenger/SharedConfig;->selectedFilterTabWidthMode:Lcom/iMe/fork/enums/FilterTabWidthMode;
 
-    invoke-virtual {v0}, Lorg/fork/enums/FilterTabWidthMode;->getTabNoCounterMargin()I
+    invoke-virtual {v0}, Lcom/iMe/fork/enums/FilterTabWidthMode;->getTabNoCounterMargin()I
 
     move-result v0
 

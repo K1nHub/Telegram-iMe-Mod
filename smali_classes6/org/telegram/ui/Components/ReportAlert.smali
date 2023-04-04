@@ -842,7 +842,7 @@
 
     const/4 p2, 0x1
 
-    invoke-static {p1, p2}, Lcom/smedialink/utils/extentions/common/ViewExtKt;->shake(Landroid/view/View;Z)V
+    invoke-static {p1, p2}, Lcom/iMe/utils/extentions/common/ViewExtKt;->shake(Landroid/view/View;Z)V
 
     return-void
 

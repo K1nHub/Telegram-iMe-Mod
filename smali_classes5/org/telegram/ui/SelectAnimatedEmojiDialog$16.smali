@@ -26,7 +26,7 @@
 .method constructor <init>(Lorg/telegram/ui/SelectAnimatedEmojiDialog;[ZLjava/lang/Runnable;)V
     .locals 0
 
-    .line 1218
+    .line 1217
     iput-object p1, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$16;->this$0:Lorg/telegram/ui/SelectAnimatedEmojiDialog;
 
     iput-object p2, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$16;->val$done:[Z
@@ -43,19 +43,19 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 2
 
-    .line 1221
+    .line 1220
     iget-object p1, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$16;->this$0:Lorg/telegram/ui/SelectAnimatedEmojiDialog;
 
     const/4 v0, 0x0
 
     invoke-static {p1, v0}, Lorg/telegram/ui/SelectAnimatedEmojiDialog;->access$3602(Lorg/telegram/ui/SelectAnimatedEmojiDialog;Lorg/telegram/ui/SelectAnimatedEmojiDialog$ImageViewEmoji;)Lorg/telegram/ui/SelectAnimatedEmojiDialog$ImageViewEmoji;
 
-    .line 1222
+    .line 1221
     iget-object p1, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$16;->this$0:Lorg/telegram/ui/SelectAnimatedEmojiDialog;
 
     invoke-virtual {p1}, Landroid/widget/FrameLayout;->invalidate()V
 
-    .line 1223
+    .line 1222
     iget-object p1, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$16;->val$done:[Z
 
     const/4 v0, 0x0
@@ -66,10 +66,10 @@
 
     const/4 v1, 0x1
 
-    .line 1224
+    .line 1223
     aput-boolean v1, p1, v0
 
-    .line 1225
+    .line 1224
     iget-object p1, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$16;->val$onDone:Ljava/lang/Runnable;
 
     invoke-interface {p1}, Ljava/lang/Runnable;->run()V

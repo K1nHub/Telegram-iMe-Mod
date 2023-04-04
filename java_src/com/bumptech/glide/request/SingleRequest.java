@@ -16,15 +16,17 @@ import com.bumptech.glide.request.target.Target;
 import com.bumptech.glide.request.transition.TransitionFactory;
 import com.bumptech.glide.util.LogTime;
 import com.bumptech.glide.util.Util;
+import com.bumptech.glide.util.pool.GlideTrace;
 import com.bumptech.glide.util.pool.StateVerifier;
 import java.util.List;
 import java.util.concurrent.Executor;
 /* loaded from: classes.dex */
 public final class SingleRequest<R> implements Request, SizeReadyCallback, ResourceCallback {
-    private static final boolean IS_VERBOSE_LOGGABLE = Log.isLoggable("Request", 2);
+    private static final boolean IS_VERBOSE_LOGGABLE = Log.isLoggable("GlideRequest", 2);
     private final TransitionFactory<? super R> animationFactory;
     private final Executor callbackExecutor;
     private final Context context;
+    private int cookie;
     private volatile Engine engine;
     private Drawable errorDrawable;
     private Drawable fallbackDrawable;
@@ -98,7 +100,8 @@ public final class SingleRequest<R> implements Request, SizeReadyCallback, Resou
             assertNotCallingCallbacks();
             this.stateVerifier.throwIfRecycled();
             this.startTime = LogTime.getLogTime();
-            if (this.model == null) {
+            Object obj = this.model;
+            if (obj == null) {
                 if (Util.isValidDimensions(this.overrideWidth, this.overrideHeight)) {
                     this.width = this.overrideWidth;
                     this.height = this.overrideHeight;
@@ -115,6 +118,8 @@ public final class SingleRequest<R> implements Request, SizeReadyCallback, Resou
                 onResourceReady(this.resource, DataSource.MEMORY_CACHE, false);
                 return;
             }
+            experimentalNotifyRequestStarted(obj);
+            this.cookie = GlideTrace.beginSectionAsync("GlideRequest");
             Status status3 = Status.WAITING_FOR_SIZE;
             this.status = status3;
             if (Util.isValidDimensions(this.overrideWidth, this.overrideHeight)) {
@@ -128,6 +133,18 @@ public final class SingleRequest<R> implements Request, SizeReadyCallback, Resou
             }
             if (IS_VERBOSE_LOGGABLE) {
                 logV("finished run method in " + LogTime.getElapsedMillis(this.startTime));
+            }
+        }
+    }
+
+    private void experimentalNotifyRequestStarted(Object obj) {
+        List<RequestListener<R>> list = this.requestListeners;
+        if (list == null) {
+            return;
+        }
+        for (RequestListener<R> requestListener : list) {
+            if (requestListener instanceof ExperimentalRequestListener) {
+                ((ExperimentalRequestListener) requestListener).onRequestStarted(obj);
             }
         }
     }
@@ -169,6 +186,7 @@ public final class SingleRequest<R> implements Request, SizeReadyCallback, Resou
             if (canNotifyCleared()) {
                 this.target.onLoadCleared(getPlaceholderDrawable());
             }
+            GlideTrace.endSectionAsync("GlideRequest", this.cookie);
             this.status = status2;
             if (resource != null) {
                 this.engine.release(resource);
@@ -256,7 +274,7 @@ public final class SingleRequest<R> implements Request, SizeReadyCallback, Resou
     }
 
     private Drawable loadDrawable(int i) {
-        return DrawableDecoderCompat.getDrawable(this.glideContext, i, this.requestOptions.getTheme() != null ? this.requestOptions.getTheme() : this.context.getTheme());
+        return DrawableDecoderCompat.getDrawable(this.context, i, this.requestOptions.getTheme() != null ? this.requestOptions.getTheme() : this.context.getTheme());
     }
 
     private void setErrorPlaceholder() {
@@ -341,14 +359,14 @@ public final class SingleRequest<R> implements Request, SizeReadyCallback, Resou
         return requestCoordinator == null || !requestCoordinator.getRoot().isAnyResourceSet();
     }
 
-    private void notifyLoadSuccess() {
+    private void notifyRequestCoordinatorLoadSucceeded() {
         RequestCoordinator requestCoordinator = this.requestCoordinator;
         if (requestCoordinator != null) {
             requestCoordinator.onRequestSuccess(this);
         }
     }
 
-    private void notifyLoadFailed() {
+    private void notifyRequestCoordinatorLoadFailed() {
         RequestCoordinator requestCoordinator = this.requestCoordinator;
         if (requestCoordinator != null) {
             requestCoordinator.onRequestFailed(this);
@@ -374,6 +392,7 @@ public final class SingleRequest<R> implements Request, SizeReadyCallback, Resou
                             if (!canSetResource()) {
                                 this.resource = null;
                                 this.status = Status.COMPLETE;
+                                GlideTrace.endSectionAsync("GlideRequest", this.cookie);
                                 this.engine.release(resource);
                                 return;
                             }
@@ -419,6 +438,7 @@ public final class SingleRequest<R> implements Request, SizeReadyCallback, Resou
         if (this.glideContext.getLogLevel() <= 3) {
             Log.d("Glide", "Finished loading " + r.getClass().getSimpleName() + " from " + dataSource + " for " + this.model + " with size [" + this.width + "x" + this.height + "] in " + LogTime.getElapsedMillis(this.startTime) + " ms");
         }
+        notifyRequestCoordinatorLoadSucceeded();
         boolean z3 = true;
         this.isCallingCallbacks = true;
         try {
@@ -439,7 +459,7 @@ public final class SingleRequest<R> implements Request, SizeReadyCallback, Resou
                 this.target.onResourceReady(r, this.animationFactory.build(dataSource, isFirstReadyResource));
             }
             this.isCallingCallbacks = false;
-            notifyLoadSuccess();
+            GlideTrace.endSectionAsync("GlideRequest", this.cookie);
         } catch (Throwable th) {
             this.isCallingCallbacks = false;
             throw th;
@@ -464,13 +484,14 @@ public final class SingleRequest<R> implements Request, SizeReadyCallback, Resou
             glideException.setOrigin(this.requestOrigin);
             int logLevel = this.glideContext.getLogLevel();
             if (logLevel <= i) {
-                Log.w("Glide", "Load failed for " + this.model + " with size [" + this.width + "x" + this.height + "]", glideException);
+                Log.w("Glide", "Load failed for [" + this.model + "] with dimensions [" + this.width + "x" + this.height + "]", glideException);
                 if (logLevel <= 4) {
                     glideException.logRootCauses("Glide");
                 }
             }
             this.loadStatus = null;
             this.status = Status.FAILED;
+            notifyRequestCoordinatorLoadFailed();
             boolean z2 = true;
             this.isCallingCallbacks = true;
             List<RequestListener<R>> list = this.requestListeners;
@@ -490,7 +511,7 @@ public final class SingleRequest<R> implements Request, SizeReadyCallback, Resou
                 setErrorPlaceholder();
             }
             this.isCallingCallbacks = false;
-            notifyLoadFailed();
+            GlideTrace.endSectionAsync("GlideRequest", this.cookie);
         }
     }
 
@@ -538,6 +559,16 @@ public final class SingleRequest<R> implements Request, SizeReadyCallback, Resou
     }
 
     private void logV(String str) {
-        Log.v("Request", str + " this: " + this.tag);
+        Log.v("GlideRequest", str + " this: " + this.tag);
+    }
+
+    public String toString() {
+        Object obj;
+        Class<R> cls;
+        synchronized (this.requestLock) {
+            obj = this.model;
+            cls = this.transcodeClass;
+        }
+        return super.toString() + "[model=" + obj + ", transcodeClass=" + cls + "]";
     }
 }

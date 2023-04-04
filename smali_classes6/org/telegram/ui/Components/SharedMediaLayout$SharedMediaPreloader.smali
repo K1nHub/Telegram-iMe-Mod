@@ -2157,7 +2157,7 @@
     .line 648
     iget v0, p0, Lorg/telegram/ui/Components/SharedMediaLayout$SharedMediaPreloader;->customType:I
 
-    sget v1, Lcom/smedialink/common/IdFabric$CustomType;->SHARED_MEDIA_LAYOUT_MUSIC:I
+    sget v1, Lcom/iMe/common/IdFabric$CustomType;->SHARED_MEDIA_LAYOUT_MUSIC:I
 
     if-ne v0, v1, :cond_0
 

@@ -64,7 +64,7 @@ public final class ArrayValue extends GeneratedMessageLite<ArrayValue, Builder> 
     /* renamed from: com.google.firestore.v1.ArrayValue$Builder */
     /* loaded from: classes3.dex */
     public static final class Builder extends GeneratedMessageLite.Builder<ArrayValue, Builder> implements ArrayValueOrBuilder {
-        /* synthetic */ Builder(C10461 c10461) {
+        /* synthetic */ Builder(C10601 c10601) {
             this();
         }
 
@@ -106,7 +106,7 @@ public final class ArrayValue extends GeneratedMessageLite<ArrayValue, Builder> 
 
     /* renamed from: com.google.firestore.v1.ArrayValue$1 */
     /* loaded from: classes3.dex */
-    static /* synthetic */ class C10461 {
+    static /* synthetic */ class C10601 {
 
         /* renamed from: $SwitchMap$com$google$protobuf$GeneratedMessageLite$MethodToInvoke */
         static final /* synthetic */ int[] f201xa1df5c61;
@@ -147,7 +147,7 @@ public final class ArrayValue extends GeneratedMessageLite<ArrayValue, Builder> 
 
     @Override // com.google.protobuf.GeneratedMessageLite
     protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke methodToInvoke, Object obj, Object obj2) {
-        switch (C10461.f201xa1df5c61[methodToInvoke.ordinal()]) {
+        switch (C10601.f201xa1df5c61[methodToInvoke.ordinal()]) {
             case 1:
                 return new ArrayValue();
             case 2:

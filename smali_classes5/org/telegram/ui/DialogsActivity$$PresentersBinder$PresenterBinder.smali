@@ -27,7 +27,7 @@
     .locals 2
 
     .line 21
-    const-class p1, Lcom/smedialink/ui/wallet/airdrop/WalletAirdropPresenter;
+    const-class p1, Lcom/iMe/ui/wallet/airdrop/WalletAirdropPresenter;
 
     const-string v0, "presenter"
 
@@ -55,9 +55,9 @@
     .locals 0
 
     .line 26
-    check-cast p2, Lcom/smedialink/ui/wallet/airdrop/WalletAirdropPresenter;
+    check-cast p2, Lcom/iMe/ui/wallet/airdrop/WalletAirdropPresenter;
 
-    iput-object p2, p1, Lorg/telegram/ui/DialogsActivity;->presenter:Lcom/smedialink/ui/wallet/airdrop/WalletAirdropPresenter;
+    iput-object p2, p1, Lorg/telegram/ui/DialogsActivity;->presenter:Lcom/iMe/ui/wallet/airdrop/WalletAirdropPresenter;
 
     return-void
 .end method
@@ -88,7 +88,7 @@
     .end annotation
 
     .line 31
-    invoke-virtual {p1}, Lorg/telegram/ui/DialogsActivity;->providePresenter()Lcom/smedialink/ui/wallet/airdrop/WalletAirdropPresenter;
+    invoke-virtual {p1}, Lorg/telegram/ui/DialogsActivity;->providePresenter()Lcom/iMe/ui/wallet/airdrop/WalletAirdropPresenter;
 
     move-result-object p1
 

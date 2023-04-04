@@ -364,7 +364,7 @@
 
     move-result v0
 
-    const-string v6, "topic_id"
+    const-string/jumbo v6, "topic_id"
 
     .line 36
     invoke-virtual {p2, v6, v3}, Landroid/content/Intent;->getIntExtra(Ljava/lang/String;I)I

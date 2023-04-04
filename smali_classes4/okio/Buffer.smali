@@ -2074,7 +2074,7 @@
 .method public final readAndWriteUnsafe(Lokio/Buffer$UnsafeCursor;)Lokio/Buffer$UnsafeCursor;
     .locals 2
 
-    const-string v0, "unsafeCursor"
+    const-string/jumbo v0, "unsafeCursor"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -4757,7 +4757,7 @@
     :cond_4
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
-    const-string v0, "unexpected capacity"
+    const-string/jumbo v0, "unexpected capacity"
 
     invoke-virtual {v0}, Ljava/lang/Object;->toString()Ljava/lang/String;
 

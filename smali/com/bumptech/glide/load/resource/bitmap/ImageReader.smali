@@ -7,7 +7,8 @@
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
         Lcom/bumptech/glide/load/resource/bitmap/ImageReader$ParcelFileDescriptorImageReader;,
-        Lcom/bumptech/glide/load/resource/bitmap/ImageReader$InputStreamImageReader;
+        Lcom/bumptech/glide/load/resource/bitmap/ImageReader$InputStreamImageReader;,
+        Lcom/bumptech/glide/load/resource/bitmap/ImageReader$ByteBufferReader;
     }
 .end annotation
 

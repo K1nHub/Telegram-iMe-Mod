@@ -5,7 +5,7 @@ import com.google.android.gms.internal.firebase_ml.zzuu;
 public final class zzrl {
 
     /* loaded from: classes.dex */
-    public static final class zza extends zzuu<zza, C6838zza> implements zzwg {
+    public static final class zza extends zzuu<zza, C6862zza> implements zzwg {
         private static final zzvc<Integer, zztc> zzbfg = new zzrm();
         private static final zza zzbfh;
         private static volatile zzwr<zza> zzs;
@@ -16,18 +16,18 @@ public final class zzrl {
 
         /* renamed from: com.google.android.gms.internal.firebase_ml.zzrl$zza$zza  reason: collision with other inner class name */
         /* loaded from: classes.dex */
-        public static final class C6838zza extends zzuu.zzb<zza, C6838zza> implements zzwg {
-            private C6838zza() {
+        public static final class C6862zza extends zzuu.zzb<zza, C6862zza> implements zzwg {
+            private C6862zza() {
                 super(zza.zzbfh);
             }
 
-            public final C6838zza zzu(Iterable<? extends zztc> iterable) {
+            public final C6862zza zzu(Iterable<? extends zztc> iterable) {
                 zzrm();
                 ((zza) this.zzbst).zzt(iterable);
                 return this;
             }
 
-            /* synthetic */ C6838zza(zzrk zzrkVar) {
+            /* synthetic */ C6862zza(zzrk zzrkVar) {
                 this();
             }
         }
@@ -42,7 +42,7 @@ public final class zzrl {
             }
         }
 
-        public static C6838zza zzom() {
+        public static C6862zza zzom() {
             return zzbfh.zzrd();
         }
 
@@ -53,7 +53,7 @@ public final class zzrl {
                 case 1:
                     return new zza();
                 case 2:
-                    return new C6838zza(null);
+                    return new C6862zza(null);
                 case 3:
                     return zzuu.zza(zzbfh, "\u0001\u0001\u0000\u0000\u0001\u0001\u0001\u0000\u0001\u0000\u0001\u001e", new Object[]{"zzbff", zztc.zzc()});
                 case 4:
@@ -87,7 +87,7 @@ public final class zzrl {
     }
 
     /* loaded from: classes.dex */
-    public static final class zzb extends zzuu<zzb, C6839zzb> implements zzwg {
+    public static final class zzb extends zzuu<zzb, C6863zzb> implements zzwg {
         private static final zzb zzbfm;
         private static volatile zzwr<zzb> zzs;
         private float zzait;
@@ -219,12 +219,12 @@ public final class zzrl {
 
         /* renamed from: com.google.android.gms.internal.firebase_ml.zzrl$zzb$zzb  reason: collision with other inner class name */
         /* loaded from: classes.dex */
-        public static final class C6839zzb extends zzuu.zzb<zzb, C6839zzb> implements zzwg {
-            private C6839zzb() {
+        public static final class C6863zzb extends zzuu.zzb<zzb, C6863zzb> implements zzwg {
+            private C6863zzb() {
                 super(zzb.zzbfm);
             }
 
-            /* synthetic */ C6839zzb(zzrk zzrkVar) {
+            /* synthetic */ C6863zzb(zzrk zzrkVar) {
                 this();
             }
         }
@@ -236,7 +236,7 @@ public final class zzrl {
                 case 1:
                     return new zzb();
                 case 2:
-                    return new C6839zzb(null);
+                    return new C6863zzb(null);
                 case 3:
                     return zzuu.zza(zzbfm, "\u0001\u0006\u0000\u0001\u0001\u0006\u0006\u0000\u0000\u0000\u0001\f\u0000\u0002\f\u0001\u0003\f\u0002\u0004\u0007\u0003\u0005\u0007\u0004\u0006\u0001\u0005", new Object[]{"zzm", "zzkc", zzd.zzc(), "zzbfi", zzc.zzc(), "zzbfj", zza.zzc(), "zzbfk", "zzbfl", "zzait"});
                 case 4:

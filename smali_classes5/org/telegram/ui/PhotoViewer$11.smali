@@ -598,7 +598,7 @@
     .line 4223
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$11;->this$0:Lorg/telegram/ui/PhotoViewer;
 
-    invoke-virtual {v0}, Lcom/smedialink/ui/base/mvp/view/MvpNoParentCustomView;->onCreateMvpView()V
+    invoke-interface {v0}, Lcom/iMe/ui/base/mvp/view/ICustomMvpView;->onCreateMvpView()V
 
     return-void
 .end method
@@ -651,7 +651,7 @@
     .line 4234
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$11;->this$0:Lorg/telegram/ui/PhotoViewer;
 
-    invoke-virtual {v0}, Lcom/smedialink/ui/base/mvp/view/MvpNoParentCustomView;->onDestroyMvpView()V
+    invoke-interface {v0}, Lcom/iMe/ui/base/mvp/view/ICustomMvpView;->onDestroyMvpView()V
 
     return-void
 .end method

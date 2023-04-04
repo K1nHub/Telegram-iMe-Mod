@@ -512,7 +512,7 @@ public final class Bitcoin {
 
         /* loaded from: classes6.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<Transaction, Builder> implements TransactionOrBuilder {
-            /* synthetic */ Builder(C67711 c67711) {
+            /* synthetic */ Builder(C67951 c67951) {
                 this();
             }
 
@@ -695,7 +695,7 @@ public final class Bitcoin {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C67711.f1859xa1df5c61[method.ordinal()]) {
+            switch (C67951.f1862xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new Transaction();
                 case 2:
@@ -742,40 +742,40 @@ public final class Bitcoin {
 
     /* renamed from: wallet.core.jni.proto.Bitcoin$1 */
     /* loaded from: classes6.dex */
-    static /* synthetic */ class C67711 {
+    static /* synthetic */ class C67951 {
 
         /* renamed from: $SwitchMap$com$google$protobuf$GeneratedMessageLite$MethodToInvoke */
-        static final /* synthetic */ int[] f1859xa1df5c61;
+        static final /* synthetic */ int[] f1862xa1df5c61;
 
         static {
             int[] iArr = new int[GeneratedMessageLite.MethodToInvoke.values().length];
-            f1859xa1df5c61 = iArr;
+            f1862xa1df5c61 = iArr;
             try {
                 iArr[GeneratedMessageLite.MethodToInvoke.NEW_MUTABLE_INSTANCE.ordinal()] = 1;
             } catch (NoSuchFieldError unused) {
             }
             try {
-                f1859xa1df5c61[GeneratedMessageLite.MethodToInvoke.NEW_BUILDER.ordinal()] = 2;
+                f1862xa1df5c61[GeneratedMessageLite.MethodToInvoke.NEW_BUILDER.ordinal()] = 2;
             } catch (NoSuchFieldError unused2) {
             }
             try {
-                f1859xa1df5c61[GeneratedMessageLite.MethodToInvoke.BUILD_MESSAGE_INFO.ordinal()] = 3;
+                f1862xa1df5c61[GeneratedMessageLite.MethodToInvoke.BUILD_MESSAGE_INFO.ordinal()] = 3;
             } catch (NoSuchFieldError unused3) {
             }
             try {
-                f1859xa1df5c61[GeneratedMessageLite.MethodToInvoke.GET_DEFAULT_INSTANCE.ordinal()] = 4;
+                f1862xa1df5c61[GeneratedMessageLite.MethodToInvoke.GET_DEFAULT_INSTANCE.ordinal()] = 4;
             } catch (NoSuchFieldError unused4) {
             }
             try {
-                f1859xa1df5c61[GeneratedMessageLite.MethodToInvoke.GET_PARSER.ordinal()] = 5;
+                f1862xa1df5c61[GeneratedMessageLite.MethodToInvoke.GET_PARSER.ordinal()] = 5;
             } catch (NoSuchFieldError unused5) {
             }
             try {
-                f1859xa1df5c61[GeneratedMessageLite.MethodToInvoke.GET_MEMOIZED_IS_INITIALIZED.ordinal()] = 6;
+                f1862xa1df5c61[GeneratedMessageLite.MethodToInvoke.GET_MEMOIZED_IS_INITIALIZED.ordinal()] = 6;
             } catch (NoSuchFieldError unused6) {
             }
             try {
-                f1859xa1df5c61[GeneratedMessageLite.MethodToInvoke.SET_MEMOIZED_IS_INITIALIZED.ordinal()] = 7;
+                f1862xa1df5c61[GeneratedMessageLite.MethodToInvoke.SET_MEMOIZED_IS_INITIALIZED.ordinal()] = 7;
             } catch (NoSuchFieldError unused7) {
             }
         }
@@ -917,7 +917,7 @@ public final class Bitcoin {
 
         /* loaded from: classes6.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<TransactionInput, Builder> implements TransactionInputOrBuilder {
-            /* synthetic */ Builder(C67711 c67711) {
+            /* synthetic */ Builder(C67951 c67951) {
                 this();
             }
 
@@ -996,7 +996,7 @@ public final class Bitcoin {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C67711.f1859xa1df5c61[method.ordinal()]) {
+            switch (C67951.f1862xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new TransactionInput();
                 case 2:
@@ -1159,7 +1159,7 @@ public final class Bitcoin {
 
         /* loaded from: classes6.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<OutPoint, Builder> implements OutPointOrBuilder {
-            /* synthetic */ Builder(C67711 c67711) {
+            /* synthetic */ Builder(C67951 c67951) {
                 this();
             }
 
@@ -1221,7 +1221,7 @@ public final class Bitcoin {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C67711.f1859xa1df5c61[method.ordinal()]) {
+            switch (C67951.f1862xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new OutPoint();
                 case 2:
@@ -1367,7 +1367,7 @@ public final class Bitcoin {
 
         /* loaded from: classes6.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<TransactionOutput, Builder> implements TransactionOutputOrBuilder {
-            /* synthetic */ Builder(C67711 c67711) {
+            /* synthetic */ Builder(C67951 c67951) {
                 this();
             }
 
@@ -1412,7 +1412,7 @@ public final class Bitcoin {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C67711.f1859xa1df5c61[method.ordinal()]) {
+            switch (C67951.f1862xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new TransactionOutput();
                 case 2:
@@ -1593,7 +1593,7 @@ public final class Bitcoin {
 
         /* loaded from: classes6.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<UnspentTransaction, Builder> implements UnspentTransactionOrBuilder {
-            /* synthetic */ Builder(C67711 c67711) {
+            /* synthetic */ Builder(C67951 c67951) {
                 this();
             }
 
@@ -1672,7 +1672,7 @@ public final class Bitcoin {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C67711.f1859xa1df5c61[method.ordinal()]) {
+            switch (C67951.f1862xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new UnspentTransaction();
                 case 2:
@@ -2182,7 +2182,7 @@ public final class Bitcoin {
 
         /* loaded from: classes6.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<SigningInput, Builder> implements SigningInputOrBuilder {
-            /* synthetic */ Builder(C67711 c67711) {
+            /* synthetic */ Builder(C67951 c67951) {
                 this();
             }
 
@@ -2576,7 +2576,7 @@ public final class Bitcoin {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C67711.f1859xa1df5c61[method.ordinal()]) {
+            switch (C67951.f1862xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new SigningInput();
                 case 2:
@@ -2893,7 +2893,7 @@ public final class Bitcoin {
 
         /* loaded from: classes6.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<TransactionPlan, Builder> implements TransactionPlanOrBuilder {
-            /* synthetic */ Builder(C67711 c67711) {
+            /* synthetic */ Builder(C67951 c67951) {
                 this();
             }
 
@@ -3103,7 +3103,7 @@ public final class Bitcoin {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C67711.f1859xa1df5c61[method.ordinal()]) {
+            switch (C67951.f1862xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new TransactionPlan();
                 case 2:
@@ -3353,7 +3353,7 @@ public final class Bitcoin {
 
         /* loaded from: classes6.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<SigningOutput, Builder> implements SigningOutputOrBuilder {
-            /* synthetic */ Builder(C67711 c67711) {
+            /* synthetic */ Builder(C67951 c67951) {
                 this();
             }
 
@@ -3499,7 +3499,7 @@ public final class Bitcoin {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C67711.f1859xa1df5c61[method.ordinal()]) {
+            switch (C67951.f1862xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new SigningOutput();
                 case 2:
@@ -3649,7 +3649,7 @@ public final class Bitcoin {
 
         /* loaded from: classes6.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<HashPublicKey, Builder> implements HashPublicKeyOrBuilder {
-            /* synthetic */ Builder(C67711 c67711) {
+            /* synthetic */ Builder(C67951 c67951) {
                 this();
             }
 
@@ -3694,7 +3694,7 @@ public final class Bitcoin {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C67711.f1859xa1df5c61[method.ordinal()]) {
+            switch (C67951.f1862xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new HashPublicKey();
                 case 2:
@@ -3933,7 +3933,7 @@ public final class Bitcoin {
 
         /* loaded from: classes6.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<PreSigningOutput, Builder> implements PreSigningOutputOrBuilder {
-            /* synthetic */ Builder(C67711 c67711) {
+            /* synthetic */ Builder(C67951 c67951) {
                 this();
             }
 
@@ -4069,7 +4069,7 @@ public final class Bitcoin {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C67711.f1859xa1df5c61[method.ordinal()]) {
+            switch (C67951.f1862xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new PreSigningOutput();
                 case 2:

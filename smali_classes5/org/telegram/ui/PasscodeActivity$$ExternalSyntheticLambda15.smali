@@ -2,7 +2,7 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Lcom/iMe/fork/utils/Callbacks$Callback;
 
 
 # instance fields
@@ -22,12 +22,12 @@
 
 
 # virtual methods
-.method public final run()V
+.method public final invoke()V
     .locals 1
 
     iget-object v0, p0, Lorg/telegram/ui/PasscodeActivity$$ExternalSyntheticLambda15;->f$0:Lorg/telegram/ui/PasscodeActivity;
 
-    invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->removeSelfFromStack()V
+    invoke-static {v0}, Lorg/telegram/ui/PasscodeActivity;->$r8$lambda$WiVFlxjV_IkdlskTarKTYLC31T4(Lorg/telegram/ui/PasscodeActivity;)V
 
     return-void
 .end method

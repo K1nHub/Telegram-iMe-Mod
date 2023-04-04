@@ -1907,7 +1907,7 @@
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v1, "unsupported encoder = "
+    const-string/jumbo v1, "unsupported encoder = "
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -6229,7 +6229,7 @@
     if-eqz v1, :cond_1a
 
     .line 6018
-    invoke-virtual/range {p0 .. p0}, Lorg/telegram/messenger/BaseController;->getTemplatesController()Lorg/fork/controller/TemplatesController;
+    invoke-virtual/range {p0 .. p0}, Lorg/telegram/messenger/BaseController;->getTemplatesController()Lcom/iMe/fork/controller/TemplatesController;
 
     move-result-object v1
 
@@ -6239,7 +6239,7 @@
 
     int-to-long v4, v4
 
-    invoke-virtual {v1, v2, v3, v4, v5}, Lorg/fork/controller/TemplatesController;->markAsSent(JJ)V
+    invoke-virtual {v1, v2, v3, v4, v5}, Lcom/iMe/fork/controller/TemplatesController;->markAsSent(JJ)V
 
     :cond_1a
     move v1, v0
@@ -7815,7 +7815,7 @@
     if-eqz v0, :cond_f
 
     .line 5707
-    invoke-virtual/range {p0 .. p0}, Lorg/telegram/messenger/BaseController;->getTemplatesController()Lorg/fork/controller/TemplatesController;
+    invoke-virtual/range {p0 .. p0}, Lorg/telegram/messenger/BaseController;->getTemplatesController()Lcom/iMe/fork/controller/TemplatesController;
 
     move-result-object v0
 
@@ -7827,7 +7827,7 @@
 
     int-to-long v5, v1
 
-    invoke-virtual {v0, v3, v4, v5, v6}, Lorg/fork/controller/TemplatesController;->markAsSent(JJ)V
+    invoke-virtual {v0, v3, v4, v5, v6}, Lcom/iMe/fork/controller/TemplatesController;->markAsSent(JJ)V
 
     goto :goto_5
 
@@ -8547,7 +8547,7 @@
     goto :goto_5
 
     :cond_2
-    const-string v4, "txt"
+    const-string/jumbo v4, "txt"
 
     .line 6459
     invoke-static {v3, v4}, Lorg/telegram/messenger/MediaController;->copyFileToCache(Landroid/net/Uri;Ljava/lang/String;)Ljava/lang/String;
@@ -17012,7 +17012,7 @@
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v1, "total send time = "
+    const-string/jumbo v1, "total send time = "
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -25229,7 +25229,7 @@
     :goto_0
     if-nez v0, :cond_6
 
-    const-string v0, "txt"
+    const-string/jumbo v0, "txt"
 
     const/4 v3, 0x0
 
@@ -26965,6 +26965,8 @@
 
     return v1
 
+    nop
+
     :sswitch_data_0
     .sparse-switch
         0x19fda -> :sswitch_5
@@ -28302,16 +28304,16 @@
     :goto_6
     iget v7, v1, Lorg/telegram/messenger/BaseController;->currentAccount:I
 
-    invoke-static {v7}, Lorg/fork/controller/ToolsController;->getInstance(I)Lorg/fork/controller/ToolsController;
+    invoke-static {v7}, Lcom/iMe/fork/controller/ToolsController;->getInstance(I)Lcom/iMe/fork/controller/ToolsController;
 
     move-result-object v7
 
-    invoke-virtual {v7}, Lorg/fork/controller/ToolsController;->getSelectedSentMessageFont()Lorg/fork/enums/SentMessageFont;
+    invoke-virtual {v7}, Lcom/iMe/fork/controller/ToolsController;->getSelectedSentMessageFont()Lcom/iMe/fork/enums/SentMessageFont;
 
     move-result-object v7
 
     .line 3561
-    sget-object v8, Lorg/fork/enums/SentMessageFont;->REGULAR:Lorg/fork/enums/SentMessageFont;
+    sget-object v8, Lcom/iMe/fork/enums/SentMessageFont;->REGULAR:Lcom/iMe/fork/enums/SentMessageFont;
 
     if-eq v7, v8, :cond_11
 
@@ -28413,7 +28415,7 @@
 
     move-result-object v8
 
-    invoke-virtual {v7}, Lorg/fork/enums/SentMessageFont;->getFlag()I
+    invoke-virtual {v7}, Lcom/iMe/fork/enums/SentMessageFont;->getFlag()I
 
     move-result v7
 
@@ -31384,11 +31386,11 @@
 
     .line 4002
     :cond_77
-    invoke-virtual/range {p0 .. p0}, Lorg/telegram/messenger/BaseController;->getToolsController()Lorg/fork/controller/ToolsController;
+    invoke-virtual/range {p0 .. p0}, Lorg/telegram/messenger/BaseController;->getToolsController()Lcom/iMe/fork/controller/ToolsController;
 
     move-result-object v8
 
-    invoke-virtual {v8, v10, v11}, Lorg/fork/controller/ToolsController;->isSilentSendingEnabledForDialog(J)Z
+    invoke-virtual {v8, v10, v11}, Lcom/iMe/fork/controller/ToolsController;->isSilentSendingEnabledForDialog(J)Z
 
     move-result v8
 
@@ -31774,7 +31776,7 @@
     .line 4069
     iget v14, v15, Lorg/telegram/messenger/BaseController;->currentAccount:I
 
-    invoke-static {v14}, Lorg/fork/controller/TemplatesController;->getInstance(I)Lorg/fork/controller/TemplatesController;
+    invoke-static {v14}, Lcom/iMe/fork/controller/TemplatesController;->getInstance(I)Lcom/iMe/fork/controller/TemplatesController;
 
     move-result-object v36
 
@@ -31796,7 +31798,7 @@
 
     move-object/from16 v41, p29
 
-    invoke-virtual/range {v36 .. v41}, Lorg/fork/controller/TemplatesController;->addTemplate(JJLjava/lang/String;)V
+    invoke-virtual/range {v36 .. v41}, Lcom/iMe/fork/controller/TemplatesController;->addTemplate(JJLjava/lang/String;)V
 
     goto :goto_59
 
@@ -50626,11 +50628,11 @@
 
     .line 1834
     :goto_4
-    invoke-virtual/range {p0 .. p0}, Lorg/telegram/messenger/BaseController;->getToolsController()Lorg/fork/controller/ToolsController;
+    invoke-virtual/range {p0 .. p0}, Lorg/telegram/messenger/BaseController;->getToolsController()Lcom/iMe/fork/controller/ToolsController;
 
     move-result-object v0
 
-    invoke-virtual {v0, v12, v13}, Lorg/fork/controller/ToolsController;->isSilentSendingEnabledForDialog(J)Z
+    invoke-virtual {v0, v12, v13}, Lcom/iMe/fork/controller/ToolsController;->isSilentSendingEnabledForDialog(J)Z
 
     move-result v0
 

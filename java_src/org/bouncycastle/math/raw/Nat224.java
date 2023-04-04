@@ -69,7 +69,7 @@ public abstract class Nat224 {
     }
 
     /* renamed from: eq */
-    public static boolean m65eq(int[] iArr, int[] iArr2) {
+    public static boolean m60eq(int[] iArr, int[] iArr2) {
         for (int i = 6; i >= 0; i--) {
             if (iArr[i] != iArr2[i]) {
                 return false;

@@ -142,7 +142,6 @@ public class ImageReceiver implements NotificationCenter.NotificationCenterDeleg
     private SetImageBackup setImageBackup;
     private Matrix shaderMatrix;
     private boolean shouldGenerateQualityThumb;
-    private boolean shouldLoadOnAttach;
     private float sideClip;
     private boolean skipUpdateFrame;
     private long startTime;
@@ -357,6 +356,7 @@ public class ImageReceiver implements NotificationCenter.NotificationCenterDeleg
         this.crossfadeByScale = 0.05f;
         this.crossfadeDuration = DEFAULT_CROSSFADE_DURATION;
         this.loadingOperations = new ArrayList<>();
+        this.allowLoadingOnAttachedOnly = false;
         this.clip = true;
         this.parentView = view;
         this.roundPaint = new Paint(3);
@@ -535,8 +535,8 @@ public class ImageReceiver implements NotificationCenter.NotificationCenterDeleg
                 if (tLRPC$Document == null) {
                     tLRPC$Document = ((MessageObject) obj).getDocument();
                 }
-                if (tLRPC$Document != null && tLRPC$Document.dc_id != 0 && tLRPC$Document.f1508id != 0) {
-                    key = "q_" + tLRPC$Document.dc_id + "_" + tLRPC$Document.f1508id;
+                if (tLRPC$Document != null && tLRPC$Document.dc_id != 0 && tLRPC$Document.f1510id != 0) {
+                    key = "q_" + tLRPC$Document.dc_id + "_" + tLRPC$Document.f1510id;
                     this.currentKeyQuality = true;
                 }
             }

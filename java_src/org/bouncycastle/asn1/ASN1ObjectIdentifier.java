@@ -5,7 +5,7 @@ import java.io.IOException;
 import java.math.BigInteger;
 import java.util.concurrent.ConcurrentMap;
 import org.bouncycastle.util.Arrays;
-import p034j$.util.concurrent.ConcurrentHashMap;
+import p035j$.util.concurrent.ConcurrentHashMap;
 /* loaded from: classes4.dex */
 public class ASN1ObjectIdentifier extends ASN1Primitive {
     private static final ConcurrentMap<OidHandle, ASN1ObjectIdentifier> pool = new ConcurrentHashMap();

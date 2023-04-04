@@ -26,16 +26,16 @@
 .method constructor <init>([BII)V
     .locals 0
 
-    .line 171
+    .line 175
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 172
+    .line 176
     iput-object p1, p0, Lcom/bumptech/glide/util/ByteBufferUtil$SafeArray;->data:[B
 
-    .line 173
+    .line 177
     iput p2, p0, Lcom/bumptech/glide/util/ByteBufferUtil$SafeArray;->offset:I
 
-    .line 174
+    .line 178
     iput p3, p0, Lcom/bumptech/glide/util/ByteBufferUtil$SafeArray;->limit:I
 
     return-void

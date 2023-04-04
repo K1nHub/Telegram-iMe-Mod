@@ -24,7 +24,7 @@ import okhttp3.internal.Util;
 import okhttp3.internal.concurrent.TaskRunner;
 import okhttp3.internal.connection.RealCall;
 import okhttp3.internal.connection.RouteDatabase;
-import okhttp3.internal.p038ws.RealWebSocket;
+import okhttp3.internal.p039ws.RealWebSocket;
 import okhttp3.internal.platform.Platform;
 import okhttp3.internal.proxy.NullProxySelector;
 import okhttp3.internal.tls.CertificateChainCleaner;

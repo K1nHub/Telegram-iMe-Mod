@@ -214,6 +214,7 @@
     .line 150
     iput-boolean v1, p0, Lcom/bumptech/glide/request/ThumbnailRequestCoordinator;->isRunningDuringBegin:Z
 
+    .line 151
     throw v2
 
     :catchall_1

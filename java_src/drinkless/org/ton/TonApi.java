@@ -1,16 +1,16 @@
 package drinkless.org.ton;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class TonApi {
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static abstract class AccountState extends Object {
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static abstract class Action extends Object {
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class ActionNoop extends Action {
         public static final int CONSTRUCTOR = 1135848603;
 
@@ -20,7 +20,7 @@ public class TonApi {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class BlocksGetMasterchainInfo extends Function {
         public static final int CONSTRUCTOR = -45493615;
 
@@ -30,7 +30,7 @@ public class TonApi {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class Close extends Function {
         public static final int CONSTRUCTOR = -1187782273;
 
@@ -40,7 +40,7 @@ public class TonApi {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class DeleteAllKeys extends Function {
         public static final int CONSTRUCTOR = 1608776483;
 
@@ -50,11 +50,11 @@ public class TonApi {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static abstract class DnsAction extends Object {
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class DnsActionDeleteAll extends DnsAction {
         public static final int CONSTRUCTOR = 1067356318;
 
@@ -64,17 +64,17 @@ public class TonApi {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static abstract class DnsEntryData extends Object {
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static abstract class Function extends Object {
         @Override // drinkless.org.ton.TonApi.Object
         public native String toString();
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class GetLogStream extends Function {
         public static final int CONSTRUCTOR = 1167608667;
 
@@ -84,7 +84,7 @@ public class TonApi {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class GetLogTags extends Function {
         public static final int CONSTRUCTOR = -254449190;
 
@@ -94,7 +94,7 @@ public class TonApi {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class GetLogVerbosityLevel extends Function {
         public static final int CONSTRUCTOR = 594057956;
 
@@ -104,15 +104,15 @@ public class TonApi {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static abstract class InitialAccountState extends Object {
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static abstract class InputKey extends Object {
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class InputKeyFake extends InputKey {
         public static final int CONSTRUCTOR = -1074054722;
 
@@ -122,11 +122,11 @@ public class TonApi {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static abstract class KeyStoreType extends Object {
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class KeyStoreTypeInMemory extends KeyStoreType {
         public static final int CONSTRUCTOR = -2106848825;
 
@@ -136,7 +136,7 @@ public class TonApi {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class LiteServerGetInfo extends Function {
         public static final int CONSTRUCTOR = 1435327470;
 
@@ -146,11 +146,11 @@ public class TonApi {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static abstract class LogStream extends Object {
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class LogStreamDefault extends LogStream {
         public static final int CONSTRUCTOR = 1390581436;
 
@@ -160,7 +160,7 @@ public class TonApi {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class LogStreamEmpty extends LogStream {
         public static final int CONSTRUCTOR = -499912244;
 
@@ -170,11 +170,11 @@ public class TonApi {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static abstract class MsgData extends Object {
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static abstract class Object {
         public abstract int getConstructor();
 
@@ -182,8 +182,8 @@ public class TonApi {
     }
 
     /* renamed from: drinkless.org.ton.TonApi$Ok */
-    /* loaded from: classes3.dex */
-    public static class C2356Ok extends Object {
+    /* loaded from: classes4.dex */
+    public static class C2432Ok extends Object {
         public static final int CONSTRUCTOR = -722616727;
 
         @Override // drinkless.org.ton.TonApi.Object
@@ -192,11 +192,11 @@ public class TonApi {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static abstract class PchanAction extends Object {
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class PchanActionTimeout extends PchanAction {
         public static final int CONSTRUCTOR = 1998487795;
 
@@ -206,15 +206,15 @@ public class TonApi {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static abstract class PchanState extends Object {
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static abstract class SmcMethodId extends Object {
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class Sync extends Function {
         public static final int CONSTRUCTOR = -1875977070;
 
@@ -224,11 +224,11 @@ public class TonApi {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static abstract class SyncState extends Object {
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class SyncStateDone extends SyncState {
         public static final int CONSTRUCTOR = 1408448777;
 
@@ -238,11 +238,11 @@ public class TonApi {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static abstract class TvmStackEntry extends Object {
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class TvmStackEntryUnsupported extends TvmStackEntry {
         public static final int CONSTRUCTOR = 378880498;
 
@@ -252,11 +252,11 @@ public class TonApi {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static abstract class Update extends Object {
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class AccountAddress extends Object {
         public static final int CONSTRUCTOR = 755613099;
         public String accountAddress;
@@ -274,7 +274,7 @@ public class TonApi {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class AccountList extends Object {
         public static final int CONSTRUCTOR = 2017374805;
         public FullAccountState[] accounts;
@@ -292,7 +292,7 @@ public class TonApi {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class AccountRevisionList extends Object {
         public static final int CONSTRUCTOR = 527197386;
         public FullAccountState[] revisions;
@@ -310,7 +310,7 @@ public class TonApi {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class RawAccountState extends AccountState {
         public static final int CONSTRUCTOR = -531917254;
         public byte[] code;
@@ -332,7 +332,7 @@ public class TonApi {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class WalletV3AccountState extends AccountState {
         public static final int CONSTRUCTOR = -1619351478;
         public int seqno;
@@ -352,7 +352,7 @@ public class TonApi {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class WalletHighloadV1AccountState extends AccountState {
         public static final int CONSTRUCTOR = 1616372956;
         public int seqno;
@@ -372,7 +372,7 @@ public class TonApi {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class WalletHighloadV2AccountState extends AccountState {
         public static final int CONSTRUCTOR = -1803723441;
         public long walletId;
@@ -390,7 +390,7 @@ public class TonApi {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class DnsAccountState extends AccountState {
         public static final int CONSTRUCTOR = 1727715434;
         public long walletId;
@@ -408,7 +408,7 @@ public class TonApi {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class RwalletAccountState extends AccountState {
         public static final int CONSTRUCTOR = -739540008;
         public RwalletConfig config;
@@ -432,7 +432,7 @@ public class TonApi {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class PchanAccountState extends AccountState {
         public static final int CONSTRUCTOR = 1612869496;
         public PchanConfig config;
@@ -454,7 +454,7 @@ public class TonApi {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class UninitedAccountState extends AccountState {
         public static final int CONSTRUCTOR = 1522374408;
         public byte[] frozenHash;
@@ -472,7 +472,7 @@ public class TonApi {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class ActionMsg extends Action {
         public static final int CONSTRUCTOR = 246839120;
         public boolean allowSendToUninited;
@@ -492,7 +492,7 @@ public class TonApi {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class ActionDns extends Action {
         public static final int CONSTRUCTOR = 1193750561;
         public DnsAction[] actions;
@@ -510,7 +510,7 @@ public class TonApi {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class ActionPchan extends Action {
         public static final int CONSTRUCTOR = -1490172447;
         public PchanAction action;
@@ -528,7 +528,7 @@ public class TonApi {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class ActionRwallet extends Action {
         public static final int CONSTRUCTOR = -117295163;
         public RwalletActionInit action;
@@ -546,7 +546,7 @@ public class TonApi {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class AdnlAddress extends Object {
         public static final int CONSTRUCTOR = 70358284;
         public String adnlAddress;
@@ -564,7 +564,7 @@ public class TonApi {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class Bip39Hints extends Object {
         public static final int CONSTRUCTOR = 1012243456;
         public String[] words;
@@ -582,7 +582,7 @@ public class TonApi {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class Config extends Object {
         public static final int CONSTRUCTOR = -1538391496;
         public String blockchainName;
@@ -606,7 +606,7 @@ public class TonApi {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class ConfigInfo extends Object {
         public static final int CONSTRUCTOR = 687887871;
         public TvmCell config;
@@ -624,7 +624,7 @@ public class TonApi {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class Data extends Object {
         public static final int CONSTRUCTOR = -414733967;
         public byte[] bytes;
@@ -642,7 +642,7 @@ public class TonApi {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class Error extends Object {
         public static final int CONSTRUCTOR = -1679978726;
         public int code;
@@ -662,7 +662,7 @@ public class TonApi {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class ExportedEncryptedKey extends Object {
         public static final int CONSTRUCTOR = 2024406612;
         public byte[] data;
@@ -680,7 +680,7 @@ public class TonApi {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class ExportedKey extends Object {
         public static final int CONSTRUCTOR = -1449248297;
         public String[] wordList;
@@ -698,7 +698,7 @@ public class TonApi {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class ExportedPemKey extends Object {
         public static final int CONSTRUCTOR = 1425473725;
         public String pem;
@@ -716,7 +716,7 @@ public class TonApi {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class ExportedUnencryptedKey extends Object {
         public static final int CONSTRUCTOR = 730045160;
         public byte[] data;
@@ -734,7 +734,7 @@ public class TonApi {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class Fees extends Object {
         public static final int CONSTRUCTOR = 1676273340;
         public long fwdFee;
@@ -758,7 +758,7 @@ public class TonApi {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class FullAccountState extends Object {
         public static final int CONSTRUCTOR = 1456618057;
         public AccountState accountState;
@@ -788,7 +788,7 @@ public class TonApi {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class RawInitialAccountState extends InitialAccountState {
         public static final int CONSTRUCTOR = -337945529;
         public byte[] code;
@@ -808,7 +808,7 @@ public class TonApi {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class WalletV3InitialAccountState extends InitialAccountState {
         public static final int CONSTRUCTOR = -118074048;
         public String publicKey;
@@ -828,7 +828,7 @@ public class TonApi {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class WalletHighloadV1InitialAccountState extends InitialAccountState {
         public static final int CONSTRUCTOR = -327901626;
         public String publicKey;
@@ -848,7 +848,7 @@ public class TonApi {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class WalletHighloadV2InitialAccountState extends InitialAccountState {
         public static final int CONSTRUCTOR = 1966373161;
         public String publicKey;
@@ -868,7 +868,7 @@ public class TonApi {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class RwalletInitialAccountState extends InitialAccountState {
         public static final int CONSTRUCTOR = 1169755156;
         public String initPublicKey;
@@ -890,7 +890,7 @@ public class TonApi {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class DnsInitialAccountState extends InitialAccountState {
         public static final int CONSTRUCTOR = 1842062527;
         public String publicKey;
@@ -910,7 +910,7 @@ public class TonApi {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class PchanInitialAccountState extends InitialAccountState {
         public static final int CONSTRUCTOR = -1304552124;
         public PchanConfig config;
@@ -928,7 +928,7 @@ public class TonApi {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class InputKeyRegular extends InputKey {
         public static final int CONSTRUCTOR = -555399522;
         public Key key;
@@ -948,7 +948,7 @@ public class TonApi {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class Key extends Object {
         public static final int CONSTRUCTOR = -1978362923;
         public String publicKey;
@@ -968,7 +968,7 @@ public class TonApi {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class KeyStoreTypeDirectory extends KeyStoreType {
         public static final int CONSTRUCTOR = -378990038;
         public String directory;
@@ -986,7 +986,7 @@ public class TonApi {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class LogStreamFile extends LogStream {
         public static final int CONSTRUCTOR = -1880085930;
         public long maxFileSize;
@@ -1006,7 +1006,7 @@ public class TonApi {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class LogTags extends Object {
         public static final int CONSTRUCTOR = -1604930601;
         public String[] tags;
@@ -1024,7 +1024,7 @@ public class TonApi {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class LogVerbosityLevel extends Object {
         public static final int CONSTRUCTOR = 1734624234;
         public int verbosityLevel;
@@ -1042,7 +1042,7 @@ public class TonApi {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class Options extends Object {
         public static final int CONSTRUCTOR = -1924388359;
         public Config config;
@@ -1062,7 +1062,7 @@ public class TonApi {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class SyncStateInProgress extends SyncState {
         public static final int CONSTRUCTOR = 107726023;
         public int currentSeqno;
@@ -1084,7 +1084,7 @@ public class TonApi {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class UnpackedAccountAddress extends Object {
         public static final int CONSTRUCTOR = 1892946998;
         public byte[] addr;
@@ -1108,13 +1108,13 @@ public class TonApi {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class UpdateSendLiteServerQuery extends Update {
         public static final int CONSTRUCTOR = -1555130916;
         public byte[] data;
 
         /* renamed from: id */
-        public long f425id;
+        public long f430id;
 
         @Override // drinkless.org.ton.TonApi.Object
         public int getConstructor() {
@@ -1125,12 +1125,12 @@ public class TonApi {
         }
 
         public UpdateSendLiteServerQuery(long id, byte[] data) {
-            this.f425id = id;
+            this.f430id = id;
             this.data = data;
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class UpdateSyncState extends Update {
         public static final int CONSTRUCTOR = 1204298718;
         public SyncState syncState;
@@ -1148,13 +1148,13 @@ public class TonApi {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class BlocksAccountTransactionId extends Object {
         public static final int CONSTRUCTOR = -872996220;
         public byte[] account;
 
         /* renamed from: lt */
-        public long f392lt;
+        public long f397lt;
 
         @Override // drinkless.org.ton.TonApi.Object
         public int getConstructor() {
@@ -1166,11 +1166,11 @@ public class TonApi {
 
         public BlocksAccountTransactionId(byte[] account, long lt) {
             this.account = account;
-            this.f392lt = lt;
+            this.f397lt = lt;
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class BlocksBlockLinkBack extends Object {
         public static final int CONSTRUCTOR = 1099726901;
         public byte[] destProof;
@@ -1179,7 +1179,7 @@ public class TonApi {
         public byte[] stateProof;
 
         /* renamed from: to */
-        public TonBlockIdExt f393to;
+        public TonBlockIdExt f398to;
         public boolean toKeyBlock;
 
         @Override // drinkless.org.ton.TonApi.Object
@@ -1193,19 +1193,19 @@ public class TonApi {
         public BlocksBlockLinkBack(boolean toKeyBlock, TonBlockIdExt from, TonBlockIdExt to, byte[] destProof, byte[] proof, byte[] stateProof) {
             this.toKeyBlock = toKeyBlock;
             this.from = from;
-            this.f393to = to;
+            this.f398to = to;
             this.destProof = destProof;
             this.proof = proof;
             this.stateProof = stateProof;
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class BlocksBlockSignatures extends Object {
         public static final int CONSTRUCTOR = -402531429;
 
         /* renamed from: id */
-        public TonBlockIdExt f394id;
+        public TonBlockIdExt f399id;
         public BlocksSignature[] signatures;
 
         @Override // drinkless.org.ton.TonApi.Object
@@ -1217,12 +1217,12 @@ public class TonApi {
         }
 
         public BlocksBlockSignatures(TonBlockIdExt id, BlocksSignature[] signatures) {
-            this.f394id = id;
+            this.f399id = id;
             this.signatures = signatures;
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class BlocksHeader extends Object {
         public static final int CONSTRUCTOR = 1479116386;
         public boolean afterMerge;
@@ -1235,7 +1235,7 @@ public class TonApi {
         public int globalId;
 
         /* renamed from: id */
-        public TonBlockIdExt f399id;
+        public TonBlockIdExt f404id;
         public boolean isKeyBlock;
         public int minRefMcSeqno;
         public TonBlockIdExt[] prevBlocks;
@@ -1256,7 +1256,7 @@ public class TonApi {
         }
 
         public BlocksHeader(TonBlockIdExt id, int globalId, int version, int flags, boolean afterMerge, boolean afterSplit, boolean beforeSplit, boolean wantMerge, boolean wantSplit, int validatorListHashShort, int catchainSeqno, int minRefMcSeqno, boolean isKeyBlock, int prevKeyBlockSeqno, long startLt, long endLt, long genUtime, int vertSeqno, TonBlockIdExt[] prevBlocks) {
-            this.f399id = id;
+            this.f404id = id;
             this.globalId = globalId;
             this.version = version;
             this.flags = flags;
@@ -1278,7 +1278,7 @@ public class TonApi {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class BlocksMasterchainInfo extends Object {
         public static final int CONSTRUCTOR = 835339083;
         public TonBlockIdExt init;
@@ -1300,12 +1300,12 @@ public class TonApi {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class BlocksShardBlockLink extends Object {
         public static final int CONSTRUCTOR = -1495263895;
 
         /* renamed from: id */
-        public TonBlockIdExt f402id;
+        public TonBlockIdExt f407id;
         public byte[] proof;
 
         @Override // drinkless.org.ton.TonApi.Object
@@ -1317,12 +1317,12 @@ public class TonApi {
         }
 
         public BlocksShardBlockLink(TonBlockIdExt id, byte[] proof) {
-            this.f402id = id;
+            this.f407id = id;
             this.proof = proof;
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class BlocksShardBlockProof extends Object {
         public static final int CONSTRUCTOR = -69836973;
         public TonBlockIdExt from;
@@ -1346,7 +1346,7 @@ public class TonApi {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class BlocksShards extends Object {
         public static final int CONSTRUCTOR = 2069473610;
         public TonBlockIdExt[] shards;
@@ -1364,7 +1364,7 @@ public class TonApi {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class BlocksSignature extends Object {
         public static final int CONSTRUCTOR = -1223522111;
         public byte[] nodeIdShort;
@@ -1384,12 +1384,12 @@ public class TonApi {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class BlocksTransactions extends Object {
         public static final int CONSTRUCTOR = -1922305900;
 
         /* renamed from: id */
-        public TonBlockIdExt f404id;
+        public TonBlockIdExt f409id;
         public boolean incomplete;
         public int reqCount;
         public BlocksShortTxId[] transactions;
@@ -1403,14 +1403,14 @@ public class TonApi {
         }
 
         public BlocksTransactions(TonBlockIdExt id, int reqCount, boolean incomplete, BlocksShortTxId[] transactions) {
-            this.f404id = id;
+            this.f409id = id;
             this.reqCount = reqCount;
             this.incomplete = incomplete;
             this.transactions = transactions;
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class DnsActionDelete extends DnsAction {
         public static final int CONSTRUCTOR = 1141342033;
         public byte[] category;
@@ -1430,7 +1430,7 @@ public class TonApi {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class DnsActionSet extends DnsAction {
         public static final int CONSTRUCTOR = -1374965309;
         public DnsEntry entry;
@@ -1448,7 +1448,7 @@ public class TonApi {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class DnsEntry extends Object {
         public static final int CONSTRUCTOR = 505104294;
         public byte[] category;
@@ -1470,7 +1470,7 @@ public class TonApi {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class DnsEntryDataUnknown extends DnsEntryData {
         public static final int CONSTRUCTOR = -1285893248;
         public byte[] bytes;
@@ -1488,7 +1488,7 @@ public class TonApi {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class DnsEntryDataText extends DnsEntryData {
         public static final int CONSTRUCTOR = -792485614;
         public String text;
@@ -1506,7 +1506,7 @@ public class TonApi {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class DnsEntryDataNextResolver extends DnsEntryData {
         public static final int CONSTRUCTOR = 330382792;
         public AccountAddress resolver;
@@ -1524,7 +1524,7 @@ public class TonApi {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class DnsEntryDataSmcAddress extends DnsEntryData {
         public static final int CONSTRUCTOR = -1759937982;
         public AccountAddress smcAddress;
@@ -1542,7 +1542,7 @@ public class TonApi {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class DnsEntryDataAdnlAddress extends DnsEntryData {
         public static final int CONSTRUCTOR = -1114064368;
         public AdnlAddress adnlAddress;
@@ -1560,7 +1560,7 @@ public class TonApi {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class DnsResolved extends Object {
         public static final int CONSTRUCTOR = 2090272150;
         public DnsEntry[] entries;
@@ -1578,7 +1578,7 @@ public class TonApi {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class TonBlockId extends Object {
         public static final int CONSTRUCTOR = -1185382494;
         public int seqno;
@@ -1600,13 +1600,13 @@ public class TonApi {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class InternalTransactionId extends Object {
         public static final int CONSTRUCTOR = -989527262;
         public byte[] hash;
 
         /* renamed from: lt */
-        public long f406lt;
+        public long f411lt;
 
         @Override // drinkless.org.ton.TonApi.Object
         public int getConstructor() {
@@ -1617,12 +1617,12 @@ public class TonApi {
         }
 
         public InternalTransactionId(long lt, byte[] hash) {
-            this.f406lt = lt;
+            this.f411lt = lt;
             this.hash = hash;
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class LiteServerInfo extends Object {
         public static final int CONSTRUCTOR = -1250165133;
         public long capabilities;
@@ -1644,14 +1644,14 @@ public class TonApi {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class BlocksShortTxId extends Object {
         public static final int CONSTRUCTOR = 487976773;
         public byte[] account;
         public byte[] hash;
 
         /* renamed from: lt */
-        public long f403lt;
+        public long f408lt;
         public int mode;
 
         @Override // drinkless.org.ton.TonApi.Object
@@ -1665,12 +1665,12 @@ public class TonApi {
         public BlocksShortTxId(int mode, byte[] account, long lt, byte[] hash) {
             this.mode = mode;
             this.account = account;
-            this.f403lt = lt;
+            this.f408lt = lt;
             this.hash = hash;
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class MsgDataRaw extends MsgData {
         public static final int CONSTRUCTOR = -1928962698;
         public byte[] body;
@@ -1690,7 +1690,7 @@ public class TonApi {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class MsgDataText extends MsgData {
         public static final int CONSTRUCTOR = -341560688;
         public byte[] text;
@@ -1708,7 +1708,7 @@ public class TonApi {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class MsgDataDecryptedText extends MsgData {
         public static final int CONSTRUCTOR = -1289133895;
         public byte[] text;
@@ -1726,7 +1726,7 @@ public class TonApi {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class MsgDataEncryptedText extends MsgData {
         public static final int CONSTRUCTOR = -296612902;
         public byte[] text;
@@ -1744,7 +1744,7 @@ public class TonApi {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class MsgDataDecrypted extends Object {
         public static final int CONSTRUCTOR = 195649769;
         public MsgData data;
@@ -1764,7 +1764,7 @@ public class TonApi {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class MsgDataDecryptedArray extends Object {
         public static final int CONSTRUCTOR = -480491767;
         public MsgDataDecrypted[] elements;
@@ -1782,7 +1782,7 @@ public class TonApi {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class MsgDataEncrypted extends Object {
         public static final int CONSTRUCTOR = 564215121;
         public MsgData data;
@@ -1802,7 +1802,7 @@ public class TonApi {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class MsgDataEncryptedArray extends Object {
         public static final int CONSTRUCTOR = 608655794;
         public MsgDataEncrypted[] elements;
@@ -1820,7 +1820,7 @@ public class TonApi {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class MsgMessage extends Object {
         public static final int CONSTRUCTOR = 807907444;
         public long amount;
@@ -1846,7 +1846,7 @@ public class TonApi {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class OptionsConfigInfo extends Object {
         public static final int CONSTRUCTOR = 129457942;
         public String defaultRwalletInitPublicKey;
@@ -1866,7 +1866,7 @@ public class TonApi {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class OptionsInfo extends Object {
         public static final int CONSTRUCTOR = -64676736;
         public OptionsConfigInfo configInfo;
@@ -1884,7 +1884,7 @@ public class TonApi {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class PchanActionInit extends PchanAction {
         public static final int CONSTRUCTOR = 439088778;
         public long incA;
@@ -1908,7 +1908,7 @@ public class TonApi {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class PchanActionClose extends PchanAction {
         public static final int CONSTRUCTOR = 1671187222;
         public long extraA;
@@ -1930,7 +1930,7 @@ public class TonApi {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class PchanConfig extends Object {
         public static final int CONSTRUCTOR = -2071530442;
         public AccountAddress aliceAddress;
@@ -1960,7 +1960,7 @@ public class TonApi {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class PchanPromise extends Object {
         public static final int CONSTRUCTOR = -1576102819;
         public long channelId;
@@ -1984,15 +1984,15 @@ public class TonApi {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class PchanStateInit extends PchanState {
         public static final int CONSTRUCTOR = -1188426504;
 
         /* renamed from: A */
-        public long f411A;
+        public long f416A;
 
         /* renamed from: B */
-        public long f412B;
+        public long f417B;
         public long expireAt;
         public long minA;
         public long minB;
@@ -2013,20 +2013,20 @@ public class TonApi {
             this.minA = minA;
             this.minB = minB;
             this.expireAt = expireAt;
-            this.f411A = A;
-            this.f412B = B;
+            this.f416A = A;
+            this.f417B = B;
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class PchanStateClose extends PchanState {
         public static final int CONSTRUCTOR = 887226867;
 
         /* renamed from: A */
-        public long f409A;
+        public long f414A;
 
         /* renamed from: B */
-        public long f410B;
+        public long f415B;
         public long expireAt;
         public long minA;
         public long minB;
@@ -2047,20 +2047,20 @@ public class TonApi {
             this.minA = minA;
             this.minB = minB;
             this.expireAt = expireAt;
-            this.f409A = A;
-            this.f410B = B;
+            this.f414A = A;
+            this.f415B = B;
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class PchanStatePayout extends PchanState {
         public static final int CONSTRUCTOR = 664671303;
 
         /* renamed from: A */
-        public long f413A;
+        public long f418A;
 
         /* renamed from: B */
-        public long f414B;
+        public long f419B;
 
         @Override // drinkless.org.ton.TonApi.Object
         public int getConstructor() {
@@ -2071,12 +2071,12 @@ public class TonApi {
         }
 
         public PchanStatePayout(long A, long B) {
-            this.f413A = A;
-            this.f414B = B;
+            this.f418A = A;
+            this.f419B = B;
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class QueryFees extends Object {
         public static final int CONSTRUCTOR = 1614616510;
         public Fees[] destinationFees;
@@ -2096,14 +2096,14 @@ public class TonApi {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class QueryInfo extends Object {
         public static final int CONSTRUCTOR = 1451875440;
         public byte[] body;
         public byte[] bodyHash;
 
         /* renamed from: id */
-        public long f418id;
+        public long f423id;
         public byte[] initState;
         public long validUntil;
 
@@ -2116,7 +2116,7 @@ public class TonApi {
         }
 
         public QueryInfo(long id, long validUntil, byte[] bodyHash, byte[] body, byte[] initState) {
-            this.f418id = id;
+            this.f423id = id;
             this.validUntil = validUntil;
             this.bodyHash = bodyHash;
             this.body = body;
@@ -2124,7 +2124,7 @@ public class TonApi {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class RawExtMessageInfo extends Object {
         public static final int CONSTRUCTOR = 874086318;
         public byte[] hash;
@@ -2142,7 +2142,7 @@ public class TonApi {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class RawFullAccountState extends Object {
         public static final int CONSTRUCTOR = -1465398385;
         public long balance;
@@ -2172,7 +2172,7 @@ public class TonApi {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class RawMessage extends Object {
         public static final int CONSTRUCTOR = 1368093263;
         public byte[] bodyHash;
@@ -2204,7 +2204,7 @@ public class TonApi {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class RawTransaction extends Object {
         public static final int CONSTRUCTOR = 1887601793;
         public byte[] data;
@@ -2236,7 +2236,7 @@ public class TonApi {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class RawTransactions extends Object {
         public static final int CONSTRUCTOR = -2063931155;
         public InternalTransactionId previousTransactionId;
@@ -2256,7 +2256,7 @@ public class TonApi {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class RwalletActionInit extends Object {
         public static final int CONSTRUCTOR = 624147819;
         public RwalletConfig config;
@@ -2274,7 +2274,7 @@ public class TonApi {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class RwalletConfig extends Object {
         public static final int CONSTRUCTOR = -85490534;
         public RwalletLimit[] limits;
@@ -2294,7 +2294,7 @@ public class TonApi {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class RwalletLimit extends Object {
         public static final int CONSTRUCTOR = 1222571646;
         public int seconds;
@@ -2314,12 +2314,12 @@ public class TonApi {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class SmcInfo extends Object {
         public static final int CONSTRUCTOR = 1134270012;
 
         /* renamed from: id */
-        public long f423id;
+        public long f428id;
 
         @Override // drinkless.org.ton.TonApi.Object
         public int getConstructor() {
@@ -2330,11 +2330,11 @@ public class TonApi {
         }
 
         public SmcInfo(long id) {
-            this.f423id = id;
+            this.f428id = id;
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class SmcLibraryEntry extends Object {
         public static final int CONSTRUCTOR = -1546268148;
         public byte[] data;
@@ -2354,7 +2354,7 @@ public class TonApi {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class SmcLibraryResult extends Object {
         public static final int CONSTRUCTOR = 203930622;
         public SmcLibraryEntry[] result;
@@ -2372,7 +2372,7 @@ public class TonApi {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class SmcMethodIdNumber extends SmcMethodId {
         public static final int CONSTRUCTOR = -1541162500;
         public int number;
@@ -2390,7 +2390,7 @@ public class TonApi {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class SmcMethodIdName extends SmcMethodId {
         public static final int CONSTRUCTOR = -249036908;
         public String name;
@@ -2408,7 +2408,7 @@ public class TonApi {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class SmcRunResult extends Object {
         public static final int CONSTRUCTOR = 1413805043;
         public int exitCode;
@@ -2430,7 +2430,7 @@ public class TonApi {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class TonBlockIdExt extends Object {
         public static final int CONSTRUCTOR = 2031156378;
         public byte[] fileHash;
@@ -2456,7 +2456,7 @@ public class TonApi {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class TvmCell extends Object {
         public static final int CONSTRUCTOR = -413424735;
         public byte[] bytes;
@@ -2474,7 +2474,7 @@ public class TonApi {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class TvmList extends Object {
         public static final int CONSTRUCTOR = 1270320392;
         public TvmStackEntry[] elements;
@@ -2492,7 +2492,7 @@ public class TonApi {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class TvmNumberDecimal extends Object {
         public static final int CONSTRUCTOR = 1172477619;
         public String number;
@@ -2510,7 +2510,7 @@ public class TonApi {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class TvmSlice extends Object {
         public static final int CONSTRUCTOR = 537299687;
         public byte[] bytes;
@@ -2528,7 +2528,7 @@ public class TonApi {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class TvmStackEntrySlice extends TvmStackEntry {
         public static final int CONSTRUCTOR = 1395485477;
         public TvmSlice slice;
@@ -2546,7 +2546,7 @@ public class TonApi {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class TvmStackEntryCell extends TvmStackEntry {
         public static final int CONSTRUCTOR = 1303473952;
         public TvmCell cell;
@@ -2564,7 +2564,7 @@ public class TonApi {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class TvmStackEntryNumber extends TvmStackEntry {
         public static final int CONSTRUCTOR = 1358642622;
         public TvmNumberDecimal number;
@@ -2582,7 +2582,7 @@ public class TonApi {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class TvmStackEntryTuple extends TvmStackEntry {
         public static final int CONSTRUCTOR = -157391908;
         public TvmTuple tuple;
@@ -2600,7 +2600,7 @@ public class TonApi {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class TvmStackEntryList extends TvmStackEntry {
         public static final int CONSTRUCTOR = -1186714229;
         public TvmList list;
@@ -2618,7 +2618,7 @@ public class TonApi {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class TvmTuple extends Object {
         public static final int CONSTRUCTOR = -1363953053;
         public TvmStackEntry[] elements;
@@ -2636,7 +2636,7 @@ public class TonApi {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class AddLogMessage extends Function {
         public static final int CONSTRUCTOR = 1597427692;
         public String text;
@@ -2656,12 +2656,12 @@ public class TonApi {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class BlocksGetBlockHeader extends Function {
         public static final int CONSTRUCTOR = 1915102018;
 
         /* renamed from: id */
-        public TonBlockIdExt f395id;
+        public TonBlockIdExt f400id;
 
         @Override // drinkless.org.ton.TonApi.Object
         public int getConstructor() {
@@ -2672,11 +2672,11 @@ public class TonApi {
         }
 
         public BlocksGetBlockHeader(TonBlockIdExt id) {
-            this.f395id = id;
+            this.f400id = id;
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class BlocksGetMasterchainBlockSignatures extends Function {
         public static final int CONSTRUCTOR = 1616913876;
         public int seqno;
@@ -2694,13 +2694,13 @@ public class TonApi {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class BlocksGetShardBlockProof extends Function {
         public static final int CONSTRUCTOR = 435003111;
         public TonBlockIdExt from;
 
         /* renamed from: id */
-        public TonBlockIdExt f396id;
+        public TonBlockIdExt f401id;
         public int mode;
 
         @Override // drinkless.org.ton.TonApi.Object
@@ -2712,18 +2712,18 @@ public class TonApi {
         }
 
         public BlocksGetShardBlockProof(TonBlockIdExt id, int mode, TonBlockIdExt from) {
-            this.f396id = id;
+            this.f401id = id;
             this.mode = mode;
             this.from = from;
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class BlocksGetShards extends Function {
         public static final int CONSTRUCTOR = 2072773677;
 
         /* renamed from: id */
-        public TonBlockIdExt f397id;
+        public TonBlockIdExt f402id;
 
         @Override // drinkless.org.ton.TonApi.Object
         public int getConstructor() {
@@ -2734,18 +2734,18 @@ public class TonApi {
         }
 
         public BlocksGetShards(TonBlockIdExt id) {
-            this.f397id = id;
+            this.f402id = id;
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class BlocksGetTransactions extends Function {
         public static final int CONSTRUCTOR = -896152271;
         public BlocksAccountTransactionId after;
         public int count;
 
         /* renamed from: id */
-        public TonBlockIdExt f398id;
+        public TonBlockIdExt f403id;
         public int mode;
 
         @Override // drinkless.org.ton.TonApi.Object
@@ -2757,22 +2757,22 @@ public class TonApi {
         }
 
         public BlocksGetTransactions(TonBlockIdExt id, int mode, int count, BlocksAccountTransactionId after) {
-            this.f398id = id;
+            this.f403id = id;
             this.mode = mode;
             this.count = count;
             this.after = after;
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class BlocksLookupBlock extends Function {
         public static final int CONSTRUCTOR = 1418484659;
 
         /* renamed from: id */
-        public TonBlockId f400id;
+        public TonBlockId f405id;
 
         /* renamed from: lt */
-        public long f401lt;
+        public long f406lt;
         public int mode;
         public int utime;
 
@@ -2786,13 +2786,13 @@ public class TonApi {
 
         public BlocksLookupBlock(int mode, TonBlockId id, long lt, int utime) {
             this.mode = mode;
-            this.f400id = id;
-            this.f401lt = lt;
+            this.f405id = id;
+            this.f406lt = lt;
             this.utime = utime;
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class ChangeLocalPassword extends Function {
         public static final int CONSTRUCTOR = -401590337;
         public InputKey inputKey;
@@ -2812,7 +2812,7 @@ public class TonApi {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class CreateNewKey extends Function {
         public static final int CONSTRUCTOR = -1861385712;
         public byte[] localPassword;
@@ -2834,7 +2834,7 @@ public class TonApi {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class CreateQuery extends Function {
         public static final int CONSTRUCTOR = -242540347;
         public Action action;
@@ -2860,7 +2860,7 @@ public class TonApi {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class Decrypt extends Function {
         public static final int CONSTRUCTOR = 357991854;
         public byte[] encryptedData;
@@ -2880,7 +2880,7 @@ public class TonApi {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class DeleteKey extends Function {
         public static final int CONSTRUCTOR = -1579595571;
         public Key key;
@@ -2898,7 +2898,7 @@ public class TonApi {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class DnsResolve extends Function {
         public static final int CONSTRUCTOR = 1791399222;
         public AccountAddress accountAddress;
@@ -2922,7 +2922,7 @@ public class TonApi {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class Encrypt extends Function {
         public static final int CONSTRUCTOR = -1821422820;
         public byte[] decryptedData;
@@ -2942,7 +2942,7 @@ public class TonApi {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class ExportEncryptedKey extends Function {
         public static final int CONSTRUCTOR = 218237311;
         public InputKey inputKey;
@@ -2962,7 +2962,7 @@ public class TonApi {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class ExportKey extends Function {
         public static final int CONSTRUCTOR = -1622353549;
         public InputKey inputKey;
@@ -2980,7 +2980,7 @@ public class TonApi {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class ExportPemKey extends Function {
         public static final int CONSTRUCTOR = -643259462;
         public InputKey inputKey;
@@ -3000,7 +3000,7 @@ public class TonApi {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class ExportUnencryptedKey extends Function {
         public static final int CONSTRUCTOR = -634665152;
         public InputKey inputKey;
@@ -3018,7 +3018,7 @@ public class TonApi {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class GetAccountAddress extends Function {
         public static final int CONSTRUCTOR = 512468424;
         public InitialAccountState initialAccountState;
@@ -3040,7 +3040,7 @@ public class TonApi {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class GetAccountState extends Function {
         public static final int CONSTRUCTOR = -2116357050;
         public AccountAddress accountAddress;
@@ -3058,7 +3058,7 @@ public class TonApi {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class GetBip39Hints extends Function {
         public static final int CONSTRUCTOR = -1889640982;
         public String prefix;
@@ -3076,12 +3076,12 @@ public class TonApi {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class GetConfigParam extends Function {
         public static final int CONSTRUCTOR = 35124362;
 
         /* renamed from: id */
-        public TonBlockIdExt f405id;
+        public TonBlockIdExt f410id;
         public int mode;
         public int param;
 
@@ -3095,12 +3095,12 @@ public class TonApi {
 
         public GetConfigParam(int mode, TonBlockIdExt id, int param) {
             this.mode = mode;
-            this.f405id = id;
+            this.f410id = id;
             this.param = param;
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class GetLogTagVerbosityLevel extends Function {
         public static final int CONSTRUCTOR = 951004547;
         public String tag;
@@ -3118,7 +3118,7 @@ public class TonApi {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class GuessAccount extends Function {
         public static final int CONSTRUCTOR = -1737659296;
         public String publicKey;
@@ -3138,7 +3138,7 @@ public class TonApi {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class GuessAccountRevision extends Function {
         public static final int CONSTRUCTOR = 1857589922;
         public InitialAccountState initialAccountState;
@@ -3158,7 +3158,7 @@ public class TonApi {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class ImportEncryptedKey extends Function {
         public static final int CONSTRUCTOR = 656724958;
         public ExportedEncryptedKey exportedEncryptedKey;
@@ -3180,7 +3180,7 @@ public class TonApi {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class ImportKey extends Function {
         public static final int CONSTRUCTOR = -1607900903;
         public ExportedKey exportedKey;
@@ -3202,7 +3202,7 @@ public class TonApi {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class ImportPemKey extends Function {
         public static final int CONSTRUCTOR = 76385617;
         public ExportedPemKey exportedKey;
@@ -3224,7 +3224,7 @@ public class TonApi {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class ImportUnencryptedKey extends Function {
         public static final int CONSTRUCTOR = -1184671467;
         public ExportedUnencryptedKey exportedUnencryptedKey;
@@ -3244,7 +3244,7 @@ public class TonApi {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class Init extends Function {
         public static final int CONSTRUCTOR = -1000594762;
         public Options options;
@@ -3262,7 +3262,7 @@ public class TonApi {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class Kdf extends Function {
         public static final int CONSTRUCTOR = -1667861635;
         public int iterations;
@@ -3284,7 +3284,7 @@ public class TonApi {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class MsgDecrypt extends Function {
         public static final int CONSTRUCTOR = 223596297;
         public MsgDataEncryptedArray data;
@@ -3304,7 +3304,7 @@ public class TonApi {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class MsgDecryptWithProof extends Function {
         public static final int CONSTRUCTOR = -2111649663;
         public MsgDataEncrypted data;
@@ -3324,13 +3324,13 @@ public class TonApi {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class OnLiteServerQueryError extends Function {
         public static final int CONSTRUCTOR = -677427533;
         public Error error;
 
         /* renamed from: id */
-        public long f407id;
+        public long f412id;
 
         @Override // drinkless.org.ton.TonApi.Object
         public int getConstructor() {
@@ -3341,18 +3341,18 @@ public class TonApi {
         }
 
         public OnLiteServerQueryError(long id, Error error) {
-            this.f407id = id;
+            this.f412id = id;
             this.error = error;
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class OnLiteServerQueryResult extends Function {
         public static final int CONSTRUCTOR = 2056444510;
         public byte[] bytes;
 
         /* renamed from: id */
-        public long f408id;
+        public long f413id;
 
         @Override // drinkless.org.ton.TonApi.Object
         public int getConstructor() {
@@ -3363,12 +3363,12 @@ public class TonApi {
         }
 
         public OnLiteServerQueryResult(long id, byte[] bytes) {
-            this.f408id = id;
+            this.f413id = id;
             this.bytes = bytes;
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class OptionsSetConfig extends Function {
         public static final int CONSTRUCTOR = 1870064579;
         public Config config;
@@ -3386,7 +3386,7 @@ public class TonApi {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class OptionsValidateConfig extends Function {
         public static final int CONSTRUCTOR = -346965447;
         public Config config;
@@ -3404,7 +3404,7 @@ public class TonApi {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class PackAccountAddress extends Function {
         public static final int CONSTRUCTOR = -1388561940;
         public UnpackedAccountAddress accountAddress;
@@ -3422,7 +3422,7 @@ public class TonApi {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class PchanPackPromise extends Function {
         public static final int CONSTRUCTOR = -851703103;
         public PchanPromise promise;
@@ -3440,7 +3440,7 @@ public class TonApi {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class PchanSignPromise extends Function {
         public static final int CONSTRUCTOR = 1814322974;
         public InputKey inputKey;
@@ -3460,7 +3460,7 @@ public class TonApi {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class PchanUnpackPromise extends Function {
         public static final int CONSTRUCTOR = -1250106157;
         public byte[] data;
@@ -3478,7 +3478,7 @@ public class TonApi {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class PchanValidatePromise extends Function {
         public static final int CONSTRUCTOR = 258262242;
         public PchanPromise promise;
@@ -3498,12 +3498,12 @@ public class TonApi {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class QueryEstimateFees extends Function {
         public static final int CONSTRUCTOR = -957002175;
 
         /* renamed from: id */
-        public long f415id;
+        public long f420id;
         public boolean ignoreChksig;
 
         @Override // drinkless.org.ton.TonApi.Object
@@ -3515,17 +3515,17 @@ public class TonApi {
         }
 
         public QueryEstimateFees(long id, boolean ignoreChksig) {
-            this.f415id = id;
+            this.f420id = id;
             this.ignoreChksig = ignoreChksig;
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class QueryForget extends Function {
         public static final int CONSTRUCTOR = -1211985313;
 
         /* renamed from: id */
-        public long f416id;
+        public long f421id;
 
         @Override // drinkless.org.ton.TonApi.Object
         public int getConstructor() {
@@ -3536,16 +3536,16 @@ public class TonApi {
         }
 
         public QueryForget(long id) {
-            this.f416id = id;
+            this.f421id = id;
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class QueryGetInfo extends Function {
         public static final int CONSTRUCTOR = -799333669;
 
         /* renamed from: id */
-        public long f417id;
+        public long f422id;
 
         @Override // drinkless.org.ton.TonApi.Object
         public int getConstructor() {
@@ -3556,16 +3556,16 @@ public class TonApi {
         }
 
         public QueryGetInfo(long id) {
-            this.f417id = id;
+            this.f422id = id;
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class QuerySend extends Function {
         public static final int CONSTRUCTOR = 925242739;
 
         /* renamed from: id */
-        public long f419id;
+        public long f424id;
 
         @Override // drinkless.org.ton.TonApi.Object
         public int getConstructor() {
@@ -3576,11 +3576,11 @@ public class TonApi {
         }
 
         public QuerySend(long id) {
-            this.f419id = id;
+            this.f424id = id;
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class RawCreateAndSendMessage extends Function {
         public static final int CONSTRUCTOR = -772224603;
         public byte[] data;
@@ -3602,7 +3602,7 @@ public class TonApi {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class RawCreateQuery extends Function {
         public static final int CONSTRUCTOR = -1928557909;
         public byte[] body;
@@ -3626,7 +3626,7 @@ public class TonApi {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class RawGetAccountState extends Function {
         public static final int CONSTRUCTOR = -1327847118;
         public AccountAddress accountAddress;
@@ -3644,7 +3644,7 @@ public class TonApi {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class RawGetTransactions extends Function {
         public static final int CONSTRUCTOR = 1029612317;
         public AccountAddress accountAddress;
@@ -3666,7 +3666,7 @@ public class TonApi {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class RawGetTransactionsV2 extends Function {
         public static final int CONSTRUCTOR = -566264666;
         public AccountAddress accountAddress;
@@ -3692,7 +3692,7 @@ public class TonApi {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class RawSendMessage extends Function {
         public static final int CONSTRUCTOR = -1789427488;
         public byte[] body;
@@ -3710,7 +3710,7 @@ public class TonApi {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class RawSendMessageReturnHash extends Function {
         public static final int CONSTRUCTOR = -1228445927;
         public byte[] body;
@@ -3728,7 +3728,7 @@ public class TonApi {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class RunTests extends Function {
         public static final int CONSTRUCTOR = -2039925427;
         public String dir;
@@ -3746,7 +3746,7 @@ public class TonApi {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class SetLogStream extends Function {
         public static final int CONSTRUCTOR = -1364199535;
         public LogStream logStream;
@@ -3764,7 +3764,7 @@ public class TonApi {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class SetLogTagVerbosityLevel extends Function {
         public static final int CONSTRUCTOR = -2095589738;
         public int newVerbosityLevel;
@@ -3784,7 +3784,7 @@ public class TonApi {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class SetLogVerbosityLevel extends Function {
         public static final int CONSTRUCTOR = -303429678;
         public int newVerbosityLevel;
@@ -3802,12 +3802,12 @@ public class TonApi {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class SmcGetCode extends Function {
         public static final int CONSTRUCTOR = -2115626088;
 
         /* renamed from: id */
-        public long f420id;
+        public long f425id;
 
         @Override // drinkless.org.ton.TonApi.Object
         public int getConstructor() {
@@ -3818,16 +3818,16 @@ public class TonApi {
         }
 
         public SmcGetCode(long id) {
-            this.f420id = id;
+            this.f425id = id;
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class SmcGetData extends Function {
         public static final int CONSTRUCTOR = -427601079;
 
         /* renamed from: id */
-        public long f421id;
+        public long f426id;
 
         @Override // drinkless.org.ton.TonApi.Object
         public int getConstructor() {
@@ -3838,11 +3838,11 @@ public class TonApi {
         }
 
         public SmcGetData(long id) {
-            this.f421id = id;
+            this.f426id = id;
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class SmcGetLibraries extends Function {
         public static final int CONSTRUCTOR = 814345749;
         public byte[][] libraryList;
@@ -3860,12 +3860,12 @@ public class TonApi {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class SmcGetState extends Function {
         public static final int CONSTRUCTOR = -214390293;
 
         /* renamed from: id */
-        public long f422id;
+        public long f427id;
 
         @Override // drinkless.org.ton.TonApi.Object
         public int getConstructor() {
@@ -3876,11 +3876,11 @@ public class TonApi {
         }
 
         public SmcGetState(long id) {
-            this.f422id = id;
+            this.f427id = id;
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class SmcLoad extends Function {
         public static final int CONSTRUCTOR = -903491521;
         public AccountAddress accountAddress;
@@ -3898,12 +3898,12 @@ public class TonApi {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class SmcRunGetMethod extends Function {
         public static final int CONSTRUCTOR = -255261270;
 
         /* renamed from: id */
-        public long f424id;
+        public long f429id;
         public SmcMethodId method;
         public TvmStackEntry[] stack;
 
@@ -3916,13 +3916,13 @@ public class TonApi {
         }
 
         public SmcRunGetMethod(long id, SmcMethodId method, TvmStackEntry[] stack) {
-            this.f424id = id;
+            this.f429id = id;
             this.method = method;
             this.stack = stack;
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class UnpackAccountAddress extends Function {
         public static final int CONSTRUCTOR = -682459063;
         public String accountAddress;
@@ -3940,13 +3940,13 @@ public class TonApi {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class WithBlock extends Function {
         public static final int CONSTRUCTOR = -789093723;
         public Function function;
 
         /* renamed from: id */
-        public TonBlockIdExt f426id;
+        public TonBlockIdExt f431id;
 
         @Override // drinkless.org.ton.TonApi.Object
         public int getConstructor() {
@@ -3957,7 +3957,7 @@ public class TonApi {
         }
 
         public WithBlock(TonBlockIdExt id, Function function) {
-            this.f426id = id;
+            this.f431id = id;
             this.function = function;
         }
     }

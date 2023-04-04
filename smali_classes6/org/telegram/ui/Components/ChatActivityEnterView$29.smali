@@ -126,7 +126,7 @@
     move-object/from16 v1, p1
 
     .line 4047
-    instance-of v2, v1, Lorg/fork/ui/view/TemplatesHeaderCell;
+    instance-of v2, v1, Lcom/iMe/fork/ui/view/TemplatesHeaderCell;
 
     if-eqz v2, :cond_0
 
@@ -145,7 +145,7 @@
 
     .line 4049
     :cond_0
-    instance-of v2, v1, Lorg/fork/ui/view/TemplateCell;
+    instance-of v2, v1, Lcom/iMe/fork/ui/view/TemplateCell;
 
     if-eqz v2, :cond_1
 
@@ -156,15 +156,15 @@
 
     move-result-object v2
 
-    check-cast v1, Lorg/fork/ui/view/TemplateCell;
+    check-cast v1, Lcom/iMe/fork/ui/view/TemplateCell;
 
-    invoke-virtual {v1}, Lorg/fork/ui/view/TemplateCell;->getTemplate()Lcom/smedialink/storage/domain/model/templates/TemplateModel;
+    invoke-virtual {v1}, Lcom/iMe/fork/ui/view/TemplateCell;->getTemplate()Lcom/iMe/storage/domain/model/templates/TemplateModel;
 
     move-result-object v1
 
     const/4 v3, 0x1
 
-    invoke-interface {v2, v1, v3}, Lorg/telegram/ui/Components/BotCommandsMenuView$BotCommandsAdapter$TemplatesDelegate;->didPressSendMessage(Lcom/smedialink/storage/domain/model/templates/TemplateModel;Z)V
+    invoke-interface {v2, v1, v3}, Lorg/telegram/ui/Components/BotCommandsMenuView$BotCommandsAdapter$TemplatesDelegate;->didPressSendMessage(Lcom/iMe/storage/domain/model/templates/TemplateModel;Z)V
 
     goto/16 :goto_0
 

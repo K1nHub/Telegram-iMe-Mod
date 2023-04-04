@@ -12,22 +12,22 @@ import kotlin.coroutines.intrinsics.IntrinsicsKt__IntrinsicsKt;
 import kotlin.coroutines.jvm.internal.DebugProbesKt;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.markers.KMappedMarker;
-import p034j$.util.Iterator;
-import p034j$.util.function.Consumer;
+import p035j$.util.Iterator;
+import p035j$.util.function.Consumer;
 /* compiled from: SequenceBuilder.kt */
 /* loaded from: classes4.dex */
-final class SequenceBuilderIterator<T> extends SequenceScope<T> implements Iterator<T>, Continuation<Unit>, KMappedMarker, p034j$.util.Iterator {
+final class SequenceBuilderIterator<T> extends SequenceScope<T> implements Iterator<T>, Continuation<Unit>, KMappedMarker, p035j$.util.Iterator {
     private Iterator<? extends T> nextIterator;
     private Continuation<? super Unit> nextStep;
     private T nextValue;
     private int state;
 
-    @Override // p034j$.util.Iterator
+    @Override // p035j$.util.Iterator
     public /* synthetic */ void forEachRemaining(Consumer consumer) {
         Iterator.CC.$default$forEachRemaining(this, consumer);
     }
 
-    @Override // java.util.Iterator, p034j$.util.Iterator
+    @Override // java.util.Iterator, p035j$.util.Iterator
     public void remove() {
         throw new UnsupportedOperationException("Operation is not supported for read-only collection");
     }
@@ -36,7 +36,7 @@ final class SequenceBuilderIterator<T> extends SequenceScope<T> implements Itera
         this.nextStep = continuation;
     }
 
-    @Override // java.util.Iterator, p034j$.util.Iterator
+    @Override // java.util.Iterator, p035j$.util.Iterator
     public boolean hasNext() {
         while (true) {
             int i = this.state;
@@ -63,11 +63,11 @@ final class SequenceBuilderIterator<T> extends SequenceScope<T> implements Itera
             Intrinsics.checkNotNull(continuation);
             this.nextStep = null;
             Result.Companion companion = Result.Companion;
-            continuation.resumeWith(Result.m1479constructorimpl(Unit.INSTANCE));
+            continuation.resumeWith(Result.m1571constructorimpl(Unit.INSTANCE));
         }
     }
 
-    @Override // java.util.Iterator, p034j$.util.Iterator
+    @Override // java.util.Iterator, p035j$.util.Iterator
     public T next() {
         int i = this.state;
         if (i == 0 || i == 1) {

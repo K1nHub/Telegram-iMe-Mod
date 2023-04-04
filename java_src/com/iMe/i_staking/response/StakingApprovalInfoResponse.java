@@ -1,6 +1,6 @@
 package com.iMe.i_staking.response;
 
-import com.smedialink.storage.domain.model.staking.StakingTokenApprovalStatus;
+import com.iMe.storage.domain.model.staking.StakingTokenApprovalStatus;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: StakingApprovalInfoResponse.kt */
 /* loaded from: classes3.dex */

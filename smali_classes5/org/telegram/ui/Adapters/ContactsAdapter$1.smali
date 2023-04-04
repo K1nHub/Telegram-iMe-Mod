@@ -1,5 +1,5 @@
 .class Lorg/telegram/ui/Adapters/ContactsAdapter$1;
-.super Lcom/smedialink/ui/common/SimpleTextWatcher;
+.super Lcom/iMe/ui/common/SimpleTextWatcher;
 .source "ContactsAdapter.java"
 
 
@@ -29,7 +29,7 @@
 
     iput-object p2, p0, Lorg/telegram/ui/Adapters/ContactsAdapter$1;->val$editTextCell:Lorg/telegram/ui/Cells/EditTextSettingsCell;
 
-    invoke-direct {p0}, Lcom/smedialink/ui/common/SimpleTextWatcher;-><init>()V
+    invoke-direct {p0}, Lcom/iMe/ui/common/SimpleTextWatcher;-><init>()V
 
     return-void
 .end method

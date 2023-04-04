@@ -189,7 +189,7 @@ public abstract class Nat256 {
     }
 
     /* renamed from: eq */
-    public static boolean m64eq(int[] iArr, int[] iArr2) {
+    public static boolean m59eq(int[] iArr, int[] iArr2) {
         for (int i = 7; i >= 0; i--) {
             if (iArr[i] != iArr2[i]) {
                 return false;

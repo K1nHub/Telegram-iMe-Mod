@@ -621,7 +621,7 @@
     goto :goto_0
 
     :cond_0
-    const-string v0, "txt"
+    const-string/jumbo v0, "txt"
 
     .line 309
     :goto_0

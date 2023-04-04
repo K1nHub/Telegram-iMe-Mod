@@ -34,7 +34,7 @@
 
     const/4 p1, 0x1
 
-    .line 290
+    .line 289
     invoke-direct {p0, p2, p1}, Lorg/telegram/ui/Components/ListView/AdapterWithDiffUtils$Item;-><init>(IZ)V
 
     return-void
@@ -45,15 +45,15 @@
 
     const/4 v0, 0x1
 
-    .line 270
+    .line 269
     invoke-direct {p0, p2, v0}, Lorg/telegram/ui/Components/ListView/AdapterWithDiffUtils$Item;-><init>(IZ)V
 
-    .line 271
+    .line 270
     iput-object p3, p0, Lorg/telegram/ui/Adapters/DialogsAdapter$ItemInternal;->dialog:Lorg/telegram/tgnet/TLRPC$Dialog;
 
     if-eqz p3, :cond_4
 
-    .line 273
+    .line 272
     invoke-static {p1}, Lorg/telegram/ui/Adapters/DialogsAdapter;->access$000(Lorg/telegram/ui/Adapters/DialogsAdapter;)I
 
     move-result p2
@@ -72,7 +72,7 @@
 
     goto :goto_0
 
-    .line 277
+    .line 276
     :cond_0
     iget-boolean p2, p3, Lorg/telegram/tgnet/TLRPC$Dialog;->pinned:Z
 
@@ -80,7 +80,7 @@
 
     goto :goto_3
 
-    .line 274
+    .line 273
     :cond_1
     :goto_0
     invoke-static {p1}, Lorg/telegram/ui/Adapters/DialogsAdapter;->access$100(Lorg/telegram/ui/Adapters/DialogsAdapter;)I
@@ -113,7 +113,7 @@
 
     if-eqz p2, :cond_3
 
-    .line 275
+    .line 274
     iget-object p2, p2, Lorg/telegram/messenger/MessagesController$DialogFilter;->pinnedDialogs:Lorg/telegram/messenger/support/LongSparseIntArray;
 
     iget-wide v1, p3, Lorg/telegram/tgnet/TLRPC$Dialog;->id:J
@@ -132,13 +132,13 @@
     :goto_2
     iput-boolean v0, p0, Lorg/telegram/ui/Adapters/DialogsAdapter$ItemInternal;->pinned:Z
 
-    .line 279
+    .line 278
     :goto_3
     iget-boolean p2, p3, Lorg/telegram/tgnet/TLRPC$Dialog;->isFolder:Z
 
     iput-boolean p2, p0, Lorg/telegram/ui/Adapters/DialogsAdapter$ItemInternal;->isFolder:Z
 
-    .line 280
+    .line 279
     invoke-static {p1}, Lorg/telegram/ui/Adapters/DialogsAdapter;->access$100(Lorg/telegram/ui/Adapters/DialogsAdapter;)I
 
     move-result p1
@@ -164,10 +164,10 @@
 
     const/4 p1, 0x1
 
-    .line 285
+    .line 284
     invoke-direct {p0, p2, p1}, Lorg/telegram/ui/Components/ListView/AdapterWithDiffUtils$Item;-><init>(IZ)V
 
-    .line 286
+    .line 285
     iput-object p3, p0, Lorg/telegram/ui/Adapters/DialogsAdapter$ItemInternal;->recentMeUrl:Lorg/telegram/tgnet/TLRPC$RecentMeUrl;
 
     return-void
@@ -178,10 +178,10 @@
 
     const/4 p1, 0x1
 
-    .line 294
+    .line 293
     invoke-direct {p0, p2, p1}, Lorg/telegram/ui/Components/ListView/AdapterWithDiffUtils$Item;-><init>(IZ)V
 
-    .line 295
+    .line 294
     iput-object p3, p0, Lorg/telegram/ui/Adapters/DialogsAdapter$ItemInternal;->contact:Lorg/telegram/tgnet/TLRPC$TL_contact;
 
     return-void
@@ -192,7 +192,7 @@
 .method compare(Lorg/telegram/ui/Adapters/DialogsAdapter$ItemInternal;)Z
     .locals 8
 
-    .line 299
+    .line 298
     iget v0, p0, Lorg/telegram/ui/Components/ListView/AdapterWithDiffUtils$Item;->viewType:I
 
     iget v1, p1, Lorg/telegram/ui/Components/ListView/AdapterWithDiffUtils$Item;->viewType:I
@@ -208,7 +208,7 @@
 
     if-nez v0, :cond_2
 
-    .line 303
+    .line 302
     iget-object v0, p0, Lorg/telegram/ui/Adapters/DialogsAdapter$ItemInternal;->dialog:Lorg/telegram/tgnet/TLRPC$Dialog;
 
     if-eqz v0, :cond_1
@@ -253,7 +253,7 @@
 
     if-ne v0, v3, :cond_4
 
-    .line 309
+    .line 308
     iget-object v0, p0, Lorg/telegram/ui/Adapters/DialogsAdapter$ItemInternal;->dialog:Lorg/telegram/tgnet/TLRPC$Dialog;
 
     if-eqz v0, :cond_3
@@ -286,7 +286,7 @@
 
     if-ne v0, v3, :cond_6
 
-    .line 312
+    .line 311
     iget-object v0, p0, Lorg/telegram/ui/Adapters/DialogsAdapter$ItemInternal;->recentMeUrl:Lorg/telegram/tgnet/TLRPC$RecentMeUrl;
 
     if-eqz v0, :cond_5
@@ -315,7 +315,7 @@
 
     if-ne v0, v3, :cond_8
 
-    .line 315
+    .line 314
     iget-object v0, p0, Lorg/telegram/ui/Adapters/DialogsAdapter$ItemInternal;->contact:Lorg/telegram/tgnet/TLRPC$TL_contact;
 
     if-eqz v0, :cond_7
@@ -348,7 +348,7 @@
 
     new-array v0, v0, [Ljava/lang/Object;
 
-    .line 322
+    .line 321
     iget-object v1, p0, Lorg/telegram/ui/Adapters/DialogsAdapter$ItemInternal;->dialog:Lorg/telegram/tgnet/TLRPC$Dialog;
 
     const/4 v2, 0x0

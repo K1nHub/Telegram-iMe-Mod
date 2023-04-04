@@ -29,7 +29,7 @@
 
 .field private final currentDialog:J
 
-.field private final currentDialogType:Lorg/fork/enums/DialogType;
+.field private final currentDialogType:Lcom/iMe/fork/enums/DialogType;
 
 .field public dialogFilterId:I
 
@@ -240,11 +240,11 @@
 
     move-result-object p1
 
-    invoke-static {p3, p4, p1}, Lorg/fork/enums/DialogType;->getDialogType(JLorg/telegram/messenger/MessagesController;)Lorg/fork/enums/DialogType;
+    invoke-static {p3, p4, p1}, Lcom/iMe/fork/enums/DialogType;->getDialogType(JLorg/telegram/messenger/MessagesController;)Lcom/iMe/fork/enums/DialogType;
 
     move-result-object p1
 
-    iput-object p1, p0, Lorg/telegram/ui/ChatPullingDownDrawable;->currentDialogType:Lorg/fork/enums/DialogType;
+    iput-object p1, p0, Lorg/telegram/ui/ChatPullingDownDrawable;->currentDialogType:Lcom/iMe/fork/enums/DialogType;
 
     .line 127
     iget-object p1, p0, Lorg/telegram/ui/ChatPullingDownDrawable;->arrowPaint:Landroid/graphics/Paint;
@@ -1006,7 +1006,7 @@
     if-eqz v9, :cond_4
 
     .line 583
-    invoke-static {v12, v9}, Lorg/fork/enums/SortingFilter;->isSortingFilter(ZI)Z
+    invoke-static {v12, v9}, Lcom/iMe/fork/enums/SortingFilter;->isSortingFilter(ZI)Z
 
     move-result v0
 
@@ -1025,7 +1025,7 @@
 
     .line 585
     :cond_1
-    invoke-static {v11, v9}, Lorg/fork/enums/SortingFilter;->isSortingFilter(ZI)Z
+    invoke-static {v11, v9}, Lcom/iMe/fork/enums/SortingFilter;->isSortingFilter(ZI)Z
 
     move-result v0
 
@@ -1082,7 +1082,7 @@
 
     move-result-object v1
 
-    invoke-virtual {v1}, Lorg/telegram/messenger/AccountInstance;->getToolsController()Lorg/fork/controller/ToolsController;
+    invoke-virtual {v1}, Lorg/telegram/messenger/AccountInstance;->getToolsController()Lcom/iMe/fork/controller/ToolsController;
 
     move-result-object v14
 
@@ -1102,7 +1102,7 @@
 
     move-result-object v1
 
-    invoke-static {v1}, Lorg/fork/enums/DialogType;->getDialogType(Lorg/telegram/tgnet/TLObject;)Lorg/fork/enums/DialogType;
+    invoke-static {v1}, Lcom/iMe/fork/enums/DialogType;->getDialogType(Lorg/telegram/tgnet/TLObject;)Lcom/iMe/fork/enums/DialogType;
 
     move-result-object v1
 
@@ -1120,7 +1120,7 @@
 
     move-result-object v1
 
-    invoke-static {v1}, Lorg/fork/enums/DialogType;->getDialogType(Lorg/telegram/tgnet/TLObject;)Lorg/fork/enums/DialogType;
+    invoke-static {v1}, Lcom/iMe/fork/enums/DialogType;->getDialogType(Lorg/telegram/tgnet/TLObject;)Lcom/iMe/fork/enums/DialogType;
 
     move-result-object v1
 
@@ -1238,7 +1238,7 @@
     move-object v13, v4
 
     :goto_6
-    invoke-static {v13}, Lorg/fork/enums/DialogType;->getDialogType(Lorg/telegram/tgnet/TLObject;)Lorg/fork/enums/DialogType;
+    invoke-static {v13}, Lcom/iMe/fork/enums/DialogType;->getDialogType(Lorg/telegram/tgnet/TLObject;)Lcom/iMe/fork/enums/DialogType;
 
     move-result-object v13
 
@@ -1339,7 +1339,7 @@
 
     .line 647
     :cond_10
-    invoke-virtual {v15}, Lorg/fork/controller/ToolsController;->isSwipeToGoToNextUnreadDialogConsiderArchiveEnabled()Z
+    invoke-virtual {v15}, Lcom/iMe/fork/controller/ToolsController;->isSwipeToGoToNextUnreadDialogConsiderArchiveEnabled()Z
 
     move-result v0
 
@@ -3688,11 +3688,11 @@
 
     iget v0, p0, Lorg/telegram/ui/ChatPullingDownDrawable;->currentAccount:I
 
-    invoke-static {v0}, Lorg/fork/controller/ToolsController;->getInstance(I)Lorg/fork/controller/ToolsController;
+    invoke-static {v0}, Lcom/iMe/fork/controller/ToolsController;->getInstance(I)Lcom/iMe/fork/controller/ToolsController;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lorg/fork/controller/ToolsController;->isShowChannelBottomPanel()Z
+    invoke-virtual {v0}, Lcom/iMe/fork/controller/ToolsController;->isShowChannelBottomPanel()Z
 
     move-result v0
 
@@ -4046,14 +4046,14 @@
 
     if-nez v2, :cond_4
 
-    iget-object v2, v0, Lorg/telegram/ui/ChatPullingDownDrawable;->currentDialogType:Lorg/fork/enums/DialogType;
+    iget-object v2, v0, Lorg/telegram/ui/ChatPullingDownDrawable;->currentDialogType:Lcom/iMe/fork/enums/DialogType;
 
-    sget-object v4, Lorg/fork/enums/DialogType;->CHANNEL:Lorg/fork/enums/DialogType;
+    sget-object v4, Lcom/iMe/fork/enums/DialogType;->CHANNEL:Lcom/iMe/fork/enums/DialogType;
 
     if-eq v2, v4, :cond_4
 
     .line 195
-    invoke-virtual {v2}, Lorg/fork/enums/DialogType;->getNoUnreadDialogsResId()I
+    invoke-virtual {v2}, Lcom/iMe/fork/enums/DialogType;->getNoUnreadDialogsResId()I
 
     move-result v1
 
@@ -4146,14 +4146,14 @@
     move-result-object v2
 
     .line 209
-    iget-object v4, v0, Lorg/telegram/ui/ChatPullingDownDrawable;->currentDialogType:Lorg/fork/enums/DialogType;
+    iget-object v4, v0, Lorg/telegram/ui/ChatPullingDownDrawable;->currentDialogType:Lcom/iMe/fork/enums/DialogType;
 
-    sget-object v5, Lorg/fork/enums/DialogType;->CHANNEL:Lorg/fork/enums/DialogType;
+    sget-object v5, Lcom/iMe/fork/enums/DialogType;->CHANNEL:Lcom/iMe/fork/enums/DialogType;
 
     if-eq v4, v5, :cond_7
 
     .line 210
-    invoke-virtual {v4}, Lorg/fork/enums/DialogType;->getPullToGoToUnreadArchivedDialogsResId()I
+    invoke-virtual {v4}, Lcom/iMe/fork/enums/DialogType;->getPullToGoToUnreadArchivedDialogsResId()I
 
     move-result v1
 
@@ -4162,9 +4162,9 @@
     move-result-object v1
 
     .line 211
-    iget-object v2, v0, Lorg/telegram/ui/ChatPullingDownDrawable;->currentDialogType:Lorg/fork/enums/DialogType;
+    iget-object v2, v0, Lorg/telegram/ui/ChatPullingDownDrawable;->currentDialogType:Lcom/iMe/fork/enums/DialogType;
 
-    invoke-virtual {v2}, Lorg/fork/enums/DialogType;->getReleaseToGoToUnreadArchivedDialogsResId()I
+    invoke-virtual {v2}, Lcom/iMe/fork/enums/DialogType;->getReleaseToGoToUnreadArchivedDialogsResId()I
 
     move-result v2
 
@@ -4217,14 +4217,14 @@
     move-result-object v2
 
     .line 221
-    iget-object v4, v0, Lorg/telegram/ui/ChatPullingDownDrawable;->currentDialogType:Lorg/fork/enums/DialogType;
+    iget-object v4, v0, Lorg/telegram/ui/ChatPullingDownDrawable;->currentDialogType:Lcom/iMe/fork/enums/DialogType;
 
-    sget-object v5, Lorg/fork/enums/DialogType;->CHANNEL:Lorg/fork/enums/DialogType;
+    sget-object v5, Lcom/iMe/fork/enums/DialogType;->CHANNEL:Lcom/iMe/fork/enums/DialogType;
 
     if-eq v4, v5, :cond_7
 
     .line 222
-    invoke-virtual {v4}, Lorg/fork/enums/DialogType;->getPullToGoToNextUnreadDialogResId()I
+    invoke-virtual {v4}, Lcom/iMe/fork/enums/DialogType;->getPullToGoToNextUnreadDialogResId()I
 
     move-result v1
 
@@ -4233,9 +4233,9 @@
     move-result-object v1
 
     .line 223
-    iget-object v2, v0, Lorg/telegram/ui/ChatPullingDownDrawable;->currentDialogType:Lorg/fork/enums/DialogType;
+    iget-object v2, v0, Lorg/telegram/ui/ChatPullingDownDrawable;->currentDialogType:Lcom/iMe/fork/enums/DialogType;
 
-    invoke-virtual {v2}, Lorg/fork/enums/DialogType;->getReleaseToGoToNextUnreadDialogResId()I
+    invoke-virtual {v2}, Lcom/iMe/fork/enums/DialogType;->getReleaseToGoToNextUnreadDialogResId()I
 
     move-result v2
 

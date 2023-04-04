@@ -1,11 +1,11 @@
 .class public Lorg/telegram/ui/PasscodeActivity;
-.super Lcom/smedialink/ui/base/JavaWalletAuthFragment;
+.super Lcom/iMe/ui/base/JavaWalletAuthFragment;
 .source "PasscodeActivity.java"
 
 # interfaces
-.implements Lcom/smedialink/ui/wallet/crypto/create/password/CreateWalletPasswordView;
-.implements Lcom/smedialink/ui/wallet/crypto/create/pin/CreateWalletPinView;
-.implements Lcom/smedialink/ui/wallet/crypto/enter/password/EnterWalletPasswordView;
+.implements Lcom/iMe/ui/wallet/crypto/create/password/CreateWalletPasswordView;
+.implements Lcom/iMe/ui/wallet/crypto/create/pin/CreateWalletPinView;
+.implements Lcom/iMe/ui/wallet/crypto/enter/password/EnterWalletPasswordView;
 .implements Lorg/telegram/messenger/NotificationCenter$NotificationCenterDelegate;
 
 
@@ -35,7 +35,7 @@
 
 .field private codeFieldContainer:Lorg/telegram/ui/CodeFieldContainer;
 
-.field private currentLockedSection:Lorg/fork/enums/LockedSection;
+.field private currentLockedSection:Lcom/iMe/fork/enums/LockedSection;
 
 .field private currentPasswordType:I
 
@@ -87,7 +87,7 @@
 
 .field private screenType:I
 
-.field private sectionPasscodeData:Lorg/fork/controller/LockedSectionsController$SectionPasscodeData;
+.field private sectionPasscodeData:Lcom/iMe/fork/controller/LockedSectionsController$SectionPasscodeData;
 
 .field private titleTextView:Landroid/widget/TextView;
 
@@ -95,22 +95,22 @@
 
 .field private utyanRow:I
 
-.field public walletCreatePasscodePresenter:Lcom/smedialink/ui/wallet/crypto/create/password/CreateWalletPasswordPresenter;
+.field public walletCreatePasscodePresenter:Lcom/iMe/ui/wallet/crypto/create/password/CreateWalletPasswordPresenter;
     .annotation runtime Lmoxy/presenter/InjectPresenter;
     .end annotation
 .end field
 
-.field public walletCreatePinPresenter:Lcom/smedialink/ui/wallet/crypto/create/pin/CreateWalletPinPresenter;
+.field public walletCreatePinPresenter:Lcom/iMe/ui/wallet/crypto/create/pin/CreateWalletPinPresenter;
     .annotation runtime Lmoxy/presenter/InjectPresenter;
     .end annotation
 .end field
 
-.field public walletEnterPasswordPresenter:Lcom/smedialink/ui/wallet/crypto/enter/password/EnterWalletPasswordPresenter;
+.field public walletEnterPasswordPresenter:Lcom/iMe/ui/wallet/crypto/enter/password/EnterWalletPasswordPresenter;
     .annotation runtime Lmoxy/presenter/InjectPresenter;
     .end annotation
 .end field
 
-.field private walletPinScreenArgs:Lcom/smedialink/model/wallet/pin/WalletPinScreenArgs;
+.field private walletPinScreenArgs:Lcom/iMe/model/wallet/pin/WalletPinScreenArgs;
 
 .field private walletSeed:Ljava/lang/String;
 
@@ -254,6 +254,14 @@
     return-void
 .end method
 
+.method public static synthetic $r8$lambda$WiVFlxjV_IkdlskTarKTYLC31T4(Lorg/telegram/ui/PasscodeActivity;)V
+    .locals 0
+
+    invoke-direct {p0}, Lorg/telegram/ui/PasscodeActivity;->lambda$onSuccessDeleteWallet$3()V
+
+    return-void
+.end method
+
 .method public static synthetic $r8$lambda$YiXaYs_OkDSw5_w1wl95Nai_J0M(Lorg/telegram/ui/PasscodeActivity;Landroid/content/DialogInterface;I)V
     .locals 0
 
@@ -314,14 +322,6 @@
     move-result-object p0
 
     return-object p0
-.end method
-
-.method public static synthetic $r8$lambda$hbUUKqAKIsy5RNmtEAeOplXe55E(Lorg/telegram/ui/PasscodeActivity;)V
-    .locals 0
-
-    invoke-direct {p0}, Lorg/telegram/ui/PasscodeActivity;->lambda$onSuccessDeleteWallet$3()V
-
-    return-void
 .end method
 
 .method public static synthetic $r8$lambda$mNblxw6VWk3rB1_1Sfu_7olJfnA(Lorg/telegram/ui/PasscodeActivity;Landroid/content/DialogInterface;)V
@@ -388,42 +388,42 @@
     const/4 v0, 0x0
 
     .line 178
-    invoke-direct {p0, p1, v0, p2}, Lorg/telegram/ui/PasscodeActivity;-><init>(ILorg/fork/enums/LockedSection;Landroid/os/Bundle;)V
+    invoke-direct {p0, p1, v0, p2}, Lorg/telegram/ui/PasscodeActivity;-><init>(ILcom/iMe/fork/enums/LockedSection;Landroid/os/Bundle;)V
 
     return-void
 .end method
 
-.method public constructor <init>(ILorg/fork/enums/LockedSection;)V
+.method public constructor <init>(ILcom/iMe/fork/enums/LockedSection;)V
     .locals 1
 
     const/4 v0, 0x0
 
     .line 183
-    invoke-direct {p0, p1, p2, v0}, Lorg/telegram/ui/PasscodeActivity;-><init>(ILorg/fork/enums/LockedSection;Landroid/os/Bundle;)V
+    invoke-direct {p0, p1, p2, v0}, Lorg/telegram/ui/PasscodeActivity;-><init>(ILcom/iMe/fork/enums/LockedSection;Landroid/os/Bundle;)V
 
     return-void
 .end method
 
-.method public constructor <init>(ILorg/fork/enums/LockedSection;Landroid/os/Bundle;)V
+.method public constructor <init>(ILcom/iMe/fork/enums/LockedSection;Landroid/os/Bundle;)V
     .locals 1
 
     .line 489
-    invoke-direct {p0}, Lcom/smedialink/ui/base/JavaWalletAuthFragment;-><init>()V
+    invoke-direct {p0}, Lcom/iMe/ui/base/JavaWalletAuthFragment;-><init>()V
 
     .line 169
-    new-instance v0, Lorg/telegram/ui/PasscodeActivity$$ExternalSyntheticLambda22;
+    new-instance v0, Lorg/telegram/ui/PasscodeActivity$$ExternalSyntheticLambda24;
 
-    invoke-direct {v0, p0}, Lorg/telegram/ui/PasscodeActivity$$ExternalSyntheticLambda22;-><init>(Lorg/telegram/ui/PasscodeActivity;)V
+    invoke-direct {v0, p0}, Lorg/telegram/ui/PasscodeActivity$$ExternalSyntheticLambda24;-><init>(Lorg/telegram/ui/PasscodeActivity;)V
 
     iput-object v0, p0, Lorg/telegram/ui/PasscodeActivity;->checkRunnable:Ljava/lang/Runnable;
 
     const/4 v0, 0x0
 
     .line 170
-    iput-object v0, p0, Lorg/telegram/ui/PasscodeActivity;->currentLockedSection:Lorg/fork/enums/LockedSection;
+    iput-object v0, p0, Lorg/telegram/ui/PasscodeActivity;->currentLockedSection:Lcom/iMe/fork/enums/LockedSection;
 
     .line 171
-    iput-object v0, p0, Lorg/telegram/ui/PasscodeActivity;->sectionPasscodeData:Lorg/fork/controller/LockedSectionsController$SectionPasscodeData;
+    iput-object v0, p0, Lorg/telegram/ui/PasscodeActivity;->sectionPasscodeData:Lcom/iMe/fork/controller/LockedSectionsController$SectionPasscodeData;
 
     const-string v0, ""
 
@@ -431,11 +431,11 @@
     iput-object v0, p0, Lorg/telegram/ui/PasscodeActivity;->walletSeed:Ljava/lang/String;
 
     .line 173
-    new-instance v0, Lcom/smedialink/model/wallet/pin/WalletPinScreenArgs;
+    new-instance v0, Lcom/iMe/model/wallet/pin/WalletPinScreenArgs;
 
-    invoke-direct {v0}, Lcom/smedialink/model/wallet/pin/WalletPinScreenArgs;-><init>()V
+    invoke-direct {v0}, Lcom/iMe/model/wallet/pin/WalletPinScreenArgs;-><init>()V
 
-    iput-object v0, p0, Lorg/telegram/ui/PasscodeActivity;->walletPinScreenArgs:Lcom/smedialink/model/wallet/pin/WalletPinScreenArgs;
+    iput-object v0, p0, Lorg/telegram/ui/PasscodeActivity;->walletPinScreenArgs:Lcom/iMe/model/wallet/pin/WalletPinScreenArgs;
 
     const/4 v0, -0x1
 
@@ -451,9 +451,9 @@
     iput v0, p0, Lorg/telegram/ui/PasscodeActivity;->passcodeSetStep:I
 
     .line 481
-    new-instance v0, Lorg/telegram/ui/PasscodeActivity$$ExternalSyntheticLambda17;
+    new-instance v0, Lorg/telegram/ui/PasscodeActivity$$ExternalSyntheticLambda19;
 
-    invoke-direct {v0, p0}, Lorg/telegram/ui/PasscodeActivity$$ExternalSyntheticLambda17;-><init>(Lorg/telegram/ui/PasscodeActivity;)V
+    invoke-direct {v0, p0}, Lorg/telegram/ui/PasscodeActivity$$ExternalSyntheticLambda19;-><init>(Lorg/telegram/ui/PasscodeActivity;)V
 
     iput-object v0, p0, Lorg/telegram/ui/PasscodeActivity;->hidePasscodesDoNotMatch:Ljava/lang/Runnable;
 
@@ -464,7 +464,7 @@
     iput-object p3, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->arguments:Landroid/os/Bundle;
 
     .line 493
-    invoke-direct {p0, p2}, Lorg/telegram/ui/PasscodeActivity;->setCurrentLockedSection(Lorg/fork/enums/LockedSection;)V
+    invoke-direct {p0, p2}, Lorg/telegram/ui/PasscodeActivity;->setCurrentLockedSection(Lcom/iMe/fork/enums/LockedSection;)V
 
     return-void
 .end method
@@ -651,11 +651,11 @@
     return p0
 .end method
 
-.method static synthetic access$2600(Lorg/telegram/ui/PasscodeActivity;)Lorg/fork/controller/LockedSectionsController$SectionPasscodeData;
+.method static synthetic access$2600(Lorg/telegram/ui/PasscodeActivity;)Lcom/iMe/fork/controller/LockedSectionsController$SectionPasscodeData;
     .locals 0
 
     .line 135
-    iget-object p0, p0, Lorg/telegram/ui/PasscodeActivity;->sectionPasscodeData:Lorg/fork/controller/LockedSectionsController$SectionPasscodeData;
+    iget-object p0, p0, Lorg/telegram/ui/PasscodeActivity;->sectionPasscodeData:Lcom/iMe/fork/controller/LockedSectionsController$SectionPasscodeData;
 
     return-object p0
 .end method
@@ -804,9 +804,9 @@
     aget-object v1, v2, v0
 
     .line 1241
-    new-instance v2, Lorg/telegram/ui/PasscodeActivity$$ExternalSyntheticLambda14;
+    new-instance v2, Lorg/telegram/ui/PasscodeActivity$$ExternalSyntheticLambda16;
 
-    invoke-direct {v2, v1}, Lorg/telegram/ui/PasscodeActivity$$ExternalSyntheticLambda14;-><init>(Lorg/telegram/ui/CodeNumberField;)V
+    invoke-direct {v2, v1}, Lorg/telegram/ui/PasscodeActivity$$ExternalSyntheticLambda16;-><init>(Lorg/telegram/ui/CodeNumberField;)V
 
     int-to-long v6, v0
 
@@ -820,9 +820,9 @@
 
     .line 1243
     :cond_1
-    new-instance v0, Lorg/telegram/ui/PasscodeActivity$$ExternalSyntheticLambda23;
+    new-instance v0, Lorg/telegram/ui/PasscodeActivity$$ExternalSyntheticLambda25;
 
-    invoke-direct {v0, p0, p1}, Lorg/telegram/ui/PasscodeActivity$$ExternalSyntheticLambda23;-><init>(Lorg/telegram/ui/PasscodeActivity;Ljava/lang/Runnable;)V
+    invoke-direct {v0, p0, p1}, Lorg/telegram/ui/PasscodeActivity$$ExternalSyntheticLambda25;-><init>(Lorg/telegram/ui/PasscodeActivity;Ljava/lang/Runnable;)V
 
     iget-object p1, p0, Lorg/telegram/ui/PasscodeActivity;->codeFieldContainer:Lorg/telegram/ui/CodeFieldContainer;
 
@@ -849,14 +849,14 @@
     const/4 v0, 0x0
 
     .line 195
-    invoke-static {v0}, Lorg/telegram/ui/PasscodeActivity;->determineOpenFragment(Lorg/fork/enums/LockedSection;)Lorg/telegram/ui/ActionBar/BaseFragment;
+    invoke-static {v0}, Lorg/telegram/ui/PasscodeActivity;->determineOpenFragment(Lcom/iMe/fork/enums/LockedSection;)Lorg/telegram/ui/ActionBar/BaseFragment;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method public static determineOpenFragment(Lorg/fork/enums/LockedSection;)Lorg/telegram/ui/ActionBar/BaseFragment;
+.method public static determineOpenFragment(Lcom/iMe/fork/enums/LockedSection;)Lorg/telegram/ui/ActionBar/BaseFragment;
     .locals 9
 
     .line 1228
@@ -875,15 +875,15 @@
 
     sget v0, Lorg/telegram/messenger/UserConfig;->selectedAccount:I
 
-    invoke-static {v0}, Lorg/fork/controller/LockedSectionsController;->getInstance(I)Lorg/fork/controller/LockedSectionsController;
+    invoke-static {v0}, Lcom/iMe/fork/controller/LockedSectionsController;->getInstance(I)Lcom/iMe/fork/controller/LockedSectionsController;
 
     move-result-object v0
 
-    invoke-virtual {v0, p0}, Lorg/fork/controller/LockedSectionsController;->getSectionsPasscodeData(Lorg/fork/enums/LockedSection;)Lorg/fork/controller/LockedSectionsController$SectionPasscodeData;
+    invoke-virtual {v0, p0}, Lcom/iMe/fork/controller/LockedSectionsController;->getSectionsPasscodeData(Lcom/iMe/fork/enums/LockedSection;)Lcom/iMe/fork/controller/LockedSectionsController$SectionPasscodeData;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lorg/fork/controller/LockedSectionsController$SectionPasscodeData;->getPasscodeHash()Ljava/lang/String;
+    invoke-virtual {v0}, Lcom/iMe/fork/controller/LockedSectionsController$SectionPasscodeData;->getPasscodeHash()Ljava/lang/String;
 
     move-result-object v0
 
@@ -899,7 +899,7 @@
 
     const/4 v1, 0x2
 
-    invoke-direct {v0, v1, p0}, Lorg/telegram/ui/PasscodeActivity;-><init>(ILorg/fork/enums/LockedSection;)V
+    invoke-direct {v0, v1, p0}, Lorg/telegram/ui/PasscodeActivity;-><init>(ILcom/iMe/fork/enums/LockedSection;)V
 
     return-object v0
 
@@ -921,7 +921,7 @@
 
     move-object v8, p0
 
-    invoke-direct/range {v2 .. v8}, Lorg/telegram/ui/ActionIntroActivity;-><init>(ILcom/smedialink/storage/domain/model/wallet/token/TokenCode;Lcom/smedialink/storage/domain/model/wallet/swap/SwapProtocol;Lcom/smedialink/storage/domain/model/crypto/NetworkType;Lcom/smedialink/model/wallet/home/BannerSlide;Lorg/fork/enums/LockedSection;)V
+    invoke-direct/range {v2 .. v8}, Lorg/telegram/ui/ActionIntroActivity;-><init>(ILcom/iMe/storage/domain/model/wallet/token/TokenCode;Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocol;Lcom/iMe/storage/domain/model/crypto/NetworkType;Lcom/iMe/model/wallet/home/BannerSlide;Lcom/iMe/fork/enums/LockedSection;)V
 
     return-object v0
 .end method
@@ -930,7 +930,7 @@
     .locals 1
 
     .line 361
-    iget-object v0, p0, Lorg/telegram/ui/PasscodeActivity;->sectionPasscodeData:Lorg/fork/controller/LockedSectionsController$SectionPasscodeData;
+    iget-object v0, p0, Lorg/telegram/ui/PasscodeActivity;->sectionPasscodeData:Lcom/iMe/fork/controller/LockedSectionsController$SectionPasscodeData;
 
     if-nez v0, :cond_0
 
@@ -943,12 +943,12 @@
     if-gtz v0, :cond_1
 
     :cond_0
-    iget-object v0, p0, Lorg/telegram/ui/PasscodeActivity;->sectionPasscodeData:Lorg/fork/controller/LockedSectionsController$SectionPasscodeData;
+    iget-object v0, p0, Lorg/telegram/ui/PasscodeActivity;->sectionPasscodeData:Lcom/iMe/fork/controller/LockedSectionsController$SectionPasscodeData;
 
     if-eqz v0, :cond_2
 
     .line 362
-    invoke-virtual {v0}, Lorg/fork/controller/LockedSectionsController$SectionPasscodeData;->getPasscodeHash()Ljava/lang/String;
+    invoke-virtual {v0}, Lcom/iMe/fork/controller/LockedSectionsController$SectionPasscodeData;->getPasscodeHash()Ljava/lang/String;
 
     move-result-object v0
 
@@ -1170,36 +1170,36 @@
     move-result p1
 
     .line 710
-    iget-object p3, p0, Lorg/telegram/ui/PasscodeActivity;->sectionPasscodeData:Lorg/fork/controller/LockedSectionsController$SectionPasscodeData;
+    iget-object p3, p0, Lorg/telegram/ui/PasscodeActivity;->sectionPasscodeData:Lcom/iMe/fork/controller/LockedSectionsController$SectionPasscodeData;
 
     const/4 p4, 0x0
 
     if-eqz p3, :cond_0
 
     .line 711
-    invoke-static {p1}, Lorg/fork/enums/AutoLockTime;->findById(I)Lorg/fork/enums/AutoLockTime;
+    invoke-static {p1}, Lcom/iMe/fork/enums/AutoLockTime;->findById(I)Lcom/iMe/fork/enums/AutoLockTime;
 
     move-result-object p1
 
-    invoke-virtual {p3, p1}, Lorg/fork/controller/LockedSectionsController$SectionPasscodeData;->setAutoLockIn(Lorg/fork/enums/AutoLockTime;)V
+    invoke-virtual {p3, p1}, Lcom/iMe/fork/controller/LockedSectionsController$SectionPasscodeData;->setAutoLockIn(Lcom/iMe/fork/enums/AutoLockTime;)V
 
     .line 712
-    invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getLockedSectionsController()Lorg/fork/controller/LockedSectionsController;
+    invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getLockedSectionsController()Lcom/iMe/fork/controller/LockedSectionsController;
 
     move-result-object p1
 
-    iget-object p3, p0, Lorg/telegram/ui/PasscodeActivity;->currentLockedSection:Lorg/fork/enums/LockedSection;
+    iget-object p3, p0, Lorg/telegram/ui/PasscodeActivity;->currentLockedSection:Lcom/iMe/fork/enums/LockedSection;
 
-    iget-object v0, p0, Lorg/telegram/ui/PasscodeActivity;->sectionPasscodeData:Lorg/fork/controller/LockedSectionsController$SectionPasscodeData;
+    iget-object v0, p0, Lorg/telegram/ui/PasscodeActivity;->sectionPasscodeData:Lcom/iMe/fork/controller/LockedSectionsController$SectionPasscodeData;
 
-    invoke-virtual {p1, p3, v0}, Lorg/fork/controller/LockedSectionsController;->setSectionsPasscodeData(Lorg/fork/enums/LockedSection;Lorg/fork/controller/LockedSectionsController$SectionPasscodeData;)V
+    invoke-virtual {p1, p3, v0}, Lcom/iMe/fork/controller/LockedSectionsController;->setSectionsPasscodeData(Lcom/iMe/fork/enums/LockedSection;Lcom/iMe/fork/controller/LockedSectionsController$SectionPasscodeData;)V
 
     .line 713
-    invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getLockedSectionsController()Lorg/fork/controller/LockedSectionsController;
+    invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getLockedSectionsController()Lcom/iMe/fork/controller/LockedSectionsController;
 
     move-result-object p1
 
-    invoke-virtual {p1}, Lorg/fork/controller/LockedSectionsController;->saveConfig()V
+    invoke-virtual {p1}, Lcom/iMe/fork/controller/LockedSectionsController;->saveConfig()V
 
     goto :goto_0
 
@@ -1408,9 +1408,9 @@
     :cond_2
     new-instance p1, Lorg/telegram/ui/PasscodeActivity;
 
-    iget-object p2, p0, Lorg/telegram/ui/PasscodeActivity;->currentLockedSection:Lorg/fork/enums/LockedSection;
+    iget-object p2, p0, Lorg/telegram/ui/PasscodeActivity;->currentLockedSection:Lcom/iMe/fork/enums/LockedSection;
 
-    invoke-direct {p1, v2, p2}, Lorg/telegram/ui/PasscodeActivity;-><init>(ILorg/fork/enums/LockedSection;)V
+    invoke-direct {p1, v2, p2}, Lorg/telegram/ui/PasscodeActivity;-><init>(ILcom/iMe/fork/enums/LockedSection;)V
 
     invoke-virtual {p0, p1}, Lorg/telegram/ui/ActionBar/BaseFragment;->presentFragment(Lorg/telegram/ui/ActionBar/BaseFragment;)Z
 
@@ -1472,16 +1472,16 @@
     invoke-virtual {v0, v4}, Lorg/telegram/ui/Components/NumberPicker;->setMaxValue(I)V
 
     .line 678
-    iget-object v5, p0, Lorg/telegram/ui/PasscodeActivity;->sectionPasscodeData:Lorg/fork/controller/LockedSectionsController$SectionPasscodeData;
+    iget-object v5, p0, Lorg/telegram/ui/PasscodeActivity;->sectionPasscodeData:Lcom/iMe/fork/controller/LockedSectionsController$SectionPasscodeData;
 
     if-eqz v5, :cond_5
 
     .line 679
-    invoke-virtual {v5}, Lorg/fork/controller/LockedSectionsController$SectionPasscodeData;->getAutoLockIn()Lorg/fork/enums/AutoLockTime;
+    invoke-virtual {v5}, Lcom/iMe/fork/controller/LockedSectionsController$SectionPasscodeData;->getAutoLockIn()Lcom/iMe/fork/enums/AutoLockTime;
 
     move-result-object v1
 
-    invoke-virtual {v1}, Lorg/fork/enums/AutoLockTime;->getId()I
+    invoke-virtual {v1}, Lcom/iMe/fork/enums/AutoLockTime;->getId()I
 
     move-result v1
 
@@ -1581,36 +1581,36 @@
     if-ne p2, v0, :cond_10
 
     .line 732
-    iget-object p2, p0, Lorg/telegram/ui/PasscodeActivity;->sectionPasscodeData:Lorg/fork/controller/LockedSectionsController$SectionPasscodeData;
+    iget-object p2, p0, Lorg/telegram/ui/PasscodeActivity;->sectionPasscodeData:Lcom/iMe/fork/controller/LockedSectionsController$SectionPasscodeData;
 
     if-eqz p2, :cond_c
 
     .line 733
-    invoke-virtual {p2}, Lorg/fork/controller/LockedSectionsController$SectionPasscodeData;->getUseFingerprint()Z
+    invoke-virtual {p2}, Lcom/iMe/fork/controller/LockedSectionsController$SectionPasscodeData;->getUseFingerprint()Z
 
     move-result v0
 
     xor-int/2addr v0, v2
 
-    invoke-virtual {p2, v0}, Lorg/fork/controller/LockedSectionsController$SectionPasscodeData;->setUseFingerprint(Z)V
+    invoke-virtual {p2, v0}, Lcom/iMe/fork/controller/LockedSectionsController$SectionPasscodeData;->setUseFingerprint(Z)V
 
     .line 734
-    invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getLockedSectionsController()Lorg/fork/controller/LockedSectionsController;
+    invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getLockedSectionsController()Lcom/iMe/fork/controller/LockedSectionsController;
 
     move-result-object p2
 
-    iget-object v0, p0, Lorg/telegram/ui/PasscodeActivity;->currentLockedSection:Lorg/fork/enums/LockedSection;
+    iget-object v0, p0, Lorg/telegram/ui/PasscodeActivity;->currentLockedSection:Lcom/iMe/fork/enums/LockedSection;
 
-    iget-object v2, p0, Lorg/telegram/ui/PasscodeActivity;->sectionPasscodeData:Lorg/fork/controller/LockedSectionsController$SectionPasscodeData;
+    iget-object v2, p0, Lorg/telegram/ui/PasscodeActivity;->sectionPasscodeData:Lcom/iMe/fork/controller/LockedSectionsController$SectionPasscodeData;
 
-    invoke-virtual {p2, v0, v2}, Lorg/fork/controller/LockedSectionsController;->setSectionsPasscodeData(Lorg/fork/enums/LockedSection;Lorg/fork/controller/LockedSectionsController$SectionPasscodeData;)V
+    invoke-virtual {p2, v0, v2}, Lcom/iMe/fork/controller/LockedSectionsController;->setSectionsPasscodeData(Lcom/iMe/fork/enums/LockedSection;Lcom/iMe/fork/controller/LockedSectionsController$SectionPasscodeData;)V
 
     .line 735
-    invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getLockedSectionsController()Lorg/fork/controller/LockedSectionsController;
+    invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getLockedSectionsController()Lcom/iMe/fork/controller/LockedSectionsController;
 
     move-result-object p2
 
-    invoke-virtual {p2}, Lorg/fork/controller/LockedSectionsController;->saveConfig()V
+    invoke-virtual {p2}, Lcom/iMe/fork/controller/LockedSectionsController;->saveConfig()V
 
     goto :goto_1
 
@@ -1621,21 +1621,21 @@
     if-ne p2, v1, :cond_d
 
     .line 737
-    invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getWalletFingerprintController()Lorg/fork/controller/WalletFingerprintController;
+    invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getWalletFingerprintController()Lcom/iMe/fork/controller/WalletFingerprintController;
 
     move-result-object p2
 
     .line 738
-    invoke-virtual {p2}, Lorg/fork/controller/WalletFingerprintController;->isWalletFingerprintUnlockEnabled()Z
+    invoke-virtual {p2}, Lcom/iMe/fork/controller/WalletFingerprintController;->isWalletFingerprintUnlockEnabled()Z
 
     move-result v0
 
     xor-int/2addr v0, v2
 
-    invoke-virtual {p2, v0}, Lorg/fork/controller/WalletFingerprintController;->setWalletFingerprintUnlockEnabled(Z)V
+    invoke-virtual {p2, v0}, Lcom/iMe/fork/controller/WalletFingerprintController;->setWalletFingerprintUnlockEnabled(Z)V
 
     .line 739
-    invoke-virtual {p2}, Lorg/fork/controller/WalletFingerprintController;->saveConfig()V
+    invoke-virtual {p2}, Lcom/iMe/fork/controller/WalletFingerprintController;->saveConfig()V
 
     goto :goto_1
 
@@ -1658,14 +1658,14 @@
     invoke-virtual {p2, v3}, Lorg/telegram/messenger/UserConfig;->saveConfig(Z)V
 
     .line 744
-    iget-object p2, p0, Lorg/telegram/ui/PasscodeActivity;->sectionPasscodeData:Lorg/fork/controller/LockedSectionsController$SectionPasscodeData;
+    iget-object p2, p0, Lorg/telegram/ui/PasscodeActivity;->sectionPasscodeData:Lcom/iMe/fork/controller/LockedSectionsController$SectionPasscodeData;
 
     if-eqz p2, :cond_e
 
     .line 745
     check-cast p1, Lorg/telegram/ui/Cells/TextCheckCell;
 
-    invoke-virtual {p2}, Lorg/fork/controller/LockedSectionsController$SectionPasscodeData;->getUseFingerprint()Z
+    invoke-virtual {p2}, Lcom/iMe/fork/controller/LockedSectionsController$SectionPasscodeData;->getUseFingerprint()Z
 
     move-result p2
 
@@ -1682,11 +1682,11 @@
     .line 747
     check-cast p1, Lorg/telegram/ui/Cells/TextCheckCell;
 
-    invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getWalletFingerprintController()Lorg/fork/controller/WalletFingerprintController;
+    invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getWalletFingerprintController()Lcom/iMe/fork/controller/WalletFingerprintController;
 
     move-result-object p2
 
-    invoke-virtual {p2}, Lorg/fork/controller/WalletFingerprintController;->isWalletFingerprintUnlockEnabled()Z
+    invoke-virtual {p2}, Lcom/iMe/fork/controller/WalletFingerprintController;->isWalletFingerprintUnlockEnabled()Z
 
     move-result p2
 
@@ -1956,7 +1956,7 @@
     if-ne p1, p2, :cond_1
 
     .line 979
-    iget-object p1, p0, Lorg/telegram/ui/PasscodeActivity;->walletCreatePasscodePresenter:Lcom/smedialink/ui/wallet/crypto/create/password/CreateWalletPasswordPresenter;
+    iget-object p1, p0, Lorg/telegram/ui/PasscodeActivity;->walletCreatePasscodePresenter:Lcom/iMe/ui/wallet/crypto/create/password/CreateWalletPasswordPresenter;
 
     iget-object p3, p0, Lorg/telegram/ui/PasscodeActivity;->passwordEditText:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
@@ -1968,7 +1968,7 @@
 
     move-result-object p3
 
-    invoke-virtual {p1, p3}, Lcom/smedialink/ui/wallet/crypto/create/password/CreateWalletPasswordPresenter;->checkPasswordMatch(Ljava/lang/String;)V
+    invoke-virtual {p1, p3}, Lcom/iMe/ui/wallet/crypto/create/password/CreateWalletPasswordPresenter;->checkPasswordMatch(Ljava/lang/String;)V
 
     goto :goto_0
 
@@ -2030,7 +2030,7 @@
     if-ne p1, v0, :cond_1
 
     .line 1089
-    iget-object p1, p0, Lorg/telegram/ui/PasscodeActivity;->walletCreatePasscodePresenter:Lcom/smedialink/ui/wallet/crypto/create/password/CreateWalletPasswordPresenter;
+    iget-object p1, p0, Lorg/telegram/ui/PasscodeActivity;->walletCreatePasscodePresenter:Lcom/iMe/ui/wallet/crypto/create/password/CreateWalletPasswordPresenter;
 
     iget-object v0, p0, Lorg/telegram/ui/PasscodeActivity;->passwordEditText:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
@@ -2042,7 +2042,7 @@
 
     move-result-object v0
 
-    invoke-virtual {p1, v0}, Lcom/smedialink/ui/wallet/crypto/create/password/CreateWalletPasswordPresenter;->checkPasswordMatch(Ljava/lang/String;)V
+    invoke-virtual {p1, v0}, Lcom/iMe/ui/wallet/crypto/create/password/CreateWalletPasswordPresenter;->checkPasswordMatch(Ljava/lang/String;)V
 
     goto :goto_0
 
@@ -2097,7 +2097,7 @@
     .locals 4
 
     .line 625
-    iget-object p1, p0, Lorg/telegram/ui/PasscodeActivity;->sectionPasscodeData:Lorg/fork/controller/LockedSectionsController$SectionPasscodeData;
+    iget-object p1, p0, Lorg/telegram/ui/PasscodeActivity;->sectionPasscodeData:Lcom/iMe/fork/controller/LockedSectionsController$SectionPasscodeData;
 
     const-string p2, "windowBackgroundWhiteGrayText7"
 
@@ -2107,7 +2107,7 @@
 
     if-eqz p1, :cond_2
 
-    invoke-virtual {p1}, Lorg/fork/controller/LockedSectionsController$SectionPasscodeData;->getPasscodeHash()Ljava/lang/String;
+    invoke-virtual {p1}, Lcom/iMe/fork/controller/LockedSectionsController$SectionPasscodeData;->getPasscodeHash()Ljava/lang/String;
 
     move-result-object p1
 
@@ -2118,14 +2118,14 @@
     if-nez p1, :cond_2
 
     .line 626
-    iget-object p1, p0, Lorg/telegram/ui/PasscodeActivity;->sectionPasscodeData:Lorg/fork/controller/LockedSectionsController$SectionPasscodeData;
+    iget-object p1, p0, Lorg/telegram/ui/PasscodeActivity;->sectionPasscodeData:Lcom/iMe/fork/controller/LockedSectionsController$SectionPasscodeData;
 
-    invoke-virtual {p1, v0}, Lorg/fork/controller/LockedSectionsController$SectionPasscodeData;->setPasscodeHash(Ljava/lang/String;)V
+    invoke-virtual {p1, v0}, Lcom/iMe/fork/controller/LockedSectionsController$SectionPasscodeData;->setPasscodeHash(Ljava/lang/String;)V
 
     .line 627
-    iget-object p1, p0, Lorg/telegram/ui/PasscodeActivity;->sectionPasscodeData:Lorg/fork/controller/LockedSectionsController$SectionPasscodeData;
+    iget-object p1, p0, Lorg/telegram/ui/PasscodeActivity;->sectionPasscodeData:Lcom/iMe/fork/controller/LockedSectionsController$SectionPasscodeData;
 
-    invoke-virtual {p1, v1}, Lorg/fork/controller/LockedSectionsController$SectionPasscodeData;->setSectionLocked(Z)V
+    invoke-virtual {p1, v1}, Lcom/iMe/fork/controller/LockedSectionsController$SectionPasscodeData;->setSectionLocked(Z)V
 
     .line 628
     iget-object p1, p0, Lorg/telegram/ui/PasscodeActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -2171,22 +2171,22 @@
     .line 637
     :cond_1
     :goto_1
-    invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getLockedSectionsController()Lorg/fork/controller/LockedSectionsController;
+    invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getLockedSectionsController()Lcom/iMe/fork/controller/LockedSectionsController;
 
     move-result-object p1
 
-    iget-object p2, p0, Lorg/telegram/ui/PasscodeActivity;->currentLockedSection:Lorg/fork/enums/LockedSection;
+    iget-object p2, p0, Lorg/telegram/ui/PasscodeActivity;->currentLockedSection:Lcom/iMe/fork/enums/LockedSection;
 
-    iget-object v0, p0, Lorg/telegram/ui/PasscodeActivity;->sectionPasscodeData:Lorg/fork/controller/LockedSectionsController$SectionPasscodeData;
+    iget-object v0, p0, Lorg/telegram/ui/PasscodeActivity;->sectionPasscodeData:Lcom/iMe/fork/controller/LockedSectionsController$SectionPasscodeData;
 
-    invoke-virtual {p1, p2, v0}, Lorg/fork/controller/LockedSectionsController;->setSectionsPasscodeData(Lorg/fork/enums/LockedSection;Lorg/fork/controller/LockedSectionsController$SectionPasscodeData;)V
+    invoke-virtual {p1, p2, v0}, Lcom/iMe/fork/controller/LockedSectionsController;->setSectionsPasscodeData(Lcom/iMe/fork/enums/LockedSection;Lcom/iMe/fork/controller/LockedSectionsController$SectionPasscodeData;)V
 
     .line 638
-    invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getLockedSectionsController()Lorg/fork/controller/LockedSectionsController;
+    invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getLockedSectionsController()Lcom/iMe/fork/controller/LockedSectionsController;
 
     move-result-object p1
 
-    invoke-virtual {p1}, Lorg/fork/controller/LockedSectionsController;->saveConfig()V
+    invoke-virtual {p1}, Lcom/iMe/fork/controller/LockedSectionsController;->saveConfig()V
 
     .line 639
     invoke-static {}, Lorg/telegram/messenger/NotificationCenter;->getGlobalInstance()Lorg/telegram/messenger/NotificationCenter;
@@ -2413,7 +2413,7 @@
     .locals 2
 
     .line 234
-    new-instance v0, Lcom/smedialink/model/wallet/crypto/create/CreateWalletScreenType$SecretWords;
+    new-instance v0, Lcom/iMe/model/wallet/crypto/create/CreateWalletScreenType$SecretWords;
 
     const-string v1, " "
 
@@ -2428,10 +2428,10 @@
 
     const-string v1, ""
 
-    invoke-direct {v0, p0, v1, p1, p2}, Lcom/smedialink/model/wallet/crypto/create/CreateWalletScreenType$SecretWords;-><init>(Ljava/util/List;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+    invoke-direct {v0, p0, v1, p1, p2}, Lcom/iMe/model/wallet/crypto/create/CreateWalletScreenType$SecretWords;-><init>(Ljava/util/List;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
     .line 234
-    invoke-static {v0}, Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment;->newInstance(Lcom/smedialink/model/wallet/crypto/create/CreateWalletScreenType;)Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment;
+    invoke-static {v0}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;->newInstance(Lcom/iMe/model/wallet/crypto/create/CreateWalletScreenType;)Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;
 
     move-result-object p0
 
@@ -2501,9 +2501,9 @@
     .locals 3
 
     .line 1616
-    new-instance v0, Lorg/telegram/ui/PasscodeActivity$$ExternalSyntheticLambda16;
+    new-instance v0, Lorg/telegram/ui/PasscodeActivity$$ExternalSyntheticLambda18;
 
-    invoke-direct {v0, p0}, Lorg/telegram/ui/PasscodeActivity$$ExternalSyntheticLambda16;-><init>(Lorg/telegram/ui/PasscodeActivity;)V
+    invoke-direct {v0, p0}, Lorg/telegram/ui/PasscodeActivity$$ExternalSyntheticLambda18;-><init>(Lorg/telegram/ui/PasscodeActivity;)V
 
     .line 1624
     invoke-direct {p0}, Lorg/telegram/ui/PasscodeActivity;->isPinCode()Z
@@ -2590,7 +2590,7 @@
     check-cast v2, Lorg/telegram/ui/ActionBar/BaseFragment;
 
     .line 291
-    instance-of v2, v2, Lcom/smedialink/ui/base/WalletAuthFragment;
+    instance-of v2, v2, Lcom/iMe/ui/base/WalletAuthFragment;
 
     if-eqz v2, :cond_0
 
@@ -2604,7 +2604,7 @@
     if-ne v1, v0, :cond_2
 
     .line 295
-    invoke-static {}, Lcom/smedialink/ui/wallet/common/WalletRootFragment;->newInstance()Lcom/smedialink/ui/wallet/common/WalletRootFragment;
+    invoke-static {}, Lcom/iMe/ui/wallet/common/WalletRootFragment;->newInstance()Lcom/iMe/ui/wallet/common/WalletRootFragment;
 
     move-result-object v1
 
@@ -2657,9 +2657,9 @@
     .line 1538
     new-instance p1, Lorg/telegram/ui/PasscodeActivity;
 
-    iget-object v1, p0, Lorg/telegram/ui/PasscodeActivity;->currentLockedSection:Lorg/fork/enums/LockedSection;
+    iget-object v1, p0, Lorg/telegram/ui/PasscodeActivity;->currentLockedSection:Lcom/iMe/fork/enums/LockedSection;
 
-    invoke-direct {p1, v0, v1}, Lorg/telegram/ui/PasscodeActivity;-><init>(ILorg/fork/enums/LockedSection;)V
+    invoke-direct {p1, v0, v1}, Lorg/telegram/ui/PasscodeActivity;-><init>(ILcom/iMe/fork/enums/LockedSection;)V
 
     const/4 v1, 0x1
 
@@ -2692,11 +2692,11 @@
     .line 1599
     new-instance v0, Lorg/telegram/ui/PasscodeActivity;
 
-    iget-object v1, p0, Lorg/telegram/ui/PasscodeActivity;->currentLockedSection:Lorg/fork/enums/LockedSection;
+    iget-object v1, p0, Lorg/telegram/ui/PasscodeActivity;->currentLockedSection:Lcom/iMe/fork/enums/LockedSection;
 
     const/4 v2, 0x0
 
-    invoke-direct {v0, v2, v1}, Lorg/telegram/ui/PasscodeActivity;-><init>(ILorg/fork/enums/LockedSection;)V
+    invoke-direct {v0, v2, v1}, Lorg/telegram/ui/PasscodeActivity;-><init>(ILcom/iMe/fork/enums/LockedSection;)V
 
     const/4 v1, 0x1
 
@@ -2713,7 +2713,7 @@
     new-array v0, v0, [Ljava/lang/Object;
 
     .line 154
-    iget-object v1, p0, Lorg/telegram/ui/PasscodeActivity;->walletPinScreenArgs:Lcom/smedialink/model/wallet/pin/WalletPinScreenArgs;
+    iget-object v1, p0, Lorg/telegram/ui/PasscodeActivity;->walletPinScreenArgs:Lcom/iMe/model/wallet/pin/WalletPinScreenArgs;
 
     const/4 v2, 0x0
 
@@ -2821,9 +2821,9 @@
     .locals 0
 
     .line 405
-    iget-object p1, p0, Lorg/telegram/ui/PasscodeActivity;->walletEnterPasswordPresenter:Lcom/smedialink/ui/wallet/crypto/enter/password/EnterWalletPasswordPresenter;
+    iget-object p1, p0, Lorg/telegram/ui/PasscodeActivity;->walletEnterPasswordPresenter:Lcom/iMe/ui/wallet/crypto/enter/password/EnterWalletPasswordPresenter;
 
-    invoke-virtual {p1, p2}, Lcom/smedialink/ui/wallet/crypto/enter/password/EnterWalletPasswordPresenter;->onForgotPasscodeOptionSelected(I)V
+    invoke-virtual {p1, p2}, Lcom/iMe/ui/wallet/crypto/enter/password/EnterWalletPasswordPresenter;->onForgotPasscodeOptionSelected(I)V
 
     return-void
 .end method
@@ -2879,7 +2879,7 @@
     return-object p0
 .end method
 
-.method public static newInstanceForWalletPin(Lcom/smedialink/model/wallet/pin/WalletPinScreenArgs;)Lorg/telegram/ui/PasscodeActivity;
+.method public static newInstanceForWalletPin(Lcom/iMe/model/wallet/pin/WalletPinScreenArgs;)Lorg/telegram/ui/PasscodeActivity;
     .locals 3
 
     .line 199
@@ -3051,9 +3051,9 @@
     const/high16 v1, 0x40800000    # 4.0f
 
     :goto_2
-    new-instance v2, Lorg/telegram/ui/PasscodeActivity$$ExternalSyntheticLambda20;
+    new-instance v2, Lorg/telegram/ui/PasscodeActivity$$ExternalSyntheticLambda22;
 
-    invoke-direct {v2, p0}, Lorg/telegram/ui/PasscodeActivity$$ExternalSyntheticLambda20;-><init>(Lorg/telegram/ui/PasscodeActivity;)V
+    invoke-direct {v2, p0}, Lorg/telegram/ui/PasscodeActivity$$ExternalSyntheticLambda22;-><init>(Lorg/telegram/ui/PasscodeActivity;)V
 
     invoke-static {v0, v1, v2}, Lorg/telegram/messenger/AndroidUtilities;->shakeViewSpring(Landroid/view/View;FLjava/lang/Runnable;)V
 
@@ -3199,9 +3199,9 @@
     .line 1487
     iget-object v0, p0, Lorg/telegram/ui/PasscodeActivity;->codeFieldContainer:Lorg/telegram/ui/CodeFieldContainer;
 
-    new-instance v1, Lorg/telegram/ui/PasscodeActivity$$ExternalSyntheticLambda18;
+    new-instance v1, Lorg/telegram/ui/PasscodeActivity$$ExternalSyntheticLambda20;
 
-    invoke-direct {v1, p0}, Lorg/telegram/ui/PasscodeActivity$$ExternalSyntheticLambda18;-><init>(Lorg/telegram/ui/PasscodeActivity;)V
+    invoke-direct {v1, p0}, Lorg/telegram/ui/PasscodeActivity$$ExternalSyntheticLambda20;-><init>(Lorg/telegram/ui/PasscodeActivity;)V
 
     invoke-virtual {v0, v1}, Landroid/widget/LinearLayout;->post(Ljava/lang/Runnable;)Z
 
@@ -3217,16 +3217,16 @@
 
     if-nez v0, :cond_5
 
-    iget-object v0, p0, Lorg/telegram/ui/PasscodeActivity;->sectionPasscodeData:Lorg/fork/controller/LockedSectionsController$SectionPasscodeData;
+    iget-object v0, p0, Lorg/telegram/ui/PasscodeActivity;->sectionPasscodeData:Lcom/iMe/fork/controller/LockedSectionsController$SectionPasscodeData;
 
     if-eqz v0, :cond_6
 
     :cond_5
-    iget-object v0, p0, Lorg/telegram/ui/PasscodeActivity;->sectionPasscodeData:Lorg/fork/controller/LockedSectionsController$SectionPasscodeData;
+    iget-object v0, p0, Lorg/telegram/ui/PasscodeActivity;->sectionPasscodeData:Lcom/iMe/fork/controller/LockedSectionsController$SectionPasscodeData;
 
     if-eqz v0, :cond_7
 
-    invoke-virtual {v0}, Lorg/fork/controller/LockedSectionsController$SectionPasscodeData;->getPasscodeHash()Ljava/lang/String;
+    invoke-virtual {v0}, Lcom/iMe/fork/controller/LockedSectionsController$SectionPasscodeData;->getPasscodeHash()Ljava/lang/String;
 
     move-result-object v0
 
@@ -3246,35 +3246,35 @@
 
     .line 1496
     :goto_2
-    iget-object v1, p0, Lorg/telegram/ui/PasscodeActivity;->sectionPasscodeData:Lorg/fork/controller/LockedSectionsController$SectionPasscodeData;
+    iget-object v1, p0, Lorg/telegram/ui/PasscodeActivity;->sectionPasscodeData:Lcom/iMe/fork/controller/LockedSectionsController$SectionPasscodeData;
 
     if-eqz v1, :cond_8
 
     .line 1497
-    invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getLockedSectionsController()Lorg/fork/controller/LockedSectionsController;
+    invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getLockedSectionsController()Lcom/iMe/fork/controller/LockedSectionsController;
 
     move-result-object v1
 
-    iget-object v3, p0, Lorg/telegram/ui/PasscodeActivity;->sectionPasscodeData:Lorg/fork/controller/LockedSectionsController$SectionPasscodeData;
+    iget-object v3, p0, Lorg/telegram/ui/PasscodeActivity;->sectionPasscodeData:Lcom/iMe/fork/controller/LockedSectionsController$SectionPasscodeData;
 
-    iget-object v6, p0, Lorg/telegram/ui/PasscodeActivity;->currentLockedSection:Lorg/fork/enums/LockedSection;
+    iget-object v6, p0, Lorg/telegram/ui/PasscodeActivity;->currentLockedSection:Lcom/iMe/fork/enums/LockedSection;
 
     iget-object v7, p0, Lorg/telegram/ui/PasscodeActivity;->firstPassword:Ljava/lang/String;
 
-    invoke-virtual {v1, v3, v6, v7}, Lorg/fork/controller/LockedSectionsController;->createPasscodeSalt(Lorg/fork/controller/LockedSectionsController$SectionPasscodeData;Lorg/fork/enums/LockedSection;Ljava/lang/String;)V
+    invoke-virtual {v1, v3, v6, v7}, Lcom/iMe/fork/controller/LockedSectionsController;->createPasscodeSalt(Lcom/iMe/fork/controller/LockedSectionsController$SectionPasscodeData;Lcom/iMe/fork/enums/LockedSection;Ljava/lang/String;)V
 
     .line 1498
-    invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getLockedSectionsController()Lorg/fork/controller/LockedSectionsController;
+    invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getLockedSectionsController()Lcom/iMe/fork/controller/LockedSectionsController;
 
     move-result-object v1
 
-    iget-object v3, p0, Lorg/telegram/ui/PasscodeActivity;->currentLockedSection:Lorg/fork/enums/LockedSection;
+    iget-object v3, p0, Lorg/telegram/ui/PasscodeActivity;->currentLockedSection:Lcom/iMe/fork/enums/LockedSection;
 
-    invoke-virtual {v1, v3}, Lorg/fork/controller/LockedSectionsController;->getSectionsPasscodeData(Lorg/fork/enums/LockedSection;)Lorg/fork/controller/LockedSectionsController$SectionPasscodeData;
+    invoke-virtual {v1, v3}, Lcom/iMe/fork/controller/LockedSectionsController;->getSectionsPasscodeData(Lcom/iMe/fork/enums/LockedSection;)Lcom/iMe/fork/controller/LockedSectionsController$SectionPasscodeData;
 
     move-result-object v1
 
-    iput-object v1, p0, Lorg/telegram/ui/PasscodeActivity;->sectionPasscodeData:Lorg/fork/controller/LockedSectionsController$SectionPasscodeData;
+    iput-object v1, p0, Lorg/telegram/ui/PasscodeActivity;->sectionPasscodeData:Lcom/iMe/fork/controller/LockedSectionsController$SectionPasscodeData;
 
     goto :goto_3
 
@@ -3354,41 +3354,41 @@
 
     .line 1513
     :goto_3
-    iget-object v1, p0, Lorg/telegram/ui/PasscodeActivity;->sectionPasscodeData:Lorg/fork/controller/LockedSectionsController$SectionPasscodeData;
+    iget-object v1, p0, Lorg/telegram/ui/PasscodeActivity;->sectionPasscodeData:Lcom/iMe/fork/controller/LockedSectionsController$SectionPasscodeData;
 
     if-eqz v1, :cond_9
 
     .line 1514
     iget v3, p0, Lorg/telegram/ui/PasscodeActivity;->currentPasswordType:I
 
-    invoke-static {v3}, Lorg/fork/enums/PasscodeType;->findById(I)Lorg/fork/enums/PasscodeType;
+    invoke-static {v3}, Lcom/iMe/fork/enums/PasscodeType;->findById(I)Lcom/iMe/fork/enums/PasscodeType;
 
     move-result-object v3
 
-    invoke-virtual {v1, v3}, Lorg/fork/controller/LockedSectionsController$SectionPasscodeData;->setPasscodeType(Lorg/fork/enums/PasscodeType;)V
+    invoke-virtual {v1, v3}, Lcom/iMe/fork/controller/LockedSectionsController$SectionPasscodeData;->setPasscodeType(Lcom/iMe/fork/enums/PasscodeType;)V
 
     .line 1515
-    iget-object v1, p0, Lorg/telegram/ui/PasscodeActivity;->sectionPasscodeData:Lorg/fork/controller/LockedSectionsController$SectionPasscodeData;
+    iget-object v1, p0, Lorg/telegram/ui/PasscodeActivity;->sectionPasscodeData:Lcom/iMe/fork/controller/LockedSectionsController$SectionPasscodeData;
 
-    invoke-virtual {v1, v4}, Lorg/fork/controller/LockedSectionsController$SectionPasscodeData;->setSectionLocked(Z)V
+    invoke-virtual {v1, v4}, Lcom/iMe/fork/controller/LockedSectionsController$SectionPasscodeData;->setSectionLocked(Z)V
 
     .line 1516
-    invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getLockedSectionsController()Lorg/fork/controller/LockedSectionsController;
+    invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getLockedSectionsController()Lcom/iMe/fork/controller/LockedSectionsController;
 
     move-result-object v1
 
-    iget-object v3, p0, Lorg/telegram/ui/PasscodeActivity;->currentLockedSection:Lorg/fork/enums/LockedSection;
+    iget-object v3, p0, Lorg/telegram/ui/PasscodeActivity;->currentLockedSection:Lcom/iMe/fork/enums/LockedSection;
 
-    iget-object v4, p0, Lorg/telegram/ui/PasscodeActivity;->sectionPasscodeData:Lorg/fork/controller/LockedSectionsController$SectionPasscodeData;
+    iget-object v4, p0, Lorg/telegram/ui/PasscodeActivity;->sectionPasscodeData:Lcom/iMe/fork/controller/LockedSectionsController$SectionPasscodeData;
 
-    invoke-virtual {v1, v3, v4}, Lorg/fork/controller/LockedSectionsController;->setSectionsPasscodeData(Lorg/fork/enums/LockedSection;Lorg/fork/controller/LockedSectionsController$SectionPasscodeData;)V
+    invoke-virtual {v1, v3, v4}, Lcom/iMe/fork/controller/LockedSectionsController;->setSectionsPasscodeData(Lcom/iMe/fork/enums/LockedSection;Lcom/iMe/fork/controller/LockedSectionsController$SectionPasscodeData;)V
 
     .line 1517
-    invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getLockedSectionsController()Lorg/fork/controller/LockedSectionsController;
+    invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getLockedSectionsController()Lcom/iMe/fork/controller/LockedSectionsController;
 
     move-result-object v1
 
-    invoke-virtual {v1}, Lorg/fork/controller/LockedSectionsController;->saveConfig()V
+    invoke-virtual {v1}, Lcom/iMe/fork/controller/LockedSectionsController;->saveConfig()V
 
     goto :goto_4
 
@@ -3398,7 +3398,7 @@
 
     .line 1521
     :goto_4
-    iget-object v1, p0, Lorg/telegram/ui/PasscodeActivity;->sectionPasscodeData:Lorg/fork/controller/LockedSectionsController$SectionPasscodeData;
+    iget-object v1, p0, Lorg/telegram/ui/PasscodeActivity;->sectionPasscodeData:Lcom/iMe/fork/controller/LockedSectionsController$SectionPasscodeData;
 
     if-nez v1, :cond_a
 
@@ -3453,9 +3453,9 @@
     invoke-virtual {v1, v2}, Lorg/telegram/ui/Components/CustomPhoneKeyboardView;->setEditText(Landroid/widget/EditText;)V
 
     .line 1535
-    new-instance v1, Lorg/telegram/ui/PasscodeActivity$$ExternalSyntheticLambda25;
+    new-instance v1, Lorg/telegram/ui/PasscodeActivity$$ExternalSyntheticLambda27;
 
-    invoke-direct {v1, p0, v0}, Lorg/telegram/ui/PasscodeActivity$$ExternalSyntheticLambda25;-><init>(Lorg/telegram/ui/PasscodeActivity;Z)V
+    invoke-direct {v1, p0, v0}, Lorg/telegram/ui/PasscodeActivity$$ExternalSyntheticLambda27;-><init>(Lorg/telegram/ui/PasscodeActivity;Z)V
 
     invoke-direct {p0, v1}, Lorg/telegram/ui/PasscodeActivity;->animateSuccessAnimation(Ljava/lang/Runnable;)V
 
@@ -3475,16 +3475,16 @@
 
     if-lez v1, :cond_e
 
-    iget-object v1, p0, Lorg/telegram/ui/PasscodeActivity;->sectionPasscodeData:Lorg/fork/controller/LockedSectionsController$SectionPasscodeData;
+    iget-object v1, p0, Lorg/telegram/ui/PasscodeActivity;->sectionPasscodeData:Lcom/iMe/fork/controller/LockedSectionsController$SectionPasscodeData;
 
     if-eqz v1, :cond_f
 
     :cond_e
-    iget-object v1, p0, Lorg/telegram/ui/PasscodeActivity;->sectionPasscodeData:Lorg/fork/controller/LockedSectionsController$SectionPasscodeData;
+    iget-object v1, p0, Lorg/telegram/ui/PasscodeActivity;->sectionPasscodeData:Lcom/iMe/fork/controller/LockedSectionsController$SectionPasscodeData;
 
     if-eqz v1, :cond_13
 
-    invoke-virtual {v1}, Lorg/fork/controller/LockedSectionsController$SectionPasscodeData;->getPasscodeRetryInMs()J
+    invoke-virtual {v1}, Lcom/iMe/fork/controller/LockedSectionsController$SectionPasscodeData;->getPasscodeRetryInMs()J
 
     move-result-wide v6
 
@@ -3494,13 +3494,13 @@
 
     .line 1546
     :cond_f
-    iget-object v0, p0, Lorg/telegram/ui/PasscodeActivity;->sectionPasscodeData:Lorg/fork/controller/LockedSectionsController$SectionPasscodeData;
+    iget-object v0, p0, Lorg/telegram/ui/PasscodeActivity;->sectionPasscodeData:Lcom/iMe/fork/controller/LockedSectionsController$SectionPasscodeData;
 
     if-eqz v0, :cond_10
 
     sget-object v1, Ljava/util/concurrent/TimeUnit;->MILLISECONDS:Ljava/util/concurrent/TimeUnit;
 
-    invoke-virtual {v0}, Lorg/fork/controller/LockedSectionsController$SectionPasscodeData;->getPasscodeRetryInMs()J
+    invoke-virtual {v0}, Lcom/iMe/fork/controller/LockedSectionsController$SectionPasscodeData;->getPasscodeRetryInMs()J
 
     move-result-wide v6
 
@@ -3625,22 +3625,22 @@
 
     if-nez v1, :cond_14
 
-    iget-object v1, p0, Lorg/telegram/ui/PasscodeActivity;->currentLockedSection:Lorg/fork/enums/LockedSection;
+    iget-object v1, p0, Lorg/telegram/ui/PasscodeActivity;->currentLockedSection:Lcom/iMe/fork/enums/LockedSection;
 
     if-eqz v1, :cond_15
 
     :cond_14
-    iget-object v1, p0, Lorg/telegram/ui/PasscodeActivity;->currentLockedSection:Lorg/fork/enums/LockedSection;
+    iget-object v1, p0, Lorg/telegram/ui/PasscodeActivity;->currentLockedSection:Lcom/iMe/fork/enums/LockedSection;
 
     if-eqz v1, :cond_19
 
-    invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getLockedSectionsController()Lorg/fork/controller/LockedSectionsController;
+    invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getLockedSectionsController()Lcom/iMe/fork/controller/LockedSectionsController;
 
     move-result-object v1
 
-    iget-object v4, p0, Lorg/telegram/ui/PasscodeActivity;->currentLockedSection:Lorg/fork/enums/LockedSection;
+    iget-object v4, p0, Lorg/telegram/ui/PasscodeActivity;->currentLockedSection:Lcom/iMe/fork/enums/LockedSection;
 
-    invoke-virtual {v1, v4, v0}, Lorg/fork/controller/LockedSectionsController;->checkSectionPasscode(Lorg/fork/enums/LockedSection;Ljava/lang/String;)Z
+    invoke-virtual {v1, v4, v0}, Lcom/iMe/fork/controller/LockedSectionsController;->checkSectionPasscode(Lcom/iMe/fork/enums/LockedSection;Ljava/lang/String;)Z
 
     move-result v0
 
@@ -3648,31 +3648,31 @@
 
     .line 1562
     :cond_15
-    iget-object v0, p0, Lorg/telegram/ui/PasscodeActivity;->currentLockedSection:Lorg/fork/enums/LockedSection;
+    iget-object v0, p0, Lorg/telegram/ui/PasscodeActivity;->currentLockedSection:Lcom/iMe/fork/enums/LockedSection;
 
     if-eqz v0, :cond_16
 
     .line 1563
-    invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getLockedSectionsController()Lorg/fork/controller/LockedSectionsController;
+    invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getLockedSectionsController()Lcom/iMe/fork/controller/LockedSectionsController;
 
     move-result-object v0
 
-    iget-object v1, p0, Lorg/telegram/ui/PasscodeActivity;->currentLockedSection:Lorg/fork/enums/LockedSection;
+    iget-object v1, p0, Lorg/telegram/ui/PasscodeActivity;->currentLockedSection:Lcom/iMe/fork/enums/LockedSection;
 
-    invoke-virtual {v0, v1}, Lorg/fork/controller/LockedSectionsController;->increaseBadPasscodeTries(Lorg/fork/enums/LockedSection;)V
+    invoke-virtual {v0, v1}, Lcom/iMe/fork/controller/LockedSectionsController;->increaseBadPasscodeTries(Lcom/iMe/fork/enums/LockedSection;)V
 
     .line 1564
-    invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getLockedSectionsController()Lorg/fork/controller/LockedSectionsController;
+    invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getLockedSectionsController()Lcom/iMe/fork/controller/LockedSectionsController;
 
     move-result-object v0
 
-    iget-object v1, p0, Lorg/telegram/ui/PasscodeActivity;->currentLockedSection:Lorg/fork/enums/LockedSection;
+    iget-object v1, p0, Lorg/telegram/ui/PasscodeActivity;->currentLockedSection:Lcom/iMe/fork/enums/LockedSection;
 
-    invoke-virtual {v0, v1}, Lorg/fork/controller/LockedSectionsController;->getSectionsPasscodeData(Lorg/fork/enums/LockedSection;)Lorg/fork/controller/LockedSectionsController$SectionPasscodeData;
+    invoke-virtual {v0, v1}, Lcom/iMe/fork/controller/LockedSectionsController;->getSectionsPasscodeData(Lcom/iMe/fork/enums/LockedSection;)Lcom/iMe/fork/controller/LockedSectionsController$SectionPasscodeData;
 
     move-result-object v0
 
-    iput-object v0, p0, Lorg/telegram/ui/PasscodeActivity;->sectionPasscodeData:Lorg/fork/controller/LockedSectionsController$SectionPasscodeData;
+    iput-object v0, p0, Lorg/telegram/ui/PasscodeActivity;->sectionPasscodeData:Lcom/iMe/fork/controller/LockedSectionsController$SectionPasscodeData;
 
     goto :goto_8
 
@@ -3732,27 +3732,27 @@
 
     .line 1578
     :cond_19
-    iget-object v0, p0, Lorg/telegram/ui/PasscodeActivity;->sectionPasscodeData:Lorg/fork/controller/LockedSectionsController$SectionPasscodeData;
+    iget-object v0, p0, Lorg/telegram/ui/PasscodeActivity;->sectionPasscodeData:Lcom/iMe/fork/controller/LockedSectionsController$SectionPasscodeData;
 
     if-eqz v0, :cond_1a
 
     .line 1579
-    invoke-virtual {v0, v5}, Lorg/fork/controller/LockedSectionsController$SectionPasscodeData;->setBadPasscodeTries(I)V
+    invoke-virtual {v0, v5}, Lcom/iMe/fork/controller/LockedSectionsController$SectionPasscodeData;->setBadPasscodeTries(I)V
 
     .line 1580
-    invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getLockedSectionsController()Lorg/fork/controller/LockedSectionsController;
+    invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getLockedSectionsController()Lcom/iMe/fork/controller/LockedSectionsController;
 
     move-result-object v0
 
-    iget-object v1, p0, Lorg/telegram/ui/PasscodeActivity;->currentLockedSection:Lorg/fork/enums/LockedSection;
+    iget-object v1, p0, Lorg/telegram/ui/PasscodeActivity;->currentLockedSection:Lcom/iMe/fork/enums/LockedSection;
 
-    iget-object v3, p0, Lorg/telegram/ui/PasscodeActivity;->sectionPasscodeData:Lorg/fork/controller/LockedSectionsController$SectionPasscodeData;
+    iget-object v3, p0, Lorg/telegram/ui/PasscodeActivity;->sectionPasscodeData:Lcom/iMe/fork/controller/LockedSectionsController$SectionPasscodeData;
 
-    invoke-virtual {v0, v1, v3}, Lorg/fork/controller/LockedSectionsController;->setSectionsPasscodeData(Lorg/fork/enums/LockedSection;Lorg/fork/controller/LockedSectionsController$SectionPasscodeData;)V
+    invoke-virtual {v0, v1, v3}, Lcom/iMe/fork/controller/LockedSectionsController;->setSectionsPasscodeData(Lcom/iMe/fork/enums/LockedSection;Lcom/iMe/fork/controller/LockedSectionsController$SectionPasscodeData;)V
 
     .line 1584
     :cond_1a
-    iget-object v0, p0, Lorg/telegram/ui/PasscodeActivity;->sectionPasscodeData:Lorg/fork/controller/LockedSectionsController$SectionPasscodeData;
+    iget-object v0, p0, Lorg/telegram/ui/PasscodeActivity;->sectionPasscodeData:Lcom/iMe/fork/controller/LockedSectionsController$SectionPasscodeData;
 
     if-nez v0, :cond_1b
 
@@ -3805,9 +3805,9 @@
     invoke-virtual {v0, v2}, Lorg/telegram/ui/Components/CustomPhoneKeyboardView;->setEditText(Landroid/widget/EditText;)V
 
     .line 1598
-    new-instance v0, Lorg/telegram/ui/PasscodeActivity$$ExternalSyntheticLambda21;
+    new-instance v0, Lorg/telegram/ui/PasscodeActivity$$ExternalSyntheticLambda23;
 
-    invoke-direct {v0, p0}, Lorg/telegram/ui/PasscodeActivity$$ExternalSyntheticLambda21;-><init>(Lorg/telegram/ui/PasscodeActivity;)V
+    invoke-direct {v0, p0}, Lorg/telegram/ui/PasscodeActivity$$ExternalSyntheticLambda23;-><init>(Lorg/telegram/ui/PasscodeActivity;)V
 
     invoke-direct {p0, v0}, Lorg/telegram/ui/PasscodeActivity;->animateSuccessAnimation(Ljava/lang/Runnable;)V
 
@@ -3827,7 +3827,7 @@
     if-nez v0, :cond_0
 
     .line 1416
-    iget-object v0, p0, Lorg/telegram/ui/PasscodeActivity;->walletCreatePinPresenter:Lcom/smedialink/ui/wallet/crypto/create/pin/CreateWalletPinPresenter;
+    iget-object v0, p0, Lorg/telegram/ui/PasscodeActivity;->walletCreatePinPresenter:Lcom/iMe/ui/wallet/crypto/create/pin/CreateWalletPinPresenter;
 
     iget-object v2, p0, Lorg/telegram/ui/PasscodeActivity;->codeFieldContainer:Lorg/telegram/ui/CodeFieldContainer;
 
@@ -3835,14 +3835,14 @@
 
     move-result-object v2
 
-    invoke-virtual {v0, v2}, Lcom/smedialink/ui/wallet/crypto/create/pin/CreateWalletPinPresenter;->onPinChanged(Ljava/lang/String;)V
+    invoke-virtual {v0, v2}, Lcom/iMe/ui/wallet/crypto/create/pin/CreateWalletPinPresenter;->onPinChanged(Ljava/lang/String;)V
 
     .line 1417
-    iget-object v0, p0, Lorg/telegram/ui/PasscodeActivity;->walletCreatePinPresenter:Lcom/smedialink/ui/wallet/crypto/create/pin/CreateWalletPinPresenter;
+    iget-object v0, p0, Lorg/telegram/ui/PasscodeActivity;->walletCreatePinPresenter:Lcom/iMe/ui/wallet/crypto/create/pin/CreateWalletPinPresenter;
 
-    sget-object v2, Lcom/smedialink/model/common/ScreenStep;->CONFIRM_STEP:Lcom/smedialink/model/common/ScreenStep;
+    sget-object v2, Lcom/iMe/model/common/ScreenStep;->CONFIRM_STEP:Lcom/iMe/model/common/ScreenStep;
 
-    invoke-virtual {v0, v2}, Lcom/smedialink/ui/wallet/crypto/create/pin/CreateWalletPinPresenter;->setCurrentScreenStep(Lcom/smedialink/model/common/ScreenStep;)V
+    invoke-virtual {v0, v2}, Lcom/iMe/ui/wallet/crypto/create/pin/CreateWalletPinPresenter;->setCurrentScreenStep(Lcom/iMe/model/common/ScreenStep;)V
 
     goto :goto_0
 
@@ -3850,7 +3850,7 @@
     if-ne v0, v1, :cond_1
 
     .line 1419
-    iget-object v0, p0, Lorg/telegram/ui/PasscodeActivity;->walletCreatePasscodePresenter:Lcom/smedialink/ui/wallet/crypto/create/password/CreateWalletPasswordPresenter;
+    iget-object v0, p0, Lorg/telegram/ui/PasscodeActivity;->walletCreatePasscodePresenter:Lcom/iMe/ui/wallet/crypto/create/password/CreateWalletPasswordPresenter;
 
     iget-object v2, p0, Lorg/telegram/ui/PasscodeActivity;->passwordEditText:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
@@ -3862,7 +3862,7 @@
 
     move-result-object v2
 
-    invoke-virtual {v0, v2}, Lcom/smedialink/ui/wallet/crypto/create/password/CreateWalletPasswordPresenter;->validatePassword(Ljava/lang/String;)Z
+    invoke-virtual {v0, v2}, Lcom/iMe/ui/wallet/crypto/create/password/CreateWalletPasswordPresenter;->validatePassword(Ljava/lang/String;)Z
 
     move-result v0
 
@@ -3879,7 +3879,7 @@
     if-ne v0, v2, :cond_2
 
     .line 1424
-    iget-object v0, p0, Lorg/telegram/ui/PasscodeActivity;->walletEnterPasswordPresenter:Lcom/smedialink/ui/wallet/crypto/enter/password/EnterWalletPasswordPresenter;
+    iget-object v0, p0, Lorg/telegram/ui/PasscodeActivity;->walletEnterPasswordPresenter:Lcom/iMe/ui/wallet/crypto/enter/password/EnterWalletPasswordPresenter;
 
     iget-object v1, p0, Lorg/telegram/ui/PasscodeActivity;->passwordEditText:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
@@ -3891,7 +3891,7 @@
 
     move-result-object v1
 
-    invoke-virtual {v0, v1}, Lcom/smedialink/ui/wallet/crypto/enter/password/EnterWalletPasswordPresenter;->validatePassword(Ljava/lang/String;)V
+    invoke-virtual {v0, v1}, Lcom/iMe/ui/wallet/crypto/enter/password/EnterWalletPasswordPresenter;->validatePassword(Ljava/lang/String;)V
 
     return-void
 
@@ -4126,24 +4126,24 @@
     return-void
 .end method
 
-.method private setCurrentLockedSection(Lorg/fork/enums/LockedSection;)V
+.method private setCurrentLockedSection(Lcom/iMe/fork/enums/LockedSection;)V
     .locals 1
 
     .line 351
-    iput-object p1, p0, Lorg/telegram/ui/PasscodeActivity;->currentLockedSection:Lorg/fork/enums/LockedSection;
+    iput-object p1, p0, Lorg/telegram/ui/PasscodeActivity;->currentLockedSection:Lcom/iMe/fork/enums/LockedSection;
 
     .line 352
-    invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getLockedSectionsController()Lorg/fork/controller/LockedSectionsController;
+    invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getLockedSectionsController()Lcom/iMe/fork/controller/LockedSectionsController;
 
     move-result-object p1
 
-    iget-object v0, p0, Lorg/telegram/ui/PasscodeActivity;->currentLockedSection:Lorg/fork/enums/LockedSection;
+    iget-object v0, p0, Lorg/telegram/ui/PasscodeActivity;->currentLockedSection:Lcom/iMe/fork/enums/LockedSection;
 
-    invoke-virtual {p1, v0}, Lorg/fork/controller/LockedSectionsController;->getSectionsPasscodeData(Lorg/fork/enums/LockedSection;)Lorg/fork/controller/LockedSectionsController$SectionPasscodeData;
+    invoke-virtual {p1, v0}, Lcom/iMe/fork/controller/LockedSectionsController;->getSectionsPasscodeData(Lcom/iMe/fork/enums/LockedSection;)Lcom/iMe/fork/controller/LockedSectionsController$SectionPasscodeData;
 
     move-result-object p1
 
-    iput-object p1, p0, Lorg/telegram/ui/PasscodeActivity;->sectionPasscodeData:Lorg/fork/controller/LockedSectionsController$SectionPasscodeData;
+    iput-object p1, p0, Lorg/telegram/ui/PasscodeActivity;->sectionPasscodeData:Lcom/iMe/fork/controller/LockedSectionsController$SectionPasscodeData;
 
     return-void
 .end method
@@ -4880,9 +4880,9 @@
     if-eqz v2, :cond_e
 
     .line 1393
-    new-instance v0, Lorg/telegram/ui/PasscodeActivity$$ExternalSyntheticLambda26;
+    new-instance v0, Lorg/telegram/ui/PasscodeActivity$$ExternalSyntheticLambda28;
 
-    invoke-direct {v0, p0, v2, v3}, Lorg/telegram/ui/PasscodeActivity$$ExternalSyntheticLambda26;-><init>(Lorg/telegram/ui/PasscodeActivity;ZZ)V
+    invoke-direct {v0, p0, v2, v3}, Lorg/telegram/ui/PasscodeActivity$$ExternalSyntheticLambda28;-><init>(Lorg/telegram/ui/PasscodeActivity;ZZ)V
 
     iput-object v0, p0, Lorg/telegram/ui/PasscodeActivity;->onShowKeyboardCallback:Ljava/lang/Runnable;
 
@@ -4920,14 +4920,14 @@
     move-result-wide v0
 
     .line 367
-    iget-object v2, p0, Lorg/telegram/ui/PasscodeActivity;->sectionPasscodeData:Lorg/fork/controller/LockedSectionsController$SectionPasscodeData;
+    iget-object v2, p0, Lorg/telegram/ui/PasscodeActivity;->sectionPasscodeData:Lcom/iMe/fork/controller/LockedSectionsController$SectionPasscodeData;
 
     const-wide/16 v3, 0x0
 
     if-eqz v2, :cond_1
 
     .line 368
-    invoke-virtual {v2}, Lorg/fork/controller/LockedSectionsController$SectionPasscodeData;->getLastUptimeMillis()J
+    invoke-virtual {v2}, Lcom/iMe/fork/controller/LockedSectionsController$SectionPasscodeData;->getLastUptimeMillis()J
 
     move-result-wide v5
 
@@ -4936,14 +4936,14 @@
     if-lez v2, :cond_0
 
     .line 369
-    iget-object v2, p0, Lorg/telegram/ui/PasscodeActivity;->sectionPasscodeData:Lorg/fork/controller/LockedSectionsController$SectionPasscodeData;
+    iget-object v2, p0, Lorg/telegram/ui/PasscodeActivity;->sectionPasscodeData:Lcom/iMe/fork/controller/LockedSectionsController$SectionPasscodeData;
 
-    invoke-virtual {v2, v0, v1}, Lorg/fork/controller/LockedSectionsController$SectionPasscodeData;->reducePasscodeRetryTime(J)V
+    invoke-virtual {v2, v0, v1}, Lcom/iMe/fork/controller/LockedSectionsController$SectionPasscodeData;->reducePasscodeRetryTime(J)V
 
     .line 370
-    iget-object v2, p0, Lorg/telegram/ui/PasscodeActivity;->sectionPasscodeData:Lorg/fork/controller/LockedSectionsController$SectionPasscodeData;
+    iget-object v2, p0, Lorg/telegram/ui/PasscodeActivity;->sectionPasscodeData:Lcom/iMe/fork/controller/LockedSectionsController$SectionPasscodeData;
 
-    invoke-virtual {v2}, Lorg/fork/controller/LockedSectionsController$SectionPasscodeData;->getPasscodeRetryInMs()J
+    invoke-virtual {v2}, Lcom/iMe/fork/controller/LockedSectionsController$SectionPasscodeData;->getPasscodeRetryInMs()J
 
     move-result-wide v5
 
@@ -4952,26 +4952,26 @@
     if-gez v2, :cond_0
 
     .line 371
-    iget-object v2, p0, Lorg/telegram/ui/PasscodeActivity;->sectionPasscodeData:Lorg/fork/controller/LockedSectionsController$SectionPasscodeData;
+    iget-object v2, p0, Lorg/telegram/ui/PasscodeActivity;->sectionPasscodeData:Lcom/iMe/fork/controller/LockedSectionsController$SectionPasscodeData;
 
-    invoke-virtual {v2, v3, v4}, Lorg/fork/controller/LockedSectionsController$SectionPasscodeData;->setPasscodeRetryInMs(J)V
+    invoke-virtual {v2, v3, v4}, Lcom/iMe/fork/controller/LockedSectionsController$SectionPasscodeData;->setPasscodeRetryInMs(J)V
 
     .line 374
     :cond_0
-    iget-object v2, p0, Lorg/telegram/ui/PasscodeActivity;->sectionPasscodeData:Lorg/fork/controller/LockedSectionsController$SectionPasscodeData;
+    iget-object v2, p0, Lorg/telegram/ui/PasscodeActivity;->sectionPasscodeData:Lcom/iMe/fork/controller/LockedSectionsController$SectionPasscodeData;
 
-    invoke-virtual {v2, v0, v1}, Lorg/fork/controller/LockedSectionsController$SectionPasscodeData;->setLastUptimeMillis(J)V
+    invoke-virtual {v2, v0, v1}, Lcom/iMe/fork/controller/LockedSectionsController$SectionPasscodeData;->setLastUptimeMillis(J)V
 
     .line 375
-    invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getLockedSectionsController()Lorg/fork/controller/LockedSectionsController;
+    invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getLockedSectionsController()Lcom/iMe/fork/controller/LockedSectionsController;
 
     move-result-object v0
 
-    iget-object v1, p0, Lorg/telegram/ui/PasscodeActivity;->currentLockedSection:Lorg/fork/enums/LockedSection;
+    iget-object v1, p0, Lorg/telegram/ui/PasscodeActivity;->currentLockedSection:Lcom/iMe/fork/enums/LockedSection;
 
-    iget-object v2, p0, Lorg/telegram/ui/PasscodeActivity;->sectionPasscodeData:Lorg/fork/controller/LockedSectionsController$SectionPasscodeData;
+    iget-object v2, p0, Lorg/telegram/ui/PasscodeActivity;->sectionPasscodeData:Lcom/iMe/fork/controller/LockedSectionsController$SectionPasscodeData;
 
-    invoke-virtual {v0, v1, v2}, Lorg/fork/controller/LockedSectionsController;->setSectionsPasscodeData(Lorg/fork/enums/LockedSection;Lorg/fork/controller/LockedSectionsController$SectionPasscodeData;)V
+    invoke-virtual {v0, v1, v2}, Lcom/iMe/fork/controller/LockedSectionsController;->setSectionsPasscodeData(Lcom/iMe/fork/enums/LockedSection;Lcom/iMe/fork/controller/LockedSectionsController$SectionPasscodeData;)V
 
     goto :goto_0
 
@@ -5016,16 +5016,16 @@
 
     if-lez v0, :cond_3
 
-    iget-object v0, p0, Lorg/telegram/ui/PasscodeActivity;->sectionPasscodeData:Lorg/fork/controller/LockedSectionsController$SectionPasscodeData;
+    iget-object v0, p0, Lorg/telegram/ui/PasscodeActivity;->sectionPasscodeData:Lcom/iMe/fork/controller/LockedSectionsController$SectionPasscodeData;
 
     if-eqz v0, :cond_4
 
     :cond_3
-    iget-object v0, p0, Lorg/telegram/ui/PasscodeActivity;->sectionPasscodeData:Lorg/fork/controller/LockedSectionsController$SectionPasscodeData;
+    iget-object v0, p0, Lorg/telegram/ui/PasscodeActivity;->sectionPasscodeData:Lcom/iMe/fork/controller/LockedSectionsController$SectionPasscodeData;
 
     if-eqz v0, :cond_5
 
-    invoke-virtual {v0}, Lorg/fork/controller/LockedSectionsController$SectionPasscodeData;->getPasscodeRetryInMs()J
+    invoke-virtual {v0}, Lcom/iMe/fork/controller/LockedSectionsController$SectionPasscodeData;->getPasscodeRetryInMs()J
 
     move-result-wide v0
 
@@ -5191,7 +5191,7 @@
     iput v2, p0, Lorg/telegram/ui/PasscodeActivity;->autoLockDetailRow:I
 
     .line 1327
-    iget-object v2, p0, Lorg/telegram/ui/PasscodeActivity;->currentLockedSection:Lorg/fork/enums/LockedSection;
+    iget-object v2, p0, Lorg/telegram/ui/PasscodeActivity;->currentLockedSection:Lcom/iMe/fork/enums/LockedSection;
 
     if-eqz v2, :cond_3
 
@@ -5253,7 +5253,7 @@
     move-object/from16 v1, p1
 
     .line 529
-    invoke-super/range {p0 .. p1}, Lcom/smedialink/ui/base/mvp/MvpFragment;->createView(Landroid/content/Context;)Landroid/view/View;
+    invoke-super/range {p0 .. p1}, Lcom/iMe/ui/base/mvp/MvpFragment;->createView(Landroid/content/Context;)Landroid/view/View;
 
     .line 530
     iget-object v2, v0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
@@ -7588,16 +7588,16 @@
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->removeSelfFromStack()V
 
     .line 231
-    new-instance v0, Lcom/smedialink/model/wallet/crypto/tutorial/TutorialType$Backup;
+    new-instance v0, Lcom/iMe/model/wallet/crypto/tutorial/TutorialType$Backup;
 
-    new-instance v1, Lorg/telegram/ui/PasscodeActivity$$ExternalSyntheticLambda27;
+    new-instance v1, Lorg/telegram/ui/PasscodeActivity$$ExternalSyntheticLambda29;
 
-    invoke-direct {v1, p3, p1, p2}, Lorg/telegram/ui/PasscodeActivity$$ExternalSyntheticLambda27;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+    invoke-direct {v1, p3, p1, p2}, Lorg/telegram/ui/PasscodeActivity$$ExternalSyntheticLambda29;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
-    invoke-direct {v0, v1}, Lcom/smedialink/model/wallet/crypto/tutorial/TutorialType$Backup;-><init>(Lkotlin/jvm/functions/Function0;)V
+    invoke-direct {v0, v1}, Lcom/iMe/model/wallet/crypto/tutorial/TutorialType$Backup;-><init>(Lkotlin/jvm/functions/Function0;)V
 
     .line 232
-    invoke-static {v0}, Lcom/smedialink/ui/wallet/crypto/tutorial/CreateWalletTutorialFragment;->newInstance(Lcom/smedialink/model/wallet/crypto/tutorial/TutorialType;)Lcom/smedialink/ui/wallet/crypto/tutorial/CreateWalletTutorialFragment;
+    invoke-static {v0}, Lcom/iMe/ui/wallet/crypto/tutorial/CreateWalletTutorialFragment;->newInstance(Lcom/iMe/model/wallet/crypto/tutorial/TutorialType;)Lcom/iMe/ui/wallet/crypto/tutorial/CreateWalletTutorialFragment;
 
     move-result-object p1
 
@@ -7763,7 +7763,7 @@
 
     move-result-object v0
 
-    check-cast v0, Lcom/smedialink/model/wallet/pin/WalletPinScreenArgs;
+    check-cast v0, Lcom/iMe/model/wallet/pin/WalletPinScreenArgs;
 
     if-eqz v0, :cond_1
 
@@ -7774,9 +7774,9 @@
 
     move-result-object v0
 
-    check-cast v0, Lcom/smedialink/model/wallet/pin/WalletPinScreenArgs;
+    check-cast v0, Lcom/iMe/model/wallet/pin/WalletPinScreenArgs;
 
-    iput-object v0, p0, Lorg/telegram/ui/PasscodeActivity;->walletPinScreenArgs:Lcom/smedialink/model/wallet/pin/WalletPinScreenArgs;
+    iput-object v0, p0, Lorg/telegram/ui/PasscodeActivity;->walletPinScreenArgs:Lcom/iMe/model/wallet/pin/WalletPinScreenArgs;
 
     .line 508
     :cond_1
@@ -7818,7 +7818,7 @@
     .locals 2
 
     .line 520
-    invoke-super {p0}, Lcom/smedialink/ui/base/mvp/MvpFragment;->onFragmentDestroy()V
+    invoke-super {p0}, Lcom/iMe/ui/base/mvp/MvpFragment;->onFragmentDestroy()V
 
     .line 521
     iget v0, p0, Lorg/telegram/ui/PasscodeActivity;->type:I
@@ -7851,16 +7851,16 @@
     .locals 3
 
     .line 272
-    new-instance v0, Lcom/smedialink/model/wallet/pin/WalletPinScreenArgs;
+    new-instance v0, Lcom/iMe/model/wallet/pin/WalletPinScreenArgs;
 
     iget-object v1, p0, Lorg/telegram/ui/PasscodeActivity;->walletSeed:Ljava/lang/String;
 
     const-string v2, ""
 
-    invoke-direct {v0, p1, v2, v1}, Lcom/smedialink/model/wallet/pin/WalletPinScreenArgs;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+    invoke-direct {v0, p1, v2, v1}, Lcom/iMe/model/wallet/pin/WalletPinScreenArgs;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
     .line 273
-    invoke-static {v0}, Lorg/telegram/ui/PasscodeActivity;->newInstanceForWalletPin(Lcom/smedialink/model/wallet/pin/WalletPinScreenArgs;)Lorg/telegram/ui/PasscodeActivity;
+    invoke-static {v0}, Lorg/telegram/ui/PasscodeActivity;->newInstanceForWalletPin(Lcom/iMe/model/wallet/pin/WalletPinScreenArgs;)Lorg/telegram/ui/PasscodeActivity;
 
     move-result-object p1
 
@@ -7874,7 +7874,7 @@
     .locals 2
 
     .line 1285
-    invoke-super {p0}, Lcom/smedialink/ui/base/mvp/MvpFragment;->onPause()V
+    invoke-super {p0}, Lcom/iMe/ui/base/mvp/MvpFragment;->onPause()V
 
     .line 1286
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
@@ -7892,7 +7892,7 @@
     .locals 3
 
     .line 1268
-    invoke-super {p0}, Lcom/smedialink/ui/base/WalletAuthFragment;->onResume()V
+    invoke-super {p0}, Lcom/iMe/ui/base/WalletAuthFragment;->onResume()V
 
     .line 1269
     iget-object v0, p0, Lorg/telegram/ui/PasscodeActivity;->listAdapter:Lorg/telegram/ui/PasscodeActivity$ListAdapter;
@@ -7915,9 +7915,9 @@
     if-nez v0, :cond_2
 
     .line 1273
-    new-instance v0, Lorg/telegram/ui/PasscodeActivity$$ExternalSyntheticLambda19;
+    new-instance v0, Lorg/telegram/ui/PasscodeActivity$$ExternalSyntheticLambda21;
 
-    invoke-direct {v0, p0}, Lorg/telegram/ui/PasscodeActivity$$ExternalSyntheticLambda19;-><init>(Lorg/telegram/ui/PasscodeActivity;)V
+    invoke-direct {v0, p0}, Lorg/telegram/ui/PasscodeActivity$$ExternalSyntheticLambda21;-><init>(Lorg/telegram/ui/PasscodeActivity;)V
 
     invoke-direct {p0}, Lorg/telegram/ui/PasscodeActivity;->isWalletScreen()Z
 
@@ -7977,9 +7977,9 @@
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->parentLayout:Lorg/telegram/ui/ActionBar/INavigationLayout;
 
     .line 251
-    new-instance v1, Lorg/telegram/ui/PasscodeActivity$$ExternalSyntheticLambda24;
+    new-instance v1, Lorg/telegram/ui/PasscodeActivity$$ExternalSyntheticLambda26;
 
-    invoke-direct {v1, p0, v0}, Lorg/telegram/ui/PasscodeActivity$$ExternalSyntheticLambda24;-><init>(Lorg/telegram/ui/PasscodeActivity;Lorg/telegram/ui/ActionBar/INavigationLayout;)V
+    invoke-direct {v1, p0, v0}, Lorg/telegram/ui/PasscodeActivity$$ExternalSyntheticLambda26;-><init>(Lorg/telegram/ui/PasscodeActivity;Lorg/telegram/ui/ActionBar/INavigationLayout;)V
 
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->runOnUIThread(Ljava/lang/Runnable;)V
 
@@ -7990,13 +7990,13 @@
     .locals 3
 
     .line 286
-    new-instance v0, Lorg/telegram/ui/PasscodeActivity$$ExternalSyntheticLambda30;
+    new-instance v0, Lorg/telegram/ui/PasscodeActivity$$ExternalSyntheticLambda15;
 
-    invoke-direct {v0, p0}, Lorg/telegram/ui/PasscodeActivity$$ExternalSyntheticLambda30;-><init>(Lorg/telegram/ui/PasscodeActivity;)V
+    invoke-direct {v0, p0}, Lorg/telegram/ui/PasscodeActivity$$ExternalSyntheticLambda15;-><init>(Lorg/telegram/ui/PasscodeActivity;)V
 
     const-wide/16 v1, 0x96
 
-    invoke-virtual {p0, v1, v2, v0}, Lcom/smedialink/ui/base/mvp/MvpFragment;->postViewActionDelayed(JLorg/fork/utils/Callbacks$Callback;)V
+    invoke-virtual {p0, v1, v2, v0}, Lcom/iMe/ui/base/mvp/MvpFragment;->postViewActionDelayed(JLcom/iMe/fork/utils/Callbacks$Callback;)V
 
     return-void
 .end method
@@ -8005,14 +8005,14 @@
     .locals 2
 
     .line 306
-    new-instance v0, Lcom/smedialink/model/wallet/pin/WalletPinScreenArgs;
+    new-instance v0, Lcom/iMe/model/wallet/pin/WalletPinScreenArgs;
 
     const-string v1, ""
 
-    invoke-direct {v0, p1, p2, v1}, Lcom/smedialink/model/wallet/pin/WalletPinScreenArgs;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+    invoke-direct {v0, p1, p2, v1}, Lcom/iMe/model/wallet/pin/WalletPinScreenArgs;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
     .line 307
-    invoke-static {v0}, Lorg/telegram/ui/PasscodeActivity;->newInstanceForWalletPin(Lcom/smedialink/model/wallet/pin/WalletPinScreenArgs;)Lorg/telegram/ui/PasscodeActivity;
+    invoke-static {v0}, Lorg/telegram/ui/PasscodeActivity;->newInstanceForWalletPin(Lcom/iMe/model/wallet/pin/WalletPinScreenArgs;)Lorg/telegram/ui/PasscodeActivity;
 
     move-result-object p1
 
@@ -8050,13 +8050,13 @@
     if-ne v0, v1, :cond_0
 
     .line 316
-    iget-object v0, p0, Lorg/telegram/ui/PasscodeActivity;->walletEnterPasswordPresenter:Lcom/smedialink/ui/wallet/crypto/enter/password/EnterWalletPasswordPresenter;
+    iget-object v0, p0, Lorg/telegram/ui/PasscodeActivity;->walletEnterPasswordPresenter:Lcom/iMe/ui/wallet/crypto/enter/password/EnterWalletPasswordPresenter;
 
-    new-instance v1, Lorg/telegram/ui/PasscodeActivity$$ExternalSyntheticLambda15;
+    new-instance v1, Lorg/telegram/ui/PasscodeActivity$$ExternalSyntheticLambda17;
 
-    invoke-direct {v1, p0}, Lorg/telegram/ui/PasscodeActivity$$ExternalSyntheticLambda15;-><init>(Lorg/telegram/ui/PasscodeActivity;)V
+    invoke-direct {v1, p0}, Lorg/telegram/ui/PasscodeActivity$$ExternalSyntheticLambda17;-><init>(Lorg/telegram/ui/PasscodeActivity;)V
 
-    invoke-virtual {v0, v1}, Lcom/smedialink/ui/wallet/crypto/enter/password/EnterWalletPasswordPresenter;->subscribeOnRxEvents(Ljava/lang/Runnable;)V
+    invoke-virtual {v0, v1}, Lcom/iMe/ui/wallet/crypto/enter/password/EnterWalletPasswordPresenter;->subscribeOnRxEvents(Ljava/lang/Runnable;)V
 
     goto :goto_0
 
@@ -8066,64 +8066,64 @@
     if-ne v0, v1, :cond_1
 
     .line 318
-    iget-object v0, p0, Lorg/telegram/ui/PasscodeActivity;->walletCreatePasscodePresenter:Lcom/smedialink/ui/wallet/crypto/create/password/CreateWalletPasswordPresenter;
+    iget-object v0, p0, Lorg/telegram/ui/PasscodeActivity;->walletCreatePasscodePresenter:Lcom/iMe/ui/wallet/crypto/create/password/CreateWalletPasswordPresenter;
 
-    new-instance v1, Lorg/telegram/ui/PasscodeActivity$$ExternalSyntheticLambda15;
+    new-instance v1, Lorg/telegram/ui/PasscodeActivity$$ExternalSyntheticLambda17;
 
-    invoke-direct {v1, p0}, Lorg/telegram/ui/PasscodeActivity$$ExternalSyntheticLambda15;-><init>(Lorg/telegram/ui/PasscodeActivity;)V
+    invoke-direct {v1, p0}, Lorg/telegram/ui/PasscodeActivity$$ExternalSyntheticLambda17;-><init>(Lorg/telegram/ui/PasscodeActivity;)V
 
-    invoke-virtual {v0, v1}, Lcom/smedialink/ui/wallet/crypto/create/password/CreateWalletPasswordPresenter;->subscribeOnRxEvents(Ljava/lang/Runnable;)V
+    invoke-virtual {v0, v1}, Lcom/iMe/ui/wallet/crypto/create/password/CreateWalletPasswordPresenter;->subscribeOnRxEvents(Ljava/lang/Runnable;)V
 
     :cond_1
     :goto_0
     return-void
 .end method
 
-.method provideWalletEnterPasswordPresenter()Lcom/smedialink/ui/wallet/crypto/enter/password/EnterWalletPasswordPresenter;
+.method provideWalletEnterPasswordPresenter()Lcom/iMe/ui/wallet/crypto/enter/password/EnterWalletPasswordPresenter;
     .locals 1
     .annotation runtime Lmoxy/presenter/ProvidePresenter;
     .end annotation
 
     .line 159
-    const-class v0, Lcom/smedialink/ui/wallet/crypto/enter/password/EnterWalletPasswordPresenter;
+    const-class v0, Lcom/iMe/ui/wallet/crypto/enter/password/EnterWalletPasswordPresenter;
 
     invoke-static {v0}, Lorg/koin/java/KoinJavaComponent;->get(Ljava/lang/Class;)Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Lcom/smedialink/ui/wallet/crypto/enter/password/EnterWalletPasswordPresenter;
+    check-cast v0, Lcom/iMe/ui/wallet/crypto/enter/password/EnterWalletPasswordPresenter;
 
     return-object v0
 .end method
 
-.method provideWalletPasswordPresenter()Lcom/smedialink/ui/wallet/crypto/create/password/CreateWalletPasswordPresenter;
+.method provideWalletPasswordPresenter()Lcom/iMe/ui/wallet/crypto/create/password/CreateWalletPasswordPresenter;
     .locals 1
     .annotation runtime Lmoxy/presenter/ProvidePresenter;
     .end annotation
 
     .line 149
-    const-class v0, Lcom/smedialink/ui/wallet/crypto/create/password/CreateWalletPasswordPresenter;
+    const-class v0, Lcom/iMe/ui/wallet/crypto/create/password/CreateWalletPasswordPresenter;
 
     invoke-static {v0}, Lorg/koin/java/KoinJavaComponent;->get(Ljava/lang/Class;)Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Lcom/smedialink/ui/wallet/crypto/create/password/CreateWalletPasswordPresenter;
+    check-cast v0, Lcom/iMe/ui/wallet/crypto/create/password/CreateWalletPasswordPresenter;
 
     return-object v0
 .end method
 
-.method provideWalletPinPresenter()Lcom/smedialink/ui/wallet/crypto/create/pin/CreateWalletPinPresenter;
+.method provideWalletPinPresenter()Lcom/iMe/ui/wallet/crypto/create/pin/CreateWalletPinPresenter;
     .locals 3
     .annotation runtime Lmoxy/presenter/ProvidePresenter;
     .end annotation
 
     .line 154
-    const-class v0, Lcom/smedialink/ui/wallet/crypto/create/pin/CreateWalletPinPresenter;
+    const-class v0, Lcom/iMe/ui/wallet/crypto/create/pin/CreateWalletPinPresenter;
 
-    new-instance v1, Lorg/telegram/ui/PasscodeActivity$$ExternalSyntheticLambda28;
+    new-instance v1, Lorg/telegram/ui/PasscodeActivity$$ExternalSyntheticLambda30;
 
-    invoke-direct {v1, p0}, Lorg/telegram/ui/PasscodeActivity$$ExternalSyntheticLambda28;-><init>(Lorg/telegram/ui/PasscodeActivity;)V
+    invoke-direct {v1, p0}, Lorg/telegram/ui/PasscodeActivity$$ExternalSyntheticLambda30;-><init>(Lorg/telegram/ui/PasscodeActivity;)V
 
     const/4 v2, 0x0
 
@@ -8131,7 +8131,7 @@
 
     move-result-object v0
 
-    check-cast v0, Lcom/smedialink/ui/wallet/crypto/create/pin/CreateWalletPinPresenter;
+    check-cast v0, Lcom/iMe/ui/wallet/crypto/create/pin/CreateWalletPinPresenter;
 
     return-object v0
 .end method
@@ -8157,7 +8157,7 @@
     return v0
 .end method
 
-.method public showDeleteWalletDialog(Lcom/smedialink/model/dialog/DialogModel;)V
+.method public showDeleteWalletDialog(Lcom/iMe/model/dialog/DialogModel;)V
     .locals 3
 
     .line 337
@@ -8165,19 +8165,19 @@
 
     move-result-object v0
 
-    iget-object v1, p0, Lorg/telegram/ui/PasscodeActivity;->walletEnterPasswordPresenter:Lcom/smedialink/ui/wallet/crypto/enter/password/EnterWalletPasswordPresenter;
+    iget-object v1, p0, Lorg/telegram/ui/PasscodeActivity;->walletEnterPasswordPresenter:Lcom/iMe/ui/wallet/crypto/enter/password/EnterWalletPasswordPresenter;
 
     .line 339
     invoke-static {v1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    new-instance v2, Lorg/telegram/ui/PasscodeActivity$$ExternalSyntheticLambda29;
+    new-instance v2, Lorg/telegram/ui/PasscodeActivity$$ExternalSyntheticLambda14;
 
-    invoke-direct {v2, v1}, Lorg/telegram/ui/PasscodeActivity$$ExternalSyntheticLambda29;-><init>(Lcom/smedialink/ui/wallet/crypto/enter/password/EnterWalletPasswordPresenter;)V
+    invoke-direct {v2, v1}, Lorg/telegram/ui/PasscodeActivity$$ExternalSyntheticLambda14;-><init>(Lcom/iMe/ui/wallet/crypto/enter/password/EnterWalletPasswordPresenter;)V
 
     const/4 v1, 0x0
 
     .line 336
-    invoke-static {v0, p1, v2, v1}, Lcom/smedialink/utils/dialogs/DialogUtils;->createDialog(Landroid/content/Context;Lcom/smedialink/model/dialog/DialogModel;Lorg/fork/utils/Callbacks$Callback;Lorg/fork/utils/Callbacks$Callback;)Lorg/telegram/ui/ActionBar/AlertDialog;
+    invoke-static {v0, p1, v2, v1}, Lcom/iMe/utils/dialogs/DialogUtils;->createDialog(Landroid/content/Context;Lcom/iMe/model/dialog/DialogModel;Lcom/iMe/fork/utils/Callbacks$Callback;Lcom/iMe/fork/utils/Callbacks$Callback;)Lorg/telegram/ui/ActionBar/AlertDialog;
 
     move-result-object p1
 
@@ -8185,7 +8185,7 @@
     invoke-virtual {p0, p1}, Lorg/telegram/ui/ActionBar/BaseFragment;->showDialog(Landroid/app/Dialog;)Landroid/app/Dialog;
 
     .line 343
-    invoke-static {p1}, Lcom/smedialink/utils/dialogs/DialogExtKt;->makeRedPositiveButton(Lorg/telegram/ui/ActionBar/AlertDialog;)V
+    invoke-static {p1}, Lcom/iMe/utils/dialogs/DialogExtKt;->makeRedPositiveButton(Lorg/telegram/ui/ActionBar/AlertDialog;)V
 
     return-void
 .end method
@@ -8194,14 +8194,14 @@
     .locals 2
 
     .line 324
-    new-instance v0, Lcom/smedialink/model/wallet/crypto/create/CreateWalletScreenType$Import;
+    new-instance v0, Lcom/iMe/model/wallet/crypto/create/CreateWalletScreenType$Import;
 
     const-string v1, ""
 
-    invoke-direct {v0, p1, v1}, Lcom/smedialink/model/wallet/crypto/create/CreateWalletScreenType$Import;-><init>(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-direct {v0, p1, v1}, Lcom/iMe/model/wallet/crypto/create/CreateWalletScreenType$Import;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 325
-    invoke-static {v0}, Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment;->newInstance(Lcom/smedialink/model/wallet/crypto/create/CreateWalletScreenType;)Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment;
+    invoke-static {v0}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;->newInstance(Lcom/iMe/model/wallet/crypto/create/CreateWalletScreenType;)Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;
 
     move-result-object p1
 

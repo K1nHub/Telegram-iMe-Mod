@@ -2,10 +2,10 @@ package com.iMe.i_staking.repository;
 
 import com.iMe.i_staking.mapper.StakingDetailedMetadataMapperKt;
 import com.iMe.i_staking.response.StakingDetailedMetadataResponse;
-import com.smedialink.storage.data.network.handlers.impl.FirebaseFunctionsErrorHandler;
-import com.smedialink.storage.data.network.model.response.base.ApiBaseResponse;
-import com.smedialink.storage.domain.model.Result;
-import com.smedialink.storage.domain.model.staking.StakingDetailedMetadata;
+import com.iMe.storage.data.network.handlers.impl.FirebaseFunctionsErrorHandler;
+import com.iMe.storage.data.network.model.response.base.ApiBaseResponse;
+import com.iMe.storage.domain.model.Result;
+import com.iMe.storage.domain.model.staking.StakingDetailedMetadata;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.Lambda;

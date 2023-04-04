@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/ActionBar/ActionBarMenuItem;)V
     .locals 0
 
-    .line 1587
+    .line 1586
     iput-object p1, p0, Lorg/telegram/ui/ActionBar/ActionBarMenuItem$13;->this$0:Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
 
     invoke-direct {p0}, Lorg/telegram/ui/Components/CloseProgressDrawable2;-><init>()V
@@ -35,7 +35,7 @@
 .method public getCurrentColor()I
     .locals 1
 
-    .line 1590
+    .line 1589
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/ActionBarMenuItem$13;->this$0:Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
 
     invoke-static {v0}, Lorg/telegram/ui/ActionBar/ActionBarMenuItem;->access$1600(Lorg/telegram/ui/ActionBar/ActionBarMenuItem;)Lorg/telegram/ui/ActionBar/ActionBarMenu;

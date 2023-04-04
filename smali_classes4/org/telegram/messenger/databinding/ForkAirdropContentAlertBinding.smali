@@ -7,7 +7,7 @@
 
 
 # instance fields
-.field public final buttonAction:Lcom/smedialink/ui/custom/ActionButton;
+.field public final buttonAction:Lcom/iMe/ui/custom/ActionButton;
 
 .field public final checkboxAuth:Lorg/telegram/ui/Cells/CheckBoxCell;
 
@@ -29,7 +29,7 @@
 
 
 # direct methods
-.method private constructor <init>(Landroid/widget/LinearLayout;Lcom/smedialink/ui/custom/ActionButton;Lorg/telegram/ui/Cells/CheckBoxCell;Lorg/telegram/ui/Cells/CheckBoxCell;Lorg/telegram/ui/Cells/CheckBoxCell;Lorg/telegram/ui/Components/RLottieImageView;Lorg/telegram/ui/ActionBar/ActionBarMenuItem;Landroid/widget/LinearLayout;Landroidx/appcompat/widget/AppCompatTextView;Landroidx/appcompat/widget/AppCompatTextView;Landroidx/appcompat/widget/AppCompatTextView;)V
+.method private constructor <init>(Landroid/widget/LinearLayout;Lcom/iMe/ui/custom/ActionButton;Lorg/telegram/ui/Cells/CheckBoxCell;Lorg/telegram/ui/Cells/CheckBoxCell;Lorg/telegram/ui/Cells/CheckBoxCell;Lorg/telegram/ui/Components/RLottieImageView;Lorg/telegram/ui/ActionBar/ActionBarMenuItem;Landroid/widget/LinearLayout;Landroidx/appcompat/widget/AppCompatTextView;Landroidx/appcompat/widget/AppCompatTextView;Landroidx/appcompat/widget/AppCompatTextView;)V
     .locals 0
 
     .line 61
@@ -39,7 +39,7 @@
     iput-object p1, p0, Lorg/telegram/messenger/databinding/ForkAirdropContentAlertBinding;->rootView:Landroid/widget/LinearLayout;
 
     .line 63
-    iput-object p2, p0, Lorg/telegram/messenger/databinding/ForkAirdropContentAlertBinding;->buttonAction:Lcom/smedialink/ui/custom/ActionButton;
+    iput-object p2, p0, Lorg/telegram/messenger/databinding/ForkAirdropContentAlertBinding;->buttonAction:Lcom/iMe/ui/custom/ActionButton;
 
     .line 64
     iput-object p3, p0, Lorg/telegram/messenger/databinding/ForkAirdropContentAlertBinding;->checkboxAuth:Lorg/telegram/ui/Cells/CheckBoxCell;
@@ -81,7 +81,7 @@
 
     move-object v4, v1
 
-    check-cast v4, Lcom/smedialink/ui/custom/ActionButton;
+    check-cast v4, Lcom/iMe/ui/custom/ActionButton;
 
     if-eqz v4, :cond_0
 
@@ -209,7 +209,7 @@
 
     move-object v3, v10
 
-    invoke-direct/range {v2 .. v13}, Lorg/telegram/messenger/databinding/ForkAirdropContentAlertBinding;-><init>(Landroid/widget/LinearLayout;Lcom/smedialink/ui/custom/ActionButton;Lorg/telegram/ui/Cells/CheckBoxCell;Lorg/telegram/ui/Cells/CheckBoxCell;Lorg/telegram/ui/Cells/CheckBoxCell;Lorg/telegram/ui/Components/RLottieImageView;Lorg/telegram/ui/ActionBar/ActionBarMenuItem;Landroid/widget/LinearLayout;Landroidx/appcompat/widget/AppCompatTextView;Landroidx/appcompat/widget/AppCompatTextView;Landroidx/appcompat/widget/AppCompatTextView;)V
+    invoke-direct/range {v2 .. v13}, Lorg/telegram/messenger/databinding/ForkAirdropContentAlertBinding;-><init>(Landroid/widget/LinearLayout;Lcom/iMe/ui/custom/ActionButton;Lorg/telegram/ui/Cells/CheckBoxCell;Lorg/telegram/ui/Cells/CheckBoxCell;Lorg/telegram/ui/Cells/CheckBoxCell;Lorg/telegram/ui/Components/RLottieImageView;Lorg/telegram/ui/ActionBar/ActionBarMenuItem;Landroid/widget/LinearLayout;Landroidx/appcompat/widget/AppCompatTextView;Landroidx/appcompat/widget/AppCompatTextView;Landroidx/appcompat/widget/AppCompatTextView;)V
 
     return-object p0
 

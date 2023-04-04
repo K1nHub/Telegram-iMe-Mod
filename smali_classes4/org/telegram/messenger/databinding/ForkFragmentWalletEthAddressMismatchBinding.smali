@@ -7,7 +7,7 @@
 
 
 # instance fields
-.field public final buttonBackup:Lcom/smedialink/ui/custom/ActionButton;
+.field public final buttonBackup:Lcom/iMe/ui/custom/ActionButton;
 
 .field public final buttonDelete:Landroidx/appcompat/widget/AppCompatButton;
 
@@ -21,7 +21,7 @@
 
 
 # direct methods
-.method private constructor <init>(Landroid/widget/RelativeLayout;Lcom/smedialink/ui/custom/ActionButton;Landroidx/appcompat/widget/AppCompatButton;Lorg/telegram/ui/Components/RLottieImageView;Landroidx/appcompat/widget/AppCompatTextView;Landroidx/appcompat/widget/AppCompatTextView;)V
+.method private constructor <init>(Landroid/widget/RelativeLayout;Lcom/iMe/ui/custom/ActionButton;Landroidx/appcompat/widget/AppCompatButton;Lorg/telegram/ui/Components/RLottieImageView;Landroidx/appcompat/widget/AppCompatTextView;Landroidx/appcompat/widget/AppCompatTextView;)V
     .locals 0
 
     .line 43
@@ -31,7 +31,7 @@
     iput-object p1, p0, Lorg/telegram/messenger/databinding/ForkFragmentWalletEthAddressMismatchBinding;->rootView:Landroid/widget/RelativeLayout;
 
     .line 45
-    iput-object p2, p0, Lorg/telegram/messenger/databinding/ForkFragmentWalletEthAddressMismatchBinding;->buttonBackup:Lcom/smedialink/ui/custom/ActionButton;
+    iput-object p2, p0, Lorg/telegram/messenger/databinding/ForkFragmentWalletEthAddressMismatchBinding;->buttonBackup:Lcom/iMe/ui/custom/ActionButton;
 
     .line 46
     iput-object p3, p0, Lorg/telegram/messenger/databinding/ForkFragmentWalletEthAddressMismatchBinding;->buttonDelete:Landroidx/appcompat/widget/AppCompatButton;
@@ -61,7 +61,7 @@
 
     move-object v4, v1
 
-    check-cast v4, Lcom/smedialink/ui/custom/ActionButton;
+    check-cast v4, Lcom/iMe/ui/custom/ActionButton;
 
     if-eqz v4, :cond_0
 
@@ -130,7 +130,7 @@
 
     move-object v2, v0
 
-    invoke-direct/range {v2 .. v8}, Lorg/telegram/messenger/databinding/ForkFragmentWalletEthAddressMismatchBinding;-><init>(Landroid/widget/RelativeLayout;Lcom/smedialink/ui/custom/ActionButton;Landroidx/appcompat/widget/AppCompatButton;Lorg/telegram/ui/Components/RLottieImageView;Landroidx/appcompat/widget/AppCompatTextView;Landroidx/appcompat/widget/AppCompatTextView;)V
+    invoke-direct/range {v2 .. v8}, Lorg/telegram/messenger/databinding/ForkFragmentWalletEthAddressMismatchBinding;-><init>(Landroid/widget/RelativeLayout;Lcom/iMe/ui/custom/ActionButton;Landroidx/appcompat/widget/AppCompatButton;Lorg/telegram/ui/Components/RLottieImageView;Landroidx/appcompat/widget/AppCompatTextView;Landroidx/appcompat/widget/AppCompatTextView;)V
 
     return-object v0
 

@@ -2,8 +2,8 @@ package com.iMe.i_staking.mapper;
 
 import com.iMe.i_staking.response.StakingOperationCostResponse;
 import com.iMe.i_staking.response.StakingValuesResponse;
-import com.smedialink.storage.domain.model.staking.StakingOperationCost;
-import com.smedialink.storage.domain.model.staking.StakingValues;
+import com.iMe.storage.domain.model.staking.StakingOperationCost;
+import com.iMe.storage.domain.model.staking.StakingValues;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: StakingOperationCostMapper.kt */
 /* loaded from: classes3.dex */

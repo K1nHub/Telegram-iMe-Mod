@@ -33,7 +33,7 @@ public class View {
         final ImmutableSortedSet<DocumentKey> mutatedKeys;
         private final boolean needsRefill;
 
-        /* synthetic */ DocumentChanges(DocumentSet documentSet, DocumentViewChangeSet documentViewChangeSet, ImmutableSortedSet immutableSortedSet, boolean z, C10051 c10051) {
+        /* synthetic */ DocumentChanges(DocumentSet documentSet, DocumentViewChangeSet documentViewChangeSet, ImmutableSortedSet immutableSortedSet, boolean z, C10191 c10191) {
             this(documentSet, documentViewChangeSet, immutableSortedSet, z);
         }
 
@@ -196,7 +196,7 @@ public class View {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.google.firebase.firestore.core.View$1 */
     /* loaded from: classes3.dex */
-    public static /* synthetic */ class C10051 {
+    public static /* synthetic */ class C10191 {
 
         /* renamed from: $SwitchMap$com$google$firebase$firestore$core$DocumentViewChange$Type */
         static final /* synthetic */ int[] f169x33862af7;
@@ -224,7 +224,7 @@ public class View {
     }
 
     private static int changeTypeOrder(DocumentViewChange documentViewChange) {
-        int i = C10051.f169x33862af7[documentViewChange.getType().ordinal()];
+        int i = C10191.f169x33862af7[documentViewChange.getType().ordinal()];
         int i2 = 1;
         if (i != 1) {
             i2 = 2;

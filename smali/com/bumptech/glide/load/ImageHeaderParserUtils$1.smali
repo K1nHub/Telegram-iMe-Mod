@@ -25,7 +25,7 @@
 .method constructor <init>(Ljava/io/InputStream;)V
     .locals 0
 
-    .line 44
+    .line 45
     iput-object p1, p0, Lcom/bumptech/glide/load/ImageHeaderParserUtils$1;->val$finalIs:Ljava/io/InputStream;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -35,7 +35,7 @@
 
 
 # virtual methods
-.method public getType(Lcom/bumptech/glide/load/ImageHeaderParser;)Lcom/bumptech/glide/load/ImageHeaderParser$ImageType;
+.method public getTypeAndRewind(Lcom/bumptech/glide/load/ImageHeaderParser;)Lcom/bumptech/glide/load/ImageHeaderParser$ImageType;
     .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
@@ -43,7 +43,7 @@
         }
     .end annotation
 
-    .line 48
+    .line 49
     :try_start_0
     iget-object v0, p0, Lcom/bumptech/glide/load/ImageHeaderParserUtils$1;->val$finalIs:Ljava/io/InputStream;
 
@@ -53,7 +53,7 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 50
+    .line 51
     iget-object v0, p0, Lcom/bumptech/glide/load/ImageHeaderParserUtils$1;->val$finalIs:Ljava/io/InputStream;
 
     invoke-virtual {v0}, Ljava/io/InputStream;->reset()V
@@ -67,5 +67,6 @@
 
     invoke-virtual {v0}, Ljava/io/InputStream;->reset()V
 
+    .line 52
     throw p1
 .end method

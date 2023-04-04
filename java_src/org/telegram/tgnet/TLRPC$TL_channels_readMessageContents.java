@@ -7,7 +7,7 @@ public class TLRPC$TL_channels_readMessageContents extends TLObject {
     public TLRPC$InputChannel channel;
 
     /* renamed from: id */
-    public ArrayList<Integer> f1543id = new ArrayList<>();
+    public ArrayList<Integer> f1545id = new ArrayList<>();
 
     @Override // org.telegram.tgnet.TLObject
     public TLObject deserializeResponse(AbstractSerializedData abstractSerializedData, int i, boolean z) {
@@ -19,10 +19,10 @@ public class TLRPC$TL_channels_readMessageContents extends TLObject {
         abstractSerializedData.writeInt32(constructor);
         this.channel.serializeToStream(abstractSerializedData);
         abstractSerializedData.writeInt32(481674261);
-        int size = this.f1543id.size();
+        int size = this.f1545id.size();
         abstractSerializedData.writeInt32(size);
         for (int i = 0; i < size; i++) {
-            abstractSerializedData.writeInt32(this.f1543id.get(i).intValue());
+            abstractSerializedData.writeInt32(this.f1545id.get(i).intValue());
         }
     }
 }

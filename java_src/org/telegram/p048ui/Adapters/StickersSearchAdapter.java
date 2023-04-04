@@ -18,7 +18,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3301R;
+import org.telegram.messenger.C3316R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.UserConfig;
@@ -73,7 +73,7 @@ public class StickersSearchAdapter extends RecyclerListView.SelectionAdapter {
     private HashMap<ArrayList<TLRPC$Document>, String> emojiStickers = new HashMap<>();
     private ArrayList<ArrayList<TLRPC$Document>> emojiArrays = new ArrayList<>();
     private SparseArray<TLRPC$StickerSetCovered> positionsToSets = new SparseArray<>();
-    private Runnable searchRunnable = new RunnableC35041();
+    private Runnable searchRunnable = new RunnableC35191();
 
     /* renamed from: org.telegram.ui.Adapters.StickersSearchAdapter$Delegate */
     /* loaded from: classes5.dex */
@@ -109,8 +109,8 @@ public class StickersSearchAdapter extends RecyclerListView.SelectionAdapter {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: org.telegram.ui.Adapters.StickersSearchAdapter$1 */
     /* loaded from: classes5.dex */
-    public class RunnableC35041 implements Runnable {
-        RunnableC35041() {
+    public class RunnableC35191 implements Runnable {
+        RunnableC35191() {
         }
 
         private void clear() {
@@ -143,7 +143,7 @@ public class StickersSearchAdapter extends RecyclerListView.SelectionAdapter {
                 Method dump skipped, instructions count: 789
                 To view this dump add '--comments-level debug' option
             */
-            throw new UnsupportedOperationException("Method not decompiled: org.telegram.p048ui.Adapters.StickersSearchAdapter.RunnableC35041.run():void");
+            throw new UnsupportedOperationException("Method not decompiled: org.telegram.p048ui.Adapters.StickersSearchAdapter.RunnableC35191.run():void");
         }
 
         /* JADX INFO: Access modifiers changed from: private */
@@ -176,7 +176,7 @@ public class StickersSearchAdapter extends RecyclerListView.SelectionAdapter {
                 AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Adapters.StickersSearchAdapter$1$$ExternalSyntheticLambda1
                     @Override // java.lang.Runnable
                     public final void run() {
-                        StickersSearchAdapter.RunnableC35041.this.lambda$run$1(tLRPC$TL_messages_searchStickerSets, tLObject);
+                        StickersSearchAdapter.RunnableC35191.this.lambda$run$1(tLRPC$TL_messages_searchStickerSets, tLObject);
                     }
                 });
             }
@@ -184,7 +184,7 @@ public class StickersSearchAdapter extends RecyclerListView.SelectionAdapter {
 
         /* JADX INFO: Access modifiers changed from: private */
         public /* synthetic */ void lambda$run$1(TLRPC$TL_messages_searchStickerSets tLRPC$TL_messages_searchStickerSets, TLObject tLObject) {
-            if (tLRPC$TL_messages_searchStickerSets.f1607q.equals(StickersSearchAdapter.this.searchQuery)) {
+            if (tLRPC$TL_messages_searchStickerSets.f1609q.equals(StickersSearchAdapter.this.searchQuery)) {
                 clear();
                 StickersSearchAdapter.this.delegate.onSearchStop();
                 StickersSearchAdapter.this.reqId = 0;
@@ -199,7 +199,7 @@ public class StickersSearchAdapter extends RecyclerListView.SelectionAdapter {
             AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Adapters.StickersSearchAdapter$1$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    StickersSearchAdapter.RunnableC35041.this.lambda$run$3(tLRPC$TL_messages_getStickers, tLObject, arrayList, longSparseArray);
+                    StickersSearchAdapter.RunnableC35191.this.lambda$run$3(tLRPC$TL_messages_getStickers, tLObject, arrayList, longSparseArray);
                 }
             });
         }
@@ -214,7 +214,7 @@ public class StickersSearchAdapter extends RecyclerListView.SelectionAdapter {
                     int size2 = tLRPC$TL_messages_stickers.stickers.size();
                     for (int i = 0; i < size2; i++) {
                         TLRPC$Document tLRPC$Document = tLRPC$TL_messages_stickers.stickers.get(i);
-                        if (longSparseArray.indexOfKey(tLRPC$Document.f1508id) < 0) {
+                        if (longSparseArray.indexOfKey(tLRPC$Document.f1510id) < 0) {
                             arrayList.add(tLRPC$Document);
                         }
                     }
@@ -289,11 +289,11 @@ public class StickersSearchAdapter extends RecyclerListView.SelectionAdapter {
     public /* synthetic */ void lambda$onCreateViewHolder$0(View view) {
         FeaturedStickerSetInfoCell featuredStickerSetInfoCell = (FeaturedStickerSetInfoCell) view.getParent();
         TLRPC$StickerSetCovered stickerSet = featuredStickerSetInfoCell.getStickerSet();
-        if (stickerSet == null || this.installingStickerSets.indexOfKey(stickerSet.set.f1533id) >= 0 || this.removingStickerSets.indexOfKey(stickerSet.set.f1533id) >= 0) {
+        if (stickerSet == null || this.installingStickerSets.indexOfKey(stickerSet.set.f1535id) >= 0 || this.removingStickerSets.indexOfKey(stickerSet.set.f1535id) >= 0) {
             return;
         }
         if (featuredStickerSetInfoCell.isInstalled()) {
-            this.removingStickerSets.put(stickerSet.set.f1533id, stickerSet);
+            this.removingStickerSets.put(stickerSet.set.f1535id, stickerSet);
             this.delegate.onStickerSetRemove(featuredStickerSetInfoCell.getStickerSet());
             return;
         }
@@ -338,13 +338,13 @@ public class StickersSearchAdapter extends RecyclerListView.SelectionAdapter {
                 ImageView imageView = new ImageView(this.context);
                 this.emptyImageView = imageView;
                 imageView.setScaleType(ImageView.ScaleType.CENTER);
-                this.emptyImageView.setImageResource(C3301R.C3303drawable.stickers_empty);
+                this.emptyImageView.setImageResource(C3316R.C3318drawable.stickers_empty);
                 this.emptyImageView.setColorFilter(new PorterDuffColorFilter(getThemedColor("chat_emojiPanelEmptyText"), PorterDuff.Mode.MULTIPLY));
                 linearLayout2.addView(this.emptyImageView, LayoutHelper.createLinear(-2, -2));
                 linearLayout2.addView(new Space(this.context), LayoutHelper.createLinear(-1, 15));
                 TextView textView = new TextView(this.context);
                 this.emptyTextView = textView;
-                textView.setText(LocaleController.getString("NoStickersFound", C3301R.string.NoStickersFound));
+                textView.setText(LocaleController.getString("NoStickersFound", C3316R.string.NoStickersFound));
                 this.emptyTextView.setTextSize(1, 16.0f);
                 this.emptyTextView.setTextColor(getThemedColor("chat_emojiPanelEmptyText"));
                 linearLayout2.addView(this.emptyTextView, LayoutHelper.createLinear(-2, -2));
@@ -405,7 +405,7 @@ public class StickersSearchAdapter extends RecyclerListView.SelectionAdapter {
     public void installStickerSet(TLRPC$InputStickerSet tLRPC$InputStickerSet) {
         for (int i = 0; i < this.serverPacks.size(); i++) {
             TLRPC$StickerSetCovered tLRPC$StickerSetCovered = this.serverPacks.get(i);
-            if (tLRPC$StickerSetCovered.set.f1533id == tLRPC$InputStickerSet.f1523id) {
+            if (tLRPC$StickerSetCovered.set.f1535id == tLRPC$InputStickerSet.f1525id) {
                 installStickerSet(tLRPC$StickerSetCovered, null);
                 return;
             }
@@ -444,7 +444,7 @@ public class StickersSearchAdapter extends RecyclerListView.SelectionAdapter {
         r8.setAddDrawProgress(true, true);
      */
     /* JADX WARN: Code restructure failed: missing block: B:27:0x0059, code lost:
-        r6.installingStickerSets.put(r7.set.f1533id, r7);
+        r6.installingStickerSets.put(r7.set.f1535id, r7);
      */
     /* JADX WARN: Code restructure failed: missing block: B:28:0x0062, code lost:
         if (r8 == null) goto L28;
@@ -466,7 +466,7 @@ public class StickersSearchAdapter extends RecyclerListView.SelectionAdapter {
         if (r2 == null) goto L39;
      */
     /* JADX WARN: Code restructure failed: missing block: B:35:0x008b, code lost:
-        if (r2.set.f1533id != r7.set.f1533id) goto L37;
+        if (r2.set.f1535id != r7.set.f1535id) goto L37;
      */
     /* JADX WARN: Code restructure failed: missing block: B:36:0x008d, code lost:
         notifyItemChanged(r1, 0);
@@ -503,7 +503,7 @@ public class StickersSearchAdapter extends RecyclerListView.SelectionAdapter {
             org.telegram.tgnet.TLRPC$StickerSetCovered[] r3 = r6.primaryInstallingStickerSets
             r3 = r3[r1]
             org.telegram.tgnet.TLRPC$StickerSet r3 = r3.set
-            long r3 = r3.f1533id
+            long r3 = r3.f1535id
             org.telegram.tgnet.TLRPC$TL_messages_stickerSet r2 = r2.getStickerSetById(r3)
             if (r2 == 0) goto L2b
             org.telegram.tgnet.TLRPC$StickerSet r2 = r2.set
@@ -517,9 +517,9 @@ public class StickersSearchAdapter extends RecyclerListView.SelectionAdapter {
             org.telegram.tgnet.TLRPC$StickerSetCovered[] r2 = r6.primaryInstallingStickerSets
             r2 = r2[r1]
             org.telegram.tgnet.TLRPC$StickerSet r2 = r2.set
-            long r2 = r2.f1533id
+            long r2 = r2.f1535id
             org.telegram.tgnet.TLRPC$StickerSet r4 = r7.set
-            long r4 = r4.f1533id
+            long r4 = r4.f1535id
             int r2 = (r2 > r4 ? 1 : (r2 == r4 ? 0 : -1))
             if (r2 != 0) goto L3c
             return
@@ -550,7 +550,7 @@ public class StickersSearchAdapter extends RecyclerListView.SelectionAdapter {
         L59:
             android.util.LongSparseArray<org.telegram.tgnet.TLRPC$StickerSetCovered> r2 = r6.installingStickerSets
             org.telegram.tgnet.TLRPC$StickerSet r3 = r7.set
-            long r3 = r3.f1533id
+            long r3 = r3.f1535id
             r2.put(r3, r7)
             if (r8 == 0) goto L6e
             org.telegram.ui.Adapters.StickersSearchAdapter$Delegate r7 = r6.delegate
@@ -568,9 +568,9 @@ public class StickersSearchAdapter extends RecyclerListView.SelectionAdapter {
             org.telegram.tgnet.TLRPC$StickerSetCovered r2 = (org.telegram.tgnet.TLRPC$StickerSetCovered) r2
             if (r2 == 0) goto L95
             org.telegram.tgnet.TLRPC$StickerSet r2 = r2.set
-            long r2 = r2.f1533id
+            long r2 = r2.f1535id
             org.telegram.tgnet.TLRPC$StickerSet r4 = r7.set
-            long r4 = r4.f1533id
+            long r4 = r4.f1535id
             int r2 = (r2 > r4 ? 1 : (r2 == r4 ? 0 : -1))
             if (r2 != 0) goto L95
             java.lang.Integer r7 = java.lang.Integer.valueOf(r0)
@@ -592,7 +592,7 @@ public class StickersSearchAdapter extends RecyclerListView.SelectionAdapter {
         MediaDataController mediaDataController = MediaDataController.getInstance(this.currentAccount);
         ArrayList<Long> unreadStickerSets = mediaDataController.getUnreadStickerSets();
         TLRPC$StickerSetCovered tLRPC$StickerSetCovered = (TLRPC$StickerSetCovered) this.cache.get(i);
-        boolean z5 = unreadStickerSets != null && unreadStickerSets.contains(Long.valueOf(tLRPC$StickerSetCovered.set.f1533id));
+        boolean z5 = unreadStickerSets != null && unreadStickerSets.contains(Long.valueOf(tLRPC$StickerSetCovered.set.f1535id));
         int i2 = 0;
         while (true) {
             TLRPC$StickerSetCovered[] tLRPC$StickerSetCoveredArr = this.primaryInstallingStickerSets;
@@ -601,10 +601,10 @@ public class StickersSearchAdapter extends RecyclerListView.SelectionAdapter {
                 break;
             }
             if (tLRPC$StickerSetCoveredArr[i2] != null) {
-                TLRPC$TL_messages_stickerSet stickerSetById = MediaDataController.getInstance(this.currentAccount).getStickerSetById(this.primaryInstallingStickerSets[i2].set.f1533id);
+                TLRPC$TL_messages_stickerSet stickerSetById = MediaDataController.getInstance(this.currentAccount).getStickerSetById(this.primaryInstallingStickerSets[i2].set.f1535id);
                 if (stickerSetById != null && !stickerSetById.set.archived) {
                     this.primaryInstallingStickerSets[i2] = null;
-                } else if (this.primaryInstallingStickerSets[i2].set.f1533id == tLRPC$StickerSetCovered.set.f1533id) {
+                } else if (this.primaryInstallingStickerSets[i2].set.f1535id == tLRPC$StickerSetCovered.set.f1535id) {
                     z2 = true;
                     break;
                 }
@@ -621,16 +621,16 @@ public class StickersSearchAdapter extends RecyclerListView.SelectionAdapter {
             }
         }
         if (z5) {
-            mediaDataController.markFeaturedStickersByIdAsRead(false, tLRPC$StickerSetCovered.set.f1533id);
+            mediaDataController.markFeaturedStickersByIdAsRead(false, tLRPC$StickerSetCovered.set.f1535id);
         }
-        boolean z6 = this.installingStickerSets.indexOfKey(tLRPC$StickerSetCovered.set.f1533id) >= 0;
-        boolean z7 = this.removingStickerSets.indexOfKey(tLRPC$StickerSetCovered.set.f1533id) >= 0;
+        boolean z6 = this.installingStickerSets.indexOfKey(tLRPC$StickerSetCovered.set.f1535id) >= 0;
+        boolean z7 = this.removingStickerSets.indexOfKey(tLRPC$StickerSetCovered.set.f1535id) >= 0;
         if (z6 || z7) {
             if (z6 && featuredStickerSetInfoCell.isInstalled()) {
-                this.installingStickerSets.remove(tLRPC$StickerSetCovered.set.f1533id);
+                this.installingStickerSets.remove(tLRPC$StickerSetCovered.set.f1535id);
                 z6 = false;
             } else if (z7 && !featuredStickerSetInfoCell.isInstalled()) {
-                this.removingStickerSets.remove(tLRPC$StickerSetCovered.set.f1533id);
+                this.removingStickerSets.remove(tLRPC$StickerSetCovered.set.f1535id);
             }
         }
         if (z2 || !z6) {

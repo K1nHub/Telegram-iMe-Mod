@@ -1,6 +1,6 @@
 package com.google.android.exoplayer2.extractor.p016ts;
 
-import com.google.android.exoplayer2.C0468C;
+import com.google.android.exoplayer2.C0482C;
 import com.google.android.exoplayer2.audio.SilenceSkippingAudioProcessor;
 import com.google.android.exoplayer2.extractor.BinarySearchSeeker;
 import com.google.android.exoplayer2.extractor.ExtractorInput;
@@ -55,10 +55,10 @@ public final class PsBinarySearchSeeker extends BinarySearchSeeker {
                 } else {
                     parsableByteArray.skipBytes(4);
                     long readScrValueFromPack = PsDurationReader.readScrValueFromPack(parsableByteArray);
-                    if (readScrValueFromPack != C0468C.TIME_UNSET) {
+                    if (readScrValueFromPack != C0482C.TIME_UNSET) {
                         long adjustTsTimestamp = this.scrTimestampAdjuster.adjustTsTimestamp(readScrValueFromPack);
                         if (adjustTsTimestamp > j) {
-                            if (j3 == C0468C.TIME_UNSET) {
+                            if (j3 == C0482C.TIME_UNSET) {
                                 return BinarySearchSeeker.TimestampSearchResult.overestimatedResult(adjustTsTimestamp, j2);
                             }
                             return BinarySearchSeeker.TimestampSearchResult.targetFoundResult(j2 + i2);
@@ -73,7 +73,7 @@ public final class PsBinarySearchSeeker extends BinarySearchSeeker {
                     i = parsableByteArray.getPosition();
                 }
             }
-            if (j3 != C0468C.TIME_UNSET) {
+            if (j3 != C0482C.TIME_UNSET) {
                 return BinarySearchSeeker.TimestampSearchResult.underestimatedResult(j3, j2 + i);
             }
             return BinarySearchSeeker.TimestampSearchResult.NO_TIMESTAMP_IN_RANGE_RESULT;

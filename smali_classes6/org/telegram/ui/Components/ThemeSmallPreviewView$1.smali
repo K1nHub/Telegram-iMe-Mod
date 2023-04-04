@@ -24,7 +24,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/ThemeSmallPreviewView;Z)V
     .locals 0
 
-    .line 319
+    .line 320
     iput-object p1, p0, Lorg/telegram/ui/Components/ThemeSmallPreviewView$1;->this$0:Lorg/telegram/ui/Components/ThemeSmallPreviewView;
 
     iput-boolean p2, p0, Lorg/telegram/ui/Components/ThemeSmallPreviewView$1;->val$selected:Z
@@ -39,10 +39,10 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 1
 
-    .line 322
+    .line 323
     invoke-super {p0, p1}, Landroid/animation/AnimatorListenerAdapter;->onAnimationEnd(Landroid/animation/Animator;)V
 
-    .line 323
+    .line 324
     iget-object p1, p0, Lorg/telegram/ui/Components/ThemeSmallPreviewView$1;->this$0:Lorg/telegram/ui/Components/ThemeSmallPreviewView;
 
     iget-boolean v0, p0, Lorg/telegram/ui/Components/ThemeSmallPreviewView$1;->val$selected:Z
@@ -59,7 +59,7 @@
     :goto_0
     invoke-static {p1, v0}, Lorg/telegram/ui/Components/ThemeSmallPreviewView;->access$002(Lorg/telegram/ui/Components/ThemeSmallPreviewView;F)F
 
-    .line 324
+    .line 325
     iget-object p1, p0, Lorg/telegram/ui/Components/ThemeSmallPreviewView$1;->this$0:Lorg/telegram/ui/Components/ThemeSmallPreviewView;
 
     invoke-virtual {p1}, Landroid/widget/FrameLayout;->invalidate()V

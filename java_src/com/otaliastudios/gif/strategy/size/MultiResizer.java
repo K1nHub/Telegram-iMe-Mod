@@ -2,7 +2,7 @@ package com.otaliastudios.gif.strategy.size;
 
 import java.util.ArrayList;
 import java.util.List;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class MultiResizer implements Resizer {
     private final List<Resizer> list = new ArrayList();
 

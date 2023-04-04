@@ -10,7 +10,7 @@ public abstract class TLRPC$Poll extends TLObject {
     public int flags;
 
     /* renamed from: id */
-    public long f1532id;
+    public long f1534id;
     public boolean multiple_choice;
     public boolean public_voters;
     public String question;
@@ -26,7 +26,7 @@ public abstract class TLRPC$Poll extends TLObject {
 
                 @Override // org.telegram.tgnet.TLRPC$TL_poll, org.telegram.tgnet.TLObject
                 public void readParams(AbstractSerializedData abstractSerializedData2, boolean z2) {
-                    this.f1532id = abstractSerializedData2.readInt64(z2);
+                    this.f1534id = abstractSerializedData2.readInt64(z2);
                     int readInt32 = abstractSerializedData2.readInt32(z2);
                     this.flags = readInt32;
                     this.closed = (readInt32 & 1) != 0;
@@ -57,7 +57,7 @@ public abstract class TLRPC$Poll extends TLObject {
                 @Override // org.telegram.tgnet.TLRPC$TL_poll, org.telegram.tgnet.TLObject
                 public void serializeToStream(AbstractSerializedData abstractSerializedData2) {
                     abstractSerializedData2.writeInt32(constructor);
-                    abstractSerializedData2.writeInt64(this.f1532id);
+                    abstractSerializedData2.writeInt64(this.f1534id);
                     int i2 = this.closed ? this.flags | 1 : this.flags & (-2);
                     this.flags = i2;
                     int i3 = this.public_voters ? i2 | 2 : i2 & (-3);
@@ -85,7 +85,7 @@ public abstract class TLRPC$Poll extends TLObject {
 
                 @Override // org.telegram.tgnet.TLRPC$TL_poll, org.telegram.tgnet.TLObject
                 public void readParams(AbstractSerializedData abstractSerializedData2, boolean z2) {
-                    this.f1532id = abstractSerializedData2.readInt64(z2);
+                    this.f1534id = abstractSerializedData2.readInt64(z2);
                     int readInt32 = abstractSerializedData2.readInt32(z2);
                     this.flags = readInt32;
                     this.closed = (readInt32 & 1) != 0;
@@ -113,7 +113,7 @@ public abstract class TLRPC$Poll extends TLObject {
                 @Override // org.telegram.tgnet.TLRPC$TL_poll, org.telegram.tgnet.TLObject
                 public void serializeToStream(AbstractSerializedData abstractSerializedData2) {
                     abstractSerializedData2.writeInt32(constructor);
-                    abstractSerializedData2.writeInt64(this.f1532id);
+                    abstractSerializedData2.writeInt64(this.f1534id);
                     int i2 = this.closed ? this.flags | 1 : this.flags & (-2);
                     this.flags = i2;
                     int i3 = this.public_voters ? i2 | 2 : i2 & (-3);

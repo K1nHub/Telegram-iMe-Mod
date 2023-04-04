@@ -22,7 +22,7 @@ public @interface JsonAutoDetect {
 
     /* renamed from: com.fasterxml.jackson.annotation.JsonAutoDetect$1 */
     /* loaded from: classes.dex */
-    static /* synthetic */ class C04501 {
+    static /* synthetic */ class C04641 {
 
         /* renamed from: $SwitchMap$com$fasterxml$jackson$annotation$JsonAutoDetect$Visibility */
         static final /* synthetic */ int[] f94x23d16a11;
@@ -63,7 +63,7 @@ public @interface JsonAutoDetect {
         DEFAULT;
 
         public boolean isVisible(Member member) {
-            int i = C04501.f94x23d16a11[ordinal()];
+            int i = C04641.f94x23d16a11[ordinal()];
             if (i != 1) {
                 if (i == 3) {
                     return !Modifier.isPrivate(member.getModifiers());

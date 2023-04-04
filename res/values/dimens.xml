@@ -431,7 +431,6 @@
     <dimen name="mtrl_transition_shared_axis_slide_distance">30.0dip</dimen>
     <dimen name="new_label_bg_padding">4.0dip</dimen>
     <dimen name="new_label_corner_radius">4.0dip</dimen>
-    <dimen name="nft_image_size">70.0dip</dimen>
     <dimen name="notification_action_icon_size">32.0dip</dimen>
     <dimen name="notification_action_text_size">13.0sp</dimen>
     <dimen name="notification_big_circle_margin">12.0dip</dimen>
@@ -476,7 +475,6 @@
     <dimen name="test_navigation_bar_shadow_height">1.0dip</dimen>
     <dimen name="test_navigation_bar_text_size">12.0sp</dimen>
     <dimen name="text_size_big">20.0dip</dimen>
-    <dimen name="text_size_extra_small">10.0dip</dimen>
     <dimen name="text_size_extra_upper">18.0dip</dimen>
     <dimen name="text_size_great">24.0dip</dimen>
     <dimen name="text_size_normal">14.0dip</dimen>
@@ -484,7 +482,6 @@
     <dimen name="text_size_small">12.0dip</dimen>
     <dimen name="text_size_small_11">11.0dip</dimen>
     <dimen name="text_size_small_upper">13.0dip</dimen>
-    <dimen name="text_size_super">36.0dip</dimen>
     <dimen name="text_size_upper">16.0dip</dimen>
     <dimen name="text_size_upper_17">17.0dip</dimen>
     <dimen name="tooltip_corner_radius">2.0dip</dimen>

@@ -32,10 +32,10 @@
 .method public constructor <init>(Landroid/os/ParcelFileDescriptor;)V
     .locals 1
 
-    .line 26
+    .line 27
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 27
+    .line 28
     new-instance v0, Lcom/bumptech/glide/load/data/ParcelFileDescriptorRewinder$InternalRewinder;
 
     invoke-direct {v0, p1}, Lcom/bumptech/glide/load/data/ParcelFileDescriptorRewinder$InternalRewinder;-><init>(Landroid/os/ParcelFileDescriptor;)V
@@ -54,6 +54,17 @@
     const/16 v1, 0x15
 
     if-lt v0, v1, :cond_0
+
+    sget-object v0, Landroid/os/Build;->FINGERPRINT:Ljava/lang/String;
+
+    const-string v1, "robolectric"
+
+    .line 23
+    invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
 
     const/4 v0, 0x1
 
@@ -82,7 +93,7 @@
         }
     .end annotation
 
-    .line 34
+    .line 35
     iget-object v0, p0, Lcom/bumptech/glide/load/data/ParcelFileDescriptorRewinder;->rewinder:Lcom/bumptech/glide/load/data/ParcelFileDescriptorRewinder$InternalRewinder;
 
     invoke-virtual {v0}, Lcom/bumptech/glide/load/data/ParcelFileDescriptorRewinder$InternalRewinder;->rewind()Landroid/os/ParcelFileDescriptor;

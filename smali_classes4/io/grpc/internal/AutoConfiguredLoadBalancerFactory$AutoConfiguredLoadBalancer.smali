@@ -187,7 +187,7 @@
 
     move-result-object v5
 
-    const-string v6, "using default policy"
+    const-string/jumbo v6, "using default policy"
 
     invoke-static {v3, v5, v6}, Lio/grpc/internal/AutoConfiguredLoadBalancerFactory;->access$200(Lio/grpc/internal/AutoConfiguredLoadBalancerFactory;Ljava/lang/String;Ljava/lang/String;)Lio/grpc/LoadBalancerProvider;
 

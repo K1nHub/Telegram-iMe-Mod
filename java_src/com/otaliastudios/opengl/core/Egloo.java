@@ -2,14 +2,20 @@ package com.otaliastudios.opengl.core;
 
 import android.opengl.EGL14;
 import android.opengl.GLES20;
-import android.opengl.GLU;
 import android.util.Log;
 import com.otaliastudios.opengl.extensions.MatrixKt;
+import com.otaliastudios.opengl.internal.EglKt;
+import com.otaliastudios.opengl.internal.GlKt;
+import com.otaliastudios.opengl.internal.MiscKt;
+import kotlin.UInt;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: Egloo.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class Egloo {
-    private static final float[] IDENTITY_MATRIX;
+    public static final float[] IDENTITY_MATRIX;
+
+    private Egloo() {
+    }
 
     static {
         new Egloo();
@@ -18,41 +24,34 @@ public final class Egloo {
         IDENTITY_MATRIX = fArr;
     }
 
-    private Egloo() {
-    }
-
-    public static final float[] getIDENTITY_MATRIX() {
-        return IDENTITY_MATRIX;
-    }
-
-    public static final void checkGlError(String opName) {
-        int glGetError;
-        Intrinsics.checkParameterIsNotNull(opName, "opName");
-        if (GLES20.glGetError() == 0) {
-            return;
-        }
-        String str = "Error during " + opName + ": glError 0x" + Integer.toHexString(glGetError) + ": " + GLU.gluErrorString(glGetError);
-        Log.e("Egloo", str);
-        throw new RuntimeException(str);
-    }
-
     public static final void checkEglError(String opName) {
         int eglGetError;
-        Intrinsics.checkParameterIsNotNull(opName, "opName");
-        if (EGL14.eglGetError() == 12288) {
+        Intrinsics.checkNotNullParameter(opName, "opName");
+        if (EGL14.eglGetError() == EglKt.getEGL_SUCCESS()) {
             return;
         }
-        String str = "Error during " + opName + ": EGL error 0x" + Integer.toHexString(eglGetError);
+        String str = "Error during " + opName + ": EGL error 0x" + MiscKt.intToHexString(eglGetError);
         Log.e("Egloo", str);
         throw new RuntimeException(str);
     }
 
     public static final void checkGlProgramLocation(int i, String label) {
-        Intrinsics.checkParameterIsNotNull(label, "label");
+        Intrinsics.checkNotNullParameter(label, "label");
         if (i >= 0) {
             return;
         }
         String str = "Unable to locate " + label + " in program";
+        Log.e("Egloo", str);
+        throw new RuntimeException(str);
+    }
+
+    public static final void checkGlError(String opName) {
+        int m1575constructorimpl;
+        Intrinsics.checkNotNullParameter(opName, "opName");
+        if (UInt.m1575constructorimpl(GLES20.glGetError()) == GlKt.getGL_NO_ERROR()) {
+            return;
+        }
+        String str = "Error during " + opName + ": glError 0x" + MiscKt.intToHexString(m1575constructorimpl) + ": " + MiscKt.gluErrorString(m1575constructorimpl);
         Log.e("Egloo", str);
         throw new RuntimeException(str);
     }

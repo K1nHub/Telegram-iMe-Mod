@@ -19,8 +19,8 @@ import java.util.RandomAccess;
 import java.util.Set;
 import java.util.SortedMap;
 import java.util.SortedSet;
-import p034j$.util.Iterator;
-import p034j$.util.function.Consumer;
+import p035j$.util.Iterator;
+import p035j$.util.function.Consumer;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: classes3.dex */
 public abstract class AbstractMapBasedMultimap<K, V> extends AbstractMultimap<K, V> implements Serializable {
@@ -207,11 +207,11 @@ public abstract class AbstractMapBasedMultimap<K, V> extends AbstractMultimap<K,
 
         /* JADX INFO: Access modifiers changed from: package-private */
         /* loaded from: classes3.dex */
-        public class WrappedIterator implements Iterator<V>, p034j$.util.Iterator {
+        public class WrappedIterator implements Iterator<V>, p035j$.util.Iterator {
             final Iterator<V> delegateIterator;
             final Collection<V> originalDelegate;
 
-            @Override // p034j$.util.Iterator
+            @Override // p035j$.util.Iterator
             public /* synthetic */ void forEachRemaining(Consumer consumer) {
                 Iterator.CC.$default$forEachRemaining(this, consumer);
             }
@@ -234,19 +234,19 @@ public abstract class AbstractMapBasedMultimap<K, V> extends AbstractMultimap<K,
                 }
             }
 
-            @Override // java.util.Iterator, p034j$.util.Iterator
+            @Override // java.util.Iterator, p035j$.util.Iterator
             public boolean hasNext() {
                 validateIterator();
                 return this.delegateIterator.hasNext();
             }
 
-            @Override // java.util.Iterator, p034j$.util.Iterator
+            @Override // java.util.Iterator, p035j$.util.Iterator
             public V next() {
                 validateIterator();
                 return this.delegateIterator.next();
             }
 
-            @Override // java.util.Iterator, p034j$.util.Iterator
+            @Override // java.util.Iterator, p035j$.util.Iterator
             public void remove() {
                 this.delegateIterator.remove();
                 AbstractMapBasedMultimap.access$210(AbstractMapBasedMultimap.this);
@@ -533,32 +533,32 @@ public abstract class AbstractMapBasedMultimap<K, V> extends AbstractMultimap<K,
         /* JADX INFO: Access modifiers changed from: package-private */
         /* renamed from: com.google.common.collect.AbstractMapBasedMultimap$KeySet$1 */
         /* loaded from: classes3.dex */
-        public class C08951 implements java.util.Iterator<K>, p034j$.util.Iterator {
+        public class C09091 implements java.util.Iterator<K>, p035j$.util.Iterator {
             Map.Entry<K, Collection<V>> entry;
             final /* synthetic */ java.util.Iterator val$entryIterator;
 
-            @Override // p034j$.util.Iterator
+            @Override // p035j$.util.Iterator
             public /* synthetic */ void forEachRemaining(Consumer consumer) {
                 Iterator.CC.$default$forEachRemaining(this, consumer);
             }
 
-            C08951(java.util.Iterator it) {
+            C09091(java.util.Iterator it) {
                 this.val$entryIterator = it;
             }
 
-            @Override // java.util.Iterator, p034j$.util.Iterator
+            @Override // java.util.Iterator, p035j$.util.Iterator
             public boolean hasNext() {
                 return this.val$entryIterator.hasNext();
             }
 
-            @Override // java.util.Iterator, p034j$.util.Iterator
+            @Override // java.util.Iterator, p035j$.util.Iterator
             public K next() {
                 Map.Entry<K, Collection<V>> entry = (Map.Entry) this.val$entryIterator.next();
                 this.entry = entry;
                 return entry.getKey();
             }
 
-            @Override // java.util.Iterator, p034j$.util.Iterator
+            @Override // java.util.Iterator, p035j$.util.Iterator
             public void remove() {
                 Preconditions.checkState(this.entry != null, "no calls to next() since the last call to remove()");
                 Collection<V> value = this.entry.getValue();
@@ -571,7 +571,7 @@ public abstract class AbstractMapBasedMultimap<K, V> extends AbstractMultimap<K,
 
         @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.Set
         public java.util.Iterator<K> iterator() {
-            return new C08951(map().entrySet().iterator());
+            return new C09091(map().entrySet().iterator());
         }
 
         @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
@@ -753,13 +753,13 @@ public abstract class AbstractMapBasedMultimap<K, V> extends AbstractMultimap<K,
     }
 
     /* loaded from: classes3.dex */
-    private abstract class Itr<T> implements java.util.Iterator<T>, p034j$.util.Iterator {
+    private abstract class Itr<T> implements java.util.Iterator<T>, p035j$.util.Iterator {
         final java.util.Iterator<Map.Entry<K, Collection<V>>> keyIterator;
         K key = null;
         Collection<V> collection = null;
         java.util.Iterator<V> valueIterator = Iterators.emptyModifiableIterator();
 
-        @Override // p034j$.util.Iterator
+        @Override // p035j$.util.Iterator
         public /* synthetic */ void forEachRemaining(Consumer consumer) {
             Iterator.CC.$default$forEachRemaining(this, consumer);
         }
@@ -770,12 +770,12 @@ public abstract class AbstractMapBasedMultimap<K, V> extends AbstractMultimap<K,
             this.keyIterator = (java.util.Iterator<Map.Entry<K, V>>) AbstractMapBasedMultimap.this.map.entrySet().iterator();
         }
 
-        @Override // java.util.Iterator, p034j$.util.Iterator
+        @Override // java.util.Iterator, p035j$.util.Iterator
         public boolean hasNext() {
             return this.keyIterator.hasNext() || this.valueIterator.hasNext();
         }
 
-        @Override // java.util.Iterator, p034j$.util.Iterator
+        @Override // java.util.Iterator, p035j$.util.Iterator
         public T next() {
             if (!this.valueIterator.hasNext()) {
                 Map.Entry<K, Collection<V>> next = this.keyIterator.next();
@@ -787,7 +787,7 @@ public abstract class AbstractMapBasedMultimap<K, V> extends AbstractMultimap<K,
             return output(NullnessCasts.uncheckedCastNullableTToT(this.key), this.valueIterator.next());
         }
 
-        @Override // java.util.Iterator, p034j$.util.Iterator
+        @Override // java.util.Iterator, p035j$.util.Iterator
         public void remove() {
             this.valueIterator.remove();
             Collection<V> collection = this.collection;
@@ -834,7 +834,7 @@ public abstract class AbstractMapBasedMultimap<K, V> extends AbstractMultimap<K,
         return new AbstractMapBasedMultimap<K, V>.Itr<Map.Entry<K, V>>(this) { // from class: com.google.common.collect.AbstractMapBasedMultimap.2
             @Override // com.google.common.collect.AbstractMapBasedMultimap.Itr
             /* bridge */ /* synthetic */ Object output(Object obj, Object obj2) {
-                return output((C08942) obj, obj2);
+                return output((C09082) obj, obj2);
             }
 
             @Override // com.google.common.collect.AbstractMapBasedMultimap.Itr
@@ -969,11 +969,11 @@ public abstract class AbstractMapBasedMultimap<K, V> extends AbstractMultimap<K,
         }
 
         /* loaded from: classes3.dex */
-        class AsMapIterator implements java.util.Iterator<Map.Entry<K, Collection<V>>>, p034j$.util.Iterator {
+        class AsMapIterator implements java.util.Iterator<Map.Entry<K, Collection<V>>>, p035j$.util.Iterator {
             Collection<V> collection;
             final java.util.Iterator<Map.Entry<K, Collection<V>>> delegateIterator;
 
-            @Override // p034j$.util.Iterator
+            @Override // p035j$.util.Iterator
             public /* synthetic */ void forEachRemaining(Consumer consumer) {
                 Iterator.CC.$default$forEachRemaining(this, consumer);
             }
@@ -982,19 +982,19 @@ public abstract class AbstractMapBasedMultimap<K, V> extends AbstractMultimap<K,
                 this.delegateIterator = AsMap.this.submap.entrySet().iterator();
             }
 
-            @Override // java.util.Iterator, p034j$.util.Iterator
+            @Override // java.util.Iterator, p035j$.util.Iterator
             public boolean hasNext() {
                 return this.delegateIterator.hasNext();
             }
 
-            @Override // java.util.Iterator, p034j$.util.Iterator
+            @Override // java.util.Iterator, p035j$.util.Iterator
             public Map.Entry<K, Collection<V>> next() {
                 Map.Entry<K, Collection<V>> next = this.delegateIterator.next();
                 this.collection = next.getValue();
                 return AsMap.this.wrapEntry(next);
             }
 
-            @Override // java.util.Iterator, p034j$.util.Iterator
+            @Override // java.util.Iterator, p035j$.util.Iterator
             public void remove() {
                 Preconditions.checkState(this.collection != null, "no calls to next() since the last call to remove()");
                 this.delegateIterator.remove();

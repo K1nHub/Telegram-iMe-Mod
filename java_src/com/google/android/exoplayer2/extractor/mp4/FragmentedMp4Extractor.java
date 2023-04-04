@@ -2,7 +2,7 @@ package com.google.android.exoplayer2.extractor.mp4;
 
 import android.util.Pair;
 import android.util.SparseArray;
-import com.google.android.exoplayer2.C0468C;
+import com.google.android.exoplayer2.C0482C;
 import com.google.android.exoplayer2.Format;
 import com.google.android.exoplayer2.ParserException;
 import com.google.android.exoplayer2.audio.Ac4Util;
@@ -160,9 +160,9 @@ public class FragmentedMp4Extractor implements Extractor {
         this.containerAtoms = new ArrayDeque<>();
         this.pendingMetadataSampleInfos = new ArrayDeque<>();
         this.trackBundles = new SparseArray<>();
-        this.durationUs = C0468C.TIME_UNSET;
-        this.pendingSeekTimeUs = C0468C.TIME_UNSET;
-        this.segmentIndexEarliestPresentationTimeUs = C0468C.TIME_UNSET;
+        this.durationUs = C0482C.TIME_UNSET;
+        this.pendingSeekTimeUs = C0482C.TIME_UNSET;
+        this.segmentIndexEarliestPresentationTimeUs = C0482C.TIME_UNSET;
         this.extractorOutput = ExtractorOutput.PLACEHOLDER;
         this.emsgTrackOutputs = new TrackOutput[0];
         this.ceaTrackOutputs = new TrackOutput[0];
@@ -409,12 +409,12 @@ public class FragmentedMp4Extractor implements Extractor {
                 this.trackBundles.valueAt(i).updateDrmInitData(drmInitDataFromAtoms);
             }
         }
-        if (this.pendingSeekTimeUs != C0468C.TIME_UNSET) {
+        if (this.pendingSeekTimeUs != C0482C.TIME_UNSET) {
             int size2 = this.trackBundles.size();
             for (int i2 = 0; i2 < size2; i2++) {
                 this.trackBundles.valueAt(i2).seek(this.pendingSeekTimeUs);
             }
-            this.pendingSeekTimeUs = C0468C.TIME_UNSET;
+            this.pendingSeekTimeUs = C0482C.TIME_UNSET;
         }
     }
 
@@ -470,7 +470,7 @@ public class FragmentedMp4Extractor implements Extractor {
             long readUnsignedInt2 = parsableByteArray.readUnsignedInt();
             scaleLargeTimestamp = Util.scaleLargeTimestamp(parsableByteArray.readUnsignedInt(), 1000000L, readUnsignedInt2);
             long j2 = this.segmentIndexEarliestPresentationTimeUs;
-            long j3 = j2 != C0468C.TIME_UNSET ? j2 + scaleLargeTimestamp : -9223372036854775807L;
+            long j3 = j2 != C0482C.TIME_UNSET ? j2 + scaleLargeTimestamp : -9223372036854775807L;
             str = str3;
             scaleLargeTimestamp2 = Util.scaleLargeTimestamp(parsableByteArray.readUnsignedInt(), 1000L, readUnsignedInt2);
             str2 = str4;
@@ -498,7 +498,7 @@ public class FragmentedMp4Extractor implements Extractor {
             parsableByteArray2.setPosition(0);
             trackOutput.sampleData(parsableByteArray2, bytesLeft);
         }
-        if (j == C0468C.TIME_UNSET) {
+        if (j == C0482C.TIME_UNSET) {
             this.pendingMetadataSampleInfos.addLast(new MetadataSampleInfo(scaleLargeTimestamp, true, bytesLeft));
             this.pendingMetadataSampleBytes += bytesLeft;
         } else if (!this.pendingMetadataSampleInfos.isEmpty()) {

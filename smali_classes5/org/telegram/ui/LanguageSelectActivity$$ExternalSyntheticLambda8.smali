@@ -2,44 +2,38 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Ljava/util/Comparator;
 
 
 # instance fields
-.field public final synthetic f$0:Lorg/telegram/ui/LanguageSelectActivity;
-
-.field public final synthetic f$1:Lorg/telegram/ui/ActionBar/AlertDialog;
-
-.field public final synthetic f$2:Z
+.field public final synthetic f$0:Lorg/telegram/messenger/LocaleController$LocaleInfo;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/LanguageSelectActivity;Lorg/telegram/ui/ActionBar/AlertDialog;Z)V
+.method public synthetic constructor <init>(Lorg/telegram/messenger/LocaleController$LocaleInfo;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lorg/telegram/ui/LanguageSelectActivity$$ExternalSyntheticLambda8;->f$0:Lorg/telegram/ui/LanguageSelectActivity;
-
-    iput-object p2, p0, Lorg/telegram/ui/LanguageSelectActivity$$ExternalSyntheticLambda8;->f$1:Lorg/telegram/ui/ActionBar/AlertDialog;
-
-    iput-boolean p3, p0, Lorg/telegram/ui/LanguageSelectActivity$$ExternalSyntheticLambda8;->f$2:Z
+    iput-object p1, p0, Lorg/telegram/ui/LanguageSelectActivity$$ExternalSyntheticLambda8;->f$0:Lorg/telegram/messenger/LocaleController$LocaleInfo;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final run()V
-    .locals 3
+.method public final compare(Ljava/lang/Object;Ljava/lang/Object;)I
+    .locals 1
 
-    iget-object v0, p0, Lorg/telegram/ui/LanguageSelectActivity$$ExternalSyntheticLambda8;->f$0:Lorg/telegram/ui/LanguageSelectActivity;
+    iget-object v0, p0, Lorg/telegram/ui/LanguageSelectActivity$$ExternalSyntheticLambda8;->f$0:Lorg/telegram/messenger/LocaleController$LocaleInfo;
 
-    iget-object v1, p0, Lorg/telegram/ui/LanguageSelectActivity$$ExternalSyntheticLambda8;->f$1:Lorg/telegram/ui/ActionBar/AlertDialog;
+    check-cast p1, Lorg/telegram/messenger/LocaleController$LocaleInfo;
 
-    iget-boolean v2, p0, Lorg/telegram/ui/LanguageSelectActivity$$ExternalSyntheticLambda8;->f$2:Z
+    check-cast p2, Lorg/telegram/messenger/LocaleController$LocaleInfo;
 
-    invoke-static {v0, v1, v2}, Lorg/telegram/ui/LanguageSelectActivity;->$r8$lambda$j7jm67ektGhd-c7wsY4R3VpNZ80(Lorg/telegram/ui/LanguageSelectActivity;Lorg/telegram/ui/ActionBar/AlertDialog;Z)V
+    invoke-static {v0, p1, p2}, Lorg/telegram/ui/LanguageSelectActivity;->$r8$lambda$ez74Ea96iZDun8-GTuq3czQcroM(Lorg/telegram/messenger/LocaleController$LocaleInfo;Lorg/telegram/messenger/LocaleController$LocaleInfo;Lorg/telegram/messenger/LocaleController$LocaleInfo;)I
 
-    return-void
+    move-result p1
+
+    return p1
 .end method

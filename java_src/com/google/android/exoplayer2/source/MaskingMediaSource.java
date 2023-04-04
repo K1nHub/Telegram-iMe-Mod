@@ -1,6 +1,6 @@
 package com.google.android.exoplayer2.source;
 
-import com.google.android.exoplayer2.C0468C;
+import com.google.android.exoplayer2.C0482C;
 import com.google.android.exoplayer2.MediaItem;
 import com.google.android.exoplayer2.Timeline;
 import com.google.android.exoplayer2.source.MediaSource;
@@ -214,7 +214,7 @@ public final class MaskingMediaSource extends WrappingMediaSource {
             return;
         }
         long j2 = this.timeline.getPeriod(indexOfPeriod, this.period).durationUs;
-        if (j2 != C0468C.TIME_UNSET && j >= j2) {
+        if (j2 != C0482C.TIME_UNSET && j >= j2) {
             j = Math.max(0L, j2 - 1);
         }
         maskingMediaPeriod.overridePreparePositionUs(j);
@@ -300,14 +300,14 @@ public final class MaskingMediaSource extends WrappingMediaSource {
 
         @Override // com.google.android.exoplayer2.Timeline
         public Timeline.Window getWindow(int i, Timeline.Window window, long j) {
-            window.set(Timeline.Window.SINGLE_WINDOW_UID, this.mediaItem, null, C0468C.TIME_UNSET, C0468C.TIME_UNSET, C0468C.TIME_UNSET, false, true, null, 0L, C0468C.TIME_UNSET, 0, 0, 0L);
+            window.set(Timeline.Window.SINGLE_WINDOW_UID, this.mediaItem, null, C0482C.TIME_UNSET, C0482C.TIME_UNSET, C0482C.TIME_UNSET, false, true, null, 0L, C0482C.TIME_UNSET, 0, 0, 0L);
             window.isPlaceholder = true;
             return window;
         }
 
         @Override // com.google.android.exoplayer2.Timeline
         public Timeline.Period getPeriod(int i, Timeline.Period period, boolean z) {
-            period.set(z ? 0 : null, z ? MaskingTimeline.MASKING_EXTERNAL_PERIOD_UID : null, 0, C0468C.TIME_UNSET, 0L, AdPlaybackState.NONE, true);
+            period.set(z ? 0 : null, z ? MaskingTimeline.MASKING_EXTERNAL_PERIOD_UID : null, 0, C0482C.TIME_UNSET, 0L, AdPlaybackState.NONE, true);
             return period;
         }
 

@@ -130,5 +130,6 @@
     .line 62
     invoke-static {v1}, Landroid/os/StrictMode;->setThreadPolicy(Landroid/os/StrictMode$ThreadPolicy;)V
 
+    .line 63
     throw v0
 .end method

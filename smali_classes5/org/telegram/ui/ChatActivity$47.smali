@@ -1,5 +1,5 @@
 .class Lorg/telegram/ui/ChatActivity$47;
-.super Lorg/telegram/ui/PinchToZoomHelper;
+.super Lorg/telegram/ui/Cells/TextSelectionHelper$Callback;
 .source "ChatActivity.java"
 
 
@@ -14,128 +14,363 @@
 .end annotation
 
 
+# instance fields
+.field final synthetic this$0:Lorg/telegram/ui/ChatActivity;
+
+
 # direct methods
-.method constructor <init>(Lorg/telegram/ui/ChatActivity;Landroid/view/ViewGroup;Landroid/view/ViewGroup;)V
+.method constructor <init>(Lorg/telegram/ui/ChatActivity;)V
     .locals 0
 
-    .line 9326
-    invoke-direct {p0, p2, p3}, Lorg/telegram/ui/PinchToZoomHelper;-><init>(Landroid/view/ViewGroup;Landroid/view/ViewGroup;)V
+    .line 9262
+    iput-object p1, p0, Lorg/telegram/ui/ChatActivity$47;->this$0:Lorg/telegram/ui/ChatActivity;
+
+    invoke-direct {p0}, Lorg/telegram/ui/Cells/TextSelectionHelper$Callback;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method protected drawOverlays(Landroid/graphics/Canvas;FFFFF)V
-    .locals 3
+.method public onQuote(Ljava/lang/String;)V
+    .locals 6
 
-    const/4 v0, 0x0
+    .line 9266
+    iget-object v0, p0, Lorg/telegram/ui/ChatActivity$47;->this$0:Lorg/telegram/ui/ChatActivity;
 
-    cmpl-float v0, p2, v0
+    iget-object v0, v0, Lorg/telegram/ui/ChatActivity;->chatActivityEnterView:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
-    if-lez v0, :cond_1
-
-    .line 9330
-    invoke-virtual {p0}, Lorg/telegram/ui/PinchToZoomHelper;->getChild()Landroid/view/View;
+    invoke-virtual {v0}, Lorg/telegram/ui/Components/ChatActivityEnterView;->getEditField()Lorg/telegram/ui/Components/EditTextCaption;
 
     move-result-object v0
 
-    .line 9331
-    instance-of v1, v0, Lorg/telegram/ui/Cells/ChatMessageCell;
+    const/4 v1, 0x0
 
-    if-eqz v1, :cond_1
+    move v2, v1
 
-    .line 9332
-    check-cast v0, Lorg/telegram/ui/Cells/ChatMessageCell;
+    .line 9267
+    :goto_0
+    iget-object v3, p0, Lorg/telegram/ui/ChatActivity$47;->this$0:Lorg/telegram/ui/ChatActivity;
 
-    .line 9334
-    invoke-static {p5, p4}, Ljava/lang/Math;->max(FF)F
+    invoke-static {v3}, Lorg/telegram/ui/ChatActivity;->access$4000(Lorg/telegram/ui/ChatActivity;)[Landroid/util/SparseArray;
 
-    move-result p5
+    move-result-object v3
 
-    float-to-int p5, p5
+    aget-object v3, v3, v1
 
-    .line 9335
-    invoke-virtual {v0}, Landroid/view/ViewGroup;->getMeasuredHeight()I
+    invoke-virtual {v3}, Landroid/util/SparseArray;->size()I
 
-    move-result v1
+    move-result v3
 
-    int-to-float v1, v1
+    if-ge v2, v3, :cond_3
 
-    add-float/2addr v1, p4
+    .line 9268
+    iget-object v3, p0, Lorg/telegram/ui/ChatActivity$47;->this$0:Lorg/telegram/ui/ChatActivity;
 
-    invoke-static {p6, v1}, Ljava/lang/Math;->min(FF)F
+    invoke-static {v3}, Lorg/telegram/ui/ChatActivity;->access$4000(Lorg/telegram/ui/ChatActivity;)[Landroid/util/SparseArray;
 
-    move-result p6
+    move-result-object v3
 
-    float-to-int p6, p6
+    aget-object v3, v3, v1
 
-    .line 9336
-    sget-object v1, Lorg/telegram/messenger/AndroidUtilities;->rectTmp:Landroid/graphics/RectF;
+    iget-object v4, p0, Lorg/telegram/ui/ChatActivity$47;->this$0:Lorg/telegram/ui/ChatActivity;
 
-    int-to-float p5, p5
+    invoke-static {v4}, Lorg/telegram/ui/ChatActivity;->access$4000(Lorg/telegram/ui/ChatActivity;)[Landroid/util/SparseArray;
 
-    invoke-virtual {v0}, Landroid/view/ViewGroup;->getMeasuredWidth()I
+    move-result-object v4
 
-    move-result v2
+    aget-object v4, v4, v1
 
-    int-to-float v2, v2
+    invoke-virtual {v4, v2}, Landroid/util/SparseArray;->keyAt(I)I
 
-    add-float/2addr v2, p3
+    move-result v4
 
-    int-to-float p6, p6
+    invoke-virtual {v3, v4}, Landroid/util/SparseArray;->get(I)Ljava/lang/Object;
 
-    invoke-virtual {v1, p3, p5, v2, p6}, Landroid/graphics/RectF;->set(FFFF)V
+    move-result-object v3
 
-    const/high16 p5, 0x437f0000    # 255.0f
+    check-cast v3, Lorg/telegram/messenger/MessageObject;
 
-    mul-float/2addr p2, p5
+    .line 9269
+    iget-object v4, p0, Lorg/telegram/ui/ChatActivity$47;->this$0:Lorg/telegram/ui/ChatActivity;
 
-    float-to-int p2, p2
+    invoke-static {v4}, Lorg/telegram/ui/ChatActivity;->access$3100(Lorg/telegram/ui/ChatActivity;)Lorg/telegram/ui/ChatActivity$ChatActivityTextSelectionHelper;
 
-    const/16 p5, 0x1f
+    move-result-object v4
 
-    .line 9337
-    invoke-virtual {p1, v1, p2, p5}, Landroid/graphics/Canvas;->saveLayerAlpha(Landroid/graphics/RectF;II)I
+    invoke-virtual {v4, v3}, Lorg/telegram/ui/Cells/TextSelectionHelper;->isSelected(Lorg/telegram/messenger/MessageObject;)Z
 
-    .line 9338
-    invoke-virtual {p1, p3, p4}, Landroid/graphics/Canvas;->translate(FF)V
+    move-result v4
 
-    const/4 p2, 0x1
+    if-nez v4, :cond_0
 
-    .line 9339
-    iput-boolean p2, v0, Lorg/telegram/ui/Cells/ChatMessageCell;->drawFromPinchToZoom:Z
+    goto :goto_2
 
-    .line 9340
-    invoke-virtual {v0, p1}, Lorg/telegram/ui/Cells/ChatMessageCell;->drawOverlays(Landroid/graphics/Canvas;)V
-
-    .line 9341
-    invoke-virtual {v0}, Lorg/telegram/ui/Cells/ChatMessageCell;->shouldDrawTimeOnMedia()Z
-
-    move-result p2
-
-    const/4 p3, 0x0
-
-    if-eqz p2, :cond_0
-
-    invoke-virtual {v0}, Lorg/telegram/ui/Cells/ChatMessageCell;->getCurrentMessagesGroup()Lorg/telegram/messenger/MessageObject$GroupedMessages;
-
-    move-result-object p2
-
-    if-nez p2, :cond_0
-
-    const/high16 p2, 0x3f800000    # 1.0f
-
-    .line 9342
-    invoke-virtual {v0, p1, p2, p3}, Lorg/telegram/ui/Cells/ChatMessageCell;->drawTime(Landroid/graphics/Canvas;FZ)V
-
-    .line 9344
+    .line 9272
     :cond_0
-    iput-boolean p3, v0, Lorg/telegram/ui/Cells/ChatMessageCell;->drawFromPinchToZoom:Z
+    iget-object v4, p0, Lorg/telegram/ui/ChatActivity$47;->this$0:Lorg/telegram/ui/ChatActivity;
 
-    .line 9345
-    invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
+    invoke-static {v4}, Lorg/telegram/ui/ChatActivity;->access$28500(Lorg/telegram/ui/ChatActivity;)Z
 
+    move-result v4
+
+    const/4 v5, 0x1
+
+    if-eqz v4, :cond_1
+
+    const-string v3, "\n\n"
+
+    .line 9273
+    invoke-virtual {v0, v3}, Landroid/widget/EditText;->append(Ljava/lang/CharSequence;)V
+
+    goto :goto_1
+
+    .line 9275
     :cond_1
+    iget-object v4, p0, Lorg/telegram/ui/ChatActivity$47;->this$0:Lorg/telegram/ui/ChatActivity;
+
+    invoke-virtual {v4, v3}, Lorg/telegram/ui/ChatActivity;->showFieldPanelForReply(Lorg/telegram/messenger/MessageObject;)V
+
+    .line 9276
+    iget-object v3, p0, Lorg/telegram/ui/ChatActivity$47;->this$0:Lorg/telegram/ui/ChatActivity;
+
+    invoke-static {v3, v5}, Lorg/telegram/ui/ChatActivity;->access$28502(Lorg/telegram/ui/ChatActivity;Z)Z
+
+    .line 9279
+    :goto_1
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v4, "| "
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v3, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v4, "\n"
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {v0, v3}, Landroid/widget/EditText;->append(Ljava/lang/CharSequence;)V
+
+    .line 9280
+    invoke-virtual {v0}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/Object;->toString()Ljava/lang/String;
+
+    move-result-object v3
+
+    const-string v4, "|"
+
+    invoke-virtual {v3, v4}, Ljava/lang/String;->lastIndexOf(Ljava/lang/String;)I
+
+    move-result v3
+
+    .line 9281
+    invoke-virtual {p1}, Ljava/lang/String;->length()I
+
+    move-result v4
+
+    add-int/2addr v4, v3
+
+    add-int/lit8 v4, v4, 0x2
+
+    invoke-virtual {v0, v3, v4}, Lorg/telegram/ui/Components/EditTextCaption;->setSelectionOverride(II)V
+
+    .line 9282
+    invoke-virtual {v0}, Lorg/telegram/ui/Components/EditTextCaption;->makeSelectedBold()V
+
+    add-int/2addr v3, v5
+
+    .line 9284
+    invoke-virtual {p1}, Ljava/lang/String;->length()I
+
+    move-result v4
+
+    add-int/2addr v4, v3
+
+    add-int/2addr v4, v5
+
+    invoke-virtual {v0, v3, v4}, Lorg/telegram/ui/Components/EditTextCaption;->setSelectionOverride(II)V
+
+    .line 9285
+    invoke-virtual {v0}, Lorg/telegram/ui/Components/EditTextCaption;->makeSelectedItalic()V
+
+    .line 9286
+    iget-object v3, p0, Lorg/telegram/ui/ChatActivity$47;->this$0:Lorg/telegram/ui/ChatActivity;
+
+    invoke-static {v3}, Lorg/telegram/ui/ChatActivity;->access$28600(Lorg/telegram/ui/ChatActivity;)Lorg/telegram/ui/ActionBar/ActionBar;
+
+    move-result-object v3
+
+    if-eqz v3, :cond_2
+
+    iget-object v3, p0, Lorg/telegram/ui/ChatActivity$47;->this$0:Lorg/telegram/ui/ChatActivity;
+
+    invoke-static {v3}, Lorg/telegram/ui/ChatActivity;->access$28700(Lorg/telegram/ui/ChatActivity;)Lorg/telegram/ui/ActionBar/ActionBar;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Lorg/telegram/ui/ActionBar/ActionBar;->isActionModeShowed()Z
+
+    move-result v3
+
+    if-eqz v3, :cond_2
+
+    .line 9287
+    iget-object v3, p0, Lorg/telegram/ui/ChatActivity$47;->this$0:Lorg/telegram/ui/ChatActivity;
+
+    invoke-virtual {v3}, Lorg/telegram/ui/ChatActivity;->clearSelectionMode()V
+
+    :cond_2
+    :goto_2
+    add-int/lit8 v2, v2, 0x1
+
+    goto/16 :goto_0
+
+    :cond_3
+    return-void
+.end method
+
+.method public onStateChanged(Z)V
+    .locals 2
+
+    .line 9294
+    iget-object v0, p0, Lorg/telegram/ui/ChatActivity$47;->this$0:Lorg/telegram/ui/ChatActivity;
+
+    xor-int/lit8 v1, p1, 0x1
+
+    invoke-static {v0, v1}, Lorg/telegram/ui/ChatActivity;->access$28802(Lorg/telegram/ui/ChatActivity;Z)Z
+
+    if-eqz p1, :cond_1
+
+    .line 9296
+    iget-object p1, p0, Lorg/telegram/ui/ChatActivity$47;->this$0:Lorg/telegram/ui/ChatActivity;
+
+    invoke-static {p1}, Lorg/telegram/ui/ChatActivity;->access$16400(Lorg/telegram/ui/ChatActivity;)Lorg/telegram/ui/Cells/ChatMessageCell;
+
+    move-result-object p1
+
+    if-eqz p1, :cond_0
+
+    .line 9297
+    iget-object p1, p0, Lorg/telegram/ui/ChatActivity$47;->this$0:Lorg/telegram/ui/ChatActivity;
+
+    invoke-static {p1}, Lorg/telegram/ui/ChatActivity;->access$16400(Lorg/telegram/ui/ChatActivity;)Lorg/telegram/ui/Cells/ChatMessageCell;
+
+    move-result-object p1
+
+    const/4 v0, 0x0
+
+    invoke-virtual {p1, v0}, Lorg/telegram/ui/Cells/ChatMessageCell;->setSlidingOffset(F)V
+
+    .line 9298
+    iget-object p1, p0, Lorg/telegram/ui/ChatActivity$47;->this$0:Lorg/telegram/ui/ChatActivity;
+
+    const/4 v0, 0x0
+
+    invoke-static {p1, v0}, Lorg/telegram/ui/ChatActivity;->access$16402(Lorg/telegram/ui/ChatActivity;Lorg/telegram/ui/Cells/ChatMessageCell;)Lorg/telegram/ui/Cells/ChatMessageCell;
+
+    .line 9300
+    :cond_0
+    iget-object p1, p0, Lorg/telegram/ui/ChatActivity$47;->this$0:Lorg/telegram/ui/ChatActivity;
+
+    const/4 v0, 0x0
+
+    invoke-static {p1, v0}, Lorg/telegram/ui/ChatActivity;->access$16602(Lorg/telegram/ui/ChatActivity;Z)Z
+
+    .line 9301
+    iget-object p1, p0, Lorg/telegram/ui/ChatActivity$47;->this$0:Lorg/telegram/ui/ChatActivity;
+
+    invoke-static {p1, v0}, Lorg/telegram/ui/ChatActivity;->access$16502(Lorg/telegram/ui/ChatActivity;Z)Z
+
+    .line 9302
+    iget-object p1, p0, Lorg/telegram/ui/ChatActivity$47;->this$0:Lorg/telegram/ui/ChatActivity;
+
+    invoke-static {p1}, Lorg/telegram/ui/ChatActivity;->access$28900(Lorg/telegram/ui/ChatActivity;)Lorg/telegram/ui/Components/TextSelectionHint;
+
+    move-result-object p1
+
+    if-eqz p1, :cond_1
+
+    .line 9303
+    iget-object p1, p0, Lorg/telegram/ui/ChatActivity$47;->this$0:Lorg/telegram/ui/ChatActivity;
+
+    invoke-static {p1}, Lorg/telegram/ui/ChatActivity;->access$28900(Lorg/telegram/ui/ChatActivity;)Lorg/telegram/ui/Components/TextSelectionHint;
+
+    move-result-object p1
+
+    invoke-virtual {p1}, Lorg/telegram/ui/Components/TextSelectionHint;->hide()V
+
+    .line 9306
+    :cond_1
+    iget-object p1, p0, Lorg/telegram/ui/ChatActivity$47;->this$0:Lorg/telegram/ui/ChatActivity;
+
+    const/4 v0, 0x1
+
+    invoke-static {p1, v0}, Lorg/telegram/ui/ChatActivity;->access$10300(Lorg/telegram/ui/ChatActivity;Z)V
+
+    return-void
+.end method
+
+.method public onTextCopied()V
+    .locals 5
+
+    .line 9311
+    iget-object v0, p0, Lorg/telegram/ui/ChatActivity$47;->this$0:Lorg/telegram/ui/ChatActivity;
+
+    invoke-static {v0}, Lorg/telegram/ui/ChatActivity;->access$29000(Lorg/telegram/ui/ChatActivity;)Lorg/telegram/ui/ActionBar/ActionBar;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lorg/telegram/ui/ChatActivity$47;->this$0:Lorg/telegram/ui/ChatActivity;
+
+    invoke-static {v0}, Lorg/telegram/ui/ChatActivity;->access$29100(Lorg/telegram/ui/ChatActivity;)Lorg/telegram/ui/ActionBar/ActionBar;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/ActionBar;->isActionModeShowed()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    .line 9312
+    iget-object v0, p0, Lorg/telegram/ui/ChatActivity$47;->this$0:Lorg/telegram/ui/ChatActivity;
+
+    invoke-virtual {v0}, Lorg/telegram/ui/ChatActivity;->clearSelectionMode()V
+
+    .line 9314
+    :cond_0
+    iget-object v0, p0, Lorg/telegram/ui/ChatActivity$47;->this$0:Lorg/telegram/ui/ChatActivity;
+
+    invoke-static {v0}, Lorg/telegram/ui/ChatActivity;->access$13600(Lorg/telegram/ui/ChatActivity;)V
+
+    .line 9315
+    iget-object v0, p0, Lorg/telegram/ui/ChatActivity$47;->this$0:Lorg/telegram/ui/ChatActivity;
+
+    invoke-static {v0}, Lorg/telegram/ui/ChatActivity;->access$13700(Lorg/telegram/ui/ChatActivity;)Lorg/telegram/ui/Components/UndoView;
+
+    move-result-object v0
+
+    const-wide/16 v1, 0x0
+
+    const/16 v3, 0x3a
+
+    const/4 v4, 0x0
+
+    invoke-virtual {v0, v1, v2, v3, v4}, Lorg/telegram/ui/Components/UndoView;->showWithAction(JILjava/lang/Runnable;)V
+
     return-void
 .end method

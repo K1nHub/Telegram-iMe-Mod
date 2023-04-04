@@ -15,7 +15,7 @@ import android.widget.TextView;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import java.util.List;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3301R;
+import org.telegram.messenger.C3316R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.p048ui.ActionBar.BaseFragment;
 import org.telegram.p048ui.ActionBar.Theme;
@@ -61,7 +61,7 @@ public class ChatActivityMemberRequestsDelegate {
         if (this.root == null) {
             FrameLayout frameLayout = new FrameLayout(this.fragment.getParentActivity());
             this.root = frameLayout;
-            frameLayout.setBackgroundResource(C3301R.C3303drawable.blockpanel);
+            frameLayout.setBackgroundResource(C3316R.C3318drawable.blockpanel);
             this.root.getBackground().mutate().setColorFilter(new PorterDuffColorFilter(this.fragment.getThemedColor("chat_topPanelBackground"), PorterDuff.Mode.MULTIPLY));
             this.root.setVisibility(8);
             this.pendingRequestsEnterOffset = -getViewHeight();
@@ -103,8 +103,8 @@ public class ChatActivityMemberRequestsDelegate {
                 imageView.setBackground(Theme.createSelectorDrawable(this.fragment.getThemedColor("inappPlayerClose") & 436207615, 1, AndroidUtilities.m50dp(14)));
             }
             this.closeView.setColorFilter(new PorterDuffColorFilter(this.fragment.getThemedColor("chat_topPanelClose"), PorterDuff.Mode.MULTIPLY));
-            this.closeView.setContentDescription(LocaleController.getString("Close", C3301R.string.Close));
-            this.closeView.setImageResource(C3301R.C3303drawable.miniplayer_close);
+            this.closeView.setContentDescription(LocaleController.getString("Close", C3316R.string.Close));
+            this.closeView.setImageResource(C3316R.C3318drawable.miniplayer_close);
             this.closeView.setScaleType(ImageView.ScaleType.CENTER);
             this.closeView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Delegates.ChatActivityMemberRequestsDelegate$$ExternalSyntheticLambda1
                 @Override // android.view.View.OnClickListener
@@ -128,7 +128,7 @@ public class ChatActivityMemberRequestsDelegate {
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$getView$1(View view) {
-        this.fragment.getMessagesController().setChatPendingRequestsOnClose(this.currentChat.f1500id, this.pendingRequestsCount);
+        this.fragment.getMessagesController().setChatPendingRequestsOnClose(this.currentChat.f1502id, this.pendingRequestsCount);
         this.closePendingRequestsCount = this.pendingRequestsCount;
         animatePendingRequests(false, true);
     }
@@ -158,7 +158,7 @@ public class ChatActivityMemberRequestsDelegate {
 
     private void showBottomSheet() {
         if (this.bottomSheet == null) {
-            this.bottomSheet = new MemberRequestsBottomSheet(this.fragment, this.currentChat.f1500id) { // from class: org.telegram.ui.Delegates.ChatActivityMemberRequestsDelegate.2
+            this.bottomSheet = new MemberRequestsBottomSheet(this.fragment, this.currentChat.f1502id) { // from class: org.telegram.ui.Delegates.ChatActivityMemberRequestsDelegate.2
                 @Override // org.telegram.p048ui.Components.UsersAlertBase, org.telegram.p048ui.ActionBar.BottomSheet, android.app.Dialog, android.content.DialogInterface
                 public void dismiss() {
                     if (ChatActivityMemberRequestsDelegate.this.bottomSheet != null && !ChatActivityMemberRequestsDelegate.this.bottomSheet.isNeedRestoreDialog()) {
@@ -177,7 +177,7 @@ public class ChatActivityMemberRequestsDelegate {
         }
         if (i <= 0) {
             if (this.currentChat != null) {
-                this.fragment.getMessagesController().setChatPendingRequestsOnClose(this.currentChat.f1500id, 0);
+                this.fragment.getMessagesController().setChatPendingRequestsOnClose(this.currentChat.f1502id, 0);
                 this.closePendingRequestsCount = 0;
             }
             animatePendingRequests(false, z);
@@ -207,7 +207,7 @@ public class ChatActivityMemberRequestsDelegate {
         }
         if (z) {
             if (this.closePendingRequestsCount == -1 && this.currentChat != null) {
-                this.closePendingRequestsCount = this.fragment.getMessagesController().getChatPendingRequestsOnClosed(this.currentChat.f1500id);
+                this.closePendingRequestsCount = this.fragment.getMessagesController().getChatPendingRequestsOnClosed(this.currentChat.f1502id);
             }
             int i = this.pendingRequestsCount;
             int i2 = this.closePendingRequestsCount;
@@ -215,7 +215,7 @@ public class ChatActivityMemberRequestsDelegate {
                 return;
             }
             if (i2 != 0 && this.currentChat != null) {
-                this.fragment.getMessagesController().setChatPendingRequestsOnClose(this.currentChat.f1500id, 0);
+                this.fragment.getMessagesController().setChatPendingRequestsOnClose(this.currentChat.f1502id, 0);
             }
         }
         ValueAnimator valueAnimator = this.pendingRequestsAnimator;

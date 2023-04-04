@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lorg/telegram/ui/DialogsActivity;->showDisablePopup(Lorg/telegram/ui/ActionBar/ActionBarMenuItem;)V
+    value = Lorg/telegram/ui/DialogsActivity;->showDisablePopup(Landroid/view/View;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -18,7 +18,7 @@
 
 
 # instance fields
-.field private popupRect:Landroid/graphics/Rect;
+.field private final popupRect:Landroid/graphics/Rect;
 
 .field final synthetic val$window:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;
 
@@ -27,12 +27,12 @@
 .method constructor <init>(Lorg/telegram/ui/DialogsActivity;Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;)V
     .locals 0
 
-    .line 624
+    .line 625
     iput-object p2, p0, Lorg/telegram/ui/DialogsActivity$1;->val$window:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 626
+    .line 627
     new-instance p1, Landroid/graphics/Rect;
 
     invoke-direct {p1}, Landroid/graphics/Rect;-><init>()V
@@ -47,17 +47,15 @@
 .method public onTouch(Landroid/view/View;Landroid/view/MotionEvent;)Z
     .locals 1
 
-    .line 630
+    .line 631
     invoke-virtual {p2}, Landroid/view/MotionEvent;->getActionMasked()I
 
     move-result v0
 
     if-nez v0, :cond_0
 
-    .line 631
+    .line 632
     iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$1;->val$window:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;
-
-    if-eqz v0, :cond_0
 
     invoke-virtual {v0}, Landroid/widget/PopupWindow;->isShowing()Z
 
@@ -65,12 +63,12 @@
 
     if-eqz v0, :cond_0
 
-    .line 632
+    .line 633
     iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$1;->popupRect:Landroid/graphics/Rect;
 
     invoke-virtual {p1, v0}, Landroid/view/View;->getHitRect(Landroid/graphics/Rect;)V
 
-    .line 633
+    .line 634
     iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$1;->popupRect:Landroid/graphics/Rect;
 
     invoke-virtual {p2}, Landroid/view/MotionEvent;->getX()F
@@ -91,7 +89,7 @@
 
     if-nez p1, :cond_0
 
-    .line 634
+    .line 635
     iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$1;->val$window:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;
 
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;->dismiss()V

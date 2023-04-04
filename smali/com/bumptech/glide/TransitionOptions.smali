@@ -37,10 +37,10 @@
 .method public constructor <init>()V
     .locals 1
 
-    .line 17
+    .line 20
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 20
+    .line 23
     invoke-static {}, Lcom/bumptech/glide/request/transition/NoTransition;->getFactory()Lcom/bumptech/glide/request/transition/TransitionFactory;
 
     move-result-object v0
@@ -61,7 +61,7 @@
         }
     .end annotation
 
-    .line 86
+    .line 89
     :try_start_0
     invoke-super {p0}, Ljava/lang/Object;->clone()Ljava/lang/Object;
 
@@ -76,7 +76,7 @@
     :catch_0
     move-exception v0
 
-    .line 88
+    .line 91
     new-instance v1, Ljava/lang/RuntimeException;
 
     invoke-direct {v1, v0}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/Throwable;)V
@@ -92,12 +92,40 @@
         }
     .end annotation
 
-    .line 17
+    .line 20
     invoke-virtual {p0}, Lcom/bumptech/glide/TransitionOptions;->clone()Lcom/bumptech/glide/TransitionOptions;
 
     move-result-object v0
 
     return-object v0
+.end method
+
+.method public equals(Ljava/lang/Object;)Z
+    .locals 1
+
+    .line 106
+    instance-of v0, p1, Lcom/bumptech/glide/TransitionOptions;
+
+    if-eqz v0, :cond_0
+
+    .line 107
+    check-cast p1, Lcom/bumptech/glide/TransitionOptions;
+
+    .line 108
+    iget-object v0, p0, Lcom/bumptech/glide/TransitionOptions;->transitionFactory:Lcom/bumptech/glide/request/transition/TransitionFactory;
+
+    iget-object p1, p1, Lcom/bumptech/glide/TransitionOptions;->transitionFactory:Lcom/bumptech/glide/request/transition/TransitionFactory;
+
+    invoke-static {v0, p1}, Lcom/bumptech/glide/util/Util;->bothNullOrEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result p1
+
+    return p1
+
+    :cond_0
+    const/4 p1, 0x0
+
+    return p1
 .end method
 
 .method final getTransitionFactory()Lcom/bumptech/glide/request/transition/TransitionFactory;
@@ -110,8 +138,29 @@
         }
     .end annotation
 
-    .line 93
+    .line 96
     iget-object v0, p0, Lcom/bumptech/glide/TransitionOptions;->transitionFactory:Lcom/bumptech/glide/request/transition/TransitionFactory;
 
     return-object v0
+.end method
+
+.method public hashCode()I
+    .locals 1
+
+    .line 115
+    iget-object v0, p0, Lcom/bumptech/glide/TransitionOptions;->transitionFactory:Lcom/bumptech/glide/request/transition/TransitionFactory;
+
+    if-eqz v0, :cond_0
+
+    invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I
+
+    move-result v0
+
+    goto :goto_0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    :goto_0
+    return v0
 .end method

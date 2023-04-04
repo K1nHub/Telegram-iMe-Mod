@@ -367,7 +367,7 @@
     .line 261
     iput-object v1, v0, Lio/grpc/okhttp/OkHttpClientTransport;->proxiedAddr:Lio/grpc/HttpConnectProxiedSocketAddress;
 
-    const-string v1, "tooManyPingsRunnable"
+    const-string/jumbo v1, "tooManyPingsRunnable"
 
     move-object/from16 v2, p13
 

@@ -11,11 +11,11 @@
 
 .field public final textNumber:Landroidx/appcompat/widget/AppCompatTextView;
 
-.field public final viewBackupWord:Lcom/smedialink/ui/custom/backup/BackupWordView;
+.field public final viewBackupWord:Lcom/iMe/ui/custom/backup/BackupWordView;
 
 
 # direct methods
-.method private constructor <init>(Landroid/widget/LinearLayout;Landroidx/appcompat/widget/AppCompatTextView;Lcom/smedialink/ui/custom/backup/BackupWordView;)V
+.method private constructor <init>(Landroid/widget/LinearLayout;Landroidx/appcompat/widget/AppCompatTextView;Lcom/iMe/ui/custom/backup/BackupWordView;)V
     .locals 0
 
     .line 30
@@ -28,7 +28,7 @@
     iput-object p2, p0, Lorg/telegram/messenger/databinding/ForkContentBackupNumberWordBinding;->textNumber:Landroidx/appcompat/widget/AppCompatTextView;
 
     .line 33
-    iput-object p3, p0, Lorg/telegram/messenger/databinding/ForkContentBackupNumberWordBinding;->viewBackupWord:Lcom/smedialink/ui/custom/backup/BackupWordView;
+    iput-object p3, p0, Lorg/telegram/messenger/databinding/ForkContentBackupNumberWordBinding;->viewBackupWord:Lcom/iMe/ui/custom/backup/BackupWordView;
 
     return-void
 .end method
@@ -56,7 +56,7 @@
 
     move-result-object v2
 
-    check-cast v2, Lcom/smedialink/ui/custom/backup/BackupWordView;
+    check-cast v2, Lcom/iMe/ui/custom/backup/BackupWordView;
 
     if-eqz v2, :cond_0
 
@@ -65,7 +65,7 @@
 
     check-cast p0, Landroid/widget/LinearLayout;
 
-    invoke-direct {v0, p0, v1, v2}, Lorg/telegram/messenger/databinding/ForkContentBackupNumberWordBinding;-><init>(Landroid/widget/LinearLayout;Landroidx/appcompat/widget/AppCompatTextView;Lcom/smedialink/ui/custom/backup/BackupWordView;)V
+    invoke-direct {v0, p0, v1, v2}, Lorg/telegram/messenger/databinding/ForkContentBackupNumberWordBinding;-><init>(Landroid/widget/LinearLayout;Landroidx/appcompat/widget/AppCompatTextView;Lcom/iMe/ui/custom/backup/BackupWordView;)V
 
     return-object v0
 

@@ -99,7 +99,7 @@
     :cond_0
     new-instance p1, Lnet/lingala/zip4j/exception/ZipException;
 
-    const-string v0, "unable to determine salt length: invalid aes key strength"
+    const-string/jumbo v0, "unable to determine salt length: invalid aes key strength"
 
     invoke-direct {p1, v0}, Lnet/lingala/zip4j/exception/ZipException;-><init>(Ljava/lang/String;)V
 
@@ -119,7 +119,7 @@
     :cond_3
     new-instance p1, Lnet/lingala/zip4j/exception/ZipException;
 
-    const-string v0, "unable to determine salt length: AESExtraDataRecord is null"
+    const-string/jumbo v0, "unable to determine salt length: AESExtraDataRecord is null"
 
     invoke-direct {p1, v0}, Lnet/lingala/zip4j/exception/ZipException;-><init>(Ljava/lang/String;)V
 
@@ -1081,7 +1081,7 @@
     :cond_1
     new-instance p1, Lnet/lingala/zip4j/exception/ZipException;
 
-    const-string v0, "unsupported encryption method"
+    const-string/jumbo v0, "unsupported encryption method"
 
     invoke-direct {p1, v0}, Lnet/lingala/zip4j/exception/ZipException;-><init>(Ljava/lang/String;)V
 

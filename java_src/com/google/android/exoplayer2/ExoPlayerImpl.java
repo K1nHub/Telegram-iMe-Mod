@@ -422,7 +422,7 @@ public final class ExoPlayerImpl extends BasePlayer implements ExoPlayer, ExoPla
         PlaybackInfo copyWithPlaybackState = copyWithPlaybackError.copyWithPlaybackState(copyWithPlaybackError.timeline.isEmpty() ? 4 : 2);
         this.pendingOperationAcks++;
         this.internalPlayer.prepare();
-        updatePlaybackInfo(copyWithPlaybackState, 1, 1, false, false, 5, C0468C.TIME_UNSET, -1, false);
+        updatePlaybackInfo(copyWithPlaybackState, 1, 1, false, false, 5, C0482C.TIME_UNSET, -1, false);
     }
 
     @Override // com.google.android.exoplayer2.ExoPlayer
@@ -480,7 +480,7 @@ public final class ExoPlayerImpl extends BasePlayer implements ExoPlayer, ExoPla
     @Override // com.google.android.exoplayer2.ExoPlayer
     public void setMediaSources(List<MediaSource> list, boolean z) {
         verifyApplicationThread();
-        setMediaSourcesInternal(list, -1, C0468C.TIME_UNSET, z);
+        setMediaSourcesInternal(list, -1, C0482C.TIME_UNSET, z);
     }
 
     @Override // com.google.android.exoplayer2.ExoPlayer
@@ -524,7 +524,7 @@ public final class ExoPlayerImpl extends BasePlayer implements ExoPlayer, ExoPla
         Timeline createMaskingTimeline = createMaskingTimeline();
         PlaybackInfo maskTimelineAndPosition = maskTimelineAndPosition(this.playbackInfo, createMaskingTimeline, getPeriodPositionUsAfterTimelineChanged(currentTimeline, createMaskingTimeline));
         this.internalPlayer.addMediaSources(min, addMediaSourceHolders, this.shuffleOrder);
-        updatePlaybackInfo(maskTimelineAndPosition, 0, 1, false, false, 5, C0468C.TIME_UNSET, -1, false);
+        updatePlaybackInfo(maskTimelineAndPosition, 0, 1, false, false, 5, C0482C.TIME_UNSET, -1, false);
     }
 
     @Override // com.google.android.exoplayer2.Player
@@ -556,7 +556,7 @@ public final class ExoPlayerImpl extends BasePlayer implements ExoPlayer, ExoPla
         Timeline createMaskingTimeline = createMaskingTimeline();
         PlaybackInfo maskTimelineAndPosition = maskTimelineAndPosition(this.playbackInfo, createMaskingTimeline, getPeriodPositionUsAfterTimelineChanged(currentTimeline, createMaskingTimeline));
         this.internalPlayer.moveMediaSources(i, min, min2, this.shuffleOrder);
-        updatePlaybackInfo(maskTimelineAndPosition, 0, 1, false, false, 5, C0468C.TIME_UNSET, -1, false);
+        updatePlaybackInfo(maskTimelineAndPosition, 0, 1, false, false, 5, C0482C.TIME_UNSET, -1, false);
     }
 
     @Override // com.google.android.exoplayer2.ExoPlayer
@@ -567,7 +567,7 @@ public final class ExoPlayerImpl extends BasePlayer implements ExoPlayer, ExoPla
         PlaybackInfo maskTimelineAndPosition = maskTimelineAndPosition(this.playbackInfo, createMaskingTimeline, maskWindowPositionMsOrGetPeriodPositionUs(createMaskingTimeline, getCurrentMediaItemIndex(), getCurrentPosition()));
         this.pendingOperationAcks++;
         this.internalPlayer.setShuffleOrder(shuffleOrder);
-        updatePlaybackInfo(maskTimelineAndPosition, 0, 1, false, false, 5, C0468C.TIME_UNSET, -1, false);
+        updatePlaybackInfo(maskTimelineAndPosition, 0, 1, false, false, 5, C0482C.TIME_UNSET, -1, false);
     }
 
     @Override // com.google.android.exoplayer2.ExoPlayer
@@ -689,7 +689,7 @@ public final class ExoPlayerImpl extends BasePlayer implements ExoPlayer, ExoPla
     @Override // com.google.android.exoplayer2.Player
     public long getMaxSeekToPreviousPosition() {
         verifyApplicationThread();
-        return C0468C.DEFAULT_MAX_SEEK_TO_PREVIOUS_POSITION_MS;
+        return C0482C.DEFAULT_MAX_SEEK_TO_PREVIOUS_POSITION_MS;
     }
 
     @Override // com.google.android.exoplayer2.Player
@@ -704,7 +704,7 @@ public final class ExoPlayerImpl extends BasePlayer implements ExoPlayer, ExoPla
         PlaybackInfo copyWithPlaybackParameters = this.playbackInfo.copyWithPlaybackParameters(playbackParameters);
         this.pendingOperationAcks++;
         this.internalPlayer.setPlaybackParameters(playbackParameters);
-        updatePlaybackInfo(copyWithPlaybackParameters, 0, 1, false, false, 5, C0468C.TIME_UNSET, -1, false);
+        updatePlaybackInfo(copyWithPlaybackParameters, 0, 1, false, false, 5, C0482C.TIME_UNSET, -1, false);
     }
 
     @Override // com.google.android.exoplayer2.Player
@@ -899,7 +899,7 @@ public final class ExoPlayerImpl extends BasePlayer implements ExoPlayer, ExoPla
             PlaybackInfo playbackInfo = this.playbackInfo;
             playbackInfo.timeline.getPeriodByUid(playbackInfo.periodId.periodUid, this.period);
             PlaybackInfo playbackInfo2 = this.playbackInfo;
-            if (playbackInfo2.requestedContentPositionUs == C0468C.TIME_UNSET) {
+            if (playbackInfo2.requestedContentPositionUs == C0482C.TIME_UNSET) {
                 return playbackInfo2.timeline.getWindow(getCurrentMediaItemIndex(), this.window).getDefaultPositionMs();
             }
             return this.period.getPositionInWindowMs() + Util.usToMs(this.playbackInfo.requestedContentPositionUs);
@@ -1916,7 +1916,7 @@ public final class ExoPlayerImpl extends BasePlayer implements ExoPlayer, ExoPla
         Timeline.Window window = new Timeline.Window();
         Timeline.Period period = new Timeline.Period();
         playbackInfo.timeline.getPeriodByUid(playbackInfo.periodId.periodUid, period);
-        if (playbackInfo.requestedContentPositionUs == C0468C.TIME_UNSET) {
+        if (playbackInfo.requestedContentPositionUs == C0482C.TIME_UNSET) {
             return playbackInfo.timeline.getWindow(period.windowIndex, window).getDefaultPositionUs();
         }
         return period.getPositionInWindowUs() + playbackInfo.requestedContentPositionUs;
@@ -1988,7 +1988,7 @@ public final class ExoPlayerImpl extends BasePlayer implements ExoPlayer, ExoPla
         }
         if (z) {
             int firstWindowIndex = createMaskingTimeline.getFirstWindowIndex(this.shuffleModeEnabled);
-            j2 = C0468C.TIME_UNSET;
+            j2 = C0482C.TIME_UNSET;
             i2 = firstWindowIndex;
         } else if (i == -1) {
             i2 = currentWindowIndexInternal;
@@ -2122,13 +2122,13 @@ public final class ExoPlayerImpl extends BasePlayer implements ExoPlayer, ExoPla
             int i = this.period.windowIndex;
             return maskWindowPositionMsOrGetPeriodPositionUs(timeline2, i, timeline2.getWindow(i, this.window).getDefaultPositionMs());
         }
-        return maskWindowPositionMsOrGetPeriodPositionUs(timeline2, -1, C0468C.TIME_UNSET);
+        return maskWindowPositionMsOrGetPeriodPositionUs(timeline2, -1, C0482C.TIME_UNSET);
     }
 
     private Pair<Object, Long> maskWindowPositionMsOrGetPeriodPositionUs(Timeline timeline, int i, long j) {
         if (timeline.isEmpty()) {
             this.maskingWindowIndex = i;
-            if (j == C0468C.TIME_UNSET) {
+            if (j == C0482C.TIME_UNSET) {
                 j = 0;
             }
             this.maskingWindowPositionMs = j;
@@ -2285,7 +2285,7 @@ public final class ExoPlayerImpl extends BasePlayer implements ExoPlayer, ExoPla
         this.pendingOperationAcks++;
         PlaybackInfo copyWithPlayWhenReady = playbackInfo.copyWithPlayWhenReady(z2, i3);
         this.internalPlayer.setPlayWhenReady(z2, i3);
-        updatePlaybackInfo(copyWithPlayWhenReady, 0, i2, false, false, 5, C0468C.TIME_UNSET, -1, false);
+        updatePlaybackInfo(copyWithPlayWhenReady, 0, i2, false, false, 5, C0482C.TIME_UNSET, -1, false);
     }
 
     /* JADX INFO: Access modifiers changed from: private */

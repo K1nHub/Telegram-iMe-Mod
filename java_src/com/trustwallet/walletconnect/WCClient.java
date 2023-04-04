@@ -45,7 +45,7 @@ import okhttp3.WebSocket;
 import okhttp3.WebSocketListener;
 import okio.ByteString;
 /* compiled from: WCClient.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class WCClient extends WebSocketListener {
     private final String TAG;
     private String chainId;
@@ -75,7 +75,7 @@ public class WCClient extends WebSocketListener {
     private WebSocket socket;
 
     /* compiled from: WCClient.kt */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public /* synthetic */ class WhenMappings {
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
 
@@ -99,25 +99,25 @@ public class WCClient extends WebSocketListener {
         }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:12:0x005c  */
-    /* JADX WARN: Removed duplicated region for block: B:20:0x008e  */
-    /* JADX WARN: Removed duplicated region for block: B:28:0x00c0  */
-    /* JADX WARN: Removed duplicated region for block: B:36:0x00f2  */
-    /* JADX WARN: Removed duplicated region for block: B:44:0x0124  */
-    /* JADX WARN: Removed duplicated region for block: B:52:0x0156  */
-    /* JADX WARN: Removed duplicated region for block: B:60:0x01d0  */
-    /* JADX WARN: Removed duplicated region for block: B:62:0x01d6  */
-    /* JADX WARN: Removed duplicated region for block: B:64:0x01dc  */
-    /* JADX WARN: Removed duplicated region for block: B:66:0x01e2  */
-    /* JADX WARN: Removed duplicated region for block: B:68:0x01e8  */
-    /* JADX WARN: Removed duplicated region for block: B:70:0x01ee  */
+    /* JADX WARN: Removed duplicated region for block: B:12:0x005d  */
+    /* JADX WARN: Removed duplicated region for block: B:20:0x008f  */
+    /* JADX WARN: Removed duplicated region for block: B:28:0x00c1  */
+    /* JADX WARN: Removed duplicated region for block: B:36:0x00f3  */
+    /* JADX WARN: Removed duplicated region for block: B:44:0x0125  */
+    /* JADX WARN: Removed duplicated region for block: B:52:0x0157  */
+    /* JADX WARN: Removed duplicated region for block: B:60:0x01d1  */
+    /* JADX WARN: Removed duplicated region for block: B:62:0x01d7  */
+    /* JADX WARN: Removed duplicated region for block: B:64:0x01dd  */
+    /* JADX WARN: Removed duplicated region for block: B:66:0x01e3  */
+    /* JADX WARN: Removed duplicated region for block: B:68:0x01e9  */
+    /* JADX WARN: Removed duplicated region for block: B:70:0x01ef  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct add '--show-bad-code' argument
     */
     public WCClient(com.google.gson.GsonBuilder r8, okhttp3.OkHttpClient r9) {
         /*
-            Method dump skipped, instructions count: 506
+            Method dump skipped, instructions count: 507
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: com.trustwallet.walletconnect.WCClient.<init>(com.google.gson.GsonBuilder, okhttp3.OkHttpClient):void");
@@ -391,9 +391,9 @@ public class WCClient extends WebSocketListener {
         return encryptAndSend(json);
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:10:0x0054  */
-    /* JADX WARN: Removed duplicated region for block: B:16:0x0076  */
-    /* JADX WARN: Removed duplicated region for block: B:18:0x008c  */
+    /* JADX WARN: Removed duplicated region for block: B:10:0x0055  */
+    /* JADX WARN: Removed duplicated region for block: B:16:0x0077  */
+    /* JADX WARN: Removed duplicated region for block: B:18:0x008d  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct add '--show-bad-code' argument
@@ -411,17 +411,17 @@ public class WCClient extends WebSocketListener {
             kotlin.jvm.internal.Intrinsics.checkExpressionValueIsNotNull(r2, r3)
             boolean r4 = r2 instanceof java.lang.reflect.ParameterizedType
             java.lang.String r5 = "type.rawType"
-            if (r4 == 0) goto L2c
+            if (r4 == 0) goto L2d
             r4 = r2
             java.lang.reflect.ParameterizedType r4 = (java.lang.reflect.ParameterizedType) r4
             boolean r6 = com.github.salomonbrys.kotson.GsonBuilderKt.isWildcard(r4)
-            if (r6 == 0) goto L2c
+            if (r6 == 0) goto L2d
             java.lang.reflect.Type r2 = r4.getRawType()
             kotlin.jvm.internal.Intrinsics.checkExpressionValueIsNotNull(r2, r5)
-            goto L30
-        L2c:
+            goto L31
+        L2d:
             java.lang.reflect.Type r2 = com.github.salomonbrys.kotson.GsonBuilderKt.removeTypeWildcards(r2)
-        L30:
+        L31:
             java.lang.Object r8 = r0.fromJson(r8, r2)
             java.lang.String r0 = "fromJson(json, typeToken<T>())"
             kotlin.jvm.internal.Intrinsics.checkExpressionValueIsNotNull(r8, r0)
@@ -434,22 +434,22 @@ public class WCClient extends WebSocketListener {
             java.lang.reflect.Type r1 = r1.getType()
             kotlin.jvm.internal.Intrinsics.checkExpressionValueIsNotNull(r1, r3)
             boolean r3 = r1 instanceof java.lang.reflect.ParameterizedType
-            if (r3 == 0) goto L65
+            if (r3 == 0) goto L66
             r3 = r1
             java.lang.reflect.ParameterizedType r3 = (java.lang.reflect.ParameterizedType) r3
             boolean r4 = com.github.salomonbrys.kotson.GsonBuilderKt.isWildcard(r3)
-            if (r4 == 0) goto L65
+            if (r4 == 0) goto L66
             java.lang.reflect.Type r1 = r3.getRawType()
             kotlin.jvm.internal.Intrinsics.checkExpressionValueIsNotNull(r1, r5)
-            goto L69
-        L65:
+            goto L6a
+        L66:
             java.lang.reflect.Type r1 = com.github.salomonbrys.kotson.GsonBuilderKt.removeTypeWildcards(r1)
-        L69:
+        L6a:
             java.lang.Object r8 = r2.fromJson(r8, r1)
             kotlin.jvm.internal.Intrinsics.checkExpressionValueIsNotNull(r8, r0)
             com.trustwallet.walletconnect.models.WCEncryptionPayload r8 = (com.trustwallet.walletconnect.models.WCEncryptionPayload) r8
             com.trustwallet.walletconnect.models.session.WCSession r0 = r7.session
-            if (r0 == 0) goto L8c
+            if (r0 == 0) goto L8d
             java.lang.String r1 = new java.lang.String
             com.trustwallet.walletconnect.WCCipher r2 = com.trustwallet.walletconnect.WCCipher.INSTANCE
             java.lang.String r0 = r0.getKey()
@@ -458,7 +458,7 @@ public class WCClient extends WebSocketListener {
             java.nio.charset.Charset r0 = kotlin.text.Charsets.UTF_8
             r1.<init>(r8, r0)
             return r1
-        L8c:
+        L8d:
             java.lang.IllegalStateException r8 = new java.lang.IllegalStateException
             java.lang.String r0 = "session can't be null on message receive"
             r8.<init>(r0)
@@ -498,35 +498,35 @@ public class WCClient extends WebSocketListener {
         }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:106:0x035a  */
-    /* JADX WARN: Removed duplicated region for block: B:107:0x0369  */
-    /* JADX WARN: Removed duplicated region for block: B:117:0x03b2  */
-    /* JADX WARN: Removed duplicated region for block: B:118:0x03c8  */
-    /* JADX WARN: Removed duplicated region for block: B:128:0x0411  */
-    /* JADX WARN: Removed duplicated region for block: B:129:0x0427  */
-    /* JADX WARN: Removed duplicated region for block: B:139:0x0470  */
-    /* JADX WARN: Removed duplicated region for block: B:140:0x0486  */
-    /* JADX WARN: Removed duplicated region for block: B:150:0x04d1  */
-    /* JADX WARN: Removed duplicated region for block: B:153:0x04dc  */
-    /* JADX WARN: Removed duplicated region for block: B:163:0x0527  */
-    /* JADX WARN: Removed duplicated region for block: B:164:0x054b  */
-    /* JADX WARN: Removed duplicated region for block: B:17:0x005f  */
-    /* JADX WARN: Removed duplicated region for block: B:18:0x006e  */
-    /* JADX WARN: Removed duplicated region for block: B:28:0x00b9  */
-    /* JADX WARN: Removed duplicated region for block: B:29:0x00e0  */
-    /* JADX WARN: Removed duplicated region for block: B:39:0x012b  */
-    /* JADX WARN: Removed duplicated region for block: B:40:0x013a  */
-    /* JADX WARN: Removed duplicated region for block: B:51:0x0194  */
-    /* JADX WARN: Removed duplicated region for block: B:52:0x01a3  */
-    /* JADX WARN: Removed duplicated region for block: B:95:0x0300  */
-    /* JADX WARN: Removed duplicated region for block: B:96:0x030f  */
+    /* JADX WARN: Removed duplicated region for block: B:106:0x035b  */
+    /* JADX WARN: Removed duplicated region for block: B:107:0x036a  */
+    /* JADX WARN: Removed duplicated region for block: B:117:0x03b3  */
+    /* JADX WARN: Removed duplicated region for block: B:118:0x03c9  */
+    /* JADX WARN: Removed duplicated region for block: B:128:0x0412  */
+    /* JADX WARN: Removed duplicated region for block: B:129:0x0428  */
+    /* JADX WARN: Removed duplicated region for block: B:139:0x0471  */
+    /* JADX WARN: Removed duplicated region for block: B:140:0x0487  */
+    /* JADX WARN: Removed duplicated region for block: B:150:0x04d2  */
+    /* JADX WARN: Removed duplicated region for block: B:153:0x04dd  */
+    /* JADX WARN: Removed duplicated region for block: B:163:0x0528  */
+    /* JADX WARN: Removed duplicated region for block: B:164:0x054c  */
+    /* JADX WARN: Removed duplicated region for block: B:17:0x0060  */
+    /* JADX WARN: Removed duplicated region for block: B:18:0x006f  */
+    /* JADX WARN: Removed duplicated region for block: B:28:0x00ba  */
+    /* JADX WARN: Removed duplicated region for block: B:29:0x00e1  */
+    /* JADX WARN: Removed duplicated region for block: B:39:0x012c  */
+    /* JADX WARN: Removed duplicated region for block: B:40:0x013b  */
+    /* JADX WARN: Removed duplicated region for block: B:51:0x0195  */
+    /* JADX WARN: Removed duplicated region for block: B:52:0x01a4  */
+    /* JADX WARN: Removed duplicated region for block: B:95:0x0301  */
+    /* JADX WARN: Removed duplicated region for block: B:96:0x0310  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct add '--show-bad-code' argument
     */
     private final void handleRequest(com.trustwallet.walletconnect.jsonrpc.JsonRpcRequest<com.google.gson.JsonArray> r9) {
         /*
-            Method dump skipped, instructions count: 1410
+            Method dump skipped, instructions count: 1412
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: com.trustwallet.walletconnect.WCClient.handleRequest(com.trustwallet.walletconnect.jsonrpc.JsonRpcRequest):void");

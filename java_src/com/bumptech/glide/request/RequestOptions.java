@@ -15,4 +15,14 @@ public class RequestOptions extends BaseRequestOptions<RequestOptions> {
     public static RequestOptions decodeTypeOf(Class<?> cls) {
         return new RequestOptions().decode(cls);
     }
+
+    @Override // com.bumptech.glide.request.BaseRequestOptions
+    public boolean equals(Object obj) {
+        return (obj instanceof RequestOptions) && super.equals(obj);
+    }
+
+    @Override // com.bumptech.glide.request.BaseRequestOptions
+    public int hashCode() {
+        return super.hashCode();
+    }
 }

@@ -1,6 +1,6 @@
 .class public interface abstract annotation Landroidx/annotation/Keep;
 .super Ljava/lang/Object;
-.source "Keep.java"
+.source "Keep.kt"
 
 # interfaces
 .implements Ljava/lang/annotation/Annotation;

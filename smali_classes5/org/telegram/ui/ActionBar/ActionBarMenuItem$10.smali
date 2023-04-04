@@ -21,7 +21,7 @@
 .method constructor <init>(Lorg/telegram/ui/ActionBar/ActionBarMenuItem;)V
     .locals 0
 
-    .line 1478
+    .line 1477
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

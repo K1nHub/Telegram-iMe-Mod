@@ -72,7 +72,7 @@
     .line 205
     sget-object v3, Lorg/telegram/messenger/FingerprintController;->keyStore:Ljava/security/KeyStore;
 
-    const-string v4, "tmessages_passcode"
+    const-string/jumbo v4, "tmessages_passcode"
 
     const/4 v5, 0x0
 
@@ -262,7 +262,7 @@
     move-result-object v0
 
     :try_start_0
-    const-string v1, "tmessages_passcode"
+    const-string/jumbo v1, "tmessages_passcode"
 
     .line 170
     invoke-virtual {v0, v1}, Ljava/security/KeyStore;->deleteEntry(Ljava/lang/String;)V
@@ -355,7 +355,7 @@
     .line 145
     new-instance v2, Landroid/security/keystore/KeyGenParameterSpec$Builder;
 
-    const-string v3, "tmessages_passcode"
+    const-string/jumbo v3, "tmessages_passcode"
 
     const/4 v4, 0x3
 
@@ -557,7 +557,7 @@
 
     sget-object v2, Lorg/telegram/messenger/FingerprintController;->keyStore:Ljava/security/KeyStore;
 
-    const-string v3, "tmessages_passcode"
+    const-string/jumbo v3, "tmessages_passcode"
 
     const/4 v4, 0x0
 
@@ -588,7 +588,7 @@
     :try_start_0
     sget-object v0, Lorg/telegram/messenger/FingerprintController;->keyStore:Ljava/security/KeyStore;
 
-    const-string v1, "tmessages_passcode"
+    const-string/jumbo v1, "tmessages_passcode"
 
     invoke-virtual {v0, v1}, Ljava/security/KeyStore;->getCertificate(Ljava/lang/String;)Ljava/security/cert/Certificate;
 
@@ -662,7 +662,7 @@
 
     move-result-object v0
 
-    const-string v1, "tmessages_passcode"
+    const-string/jumbo v1, "tmessages_passcode"
 
     invoke-virtual {v0, v1}, Ljava/security/KeyStore;->containsAlias(Ljava/lang/String;)Z
 

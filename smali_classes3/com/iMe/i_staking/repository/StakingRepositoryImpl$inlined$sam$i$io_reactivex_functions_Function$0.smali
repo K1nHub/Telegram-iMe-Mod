@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lcom/smedialink/storage/data/utils/extentions/RxExtKt;
+    value = Lcom/iMe/storage/data/utils/extentions/RxExtKt;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;

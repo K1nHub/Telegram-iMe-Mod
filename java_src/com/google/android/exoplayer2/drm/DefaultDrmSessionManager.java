@@ -5,7 +5,7 @@ import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
 import android.os.SystemClock;
-import com.google.android.exoplayer2.C0468C;
+import com.google.android.exoplayer2.C0482C;
 import com.google.android.exoplayer2.Format;
 import com.google.android.exoplayer2.PlaybackException;
 import com.google.android.exoplayer2.analytics.PlayerId;
@@ -87,7 +87,7 @@ public class DefaultDrmSessionManager implements DrmSessionManager {
         private boolean multiSession;
         private boolean playClearSamplesWithoutKeys;
         private final HashMap<String, String> keyRequestParameters = new HashMap<>();
-        private UUID uuid = C0468C.WIDEVINE_UUID;
+        private UUID uuid = C0482C.WIDEVINE_UUID;
         private ExoMediaDrm.Provider exoMediaDrmProvider = FrameworkMediaDrm.DEFAULT_PROVIDER;
         private LoadErrorHandlingPolicy loadErrorHandlingPolicy = new DefaultLoadErrorHandlingPolicy();
         private int[] useDrmSessionsForClearContentTrackTypes = new int[0];
@@ -135,7 +135,7 @@ public class DefaultDrmSessionManager implements DrmSessionManager {
         }
 
         public Builder setSessionKeepaliveMs(long j) {
-            Assertions.checkArgument(j > 0 || j == C0468C.TIME_UNSET);
+            Assertions.checkArgument(j > 0 || j == C0482C.TIME_UNSET);
             this.sessionKeepaliveMs = j;
             return this;
         }
@@ -169,7 +169,7 @@ public class DefaultDrmSessionManager implements DrmSessionManager {
 
     private DefaultDrmSessionManager(UUID uuid, ExoMediaDrm.Provider provider, MediaDrmCallback mediaDrmCallback, HashMap<String, String> hashMap, boolean z, int[] iArr, boolean z2, LoadErrorHandlingPolicy loadErrorHandlingPolicy, long j) {
         Assertions.checkNotNull(uuid);
-        Assertions.checkArgument(!C0468C.COMMON_PSSH_UUID.equals(uuid), "Use C.CLEARKEY_UUID instead");
+        Assertions.checkArgument(!C0482C.COMMON_PSSH_UUID.equals(uuid), "Use C.CLEARKEY_UUID instead");
         this.uuid = uuid;
         this.exoMediaDrmProvider = provider;
         this.callback = mediaDrmCallback;
@@ -207,7 +207,7 @@ public class DefaultDrmSessionManager implements DrmSessionManager {
             ExoMediaDrm acquireExoMediaDrm = this.exoMediaDrmProvider.acquireExoMediaDrm(this.uuid);
             this.exoMediaDrm = acquireExoMediaDrm;
             acquireExoMediaDrm.setOnEventListener(new MediaDrmEventListener());
-        } else if (this.sessionKeepaliveMs != C0468C.TIME_UNSET) {
+        } else if (this.sessionKeepaliveMs != C0482C.TIME_UNSET) {
             for (int i2 = 0; i2 < this.sessions.size(); i2++) {
                 this.sessions.get(i2).acquire(null);
             }
@@ -221,7 +221,7 @@ public class DefaultDrmSessionManager implements DrmSessionManager {
         if (i != 0) {
             return;
         }
-        if (this.sessionKeepaliveMs != C0468C.TIME_UNSET) {
+        if (this.sessionKeepaliveMs != C0482C.TIME_UNSET) {
             ArrayList arrayList = new ArrayList(this.sessions);
             for (int i2 = 0; i2 < arrayList.size(); i2++) {
                 ((DefaultDrmSession) arrayList.get(i2)).release(null);
@@ -339,16 +339,16 @@ public class DefaultDrmSessionManager implements DrmSessionManager {
             return true;
         }
         if (getSchemeDatas(drmInitData, this.uuid, true).isEmpty()) {
-            if (drmInitData.schemeDataCount != 1 || !drmInitData.get(0).matches(C0468C.COMMON_PSSH_UUID)) {
+            if (drmInitData.schemeDataCount != 1 || !drmInitData.get(0).matches(C0482C.COMMON_PSSH_UUID)) {
                 return false;
             }
             Log.m806w(TAG, "DrmInitData only contains common PSSH SchemeData. Assuming support for: " + this.uuid);
         }
         String str = drmInitData.schemeType;
-        if (str == null || C0468C.CENC_TYPE_cenc.equals(str)) {
+        if (str == null || C0482C.CENC_TYPE_cenc.equals(str)) {
             return true;
         }
-        return C0468C.CENC_TYPE_cbcs.equals(str) ? Util.SDK_INT >= 25 : (C0468C.CENC_TYPE_cbc1.equals(str) || C0468C.CENC_TYPE_cens.equals(str)) ? false : true;
+        return C0482C.CENC_TYPE_cbcs.equals(str) ? Util.SDK_INT >= 25 : (C0482C.CENC_TYPE_cbc1.equals(str) || C0482C.CENC_TYPE_cens.equals(str)) ? false : true;
     }
 
     private synchronized void initPlaybackLooper(Looper looper) {
@@ -392,7 +392,7 @@ public class DefaultDrmSessionManager implements DrmSessionManager {
 
     private void undoAcquisition(DrmSession drmSession, DrmSessionEventListener.EventDispatcher eventDispatcher) {
         drmSession.release(eventDispatcher);
-        if (this.sessionKeepaliveMs != C0468C.TIME_UNSET) {
+        if (this.sessionKeepaliveMs != C0482C.TIME_UNSET) {
             drmSession.release(null);
         }
     }
@@ -415,7 +415,7 @@ public class DefaultDrmSessionManager implements DrmSessionManager {
         Assertions.checkNotNull(this.exoMediaDrm);
         DefaultDrmSession defaultDrmSession = new DefaultDrmSession(this.uuid, this.exoMediaDrm, this.provisioningManagerImpl, this.referenceCountListener, list, this.mode, this.playClearSamplesWithoutKeys | z, z, this.offlineLicenseKeySetId, this.keyRequestParameters, this.callback, (Looper) Assertions.checkNotNull(this.playbackLooper), this.loadErrorHandlingPolicy, (PlayerId) Assertions.checkNotNull(this.playerId));
         defaultDrmSession.acquire(eventDispatcher);
-        if (this.sessionKeepaliveMs != C0468C.TIME_UNSET) {
+        if (this.sessionKeepaliveMs != C0482C.TIME_UNSET) {
             defaultDrmSession.acquire(null);
         }
         return defaultDrmSession;
@@ -433,7 +433,7 @@ public class DefaultDrmSessionManager implements DrmSessionManager {
         ArrayList arrayList = new ArrayList(drmInitData.schemeDataCount);
         for (int i = 0; i < drmInitData.schemeDataCount; i++) {
             DrmInitData.SchemeData schemeData = drmInitData.get(i);
-            if ((schemeData.matches(uuid) || (C0468C.CLEARKEY_UUID.equals(uuid) && schemeData.matches(C0468C.COMMON_PSSH_UUID))) && (schemeData.data != null || z)) {
+            if ((schemeData.matches(uuid) || (C0482C.CLEARKEY_UUID.equals(uuid) && schemeData.matches(C0482C.COMMON_PSSH_UUID))) && (schemeData.data != null || z)) {
                 arrayList.add(schemeData);
             }
         }
@@ -525,7 +525,7 @@ public class DefaultDrmSessionManager implements DrmSessionManager {
 
         @Override // com.google.android.exoplayer2.drm.DefaultDrmSession.ReferenceCountListener
         public void onReferenceCountIncremented(DefaultDrmSession defaultDrmSession, int i) {
-            if (DefaultDrmSessionManager.this.sessionKeepaliveMs != C0468C.TIME_UNSET) {
+            if (DefaultDrmSessionManager.this.sessionKeepaliveMs != C0482C.TIME_UNSET) {
                 DefaultDrmSessionManager.this.keepaliveSessions.remove(defaultDrmSession);
                 ((Handler) Assertions.checkNotNull(DefaultDrmSessionManager.this.playbackHandler)).removeCallbacksAndMessages(defaultDrmSession);
             }
@@ -533,7 +533,7 @@ public class DefaultDrmSessionManager implements DrmSessionManager {
 
         @Override // com.google.android.exoplayer2.drm.DefaultDrmSession.ReferenceCountListener
         public void onReferenceCountDecremented(final DefaultDrmSession defaultDrmSession, int i) {
-            if (i == 1 && DefaultDrmSessionManager.this.prepareCallsCount > 0 && DefaultDrmSessionManager.this.sessionKeepaliveMs != C0468C.TIME_UNSET) {
+            if (i == 1 && DefaultDrmSessionManager.this.prepareCallsCount > 0 && DefaultDrmSessionManager.this.sessionKeepaliveMs != C0482C.TIME_UNSET) {
                 DefaultDrmSessionManager.this.keepaliveSessions.add(defaultDrmSession);
                 ((Handler) Assertions.checkNotNull(DefaultDrmSessionManager.this.playbackHandler)).postAtTime(new Runnable() { // from class: com.google.android.exoplayer2.drm.DefaultDrmSessionManager$ReferenceCountListenerImpl$$ExternalSyntheticLambda0
                     @Override // java.lang.Runnable
@@ -550,7 +550,7 @@ public class DefaultDrmSessionManager implements DrmSessionManager {
                     DefaultDrmSessionManager.this.noMultiSessionDrmSession = null;
                 }
                 DefaultDrmSessionManager.this.provisioningManagerImpl.onSessionFullyReleased(defaultDrmSession);
-                if (DefaultDrmSessionManager.this.sessionKeepaliveMs != C0468C.TIME_UNSET) {
+                if (DefaultDrmSessionManager.this.sessionKeepaliveMs != C0482C.TIME_UNSET) {
                     ((Handler) Assertions.checkNotNull(DefaultDrmSessionManager.this.playbackHandler)).removeCallbacksAndMessages(defaultDrmSession);
                     DefaultDrmSessionManager.this.keepaliveSessions.remove(defaultDrmSession);
                 }

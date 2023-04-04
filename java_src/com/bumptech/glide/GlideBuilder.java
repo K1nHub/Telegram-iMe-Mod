@@ -19,6 +19,8 @@ import com.bumptech.glide.load.engine.executor.GlideExecutor;
 import com.bumptech.glide.manager.ConnectivityMonitorFactory;
 import com.bumptech.glide.manager.DefaultConnectivityMonitorFactory;
 import com.bumptech.glide.manager.RequestManagerRetriever;
+import com.bumptech.glide.module.AppGlideModule;
+import com.bumptech.glide.module.GlideModule;
 import com.bumptech.glide.request.RequestListener;
 import com.bumptech.glide.request.RequestOptions;
 import java.util.Collections;
@@ -59,7 +61,7 @@ public final class GlideBuilder {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public Glide build(Context context) {
+    public Glide build(Context context, List<GlideModule> list, AppGlideModule appGlideModule) {
         if (this.sourceExecutor == null) {
             this.sourceExecutor = GlideExecutor.newSourceExecutor();
         }
@@ -95,14 +97,14 @@ public final class GlideBuilder {
         if (this.engine == null) {
             this.engine = new Engine(this.memoryCache, this.diskCacheFactory, this.diskCacheExecutor, this.sourceExecutor, GlideExecutor.newUnlimitedSourceExecutor(), this.animationExecutor, this.isActiveResourceRetentionAllowed);
         }
-        List<RequestListener<Object>> list = this.defaultRequestListeners;
-        if (list == null) {
+        List<RequestListener<Object>> list2 = this.defaultRequestListeners;
+        if (list2 == null) {
             this.defaultRequestListeners = Collections.emptyList();
         } else {
-            this.defaultRequestListeners = Collections.unmodifiableList(list);
+            this.defaultRequestListeners = Collections.unmodifiableList(list2);
         }
         GlideExperiments build = this.glideExperimentsBuilder.build();
-        return new Glide(context, this.engine, this.memoryCache, this.bitmapPool, this.arrayPool, new RequestManagerRetriever(this.requestManagerFactory, build), this.connectivityMonitorFactory, this.logLevel, this.defaultRequestOptionsFactory, this.defaultTransitionOptions, this.defaultRequestListeners, build);
+        return new Glide(context, this.engine, this.memoryCache, this.bitmapPool, this.arrayPool, new RequestManagerRetriever(this.requestManagerFactory, build), this.connectivityMonitorFactory, this.logLevel, this.defaultRequestOptionsFactory, this.defaultTransitionOptions, this.defaultRequestListeners, list, appGlideModule, build);
     }
 
     /* loaded from: classes.dex */
@@ -111,9 +113,8 @@ public final class GlideBuilder {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: classes.dex */
-    public static final class EnableImageDecoderForBitmaps {
+    static final class EnableImageDecoderForBitmaps {
         EnableImageDecoderForBitmaps() {
         }
     }

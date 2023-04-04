@@ -47,7 +47,7 @@
     return-void
 .end method
 
-.method private final getResourceManager()Lcom/smedialink/storage/domain/utils/system/ResourceManager;
+.method private final getResourceManager()Lcom/iMe/storage/domain/utils/system/ResourceManager;
     .locals 1
 
     .line 18
@@ -57,7 +57,7 @@
 
     move-result-object v0
 
-    check-cast v0, Lcom/smedialink/storage/domain/utils/system/ResourceManager;
+    check-cast v0, Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
     return-object v0
 .end method
@@ -99,13 +99,13 @@
     check-cast v0, Landroid/widget/TextView;
 
     .line 35
-    invoke-direct {p0}, Lcom/chad/library/adapter/base/loadmore/SimpleLoadMoreView;->getResourceManager()Lcom/smedialink/storage/domain/utils/system/ResourceManager;
+    invoke-direct {p0}, Lcom/chad/library/adapter/base/loadmore/SimpleLoadMoreView;->getResourceManager()Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
     move-result-object v1
 
     sget v2, Lorg/telegram/messenger/R$string;->brvah_load_complete:I
 
-    invoke-interface {v1, v2}, Lcom/smedialink/storage/domain/utils/system/ResourceManager;->getString(I)Ljava/lang/String;
+    invoke-interface {v1, v2}, Lcom/iMe/storage/domain/utils/system/ResourceManager;->getString(I)Ljava/lang/String;
 
     move-result-object v1
 
@@ -147,13 +147,13 @@
     check-cast v0, Landroid/widget/TextView;
 
     .line 43
-    invoke-direct {p0}, Lcom/chad/library/adapter/base/loadmore/SimpleLoadMoreView;->getResourceManager()Lcom/smedialink/storage/domain/utils/system/ResourceManager;
+    invoke-direct {p0}, Lcom/chad/library/adapter/base/loadmore/SimpleLoadMoreView;->getResourceManager()Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
     move-result-object v1
 
     sget v2, Lorg/telegram/messenger/R$string;->brvah_load_end:I
 
-    invoke-interface {v1, v2}, Lcom/smedialink/storage/domain/utils/system/ResourceManager;->getString(I)Ljava/lang/String;
+    invoke-interface {v1, v2}, Lcom/iMe/storage/domain/utils/system/ResourceManager;->getString(I)Ljava/lang/String;
 
     move-result-object v1
 
@@ -195,13 +195,13 @@
     check-cast v0, Landroid/widget/TextView;
 
     .line 51
-    invoke-direct {p0}, Lcom/chad/library/adapter/base/loadmore/SimpleLoadMoreView;->getResourceManager()Lcom/smedialink/storage/domain/utils/system/ResourceManager;
+    invoke-direct {p0}, Lcom/chad/library/adapter/base/loadmore/SimpleLoadMoreView;->getResourceManager()Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
     move-result-object v1
 
     sget v2, Lorg/telegram/messenger/R$string;->brvah_load_failed:I
 
-    invoke-interface {v1, v2}, Lcom/smedialink/storage/domain/utils/system/ResourceManager;->getString(I)Ljava/lang/String;
+    invoke-interface {v1, v2}, Lcom/iMe/storage/domain/utils/system/ResourceManager;->getString(I)Ljava/lang/String;
 
     move-result-object v1
 
@@ -252,7 +252,7 @@
 
     move-result v1
 
-    invoke-static {v0, v1}, Lcom/smedialink/utils/extentions/common/ViewExtKt;->tintIndeterminateProgress(Landroid/widget/ProgressBar;I)V
+    invoke-static {v0, v1}, Lcom/iMe/utils/extentions/common/ViewExtKt;->tintIndeterminateProgress(Landroid/widget/ProgressBar;I)V
 
     .line 26
     sget v0, Lorg/telegram/messenger/R$id;->loading_text:I
@@ -264,13 +264,13 @@
     check-cast v0, Landroid/widget/TextView;
 
     .line 27
-    invoke-direct {p0}, Lcom/chad/library/adapter/base/loadmore/SimpleLoadMoreView;->getResourceManager()Lcom/smedialink/storage/domain/utils/system/ResourceManager;
+    invoke-direct {p0}, Lcom/chad/library/adapter/base/loadmore/SimpleLoadMoreView;->getResourceManager()Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
     move-result-object v1
 
     sget v2, Lorg/telegram/messenger/R$string;->common_progress_state_title:I
 
-    invoke-interface {v1, v2}, Lcom/smedialink/storage/domain/utils/system/ResourceManager;->getString(I)Ljava/lang/String;
+    invoke-interface {v1, v2}, Lcom/iMe/storage/domain/utils/system/ResourceManager;->getString(I)Ljava/lang/String;
 
     move-result-object v1
 

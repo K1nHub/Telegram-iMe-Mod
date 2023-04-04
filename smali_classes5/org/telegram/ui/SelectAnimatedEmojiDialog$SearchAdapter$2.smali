@@ -24,7 +24,7 @@
 .method constructor <init>(Lorg/telegram/ui/SelectAnimatedEmojiDialog$SearchAdapter;Ljava/util/ArrayList;)V
     .locals 0
 
-    .line 1913
+    .line 1912
     iput-object p1, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$SearchAdapter$2;->this$1:Lorg/telegram/ui/SelectAnimatedEmojiDialog$SearchAdapter;
 
     iput-object p2, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$SearchAdapter$2;->val$prevRowHashCodes:Ljava/util/ArrayList;
@@ -47,7 +47,7 @@
 .method public areItemsTheSame(II)Z
     .locals 1
 
-    .line 1926
+    .line 1925
     iget-object v0, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$SearchAdapter$2;->val$prevRowHashCodes:Ljava/util/ArrayList;
 
     invoke-virtual {v0, p1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -76,7 +76,7 @@
 .method public getNewListSize()I
     .locals 1
 
-    .line 1921
+    .line 1920
     iget-object v0, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$SearchAdapter$2;->this$1:Lorg/telegram/ui/SelectAnimatedEmojiDialog$SearchAdapter;
 
     invoke-static {v0}, Lorg/telegram/ui/SelectAnimatedEmojiDialog$SearchAdapter;->access$4600(Lorg/telegram/ui/SelectAnimatedEmojiDialog$SearchAdapter;)Ljava/util/ArrayList;
@@ -93,7 +93,7 @@
 .method public getOldListSize()I
     .locals 1
 
-    .line 1916
+    .line 1915
     iget-object v0, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$SearchAdapter$2;->val$prevRowHashCodes:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I

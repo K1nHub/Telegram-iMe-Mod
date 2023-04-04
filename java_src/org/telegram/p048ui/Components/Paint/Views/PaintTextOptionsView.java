@@ -16,7 +16,7 @@ import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3301R;
+import org.telegram.messenger.C3316R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.p048ui.ActionBar.Theme;
 import org.telegram.p048ui.Components.ChatActivityEnterViewAnimatedIconView;
@@ -72,7 +72,7 @@ public class PaintTextOptionsView extends LinearLayout {
         addView(this.colorClickableView, LayoutHelper.createLinear(24, -1, 48, 0, 0, 16, 0));
         RLottieImageView rLottieImageView = new RLottieImageView(context);
         this.alignView = rLottieImageView;
-        rLottieImageView.setAnimation(C3301R.C3306raw.photo_text_allign, 24, 24);
+        rLottieImageView.setAnimation(C3316R.C3321raw.photo_text_allign, 24, 24);
         RLottieDrawable animatedDrawable = this.alignView.getAnimatedDrawable();
         animatedDrawable.setPlayInDirectionOfCustomEndFrame(true);
         animatedDrawable.setCustomEndFrame(20);
@@ -88,7 +88,7 @@ public class PaintTextOptionsView extends LinearLayout {
         addView(this.alignView, LayoutHelper.createLinear(28, 28, 16, 0, 0, 16, 0));
         ImageView imageView = new ImageView(context);
         this.outlineView = imageView;
-        imageView.setImageResource(C3301R.C3303drawable.msg_text_outlined);
+        imageView.setImageResource(C3316R.C3318drawable.msg_text_outlined);
         this.outlineView.setPadding(AndroidUtilities.m50dp(1), AndroidUtilities.m50dp(1), AndroidUtilities.m50dp(1), AndroidUtilities.m50dp(1));
         this.outlineView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.Paint.Views.PaintTextOptionsView$$ExternalSyntheticLambda3
             @Override // android.view.View.OnClickListener
@@ -99,7 +99,7 @@ public class PaintTextOptionsView extends LinearLayout {
         addView(this.outlineView, LayoutHelper.createLinear(28, 28, 16, 0, 0, 16, 0));
         ImageView imageView2 = new ImageView(context);
         this.plusView = imageView2;
-        imageView2.setImageResource(C3301R.C3303drawable.msg_add);
+        imageView2.setImageResource(C3316R.C3318drawable.msg_add);
         this.plusView.setColorFilter(new PorterDuffColorFilter(-1, PorterDuff.Mode.SRC_IN));
         this.plusView.setBackground(Theme.createSelectorDrawable(1090519039));
         this.plusView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.Paint.Views.PaintTextOptionsView$$ExternalSyntheticLambda0
@@ -162,7 +162,7 @@ public class PaintTextOptionsView extends LinearLayout {
 
     public void animatePlusToIcon(int i) {
         if (i == 0) {
-            i = C3301R.C3303drawable.msg_add;
+            i = C3316R.C3318drawable.msg_add;
         }
         AndroidUtilities.updateImageViewImageAnimated(this.plusView, i);
     }
@@ -182,11 +182,11 @@ public class PaintTextOptionsView extends LinearLayout {
         }
         this.outlineType = i;
         if (i == 1) {
-            i2 = C3301R.C3303drawable.msg_text_regular;
+            i2 = C3316R.C3318drawable.msg_text_regular;
         } else if (i != 2) {
-            i2 = C3301R.C3303drawable.msg_text_outlined;
+            i2 = C3316R.C3318drawable.msg_text_outlined;
         } else {
-            i2 = C3301R.C3303drawable.msg_text_framed;
+            i2 = C3316R.C3318drawable.msg_text_framed;
         }
         if (z) {
             AndroidUtilities.updateImageViewImageAnimated(this.outlineView, i2);
@@ -305,7 +305,7 @@ public class PaintTextOptionsView extends LinearLayout {
                 setBackground(Theme.AdaptiveRipple.rect(-14145495));
             }
             if (this.isCurrent && this.expandDrawable == null) {
-                Drawable drawable = ContextCompat.getDrawable(getContext(), C3301R.C3303drawable.photo_expand);
+                Drawable drawable = ContextCompat.getDrawable(getContext(), C3316R.C3318drawable.photo_expand);
                 this.expandDrawable = drawable;
                 drawable.setColorFilter(new PorterDuffColorFilter(-1711276033, PorterDuff.Mode.SRC_IN));
             }

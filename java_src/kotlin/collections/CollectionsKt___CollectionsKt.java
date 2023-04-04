@@ -593,7 +593,7 @@ public class CollectionsKt___CollectionsKt extends CollectionsKt___CollectionsJv
         collectionSizeOrDefault2 = CollectionsKt__IterablesKt.collectionSizeOrDefault(other, 10);
         ArrayList arrayList = new ArrayList(Math.min(collectionSizeOrDefault, collectionSizeOrDefault2));
         while (it.hasNext() && it2.hasNext()) {
-            arrayList.add(TuplesKt.m99to(it.next(), it2.next()));
+            arrayList.add(TuplesKt.m94to(it.next(), it2.next()));
         }
         return arrayList;
     }
@@ -610,7 +610,7 @@ public class CollectionsKt___CollectionsKt extends CollectionsKt___CollectionsJv
         T next = it.next();
         while (it.hasNext()) {
             T next2 = it.next();
-            arrayList.add(TuplesKt.m99to(next, next2));
+            arrayList.add(TuplesKt.m94to(next, next2));
             next = next2;
         }
         return arrayList;

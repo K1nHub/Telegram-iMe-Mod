@@ -10,6 +10,7 @@ import com.bumptech.glide.request.RequestListener;
 import com.bumptech.glide.request.RequestOptions;
 import com.bumptech.glide.request.target.ImageViewTargetFactory;
 import com.bumptech.glide.request.target.ViewTarget;
+import com.bumptech.glide.util.GlideSuppliers;
 import java.util.List;
 import java.util.Map;
 /* loaded from: classes.dex */
@@ -24,12 +25,11 @@ public class GlideContext extends ContextWrapper {
     private final GlideExperiments experiments;
     private final ImageViewTargetFactory imageViewTargetFactory;
     private final int logLevel;
-    private final Registry registry;
+    private final GlideSuppliers.GlideSupplier<Registry> registry;
 
-    public GlideContext(Context context, ArrayPool arrayPool, Registry registry, ImageViewTargetFactory imageViewTargetFactory, Glide.RequestOptionsFactory requestOptionsFactory, Map<Class<?>, TransitionOptions<?, ?>> map, List<RequestListener<Object>> list, Engine engine, GlideExperiments glideExperiments, int i) {
+    public GlideContext(Context context, ArrayPool arrayPool, GlideSuppliers.GlideSupplier<Registry> glideSupplier, ImageViewTargetFactory imageViewTargetFactory, Glide.RequestOptionsFactory requestOptionsFactory, Map<Class<?>, TransitionOptions<?, ?>> map, List<RequestListener<Object>> list, Engine engine, GlideExperiments glideExperiments, int i) {
         super(context.getApplicationContext());
         this.arrayPool = arrayPool;
-        this.registry = registry;
         this.imageViewTargetFactory = imageViewTargetFactory;
         this.defaultRequestOptionsFactory = requestOptionsFactory;
         this.defaultRequestListeners = list;
@@ -37,6 +37,7 @@ public class GlideContext extends ContextWrapper {
         this.engine = engine;
         this.experiments = glideExperiments;
         this.logLevel = i;
+        this.registry = GlideSuppliers.memorize(glideSupplier);
     }
 
     public List<RequestListener<Object>> getDefaultRequestListeners() {
@@ -71,7 +72,7 @@ public class GlideContext extends ContextWrapper {
     }
 
     public Registry getRegistry() {
-        return this.registry;
+        return this.registry.get();
     }
 
     public int getLogLevel() {

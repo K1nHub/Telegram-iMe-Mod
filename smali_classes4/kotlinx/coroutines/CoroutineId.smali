@@ -111,7 +111,7 @@
 
     iget-wide v0, p0, Lkotlinx/coroutines/CoroutineId;->id:J
 
-    invoke-static {v0, v1}, Lcom/iMe/i_staking/request/StakingApprovalPrepareRequest$$ExternalSyntheticBackport0;->m(J)I
+    invoke-static {v0, v1}, Lcom/iMe/bots/data/model/database/BotsDbModel$$ExternalSyntheticBackport0;->m(J)I
 
     move-result v0
 

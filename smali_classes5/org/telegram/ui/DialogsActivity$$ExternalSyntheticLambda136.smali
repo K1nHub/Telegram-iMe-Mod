@@ -2,7 +2,7 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lorg/telegram/ui/Components/FiltersListBottomSheet$FiltersListBottomSheetDelegate;
+.implements Lorg/telegram/ui/Components/AlertsCreator$BlockDialogCallback;
 
 
 # instance fields
@@ -10,11 +10,9 @@
 
 .field public final synthetic f$1:Ljava/util/ArrayList;
 
-.field public final synthetic f$2:Lorg/telegram/messenger/MessagesController$DialogFilter;
-
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/DialogsActivity;Ljava/util/ArrayList;Lorg/telegram/messenger/MessagesController$DialogFilter;)V
+.method public synthetic constructor <init>(Lorg/telegram/ui/DialogsActivity;Ljava/util/ArrayList;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -23,23 +21,19 @@
 
     iput-object p2, p0, Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda136;->f$1:Ljava/util/ArrayList;
 
-    iput-object p3, p0, Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda136;->f$2:Lorg/telegram/messenger/MessagesController$DialogFilter;
-
     return-void
 .end method
 
 
 # virtual methods
-.method public final didSelectFilter(Lorg/telegram/messenger/MessagesController$DialogFilter;)V
-    .locals 3
+.method public final run(ZZ)V
+    .locals 2
 
     iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda136;->f$0:Lorg/telegram/ui/DialogsActivity;
 
     iget-object v1, p0, Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda136;->f$1:Ljava/util/ArrayList;
 
-    iget-object v2, p0, Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda136;->f$2:Lorg/telegram/messenger/MessagesController$DialogFilter;
-
-    invoke-static {v0, v1, v2, p1}, Lorg/telegram/ui/DialogsActivity;->$r8$lambda$gnPsIu6B7nRr4I2c7lwFwhi2gsc(Lorg/telegram/ui/DialogsActivity;Ljava/util/ArrayList;Lorg/telegram/messenger/MessagesController$DialogFilter;Lorg/telegram/messenger/MessagesController$DialogFilter;)V
+    invoke-static {v0, v1, p1, p2}, Lorg/telegram/ui/DialogsActivity;->$r8$lambda$rMIwvauDJCIj9Hhw1ODtns5UWZ4(Lorg/telegram/ui/DialogsActivity;Ljava/util/ArrayList;ZZ)V
 
     return-void
 .end method

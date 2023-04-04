@@ -2,7 +2,7 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Ljava/util/Comparator;
+.implements Ljava/lang/Runnable;
 
 
 # static fields
@@ -32,16 +32,10 @@
 
 
 # virtual methods
-.method public final compare(Ljava/lang/Object;Ljava/lang/Object;)I
+.method public final run()V
     .locals 0
 
-    check-cast p1, Lorg/telegram/messenger/SharedConfig$ProxyInfo;
+    invoke-static {}, Lorg/telegram/messenger/SharedConfig;->$r8$lambda$CItOIgPoVipKFaoe7LjXgeek6jY()V
 
-    check-cast p2, Lorg/telegram/messenger/SharedConfig$ProxyInfo;
-
-    invoke-static {p1, p2}, Lorg/telegram/messenger/SharedConfig;->$r8$lambda$K1X-l4vRXrWWRPEci20ckE1evgE(Lorg/telegram/messenger/SharedConfig$ProxyInfo;Lorg/telegram/messenger/SharedConfig$ProxyInfo;)I
-
-    move-result p1
-
-    return p1
+    return-void
 .end method

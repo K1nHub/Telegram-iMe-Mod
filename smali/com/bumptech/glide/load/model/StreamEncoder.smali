@@ -175,6 +175,7 @@
 
     invoke-interface {p2, v0}, Lcom/bumptech/glide/load/engine/bitmap_recycle/ArrayPool;->put(Ljava/lang/Object;)V
 
+    .line 51
     throw p1
 .end method
 

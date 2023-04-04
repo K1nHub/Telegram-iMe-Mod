@@ -108,9 +108,9 @@
     check-cast p2, Lokhttp3/OkHttpClient;
 
     .line 22
-    sget-object v0, Lcom/smedialink/storage/common/AppConfiguration$Api;->INSTANCE:Lcom/smedialink/storage/common/AppConfiguration$Api;
+    sget-object v0, Lcom/iMe/storage/common/AppConfiguration$Api;->INSTANCE:Lcom/iMe/storage/common/AppConfiguration$Api;
 
-    invoke-virtual {v0}, Lcom/smedialink/storage/common/AppConfiguration$Api;->getServerUrl()Ljava/lang/String;
+    invoke-virtual {v0}, Lcom/iMe/storage/common/AppConfiguration$Api;->getServerUrl()Ljava/lang/String;
 
     move-result-object v0
 
@@ -128,7 +128,7 @@
     check-cast p1, Lcom/google/gson/Gson;
 
     .line 22
-    invoke-static {p2, v0, p1}, Lcom/smedialink/storage/data/di/module/NetworkModuleKt;->createRetrofit(Lokhttp3/OkHttpClient;Ljava/lang/String;Lcom/google/gson/Gson;)Lretrofit2/Retrofit;
+    invoke-static {p2, v0, p1}, Lcom/iMe/storage/data/di/module/NetworkModuleKt;->createRetrofit(Lokhttp3/OkHttpClient;Ljava/lang/String;Lcom/google/gson/Gson;)Lretrofit2/Retrofit;
 
     move-result-object p1
 

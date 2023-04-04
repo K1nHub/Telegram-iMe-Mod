@@ -26,7 +26,7 @@
 .method constructor <init>(Lorg/telegram/ui/ChatEditActivity;ZLjava/util/ArrayList;)V
     .locals 0
 
-    .line 1687
+    .line 1686
     iput-object p1, p0, Lorg/telegram/ui/ChatEditActivity$10;->this$0:Lorg/telegram/ui/ChatEditActivity;
 
     iput-boolean p2, p0, Lorg/telegram/ui/ChatEditActivity$10;->val$finalShow:Z
@@ -43,7 +43,7 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 2
 
-    .line 1690
+    .line 1689
     iget-object p1, p0, Lorg/telegram/ui/ChatEditActivity$10;->this$0:Lorg/telegram/ui/ChatEditActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/ChatEditActivity;->access$1400(Lorg/telegram/ui/ChatEditActivity;)Lorg/telegram/ui/Cells/TextCell;
@@ -66,7 +66,7 @@
     :goto_0
     invoke-virtual {p1, v0}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
-    .line 1691
+    .line 1690
     :goto_1
     iget-object p1, p0, Lorg/telegram/ui/ChatEditActivity$10;->val$nextViews:Ljava/util/ArrayList;
 
@@ -76,7 +76,7 @@
 
     if-ge v1, p1, :cond_1
 
-    .line 1692
+    .line 1691
     iget-object p1, p0, Lorg/telegram/ui/ChatEditActivity$10;->val$nextViews:Ljava/util/ArrayList;
 
     invoke-virtual {p1, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;

@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lorg/telegram/ui/CacheControlActivity$$ExternalSyntheticLambda9;->f$0:Lorg/telegram/ui/CacheControlActivity;
 
-    invoke-static {v0}, Lorg/telegram/ui/CacheControlActivity;->$r8$lambda$dgMBJY7fWfqFF2VNZK9uQ_oL67U(Lorg/telegram/ui/CacheControlActivity;)V
+    invoke-static {v0}, Lorg/telegram/ui/CacheControlActivity;->$r8$lambda$hifz9AxYrlDIPUyUAyOYFEAF-Hs(Lorg/telegram/ui/CacheControlActivity;)V
 
     return-void
 .end method

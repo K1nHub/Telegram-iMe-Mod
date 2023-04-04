@@ -24,7 +24,7 @@
 .method constructor <init>(Lorg/telegram/messenger/MediaController;Lorg/telegram/ui/Components/VideoPlayer;)V
     .locals 0
 
-    .line 1919
+    .line 1915
     iput-object p1, p0, Lorg/telegram/messenger/MediaController$6;->this$0:Lorg/telegram/messenger/MediaController;
 
     iput-object p2, p0, Lorg/telegram/messenger/MediaController$6;->val$playerFinal:Lorg/telegram/ui/Components/VideoPlayer;
@@ -39,7 +39,7 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 1
 
-    .line 1923
+    .line 1919
     :try_start_0
     iget-object p1, p0, Lorg/telegram/messenger/MediaController$6;->val$playerFinal:Lorg/telegram/ui/Components/VideoPlayer;
 
@@ -54,7 +54,7 @@
     :catch_0
     move-exception p1
 
-    .line 1925
+    .line 1921
     invoke-static {p1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :goto_0

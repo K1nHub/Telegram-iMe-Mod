@@ -675,7 +675,7 @@
     .line 115
     new-instance v2, Lokhttp3/internal/http2/Header;
 
-    const-string v3, "transfer-encoding"
+    const-string/jumbo v3, "transfer-encoding"
 
     invoke-direct {v2, v3, v4}, Lokhttp3/internal/http2/Header;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
@@ -686,7 +686,7 @@
     .line 116
     new-instance v2, Lokhttp3/internal/http2/Header;
 
-    const-string v3, "user-agent"
+    const-string/jumbo v3, "user-agent"
 
     invoke-direct {v2, v3, v4}, Lokhttp3/internal/http2/Header;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 

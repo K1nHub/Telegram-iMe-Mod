@@ -82,7 +82,7 @@
 
     const-string v1, "te"
 
-    const-string v2, "trailers"
+    const-string/jumbo v2, "trailers"
 
     invoke-direct {v0, v1, v2}, Lio/grpc/okhttp/internal/framed/Header;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 

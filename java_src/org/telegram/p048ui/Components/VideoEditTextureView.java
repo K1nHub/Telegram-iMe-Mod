@@ -139,17 +139,17 @@ public class VideoEditTextureView extends TextureView implements TextureView.Sur
 
     public void setViewRect(float f, float f2, float f3, float f4) {
         Rect rect = this.viewRect;
-        rect.f1799x = f;
-        rect.f1800y = f2;
+        rect.f1802x = f;
+        rect.f1803y = f2;
         rect.width = f3;
         rect.height = f4;
     }
 
     public boolean containsPoint(float f, float f2) {
         Rect rect = this.viewRect;
-        float f3 = rect.f1799x;
+        float f3 = rect.f1802x;
         if (f >= f3 && f <= f3 + rect.width) {
-            float f4 = rect.f1800y;
+            float f4 = rect.f1803y;
             if (f2 >= f4 && f2 <= f4 + rect.height) {
                 return true;
             }

@@ -4,7 +4,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.Parcelable;
 import com.google.android.exoplayer2.Bundleable;
-import com.google.android.exoplayer2.C0468C;
+import com.google.android.exoplayer2.C0482C;
 import com.google.android.exoplayer2.util.Assertions;
 import com.google.android.exoplayer2.util.Util;
 import java.lang.annotation.Documented;
@@ -27,7 +27,7 @@ public final class AdPlaybackState implements Bundleable {
     public final Object adsId;
     public final long contentDurationUs;
     public final int removedAdGroupCount;
-    public static final AdPlaybackState NONE = new AdPlaybackState(null, new AdGroup[0], 0, C0468C.TIME_UNSET, 0);
+    public static final AdPlaybackState NONE = new AdPlaybackState(null, new AdGroup[0], 0, C0482C.TIME_UNSET, 0);
     private static final AdGroup REMOVED_AD_GROUP = new AdGroup(0).withAdCount(0);
     private static final String FIELD_AD_GROUPS = Util.intToStringMaxRadix(1);
     private static final String FIELD_AD_RESUME_POSITION_US = Util.intToStringMaxRadix(2);
@@ -251,7 +251,7 @@ public final class AdPlaybackState implements Bundleable {
             int length = jArr.length;
             int max = Math.max(i, length);
             long[] copyOf = Arrays.copyOf(jArr, max);
-            Arrays.fill(copyOf, length, max, (long) C0468C.TIME_UNSET);
+            Arrays.fill(copyOf, length, max, (long) C0482C.TIME_UNSET);
             return copyOf;
         }
 
@@ -287,7 +287,7 @@ public final class AdPlaybackState implements Bundleable {
     }
 
     public AdPlaybackState(Object obj, long... jArr) {
-        this(obj, createEmptyAdGroups(jArr), 0L, C0468C.TIME_UNSET, 0);
+        this(obj, createEmptyAdGroups(jArr), 0L, C0482C.TIME_UNSET, 0);
     }
 
     private AdPlaybackState(Object obj, AdGroup[] adGroupArr, long j, long j2, int i) {
@@ -320,7 +320,7 @@ public final class AdPlaybackState implements Bundleable {
 
     public int getAdGroupIndexAfterPositionUs(long j, long j2) {
         if (j != Long.MIN_VALUE) {
-            if (j2 == C0468C.TIME_UNSET || j < j2) {
+            if (j2 == C0482C.TIME_UNSET || j < j2) {
                 int i = this.removedAdGroupCount;
                 while (i < this.adGroupCount && ((getAdGroup(i).timeUs != Long.MIN_VALUE && getAdGroup(i).timeUs <= j) || !getAdGroup(i).shouldPlayAdGroup())) {
                     i++;
@@ -585,7 +585,7 @@ public final class AdPlaybackState implements Bundleable {
             return false;
         }
         long j3 = getAdGroup(i).timeUs;
-        return j3 == Long.MIN_VALUE ? j2 == C0468C.TIME_UNSET || j < j2 : j < j3;
+        return j3 == Long.MIN_VALUE ? j2 == C0482C.TIME_UNSET || j < j2 : j < j3;
     }
 
     @Override // com.google.android.exoplayer2.Bundleable

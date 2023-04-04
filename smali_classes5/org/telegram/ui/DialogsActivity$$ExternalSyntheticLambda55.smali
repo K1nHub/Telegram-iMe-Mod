@@ -8,18 +8,18 @@
 # instance fields
 .field public final synthetic f$0:Lorg/telegram/ui/DialogsActivity;
 
-.field public final synthetic f$1:Landroid/widget/FrameLayout;
+.field public final synthetic f$1:I
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/DialogsActivity;Landroid/widget/FrameLayout;)V
+.method public synthetic constructor <init>(Lorg/telegram/ui/DialogsActivity;I)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda55;->f$0:Lorg/telegram/ui/DialogsActivity;
 
-    iput-object p2, p0, Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda55;->f$1:Landroid/widget/FrameLayout;
+    iput p2, p0, Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda55;->f$1:I
 
     return-void
 .end method
@@ -31,9 +31,9 @@
 
     iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda55;->f$0:Lorg/telegram/ui/DialogsActivity;
 
-    iget-object v1, p0, Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda55;->f$1:Landroid/widget/FrameLayout;
+    iget v1, p0, Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda55;->f$1:I
 
-    invoke-static {v0, v1, p1}, Lorg/telegram/ui/DialogsActivity;->$r8$lambda$29nhY9IgQWgbE-IRGe2x24zGv34(Lorg/telegram/ui/DialogsActivity;Landroid/widget/FrameLayout;Landroid/view/View;)Z
+    invoke-static {v0, v1, p1}, Lorg/telegram/ui/DialogsActivity;->$r8$lambda$hxs2GuKX8AMcxWhMj1TyiDCVOqg(Lorg/telegram/ui/DialogsActivity;ILandroid/view/View;)Z
 
     move-result p1
 

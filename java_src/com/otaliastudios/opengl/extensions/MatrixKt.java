@@ -1,9 +1,9 @@
 package com.otaliastudios.opengl.extensions;
 
-import android.opengl.Matrix;
+import com.otaliastudios.opengl.internal.MiscKt;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: Matrix.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class MatrixKt {
     private static final void checkSize(float[] fArr) {
         if (fArr.length != 16) {
@@ -11,10 +11,10 @@ public final class MatrixKt {
         }
     }
 
-    public static final float[] makeIdentity(float[] makeIdentity) {
-        Intrinsics.checkParameterIsNotNull(makeIdentity, "$this$makeIdentity");
-        checkSize(makeIdentity);
-        Matrix.setIdentityM(makeIdentity, 0);
-        return makeIdentity;
+    public static final float[] makeIdentity(float[] fArr) {
+        Intrinsics.checkNotNullParameter(fArr, "<this>");
+        checkSize(fArr);
+        MiscKt.matrixMakeIdentity(fArr);
+        return fArr;
     }
 }

@@ -13,7 +13,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3301R;
+import org.telegram.messenger.C3316R;
 import org.telegram.messenger.DownloadController;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessagesController;
@@ -21,7 +21,7 @@ import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.UserConfig;
 import org.telegram.p048ui.ActionBar.AlertDialog;
 import org.telegram.p048ui.ActionBar.BaseFragment;
-import org.telegram.p048ui.ActionBar.C3366ActionBar;
+import org.telegram.p048ui.ActionBar.C3381ActionBar;
 import org.telegram.p048ui.ActionBar.Theme;
 import org.telegram.p048ui.ActionBar.ThemeDescription;
 import org.telegram.p048ui.Cells.HeaderCell;
@@ -92,14 +92,14 @@ public class LogoutActivity extends BaseFragment {
 
     @Override // org.telegram.p048ui.ActionBar.BaseFragment
     public View createView(Context context) {
-        this.actionBar.setBackButtonImage(C3301R.C3303drawable.ic_ab_back);
-        this.actionBar.setTitle(LocaleController.getString("LogOutTitle", C3301R.string.LogOutTitle));
+        this.actionBar.setBackButtonImage(C3316R.C3318drawable.ic_ab_back);
+        this.actionBar.setTitle(LocaleController.getString("LogOutTitle", C3316R.string.LogOutTitle));
         if (AndroidUtilities.isTablet()) {
             this.actionBar.setOccupyStatusBar(false);
         }
         this.actionBar.setAllowOverlayTitle(true);
-        this.actionBar.setActionBarMenuOnItemClick(new C3366ActionBar.ActionBarMenuOnItemClick() { // from class: org.telegram.ui.LogoutActivity.1
-            @Override // org.telegram.p048ui.ActionBar.C3366ActionBar.ActionBarMenuOnItemClick
+        this.actionBar.setActionBarMenuOnItemClick(new C3381ActionBar.ActionBarMenuOnItemClick() { // from class: org.telegram.ui.LogoutActivity.1
+            @Override // org.telegram.p048ui.ActionBar.C3381ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i) {
                 if (i == -1) {
                     LogoutActivity.this.finishFragment();
@@ -171,8 +171,8 @@ public class LogoutActivity extends BaseFragment {
 
     public static AlertDialog makeLogOutDialog(Context context, final int i) {
         AlertDialog.Builder builder = new AlertDialog.Builder(context);
-        builder.setMessage(LocaleController.getString("AreYouSureLogout", C3301R.string.AreYouSureLogout));
-        int i2 = C3301R.string.LogOut;
+        builder.setMessage(LocaleController.getString("AreYouSureLogout", C3316R.string.AreYouSureLogout));
+        int i2 = C3316R.string.LogOut;
         builder.setTitle(LocaleController.getString("LogOut", i2));
         builder.setPositiveButton(LocaleController.getString("LogOut", i2), new DialogInterface.OnClickListener() { // from class: org.telegram.ui.LogoutActivity$$ExternalSyntheticLambda0
             @Override // android.content.DialogInterface.OnClickListener
@@ -180,7 +180,7 @@ public class LogoutActivity extends BaseFragment {
                 LogoutActivity.lambda$makeLogOutDialog$1(i, dialogInterface, i3);
             }
         });
-        builder.setNegativeButton(LocaleController.getString("Cancel", C3301R.string.Cancel), null);
+        builder.setNegativeButton(LocaleController.getString("Cancel", C3316R.string.Cancel), null);
         AlertDialog create = builder.create();
         TextView textView = (TextView) create.getButton(-1);
         if (textView != null) {
@@ -229,20 +229,20 @@ public class LogoutActivity extends BaseFragment {
             if (itemViewType == 0) {
                 HeaderCell headerCell = (HeaderCell) viewHolder.itemView;
                 if (i == LogoutActivity.this.alternativeHeaderRow) {
-                    headerCell.setText(LocaleController.getString("AlternativeOptions", C3301R.string.AlternativeOptions));
+                    headerCell.setText(LocaleController.getString("AlternativeOptions", C3316R.string.AlternativeOptions));
                 }
             } else if (itemViewType != 1) {
                 if (itemViewType == 3) {
                     TextSettingsCell textSettingsCell = (TextSettingsCell) viewHolder.itemView;
                     if (i == LogoutActivity.this.logoutRow) {
                         textSettingsCell.setTextColor(Theme.getColor("windowBackgroundWhiteRedText5"));
-                        textSettingsCell.setText(LocaleController.getString("LogOutTitle", C3301R.string.LogOutTitle), false);
+                        textSettingsCell.setText(LocaleController.getString("LogOutTitle", C3316R.string.LogOutTitle), false);
                     }
                 } else if (itemViewType != 4) {
                 } else {
                     TextInfoPrivacyCell textInfoPrivacyCell = (TextInfoPrivacyCell) viewHolder.itemView;
                     if (i == LogoutActivity.this.logoutSectionRow) {
-                        textInfoPrivacyCell.setText(LocaleController.getString("LogOutInfo", C3301R.string.LogOutInfo));
+                        textInfoPrivacyCell.setText(LocaleController.getString("LogOutInfo", C3316R.string.LogOutInfo));
                     }
                 }
             } else {
@@ -252,21 +252,21 @@ public class LogoutActivity extends BaseFragment {
                         if (i != LogoutActivity.this.cacheRow) {
                             if (i != LogoutActivity.this.phoneRow) {
                                 if (i == LogoutActivity.this.supportRow) {
-                                    textDetailSettingsCell.setTextAndValueAndIcon(LocaleController.getString("ContactSupport", C3301R.string.ContactSupport), LocaleController.getString("ContactSupportInfo", C3301R.string.ContactSupportInfo), C3301R.C3303drawable.msg_help, false);
+                                    textDetailSettingsCell.setTextAndValueAndIcon(LocaleController.getString("ContactSupport", C3316R.string.ContactSupport), LocaleController.getString("ContactSupportInfo", C3316R.string.ContactSupportInfo), C3316R.C3318drawable.msg_help, false);
                                     return;
                                 }
                                 return;
                             }
-                            textDetailSettingsCell.setTextAndValueAndIcon(LocaleController.getString("ChangePhoneNumber", C3301R.string.ChangePhoneNumber), LocaleController.getString("ChangePhoneNumberInfo", C3301R.string.ChangePhoneNumberInfo), C3301R.C3303drawable.msg_newphone, true);
+                            textDetailSettingsCell.setTextAndValueAndIcon(LocaleController.getString("ChangePhoneNumber", C3316R.string.ChangePhoneNumber), LocaleController.getString("ChangePhoneNumberInfo", C3316R.string.ChangePhoneNumberInfo), C3316R.C3318drawable.msg_newphone, true);
                             return;
                         }
-                        textDetailSettingsCell.setTextAndValueAndIcon(LocaleController.getString("ClearCache", C3301R.string.ClearCache), LocaleController.getString("ClearCacheInfo", C3301R.string.ClearCacheInfo), C3301R.C3303drawable.msg_clearcache, true);
+                        textDetailSettingsCell.setTextAndValueAndIcon(LocaleController.getString("ClearCache", C3316R.string.ClearCache), LocaleController.getString("ClearCacheInfo", C3316R.string.ClearCacheInfo), C3316R.C3318drawable.msg_clearcache, true);
                         return;
                     }
-                    textDetailSettingsCell.setTextAndValueAndIcon(LocaleController.getString("SetPasscode", C3301R.string.SetPasscode), LocaleController.getString("SetPasscodeInfo", C3301R.string.SetPasscodeInfo), C3301R.C3303drawable.msg_permissions, true);
+                    textDetailSettingsCell.setTextAndValueAndIcon(LocaleController.getString("SetPasscode", C3316R.string.SetPasscode), LocaleController.getString("SetPasscodeInfo", C3316R.string.SetPasscodeInfo), C3316R.C3318drawable.msg_permissions, true);
                     return;
                 }
-                textDetailSettingsCell.setTextAndValueAndIcon(LocaleController.getString("AddAnotherAccount", C3301R.string.AddAnotherAccount), LocaleController.getString("AddAnotherAccountInfo", C3301R.string.AddAnotherAccountInfo), C3301R.C3303drawable.msg_contact_add, true);
+                textDetailSettingsCell.setTextAndValueAndIcon(LocaleController.getString("AddAnotherAccount", C3316R.string.AddAnotherAccount), LocaleController.getString("AddAnotherAccountInfo", C3316R.string.AddAnotherAccountInfo), C3316R.C3318drawable.msg_contact_add, true);
             }
         }
 
@@ -298,7 +298,7 @@ public class LogoutActivity extends BaseFragment {
                     textDetailSettingsCell = textSettingsCell;
                 } else {
                     view = new TextInfoPrivacyCell(this.mContext);
-                    view.setBackgroundDrawable(Theme.getThemedDrawable(this.mContext, C3301R.C3303drawable.greydivider, "windowBackgroundGrayShadow"));
+                    view.setBackgroundDrawable(Theme.getThemedDrawable(this.mContext, C3316R.C3318drawable.greydivider, "windowBackgroundGrayShadow"));
                 }
                 view.setLayoutParams(new RecyclerView.LayoutParams(-1, -2));
                 return new RecyclerListView.Holder(view);

@@ -1,7 +1,7 @@
 package com.stripe.android.net;
 
 import com.stripe.android.util.StripeTextUtils;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class RequestOptions {
     private final String mApiVersion;
     private final String mIdempotencyKey;
@@ -29,7 +29,7 @@ public class RequestOptions {
         return new RequestOptionsBuilder(str);
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class RequestOptionsBuilder {
         private String apiVersion;
         private String idempotencyKey;

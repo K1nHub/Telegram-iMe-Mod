@@ -1,117 +1,184 @@
 package com.otaliastudios.opengl.program;
 
+import android.graphics.RectF;
 import android.opengl.GLES20;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.otaliastudios.opengl.core.Egloo;
+import com.otaliastudios.opengl.draw.Gl2dDrawable;
 import com.otaliastudios.opengl.draw.GlDrawable;
-import com.otaliastudios.opengl.extensions.BuffersKt;
+import com.otaliastudios.opengl.internal.GlKt;
+import com.otaliastudios.opengl.internal.MiscKt;
+import com.otaliastudios.opengl.texture.GlTexture;
+import com.otaliastudios.opengl.types.BuffersJvmKt;
+import com.otaliastudios.opengl.types.BuffersKt;
 import java.nio.Buffer;
 import java.nio.FloatBuffer;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: GlTextureProgram.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class GlTextureProgram extends GlProgram {
-    private static final FloatBuffer FULL_COORDINATES;
-    private final GlHandle textureCoordsHandle;
-    private final int textureId;
-    private final int textureTarget;
+    private Gl2dDrawable lastDrawable;
+    private final RectF lastDrawableBounds;
+    private int lastDrawableVersion;
+    private GlTexture texture;
+    private FloatBuffer textureCoordsBuffer;
+    private final GlProgramLocation textureCoordsHandle;
     private float[] textureTransform;
-    private final GlHandle textureTransformHandle;
-    private final int textureUnit;
-    private final GlHandle vertexMvpMatrixHandle;
-    private final GlHandle vertexPositionHandle;
+    private final GlProgramLocation textureTransformHandle;
+    private final GlProgramLocation vertexMvpMatrixHandle;
+    private final GlProgramLocation vertexPositionHandle;
+
+    static {
+        new Companion(null);
+    }
 
     public GlTextureProgram() {
-        this(0, 1, null);
+        this(null, null, null, null, null, null, 63, null);
     }
 
-    public /* synthetic */ GlTextureProgram(int i, int i2, DefaultConstructorMarker defaultConstructorMarker) {
-        this((i2 & 1) != 0 ? 33984 : i);
+    protected float computeTextureCoordinate(int i, Gl2dDrawable drawable, float f, float f2, float f3, boolean z) {
+        Intrinsics.checkNotNullParameter(drawable, "drawable");
+        return (((f - f2) / (f3 - f2)) * 1.0f) + BitmapDescriptorFactory.HUE_RED;
     }
 
-    public GlTextureProgram(int i) {
-        super("uniform mat4 uMVPMatrix;\nuniform mat4 uTexMatrix;\nattribute vec4 aPosition;\nattribute vec4 aTextureCoord;\nvarying vec2 vTextureCoord;\nvoid main() {\n    gl_Position = uMVPMatrix * aPosition;\n    vTextureCoord = (uTexMatrix * aTextureCoord).xy;\n}\n", "#extension GL_OES_EGL_image_external : require\nprecision mediump float;\nvarying vec2 vTextureCoord;\nuniform samplerExternalOES sTexture;\nvoid main() {\n    gl_FragColor = texture2D(sTexture, vTextureCoord);\n}\n");
-        this.textureUnit = i;
-        this.textureTarget = 36197;
-        this.vertexPositionHandle = getAttribHandle("aPosition");
-        this.vertexMvpMatrixHandle = getUniformHandle("uMVPMatrix");
-        this.textureCoordsHandle = getAttribHandle("aTextureCoord");
-        this.textureTransformHandle = getUniformHandle("uTexMatrix");
-        int[] iArr = new int[1];
-        GLES20.glGenTextures(1, iArr, 0);
-        Egloo.checkGlError("glGenTextures");
-        int i2 = iArr[0];
-        this.textureId = i2;
-        GLES20.glActiveTexture(i);
-        GLES20.glBindTexture(36197, i2);
-        Egloo.checkGlError("glBindTexture " + i2);
-        GLES20.glTexParameterf(36197, 10241, (float) 9728);
-        GLES20.glTexParameterf(36197, 10240, (float) 9729);
-        GLES20.glTexParameteri(36197, 10242, 33071);
-        GLES20.glTexParameteri(36197, 10243, 33071);
-        Egloo.checkGlError("glTexParameter");
-        GLES20.glBindTexture(36197, 0);
-        GLES20.glActiveTexture(33984);
-        Egloo.checkGlError("init end");
-        this.textureTransform = (float[]) Egloo.getIDENTITY_MATRIX().clone();
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    protected GlTextureProgram(int i, boolean z, String vertexPositionName, String vertexMvpMatrixName, String str, String str2) {
+        super(i, z, new GlShader[0]);
+        Intrinsics.checkNotNullParameter(vertexPositionName, "vertexPositionName");
+        Intrinsics.checkNotNullParameter(vertexMvpMatrixName, "vertexMvpMatrixName");
+        this.textureTransform = MiscKt.matrixClone(Egloo.IDENTITY_MATRIX);
+        this.textureTransformHandle = str2 == null ? null : getUniformHandle(str2);
+        this.textureCoordsBuffer = BuffersJvmKt.floatBuffer(8);
+        this.textureCoordsHandle = str != null ? getAttribHandle(str) : null;
+        this.vertexPositionHandle = getAttribHandle(vertexPositionName);
+        this.vertexMvpMatrixHandle = getUniformHandle(vertexMvpMatrixName);
+        this.lastDrawableBounds = new RectF();
+        this.lastDrawableVersion = -1;
     }
 
-    public final int getTextureId() {
-        return this.textureId;
+    public /* synthetic */ GlTextureProgram(String str, String str2, String str3, String str4, String str5, String str6, int i, DefaultConstructorMarker defaultConstructorMarker) {
+        this((i & 1) != 0 ? "uniform mat4 uMVPMatrix;\nuniform mat4 uTexMatrix;\nattribute vec4 aPosition;\nattribute vec4 aTextureCoord;\nvarying vec2 vTextureCoord;\nvoid main() {\n    gl_Position = uMVPMatrix * aPosition;\n    vTextureCoord = (uTexMatrix * aTextureCoord).xy;\n}\n" : str, (i & 2) != 0 ? "#extension GL_OES_EGL_image_external : require\nprecision mediump float;\nvarying vec2 vTextureCoord;\nuniform samplerExternalOES sTexture;\nvoid main() {\n    gl_FragColor = texture2D(sTexture, vTextureCoord);\n}\n" : str2, (i & 4) != 0 ? "aPosition" : str3, (i & 8) != 0 ? "uMVPMatrix" : str4, (i & 16) != 0 ? "aTextureCoord" : str5, (i & 32) != 0 ? "uTexMatrix" : str6);
+    }
+
+    /* JADX WARN: 'this' call moved to the top of the method (can break code semantics) */
+    public GlTextureProgram(String vertexShader, String fragmentShader, String vertexPositionName, String vertexMvpMatrixName, String str, String str2) {
+        this(GlProgram.Companion.create(vertexShader, fragmentShader), true, vertexPositionName, vertexMvpMatrixName, str, str2);
+        Intrinsics.checkNotNullParameter(vertexShader, "vertexShader");
+        Intrinsics.checkNotNullParameter(fragmentShader, "fragmentShader");
+        Intrinsics.checkNotNullParameter(vertexPositionName, "vertexPositionName");
+        Intrinsics.checkNotNullParameter(vertexMvpMatrixName, "vertexMvpMatrixName");
     }
 
     public final float[] getTextureTransform() {
         return this.textureTransform;
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
+    public final void setTexture(GlTexture glTexture) {
+        this.texture = glTexture;
+    }
+
     @Override // com.otaliastudios.opengl.program.GlProgram
     public void onPreDraw(GlDrawable drawable, float[] modelViewProjectionMatrix) {
-        Intrinsics.checkParameterIsNotNull(drawable, "drawable");
-        Intrinsics.checkParameterIsNotNull(modelViewProjectionMatrix, "modelViewProjectionMatrix");
+        Intrinsics.checkNotNullParameter(drawable, "drawable");
+        Intrinsics.checkNotNullParameter(modelViewProjectionMatrix, "modelViewProjectionMatrix");
         super.onPreDraw(drawable, modelViewProjectionMatrix);
-        GLES20.glActiveTexture(this.textureUnit);
-        GLES20.glBindTexture(this.textureTarget, this.textureId);
+        if (!(drawable instanceof Gl2dDrawable)) {
+            throw new RuntimeException("GlTextureProgram only supports 2D drawables.");
+        }
+        GlTexture glTexture = this.texture;
+        if (glTexture != null) {
+            glTexture.bind();
+        }
+        boolean z = true;
         GLES20.glUniformMatrix4fv(this.vertexMvpMatrixHandle.getValue(), 1, false, modelViewProjectionMatrix, 0);
         Egloo.checkGlError("glUniformMatrix4fv");
-        GLES20.glUniformMatrix4fv(this.textureTransformHandle.getValue(), 1, false, this.textureTransform, 0);
-        Egloo.checkGlError("glUniformMatrix4fv");
-        GLES20.glEnableVertexAttribArray(this.vertexPositionHandle.getValue());
+        GlProgramLocation glProgramLocation = this.textureTransformHandle;
+        if (glProgramLocation != null) {
+            GLES20.glUniformMatrix4fv(glProgramLocation.getValue(), 1, false, getTextureTransform(), 0);
+            Egloo.checkGlError("glUniformMatrix4fv");
+        }
+        GlProgramLocation glProgramLocation2 = this.vertexPositionHandle;
+        GLES20.glEnableVertexAttribArray(glProgramLocation2.m1562getUvaluepVg5ArA$library_release());
         Egloo.checkGlError("glEnableVertexAttribArray");
-        GLES20.glVertexAttribPointer(this.vertexPositionHandle.getValue(), drawable.getCoordsPerVertex(), 5126, false, drawable.getVertexStride(), (Buffer) drawable.getVertexArray());
+        GLES20.glVertexAttribPointer(glProgramLocation2.m1562getUvaluepVg5ArA$library_release(), 2, GlKt.getGL_FLOAT(), false, drawable.getVertexStride(), (Buffer) drawable.getVertexArray());
         Egloo.checkGlError("glVertexAttribPointer");
-        GLES20.glEnableVertexAttribArray(this.textureCoordsHandle.getValue());
+        GlProgramLocation glProgramLocation3 = this.textureCoordsHandle;
+        if (glProgramLocation3 == null) {
+            return;
+        }
+        if (!Intrinsics.areEqual(drawable, this.lastDrawable) || drawable.getVertexArrayVersion() != this.lastDrawableVersion) {
+            Gl2dDrawable gl2dDrawable = (Gl2dDrawable) drawable;
+            this.lastDrawable = gl2dDrawable;
+            this.lastDrawableVersion = drawable.getVertexArrayVersion();
+            gl2dDrawable.getBounds(this.lastDrawableBounds);
+            int vertexCount = drawable.getVertexCount() * 2;
+            if (this.textureCoordsBuffer.capacity() < vertexCount) {
+                BuffersKt.dispose(this.textureCoordsBuffer);
+                this.textureCoordsBuffer = BuffersJvmKt.floatBuffer(vertexCount);
+            }
+            this.textureCoordsBuffer.clear();
+            this.textureCoordsBuffer.limit(vertexCount);
+            if (vertexCount > 0) {
+                int i = 0;
+                while (true) {
+                    int i2 = i + 1;
+                    boolean z2 = i % 2 == 0 ? z : false;
+                    float f = drawable.getVertexArray().get(i);
+                    RectF rectF = this.lastDrawableBounds;
+                    float f2 = z2 ? rectF.left : rectF.bottom;
+                    RectF rectF2 = this.lastDrawableBounds;
+                    this.textureCoordsBuffer.put(computeTextureCoordinate(i / 2, gl2dDrawable, f, f2, z2 ? rectF2.right : rectF2.top, z2));
+                    if (i2 >= vertexCount) {
+                        break;
+                    }
+                    i = i2;
+                    z = true;
+                }
+            }
+        }
+        this.textureCoordsBuffer.rewind();
+        GLES20.glEnableVertexAttribArray(glProgramLocation3.m1562getUvaluepVg5ArA$library_release());
         Egloo.checkGlError("glEnableVertexAttribArray");
-        GLES20.glVertexAttribPointer(this.textureCoordsHandle.getValue(), 2, 5126, false, 8, (Buffer) FULL_COORDINATES);
+        GLES20.glVertexAttribPointer(glProgramLocation3.m1562getUvaluepVg5ArA$library_release(), 2, GlKt.getGL_FLOAT(), false, drawable.getVertexStride(), (Buffer) this.textureCoordsBuffer);
         Egloo.checkGlError("glVertexAttribPointer");
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // com.otaliastudios.opengl.program.GlProgram
     public void onPostDraw(GlDrawable drawable) {
-        Intrinsics.checkParameterIsNotNull(drawable, "drawable");
+        Intrinsics.checkNotNullParameter(drawable, "drawable");
         super.onPostDraw(drawable);
-        GLES20.glDisableVertexAttribArray(this.vertexPositionHandle.getValue());
-        GLES20.glDisableVertexAttribArray(this.textureCoordsHandle.getValue());
-        GLES20.glBindTexture(this.textureTarget, 0);
-        GLES20.glActiveTexture(33984);
+        GLES20.glDisableVertexAttribArray(this.vertexPositionHandle.m1562getUvaluepVg5ArA$library_release());
+        GlProgramLocation glProgramLocation = this.textureCoordsHandle;
+        if (glProgramLocation != null) {
+            GLES20.glDisableVertexAttribArray(glProgramLocation.m1562getUvaluepVg5ArA$library_release());
+        }
+        GlTexture glTexture = this.texture;
+        if (glTexture != null) {
+            glTexture.unbind();
+        }
         Egloo.checkGlError("onPostDraw end");
     }
 
-    /* compiled from: GlTextureProgram.kt */
-    /* loaded from: classes3.dex */
-    public static final class Companion {
-        private Companion() {
+    @Override // com.otaliastudios.opengl.program.GlProgram
+    public void release() {
+        super.release();
+        BuffersKt.dispose(this.textureCoordsBuffer);
+        GlTexture glTexture = this.texture;
+        if (glTexture != null) {
+            glTexture.release();
         }
+        this.texture = null;
+    }
 
+    /* compiled from: GlTextureProgram.kt */
+    /* loaded from: classes4.dex */
+    public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();
         }
-    }
 
-    static {
-        new Companion(null);
-        FULL_COORDINATES = BuffersKt.floatBufferOf(BitmapDescriptorFactory.HUE_RED, BitmapDescriptorFactory.HUE_RED, 1.0f, BitmapDescriptorFactory.HUE_RED, BitmapDescriptorFactory.HUE_RED, 1.0f, 1.0f, 1.0f);
+        private Companion() {
+        }
     }
 }

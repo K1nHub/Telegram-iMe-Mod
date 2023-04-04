@@ -1,7 +1,7 @@
 package com.google.android.exoplayer2.util;
 
 import android.text.TextUtils;
-import com.google.android.exoplayer2.C0468C;
+import com.google.android.exoplayer2.C0482C;
 import com.google.android.exoplayer2.DeviceInfo;
 import com.google.android.exoplayer2.Format;
 import com.google.android.exoplayer2.MediaItem;
@@ -631,6 +631,6 @@ public class EventLogger implements AnalyticsListener {
     }
 
     private static String getTimeString(long j) {
-        return j == C0468C.TIME_UNSET ? "?" : TIME_FORMAT.format(((float) j) / 1000.0f);
+        return j == C0482C.TIME_UNSET ? "?" : TIME_FORMAT.format(((float) j) / 1000.0f);
     }
 }

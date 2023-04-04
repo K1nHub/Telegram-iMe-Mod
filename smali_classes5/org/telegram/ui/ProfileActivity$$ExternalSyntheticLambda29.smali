@@ -2,32 +2,34 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Lcom/iMe/fork/utils/Callbacks$Callback1;
 
 
 # instance fields
-.field public final synthetic f$0:Landroid/animation/AnimatorSet;
+.field public final synthetic f$0:Lcom/iMe/ui/profile/ProfilePresenter;
 
 
 # direct methods
-.method public synthetic constructor <init>(Landroid/animation/AnimatorSet;)V
+.method public synthetic constructor <init>(Lcom/iMe/ui/profile/ProfilePresenter;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lorg/telegram/ui/ProfileActivity$$ExternalSyntheticLambda29;->f$0:Landroid/animation/AnimatorSet;
+    iput-object p1, p0, Lorg/telegram/ui/ProfileActivity$$ExternalSyntheticLambda29;->f$0:Lcom/iMe/ui/profile/ProfilePresenter;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final run()V
+.method public final invoke(Ljava/lang/Object;)V
     .locals 1
 
-    iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$$ExternalSyntheticLambda29;->f$0:Landroid/animation/AnimatorSet;
+    iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$$ExternalSyntheticLambda29;->f$0:Lcom/iMe/ui/profile/ProfilePresenter;
 
-    invoke-virtual {v0}, Landroid/animation/AnimatorSet;->start()V
+    check-cast p1, Lcom/iMe/model/twitter/TwitterAuthResult;
+
+    invoke-virtual {v0, p1}, Lcom/iMe/ui/profile/ProfilePresenter;->onTwitterAuthResult(Lcom/iMe/model/twitter/TwitterAuthResult;)V
 
     return-void
 .end method

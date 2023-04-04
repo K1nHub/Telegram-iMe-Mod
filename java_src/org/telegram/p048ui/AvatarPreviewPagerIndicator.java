@@ -16,7 +16,7 @@ import android.view.View;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import java.util.Arrays;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.p048ui.ActionBar.C3366ActionBar;
+import org.telegram.p048ui.ActionBar.C3381ActionBar;
 import org.telegram.p048ui.Components.CubicBezierInterpolator;
 import org.telegram.p048ui.Components.ProfileGalleryView;
 /* renamed from: org.telegram.ui.AvatarPreviewPagerIndicator */
@@ -168,7 +168,7 @@ public class AvatarPreviewPagerIndicator extends View implements ProfileGalleryV
 
     @Override // android.view.View
     protected void onSizeChanged(int i, int i2, int i3, int i4) {
-        int currentActionBarHeight = C3366ActionBar.getCurrentActionBarHeight() + 0;
+        int currentActionBarHeight = C3381ActionBar.getCurrentActionBarHeight() + 0;
         this.topOverlayRect.set(0, 0, i, (int) (currentActionBarHeight * 0.5f));
         this.bottomOverlayRect.set(0, (int) (i2 - (AndroidUtilities.m51dp(72.0f) * 0.5f)), i, i2);
         this.topOverlayGradient.setBounds(0, this.topOverlayRect.bottom, i, currentActionBarHeight + AndroidUtilities.m51dp(16.0f));
