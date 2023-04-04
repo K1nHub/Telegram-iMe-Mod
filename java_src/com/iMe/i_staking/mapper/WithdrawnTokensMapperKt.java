@@ -1,7 +1,7 @@
 package com.iMe.i_staking.mapper;
 
 import com.iMe.i_staking.response.WithdrawnTokensResponse;
-import com.smedialink.storage.domain.model.staking.WithdrawnTokens;
+import com.iMe.storage.domain.model.staking.WithdrawnTokens;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: WithdrawnTokensMapper.kt */
 /* loaded from: classes3.dex */

@@ -621,7 +621,7 @@
 
     new-instance v1, Lio/grpc/okhttp/internal/framed/Header;
 
-    const-string v2, "transfer-encoding"
+    const-string/jumbo v2, "transfer-encoding"
 
     invoke-direct {v1, v2, v3}, Lio/grpc/okhttp/internal/framed/Header;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
@@ -631,7 +631,7 @@
 
     new-instance v1, Lio/grpc/okhttp/internal/framed/Header;
 
-    const-string v2, "user-agent"
+    const-string/jumbo v2, "user-agent"
 
     invoke-direct {v1, v2, v3}, Lio/grpc/okhttp/internal/framed/Header;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 

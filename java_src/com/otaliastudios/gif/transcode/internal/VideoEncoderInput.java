@@ -4,7 +4,7 @@ import android.opengl.EGL14;
 import android.view.Surface;
 import com.otaliastudios.opengl.core.EglCore;
 import com.otaliastudios.opengl.surface.EglWindowSurface;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class VideoEncoderInput {
     private EglCore mEglCore = new EglCore(EGL14.EGL_NO_CONTEXT, 1);
     private EglWindowSurface mEglSurface;

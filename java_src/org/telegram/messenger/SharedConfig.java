@@ -1,6 +1,7 @@
 package org.telegram.messenger;
 
 import android.app.ActivityManager;
+import android.content.DialogInterface;
 import android.content.SharedPreferences;
 import android.os.Build;
 import android.os.Environment;
@@ -9,11 +10,24 @@ import android.text.TextUtils;
 import android.util.Base64;
 import android.webkit.WebView;
 import androidx.core.content.p009pm.ShortcutManagerCompat;
-import com.google.android.exoplayer2.C0468C;
+import com.google.android.exoplayer2.C0482C;
 import com.google.android.exoplayer2.audio.SilenceSkippingAudioProcessor;
-import com.smedialink.common.TelegramPreferenceKeys;
-import com.smedialink.p031ui.drawer.DrawerAccountData;
-import com.smedialink.p031ui.drawer.DrawerSwitchableItem;
+import com.iMe.common.TelegramPreferenceKeys;
+import com.iMe.fork.controller.FiltersController;
+import com.iMe.fork.enums.ChatProfileTelegramIdMode;
+import com.iMe.fork.enums.DialogType;
+import com.iMe.fork.enums.DrawerHolidayIconType;
+import com.iMe.fork.enums.ExtendedAvatarPreviewerItem;
+import com.iMe.fork.enums.FilterTabNotificationMode;
+import com.iMe.fork.enums.FilterTabWidthMode;
+import com.iMe.fork.enums.PhotoViewerMenuItem;
+import com.iMe.fork.enums.StickersSize;
+import com.iMe.fork.enums.TemplatesMode;
+import com.iMe.fork.enums.TemplatesSortingType;
+import com.iMe.fork.enums.VideoVoiceCamera;
+import com.iMe.fork.models.DrawerHeaderSettings;
+import com.iMe.p032ui.drawer.DrawerAccountData;
+import com.iMe.p032ui.drawer.DrawerSwitchableItem;
 import java.io.File;
 import java.io.RandomAccessFile;
 import java.io.UnsupportedEncodingException;
@@ -28,20 +42,10 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Locale;
 import java.util.Set;
-import org.fork.controller.FiltersController;
-import org.fork.enums.ChatProfileTelegramIdMode;
-import org.fork.enums.DialogType;
-import org.fork.enums.DrawerHolidayIconType;
-import org.fork.enums.ExtendedAvatarPreviewerItem;
-import org.fork.enums.FilterTabNotificationMode;
-import org.fork.enums.FilterTabWidthMode;
-import org.fork.enums.PhotoViewerMenuItem;
-import org.fork.enums.StickersSize;
-import org.fork.enums.TemplatesMode;
-import org.fork.enums.TemplatesSortingType;
-import org.fork.enums.VideoVoiceCamera;
-import org.fork.models.DrawerHeaderSettings;
 import org.json.JSONObject;
+import org.telegram.p048ui.ActionBar.AlertDialog;
+import org.telegram.p048ui.ActionBar.BaseFragment;
+import org.telegram.p048ui.LaunchActivity;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.SerializedData;
 import org.telegram.tgnet.TLRPC$TL_help_appUpdate;
@@ -106,6 +110,7 @@ public class SharedConfig {
     public static boolean isDebugThemeSwitchEnabled = false;
     public static boolean isDeleteCloudConfirmationEnabled = false;
     public static boolean isDialogsCompactModeEnabled = false;
+    public static boolean isDialogsPremiumHintEnabled = false;
     public static boolean isExtendedAvatarPreviewerByTapEnabled = false;
     public static boolean isExtendedAvatarPreviewerEnabled = false;
     public static boolean isFilesOriginalNameSavingEnabled = false;
@@ -186,6 +191,7 @@ public class SharedConfig {
     public static int pushType = 2;
     public static boolean raiseToListen = false;
     public static boolean raiseToSpeak = false;
+    public static boolean readOnlyStorageDirAlertShowed = false;
     public static boolean recordViaSco = false;
     public static int repeatMode = 0;
     public static boolean roundCamera16to9 = false;
@@ -240,6 +246,14 @@ public class SharedConfig {
     @Retention(RetentionPolicy.SOURCE)
     /* loaded from: classes4.dex */
     public @interface PerformanceClass {
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static /* synthetic */ void lambda$checkSdCard$0() {
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static /* synthetic */ void lambda$checkSdCard$1(DialogInterface dialogInterface, int i) {
     }
 
     public static String performanceClassName(int i) {
@@ -565,8 +579,39 @@ public class SharedConfig {
         MessagesController.getGlobalMainSettings().edit().putBoolean(TelegramPreferenceKeys.Global.isNewTelegramAuthorizationRulesRead(), isNewTelegramAuthorizationRulesRead).apply();
     }
 
+    public static void setDialogsPremiumHintEnabled(boolean z) {
+        isDialogsPremiumHintEnabled = z;
+        MessagesController.getGlobalMainSettings().edit().putBoolean(TelegramPreferenceKeys.Global.isDialogsPremiumHintEnabled(), isDialogsPremiumHintEnabled).apply();
+    }
+
     public static boolean loopStickers() {
         return LiteMode.isEnabled(2);
+    }
+
+    public static void checkSdCard(File file) {
+        if (file == null || storageCacheDir == null || readOnlyStorageDirAlertShowed || !file.getPath().startsWith(storageCacheDir)) {
+            return;
+        }
+        AndroidUtilities.runOnUIThread(SharedConfig$$ExternalSyntheticLambda3.INSTANCE);
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static /* synthetic */ void lambda$checkSdCard$2() {
+        BaseFragment lastFragment;
+        if (readOnlyStorageDirAlertShowed || (lastFragment = LaunchActivity.getLastFragment()) == null || lastFragment.getParentActivity() == null) {
+            return;
+        }
+        storageCacheDir = null;
+        saveConfig();
+        ImageLoader.getInstance().checkMediaPaths(SharedConfig$$ExternalSyntheticLambda2.INSTANCE);
+        readOnlyStorageDirAlertShowed = true;
+        AlertDialog.Builder builder = new AlertDialog.Builder(lastFragment.getParentActivity());
+        builder.setTitle(LocaleController.getString("SdCardError", C3316R.string.SdCardError));
+        builder.setSubtitle(LocaleController.getString("SdCardErrorDescription", C3316R.string.SdCardErrorDescription));
+        builder.setPositiveButton(LocaleController.getString("DoNotUseSDCard", C3316R.string.DoNotUseSDCard), SharedConfig$$ExternalSyntheticLambda0.INSTANCE);
+        AlertDialog create = builder.create();
+        create.setCanceledOnTouchOutside(false);
+        create.show();
     }
 
     static {
@@ -729,19 +774,19 @@ public class SharedConfig {
         return i;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:38:0x017a A[Catch: Exception -> 0x019c, all -> 0x07a5, TryCatch #2 {Exception -> 0x019c, blocks: (B:22:0x012b, B:24:0x0133, B:26:0x0143, B:27:0x0157, B:38:0x017a, B:40:0x017e, B:41:0x0180, B:43:0x0184, B:45:0x018a, B:47:0x0190, B:49:0x0194, B:36:0x0174), top: B:87:0x012b, outer: #3 }] */
-    /* JADX WARN: Removed duplicated region for block: B:40:0x017e A[Catch: Exception -> 0x019c, all -> 0x07a5, TryCatch #2 {Exception -> 0x019c, blocks: (B:22:0x012b, B:24:0x0133, B:26:0x0143, B:27:0x0157, B:38:0x017a, B:40:0x017e, B:41:0x0180, B:43:0x0184, B:45:0x018a, B:47:0x0190, B:49:0x0194, B:36:0x0174), top: B:87:0x012b, outer: #3 }] */
-    /* JADX WARN: Removed duplicated region for block: B:61:0x05eb  */
-    /* JADX WARN: Removed duplicated region for block: B:62:0x05ee  */
-    /* JADX WARN: Removed duplicated region for block: B:65:0x05fe  */
-    /* JADX WARN: Removed duplicated region for block: B:66:0x0600  */
+    /* JADX WARN: Removed duplicated region for block: B:38:0x017c A[Catch: Exception -> 0x019e, all -> 0x07b8, TryCatch #1 {Exception -> 0x019e, blocks: (B:22:0x012d, B:24:0x0135, B:26:0x0145, B:27:0x0159, B:38:0x017c, B:40:0x0180, B:41:0x0182, B:43:0x0186, B:45:0x018c, B:47:0x0192, B:49:0x0196, B:36:0x0176), top: B:85:0x012d, outer: #2 }] */
+    /* JADX WARN: Removed duplicated region for block: B:40:0x0180 A[Catch: Exception -> 0x019e, all -> 0x07b8, TryCatch #1 {Exception -> 0x019e, blocks: (B:22:0x012d, B:24:0x0135, B:26:0x0145, B:27:0x0159, B:38:0x017c, B:40:0x0180, B:41:0x0182, B:43:0x0186, B:45:0x018c, B:47:0x0192, B:49:0x0196, B:36:0x0176), top: B:85:0x012d, outer: #2 }] */
+    /* JADX WARN: Removed duplicated region for block: B:61:0x05fb  */
+    /* JADX WARN: Removed duplicated region for block: B:62:0x05fe  */
+    /* JADX WARN: Removed duplicated region for block: B:65:0x060e  */
+    /* JADX WARN: Removed duplicated region for block: B:66:0x0610  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct add '--show-bad-code' argument
     */
     public static void loadConfig() {
         /*
-            Method dump skipped, instructions count: 1960
+            Method dump skipped, instructions count: 1979
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: org.telegram.messenger.SharedConfig.loadConfig():void");
@@ -765,7 +810,7 @@ public class SharedConfig {
             } else if (i == 4) {
                 passcodeRetryInMs = 10000L;
             } else if (i == 5) {
-                passcodeRetryInMs = C0468C.DEFAULT_SEEK_FORWARD_INCREMENT_MS;
+                passcodeRetryInMs = C0482C.DEFAULT_SEEK_FORWARD_INCREMENT_MS;
             } else if (i == 6) {
                 passcodeRetryInMs = SilenceSkippingAudioProcessor.DEFAULT_PADDING_SILENCE_US;
             } else if (i == 7) {
@@ -1040,17 +1085,17 @@ public class SharedConfig {
                 return;
             }
             lastLogsCheckTime = currentTimeMillis;
-            Utilities.cacheClearQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.SharedConfig$$ExternalSyntheticLambda0
+            Utilities.cacheClearQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.SharedConfig$$ExternalSyntheticLambda1
                 @Override // java.lang.Runnable
                 public final void run() {
-                    SharedConfig.lambda$checkLogsToDelete$0(currentTimeMillis);
+                    SharedConfig.lambda$checkLogsToDelete$3(currentTimeMillis);
                 }
             });
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$checkLogsToDelete$0(int i) {
+    public static /* synthetic */ void lambda$checkLogsToDelete$3(int i) {
         File logsDir;
         long j = i - 864000;
         try {
@@ -1369,7 +1414,7 @@ public class SharedConfig {
 
     public static void saveProxyList() {
         ArrayList arrayList = new ArrayList(proxyList);
-        Collections.sort(arrayList, SharedConfig$$ExternalSyntheticLambda3.INSTANCE);
+        Collections.sort(arrayList, SharedConfig$$ExternalSyntheticLambda6.INSTANCE);
         SerializedData serializedData = new SerializedData();
         serializedData.writeInt32(-1);
         serializedData.writeByte(2);
@@ -1407,7 +1452,7 @@ public class SharedConfig {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ int lambda$saveProxyList$1(ProxyInfo proxyInfo, ProxyInfo proxyInfo2) {
+    public static /* synthetic */ int lambda$saveProxyList$4(ProxyInfo proxyInfo, ProxyInfo proxyInfo2) {
         ProxyInfo proxyInfo3 = currentProxy;
         long j = proxyInfo3 == proxyInfo ? -200000L : 0L;
         if (!proxyInfo.available) {
@@ -1461,11 +1506,11 @@ public class SharedConfig {
     }
 
     public static void checkSaveToGalleryFiles() {
-        Utilities.globalQueue.postRunnable(SharedConfig$$ExternalSyntheticLambda1.INSTANCE);
+        Utilities.globalQueue.postRunnable(SharedConfig$$ExternalSyntheticLambda4.INSTANCE);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$checkSaveToGalleryFiles$2() {
+    public static /* synthetic */ void lambda$checkSaveToGalleryFiles$5() {
         try {
             File file = new File(Environment.getExternalStorageDirectory(), "Telegram");
             File file2 = new File(file, "Telegram Images");

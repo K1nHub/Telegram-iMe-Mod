@@ -7,7 +7,7 @@ import androidx.appcompat.widget.AppCompatTextView;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
-import org.telegram.messenger.C3301R;
+import org.telegram.messenger.C3316R;
 /* loaded from: classes4.dex */
 public final class ForkContentStakingWithdrawalFeeBinding implements ViewBinding {
     private final ConstraintLayout rootView;
@@ -34,7 +34,7 @@ public final class ForkContentStakingWithdrawalFeeBinding implements ViewBinding
     }
 
     public static ForkContentStakingWithdrawalFeeBinding inflate(LayoutInflater layoutInflater, ViewGroup viewGroup, boolean z) {
-        View inflate = layoutInflater.inflate(C3301R.layout.fork_content_staking_withdrawal_fee, viewGroup, false);
+        View inflate = layoutInflater.inflate(C3316R.layout.fork_content_staking_withdrawal_fee, viewGroup, false);
         if (z) {
             viewGroup.addView(inflate);
         }
@@ -42,16 +42,16 @@ public final class ForkContentStakingWithdrawalFeeBinding implements ViewBinding
     }
 
     public static ForkContentStakingWithdrawalFeeBinding bind(View view) {
-        int i = C3301R.C3304id.text_fee_title;
+        int i = C3316R.C3319id.text_fee_title;
         AppCompatTextView appCompatTextView = (AppCompatTextView) ViewBindings.findChildViewById(view, i);
         if (appCompatTextView != null) {
-            i = C3301R.C3304id.text_fee_value;
+            i = C3316R.C3319id.text_fee_value;
             AppCompatTextView appCompatTextView2 = (AppCompatTextView) ViewBindings.findChildViewById(view, i);
             if (appCompatTextView2 != null) {
-                i = C3301R.C3304id.text_time_title;
+                i = C3316R.C3319id.text_time_title;
                 AppCompatTextView appCompatTextView3 = (AppCompatTextView) ViewBindings.findChildViewById(view, i);
                 if (appCompatTextView3 != null) {
-                    i = C3301R.C3304id.text_time_value;
+                    i = C3316R.C3319id.text_time_value;
                     AppCompatTextView appCompatTextView4 = (AppCompatTextView) ViewBindings.findChildViewById(view, i);
                     if (appCompatTextView4 != null) {
                         return new ForkContentStakingWithdrawalFeeBinding((ConstraintLayout) view, appCompatTextView, appCompatTextView2, appCompatTextView3, appCompatTextView4);

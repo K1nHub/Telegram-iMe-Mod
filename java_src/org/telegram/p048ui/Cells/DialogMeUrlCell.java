@@ -9,7 +9,7 @@ import android.text.TextUtils;
 import android.view.View;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3301R;
+import org.telegram.messenger.C3316R;
 import org.telegram.messenger.FileLoader;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.ImageLocation;
@@ -193,7 +193,7 @@ public class DialogMeUrlCell extends BaseCell {
         }
         String str4 = MessagesController.getInstance(this.currentAccount).linkPrefix + "/" + this.recentMeUrl.url;
         if (TextUtils.isEmpty(str)) {
-            str = LocaleController.getString("HiddenName", C3301R.string.HiddenName);
+            str = LocaleController.getString("HiddenName", C3316R.string.HiddenName);
         }
         if (!LocaleController.isRTL) {
             measuredWidth = getMeasuredWidth() - this.nameLeft;

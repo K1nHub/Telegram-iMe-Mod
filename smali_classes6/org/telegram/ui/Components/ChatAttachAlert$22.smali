@@ -24,7 +24,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/ChatAttachAlert;Z)V
     .locals 0
 
-    .line 3978
+    .line 3977
     iput-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlert$22;->this$0:Lorg/telegram/ui/Components/ChatAttachAlert;
 
     iput-boolean p2, p0, Lorg/telegram/ui/Components/ChatAttachAlert$22;->val$show:Z
@@ -39,7 +39,7 @@
 .method public onAnimationCancel(Landroid/animation/Animator;)V
     .locals 1
 
-    .line 3997
+    .line 3996
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlert$22;->this$0:Lorg/telegram/ui/Components/ChatAttachAlert;
 
     const/4 v0, 0x0
@@ -52,7 +52,7 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 2
 
-    .line 3981
+    .line 3980
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlert$22;->this$0:Lorg/telegram/ui/Components/ChatAttachAlert;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/ChatAttachAlert;->access$15600(Lorg/telegram/ui/Components/ChatAttachAlert;)Landroid/animation/AnimatorSet;
@@ -61,14 +61,14 @@
 
     if-eqz p1, :cond_3
 
-    .line 3982
+    .line 3981
     iget-boolean p1, p0, Lorg/telegram/ui/Components/ChatAttachAlert$22;->val$show:Z
 
     const/4 v0, 0x4
 
     if-eqz p1, :cond_1
 
-    .line 3983
+    .line 3982
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlert$22;->this$0:Lorg/telegram/ui/Components/ChatAttachAlert;
 
     iget-boolean v1, p1, Lorg/telegram/ui/Components/ChatAttachAlert;->typeButtonsAvailable:Z
@@ -93,7 +93,7 @@
 
     if-eqz p1, :cond_3
 
-    .line 3984
+    .line 3983
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlert$22;->this$0:Lorg/telegram/ui/Components/ChatAttachAlert;
 
@@ -103,7 +103,7 @@
 
     goto :goto_0
 
-    .line 3987
+    .line 3986
     :cond_1
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlert$22;->this$0:Lorg/telegram/ui/Components/ChatAttachAlert;
 
@@ -111,7 +111,7 @@
 
     invoke-virtual {p1, v0}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
-    .line 3988
+    .line 3987
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlert$22;->this$0:Lorg/telegram/ui/Components/ChatAttachAlert;
 
     iget v1, p1, Lorg/telegram/ui/Components/ChatAttachAlert;->avatarPicker:I
@@ -124,7 +124,7 @@
 
     if-nez p1, :cond_3
 
-    .line 3989
+    .line 3988
     :cond_2
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlert$22;->this$0:Lorg/telegram/ui/Components/ChatAttachAlert;
 

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.smedialink.ui.custom.nft.NftRootView android:id="@id/nft_root_view" android:layout_width="fill_parent" android:layout_height="wrap_content"
+<com.iMe.ui.custom.nft.NftRootView android:id="@id/nft_root_view" android:layout_width="fill_parent" android:layout_height="wrap_content"
   xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
     <androidx.cardview.widget.CardView android:id="@id/card_nft_token" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/margin_extra_small" android:layout_marginBottom="@dimen/margin_half_small" app:cardCornerRadius="@dimen/margin_small" app:cardElevation="@dimen/margin_tiny">
         <androidx.constraintlayout.widget.ConstraintLayout android:orientation="vertical" android:id="@id/constraint_root" android:layout_width="fill_parent" android:layout_height="wrap_content">
             <org.telegram.ui.Components.BackupImageView android:id="@id/image_nft_image" android:layout_width="0.0dip" android:layout_height="0.0dip" android:scaleType="centerCrop" android:adjustViewBounds="true" app:layout_constraintDimensionRatio="H,1:1" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
-</com.smedialink.ui.custom.nft.NftRootView>
+</com.iMe.ui.custom.nft.NftRootView>

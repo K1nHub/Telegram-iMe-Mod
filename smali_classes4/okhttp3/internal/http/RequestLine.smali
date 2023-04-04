@@ -136,7 +136,7 @@
 .method public final requestPath(Lokhttp3/HttpUrl;)Ljava/lang/String;
     .locals 2
 
-    const-string v0, "url"
+    const-string/jumbo v0, "url"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 

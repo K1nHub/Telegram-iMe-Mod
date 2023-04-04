@@ -24,7 +24,7 @@
 .method constructor <init>(Lorg/telegram/ui/SelectAnimatedEmojiDialog;Z)V
     .locals 0
 
-    .line 1442
+    .line 1441
     iput-object p1, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$19;->this$0:Lorg/telegram/ui/SelectAnimatedEmojiDialog;
 
     iput-boolean p2, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$19;->val$empty:Z
@@ -39,7 +39,7 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 2
 
-    .line 1445
+    .line 1444
     iget-object p1, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$19;->this$0:Lorg/telegram/ui/SelectAnimatedEmojiDialog;
 
     iget-object v0, p1, Lorg/telegram/ui/SelectAnimatedEmojiDialog;->emojiSearchEmptyView:Landroid/widget/FrameLayout;
@@ -66,7 +66,7 @@
     :goto_0
     invoke-virtual {v0, p1}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
-    .line 1446
+    .line 1445
     iget-object p1, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$19;->this$0:Lorg/telegram/ui/SelectAnimatedEmojiDialog;
 
     const/4 v0, 0x0

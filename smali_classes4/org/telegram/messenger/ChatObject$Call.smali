@@ -3699,7 +3699,7 @@
     .line 353
     iget-object p1, v0, Lorg/telegram/tgnet/TLRPC$TL_groupCallParticipant;->video:Lorg/telegram/tgnet/TLRPC$TL_groupCallParticipantVideo;
 
-    const-string v1, "unified"
+    const-string/jumbo v1, "unified"
 
     iput-object v1, p1, Lorg/telegram/tgnet/TLRPC$TL_groupCallParticipantVideo;->endpoint:Ljava/lang/String;
 
@@ -4432,7 +4432,7 @@
 
     if-eqz v6, :cond_c
 
-    const-string v6, "unknowd participant left, reload call"
+    const-string/jumbo v6, "unknowd participant left, reload call"
 
     .line 1048
     invoke-static {v6}, Lorg/telegram/messenger/FileLog;->d(Ljava/lang/String;)V

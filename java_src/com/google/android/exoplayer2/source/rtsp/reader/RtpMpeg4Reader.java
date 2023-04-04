@@ -1,6 +1,6 @@
 package com.google.android.exoplayer2.source.rtsp.reader;
 
-import com.google.android.exoplayer2.C0468C;
+import com.google.android.exoplayer2.C0482C;
 import com.google.android.exoplayer2.extractor.ExtractorOutput;
 import com.google.android.exoplayer2.extractor.TrackOutput;
 import com.google.android.exoplayer2.source.rtsp.RtpPacket;
@@ -20,7 +20,7 @@ final class RtpMpeg4Reader implements RtpPayloadReader {
     private int sampleLength;
     private long startTimeOffsetUs;
     private TrackOutput trackOutput;
-    private long firstReceivedTimestamp = C0468C.TIME_UNSET;
+    private long firstReceivedTimestamp = C0482C.TIME_UNSET;
     private int previousSequenceNumber = -1;
 
     @Override // com.google.android.exoplayer2.source.rtsp.reader.RtpPayloadReader
@@ -53,7 +53,7 @@ final class RtpMpeg4Reader implements RtpPayloadReader {
         }
         this.sampleLength += bytesLeft;
         if (z) {
-            if (this.firstReceivedTimestamp == C0468C.TIME_UNSET) {
+            if (this.firstReceivedTimestamp == C0482C.TIME_UNSET) {
                 this.firstReceivedTimestamp = j;
             }
             this.trackOutput.sampleMetadata(RtpReaderUtils.toSampleTimeUs(this.startTimeOffsetUs, j, this.firstReceivedTimestamp, MEDIA_CLOCK_FREQUENCY), this.bufferFlags, this.sampleLength, 0, null);

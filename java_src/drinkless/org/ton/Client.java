@@ -6,8 +6,8 @@ import java.util.concurrent.atomic.AtomicLong;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReadWriteLock;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
-import p034j$.util.concurrent.ConcurrentHashMap;
-/* loaded from: classes3.dex */
+import p035j$.util.concurrent.ConcurrentHashMap;
+/* loaded from: classes4.dex */
 public final class Client implements Runnable {
     private static final int MAX_EVENTS = 1000;
     private final AtomicLong currentQueryId;
@@ -22,12 +22,12 @@ public final class Client implements Runnable {
     private volatile boolean stopFlag;
     private final Lock writeLock;
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public interface ExceptionHandler {
         void onException(Throwable e);
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public interface ResultHandler {
         void onResult(TonApi.Object object);
     }
@@ -118,7 +118,7 @@ public final class Client implements Runnable {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class Handler {
         final ExceptionHandler exceptionHandler;
         final ResultHandler resultHandler;

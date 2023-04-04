@@ -1,7 +1,7 @@
 package com.iMe.i_staking.mapper;
 
 import com.iMe.i_staking.response.StakingDetailedStatsResponse;
-import com.smedialink.storage.domain.model.staking.StakingDetailedStats;
+import com.iMe.storage.domain.model.staking.StakingDetailedStats;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: StakingDetailedStatsMapper.kt */
 /* loaded from: classes3.dex */

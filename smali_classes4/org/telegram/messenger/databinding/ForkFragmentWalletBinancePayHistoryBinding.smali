@@ -7,7 +7,7 @@
 
 
 # instance fields
-.field public final globalStateLayout:Lcom/smedialink/ui/custom/state/GlobalStateLayout;
+.field public final globalStateLayout:Lcom/iMe/ui/custom/state/GlobalStateLayout;
 
 .field public final recycleHistory:Landroidx/recyclerview/widget/RecyclerView;
 
@@ -15,7 +15,7 @@
 
 
 # direct methods
-.method private constructor <init>(Landroidx/swiperefreshlayout/widget/SwipeRefreshLayout;Lcom/smedialink/ui/custom/state/GlobalStateLayout;Landroidx/recyclerview/widget/RecyclerView;)V
+.method private constructor <init>(Landroidx/swiperefreshlayout/widget/SwipeRefreshLayout;Lcom/iMe/ui/custom/state/GlobalStateLayout;Landroidx/recyclerview/widget/RecyclerView;)V
     .locals 0
 
     .line 30
@@ -25,7 +25,7 @@
     iput-object p1, p0, Lorg/telegram/messenger/databinding/ForkFragmentWalletBinancePayHistoryBinding;->rootView:Landroidx/swiperefreshlayout/widget/SwipeRefreshLayout;
 
     .line 32
-    iput-object p2, p0, Lorg/telegram/messenger/databinding/ForkFragmentWalletBinancePayHistoryBinding;->globalStateLayout:Lcom/smedialink/ui/custom/state/GlobalStateLayout;
+    iput-object p2, p0, Lorg/telegram/messenger/databinding/ForkFragmentWalletBinancePayHistoryBinding;->globalStateLayout:Lcom/iMe/ui/custom/state/GlobalStateLayout;
 
     .line 33
     iput-object p3, p0, Lorg/telegram/messenger/databinding/ForkFragmentWalletBinancePayHistoryBinding;->recycleHistory:Landroidx/recyclerview/widget/RecyclerView;
@@ -44,7 +44,7 @@
 
     move-result-object v1
 
-    check-cast v1, Lcom/smedialink/ui/custom/state/GlobalStateLayout;
+    check-cast v1, Lcom/iMe/ui/custom/state/GlobalStateLayout;
 
     if-eqz v1, :cond_0
 
@@ -65,7 +65,7 @@
 
     check-cast p0, Landroidx/swiperefreshlayout/widget/SwipeRefreshLayout;
 
-    invoke-direct {v0, p0, v1, v2}, Lorg/telegram/messenger/databinding/ForkFragmentWalletBinancePayHistoryBinding;-><init>(Landroidx/swiperefreshlayout/widget/SwipeRefreshLayout;Lcom/smedialink/ui/custom/state/GlobalStateLayout;Landroidx/recyclerview/widget/RecyclerView;)V
+    invoke-direct {v0, p0, v1, v2}, Lorg/telegram/messenger/databinding/ForkFragmentWalletBinancePayHistoryBinding;-><init>(Landroidx/swiperefreshlayout/widget/SwipeRefreshLayout;Lcom/iMe/ui/custom/state/GlobalStateLayout;Landroidx/recyclerview/widget/RecyclerView;)V
 
     return-object v0
 

@@ -3,21 +3,21 @@ package kotlin.jvm.internal;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 import kotlin.jvm.internal.markers.KMappedMarker;
-import p034j$.util.Iterator;
-import p034j$.util.function.Consumer;
+import p035j$.util.Iterator;
+import p035j$.util.function.Consumer;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: ArrayIterator.kt */
 /* loaded from: classes4.dex */
-public final class ArrayIterator<T> implements Iterator<T>, KMappedMarker, p034j$.util.Iterator {
+public final class ArrayIterator<T> implements Iterator<T>, KMappedMarker, p035j$.util.Iterator {
     private final T[] array;
     private int index;
 
-    @Override // p034j$.util.Iterator
+    @Override // p035j$.util.Iterator
     public /* synthetic */ void forEachRemaining(Consumer consumer) {
         Iterator.CC.$default$forEachRemaining(this, consumer);
     }
 
-    @Override // java.util.Iterator, p034j$.util.Iterator
+    @Override // java.util.Iterator, p035j$.util.Iterator
     public void remove() {
         throw new UnsupportedOperationException("Operation is not supported for read-only collection");
     }
@@ -27,12 +27,12 @@ public final class ArrayIterator<T> implements Iterator<T>, KMappedMarker, p034j
         this.array = array;
     }
 
-    @Override // java.util.Iterator, p034j$.util.Iterator
+    @Override // java.util.Iterator, p035j$.util.Iterator
     public boolean hasNext() {
         return this.index < this.array.length;
     }
 
-    @Override // java.util.Iterator, p034j$.util.Iterator
+    @Override // java.util.Iterator, p035j$.util.Iterator
     public T next() {
         try {
             T[] tArr = this.array;

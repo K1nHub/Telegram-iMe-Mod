@@ -9,7 +9,7 @@ import java.util.List;
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.runtime.internal.Conversions;
 import org.aspectj.runtime.reflect.Factory;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class AvcConfigurationBox extends AbstractBox {
     private static final /* synthetic */ JoinPoint.StaticPart ajc$tjp_10 = null;
     private static final /* synthetic */ JoinPoint.StaticPart ajc$tjp_11 = null;

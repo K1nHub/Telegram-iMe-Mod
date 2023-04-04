@@ -61,7 +61,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/EmojiView$EmojiSearchAdapter$2;[ZLorg/telegram/ui/ActionBar/BottomSheet$Builder;)V
     .locals 0
 
-    .line 8506
+    .line 8500
     iput-object p1, p0, Lorg/telegram/ui/Components/EmojiView$EmojiSearchAdapter$2$1;->this$2:Lorg/telegram/ui/Components/EmojiView$EmojiSearchAdapter$2;
 
     iput-object p2, p0, Lorg/telegram/ui/Components/EmojiView$EmojiSearchAdapter$2$1;->val$loadingUrl:[Z
@@ -78,7 +78,7 @@
 
     const/4 v0, 0x0
 
-    .line 8520
+    .line 8514
     :try_start_0
     aget-object v1, p1, v0
 
@@ -89,15 +89,15 @@
     :catchall_0
     const/4 v1, 0x0
 
-    .line 8524
+    .line 8518
     aput-object v1, p1, v0
 
-    .line 8526
+    .line 8520
     instance-of p1, p2, Lorg/telegram/tgnet/TLRPC$TL_emojiURL;
 
     if-eqz p1, :cond_0
 
-    .line 8527
+    .line 8521
     iget-object p1, p0, Lorg/telegram/ui/Components/EmojiView$EmojiSearchAdapter$2$1;->this$2:Lorg/telegram/ui/Components/EmojiView$EmojiSearchAdapter$2;
 
     iget-object p1, p1, Lorg/telegram/ui/Components/EmojiView$EmojiSearchAdapter$2;->this$1:Lorg/telegram/ui/Components/EmojiView$EmojiSearchAdapter;
@@ -114,7 +114,7 @@
 
     invoke-static {p1, p2}, Lorg/telegram/messenger/browser/Browser;->openUrl(Landroid/content/Context;Ljava/lang/String;)V
 
-    .line 8528
+    .line 8522
     invoke-virtual {p3}, Lorg/telegram/ui/ActionBar/BottomSheet$Builder;->getDismissRunnable()Ljava/lang/Runnable;
 
     move-result-object p1
@@ -128,7 +128,7 @@
 .method private synthetic lambda$onClick$1([Lorg/telegram/ui/ActionBar/AlertDialog;Lorg/telegram/ui/ActionBar/BottomSheet$Builder;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
     .locals 0
 
-    .line 8518
+    .line 8512
     new-instance p4, Lorg/telegram/ui/Components/EmojiView$EmojiSearchAdapter$2$1$$ExternalSyntheticLambda2;
 
     invoke-direct {p4, p0, p1, p3, p2}, Lorg/telegram/ui/Components/EmojiView$EmojiSearchAdapter$2$1$$ExternalSyntheticLambda2;-><init>(Lorg/telegram/ui/Components/EmojiView$EmojiSearchAdapter$2$1;[Lorg/telegram/ui/ActionBar/AlertDialog;Lorg/telegram/tgnet/TLObject;Lorg/telegram/ui/ActionBar/BottomSheet$Builder;)V
@@ -141,7 +141,7 @@
 .method private synthetic lambda$onClick$2(ILandroid/content/DialogInterface;)V
     .locals 1
 
-    .line 8538
+    .line 8532
     iget-object p2, p0, Lorg/telegram/ui/Components/EmojiView$EmojiSearchAdapter$2$1;->this$2:Lorg/telegram/ui/Components/EmojiView$EmojiSearchAdapter$2;
 
     iget-object p2, p2, Lorg/telegram/ui/Components/EmojiView$EmojiSearchAdapter$2;->this$1:Lorg/telegram/ui/Components/EmojiView$EmojiSearchAdapter;
@@ -166,14 +166,14 @@
 
     const/4 v0, 0x0
 
-    .line 8535
+    .line 8529
     aget-object v1, p1, v0
 
     if-nez v1, :cond_0
 
     return-void
 
-    .line 8538
+    .line 8532
     :cond_0
     aget-object v1, p1, v0
 
@@ -183,7 +183,7 @@
 
     invoke-virtual {v1, v2}, Lorg/telegram/ui/ActionBar/AlertDialog;->setOnCancelListener(Landroid/content/DialogInterface$OnCancelListener;)V
 
-    .line 8539
+    .line 8533
     aget-object p1, p1, v0
 
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/AlertDialog;->show()V
@@ -196,7 +196,7 @@
 .method public onClick(Landroid/view/View;)V
     .locals 4
 
-    .line 8509
+    .line 8503
     iget-object p1, p0, Lorg/telegram/ui/Components/EmojiView$EmojiSearchAdapter$2$1;->val$loadingUrl:[Z
 
     const/4 v0, 0x0
@@ -210,12 +210,12 @@
     :cond_0
     const/4 v1, 0x1
 
-    .line 8512
+    .line 8506
     aput-boolean v1, p1, v0
 
     new-array p1, v1, [Lorg/telegram/ui/ActionBar/AlertDialog;
 
-    .line 8513
+    .line 8507
     new-instance v1, Lorg/telegram/ui/ActionBar/AlertDialog;
 
     iget-object v2, p0, Lorg/telegram/ui/Components/EmojiView$EmojiSearchAdapter$2$1;->this$2:Lorg/telegram/ui/Components/EmojiView$EmojiSearchAdapter$2;
@@ -234,12 +234,12 @@
 
     aput-object v1, p1, v0
 
-    .line 8515
+    .line 8509
     new-instance v1, Lorg/telegram/tgnet/TLRPC$TL_messages_getEmojiURL;
 
     invoke-direct {v1}, Lorg/telegram/tgnet/TLRPC$TL_messages_getEmojiURL;-><init>()V
 
-    .line 8516
+    .line 8510
     iget-object v2, p0, Lorg/telegram/ui/Components/EmojiView$EmojiSearchAdapter$2$1;->this$2:Lorg/telegram/ui/Components/EmojiView$EmojiSearchAdapter$2;
 
     iget-object v2, v2, Lorg/telegram/ui/Components/EmojiView$EmojiSearchAdapter$2;->this$1:Lorg/telegram/ui/Components/EmojiView$EmojiSearchAdapter;
@@ -276,7 +276,7 @@
     :goto_0
     iput-object v0, v1, Lorg/telegram/tgnet/TLRPC$TL_messages_getEmojiURL;->lang_code:Ljava/lang/String;
 
-    .line 8517
+    .line 8511
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiView$EmojiSearchAdapter$2$1;->this$2:Lorg/telegram/ui/Components/EmojiView$EmojiSearchAdapter$2;
 
     iget-object v0, v0, Lorg/telegram/ui/Components/EmojiView$EmojiSearchAdapter$2;->this$1:Lorg/telegram/ui/Components/EmojiView$EmojiSearchAdapter;
@@ -299,7 +299,7 @@
 
     move-result v0
 
-    .line 8534
+    .line 8528
     new-instance v1, Lorg/telegram/ui/Components/EmojiView$EmojiSearchAdapter$2$1$$ExternalSyntheticLambda1;
 
     invoke-direct {v1, p0, p1, v0}, Lorg/telegram/ui/Components/EmojiView$EmojiSearchAdapter$2$1$$ExternalSyntheticLambda1;-><init>(Lorg/telegram/ui/Components/EmojiView$EmojiSearchAdapter$2$1;[Lorg/telegram/ui/ActionBar/AlertDialog;I)V

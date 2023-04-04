@@ -58,7 +58,7 @@ public class ShareTopicCell extends FrameLayout {
         if (tLRPC$Dialog == null) {
             return;
         }
-        TLRPC$Chat chat = MessagesController.getInstance(this.currentAccount).getChat(Long.valueOf(-tLRPC$Dialog.f1506id));
+        TLRPC$Chat chat = MessagesController.getInstance(this.currentAccount).getChat(Long.valueOf(-tLRPC$Dialog.f1508id));
         if (charSequence != null) {
             this.nameTextView.setText(charSequence);
         } else if (chat != null) {
@@ -81,8 +81,8 @@ public class ShareTopicCell extends FrameLayout {
             this.imageView.setImageDrawable(combinedDrawable);
         }
         this.imageView.setRoundRadius(AndroidUtilities.m50dp((chat == null || !chat.forum || z) ? 28 : 16));
-        this.currentDialog = tLRPC$Dialog.f1506id;
-        this.currentTopic = tLRPC$TL_forumTopic.f1553id;
+        this.currentDialog = tLRPC$Dialog.f1508id;
+        this.currentTopic = tLRPC$TL_forumTopic.f1555id;
     }
 
     public long getCurrentDialog() {

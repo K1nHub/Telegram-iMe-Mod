@@ -882,7 +882,7 @@
 
     if-eqz v0, :cond_9
 
-    const-string v0, "torch"
+    const-string/jumbo v0, "torch"
 
     goto :goto_4
 
@@ -1912,7 +1912,7 @@
     if-eqz p1, :cond_0
 
     :try_start_0
-    const-string p1, "torch"
+    const-string/jumbo p1, "torch"
 
     goto :goto_0
 

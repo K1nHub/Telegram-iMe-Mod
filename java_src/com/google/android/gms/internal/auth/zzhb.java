@@ -1,8 +1,8 @@
 package com.google.android.gms.internal.auth;
 
 import java.util.ListIterator;
-import p034j$.util.Iterator;
-import p034j$.util.function.Consumer;
+import p035j$.util.Iterator;
+import p035j$.util.function.Consumer;
 /* compiled from: com.google.android.gms:play-services-auth-base@@18.0.4 */
 /* loaded from: classes.dex */
 final class zzhb implements ListIterator, Iterator {
@@ -25,12 +25,12 @@ final class zzhb implements ListIterator, Iterator {
         throw new UnsupportedOperationException();
     }
 
-    @Override // p034j$.util.Iterator
+    @Override // p035j$.util.Iterator
     public /* synthetic */ void forEachRemaining(Consumer consumer) {
         Iterator.CC.$default$forEachRemaining(this, consumer);
     }
 
-    @Override // java.util.ListIterator, java.util.Iterator, p034j$.util.Iterator
+    @Override // java.util.ListIterator, java.util.Iterator, p035j$.util.Iterator
     public final boolean hasNext() {
         return this.zza.hasNext();
     }
@@ -40,7 +40,7 @@ final class zzhb implements ListIterator, Iterator {
         return this.zza.hasPrevious();
     }
 
-    @Override // java.util.ListIterator, java.util.Iterator, p034j$.util.Iterator
+    @Override // java.util.ListIterator, java.util.Iterator, p035j$.util.Iterator
     public final /* bridge */ /* synthetic */ Object next() {
         return (String) this.zza.next();
     }
@@ -60,7 +60,7 @@ final class zzhb implements ListIterator, Iterator {
         return this.zza.previousIndex();
     }
 
-    @Override // java.util.ListIterator, java.util.Iterator, p034j$.util.Iterator
+    @Override // java.util.ListIterator, java.util.Iterator, p035j$.util.Iterator
     public final void remove() {
         throw new UnsupportedOperationException();
     }

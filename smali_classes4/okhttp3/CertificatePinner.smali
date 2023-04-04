@@ -320,7 +320,7 @@
 
     invoke-direct {p2}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v0, "unsupported hashAlgorithm: "
+    const-string/jumbo v0, "unsupported hashAlgorithm: "
 
     invoke-virtual {p2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 

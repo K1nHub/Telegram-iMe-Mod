@@ -3,7 +3,7 @@
 .source "ApplicationLoader.java"
 
 # interfaces
-.implements Lcom/smedialink/ui/shop/configuration/BillingProvider;
+.implements Lcom/iMe/ui/shop/configuration/BillingProvider;
 
 
 # static fields
@@ -43,11 +43,11 @@
 
 .field private static volatile networkCallback:Landroid/net/ConnectivityManager$NetworkCallback;
 
-.field public static volatile purchaseHelper:Lcom/smedialink/ui/shop/PurchaseHelper;
+.field public static volatile purchaseHelper:Lcom/iMe/ui/shop/PurchaseHelper;
 
 .field private static pushProvider:Lorg/telegram/messenger/PushListenerController$IPushListenerServiceProvider;
 
-.field public static volatile smartBotsManager:Lcom/smedialink/bots/usecase/AiBotsManager;
+.field public static volatile smartBotsManager:Lcom/iMe/bots/usecase/AiBotsManager;
 
 .field public static startTime:J
 
@@ -80,9 +80,9 @@
     .line 77
     new-instance v0, Lorg/solovyev/android/checkout/Billing;
 
-    new-instance v1, Lcom/smedialink/ui/shop/configuration/BillingConfiguration;
+    new-instance v1, Lcom/iMe/ui/shop/configuration/BillingConfiguration;
 
-    invoke-direct {v1}, Lcom/smedialink/ui/shop/configuration/BillingConfiguration;-><init>()V
+    invoke-direct {v1}, Lcom/iMe/ui/shop/configuration/BillingConfiguration;-><init>()V
 
     invoke-direct {v0, p0, v1}, Lorg/solovyev/android/checkout/Billing;-><init>(Landroid/content/Context;Lorg/solovyev/android/checkout/Billing$Configuration;)V
 
@@ -634,9 +634,9 @@
 
     move-result-object v0
 
-    new-instance v1, Lcom/smedialink/common/AppLifecycleObserver;
+    new-instance v1, Lcom/iMe/common/AppLifecycleObserver;
 
-    invoke-direct {v1}, Lcom/smedialink/common/AppLifecycleObserver;-><init>()V
+    invoke-direct {v1}, Lcom/iMe/common/AppLifecycleObserver;-><init>()V
 
     invoke-virtual {v0, v1}, Landroidx/lifecycle/Lifecycle;->addObserver(Landroidx/lifecycle/LifecycleObserver;)V
 
@@ -647,9 +647,9 @@
     .locals 1
 
     .line 113
-    new-instance v0, Lcom/smedialink/utils/debug/FileLogTree;
+    new-instance v0, Lcom/iMe/utils/debug/FileLogTree;
 
-    invoke-direct {v0}, Lcom/smedialink/utils/debug/FileLogTree;-><init>()V
+    invoke-direct {v0}, Lcom/iMe/utils/debug/FileLogTree;-><init>()V
 
     invoke-static {v0}, Ltimber/log/Timber;->plant(Ltimber/log/Timber$Tree;)V
 
@@ -692,27 +692,27 @@
     if-eqz v0, :cond_0
 
     .line 94
-    sget-object v2, Lcom/smedialink/bots/usecase/AiBotsManager;->Companion:Lcom/smedialink/bots/usecase/AiBotsManager$Companion;
+    sget-object v2, Lcom/iMe/bots/usecase/AiBotsManager;->Companion:Lcom/iMe/bots/usecase/AiBotsManager$Companion;
 
     sget-object v3, Lorg/telegram/messenger/ApplicationLoader;->applicationContext:Landroid/content/Context;
 
-    invoke-virtual {v2, v3, v0, v1}, Lcom/smedialink/bots/usecase/AiBotsManager$Companion;->getInstance(Landroid/content/Context;Ljava/io/File;Ljava/io/File;)Lcom/smedialink/bots/usecase/AiBotsManager;
+    invoke-virtual {v2, v3, v0, v1}, Lcom/iMe/bots/usecase/AiBotsManager$Companion;->getInstance(Landroid/content/Context;Ljava/io/File;Ljava/io/File;)Lcom/iMe/bots/usecase/AiBotsManager;
 
     move-result-object v0
 
-    sput-object v0, Lorg/telegram/messenger/ApplicationLoader;->smartBotsManager:Lcom/smedialink/bots/usecase/AiBotsManager;
+    sput-object v0, Lorg/telegram/messenger/ApplicationLoader;->smartBotsManager:Lcom/iMe/bots/usecase/AiBotsManager;
 
     .line 96
     :cond_0
-    sget-object v0, Lcom/smedialink/ui/shop/PurchaseHelper;->Companion:Lcom/smedialink/ui/shop/PurchaseHelper$Companion;
+    sget-object v0, Lcom/iMe/ui/shop/PurchaseHelper;->Companion:Lcom/iMe/ui/shop/PurchaseHelper$Companion;
 
-    sget-object v1, Lorg/telegram/messenger/ApplicationLoader;->smartBotsManager:Lcom/smedialink/bots/usecase/AiBotsManager;
+    sget-object v1, Lorg/telegram/messenger/ApplicationLoader;->smartBotsManager:Lcom/iMe/bots/usecase/AiBotsManager;
 
-    invoke-virtual {v0, v1}, Lcom/smedialink/ui/shop/PurchaseHelper$Companion;->getInstance(Lcom/smedialink/bots/usecase/AiBotsManager;)Lcom/smedialink/ui/shop/PurchaseHelper;
+    invoke-virtual {v0, v1}, Lcom/iMe/ui/shop/PurchaseHelper$Companion;->getInstance(Lcom/iMe/bots/usecase/AiBotsManager;)Lcom/iMe/ui/shop/PurchaseHelper;
 
     move-result-object v0
 
-    sput-object v0, Lorg/telegram/messenger/ApplicationLoader;->purchaseHelper:Lcom/smedialink/ui/shop/PurchaseHelper;
+    sput-object v0, Lorg/telegram/messenger/ApplicationLoader;->purchaseHelper:Lcom/iMe/ui/shop/PurchaseHelper;
 
     .line 97
     new-instance v0, Lorg/telegram/messenger/ApplicationLoader$1;
@@ -754,17 +754,17 @@
     .line 118
     sget-object v0, Lorg/telegram/messenger/ApplicationLoader;->applicationContext:Landroid/content/Context;
 
-    sget-object v1, Lcom/smedialink/storage/data/manager/common/EnvironmentManager;->INSTANCE:Lcom/smedialink/storage/data/manager/common/EnvironmentManager;
+    sget-object v1, Lcom/iMe/storage/data/manager/common/EnvironmentManager;->INSTANCE:Lcom/iMe/storage/data/manager/common/EnvironmentManager;
 
-    invoke-virtual {v1}, Lcom/smedialink/storage/data/manager/common/EnvironmentManager;->getEnvironmentInformation()Lcom/smedialink/storage/domain/model/common/EnvironmentInformation;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Lcom/smedialink/storage/domain/model/common/EnvironmentInformation;->getGoogleServiceOptions()Lcom/google/firebase/FirebaseOptions;
+    invoke-virtual {v1}, Lcom/iMe/storage/data/manager/common/EnvironmentManager;->getEnvironmentInformation()Lcom/iMe/storage/domain/model/common/EnvironmentInformation;
 
     move-result-object v2
 
-    invoke-virtual {v1}, Lcom/smedialink/storage/data/manager/common/EnvironmentManager;->getEnvironment()Lcom/smedialink/storage/domain/model/common/Environment;
+    invoke-virtual {v2}, Lcom/iMe/storage/domain/model/common/EnvironmentInformation;->getGoogleServiceOptions()Lcom/google/firebase/FirebaseOptions;
+
+    move-result-object v2
+
+    invoke-virtual {v1}, Lcom/iMe/storage/data/manager/common/EnvironmentManager;->getEnvironment()Lcom/iMe/storage/domain/model/common/Environment;
 
     move-result-object v1
 
@@ -785,7 +785,7 @@
     .line 126
     sget-object v0, Lorg/telegram/messenger/ApplicationLoader;->applicationContext:Landroid/content/Context;
 
-    invoke-static {v0}, Lcom/smedialink/di/KoinJavaAppKt;->start(Landroid/content/Context;)V
+    invoke-static {v0}, Lcom/iMe/di/KoinJavaAppKt;->start(Landroid/content/Context;)V
 
     return-void
 .end method
@@ -2029,7 +2029,7 @@
     invoke-static {}, Lorg/telegram/messenger/ProxyRotationController;->init()V
 
     .line 413
-    invoke-static {p0}, Lcom/smedialink/storage/data/manager/FlipperManager;->start(Landroid/content/Context;)V
+    invoke-static {p0}, Lcom/iMe/storage/data/manager/FlipperManager;->start(Landroid/content/Context;)V
 
     return-void
 .end method

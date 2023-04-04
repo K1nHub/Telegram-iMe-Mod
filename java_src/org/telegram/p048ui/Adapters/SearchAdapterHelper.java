@@ -197,11 +197,11 @@ public class SearchAdapterHelper {
             LongSparseArray longSparseArray2 = new LongSparseArray();
             for (int i2 = 0; i2 < tLRPC$TL_contacts_found.chats.size(); i2++) {
                 TLRPC$Chat tLRPC$Chat3 = tLRPC$TL_contacts_found.chats.get(i2);
-                longSparseArray.put(tLRPC$Chat3.f1500id, tLRPC$Chat3);
+                longSparseArray.put(tLRPC$Chat3.f1502id, tLRPC$Chat3);
             }
             for (int i3 = 0; i3 < tLRPC$TL_contacts_found.users.size(); i3++) {
                 TLRPC$User tLRPC$User3 = tLRPC$TL_contacts_found.users.get(i3);
-                longSparseArray2.put(tLRPC$User3.f1640id, tLRPC$User3);
+                longSparseArray2.put(tLRPC$User3.f1642id, tLRPC$User3);
             }
             int i4 = 0;
             while (true) {
@@ -242,10 +242,10 @@ public class SearchAdapterHelper {
                     }
                     if (this.topicMode) {
                         if (tLRPC$Chat2 != null) {
-                            tLRPC$Dialog2 = MessagesController.getInstance(this.currentAccount).dialogs_dict.get(-tLRPC$Chat2.f1500id);
+                            tLRPC$Dialog2 = MessagesController.getInstance(this.currentAccount).dialogs_dict.get(-tLRPC$Chat2.f1502id);
                         } else if (tLRPC$User2 != null) {
                             if (!UserObject.isUserSelf(tLRPC$User2) && !UserObject.isReplyUser(tLRPC$User2) && !MessagesController.isSupportUser(tLRPC$User2)) {
-                                tLRPC$Dialog2 = MessagesController.getInstance(this.currentAccount).dialogs_dict.get(tLRPC$User2.f1640id);
+                                tLRPC$Dialog2 = MessagesController.getInstance(this.currentAccount).dialogs_dict.get(tLRPC$User2.f1642id);
                             }
                             i5++;
                             j2 = 0;
@@ -262,11 +262,11 @@ public class SearchAdapterHelper {
                     if (tLRPC$Chat2 != null) {
                         if (z && ((!z2 || ChatObject.canAddBotsToChat(tLRPC$Chat2)) && (this.allowGlobalResults || !ChatObject.isNotInChat(tLRPC$Chat2)))) {
                             this.globalSearch.add(tLRPC$Chat2);
-                            this.globalSearchMap.put(-tLRPC$Chat2.f1500id, tLRPC$Chat2);
+                            this.globalSearchMap.put(-tLRPC$Chat2.f1502id, tLRPC$Chat2);
                         }
-                    } else if (tLRPC$User2 != null && ((!this.crossAccountsForward || tLRPC$User2.f1640id != UserConfig.getInstance(UserConfig.selectedAccount).getClientUserId()) && !z2 && ((z3 || !tLRPC$User2.bot) && ((z4 || !tLRPC$User2.self) && (this.allowGlobalResults || i4 != 1 || tLRPC$User2.contact))))) {
+                    } else if (tLRPC$User2 != null && ((!this.crossAccountsForward || tLRPC$User2.f1642id != UserConfig.getInstance(UserConfig.selectedAccount).getClientUserId()) && !z2 && ((z3 || !tLRPC$User2.bot) && ((z4 || !tLRPC$User2.self) && (this.allowGlobalResults || i4 != 1 || tLRPC$User2.contact))))) {
                         this.globalSearch.add(tLRPC$User2);
-                        this.globalSearchMap.put(tLRPC$User2.f1640id, tLRPC$User2);
+                        this.globalSearchMap.put(tLRPC$User2.f1642id, tLRPC$User2);
                     }
                     i5++;
                     j2 = 0;
@@ -297,10 +297,10 @@ public class SearchAdapterHelper {
                     }
                     if (this.topicMode) {
                         if (tLRPC$Chat != null) {
-                            tLRPC$Dialog = MessagesController.getInstance(this.currentAccount).dialogs_dict.get(-tLRPC$Chat.f1500id);
+                            tLRPC$Dialog = MessagesController.getInstance(this.currentAccount).dialogs_dict.get(-tLRPC$Chat.f1502id);
                         } else if (tLRPC$User != null) {
                             if (!UserObject.isUserSelf(tLRPC$User) && !UserObject.isReplyUser(tLRPC$User) && !MessagesController.isSupportUser(tLRPC$User)) {
-                                tLRPC$Dialog = MessagesController.getInstance(this.currentAccount).dialogs_dict.get(tLRPC$User.f1640id);
+                                tLRPC$Dialog = MessagesController.getInstance(this.currentAccount).dialogs_dict.get(tLRPC$User.f1642id);
                             }
                         } else {
                             tLRPC$Dialog = null;
@@ -311,13 +311,13 @@ public class SearchAdapterHelper {
                         }
                     }
                     if (tLRPC$Chat != null) {
-                        if (z && ((!z2 || ChatObject.canAddBotsToChat(tLRPC$Chat)) && (-tLRPC$Chat.f1500id) != j)) {
+                        if (z && ((!z2 || ChatObject.canAddBotsToChat(tLRPC$Chat)) && (-tLRPC$Chat.f1502id) != j)) {
                             this.localServerSearch.add(tLRPC$Chat);
-                            this.globalSearchMap.put(-tLRPC$Chat.f1500id, tLRPC$Chat);
+                            this.globalSearchMap.put(-tLRPC$Chat.f1502id, tLRPC$Chat);
                         }
-                    } else if (tLRPC$User != null && ((!this.crossAccountsForward || tLRPC$User.f1640id != UserConfig.getInstance(UserConfig.selectedAccount).getClientUserId()) && !z2 && ((z3 || !tLRPC$User.bot) && ((z4 || !tLRPC$User.self) && tLRPC$User.f1640id != j)))) {
+                    } else if (tLRPC$User != null && ((!this.crossAccountsForward || tLRPC$User.f1642id != UserConfig.getInstance(UserConfig.selectedAccount).getClientUserId()) && !z2 && ((z3 || !tLRPC$User.bot) && ((z4 || !tLRPC$User.self) && tLRPC$User.f1642id != j)))) {
                         this.localServerSearch.add(tLRPC$User);
-                        this.globalSearchMap.put(tLRPC$User.f1640id, tLRPC$User);
+                        this.globalSearchMap.put(tLRPC$User.f1642id, tLRPC$User);
                     }
                 }
             }
@@ -371,7 +371,7 @@ public class SearchAdapterHelper {
             if (tLRPC$User != null) {
                 this.globalSearch.remove(tLRPC$User);
                 this.localServerSearch.remove(tLRPC$User);
-                this.globalSearchMap.remove(tLRPC$User.f1640id);
+                this.globalSearchMap.remove(tLRPC$User.f1642id);
             }
         }
     }
@@ -473,26 +473,26 @@ public class SearchAdapterHelper {
                 }
                 if (obj instanceof TLRPC$User) {
                     TLRPC$User tLRPC$User = (TLRPC$User) obj;
-                    TLRPC$User tLRPC$User2 = (TLRPC$User) this.globalSearchMap.get(tLRPC$User.f1640id);
+                    TLRPC$User tLRPC$User2 = (TLRPC$User) this.globalSearchMap.get(tLRPC$User.f1642id);
                     if (tLRPC$User2 != null) {
                         this.globalSearch.remove(tLRPC$User2);
                         this.localServerSearch.remove(tLRPC$User2);
-                        this.globalSearchMap.remove(tLRPC$User2.f1640id);
+                        this.globalSearchMap.remove(tLRPC$User2.f1642id);
                     }
-                    TLObject tLObject = this.groupSearchMap.get(tLRPC$User.f1640id);
+                    TLObject tLObject = this.groupSearchMap.get(tLRPC$User.f1642id);
                     if (tLObject != null) {
                         this.groupSearch.remove(tLObject);
-                        this.groupSearchMap.remove(tLRPC$User.f1640id);
+                        this.groupSearchMap.remove(tLRPC$User.f1642id);
                     }
-                    TLObject tLObject2 = this.phoneSearchMap.get(tLRPC$User.f1640id);
+                    TLObject tLObject2 = this.phoneSearchMap.get(tLRPC$User.f1642id);
                     if (tLObject2 != null) {
                         this.phonesSearch.remove(tLObject2);
-                        this.phoneSearchMap.remove(tLRPC$User.f1640id);
+                        this.phoneSearchMap.remove(tLRPC$User.f1642id);
                     }
-                } else if ((obj instanceof TLRPC$Chat) && (tLRPC$Chat = (TLRPC$Chat) this.globalSearchMap.get(-((TLRPC$Chat) obj).f1500id)) != null) {
+                } else if ((obj instanceof TLRPC$Chat) && (tLRPC$Chat = (TLRPC$Chat) this.globalSearchMap.get(-((TLRPC$Chat) obj).f1502id)) != null) {
                     this.globalSearch.remove(tLRPC$Chat);
                     this.localServerSearch.remove(tLRPC$Chat);
-                    this.globalSearchMap.remove(-tLRPC$Chat.f1500id);
+                    this.globalSearchMap.remove(-tLRPC$Chat.f1502id);
                 }
                 i++;
             }
@@ -512,7 +512,7 @@ public class SearchAdapterHelper {
                 if (tLRPC$User != null) {
                     this.globalSearch.remove(tLRPC$User);
                     this.localServerSearch.remove(tLRPC$User);
-                    this.globalSearchMap.remove(tLRPC$User.f1640id);
+                    this.globalSearchMap.remove(tLRPC$User.f1642id);
                 }
             }
         }
@@ -524,7 +524,7 @@ public class SearchAdapterHelper {
                 if (tLRPC$User2 != null) {
                     this.globalSearch.remove(tLRPC$User2);
                     this.localServerSearch.remove(tLRPC$User2);
-                    this.globalSearchMap.remove(tLRPC$User2.f1640id);
+                    this.globalSearchMap.remove(tLRPC$User2.f1642id);
                 }
             }
         }

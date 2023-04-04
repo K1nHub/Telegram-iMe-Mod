@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/LoginActivity;Landroid/content/Context;)V
     .locals 0
 
-    .line 634
+    .line 632
     iput-object p1, p0, Lorg/telegram/ui/LoginActivity$3;->this$0:Lorg/telegram/ui/LoginActivity;
 
     invoke-direct {p0, p2}, Landroid/widget/ScrollView;-><init>(Landroid/content/Context;)V
@@ -35,7 +35,7 @@
 .method public requestChildRectangleOnScreen(Landroid/view/View;Landroid/graphics/Rect;Z)Z
     .locals 2
 
-    .line 637
+    .line 635
     iget-object v0, p0, Lorg/telegram/ui/LoginActivity$3;->this$0:Lorg/telegram/ui/LoginActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/LoginActivity;->access$1000(Lorg/telegram/ui/LoginActivity;)I
@@ -66,7 +66,7 @@
 
     if-ne v0, v1, :cond_1
 
-    .line 638
+    .line 636
     :cond_0
     iget v0, p2, Landroid/graphics/Rect;->bottom:I
 
@@ -80,7 +80,7 @@
 
     iput v0, p2, Landroid/graphics/Rect;->bottom:I
 
-    .line 640
+    .line 638
     :cond_1
     invoke-super {p0, p1, p2, p3}, Landroid/widget/ScrollView;->requestChildRectangleOnScreen(Landroid/view/View;Landroid/graphics/Rect;Z)Z
 

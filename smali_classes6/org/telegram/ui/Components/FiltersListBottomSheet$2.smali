@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/FiltersListBottomSheet;Landroid/content/Context;)V
     .locals 0
 
-    .line 204
+    .line 202
     iput-object p1, p0, Lorg/telegram/ui/Components/FiltersListBottomSheet$2;->this$0:Lorg/telegram/ui/Components/FiltersListBottomSheet;
 
     invoke-direct {p0, p2}, Lorg/telegram/ui/Components/RecyclerListView;-><init>(Landroid/content/Context;)V
@@ -35,7 +35,7 @@
 .method public requestLayout()V
     .locals 1
 
-    .line 207
+    .line 205
     iget-object v0, p0, Lorg/telegram/ui/Components/FiltersListBottomSheet$2;->this$0:Lorg/telegram/ui/Components/FiltersListBottomSheet;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/FiltersListBottomSheet;->access$100(Lorg/telegram/ui/Components/FiltersListBottomSheet;)Z
@@ -46,7 +46,7 @@
 
     return-void
 
-    .line 210
+    .line 208
     :cond_0
     invoke-super {p0}, Lorg/telegram/ui/Components/RecyclerListView;->requestLayout()V
 

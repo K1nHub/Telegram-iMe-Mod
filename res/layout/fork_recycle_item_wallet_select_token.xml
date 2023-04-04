@@ -7,7 +7,7 @@
         <androidx.appcompat.widget.AppCompatTextView android:textSize="@dimen/text_size_upper_17" android:id="@id/text_token_balance" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/margin_half_small" />
     </LinearLayout>
     <LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginEnd="@dimen/margin_small" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintTop_toTopOf="parent">
-        <com.smedialink.ui.custom.CoinTickerView android:textSize="@dimen/text_size_small_upper" android:layout_gravity="end" android:id="@id/text_token_ticker" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+        <com.iMe.ui.custom.CoinTickerView android:textSize="@dimen/text_size_small_upper" android:layout_gravity="end" android:id="@id/text_token_ticker" android:layout_width="wrap_content" android:layout_height="wrap_content" />
         <androidx.appcompat.widget.AppCompatTextView android:textSize="@dimen/text_size_small_upper" android:gravity="end" android:layout_gravity="end" android:id="@id/text_token_balance_in_dollars" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/margin_small" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

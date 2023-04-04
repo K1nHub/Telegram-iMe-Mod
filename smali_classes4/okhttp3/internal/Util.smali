@@ -480,7 +480,7 @@
     :cond_7
     new-instance p0, Ljava/lang/IllegalStateException;
 
-    const-string p1, "unit == null"
+    const-string/jumbo p1, "unit == null"
 
     invoke-virtual {p1}, Ljava/lang/Object;->toString()Ljava/lang/String;
 

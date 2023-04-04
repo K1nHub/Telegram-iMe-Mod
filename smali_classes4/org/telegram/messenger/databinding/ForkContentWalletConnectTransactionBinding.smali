@@ -9,9 +9,9 @@
 # instance fields
 .field public final buttonClose:Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
 
-.field public final buttonProcess:Lcom/smedialink/ui/custom/BigActionButton;
+.field public final buttonProcess:Lcom/iMe/ui/custom/BigActionButton;
 
-.field public final feeView:Lcom/smedialink/ui/custom/FeeView;
+.field public final feeView:Lcom/iMe/ui/custom/FeeView;
 
 .field private final rootView:Landroid/widget/LinearLayout;
 
@@ -29,7 +29,7 @@
 
 
 # direct methods
-.method private constructor <init>(Landroid/widget/LinearLayout;Lorg/telegram/ui/ActionBar/ActionBarMenuItem;Lcom/smedialink/ui/custom/BigActionButton;Lcom/smedialink/ui/custom/FeeView;Landroid/widget/LinearLayout;Lorg/telegram/ui/Cells/TextDetailCell;Lorg/telegram/ui/Cells/TextDetailCell;Lorg/telegram/ui/Cells/TextDetailCell;Landroidx/appcompat/widget/AppCompatTextView;Lorg/telegram/ui/Cells/TextDetailCell;Landroidx/appcompat/widget/AppCompatTextView;)V
+.method private constructor <init>(Landroid/widget/LinearLayout;Lorg/telegram/ui/ActionBar/ActionBarMenuItem;Lcom/iMe/ui/custom/BigActionButton;Lcom/iMe/ui/custom/FeeView;Landroid/widget/LinearLayout;Lorg/telegram/ui/Cells/TextDetailCell;Lorg/telegram/ui/Cells/TextDetailCell;Lorg/telegram/ui/Cells/TextDetailCell;Landroidx/appcompat/widget/AppCompatTextView;Lorg/telegram/ui/Cells/TextDetailCell;Landroidx/appcompat/widget/AppCompatTextView;)V
     .locals 0
 
     .line 61
@@ -42,10 +42,10 @@
     iput-object p2, p0, Lorg/telegram/messenger/databinding/ForkContentWalletConnectTransactionBinding;->buttonClose:Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
 
     .line 64
-    iput-object p3, p0, Lorg/telegram/messenger/databinding/ForkContentWalletConnectTransactionBinding;->buttonProcess:Lcom/smedialink/ui/custom/BigActionButton;
+    iput-object p3, p0, Lorg/telegram/messenger/databinding/ForkContentWalletConnectTransactionBinding;->buttonProcess:Lcom/iMe/ui/custom/BigActionButton;
 
     .line 65
-    iput-object p4, p0, Lorg/telegram/messenger/databinding/ForkContentWalletConnectTransactionBinding;->feeView:Lcom/smedialink/ui/custom/FeeView;
+    iput-object p4, p0, Lorg/telegram/messenger/databinding/ForkContentWalletConnectTransactionBinding;->feeView:Lcom/iMe/ui/custom/FeeView;
 
     .line 67
     iput-object p6, p0, Lorg/telegram/messenger/databinding/ForkContentWalletConnectTransactionBinding;->textFrom:Lorg/telegram/ui/Cells/TextDetailCell;
@@ -95,7 +95,7 @@
 
     move-object v5, v1
 
-    check-cast v5, Lcom/smedialink/ui/custom/BigActionButton;
+    check-cast v5, Lcom/iMe/ui/custom/BigActionButton;
 
     if-eqz v5, :cond_0
 
@@ -109,7 +109,7 @@
 
     move-object v6, v1
 
-    check-cast v6, Lcom/smedialink/ui/custom/FeeView;
+    check-cast v6, Lcom/iMe/ui/custom/FeeView;
 
     if-eqz v6, :cond_0
 
@@ -209,7 +209,7 @@
 
     move-object v3, v7
 
-    invoke-direct/range {v2 .. v13}, Lorg/telegram/messenger/databinding/ForkContentWalletConnectTransactionBinding;-><init>(Landroid/widget/LinearLayout;Lorg/telegram/ui/ActionBar/ActionBarMenuItem;Lcom/smedialink/ui/custom/BigActionButton;Lcom/smedialink/ui/custom/FeeView;Landroid/widget/LinearLayout;Lorg/telegram/ui/Cells/TextDetailCell;Lorg/telegram/ui/Cells/TextDetailCell;Lorg/telegram/ui/Cells/TextDetailCell;Landroidx/appcompat/widget/AppCompatTextView;Lorg/telegram/ui/Cells/TextDetailCell;Landroidx/appcompat/widget/AppCompatTextView;)V
+    invoke-direct/range {v2 .. v13}, Lorg/telegram/messenger/databinding/ForkContentWalletConnectTransactionBinding;-><init>(Landroid/widget/LinearLayout;Lorg/telegram/ui/ActionBar/ActionBarMenuItem;Lcom/iMe/ui/custom/BigActionButton;Lcom/iMe/ui/custom/FeeView;Landroid/widget/LinearLayout;Lorg/telegram/ui/Cells/TextDetailCell;Lorg/telegram/ui/Cells/TextDetailCell;Lorg/telegram/ui/Cells/TextDetailCell;Landroidx/appcompat/widget/AppCompatTextView;Lorg/telegram/ui/Cells/TextDetailCell;Landroidx/appcompat/widget/AppCompatTextView;)V
 
     return-object p0
 

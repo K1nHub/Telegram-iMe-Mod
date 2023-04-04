@@ -1,7 +1,7 @@
 package com.google.android.exoplayer2.source.hls;
 
 import android.os.Looper;
-import com.google.android.exoplayer2.C0468C;
+import com.google.android.exoplayer2.C0482C;
 import com.google.android.exoplayer2.ExoPlayerLibraryInfo;
 import com.google.android.exoplayer2.MediaItem;
 import com.google.android.exoplayer2.drm.DefaultDrmSessionManagerProvider;
@@ -99,7 +99,7 @@ public final class HlsMediaSource extends BaseMediaSource implements HlsPlaylist
             this.loadErrorHandlingPolicy = new DefaultLoadErrorHandlingPolicy();
             this.compositeSequenceableLoaderFactory = new DefaultCompositeSequenceableLoaderFactory();
             this.metadataType = 1;
-            this.elapsedRealTimeOffsetMs = C0468C.TIME_UNSET;
+            this.elapsedRealTimeOffsetMs = C0482C.TIME_UNSET;
             this.allowChunklessPreparation = true;
         }
 
@@ -247,18 +247,18 @@ public final class HlsMediaSource extends BaseMediaSource implements HlsPlaylist
         long j3 = hlsMediaPlaylist.hasEndTag ? initialStartTimeUs + hlsMediaPlaylist.durationUs : -9223372036854775807L;
         long liveEdgeOffsetUs = getLiveEdgeOffsetUs(hlsMediaPlaylist);
         long j4 = this.liveConfiguration.targetOffsetMs;
-        if (j4 != C0468C.TIME_UNSET) {
+        if (j4 != C0482C.TIME_UNSET) {
             targetLiveOffsetUs = Util.msToUs(j4);
         } else {
             targetLiveOffsetUs = getTargetLiveOffsetUs(hlsMediaPlaylist, liveEdgeOffsetUs);
         }
         updateLiveConfiguration(hlsMediaPlaylist, Util.constrainValue(targetLiveOffsetUs, liveEdgeOffsetUs, hlsMediaPlaylist.durationUs + liveEdgeOffsetUs));
-        return new SinglePeriodTimeline(j, j2, C0468C.TIME_UNSET, j3, hlsMediaPlaylist.durationUs, initialStartTimeUs, getLiveWindowDefaultStartPositionUs(hlsMediaPlaylist, liveEdgeOffsetUs), true, !hlsMediaPlaylist.hasEndTag, hlsMediaPlaylist.playlistType == 2 && hlsMediaPlaylist.hasPositiveStartOffset, hlsManifest, this.mediaItem, this.liveConfiguration);
+        return new SinglePeriodTimeline(j, j2, C0482C.TIME_UNSET, j3, hlsMediaPlaylist.durationUs, initialStartTimeUs, getLiveWindowDefaultStartPositionUs(hlsMediaPlaylist, liveEdgeOffsetUs), true, !hlsMediaPlaylist.hasEndTag, hlsMediaPlaylist.playlistType == 2 && hlsMediaPlaylist.hasPositiveStartOffset, hlsManifest, this.mediaItem, this.liveConfiguration);
     }
 
     private SinglePeriodTimeline createTimelineForOnDemand(HlsMediaPlaylist hlsMediaPlaylist, long j, long j2, HlsManifest hlsManifest) {
         long j3;
-        if (hlsMediaPlaylist.startOffsetUs == C0468C.TIME_UNSET || hlsMediaPlaylist.segments.isEmpty()) {
+        if (hlsMediaPlaylist.startOffsetUs == C0482C.TIME_UNSET || hlsMediaPlaylist.segments.isEmpty()) {
             j3 = 0;
         } else {
             if (!hlsMediaPlaylist.preciseStart) {
@@ -270,7 +270,7 @@ public final class HlsMediaSource extends BaseMediaSource implements HlsPlaylist
             j3 = hlsMediaPlaylist.startOffsetUs;
         }
         long j5 = hlsMediaPlaylist.durationUs;
-        return new SinglePeriodTimeline(j, j2, C0468C.TIME_UNSET, j5, j5, 0L, j3, true, false, true, hlsManifest, this.mediaItem, null);
+        return new SinglePeriodTimeline(j, j2, C0482C.TIME_UNSET, j5, j5, 0L, j3, true, false, true, hlsManifest, this.mediaItem, null);
     }
 
     private long getLiveEdgeOffsetUs(HlsMediaPlaylist hlsMediaPlaylist) {
@@ -282,7 +282,7 @@ public final class HlsMediaSource extends BaseMediaSource implements HlsPlaylist
 
     private long getLiveWindowDefaultStartPositionUs(HlsMediaPlaylist hlsMediaPlaylist, long j) {
         long j2 = hlsMediaPlaylist.startOffsetUs;
-        if (j2 == C0468C.TIME_UNSET) {
+        if (j2 == C0482C.TIME_UNSET) {
             j2 = (hlsMediaPlaylist.durationUs + j) - Util.msToUs(this.liveConfiguration.targetOffsetMs);
         }
         if (hlsMediaPlaylist.preciseStart) {
@@ -366,13 +366,13 @@ public final class HlsMediaSource extends BaseMediaSource implements HlsPlaylist
         long j2;
         HlsMediaPlaylist.ServerControl serverControl = hlsMediaPlaylist.serverControl;
         long j3 = hlsMediaPlaylist.startOffsetUs;
-        if (j3 != C0468C.TIME_UNSET) {
+        if (j3 != C0482C.TIME_UNSET) {
             j2 = hlsMediaPlaylist.durationUs - j3;
         } else {
             long j4 = serverControl.partHoldBackUs;
-            if (j4 == C0468C.TIME_UNSET || hlsMediaPlaylist.partTargetDurationUs == C0468C.TIME_UNSET) {
+            if (j4 == C0482C.TIME_UNSET || hlsMediaPlaylist.partTargetDurationUs == C0482C.TIME_UNSET) {
                 long j5 = serverControl.holdBackUs;
-                j2 = j5 != C0468C.TIME_UNSET ? j5 : hlsMediaPlaylist.targetDurationUs * 3;
+                j2 = j5 != C0482C.TIME_UNSET ? j5 : hlsMediaPlaylist.targetDurationUs * 3;
             } else {
                 j2 = j4;
             }

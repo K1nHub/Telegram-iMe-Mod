@@ -1,115 +1,168 @@
-.class synthetic Lorg/telegram/ui/ChatActivity$138;
-.super Ljava/lang/Object;
+.class Lorg/telegram/ui/ChatActivity$138;
+.super Landroid/animation/AnimatorListenerAdapter;
 .source "ChatActivity.java"
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lorg/telegram/ui/ChatActivity;
+.annotation system Ldalvik/annotation/EnclosingMethod;
+    value = Lorg/telegram/ui/ChatActivity;->onCustomTransitionAnimation(ZLjava/lang/Runnable;)Landroid/animation/AnimatorSet;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x1008
+    accessFlags = 0x0
     name = null
 .end annotation
 
 
-# static fields
-.field static final synthetic $SwitchMap$org$telegram$ui$AvatarPreviewer$MenuItem:[I
+# instance fields
+.field index:I
+
+.field final synthetic this$0:Lorg/telegram/ui/ChatActivity;
+
+.field final synthetic val$callback:Ljava/lang/Runnable;
+
+.field final synthetic val$isOpen:Z
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 3
+.method public static synthetic $r8$lambda$e0irKxLxPmvAdABsTzGQz6pwI-0(Lorg/telegram/ui/ChatActivity$138;)V
+    .locals 0
 
-    .line 33072
-    invoke-static {}, Lorg/telegram/ui/AvatarPreviewer$MenuItem;->values()[Lorg/telegram/ui/AvatarPreviewer$MenuItem;
+    invoke-direct {p0}, Lorg/telegram/ui/ChatActivity$138;->lambda$onAnimationEnd$0()V
+
+    return-void
+.end method
+
+.method constructor <init>(Lorg/telegram/ui/ChatActivity;ZLjava/lang/Runnable;)V
+    .locals 0
+
+    .line 34826
+    iput-object p1, p0, Lorg/telegram/ui/ChatActivity$138;->this$0:Lorg/telegram/ui/ChatActivity;
+
+    iput-boolean p2, p0, Lorg/telegram/ui/ChatActivity$138;->val$isOpen:Z
+
+    iput-object p3, p0, Lorg/telegram/ui/ChatActivity$138;->val$callback:Ljava/lang/Runnable;
+
+    invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
+
+    return-void
+.end method
+
+.method private synthetic lambda$onAnimationEnd$0()V
+    .locals 2
+
+    .line 34847
+    iget-object v0, p0, Lorg/telegram/ui/ChatActivity$138;->this$0:Lorg/telegram/ui/ChatActivity;
+
+    invoke-static {v0}, Lorg/telegram/ui/ChatActivity;->access$61000(Lorg/telegram/ui/ChatActivity;)I
+
+    move-result v0
+
+    invoke-static {v0}, Lorg/telegram/messenger/NotificationCenter;->getInstance(I)Lorg/telegram/messenger/NotificationCenter;
 
     move-result-object v0
 
-    array-length v0, v0
+    iget v1, p0, Lorg/telegram/ui/ChatActivity$138;->index:I
 
-    new-array v0, v0, [I
+    invoke-virtual {v0, v1}, Lorg/telegram/messenger/NotificationCenter;->onAnimationFinish(I)V
 
-    sput-object v0, Lorg/telegram/ui/ChatActivity$138;->$SwitchMap$org$telegram$ui$AvatarPreviewer$MenuItem:[I
+    return-void
+.end method
 
-    :try_start_0
-    sget-object v1, Lorg/telegram/ui/AvatarPreviewer$MenuItem;->OPEN_PROFILE:Lorg/telegram/ui/AvatarPreviewer$MenuItem;
 
-    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
+# virtual methods
+.method public onAnimationEnd(Landroid/animation/Animator;)V
+    .locals 2
 
-    move-result v1
+    .line 34838
+    iget-object p1, p0, Lorg/telegram/ui/ChatActivity$138;->this$0:Lorg/telegram/ui/ChatActivity;
 
-    const/4 v2, 0x1
+    const/4 v0, 0x1
 
-    aput v2, v0, v1
-    :try_end_0
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_0 .. :try_end_0} :catch_0
+    iput-boolean v0, p1, Lorg/telegram/ui/ChatActivity;->fragmentOpened:Z
 
-    :catch_0
-    :try_start_1
-    sget-object v0, Lorg/telegram/ui/ChatActivity$138;->$SwitchMap$org$telegram$ui$AvatarPreviewer$MenuItem:[I
+    .line 34839
+    invoke-static {p1, v0}, Lorg/telegram/ui/ChatActivity;->access$60802(Lorg/telegram/ui/ChatActivity;Z)Z
 
-    sget-object v1, Lorg/telegram/ui/AvatarPreviewer$MenuItem;->OPEN_GROUP:Lorg/telegram/ui/AvatarPreviewer$MenuItem;
+    .line 34840
+    iget-object p1, p0, Lorg/telegram/ui/ChatActivity$138;->this$0:Lorg/telegram/ui/ChatActivity;
 
-    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
+    const/4 v0, 0x0
 
-    move-result v1
+    invoke-static {p1, v0}, Lorg/telegram/ui/ChatActivity;->access$2002(Lorg/telegram/ui/ChatActivity;Landroid/animation/AnimatorSet;)Landroid/animation/AnimatorSet;
 
-    const/4 v2, 0x2
+    .line 34841
+    iget-boolean p1, p0, Lorg/telegram/ui/ChatActivity$138;->val$isOpen:Z
 
-    aput v2, v0, v1
-    :try_end_1
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_1 .. :try_end_1} :catch_1
+    if-eqz p1, :cond_0
 
-    :catch_1
-    :try_start_2
-    sget-object v0, Lorg/telegram/ui/ChatActivity$138;->$SwitchMap$org$telegram$ui$AvatarPreviewer$MenuItem:[I
+    .line 34842
+    iget-object p1, p0, Lorg/telegram/ui/ChatActivity$138;->this$0:Lorg/telegram/ui/ChatActivity;
 
-    sget-object v1, Lorg/telegram/ui/AvatarPreviewer$MenuItem;->OPEN_CHANNEL:Lorg/telegram/ui/AvatarPreviewer$MenuItem;
+    const/4 v0, 0x0
 
-    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
+    invoke-static {p1, v0}, Lorg/telegram/ui/ChatActivity;->access$37502(Lorg/telegram/ui/ChatActivity;Z)Z
 
-    move-result v1
+    .line 34844
+    :cond_0
+    iget-object p1, p0, Lorg/telegram/ui/ChatActivity$138;->this$0:Lorg/telegram/ui/ChatActivity;
 
-    const/4 v2, 0x3
+    invoke-static {p1}, Lorg/telegram/ui/ChatActivity;->access$60900(Lorg/telegram/ui/ChatActivity;)Lorg/telegram/ui/ActionBar/ActionBar;
 
-    aput v2, v0, v1
-    :try_end_2
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_2 .. :try_end_2} :catch_2
+    move-result-object p1
 
-    :catch_2
-    :try_start_3
-    sget-object v0, Lorg/telegram/ui/ChatActivity$138;->$SwitchMap$org$telegram$ui$AvatarPreviewer$MenuItem:[I
+    invoke-virtual {p1}, Landroid/widget/FrameLayout;->invalidate()V
 
-    sget-object v1, Lorg/telegram/ui/AvatarPreviewer$MenuItem;->SEND_MESSAGE:Lorg/telegram/ui/AvatarPreviewer$MenuItem;
+    .line 34845
+    iget-object p1, p0, Lorg/telegram/ui/ChatActivity$138;->this$0:Lorg/telegram/ui/ChatActivity;
 
-    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
+    iget-object p1, p1, Lorg/telegram/ui/ChatActivity;->contentView:Lorg/telegram/ui/ChatActivity$ChatActivityFragmentView;
 
-    move-result v1
+    invoke-virtual {p1}, Landroid/widget/FrameLayout;->invalidate()V
 
-    const/4 v2, 0x4
+    .line 34846
+    new-instance p1, Lorg/telegram/ui/ChatActivity$138$$ExternalSyntheticLambda0;
 
-    aput v2, v0, v1
-    :try_end_3
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_3 .. :try_end_3} :catch_3
+    invoke-direct {p1, p0}, Lorg/telegram/ui/ChatActivity$138$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/ChatActivity$138;)V
 
-    :catch_3
-    :try_start_4
-    sget-object v0, Lorg/telegram/ui/ChatActivity$138;->$SwitchMap$org$telegram$ui$AvatarPreviewer$MenuItem:[I
+    const-wide/16 v0, 0x20
 
-    sget-object v1, Lorg/telegram/ui/AvatarPreviewer$MenuItem;->MENTION:Lorg/telegram/ui/AvatarPreviewer$MenuItem;
+    invoke-static {p1, v0, v1}, Lorg/telegram/messenger/AndroidUtilities;->runOnUIThread(Ljava/lang/Runnable;J)V
 
-    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
+    .line 34849
+    iget-object p1, p0, Lorg/telegram/ui/ChatActivity$138;->val$callback:Ljava/lang/Runnable;
 
-    move-result v1
+    invoke-interface {p1}, Ljava/lang/Runnable;->run()V
 
-    const/4 v2, 0x5
+    return-void
+.end method
 
-    aput v2, v0, v1
-    :try_end_4
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_4 .. :try_end_4} :catch_4
+.method public onAnimationStart(Landroid/animation/Animator;)V
+    .locals 2
 
-    :catch_4
+    .line 34832
+    invoke-super {p0, p1}, Landroid/animation/AnimatorListenerAdapter;->onAnimationStart(Landroid/animation/Animator;)V
+
+    .line 34833
+    iget-object p1, p0, Lorg/telegram/ui/ChatActivity$138;->this$0:Lorg/telegram/ui/ChatActivity;
+
+    invoke-static {p1}, Lorg/telegram/ui/ChatActivity;->access$60700(Lorg/telegram/ui/ChatActivity;)I
+
+    move-result p1
+
+    invoke-static {p1}, Lorg/telegram/messenger/NotificationCenter;->getInstance(I)Lorg/telegram/messenger/NotificationCenter;
+
+    move-result-object p1
+
+    iget v0, p0, Lorg/telegram/ui/ChatActivity$138;->index:I
+
+    const/4 v1, 0x0
+
+    invoke-virtual {p1, v0, v1}, Lorg/telegram/messenger/NotificationCenter;->setAnimationInProgress(I[I)I
+
+    move-result p1
+
+    iput p1, p0, Lorg/telegram/ui/ChatActivity$138;->index:I
+
     return-void
 .end method

@@ -876,151 +876,145 @@
 
 .field public static final new_label_corner_radius:I = 0x7f0701ae
 
-.field public static final nft_image_size:I = 0x7f0701af
+.field public static final notification_action_icon_size:I = 0x7f0701af
 
-.field public static final notification_action_icon_size:I = 0x7f0701b0
+.field public static final notification_action_text_size:I = 0x7f0701b0
 
-.field public static final notification_action_text_size:I = 0x7f0701b1
+.field public static final notification_big_circle_margin:I = 0x7f0701b1
 
-.field public static final notification_big_circle_margin:I = 0x7f0701b2
+.field public static final notification_content_margin_start:I = 0x7f0701b2
 
-.field public static final notification_content_margin_start:I = 0x7f0701b3
+.field public static final notification_large_icon_height:I = 0x7f0701b3
 
-.field public static final notification_large_icon_height:I = 0x7f0701b4
+.field public static final notification_large_icon_width:I = 0x7f0701b4
 
-.field public static final notification_large_icon_width:I = 0x7f0701b5
+.field public static final notification_main_column_padding_top:I = 0x7f0701b5
 
-.field public static final notification_main_column_padding_top:I = 0x7f0701b6
+.field public static final notification_media_narrow_margin:I = 0x7f0701b6
 
-.field public static final notification_media_narrow_margin:I = 0x7f0701b7
+.field public static final notification_right_icon_size:I = 0x7f0701b7
 
-.field public static final notification_right_icon_size:I = 0x7f0701b8
+.field public static final notification_right_side_padding_top:I = 0x7f0701b8
 
-.field public static final notification_right_side_padding_top:I = 0x7f0701b9
+.field public static final notification_small_icon_background_padding:I = 0x7f0701b9
 
-.field public static final notification_small_icon_background_padding:I = 0x7f0701ba
+.field public static final notification_small_icon_size_as_large:I = 0x7f0701ba
 
-.field public static final notification_small_icon_size_as_large:I = 0x7f0701bb
+.field public static final notification_subtext_size:I = 0x7f0701bb
 
-.field public static final notification_subtext_size:I = 0x7f0701bc
+.field public static final notification_top_pad:I = 0x7f0701bc
 
-.field public static final notification_top_pad:I = 0x7f0701bd
+.field public static final notification_top_pad_large_text:I = 0x7f0701bd
 
-.field public static final notification_top_pad_large_text:I = 0x7f0701be
+.field public static final padding_big:I = 0x7f0701be
 
-.field public static final padding_big:I = 0x7f0701bf
+.field public static final padding_extra_small:I = 0x7f0701bf
 
-.field public static final padding_extra_small:I = 0x7f0701c0
+.field public static final padding_half_small:I = 0x7f0701c0
 
-.field public static final padding_half_small:I = 0x7f0701c1
+.field public static final padding_normal:I = 0x7f0701c1
 
-.field public static final padding_normal:I = 0x7f0701c2
+.field public static final padding_paranormal:I = 0x7f0701c2
 
-.field public static final padding_paranormal:I = 0x7f0701c3
+.field public static final padding_small:I = 0x7f0701c3
 
-.field public static final padding_small:I = 0x7f0701c4
+.field public static final padding_tiny:I = 0x7f0701c4
 
-.field public static final padding_tiny:I = 0x7f0701c5
+.field public static final padding_upper:I = 0x7f0701c5
 
-.field public static final padding_upper:I = 0x7f0701c6
+.field public static final shop_button_border_width:I = 0x7f0701c6
 
-.field public static final shop_button_border_width:I = 0x7f0701c7
+.field public static final shop_button_corner_radius:I = 0x7f0701c7
 
-.field public static final shop_button_corner_radius:I = 0x7f0701c8
+.field public static final shop_button_height:I = 0x7f0701c8
 
-.field public static final shop_button_height:I = 0x7f0701c9
+.field public static final shop_button_width:I = 0x7f0701c9
 
-.field public static final shop_button_width:I = 0x7f0701ca
+.field public static final square_checkbox_size:I = 0x7f0701ca
 
-.field public static final square_checkbox_size:I = 0x7f0701cb
+.field public static final telegram_action_button_height:I = 0x7f0701cb
 
-.field public static final telegram_action_button_height:I = 0x7f0701cc
+.field public static final telegram_avatar_size_medium:I = 0x7f0701cc
 
-.field public static final telegram_avatar_size_medium:I = 0x7f0701cd
+.field public static final telegram_big_description_icon_size:I = 0x7f0701cd
 
-.field public static final telegram_big_description_icon_size:I = 0x7f0701ce
+.field public static final test_mtrl_calendar_day_cornerSize:I = 0x7f0701ce
 
-.field public static final test_mtrl_calendar_day_cornerSize:I = 0x7f0701cf
+.field public static final test_navigation_bar_active_item_max_width:I = 0x7f0701cf
 
-.field public static final test_navigation_bar_active_item_max_width:I = 0x7f0701d0
+.field public static final test_navigation_bar_active_item_min_width:I = 0x7f0701d0
 
-.field public static final test_navigation_bar_active_item_min_width:I = 0x7f0701d1
+.field public static final test_navigation_bar_active_text_size:I = 0x7f0701d1
 
-.field public static final test_navigation_bar_active_text_size:I = 0x7f0701d2
+.field public static final test_navigation_bar_elevation:I = 0x7f0701d2
 
-.field public static final test_navigation_bar_elevation:I = 0x7f0701d3
+.field public static final test_navigation_bar_height:I = 0x7f0701d3
 
-.field public static final test_navigation_bar_height:I = 0x7f0701d4
+.field public static final test_navigation_bar_icon_size:I = 0x7f0701d4
 
-.field public static final test_navigation_bar_icon_size:I = 0x7f0701d5
+.field public static final test_navigation_bar_item_max_width:I = 0x7f0701d5
 
-.field public static final test_navigation_bar_item_max_width:I = 0x7f0701d6
+.field public static final test_navigation_bar_item_min_width:I = 0x7f0701d6
 
-.field public static final test_navigation_bar_item_min_width:I = 0x7f0701d7
+.field public static final test_navigation_bar_label_padding:I = 0x7f0701d7
 
-.field public static final test_navigation_bar_label_padding:I = 0x7f0701d8
+.field public static final test_navigation_bar_shadow_height:I = 0x7f0701d8
 
-.field public static final test_navigation_bar_shadow_height:I = 0x7f0701d9
+.field public static final test_navigation_bar_text_size:I = 0x7f0701d9
 
-.field public static final test_navigation_bar_text_size:I = 0x7f0701da
+.field public static final text_size_big:I = 0x7f0701da
 
-.field public static final text_size_big:I = 0x7f0701db
+.field public static final text_size_extra_upper:I = 0x7f0701db
 
-.field public static final text_size_extra_small:I = 0x7f0701dc
+.field public static final text_size_great:I = 0x7f0701dc
 
-.field public static final text_size_extra_upper:I = 0x7f0701dd
+.field public static final text_size_normal:I = 0x7f0701dd
 
-.field public static final text_size_great:I = 0x7f0701de
+.field public static final text_size_normal_upper:I = 0x7f0701de
 
-.field public static final text_size_normal:I = 0x7f0701df
+.field public static final text_size_small:I = 0x7f0701df
 
-.field public static final text_size_normal_upper:I = 0x7f0701e0
+.field public static final text_size_small_11:I = 0x7f0701e0
 
-.field public static final text_size_small:I = 0x7f0701e1
+.field public static final text_size_small_upper:I = 0x7f0701e1
 
-.field public static final text_size_small_11:I = 0x7f0701e2
+.field public static final text_size_upper:I = 0x7f0701e2
 
-.field public static final text_size_small_upper:I = 0x7f0701e3
+.field public static final text_size_upper_17:I = 0x7f0701e3
 
-.field public static final text_size_super:I = 0x7f0701e4
+.field public static final tooltip_corner_radius:I = 0x7f0701e4
 
-.field public static final text_size_upper:I = 0x7f0701e5
+.field public static final tooltip_horizontal_padding:I = 0x7f0701e5
 
-.field public static final text_size_upper_17:I = 0x7f0701e6
+.field public static final tooltip_margin:I = 0x7f0701e6
 
-.field public static final tooltip_corner_radius:I = 0x7f0701e7
+.field public static final tooltip_precise_anchor_extra_offset:I = 0x7f0701e7
 
-.field public static final tooltip_horizontal_padding:I = 0x7f0701e8
+.field public static final tooltip_precise_anchor_threshold:I = 0x7f0701e8
 
-.field public static final tooltip_margin:I = 0x7f0701e9
+.field public static final tooltip_vertical_padding:I = 0x7f0701e9
 
-.field public static final tooltip_precise_anchor_extra_offset:I = 0x7f0701ea
+.field public static final tooltip_y_offset_non_touch:I = 0x7f0701ea
 
-.field public static final tooltip_precise_anchor_threshold:I = 0x7f0701eb
+.field public static final tooltip_y_offset_touch:I = 0x7f0701eb
 
-.field public static final tooltip_vertical_padding:I = 0x7f0701ec
+.field public static final tweet_counter_text_width:I = 0x7f0701ec
 
-.field public static final tooltip_y_offset_non_touch:I = 0x7f0701ed
+.field public static final wallet_account_coin_big_icon_size:I = 0x7f0701ed
 
-.field public static final tooltip_y_offset_touch:I = 0x7f0701ee
+.field public static final wallet_account_coin_medium_icon_size:I = 0x7f0701ee
 
-.field public static final tweet_counter_text_width:I = 0x7f0701ef
+.field public static final wallet_card_elevation:I = 0x7f0701ef
 
-.field public static final wallet_account_coin_big_icon_size:I = 0x7f0701f0
+.field public static final wallet_enter_pin_height:I = 0x7f0701f0
 
-.field public static final wallet_account_coin_medium_icon_size:I = 0x7f0701f1
+.field public static final wallet_icon_shadow:I = 0x7f0701f1
 
-.field public static final wallet_card_elevation:I = 0x7f0701f2
+.field public static final wallet_image_info_size:I = 0x7f0701f2
 
-.field public static final wallet_enter_pin_height:I = 0x7f0701f3
+.field public static final wallet_navigation_badge:I = 0x7f0701f3
 
-.field public static final wallet_icon_shadow:I = 0x7f0701f4
-
-.field public static final wallet_image_info_size:I = 0x7f0701f5
-
-.field public static final wallet_navigation_badge:I = 0x7f0701f6
-
-.field public static final wallet_notification_mark_size:I = 0x7f0701f7
+.field public static final wallet_notification_mark_size:I = 0x7f0701f4
 
 
 # direct methods

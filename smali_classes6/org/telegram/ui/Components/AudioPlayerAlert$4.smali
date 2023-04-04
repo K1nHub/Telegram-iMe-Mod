@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/AudioPlayerAlert;)V
     .locals 0
 
-    .line 515
+    .line 516
     iput-object p1, p0, Lorg/telegram/ui/Components/AudioPlayerAlert$4;->this$0:Lorg/telegram/ui/Components/AudioPlayerAlert;
 
     invoke-direct {p0}, Lorg/telegram/ui/ActionBar/ActionBarMenuItem$ActionBarMenuItemSearchListener;-><init>()V
@@ -35,7 +35,7 @@
 .method public onSearchCollapse()V
     .locals 2
 
-    .line 518
+    .line 519
     iget-object v0, p0, Lorg/telegram/ui/Components/AudioPlayerAlert$4;->this$0:Lorg/telegram/ui/Components/AudioPlayerAlert;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/AudioPlayerAlert;->access$1200(Lorg/telegram/ui/Components/AudioPlayerAlert;)Z
@@ -44,26 +44,26 @@
 
     if-eqz v0, :cond_0
 
-    .line 519
+    .line 520
     iget-object v0, p0, Lorg/telegram/ui/Components/AudioPlayerAlert$4;->this$0:Lorg/telegram/ui/Components/AudioPlayerAlert;
 
     const/4 v1, 0x0
 
     invoke-static {v0, v1}, Lorg/telegram/ui/Components/AudioPlayerAlert;->access$402(Lorg/telegram/ui/Components/AudioPlayerAlert;Z)Z
 
-    .line 520
+    .line 521
     iget-object v0, p0, Lorg/telegram/ui/Components/AudioPlayerAlert$4;->this$0:Lorg/telegram/ui/Components/AudioPlayerAlert;
 
     invoke-static {v0, v1}, Lorg/telegram/ui/Components/AudioPlayerAlert;->access$1202(Lorg/telegram/ui/Components/AudioPlayerAlert;Z)Z
 
-    .line 521
+    .line 522
     iget-object v0, p0, Lorg/telegram/ui/Components/AudioPlayerAlert$4;->this$0:Lorg/telegram/ui/Components/AudioPlayerAlert;
 
     const/4 v1, 0x1
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/BottomSheet;->setAllowNestedScroll(Z)V
 
-    .line 522
+    .line 523
     iget-object v0, p0, Lorg/telegram/ui/Components/AudioPlayerAlert$4;->this$0:Lorg/telegram/ui/Components/AudioPlayerAlert;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/AudioPlayerAlert;->access$2000(Lorg/telegram/ui/Components/AudioPlayerAlert;)Lorg/telegram/ui/Components/AudioPlayerAlert$ListAdapter;
@@ -81,7 +81,7 @@
 .method public onSearchExpand()V
     .locals 3
 
-    .line 528
+    .line 529
     iget-object v0, p0, Lorg/telegram/ui/Components/AudioPlayerAlert$4;->this$0:Lorg/telegram/ui/Components/AudioPlayerAlert;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/AudioPlayerAlert;->access$3900(Lorg/telegram/ui/Components/AudioPlayerAlert;)Landroidx/recyclerview/widget/LinearLayoutManager;
@@ -94,7 +94,7 @@
 
     invoke-static {v0, v1}, Lorg/telegram/ui/Components/AudioPlayerAlert;->access$3802(Lorg/telegram/ui/Components/AudioPlayerAlert;I)I
 
-    .line 529
+    .line 530
     iget-object v0, p0, Lorg/telegram/ui/Components/AudioPlayerAlert$4;->this$0:Lorg/telegram/ui/Components/AudioPlayerAlert;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/AudioPlayerAlert;->access$3900(Lorg/telegram/ui/Components/AudioPlayerAlert;)Landroidx/recyclerview/widget/LinearLayoutManager;
@@ -111,7 +111,7 @@
 
     move-result-object v0
 
-    .line 530
+    .line 531
     iget-object v1, p0, Lorg/telegram/ui/Components/AudioPlayerAlert$4;->this$0:Lorg/telegram/ui/Components/AudioPlayerAlert;
 
     const/4 v2, 0x0
@@ -130,19 +130,19 @@
     :goto_0
     invoke-static {v1, v0}, Lorg/telegram/ui/Components/AudioPlayerAlert;->access$4002(Lorg/telegram/ui/Components/AudioPlayerAlert;I)I
 
-    .line 531
+    .line 532
     iget-object v0, p0, Lorg/telegram/ui/Components/AudioPlayerAlert$4;->this$0:Lorg/telegram/ui/Components/AudioPlayerAlert;
 
     const/4 v1, 0x1
 
     invoke-static {v0, v1}, Lorg/telegram/ui/Components/AudioPlayerAlert;->access$1202(Lorg/telegram/ui/Components/AudioPlayerAlert;Z)Z
 
-    .line 532
+    .line 533
     iget-object v0, p0, Lorg/telegram/ui/Components/AudioPlayerAlert$4;->this$0:Lorg/telegram/ui/Components/AudioPlayerAlert;
 
     invoke-virtual {v0, v2}, Lorg/telegram/ui/ActionBar/BottomSheet;->setAllowNestedScroll(Z)V
 
-    .line 533
+    .line 534
     iget-object v0, p0, Lorg/telegram/ui/Components/AudioPlayerAlert$4;->this$0:Lorg/telegram/ui/Components/AudioPlayerAlert;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/AudioPlayerAlert;->access$2000(Lorg/telegram/ui/Components/AudioPlayerAlert;)Lorg/telegram/ui/Components/AudioPlayerAlert$ListAdapter;
@@ -157,14 +157,14 @@
 .method public onTextChanged(Landroid/widget/EditText;)V
     .locals 1
 
-    .line 538
+    .line 539
     invoke-virtual {p1}, Landroid/widget/EditText;->length()I
 
     move-result v0
 
     if-lez v0, :cond_0
 
-    .line 539
+    .line 540
     iget-object v0, p0, Lorg/telegram/ui/Components/AudioPlayerAlert$4;->this$0:Lorg/telegram/ui/Components/AudioPlayerAlert;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/AudioPlayerAlert;->access$2000(Lorg/telegram/ui/Components/AudioPlayerAlert;)Lorg/telegram/ui/Components/AudioPlayerAlert$ListAdapter;
@@ -183,7 +183,7 @@
 
     goto :goto_0
 
-    .line 541
+    .line 542
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/Components/AudioPlayerAlert$4;->this$0:Lorg/telegram/ui/Components/AudioPlayerAlert;
 
@@ -191,7 +191,7 @@
 
     invoke-static {p1, v0}, Lorg/telegram/ui/Components/AudioPlayerAlert;->access$402(Lorg/telegram/ui/Components/AudioPlayerAlert;Z)Z
 
-    .line 542
+    .line 543
     iget-object p1, p0, Lorg/telegram/ui/Components/AudioPlayerAlert$4;->this$0:Lorg/telegram/ui/Components/AudioPlayerAlert;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/AudioPlayerAlert;->access$2000(Lorg/telegram/ui/Components/AudioPlayerAlert;)Lorg/telegram/ui/Components/AudioPlayerAlert$ListAdapter;

@@ -15,7 +15,7 @@ public @interface JsonTypeInfo {
 
     /* renamed from: com.fasterxml.jackson.annotation.JsonTypeInfo$As */
     /* loaded from: classes.dex */
-    public enum EnumC0451As {
+    public enum EnumC0465As {
         PROPERTY,
         WRAPPER_OBJECT,
         WRAPPER_ARRAY,

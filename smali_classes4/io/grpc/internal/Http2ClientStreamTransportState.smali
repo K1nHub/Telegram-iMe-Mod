@@ -748,7 +748,7 @@
 .method protected transportTrailersReceived(Lio/grpc/Metadata;)V
     .locals 3
 
-    const-string v0, "trailers"
+    const-string/jumbo v0, "trailers"
 
     .line 164
     invoke-static {p1, v0}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
@@ -785,7 +785,7 @@
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v2, "trailers: "
+    const-string/jumbo v2, "trailers: "
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 

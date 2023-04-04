@@ -223,7 +223,7 @@
 
     move-result p1
 
-    sget v1, Lcom/smedialink/common/IdFabric$Menu;->QUOTE:I
+    sget v1, Lcom/iMe/common/IdFabric$Menu;->QUOTE:I
 
     if-ne p1, v1, :cond_2
 
@@ -426,7 +426,7 @@
     invoke-interface {p2, p1, v2, v3, v0}, Landroid/view/Menu;->add(IIILjava/lang/CharSequence;)Landroid/view/MenuItem;
 
     .line 1336
-    sget v0, Lcom/smedialink/common/IdFabric$Menu;->QUOTE:I
+    sget v0, Lcom/iMe/common/IdFabric$Menu;->QUOTE:I
 
     sget v3, Lorg/telegram/messenger/R$string;->chat_menu_quote:I
 

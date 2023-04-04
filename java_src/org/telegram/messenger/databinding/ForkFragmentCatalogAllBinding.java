@@ -7,8 +7,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
-import com.smedialink.p031ui.custom.state.GlobalStateLayout;
-import org.telegram.messenger.C3301R;
+import com.iMe.p032ui.custom.state.GlobalStateLayout;
+import org.telegram.messenger.C3316R;
 /* loaded from: classes4.dex */
 public final class ForkFragmentCatalogAllBinding implements ViewBinding {
     public final GlobalStateLayout globalStateLayout;
@@ -31,7 +31,7 @@ public final class ForkFragmentCatalogAllBinding implements ViewBinding {
     }
 
     public static ForkFragmentCatalogAllBinding inflate(LayoutInflater layoutInflater, ViewGroup viewGroup, boolean z) {
-        View inflate = layoutInflater.inflate(C3301R.layout.fork_fragment_catalog_all, viewGroup, false);
+        View inflate = layoutInflater.inflate(C3316R.layout.fork_fragment_catalog_all, viewGroup, false);
         if (z) {
             viewGroup.addView(inflate);
         }
@@ -39,10 +39,10 @@ public final class ForkFragmentCatalogAllBinding implements ViewBinding {
     }
 
     public static ForkFragmentCatalogAllBinding bind(View view) {
-        int i = C3301R.C3304id.global_state_layout;
+        int i = C3316R.C3319id.global_state_layout;
         GlobalStateLayout globalStateLayout = (GlobalStateLayout) ViewBindings.findChildViewById(view, i);
         if (globalStateLayout != null) {
-            i = C3301R.C3304id.recycle_categories;
+            i = C3316R.C3319id.recycle_categories;
             RecyclerView recyclerView = (RecyclerView) ViewBindings.findChildViewById(view, i);
             if (recyclerView != null) {
                 return new ForkFragmentCatalogAllBinding((SwipeRefreshLayout) view, globalStateLayout, recyclerView);

@@ -1,5 +1,5 @@
 .class public Lorg/telegram/ui/ChannelCreateActivity;
-.super Lcom/smedialink/ui/base/mvp/JavaMvpFragment;
+.super Lcom/iMe/ui/base/mvp/JavaMvpFragment;
 .source "ChannelCreateActivity.java"
 
 # interfaces
@@ -171,6 +171,14 @@
     return-void
 .end method
 
+.method public static synthetic $r8$lambda$2o3BxkOvzfGaSVATxOm8FXAEz9c(Lorg/telegram/ui/ChannelCreateActivity;Lcom/iMe/fork/utils/Callbacks$Callback1;J)V
+    .locals 0
+
+    invoke-static {p0, p1, p2, p3}, Lorg/telegram/ui/ChannelCreateActivity;->lambda$newInstanceInAlbumMode$1(Lorg/telegram/ui/ChannelCreateActivity;Lcom/iMe/fork/utils/Callbacks$Callback1;J)V
+
+    return-void
+.end method
+
 .method public static synthetic $r8$lambda$3RIaSxolvtM-NlHg9sMJswV2bsU(Lorg/telegram/ui/ChannelCreateActivity;)V
     .locals 0
 
@@ -269,6 +277,14 @@
     return-void
 .end method
 
+.method public static synthetic $r8$lambda$N8ZmD7wLKWq2CLKom2Ew3JONxrE(Lcom/iMe/fork/utils/Callbacks$Callback1;J)V
+    .locals 0
+
+    invoke-static {p0, p1, p2}, Lorg/telegram/ui/ChannelCreateActivity;->lambda$newInstanceInAlbumMode$0(Lcom/iMe/fork/utils/Callbacks$Callback1;J)V
+
+    return-void
+.end method
+
 .method public static synthetic $r8$lambda$PABvstK1f1FYnO7YtbhOIoB1fiU(Lorg/telegram/ui/ChannelCreateActivity;Landroid/content/DialogInterface;I)V
     .locals 0
 
@@ -309,14 +325,6 @@
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$bzf0oS6T5CxQAnf0ZTM_n_n6sfM(Lorg/fork/utils/Callbacks$Callback1;J)V
-    .locals 0
-
-    invoke-static {p0, p1, p2}, Lorg/telegram/ui/ChannelCreateActivity;->lambda$newInstanceInAlbumMode$0(Lorg/fork/utils/Callbacks$Callback1;J)V
-
-    return-void
-.end method
-
 .method public static synthetic $r8$lambda$eIJ9iYN82xwHhzmTkvn51CXtSI4(Lorg/telegram/ui/ChannelCreateActivity;)V
     .locals 0
 
@@ -329,14 +337,6 @@
     .locals 0
 
     invoke-direct {p0, p1, p2, p3, p4}, Lorg/telegram/ui/ChannelCreateActivity;->lambda$checkUserName$25(Ljava/lang/String;Lorg/telegram/tgnet/TLRPC$TL_channels_checkUsername;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
-
-    return-void
-.end method
-
-.method public static synthetic $r8$lambda$gNtDHU87F5rABHrsGVl9qilbPWo(Lorg/telegram/ui/ChannelCreateActivity;Lorg/fork/utils/Callbacks$Callback1;J)V
-    .locals 0
-
-    invoke-static {p0, p1, p2, p3}, Lorg/telegram/ui/ChannelCreateActivity;->lambda$newInstanceInAlbumMode$1(Lorg/telegram/ui/ChannelCreateActivity;Lorg/fork/utils/Callbacks$Callback1;J)V
 
     return-void
 .end method
@@ -424,7 +424,7 @@
     .locals 4
 
     .line 211
-    invoke-direct {p0, p1}, Lcom/smedialink/ui/base/mvp/JavaMvpFragment;-><init>(Landroid/os/Bundle;)V
+    invoke-direct {p0, p1}, Lcom/iMe/ui/base/mvp/JavaMvpFragment;-><init>(Landroid/os/Bundle;)V
 
     .line 190
     new-instance v0, Ljava/util/ArrayList;
@@ -2638,7 +2638,7 @@
     return-void
 .end method
 
-.method private static synthetic lambda$newInstanceInAlbumMode$0(Lorg/fork/utils/Callbacks$Callback1;J)V
+.method private static synthetic lambda$newInstanceInAlbumMode$0(Lcom/iMe/fork/utils/Callbacks$Callback1;J)V
     .locals 0
 
     .line 121
@@ -2646,26 +2646,26 @@
 
     move-result-object p1
 
-    invoke-interface {p0, p1}, Lorg/fork/utils/Callbacks$Callback1;->invoke(Ljava/lang/Object;)V
+    invoke-interface {p0, p1}, Lcom/iMe/fork/utils/Callbacks$Callback1;->invoke(Ljava/lang/Object;)V
 
     return-void
 .end method
 
-.method private static synthetic lambda$newInstanceInAlbumMode$1(Lorg/telegram/ui/ChannelCreateActivity;Lorg/fork/utils/Callbacks$Callback1;J)V
+.method private static synthetic lambda$newInstanceInAlbumMode$1(Lorg/telegram/ui/ChannelCreateActivity;Lcom/iMe/fork/utils/Callbacks$Callback1;J)V
     .locals 1
 
     .line 121
     iget p0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->currentAccount:I
 
-    invoke-static {p0}, Lorg/fork/controller/AlbumsController;->getInstance(I)Lorg/fork/controller/AlbumsController;
+    invoke-static {p0}, Lcom/iMe/fork/controller/AlbumsController;->getInstance(I)Lcom/iMe/fork/controller/AlbumsController;
 
     move-result-object p0
 
     new-instance v0, Lorg/telegram/ui/ChannelCreateActivity$$ExternalSyntheticLambda11;
 
-    invoke-direct {v0, p1, p2, p3}, Lorg/telegram/ui/ChannelCreateActivity$$ExternalSyntheticLambda11;-><init>(Lorg/fork/utils/Callbacks$Callback1;J)V
+    invoke-direct {v0, p1, p2, p3}, Lorg/telegram/ui/ChannelCreateActivity$$ExternalSyntheticLambda11;-><init>(Lcom/iMe/fork/utils/Callbacks$Callback1;J)V
 
-    invoke-virtual {p0, p2, p3, v0}, Lorg/fork/controller/AlbumsController;->addAlbum(JLjava/lang/Runnable;)V
+    invoke-virtual {p0, p2, p3, v0}, Lcom/iMe/fork/controller/AlbumsController;->addAlbum(JLjava/lang/Runnable;)V
 
     return-void
 .end method
@@ -2798,12 +2798,12 @@
     return-void
 .end method
 
-.method public static newInstanceInAlbumMode(Lorg/fork/utils/Callbacks$Callback1;)Lorg/telegram/ui/ChannelCreateActivity;
+.method public static newInstanceInAlbumMode(Lcom/iMe/fork/utils/Callbacks$Callback1;)Lorg/telegram/ui/ChannelCreateActivity;
     .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Lorg/fork/utils/Callbacks$Callback1<",
+            "Lcom/iMe/fork/utils/Callbacks$Callback1<",
             "Ljava/lang/Long;",
             ">;)",
             "Lorg/telegram/ui/ChannelCreateActivity;"
@@ -2835,7 +2835,7 @@
     .line 121
     new-instance v0, Lorg/telegram/ui/ChannelCreateActivity$$ExternalSyntheticLambda28;
 
-    invoke-direct {v0, v1, p0}, Lorg/telegram/ui/ChannelCreateActivity$$ExternalSyntheticLambda28;-><init>(Lorg/telegram/ui/ChannelCreateActivity;Lorg/fork/utils/Callbacks$Callback1;)V
+    invoke-direct {v0, v1, p0}, Lorg/telegram/ui/ChannelCreateActivity$$ExternalSyntheticLambda28;-><init>(Lorg/telegram/ui/ChannelCreateActivity;Lcom/iMe/fork/utils/Callbacks$Callback1;)V
 
     iput-object v0, v1, Lorg/telegram/ui/ChannelCreateActivity;->albumModeDelegate:Lorg/telegram/ui/ChannelCreateActivity$AlbumModeDelegate;
 
@@ -3760,7 +3760,7 @@
     move-object/from16 v9, p1
 
     .line 371
-    invoke-super/range {p0 .. p1}, Lcom/smedialink/ui/base/mvp/MvpFragment;->createView(Landroid/content/Context;)Landroid/view/View;
+    invoke-super/range {p0 .. p1}, Lcom/iMe/ui/base/mvp/MvpFragment;->createView(Landroid/content/Context;)Landroid/view/View;
 
     .line 372
     iget-object v0, v8, Lorg/telegram/ui/ChannelCreateActivity;->nameTextView:Lorg/telegram/ui/Components/EditTextEmoji;
@@ -7613,7 +7613,7 @@
     .locals 3
 
     .line 257
-    invoke-super {p0}, Lcom/smedialink/ui/base/mvp/MvpFragment;->onFragmentDestroy()V
+    invoke-super {p0}, Lcom/iMe/ui/base/mvp/MvpFragment;->onFragmentDestroy()V
 
     .line 258
     iget-object v0, p0, Lorg/telegram/ui/ChannelCreateActivity;->doneRequestId:Ljava/lang/Integer;
@@ -7710,7 +7710,7 @@
     .locals 1
 
     .line 288
-    invoke-super {p0}, Lcom/smedialink/ui/base/mvp/MvpFragment;->onPause()V
+    invoke-super {p0}, Lcom/iMe/ui/base/mvp/MvpFragment;->onPause()V
 
     .line 289
     iget-object v0, p0, Lorg/telegram/ui/ChannelCreateActivity;->nameTextView:Lorg/telegram/ui/Components/EditTextEmoji;
@@ -7752,7 +7752,7 @@
     .locals 2
 
     .line 276
-    invoke-super {p0}, Lcom/smedialink/ui/base/mvp/MvpFragment;->onResume()V
+    invoke-super {p0}, Lcom/iMe/ui/base/mvp/MvpFragment;->onResume()V
 
     .line 277
     iget-object v0, p0, Lorg/telegram/ui/ChannelCreateActivity;->nameTextView:Lorg/telegram/ui/Components/EditTextEmoji;

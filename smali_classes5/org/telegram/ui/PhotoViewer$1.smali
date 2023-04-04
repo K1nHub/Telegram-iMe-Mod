@@ -3,7 +3,7 @@
 .source "PhotoViewer.java"
 
 # interfaces
-.implements Lorg/fork/ui/dialog/ForwardCloudBottomSheet$Delegate;
+.implements Lcom/iMe/fork/ui/dialog/ForwardCloudBottomSheet$Delegate;
 
 
 # annotations

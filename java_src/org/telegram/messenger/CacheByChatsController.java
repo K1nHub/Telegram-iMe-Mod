@@ -57,7 +57,7 @@ public class CacheByChatsController {
         if (i == KEEP_MEDIA_ONE_MONTH) {
             return LocaleController.formatPluralString("Months", 1, new Object[0]);
         }
-        return LocaleController.getString("AutoDeleteMediaNever", C3301R.string.AutoDeleteMediaNever);
+        return LocaleController.getString("AutoDeleteMediaNever", C3316R.string.AutoDeleteMediaNever);
     }
 
     public static long getDaysInSeconds(int i) {

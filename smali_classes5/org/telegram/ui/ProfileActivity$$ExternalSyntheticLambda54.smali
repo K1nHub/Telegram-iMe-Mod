@@ -2,40 +2,44 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lorg/fork/utils/Callbacks$Callback;
+.implements Ljava/util/Comparator;
 
 
-# static fields
-.field public static final synthetic INSTANCE:Lorg/telegram/ui/ProfileActivity$$ExternalSyntheticLambda54;
+# instance fields
+.field public final synthetic f$0:Lorg/telegram/ui/ProfileActivity;
+
+.field public final synthetic f$1:I
 
 
 # direct methods
-.method static synthetic constructor <clinit>()V
-    .locals 1
-
-    new-instance v0, Lorg/telegram/ui/ProfileActivity$$ExternalSyntheticLambda54;
-
-    invoke-direct {v0}, Lorg/telegram/ui/ProfileActivity$$ExternalSyntheticLambda54;-><init>()V
-
-    sput-object v0, Lorg/telegram/ui/ProfileActivity$$ExternalSyntheticLambda54;->INSTANCE:Lorg/telegram/ui/ProfileActivity$$ExternalSyntheticLambda54;
-
-    return-void
-.end method
-
-.method private synthetic constructor <init>()V
+.method public synthetic constructor <init>(Lorg/telegram/ui/ProfileActivity;I)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lorg/telegram/ui/ProfileActivity$$ExternalSyntheticLambda54;->f$0:Lorg/telegram/ui/ProfileActivity;
+
+    iput p2, p0, Lorg/telegram/ui/ProfileActivity$$ExternalSyntheticLambda54;->f$1:I
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke()V
-    .locals 0
+.method public final compare(Ljava/lang/Object;Ljava/lang/Object;)I
+    .locals 2
 
-    invoke-static {}, Lorg/telegram/ui/ProfileActivity;->$r8$lambda$FEG2_jKWKlhEKGU-B8BviPIkA0w()V
+    iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$$ExternalSyntheticLambda54;->f$0:Lorg/telegram/ui/ProfileActivity;
 
-    return-void
+    iget v1, p0, Lorg/telegram/ui/ProfileActivity$$ExternalSyntheticLambda54;->f$1:I
+
+    check-cast p1, Ljava/lang/Integer;
+
+    check-cast p2, Ljava/lang/Integer;
+
+    invoke-static {v0, v1, p1, p2}, Lorg/telegram/ui/ProfileActivity;->$r8$lambda$WFeQ1dbbIWZLGe-_aqEtgQxOgvg(Lorg/telegram/ui/ProfileActivity;ILjava/lang/Integer;Ljava/lang/Integer;)I
+
+    move-result p1
+
+    return p1
 .end method

@@ -34,7 +34,7 @@ public class VideoEditedInfo {
     public boolean isPhoto;
 
     /* renamed from: iv */
-    public byte[] f1476iv;
+    public byte[] f1478iv;
     public byte[] key;
     public ArrayList<MediaEntity> mediaEntities;
     public boolean muted;
@@ -116,10 +116,10 @@ public class VideoEditedInfo {
         public float width;
 
         /* renamed from: x */
-        public float f1477x;
+        public float f1479x;
 
         /* renamed from: y */
-        public float f1478y;
+        public float f1480y;
 
         public MediaEntity() {
             this.entities = new ArrayList<>();
@@ -129,8 +129,8 @@ public class VideoEditedInfo {
             this.entities = new ArrayList<>();
             this.type = serializedData.readByte(false);
             this.subType = serializedData.readByte(false);
-            this.f1477x = serializedData.readFloat(false);
-            this.f1478y = serializedData.readFloat(false);
+            this.f1479x = serializedData.readFloat(false);
+            this.f1480y = serializedData.readFloat(false);
             this.rotation = serializedData.readFloat(false);
             this.width = serializedData.readFloat(false);
             this.height = serializedData.readFloat(false);
@@ -154,8 +154,8 @@ public class VideoEditedInfo {
         public void serializeTo(SerializedData serializedData) {
             serializedData.writeByte(this.type);
             serializedData.writeByte(this.subType);
-            serializedData.writeFloat(this.f1477x);
-            serializedData.writeFloat(this.f1478y);
+            serializedData.writeFloat(this.f1479x);
+            serializedData.writeFloat(this.f1480y);
             serializedData.writeFloat(this.rotation);
             serializedData.writeFloat(this.width);
             serializedData.writeFloat(this.height);
@@ -177,8 +177,8 @@ public class VideoEditedInfo {
             MediaEntity mediaEntity = new MediaEntity();
             mediaEntity.type = this.type;
             mediaEntity.subType = this.subType;
-            mediaEntity.f1477x = this.f1477x;
-            mediaEntity.f1478y = this.f1478y;
+            mediaEntity.f1479x = this.f1479x;
+            mediaEntity.f1480y = this.f1480y;
             mediaEntity.rotation = this.rotation;
             mediaEntity.width = this.width;
             mediaEntity.height = this.height;
@@ -239,8 +239,8 @@ public class VideoEditedInfo {
                 serializedData.writeFloat(this.filterState.blurExcludeSize);
                 Point point = this.filterState.blurExcludePoint;
                 if (point != null) {
-                    serializedData.writeFloat(point.f1758x);
-                    serializedData.writeFloat(this.filterState.blurExcludePoint.f1759y);
+                    serializedData.writeFloat(point.f1761x);
+                    serializedData.writeFloat(this.filterState.blurExcludePoint.f1762y);
                 } else {
                     serializedData.writeFloat(BitmapDescriptorFactory.HUE_RED);
                     serializedData.writeFloat(BitmapDescriptorFactory.HUE_RED);

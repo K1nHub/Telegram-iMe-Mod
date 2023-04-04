@@ -9,7 +9,7 @@ import android.graphics.drawable.Drawable;
 import android.util.AttributeSet;
 import android.widget.Button;
 import androidx.core.graphics.drawable.DrawableCompat;
-import com.google.android.gms.base.C0690R;
+import com.google.android.gms.base.C0704R;
 import com.google.android.gms.common.util.DeviceProperties;
 /* compiled from: com.google.android.gms:play-services-base@@18.1.0 */
 /* loaded from: classes.dex */
@@ -37,11 +37,11 @@ public final class zaaa extends Button {
         int i3 = (int) ((resources.getDisplayMetrics().density * 48.0f) + 0.5f);
         setMinHeight(i3);
         setMinWidth(i3);
-        int i4 = C0690R.C0692drawable.common_google_signin_btn_icon_dark;
-        int i5 = C0690R.C0692drawable.common_google_signin_btn_icon_light;
+        int i4 = C0704R.C0706drawable.common_google_signin_btn_icon_dark;
+        int i5 = C0704R.C0706drawable.common_google_signin_btn_icon_light;
         int zab = zab(i2, i4, i5, i5);
-        int i6 = C0690R.C0692drawable.common_google_signin_btn_text_dark;
-        int i7 = C0690R.C0692drawable.common_google_signin_btn_text_light;
+        int i6 = C0704R.C0706drawable.common_google_signin_btn_text_dark;
+        int i7 = C0704R.C0706drawable.common_google_signin_btn_text_light;
         int zab2 = zab(i2, i6, i7, i7);
         if (i == 0 || i == 1) {
             zab = zab2;
@@ -49,16 +49,16 @@ public final class zaaa extends Button {
             throw new IllegalStateException("Unknown button size: " + i);
         }
         Drawable wrap = DrawableCompat.wrap(resources.getDrawable(zab));
-        DrawableCompat.setTintList(wrap, resources.getColorStateList(C0690R.C0691color.common_google_signin_btn_tint));
+        DrawableCompat.setTintList(wrap, resources.getColorStateList(C0704R.C0705color.common_google_signin_btn_tint));
         DrawableCompat.setTintMode(wrap, PorterDuff.Mode.SRC_ATOP);
         setBackgroundDrawable(wrap);
-        int i8 = C0690R.C0691color.common_google_signin_btn_text_dark;
-        int i9 = C0690R.C0691color.common_google_signin_btn_text_light;
+        int i8 = C0704R.C0705color.common_google_signin_btn_text_dark;
+        int i9 = C0704R.C0705color.common_google_signin_btn_text_light;
         setTextColor((ColorStateList) Preconditions.checkNotNull(resources.getColorStateList(zab(i2, i8, i9, i9))));
         if (i == 0) {
-            setText(resources.getString(C0690R.string.common_signin_button_text));
+            setText(resources.getString(C0704R.string.common_signin_button_text));
         } else if (i == 1) {
-            setText(resources.getString(C0690R.string.common_signin_button_text_long));
+            setText(resources.getString(C0704R.string.common_signin_button_text_long));
         } else if (i == 2) {
             setText((CharSequence) null);
         } else {

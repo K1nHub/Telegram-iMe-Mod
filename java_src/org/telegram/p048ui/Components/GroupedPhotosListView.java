@@ -501,7 +501,7 @@ public class GroupedPhotosListView extends View implements GestureDetector.OnGes
             int m50dp = AndroidUtilities.m50dp(8);
             ImageLocation imageLocation = this.currentPhotos.get(this.currentImage);
             if (imageLocation != null && (tLRPC$PhotoSize2 = imageLocation.photoSize) != null) {
-                i = Math.max(this.itemWidth, (int) (tLRPC$PhotoSize2.f1531w * (this.itemHeight / tLRPC$PhotoSize2.f1530h)));
+                i = Math.max(this.itemWidth, (int) (tLRPC$PhotoSize2.f1533w * (this.itemHeight / tLRPC$PhotoSize2.f1532h)));
             } else {
                 i = this.itemHeight;
             }
@@ -515,7 +515,7 @@ public class GroupedPhotosListView extends View implements GestureDetector.OnGes
             if (i13 >= 0 && i13 < this.currentPhotos.size()) {
                 ImageLocation imageLocation2 = this.currentPhotos.get(this.nextImage);
                 if (imageLocation2 != null && (tLRPC$PhotoSize = imageLocation2.photoSize) != null) {
-                    i3 = Math.max(this.itemWidth, (int) (tLRPC$PhotoSize.f1531w * (this.itemHeight / tLRPC$PhotoSize.f1530h)));
+                    i3 = Math.max(this.itemWidth, (int) (tLRPC$PhotoSize.f1533w * (this.itemHeight / tLRPC$PhotoSize.f1532h)));
                 } else {
                     i3 = this.itemHeight;
                 }

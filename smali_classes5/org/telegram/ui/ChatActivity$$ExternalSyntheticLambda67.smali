@@ -59,7 +59,7 @@
 
     move-object v6, p1
 
-    invoke-static/range {v0 .. v6}, Lorg/telegram/ui/ChatActivity;->$r8$lambda$50oCVn8nTU76XTZ0hquciuXZtrM(Landroidx/viewpager/widget/ViewPager;ILandroid/widget/LinearLayout;Ljava/util/concurrent/atomic/AtomicBoolean;Landroid/widget/HorizontalScrollView;Lorg/telegram/ui/Components/ReactionTabHolderView;Landroid/view/View;)V
+    invoke-static/range {v0 .. v6}, Lorg/telegram/ui/ChatActivity;->$r8$lambda$AJkncQNJlkVne7kNvCQJiGp-ipg(Landroidx/viewpager/widget/ViewPager;ILandroid/widget/LinearLayout;Ljava/util/concurrent/atomic/AtomicBoolean;Landroid/widget/HorizontalScrollView;Lorg/telegram/ui/Components/ReactionTabHolderView;Landroid/view/View;)V
 
     return-void
 .end method

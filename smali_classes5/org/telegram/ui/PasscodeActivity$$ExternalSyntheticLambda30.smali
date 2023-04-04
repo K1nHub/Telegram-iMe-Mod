@@ -2,7 +2,7 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lorg/fork/utils/Callbacks$Callback;
+.implements Lkotlin/jvm/functions/Function0;
 
 
 # instance fields
@@ -22,12 +22,14 @@
 
 
 # virtual methods
-.method public final invoke()V
+.method public final invoke()Ljava/lang/Object;
     .locals 1
 
     iget-object v0, p0, Lorg/telegram/ui/PasscodeActivity$$ExternalSyntheticLambda30;->f$0:Lorg/telegram/ui/PasscodeActivity;
 
-    invoke-static {v0}, Lorg/telegram/ui/PasscodeActivity;->$r8$lambda$hbUUKqAKIsy5RNmtEAeOplXe55E(Lorg/telegram/ui/PasscodeActivity;)V
+    invoke-static {v0}, Lorg/telegram/ui/PasscodeActivity;->$r8$lambda$ftlPOsJNfn9HOyGTq-b_jhZ27gE(Lorg/telegram/ui/PasscodeActivity;)Lorg/koin/core/parameter/ParametersHolder;
 
-    return-void
+    move-result-object v0
+
+    return-object v0
 .end method

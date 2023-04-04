@@ -211,7 +211,7 @@
     :cond_2
     new-instance p1, Ljava/io/IOException;
 
-    const-string v0, "tlsVersion == NONE"
+    const-string/jumbo v0, "tlsVersion == NONE"
 
     invoke-direct {p1, v0}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
 
@@ -221,7 +221,7 @@
     :cond_3
     new-instance p1, Ljava/lang/IllegalStateException;
 
-    const-string v0, "tlsVersion == null"
+    const-string/jumbo v0, "tlsVersion == null"
 
     invoke-virtual {v0}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
@@ -287,7 +287,7 @@
         }
     .end annotation
 
-    const-string v0, "tlsVersion"
+    const-string/jumbo v0, "tlsVersion"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 

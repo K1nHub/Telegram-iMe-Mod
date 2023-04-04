@@ -72,7 +72,7 @@
     :cond_0
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
-    const-string v0, "uri must not be null"
+    const-string/jumbo v0, "uri must not be null"
 
     invoke-virtual {v0}, Ljava/lang/Object;->toString()Ljava/lang/String;
 

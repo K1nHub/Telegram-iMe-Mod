@@ -26,7 +26,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/ScrollSlidingTabStrip;ZF)V
     .locals 0
 
-    .line 538
+    .line 531
     iput-object p1, p0, Lorg/telegram/ui/Components/ScrollSlidingTabStrip$4;->this$0:Lorg/telegram/ui/Components/ScrollSlidingTabStrip;
 
     iput-boolean p2, p0, Lorg/telegram/ui/Components/ScrollSlidingTabStrip$4;->val$expanded:Z
@@ -43,14 +43,14 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 6
 
-    .line 541
+    .line 534
     iget-object p1, p0, Lorg/telegram/ui/Components/ScrollSlidingTabStrip$4;->this$0:Lorg/telegram/ui/Components/ScrollSlidingTabStrip;
 
     const/4 v0, 0x0
 
     iput-object v0, p1, Lorg/telegram/ui/Components/ScrollSlidingTabStrip;->expandStickerAnimator:Landroid/animation/ValueAnimator;
 
-    .line 542
+    .line 535
     iget-boolean v0, p0, Lorg/telegram/ui/Components/ScrollSlidingTabStrip$4;->val$expanded:Z
 
     const/4 v1, 0x0
@@ -71,7 +71,7 @@
 
     move v0, p1
 
-    .line 543
+    .line 536
     :goto_1
     iget-object v2, p0, Lorg/telegram/ui/Components/ScrollSlidingTabStrip$4;->this$0:Lorg/telegram/ui/Components/ScrollSlidingTabStrip;
 
@@ -85,7 +85,7 @@
 
     if-ge v0, v2, :cond_1
 
-    .line 544
+    .line 537
     iget-object v2, p0, Lorg/telegram/ui/Components/ScrollSlidingTabStrip$4;->this$0:Lorg/telegram/ui/Components/ScrollSlidingTabStrip;
 
     invoke-static {v2}, Lorg/telegram/ui/Components/ScrollSlidingTabStrip;->access$200(Lorg/telegram/ui/Components/ScrollSlidingTabStrip;)Landroid/widget/LinearLayout;
@@ -102,7 +102,7 @@
 
     goto :goto_1
 
-    .line 546
+    .line 539
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/Components/ScrollSlidingTabStrip$4;->this$0:Lorg/telegram/ui/Components/ScrollSlidingTabStrip;
 
@@ -112,17 +112,17 @@
 
     invoke-virtual {v0}, Landroid/widget/LinearLayout;->invalidate()V
 
-    .line 547
+    .line 540
     iget-object v0, p0, Lorg/telegram/ui/Components/ScrollSlidingTabStrip$4;->this$0:Lorg/telegram/ui/Components/ScrollSlidingTabStrip;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/ScrollSlidingTabStrip;->updatePosition()V
 
-    .line 548
+    .line 541
     iget-boolean v0, p0, Lorg/telegram/ui/Components/ScrollSlidingTabStrip$4;->val$expanded:Z
 
     if-nez v0, :cond_7
 
-    .line 549
+    .line 542
     iget-object v0, p0, Lorg/telegram/ui/Components/ScrollSlidingTabStrip$4;->this$0:Lorg/telegram/ui/Components/ScrollSlidingTabStrip;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/ScrollSlidingTabStrip;->access$300(Lorg/telegram/ui/Components/ScrollSlidingTabStrip;)F
@@ -143,7 +143,7 @@
 
     mul-float/2addr v0, v2
 
-    .line 550
+    .line 543
     iget-object v2, p0, Lorg/telegram/ui/Components/ScrollSlidingTabStrip$4;->this$0:Lorg/telegram/ui/Components/ScrollSlidingTabStrip;
 
     invoke-virtual {v2}, Landroid/widget/HorizontalScrollView;->getScrollX()I
@@ -178,7 +178,7 @@
 
     div-float/2addr v2, v3
 
-    .line 551
+    .line 544
     iget-object v3, p0, Lorg/telegram/ui/Components/ScrollSlidingTabStrip$4;->this$0:Lorg/telegram/ui/Components/ScrollSlidingTabStrip;
 
     invoke-virtual {v3}, Landroid/widget/HorizontalScrollView;->getMeasuredWidth()I
@@ -191,7 +191,7 @@
 
     div-float/2addr v3, v0
 
-    .line 552
+    .line 545
     iget v4, p0, Lorg/telegram/ui/Components/ScrollSlidingTabStrip$4;->val$x:F
 
     cmpl-float v5, v2, v3
@@ -213,7 +213,7 @@
 
     move v0, v4
 
-    .line 561
+    .line 554
     :cond_3
     iget-object v1, p0, Lorg/telegram/ui/Components/ScrollSlidingTabStrip$4;->this$0:Lorg/telegram/ui/Components/ScrollSlidingTabStrip;
 
@@ -229,7 +229,7 @@
 
     invoke-static {v1, v2}, Lorg/telegram/ui/Components/ScrollSlidingTabStrip;->access$502(Lorg/telegram/ui/Components/ScrollSlidingTabStrip;F)F
 
-    .line 562
+    .line 555
     iget-object v1, p0, Lorg/telegram/ui/Components/ScrollSlidingTabStrip$4;->this$0:Lorg/telegram/ui/Components/ScrollSlidingTabStrip;
 
     sub-float/2addr v0, v4
@@ -238,7 +238,7 @@
 
     invoke-static {v1, v0}, Lorg/telegram/ui/Components/ScrollSlidingTabStrip;->access$602(Lorg/telegram/ui/Components/ScrollSlidingTabStrip;I)I
 
-    .line 564
+    .line 557
     iget-object v0, p0, Lorg/telegram/ui/Components/ScrollSlidingTabStrip$4;->this$0:Lorg/telegram/ui/Components/ScrollSlidingTabStrip;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/ScrollSlidingTabStrip;->access$600(Lorg/telegram/ui/Components/ScrollSlidingTabStrip;)I
@@ -247,7 +247,7 @@
 
     if-gez v0, :cond_4
 
-    .line 565
+    .line 558
     iget-object v0, p0, Lorg/telegram/ui/Components/ScrollSlidingTabStrip$4;->this$0:Lorg/telegram/ui/Components/ScrollSlidingTabStrip;
 
     invoke-static {v0, p1}, Lorg/telegram/ui/Components/ScrollSlidingTabStrip;->access$602(Lorg/telegram/ui/Components/ScrollSlidingTabStrip;I)I
@@ -255,7 +255,7 @@
     :cond_4
     move v0, p1
 
-    .line 568
+    .line 561
     :goto_2
     iget-object v1, p0, Lorg/telegram/ui/Components/ScrollSlidingTabStrip$4;->this$0:Lorg/telegram/ui/Components/ScrollSlidingTabStrip;
 
@@ -269,7 +269,7 @@
 
     if-ge v0, v1, :cond_6
 
-    .line 569
+    .line 562
     iget-object v1, p0, Lorg/telegram/ui/Components/ScrollSlidingTabStrip$4;->this$0:Lorg/telegram/ui/Components/ScrollSlidingTabStrip;
 
     invoke-static {v1}, Lorg/telegram/ui/Components/ScrollSlidingTabStrip;->access$200(Lorg/telegram/ui/Components/ScrollSlidingTabStrip;)Landroid/widget/LinearLayout;
@@ -280,19 +280,19 @@
 
     move-result-object v1
 
-    .line 570
+    .line 563
     instance-of v2, v1, Lorg/telegram/ui/Components/StickerTabView;
 
     if-eqz v2, :cond_5
 
-    .line 571
+    .line 564
     move-object v2, v1
 
     check-cast v2, Lorg/telegram/ui/Components/StickerTabView;
 
     invoke-virtual {v2, p1}, Lorg/telegram/ui/Components/StickerTabView;->setExpanded(Z)V
 
-    .line 573
+    .line 566
     :cond_5
     invoke-virtual {v1}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
@@ -310,13 +310,13 @@
 
     goto :goto_2
 
-    .line 575
+    .line 568
     :cond_6
     iget-object v0, p0, Lorg/telegram/ui/Components/ScrollSlidingTabStrip$4;->this$0:Lorg/telegram/ui/Components/ScrollSlidingTabStrip;
 
     iput-boolean p1, v0, Lorg/telegram/ui/Components/ScrollSlidingTabStrip;->animateToExpanded:Z
 
-    .line 576
+    .line 569
     invoke-virtual {v0}, Landroid/widget/HorizontalScrollView;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object p1
@@ -329,7 +329,7 @@
 
     iput v0, p1, Landroid/view/ViewGroup$LayoutParams;->height:I
 
-    .line 577
+    .line 570
     iget-object p1, p0, Lorg/telegram/ui/Components/ScrollSlidingTabStrip$4;->this$0:Lorg/telegram/ui/Components/ScrollSlidingTabStrip;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/ScrollSlidingTabStrip;->access$200(Lorg/telegram/ui/Components/ScrollSlidingTabStrip;)Landroid/widget/LinearLayout;

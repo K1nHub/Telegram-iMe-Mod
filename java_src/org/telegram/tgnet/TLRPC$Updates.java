@@ -10,7 +10,7 @@ public abstract class TLRPC$Updates extends TLObject {
     public TLRPC$MessageFwdHeader fwd_from;
 
     /* renamed from: id */
-    public int f1639id;
+    public int f1641id;
     public TLRPC$MessageMedia media;
     public boolean media_unread;
     public boolean mentioned;

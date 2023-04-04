@@ -2,7 +2,7 @@ package com.google.android.exoplayer2.upstream;
 
 import android.content.Context;
 import android.os.Handler;
-import com.google.android.exoplayer2.C0468C;
+import com.google.android.exoplayer2.C0482C;
 import com.google.android.exoplayer2.DefaultLoadControl;
 import com.google.android.exoplayer2.ExoPlayer;
 import com.google.android.exoplayer2.extractor.p016ts.PsExtractor;
@@ -56,7 +56,7 @@ public final class DefaultBandwidthMeter implements BandwidthMeter, TransferList
     @Override // com.google.android.exoplayer2.upstream.BandwidthMeter
     public /* synthetic */ long getTimeToFirstByteEstimateUs() {
         long j;
-        j = C0468C.TIME_UNSET;
+        j = C0482C.TIME_UNSET;
         return j;
     }
 

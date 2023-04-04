@@ -9,8 +9,8 @@
         value = {
             "(J)",
             "Lio/reactivex/Observable<",
-            "Lcom/smedialink/storage/domain/model/Result<",
-            "Lcom/smedialink/storage/domain/model/staking/StakingApprovalInfo;",
+            "Lcom/iMe/storage/domain/model/Result<",
+            "Lcom/iMe/storage/domain/model/staking/StakingApprovalInfo;",
             ">;>;"
         }
     .end annotation
@@ -21,56 +21,56 @@
         value = {
             "(J)",
             "Lio/reactivex/Observable<",
-            "Lcom/smedialink/storage/domain/model/Result<",
-            "Lcom/smedialink/storage/domain/model/staking/StakingDetailedMetadata;",
+            "Lcom/iMe/storage/domain/model/Result<",
+            "Lcom/iMe/storage/domain/model/staking/StakingDetailedMetadata;",
             ">;>;"
         }
     .end annotation
 .end method
 
-.method public abstract getStakingOperations(Ljava/lang/Long;Lcom/smedialink/storage/domain/model/staking/StakingOperationType;Lcom/smedialink/storage/domain/model/crypto/NetworkType;Ljava/lang/String;)Lio/reactivex/Observable;
+.method public abstract getStakingOperations(Ljava/lang/Long;Lcom/iMe/storage/domain/model/staking/StakingOperationType;Lcom/iMe/storage/domain/model/crypto/NetworkType;Ljava/lang/String;)Lio/reactivex/Observable;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Ljava/lang/Long;",
-            "Lcom/smedialink/storage/domain/model/staking/StakingOperationType;",
-            "Lcom/smedialink/storage/domain/model/crypto/NetworkType;",
+            "Lcom/iMe/storage/domain/model/staking/StakingOperationType;",
+            "Lcom/iMe/storage/domain/model/crypto/NetworkType;",
             "Ljava/lang/String;",
             ")",
             "Lio/reactivex/Observable<",
-            "Lcom/smedialink/storage/domain/model/Result<",
-            "Lcom/smedialink/storage/domain/model/staking/StakingOperationsPaged;",
+            "Lcom/iMe/storage/domain/model/Result<",
+            "Lcom/iMe/storage/domain/model/staking/StakingOperationsPaged;",
             ">;>;"
         }
     .end annotation
 .end method
 
-.method public abstract getStakingOwnProgrammesList(Lcom/smedialink/storage/domain/model/wallet/staking/StakingOrderType;Ljava/lang/Long;Lcom/smedialink/storage/domain/model/staking/StakingProgrammesFilterType;)Lio/reactivex/Observable;
+.method public abstract getStakingOwnProgrammesList(Lcom/iMe/storage/domain/model/wallet/staking/StakingOrderType;Ljava/lang/Long;Lcom/iMe/storage/domain/model/staking/StakingProgrammesFilterType;)Lio/reactivex/Observable;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Lcom/smedialink/storage/domain/model/wallet/staking/StakingOrderType;",
+            "Lcom/iMe/storage/domain/model/wallet/staking/StakingOrderType;",
             "Ljava/lang/Long;",
-            "Lcom/smedialink/storage/domain/model/staking/StakingProgrammesFilterType;",
+            "Lcom/iMe/storage/domain/model/staking/StakingProgrammesFilterType;",
             ")",
             "Lio/reactivex/Observable<",
-            "Lcom/smedialink/storage/domain/model/Result<",
-            "Lcom/smedialink/storage/domain/model/staking/StakingProgrammes;",
+            "Lcom/iMe/storage/domain/model/Result<",
+            "Lcom/iMe/storage/domain/model/staking/StakingProgrammes;",
             ">;>;"
         }
     .end annotation
 .end method
 
-.method public abstract getStakingProgrammesList(Lcom/smedialink/storage/domain/model/wallet/staking/StakingOrderType;Ljava/lang/Long;)Lio/reactivex/Observable;
+.method public abstract getStakingProgrammesList(Lcom/iMe/storage/domain/model/wallet/staking/StakingOrderType;Ljava/lang/Long;)Lio/reactivex/Observable;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Lcom/smedialink/storage/domain/model/wallet/staking/StakingOrderType;",
+            "Lcom/iMe/storage/domain/model/wallet/staking/StakingOrderType;",
             "Ljava/lang/Long;",
             ")",
             "Lio/reactivex/Observable<",
-            "Lcom/smedialink/storage/domain/model/Result<",
-            "Lcom/smedialink/storage/domain/model/staking/StakingProgrammes;",
+            "Lcom/iMe/storage/domain/model/Result<",
+            "Lcom/iMe/storage/domain/model/staking/StakingProgrammes;",
             ">;>;"
         }
     .end annotation
@@ -81,54 +81,54 @@
         value = {
             "()",
             "Lio/reactivex/Observable<",
-            "Lcom/smedialink/storage/domain/model/Result<",
-            "Lcom/smedialink/storage/domain/model/staking/StakingTotalStats;",
+            "Lcom/iMe/storage/domain/model/Result<",
+            "Lcom/iMe/storage/domain/model/staking/StakingTotalStats;",
             ">;>;"
         }
     .end annotation
 .end method
 
-.method public abstract sendApprovalExecute(Ljava/lang/String;Lcom/smedialink/storage/domain/model/staking/StakingTransactionArgs;)Lio/reactivex/Observable;
+.method public abstract sendApprovalExecute(Ljava/lang/String;Lcom/iMe/storage/domain/model/staking/StakingTransactionArgs;)Lio/reactivex/Observable;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Ljava/lang/String;",
-            "Lcom/smedialink/storage/domain/model/staking/StakingTransactionArgs;",
+            "Lcom/iMe/storage/domain/model/staking/StakingTransactionArgs;",
             ")",
             "Lio/reactivex/Observable<",
-            "Lcom/smedialink/storage/domain/model/Result<",
-            "Lcom/smedialink/storage/domain/model/staking/StakingOperation;",
+            "Lcom/iMe/storage/domain/model/Result<",
+            "Lcom/iMe/storage/domain/model/staking/StakingOperation;",
             ">;>;"
         }
     .end annotation
 .end method
 
-.method public abstract sendApprovalPrepare(JLcom/smedialink/storage/domain/model/staking/StakingApprovalTokenType;)Lio/reactivex/Observable;
+.method public abstract sendApprovalPrepare(JLcom/iMe/storage/domain/model/staking/StakingApprovalTokenType;)Lio/reactivex/Observable;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(J",
-            "Lcom/smedialink/storage/domain/model/staking/StakingApprovalTokenType;",
+            "Lcom/iMe/storage/domain/model/staking/StakingApprovalTokenType;",
             ")",
             "Lio/reactivex/Observable<",
-            "Lcom/smedialink/storage/domain/model/Result<",
+            "Lcom/iMe/storage/domain/model/Result<",
             "Lkotlin/Pair<",
             "Ljava/lang/String;",
-            "Lcom/smedialink/storage/domain/model/staking/StakingTransactionAction;",
+            "Lcom/iMe/storage/domain/model/staking/StakingTransactionAction;",
             ">;>;>;"
         }
     .end annotation
 .end method
 
-.method public abstract sendClaimExecute(Ljava/lang/String;Lcom/smedialink/storage/domain/model/staking/StakingTransactionArgs;)Lio/reactivex/Observable;
+.method public abstract sendClaimExecute(Ljava/lang/String;Lcom/iMe/storage/domain/model/staking/StakingTransactionArgs;)Lio/reactivex/Observable;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Ljava/lang/String;",
-            "Lcom/smedialink/storage/domain/model/staking/StakingTransactionArgs;",
+            "Lcom/iMe/storage/domain/model/staking/StakingTransactionArgs;",
             ")",
             "Lio/reactivex/Observable<",
-            "Lcom/smedialink/storage/domain/model/Result<",
-            "Lcom/smedialink/storage/domain/model/staking/StakingOperation;",
+            "Lcom/iMe/storage/domain/model/Result<",
+            "Lcom/iMe/storage/domain/model/staking/StakingOperation;",
             ">;>;"
         }
     .end annotation
@@ -139,25 +139,25 @@
         value = {
             "(J)",
             "Lio/reactivex/Observable<",
-            "Lcom/smedialink/storage/domain/model/Result<",
+            "Lcom/iMe/storage/domain/model/Result<",
             "Lkotlin/Pair<",
             "Ljava/lang/String;",
-            "Lcom/smedialink/storage/domain/model/staking/StakingTransactionAction;",
+            "Lcom/iMe/storage/domain/model/staking/StakingTransactionAction;",
             ">;>;>;"
         }
     .end annotation
 .end method
 
-.method public abstract sendDepositExecute(Ljava/lang/String;Lcom/smedialink/storage/domain/model/staking/StakingTransactionArgs;)Lio/reactivex/Observable;
+.method public abstract sendDepositExecute(Ljava/lang/String;Lcom/iMe/storage/domain/model/staking/StakingTransactionArgs;)Lio/reactivex/Observable;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Ljava/lang/String;",
-            "Lcom/smedialink/storage/domain/model/staking/StakingTransactionArgs;",
+            "Lcom/iMe/storage/domain/model/staking/StakingTransactionArgs;",
             ")",
             "Lio/reactivex/Observable<",
-            "Lcom/smedialink/storage/domain/model/Result<",
-            "Lcom/smedialink/storage/domain/model/staking/StakingOperation;",
+            "Lcom/iMe/storage/domain/model/Result<",
+            "Lcom/iMe/storage/domain/model/staking/StakingOperation;",
             ">;>;"
         }
     .end annotation
@@ -170,25 +170,25 @@
             "Ljava/math/BigDecimal;",
             ")",
             "Lio/reactivex/Observable<",
-            "Lcom/smedialink/storage/domain/model/Result<",
+            "Lcom/iMe/storage/domain/model/Result<",
             "Lkotlin/Pair<",
             "Ljava/lang/String;",
-            "Lcom/smedialink/storage/domain/model/staking/StakingTransactionAction;",
+            "Lcom/iMe/storage/domain/model/staking/StakingTransactionAction;",
             ">;>;>;"
         }
     .end annotation
 .end method
 
-.method public abstract sendWithdrawExecute(Ljava/lang/String;Lcom/smedialink/storage/domain/model/staking/StakingTransactionArgs;)Lio/reactivex/Observable;
+.method public abstract sendWithdrawExecute(Ljava/lang/String;Lcom/iMe/storage/domain/model/staking/StakingTransactionArgs;)Lio/reactivex/Observable;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Ljava/lang/String;",
-            "Lcom/smedialink/storage/domain/model/staking/StakingTransactionArgs;",
+            "Lcom/iMe/storage/domain/model/staking/StakingTransactionArgs;",
             ")",
             "Lio/reactivex/Observable<",
-            "Lcom/smedialink/storage/domain/model/Result<",
-            "Lcom/smedialink/storage/domain/model/staking/StakingOperation;",
+            "Lcom/iMe/storage/domain/model/Result<",
+            "Lcom/iMe/storage/domain/model/staking/StakingOperation;",
             ">;>;"
         }
     .end annotation
@@ -201,10 +201,10 @@
             "Ljava/math/BigDecimal;",
             "Z)",
             "Lio/reactivex/Observable<",
-            "Lcom/smedialink/storage/domain/model/Result<",
+            "Lcom/iMe/storage/domain/model/Result<",
             "Lkotlin/Pair<",
             "Ljava/lang/String;",
-            "Lcom/smedialink/storage/domain/model/staking/StakingTransactionAction;",
+            "Lcom/iMe/storage/domain/model/staking/StakingTransactionAction;",
             ">;>;>;"
         }
     .end annotation

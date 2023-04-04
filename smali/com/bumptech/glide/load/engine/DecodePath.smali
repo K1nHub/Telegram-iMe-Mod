@@ -224,6 +224,7 @@
 
     invoke-interface {p2, v0}, Landroidx/core/util/Pools$Pool;->release(Ljava/lang/Object;)Z
 
+    .line 73
     throw p1
 .end method
 

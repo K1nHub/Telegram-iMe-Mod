@@ -35,10 +35,10 @@
 .method public constructor <init>(Landroid/content/res/Resources;)V
     .locals 0
 
-    .line 69
+    .line 77
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 70
+    .line 78
     iput-object p1, p0, Lcom/bumptech/glide/load/model/ResourceLoader$StreamFactory;->resources:Landroid/content/res/Resources;
 
     return-void
@@ -60,7 +60,7 @@
         }
     .end annotation
 
-    .line 76
+    .line 84
     new-instance v0, Lcom/bumptech/glide/load/model/ResourceLoader;
 
     iget-object v1, p0, Lcom/bumptech/glide/load/model/ResourceLoader$StreamFactory;->resources:Landroid/content/res/Resources;

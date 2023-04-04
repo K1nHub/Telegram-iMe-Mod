@@ -27,7 +27,7 @@ import com.google.android.exoplayer2.extractor.p016ts.TsExtractor;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import java.util.List;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3301R;
+import org.telegram.messenger.C3316R;
 import org.telegram.messenger.ChatThemeController;
 import org.telegram.messenger.DocumentObject;
 import org.telegram.messenger.Emoji;
@@ -222,7 +222,7 @@ public class ThemeSmallPreviewView extends FrameLayout implements NotificationCe
             updatePreviewBackground(this.themeDrawable);
             TLRPC$TL_theme tlTheme = chatThemeItem.chatTheme.getTlTheme(this.lastThemeIndex);
             if (tlTheme != null) {
-                final long j = tlTheme.f1631id;
+                final long j = tlTheme.f1633id;
                 TLRPC$WallPaper wallpaper = chatThemeItem.chatTheme.getWallpaper(this.lastThemeIndex);
                 if (wallpaper != null) {
                     final int i3 = wallpaper.settings.intensity;
@@ -246,6 +246,7 @@ public class ThemeSmallPreviewView extends FrameLayout implements NotificationCe
                     if (tLRPC$WallPaper != null && (tLRPC$Document = tLRPC$WallPaper.document) != null) {
                         ImageLocation forDocument = ImageLocation.getForDocument(FileLoader.getClosestPhotoSizeWithSize(tLRPC$Document.thumbs, 120), tLRPC$Document);
                         ImageReceiver imageReceiver = new ImageReceiver();
+                        imageReceiver.setAllowLoadingOnAttachedOnly(false);
                         imageReceiver.setImage(forDocument, "120_140", null, null, null, 1);
                         imageReceiver.setDelegate(new ImageReceiver.ImageReceiverDelegate() { // from class: org.telegram.ui.Components.ThemeSmallPreviewView$$ExternalSyntheticLambda4
                             @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
@@ -287,7 +288,7 @@ public class ThemeSmallPreviewView extends FrameLayout implements NotificationCe
         }
         EmojiThemes emojiThemes = this.chatThemeItem.chatTheme;
         if (emojiThemes == null || emojiThemes.showAsDefaultStub) {
-            setContentDescription(LocaleController.getString("ChatNoTheme", C3301R.string.ChatNoTheme));
+            setContentDescription(LocaleController.getString("ChatNoTheme", C3316R.string.ChatNoTheme));
         } else {
             setContentDescription(emojiThemes.getEmoticon());
         }
@@ -326,7 +327,7 @@ public class ThemeSmallPreviewView extends FrameLayout implements NotificationCe
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$setItem$3(final ChatThemeBottomSheet.ChatThemeItem chatThemeItem, final int i) {
-        final Bitmap bitmap = SvgHelper.getBitmap(C3301R.C3306raw.default_pattern, AndroidUtilities.m50dp(120), AndroidUtilities.m50dp(140), -16777216, AndroidUtilities.density);
+        final Bitmap bitmap = SvgHelper.getBitmap(C3316R.C3321raw.default_pattern, AndroidUtilities.m50dp(120), AndroidUtilities.m50dp(140), -16777216, AndroidUtilities.density);
         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.ThemeSmallPreviewView$$ExternalSyntheticLambda3
             @Override // java.lang.Runnable
             public final void run() {
@@ -553,7 +554,7 @@ public class ThemeSmallPreviewView extends FrameLayout implements NotificationCe
         textPaint.setColor(getThemedColor("chat_emojiPanelTrendingDescription"));
         this.noThemeTextPaint.setTextSize(AndroidUtilities.m50dp(14));
         this.noThemeTextPaint.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
-        StaticLayout createStaticLayout2 = StaticLayoutEx.createStaticLayout2(LocaleController.getString("ChatNoTheme", C3301R.string.ChatNoTheme), this.noThemeTextPaint, AndroidUtilities.m50dp(52), Layout.Alignment.ALIGN_CENTER, 1.0f, BitmapDescriptorFactory.HUE_RED, true, TextUtils.TruncateAt.END, AndroidUtilities.m50dp(52), 3);
+        StaticLayout createStaticLayout2 = StaticLayoutEx.createStaticLayout2(LocaleController.getString("ChatNoTheme", C3316R.string.ChatNoTheme), this.noThemeTextPaint, AndroidUtilities.m50dp(52), Layout.Alignment.ALIGN_CENTER, 1.0f, BitmapDescriptorFactory.HUE_RED, true, TextUtils.TruncateAt.END, AndroidUtilities.m50dp(52), 3);
         this.textLayout = createStaticLayout2;
         return createStaticLayout2;
     }

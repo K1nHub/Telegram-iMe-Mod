@@ -18,13 +18,13 @@ import android.widget.FrameLayout;
 import androidx.appcompat.content.res.AppCompatResources;
 import com.google.android.exoplayer2.extractor.p016ts.TsExtractor;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
-import com.smedialink.common.IdFabric$Menu;
-import com.smedialink.common.IdFabric$ViewTypes;
+import com.iMe.common.IdFabric$Menu;
+import com.iMe.common.IdFabric$ViewTypes;
+import com.iMe.fork.controller.MusicController;
 import java.util.ArrayList;
 import java.util.Collections;
-import org.fork.controller.MusicController;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3301R;
+import org.telegram.messenger.C3316R;
 import org.telegram.messenger.DialogObject;
 import org.telegram.messenger.DownloadController;
 import org.telegram.messenger.Emoji;
@@ -216,20 +216,20 @@ public class SharedAudioCell extends FrameLayout implements DownloadController.F
         boolean z = LocaleController.isRTL;
         addView(checkBox22, LayoutHelper.createFrame(24, 24.0f, (z ? 5 : 3) | 48, z ? 0.0f : 38.1f, 32.1f, z ? 6.0f : f, (float) BitmapDescriptorFactory.HUE_RED));
         if (i == IdFabric$ViewTypes.SHARED_AUDIO_CELL_MUSIC) {
-            this.isInPlaylistMarkDrawable = AppCompatResources.getDrawable(getContext(), C3301R.C3303drawable.msg_tone_on);
+            this.isInPlaylistMarkDrawable = AppCompatResources.getDrawable(getContext(), C3316R.C3318drawable.msg_tone_on);
             ActionBarMenuItem actionBarMenuItem = new ActionBarMenuItem(context, (ActionBarMenu) null, 0, getThemedColor("windowBackgroundWhiteGrayText3"), false);
             this.optionsButton = actionBarMenuItem;
             actionBarMenuItem.setIconColor(getThemedColor("windowBackgroundWhiteGrayText3"));
-            this.optionsButton.setIcon(C3301R.C3303drawable.ic_ab_other);
+            this.optionsButton.setIcon(C3316R.C3318drawable.ic_ab_other);
             this.optionsButton.setLongClickEnabled(false);
             this.optionsButton.setShowSubmenuByMove(false);
             this.optionsButton.setShowedFromBottom(true);
             this.togglePlaylistItem = this.optionsButton.addSubItem(IdFabric$Menu.TOGGLE_MUSIC_PLAYLIST, 0, null);
-            this.optionsButton.addSubItem(1, C3301R.C3303drawable.msg_forward, LocaleController.getString("Forward", C3301R.string.Forward));
-            this.optionsButton.addSubItem(IdFabric$Menu.MESSAGE_FORWARD_CLOUD, C3301R.C3303drawable.fork_forward_cloud, LocaleController.getInternalString(C3301R.string.chat_message_popup_option_forward_cloud));
-            this.optionsButton.addSubItem(2, C3301R.C3303drawable.msg_shareout, LocaleController.getString("ShareFile", C3301R.string.ShareFile));
-            this.optionsButton.addSubItem(5, C3301R.C3303drawable.msg_download, LocaleController.getString("SaveToMusic", C3301R.string.SaveToMusic));
-            this.optionsButton.addSubItem(4, C3301R.C3303drawable.msg_message, LocaleController.getString("ShowInChat", C3301R.string.ShowInChat));
+            this.optionsButton.addSubItem(1, C3316R.C3318drawable.msg_forward, LocaleController.getString("Forward", C3316R.string.Forward));
+            this.optionsButton.addSubItem(IdFabric$Menu.MESSAGE_FORWARD_CLOUD, C3316R.C3318drawable.fork_forward_cloud, LocaleController.getInternalString(C3316R.string.chat_message_popup_option_forward_cloud));
+            this.optionsButton.addSubItem(2, C3316R.C3318drawable.msg_shareout, LocaleController.getString("ShareFile", C3316R.string.ShareFile));
+            this.optionsButton.addSubItem(5, C3316R.C3318drawable.msg_download, LocaleController.getString("SaveToMusic", C3316R.string.SaveToMusic));
+            this.optionsButton.addSubItem(4, C3316R.C3318drawable.msg_message, LocaleController.getString("ShowInChat", C3316R.string.ShowInChat));
             this.optionsButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Cells.SharedAudioCell$$ExternalSyntheticLambda0
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
@@ -260,9 +260,9 @@ public class SharedAudioCell extends FrameLayout implements DownloadController.F
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$new$4(View view) {
         if (this.isInPlaylist) {
-            this.togglePlaylistItem.setTextAndIcon(LocaleController.getInternalString(C3301R.string.music_player_remove_from_playlist), C3301R.C3303drawable.msg_tone_off);
+            this.togglePlaylistItem.setTextAndIcon(LocaleController.getInternalString(C3316R.string.music_player_remove_from_playlist), C3316R.C3318drawable.msg_tone_off);
         } else {
-            this.togglePlaylistItem.setTextAndIcon(LocaleController.getInternalString(C3301R.string.music_player_add_to_playlist), C3301R.C3303drawable.msg_tone_add);
+            this.togglePlaylistItem.setTextAndIcon(LocaleController.getInternalString(C3316R.string.music_player_add_to_playlist), C3316R.C3318drawable.msg_tone_add);
         }
         this.optionsButton.toggleSubMenu();
     }
@@ -762,7 +762,7 @@ public class SharedAudioCell extends FrameLayout implements DownloadController.F
         super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
         accessibilityNodeInfo.setEnabled(true);
         if (this.currentMessageObject.isMusic()) {
-            accessibilityNodeInfo.setText(LocaleController.formatString("AccDescrMusicInfo", C3301R.string.AccDescrMusicInfo, this.currentMessageObject.getMusicAuthor(), this.currentMessageObject.getMusicTitle()));
+            accessibilityNodeInfo.setText(LocaleController.formatString("AccDescrMusicInfo", C3316R.string.AccDescrMusicInfo, this.currentMessageObject.getMusicAuthor(), this.currentMessageObject.getMusicTitle()));
         } else if (this.titleLayout != null && this.descriptionLayout != null) {
             accessibilityNodeInfo.setText(((Object) this.titleLayout.getText()) + ", " + ((Object) this.descriptionLayout.getText()));
         }

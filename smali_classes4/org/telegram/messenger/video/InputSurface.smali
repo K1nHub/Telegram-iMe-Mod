@@ -218,7 +218,7 @@
     :cond_2
     new-instance v0, Ljava/lang/RuntimeException;
 
-    const-string v1, "unable to find RGB888+recordable ES2 EGL config"
+    const-string/jumbo v1, "unable to find RGB888+recordable ES2 EGL config"
 
     invoke-direct {v0, v1}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
 
@@ -233,7 +233,7 @@
     .line 55
     new-instance v0, Ljava/lang/RuntimeException;
 
-    const-string v1, "unable to initialize EGL14"
+    const-string/jumbo v1, "unable to initialize EGL14"
 
     invoke-direct {v0, v1}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
 
@@ -243,13 +243,11 @@
     :cond_4
     new-instance v0, Ljava/lang/RuntimeException;
 
-    const-string v1, "unable to get EGL14 display"
+    const-string/jumbo v1, "unable to get EGL14 display"
 
     invoke-direct {v0, v1}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
 
     throw v0
-
-    nop
 
     :array_0
     .array-data 4

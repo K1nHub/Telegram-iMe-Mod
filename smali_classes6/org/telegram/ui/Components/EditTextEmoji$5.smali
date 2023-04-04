@@ -736,10 +736,10 @@
     return-void
 .end method
 
-.method public synthetic showKiklikoReportAlert(Ljava/lang/String;Lorg/fork/utils/Callbacks$Callback1;)V
+.method public synthetic showKiklikoReportAlert(Ljava/lang/String;Lcom/iMe/fork/utils/Callbacks$Callback1;)V
     .locals 0
 
-    invoke-static {p0, p1, p2}, Lorg/telegram/ui/Components/EmojiView$EmojiViewDelegate$-CC;->$default$showKiklikoReportAlert(Lorg/telegram/ui/Components/EmojiView$EmojiViewDelegate;Ljava/lang/String;Lorg/fork/utils/Callbacks$Callback1;)V
+    invoke-static {p0, p1, p2}, Lorg/telegram/ui/Components/EmojiView$EmojiViewDelegate$-CC;->$default$showKiklikoReportAlert(Lorg/telegram/ui/Components/EmojiView$EmojiViewDelegate;Ljava/lang/String;Lcom/iMe/fork/utils/Callbacks$Callback1;)V
 
     return-void
 .end method

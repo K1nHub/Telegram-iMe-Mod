@@ -25,10 +25,10 @@
 .method constructor <init>(Ljava/io/InputStream;)V
     .locals 0
 
-    .line 500
+    .line 559
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 501
+    .line 560
     iput-object p1, p0, Lcom/bumptech/glide/load/resource/bitmap/DefaultImageHeaderParser$StreamReader;->is:Ljava/io/InputStream;
 
     return-void
@@ -44,7 +44,7 @@
         }
     .end annotation
 
-    .line 516
+    .line 575
     invoke-virtual {p0}, Lcom/bumptech/glide/load/resource/bitmap/DefaultImageHeaderParser$StreamReader;->getUInt8()S
 
     move-result v0
@@ -68,7 +68,7 @@
         }
     .end annotation
 
-    .line 506
+    .line 565
     iget-object v0, p0, Lcom/bumptech/glide/load/resource/bitmap/DefaultImageHeaderParser$StreamReader;->is:Ljava/io/InputStream;
 
     invoke-virtual {v0}, Ljava/io/InputStream;->read()I
@@ -83,7 +83,7 @@
 
     return v0
 
-    .line 508
+    .line 567
     :cond_0
     new-instance v0, Lcom/bumptech/glide/load/resource/bitmap/DefaultImageHeaderParser$Reader$EndOfFileException;
 
@@ -109,12 +109,12 @@
 
     if-ge v0, p2, :cond_0
 
-    .line 523
+    .line 582
     iget-object v1, p0, Lcom/bumptech/glide/load/resource/bitmap/DefaultImageHeaderParser$StreamReader;->is:Ljava/io/InputStream;
 
     sub-int v3, p2, v0
 
-    .line 524
+    .line 583
     invoke-virtual {v1, p1, v0, v3}, Ljava/io/InputStream;->read([BII)I
 
     move-result v1
@@ -132,7 +132,7 @@
 
     goto :goto_1
 
-    .line 529
+    .line 588
     :cond_1
     new-instance p1, Lcom/bumptech/glide/load/resource/bitmap/DefaultImageHeaderParser$Reader$EndOfFileException;
 
@@ -169,7 +169,7 @@
 
     if-lez v4, :cond_3
 
-    .line 543
+    .line 602
     iget-object v4, p0, Lcom/bumptech/glide/load/resource/bitmap/DefaultImageHeaderParser$StreamReader;->is:Ljava/io/InputStream;
 
     invoke-virtual {v4, v2, v3}, Ljava/io/InputStream;->skip(J)J
@@ -185,7 +185,7 @@
 
     goto :goto_0
 
-    .line 551
+    .line 610
     :cond_1
     iget-object v4, p0, Lcom/bumptech/glide/load/resource/bitmap/DefaultImageHeaderParser$StreamReader;->is:Ljava/io/InputStream;
 

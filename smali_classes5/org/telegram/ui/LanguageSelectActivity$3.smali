@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/LanguageSelectActivity;Landroid/content/Context;)V
     .locals 0
 
-    .line 224
+    .line 221
     iput-object p1, p0, Lorg/telegram/ui/LanguageSelectActivity$3;->this$0:Lorg/telegram/ui/LanguageSelectActivity;
 
     invoke-direct {p0, p2}, Lorg/telegram/ui/Components/RecyclerListView;-><init>(Landroid/content/Context;)V
@@ -35,7 +35,7 @@
 .method protected dispatchDraw(Landroid/graphics/Canvas;)V
     .locals 3
 
-    .line 227
+    .line 224
     invoke-virtual {p0}, Landroidx/recyclerview/widget/RecyclerView;->getAdapter()Landroidx/recyclerview/widget/RecyclerView$Adapter;
 
     move-result-object v0
@@ -64,7 +64,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 228
+    .line 225
     iget-object v0, p0, Lorg/telegram/ui/Components/RecyclerListView;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
     const-string v1, "windowBackgroundWhite"
@@ -75,7 +75,7 @@
 
     const/4 v1, 0x0
 
-    .line 229
+    .line 226
     iget-object v2, p0, Lorg/telegram/ui/LanguageSelectActivity$3;->this$0:Lorg/telegram/ui/LanguageSelectActivity;
 
     invoke-static {v2}, Lorg/telegram/ui/LanguageSelectActivity;->access$600(Lorg/telegram/ui/LanguageSelectActivity;)I
@@ -88,10 +88,10 @@
 
     const/4 v2, 0x2
 
-    .line 231
+    .line 228
     invoke-virtual {p0, p1, v1, v2, v0}, Lorg/telegram/ui/Components/RecyclerListView;->drawSectionBackground(Landroid/graphics/Canvas;III)V
 
-    .line 233
+    .line 230
     :cond_0
     invoke-super {p0, p1}, Lorg/telegram/ui/Components/RecyclerListView;->dispatchDraw(Landroid/graphics/Canvas;)V
 

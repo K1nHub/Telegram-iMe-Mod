@@ -2391,7 +2391,7 @@
     return-object v0
 
     :cond_0
-    const-string v0, "translate("
+    const-string/jumbo v0, "translate("
 
     .line 623
     invoke-virtual {p0, v0}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z

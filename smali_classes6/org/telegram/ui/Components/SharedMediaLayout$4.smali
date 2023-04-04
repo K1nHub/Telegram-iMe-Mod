@@ -303,7 +303,7 @@
 
     move-result v0
 
-    sget v3, Lcom/smedialink/common/IdFabric$CustomType;->MEDIA_TAB_PLAYLIST:I
+    sget v3, Lcom/iMe/common/IdFabric$CustomType;->MEDIA_TAB_PLAYLIST:I
 
     if-ne v0, v3, :cond_1
 

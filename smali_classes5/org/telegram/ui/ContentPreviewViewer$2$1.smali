@@ -101,7 +101,7 @@
 
     move-result v0
 
-    sget v1, Lcom/smedialink/common/IdFabric$Menu;->TOGGLE_AUTO_PREVIEW:I
+    sget v1, Lcom/iMe/common/IdFabric$Menu;->TOGGLE_AUTO_PREVIEW:I
 
     const/4 v2, 0x1
 
@@ -137,7 +137,7 @@
 
     move-result v0
 
-    sget v3, Lcom/smedialink/common/IdFabric$Menu;->EDIT_AND_SEND:I
+    sget v3, Lcom/iMe/common/IdFabric$Menu;->EDIT_AND_SEND:I
 
     const/4 v4, 0x0
 
@@ -170,7 +170,7 @@
 
     move-result v0
 
-    sget v3, Lcom/smedialink/common/IdFabric$Menu;->SET_AS_AVATAR:I
+    sget v3, Lcom/iMe/common/IdFabric$Menu;->SET_AS_AVATAR:I
 
     if-ne v0, v3, :cond_3
 

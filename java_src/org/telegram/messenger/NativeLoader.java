@@ -53,8 +53,8 @@ public class NativeLoader {
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:63:0x00c9 A[EXC_TOP_SPLITTER, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:68:0x00d3 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:63:0x00ca A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:68:0x00d4 A[EXC_TOP_SPLITTER, SYNTHETIC] */
     /* JADX WARN: Type inference failed for: r2v2 */
     /* JADX WARN: Type inference failed for: r2v4, types: [java.util.zip.ZipFile] */
     /* JADX WARN: Type inference failed for: r2v7, types: [int] */
@@ -64,22 +64,22 @@ public class NativeLoader {
     */
     private static boolean loadFromZip(android.content.Context r5, java.io.File r6, java.io.File r7, java.lang.String r8) {
         /*
-            Method dump skipped, instructions count: 220
+            Method dump skipped, instructions count: 221
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: org.telegram.messenger.NativeLoader.loadFromZip(android.content.Context, java.io.File, java.io.File, java.lang.String):boolean");
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:59:0x00da A[Catch: all -> 0x001c, TryCatch #3 {, blocks: (B:4:0x0003, B:65:0x00f9, B:68:0x0102, B:9:0x000a, B:11:0x0015, B:17:0x0020, B:18:0x0023, B:42:0x008d, B:44:0x0095, B:47:0x00a0, B:49:0x00bb, B:51:0x00bf, B:52:0x00c4, B:57:0x00d6, B:59:0x00da, B:60:0x00ee, B:56:0x00d0, B:21:0x0032, B:24:0x003d, B:27:0x0048, B:30:0x0053, B:33:0x0060, B:36:0x006b, B:38:0x0071, B:41:0x0088), top: B:78:0x0003, inners: #0 }] */
-    /* JADX WARN: Removed duplicated region for block: B:63:0x00f5 A[RETURN] */
-    /* JADX WARN: Removed duplicated region for block: B:74:0x00f9 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:59:0x00db A[Catch: all -> 0x001d, TryCatch #3 {, blocks: (B:4:0x0003, B:65:0x00fa, B:68:0x0104, B:9:0x000a, B:11:0x0016, B:17:0x0021, B:18:0x0024, B:42:0x008e, B:44:0x0096, B:47:0x00a1, B:49:0x00bc, B:51:0x00c0, B:52:0x00c5, B:57:0x00d7, B:59:0x00db, B:60:0x00ef, B:56:0x00d1, B:21:0x0033, B:24:0x003e, B:27:0x0049, B:30:0x0054, B:33:0x0061, B:36:0x006c, B:38:0x0072, B:41:0x0089), top: B:78:0x0003, inners: #5 }] */
+    /* JADX WARN: Removed duplicated region for block: B:63:0x00f6 A[RETURN] */
+    /* JADX WARN: Removed duplicated region for block: B:79:0x00fa A[EXC_TOP_SPLITTER, SYNTHETIC] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct add '--show-bad-code' argument
     */
     public static synchronized void initNativeLibs(android.content.Context r7) {
         /*
-            Method dump skipped, instructions count: 266
+            Method dump skipped, instructions count: 268
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: org.telegram.messenger.NativeLoader.initNativeLibs(android.content.Context):void");

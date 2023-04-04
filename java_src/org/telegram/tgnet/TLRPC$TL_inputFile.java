@@ -5,7 +5,7 @@ public class TLRPC$TL_inputFile extends TLRPC$InputFile {
 
     @Override // org.telegram.tgnet.TLObject
     public void readParams(AbstractSerializedData abstractSerializedData, boolean z) {
-        this.f1518id = abstractSerializedData.readInt64(z);
+        this.f1520id = abstractSerializedData.readInt64(z);
         this.parts = abstractSerializedData.readInt32(z);
         this.name = abstractSerializedData.readString(z);
         this.md5_checksum = abstractSerializedData.readString(z);
@@ -14,7 +14,7 @@ public class TLRPC$TL_inputFile extends TLRPC$InputFile {
     @Override // org.telegram.tgnet.TLObject
     public void serializeToStream(AbstractSerializedData abstractSerializedData) {
         abstractSerializedData.writeInt32(constructor);
-        abstractSerializedData.writeInt64(this.f1518id);
+        abstractSerializedData.writeInt64(this.f1520id);
         abstractSerializedData.writeInt32(this.parts);
         abstractSerializedData.writeString(this.name);
         abstractSerializedData.writeString(this.md5_checksum);

@@ -4,6 +4,7 @@ import com.bumptech.glide.load.ImageHeaderParser;
 import com.bumptech.glide.load.data.ParcelFileDescriptorRewinder;
 import com.bumptech.glide.load.engine.bitmap_recycle.ArrayPool;
 import com.bumptech.glide.load.resource.bitmap.RecyclableBufferedInputStream;
+import com.bumptech.glide.util.ByteBufferUtil;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -15,13 +16,13 @@ public final class ImageHeaderParserUtils {
     /* JADX INFO: Access modifiers changed from: private */
     /* loaded from: classes.dex */
     public interface OrientationReader {
-        int getOrientation(ImageHeaderParser imageHeaderParser) throws IOException;
+        int getOrientationAndRewind(ImageHeaderParser imageHeaderParser) throws IOException;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     /* loaded from: classes.dex */
     public interface TypeReader {
-        ImageHeaderParser.ImageType getType(ImageHeaderParser imageHeaderParser) throws IOException;
+        ImageHeaderParser.ImageType getTypeAndRewind(ImageHeaderParser imageHeaderParser) throws IOException;
     }
 
     public static ImageHeaderParser.ImageType getType(List<ImageHeaderParser> list, final InputStream inputStream, ArrayPool arrayPool) throws IOException {
@@ -34,7 +35,7 @@ public final class ImageHeaderParserUtils {
         inputStream.mark(5242880);
         return getTypeInternal(list, new TypeReader() { // from class: com.bumptech.glide.load.ImageHeaderParserUtils.1
             @Override // com.bumptech.glide.load.ImageHeaderParserUtils.TypeReader
-            public ImageHeaderParser.ImageType getType(ImageHeaderParser imageHeaderParser) throws IOException {
+            public ImageHeaderParser.ImageType getTypeAndRewind(ImageHeaderParser imageHeaderParser) throws IOException {
                 try {
                     return imageHeaderParser.getType(inputStream);
                 } finally {
@@ -50,8 +51,12 @@ public final class ImageHeaderParserUtils {
         }
         return getTypeInternal(list, new TypeReader() { // from class: com.bumptech.glide.load.ImageHeaderParserUtils.2
             @Override // com.bumptech.glide.load.ImageHeaderParserUtils.TypeReader
-            public ImageHeaderParser.ImageType getType(ImageHeaderParser imageHeaderParser) throws IOException {
-                return imageHeaderParser.getType(byteBuffer);
+            public ImageHeaderParser.ImageType getTypeAndRewind(ImageHeaderParser imageHeaderParser) throws IOException {
+                try {
+                    return imageHeaderParser.getType(byteBuffer);
+                } finally {
+                    ByteBufferUtil.rewind(byteBuffer);
+                }
             }
         });
     }
@@ -59,26 +64,20 @@ public final class ImageHeaderParserUtils {
     public static ImageHeaderParser.ImageType getType(List<ImageHeaderParser> list, final ParcelFileDescriptorRewinder parcelFileDescriptorRewinder, final ArrayPool arrayPool) throws IOException {
         return getTypeInternal(list, new TypeReader() { // from class: com.bumptech.glide.load.ImageHeaderParserUtils.3
             @Override // com.bumptech.glide.load.ImageHeaderParserUtils.TypeReader
-            public ImageHeaderParser.ImageType getType(ImageHeaderParser imageHeaderParser) throws IOException {
+            public ImageHeaderParser.ImageType getTypeAndRewind(ImageHeaderParser imageHeaderParser) throws IOException {
                 RecyclableBufferedInputStream recyclableBufferedInputStream = null;
                 try {
                     RecyclableBufferedInputStream recyclableBufferedInputStream2 = new RecyclableBufferedInputStream(new FileInputStream(ParcelFileDescriptorRewinder.this.rewindAndGet().getFileDescriptor()), arrayPool);
                     try {
                         ImageHeaderParser.ImageType type = imageHeaderParser.getType(recyclableBufferedInputStream2);
-                        try {
-                            recyclableBufferedInputStream2.close();
-                        } catch (IOException unused) {
-                        }
+                        recyclableBufferedInputStream2.release();
                         ParcelFileDescriptorRewinder.this.rewindAndGet();
                         return type;
                     } catch (Throwable th) {
                         th = th;
                         recyclableBufferedInputStream = recyclableBufferedInputStream2;
                         if (recyclableBufferedInputStream != null) {
-                            try {
-                                recyclableBufferedInputStream.close();
-                            } catch (IOException unused2) {
-                            }
+                            recyclableBufferedInputStream.release();
                         }
                         ParcelFileDescriptorRewinder.this.rewindAndGet();
                         throw th;
@@ -93,12 +92,28 @@ public final class ImageHeaderParserUtils {
     private static ImageHeaderParser.ImageType getTypeInternal(List<ImageHeaderParser> list, TypeReader typeReader) throws IOException {
         int size = list.size();
         for (int i = 0; i < size; i++) {
-            ImageHeaderParser.ImageType type = typeReader.getType(list.get(i));
-            if (type != ImageHeaderParser.ImageType.UNKNOWN) {
-                return type;
+            ImageHeaderParser.ImageType typeAndRewind = typeReader.getTypeAndRewind(list.get(i));
+            if (typeAndRewind != ImageHeaderParser.ImageType.UNKNOWN) {
+                return typeAndRewind;
             }
         }
         return ImageHeaderParser.ImageType.UNKNOWN;
+    }
+
+    public static int getOrientation(List<ImageHeaderParser> list, final ByteBuffer byteBuffer, final ArrayPool arrayPool) throws IOException {
+        if (byteBuffer == null) {
+            return -1;
+        }
+        return getOrientationInternal(list, new OrientationReader() { // from class: com.bumptech.glide.load.ImageHeaderParserUtils.4
+            @Override // com.bumptech.glide.load.ImageHeaderParserUtils.OrientationReader
+            public int getOrientationAndRewind(ImageHeaderParser imageHeaderParser) throws IOException {
+                try {
+                    return imageHeaderParser.getOrientation(byteBuffer, arrayPool);
+                } finally {
+                    ByteBufferUtil.rewind(byteBuffer);
+                }
+            }
+        });
     }
 
     public static int getOrientation(List<ImageHeaderParser> list, final InputStream inputStream, final ArrayPool arrayPool) throws IOException {
@@ -109,9 +124,9 @@ public final class ImageHeaderParserUtils {
             inputStream = new RecyclableBufferedInputStream(inputStream, arrayPool);
         }
         inputStream.mark(5242880);
-        return getOrientationInternal(list, new OrientationReader() { // from class: com.bumptech.glide.load.ImageHeaderParserUtils.4
+        return getOrientationInternal(list, new OrientationReader() { // from class: com.bumptech.glide.load.ImageHeaderParserUtils.5
             @Override // com.bumptech.glide.load.ImageHeaderParserUtils.OrientationReader
-            public int getOrientation(ImageHeaderParser imageHeaderParser) throws IOException {
+            public int getOrientationAndRewind(ImageHeaderParser imageHeaderParser) throws IOException {
                 try {
                     return imageHeaderParser.getOrientation(inputStream, arrayPool);
                 } finally {
@@ -122,28 +137,22 @@ public final class ImageHeaderParserUtils {
     }
 
     public static int getOrientation(List<ImageHeaderParser> list, final ParcelFileDescriptorRewinder parcelFileDescriptorRewinder, final ArrayPool arrayPool) throws IOException {
-        return getOrientationInternal(list, new OrientationReader() { // from class: com.bumptech.glide.load.ImageHeaderParserUtils.5
+        return getOrientationInternal(list, new OrientationReader() { // from class: com.bumptech.glide.load.ImageHeaderParserUtils.6
             @Override // com.bumptech.glide.load.ImageHeaderParserUtils.OrientationReader
-            public int getOrientation(ImageHeaderParser imageHeaderParser) throws IOException {
+            public int getOrientationAndRewind(ImageHeaderParser imageHeaderParser) throws IOException {
                 RecyclableBufferedInputStream recyclableBufferedInputStream = null;
                 try {
                     RecyclableBufferedInputStream recyclableBufferedInputStream2 = new RecyclableBufferedInputStream(new FileInputStream(ParcelFileDescriptorRewinder.this.rewindAndGet().getFileDescriptor()), arrayPool);
                     try {
                         int orientation = imageHeaderParser.getOrientation(recyclableBufferedInputStream2, arrayPool);
-                        try {
-                            recyclableBufferedInputStream2.close();
-                        } catch (IOException unused) {
-                        }
+                        recyclableBufferedInputStream2.release();
                         ParcelFileDescriptorRewinder.this.rewindAndGet();
                         return orientation;
                     } catch (Throwable th) {
                         th = th;
                         recyclableBufferedInputStream = recyclableBufferedInputStream2;
                         if (recyclableBufferedInputStream != null) {
-                            try {
-                                recyclableBufferedInputStream.close();
-                            } catch (IOException unused2) {
-                            }
+                            recyclableBufferedInputStream.release();
                         }
                         ParcelFileDescriptorRewinder.this.rewindAndGet();
                         throw th;
@@ -158,9 +167,9 @@ public final class ImageHeaderParserUtils {
     private static int getOrientationInternal(List<ImageHeaderParser> list, OrientationReader orientationReader) throws IOException {
         int size = list.size();
         for (int i = 0; i < size; i++) {
-            int orientation = orientationReader.getOrientation(list.get(i));
-            if (orientation != -1) {
-                return orientation;
+            int orientationAndRewind = orientationReader.getOrientationAndRewind(list.get(i));
+            if (orientationAndRewind != -1) {
+                return orientationAndRewind;
             }
         }
         return -1;

@@ -26,7 +26,7 @@
 
 
 # instance fields
-.field private final fromClass:Ljava/lang/Class;
+.field final fromClass:Ljava/lang/Class;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/lang/Class<",
@@ -35,7 +35,7 @@
     .end annotation
 .end field
 
-.field private final toClass:Ljava/lang/Class;
+.field final toClass:Ljava/lang/Class;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/lang/Class<",
@@ -69,16 +69,16 @@
         }
     .end annotation
 
-    .line 89
+    .line 91
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 90
+    .line 92
     iput-object p1, p0, Lcom/bumptech/glide/load/resource/transcode/TranscoderRegistry$Entry;->fromClass:Ljava/lang/Class;
 
-    .line 91
+    .line 93
     iput-object p2, p0, Lcom/bumptech/glide/load/resource/transcode/TranscoderRegistry$Entry;->toClass:Ljava/lang/Class;
 
-    .line 92
+    .line 94
     iput-object p3, p0, Lcom/bumptech/glide/load/resource/transcode/TranscoderRegistry$Entry;->transcoder:Lcom/bumptech/glide/load/resource/transcode/ResourceTranscoder;
 
     return-void
@@ -98,7 +98,7 @@
         }
     .end annotation
 
-    .line 102
+    .line 104
     iget-object v0, p0, Lcom/bumptech/glide/load/resource/transcode/TranscoderRegistry$Entry;->fromClass:Ljava/lang/Class;
 
     invoke-virtual {v0, p1}, Ljava/lang/Class;->isAssignableFrom(Ljava/lang/Class;)Z

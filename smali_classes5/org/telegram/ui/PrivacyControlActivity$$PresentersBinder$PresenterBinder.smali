@@ -27,7 +27,7 @@
     .locals 2
 
     .line 21
-    const-class p1, Lcom/smedialink/ui/wallet/crypto/settings/privacy/WalletPrivacySettingPresenter;
+    const-class p1, Lcom/iMe/ui/wallet/crypto/settings/privacy/WalletPrivacySettingPresenter;
 
     const-string v0, "presenter"
 
@@ -55,9 +55,9 @@
     .locals 0
 
     .line 26
-    check-cast p2, Lcom/smedialink/ui/wallet/crypto/settings/privacy/WalletPrivacySettingPresenter;
+    check-cast p2, Lcom/iMe/ui/wallet/crypto/settings/privacy/WalletPrivacySettingPresenter;
 
-    iput-object p2, p1, Lorg/telegram/ui/PrivacyControlActivity;->presenter:Lcom/smedialink/ui/wallet/crypto/settings/privacy/WalletPrivacySettingPresenter;
+    iput-object p2, p1, Lorg/telegram/ui/PrivacyControlActivity;->presenter:Lcom/iMe/ui/wallet/crypto/settings/privacy/WalletPrivacySettingPresenter;
 
     return-void
 .end method
@@ -88,7 +88,7 @@
     .end annotation
 
     .line 31
-    invoke-virtual {p1}, Lorg/telegram/ui/PrivacyControlActivity;->providePresenter()Lcom/smedialink/ui/wallet/crypto/settings/privacy/WalletPrivacySettingPresenter;
+    invoke-virtual {p1}, Lorg/telegram/ui/PrivacyControlActivity;->providePresenter()Lcom/iMe/ui/wallet/crypto/settings/privacy/WalletPrivacySettingPresenter;
 
     move-result-object p1
 

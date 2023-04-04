@@ -27,11 +27,11 @@
 
     iget-object v0, p0, Lorg/telegram/messenger/ContactsController$$ExternalSyntheticLambda51;->f$0:Ljava/text/Collator;
 
-    check-cast p1, Lorg/telegram/messenger/ContactsController$Contact;
+    check-cast p1, Ljava/lang/String;
 
-    check-cast p2, Lorg/telegram/messenger/ContactsController$Contact;
+    check-cast p2, Ljava/lang/String;
 
-    invoke-static {v0, p1, p2}, Lorg/telegram/messenger/ContactsController;->$r8$lambda$HgjsYwXkqCjqoPyvedooOxbKjAs(Ljava/text/Collator;Lorg/telegram/messenger/ContactsController$Contact;Lorg/telegram/messenger/ContactsController$Contact;)I
+    invoke-static {v0, p1, p2}, Lorg/telegram/messenger/ContactsController;->$r8$lambda$yFIbNTvZklCogPUEQoqW3tSlekQ(Ljava/text/Collator;Ljava/lang/String;Ljava/lang/String;)I
 
     move-result p1
 

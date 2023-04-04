@@ -2,7 +2,7 @@ package io.grpc;
 
 import com.google.common.base.MoreObjects;
 import com.google.common.base.Preconditions;
-/* loaded from: classes.dex */
+/* loaded from: classes4.dex */
 public abstract class ClientStreamTracer extends StreamTracer {
     public void inboundHeaders() {
     }
@@ -13,7 +13,7 @@ public abstract class ClientStreamTracer extends StreamTracer {
     public void outboundHeaders() {
     }
 
-    /* loaded from: classes.dex */
+    /* loaded from: classes4.dex */
     public static abstract class Factory {
         @Deprecated
         public ClientStreamTracer newClientStreamTracer(CallOptions callOptions, Metadata metadata) {
@@ -25,7 +25,7 @@ public abstract class ClientStreamTracer extends StreamTracer {
         }
     }
 
-    /* loaded from: classes.dex */
+    /* loaded from: classes4.dex */
     public static final class StreamInfo {
         private final CallOptions callOptions;
         private final Attributes transportAttrs;
@@ -47,7 +47,7 @@ public abstract class ClientStreamTracer extends StreamTracer {
             return MoreObjects.toStringHelper(this).add("transportAttrs", this.transportAttrs).add("callOptions", this.callOptions).toString();
         }
 
-        /* loaded from: classes.dex */
+        /* loaded from: classes4.dex */
         public static final class Builder {
             private Attributes transportAttrs = Attributes.EMPTY;
             private CallOptions callOptions = CallOptions.DEFAULT;

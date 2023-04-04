@@ -17,14 +17,14 @@ import android.widget.TextView;
 import androidx.collection.LongSparseArray;
 import androidx.recyclerview.widget.RecyclerView;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
-import com.smedialink.storage.domain.model.templates.TemplateModel;
+import com.iMe.fork.controller.TemplatesController;
+import com.iMe.fork.p025ui.view.TemplateCell;
+import com.iMe.fork.p025ui.view.TemplatesHeaderCell;
+import com.iMe.storage.domain.model.templates.TemplateModel;
 import java.util.ArrayList;
 import java.util.List;
-import org.fork.controller.TemplatesController;
-import org.fork.p046ui.view.TemplateCell;
-import org.fork.p046ui.view.TemplatesHeaderCell;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3301R;
+import org.telegram.messenger.C3316R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.UserConfig;
 import org.telegram.p048ui.ActionBar.MenuDrawable;
@@ -56,7 +56,7 @@ public class BotCommandsMenuView extends View {
     }
 
     public void enableTemplatesMode() {
-        this.templatesDrawable = getResources().getDrawable(C3301R.C3303drawable.fork_templates);
+        this.templatesDrawable = getResources().getDrawable(C3316R.C3318drawable.fork_templates);
     }
 
     public boolean isTemplatesMode() {
@@ -77,7 +77,7 @@ public class BotCommandsMenuView extends View {
             }
         };
         this.backDrawable = menuDrawable;
-        int i = C3301R.C3306raw.bot_webview_sheet_to_cross;
+        int i = C3316R.C3321raw.bot_webview_sheet_to_cross;
         this.webViewAnimation = new RLottieDrawable(i, String.valueOf(i) + hashCode(), AndroidUtilities.m50dp(20), AndroidUtilities.m50dp(20)) { // from class: org.telegram.ui.Components.BotCommandsMenuView.2
             @Override // android.graphics.drawable.Drawable
             public void invalidateSelf() {
@@ -91,7 +91,7 @@ public class BotCommandsMenuView extends View {
                 BotCommandsMenuView.this.invalidate();
             }
         };
-        this.menuText = LocaleController.getString(C3301R.string.BotsMenuTitle);
+        this.menuText = LocaleController.getString(C3316R.string.BotsMenuTitle);
         this.drawBackgroundDrawable = true;
         updateColors();
         menuDrawable.setMiniIcon(true);
@@ -103,7 +103,7 @@ public class BotCommandsMenuView extends View {
         Drawable createSimpleSelectorRoundRectDrawable = Theme.createSimpleSelectorRoundRectDrawable(AndroidUtilities.m50dp(16), 0, Theme.getColor("featuredStickers_addButtonPressed"));
         this.backgroundDrawable = createSimpleSelectorRoundRectDrawable;
         createSimpleSelectorRoundRectDrawable.setCallback(this);
-        setContentDescription(LocaleController.getString("AccDescrBotMenu", C3301R.string.AccDescrBotMenu));
+        setContentDescription(LocaleController.getString("AccDescrBotMenu", C3316R.string.AccDescrBotMenu));
     }
 
     public void setDrawBackgroundDrawable(boolean z) {
@@ -183,7 +183,7 @@ public class BotCommandsMenuView extends View {
 
     public boolean setMenuText(String str) {
         if (str == null) {
-            str = LocaleController.getString(C3301R.string.BotsMenuTitle);
+            str = LocaleController.getString(C3316R.string.BotsMenuTitle);
         }
         String str2 = this.menuText;
         boolean z = str2 == null || !str2.equals(str);

@@ -7,7 +7,7 @@ import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.Lambda;
 /* compiled from: WCBinanceCancelOrder.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 final class WCBinanceCancelOrderKt$cancelOrderDeserializer$1 extends Lambda implements Function1<DeserializerArg, WCBinanceCancelOrder.Message> {
     public static final WCBinanceCancelOrderKt$cancelOrderDeserializer$1 INSTANCE = new WCBinanceCancelOrderKt$cancelOrderDeserializer$1();
 

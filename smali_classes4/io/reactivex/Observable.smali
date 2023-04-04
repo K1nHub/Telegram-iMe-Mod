@@ -2576,7 +2576,7 @@
     .line 1879
     invoke-static {p0, v0}, Lio/reactivex/internal/functions/ObjectHelper;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
-    const-string v0, "unit is null"
+    const-string/jumbo v0, "unit is null"
 
     .line 1880
     invoke-static {p3, v0}, Lio/reactivex/internal/functions/ObjectHelper;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
@@ -2972,7 +2972,7 @@
         }
     .end annotation
 
-    const-string v0, "unit is null"
+    const-string/jumbo v0, "unit is null"
 
     .line 2242
     invoke-static {p4, v0}, Lio/reactivex/internal/functions/ObjectHelper;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
@@ -3178,7 +3178,7 @@
 
     :cond_2
     :goto_0
-    const-string v0, "unit is null"
+    const-string/jumbo v0, "unit is null"
 
     .line 2351
     invoke-static {v9, v0}, Lio/reactivex/internal/functions/ObjectHelper;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
@@ -5542,7 +5542,7 @@
         }
     .end annotation
 
-    const-string v0, "unit is null"
+    const-string/jumbo v0, "unit is null"
 
     .line 3977
     invoke-static {p2, v0}, Lio/reactivex/internal/functions/ObjectHelper;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
@@ -5609,7 +5609,7 @@
     :cond_0
     new-instance p0, Ljava/lang/IllegalArgumentException;
 
-    const-string v0, "unsafeCreate(Observable) should be upgraded"
+    const-string/jumbo v0, "unsafeCreate(Observable) should be upgraded"
 
     invoke-direct {p0, v0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
@@ -7691,7 +7691,7 @@
         }
     .end annotation
 
-    const-string v0, "unit is null"
+    const-string/jumbo v0, "unit is null"
 
     move-object/from16 v7, p5
 
@@ -7895,7 +7895,7 @@
         }
     .end annotation
 
-    const-string v0, "unit is null"
+    const-string/jumbo v0, "unit is null"
 
     move-object v7, p3
 
@@ -9530,7 +9530,7 @@
         }
     .end annotation
 
-    const-string v0, "unit is null"
+    const-string/jumbo v0, "unit is null"
 
     .line 7402
     invoke-static {p3, v0}, Lio/reactivex/internal/functions/ObjectHelper;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
@@ -9698,7 +9698,7 @@
         }
     .end annotation
 
-    const-string v0, "unit is null"
+    const-string/jumbo v0, "unit is null"
 
     .line 7559
     invoke-static {p3, v0}, Lio/reactivex/internal/functions/ObjectHelper;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
@@ -13088,7 +13088,7 @@
     .line 10652
     invoke-static {p2, v0}, Lio/reactivex/internal/functions/ObjectHelper;->verifyPositive(ILjava/lang/String;)I
 
-    const-string v0, "unit is null"
+    const-string/jumbo v0, "unit is null"
 
     .line 10653
     invoke-static {p5, v0}, Lio/reactivex/internal/functions/ObjectHelper;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
@@ -13240,7 +13240,7 @@
     .line 10758
     invoke-static {p1, v0}, Lio/reactivex/internal/functions/ObjectHelper;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
-    const-string v0, "unit is null"
+    const-string/jumbo v0, "unit is null"
 
     .line 10759
     invoke-static {p4, v0}, Lio/reactivex/internal/functions/ObjectHelper;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
@@ -13401,7 +13401,7 @@
     .line 10888
     invoke-static {p1, v0}, Lio/reactivex/internal/functions/ObjectHelper;->verifyPositive(ILjava/lang/String;)I
 
-    const-string v0, "unit is null"
+    const-string/jumbo v0, "unit is null"
 
     .line 10889
     invoke-static {p4, v0}, Lio/reactivex/internal/functions/ObjectHelper;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
@@ -13495,7 +13495,7 @@
         }
     .end annotation
 
-    const-string v0, "unit is null"
+    const-string/jumbo v0, "unit is null"
 
     .line 10975
     invoke-static {p3, v0}, Lio/reactivex/internal/functions/ObjectHelper;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
@@ -13843,7 +13843,7 @@
         }
     .end annotation
 
-    const-string v0, "unit is null"
+    const-string/jumbo v0, "unit is null"
 
     .line 11330
     invoke-static {p3, v0}, Lio/reactivex/internal/functions/ObjectHelper;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
@@ -13890,7 +13890,7 @@
         }
     .end annotation
 
-    const-string v0, "unit is null"
+    const-string/jumbo v0, "unit is null"
 
     .line 11366
     invoke-static {p3, v0}, Lio/reactivex/internal/functions/ObjectHelper;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
@@ -14495,7 +14495,7 @@
         }
     .end annotation
 
-    const-string v0, "unit is null"
+    const-string/jumbo v0, "unit is null"
 
     .line 11909
     invoke-static {p3, v0}, Lio/reactivex/internal/functions/ObjectHelper;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
@@ -15856,7 +15856,7 @@
 
     move-wide v2, p1
 
-    const-string v0, "unit is null"
+    const-string/jumbo v0, "unit is null"
 
     move-object/from16 v6, p5
 
@@ -16284,7 +16284,7 @@
         }
     .end annotation
 
-    const-string v0, "unit is null"
+    const-string/jumbo v0, "unit is null"
 
     .line 13204
     invoke-static {p3, v0}, Lio/reactivex/internal/functions/ObjectHelper;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
@@ -16433,7 +16433,7 @@
         }
     .end annotation
 
-    const-string v0, "unit is null"
+    const-string/jumbo v0, "unit is null"
 
     .line 13391
     invoke-static {p3, v0}, Lio/reactivex/internal/functions/ObjectHelper;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
@@ -16627,7 +16627,7 @@
         }
     .end annotation
 
-    const-string v0, "unit is null"
+    const-string/jumbo v0, "unit is null"
 
     .line 13544
     invoke-static {p1, v0}, Lio/reactivex/internal/functions/ObjectHelper;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
@@ -17008,7 +17008,7 @@
         }
     .end annotation
 
-    const-string v0, "unit is null"
+    const-string/jumbo v0, "unit is null"
 
     .line 13903
     invoke-static {p1, v0}, Lio/reactivex/internal/functions/ObjectHelper;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
@@ -17936,7 +17936,7 @@
     .line 14648
     invoke-static {v8, v0}, Lio/reactivex/internal/functions/ObjectHelper;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
-    const-string v0, "unit is null"
+    const-string/jumbo v0, "unit is null"
 
     move-object/from16 v7, p5
 
@@ -18202,7 +18202,7 @@
     .line 14883
     invoke-static {v8, v0}, Lio/reactivex/internal/functions/ObjectHelper;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
-    const-string v0, "unit is null"
+    const-string/jumbo v0, "unit is null"
 
     move-object/from16 v7, p3
 

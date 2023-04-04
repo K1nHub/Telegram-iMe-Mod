@@ -18,7 +18,7 @@
 .method constructor <init>(Lorg/telegram/ui/SelectAnimatedEmojiDialog;)V
     .locals 0
 
-    .line 651
+    .line 650
     invoke-direct {p0}, Landroidx/recyclerview/widget/DefaultItemAnimator;-><init>()V
 
     return-void
@@ -29,7 +29,7 @@
 .method protected animateByScale(Landroid/view/View;)F
     .locals 0
 
-    .line 654
+    .line 653
     instance-of p1, p1, Lorg/telegram/ui/SelectAnimatedEmojiDialog$EmojiPackExpand;
 
     if-eqz p1, :cond_0

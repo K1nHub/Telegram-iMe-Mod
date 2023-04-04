@@ -12,7 +12,7 @@ import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-/* loaded from: classes.dex */
+/* loaded from: classes4.dex */
 public final class LoadBalancerRegistry {
     private static LoadBalancerRegistry instance;
     private final LinkedHashSet<LoadBalancerProvider> allProviders = new LinkedHashSet<>();
@@ -79,7 +79,7 @@ public final class LoadBalancerRegistry {
         return Collections.unmodifiableList(arrayList);
     }
 
-    /* loaded from: classes.dex */
+    /* loaded from: classes4.dex */
     private static final class LoadBalancerPriorityAccessor implements ServiceProviders.PriorityAccessor<LoadBalancerProvider> {
         LoadBalancerPriorityAccessor() {
         }

@@ -5,7 +5,7 @@ import android.content.Intent;
 import android.os.RemoteException;
 import android.util.Log;
 import com.google.android.gms.dynamite.DynamiteModule;
-import com.google.android.gms.vision.C0710L;
+import com.google.android.gms.vision.C0724L;
 /* compiled from: com.google.android.gms:play-services-vision-common@@19.1.3 */
 /* loaded from: classes3.dex */
 public abstract class zzt<T> {
@@ -59,13 +59,13 @@ public abstract class zzt<T> {
                 dynamiteModule = DynamiteModule.load(this.zza, DynamiteModule.PREFER_HIGHEST_OR_REMOTE_VERSION, this.zzd);
             } catch (DynamiteModule.LoadingException unused) {
                 String format = String.format("%s.%s", "com.google.android.gms.vision", this.zze);
-                C0710L.m768d("Cannot load thick client module, fall back to load optional module %s", format);
+                C0724L.m768d("Cannot load thick client module, fall back to load optional module %s", format);
                 try {
                     dynamiteModule = DynamiteModule.load(this.zza, DynamiteModule.PREFER_REMOTE, format);
                 } catch (DynamiteModule.LoadingException e) {
-                    C0710L.m765e(e, "Error loading optional module %s", format);
+                    C0724L.m765e(e, "Error loading optional module %s", format);
                     if (!this.zzf) {
-                        C0710L.m768d("Broadcasting download intent for dependency %s", this.zze);
+                        C0724L.m768d("Broadcasting download intent for dependency %s", this.zze);
                         String str = this.zze;
                         Intent intent = new Intent();
                         intent.setClassName("com.google.android.gms", "com.google.android.gms.vision.DependencyBroadcastReceiverProxy");

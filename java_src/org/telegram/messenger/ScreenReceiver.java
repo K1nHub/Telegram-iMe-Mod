@@ -3,7 +3,7 @@ package org.telegram.messenger;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
-import com.smedialink.storage.domain.manager.crypto.CryptoAccessManager;
+import com.iMe.storage.domain.manager.crypto.CryptoAccessManager;
 import kotlin.Lazy;
 import org.koin.java.KoinJavaComponent;
 import org.telegram.tgnet.ConnectionsManager;

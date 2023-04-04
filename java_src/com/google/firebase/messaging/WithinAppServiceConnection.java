@@ -18,10 +18,9 @@ import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.ScheduledThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
-/* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: com.google.firebase:firebase-messaging@@23.0.0 */
 /* loaded from: classes3.dex */
-public class WithinAppServiceConnection implements ServiceConnection {
+class WithinAppServiceConnection implements ServiceConnection {
     private WithinAppServiceBinder binder;
     private boolean connectionInProgress;
     private final Intent connectionIntent;

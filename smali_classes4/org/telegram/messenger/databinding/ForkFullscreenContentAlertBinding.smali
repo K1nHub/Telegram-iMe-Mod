@@ -7,7 +7,7 @@
 
 
 # instance fields
-.field public final buttonAction:Lcom/smedialink/ui/custom/ActionButton;
+.field public final buttonAction:Lcom/iMe/ui/custom/ActionButton;
 
 .field public final imageAlertResult:Lorg/telegram/ui/Components/RLottieImageView;
 
@@ -19,7 +19,7 @@
 
 
 # direct methods
-.method private constructor <init>(Landroid/widget/LinearLayout;Lcom/smedialink/ui/custom/ActionButton;Lorg/telegram/ui/Components/RLottieImageView;Landroid/widget/LinearLayout;Landroidx/appcompat/widget/AppCompatTextView;Landroidx/appcompat/widget/AppCompatTextView;)V
+.method private constructor <init>(Landroid/widget/LinearLayout;Lcom/iMe/ui/custom/ActionButton;Lorg/telegram/ui/Components/RLottieImageView;Landroid/widget/LinearLayout;Landroidx/appcompat/widget/AppCompatTextView;Landroidx/appcompat/widget/AppCompatTextView;)V
     .locals 0
 
     .line 42
@@ -29,7 +29,7 @@
     iput-object p1, p0, Lorg/telegram/messenger/databinding/ForkFullscreenContentAlertBinding;->rootView:Landroid/widget/LinearLayout;
 
     .line 44
-    iput-object p2, p0, Lorg/telegram/messenger/databinding/ForkFullscreenContentAlertBinding;->buttonAction:Lcom/smedialink/ui/custom/ActionButton;
+    iput-object p2, p0, Lorg/telegram/messenger/databinding/ForkFullscreenContentAlertBinding;->buttonAction:Lcom/iMe/ui/custom/ActionButton;
 
     .line 45
     iput-object p3, p0, Lorg/telegram/messenger/databinding/ForkFullscreenContentAlertBinding;->imageAlertResult:Lorg/telegram/ui/Components/RLottieImageView;
@@ -56,7 +56,7 @@
 
     move-object v4, v1
 
-    check-cast v4, Lcom/smedialink/ui/custom/ActionButton;
+    check-cast v4, Lcom/iMe/ui/custom/ActionButton;
 
     if-eqz v4, :cond_0
 
@@ -114,7 +114,7 @@
 
     move-object v3, v6
 
-    invoke-direct/range {v2 .. v8}, Lorg/telegram/messenger/databinding/ForkFullscreenContentAlertBinding;-><init>(Landroid/widget/LinearLayout;Lcom/smedialink/ui/custom/ActionButton;Lorg/telegram/ui/Components/RLottieImageView;Landroid/widget/LinearLayout;Landroidx/appcompat/widget/AppCompatTextView;Landroidx/appcompat/widget/AppCompatTextView;)V
+    invoke-direct/range {v2 .. v8}, Lorg/telegram/messenger/databinding/ForkFullscreenContentAlertBinding;-><init>(Landroid/widget/LinearLayout;Lcom/iMe/ui/custom/ActionButton;Lorg/telegram/ui/Components/RLottieImageView;Landroid/widget/LinearLayout;Landroidx/appcompat/widget/AppCompatTextView;Landroidx/appcompat/widget/AppCompatTextView;)V
 
     return-object p0
 

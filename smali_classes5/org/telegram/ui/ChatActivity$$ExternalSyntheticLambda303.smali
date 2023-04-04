@@ -8,26 +8,22 @@
 # instance fields
 .field public final synthetic f$0:Lorg/telegram/ui/ChatActivity;
 
-.field public final synthetic f$1:Ljava/lang/String;
+.field public final synthetic f$1:Ljava/lang/Runnable;
 
-.field public final synthetic f$2:Lorg/telegram/tgnet/TLRPC$TL_messages_requestUrlAuth;
-
-.field public final synthetic f$3:Z
+.field public final synthetic f$2:[J
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/ChatActivity;Ljava/lang/String;Lorg/telegram/tgnet/TLRPC$TL_messages_requestUrlAuth;Z)V
+.method public synthetic constructor <init>(Lorg/telegram/ui/ChatActivity;Ljava/lang/Runnable;[J)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda303;->f$0:Lorg/telegram/ui/ChatActivity;
 
-    iput-object p2, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda303;->f$1:Ljava/lang/String;
+    iput-object p2, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda303;->f$1:Ljava/lang/Runnable;
 
-    iput-object p3, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda303;->f$2:Lorg/telegram/tgnet/TLRPC$TL_messages_requestUrlAuth;
-
-    iput-boolean p4, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda303;->f$3:Z
+    iput-object p3, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda303;->f$2:[J
 
     return-void
 .end method
@@ -35,21 +31,15 @@
 
 # virtual methods
 .method public final run(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
-    .locals 6
+    .locals 3
 
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda303;->f$0:Lorg/telegram/ui/ChatActivity;
 
-    iget-object v1, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda303;->f$1:Ljava/lang/String;
+    iget-object v1, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda303;->f$1:Ljava/lang/Runnable;
 
-    iget-object v2, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda303;->f$2:Lorg/telegram/tgnet/TLRPC$TL_messages_requestUrlAuth;
+    iget-object v2, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda303;->f$2:[J
 
-    iget-boolean v3, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda303;->f$3:Z
-
-    move-object v4, p1
-
-    move-object v5, p2
-
-    invoke-static/range {v0 .. v5}, Lorg/telegram/ui/ChatActivity;->$r8$lambda$gTN5vGSv0k_jFT66pe0akqDzxqY(Lorg/telegram/ui/ChatActivity;Ljava/lang/String;Lorg/telegram/tgnet/TLRPC$TL_messages_requestUrlAuth;ZLorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
+    invoke-static {v0, v1, v2, p1, p2}, Lorg/telegram/ui/ChatActivity;->$r8$lambda$8AI87kcYlutGZjfXqfVNtCF4a18(Lorg/telegram/ui/ChatActivity;Ljava/lang/Runnable;[JLorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
 
     return-void
 .end method

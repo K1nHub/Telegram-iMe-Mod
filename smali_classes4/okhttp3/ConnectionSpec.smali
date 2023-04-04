@@ -505,7 +505,7 @@
 
     move-result-object p1
 
-    const-string p2, "tlsVersionsIntersection"
+    const-string/jumbo p2, "tlsVersionsIntersection"
 
     .line 133
     invoke-static {v1, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
@@ -960,7 +960,7 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string v3, "tlsVersions="
+    const-string/jumbo v3, "tlsVersions="
 
     invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 

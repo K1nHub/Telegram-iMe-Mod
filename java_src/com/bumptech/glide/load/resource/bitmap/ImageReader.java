@@ -8,9 +8,11 @@ import com.bumptech.glide.load.ImageHeaderParserUtils;
 import com.bumptech.glide.load.data.InputStreamRewinder;
 import com.bumptech.glide.load.data.ParcelFileDescriptorRewinder;
 import com.bumptech.glide.load.engine.bitmap_recycle.ArrayPool;
+import com.bumptech.glide.util.ByteBufferUtil;
 import com.bumptech.glide.util.Preconditions;
 import java.io.IOException;
 import java.io.InputStream;
+import java.nio.ByteBuffer;
 import java.util.List;
 /* loaded from: classes.dex */
 interface ImageReader {
@@ -21,6 +23,43 @@ interface ImageReader {
     ImageHeaderParser.ImageType getImageType() throws IOException;
 
     void stopGrowingBuffers();
+
+    /* loaded from: classes.dex */
+    public static final class ByteBufferReader implements ImageReader {
+        private final ByteBuffer buffer;
+        private final ArrayPool byteArrayPool;
+        private final List<ImageHeaderParser> parsers;
+
+        @Override // com.bumptech.glide.load.resource.bitmap.ImageReader
+        public void stopGrowingBuffers() {
+        }
+
+        /* JADX INFO: Access modifiers changed from: package-private */
+        public ByteBufferReader(ByteBuffer byteBuffer, List<ImageHeaderParser> list, ArrayPool arrayPool) {
+            this.buffer = byteBuffer;
+            this.parsers = list;
+            this.byteArrayPool = arrayPool;
+        }
+
+        @Override // com.bumptech.glide.load.resource.bitmap.ImageReader
+        public Bitmap decodeBitmap(BitmapFactory.Options options) {
+            return BitmapFactory.decodeStream(stream(), null, options);
+        }
+
+        @Override // com.bumptech.glide.load.resource.bitmap.ImageReader
+        public ImageHeaderParser.ImageType getImageType() throws IOException {
+            return ImageHeaderParserUtils.getType(this.parsers, ByteBufferUtil.rewind(this.buffer));
+        }
+
+        @Override // com.bumptech.glide.load.resource.bitmap.ImageReader
+        public int getImageOrientation() throws IOException {
+            return ImageHeaderParserUtils.getOrientation(this.parsers, ByteBufferUtil.rewind(this.buffer), this.byteArrayPool);
+        }
+
+        private InputStream stream() {
+            return ByteBufferUtil.toStream(ByteBufferUtil.rewind(this.buffer));
+        }
+    }
 
     /* loaded from: classes.dex */
     public static final class InputStreamImageReader implements ImageReader {

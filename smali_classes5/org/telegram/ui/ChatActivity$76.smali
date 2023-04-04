@@ -1,11 +1,11 @@
 .class Lorg/telegram/ui/ChatActivity$76;
-.super Lorg/telegram/ui/Components/ChatAttachAlert;
+.super Landroid/animation/AnimatorListenerAdapter;
 .source "ChatActivity.java"
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lorg/telegram/ui/ChatActivity;->createChatAttachView()V
+    value = Lorg/telegram/ui/ChatActivity;->showBottomOverlayProgress(ZZ)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -17,154 +17,113 @@
 # instance fields
 .field final synthetic this$0:Lorg/telegram/ui/ChatActivity;
 
+.field final synthetic val$show:Z
+
 
 # direct methods
-.method constructor <init>(Lorg/telegram/ui/ChatActivity;Landroid/content/Context;Lorg/telegram/ui/ActionBar/BaseFragment;ZZLorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
-    .locals 6
+.method constructor <init>(Lorg/telegram/ui/ChatActivity;Z)V
+    .locals 0
 
-    .line 12019
+    .line 11870
     iput-object p1, p0, Lorg/telegram/ui/ChatActivity$76;->this$0:Lorg/telegram/ui/ChatActivity;
 
-    move-object v0, p0
+    iput-boolean p2, p0, Lorg/telegram/ui/ChatActivity$76;->val$show:Z
 
-    move-object v1, p2
-
-    move-object v2, p3
-
-    move v3, p4
-
-    move v4, p5
-
-    move-object v5, p6
-
-    invoke-direct/range {v0 .. v5}, Lorg/telegram/ui/Components/ChatAttachAlert;-><init>(Landroid/content/Context;Lorg/telegram/ui/ActionBar/BaseFragment;ZZLorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
+    invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public dismissInternal()V
-    .locals 3
+.method public onAnimationCancel(Landroid/animation/Animator;)V
+    .locals 1
 
-    .line 12022
+    .line 11884
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$76;->this$0:Lorg/telegram/ui/ChatActivity;
 
-    iget-object v0, v0, Lorg/telegram/ui/ChatActivity;->chatAttachAlert:Lorg/telegram/ui/Components/ChatAttachAlert;
-
-    if-eqz v0, :cond_0
-
-    invoke-virtual {v0}, Landroid/app/Dialog;->isShowing()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    .line 12023
-    iget-object v0, p0, Lorg/telegram/ui/ChatActivity$76;->this$0:Lorg/telegram/ui/ChatActivity;
-
-    invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
+    invoke-static {v0}, Lorg/telegram/ui/ChatActivity;->access$34100(Lorg/telegram/ui/ChatActivity;)Landroid/animation/AnimatorSet;
 
     move-result-object v0
 
-    iget-object v1, p0, Lorg/telegram/ui/ChatActivity$76;->this$0:Lorg/telegram/ui/ChatActivity;
+    if-eqz v0, :cond_0
 
-    invoke-static {v1}, Lorg/telegram/ui/ChatActivity;->access$34400(Lorg/telegram/ui/ChatActivity;)I
-
-    move-result v1
-
-    invoke-static {v0, v1}, Lorg/telegram/messenger/AndroidUtilities;->requestAdjustResize(Landroid/app/Activity;I)V
-
-    .line 12025
-    :cond_0
-    invoke-super {p0}, Lorg/telegram/ui/Components/ChatAttachAlert;->dismissInternal()V
-
-    .line 12026
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$76;->this$0:Lorg/telegram/ui/ChatActivity;
 
-    const/4 v1, 0x0
+    invoke-static {v0}, Lorg/telegram/ui/ChatActivity;->access$34100(Lorg/telegram/ui/ChatActivity;)Landroid/animation/AnimatorSet;
 
-    const/4 v2, 0x1
+    move-result-object v0
 
-    invoke-virtual {v0, v1, v2}, Lorg/telegram/ui/ChatActivity;->onEditTextDialogClose(ZZ)V
+    invoke-virtual {v0, p1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
 
+    move-result p1
+
+    if-eqz p1, :cond_0
+
+    .line 11885
+    iget-object p1, p0, Lorg/telegram/ui/ChatActivity$76;->this$0:Lorg/telegram/ui/ChatActivity;
+
+    const/4 v0, 0x0
+
+    invoke-static {p1, v0}, Lorg/telegram/ui/ChatActivity;->access$34102(Lorg/telegram/ui/ChatActivity;Landroid/animation/AnimatorSet;)Landroid/animation/AnimatorSet;
+
+    :cond_0
     return-void
 .end method
 
-.method public onDismissAnimationStart()V
-    .locals 3
+.method public onAnimationEnd(Landroid/animation/Animator;)V
+    .locals 1
 
-    .line 12031
+    .line 11873
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$76;->this$0:Lorg/telegram/ui/ChatActivity;
 
-    iget-object v0, v0, Lorg/telegram/ui/ChatActivity;->chatAttachAlert:Lorg/telegram/ui/Components/ChatAttachAlert;
+    invoke-static {v0}, Lorg/telegram/ui/ChatActivity;->access$34100(Lorg/telegram/ui/ChatActivity;)Landroid/animation/AnimatorSet;
 
-    const/4 v1, 0x0
+    move-result-object v0
 
-    if-eqz v0, :cond_0
+    if-eqz v0, :cond_1
 
-    .line 12032
-    invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/BottomSheet;->setFocusable(Z)V
+    iget-object v0, p0, Lorg/telegram/ui/ChatActivity$76;->this$0:Lorg/telegram/ui/ChatActivity;
 
-    .line 12034
+    invoke-static {v0}, Lorg/telegram/ui/ChatActivity;->access$34100(Lorg/telegram/ui/ChatActivity;)Landroid/animation/AnimatorSet;
+
+    move-result-object v0
+
+    invoke-virtual {v0, p1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+
+    move-result p1
+
+    if-eqz p1, :cond_1
+
+    .line 11874
+    iget-boolean p1, p0, Lorg/telegram/ui/ChatActivity$76;->val$show:Z
+
+    const/4 v0, 0x4
+
+    if-nez p1, :cond_0
+
+    .line 11875
+    iget-object p1, p0, Lorg/telegram/ui/ChatActivity$76;->this$0:Lorg/telegram/ui/ChatActivity;
+
+    invoke-static {p1}, Lorg/telegram/ui/ChatActivity;->access$34200(Lorg/telegram/ui/ChatActivity;)Lorg/telegram/ui/Components/RadialProgressView;
+
+    move-result-object p1
+
+    invoke-virtual {p1, v0}, Landroid/view/View;->setVisibility(I)V
+
+    goto :goto_0
+
+    .line 11877
     :cond_0
-    iget-object v0, p0, Lorg/telegram/ui/ChatActivity$76;->this$0:Lorg/telegram/ui/ChatActivity;
+    iget-object p1, p0, Lorg/telegram/ui/ChatActivity$76;->this$0:Lorg/telegram/ui/ChatActivity;
 
-    iget-object v0, v0, Lorg/telegram/ui/ChatActivity;->chatActivityEnterView:Lorg/telegram/ui/Components/ChatActivityEnterView;
+    invoke-static {p1}, Lorg/telegram/ui/ChatActivity;->access$28200(Lorg/telegram/ui/ChatActivity;)Lorg/telegram/ui/Components/UnreadCounterTextView;
 
-    if-eqz v0, :cond_1
+    move-result-object p1
 
-    invoke-virtual {v0}, Lorg/telegram/ui/Components/ChatActivityEnterView;->getEditField()Lorg/telegram/ui/Components/EditTextCaption;
+    invoke-virtual {p1, v0}, Landroid/view/View;->setVisibility(I)V
 
-    move-result-object v0
-
-    if-eqz v0, :cond_1
-
-    .line 12035
-    iget-object v0, p0, Lorg/telegram/ui/ChatActivity$76;->this$0:Lorg/telegram/ui/ChatActivity;
-
-    iget-object v0, v0, Lorg/telegram/ui/ChatActivity;->chatActivityEnterView:Lorg/telegram/ui/Components/ChatActivityEnterView;
-
-    invoke-virtual {v0}, Lorg/telegram/ui/Components/ChatActivityEnterView;->getEditField()Lorg/telegram/ui/Components/EditTextCaption;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Landroid/widget/EditText;->requestFocus()Z
-
-    .line 12037
     :cond_1
-    iget-object v0, p0, Lorg/telegram/ui/ChatActivity$76;->this$0:Lorg/telegram/ui/ChatActivity;
-
-    iget-object v0, v0, Lorg/telegram/ui/ChatActivity;->chatAttachAlert:Lorg/telegram/ui/Components/ChatAttachAlert;
-
-    if-eqz v0, :cond_2
-
-    invoke-virtual {v0}, Landroid/app/Dialog;->isShowing()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_2
-
-    .line 12038
-    iget-object v0, p0, Lorg/telegram/ui/ChatActivity$76;->this$0:Lorg/telegram/ui/ChatActivity;
-
-    invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
-
-    move-result-object v0
-
-    iget-object v2, p0, Lorg/telegram/ui/ChatActivity$76;->this$0:Lorg/telegram/ui/ChatActivity;
-
-    invoke-static {v2}, Lorg/telegram/ui/ChatActivity;->access$34500(Lorg/telegram/ui/ChatActivity;)I
-
-    move-result v2
-
-    invoke-static {v0, v2}, Lorg/telegram/messenger/AndroidUtilities;->requestAdjustResize(Landroid/app/Activity;I)V
-
-    .line 12040
-    :cond_2
-    iget-object v0, p0, Lorg/telegram/ui/ChatActivity$76;->this$0:Lorg/telegram/ui/ChatActivity;
-
-    invoke-virtual {v0, v1, v1}, Lorg/telegram/ui/ChatActivity;->onEditTextDialogClose(ZZ)V
-
+    :goto_0
     return-void
 .end method

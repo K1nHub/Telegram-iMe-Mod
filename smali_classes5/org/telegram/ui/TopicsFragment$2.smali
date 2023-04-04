@@ -64,7 +64,7 @@
 .method constructor <init>(Lorg/telegram/ui/TopicsFragment;Landroid/content/Context;)V
     .locals 0
 
-    .line 508
+    .line 511
     iput-object p1, p0, Lorg/telegram/ui/TopicsFragment$2;->this$0:Lorg/telegram/ui/TopicsFragment;
 
     iput-object p2, p0, Lorg/telegram/ui/TopicsFragment$2;->val$context:Landroid/content/Context;
@@ -79,7 +79,7 @@
 
     const/4 v0, 0x0
 
-    .line 550
+    .line 553
     aget v1, p1, v0
 
     add-int/lit8 v1, v1, 0x1
@@ -88,7 +88,7 @@
 
     if-ne v1, p2, :cond_0
 
-    .line 551
+    .line 554
     iget-object p1, p0, Lorg/telegram/ui/TopicsFragment$2;->this$0:Lorg/telegram/ui/TopicsFragment;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/BulletinFactory;->of(Lorg/telegram/ui/ActionBar/BaseFragment;)Lorg/telegram/ui/Components/BulletinFactory;
@@ -124,7 +124,7 @@
 
     move-object/from16 v7, p0
 
-    .line 545
+    .line 548
     invoke-virtual/range {p3 .. p3}, Ljava/util/ArrayList;->size()I
 
     move-result v8
@@ -142,7 +142,7 @@
 
     move-object/from16 v11, p3
 
-    .line 548
+    .line 551
     invoke-virtual {v11, v10}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v0
@@ -151,7 +151,7 @@
 
     check-cast v15, Lorg/telegram/tgnet/TLRPC$User;
 
-    .line 549
+    .line 552
     iget-object v0, v7, Lorg/telegram/ui/TopicsFragment$2;->this$0:Lorg/telegram/ui/TopicsFragment;
 
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getMessagesController()Lorg/telegram/messenger/MessagesController;
@@ -199,7 +199,7 @@
 .method private static synthetic lambda$onItemClick$2(Lorg/telegram/ui/TopicCreateFragment;)V
     .locals 0
 
-    .line 563
+    .line 566
     invoke-virtual {p0}, Lorg/telegram/ui/TopicCreateFragment;->showKeyboard()V
 
     return-void
@@ -208,7 +208,7 @@
 .method private synthetic lambda$onItemClick$3(Lorg/telegram/tgnet/TLRPC$Chat;Z)V
     .locals 6
 
-    .line 569
+    .line 572
     iget-object v0, p0, Lorg/telegram/ui/TopicsFragment$2;->this$0:Lorg/telegram/ui/TopicsFragment;
 
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getNotificationCenter()Lorg/telegram/messenger/NotificationCenter;
@@ -221,7 +221,7 @@
 
     invoke-virtual {v0, v1, v2}, Lorg/telegram/messenger/NotificationCenter;->removeObserver(Lorg/telegram/messenger/NotificationCenter$NotificationCenterDelegate;I)V
 
-    .line 570
+    .line 573
     iget-object v0, p0, Lorg/telegram/ui/TopicsFragment$2;->this$0:Lorg/telegram/ui/TopicsFragment;
 
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getNotificationCenter()Lorg/telegram/messenger/NotificationCenter;
@@ -234,12 +234,12 @@
 
     invoke-virtual {v0, v2, v3}, Lorg/telegram/messenger/NotificationCenter;->postNotificationName(I[Ljava/lang/Object;)V
 
-    .line 571
+    .line 574
     iget-object v0, p0, Lorg/telegram/ui/TopicsFragment$2;->this$0:Lorg/telegram/ui/TopicsFragment;
 
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->finishFragment()V
 
-    .line 572
+    .line 575
     iget-object v0, p0, Lorg/telegram/ui/TopicsFragment$2;->this$0:Lorg/telegram/ui/TopicsFragment;
 
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getNotificationCenter()Lorg/telegram/messenger/NotificationCenter;
@@ -288,7 +288,7 @@
 .method private synthetic lambda$onItemClick$4()V
     .locals 1
 
-    .line 577
+    .line 580
     iget-object v0, p0, Lorg/telegram/ui/TopicsFragment$2;->this$0:Lorg/telegram/ui/TopicsFragment;
 
     invoke-static {v0}, Lorg/telegram/ui/TopicsFragment;->access$1200(Lorg/telegram/ui/TopicsFragment;)V
@@ -309,7 +309,7 @@
 
     if-ne v12, v0, :cond_1
 
-    .line 512
+    .line 515
     iget-object v0, v11, Lorg/telegram/ui/TopicsFragment$2;->this$0:Lorg/telegram/ui/TopicsFragment;
 
     iget-object v0, v0, Lorg/telegram/ui/TopicsFragment;->selectedTopics:Ljava/util/HashSet;
@@ -320,14 +320,14 @@
 
     if-lez v0, :cond_0
 
-    .line 513
+    .line 516
     iget-object v0, v11, Lorg/telegram/ui/TopicsFragment$2;->this$0:Lorg/telegram/ui/TopicsFragment;
 
     invoke-static {v0}, Lorg/telegram/ui/TopicsFragment;->access$1200(Lorg/telegram/ui/TopicsFragment;)V
 
     return-void
 
-    .line 516
+    .line 519
     :cond_0
     iget-object v0, v11, Lorg/telegram/ui/TopicsFragment$2;->this$0:Lorg/telegram/ui/TopicsFragment;
 
@@ -349,7 +349,7 @@
     :pswitch_0
     move v3, v1
 
-    .line 584
+    .line 587
     :goto_0
     iget-object v4, v11, Lorg/telegram/ui/TopicsFragment$2;->this$0:Lorg/telegram/ui/TopicsFragment;
 
@@ -363,7 +363,7 @@
 
     if-ge v3, v4, :cond_3
 
-    .line 585
+    .line 588
     iget-object v4, v11, Lorg/telegram/ui/TopicsFragment$2;->this$0:Lorg/telegram/ui/TopicsFragment;
 
     invoke-static {v4}, Lorg/telegram/ui/TopicsFragment;->access$1100(Lorg/telegram/ui/TopicsFragment;)Lorg/telegram/ui/TopicsFragment$TopicsRecyclerView;
@@ -374,7 +374,7 @@
 
     move-result-object v4
 
-    .line 586
+    .line 589
     instance-of v5, v4, Lorg/telegram/ui/TopicsFragment$TopicDialogCell;
 
     if-eqz v5, :cond_2
@@ -404,7 +404,7 @@
     :goto_1
     if-nez v0, :cond_5
 
-    .line 593
+    .line 596
     :goto_2
     iget-object v3, v11, Lorg/telegram/ui/TopicsFragment$2;->this$0:Lorg/telegram/ui/TopicsFragment;
 
@@ -416,7 +416,7 @@
 
     if-ge v1, v3, :cond_5
 
-    .line 594
+    .line 597
     iget-object v3, v11, Lorg/telegram/ui/TopicsFragment$2;->this$0:Lorg/telegram/ui/TopicsFragment;
 
     iget-object v3, v3, Lorg/telegram/ui/TopicsFragment;->forumTopics:Ljava/util/ArrayList;
@@ -457,7 +457,7 @@
 
     if-ne v3, v2, :cond_4
 
-    .line 595
+    .line 598
     iget-object v0, v11, Lorg/telegram/ui/TopicsFragment$2;->this$0:Lorg/telegram/ui/TopicsFragment;
 
     iget-object v0, v0, Lorg/telegram/ui/TopicsFragment;->forumTopics:Ljava/util/ArrayList;
@@ -481,7 +481,7 @@
     :goto_3
     if-eqz v0, :cond_8
 
-    .line 601
+    .line 604
     iget-object v1, v11, Lorg/telegram/ui/TopicsFragment$2;->this$0:Lorg/telegram/ui/TopicsFragment;
 
     invoke-static {v1}, Lorg/telegram/ui/TopicsFragment;->access$1500(Lorg/telegram/ui/TopicsFragment;)I
@@ -490,19 +490,19 @@
 
     if-gtz v1, :cond_6
 
-    .line 602
+    .line 605
     iget-object v1, v11, Lorg/telegram/ui/TopicsFragment$2;->this$0:Lorg/telegram/ui/TopicsFragment;
 
     invoke-static {v1, v2}, Lorg/telegram/ui/TopicsFragment;->access$1602(Lorg/telegram/ui/TopicsFragment;Z)Z
 
-    .line 603
+    .line 606
     iget-object v1, v11, Lorg/telegram/ui/TopicsFragment$2;->this$0:Lorg/telegram/ui/TopicsFragment;
 
     const/4 v3, 0x2
 
     invoke-static {v1, v3}, Lorg/telegram/ui/TopicsFragment;->access$1702(Lorg/telegram/ui/TopicsFragment;I)I
 
-    .line 605
+    .line 608
     :cond_6
     iget-object v1, v11, Lorg/telegram/ui/TopicsFragment$2;->this$0:Lorg/telegram/ui/TopicsFragment;
 
@@ -524,12 +524,12 @@
 
     if-eqz v4, :cond_7
 
-    .line 607
+    .line 610
     iget-object v1, v11, Lorg/telegram/ui/TopicsFragment$2;->this$0:Lorg/telegram/ui/TopicsFragment;
 
     invoke-static {v1, v4}, Lorg/telegram/ui/TopicsFragment;->access$1802(Lorg/telegram/ui/TopicsFragment;Landroid/view/View;)Landroid/view/View;
 
-    .line 609
+    .line 612
     :cond_7
     iget-object v1, v11, Lorg/telegram/ui/TopicsFragment$2;->this$0:Lorg/telegram/ui/TopicsFragment;
 
@@ -543,21 +543,21 @@
 
     invoke-static {v1, v0, v4}, Lorg/telegram/ui/TopicsFragment$TopicsRecyclerView;->access$1900(Lorg/telegram/ui/TopicsFragment$TopicsRecyclerView;ZLorg/telegram/ui/Cells/DialogCell;)V
 
-    .line 610
+    .line 613
     iget-object v0, v11, Lorg/telegram/ui/TopicsFragment$2;->this$0:Lorg/telegram/ui/TopicsFragment;
 
     invoke-static {v0, v2, v2}, Lorg/telegram/ui/TopicsFragment;->access$2000(Lorg/telegram/ui/TopicsFragment;ZZ)V
 
     if-eqz v4, :cond_8
 
-    .line 612
+    .line 615
     invoke-static {v4}, Lorg/telegram/ui/TopicsFragment$TopicDialogCell;->access$2100(Lorg/telegram/ui/TopicsFragment$TopicDialogCell;)Lorg/telegram/tgnet/TLRPC$TL_forumTopic;
 
     move-result-object v0
 
     invoke-virtual {v4, v0}, Lorg/telegram/ui/TopicsFragment$TopicDialogCell;->setTopicIcon(Lorg/telegram/tgnet/TLRPC$TL_forumTopic;)V
 
-    .line 615
+    .line 618
     :cond_8
     iget-object v0, v11, Lorg/telegram/ui/TopicsFragment$2;->this$0:Lorg/telegram/ui/TopicsFragment;
 
@@ -565,7 +565,7 @@
 
     goto/16 :goto_b
 
-    .line 567
+    .line 570
     :pswitch_1
     iget-object v0, v11, Lorg/telegram/ui/TopicsFragment$2;->this$0:Lorg/telegram/ui/TopicsFragment;
 
@@ -585,7 +585,7 @@
 
     move-result-object v4
 
-    .line 568
+    .line 571
     iget-object v2, v11, Lorg/telegram/ui/TopicsFragment$2;->this$0:Lorg/telegram/ui/TopicsFragment;
 
     const/4 v3, 0x0
@@ -610,13 +610,13 @@
 
     goto/16 :goto_b
 
-    .line 636
+    .line 639
     :pswitch_2
     iget-object v0, v11, Lorg/telegram/ui/TopicsFragment$2;->this$0:Lorg/telegram/ui/TopicsFragment;
 
     invoke-static {v0, v2}, Lorg/telegram/ui/TopicsFragment;->access$2302(Lorg/telegram/ui/TopicsFragment;Z)Z
 
-    .line 637
+    .line 640
     new-instance v0, Ljava/util/ArrayList;
 
     iget-object v3, v11, Lorg/telegram/ui/TopicsFragment$2;->this$0:Lorg/telegram/ui/TopicsFragment;
@@ -627,7 +627,7 @@
 
     move v3, v1
 
-    .line 638
+    .line 641
     :goto_4
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
@@ -635,7 +635,7 @@
 
     if-ge v3, v4, :cond_a
 
-    .line 639
+    .line 642
     iget-object v4, v11, Lorg/telegram/ui/TopicsFragment$2;->this$0:Lorg/telegram/ui/TopicsFragment;
 
     invoke-static {v4}, Lorg/telegram/ui/TopicsFragment;->access$2400(Lorg/telegram/ui/TopicsFragment;)Lorg/telegram/messenger/TopicsController;
@@ -674,7 +674,7 @@
 
     goto :goto_4
 
-    .line 641
+    .line 644
     :cond_a
     iget-object v0, v11, Lorg/telegram/ui/TopicsFragment$2;->this$0:Lorg/telegram/ui/TopicsFragment;
 
@@ -682,7 +682,7 @@
 
     goto/16 :goto_b
 
-    .line 644
+    .line 647
     :pswitch_3
     new-instance v0, Ljava/util/ArrayList;
 
@@ -694,7 +694,7 @@
 
     move v2, v1
 
-    .line 645
+    .line 648
     :goto_6
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
@@ -702,7 +702,7 @@
 
     if-ge v2, v3, :cond_d
 
-    .line 646
+    .line 649
     iget-object v3, v11, Lorg/telegram/ui/TopicsFragment$2;->this$0:Lorg/telegram/ui/TopicsFragment;
 
     invoke-static {v3}, Lorg/telegram/ui/TopicsFragment;->access$2400(Lorg/telegram/ui/TopicsFragment;)Lorg/telegram/messenger/TopicsController;
@@ -729,7 +729,7 @@
 
     if-eqz v3, :cond_c
 
-    .line 648
+    .line 651
     iget-object v4, v11, Lorg/telegram/ui/TopicsFragment$2;->this$0:Lorg/telegram/ui/TopicsFragment;
 
     invoke-virtual {v4}, Lorg/telegram/ui/ActionBar/BaseFragment;->getMessagesController()Lorg/telegram/messenger/MessagesController;
@@ -746,7 +746,7 @@
 
     invoke-virtual {v4, v5, v6, v7}, Lorg/telegram/messenger/MessagesController;->markMentionsAsRead(JI)V
 
-    .line 649
+    .line 652
     iget-object v4, v11, Lorg/telegram/ui/TopicsFragment$2;->this$0:Lorg/telegram/ui/TopicsFragment;
 
     invoke-virtual {v4}, Lorg/telegram/ui/ActionBar/BaseFragment;->getMessagesController()Lorg/telegram/messenger/MessagesController;
@@ -793,7 +793,7 @@
 
     invoke-virtual/range {v13 .. v23}, Lorg/telegram/messenger/MessagesController;->markDialogAsRead(JIIIZIIZI)V
 
-    .line 650
+    .line 653
     iget-object v4, v11, Lorg/telegram/ui/TopicsFragment$2;->this$0:Lorg/telegram/ui/TopicsFragment;
 
     invoke-virtual {v4}, Lorg/telegram/ui/ActionBar/BaseFragment;->getMessagesStorage()Lorg/telegram/messenger/MessagesStorage;
@@ -823,7 +823,7 @@
 
     goto :goto_6
 
-    .line 653
+    .line 656
     :cond_d
     iget-object v0, v11, Lorg/telegram/ui/TopicsFragment$2;->this$0:Lorg/telegram/ui/TopicsFragment;
 
@@ -831,7 +831,7 @@
 
     goto/16 :goto_b
 
-    .line 576
+    .line 579
     :pswitch_4
     iget-object v0, v11, Lorg/telegram/ui/TopicsFragment$2;->this$0:Lorg/telegram/ui/TopicsFragment;
 
@@ -845,7 +845,7 @@
 
     goto/16 :goto_b
 
-    .line 627
+    .line 630
     :pswitch_5
     iget-object v0, v11, Lorg/telegram/ui/TopicsFragment$2;->this$0:Lorg/telegram/ui/TopicsFragment;
 
@@ -855,7 +855,7 @@
 
     move-result-object v0
 
-    .line 628
+    .line 631
     :goto_8
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
@@ -863,7 +863,7 @@
 
     if-eqz v1, :cond_e
 
-    .line 629
+    .line 632
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v1
@@ -874,7 +874,7 @@
 
     move-result v1
 
-    .line 630
+    .line 633
     iget-object v2, v11, Lorg/telegram/ui/TopicsFragment$2;->this$0:Lorg/telegram/ui/TopicsFragment;
 
     invoke-static {v2}, Lorg/telegram/ui/TopicsFragment;->access$2600(Lorg/telegram/ui/TopicsFragment;)Lorg/telegram/messenger/NotificationsController;
@@ -895,7 +895,7 @@
 
     goto :goto_8
 
-    .line 632
+    .line 635
     :cond_e
     iget-object v0, v11, Lorg/telegram/ui/TopicsFragment$2;->this$0:Lorg/telegram/ui/TopicsFragment;
 
@@ -903,7 +903,7 @@
 
     goto/16 :goto_b
 
-    .line 619
+    .line 622
     :pswitch_6
     iget-object v0, v11, Lorg/telegram/ui/TopicsFragment$2;->this$0:Lorg/telegram/ui/TopicsFragment;
 
@@ -915,17 +915,17 @@
 
     if-lez v0, :cond_10
 
-    .line 620
+    .line 623
     iget-object v0, v11, Lorg/telegram/ui/TopicsFragment$2;->this$0:Lorg/telegram/ui/TopicsFragment;
 
     invoke-static {v0, v2}, Lorg/telegram/ui/TopicsFragment;->access$2202(Lorg/telegram/ui/TopicsFragment;Z)Z
 
-    .line 621
+    .line 624
     iget-object v0, v11, Lorg/telegram/ui/TopicsFragment$2;->this$0:Lorg/telegram/ui/TopicsFragment;
 
     invoke-static {v0, v2}, Lorg/telegram/ui/TopicsFragment;->access$2302(Lorg/telegram/ui/TopicsFragment;Z)Z
 
-    .line 622
+    .line 625
     iget-object v0, v11, Lorg/telegram/ui/TopicsFragment$2;->this$0:Lorg/telegram/ui/TopicsFragment;
 
     invoke-static {v0}, Lorg/telegram/ui/TopicsFragment;->access$2400(Lorg/telegram/ui/TopicsFragment;)Lorg/telegram/messenger/TopicsController;
@@ -968,7 +968,7 @@
 
     invoke-virtual/range {v3 .. v8}, Lorg/telegram/messenger/TopicsController;->pinTopic(JIZLorg/telegram/ui/ActionBar/BaseFragment;)V
 
-    .line 624
+    .line 627
     :cond_10
     iget-object v0, v11, Lorg/telegram/ui/TopicsFragment$2;->this$0:Lorg/telegram/ui/TopicsFragment;
 
@@ -976,7 +976,7 @@
 
     goto/16 :goto_b
 
-    .line 560
+    .line 563
     :pswitch_7
     iget-object v0, v11, Lorg/telegram/ui/TopicsFragment$2;->this$0:Lorg/telegram/ui/TopicsFragment;
 
@@ -986,12 +986,12 @@
 
     move-result-object v0
 
-    .line 561
+    .line 564
     iget-object v1, v11, Lorg/telegram/ui/TopicsFragment$2;->this$0:Lorg/telegram/ui/TopicsFragment;
 
     invoke-virtual {v1, v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->presentFragment(Lorg/telegram/ui/ActionBar/BaseFragment;)Z
 
-    .line 562
+    .line 565
     new-instance v1, Lorg/telegram/ui/TopicsFragment$2$$ExternalSyntheticLambda0;
 
     invoke-direct {v1, v0}, Lorg/telegram/ui/TopicsFragment$2$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/TopicCreateFragment;)V
@@ -1002,7 +1002,7 @@
 
     goto/16 :goto_b
 
-    .line 525
+    .line 528
     :pswitch_8
     iget-object v2, v11, Lorg/telegram/ui/TopicsFragment$2;->this$0:Lorg/telegram/ui/TopicsFragment;
 
@@ -1018,7 +1018,7 @@
 
     move-result-object v2
 
-    .line 526
+    .line 529
     iget-object v3, v11, Lorg/telegram/ui/TopicsFragment$2;->this$0:Lorg/telegram/ui/TopicsFragment;
 
     iget-object v3, v3, Lorg/telegram/ui/TopicsFragment;->chatFull:Lorg/telegram/tgnet/TLRPC$ChatFull;
@@ -1029,23 +1029,23 @@
 
     if-eqz v3, :cond_11
 
-    .line 527
+    .line 530
     iput-object v3, v2, Lorg/telegram/tgnet/TLRPC$ChatFull;->participants:Lorg/telegram/tgnet/TLRPC$ChatParticipants;
 
     :cond_11
     if-eqz v2, :cond_13
 
-    .line 530
+    .line 533
     new-instance v4, Landroidx/collection/LongSparseArray;
 
     invoke-direct {v4}, Landroidx/collection/LongSparseArray;-><init>()V
 
-    .line 531
+    .line 534
     iget-object v3, v2, Lorg/telegram/tgnet/TLRPC$ChatFull;->participants:Lorg/telegram/tgnet/TLRPC$ChatParticipants;
 
     if-eqz v3, :cond_12
 
-    .line 532
+    .line 535
     :goto_a
     iget-object v3, v2, Lorg/telegram/tgnet/TLRPC$ChatFull;->participants:Lorg/telegram/tgnet/TLRPC$ChatParticipants;
 
@@ -1057,7 +1057,7 @@
 
     if-ge v1, v3, :cond_12
 
-    .line 533
+    .line 536
     iget-object v3, v2, Lorg/telegram/tgnet/TLRPC$ChatFull;->participants:Lorg/telegram/tgnet/TLRPC$ChatParticipants;
 
     iget-object v3, v3, Lorg/telegram/tgnet/TLRPC$ChatParticipants;->participants:Ljava/util/ArrayList;
@@ -1076,11 +1076,11 @@
 
     goto :goto_a
 
-    .line 536
+    .line 539
     :cond_12
     iget-wide v13, v2, Lorg/telegram/tgnet/TLRPC$ChatFull;->id:J
 
-    .line 537
+    .line 540
     new-instance v15, Lorg/telegram/ui/TopicsFragment$2$1;
 
     iget-object v3, v11, Lorg/telegram/ui/TopicsFragment$2;->val$context:Landroid/content/Context;
@@ -1115,25 +1115,25 @@
 
     invoke-direct/range {v0 .. v10}, Lorg/telegram/ui/TopicsFragment$2$1;-><init>(Lorg/telegram/ui/TopicsFragment$2;Landroid/content/Context;ILandroidx/collection/LongSparseArray;JLorg/telegram/ui/ActionBar/BaseFragment;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;J)V
 
-    .line 544
+    .line 547
     new-instance v0, Lorg/telegram/ui/TopicsFragment$2$$ExternalSyntheticLambda4;
 
     invoke-direct {v0, v11, v13, v14}, Lorg/telegram/ui/TopicsFragment$2$$ExternalSyntheticLambda4;-><init>(Lorg/telegram/ui/TopicsFragment$2;J)V
 
     invoke-virtual {v15, v0}, Lorg/telegram/ui/Components/InviteMembersBottomSheet;->setDelegate(Lorg/telegram/ui/GroupCreateActivity$ContactsAddActivityDelegate;)V
 
-    .line 556
+    .line 559
     invoke-virtual {v15}, Lorg/telegram/ui/ActionBar/BottomSheet;->show()V
 
     goto :goto_b
 
-    .line 522
+    .line 525
     :pswitch_9
     iget-object v0, v11, Lorg/telegram/ui/TopicsFragment$2;->this$0:Lorg/telegram/ui/TopicsFragment;
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/TopicsFragment;->switchToChat(Z)V
 
-    .line 656
+    .line 659
     :cond_13
     :goto_b
     invoke-super/range {p0 .. p1}, Lorg/telegram/ui/ActionBar/ActionBar$ActionBarMenuOnItemClick;->onItemClick(I)V

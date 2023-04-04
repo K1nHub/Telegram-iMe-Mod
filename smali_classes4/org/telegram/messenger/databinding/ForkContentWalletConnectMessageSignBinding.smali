@@ -9,7 +9,7 @@
 # instance fields
 .field public final buttonClose:Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
 
-.field public final buttonProcess:Lcom/smedialink/ui/custom/BigActionButton;
+.field public final buttonProcess:Lcom/iMe/ui/custom/BigActionButton;
 
 .field private final rootView:Landroid/widget/LinearLayout;
 
@@ -23,7 +23,7 @@
 
 
 # direct methods
-.method private constructor <init>(Landroid/widget/LinearLayout;Lorg/telegram/ui/ActionBar/ActionBarMenuItem;Lcom/smedialink/ui/custom/BigActionButton;Landroid/widget/LinearLayout;Lorg/telegram/ui/Cells/TextDetailCell;Landroidx/appcompat/widget/AppCompatTextView;Lorg/telegram/ui/Cells/TextDetailCell;Landroidx/appcompat/widget/AppCompatTextView;)V
+.method private constructor <init>(Landroid/widget/LinearLayout;Lorg/telegram/ui/ActionBar/ActionBarMenuItem;Lcom/iMe/ui/custom/BigActionButton;Landroid/widget/LinearLayout;Lorg/telegram/ui/Cells/TextDetailCell;Landroidx/appcompat/widget/AppCompatTextView;Lorg/telegram/ui/Cells/TextDetailCell;Landroidx/appcompat/widget/AppCompatTextView;)V
     .locals 0
 
     .line 50
@@ -36,7 +36,7 @@
     iput-object p2, p0, Lorg/telegram/messenger/databinding/ForkContentWalletConnectMessageSignBinding;->buttonClose:Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
 
     .line 53
-    iput-object p3, p0, Lorg/telegram/messenger/databinding/ForkContentWalletConnectMessageSignBinding;->buttonProcess:Lcom/smedialink/ui/custom/BigActionButton;
+    iput-object p3, p0, Lorg/telegram/messenger/databinding/ForkContentWalletConnectMessageSignBinding;->buttonProcess:Lcom/iMe/ui/custom/BigActionButton;
 
     .line 55
     iput-object p5, p0, Lorg/telegram/messenger/databinding/ForkContentWalletConnectMessageSignBinding;->textFrom:Lorg/telegram/ui/Cells/TextDetailCell;
@@ -80,7 +80,7 @@
 
     move-object v5, v1
 
-    check-cast v5, Lcom/smedialink/ui/custom/BigActionButton;
+    check-cast v5, Lcom/iMe/ui/custom/BigActionButton;
 
     if-eqz v5, :cond_0
 
@@ -152,7 +152,7 @@
 
     move-object v3, v6
 
-    invoke-direct/range {v2 .. v10}, Lorg/telegram/messenger/databinding/ForkContentWalletConnectMessageSignBinding;-><init>(Landroid/widget/LinearLayout;Lorg/telegram/ui/ActionBar/ActionBarMenuItem;Lcom/smedialink/ui/custom/BigActionButton;Landroid/widget/LinearLayout;Lorg/telegram/ui/Cells/TextDetailCell;Landroidx/appcompat/widget/AppCompatTextView;Lorg/telegram/ui/Cells/TextDetailCell;Landroidx/appcompat/widget/AppCompatTextView;)V
+    invoke-direct/range {v2 .. v10}, Lorg/telegram/messenger/databinding/ForkContentWalletConnectMessageSignBinding;-><init>(Landroid/widget/LinearLayout;Lorg/telegram/ui/ActionBar/ActionBarMenuItem;Lcom/iMe/ui/custom/BigActionButton;Landroid/widget/LinearLayout;Lorg/telegram/ui/Cells/TextDetailCell;Landroidx/appcompat/widget/AppCompatTextView;Lorg/telegram/ui/Cells/TextDetailCell;Landroidx/appcompat/widget/AppCompatTextView;)V
 
     return-object p0
 

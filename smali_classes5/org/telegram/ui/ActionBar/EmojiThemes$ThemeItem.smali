@@ -57,12 +57,12 @@
 .method public constructor <init>()V
     .locals 1
 
-    .line 612
+    .line 614
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     const/4 v0, -0x1
 
-    .line 617
+    .line 619
     iput v0, p0, Lorg/telegram/ui/ActionBar/EmojiThemes$ThemeItem;->accentId:I
 
     return-void
@@ -71,7 +71,7 @@
 .method static synthetic access$000(Lorg/telegram/ui/ActionBar/EmojiThemes$ThemeItem;)Ljava/lang/String;
     .locals 0
 
-    .line 612
+    .line 614
     iget-object p0, p0, Lorg/telegram/ui/ActionBar/EmojiThemes$ThemeItem;->wallpaperLink:Ljava/lang/String;
 
     return-object p0
@@ -80,7 +80,7 @@
 .method static synthetic access$002(Lorg/telegram/ui/ActionBar/EmojiThemes$ThemeItem;Ljava/lang/String;)Ljava/lang/String;
     .locals 0
 
-    .line 612
+    .line 614
     iput-object p1, p0, Lorg/telegram/ui/ActionBar/EmojiThemes$ThemeItem;->wallpaperLink:Ljava/lang/String;
 
     return-object p1

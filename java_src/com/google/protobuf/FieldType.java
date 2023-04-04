@@ -216,7 +216,7 @@ public final class FieldType {
         this.f225id = i2;
         this.collection = collection;
         this.javaType = javaType;
-        int i4 = C11931.$SwitchMap$com$google$protobuf$FieldType$Collection[collection.ordinal()];
+        int i4 = C12071.$SwitchMap$com$google$protobuf$FieldType$Collection[collection.ordinal()];
         boolean z = true;
         if (i4 == 1) {
             this.elementType = javaType.getBoxedType();
@@ -225,12 +225,12 @@ public final class FieldType {
         } else {
             this.elementType = null;
         }
-        this.primitiveScalar = (collection != Collection.SCALAR || (i3 = C11931.$SwitchMap$com$google$protobuf$JavaType[javaType.ordinal()]) == 1 || i3 == 2 || i3 == 3) ? false : z;
+        this.primitiveScalar = (collection != Collection.SCALAR || (i3 = C12071.$SwitchMap$com$google$protobuf$JavaType[javaType.ordinal()]) == 1 || i3 == 2 || i3 == 3) ? false : z;
     }
 
     /* renamed from: com.google.protobuf.FieldType$1 */
     /* loaded from: classes3.dex */
-    static /* synthetic */ class C11931 {
+    static /* synthetic */ class C12071 {
         static final /* synthetic */ int[] $SwitchMap$com$google$protobuf$FieldType$Collection;
         static final /* synthetic */ int[] $SwitchMap$com$google$protobuf$JavaType;
 

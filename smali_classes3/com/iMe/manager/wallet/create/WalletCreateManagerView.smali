@@ -1,0 +1,41 @@
+.class public interface abstract Lcom/iMe/manager/wallet/create/WalletCreateManagerView;
+.super Ljava/lang/Object;
+.source "WalletCreateManagerView.kt"
+
+# interfaces
+.implements Lcom/iMe/ui/base/mvp/base/BaseView;
+
+
+# annotations
+.annotation runtime Lmoxy/viewstate/strategy/alias/OneExecution;
+.end annotation
+
+
+# virtual methods
+.method public abstract openCreateWalletScreen(Ljava/util/List;Ljava/lang/String;)V
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/util/List<",
+            "Ljava/lang/String;",
+            ">;",
+            "Ljava/lang/String;",
+            ")V"
+        }
+    .end annotation
+.end method
+
+.method public abstract openImportWalletScreen(Ljava/lang/String;Ljava/lang/String;)V
+.end method
+
+.method public abstract showActivationConfirmationDialog(Lcom/iMe/model/dialog/DialogModel;Lcom/iMe/fork/utils/Callbacks$Callback;)V
+.end method
+
+.method public abstract showAlreadyCreatedWalletWarningDialog(Lcom/iMe/model/dialog/DialogModel;Ljava/lang/String;Lcom/iMe/fork/utils/Callbacks$Callback;)V
+.end method
+
+.method public abstract showAnimatedDialog(Lcom/iMe/model/dialog/AnimatedSpannableDialogModel;Lcom/iMe/fork/utils/Callbacks$Callback;)V
+.end method
+
+.method public abstract showSelectOptionsDialog(Ljava/lang/String;[Ljava/lang/String;Landroid/content/DialogInterface$OnClickListener;)V
+.end method

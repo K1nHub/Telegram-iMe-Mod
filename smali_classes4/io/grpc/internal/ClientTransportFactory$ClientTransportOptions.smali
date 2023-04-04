@@ -31,7 +31,7 @@
     .line 71
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const-string v0, "unknown-authority"
+    const-string/jumbo v0, "unknown-authority"
 
     .line 73
     iput-object v0, p0, Lio/grpc/internal/ClientTransportFactory$ClientTransportOptions;->authority:Ljava/lang/String;

@@ -8,7 +8,7 @@
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lkotlin/Lazy<",
-            "Lcom/smedialink/manager/notifications/PushNotificationsManager;",
+            "Lcom/iMe/manager/notifications/PushNotificationsManager;",
             ">;"
         }
     .end annotation
@@ -31,7 +31,7 @@
     invoke-direct {p0}, Lcom/google/firebase/messaging/FirebaseMessagingService;-><init>()V
 
     .line 30
-    const-class v0, Lcom/smedialink/manager/notifications/PushNotificationsManager;
+    const-class v0, Lcom/iMe/manager/notifications/PushNotificationsManager;
 
     invoke-static {v0}, Lorg/koin/java/KoinJavaComponent;->inject(Ljava/lang/Class;)Lkotlin/Lazy;
 
@@ -92,9 +92,9 @@
 
     move-result-object v0
 
-    check-cast v0, Lcom/smedialink/manager/notifications/PushNotificationsManager;
+    check-cast v0, Lcom/iMe/manager/notifications/PushNotificationsManager;
 
-    invoke-virtual {v0}, Lcom/smedialink/manager/notifications/PushNotificationsManager;->onDestroy()V
+    invoke-virtual {v0}, Lcom/iMe/manager/notifications/PushNotificationsManager;->onDestroy()V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 

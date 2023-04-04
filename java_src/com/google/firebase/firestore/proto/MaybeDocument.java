@@ -124,7 +124,7 @@ public final class MaybeDocument extends GeneratedMessageLite<MaybeDocument, Bui
 
     /* loaded from: classes3.dex */
     public static final class Builder extends GeneratedMessageLite.Builder<MaybeDocument, Builder> implements MessageLiteOrBuilder {
-        /* synthetic */ Builder(C10131 c10131) {
+        /* synthetic */ Builder(C10271 c10271) {
             this();
         }
 
@@ -159,7 +159,7 @@ public final class MaybeDocument extends GeneratedMessageLite<MaybeDocument, Bui
 
     /* renamed from: com.google.firebase.firestore.proto.MaybeDocument$1 */
     /* loaded from: classes3.dex */
-    static /* synthetic */ class C10131 {
+    static /* synthetic */ class C10271 {
 
         /* renamed from: $SwitchMap$com$google$protobuf$GeneratedMessageLite$MethodToInvoke */
         static final /* synthetic */ int[] f181xa1df5c61;
@@ -200,7 +200,7 @@ public final class MaybeDocument extends GeneratedMessageLite<MaybeDocument, Bui
 
     @Override // com.google.protobuf.GeneratedMessageLite
     protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke methodToInvoke, Object obj, Object obj2) {
-        switch (C10131.f181xa1df5c61[methodToInvoke.ordinal()]) {
+        switch (C10271.f181xa1df5c61[methodToInvoke.ordinal()]) {
             case 1:
                 return new MaybeDocument();
             case 2:

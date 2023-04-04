@@ -9,7 +9,7 @@ public class TLRPC$TL_messages_editMessage extends TLObject {
     public int flags;
 
     /* renamed from: id */
-    public int f1584id;
+    public int f1586id;
     public TLRPC$InputMedia media;
     public String message;
     public boolean no_webpage;
@@ -29,7 +29,7 @@ public class TLRPC$TL_messages_editMessage extends TLObject {
         this.flags = i;
         abstractSerializedData.writeInt32(i);
         this.peer.serializeToStream(abstractSerializedData);
-        abstractSerializedData.writeInt32(this.f1584id);
+        abstractSerializedData.writeInt32(this.f1586id);
         if ((this.flags & 2048) != 0) {
             abstractSerializedData.writeString(this.message);
         }

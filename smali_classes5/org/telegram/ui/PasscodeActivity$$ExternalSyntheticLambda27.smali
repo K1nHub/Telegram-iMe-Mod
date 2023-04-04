@@ -2,46 +2,38 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lkotlin/jvm/functions/Function0;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field public final synthetic f$0:Ljava/lang/String;
+.field public final synthetic f$0:Lorg/telegram/ui/PasscodeActivity;
 
-.field public final synthetic f$1:Ljava/lang/String;
-
-.field public final synthetic f$2:Ljava/lang/String;
+.field public final synthetic f$1:Z
 
 
 # direct methods
-.method public synthetic constructor <init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+.method public synthetic constructor <init>(Lorg/telegram/ui/PasscodeActivity;Z)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lorg/telegram/ui/PasscodeActivity$$ExternalSyntheticLambda27;->f$0:Ljava/lang/String;
+    iput-object p1, p0, Lorg/telegram/ui/PasscodeActivity$$ExternalSyntheticLambda27;->f$0:Lorg/telegram/ui/PasscodeActivity;
 
-    iput-object p2, p0, Lorg/telegram/ui/PasscodeActivity$$ExternalSyntheticLambda27;->f$1:Ljava/lang/String;
-
-    iput-object p3, p0, Lorg/telegram/ui/PasscodeActivity$$ExternalSyntheticLambda27;->f$2:Ljava/lang/String;
+    iput-boolean p2, p0, Lorg/telegram/ui/PasscodeActivity$$ExternalSyntheticLambda27;->f$1:Z
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke()Ljava/lang/Object;
-    .locals 3
+.method public final run()V
+    .locals 2
 
-    iget-object v0, p0, Lorg/telegram/ui/PasscodeActivity$$ExternalSyntheticLambda27;->f$0:Ljava/lang/String;
+    iget-object v0, p0, Lorg/telegram/ui/PasscodeActivity$$ExternalSyntheticLambda27;->f$0:Lorg/telegram/ui/PasscodeActivity;
 
-    iget-object v1, p0, Lorg/telegram/ui/PasscodeActivity$$ExternalSyntheticLambda27;->f$1:Ljava/lang/String;
+    iget-boolean v1, p0, Lorg/telegram/ui/PasscodeActivity$$ExternalSyntheticLambda27;->f$1:Z
 
-    iget-object v2, p0, Lorg/telegram/ui/PasscodeActivity$$ExternalSyntheticLambda27;->f$2:Ljava/lang/String;
+    invoke-static {v0, v1}, Lorg/telegram/ui/PasscodeActivity;->$r8$lambda$Nj3Tahor62RWfOfpTdWDutgdv6A(Lorg/telegram/ui/PasscodeActivity;Z)V
 
-    invoke-static {v0, v1, v2}, Lorg/telegram/ui/PasscodeActivity;->$r8$lambda$nF52hi3G5fBHH-U_mtxEwoYXU0k(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lorg/telegram/ui/ActionBar/BaseFragment;
-
-    move-result-object v0
-
-    return-object v0
+    return-void
 .end method

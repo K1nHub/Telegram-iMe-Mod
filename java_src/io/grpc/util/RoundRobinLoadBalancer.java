@@ -25,7 +25,7 @@ final class RoundRobinLoadBalancer extends LoadBalancer {
     private ConnectivityState currentState;
     private final LoadBalancer.Helper helper;
     static final Attributes.Key<Ref<ConnectivityStateInfo>> STATE_INFO = Attributes.Key.create("state-info");
-    private static final Status EMPTY_OK = Status.f428OK.withDescription("no subchannels ready");
+    private static final Status EMPTY_OK = Status.f433OK.withDescription("no subchannels ready");
     private final Map<EquivalentAddressGroup, LoadBalancer.Subchannel> subchannels = new HashMap();
     private RoundRobinPicker currentPicker = new EmptyPicker(EMPTY_OK);
     private final Random random = new Random();

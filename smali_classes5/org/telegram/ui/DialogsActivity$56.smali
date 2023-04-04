@@ -24,7 +24,7 @@
 .method constructor <init>(Lorg/telegram/ui/DialogsActivity;Z)V
     .locals 0
 
-    .line 9706
+    .line 9736
     iput-object p1, p0, Lorg/telegram/ui/DialogsActivity$56;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     iput-boolean p2, p0, Lorg/telegram/ui/DialogsActivity$56;->val$visible:Z
@@ -39,14 +39,14 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 2
 
-    .line 9709
+    .line 9739
     iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$56;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     const/4 v0, 0x0
 
     invoke-static {p1, v0}, Lorg/telegram/ui/DialogsActivity;->access$7702(Lorg/telegram/ui/DialogsActivity;Landroid/animation/ValueAnimator;)Landroid/animation/ValueAnimator;
 
-    .line 9710
+    .line 9740
     iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$56;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     const/16 v0, 0x2c
@@ -67,12 +67,12 @@
 
     invoke-static {p1, v0}, Lorg/telegram/ui/DialogsActivity;->access$16402(Lorg/telegram/ui/DialogsActivity;F)F
 
-    .line 9711
+    .line 9741
     iget-boolean p1, p0, Lorg/telegram/ui/DialogsActivity$56;->val$visible:Z
 
     if-nez p1, :cond_0
 
-    .line 9712
+    .line 9742
     iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$56;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/DialogsActivity;->access$3200(Lorg/telegram/ui/DialogsActivity;)Lorg/telegram/ui/Components/FilterTabsView;
@@ -83,7 +83,7 @@
 
     invoke-virtual {p1, v0}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
-    .line 9714
+    .line 9744
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$56;->this$0:Lorg/telegram/ui/DialogsActivity;
 
@@ -93,7 +93,7 @@
 
     if-eqz p1, :cond_1
 
-    .line 9715
+    .line 9745
     iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$56;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/DialogsActivity;->access$40500(Lorg/telegram/ui/DialogsActivity;)Landroid/view/View;
@@ -102,7 +102,7 @@
 
     invoke-virtual {p1}, Landroid/view/View;->requestLayout()V
 
-    .line 9717
+    .line 9747
     :cond_1
     iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$56;->this$0:Lorg/telegram/ui/DialogsActivity;
 

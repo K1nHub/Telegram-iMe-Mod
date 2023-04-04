@@ -7,18 +7,20 @@ import android.content.SharedPreferences;
 import android.graphics.Paint;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
+import android.text.TextUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
+import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-import com.smedialink.common.TelegramPreferenceKeys;
-import com.smedialink.utils.extentions.common.ContextExtKt;
+import com.iMe.common.TelegramPreferenceKeys;
+import com.iMe.utils.extentions.common.ContextExtKt;
 import java.io.File;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.BuildVars;
-import org.telegram.messenger.C3301R;
+import org.telegram.messenger.C3316R;
 import org.telegram.messenger.DownloadController;
 import org.telegram.messenger.ImageLoader;
 import org.telegram.messenger.LocaleController;
@@ -28,7 +30,7 @@ import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.p048ui.ActionBar.AlertDialog;
 import org.telegram.p048ui.ActionBar.BaseFragment;
-import org.telegram.p048ui.ActionBar.C3366ActionBar;
+import org.telegram.p048ui.ActionBar.C3381ActionBar;
 import org.telegram.p048ui.ActionBar.Theme;
 import org.telegram.p048ui.ActionBar.ThemeDescription;
 import org.telegram.p048ui.Cells.HeaderCell;
@@ -38,6 +40,7 @@ import org.telegram.p048ui.Cells.TextCell;
 import org.telegram.p048ui.Cells.TextCheckCell;
 import org.telegram.p048ui.Cells.TextInfoPrivacyCell;
 import org.telegram.p048ui.Cells.TextSettingsCell;
+import org.telegram.p048ui.Components.CubicBezierInterpolator;
 import org.telegram.p048ui.Components.LayoutHelper;
 import org.telegram.p048ui.Components.RecyclerListView;
 import org.telegram.tgnet.RequestDelegate;
@@ -73,7 +76,6 @@ public class DataSettingsActivity extends BaseFragment implements NotificationCe
     private int proxySection2Row;
     private int proxySectionRow;
     private int quickRepliesRow;
-    private int resetDownloadRow;
     private int roamingRow;
     private int rowCount;
     private int saveToGalleryChannelsRow;
@@ -93,6 +95,7 @@ public class DataSettingsActivity extends BaseFragment implements NotificationCe
     private int usageSectionRow;
     private int useLessDataForCallsRow;
     private int wifiRow;
+    private int resetDownloadRow = -1;
     private int autoplayHeaderRow = -1;
     private int autoplayGifsRow = -1;
     private int autoplayVideoRow = -1;
@@ -107,7 +110,7 @@ public class DataSettingsActivity extends BaseFragment implements NotificationCe
         if (alertDialog != null) {
             alertDialog.dismiss();
         }
-        ContextExtKt.toast(AndroidUtilities.replaceTags(LocaleController.getInternalString(C3301R.string.cloud_albums_undo_forward_cloud)));
+        ContextExtKt.toast(AndroidUtilities.replaceTags(LocaleController.getInternalString(C3316R.string.cloud_albums_undo_forward_cloud)));
     }
 
     @Override // org.telegram.p048ui.ActionBar.BaseFragment
@@ -115,134 +118,166 @@ public class DataSettingsActivity extends BaseFragment implements NotificationCe
         super.onFragmentCreate();
         NotificationCenter.getInstance(this.currentAccount).addObservers(this, observers);
         DownloadController.getInstance(this.currentAccount).loadAutoDownloadConfig(true);
+        updateRows(true);
+        return true;
+    }
+
+    private void updateRows(boolean z) {
+        int i;
+        boolean z2 = false;
         this.rowCount = 0;
-        int i = 0 + 1;
-        this.rowCount = i;
-        this.usageSectionRow = 0;
-        int i2 = i + 1;
+        int i2 = 0 + 1;
         this.rowCount = i2;
-        this.storageUsageRow = i;
-        this.rowCount = i2 + 1;
-        this.dataUsageRow = i2;
+        this.usageSectionRow = 0;
+        int i3 = i2 + 1;
+        this.rowCount = i3;
+        this.storageUsageRow = i2;
+        this.rowCount = i3 + 1;
+        this.dataUsageRow = i3;
         this.storageNumRow = -1;
         if (Build.VERSION.SDK_INT >= 19) {
             ArrayList<File> rootDirs = AndroidUtilities.getRootDirs();
             this.storageDirs = rootDirs;
             if (rootDirs.size() > 1) {
-                int i3 = this.rowCount;
-                this.rowCount = i3 + 1;
-                this.storageNumRow = i3;
+                int i4 = this.rowCount;
+                this.rowCount = i4 + 1;
+                this.storageNumRow = i4;
             }
         }
         if (this.storageNumRow == -1) {
-            int i4 = this.rowCount;
-            this.rowCount = i4 + 1;
-            this.storageNumRow = i4;
+            int i5 = this.rowCount;
+            this.rowCount = i5 + 1;
+            this.storageNumRow = i5;
         }
-        int i5 = this.rowCount;
-        int i6 = i5 + 1;
-        this.rowCount = i6;
-        this.filesOriginalNameSavingEnabledRow = i5;
+        int i6 = this.rowCount;
         int i7 = i6 + 1;
         this.rowCount = i7;
-        this.usageSection2Row = i6;
+        this.filesOriginalNameSavingEnabledRow = i6;
         int i8 = i7 + 1;
         this.rowCount = i8;
-        this.backupSectionRow = i7;
+        this.usageSection2Row = i7;
         int i9 = i8 + 1;
         this.rowCount = i9;
-        this.backupSaveAutoRow = i8;
+        this.backupSectionRow = i8;
         int i10 = i9 + 1;
         this.rowCount = i10;
-        this.backupSaveManuallyRow = i9;
+        this.backupSaveAutoRow = i9;
         int i11 = i10 + 1;
         this.rowCount = i11;
-        this.backupSection2Row = i10;
+        this.backupSaveManuallyRow = i10;
         int i12 = i11 + 1;
         this.rowCount = i12;
-        this.mediaDownloadSectionRow = i11;
+        this.backupSection2Row = i11;
         int i13 = i12 + 1;
         this.rowCount = i13;
-        this.mobileRow = i12;
+        this.mediaDownloadSectionRow = i12;
         int i14 = i13 + 1;
         this.rowCount = i14;
-        this.wifiRow = i13;
+        this.mobileRow = i13;
         int i15 = i14 + 1;
         this.rowCount = i15;
-        this.roamingRow = i14;
-        int i16 = i15 + 1;
-        this.rowCount = i16;
-        this.resetDownloadRow = i15;
-        int i17 = i16 + 1;
-        this.rowCount = i17;
-        this.mediaDownloadSection2Row = i16;
+        this.wifiRow = i14;
+        this.rowCount = i15 + 1;
+        this.roamingRow = i15;
+        DownloadController downloadController = getDownloadController();
+        if (downloadController.lowPreset.equals(downloadController.getCurrentRoamingPreset()) && downloadController.lowPreset.isEnabled() == downloadController.roamingPreset.enabled && downloadController.mediumPreset.equals(downloadController.getCurrentMobilePreset()) && downloadController.mediumPreset.isEnabled() == downloadController.mobilePreset.enabled && downloadController.highPreset.equals(downloadController.getCurrentWiFiPreset()) && downloadController.highPreset.isEnabled() == downloadController.wifiPreset.enabled) {
+            z2 = true;
+        }
+        int i16 = this.resetDownloadRow;
+        if (z2) {
+            i = -1;
+        } else {
+            i = this.rowCount;
+            this.rowCount = i + 1;
+        }
+        this.resetDownloadRow = i;
+        ListAdapter listAdapter = this.listAdapter;
+        if (listAdapter != null && !z) {
+            if (i16 < 0 && i >= 0) {
+                listAdapter.notifyItemChanged(this.roamingRow);
+                this.listAdapter.notifyItemInserted(this.resetDownloadRow);
+            } else if (i16 < 0 || i >= 0) {
+                z = true;
+            } else {
+                listAdapter.notifyItemChanged(this.roamingRow);
+                this.listAdapter.notifyItemRemoved(i16);
+            }
+        }
+        int i17 = this.rowCount;
         int i18 = i17 + 1;
         this.rowCount = i18;
-        this.saveToGallerySectionRow = i17;
+        this.mediaDownloadSection2Row = i17;
         int i19 = i18 + 1;
         this.rowCount = i19;
-        this.saveToGalleryPeerRow = i18;
+        this.saveToGallerySectionRow = i18;
         int i20 = i19 + 1;
         this.rowCount = i20;
-        this.saveToGalleryGroupsRow = i19;
+        this.saveToGalleryPeerRow = i19;
         int i21 = i20 + 1;
         this.rowCount = i21;
-        this.saveToGalleryChannelsRow = i20;
+        this.saveToGalleryGroupsRow = i20;
         int i22 = i21 + 1;
         this.rowCount = i22;
-        this.saveToGalleryDividerRow = i21;
+        this.saveToGalleryChannelsRow = i21;
         int i23 = i22 + 1;
         this.rowCount = i23;
-        this.streamSectionRow = i22;
+        this.saveToGalleryDividerRow = i22;
         int i24 = i23 + 1;
         this.rowCount = i24;
-        this.enableStreamRow = i23;
+        this.streamSectionRow = i23;
+        int i25 = i24 + 1;
+        this.rowCount = i25;
+        this.enableStreamRow = i24;
         if (BuildVars.DEBUG_VERSION) {
-            int i25 = i24 + 1;
-            this.rowCount = i25;
-            this.enableMkvRow = i24;
-            this.rowCount = i25 + 1;
-            this.enableAllStreamRow = i25;
+            int i26 = i25 + 1;
+            this.rowCount = i26;
+            this.enableMkvRow = i25;
+            this.rowCount = i26 + 1;
+            this.enableAllStreamRow = i26;
         } else {
             this.enableAllStreamRow = -1;
             this.enableMkvRow = -1;
         }
-        int i26 = this.rowCount;
-        int i27 = i26 + 1;
-        this.rowCount = i27;
-        this.enableAllStreamInfoRow = i26;
-        this.enableCacheStreamRow = -1;
+        int i27 = this.rowCount;
         int i28 = i27 + 1;
         this.rowCount = i28;
-        this.callsSectionRow = i27;
+        this.enableAllStreamInfoRow = i27;
+        this.enableCacheStreamRow = -1;
         int i29 = i28 + 1;
         this.rowCount = i29;
-        this.useLessDataForCallsRow = i28;
+        this.callsSectionRow = i28;
         int i30 = i29 + 1;
         this.rowCount = i30;
-        this.quickRepliesRow = i29;
+        this.useLessDataForCallsRow = i29;
         int i31 = i30 + 1;
         this.rowCount = i31;
-        this.callsSection2Row = i30;
+        this.quickRepliesRow = i30;
         int i32 = i31 + 1;
         this.rowCount = i32;
-        this.proxySectionRow = i31;
+        this.callsSection2Row = i31;
         int i33 = i32 + 1;
         this.rowCount = i33;
-        this.proxyRow = i32;
+        this.proxySectionRow = i32;
         int i34 = i33 + 1;
         this.rowCount = i34;
-        this.proxySection2Row = i33;
+        this.proxyRow = i33;
         int i35 = i34 + 1;
         this.rowCount = i35;
-        this.clearDraftsRow = i34;
-        this.rowCount = i35 + 1;
-        this.clearDraftsSectionRow = i35;
-        return true;
+        this.proxySection2Row = i34;
+        int i36 = i35 + 1;
+        this.rowCount = i36;
+        this.clearDraftsRow = i35;
+        this.rowCount = i36 + 1;
+        this.clearDraftsSectionRow = i36;
+        ListAdapter listAdapter2 = this.listAdapter;
+        if (listAdapter2 == null || !z) {
+            return;
+        }
+        listAdapter2.notifyDataSetChanged();
     }
 
     private void loadCacheSize() {
-        final Runnable runnable = new Runnable() { // from class: org.telegram.ui.DataSettingsActivity$$ExternalSyntheticLambda4
+        final Runnable runnable = new Runnable() { // from class: org.telegram.ui.DataSettingsActivity$$ExternalSyntheticLambda5
             @Override // java.lang.Runnable
             public final void run() {
                 DataSettingsActivity.this.lambda$loadCacheSize$0();
@@ -316,14 +351,14 @@ public class DataSettingsActivity extends BaseFragment implements NotificationCe
 
     @Override // org.telegram.p048ui.ActionBar.BaseFragment
     public View createView(final Context context) {
-        this.actionBar.setBackButtonImage(C3301R.C3303drawable.ic_ab_back);
-        this.actionBar.setTitle(LocaleController.getString("DataSettings", C3301R.string.DataSettings));
+        this.actionBar.setBackButtonImage(C3316R.C3318drawable.ic_ab_back);
+        this.actionBar.setTitle(LocaleController.getString("DataSettings", C3316R.string.DataSettings));
         if (AndroidUtilities.isTablet()) {
             this.actionBar.setOccupyStatusBar(false);
         }
         this.actionBar.setAllowOverlayTitle(true);
-        this.actionBar.setActionBarMenuOnItemClick(new C3366ActionBar.ActionBarMenuOnItemClick() { // from class: org.telegram.ui.DataSettingsActivity.1
-            @Override // org.telegram.p048ui.ActionBar.C3366ActionBar.ActionBarMenuOnItemClick
+        this.actionBar.setActionBarMenuOnItemClick(new C3381ActionBar.ActionBarMenuOnItemClick() { // from class: org.telegram.ui.DataSettingsActivity.1
+            @Override // org.telegram.p048ui.ActionBar.C3381ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i) {
                 if (i == -1) {
                     DataSettingsActivity.this.finishFragment();
@@ -334,7 +369,15 @@ public class DataSettingsActivity extends BaseFragment implements NotificationCe
         FrameLayout frameLayout = new FrameLayout(context);
         this.fragmentView = frameLayout;
         frameLayout.setBackgroundColor(Theme.getColor("windowBackgroundGray"));
-        RecyclerListView recyclerListView = new RecyclerListView(context);
+        RecyclerListView recyclerListView = new RecyclerListView(context) { // from class: org.telegram.ui.DataSettingsActivity.2
+            @Override // org.telegram.p048ui.Components.RecyclerListView
+            public Integer getSelectorColor(int i) {
+                if (i == DataSettingsActivity.this.resetDownloadRow) {
+                    return Integer.valueOf(Theme.multAlpha(getThemedColor("windowBackgroundWhiteRedText2"), 0.1f));
+                }
+                return Integer.valueOf(getThemedColor("listSelectorSDK21"));
+            }
+        };
         this.listView = recyclerListView;
         recyclerListView.setVerticalScrollBarEnabled(false);
         this.listView.setLayoutManager(new LinearLayoutManager(context, 1, false));
@@ -353,25 +396,30 @@ public class DataSettingsActivity extends BaseFragment implements NotificationCe
 
             @Override // org.telegram.p048ui.Components.RecyclerListView.OnItemClickListenerExtended
             public final void onItemClick(View view, int i, float f, float f2) {
-                DataSettingsActivity.this.lambda$createView$10(context, view, i, f, f2);
+                DataSettingsActivity.this.lambda$createView$9(context, view, i, f, f2);
             }
         });
+        DefaultItemAnimator defaultItemAnimator = new DefaultItemAnimator();
+        defaultItemAnimator.setDurations(350L);
+        defaultItemAnimator.setInterpolator(CubicBezierInterpolator.EASE_OUT_QUINT);
+        defaultItemAnimator.setDelayAnimations(false);
+        defaultItemAnimator.setSupportsChangeAnimations(false);
+        this.listView.setItemAnimator(defaultItemAnimator);
         return this.fragmentView;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* JADX WARN: Multi-variable type inference failed */
     /* JADX WARN: Removed duplicated region for block: B:80:0x024c  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct add '--show-bad-code' argument
     */
-    public /* synthetic */ void lambda$createView$10(android.content.Context r19, android.view.View r20, final int r21, float r22, float r23) {
+    public /* synthetic */ void lambda$createView$9(android.content.Context r21, android.view.View r22, final int r23, float r24, float r25) {
         /*
-            Method dump skipped, instructions count: 1295
+            Method dump skipped, instructions count: 1309
             To view this dump add '--comments-level debug' option
         */
-        throw new UnsupportedOperationException("Method not decompiled: org.telegram.p048ui.DataSettingsActivity.lambda$createView$10(android.content.Context, android.view.View, int, float, float):void");
+        throw new UnsupportedOperationException("Method not decompiled: org.telegram.p048ui.DataSettingsActivity.lambda$createView$9(android.content.Context, android.view.View, int, float, float):void");
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -420,6 +468,7 @@ public class DataSettingsActivity extends BaseFragment implements NotificationCe
             DownloadController.getInstance(this.currentAccount).savePresetToServer(i3);
         }
         this.listAdapter.notifyItemRangeChanged(this.mobileRow, 4);
+        updateRows(false);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -441,48 +490,74 @@ public class DataSettingsActivity extends BaseFragment implements NotificationCe
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$createView$6(String str, AlertDialog.Builder builder, View view) {
-        SharedConfig.storageCacheDir = str;
-        SharedConfig.saveConfig();
+    public /* synthetic */ void lambda$createView$5(final String str, boolean z, final AlertDialog.Builder builder, View view) {
+        if (TextUtils.equals(SharedConfig.storageCacheDir, str)) {
+            return;
+        }
+        if (!z) {
+            AlertDialog.Builder builder2 = new AlertDialog.Builder(getContext());
+            builder2.setTitle(LocaleController.getString("DecreaseSpeed", C3316R.string.DecreaseSpeed));
+            builder2.setMessage(LocaleController.getString("SdCardAlert", C3316R.string.SdCardAlert));
+            builder2.setPositiveButton(LocaleController.getString("Proceed", C3316R.string.Proceed), new DialogInterface.OnClickListener() { // from class: org.telegram.ui.DataSettingsActivity.3
+                @Override // android.content.DialogInterface.OnClickListener
+                public void onClick(DialogInterface dialogInterface, int i) {
+                    DataSettingsActivity.this.setStorageDirectory(str);
+                    builder.getDismissRunnable().run();
+                }
+            });
+            builder2.setNegativeButton(LocaleController.getString("Back", C3316R.string.Back), null);
+            builder2.show();
+            return;
+        }
+        setStorageDirectory(str);
         builder.getDismissRunnable().run();
-        rebind(this.storageNumRow);
-        ImageLoader.getInstance().checkMediaPaths(new Runnable() { // from class: org.telegram.ui.DataSettingsActivity$$ExternalSyntheticLambda5
-            @Override // java.lang.Runnable
-            public final void run() {
-                DataSettingsActivity.this.lambda$createView$5();
-            }
-        });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$createView$5() {
-        CacheControlActivity.resetCalculatedTotalSIze();
-        loadCacheSize();
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$createView$9(DialogInterface dialogInterface, int i) {
+    public /* synthetic */ void lambda$createView$8(DialogInterface dialogInterface, int i) {
         getConnectionsManager().sendRequest(new TLRPC$TL_messages_clearAllDrafts(), new RequestDelegate() { // from class: org.telegram.ui.DataSettingsActivity$$ExternalSyntheticLambda9
             @Override // org.telegram.tgnet.RequestDelegate
             public final void run(TLObject tLObject, TLRPC$TL_error tLRPC$TL_error) {
-                DataSettingsActivity.this.lambda$createView$8(tLObject, tLRPC$TL_error);
+                DataSettingsActivity.this.lambda$createView$7(tLObject, tLRPC$TL_error);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$createView$7() {
+    public /* synthetic */ void lambda$createView$6() {
         getMediaDataController().clearAllDrafts(true);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$createView$8(TLObject tLObject, TLRPC$TL_error tLRPC$TL_error) {
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.DataSettingsActivity$$ExternalSyntheticLambda6
+    public /* synthetic */ void lambda$createView$7(TLObject tLObject, TLRPC$TL_error tLRPC$TL_error) {
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.DataSettingsActivity$$ExternalSyntheticLambda7
             @Override // java.lang.Runnable
             public final void run() {
-                DataSettingsActivity.this.lambda$createView$7();
+                DataSettingsActivity.this.lambda$createView$6();
             }
         });
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public void setStorageDirectory(String str) {
+        SharedConfig.storageCacheDir = str;
+        SharedConfig.saveConfig();
+        if (str != null) {
+            SharedConfig.readOnlyStorageDirAlertShowed = false;
+        }
+        rebind(this.storageNumRow);
+        ImageLoader.getInstance().checkMediaPaths(new Runnable() { // from class: org.telegram.ui.DataSettingsActivity$$ExternalSyntheticLambda6
+            @Override // java.lang.Runnable
+            public final void run() {
+                DataSettingsActivity.this.lambda$setStorageDirectory$10();
+            }
+        });
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$setStorageDirectory$10() {
+        CacheControlActivity.resetCalculatedTotalSIze();
+        loadCacheSize();
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
@@ -496,6 +571,7 @@ public class DataSettingsActivity extends BaseFragment implements NotificationCe
         super.onResume();
         loadCacheSize();
         rebindAll();
+        updateRows(false);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -514,16 +590,16 @@ public class DataSettingsActivity extends BaseFragment implements NotificationCe
         }
 
         /* JADX WARN: Multi-variable type inference failed */
-        /* JADX WARN: Removed duplicated region for block: B:111:0x03a2  */
-        /* JADX WARN: Removed duplicated region for block: B:71:0x02d5  */
+        /* JADX WARN: Removed duplicated region for block: B:116:0x03b8  */
+        /* JADX WARN: Removed duplicated region for block: B:76:0x02eb  */
         @Override // androidx.recyclerview.widget.RecyclerView.Adapter
         /*
             Code decompiled incorrectly, please refer to instructions dump.
             To view partially-correct add '--show-bad-code' argument
         */
-        public void onBindViewHolder(androidx.recyclerview.widget.RecyclerView.ViewHolder r19, int r20) {
+        public void onBindViewHolder(androidx.recyclerview.widget.RecyclerView.ViewHolder r20, int r21) {
             /*
-                Method dump skipped, instructions count: 1548
+                Method dump skipped, instructions count: 1568
                 To view this dump add '--comments-level debug' option
             */
             throw new UnsupportedOperationException("Method not decompiled: org.telegram.p048ui.DataSettingsActivity.ListAdapter.onBindViewHolder(androidx.recyclerview.widget.RecyclerView$ViewHolder, int):void");
@@ -562,14 +638,7 @@ public class DataSettingsActivity extends BaseFragment implements NotificationCe
         }
 
         public boolean isRowEnabled(int i) {
-            if (i == DataSettingsActivity.this.resetDownloadRow) {
-                DownloadController downloadController = DownloadController.getInstance(((BaseFragment) DataSettingsActivity.this).currentAccount);
-                return (downloadController.lowPreset.equals(downloadController.getCurrentRoamingPreset()) && downloadController.lowPreset.isEnabled() == downloadController.roamingPreset.enabled && downloadController.mediumPreset.equals(downloadController.getCurrentMobilePreset()) && downloadController.mediumPreset.isEnabled() == downloadController.mobilePreset.enabled && downloadController.highPreset.equals(downloadController.getCurrentWiFiPreset()) && downloadController.highPreset.isEnabled() == downloadController.wifiPreset.enabled) ? false : true;
-            } else if (i == DataSettingsActivity.this.backupSaveAutoRow || i == DataSettingsActivity.this.backupSaveManuallyRow || i == DataSettingsActivity.this.filesOriginalNameSavingEnabledRow) {
-                return true;
-            } else {
-                return i == DataSettingsActivity.this.mobileRow || i == DataSettingsActivity.this.roamingRow || i == DataSettingsActivity.this.wifiRow || i == DataSettingsActivity.this.storageUsageRow || i == DataSettingsActivity.this.useLessDataForCallsRow || i == DataSettingsActivity.this.dataUsageRow || i == DataSettingsActivity.this.proxyRow || i == DataSettingsActivity.this.clearDraftsRow || i == DataSettingsActivity.this.enableCacheStreamRow || i == DataSettingsActivity.this.enableStreamRow || i == DataSettingsActivity.this.enableAllStreamRow || i == DataSettingsActivity.this.enableMkvRow || i == DataSettingsActivity.this.quickRepliesRow || i == DataSettingsActivity.this.autoplayVideoRow || i == DataSettingsActivity.this.autoplayGifsRow || i == DataSettingsActivity.this.storageNumRow || i == DataSettingsActivity.this.saveToGalleryGroupsRow || i == DataSettingsActivity.this.saveToGalleryPeerRow || i == DataSettingsActivity.this.saveToGalleryChannelsRow;
-            }
+            return i == DataSettingsActivity.this.backupSaveAutoRow || i == DataSettingsActivity.this.backupSaveManuallyRow || i == DataSettingsActivity.this.filesOriginalNameSavingEnabledRow || i == DataSettingsActivity.this.mobileRow || i == DataSettingsActivity.this.roamingRow || i == DataSettingsActivity.this.wifiRow || i == DataSettingsActivity.this.storageUsageRow || i == DataSettingsActivity.this.useLessDataForCallsRow || i == DataSettingsActivity.this.dataUsageRow || i == DataSettingsActivity.this.proxyRow || i == DataSettingsActivity.this.clearDraftsRow || i == DataSettingsActivity.this.enableCacheStreamRow || i == DataSettingsActivity.this.enableStreamRow || i == DataSettingsActivity.this.enableAllStreamRow || i == DataSettingsActivity.this.enableMkvRow || i == DataSettingsActivity.this.quickRepliesRow || i == DataSettingsActivity.this.autoplayVideoRow || i == DataSettingsActivity.this.autoplayGifsRow || i == DataSettingsActivity.this.storageNumRow || i == DataSettingsActivity.this.saveToGalleryGroupsRow || i == DataSettingsActivity.this.saveToGalleryPeerRow || i == DataSettingsActivity.this.saveToGalleryChannelsRow || i == DataSettingsActivity.this.resetDownloadRow;
         }
 
         @Override // org.telegram.p048ui.Components.RecyclerListView.SelectionAdapter
@@ -593,7 +662,7 @@ public class DataSettingsActivity extends BaseFragment implements NotificationCe
                 shadowSectionCell.setBackgroundColor(Theme.getColor("windowBackgroundWhite"));
             } else if (i == 4) {
                 shadowSectionCell = new TextInfoPrivacyCell(this.mContext);
-                shadowSectionCell.setBackgroundDrawable(Theme.getThemedDrawable(this.mContext, C3301R.C3303drawable.greydivider, "windowBackgroundGrayShadow"));
+                shadowSectionCell.setBackgroundDrawable(Theme.getThemedDrawable(this.mContext, C3316R.C3318drawable.greydivider, "windowBackgroundGrayShadow"));
             } else if (i == 5) {
                 shadowSectionCell = new NotificationsCheckCell(this.mContext);
                 shadowSectionCell.setBackgroundColor(Theme.getColor("windowBackgroundWhite"));

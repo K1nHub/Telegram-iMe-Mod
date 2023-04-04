@@ -3,7 +3,7 @@ package org.telegram.messenger;
 import android.text.TextUtils;
 import android.util.LongSparseArray;
 import android.util.SparseBooleanArray;
-import com.smedialink.storage.domain.model.templates.TemplateModel;
+import com.iMe.storage.domain.model.templates.TemplateModel;
 import java.util.ArrayList;
 import java.util.Iterator;
 import org.telegram.messenger.MessageObject;
@@ -78,7 +78,7 @@ public class ForwardingMessagesParams {
             this.selectedIds.put(messageObject.getId(), true);
             TLRPC$TL_message tLRPC$TL_message = new TLRPC$TL_message();
             TLRPC$Message tLRPC$Message = messageObject.messageOwner;
-            tLRPC$TL_message.f1524id = tLRPC$Message.f1524id;
+            tLRPC$TL_message.f1526id = tLRPC$Message.f1526id;
             tLRPC$TL_message.grouped_id = tLRPC$Message.grouped_id;
             tLRPC$TL_message.peer_id = tLRPC$Message.peer_id;
             tLRPC$TL_message.from_id = tLRPC$Message.from_id;

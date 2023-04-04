@@ -117,7 +117,7 @@
     return-object p1
 
     :cond_1
-    const-string v1, "unsupported"
+    const-string/jumbo v1, "unsupported"
 
     .line 561
     invoke-virtual {p1, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z

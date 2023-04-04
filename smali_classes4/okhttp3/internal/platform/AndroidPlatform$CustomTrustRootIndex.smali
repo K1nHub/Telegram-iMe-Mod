@@ -27,7 +27,7 @@
 .method public constructor <init>(Ljavax/net/ssl/X509TrustManager;Ljava/lang/reflect/Method;)V
     .locals 1
 
-    const-string v0, "trustManager"
+    const-string/jumbo v0, "trustManager"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -155,7 +155,7 @@
     .line 140
     new-instance v0, Ljava/lang/AssertionError;
 
-    const-string v1, "unable to get issues and signature"
+    const-string/jumbo v1, "unable to get issues and signature"
 
     invoke-direct {v0, v1, p1}, Ljava/lang/AssertionError;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
 

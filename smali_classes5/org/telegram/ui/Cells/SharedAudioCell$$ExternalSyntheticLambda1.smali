@@ -2,7 +2,7 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Lcom/iMe/fork/ui/dialog/ForwardCloudBottomSheet$Delegate;
 
 
 # instance fields
@@ -22,12 +22,20 @@
 
 
 # virtual methods
-.method public final run()V
+.method public final didSelectCloudDialog(J)V
     .locals 1
 
     iget-object v0, p0, Lorg/telegram/ui/Cells/SharedAudioCell$$ExternalSyntheticLambda1;->f$0:Lorg/telegram/ui/Cells/SharedAudioCell;
 
-    invoke-static {v0}, Lorg/telegram/ui/Cells/SharedAudioCell;->$r8$lambda$R4AYuEZPo44YKwj7AyPYAZDEO9U(Lorg/telegram/ui/Cells/SharedAudioCell;)V
+    invoke-static {v0, p1, p2}, Lorg/telegram/ui/Cells/SharedAudioCell;->$r8$lambda$p5G5Qnpx-jLCfJWycCD_OaxhMT8(Lorg/telegram/ui/Cells/SharedAudioCell;J)V
+
+    return-void
+.end method
+
+.method public synthetic onAlbumCreatorOpened()V
+    .locals 0
+
+    invoke-static {p0}, Lcom/iMe/fork/ui/dialog/ForwardCloudBottomSheet$Delegate$-CC;->$default$onAlbumCreatorOpened(Lcom/iMe/fork/ui/dialog/ForwardCloudBottomSheet$Delegate;)V
 
     return-void
 .end method

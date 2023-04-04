@@ -1,21 +1,21 @@
 package org.telegram.messenger;
 
 import android.content.SharedPreferences;
-import org.fork.controller.AlbumsController;
-import org.fork.controller.BackupController;
-import org.fork.controller.BookmarksController;
-import org.fork.controller.DialogTranslationController;
-import org.fork.controller.FiltersController;
-import org.fork.controller.ForkCommonController;
-import org.fork.controller.ForkTopicsController;
-import org.fork.controller.LockedSectionsController;
-import org.fork.controller.MultiPanelController;
-import org.fork.controller.MusicController;
-import org.fork.controller.NeuroBotsController;
-import org.fork.controller.RecentChatsController;
-import org.fork.controller.TemplatesController;
-import org.fork.controller.ToolsController;
-import org.fork.controller.WalletFingerprintController;
+import com.iMe.fork.controller.AlbumsController;
+import com.iMe.fork.controller.BackupController;
+import com.iMe.fork.controller.BookmarksController;
+import com.iMe.fork.controller.DialogTranslationController;
+import com.iMe.fork.controller.FiltersController;
+import com.iMe.fork.controller.ForkCommonController;
+import com.iMe.fork.controller.ForkTopicsController;
+import com.iMe.fork.controller.LockedSectionsController;
+import com.iMe.fork.controller.MultiPanelController;
+import com.iMe.fork.controller.MusicController;
+import com.iMe.fork.controller.NeuroBotsController;
+import com.iMe.fork.controller.RecentChatsController;
+import com.iMe.fork.controller.TemplatesController;
+import com.iMe.fork.controller.ToolsController;
+import com.iMe.fork.controller.WalletFingerprintController;
 import org.telegram.p048ui.Components.Paint.PersistColorPalette;
 import org.telegram.tgnet.ConnectionsManager;
 /* loaded from: classes4.dex */

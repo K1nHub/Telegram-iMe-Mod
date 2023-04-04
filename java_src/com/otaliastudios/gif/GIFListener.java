@@ -1,5 +1,5 @@
 package com.otaliastudios.gif;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public interface GIFListener {
     void onGIFCompressionCanceled();
 

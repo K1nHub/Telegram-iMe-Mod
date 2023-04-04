@@ -1,6 +1,6 @@
 package com.google.android.gms.internal.vision;
 
-import com.smedialink.common.IdFabric$RequestCode;
+import com.iMe.common.IdFabric$RequestCode;
 /* compiled from: com.google.android.gms:play-services-vision-common@@19.1.3 */
 /* loaded from: classes3.dex */
 public final class zzfc extends zzfb {

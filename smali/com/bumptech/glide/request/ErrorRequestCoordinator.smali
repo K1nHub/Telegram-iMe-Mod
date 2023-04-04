@@ -45,52 +45,59 @@
     return-void
 .end method
 
-.method private isValidRequest(Lcom/bumptech/glide/request/Request;)Z
+.method private isValidRequestForStatusChanged(Lcom/bumptech/glide/request/Request;)Z
     .locals 2
 
-    .line 140
-    iget-object v0, p0, Lcom/bumptech/glide/request/ErrorRequestCoordinator;->primary:Lcom/bumptech/glide/request/Request;
-
-    invoke-virtual {p1, v0}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-nez v0, :cond_1
-
+    .line 142
     iget-object v0, p0, Lcom/bumptech/glide/request/ErrorRequestCoordinator;->primaryState:Lcom/bumptech/glide/request/RequestCoordinator$RequestState;
 
     sget-object v1, Lcom/bumptech/glide/request/RequestCoordinator$RequestState;->FAILED:Lcom/bumptech/glide/request/RequestCoordinator$RequestState;
 
-    if-ne v0, v1, :cond_0
+    if-eq v0, v1, :cond_0
 
-    iget-object v0, p0, Lcom/bumptech/glide/request/ErrorRequestCoordinator;->error:Lcom/bumptech/glide/request/Request;
+    .line 143
+    iget-object v0, p0, Lcom/bumptech/glide/request/ErrorRequestCoordinator;->primary:Lcom/bumptech/glide/request/Request;
 
-    .line 141
     invoke-virtual {p1, v0}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
 
     move-result p1
 
-    if-eqz p1, :cond_0
+    return p1
+
+    .line 145
+    :cond_0
+    iget-object v0, p0, Lcom/bumptech/glide/request/ErrorRequestCoordinator;->error:Lcom/bumptech/glide/request/Request;
+
+    invoke-virtual {p1, v0}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+
+    move-result p1
+
+    if-eqz p1, :cond_2
+
+    iget-object p1, p0, Lcom/bumptech/glide/request/ErrorRequestCoordinator;->errorState:Lcom/bumptech/glide/request/RequestCoordinator$RequestState;
+
+    sget-object v0, Lcom/bumptech/glide/request/RequestCoordinator$RequestState;->SUCCESS:Lcom/bumptech/glide/request/RequestCoordinator$RequestState;
+
+    if-eq p1, v0, :cond_1
+
+    if-ne p1, v1, :cond_2
+
+    :cond_1
+    const/4 p1, 0x1
 
     goto :goto_0
 
-    :cond_0
+    :cond_2
     const/4 p1, 0x0
 
-    goto :goto_1
-
-    :cond_1
     :goto_0
-    const/4 p1, 0x1
-
-    :goto_1
     return p1
 .end method
 
 .method private parentCanNotifyCleared()Z
     .locals 1
 
-    .line 130
+    .line 132
     iget-object v0, p0, Lcom/bumptech/glide/request/ErrorRequestCoordinator;->parent:Lcom/bumptech/glide/request/RequestCoordinator;
 
     if-eqz v0, :cond_1
@@ -119,7 +126,7 @@
 .method private parentCanNotifyStatusChanged()Z
     .locals 1
 
-    .line 135
+    .line 137
     iget-object v0, p0, Lcom/bumptech/glide/request/ErrorRequestCoordinator;->parent:Lcom/bumptech/glide/request/RequestCoordinator;
 
     if-eqz v0, :cond_1
@@ -148,7 +155,7 @@
 .method private parentCanSetImage()Z
     .locals 1
 
-    .line 111
+    .line 113
     iget-object v0, p0, Lcom/bumptech/glide/request/ErrorRequestCoordinator;->parent:Lcom/bumptech/glide/request/RequestCoordinator;
 
     if-eqz v0, :cond_1
@@ -219,12 +226,12 @@
 .method public canNotifyCleared(Lcom/bumptech/glide/request/Request;)Z
     .locals 2
 
-    .line 123
+    .line 125
     iget-object v0, p0, Lcom/bumptech/glide/request/ErrorRequestCoordinator;->requestLock:Ljava/lang/Object;
 
     monitor-enter v0
 
-    .line 124
+    .line 126
     :try_start_0
     invoke-direct {p0}, Lcom/bumptech/glide/request/ErrorRequestCoordinator;->parentCanNotifyCleared()Z
 
@@ -232,7 +239,9 @@
 
     if-eqz v1, :cond_0
 
-    invoke-direct {p0, p1}, Lcom/bumptech/glide/request/ErrorRequestCoordinator;->isValidRequest(Lcom/bumptech/glide/request/Request;)Z
+    iget-object v1, p0, Lcom/bumptech/glide/request/ErrorRequestCoordinator;->primary:Lcom/bumptech/glide/request/Request;
+
+    invoke-virtual {p1, v1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
 
     move-result p1
 
@@ -253,7 +262,7 @@
     :catchall_0
     move-exception p1
 
-    .line 125
+    .line 127
     monitor-exit v0
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
@@ -264,12 +273,12 @@
 .method public canNotifyStatusChanged(Lcom/bumptech/glide/request/Request;)Z
     .locals 2
 
-    .line 116
+    .line 118
     iget-object v0, p0, Lcom/bumptech/glide/request/ErrorRequestCoordinator;->requestLock:Ljava/lang/Object;
 
     monitor-enter v0
 
-    .line 117
+    .line 119
     :try_start_0
     invoke-direct {p0}, Lcom/bumptech/glide/request/ErrorRequestCoordinator;->parentCanNotifyStatusChanged()Z
 
@@ -277,7 +286,7 @@
 
     if-eqz v1, :cond_0
 
-    invoke-direct {p0, p1}, Lcom/bumptech/glide/request/ErrorRequestCoordinator;->isValidRequest(Lcom/bumptech/glide/request/Request;)Z
+    invoke-direct {p0, p1}, Lcom/bumptech/glide/request/ErrorRequestCoordinator;->isValidRequestForStatusChanged(Lcom/bumptech/glide/request/Request;)Z
 
     move-result p1
 
@@ -298,7 +307,7 @@
     :catchall_0
     move-exception p1
 
-    .line 118
+    .line 120
     monitor-exit v0
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
@@ -307,48 +316,32 @@
 .end method
 
 .method public canSetImage(Lcom/bumptech/glide/request/Request;)Z
-    .locals 2
+    .locals 1
 
     .line 104
-    iget-object v0, p0, Lcom/bumptech/glide/request/ErrorRequestCoordinator;->requestLock:Ljava/lang/Object;
+    iget-object p1, p0, Lcom/bumptech/glide/request/ErrorRequestCoordinator;->requestLock:Ljava/lang/Object;
 
-    monitor-enter v0
+    monitor-enter p1
 
-    .line 105
+    .line 107
     :try_start_0
     invoke-direct {p0}, Lcom/bumptech/glide/request/ErrorRequestCoordinator;->parentCanSetImage()Z
 
-    move-result v1
+    move-result v0
 
-    if-eqz v1, :cond_0
+    monitor-exit p1
 
-    invoke-direct {p0, p1}, Lcom/bumptech/glide/request/ErrorRequestCoordinator;->isValidRequest(Lcom/bumptech/glide/request/Request;)Z
-
-    move-result p1
-
-    if-eqz p1, :cond_0
-
-    const/4 p1, 0x1
-
-    goto :goto_0
-
-    :cond_0
-    const/4 p1, 0x0
-
-    :goto_0
-    monitor-exit v0
-
-    return p1
+    return v0
 
     :catchall_0
-    move-exception p1
+    move-exception v0
 
-    .line 106
-    monitor-exit v0
+    .line 108
+    monitor-exit p1
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    throw p1
+    throw v0
 .end method
 
 .method public clear()V
@@ -402,12 +395,12 @@
 .method public getRoot()Lcom/bumptech/glide/request/RequestCoordinator;
     .locals 2
 
-    .line 187
+    .line 197
     iget-object v0, p0, Lcom/bumptech/glide/request/ErrorRequestCoordinator;->requestLock:Ljava/lang/Object;
 
     monitor-enter v0
 
-    .line 188
+    .line 198
     :try_start_0
     iget-object v1, p0, Lcom/bumptech/glide/request/ErrorRequestCoordinator;->parent:Lcom/bumptech/glide/request/RequestCoordinator;
 
@@ -430,7 +423,7 @@
     :catchall_0
     move-exception v1
 
-    .line 189
+    .line 199
     monitor-exit v0
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
@@ -441,12 +434,12 @@
 .method public isAnyResourceSet()Z
     .locals 2
 
-    .line 146
+    .line 156
     iget-object v0, p0, Lcom/bumptech/glide/request/ErrorRequestCoordinator;->requestLock:Ljava/lang/Object;
 
     monitor-enter v0
 
-    .line 147
+    .line 157
     :try_start_0
     iget-object v1, p0, Lcom/bumptech/glide/request/ErrorRequestCoordinator;->primary:Lcom/bumptech/glide/request/Request;
 
@@ -483,7 +476,7 @@
     :catchall_0
     move-exception v1
 
-    .line 148
+    .line 158
     monitor-exit v0
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
@@ -671,12 +664,12 @@
 .method public onRequestFailed(Lcom/bumptech/glide/request/Request;)V
     .locals 2
 
-    .line 167
+    .line 177
     iget-object v0, p0, Lcom/bumptech/glide/request/ErrorRequestCoordinator;->requestLock:Ljava/lang/Object;
 
     monitor-enter v0
 
-    .line 168
+    .line 178
     :try_start_0
     iget-object v1, p0, Lcom/bumptech/glide/request/ErrorRequestCoordinator;->error:Lcom/bumptech/glide/request/Request;
 
@@ -686,47 +679,47 @@
 
     if-nez p1, :cond_1
 
-    .line 169
+    .line 179
     sget-object p1, Lcom/bumptech/glide/request/RequestCoordinator$RequestState;->FAILED:Lcom/bumptech/glide/request/RequestCoordinator$RequestState;
 
     iput-object p1, p0, Lcom/bumptech/glide/request/ErrorRequestCoordinator;->primaryState:Lcom/bumptech/glide/request/RequestCoordinator$RequestState;
 
-    .line 170
+    .line 180
     iget-object p1, p0, Lcom/bumptech/glide/request/ErrorRequestCoordinator;->errorState:Lcom/bumptech/glide/request/RequestCoordinator$RequestState;
 
     sget-object v1, Lcom/bumptech/glide/request/RequestCoordinator$RequestState;->RUNNING:Lcom/bumptech/glide/request/RequestCoordinator$RequestState;
 
     if-eq p1, v1, :cond_0
 
-    .line 171
+    .line 181
     iput-object v1, p0, Lcom/bumptech/glide/request/ErrorRequestCoordinator;->errorState:Lcom/bumptech/glide/request/RequestCoordinator$RequestState;
 
-    .line 172
+    .line 182
     iget-object p1, p0, Lcom/bumptech/glide/request/ErrorRequestCoordinator;->error:Lcom/bumptech/glide/request/Request;
 
     invoke-interface {p1}, Lcom/bumptech/glide/request/Request;->begin()V
 
-    .line 174
+    .line 184
     :cond_0
     monitor-exit v0
 
     return-void
 
-    .line 177
+    .line 187
     :cond_1
     sget-object p1, Lcom/bumptech/glide/request/RequestCoordinator$RequestState;->FAILED:Lcom/bumptech/glide/request/RequestCoordinator$RequestState;
 
     iput-object p1, p0, Lcom/bumptech/glide/request/ErrorRequestCoordinator;->errorState:Lcom/bumptech/glide/request/RequestCoordinator$RequestState;
 
-    .line 179
+    .line 189
     iget-object p1, p0, Lcom/bumptech/glide/request/ErrorRequestCoordinator;->parent:Lcom/bumptech/glide/request/RequestCoordinator;
 
     if-eqz p1, :cond_2
 
-    .line 180
+    .line 190
     invoke-interface {p1, p0}, Lcom/bumptech/glide/request/RequestCoordinator;->onRequestFailed(Lcom/bumptech/glide/request/Request;)V
 
-    .line 182
+    .line 192
     :cond_2
     monitor-exit v0
 
@@ -745,12 +738,12 @@
 .method public onRequestSuccess(Lcom/bumptech/glide/request/Request;)V
     .locals 2
 
-    .line 153
+    .line 163
     iget-object v0, p0, Lcom/bumptech/glide/request/ErrorRequestCoordinator;->requestLock:Ljava/lang/Object;
 
     monitor-enter v0
 
-    .line 154
+    .line 164
     :try_start_0
     iget-object v1, p0, Lcom/bumptech/glide/request/ErrorRequestCoordinator;->primary:Lcom/bumptech/glide/request/Request;
 
@@ -760,14 +753,14 @@
 
     if-eqz v1, :cond_0
 
-    .line 155
+    .line 165
     sget-object p1, Lcom/bumptech/glide/request/RequestCoordinator$RequestState;->SUCCESS:Lcom/bumptech/glide/request/RequestCoordinator$RequestState;
 
     iput-object p1, p0, Lcom/bumptech/glide/request/ErrorRequestCoordinator;->primaryState:Lcom/bumptech/glide/request/RequestCoordinator$RequestState;
 
     goto :goto_0
 
-    .line 156
+    .line 166
     :cond_0
     iget-object v1, p0, Lcom/bumptech/glide/request/ErrorRequestCoordinator;->error:Lcom/bumptech/glide/request/Request;
 
@@ -777,22 +770,22 @@
 
     if-eqz p1, :cond_1
 
-    .line 157
+    .line 167
     sget-object p1, Lcom/bumptech/glide/request/RequestCoordinator$RequestState;->SUCCESS:Lcom/bumptech/glide/request/RequestCoordinator$RequestState;
 
     iput-object p1, p0, Lcom/bumptech/glide/request/ErrorRequestCoordinator;->errorState:Lcom/bumptech/glide/request/RequestCoordinator$RequestState;
 
-    .line 159
+    .line 169
     :cond_1
     :goto_0
     iget-object p1, p0, Lcom/bumptech/glide/request/ErrorRequestCoordinator;->parent:Lcom/bumptech/glide/request/RequestCoordinator;
 
     if-eqz p1, :cond_2
 
-    .line 160
+    .line 170
     invoke-interface {p1, p0}, Lcom/bumptech/glide/request/RequestCoordinator;->onRequestSuccess(Lcom/bumptech/glide/request/Request;)V
 
-    .line 162
+    .line 172
     :cond_2
     monitor-exit v0
 

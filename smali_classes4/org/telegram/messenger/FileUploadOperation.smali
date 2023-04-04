@@ -351,7 +351,7 @@
 
     const/4 v1, 0x0
 
-    const-string v2, "uploadinfo"
+    const-string/jumbo v2, "uploadinfo"
 
     invoke-virtual {v0, v2, v1}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
 
@@ -819,7 +819,7 @@
     .line 115
     sget-object v0, Lorg/telegram/messenger/ApplicationLoader;->applicationContext:Landroid/content/Context;
 
-    const-string v1, "uploadinfo"
+    const-string/jumbo v1, "uploadinfo"
 
     const/4 v2, 0x0
 
@@ -2791,7 +2791,7 @@
     :cond_1c
     new-instance v0, Ljava/lang/Exception;
 
-    const-string v1, "trying to upload internal file"
+    const-string/jumbo v1, "trying to upload internal file"
 
     invoke-direct {v0, v1}, Ljava/lang/Exception;-><init>(Ljava/lang/String;)V
 

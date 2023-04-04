@@ -6,8 +6,8 @@ import java.util.Iterator;
 import java.util.Map;
 import java.util.NoSuchElementException;
 import java.util.Set;
-import p034j$.util.Iterator;
-import p034j$.util.function.Consumer;
+import p035j$.util.Iterator;
+import p035j$.util.function.Consumer;
 /* loaded from: classes.dex */
 public class zzhb<K, V> extends AbstractMap<K, V> implements Cloneable {
     int size;
@@ -30,24 +30,24 @@ public class zzhb<K, V> extends AbstractMap<K, V> implements Cloneable {
     }
 
     /* loaded from: classes.dex */
-    final class zzc implements Iterator<Map.Entry<K, V>>, p034j$.util.Iterator {
+    final class zzc implements Iterator<Map.Entry<K, V>>, p035j$.util.Iterator {
         private boolean zzxv;
         private int zzxw;
 
         zzc() {
         }
 
-        @Override // p034j$.util.Iterator
+        @Override // p035j$.util.Iterator
         public /* synthetic */ void forEachRemaining(Consumer consumer) {
             Iterator.CC.$default$forEachRemaining(this, consumer);
         }
 
-        @Override // java.util.Iterator, p034j$.util.Iterator
+        @Override // java.util.Iterator, p035j$.util.Iterator
         public final boolean hasNext() {
             return this.zzxw < zzhb.this.size;
         }
 
-        @Override // java.util.Iterator, p034j$.util.Iterator
+        @Override // java.util.Iterator, p035j$.util.Iterator
         public final void remove() {
             int i = this.zzxw - 1;
             if (this.zzxv || i < 0) {
@@ -58,7 +58,7 @@ public class zzhb<K, V> extends AbstractMap<K, V> implements Cloneable {
             this.zzxv = true;
         }
 
-        @Override // java.util.Iterator, p034j$.util.Iterator
+        @Override // java.util.Iterator, p035j$.util.Iterator
         public final /* synthetic */ Object next() {
             int i = this.zzxw;
             zzhb zzhbVar = zzhb.this;

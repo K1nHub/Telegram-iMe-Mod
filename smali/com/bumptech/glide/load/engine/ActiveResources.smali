@@ -154,14 +154,14 @@
 .method cleanReferenceQueue()V
     .locals 1
 
-    .line 126
+    .line 130
     :cond_0
     :goto_0
     iget-boolean v0, p0, Lcom/bumptech/glide/load/engine/ActiveResources;->isShutdown:Z
 
     if-nez v0, :cond_1
 
-    .line 128
+    .line 132
     :try_start_0
     iget-object v0, p0, Lcom/bumptech/glide/load/engine/ActiveResources;->resourceReferenceQueue:Ljava/lang/ref/ReferenceQueue;
 
@@ -171,22 +171,22 @@
 
     check-cast v0, Lcom/bumptech/glide/load/engine/ActiveResources$ResourceWeakReference;
 
-    .line 129
+    .line 133
     invoke-virtual {p0, v0}, Lcom/bumptech/glide/load/engine/ActiveResources;->cleanupActiveReference(Lcom/bumptech/glide/load/engine/ActiveResources$ResourceWeakReference;)V
 
-    .line 132
+    .line 136
     iget-object v0, p0, Lcom/bumptech/glide/load/engine/ActiveResources;->cb:Lcom/bumptech/glide/load/engine/ActiveResources$DequeuedResourceCallback;
 
     if-eqz v0, :cond_0
 
-    .line 134
+    .line 138
     invoke-interface {v0}, Lcom/bumptech/glide/load/engine/ActiveResources$DequeuedResourceCallback;->onResourceDequeued()V
     :try_end_0
     .catch Ljava/lang/InterruptedException; {:try_start_0 .. :try_end_0} :catch_0
 
     goto :goto_0
 
-    .line 138
+    .line 142
     :catch_0
     invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
 
@@ -246,7 +246,7 @@
 
     invoke-direct/range {v1 .. v6}, Lcom/bumptech/glide/load/engine/EngineResource;-><init>(Lcom/bumptech/glide/load/engine/Resource;ZZLcom/bumptech/glide/load/Key;Lcom/bumptech/glide/load/engine/EngineResource$ResourceListener;)V
 
-    .line 120
+    .line 124
     iget-object v1, p0, Lcom/bumptech/glide/load/engine/ActiveResources;->listener:Lcom/bumptech/glide/load/engine/EngineResource$ResourceListener;
 
     iget-object p1, p1, Lcom/bumptech/glide/load/engine/ActiveResources$ResourceWeakReference;->key:Lcom/bumptech/glide/load/Key;

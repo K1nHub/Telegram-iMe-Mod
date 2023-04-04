@@ -1,6 +1,6 @@
 package com.google.android.exoplayer2.extractor.flv;
 
-import com.google.android.exoplayer2.C0468C;
+import com.google.android.exoplayer2.C0482C;
 import com.google.android.exoplayer2.extractor.DummyTrackOutput;
 import com.google.android.exoplayer2.util.ParsableByteArray;
 import java.util.ArrayList;
@@ -38,7 +38,7 @@ final class ScriptTagPayloadReader extends TagPayloadReader {
 
     public ScriptTagPayloadReader() {
         super(new DummyTrackOutput());
-        this.durationUs = C0468C.TIME_UNSET;
+        this.durationUs = C0482C.TIME_UNSET;
         this.keyFrameTimesUs = new long[0];
         this.keyFrameTagPositions = new long[0];
     }

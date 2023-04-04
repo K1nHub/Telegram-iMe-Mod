@@ -52,7 +52,7 @@
     .line 438
     iput-object p1, p0, Lorg/telegram/messenger/voip/Instance$ServerConfig;->jsonObject:Lorg/json/JSONObject;
 
-    const-string v0, "use_system_ns"
+    const-string/jumbo v0, "use_system_ns"
 
     const/4 v1, 0x1
 
@@ -63,7 +63,7 @@
 
     iput-boolean v0, p0, Lorg/telegram/messenger/voip/Instance$ServerConfig;->useSystemNs:Z
 
-    const-string v0, "use_system_aec"
+    const-string/jumbo v0, "use_system_aec"
 
     .line 440
     invoke-virtual {p1, v0, v1}, Lorg/json/JSONObject;->optBoolean(Ljava/lang/String;Z)Z

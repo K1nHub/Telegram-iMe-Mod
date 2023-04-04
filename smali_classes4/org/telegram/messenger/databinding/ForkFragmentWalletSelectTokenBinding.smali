@@ -7,25 +7,25 @@
 
 
 # instance fields
-.field public final globalStateLayout:Lcom/smedialink/ui/custom/state/GlobalStateLayout;
+.field public final globalStateLayout:Lcom/iMe/ui/custom/state/GlobalStateLayout;
 
 .field public final recycleTokens:Landroidx/recyclerview/widget/RecyclerView;
 
-.field private final rootView:Lcom/smedialink/ui/custom/state/GlobalStateLayout;
+.field private final rootView:Lcom/iMe/ui/custom/state/GlobalStateLayout;
 
 
 # direct methods
-.method private constructor <init>(Lcom/smedialink/ui/custom/state/GlobalStateLayout;Lcom/smedialink/ui/custom/state/GlobalStateLayout;Landroidx/recyclerview/widget/RecyclerView;)V
+.method private constructor <init>(Lcom/iMe/ui/custom/state/GlobalStateLayout;Lcom/iMe/ui/custom/state/GlobalStateLayout;Landroidx/recyclerview/widget/RecyclerView;)V
     .locals 0
 
     .line 29
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 30
-    iput-object p1, p0, Lorg/telegram/messenger/databinding/ForkFragmentWalletSelectTokenBinding;->rootView:Lcom/smedialink/ui/custom/state/GlobalStateLayout;
+    iput-object p1, p0, Lorg/telegram/messenger/databinding/ForkFragmentWalletSelectTokenBinding;->rootView:Lcom/iMe/ui/custom/state/GlobalStateLayout;
 
     .line 31
-    iput-object p2, p0, Lorg/telegram/messenger/databinding/ForkFragmentWalletSelectTokenBinding;->globalStateLayout:Lcom/smedialink/ui/custom/state/GlobalStateLayout;
+    iput-object p2, p0, Lorg/telegram/messenger/databinding/ForkFragmentWalletSelectTokenBinding;->globalStateLayout:Lcom/iMe/ui/custom/state/GlobalStateLayout;
 
     .line 32
     iput-object p3, p0, Lorg/telegram/messenger/databinding/ForkFragmentWalletSelectTokenBinding;->recycleTokens:Landroidx/recyclerview/widget/RecyclerView;
@@ -39,7 +39,7 @@
     .line 62
     move-object v0, p0
 
-    check-cast v0, Lcom/smedialink/ui/custom/state/GlobalStateLayout;
+    check-cast v0, Lcom/iMe/ui/custom/state/GlobalStateLayout;
 
     .line 64
     sget v1, Lorg/telegram/messenger/R$id;->recycle_tokens:I
@@ -56,7 +56,7 @@
     .line 70
     new-instance p0, Lorg/telegram/messenger/databinding/ForkFragmentWalletSelectTokenBinding;
 
-    invoke-direct {p0, v0, v0, v2}, Lorg/telegram/messenger/databinding/ForkFragmentWalletSelectTokenBinding;-><init>(Lcom/smedialink/ui/custom/state/GlobalStateLayout;Lcom/smedialink/ui/custom/state/GlobalStateLayout;Landroidx/recyclerview/widget/RecyclerView;)V
+    invoke-direct {p0, v0, v0, v2}, Lorg/telegram/messenger/databinding/ForkFragmentWalletSelectTokenBinding;-><init>(Lcom/iMe/ui/custom/state/GlobalStateLayout;Lcom/iMe/ui/custom/state/GlobalStateLayout;Landroidx/recyclerview/widget/RecyclerView;)V
 
     return-object p0
 
@@ -131,18 +131,18 @@
     .locals 1
 
     .line 18
-    invoke-virtual {p0}, Lorg/telegram/messenger/databinding/ForkFragmentWalletSelectTokenBinding;->getRoot()Lcom/smedialink/ui/custom/state/GlobalStateLayout;
+    invoke-virtual {p0}, Lorg/telegram/messenger/databinding/ForkFragmentWalletSelectTokenBinding;->getRoot()Lcom/iMe/ui/custom/state/GlobalStateLayout;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method public getRoot()Lcom/smedialink/ui/custom/state/GlobalStateLayout;
+.method public getRoot()Lcom/iMe/ui/custom/state/GlobalStateLayout;
     .locals 1
 
     .line 38
-    iget-object v0, p0, Lorg/telegram/messenger/databinding/ForkFragmentWalletSelectTokenBinding;->rootView:Lcom/smedialink/ui/custom/state/GlobalStateLayout;
+    iget-object v0, p0, Lorg/telegram/messenger/databinding/ForkFragmentWalletSelectTokenBinding;->rootView:Lcom/iMe/ui/custom/state/GlobalStateLayout;
 
     return-object v0
 .end method

@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lorg/telegram/ui/ChatActivity;->newInstanceInForwardingEditor(JLorg/telegram/messenger/ForwardingMessagesParams;Lorg/fork/utils/Callbacks$Callback1;)Lorg/telegram/ui/ChatActivity;
+    value = Lorg/telegram/ui/ChatActivity;->newInstanceInForwardingEditor(JLorg/telegram/messenger/ForwardingMessagesParams;Lcom/iMe/fork/utils/Callbacks$Callback1;)Lorg/telegram/ui/ChatActivity;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -20,17 +20,17 @@
 # instance fields
 .field final synthetic val$dialogId:J
 
-.field final synthetic val$newParamsCallback:Lorg/fork/utils/Callbacks$Callback1;
+.field final synthetic val$newParamsCallback:Lcom/iMe/fork/utils/Callbacks$Callback1;
 
 
 # direct methods
-.method constructor <init>(JLorg/fork/utils/Callbacks$Callback1;)V
+.method constructor <init>(JLcom/iMe/fork/utils/Callbacks$Callback1;)V
     .locals 0
 
-    .line 600
+    .line 601
     iput-wide p1, p0, Lorg/telegram/ui/ChatActivity$2;->val$dialogId:J
 
-    iput-object p3, p0, Lorg/telegram/ui/ChatActivity$2;->val$newParamsCallback:Lorg/fork/utils/Callbacks$Callback1;
+    iput-object p3, p0, Lorg/telegram/ui/ChatActivity$2;->val$newParamsCallback:Lcom/iMe/fork/utils/Callbacks$Callback1;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -50,7 +50,7 @@
         }
     .end annotation
 
-    .line 603
+    .line 604
     new-instance v0, Lorg/telegram/messenger/ForwardingMessagesParams;
 
     iget-wide v1, p0, Lorg/telegram/ui/ChatActivity$2;->val$dialogId:J
@@ -59,15 +59,15 @@
 
     const/4 p1, 0x1
 
-    .line 604
+    .line 605
     iput-boolean p1, v0, Lorg/telegram/messenger/ForwardingMessagesParams;->hideForwardSendersName:Z
 
     iput-boolean p1, v0, Lorg/telegram/messenger/ForwardingMessagesParams;->needForceHideForwardAuthor:Z
 
-    .line 605
-    iget-object p1, p0, Lorg/telegram/ui/ChatActivity$2;->val$newParamsCallback:Lorg/fork/utils/Callbacks$Callback1;
+    .line 606
+    iget-object p1, p0, Lorg/telegram/ui/ChatActivity$2;->val$newParamsCallback:Lcom/iMe/fork/utils/Callbacks$Callback1;
 
-    invoke-interface {p1, v0}, Lorg/fork/utils/Callbacks$Callback1;->invoke(Ljava/lang/Object;)V
+    invoke-interface {p1, v0}, Lcom/iMe/fork/utils/Callbacks$Callback1;->invoke(Ljava/lang/Object;)V
 
     return-void
 .end method

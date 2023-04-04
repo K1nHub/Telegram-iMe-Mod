@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/DialogsActivity;)V
     .locals 0
 
-    .line 4598
+    .line 4599
     iput-object p1, p0, Lorg/telegram/ui/DialogsActivity$10;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-direct {p0}, Landroid/graphics/Paint;-><init>()V
@@ -35,10 +35,10 @@
 .method public setAlpha(I)V
     .locals 0
 
-    .line 4601
+    .line 4602
     invoke-super {p0, p1}, Landroid/graphics/Paint;->setAlpha(I)V
 
-    .line 4602
+    .line 4603
     iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$10;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/DialogsActivity;->access$25000(Lorg/telegram/ui/DialogsActivity;)Landroid/view/View;
@@ -47,7 +47,7 @@
 
     if-eqz p1, :cond_0
 
-    .line 4603
+    .line 4604
     iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$10;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/DialogsActivity;->access$25100(Lorg/telegram/ui/DialogsActivity;)Landroid/view/View;

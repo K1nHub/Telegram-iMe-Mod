@@ -128,7 +128,7 @@
     :cond_1
     new-instance p0, Ljava/lang/IllegalArgumentException;
 
-    const-string v0, "unknown coordinate system"
+    const-string/jumbo v0, "unknown coordinate system"
 
     invoke-direct {p0, v0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 

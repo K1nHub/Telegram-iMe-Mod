@@ -26,10 +26,10 @@
 .method public constructor <init>(Landroid/content/res/Resources;)V
     .locals 0
 
-    .line 35
+    .line 37
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 36
+    .line 38
     invoke-static {p1}, Lcom/bumptech/glide/util/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p1
@@ -59,7 +59,7 @@
         }
     .end annotation
 
-    .line 43
+    .line 45
     iget-object p2, p0, Lcom/bumptech/glide/load/resource/transcode/BitmapDrawableTranscoder;->resources:Landroid/content/res/Resources;
 
     invoke-static {p2, p1}, Lcom/bumptech/glide/load/resource/bitmap/LazyBitmapDrawableResource;->obtain(Landroid/content/res/Resources;Lcom/bumptech/glide/load/engine/Resource;)Lcom/bumptech/glide/load/engine/Resource;

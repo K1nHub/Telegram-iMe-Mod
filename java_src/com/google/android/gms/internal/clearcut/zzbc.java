@@ -2,11 +2,11 @@ package com.google.android.gms.internal.clearcut;
 
 import java.util.Iterator;
 import java.util.NoSuchElementException;
-import p034j$.util.Iterator;
-import p034j$.util.function.Consumer;
+import p035j$.util.Iterator;
+import p035j$.util.function.Consumer;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: classes.dex */
-public final class zzbc implements Iterator, p034j$.util.Iterator {
+public final class zzbc implements Iterator, p035j$.util.Iterator {
     private final int limit;
     private int position = 0;
     private final /* synthetic */ zzbb zzfl;
@@ -28,22 +28,22 @@ public final class zzbc implements Iterator, p034j$.util.Iterator {
         }
     }
 
-    @Override // p034j$.util.Iterator
+    @Override // p035j$.util.Iterator
     public /* synthetic */ void forEachRemaining(Consumer consumer) {
         Iterator.CC.$default$forEachRemaining(this, consumer);
     }
 
-    @Override // java.util.Iterator, p034j$.util.Iterator
+    @Override // java.util.Iterator, p035j$.util.Iterator
     public final boolean hasNext() {
         return this.position < this.limit;
     }
 
-    @Override // java.util.Iterator, p034j$.util.Iterator
+    @Override // java.util.Iterator, p035j$.util.Iterator
     public final /* synthetic */ Object next() {
         return Byte.valueOf(nextByte());
     }
 
-    @Override // java.util.Iterator, p034j$.util.Iterator
+    @Override // java.util.Iterator, p035j$.util.Iterator
     public final void remove() {
         throw new UnsupportedOperationException();
     }

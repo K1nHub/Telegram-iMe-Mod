@@ -56,27 +56,27 @@
 .method static constructor <clinit>()V
     .locals 4
 
-    .line 29
+    .line 30
     new-instance v0, Ljava/util/HashSet;
 
     const-string v1, "file"
 
-    const-string v2, "android.resource"
+    const-string v2, "content"
 
-    const-string v3, "content"
+    const-string v3, "android.resource"
 
     filled-new-array {v1, v2, v3}, [Ljava/lang/String;
 
     move-result-object v1
 
-    .line 32
+    .line 33
     invoke-static {v1}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
 
     move-result-object v1
 
     invoke-direct {v0, v1}, Ljava/util/HashSet;-><init>(Ljava/util/Collection;)V
 
-    .line 30
+    .line 31
     invoke-static {v0}, Ljava/util/Collections;->unmodifiableSet(Ljava/util/Set;)Ljava/util/Set;
 
     move-result-object v0
@@ -96,10 +96,10 @@
         }
     .end annotation
 
-    .line 41
+    .line 42
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 42
+    .line 43
     iput-object p1, p0, Lcom/bumptech/glide/load/model/UriLoader;->factory:Lcom/bumptech/glide/load/model/UriLoader$LocalUriFetcherFactory;
 
     return-void
@@ -121,7 +121,7 @@
         }
     .end annotation
 
-    .line 48
+    .line 49
     new-instance p2, Lcom/bumptech/glide/load/model/ModelLoader$LoadData;
 
     new-instance p3, Lcom/bumptech/glide/signature/ObjectKey;
@@ -155,7 +155,7 @@
 .method public handles(Landroid/net/Uri;)Z
     .locals 1
 
-    .line 53
+    .line 54
     sget-object v0, Lcom/bumptech/glide/load/model/UriLoader;->SCHEMES:Ljava/util/Set;
 
     invoke-virtual {p1}, Landroid/net/Uri;->getScheme()Ljava/lang/String;

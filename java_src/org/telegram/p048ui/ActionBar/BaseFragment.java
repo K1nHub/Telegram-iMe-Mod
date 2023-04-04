@@ -23,24 +23,24 @@ import android.view.Window;
 import android.view.accessibility.AccessibilityManager;
 import android.widget.FrameLayout;
 import androidx.core.graphics.ColorUtils;
+import com.iMe.fork.controller.AlbumsController;
+import com.iMe.fork.controller.BackupController;
+import com.iMe.fork.controller.BookmarksController;
+import com.iMe.fork.controller.DialogTranslationController;
+import com.iMe.fork.controller.FiltersController;
+import com.iMe.fork.controller.ForkCommonController;
+import com.iMe.fork.controller.ForkTopicsController;
+import com.iMe.fork.controller.LockedSectionsController;
+import com.iMe.fork.controller.MultiPanelController;
+import com.iMe.fork.controller.MusicController;
+import com.iMe.fork.controller.NeuroBotsController;
+import com.iMe.fork.controller.RecentChatsController;
+import com.iMe.fork.controller.TemplatesController;
+import com.iMe.fork.controller.ToolsController;
+import com.iMe.fork.controller.WalletFingerprintController;
+import com.iMe.fork.enums.LockedSection;
+import com.iMe.fork.p025ui.view.PinnedPlayerView;
 import java.util.ArrayList;
-import org.fork.controller.AlbumsController;
-import org.fork.controller.BackupController;
-import org.fork.controller.BookmarksController;
-import org.fork.controller.DialogTranslationController;
-import org.fork.controller.FiltersController;
-import org.fork.controller.ForkCommonController;
-import org.fork.controller.ForkTopicsController;
-import org.fork.controller.LockedSectionsController;
-import org.fork.controller.MultiPanelController;
-import org.fork.controller.MusicController;
-import org.fork.controller.NeuroBotsController;
-import org.fork.controller.RecentChatsController;
-import org.fork.controller.TemplatesController;
-import org.fork.controller.ToolsController;
-import org.fork.controller.WalletFingerprintController;
-import org.fork.enums.LockedSection;
-import org.fork.p046ui.view.PinnedPlayerView;
 import org.telegram.messenger.AccountInstance;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
@@ -68,7 +68,7 @@ import timber.log.Timber;
 /* renamed from: org.telegram.ui.ActionBar.BaseFragment */
 /* loaded from: classes5.dex */
 public abstract class BaseFragment {
-    protected C3366ActionBar actionBar;
+    protected C3381ActionBar actionBar;
     protected Bundle arguments;
     protected int classGuid;
     protected int currentAccount;
@@ -265,6 +265,10 @@ public abstract class BaseFragment {
         return this.inMenuMode;
     }
 
+    public PinnedPlayerView getPinnedPlayerView() {
+        return this.pinnedPlayerView;
+    }
+
     public AlbumsController getAlbumsController() {
         return getAccountInstance().getAlbumsController();
     }
@@ -355,7 +359,7 @@ public abstract class BaseFragment {
         return this.fragmentBeginToShow;
     }
 
-    public C3366ActionBar getActionBar() {
+    public C3381ActionBar getActionBar() {
         return this.actionBar;
     }
 
@@ -389,12 +393,12 @@ public abstract class BaseFragment {
 
     public void setInPreviewMode(boolean z) {
         this.inPreviewMode = z;
-        C3366ActionBar c3366ActionBar = this.actionBar;
-        if (c3366ActionBar != null) {
+        C3381ActionBar c3381ActionBar = this.actionBar;
+        if (c3381ActionBar != null) {
             if (z) {
-                c3366ActionBar.setOccupyStatusBar(false);
+                c3381ActionBar.setOccupyStatusBar(false);
             } else {
-                c3366ActionBar.setOccupyStatusBar(Build.VERSION.SDK_INT >= 21);
+                c3381ActionBar.setOccupyStatusBar(Build.VERSION.SDK_INT >= 21);
             }
         }
     }
@@ -418,9 +422,9 @@ public abstract class BaseFragment {
             this.fragmentView = null;
             onDestroyView();
         }
-        C3366ActionBar c3366ActionBar = this.actionBar;
-        if (c3366ActionBar != null) {
-            ViewGroup viewGroup2 = (ViewGroup) c3366ActionBar.getParent();
+        C3381ActionBar c3381ActionBar = this.actionBar;
+        if (c3381ActionBar != null) {
+            ViewGroup viewGroup2 = (ViewGroup) c3381ActionBar.getParent();
             if (viewGroup2 != null) {
                 try {
                     viewGroup2.removeViewInLayout(this.actionBar);
@@ -492,7 +496,7 @@ public abstract class BaseFragment {
             }
             INavigationLayout iNavigationLayout4 = this.parentLayout;
             if (iNavigationLayout4 != null && this.actionBar == null) {
-                C3366ActionBar createActionBar = createActionBar(iNavigationLayout4.getView().getContext());
+                C3381ActionBar createActionBar = createActionBar(iNavigationLayout4.getView().getContext());
                 this.actionBar = createActionBar;
                 if (createActionBar != null) {
                     createActionBar.parentFragment = this;
@@ -521,17 +525,17 @@ public abstract class BaseFragment {
         }
     }
 
-    public C3366ActionBar createActionBar(Context context) {
-        C3366ActionBar c3366ActionBar = new C3366ActionBar(context, getResourceProvider());
-        c3366ActionBar.setBackgroundColor(getThemedColor("actionBarDefault"));
-        c3366ActionBar.setItemsBackgroundColor(getThemedColor("actionBarDefaultSelector"), false);
-        c3366ActionBar.setItemsBackgroundColor(getThemedColor("actionBarActionModeDefaultSelector"), true);
-        c3366ActionBar.setItemsColor(getThemedColor("actionBarDefaultIcon"), false);
-        c3366ActionBar.setItemsColor(getThemedColor("actionBarActionModeDefaultIcon"), true);
+    public C3381ActionBar createActionBar(Context context) {
+        C3381ActionBar c3381ActionBar = new C3381ActionBar(context, getResourceProvider());
+        c3381ActionBar.setBackgroundColor(getThemedColor("actionBarDefault"));
+        c3381ActionBar.setItemsBackgroundColor(getThemedColor("actionBarDefaultSelector"), false);
+        c3381ActionBar.setItemsBackgroundColor(getThemedColor("actionBarActionModeDefaultSelector"), true);
+        c3381ActionBar.setItemsColor(getThemedColor("actionBarDefaultIcon"), false);
+        c3381ActionBar.setItemsColor(getThemedColor("actionBarActionModeDefaultIcon"), true);
         if (this.inPreviewMode || this.inBubbleMode) {
-            c3366ActionBar.setOccupyStatusBar(false);
+            c3381ActionBar.setOccupyStatusBar(false);
         }
-        return c3366ActionBar;
+        return c3381ActionBar;
     }
 
     public void movePreviewFragment(float f) {
@@ -597,9 +601,9 @@ public abstract class BaseFragment {
         getConnectionsManager().cancelRequestsForGuid(this.classGuid);
         getMessagesStorage().cancelTasksForGuid(this.classGuid);
         this.isFinished = true;
-        C3366ActionBar c3366ActionBar = this.actionBar;
-        if (c3366ActionBar != null) {
-            c3366ActionBar.setEnabled(false);
+        C3381ActionBar c3381ActionBar = this.actionBar;
+        if (c3381ActionBar != null) {
+            c3381ActionBar.setEnabled(false);
         }
         if (!hasForceLightStatusBar() || AndroidUtilities.isTablet() || getParentLayout() == null || getParentLayout().getLastFragment() != this || getParentActivity() == null || this.finishing) {
             return;
@@ -620,9 +624,9 @@ public abstract class BaseFragment {
     }
 
     public void onPause() {
-        C3366ActionBar c3366ActionBar = this.actionBar;
-        if (c3366ActionBar != null) {
-            c3366ActionBar.onPause();
+        C3381ActionBar c3381ActionBar = this.actionBar;
+        if (c3381ActionBar != null) {
+            c3381ActionBar.onPause();
         }
         this.isPaused = true;
         try {
@@ -742,9 +746,9 @@ public abstract class BaseFragment {
         } catch (Exception e) {
             FileLog.m45e(e);
         }
-        C3366ActionBar c3366ActionBar = this.actionBar;
-        if (c3366ActionBar != null) {
-            c3366ActionBar.onPause();
+        C3381ActionBar c3381ActionBar = this.actionBar;
+        if (c3381ActionBar != null) {
+            c3381ActionBar.onPause();
         }
     }
 
@@ -755,7 +759,7 @@ public abstract class BaseFragment {
     }
 
     public void onBecomeFullyVisible() {
-        C3366ActionBar actionBar;
+        C3381ActionBar actionBar;
         if (!((AccessibilityManager) ApplicationLoader.applicationContext.getSystemService("accessibility")).isEnabled() || (actionBar = getActionBar()) == null) {
             return;
         }
@@ -907,15 +911,15 @@ public abstract class BaseFragment {
             return null;
         }
         INavigationLayout[] iNavigationLayoutArr = {INavigationLayout.CC.newLayout(getParentActivity())};
-        DialogC34251 dialogC34251 = new DialogC34251(this, getParentActivity(), true, iNavigationLayoutArr, baseFragment);
-        baseFragment.setParentDialog(dialogC34251);
-        dialogC34251.show();
+        DialogC34401 dialogC34401 = new DialogC34401(this, getParentActivity(), true, iNavigationLayoutArr, baseFragment);
+        baseFragment.setParentDialog(dialogC34401);
+        dialogC34401.show();
         return iNavigationLayoutArr;
     }
 
     /* renamed from: org.telegram.ui.ActionBar.BaseFragment$1 */
     /* loaded from: classes5.dex */
-    class DialogC34251 extends BottomSheet {
+    class DialogC34401 extends BottomSheet {
         final /* synthetic */ INavigationLayout[] val$actionBarLayout;
         final /* synthetic */ BaseFragment val$fragment;
 
@@ -925,7 +929,7 @@ public abstract class BaseFragment {
         }
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        DialogC34251(BaseFragment baseFragment, Context context, boolean z, INavigationLayout[] iNavigationLayoutArr, final BaseFragment baseFragment2) {
+        DialogC34401(BaseFragment baseFragment, Context context, boolean z, INavigationLayout[] iNavigationLayoutArr, final BaseFragment baseFragment2) {
             super(context, z);
             this.val$actionBarLayout = iNavigationLayoutArr;
             this.val$fragment = baseFragment2;
@@ -1007,8 +1011,8 @@ public abstract class BaseFragment {
         int color;
         if (!hasForceLightStatusBar() || Theme.getCurrentTheme().isDark()) {
             Theme.ResourcesProvider resourceProvider = getResourceProvider();
-            C3366ActionBar c3366ActionBar = this.actionBar;
-            String str = (c3366ActionBar == null || !c3366ActionBar.isActionModeShowed()) ? "actionBarDefault" : "actionBarActionModeDefault";
+            C3381ActionBar c3381ActionBar = this.actionBar;
+            String str = (c3381ActionBar == null || !c3381ActionBar.isActionModeShowed()) ? "actionBarDefault" : "actionBarActionModeDefault";
             if (resourceProvider != null) {
                 color = resourceProvider.getColorOrDefault(str);
             } else {

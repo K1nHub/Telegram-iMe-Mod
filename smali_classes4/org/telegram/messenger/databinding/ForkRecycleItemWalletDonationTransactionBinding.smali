@@ -13,17 +13,17 @@
 
 .field public final textAmount:Landroidx/appcompat/widget/AppCompatTextView;
 
-.field public final textCoinTicker:Lcom/smedialink/ui/custom/CoinTickerView;
+.field public final textCoinTicker:Lcom/iMe/ui/custom/CoinTickerView;
 
 .field public final textDate:Landroidx/appcompat/widget/AppCompatTextView;
 
 .field public final textUserFullName:Landroidx/appcompat/widget/AppCompatTextView;
 
-.field public final viewDivider:Lcom/smedialink/ui/custom/DividerView;
+.field public final viewDivider:Lcom/iMe/ui/custom/DividerView;
 
 
 # direct methods
-.method private constructor <init>(Landroid/widget/LinearLayout;Landroidx/constraintlayout/widget/Barrier;Landroidx/constraintlayout/widget/ConstraintLayout;Lorg/telegram/ui/Components/BackupImageView;Landroid/widget/LinearLayout;Landroidx/appcompat/widget/AppCompatTextView;Lcom/smedialink/ui/custom/CoinTickerView;Landroidx/appcompat/widget/AppCompatTextView;Landroidx/appcompat/widget/AppCompatTextView;Lcom/smedialink/ui/custom/DividerView;)V
+.method private constructor <init>(Landroid/widget/LinearLayout;Landroidx/constraintlayout/widget/Barrier;Landroidx/constraintlayout/widget/ConstraintLayout;Lorg/telegram/ui/Components/BackupImageView;Landroid/widget/LinearLayout;Landroidx/appcompat/widget/AppCompatTextView;Lcom/iMe/ui/custom/CoinTickerView;Landroidx/appcompat/widget/AppCompatTextView;Landroidx/appcompat/widget/AppCompatTextView;Lcom/iMe/ui/custom/DividerView;)V
     .locals 0
 
     .line 59
@@ -39,7 +39,7 @@
     iput-object p6, p0, Lorg/telegram/messenger/databinding/ForkRecycleItemWalletDonationTransactionBinding;->textAmount:Landroidx/appcompat/widget/AppCompatTextView;
 
     .line 66
-    iput-object p7, p0, Lorg/telegram/messenger/databinding/ForkRecycleItemWalletDonationTransactionBinding;->textCoinTicker:Lcom/smedialink/ui/custom/CoinTickerView;
+    iput-object p7, p0, Lorg/telegram/messenger/databinding/ForkRecycleItemWalletDonationTransactionBinding;->textCoinTicker:Lcom/iMe/ui/custom/CoinTickerView;
 
     .line 67
     iput-object p8, p0, Lorg/telegram/messenger/databinding/ForkRecycleItemWalletDonationTransactionBinding;->textDate:Landroidx/appcompat/widget/AppCompatTextView;
@@ -48,7 +48,7 @@
     iput-object p9, p0, Lorg/telegram/messenger/databinding/ForkRecycleItemWalletDonationTransactionBinding;->textUserFullName:Landroidx/appcompat/widget/AppCompatTextView;
 
     .line 69
-    iput-object p10, p0, Lorg/telegram/messenger/databinding/ForkRecycleItemWalletDonationTransactionBinding;->viewDivider:Lcom/smedialink/ui/custom/DividerView;
+    iput-object p10, p0, Lorg/telegram/messenger/databinding/ForkRecycleItemWalletDonationTransactionBinding;->viewDivider:Lcom/iMe/ui/custom/DividerView;
 
     return-void
 .end method
@@ -127,7 +127,7 @@
 
     move-object v9, v1
 
-    check-cast v9, Lcom/smedialink/ui/custom/CoinTickerView;
+    check-cast v9, Lcom/iMe/ui/custom/CoinTickerView;
 
     if-eqz v9, :cond_0
 
@@ -169,7 +169,7 @@
 
     move-object v12, v1
 
-    check-cast v12, Lcom/smedialink/ui/custom/DividerView;
+    check-cast v12, Lcom/iMe/ui/custom/DividerView;
 
     if-eqz v12, :cond_0
 
@@ -180,7 +180,7 @@
 
     move-object v3, v7
 
-    invoke-direct/range {v2 .. v12}, Lorg/telegram/messenger/databinding/ForkRecycleItemWalletDonationTransactionBinding;-><init>(Landroid/widget/LinearLayout;Landroidx/constraintlayout/widget/Barrier;Landroidx/constraintlayout/widget/ConstraintLayout;Lorg/telegram/ui/Components/BackupImageView;Landroid/widget/LinearLayout;Landroidx/appcompat/widget/AppCompatTextView;Lcom/smedialink/ui/custom/CoinTickerView;Landroidx/appcompat/widget/AppCompatTextView;Landroidx/appcompat/widget/AppCompatTextView;Lcom/smedialink/ui/custom/DividerView;)V
+    invoke-direct/range {v2 .. v12}, Lorg/telegram/messenger/databinding/ForkRecycleItemWalletDonationTransactionBinding;-><init>(Landroid/widget/LinearLayout;Landroidx/constraintlayout/widget/Barrier;Landroidx/constraintlayout/widget/ConstraintLayout;Lorg/telegram/ui/Components/BackupImageView;Landroid/widget/LinearLayout;Landroidx/appcompat/widget/AppCompatTextView;Lcom/iMe/ui/custom/CoinTickerView;Landroidx/appcompat/widget/AppCompatTextView;Landroidx/appcompat/widget/AppCompatTextView;Lcom/iMe/ui/custom/DividerView;)V
 
     return-object p0
 

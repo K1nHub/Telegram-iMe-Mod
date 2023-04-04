@@ -1,6 +1,6 @@
 package com.iMe.i_staking.response;
 
-import com.iMe.i_staking.request.StakingApprovalPrepareRequest$$ExternalSyntheticBackport0;
+import com.iMe.bots.data.model.database.BotsDbModel$$ExternalSyntheticBackport0;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: StakingOperationResponse.kt */
 /* loaded from: classes3.dex */
@@ -11,7 +11,7 @@ public final class StakingOperationResponse {
     private final StakingOperationCostResponse fee;
 
     /* renamed from: id */
-    private final long f247id;
+    private final long f264id;
     private final String issuedAt;
     private final String issuer;
     private final String network;
@@ -24,7 +24,7 @@ public final class StakingOperationResponse {
     private final String type;
 
     public final long component1() {
-        return this.f247id;
+        return this.f264id;
     }
 
     public final StakingOperationCostResponse component10() {
@@ -100,13 +100,13 @@ public final class StakingOperationResponse {
         }
         if (obj instanceof StakingOperationResponse) {
             StakingOperationResponse stakingOperationResponse = (StakingOperationResponse) obj;
-            return this.f247id == stakingOperationResponse.f247id && this.stakingId == stakingOperationResponse.stakingId && Intrinsics.areEqual(this.transaction, stakingOperationResponse.transaction) && Intrinsics.areEqual(this.type, stakingOperationResponse.type) && Intrinsics.areEqual(this.status, stakingOperationResponse.status) && Intrinsics.areEqual(this.issuer, stakingOperationResponse.issuer) && Intrinsics.areEqual(this.issuedAt, stakingOperationResponse.issuedAt) && Intrinsics.areEqual(this.settledAt, stakingOperationResponse.settledAt) && Intrinsics.areEqual(this.failReason, stakingOperationResponse.failReason) && Intrinsics.areEqual(this.amount, stakingOperationResponse.amount) && Intrinsics.areEqual(this.fee, stakingOperationResponse.fee) && Intrinsics.areEqual(this.safe, stakingOperationResponse.safe) && Intrinsics.areEqual(this.approvedToken, stakingOperationResponse.approvedToken) && Intrinsics.areEqual(this.token, stakingOperationResponse.token) && Intrinsics.areEqual(this.network, stakingOperationResponse.network);
+            return this.f264id == stakingOperationResponse.f264id && this.stakingId == stakingOperationResponse.stakingId && Intrinsics.areEqual(this.transaction, stakingOperationResponse.transaction) && Intrinsics.areEqual(this.type, stakingOperationResponse.type) && Intrinsics.areEqual(this.status, stakingOperationResponse.status) && Intrinsics.areEqual(this.issuer, stakingOperationResponse.issuer) && Intrinsics.areEqual(this.issuedAt, stakingOperationResponse.issuedAt) && Intrinsics.areEqual(this.settledAt, stakingOperationResponse.settledAt) && Intrinsics.areEqual(this.failReason, stakingOperationResponse.failReason) && Intrinsics.areEqual(this.amount, stakingOperationResponse.amount) && Intrinsics.areEqual(this.fee, stakingOperationResponse.fee) && Intrinsics.areEqual(this.safe, stakingOperationResponse.safe) && Intrinsics.areEqual(this.approvedToken, stakingOperationResponse.approvedToken) && Intrinsics.areEqual(this.token, stakingOperationResponse.token) && Intrinsics.areEqual(this.network, stakingOperationResponse.network);
         }
         return false;
     }
 
     public int hashCode() {
-        int m716m = ((((((((((((StakingApprovalPrepareRequest$$ExternalSyntheticBackport0.m716m(this.f247id) * 31) + this.stakingId) * 31) + this.transaction.hashCode()) * 31) + this.type.hashCode()) * 31) + this.status.hashCode()) * 31) + this.issuer.hashCode()) * 31) + this.issuedAt.hashCode()) * 31;
+        int m716m = ((((((((((((BotsDbModel$$ExternalSyntheticBackport0.m716m(this.f264id) * 31) + this.stakingId) * 31) + this.transaction.hashCode()) * 31) + this.type.hashCode()) * 31) + this.status.hashCode()) * 31) + this.issuer.hashCode()) * 31) + this.issuedAt.hashCode()) * 31;
         String str = this.settledAt;
         int hashCode = (m716m + (str == null ? 0 : str.hashCode())) * 31;
         String str2 = this.failReason;
@@ -122,7 +122,7 @@ public final class StakingOperationResponse {
     }
 
     public String toString() {
-        return "StakingOperationResponse(id=" + this.f247id + ", stakingId=" + this.stakingId + ", transaction=" + this.transaction + ", type=" + this.type + ", status=" + this.status + ", issuer=" + this.issuer + ", issuedAt=" + this.issuedAt + ", settledAt=" + this.settledAt + ", failReason=" + this.failReason + ", amount=" + this.amount + ", fee=" + this.fee + ", safe=" + this.safe + ", approvedToken=" + this.approvedToken + ", token=" + this.token + ", network=" + this.network + ')';
+        return "StakingOperationResponse(id=" + this.f264id + ", stakingId=" + this.stakingId + ", transaction=" + this.transaction + ", type=" + this.type + ", status=" + this.status + ", issuer=" + this.issuer + ", issuedAt=" + this.issuedAt + ", settledAt=" + this.settledAt + ", failReason=" + this.failReason + ", amount=" + this.amount + ", fee=" + this.fee + ", safe=" + this.safe + ", approvedToken=" + this.approvedToken + ", token=" + this.token + ", network=" + this.network + ')';
     }
 
     public StakingOperationResponse(long j, int i, String transaction, String type, String status, String issuer, String issuedAt, String str, String str2, StakingOperationCostResponse stakingOperationCostResponse, StakingOperationCostResponse stakingOperationCostResponse2, Boolean bool, StakingTokenResponse stakingTokenResponse, String token, String network) {
@@ -133,7 +133,7 @@ public final class StakingOperationResponse {
         Intrinsics.checkNotNullParameter(issuedAt, "issuedAt");
         Intrinsics.checkNotNullParameter(token, "token");
         Intrinsics.checkNotNullParameter(network, "network");
-        this.f247id = j;
+        this.f264id = j;
         this.stakingId = i;
         this.transaction = transaction;
         this.type = type;
@@ -151,7 +151,7 @@ public final class StakingOperationResponse {
     }
 
     public final long getId() {
-        return this.f247id;
+        return this.f264id;
     }
 
     public final int getStakingId() {

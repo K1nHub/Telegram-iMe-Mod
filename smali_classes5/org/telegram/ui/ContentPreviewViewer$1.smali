@@ -107,7 +107,7 @@
 
     const/4 v5, 0x0
 
-    sget v6, Lcom/smedialink/common/IdFabric$CustomType;->CONTENT_TYPE_KIKLIKO:I
+    sget v6, Lcom/iMe/common/IdFabric$CustomType;->CONTENT_TYPE_KIKLIKO:I
 
     const/4 v7, 0x0
 

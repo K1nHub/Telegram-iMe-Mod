@@ -1,7 +1,7 @@
 package org.telegram.p048ui;
 
-import com.smedialink.p031ui.debug.DebugPresenter;
-import com.smedialink.p031ui.profile.ProfilePresenter;
+import com.iMe.p032ui.debug.DebugPresenter;
+import com.iMe.p032ui.profile.ProfilePresenter;
 import java.util.ArrayList;
 import java.util.List;
 import moxy.MvpPresenter;

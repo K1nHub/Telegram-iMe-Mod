@@ -25,7 +25,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/MediaActivity;)V
     .locals 0
 
-    .line 228
+    .line 227
     iput-object p1, p0, Lorg/telegram/ui/Components/MediaActivity$5;->this$0:Lorg/telegram/ui/Components/MediaActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -84,7 +84,7 @@
 .method public updateSelectedMediaTabText()V
     .locals 1
 
-    .line 261
+    .line 260
     iget-object v0, p0, Lorg/telegram/ui/Components/MediaActivity$5;->this$0:Lorg/telegram/ui/Components/MediaActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/MediaActivity;->access$300(Lorg/telegram/ui/Components/MediaActivity;)V

@@ -111,6 +111,14 @@
     return-void
 .end method
 
+.method public static synthetic $r8$lambda$D72T89fzE8jsci3mh7S9-5xtOlk(Lcom/iMe/fork/utils/Callbacks$Callback;Landroid/view/View;)V
+    .locals 0
+
+    invoke-static {p0, p1}, Lorg/telegram/ui/Components/LinkActionView;->lambda$addMaxButton$0(Lcom/iMe/fork/utils/Callbacks$Callback;Landroid/view/View;)V
+
+    return-void
+.end method
+
 .method public static synthetic $r8$lambda$DJAZxagxlPcfvmY0M72dGfc1E4E(Lorg/telegram/ui/Components/LinkActionView;Landroid/view/View;)V
     .locals 0
 
@@ -171,14 +179,6 @@
     .locals 0
 
     invoke-direct {p0, p1}, Lorg/telegram/ui/Components/LinkActionView;->lambda$new$6(Landroid/view/View;)V
-
-    return-void
-.end method
-
-.method public static synthetic $r8$lambda$v_bB53oNQ2_hbSZwCJOhNaLGAz4(Lorg/fork/utils/Callbacks$Callback;Landroid/view/View;)V
-    .locals 0
-
-    invoke-static {p0, p1}, Lorg/telegram/ui/Components/LinkActionView;->lambda$addMaxButton$0(Lorg/fork/utils/Callbacks$Callback;Landroid/view/View;)V
 
     return-void
 .end method
@@ -1275,11 +1275,11 @@
     return-void
 .end method
 
-.method private static synthetic lambda$addMaxButton$0(Lorg/fork/utils/Callbacks$Callback;Landroid/view/View;)V
+.method private static synthetic lambda$addMaxButton$0(Lcom/iMe/fork/utils/Callbacks$Callback;Landroid/view/View;)V
     .locals 0
 
     .line 253
-    invoke-interface {p0}, Lorg/fork/utils/Callbacks$Callback;->invoke()V
+    invoke-interface {p0}, Lcom/iMe/fork/utils/Callbacks$Callback;->invoke()V
 
     return-void
 .end method
@@ -2471,7 +2471,7 @@
 
 
 # virtual methods
-.method public addMaxButton(Lorg/fork/utils/Callbacks$Callback;)V
+.method public addMaxButton(Lcom/iMe/fork/utils/Callbacks$Callback;)V
     .locals 8
 
     .line 243
@@ -2528,7 +2528,7 @@
 
     new-instance v1, Lorg/telegram/ui/Components/LinkActionView$$ExternalSyntheticLambda2;
 
-    invoke-direct {v1, p1}, Lorg/telegram/ui/Components/LinkActionView$$ExternalSyntheticLambda2;-><init>(Lorg/fork/utils/Callbacks$Callback;)V
+    invoke-direct {v1, p1}, Lorg/telegram/ui/Components/LinkActionView$$ExternalSyntheticLambda2;-><init>(Lcom/iMe/fork/utils/Callbacks$Callback;)V
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 

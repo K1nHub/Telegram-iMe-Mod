@@ -16,10 +16,10 @@ import org.bouncycastle.pqc.crypto.rainbow.util.RainbowUtil;
 public class RainbowPrivateKey extends ASN1Object {
 
     /* renamed from: b1 */
-    private byte[] f1390b1;
+    private byte[] f1395b1;
 
     /* renamed from: b2 */
-    private byte[] f1391b2;
+    private byte[] f1396b2;
     private byte[][] invA1;
     private byte[][] invA2;
     private Layer[] layers;
@@ -27,7 +27,7 @@ public class RainbowPrivateKey extends ASN1Object {
     private ASN1Integer version;
 
     /* renamed from: vi */
-    private byte[] f1392vi;
+    private byte[] f1397vi;
 
     private RainbowPrivateKey(ASN1Sequence aSN1Sequence) {
         int i = 0;
@@ -41,14 +41,14 @@ public class RainbowPrivateKey extends ASN1Object {
         for (int i2 = 0; i2 < aSN1Sequence2.size(); i2++) {
             this.invA1[i2] = ((ASN1OctetString) aSN1Sequence2.getObjectAt(i2)).getOctets();
         }
-        this.f1390b1 = ((ASN1OctetString) ((ASN1Sequence) aSN1Sequence.getObjectAt(2)).getObjectAt(0)).getOctets();
+        this.f1395b1 = ((ASN1OctetString) ((ASN1Sequence) aSN1Sequence.getObjectAt(2)).getObjectAt(0)).getOctets();
         ASN1Sequence aSN1Sequence3 = (ASN1Sequence) aSN1Sequence.getObjectAt(3);
         this.invA2 = new byte[aSN1Sequence3.size()];
         for (int i3 = 0; i3 < aSN1Sequence3.size(); i3++) {
             this.invA2[i3] = ((ASN1OctetString) aSN1Sequence3.getObjectAt(i3)).getOctets();
         }
-        this.f1391b2 = ((ASN1OctetString) ((ASN1Sequence) aSN1Sequence.getObjectAt(4)).getObjectAt(0)).getOctets();
-        this.f1392vi = ((ASN1OctetString) ((ASN1Sequence) aSN1Sequence.getObjectAt(5)).getObjectAt(0)).getOctets();
+        this.f1396b2 = ((ASN1OctetString) ((ASN1Sequence) aSN1Sequence.getObjectAt(4)).getObjectAt(0)).getOctets();
+        this.f1397vi = ((ASN1OctetString) ((ASN1Sequence) aSN1Sequence.getObjectAt(5)).getObjectAt(0)).getOctets();
         ASN1Sequence aSN1Sequence4 = (ASN1Sequence) aSN1Sequence.getObjectAt(6);
         byte[][][][] bArr = new byte[aSN1Sequence4.size()][][];
         byte[][][][] bArr2 = new byte[aSN1Sequence4.size()][][];
@@ -84,11 +84,11 @@ public class RainbowPrivateKey extends ASN1Object {
             i4++;
             i = 0;
         }
-        int length = this.f1392vi.length - 1;
+        int length = this.f1397vi.length - 1;
         this.layers = new Layer[length];
         int i10 = 0;
         while (i10 < length) {
-            byte[] bArr5 = this.f1392vi;
+            byte[] bArr5 = this.f1397vi;
             int i11 = i10 + 1;
             this.layers[i10] = new Layer(bArr5[i10], bArr5[i11], RainbowUtil.convertArray(bArr[i10]), RainbowUtil.convertArray(bArr2[i10]), RainbowUtil.convertArray(bArr3[i10]), RainbowUtil.convertArray(bArr4[i10]));
             i10 = i11;
@@ -98,10 +98,10 @@ public class RainbowPrivateKey extends ASN1Object {
     public RainbowPrivateKey(short[][] sArr, short[] sArr2, short[][] sArr3, short[] sArr4, int[] iArr, Layer[] layerArr) {
         this.version = new ASN1Integer(1L);
         this.invA1 = RainbowUtil.convertArray(sArr);
-        this.f1390b1 = RainbowUtil.convertArray(sArr2);
+        this.f1395b1 = RainbowUtil.convertArray(sArr2);
         this.invA2 = RainbowUtil.convertArray(sArr3);
-        this.f1391b2 = RainbowUtil.convertArray(sArr4);
-        this.f1392vi = RainbowUtil.convertIntArray(iArr);
+        this.f1396b2 = RainbowUtil.convertArray(sArr4);
+        this.f1397vi = RainbowUtil.convertIntArray(iArr);
         this.layers = layerArr;
     }
 
@@ -116,11 +116,11 @@ public class RainbowPrivateKey extends ASN1Object {
     }
 
     public short[] getB1() {
-        return RainbowUtil.convertArray(this.f1390b1);
+        return RainbowUtil.convertArray(this.f1395b1);
     }
 
     public short[] getB2() {
-        return RainbowUtil.convertArray(this.f1391b2);
+        return RainbowUtil.convertArray(this.f1396b2);
     }
 
     public short[][] getInvA1() {
@@ -136,7 +136,7 @@ public class RainbowPrivateKey extends ASN1Object {
     }
 
     public int[] getVi() {
-        return RainbowUtil.convertArraytoInt(this.f1392vi);
+        return RainbowUtil.convertArraytoInt(this.f1397vi);
     }
 
     @Override // org.bouncycastle.asn1.ASN1Object, org.bouncycastle.asn1.ASN1Encodable
@@ -159,7 +159,7 @@ public class RainbowPrivateKey extends ASN1Object {
         }
         aSN1EncodableVector.add(new DERSequence(aSN1EncodableVector2));
         ASN1EncodableVector aSN1EncodableVector3 = new ASN1EncodableVector();
-        aSN1EncodableVector3.add(new DEROctetString(this.f1390b1));
+        aSN1EncodableVector3.add(new DEROctetString(this.f1395b1));
         aSN1EncodableVector.add(new DERSequence(aSN1EncodableVector3));
         ASN1EncodableVector aSN1EncodableVector4 = new ASN1EncodableVector();
         int i2 = 0;
@@ -173,10 +173,10 @@ public class RainbowPrivateKey extends ASN1Object {
         }
         aSN1EncodableVector.add(new DERSequence(aSN1EncodableVector4));
         ASN1EncodableVector aSN1EncodableVector5 = new ASN1EncodableVector();
-        aSN1EncodableVector5.add(new DEROctetString(this.f1391b2));
+        aSN1EncodableVector5.add(new DEROctetString(this.f1396b2));
         aSN1EncodableVector.add(new DERSequence(aSN1EncodableVector5));
         ASN1EncodableVector aSN1EncodableVector6 = new ASN1EncodableVector();
-        aSN1EncodableVector6.add(new DEROctetString(this.f1392vi));
+        aSN1EncodableVector6.add(new DEROctetString(this.f1397vi));
         aSN1EncodableVector.add(new DERSequence(aSN1EncodableVector6));
         ASN1EncodableVector aSN1EncodableVector7 = new ASN1EncodableVector();
         for (int i3 = 0; i3 < this.layers.length; i3++) {

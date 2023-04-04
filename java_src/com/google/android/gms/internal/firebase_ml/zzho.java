@@ -7,8 +7,8 @@ import java.util.Iterator;
 import java.util.Locale;
 import java.util.Map;
 import java.util.Set;
-import p034j$.util.Iterator;
-import p034j$.util.function.Consumer;
+import p035j$.util.Iterator;
+import p035j$.util.function.Consumer;
 /* loaded from: classes.dex */
 public class zzho extends AbstractMap<String, Object> implements Cloneable {
     final zzhh zztq;
@@ -54,7 +54,7 @@ public class zzho extends AbstractMap<String, Object> implements Cloneable {
     }
 
     /* loaded from: classes.dex */
-    final class zzb implements Iterator<Map.Entry<String, Object>>, p034j$.util.Iterator {
+    final class zzb implements Iterator<Map.Entry<String, Object>>, p035j$.util.Iterator {
         private boolean zzzn;
         private final Iterator<Map.Entry<String, Object>> zzzo;
         private final Iterator<Map.Entry<String, Object>> zzzp;
@@ -64,17 +64,17 @@ public class zzho extends AbstractMap<String, Object> implements Cloneable {
             this.zzzp = zzhoVar.zzzi.entrySet().iterator();
         }
 
-        @Override // p034j$.util.Iterator
+        @Override // p035j$.util.Iterator
         public /* synthetic */ void forEachRemaining(Consumer consumer) {
             Iterator.CC.$default$forEachRemaining(this, consumer);
         }
 
-        @Override // java.util.Iterator, p034j$.util.Iterator
+        @Override // java.util.Iterator, p035j$.util.Iterator
         public final boolean hasNext() {
             return this.zzzo.hasNext() || this.zzzp.hasNext();
         }
 
-        @Override // java.util.Iterator, p034j$.util.Iterator
+        @Override // java.util.Iterator, p035j$.util.Iterator
         public final void remove() {
             if (this.zzzn) {
                 this.zzzp.remove();
@@ -82,7 +82,7 @@ public class zzho extends AbstractMap<String, Object> implements Cloneable {
             this.zzzo.remove();
         }
 
-        @Override // java.util.Iterator, p034j$.util.Iterator
+        @Override // java.util.Iterator, p035j$.util.Iterator
         public final /* synthetic */ Object next() {
             if (!this.zzzn) {
                 if (this.zzzo.hasNext()) {

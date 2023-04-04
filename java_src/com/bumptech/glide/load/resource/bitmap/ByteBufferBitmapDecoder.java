@@ -4,7 +4,6 @@ import android.graphics.Bitmap;
 import com.bumptech.glide.load.Options;
 import com.bumptech.glide.load.ResourceDecoder;
 import com.bumptech.glide.load.engine.Resource;
-import com.bumptech.glide.util.ByteBufferUtil;
 import java.io.IOException;
 import java.nio.ByteBuffer;
 /* loaded from: classes.dex */
@@ -22,6 +21,6 @@ public class ByteBufferBitmapDecoder implements ResourceDecoder<ByteBuffer, Bitm
 
     @Override // com.bumptech.glide.load.ResourceDecoder
     public Resource<Bitmap> decode(ByteBuffer byteBuffer, int i, int i2, Options options) throws IOException {
-        return this.downsampler.decode(ByteBufferUtil.toStream(byteBuffer), i, i2, options);
+        return this.downsampler.decode(byteBuffer, i, i2, options);
     }
 }

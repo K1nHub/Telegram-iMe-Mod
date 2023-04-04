@@ -3,7 +3,7 @@ package org.web3j.crypto;
 import java.math.BigInteger;
 import java.nio.ByteBuffer;
 import java.util.Arrays;
-import org.bouncycastle.math.p043ec.ECPoint;
+import org.bouncycastle.math.p044ec.ECPoint;
 import org.web3j.utils.Numeric;
 /* loaded from: classes6.dex */
 public class Bip32ECKeyPair extends ECKeyPair {

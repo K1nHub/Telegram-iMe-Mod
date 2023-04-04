@@ -2,7 +2,7 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lorg/fork/utils/Callbacks$Callback1;
+.implements Lcom/iMe/fork/utils/Callbacks$Callback1;
 
 
 # instance fields

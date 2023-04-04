@@ -179,7 +179,7 @@
     :goto_2
     iput-boolean v2, v0, Lio/grpc/okhttp/OkHttpChannelBuilder$OkHttpTransportFactory;->usingSharedExecutor:Z
 
-    const-string v3, "transportTracerFactory"
+    const-string/jumbo v3, "transportTracerFactory"
 
     move-object/from16 v4, p16
 

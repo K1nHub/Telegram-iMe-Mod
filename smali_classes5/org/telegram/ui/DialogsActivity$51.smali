@@ -25,7 +25,7 @@
 .method constructor <init>(Lorg/telegram/ui/DialogsActivity;)V
     .locals 0
 
-    .line 9012
+    .line 9042
     iput-object p1, p0, Lorg/telegram/ui/DialogsActivity$51;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -58,7 +58,7 @@
 .method public getTopOffset(I)I
     .locals 2
 
-    .line 9036
+    .line 9066
     iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$51;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/DialogsActivity;->access$39300(Lorg/telegram/ui/DialogsActivity;)Lorg/telegram/ui/ActionBar/ActionBar;
@@ -218,7 +218,7 @@
 .method public onBottomOffsetChange(F)V
     .locals 2
 
-    .line 9015
+    .line 9045
     iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$51;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/DialogsActivity;->access$28000(Lorg/telegram/ui/DialogsActivity;)[Lorg/telegram/ui/Components/UndoView;
@@ -247,13 +247,13 @@
 
     return-void
 
-    .line 9018
+    .line 9048
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$51;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-static {v0, p1}, Lorg/telegram/ui/DialogsActivity;->access$32902(Lorg/telegram/ui/DialogsActivity;F)F
 
-    .line 9019
+    .line 9049
     iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$51;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/DialogsActivity;->access$32900(Lorg/telegram/ui/DialogsActivity;)F
@@ -266,12 +266,12 @@
 
     if-gez p1, :cond_1
 
-    .line 9020
+    .line 9050
     iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$51;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-static {p1, v0}, Lorg/telegram/ui/DialogsActivity;->access$32902(Lorg/telegram/ui/DialogsActivity;F)F
 
-    .line 9022
+    .line 9052
     :cond_1
     iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$51;->this$0:Lorg/telegram/ui/DialogsActivity;
 
@@ -281,7 +281,7 @@
 
     if-nez p1, :cond_2
 
-    .line 9023
+    .line 9053
     iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$51;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/DialogsActivity;->access$24000(Lorg/telegram/ui/DialogsActivity;)V
@@ -301,7 +301,7 @@
 .method public onShow(Lorg/telegram/ui/Components/Bulletin;)V
     .locals 2
 
-    .line 9029
+    .line 9059
     iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$51;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/DialogsActivity;->access$28000(Lorg/telegram/ui/DialogsActivity;)[Lorg/telegram/ui/Components/UndoView;
@@ -328,7 +328,7 @@
 
     if-nez p1, :cond_0
 
-    .line 9030
+    .line 9060
     iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$51;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/DialogsActivity;->access$28000(Lorg/telegram/ui/DialogsActivity;)[Lorg/telegram/ui/Components/UndoView;

@@ -24,7 +24,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/EmojiView;Lorg/telegram/ui/Components/RecyclerListView;)V
     .locals 0
 
-    .line 5315
+    .line 5309
     iput-object p1, p0, Lorg/telegram/ui/Components/EmojiView$40;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
     iput-object p2, p0, Lorg/telegram/ui/Components/EmojiView$40;->val$gridView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -39,7 +39,7 @@
 .method public onAnimationCancel(Landroid/animation/Animator;)V
     .locals 1
 
-    .line 5333
+    .line 5327
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiView$40;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/EmojiView;->access$15300(Lorg/telegram/ui/Components/EmojiView;)Landroid/animation/AnimatorSet;
@@ -52,7 +52,7 @@
 
     if-eqz p1, :cond_0
 
-    .line 5334
+    .line 5328
     iget-object p1, p0, Lorg/telegram/ui/Components/EmojiView$40;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
     const/4 v0, 0x0
@@ -66,7 +66,7 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 3
 
-    .line 5318
+    .line 5312
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiView$40;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/EmojiView;->access$15300(Lorg/telegram/ui/Components/EmojiView;)Landroid/animation/AnimatorSet;
@@ -79,14 +79,14 @@
 
     if-eqz p1, :cond_4
 
-    .line 5319
+    .line 5313
     iget-object p1, p0, Lorg/telegram/ui/Components/EmojiView$40;->val$gridView:Lorg/telegram/ui/Components/RecyclerListView;
 
     const/4 v0, 0x0
 
     invoke-virtual {p1, v0}, Lorg/telegram/ui/Components/RecyclerListView;->setTranslationY(F)V
 
-    .line 5320
+    .line 5314
     iget-object p1, p0, Lorg/telegram/ui/Components/EmojiView$40;->val$gridView:Lorg/telegram/ui/Components/RecyclerListView;
 
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiView$40;->this$0:Lorg/telegram/ui/Components/EmojiView;
@@ -111,7 +111,7 @@
 
     goto :goto_0
 
-    .line 5322
+    .line 5316
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/Components/EmojiView$40;->val$gridView:Lorg/telegram/ui/Components/RecyclerListView;
 
@@ -123,7 +123,7 @@
 
     if-ne p1, v0, :cond_1
 
-    .line 5323
+    .line 5317
     iget-object p1, p0, Lorg/telegram/ui/Components/EmojiView$40;->val$gridView:Lorg/telegram/ui/Components/RecyclerListView;
 
     const/4 v0, 0x5
@@ -140,7 +140,7 @@
 
     goto :goto_1
 
-    .line 5324
+    .line 5318
     :cond_1
     iget-object p1, p0, Lorg/telegram/ui/Components/EmojiView$40;->val$gridView:Lorg/telegram/ui/Components/RecyclerListView;
 
@@ -152,7 +152,7 @@
 
     if-ne p1, v0, :cond_3
 
-    .line 5325
+    .line 5319
     iget-object p1, p0, Lorg/telegram/ui/Components/EmojiView$40;->val$gridView:Lorg/telegram/ui/Components/RecyclerListView;
 
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiView$40;->this$0:Lorg/telegram/ui/Components/EmojiView;
@@ -165,14 +165,14 @@
 
     goto :goto_1
 
-    .line 5321
+    .line 5315
     :cond_2
     :goto_0
     iget-object p1, p0, Lorg/telegram/ui/Components/EmojiView$40;->val$gridView:Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-virtual {p1, v1, v1, v1, v1}, Landroid/view/ViewGroup;->setPadding(IIII)V
 
-    .line 5327
+    .line 5321
     :cond_3
     :goto_1
     iget-object p1, p0, Lorg/telegram/ui/Components/EmojiView$40;->this$0:Lorg/telegram/ui/Components/EmojiView;

@@ -8,7 +8,7 @@
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lkotlin/Lazy<",
-            "Lcom/smedialink/storage/domain/manager/crypto/CryptoAccessManager;",
+            "Lcom/iMe/storage/domain/manager/crypto/CryptoAccessManager;",
             ">;"
         }
     .end annotation
@@ -23,7 +23,7 @@
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
 
     .line 27
-    const-class v0, Lcom/smedialink/storage/domain/manager/crypto/CryptoAccessManager;
+    const-class v0, Lcom/iMe/storage/domain/manager/crypto/CryptoAccessManager;
 
     invoke-static {v0}, Lorg/koin/java/KoinJavaComponent;->inject(Ljava/lang/Class;)Lkotlin/Lazy;
 
@@ -44,9 +44,9 @@
 
     move-result-object v0
 
-    check-cast v0, Lcom/smedialink/storage/domain/manager/crypto/CryptoAccessManager;
+    check-cast v0, Lcom/iMe/storage/domain/manager/crypto/CryptoAccessManager;
 
-    invoke-interface {v0}, Lcom/smedialink/storage/domain/manager/crypto/CryptoAccessManager;->logoutAllWallets()V
+    invoke-interface {v0}, Lcom/iMe/storage/domain/manager/crypto/CryptoAccessManager;->logoutAllWallets()V
 
     return-void
 .end method

@@ -16,6 +16,7 @@ import java.util.concurrent.ThreadFactory;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
+import java.util.concurrent.atomic.AtomicInteger;
 /* loaded from: classes.dex */
 public final class GlideExecutor implements ExecutorService {
     private static final long KEEP_ALIVE_TIME_MS = TimeUnit.SECONDS.toMillis(10);
@@ -39,11 +40,15 @@ public final class GlideExecutor implements ExecutorService {
     }
 
     public static GlideExecutor newUnlimitedSourceExecutor() {
-        return new GlideExecutor(new ThreadPoolExecutor(0, Integer.MAX_VALUE, KEEP_ALIVE_TIME_MS, TimeUnit.MILLISECONDS, new SynchronousQueue(), new DefaultThreadFactory("source-unlimited", UncaughtThrowableStrategy.DEFAULT, false)));
+        return new GlideExecutor(new ThreadPoolExecutor(0, Integer.MAX_VALUE, KEEP_ALIVE_TIME_MS, TimeUnit.MILLISECONDS, new SynchronousQueue(), new DefaultThreadFactory(new DefaultPriorityThreadFactory(), "source-unlimited", UncaughtThrowableStrategy.DEFAULT, false)));
     }
 
     public static Builder newAnimationBuilder() {
-        return new Builder(true).setThreadCount(calculateBestThreadCount() >= 4 ? 2 : 1).setName("animation");
+        return new Builder(true).setThreadCount(calculateAnimationExecutorThreadCount()).setName("animation");
+    }
+
+    static int calculateAnimationExecutorThreadCount() {
+        return calculateBestThreadCount() >= 4 ? 2 : 1;
     }
 
     public static GlideExecutor newAnimationExecutor() {
@@ -165,39 +170,56 @@ public final class GlideExecutor implements ExecutorService {
         }
     }
 
+    /* loaded from: classes.dex */
+    private static final class DefaultPriorityThreadFactory implements ThreadFactory {
+        private DefaultPriorityThreadFactory() {
+        }
+
+        @Override // java.util.concurrent.ThreadFactory
+        public Thread newThread(Runnable runnable) {
+            return new Thread(this, runnable) { // from class: com.bumptech.glide.load.engine.executor.GlideExecutor.DefaultPriorityThreadFactory.1
+                @Override // java.lang.Thread, java.lang.Runnable
+                public void run() {
+                    Process.setThreadPriority(9);
+                    super.run();
+                }
+            };
+        }
+    }
+
     /* JADX INFO: Access modifiers changed from: private */
     /* loaded from: classes.dex */
     public static final class DefaultThreadFactory implements ThreadFactory {
+        private final ThreadFactory delegate;
         private final String name;
         final boolean preventNetworkOperations;
-        private int threadNum;
+        private final AtomicInteger threadNum = new AtomicInteger();
         final UncaughtThrowableStrategy uncaughtThrowableStrategy;
 
-        DefaultThreadFactory(String str, UncaughtThrowableStrategy uncaughtThrowableStrategy, boolean z) {
+        DefaultThreadFactory(ThreadFactory threadFactory, String str, UncaughtThrowableStrategy uncaughtThrowableStrategy, boolean z) {
+            this.delegate = threadFactory;
             this.name = str;
             this.uncaughtThrowableStrategy = uncaughtThrowableStrategy;
             this.preventNetworkOperations = z;
         }
 
         @Override // java.util.concurrent.ThreadFactory
-        public synchronized Thread newThread(Runnable runnable) {
-            Thread thread;
-            thread = new Thread(runnable, "glide-" + this.name + "-thread-" + this.threadNum) { // from class: com.bumptech.glide.load.engine.executor.GlideExecutor.DefaultThreadFactory.1
-                @Override // java.lang.Thread, java.lang.Runnable
+        public Thread newThread(final Runnable runnable) {
+            Thread newThread = this.delegate.newThread(new Runnable() { // from class: com.bumptech.glide.load.engine.executor.GlideExecutor.DefaultThreadFactory.1
+                @Override // java.lang.Runnable
                 public void run() {
-                    Process.setThreadPriority(9);
                     if (DefaultThreadFactory.this.preventNetworkOperations) {
                         StrictMode.setThreadPolicy(new StrictMode.ThreadPolicy.Builder().detectNetwork().penaltyDeath().build());
                     }
                     try {
-                        super.run();
+                        runnable.run();
                     } catch (Throwable th) {
                         DefaultThreadFactory.this.uncaughtThrowableStrategy.handle(th);
                     }
                 }
-            };
-            this.threadNum = this.threadNum + 1;
-            return thread;
+            });
+            newThread.setName("glide-" + this.name + "-thread-" + this.threadNum.getAndIncrement());
+            return newThread;
         }
     }
 
@@ -208,6 +230,7 @@ public final class GlideExecutor implements ExecutorService {
         private String name;
         private final boolean preventNetworkOperations;
         private long threadTimeoutMillis;
+        private final ThreadFactory threadFactory = new DefaultPriorityThreadFactory();
         private UncaughtThrowableStrategy uncaughtThrowableStrategy = UncaughtThrowableStrategy.DEFAULT;
 
         Builder(boolean z) {
@@ -229,7 +252,7 @@ public final class GlideExecutor implements ExecutorService {
             if (TextUtils.isEmpty(this.name)) {
                 throw new IllegalArgumentException("Name must be non-null and non-empty, but given: " + this.name);
             }
-            ThreadPoolExecutor threadPoolExecutor = new ThreadPoolExecutor(this.corePoolSize, this.maximumPoolSize, this.threadTimeoutMillis, TimeUnit.MILLISECONDS, new PriorityBlockingQueue(), new DefaultThreadFactory(this.name, this.uncaughtThrowableStrategy, this.preventNetworkOperations));
+            ThreadPoolExecutor threadPoolExecutor = new ThreadPoolExecutor(this.corePoolSize, this.maximumPoolSize, this.threadTimeoutMillis, TimeUnit.MILLISECONDS, new PriorityBlockingQueue(), new DefaultThreadFactory(this.threadFactory, this.name, this.uncaughtThrowableStrategy, this.preventNetworkOperations));
             if (this.threadTimeoutMillis != 0) {
                 threadPoolExecutor.allowCoreThreadTimeOut(true);
             }

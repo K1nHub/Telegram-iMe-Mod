@@ -2027,7 +2027,7 @@
 
     move-result-wide v5
 
-    const-string v9, "userId"
+    const-string/jumbo v9, "userId"
 
     invoke-virtual {v4, v9, v5, v6}, Landroid/os/Bundle;->putLong(Ljava/lang/String;J)V
 

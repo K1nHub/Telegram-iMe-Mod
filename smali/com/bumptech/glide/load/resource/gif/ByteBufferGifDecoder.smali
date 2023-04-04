@@ -396,6 +396,7 @@
 
     invoke-static {v3, v2}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 131
     :cond_7
     throw v0
 .end method
@@ -575,6 +576,7 @@
 
     invoke-virtual {p2, v0}, Lcom/bumptech/glide/load/resource/gif/ByteBufferGifDecoder$GifHeaderParserPool;->release(Lcom/bumptech/glide/gifdecoder/GifHeaderParser;)V
 
+    .line 93
     throw p1
 .end method
 

@@ -174,8 +174,8 @@ public class VoIPController {
         nativeSetMicMute(this.nativeInst, z);
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:25:0x004a  */
-    /* JADX WARN: Removed duplicated region for block: B:26:0x0061  */
+    /* JADX WARN: Removed duplicated region for block: B:25:0x004c  */
+    /* JADX WARN: Removed duplicated region for block: B:26:0x0063  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct add '--show-bad-code' argument
@@ -207,31 +207,31 @@ public class VoIPController {
             boolean r5 = r5.getBoolean(r6, r3)
             long r6 = r14.nativeInst
             r8 = 1
-            if (r2 == 0) goto L36
+            if (r2 == 0) goto L37
             java.lang.String r2 = "use_system_aec"
             boolean r2 = org.telegram.messenger.voip.VoIPServerConfig.getBoolean(r2, r8)
-            if (r2 != 0) goto L34
-            goto L36
-        L34:
-            r9 = r3
+            if (r2 != 0) goto L35
             goto L37
-        L36:
-            r9 = r8
+        L35:
+            r9 = r3
+            goto L38
         L37:
-            if (r4 == 0) goto L44
+            r9 = r8
+        L38:
+            if (r4 == 0) goto L46
             java.lang.String r2 = "use_system_ns"
             boolean r2 = org.telegram.messenger.voip.VoIPServerConfig.getBoolean(r2, r8)
-            if (r2 != 0) goto L42
-            goto L44
-        L42:
-            r10 = r3
-            goto L45
+            if (r2 != 0) goto L44
+            goto L46
         L44:
+            r10 = r3
+            goto L47
+        L46:
             r10 = r8
-        L45:
+        L47:
             r11 = 1
             boolean r2 = org.telegram.messenger.BuildVars.DEBUG_VERSION
-            if (r2 == 0) goto L61
+            if (r2 == 0) goto L63
             java.lang.StringBuilder r2 = new java.lang.StringBuilder
             r2.<init>()
             java.lang.String r3 = "voip"
@@ -239,20 +239,20 @@ public class VoIPController {
             r2.append(r0)
             java.lang.String r0 = r2.toString()
             java.lang.String r0 = r14.getLogFilePath(r0)
-            goto L65
-        L61:
+            goto L67
+        L63:
             java.lang.String r0 = r14.getLogFilePath(r0)
-        L65:
+        L67:
             r12 = r0
             boolean r0 = org.telegram.messenger.BuildVars.DEBUG_VERSION
-            if (r0 == 0) goto L74
-            if (r5 == 0) goto L74
+            if (r0 == 0) goto L76
+            if (r5 == 0) goto L76
             java.lang.String r0 = "voipStats"
             java.lang.String r0 = r14.getLogFilePath(r0)
-            goto L75
-        L74:
+            goto L77
+        L76:
             r0 = 0
-        L75:
+        L77:
             r13 = r0
             boolean r15 = org.telegram.messenger.BuildVars.DEBUG_VERSION
             r0 = r16

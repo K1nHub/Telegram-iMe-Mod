@@ -4,7 +4,7 @@ import com.google.gson.annotations.SerializedName;
 import java.util.List;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: WCAddNetwork.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class WCAddNetwork {
     private final List<String> blockExplorerUrls;
     @SerializedName("chainId")
@@ -14,7 +14,7 @@ public final class WCAddNetwork {
     private final List<String> rpcUrls;
 
     /* compiled from: WCAddNetwork.kt */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class WcAddNetworkNativeCurrency {
     }
 

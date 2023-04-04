@@ -19,11 +19,11 @@
 
 .field public final textThresholdValue:Landroidx/appcompat/widget/AppCompatTextView;
 
-.field public final viewProgress:Lcom/smedialink/ui/custom/ProgressView;
+.field public final viewProgress:Lcom/iMe/ui/custom/ProgressView;
 
 
 # direct methods
-.method private constructor <init>(Landroidx/constraintlayout/widget/ConstraintLayout;Landroidx/appcompat/widget/AppCompatImageView;Landroidx/appcompat/widget/AppCompatTextView;Landroidx/appcompat/widget/AppCompatTextView;Landroidx/appcompat/widget/AppCompatTextView;Landroidx/appcompat/widget/AppCompatTextView;Lcom/smedialink/ui/custom/ProgressView;)V
+.method private constructor <init>(Landroidx/constraintlayout/widget/ConstraintLayout;Landroidx/appcompat/widget/AppCompatImageView;Landroidx/appcompat/widget/AppCompatTextView;Landroidx/appcompat/widget/AppCompatTextView;Landroidx/appcompat/widget/AppCompatTextView;Landroidx/appcompat/widget/AppCompatTextView;Lcom/iMe/ui/custom/ProgressView;)V
     .locals 0
 
     .line 45
@@ -48,7 +48,7 @@
     iput-object p6, p0, Lorg/telegram/messenger/databinding/ForkContentStakingCompoundBinding;->textThresholdValue:Landroidx/appcompat/widget/AppCompatTextView;
 
     .line 52
-    iput-object p7, p0, Lorg/telegram/messenger/databinding/ForkContentStakingCompoundBinding;->viewProgress:Lcom/smedialink/ui/custom/ProgressView;
+    iput-object p7, p0, Lorg/telegram/messenger/databinding/ForkContentStakingCompoundBinding;->viewProgress:Lcom/iMe/ui/custom/ProgressView;
 
     return-void
 .end method
@@ -136,7 +136,7 @@
 
     move-object v9, v1
 
-    check-cast v9, Lcom/smedialink/ui/custom/ProgressView;
+    check-cast v9, Lcom/iMe/ui/custom/ProgressView;
 
     if-eqz v9, :cond_0
 
@@ -149,7 +149,7 @@
 
     move-object v2, v0
 
-    invoke-direct/range {v2 .. v9}, Lorg/telegram/messenger/databinding/ForkContentStakingCompoundBinding;-><init>(Landroidx/constraintlayout/widget/ConstraintLayout;Landroidx/appcompat/widget/AppCompatImageView;Landroidx/appcompat/widget/AppCompatTextView;Landroidx/appcompat/widget/AppCompatTextView;Landroidx/appcompat/widget/AppCompatTextView;Landroidx/appcompat/widget/AppCompatTextView;Lcom/smedialink/ui/custom/ProgressView;)V
+    invoke-direct/range {v2 .. v9}, Lorg/telegram/messenger/databinding/ForkContentStakingCompoundBinding;-><init>(Landroidx/constraintlayout/widget/ConstraintLayout;Landroidx/appcompat/widget/AppCompatImageView;Landroidx/appcompat/widget/AppCompatTextView;Landroidx/appcompat/widget/AppCompatTextView;Landroidx/appcompat/widget/AppCompatTextView;Landroidx/appcompat/widget/AppCompatTextView;Lcom/iMe/ui/custom/ProgressView;)V
 
     return-object v0
 

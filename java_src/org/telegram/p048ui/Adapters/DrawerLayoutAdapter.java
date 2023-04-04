@@ -4,17 +4,17 @@ import android.content.Context;
 import android.view.View;
 import android.view.ViewGroup;
 import androidx.recyclerview.widget.RecyclerView;
-import com.smedialink.common.IdFabric$ViewTypes;
-import com.smedialink.common.TelegramThemeKeys$Drawer;
-import com.smedialink.p031ui.drawer.DrawerSwitchableItem;
+import com.iMe.common.IdFabric$ViewTypes;
+import com.iMe.common.TelegramThemeKeys$Drawer;
+import com.iMe.fork.controller.ForkCommonController;
+import com.iMe.fork.p025ui.view.DrawerExpandableCell;
+import com.iMe.p032ui.drawer.DrawerSwitchableItem;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Set;
-import org.fork.controller.ForkCommonController;
-import org.fork.p046ui.view.DrawerExpandableCell;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.C3301R;
+import org.telegram.messenger.C3316R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.SharedConfig;
@@ -319,64 +319,64 @@ public class DrawerLayoutAdapter extends RecyclerListView.SelectionAdapter {
         if (UserConfig.getInstance(UserConfig.selectedAccount).isClientActivated()) {
             int eventType = Theme.getEventType();
             if (eventType == 0) {
-                i = C3301R.C3303drawable.msg_groups_ny;
-                i2 = C3301R.C3303drawable.msg_contacts_ny;
-                i3 = C3301R.C3303drawable.msg_calls_ny;
-                i13 = C3301R.C3303drawable.msg_saved_ny;
-                i4 = C3301R.C3303drawable.msg_settings_ny;
-                i5 = C3301R.C3303drawable.msg_nearby_ny;
-                i6 = C3301R.C3303drawable.fork_drawer_wallet_ny;
-                i7 = C3301R.C3303drawable.fork_drawer_catalog_ny;
-                i8 = C3301R.C3303drawable.fork_drawer_management_ny;
-                i9 = C3301R.C3303drawable.fork_drawer_music_ny;
-                i10 = C3301R.C3303drawable.fork_drawer_create_expandable_ny;
-                i11 = C3301R.C3303drawable.msg_secret_ny;
-                i12 = C3301R.C3303drawable.fork_drawer_channel_ny;
-                i14 = C3301R.C3303drawable.fork_drawer_albums_ny;
+                i = C3316R.C3318drawable.msg_groups_ny;
+                i2 = C3316R.C3318drawable.msg_contacts_ny;
+                i3 = C3316R.C3318drawable.msg_calls_ny;
+                i13 = C3316R.C3318drawable.msg_saved_ny;
+                i4 = C3316R.C3318drawable.msg_settings_ny;
+                i5 = C3316R.C3318drawable.msg_nearby_ny;
+                i6 = C3316R.C3318drawable.fork_drawer_wallet_ny;
+                i7 = C3316R.C3318drawable.fork_drawer_catalog_ny;
+                i8 = C3316R.C3318drawable.fork_drawer_management_ny;
+                i9 = C3316R.C3318drawable.fork_drawer_music_ny;
+                i10 = C3316R.C3318drawable.fork_drawer_create_expandable_ny;
+                i11 = C3316R.C3318drawable.msg_secret_ny;
+                i12 = C3316R.C3318drawable.fork_drawer_channel_ny;
+                i14 = C3316R.C3318drawable.fork_drawer_albums_ny;
             } else {
                 if (eventType == 1) {
-                    i = C3301R.C3303drawable.msg_groups_14;
-                    i2 = C3301R.C3303drawable.msg_contacts_14;
-                    i3 = C3301R.C3303drawable.msg_calls_14;
-                    i13 = C3301R.C3303drawable.msg_saved_14;
-                    i4 = C3301R.C3303drawable.msg_settings_14;
-                    i5 = C3301R.C3303drawable.msg_secret_14;
-                    i6 = C3301R.C3303drawable.fork_drawer_wallet_14;
-                    i7 = C3301R.C3303drawable.fork_drawer_catalog_14;
-                    i8 = C3301R.C3303drawable.fork_drawer_management_14;
-                    i9 = C3301R.C3303drawable.fork_drawer_music_14;
-                    i10 = C3301R.C3303drawable.fork_drawer_create_expandable_14;
-                    i12 = C3301R.C3303drawable.fork_drawer_channel_14;
-                    i14 = C3301R.C3303drawable.fork_drawer_albums_14;
+                    i = C3316R.C3318drawable.msg_groups_14;
+                    i2 = C3316R.C3318drawable.msg_contacts_14;
+                    i3 = C3316R.C3318drawable.msg_calls_14;
+                    i13 = C3316R.C3318drawable.msg_saved_14;
+                    i4 = C3316R.C3318drawable.msg_settings_14;
+                    i5 = C3316R.C3318drawable.msg_secret_14;
+                    i6 = C3316R.C3318drawable.fork_drawer_wallet_14;
+                    i7 = C3316R.C3318drawable.fork_drawer_catalog_14;
+                    i8 = C3316R.C3318drawable.fork_drawer_management_14;
+                    i9 = C3316R.C3318drawable.fork_drawer_music_14;
+                    i10 = C3316R.C3318drawable.fork_drawer_create_expandable_14;
+                    i12 = C3316R.C3318drawable.fork_drawer_channel_14;
+                    i14 = C3316R.C3318drawable.fork_drawer_albums_14;
                 } else if (eventType == 2) {
-                    i = C3301R.C3303drawable.msg_groups_hw;
-                    i2 = C3301R.C3303drawable.msg_contacts_hw;
-                    i3 = C3301R.C3303drawable.msg_calls_hw;
-                    i13 = C3301R.C3303drawable.msg_saved_hw;
-                    i4 = C3301R.C3303drawable.msg_settings_hw;
-                    i5 = C3301R.C3303drawable.msg_secret_hw;
-                    i6 = C3301R.C3303drawable.fork_drawer_wallet_hw;
-                    i7 = C3301R.C3303drawable.fork_drawer_catalog_hw;
-                    i8 = C3301R.C3303drawable.fork_drawer_management_hw;
-                    i9 = C3301R.C3303drawable.fork_drawer_music_hw;
-                    i10 = C3301R.C3303drawable.fork_drawer_create_expandable_hw;
-                    i12 = C3301R.C3303drawable.fork_drawer_channel_hw;
-                    i14 = C3301R.C3303drawable.fork_drawer_albums_hw;
+                    i = C3316R.C3318drawable.msg_groups_hw;
+                    i2 = C3316R.C3318drawable.msg_contacts_hw;
+                    i3 = C3316R.C3318drawable.msg_calls_hw;
+                    i13 = C3316R.C3318drawable.msg_saved_hw;
+                    i4 = C3316R.C3318drawable.msg_settings_hw;
+                    i5 = C3316R.C3318drawable.msg_secret_hw;
+                    i6 = C3316R.C3318drawable.fork_drawer_wallet_hw;
+                    i7 = C3316R.C3318drawable.fork_drawer_catalog_hw;
+                    i8 = C3316R.C3318drawable.fork_drawer_management_hw;
+                    i9 = C3316R.C3318drawable.fork_drawer_music_hw;
+                    i10 = C3316R.C3318drawable.fork_drawer_create_expandable_hw;
+                    i12 = C3316R.C3318drawable.fork_drawer_channel_hw;
+                    i14 = C3316R.C3318drawable.fork_drawer_albums_hw;
                 } else {
-                    i = C3301R.C3303drawable.msg_groups;
-                    i2 = C3301R.C3303drawable.msg_contacts;
-                    i3 = C3301R.C3303drawable.msg_calls;
-                    i4 = C3301R.C3303drawable.msg_settings_old;
-                    i5 = C3301R.C3303drawable.msg_nearby;
-                    i6 = C3301R.C3303drawable.fork_drawer_wallet;
-                    i7 = C3301R.C3303drawable.fork_drawer_catalog;
-                    i8 = C3301R.C3303drawable.fork_drawer_management;
-                    i9 = C3301R.C3303drawable.fork_drawer_music;
-                    i10 = C3301R.C3303drawable.fork_drawer_create_expandable;
-                    i11 = C3301R.C3303drawable.msg_secret;
-                    i12 = C3301R.C3303drawable.msg_channel;
-                    i13 = C3301R.C3303drawable.fork_drawer_cloud;
-                    i14 = C3301R.C3303drawable.fork_drawer_albums;
+                    i = C3316R.C3318drawable.msg_groups;
+                    i2 = C3316R.C3318drawable.msg_contacts;
+                    i3 = C3316R.C3318drawable.msg_calls;
+                    i4 = C3316R.C3318drawable.msg_settings_old;
+                    i5 = C3316R.C3318drawable.msg_nearby;
+                    i6 = C3316R.C3318drawable.fork_drawer_wallet;
+                    i7 = C3316R.C3318drawable.fork_drawer_catalog;
+                    i8 = C3316R.C3318drawable.fork_drawer_management;
+                    i9 = C3316R.C3318drawable.fork_drawer_music;
+                    i10 = C3316R.C3318drawable.fork_drawer_create_expandable;
+                    i11 = C3316R.C3318drawable.msg_secret;
+                    i12 = C3316R.C3318drawable.msg_channel;
+                    i13 = C3316R.C3318drawable.fork_drawer_cloud;
+                    i14 = C3316R.C3318drawable.fork_drawer_albums;
                 }
                 i11 = i5;
             }
@@ -388,13 +388,13 @@ public class DrawerLayoutAdapter extends RecyclerListView.SelectionAdapter {
                     i16 = i13;
                     i15 = i3;
                     i18 = i5;
-                    this.items.add(new Item(15, LocaleController.getString("ChangeEmojiStatus", C3301R.string.ChangeEmojiStatus), 0, C3301R.C3306raw.emoji_status_change_to_set));
+                    this.items.add(new Item(15, LocaleController.getString("ChangeEmojiStatus", C3316R.string.ChangeEmojiStatus), 0, C3316R.C3321raw.emoji_status_change_to_set));
                 } else {
                     i15 = i3;
                     i16 = i13;
                     i17 = i4;
                     i18 = i5;
-                    this.items.add(new Item(15, LocaleController.getString("SetEmojiStatus", C3301R.string.SetEmojiStatus), 0, C3301R.C3306raw.emoji_status_set_to_change));
+                    this.items.add(new Item(15, LocaleController.getString("SetEmojiStatus", C3316R.string.SetEmojiStatus), 0, C3316R.C3321raw.emoji_status_set_to_change));
                 }
                 this.items.add(null);
             } else {
@@ -427,27 +427,27 @@ public class DrawerLayoutAdapter extends RecyclerListView.SelectionAdapter {
             if (!this.rectIconItems.isEmpty()) {
                 this.rectIconItems.add(null);
             }
-            this.createGroupItems.add(new Item(2, LocaleController.getString("NewGroup", C3301R.string.NewGroup), i));
-            this.createGroupItems.add(new Item(3, LocaleController.getString("NewSecretChat", C3301R.string.NewSecretChat), i11));
-            this.createGroupItems.add(new Item(4, LocaleController.getString("NewChannel", C3301R.string.NewChannel), i12));
-            this.items.add(new Item(IdFabric$ViewTypes.DRAWER_GROUP_CREATE, LocaleController.getInternalString(C3301R.string.drawer_create_expandable_section), i10));
+            this.createGroupItems.add(new Item(2, LocaleController.getString("NewGroup", C3316R.string.NewGroup), i));
+            this.createGroupItems.add(new Item(3, LocaleController.getString("NewSecretChat", C3316R.string.NewSecretChat), i11));
+            this.createGroupItems.add(new Item(4, LocaleController.getString("NewChannel", C3316R.string.NewChannel), i12));
+            this.items.add(new Item(IdFabric$ViewTypes.DRAWER_GROUP_CREATE, LocaleController.getInternalString(C3316R.string.drawer_create_expandable_section), i10));
             this.items.add(null);
             if (SharedConfig.selectedDrawerItems.contains(DrawerSwitchableItem.CONTACTS)) {
-                this.items.add(new Item(6, LocaleController.getString("Contacts", C3301R.string.Contacts), i2));
+                this.items.add(new Item(6, LocaleController.getString("Contacts", C3316R.string.Contacts), i2));
             }
             if (SharedConfig.selectedDrawerItems.contains(DrawerSwitchableItem.CALLS)) {
-                this.items.add(new Item(10, LocaleController.getString("Calls", C3301R.string.Calls), i15));
+                this.items.add(new Item(10, LocaleController.getString("Calls", C3316R.string.Calls), i15));
             }
             if (SharedConfig.selectedDrawerItems.contains(DrawerSwitchableItem.PEOPLE_NEARBY) && this.hasGps) {
-                this.items.add(new Item(12, LocaleController.getString("PeopleNearby", C3301R.string.PeopleNearby), i18));
+                this.items.add(new Item(12, LocaleController.getString("PeopleNearby", C3316R.string.PeopleNearby), i18));
             }
             if (SharedConfig.selectedDrawerItems.contains(DrawerSwitchableItem.CLOUD)) {
-                this.items.add(new Item(11, LocaleController.getString("SavedMessages", C3301R.string.SavedMessages), i16));
+                this.items.add(new Item(11, LocaleController.getString("SavedMessages", C3316R.string.SavedMessages), i16));
             }
             if (SharedConfig.selectedDrawerItems.contains(DrawerSwitchableItem.ALBUMS)) {
-                this.items.add(new Item(IdFabric$ViewTypes.DRAWER_ALBUMS, LocaleController.getInternalString(C3301R.string.cloud_albums_toolbar_title), i20));
+                this.items.add(new Item(IdFabric$ViewTypes.DRAWER_ALBUMS, LocaleController.getInternalString(C3316R.string.cloud_albums_toolbar_title), i20));
             }
-            this.items.add(new Item(8, LocaleController.getString("Settings", C3301R.string.Settings), i17));
+            this.items.add(new Item(8, LocaleController.getString("Settings", C3316R.string.Settings), i17));
         }
     }
 
@@ -476,7 +476,7 @@ public class DrawerLayoutAdapter extends RecyclerListView.SelectionAdapter {
                 if (item2 == null) {
                     return -1;
                 }
-                return item2.f1657id;
+                return item2.f1659id;
             }
             int size2 = size - this.rectIconItems.size();
             if (size2 == 0) {
@@ -485,7 +485,7 @@ public class DrawerLayoutAdapter extends RecyclerListView.SelectionAdapter {
             int i3 = size2 - 1;
             if (this.isCreateGroupExpanded) {
                 if (i3 < this.createGroupItems.size()) {
-                    return this.createGroupItems.get(i3).f1657id;
+                    return this.createGroupItems.get(i3).f1659id;
                 }
                 i3 -= this.createGroupItems.size();
             }
@@ -494,7 +494,7 @@ public class DrawerLayoutAdapter extends RecyclerListView.SelectionAdapter {
         if (i2 < 0 || i2 >= this.items.size() || (item = this.items.get(i2)) == null) {
             return -1;
         }
-        return item.f1657id;
+        return item.f1659id;
     }
 
     public int getFirstAccountPosition() {
@@ -515,7 +515,7 @@ public class DrawerLayoutAdapter extends RecyclerListView.SelectionAdapter {
         public int icon;
 
         /* renamed from: id */
-        public int f1657id;
+        public int f1659id;
         public int lottieIcon;
         private DrawerSwitchableItem rectIcon;
         public String text;
@@ -527,24 +527,24 @@ public class DrawerLayoutAdapter extends RecyclerListView.SelectionAdapter {
 
         public Item(int i, String str, int i2) {
             this.icon = i2;
-            this.f1657id = i;
+            this.f1659id = i;
             this.text = str;
         }
 
         public Item(int i, String str, int i2, int i3) {
             this.icon = i2;
             this.lottieIcon = i3;
-            this.f1657id = i;
+            this.f1659id = i;
             this.text = str;
         }
 
         public void bind(DrawerActionCell drawerActionCell) {
             DrawerSwitchableItem drawerSwitchableItem = this.rectIcon;
             if (drawerSwitchableItem != null) {
-                drawerActionCell.setTextAndRectIcon(this.f1657id, this.text, this.icon, Theme.getColor(TelegramThemeKeys$Drawer.buildDrawerRectIconBackgroundKey(drawerSwitchableItem)), Theme.getColor("iMe_drawer_itemRectIconColor"));
+                drawerActionCell.setTextAndRectIcon(this.f1659id, this.text, this.icon, Theme.getColor(TelegramThemeKeys$Drawer.buildDrawerRectIconBackgroundKey(drawerSwitchableItem)), Theme.getColor("iMe_drawer_itemRectIconColor"));
                 return;
             }
-            drawerActionCell.setTextAndIcon(this.f1657id, this.text, this.icon, this.lottieIcon);
+            drawerActionCell.setTextAndIcon(this.f1659id, this.text, this.icon, this.lottieIcon);
         }
     }
 }

@@ -2,7 +2,7 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Lcom/iMe/fork/ui/fragment/CreateReactionButtonsActivity$ReactionDelegate;
 
 
 # instance fields
@@ -22,12 +22,12 @@
 
 
 # virtual methods
-.method public final run()V
+.method public final clearChat()V
     .locals 1
 
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$ChatActivityEnterViewDelegate$$ExternalSyntheticLambda2;->f$0:Lorg/telegram/ui/ChatActivity$ChatActivityEnterViewDelegate;
 
-    invoke-static {v0}, Lorg/telegram/ui/ChatActivity$ChatActivityEnterViewDelegate;->$r8$lambda$6Yj29ectMv4w0RjAG0ekO4QKgaw(Lorg/telegram/ui/ChatActivity$ChatActivityEnterViewDelegate;)V
+    invoke-static {v0}, Lorg/telegram/ui/ChatActivity$ChatActivityEnterViewDelegate;->$r8$lambda$-qxoZBsC3DdbAViJMgds749D-YQ(Lorg/telegram/ui/ChatActivity$ChatActivityEnterViewDelegate;)V
 
     return-void
 .end method

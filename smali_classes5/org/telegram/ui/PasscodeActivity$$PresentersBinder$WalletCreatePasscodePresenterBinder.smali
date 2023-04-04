@@ -27,7 +27,7 @@
     .locals 2
 
     .line 25
-    const-class p1, Lcom/smedialink/ui/wallet/crypto/create/password/CreateWalletPasswordPresenter;
+    const-class p1, Lcom/iMe/ui/wallet/crypto/create/password/CreateWalletPasswordPresenter;
 
     const-string v0, "walletCreatePasscodePresenter"
 
@@ -55,9 +55,9 @@
     .locals 0
 
     .line 30
-    check-cast p2, Lcom/smedialink/ui/wallet/crypto/create/password/CreateWalletPasswordPresenter;
+    check-cast p2, Lcom/iMe/ui/wallet/crypto/create/password/CreateWalletPasswordPresenter;
 
-    iput-object p2, p1, Lorg/telegram/ui/PasscodeActivity;->walletCreatePasscodePresenter:Lcom/smedialink/ui/wallet/crypto/create/password/CreateWalletPasswordPresenter;
+    iput-object p2, p1, Lorg/telegram/ui/PasscodeActivity;->walletCreatePasscodePresenter:Lcom/iMe/ui/wallet/crypto/create/password/CreateWalletPasswordPresenter;
 
     return-void
 .end method
@@ -88,7 +88,7 @@
     .end annotation
 
     .line 35
-    invoke-virtual {p1}, Lorg/telegram/ui/PasscodeActivity;->provideWalletPasswordPresenter()Lcom/smedialink/ui/wallet/crypto/create/password/CreateWalletPasswordPresenter;
+    invoke-virtual {p1}, Lorg/telegram/ui/PasscodeActivity;->provideWalletPasswordPresenter()Lcom/iMe/ui/wallet/crypto/create/password/CreateWalletPasswordPresenter;
 
     move-result-object p1
 

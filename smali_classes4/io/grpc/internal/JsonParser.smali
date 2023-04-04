@@ -331,7 +331,7 @@
 
     move-result v0
 
-    const-string v1, "unexpected end of JSON"
+    const-string/jumbo v1, "unexpected end of JSON"
 
     invoke-static {v0, v1}, Lcom/google/common/base/Preconditions;->checkState(ZLjava/lang/Object;)V
 
@@ -430,8 +430,6 @@
     move-result-object p0
 
     return-object p0
-
-    nop
 
     :pswitch_data_0
     .packed-switch 0x1

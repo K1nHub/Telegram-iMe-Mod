@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lorg/telegram/ui/PasscodeActivity$$ExternalSyntheticLambda17;->f$0:Lorg/telegram/ui/PasscodeActivity;
 
-    invoke-static {v0}, Lorg/telegram/ui/PasscodeActivity;->$r8$lambda$8K2ECds2z8rPpi4ehP2efjiXuz0(Lorg/telegram/ui/PasscodeActivity;)V
+    invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->removeSelfFromStack()V
 
     return-void
 .end method

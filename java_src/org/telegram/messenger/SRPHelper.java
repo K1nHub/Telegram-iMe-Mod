@@ -1,7 +1,7 @@
 package org.telegram.messenger;
 
 import java.math.BigInteger;
-import org.telegram.tgnet.C3365x72c667f;
+import org.telegram.tgnet.C3380x72c667f;
 import org.telegram.tgnet.TLRPC$TL_inputCheckPasswordSRP;
 /* loaded from: classes4.dex */
 public class SRPHelper {
@@ -23,34 +23,34 @@ public class SRPHelper {
         }
     }
 
-    public static byte[] getX(byte[] bArr, C3365x72c667f c3365x72c667f) {
-        byte[] bArr2 = c3365x72c667f.salt1;
+    public static byte[] getX(byte[] bArr, C3380x72c667f c3380x72c667f) {
+        byte[] bArr2 = c3380x72c667f.salt1;
         byte[] computeSHA256 = Utilities.computeSHA256(bArr2, bArr, bArr2);
-        byte[] bArr3 = c3365x72c667f.salt2;
-        byte[] computePBKDF2 = Utilities.computePBKDF2(Utilities.computeSHA256(bArr3, computeSHA256, bArr3), c3365x72c667f.salt1);
-        byte[] bArr4 = c3365x72c667f.salt2;
+        byte[] bArr3 = c3380x72c667f.salt2;
+        byte[] computePBKDF2 = Utilities.computePBKDF2(Utilities.computeSHA256(bArr3, computeSHA256, bArr3), c3380x72c667f.salt1);
+        byte[] bArr4 = c3380x72c667f.salt2;
         return Utilities.computeSHA256(bArr4, computePBKDF2, bArr4);
     }
 
-    public static BigInteger getV(byte[] bArr, C3365x72c667f c3365x72c667f) {
-        BigInteger valueOf = BigInteger.valueOf(c3365x72c667f.f1620g);
+    public static BigInteger getV(byte[] bArr, C3380x72c667f c3380x72c667f) {
+        BigInteger valueOf = BigInteger.valueOf(c3380x72c667f.f1622g);
         getBigIntegerBytes(valueOf);
-        return valueOf.modPow(new BigInteger(1, getX(bArr, c3365x72c667f)), new BigInteger(1, c3365x72c667f.f1621p));
+        return valueOf.modPow(new BigInteger(1, getX(bArr, c3380x72c667f)), new BigInteger(1, c3380x72c667f.f1623p));
     }
 
-    public static byte[] getVBytes(byte[] bArr, C3365x72c667f c3365x72c667f) {
-        if (Utilities.isGoodPrime(c3365x72c667f.f1621p, c3365x72c667f.f1620g)) {
-            return getBigIntegerBytes(getV(bArr, c3365x72c667f));
+    public static byte[] getVBytes(byte[] bArr, C3380x72c667f c3380x72c667f) {
+        if (Utilities.isGoodPrime(c3380x72c667f.f1623p, c3380x72c667f.f1622g)) {
+            return getBigIntegerBytes(getV(bArr, c3380x72c667f));
         }
         return null;
     }
 
-    public static TLRPC$TL_inputCheckPasswordSRP startCheck(byte[] bArr, long j, byte[] bArr2, C3365x72c667f c3365x72c667f) {
-        if (bArr != null && bArr2 != null && bArr2.length != 0 && Utilities.isGoodPrime(c3365x72c667f.f1621p, c3365x72c667f.f1620g)) {
-            BigInteger valueOf = BigInteger.valueOf(c3365x72c667f.f1620g);
+    public static TLRPC$TL_inputCheckPasswordSRP startCheck(byte[] bArr, long j, byte[] bArr2, C3380x72c667f c3380x72c667f) {
+        if (bArr != null && bArr2 != null && bArr2.length != 0 && Utilities.isGoodPrime(c3380x72c667f.f1623p, c3380x72c667f.f1622g)) {
+            BigInteger valueOf = BigInteger.valueOf(c3380x72c667f.f1622g);
             byte[] bigIntegerBytes = getBigIntegerBytes(valueOf);
-            BigInteger bigInteger = new BigInteger(1, c3365x72c667f.f1621p);
-            BigInteger bigInteger2 = new BigInteger(1, Utilities.computeSHA256(c3365x72c667f.f1621p, bigIntegerBytes));
+            BigInteger bigInteger = new BigInteger(1, c3380x72c667f.f1623p);
+            BigInteger bigInteger2 = new BigInteger(1, Utilities.computeSHA256(c3380x72c667f.f1623p, bigIntegerBytes));
             BigInteger bigInteger3 = new BigInteger(1, bArr);
             byte[] bArr3 = new byte[256];
             Utilities.random.nextBytes(bArr3);
@@ -70,14 +70,14 @@ public class SRPHelper {
                 }
                 if (Utilities.isGoodGaAndGb(subtract, bigInteger)) {
                     byte[] computeSHA256 = Utilities.computeSHA256(getBigIntegerBytes(subtract.modPow(bigInteger4.add(bigInteger7.multiply(bigInteger3)), bigInteger)));
-                    byte[] computeSHA2562 = Utilities.computeSHA256(c3365x72c667f.f1621p);
+                    byte[] computeSHA2562 = Utilities.computeSHA256(c3380x72c667f.f1623p);
                     byte[] computeSHA2563 = Utilities.computeSHA256(bigIntegerBytes);
                     for (int i = 0; i < computeSHA2562.length; i++) {
                         computeSHA2562[i] = (byte) (computeSHA2563[i] ^ computeSHA2562[i]);
                     }
                     TLRPC$TL_inputCheckPasswordSRP tLRPC$TL_inputCheckPasswordSRP = new TLRPC$TL_inputCheckPasswordSRP();
-                    tLRPC$TL_inputCheckPasswordSRP.f1562M1 = Utilities.computeSHA256(computeSHA2562, Utilities.computeSHA256(c3365x72c667f.salt1), Utilities.computeSHA256(c3365x72c667f.salt2), bigIntegerBytes2, bigIntegerBytes3, computeSHA256);
-                    tLRPC$TL_inputCheckPasswordSRP.f1561A = bigIntegerBytes2;
+                    tLRPC$TL_inputCheckPasswordSRP.f1564M1 = Utilities.computeSHA256(computeSHA2562, Utilities.computeSHA256(c3380x72c667f.salt1), Utilities.computeSHA256(c3380x72c667f.salt2), bigIntegerBytes2, bigIntegerBytes3, computeSHA256);
+                    tLRPC$TL_inputCheckPasswordSRP.f1563A = bigIntegerBytes2;
                     tLRPC$TL_inputCheckPasswordSRP.srp_id = j;
                     return tLRPC$TL_inputCheckPasswordSRP;
                 }

@@ -2,34 +2,74 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lorg/fork/utils/Callbacks$Callback1;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
 .field public final synthetic f$0:Lorg/telegram/ui/ChatActivity;
 
+.field public final synthetic f$1:Lorg/telegram/tgnet/TLRPC$messages_Messages;
+
+.field public final synthetic f$2:J
+
+.field public final synthetic f$3:I
+
+.field public final synthetic f$4:I
+
+.field public final synthetic f$5:I
+
+.field public final synthetic f$6:I
+
+.field public final synthetic f$7:Ljava/util/ArrayList;
+
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/ChatActivity;)V
+.method public synthetic constructor <init>(Lorg/telegram/ui/ChatActivity;Lorg/telegram/tgnet/TLRPC$messages_Messages;JIIIILjava/util/ArrayList;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda261;->f$0:Lorg/telegram/ui/ChatActivity;
 
+    iput-object p2, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda261;->f$1:Lorg/telegram/tgnet/TLRPC$messages_Messages;
+
+    iput-wide p3, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda261;->f$2:J
+
+    iput p5, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda261;->f$3:I
+
+    iput p6, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda261;->f$4:I
+
+    iput p7, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda261;->f$5:I
+
+    iput p8, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda261;->f$6:I
+
+    iput-object p9, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda261;->f$7:Ljava/util/ArrayList;
+
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;)V
-    .locals 1
+.method public final run()V
+    .locals 9
 
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda261;->f$0:Lorg/telegram/ui/ChatActivity;
 
-    check-cast p1, Ljava/lang/Long;
+    iget-object v1, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda261;->f$1:Lorg/telegram/tgnet/TLRPC$messages_Messages;
 
-    invoke-static {v0, p1}, Lorg/telegram/ui/ChatActivity;->$r8$lambda$oybr2uRxg2bLG3PEfT4B7_hz2YQ(Lorg/telegram/ui/ChatActivity;Ljava/lang/Long;)V
+    iget-wide v2, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda261;->f$2:J
+
+    iget v4, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda261;->f$3:I
+
+    iget v5, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda261;->f$4:I
+
+    iget v6, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda261;->f$5:I
+
+    iget v7, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda261;->f$6:I
+
+    iget-object v8, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda261;->f$7:Ljava/util/ArrayList;
+
+    invoke-static/range {v0 .. v8}, Lorg/telegram/ui/ChatActivity;->$r8$lambda$ZkCWyakI9CeENvwXBHcNBHyJOW0(Lorg/telegram/ui/ChatActivity;Lorg/telegram/tgnet/TLRPC$messages_Messages;JIIIILjava/util/ArrayList;)V
 
     return-void
 .end method

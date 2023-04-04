@@ -41,7 +41,7 @@
 .method static constructor <clinit>()V
     .locals 1
 
-    .line 2468
+    .line 2472
     new-instance v0, Landroidx/recyclerview/widget/LinearLayoutManager$SavedState$1;
 
     invoke-direct {v0}, Landroidx/recyclerview/widget/LinearLayoutManager$SavedState$1;-><init>()V
@@ -54,7 +54,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 2432
+    .line 2436
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -63,24 +63,24 @@
 .method constructor <init>(Landroid/os/Parcel;)V
     .locals 1
 
-    .line 2436
+    .line 2440
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 2437
+    .line 2441
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
     iput v0, p0, Landroidx/recyclerview/widget/LinearLayoutManager$SavedState;->mAnchorPosition:I
 
-    .line 2438
+    .line 2442
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
     iput v0, p0, Landroidx/recyclerview/widget/LinearLayoutManager$SavedState;->mAnchorOffset:I
 
-    .line 2439
+    .line 2443
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result p1
@@ -103,20 +103,20 @@
 .method public constructor <init>(Landroidx/recyclerview/widget/LinearLayoutManager$SavedState;)V
     .locals 1
 
-    .line 2442
+    .line 2446
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 2443
+    .line 2447
     iget v0, p1, Landroidx/recyclerview/widget/LinearLayoutManager$SavedState;->mAnchorPosition:I
 
     iput v0, p0, Landroidx/recyclerview/widget/LinearLayoutManager$SavedState;->mAnchorPosition:I
 
-    .line 2444
+    .line 2448
     iget v0, p1, Landroidx/recyclerview/widget/LinearLayoutManager$SavedState;->mAnchorOffset:I
 
     iput v0, p0, Landroidx/recyclerview/widget/LinearLayoutManager$SavedState;->mAnchorOffset:I
 
-    .line 2445
+    .line 2449
     iget-boolean p1, p1, Landroidx/recyclerview/widget/LinearLayoutManager$SavedState;->mAnchorLayoutFromEnd:Z
 
     iput-boolean p1, p0, Landroidx/recyclerview/widget/LinearLayoutManager$SavedState;->mAnchorLayoutFromEnd:Z
@@ -137,7 +137,7 @@
 .method hasValidAnchor()Z
     .locals 1
 
-    .line 2449
+    .line 2453
     iget v0, p0, Landroidx/recyclerview/widget/LinearLayoutManager$SavedState;->mAnchorPosition:I
 
     if-ltz v0, :cond_0
@@ -158,7 +158,7 @@
 
     const/4 v0, -0x1
 
-    .line 2453
+    .line 2457
     iput v0, p0, Landroidx/recyclerview/widget/LinearLayoutManager$SavedState;->mAnchorPosition:I
 
     return-void
@@ -167,17 +167,17 @@
 .method public writeToParcel(Landroid/os/Parcel;I)V
     .locals 0
 
-    .line 2463
+    .line 2467
     iget p2, p0, Landroidx/recyclerview/widget/LinearLayoutManager$SavedState;->mAnchorPosition:I
 
     invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 2464
+    .line 2468
     iget p2, p0, Landroidx/recyclerview/widget/LinearLayoutManager$SavedState;->mAnchorOffset:I
 
     invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 2465
+    .line 2469
     iget-boolean p2, p0, Landroidx/recyclerview/widget/LinearLayoutManager$SavedState;->mAnchorLayoutFromEnd:Z
 
     invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeInt(I)V

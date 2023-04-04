@@ -869,6 +869,7 @@
 
     invoke-static {v0, p1}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 69
     :cond_2
     throw p2
 .end method

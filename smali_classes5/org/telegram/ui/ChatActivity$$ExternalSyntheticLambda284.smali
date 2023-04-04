@@ -2,7 +2,7 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lorg/fork/utils/Callbacks$Callback;
+.implements Lj$/util/function/ToIntFunction;
 
 
 # static fields
@@ -32,10 +32,14 @@
 
 
 # virtual methods
-.method public final invoke()V
+.method public final applyAsInt(Ljava/lang/Object;)I
     .locals 0
 
-    invoke-static {}, Lorg/telegram/ui/ChatActivity;->$r8$lambda$wV0PRhgGb95FL9cOTkfp1XlC3tY()V
+    check-cast p1, Lorg/telegram/messenger/MessageObject;
 
-    return-void
+    invoke-virtual {p1}, Lorg/telegram/messenger/MessageObject;->getId()I
+
+    move-result p1
+
+    return p1
 .end method

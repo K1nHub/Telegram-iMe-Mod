@@ -1575,7 +1575,7 @@
 
     cmp-long v11, v2, v13
 
-    const-string v13, "userId"
+    const-string/jumbo v13, "userId"
 
     const-string v14, "chatId"
 
@@ -22820,7 +22820,7 @@
     .line 4297
     invoke-virtual {v0, v1, v11}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
-    const-string v14, "topic_id"
+    const-string/jumbo v14, "topic_id"
 
     .line 4298
     invoke-virtual {v0, v14, v10}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
@@ -24749,7 +24749,7 @@
 
     if-eqz v1, :cond_66
 
-    const-string v1, "userId"
+    const-string/jumbo v1, "userId"
 
     .line 4572
     invoke-virtual {v0, v1, v12, v13}, Landroid/content/Intent;->putExtra(Ljava/lang/String;J)Landroid/content/Intent;
@@ -24792,7 +24792,7 @@
 
     if-eqz v6, :cond_67
 
-    const-string v1, "topicId"
+    const-string/jumbo v1, "topicId"
 
     .line 4578
     invoke-virtual {v0, v1, v6}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
@@ -26074,11 +26074,11 @@
     if-ne v2, v3, :cond_77
 
     :cond_0
-    invoke-virtual/range {p0 .. p0}, Lorg/telegram/messenger/BaseController;->getForkCommonController()Lorg/fork/controller/ForkCommonController;
+    invoke-virtual/range {p0 .. p0}, Lorg/telegram/messenger/BaseController;->getForkCommonController()Lcom/iMe/fork/controller/ForkCommonController;
 
     move-result-object v2
 
-    invoke-virtual {v2}, Lorg/fork/controller/ForkCommonController;->isAccountMuted()Z
+    invoke-virtual {v2}, Lcom/iMe/fork/controller/ForkCommonController;->isAccountMuted()Z
 
     move-result v2
 
@@ -26141,11 +26141,11 @@
     move-result-wide v13
 
     .line 3472
-    invoke-virtual/range {p0 .. p0}, Lorg/telegram/messenger/BaseController;->getAlbumsController()Lorg/fork/controller/AlbumsController;
+    invoke-virtual/range {p0 .. p0}, Lorg/telegram/messenger/BaseController;->getAlbumsController()Lcom/iMe/fork/controller/AlbumsController;
 
     move-result-object v6
 
-    invoke-virtual {v6, v13, v14}, Lorg/fork/controller/AlbumsController;->isDialogAlbum(J)Z
+    invoke-virtual {v6, v13, v14}, Lcom/iMe/fork/controller/AlbumsController;->isDialogAlbum(J)Z
 
     move-result v6
 
@@ -28182,7 +28182,7 @@
 
     if-eqz v9, :cond_4a
 
-    const-string v6, "userId"
+    const-string/jumbo v6, "userId"
 
     move-wide/from16 v9, v25
 

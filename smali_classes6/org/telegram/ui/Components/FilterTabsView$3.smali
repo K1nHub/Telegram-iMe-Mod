@@ -85,9 +85,9 @@
     check-cast v0, Lorg/telegram/ui/Components/FilterTabsView$TabView;
 
     .line 1224
-    sget-object v1, Lorg/telegram/messenger/SharedConfig;->selectedFilterTabWidthMode:Lorg/fork/enums/FilterTabWidthMode;
+    sget-object v1, Lorg/telegram/messenger/SharedConfig;->selectedFilterTabWidthMode:Lcom/iMe/fork/enums/FilterTabWidthMode;
 
-    invoke-virtual {v1}, Lorg/fork/enums/FilterTabWidthMode;->getMarginIconAndCount()I
+    invoke-virtual {v1}, Lcom/iMe/fork/enums/FilterTabWidthMode;->getMarginIconAndCount()I
 
     move-result v1
 

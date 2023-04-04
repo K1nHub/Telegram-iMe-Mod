@@ -856,7 +856,7 @@
 
     invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v8, "unexpected journal header: ["
+    const-string/jumbo v8, "unexpected journal header: ["
 
     invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -935,7 +935,7 @@
 
     move-result v8
 
-    const-string v9, "unexpected journal line: "
+    const-string/jumbo v9, "unexpected journal line: "
 
     const/4 v10, -0x1
 
@@ -1221,7 +1221,7 @@
 
     if-nez v2, :cond_0
 
-    const-string v0, "toEvict"
+    const-string/jumbo v0, "toEvict"
 
     .line 696
     invoke-static {v1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V

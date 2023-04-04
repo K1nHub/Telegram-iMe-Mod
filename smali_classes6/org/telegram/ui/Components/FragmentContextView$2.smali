@@ -25,7 +25,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/FragmentContextView;)V
     .locals 0
 
-    .line 247
+    .line 241
     iput-object p1, p0, Lorg/telegram/ui/Components/FragmentContextView$2;->this$0:Lorg/telegram/ui/Components/FragmentContextView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,12 +38,12 @@
 .method public run()V
     .locals 3
 
-    .line 250
+    .line 244
     iget-object v0, p0, Lorg/telegram/ui/Components/FragmentContextView$2;->this$0:Lorg/telegram/ui/Components/FragmentContextView;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/FragmentContextView;->access$700(Lorg/telegram/ui/Components/FragmentContextView;)V
 
-    .line 251
+    .line 245
     iget-object v0, p0, Lorg/telegram/ui/Components/FragmentContextView$2;->this$0:Lorg/telegram/ui/Components/FragmentContextView;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/FragmentContextView;->access$800(Lorg/telegram/ui/Components/FragmentContextView;)Ljava/lang/Runnable;

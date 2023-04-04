@@ -1,7 +1,7 @@
 package com.google.android.exoplayer2.source.chunk;
 
 import android.util.SparseArray;
-import com.google.android.exoplayer2.C0468C;
+import com.google.android.exoplayer2.C0482C;
 import com.google.android.exoplayer2.Format;
 import com.google.android.exoplayer2.analytics.PlayerId;
 import com.google.android.exoplayer2.extractor.ChunkIndex;
@@ -77,14 +77,14 @@ public final class BundledChunkExtractor implements ExtractorOutput, ChunkExtrac
         this.endTimeUs = j2;
         if (!this.extractorInitialized) {
             this.extractor.init(this);
-            if (j != C0468C.TIME_UNSET) {
+            if (j != C0482C.TIME_UNSET) {
                 this.extractor.seek(0L, j);
             }
             this.extractorInitialized = true;
             return;
         }
         Extractor extractor = this.extractor;
-        if (j == C0468C.TIME_UNSET) {
+        if (j == C0482C.TIME_UNSET) {
             j = 0;
         }
         extractor.seek(0L, j);
@@ -198,7 +198,7 @@ public final class BundledChunkExtractor implements ExtractorOutput, ChunkExtrac
         @Override // com.google.android.exoplayer2.extractor.TrackOutput
         public void sampleMetadata(long j, int i, int i2, int i3, TrackOutput.CryptoData cryptoData) {
             long j2 = this.endTimeUs;
-            if (j2 != C0468C.TIME_UNSET && j >= j2) {
+            if (j2 != C0482C.TIME_UNSET && j >= j2) {
                 this.trackOutput = this.fakeTrackOutput;
             }
             ((TrackOutput) Util.castNonNull(this.trackOutput)).sampleMetadata(j, i, i2, i3, cryptoData);

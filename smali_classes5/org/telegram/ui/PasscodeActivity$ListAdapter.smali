@@ -537,7 +537,7 @@
 
     iget-object p2, p0, Lorg/telegram/ui/PasscodeActivity$ListAdapter;->this$0:Lorg/telegram/ui/PasscodeActivity;
 
-    invoke-static {p2}, Lorg/telegram/ui/PasscodeActivity;->access$2600(Lorg/telegram/ui/PasscodeActivity;)Lorg/fork/controller/LockedSectionsController$SectionPasscodeData;
+    invoke-static {p2}, Lorg/telegram/ui/PasscodeActivity;->access$2600(Lorg/telegram/ui/PasscodeActivity;)Lcom/iMe/fork/controller/LockedSectionsController$SectionPasscodeData;
 
     move-result-object p2
 
@@ -546,7 +546,7 @@
     :cond_9
     iget-object p2, p0, Lorg/telegram/ui/PasscodeActivity$ListAdapter;->this$0:Lorg/telegram/ui/PasscodeActivity;
 
-    invoke-static {p2}, Lorg/telegram/ui/PasscodeActivity;->access$2600(Lorg/telegram/ui/PasscodeActivity;)Lorg/fork/controller/LockedSectionsController$SectionPasscodeData;
+    invoke-static {p2}, Lorg/telegram/ui/PasscodeActivity;->access$2600(Lorg/telegram/ui/PasscodeActivity;)Lcom/iMe/fork/controller/LockedSectionsController$SectionPasscodeData;
 
     move-result-object p2
 
@@ -554,11 +554,11 @@
 
     iget-object p2, p0, Lorg/telegram/ui/PasscodeActivity$ListAdapter;->this$0:Lorg/telegram/ui/PasscodeActivity;
 
-    invoke-static {p2}, Lorg/telegram/ui/PasscodeActivity;->access$2600(Lorg/telegram/ui/PasscodeActivity;)Lorg/fork/controller/LockedSectionsController$SectionPasscodeData;
+    invoke-static {p2}, Lorg/telegram/ui/PasscodeActivity;->access$2600(Lorg/telegram/ui/PasscodeActivity;)Lcom/iMe/fork/controller/LockedSectionsController$SectionPasscodeData;
 
     move-result-object p2
 
-    invoke-virtual {p2}, Lorg/fork/controller/LockedSectionsController$SectionPasscodeData;->getPasscodeHash()Ljava/lang/String;
+    invoke-virtual {p2}, Lcom/iMe/fork/controller/LockedSectionsController$SectionPasscodeData;->getPasscodeHash()Ljava/lang/String;
 
     move-result-object p2
 
@@ -609,7 +609,7 @@
     .line 1712
     iget-object p2, p0, Lorg/telegram/ui/PasscodeActivity$ListAdapter;->this$0:Lorg/telegram/ui/PasscodeActivity;
 
-    invoke-static {p2}, Lorg/telegram/ui/PasscodeActivity;->access$2600(Lorg/telegram/ui/PasscodeActivity;)Lorg/fork/controller/LockedSectionsController$SectionPasscodeData;
+    invoke-static {p2}, Lorg/telegram/ui/PasscodeActivity;->access$2600(Lorg/telegram/ui/PasscodeActivity;)Lcom/iMe/fork/controller/LockedSectionsController$SectionPasscodeData;
 
     move-result-object p2
 
@@ -628,15 +628,15 @@
     .line 1713
     iget-object p2, p0, Lorg/telegram/ui/PasscodeActivity$ListAdapter;->this$0:Lorg/telegram/ui/PasscodeActivity;
 
-    invoke-static {p2}, Lorg/telegram/ui/PasscodeActivity;->access$2600(Lorg/telegram/ui/PasscodeActivity;)Lorg/fork/controller/LockedSectionsController$SectionPasscodeData;
+    invoke-static {p2}, Lorg/telegram/ui/PasscodeActivity;->access$2600(Lorg/telegram/ui/PasscodeActivity;)Lcom/iMe/fork/controller/LockedSectionsController$SectionPasscodeData;
 
     move-result-object p2
 
-    invoke-virtual {p2}, Lorg/fork/controller/LockedSectionsController$SectionPasscodeData;->getAutoLockIn()Lorg/fork/enums/AutoLockTime;
+    invoke-virtual {p2}, Lcom/iMe/fork/controller/LockedSectionsController$SectionPasscodeData;->getAutoLockIn()Lcom/iMe/fork/enums/AutoLockTime;
 
     move-result-object p2
 
-    sget-object v8, Lorg/fork/enums/AutoLockTime;->NONE:Lorg/fork/enums/AutoLockTime;
+    sget-object v8, Lcom/iMe/fork/enums/AutoLockTime;->NONE:Lcom/iMe/fork/enums/AutoLockTime;
 
     if-ne p2, v8, :cond_d
 
@@ -655,29 +655,29 @@
     :cond_d
     iget-object p2, p0, Lorg/telegram/ui/PasscodeActivity$ListAdapter;->this$0:Lorg/telegram/ui/PasscodeActivity;
 
-    invoke-static {p2}, Lorg/telegram/ui/PasscodeActivity;->access$2600(Lorg/telegram/ui/PasscodeActivity;)Lorg/fork/controller/LockedSectionsController$SectionPasscodeData;
+    invoke-static {p2}, Lorg/telegram/ui/PasscodeActivity;->access$2600(Lorg/telegram/ui/PasscodeActivity;)Lcom/iMe/fork/controller/LockedSectionsController$SectionPasscodeData;
 
     move-result-object p2
 
-    invoke-virtual {p2}, Lorg/fork/controller/LockedSectionsController$SectionPasscodeData;->getAutoLockIn()Lorg/fork/enums/AutoLockTime;
+    invoke-virtual {p2}, Lcom/iMe/fork/controller/LockedSectionsController$SectionPasscodeData;->getAutoLockIn()Lcom/iMe/fork/enums/AutoLockTime;
 
     move-result-object p2
 
-    sget-object v6, Lorg/fork/enums/AutoLockTime;->MINUTE:Lorg/fork/enums/AutoLockTime;
+    sget-object v6, Lcom/iMe/fork/enums/AutoLockTime;->MINUTE:Lcom/iMe/fork/enums/AutoLockTime;
 
     if-eq p2, v6, :cond_11
 
     iget-object p2, p0, Lorg/telegram/ui/PasscodeActivity$ListAdapter;->this$0:Lorg/telegram/ui/PasscodeActivity;
 
-    invoke-static {p2}, Lorg/telegram/ui/PasscodeActivity;->access$2600(Lorg/telegram/ui/PasscodeActivity;)Lorg/fork/controller/LockedSectionsController$SectionPasscodeData;
+    invoke-static {p2}, Lorg/telegram/ui/PasscodeActivity;->access$2600(Lorg/telegram/ui/PasscodeActivity;)Lcom/iMe/fork/controller/LockedSectionsController$SectionPasscodeData;
 
     move-result-object p2
 
-    invoke-virtual {p2}, Lorg/fork/controller/LockedSectionsController$SectionPasscodeData;->getAutoLockIn()Lorg/fork/enums/AutoLockTime;
+    invoke-virtual {p2}, Lcom/iMe/fork/controller/LockedSectionsController$SectionPasscodeData;->getAutoLockIn()Lcom/iMe/fork/enums/AutoLockTime;
 
     move-result-object p2
 
-    sget-object v6, Lorg/fork/enums/AutoLockTime;->FIVE_MINUTES:Lorg/fork/enums/AutoLockTime;
+    sget-object v6, Lcom/iMe/fork/enums/AutoLockTime;->FIVE_MINUTES:Lcom/iMe/fork/enums/AutoLockTime;
 
     if-ne p2, v6, :cond_e
 
@@ -687,29 +687,29 @@
     :cond_e
     iget-object p2, p0, Lorg/telegram/ui/PasscodeActivity$ListAdapter;->this$0:Lorg/telegram/ui/PasscodeActivity;
 
-    invoke-static {p2}, Lorg/telegram/ui/PasscodeActivity;->access$2600(Lorg/telegram/ui/PasscodeActivity;)Lorg/fork/controller/LockedSectionsController$SectionPasscodeData;
+    invoke-static {p2}, Lorg/telegram/ui/PasscodeActivity;->access$2600(Lorg/telegram/ui/PasscodeActivity;)Lcom/iMe/fork/controller/LockedSectionsController$SectionPasscodeData;
 
     move-result-object p2
 
-    invoke-virtual {p2}, Lorg/fork/controller/LockedSectionsController$SectionPasscodeData;->getAutoLockIn()Lorg/fork/enums/AutoLockTime;
+    invoke-virtual {p2}, Lcom/iMe/fork/controller/LockedSectionsController$SectionPasscodeData;->getAutoLockIn()Lcom/iMe/fork/enums/AutoLockTime;
 
     move-result-object p2
 
-    sget-object v5, Lorg/fork/enums/AutoLockTime;->HOUR:Lorg/fork/enums/AutoLockTime;
+    sget-object v5, Lcom/iMe/fork/enums/AutoLockTime;->HOUR:Lcom/iMe/fork/enums/AutoLockTime;
 
     if-eq p2, v5, :cond_10
 
     iget-object p2, p0, Lorg/telegram/ui/PasscodeActivity$ListAdapter;->this$0:Lorg/telegram/ui/PasscodeActivity;
 
-    invoke-static {p2}, Lorg/telegram/ui/PasscodeActivity;->access$2600(Lorg/telegram/ui/PasscodeActivity;)Lorg/fork/controller/LockedSectionsController$SectionPasscodeData;
+    invoke-static {p2}, Lorg/telegram/ui/PasscodeActivity;->access$2600(Lorg/telegram/ui/PasscodeActivity;)Lcom/iMe/fork/controller/LockedSectionsController$SectionPasscodeData;
 
     move-result-object p2
 
-    invoke-virtual {p2}, Lorg/fork/controller/LockedSectionsController$SectionPasscodeData;->getAutoLockIn()Lorg/fork/enums/AutoLockTime;
+    invoke-virtual {p2}, Lcom/iMe/fork/controller/LockedSectionsController$SectionPasscodeData;->getAutoLockIn()Lcom/iMe/fork/enums/AutoLockTime;
 
     move-result-object p2
 
-    sget-object v5, Lorg/fork/enums/AutoLockTime;->FIVE_HOURS:Lorg/fork/enums/AutoLockTime;
+    sget-object v5, Lcom/iMe/fork/enums/AutoLockTime;->FIVE_HOURS:Lcom/iMe/fork/enums/AutoLockTime;
 
     if-ne p2, v5, :cond_f
 
@@ -726,15 +726,15 @@
     iget-object v6, p0, Lorg/telegram/ui/PasscodeActivity$ListAdapter;->this$0:Lorg/telegram/ui/PasscodeActivity;
 
     .line 1739
-    invoke-static {v6}, Lorg/telegram/ui/PasscodeActivity;->access$2600(Lorg/telegram/ui/PasscodeActivity;)Lorg/fork/controller/LockedSectionsController$SectionPasscodeData;
+    invoke-static {v6}, Lorg/telegram/ui/PasscodeActivity;->access$2600(Lorg/telegram/ui/PasscodeActivity;)Lcom/iMe/fork/controller/LockedSectionsController$SectionPasscodeData;
 
     move-result-object v6
 
-    invoke-virtual {v6}, Lorg/fork/controller/LockedSectionsController$SectionPasscodeData;->getAutoLockIn()Lorg/fork/enums/AutoLockTime;
+    invoke-virtual {v6}, Lcom/iMe/fork/controller/LockedSectionsController$SectionPasscodeData;->getAutoLockIn()Lcom/iMe/fork/enums/AutoLockTime;
 
     move-result-object v6
 
-    invoke-virtual {v6}, Lorg/fork/enums/AutoLockTime;->getTimeInSeconds()J
+    invoke-virtual {v6}, Lcom/iMe/fork/enums/AutoLockTime;->getTimeInSeconds()J
 
     move-result-wide v8
 
@@ -778,15 +778,15 @@
     iget-object v6, p0, Lorg/telegram/ui/PasscodeActivity$ListAdapter;->this$0:Lorg/telegram/ui/PasscodeActivity;
 
     .line 1730
-    invoke-static {v6}, Lorg/telegram/ui/PasscodeActivity;->access$2600(Lorg/telegram/ui/PasscodeActivity;)Lorg/fork/controller/LockedSectionsController$SectionPasscodeData;
+    invoke-static {v6}, Lorg/telegram/ui/PasscodeActivity;->access$2600(Lorg/telegram/ui/PasscodeActivity;)Lcom/iMe/fork/controller/LockedSectionsController$SectionPasscodeData;
 
     move-result-object v6
 
-    invoke-virtual {v6}, Lorg/fork/controller/LockedSectionsController$SectionPasscodeData;->getAutoLockIn()Lorg/fork/enums/AutoLockTime;
+    invoke-virtual {v6}, Lcom/iMe/fork/controller/LockedSectionsController$SectionPasscodeData;->getAutoLockIn()Lcom/iMe/fork/enums/AutoLockTime;
 
     move-result-object v6
 
-    invoke-virtual {v6}, Lorg/fork/enums/AutoLockTime;->getTimeInSeconds()J
+    invoke-virtual {v6}, Lcom/iMe/fork/enums/AutoLockTime;->getTimeInSeconds()J
 
     move-result-wide v8
 
@@ -830,15 +830,15 @@
     iget-object v6, p0, Lorg/telegram/ui/PasscodeActivity$ListAdapter;->this$0:Lorg/telegram/ui/PasscodeActivity;
 
     .line 1721
-    invoke-static {v6}, Lorg/telegram/ui/PasscodeActivity;->access$2600(Lorg/telegram/ui/PasscodeActivity;)Lorg/fork/controller/LockedSectionsController$SectionPasscodeData;
+    invoke-static {v6}, Lorg/telegram/ui/PasscodeActivity;->access$2600(Lorg/telegram/ui/PasscodeActivity;)Lcom/iMe/fork/controller/LockedSectionsController$SectionPasscodeData;
 
     move-result-object v6
 
-    invoke-virtual {v6}, Lorg/fork/controller/LockedSectionsController$SectionPasscodeData;->getAutoLockIn()Lorg/fork/enums/AutoLockTime;
+    invoke-virtual {v6}, Lcom/iMe/fork/controller/LockedSectionsController$SectionPasscodeData;->getAutoLockIn()Lcom/iMe/fork/enums/AutoLockTime;
 
     move-result-object v6
 
-    invoke-virtual {v6}, Lorg/fork/enums/AutoLockTime;->getTimeInSeconds()J
+    invoke-virtual {v6}, Lcom/iMe/fork/enums/AutoLockTime;->getTimeInSeconds()J
 
     move-result-wide v8
 
@@ -1064,7 +1064,7 @@
     .line 1687
     iget-object p2, p0, Lorg/telegram/ui/PasscodeActivity$ListAdapter;->this$0:Lorg/telegram/ui/PasscodeActivity;
 
-    invoke-static {p2}, Lorg/telegram/ui/PasscodeActivity;->access$2600(Lorg/telegram/ui/PasscodeActivity;)Lorg/fork/controller/LockedSectionsController$SectionPasscodeData;
+    invoke-static {p2}, Lorg/telegram/ui/PasscodeActivity;->access$2600(Lorg/telegram/ui/PasscodeActivity;)Lcom/iMe/fork/controller/LockedSectionsController$SectionPasscodeData;
 
     move-result-object p2
 
@@ -1081,11 +1081,11 @@
 
     iget-object v0, p0, Lorg/telegram/ui/PasscodeActivity$ListAdapter;->this$0:Lorg/telegram/ui/PasscodeActivity;
 
-    invoke-static {v0}, Lorg/telegram/ui/PasscodeActivity;->access$2600(Lorg/telegram/ui/PasscodeActivity;)Lorg/fork/controller/LockedSectionsController$SectionPasscodeData;
+    invoke-static {v0}, Lorg/telegram/ui/PasscodeActivity;->access$2600(Lorg/telegram/ui/PasscodeActivity;)Lcom/iMe/fork/controller/LockedSectionsController$SectionPasscodeData;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lorg/fork/controller/LockedSectionsController$SectionPasscodeData;->getUseFingerprint()Z
+    invoke-virtual {v0}, Lcom/iMe/fork/controller/LockedSectionsController$SectionPasscodeData;->getUseFingerprint()Z
 
     move-result v0
 
@@ -1112,11 +1112,11 @@
 
     iget-object v0, p0, Lorg/telegram/ui/PasscodeActivity$ListAdapter;->this$0:Lorg/telegram/ui/PasscodeActivity;
 
-    invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getWalletFingerprintController()Lorg/fork/controller/WalletFingerprintController;
+    invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getWalletFingerprintController()Lcom/iMe/fork/controller/WalletFingerprintController;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lorg/fork/controller/WalletFingerprintController;->isWalletFingerprintUnlockEnabled()Z
+    invoke-virtual {v0}, Lcom/iMe/fork/controller/WalletFingerprintController;->isWalletFingerprintUnlockEnabled()Z
 
     move-result v0
 

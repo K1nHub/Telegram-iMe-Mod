@@ -55,9 +55,9 @@ class Headers {
         arrayList.add(TE_HEADER);
         byte[][] http2Headers = TransportFrameUtil.toHttp2Headers(metadata);
         for (int i = 0; i < http2Headers.length; i += 2) {
-            ByteString m89of = ByteString.m89of(http2Headers[i]);
-            if (isApplicationHeader(m89of.utf8())) {
-                arrayList.add(new Header(m89of, ByteString.m89of(http2Headers[i + 1])));
+            ByteString m84of = ByteString.m84of(http2Headers[i]);
+            if (isApplicationHeader(m84of.utf8())) {
+                arrayList.add(new Header(m84of, ByteString.m84of(http2Headers[i + 1])));
             }
         }
         return arrayList;

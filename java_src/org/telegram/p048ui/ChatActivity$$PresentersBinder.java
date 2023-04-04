@@ -1,6 +1,6 @@
 package org.telegram.p048ui;
 
-import com.smedialink.p031ui.chat.ChatPresenter;
+import com.iMe.p032ui.chat.ChatPresenter;
 import java.util.ArrayList;
 import java.util.List;
 import moxy.MvpPresenter;

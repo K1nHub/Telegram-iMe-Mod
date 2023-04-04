@@ -842,7 +842,7 @@
 .method public final parse(Lokhttp3/HttpUrl;Ljava/lang/String;)Lokhttp3/Cookie;
     .locals 2
 
-    const-string v0, "url"
+    const-string/jumbo v0, "url"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -869,7 +869,7 @@
 
     move-object/from16 v7, p4
 
-    const-string v1, "url"
+    const-string/jumbo v1, "url"
 
     move-object/from16 v8, p3
 
@@ -1362,7 +1362,7 @@
         }
     .end annotation
 
-    const-string v0, "url"
+    const-string/jumbo v0, "url"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 

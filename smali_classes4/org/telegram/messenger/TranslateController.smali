@@ -347,7 +347,7 @@
 
     const-string v10, "es"
 
-    const-string v11, "uk"
+    const-string/jumbo v11, "uk"
 
     .line 274
     filled-new-array/range {v0 .. v11}, [Ljava/lang/String;
@@ -546,29 +546,29 @@
 
     const-string v93, "sv"
 
-    const-string v94, "tl"
+    const-string/jumbo v94, "tl"
 
     const-string v95, "tg"
 
     const-string v96, "ta"
 
-    const-string v97, "tt"
+    const-string/jumbo v97, "tt"
 
     const-string v98, "te"
 
     const-string v99, "th"
 
-    const-string v100, "tr"
+    const-string/jumbo v100, "tr"
 
-    const-string v101, "tk"
+    const-string/jumbo v101, "tk"
 
-    const-string v102, "uk"
+    const-string/jumbo v102, "uk"
 
-    const-string v103, "ur"
+    const-string/jumbo v103, "ur"
 
-    const-string v104, "ug"
+    const-string/jumbo v104, "ug"
 
-    const-string v105, "uz"
+    const-string/jumbo v105, "uz"
 
     const-string/jumbo v106, "vi"
 
@@ -956,7 +956,7 @@
 
     move-result v3
 
-    const-string v4, "und"
+    const-string/jumbo v4, "und"
 
     const/4 v5, 0x1
 
@@ -2396,7 +2396,7 @@
     .line 634
     iget-object v0, p1, Lorg/telegram/messenger/MessageObject;->messageOwner:Lorg/telegram/tgnet/TLRPC$Message;
 
-    const-string v1, "und"
+    const-string/jumbo v1, "und"
 
     iput-object v1, v0, Lorg/telegram/tgnet/TLRPC$Message;->originalLanguage:Ljava/lang/String;
 
@@ -2482,7 +2482,7 @@
 
     if-nez p1, :cond_0
 
-    const-string p1, "und"
+    const-string/jumbo p1, "und"
 
     .line 629
     :cond_0
@@ -3283,7 +3283,7 @@
 
     move-result-object v0
 
-    const-string v1, "translating_dialog_languages2"
+    const-string/jumbo v1, "translating_dialog_languages2"
 
     const/4 v2, 0x0
 
@@ -3824,7 +3824,7 @@
 
     move-result-object v0
 
-    const-string v1, "translating_dialog_languages2"
+    const-string/jumbo v1, "translating_dialog_languages2"
 
     invoke-interface {v0, v1}, Landroid/content/SharedPreferences$Editor;->remove(Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
@@ -4018,7 +4018,7 @@
 
     move-result-object v0
 
-    const-string v3, "translating_dialog_languages2"
+    const-string/jumbo v3, "translating_dialog_languages2"
 
     invoke-interface {v2, v3, v0}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
@@ -4715,7 +4715,7 @@
 
     move-result-object v0
 
-    const-string v1, "translate_chat_button"
+    const-string/jumbo v1, "translate_chat_button"
 
     const/4 v2, 0x1
 
@@ -4740,7 +4740,7 @@
 
     move-result-object v1
 
-    const-string v2, "translate_button"
+    const-string/jumbo v2, "translate_button"
 
     const/4 v3, 0x0
 
@@ -5126,7 +5126,7 @@
 
     move-result-object v0
 
-    const-string v1, "translate_button"
+    const-string/jumbo v1, "translate_button"
 
     invoke-interface {v0, v1, p1}, Landroid/content/SharedPreferences$Editor;->putBoolean(Ljava/lang/String;Z)Landroid/content/SharedPreferences$Editor;
 

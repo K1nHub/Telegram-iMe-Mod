@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lorg/telegram/ui/Components/AlertsCreator;->createInputTemplateNameDialog(Lorg/telegram/ui/ChatActivity;Lcom/smedialink/storage/domain/model/templates/TemplateModel;Ljava/lang/Runnable;Lorg/fork/utils/Callbacks$Callback1;)Landroid/app/Dialog;
+    value = Lorg/telegram/ui/Components/AlertsCreator;->createInputTemplateNameDialog(Lorg/telegram/ui/ChatActivity;Lcom/iMe/storage/domain/model/templates/TemplateModel;Ljava/lang/Runnable;Lcom/iMe/fork/utils/Callbacks$Callback1;)Landroid/app/Dialog;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -15,17 +15,17 @@
 
 
 # instance fields
-.field final synthetic val$callback:Lorg/fork/utils/Callbacks$Callback1;
+.field final synthetic val$callback:Lcom/iMe/fork/utils/Callbacks$Callback1;
 
 .field final synthetic val$parentFragment:Lorg/telegram/ui/ChatActivity;
 
 
 # direct methods
-.method constructor <init>(Landroid/content/Context;IZLjava/lang/String;Lorg/fork/utils/Callbacks$Callback1;Lorg/telegram/ui/ChatActivity;)V
+.method constructor <init>(Landroid/content/Context;IZLjava/lang/String;Lcom/iMe/fork/utils/Callbacks$Callback1;Lorg/telegram/ui/ChatActivity;)V
     .locals 0
 
     .line 509
-    iput-object p5, p0, Lorg/telegram/ui/Components/AlertsCreator$1;->val$callback:Lorg/fork/utils/Callbacks$Callback1;
+    iput-object p5, p0, Lorg/telegram/ui/Components/AlertsCreator$1;->val$callback:Lcom/iMe/fork/utils/Callbacks$Callback1;
 
     iput-object p6, p0, Lorg/telegram/ui/Components/AlertsCreator$1;->val$parentFragment:Lorg/telegram/ui/ChatActivity;
 
@@ -64,9 +64,9 @@
     .locals 0
 
     .line 512
-    iget-object p1, p0, Lorg/telegram/ui/Components/AlertsCreator$1;->val$callback:Lorg/fork/utils/Callbacks$Callback1;
+    iget-object p1, p0, Lorg/telegram/ui/Components/AlertsCreator$1;->val$callback:Lcom/iMe/fork/utils/Callbacks$Callback1;
 
-    invoke-interface {p1, p2}, Lorg/fork/utils/Callbacks$Callback1;->invoke(Ljava/lang/Object;)V
+    invoke-interface {p1, p2}, Lcom/iMe/fork/utils/Callbacks$Callback1;->invoke(Ljava/lang/Object;)V
 
     return-void
 .end method

@@ -12,7 +12,7 @@ import android.view.accessibility.AccessibilityNodeInfo;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import java.io.File;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3301R;
+import org.telegram.messenger.C3316R;
 import org.telegram.messenger.DownloadController;
 import org.telegram.messenger.FileLoader;
 import org.telegram.messenger.FileLog;
@@ -460,7 +460,7 @@ public class AudioPlayerCell extends View implements DownloadController.FileDown
     public void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
         super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
         if (this.currentMessageObject.isMusic()) {
-            accessibilityNodeInfo.setText(LocaleController.formatString("AccDescrMusicInfo", C3301R.string.AccDescrMusicInfo, this.currentMessageObject.getMusicAuthor(), this.currentMessageObject.getMusicTitle()));
+            accessibilityNodeInfo.setText(LocaleController.formatString("AccDescrMusicInfo", C3316R.string.AccDescrMusicInfo, this.currentMessageObject.getMusicAuthor(), this.currentMessageObject.getMusicTitle()));
             return;
         }
         accessibilityNodeInfo.setText(((Object) this.titleLayout.getText()) + ", " + ((Object) this.descriptionLayout.getText()));

@@ -8,10 +8,10 @@ import androidx.appcompat.widget.AppCompatTextView;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
-import com.smedialink.p031ui.custom.BigActionButton;
-import com.smedialink.p031ui.custom.DetailsIconCellView;
-import com.smedialink.p031ui.custom.ImageHeaderView;
-import org.telegram.messenger.C3301R;
+import com.iMe.p032ui.custom.BigActionButton;
+import com.iMe.p032ui.custom.DetailsIconCellView;
+import com.iMe.p032ui.custom.ImageHeaderView;
+import org.telegram.messenger.C3316R;
 import org.telegram.p048ui.ActionBar.ActionBarMenuItem;
 /* loaded from: classes4.dex */
 public final class ForkContentWalletConnectNewSessionBinding implements ViewBinding {
@@ -49,7 +49,7 @@ public final class ForkContentWalletConnectNewSessionBinding implements ViewBind
     }
 
     public static ForkContentWalletConnectNewSessionBinding inflate(LayoutInflater layoutInflater, ViewGroup viewGroup, boolean z) {
-        View inflate = layoutInflater.inflate(C3301R.layout.fork_content_wallet_connect_new_session, viewGroup, false);
+        View inflate = layoutInflater.inflate(C3316R.layout.fork_content_wallet_connect_new_session, viewGroup, false);
         if (z) {
             viewGroup.addView(inflate);
         }
@@ -57,31 +57,31 @@ public final class ForkContentWalletConnectNewSessionBinding implements ViewBind
     }
 
     public static ForkContentWalletConnectNewSessionBinding bind(View view) {
-        int i = C3301R.C3304id.button_close;
+        int i = C3316R.C3319id.button_close;
         ActionBarMenuItem actionBarMenuItem = (ActionBarMenuItem) ViewBindings.findChildViewById(view, i);
         if (actionBarMenuItem != null) {
-            i = C3301R.C3304id.button_connect;
+            i = C3316R.C3319id.button_connect;
             BigActionButton bigActionButton = (BigActionButton) ViewBindings.findChildViewById(view, i);
             if (bigActionButton != null) {
-                i = C3301R.C3304id.image_transactions_approval;
+                i = C3316R.C3319id.image_transactions_approval;
                 AppCompatImageView appCompatImageView = (AppCompatImageView) ViewBindings.findChildViewById(view, i);
                 if (appCompatImageView != null) {
-                    i = C3301R.C3304id.image_view_balance;
+                    i = C3316R.C3319id.image_view_balance;
                     AppCompatImageView appCompatImageView2 = (AppCompatImageView) ViewBindings.findChildViewById(view, i);
                     if (appCompatImageView2 != null) {
-                        i = C3301R.C3304id.text_transactions_approval;
+                        i = C3316R.C3319id.text_transactions_approval;
                         AppCompatTextView appCompatTextView = (AppCompatTextView) ViewBindings.findChildViewById(view, i);
                         if (appCompatTextView != null) {
-                            i = C3301R.C3304id.text_view_balance;
+                            i = C3316R.C3319id.text_view_balance;
                             AppCompatTextView appCompatTextView2 = (AppCompatTextView) ViewBindings.findChildViewById(view, i);
                             if (appCompatTextView2 != null) {
-                                i = C3301R.C3304id.view_header;
+                                i = C3316R.C3319id.view_header;
                                 ImageHeaderView imageHeaderView = (ImageHeaderView) ViewBindings.findChildViewById(view, i);
                                 if (imageHeaderView != null) {
-                                    i = C3301R.C3304id.view_network_cell;
+                                    i = C3316R.C3319id.view_network_cell;
                                     DetailsIconCellView detailsIconCellView = (DetailsIconCellView) ViewBindings.findChildViewById(view, i);
                                     if (detailsIconCellView != null) {
-                                        i = C3301R.C3304id.view_wallet_cell;
+                                        i = C3316R.C3319id.view_wallet_cell;
                                         DetailsIconCellView detailsIconCellView2 = (DetailsIconCellView) ViewBindings.findChildViewById(view, i);
                                         if (detailsIconCellView2 != null) {
                                             return new ForkContentWalletConnectNewSessionBinding((ConstraintLayout) view, actionBarMenuItem, bigActionButton, appCompatImageView, appCompatImageView2, appCompatTextView, appCompatTextView2, imageHeaderView, detailsIconCellView, detailsIconCellView2);

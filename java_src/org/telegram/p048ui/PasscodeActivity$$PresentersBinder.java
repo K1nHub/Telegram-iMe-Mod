@@ -1,8 +1,8 @@
 package org.telegram.p048ui;
 
-import com.smedialink.p031ui.wallet.crypto.create.password.CreateWalletPasswordPresenter;
-import com.smedialink.p031ui.wallet.crypto.create.pin.CreateWalletPinPresenter;
-import com.smedialink.p031ui.wallet.crypto.enter.password.EnterWalletPasswordPresenter;
+import com.iMe.p032ui.wallet.crypto.create.password.CreateWalletPasswordPresenter;
+import com.iMe.p032ui.wallet.crypto.create.pin.CreateWalletPinPresenter;
+import com.iMe.p032ui.wallet.crypto.enter.password.EnterWalletPasswordPresenter;
 import java.util.ArrayList;
 import java.util.List;
 import moxy.MvpPresenter;

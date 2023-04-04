@@ -2,7 +2,7 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lorg/fork/utils/Callbacks$Callback;
+.implements Lcom/iMe/fork/utils/Callbacks$Callback;
 
 
 # instance fields
@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter$$ExternalSyntheticLambda23;->f$0:Lorg/telegram/ui/ManageLinksActivity$ListAdapter;
 
-    invoke-static {v0}, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->$r8$lambda$sSlustiftcsVGT6aTge0C43T5R8(Lorg/telegram/ui/ManageLinksActivity$ListAdapter;)V
+    invoke-static {v0}, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->$r8$lambda$hFCmiHTL_bLV2F0szKMZ5cEDyJs(Lorg/telegram/ui/ManageLinksActivity$ListAdapter;)V
 
     return-void
 .end method

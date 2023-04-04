@@ -5,8 +5,8 @@ import com.google.common.base.Predicate;
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
-import p034j$.util.Iterator;
-import p034j$.util.function.Consumer;
+import p035j$.util.Iterator;
+import p035j$.util.function.Consumer;
 /* loaded from: classes3.dex */
 public final class Iterators {
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -19,25 +19,25 @@ public final class Iterators {
     }
 
     /* loaded from: classes3.dex */
-    private enum EmptyModifiableIterator implements Iterator<Object>, p034j$.util.Iterator {
+    private enum EmptyModifiableIterator implements Iterator<Object>, p035j$.util.Iterator {
         INSTANCE;
 
-        @Override // p034j$.util.Iterator
+        @Override // p035j$.util.Iterator
         public /* synthetic */ void forEachRemaining(Consumer consumer) {
             Iterator.CC.$default$forEachRemaining(this, consumer);
         }
 
-        @Override // java.util.Iterator, p034j$.util.Iterator
+        @Override // java.util.Iterator, p035j$.util.Iterator
         public boolean hasNext() {
             return false;
         }
 
-        @Override // java.util.Iterator, p034j$.util.Iterator
+        @Override // java.util.Iterator, p035j$.util.Iterator
         public Object next() {
             throw new NoSuchElementException();
         }
 
-        @Override // java.util.Iterator, p034j$.util.Iterator
+        @Override // java.util.Iterator, p035j$.util.Iterator
         public void remove() {
             CollectPreconditions.checkRemove(false);
         }
@@ -246,13 +246,13 @@ public final class Iterators {
         return new UnmodifiableIterator<T>() { // from class: com.google.common.collect.Iterators.9
             boolean done;
 
-            @Override // java.util.Iterator, p034j$.util.Iterator
+            @Override // java.util.Iterator, p035j$.util.Iterator
             public boolean hasNext() {
                 return !this.done;
             }
 
             /* JADX WARN: Type inference failed for: r0v3, types: [T, java.lang.Object] */
-            @Override // java.util.Iterator, p034j$.util.Iterator
+            @Override // java.util.Iterator, p035j$.util.Iterator
             public T next() {
                 if (this.done) {
                     throw new NoSuchElementException();

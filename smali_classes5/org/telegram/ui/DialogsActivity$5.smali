@@ -29,7 +29,7 @@
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$dBX2HWeIf9p8AqKg8uSMX6rKqn4(Lorg/telegram/ui/DialogsActivity$5;Lorg/telegram/messenger/ForwardingMessagesParams;)V
+.method public static synthetic $r8$lambda$iDavBOFNtiRkG4jsEKoDz5bA6zw(Lorg/telegram/ui/DialogsActivity$5;Lorg/telegram/messenger/ForwardingMessagesParams;)V
     .locals 0
 
     invoke-direct {p0, p1}, Lorg/telegram/ui/DialogsActivity$5;->lambda$didOpenEditorPressed$1(Lorg/telegram/messenger/ForwardingMessagesParams;)V
@@ -40,7 +40,7 @@
 .method constructor <init>(Lorg/telegram/ui/DialogsActivity;Landroid/content/Context;Lorg/telegram/messenger/ForwardingMessagesParams;Lorg/telegram/tgnet/TLRPC$User;Lorg/telegram/tgnet/TLRPC$Chat;ILorg/telegram/ui/Components/ForwardingPreviewView$ResourcesDelegate;Z)V
     .locals 7
 
-    .line 1379
+    .line 1368
     iput-object p1, p0, Lorg/telegram/ui/DialogsActivity$5;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     iput-boolean p8, p0, Lorg/telegram/ui/DialogsActivity$5;->val$keyboardVisible:Z
@@ -67,12 +67,12 @@
 .method private synthetic lambda$didOpenEditorPressed$1(Lorg/telegram/messenger/ForwardingMessagesParams;)V
     .locals 1
 
-    .line 1413
+    .line 1408
     iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$5;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-static {v0, p1}, Lorg/telegram/ui/DialogsActivity;->access$802(Lorg/telegram/ui/DialogsActivity;Lorg/telegram/messenger/ForwardingMessagesParams;)Lorg/telegram/messenger/ForwardingMessagesParams;
 
-    .line 1414
+    .line 1409
     iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$5;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/DialogsActivity;->access$1000(Lorg/telegram/ui/DialogsActivity;)V
@@ -83,7 +83,7 @@
 .method private synthetic lambda$onDismiss$0()V
     .locals 1
 
-    .line 1384
+    .line 1373
     iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$5;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/DialogsActivity;->access$600(Lorg/telegram/ui/DialogsActivity;)Lorg/telegram/ui/Components/ChatActivityEnterView;
@@ -92,7 +92,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 1385
+    .line 1374
     iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$5;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/DialogsActivity;->access$600(Lorg/telegram/ui/DialogsActivity;)Lorg/telegram/ui/Components/ChatActivityEnterView;
@@ -110,7 +110,7 @@
 .method protected didOpenEditorPressed()V
     .locals 6
 
-    .line 1409
+    .line 1404
     iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$5;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/DialogsActivity;->access$800(Lorg/telegram/ui/DialogsActivity;)Lorg/telegram/messenger/ForwardingMessagesParams;
@@ -121,7 +121,7 @@
 
     return-void
 
-    .line 1412
+    .line 1407
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$5;->this$0:Lorg/telegram/ui/DialogsActivity;
 
@@ -147,17 +147,17 @@
 
     move-result-object v1
 
-    new-instance v5, Lorg/telegram/ui/DialogsActivity$5$$ExternalSyntheticLambda1;
+    new-instance v5, Lorg/telegram/ui/DialogsActivity$5$$ExternalSyntheticLambda0;
 
-    invoke-direct {v5, p0}, Lorg/telegram/ui/DialogsActivity$5$$ExternalSyntheticLambda1;-><init>(Lorg/telegram/ui/DialogsActivity$5;)V
+    invoke-direct {v5, p0}, Lorg/telegram/ui/DialogsActivity$5$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/DialogsActivity$5;)V
 
-    invoke-static {v3, v4, v1, v5}, Lorg/telegram/ui/ChatActivity;->newInstanceInForwardingEditor(JLorg/telegram/messenger/ForwardingMessagesParams;Lorg/fork/utils/Callbacks$Callback1;)Lorg/telegram/ui/ChatActivity;
+    invoke-static {v3, v4, v1, v5}, Lorg/telegram/ui/ChatActivity;->newInstanceInForwardingEditor(JLorg/telegram/messenger/ForwardingMessagesParams;Lcom/iMe/fork/utils/Callbacks$Callback1;)Lorg/telegram/ui/ChatActivity;
 
     move-result-object v1
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/DialogsActivity;->presentFragment(Lorg/telegram/ui/ActionBar/BaseFragment;)Z
 
-    .line 1416
+    .line 1411
     invoke-virtual {p0, v2}, Lorg/telegram/ui/Components/ForwardingPreviewView;->dismiss(Z)V
 
     return-void
@@ -168,10 +168,10 @@
 
     const/4 v0, 0x1
 
-    .line 1393
+    .line 1382
     invoke-virtual {p0, v0}, Lorg/telegram/ui/Components/ForwardingPreviewView;->dismiss(Z)V
 
-    .line 1394
+    .line 1383
     iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$5;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/DialogsActivity;->access$600(Lorg/telegram/ui/DialogsActivity;)Lorg/telegram/ui/Components/ChatActivityEnterView;
@@ -190,17 +190,17 @@
 .method protected onDismiss(Z)V
     .locals 2
 
-    .line 1382
+    .line 1371
     iget-boolean v0, p0, Lorg/telegram/ui/DialogsActivity$5;->val$keyboardVisible:Z
 
     if-eqz v0, :cond_0
 
     if-eqz p1, :cond_0
 
-    .line 1383
-    new-instance p1, Lorg/telegram/ui/DialogsActivity$5$$ExternalSyntheticLambda0;
+    .line 1372
+    new-instance p1, Lorg/telegram/ui/DialogsActivity$5$$ExternalSyntheticLambda1;
 
-    invoke-direct {p1, p0}, Lorg/telegram/ui/DialogsActivity$5$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/DialogsActivity$5;)V
+    invoke-direct {p1, p0}, Lorg/telegram/ui/DialogsActivity$5$$ExternalSyntheticLambda1;-><init>(Lorg/telegram/ui/DialogsActivity$5;)V
 
     const-wide/16 v0, 0x32
 
@@ -213,15 +213,24 @@
 .method protected onTransitionAnimationProgress(ZF)V
     .locals 0
 
-    if-nez p1, :cond_0
+    if-nez p1, :cond_2
 
     const/4 p1, 0x0
 
     cmpl-float p1, p2, p1
 
-    if-nez p1, :cond_0
+    if-nez p1, :cond_2
 
-    .line 1400
+    .line 1389
+    iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$5;->this$0:Lorg/telegram/ui/DialogsActivity;
+
+    invoke-virtual {p1}, Lorg/telegram/ui/DialogsActivity;->isCustomForward()Z
+
+    move-result p1
+
+    if-eqz p1, :cond_0
+
+    .line 1390
     iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$5;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/DialogsActivity;->access$700(Lorg/telegram/ui/DialogsActivity;)Landroid/view/View;
@@ -232,7 +241,46 @@
 
     invoke-virtual {p1, p2}, Landroid/view/View;->setVisibility(I)V
 
-    .line 1401
+    goto :goto_0
+
+    .line 1392
+    :cond_0
+    iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$5;->this$0:Lorg/telegram/ui/DialogsActivity;
+
+    invoke-static {p1}, Lorg/telegram/ui/DialogsActivity;->access$700(Lorg/telegram/ui/DialogsActivity;)Landroid/view/View;
+
+    move-result-object p1
+
+    invoke-virtual {p1}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
+
+    move-result-object p1
+
+    if-eqz p1, :cond_1
+
+    .line 1393
+    iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$5;->this$0:Lorg/telegram/ui/DialogsActivity;
+
+    invoke-static {p1}, Lorg/telegram/ui/DialogsActivity;->access$700(Lorg/telegram/ui/DialogsActivity;)Landroid/view/View;
+
+    move-result-object p1
+
+    invoke-virtual {p1}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
+
+    move-result-object p1
+
+    check-cast p1, Landroid/view/ViewGroup;
+
+    iget-object p2, p0, Lorg/telegram/ui/DialogsActivity$5;->this$0:Lorg/telegram/ui/DialogsActivity;
+
+    invoke-static {p2}, Lorg/telegram/ui/DialogsActivity;->access$700(Lorg/telegram/ui/DialogsActivity;)Landroid/view/View;
+
+    move-result-object p2
+
+    invoke-virtual {p1, p2}, Landroid/view/ViewGroup;->removeView(Landroid/view/View;)V
+
+    .line 1396
+    :cond_1
+    :goto_0
     iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$5;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/DialogsActivity;->access$700(Lorg/telegram/ui/DialogsActivity;)Landroid/view/View;
@@ -243,10 +291,10 @@
 
     invoke-virtual {p1, p2}, Landroid/view/View;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
-    goto :goto_0
+    goto :goto_1
 
-    .line 1403
-    :cond_0
+    .line 1398
+    :cond_2
     iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$5;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/DialogsActivity;->access$700(Lorg/telegram/ui/DialogsActivity;)Landroid/view/View;
@@ -255,6 +303,6 @@
 
     invoke-virtual {p1, p2}, Landroid/view/View;->setAlpha(F)V
 
-    :goto_0
+    :goto_1
     return-void
 .end method

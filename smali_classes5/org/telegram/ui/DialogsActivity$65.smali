@@ -25,7 +25,7 @@
 .method constructor <init>(Lorg/telegram/ui/DialogsActivity;)V
     .locals 0
 
-    .line 12566
+    .line 12617
     iput-object p1, p0, Lorg/telegram/ui/DialogsActivity$65;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,7 +38,7 @@
 .method public onGlobalLayout()V
     .locals 2
 
-    .line 12569
+    .line 12620
     iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$65;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/DialogsActivity;->access$23700(Lorg/telegram/ui/DialogsActivity;)Z
@@ -63,12 +63,12 @@
     :goto_0
     invoke-static {v0, v1}, Lorg/telegram/ui/DialogsActivity;->access$23802(Lorg/telegram/ui/DialogsActivity;F)F
 
-    .line 12570
+    .line 12621
     iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$65;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/DialogsActivity;->access$24000(Lorg/telegram/ui/DialogsActivity;)V
 
-    .line 12571
+    .line 12622
     iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$65;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/DialogsActivity;->access$2800(Lorg/telegram/ui/DialogsActivity;)Landroid/widget/FrameLayout;
@@ -85,7 +85,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/FrameLayout;->setClickable(Z)V
 
-    .line 12572
+    .line 12623
     iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$65;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/DialogsActivity;->access$2800(Lorg/telegram/ui/DialogsActivity;)Landroid/widget/FrameLayout;
@@ -94,7 +94,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 12573
+    .line 12624
     iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$65;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/DialogsActivity;->access$2800(Lorg/telegram/ui/DialogsActivity;)Landroid/widget/FrameLayout;

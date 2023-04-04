@@ -93,39 +93,39 @@
 
 
 # virtual methods
-.method public getAlbumsController()Lorg/fork/controller/AlbumsController;
+.method public getAlbumsController()Lcom/iMe/fork/controller/AlbumsController;
     .locals 1
 
     .line 32
     iget v0, p0, Lorg/telegram/messenger/AccountInstance;->currentAccount:I
 
-    invoke-static {v0}, Lorg/fork/controller/AlbumsController;->getInstance(I)Lorg/fork/controller/AlbumsController;
+    invoke-static {v0}, Lcom/iMe/fork/controller/AlbumsController;->getInstance(I)Lcom/iMe/fork/controller/AlbumsController;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method public getBackupController()Lorg/fork/controller/BackupController;
+.method public getBackupController()Lcom/iMe/fork/controller/BackupController;
     .locals 1
 
     .line 36
     iget v0, p0, Lorg/telegram/messenger/AccountInstance;->currentAccount:I
 
-    invoke-static {v0}, Lorg/fork/controller/BackupController;->getInstance(I)Lorg/fork/controller/BackupController;
+    invoke-static {v0}, Lcom/iMe/fork/controller/BackupController;->getInstance(I)Lcom/iMe/fork/controller/BackupController;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method public getBookmarksController()Lorg/fork/controller/BookmarksController;
+.method public getBookmarksController()Lcom/iMe/fork/controller/BookmarksController;
     .locals 1
 
     .line 40
     iget v0, p0, Lorg/telegram/messenger/AccountInstance;->currentAccount:I
 
-    invoke-static {v0}, Lorg/fork/controller/BookmarksController;->getInstance(I)Lorg/fork/controller/BookmarksController;
+    invoke-static {v0}, Lcom/iMe/fork/controller/BookmarksController;->getInstance(I)Lcom/iMe/fork/controller/BookmarksController;
 
     move-result-object v0
 
@@ -180,13 +180,13 @@
     return v0
 .end method
 
-.method public getDialogTranslationSettingsController()Lorg/fork/controller/DialogTranslationController;
+.method public getDialogTranslationSettingsController()Lcom/iMe/fork/controller/DialogTranslationController;
     .locals 1
 
     .line 44
     iget v0, p0, Lorg/telegram/messenger/AccountInstance;->currentAccount:I
 
-    invoke-static {v0}, Lorg/fork/controller/DialogTranslationController;->getInstance(I)Lorg/fork/controller/DialogTranslationController;
+    invoke-static {v0}, Lcom/iMe/fork/controller/DialogTranslationController;->getInstance(I)Lcom/iMe/fork/controller/DialogTranslationController;
 
     move-result-object v0
 
@@ -232,26 +232,26 @@
     return-object v0
 .end method
 
-.method public getFiltersController()Lorg/fork/controller/FiltersController;
+.method public getFiltersController()Lcom/iMe/fork/controller/FiltersController;
     .locals 1
 
     .line 48
     iget v0, p0, Lorg/telegram/messenger/AccountInstance;->currentAccount:I
 
-    invoke-static {v0}, Lorg/fork/controller/FiltersController;->getInstance(I)Lorg/fork/controller/FiltersController;
+    invoke-static {v0}, Lcom/iMe/fork/controller/FiltersController;->getInstance(I)Lcom/iMe/fork/controller/FiltersController;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method public getForkCommonController()Lorg/fork/controller/ForkCommonController;
+.method public getForkCommonController()Lcom/iMe/fork/controller/ForkCommonController;
     .locals 1
 
     .line 52
     iget v0, p0, Lorg/telegram/messenger/AccountInstance;->currentAccount:I
 
-    invoke-static {v0}, Lorg/fork/controller/ForkCommonController;->getInstance(I)Lorg/fork/controller/ForkCommonController;
+    invoke-static {v0}, Lcom/iMe/fork/controller/ForkCommonController;->getInstance(I)Lcom/iMe/fork/controller/ForkCommonController;
 
     move-result-object v0
 
@@ -271,13 +271,13 @@
     return-object v0
 .end method
 
-.method public getLockedSectionsController()Lorg/fork/controller/LockedSectionsController;
+.method public getLockedSectionsController()Lcom/iMe/fork/controller/LockedSectionsController;
     .locals 1
 
     .line 56
     iget v0, p0, Lorg/telegram/messenger/AccountInstance;->currentAccount:I
 
-    invoke-static {v0}, Lorg/fork/controller/LockedSectionsController;->getInstance(I)Lorg/fork/controller/LockedSectionsController;
+    invoke-static {v0}, Lcom/iMe/fork/controller/LockedSectionsController;->getInstance(I)Lcom/iMe/fork/controller/LockedSectionsController;
 
     move-result-object v0
 
@@ -336,39 +336,39 @@
     return-object v0
 .end method
 
-.method public getMultiPanelController()Lorg/fork/controller/MultiPanelController;
+.method public getMultiPanelController()Lcom/iMe/fork/controller/MultiPanelController;
     .locals 1
 
     .line 60
     iget v0, p0, Lorg/telegram/messenger/AccountInstance;->currentAccount:I
 
-    invoke-static {v0}, Lorg/fork/controller/MultiPanelController;->getInstance(I)Lorg/fork/controller/MultiPanelController;
+    invoke-static {v0}, Lcom/iMe/fork/controller/MultiPanelController;->getInstance(I)Lcom/iMe/fork/controller/MultiPanelController;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method public getMusicController()Lorg/fork/controller/MusicController;
+.method public getMusicController()Lcom/iMe/fork/controller/MusicController;
     .locals 1
 
     .line 64
     iget v0, p0, Lorg/telegram/messenger/AccountInstance;->currentAccount:I
 
-    invoke-static {v0}, Lorg/fork/controller/MusicController;->getInstance(I)Lorg/fork/controller/MusicController;
+    invoke-static {v0}, Lcom/iMe/fork/controller/MusicController;->getInstance(I)Lcom/iMe/fork/controller/MusicController;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method public getNeuroBotsController()Lorg/fork/controller/NeuroBotsController;
+.method public getNeuroBotsController()Lcom/iMe/fork/controller/NeuroBotsController;
     .locals 1
 
     .line 68
     iget v0, p0, Lorg/telegram/messenger/AccountInstance;->currentAccount:I
 
-    invoke-static {v0}, Lorg/fork/controller/NeuroBotsController;->getInstance(I)Lorg/fork/controller/NeuroBotsController;
+    invoke-static {v0}, Lcom/iMe/fork/controller/NeuroBotsController;->getInstance(I)Lcom/iMe/fork/controller/NeuroBotsController;
 
     move-result-object v0
 
@@ -414,13 +414,13 @@
     return-object v0
 .end method
 
-.method public getRecentChatsController()Lorg/fork/controller/RecentChatsController;
+.method public getRecentChatsController()Lcom/iMe/fork/controller/RecentChatsController;
     .locals 1
 
     .line 80
     iget v0, p0, Lorg/telegram/messenger/AccountInstance;->currentAccount:I
 
-    invoke-static {v0}, Lorg/fork/controller/RecentChatsController;->getInstance(I)Lorg/fork/controller/RecentChatsController;
+    invoke-static {v0}, Lcom/iMe/fork/controller/RecentChatsController;->getInstance(I)Lcom/iMe/fork/controller/RecentChatsController;
 
     move-result-object v0
 
@@ -466,39 +466,39 @@
     return-object v0
 .end method
 
-.method public getTemplatesController()Lorg/fork/controller/TemplatesController;
+.method public getTemplatesController()Lcom/iMe/fork/controller/TemplatesController;
     .locals 1
 
     .line 72
     iget v0, p0, Lorg/telegram/messenger/AccountInstance;->currentAccount:I
 
-    invoke-static {v0}, Lorg/fork/controller/TemplatesController;->getInstance(I)Lorg/fork/controller/TemplatesController;
+    invoke-static {v0}, Lcom/iMe/fork/controller/TemplatesController;->getInstance(I)Lcom/iMe/fork/controller/TemplatesController;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method public getToolsController()Lorg/fork/controller/ToolsController;
+.method public getToolsController()Lcom/iMe/fork/controller/ToolsController;
     .locals 1
 
     .line 76
     iget v0, p0, Lorg/telegram/messenger/AccountInstance;->currentAccount:I
 
-    invoke-static {v0}, Lorg/fork/controller/ToolsController;->getInstance(I)Lorg/fork/controller/ToolsController;
+    invoke-static {v0}, Lcom/iMe/fork/controller/ToolsController;->getInstance(I)Lcom/iMe/fork/controller/ToolsController;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method public getTopicsController()Lorg/fork/controller/ForkTopicsController;
+.method public getTopicsController()Lcom/iMe/fork/controller/ForkTopicsController;
     .locals 1
 
     .line 84
     iget v0, p0, Lorg/telegram/messenger/AccountInstance;->currentAccount:I
 
-    invoke-static {v0}, Lorg/fork/controller/ForkTopicsController;->getInstance(I)Lorg/fork/controller/ForkTopicsController;
+    invoke-static {v0}, Lcom/iMe/fork/controller/ForkTopicsController;->getInstance(I)Lcom/iMe/fork/controller/ForkTopicsController;
 
     move-result-object v0
 
@@ -518,13 +518,13 @@
     return-object v0
 .end method
 
-.method public getWalletFingerprintController()Lorg/fork/controller/WalletFingerprintController;
+.method public getWalletFingerprintController()Lcom/iMe/fork/controller/WalletFingerprintController;
     .locals 1
 
     .line 88
     iget v0, p0, Lorg/telegram/messenger/AccountInstance;->currentAccount:I
 
-    invoke-static {v0}, Lorg/fork/controller/WalletFingerprintController;->getInstance(I)Lorg/fork/controller/WalletFingerprintController;
+    invoke-static {v0}, Lcom/iMe/fork/controller/WalletFingerprintController;->getInstance(I)Lcom/iMe/fork/controller/WalletFingerprintController;
 
     move-result-object v0
 

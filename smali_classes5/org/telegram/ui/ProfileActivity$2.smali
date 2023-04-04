@@ -33,7 +33,7 @@
 .method constructor <init>(Lorg/telegram/ui/ProfileActivity;)V
     .locals 0
 
-    .line 676
+    .line 675
     iput-object p1, p0, Lorg/telegram/ui/ProfileActivity$2;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -44,7 +44,7 @@
 .method private synthetic lambda$didSetRights$0(Lorg/telegram/tgnet/TLRPC$User;)V
     .locals 1
 
-    .line 682
+    .line 681
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$2;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/BulletinFactory;->canShowBulletin(Lorg/telegram/ui/ActionBar/BaseFragment;)Z
@@ -53,7 +53,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 683
+    .line 682
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$2;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     iget-object p1, p1, Lorg/telegram/tgnet/TLRPC$User;->first_name:Ljava/lang/String;
@@ -79,14 +79,14 @@
 .method public didSetRights(ILorg/telegram/tgnet/TLRPC$TL_chatAdminRights;Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;Ljava/lang/String;)V
     .locals 0
 
-    .line 679
+    .line 678
     iget-object p1, p0, Lorg/telegram/ui/ProfileActivity$2;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/BaseFragment;->getMessagesController()Lorg/telegram/messenger/MessagesController;
 
     move-result-object p1
 
-    invoke-static {}, Lcom/smedialink/storage/common/AppConfiguration$Wallet;->getWalletBotId()J
+    invoke-static {}, Lcom/iMe/storage/common/AppConfiguration$Wallet;->getWalletBotId()J
 
     move-result-wide p2
 
@@ -100,7 +100,7 @@
 
     if-eqz p1, :cond_0
 
-    .line 681
+    .line 680
     new-instance p2, Lorg/telegram/ui/ProfileActivity$2$$ExternalSyntheticLambda1;
 
     invoke-direct {p2, p0, p1}, Lorg/telegram/ui/ProfileActivity$2$$ExternalSyntheticLambda1;-><init>(Lorg/telegram/ui/ProfileActivity$2;Lorg/telegram/tgnet/TLRPC$User;)V
@@ -109,17 +109,17 @@
 
     invoke-static {p2, p3, p4}, Lorg/telegram/messenger/AndroidUtilities;->runOnUIThread(Ljava/lang/Runnable;J)V
 
-    .line 687
+    .line 686
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/ProfileActivity$2;->this$0:Lorg/telegram/ui/ProfileActivity;
 
-    iget-object p1, p1, Lorg/telegram/ui/ProfileActivity;->presenter:Lcom/smedialink/ui/profile/ProfilePresenter;
+    iget-object p1, p1, Lorg/telegram/ui/ProfileActivity;->presenter:Lcom/iMe/ui/profile/ProfilePresenter;
 
     invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     new-instance p2, Lorg/telegram/ui/ProfileActivity$2$$ExternalSyntheticLambda0;
 
-    invoke-direct {p2, p1}, Lorg/telegram/ui/ProfileActivity$2$$ExternalSyntheticLambda0;-><init>(Lcom/smedialink/ui/profile/ProfilePresenter;)V
+    invoke-direct {p2, p1}, Lorg/telegram/ui/ProfileActivity$2$$ExternalSyntheticLambda0;-><init>(Lcom/iMe/ui/profile/ProfilePresenter;)V
 
     const-wide/16 p3, 0xfa
 

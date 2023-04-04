@@ -432,7 +432,7 @@
     :cond_0
     invoke-static {}, Lorg/telegram/messenger/FileLog;->ensureInitied()V
 
-    const-string v0, "tmessages"
+    const-string/jumbo v0, "tmessages"
 
     .line 395
     invoke-static {v0, p0}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
@@ -779,7 +779,7 @@
     :cond_0
     invoke-static {}, Lorg/telegram/messenger/FileLog;->ensureInitied()V
 
-    const-string v0, "tmessages"
+    const-string/jumbo v0, "tmessages"
 
     .line 285
     invoke-static {v0, p0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
@@ -824,7 +824,7 @@
     :cond_0
     invoke-static {}, Lorg/telegram/messenger/FileLog;->ensureInitied()V
 
-    const-string v0, "tmessages"
+    const-string/jumbo v0, "tmessages"
 
     .line 266
     invoke-static {v0, p0, p1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
@@ -2248,7 +2248,7 @@
     :cond_0
     invoke-static {}, Lorg/telegram/messenger/FileLog;->ensureInitied()V
 
-    const-string v0, "tmessages"
+    const-string/jumbo v0, "tmessages"
 
     .line 416
     invoke-static {v0, p0}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I

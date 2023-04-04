@@ -27,7 +27,7 @@
     .locals 2
 
     .line 23
-    const-class p1, Lcom/smedialink/ui/contacts/ContactsPresenter;
+    const-class p1, Lcom/iMe/ui/contacts/ContactsPresenter;
 
     const-string v0, "presenter"
 
@@ -55,9 +55,9 @@
     .locals 0
 
     .line 28
-    check-cast p2, Lcom/smedialink/ui/contacts/ContactsPresenter;
+    check-cast p2, Lcom/iMe/ui/contacts/ContactsPresenter;
 
-    iput-object p2, p1, Lorg/telegram/ui/ContactsActivity;->presenter:Lcom/smedialink/ui/contacts/ContactsPresenter;
+    iput-object p2, p1, Lorg/telegram/ui/ContactsActivity;->presenter:Lcom/iMe/ui/contacts/ContactsPresenter;
 
     return-void
 .end method
@@ -88,7 +88,7 @@
     .end annotation
 
     .line 33
-    invoke-virtual {p1}, Lorg/telegram/ui/ContactsActivity;->providePresenter()Lcom/smedialink/ui/contacts/ContactsPresenter;
+    invoke-virtual {p1}, Lorg/telegram/ui/ContactsActivity;->providePresenter()Lcom/iMe/ui/contacts/ContactsPresenter;
 
     move-result-object p1
 

@@ -55,7 +55,7 @@
 
     if-eqz p0, :cond_0
 
-    const-string v1, "true"
+    const-string/jumbo v1, "true"
 
     invoke-static {p0}, Lorg/bouncycastle/util/Strings;->toLowerCase(Ljava/lang/String;)Ljava/lang/String;
 

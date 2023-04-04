@@ -2,20 +2,20 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lorg/fork/utils/Callbacks$Callback;
+.implements Lcom/iMe/fork/utils/Callbacks$Callback;
 
 
 # instance fields
-.field public final synthetic f$0:Lcom/smedialink/ui/wallet/staking/transaction/StakingTransactionPresenter;
+.field public final synthetic f$0:Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lcom/smedialink/ui/wallet/staking/transaction/StakingTransactionPresenter;)V
+.method public synthetic constructor <init>(Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter$$ExternalSyntheticLambda14;->f$0:Lcom/smedialink/ui/wallet/staking/transaction/StakingTransactionPresenter;
+    iput-object p1, p0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter$$ExternalSyntheticLambda14;->f$0:Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;
 
     return-void
 .end method
@@ -25,9 +25,9 @@
 .method public final invoke()V
     .locals 1
 
-    iget-object v0, p0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter$$ExternalSyntheticLambda14;->f$0:Lcom/smedialink/ui/wallet/staking/transaction/StakingTransactionPresenter;
+    iget-object v0, p0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter$$ExternalSyntheticLambda14;->f$0:Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;
 
-    invoke-virtual {v0}, Lcom/smedialink/ui/wallet/staking/transaction/StakingTransactionPresenter;->onActionClick()V
+    invoke-virtual {v0}, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;->onActionClick()V
 
     return-void
 .end method

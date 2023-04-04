@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/UndoView;)V
     .locals 0
 
-    .line 409
+    .line 408
     iput-object p1, p0, Lorg/telegram/ui/Components/UndoView$1;->this$0:Lorg/telegram/ui/Components/UndoView;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
@@ -35,26 +35,26 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 1
 
-    .line 412
+    .line 411
     iget-object p1, p0, Lorg/telegram/ui/Components/UndoView$1;->this$0:Lorg/telegram/ui/Components/UndoView;
 
     const/4 v0, 0x4
 
     invoke-virtual {p1, v0}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
-    .line 413
+    .line 412
     iget-object p1, p0, Lorg/telegram/ui/Components/UndoView$1;->this$0:Lorg/telegram/ui/Components/UndoView;
 
     const/high16 v0, 0x3f800000    # 1.0f
 
     invoke-virtual {p1, v0}, Landroid/widget/FrameLayout;->setScaleX(F)V
 
-    .line 414
+    .line 413
     iget-object p1, p0, Lorg/telegram/ui/Components/UndoView$1;->this$0:Lorg/telegram/ui/Components/UndoView;
 
     invoke-virtual {p1, v0}, Landroid/widget/FrameLayout;->setScaleY(F)V
 
-    .line 415
+    .line 414
     iget-object p1, p0, Lorg/telegram/ui/Components/UndoView$1;->this$0:Lorg/telegram/ui/Components/UndoView;
 
     invoke-virtual {p1, v0}, Landroid/widget/FrameLayout;->setAlpha(F)V

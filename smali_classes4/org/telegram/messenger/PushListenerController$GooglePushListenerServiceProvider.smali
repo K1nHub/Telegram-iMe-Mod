@@ -47,7 +47,7 @@
 .method static constructor <clinit>()V
     .locals 1
 
-    .line 1348
+    .line 1347
     new-instance v0, Lorg/telegram/messenger/PushListenerController$GooglePushListenerServiceProvider;
 
     invoke-direct {v0}, Lorg/telegram/messenger/PushListenerController$GooglePushListenerServiceProvider;-><init>()V
@@ -60,7 +60,7 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 1352
+    .line 1351
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -69,37 +69,37 @@
 .method private synthetic lambda$onRequestPushToken$0(Lcom/google/android/gms/tasks/Task;)V
     .locals 2
 
-    .line 1382
+    .line 1381
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
     move-result-wide v0
 
     sput-wide v0, Lorg/telegram/messenger/SharedConfig;->pushStringGetTimeEnd:J
 
-    .line 1383
+    .line 1382
     invoke-virtual {p1}, Lcom/google/android/gms/tasks/Task;->isSuccessful()Z
 
     move-result v0
 
     if-nez v0, :cond_1
 
-    .line 1384
+    .line 1383
     sget-boolean p1, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
 
     if-eqz p1, :cond_0
 
     const-string p1, "Failed to get regid"
 
-    .line 1385
+    .line 1384
     invoke-static {p1}, Lorg/telegram/messenger/FileLog;->d(Ljava/lang/String;)V
 
     :cond_0
     const-string p1, "__FIREBASE_FAILED__"
 
-    .line 1387
+    .line 1386
     sput-object p1, Lorg/telegram/messenger/SharedConfig;->pushStringStatus:Ljava/lang/String;
 
-    .line 1388
+    .line 1387
     invoke-virtual {p0}, Lorg/telegram/messenger/PushListenerController$GooglePushListenerServiceProvider;->getPushType()I
 
     move-result p1
@@ -110,7 +110,7 @@
 
     return-void
 
-    .line 1391
+    .line 1390
     :cond_1
     invoke-virtual {p1}, Lcom/google/android/gms/tasks/Task;->getResult()Ljava/lang/Object;
 
@@ -118,14 +118,14 @@
 
     check-cast p1, Ljava/lang/String;
 
-    .line 1392
+    .line 1391
     invoke-static {p1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v0
 
     if-nez v0, :cond_2
 
-    .line 1393
+    .line 1392
     invoke-virtual {p0}, Lorg/telegram/messenger/PushListenerController$GooglePushListenerServiceProvider;->getPushType()I
 
     move-result v0
@@ -139,7 +139,7 @@
 .method private synthetic lambda$onRequestPushToken$1()V
     .locals 2
 
-    .line 1378
+    .line 1377
     :try_start_0
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
@@ -147,7 +147,7 @@
 
     sput-wide v0, Lorg/telegram/messenger/SharedConfig;->pushStringGetTimeStart:J
 
-    .line 1380
+    .line 1379
     iget-object v0, p0, Lorg/telegram/messenger/PushListenerController$GooglePushListenerServiceProvider;->firebaseMessaging:Lcom/google/firebase/messaging/FirebaseMessaging;
 
     invoke-virtual {v0}, Lcom/google/firebase/messaging/FirebaseMessaging;->getToken()Lcom/google/android/gms/tasks/Task;
@@ -158,7 +158,7 @@
 
     invoke-direct {v1, p0}, Lorg/telegram/messenger/PushListenerController$GooglePushListenerServiceProvider$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/messenger/PushListenerController$GooglePushListenerServiceProvider;)V
 
-    .line 1381
+    .line 1380
     invoke-virtual {v0, v1}, Lcom/google/android/gms/tasks/Task;->addOnCompleteListener(Lcom/google/android/gms/tasks/OnCompleteListener;)Lcom/google/android/gms/tasks/Task;
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
@@ -168,7 +168,7 @@
     :catchall_0
     move-exception v0
 
-    .line 1397
+    .line 1396
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :goto_0
@@ -196,12 +196,12 @@
 .method public hasServices()Z
     .locals 2
 
-    .line 1404
+    .line 1403
     iget-object v0, p0, Lorg/telegram/messenger/PushListenerController$GooglePushListenerServiceProvider;->hasServices:Ljava/lang/Boolean;
 
     if-nez v0, :cond_1
 
-    .line 1406
+    .line 1405
     :try_start_0
     invoke-static {}, Lcom/google/android/gms/common/GoogleApiAvailability;->getInstance()Lcom/google/android/gms/common/GoogleApiAvailability;
 
@@ -222,7 +222,7 @@
     :cond_0
     const/4 v0, 0x0
 
-    .line 1407
+    .line 1406
     :goto_0
     invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
@@ -237,15 +237,15 @@
     :catch_0
     move-exception v0
 
-    .line 1409
+    .line 1408
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
-    .line 1410
+    .line 1409
     sget-object v0, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
 
     iput-object v0, p0, Lorg/telegram/messenger/PushListenerController$GooglePushListenerServiceProvider;->hasServices:Ljava/lang/Boolean;
 
-    .line 1413
+    .line 1412
     :cond_1
     :goto_1
     iget-object v0, p0, Lorg/telegram/messenger/PushListenerController$GooglePushListenerServiceProvider;->hasServices:Ljava/lang/Boolean;
@@ -260,17 +260,17 @@
 .method public onRequestPushToken()V
     .locals 3
 
-    .line 1366
+    .line 1365
     sget-object v0, Lorg/telegram/messenger/SharedConfig;->pushString:Ljava/lang/String;
 
-    .line 1367
+    .line 1366
     invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v1
 
     if-nez v1, :cond_0
 
-    .line 1368
+    .line 1367
     sget-boolean v1, Lorg/telegram/messenger/BuildVars;->DEBUG_PRIVATE_VERSION:Z
 
     if-eqz v1, :cond_1
@@ -279,7 +279,7 @@
 
     if-eqz v1, :cond_1
 
-    .line 1369
+    .line 1368
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -298,7 +298,7 @@
 
     goto :goto_0
 
-    .line 1372
+    .line 1371
     :cond_0
     sget-boolean v0, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
 
@@ -306,10 +306,10 @@
 
     const-string v0, "FCM Registration not found."
 
-    .line 1373
+    .line 1372
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->d(Ljava/lang/String;)V
 
-    .line 1376
+    .line 1375
     :cond_1
     :goto_0
     sget-object v0, Lorg/telegram/messenger/Utilities;->globalQueue:Lorg/telegram/messenger/DispatchQueue;

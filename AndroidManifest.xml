@@ -588,12 +588,12 @@
         <meta-data android:name="com.google.android.gms.vision.DEPENDENCIES" android:value="face,barcode"/>
         <meta-data android:name="android.max_aspect" android:value="2.5"/>
         <meta-data android:name="com.google.android.actions" android:resource="@xml/actions"/>
-        <service android:enabled="true" android:exported="false" android:name="com.smedialink.services.ServiceMessagesRemovingService"/>
-        <receiver android:enabled="true" android:name="com.smedialink.services.receivers.StopServiceMessagesRemovingReceiver"/>
-        <service android:enabled="true" android:exported="false" android:name="com.smedialink.services.FilteredChatParticipantsProcessingService"/>
-        <receiver android:enabled="true" android:name="com.smedialink.services.receivers.StopFilteredChatParticipantsProcessingReceiver"/>
-        <service android:enabled="true" android:exported="false" android:name="com.smedialink.services.FilteredContactsProcessingService"/>
-        <receiver android:enabled="true" android:name="com.smedialink.services.receivers.StopFilteredContactsProcessingReceiver"/>
+        <service android:enabled="true" android:exported="false" android:name="com.iMe.services.ServiceMessagesRemovingService"/>
+        <receiver android:enabled="true" android:name="com.iMe.services.receivers.StopServiceMessagesRemovingReceiver"/>
+        <service android:enabled="true" android:exported="false" android:name="com.iMe.services.FilteredChatParticipantsProcessingService"/>
+        <receiver android:enabled="true" android:name="com.iMe.services.receivers.StopFilteredChatParticipantsProcessingReceiver"/>
+        <service android:enabled="true" android:exported="false" android:name="com.iMe.services.FilteredContactsProcessingService"/>
+        <receiver android:enabled="true" android:name="com.iMe.services.receivers.StopFilteredContactsProcessingReceiver"/>
         <activity android:configChanges="colorMode|fontScale|keyboard|keyboardHidden|locale|orientation|screenSize|uiMode" android:exported="false" android:launchMode="singleTask" android:name="com.binance.android.binancepay.internal.activity.BinancePayActivity" android:theme="@style/binance_pay_transparent"/>
         <service android:exported="true" android:name="androidx.sharetarget.ChooserTargetServiceCompat" android:permission="android.permission.BIND_CHOOSER_TARGET_SERVICE">
             <intent-filter>
@@ -639,13 +639,13 @@
         <provider android:authorities="com.iMe.android.mlkitinitprovider" android:exported="false" android:initOrder="99" android:name="com.google.mlkit.common.internal.MlKitInitProvider"/>
         <activity android:exported="false" android:name="com.google.android.gms.common.api.GoogleApiActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
         <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version"/>
+        <meta-data android:name="com.bumptech.glide.integration.webp.WebpGlideModule" android:value="GlideModule"/>
         <provider android:authorities="com.iMe.android.androidx-startup" android:exported="false" android:name="androidx.startup.InitializationProvider">
             <meta-data android:name="androidx.emoji2.text.EmojiCompatInitializer" android:value="androidx.startup"/>
             <meta-data android:name="androidx.lifecycle.ProcessLifecycleInitializer" android:value="androidx.startup"/>
         </provider>
         <meta-data android:name="com.google.android.play.billingclient.version" android:value="5.1.0"/>
         <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize" android:exported="false" android:name="com.android.billingclient.api.ProxyBillingActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
-        <meta-data android:name="com.bumptech.glide.integration.webp.WebpGlideModule" android:value="GlideModule"/>
         <activity android:exported="false" android:name="com.jakewharton.processphoenix.ProcessPhoenix" android:process=":phoenix" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
         <service android:exported="false" android:name="com.google.android.datatransport.runtime.backends.TransportBackendDiscovery">
             <meta-data android:name="backend:com.google.android.datatransport.cct.CctBackendFactory" android:value="cct"/>

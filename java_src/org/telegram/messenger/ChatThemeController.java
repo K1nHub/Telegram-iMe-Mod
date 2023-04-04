@@ -330,7 +330,7 @@ public class ChatThemeController extends BaseController {
     public static void preloadAllWallpaperImages(boolean z) {
         for (EmojiThemes emojiThemes : allChatThemes) {
             TLRPC$TL_theme tlTheme = emojiThemes.getTlTheme(z ? 1 : 0);
-            if (tlTheme != null && !getPatternFile(tlTheme.f1631id).exists()) {
+            if (tlTheme != null && !getPatternFile(tlTheme.f1633id).exists()) {
                 emojiThemes.loadWallpaper(z ? 1 : 0, null);
             }
         }
@@ -340,7 +340,7 @@ public class ChatThemeController extends BaseController {
         for (EmojiThemes emojiThemes : allChatThemes) {
             TLRPC$TL_theme tlTheme = emojiThemes.getTlTheme(z ? 1 : 0);
             if (tlTheme != null) {
-                if (!themeIdWallpaperThumbMap.containsKey(Long.valueOf(tlTheme.f1631id))) {
+                if (!themeIdWallpaperThumbMap.containsKey(Long.valueOf(tlTheme.f1633id))) {
                     emojiThemes.loadWallpaperThumb(z ? 1 : 0, ChatThemeController$$ExternalSyntheticLambda7.INSTANCE);
                 }
             }

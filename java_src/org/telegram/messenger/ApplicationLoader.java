@@ -22,16 +22,16 @@ import androidx.multidex.MultiDex;
 import com.google.android.gms.common.GooglePlayServicesUtil;
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.messaging.FirebaseMessaging;
+import com.iMe.bots.usecase.AiBotsManager;
+import com.iMe.common.AppLifecycleObserver;
+import com.iMe.p024di.KoinJavaAppKt;
+import com.iMe.p032ui.shop.PurchaseHelper;
+import com.iMe.p032ui.shop.configuration.BillingConfiguration;
+import com.iMe.p032ui.shop.configuration.BillingProvider;
+import com.iMe.storage.data.manager.FlipperManager;
+import com.iMe.storage.data.manager.common.EnvironmentManager;
+import com.iMe.utils.debug.FileLogTree;
 import com.jakewharton.processphoenix.ProcessPhoenix;
-import com.smedialink.bots.usecase.AiBotsManager;
-import com.smedialink.common.AppLifecycleObserver;
-import com.smedialink.p025di.KoinJavaAppKt;
-import com.smedialink.p031ui.shop.PurchaseHelper;
-import com.smedialink.p031ui.shop.configuration.BillingConfiguration;
-import com.smedialink.p031ui.shop.configuration.BillingProvider;
-import com.smedialink.storage.data.manager.FlipperManager;
-import com.smedialink.storage.data.manager.common.EnvironmentManager;
-import com.smedialink.utils.debug.FileLogTree;
 import io.reactivex.plugins.RxJavaPlugins;
 import java.io.File;
 import org.koin.java.KoinJavaComponent;
@@ -150,7 +150,7 @@ public class ApplicationLoader extends Application implements BillingProvider {
         }
     }
 
-    @Override // com.smedialink.p031ui.shop.configuration.BillingProvider
+    @Override // com.iMe.p032ui.shop.configuration.BillingProvider
     public Billing provideBilling() {
         return this.mBilling;
     }

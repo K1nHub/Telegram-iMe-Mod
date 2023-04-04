@@ -1,7 +1,7 @@
 package kotlinx.coroutines.android;
 
 import android.os.Looper;
-import com.smedialink.common.IdFabric$RequestCode;
+import com.iMe.common.IdFabric$RequestCode;
 import java.util.List;
 import kotlinx.coroutines.MainCoroutineDispatcher;
 import kotlinx.coroutines.internal.MainDispatcherFactory;

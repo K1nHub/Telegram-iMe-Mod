@@ -33,7 +33,7 @@
 
     iget-object v1, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda71;->f$1:Ljava/util/concurrent/atomic/AtomicBoolean;
 
-    invoke-static {v0, v1, p1}, Lorg/telegram/ui/ChatActivity;->$r8$lambda$KbEt9f_LsDVAwxjT51QFVWb4XsE(Lorg/telegram/ui/Cells/CheckBoxCell;Ljava/util/concurrent/atomic/AtomicBoolean;Landroid/view/View;)V
+    invoke-static {v0, v1, p1}, Lorg/telegram/ui/ChatActivity;->$r8$lambda$0GqfZJ-J9jltdTyvrTny2tnVlnk(Lorg/telegram/ui/Cells/CheckBoxCell;Ljava/util/concurrent/atomic/AtomicBoolean;Landroid/view/View;)V
 
     return-void
 .end method

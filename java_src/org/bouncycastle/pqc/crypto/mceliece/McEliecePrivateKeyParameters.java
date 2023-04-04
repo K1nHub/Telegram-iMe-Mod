@@ -12,27 +12,27 @@ public class McEliecePrivateKeyParameters extends McElieceKeyParameters {
     private PolynomialGF2mSmallM goppaPoly;
 
     /* renamed from: k */
-    private int f1399k;
+    private int f1404k;
 
     /* renamed from: n */
-    private int f1400n;
+    private int f1405n;
 
     /* renamed from: p1 */
-    private Permutation f1401p1;
+    private Permutation f1406p1;
 
     /* renamed from: p2 */
-    private Permutation f1402p2;
+    private Permutation f1407p2;
     private GF2Matrix sInv;
 
     public McEliecePrivateKeyParameters(int i, int i2, GF2mField gF2mField, PolynomialGF2mSmallM polynomialGF2mSmallM, Permutation permutation, Permutation permutation2, GF2Matrix gF2Matrix) {
         super(true, null);
-        this.f1399k = i2;
-        this.f1400n = i;
+        this.f1404k = i2;
+        this.f1405n = i;
         this.field = gF2mField;
         this.goppaPoly = polynomialGF2mSmallM;
         this.sInv = gF2Matrix;
-        this.f1401p1 = permutation;
-        this.f1402p2 = permutation2;
+        this.f1406p1 = permutation;
+        this.f1407p2 = permutation2;
         GoppaCode.createCanonicalCheckMatrix(gF2mField, polynomialGF2mSmallM);
         new PolynomialRingGF2m(gF2mField, polynomialGF2mSmallM).getSquareRootMatrix();
     }
@@ -46,19 +46,19 @@ public class McEliecePrivateKeyParameters extends McElieceKeyParameters {
     }
 
     public int getK() {
-        return this.f1399k;
+        return this.f1404k;
     }
 
     public int getN() {
-        return this.f1400n;
+        return this.f1405n;
     }
 
     public Permutation getP1() {
-        return this.f1401p1;
+        return this.f1406p1;
     }
 
     public Permutation getP2() {
-        return this.f1402p2;
+        return this.f1407p2;
     }
 
     public GF2Matrix getSInv() {

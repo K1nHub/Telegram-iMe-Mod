@@ -1,5 +1,5 @@
 .class Lorg/telegram/ui/ManageLinksActivity$ListAdapter$4;
-.super Lcom/smedialink/ui/common/SimpleTextWatcher;
+.super Lcom/iMe/ui/common/SimpleTextWatcher;
 .source "ManageLinksActivity.java"
 
 
@@ -24,12 +24,12 @@
 .method constructor <init>(Lorg/telegram/ui/ManageLinksActivity$ListAdapter;Lorg/telegram/ui/Components/LinkActionView;)V
     .locals 0
 
-    .line 2309
+    .line 2308
     iput-object p1, p0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter$4;->this$1:Lorg/telegram/ui/ManageLinksActivity$ListAdapter;
 
     iput-object p2, p0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter$4;->val$linkActionView:Lorg/telegram/ui/Components/LinkActionView;
 
-    invoke-direct {p0}, Lcom/smedialink/ui/common/SimpleTextWatcher;-><init>()V
+    invoke-direct {p0}, Lcom/iMe/ui/common/SimpleTextWatcher;-><init>()V
 
     return-void
 .end method
@@ -39,14 +39,14 @@
 .method public onTextChanged(Ljava/lang/CharSequence;III)V
     .locals 0
 
-    .line 2312
+    .line 2311
     iget-object p1, p0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter$4;->this$1:Lorg/telegram/ui/ManageLinksActivity$ListAdapter;
 
     iget-object p1, p1, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
-    iget-object p1, p1, Lorg/telegram/ui/ManageLinksActivity;->sendPresenter:Lcom/smedialink/ui/wallet/actions/send/amount/WalletSendAmountPresenter;
+    iget-object p1, p1, Lorg/telegram/ui/ManageLinksActivity;->sendPresenter:Lcom/iMe/ui/wallet/actions/send/amount/WalletSendAmountPresenter;
 
-    invoke-virtual {p1}, Lcom/smedialink/ui/wallet/actions/send/amount/WalletSendAmountPresenter;->getSelectedAmount()Ljava/lang/String;
+    invoke-virtual {p1}, Lcom/iMe/ui/wallet/actions/send/amount/WalletSendAmountPresenter;->getSelectedAmount()Ljava/lang/String;
 
     move-result-object p1
 
@@ -60,9 +60,9 @@
 
     iget-object p1, p1, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
-    iget-object p1, p1, Lorg/telegram/ui/ManageLinksActivity;->sendPresenter:Lcom/smedialink/ui/wallet/actions/send/amount/WalletSendAmountPresenter;
+    iget-object p1, p1, Lorg/telegram/ui/ManageLinksActivity;->sendPresenter:Lcom/iMe/ui/wallet/actions/send/amount/WalletSendAmountPresenter;
 
-    invoke-virtual {p1}, Lcom/smedialink/ui/wallet/actions/send/amount/WalletSendAmountPresenter;->getSelectedAmount()Ljava/lang/String;
+    invoke-virtual {p1}, Lcom/iMe/ui/wallet/actions/send/amount/WalletSendAmountPresenter;->getSelectedAmount()Ljava/lang/String;
 
     move-result-object p1
 
@@ -86,14 +86,14 @@
 
     if-nez p1, :cond_0
 
-    .line 2313
+    .line 2312
     iget-object p1, p0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter$4;->this$1:Lorg/telegram/ui/ManageLinksActivity$ListAdapter;
 
     iget-object p1, p1, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
-    iget-object p1, p1, Lorg/telegram/ui/ManageLinksActivity;->sendPresenter:Lcom/smedialink/ui/wallet/actions/send/amount/WalletSendAmountPresenter;
+    iget-object p1, p1, Lorg/telegram/ui/ManageLinksActivity;->sendPresenter:Lcom/iMe/ui/wallet/actions/send/amount/WalletSendAmountPresenter;
 
-    invoke-virtual {p1}, Lcom/smedialink/ui/wallet/actions/send/amount/WalletSendAmountPresenter;->resetStateIfNeed()V
+    invoke-virtual {p1}, Lcom/iMe/ui/wallet/actions/send/amount/WalletSendAmountPresenter;->resetStateIfNeed()V
 
     :cond_0
     return-void

@@ -159,7 +159,7 @@
 .end method
 
 .method public declared-synchronized getTranscodeClasses(Ljava/lang/Class;Ljava/lang/Class;)Ljava/util/List;
-    .locals 3
+    .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<Z:",
@@ -179,30 +179,30 @@
 
     monitor-enter p0
 
-    .line 65
+    .line 66
     :try_start_0
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    .line 67
+    .line 68
     invoke-virtual {p2, p1}, Ljava/lang/Class;->isAssignableFrom(Ljava/lang/Class;)Z
 
     move-result v1
 
     if-eqz v1, :cond_0
 
-    .line 68
+    .line 69
     invoke-interface {v0, p2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 69
+    .line 70
     monitor-exit p0
 
     return-object v0
 
-    .line 72
+    .line 73
     :cond_0
     :try_start_1
     iget-object v1, p0, Lcom/bumptech/glide/load/resource/transcode/TranscoderRegistry;->transcoders:Ljava/util/List;
@@ -225,21 +225,32 @@
 
     check-cast v2, Lcom/bumptech/glide/load/resource/transcode/TranscoderRegistry$Entry;
 
-    .line 73
+    .line 74
     invoke-virtual {v2, p1, p2}, Lcom/bumptech/glide/load/resource/transcode/TranscoderRegistry$Entry;->handles(Ljava/lang/Class;Ljava/lang/Class;)Z
 
-    move-result v2
+    move-result v3
 
-    if-eqz v2, :cond_1
+    if-eqz v3, :cond_1
 
-    .line 74
-    invoke-interface {v0, p2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+    iget-object v3, v2, Lcom/bumptech/glide/load/resource/transcode/TranscoderRegistry$Entry;->toClass:Ljava/lang/Class;
+
+    .line 75
+    invoke-interface {v0, v3}, Ljava/util/List;->contains(Ljava/lang/Object;)Z
+
+    move-result v3
+
+    if-nez v3, :cond_1
+
+    .line 76
+    iget-object v2, v2, Lcom/bumptech/glide/load/resource/transcode/TranscoderRegistry$Entry;->toClass:Ljava/lang/Class;
+
+    invoke-interface {v0, v2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     goto :goto_0
 
-    .line 78
+    .line 80
     :cond_2
     monitor-exit p0
 

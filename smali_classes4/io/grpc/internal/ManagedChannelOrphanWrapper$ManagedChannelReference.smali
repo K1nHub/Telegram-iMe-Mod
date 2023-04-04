@@ -71,7 +71,7 @@
 
     const-string v0, "io.grpc.ManagedChannel.enableAllocationTracking"
 
-    const-string v1, "true"
+    const-string/jumbo v1, "true"
 
     .line 76
     invoke-static {v0, v1}, Ljava/lang/System;->getProperty(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;

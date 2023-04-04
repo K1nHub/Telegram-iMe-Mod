@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/DialogsActivity;Landroid/content/Context;)V
     .locals 0
 
-    .line 6977
+    .line 6992
     iput-object p1, p0, Lorg/telegram/ui/DialogsActivity$36;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-direct {p0, p2}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
@@ -35,10 +35,10 @@
 .method public onInitializeAccessibilityNodeInfo(Landroid/view/accessibility/AccessibilityNodeInfo;)V
     .locals 3
 
-    .line 7021
+    .line 7036
     invoke-super {p0, p1}, Landroid/widget/FrameLayout;->onInitializeAccessibilityNodeInfo(Landroid/view/accessibility/AccessibilityNodeInfo;)V
 
-    .line 7022
+    .line 7037
     iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$36;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/DialogsActivity;->access$900(Lorg/telegram/ui/DialogsActivity;)Ljava/util/ArrayList;
@@ -61,7 +61,7 @@
 
     invoke-virtual {p1, v0}, Landroid/view/accessibility/AccessibilityNodeInfo;->setText(Ljava/lang/CharSequence;)V
 
-    .line 7023
+    .line 7038
     const-class v0, Landroid/widget/Button;
 
     invoke-virtual {v0}, Ljava/lang/Class;->getName()Ljava/lang/String;
@@ -72,10 +72,10 @@
 
     const/4 v0, 0x1
 
-    .line 7024
+    .line 7039
     invoke-virtual {p1, v0}, Landroid/view/accessibility/AccessibilityNodeInfo;->setLongClickable(Z)V
 
-    .line 7025
+    .line 7040
     invoke-virtual {p1, v0}, Landroid/view/accessibility/AccessibilityNodeInfo;->setClickable(Z)V
 
     return-void
@@ -84,10 +84,10 @@
 .method public setAlpha(F)V
     .locals 1
 
-    .line 7009
+    .line 7024
     invoke-super {p0, p1}, Landroid/widget/FrameLayout;->setAlpha(F)V
 
-    .line 7010
+    .line 7025
     iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$36;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/DialogsActivity;->access$32100(Lorg/telegram/ui/DialogsActivity;)Z
@@ -96,7 +96,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 7011
+    .line 7026
     iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$36;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/DialogsActivity;->access$32200(Lorg/telegram/ui/DialogsActivity;)Landroid/widget/ImageView;
@@ -112,10 +112,10 @@
 .method public setScaleX(F)V
     .locals 1
 
-    .line 6993
+    .line 7008
     invoke-super {p0, p1}, Landroid/widget/FrameLayout;->setScaleX(F)V
 
-    .line 6994
+    .line 7009
     iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$36;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/DialogsActivity;->access$32100(Lorg/telegram/ui/DialogsActivity;)Z
@@ -124,7 +124,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 6995
+    .line 7010
     iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$36;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/DialogsActivity;->access$32200(Lorg/telegram/ui/DialogsActivity;)Landroid/widget/ImageView;
@@ -140,10 +140,10 @@
 .method public setScaleY(F)V
     .locals 1
 
-    .line 7001
+    .line 7016
     invoke-super {p0, p1}, Landroid/widget/FrameLayout;->setScaleY(F)V
 
-    .line 7002
+    .line 7017
     iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$36;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/DialogsActivity;->access$32100(Lorg/telegram/ui/DialogsActivity;)Z
@@ -152,7 +152,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 7003
+    .line 7018
     iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$36;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/DialogsActivity;->access$32200(Lorg/telegram/ui/DialogsActivity;)Landroid/widget/ImageView;
@@ -168,10 +168,10 @@
 .method public setVisibility(I)V
     .locals 1
 
-    .line 6985
+    .line 7000
     invoke-super {p0, p1}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
-    .line 6986
+    .line 7001
     iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$36;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/DialogsActivity;->access$32100(Lorg/telegram/ui/DialogsActivity;)Z
@@ -180,7 +180,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 6987
+    .line 7002
     iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$36;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/DialogsActivity;->access$32200(Lorg/telegram/ui/DialogsActivity;)Landroid/widget/ImageView;

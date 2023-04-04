@@ -2,7 +2,7 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Lcom/iMe/fork/utils/Callbacks$Callback;
 
 
 # instance fields
@@ -22,12 +22,12 @@
 
 
 # virtual methods
-.method public final run()V
+.method public final invoke()V
     .locals 1
 
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$14$$ExternalSyntheticLambda9;->f$0:Lorg/telegram/ui/PhotoViewer$14;
 
-    invoke-static {v0}, Lorg/telegram/ui/PhotoViewer$14;->$r8$lambda$ru6AklEJDCqWt37VnnGf4CNOyDw(Lorg/telegram/ui/PhotoViewer$14;)V
+    invoke-static {v0}, Lorg/telegram/ui/PhotoViewer$14;->$r8$lambda$C0omNqWYq88qezxbd-x0VJwncao(Lorg/telegram/ui/PhotoViewer$14;)V
 
     return-void
 .end method

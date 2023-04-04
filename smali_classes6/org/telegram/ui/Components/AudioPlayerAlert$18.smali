@@ -18,7 +18,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/AudioPlayerAlert;Landroid/content/Context;IZ)V
     .locals 0
 
-    .line 1457
+    .line 1458
     invoke-direct {p0, p2, p3, p4}, Lorg/telegram/ui/Components/HintView;-><init>(Landroid/content/Context;IZ)V
 
     return-void
@@ -29,12 +29,12 @@
 .method public setVisibility(I)V
     .locals 0
 
-    .line 1460
+    .line 1461
     invoke-super {p0, p1}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
     if-eqz p1, :cond_0
 
-    .line 1463
+    .line 1464
     :try_start_0
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getParent()Landroid/view/ViewParent;
 

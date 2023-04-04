@@ -26,7 +26,7 @@
 .method protected onGetVersionCode()I
     .locals 1
 
-    const v0, 0xe8089
+    const v0, 0xe8151
 
     return v0
 .end method
@@ -34,7 +34,7 @@
 .method protected onGetVersionName()Ljava/lang/String;
     .locals 1
 
-    const-string v0, "9.5.4"
+    const-string v0, "9.5.6"
 
     return-object v0
 .end method

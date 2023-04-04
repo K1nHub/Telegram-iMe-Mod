@@ -2,32 +2,32 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Lcom/iMe/fork/utils/Callbacks$Callback;
 
 
 # instance fields
-.field public final synthetic f$0:Lorg/telegram/ui/ActionBar/AlertDialog;
+.field public final synthetic f$0:Lorg/telegram/ui/ActionBar/BaseFragment;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/ActionBar/AlertDialog;)V
+.method public synthetic constructor <init>(Lorg/telegram/ui/ActionBar/BaseFragment;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda110;->f$0:Lorg/telegram/ui/ActionBar/AlertDialog;
+    iput-object p1, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda110;->f$0:Lorg/telegram/ui/ActionBar/BaseFragment;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final run()V
+.method public final invoke()V
     .locals 1
 
-    iget-object v0, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda110;->f$0:Lorg/telegram/ui/ActionBar/AlertDialog;
+    iget-object v0, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda110;->f$0:Lorg/telegram/ui/ActionBar/BaseFragment;
 
-    invoke-static {v0}, Lorg/telegram/ui/Components/AlertsCreator;->$r8$lambda$uwgZGCw5lZC0dtzEMas0gwj-A_w(Lorg/telegram/ui/ActionBar/AlertDialog;)V
+    invoke-static {v0}, Lorg/telegram/ui/Components/AlertsCreator;->$r8$lambda$DW183bs0JzOr7IEue3eiMVQ-UIA(Lorg/telegram/ui/ActionBar/BaseFragment;)V
 
     return-void
 .end method

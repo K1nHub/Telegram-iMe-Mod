@@ -27,7 +27,7 @@
     .locals 2
 
     .line 39
-    const-class p1, Lcom/smedialink/ui/wallet/actions/send/recipient/WalletSendRecipientPresenter;
+    const-class p1, Lcom/iMe/ui/wallet/actions/send/recipient/WalletSendRecipientPresenter;
 
     const-string v0, "transferRecipientPresenter"
 
@@ -55,9 +55,9 @@
     .locals 0
 
     .line 44
-    check-cast p2, Lcom/smedialink/ui/wallet/actions/send/recipient/WalletSendRecipientPresenter;
+    check-cast p2, Lcom/iMe/ui/wallet/actions/send/recipient/WalletSendRecipientPresenter;
 
-    iput-object p2, p1, Lorg/telegram/ui/ContactsActivity;->transferRecipientPresenter:Lcom/smedialink/ui/wallet/actions/send/recipient/WalletSendRecipientPresenter;
+    iput-object p2, p1, Lorg/telegram/ui/ContactsActivity;->transferRecipientPresenter:Lcom/iMe/ui/wallet/actions/send/recipient/WalletSendRecipientPresenter;
 
     return-void
 .end method
@@ -88,7 +88,7 @@
     .end annotation
 
     .line 49
-    invoke-virtual {p1}, Lorg/telegram/ui/ContactsActivity;->provideTransferRecipientPresenter()Lcom/smedialink/ui/wallet/actions/send/recipient/WalletSendRecipientPresenter;
+    invoke-virtual {p1}, Lorg/telegram/ui/ContactsActivity;->provideTransferRecipientPresenter()Lcom/iMe/ui/wallet/actions/send/recipient/WalletSendRecipientPresenter;
 
     move-result-object p1
 

@@ -2143,7 +2143,7 @@
 
     const v2, 0x8b31
 
-    const-string v3, "uniform mat4 uMVPMatrix;\nuniform mat4 uSTMatrix;\nattribute vec4 aPosition;\nattribute vec4 aTextureCoord;\nvarying vec2 vTextureCoord;\nvoid main() {\n   gl_Position = uMVPMatrix * aPosition;\n   vTextureCoord = (uSTMatrix * aTextureCoord).xy;\n}\n"
+    const-string/jumbo v3, "uniform mat4 uMVPMatrix;\nuniform mat4 uSTMatrix;\nattribute vec4 aPosition;\nattribute vec4 aTextureCoord;\nvarying vec2 vTextureCoord;\nvoid main() {\n   gl_Position = uMVPMatrix * aPosition;\n   vTextureCoord = (uSTMatrix * aTextureCoord).xy;\n}\n"
 
     invoke-static {v0, v2, v3}, Lorg/telegram/messenger/camera/CameraView;->access$400(Lorg/telegram/messenger/camera/CameraView;ILjava/lang/String;)I
 
@@ -2234,7 +2234,7 @@
     .line 1930
     iget v0, v1, Lorg/telegram/messenger/camera/CameraView$VideoRecorder;->drawProgram:I
 
-    const-string v2, "uMVPMatrix"
+    const-string/jumbo v2, "uMVPMatrix"
 
     invoke-static {v0, v2}, Landroid/opengl/GLES20;->glGetUniformLocation(ILjava/lang/String;)I
 
@@ -2245,7 +2245,7 @@
     .line 1931
     iget v0, v1, Lorg/telegram/messenger/camera/CameraView$VideoRecorder;->drawProgram:I
 
-    const-string v2, "uSTMatrix"
+    const-string/jumbo v2, "uSTMatrix"
 
     invoke-static {v0, v2}, Landroid/opengl/GLES20;->glGetUniformLocation(ILjava/lang/String;)I
 
@@ -2284,7 +2284,7 @@
     .line 1850
     new-instance v0, Ljava/lang/RuntimeException;
 
-    const-string v2, "unable to initialize EGL14"
+    const-string/jumbo v2, "unable to initialize EGL14"
 
     invoke-direct {v0, v2}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
 
@@ -2294,7 +2294,7 @@
     :cond_d
     new-instance v0, Ljava/lang/RuntimeException;
 
-    const-string v2, "unable to get EGL14 display"
+    const-string/jumbo v2, "unable to get EGL14 display"
 
     invoke-direct {v0, v2}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
 
@@ -2319,6 +2319,8 @@
     invoke-direct {v2, v0}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/Throwable;)V
 
     throw v2
+
+    nop
 
     :array_0
     .array-data 4

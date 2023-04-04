@@ -15,7 +15,7 @@
 
 
 # instance fields
-.field private final bannerSlide:Lcom/smedialink/model/wallet/home/BannerSlide;
+.field private final bannerSlide:Lcom/iMe/model/wallet/home/BannerSlide;
 
 .field private buttonTextView:Landroid/widget/TextView;
 
@@ -25,7 +25,7 @@
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lkotlin/Lazy<",
-            "Lcom/smedialink/storage/domain/manager/crypto/CryptoAccessManager;",
+            "Lcom/iMe/storage/domain/manager/crypto/CryptoAccessManager;",
             ">;"
         }
     .end annotation
@@ -35,7 +35,7 @@
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lkotlin/Lazy<",
-            "Lcom/smedialink/storage/domain/storage/CryptoPreferenceHelper;",
+            "Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;",
             ">;"
         }
     .end annotation
@@ -61,17 +61,17 @@
 
 .field private flickerButton:Z
 
-.field private final forcedNetworkType:Lcom/smedialink/storage/domain/model/crypto/NetworkType;
+.field private final forcedNetworkType:Lcom/iMe/storage/domain/model/crypto/NetworkType;
 
 .field private imageView:Lorg/telegram/ui/Components/RLottieImageView;
 
-.field private final lockedSection:Lorg/fork/enums/LockedSection;
+.field private final lockedSection:Lcom/iMe/fork/enums/LockedSection;
 
 .field private final pinCodeCoordinator:Lkotlin/Lazy;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lkotlin/Lazy<",
-            "Lcom/smedialink/navigation/wallet/coordinator/PinCodeCoordinator;",
+            "Lcom/iMe/navigation/wallet/coordinator/PinCodeCoordinator;",
             ">;"
         }
     .end annotation
@@ -83,7 +83,7 @@
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lkotlin/Lazy<",
-            "Lcom/smedialink/storage/domain/utils/system/ResourceManager;",
+            "Lcom/iMe/storage/domain/utils/system/ResourceManager;",
             ">;"
         }
     .end annotation
@@ -93,11 +93,11 @@
 
 .field private subtitleTextView:Landroid/widget/TextView;
 
-.field private final swapProtocol:Lcom/smedialink/storage/domain/model/wallet/swap/SwapProtocol;
+.field private final swapProtocol:Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocol;
 
 .field private titleTextView:Landroid/widget/TextView;
 
-.field private final tokenCodeToSwap:Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;
+.field private final tokenCodeToSwap:Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
 
 
 # direct methods
@@ -109,10 +109,26 @@
     return-void
 .end method
 
+.method public static synthetic $r8$lambda$0wKUoxZ2VF545yS7Ah7gNjFt05E(Lorg/telegram/ui/ActionIntroActivity;)V
+    .locals 0
+
+    invoke-direct {p0}, Lorg/telegram/ui/ActionIntroActivity;->lambda$createView$3()V
+
+    return-void
+.end method
+
 .method public static synthetic $r8$lambda$75yv7kj2xOILXgxE8CzF05p8-bE(Lorg/telegram/ui/ActionIntroActivity;Landroid/content/DialogInterface;I)V
     .locals 0
 
     invoke-direct {p0, p1, p2}, Lorg/telegram/ui/ActionIntroActivity;->lambda$showChooseGatePairDialog$0(Landroid/content/DialogInterface;I)V
+
+    return-void
+.end method
+
+.method public static synthetic $r8$lambda$8SpOmF9cgURGu1Inn7HmvoRYuBk(Lorg/telegram/ui/ActionIntroActivity;Ljava/lang/Long;)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Lorg/telegram/ui/ActionIntroActivity;->lambda$createView$2(Ljava/lang/Long;)V
 
     return-void
 .end method
@@ -143,14 +159,6 @@
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$Ng7nFoeoKVRbEPLI12sw0lmws5k(Lorg/telegram/ui/ActionIntroActivity;)V
-    .locals 0
-
-    invoke-direct {p0}, Lorg/telegram/ui/ActionIntroActivity;->lambda$createView$3()V
-
-    return-void
-.end method
-
 .method public static synthetic $r8$lambda$OaOCoQflPSWl6Z8zZ5EjW1Dj8sk(Lorg/telegram/ui/ActionIntroActivity;)V
     .locals 0
 
@@ -171,14 +179,6 @@
     .locals 0
 
     invoke-direct {p0, p1}, Lorg/telegram/ui/ActionIntroActivity;->lambda$createView$6(Landroid/view/View;)V
-
-    return-void
-.end method
-
-.method public static synthetic $r8$lambda$pxoj-1DCCH8lF4cL1jCjMfcCaDg(Lorg/telegram/ui/ActionIntroActivity;Ljava/lang/Long;)V
-    .locals 0
-
-    invoke-direct {p0, p1}, Lorg/telegram/ui/ActionIntroActivity;->lambda$createView$2(Ljava/lang/Long;)V
 
     return-void
 .end method
@@ -217,19 +217,19 @@
     move v1, p1
 
     .line 128
-    invoke-direct/range {v0 .. v6}, Lorg/telegram/ui/ActionIntroActivity;-><init>(ILcom/smedialink/storage/domain/model/wallet/token/TokenCode;Lcom/smedialink/storage/domain/model/wallet/swap/SwapProtocol;Lcom/smedialink/storage/domain/model/crypto/NetworkType;Lcom/smedialink/model/wallet/home/BannerSlide;Lorg/fork/enums/LockedSection;)V
+    invoke-direct/range {v0 .. v6}, Lorg/telegram/ui/ActionIntroActivity;-><init>(ILcom/iMe/storage/domain/model/wallet/token/TokenCode;Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocol;Lcom/iMe/storage/domain/model/crypto/NetworkType;Lcom/iMe/model/wallet/home/BannerSlide;Lcom/iMe/fork/enums/LockedSection;)V
 
     return-void
 .end method
 
-.method public constructor <init>(ILcom/smedialink/storage/domain/model/wallet/token/TokenCode;Lcom/smedialink/storage/domain/model/wallet/swap/SwapProtocol;Lcom/smedialink/storage/domain/model/crypto/NetworkType;Lcom/smedialink/model/wallet/home/BannerSlide;Lorg/fork/enums/LockedSection;)V
+.method public constructor <init>(ILcom/iMe/storage/domain/model/wallet/token/TokenCode;Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocol;Lcom/iMe/storage/domain/model/crypto/NetworkType;Lcom/iMe/model/wallet/home/BannerSlide;Lcom/iMe/fork/enums/LockedSection;)V
     .locals 1
 
     .line 224
     invoke-direct {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;-><init>()V
 
     .line 102
-    const-class v0, Lcom/smedialink/storage/domain/manager/crypto/CryptoAccessManager;
+    const-class v0, Lcom/iMe/storage/domain/manager/crypto/CryptoAccessManager;
 
     invoke-static {v0}, Lorg/koin/java/KoinJavaComponent;->inject(Ljava/lang/Class;)Lkotlin/Lazy;
 
@@ -238,7 +238,7 @@
     iput-object v0, p0, Lorg/telegram/ui/ActionIntroActivity;->cryptoAccessManager:Lkotlin/Lazy;
 
     .line 103
-    const-class v0, Lcom/smedialink/storage/domain/storage/CryptoPreferenceHelper;
+    const-class v0, Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;
 
     invoke-static {v0}, Lorg/koin/java/KoinJavaComponent;->inject(Ljava/lang/Class;)Lkotlin/Lazy;
 
@@ -247,7 +247,7 @@
     iput-object v0, p0, Lorg/telegram/ui/ActionIntroActivity;->cryptoPreferenceHelper:Lkotlin/Lazy;
 
     .line 104
-    const-class v0, Lcom/smedialink/storage/domain/utils/system/ResourceManager;
+    const-class v0, Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
     invoke-static {v0}, Lorg/koin/java/KoinJavaComponent;->inject(Ljava/lang/Class;)Lkotlin/Lazy;
 
@@ -256,7 +256,7 @@
     iput-object v0, p0, Lorg/telegram/ui/ActionIntroActivity;->resourceManager:Lkotlin/Lazy;
 
     .line 105
-    const-class v0, Lcom/smedialink/navigation/wallet/coordinator/PinCodeCoordinator;
+    const-class v0, Lcom/iMe/navigation/wallet/coordinator/PinCodeCoordinator;
 
     invoke-static {v0}, Lorg/koin/java/KoinJavaComponent;->inject(Ljava/lang/Class;)Lkotlin/Lazy;
 
@@ -280,10 +280,10 @@
 
     .line 227
     :cond_0
-    sget-object p2, Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;->LIME:Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;
+    sget-object p2, Lcom/iMe/storage/domain/model/wallet/token/TokenCode;->LIME:Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
 
     :goto_0
-    iput-object p2, p0, Lorg/telegram/ui/ActionIntroActivity;->tokenCodeToSwap:Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;
+    iput-object p2, p0, Lorg/telegram/ui/ActionIntroActivity;->tokenCodeToSwap:Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
 
     if-eqz p3, :cond_1
 
@@ -291,19 +291,19 @@
 
     .line 228
     :cond_1
-    sget-object p3, Lcom/smedialink/storage/domain/model/wallet/swap/SwapProtocol;->UNISWAP:Lcom/smedialink/storage/domain/model/wallet/swap/SwapProtocol;
+    sget-object p3, Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocol;->UNISWAP:Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocol;
 
     :goto_1
-    iput-object p3, p0, Lorg/telegram/ui/ActionIntroActivity;->swapProtocol:Lcom/smedialink/storage/domain/model/wallet/swap/SwapProtocol;
+    iput-object p3, p0, Lorg/telegram/ui/ActionIntroActivity;->swapProtocol:Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocol;
 
     .line 229
-    iput-object p5, p0, Lorg/telegram/ui/ActionIntroActivity;->bannerSlide:Lcom/smedialink/model/wallet/home/BannerSlide;
+    iput-object p5, p0, Lorg/telegram/ui/ActionIntroActivity;->bannerSlide:Lcom/iMe/model/wallet/home/BannerSlide;
 
     .line 230
-    iput-object p6, p0, Lorg/telegram/ui/ActionIntroActivity;->lockedSection:Lorg/fork/enums/LockedSection;
+    iput-object p6, p0, Lorg/telegram/ui/ActionIntroActivity;->lockedSection:Lcom/iMe/fork/enums/LockedSection;
 
     .line 231
-    iput-object p4, p0, Lorg/telegram/ui/ActionIntroActivity;->forcedNetworkType:Lcom/smedialink/storage/domain/model/crypto/NetworkType;
+    iput-object p4, p0, Lorg/telegram/ui/ActionIntroActivity;->forcedNetworkType:Lcom/iMe/storage/domain/model/crypto/NetworkType;
 
     return-void
 .end method
@@ -470,7 +470,7 @@
 
     move-result-object v0
 
-    check-cast v0, Lcom/smedialink/storage/domain/manager/crypto/CryptoAccessManager;
+    check-cast v0, Lcom/iMe/storage/domain/manager/crypto/CryptoAccessManager;
 
     iget-object v1, p0, Lorg/telegram/ui/ActionIntroActivity;->cryptoPreferenceHelper:Lkotlin/Lazy;
 
@@ -478,20 +478,20 @@
 
     move-result-object v1
 
-    check-cast v1, Lcom/smedialink/storage/domain/storage/CryptoPreferenceHelper;
+    check-cast v1, Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;
 
-    invoke-interface {v1}, Lcom/smedialink/storage/domain/storage/CryptoPreferenceHelper;->getCurrentBlockchainType()Lcom/smedialink/storage/domain/model/crypto/BlockchainType;
+    invoke-interface {v1}, Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;->getCurrentBlockchainType()Lcom/iMe/storage/domain/model/crypto/BlockchainType;
 
     move-result-object v1
 
-    invoke-interface {v0, v1}, Lcom/smedialink/storage/domain/manager/crypto/CryptoAccessManager;->getWallet(Lcom/smedialink/storage/domain/model/crypto/BlockchainType;)Lcom/smedialink/storage/domain/model/crypto/Wallet;
+    invoke-interface {v0, v1}, Lcom/iMe/storage/domain/manager/crypto/CryptoAccessManager;->getWallet(Lcom/iMe/storage/domain/model/crypto/BlockchainType;)Lcom/iMe/storage/domain/model/crypto/Wallet;
 
     move-result-object v0
 
     if-eqz v0, :cond_0
 
     .line 161
-    invoke-static {v0}, Lcom/smedialink/storage/domain/utils/extentions/CryptoExtKt;->mnemonicAsList(Lcom/smedialink/storage/domain/model/crypto/Wallet;)Ljava/util/List;
+    invoke-static {v0}, Lcom/iMe/storage/domain/utils/extentions/CryptoExtKt;->mnemonicAsList(Lcom/iMe/storage/domain/model/crypto/Wallet;)Ljava/util/List;
 
     move-result-object v0
 
@@ -516,7 +516,7 @@
 
     move-result-object v0
 
-    check-cast v0, Lcom/smedialink/storage/domain/manager/crypto/CryptoAccessManager;
+    check-cast v0, Lcom/iMe/storage/domain/manager/crypto/CryptoAccessManager;
 
     iget-object v1, p0, Lorg/telegram/ui/ActionIntroActivity;->cryptoPreferenceHelper:Lkotlin/Lazy;
 
@@ -524,20 +524,20 @@
 
     move-result-object v1
 
-    check-cast v1, Lcom/smedialink/storage/domain/storage/CryptoPreferenceHelper;
+    check-cast v1, Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;
 
-    invoke-interface {v1}, Lcom/smedialink/storage/domain/storage/CryptoPreferenceHelper;->getCurrentBlockchainType()Lcom/smedialink/storage/domain/model/crypto/BlockchainType;
+    invoke-interface {v1}, Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;->getCurrentBlockchainType()Lcom/iMe/storage/domain/model/crypto/BlockchainType;
 
     move-result-object v1
 
-    invoke-interface {v0, v1}, Lcom/smedialink/storage/domain/manager/crypto/CryptoAccessManager;->getWallet(Lcom/smedialink/storage/domain/model/crypto/BlockchainType;)Lcom/smedialink/storage/domain/model/crypto/Wallet;
+    invoke-interface {v0, v1}, Lcom/iMe/storage/domain/manager/crypto/CryptoAccessManager;->getWallet(Lcom/iMe/storage/domain/model/crypto/BlockchainType;)Lcom/iMe/storage/domain/model/crypto/Wallet;
 
     move-result-object v0
 
     if-eqz v0, :cond_0
 
     .line 166
-    invoke-virtual {v0}, Lcom/smedialink/storage/domain/model/crypto/Wallet;->getAddress()Ljava/lang/String;
+    invoke-virtual {v0}, Lcom/iMe/storage/domain/model/crypto/Wallet;->getAddress()Ljava/lang/String;
 
     move-result-object v0
 
@@ -648,9 +648,9 @@
     invoke-static {v1}, Lorg/telegram/messenger/SharedConfig;->setMusicIntroShown(Z)V
 
     .line 863
-    new-instance p1, Lorg/fork/ui/fragment/MusicActivity;
+    new-instance p1, Lcom/iMe/fork/ui/fragment/MusicActivity;
 
-    invoke-direct {p1}, Lorg/fork/ui/fragment/MusicActivity;-><init>()V
+    invoke-direct {p1}, Lcom/iMe/fork/ui/fragment/MusicActivity;-><init>()V
 
     invoke-virtual {p0, p1, v1}, Lorg/telegram/ui/ActionBar/BaseFragment;->presentFragment(Lorg/telegram/ui/ActionBar/BaseFragment;Z)Z
 
@@ -664,17 +664,17 @@
     if-ne p1, v0, :cond_3
 
     .line 865
-    new-instance p1, Lcom/smedialink/ui/wallet/swap/process/WalletSwapProcessFragment$ScreenType$Crypto;
+    new-instance p1, Lcom/iMe/ui/wallet/swap/process/WalletSwapProcessFragment$ScreenType$Crypto;
 
-    iget-object v0, p0, Lorg/telegram/ui/ActionIntroActivity;->swapProtocol:Lcom/smedialink/storage/domain/model/wallet/swap/SwapProtocol;
+    iget-object v0, p0, Lorg/telegram/ui/ActionIntroActivity;->swapProtocol:Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocol;
 
-    iget-object v3, p0, Lorg/telegram/ui/ActionIntroActivity;->tokenCodeToSwap:Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;
+    iget-object v3, p0, Lorg/telegram/ui/ActionIntroActivity;->tokenCodeToSwap:Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
 
-    iget-object v4, p0, Lorg/telegram/ui/ActionIntroActivity;->forcedNetworkType:Lcom/smedialink/storage/domain/model/crypto/NetworkType;
+    iget-object v4, p0, Lorg/telegram/ui/ActionIntroActivity;->forcedNetworkType:Lcom/iMe/storage/domain/model/crypto/NetworkType;
 
-    invoke-direct {p1, v0, v2, v3, v4}, Lcom/smedialink/ui/wallet/swap/process/WalletSwapProcessFragment$ScreenType$Crypto;-><init>(Lcom/smedialink/storage/domain/model/wallet/swap/SwapProtocol;Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;Lcom/smedialink/storage/domain/model/crypto/NetworkType;)V
+    invoke-direct {p1, v0, v2, v3, v4}, Lcom/iMe/ui/wallet/swap/process/WalletSwapProcessFragment$ScreenType$Crypto;-><init>(Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocol;Lcom/iMe/storage/domain/model/wallet/token/TokenCode;Lcom/iMe/storage/domain/model/wallet/token/TokenCode;Lcom/iMe/storage/domain/model/crypto/NetworkType;)V
 
-    invoke-static {p1}, Lcom/smedialink/ui/wallet/swap/process/WalletSwapProcessFragment;->newInstance(Lcom/smedialink/ui/wallet/swap/process/WalletSwapProcessFragment$ScreenType;)Lcom/smedialink/ui/wallet/swap/process/WalletSwapProcessFragment;
+    invoke-static {p1}, Lcom/iMe/ui/wallet/swap/process/WalletSwapProcessFragment;->newInstance(Lcom/iMe/ui/wallet/swap/process/WalletSwapProcessFragment$ScreenType;)Lcom/iMe/ui/wallet/swap/process/WalletSwapProcessFragment;
 
     move-result-object p1
 
@@ -783,12 +783,12 @@
     if-ne p1, v0, :cond_e
 
     .line 884
-    iget-object p1, p0, Lorg/telegram/ui/ActionIntroActivity;->bannerSlide:Lcom/smedialink/model/wallet/home/BannerSlide;
+    iget-object p1, p0, Lorg/telegram/ui/ActionIntroActivity;->bannerSlide:Lcom/iMe/model/wallet/home/BannerSlide;
 
     if-eqz p1, :cond_15
 
     .line 885
-    sget-object v0, Lorg/telegram/ui/ActionIntroActivity$5;->$SwitchMap$com$smedialink$model$wallet$home$BannerSlide:[I
+    sget-object v0, Lorg/telegram/ui/ActionIntroActivity$5;->$SwitchMap$com$iMe$model$wallet$home$BannerSlide:[I
 
     invoke-virtual {p1}, Ljava/lang/Enum;->ordinal()I
 
@@ -846,18 +846,18 @@
 
     move-result-object p1
 
-    check-cast p1, Lcom/smedialink/storage/domain/manager/crypto/CryptoAccessManager;
+    check-cast p1, Lcom/iMe/storage/domain/manager/crypto/CryptoAccessManager;
 
-    sget-object v0, Lcom/smedialink/storage/domain/model/crypto/BlockchainType;->EVM:Lcom/smedialink/storage/domain/model/crypto/BlockchainType;
+    sget-object v0, Lcom/iMe/storage/domain/model/crypto/BlockchainType;->EVM:Lcom/iMe/storage/domain/model/crypto/BlockchainType;
 
-    invoke-interface {p1, v0}, Lcom/smedialink/storage/domain/manager/crypto/CryptoAccessManager;->isWalletCreated(Lcom/smedialink/storage/domain/model/crypto/BlockchainType;)Z
+    invoke-interface {p1, v0}, Lcom/iMe/storage/domain/manager/crypto/CryptoAccessManager;->isWalletCreated(Lcom/iMe/storage/domain/model/crypto/BlockchainType;)Z
 
     move-result p1
 
     if-eqz p1, :cond_b
 
     .line 955
-    invoke-static {}, Lcom/smedialink/ui/wallet/staking/StakingFragment;->newInstance()Lcom/smedialink/ui/wallet/staking/StakingFragment;
+    invoke-static {}, Lcom/iMe/ui/wallet/staking/StakingFragment;->newInstance()Lcom/iMe/ui/wallet/staking/StakingFragment;
 
     move-result-object p1
 
@@ -870,12 +870,12 @@
 
     .line 958
     :cond_b
-    new-instance p1, Lorg/telegram/ui/ActionIntroActivity$$ExternalSyntheticLambda10;
+    new-instance p1, Lorg/telegram/ui/ActionIntroActivity$$ExternalSyntheticLambda9;
 
-    invoke-direct {p1, p0}, Lorg/telegram/ui/ActionIntroActivity$$ExternalSyntheticLambda10;-><init>(Lorg/telegram/ui/ActionIntroActivity;)V
+    invoke-direct {p1, p0}, Lorg/telegram/ui/ActionIntroActivity$$ExternalSyntheticLambda9;-><init>(Lorg/telegram/ui/ActionIntroActivity;)V
 
     .line 959
-    invoke-static {p0, v0, p1}, Lcom/smedialink/utils/dialogs/DialogsFactoryKt;->createWalletCreatedRequiredDialog(Lorg/telegram/ui/ActionBar/BaseFragment;Lcom/smedialink/storage/domain/model/crypto/BlockchainType;Lorg/fork/utils/Callbacks$Callback;)Lorg/telegram/ui/ActionBar/AlertDialog;
+    invoke-static {p0, v0, p1}, Lcom/iMe/utils/dialogs/DialogsFactoryKt;->createWalletCreatedRequiredDialog(Lorg/telegram/ui/ActionBar/BaseFragment;Lcom/iMe/storage/domain/model/crypto/BlockchainType;Lcom/iMe/fork/utils/Callbacks$Callback;)Lorg/telegram/ui/ActionBar/AlertDialog;
 
     move-result-object p1
 
@@ -917,9 +917,9 @@
 
     .line 932
     :pswitch_6
-    new-instance p1, Lorg/telegram/ui/ActionIntroActivity$$ExternalSyntheticLambda10;
+    new-instance p1, Lorg/telegram/ui/ActionIntroActivity$$ExternalSyntheticLambda9;
 
-    invoke-direct {p1, p0}, Lorg/telegram/ui/ActionIntroActivity$$ExternalSyntheticLambda10;-><init>(Lorg/telegram/ui/ActionIntroActivity;)V
+    invoke-direct {p1, p0}, Lorg/telegram/ui/ActionIntroActivity$$ExternalSyntheticLambda9;-><init>(Lorg/telegram/ui/ActionIntroActivity;)V
 
     iget-object v0, p0, Lorg/telegram/ui/ActionIntroActivity;->cryptoPreferenceHelper:Lkotlin/Lazy;
 
@@ -928,18 +928,18 @@
 
     move-result-object v0
 
-    check-cast v0, Lcom/smedialink/storage/domain/storage/CryptoPreferenceHelper;
+    check-cast v0, Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;
 
-    invoke-interface {v0}, Lcom/smedialink/storage/domain/storage/CryptoPreferenceHelper;->getCurrentBlockchainType()Lcom/smedialink/storage/domain/model/crypto/BlockchainType;
+    invoke-interface {v0}, Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;->getCurrentBlockchainType()Lcom/iMe/storage/domain/model/crypto/BlockchainType;
 
     move-result-object v0
 
-    new-instance v1, Lorg/telegram/ui/ActionIntroActivity$$ExternalSyntheticLambda11;
+    new-instance v1, Lorg/telegram/ui/ActionIntroActivity$$ExternalSyntheticLambda10;
 
-    invoke-direct {v1, p0}, Lorg/telegram/ui/ActionIntroActivity$$ExternalSyntheticLambda11;-><init>(Lorg/telegram/ui/ActionIntroActivity;)V
+    invoke-direct {v1, p0}, Lorg/telegram/ui/ActionIntroActivity$$ExternalSyntheticLambda10;-><init>(Lorg/telegram/ui/ActionIntroActivity;)V
 
     .line 932
-    invoke-static {p0, p1, v0, v1}, Lcom/smedialink/utils/helper/wallet/WalletHelper;->runWithCheckIsCryptoWalletCreated(Lorg/telegram/ui/ActionBar/BaseFragment;Lorg/fork/utils/Callbacks$Callback;Lcom/smedialink/storage/domain/model/crypto/BlockchainType;Lorg/fork/utils/Callbacks$Callback;)V
+    invoke-static {p0, p1, v0, v1}, Lcom/iMe/utils/helper/wallet/WalletHelper;->runWithCheckIsCryptoWalletCreated(Lorg/telegram/ui/ActionBar/BaseFragment;Lcom/iMe/fork/utils/Callbacks$Callback;Lcom/iMe/storage/domain/model/crypto/BlockchainType;Lcom/iMe/fork/utils/Callbacks$Callback;)V
 
     goto/16 :goto_2
 
@@ -969,9 +969,9 @@
 
     move-result-object p1
 
-    check-cast p1, Lcom/smedialink/storage/domain/manager/crypto/CryptoAccessManager;
+    check-cast p1, Lcom/iMe/storage/domain/manager/crypto/CryptoAccessManager;
 
-    invoke-interface {p1}, Lcom/smedialink/storage/domain/manager/crypto/CryptoAccessManager;->isCurrentBlockchainWalletCreated()Z
+    invoke-interface {p1}, Lcom/iMe/storage/domain/manager/crypto/CryptoAccessManager;->isCurrentBlockchainWalletCreated()Z
 
     move-result p1
 
@@ -984,11 +984,11 @@
 
     move-result-object p1
 
-    check-cast p1, Lcom/smedialink/navigation/wallet/coordinator/PinCodeCoordinator;
+    check-cast p1, Lcom/iMe/navigation/wallet/coordinator/PinCodeCoordinator;
 
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->parentLayout:Lorg/telegram/ui/ActionBar/INavigationLayout;
 
-    new-instance v2, Lcom/smedialink/model/wallet/crypto/create/CreateWalletScreenType$SecretWords;
+    new-instance v2, Lcom/iMe/model/wallet/crypto/create/CreateWalletScreenType$SecretWords;
 
     .line 905
     invoke-direct {p0}, Lorg/telegram/ui/ActionIntroActivity;->getSecretWords()Ljava/util/List;
@@ -1002,21 +1002,21 @@
 
     const-string v5, ""
 
-    invoke-direct {v2, v3, v4, v5, v5}, Lcom/smedialink/model/wallet/crypto/create/CreateWalletScreenType$SecretWords;-><init>(Ljava/util/List;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+    invoke-direct {v2, v3, v4, v5, v5}, Lcom/iMe/model/wallet/crypto/create/CreateWalletScreenType$SecretWords;-><init>(Ljava/util/List;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
     .line 903
-    invoke-static {v2}, Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment;->newInstance(Lcom/smedialink/model/wallet/crypto/create/CreateWalletScreenType;)Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment;
+    invoke-static {v2}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;->newInstance(Lcom/iMe/model/wallet/crypto/create/CreateWalletScreenType;)Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;
 
     move-result-object v2
 
-    new-instance v3, Lcom/smedialink/navigation/wallet/coordinator/PinCodeCoordinator$Args;
+    new-instance v3, Lcom/iMe/navigation/wallet/coordinator/PinCodeCoordinator$Args;
 
-    sget-object v4, Lcom/smedialink/model/wallet/crypto/pin/EnterPinCodeScreenType;->CHECK:Lcom/smedialink/model/wallet/crypto/pin/EnterPinCodeScreenType;
+    sget-object v4, Lcom/iMe/model/wallet/crypto/pin/EnterPinCodeScreenType;->CHECK:Lcom/iMe/model/wallet/crypto/pin/EnterPinCodeScreenType;
 
-    invoke-direct {v3, v4}, Lcom/smedialink/navigation/wallet/coordinator/PinCodeCoordinator$Args;-><init>(Lcom/smedialink/model/wallet/crypto/pin/EnterPinCodeScreenType;)V
+    invoke-direct {v3, v4}, Lcom/iMe/navigation/wallet/coordinator/PinCodeCoordinator$Args;-><init>(Lcom/iMe/model/wallet/crypto/pin/EnterPinCodeScreenType;)V
 
     .line 901
-    invoke-virtual {p1, v0, v2, v3, v1}, Lcom/smedialink/navigation/wallet/coordinator/PinCodeCoordinator;->start(Lorg/telegram/ui/ActionBar/INavigationLayout;Lcom/smedialink/ui/base/WalletAuthFragment;Lcom/smedialink/navigation/wallet/coordinator/PinCodeCoordinator$Args;Z)V
+    invoke-virtual {p1, v0, v2, v3, v1}, Lcom/iMe/navigation/wallet/coordinator/PinCodeCoordinator;->start(Lorg/telegram/ui/ActionBar/INavigationLayout;Lcom/iMe/ui/base/WalletAuthFragment;Lcom/iMe/navigation/wallet/coordinator/PinCodeCoordinator$Args;Z)V
 
     goto/16 :goto_2
 
@@ -1034,18 +1034,18 @@
 
     move-result-object p1
 
-    check-cast p1, Lcom/smedialink/storage/domain/manager/crypto/CryptoAccessManager;
+    check-cast p1, Lcom/iMe/storage/domain/manager/crypto/CryptoAccessManager;
 
-    invoke-interface {p1}, Lcom/smedialink/storage/domain/manager/crypto/CryptoAccessManager;->isCurrentBlockchainWalletCreated()Z
+    invoke-interface {p1}, Lcom/iMe/storage/domain/manager/crypto/CryptoAccessManager;->isCurrentBlockchainWalletCreated()Z
 
     move-result p1
 
     if-eqz p1, :cond_d
 
     .line 893
-    sget-object p1, Lcom/smedialink/model/common/ScreenType;->FULLSCREEN:Lcom/smedialink/model/common/ScreenType;
+    sget-object p1, Lcom/iMe/model/common/ScreenType;->FULLSCREEN:Lcom/iMe/model/common/ScreenType;
 
-    invoke-static {p1, v2}, Lcom/smedialink/ui/wallet/swap/WalletSwapProtocolsFragment;->newInstance(Lcom/smedialink/model/common/ScreenType;Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;)Lcom/smedialink/ui/wallet/swap/WalletSwapProtocolsFragment;
+    invoke-static {p1, v2}, Lcom/iMe/ui/wallet/swap/WalletSwapProtocolsFragment;->newInstance(Lcom/iMe/model/common/ScreenType;Lcom/iMe/storage/domain/model/wallet/token/TokenCode;)Lcom/iMe/ui/wallet/swap/WalletSwapProtocolsFragment;
 
     move-result-object p1
 
@@ -1089,9 +1089,9 @@
     :pswitch_d
     new-instance p1, Lorg/telegram/ui/PasscodeActivity;
 
-    iget-object v0, p0, Lorg/telegram/ui/ActionIntroActivity;->lockedSection:Lorg/fork/enums/LockedSection;
+    iget-object v0, p0, Lorg/telegram/ui/ActionIntroActivity;->lockedSection:Lcom/iMe/fork/enums/LockedSection;
 
-    invoke-direct {p1, v1, v0}, Lorg/telegram/ui/PasscodeActivity;-><init>(ILorg/fork/enums/LockedSection;)V
+    invoke-direct {p1, v1, v0}, Lorg/telegram/ui/PasscodeActivity;-><init>(ILcom/iMe/fork/enums/LockedSection;)V
 
     invoke-virtual {p0, p1, v1}, Lorg/telegram/ui/ActionBar/BaseFragment;->presentFragment(Lorg/telegram/ui/ActionBar/BaseFragment;Z)Z
 
@@ -1367,11 +1367,11 @@
 
     .line 859
     :cond_14
-    new-instance p1, Lorg/telegram/ui/ActionIntroActivity$$ExternalSyntheticLambda9;
+    new-instance p1, Lorg/telegram/ui/ActionIntroActivity$$ExternalSyntheticLambda8;
 
-    invoke-direct {p1, p0}, Lorg/telegram/ui/ActionIntroActivity$$ExternalSyntheticLambda9;-><init>(Lorg/telegram/ui/ActionIntroActivity;)V
+    invoke-direct {p1, p0}, Lorg/telegram/ui/ActionIntroActivity$$ExternalSyntheticLambda8;-><init>(Lorg/telegram/ui/ActionIntroActivity;)V
 
-    invoke-static {p1}, Lorg/telegram/ui/ChannelCreateActivity;->newInstanceInAlbumMode(Lorg/fork/utils/Callbacks$Callback1;)Lorg/telegram/ui/ChannelCreateActivity;
+    invoke-static {p1}, Lorg/telegram/ui/ChannelCreateActivity;->newInstanceInAlbumMode(Lcom/iMe/fork/utils/Callbacks$Callback1;)Lorg/telegram/ui/ChannelCreateActivity;
 
     move-result-object p1
 
@@ -1577,7 +1577,7 @@
     .locals 1
 
     .line 152
-    invoke-static {}, Lcom/smedialink/storage/domain/model/wallet/GatePair;->values()[Lcom/smedialink/storage/domain/model/wallet/GatePair;
+    invoke-static {}, Lcom/iMe/storage/domain/model/wallet/GatePair;->values()[Lcom/iMe/storage/domain/model/wallet/GatePair;
 
     move-result-object p1
 
@@ -1594,13 +1594,13 @@
 
     move-result-object v0
 
-    check-cast v0, Lcom/smedialink/storage/domain/utils/system/ResourceManager;
+    check-cast v0, Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
-    invoke-virtual {p1}, Lcom/smedialink/storage/domain/model/wallet/GatePair;->getUrl()I
+    invoke-virtual {p1}, Lcom/iMe/storage/domain/model/wallet/GatePair;->getUrl()I
 
     move-result p1
 
-    invoke-interface {v0, p1}, Lcom/smedialink/storage/domain/utils/system/ResourceManager;->getString(I)Ljava/lang/String;
+    invoke-interface {v0, p1}, Lcom/iMe/storage/domain/utils/system/ResourceManager;->getString(I)Ljava/lang/String;
 
     move-result-object p1
 
@@ -1661,11 +1661,11 @@
 
     move-result-object v1
 
-    check-cast v1, Lcom/smedialink/storage/domain/utils/system/ResourceManager;
+    check-cast v1, Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
     sget v2, Lorg/telegram/messenger/R$string;->wallet_gate_select_pair_title:I
 
-    invoke-interface {v1, v2}, Lcom/smedialink/storage/domain/utils/system/ResourceManager;->getString(I)Ljava/lang/String;
+    invoke-interface {v1, v2}, Lcom/iMe/storage/domain/utils/system/ResourceManager;->getString(I)Ljava/lang/String;
 
     move-result-object v1
 
@@ -1678,9 +1678,9 @@
 
     move-result-object v1
 
-    check-cast v1, Lcom/smedialink/storage/domain/utils/system/ResourceManager;
+    check-cast v1, Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
-    invoke-static {v1}, Lcom/smedialink/storage/domain/model/wallet/GatePair;->getTitlesAsArray(Lcom/smedialink/storage/domain/utils/system/ResourceManager;)[Ljava/lang/String;
+    invoke-static {v1}, Lcom/iMe/storage/domain/model/wallet/GatePair;->getTitlesAsArray(Lcom/iMe/storage/domain/utils/system/ResourceManager;)[Ljava/lang/String;
 
     move-result-object v1
 
@@ -3327,7 +3327,7 @@
     if-ne v1, v2, :cond_24
 
     .line 1091
-    iget-object v1, v0, Lorg/telegram/ui/ActionIntroActivity;->bannerSlide:Lcom/smedialink/model/wallet/home/BannerSlide;
+    iget-object v1, v0, Lorg/telegram/ui/ActionIntroActivity;->bannerSlide:Lcom/iMe/model/wallet/home/BannerSlide;
 
     if-eqz v1, :cond_24
 
@@ -3341,9 +3341,9 @@
     .line 1093
     iget-object v1, v0, Lorg/telegram/ui/ActionIntroActivity;->imageView:Lorg/telegram/ui/Components/RLottieImageView;
 
-    iget-object v2, v0, Lorg/telegram/ui/ActionIntroActivity;->bannerSlide:Lcom/smedialink/model/wallet/home/BannerSlide;
+    iget-object v2, v0, Lorg/telegram/ui/ActionIntroActivity;->bannerSlide:Lcom/iMe/model/wallet/home/BannerSlide;
 
-    invoke-virtual {v2}, Lcom/smedialink/model/wallet/home/BannerSlide;->getAnimatedIcon()I
+    invoke-virtual {v2}, Lcom/iMe/model/wallet/home/BannerSlide;->getAnimatedIcon()I
 
     move-result v2
 
@@ -3357,9 +3357,9 @@
     .line 1095
     iget-object v1, v0, Lorg/telegram/ui/ActionIntroActivity;->titleTextView:Landroid/widget/TextView;
 
-    iget-object v2, v0, Lorg/telegram/ui/ActionIntroActivity;->bannerSlide:Lcom/smedialink/model/wallet/home/BannerSlide;
+    iget-object v2, v0, Lorg/telegram/ui/ActionIntroActivity;->bannerSlide:Lcom/iMe/model/wallet/home/BannerSlide;
 
-    invoke-virtual {v2}, Lcom/smedialink/model/wallet/home/BannerSlide;->getTitle()I
+    invoke-virtual {v2}, Lcom/iMe/model/wallet/home/BannerSlide;->getTitle()I
 
     move-result v2
 
@@ -3372,9 +3372,9 @@
     .line 1096
     iget-object v1, v0, Lorg/telegram/ui/ActionIntroActivity;->descriptionText:Landroid/widget/TextView;
 
-    iget-object v2, v0, Lorg/telegram/ui/ActionIntroActivity;->bannerSlide:Lcom/smedialink/model/wallet/home/BannerSlide;
+    iget-object v2, v0, Lorg/telegram/ui/ActionIntroActivity;->bannerSlide:Lcom/iMe/model/wallet/home/BannerSlide;
 
-    invoke-virtual {v2}, Lcom/smedialink/model/wallet/home/BannerSlide;->getLongDescription()I
+    invoke-virtual {v2}, Lcom/iMe/model/wallet/home/BannerSlide;->getLongDescription()I
 
     move-result v2
 
@@ -3387,7 +3387,7 @@
     .line 1097
     iget-object v1, v0, Lorg/telegram/ui/ActionIntroActivity;->buttonTextView:Landroid/widget/TextView;
 
-    iget-object v2, v0, Lorg/telegram/ui/ActionIntroActivity;->bannerSlide:Lcom/smedialink/model/wallet/home/BannerSlide;
+    iget-object v2, v0, Lorg/telegram/ui/ActionIntroActivity;->bannerSlide:Lcom/iMe/model/wallet/home/BannerSlide;
 
     iget-object v3, v0, Lorg/telegram/ui/ActionIntroActivity;->cryptoAccessManager:Lkotlin/Lazy;
 
@@ -3395,9 +3395,9 @@
 
     move-result-object v3
 
-    check-cast v3, Lcom/smedialink/storage/domain/manager/crypto/CryptoAccessManager;
+    check-cast v3, Lcom/iMe/storage/domain/manager/crypto/CryptoAccessManager;
 
-    invoke-virtual {v2, v3}, Lcom/smedialink/model/wallet/home/BannerSlide;->getActionButtonText(Lcom/smedialink/storage/domain/manager/crypto/CryptoAccessManager;)I
+    invoke-virtual {v2, v3}, Lcom/iMe/model/wallet/home/BannerSlide;->getActionButtonText(Lcom/iMe/storage/domain/manager/crypto/CryptoAccessManager;)I
 
     move-result v2
 
@@ -4752,9 +4752,9 @@
 
     .line 1277
     :cond_1
-    new-instance p1, Lorg/telegram/ui/ActionIntroActivity$$ExternalSyntheticLambda8;
+    new-instance p1, Lorg/telegram/ui/ActionIntroActivity$$ExternalSyntheticLambda11;
 
-    invoke-direct {p1, p0}, Lorg/telegram/ui/ActionIntroActivity$$ExternalSyntheticLambda8;-><init>(Lorg/telegram/ui/ActionIntroActivity;)V
+    invoke-direct {p1, p0}, Lorg/telegram/ui/ActionIntroActivity$$ExternalSyntheticLambda11;-><init>(Lorg/telegram/ui/ActionIntroActivity;)V
 
     invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->runOnUIThread(Ljava/lang/Runnable;)V
 
@@ -4999,7 +4999,7 @@
 
     move-result-object v0
 
-    invoke-static {v0}, Lcom/smedialink/utils/extentions/common/ContextExtKt;->toast(Ljava/lang/CharSequence;)V
+    invoke-static {v0}, Lcom/iMe/utils/extentions/common/ContextExtKt;->toast(Ljava/lang/CharSequence;)V
 
     return-void
 .end method

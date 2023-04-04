@@ -260,7 +260,7 @@
 
 .field private lockShadowDrawable:Landroid/graphics/drawable/Drawable;
 
-.field private mediaEditManager:Lcom/smedialink/manager/common/MediaEditManager;
+.field private mediaEditManager:Lcom/iMe/manager/common/MediaEditManager;
 
 .field private mediaMessageButtonsDelegate:Landroid/view/View$AccessibilityDelegate;
 
@@ -480,7 +480,7 @@
 
 .field private smartBotsButton:Landroid/widget/ImageView;
 
-.field private smartBotsView:Lcom/smedialink/ui/smartpanel/SmartBotsView;
+.field private smartBotsView:Lcom/iMe/ui/smartpanel/SmartBotsView;
 
 .field private smartBotsViewVisible:Z
 
@@ -796,14 +796,6 @@
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$K1sGt9UGNgTN4O8y_RqQKJLfO9M(Lorg/telegram/ui/Components/ChatActivityEnterView;Ljava/lang/String;)V
-    .locals 0
-
-    invoke-direct {p0, p1}, Lorg/telegram/ui/Components/ChatActivityEnterView;->lambda$openTranslateDialog$2(Ljava/lang/String;)V
-
-    return-void
-.end method
-
 .method public static synthetic $r8$lambda$KGjTNYmtQ5SkKSItftahu1Ih2X4(Lorg/telegram/ui/Components/ChatActivityEnterView;)V
     .locals 0
 
@@ -982,6 +974,14 @@
     .locals 0
 
     invoke-direct {p0}, Lorg/telegram/ui/Components/ChatActivityEnterView;->lambda$createSenderSelectView$28()V
+
+    return-void
+.end method
+
+.method public static synthetic $r8$lambda$b8nThE-6kGfs9_SQDdKOr95K3Fw(Lorg/telegram/ui/Components/ChatActivityEnterView;Ljava/lang/String;)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Lorg/telegram/ui/Components/ChatActivityEnterView;->lambda$openTranslateDialog$2(Ljava/lang/String;)V
 
     return-void
 .end method
@@ -1206,9 +1206,9 @@
     invoke-direct {v0, v1, v6}, Lorg/telegram/ui/Components/BlurredFrameLayout;-><init>(Landroid/content/Context;Lorg/telegram/ui/Components/SizeNotifierFrameLayout;)V
 
     .line 210
-    new-instance v6, Lorg/telegram/ui/Components/ChatActivityEnterView$$ExternalSyntheticLambda44;
+    new-instance v6, Lorg/telegram/ui/Components/ChatActivityEnterView$$ExternalSyntheticLambda45;
 
-    invoke-direct {v6, v0}, Lorg/telegram/ui/Components/ChatActivityEnterView$$ExternalSyntheticLambda44;-><init>(Lorg/telegram/ui/Components/ChatActivityEnterView;)V
+    invoke-direct {v6, v0}, Lorg/telegram/ui/Components/ChatActivityEnterView$$ExternalSyntheticLambda45;-><init>(Lorg/telegram/ui/Components/ChatActivityEnterView;)V
 
     iput-object v6, v0, Lorg/telegram/ui/Components/ChatActivityEnterView;->updateCombineMessagesRunnable:Ljava/lang/Runnable;
 
@@ -3834,11 +3834,11 @@
     return p0
 .end method
 
-.method static synthetic access$16000(Lorg/telegram/ui/Components/ChatActivityEnterView;)Lcom/smedialink/ui/smartpanel/SmartBotsView;
+.method static synthetic access$16000(Lorg/telegram/ui/Components/ChatActivityEnterView;)Lcom/iMe/ui/smartpanel/SmartBotsView;
     .locals 0
 
     .line 188
-    iget-object p0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView;->smartBotsView:Lcom/smedialink/ui/smartpanel/SmartBotsView;
+    iget-object p0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView;->smartBotsView:Lcom/iMe/ui/smartpanel/SmartBotsView;
 
     return-object p0
 .end method
@@ -5424,9 +5424,9 @@
 
     move-result-object p2
 
-    new-instance p4, Lorg/telegram/ui/Components/ChatActivityEnterView$$ExternalSyntheticLambda43;
+    new-instance p4, Lorg/telegram/ui/Components/ChatActivityEnterView$$ExternalSyntheticLambda44;
 
-    invoke-direct {p4, p3}, Lorg/telegram/ui/Components/ChatActivityEnterView$$ExternalSyntheticLambda43;-><init>(Lorg/telegram/ui/ActionBar/BaseFragment;)V
+    invoke-direct {p4, p3}, Lorg/telegram/ui/Components/ChatActivityEnterView$$ExternalSyntheticLambda44;-><init>(Lorg/telegram/ui/ActionBar/BaseFragment;)V
 
     .line 5986
     invoke-virtual {p0, p5, p1, p2, p4}, Lorg/telegram/ui/Components/BulletinFactory;->createEmojiBulletin(Lorg/telegram/tgnet/TLRPC$Document;Ljava/lang/CharSequence;Ljava/lang/CharSequence;Ljava/lang/Runnable;)Lorg/telegram/ui/Components/Bulletin;
@@ -10300,9 +10300,9 @@
     .line 4146
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView;->botWebViewMenuContainer:Lorg/telegram/ui/Components/BotWebViewMenuContainer;
 
-    new-instance v1, Lorg/telegram/ui/Components/ChatActivityEnterView$$ExternalSyntheticLambda55;
+    new-instance v1, Lorg/telegram/ui/Components/ChatActivityEnterView$$ExternalSyntheticLambda56;
 
-    invoke-direct {v1, p0}, Lorg/telegram/ui/Components/ChatActivityEnterView$$ExternalSyntheticLambda55;-><init>(Lorg/telegram/ui/Components/ChatActivityEnterView;)V
+    invoke-direct {v1, p0}, Lorg/telegram/ui/Components/ChatActivityEnterView$$ExternalSyntheticLambda56;-><init>(Lorg/telegram/ui/Components/ChatActivityEnterView;)V
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/BotWebViewMenuContainer;->setOnDismissGlobalListener(Ljava/lang/Runnable;)V
 
@@ -12393,7 +12393,7 @@
     .locals 5
 
     .line 463
-    iget-object v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView;->smartBotsView:Lcom/smedialink/ui/smartpanel/SmartBotsView;
+    iget-object v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView;->smartBotsView:Lcom/iMe/ui/smartpanel/SmartBotsView;
 
     if-eqz v0, :cond_0
 
@@ -12401,7 +12401,7 @@
 
     .line 466
     :cond_0
-    new-instance v0, Lcom/smedialink/ui/smartpanel/SmartBotsView;
+    new-instance v0, Lcom/iMe/ui/smartpanel/SmartBotsView;
 
     iget-object v1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView;->parentActivity:Landroid/app/Activity;
 
@@ -12409,9 +12409,9 @@
 
     iget-wide v3, p0, Lorg/telegram/ui/Components/ChatActivityEnterView;->dialog_id:J
 
-    invoke-direct {v0, v1, v2, v3, v4}, Lcom/smedialink/ui/smartpanel/SmartBotsView;-><init>(Landroid/content/Context;IJ)V
+    invoke-direct {v0, v1, v2, v3, v4}, Lcom/iMe/ui/smartpanel/SmartBotsView;-><init>(Landroid/content/Context;IJ)V
 
-    iput-object v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView;->smartBotsView:Lcom/smedialink/ui/smartpanel/SmartBotsView;
+    iput-object v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView;->smartBotsView:Lcom/iMe/ui/smartpanel/SmartBotsView;
 
     const/16 v1, 0x8
 
@@ -12419,18 +12419,18 @@
     invoke-virtual {v0, v1}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
     .line 468
-    iget-object v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView;->smartBotsView:Lcom/smedialink/ui/smartpanel/SmartBotsView;
+    iget-object v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView;->smartBotsView:Lcom/iMe/ui/smartpanel/SmartBotsView;
 
     new-instance v1, Lorg/telegram/ui/Components/ChatActivityEnterView$2;
 
     invoke-direct {v1, p0}, Lorg/telegram/ui/Components/ChatActivityEnterView$2;-><init>(Lorg/telegram/ui/Components/ChatActivityEnterView;)V
 
-    invoke-virtual {v0, v1}, Lcom/smedialink/ui/smartpanel/SmartBotsView;->setListener(Lcom/smedialink/ui/smartpanel/SmartBotsView$Listener;)V
+    invoke-virtual {v0, v1}, Lcom/iMe/ui/smartpanel/SmartBotsView;->setListener(Lcom/iMe/ui/smartpanel/SmartBotsView$Listener;)V
 
     .line 533
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView;->sizeNotifierLayout:Lorg/telegram/ui/Components/SizeNotifierFrameLayout;
 
-    iget-object v1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView;->smartBotsView:Lcom/smedialink/ui/smartpanel/SmartBotsView;
+    iget-object v1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView;->smartBotsView:Lcom/iMe/ui/smartpanel/SmartBotsView;
 
     invoke-virtual {v0}, Landroid/widget/FrameLayout;->getChildCount()I
 
@@ -13838,9 +13838,9 @@
 
     invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    new-instance v1, Lorg/telegram/ui/Components/ChatActivityEnterView$$ExternalSyntheticLambda42;
+    new-instance v1, Lorg/telegram/ui/Components/ChatActivityEnterView$$ExternalSyntheticLambda43;
 
-    invoke-direct {v1, p1}, Lorg/telegram/ui/Components/ChatActivityEnterView$$ExternalSyntheticLambda42;-><init>(Landroid/view/View;)V
+    invoke-direct {v1, p1}, Lorg/telegram/ui/Components/ChatActivityEnterView$$ExternalSyntheticLambda43;-><init>(Landroid/view/View;)V
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/BotWebViewMenuContainer;->dismiss(Ljava/lang/Runnable;)V
 
@@ -14009,9 +14009,9 @@
     .line 3614
     :cond_1
     :goto_0
-    new-instance p1, Lorg/telegram/ui/Components/ChatActivityEnterView$$ExternalSyntheticLambda53;
+    new-instance p1, Lorg/telegram/ui/Components/ChatActivityEnterView$$ExternalSyntheticLambda54;
 
-    invoke-direct {p1, p0}, Lorg/telegram/ui/Components/ChatActivityEnterView$$ExternalSyntheticLambda53;-><init>(Lorg/telegram/ui/Components/ChatActivityEnterView;)V
+    invoke-direct {p1, p0}, Lorg/telegram/ui/Components/ChatActivityEnterView$$ExternalSyntheticLambda54;-><init>(Lorg/telegram/ui/Components/ChatActivityEnterView;)V
 
     const-wide/16 v0, 0x113
 
@@ -15689,9 +15689,9 @@
 
     .line 3370
     :cond_6
-    new-instance p2, Lorg/telegram/ui/Components/ChatActivityEnterView$$ExternalSyntheticLambda63;
+    new-instance p2, Lorg/telegram/ui/Components/ChatActivityEnterView$$ExternalSyntheticLambda64;
 
-    invoke-direct {p2, p0, v1, p1, p4}, Lorg/telegram/ui/Components/ChatActivityEnterView$$ExternalSyntheticLambda63;-><init>(Lorg/telegram/ui/Components/ChatActivityEnterView;Lorg/telegram/ui/Components/SimpleAvatarView;[ILorg/telegram/ui/Components/SenderSelectPopup$SenderView;)V
+    invoke-direct {p2, p0, v1, p1, p4}, Lorg/telegram/ui/Components/ChatActivityEnterView$$ExternalSyntheticLambda64;-><init>(Lorg/telegram/ui/Components/ChatActivityEnterView;Lorg/telegram/ui/Components/SimpleAvatarView;[ILorg/telegram/ui/Components/SenderSelectPopup$SenderView;)V
 
     if-eqz v0, :cond_7
 
@@ -15724,9 +15724,9 @@
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/ui/Components/ChatActivityEnterView;->hideBotCommands()V
 
     .line 3293
-    new-instance v0, Lorg/telegram/ui/Components/ChatActivityEnterView$$ExternalSyntheticLambda45;
+    new-instance v0, Lorg/telegram/ui/Components/ChatActivityEnterView$$ExternalSyntheticLambda46;
 
-    invoke-direct {v0, v9}, Lorg/telegram/ui/Components/ChatActivityEnterView$$ExternalSyntheticLambda45;-><init>(Lorg/telegram/ui/Components/ChatActivityEnterView;)V
+    invoke-direct {v0, v9}, Lorg/telegram/ui/Components/ChatActivityEnterView$$ExternalSyntheticLambda46;-><init>(Lorg/telegram/ui/Components/ChatActivityEnterView;)V
 
     const-wide/16 v1, 0x96
 
@@ -15749,9 +15749,9 @@
     if-eqz v0, :cond_1
 
     .line 3298
-    new-instance v0, Lorg/telegram/ui/Components/ChatActivityEnterView$$ExternalSyntheticLambda46;
+    new-instance v0, Lorg/telegram/ui/Components/ChatActivityEnterView$$ExternalSyntheticLambda47;
 
-    invoke-direct {v0, v9}, Lorg/telegram/ui/Components/ChatActivityEnterView$$ExternalSyntheticLambda46;-><init>(Lorg/telegram/ui/Components/ChatActivityEnterView;)V
+    invoke-direct {v0, v9}, Lorg/telegram/ui/Components/ChatActivityEnterView$$ExternalSyntheticLambda47;-><init>(Lorg/telegram/ui/Components/ChatActivityEnterView;)V
 
     iput-object v0, v9, Lorg/telegram/ui/Components/ChatActivityEnterView;->onEmojiSearchClosed:Ljava/lang/Runnable;
 
@@ -15823,9 +15823,9 @@
     if-ge v0, v1, :cond_4
 
     .line 3313
-    new-instance v0, Lorg/telegram/ui/Components/ChatActivityEnterView$$ExternalSyntheticLambda54;
+    new-instance v0, Lorg/telegram/ui/Components/ChatActivityEnterView$$ExternalSyntheticLambda55;
 
-    invoke-direct {v0, v9}, Lorg/telegram/ui/Components/ChatActivityEnterView$$ExternalSyntheticLambda54;-><init>(Lorg/telegram/ui/Components/ChatActivityEnterView;)V
+    invoke-direct {v0, v9}, Lorg/telegram/ui/Components/ChatActivityEnterView$$ExternalSyntheticLambda55;-><init>(Lorg/telegram/ui/Components/ChatActivityEnterView;)V
 
     iput-object v0, v9, Lorg/telegram/ui/Components/ChatActivityEnterView;->onKeyboardClosed:Ljava/lang/Runnable;
 
@@ -16744,7 +16744,7 @@
 
     sget-object v10, Lorg/telegram/ui/Components/ChatActivityEnterView$$ExternalSyntheticLambda72;->INSTANCE:Lorg/telegram/ui/Components/ChatActivityEnterView$$ExternalSyntheticLambda72;
 
-    sget-object v11, Lorg/telegram/ui/Components/ChatActivityEnterView$$ExternalSyntheticLambda65;->INSTANCE:Lorg/telegram/ui/Components/ChatActivityEnterView$$ExternalSyntheticLambda65;
+    sget-object v11, Lorg/telegram/ui/Components/ChatActivityEnterView$$ExternalSyntheticLambda66;->INSTANCE:Lorg/telegram/ui/Components/ChatActivityEnterView$$ExternalSyntheticLambda66;
 
     iget-object v13, v0, Lorg/telegram/ui/Components/ChatActivityEnterView;->parentFragment:Lorg/telegram/ui/ChatActivity;
 
@@ -16792,9 +16792,9 @@
     iput-boolean v5, v0, Lorg/telegram/ui/Components/ChatActivityEnterView;->messageTransitionIsRunning:Z
 
     .line 2509
-    new-instance v1, Lorg/telegram/ui/Components/ChatActivityEnterView$$ExternalSyntheticLambda48;
+    new-instance v1, Lorg/telegram/ui/Components/ChatActivityEnterView$$ExternalSyntheticLambda49;
 
-    invoke-direct {v1, p0}, Lorg/telegram/ui/Components/ChatActivityEnterView$$ExternalSyntheticLambda48;-><init>(Lorg/telegram/ui/Components/ChatActivityEnterView;)V
+    invoke-direct {v1, p0}, Lorg/telegram/ui/Components/ChatActivityEnterView$$ExternalSyntheticLambda49;-><init>(Lorg/telegram/ui/Components/ChatActivityEnterView;)V
 
     iput-object v1, v0, Lorg/telegram/ui/Components/ChatActivityEnterView;->moveToSendStateRunnable:Ljava/lang/Runnable;
 
@@ -17498,7 +17498,7 @@
 
     sget-object v10, Lorg/telegram/ui/Components/ChatActivityEnterView$$ExternalSyntheticLambda71;->INSTANCE:Lorg/telegram/ui/Components/ChatActivityEnterView$$ExternalSyntheticLambda71;
 
-    sget-object v11, Lorg/telegram/ui/Components/ChatActivityEnterView$$ExternalSyntheticLambda64;->INSTANCE:Lorg/telegram/ui/Components/ChatActivityEnterView$$ExternalSyntheticLambda64;
+    sget-object v11, Lorg/telegram/ui/Components/ChatActivityEnterView$$ExternalSyntheticLambda65;->INSTANCE:Lorg/telegram/ui/Components/ChatActivityEnterView$$ExternalSyntheticLambda65;
 
     iget-object v13, v0, Lorg/telegram/ui/Components/ChatActivityEnterView;->parentFragment:Lorg/telegram/ui/ChatActivity;
 
@@ -17546,9 +17546,9 @@
     iput-boolean v5, v0, Lorg/telegram/ui/Components/ChatActivityEnterView;->messageTransitionIsRunning:Z
 
     .line 2598
-    new-instance v1, Lorg/telegram/ui/Components/ChatActivityEnterView$$ExternalSyntheticLambda58;
+    new-instance v1, Lorg/telegram/ui/Components/ChatActivityEnterView$$ExternalSyntheticLambda59;
 
-    invoke-direct {v1, p0}, Lorg/telegram/ui/Components/ChatActivityEnterView$$ExternalSyntheticLambda58;-><init>(Lorg/telegram/ui/Components/ChatActivityEnterView;)V
+    invoke-direct {v1, p0}, Lorg/telegram/ui/Components/ChatActivityEnterView$$ExternalSyntheticLambda59;-><init>(Lorg/telegram/ui/Components/ChatActivityEnterView;)V
 
     iput-object v1, v0, Lorg/telegram/ui/Components/ChatActivityEnterView;->moveToSendStateRunnable:Ljava/lang/Runnable;
 
@@ -17873,9 +17873,9 @@
     .line 2345
     invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    new-instance v1, Lorg/telegram/ui/Components/ChatActivityEnterView$$ExternalSyntheticLambda42;
+    new-instance v1, Lorg/telegram/ui/Components/ChatActivityEnterView$$ExternalSyntheticLambda43;
 
-    invoke-direct {v1, p1}, Lorg/telegram/ui/Components/ChatActivityEnterView$$ExternalSyntheticLambda42;-><init>(Landroid/view/View;)V
+    invoke-direct {v1, p1}, Lorg/telegram/ui/Components/ChatActivityEnterView$$ExternalSyntheticLambda43;-><init>(Landroid/view/View;)V
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/BotWebViewMenuContainer;->dismiss(Ljava/lang/Runnable;)V
 
@@ -17939,9 +17939,9 @@
     iput-boolean v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView;->waitingForKeyboardOpenAfterAnimation:Z
 
     .line 2366
-    new-instance p1, Lorg/telegram/ui/Components/ChatActivityEnterView$$ExternalSyntheticLambda57;
+    new-instance p1, Lorg/telegram/ui/Components/ChatActivityEnterView$$ExternalSyntheticLambda58;
 
-    invoke-direct {p1, p0}, Lorg/telegram/ui/Components/ChatActivityEnterView$$ExternalSyntheticLambda57;-><init>(Lorg/telegram/ui/Components/ChatActivityEnterView;)V
+    invoke-direct {p1, p0}, Lorg/telegram/ui/Components/ChatActivityEnterView$$ExternalSyntheticLambda58;-><init>(Lorg/telegram/ui/Components/ChatActivityEnterView;)V
 
     const-wide/16 v0, 0xc8
 
@@ -19938,7 +19938,7 @@
 
     iget v3, v0, Lorg/telegram/ui/Components/ChatActivityEnterView;->currentAccount:I
 
-    invoke-static {v3}, Lorg/fork/controller/ToolsController;->getInstance(I)Lorg/fork/controller/ToolsController;
+    invoke-static {v3}, Lcom/iMe/fork/controller/ToolsController;->getInstance(I)Lcom/iMe/fork/controller/ToolsController;
 
     move-result-object v3
 
@@ -19948,7 +19948,7 @@
 
     move-result-wide v4
 
-    invoke-virtual {v3, v4, v5}, Lorg/fork/controller/ToolsController;->isSilentSendingEnabledForDialog(J)Z
+    invoke-virtual {v3, v4, v5}, Lcom/iMe/fork/controller/ToolsController;->isSilentSendingEnabledForDialog(J)Z
 
     move-result v3
 
@@ -20591,11 +20591,11 @@
 
     move-result-object v1
 
-    new-instance v2, Lorg/telegram/ui/Components/ChatActivityEnterView$$ExternalSyntheticLambda66;
+    new-instance v2, Lorg/telegram/ui/Components/ChatActivityEnterView$$ExternalSyntheticLambda42;
 
-    invoke-direct {v2, p0}, Lorg/telegram/ui/Components/ChatActivityEnterView$$ExternalSyntheticLambda66;-><init>(Lorg/telegram/ui/Components/ChatActivityEnterView;)V
+    invoke-direct {v2, p0}, Lorg/telegram/ui/Components/ChatActivityEnterView$$ExternalSyntheticLambda42;-><init>(Lorg/telegram/ui/Components/ChatActivityEnterView;)V
 
-    invoke-virtual {v0, v1, v2}, Lorg/telegram/ui/ChatActivity;->createTranslateOutgoingDialog(Ljava/lang/String;Lorg/fork/utils/Callbacks$Callback1;)Lorg/fork/ui/dialog/TranslateAlert;
+    invoke-virtual {v0, v1, v2}, Lorg/telegram/ui/ChatActivity;->createTranslateOutgoingDialog(Ljava/lang/String;Lcom/iMe/fork/utils/Callbacks$Callback1;)Lcom/iMe/fork/ui/dialog/TranslateAlert;
 
     move-result-object v1
 
@@ -20611,9 +20611,9 @@
     invoke-direct {p0}, Lorg/telegram/ui/Components/ChatActivityEnterView;->createBotWebViewMenuContainer()V
 
     .line 3680
-    new-instance v0, Lorg/telegram/ui/Components/ChatActivityEnterView$$ExternalSyntheticLambda60;
+    new-instance v0, Lorg/telegram/ui/Components/ChatActivityEnterView$$ExternalSyntheticLambda61;
 
-    invoke-direct {v0, p0}, Lorg/telegram/ui/Components/ChatActivityEnterView$$ExternalSyntheticLambda60;-><init>(Lorg/telegram/ui/Components/ChatActivityEnterView;)V
+    invoke-direct {v0, p0}, Lorg/telegram/ui/Components/ChatActivityEnterView$$ExternalSyntheticLambda61;-><init>(Lorg/telegram/ui/Components/ChatActivityEnterView;)V
 
     .line 3696
     iget v1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView;->currentAccount:I
@@ -21386,7 +21386,7 @@
     iput-boolean v1, v6, Lorg/telegram/ui/Components/ChatActivityEnterView;->messageTransitionIsRunning:Z
 
     .line 5891
-    new-instance v7, Lorg/telegram/ui/Components/ChatActivityEnterView$$ExternalSyntheticLambda62;
+    new-instance v7, Lorg/telegram/ui/Components/ChatActivityEnterView$$ExternalSyntheticLambda63;
 
     move-object v0, v7
 
@@ -21398,7 +21398,7 @@
 
     move-object/from16 v5, p3
 
-    invoke-direct/range {v0 .. v5}, Lorg/telegram/ui/Components/ChatActivityEnterView$$ExternalSyntheticLambda62;-><init>(Lorg/telegram/ui/Components/ChatActivityEnterView;Ljava/lang/CharSequence;ZILjava/lang/String;)V
+    invoke-direct/range {v0 .. v5}, Lorg/telegram/ui/Components/ChatActivityEnterView$$ExternalSyntheticLambda63;-><init>(Lorg/telegram/ui/Components/ChatActivityEnterView;Ljava/lang/CharSequence;ZILjava/lang/String;)V
 
     iput-object v7, v6, Lorg/telegram/ui/Components/ChatActivityEnterView;->moveToSendStateRunnable:Ljava/lang/Runnable;
 
@@ -22117,9 +22117,9 @@
 
     iget v1, v1, Lorg/telegram/messenger/MessagesController;->captionLengthLimitPremium:I
 
-    new-instance v2, Lorg/telegram/ui/Components/ChatActivityEnterView$$ExternalSyntheticLambda52;
+    new-instance v2, Lorg/telegram/ui/Components/ChatActivityEnterView$$ExternalSyntheticLambda53;
 
-    invoke-direct {v2, p0}, Lorg/telegram/ui/Components/ChatActivityEnterView$$ExternalSyntheticLambda52;-><init>(Lorg/telegram/ui/Components/ChatActivityEnterView;)V
+    invoke-direct {v2, p0}, Lorg/telegram/ui/Components/ChatActivityEnterView$$ExternalSyntheticLambda53;-><init>(Lorg/telegram/ui/Components/ChatActivityEnterView;)V
 
     invoke-virtual {v0, v1, v2}, Lorg/telegram/ui/Components/BulletinFactory;->createCaptionLimitBulletin(ILjava/lang/Runnable;)Lorg/telegram/ui/Components/Bulletin;
 
@@ -22141,9 +22141,9 @@
 
     move-result-object v0
 
-    sget-object v1, Lorg/fork/enums/VideoVoiceCamera;->FRONT:Lorg/fork/enums/VideoVoiceCamera;
+    sget-object v1, Lcom/iMe/fork/enums/VideoVoiceCamera;->FRONT:Lcom/iMe/fork/enums/VideoVoiceCamera;
 
-    invoke-virtual {v0, v1}, Lorg/telegram/messenger/camera/CameraController;->hasCamera(Lorg/fork/enums/VideoVoiceCamera;)Z
+    invoke-virtual {v0, v1}, Lorg/telegram/messenger/camera/CameraController;->hasCamera(Lcom/iMe/fork/enums/VideoVoiceCamera;)Z
 
     move-result v0
 
@@ -22152,9 +22152,9 @@
 
     move-result-object v1
 
-    sget-object v2, Lorg/fork/enums/VideoVoiceCamera;->BACK:Lorg/fork/enums/VideoVoiceCamera;
+    sget-object v2, Lcom/iMe/fork/enums/VideoVoiceCamera;->BACK:Lcom/iMe/fork/enums/VideoVoiceCamera;
 
-    invoke-virtual {v1, v2}, Lorg/telegram/messenger/camera/CameraController;->hasCamera(Lorg/fork/enums/VideoVoiceCamera;)Z
+    invoke-virtual {v1, v2}, Lorg/telegram/messenger/camera/CameraController;->hasCamera(Lcom/iMe/fork/enums/VideoVoiceCamera;)Z
 
     move-result v1
 
@@ -22576,7 +22576,7 @@
 
     if-eqz v4, :cond_3
 
-    iget-object v4, v0, Lorg/telegram/ui/Components/ChatActivityEnterView;->smartBotsView:Lcom/smedialink/ui/smartpanel/SmartBotsView;
+    iget-object v4, v0, Lorg/telegram/ui/Components/ChatActivityEnterView;->smartBotsView:Lcom/iMe/ui/smartpanel/SmartBotsView;
 
     invoke-virtual {v4}, Landroid/widget/FrameLayout;->getVisibility()I
 
@@ -22619,12 +22619,12 @@
 
     .line 9449
     :goto_0
-    iget-object v11, v0, Lorg/telegram/ui/Components/ChatActivityEnterView;->smartBotsView:Lcom/smedialink/ui/smartpanel/SmartBotsView;
+    iget-object v11, v0, Lorg/telegram/ui/Components/ChatActivityEnterView;->smartBotsView:Lcom/iMe/ui/smartpanel/SmartBotsView;
 
     invoke-virtual {v11, v13}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
     .line 9450
-    iget-object v11, v0, Lorg/telegram/ui/Components/ChatActivityEnterView;->smartBotsView:Lcom/smedialink/ui/smartpanel/SmartBotsView;
+    iget-object v11, v0, Lorg/telegram/ui/Components/ChatActivityEnterView;->smartBotsView:Lcom/iMe/ui/smartpanel/SmartBotsView;
 
     .line 9451
     iput v3, v0, Lorg/telegram/ui/Components/ChatActivityEnterView;->animatingContentType:I
@@ -22678,7 +22678,7 @@
     iput-boolean v12, v0, Lorg/telegram/ui/Components/ChatActivityEnterView;->emojiViewVisible:Z
 
     .line 9461
-    iget-object v4, v0, Lorg/telegram/ui/Components/ChatActivityEnterView;->smartBotsView:Lcom/smedialink/ui/smartpanel/SmartBotsView;
+    iget-object v4, v0, Lorg/telegram/ui/Components/ChatActivityEnterView;->smartBotsView:Lcom/iMe/ui/smartpanel/SmartBotsView;
 
     if-eqz v4, :cond_8
 
@@ -22689,7 +22689,7 @@
     if-eq v4, v11, :cond_8
 
     .line 9462
-    iget-object v4, v0, Lorg/telegram/ui/Components/ChatActivityEnterView;->smartBotsView:Lcom/smedialink/ui/smartpanel/SmartBotsView;
+    iget-object v4, v0, Lorg/telegram/ui/Components/ChatActivityEnterView;->smartBotsView:Lcom/iMe/ui/smartpanel/SmartBotsView;
 
     invoke-virtual {v4, v11}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
@@ -22697,7 +22697,7 @@
     iput-boolean v13, v0, Lorg/telegram/ui/Components/ChatActivityEnterView;->smartBotsViewVisible:Z
 
     .line 9465
-    iget-object v4, v0, Lorg/telegram/ui/Components/ChatActivityEnterView;->smartBotsView:Lcom/smedialink/ui/smartpanel/SmartBotsView;
+    iget-object v4, v0, Lorg/telegram/ui/Components/ChatActivityEnterView;->smartBotsView:Lcom/iMe/ui/smartpanel/SmartBotsView;
 
     invoke-virtual {v4}, Landroid/widget/FrameLayout;->getMeasuredHeight()I
 
@@ -23494,7 +23494,7 @@
 
     .line 9648
     :cond_22
-    iget-object v2, v0, Lorg/telegram/ui/Components/ChatActivityEnterView;->smartBotsView:Lcom/smedialink/ui/smartpanel/SmartBotsView;
+    iget-object v2, v0, Lorg/telegram/ui/Components/ChatActivityEnterView;->smartBotsView:Lcom/iMe/ui/smartpanel/SmartBotsView;
 
     if-eqz v2, :cond_25
 
@@ -23526,7 +23526,7 @@
     new-array v3, v12, [Landroid/animation/Animator;
 
     .line 9654
-    iget-object v4, v0, Lorg/telegram/ui/Components/ChatActivityEnterView;->smartBotsView:Lcom/smedialink/ui/smartpanel/SmartBotsView;
+    iget-object v4, v0, Lorg/telegram/ui/Components/ChatActivityEnterView;->smartBotsView:Lcom/iMe/ui/smartpanel/SmartBotsView;
 
     sget-object v5, Landroid/view/View;->TRANSLATION_Y:Landroid/util/Property;
 
@@ -23826,9 +23826,9 @@
 
     .line 4949
     :cond_5
-    new-instance p1, Lorg/telegram/ui/Components/ChatActivityEnterView$$ExternalSyntheticLambda59;
+    new-instance p1, Lorg/telegram/ui/Components/ChatActivityEnterView$$ExternalSyntheticLambda60;
 
-    invoke-direct {p1, p0}, Lorg/telegram/ui/Components/ChatActivityEnterView$$ExternalSyntheticLambda59;-><init>(Lorg/telegram/ui/Components/ChatActivityEnterView;)V
+    invoke-direct {p1, p0}, Lorg/telegram/ui/Components/ChatActivityEnterView$$ExternalSyntheticLambda60;-><init>(Lorg/telegram/ui/Components/ChatActivityEnterView;)V
 
     iput-object p1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView;->showTopViewRunnable:Ljava/lang/Runnable;
 
@@ -23855,9 +23855,9 @@
     if-eqz p3, :cond_7
 
     .line 4959
-    new-instance p3, Lorg/telegram/ui/Components/ChatActivityEnterView$$ExternalSyntheticLambda47;
+    new-instance p3, Lorg/telegram/ui/Components/ChatActivityEnterView$$ExternalSyntheticLambda48;
 
-    invoke-direct {p3, p0}, Lorg/telegram/ui/Components/ChatActivityEnterView$$ExternalSyntheticLambda47;-><init>(Lorg/telegram/ui/Components/ChatActivityEnterView;)V
+    invoke-direct {p3, p0}, Lorg/telegram/ui/Components/ChatActivityEnterView$$ExternalSyntheticLambda48;-><init>(Lorg/telegram/ui/Components/ChatActivityEnterView;)V
 
     const-wide/16 v3, 0x12c
 
@@ -25504,9 +25504,9 @@
     invoke-virtual {v0, v2}, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->setLockTranslation(F)I
 
     .line 7008
-    sget-object v0, Lorg/telegram/messenger/SharedConfig;->selectedVideoVoiceCamera:Lorg/fork/enums/VideoVoiceCamera;
+    sget-object v0, Lorg/telegram/messenger/SharedConfig;->selectedVideoVoiceCamera:Lcom/iMe/fork/enums/VideoVoiceCamera;
 
-    sget-object v2, Lorg/fork/enums/VideoVoiceCamera;->ASK:Lorg/fork/enums/VideoVoiceCamera;
+    sget-object v2, Lcom/iMe/fork/enums/VideoVoiceCamera;->ASK:Lcom/iMe/fork/enums/VideoVoiceCamera;
 
     if-eq v0, v2, :cond_c
 
@@ -29228,9 +29228,9 @@
 
     .line 4844
     :cond_5
-    new-instance v0, Lorg/telegram/ui/Components/ChatActivityEnterView$$ExternalSyntheticLambda50;
+    new-instance v0, Lorg/telegram/ui/Components/ChatActivityEnterView$$ExternalSyntheticLambda51;
 
-    invoke-direct {v0, p0}, Lorg/telegram/ui/Components/ChatActivityEnterView$$ExternalSyntheticLambda50;-><init>(Lorg/telegram/ui/Components/ChatActivityEnterView;)V
+    invoke-direct {v0, p0}, Lorg/telegram/ui/Components/ChatActivityEnterView$$ExternalSyntheticLambda51;-><init>(Lorg/telegram/ui/Components/ChatActivityEnterView;)V
 
     iput-object v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView;->updateSlowModeRunnable:Ljava/lang/Runnable;
 
@@ -30247,7 +30247,7 @@
     .line 8628
     iget-object v1, v0, Lorg/telegram/tgnet/TLRPC$KeyboardButton;->url:Ljava/lang/String;
 
-    invoke-static {v1}, Lcom/smedialink/utils/helper/wallet/WalletHelper;->isWalletIntent(Ljava/lang/String;)Z
+    invoke-static {v1}, Lcom/iMe/utils/helper/wallet/WalletHelper;->isWalletIntent(Ljava/lang/String;)Z
 
     move-result v1
 
@@ -30264,7 +30264,7 @@
     :cond_2
     iget-object v1, v0, Lorg/telegram/tgnet/TLRPC$KeyboardButton;->url:Ljava/lang/String;
 
-    invoke-static {v1}, Lcom/smedialink/utils/helper/binancepay/BinancePayHelper;->isProcessBinancePayUrl(Ljava/lang/String;)Z
+    invoke-static {v1}, Lcom/iMe/utils/helper/binancepay/BinancePayHelper;->isProcessBinancePayUrl(Ljava/lang/String;)Z
 
     move-result v1
 
@@ -32345,9 +32345,9 @@
     iput-boolean v1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView;->waitingForKeyboardOpenAfterAnimation:Z
 
     .line 6042
-    new-instance v0, Lorg/telegram/ui/Components/ChatActivityEnterView$$ExternalSyntheticLambda56;
+    new-instance v0, Lorg/telegram/ui/Components/ChatActivityEnterView$$ExternalSyntheticLambda57;
 
-    invoke-direct {v0, p0}, Lorg/telegram/ui/Components/ChatActivityEnterView$$ExternalSyntheticLambda56;-><init>(Lorg/telegram/ui/Components/ChatActivityEnterView;)V
+    invoke-direct {v0, p0}, Lorg/telegram/ui/Components/ChatActivityEnterView$$ExternalSyntheticLambda57;-><init>(Lorg/telegram/ui/Components/ChatActivityEnterView;)V
 
     const-wide/16 v3, 0xc8
 
@@ -32639,12 +32639,12 @@
     .locals 4
 
     .line 321
-    iget-object v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView;->mediaEditManager:Lcom/smedialink/manager/common/MediaEditManager;
+    iget-object v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView;->mediaEditManager:Lcom/iMe/manager/common/MediaEditManager;
 
     if-nez v0, :cond_0
 
     .line 322
-    new-instance v0, Lcom/smedialink/manager/common/MediaEditManager;
+    new-instance v0, Lcom/iMe/manager/common/MediaEditManager;
 
     iget-object v1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView;->parentFragment:Lorg/telegram/ui/ChatActivity;
 
@@ -32652,15 +32652,15 @@
 
     iget-object v3, p0, Lorg/telegram/ui/Components/ChatActivityEnterView;->delegate:Lorg/telegram/ui/Components/ChatActivityEnterView$ChatActivityEnterViewDelegate;
 
-    invoke-direct {v0, v1, v2, v3}, Lcom/smedialink/manager/common/MediaEditManager;-><init>(Lorg/telegram/ui/ActionBar/BaseFragment;ILorg/telegram/ui/Components/ChatActivityEnterView$ChatActivityEnterViewDelegate;)V
+    invoke-direct {v0, v1, v2, v3}, Lcom/iMe/manager/common/MediaEditManager;-><init>(Lorg/telegram/ui/ActionBar/BaseFragment;ILorg/telegram/ui/Components/ChatActivityEnterView$ChatActivityEnterViewDelegate;)V
 
-    iput-object v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView;->mediaEditManager:Lcom/smedialink/manager/common/MediaEditManager;
+    iput-object v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView;->mediaEditManager:Lcom/iMe/manager/common/MediaEditManager;
 
     .line 324
     :cond_0
-    iget-object v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView;->mediaEditManager:Lcom/smedialink/manager/common/MediaEditManager;
+    iget-object v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView;->mediaEditManager:Lcom/iMe/manager/common/MediaEditManager;
 
-    invoke-virtual {v0, p1, p2, p3}, Lcom/smedialink/manager/common/MediaEditManager;->editAnimatedSticker(Lorg/telegram/tgnet/TLRPC$Document;Lorg/telegram/ui/Components/RLottieDrawable;Z)V
+    invoke-virtual {v0, p1, p2, p3}, Lcom/iMe/manager/common/MediaEditManager;->editAnimatedSticker(Lorg/telegram/tgnet/TLRPC$Document;Lorg/telegram/ui/Components/RLottieDrawable;Z)V
 
     return-void
 .end method
@@ -32669,12 +32669,12 @@
     .locals 4
 
     .line 329
-    iget-object v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView;->mediaEditManager:Lcom/smedialink/manager/common/MediaEditManager;
+    iget-object v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView;->mediaEditManager:Lcom/iMe/manager/common/MediaEditManager;
 
     if-nez v0, :cond_0
 
     .line 330
-    new-instance v0, Lcom/smedialink/manager/common/MediaEditManager;
+    new-instance v0, Lcom/iMe/manager/common/MediaEditManager;
 
     iget-object v1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView;->parentFragment:Lorg/telegram/ui/ChatActivity;
 
@@ -32682,15 +32682,15 @@
 
     iget-object v3, p0, Lorg/telegram/ui/Components/ChatActivityEnterView;->delegate:Lorg/telegram/ui/Components/ChatActivityEnterView$ChatActivityEnterViewDelegate;
 
-    invoke-direct {v0, v1, v2, v3}, Lcom/smedialink/manager/common/MediaEditManager;-><init>(Lorg/telegram/ui/ActionBar/BaseFragment;ILorg/telegram/ui/Components/ChatActivityEnterView$ChatActivityEnterViewDelegate;)V
+    invoke-direct {v0, v1, v2, v3}, Lcom/iMe/manager/common/MediaEditManager;-><init>(Lorg/telegram/ui/ActionBar/BaseFragment;ILorg/telegram/ui/Components/ChatActivityEnterView$ChatActivityEnterViewDelegate;)V
 
-    iput-object v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView;->mediaEditManager:Lcom/smedialink/manager/common/MediaEditManager;
+    iput-object v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView;->mediaEditManager:Lcom/iMe/manager/common/MediaEditManager;
 
     .line 332
     :cond_0
-    iget-object v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView;->mediaEditManager:Lcom/smedialink/manager/common/MediaEditManager;
+    iget-object v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView;->mediaEditManager:Lcom/iMe/manager/common/MediaEditManager;
 
-    invoke-virtual {v0, p1, p2}, Lcom/smedialink/manager/common/MediaEditManager;->editMedia(Lorg/telegram/tgnet/TLRPC$Document;Z)V
+    invoke-virtual {v0, p1, p2}, Lcom/iMe/manager/common/MediaEditManager;->editMedia(Lorg/telegram/tgnet/TLRPC$Document;Z)V
 
     return-void
 .end method
@@ -33913,7 +33913,7 @@
     .locals 2
 
     .line 8802
-    iget-object v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView;->smartBotsView:Lcom/smedialink/ui/smartpanel/SmartBotsView;
+    iget-object v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView;->smartBotsView:Lcom/iMe/ui/smartpanel/SmartBotsView;
 
     const/4 v1, 0x1
 
@@ -34298,17 +34298,17 @@
     invoke-virtual {v0, p0, v1}, Lorg/telegram/messenger/NotificationCenter;->removeObserver(Lorg/telegram/messenger/NotificationCenter$NotificationCenterDelegate;I)V
 
     .line 5239
-    iget-object v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView;->mediaEditManager:Lcom/smedialink/manager/common/MediaEditManager;
+    iget-object v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView;->mediaEditManager:Lcom/iMe/manager/common/MediaEditManager;
 
     const/4 v1, 0x0
 
     if-eqz v0, :cond_0
 
     .line 5240
-    invoke-virtual {v0}, Lcom/smedialink/manager/common/MediaEditManager;->finishLoading()V
+    invoke-virtual {v0}, Lcom/iMe/manager/common/MediaEditManager;->finishLoading()V
 
     .line 5241
-    iput-object v1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView;->mediaEditManager:Lcom/smedialink/manager/common/MediaEditManager;
+    iput-object v1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView;->mediaEditManager:Lcom/iMe/manager/common/MediaEditManager;
 
     .line 5244
     :cond_0
@@ -35381,9 +35381,9 @@
 
     .line 5356
     :cond_1
-    new-instance v0, Lorg/telegram/ui/Components/ChatActivityEnterView$$ExternalSyntheticLambda49;
+    new-instance v0, Lorg/telegram/ui/Components/ChatActivityEnterView$$ExternalSyntheticLambda50;
 
-    invoke-direct {v0, p0}, Lorg/telegram/ui/Components/ChatActivityEnterView$$ExternalSyntheticLambda49;-><init>(Lorg/telegram/ui/Components/ChatActivityEnterView;)V
+    invoke-direct {v0, p0}, Lorg/telegram/ui/Components/ChatActivityEnterView$$ExternalSyntheticLambda50;-><init>(Lorg/telegram/ui/Components/ChatActivityEnterView;)V
 
     iput-object v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView;->hideKeyboardRunnable:Ljava/lang/Runnable;
 
@@ -35767,7 +35767,7 @@
     if-ne v3, v4, :cond_7
 
     .line 9959
-    iget-object v3, p0, Lorg/telegram/ui/Components/ChatActivityEnterView;->smartBotsView:Lcom/smedialink/ui/smartpanel/SmartBotsView;
+    iget-object v3, p0, Lorg/telegram/ui/Components/ChatActivityEnterView;->smartBotsView:Lcom/iMe/ui/smartpanel/SmartBotsView;
 
     goto :goto_3
 
@@ -39523,9 +39523,9 @@
     if-nez v0, :cond_1a
 
     .line 7823
-    new-instance v0, Lorg/telegram/ui/Components/ChatActivityEnterView$$ExternalSyntheticLambda61;
+    new-instance v0, Lorg/telegram/ui/Components/ChatActivityEnterView$$ExternalSyntheticLambda62;
 
-    invoke-direct {v0, v1, v7}, Lorg/telegram/ui/Components/ChatActivityEnterView$$ExternalSyntheticLambda61;-><init>(Lorg/telegram/ui/Components/ChatActivityEnterView;Ljava/lang/CharSequence;)V
+    invoke-direct {v0, v1, v7}, Lorg/telegram/ui/Components/ChatActivityEnterView$$ExternalSyntheticLambda62;-><init>(Lorg/telegram/ui/Components/ChatActivityEnterView;Ljava/lang/CharSequence;)V
 
     iput-object v0, v1, Lorg/telegram/ui/Components/ChatActivityEnterView;->setTextFieldRunnable:Ljava/lang/Runnable;
 
@@ -40084,7 +40084,7 @@
     .line 8115
     iget-object v1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView;->messageEditText:Lorg/telegram/ui/Components/EditTextCaption;
 
-    if-eqz v1, :cond_3
+    if-eqz v1, :cond_4
 
     invoke-virtual {v0}, Landroid/view/accessibility/AccessibilityManager;->isTouchExplorationEnabled()Z
 
@@ -40095,12 +40095,12 @@
     goto :goto_0
 
     :cond_0
-    if-eqz p1, :cond_1
+    if-eqz p1, :cond_2
 
     .line 8119
     iget p1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView;->searchingType:I
 
-    if-nez p1, :cond_3
+    if-nez p1, :cond_4
 
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView;->messageEditText:Lorg/telegram/ui/Components/EditTextCaption;
 
@@ -40108,12 +40108,25 @@
 
     move-result p1
 
-    if-nez p1, :cond_3
+    if-nez p1, :cond_4
+
+    iget-object p1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView;->botWebViewMenuContainer:Lorg/telegram/ui/Components/BotWebViewMenuContainer;
+
+    if-eqz p1, :cond_1
+
+    invoke-virtual {p1}, Landroid/widget/FrameLayout;->getVisibility()I
+
+    move-result p1
+
+    const/16 v0, 0x8
+
+    if-ne p1, v0, :cond_4
 
     .line 8120
-    new-instance p1, Lorg/telegram/ui/Components/ChatActivityEnterView$$ExternalSyntheticLambda51;
+    :cond_1
+    new-instance p1, Lorg/telegram/ui/Components/ChatActivityEnterView$$ExternalSyntheticLambda52;
 
-    invoke-direct {p1, p0}, Lorg/telegram/ui/Components/ChatActivityEnterView$$ExternalSyntheticLambda51;-><init>(Lorg/telegram/ui/Components/ChatActivityEnterView;)V
+    invoke-direct {p1, p0}, Lorg/telegram/ui/Components/ChatActivityEnterView$$ExternalSyntheticLambda52;-><init>(Lorg/telegram/ui/Components/ChatActivityEnterView;)V
 
     iput-object p1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView;->focusRunnable:Ljava/lang/Runnable;
 
@@ -40124,32 +40137,32 @@
     goto :goto_0
 
     .line 8144
-    :cond_1
+    :cond_2
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView;->messageEditText:Lorg/telegram/ui/Components/EditTextCaption;
 
-    if-eqz p1, :cond_3
+    if-eqz p1, :cond_4
 
     invoke-virtual {p1}, Landroid/widget/EditText;->isFocused()Z
 
     move-result p1
 
-    if-eqz p1, :cond_3
+    if-eqz p1, :cond_4
 
     iget-boolean p1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView;->keyboardVisible:Z
 
-    if-eqz p1, :cond_2
+    if-eqz p1, :cond_3
 
     iget-boolean p1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView;->isPaused:Z
 
-    if-eqz p1, :cond_3
+    if-eqz p1, :cond_4
 
     .line 8145
-    :cond_2
+    :cond_3
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView;->messageEditText:Lorg/telegram/ui/Components/EditTextCaption;
 
     invoke-virtual {p1}, Landroid/widget/EditText;->clearFocus()V
 
-    :cond_3
+    :cond_4
     :goto_0
     return-void
 .end method
@@ -40244,12 +40257,12 @@
     .locals 4
 
     .line 337
-    iget-object v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView;->mediaEditManager:Lcom/smedialink/manager/common/MediaEditManager;
+    iget-object v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView;->mediaEditManager:Lcom/iMe/manager/common/MediaEditManager;
 
     if-nez v0, :cond_0
 
     .line 338
-    new-instance v0, Lcom/smedialink/manager/common/MediaEditManager;
+    new-instance v0, Lcom/iMe/manager/common/MediaEditManager;
 
     iget-object v1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView;->parentFragment:Lorg/telegram/ui/ChatActivity;
 
@@ -40257,15 +40270,15 @@
 
     const/4 v3, 0x0
 
-    invoke-direct {v0, v1, v2, v3}, Lcom/smedialink/manager/common/MediaEditManager;-><init>(Lorg/telegram/ui/ActionBar/BaseFragment;ILorg/telegram/ui/Components/ChatActivityEnterView$ChatActivityEnterViewDelegate;)V
+    invoke-direct {v0, v1, v2, v3}, Lcom/iMe/manager/common/MediaEditManager;-><init>(Lorg/telegram/ui/ActionBar/BaseFragment;ILorg/telegram/ui/Components/ChatActivityEnterView$ChatActivityEnterViewDelegate;)V
 
-    iput-object v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView;->mediaEditManager:Lcom/smedialink/manager/common/MediaEditManager;
+    iput-object v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView;->mediaEditManager:Lcom/iMe/manager/common/MediaEditManager;
 
     .line 340
     :cond_0
-    iget-object v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView;->mediaEditManager:Lcom/smedialink/manager/common/MediaEditManager;
+    iget-object v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView;->mediaEditManager:Lcom/iMe/manager/common/MediaEditManager;
 
-    invoke-virtual {v0, p1}, Lcom/smedialink/manager/common/MediaEditManager;->setKiklikoAvatar(Ljava/lang/String;)V
+    invoke-virtual {v0, p1}, Lcom/iMe/manager/common/MediaEditManager;->setKiklikoAvatar(Ljava/lang/String;)V
 
     return-void
 .end method
@@ -40581,7 +40594,7 @@
         value = {
             "(",
             "Ljava/util/List<",
-            "Lcom/smedialink/bots/domain/model/SmartBotResponse;",
+            "Lcom/iMe/bots/domain/model/SmartBotResponse;",
             ">;Z)V"
         }
     .end annotation
@@ -40590,13 +40603,13 @@
     invoke-direct {p0}, Lorg/telegram/ui/Components/ChatActivityEnterView;->createSmartBotsView()V
 
     .line 247
-    iget-object v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView;->smartBotsView:Lcom/smedialink/ui/smartpanel/SmartBotsView;
+    iget-object v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView;->smartBotsView:Lcom/iMe/ui/smartpanel/SmartBotsView;
 
     iget-boolean v1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView;->smartBotsViewVisible:Z
 
     xor-int/lit8 v1, v1, 0x1
 
-    invoke-virtual {v0, p1, v1}, Lcom/smedialink/ui/smartpanel/SmartBotsView;->setData(Ljava/util/List;Z)V
+    invoke-virtual {v0, p1, v1}, Lcom/iMe/ui/smartpanel/SmartBotsView;->setData(Ljava/util/List;Z)V
 
     .line 248
     iget-boolean p1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView;->smartBotsViewVisible:Z
@@ -44462,9 +44475,9 @@
 
     if-nez v1, :cond_1
 
-    sget-object v1, Lorg/telegram/messenger/SharedConfig;->selectedTemplatesMode:Lorg/fork/enums/TemplatesMode;
+    sget-object v1, Lorg/telegram/messenger/SharedConfig;->selectedTemplatesMode:Lcom/iMe/fork/enums/TemplatesMode;
 
-    sget-object v3, Lorg/fork/enums/TemplatesMode;->OVAL:Lorg/fork/enums/TemplatesMode;
+    sget-object v3, Lcom/iMe/fork/enums/TemplatesMode;->OVAL:Lcom/iMe/fork/enums/TemplatesMode;
 
     if-ne v1, v3, :cond_1
 

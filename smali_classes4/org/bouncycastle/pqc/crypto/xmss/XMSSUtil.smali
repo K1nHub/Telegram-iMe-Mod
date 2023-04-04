@@ -252,7 +252,7 @@
     :cond_0
     new-instance p0, Ljava/io/IOException;
 
-    const-string p1, "unexpected class found in ObjectInputStream"
+    const-string/jumbo p1, "unexpected class found in ObjectInputStream"
 
     invoke-direct {p0, p1}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
 
@@ -261,7 +261,7 @@
     :cond_1
     new-instance p0, Ljava/io/IOException;
 
-    const-string p1, "unexpected data found at end of ObjectInputStream"
+    const-string/jumbo p1, "unexpected data found at end of ObjectInputStream"
 
     invoke-direct {p0, p1}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
 

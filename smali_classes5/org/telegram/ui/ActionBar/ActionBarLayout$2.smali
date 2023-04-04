@@ -31,7 +31,7 @@
 .method constructor <init>(Lorg/telegram/ui/ActionBar/ActionBarLayout;ZZZ)V
     .locals 0
 
-    .line 1182
+    .line 1181
     iput-object p1, p0, Lorg/telegram/ui/ActionBar/ActionBarLayout$2;->this$0:Lorg/telegram/ui/ActionBar/ActionBarLayout;
 
     iput-boolean p2, p0, Lorg/telegram/ui/ActionBar/ActionBarLayout$2;->val$first:Z
@@ -50,7 +50,7 @@
 .method public run()V
     .locals 9
 
-    .line 1185
+    .line 1184
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/ActionBarLayout$2;->this$0:Lorg/telegram/ui/ActionBar/ActionBarLayout;
 
     invoke-static {v0}, Lorg/telegram/ui/ActionBar/ActionBarLayout;->access$900(Lorg/telegram/ui/ActionBar/ActionBarLayout;)Ljava/lang/Runnable;
@@ -61,7 +61,7 @@
 
     return-void
 
-    .line 1188
+    .line 1187
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/ActionBarLayout$2;->this$0:Lorg/telegram/ui/ActionBar/ActionBarLayout;
 
@@ -69,12 +69,12 @@
 
     invoke-static {v0, v1}, Lorg/telegram/ui/ActionBar/ActionBarLayout;->access$902(Lorg/telegram/ui/ActionBar/ActionBarLayout;Ljava/lang/Runnable;)Ljava/lang/Runnable;
 
-    .line 1189
+    .line 1188
     iget-boolean v0, p0, Lorg/telegram/ui/ActionBar/ActionBarLayout$2;->val$first:Z
 
     if-eqz v0, :cond_1
 
-    .line 1190
+    .line 1189
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/ActionBarLayout$2;->this$0:Lorg/telegram/ui/ActionBar/ActionBarLayout;
 
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
@@ -83,7 +83,7 @@
 
     invoke-static {v0, v2, v3}, Lorg/telegram/ui/ActionBar/ActionBarLayout;->access$1002(Lorg/telegram/ui/ActionBar/ActionBarLayout;J)J
 
-    .line 1192
+    .line 1191
     :cond_1
     invoke-static {}, Ljava/lang/System;->nanoTime()J
 
@@ -93,7 +93,7 @@
 
     div-long/2addr v2, v4
 
-    .line 1193
+    .line 1192
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/ActionBarLayout$2;->this$0:Lorg/telegram/ui/ActionBar/ActionBarLayout;
 
     invoke-static {v0}, Lorg/telegram/ui/ActionBar/ActionBarLayout;->access$1100(Lorg/telegram/ui/ActionBar/ActionBarLayout;)J
@@ -110,7 +110,7 @@
 
     if-lez v0, :cond_2
 
-    .line 1194
+    .line 1193
     iget-boolean v0, p0, Lorg/telegram/ui/ActionBar/ActionBarLayout$2;->val$first:Z
 
     if-eqz v0, :cond_2
@@ -126,14 +126,14 @@
 
     move-wide v4, v6
 
-    .line 1199
+    .line 1198
     :cond_3
     :goto_0
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/ActionBarLayout$2;->this$0:Lorg/telegram/ui/ActionBar/ActionBarLayout;
 
     invoke-static {v0, v2, v3}, Lorg/telegram/ui/ActionBar/ActionBarLayout;->access$1102(Lorg/telegram/ui/ActionBar/ActionBarLayout;J)J
 
-    .line 1200
+    .line 1199
     iget-boolean v0, p0, Lorg/telegram/ui/ActionBar/ActionBarLayout$2;->val$preview:Z
 
     if-eqz v0, :cond_4
@@ -149,7 +149,7 @@
     :cond_4
     const/high16 v0, 0x43160000    # 150.0f
 
-    .line 1201
+    .line 1200
     :goto_1
     iget-object v2, p0, Lorg/telegram/ui/ActionBar/ActionBarLayout$2;->this$0:Lorg/telegram/ui/ActionBar/ActionBarLayout;
 
@@ -159,7 +159,7 @@
 
     invoke-static {v2, v3}, Lorg/telegram/ui/ActionBar/ActionBarLayout;->access$1216(Lorg/telegram/ui/ActionBar/ActionBarLayout;F)F
 
-    .line 1202
+    .line 1201
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/ActionBarLayout$2;->this$0:Lorg/telegram/ui/ActionBar/ActionBarLayout;
 
     invoke-static {v0}, Lorg/telegram/ui/ActionBar/ActionBarLayout;->access$1200(Lorg/telegram/ui/ActionBar/ActionBarLayout;)F
@@ -172,12 +172,12 @@
 
     if-lez v0, :cond_5
 
-    .line 1203
+    .line 1202
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/ActionBarLayout$2;->this$0:Lorg/telegram/ui/ActionBar/ActionBarLayout;
 
     invoke-static {v0, v2}, Lorg/telegram/ui/ActionBar/ActionBarLayout;->access$1202(Lorg/telegram/ui/ActionBar/ActionBarLayout;F)F
 
-    .line 1205
+    .line 1204
     :cond_5
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/ActionBarLayout$2;->this$0:Lorg/telegram/ui/ActionBar/ActionBarLayout;
 
@@ -187,7 +187,7 @@
 
     if-eqz v0, :cond_6
 
-    .line 1206
+    .line 1205
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/ActionBarLayout$2;->this$0:Lorg/telegram/ui/ActionBar/ActionBarLayout;
 
     invoke-static {v0}, Lorg/telegram/ui/ActionBar/ActionBarLayout;->access$1300(Lorg/telegram/ui/ActionBar/ActionBarLayout;)Lorg/telegram/ui/ActionBar/BaseFragment;
@@ -204,7 +204,7 @@
 
     invoke-virtual {v0, v3, v4}, Lorg/telegram/ui/ActionBar/BaseFragment;->onTransitionAnimationProgress(ZF)V
 
-    .line 1208
+    .line 1207
     :cond_6
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/ActionBarLayout$2;->this$0:Lorg/telegram/ui/ActionBar/ActionBarLayout;
 
@@ -216,7 +216,7 @@
 
     if-eqz v0, :cond_7
 
-    .line 1209
+    .line 1208
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/ActionBarLayout$2;->this$0:Lorg/telegram/ui/ActionBar/ActionBarLayout;
 
     invoke-static {v0}, Lorg/telegram/ui/ActionBar/ActionBarLayout;->access$1400(Lorg/telegram/ui/ActionBar/ActionBarLayout;)Lorg/telegram/ui/ActionBar/BaseFragment;
@@ -231,7 +231,7 @@
 
     invoke-virtual {v0, v3, v4}, Lorg/telegram/ui/ActionBar/BaseFragment;->onTransitionAnimationProgress(ZF)V
 
-    .line 1211
+    .line 1210
     :cond_7
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/ActionBarLayout$2;->this$0:Lorg/telegram/ui/ActionBar/ActionBarLayout;
 
@@ -260,7 +260,7 @@
     :cond_8
     move-object v0, v1
 
-    .line 1212
+    .line 1211
     :goto_2
     iget-object v4, p0, Lorg/telegram/ui/ActionBar/ActionBarLayout$2;->this$0:Lorg/telegram/ui/ActionBar/ActionBarLayout;
 
@@ -284,7 +284,7 @@
 
     move-result-object v1
 
-    .line 1213
+    .line 1212
     :cond_9
     iget-object v4, p0, Lorg/telegram/ui/ActionBar/ActionBarLayout$2;->this$0:Lorg/telegram/ui/ActionBar/ActionBarLayout;
 
@@ -300,7 +300,7 @@
 
     const/high16 v4, 0x40000000    # 2.0f
 
-    .line 1214
+    .line 1213
     iget-object v6, p0, Lorg/telegram/ui/ActionBar/ActionBarLayout$2;->this$0:Lorg/telegram/ui/ActionBar/ActionBarLayout;
 
     invoke-static {v6}, Lorg/telegram/ui/ActionBar/ActionBarLayout;->access$1200(Lorg/telegram/ui/ActionBar/ActionBarLayout;)F
@@ -327,7 +327,7 @@
 
     move-result v4
 
-    .line 1215
+    .line 1214
     iget-object v6, p0, Lorg/telegram/ui/ActionBar/ActionBarLayout$2;->this$0:Lorg/telegram/ui/ActionBar/ActionBarLayout;
 
     invoke-static {v6}, Lorg/telegram/ui/ActionBar/ActionBarLayout;->access$1300(Lorg/telegram/ui/ActionBar/ActionBarLayout;)Lorg/telegram/ui/ActionBar/BaseFragment;
@@ -348,18 +348,18 @@
 
     invoke-virtual {v6, v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->setNavigationBarColor(I)V
 
-    .line 1218
+    .line 1217
     :cond_b
     iget-boolean v0, p0, Lorg/telegram/ui/ActionBar/ActionBarLayout$2;->val$preview:Z
 
     if-eqz v0, :cond_d
 
-    .line 1219
+    .line 1218
     iget-boolean v0, p0, Lorg/telegram/ui/ActionBar/ActionBarLayout$2;->val$open:Z
 
     if-eqz v0, :cond_c
 
-    .line 1220
+    .line 1219
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/ActionBarLayout$2;->this$0:Lorg/telegram/ui/ActionBar/ActionBarLayout;
 
     invoke-static {v0}, Lorg/telegram/ui/ActionBar/ActionBarLayout;->access$1500(Lorg/telegram/ui/ActionBar/ActionBarLayout;)Landroid/view/animation/OvershootInterpolator;
@@ -378,7 +378,7 @@
 
     goto :goto_4
 
-    .line 1222
+    .line 1221
     :cond_c
     sget-object v0, Lorg/telegram/ui/Components/CubicBezierInterpolator;->EASE_OUT_QUINT:Lorg/telegram/ui/Components/CubicBezierInterpolator;
 
@@ -394,7 +394,7 @@
 
     goto :goto_4
 
-    .line 1225
+    .line 1224
     :cond_d
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/ActionBarLayout$2;->this$0:Lorg/telegram/ui/ActionBar/ActionBarLayout;
 
@@ -412,7 +412,7 @@
 
     move-result v0
 
-    .line 1227
+    .line 1226
     :goto_4
     iget-boolean v1, p0, Lorg/telegram/ui/ActionBar/ActionBarLayout$2;->val$open:Z
 
@@ -424,24 +424,24 @@
 
     if-eqz v1, :cond_10
 
-    .line 1228
+    .line 1227
     invoke-static {v0, v5, v2}, Landroidx/core/math/MathUtils;->clamp(FFF)F
 
     move-result v1
 
-    .line 1229
+    .line 1228
     iget-object v5, p0, Lorg/telegram/ui/ActionBar/ActionBarLayout$2;->this$0:Lorg/telegram/ui/ActionBar/ActionBarLayout;
 
     iget-object v5, v5, Lorg/telegram/ui/ActionBar/ActionBarLayout;->containerView:Lorg/telegram/ui/ActionBar/ActionBarLayout$LayoutContainer;
 
     invoke-virtual {v5, v1}, Landroid/widget/FrameLayout;->setAlpha(F)V
 
-    .line 1230
+    .line 1229
     iget-boolean v5, p0, Lorg/telegram/ui/ActionBar/ActionBarLayout$2;->val$preview:Z
 
     if-eqz v5, :cond_f
 
-    .line 1231
+    .line 1230
     iget-object v5, p0, Lorg/telegram/ui/ActionBar/ActionBarLayout$2;->this$0:Lorg/telegram/ui/ActionBar/ActionBarLayout;
 
     iget-object v5, v5, Lorg/telegram/ui/ActionBar/ActionBarLayout;->containerView:Lorg/telegram/ui/ActionBar/ActionBarLayout$LayoutContainer;
@@ -456,14 +456,14 @@
 
     invoke-virtual {v5, v8}, Landroid/widget/FrameLayout;->setScaleX(F)V
 
-    .line 1232
+    .line 1231
     iget-object v5, p0, Lorg/telegram/ui/ActionBar/ActionBarLayout$2;->this$0:Lorg/telegram/ui/ActionBar/ActionBarLayout;
 
     iget-object v5, v5, Lorg/telegram/ui/ActionBar/ActionBarLayout;->containerView:Lorg/telegram/ui/ActionBar/ActionBarLayout$LayoutContainer;
 
     invoke-virtual {v5, v8}, Landroid/widget/FrameLayout;->setScaleY(F)V
 
-    .line 1233
+    .line 1232
     iget-object v5, p0, Lorg/telegram/ui/ActionBar/ActionBarLayout$2;->this$0:Lorg/telegram/ui/ActionBar/ActionBarLayout;
 
     invoke-static {v5}, Lorg/telegram/ui/ActionBar/ActionBarLayout;->access$500(Lorg/telegram/ui/ActionBar/ActionBarLayout;)Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;
@@ -472,7 +472,7 @@
 
     if-eqz v5, :cond_e
 
-    .line 1234
+    .line 1233
     iget-object v5, p0, Lorg/telegram/ui/ActionBar/ActionBarLayout$2;->this$0:Lorg/telegram/ui/ActionBar/ActionBarLayout;
 
     iget-object v5, v5, Lorg/telegram/ui/ActionBar/ActionBarLayout;->containerView:Lorg/telegram/ui/ActionBar/ActionBarLayout$LayoutContainer;
@@ -491,7 +491,7 @@
 
     invoke-virtual {v5, v7}, Landroid/widget/FrameLayout;->setTranslationY(F)V
 
-    .line 1235
+    .line 1234
     iget-object v5, p0, Lorg/telegram/ui/ActionBar/ActionBarLayout$2;->this$0:Lorg/telegram/ui/ActionBar/ActionBarLayout;
 
     invoke-static {v5}, Lorg/telegram/ui/ActionBar/ActionBarLayout;->access$500(Lorg/telegram/ui/ActionBar/ActionBarLayout;)Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;
@@ -512,7 +512,7 @@
 
     invoke-virtual {v5, v7}, Landroid/widget/FrameLayout;->setTranslationY(F)V
 
-    .line 1236
+    .line 1235
     iget-object v5, p0, Lorg/telegram/ui/ActionBar/ActionBarLayout$2;->this$0:Lorg/telegram/ui/ActionBar/ActionBarLayout;
 
     invoke-static {v5}, Lorg/telegram/ui/ActionBar/ActionBarLayout;->access$500(Lorg/telegram/ui/ActionBar/ActionBarLayout;)Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;
@@ -529,7 +529,7 @@
 
     invoke-virtual {v5, v0}, Landroid/widget/FrameLayout;->setScaleX(F)V
 
-    .line 1237
+    .line 1236
     iget-object v5, p0, Lorg/telegram/ui/ActionBar/ActionBarLayout$2;->this$0:Lorg/telegram/ui/ActionBar/ActionBarLayout;
 
     invoke-static {v5}, Lorg/telegram/ui/ActionBar/ActionBarLayout;->access$500(Lorg/telegram/ui/ActionBar/ActionBarLayout;)Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;
@@ -538,7 +538,7 @@
 
     invoke-virtual {v5, v0}, Landroid/widget/FrameLayout;->setScaleY(F)V
 
-    .line 1239
+    .line 1238
     :cond_e
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/ActionBarLayout$2;->this$0:Lorg/telegram/ui/ActionBar/ActionBarLayout;
 
@@ -552,7 +552,7 @@
 
     invoke-virtual {v0, v5}, Landroid/graphics/drawable/ColorDrawable;->setAlpha(I)V
 
-    .line 1240
+    .line 1239
     sget-object v0, Lorg/telegram/ui/ActionBar/Theme;->moveUpDrawable:Landroid/graphics/drawable/Drawable;
 
     mul-float/2addr v1, v4
@@ -561,21 +561,21 @@
 
     invoke-virtual {v0, v1}, Landroid/graphics/drawable/Drawable;->setAlpha(I)V
 
-    .line 1241
+    .line 1240
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/ActionBarLayout$2;->this$0:Lorg/telegram/ui/ActionBar/ActionBarLayout;
 
     iget-object v0, v0, Lorg/telegram/ui/ActionBar/ActionBarLayout;->containerView:Lorg/telegram/ui/ActionBar/ActionBarLayout$LayoutContainer;
 
     invoke-virtual {v0}, Landroid/widget/FrameLayout;->invalidate()V
 
-    .line 1242
+    .line 1241
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/ActionBarLayout$2;->this$0:Lorg/telegram/ui/ActionBar/ActionBarLayout;
 
     invoke-virtual {v0}, Landroid/widget/FrameLayout;->invalidate()V
 
     goto :goto_5
 
-    .line 1244
+    .line 1243
     :cond_f
     iget-object v1, p0, Lorg/telegram/ui/ActionBar/ActionBarLayout$2;->this$0:Lorg/telegram/ui/ActionBar/ActionBarLayout;
 
@@ -598,12 +598,12 @@
     :cond_10
     sub-float v1, v2, v0
 
-    .line 1247
+    .line 1246
     invoke-static {v1, v5, v2}, Landroidx/core/math/MathUtils;->clamp(FFF)F
 
     move-result v5
 
-    .line 1248
+    .line 1247
     iget-object v8, p0, Lorg/telegram/ui/ActionBar/ActionBarLayout$2;->this$0:Lorg/telegram/ui/ActionBar/ActionBarLayout;
 
     invoke-static {v8}, Lorg/telegram/ui/ActionBar/ActionBarLayout;->access$300(Lorg/telegram/ui/ActionBar/ActionBarLayout;)Lorg/telegram/ui/ActionBar/ActionBarLayout$LayoutContainer;
@@ -612,12 +612,12 @@
 
     invoke-virtual {v8, v5}, Landroid/widget/FrameLayout;->setAlpha(F)V
 
-    .line 1249
+    .line 1248
     iget-boolean v8, p0, Lorg/telegram/ui/ActionBar/ActionBarLayout$2;->val$preview:Z
 
     if-eqz v8, :cond_12
 
-    .line 1250
+    .line 1249
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/ActionBarLayout$2;->this$0:Lorg/telegram/ui/ActionBar/ActionBarLayout;
 
     invoke-static {v0}, Lorg/telegram/ui/ActionBar/ActionBarLayout;->access$300(Lorg/telegram/ui/ActionBar/ActionBarLayout;)Lorg/telegram/ui/ActionBar/ActionBarLayout$LayoutContainer;
@@ -634,7 +634,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/FrameLayout;->setScaleX(F)V
 
-    .line 1251
+    .line 1250
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/ActionBarLayout$2;->this$0:Lorg/telegram/ui/ActionBar/ActionBarLayout;
 
     invoke-static {v0}, Lorg/telegram/ui/ActionBar/ActionBarLayout;->access$300(Lorg/telegram/ui/ActionBar/ActionBarLayout;)Lorg/telegram/ui/ActionBar/ActionBarLayout$LayoutContainer;
@@ -643,7 +643,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/FrameLayout;->setScaleY(F)V
 
-    .line 1252
+    .line 1251
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/ActionBarLayout$2;->this$0:Lorg/telegram/ui/ActionBar/ActionBarLayout;
 
     invoke-static {v0}, Lorg/telegram/ui/ActionBar/ActionBarLayout;->access$1700(Lorg/telegram/ui/ActionBar/ActionBarLayout;)Landroid/graphics/drawable/ColorDrawable;
@@ -656,7 +656,7 @@
 
     invoke-virtual {v0, v1}, Landroid/graphics/drawable/ColorDrawable;->setAlpha(I)V
 
-    .line 1253
+    .line 1252
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/ActionBarLayout$2;->this$0:Lorg/telegram/ui/ActionBar/ActionBarLayout;
 
     invoke-static {v0}, Lorg/telegram/ui/ActionBar/ActionBarLayout;->access$500(Lorg/telegram/ui/ActionBar/ActionBarLayout;)Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;
@@ -665,7 +665,7 @@
 
     if-nez v0, :cond_11
 
-    .line 1254
+    .line 1253
     sget-object v0, Lorg/telegram/ui/ActionBar/Theme;->moveUpDrawable:Landroid/graphics/drawable/Drawable;
 
     mul-float/2addr v5, v4
@@ -674,7 +674,7 @@
 
     invoke-virtual {v0, v1}, Landroid/graphics/drawable/Drawable;->setAlpha(I)V
 
-    .line 1256
+    .line 1255
     :cond_11
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/ActionBarLayout$2;->this$0:Lorg/telegram/ui/ActionBar/ActionBarLayout;
 
@@ -682,14 +682,14 @@
 
     invoke-virtual {v0}, Landroid/widget/FrameLayout;->invalidate()V
 
-    .line 1257
+    .line 1256
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/ActionBarLayout$2;->this$0:Lorg/telegram/ui/ActionBar/ActionBarLayout;
 
     invoke-virtual {v0}, Landroid/widget/FrameLayout;->invalidate()V
 
     goto :goto_5
 
-    .line 1259
+    .line 1258
     :cond_12
     iget-object v1, p0, Lorg/telegram/ui/ActionBar/ActionBarLayout$2;->this$0:Lorg/telegram/ui/ActionBar/ActionBarLayout;
 
@@ -707,7 +707,7 @@
 
     invoke-virtual {v1, v4}, Landroid/widget/FrameLayout;->setTranslationX(F)V
 
-    .line 1262
+    .line 1261
     :goto_5
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/ActionBarLayout$2;->this$0:Lorg/telegram/ui/ActionBar/ActionBarLayout;
 
@@ -719,7 +719,7 @@
 
     if-gez v0, :cond_13
 
-    .line 1263
+    .line 1262
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/ActionBarLayout$2;->this$0:Lorg/telegram/ui/ActionBar/ActionBarLayout;
 
     iget-boolean v1, p0, Lorg/telegram/ui/ActionBar/ActionBarLayout$2;->val$open:Z
@@ -730,7 +730,7 @@
 
     goto :goto_6
 
-    .line 1265
+    .line 1264
     :cond_13
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/ActionBarLayout$2;->this$0:Lorg/telegram/ui/ActionBar/ActionBarLayout;
 

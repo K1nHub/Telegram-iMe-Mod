@@ -1,11 +1,11 @@
 .class Lorg/telegram/ui/ChatActivity$55;
-.super Lorg/telegram/ui/Components/BlurredFrameLayout;
+.super Lorg/telegram/ui/Components/TranslateButton;
 .source "ChatActivity.java"
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lorg/telegram/ui/ChatActivity;->createSearchContainer()V
+    value = Lorg/telegram/ui/ChatActivity;->createTranslateButton()V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -19,176 +19,178 @@
 
 
 # direct methods
-.method constructor <init>(Lorg/telegram/ui/ChatActivity;Landroid/content/Context;Lorg/telegram/ui/Components/SizeNotifierFrameLayout;)V
+.method constructor <init>(Lorg/telegram/ui/ChatActivity;Landroid/content/Context;Lorg/telegram/ui/ChatActivity;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
     .locals 0
 
-    .line 9922
+    .line 9845
     iput-object p1, p0, Lorg/telegram/ui/ChatActivity$55;->this$0:Lorg/telegram/ui/ChatActivity;
 
-    invoke-direct {p0, p2, p3}, Lorg/telegram/ui/Components/BlurredFrameLayout;-><init>(Landroid/content/Context;Lorg/telegram/ui/Components/SizeNotifierFrameLayout;)V
+    invoke-direct {p0, p2, p3, p4}, Lorg/telegram/ui/Components/TranslateButton;-><init>(Landroid/content/Context;Lorg/telegram/ui/ChatActivity;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method protected measureChildWithMargins(Landroid/view/View;IIII)V
-    .locals 3
+.method protected onButtonClick()V
+    .locals 5
 
-    .line 9936
+    .line 9848
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$55;->this$0:Lorg/telegram/ui/ChatActivity;
 
-    invoke-static {v0}, Lorg/telegram/ui/ChatActivity;->access$30000(Lorg/telegram/ui/ChatActivity;)Lorg/telegram/ui/Components/SearchCounterView;
+    invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getUserConfig()Lorg/telegram/messenger/UserConfig;
 
     move-result-object v0
 
-    if-ne p1, v0, :cond_2
-
-    const/16 v0, 0xe
-
-    .line 9938
-    iget-object v1, p0, Lorg/telegram/ui/ChatActivity$55;->this$0:Lorg/telegram/ui/ChatActivity;
-
-    invoke-static {v1}, Lorg/telegram/ui/ChatActivity;->access$30100(Lorg/telegram/ui/ChatActivity;)Landroid/widget/ImageView;
-
-    move-result-object v1
-
-    const/16 v2, 0x8
-
-    if-eqz v1, :cond_0
-
-    iget-object v1, p0, Lorg/telegram/ui/ChatActivity$55;->this$0:Lorg/telegram/ui/ChatActivity;
-
-    invoke-static {v1}, Lorg/telegram/ui/ChatActivity;->access$30100(Lorg/telegram/ui/ChatActivity;)Landroid/widget/ImageView;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Landroid/widget/ImageView;->getVisibility()I
-
-    move-result v1
-
-    if-eq v1, v2, :cond_0
-
-    const/16 v0, 0x3e
-
-    .line 9941
-    :cond_0
-    iget-object v1, p0, Lorg/telegram/ui/ChatActivity$55;->this$0:Lorg/telegram/ui/ChatActivity;
-
-    invoke-static {v1}, Lorg/telegram/ui/ChatActivity;->access$30200(Lorg/telegram/ui/ChatActivity;)Landroid/widget/ImageView;
-
-    move-result-object v1
-
-    if-eqz v1, :cond_1
-
-    iget-object v1, p0, Lorg/telegram/ui/ChatActivity$55;->this$0:Lorg/telegram/ui/ChatActivity;
-
-    invoke-static {v1}, Lorg/telegram/ui/ChatActivity;->access$30200(Lorg/telegram/ui/ChatActivity;)Landroid/widget/ImageView;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Landroid/widget/ImageView;->getVisibility()I
-
-    move-result v1
-
-    if-eq v1, v2, :cond_1
-
-    add-int/lit8 v0, v0, 0x30
-
-    .line 9944
-    :cond_1
-    invoke-virtual {p1}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
-
-    move-result-object v1
-
-    check-cast v1, Landroid/view/ViewGroup$MarginLayoutParams;
-
-    invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    invoke-virtual {v0}, Lorg/telegram/messenger/UserConfig;->isPremium()Z
 
     move-result v0
 
-    iput v0, v1, Landroid/view/ViewGroup$MarginLayoutParams;->leftMargin:I
+    if-eqz v0, :cond_0
 
-    .line 9946
-    :cond_2
-    invoke-super/range {p0 .. p5}, Landroid/widget/FrameLayout;->measureChildWithMargins(Landroid/view/View;IIII)V
+    .line 9849
+    iget-object v0, p0, Lorg/telegram/ui/ChatActivity$55;->this$0:Lorg/telegram/ui/ChatActivity;
+
+    invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getMessagesController()Lorg/telegram/messenger/MessagesController;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lorg/telegram/messenger/MessagesController;->getTranslateController()Lorg/telegram/messenger/TranslateController;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lorg/telegram/ui/ChatActivity$55;->this$0:Lorg/telegram/ui/ChatActivity;
+
+    invoke-virtual {v1}, Lorg/telegram/ui/ChatActivity;->getDialogId()J
+
+    move-result-wide v1
+
+    invoke-virtual {v0, v1, v2}, Lorg/telegram/messenger/TranslateController;->toggleTranslatingDialog(J)V
+
+    goto :goto_0
+
+    .line 9851
+    :cond_0
+    iget-object v0, p0, Lorg/telegram/ui/ChatActivity$55;->this$0:Lorg/telegram/ui/ChatActivity;
+
+    invoke-static {v0}, Lorg/telegram/ui/ChatActivity;->access$29700(Lorg/telegram/ui/ChatActivity;)I
+
+    move-result v0
+
+    invoke-static {v0}, Lorg/telegram/messenger/MessagesController;->getNotificationsSettings(I)Landroid/content/SharedPreferences;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
+
+    move-result-object v0
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v2, "dialog_show_translate_count"
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v2, p0, Lorg/telegram/ui/ChatActivity$55;->this$0:Lorg/telegram/ui/ChatActivity;
+
+    invoke-virtual {v2}, Lorg/telegram/ui/ChatActivity;->getDialogId()J
+
+    move-result-wide v2
+
+    invoke-virtual {v1, v2, v3}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    const/16 v2, 0xe
+
+    invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences$Editor;->putInt(Ljava/lang/String;I)Landroid/content/SharedPreferences$Editor;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->commit()Z
+
+    .line 9852
+    iget-object v0, p0, Lorg/telegram/ui/ChatActivity$55;->this$0:Lorg/telegram/ui/ChatActivity;
+
+    new-instance v1, Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet;
+
+    iget-object v2, p0, Lorg/telegram/ui/ChatActivity$55;->this$0:Lorg/telegram/ui/ChatActivity;
+
+    const/16 v3, 0xd
+
+    const/4 v4, 0x0
+
+    invoke-direct {v1, v2, v3, v4}, Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet;-><init>(Lorg/telegram/ui/ActionBar/BaseFragment;IZ)V
+
+    invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/BaseFragment;->showDialog(Landroid/app/Dialog;)Landroid/app/Dialog;
+
+    .line 9854
+    :goto_0
+    iget-object v0, p0, Lorg/telegram/ui/ChatActivity$55;->this$0:Lorg/telegram/ui/ChatActivity;
+
+    const/4 v1, 0x1
+
+    invoke-static {v0, v1}, Lorg/telegram/ui/ChatActivity;->access$14700(Lorg/telegram/ui/ChatActivity;Z)V
 
     return-void
 .end method
 
-.method public onDraw(Landroid/graphics/Canvas;)V
-    .locals 9
+.method protected onCloseClick()V
+    .locals 4
 
-    .line 9925
-    sget-object v0, Lorg/telegram/ui/ActionBar/Theme;->chat_composeShadowDrawable:Landroid/graphics/drawable/Drawable;
+    .line 9859
+    iget-object v0, p0, Lorg/telegram/ui/ChatActivity$55;->this$0:Lorg/telegram/ui/ChatActivity;
 
-    invoke-virtual {v0}, Landroid/graphics/drawable/Drawable;->getIntrinsicHeight()I
+    invoke-static {v0}, Lorg/telegram/ui/ChatActivity;->access$29800(Lorg/telegram/ui/ChatActivity;)I
 
     move-result v0
 
-    .line 9926
-    iget-object v1, p0, Lorg/telegram/ui/ChatActivity$55;->this$0:Lorg/telegram/ui/ChatActivity;
+    invoke-static {v0}, Lorg/telegram/messenger/MessagesController;->getNotificationsSettings(I)Landroid/content/SharedPreferences;
 
-    iget-object v1, v1, Lorg/telegram/ui/ChatActivity;->chatActivityEnterView:Lorg/telegram/ui/Components/ChatActivityEnterView;
+    move-result-object v0
 
-    invoke-virtual {v1}, Landroid/widget/FrameLayout;->getVisibility()I
+    invoke-interface {v0}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
 
-    move-result v1
+    move-result-object v0
 
-    const/4 v2, 0x0
+    new-instance v1, Ljava/lang/StringBuilder;
 
-    if-eqz v1, :cond_0
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 9927
-    sget-object v1, Lorg/telegram/ui/ActionBar/Theme;->chat_composeShadowDrawable:Landroid/graphics/drawable/Drawable;
+    const-string v2, "dialog_show_translate_count"
 
-    invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result v3
+    iget-object v2, p0, Lorg/telegram/ui/ChatActivity$55;->this$0:Lorg/telegram/ui/ChatActivity;
 
-    invoke-virtual {v1, v2, v2, v3, v0}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
+    invoke-virtual {v2}, Lorg/telegram/ui/ChatActivity;->getDialogId()J
 
-    .line 9928
-    sget-object v1, Lorg/telegram/ui/ActionBar/Theme;->chat_composeShadowDrawable:Landroid/graphics/drawable/Drawable;
+    move-result-wide v2
 
-    invoke-virtual {v1, p1}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
+    invoke-virtual {v1, v2, v3}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
-    .line 9930
-    :cond_0
-    sget-object v6, Lorg/telegram/messenger/AndroidUtilities;->rectTmp2:Landroid/graphics/Rect;
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
+    move-result-object v1
 
-    move-result v1
+    const/16 v2, 0x8c
 
-    invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredHeight()I
+    invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences$Editor;->putInt(Ljava/lang/String;I)Landroid/content/SharedPreferences$Editor;
 
-    move-result v3
+    move-result-object v0
 
-    invoke-virtual {v6, v2, v0, v1, v3}, Landroid/graphics/Rect;->set(IIII)V
+    invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->commit()Z
 
-    .line 9931
+    .line 9860
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$55;->this$0:Lorg/telegram/ui/ChatActivity;
 
-    iget-object v3, v0, Lorg/telegram/ui/ChatActivity;->contentView:Lorg/telegram/ui/ChatActivity$ChatActivityFragmentView;
+    const/4 v1, 0x1
 
-    invoke-virtual {p0}, Landroid/widget/FrameLayout;->getY()F
-
-    move-result v5
-
-    iget-object v0, p0, Lorg/telegram/ui/ChatActivity$55;->this$0:Lorg/telegram/ui/ChatActivity;
-
-    const-string v1, "paintChatComposeBackground"
-
-    invoke-static {v0, v1}, Lorg/telegram/ui/ChatActivity;->access$26400(Lorg/telegram/ui/ChatActivity;Ljava/lang/String;)Landroid/graphics/Paint;
-
-    move-result-object v7
-
-    const/4 v8, 0x0
-
-    move-object v4, p1
-
-    invoke-virtual/range {v3 .. v8}, Lorg/telegram/ui/Components/SizeNotifierFrameLayout;->drawBlurRect(Landroid/graphics/Canvas;FLandroid/graphics/Rect;Landroid/graphics/Paint;Z)V
+    invoke-static {v0, v1}, Lorg/telegram/ui/ChatActivity;->access$14700(Lorg/telegram/ui/ChatActivity;Z)V
 
     return-void
 .end method

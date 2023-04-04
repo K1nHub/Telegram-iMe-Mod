@@ -355,11 +355,11 @@
     iput-boolean v4, v0, Lorg/telegram/ui/Components/SwipeGestureSettingsView;->hasTabs:Z
 
     .line 105
-    invoke-static/range {p2 .. p2}, Lorg/fork/controller/FiltersController;->getInstance(I)Lorg/fork/controller/FiltersController;
+    invoke-static/range {p2 .. p2}, Lcom/iMe/fork/controller/FiltersController;->getInstance(I)Lcom/iMe/fork/controller/FiltersController;
 
     move-result-object v4
 
-    invoke-virtual {v4, v7}, Lorg/fork/controller/FiltersController;->getActiveSortingTabsCount(Z)I
+    invoke-virtual {v4, v7}, Lcom/iMe/fork/controller/FiltersController;->getActiveSortingTabsCount(Z)I
 
     move-result v4
 
@@ -372,11 +372,11 @@
 
     .line 107
     :cond_0
-    invoke-static/range {p2 .. p2}, Lorg/fork/controller/FiltersController;->getInstance(I)Lorg/fork/controller/FiltersController;
+    invoke-static/range {p2 .. p2}, Lcom/iMe/fork/controller/FiltersController;->getInstance(I)Lcom/iMe/fork/controller/FiltersController;
 
     move-result-object v4
 
-    invoke-virtual {v4}, Lorg/fork/controller/FiltersController;->isHideFoldersEnabled()Z
+    invoke-virtual {v4}, Lcom/iMe/fork/controller/FiltersController;->isHideFoldersEnabled()Z
 
     move-result v4
 

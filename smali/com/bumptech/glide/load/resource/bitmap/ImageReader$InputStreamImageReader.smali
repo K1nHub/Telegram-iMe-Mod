@@ -48,10 +48,10 @@
         }
     .end annotation
 
-    .line 40
+    .line 184
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 41
+    .line 185
     invoke-static {p3}, Lcom/bumptech/glide/util/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
@@ -60,7 +60,7 @@
 
     iput-object v0, p0, Lcom/bumptech/glide/load/resource/bitmap/ImageReader$InputStreamImageReader;->byteArrayPool:Lcom/bumptech/glide/load/engine/bitmap_recycle/ArrayPool;
 
-    .line 42
+    .line 186
     invoke-static {p2}, Lcom/bumptech/glide/util/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p2
@@ -69,7 +69,7 @@
 
     iput-object p2, p0, Lcom/bumptech/glide/load/resource/bitmap/ImageReader$InputStreamImageReader;->parsers:Ljava/util/List;
 
-    .line 44
+    .line 188
     new-instance p2, Lcom/bumptech/glide/load/data/InputStreamRewinder;
 
     invoke-direct {p2, p1, p3}, Lcom/bumptech/glide/load/data/InputStreamRewinder;-><init>(Ljava/io/InputStream;Lcom/bumptech/glide/load/engine/bitmap_recycle/ArrayPool;)V
@@ -89,7 +89,7 @@
         }
     .end annotation
 
-    .line 50
+    .line 194
     iget-object v0, p0, Lcom/bumptech/glide/load/resource/bitmap/ImageReader$InputStreamImageReader;->dataRewinder:Lcom/bumptech/glide/load/data/InputStreamRewinder;
 
     invoke-virtual {v0}, Lcom/bumptech/glide/load/data/InputStreamRewinder;->rewindAndGet()Ljava/io/InputStream;
@@ -113,19 +113,19 @@
         }
     .end annotation
 
-    .line 60
+    .line 204
     iget-object v0, p0, Lcom/bumptech/glide/load/resource/bitmap/ImageReader$InputStreamImageReader;->parsers:Ljava/util/List;
 
     iget-object v1, p0, Lcom/bumptech/glide/load/resource/bitmap/ImageReader$InputStreamImageReader;->dataRewinder:Lcom/bumptech/glide/load/data/InputStreamRewinder;
 
-    .line 61
+    .line 205
     invoke-virtual {v1}, Lcom/bumptech/glide/load/data/InputStreamRewinder;->rewindAndGet()Ljava/io/InputStream;
 
     move-result-object v1
 
     iget-object v2, p0, Lcom/bumptech/glide/load/resource/bitmap/ImageReader$InputStreamImageReader;->byteArrayPool:Lcom/bumptech/glide/load/engine/bitmap_recycle/ArrayPool;
 
-    .line 60
+    .line 204
     invoke-static {v0, v1, v2}, Lcom/bumptech/glide/load/ImageHeaderParserUtils;->getOrientation(Ljava/util/List;Ljava/io/InputStream;Lcom/bumptech/glide/load/engine/bitmap_recycle/ArrayPool;)I
 
     move-result v0
@@ -141,7 +141,7 @@
         }
     .end annotation
 
-    .line 55
+    .line 199
     iget-object v0, p0, Lcom/bumptech/glide/load/resource/bitmap/ImageReader$InputStreamImageReader;->parsers:Ljava/util/List;
 
     iget-object v1, p0, Lcom/bumptech/glide/load/resource/bitmap/ImageReader$InputStreamImageReader;->dataRewinder:Lcom/bumptech/glide/load/data/InputStreamRewinder;
@@ -162,7 +162,7 @@
 .method public stopGrowingBuffers()V
     .locals 1
 
-    .line 66
+    .line 210
     iget-object v0, p0, Lcom/bumptech/glide/load/resource/bitmap/ImageReader$InputStreamImageReader;->dataRewinder:Lcom/bumptech/glide/load/data/InputStreamRewinder;
 
     invoke-virtual {v0}, Lcom/bumptech/glide/load/data/InputStreamRewinder;->fixMarkLimits()V

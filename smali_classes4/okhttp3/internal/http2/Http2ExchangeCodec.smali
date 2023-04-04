@@ -74,11 +74,11 @@
 
     const-string v6, "te"
 
-    const-string v7, "transfer-encoding"
+    const-string/jumbo v7, "transfer-encoding"
 
     const-string v8, "encoding"
 
-    const-string v9, "upgrade"
+    const-string/jumbo v9, "upgrade"
 
     const-string v10, ":method"
 
@@ -110,11 +110,11 @@
 
     const-string v5, "te"
 
-    const-string v6, "transfer-encoding"
+    const-string/jumbo v6, "transfer-encoding"
 
     const-string v7, "encoding"
 
-    const-string v8, "upgrade"
+    const-string/jumbo v8, "upgrade"
 
     .line 157
     filled-new-array/range {v1 .. v8}, [Ljava/lang/String;

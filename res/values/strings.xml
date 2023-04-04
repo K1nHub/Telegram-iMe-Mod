@@ -532,8 +532,8 @@ to: %2$s"</string>
     <string name="AppIconPremium">Premium</string>
     <string name="AppIconTurbo">Turbo</string>
     <string name="AppIconVintage">Vintage</string>
-    <string name="AppName">Telegram</string>
-    <string name="AppNameBeta">Telegram Beta</string>
+    <string name="AppName">iMe</string>
+    <string name="AppNameBeta">iMe</string>
     <string name="AppUpdate">Update Telegram</string>
     <string name="AppUpdateChangelogEmpty">"**What's new?**
 
@@ -965,6 +965,7 @@ It will be able to access your **IP address** and basic device info."</string>
     <string name="BotStartAppPermission">"Do you want to start app **%1$s** from bot **%2$s**?
 
 It will be able to access your **IP address** and basic device info."</string>
+    <string name="BotStartButton">Start bot</string>
     <string name="BotStatusCantRead">has no access to messages</string>
     <string name="BotStatusRead">has access to messages</string>
     <string name="BotStop">Stop bot</string>
@@ -1483,6 +1484,8 @@ Minimum length is 5 characters."</string>
     <string name="ClearStorageHintMessage">Clear storage space on your phone</string>
     <string name="ClearStorageHintTitle">Free up to **%s**</string>
     <string name="ClearTelegramCache">Clear Telegram Cache</string>
+    <string name="ClearingCache">Clearing cache…</string>
+    <string name="ClearingCacheDescription">Please keep this window open while Telegram is clearing your cache.</string>
     <string name="Close">Close</string>
     <string name="CloseEditor">CLOSE EDITOR</string>
     <string name="CloseTopic">Close topic</string>
@@ -1728,6 +1731,7 @@ You can always switch back to the default Telegram theme here."</string>
     <string name="Decline">Decline</string>
     <string name="DeclineCall">Decline</string>
     <string name="DeclineDeactivate">Decline &amp; Delete</string>
+    <string name="DecreaseSpeed">Decrease speed</string>
     <string name="Default">Default</string>
     <string name="DefaultRingtone">Default</string>
     <string name="Delete">Delete</string>
@@ -1921,6 +1925,7 @@ Anyone from the channel will be able to see messages in this group."</string>
     <string name="DoNotTranslate">Do Not Translate</string>
     <string name="DoNotTranslateLanguage">"Don't translate %s"</string>
     <string name="DoNotTranslateLanguageOther">"Don't translate %s"</string>
+    <string name="DoNotUseSDCard">Do not use SD card</string>
     <string name="DocumentsTitle">Shared Files</string>
     <string name="Done">Done</string>
     <string name="DontAskAgain">"Don't ask again"</string>
@@ -4602,6 +4607,7 @@ We will access your location only for the duration you choose, and you can stop 
     <string name="PrivacyVoiceMessagesTitle">Who can send me voice messages?</string>
     <string name="PrivateChats">Private Chats</string>
     <string name="PrivateShares">Private Shares</string>
+    <string name="Proceed">Proceed</string>
     <string name="ProfileJoinChannel">Join Channel</string>
     <string name="ProfileJoinGroup">Join Group</string>
     <string name="ProfilePopupNotification">Popup notifications</string>
@@ -5041,6 +5047,9 @@ You may need to restart the app for this to take effect."</string>
     <string name="ScreenCaptureInfo">"If disabled, you won't be able to take screenshots in the app but chat content will be hidden in the task switcher."</string>
     <string name="ScreenCaptureShowContent">Show Content</string>
     <string name="SdCard">SD Card</string>
+    <string name="SdCardAlert">Storing on SD card will make Telegram slow. Proceed anyway?</string>
+    <string name="SdCardError">SD Card Error</string>
+    <string name="SdCardErrorDescription">Telegram is unable to save data on your SD card.</string>
     <string name="Search">Search</string>
     <string name="SearchAllChatsShort">Chats</string>
     <string name="SearchBackgrounds">Search Backgrounds</string>
@@ -5516,8 +5525,9 @@ messages?"</string>
     <string name="StorageCleared">Storage Cleared</string>
     <string name="StorageCleared2">All media can be re-downloaded from the Telegram cloud if you need it again.</string>
     <string name="StoragePath">Storage Path</string>
-    <string name="StoragePathFree">%1$s free</string>
-    <string name="StoragePathFreeValue">%1$s free, %2$s</string>
+    <string name="StoragePathFreeExternal">%1$s free, slow speed</string>
+    <string name="StoragePathFreeInternal">%1$s free, high speed</string>
+    <string name="StoragePathFreeValueExternal">%1$s free, slow speed %2$s</string>
     <string name="StorageUsage">Storage Usage</string>
     <string name="StorageUsageCalculating">Calculating cache size...</string>
     <string name="StorageUsageInfo">All media will stay in the Telegram cloud and can be re-downloaded if you need it again.</string>
@@ -6582,6 +6592,18 @@ To get the reward, you need to:"</string>
     <string name="archive_empty_subtitle">This is where the chats you sent to the archive are stored</string>
     <string name="archive_empty_title">Archive is empty</string>
     <string name="attach_menu_select_all">Select all</string>
+    <string name="auth_dialog_description">"Что-то о том, что если хочешь юзать эту фичу то надо погрузиться в нашу экосистему, для этого жми НЕКСТ
+
+Continue, you agree
+to the *Terms of Service*"</string>
+    <string name="auth_dialog_title">iMe Ecosystem</string>
+    <string name="auth_login_terms_of_service">"By login, you agree
+to the *Terms of Service*"</string>
+    <string name="auth_signup_terms_of_service_postfix">"
+You agree to the *iMe Terms of Service*
+
+We reserve the right to update these
+Terms of Service later."</string>
     <string name="auto_open_forwarding_options">Auto-opening forwarding options</string>
     <string name="auto_open_forwarding_options_alert_message">Enable auto-opening forwarding options?</string>
     <string name="auto_open_forwarding_options_hint">"You can always change it in 
@@ -6937,7 +6959,7 @@ Settings > Tools > Chats > Templates"</string>
     <string name="collection_tab_all">All</string>
     <string name="collection_tab_categories">Categories</string>
     <string name="collection_tab_my">My</string>
-    <string name="com.crashlytics.android.build_id">db0d00edd8f24ff19e794916f847a4fd</string>
+    <string name="com.crashlytics.android.build_id">fb77260c81a743f198e681455ec34fdf</string>
     <string name="combine_messages_alert_message">"You send messages in a row and this can annoy other users.
 
 Enable the option so that your messages sent in a row within 30 seconds will be combined into one message?"</string>

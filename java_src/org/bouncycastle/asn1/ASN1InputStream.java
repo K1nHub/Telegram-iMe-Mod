@@ -5,7 +5,7 @@ import java.io.EOFException;
 import java.io.FilterInputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import org.bouncycastle.util.p045io.Streams;
+import org.bouncycastle.util.p046io.Streams;
 /* loaded from: classes4.dex */
 public class ASN1InputStream extends FilterInputStream {
     private final boolean lazyEvaluate;

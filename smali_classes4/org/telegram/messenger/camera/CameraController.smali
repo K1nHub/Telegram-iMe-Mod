@@ -2451,7 +2451,7 @@
 
     if-eqz v1, :cond_0
 
-    const-string v1, "torch"
+    const-string/jumbo v1, "torch"
 
     goto :goto_0
 
@@ -2525,7 +2525,7 @@
 
     if-eqz v1, :cond_0
 
-    const-string v1, "torch"
+    const-string/jumbo v1, "torch"
 
     goto :goto_0
 
@@ -3422,7 +3422,7 @@
     return-object v0
 .end method
 
-.method public hasCamera(Lorg/fork/enums/VideoVoiceCamera;)Z
+.method public hasCamera(Lcom/iMe/fork/enums/VideoVoiceCamera;)Z
     .locals 3
 
     .line 61
@@ -3448,7 +3448,7 @@
     check-cast v1, Lorg/telegram/messenger/camera/CameraInfo;
 
     .line 62
-    sget-object v2, Lorg/fork/enums/VideoVoiceCamera;->FRONT:Lorg/fork/enums/VideoVoiceCamera;
+    sget-object v2, Lcom/iMe/fork/enums/VideoVoiceCamera;->FRONT:Lcom/iMe/fork/enums/VideoVoiceCamera;
 
     if-ne p1, v2, :cond_1
 
@@ -3459,7 +3459,7 @@
     if-nez v2, :cond_2
 
     :cond_1
-    sget-object v2, Lorg/fork/enums/VideoVoiceCamera;->BACK:Lorg/fork/enums/VideoVoiceCamera;
+    sget-object v2, Lcom/iMe/fork/enums/VideoVoiceCamera;->BACK:Lcom/iMe/fork/enums/VideoVoiceCamera;
 
     if-ne p1, v2, :cond_0
 

@@ -59,7 +59,7 @@
 
     iput-object p1, p0, Lio/grpc/internal/ApplicationThreadDeframer;->storedListener:Lio/grpc/internal/MessageDeframer$Listener;
 
-    const-string p1, "transportExecutor"
+    const-string/jumbo p1, "transportExecutor"
 
     .line 51
     invoke-static {p2, p1}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;

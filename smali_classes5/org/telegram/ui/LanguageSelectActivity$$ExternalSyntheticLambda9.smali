@@ -2,36 +2,64 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Ljava/util/Comparator;
+.implements Lj$/util/function/Predicate;
 
 
 # instance fields
-.field public final synthetic f$0:Lorg/telegram/messenger/LocaleController$LocaleInfo;
+.field public final synthetic f$0:Ljava/lang/String;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/messenger/LocaleController$LocaleInfo;)V
+.method public synthetic constructor <init>(Ljava/lang/String;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lorg/telegram/ui/LanguageSelectActivity$$ExternalSyntheticLambda9;->f$0:Lorg/telegram/messenger/LocaleController$LocaleInfo;
+    iput-object p1, p0, Lorg/telegram/ui/LanguageSelectActivity$$ExternalSyntheticLambda9;->f$0:Ljava/lang/String;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final compare(Ljava/lang/Object;Ljava/lang/Object;)I
+.method public synthetic and(Lj$/util/function/Predicate;)Lj$/util/function/Predicate;
+    .locals 0
+
+    invoke-static {p0, p1}, Lj$/util/function/Predicate$-CC;->$default$and(Lj$/util/function/Predicate;Lj$/util/function/Predicate;)Lj$/util/function/Predicate;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
+.method public synthetic negate()Lj$/util/function/Predicate;
     .locals 1
 
-    iget-object v0, p0, Lorg/telegram/ui/LanguageSelectActivity$$ExternalSyntheticLambda9;->f$0:Lorg/telegram/messenger/LocaleController$LocaleInfo;
+    invoke-static {p0}, Lj$/util/function/Predicate$-CC;->$default$negate(Lj$/util/function/Predicate;)Lj$/util/function/Predicate;
 
-    check-cast p1, Lorg/telegram/messenger/LocaleController$LocaleInfo;
+    move-result-object v0
 
-    check-cast p2, Lorg/telegram/messenger/LocaleController$LocaleInfo;
+    return-object v0
+.end method
 
-    invoke-static {v0, p1, p2}, Lorg/telegram/ui/LanguageSelectActivity;->$r8$lambda$ez74Ea96iZDun8-GTuq3czQcroM(Lorg/telegram/messenger/LocaleController$LocaleInfo;Lorg/telegram/messenger/LocaleController$LocaleInfo;Lorg/telegram/messenger/LocaleController$LocaleInfo;)I
+.method public synthetic or(Lj$/util/function/Predicate;)Lj$/util/function/Predicate;
+    .locals 0
+
+    invoke-static {p0, p1}, Lj$/util/function/Predicate$-CC;->$default$or(Lj$/util/function/Predicate;Lj$/util/function/Predicate;)Lj$/util/function/Predicate;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
+.method public final test(Ljava/lang/Object;)Z
+    .locals 1
+
+    iget-object v0, p0, Lorg/telegram/ui/LanguageSelectActivity$$ExternalSyntheticLambda9;->f$0:Ljava/lang/String;
+
+    check-cast p1, Ljava/lang/String;
+
+    invoke-static {v0, p1}, Lorg/telegram/ui/LanguageSelectActivity;->$r8$lambda$Ih65pCE9YcfgRrko_8zeKQiiaeQ(Ljava/lang/String;Ljava/lang/String;)Z
 
     move-result p1
 

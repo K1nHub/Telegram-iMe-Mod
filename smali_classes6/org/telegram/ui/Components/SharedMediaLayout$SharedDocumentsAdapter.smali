@@ -759,7 +759,7 @@
     .line 5568
     iget v0, p0, Lorg/telegram/ui/Components/SharedMediaLayout$SharedDocumentsAdapter;->currentType:I
 
-    sget v1, Lcom/smedialink/common/IdFabric$CustomType;->MEDIA_TAB_PLAYLIST:I
+    sget v1, Lcom/iMe/common/IdFabric$CustomType;->MEDIA_TAB_PLAYLIST:I
 
     if-ne v0, v1, :cond_0
 
@@ -1191,7 +1191,7 @@
 
     if-eqz v2, :cond_1
 
-    sget v1, Lcom/smedialink/common/IdFabric$ViewTypes;->SHARED_AUDIO_CELL_MUSIC:I
+    sget v1, Lcom/iMe/common/IdFabric$ViewTypes;->SHARED_AUDIO_CELL_MUSIC:I
 
     :cond_1
     iget-object v2, p0, Lorg/telegram/ui/Components/SharedMediaLayout$SharedDocumentsAdapter;->this$0:Lorg/telegram/ui/Components/SharedMediaLayout;

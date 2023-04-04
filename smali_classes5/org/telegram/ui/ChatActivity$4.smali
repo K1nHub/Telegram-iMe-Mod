@@ -3,12 +3,12 @@
 .source "ChatActivity.java"
 
 # interfaces
-.implements Lorg/fork/ui/dialog/TranslateAlert$TranslatorActionsDelegate;
+.implements Lcom/iMe/fork/ui/dialog/TranslateAlert$TranslatorActionsDelegate;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lorg/telegram/ui/ChatActivity;->createTranslateOutgoingDialog(Ljava/lang/String;Lorg/fork/utils/Callbacks$Callback1;)Lorg/fork/ui/dialog/TranslateAlert;
+    value = Lorg/telegram/ui/ChatActivity;->createTranslateOutgoingDialog(Ljava/lang/String;Lcom/iMe/fork/utils/Callbacks$Callback1;)Lcom/iMe/fork/ui/dialog/TranslateAlert;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -20,17 +20,17 @@
 # instance fields
 .field final synthetic this$0:Lorg/telegram/ui/ChatActivity;
 
-.field final synthetic val$pasteResultAction:Lorg/fork/utils/Callbacks$Callback1;
+.field final synthetic val$pasteResultAction:Lcom/iMe/fork/utils/Callbacks$Callback1;
 
 
 # direct methods
-.method constructor <init>(Lorg/telegram/ui/ChatActivity;Lorg/fork/utils/Callbacks$Callback1;)V
+.method constructor <init>(Lorg/telegram/ui/ChatActivity;Lcom/iMe/fork/utils/Callbacks$Callback1;)V
     .locals 0
 
-    .line 820
+    .line 821
     iput-object p1, p0, Lorg/telegram/ui/ChatActivity$4;->this$0:Lorg/telegram/ui/ChatActivity;
 
-    iput-object p2, p0, Lorg/telegram/ui/ChatActivity$4;->val$pasteResultAction:Lorg/fork/utils/Callbacks$Callback1;
+    iput-object p2, p0, Lorg/telegram/ui/ChatActivity$4;->val$pasteResultAction:Lcom/iMe/fork/utils/Callbacks$Callback1;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -42,7 +42,7 @@
 .method public synthetic hasReplyingMessage()Z
     .locals 1
 
-    invoke-static {p0}, Lorg/fork/ui/dialog/TranslateAlert$TranslatorActionsDelegate$-CC;->$default$hasReplyingMessage(Lorg/fork/ui/dialog/TranslateAlert$TranslatorActionsDelegate;)Z
+    invoke-static {p0}, Lcom/iMe/fork/ui/dialog/TranslateAlert$TranslatorActionsDelegate$-CC;->$default$hasReplyingMessage(Lcom/iMe/fork/ui/dialog/TranslateAlert$TranslatorActionsDelegate;)Z
 
     move-result v0
 
@@ -52,7 +52,7 @@
 .method public openSettings()V
     .locals 1
 
-    .line 823
+    .line 824
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$4;->this$0:Lorg/telegram/ui/ChatActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ChatActivity;->access$100(Lorg/telegram/ui/ChatActivity;)V
@@ -63,10 +63,10 @@
 .method public pasteResult(Ljava/lang/String;)V
     .locals 1
 
-    .line 828
-    iget-object v0, p0, Lorg/telegram/ui/ChatActivity$4;->val$pasteResultAction:Lorg/fork/utils/Callbacks$Callback1;
+    .line 829
+    iget-object v0, p0, Lorg/telegram/ui/ChatActivity$4;->val$pasteResultAction:Lcom/iMe/fork/utils/Callbacks$Callback1;
 
-    invoke-interface {v0, p1}, Lorg/fork/utils/Callbacks$Callback1;->invoke(Ljava/lang/Object;)V
+    invoke-interface {v0, p1}, Lcom/iMe/fork/utils/Callbacks$Callback1;->invoke(Ljava/lang/Object;)V
 
     return-void
 .end method
@@ -74,7 +74,7 @@
 .method public synthetic replyMessage(Ljava/lang/String;)V
     .locals 0
 
-    invoke-static {p0, p1}, Lorg/fork/ui/dialog/TranslateAlert$TranslatorActionsDelegate$-CC;->$default$replyMessage(Lorg/fork/ui/dialog/TranslateAlert$TranslatorActionsDelegate;Ljava/lang/String;)V
+    invoke-static {p0, p1}, Lcom/iMe/fork/ui/dialog/TranslateAlert$TranslatorActionsDelegate$-CC;->$default$replyMessage(Lcom/iMe/fork/ui/dialog/TranslateAlert$TranslatorActionsDelegate;Ljava/lang/String;)V
 
     return-void
 .end method

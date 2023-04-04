@@ -1409,7 +1409,7 @@
 
     const-string v15, ""
 
-    const-string v11, "un1"
+    const-string/jumbo v11, "un1"
 
     if-eqz v3, :cond_2
 
@@ -1765,7 +1765,7 @@
     :cond_c
     instance-of v3, v2, Lorg/telegram/tgnet/TLRPC$TL_channelAdminLogEventActionParticipantInvite;
 
-    const-string v14, "un2"
+    const-string/jumbo v14, "un2"
 
     if-eqz v3, :cond_10
 
@@ -5882,7 +5882,7 @@
     :cond_a6
     instance-of v1, v2, Lorg/telegram/tgnet/TLRPC$TL_channelAdminLogEventActionExportedInviteEdit;
 
-    const-string v9, "un3"
+    const-string/jumbo v9, "un3"
 
     if-eqz v1, :cond_a8
 
@@ -7181,7 +7181,7 @@
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v2, "unsupported "
+    const-string/jumbo v2, "unsupported "
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -19356,7 +19356,7 @@
 
     move-result-object v1
 
-    const-string v2, "topic"
+    const-string/jumbo v2, "topic"
 
     goto :goto_0
 
@@ -19728,7 +19728,7 @@
     :cond_5
     instance-of v13, v11, Lorg/telegram/tgnet/TLRPC$TL_messageActionGroupCall;
 
-    const-string v15, "un1"
+    const-string/jumbo v15, "un1"
 
     if-eqz v13, :cond_10
 
@@ -19957,7 +19957,7 @@
     :cond_10
     instance-of v13, v11, Lorg/telegram/tgnet/TLRPC$TL_messageActionInviteToGroupCall;
 
-    const-string v14, "un2"
+    const-string/jumbo v14, "un2"
 
     if-eqz v13, :cond_16
 
@@ -20111,7 +20111,7 @@
 
     iget-object v3, v0, Lorg/telegram/tgnet/TLRPC$MessageAction;->users:Ljava/util/ArrayList;
 
-    const-string v2, "un2"
+    const-string/jumbo v2, "un2"
 
     move-object/from16 v0, p0
 
@@ -20141,7 +20141,7 @@
 
     iget-object v3, v0, Lorg/telegram/tgnet/TLRPC$MessageAction;->users:Ljava/util/ArrayList;
 
-    const-string v2, "un2"
+    const-string/jumbo v2, "un2"
 
     move-object/from16 v0, p0
 
@@ -20961,7 +20961,7 @@
 
     iget-object v3, v0, Lorg/telegram/tgnet/TLRPC$MessageAction;->users:Ljava/util/ArrayList;
 
-    const-string v2, "un2"
+    const-string/jumbo v2, "un2"
 
     move-object/from16 v0, p0
 
@@ -20991,7 +20991,7 @@
 
     iget-object v3, v0, Lorg/telegram/tgnet/TLRPC$MessageAction;->users:Ljava/util/ArrayList;
 
-    const-string v2, "un2"
+    const-string/jumbo v2, "un2"
 
     move-object/from16 v0, p0
 
@@ -26623,7 +26623,7 @@
     iget v0, p0, Lorg/telegram/messenger/MessageObject;->currentAccount:I
 
     .line 167
-    invoke-static {v0}, Lorg/fork/controller/AlbumsController;->getInstance(I)Lorg/fork/controller/AlbumsController;
+    invoke-static {v0}, Lcom/iMe/fork/controller/AlbumsController;->getInstance(I)Lcom/iMe/fork/controller/AlbumsController;
 
     move-result-object v0
 
@@ -26637,7 +26637,7 @@
 
     neg-long v2, v2
 
-    invoke-virtual {v0, v2, v3}, Lorg/fork/controller/AlbumsController;->isDialogAlbum(J)Z
+    invoke-virtual {v0, v2, v3}, Lcom/iMe/fork/controller/AlbumsController;->isDialogAlbum(J)Z
 
     move-result v0
 
@@ -28465,7 +28465,7 @@
     iget-object v0, v0, Lorg/telegram/tgnet/TLRPC$MessageMedia;->game:Lorg/telegram/tgnet/TLRPC$TL_game;
 
     :cond_1
-    const-string v1, "un1"
+    const-string/jumbo v1, "un1"
 
     const-string v2, "Points"
 
@@ -28642,7 +28642,7 @@
     :goto_0
     iget-object p1, p0, Lorg/telegram/messenger/MessageObject;->messageText:Ljava/lang/CharSequence;
 
-    const-string v1, "un2"
+    const-string/jumbo v1, "un2"
 
     invoke-static {p1, v1, v0}, Lorg/telegram/messenger/MessageObject;->replaceWithLink(Ljava/lang/CharSequence;Ljava/lang/String;Lorg/telegram/tgnet/TLObject;)Ljava/lang/CharSequence;
 
@@ -30774,7 +30774,7 @@
     goto :goto_0
 
     :cond_2
-    const-string v3, "twitter"
+    const-string/jumbo v3, "twitter"
 
     .line 4821
     invoke-virtual {v3, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -31326,7 +31326,7 @@
 
     const-string v1, "ActionPinnedNoText"
 
-    const-string v2, "un1"
+    const-string/jumbo v2, "un1"
 
     if-eqz v0, :cond_28
 
@@ -38431,7 +38431,7 @@
     .line 157
     iget v0, p0, Lorg/telegram/messenger/MessageObject;->currentAccount:I
 
-    invoke-static {v0}, Lorg/fork/controller/AlbumsController;->getInstance(I)Lorg/fork/controller/AlbumsController;
+    invoke-static {v0}, Lcom/iMe/fork/controller/AlbumsController;->getInstance(I)Lcom/iMe/fork/controller/AlbumsController;
 
     move-result-object v0
 
@@ -38439,7 +38439,7 @@
 
     move-result-wide v1
 
-    invoke-virtual {v0, v1, v2}, Lorg/fork/controller/AlbumsController;->isDialogAlbum(J)Z
+    invoke-virtual {v0, v1, v2}, Lcom/iMe/fork/controller/AlbumsController;->isDialogAlbum(J)Z
 
     move-result v0
 
@@ -41609,11 +41609,11 @@
 
     iget v0, p0, Lorg/telegram/messenger/MessageObject;->currentAccount:I
 
-    invoke-static {v0}, Lorg/fork/controller/ToolsController;->getInstance(I)Lorg/fork/controller/ToolsController;
+    invoke-static {v0}, Lcom/iMe/fork/controller/ToolsController;->getInstance(I)Lcom/iMe/fork/controller/ToolsController;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lorg/fork/controller/ToolsController;->isChannelWidePostsEnabled()Z
+    invoke-virtual {v0}, Lcom/iMe/fork/controller/ToolsController;->isChannelWidePostsEnabled()Z
 
     move-result v0
 

@@ -927,7 +927,7 @@
 .method public final sameHostAndPort(Lokhttp3/HttpUrl;)Z
     .locals 3
 
-    const-string v0, "url"
+    const-string/jumbo v0, "url"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 

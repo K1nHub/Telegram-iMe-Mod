@@ -1,6 +1,6 @@
 package com.google.android.exoplayer2.source.dash.manifest;
 
-import com.google.android.exoplayer2.C0468C;
+import com.google.android.exoplayer2.C0482C;
 import com.google.android.exoplayer2.source.dash.DashSegmentIndex;
 /* loaded from: classes.dex */
 final class SingleSegmentIndex implements DashSegmentIndex {
@@ -28,7 +28,7 @@ final class SingleSegmentIndex implements DashSegmentIndex {
 
     @Override // com.google.android.exoplayer2.source.dash.DashSegmentIndex
     public long getNextSegmentAvailableTimeUs(long j, long j2) {
-        return C0468C.TIME_UNSET;
+        return C0482C.TIME_UNSET;
     }
 
     @Override // com.google.android.exoplayer2.source.dash.DashSegmentIndex

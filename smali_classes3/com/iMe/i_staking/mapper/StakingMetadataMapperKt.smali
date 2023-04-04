@@ -10,7 +10,7 @@
 
 
 # direct methods
-.method public static final mapToDomain(Lcom/iMe/i_staking/response/StakingMetadataResponse;)Lcom/smedialink/storage/domain/model/staking/StakingMetadata;
+.method public static final mapToDomain(Lcom/iMe/i_staking/response/StakingMetadataResponse;)Lcom/iMe/storage/domain/model/staking/StakingMetadata;
     .locals 33
 
     const-string v0, "<this>"
@@ -20,7 +20,7 @@
     invoke-static {v1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 17
-    new-instance v0, Lcom/smedialink/storage/domain/model/staking/StakingMetadata;
+    new-instance v0, Lcom/iMe/storage/domain/model/staking/StakingMetadata;
 
     .line 18
     invoke-virtual/range {p0 .. p0}, Lcom/iMe/i_staking/response/StakingMetadataResponse;->getId()J
@@ -28,13 +28,13 @@
     move-result-wide v3
 
     .line 19
-    sget-object v2, Lcom/smedialink/storage/domain/model/crypto/NetworkType;->Companion:Lcom/smedialink/storage/domain/model/crypto/NetworkType$Companion;
+    sget-object v2, Lcom/iMe/storage/domain/model/crypto/NetworkType;->Companion:Lcom/iMe/storage/domain/model/crypto/NetworkType$Companion;
 
     invoke-virtual/range {p0 .. p0}, Lcom/iMe/i_staking/response/StakingMetadataResponse;->getNet()Ljava/lang/String;
 
     move-result-object v5
 
-    invoke-virtual {v2, v5}, Lcom/smedialink/storage/domain/model/crypto/NetworkType$Companion;->map(Ljava/lang/String;)Lcom/smedialink/storage/domain/model/crypto/NetworkType;
+    invoke-virtual {v2, v5}, Lcom/iMe/storage/domain/model/crypto/NetworkType$Companion;->map(Ljava/lang/String;)Lcom/iMe/storage/domain/model/crypto/NetworkType;
 
     move-result-object v5
 
@@ -68,7 +68,7 @@
 
     move-result-object v2
 
-    invoke-static {v2}, Lcom/iMe/i_staking/mapper/StakingTokenMapperKt;->mapToDomain(Lcom/iMe/i_staking/response/StakingTokenResponse;)Lcom/smedialink/storage/domain/model/staking/StakingToken;
+    invoke-static {v2}, Lcom/iMe/i_staking/mapper/StakingTokenMapperKt;->mapToDomain(Lcom/iMe/i_staking/response/StakingTokenResponse;)Lcom/iMe/storage/domain/model/staking/StakingToken;
 
     move-result-object v11
 
@@ -77,7 +77,7 @@
 
     move-result-object v2
 
-    invoke-static {v2}, Lcom/iMe/i_staking/mapper/StakingTokenMapperKt;->mapToDomain(Lcom/iMe/i_staking/response/StakingTokenResponse;)Lcom/smedialink/storage/domain/model/staking/StakingToken;
+    invoke-static {v2}, Lcom/iMe/i_staking/mapper/StakingTokenMapperKt;->mapToDomain(Lcom/iMe/i_staking/response/StakingTokenResponse;)Lcom/iMe/storage/domain/model/staking/StakingToken;
 
     move-result-object v12
 
@@ -131,12 +131,12 @@
 
     move-result-object v2
 
-    invoke-static {v2}, Lcom/iMe/i_staking/mapper/StakingStatsMapperKt;->mapToDomain(Lcom/iMe/i_staking/response/StakingStatsResponse;)Lcom/smedialink/storage/domain/model/staking/StakingStats;
+    invoke-static {v2}, Lcom/iMe/i_staking/mapper/StakingStatsMapperKt;->mapToDomain(Lcom/iMe/i_staking/response/StakingStatsResponse;)Lcom/iMe/storage/domain/model/staking/StakingStats;
 
     move-result-object v30
 
     .line 37
-    sget-object v2, Lcom/smedialink/storage/domain/model/crypto/level/AccountLevel;->Companion:Lcom/smedialink/storage/domain/model/crypto/level/AccountLevel$Companion;
+    sget-object v2, Lcom/iMe/storage/domain/model/crypto/level/AccountLevel;->Companion:Lcom/iMe/storage/domain/model/crypto/level/AccountLevel$Companion;
 
     invoke-virtual/range {p0 .. p0}, Lcom/iMe/i_staking/response/StakingMetadataResponse;->getMinimalRank()Ljava/lang/String;
 
@@ -149,7 +149,7 @@
     :cond_0
     move-object/from16 v1, v31
 
-    invoke-virtual {v2, v1}, Lcom/smedialink/storage/domain/model/crypto/level/AccountLevel$Companion;->map(Ljava/lang/String;)Lcom/smedialink/storage/domain/model/crypto/level/AccountLevel;
+    invoke-virtual {v2, v1}, Lcom/iMe/storage/domain/model/crypto/level/AccountLevel$Companion;->map(Ljava/lang/String;)Lcom/iMe/storage/domain/model/crypto/level/AccountLevel;
 
     move-result-object v31
 
@@ -161,12 +161,12 @@
     move-object v2, v0
 
     .line 17
-    invoke-direct/range {v2 .. v32}, Lcom/smedialink/storage/domain/model/staking/StakingMetadata;-><init>(JLcom/smedialink/storage/domain/model/crypto/NetworkType;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lcom/smedialink/storage/domain/model/staking/StakingToken;Lcom/smedialink/storage/domain/model/staking/StakingToken;DDJDDDDJLjava/math/BigDecimal;Lcom/smedialink/storage/domain/model/staking/StakingStats;Lcom/smedialink/storage/domain/model/crypto/level/AccountLevel;Ljava/lang/String;)V
+    invoke-direct/range {v2 .. v32}, Lcom/iMe/storage/domain/model/staking/StakingMetadata;-><init>(JLcom/iMe/storage/domain/model/crypto/NetworkType;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lcom/iMe/storage/domain/model/staking/StakingToken;Lcom/iMe/storage/domain/model/staking/StakingToken;DDJDDDDJLjava/math/BigDecimal;Lcom/iMe/storage/domain/model/staking/StakingStats;Lcom/iMe/storage/domain/model/crypto/level/AccountLevel;Ljava/lang/String;)V
 
     return-object v0
 .end method
 
-.method public static final mapToDomain(Lcom/iMe/i_staking/response/StakingProgrammesResponse;)Lcom/smedialink/storage/domain/model/staking/StakingProgrammes;
+.method public static final mapToDomain(Lcom/iMe/i_staking/response/StakingProgrammesResponse;)Lcom/iMe/storage/domain/model/staking/StakingProgrammes;
     .locals 3
 
     const-string v0, "<this>"
@@ -214,7 +214,7 @@
     check-cast v2, Lcom/iMe/i_staking/response/StakingMetadataResponse;
 
     .line 13
-    invoke-static {v2}, Lcom/iMe/i_staking/mapper/StakingMetadataMapperKt;->mapToDomain(Lcom/iMe/i_staking/response/StakingMetadataResponse;)Lcom/smedialink/storage/domain/model/staking/StakingMetadata;
+    invoke-static {v2}, Lcom/iMe/i_staking/mapper/StakingMetadataMapperKt;->mapToDomain(Lcom/iMe/i_staking/response/StakingMetadataResponse;)Lcom/iMe/storage/domain/model/staking/StakingMetadata;
 
     move-result-object v2
 
@@ -225,9 +225,9 @@
 
     .line 11
     :cond_0
-    new-instance p0, Lcom/smedialink/storage/domain/model/staking/StakingProgrammes;
+    new-instance p0, Lcom/iMe/storage/domain/model/staking/StakingProgrammes;
 
-    invoke-direct {p0, v0, v1}, Lcom/smedialink/storage/domain/model/staking/StakingProgrammes;-><init>(ILjava/util/List;)V
+    invoke-direct {p0, v0, v1}, Lcom/iMe/storage/domain/model/staking/StakingProgrammes;-><init>(ILjava/util/List;)V
 
     return-object p0
 .end method

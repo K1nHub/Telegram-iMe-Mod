@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lorg/telegram/ui/CacheControlActivity$$ExternalSyntheticLambda0;->f$0:Lorg/telegram/ui/CacheControlActivity;
 
-    invoke-static {v0, p1}, Lorg/telegram/ui/CacheControlActivity;->$r8$lambda$QgtznZcYCpYI1iBP_a_q_4j9I48(Lorg/telegram/ui/CacheControlActivity;Landroid/animation/ValueAnimator;)V
+    invoke-static {v0, p1}, Lorg/telegram/ui/CacheControlActivity;->$r8$lambda$WTzcB5Edmf-rGJ3SCEqsRhmLCqQ(Lorg/telegram/ui/CacheControlActivity;Landroid/animation/ValueAnimator;)V
 
     return-void
 .end method

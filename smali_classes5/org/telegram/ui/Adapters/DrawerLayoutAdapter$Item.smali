@@ -21,24 +21,24 @@
 
 .field public lottieIcon:I
 
-.field private rectIcon:Lcom/smedialink/ui/drawer/DrawerSwitchableItem;
+.field private rectIcon:Lcom/iMe/ui/drawer/DrawerSwitchableItem;
 
 .field public text:Ljava/lang/String;
 
 
 # direct methods
-.method public constructor <init>(IILcom/smedialink/ui/drawer/DrawerSwitchableItem;)V
+.method public constructor <init>(IILcom/iMe/ui/drawer/DrawerSwitchableItem;)V
     .locals 1
 
     .line 637
-    invoke-virtual {p3}, Lcom/smedialink/ui/drawer/DrawerSwitchableItem;->title()Ljava/lang/String;
+    invoke-virtual {p3}, Lcom/iMe/ui/drawer/DrawerSwitchableItem;->title()Ljava/lang/String;
 
     move-result-object v0
 
     invoke-direct {p0, p1, v0, p2}, Lorg/telegram/ui/Adapters/DrawerLayoutAdapter$Item;-><init>(ILjava/lang/String;I)V
 
     .line 638
-    iput-object p3, p0, Lorg/telegram/ui/Adapters/DrawerLayoutAdapter$Item;->rectIcon:Lcom/smedialink/ui/drawer/DrawerSwitchableItem;
+    iput-object p3, p0, Lorg/telegram/ui/Adapters/DrawerLayoutAdapter$Item;->rectIcon:Lcom/iMe/ui/drawer/DrawerSwitchableItem;
 
     return-void
 .end method
@@ -88,12 +88,12 @@
     .locals 7
 
     .line 663
-    iget-object v0, p0, Lorg/telegram/ui/Adapters/DrawerLayoutAdapter$Item;->rectIcon:Lcom/smedialink/ui/drawer/DrawerSwitchableItem;
+    iget-object v0, p0, Lorg/telegram/ui/Adapters/DrawerLayoutAdapter$Item;->rectIcon:Lcom/iMe/ui/drawer/DrawerSwitchableItem;
 
     if-eqz v0, :cond_0
 
     .line 664
-    invoke-static {v0}, Lcom/smedialink/common/TelegramThemeKeys$Drawer;->buildDrawerRectIconBackgroundKey(Lcom/smedialink/ui/drawer/DrawerSwitchableItem;)Ljava/lang/String;
+    invoke-static {v0}, Lcom/iMe/common/TelegramThemeKeys$Drawer;->buildDrawerRectIconBackgroundKey(Lcom/iMe/ui/drawer/DrawerSwitchableItem;)Ljava/lang/String;
 
     move-result-object v0
 

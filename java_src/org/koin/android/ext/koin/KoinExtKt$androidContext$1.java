@@ -38,11 +38,11 @@ public final class KoinExtKt$androidContext$1 extends Lambda implements Function
     /* compiled from: KoinExt.kt */
     /* renamed from: org.koin.android.ext.koin.KoinExtKt$androidContext$1$1 */
     /* loaded from: classes4.dex */
-    public static final class C31921 extends Lambda implements Function2<Scope, ParametersHolder, Application> {
+    public static final class C32071 extends Lambda implements Function2<Scope, ParametersHolder, Application> {
         final /* synthetic */ Context $androidContext;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        C31921(Context context) {
+        C32071(Context context) {
             super(2);
             this.$androidContext = context;
         }
@@ -65,11 +65,11 @@ public final class KoinExtKt$androidContext$1 extends Lambda implements Function
     public final void invoke2(Module module) {
         List emptyList;
         Intrinsics.checkNotNullParameter(module, "$this$module");
-        C31921 c31921 = new C31921(this.$androidContext);
+        C32071 c32071 = new C32071(this.$androidContext);
         StringQualifier rootScopeQualifier = ScopeRegistry.Companion.getRootScopeQualifier();
         Kind kind = Kind.Singleton;
         emptyList = CollectionsKt__CollectionsKt.emptyList();
-        SingleInstanceFactory<?> singleInstanceFactory = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier, Reflection.getOrCreateKotlinClass(Application.class), null, c31921, kind, emptyList));
+        SingleInstanceFactory<?> singleInstanceFactory = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier, Reflection.getOrCreateKotlinClass(Application.class), null, c32071, kind, emptyList));
         module.indexPrimaryType(singleInstanceFactory);
         if (module.get_createdAtStart()) {
             module.prepareForCreationAtStart(singleInstanceFactory);

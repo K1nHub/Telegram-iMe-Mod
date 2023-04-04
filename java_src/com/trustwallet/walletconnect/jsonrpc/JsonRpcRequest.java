@@ -1,15 +1,15 @@
 package com.trustwallet.walletconnect.jsonrpc;
 
-import com.iMe.i_staking.request.StakingApprovalPrepareRequest$$ExternalSyntheticBackport0;
+import com.iMe.bots.data.model.database.BotsDbModel$$ExternalSyntheticBackport0;
 import com.trustwallet.walletconnect.models.WCMethod;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: JsonRpcRequest.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class JsonRpcRequest<T> {
 
     /* renamed from: id */
-    private final long f385id;
+    private final long f390id;
     private final String jsonrpc;
     private final WCMethod method;
     private final T params;
@@ -20,13 +20,13 @@ public final class JsonRpcRequest<T> {
         }
         if (obj instanceof JsonRpcRequest) {
             JsonRpcRequest jsonRpcRequest = (JsonRpcRequest) obj;
-            return this.f385id == jsonRpcRequest.f385id && Intrinsics.areEqual(this.jsonrpc, jsonRpcRequest.jsonrpc) && this.method == jsonRpcRequest.method && Intrinsics.areEqual(this.params, jsonRpcRequest.params);
+            return this.f390id == jsonRpcRequest.f390id && Intrinsics.areEqual(this.jsonrpc, jsonRpcRequest.jsonrpc) && this.method == jsonRpcRequest.method && Intrinsics.areEqual(this.params, jsonRpcRequest.params);
         }
         return false;
     }
 
     public int hashCode() {
-        int m716m = ((StakingApprovalPrepareRequest$$ExternalSyntheticBackport0.m716m(this.f385id) * 31) + this.jsonrpc.hashCode()) * 31;
+        int m716m = ((BotsDbModel$$ExternalSyntheticBackport0.m716m(this.f390id) * 31) + this.jsonrpc.hashCode()) * 31;
         WCMethod wCMethod = this.method;
         int hashCode = (m716m + (wCMethod == null ? 0 : wCMethod.hashCode())) * 31;
         T t = this.params;
@@ -34,12 +34,12 @@ public final class JsonRpcRequest<T> {
     }
 
     public String toString() {
-        return "JsonRpcRequest(id=" + this.f385id + ", jsonrpc=" + this.jsonrpc + ", method=" + this.method + ", params=" + this.params + ')';
+        return "JsonRpcRequest(id=" + this.f390id + ", jsonrpc=" + this.jsonrpc + ", method=" + this.method + ", params=" + this.params + ')';
     }
 
     public JsonRpcRequest(long j, String jsonrpc, WCMethod wCMethod, T t) {
         Intrinsics.checkNotNullParameter(jsonrpc, "jsonrpc");
-        this.f385id = j;
+        this.f390id = j;
         this.jsonrpc = jsonrpc;
         this.method = wCMethod;
         this.params = t;
@@ -50,7 +50,7 @@ public final class JsonRpcRequest<T> {
     }
 
     public final long getId() {
-        return this.f385id;
+        return this.f390id;
     }
 
     public final WCMethod getMethod() {

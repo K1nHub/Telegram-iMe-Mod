@@ -1,11 +1,11 @@
 .class Lorg/telegram/ui/ChatActivity$54;
-.super Lorg/telegram/ui/Components/TranslateButton;
+.super Lorg/telegram/ui/Components/LinkSpanDrawable$LinksTextView;
 .source "ChatActivity.java"
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lorg/telegram/ui/ChatActivity;->createTranslateButton()V
+    value = Lorg/telegram/ui/ChatActivity;->createTopPanel()V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -15,182 +15,147 @@
 
 
 # instance fields
+.field colorFilter:Landroid/graphics/PorterDuffColorFilter;
+
+.field lastColor:I
+
+.field lastLayout:Landroid/text/Layout;
+
+.field stack:Lorg/telegram/ui/Components/AnimatedEmojiSpan$EmojiGroupedSpans;
+
 .field final synthetic this$0:Lorg/telegram/ui/ChatActivity;
 
 
 # direct methods
-.method constructor <init>(Lorg/telegram/ui/ChatActivity;Landroid/content/Context;Lorg/telegram/ui/ChatActivity;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
+.method constructor <init>(Lorg/telegram/ui/ChatActivity;Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
     .locals 0
 
-    .line 9830
+    .line 9693
     iput-object p1, p0, Lorg/telegram/ui/ChatActivity$54;->this$0:Lorg/telegram/ui/ChatActivity;
 
-    invoke-direct {p0, p2, p3, p4}, Lorg/telegram/ui/Components/TranslateButton;-><init>(Landroid/content/Context;Lorg/telegram/ui/ChatActivity;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
+    invoke-direct {p0, p2, p3}, Lorg/telegram/ui/Components/LinkSpanDrawable$LinksTextView;-><init>(Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method protected onButtonClick()V
-    .locals 5
+.method protected dispatchDraw(Landroid/graphics/Canvas;)V
+    .locals 13
 
-    .line 9833
-    iget-object v0, p0, Lorg/telegram/ui/ChatActivity$54;->this$0:Lorg/telegram/ui/ChatActivity;
+    .line 9708
+    invoke-super {p0, p1}, Landroid/widget/TextView;->dispatchDraw(Landroid/graphics/Canvas;)V
 
-    invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getUserConfig()Lorg/telegram/messenger/UserConfig;
+    .line 9709
+    iget-object v0, p0, Lorg/telegram/ui/ChatActivity$54;->lastLayout:Landroid/text/Layout;
 
-    move-result-object v0
-
-    invoke-virtual {v0}, Lorg/telegram/messenger/UserConfig;->isPremium()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    .line 9834
-    iget-object v0, p0, Lorg/telegram/ui/ChatActivity$54;->this$0:Lorg/telegram/ui/ChatActivity;
-
-    invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getMessagesController()Lorg/telegram/messenger/MessagesController;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lorg/telegram/messenger/MessagesController;->getTranslateController()Lorg/telegram/messenger/TranslateController;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lorg/telegram/ui/ChatActivity$54;->this$0:Lorg/telegram/ui/ChatActivity;
-
-    invoke-virtual {v1}, Lorg/telegram/ui/ChatActivity;->getDialogId()J
-
-    move-result-wide v1
-
-    invoke-virtual {v0, v1, v2}, Lorg/telegram/messenger/TranslateController;->toggleTranslatingDialog(J)V
-
-    goto :goto_0
-
-    .line 9836
-    :cond_0
-    iget-object v0, p0, Lorg/telegram/ui/ChatActivity$54;->this$0:Lorg/telegram/ui/ChatActivity;
-
-    invoke-static {v0}, Lorg/telegram/ui/ChatActivity;->access$29800(Lorg/telegram/ui/ChatActivity;)I
-
-    move-result v0
-
-    invoke-static {v0}, Lorg/telegram/messenger/MessagesController;->getNotificationsSettings(I)Landroid/content/SharedPreferences;
-
-    move-result-object v0
-
-    invoke-interface {v0}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
-
-    move-result-object v0
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, "dialog_show_translate_count"
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-object v2, p0, Lorg/telegram/ui/ChatActivity$54;->this$0:Lorg/telegram/ui/ChatActivity;
-
-    invoke-virtual {v2}, Lorg/telegram/ui/ChatActivity;->getDialogId()J
-
-    move-result-wide v2
-
-    invoke-virtual {v1, v2, v3}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {p0}, Landroid/widget/TextView;->getLayout()Landroid/text/Layout;
 
     move-result-object v1
 
-    const/16 v2, 0xe
+    if-eq v0, v1, :cond_0
 
-    invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences$Editor;->putInt(Ljava/lang/String;I)Landroid/content/SharedPreferences$Editor;
+    const/4 v0, 0x7
+
+    .line 9710
+    iget-object v1, p0, Lorg/telegram/ui/ChatActivity$54;->stack:Lorg/telegram/ui/Components/AnimatedEmojiSpan$EmojiGroupedSpans;
+
+    const/4 v2, 0x1
+
+    new-array v2, v2, [Landroid/text/Layout;
+
+    const/4 v3, 0x0
+
+    invoke-virtual {p0}, Landroid/widget/TextView;->getLayout()Landroid/text/Layout;
+
+    move-result-object v4
+
+    iput-object v4, p0, Lorg/telegram/ui/ChatActivity$54;->lastLayout:Landroid/text/Layout;
+
+    aput-object v4, v2, v3
+
+    invoke-static {v0, p0, v1, v2}, Lorg/telegram/ui/Components/AnimatedEmojiSpan;->update(ILandroid/view/View;Lorg/telegram/ui/Components/AnimatedEmojiSpan$EmojiGroupedSpans;[Landroid/text/Layout;)Lorg/telegram/ui/Components/AnimatedEmojiSpan$EmojiGroupedSpans;
 
     move-result-object v0
 
-    invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->commit()Z
+    iput-object v0, p0, Lorg/telegram/ui/ChatActivity$54;->stack:Lorg/telegram/ui/Components/AnimatedEmojiSpan$EmojiGroupedSpans;
 
-    .line 9837
+    .line 9712
+    :cond_0
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$54;->this$0:Lorg/telegram/ui/ChatActivity;
 
-    new-instance v1, Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet;
+    const-string v1, "windowBackgroundWhiteBlueIcon"
 
-    iget-object v2, p0, Lorg/telegram/ui/ChatActivity$54;->this$0:Lorg/telegram/ui/ChatActivity;
+    invoke-virtual {v0, v1}, Lorg/telegram/ui/ChatActivity;->getThemedColor(Ljava/lang/String;)I
 
-    const/16 v3, 0xd
+    move-result v0
 
-    const/4 v4, 0x0
+    .line 9713
+    iget v1, p0, Lorg/telegram/ui/ChatActivity$54;->lastColor:I
 
-    invoke-direct {v1, v2, v3, v4}, Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet;-><init>(Lorg/telegram/ui/ActionBar/BaseFragment;IZ)V
+    if-ne v1, v0, :cond_1
 
-    invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/BaseFragment;->showDialog(Landroid/app/Dialog;)Landroid/app/Dialog;
+    iget-object v1, p0, Lorg/telegram/ui/ChatActivity$54;->colorFilter:Landroid/graphics/PorterDuffColorFilter;
 
-    .line 9839
-    :goto_0
-    iget-object v0, p0, Lorg/telegram/ui/ChatActivity$54;->this$0:Lorg/telegram/ui/ChatActivity;
+    if-nez v1, :cond_2
 
-    const/4 v1, 0x1
+    .line 9714
+    :cond_1
+    new-instance v1, Landroid/graphics/PorterDuffColorFilter;
 
-    invoke-static {v0, v1}, Lorg/telegram/ui/ChatActivity;->access$14700(Lorg/telegram/ui/ChatActivity;Z)V
+    sget-object v2, Landroid/graphics/PorterDuff$Mode;->MULTIPLY:Landroid/graphics/PorterDuff$Mode;
+
+    invoke-direct {v1, v0, v2}, Landroid/graphics/PorterDuffColorFilter;-><init>(ILandroid/graphics/PorterDuff$Mode;)V
+
+    iput-object v1, p0, Lorg/telegram/ui/ChatActivity$54;->colorFilter:Landroid/graphics/PorterDuffColorFilter;
+
+    .line 9715
+    iput v0, p0, Lorg/telegram/ui/ChatActivity$54;->lastColor:I
+
+    .line 9717
+    :cond_2
+    invoke-virtual {p0}, Landroid/widget/TextView;->getLayout()Landroid/text/Layout;
+
+    move-result-object v4
+
+    iget-object v5, p0, Lorg/telegram/ui/ChatActivity$54;->stack:Lorg/telegram/ui/Components/AnimatedEmojiSpan$EmojiGroupedSpans;
+
+    const/4 v6, 0x0
+
+    const/4 v7, 0x0
+
+    const/4 v8, 0x0
+
+    const/4 v9, 0x0
+
+    const/4 v10, 0x0
+
+    const/high16 v11, 0x3f800000    # 1.0f
+
+    iget-object v12, p0, Lorg/telegram/ui/ChatActivity$54;->colorFilter:Landroid/graphics/PorterDuffColorFilter;
+
+    move-object v3, p1
+
+    invoke-static/range {v3 .. v12}, Lorg/telegram/ui/Components/AnimatedEmojiSpan;->drawAnimatedEmojis(Landroid/graphics/Canvas;Landroid/text/Layout;Lorg/telegram/ui/Components/AnimatedEmojiSpan$EmojiGroupedSpans;FLjava/util/List;FFFFLandroid/graphics/ColorFilter;)V
 
     return-void
 .end method
 
-.method protected onCloseClick()V
-    .locals 4
+.method protected onDetachedFromWindow()V
+    .locals 1
 
-    .line 9844
-    iget-object v0, p0, Lorg/telegram/ui/ChatActivity$54;->this$0:Lorg/telegram/ui/ChatActivity;
+    .line 9701
+    invoke-super {p0}, Landroid/widget/TextView;->onDetachedFromWindow()V
 
-    invoke-static {v0}, Lorg/telegram/ui/ChatActivity;->access$29900(Lorg/telegram/ui/ChatActivity;)I
+    .line 9702
+    iget-object v0, p0, Lorg/telegram/ui/ChatActivity$54;->stack:Lorg/telegram/ui/Components/AnimatedEmojiSpan$EmojiGroupedSpans;
 
-    move-result v0
+    invoke-static {p0, v0}, Lorg/telegram/ui/Components/AnimatedEmojiSpan;->release(Landroid/view/View;Lorg/telegram/ui/Components/AnimatedEmojiSpan$EmojiGroupedSpans;)V
 
-    invoke-static {v0}, Lorg/telegram/messenger/MessagesController;->getNotificationsSettings(I)Landroid/content/SharedPreferences;
+    const/4 v0, 0x0
 
-    move-result-object v0
-
-    invoke-interface {v0}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
-
-    move-result-object v0
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, "dialog_show_translate_count"
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-object v2, p0, Lorg/telegram/ui/ChatActivity$54;->this$0:Lorg/telegram/ui/ChatActivity;
-
-    invoke-virtual {v2}, Lorg/telegram/ui/ChatActivity;->getDialogId()J
-
-    move-result-wide v2
-
-    invoke-virtual {v1, v2, v3}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    const/16 v2, 0x8c
-
-    invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences$Editor;->putInt(Ljava/lang/String;I)Landroid/content/SharedPreferences$Editor;
-
-    move-result-object v0
-
-    invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->commit()Z
-
-    .line 9845
-    iget-object v0, p0, Lorg/telegram/ui/ChatActivity$54;->this$0:Lorg/telegram/ui/ChatActivity;
-
-    const/4 v1, 0x1
-
-    invoke-static {v0, v1}, Lorg/telegram/ui/ChatActivity;->access$14700(Lorg/telegram/ui/ChatActivity;Z)V
+    .line 9703
+    iput-object v0, p0, Lorg/telegram/ui/ChatActivity$54;->lastLayout:Landroid/text/Layout;
 
     return-void
 .end method

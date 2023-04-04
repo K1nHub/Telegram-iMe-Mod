@@ -1,6 +1,6 @@
 package org.telegram.p048ui;
 
-import com.smedialink.p031ui.recognition.PhotoViewerPresenter;
+import com.iMe.p032ui.recognition.PhotoViewerPresenter;
 import java.util.ArrayList;
 import java.util.List;
 import moxy.MvpPresenter;

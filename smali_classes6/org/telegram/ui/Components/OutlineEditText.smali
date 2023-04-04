@@ -11,10 +11,10 @@
 .method public constructor <init>(Landroid/content/Context;)V
     .locals 3
 
-    .line 17
+    .line 18
     invoke-direct {p0, p1}, Lorg/telegram/ui/Components/OutlineTextContainerView;-><init>(Landroid/content/Context;)V
 
-    .line 19
+    .line 20
     new-instance v0, Lorg/telegram/ui/Components/OutlineEditText$1;
 
     invoke-direct {v0, p0, p1}, Lorg/telegram/ui/Components/OutlineEditText$1;-><init>(Lorg/telegram/ui/Components/OutlineEditText;Landroid/content/Context;)V
@@ -25,10 +25,10 @@
 
     const/high16 v1, 0x41900000    # 18.0f
 
-    .line 26
+    .line 27
     invoke-virtual {v0, p1, v1}, Landroid/widget/EditText;->setTextSize(IF)V
 
-    .line 27
+    .line 28
     iget-object v0, p0, Lorg/telegram/ui/Components/OutlineEditText;->editText:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     const-string v1, "windowBackgroundWhiteBlackText"
@@ -39,7 +39,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/EditText;->setTextColor(I)V
 
-    .line 28
+    .line 29
     iget-object v0, p0, Lorg/telegram/ui/Components/OutlineEditText;->editText:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     const-string v1, "windowBackgroundWhiteHintText"
@@ -50,31 +50,31 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/EditText;->setHintTextColor(I)V
 
-    .line 29
+    .line 30
     iget-object v0, p0, Lorg/telegram/ui/Components/OutlineEditText;->editText:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Landroid/widget/EditText;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
-    .line 30
+    .line 31
     iget-object v0, p0, Lorg/telegram/ui/Components/OutlineEditText;->editText:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     invoke-virtual {v0, p1}, Landroid/widget/EditText;->setSingleLine(Z)V
 
-    .line 31
+    .line 32
     iget-object v0, p0, Lorg/telegram/ui/Components/OutlineEditText;->editText:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     invoke-virtual {v0, p1}, Landroid/widget/EditText;->setInputType(I)V
 
-    .line 32
+    .line 33
     iget-object p1, p0, Lorg/telegram/ui/Components/OutlineEditText;->editText:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     sget-object v0, Landroid/graphics/Typeface;->DEFAULT:Landroid/graphics/Typeface;
 
     invoke-virtual {p1, v0}, Landroid/widget/EditText;->setTypeface(Landroid/graphics/Typeface;)V
 
-    .line 33
+    .line 34
     iget-object p1, p0, Lorg/telegram/ui/Components/OutlineEditText;->editText:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     const-string v0, "windowBackgroundWhiteInputFieldActivated"
@@ -85,19 +85,38 @@
 
     invoke-virtual {p1, v0}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setCursorColor(I)V
 
-    .line 34
+    .line 35
     iget-object p1, p0, Lorg/telegram/ui/Components/OutlineEditText;->editText:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     const/high16 v0, 0x3fc00000    # 1.5f
 
     invoke-virtual {p1, v0}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setCursorWidth(F)V
 
-    .line 35
+    .line 36
+    iget-object p1, p0, Lorg/telegram/ui/Components/OutlineEditText;->editText:Lorg/telegram/ui/Components/EditTextBoldCursor;
+
+    const/16 v0, 0xf
+
+    .line 37
+    invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+
+    move-result v1
+
+    invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+
+    move-result v0
+
+    const/4 v2, 0x0
+
+    .line 36
+    invoke-virtual {p1, v1, v2, v0, v2}, Landroid/widget/EditText;->setPadding(IIII)V
+
+    .line 39
     iget-object p1, p0, Lorg/telegram/ui/Components/OutlineEditText;->editText:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     invoke-virtual {p0, p1}, Lorg/telegram/ui/Components/OutlineTextContainerView;->attachEditText(Landroid/widget/EditText;)V
 
-    .line 37
+    .line 41
     iget-object p1, p0, Lorg/telegram/ui/Components/OutlineEditText;->editText:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     const/4 v0, -0x1
@@ -120,7 +139,7 @@
 .method public getEditText()Lorg/telegram/ui/Components/EditTextBoldCursor;
     .locals 1
 
-    .line 46
+    .line 50
     iget-object v0, p0, Lorg/telegram/ui/Components/OutlineEditText;->editText:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     return-object v0
@@ -129,7 +148,7 @@
 .method public setHint(Ljava/lang/String;)V
     .locals 0
 
-    .line 42
+    .line 46
     invoke-virtual {p0, p1}, Lorg/telegram/ui/Components/OutlineTextContainerView;->setText(Ljava/lang/String;)V
 
     return-void

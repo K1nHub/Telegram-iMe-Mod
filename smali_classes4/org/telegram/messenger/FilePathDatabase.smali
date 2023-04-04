@@ -217,21 +217,21 @@
 .method private ensureQueueExist()V
     .locals 3
 
-    .line 465
+    .line 468
     iget-object v0, p0, Lorg/telegram/messenger/FilePathDatabase;->dispatchQueue:Lorg/telegram/messenger/DispatchQueue;
 
     if-nez v0, :cond_1
 
-    .line 466
+    .line 469
     monitor-enter p0
 
-    .line 467
+    .line 470
     :try_start_0
     iget-object v0, p0, Lorg/telegram/messenger/FilePathDatabase;->dispatchQueue:Lorg/telegram/messenger/DispatchQueue;
 
     if-nez v0, :cond_0
 
-    .line 468
+    .line 471
     new-instance v0, Lorg/telegram/messenger/DispatchQueue;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -254,7 +254,7 @@
 
     iput-object v0, p0, Lorg/telegram/messenger/FilePathDatabase;->dispatchQueue:Lorg/telegram/messenger/DispatchQueue;
 
-    .line 470
+    .line 473
     :cond_0
     monitor-exit p0
 
@@ -303,32 +303,50 @@
     .line 288
     invoke-virtual {v2, v0}, Lorg/telegram/messenger/MessageObject;->checkMediaExistance(Z)V
     :try_end_0
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    :catch_0
+    .line 293
+    :cond_0
+    :goto_1
+    invoke-virtual {p2}, Ljava/util/concurrent/CountDownLatch;->countDown()V
+
+    goto :goto_2
+
+    :catchall_0
     move-exception p1
 
     .line 291
-    invoke-virtual {p1}, Ljava/lang/Exception;->printStackTrace()V
+    :try_start_1
+    invoke-static {p1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_1
+
+    goto :goto_1
+
+    :goto_2
+    return-void
+
+    :catchall_1
+    move-exception p1
 
     .line 293
-    :cond_0
     invoke-virtual {p2}, Ljava/util/concurrent/CountDownLatch;->countDown()V
 
-    return-void
+    .line 294
+    throw p1
 .end method
 
 .method private synthetic lambda$clear$3()V
     .locals 2
 
-    .line 313
+    .line 314
     invoke-virtual {p0}, Lorg/telegram/messenger/FilePathDatabase;->ensureDatabaseCreated()V
 
-    .line 315
+    .line 316
     :try_start_0
     iget-object v0, p0, Lorg/telegram/messenger/FilePathDatabase;->database:Lorg/telegram/SQLite/SQLiteDatabase;
 
@@ -344,7 +362,7 @@
 
     invoke-virtual {v0}, Lorg/telegram/SQLite/SQLitePreparedStatement;->dispose()V
 
-    .line 316
+    .line 317
     iget-object v0, p0, Lorg/telegram/messenger/FilePathDatabase;->database:Lorg/telegram/SQLite/SQLiteDatabase;
 
     const-string v1, "DELETE FROM paths_by_dialog_id WHERE 1"
@@ -366,7 +384,7 @@
     :catch_0
     move-exception v0
 
-    .line 318
+    .line 319
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :goto_0
@@ -478,7 +496,6 @@
 
     invoke-static {p1}, Lorg/telegram/messenger/FileLog;->d(Ljava/lang/String;)V
     :try_end_0
-    .catch Lorg/telegram/SQLite/SQLiteException; {:try_start_0 .. :try_end_0} :catch_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     goto :goto_0
@@ -486,16 +503,11 @@
     :catchall_0
     move-exception p1
 
-    goto :goto_1
-
-    :catch_0
-    move-exception p1
-
     .line 174
     :try_start_1
     invoke-static {p1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
     :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+    .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
     if-eqz v1, :cond_2
 
@@ -504,9 +516,11 @@
     :goto_0
     invoke-virtual {v1}, Lorg/telegram/SQLite/SQLiteCursor;->dispose()V
 
-    goto :goto_2
+    goto :goto_1
 
-    :goto_1
+    :catchall_1
+    move-exception p1
+
     if-eqz v1, :cond_1
 
     invoke-virtual {v1}, Lorg/telegram/SQLite/SQLiteCursor;->dispose()V
@@ -517,7 +531,7 @@
 
     .line 181
     :cond_2
-    :goto_2
+    :goto_1
     invoke-virtual {p6}, Ljava/util/concurrent/CountDownLatch;->countDown()V
 
     return-void
@@ -526,10 +540,10 @@
 .method private synthetic lambda$hasAnotherRefOnFile$4(Ljava/lang/String;[ZLjava/util/concurrent/CountDownLatch;)V
     .locals 3
 
-    .line 327
+    .line 328
     invoke-virtual {p0}, Lorg/telegram/messenger/FilePathDatabase;->ensureDatabaseCreated()V
 
-    .line 329
+    .line 330
     :try_start_0
     iget-object v0, p0, Lorg/telegram/messenger/FilePathDatabase;->database:Lorg/telegram/SQLite/SQLiteDatabase;
 
@@ -559,7 +573,7 @@
 
     move-result-object p1
 
-    .line 330
+    .line 331
     invoke-virtual {p1}, Lorg/telegram/SQLite/SQLiteCursor;->next()Z
 
     move-result p1
@@ -568,42 +582,57 @@
 
     const/4 p1, 0x1
 
-    .line 331
+    .line 332
     aput-boolean p1, p2, v1
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     goto :goto_0
+
+    :catchall_0
+    move-exception p1
+
+    goto :goto_1
 
     :catch_0
     move-exception p1
 
-    .line 334
+    .line 335
+    :try_start_1
     invoke-static {p1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 336
+    .line 337
     :cond_0
     :goto_0
     invoke-virtual {p3}, Ljava/util/concurrent/CountDownLatch;->countDown()V
 
     return-void
+
+    :goto_1
+    invoke-virtual {p3}, Ljava/util/concurrent/CountDownLatch;->countDown()V
+
+    .line 338
+    throw p1
 .end method
 
 .method private synthetic lambda$lookupFiles$7(Ljava/util/ArrayList;Landroid/util/LongSparseArray;Ljava/util/concurrent/CountDownLatch;)V
     .locals 7
 
-    .line 433
+    .line 435
     :try_start_0
     invoke-virtual {p0}, Lorg/telegram/messenger/FilePathDatabase;->ensureDatabaseCreated()V
 
-    .line 434
+    .line 436
     new-instance v0, Lorg/telegram/messenger/FilePathDatabase$FileMeta;
 
     invoke-direct {v0}, Lorg/telegram/messenger/FilePathDatabase$FileMeta;-><init>()V
 
     const/4 v1, 0x0
 
-    .line 435
+    .line 437
     :goto_0
     invoke-virtual {p1}, Ljava/util/ArrayList;->size()I
 
@@ -611,7 +640,7 @@
 
     if-ge v1, v2, :cond_2
 
-    .line 436
+    .line 438
     invoke-virtual {p1, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v2
@@ -626,7 +655,7 @@
 
     if-eqz v2, :cond_1
 
-    .line 437
+    .line 439
     iget-wide v3, v2, Lorg/telegram/messenger/FilePathDatabase$FileMeta;->dialogId:J
 
     const-wide/16 v5, 0x0
@@ -635,7 +664,7 @@
 
     if-eqz v5, :cond_1
 
-    .line 438
+    .line 440
     invoke-virtual {p2, v3, v4}, Landroid/util/LongSparseArray;->get(J)Ljava/lang/Object;
 
     move-result-object v3
@@ -644,17 +673,17 @@
 
     if-nez v3, :cond_0
 
-    .line 440
+    .line 442
     new-instance v3, Ljava/util/ArrayList;
 
     invoke-direct {v3}, Ljava/util/ArrayList;-><init>()V
 
-    .line 441
+    .line 443
     iget-wide v4, v2, Lorg/telegram/messenger/FilePathDatabase$FileMeta;->dialogId:J
 
     invoke-virtual {p2, v4, v5, v3}, Landroid/util/LongSparseArray;->put(JLjava/lang/Object;)V
 
-    .line 443
+    .line 445
     :cond_0
     invoke-virtual {p1, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
@@ -664,24 +693,35 @@
 
     invoke-virtual {v3, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
     :try_end_0
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     :cond_1
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    :catch_0
+    :catchall_0
     move-exception p1
 
-    .line 447
-    invoke-static {p1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
-
     .line 449
+    :try_start_1
+    invoke-static {p1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_1
+
+    .line 451
     :cond_2
     invoke-virtual {p3}, Ljava/util/concurrent/CountDownLatch;->countDown()V
 
     return-void
+
+    :catchall_1
+    move-exception p1
+
+    invoke-virtual {p3}, Ljava/util/concurrent/CountDownLatch;->countDown()V
+
+    .line 452
+    throw p1
 .end method
 
 .method private synthetic lambda$putPath$1(JIILjava/lang/String;)V
@@ -941,18 +981,18 @@
 .method private synthetic lambda$removeFiles$6(Ljava/util/List;)V
     .locals 4
 
-    .line 415
+    .line 417
     :try_start_0
     invoke-virtual {p0}, Lorg/telegram/messenger/FilePathDatabase;->ensureDatabaseCreated()V
 
-    .line 416
+    .line 418
     iget-object v0, p0, Lorg/telegram/messenger/FilePathDatabase;->database:Lorg/telegram/SQLite/SQLiteDatabase;
 
     invoke-virtual {v0}, Lorg/telegram/SQLite/SQLiteDatabase;->beginTransaction()V
 
     const/4 v0, 0x0
 
-    .line 417
+    .line 419
     :goto_0
     invoke-interface {p1}, Ljava/util/List;->size()I
 
@@ -960,7 +1000,7 @@
 
     if-ge v0, v1, :cond_0
 
-    .line 418
+    .line 420
     iget-object v1, p0, Lorg/telegram/messenger/FilePathDatabase;->database:Lorg/telegram/SQLite/SQLiteDatabase;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -1007,7 +1047,6 @@
 
     invoke-virtual {v1}, Lorg/telegram/SQLite/SQLitePreparedStatement;->dispose()V
     :try_end_0
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     add-int/lit8 v0, v0, 0x1
@@ -1017,18 +1056,13 @@
     :catchall_0
     move-exception p1
 
-    goto :goto_1
-
-    :catch_0
-    move-exception p1
-
-    .line 421
+    .line 423
     :try_start_1
     invoke-static {p1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
     :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+    .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
-    .line 423
+    .line 425
     :cond_0
     iget-object p1, p0, Lorg/telegram/messenger/FilePathDatabase;->database:Lorg/telegram/SQLite/SQLiteDatabase;
 
@@ -1036,24 +1070,26 @@
 
     return-void
 
-    :goto_1
+    :catchall_1
+    move-exception p1
+
     iget-object v0, p0, Lorg/telegram/messenger/FilePathDatabase;->database:Lorg/telegram/SQLite/SQLiteDatabase;
 
     invoke-virtual {v0}, Lorg/telegram/SQLite/SQLiteDatabase;->commitTransaction()V
 
-    .line 424
+    .line 426
     throw p1
 .end method
 
 .method private synthetic lambda$saveFileDialogId$5(Ljava/io/File;Lorg/telegram/messenger/FilePathDatabase$FileMeta;)V
     .locals 3
 
-    .line 352
+    .line 354
     invoke-virtual {p0}, Lorg/telegram/messenger/FilePathDatabase;->ensureDatabaseCreated()V
 
     const/4 v0, 0x0
 
-    .line 355
+    .line 357
     :try_start_0
     iget-object v1, p0, Lorg/telegram/messenger/FilePathDatabase;->database:Lorg/telegram/SQLite/SQLiteDatabase;
 
@@ -1063,12 +1099,12 @@
 
     move-result-object v0
 
-    .line 356
+    .line 358
     invoke-virtual {v0}, Lorg/telegram/SQLite/SQLitePreparedStatement;->requery()V
 
     const/4 v1, 0x1
 
-    .line 357
+    .line 359
     invoke-virtual {p1}, Ljava/io/File;->getPath()Ljava/lang/String;
 
     move-result-object p1
@@ -1081,26 +1117,26 @@
 
     const/4 p1, 0x2
 
-    .line 358
+    .line 360
     iget-wide v1, p2, Lorg/telegram/messenger/FilePathDatabase$FileMeta;->dialogId:J
 
     invoke-virtual {v0, p1, v1, v2}, Lorg/telegram/SQLite/SQLitePreparedStatement;->bindLong(IJ)V
 
     const/4 p1, 0x3
 
-    .line 359
+    .line 361
     iget v1, p2, Lorg/telegram/messenger/FilePathDatabase$FileMeta;->messageId:I
 
     invoke-virtual {v0, p1, v1}, Lorg/telegram/SQLite/SQLitePreparedStatement;->bindInteger(II)V
 
     const/4 p1, 0x4
 
-    .line 360
+    .line 362
     iget p2, p2, Lorg/telegram/messenger/FilePathDatabase$FileMeta;->messageType:I
 
     invoke-virtual {v0, p1, p2}, Lorg/telegram/SQLite/SQLitePreparedStatement;->bindInteger(II)V
 
-    .line 361
+    .line 363
     invoke-virtual {v0}, Lorg/telegram/SQLite/SQLitePreparedStatement;->step()I
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
@@ -1116,7 +1152,7 @@
     :catch_0
     move-exception p1
 
-    .line 363
+    .line 365
     :try_start_1
     invoke-static {p1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
     :try_end_1
@@ -1124,7 +1160,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 366
+    .line 368
     :goto_0
     invoke-virtual {v0}, Lorg/telegram/SQLite/SQLitePreparedStatement;->dispose()V
 
@@ -1136,7 +1172,7 @@
 
     invoke-virtual {v0}, Lorg/telegram/SQLite/SQLitePreparedStatement;->dispose()V
 
-    .line 368
+    .line 370
     :cond_1
     throw p1
 .end method
@@ -1279,10 +1315,10 @@
 .method private postRunnable(Ljava/lang/Runnable;)V
     .locals 1
 
-    .line 460
+    .line 463
     invoke-direct {p0}, Lorg/telegram/messenger/FilePathDatabase;->ensureQueueExist()V
 
-    .line 461
+    .line 464
     iget-object v0, p0, Lorg/telegram/messenger/FilePathDatabase;->dispatchQueue:Lorg/telegram/messenger/DispatchQueue;
 
     invoke-virtual {v0, p1}, Lorg/telegram/messenger/DispatchQueue;->postRunnable(Ljava/lang/Runnable;)Z
@@ -1381,7 +1417,7 @@
 
     const-string v1, ""
 
-    .line 404
+    .line 406
     invoke-virtual {p1, v0, v1}, Ljava/lang/String;->replace(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;
 
     move-result-object p1
@@ -1442,7 +1478,7 @@
 
     invoke-direct {p0, v4}, Lorg/telegram/messenger/FilePathDatabase;->postRunnable(Ljava/lang/Runnable;)V
 
-    .line 297
+    .line 298
     :try_start_0
     invoke-virtual {v1}, Ljava/util/concurrent/CountDownLatch;->await()V
     :try_end_0
@@ -1453,10 +1489,10 @@
     :catch_0
     move-exception v0
 
-    .line 299
+    .line 300
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
-    .line 302
+    .line 303
     :goto_0
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -1490,12 +1526,12 @@
 
     invoke-static {p1}, Lorg/telegram/messenger/FileLog;->d(Ljava/lang/String;)V
 
-    .line 304
+    .line 305
     sget-boolean p1, Lorg/telegram/messenger/BuildVars;->DEBUG_VERSION:Z
 
     if-eqz p1, :cond_1
 
-    .line 305
+    .line 306
     invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
 
     move-result-object p1
@@ -1510,7 +1546,7 @@
 
     if-ne p1, v0, :cond_1
 
-    .line 306
+    .line 307
     new-instance p1, Ljava/lang/Exception;
 
     const-string/jumbo v0, "warning, not allowed in main thread"
@@ -1526,7 +1562,7 @@
 .method public clear()V
     .locals 1
 
-    .line 312
+    .line 313
     new-instance v0, Lorg/telegram/messenger/FilePathDatabase$$ExternalSyntheticLambda0;
 
     invoke-direct {v0, p0}, Lorg/telegram/messenger/FilePathDatabase$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/messenger/FilePathDatabase;)V
@@ -1927,7 +1963,7 @@
     :cond_0
     if-nez p2, :cond_1
 
-    .line 377
+    .line 379
     iget-object p2, p0, Lorg/telegram/messenger/FilePathDatabase;->metaTmp:Lorg/telegram/messenger/FilePathDatabase$FileMeta;
 
     :cond_1
@@ -1935,7 +1971,7 @@
 
     const/4 v3, 0x0
 
-    .line 384
+    .line 386
     :try_start_0
     iget-object v4, p0, Lorg/telegram/messenger/FilePathDatabase;->database:Lorg/telegram/SQLite/SQLiteDatabase;
 
@@ -1971,21 +2007,21 @@
 
     move-result-object v0
 
-    .line 385
+    .line 387
     invoke-virtual {v0}, Lorg/telegram/SQLite/SQLiteCursor;->next()Z
 
     move-result p1
 
     if-eqz p1, :cond_2
 
-    .line 386
+    .line 388
     invoke-virtual {v0, v3}, Lorg/telegram/SQLite/SQLiteCursor;->longValue(I)J
 
     move-result-wide v1
 
     const/4 p1, 0x1
 
-    .line 387
+    .line 389
     invoke-virtual {v0, p1}, Lorg/telegram/SQLite/SQLiteCursor;->intValue(I)I
 
     move-result p1
@@ -1995,7 +2031,7 @@
 
     const/4 v4, 0x2
 
-    .line 388
+    .line 390
     :try_start_1
     invoke-virtual {v0, v4}, Lorg/telegram/SQLite/SQLiteCursor;->intValue(I)I
 
@@ -2020,7 +2056,7 @@
     :cond_2
     move p1, v3
 
-    .line 394
+    .line 396
     :goto_0
     invoke-virtual {v0}, Lorg/telegram/SQLite/SQLiteCursor;->dispose()V
 
@@ -2036,7 +2072,7 @@
 
     move p1, v3
 
-    .line 391
+    .line 393
     :goto_1
     :try_start_2
     invoke-static {v4}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
@@ -2045,7 +2081,7 @@
 
     if-eqz v0, :cond_3
 
-    .line 394
+    .line 396
     invoke-virtual {v0}, Lorg/telegram/SQLite/SQLiteCursor;->dispose()V
 
     :cond_3
@@ -2055,14 +2091,14 @@
 
     move p1, v7
 
-    .line 397
+    .line 399
     :goto_2
     iput-wide v1, p2, Lorg/telegram/messenger/FilePathDatabase$FileMeta;->dialogId:J
 
-    .line 398
+    .line 400
     iput v3, p2, Lorg/telegram/messenger/FilePathDatabase$FileMeta;->messageId:I
 
-    .line 399
+    .line 401
     iput p1, p2, Lorg/telegram/messenger/FilePathDatabase$FileMeta;->messageType:I
 
     return-object p2
@@ -2070,10 +2106,10 @@
     :goto_3
     if-eqz v0, :cond_4
 
-    .line 394
+    .line 396
     invoke-virtual {v0}, Lorg/telegram/SQLite/SQLiteCursor;->dispose()V
 
-    .line 396
+    .line 398
     :cond_4
     throw p1
 .end method
@@ -2358,10 +2394,10 @@
 .method public getQueue()Lorg/telegram/messenger/DispatchQueue;
     .locals 1
 
-    .line 408
+    .line 410
     invoke-direct {p0}, Lorg/telegram/messenger/FilePathDatabase;->ensureQueueExist()V
 
-    .line 409
+    .line 411
     iget-object v0, p0, Lorg/telegram/messenger/FilePathDatabase;->dispatchQueue:Lorg/telegram/messenger/DispatchQueue;
 
     return-object v0
@@ -2370,7 +2406,7 @@
 .method public hasAnotherRefOnFile(Ljava/lang/String;)Z
     .locals 4
 
-    .line 324
+    .line 325
     new-instance v0, Ljava/util/concurrent/CountDownLatch;
 
     const/4 v1, 0x1
@@ -2383,14 +2419,14 @@
 
     aput-boolean v2, v1, v2
 
-    .line 326
+    .line 327
     new-instance v3, Lorg/telegram/messenger/FilePathDatabase$$ExternalSyntheticLambda4;
 
     invoke-direct {v3, p0, p1, v1, v0}, Lorg/telegram/messenger/FilePathDatabase$$ExternalSyntheticLambda4;-><init>(Lorg/telegram/messenger/FilePathDatabase;Ljava/lang/String;[ZLjava/util/concurrent/CountDownLatch;)V
 
     invoke-direct {p0, v3}, Lorg/telegram/messenger/FilePathDatabase;->postRunnable(Ljava/lang/Runnable;)V
 
-    .line 340
+    .line 342
     :try_start_0
     invoke-virtual {v0}, Ljava/util/concurrent/CountDownLatch;->await()V
     :try_end_0
@@ -2401,10 +2437,10 @@
     :catch_0
     move-exception p1
 
-    .line 342
+    .line 344
     invoke-static {p1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
-    .line 344
+    .line 346
     :goto_0
     aget-boolean p1, v1, v2
 
@@ -2427,26 +2463,26 @@
         }
     .end annotation
 
-    .line 429
+    .line 431
     new-instance v0, Ljava/util/concurrent/CountDownLatch;
 
     const/4 v1, 0x1
 
     invoke-direct {v0, v1}, Ljava/util/concurrent/CountDownLatch;-><init>(I)V
 
-    .line 430
+    .line 432
     new-instance v1, Landroid/util/LongSparseArray;
 
     invoke-direct {v1}, Landroid/util/LongSparseArray;-><init>()V
 
-    .line 431
+    .line 433
     new-instance v2, Lorg/telegram/messenger/FilePathDatabase$$ExternalSyntheticLambda5;
 
     invoke-direct {v2, p0, p1, v1, v0}, Lorg/telegram/messenger/FilePathDatabase$$ExternalSyntheticLambda5;-><init>(Lorg/telegram/messenger/FilePathDatabase;Ljava/util/ArrayList;Landroid/util/LongSparseArray;Ljava/util/concurrent/CountDownLatch;)V
 
     invoke-direct {p0, v2}, Lorg/telegram/messenger/FilePathDatabase;->postRunnable(Ljava/lang/Runnable;)V
 
-    .line 452
+    .line 455
     :try_start_0
     invoke-virtual {v0}, Ljava/util/concurrent/CountDownLatch;->await()V
     :try_end_0
@@ -2457,7 +2493,7 @@
     :catch_0
     move-exception p1
 
-    .line 454
+    .line 457
     invoke-static {p1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :goto_0
@@ -2500,7 +2536,7 @@
         }
     .end annotation
 
-    .line 413
+    .line 415
     new-instance v0, Lorg/telegram/messenger/FilePathDatabase$$ExternalSyntheticLambda7;
 
     invoke-direct {v0, p0, p1}, Lorg/telegram/messenger/FilePathDatabase$$ExternalSyntheticLambda7;-><init>(Lorg/telegram/messenger/FilePathDatabase;Ljava/util/List;)V
@@ -2519,7 +2555,7 @@
 
     goto :goto_0
 
-    .line 351
+    .line 353
     :cond_0
     new-instance v0, Lorg/telegram/messenger/FilePathDatabase$$ExternalSyntheticLambda3;
 

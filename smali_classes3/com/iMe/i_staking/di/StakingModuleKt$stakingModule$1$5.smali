@@ -76,7 +76,7 @@
     new-instance p2, Lcom/iMe/i_staking/repository/StakingRepositoryImpl;
 
     .line 131
-    const-class v0, Lcom/smedialink/storage/data/network/handlers/impl/ApiErrorHandler;
+    const-class v0, Lcom/iMe/storage/data/network/handlers/impl/ApiErrorHandler;
 
     invoke-static {v0}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
 
@@ -88,9 +88,9 @@
 
     move-result-object v0
 
-    check-cast v0, Lcom/smedialink/storage/data/network/handlers/impl/ApiErrorHandler;
+    check-cast v0, Lcom/iMe/storage/data/network/handlers/impl/ApiErrorHandler;
 
-    const-class v2, Lcom/smedialink/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler;
+    const-class v2, Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler;
 
     invoke-static {v2}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
 
@@ -100,7 +100,7 @@
 
     move-result-object v2
 
-    check-cast v2, Lcom/smedialink/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler;
+    check-cast v2, Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler;
 
     const-class v3, Lcom/iMe/i_staking/StakingApi;
 
@@ -128,7 +128,7 @@
     check-cast p1, Lcom/iMe/i_staking/datasource/StakingDataSource;
 
     .line 42
-    invoke-direct {p2, v0, v2, v3, p1}, Lcom/iMe/i_staking/repository/StakingRepositoryImpl;-><init>(Lcom/smedialink/storage/data/network/handlers/impl/ApiErrorHandler;Lcom/smedialink/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler;Lcom/iMe/i_staking/StakingApi;Lcom/iMe/i_staking/datasource/StakingDataSource;)V
+    invoke-direct {p2, v0, v2, v3, p1}, Lcom/iMe/i_staking/repository/StakingRepositoryImpl;-><init>(Lcom/iMe/storage/data/network/handlers/impl/ApiErrorHandler;Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler;Lcom/iMe/i_staking/StakingApi;Lcom/iMe/i_staking/datasource/StakingDataSource;)V
 
     return-object p2
 .end method

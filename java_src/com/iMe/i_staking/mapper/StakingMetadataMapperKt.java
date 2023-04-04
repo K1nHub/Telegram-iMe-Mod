@@ -2,12 +2,12 @@ package com.iMe.i_staking.mapper;
 
 import com.iMe.i_staking.response.StakingMetadataResponse;
 import com.iMe.i_staking.response.StakingProgrammesResponse;
-import com.smedialink.storage.domain.model.crypto.NetworkType;
-import com.smedialink.storage.domain.model.crypto.level.AccountLevel;
-import com.smedialink.storage.domain.model.staking.StakingMetadata;
-import com.smedialink.storage.domain.model.staking.StakingProgrammes;
-import com.smedialink.storage.domain.model.staking.StakingStats;
-import com.smedialink.storage.domain.model.staking.StakingToken;
+import com.iMe.storage.domain.model.crypto.NetworkType;
+import com.iMe.storage.domain.model.crypto.level.AccountLevel;
+import com.iMe.storage.domain.model.staking.StakingMetadata;
+import com.iMe.storage.domain.model.staking.StakingProgrammes;
+import com.iMe.storage.domain.model.staking.StakingStats;
+import com.iMe.storage.domain.model.staking.StakingToken;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;

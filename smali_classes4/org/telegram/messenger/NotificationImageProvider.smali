@@ -513,7 +513,7 @@
     :cond_3
     new-instance p1, Ljava/lang/SecurityException;
 
-    const-string p2, "trying to read internal file"
+    const-string/jumbo p2, "trying to read internal file"
 
     invoke-direct {p1, p2}, Ljava/lang/SecurityException;-><init>(Ljava/lang/String;)V
 
@@ -588,7 +588,7 @@
     :cond_7
     new-instance p1, Ljava/lang/SecurityException;
 
-    const-string p2, "trying to read internal file"
+    const-string/jumbo p2, "trying to read internal file"
 
     invoke-direct {p1, p2}, Ljava/lang/SecurityException;-><init>(Ljava/lang/String;)V
 
@@ -607,7 +607,7 @@
     :cond_9
     new-instance p1, Ljava/lang/SecurityException;
 
-    const-string p2, "trying to read internal file"
+    const-string/jumbo p2, "trying to read internal file"
 
     invoke-direct {p1, p2}, Ljava/lang/SecurityException;-><init>(Ljava/lang/String;)V
 

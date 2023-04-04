@@ -212,79 +212,30 @@ public class FilePathDatabase {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* JADX WARN: Code restructure failed: missing block: B:15:0x0075, code lost:
-        if (r1 == null) goto L21;
-     */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-        To view partially-correct add '--show-bad-code' argument
-    */
-    public /* synthetic */ void lambda$getPath$0(long r6, int r8, int r9, java.lang.String[] r10, java.util.concurrent.CountDownLatch r11) {
-        /*
-            r5 = this;
-            r5.ensureDatabaseCreated()
-            org.telegram.SQLite.SQLiteDatabase r0 = r5.database
-            if (r0 == 0) goto L81
-            r1 = 0
-            java.lang.StringBuilder r2 = new java.lang.StringBuilder     // Catch: java.lang.Throwable -> L6f org.telegram.SQLite.SQLiteException -> L71
-            r2.<init>()     // Catch: java.lang.Throwable -> L6f org.telegram.SQLite.SQLiteException -> L71
-            java.lang.String r3 = "SELECT path FROM paths WHERE document_id = "
-            r2.append(r3)     // Catch: java.lang.Throwable -> L6f org.telegram.SQLite.SQLiteException -> L71
-            r2.append(r6)     // Catch: java.lang.Throwable -> L6f org.telegram.SQLite.SQLiteException -> L71
-            java.lang.String r3 = " AND dc_id = "
-            r2.append(r3)     // Catch: java.lang.Throwable -> L6f org.telegram.SQLite.SQLiteException -> L71
-            r2.append(r8)     // Catch: java.lang.Throwable -> L6f org.telegram.SQLite.SQLiteException -> L71
-            java.lang.String r3 = " AND type = "
-            r2.append(r3)     // Catch: java.lang.Throwable -> L6f org.telegram.SQLite.SQLiteException -> L71
-            r2.append(r9)     // Catch: java.lang.Throwable -> L6f org.telegram.SQLite.SQLiteException -> L71
-            java.lang.String r2 = r2.toString()     // Catch: java.lang.Throwable -> L6f org.telegram.SQLite.SQLiteException -> L71
-            r3 = 0
-            java.lang.Object[] r4 = new java.lang.Object[r3]     // Catch: java.lang.Throwable -> L6f org.telegram.SQLite.SQLiteException -> L71
-            org.telegram.SQLite.SQLiteCursor r1 = r0.queryFinalized(r2, r4)     // Catch: java.lang.Throwable -> L6f org.telegram.SQLite.SQLiteException -> L71
-            boolean r0 = r1.next()     // Catch: java.lang.Throwable -> L6f org.telegram.SQLite.SQLiteException -> L71
-            if (r0 == 0) goto L77
-            java.lang.String r0 = r1.stringValue(r3)     // Catch: java.lang.Throwable -> L6f org.telegram.SQLite.SQLiteException -> L71
-            r10[r3] = r0     // Catch: java.lang.Throwable -> L6f org.telegram.SQLite.SQLiteException -> L71
-            boolean r0 = org.telegram.messenger.BuildVars.DEBUG_VERSION     // Catch: java.lang.Throwable -> L6f org.telegram.SQLite.SQLiteException -> L71
-            if (r0 == 0) goto L77
-            java.lang.StringBuilder r0 = new java.lang.StringBuilder     // Catch: java.lang.Throwable -> L6f org.telegram.SQLite.SQLiteException -> L71
-            r0.<init>()     // Catch: java.lang.Throwable -> L6f org.telegram.SQLite.SQLiteException -> L71
-            java.lang.String r2 = "get file path id="
-            r0.append(r2)     // Catch: java.lang.Throwable -> L6f org.telegram.SQLite.SQLiteException -> L71
-            r0.append(r6)     // Catch: java.lang.Throwable -> L6f org.telegram.SQLite.SQLiteException -> L71
-            java.lang.String r6 = " dc="
-            r0.append(r6)     // Catch: java.lang.Throwable -> L6f org.telegram.SQLite.SQLiteException -> L71
-            r0.append(r8)     // Catch: java.lang.Throwable -> L6f org.telegram.SQLite.SQLiteException -> L71
-            java.lang.String r6 = " type="
-            r0.append(r6)     // Catch: java.lang.Throwable -> L6f org.telegram.SQLite.SQLiteException -> L71
-            r0.append(r9)     // Catch: java.lang.Throwable -> L6f org.telegram.SQLite.SQLiteException -> L71
-            java.lang.String r6 = " path="
-            r0.append(r6)     // Catch: java.lang.Throwable -> L6f org.telegram.SQLite.SQLiteException -> L71
-            r6 = r10[r3]     // Catch: java.lang.Throwable -> L6f org.telegram.SQLite.SQLiteException -> L71
-            r0.append(r6)     // Catch: java.lang.Throwable -> L6f org.telegram.SQLite.SQLiteException -> L71
-            java.lang.String r6 = r0.toString()     // Catch: java.lang.Throwable -> L6f org.telegram.SQLite.SQLiteException -> L71
-            org.telegram.messenger.FileLog.m48d(r6)     // Catch: java.lang.Throwable -> L6f org.telegram.SQLite.SQLiteException -> L71
-            goto L77
-        L6f:
-            r6 = move-exception
-            goto L7b
-        L71:
-            r6 = move-exception
-            org.telegram.messenger.FileLog.m45e(r6)     // Catch: java.lang.Throwable -> L6f
-            if (r1 == 0) goto L81
-        L77:
-            r1.dispose()
-            goto L81
-        L7b:
-            if (r1 == 0) goto L80
-            r1.dispose()
-        L80:
-            throw r6
-        L81:
-            r11.countDown()
-            return
-        */
-        throw new UnsupportedOperationException("Method not decompiled: org.telegram.messenger.FilePathDatabase.lambda$getPath$0(long, int, int, java.lang.String[], java.util.concurrent.CountDownLatch):void");
+    public /* synthetic */ void lambda$getPath$0(long j, int i, int i2, String[] strArr, CountDownLatch countDownLatch) {
+        ensureDatabaseCreated();
+        SQLiteDatabase sQLiteDatabase = this.database;
+        if (sQLiteDatabase != null) {
+            SQLiteCursor sQLiteCursor = null;
+            try {
+                sQLiteCursor = sQLiteDatabase.queryFinalized("SELECT path FROM paths WHERE document_id = " + j + " AND dc_id = " + i + " AND type = " + i2, new Object[0]);
+                if (sQLiteCursor.next()) {
+                    strArr[0] = sQLiteCursor.stringValue(0);
+                    if (BuildVars.DEBUG_VERSION) {
+                        FileLog.m48d("get file path id=" + j + " dc=" + i + " type=" + i2 + " path=" + strArr[0]);
+                    }
+                }
+            } catch (Throwable th) {
+                try {
+                    FileLog.m45e(th);
+                } finally {
+                    if (sQLiteCursor != null) {
+                        sQLiteCursor.dispose();
+                    }
+                }
+            }
+        }
+        countDownLatch.countDown();
     }
 
     public void ensureDatabaseCreated() {
@@ -469,11 +420,12 @@ public class FilePathDatabase {
         for (int i = 0; i < arrayList.size(); i++) {
             try {
                 ((MessageObject) arrayList.get(i)).checkMediaExistance(false);
-            } catch (Exception e) {
-                e.printStackTrace();
+            } finally {
+                try {
+                } finally {
+                }
             }
         }
-        countDownLatch.countDown();
     }
 
     public void clear() {
@@ -517,14 +469,17 @@ public class FilePathDatabase {
     public /* synthetic */ void lambda$hasAnotherRefOnFile$4(String str, boolean[] zArr, CountDownLatch countDownLatch) {
         ensureDatabaseCreated();
         try {
-            SQLiteDatabase sQLiteDatabase = this.database;
-            if (sQLiteDatabase.queryFinalized("SELECT document_id FROM paths WHERE path = '" + str + "'", new Object[0]).next()) {
-                zArr[0] = true;
+            try {
+                SQLiteDatabase sQLiteDatabase = this.database;
+                if (sQLiteDatabase.queryFinalized("SELECT document_id FROM paths WHERE path = '" + str + "'", new Object[0]).next()) {
+                    zArr[0] = true;
+                }
+            } catch (Exception e) {
+                FileLog.m45e(e);
             }
-        } catch (Exception e) {
-            FileLog.m45e(e);
+        } finally {
+            countDownLatch.countDown();
         }
-        countDownLatch.countDown();
     }
 
     public void saveFileDialogId(final File file, final FileMeta fileMeta) {
@@ -638,18 +593,16 @@ public class FilePathDatabase {
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$removeFiles$6(List list) {
         try {
-            try {
-                ensureDatabaseCreated();
-                this.database.beginTransaction();
-                for (int i = 0; i < list.size(); i++) {
-                    SQLiteDatabase sQLiteDatabase = this.database;
-                    sQLiteDatabase.executeFast("DELETE FROM paths_by_dialog_id WHERE path = '" + shield(((CacheModel.FileInfo) list.get(i)).file.getPath()) + "'").stepThis().dispose();
-                }
-            } catch (Exception e) {
-                FileLog.m45e(e);
+            ensureDatabaseCreated();
+            this.database.beginTransaction();
+            for (int i = 0; i < list.size(); i++) {
+                SQLiteDatabase sQLiteDatabase = this.database;
+                sQLiteDatabase.executeFast("DELETE FROM paths_by_dialog_id WHERE path = '" + shield(((CacheModel.FileInfo) list.get(i)).file.getPath()) + "'").stepThis().dispose();
             }
         } finally {
-            this.database.commitTransaction();
+            try {
+            } finally {
+            }
         }
     }
 
@@ -689,10 +642,11 @@ public class FilePathDatabase {
                     }
                 }
             }
-        } catch (Exception e) {
-            FileLog.m45e(e);
+        } finally {
+            try {
+            } finally {
+            }
         }
-        countDownLatch.countDown();
     }
 
     private void postRunnable(Runnable runnable) {
@@ -714,15 +668,15 @@ public class FilePathDatabase {
     public static class PathData {
 
         /* renamed from: dc */
-        public final int f1429dc;
+        public final int f1431dc;
 
         /* renamed from: id */
-        public final long f1430id;
+        public final long f1432id;
         public final int type;
 
         public PathData(long j, int i, int i2) {
-            this.f1430id = j;
-            this.f1429dc = i;
+            this.f1432id = j;
+            this.f1431dc = i;
             this.type = i2;
         }
     }

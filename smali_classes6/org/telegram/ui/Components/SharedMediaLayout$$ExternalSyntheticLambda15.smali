@@ -51,7 +51,7 @@
 
     iget-object v4, p0, Lorg/telegram/ui/Components/SharedMediaLayout$$ExternalSyntheticLambda15;->f$4:Lorg/telegram/tgnet/TLObject;
 
-    invoke-static {v0, v1, v2, v3, v4}, Lorg/telegram/ui/Components/SharedMediaLayout;->$r8$lambda$JdFmi3cmYHly9g4n05EFk3_XQTo(Lorg/telegram/ui/Components/SharedMediaLayout;Lorg/telegram/tgnet/TLRPC$TL_error;IILorg/telegram/tgnet/TLObject;)V
+    invoke-static {v0, v1, v2, v3, v4}, Lorg/telegram/ui/Components/SharedMediaLayout;->$r8$lambda$C78FxV7LDynQivnmJqy5PIm2cNI(Lorg/telegram/ui/Components/SharedMediaLayout;Lorg/telegram/tgnet/TLRPC$TL_error;IILorg/telegram/tgnet/TLObject;)V
 
     return-void
 .end method

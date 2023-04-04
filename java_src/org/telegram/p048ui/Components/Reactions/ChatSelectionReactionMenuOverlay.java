@@ -117,7 +117,7 @@ public class ChatSelectionReactionMenuOverlay extends FrameLayout {
             };
             this.reactionsContainerLayout = reactionsContainerLayout;
             reactionsContainerLayout.setPadding(AndroidUtilities.m50dp(4) + (LocaleController.isRTL ? 0 : this.mSidePadding), AndroidUtilities.m50dp(4), AndroidUtilities.m50dp(4) + (LocaleController.isRTL ? this.mSidePadding : 0), AndroidUtilities.m50dp(this.mPadding));
-            this.reactionsContainerLayout.setDelegate(new C49913());
+            this.reactionsContainerLayout.setDelegate(new C50123());
             this.reactionsContainerLayout.setClipChildren(false);
             this.reactionsContainerLayout.setClipToPadding(false);
             addView(this.reactionsContainerLayout, LayoutHelper.createFrame(-2, this.mPadding + 70, 5));
@@ -127,8 +127,8 @@ public class ChatSelectionReactionMenuOverlay extends FrameLayout {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: org.telegram.ui.Components.Reactions.ChatSelectionReactionMenuOverlay$3 */
     /* loaded from: classes6.dex */
-    public class C49913 implements ReactionsContainerLayout.ReactionsContainerDelegate {
-        C49913() {
+    public class C50123 implements ReactionsContainerLayout.ReactionsContainerDelegate {
+        C50123() {
         }
 
         @Override // org.telegram.p048ui.Components.ReactionsContainerLayout.ReactionsContainerDelegate
@@ -137,7 +137,7 @@ public class ChatSelectionReactionMenuOverlay extends FrameLayout {
             AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.Reactions.ChatSelectionReactionMenuOverlay$3$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    ChatSelectionReactionMenuOverlay.C49913.this.lambda$onReactionClicked$0();
+                    ChatSelectionReactionMenuOverlay.C50123.this.lambda$onReactionClicked$0();
                 }
             });
         }
@@ -334,8 +334,8 @@ public class ChatSelectionReactionMenuOverlay extends FrameLayout {
         return (MessageObject.isPhoto(messageObject.messageOwner) && MessageObject.getMedia(messageObject.messageOwner).webpage == null) || (messageObject.getDocument() != null && (MessageObject.isVideoDocument(messageObject.getDocument()) || MessageObject.isGifDocument(messageObject.getDocument())));
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:26:0x005b  */
-    /* JADX WARN: Removed duplicated region for block: B:27:0x0063  */
+    /* JADX WARN: Removed duplicated region for block: B:28:0x005f  */
+    /* JADX WARN: Removed duplicated region for block: B:29:0x0067  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct add '--show-bad-code' argument
@@ -348,56 +348,59 @@ public class ChatSelectionReactionMenuOverlay extends FrameLayout {
             boolean r0 = r0.isSecretChat()
             r1 = 1
             r2 = 0
-            if (r0 != 0) goto L56
+            if (r0 != 0) goto L5a
             org.telegram.ui.ChatActivity r0 = r9.parentFragment
             org.telegram.tgnet.TLRPC$ChatFull r0 = r0.getCurrentChatInfo()
-            if (r0 == 0) goto L21
+            if (r0 == 0) goto L20
             org.telegram.ui.ChatActivity r0 = r9.parentFragment
             org.telegram.tgnet.TLRPC$ChatFull r0 = r0.getCurrentChatInfo()
             org.telegram.tgnet.TLRPC$ChatReactions r0 = r0.available_reactions
             boolean r0 = r0 instanceof org.telegram.tgnet.TLRPC$TL_chatReactionsNone
-            if (r0 == 0) goto L21
-            goto L56
-        L21:
+            if (r0 != 0) goto L5a
+        L20:
+            boolean r0 = org.telegram.messenger.SharedConfig.isReactionsEnabled
+            if (r0 != 0) goto L25
+            goto L5a
+        L25:
             boolean r0 = r10.isEmpty()
-            if (r0 != 0) goto L56
+            if (r0 != 0) goto L5a
             java.util.Iterator r10 = r10.iterator()
             r3 = 0
             r0 = r2
             r5 = r3
-        L2f:
+        L33:
             boolean r7 = r10.hasNext()
-            if (r7 == 0) goto L57
+            if (r7 == 0) goto L5b
             java.lang.Object r7 = r10.next()
             org.telegram.messenger.MessageObject r7 = (org.telegram.messenger.MessageObject) r7
             boolean r8 = r9.isMessageTypeAllowed(r7)
-            if (r8 != 0) goto L42
-            goto L56
-        L42:
-            if (r0 != 0) goto L4a
+            if (r8 != 0) goto L46
+            goto L5a
+        L46:
+            if (r0 != 0) goto L4e
             long r5 = r7.getGroupId()
             r0 = r1
-            goto L2f
-        L4a:
+            goto L33
+        L4e:
             long r7 = r7.getGroupId()
             int r7 = (r5 > r7 ? 1 : (r5 == r7 ? 0 : -1))
-            if (r7 != 0) goto L56
+            if (r7 != 0) goto L5a
             int r7 = (r5 > r3 ? 1 : (r5 == r3 ? 0 : -1))
-            if (r7 != 0) goto L2f
-        L56:
+            if (r7 != 0) goto L33
+        L5a:
             r1 = r2
-        L57:
+        L5b:
             boolean r10 = r9.isVisible
-            if (r1 == r10) goto L63
+            if (r1 == r10) goto L67
             r9.isVisible = r1
             r9.hiddenByScroll = r2
             r9.animateVisible(r1)
-            goto L6b
-        L63:
-            if (r1 == 0) goto L6b
+            goto L6f
+        L67:
+            if (r1 == 0) goto L6f
             org.telegram.messenger.MessageObject r10 = r9.findPrimaryObject()
             r9.currentPrimaryObject = r10
-        L6b:
+        L6f:
             return
         */
         throw new UnsupportedOperationException("Method not decompiled: org.telegram.p048ui.Components.Reactions.ChatSelectionReactionMenuOverlay.setSelectedMessages(java.util.List):void");

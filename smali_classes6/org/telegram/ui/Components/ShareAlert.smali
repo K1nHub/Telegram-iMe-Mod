@@ -6355,11 +6355,11 @@
     :cond_7
     iget v12, v0, Lorg/telegram/ui/ActionBar/BottomSheet;->currentAccount:I
 
-    invoke-static {v12}, Lorg/fork/controller/ToolsController;->getInstance(I)Lorg/fork/controller/ToolsController;
+    invoke-static {v12}, Lcom/iMe/fork/controller/ToolsController;->getInstance(I)Lcom/iMe/fork/controller/ToolsController;
 
     move-result-object v12
 
-    invoke-virtual {v12}, Lorg/fork/controller/ToolsController;->isSilentSendingEnabled()Z
+    invoke-virtual {v12}, Lcom/iMe/fork/controller/ToolsController;->isSilentSendingEnabled()Z
 
     move-result v12
 
@@ -8647,6 +8647,8 @@
 
     move-object v9, v10
 
+    move-object/from16 v24, v10
+
     move-wide/from16 v28, v11
 
     move-object/from16 v11, v16
@@ -8678,6 +8680,8 @@
     goto :goto_5
 
     :cond_6
+    move-object/from16 v24, v10
+
     move-wide/from16 v28, v11
 
     move/from16 v30, v13
@@ -8701,8 +8705,6 @@
     const/16 v21, 0x0
 
     const/16 v23, 0x0
-
-    const/16 v24, 0x0
 
     const/16 v25, 0x0
 

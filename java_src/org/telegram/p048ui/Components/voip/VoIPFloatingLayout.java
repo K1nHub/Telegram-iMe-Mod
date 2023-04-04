@@ -24,7 +24,7 @@ import androidx.core.content.ContextCompat;
 import androidx.core.graphics.ColorUtils;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3301R;
+import org.telegram.messenger.C3316R;
 import org.telegram.p048ui.Components.CubicBezierInterpolator;
 /* renamed from: org.telegram.ui.Components.voip.VoIPFloatingLayout */
 /* loaded from: classes6.dex */
@@ -147,7 +147,7 @@ public class VoIPFloatingLayout extends FrameLayout {
             setClipToOutline(true);
         }
         this.mutedPaint.setColor(ColorUtils.setAlphaComponent(-16777216, 102));
-        this.mutedDrawable = ContextCompat.getDrawable(context, C3301R.C3303drawable.calls_mute_mini);
+        this.mutedDrawable = ContextCompat.getDrawable(context, C3316R.C3318drawable.calls_mute_mini);
     }
 
     @Override // android.widget.FrameLayout, android.view.View

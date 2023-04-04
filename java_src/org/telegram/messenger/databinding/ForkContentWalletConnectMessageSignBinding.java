@@ -7,8 +7,8 @@ import android.widget.LinearLayout;
 import androidx.appcompat.widget.AppCompatTextView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
-import com.smedialink.p031ui.custom.BigActionButton;
-import org.telegram.messenger.C3301R;
+import com.iMe.p032ui.custom.BigActionButton;
+import org.telegram.messenger.C3316R;
 import org.telegram.p048ui.ActionBar.ActionBarMenuItem;
 import org.telegram.p048ui.Cells.TextDetailCell;
 /* loaded from: classes4.dex */
@@ -41,7 +41,7 @@ public final class ForkContentWalletConnectMessageSignBinding implements ViewBin
     }
 
     public static ForkContentWalletConnectMessageSignBinding inflate(LayoutInflater layoutInflater, ViewGroup viewGroup, boolean z) {
-        View inflate = layoutInflater.inflate(C3301R.layout.fork_content_wallet_connect_message_sign, viewGroup, false);
+        View inflate = layoutInflater.inflate(C3316R.layout.fork_content_wallet_connect_message_sign, viewGroup, false);
         if (z) {
             viewGroup.addView(inflate);
         }
@@ -49,23 +49,23 @@ public final class ForkContentWalletConnectMessageSignBinding implements ViewBin
     }
 
     public static ForkContentWalletConnectMessageSignBinding bind(View view) {
-        int i = C3301R.C3304id.button_close;
+        int i = C3316R.C3319id.button_close;
         ActionBarMenuItem actionBarMenuItem = (ActionBarMenuItem) ViewBindings.findChildViewById(view, i);
         if (actionBarMenuItem != null) {
-            i = C3301R.C3304id.button_process;
+            i = C3316R.C3319id.button_process;
             BigActionButton bigActionButton = (BigActionButton) ViewBindings.findChildViewById(view, i);
             if (bigActionButton != null) {
                 LinearLayout linearLayout = (LinearLayout) view;
-                i = C3301R.C3304id.text_from;
+                i = C3316R.C3319id.text_from;
                 TextDetailCell textDetailCell = (TextDetailCell) ViewBindings.findChildViewById(view, i);
                 if (textDetailCell != null) {
-                    i = C3301R.C3304id.text_message;
+                    i = C3316R.C3319id.text_message;
                     AppCompatTextView appCompatTextView = (AppCompatTextView) ViewBindings.findChildViewById(view, i);
                     if (appCompatTextView != null) {
-                        i = C3301R.C3304id.text_peer_url;
+                        i = C3316R.C3319id.text_peer_url;
                         TextDetailCell textDetailCell2 = (TextDetailCell) ViewBindings.findChildViewById(view, i);
                         if (textDetailCell2 != null) {
-                            i = C3301R.C3304id.text_title;
+                            i = C3316R.C3319id.text_title;
                             AppCompatTextView appCompatTextView2 = (AppCompatTextView) ViewBindings.findChildViewById(view, i);
                             if (appCompatTextView2 != null) {
                                 return new ForkContentWalletConnectMessageSignBinding(linearLayout, actionBarMenuItem, bigActionButton, linearLayout, textDetailCell, appCompatTextView, textDetailCell2, appCompatTextView2);

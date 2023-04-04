@@ -4,7 +4,7 @@ import android.media.AudioDeviceInfo;
 import android.os.Handler;
 import android.os.SystemClock;
 import com.google.android.exoplayer2.BaseRenderer;
-import com.google.android.exoplayer2.C0468C;
+import com.google.android.exoplayer2.C0482C;
 import com.google.android.exoplayer2.ExoPlaybackException;
 import com.google.android.exoplayer2.Format;
 import com.google.android.exoplayer2.FormatHolder;
@@ -105,7 +105,7 @@ public abstract class DecoderAudioRenderer<T extends Decoder<DecoderInputBuffer,
         this.flagsOnlyBuffer = DecoderInputBuffer.newNoDataInstance();
         this.decoderReinitializationState = 0;
         this.audioTrackNeedsConfigure = true;
-        setOutputStreamOffsetUs(C0468C.TIME_UNSET);
+        setOutputStreamOffsetUs(C0482C.TIME_UNSET);
         this.pendingOutputStreamOffsetsUs = new long[10];
     }
 
@@ -256,7 +256,7 @@ public abstract class DecoderAudioRenderer<T extends Decoder<DecoderInputBuffer,
 
     private void setOutputStreamOffsetUs(long j) {
         this.outputStreamOffsetUs = j;
-        if (j != C0468C.TIME_UNSET) {
+        if (j != C0482C.TIME_UNSET) {
             this.audioSink.setOutputStreamOffsetUs(j);
         }
     }
@@ -298,7 +298,7 @@ public abstract class DecoderAudioRenderer<T extends Decoder<DecoderInputBuffer,
         } else {
             if (!this.firstStreamSampleRead) {
                 this.firstStreamSampleRead = true;
-                this.inputBuffer.addFlag(C0468C.BUFFER_FLAG_FIRST_SAMPLE);
+                this.inputBuffer.addFlag(C0482C.BUFFER_FLAG_FIRST_SAMPLE);
             }
             this.inputBuffer.flip();
             DecoderInputBuffer decoderInputBuffer2 = this.inputBuffer;
@@ -406,7 +406,7 @@ public abstract class DecoderAudioRenderer<T extends Decoder<DecoderInputBuffer,
     protected void onDisabled() {
         this.inputFormat = null;
         this.audioTrackNeedsConfigure = true;
-        setOutputStreamOffsetUs(C0468C.TIME_UNSET);
+        setOutputStreamOffsetUs(C0482C.TIME_UNSET);
         try {
             setSourceDrmSession(null);
             releaseDecoder();
@@ -421,7 +421,7 @@ public abstract class DecoderAudioRenderer<T extends Decoder<DecoderInputBuffer,
     public void onStreamChanged(Format[] formatArr, long j, long j2) throws ExoPlaybackException {
         super.onStreamChanged(formatArr, j, j2);
         this.firstStreamSampleRead = false;
-        if (this.outputStreamOffsetUs == C0468C.TIME_UNSET) {
+        if (this.outputStreamOffsetUs == C0482C.TIME_UNSET) {
             setOutputStreamOffsetUs(j2);
             return;
         }

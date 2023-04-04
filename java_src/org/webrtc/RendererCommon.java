@@ -186,7 +186,7 @@ public class RendererCommon {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: org.webrtc.RendererCommon$1 */
     /* loaded from: classes6.dex */
-    public static /* synthetic */ class C67251 {
+    public static /* synthetic */ class C67491 {
         static final /* synthetic */ int[] $SwitchMap$org$webrtc$RendererCommon$ScalingType;
 
         static {
@@ -209,7 +209,7 @@ public class RendererCommon {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static float convertScalingTypeToVisibleFraction(ScalingType scalingType) {
-        int i = C67251.$SwitchMap$org$webrtc$RendererCommon$ScalingType[scalingType.ordinal()];
+        int i = C67491.$SwitchMap$org$webrtc$RendererCommon$ScalingType[scalingType.ordinal()];
         if (i != 1) {
             if (i != 2) {
                 if (i == 3) {

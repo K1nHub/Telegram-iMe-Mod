@@ -7,7 +7,7 @@
 
 
 # instance fields
-.field public final buttonAction:Lcom/smedialink/ui/custom/ActionButton;
+.field public final buttonAction:Lcom/iMe/ui/custom/ActionButton;
 
 .field public final constraintFromToken:Landroidx/constraintlayout/widget/ConstraintLayout;
 
@@ -17,7 +17,7 @@
 
 .field public final editToAmount:Landroidx/appcompat/widget/AppCompatEditText;
 
-.field public final feeView:Lcom/smedialink/ui/custom/FeeView;
+.field public final feeView:Lcom/iMe/ui/custom/FeeView;
 
 .field public final groupFromSelectedToken:Landroidx/constraintlayout/widget/Group;
 
@@ -39,9 +39,9 @@
 
 .field public final linearChooseTo:Landroid/widget/LinearLayout;
 
-.field public final networkTypeInputView:Lcom/smedialink/ui/custom/NetworkTypeView;
+.field public final networkTypeInputView:Lcom/iMe/ui/custom/NetworkTypeView;
 
-.field public final networkTypeOutputView:Lcom/smedialink/ui/custom/NetworkTypeView;
+.field public final networkTypeOutputView:Lcom/iMe/ui/custom/NetworkTypeView;
 
 .field private final rootView:Landroidx/constraintlayout/widget/ConstraintLayout;
 
@@ -65,7 +65,7 @@
 
 
 # direct methods
-.method private constructor <init>(Landroidx/constraintlayout/widget/ConstraintLayout;Lcom/smedialink/ui/custom/ActionButton;Landroidx/constraintlayout/widget/ConstraintLayout;Landroidx/constraintlayout/widget/ConstraintLayout;Landroidx/appcompat/widget/AppCompatEditText;Landroidx/appcompat/widget/AppCompatEditText;Lcom/smedialink/ui/custom/FeeView;Landroidx/constraintlayout/widget/Group;Landroidx/constraintlayout/widget/Group;Landroidx/appcompat/widget/AppCompatImageView;Landroidx/appcompat/widget/AppCompatImageView;Landroidx/appcompat/widget/AppCompatImageView;Landroidx/appcompat/widget/AppCompatImageView;Landroidx/appcompat/widget/AppCompatImageView;Landroidx/appcompat/widget/AppCompatImageView;Landroid/widget/LinearLayout;Landroid/widget/LinearLayout;Lcom/smedialink/ui/custom/NetworkTypeView;Lcom/smedialink/ui/custom/NetworkTypeView;Landroidx/appcompat/widget/AppCompatTextView;Landroidx/appcompat/widget/AppCompatTextView;Landroidx/appcompat/widget/AppCompatTextView;Landroidx/appcompat/widget/AppCompatTextView;Landroidx/appcompat/widget/AppCompatTextView;Landroidx/appcompat/widget/AppCompatTextView;Landroidx/appcompat/widget/AppCompatTextView;Landroidx/appcompat/widget/AppCompatTextView;Landroidx/appcompat/widget/AppCompatTextView;)V
+.method private constructor <init>(Landroidx/constraintlayout/widget/ConstraintLayout;Lcom/iMe/ui/custom/ActionButton;Landroidx/constraintlayout/widget/ConstraintLayout;Landroidx/constraintlayout/widget/ConstraintLayout;Landroidx/appcompat/widget/AppCompatEditText;Landroidx/appcompat/widget/AppCompatEditText;Lcom/iMe/ui/custom/FeeView;Landroidx/constraintlayout/widget/Group;Landroidx/constraintlayout/widget/Group;Landroidx/appcompat/widget/AppCompatImageView;Landroidx/appcompat/widget/AppCompatImageView;Landroidx/appcompat/widget/AppCompatImageView;Landroidx/appcompat/widget/AppCompatImageView;Landroidx/appcompat/widget/AppCompatImageView;Landroidx/appcompat/widget/AppCompatImageView;Landroid/widget/LinearLayout;Landroid/widget/LinearLayout;Lcom/iMe/ui/custom/NetworkTypeView;Lcom/iMe/ui/custom/NetworkTypeView;Landroidx/appcompat/widget/AppCompatTextView;Landroidx/appcompat/widget/AppCompatTextView;Landroidx/appcompat/widget/AppCompatTextView;Landroidx/appcompat/widget/AppCompatTextView;Landroidx/appcompat/widget/AppCompatTextView;Landroidx/appcompat/widget/AppCompatTextView;Landroidx/appcompat/widget/AppCompatTextView;Landroidx/appcompat/widget/AppCompatTextView;Landroidx/appcompat/widget/AppCompatTextView;)V
     .locals 2
 
     move-object v0, p0
@@ -81,7 +81,7 @@
     move-object v1, p2
 
     .line 127
-    iput-object v1, v0, Lorg/telegram/messenger/databinding/ForkFragmentWalletSwapProcessBinding;->buttonAction:Lcom/smedialink/ui/custom/ActionButton;
+    iput-object v1, v0, Lorg/telegram/messenger/databinding/ForkFragmentWalletSwapProcessBinding;->buttonAction:Lcom/iMe/ui/custom/ActionButton;
 
     move-object v1, p3
 
@@ -106,7 +106,7 @@
     move-object v1, p7
 
     .line 132
-    iput-object v1, v0, Lorg/telegram/messenger/databinding/ForkFragmentWalletSwapProcessBinding;->feeView:Lcom/smedialink/ui/custom/FeeView;
+    iput-object v1, v0, Lorg/telegram/messenger/databinding/ForkFragmentWalletSwapProcessBinding;->feeView:Lcom/iMe/ui/custom/FeeView;
 
     move-object v1, p8
 
@@ -161,12 +161,12 @@
     move-object/from16 v1, p18
 
     .line 143
-    iput-object v1, v0, Lorg/telegram/messenger/databinding/ForkFragmentWalletSwapProcessBinding;->networkTypeInputView:Lcom/smedialink/ui/custom/NetworkTypeView;
+    iput-object v1, v0, Lorg/telegram/messenger/databinding/ForkFragmentWalletSwapProcessBinding;->networkTypeInputView:Lcom/iMe/ui/custom/NetworkTypeView;
 
     move-object/from16 v1, p19
 
     .line 144
-    iput-object v1, v0, Lorg/telegram/messenger/databinding/ForkFragmentWalletSwapProcessBinding;->networkTypeOutputView:Lcom/smedialink/ui/custom/NetworkTypeView;
+    iput-object v1, v0, Lorg/telegram/messenger/databinding/ForkFragmentWalletSwapProcessBinding;->networkTypeOutputView:Lcom/iMe/ui/custom/NetworkTypeView;
 
     move-object/from16 v1, p20
 
@@ -231,7 +231,7 @@
 
     move-object v5, v2
 
-    check-cast v5, Lcom/smedialink/ui/custom/ActionButton;
+    check-cast v5, Lcom/iMe/ui/custom/ActionButton;
 
     if-eqz v5, :cond_0
 
@@ -301,7 +301,7 @@
 
     move-object v10, v2
 
-    check-cast v10, Lcom/smedialink/ui/custom/FeeView;
+    check-cast v10, Lcom/iMe/ui/custom/FeeView;
 
     if-eqz v10, :cond_0
 
@@ -455,7 +455,7 @@
 
     move-object/from16 v21, v2
 
-    check-cast v21, Lcom/smedialink/ui/custom/NetworkTypeView;
+    check-cast v21, Lcom/iMe/ui/custom/NetworkTypeView;
 
     if-eqz v21, :cond_0
 
@@ -469,7 +469,7 @@
 
     move-object/from16 v22, v2
 
-    check-cast v22, Lcom/smedialink/ui/custom/NetworkTypeView;
+    check-cast v22, Lcom/iMe/ui/custom/NetworkTypeView;
 
     if-eqz v22, :cond_0
 
@@ -608,7 +608,7 @@
 
     check-cast v4, Landroidx/constraintlayout/widget/ConstraintLayout;
 
-    invoke-direct/range {v3 .. v31}, Lorg/telegram/messenger/databinding/ForkFragmentWalletSwapProcessBinding;-><init>(Landroidx/constraintlayout/widget/ConstraintLayout;Lcom/smedialink/ui/custom/ActionButton;Landroidx/constraintlayout/widget/ConstraintLayout;Landroidx/constraintlayout/widget/ConstraintLayout;Landroidx/appcompat/widget/AppCompatEditText;Landroidx/appcompat/widget/AppCompatEditText;Lcom/smedialink/ui/custom/FeeView;Landroidx/constraintlayout/widget/Group;Landroidx/constraintlayout/widget/Group;Landroidx/appcompat/widget/AppCompatImageView;Landroidx/appcompat/widget/AppCompatImageView;Landroidx/appcompat/widget/AppCompatImageView;Landroidx/appcompat/widget/AppCompatImageView;Landroidx/appcompat/widget/AppCompatImageView;Landroidx/appcompat/widget/AppCompatImageView;Landroid/widget/LinearLayout;Landroid/widget/LinearLayout;Lcom/smedialink/ui/custom/NetworkTypeView;Lcom/smedialink/ui/custom/NetworkTypeView;Landroidx/appcompat/widget/AppCompatTextView;Landroidx/appcompat/widget/AppCompatTextView;Landroidx/appcompat/widget/AppCompatTextView;Landroidx/appcompat/widget/AppCompatTextView;Landroidx/appcompat/widget/AppCompatTextView;Landroidx/appcompat/widget/AppCompatTextView;Landroidx/appcompat/widget/AppCompatTextView;Landroidx/appcompat/widget/AppCompatTextView;Landroidx/appcompat/widget/AppCompatTextView;)V
+    invoke-direct/range {v3 .. v31}, Lorg/telegram/messenger/databinding/ForkFragmentWalletSwapProcessBinding;-><init>(Landroidx/constraintlayout/widget/ConstraintLayout;Lcom/iMe/ui/custom/ActionButton;Landroidx/constraintlayout/widget/ConstraintLayout;Landroidx/constraintlayout/widget/ConstraintLayout;Landroidx/appcompat/widget/AppCompatEditText;Landroidx/appcompat/widget/AppCompatEditText;Lcom/iMe/ui/custom/FeeView;Landroidx/constraintlayout/widget/Group;Landroidx/constraintlayout/widget/Group;Landroidx/appcompat/widget/AppCompatImageView;Landroidx/appcompat/widget/AppCompatImageView;Landroidx/appcompat/widget/AppCompatImageView;Landroidx/appcompat/widget/AppCompatImageView;Landroidx/appcompat/widget/AppCompatImageView;Landroidx/appcompat/widget/AppCompatImageView;Landroid/widget/LinearLayout;Landroid/widget/LinearLayout;Lcom/iMe/ui/custom/NetworkTypeView;Lcom/iMe/ui/custom/NetworkTypeView;Landroidx/appcompat/widget/AppCompatTextView;Landroidx/appcompat/widget/AppCompatTextView;Landroidx/appcompat/widget/AppCompatTextView;Landroidx/appcompat/widget/AppCompatTextView;Landroidx/appcompat/widget/AppCompatTextView;Landroidx/appcompat/widget/AppCompatTextView;Landroidx/appcompat/widget/AppCompatTextView;Landroidx/appcompat/widget/AppCompatTextView;Landroidx/appcompat/widget/AppCompatTextView;)V
 
     return-object v1
 

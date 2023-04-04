@@ -25,13 +25,13 @@
 .method constructor <init>(Ljava/nio/ByteBuffer;)V
     .locals 1
 
-    .line 460
+    .line 519
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 461
+    .line 520
     iput-object p1, p0, Lcom/bumptech/glide/load/resource/bitmap/DefaultImageHeaderParser$ByteBufferReader;->byteBuffer:Ljava/nio/ByteBuffer;
 
-    .line 462
+    .line 521
     sget-object v0, Ljava/nio/ByteOrder;->BIG_ENDIAN:Ljava/nio/ByteOrder;
 
     invoke-virtual {p1, v0}, Ljava/nio/ByteBuffer;->order(Ljava/nio/ByteOrder;)Ljava/nio/ByteBuffer;
@@ -49,7 +49,7 @@
         }
     .end annotation
 
-    .line 475
+    .line 534
     invoke-virtual {p0}, Lcom/bumptech/glide/load/resource/bitmap/DefaultImageHeaderParser$ByteBufferReader;->getUInt8()S
 
     move-result v0
@@ -73,7 +73,7 @@
         }
     .end annotation
 
-    .line 467
+    .line 526
     iget-object v0, p0, Lcom/bumptech/glide/load/resource/bitmap/DefaultImageHeaderParser$ByteBufferReader;->byteBuffer:Ljava/nio/ByteBuffer;
 
     invoke-virtual {v0}, Ljava/nio/ByteBuffer;->remaining()I
@@ -84,7 +84,7 @@
 
     if-lt v0, v1, :cond_0
 
-    .line 470
+    .line 529
     iget-object v0, p0, Lcom/bumptech/glide/load/resource/bitmap/DefaultImageHeaderParser$ByteBufferReader;->byteBuffer:Ljava/nio/ByteBuffer;
 
     invoke-virtual {v0}, Ljava/nio/ByteBuffer;->get()B
@@ -97,7 +97,7 @@
 
     return v0
 
-    .line 468
+    .line 527
     :cond_0
     new-instance v0, Lcom/bumptech/glide/load/resource/bitmap/DefaultImageHeaderParser$Reader$EndOfFileException;
 
@@ -109,7 +109,7 @@
 .method public read([BI)I
     .locals 2
 
-    .line 480
+    .line 539
     iget-object v0, p0, Lcom/bumptech/glide/load/resource/bitmap/DefaultImageHeaderParser$ByteBufferReader;->byteBuffer:Ljava/nio/ByteBuffer;
 
     invoke-virtual {v0}, Ljava/nio/ByteBuffer;->remaining()I
@@ -126,7 +126,7 @@
 
     return p1
 
-    .line 484
+    .line 543
     :cond_0
     iget-object v0, p0, Lcom/bumptech/glide/load/resource/bitmap/DefaultImageHeaderParser$ByteBufferReader;->byteBuffer:Ljava/nio/ByteBuffer;
 
@@ -140,7 +140,7 @@
 .method public skip(J)J
     .locals 2
 
-    .line 490
+    .line 549
     iget-object v0, p0, Lcom/bumptech/glide/load/resource/bitmap/DefaultImageHeaderParser$ByteBufferReader;->byteBuffer:Ljava/nio/ByteBuffer;
 
     invoke-virtual {v0}, Ljava/nio/ByteBuffer;->remaining()I
@@ -155,7 +155,7 @@
 
     long-to-int p1, p1
 
-    .line 491
+    .line 550
     iget-object p2, p0, Lcom/bumptech/glide/load/resource/bitmap/DefaultImageHeaderParser$ByteBufferReader;->byteBuffer:Ljava/nio/ByteBuffer;
 
     invoke-virtual {p2}, Ljava/nio/ByteBuffer;->position()I

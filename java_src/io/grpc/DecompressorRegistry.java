@@ -1,6 +1,6 @@
 package io.grpc;
 
-import com.google.android.exoplayer2.C0468C;
+import com.google.android.exoplayer2.C0482C;
 import com.google.common.base.Joiner;
 import com.google.common.base.Preconditions;
 import io.grpc.Codec;
@@ -10,7 +10,7 @@ import java.util.HashSet;
 import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Set;
-/* loaded from: classes.dex */
+/* loaded from: classes4.dex */
 public final class DecompressorRegistry {
     static final Joiner ACCEPT_ENCODING_JOINER = Joiner.m758on(',');
     private static final DecompressorRegistry DEFAULT_INSTANCE = emptyInstance().with(new Codec.Gzip(), true).with(Codec.Identity.NONE, false);
@@ -42,7 +42,7 @@ public final class DecompressorRegistry {
         }
         linkedHashMap.put(messageEncoding, new DecompressorInfo(decompressor, z));
         this.decompressors = Collections.unmodifiableMap(linkedHashMap);
-        this.advertisedDecompressors = ACCEPT_ENCODING_JOINER.join(getAdvertisedMessageEncodings()).getBytes(Charset.forName(C0468C.ASCII_NAME));
+        this.advertisedDecompressors = ACCEPT_ENCODING_JOINER.join(getAdvertisedMessageEncodings()).getBytes(Charset.forName(C0482C.ASCII_NAME));
     }
 
     private DecompressorRegistry() {
@@ -74,7 +74,7 @@ public final class DecompressorRegistry {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes.dex */
+    /* loaded from: classes4.dex */
     public static final class DecompressorInfo {
         final boolean advertised;
         final Decompressor decompressor;

@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/ProfileActivity;)V
     .locals 0
 
-    .line 1027
+    .line 1026
     iput-object p1, p0, Lorg/telegram/ui/ProfileActivity$5;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     invoke-direct {p0}, Lorg/telegram/ui/PhotoViewer$EmptyPhotoViewerProvider;-><init>()V
@@ -41,7 +41,7 @@
 
     return-object p1
 
-    .line 1036
+    .line 1035
     :cond_0
     iget-object p3, p0, Lorg/telegram/ui/ProfileActivity$5;->this$0:Lorg/telegram/ui/ProfileActivity;
 
@@ -55,7 +55,7 @@
 
     if-eqz p3, :cond_1
 
-    .line 1037
+    .line 1036
     iget-object p3, p0, Lorg/telegram/ui/ProfileActivity$5;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     invoke-virtual {p3}, Lorg/telegram/ui/ActionBar/BaseFragment;->getMessagesController()Lorg/telegram/messenger/MessagesController;
@@ -78,7 +78,7 @@
 
     if-eqz p3, :cond_2
 
-    .line 1038
+    .line 1037
     iget-object p3, p3, Lorg/telegram/tgnet/TLRPC$User;->photo:Lorg/telegram/tgnet/TLRPC$UserProfilePhoto;
 
     if-eqz p3, :cond_2
@@ -89,7 +89,7 @@
 
     goto :goto_0
 
-    .line 1041
+    .line 1040
     :cond_1
     iget-object p3, p0, Lorg/telegram/ui/ProfileActivity$5;->this$0:Lorg/telegram/ui/ProfileActivity;
 
@@ -101,7 +101,7 @@
 
     if-eqz p3, :cond_2
 
-    .line 1042
+    .line 1041
     iget-object p3, p0, Lorg/telegram/ui/ProfileActivity$5;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     invoke-virtual {p3}, Lorg/telegram/ui/ActionBar/BaseFragment;->getMessagesController()Lorg/telegram/messenger/MessagesController;
@@ -124,7 +124,7 @@
 
     if-eqz p3, :cond_2
 
-    .line 1043
+    .line 1042
     iget-object p3, p3, Lorg/telegram/tgnet/TLRPC$Chat;->photo:Lorg/telegram/tgnet/TLRPC$ChatPhoto;
 
     if-eqz p3, :cond_2
@@ -141,7 +141,7 @@
     :goto_0
     if-eqz p3, :cond_7
 
-    .line 1048
+    .line 1047
     iget p4, p3, Lorg/telegram/tgnet/TLRPC$FileLocation;->local_id:I
 
     iget v2, p2, Lorg/telegram/tgnet/TLRPC$FileLocation;->local_id:I
@@ -166,7 +166,7 @@
 
     new-array p1, p1, [I
 
-    .line 1050
+    .line 1049
     iget-object p2, p0, Lorg/telegram/ui/ProfileActivity$5;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     invoke-static {p2}, Lorg/telegram/ui/ProfileActivity;->access$400(Lorg/telegram/ui/ProfileActivity;)Lorg/telegram/ui/ProfileActivity$AvatarImageView;
@@ -175,21 +175,21 @@
 
     invoke-virtual {p2, p1}, Landroid/view/View;->getLocationInWindow([I)V
 
-    .line 1051
+    .line 1050
     new-instance p2, Lorg/telegram/ui/PhotoViewer$PlaceProviderObject;
 
     invoke-direct {p2}, Lorg/telegram/ui/PhotoViewer$PlaceProviderObject;-><init>()V
 
     const/4 p3, 0x0
 
-    .line 1052
+    .line 1051
     aget p4, p1, p3
 
     iput p4, p2, Lorg/telegram/ui/PhotoViewer$PlaceProviderObject;->viewX:I
 
     const/4 p4, 0x1
 
-    .line 1053
+    .line 1052
     aget p1, p1, p4
 
     sget v2, Landroid/os/Build$VERSION;->SDK_INT:I
@@ -210,7 +210,7 @@
 
     iput p1, p2, Lorg/telegram/ui/PhotoViewer$PlaceProviderObject;->viewY:I
 
-    .line 1054
+    .line 1053
     iget-object p1, p0, Lorg/telegram/ui/ProfileActivity$5;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/ProfileActivity;->access$400(Lorg/telegram/ui/ProfileActivity;)Lorg/telegram/ui/ProfileActivity$AvatarImageView;
@@ -219,7 +219,7 @@
 
     iput-object p1, p2, Lorg/telegram/ui/PhotoViewer$PlaceProviderObject;->parentView:Landroid/view/View;
 
-    .line 1055
+    .line 1054
     iget-object p1, p0, Lorg/telegram/ui/ProfileActivity$5;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/ProfileActivity;->access$400(Lorg/telegram/ui/ProfileActivity;)Lorg/telegram/ui/ProfileActivity$AvatarImageView;
@@ -232,7 +232,7 @@
 
     iput-object p1, p2, Lorg/telegram/ui/PhotoViewer$PlaceProviderObject;->imageReceiver:Lorg/telegram/messenger/ImageReceiver;
 
-    .line 1056
+    .line 1055
     iget-object p1, p0, Lorg/telegram/ui/ProfileActivity$5;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/ProfileActivity;->access$200(Lorg/telegram/ui/ProfileActivity;)J
@@ -243,7 +243,7 @@
 
     if-eqz p1, :cond_4
 
-    .line 1057
+    .line 1056
     iget-object p1, p0, Lorg/telegram/ui/ProfileActivity$5;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/ProfileActivity;->access$200(Lorg/telegram/ui/ProfileActivity;)J
@@ -254,7 +254,7 @@
 
     goto :goto_2
 
-    .line 1058
+    .line 1057
     :cond_4
     iget-object p1, p0, Lorg/telegram/ui/ProfileActivity$5;->this$0:Lorg/telegram/ui/ProfileActivity;
 
@@ -266,7 +266,7 @@
 
     if-eqz p1, :cond_5
 
-    .line 1059
+    .line 1058
     iget-object p1, p0, Lorg/telegram/ui/ProfileActivity$5;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/ProfileActivity;->access$300(Lorg/telegram/ui/ProfileActivity;)J
@@ -277,7 +277,7 @@
 
     iput-wide v0, p2, Lorg/telegram/ui/PhotoViewer$PlaceProviderObject;->dialogId:J
 
-    .line 1061
+    .line 1060
     :cond_5
     :goto_2
     iget-object p1, p2, Lorg/telegram/ui/PhotoViewer$PlaceProviderObject;->imageReceiver:Lorg/telegram/messenger/ImageReceiver;
@@ -290,10 +290,10 @@
 
     const-wide/16 v0, -0x1
 
-    .line 1062
+    .line 1061
     iput-wide v0, p2, Lorg/telegram/ui/PhotoViewer$PlaceProviderObject;->size:J
 
-    .line 1063
+    .line 1062
     iget-object p1, p0, Lorg/telegram/ui/ProfileActivity$5;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/ProfileActivity;->access$400(Lorg/telegram/ui/ProfileActivity;)Lorg/telegram/ui/ProfileActivity$AvatarImageView;
@@ -310,7 +310,7 @@
 
     iput-object p1, p2, Lorg/telegram/ui/PhotoViewer$PlaceProviderObject;->radius:[I
 
-    .line 1064
+    .line 1063
     iget-object p1, p0, Lorg/telegram/ui/ProfileActivity$5;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/ProfileActivity;->access$500(Lorg/telegram/ui/ProfileActivity;)Landroid/widget/FrameLayout;
@@ -323,7 +323,7 @@
 
     iput p1, p2, Lorg/telegram/ui/PhotoViewer$PlaceProviderObject;->scale:F
 
-    .line 1065
+    .line 1064
     iget-object p1, p0, Lorg/telegram/ui/ProfileActivity$5;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/ProfileActivity;->access$200(Lorg/telegram/ui/ProfileActivity;)J
@@ -356,7 +356,7 @@
 .method public openPhotoForEdit(Ljava/lang/String;Ljava/lang/String;Z)V
     .locals 2
 
-    .line 1078
+    .line 1077
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$5;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ProfileActivity;->access$600(Lorg/telegram/ui/ProfileActivity;)Lorg/telegram/ui/Components/ImageUpdater;
@@ -373,7 +373,7 @@
 .method public willHidePhotoViewer()V
     .locals 2
 
-    .line 1073
+    .line 1072
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$5;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ProfileActivity;->access$400(Lorg/telegram/ui/ProfileActivity;)Lorg/telegram/ui/ProfileActivity$AvatarImageView;

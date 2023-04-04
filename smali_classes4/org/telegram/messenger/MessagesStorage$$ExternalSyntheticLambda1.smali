@@ -6,16 +6,24 @@
 
 
 # instance fields
-.field public final synthetic f$0:Ljava/util/ArrayList;
+.field public final synthetic f$0:Lcom/iMe/fork/utils/Callbacks$Callback1;
+
+.field public final synthetic f$1:I
+
+.field public final synthetic f$2:Ljava/util/EnumMap;
 
 
 # direct methods
-.method public synthetic constructor <init>(Ljava/util/ArrayList;)V
+.method public synthetic constructor <init>(Lcom/iMe/fork/utils/Callbacks$Callback1;ILjava/util/EnumMap;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lorg/telegram/messenger/MessagesStorage$$ExternalSyntheticLambda1;->f$0:Ljava/util/ArrayList;
+    iput-object p1, p0, Lorg/telegram/messenger/MessagesStorage$$ExternalSyntheticLambda1;->f$0:Lcom/iMe/fork/utils/Callbacks$Callback1;
+
+    iput p2, p0, Lorg/telegram/messenger/MessagesStorage$$ExternalSyntheticLambda1;->f$1:I
+
+    iput-object p3, p0, Lorg/telegram/messenger/MessagesStorage$$ExternalSyntheticLambda1;->f$2:Ljava/util/EnumMap;
 
     return-void
 .end method
@@ -23,11 +31,15 @@
 
 # virtual methods
 .method public final run()V
-    .locals 1
+    .locals 3
 
-    iget-object v0, p0, Lorg/telegram/messenger/MessagesStorage$$ExternalSyntheticLambda1;->f$0:Ljava/util/ArrayList;
+    iget-object v0, p0, Lorg/telegram/messenger/MessagesStorage$$ExternalSyntheticLambda1;->f$0:Lcom/iMe/fork/utils/Callbacks$Callback1;
 
-    invoke-static {v0}, Lorg/telegram/messenger/MessagesStorage;->$r8$lambda$-kYFbqLIslYcXrvo6F1xQ0d1xHU(Ljava/util/ArrayList;)V
+    iget v1, p0, Lorg/telegram/messenger/MessagesStorage$$ExternalSyntheticLambda1;->f$1:I
+
+    iget-object v2, p0, Lorg/telegram/messenger/MessagesStorage$$ExternalSyntheticLambda1;->f$2:Ljava/util/EnumMap;
+
+    invoke-static {v0, v1, v2}, Lorg/telegram/messenger/MessagesStorage;->$r8$lambda$syNLWsIK9zeLmKe86-CP3y-Jvoc(Lcom/iMe/fork/utils/Callbacks$Callback1;ILjava/util/EnumMap;)V
 
     return-void
 .end method

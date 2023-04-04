@@ -1,6 +1,6 @@
 package com.google.android.exoplayer2.extractor.p016ts;
 
-import com.google.android.exoplayer2.C0468C;
+import com.google.android.exoplayer2.C0482C;
 import com.google.android.exoplayer2.ParserException;
 import com.google.android.exoplayer2.extractor.ExtractorOutput;
 import com.google.android.exoplayer2.extractor.p016ts.TsPayloadReader;
@@ -164,7 +164,7 @@ public final class PesReader implements TsPayloadReader {
 
     private void parseHeaderExtension() {
         this.pesScratch.setPosition(0);
-        this.timeUs = C0468C.TIME_UNSET;
+        this.timeUs = C0482C.TIME_UNSET;
         if (this.ptsFlag) {
             this.pesScratch.skipBits(4);
             this.pesScratch.skipBits(1);

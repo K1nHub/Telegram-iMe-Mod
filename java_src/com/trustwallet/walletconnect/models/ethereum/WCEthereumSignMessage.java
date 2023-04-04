@@ -4,13 +4,13 @@ import java.util.List;
 import kotlin.NoWhenBranchMatchedException;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: WCEthereumSignMessage.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class WCEthereumSignMessage {
     private final List<String> raw;
     private final WCSignType type;
 
     /* compiled from: WCEthereumSignMessage.kt */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public enum WCSignType {
         MESSAGE,
         PERSONAL_MESSAGE,
@@ -18,7 +18,7 @@ public final class WCEthereumSignMessage {
     }
 
     /* compiled from: WCEthereumSignMessage.kt */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public /* synthetic */ class WhenMappings {
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
 

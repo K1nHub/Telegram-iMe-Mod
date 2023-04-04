@@ -159,7 +159,7 @@
     .line 949
     iget-object p1, p0, Lorg/telegram/ui/PasscodeActivity$5;->this$0:Lorg/telegram/ui/PasscodeActivity;
 
-    iget-object v0, p1, Lorg/telegram/ui/PasscodeActivity;->walletCreatePasscodePresenter:Lcom/smedialink/ui/wallet/crypto/create/password/CreateWalletPasswordPresenter;
+    iget-object v0, p1, Lorg/telegram/ui/PasscodeActivity;->walletCreatePasscodePresenter:Lcom/iMe/ui/wallet/crypto/create/password/CreateWalletPasswordPresenter;
 
     invoke-static {p1}, Lorg/telegram/ui/PasscodeActivity;->access$300(Lorg/telegram/ui/PasscodeActivity;)Lorg/telegram/ui/Components/EditTextBoldCursor;
 
@@ -173,7 +173,7 @@
 
     move-result-object p1
 
-    invoke-virtual {v0, p1}, Lcom/smedialink/ui/wallet/crypto/create/password/CreateWalletPasswordPresenter;->isValidPasswordLength(Ljava/lang/String;)Z
+    invoke-virtual {v0, p1}, Lcom/iMe/ui/wallet/crypto/create/password/CreateWalletPasswordPresenter;->isValidPasswordLength(Ljava/lang/String;)Z
 
     move-result p1
 

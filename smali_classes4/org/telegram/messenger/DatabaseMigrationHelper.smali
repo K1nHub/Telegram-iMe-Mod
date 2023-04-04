@@ -7713,7 +7713,7 @@
     .line 1303
     invoke-virtual {v10, v11}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
-    const-string v11, "topics"
+    const-string/jumbo v11, "topics"
 
     .line 1304
     invoke-virtual {v10, v11}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z

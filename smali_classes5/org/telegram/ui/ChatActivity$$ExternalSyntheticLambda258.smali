@@ -2,40 +2,44 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lorg/fork/ui/dialog/ForwardCloudBottomSheet$Delegate;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
 .field public final synthetic f$0:Lorg/telegram/ui/ChatActivity;
 
+.field public final synthetic f$1:Lorg/telegram/tgnet/TLRPC$TL_error;
+
+.field public final synthetic f$2:Lorg/telegram/tgnet/TLRPC$TL_messages_editMessage;
+
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/ChatActivity;)V
+.method public synthetic constructor <init>(Lorg/telegram/ui/ChatActivity;Lorg/telegram/tgnet/TLRPC$TL_error;Lorg/telegram/tgnet/TLRPC$TL_messages_editMessage;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda258;->f$0:Lorg/telegram/ui/ChatActivity;
 
+    iput-object p2, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda258;->f$1:Lorg/telegram/tgnet/TLRPC$TL_error;
+
+    iput-object p3, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda258;->f$2:Lorg/telegram/tgnet/TLRPC$TL_messages_editMessage;
+
     return-void
 .end method
 
 
 # virtual methods
-.method public final didSelectCloudDialog(J)V
-    .locals 1
+.method public final run()V
+    .locals 3
 
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda258;->f$0:Lorg/telegram/ui/ChatActivity;
 
-    invoke-static {v0, p1, p2}, Lorg/telegram/ui/ChatActivity;->$r8$lambda$YZrPs1XCwtAxLOGmLUslPlA7dfw(Lorg/telegram/ui/ChatActivity;J)V
+    iget-object v1, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda258;->f$1:Lorg/telegram/tgnet/TLRPC$TL_error;
 
-    return-void
-.end method
+    iget-object v2, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda258;->f$2:Lorg/telegram/tgnet/TLRPC$TL_messages_editMessage;
 
-.method public synthetic onAlbumCreatorOpened()V
-    .locals 0
-
-    invoke-static {p0}, Lorg/fork/ui/dialog/ForwardCloudBottomSheet$Delegate$-CC;->$default$onAlbumCreatorOpened(Lorg/fork/ui/dialog/ForwardCloudBottomSheet$Delegate;)V
+    invoke-static {v0, v1, v2}, Lorg/telegram/ui/ChatActivity;->$r8$lambda$uzgEsY9PZsJoRMciWQb1DSYjTXs(Lorg/telegram/ui/ChatActivity;Lorg/telegram/tgnet/TLRPC$TL_error;Lorg/telegram/tgnet/TLRPC$TL_messages_editMessage;)V
 
     return-void
 .end method

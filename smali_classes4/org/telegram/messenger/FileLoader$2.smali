@@ -34,17 +34,25 @@
 
 
 # direct methods
-.method constructor <init>(Lorg/telegram/messenger/FileLoader;Ljava/lang/Object;Lorg/telegram/tgnet/TLRPC$Document;Ljava/lang/String;ILjava/lang/String;Landroid/net/Uri;)V
+.method public static synthetic $r8$lambda$t2JD6Nw_1mFx8w2i4md1PYV40Ho(Lorg/telegram/messenger/FileLoader$2;Ljava/lang/String;Lorg/telegram/messenger/FileLoaderPriorityQueue;)V
     .locals 0
 
-    .line 837
+    invoke-direct {p0, p1, p2}, Lorg/telegram/messenger/FileLoader$2;->lambda$didPreFinishLoading$0(Ljava/lang/String;Lorg/telegram/messenger/FileLoaderPriorityQueue;)V
+
+    return-void
+.end method
+
+.method constructor <init>(Lorg/telegram/messenger/FileLoader;Ljava/lang/String;Ljava/lang/Object;Lorg/telegram/tgnet/TLRPC$Document;ILjava/lang/String;Landroid/net/Uri;)V
+    .locals 0
+
+    .line 829
     iput-object p1, p0, Lorg/telegram/messenger/FileLoader$2;->this$0:Lorg/telegram/messenger/FileLoader;
 
-    iput-object p2, p0, Lorg/telegram/messenger/FileLoader$2;->val$parentObject:Ljava/lang/Object;
+    iput-object p2, p0, Lorg/telegram/messenger/FileLoader$2;->val$fileName:Ljava/lang/String;
 
-    iput-object p3, p0, Lorg/telegram/messenger/FileLoader$2;->val$document:Lorg/telegram/tgnet/TLRPC$Document;
+    iput-object p3, p0, Lorg/telegram/messenger/FileLoader$2;->val$parentObject:Ljava/lang/Object;
 
-    iput-object p4, p0, Lorg/telegram/messenger/FileLoader$2;->val$fileName:Ljava/lang/String;
+    iput-object p4, p0, Lorg/telegram/messenger/FileLoader$2;->val$document:Lorg/telegram/tgnet/TLRPC$Document;
 
     iput p5, p0, Lorg/telegram/messenger/FileLoader$2;->val$finalType:I
 
@@ -57,24 +65,54 @@
     return-void
 .end method
 
+.method private synthetic lambda$didPreFinishLoading$0(Ljava/lang/String;Lorg/telegram/messenger/FileLoaderPriorityQueue;)V
+    .locals 1
+
+    .line 835
+    iget-object v0, p0, Lorg/telegram/messenger/FileLoader$2;->this$0:Lorg/telegram/messenger/FileLoader;
+
+    invoke-static {v0}, Lorg/telegram/messenger/FileLoader;->access$500(Lorg/telegram/messenger/FileLoader;)Lj$/util/concurrent/ConcurrentHashMap;
+
+    move-result-object v0
+
+    invoke-virtual {v0, p1}, Lj$/util/concurrent/ConcurrentHashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p1
+
+    check-cast p1, Lorg/telegram/messenger/FileLoadOperation;
+
+    if-eqz p1, :cond_0
+
+    const/4 v0, 0x1
+
+    .line 837
+    iput-boolean v0, p1, Lorg/telegram/messenger/FileLoadOperation;->preFinished:Z
+
+    .line 838
+    invoke-virtual {p2}, Lorg/telegram/messenger/FileLoaderPriorityQueue;->checkLoadingOperations()V
+
+    :cond_0
+    return-void
+.end method
+
 
 # virtual methods
 .method public didChangedLoadProgress(Lorg/telegram/messenger/FileLoadOperation;JJ)V
     .locals 8
 
-    .line 886
+    .line 892
     iget-object v0, p0, Lorg/telegram/messenger/FileLoader$2;->this$0:Lorg/telegram/messenger/FileLoader;
 
-    invoke-static {v0}, Lorg/telegram/messenger/FileLoader;->access$200(Lorg/telegram/messenger/FileLoader;)Lorg/telegram/messenger/FileLoader$FileLoaderDelegate;
+    invoke-static {v0}, Lorg/telegram/messenger/FileLoader;->access$400(Lorg/telegram/messenger/FileLoader;)Lorg/telegram/messenger/FileLoader$FileLoaderDelegate;
 
     move-result-object v0
 
     if-eqz v0, :cond_0
 
-    .line 887
+    .line 893
     iget-object v0, p0, Lorg/telegram/messenger/FileLoader$2;->this$0:Lorg/telegram/messenger/FileLoader;
 
-    invoke-static {v0}, Lorg/telegram/messenger/FileLoader;->access$200(Lorg/telegram/messenger/FileLoader;)Lorg/telegram/messenger/FileLoader$FileLoaderDelegate;
+    invoke-static {v0}, Lorg/telegram/messenger/FileLoader;->access$400(Lorg/telegram/messenger/FileLoader;)Lorg/telegram/messenger/FileLoader$FileLoaderDelegate;
 
     move-result-object v1
 
@@ -95,10 +133,10 @@
 .method public didFailedLoadingFile(Lorg/telegram/messenger/FileLoadOperation;I)V
     .locals 2
 
-    .line 871
+    .line 877
     iget-object v0, p0, Lorg/telegram/messenger/FileLoader$2;->this$0:Lorg/telegram/messenger/FileLoader;
 
-    invoke-static {v0}, Lorg/telegram/messenger/FileLoader;->access$100(Lorg/telegram/messenger/FileLoader;)Lj$/util/concurrent/ConcurrentHashMap;
+    invoke-static {v0}, Lorg/telegram/messenger/FileLoader;->access$300(Lorg/telegram/messenger/FileLoader;)Lj$/util/concurrent/ConcurrentHashMap;
 
     move-result-object v0
 
@@ -106,7 +144,7 @@
 
     invoke-virtual {v0, v1}, Lj$/util/concurrent/ConcurrentHashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 872
+    .line 878
     iget-object v0, p0, Lorg/telegram/messenger/FileLoader$2;->this$0:Lorg/telegram/messenger/FileLoader;
 
     invoke-virtual {p1}, Lorg/telegram/messenger/FileLoadOperation;->getQueue()Lorg/telegram/messenger/FileLoaderPriorityQueue;
@@ -115,21 +153,21 @@
 
     iget-object v1, p0, Lorg/telegram/messenger/FileLoader$2;->val$fileName:Ljava/lang/String;
 
-    invoke-static {v0, p1, v1}, Lorg/telegram/messenger/FileLoader;->access$300(Lorg/telegram/messenger/FileLoader;Lorg/telegram/messenger/FileLoaderPriorityQueue;Ljava/lang/String;)V
+    invoke-static {v0, p1, v1}, Lorg/telegram/messenger/FileLoader;->access$200(Lorg/telegram/messenger/FileLoader;Lorg/telegram/messenger/FileLoaderPriorityQueue;Ljava/lang/String;)V
 
-    .line 873
+    .line 879
     iget-object p1, p0, Lorg/telegram/messenger/FileLoader$2;->this$0:Lorg/telegram/messenger/FileLoader;
 
-    invoke-static {p1}, Lorg/telegram/messenger/FileLoader;->access$200(Lorg/telegram/messenger/FileLoader;)Lorg/telegram/messenger/FileLoader$FileLoaderDelegate;
+    invoke-static {p1}, Lorg/telegram/messenger/FileLoader;->access$400(Lorg/telegram/messenger/FileLoader;)Lorg/telegram/messenger/FileLoader$FileLoaderDelegate;
 
     move-result-object p1
 
     if-eqz p1, :cond_0
 
-    .line 874
+    .line 880
     iget-object p1, p0, Lorg/telegram/messenger/FileLoader$2;->this$0:Lorg/telegram/messenger/FileLoader;
 
-    invoke-static {p1}, Lorg/telegram/messenger/FileLoader;->access$200(Lorg/telegram/messenger/FileLoader;)Lorg/telegram/messenger/FileLoader$FileLoaderDelegate;
+    invoke-static {p1}, Lorg/telegram/messenger/FileLoader;->access$400(Lorg/telegram/messenger/FileLoader;)Lorg/telegram/messenger/FileLoader$FileLoaderDelegate;
 
     move-result-object p1
 
@@ -137,7 +175,7 @@
 
     invoke-interface {p1, v0, p2}, Lorg/telegram/messenger/FileLoader$FileLoaderDelegate;->fileDidFailedLoad(Ljava/lang/String;I)V
 
-    .line 877
+    .line 883
     :cond_0
     iget-object p1, p0, Lorg/telegram/messenger/FileLoader$2;->val$document:Lorg/telegram/tgnet/TLRPC$Document;
 
@@ -151,7 +189,7 @@
 
     if-nez p2, :cond_1
 
-    .line 878
+    .line 884
     iget-object p1, p0, Lorg/telegram/messenger/FileLoader$2;->this$0:Lorg/telegram/messenger/FileLoader;
 
     invoke-virtual {p1}, Lorg/telegram/messenger/BaseController;->getDownloadController()Lorg/telegram/messenger/DownloadController;
@@ -173,7 +211,7 @@
 
     const/4 p1, 0x2
 
-    .line 880
+    .line 886
     invoke-static {p1}, Lorg/telegram/ui/LaunchActivity;->checkFreeDiscSpaceStatic(I)V
 
     :cond_2
@@ -184,7 +222,7 @@
 .method public didFinishLoadingFile(Lorg/telegram/messenger/FileLoadOperation;Ljava/io/File;)V
     .locals 4
 
-    .line 840
+    .line 846
     invoke-virtual {p1}, Lorg/telegram/messenger/FileLoadOperation;->isPreloadVideoOperation()Z
 
     move-result v0
@@ -199,7 +237,7 @@
 
     return-void
 
-    .line 843
+    .line 849
     :cond_0
     iget-object v0, p0, Lorg/telegram/messenger/FileLoader$2;->this$0:Lorg/telegram/messenger/FileLoader;
 
@@ -213,7 +251,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 845
+    .line 851
     iget-object v1, p0, Lorg/telegram/messenger/FileLoader$2;->this$0:Lorg/telegram/messenger/FileLoader;
 
     invoke-virtual {v1}, Lorg/telegram/messenger/BaseController;->getFileLoader()Lorg/telegram/messenger/FileLoader;
@@ -226,7 +264,7 @@
 
     invoke-virtual {v1, p2, v0}, Lorg/telegram/messenger/FilePathDatabase;->saveFileDialogId(Ljava/io/File;Lorg/telegram/messenger/FilePathDatabase$FileMeta;)V
 
-    .line 847
+    .line 853
     :cond_1
     iget-object v0, p0, Lorg/telegram/messenger/FileLoader$2;->val$parentObject:Ljava/lang/Object;
 
@@ -234,10 +272,10 @@
 
     if-eqz v1, :cond_2
 
-    .line 848
+    .line 854
     check-cast v0, Lorg/telegram/messenger/MessageObject;
 
-    .line 849
+    .line 855
     iget-object v1, p0, Lorg/telegram/messenger/FileLoader$2;->val$document:Lorg/telegram/tgnet/TLRPC$Document;
 
     if-eqz v1, :cond_2
@@ -246,7 +284,7 @@
 
     if-eqz v1, :cond_2
 
-    .line 850
+    .line 856
     iget-object v1, p0, Lorg/telegram/messenger/FileLoader$2;->this$0:Lorg/telegram/messenger/FileLoader;
 
     invoke-virtual {v1}, Lorg/telegram/messenger/BaseController;->getDownloadController()Lorg/telegram/messenger/DownloadController;
@@ -255,7 +293,7 @@
 
     invoke-virtual {v1, v0}, Lorg/telegram/messenger/DownloadController;->onDownloadComplete(Lorg/telegram/messenger/MessageObject;)V
 
-    .line 854
+    .line 860
     :cond_2
     invoke-virtual {p1}, Lorg/telegram/messenger/FileLoadOperation;->isPreloadVideoOperation()Z
 
@@ -263,10 +301,10 @@
 
     if-nez v0, :cond_3
 
-    .line 855
+    .line 861
     iget-object v0, p0, Lorg/telegram/messenger/FileLoader$2;->this$0:Lorg/telegram/messenger/FileLoader;
 
-    invoke-static {v0}, Lorg/telegram/messenger/FileLoader;->access$100(Lorg/telegram/messenger/FileLoader;)Lj$/util/concurrent/ConcurrentHashMap;
+    invoke-static {v0}, Lorg/telegram/messenger/FileLoader;->access$300(Lorg/telegram/messenger/FileLoader;)Lj$/util/concurrent/ConcurrentHashMap;
 
     move-result-object v0
 
@@ -274,19 +312,19 @@
 
     invoke-virtual {v0, v1}, Lj$/util/concurrent/ConcurrentHashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 856
+    .line 862
     iget-object v0, p0, Lorg/telegram/messenger/FileLoader$2;->this$0:Lorg/telegram/messenger/FileLoader;
 
-    invoke-static {v0}, Lorg/telegram/messenger/FileLoader;->access$200(Lorg/telegram/messenger/FileLoader;)Lorg/telegram/messenger/FileLoader$FileLoaderDelegate;
+    invoke-static {v0}, Lorg/telegram/messenger/FileLoader;->access$400(Lorg/telegram/messenger/FileLoader;)Lorg/telegram/messenger/FileLoader$FileLoaderDelegate;
 
     move-result-object v0
 
     if-eqz v0, :cond_3
 
-    .line 857
+    .line 863
     iget-object v0, p0, Lorg/telegram/messenger/FileLoader$2;->this$0:Lorg/telegram/messenger/FileLoader;
 
-    invoke-static {v0}, Lorg/telegram/messenger/FileLoader;->access$200(Lorg/telegram/messenger/FileLoader;)Lorg/telegram/messenger/FileLoader$FileLoaderDelegate;
+    invoke-static {v0}, Lorg/telegram/messenger/FileLoader;->access$400(Lorg/telegram/messenger/FileLoader;)Lorg/telegram/messenger/FileLoader$FileLoaderDelegate;
 
     move-result-object v0
 
@@ -298,7 +336,7 @@
 
     invoke-interface {v0, v1, p2, v2, v3}, Lorg/telegram/messenger/FileLoader$FileLoaderDelegate;->fileDidLoaded(Ljava/lang/String;Ljava/io/File;Ljava/lang/Object;I)V
 
-    .line 861
+    .line 867
     :cond_3
     iget-object v0, p0, Lorg/telegram/messenger/FileLoader$2;->this$0:Lorg/telegram/messenger/FileLoader;
 
@@ -308,9 +346,9 @@
 
     iget-object v1, p0, Lorg/telegram/messenger/FileLoader$2;->val$fileName:Ljava/lang/String;
 
-    invoke-static {v0, p1, v1}, Lorg/telegram/messenger/FileLoader;->access$300(Lorg/telegram/messenger/FileLoader;Lorg/telegram/messenger/FileLoaderPriorityQueue;Ljava/lang/String;)V
+    invoke-static {v0, p1, v1}, Lorg/telegram/messenger/FileLoader;->access$200(Lorg/telegram/messenger/FileLoader;Lorg/telegram/messenger/FileLoaderPriorityQueue;Ljava/lang/String;)V
 
-    .line 863
+    .line 869
     iget-object p1, p0, Lorg/telegram/messenger/FileLoader$2;->val$document:Lorg/telegram/tgnet/TLRPC$Document;
 
     if-eqz p1, :cond_4
@@ -325,17 +363,52 @@
 
     const/4 v2, 0x1
 
-    .line 864
-    invoke-static {p2, p1, v0, v1, v2}, Lorg/fork/utils/FileSavingHelper;->saveDocumentFileToCustomDirectory(Ljava/io/File;Lorg/telegram/tgnet/TLRPC$Document;Ljava/lang/String;Landroid/net/Uri;Z)V
+    .line 870
+    invoke-static {p2, p1, v0, v1, v2}, Lcom/iMe/fork/utils/FileSavingHelper;->saveDocumentFileToCustomDirectory(Ljava/io/File;Lorg/telegram/tgnet/TLRPC$Document;Ljava/lang/String;Landroid/net/Uri;Z)V
 
     :cond_4
+    return-void
+.end method
+
+.method public didPreFinishLoading(Lorg/telegram/messenger/FileLoadOperation;Ljava/io/File;)V
+    .locals 3
+
+    .line 833
+    invoke-virtual {p1}, Lorg/telegram/messenger/FileLoadOperation;->getQueue()Lorg/telegram/messenger/FileLoaderPriorityQueue;
+
+    move-result-object p2
+
+    .line 834
+    invoke-static {}, Lorg/telegram/messenger/FileLoader;->access$100()Lorg/telegram/messenger/DispatchQueue;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lorg/telegram/messenger/FileLoader$2;->val$fileName:Ljava/lang/String;
+
+    new-instance v2, Lorg/telegram/messenger/FileLoader$2$$ExternalSyntheticLambda0;
+
+    invoke-direct {v2, p0, v1, p2}, Lorg/telegram/messenger/FileLoader$2$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/messenger/FileLoader$2;Ljava/lang/String;Lorg/telegram/messenger/FileLoaderPriorityQueue;)V
+
+    invoke-virtual {v0, v2}, Lorg/telegram/messenger/DispatchQueue;->postRunnable(Ljava/lang/Runnable;)Z
+
+    .line 841
+    iget-object p2, p0, Lorg/telegram/messenger/FileLoader$2;->this$0:Lorg/telegram/messenger/FileLoader;
+
+    invoke-virtual {p1}, Lorg/telegram/messenger/FileLoadOperation;->getQueue()Lorg/telegram/messenger/FileLoaderPriorityQueue;
+
+    move-result-object p1
+
+    iget-object v0, p0, Lorg/telegram/messenger/FileLoader$2;->val$fileName:Ljava/lang/String;
+
+    invoke-static {p2, p1, v0}, Lorg/telegram/messenger/FileLoader;->access$200(Lorg/telegram/messenger/FileLoader;Lorg/telegram/messenger/FileLoaderPriorityQueue;Ljava/lang/String;)V
+
     return-void
 .end method
 
 .method public hasAnotherRefOnFile(Ljava/lang/String;)Z
     .locals 1
 
-    .line 898
+    .line 904
     iget-object v0, p0, Lorg/telegram/messenger/FileLoader$2;->this$0:Lorg/telegram/messenger/FileLoader;
 
     invoke-virtual {v0}, Lorg/telegram/messenger/FileLoader;->getFileDatabase()Lorg/telegram/messenger/FilePathDatabase;
@@ -352,7 +425,7 @@
 .method public saveFilePath(Lorg/telegram/messenger/FilePathDatabase$PathData;Ljava/io/File;)V
     .locals 7
 
-    .line 893
+    .line 899
     iget-object v0, p0, Lorg/telegram/messenger/FileLoader$2;->this$0:Lorg/telegram/messenger/FileLoader;
 
     invoke-virtual {v0}, Lorg/telegram/messenger/FileLoader;->getFileDatabase()Lorg/telegram/messenger/FilePathDatabase;

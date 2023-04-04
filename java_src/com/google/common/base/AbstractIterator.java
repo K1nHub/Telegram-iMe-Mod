@@ -2,10 +2,10 @@ package com.google.common.base;
 
 import java.util.Iterator;
 import java.util.NoSuchElementException;
-import p034j$.util.Iterator;
-import p034j$.util.function.Consumer;
+import p035j$.util.Iterator;
+import p035j$.util.function.Consumer;
 /* loaded from: classes3.dex */
-abstract class AbstractIterator<T> implements Iterator<T>, p034j$.util.Iterator {
+abstract class AbstractIterator<T> implements Iterator<T>, p035j$.util.Iterator {
     private T next;
     private State state = State.NOT_READY;
 
@@ -20,7 +20,7 @@ abstract class AbstractIterator<T> implements Iterator<T>, p034j$.util.Iterator 
 
     protected abstract T computeNext();
 
-    @Override // p034j$.util.Iterator
+    @Override // p035j$.util.Iterator
     public /* synthetic */ void forEachRemaining(Consumer consumer) {
         Iterator.CC.$default$forEachRemaining(this, consumer);
     }
@@ -34,7 +34,7 @@ abstract class AbstractIterator<T> implements Iterator<T>, p034j$.util.Iterator 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.google.common.base.AbstractIterator$1 */
     /* loaded from: classes3.dex */
-    public static /* synthetic */ class C08831 {
+    public static /* synthetic */ class C08971 {
         static final /* synthetic */ int[] $SwitchMap$com$google$common$base$AbstractIterator$State;
 
         static {
@@ -51,10 +51,10 @@ abstract class AbstractIterator<T> implements Iterator<T>, p034j$.util.Iterator 
         }
     }
 
-    @Override // java.util.Iterator, p034j$.util.Iterator
+    @Override // java.util.Iterator, p035j$.util.Iterator
     public final boolean hasNext() {
         Preconditions.checkState(this.state != State.FAILED);
-        int i = C08831.$SwitchMap$com$google$common$base$AbstractIterator$State[this.state.ordinal()];
+        int i = C08971.$SwitchMap$com$google$common$base$AbstractIterator$State[this.state.ordinal()];
         if (i != 1) {
             if (i != 2) {
                 return tryToComputeNext();
@@ -74,7 +74,7 @@ abstract class AbstractIterator<T> implements Iterator<T>, p034j$.util.Iterator 
         return false;
     }
 
-    @Override // java.util.Iterator, p034j$.util.Iterator
+    @Override // java.util.Iterator, p035j$.util.Iterator
     public final T next() {
         if (!hasNext()) {
             throw new NoSuchElementException();
@@ -85,7 +85,7 @@ abstract class AbstractIterator<T> implements Iterator<T>, p034j$.util.Iterator 
         return t;
     }
 
-    @Override // java.util.Iterator, p034j$.util.Iterator
+    @Override // java.util.Iterator, p035j$.util.Iterator
     public final void remove() {
         throw new UnsupportedOperationException();
     }

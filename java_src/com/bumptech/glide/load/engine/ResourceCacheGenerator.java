@@ -5,6 +5,7 @@ import com.bumptech.glide.load.Key;
 import com.bumptech.glide.load.data.DataFetcher;
 import com.bumptech.glide.load.engine.DataFetcherGenerator;
 import com.bumptech.glide.load.model.ModelLoader;
+import com.bumptech.glide.util.pool.GlideTrace;
 import java.io.File;
 import java.util.List;
 /* JADX INFO: Access modifiers changed from: package-private */
@@ -31,26 +32,41 @@ public class ResourceCacheGenerator implements DataFetcherGenerator, DataFetcher
 
     @Override // com.bumptech.glide.load.engine.DataFetcherGenerator
     public boolean startNext() {
-        List<Key> cacheKeys = this.helper.getCacheKeys();
-        boolean z = false;
-        if (cacheKeys.isEmpty()) {
-            return false;
-        }
-        List<Class<?>> registeredResourceClasses = this.helper.getRegisteredResourceClasses();
-        if (registeredResourceClasses.isEmpty()) {
-            if (File.class.equals(this.helper.getTranscodeClass())) {
+        GlideTrace.beginSection("ResourceCacheGenerator.startNext");
+        try {
+            List<Key> cacheKeys = this.helper.getCacheKeys();
+            boolean z = false;
+            if (cacheKeys.isEmpty()) {
                 return false;
             }
-            throw new IllegalStateException("Failed to find any load path from " + this.helper.getModelClass() + " to " + this.helper.getTranscodeClass());
-        }
-        while (true) {
-            if (this.modelLoaders == null || !hasNextModelLoader()) {
-                int i = this.resourceClassIndex + 1;
-                this.resourceClassIndex = i;
-                if (i >= registeredResourceClasses.size()) {
-                    int i2 = this.sourceIdIndex + 1;
-                    this.sourceIdIndex = i2;
-                    if (i2 >= cacheKeys.size()) {
+            List<Class<?>> registeredResourceClasses = this.helper.getRegisteredResourceClasses();
+            if (registeredResourceClasses.isEmpty()) {
+                if (File.class.equals(this.helper.getTranscodeClass())) {
+                    return false;
+                }
+                throw new IllegalStateException("Failed to find any load path from " + this.helper.getModelClass() + " to " + this.helper.getTranscodeClass());
+            }
+            while (true) {
+                if (this.modelLoaders != null && hasNextModelLoader()) {
+                    this.loadData = null;
+                    while (!z && hasNextModelLoader()) {
+                        List<ModelLoader<File, ?>> list = this.modelLoaders;
+                        int i = this.modelLoaderIndex;
+                        this.modelLoaderIndex = i + 1;
+                        this.loadData = list.get(i).buildLoadData(this.cacheFile, this.helper.getWidth(), this.helper.getHeight(), this.helper.getOptions());
+                        if (this.loadData != null && this.helper.hasLoadPath(this.loadData.fetcher.getDataClass())) {
+                            this.loadData.fetcher.loadData(this.helper.getPriority(), this);
+                            z = true;
+                        }
+                    }
+                    return z;
+                }
+                int i2 = this.resourceClassIndex + 1;
+                this.resourceClassIndex = i2;
+                if (i2 >= registeredResourceClasses.size()) {
+                    int i3 = this.sourceIdIndex + 1;
+                    this.sourceIdIndex = i3;
+                    if (i3 >= cacheKeys.size()) {
                         return false;
                     }
                     this.resourceClassIndex = 0;
@@ -65,20 +81,9 @@ public class ResourceCacheGenerator implements DataFetcherGenerator, DataFetcher
                     this.modelLoaders = this.helper.getModelLoaders(file);
                     this.modelLoaderIndex = 0;
                 }
-            } else {
-                this.loadData = null;
-                while (!z && hasNextModelLoader()) {
-                    List<ModelLoader<File, ?>> list = this.modelLoaders;
-                    int i3 = this.modelLoaderIndex;
-                    this.modelLoaderIndex = i3 + 1;
-                    this.loadData = list.get(i3).buildLoadData(this.cacheFile, this.helper.getWidth(), this.helper.getHeight(), this.helper.getOptions());
-                    if (this.loadData != null && this.helper.hasLoadPath(this.loadData.fetcher.getDataClass())) {
-                        this.loadData.fetcher.loadData(this.helper.getPriority(), this);
-                        z = true;
-                    }
-                }
-                return z;
             }
+        } finally {
+            GlideTrace.endSection();
         }
     }
 

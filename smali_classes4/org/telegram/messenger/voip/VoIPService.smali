@@ -13860,7 +13860,7 @@
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v1, "updateBluetoothHeadsetState: "
+    const-string/jumbo v1, "updateBluetoothHeadsetState: "
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -19356,7 +19356,7 @@
 
     iput v0, v1, Lorg/telegram/messenger/voip/VoIPService;->classGuid:I
 
-    const-string v0, "user_id"
+    const-string/jumbo v0, "user_id"
 
     const-wide/16 v4, 0x0
 

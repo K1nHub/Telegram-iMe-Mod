@@ -86,6 +86,14 @@
     return-object p0
 .end method
 
+.method public static synthetic $r8$lambda$1ql3-wZ_skXjxvWVrWXEObWb9qw(Lcom/iMe/fork/utils/Callbacks$Callback1;Lorg/telegram/ui/ActionBar/AlertDialog$Builder;Landroid/view/View;)V
+    .locals 0
+
+    invoke-static {p0, p1, p2}, Lorg/telegram/ui/Components/AlertsCreator;->lambda$createDrawerAccountDataSelectDialog$10(Lcom/iMe/fork/utils/Callbacks$Callback1;Lorg/telegram/ui/ActionBar/AlertDialog$Builder;Landroid/view/View;)V
+
+    return-void
+.end method
+
 .method public static synthetic $r8$lambda$2qZyNs57IML1LY8W0OZ-65slq9s([Lorg/telegram/ui/ActionBar/AlertDialog;IILorg/telegram/ui/ActionBar/BaseFragment;)V
     .locals 0
 
@@ -228,6 +236,14 @@
     return-void
 .end method
 
+.method public static synthetic $r8$lambda$9RcUf4NKwKtd0Mi8fiqZyVGUUEA(Lorg/telegram/ui/Components/AlertsCreator$ScheduleDatePickerDelegate;Ljava/lang/String;)V
+    .locals 0
+
+    invoke-static {p0, p1}, Lorg/telegram/ui/Components/AlertsCreator;->lambda$createScheduleDatePickerDialog$76(Lorg/telegram/ui/Components/AlertsCreator$ScheduleDatePickerDelegate;Ljava/lang/String;)V
+
+    return-void
+.end method
+
 .method public static synthetic $r8$lambda$9bKo-Hm_mnMXXGAFMmy9YM2gkM0([ZLandroid/view/View;)V
     .locals 0
 
@@ -316,6 +332,14 @@
     return-void
 .end method
 
+.method public static synthetic $r8$lambda$DW183bs0JzOr7IEue3eiMVQ-UIA(Lorg/telegram/ui/ActionBar/BaseFragment;)V
+    .locals 0
+
+    invoke-static {p0}, Lorg/telegram/ui/Components/AlertsCreator;->lambda$showArchiveAccessAlert$16(Lorg/telegram/ui/ActionBar/BaseFragment;)V
+
+    return-void
+.end method
+
 .method public static synthetic $r8$lambda$DiF_oaYu1MqaCWGMnS0Gv4GVFpM(I)Ljava/lang/String;
     .locals 0
 
@@ -390,10 +414,10 @@
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$FeehQ9eddY0lcDVVvjwQOZPXwQY(Lorg/fork/utils/Callbacks$Callback1;Landroid/content/DialogInterface;I)V
+.method public static synthetic $r8$lambda$FOSL356OBZyf-BmAqWGBHsJKQXc(Lcom/iMe/fork/utils/Callbacks$Callback1;Landroid/content/DialogInterface;I)V
     .locals 0
 
-    invoke-static {p0, p1, p2}, Lorg/telegram/ui/Components/AlertsCreator;->lambda$showConfirmationDialog$9(Lorg/fork/utils/Callbacks$Callback1;Landroid/content/DialogInterface;I)V
+    invoke-static {p0, p1, p2}, Lorg/telegram/ui/Components/AlertsCreator;->lambda$createTopAnimationDialog$23(Lcom/iMe/fork/utils/Callbacks$Callback1;Landroid/content/DialogInterface;I)V
 
     return-void
 .end method
@@ -440,6 +464,14 @@
     return-void
 .end method
 
+.method public static synthetic $r8$lambda$IdeLDDOnjMdFrj3a_Hpw07F2M-4(Lcom/iMe/fork/utils/Callbacks$Callback1;Landroid/content/DialogInterface;I)V
+    .locals 0
+
+    invoke-static {p0, p1, p2}, Lorg/telegram/ui/Components/AlertsCreator;->lambda$showConfirmationDialog$8(Lcom/iMe/fork/utils/Callbacks$Callback1;Landroid/content/DialogInterface;I)V
+
+    return-void
+.end method
+
 .method public static synthetic $r8$lambda$IjEyQte9pji8j_4-1jcxVANdet0(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
     .locals 0
 
@@ -452,14 +484,6 @@
     .locals 0
 
     invoke-static {p0, p1}, Lorg/telegram/ui/Components/AlertsCreator;->lambda$createChangeNameAlert$60(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
-
-    return-void
-.end method
-
-.method public static synthetic $r8$lambda$IyGdKJ-DOIYb0Vc8Z4O5ofg8kP0(Lorg/telegram/ui/Components/AlertsCreator$ScheduleDatePickerDelegate;Ljava/lang/String;)V
-    .locals 0
-
-    invoke-static {p0, p1}, Lorg/telegram/ui/Components/AlertsCreator;->lambda$createScheduleDatePickerDialog$76(Lorg/telegram/ui/Components/AlertsCreator$ScheduleDatePickerDelegate;Ljava/lang/String;)V
 
     return-void
 .end method
@@ -752,26 +776,10 @@
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$YZPi8qoXK1ukDwAR2J3FkfvkwPI(Lorg/fork/utils/Callbacks$Callback1;Landroid/content/DialogInterface;I)V
-    .locals 0
-
-    invoke-static {p0, p1, p2}, Lorg/telegram/ui/Components/AlertsCreator;->lambda$createTopAnimationDialog$22(Lorg/fork/utils/Callbacks$Callback1;Landroid/content/DialogInterface;I)V
-
-    return-void
-.end method
-
 .method public static synthetic $r8$lambda$ZGjLAZeg_c6LbLuIkLwloz-yM6A(JILandroid/widget/EditText;Landroid/content/DialogInterface;I)V
     .locals 0
 
     invoke-static/range {p0 .. p5}, Lorg/telegram/ui/Components/AlertsCreator;->lambda$createChangeBioAlert$57(JILandroid/widget/EditText;Landroid/content/DialogInterface;I)V
-
-    return-void
-.end method
-
-.method public static synthetic $r8$lambda$ZpIYtl4NgaqwhRQDDAOQ1i4i-GI(Lorg/fork/utils/Callbacks$Callback1;Landroid/content/DialogInterface;I)V
-    .locals 0
-
-    invoke-static {p0, p1, p2}, Lorg/telegram/ui/Components/AlertsCreator;->lambda$showConfirmationDialog$8(Lorg/fork/utils/Callbacks$Callback1;Landroid/content/DialogInterface;I)V
 
     return-void
 .end method
@@ -816,14 +824,6 @@
     .locals 0
 
     invoke-static {p0, p1}, Lorg/telegram/ui/Components/AlertsCreator;->lambda$createRestoreBackupBottomSheetDialog$11(Lorg/telegram/ui/ActionBar/BottomSheet$Builder;Landroid/view/View;)V
-
-    return-void
-.end method
-
-.method public static synthetic $r8$lambda$_vNJa6yP0cjtOVqDpCEODyvxt0M(Lorg/fork/utils/Callbacks$Callback1;Landroid/content/DialogInterface;I)V
-    .locals 0
-
-    invoke-static {p0, p1, p2}, Lorg/telegram/ui/Components/AlertsCreator;->lambda$createTopAnimationDialog$23(Lorg/fork/utils/Callbacks$Callback1;Landroid/content/DialogInterface;I)V
 
     return-void
 .end method
@@ -926,6 +926,14 @@
     return-void
 .end method
 
+.method public static synthetic $r8$lambda$eFmAoYYqERHI-Xw_9GLU8fZe_gU(Lcom/iMe/fork/utils/Callbacks$Callback1;Landroid/content/DialogInterface;I)V
+    .locals 0
+
+    invoke-static {p0, p1, p2}, Lorg/telegram/ui/Components/AlertsCreator;->lambda$createTopAnimationDialog$22(Lcom/iMe/fork/utils/Callbacks$Callback1;Landroid/content/DialogInterface;I)V
+
+    return-void
+.end method
+
 .method public static synthetic $r8$lambda$f8FXz2f73Mvlb5InZMRhTbSvFtA(Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;Landroid/view/View;ILandroid/view/KeyEvent;)Z
     .locals 0
 
@@ -986,6 +994,14 @@
     move-result p0
 
     return p0
+.end method
+
+.method public static synthetic $r8$lambda$gmMb5E6WE2PqPfyIqwDeMXPm2iE(Lorg/telegram/ui/ActionBar/AlertDialog;Lorg/telegram/ui/ActionBar/BaseFragment;Ljava/lang/Boolean;)V
+    .locals 0
+
+    invoke-static {p0, p1, p2}, Lorg/telegram/ui/Components/AlertsCreator;->lambda$createRestoreBackupBottomSheetDialog$12(Lorg/telegram/ui/ActionBar/AlertDialog;Lorg/telegram/ui/ActionBar/BaseFragment;Ljava/lang/Boolean;)V
+
+    return-void
 .end method
 
 .method public static synthetic $r8$lambda$h0f7D0NTYfcMr6yW0k3Yueavhv8(Ljava/lang/Runnable;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
@@ -1054,6 +1070,14 @@
     return-void
 .end method
 
+.method public static synthetic $r8$lambda$k5czofsw9HJzYTSMsvubjK4KtGY(Lcom/iMe/fork/utils/Callbacks$Callback1;Landroid/content/DialogInterface;I)V
+    .locals 0
+
+    invoke-static {p0, p1, p2}, Lorg/telegram/ui/Components/AlertsCreator;->lambda$showConfirmationDialog$9(Lcom/iMe/fork/utils/Callbacks$Callback1;Landroid/content/DialogInterface;I)V
+
+    return-void
+.end method
+
 .method public static synthetic $r8$lambda$kVXqJFf-cieukBYXfJZxeEEKml0(Lorg/telegram/ui/ActionBar/AlertDialog$Builder;Landroid/content/DialogInterface$OnClickListener;Landroid/view/View;)V
     .locals 0
 
@@ -1106,10 +1130,10 @@
     return p0
 .end method
 
-.method public static synthetic $r8$lambda$n1LkYldwCUpSSUKQ3zdWkfvesnY(Lorg/fork/utils/Callbacks$Callback1;Lorg/telegram/ui/ActionBar/AlertDialog$Builder;Landroid/view/View;)V
+.method public static synthetic $r8$lambda$n-LUTf-KVF_qRgBiRPOayXVR0ZU([Lorg/telegram/ui/Cells/TextCheckBoxCell;[Lcom/iMe/fork/enums/BackupComponent;Lorg/telegram/ui/ActionBar/BottomSheet$Builder;Landroid/content/Context;Lorg/telegram/ui/ActionBar/BaseFragment;Lorg/telegram/messenger/MessageObject;Landroid/view/View;)V
     .locals 0
 
-    invoke-static {p0, p1, p2}, Lorg/telegram/ui/Components/AlertsCreator;->lambda$createDrawerAccountDataSelectDialog$10(Lorg/fork/utils/Callbacks$Callback1;Lorg/telegram/ui/ActionBar/AlertDialog$Builder;Landroid/view/View;)V
+    invoke-static/range {p0 .. p6}, Lorg/telegram/ui/Components/AlertsCreator;->lambda$createRestoreBackupBottomSheetDialog$13([Lorg/telegram/ui/Cells/TextCheckBoxCell;[Lcom/iMe/fork/enums/BackupComponent;Lorg/telegram/ui/ActionBar/BottomSheet$Builder;Landroid/content/Context;Lorg/telegram/ui/ActionBar/BaseFragment;Lorg/telegram/messenger/MessageObject;Landroid/view/View;)V
 
     return-void
 .end method
@@ -1150,14 +1174,6 @@
     move-result-object p0
 
     return-object p0
-.end method
-
-.method public static synthetic $r8$lambda$pNTcBzJB7pO8D4b7FkNN5ZLoHps(Lorg/fork/utils/Callbacks$Callback;Landroid/content/DialogInterface;)V
-    .locals 0
-
-    invoke-static {p0, p1}, Lorg/telegram/ui/Components/AlertsCreator;->lambda$showRestartDialog$18(Lorg/fork/utils/Callbacks$Callback;Landroid/content/DialogInterface;)V
-
-    return-void
 .end method
 
 .method public static synthetic $r8$lambda$qui6cAju-9rkcwGh6LgWaBbHQyA([ZLandroid/view/View;)V
@@ -1284,14 +1300,6 @@
     return p0
 .end method
 
-.method public static synthetic $r8$lambda$vscZOI4wUQpDRRN5Ics0N_dv2Ac(Lorg/telegram/ui/ActionBar/AlertDialog;Lorg/telegram/ui/ActionBar/BaseFragment;Ljava/lang/Boolean;)V
-    .locals 0
-
-    invoke-static {p0, p1, p2}, Lorg/telegram/ui/Components/AlertsCreator;->lambda$createRestoreBackupBottomSheetDialog$12(Lorg/telegram/ui/ActionBar/AlertDialog;Lorg/telegram/ui/ActionBar/BaseFragment;Ljava/lang/Boolean;)V
-
-    return-void
-.end method
-
 .method public static synthetic $r8$lambda$vwEg8211zir9eR9FB7mWYPoC36U(Ljava/lang/Runnable;[ZLandroid/content/DialogInterface;)V
     .locals 0
 
@@ -1334,18 +1342,10 @@
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$xFe-1b3tfictLP_tXhReRRkmt80([Lorg/telegram/ui/Cells/TextCheckBoxCell;[Lorg/fork/enums/BackupComponent;Lorg/telegram/ui/ActionBar/BottomSheet$Builder;Landroid/content/Context;Lorg/telegram/ui/ActionBar/BaseFragment;Lorg/telegram/messenger/MessageObject;Landroid/view/View;)V
+.method public static synthetic $r8$lambda$yC8LofRD5Cu8UMngiS4jdb2Z1mo(Lcom/iMe/fork/utils/Callbacks$Callback;Landroid/content/DialogInterface;)V
     .locals 0
 
-    invoke-static/range {p0 .. p6}, Lorg/telegram/ui/Components/AlertsCreator;->lambda$createRestoreBackupBottomSheetDialog$13([Lorg/telegram/ui/Cells/TextCheckBoxCell;[Lorg/fork/enums/BackupComponent;Lorg/telegram/ui/ActionBar/BottomSheet$Builder;Landroid/content/Context;Lorg/telegram/ui/ActionBar/BaseFragment;Lorg/telegram/messenger/MessageObject;Landroid/view/View;)V
-
-    return-void
-.end method
-
-.method public static synthetic $r8$lambda$ydtfz0af8dXfj-MxmOoDFQEZW5Y(Lorg/telegram/ui/ActionBar/BaseFragment;)V
-    .locals 0
-
-    invoke-static {p0}, Lorg/telegram/ui/Components/AlertsCreator;->lambda$showArchiveAccessAlert$16(Lorg/telegram/ui/ActionBar/BaseFragment;)V
+    invoke-static {p0, p1}, Lorg/telegram/ui/Components/AlertsCreator;->lambda$showRestartDialog$18(Lcom/iMe/fork/utils/Callbacks$Callback;Landroid/content/DialogInterface;)V
 
     return-void
 .end method
@@ -1685,9 +1685,9 @@
     if-eqz v0, :cond_4
 
     .line 2724
-    new-instance p2, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda108;
+    new-instance p2, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda111;
 
-    invoke-direct {p2, p0, p1, v0}, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda108;-><init>(ILorg/telegram/tgnet/TLRPC$Chat;Ljava/util/ArrayList;)V
+    invoke-direct {p2, p0, p1, v0}, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda111;-><init>(ILorg/telegram/tgnet/TLRPC$Chat;Ljava/util/ArrayList;)V
 
     const-wide/16 p0, 0xc8
 
@@ -3329,9 +3329,9 @@
 
     move-result-object p0
 
-    new-instance p1, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda17;
+    new-instance p1, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda21;
 
-    invoke-direct {p1, p2}, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda17;-><init>(Ljava/lang/Runnable;)V
+    invoke-direct {p1, p2}, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda21;-><init>(Ljava/lang/Runnable;)V
 
     invoke-virtual {v1, p0, p1}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setNegativeButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
@@ -5600,7 +5600,7 @@
     invoke-virtual {v1, v2}, Landroid/widget/LinearLayout;->setOrientation(I)V
 
     .line 486
-    invoke-static {}, Lorg/fork/enums/TemplatesMode;->values()[Lorg/fork/enums/TemplatesMode;
+    invoke-static {}, Lcom/iMe/fork/enums/TemplatesMode;->values()[Lcom/iMe/fork/enums/TemplatesMode;
 
     move-result-object v3
 
@@ -5652,7 +5652,7 @@
     invoke-virtual {v8, v9, v10}, Lorg/telegram/ui/Cells/RadioColorCell;->setCheckColor(II)V
 
     .line 491
-    invoke-virtual {v7}, Lorg/fork/enums/TemplatesMode;->getTextResId()I
+    invoke-virtual {v7}, Lcom/iMe/fork/enums/TemplatesMode;->getTextResId()I
 
     move-result v9
 
@@ -5660,7 +5660,7 @@
 
     move-result-object v9
 
-    sget-object v10, Lorg/telegram/messenger/SharedConfig;->selectedTemplatesMode:Lorg/fork/enums/TemplatesMode;
+    sget-object v10, Lorg/telegram/messenger/SharedConfig;->selectedTemplatesMode:Lcom/iMe/fork/enums/TemplatesMode;
 
     if-ne v10, v7, :cond_0
 
@@ -5740,7 +5740,7 @@
     invoke-virtual {v1, v2}, Landroid/widget/LinearLayout;->setOrientation(I)V
 
     .line 425
-    invoke-static {}, Lorg/fork/enums/VideoVoiceCamera;->values()[Lorg/fork/enums/VideoVoiceCamera;
+    invoke-static {}, Lcom/iMe/fork/enums/VideoVoiceCamera;->values()[Lcom/iMe/fork/enums/VideoVoiceCamera;
 
     move-result-object v3
 
@@ -5792,7 +5792,7 @@
     invoke-virtual {v8, v9, v10}, Lorg/telegram/ui/Cells/RadioColorCell;->setCheckColor(II)V
 
     .line 430
-    invoke-virtual {v7}, Lorg/fork/enums/VideoVoiceCamera;->getTextResId()I
+    invoke-virtual {v7}, Lcom/iMe/fork/enums/VideoVoiceCamera;->getTextResId()I
 
     move-result v9
 
@@ -5800,7 +5800,7 @@
 
     move-result-object v9
 
-    sget-object v10, Lorg/telegram/messenger/SharedConfig;->selectedVideoVoiceCamera:Lorg/fork/enums/VideoVoiceCamera;
+    sget-object v10, Lorg/telegram/messenger/SharedConfig;->selectedVideoVoiceCamera:Lcom/iMe/fork/enums/VideoVoiceCamera;
 
     if-ne v10, v7, :cond_0
 
@@ -6421,11 +6421,11 @@
     invoke-virtual {v4, v2, v2}, Lorg/telegram/ui/Cells/CheckBoxCell;->setChecked(ZZ)V
 
     .line 2222
-    invoke-virtual/range {p0 .. p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getToolsController()Lorg/fork/controller/ToolsController;
+    invoke-virtual/range {p0 .. p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getToolsController()Lcom/iMe/fork/controller/ToolsController;
 
     move-result-object v4
 
-    invoke-virtual {v4}, Lorg/fork/controller/ToolsController;->isRevokeByDefault()Z
+    invoke-virtual {v4}, Lcom/iMe/fork/controller/ToolsController;->isRevokeByDefault()Z
 
     move-result v4
 
@@ -6675,7 +6675,7 @@
     if-eqz v8, :cond_1
 
     .line 1832
-    invoke-static {v0}, Lorg/fork/controller/AlbumsController;->getInstance(I)Lorg/fork/controller/AlbumsController;
+    invoke-static {v0}, Lcom/iMe/fork/controller/AlbumsController;->getInstance(I)Lcom/iMe/fork/controller/AlbumsController;
 
     move-result-object v4
 
@@ -6683,7 +6683,7 @@
 
     neg-long v5, v5
 
-    invoke-virtual {v4, v5, v6}, Lorg/fork/controller/AlbumsController;->isDialogAlbum(J)Z
+    invoke-virtual {v4, v5, v6}, Lcom/iMe/fork/controller/AlbumsController;->isDialogAlbum(J)Z
 
     move-result v4
 
@@ -7506,11 +7506,11 @@
 
     .line 1949
     :goto_11
-    invoke-virtual/range {p0 .. p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getToolsController()Lorg/fork/controller/ToolsController;
+    invoke-virtual/range {p0 .. p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getToolsController()Lcom/iMe/fork/controller/ToolsController;
 
     move-result-object v2
 
-    invoke-virtual {v2}, Lorg/fork/controller/ToolsController;->isRevokeByDefault()Z
+    invoke-virtual {v2}, Lcom/iMe/fork/controller/ToolsController;->isRevokeByDefault()Z
 
     move-result v2
 
@@ -8476,17 +8476,17 @@
     if-nez v1, :cond_45
 
     .line 2124
-    new-instance v1, Lorg/fork/ui/dialog/ClearOrDeleteCloudConfirmBottomSheet;
+    new-instance v1, Lcom/iMe/fork/ui/dialog/ClearOrDeleteCloudConfirmBottomSheet;
 
-    new-instance v2, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda112;
+    new-instance v2, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda115;
 
     move-object/from16 v3, p0
 
-    invoke-direct {v2, v3, v0}, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda112;-><init>(Lorg/telegram/ui/ActionBar/BaseFragment;Lorg/telegram/ui/ActionBar/AlertDialog;)V
+    invoke-direct {v2, v3, v0}, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda115;-><init>(Lorg/telegram/ui/ActionBar/BaseFragment;Lorg/telegram/ui/ActionBar/AlertDialog;)V
 
     move/from16 v4, p1
 
-    invoke-direct {v1, v3, v4, v2}, Lorg/fork/ui/dialog/ClearOrDeleteCloudConfirmBottomSheet;-><init>(Lorg/telegram/ui/ActionBar/BaseFragment;ZLjava/lang/Runnable;)V
+    invoke-direct {v1, v3, v4, v2}, Lcom/iMe/fork/ui/dialog/ClearOrDeleteCloudConfirmBottomSheet;-><init>(Lorg/telegram/ui/ActionBar/BaseFragment;ZLjava/lang/Runnable;)V
 
     invoke-virtual {v3, v1}, Lorg/telegram/ui/ActionBar/BaseFragment;->showDialog(Landroid/app/Dialog;)Landroid/app/Dialog;
 
@@ -8964,9 +8964,9 @@
 
     move-result-object v0
 
-    new-instance v1, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda20;
+    new-instance v1, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda24;
 
-    invoke-direct {v1, v12, v11}, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda20;-><init>(Ljava/lang/String;Ljava/lang/Runnable;)V
+    invoke-direct {v1, v12, v11}, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda24;-><init>(Ljava/lang/String;Ljava/lang/Runnable;)V
 
     invoke-virtual {v13, v0, v1}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setNegativeButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
@@ -9047,9 +9047,9 @@
 
     move-result-object p1
 
-    new-instance p2, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda21;
+    new-instance p2, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda25;
 
-    invoke-direct {p2, p3, p0}, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda21;-><init>(Ljava/lang/String;Lorg/telegram/ui/ActionBar/BaseFragment;)V
+    invoke-direct {p2, p3, p0}, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda25;-><init>(Ljava/lang/String;Lorg/telegram/ui/ActionBar/BaseFragment;)V
 
     invoke-virtual {v0, p1, p2}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setPositiveButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
@@ -10850,7 +10850,7 @@
     move-result v0
 
     .line 5758
-    new-instance v1, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda116;
+    new-instance v1, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda119;
 
     move-object/from16 v13, p0
 
@@ -10858,7 +10858,7 @@
 
     move-object/from16 v2, v41
 
-    invoke-direct {v1, v2, v9, v0, v13}, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda116;-><init>([Lorg/telegram/ui/ActionBar/AlertDialog;IILorg/telegram/ui/ActionBar/BaseFragment;)V
+    invoke-direct {v1, v2, v9, v0, v13}, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda119;-><init>([Lorg/telegram/ui/ActionBar/AlertDialog;IILorg/telegram/ui/ActionBar/BaseFragment;)V
 
     const-wide/16 v2, 0x3e8
 
@@ -11663,11 +11663,11 @@
 
     .line 5870
     :goto_2a
-    invoke-virtual/range {p0 .. p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getToolsController()Lorg/fork/controller/ToolsController;
+    invoke-virtual/range {p0 .. p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getToolsController()Lcom/iMe/fork/controller/ToolsController;
 
     move-result-object v7
 
-    invoke-virtual {v7}, Lorg/fork/controller/ToolsController;->isRevokeByDefault()Z
+    invoke-virtual {v7}, Lcom/iMe/fork/controller/ToolsController;->isRevokeByDefault()Z
 
     move-result v7
 
@@ -12539,16 +12539,16 @@
     .end array-data
 .end method
 
-.method public static createDrawerAccountDataSelectDialog(Landroid/content/Context;ZLcom/smedialink/ui/drawer/DrawerAccountData;Lorg/fork/utils/Callbacks$Callback1;)Lorg/telegram/ui/ActionBar/AlertDialog;
+.method public static createDrawerAccountDataSelectDialog(Landroid/content/Context;ZLcom/iMe/ui/drawer/DrawerAccountData;Lcom/iMe/fork/utils/Callbacks$Callback1;)Lorg/telegram/ui/ActionBar/AlertDialog;
     .locals 10
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Landroid/content/Context;",
             "Z",
-            "Lcom/smedialink/ui/drawer/DrawerAccountData;",
-            "Lorg/fork/utils/Callbacks$Callback1<",
-            "Lcom/smedialink/ui/drawer/DrawerAccountData;",
+            "Lcom/iMe/ui/drawer/DrawerAccountData;",
+            "Lcom/iMe/fork/utils/Callbacks$Callback1<",
+            "Lcom/iMe/ui/drawer/DrawerAccountData;",
             ">;)",
             "Lorg/telegram/ui/ActionBar/AlertDialog;"
         }
@@ -12598,7 +12598,7 @@
     invoke-virtual {p1, v1}, Landroid/widget/LinearLayout;->setOrientation(I)V
 
     .line 318
-    invoke-static {}, Lcom/smedialink/ui/drawer/DrawerAccountData;->values()[Lcom/smedialink/ui/drawer/DrawerAccountData;
+    invoke-static {}, Lcom/iMe/ui/drawer/DrawerAccountData;->values()[Lcom/iMe/ui/drawer/DrawerAccountData;
 
     move-result-object v2
 
@@ -12650,7 +12650,7 @@
     invoke-virtual {v7, v8, v9}, Lorg/telegram/ui/Cells/RadioColorCell;->setCheckColor(II)V
 
     .line 323
-    invoke-virtual {v6}, Lcom/smedialink/ui/drawer/DrawerAccountData;->getTitle()Ljava/lang/String;
+    invoke-virtual {v6}, Lcom/iMe/ui/drawer/DrawerAccountData;->getTitle()Ljava/lang/String;
 
     move-result-object v8
 
@@ -12667,9 +12667,9 @@
     invoke-virtual {v7, v8, v6}, Lorg/telegram/ui/Cells/RadioColorCell;->setTextAndValue(Ljava/lang/CharSequence;Z)V
 
     .line 324
-    new-instance v6, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda66;
+    new-instance v6, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda65;
 
-    invoke-direct {v6, p3, v0}, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda66;-><init>(Lorg/fork/utils/Callbacks$Callback1;Lorg/telegram/ui/ActionBar/AlertDialog$Builder;)V
+    invoke-direct {v6, p3, v0}, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda65;-><init>(Lcom/iMe/fork/utils/Callbacks$Callback1;Lorg/telegram/ui/ActionBar/AlertDialog$Builder;)V
 
     invoke-virtual {v7, v6}, Landroid/widget/FrameLayout;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
@@ -13379,11 +13379,11 @@
 
     move-result-object v1
 
-    new-instance v2, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda15;
+    new-instance v2, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda19;
 
     move-object/from16 v3, p5
 
-    invoke-direct {v2, v3}, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda15;-><init>(Ljava/lang/Runnable;)V
+    invoke-direct {v2, v3}, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda19;-><init>(Ljava/lang/Runnable;)V
 
     invoke-virtual {v5, v1, v2}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setPositiveButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
@@ -13411,15 +13411,15 @@
     return-void
 .end method
 
-.method public static createInputTemplateNameDialog(Lorg/telegram/ui/ChatActivity;Lcom/smedialink/storage/domain/model/templates/TemplateModel;Ljava/lang/Runnable;Lorg/fork/utils/Callbacks$Callback1;)Landroid/app/Dialog;
+.method public static createInputTemplateNameDialog(Lorg/telegram/ui/ChatActivity;Lcom/iMe/storage/domain/model/templates/TemplateModel;Ljava/lang/Runnable;Lcom/iMe/fork/utils/Callbacks$Callback1;)Landroid/app/Dialog;
     .locals 8
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Lorg/telegram/ui/ChatActivity;",
-            "Lcom/smedialink/storage/domain/model/templates/TemplateModel;",
+            "Lcom/iMe/storage/domain/model/templates/TemplateModel;",
             "Ljava/lang/Runnable;",
-            "Lorg/fork/utils/Callbacks$Callback1<",
+            "Lcom/iMe/fork/utils/Callbacks$Callback1<",
             "Ljava/lang/String;",
             ">;)",
             "Landroid/app/Dialog;"
@@ -13435,7 +13435,7 @@
 
     if-eqz p1, :cond_0
 
-    invoke-virtual {p1}, Lcom/smedialink/storage/domain/model/templates/TemplateModel;->getName()Ljava/lang/String;
+    invoke-virtual {p1}, Lcom/iMe/storage/domain/model/templates/TemplateModel;->getName()Ljava/lang/String;
 
     move-result-object p1
 
@@ -13457,7 +13457,7 @@
 
     move-object v6, p0
 
-    invoke-direct/range {v0 .. v6}, Lorg/telegram/ui/Components/AlertsCreator$1;-><init>(Landroid/content/Context;IZLjava/lang/String;Lorg/fork/utils/Callbacks$Callback1;Lorg/telegram/ui/ChatActivity;)V
+    invoke-direct/range {v0 .. v6}, Lorg/telegram/ui/Components/AlertsCreator$1;-><init>(Landroid/content/Context;IZLjava/lang/String;Lcom/iMe/fork/utils/Callbacks$Callback1;Lorg/telegram/ui/ChatActivity;)V
 
     .line 521
     new-instance p1, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda61;
@@ -13469,9 +13469,9 @@
     if-eqz p2, :cond_1
 
     .line 523
-    new-instance p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda1;
+    new-instance p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda2;
 
-    invoke-direct {p0, p2}, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda1;-><init>(Ljava/lang/Runnable;)V
+    invoke-direct {p0, p2}, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda2;-><init>(Ljava/lang/Runnable;)V
 
     invoke-virtual {v7, p0}, Landroid/app/Dialog;->setOnCancelListener(Landroid/content/DialogInterface$OnCancelListener;)V
 
@@ -14654,9 +14654,9 @@
     aput-object v3, v1, v2
 
     .line 4411
-    new-instance v2, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda22;
+    new-instance v2, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda26;
 
-    invoke-direct {v2, p1, p2, p0, p3}, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda22;-><init>(Ljava/util/ArrayList;ILorg/telegram/ui/ActionBar/BaseFragment;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
+    invoke-direct {v2, p1, p2, p0, p3}, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda26;-><init>(Ljava/util/ArrayList;ILorg/telegram/ui/ActionBar/BaseFragment;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
     invoke-virtual {v0, v1, v2}, Lorg/telegram/ui/ActionBar/BottomSheet$Builder;->setItems([Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Lorg/telegram/ui/ActionBar/BottomSheet$Builder;
 
@@ -15880,9 +15880,9 @@
 
     aput-object v1, p0, v2
 
-    new-instance v1, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda19;
+    new-instance v1, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda23;
 
-    invoke-direct {v1, p1}, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda19;-><init>(Ljava/lang/String;)V
+    invoke-direct {v1, p1}, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda23;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {v0, p0, v1}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setItems([Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
@@ -16332,7 +16332,7 @@
     invoke-virtual {v9, v12}, Lorg/telegram/ui/ActionBar/BottomSheet$Builder;->setCustomView(Landroid/view/View;)Lorg/telegram/ui/ActionBar/BottomSheet$Builder;
 
     .line 341
-    invoke-static {}, Lorg/fork/enums/BackupComponent;->values()[Lorg/fork/enums/BackupComponent;
+    invoke-static {}, Lcom/iMe/fork/enums/BackupComponent;->values()[Lcom/iMe/fork/enums/BackupComponent;
 
     move-result-object v13
 
@@ -16529,7 +16529,7 @@
 
     move-object/from16 v6, p1
 
-    invoke-direct/range {v0 .. v6}, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda88;-><init>([Lorg/telegram/ui/Cells/TextCheckBoxCell;[Lorg/fork/enums/BackupComponent;Lorg/telegram/ui/ActionBar/BottomSheet$Builder;Landroid/content/Context;Lorg/telegram/ui/ActionBar/BaseFragment;Lorg/telegram/messenger/MessageObject;)V
+    invoke-direct/range {v0 .. v6}, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda88;-><init>([Lorg/telegram/ui/Cells/TextCheckBoxCell;[Lcom/iMe/fork/enums/BackupComponent;Lorg/telegram/ui/ActionBar/BottomSheet$Builder;Landroid/content/Context;Lorg/telegram/ui/ActionBar/BaseFragment;Lorg/telegram/messenger/MessageObject;)V
 
     invoke-virtual {v10, v11}, Landroid/widget/TextView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
@@ -16573,7 +16573,7 @@
     aput-object v6, v14, v3
 
     .line 390
-    invoke-virtual {v4}, Lorg/fork/enums/BackupComponent;->getTitleResId()I
+    invoke-virtual {v4}, Lcom/iMe/fork/enums/BackupComponent;->getTitleResId()I
 
     move-result v4
 
@@ -16810,11 +16810,11 @@
     if-eqz v2, :cond_1
 
     .line 3068
-    new-instance v2, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda119;
+    new-instance v2, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda109;
 
-    invoke-direct {v2, v10}, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda119;-><init>(Lorg/telegram/ui/Components/AlertsCreator$ScheduleDatePickerDelegate;)V
+    invoke-direct {v2, v10}, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda109;-><init>(Lorg/telegram/ui/Components/AlertsCreator$ScheduleDatePickerDelegate;)V
 
-    invoke-static {v0, v1, v12, v2}, Lorg/telegram/ui/Components/AlertsCreator;->createInputTemplateNameDialog(Lorg/telegram/ui/ChatActivity;Lcom/smedialink/storage/domain/model/templates/TemplateModel;Ljava/lang/Runnable;Lorg/fork/utils/Callbacks$Callback1;)Landroid/app/Dialog;
+    invoke-static {v0, v1, v12, v2}, Lorg/telegram/ui/Components/AlertsCreator;->createInputTemplateNameDialog(Lorg/telegram/ui/ChatActivity;Lcom/iMe/storage/domain/model/templates/TemplateModel;Ljava/lang/Runnable;Lcom/iMe/fork/utils/Callbacks$Callback1;)Landroid/app/Dialog;
 
     move-result-object v0
 
@@ -18040,9 +18040,9 @@
     invoke-virtual {v0, p0, p5}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setNegativeButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
     .line 1144
-    new-instance p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda16;
+    new-instance p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda20;
 
-    invoke-direct {p0, p4}, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda16;-><init>(Ljava/lang/Runnable;)V
+    invoke-direct {p0, p4}, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda20;-><init>(Ljava/lang/Runnable;)V
 
     invoke-virtual {v0, p3, p0}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setPositiveButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
@@ -20061,7 +20061,7 @@
     return-void
 .end method
 
-.method public static createTopAnimationDialog(Landroid/content/Context;IILjava/lang/CharSequence;Ljava/lang/String;Lorg/fork/utils/Callbacks$Callback1;)Landroid/app/Dialog;
+.method public static createTopAnimationDialog(Landroid/content/Context;IILjava/lang/CharSequence;Ljava/lang/String;Lcom/iMe/fork/utils/Callbacks$Callback1;)Landroid/app/Dialog;
     .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -20070,7 +20070,7 @@
             "II",
             "Ljava/lang/CharSequence;",
             "Ljava/lang/String;",
-            "Lorg/fork/utils/Callbacks$Callback1<",
+            "Lcom/iMe/fork/utils/Callbacks$Callback1<",
             "Ljava/lang/Boolean;",
             ">;)",
             "Landroid/app/Dialog;"
@@ -20097,9 +20097,9 @@
     invoke-virtual {v0, p3}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setMessage(Ljava/lang/CharSequence;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
     .line 532
-    new-instance p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda25;
+    new-instance p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda17;
 
-    invoke-direct {p0, p5}, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda25;-><init>(Lorg/fork/utils/Callbacks$Callback1;)V
+    invoke-direct {p0, p5}, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda17;-><init>(Lcom/iMe/fork/utils/Callbacks$Callback1;)V
 
     invoke-virtual {v0, p4, p0}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setPositiveButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
@@ -20112,9 +20112,9 @@
 
     move-result-object p0
 
-    new-instance p1, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda27;
+    new-instance p1, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda15;
 
-    invoke-direct {p1, p5}, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda27;-><init>(Lorg/fork/utils/Callbacks$Callback1;)V
+    invoke-direct {p1, p5}, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda15;-><init>(Lcom/iMe/fork/utils/Callbacks$Callback1;)V
 
     invoke-virtual {v0, p0, p1}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setNegativeButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
@@ -20714,9 +20714,9 @@
 
     move-result-object p1
 
-    new-instance p2, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda23;
+    new-instance p2, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda27;
 
-    invoke-direct {p2, v1, p6}, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda23;-><init>(Ljava/util/concurrent/atomic/AtomicBoolean;Landroidx/core/util/Consumer;)V
+    invoke-direct {p2, v1, p6}, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda27;-><init>(Ljava/util/concurrent/atomic/AtomicBoolean;Landroidx/core/util/Consumer;)V
 
     invoke-virtual {p0, p1, p2}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setNegativeButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
@@ -24052,10 +24052,10 @@
 
     move-result-object p2
 
-    check-cast p2, Lorg/fork/enums/TemplatesMode;
+    check-cast p2, Lcom/iMe/fork/enums/TemplatesMode;
 
     .line 494
-    sget-object v0, Lorg/telegram/messenger/SharedConfig;->selectedTemplatesMode:Lorg/fork/enums/TemplatesMode;
+    sget-object v0, Lorg/telegram/messenger/SharedConfig;->selectedTemplatesMode:Lcom/iMe/fork/enums/TemplatesMode;
 
     if-ne p2, v0, :cond_0
 
@@ -24065,7 +24065,7 @@
     if-nez p0, :cond_1
 
     .line 497
-    invoke-static {}, Lcom/smedialink/common/TelegramPreferenceKeys$Global;->selectedTemplatesMode()Ljava/lang/String;
+    invoke-static {}, Lcom/iMe/common/TelegramPreferenceKeys$Global;->selectedTemplatesMode()Ljava/lang/String;
 
     move-result-object p0
 
@@ -24082,11 +24082,11 @@
 
     move-result-object p0
 
-    invoke-static {p0}, Lcom/smedialink/utils/extentions/common/ContextExtKt;->longToast(Ljava/lang/CharSequence;)V
+    invoke-static {p0}, Lcom/iMe/utils/extentions/common/ContextExtKt;->longToast(Ljava/lang/CharSequence;)V
 
     .line 500
     :cond_1
-    invoke-static {p2}, Lorg/telegram/messenger/SharedConfig;->setSelectedTemplatesMode(Lorg/fork/enums/TemplatesMode;)V
+    invoke-static {p2}, Lorg/telegram/messenger/SharedConfig;->setSelectedTemplatesMode(Lcom/iMe/fork/enums/TemplatesMode;)V
 
     .line 501
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->getDismissRunnable()Ljava/lang/Runnable;
@@ -24106,9 +24106,9 @@
 
     move-result-object p1
 
-    check-cast p1, Lorg/fork/enums/VideoVoiceCamera;
+    check-cast p1, Lcom/iMe/fork/enums/VideoVoiceCamera;
 
-    invoke-static {p1}, Lorg/telegram/messenger/SharedConfig;->setSelectedVideoVoiceCamera(Lorg/fork/enums/VideoVoiceCamera;)V
+    invoke-static {p1}, Lorg/telegram/messenger/SharedConfig;->setSelectedVideoVoiceCamera(Lcom/iMe/fork/enums/VideoVoiceCamera;)V
 
     .line 433
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->getDismissRunnable()Ljava/lang/Runnable;
@@ -25258,11 +25258,11 @@
     move-object/from16 v3, p16
 
     .line 5740
-    new-instance v18, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda117;
+    new-instance v18, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda120;
 
     move-object/from16 v0, v18
 
-    invoke-direct/range {v0 .. v17}, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda117;-><init>([Lorg/telegram/ui/ActionBar/AlertDialog;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;Lorg/telegram/ui/ActionBar/BaseFragment;Lorg/telegram/tgnet/TLRPC$User;Lorg/telegram/tgnet/TLRPC$Chat;Lorg/telegram/tgnet/TLRPC$EncryptedChat;Lorg/telegram/tgnet/TLRPC$ChatFull;JLorg/telegram/messenger/MessageObject;[Landroid/util/SparseArray;Lorg/telegram/messenger/MessageObject$GroupedMessages;ZLjava/lang/Runnable;Ljava/lang/Runnable;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
+    invoke-direct/range {v0 .. v17}, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda120;-><init>([Lorg/telegram/ui/ActionBar/AlertDialog;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;Lorg/telegram/ui/ActionBar/BaseFragment;Lorg/telegram/tgnet/TLRPC$User;Lorg/telegram/tgnet/TLRPC$Chat;Lorg/telegram/tgnet/TLRPC$EncryptedChat;Lorg/telegram/tgnet/TLRPC$ChatFull;JLorg/telegram/messenger/MessageObject;[Landroid/util/SparseArray;Lorg/telegram/messenger/MessageObject$GroupedMessages;ZLjava/lang/Runnable;Ljava/lang/Runnable;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
     invoke-static/range {v18 .. v18}, Lorg/telegram/messenger/AndroidUtilities;->runOnUIThread(Ljava/lang/Runnable;)V
 
@@ -26035,7 +26035,7 @@
     return-void
 .end method
 
-.method private static synthetic lambda$createDrawerAccountDataSelectDialog$10(Lorg/fork/utils/Callbacks$Callback1;Lorg/telegram/ui/ActionBar/AlertDialog$Builder;Landroid/view/View;)V
+.method private static synthetic lambda$createDrawerAccountDataSelectDialog$10(Lcom/iMe/fork/utils/Callbacks$Callback1;Lorg/telegram/ui/ActionBar/AlertDialog$Builder;Landroid/view/View;)V
     .locals 0
 
     .line 325
@@ -26043,9 +26043,9 @@
 
     move-result-object p2
 
-    check-cast p2, Lcom/smedialink/ui/drawer/DrawerAccountData;
+    check-cast p2, Lcom/iMe/ui/drawer/DrawerAccountData;
 
-    invoke-interface {p0, p2}, Lorg/fork/utils/Callbacks$Callback1;->invoke(Ljava/lang/Object;)V
+    invoke-interface {p0, p2}, Lcom/iMe/fork/utils/Callbacks$Callback1;->invoke(Ljava/lang/Object;)V
 
     .line 326
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->getDismissRunnable()Ljava/lang/Runnable;
@@ -27553,7 +27553,7 @@
     return-void
 .end method
 
-.method private static synthetic lambda$createRestoreBackupBottomSheetDialog$13([Lorg/telegram/ui/Cells/TextCheckBoxCell;[Lorg/fork/enums/BackupComponent;Lorg/telegram/ui/ActionBar/BottomSheet$Builder;Landroid/content/Context;Lorg/telegram/ui/ActionBar/BaseFragment;Lorg/telegram/messenger/MessageObject;Landroid/view/View;)V
+.method private static synthetic lambda$createRestoreBackupBottomSheetDialog$13([Lorg/telegram/ui/Cells/TextCheckBoxCell;[Lcom/iMe/fork/enums/BackupComponent;Lorg/telegram/ui/ActionBar/BottomSheet$Builder;Landroid/content/Context;Lorg/telegram/ui/ActionBar/BaseFragment;Lorg/telegram/messenger/MessageObject;Landroid/view/View;)V
     .locals 3
 
     .line 366
@@ -27612,15 +27612,15 @@
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/AlertDialog;->show()V
 
     .line 376
-    invoke-virtual {p4}, Lorg/telegram/ui/ActionBar/BaseFragment;->getBackupController()Lorg/fork/controller/BackupController;
+    invoke-virtual {p4}, Lorg/telegram/ui/ActionBar/BaseFragment;->getBackupController()Lcom/iMe/fork/controller/BackupController;
 
     move-result-object p1
 
-    new-instance p2, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda118;
+    new-instance p2, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda108;
 
-    invoke-direct {p2, p0, p4}, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda118;-><init>(Lorg/telegram/ui/ActionBar/AlertDialog;Lorg/telegram/ui/ActionBar/BaseFragment;)V
+    invoke-direct {p2, p0, p4}, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda108;-><init>(Lorg/telegram/ui/ActionBar/AlertDialog;Lorg/telegram/ui/ActionBar/BaseFragment;)V
 
-    invoke-virtual {p1, p5, p6, p4, p2}, Lorg/fork/controller/BackupController;->restore(Lorg/telegram/messenger/MessageObject;Ljava/util/List;Lorg/telegram/ui/ActionBar/BaseFragment;Lorg/fork/utils/Callbacks$Callback1;)V
+    invoke-virtual {p1, p5, p6, p4, p2}, Lcom/iMe/fork/controller/BackupController;->restore(Lorg/telegram/messenger/MessageObject;Ljava/util/List;Lorg/telegram/ui/ActionBar/BaseFragment;Lcom/iMe/fork/utils/Callbacks$Callback1;)V
 
     return-void
 .end method
@@ -28772,9 +28772,9 @@
     .locals 0
 
     .line 6065
-    new-instance p1, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda113;
+    new-instance p1, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda116;
 
-    invoke-direct {p1, p0}, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda113;-><init>(Lorg/telegram/ui/Components/EditTextBoldCursor;)V
+    invoke-direct {p1, p0}, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda116;-><init>(Lorg/telegram/ui/Components/EditTextBoldCursor;)V
 
     invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->runOnUIThread(Ljava/lang/Runnable;)V
 
@@ -28794,9 +28794,9 @@
     .locals 1
 
     .line 6090
-    new-instance v0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda115;
+    new-instance v0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda118;
 
-    invoke-direct {v0, p0, p1, p2}, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda115;-><init>(Lorg/telegram/ui/Components/EditTextBoldCursor;Lorg/telegram/ui/ActionBar/AlertDialog;Lorg/telegram/ui/ActionBar/BaseFragment;)V
+    invoke-direct {v0, p0, p1, p2}, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda118;-><init>(Lorg/telegram/ui/Components/EditTextBoldCursor;Lorg/telegram/ui/ActionBar/AlertDialog;Lorg/telegram/ui/ActionBar/BaseFragment;)V
 
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->runOnUIThread(Ljava/lang/Runnable;)V
 
@@ -28873,9 +28873,9 @@
     .line 6090
     sget-object p2, Lorg/telegram/messenger/Utilities;->searchQueue:Lorg/telegram/messenger/DispatchQueue;
 
-    new-instance p3, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda114;
+    new-instance p3, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda117;
 
-    invoke-direct {p3, p1, p4, p0}, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda114;-><init>(Lorg/telegram/ui/Components/EditTextBoldCursor;Lorg/telegram/ui/ActionBar/AlertDialog;Lorg/telegram/ui/ActionBar/BaseFragment;)V
+    invoke-direct {p3, p1, p4, p0}, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda117;-><init>(Lorg/telegram/ui/Components/EditTextBoldCursor;Lorg/telegram/ui/ActionBar/AlertDialog;Lorg/telegram/ui/ActionBar/BaseFragment;)V
 
     invoke-virtual {p2, p3}, Lorg/telegram/messenger/DispatchQueue;->postRunnable(Ljava/lang/Runnable;)Z
 
@@ -28888,24 +28888,24 @@
     return-void
 .end method
 
-.method private static synthetic lambda$createTopAnimationDialog$22(Lorg/fork/utils/Callbacks$Callback1;Landroid/content/DialogInterface;I)V
+.method private static synthetic lambda$createTopAnimationDialog$22(Lcom/iMe/fork/utils/Callbacks$Callback1;Landroid/content/DialogInterface;I)V
     .locals 0
 
     .line 532
     sget-object p1, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;
 
-    invoke-interface {p0, p1}, Lorg/fork/utils/Callbacks$Callback1;->invoke(Ljava/lang/Object;)V
+    invoke-interface {p0, p1}, Lcom/iMe/fork/utils/Callbacks$Callback1;->invoke(Ljava/lang/Object;)V
 
     return-void
 .end method
 
-.method private static synthetic lambda$createTopAnimationDialog$23(Lorg/fork/utils/Callbacks$Callback1;Landroid/content/DialogInterface;I)V
+.method private static synthetic lambda$createTopAnimationDialog$23(Lcom/iMe/fork/utils/Callbacks$Callback1;Landroid/content/DialogInterface;I)V
     .locals 0
 
     .line 533
     sget-object p1, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
 
-    invoke-interface {p0, p1}, Lorg/fork/utils/Callbacks$Callback1;->invoke(Ljava/lang/Object;)V
+    invoke-interface {p0, p1}, Lcom/iMe/fork/utils/Callbacks$Callback1;->invoke(Ljava/lang/Object;)V
 
     return-void
 .end method
@@ -29388,7 +29388,7 @@
     check-cast v2, Lorg/telegram/tgnet/TLRPC$TL_help_support;
 
     .line 1682
-    new-instance p4, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda109;
+    new-instance p4, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda112;
 
     move-object v0, p4
 
@@ -29400,7 +29400,7 @@
 
     move-object v5, p3
 
-    invoke-direct/range {v0 .. v5}, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda109;-><init>(Landroid/content/SharedPreferences;Lorg/telegram/tgnet/TLRPC$TL_help_support;Lorg/telegram/ui/ActionBar/AlertDialog;ILorg/telegram/ui/ActionBar/BaseFragment;)V
+    invoke-direct/range {v0 .. v5}, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda112;-><init>(Landroid/content/SharedPreferences;Lorg/telegram/tgnet/TLRPC$TL_help_support;Lorg/telegram/ui/ActionBar/AlertDialog;ILorg/telegram/ui/ActionBar/BaseFragment;)V
 
     invoke-static {p4}, Lorg/telegram/messenger/AndroidUtilities;->runOnUIThread(Ljava/lang/Runnable;)V
 
@@ -29408,9 +29408,9 @@
 
     .line 1704
     :cond_0
-    new-instance p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda110;
+    new-instance p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda113;
 
-    invoke-direct {p0, p1}, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda110;-><init>(Lorg/telegram/ui/ActionBar/AlertDialog;)V
+    invoke-direct {p0, p1}, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda113;-><init>(Lorg/telegram/ui/ActionBar/AlertDialog;)V
 
     invoke-static {p0}, Lorg/telegram/messenger/AndroidUtilities;->runOnUIThread(Ljava/lang/Runnable;)V
 
@@ -29873,24 +29873,24 @@
     return-void
 .end method
 
-.method private static synthetic lambda$showConfirmationDialog$8(Lorg/fork/utils/Callbacks$Callback1;Landroid/content/DialogInterface;I)V
+.method private static synthetic lambda$showConfirmationDialog$8(Lcom/iMe/fork/utils/Callbacks$Callback1;Landroid/content/DialogInterface;I)V
     .locals 0
 
     .line 294
     sget-object p1, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;
 
-    invoke-interface {p0, p1}, Lorg/fork/utils/Callbacks$Callback1;->invoke(Ljava/lang/Object;)V
+    invoke-interface {p0, p1}, Lcom/iMe/fork/utils/Callbacks$Callback1;->invoke(Ljava/lang/Object;)V
 
     return-void
 .end method
 
-.method private static synthetic lambda$showConfirmationDialog$9(Lorg/fork/utils/Callbacks$Callback1;Landroid/content/DialogInterface;I)V
+.method private static synthetic lambda$showConfirmationDialog$9(Lcom/iMe/fork/utils/Callbacks$Callback1;Landroid/content/DialogInterface;I)V
     .locals 0
 
     .line 295
     sget-object p1, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
 
-    invoke-interface {p0, p1}, Lorg/fork/utils/Callbacks$Callback1;->invoke(Ljava/lang/Object;)V
+    invoke-interface {p0, p1}, Lcom/iMe/fork/utils/Callbacks$Callback1;->invoke(Ljava/lang/Object;)V
 
     return-void
 .end method
@@ -30255,9 +30255,9 @@
     .locals 0
 
     .line 192
-    new-instance p1, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda111;
+    new-instance p1, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda114;
 
-    invoke-direct {p1, p0}, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda111;-><init>(Lorg/telegram/ui/ActionBar/BaseFragment;)V
+    invoke-direct {p1, p0}, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda114;-><init>(Lorg/telegram/ui/ActionBar/BaseFragment;)V
 
     invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->runOnUIThread(Ljava/lang/Runnable;)V
 
@@ -30411,7 +30411,7 @@
 
     move-result-object p1
 
-    invoke-static {p0, p1}, Lcom/smedialink/utils/extentions/common/ContextExtKt;->copyToClipboard(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {p0, p1}, Lcom/iMe/utils/extentions/common/ContextExtKt;->copyToClipboard(Ljava/lang/String;Ljava/lang/String;)V
 
     return-void
 .end method
@@ -30530,13 +30530,13 @@
     return-void
 .end method
 
-.method private static synthetic lambda$showRestartDialog$18(Lorg/fork/utils/Callbacks$Callback;Landroid/content/DialogInterface;)V
+.method private static synthetic lambda$showRestartDialog$18(Lcom/iMe/fork/utils/Callbacks$Callback;Landroid/content/DialogInterface;)V
     .locals 0
 
     if-eqz p0, :cond_0
 
     .line 473
-    invoke-interface {p0}, Lorg/fork/utils/Callbacks$Callback;->invoke()V
+    invoke-interface {p0}, Lcom/iMe/fork/utils/Callbacks$Callback;->invoke()V
 
     :cond_0
     return-void
@@ -34689,11 +34689,11 @@
     .locals 6
 
     .line 441
-    invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getFiltersController()Lorg/fork/controller/FiltersController;
+    invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getFiltersController()Lcom/iMe/fork/controller/FiltersController;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lorg/fork/controller/FiltersController;->isAllChatsTabEnabled()Z
+    invoke-virtual {v0}, Lcom/iMe/fork/controller/FiltersController;->isAllChatsTabEnabled()Z
 
     move-result v0
 
@@ -34711,7 +34711,7 @@
 
     move-result-object v0
 
-    new-instance v1, Lcom/smedialink/model/dialog/DialogModel;
+    new-instance v1, Lcom/iMe/model/dialog/DialogModel;
 
     sget v2, Lorg/telegram/messenger/R$string;->dialog_title_enable_archive_in_drawer:I
 
@@ -34741,16 +34741,16 @@
 
     move-result-object v5
 
-    invoke-direct {v1, v2, v3, v4, v5}, Lcom/smedialink/model/dialog/DialogModel;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+    invoke-direct {v1, v2, v3, v4, v5}, Lcom/iMe/model/dialog/DialogModel;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
-    new-instance v2, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda120;
+    new-instance v2, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda110;
 
-    invoke-direct {v2, p0}, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda120;-><init>(Lorg/telegram/ui/ActionBar/BaseFragment;)V
+    invoke-direct {v2, p0}, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda110;-><init>(Lorg/telegram/ui/ActionBar/BaseFragment;)V
 
     const/4 v3, 0x0
 
     .line 444
-    invoke-static {v0, v1, v2, v3}, Lcom/smedialink/utils/dialogs/DialogUtils;->createDialog(Landroid/content/Context;Lcom/smedialink/model/dialog/DialogModel;Lorg/fork/utils/Callbacks$Callback;Lorg/fork/utils/Callbacks$Callback;)Lorg/telegram/ui/ActionBar/AlertDialog;
+    invoke-static {v0, v1, v2, v3}, Lcom/iMe/utils/dialogs/DialogUtils;->createDialog(Landroid/content/Context;Lcom/iMe/model/dialog/DialogModel;Lcom/iMe/fork/utils/Callbacks$Callback;Lcom/iMe/fork/utils/Callbacks$Callback;)Lorg/telegram/ui/ActionBar/AlertDialog;
 
     move-result-object v0
 
@@ -36024,7 +36024,7 @@
     return-void
 .end method
 
-.method public static showConfirmationDialog(Lorg/telegram/ui/ActionBar/BaseFragment;Landroid/content/Context;Ljava/lang/String;Ljava/lang/CharSequence;Ljava/lang/String;ZLorg/telegram/ui/ActionBar/Theme$ResourcesProvider;Lorg/fork/utils/Callbacks$Callback1;)Lorg/telegram/ui/ActionBar/AlertDialog;
+.method public static showConfirmationDialog(Lorg/telegram/ui/ActionBar/BaseFragment;Landroid/content/Context;Ljava/lang/String;Ljava/lang/CharSequence;Ljava/lang/String;ZLorg/telegram/ui/ActionBar/Theme$ResourcesProvider;Lcom/iMe/fork/utils/Callbacks$Callback1;)Lorg/telegram/ui/ActionBar/AlertDialog;
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -36036,7 +36036,7 @@
             "Ljava/lang/String;",
             "Z",
             "Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;",
-            "Lorg/fork/utils/Callbacks$Callback1<",
+            "Lcom/iMe/fork/utils/Callbacks$Callback1<",
             "Ljava/lang/Boolean;",
             ">;)",
             "Lorg/telegram/ui/ActionBar/AlertDialog;"
@@ -36058,9 +36058,9 @@
     invoke-virtual {v0, p3}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setMessage(Ljava/lang/CharSequence;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
     .line 294
-    new-instance p1, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda26;
+    new-instance p1, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda16;
 
-    invoke-direct {p1, p7}, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda26;-><init>(Lorg/fork/utils/Callbacks$Callback1;)V
+    invoke-direct {p1, p7}, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda16;-><init>(Lcom/iMe/fork/utils/Callbacks$Callback1;)V
 
     invoke-virtual {v0, p4, p1}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setPositiveButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
@@ -36073,9 +36073,9 @@
 
     move-result-object p1
 
-    new-instance p2, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda24;
+    new-instance p2, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda18;
 
-    invoke-direct {p2, p7}, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda24;-><init>(Lorg/fork/utils/Callbacks$Callback1;)V
+    invoke-direct {p2, p7}, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda18;-><init>(Lcom/iMe/fork/utils/Callbacks$Callback1;)V
 
     invoke-virtual {v0, p1, p2}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setNegativeButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
@@ -37560,9 +37560,9 @@
 
     move-result-object v0
 
-    new-instance v1, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda18;
+    new-instance v1, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda22;
 
-    invoke-direct {v1, v9}, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda18;-><init>(Ljava/lang/String;)V
+    invoke-direct {v1, v9}, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda22;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {v13, v0, v1}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setNeutralButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
@@ -37694,7 +37694,7 @@
     return-object v1
 .end method
 
-.method public static showRestartDialog(Lorg/telegram/ui/ActionBar/BaseFragment;Lorg/fork/utils/Callbacks$Callback;)V
+.method public static showRestartDialog(Lorg/telegram/ui/ActionBar/BaseFragment;Lcom/iMe/fork/utils/Callbacks$Callback;)V
     .locals 4
 
     .line 460
@@ -37760,9 +37760,9 @@
     invoke-virtual {v1, v0, v2}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setNegativeButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
     .line 471
-    new-instance v0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda2;
+    new-instance v0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda1;
 
-    invoke-direct {v0, p1}, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda2;-><init>(Lorg/fork/utils/Callbacks$Callback;)V
+    invoke-direct {v0, p1}, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda1;-><init>(Lcom/iMe/fork/utils/Callbacks$Callback;)V
 
     invoke-virtual {v1, v0}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setOnCancelListener(Landroid/content/DialogInterface$OnCancelListener;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
@@ -38020,11 +38020,11 @@
     invoke-virtual {v9, v11}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
 
     .line 1518
-    new-instance v12, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda65;
+    new-instance v12, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda66;
 
     move-object/from16 v13, p2
 
-    invoke-direct {v12, v3, v13, v8}, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda65;-><init>(Ljava/util/ArrayList;Ljava/lang/Runnable;Lorg/telegram/ui/ActionBar/AlertDialog$Builder;)V
+    invoke-direct {v12, v3, v13, v8}, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda66;-><init>(Ljava/util/ArrayList;Ljava/lang/Runnable;Lorg/telegram/ui/ActionBar/AlertDialog$Builder;)V
 
     invoke-virtual {v11, v12}, Landroid/widget/FrameLayout;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 

@@ -14,6 +14,6 @@ public final /* synthetic */ class ProfileActivity$33$$ExternalSyntheticLambda0 
 
     @Override // org.telegram.tgnet.RequestDelegate
     public final void run(TLObject tLObject, TLRPC$TL_error tLRPC$TL_error) {
-        ProfileActivity.C632033.lambda$onEmojiSelected$0(tLObject, tLRPC$TL_error);
+        ProfileActivity.C634333.lambda$onEmojiSelected$0(tLObject, tLRPC$TL_error);
     }
 }

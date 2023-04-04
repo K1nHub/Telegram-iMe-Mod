@@ -24,7 +24,7 @@
 .method static constructor <clinit>()V
     .locals 6
 
-    .line 931
+    .line 1056
     invoke-static {}, Lcom/bumptech/glide/Priority;->values()[Lcom/bumptech/glide/Priority;
 
     move-result-object v0
@@ -96,7 +96,7 @@
     :try_end_3
     .catch Ljava/lang/NoSuchFieldError; {:try_start_3 .. :try_end_3} :catch_3
 
-    .line 777
+    .line 895
     :catch_3
     invoke-static {}, Landroid/widget/ImageView$ScaleType;->values()[Landroid/widget/ImageView$ScaleType;
 

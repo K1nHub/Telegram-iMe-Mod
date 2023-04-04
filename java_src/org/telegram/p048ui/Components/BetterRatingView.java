@@ -9,7 +9,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3301R;
+import org.telegram.messenger.C3316R;
 import org.telegram.p048ui.ActionBar.Theme;
 /* renamed from: org.telegram.ui.Components.BetterRatingView */
 /* loaded from: classes6.dex */
@@ -32,8 +32,8 @@ public class BetterRatingView extends View {
         this.paint = new Paint();
         this.numStars = 5;
         this.selectedRating = 0;
-        this.filledStar = BitmapFactory.decodeResource(getResources(), C3301R.C3303drawable.ic_rating_star_filled).extractAlpha();
-        this.hollowStar = BitmapFactory.decodeResource(getResources(), C3301R.C3303drawable.ic_rating_star).extractAlpha();
+        this.filledStar = BitmapFactory.decodeResource(getResources(), C3316R.C3318drawable.ic_rating_star_filled).extractAlpha();
+        this.hollowStar = BitmapFactory.decodeResource(getResources(), C3316R.C3318drawable.ic_rating_star).extractAlpha();
     }
 
     @Override // android.view.View

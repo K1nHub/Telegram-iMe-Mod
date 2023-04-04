@@ -18,8 +18,8 @@ import android.widget.ProgressBar;
 import androidx.core.app.NotificationCompat;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
-import com.google.android.exoplayer2.C0468C;
-import com.google.android.gms.base.C0690R;
+import com.google.android.exoplayer2.C0482C;
+import com.google.android.gms.base.C0704R;
 import com.google.android.gms.common.annotation.KeepForSdk;
 import com.google.android.gms.common.api.GoogleApi;
 import com.google.android.gms.common.api.GoogleApiActivity;
@@ -228,12 +228,12 @@ public class GoogleApiAvailability extends GoogleApiAvailabilityLight {
                 Preconditions.checkState(PlatformVersion.isAtLeastKitKatWatch());
                 style.setSmallIcon(context.getApplicationInfo().icon).setPriority(2);
                 if (DeviceProperties.isWearableWithoutPlayStore(context)) {
-                    style.addAction(C0690R.C0692drawable.common_full_open_on_phone, resources.getString(C0690R.string.common_open_on_phone), pendingIntent);
+                    style.addAction(C0704R.C0706drawable.common_full_open_on_phone, resources.getString(C0704R.string.common_open_on_phone), pendingIntent);
                 } else {
                     style.setContentIntent(pendingIntent);
                 }
             } else {
-                style.setSmallIcon(17301642).setTicker(resources.getString(C0690R.string.common_google_play_services_notification_ticker)).setWhen(System.currentTimeMillis()).setContentIntent(pendingIntent).setContentText(zae);
+                style.setSmallIcon(17301642).setTicker(resources.getString(C0704R.string.common_google_play_services_notification_ticker)).setWhen(System.currentTimeMillis()).setContentIntent(pendingIntent).setContentText(zae);
             }
             if (PlatformVersion.isAtLeastO()) {
                 Preconditions.checkState(PlatformVersion.isAtLeastO());
@@ -283,7 +283,7 @@ public class GoogleApiAvailability extends GoogleApiAvailabilityLight {
         if (InstantApps.isInstantApp(context) || (errorResolutionPendingIntent = getErrorResolutionPendingIntent(context, connectionResult)) == null) {
             return false;
         }
-        zae(context, connectionResult.getErrorCode(), null, PendingIntent.getActivity(context, 0, GoogleApiActivity.zaa(context, errorResolutionPendingIntent, i, true), zap.zaa | C0468C.BUFFER_FLAG_FIRST_SAMPLE));
+        zae(context, connectionResult.getErrorCode(), null, PendingIntent.getActivity(context, 0, GoogleApiActivity.zaa(context, errorResolutionPendingIntent, i, true), zap.zaa | C0482C.BUFFER_FLAG_FIRST_SAMPLE));
         return true;
     }
 

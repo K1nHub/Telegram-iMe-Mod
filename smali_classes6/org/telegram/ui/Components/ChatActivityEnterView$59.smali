@@ -46,10 +46,10 @@
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$dSIwXKEEddDFzECKmGr-LJikZzE(Lorg/telegram/ui/Components/ChatActivityEnterView$59;[Ljava/lang/CharSequence;Lorg/fork/utils/Callbacks$Callback1;Landroid/content/DialogInterface;I)V
+.method public static synthetic $r8$lambda$LcaTiE4XDKrtZM51uQ8e-VIgYGs(Lorg/telegram/ui/Components/ChatActivityEnterView$59;[Ljava/lang/CharSequence;Lcom/iMe/fork/utils/Callbacks$Callback1;Landroid/content/DialogInterface;I)V
     .locals 0
 
-    invoke-direct {p0, p1, p2, p3, p4}, Lorg/telegram/ui/Components/ChatActivityEnterView$59;->lambda$showKiklikoReportAlert$1([Ljava/lang/CharSequence;Lorg/fork/utils/Callbacks$Callback1;Landroid/content/DialogInterface;I)V
+    invoke-direct {p0, p1, p2, p3, p4}, Lorg/telegram/ui/Components/ChatActivityEnterView$59;->lambda$showKiklikoReportAlert$1([Ljava/lang/CharSequence;Lcom/iMe/fork/utils/Callbacks$Callback1;Landroid/content/DialogInterface;I)V
 
     return-void
 .end method
@@ -283,7 +283,7 @@
     return-void
 .end method
 
-.method private synthetic lambda$showKiklikoReportAlert$1([Ljava/lang/CharSequence;Lorg/fork/utils/Callbacks$Callback1;Landroid/content/DialogInterface;I)V
+.method private synthetic lambda$showKiklikoReportAlert$1([Ljava/lang/CharSequence;Lcom/iMe/fork/utils/Callbacks$Callback1;Landroid/content/DialogInterface;I)V
     .locals 1
 
     .line 8929
@@ -322,7 +322,7 @@
 
     const/4 v0, 0x5
 
-    invoke-direct {p3, p0, p4, v0, p2}, Lorg/telegram/ui/Components/ChatActivityEnterView$59$1;-><init>(Lorg/telegram/ui/Components/ChatActivityEnterView$59;Landroid/content/Context;ILorg/fork/utils/Callbacks$Callback1;)V
+    invoke-direct {p3, p0, p4, v0, p2}, Lorg/telegram/ui/Components/ChatActivityEnterView$59$1;-><init>(Lorg/telegram/ui/Components/ChatActivityEnterView$59;Landroid/content/Context;ILcom/iMe/fork/utils/Callbacks$Callback1;)V
 
     invoke-virtual {p1, p3}, Lorg/telegram/ui/ActionBar/BaseFragment;->showDialog(Landroid/app/Dialog;)Landroid/app/Dialog;
 
@@ -336,7 +336,7 @@
 
     move-result-object p1
 
-    invoke-interface {p2, p1}, Lorg/fork/utils/Callbacks$Callback1;->invoke(Ljava/lang/Object;)V
+    invoke-interface {p2, p1}, Lcom/iMe/fork/utils/Callbacks$Callback1;->invoke(Ljava/lang/Object;)V
 
     .line 8951
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$59;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
@@ -2480,13 +2480,13 @@
     return-void
 .end method
 
-.method public showKiklikoReportAlert(Ljava/lang/String;Lorg/fork/utils/Callbacks$Callback1;)V
+.method public showKiklikoReportAlert(Ljava/lang/String;Lcom/iMe/fork/utils/Callbacks$Callback1;)V
     .locals 7
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Ljava/lang/String;",
-            "Lorg/fork/utils/Callbacks$Callback1<",
+            "Lcom/iMe/fork/utils/Callbacks$Callback1<",
             "Ljava/lang/String;",
             ">;)V"
         }
@@ -2634,7 +2634,7 @@
     .line 8928
     new-instance v2, Lorg/telegram/ui/Components/ChatActivityEnterView$59$$ExternalSyntheticLambda1;
 
-    invoke-direct {v2, p0, v1, p2}, Lorg/telegram/ui/Components/ChatActivityEnterView$59$$ExternalSyntheticLambda1;-><init>(Lorg/telegram/ui/Components/ChatActivityEnterView$59;[Ljava/lang/CharSequence;Lorg/fork/utils/Callbacks$Callback1;)V
+    invoke-direct {v2, p0, v1, p2}, Lorg/telegram/ui/Components/ChatActivityEnterView$59$$ExternalSyntheticLambda1;-><init>(Lorg/telegram/ui/Components/ChatActivityEnterView$59;[Ljava/lang/CharSequence;Lcom/iMe/fork/utils/Callbacks$Callback1;)V
 
     invoke-virtual {p1, v1, v0, v2}, Lorg/telegram/ui/ActionBar/BottomSheet$Builder;->setItems([Ljava/lang/CharSequence;[ILandroid/content/DialogInterface$OnClickListener;)Lorg/telegram/ui/ActionBar/BottomSheet$Builder;
 

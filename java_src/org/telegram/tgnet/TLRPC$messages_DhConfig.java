@@ -3,10 +3,10 @@ package org.telegram.tgnet;
 public abstract class TLRPC$messages_DhConfig extends TLObject {
 
     /* renamed from: g */
-    public int f1650g;
+    public int f1652g;
 
     /* renamed from: p */
-    public byte[] f1651p;
+    public byte[] f1653p;
     public byte[] random;
     public int version;
 
@@ -33,8 +33,8 @@ public abstract class TLRPC$messages_DhConfig extends TLObject {
 
                 @Override // org.telegram.tgnet.TLObject
                 public void readParams(AbstractSerializedData abstractSerializedData2, boolean z2) {
-                    this.f1650g = abstractSerializedData2.readInt32(z2);
-                    this.f1651p = abstractSerializedData2.readByteArray(z2);
+                    this.f1652g = abstractSerializedData2.readInt32(z2);
+                    this.f1653p = abstractSerializedData2.readByteArray(z2);
                     this.version = abstractSerializedData2.readInt32(z2);
                     this.random = abstractSerializedData2.readByteArray(z2);
                 }
@@ -42,8 +42,8 @@ public abstract class TLRPC$messages_DhConfig extends TLObject {
                 @Override // org.telegram.tgnet.TLObject
                 public void serializeToStream(AbstractSerializedData abstractSerializedData2) {
                     abstractSerializedData2.writeInt32(constructor);
-                    abstractSerializedData2.writeInt32(this.f1650g);
-                    abstractSerializedData2.writeByteArray(this.f1651p);
+                    abstractSerializedData2.writeInt32(this.f1652g);
+                    abstractSerializedData2.writeByteArray(this.f1653p);
                     abstractSerializedData2.writeInt32(this.version);
                     abstractSerializedData2.writeByteArray(this.random);
                 }

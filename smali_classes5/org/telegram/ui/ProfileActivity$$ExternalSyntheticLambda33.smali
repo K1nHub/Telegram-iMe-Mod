@@ -2,44 +2,32 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Lcom/iMe/fork/utils/Callbacks$Callback;
 
 
 # instance fields
-.field public final synthetic f$0:Lorg/telegram/ui/ProfileActivity;
-
-.field public final synthetic f$1:Ljava/util/ArrayList;
-
-.field public final synthetic f$2:Ljava/util/HashSet;
+.field public final synthetic f$0:Lcom/iMe/ui/profile/ProfilePresenter;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/ProfileActivity;Ljava/util/ArrayList;Ljava/util/HashSet;)V
+.method public synthetic constructor <init>(Lcom/iMe/ui/profile/ProfilePresenter;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lorg/telegram/ui/ProfileActivity$$ExternalSyntheticLambda33;->f$0:Lorg/telegram/ui/ProfileActivity;
-
-    iput-object p2, p0, Lorg/telegram/ui/ProfileActivity$$ExternalSyntheticLambda33;->f$1:Ljava/util/ArrayList;
-
-    iput-object p3, p0, Lorg/telegram/ui/ProfileActivity$$ExternalSyntheticLambda33;->f$2:Ljava/util/HashSet;
+    iput-object p1, p0, Lorg/telegram/ui/ProfileActivity$$ExternalSyntheticLambda33;->f$0:Lcom/iMe/ui/profile/ProfilePresenter;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final run()V
-    .locals 3
+.method public final invoke()V
+    .locals 1
 
-    iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$$ExternalSyntheticLambda33;->f$0:Lorg/telegram/ui/ProfileActivity;
+    iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$$ExternalSyntheticLambda33;->f$0:Lcom/iMe/ui/profile/ProfilePresenter;
 
-    iget-object v1, p0, Lorg/telegram/ui/ProfileActivity$$ExternalSyntheticLambda33;->f$1:Ljava/util/ArrayList;
-
-    iget-object v2, p0, Lorg/telegram/ui/ProfileActivity$$ExternalSyntheticLambda33;->f$2:Ljava/util/HashSet;
-
-    invoke-static {v0, v1, v2}, Lorg/telegram/ui/ProfileActivity;->$r8$lambda$ciETOOYayvMPybsfTGcqU5YjY2s(Lorg/telegram/ui/ProfileActivity;Ljava/util/ArrayList;Ljava/util/HashSet;)V
+    invoke-virtual {v0}, Lcom/iMe/ui/profile/ProfilePresenter;->logoutTwitter()V
 
     return-void
 .end method

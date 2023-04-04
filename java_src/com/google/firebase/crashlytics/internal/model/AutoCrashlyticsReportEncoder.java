@@ -50,22 +50,22 @@ public final class AutoCrashlyticsReportEncoder implements Configurator {
         encoderConfig.registerEncoder(AutoValue_CrashlyticsReport_Session_Event_Application_Execution.class, crashlyticsReportSessionEventApplicationExecutionEncoder);
         CrashlyticsReportSessionEventApplicationExecutionThreadEncoder crashlyticsReportSessionEventApplicationExecutionThreadEncoder = CrashlyticsReportSessionEventApplicationExecutionThreadEncoder.INSTANCE;
         encoderConfig.registerEncoder(CrashlyticsReport.Session.Event.Application.Execution.Thread.class, crashlyticsReportSessionEventApplicationExecutionThreadEncoder);
-        encoderConfig.registerEncoder(C0983x7e3e3ebd.class, crashlyticsReportSessionEventApplicationExecutionThreadEncoder);
-        C0965xc3999712 c0965xc3999712 = C0965xc3999712.INSTANCE;
-        encoderConfig.registerEncoder(CrashlyticsReport.Session.Event.Application.Execution.Thread.Frame.class, c0965xc3999712);
-        encoderConfig.registerEncoder(C0985xce3d994b.class, c0965xc3999712);
-        C0964x55689506 c0964x55689506 = C0964x55689506.INSTANCE;
-        encoderConfig.registerEncoder(CrashlyticsReport.Session.Event.Application.Execution.Exception.class, c0964x55689506);
-        encoderConfig.registerEncoder(C0979xc2f5febc.class, c0964x55689506);
+        encoderConfig.registerEncoder(C0997x7e3e3ebd.class, crashlyticsReportSessionEventApplicationExecutionThreadEncoder);
+        C0979xc3999712 c0979xc3999712 = C0979xc3999712.INSTANCE;
+        encoderConfig.registerEncoder(CrashlyticsReport.Session.Event.Application.Execution.Thread.Frame.class, c0979xc3999712);
+        encoderConfig.registerEncoder(C0999xce3d994b.class, c0979xc3999712);
+        C0978x55689506 c0978x55689506 = C0978x55689506.INSTANCE;
+        encoderConfig.registerEncoder(CrashlyticsReport.Session.Event.Application.Execution.Exception.class, c0978x55689506);
+        encoderConfig.registerEncoder(C0993xc2f5febc.class, c0978x55689506);
         CrashlyticsReportApplicationExitInfoEncoder crashlyticsReportApplicationExitInfoEncoder = CrashlyticsReportApplicationExitInfoEncoder.INSTANCE;
         encoderConfig.registerEncoder(CrashlyticsReport.ApplicationExitInfo.class, crashlyticsReportApplicationExitInfoEncoder);
         encoderConfig.registerEncoder(AutoValue_CrashlyticsReport_ApplicationExitInfo.class, crashlyticsReportApplicationExitInfoEncoder);
         CrashlyticsReportSessionEventApplicationExecutionSignalEncoder crashlyticsReportSessionEventApplicationExecutionSignalEncoder = CrashlyticsReportSessionEventApplicationExecutionSignalEncoder.INSTANCE;
         encoderConfig.registerEncoder(CrashlyticsReport.Session.Event.Application.Execution.Signal.class, crashlyticsReportSessionEventApplicationExecutionSignalEncoder);
-        encoderConfig.registerEncoder(C0981x7c929f5b.class, crashlyticsReportSessionEventApplicationExecutionSignalEncoder);
-        C0963x99c932db c0963x99c932db = C0963x99c932db.INSTANCE;
-        encoderConfig.registerEncoder(CrashlyticsReport.Session.Event.Application.Execution.BinaryImage.class, c0963x99c932db);
-        encoderConfig.registerEncoder(C0977xfe724d07.class, c0963x99c932db);
+        encoderConfig.registerEncoder(C0995x7c929f5b.class, crashlyticsReportSessionEventApplicationExecutionSignalEncoder);
+        C0977x99c932db c0977x99c932db = C0977x99c932db.INSTANCE;
+        encoderConfig.registerEncoder(CrashlyticsReport.Session.Event.Application.Execution.BinaryImage.class, c0977x99c932db);
+        encoderConfig.registerEncoder(C0991xfe724d07.class, c0977x99c932db);
         CrashlyticsReportCustomAttributeEncoder crashlyticsReportCustomAttributeEncoder = CrashlyticsReportCustomAttributeEncoder.INSTANCE;
         encoderConfig.registerEncoder(CrashlyticsReport.CustomAttribute.class, crashlyticsReportCustomAttributeEncoder);
         encoderConfig.registerEncoder(AutoValue_CrashlyticsReport_CustomAttribute.class, crashlyticsReportCustomAttributeEncoder);
@@ -335,15 +335,15 @@ public final class AutoCrashlyticsReportEncoder implements Configurator {
 
     /* renamed from: com.google.firebase.crashlytics.internal.model.AutoCrashlyticsReportEncoder$CrashlyticsReportSessionEventApplicationExecutionThreadFrameEncoder */
     /* loaded from: classes3.dex */
-    private static final class C0965xc3999712 implements ObjectEncoder<CrashlyticsReport.Session.Event.Application.Execution.Thread.Frame> {
-        static final C0965xc3999712 INSTANCE = new C0965xc3999712();
+    private static final class C0979xc3999712 implements ObjectEncoder<CrashlyticsReport.Session.Event.Application.Execution.Thread.Frame> {
+        static final C0979xc3999712 INSTANCE = new C0979xc3999712();
         private static final FieldDescriptor PC_DESCRIPTOR = FieldDescriptor.m728of("pc");
         private static final FieldDescriptor SYMBOL_DESCRIPTOR = FieldDescriptor.m728of("symbol");
         private static final FieldDescriptor FILE_DESCRIPTOR = FieldDescriptor.m728of("file");
         private static final FieldDescriptor OFFSET_DESCRIPTOR = FieldDescriptor.m728of("offset");
         private static final FieldDescriptor IMPORTANCE_DESCRIPTOR = FieldDescriptor.m728of("importance");
 
-        private C0965xc3999712() {
+        private C0979xc3999712() {
         }
 
         @Override // com.google.firebase.encoders.ObjectEncoder
@@ -358,15 +358,15 @@ public final class AutoCrashlyticsReportEncoder implements Configurator {
 
     /* renamed from: com.google.firebase.crashlytics.internal.model.AutoCrashlyticsReportEncoder$CrashlyticsReportSessionEventApplicationExecutionExceptionEncoder */
     /* loaded from: classes3.dex */
-    private static final class C0964x55689506 implements ObjectEncoder<CrashlyticsReport.Session.Event.Application.Execution.Exception> {
-        static final C0964x55689506 INSTANCE = new C0964x55689506();
+    private static final class C0978x55689506 implements ObjectEncoder<CrashlyticsReport.Session.Event.Application.Execution.Exception> {
+        static final C0978x55689506 INSTANCE = new C0978x55689506();
         private static final FieldDescriptor TYPE_DESCRIPTOR = FieldDescriptor.m728of(SessionDescription.ATTR_TYPE);
         private static final FieldDescriptor REASON_DESCRIPTOR = FieldDescriptor.m728of("reason");
         private static final FieldDescriptor FRAMES_DESCRIPTOR = FieldDescriptor.m728of("frames");
         private static final FieldDescriptor CAUSEDBY_DESCRIPTOR = FieldDescriptor.m728of("causedBy");
         private static final FieldDescriptor OVERFLOWCOUNT_DESCRIPTOR = FieldDescriptor.m728of("overflowCount");
 
-        private C0964x55689506() {
+        private C0978x55689506() {
         }
 
         @Override // com.google.firebase.encoders.ObjectEncoder
@@ -427,14 +427,14 @@ public final class AutoCrashlyticsReportEncoder implements Configurator {
 
     /* renamed from: com.google.firebase.crashlytics.internal.model.AutoCrashlyticsReportEncoder$CrashlyticsReportSessionEventApplicationExecutionBinaryImageEncoder */
     /* loaded from: classes3.dex */
-    private static final class C0963x99c932db implements ObjectEncoder<CrashlyticsReport.Session.Event.Application.Execution.BinaryImage> {
-        static final C0963x99c932db INSTANCE = new C0963x99c932db();
+    private static final class C0977x99c932db implements ObjectEncoder<CrashlyticsReport.Session.Event.Application.Execution.BinaryImage> {
+        static final C0977x99c932db INSTANCE = new C0977x99c932db();
         private static final FieldDescriptor BASEADDRESS_DESCRIPTOR = FieldDescriptor.m728of("baseAddress");
         private static final FieldDescriptor SIZE_DESCRIPTOR = FieldDescriptor.m728of("size");
         private static final FieldDescriptor NAME_DESCRIPTOR = FieldDescriptor.m728of(AppMeasurementSdk.ConditionalUserProperty.NAME);
         private static final FieldDescriptor UUID_DESCRIPTOR = FieldDescriptor.m728of("uuid");
 
-        private C0963x99c932db() {
+        private C0977x99c932db() {
         }
 
         @Override // com.google.firebase.encoders.ObjectEncoder

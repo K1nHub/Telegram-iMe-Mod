@@ -15,7 +15,6 @@ public class SupportRequestManagerFragment extends Fragment {
     private final ActivityFragmentLifecycle lifecycle;
     private Fragment parentFragmentHint;
     private RequestManager requestManager;
-    private final RequestManagerTreeNode requestManagerTreeNode;
     private SupportRequestManagerFragment rootRequestManagerFragment;
 
     public SupportRequestManagerFragment() {
@@ -23,13 +22,9 @@ public class SupportRequestManagerFragment extends Fragment {
     }
 
     public SupportRequestManagerFragment(ActivityFragmentLifecycle activityFragmentLifecycle) {
-        this.requestManagerTreeNode = new SupportFragmentRequestManagerTreeNode();
+        new SupportFragmentRequestManagerTreeNode();
         this.childRequestManagerFragments = new HashSet();
         this.lifecycle = activityFragmentLifecycle;
-    }
-
-    public void setRequestManager(RequestManager requestManager) {
-        this.requestManager = requestManager;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -39,10 +34,6 @@ public class SupportRequestManagerFragment extends Fragment {
 
     public RequestManager getRequestManager() {
         return this.requestManager;
-    }
-
-    public RequestManagerTreeNode getRequestManagerTreeNode() {
-        return this.requestManagerTreeNode;
     }
 
     private void addChildRequestManagerFragment(SupportRequestManagerFragment supportRequestManagerFragment) {

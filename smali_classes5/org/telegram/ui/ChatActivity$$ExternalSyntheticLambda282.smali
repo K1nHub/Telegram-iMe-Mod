@@ -2,7 +2,7 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lorg/fork/utils/Callbacks$Callback;
+.implements Ljava/util/Comparator;
 
 
 # static fields
@@ -32,10 +32,16 @@
 
 
 # virtual methods
-.method public final invoke()V
+.method public final compare(Ljava/lang/Object;Ljava/lang/Object;)I
     .locals 0
 
-    invoke-static {}, Lorg/telegram/ui/ChatActivity;->$r8$lambda$HVTubS8pdkwmHdvFZWnuAkzOKjM()V
+    check-cast p1, Ljava/lang/Integer;
 
-    return-void
+    check-cast p2, Ljava/lang/Integer;
+
+    invoke-static {p1, p2}, Lorg/telegram/ui/ChatActivity;->$r8$lambda$uAgh02AgKvPih1rQJam2CB0UMjI(Ljava/lang/Integer;Ljava/lang/Integer;)I
+
+    move-result p1
+
+    return p1
 .end method

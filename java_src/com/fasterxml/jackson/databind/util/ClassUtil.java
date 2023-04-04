@@ -5,8 +5,8 @@ import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.NoSuchElementException;
-import p034j$.util.Iterator;
-import p034j$.util.function.Consumer;
+import p035j$.util.Iterator;
+import p035j$.util.function.Consumer;
 /* loaded from: classes.dex */
 public final class ClassUtil {
     private static final Class<?> CLS_OBJECT = Object.class;
@@ -14,13 +14,13 @@ public final class ClassUtil {
     private static final EmptyIterator<?> EMPTY_ITERATOR = new EmptyIterator<>();
 
     /* loaded from: classes.dex */
-    private static final class EmptyIterator<T> implements Iterator<T>, p034j$.util.Iterator {
-        @Override // p034j$.util.Iterator
+    private static final class EmptyIterator<T> implements Iterator<T>, p035j$.util.Iterator {
+        @Override // p035j$.util.Iterator
         public /* synthetic */ void forEachRemaining(Consumer consumer) {
             Iterator.CC.$default$forEachRemaining(this, consumer);
         }
 
-        @Override // java.util.Iterator, p034j$.util.Iterator
+        @Override // java.util.Iterator, p035j$.util.Iterator
         public boolean hasNext() {
             return false;
         }
@@ -28,12 +28,12 @@ public final class ClassUtil {
         private EmptyIterator() {
         }
 
-        @Override // java.util.Iterator, p034j$.util.Iterator
+        @Override // java.util.Iterator, p035j$.util.Iterator
         public T next() {
             throw new NoSuchElementException();
         }
 
-        @Override // java.util.Iterator, p034j$.util.Iterator
+        @Override // java.util.Iterator, p035j$.util.Iterator
         public void remove() {
             throw new UnsupportedOperationException();
         }

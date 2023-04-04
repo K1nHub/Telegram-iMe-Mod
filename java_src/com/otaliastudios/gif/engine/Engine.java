@@ -10,7 +10,7 @@ import com.otaliastudios.gif.transcode.Transcoder;
 import com.otaliastudios.gif.transcode.VideoTranscoder;
 import java.util.ArrayList;
 import java.util.List;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class Engine {
     private static final Logger LOG = new Logger(Engine.class.getSimpleName());
     private DataSink mDataSink;
@@ -21,7 +21,7 @@ public class Engine {
     private int mCurrentStep = 0;
     private MediaFormat mOutputFormat = null;
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public interface ProgressCallback {
         void onProgress(double d);
     }
@@ -133,7 +133,7 @@ public class Engine {
         long totalReadUs = getTotalReadUs();
         long totalDurationUs = getTotalDurationUs();
         Logger logger = LOG;
-        logger.m711v("computeProgress - readUs:" + totalReadUs + ", totalUs:" + totalDurationUs);
+        logger.m698v("computeProgress - readUs:" + totalReadUs + ", totalUs:" + totalDurationUs);
         if (totalDurationUs == 0) {
             totalDurationUs = 1;
         }
@@ -152,13 +152,13 @@ public class Engine {
         gIFOptions.getStrategy().createOutputFormat(arrayList, mediaFormat);
         this.mOutputFormat = mediaFormat;
         Logger logger = LOG;
-        logger.m711v("Duration (us): " + getTotalDurationUs());
+        logger.m698v("Duration (us): " + getTotalDurationUs());
         boolean z = false;
         long j = 0L;
         while (!z) {
             try {
                 Logger logger2 = LOG;
-                logger2.m711v("new loop: " + j);
+                logger2.m698v("new loop: " + j);
                 if (Thread.interrupted()) {
                     throw new InterruptedException();
                 }
@@ -167,7 +167,7 @@ public class Engine {
                 j++;
                 if (j % 10 == 0) {
                     double computeProgress = computeProgress();
-                    logger2.m711v("progress:" + computeProgress);
+                    logger2.m698v("progress:" + computeProgress);
                     setProgress(computeProgress);
                 }
                 if (!transcode) {

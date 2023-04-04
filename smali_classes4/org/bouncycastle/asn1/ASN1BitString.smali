@@ -205,7 +205,7 @@
     :cond_2
     new-instance p0, Ljava/lang/IllegalArgumentException;
 
-    const-string p1, "truncated BIT STRING detected"
+    const-string/jumbo p1, "truncated BIT STRING detected"
 
     invoke-direct {p0, p1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 

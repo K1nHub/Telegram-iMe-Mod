@@ -33,7 +33,7 @@
 
     iget-object v1, p0, Lorg/telegram/ui/Components/TranscribeButton$$ExternalSyntheticLambda1;->f$1:Lorg/telegram/messenger/MessageObject;
 
-    invoke-static {v0, v1}, Lorg/telegram/ui/Components/TranscribeButton;->$r8$lambda$iAOJi3WUwcTErp3VgjHEY-fh3lQ(ILorg/telegram/messenger/MessageObject;)V
+    invoke-static {v0, v1}, Lorg/telegram/ui/Components/TranscribeButton;->$r8$lambda$a5NOErz9gJxpPv2xd0cuvEsguX8(ILorg/telegram/messenger/MessageObject;)V
 
     return-void
 .end method

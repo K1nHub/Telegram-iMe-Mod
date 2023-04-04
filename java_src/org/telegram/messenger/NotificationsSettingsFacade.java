@@ -168,12 +168,12 @@ public class NotificationsSettingsFacade {
             editor.remove(str2);
         } else if (tLRPC$NotificationSound instanceof TLRPC$TL_notificationSoundRingtone) {
             TLRPC$TL_notificationSoundRingtone tLRPC$TL_notificationSoundRingtone = (TLRPC$TL_notificationSoundRingtone) tLRPC$NotificationSound;
-            editor.putLong(str2, tLRPC$TL_notificationSoundRingtone.f1613id);
+            editor.putLong(str2, tLRPC$TL_notificationSoundRingtone.f1615id);
             MediaDataController.getInstance(this.currentAccount).checkRingtones();
             if (z && i3 != 0) {
                 editor.putBoolean("custom_" + j, true);
             }
-            MediaDataController.getInstance(this.currentAccount).ringtoneDataStore.getDocument(tLRPC$TL_notificationSoundRingtone.f1613id);
+            MediaDataController.getInstance(this.currentAccount).ringtoneDataStore.getDocument(tLRPC$TL_notificationSoundRingtone.f1615id);
         }
     }
 

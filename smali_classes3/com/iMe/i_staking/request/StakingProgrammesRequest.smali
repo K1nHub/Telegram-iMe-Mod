@@ -10,7 +10,7 @@
 
 .field private final limit:Ljava/lang/Integer;
 
-.field private final networkType:Lcom/smedialink/storage/domain/model/crypto/NetworkType;
+.field private final networkType:Lcom/iMe/storage/domain/model/crypto/NetworkType;
 
 .field private final order:Lcom/iMe/i_staking/request/StakingOrderStrategyRequest;
 
@@ -35,19 +35,19 @@
 
     move-object v0, p0
 
-    invoke-direct/range {v0 .. v7}, Lcom/iMe/i_staking/request/StakingProgrammesRequest;-><init>(Lcom/smedialink/storage/domain/model/crypto/NetworkType;Ljava/lang/Long;Ljava/lang/Integer;Lcom/iMe/i_staking/request/StakingOrderStrategyRequest;ZILkotlin/jvm/internal/DefaultConstructorMarker;)V
+    invoke-direct/range {v0 .. v7}, Lcom/iMe/i_staking/request/StakingProgrammesRequest;-><init>(Lcom/iMe/storage/domain/model/crypto/NetworkType;Ljava/lang/Long;Ljava/lang/Integer;Lcom/iMe/i_staking/request/StakingOrderStrategyRequest;ZILkotlin/jvm/internal/DefaultConstructorMarker;)V
 
     return-void
 .end method
 
-.method public constructor <init>(Lcom/smedialink/storage/domain/model/crypto/NetworkType;Ljava/lang/Long;Ljava/lang/Integer;Lcom/iMe/i_staking/request/StakingOrderStrategyRequest;Z)V
+.method public constructor <init>(Lcom/iMe/storage/domain/model/crypto/NetworkType;Ljava/lang/Long;Ljava/lang/Integer;Lcom/iMe/i_staking/request/StakingOrderStrategyRequest;Z)V
     .locals 0
 
     .line 5
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 6
-    iput-object p1, p0, Lcom/iMe/i_staking/request/StakingProgrammesRequest;->networkType:Lcom/smedialink/storage/domain/model/crypto/NetworkType;
+    iput-object p1, p0, Lcom/iMe/i_staking/request/StakingProgrammesRequest;->networkType:Lcom/iMe/storage/domain/model/crypto/NetworkType;
 
     .line 7
     iput-object p2, p0, Lcom/iMe/i_staking/request/StakingProgrammesRequest;->lastItemId:Ljava/lang/Long;
@@ -64,7 +64,7 @@
     return-void
 .end method
 
-.method public synthetic constructor <init>(Lcom/smedialink/storage/domain/model/crypto/NetworkType;Ljava/lang/Long;Ljava/lang/Integer;Lcom/iMe/i_staking/request/StakingOrderStrategyRequest;ZILkotlin/jvm/internal/DefaultConstructorMarker;)V
+.method public synthetic constructor <init>(Lcom/iMe/storage/domain/model/crypto/NetworkType;Ljava/lang/Long;Ljava/lang/Integer;Lcom/iMe/i_staking/request/StakingOrderStrategyRequest;ZILkotlin/jvm/internal/DefaultConstructorMarker;)V
     .locals 3
 
     and-int/lit8 p7, p6, 0x1
@@ -135,19 +135,19 @@
     move-object p5, v0
 
     .line 5
-    invoke-direct/range {p1 .. p6}, Lcom/iMe/i_staking/request/StakingProgrammesRequest;-><init>(Lcom/smedialink/storage/domain/model/crypto/NetworkType;Ljava/lang/Long;Ljava/lang/Integer;Lcom/iMe/i_staking/request/StakingOrderStrategyRequest;Z)V
+    invoke-direct/range {p1 .. p6}, Lcom/iMe/i_staking/request/StakingProgrammesRequest;-><init>(Lcom/iMe/storage/domain/model/crypto/NetworkType;Ljava/lang/Long;Ljava/lang/Integer;Lcom/iMe/i_staking/request/StakingOrderStrategyRequest;Z)V
 
     return-void
 .end method
 
-.method public static synthetic copy$default(Lcom/iMe/i_staking/request/StakingProgrammesRequest;Lcom/smedialink/storage/domain/model/crypto/NetworkType;Ljava/lang/Long;Ljava/lang/Integer;Lcom/iMe/i_staking/request/StakingOrderStrategyRequest;ZILjava/lang/Object;)Lcom/iMe/i_staking/request/StakingProgrammesRequest;
+.method public static synthetic copy$default(Lcom/iMe/i_staking/request/StakingProgrammesRequest;Lcom/iMe/storage/domain/model/crypto/NetworkType;Ljava/lang/Long;Ljava/lang/Integer;Lcom/iMe/i_staking/request/StakingOrderStrategyRequest;ZILjava/lang/Object;)Lcom/iMe/i_staking/request/StakingProgrammesRequest;
     .locals 3
 
     and-int/lit8 p7, p6, 0x1
 
     if-eqz p7, :cond_0
 
-    iget-object p1, p0, Lcom/iMe/i_staking/request/StakingProgrammesRequest;->networkType:Lcom/smedialink/storage/domain/model/crypto/NetworkType;
+    iget-object p1, p0, Lcom/iMe/i_staking/request/StakingProgrammesRequest;->networkType:Lcom/iMe/storage/domain/model/crypto/NetworkType;
 
     :cond_0
     and-int/lit8 p7, p6, 0x2
@@ -198,7 +198,7 @@
 
     move p7, v2
 
-    invoke-virtual/range {p2 .. p7}, Lcom/iMe/i_staking/request/StakingProgrammesRequest;->copy(Lcom/smedialink/storage/domain/model/crypto/NetworkType;Ljava/lang/Long;Ljava/lang/Integer;Lcom/iMe/i_staking/request/StakingOrderStrategyRequest;Z)Lcom/iMe/i_staking/request/StakingProgrammesRequest;
+    invoke-virtual/range {p2 .. p7}, Lcom/iMe/i_staking/request/StakingProgrammesRequest;->copy(Lcom/iMe/storage/domain/model/crypto/NetworkType;Ljava/lang/Long;Ljava/lang/Integer;Lcom/iMe/i_staking/request/StakingOrderStrategyRequest;Z)Lcom/iMe/i_staking/request/StakingProgrammesRequest;
 
     move-result-object p0
 
@@ -207,10 +207,10 @@
 
 
 # virtual methods
-.method public final component1()Lcom/smedialink/storage/domain/model/crypto/NetworkType;
+.method public final component1()Lcom/iMe/storage/domain/model/crypto/NetworkType;
     .locals 1
 
-    iget-object v0, p0, Lcom/iMe/i_staking/request/StakingProgrammesRequest;->networkType:Lcom/smedialink/storage/domain/model/crypto/NetworkType;
+    iget-object v0, p0, Lcom/iMe/i_staking/request/StakingProgrammesRequest;->networkType:Lcom/iMe/storage/domain/model/crypto/NetworkType;
 
     return-object v0
 .end method
@@ -247,7 +247,7 @@
     return v0
 .end method
 
-.method public final copy(Lcom/smedialink/storage/domain/model/crypto/NetworkType;Ljava/lang/Long;Ljava/lang/Integer;Lcom/iMe/i_staking/request/StakingOrderStrategyRequest;Z)Lcom/iMe/i_staking/request/StakingProgrammesRequest;
+.method public final copy(Lcom/iMe/storage/domain/model/crypto/NetworkType;Ljava/lang/Long;Ljava/lang/Integer;Lcom/iMe/i_staking/request/StakingOrderStrategyRequest;Z)Lcom/iMe/i_staking/request/StakingProgrammesRequest;
     .locals 7
 
     new-instance v6, Lcom/iMe/i_staking/request/StakingProgrammesRequest;
@@ -264,7 +264,7 @@
 
     move v5, p5
 
-    invoke-direct/range {v0 .. v5}, Lcom/iMe/i_staking/request/StakingProgrammesRequest;-><init>(Lcom/smedialink/storage/domain/model/crypto/NetworkType;Ljava/lang/Long;Ljava/lang/Integer;Lcom/iMe/i_staking/request/StakingOrderStrategyRequest;Z)V
+    invoke-direct/range {v0 .. v5}, Lcom/iMe/i_staking/request/StakingProgrammesRequest;-><init>(Lcom/iMe/storage/domain/model/crypto/NetworkType;Ljava/lang/Long;Ljava/lang/Integer;Lcom/iMe/i_staking/request/StakingOrderStrategyRequest;Z)V
 
     return-object v6
 .end method
@@ -290,9 +290,9 @@
     :cond_1
     check-cast p1, Lcom/iMe/i_staking/request/StakingProgrammesRequest;
 
-    iget-object v1, p0, Lcom/iMe/i_staking/request/StakingProgrammesRequest;->networkType:Lcom/smedialink/storage/domain/model/crypto/NetworkType;
+    iget-object v1, p0, Lcom/iMe/i_staking/request/StakingProgrammesRequest;->networkType:Lcom/iMe/storage/domain/model/crypto/NetworkType;
 
-    iget-object v3, p1, Lcom/iMe/i_staking/request/StakingProgrammesRequest;->networkType:Lcom/smedialink/storage/domain/model/crypto/NetworkType;
+    iget-object v3, p1, Lcom/iMe/i_staking/request/StakingProgrammesRequest;->networkType:Lcom/iMe/storage/domain/model/crypto/NetworkType;
 
     if-eq v1, v3, :cond_2
 
@@ -377,11 +377,11 @@
     return-object v0
 .end method
 
-.method public final getNetworkType()Lcom/smedialink/storage/domain/model/crypto/NetworkType;
+.method public final getNetworkType()Lcom/iMe/storage/domain/model/crypto/NetworkType;
     .locals 1
 
     .line 6
-    iget-object v0, p0, Lcom/iMe/i_staking/request/StakingProgrammesRequest;->networkType:Lcom/smedialink/storage/domain/model/crypto/NetworkType;
+    iget-object v0, p0, Lcom/iMe/i_staking/request/StakingProgrammesRequest;->networkType:Lcom/iMe/storage/domain/model/crypto/NetworkType;
 
     return-object v0
 .end method
@@ -398,7 +398,7 @@
 .method public hashCode()I
     .locals 3
 
-    iget-object v0, p0, Lcom/iMe/i_staking/request/StakingProgrammesRequest;->networkType:Lcom/smedialink/storage/domain/model/crypto/NetworkType;
+    iget-object v0, p0, Lcom/iMe/i_staking/request/StakingProgrammesRequest;->networkType:Lcom/iMe/storage/domain/model/crypto/NetworkType;
 
     const/4 v1, 0x0
 
@@ -491,7 +491,7 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget-object v1, p0, Lcom/iMe/i_staking/request/StakingProgrammesRequest;->networkType:Lcom/smedialink/storage/domain/model/crypto/NetworkType;
+    iget-object v1, p0, Lcom/iMe/i_staking/request/StakingProgrammesRequest;->networkType:Lcom/iMe/storage/domain/model/crypto/NetworkType;
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 

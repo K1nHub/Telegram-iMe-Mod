@@ -161,11 +161,11 @@
 
     sput-object v1, Lorg/telegram/messenger/EmuDetector;->PIPES:[Ljava/lang/String;
 
-    const-string v2, "ueventd.android_x86.rc"
+    const-string/jumbo v2, "ueventd.android_x86.rc"
 
     const-string/jumbo v3, "x86.prop"
 
-    const-string v4, "ueventd.ttVM_x86.rc"
+    const-string/jumbo v4, "ueventd.ttVM_x86.rc"
 
     const-string v5, "init.ttVM_x86.rc"
 
@@ -175,7 +175,7 @@
 
     const-string v8, "init.vbox86.rc"
 
-    const-string v9, "ueventd.vbox86.rc"
+    const-string/jumbo v9, "ueventd.vbox86.rc"
 
     .line 71
     filled-new-array/range {v2 .. v9}, [Ljava/lang/String;
@@ -186,7 +186,7 @@
 
     const-string v1, "fstab.andy"
 
-    const-string v2, "ueventd.andy.rc"
+    const-string/jumbo v2, "ueventd.andy.rc"
 
     .line 82
     filled-new-array {v1, v2}, [Ljava/lang/String;
@@ -199,7 +199,7 @@
 
     const-string v2, "init.nox.rc"
 
-    const-string v3, "ueventd.nox.rc"
+    const-string/jumbo v3, "ueventd.nox.rc"
 
     const-string v4, "/BigNoxGameHD"
 
@@ -284,7 +284,7 @@
 
     const-string v3, "ro.bootloader"
 
-    const-string v5, "unknown"
+    const-string/jumbo v5, "unknown"
 
     invoke-direct {v2, v3, v5}, Lorg/telegram/messenger/EmuDetector$Property;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
@@ -1174,7 +1174,7 @@
 
     if-nez v6, :cond_1
 
-    const-string v6, "tunl0"
+    const-string/jumbo v6, "tunl0"
 
     invoke-virtual {v5, v6}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
 

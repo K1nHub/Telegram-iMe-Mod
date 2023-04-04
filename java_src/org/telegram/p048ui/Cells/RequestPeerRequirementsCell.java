@@ -15,7 +15,7 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import java.util.ArrayList;
 import java.util.Iterator;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3301R;
+import org.telegram.messenger.C3316R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.p048ui.ActionBar.Theme;
 import org.telegram.p048ui.Components.LayoutHelper;
@@ -42,41 +42,41 @@ public class RequestPeerRequirementsCell extends LinearLayout {
             removeAllViews();
             this.requirements.clear();
             if (tLRPC$RequestPeerType instanceof TLRPC$TL_requestPeerTypeUser) {
-                checkRequirement(((TLRPC$TL_requestPeerTypeUser) tLRPC$RequestPeerType).premium, C3301R.string.PeerRequirementPremiumTrue, C3301R.string.PeerRequirementPremiumFalse);
+                checkRequirement(((TLRPC$TL_requestPeerTypeUser) tLRPC$RequestPeerType).premium, C3316R.string.PeerRequirementPremiumTrue, C3316R.string.PeerRequirementPremiumFalse);
             } else {
                 boolean z = tLRPC$RequestPeerType instanceof TLRPC$TL_requestPeerTypeBroadcast;
                 if (z) {
-                    checkRequirement(tLRPC$RequestPeerType.has_username, C3301R.string.PeerRequirementChannelPublicTrue, C3301R.string.PeerRequirementChannelPublicFalse);
+                    checkRequirement(tLRPC$RequestPeerType.has_username, C3316R.string.PeerRequirementChannelPublicTrue, C3316R.string.PeerRequirementChannelPublicFalse);
                     Boolean bool = tLRPC$RequestPeerType.bot_participant;
                     if (bool != null && bool.booleanValue()) {
-                        this.requirements.add(Requirement.make(AndroidUtilities.replaceTags(LocaleController.getString(C3301R.string.PeerRequirementChannelBotParticipant))));
+                        this.requirements.add(Requirement.make(AndroidUtilities.replaceTags(LocaleController.getString(C3316R.string.PeerRequirementChannelBotParticipant))));
                     }
                     Boolean bool2 = tLRPC$RequestPeerType.creator;
                     if (bool2 != null && bool2.booleanValue()) {
-                        this.requirements.add(Requirement.make(AndroidUtilities.replaceTags(LocaleController.getString(C3301R.string.PeerRequirementChannelCreatorTrue))));
+                        this.requirements.add(Requirement.make(AndroidUtilities.replaceTags(LocaleController.getString(C3316R.string.PeerRequirementChannelCreatorTrue))));
                     }
                 } else {
-                    checkRequirement(tLRPC$RequestPeerType.has_username, C3301R.string.PeerRequirementGroupPublicTrue, C3301R.string.PeerRequirementGroupPublicFalse);
-                    checkRequirement(tLRPC$RequestPeerType.forum, C3301R.string.PeerRequirementForumTrue, C3301R.string.PeerRequirementForumFalse);
+                    checkRequirement(tLRPC$RequestPeerType.has_username, C3316R.string.PeerRequirementGroupPublicTrue, C3316R.string.PeerRequirementGroupPublicFalse);
+                    checkRequirement(tLRPC$RequestPeerType.forum, C3316R.string.PeerRequirementForumTrue, C3316R.string.PeerRequirementForumFalse);
                     Boolean bool3 = tLRPC$RequestPeerType.bot_participant;
                     if (bool3 != null && bool3.booleanValue()) {
-                        this.requirements.add(Requirement.make(AndroidUtilities.replaceTags(LocaleController.getString(C3301R.string.PeerRequirementGroupBotParticipant))));
+                        this.requirements.add(Requirement.make(AndroidUtilities.replaceTags(LocaleController.getString(C3316R.string.PeerRequirementGroupBotParticipant))));
                     }
                     Boolean bool4 = tLRPC$RequestPeerType.creator;
                     if (bool4 != null && bool4.booleanValue()) {
-                        this.requirements.add(Requirement.make(AndroidUtilities.replaceTags(LocaleController.getString(C3301R.string.PeerRequirementGroupCreatorTrue))));
+                        this.requirements.add(Requirement.make(AndroidUtilities.replaceTags(LocaleController.getString(C3316R.string.PeerRequirementGroupCreatorTrue))));
                     }
                 }
                 Boolean bool5 = tLRPC$RequestPeerType.creator;
                 if (bool5 == null || !bool5.booleanValue()) {
-                    checkAdminRights(tLRPC$RequestPeerType.user_admin_rights, z, C3301R.string.PeerRequirementUserRights, C3301R.string.PeerRequirementUserRight);
+                    checkAdminRights(tLRPC$RequestPeerType.user_admin_rights, z, C3316R.string.PeerRequirementUserRights, C3316R.string.PeerRequirementUserRight);
                 }
             }
             if (this.requirements.isEmpty()) {
                 return;
             }
             HeaderCell headerCell = new HeaderCell(getContext(), 20);
-            headerCell.setText(LocaleController.getString("PeerRequirements", C3301R.string.PeerRequirements));
+            headerCell.setText(LocaleController.getString("PeerRequirements", C3316R.string.PeerRequirements));
             headerCell.setBackgroundColor(Theme.getColor("windowBackgroundWhite"));
             addView(headerCell, LayoutHelper.createLinear(-1, -2));
             addView(emptyView(9, Theme.getColor("windowBackgroundWhite")), LayoutHelper.createLinear(-1, -2));
@@ -85,7 +85,7 @@ public class RequestPeerRequirementsCell extends LinearLayout {
                 addView(new RequirementCell(this, getContext(), it.next()), LayoutHelper.createLinear(-1, -2));
             }
             addView(emptyView(12, Theme.getColor("windowBackgroundWhite")), LayoutHelper.createLinear(-1, -2));
-            addView(emptyView(12, Theme.getThemedDrawable(getContext(), C3301R.C3303drawable.greydivider_bottom, "windowBackgroundGrayShadow")), LayoutHelper.createLinear(-1, -2));
+            addView(emptyView(12, Theme.getThemedDrawable(getContext(), C3316R.C3318drawable.greydivider_bottom, "windowBackgroundGrayShadow")), LayoutHelper.createLinear(-1, -2));
         }
     }
 
@@ -121,48 +121,48 @@ public class RequestPeerRequirementsCell extends LinearLayout {
         ArrayList arrayList = new ArrayList();
         if (tLRPC$TL_chatAdminRights.change_info) {
             if (z) {
-                string = LocaleController.getString("EditAdminChangeChannelInfo", C3301R.string.EditAdminChangeChannelInfo);
+                string = LocaleController.getString("EditAdminChangeChannelInfo", C3316R.string.EditAdminChangeChannelInfo);
             } else {
-                string = LocaleController.getString("EditAdminChangeGroupInfo", C3301R.string.EditAdminChangeGroupInfo);
+                string = LocaleController.getString("EditAdminChangeGroupInfo", C3316R.string.EditAdminChangeGroupInfo);
             }
             arrayList.add(Requirement.make(1, string));
         }
         if (tLRPC$TL_chatAdminRights.post_messages && z) {
-            arrayList.add(Requirement.make(1, LocaleController.getString("EditAdminPostMessages", C3301R.string.EditAdminPostMessages)));
+            arrayList.add(Requirement.make(1, LocaleController.getString("EditAdminPostMessages", C3316R.string.EditAdminPostMessages)));
         }
         if (tLRPC$TL_chatAdminRights.edit_messages && z) {
-            arrayList.add(Requirement.make(1, LocaleController.getString("EditAdminEditMessages", C3301R.string.EditAdminEditMessages)));
+            arrayList.add(Requirement.make(1, LocaleController.getString("EditAdminEditMessages", C3316R.string.EditAdminEditMessages)));
         }
         if (tLRPC$TL_chatAdminRights.delete_messages) {
             if (z) {
-                i = C3301R.string.EditAdminDeleteMessages;
+                i = C3316R.string.EditAdminDeleteMessages;
                 str = "EditAdminDeleteMessages";
             } else {
-                i = C3301R.string.EditAdminGroupDeleteMessages;
+                i = C3316R.string.EditAdminGroupDeleteMessages;
                 str = "EditAdminGroupDeleteMessages";
             }
             arrayList.add(Requirement.make(1, LocaleController.getString(str, i)));
         }
         if (tLRPC$TL_chatAdminRights.ban_users && !z) {
-            arrayList.add(Requirement.make(1, LocaleController.getString("EditAdminBanUsers", C3301R.string.EditAdminBanUsers)));
+            arrayList.add(Requirement.make(1, LocaleController.getString("EditAdminBanUsers", C3316R.string.EditAdminBanUsers)));
         }
         if (tLRPC$TL_chatAdminRights.invite_users) {
-            arrayList.add(Requirement.make(1, LocaleController.getString("EditAdminAddUsers", C3301R.string.EditAdminAddUsers)));
+            arrayList.add(Requirement.make(1, LocaleController.getString("EditAdminAddUsers", C3316R.string.EditAdminAddUsers)));
         }
         if (tLRPC$TL_chatAdminRights.pin_messages && !z) {
-            arrayList.add(Requirement.make(1, LocaleController.getString("EditAdminPinMessages", C3301R.string.EditAdminPinMessages)));
+            arrayList.add(Requirement.make(1, LocaleController.getString("EditAdminPinMessages", C3316R.string.EditAdminPinMessages)));
         }
         if (tLRPC$TL_chatAdminRights.add_admins) {
-            arrayList.add(Requirement.make(1, LocaleController.getString("EditAdminAddAdmins", C3301R.string.EditAdminAddAdmins)));
+            arrayList.add(Requirement.make(1, LocaleController.getString("EditAdminAddAdmins", C3316R.string.EditAdminAddAdmins)));
         }
         if (tLRPC$TL_chatAdminRights.anonymous && !z) {
-            arrayList.add(Requirement.make(1, LocaleController.getString("EditAdminSendAnonymously", C3301R.string.EditAdminSendAnonymously)));
+            arrayList.add(Requirement.make(1, LocaleController.getString("EditAdminSendAnonymously", C3316R.string.EditAdminSendAnonymously)));
         }
         if (tLRPC$TL_chatAdminRights.manage_call) {
-            arrayList.add(Requirement.make(1, LocaleController.getString("StartVoipChatPermission", C3301R.string.StartVoipChatPermission)));
+            arrayList.add(Requirement.make(1, LocaleController.getString("StartVoipChatPermission", C3316R.string.StartVoipChatPermission)));
         }
         if (tLRPC$TL_chatAdminRights.manage_topics && !z) {
-            arrayList.add(Requirement.make(1, LocaleController.getString("ManageTopicsPermission", C3301R.string.ManageTopicsPermission)));
+            arrayList.add(Requirement.make(1, LocaleController.getString("ManageTopicsPermission", C3316R.string.ManageTopicsPermission)));
         }
         if (arrayList.size() == 1) {
             return ((Requirement) arrayList.get(0)).text.toString().toLowerCase();
@@ -190,48 +190,48 @@ public class RequestPeerRequirementsCell extends LinearLayout {
         ArrayList arrayList = new ArrayList();
         if (tLRPC$TL_chatAdminRights.change_info) {
             if (z) {
-                string = LocaleController.getString("EditAdminChangeChannelInfo", C3301R.string.EditAdminChangeChannelInfo);
+                string = LocaleController.getString("EditAdminChangeChannelInfo", C3316R.string.EditAdminChangeChannelInfo);
             } else {
-                string = LocaleController.getString("EditAdminChangeGroupInfo", C3301R.string.EditAdminChangeGroupInfo);
+                string = LocaleController.getString("EditAdminChangeGroupInfo", C3316R.string.EditAdminChangeGroupInfo);
             }
             arrayList.add(Requirement.make(1, string));
         }
         if (tLRPC$TL_chatAdminRights.post_messages && z) {
-            arrayList.add(Requirement.make(1, LocaleController.getString("EditAdminPostMessages", C3301R.string.EditAdminPostMessages)));
+            arrayList.add(Requirement.make(1, LocaleController.getString("EditAdminPostMessages", C3316R.string.EditAdminPostMessages)));
         }
         if (tLRPC$TL_chatAdminRights.edit_messages && z) {
-            arrayList.add(Requirement.make(1, LocaleController.getString("EditAdminEditMessages", C3301R.string.EditAdminEditMessages)));
+            arrayList.add(Requirement.make(1, LocaleController.getString("EditAdminEditMessages", C3316R.string.EditAdminEditMessages)));
         }
         if (tLRPC$TL_chatAdminRights.delete_messages) {
             if (z) {
-                i = C3301R.string.EditAdminDeleteMessages;
+                i = C3316R.string.EditAdminDeleteMessages;
                 str = "EditAdminDeleteMessages";
             } else {
-                i = C3301R.string.EditAdminGroupDeleteMessages;
+                i = C3316R.string.EditAdminGroupDeleteMessages;
                 str = "EditAdminGroupDeleteMessages";
             }
             arrayList.add(Requirement.make(1, LocaleController.getString(str, i)));
         }
         if (tLRPC$TL_chatAdminRights.ban_users && !z) {
-            arrayList.add(Requirement.make(1, LocaleController.getString("EditAdminBanUsers", C3301R.string.EditAdminBanUsers)));
+            arrayList.add(Requirement.make(1, LocaleController.getString("EditAdminBanUsers", C3316R.string.EditAdminBanUsers)));
         }
         if (tLRPC$TL_chatAdminRights.invite_users) {
-            arrayList.add(Requirement.make(1, LocaleController.getString("EditAdminAddUsers", C3301R.string.EditAdminAddUsers)));
+            arrayList.add(Requirement.make(1, LocaleController.getString("EditAdminAddUsers", C3316R.string.EditAdminAddUsers)));
         }
         if (tLRPC$TL_chatAdminRights.pin_messages && !z) {
-            arrayList.add(Requirement.make(1, LocaleController.getString("EditAdminPinMessages", C3301R.string.EditAdminPinMessages)));
+            arrayList.add(Requirement.make(1, LocaleController.getString("EditAdminPinMessages", C3316R.string.EditAdminPinMessages)));
         }
         if (tLRPC$TL_chatAdminRights.add_admins) {
-            arrayList.add(Requirement.make(1, LocaleController.getString("EditAdminAddAdmins", C3301R.string.EditAdminAddAdmins)));
+            arrayList.add(Requirement.make(1, LocaleController.getString("EditAdminAddAdmins", C3316R.string.EditAdminAddAdmins)));
         }
         if (tLRPC$TL_chatAdminRights.anonymous && !z) {
-            arrayList.add(Requirement.make(1, LocaleController.getString("EditAdminSendAnonymously", C3301R.string.EditAdminSendAnonymously)));
+            arrayList.add(Requirement.make(1, LocaleController.getString("EditAdminSendAnonymously", C3316R.string.EditAdminSendAnonymously)));
         }
         if (tLRPC$TL_chatAdminRights.manage_call) {
-            arrayList.add(Requirement.make(1, LocaleController.getString("StartVoipChatPermission", C3301R.string.StartVoipChatPermission)));
+            arrayList.add(Requirement.make(1, LocaleController.getString("StartVoipChatPermission", C3316R.string.StartVoipChatPermission)));
         }
         if (tLRPC$TL_chatAdminRights.manage_topics && !z) {
-            arrayList.add(Requirement.make(1, LocaleController.getString("ManageTopicsPermission", C3301R.string.ManageTopicsPermission)));
+            arrayList.add(Requirement.make(1, LocaleController.getString("ManageTopicsPermission", C3316R.string.ManageTopicsPermission)));
         }
         if (arrayList.size() == 1) {
             this.requirements.add(Requirement.make(TextUtils.concat(charSequence2, " ", ((Requirement) arrayList.get(0)).text)));
@@ -267,7 +267,7 @@ public class RequestPeerRequirementsCell extends LinearLayout {
             ImageView imageView = new ImageView(context);
             this.imageView = imageView;
             imageView.setScaleType(ImageView.ScaleType.CENTER);
-            this.imageView.setImageResource(requirement.padding <= 0 ? C3301R.C3303drawable.list_check : C3301R.C3303drawable.list_circle);
+            this.imageView.setImageResource(requirement.padding <= 0 ? C3316R.C3318drawable.list_check : C3316R.C3318drawable.list_circle);
             this.imageView.setColorFilter(new PorterDuffColorFilter(Theme.getColor("windowBackgroundWhiteBlueHeader"), PorterDuff.Mode.MULTIPLY));
             addView(this.imageView, LayoutHelper.createLinear(20, 20, BitmapDescriptorFactory.HUE_RED, 51, (requirement.padding * 16) + 17, -1, 0, 0));
             TextView textView = new TextView(context);

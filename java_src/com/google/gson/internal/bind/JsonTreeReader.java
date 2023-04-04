@@ -286,7 +286,7 @@ public final class JsonTreeReader extends JsonReader {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.google.gson.internal.bind.JsonTreeReader$2 */
     /* loaded from: classes3.dex */
-    public static /* synthetic */ class C11302 {
+    public static /* synthetic */ class C11442 {
         static final /* synthetic */ int[] $SwitchMap$com$google$gson$stream$JsonToken;
 
         static {
@@ -313,7 +313,7 @@ public final class JsonTreeReader extends JsonReader {
 
     @Override // com.google.gson.stream.JsonReader
     public void skipValue() throws IOException {
-        int i = C11302.$SwitchMap$com$google$gson$stream$JsonToken[peek().ordinal()];
+        int i = C11442.$SwitchMap$com$google$gson$stream$JsonToken[peek().ordinal()];
         if (i == 1) {
             nextName(true);
         } else if (i == 2) {

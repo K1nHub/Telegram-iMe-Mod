@@ -14,6 +14,6 @@ public final /* synthetic */ class EmojiView$21$$ExternalSyntheticLambda2 implem
 
     @Override // org.telegram.tgnet.RequestDelegate
     public final void run(TLObject tLObject, TLRPC$TL_error tLRPC$TL_error) {
-        EmojiView.C453221.lambda$sendReorder$2(tLObject, tLRPC$TL_error);
+        EmojiView.C455321.lambda$sendReorder$2(tLObject, tLRPC$TL_error);
     }
 }

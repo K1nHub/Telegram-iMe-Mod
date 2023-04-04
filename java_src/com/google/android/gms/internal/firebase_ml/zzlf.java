@@ -15,12 +15,12 @@ abstract class zzlf<E> extends zzlk<E> {
 
     protected abstract E get(int i);
 
-    @Override // java.util.Iterator, p034j$.util.Iterator
+    @Override // java.util.Iterator, p035j$.util.Iterator
     public final boolean hasNext() {
         return this.position < this.size;
     }
 
-    @Override // java.util.Iterator, p034j$.util.Iterator
+    @Override // java.util.Iterator, p035j$.util.Iterator
     public final E next() {
         if (!hasNext()) {
             throw new NoSuchElementException();

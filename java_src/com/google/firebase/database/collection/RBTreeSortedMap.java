@@ -8,8 +8,8 @@ import java.util.Comparator;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
-import p034j$.util.Iterator;
-import p034j$.util.function.Consumer;
+import p035j$.util.Iterator;
+import p035j$.util.function.Consumer;
 /* loaded from: classes3.dex */
 public class RBTreeSortedMap<K, V> extends ImmutableSortedMap<K, V> {
     private Comparator<K> comparator;
@@ -137,28 +137,28 @@ public class RBTreeSortedMap<K, V> extends ImmutableSortedMap<K, V> {
             /* JADX INFO: Access modifiers changed from: package-private */
             /* renamed from: com.google.firebase.database.collection.RBTreeSortedMap$Builder$Base1_2$1 */
             /* loaded from: classes3.dex */
-            public class C09941 implements Iterator<BooleanChunk>, p034j$.util.Iterator {
+            public class C10081 implements Iterator<BooleanChunk>, p035j$.util.Iterator {
                 private int current;
 
-                @Override // p034j$.util.Iterator
+                @Override // p035j$.util.Iterator
                 public /* synthetic */ void forEachRemaining(Consumer consumer) {
                     Iterator.CC.$default$forEachRemaining(this, consumer);
                 }
 
-                @Override // java.util.Iterator, p034j$.util.Iterator
+                @Override // java.util.Iterator, p035j$.util.Iterator
                 public void remove() {
                 }
 
-                C09941() {
+                C10081() {
                     this.current = Base1_2.this.length - 1;
                 }
 
-                @Override // java.util.Iterator, p034j$.util.Iterator
+                @Override // java.util.Iterator, p035j$.util.Iterator
                 public boolean hasNext() {
                     return this.current >= 0;
                 }
 
-                @Override // java.util.Iterator, p034j$.util.Iterator
+                @Override // java.util.Iterator, p035j$.util.Iterator
                 public BooleanChunk next() {
                     BooleanChunk booleanChunk = new BooleanChunk();
                     booleanChunk.isOne = (Base1_2.this.value & ((long) (1 << this.current))) == 0;
@@ -170,7 +170,7 @@ public class RBTreeSortedMap<K, V> extends ImmutableSortedMap<K, V> {
 
             @Override // java.lang.Iterable
             public java.util.Iterator<BooleanChunk> iterator() {
-                return new C09941();
+                return new C10081();
             }
         }
 

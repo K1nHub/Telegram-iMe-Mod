@@ -174,7 +174,7 @@
 .method public abstract onDiceFinished()V
 .end method
 
-.method public abstract runWithActivationCheck(Lorg/fork/utils/Callbacks$Callback;)V
+.method public abstract runWithActivationCheck(Lcom/iMe/fork/utils/Callbacks$Callback;)V
 .end method
 
 .method public abstract setShouldNotRepeatSticker(Lorg/telegram/messenger/MessageObject;)V

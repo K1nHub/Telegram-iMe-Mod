@@ -6,6 +6,6 @@
         <androidx.appcompat.widget.AppCompatTextView android:textSize="@dimen/text_size_upper" android:id="@id/only_positive_checkbox_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="16.0dip" android:text="@string/wallet_home_crypto_tokens_settings_only_positive" android:includeFontPadding="false" />
     </LinearLayout>
     <FrameLayout android:gravity="center_vertical" android:id="@id/network_type_view_container" android:paddingLeft="@dimen/moving_check_cell_horizontal_margin" android:paddingTop="@dimen/padding_paranormal" android:paddingRight="@dimen/moving_check_cell_horizontal_margin" android:paddingBottom="@dimen/padding_paranormal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerVertical="true" android:layout_alignParentEnd="true" android:paddingHorizontal="@dimen/moving_check_cell_horizontal_margin" android:paddingVertical="@dimen/padding_paranormal">
-        <com.smedialink.ui.custom.NetworkTypeView android:id="@id/network_type_view" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerVertical="true" />
+        <com.iMe.ui.custom.NetworkTypeView android:id="@id/network_type_view" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerVertical="true" />
     </FrameLayout>
 </RelativeLayout>

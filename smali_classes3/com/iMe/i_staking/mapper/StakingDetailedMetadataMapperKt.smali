@@ -4,7 +4,7 @@
 
 
 # direct methods
-.method public static final mapToDomain(Lcom/iMe/i_staking/response/StakingDetailedMetadataResponse;)Lcom/smedialink/storage/domain/model/staking/StakingDetailedMetadata;
+.method public static final mapToDomain(Lcom/iMe/i_staking/response/StakingDetailedMetadataResponse;)Lcom/iMe/storage/domain/model/staking/StakingDetailedMetadata;
     .locals 35
 
     const-string v0, "<this>"
@@ -14,7 +14,7 @@
     invoke-static {v1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 9
-    new-instance v0, Lcom/smedialink/storage/domain/model/staking/StakingDetailedMetadata;
+    new-instance v0, Lcom/iMe/storage/domain/model/staking/StakingDetailedMetadata;
 
     .line 10
     invoke-virtual/range {p0 .. p0}, Lcom/iMe/i_staking/response/StakingDetailedMetadataResponse;->getId()J
@@ -22,13 +22,13 @@
     move-result-wide v3
 
     .line 11
-    sget-object v2, Lcom/smedialink/storage/domain/model/crypto/NetworkType;->Companion:Lcom/smedialink/storage/domain/model/crypto/NetworkType$Companion;
+    sget-object v2, Lcom/iMe/storage/domain/model/crypto/NetworkType;->Companion:Lcom/iMe/storage/domain/model/crypto/NetworkType$Companion;
 
     invoke-virtual/range {p0 .. p0}, Lcom/iMe/i_staking/response/StakingDetailedMetadataResponse;->getNet()Ljava/lang/String;
 
     move-result-object v5
 
-    invoke-virtual {v2, v5}, Lcom/smedialink/storage/domain/model/crypto/NetworkType$Companion;->map(Ljava/lang/String;)Lcom/smedialink/storage/domain/model/crypto/NetworkType;
+    invoke-virtual {v2, v5}, Lcom/iMe/storage/domain/model/crypto/NetworkType$Companion;->map(Ljava/lang/String;)Lcom/iMe/storage/domain/model/crypto/NetworkType;
 
     move-result-object v5
 
@@ -62,7 +62,7 @@
 
     move-result-object v2
 
-    invoke-static {v2}, Lcom/iMe/i_staking/mapper/StakingTokenMapperKt;->mapToDomain(Lcom/iMe/i_staking/response/StakingTokenResponse;)Lcom/smedialink/storage/domain/model/staking/StakingToken;
+    invoke-static {v2}, Lcom/iMe/i_staking/mapper/StakingTokenMapperKt;->mapToDomain(Lcom/iMe/i_staking/response/StakingTokenResponse;)Lcom/iMe/storage/domain/model/staking/StakingToken;
 
     move-result-object v11
 
@@ -71,7 +71,7 @@
 
     move-result-object v2
 
-    invoke-static {v2}, Lcom/iMe/i_staking/mapper/StakingTokenMapperKt;->mapToDomain(Lcom/iMe/i_staking/response/StakingTokenResponse;)Lcom/smedialink/storage/domain/model/staking/StakingToken;
+    invoke-static {v2}, Lcom/iMe/i_staking/mapper/StakingTokenMapperKt;->mapToDomain(Lcom/iMe/i_staking/response/StakingTokenResponse;)Lcom/iMe/storage/domain/model/staking/StakingToken;
 
     move-result-object v12
 
@@ -125,7 +125,7 @@
 
     move-result-object v2
 
-    invoke-static {v2}, Lcom/iMe/i_staking/mapper/StakingDetailedStatsMapperKt;->mapToDomain(Lcom/iMe/i_staking/response/StakingDetailedStatsResponse;)Lcom/smedialink/storage/domain/model/staking/StakingDetailedStats;
+    invoke-static {v2}, Lcom/iMe/i_staking/mapper/StakingDetailedStatsMapperKt;->mapToDomain(Lcom/iMe/i_staking/response/StakingDetailedStatsResponse;)Lcom/iMe/storage/domain/model/staking/StakingDetailedStats;
 
     move-result-object v30
 
@@ -134,7 +134,7 @@
 
     move-result-object v2
 
-    invoke-static {v2}, Lcom/iMe/i_staking/mapper/StakingRulesMapperKt;->mapToDomain(Lcom/iMe/i_staking/response/StakingRulesResponse;)Lcom/smedialink/storage/domain/model/staking/StakingRules;
+    invoke-static {v2}, Lcom/iMe/i_staking/mapper/StakingRulesMapperKt;->mapToDomain(Lcom/iMe/i_staking/response/StakingRulesResponse;)Lcom/iMe/storage/domain/model/staking/StakingRules;
 
     move-result-object v31
 
@@ -144,7 +144,7 @@
     move-result v32
 
     .line 31
-    sget-object v2, Lcom/smedialink/storage/domain/model/crypto/level/AccountLevel;->Companion:Lcom/smedialink/storage/domain/model/crypto/level/AccountLevel$Companion;
+    sget-object v2, Lcom/iMe/storage/domain/model/crypto/level/AccountLevel;->Companion:Lcom/iMe/storage/domain/model/crypto/level/AccountLevel$Companion;
 
     invoke-virtual/range {p0 .. p0}, Lcom/iMe/i_staking/response/StakingDetailedMetadataResponse;->getMinimalRank()Ljava/lang/String;
 
@@ -157,7 +157,7 @@
     :cond_0
     move-object/from16 v1, v33
 
-    invoke-virtual {v2, v1}, Lcom/smedialink/storage/domain/model/crypto/level/AccountLevel$Companion;->map(Ljava/lang/String;)Lcom/smedialink/storage/domain/model/crypto/level/AccountLevel;
+    invoke-virtual {v2, v1}, Lcom/iMe/storage/domain/model/crypto/level/AccountLevel$Companion;->map(Ljava/lang/String;)Lcom/iMe/storage/domain/model/crypto/level/AccountLevel;
 
     move-result-object v33
 
@@ -169,7 +169,7 @@
     move-object v2, v0
 
     .line 9
-    invoke-direct/range {v2 .. v34}, Lcom/smedialink/storage/domain/model/staking/StakingDetailedMetadata;-><init>(JLcom/smedialink/storage/domain/model/crypto/NetworkType;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lcom/smedialink/storage/domain/model/staking/StakingToken;Lcom/smedialink/storage/domain/model/staking/StakingToken;DDJDDDDJLjava/math/BigDecimal;Lcom/smedialink/storage/domain/model/staking/StakingDetailedStats;Lcom/smedialink/storage/domain/model/staking/StakingRules;ZLcom/smedialink/storage/domain/model/crypto/level/AccountLevel;Ljava/lang/String;)V
+    invoke-direct/range {v2 .. v34}, Lcom/iMe/storage/domain/model/staking/StakingDetailedMetadata;-><init>(JLcom/iMe/storage/domain/model/crypto/NetworkType;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lcom/iMe/storage/domain/model/staking/StakingToken;Lcom/iMe/storage/domain/model/staking/StakingToken;DDJDDDDJLjava/math/BigDecimal;Lcom/iMe/storage/domain/model/staking/StakingDetailedStats;Lcom/iMe/storage/domain/model/staking/StakingRules;ZLcom/iMe/storage/domain/model/crypto/level/AccountLevel;Ljava/lang/String;)V
 
     return-object v0
 .end method

@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/DialogsActivity$33$3;)V
     .locals 0
 
-    .line 6706
+    .line 6721
     iput-object p1, p0, Lorg/telegram/ui/DialogsActivity$33$3$1;->this$2:Lorg/telegram/ui/DialogsActivity$33$3;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
@@ -35,7 +35,7 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 1
 
-    .line 6709
+    .line 6724
     iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$33$3$1;->this$2:Lorg/telegram/ui/DialogsActivity$33$3;
 
     iget-object p1, p1, Lorg/telegram/ui/DialogsActivity$33$3;->this$1:Lorg/telegram/ui/DialogsActivity$33;
@@ -48,7 +48,7 @@
 
     if-eqz p1, :cond_0
 
-    .line 6710
+    .line 6725
     iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$33$3$1;->this$2:Lorg/telegram/ui/DialogsActivity$33$3;
 
     iget-object p1, p1, Lorg/telegram/ui/DialogsActivity$33$3;->this$1:Lorg/telegram/ui/DialogsActivity$33;
@@ -59,7 +59,7 @@
 
     invoke-static {p1, v0}, Lorg/telegram/ui/DialogsActivity;->access$9102(Lorg/telegram/ui/DialogsActivity;Landroid/view/View;)Landroid/view/View;
 
-    .line 6712
+    .line 6727
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$33$3$1;->this$2:Lorg/telegram/ui/DialogsActivity$33$3;
 
@@ -73,7 +73,7 @@
 
     if-eqz p1, :cond_1
 
-    .line 6713
+    .line 6728
     iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$33$3$1;->this$2:Lorg/telegram/ui/DialogsActivity$33$3;
 
     iget-object p1, p1, Lorg/telegram/ui/DialogsActivity$33$3;->this$1:Lorg/telegram/ui/DialogsActivity$33;

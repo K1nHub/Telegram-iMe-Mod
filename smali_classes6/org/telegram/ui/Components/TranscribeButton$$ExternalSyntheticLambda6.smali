@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lorg/telegram/ui/Components/TranscribeButton$$ExternalSyntheticLambda6;->f$0:Lorg/telegram/ui/Components/TranscribeButton;
 
-    invoke-static {v0}, Lorg/telegram/ui/Components/TranscribeButton;->$r8$lambda$rBBLilaw1o8NbLDt-xATkg5HtCI(Lorg/telegram/ui/Components/TranscribeButton;)V
+    invoke-static {v0}, Lorg/telegram/ui/Components/TranscribeButton;->$r8$lambda$NMvfnCtG0CciLXI6TwbthcE07-Y(Lorg/telegram/ui/Components/TranscribeButton;)V
 
     return-void
 .end method

@@ -2,32 +2,38 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Lcom/iMe/fork/utils/Callbacks$Callback;
 
 
 # instance fields
 .field public final synthetic f$0:Lorg/telegram/ui/PhotoViewer;
 
+.field public final synthetic f$1:Ljava/lang/String;
+
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/PhotoViewer;)V
+.method public synthetic constructor <init>(Lorg/telegram/ui/PhotoViewer;Ljava/lang/String;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/ui/PhotoViewer$$ExternalSyntheticLambda59;->f$0:Lorg/telegram/ui/PhotoViewer;
 
+    iput-object p2, p0, Lorg/telegram/ui/PhotoViewer$$ExternalSyntheticLambda59;->f$1:Ljava/lang/String;
+
     return-void
 .end method
 
 
 # virtual methods
-.method public final run()V
-    .locals 1
+.method public final invoke()V
+    .locals 2
 
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$$ExternalSyntheticLambda59;->f$0:Lorg/telegram/ui/PhotoViewer;
 
-    invoke-static {v0}, Lorg/telegram/ui/PhotoViewer;->$r8$lambda$0p8udDraC_ViS6uz2OM7myegBZw(Lorg/telegram/ui/PhotoViewer;)V
+    iget-object v1, p0, Lorg/telegram/ui/PhotoViewer$$ExternalSyntheticLambda59;->f$1:Ljava/lang/String;
+
+    invoke-static {v0, v1}, Lorg/telegram/ui/PhotoViewer;->$r8$lambda$OCWxcQh7vXF_t-_5Q0Nn0y7zqYY(Lorg/telegram/ui/PhotoViewer;Ljava/lang/String;)V
 
     return-void
 .end method

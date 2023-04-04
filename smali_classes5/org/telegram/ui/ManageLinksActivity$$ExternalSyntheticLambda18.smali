@@ -2,7 +2,7 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lkotlin/jvm/functions/Function0;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
@@ -22,14 +22,12 @@
 
 
 # virtual methods
-.method public final invoke()Ljava/lang/Object;
+.method public final run()V
     .locals 1
 
     iget-object v0, p0, Lorg/telegram/ui/ManageLinksActivity$$ExternalSyntheticLambda18;->f$0:Lorg/telegram/ui/ManageLinksActivity;
 
-    invoke-static {v0}, Lorg/telegram/ui/ManageLinksActivity;->$r8$lambda$Moln46v3781LkzXt4naupm9IKI0(Lorg/telegram/ui/ManageLinksActivity;)Lorg/koin/core/parameter/ParametersHolder;
+    invoke-static {v0}, Lorg/telegram/ui/ManageLinksActivity;->$r8$lambda$1f1DlXEH2Bim5nEUP0PsWTK-_Ag(Lorg/telegram/ui/ManageLinksActivity;)V
 
-    move-result-object v0
-
-    return-object v0
+    return-void
 .end method

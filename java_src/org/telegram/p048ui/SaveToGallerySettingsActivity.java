@@ -18,7 +18,7 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import java.util.ArrayList;
 import java.util.Objects;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3301R;
+import org.telegram.messenger.C3316R;
 import org.telegram.messenger.ContactsController;
 import org.telegram.messenger.DialogObject;
 import org.telegram.messenger.LocaleController;
@@ -32,7 +32,7 @@ import org.telegram.p048ui.ActionBar.ActionBarPopupWindow;
 import org.telegram.p048ui.ActionBar.AlertDialog;
 import org.telegram.p048ui.ActionBar.BackDrawable;
 import org.telegram.p048ui.ActionBar.BaseFragment;
-import org.telegram.p048ui.ActionBar.C3366ActionBar;
+import org.telegram.p048ui.ActionBar.C3381ActionBar;
 import org.telegram.p048ui.ActionBar.Theme;
 import org.telegram.p048ui.Cells.HeaderCell;
 import org.telegram.p048ui.Cells.ShadowSectionCell;
@@ -104,8 +104,8 @@ public class SaveToGallerySettingsActivity extends BaseFragment {
         FrameLayout frameLayout = new FrameLayout(context);
         this.fragmentView = frameLayout;
         this.actionBar.setBackButtonDrawable(new BackDrawable(false));
-        this.actionBar.setActionBarMenuOnItemClick(new C3366ActionBar.ActionBarMenuOnItemClick() { // from class: org.telegram.ui.SaveToGallerySettingsActivity.1
-            @Override // org.telegram.p048ui.ActionBar.C3366ActionBar.ActionBarMenuOnItemClick
+        this.actionBar.setActionBarMenuOnItemClick(new C3381ActionBar.ActionBarMenuOnItemClick() { // from class: org.telegram.ui.SaveToGallerySettingsActivity.1
+            @Override // org.telegram.p048ui.ActionBar.C3381ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i2) {
                 if (i2 == -1) {
                     SaveToGallerySettingsActivity.this.finishFragment();
@@ -114,18 +114,18 @@ public class SaveToGallerySettingsActivity extends BaseFragment {
         });
         if (this.dialogException != null) {
             if (this.isNewException) {
-                this.actionBar.setTitle(LocaleController.getString(C3301R.string.NotificationsNewException));
+                this.actionBar.setTitle(LocaleController.getString(C3316R.string.NotificationsNewException));
             } else {
-                this.actionBar.setTitle(LocaleController.getString(C3301R.string.SaveToGalleryException));
+                this.actionBar.setTitle(LocaleController.getString(C3316R.string.SaveToGalleryException));
             }
         } else {
             int i2 = this.type;
             if (i2 == 1) {
-                this.actionBar.setTitle(LocaleController.getString(C3301R.string.SaveToGalleryPrivate));
+                this.actionBar.setTitle(LocaleController.getString(C3316R.string.SaveToGalleryPrivate));
             } else if (i2 == 2) {
-                this.actionBar.setTitle(LocaleController.getString(C3301R.string.SaveToGalleryGroups));
+                this.actionBar.setTitle(LocaleController.getString(C3316R.string.SaveToGalleryGroups));
             } else {
-                this.actionBar.setTitle(LocaleController.getString(C3301R.string.SaveToGalleryChannels));
+                this.actionBar.setTitle(LocaleController.getString(C3316R.string.SaveToGalleryChannels));
             }
         }
         this.recyclerListView = new RecyclerListView(context);
@@ -182,10 +182,10 @@ public class SaveToGallerySettingsActivity extends BaseFragment {
             TextView textView = new TextView(getContext());
             textView.setTextSize(1, 14.0f);
             if (this.isNewException) {
-                i = C3301R.string.AddException;
+                i = C3316R.string.AddException;
                 str = "AddException";
             } else {
-                i = C3301R.string.SaveException;
+                i = C3316R.string.SaveException;
                 str = "SaveException";
             }
             textView.setText(LocaleController.getString(str, i));
@@ -246,7 +246,7 @@ public class SaveToGallerySettingsActivity extends BaseFragment {
             bundle2.putInt(SessionDescription.ATTR_TYPE, this.type);
             presentFragment(new SaveToGallerySettingsActivity(bundle2));
         } else if (this.items.get(i).viewType == 4) {
-            AlertDialog create = AlertsCreator.createSimpleAlert(getContext(), LocaleController.getString("NotificationsDeleteAllExceptionTitle", C3301R.string.NotificationsDeleteAllExceptionTitle), LocaleController.getString("NotificationsDeleteAllExceptionAlert", C3301R.string.NotificationsDeleteAllExceptionAlert), LocaleController.getString("Delete", C3301R.string.Delete), new Runnable() { // from class: org.telegram.ui.SaveToGallerySettingsActivity$$ExternalSyntheticLambda3
+            AlertDialog create = AlertsCreator.createSimpleAlert(getContext(), LocaleController.getString("NotificationsDeleteAllExceptionTitle", C3316R.string.NotificationsDeleteAllExceptionTitle), LocaleController.getString("NotificationsDeleteAllExceptionAlert", C3316R.string.NotificationsDeleteAllExceptionAlert), LocaleController.getString("Delete", C3316R.string.Delete), new Runnable() { // from class: org.telegram.ui.SaveToGallerySettingsActivity$$ExternalSyntheticLambda3
                 @Override // java.lang.Runnable
                 public final void run() {
                     SaveToGallerySettingsActivity.this.lambda$createView$1();
@@ -278,8 +278,8 @@ public class SaveToGallerySettingsActivity extends BaseFragment {
         if (this.items.get(i).viewType == 2) {
             final SaveToGallerySettingsHelper.DialogException dialogException = this.items.get(i).exception;
             ActionBarPopupWindow.ActionBarPopupWindowLayout actionBarPopupWindowLayout = new ActionBarPopupWindow.ActionBarPopupWindowLayout(getContext());
-            ActionBarMenuSubItem addItem = ActionBarMenuItem.addItem(actionBarPopupWindowLayout, C3301R.C3303drawable.msg_customize, LocaleController.getString("EditException", C3301R.string.EditException), false, null);
-            ActionBarMenuSubItem addItem2 = ActionBarMenuItem.addItem(actionBarPopupWindowLayout, C3301R.C3303drawable.msg_delete, LocaleController.getString("DeleteException", C3301R.string.DeleteException), false, null);
+            ActionBarMenuSubItem addItem = ActionBarMenuItem.addItem(actionBarPopupWindowLayout, C3316R.C3318drawable.msg_customize, LocaleController.getString("EditException", C3316R.string.EditException), false, null);
+            ActionBarMenuSubItem addItem2 = ActionBarMenuItem.addItem(actionBarPopupWindowLayout, C3316R.C3318drawable.msg_delete, LocaleController.getString("DeleteException", C3316R.string.DeleteException), false, null);
             addItem2.setColors(Theme.getColor("windowBackgroundWhiteRedText"), Theme.getColor("windowBackgroundWhiteRedText"));
             final ActionBarPopupWindow createSimplePopup = AlertsCreator.createSimplePopup(this, actionBarPopupWindowLayout, view, f, f2);
             actionBarPopupWindowLayout.setParentWindow(createSimplePopup);
@@ -344,26 +344,26 @@ public class SaveToGallerySettingsActivity extends BaseFragment {
             this.items.add(new Item(9));
             this.items.add(new Item(3));
         }
-        this.items.add(new Item(5, LocaleController.getString("SaveToGallery", C3301R.string.SaveToGallery)));
+        this.items.add(new Item(5, LocaleController.getString("SaveToGallery", C3316R.string.SaveToGallery)));
         this.savePhotosRow = this.items.size();
         this.items.add(new Item(6));
         this.saveVideosRow = this.items.size();
         this.items.add(new Item(6));
         if (this.dialogException != null) {
-            string = LocaleController.getString("SaveToGalleryHintCurrent", C3301R.string.SaveToGalleryHintCurrent);
+            string = LocaleController.getString("SaveToGalleryHintCurrent", C3316R.string.SaveToGalleryHintCurrent);
         } else {
             int i2 = this.type;
             if (i2 == 1) {
-                string = LocaleController.getString("SaveToGalleryHintUser", C3301R.string.SaveToGalleryHintUser);
+                string = LocaleController.getString("SaveToGalleryHintUser", C3316R.string.SaveToGalleryHintUser);
             } else if (i2 == 4) {
-                string = LocaleController.getString("SaveToGalleryHintChannels", C3301R.string.SaveToGalleryHintChannels);
+                string = LocaleController.getString("SaveToGalleryHintChannels", C3316R.string.SaveToGalleryHintChannels);
             } else {
-                string = i2 == 2 ? LocaleController.getString("SaveToGalleryHintGroup", C3301R.string.SaveToGalleryHintGroup) : null;
+                string = i2 == 2 ? LocaleController.getString("SaveToGalleryHintGroup", C3316R.string.SaveToGalleryHintGroup) : null;
             }
         }
         this.items.add(new Item(7, string));
         if (getSettings().saveVideo) {
-            this.items.add(new Item(5, LocaleController.getString("MaxVideoSize", C3301R.string.MaxVideoSize)));
+            this.items.add(new Item(5, LocaleController.getString("MaxVideoSize", C3316R.string.MaxVideoSize)));
             this.items.add(new Item(8));
             this.videoDividerRow = this.items.size();
             this.items.add(new Item(7));
@@ -410,7 +410,7 @@ public class SaveToGallerySettingsActivity extends BaseFragment {
             switch (i) {
                 case 1:
                     TextCell textCell2 = new TextCell(viewGroup.getContext());
-                    textCell2.setTextAndIcon(LocaleController.getString("NotificationsAddAnException", C3301R.string.NotificationsAddAnException), C3301R.C3303drawable.msg_contact_add, true);
+                    textCell2.setTextAndIcon(LocaleController.getString("NotificationsAddAnException", C3316R.string.NotificationsAddAnException), C3316R.C3318drawable.msg_contact_add, true);
                     textCell2.setColors("windowBackgroundWhiteBlueIcon", "windowBackgroundWhiteBlueButton");
                     textCell2.setBackgroundColor(Theme.getColor("windowBackgroundWhite"));
                     shadowSectionCell = textCell2;
@@ -425,7 +425,7 @@ public class SaveToGallerySettingsActivity extends BaseFragment {
                     break;
                 case 4:
                     TextCell textCell3 = new TextCell(viewGroup.getContext());
-                    textCell3.setText(LocaleController.getString("NotificationsDeleteAllException", C3301R.string.NotificationsDeleteAllException), false);
+                    textCell3.setText(LocaleController.getString("NotificationsDeleteAllException", C3316R.string.NotificationsDeleteAllException), false);
                     textCell3.setColors(null, "windowBackgroundWhiteRedText5");
                     textCell3.setBackgroundColor(Theme.getColor("windowBackgroundWhite"));
                     textCell = textCell3;
@@ -501,7 +501,7 @@ public class SaveToGallerySettingsActivity extends BaseFragment {
                                 selectableAnimatedTextView3.setSelectedInternal(false, isAttachedToWindow);
                                 AndroidUtilities.updateViewVisibilityAnimated(selectableAnimatedTextView2, false, 0.8f, isAttachedToWindow);
                             } else {
-                                selectableAnimatedTextView2.setText(LocaleController.formatString("UpToFileSize", C3301R.string.UpToFileSize, AndroidUtilities.formatFileSize(j3, true)), false);
+                                selectableAnimatedTextView2.setText(LocaleController.formatString("UpToFileSize", C3316R.string.UpToFileSize, AndroidUtilities.formatFileSize(j3, true)), false);
                                 selectableAnimatedTextView.setSelectedInternal(false, isAttachedToWindow);
                                 selectableAnimatedTextView2.setSelectedInternal(true, isAttachedToWindow);
                                 selectableAnimatedTextView3.setSelectedInternal(false, isAttachedToWindow);
@@ -529,7 +529,7 @@ public class SaveToGallerySettingsActivity extends BaseFragment {
                     break;
                 case 10:
                     ShadowSectionCell shadowSectionCell2 = new ShadowSectionCell(viewGroup.getContext());
-                    shadowSectionCell2.setBackgroundDrawable(Theme.getThemedDrawable(SaveToGallerySettingsActivity.this.getContext(), C3301R.C3303drawable.greydivider_bottom, Theme.getColor("windowBackgroundGrayShadow", SaveToGallerySettingsActivity.this.getResourceProvider())));
+                    shadowSectionCell2.setBackgroundDrawable(Theme.getThemedDrawable(SaveToGallerySettingsActivity.this.getContext(), C3316R.C3318drawable.greydivider_bottom, Theme.getColor("windowBackgroundGrayShadow", SaveToGallerySettingsActivity.this.getResourceProvider())));
                     shadowSectionCell = shadowSectionCell2;
                     break;
             }
@@ -545,12 +545,12 @@ public class SaveToGallerySettingsActivity extends BaseFragment {
                 TextCheckCell textCheckCell = (TextCheckCell) viewHolder.itemView;
                 SaveToGallerySettingsHelper.Settings settings = SaveToGallerySettingsActivity.this.getSettings();
                 if (i == SaveToGallerySettingsActivity.this.savePhotosRow) {
-                    textCheckCell.setTextAndCheck(LocaleController.getString(C3301R.string.SaveToGalleryPhotos), settings.savePhoto, true);
-                    textCheckCell.setColorfullIcon(SaveToGallerySettingsActivity.this.getThemedColor("statisticChartLine_lightblue"), C3301R.C3303drawable.msg_filled_data_photos);
+                    textCheckCell.setTextAndCheck(LocaleController.getString(C3316R.string.SaveToGalleryPhotos), settings.savePhoto, true);
+                    textCheckCell.setColorfullIcon(SaveToGallerySettingsActivity.this.getThemedColor("statisticChartLine_lightblue"), C3316R.C3318drawable.msg_filled_data_photos);
                     return;
                 }
-                textCheckCell.setTextAndCheck(LocaleController.getString(C3301R.string.SaveToGalleryVideos), settings.saveVideo, false);
-                textCheckCell.setColorfullIcon(SaveToGallerySettingsActivity.this.getThemedColor("statisticChartLine_green"), C3301R.C3303drawable.msg_filled_data_videos);
+                textCheckCell.setTextAndCheck(LocaleController.getString(C3316R.string.SaveToGalleryVideos), settings.saveVideo, false);
+                textCheckCell.setColorfullIcon(SaveToGallerySettingsActivity.this.getThemedColor("statisticChartLine_green"), C3316R.C3318drawable.msg_filled_data_videos);
             } else if (SaveToGallerySettingsActivity.this.items.get(i).viewType == 7) {
                 TextInfoPrivacyCell textInfoPrivacyCell = (TextInfoPrivacyCell) viewHolder.itemView;
                 SaveToGallerySettingsActivity saveToGallerySettingsActivity = SaveToGallerySettingsActivity.this;
@@ -558,18 +558,18 @@ public class SaveToGallerySettingsActivity extends BaseFragment {
                     long j = saveToGallerySettingsActivity.getSettings().limitVideo;
                     SaveToGallerySettingsActivity saveToGallerySettingsActivity2 = SaveToGallerySettingsActivity.this;
                     if (saveToGallerySettingsActivity2.dialogException != null) {
-                        textInfoPrivacyCell.setText(LocaleController.formatString("SaveToGalleryVideoHintCurrent", C3301R.string.SaveToGalleryVideoHintCurrent, new Object[0]));
+                        textInfoPrivacyCell.setText(LocaleController.formatString("SaveToGalleryVideoHintCurrent", C3316R.string.SaveToGalleryVideoHintCurrent, new Object[0]));
                         return;
                     }
                     int i2 = saveToGallerySettingsActivity2.type;
                     if (i2 == 1) {
-                        textInfoPrivacyCell.setText(LocaleController.formatString("SaveToGalleryVideoHintUser", C3301R.string.SaveToGalleryVideoHintUser, new Object[0]));
+                        textInfoPrivacyCell.setText(LocaleController.formatString("SaveToGalleryVideoHintUser", C3316R.string.SaveToGalleryVideoHintUser, new Object[0]));
                         return;
                     } else if (i2 == 4) {
-                        textInfoPrivacyCell.setText(LocaleController.formatString("SaveToGalleryVideoHintChannels", C3301R.string.SaveToGalleryVideoHintChannels, new Object[0]));
+                        textInfoPrivacyCell.setText(LocaleController.formatString("SaveToGalleryVideoHintChannels", C3316R.string.SaveToGalleryVideoHintChannels, new Object[0]));
                         return;
                     } else if (i2 == 2) {
-                        textInfoPrivacyCell.setText(LocaleController.formatString("SaveToGalleryVideoHintGroup", C3301R.string.SaveToGalleryVideoHintGroup, new Object[0]));
+                        textInfoPrivacyCell.setText(LocaleController.formatString("SaveToGalleryVideoHintGroup", C3316R.string.SaveToGalleryVideoHintGroup, new Object[0]));
                         return;
                     } else {
                         return;
@@ -586,7 +586,7 @@ public class SaveToGallerySettingsActivity extends BaseFragment {
                 if (userOrChat instanceof TLRPC$User) {
                     TLRPC$User tLRPC$User = (TLRPC$User) userOrChat;
                     if (tLRPC$User.self) {
-                        str = LocaleController.getString("SavedMessages", C3301R.string.SavedMessages);
+                        str = LocaleController.getString("SavedMessages", C3316R.string.SavedMessages);
                     } else {
                         str = ContactsController.formatName(tLRPC$User.first_name, tLRPC$User.last_name);
                     }

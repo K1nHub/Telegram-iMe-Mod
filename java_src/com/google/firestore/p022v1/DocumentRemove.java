@@ -33,7 +33,7 @@ public final class DocumentRemove extends GeneratedMessageLite<DocumentRemove, B
     /* renamed from: com.google.firestore.v1.DocumentRemove$Builder */
     /* loaded from: classes3.dex */
     public static final class Builder extends GeneratedMessageLite.Builder<DocumentRemove, Builder> implements MessageLiteOrBuilder {
-        /* synthetic */ Builder(C10521 c10521) {
+        /* synthetic */ Builder(C10661 c10661) {
             this();
         }
 
@@ -44,7 +44,7 @@ public final class DocumentRemove extends GeneratedMessageLite<DocumentRemove, B
 
     /* renamed from: com.google.firestore.v1.DocumentRemove$1 */
     /* loaded from: classes3.dex */
-    static /* synthetic */ class C10521 {
+    static /* synthetic */ class C10661 {
 
         /* renamed from: $SwitchMap$com$google$protobuf$GeneratedMessageLite$MethodToInvoke */
         static final /* synthetic */ int[] f207xa1df5c61;
@@ -85,7 +85,7 @@ public final class DocumentRemove extends GeneratedMessageLite<DocumentRemove, B
 
     @Override // com.google.protobuf.GeneratedMessageLite
     protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke methodToInvoke, Object obj, Object obj2) {
-        switch (C10521.f207xa1df5c61[methodToInvoke.ordinal()]) {
+        switch (C10661.f207xa1df5c61[methodToInvoke.ordinal()]) {
             case 1:
                 return new DocumentRemove();
             case 2:

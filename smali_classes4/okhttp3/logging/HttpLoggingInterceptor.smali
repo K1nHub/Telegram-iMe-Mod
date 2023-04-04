@@ -791,7 +791,7 @@
     goto :goto_8
 
     :cond_12
-    const-string v7, "unknown-length"
+    const-string/jumbo v7, "unknown-length"
 
     .line 230
     :goto_8

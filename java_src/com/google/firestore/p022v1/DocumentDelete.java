@@ -38,7 +38,7 @@ public final class DocumentDelete extends GeneratedMessageLite<DocumentDelete, B
     /* renamed from: com.google.firestore.v1.DocumentDelete$Builder */
     /* loaded from: classes3.dex */
     public static final class Builder extends GeneratedMessageLite.Builder<DocumentDelete, Builder> implements MessageLiteOrBuilder {
-        /* synthetic */ Builder(C10501 c10501) {
+        /* synthetic */ Builder(C10641 c10641) {
             this();
         }
 
@@ -49,7 +49,7 @@ public final class DocumentDelete extends GeneratedMessageLite<DocumentDelete, B
 
     /* renamed from: com.google.firestore.v1.DocumentDelete$1 */
     /* loaded from: classes3.dex */
-    static /* synthetic */ class C10501 {
+    static /* synthetic */ class C10641 {
 
         /* renamed from: $SwitchMap$com$google$protobuf$GeneratedMessageLite$MethodToInvoke */
         static final /* synthetic */ int[] f205xa1df5c61;
@@ -90,7 +90,7 @@ public final class DocumentDelete extends GeneratedMessageLite<DocumentDelete, B
 
     @Override // com.google.protobuf.GeneratedMessageLite
     protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke methodToInvoke, Object obj, Object obj2) {
-        switch (C10501.f205xa1df5c61[methodToInvoke.ordinal()]) {
+        switch (C10641.f205xa1df5c61[methodToInvoke.ordinal()]) {
             case 1:
                 return new DocumentDelete();
             case 2:

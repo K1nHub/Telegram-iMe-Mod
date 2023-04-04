@@ -125,7 +125,7 @@
 
     const-string v7, "groups"
 
-    const-string v8, "user"
+    const-string/jumbo v8, "user"
 
     const/4 v9, 0x1
 
@@ -630,7 +630,7 @@
     .line 119
     sget-object p0, Lorg/telegram/messenger/SaveToGallerySettingsHelper;->user:Lorg/telegram/messenger/SaveToGallerySettingsHelper$SharedSettings;
 
-    const-string v1, "user"
+    const-string/jumbo v1, "user"
 
     invoke-static {p0, v1, v0}, Lorg/telegram/messenger/SaveToGallerySettingsHelper$SharedSettings;->access$000(Lorg/telegram/messenger/SaveToGallerySettingsHelper$SharedSettings;Ljava/lang/String;Landroid/content/SharedPreferences;)V
 

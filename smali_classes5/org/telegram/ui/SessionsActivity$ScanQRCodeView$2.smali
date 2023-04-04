@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/SessionsActivity$ScanQRCodeView;Landroid/content/Context;Lorg/telegram/ui/SessionsActivity;)V
     .locals 0
 
-    .line 1048
+    .line 1056
     iput-object p1, p0, Lorg/telegram/ui/SessionsActivity$ScanQRCodeView$2;->this$1:Lorg/telegram/ui/SessionsActivity$ScanQRCodeView;
 
     invoke-direct {p0, p2}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
@@ -35,10 +35,10 @@
 .method public draw(Landroid/graphics/Canvas;)V
     .locals 4
 
-    .line 1051
+    .line 1059
     invoke-super {p0, p1}, Landroid/widget/TextView;->draw(Landroid/graphics/Canvas;)V
 
-    .line 1053
+    .line 1061
     iget-object v0, p0, Lorg/telegram/ui/SessionsActivity$ScanQRCodeView$2;->this$1:Lorg/telegram/ui/SessionsActivity$ScanQRCodeView;
 
     iget-object v1, v0, Lorg/telegram/ui/SessionsActivity$ScanQRCodeView;->flickerDrawable:Lorg/telegram/ui/Components/voip/CellFlickerDrawable;
@@ -69,7 +69,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 1054
+    .line 1062
     sget-object v0, Lorg/telegram/messenger/AndroidUtilities;->rectTmp:Landroid/graphics/RectF;
 
     invoke-virtual {p0}, Landroid/widget/TextView;->getWidth()I
@@ -88,7 +88,7 @@
 
     invoke-virtual {v0, v3, v3, v1, v2}, Landroid/graphics/RectF;->set(FFFF)V
 
-    .line 1055
+    .line 1063
     iget-object v1, p0, Lorg/telegram/ui/SessionsActivity$ScanQRCodeView$2;->this$1:Lorg/telegram/ui/SessionsActivity$ScanQRCodeView;
 
     iget-object v1, v1, Lorg/telegram/ui/SessionsActivity$ScanQRCodeView;->flickerDrawable:Lorg/telegram/ui/Components/voip/CellFlickerDrawable;
@@ -99,7 +99,7 @@
 
     invoke-virtual {v1, v2}, Lorg/telegram/ui/Components/voip/CellFlickerDrawable;->setParentWidth(I)V
 
-    .line 1056
+    .line 1064
     iget-object v1, p0, Lorg/telegram/ui/SessionsActivity$ScanQRCodeView$2;->this$1:Lorg/telegram/ui/SessionsActivity$ScanQRCodeView;
 
     iget-object v1, v1, Lorg/telegram/ui/SessionsActivity$ScanQRCodeView;->flickerDrawable:Lorg/telegram/ui/Components/voip/CellFlickerDrawable;
@@ -116,7 +116,7 @@
 
     invoke-virtual {v1, p1, v0, v2, v3}, Lorg/telegram/ui/Components/voip/CellFlickerDrawable;->draw(Landroid/graphics/Canvas;Landroid/graphics/RectF;FLandroid/view/View;)V
 
-    .line 1057
+    .line 1065
     invoke-virtual {p0}, Landroid/widget/TextView;->invalidate()V
 
     :cond_0

@@ -2,7 +2,7 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lorg/fork/utils/Callbacks$Callback;
+.implements Lkotlin/jvm/functions/Function1;
 
 
 # static fields
@@ -32,10 +32,18 @@
 
 
 # virtual methods
-.method public final invoke()V
+.method public final invoke(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    invoke-static {}, Lorg/telegram/ui/ChatEditActivity;->$r8$lambda$ncN-BmWF66b4w9lAwopJ_wv_9Qo()V
+    check-cast p1, Lorg/telegram/ui/DialogsActivity;
 
-    return-void
+    invoke-virtual {p1}, Lorg/telegram/ui/DialogsActivity;->isArchive()Z
+
+    move-result p1
+
+    invoke-static {p1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object p1
+
+    return-object p1
 .end method

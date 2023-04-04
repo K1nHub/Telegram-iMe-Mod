@@ -77,6 +77,11 @@ public abstract class BaseQuickAdapter<T, VH extends BaseViewHolder> extends Rec
         new Companion(null);
     }
 
+    @Override // com.chad.library.adapter.base.BaseQuickAdapterModuleImp
+    public /* synthetic */ BaseLoadMoreModule addLoadMoreModule(BaseQuickAdapter baseQuickAdapter) {
+        return BaseQuickAdapterModuleImp.CC.$default$addLoadMoreModule(this, baseQuickAdapter);
+    }
+
     protected abstract void convert(VH vh, T t);
 
     protected void convert(VH holder, T t, List<? extends Object> payloads) {
@@ -100,10 +105,6 @@ public abstract class BaseQuickAdapter<T, VH extends BaseViewHolder> extends Rec
 
     public final void setWeakRecyclerView(WeakReference<RecyclerView> weakReference) {
         Intrinsics.checkNotNullParameter(weakReference, "<set-?>");
-    }
-
-    public BaseLoadMoreModule addLoadMoreModule(BaseQuickAdapter<?, ?> baseQuickAdapter) {
-        return BaseQuickAdapterModuleImp.DefaultImpls.addLoadMoreModule(this, baseQuickAdapter);
     }
 
     /* JADX WARN: Multi-variable type inference failed */

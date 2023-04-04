@@ -238,11 +238,11 @@
     .line 1132
     iget-object v2, v0, Lorg/telegram/ui/PremiumPreviewFragment$Adapter;->this$0:Lorg/telegram/ui/PremiumPreviewFragment;
 
-    invoke-virtual {v2}, Lorg/telegram/ui/ActionBar/BaseFragment;->getForkCommonController()Lorg/fork/controller/ForkCommonController;
+    invoke-virtual {v2}, Lorg/telegram/ui/ActionBar/BaseFragment;->getForkCommonController()Lcom/iMe/fork/controller/ForkCommonController;
 
     move-result-object v2
 
-    invoke-virtual {v2}, Lorg/fork/controller/ForkCommonController;->isPremiumAnimateStickers()Z
+    invoke-virtual {v2}, Lcom/iMe/fork/controller/ForkCommonController;->isPremiumAnimateStickers()Z
 
     move-result v2
 
@@ -258,11 +258,11 @@
     .line 1134
     iget-object v2, v0, Lorg/telegram/ui/PremiumPreviewFragment$Adapter;->this$0:Lorg/telegram/ui/PremiumPreviewFragment;
 
-    invoke-virtual {v2}, Lorg/telegram/ui/ActionBar/BaseFragment;->getForkCommonController()Lorg/fork/controller/ForkCommonController;
+    invoke-virtual {v2}, Lorg/telegram/ui/ActionBar/BaseFragment;->getForkCommonController()Lcom/iMe/fork/controller/ForkCommonController;
 
     move-result-object v2
 
-    invoke-virtual {v2}, Lorg/fork/controller/ForkCommonController;->isShowPremiumBadgeEnabled()Z
+    invoke-virtual {v2}, Lcom/iMe/fork/controller/ForkCommonController;->isShowPremiumBadgeEnabled()Z
 
     move-result v2
 
@@ -278,11 +278,11 @@
     .line 1136
     iget-object v2, v0, Lorg/telegram/ui/PremiumPreviewFragment$Adapter;->this$0:Lorg/telegram/ui/PremiumPreviewFragment;
 
-    invoke-virtual {v2}, Lorg/telegram/ui/ActionBar/BaseFragment;->getForkCommonController()Lorg/fork/controller/ForkCommonController;
+    invoke-virtual {v2}, Lorg/telegram/ui/ActionBar/BaseFragment;->getForkCommonController()Lcom/iMe/fork/controller/ForkCommonController;
 
     move-result-object v2
 
-    invoke-virtual {v2}, Lorg/fork/controller/ForkCommonController;->isPremiumAnimateAvatars()Z
+    invoke-virtual {v2}, Lcom/iMe/fork/controller/ForkCommonController;->isPremiumAnimateAvatars()Z
 
     move-result v2
 
@@ -298,11 +298,11 @@
     .line 1138
     iget-object v2, v0, Lorg/telegram/ui/PremiumPreviewFragment$Adapter;->this$0:Lorg/telegram/ui/PremiumPreviewFragment;
 
-    invoke-virtual {v2}, Lorg/telegram/ui/ActionBar/BaseFragment;->getForkCommonController()Lorg/fork/controller/ForkCommonController;
+    invoke-virtual {v2}, Lorg/telegram/ui/ActionBar/BaseFragment;->getForkCommonController()Lcom/iMe/fork/controller/ForkCommonController;
 
     move-result-object v2
 
-    invoke-virtual {v2}, Lorg/fork/controller/ForkCommonController;->isShowPremiumStatusEnabled()Z
+    invoke-virtual {v2}, Lcom/iMe/fork/controller/ForkCommonController;->isShowPremiumStatusEnabled()Z
 
     move-result v2
 

@@ -11,10 +11,10 @@ import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
-import com.google.android.exoplayer2.C0468C;
+import com.google.android.exoplayer2.C0482C;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3301R;
+import org.telegram.messenger.C3316R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.p048ui.ActionBar.Theme;
 import org.telegram.p048ui.Cells.ChatMessageCell;
@@ -56,18 +56,18 @@ public class ChecksHintView extends FrameLayout {
             this.textView[i].setPivotX(BitmapDescriptorFactory.HUE_RED);
             frameLayout.addView(this.textView[i], LayoutHelper.createFrame(-2, -2, 51, 32, i == 0 ? 2 : 26, 10, 0));
             if (i == 0) {
-                this.imageView[i].setAnimation(C3301R.C3306raw.ticks_single, 24, 24);
-                this.textView[i].setText(LocaleController.getString("HintSent", C3301R.string.HintSent));
+                this.imageView[i].setAnimation(C3316R.C3321raw.ticks_single, 24, 24);
+                this.textView[i].setText(LocaleController.getString("HintSent", C3316R.string.HintSent));
             } else {
-                this.imageView[i].setAnimation(C3301R.C3306raw.ticks_double, 24, 24);
-                this.textView[i].setText(LocaleController.getString("HintRead", C3301R.string.HintRead));
+                this.imageView[i].setAnimation(C3316R.C3321raw.ticks_double, 24, 24);
+                this.textView[i].setText(LocaleController.getString("HintRead", C3316R.string.HintRead));
             }
             this.imageView[i].playAnimation();
             i++;
         }
         ImageView imageView = new ImageView(context);
         this.arrowImageView = imageView;
-        imageView.setImageResource(C3301R.C3303drawable.tooltip_arrow);
+        imageView.setImageResource(C3316R.C3318drawable.tooltip_arrow);
         this.arrowImageView.setColorFilter(new PorterDuffColorFilter(getThemedColor("chat_gifSaveHintBackground"), PorterDuff.Mode.MULTIPLY));
         addView(this.arrowImageView, LayoutHelper.createFrame(14, 6, 83, 0, 0, 0, 0));
     }
@@ -138,7 +138,7 @@ public class ChecksHintView extends FrameLayout {
             AnimatorSet animatorSet2 = new AnimatorSet();
             this.animatorSet = animatorSet2;
             animatorSet2.playTogether(ObjectAnimator.ofFloat(this, View.ALPHA, BitmapDescriptorFactory.HUE_RED, 1.0f), ObjectAnimator.ofFloat(this, View.SCALE_X, BitmapDescriptorFactory.HUE_RED, 1.0f), ObjectAnimator.ofFloat(this, View.SCALE_Y, BitmapDescriptorFactory.HUE_RED, 1.0f));
-            this.animatorSet.addListener(new C44371());
+            this.animatorSet.addListener(new C44581());
             this.animatorSet.setDuration(180L);
             this.animatorSet.start();
             while (i3 < 2) {
@@ -159,8 +159,8 @@ public class ChecksHintView extends FrameLayout {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: org.telegram.ui.Components.ChecksHintView$1 */
     /* loaded from: classes6.dex */
-    public class C44371 extends AnimatorListenerAdapter {
-        C44371() {
+    public class C44581 extends AnimatorListenerAdapter {
+        C44581() {
         }
 
         @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
@@ -169,9 +169,9 @@ public class ChecksHintView extends FrameLayout {
             AndroidUtilities.runOnUIThread(ChecksHintView.this.hideRunnable = new Runnable() { // from class: org.telegram.ui.Components.ChecksHintView$1$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    ChecksHintView.C44371.this.lambda$onAnimationEnd$0();
+                    ChecksHintView.C44581.this.lambda$onAnimationEnd$0();
                 }
-            }, C0468C.DEFAULT_MAX_SEEK_TO_PREVIOUS_POSITION_MS);
+            }, C0482C.DEFAULT_MAX_SEEK_TO_PREVIOUS_POSITION_MS);
         }
 
         /* JADX INFO: Access modifiers changed from: private */

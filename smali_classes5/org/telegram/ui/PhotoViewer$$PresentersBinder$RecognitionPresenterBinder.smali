@@ -27,7 +27,7 @@
     .locals 2
 
     .line 21
-    const-class p1, Lcom/smedialink/ui/recognition/PhotoViewerPresenter;
+    const-class p1, Lcom/iMe/ui/recognition/PhotoViewerPresenter;
 
     const-string v0, "recognitionPresenter"
 
@@ -55,9 +55,9 @@
     .locals 0
 
     .line 26
-    check-cast p2, Lcom/smedialink/ui/recognition/PhotoViewerPresenter;
+    check-cast p2, Lcom/iMe/ui/recognition/PhotoViewerPresenter;
 
-    iput-object p2, p1, Lorg/telegram/ui/PhotoViewer;->recognitionPresenter:Lcom/smedialink/ui/recognition/PhotoViewerPresenter;
+    iput-object p2, p1, Lorg/telegram/ui/PhotoViewer;->recognitionPresenter:Lcom/iMe/ui/recognition/PhotoViewerPresenter;
 
     return-void
 .end method
@@ -88,7 +88,7 @@
     .end annotation
 
     .line 31
-    invoke-virtual {p1}, Lorg/telegram/ui/PhotoViewer;->providePresenter()Lcom/smedialink/ui/recognition/PhotoViewerPresenter;
+    invoke-virtual {p1}, Lorg/telegram/ui/PhotoViewer;->providePresenter()Lcom/iMe/ui/recognition/PhotoViewerPresenter;
 
     move-result-object p1
 

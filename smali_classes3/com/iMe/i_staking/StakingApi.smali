@@ -15,7 +15,7 @@
             "Lcom/iMe/i_staking/request/StakingIdRequest;",
             ")",
             "Lio/reactivex/Observable<",
-            "Lcom/smedialink/storage/data/network/model/response/base/ApiBaseResponse<",
+            "Lcom/iMe/storage/data/network/model/response/base/ApiBaseResponse<",
             "Lcom/iMe/i_staking/response/StakingApprovalInfoResponse;",
             ">;>;"
         }
@@ -37,7 +37,7 @@
             "Lcom/iMe/i_staking/request/StakingIdRequest;",
             ")",
             "Lio/reactivex/Observable<",
-            "Lcom/smedialink/storage/data/network/model/response/base/ApiBaseResponse<",
+            "Lcom/iMe/storage/data/network/model/response/base/ApiBaseResponse<",
             "Lcom/iMe/i_staking/response/StakingDetailedMetadataResponse;",
             ">;>;"
         }
@@ -59,7 +59,7 @@
             "Lcom/iMe/i_staking/request/StakingOperationsRequest;",
             ")",
             "Lio/reactivex/Observable<",
-            "Lcom/smedialink/storage/data/network/model/response/base/ApiBaseResponse<",
+            "Lcom/iMe/storage/data/network/model/response/base/ApiBaseResponse<",
             "Lcom/iMe/i_staking/response/StakingOperationsPagedResponse;",
             ">;>;"
         }
@@ -81,7 +81,7 @@
             "Lcom/iMe/i_staking/request/StakingOwnProgrammesRequest;",
             ")",
             "Lio/reactivex/Observable<",
-            "Lcom/smedialink/storage/data/network/model/response/base/ApiBaseResponse<",
+            "Lcom/iMe/storage/data/network/model/response/base/ApiBaseResponse<",
             "Lcom/iMe/i_staking/response/StakingProgrammesResponse;",
             ">;>;"
         }
@@ -103,7 +103,7 @@
             "Lcom/iMe/i_staking/request/StakingProgrammesRequest;",
             ")",
             "Lio/reactivex/Observable<",
-            "Lcom/smedialink/storage/data/network/model/response/base/ApiBaseResponse<",
+            "Lcom/iMe/storage/data/network/model/response/base/ApiBaseResponse<",
             "Lcom/iMe/i_staking/response/StakingProgrammesResponse;",
             ">;>;"
         }
@@ -119,7 +119,7 @@
         value = {
             "()",
             "Lio/reactivex/Observable<",
-            "Lcom/smedialink/storage/data/network/model/response/base/ApiBaseResponse<",
+            "Lcom/iMe/storage/data/network/model/response/base/ApiBaseResponse<",
             "Lcom/iMe/i_staking/response/StakingTotalStatsResponse;",
             ">;>;"
         }
@@ -141,7 +141,7 @@
             "Lcom/iMe/i_staking/request/StakingTokenActionExecuteRequest;",
             ")",
             "Lio/reactivex/Observable<",
-            "Lcom/smedialink/storage/data/network/model/response/base/ApiBaseResponse<",
+            "Lcom/iMe/storage/data/network/model/response/base/ApiBaseResponse<",
             "Lcom/iMe/i_staking/response/StakingOperationResponse;",
             ">;>;"
         }
@@ -163,7 +163,7 @@
             "Lcom/iMe/i_staking/request/StakingApprovalPrepareRequest;",
             ")",
             "Lio/reactivex/Observable<",
-            "Lcom/smedialink/storage/data/network/model/response/base/ApiBaseResponse<",
+            "Lcom/iMe/storage/data/network/model/response/base/ApiBaseResponse<",
             "Lcom/iMe/i_staking/response/StakingWrappedActionResponse;",
             ">;>;"
         }
@@ -185,7 +185,7 @@
             "Lcom/iMe/i_staking/request/StakingTokenActionExecuteRequest;",
             ")",
             "Lio/reactivex/Observable<",
-            "Lcom/smedialink/storage/data/network/model/response/base/ApiBaseResponse<",
+            "Lcom/iMe/storage/data/network/model/response/base/ApiBaseResponse<",
             "Lcom/iMe/i_staking/response/StakingOperationResponse;",
             ">;>;"
         }
@@ -207,7 +207,7 @@
             "Lcom/iMe/i_staking/request/StakingIdRequest;",
             ")",
             "Lio/reactivex/Observable<",
-            "Lcom/smedialink/storage/data/network/model/response/base/ApiBaseResponse<",
+            "Lcom/iMe/storage/data/network/model/response/base/ApiBaseResponse<",
             "Lcom/iMe/i_staking/response/StakingWrappedActionResponse;",
             ">;>;"
         }
@@ -229,7 +229,7 @@
             "Lcom/iMe/i_staking/request/StakingTokenActionExecuteRequest;",
             ")",
             "Lio/reactivex/Observable<",
-            "Lcom/smedialink/storage/data/network/model/response/base/ApiBaseResponse<",
+            "Lcom/iMe/storage/data/network/model/response/base/ApiBaseResponse<",
             "Lcom/iMe/i_staking/response/StakingOperationResponse;",
             ">;>;"
         }
@@ -251,7 +251,7 @@
             "Lcom/iMe/i_staking/request/StakingDepositPrepareRequest;",
             ")",
             "Lio/reactivex/Observable<",
-            "Lcom/smedialink/storage/data/network/model/response/base/ApiBaseResponse<",
+            "Lcom/iMe/storage/data/network/model/response/base/ApiBaseResponse<",
             "Lcom/iMe/i_staking/response/StakingWrappedActionResponse;",
             ">;>;"
         }
@@ -273,7 +273,7 @@
             "Lcom/iMe/i_staking/request/StakingTokenActionExecuteRequest;",
             ")",
             "Lio/reactivex/Observable<",
-            "Lcom/smedialink/storage/data/network/model/response/base/ApiBaseResponse<",
+            "Lcom/iMe/storage/data/network/model/response/base/ApiBaseResponse<",
             "Lcom/iMe/i_staking/response/StakingOperationResponse;",
             ">;>;"
         }
@@ -295,7 +295,7 @@
             "Lcom/iMe/i_staking/request/StakingWithdrawPrepareRequest;",
             ")",
             "Lio/reactivex/Observable<",
-            "Lcom/smedialink/storage/data/network/model/response/base/ApiBaseResponse<",
+            "Lcom/iMe/storage/data/network/model/response/base/ApiBaseResponse<",
             "Lcom/iMe/i_staking/response/StakingWrappedActionResponse;",
             ">;>;"
         }

@@ -1055,7 +1055,7 @@
 .method public final readTimeout(JLjava/util/concurrent/TimeUnit;)Lokhttp3/OkHttpClient$Builder;
     .locals 1
 
-    const-string v0, "unit"
+    const-string/jumbo v0, "unit"
 
     invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -1074,7 +1074,7 @@
 .method public final writeTimeout(JLjava/util/concurrent/TimeUnit;)Lokhttp3/OkHttpClient$Builder;
     .locals 1
 
-    const-string v0, "unit"
+    const-string/jumbo v0, "unit"
 
     invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 

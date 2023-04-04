@@ -585,7 +585,7 @@
 
     move-result-object v5
 
-    const-string v8, "transport"
+    const-string/jumbo v8, "transport"
 
     .line 265
     invoke-virtual {v5, v8}, Landroid/app/Notification$Builder;->setCategory(Ljava/lang/String;)Landroid/app/Notification$Builder;
@@ -1736,8 +1736,6 @@
     :cond_23
     :goto_16
     return-void
-
-    nop
 
     :array_0
     .array-data 4

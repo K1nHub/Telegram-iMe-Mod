@@ -6,16 +6,16 @@
 
 
 # instance fields
-.field public final synthetic f$0:Lorg/telegram/ui/PasscodeActivity;
+.field public final synthetic f$0:Lorg/telegram/ui/CodeNumberField;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/PasscodeActivity;)V
+.method public synthetic constructor <init>(Lorg/telegram/ui/CodeNumberField;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lorg/telegram/ui/PasscodeActivity$$ExternalSyntheticLambda16;->f$0:Lorg/telegram/ui/PasscodeActivity;
+    iput-object p1, p0, Lorg/telegram/ui/PasscodeActivity$$ExternalSyntheticLambda16;->f$0:Lorg/telegram/ui/CodeNumberField;
 
     return-void
 .end method
@@ -25,9 +25,9 @@
 .method public final run()V
     .locals 1
 
-    iget-object v0, p0, Lorg/telegram/ui/PasscodeActivity$$ExternalSyntheticLambda16;->f$0:Lorg/telegram/ui/PasscodeActivity;
+    iget-object v0, p0, Lorg/telegram/ui/PasscodeActivity$$ExternalSyntheticLambda16;->f$0:Lorg/telegram/ui/CodeNumberField;
 
-    invoke-static {v0}, Lorg/telegram/ui/PasscodeActivity;->$r8$lambda$3er7x9aCk5-okJI8eS_KoyoDDcs(Lorg/telegram/ui/PasscodeActivity;)V
+    invoke-static {v0}, Lorg/telegram/ui/PasscodeActivity;->$r8$lambda$Qho4k5DhQDS-myQdbiJMwikeQek(Lorg/telegram/ui/CodeNumberField;)V
 
     return-void
 .end method

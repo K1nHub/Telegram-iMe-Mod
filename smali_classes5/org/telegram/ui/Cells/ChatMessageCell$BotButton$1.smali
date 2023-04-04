@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Cells/ChatMessageCell$BotButton;)V
     .locals 0
 
-    .line 700
+    .line 703
     iput-object p1, p0, Lorg/telegram/ui/Cells/ChatMessageCell$BotButton$1;->this$1:Lorg/telegram/ui/Cells/ChatMessageCell$BotButton;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
@@ -35,10 +35,10 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 1
 
-    .line 703
+    .line 706
     invoke-super {p0, p1}, Landroid/animation/AnimatorListenerAdapter;->onAnimationEnd(Landroid/animation/Animator;)V
 
-    .line 704
+    .line 707
     iget-object p1, p0, Lorg/telegram/ui/Cells/ChatMessageCell$BotButton$1;->this$1:Lorg/telegram/ui/Cells/ChatMessageCell$BotButton;
 
     const/4 v0, 0x0

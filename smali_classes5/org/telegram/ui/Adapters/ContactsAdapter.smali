@@ -19,9 +19,9 @@
 
 .field private disableSections:Z
 
-.field private filterRowModel:Lcom/smedialink/model/contacts/ContactsFilter;
+.field private filterRowModel:Lcom/iMe/model/contacts/ContactsFilter;
 
-.field private filteredContactsDelegate:Lcom/smedialink/domain/contacts/FilteredContactsByNameDelegate;
+.field private filteredContactsDelegate:Lcom/iMe/domain/contacts/FilteredContactsByNameDelegate;
 
 .field private hasGps:Z
 
@@ -47,7 +47,7 @@
 
 .field private needPhonebook:Z
 
-.field private networkType:Lcom/smedialink/storage/domain/model/crypto/NetworkType;
+.field private networkType:Lcom/iMe/storage/domain/model/crypto/NetworkType;
 
 .field private onlineContacts:Ljava/util/ArrayList;
     .annotation system Ldalvik/annotation/Signature;
@@ -59,11 +59,11 @@
     .end annotation
 .end field
 
-.field private onlineContactsDelegate:Lcom/smedialink/domain/contacts/FilteredByOnlineContactsDelegate;
+.field private onlineContactsDelegate:Lcom/iMe/domain/contacts/FilteredByOnlineContactsDelegate;
 
 .field private onlyUsers:I
 
-.field private qrCodeAction:Lorg/fork/utils/Callbacks$Callback;
+.field private qrCodeAction:Lcom/iMe/fork/utils/Callbacks$Callback;
 
 .field private recipientValue:Ljava/lang/String;
 
@@ -116,9 +116,9 @@
     invoke-direct {p0}, Lorg/telegram/ui/Components/RecyclerListView$SectionsAdapter;-><init>()V
 
     .line 75
-    sget-object v0, Lcom/smedialink/model/contacts/ContactsFilter;->ALL:Lcom/smedialink/model/contacts/ContactsFilter;
+    sget-object v0, Lcom/iMe/model/contacts/ContactsFilter;->ALL:Lcom/iMe/model/contacts/ContactsFilter;
 
-    iput-object v0, p0, Lorg/telegram/ui/Adapters/ContactsAdapter;->filterRowModel:Lcom/smedialink/model/contacts/ContactsFilter;
+    iput-object v0, p0, Lorg/telegram/ui/Adapters/ContactsAdapter;->filterRowModel:Lcom/iMe/model/contacts/ContactsFilter;
 
     const-string v0, ""
 
@@ -226,11 +226,11 @@
     return p0
 .end method
 
-.method private bindFilterModel(Lcom/smedialink/ui/contacts/view/TextCellWithRightImage;Lcom/smedialink/model/contacts/ContactsFilter;)V
+.method private bindFilterModel(Lcom/iMe/ui/contacts/view/TextCellWithRightImage;Lcom/iMe/model/contacts/ContactsFilter;)V
     .locals 3
 
     .line 156
-    invoke-virtual {p2}, Lcom/smedialink/model/contacts/ContactsFilter;->getTitle()I
+    invoke-virtual {p2}, Lcom/iMe/model/contacts/ContactsFilter;->getTitle()I
 
     move-result v0
 
@@ -238,7 +238,7 @@
 
     move-result-object v0
 
-    invoke-virtual {p2}, Lcom/smedialink/model/contacts/ContactsFilter;->getIcon()I
+    invoke-virtual {p2}, Lcom/iMe/model/contacts/ContactsFilter;->getIcon()I
 
     move-result v1
 
@@ -247,7 +247,7 @@
     invoke-virtual {p1, v0, v1, v2}, Lorg/telegram/ui/Cells/TextCell;->setTextAndIcon(Ljava/lang/String;IZ)V
 
     .line 157
-    invoke-virtual {p2}, Lcom/smedialink/model/contacts/ContactsFilter;->getNeedShowDelete()Z
+    invoke-virtual {p2}, Lcom/iMe/model/contacts/ContactsFilter;->getNeedShowDelete()Z
 
     move-result v0
 
@@ -257,7 +257,7 @@
 
     if-nez v0, :cond_0
 
-    invoke-virtual {p0, p2}, Lorg/telegram/ui/Adapters/ContactsAdapter;->getFilteredContacts(Lcom/smedialink/model/contacts/ContactsFilter;)Ljava/util/ArrayList;
+    invoke-virtual {p0, p2}, Lorg/telegram/ui/Adapters/ContactsAdapter;->getFilteredContacts(Lcom/iMe/model/contacts/ContactsFilter;)Ljava/util/ArrayList;
 
     move-result-object v0
 
@@ -270,10 +270,10 @@
     const/4 v2, 0x1
 
     :cond_0
-    invoke-virtual {p1, v2}, Lcom/smedialink/ui/contacts/view/TextCellWithRightImage;->setRightIconVisible(Z)V
+    invoke-virtual {p1, v2}, Lcom/iMe/ui/contacts/view/TextCellWithRightImage;->setRightIconVisible(Z)V
 
     .line 158
-    sget-object v0, Lcom/smedialink/model/contacts/ContactsFilter;->BLOCKED:Lcom/smedialink/model/contacts/ContactsFilter;
+    sget-object v0, Lcom/iMe/model/contacts/ContactsFilter;->BLOCKED:Lcom/iMe/model/contacts/ContactsFilter;
 
     if-ne p2, v0, :cond_1
 
@@ -291,19 +291,19 @@
 
     move-result v0
 
-    invoke-virtual {p1, p2, v0}, Lcom/smedialink/ui/contacts/view/TextCellWithRightImage;->setRightIcon(II)V
+    invoke-virtual {p1, p2, v0}, Lcom/iMe/ui/contacts/view/TextCellWithRightImage;->setRightIcon(II)V
 
     .line 159
     new-instance p2, Lorg/telegram/ui/Adapters/ContactsAdapter$$ExternalSyntheticLambda0;
 
     invoke-direct {p2, p0}, Lorg/telegram/ui/Adapters/ContactsAdapter$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/Adapters/ContactsAdapter;)V
 
-    invoke-virtual {p1, p2}, Lcom/smedialink/ui/contacts/view/TextCellWithRightImage;->setRightActionClickListener(Landroid/view/View$OnClickListener;)V
+    invoke-virtual {p1, p2}, Lcom/iMe/ui/contacts/view/TextCellWithRightImage;->setRightActionClickListener(Landroid/view/View$OnClickListener;)V
 
     return-void
 .end method
 
-.method private getCollectionsModel()Lcom/smedialink/model/contacts/CollectionsFilteredContacts;
+.method private getCollectionsModel()Lcom/iMe/model/contacts/CollectionsFilteredContacts;
     .locals 3
 
     .line 167
@@ -314,9 +314,9 @@
     if-eqz v0, :cond_6
 
     .line 168
-    sget-object v0, Lorg/telegram/ui/Adapters/ContactsAdapter$3;->$SwitchMap$com$smedialink$model$contacts$ContactsFilter:[I
+    sget-object v0, Lorg/telegram/ui/Adapters/ContactsAdapter$3;->$SwitchMap$com$iMe$model$contacts$ContactsFilter:[I
 
-    iget-object v2, p0, Lorg/telegram/ui/Adapters/ContactsAdapter;->filterRowModel:Lcom/smedialink/model/contacts/ContactsFilter;
+    iget-object v2, p0, Lorg/telegram/ui/Adapters/ContactsAdapter;->filterRowModel:Lcom/iMe/model/contacts/ContactsFilter;
 
     invoke-virtual {v2}, Ljava/lang/Enum;->ordinal()I
 
@@ -391,16 +391,16 @@
 
     .line 185
     :cond_2
-    iget-object v0, p0, Lorg/telegram/ui/Adapters/ContactsAdapter;->filteredContactsDelegate:Lcom/smedialink/domain/contacts/FilteredContactsByNameDelegate;
+    iget-object v0, p0, Lorg/telegram/ui/Adapters/ContactsAdapter;->filteredContactsDelegate:Lcom/iMe/domain/contacts/FilteredContactsByNameDelegate;
 
-    invoke-virtual {v0}, Lcom/smedialink/domain/contacts/FilteredContactsByNameDelegate;->getBlockedUsers()Ljava/util/HashMap;
+    invoke-virtual {v0}, Lcom/iMe/domain/contacts/FilteredContactsByNameDelegate;->getBlockedUsers()Ljava/util/HashMap;
 
     move-result-object v0
 
     .line 186
-    iget-object v1, p0, Lorg/telegram/ui/Adapters/ContactsAdapter;->filteredContactsDelegate:Lcom/smedialink/domain/contacts/FilteredContactsByNameDelegate;
+    iget-object v1, p0, Lorg/telegram/ui/Adapters/ContactsAdapter;->filteredContactsDelegate:Lcom/iMe/domain/contacts/FilteredContactsByNameDelegate;
 
-    invoke-virtual {v1}, Lcom/smedialink/domain/contacts/FilteredContactsByNameDelegate;->getBlockedUsersArr()Ljava/util/ArrayList;
+    invoke-virtual {v1}, Lcom/iMe/domain/contacts/FilteredContactsByNameDelegate;->getBlockedUsersArr()Ljava/util/ArrayList;
 
     move-result-object v1
 
@@ -408,16 +408,16 @@
 
     .line 180
     :cond_3
-    iget-object v0, p0, Lorg/telegram/ui/Adapters/ContactsAdapter;->filteredContactsDelegate:Lcom/smedialink/domain/contacts/FilteredContactsByNameDelegate;
+    iget-object v0, p0, Lorg/telegram/ui/Adapters/ContactsAdapter;->filteredContactsDelegate:Lcom/iMe/domain/contacts/FilteredContactsByNameDelegate;
 
-    invoke-virtual {v0}, Lcom/smedialink/domain/contacts/FilteredContactsByNameDelegate;->getNotMutualContacts()Ljava/util/HashMap;
+    invoke-virtual {v0}, Lcom/iMe/domain/contacts/FilteredContactsByNameDelegate;->getNotMutualContacts()Ljava/util/HashMap;
 
     move-result-object v0
 
     .line 181
-    iget-object v1, p0, Lorg/telegram/ui/Adapters/ContactsAdapter;->filteredContactsDelegate:Lcom/smedialink/domain/contacts/FilteredContactsByNameDelegate;
+    iget-object v1, p0, Lorg/telegram/ui/Adapters/ContactsAdapter;->filteredContactsDelegate:Lcom/iMe/domain/contacts/FilteredContactsByNameDelegate;
 
-    invoke-virtual {v1}, Lcom/smedialink/domain/contacts/FilteredContactsByNameDelegate;->getNotMutualContactsArr()Ljava/util/ArrayList;
+    invoke-virtual {v1}, Lcom/iMe/domain/contacts/FilteredContactsByNameDelegate;->getNotMutualContactsArr()Ljava/util/ArrayList;
 
     move-result-object v1
 
@@ -425,16 +425,16 @@
 
     .line 175
     :cond_4
-    iget-object v0, p0, Lorg/telegram/ui/Adapters/ContactsAdapter;->filteredContactsDelegate:Lcom/smedialink/domain/contacts/FilteredContactsByNameDelegate;
+    iget-object v0, p0, Lorg/telegram/ui/Adapters/ContactsAdapter;->filteredContactsDelegate:Lcom/iMe/domain/contacts/FilteredContactsByNameDelegate;
 
-    invoke-virtual {v0}, Lcom/smedialink/domain/contacts/FilteredContactsByNameDelegate;->getMutualContacts()Ljava/util/HashMap;
+    invoke-virtual {v0}, Lcom/iMe/domain/contacts/FilteredContactsByNameDelegate;->getMutualContacts()Ljava/util/HashMap;
 
     move-result-object v0
 
     .line 176
-    iget-object v1, p0, Lorg/telegram/ui/Adapters/ContactsAdapter;->filteredContactsDelegate:Lcom/smedialink/domain/contacts/FilteredContactsByNameDelegate;
+    iget-object v1, p0, Lorg/telegram/ui/Adapters/ContactsAdapter;->filteredContactsDelegate:Lcom/iMe/domain/contacts/FilteredContactsByNameDelegate;
 
-    invoke-virtual {v1}, Lcom/smedialink/domain/contacts/FilteredContactsByNameDelegate;->getMutualContactsArr()Ljava/util/ArrayList;
+    invoke-virtual {v1}, Lcom/iMe/domain/contacts/FilteredContactsByNameDelegate;->getMutualContactsArr()Ljava/util/ArrayList;
 
     move-result-object v1
 
@@ -442,16 +442,16 @@
 
     .line 170
     :cond_5
-    iget-object v0, p0, Lorg/telegram/ui/Adapters/ContactsAdapter;->filteredContactsDelegate:Lcom/smedialink/domain/contacts/FilteredContactsByNameDelegate;
+    iget-object v0, p0, Lorg/telegram/ui/Adapters/ContactsAdapter;->filteredContactsDelegate:Lcom/iMe/domain/contacts/FilteredContactsByNameDelegate;
 
-    invoke-virtual {v0}, Lcom/smedialink/domain/contacts/FilteredContactsByNameDelegate;->getOnlineContactsDictionary()Ljava/util/HashMap;
+    invoke-virtual {v0}, Lcom/iMe/domain/contacts/FilteredContactsByNameDelegate;->getOnlineContactsDictionary()Ljava/util/HashMap;
 
     move-result-object v0
 
     .line 171
-    iget-object v1, p0, Lorg/telegram/ui/Adapters/ContactsAdapter;->filteredContactsDelegate:Lcom/smedialink/domain/contacts/FilteredContactsByNameDelegate;
+    iget-object v1, p0, Lorg/telegram/ui/Adapters/ContactsAdapter;->filteredContactsDelegate:Lcom/iMe/domain/contacts/FilteredContactsByNameDelegate;
 
-    invoke-virtual {v1}, Lcom/smedialink/domain/contacts/FilteredContactsByNameDelegate;->getOnlineContactsArr()Ljava/util/ArrayList;
+    invoke-virtual {v1}, Lcom/iMe/domain/contacts/FilteredContactsByNameDelegate;->getOnlineContactsArr()Ljava/util/ArrayList;
 
     move-result-object v1
 
@@ -509,14 +509,14 @@
 
     .line 201
     :goto_2
-    new-instance v2, Lcom/smedialink/model/contacts/CollectionsFilteredContacts;
+    new-instance v2, Lcom/iMe/model/contacts/CollectionsFilteredContacts;
 
-    invoke-direct {v2, v0, v1}, Lcom/smedialink/model/contacts/CollectionsFilteredContacts;-><init>(Ljava/util/HashMap;Ljava/util/ArrayList;)V
+    invoke-direct {v2, v0, v1}, Lcom/iMe/model/contacts/CollectionsFilteredContacts;-><init>(Ljava/util/HashMap;Ljava/util/ArrayList;)V
 
     return-object v2
 .end method
 
-.method private getHintByType(Lcom/smedialink/storage/domain/model/crypto/NetworkType;)Ljava/lang/String;
+.method private getHintByType(Lcom/iMe/storage/domain/model/crypto/NetworkType;)Ljava/lang/String;
     .locals 3
 
     .line 148
@@ -526,7 +526,7 @@
 
     new-array v1, v1, [Ljava/lang/Object;
 
-    invoke-virtual {p1}, Lcom/smedialink/storage/domain/model/crypto/NetworkType;->getShortName()I
+    invoke-virtual {p1}, Lcom/iMe/storage/domain/model/crypto/NetworkType;->getShortName()I
 
     move-result p1
 
@@ -590,7 +590,7 @@
 
     new-array v1, v1, [Ljava/lang/Object;
 
-    iget-object v2, p0, Lorg/telegram/ui/Adapters/ContactsAdapter;->filterRowModel:Lcom/smedialink/model/contacts/ContactsFilter;
+    iget-object v2, p0, Lorg/telegram/ui/Adapters/ContactsAdapter;->filterRowModel:Lcom/iMe/model/contacts/ContactsFilter;
 
     const/4 v3, 0x0
 
@@ -605,9 +605,9 @@
     .locals 1
 
     .line 662
-    iget-object v0, p0, Lorg/telegram/ui/Adapters/ContactsAdapter;->qrCodeAction:Lorg/fork/utils/Callbacks$Callback;
+    iget-object v0, p0, Lorg/telegram/ui/Adapters/ContactsAdapter;->qrCodeAction:Lcom/iMe/fork/utils/Callbacks$Callback;
 
-    invoke-interface {v0}, Lorg/fork/utils/Callbacks$Callback;->invoke()V
+    invoke-interface {v0}, Lcom/iMe/fork/utils/Callbacks$Callback;->invoke()V
 
     return-void
 .end method
@@ -837,17 +837,17 @@
     if-eqz v3, :cond_3
 
     .line 465
-    invoke-direct {p0}, Lorg/telegram/ui/Adapters/ContactsAdapter;->getCollectionsModel()Lcom/smedialink/model/contacts/CollectionsFilteredContacts;
+    invoke-direct {p0}, Lorg/telegram/ui/Adapters/ContactsAdapter;->getCollectionsModel()Lcom/iMe/model/contacts/CollectionsFilteredContacts;
 
     move-result-object v0
 
     .line 466
-    invoke-virtual {v0}, Lcom/smedialink/model/contacts/CollectionsFilteredContacts;->getUsersSectionsDict()Ljava/util/HashMap;
+    invoke-virtual {v0}, Lcom/iMe/model/contacts/CollectionsFilteredContacts;->getUsersSectionsDict()Ljava/util/HashMap;
 
     move-result-object v2
 
     .line 467
-    invoke-virtual {v0}, Lcom/smedialink/model/contacts/CollectionsFilteredContacts;->getSortedUsersSectionsArray()Ljava/util/ArrayList;
+    invoke-virtual {v0}, Lcom/iMe/model/contacts/CollectionsFilteredContacts;->getSortedUsersSectionsArray()Ljava/util/ArrayList;
 
     move-result-object v0
 
@@ -1062,12 +1062,12 @@
     return v4
 .end method
 
-.method public getFilteredContacts(Lcom/smedialink/model/contacts/ContactsFilter;)Ljava/util/ArrayList;
+.method public getFilteredContacts(Lcom/iMe/model/contacts/ContactsFilter;)Ljava/util/ArrayList;
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Lcom/smedialink/model/contacts/ContactsFilter;",
+            "Lcom/iMe/model/contacts/ContactsFilter;",
             ")",
             "Ljava/util/ArrayList<",
             "Lorg/telegram/tgnet/TLRPC$TL_contact;",
@@ -1076,9 +1076,9 @@
     .end annotation
 
     .line 105
-    iget-object v0, p0, Lorg/telegram/ui/Adapters/ContactsAdapter;->onlineContactsDelegate:Lcom/smedialink/domain/contacts/FilteredByOnlineContactsDelegate;
+    iget-object v0, p0, Lorg/telegram/ui/Adapters/ContactsAdapter;->onlineContactsDelegate:Lcom/iMe/domain/contacts/FilteredByOnlineContactsDelegate;
 
-    invoke-virtual {v0, p1}, Lcom/smedialink/domain/contacts/FilteredByOnlineContactsDelegate;->getContactsByFilter(Lcom/smedialink/model/contacts/ContactsFilter;)Ljava/util/ArrayList;
+    invoke-virtual {v0, p1}, Lcom/iMe/domain/contacts/FilteredByOnlineContactsDelegate;->getContactsByFilter(Lcom/iMe/model/contacts/ContactsFilter;)Ljava/util/ArrayList;
 
     move-result-object p1
 
@@ -1146,17 +1146,17 @@
     if-eqz v3, :cond_2
 
     .line 338
-    invoke-direct {p0}, Lorg/telegram/ui/Adapters/ContactsAdapter;->getCollectionsModel()Lcom/smedialink/model/contacts/CollectionsFilteredContacts;
+    invoke-direct {p0}, Lorg/telegram/ui/Adapters/ContactsAdapter;->getCollectionsModel()Lcom/iMe/model/contacts/CollectionsFilteredContacts;
 
     move-result-object v0
 
     .line 339
-    invoke-virtual {v0}, Lcom/smedialink/model/contacts/CollectionsFilteredContacts;->getUsersSectionsDict()Ljava/util/HashMap;
+    invoke-virtual {v0}, Lcom/iMe/model/contacts/CollectionsFilteredContacts;->getUsersSectionsDict()Ljava/util/HashMap;
 
     move-result-object v2
 
     .line 340
-    invoke-virtual {v0}, Lcom/smedialink/model/contacts/CollectionsFilteredContacts;->getSortedUsersSectionsArray()Ljava/util/ArrayList;
+    invoke-virtual {v0}, Lcom/iMe/model/contacts/CollectionsFilteredContacts;->getSortedUsersSectionsArray()Ljava/util/ArrayList;
 
     move-result-object v0
 
@@ -1443,17 +1443,17 @@
     if-eqz v3, :cond_2
 
     .line 763
-    invoke-direct {p0}, Lorg/telegram/ui/Adapters/ContactsAdapter;->getCollectionsModel()Lcom/smedialink/model/contacts/CollectionsFilteredContacts;
+    invoke-direct {p0}, Lorg/telegram/ui/Adapters/ContactsAdapter;->getCollectionsModel()Lcom/iMe/model/contacts/CollectionsFilteredContacts;
 
     move-result-object v0
 
     .line 764
-    invoke-virtual {v0}, Lcom/smedialink/model/contacts/CollectionsFilteredContacts;->getUsersSectionsDict()Ljava/util/HashMap;
+    invoke-virtual {v0}, Lcom/iMe/model/contacts/CollectionsFilteredContacts;->getUsersSectionsDict()Ljava/util/HashMap;
 
     move-result-object v2
 
     .line 765
-    invoke-virtual {v0}, Lcom/smedialink/model/contacts/CollectionsFilteredContacts;->getSortedUsersSectionsArray()Ljava/util/ArrayList;
+    invoke-virtual {v0}, Lcom/iMe/model/contacts/CollectionsFilteredContacts;->getSortedUsersSectionsArray()Ljava/util/ArrayList;
 
     move-result-object v0
 
@@ -1526,7 +1526,7 @@
     if-nez p2, :cond_6
 
     .line 779
-    sget p1, Lcom/smedialink/common/IdFabric$ViewTypes;->CONTACTS_INPUT_ADDRESS:I
+    sget p1, Lcom/iMe/common/IdFabric$ViewTypes;->CONTACTS_INPUT_ADDRESS:I
 
     return p1
 
@@ -1679,7 +1679,7 @@
     if-eqz p1, :cond_15
 
     .line 815
-    sget p1, Lcom/smedialink/common/IdFabric$ViewTypes;->CONTACTS_FILTER:I
+    sget p1, Lcom/iMe/common/IdFabric$ViewTypes;->CONTACTS_FILTER:I
 
     return p1
 
@@ -1737,11 +1737,11 @@
     if-eqz v2, :cond_2
 
     .line 829
-    invoke-direct {p0}, Lorg/telegram/ui/Adapters/ContactsAdapter;->getCollectionsModel()Lcom/smedialink/model/contacts/CollectionsFilteredContacts;
+    invoke-direct {p0}, Lorg/telegram/ui/Adapters/ContactsAdapter;->getCollectionsModel()Lcom/iMe/model/contacts/CollectionsFilteredContacts;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lcom/smedialink/model/contacts/CollectionsFilteredContacts;->getSortedUsersSectionsArray()Ljava/util/ArrayList;
+    invoke-virtual {v0}, Lcom/iMe/model/contacts/CollectionsFilteredContacts;->getSortedUsersSectionsArray()Ljava/util/ArrayList;
 
     move-result-object v0
 
@@ -1911,11 +1911,11 @@
     if-eqz v1, :cond_2
 
     .line 437
-    invoke-direct {p0}, Lorg/telegram/ui/Adapters/ContactsAdapter;->getCollectionsModel()Lcom/smedialink/model/contacts/CollectionsFilteredContacts;
+    invoke-direct {p0}, Lorg/telegram/ui/Adapters/ContactsAdapter;->getCollectionsModel()Lcom/iMe/model/contacts/CollectionsFilteredContacts;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lcom/smedialink/model/contacts/CollectionsFilteredContacts;->getSortedUsersSectionsArray()Ljava/util/ArrayList;
+    invoke-virtual {v0}, Lcom/iMe/model/contacts/CollectionsFilteredContacts;->getSortedUsersSectionsArray()Ljava/util/ArrayList;
 
     move-result-object v0
 
@@ -2016,15 +2016,15 @@
     if-eqz v2, :cond_2
 
     .line 533
-    invoke-direct {p0}, Lorg/telegram/ui/Adapters/ContactsAdapter;->getCollectionsModel()Lcom/smedialink/model/contacts/CollectionsFilteredContacts;
+    invoke-direct {p0}, Lorg/telegram/ui/Adapters/ContactsAdapter;->getCollectionsModel()Lcom/iMe/model/contacts/CollectionsFilteredContacts;
 
     move-result-object v0
 
     .line 534
-    invoke-virtual {v0}, Lcom/smedialink/model/contacts/CollectionsFilteredContacts;->getUsersSectionsDict()Ljava/util/HashMap;
+    invoke-virtual {v0}, Lcom/iMe/model/contacts/CollectionsFilteredContacts;->getUsersSectionsDict()Ljava/util/HashMap;
 
     .line 535
-    invoke-virtual {v0}, Lcom/smedialink/model/contacts/CollectionsFilteredContacts;->getSortedUsersSectionsArray()Ljava/util/ArrayList;
+    invoke-virtual {v0}, Lcom/iMe/model/contacts/CollectionsFilteredContacts;->getSortedUsersSectionsArray()Ljava/util/ArrayList;
 
     move-result-object v0
 
@@ -2200,17 +2200,17 @@
     if-eqz v2, :cond_2
 
     .line 386
-    invoke-direct {p0}, Lorg/telegram/ui/Adapters/ContactsAdapter;->getCollectionsModel()Lcom/smedialink/model/contacts/CollectionsFilteredContacts;
+    invoke-direct {p0}, Lorg/telegram/ui/Adapters/ContactsAdapter;->getCollectionsModel()Lcom/iMe/model/contacts/CollectionsFilteredContacts;
 
     move-result-object p1
 
     .line 387
-    invoke-virtual {p1}, Lcom/smedialink/model/contacts/CollectionsFilteredContacts;->getUsersSectionsDict()Ljava/util/HashMap;
+    invoke-virtual {p1}, Lcom/iMe/model/contacts/CollectionsFilteredContacts;->getUsersSectionsDict()Ljava/util/HashMap;
 
     move-result-object v1
 
     .line 388
-    invoke-virtual {p1}, Lcom/smedialink/model/contacts/CollectionsFilteredContacts;->getSortedUsersSectionsArray()Ljava/util/ArrayList;
+    invoke-virtual {p1}, Lcom/iMe/model/contacts/CollectionsFilteredContacts;->getSortedUsersSectionsArray()Ljava/util/ArrayList;
 
     move-result-object p1
 
@@ -2391,14 +2391,14 @@
 
     move-result v0
 
-    sget v1, Lcom/smedialink/common/IdFabric$ViewTypes;->CONTACTS_FILTER:I
+    sget v1, Lcom/iMe/common/IdFabric$ViewTypes;->CONTACTS_FILTER:I
 
     if-ne v0, v1, :cond_0
 
     .line 652
     iget-object p1, p3, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
-    check-cast p1, Lcom/smedialink/ui/contacts/view/TextCellWithRightImage;
+    check-cast p1, Lcom/iMe/ui/contacts/view/TextCellWithRightImage;
 
     .line 653
     iget-boolean p3, p0, Lorg/telegram/ui/Adapters/ContactsAdapter;->needPhonebook:Z
@@ -2412,9 +2412,9 @@
     if-eqz p2, :cond_1c
 
     .line 654
-    iget-object p2, p0, Lorg/telegram/ui/Adapters/ContactsAdapter;->filterRowModel:Lcom/smedialink/model/contacts/ContactsFilter;
+    iget-object p2, p0, Lorg/telegram/ui/Adapters/ContactsAdapter;->filterRowModel:Lcom/iMe/model/contacts/ContactsFilter;
 
-    invoke-direct {p0, p1, p2}, Lorg/telegram/ui/Adapters/ContactsAdapter;->bindFilterModel(Lcom/smedialink/ui/contacts/view/TextCellWithRightImage;Lcom/smedialink/model/contacts/ContactsFilter;)V
+    invoke-direct {p0, p1, p2}, Lorg/telegram/ui/Adapters/ContactsAdapter;->bindFilterModel(Lcom/iMe/ui/contacts/view/TextCellWithRightImage;Lcom/iMe/model/contacts/ContactsFilter;)V
 
     goto/16 :goto_6
 
@@ -2424,7 +2424,7 @@
 
     move-result v0
 
-    sget v1, Lcom/smedialink/common/IdFabric$ViewTypes;->CONTACTS_INPUT_ADDRESS:I
+    sget v1, Lcom/iMe/common/IdFabric$ViewTypes;->CONTACTS_INPUT_ADDRESS:I
 
     const/4 v2, 0x1
 
@@ -2466,7 +2466,7 @@
 
     move-result p3
 
-    invoke-static {p2, p3}, Lcom/smedialink/utils/extentions/common/ViewExtKt;->setCompoundDrawablesColor(Landroid/widget/TextView;I)V
+    invoke-static {p2, p3}, Lcom/iMe/utils/extentions/common/ViewExtKt;->setCompoundDrawablesColor(Landroid/widget/TextView;I)V
 
     .line 661
     invoke-virtual {p1}, Lorg/telegram/ui/Cells/EditTextSettingsCell;->getTextView()Lorg/telegram/ui/Components/EditTextBoldCursor;
@@ -2477,7 +2477,7 @@
 
     invoke-direct {p3, p0}, Lorg/telegram/ui/Adapters/ContactsAdapter$$ExternalSyntheticLambda1;-><init>(Lorg/telegram/ui/Adapters/ContactsAdapter;)V
 
-    invoke-static {p2, p3}, Lcom/smedialink/utils/extentions/common/ViewExtKt;->setRightDrawableOnClickListener(Landroid/widget/TextView;Ljava/lang/Runnable;)V
+    invoke-static {p2, p3}, Lcom/iMe/utils/extentions/common/ViewExtKt;->setRightDrawableOnClickListener(Landroid/widget/TextView;Ljava/lang/Runnable;)V
 
     .line 664
     invoke-virtual {p1}, Lorg/telegram/ui/Cells/EditTextSettingsCell;->getTextView()Lorg/telegram/ui/Components/EditTextBoldCursor;
@@ -2918,17 +2918,17 @@
     if-eqz v4, :cond_17
 
     .line 678
-    invoke-direct {p0}, Lorg/telegram/ui/Adapters/ContactsAdapter;->getCollectionsModel()Lcom/smedialink/model/contacts/CollectionsFilteredContacts;
+    invoke-direct {p0}, Lorg/telegram/ui/Adapters/ContactsAdapter;->getCollectionsModel()Lcom/iMe/model/contacts/CollectionsFilteredContacts;
 
     move-result-object v0
 
     .line 679
-    invoke-virtual {v0}, Lcom/smedialink/model/contacts/CollectionsFilteredContacts;->getUsersSectionsDict()Ljava/util/HashMap;
+    invoke-virtual {v0}, Lcom/iMe/model/contacts/CollectionsFilteredContacts;->getUsersSectionsDict()Ljava/util/HashMap;
 
     move-result-object v1
 
     .line 680
-    invoke-virtual {v0}, Lcom/smedialink/model/contacts/CollectionsFilteredContacts;->getSortedUsersSectionsArray()Ljava/util/ArrayList;
+    invoke-virtual {v0}, Lcom/iMe/model/contacts/CollectionsFilteredContacts;->getSortedUsersSectionsArray()Ljava/util/ArrayList;
 
     move-result-object v0
 
@@ -3057,26 +3057,26 @@
     .locals 5
 
     .line 568
-    sget v0, Lcom/smedialink/common/IdFabric$ViewTypes;->CONTACTS_FILTER:I
+    sget v0, Lcom/iMe/common/IdFabric$ViewTypes;->CONTACTS_FILTER:I
 
     const/4 v1, 0x0
 
     if-ne p2, v0, :cond_0
 
     .line 569
-    new-instance p1, Lcom/smedialink/ui/contacts/view/TextCellWithRightImage;
+    new-instance p1, Lcom/iMe/ui/contacts/view/TextCellWithRightImage;
 
     iget-object p2, p0, Lorg/telegram/ui/Adapters/ContactsAdapter;->mContext:Landroid/content/Context;
 
     const/16 v0, 0x17
 
-    invoke-direct {p1, p2, v0, v1}, Lcom/smedialink/ui/contacts/view/TextCellWithRightImage;-><init>(Landroid/content/Context;IZ)V
+    invoke-direct {p1, p2, v0, v1}, Lcom/iMe/ui/contacts/view/TextCellWithRightImage;-><init>(Landroid/content/Context;IZ)V
 
     goto/16 :goto_1
 
     .line 570
     :cond_0
-    sget v0, Lcom/smedialink/common/IdFabric$ViewTypes;->CONTACTS_INPUT_ADDRESS:I
+    sget v0, Lcom/iMe/common/IdFabric$ViewTypes;->CONTACTS_INPUT_ADDRESS:I
 
     const/4 v2, 0x1
 
@@ -3101,9 +3101,9 @@
 
     move-result-object p2
 
-    iget-object v0, p0, Lorg/telegram/ui/Adapters/ContactsAdapter;->networkType:Lcom/smedialink/storage/domain/model/crypto/NetworkType;
+    iget-object v0, p0, Lorg/telegram/ui/Adapters/ContactsAdapter;->networkType:Lcom/iMe/storage/domain/model/crypto/NetworkType;
 
-    invoke-direct {p0, v0}, Lorg/telegram/ui/Adapters/ContactsAdapter;->getHintByType(Lcom/smedialink/storage/domain/model/crypto/NetworkType;)Ljava/lang/String;
+    invoke-direct {p0, v0}, Lorg/telegram/ui/Adapters/ContactsAdapter;->getHintByType(Lcom/iMe/storage/domain/model/crypto/NetworkType;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -3335,16 +3335,16 @@
     .locals 3
 
     .line 116
-    new-instance v0, Lcom/smedialink/domain/contacts/FilteredContactsByNameDelegate;
+    new-instance v0, Lcom/iMe/domain/contacts/FilteredContactsByNameDelegate;
 
     iget v1, p0, Lorg/telegram/ui/Adapters/ContactsAdapter;->currentAccount:I
 
-    invoke-direct {v0, v1}, Lcom/smedialink/domain/contacts/FilteredContactsByNameDelegate;-><init>(I)V
+    invoke-direct {v0, v1}, Lcom/iMe/domain/contacts/FilteredContactsByNameDelegate;-><init>(I)V
 
-    iput-object v0, p0, Lorg/telegram/ui/Adapters/ContactsAdapter;->filteredContactsDelegate:Lcom/smedialink/domain/contacts/FilteredContactsByNameDelegate;
+    iput-object v0, p0, Lorg/telegram/ui/Adapters/ContactsAdapter;->filteredContactsDelegate:Lcom/iMe/domain/contacts/FilteredContactsByNameDelegate;
 
     .line 118
-    new-instance v0, Lcom/smedialink/domain/contacts/FilteredByOnlineContactsDelegate;
+    new-instance v0, Lcom/iMe/domain/contacts/FilteredByOnlineContactsDelegate;
 
     iget v1, p0, Lorg/telegram/ui/Adapters/ContactsAdapter;->currentAccount:I
 
@@ -3355,14 +3355,14 @@
 
     iget-object v2, v2, Lorg/telegram/messenger/ContactsController;->contacts:Ljava/util/ArrayList;
 
-    invoke-direct {v0, v1, v2}, Lcom/smedialink/domain/contacts/FilteredByOnlineContactsDelegate;-><init>(ILjava/util/ArrayList;)V
+    invoke-direct {v0, v1, v2}, Lcom/iMe/domain/contacts/FilteredByOnlineContactsDelegate;-><init>(ILjava/util/ArrayList;)V
 
-    iput-object v0, p0, Lorg/telegram/ui/Adapters/ContactsAdapter;->onlineContactsDelegate:Lcom/smedialink/domain/contacts/FilteredByOnlineContactsDelegate;
+    iput-object v0, p0, Lorg/telegram/ui/Adapters/ContactsAdapter;->onlineContactsDelegate:Lcom/iMe/domain/contacts/FilteredByOnlineContactsDelegate;
 
     .line 123
-    iget-object v0, p0, Lorg/telegram/ui/Adapters/ContactsAdapter;->filterRowModel:Lcom/smedialink/model/contacts/ContactsFilter;
+    iget-object v0, p0, Lorg/telegram/ui/Adapters/ContactsAdapter;->filterRowModel:Lcom/iMe/model/contacts/ContactsFilter;
 
-    invoke-virtual {p0, v0}, Lorg/telegram/ui/Adapters/ContactsAdapter;->getFilteredContacts(Lcom/smedialink/model/contacts/ContactsFilter;)Ljava/util/ArrayList;
+    invoke-virtual {p0, v0}, Lorg/telegram/ui/Adapters/ContactsAdapter;->getFilteredContacts(Lcom/iMe/model/contacts/ContactsFilter;)Ljava/util/ArrayList;
 
     move-result-object v0
 
@@ -3380,14 +3380,14 @@
     .locals 1
 
     .line 109
-    iget-object v0, p0, Lorg/telegram/ui/Adapters/ContactsAdapter;->onlineContactsDelegate:Lcom/smedialink/domain/contacts/FilteredByOnlineContactsDelegate;
+    iget-object v0, p0, Lorg/telegram/ui/Adapters/ContactsAdapter;->onlineContactsDelegate:Lcom/iMe/domain/contacts/FilteredByOnlineContactsDelegate;
 
     if-eqz v0, :cond_0
 
     .line 110
-    iget-object v0, p0, Lorg/telegram/ui/Adapters/ContactsAdapter;->filterRowModel:Lcom/smedialink/model/contacts/ContactsFilter;
+    iget-object v0, p0, Lorg/telegram/ui/Adapters/ContactsAdapter;->filterRowModel:Lcom/iMe/model/contacts/ContactsFilter;
 
-    invoke-virtual {p0, v0}, Lorg/telegram/ui/Adapters/ContactsAdapter;->getFilteredContacts(Lcom/smedialink/model/contacts/ContactsFilter;)Ljava/util/ArrayList;
+    invoke-virtual {p0, v0}, Lorg/telegram/ui/Adapters/ContactsAdapter;->getFilteredContacts(Lcom/iMe/model/contacts/ContactsFilter;)Ljava/util/ArrayList;
 
     move-result-object v0
 
@@ -3404,9 +3404,9 @@
     .locals 2
 
     .line 90
-    iget-object v0, p0, Lorg/telegram/ui/Adapters/ContactsAdapter;->filterRowModel:Lcom/smedialink/model/contacts/ContactsFilter;
+    iget-object v0, p0, Lorg/telegram/ui/Adapters/ContactsAdapter;->filterRowModel:Lcom/iMe/model/contacts/ContactsFilter;
 
-    sget-object v1, Lcom/smedialink/model/contacts/ContactsFilter;->BLOCKED:Lcom/smedialink/model/contacts/ContactsFilter;
+    sget-object v1, Lcom/iMe/model/contacts/ContactsFilter;->BLOCKED:Lcom/iMe/model/contacts/ContactsFilter;
 
     if-ne v0, v1, :cond_0
 
@@ -3451,29 +3451,29 @@
     return-void
 .end method
 
-.method public setFilterModel(Lcom/smedialink/model/contacts/ContactsFilter;)V
+.method public setFilterModel(Lcom/iMe/model/contacts/ContactsFilter;)V
     .locals 0
 
     .line 96
-    iput-object p1, p0, Lorg/telegram/ui/Adapters/ContactsAdapter;->filterRowModel:Lcom/smedialink/model/contacts/ContactsFilter;
+    iput-object p1, p0, Lorg/telegram/ui/Adapters/ContactsAdapter;->filterRowModel:Lcom/iMe/model/contacts/ContactsFilter;
 
     return-void
 .end method
 
-.method public setNetworkType(Lcom/smedialink/storage/domain/model/crypto/NetworkType;)V
+.method public setNetworkType(Lcom/iMe/storage/domain/model/crypto/NetworkType;)V
     .locals 0
 
     .line 128
-    iput-object p1, p0, Lorg/telegram/ui/Adapters/ContactsAdapter;->networkType:Lcom/smedialink/storage/domain/model/crypto/NetworkType;
+    iput-object p1, p0, Lorg/telegram/ui/Adapters/ContactsAdapter;->networkType:Lcom/iMe/storage/domain/model/crypto/NetworkType;
 
     return-void
 .end method
 
-.method public setQrCodeAction(Lorg/fork/utils/Callbacks$Callback;)V
+.method public setQrCodeAction(Lcom/iMe/fork/utils/Callbacks$Callback;)V
     .locals 0
 
     .line 136
-    iput-object p1, p0, Lorg/telegram/ui/Adapters/ContactsAdapter;->qrCodeAction:Lorg/fork/utils/Callbacks$Callback;
+    iput-object p1, p0, Lorg/telegram/ui/Adapters/ContactsAdapter;->qrCodeAction:Lcom/iMe/fork/utils/Callbacks$Callback;
 
     return-void
 .end method
@@ -3517,9 +3517,9 @@
     if-eqz p1, :cond_1
 
     .line 252
-    iget-object p1, p0, Lorg/telegram/ui/Adapters/ContactsAdapter;->filterRowModel:Lcom/smedialink/model/contacts/ContactsFilter;
+    iget-object p1, p0, Lorg/telegram/ui/Adapters/ContactsAdapter;->filterRowModel:Lcom/iMe/model/contacts/ContactsFilter;
 
-    invoke-virtual {p0, p1}, Lorg/telegram/ui/Adapters/ContactsAdapter;->getFilteredContacts(Lcom/smedialink/model/contacts/ContactsFilter;)Ljava/util/ArrayList;
+    invoke-virtual {p0, p1}, Lorg/telegram/ui/Adapters/ContactsAdapter;->getFilteredContacts(Lcom/iMe/model/contacts/ContactsFilter;)Ljava/util/ArrayList;
 
     move-result-object p1
 

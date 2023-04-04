@@ -17,8 +17,6 @@
 # instance fields
 .field private firstQueryTime:J
 
-.field private lastQueryTime:J
-
 .field private response:Lorg/telegram/tgnet/TLObject;
 
 
@@ -39,15 +37,6 @@
     invoke-direct {p0}, Lorg/telegram/messenger/FileRefController$CachedResult;-><init>()V
 
     return-void
-.end method
-
-.method static synthetic access$1002(Lorg/telegram/messenger/FileRefController$CachedResult;J)J
-    .locals 0
-
-    .line 23
-    iput-wide p1, p0, Lorg/telegram/messenger/FileRefController$CachedResult;->lastQueryTime:J
-
-    return-wide p1
 .end method
 
 .method static synthetic access$400(Lorg/telegram/messenger/FileRefController$CachedResult;)Lorg/telegram/tgnet/TLObject;

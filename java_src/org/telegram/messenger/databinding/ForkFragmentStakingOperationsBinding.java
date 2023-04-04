@@ -4,9 +4,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import androidx.viewbinding.ViewBinding;
+import com.iMe.fork.p025ui.view.TabbedViewPager;
 import java.util.Objects;
-import org.fork.p046ui.view.TabbedViewPager;
-import org.telegram.messenger.C3301R;
+import org.telegram.messenger.C3316R;
 /* loaded from: classes4.dex */
 public final class ForkFragmentStakingOperationsBinding implements ViewBinding {
     public final TabbedViewPager operationsPager;
@@ -27,7 +27,7 @@ public final class ForkFragmentStakingOperationsBinding implements ViewBinding {
     }
 
     public static ForkFragmentStakingOperationsBinding inflate(LayoutInflater layoutInflater, ViewGroup viewGroup, boolean z) {
-        View inflate = layoutInflater.inflate(C3301R.layout.fork_fragment_staking_operations, viewGroup, false);
+        View inflate = layoutInflater.inflate(C3316R.layout.fork_fragment_staking_operations, viewGroup, false);
         if (z) {
             viewGroup.addView(inflate);
         }

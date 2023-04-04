@@ -7,7 +7,7 @@ import com.googlecode.mp4parser.boxes.mp4.objectdescriptors.BitWriterBuffer;
 import java.nio.ByteBuffer;
 import java.util.ArrayList;
 import java.util.List;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class AvcDecoderConfigurationRecord {
     public int avcLevelIndication;
     public int avcProfileIndication;

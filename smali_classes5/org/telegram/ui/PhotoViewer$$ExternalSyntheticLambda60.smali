@@ -2,7 +2,7 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Lcom/iMe/ui/recognition/RecognitionBottomSheetDialog$TranslationDelegate;
 
 
 # instance fields
@@ -22,12 +22,12 @@
 
 
 # virtual methods
-.method public final run()V
+.method public final onTranslateAction(Ljava/lang/String;)V
     .locals 1
 
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$$ExternalSyntheticLambda60;->f$0:Lorg/telegram/ui/PhotoViewer;
 
-    invoke-static {v0}, Lorg/telegram/ui/PhotoViewer;->$r8$lambda$0y2S_aYMrpEXSJxj-1TA4OF2T8k(Lorg/telegram/ui/PhotoViewer;)V
+    invoke-virtual {v0, p1}, Lorg/telegram/ui/PhotoViewer;->showTranslateDialog(Ljava/lang/String;)V
 
     return-void
 .end method

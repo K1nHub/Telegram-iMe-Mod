@@ -10,26 +10,32 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.otaliastudios.gif.internal.Logger;
 import com.otaliastudios.opengl.draw.GlRect;
 import com.otaliastudios.opengl.program.GlTextureProgram;
-/* loaded from: classes3.dex */
+import com.otaliastudios.opengl.texture.GlTexture;
+/* loaded from: classes4.dex */
 public class VideoDecoderOutput {
     private static final Logger LOG = new Logger(VideoDecoderOutput.class.getSimpleName());
+    private GlRect mDrawable;
     private boolean mFrameAvailable;
+    private GlTextureProgram mProgram;
     private Surface mSurface;
     private SurfaceTexture mSurfaceTexture;
     private float mScaleX = 1.0f;
     private float mScaleY = 1.0f;
     private int mRotation = 0;
     private final Object mFrameAvailableLock = new Object();
-    private GlTextureProgram mProgram = new GlTextureProgram();
-    private GlRect mDrawable = new GlRect();
 
     public VideoDecoderOutput() {
-        SurfaceTexture surfaceTexture = new SurfaceTexture(this.mProgram.getTextureId());
+        GlTexture glTexture = new GlTexture();
+        GlTextureProgram glTextureProgram = new GlTextureProgram();
+        this.mProgram = glTextureProgram;
+        glTextureProgram.setTexture(glTexture);
+        this.mDrawable = new GlRect();
+        SurfaceTexture surfaceTexture = new SurfaceTexture(glTexture.getId());
         this.mSurfaceTexture = surfaceTexture;
         surfaceTexture.setOnFrameAvailableListener(new SurfaceTexture.OnFrameAvailableListener() { // from class: com.otaliastudios.gif.transcode.internal.VideoDecoderOutput.1
             @Override // android.graphics.SurfaceTexture.OnFrameAvailableListener
             public void onFrameAvailable(SurfaceTexture surfaceTexture2) {
-                VideoDecoderOutput.LOG.m711v("New frame available");
+                VideoDecoderOutput.LOG.m698v("New frame available");
                 synchronized (VideoDecoderOutput.this.mFrameAvailableLock) {
                     if (!VideoDecoderOutput.this.mFrameAvailable) {
                         VideoDecoderOutput.this.mFrameAvailable = true;

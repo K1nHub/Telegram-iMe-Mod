@@ -31,20 +31,20 @@
 .method public constructor <init>(Lorg/telegram/ui/ManageLinksActivity;Landroid/content/Context;)V
     .locals 7
 
-    .line 1053
+    .line 1052
     iput-object p1, p0, Lorg/telegram/ui/ManageLinksActivity$EmptyView;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
-    .line 1054
+    .line 1053
     invoke-direct {p0, p2}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;)V
 
-    .line 1049
+    .line 1048
     sget v0, Lorg/telegram/messenger/UserConfig;->selectedAccount:I
 
     iput v0, p0, Lorg/telegram/ui/ManageLinksActivity$EmptyView;->currentAccount:I
 
     const/16 v0, 0xc
 
-    .line 1056
+    .line 1055
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v1
@@ -59,17 +59,17 @@
 
     const/4 v0, 0x1
 
-    .line 1057
+    .line 1056
     invoke-virtual {p0, v0}, Landroid/widget/LinearLayout;->setOrientation(I)V
 
-    .line 1060
+    .line 1059
     invoke-static {p1}, Lorg/telegram/ui/ManageLinksActivity;->access$100(Lorg/telegram/ui/ManageLinksActivity;)Z
 
     move-result p1
 
     if-eqz p1, :cond_0
 
-    .line 1061
+    .line 1060
     new-instance p1, Lorg/telegram/ui/Components/RLottieImageView;
 
     invoke-direct {p1, p2}, Lorg/telegram/ui/Components/RLottieImageView;-><init>(Landroid/content/Context;)V
@@ -90,7 +90,7 @@
 
     const/4 v6, 0x0
 
-    .line 1062
+    .line 1061
     invoke-static/range {v0 .. v6}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(IIIIIII)Landroid/widget/LinearLayout$LayoutParams;
 
     move-result-object p2
@@ -99,7 +99,7 @@
 
     return-void
 
-    .line 1066
+    .line 1065
     :cond_0
     new-instance p1, Lorg/telegram/ui/Components/BackupImageView;
 
@@ -121,7 +121,7 @@
 
     const/4 v6, 0x0
 
-    .line 1067
+    .line 1066
     invoke-static/range {v0 .. v6}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(IIIIIII)Landroid/widget/LinearLayout$LayoutParams;
 
     move-result-object p2
@@ -134,7 +134,7 @@
 .method private setSticker()V
     .locals 10
 
-    .line 1072
+    .line 1071
     iget-object v0, p0, Lorg/telegram/ui/ManageLinksActivity$EmptyView;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ManageLinksActivity;->access$200(Lorg/telegram/ui/ManageLinksActivity;)Z
@@ -205,7 +205,7 @@
 
     goto :goto_2
 
-    .line 1091
+    .line 1090
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/ManageLinksActivity$EmptyView;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
@@ -215,7 +215,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 1092
+    .line 1091
     iget-object v0, p0, Lorg/telegram/ui/ManageLinksActivity$EmptyView;->lottieImageView:Lorg/telegram/ui/Components/RLottieImageView;
 
     sget v1, Lorg/telegram/messenger/R$drawable;->fork_ic_staking_profit:I
@@ -224,7 +224,7 @@
 
     return-void
 
-    .line 1096
+    .line 1095
     :cond_1
     iget v0, p0, Lorg/telegram/ui/ManageLinksActivity$EmptyView;->currentAccount:I
 
@@ -240,7 +240,7 @@
 
     if-nez v0, :cond_2
 
-    .line 1098
+    .line 1097
     iget v0, p0, Lorg/telegram/ui/ManageLinksActivity$EmptyView;->currentAccount:I
 
     invoke-static {v0}, Lorg/telegram/messenger/MediaDataController;->getInstance(I)Lorg/telegram/messenger/MediaDataController;
@@ -256,7 +256,7 @@
 
     if-eqz v9, :cond_3
 
-    .line 1100
+    .line 1099
     iget-object v0, v9, Lorg/telegram/tgnet/TLRPC$messages_StickerSet;->documents:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
@@ -267,7 +267,7 @@
 
     if-lt v0, v4, :cond_3
 
-    .line 1101
+    .line 1100
     iget-object v0, v9, Lorg/telegram/tgnet/TLRPC$messages_StickerSet;->documents:Ljava/util/ArrayList;
 
     const/4 v1, 0x3
@@ -278,7 +278,7 @@
 
     check-cast v0, Lorg/telegram/tgnet/TLRPC$Document;
 
-    .line 1102
+    .line 1101
     invoke-static {v0}, Lorg/telegram/messenger/ImageLocation;->getForDocument(Lorg/telegram/tgnet/TLRPC$Document;)Lorg/telegram/messenger/ImageLocation;
 
     move-result-object v5
@@ -287,12 +287,12 @@
 
     const-string v2, "windowBackgroundGray"
 
-    .line 1103
+    .line 1102
     invoke-static {v0, v2, v1}, Lorg/telegram/messenger/DocumentObject;->getSvgThumb(Lorg/telegram/tgnet/TLRPC$Document;Ljava/lang/String;F)Lorg/telegram/messenger/SvgHelper$SvgDrawable;
 
     move-result-object v8
 
-    .line 1104
+    .line 1103
     iget-object v4, p0, Lorg/telegram/ui/ManageLinksActivity$EmptyView;->stickerView:Lorg/telegram/ui/Components/BackupImageView;
 
     const-string v6, "104_104"
@@ -303,7 +303,7 @@
 
     goto :goto_1
 
-    .line 1106
+    .line 1105
     :cond_3
     iget v0, p0, Lorg/telegram/ui/ManageLinksActivity$EmptyView;->currentAccount:I
 
@@ -324,14 +324,14 @@
     :goto_1
     return-void
 
-    .line 1073
+    .line 1072
     :cond_5
     :goto_2
     iget-object v0, p0, Lorg/telegram/ui/ManageLinksActivity$EmptyView;->lottieImageView:Lorg/telegram/ui/Components/RLottieImageView;
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/RLottieImageView;->setAutoRepeat(Z)V
 
-    .line 1075
+    .line 1074
     iget-object v0, p0, Lorg/telegram/ui/ManageLinksActivity$EmptyView;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ManageLinksActivity;->access$200(Lorg/telegram/ui/ManageLinksActivity;)Z
@@ -340,12 +340,12 @@
 
     if-eqz v0, :cond_6
 
-    .line 1076
+    .line 1075
     sget v2, Lorg/telegram/messenger/R$raw;->fork_binance_pay_create_collection:I
 
     goto :goto_4
 
-    .line 1077
+    .line 1076
     :cond_6
     iget-object v0, p0, Lorg/telegram/ui/ManageLinksActivity$EmptyView;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
@@ -373,7 +373,7 @@
 
     goto :goto_3
 
-    .line 1079
+    .line 1078
     :cond_7
     iget-object v0, p0, Lorg/telegram/ui/ManageLinksActivity$EmptyView;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
@@ -383,12 +383,12 @@
 
     if-eqz v0, :cond_8
 
-    .line 1080
+    .line 1079
     sget v2, Lorg/telegram/messenger/R$raw;->fork_donations:I
 
     goto :goto_4
 
-    .line 1081
+    .line 1080
     :cond_8
     iget-object v0, p0, Lorg/telegram/ui/ManageLinksActivity$EmptyView;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
@@ -398,12 +398,12 @@
 
     if-eqz v0, :cond_9
 
-    .line 1082
+    .line 1081
     sget v2, Lorg/telegram/messenger/R$raw;->fork_staking_replenish:I
 
     goto :goto_4
 
-    .line 1083
+    .line 1082
     :cond_9
     iget-object v0, p0, Lorg/telegram/ui/ManageLinksActivity$EmptyView;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
@@ -413,12 +413,12 @@
 
     if-eqz v0, :cond_a
 
-    .line 1084
+    .line 1083
     sget v2, Lorg/telegram/messenger/R$raw;->fork_staking_withdraw:I
 
     goto :goto_4
 
-    .line 1085
+    .line 1084
     :cond_a
     iget-object v0, p0, Lorg/telegram/ui/ManageLinksActivity$EmptyView;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
@@ -428,17 +428,17 @@
 
     if-eqz v0, :cond_c
 
-    .line 1086
+    .line 1085
     sget v2, Lorg/telegram/messenger/R$raw;->fork_staking_calculator:I
 
     goto :goto_4
 
-    .line 1078
+    .line 1077
     :cond_b
     :goto_3
     sget v2, Lorg/telegram/messenger/R$raw;->fork_crypto_transfers:I
 
-    .line 1088
+    .line 1087
     :cond_c
     :goto_4
     iget-object v0, p0, Lorg/telegram/ui/ManageLinksActivity$EmptyView;->lottieImageView:Lorg/telegram/ui/Components/RLottieImageView;
@@ -447,7 +447,7 @@
 
     invoke-virtual {v0, v2, v1, v1}, Lorg/telegram/ui/Components/RLottieImageView;->setAnimation(III)V
 
-    .line 1089
+    .line 1088
     iget-object v0, p0, Lorg/telegram/ui/ManageLinksActivity$EmptyView;->lottieImageView:Lorg/telegram/ui/Components/RLottieImageView;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/RLottieImageView;->playAnimation()V
@@ -460,28 +460,28 @@
 .method public varargs didReceivedNotification(II[Ljava/lang/Object;)V
     .locals 0
 
-    .line 1125
+    .line 1124
     sget p2, Lorg/telegram/messenger/NotificationCenter;->diceStickersDidLoad:I
 
     if-ne p1, p2, :cond_0
 
     const/4 p1, 0x0
 
-    .line 1126
+    .line 1125
     aget-object p1, p3, p1
 
     check-cast p1, Ljava/lang/String;
 
     const-string p2, "tg_placeholders_android"
 
-    .line 1127
+    .line 1126
     invoke-virtual {p2, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p1
 
     if-eqz p1, :cond_0
 
-    .line 1128
+    .line 1127
     invoke-direct {p0}, Lorg/telegram/ui/ManageLinksActivity$EmptyView;->setSticker()V
 
     :cond_0
@@ -491,13 +491,13 @@
 .method protected onAttachedToWindow()V
     .locals 2
 
-    .line 1112
+    .line 1111
     invoke-super {p0}, Landroid/widget/LinearLayout;->onAttachedToWindow()V
 
-    .line 1113
+    .line 1112
     invoke-direct {p0}, Lorg/telegram/ui/ManageLinksActivity$EmptyView;->setSticker()V
 
-    .line 1114
+    .line 1113
     iget v0, p0, Lorg/telegram/ui/ManageLinksActivity$EmptyView;->currentAccount:I
 
     invoke-static {v0}, Lorg/telegram/messenger/NotificationCenter;->getInstance(I)Lorg/telegram/messenger/NotificationCenter;
@@ -514,10 +514,10 @@
 .method protected onDetachedFromWindow()V
     .locals 2
 
-    .line 1119
+    .line 1118
     invoke-super {p0}, Landroid/widget/LinearLayout;->onDetachedFromWindow()V
 
-    .line 1120
+    .line 1119
     iget v0, p0, Lorg/telegram/ui/ManageLinksActivity$EmptyView;->currentAccount:I
 
     invoke-static {v0}, Lorg/telegram/messenger/NotificationCenter;->getInstance(I)Lorg/telegram/messenger/NotificationCenter;

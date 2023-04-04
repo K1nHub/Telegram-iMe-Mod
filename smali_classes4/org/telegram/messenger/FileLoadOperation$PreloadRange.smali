@@ -24,13 +24,13 @@
 .method private constructor <init>(JJ)V
     .locals 0
 
-    .line 77
+    .line 83
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 78
+    .line 84
     iput-wide p1, p0, Lorg/telegram/messenger/FileLoadOperation$PreloadRange;->fileOffset:J
 
-    .line 79
+    .line 85
     iput-wide p3, p0, Lorg/telegram/messenger/FileLoadOperation$PreloadRange;->length:J
 
     return-void
@@ -39,7 +39,7 @@
 .method synthetic constructor <init>(JJLorg/telegram/messenger/FileLoadOperation$1;)V
     .locals 0
 
-    .line 73
+    .line 79
     invoke-direct {p0, p1, p2, p3, p4}, Lorg/telegram/messenger/FileLoadOperation$PreloadRange;-><init>(JJ)V
 
     return-void
@@ -48,7 +48,7 @@
 .method static synthetic access$1000(Lorg/telegram/messenger/FileLoadOperation$PreloadRange;)J
     .locals 2
 
-    .line 73
+    .line 79
     iget-wide v0, p0, Lorg/telegram/messenger/FileLoadOperation$PreloadRange;->length:J
 
     return-wide v0
@@ -57,7 +57,7 @@
 .method static synthetic access$1100(Lorg/telegram/messenger/FileLoadOperation$PreloadRange;)J
     .locals 2
 
-    .line 73
+    .line 79
     iget-wide v0, p0, Lorg/telegram/messenger/FileLoadOperation$PreloadRange;->fileOffset:J
 
     return-wide v0

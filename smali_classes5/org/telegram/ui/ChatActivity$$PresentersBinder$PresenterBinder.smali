@@ -27,7 +27,7 @@
     .locals 2
 
     .line 21
-    const-class p1, Lcom/smedialink/ui/chat/ChatPresenter;
+    const-class p1, Lcom/iMe/ui/chat/ChatPresenter;
 
     const-string v0, "presenter"
 
@@ -55,9 +55,9 @@
     .locals 0
 
     .line 26
-    check-cast p2, Lcom/smedialink/ui/chat/ChatPresenter;
+    check-cast p2, Lcom/iMe/ui/chat/ChatPresenter;
 
-    iput-object p2, p1, Lorg/telegram/ui/ChatActivity;->presenter:Lcom/smedialink/ui/chat/ChatPresenter;
+    iput-object p2, p1, Lorg/telegram/ui/ChatActivity;->presenter:Lcom/iMe/ui/chat/ChatPresenter;
 
     return-void
 .end method
@@ -88,7 +88,7 @@
     .end annotation
 
     .line 31
-    invoke-virtual {p1}, Lorg/telegram/ui/ChatActivity;->providePresenter()Lcom/smedialink/ui/chat/ChatPresenter;
+    invoke-virtual {p1}, Lorg/telegram/ui/ChatActivity;->providePresenter()Lcom/iMe/ui/chat/ChatPresenter;
 
     move-result-object p1
 

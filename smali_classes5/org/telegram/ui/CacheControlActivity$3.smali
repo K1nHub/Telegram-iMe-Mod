@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/CacheControlActivity;Landroid/content/Context;)V
     .locals 0
 
-    .line 1147
+    .line 1268
     iput-object p1, p0, Lorg/telegram/ui/CacheControlActivity$3;->this$0:Lorg/telegram/ui/CacheControlActivity;
 
     invoke-direct {p0, p2}, Lorg/telegram/ui/Components/RecyclerListView;-><init>(Landroid/content/Context;)V
@@ -35,7 +35,7 @@
 .method protected allowSelectChildAtPosition(Landroid/view/View;)Z
     .locals 1
 
-    .line 1158
+    .line 1279
     iget-object v0, p0, Lorg/telegram/ui/CacheControlActivity$3;->this$0:Lorg/telegram/ui/CacheControlActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/CacheControlActivity;->access$1100(Lorg/telegram/ui/CacheControlActivity;)Lorg/telegram/ui/Components/CacheChart;
@@ -58,7 +58,7 @@
 .method protected dispatchDraw(Landroid/graphics/Canvas;)V
     .locals 3
 
-    .line 1150
+    .line 1271
     iget-object v0, p0, Lorg/telegram/ui/CacheControlActivity$3;->this$0:Lorg/telegram/ui/CacheControlActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/CacheControlActivity;->access$900(Lorg/telegram/ui/CacheControlActivity;)I
@@ -75,7 +75,7 @@
 
     if-ltz v0, :cond_0
 
-    .line 1151
+    .line 1272
     iget-object v0, p0, Lorg/telegram/ui/CacheControlActivity$3;->this$0:Lorg/telegram/ui/CacheControlActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/CacheControlActivity;->access$900(Lorg/telegram/ui/CacheControlActivity;)I
@@ -98,7 +98,7 @@
 
     invoke-virtual {p0, p1, v0, v1, v2}, Lorg/telegram/ui/Components/RecyclerListView;->drawSectionBackgroundExclusive(Landroid/graphics/Canvas;III)V
 
-    .line 1153
+    .line 1274
     :cond_0
     invoke-super {p0, p1}, Lorg/telegram/ui/Components/RecyclerListView;->dispatchDraw(Landroid/graphics/Canvas;)V
 

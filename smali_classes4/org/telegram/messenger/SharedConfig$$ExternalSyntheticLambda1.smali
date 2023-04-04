@@ -5,27 +5,17 @@
 .implements Ljava/lang/Runnable;
 
 
-# static fields
-.field public static final synthetic INSTANCE:Lorg/telegram/messenger/SharedConfig$$ExternalSyntheticLambda1;
+# instance fields
+.field public final synthetic f$0:I
 
 
 # direct methods
-.method static synthetic constructor <clinit>()V
-    .locals 1
-
-    new-instance v0, Lorg/telegram/messenger/SharedConfig$$ExternalSyntheticLambda1;
-
-    invoke-direct {v0}, Lorg/telegram/messenger/SharedConfig$$ExternalSyntheticLambda1;-><init>()V
-
-    sput-object v0, Lorg/telegram/messenger/SharedConfig$$ExternalSyntheticLambda1;->INSTANCE:Lorg/telegram/messenger/SharedConfig$$ExternalSyntheticLambda1;
-
-    return-void
-.end method
-
-.method private synthetic constructor <init>()V
+.method public synthetic constructor <init>(I)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput p1, p0, Lorg/telegram/messenger/SharedConfig$$ExternalSyntheticLambda1;->f$0:I
 
     return-void
 .end method
@@ -33,9 +23,11 @@
 
 # virtual methods
 .method public final run()V
-    .locals 0
+    .locals 1
 
-    invoke-static {}, Lorg/telegram/messenger/SharedConfig;->$r8$lambda$WtKrEMvWhflILeb19kJG2qAkvWc()V
+    iget v0, p0, Lorg/telegram/messenger/SharedConfig$$ExternalSyntheticLambda1;->f$0:I
+
+    invoke-static {v0}, Lorg/telegram/messenger/SharedConfig;->$r8$lambda$IXArlQveExb6yLY9VvC6yZa-IGA(I)V
 
     return-void
 .end method

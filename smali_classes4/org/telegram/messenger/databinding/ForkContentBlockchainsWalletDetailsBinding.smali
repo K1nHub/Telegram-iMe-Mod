@@ -7,23 +7,23 @@
 
 
 # instance fields
-.field public final buttonBackup:Lcom/smedialink/ui/custom/BigActionButton;
+.field public final buttonBackup:Lcom/iMe/ui/custom/BigActionButton;
 
-.field public final buttonReset:Lcom/smedialink/ui/custom/BigActionButton;
+.field public final buttonReset:Lcom/iMe/ui/custom/BigActionButton;
 
 .field public final itemMoreOptions:Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
 
 .field private final rootView:Landroid/widget/FrameLayout;
 
-.field public final viewAddressCell:Lcom/smedialink/ui/custom/DetailsIconCellView;
+.field public final viewAddressCell:Lcom/iMe/ui/custom/DetailsIconCellView;
 
-.field public final viewConnectedCell:Lcom/smedialink/ui/custom/DetailsIconCellView;
+.field public final viewConnectedCell:Lcom/iMe/ui/custom/DetailsIconCellView;
 
-.field public final viewHeader:Lcom/smedialink/ui/custom/ImageHeaderView;
+.field public final viewHeader:Lcom/iMe/ui/custom/ImageHeaderView;
 
 
 # direct methods
-.method private constructor <init>(Landroid/widget/FrameLayout;Lcom/smedialink/ui/custom/BigActionButton;Lcom/smedialink/ui/custom/BigActionButton;Landroid/widget/FrameLayout;Lorg/telegram/ui/ActionBar/ActionBarMenuItem;Lcom/smedialink/ui/custom/DetailsIconCellView;Lcom/smedialink/ui/custom/DetailsIconCellView;Lcom/smedialink/ui/custom/ImageHeaderView;)V
+.method private constructor <init>(Landroid/widget/FrameLayout;Lcom/iMe/ui/custom/BigActionButton;Lcom/iMe/ui/custom/BigActionButton;Landroid/widget/FrameLayout;Lorg/telegram/ui/ActionBar/ActionBarMenuItem;Lcom/iMe/ui/custom/DetailsIconCellView;Lcom/iMe/ui/custom/DetailsIconCellView;Lcom/iMe/ui/custom/ImageHeaderView;)V
     .locals 0
 
     .line 50
@@ -33,22 +33,22 @@
     iput-object p1, p0, Lorg/telegram/messenger/databinding/ForkContentBlockchainsWalletDetailsBinding;->rootView:Landroid/widget/FrameLayout;
 
     .line 52
-    iput-object p2, p0, Lorg/telegram/messenger/databinding/ForkContentBlockchainsWalletDetailsBinding;->buttonBackup:Lcom/smedialink/ui/custom/BigActionButton;
+    iput-object p2, p0, Lorg/telegram/messenger/databinding/ForkContentBlockchainsWalletDetailsBinding;->buttonBackup:Lcom/iMe/ui/custom/BigActionButton;
 
     .line 53
-    iput-object p3, p0, Lorg/telegram/messenger/databinding/ForkContentBlockchainsWalletDetailsBinding;->buttonReset:Lcom/smedialink/ui/custom/BigActionButton;
+    iput-object p3, p0, Lorg/telegram/messenger/databinding/ForkContentBlockchainsWalletDetailsBinding;->buttonReset:Lcom/iMe/ui/custom/BigActionButton;
 
     .line 55
     iput-object p5, p0, Lorg/telegram/messenger/databinding/ForkContentBlockchainsWalletDetailsBinding;->itemMoreOptions:Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
 
     .line 56
-    iput-object p6, p0, Lorg/telegram/messenger/databinding/ForkContentBlockchainsWalletDetailsBinding;->viewAddressCell:Lcom/smedialink/ui/custom/DetailsIconCellView;
+    iput-object p6, p0, Lorg/telegram/messenger/databinding/ForkContentBlockchainsWalletDetailsBinding;->viewAddressCell:Lcom/iMe/ui/custom/DetailsIconCellView;
 
     .line 57
-    iput-object p7, p0, Lorg/telegram/messenger/databinding/ForkContentBlockchainsWalletDetailsBinding;->viewConnectedCell:Lcom/smedialink/ui/custom/DetailsIconCellView;
+    iput-object p7, p0, Lorg/telegram/messenger/databinding/ForkContentBlockchainsWalletDetailsBinding;->viewConnectedCell:Lcom/iMe/ui/custom/DetailsIconCellView;
 
     .line 58
-    iput-object p8, p0, Lorg/telegram/messenger/databinding/ForkContentBlockchainsWalletDetailsBinding;->viewHeader:Lcom/smedialink/ui/custom/ImageHeaderView;
+    iput-object p8, p0, Lorg/telegram/messenger/databinding/ForkContentBlockchainsWalletDetailsBinding;->viewHeader:Lcom/iMe/ui/custom/ImageHeaderView;
 
     return-void
 .end method
@@ -66,7 +66,7 @@
 
     move-object v4, v1
 
-    check-cast v4, Lcom/smedialink/ui/custom/BigActionButton;
+    check-cast v4, Lcom/iMe/ui/custom/BigActionButton;
 
     if-eqz v4, :cond_0
 
@@ -80,7 +80,7 @@
 
     move-object v5, v1
 
-    check-cast v5, Lcom/smedialink/ui/custom/BigActionButton;
+    check-cast v5, Lcom/iMe/ui/custom/BigActionButton;
 
     if-eqz v5, :cond_0
 
@@ -113,7 +113,7 @@
 
     move-object v8, v1
 
-    check-cast v8, Lcom/smedialink/ui/custom/DetailsIconCellView;
+    check-cast v8, Lcom/iMe/ui/custom/DetailsIconCellView;
 
     if-eqz v8, :cond_0
 
@@ -127,7 +127,7 @@
 
     move-object v9, v1
 
-    check-cast v9, Lcom/smedialink/ui/custom/DetailsIconCellView;
+    check-cast v9, Lcom/iMe/ui/custom/DetailsIconCellView;
 
     if-eqz v9, :cond_0
 
@@ -141,7 +141,7 @@
 
     move-object v10, v1
 
-    check-cast v10, Lcom/smedialink/ui/custom/ImageHeaderView;
+    check-cast v10, Lcom/iMe/ui/custom/ImageHeaderView;
 
     if-eqz v10, :cond_0
 
@@ -152,7 +152,7 @@
 
     move-object v3, v6
 
-    invoke-direct/range {v2 .. v10}, Lorg/telegram/messenger/databinding/ForkContentBlockchainsWalletDetailsBinding;-><init>(Landroid/widget/FrameLayout;Lcom/smedialink/ui/custom/BigActionButton;Lcom/smedialink/ui/custom/BigActionButton;Landroid/widget/FrameLayout;Lorg/telegram/ui/ActionBar/ActionBarMenuItem;Lcom/smedialink/ui/custom/DetailsIconCellView;Lcom/smedialink/ui/custom/DetailsIconCellView;Lcom/smedialink/ui/custom/ImageHeaderView;)V
+    invoke-direct/range {v2 .. v10}, Lorg/telegram/messenger/databinding/ForkContentBlockchainsWalletDetailsBinding;-><init>(Landroid/widget/FrameLayout;Lcom/iMe/ui/custom/BigActionButton;Lcom/iMe/ui/custom/BigActionButton;Landroid/widget/FrameLayout;Lorg/telegram/ui/ActionBar/ActionBarMenuItem;Lcom/iMe/ui/custom/DetailsIconCellView;Lcom/iMe/ui/custom/DetailsIconCellView;Lcom/iMe/ui/custom/ImageHeaderView;)V
 
     return-object p0
 

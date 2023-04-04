@@ -39,10 +39,10 @@
 .method public constructor <init>(Landroid/content/ContentResolver;)V
     .locals 0
 
-    .line 127
+    .line 128
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 128
+    .line 129
     iput-object p1, p0, Lcom/bumptech/glide/load/model/UriLoader$AssetFileDescriptorFactory;->contentResolver:Landroid/content/ContentResolver;
 
     return-void
@@ -63,7 +63,7 @@
         }
     .end annotation
 
-    .line 143
+    .line 144
     new-instance v0, Lcom/bumptech/glide/load/data/AssetFileDescriptorLocalUriFetcher;
 
     iget-object v1, p0, Lcom/bumptech/glide/load/model/UriLoader$AssetFileDescriptorFactory;->contentResolver:Landroid/content/ContentResolver;
@@ -87,7 +87,7 @@
         }
     .end annotation
 
-    .line 133
+    .line 134
     new-instance p1, Lcom/bumptech/glide/load/model/UriLoader;
 
     invoke-direct {p1, p0}, Lcom/bumptech/glide/load/model/UriLoader;-><init>(Lcom/bumptech/glide/load/model/UriLoader$LocalUriFetcherFactory;)V

@@ -329,13 +329,13 @@
     move-result-object v6
 
     .line 1092
-    invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/BaseFragment;->getAlbumsController()Lorg/fork/controller/AlbumsController;
+    invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/BaseFragment;->getAlbumsController()Lcom/iMe/fork/controller/AlbumsController;
 
     move-result-object v7
 
     iget-wide v8, v5, Lorg/telegram/tgnet/TLRPC$Dialog;->id:J
 
-    invoke-virtual {v7, v8, v9}, Lorg/fork/controller/AlbumsController;->isDialogAlbum(J)Z
+    invoke-virtual {v7, v8, v9}, Lcom/iMe/fork/controller/AlbumsController;->isDialogAlbum(J)Z
 
     move-result v5
 
@@ -2173,25 +2173,25 @@
     if-eqz v14, :cond_22
 
     .line 1338
-    invoke-virtual {v13}, Lorg/telegram/ui/ActionBar/BaseFragment;->getTopicsController()Lorg/fork/controller/ForkTopicsController;
+    invoke-virtual {v13}, Lorg/telegram/ui/ActionBar/BaseFragment;->getTopicsController()Lcom/iMe/fork/controller/ForkTopicsController;
 
     move-result-object v13
 
-    invoke-virtual {v13, v10, v11}, Lorg/fork/controller/ForkTopicsController;->getTopicForDialog(J)Lcom/smedialink/storage/domain/model/topics/TopicModel;
+    invoke-virtual {v13, v10, v11}, Lcom/iMe/fork/controller/ForkTopicsController;->getTopicForDialog(J)Lcom/iMe/storage/domain/model/topics/TopicModel;
 
     move-result-object v13
 
     if-eqz v13, :cond_21
 
     .line 1340
-    invoke-virtual {v13}, Lcom/smedialink/storage/domain/model/topics/TopicModel;->isUserTopic()Z
+    invoke-virtual {v13}, Lcom/iMe/storage/domain/model/topics/TopicModel;->isUserTopic()Z
 
     move-result v14
 
     if-eqz v14, :cond_20
 
     .line 1341
-    invoke-virtual {v13}, Lcom/smedialink/storage/domain/model/topics/TopicModel;->getName()Ljava/lang/String;
+    invoke-virtual {v13}, Lcom/iMe/storage/domain/model/topics/TopicModel;->getName()Ljava/lang/String;
 
     move-result-object v6
 
@@ -2199,22 +2199,22 @@
 
     .line 1342
     :cond_20
-    invoke-virtual {v13}, Lcom/smedialink/storage/domain/model/topics/TopicModel;->isAutoTopic()Z
+    invoke-virtual {v13}, Lcom/iMe/storage/domain/model/topics/TopicModel;->isAutoTopic()Z
 
     move-result v14
 
     if-eqz v14, :cond_22
 
     .line 1343
-    invoke-virtual {v13}, Lcom/smedialink/storage/domain/model/topics/TopicModel;->getIcon()Lcom/smedialink/storage/data/repository/topics/Topic;
+    invoke-virtual {v13}, Lcom/iMe/storage/domain/model/topics/TopicModel;->getIcon()Lcom/iMe/storage/data/repository/topics/Topic;
 
     move-result-object v6
 
-    invoke-static {v6}, Lcom/smedialink/utils/extentions/model/topic/TopicExtKt;->info(Lcom/smedialink/storage/data/repository/topics/Topic;)Lcom/smedialink/ui/topics/TopicInfo;
+    invoke-static {v6}, Lcom/iMe/utils/extentions/model/topic/TopicExtKt;->info(Lcom/iMe/storage/data/repository/topics/Topic;)Lcom/iMe/ui/topics/TopicInfo;
 
     move-result-object v6
 
-    invoke-virtual {v6}, Lcom/smedialink/ui/topics/TopicInfo;->getTitleResId()I
+    invoke-virtual {v6}, Lcom/iMe/ui/topics/TopicInfo;->getTitleResId()I
 
     move-result v6
 

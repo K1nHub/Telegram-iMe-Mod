@@ -1,5 +1,5 @@
 .class Lorg/telegram/ui/ChatActivity$73;
-.super Landroid/widget/FrameLayout;
+.super Landroid/view/ViewOutlineProvider;
 .source "ChatActivity.java"
 
 
@@ -14,219 +14,85 @@
 .end annotation
 
 
-# instance fields
-.field rect:Landroid/graphics/RectF;
-
-.field final synthetic this$0:Lorg/telegram/ui/ChatActivity;
-
-
 # direct methods
-.method constructor <init>(Lorg/telegram/ui/ChatActivity;Landroid/content/Context;)V
+.method constructor <init>(Lorg/telegram/ui/ChatActivity;)V
     .locals 0
 
-    .line 11575
-    iput-object p1, p0, Lorg/telegram/ui/ChatActivity$73;->this$0:Lorg/telegram/ui/ChatActivity;
-
-    invoke-direct {p0, p2}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
-
-    .line 11577
-    new-instance p1, Landroid/graphics/RectF;
-
-    invoke-direct {p1}, Landroid/graphics/RectF;-><init>()V
-
-    iput-object p1, p0, Lorg/telegram/ui/ChatActivity$73;->rect:Landroid/graphics/RectF;
+    .line 11570
+    invoke-direct {p0}, Landroid/view/ViewOutlineProvider;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method protected dispatchDraw(Landroid/graphics/Canvas;)V
-    .locals 2
+.method public getOutline(Landroid/view/View;Landroid/graphics/Outline;)V
+    .locals 9
 
-    .line 11614
-    invoke-super {p0, p1}, Landroid/widget/FrameLayout;->dispatchDraw(Landroid/graphics/Canvas;)V
+    .line 11575
+    sget v0, Lorg/telegram/messenger/R$id;->parent_tag:I
 
-    .line 11615
-    invoke-virtual {p0}, Landroid/widget/FrameLayout;->getTag()Ljava/lang/Object;
-
-    move-result-object v0
-
-    if-nez v0, :cond_0
-
-    .line 11616
-    iget-object v0, p0, Lorg/telegram/ui/ChatActivity$73;->this$0:Lorg/telegram/ui/ChatActivity;
-
-    invoke-static {v0}, Lorg/telegram/ui/ChatActivity;->access$33700(Lorg/telegram/ui/ChatActivity;)Landroid/graphics/Path;
+    invoke-virtual {p1, v0}, Landroid/view/View;->getTag(I)Ljava/lang/Object;
 
     move-result-object v0
 
-    iget-object v1, p0, Lorg/telegram/ui/ChatActivity$73;->this$0:Lorg/telegram/ui/ChatActivity;
+    check-cast v0, Lorg/telegram/messenger/ImageReceiver;
 
-    invoke-static {v1}, Lorg/telegram/ui/ChatActivity;->access$33800(Lorg/telegram/ui/ChatActivity;)Landroid/graphics/Paint;
+    const/4 v1, 0x0
 
-    move-result-object v1
+    if-eqz v0, :cond_1
 
-    invoke-virtual {p1, v0, v1}, Landroid/graphics/Canvas;->drawPath(Landroid/graphics/Path;Landroid/graphics/Paint;)V
+    .line 11577
+    invoke-virtual {v0}, Lorg/telegram/messenger/ImageReceiver;->getRoundRadius()[I
 
-    :cond_0
-    return-void
-.end method
+    move-result-object v0
 
-.method protected onSizeChanged(IIII)V
-    .locals 2
-
-    .line 11581
-    invoke-super {p0, p1, p2, p3, p4}, Landroid/widget/FrameLayout;->onSizeChanged(IIII)V
-
-    .line 11582
-    iget-object p3, p0, Lorg/telegram/ui/ChatActivity$73;->this$0:Lorg/telegram/ui/ChatActivity;
-
-    invoke-static {p3}, Lorg/telegram/ui/ChatActivity;->access$33700(Lorg/telegram/ui/ChatActivity;)Landroid/graphics/Path;
-
-    move-result-object p3
-
-    invoke-virtual {p3}, Landroid/graphics/Path;->reset()V
-
-    .line 11583
-    sget p3, Lorg/telegram/messenger/R$id;->parent_tag:I
-
-    invoke-virtual {p0, p3}, Landroid/widget/FrameLayout;->getTag(I)Ljava/lang/Object;
-
-    move-result-object p3
-
-    check-cast p3, Lorg/telegram/messenger/ImageReceiver;
-
-    if-eqz p3, :cond_1
-
-    .line 11585
-    invoke-virtual {p3}, Lorg/telegram/messenger/ImageReceiver;->getRoundRadius()[I
-
-    move-result-object p3
-
-    const/4 p4, 0x0
-
-    move v0, p4
+    move v2, v1
 
     :goto_0
-    const/4 v1, 0x4
+    const/4 v3, 0x4
 
-    if-ge p4, v1, :cond_0
+    if-ge v1, v3, :cond_0
 
-    .line 11588
-    aget v1, p3, p4
+    .line 11580
+    aget v3, v0, v1
 
-    invoke-static {v0, v1}, Ljava/lang/Math;->max(II)I
+    invoke-static {v2, v3}, Ljava/lang/Math;->max(II)I
 
-    move-result v0
+    move-result v2
 
-    add-int/lit8 p4, p4, 0x1
+    add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 11590
     :cond_0
-    iget-object p3, p0, Lorg/telegram/ui/ChatActivity$73;->rect:Landroid/graphics/RectF;
+    const/4 v4, 0x0
 
-    int-to-float p1, p1
+    const/4 v5, 0x0
 
-    int-to-float p2, p2
+    .line 11582
+    invoke-virtual {p1}, Landroid/view/View;->getMeasuredWidth()I
 
-    const/4 p4, 0x0
+    move-result v6
 
-    invoke-virtual {p3, p4, p4, p1, p2}, Landroid/graphics/RectF;->set(FFFF)V
+    invoke-virtual {p1}, Landroid/view/View;->getMeasuredHeight()I
 
-    .line 11591
-    iget-object p1, p0, Lorg/telegram/ui/ChatActivity$73;->this$0:Lorg/telegram/ui/ChatActivity;
+    move-result v7
 
-    invoke-static {p1}, Lorg/telegram/ui/ChatActivity;->access$33700(Lorg/telegram/ui/ChatActivity;)Landroid/graphics/Path;
+    int-to-float v8, v2
 
-    move-result-object p1
+    move-object v3, p2
 
-    iget-object p2, p0, Lorg/telegram/ui/ChatActivity$73;->rect:Landroid/graphics/RectF;
-
-    invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
-
-    move-result p3
-
-    int-to-float p3, p3
-
-    invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
-
-    move-result p4
-
-    int-to-float p4, p4
-
-    sget-object v0, Landroid/graphics/Path$Direction;->CW:Landroid/graphics/Path$Direction;
-
-    invoke-virtual {p1, p2, p3, p4, v0}, Landroid/graphics/Path;->addRoundRect(Landroid/graphics/RectF;FFLandroid/graphics/Path$Direction;)V
+    invoke-virtual/range {v3 .. v8}, Landroid/graphics/Outline;->setRoundRect(IIIIF)V
 
     goto :goto_1
 
-    .line 11593
+    .line 11584
     :cond_1
-    iget-object p3, p0, Lorg/telegram/ui/ChatActivity$73;->this$0:Lorg/telegram/ui/ChatActivity;
+    sget p1, Lorg/telegram/messenger/AndroidUtilities;->roundPlayingMessageSize:I
 
-    invoke-static {p3}, Lorg/telegram/ui/ChatActivity;->access$33700(Lorg/telegram/ui/ChatActivity;)Landroid/graphics/Path;
+    invoke-virtual {p2, v1, v1, p1, p1}, Landroid/graphics/Outline;->setOval(IIII)V
 
-    move-result-object p3
-
-    div-int/lit8 p1, p1, 0x2
-
-    int-to-float p1, p1
-
-    div-int/lit8 p2, p2, 0x2
-
-    int-to-float p2, p2
-
-    sget-object p4, Landroid/graphics/Path$Direction;->CW:Landroid/graphics/Path$Direction;
-
-    invoke-virtual {p3, p1, p2, p1, p4}, Landroid/graphics/Path;->addCircle(FFFLandroid/graphics/Path$Direction;)V
-
-    .line 11595
     :goto_1
-    iget-object p1, p0, Lorg/telegram/ui/ChatActivity$73;->this$0:Lorg/telegram/ui/ChatActivity;
-
-    invoke-static {p1}, Lorg/telegram/ui/ChatActivity;->access$33700(Lorg/telegram/ui/ChatActivity;)Landroid/graphics/Path;
-
-    move-result-object p1
-
-    invoke-virtual {p1}, Landroid/graphics/Path;->toggleInverseFillType()V
-
-    return-void
-.end method
-
-.method public setTranslationY(F)V
-    .locals 0
-
-    .line 11600
-    invoke-super {p0, p1}, Landroid/widget/FrameLayout;->setTranslationY(F)V
-
-    .line 11601
-    iget-object p1, p0, Lorg/telegram/ui/ChatActivity$73;->this$0:Lorg/telegram/ui/ChatActivity;
-
-    iget-object p1, p1, Lorg/telegram/ui/ChatActivity;->contentView:Lorg/telegram/ui/ChatActivity$ChatActivityFragmentView;
-
-    invoke-virtual {p1}, Landroid/widget/FrameLayout;->invalidate()V
-
-    return-void
-.end method
-
-.method public setVisibility(I)V
-    .locals 1
-
-    .line 11606
-    invoke-super {p0, p1}, Landroid/widget/FrameLayout;->setVisibility(I)V
-
-    if-nez p1, :cond_0
-
-    const/4 p1, 0x2
-
-    const/4 v0, 0x0
-
-    .line 11608
-    invoke-virtual {p0, p1, v0}, Landroid/widget/FrameLayout;->setLayerType(ILandroid/graphics/Paint;)V
-
-    :cond_0
     return-void
 .end method

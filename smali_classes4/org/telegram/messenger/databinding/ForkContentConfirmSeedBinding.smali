@@ -13,7 +13,7 @@
 
 
 # direct methods
-.method private constructor <init>(Landroidx/core/widget/NestedScrollView;Lcom/smedialink/ui/custom/backup/switcher/BackupWordSwitcher;Lcom/smedialink/ui/custom/backup/switcher/BackupWordSwitcher;Lcom/smedialink/ui/custom/backup/switcher/BackupWordSwitcher;Lcom/smedialink/ui/custom/backup/switcher/BackupWordSwitcher;Landroid/widget/LinearLayout;)V
+.method private constructor <init>(Landroidx/core/widget/NestedScrollView;Lcom/iMe/ui/custom/backup/switcher/BackupWordSwitcher;Lcom/iMe/ui/custom/backup/switcher/BackupWordSwitcher;Lcom/iMe/ui/custom/backup/switcher/BackupWordSwitcher;Lcom/iMe/ui/custom/backup/switcher/BackupWordSwitcher;Landroid/widget/LinearLayout;)V
     .locals 0
 
     .line 43
@@ -41,7 +41,7 @@
 
     move-object v4, v1
 
-    check-cast v4, Lcom/smedialink/ui/custom/backup/switcher/BackupWordSwitcher;
+    check-cast v4, Lcom/iMe/ui/custom/backup/switcher/BackupWordSwitcher;
 
     if-eqz v4, :cond_0
 
@@ -55,7 +55,7 @@
 
     move-object v5, v1
 
-    check-cast v5, Lcom/smedialink/ui/custom/backup/switcher/BackupWordSwitcher;
+    check-cast v5, Lcom/iMe/ui/custom/backup/switcher/BackupWordSwitcher;
 
     if-eqz v5, :cond_0
 
@@ -69,7 +69,7 @@
 
     move-object v6, v1
 
-    check-cast v6, Lcom/smedialink/ui/custom/backup/switcher/BackupWordSwitcher;
+    check-cast v6, Lcom/iMe/ui/custom/backup/switcher/BackupWordSwitcher;
 
     if-eqz v6, :cond_0
 
@@ -83,7 +83,7 @@
 
     move-object v7, v1
 
-    check-cast v7, Lcom/smedialink/ui/custom/backup/switcher/BackupWordSwitcher;
+    check-cast v7, Lcom/iMe/ui/custom/backup/switcher/BackupWordSwitcher;
 
     if-eqz v7, :cond_0
 
@@ -110,7 +110,7 @@
 
     move-object v2, v0
 
-    invoke-direct/range {v2 .. v8}, Lorg/telegram/messenger/databinding/ForkContentConfirmSeedBinding;-><init>(Landroidx/core/widget/NestedScrollView;Lcom/smedialink/ui/custom/backup/switcher/BackupWordSwitcher;Lcom/smedialink/ui/custom/backup/switcher/BackupWordSwitcher;Lcom/smedialink/ui/custom/backup/switcher/BackupWordSwitcher;Lcom/smedialink/ui/custom/backup/switcher/BackupWordSwitcher;Landroid/widget/LinearLayout;)V
+    invoke-direct/range {v2 .. v8}, Lorg/telegram/messenger/databinding/ForkContentConfirmSeedBinding;-><init>(Landroidx/core/widget/NestedScrollView;Lcom/iMe/ui/custom/backup/switcher/BackupWordSwitcher;Lcom/iMe/ui/custom/backup/switcher/BackupWordSwitcher;Lcom/iMe/ui/custom/backup/switcher/BackupWordSwitcher;Lcom/iMe/ui/custom/backup/switcher/BackupWordSwitcher;Landroid/widget/LinearLayout;)V
 
     return-object v0
 

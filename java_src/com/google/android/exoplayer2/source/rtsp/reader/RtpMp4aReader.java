@@ -1,6 +1,6 @@
 package com.google.android.exoplayer2.source.rtsp.reader;
 
-import com.google.android.exoplayer2.C0468C;
+import com.google.android.exoplayer2.C0482C;
 import com.google.android.exoplayer2.ParserException;
 import com.google.android.exoplayer2.extractor.ExtractorOutput;
 import com.google.android.exoplayer2.extractor.TrackOutput;
@@ -28,11 +28,11 @@ final class RtpMp4aReader implements RtpPayloadReader {
         this.payloadFormat = rtpPayloadFormat;
         try {
             this.numberOfSubframes = getNumOfSubframesFromMpeg4AudioConfig(rtpPayloadFormat.fmtpParameters);
-            this.firstReceivedTimestamp = C0468C.TIME_UNSET;
+            this.firstReceivedTimestamp = C0482C.TIME_UNSET;
             this.previousSequenceNumber = -1;
             this.fragmentedSampleSizeBytes = 0;
             this.startTimeOffsetUs = 0L;
-            this.fragmentedSampleTimeUs = C0468C.TIME_UNSET;
+            this.fragmentedSampleTimeUs = C0482C.TIME_UNSET;
         } catch (ParserException e) {
             throw new IllegalArgumentException(e);
         }
@@ -47,7 +47,7 @@ final class RtpMp4aReader implements RtpPayloadReader {
 
     @Override // com.google.android.exoplayer2.source.rtsp.reader.RtpPayloadReader
     public void onReceivingFirstPacket(long j, int i) {
-        Assertions.checkState(this.firstReceivedTimestamp == C0468C.TIME_UNSET);
+        Assertions.checkState(this.firstReceivedTimestamp == C0482C.TIME_UNSET);
         this.firstReceivedTimestamp = j;
     }
 
@@ -107,6 +107,6 @@ final class RtpMp4aReader implements RtpPayloadReader {
     private void outputSampleMetadataForFragmentedPackets() {
         ((TrackOutput) Assertions.checkNotNull(this.trackOutput)).sampleMetadata(this.fragmentedSampleTimeUs, 1, this.fragmentedSampleSizeBytes, 0, null);
         this.fragmentedSampleSizeBytes = 0;
-        this.fragmentedSampleTimeUs = C0468C.TIME_UNSET;
+        this.fragmentedSampleTimeUs = C0482C.TIME_UNSET;
     }
 }

@@ -8,18 +8,14 @@
 # instance fields
 .field public final synthetic f$0:Lorg/telegram/ui/DialogsActivity;
 
-.field public final synthetic f$1:I
-
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/DialogsActivity;I)V
+.method public synthetic constructor <init>(Lorg/telegram/ui/DialogsActivity;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda82;->f$0:Lorg/telegram/ui/DialogsActivity;
-
-    iput p2, p0, Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda82;->f$1:I
 
     return-void
 .end method
@@ -27,13 +23,11 @@
 
 # virtual methods
 .method public final run()V
-    .locals 2
+    .locals 1
 
     iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda82;->f$0:Lorg/telegram/ui/DialogsActivity;
 
-    iget v1, p0, Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda82;->f$1:I
-
-    invoke-static {v0, v1}, Lorg/telegram/ui/DialogsActivity;->$r8$lambda$z7TbI_kQmBNkHeJn6WyYNw6plpo(Lorg/telegram/ui/DialogsActivity;I)V
+    invoke-static {v0}, Lorg/telegram/ui/DialogsActivity;->$r8$lambda$LgPt2ffJqVL8IY3XqC3jUQvAMc8(Lorg/telegram/ui/DialogsActivity;)V
 
     return-void
 .end method

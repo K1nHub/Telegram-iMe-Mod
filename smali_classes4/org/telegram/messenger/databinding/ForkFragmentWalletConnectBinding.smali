@@ -7,7 +7,7 @@
 
 
 # instance fields
-.field public final buttonConnect:Lcom/smedialink/ui/custom/BigActionButton;
+.field public final buttonConnect:Lcom/iMe/ui/custom/BigActionButton;
 
 .field public final buttonDisconnectAll:Lorg/telegram/ui/Cells/TextCell;
 
@@ -27,7 +27,7 @@
 
 
 # direct methods
-.method private constructor <init>(Landroidx/core/widget/NestedScrollView;Lcom/smedialink/ui/custom/BigActionButton;Lorg/telegram/ui/Cells/TextCell;Lorg/telegram/ui/Components/RLottieImageView;Landroid/widget/LinearLayout;Landroid/widget/LinearLayout;Landroid/widget/LinearLayout;Landroidx/recyclerview/widget/RecyclerView;Landroidx/appcompat/widget/AppCompatTextView;Landroidx/appcompat/widget/AppCompatTextView;)V
+.method private constructor <init>(Landroidx/core/widget/NestedScrollView;Lcom/iMe/ui/custom/BigActionButton;Lorg/telegram/ui/Cells/TextCell;Lorg/telegram/ui/Components/RLottieImageView;Landroid/widget/LinearLayout;Landroid/widget/LinearLayout;Landroid/widget/LinearLayout;Landroidx/recyclerview/widget/RecyclerView;Landroidx/appcompat/widget/AppCompatTextView;Landroidx/appcompat/widget/AppCompatTextView;)V
     .locals 0
 
     .line 59
@@ -37,7 +37,7 @@
     iput-object p1, p0, Lorg/telegram/messenger/databinding/ForkFragmentWalletConnectBinding;->rootView:Landroidx/core/widget/NestedScrollView;
 
     .line 61
-    iput-object p2, p0, Lorg/telegram/messenger/databinding/ForkFragmentWalletConnectBinding;->buttonConnect:Lcom/smedialink/ui/custom/BigActionButton;
+    iput-object p2, p0, Lorg/telegram/messenger/databinding/ForkFragmentWalletConnectBinding;->buttonConnect:Lcom/iMe/ui/custom/BigActionButton;
 
     .line 62
     iput-object p3, p0, Lorg/telegram/messenger/databinding/ForkFragmentWalletConnectBinding;->buttonDisconnectAll:Lorg/telegram/ui/Cells/TextCell;
@@ -76,7 +76,7 @@
 
     move-object v4, v1
 
-    check-cast v4, Lcom/smedialink/ui/custom/BigActionButton;
+    check-cast v4, Lcom/iMe/ui/custom/BigActionButton;
 
     if-eqz v4, :cond_0
 
@@ -201,7 +201,7 @@
 
     move-object v2, v0
 
-    invoke-direct/range {v2 .. v12}, Lorg/telegram/messenger/databinding/ForkFragmentWalletConnectBinding;-><init>(Landroidx/core/widget/NestedScrollView;Lcom/smedialink/ui/custom/BigActionButton;Lorg/telegram/ui/Cells/TextCell;Lorg/telegram/ui/Components/RLottieImageView;Landroid/widget/LinearLayout;Landroid/widget/LinearLayout;Landroid/widget/LinearLayout;Landroidx/recyclerview/widget/RecyclerView;Landroidx/appcompat/widget/AppCompatTextView;Landroidx/appcompat/widget/AppCompatTextView;)V
+    invoke-direct/range {v2 .. v12}, Lorg/telegram/messenger/databinding/ForkFragmentWalletConnectBinding;-><init>(Landroidx/core/widget/NestedScrollView;Lcom/iMe/ui/custom/BigActionButton;Lorg/telegram/ui/Cells/TextCell;Lorg/telegram/ui/Components/RLottieImageView;Landroid/widget/LinearLayout;Landroid/widget/LinearLayout;Landroid/widget/LinearLayout;Landroidx/recyclerview/widget/RecyclerView;Landroidx/appcompat/widget/AppCompatTextView;Landroidx/appcompat/widget/AppCompatTextView;)V
 
     return-object v0
 

@@ -2,7 +2,7 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lkotlin/jvm/functions/Function0;
+.implements Lcom/iMe/fork/utils/Callbacks$Callback;
 
 
 # instance fields
@@ -22,14 +22,12 @@
 
 
 # virtual methods
-.method public final invoke()Ljava/lang/Object;
+.method public final invoke()V
     .locals 1
 
     iget-object v0, p0, Lorg/telegram/ui/ContactsActivity$$ExternalSyntheticLambda11;->f$0:Lorg/telegram/ui/ContactsActivity;
 
-    invoke-static {v0}, Lorg/telegram/ui/ContactsActivity;->$r8$lambda$U16vpVCE9NjjNiNYgSBe5xZ4sLg(Lorg/telegram/ui/ContactsActivity;)Lorg/koin/core/parameter/ParametersHolder;
+    invoke-static {v0}, Lorg/telegram/ui/ContactsActivity;->$r8$lambda$YBfvP5kBa_LuFa9B9Krx97-NI1U(Lorg/telegram/ui/ContactsActivity;)V
 
-    move-result-object v0
-
-    return-object v0
+    return-void
 .end method

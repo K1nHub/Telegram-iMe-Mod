@@ -1,8 +1,8 @@
 package com.iMe.i_staking.repository;
 
-import com.smedialink.storage.data.network.handlers.ErrorHandler;
-import com.smedialink.storage.domain.model.Result;
-import com.smedialink.storage.domain.model.staking.StakingTransactionAction;
+import com.iMe.storage.data.network.handlers.ErrorHandler;
+import com.iMe.storage.domain.model.Result;
+import com.iMe.storage.domain.model.staking.StakingTransactionAction;
 import kotlin.Pair;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;

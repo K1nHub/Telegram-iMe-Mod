@@ -105,7 +105,7 @@
     :cond_1
     new-instance v0, Ljava/lang/IllegalStateException;
 
-    const-string v1, "unsupported coordinate system"
+    const-string/jumbo v1, "unsupported coordinate system"
 
     invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 

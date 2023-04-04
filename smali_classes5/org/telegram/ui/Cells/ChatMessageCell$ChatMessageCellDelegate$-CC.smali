@@ -353,7 +353,7 @@
     return-void
 .end method
 
-.method public static $default$runWithActivationCheck(Lorg/telegram/ui/Cells/ChatMessageCell$ChatMessageCellDelegate;Lorg/fork/utils/Callbacks$Callback;)V
+.method public static $default$runWithActivationCheck(Lorg/telegram/ui/Cells/ChatMessageCell$ChatMessageCellDelegate;Lcom/iMe/fork/utils/Callbacks$Callback;)V
     .locals 0
 
     return-void

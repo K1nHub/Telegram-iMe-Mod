@@ -9,7 +9,7 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3301R;
+import org.telegram.messenger.C3316R;
 import org.telegram.messenger.Emoji;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.NotificationCenter;
@@ -117,7 +117,7 @@ public class UserCell2 extends FrameLayout {
             boolean z5 = LocaleController.isRTL;
             addView(checkBoxSquare, LayoutHelper.createFrame(18, 18, (z5 ? 3 : 5) | 16, z5 ? 19 : 0, 0, z5 ? 0 : 19, 0));
         } else if (i2 == 1) {
-            CheckBox checkBox = new CheckBox(context, C3301R.C3303drawable.round_check2);
+            CheckBox checkBox = new CheckBox(context, C3316R.C3318drawable.round_check2);
             this.checkBox = checkBox;
             checkBox.setVisibility(4);
             this.checkBox.setColor(Theme.getColor("checkbox", resourcesProvider), Theme.getColor("checkboxCheck", resourcesProvider));

@@ -1,6 +1,6 @@
 package com.google.android.exoplayer2.source.dash.manifest;
 
-import com.google.android.exoplayer2.C0468C;
+import com.google.android.exoplayer2.C0482C;
 import com.google.android.exoplayer2.Format;
 import com.google.android.exoplayer2.util.Util;
 import com.google.common.math.BigIntegerMath;
@@ -130,7 +130,7 @@ public abstract class SegmentBase {
         public long getFirstAvailableSegmentNum(long j, long j2) {
             if (getSegmentCount(j) == -1) {
                 long j3 = this.timeShiftBufferDepthUs;
-                if (j3 != C0468C.TIME_UNSET) {
+                if (j3 != C0482C.TIME_UNSET) {
                     return Math.max(getFirstSegmentNum(), getSegmentNum((j2 - this.periodStartUnixTimeUs) - j3, j));
                 }
             }
@@ -144,7 +144,7 @@ public abstract class SegmentBase {
 
         public long getNextSegmentAvailableTimeUs(long j, long j2) {
             if (this.segmentTimeline != null) {
-                return C0468C.TIME_UNSET;
+                return C0482C.TIME_UNSET;
             }
             long firstAvailableSegmentNum = getFirstAvailableSegmentNum(j, j2) + getAvailableSegmentCount(j, j2);
             return (getSegmentTimeUs(firstAvailableSegmentNum) + getSegmentDurationUs(firstAvailableSegmentNum, j)) - this.availabilityTimeOffsetUs;
@@ -228,7 +228,7 @@ public abstract class SegmentBase {
             if (j2 != -1) {
                 return (j2 - this.startNumber) + 1;
             }
-            if (j != C0468C.TIME_UNSET) {
+            if (j != C0482C.TIME_UNSET) {
                 return BigIntegerMath.divide(BigInteger.valueOf(j).multiply(BigInteger.valueOf(this.timescale)), BigInteger.valueOf(this.duration).multiply(BigInteger.valueOf(1000000L)), RoundingMode.CEILING).longValue();
             }
             return -1L;

@@ -8,7 +8,7 @@ import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.Lambda;
 /* compiled from: WCBinanceTradeOrder.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 final class WCBinanceTradeOrderKt$tradeOrderSerializer$1 extends Lambda implements Function1<SerializerArg<WCBinanceTradeOrder.Message>, JsonElement> {
     public static final WCBinanceTradeOrderKt$tradeOrderSerializer$1 INSTANCE = new WCBinanceTradeOrderKt$tradeOrderSerializer$1();
 

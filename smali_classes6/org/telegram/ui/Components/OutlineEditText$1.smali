@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/OutlineEditText;Landroid/content/Context;)V
     .locals 0
 
-    .line 19
+    .line 20
     iput-object p1, p0, Lorg/telegram/ui/Components/OutlineEditText$1;->this$0:Lorg/telegram/ui/Components/OutlineEditText;
 
     invoke-direct {p0, p2}, Lorg/telegram/ui/Components/EditTextBoldCursor;-><init>(Landroid/content/Context;)V
@@ -35,10 +35,10 @@
 .method protected onFocusChanged(ZILandroid/graphics/Rect;)V
     .locals 0
 
-    .line 22
+    .line 23
     invoke-super {p0, p1, p2, p3}, Lorg/telegram/ui/Components/EditTextBoldCursor;->onFocusChanged(ZILandroid/graphics/Rect;)V
 
-    .line 23
+    .line 24
     iget-object p2, p0, Lorg/telegram/ui/Components/OutlineEditText$1;->this$0:Lorg/telegram/ui/Components/OutlineEditText;
 
     if-nez p1, :cond_1

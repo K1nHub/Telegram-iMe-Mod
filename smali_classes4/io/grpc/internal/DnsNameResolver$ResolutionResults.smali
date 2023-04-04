@@ -84,7 +84,7 @@
 
     iput-object p1, p0, Lio/grpc/internal/DnsNameResolver$ResolutionResults;->addresses:Ljava/util/List;
 
-    const-string p1, "txtRecords"
+    const-string/jumbo p1, "txtRecords"
 
     .line 590
     invoke-static {p2, p1}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
@@ -138,7 +138,7 @@
 
     iget-object v1, p0, Lio/grpc/internal/DnsNameResolver$ResolutionResults;->txtRecords:Ljava/util/List;
 
-    const-string v2, "txtRecords"
+    const-string/jumbo v2, "txtRecords"
 
     .line 599
     invoke-virtual {v0, v2, v1}, Lcom/google/common/base/MoreObjects$ToStringHelper;->add(Ljava/lang/String;Ljava/lang/Object;)Lcom/google/common/base/MoreObjects$ToStringHelper;

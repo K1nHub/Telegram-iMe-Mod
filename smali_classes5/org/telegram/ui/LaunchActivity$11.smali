@@ -54,7 +54,7 @@
 
     move-result-object v0
 
-    new-instance v1, Lorg/fork/ui/view/FragmentPreviewMenu;
+    new-instance v1, Lcom/iMe/fork/ui/view/FragmentPreviewMenu;
 
     iget-object v2, p0, Lorg/telegram/ui/LaunchActivity$11;->this$0:Lorg/telegram/ui/LaunchActivity;
 
@@ -66,7 +66,7 @@
 
     const/4 v3, 0x0
 
-    invoke-direct {v1, v2, p1, v3}, Lorg/fork/ui/view/FragmentPreviewMenu;-><init>(Lorg/telegram/ui/ActionBar/INavigationLayout;Lorg/telegram/ui/ActionBar/BaseFragment;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
+    invoke-direct {v1, v2, p1, v3}, Lcom/iMe/fork/ui/view/FragmentPreviewMenu;-><init>(Lorg/telegram/ui/ActionBar/INavigationLayout;Lorg/telegram/ui/ActionBar/BaseFragment;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
     invoke-interface {v0, p1, v1}, Lorg/telegram/ui/ActionBar/INavigationLayout;->presentFragmentAsPreviewWithMenu(Lorg/telegram/ui/ActionBar/BaseFragment;Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;)Z
 

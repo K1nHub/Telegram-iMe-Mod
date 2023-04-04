@@ -3,7 +3,7 @@ package io.grpc;
 import com.google.common.base.MoreObjects;
 import io.grpc.ForwardingChannelBuilder;
 import java.util.concurrent.TimeUnit;
-/* loaded from: classes.dex */
+/* loaded from: classes4.dex */
 public abstract class ForwardingChannelBuilder<T extends ForwardingChannelBuilder<T>> extends ManagedChannelBuilder<T> {
     protected abstract ManagedChannelBuilder<?> delegate();
 

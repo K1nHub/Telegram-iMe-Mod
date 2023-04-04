@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/DialogsActivity;)V
     .locals 0
 
-    .line 12489
+    .line 12540
     iput-object p1, p0, Lorg/telegram/ui/DialogsActivity$64;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
@@ -35,7 +35,7 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 1
 
-    .line 12492
+    .line 12543
     iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$64;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/DialogsActivity;->access$600(Lorg/telegram/ui/DialogsActivity;)Lorg/telegram/ui/Components/ChatActivityEnterView;
@@ -50,7 +50,7 @@
 
     invoke-virtual {p1, v0}, Landroid/widget/FrameLayout;->setTag(Ljava/lang/Object;)V
 
-    .line 12493
+    .line 12544
     iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$64;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/DialogsActivity;->access$600(Lorg/telegram/ui/DialogsActivity;)Lorg/telegram/ui/Components/ChatActivityEnterView;
@@ -59,7 +59,7 @@
 
     invoke-virtual {p1}, Landroid/widget/FrameLayout;->requestLayout()V
 
-    .line 12494
+    .line 12545
     iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$64;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     const/4 v0, 0x1

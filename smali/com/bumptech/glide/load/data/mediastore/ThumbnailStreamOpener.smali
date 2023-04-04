@@ -226,6 +226,7 @@
 
     invoke-interface {v1}, Landroid/database/Cursor;->close()V
 
+    .line 114
     :cond_4
     throw p1
 .end method
@@ -373,7 +374,7 @@
     :try_end_4
     .catch Ljava/io/IOException; {:try_start_4 .. :try_end_4} :catch_4
 
-    .line 66
+    .line 68
     :catch_4
     :cond_3
     throw p1

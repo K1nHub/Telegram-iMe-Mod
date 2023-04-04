@@ -6,16 +6,16 @@
 
 
 # instance fields
-.field public final synthetic f$0:Lorg/telegram/ui/ActionBar/BaseFragment;
+.field public final synthetic f$0:Landroid/view/View;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/ActionBar/BaseFragment;)V
+.method public synthetic constructor <init>(Landroid/view/View;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$$ExternalSyntheticLambda43;->f$0:Lorg/telegram/ui/ActionBar/BaseFragment;
+    iput-object p1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$$ExternalSyntheticLambda43;->f$0:Landroid/view/View;
 
     return-void
 .end method
@@ -25,9 +25,9 @@
 .method public final run()V
     .locals 1
 
-    iget-object v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$$ExternalSyntheticLambda43;->f$0:Lorg/telegram/ui/ActionBar/BaseFragment;
+    iget-object v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$$ExternalSyntheticLambda43;->f$0:Landroid/view/View;
 
-    invoke-static {v0}, Lorg/telegram/ui/Components/ChatActivityEnterView;->$r8$lambda$74RxOKewrFfgDUnO5ITYb0GXrCc(Lorg/telegram/ui/ActionBar/BaseFragment;)V
+    invoke-virtual {v0}, Landroid/view/View;->callOnClick()Z
 
     return-void
 .end method

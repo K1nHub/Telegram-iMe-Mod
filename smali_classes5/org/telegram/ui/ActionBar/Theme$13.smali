@@ -24,7 +24,7 @@
 .method constructor <init>(ZLandroid/view/View;)V
     .locals 0
 
-    .line 10842
+    .line 10841
     iput-boolean p1, p0, Lorg/telegram/ui/ActionBar/Theme$13;->val$thumb:Z
 
     iput-object p2, p0, Lorg/telegram/ui/ActionBar/Theme$13;->val$ownerView:Landroid/view/View;
@@ -39,12 +39,12 @@
 .method public onSizeReady(II)V
     .locals 4
 
-    .line 10845
+    .line 10844
     iget-boolean v0, p0, Lorg/telegram/ui/ActionBar/Theme$13;->val$thumb:Z
 
     if-nez v0, :cond_2
 
-    .line 10846
+    .line 10845
     sget-object v0, Lorg/telegram/messenger/AndroidUtilities;->displaySize:Landroid/graphics/Point;
 
     iget v1, v0, Landroid/graphics/Point;->x:I
@@ -75,14 +75,14 @@
     :goto_1
     if-ne v0, v2, :cond_3
 
-    .line 10849
+    .line 10848
     iget-object p1, p0, Lorg/telegram/ui/ActionBar/Theme$13;->val$ownerView:Landroid/view/View;
 
     invoke-virtual {p1}, Landroid/view/View;->invalidate()V
 
     goto :goto_2
 
-    .line 10852
+    .line 10851
     :cond_2
     iget-object p1, p0, Lorg/telegram/ui/ActionBar/Theme$13;->val$ownerView:Landroid/view/View;
 

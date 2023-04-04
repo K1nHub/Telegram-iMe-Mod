@@ -62,18 +62,18 @@
     .line 9664
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$64;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
-    invoke-static {p1}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$16000(Lorg/telegram/ui/Components/ChatActivityEnterView;)Lcom/smedialink/ui/smartpanel/SmartBotsView;
+    invoke-static {p1}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$16000(Lorg/telegram/ui/Components/ChatActivityEnterView;)Lcom/iMe/ui/smartpanel/SmartBotsView;
 
     move-result-object p1
 
     const/4 v0, 0x0
 
-    invoke-virtual {p1, v0}, Lcom/smedialink/ui/smartpanel/SmartBotsView;->setTranslationY(F)V
+    invoke-virtual {p1, v0}, Lcom/iMe/ui/smartpanel/SmartBotsView;->setTranslationY(F)V
 
     .line 9665
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$64;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
-    invoke-static {p1}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$16000(Lorg/telegram/ui/Components/ChatActivityEnterView;)Lcom/smedialink/ui/smartpanel/SmartBotsView;
+    invoke-static {p1}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$16000(Lorg/telegram/ui/Components/ChatActivityEnterView;)Lcom/iMe/ui/smartpanel/SmartBotsView;
 
     move-result-object p1
 

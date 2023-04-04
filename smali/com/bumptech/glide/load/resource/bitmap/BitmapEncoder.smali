@@ -89,7 +89,7 @@
 .method private getFormat(Landroid/graphics/Bitmap;Lcom/bumptech/glide/load/Options;)Landroid/graphics/Bitmap$CompressFormat;
     .locals 1
 
-    .line 121
+    .line 123
     sget-object v0, Lcom/bumptech/glide/load/resource/bitmap/BitmapEncoder;->COMPRESSION_FORMAT:Lcom/bumptech/glide/load/Option;
 
     invoke-virtual {p2, v0}, Lcom/bumptech/glide/load/Options;->get(Lcom/bumptech/glide/load/Option;)Ljava/lang/Object;
@@ -102,7 +102,7 @@
 
     return-object p2
 
-    .line 124
+    .line 126
     :cond_0
     invoke-virtual {p1}, Landroid/graphics/Bitmap;->hasAlpha()Z
 
@@ -110,12 +110,12 @@
 
     if-eqz p1, :cond_1
 
-    .line 125
+    .line 127
     sget-object p1, Landroid/graphics/Bitmap$CompressFormat;->PNG:Landroid/graphics/Bitmap$CompressFormat;
 
     return-object p1
 
-    .line 127
+    .line 129
     :cond_1
     sget-object p1, Landroid/graphics/Bitmap$CompressFormat;->JPEG:Landroid/graphics/Bitmap$CompressFormat;
 
@@ -140,19 +140,19 @@
 
     const-string v0, "BitmapEncoder"
 
-    .line 68
+    .line 70
     invoke-interface {p1}, Lcom/bumptech/glide/load/engine/Resource;->get()Ljava/lang/Object;
 
     move-result-object p1
 
     check-cast p1, Landroid/graphics/Bitmap;
 
-    .line 69
+    .line 71
     invoke-direct {p0, p1, p3}, Lcom/bumptech/glide/load/resource/bitmap/BitmapEncoder;->getFormat(Landroid/graphics/Bitmap;Lcom/bumptech/glide/load/Options;)Landroid/graphics/Bitmap$CompressFormat;
 
     move-result-object v1
 
-    .line 71
+    .line 73
     invoke-virtual {p1}, Landroid/graphics/Bitmap;->getWidth()I
 
     move-result v2
@@ -171,16 +171,16 @@
 
     const-string v4, "encode: [%dx%d] %s"
 
-    .line 70
+    .line 72
     invoke-static {v4, v2, v3, v1}, Lcom/bumptech/glide/util/pool/GlideTrace;->beginSectionFormat(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V
 
-    .line 73
+    .line 75
     :try_start_0
     invoke-static {}, Lcom/bumptech/glide/util/LogTime;->getLogTime()J
 
     move-result-wide v2
 
-    .line 74
+    .line 76
     sget-object v4, Lcom/bumptech/glide/load/resource/bitmap/BitmapEncoder;->COMPRESSION_QUALITY:Lcom/bumptech/glide/load/Option;
 
     invoke-virtual {p3, v4}, Lcom/bumptech/glide/load/Options;->get(Lcom/bumptech/glide/load/Option;)Ljava/lang/Object;
@@ -199,7 +199,7 @@
 
     const/4 v6, 0x0
 
-    .line 79
+    .line 81
     :try_start_1
     new-instance v7, Ljava/io/FileOutputStream;
 
@@ -208,13 +208,13 @@
     .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
-    .line 80
+    .line 82
     :try_start_2
     iget-object p2, p0, Lcom/bumptech/glide/load/resource/bitmap/BitmapEncoder;->arrayPool:Lcom/bumptech/glide/load/engine/bitmap_recycle/ArrayPool;
 
     if-eqz p2, :cond_0
 
-    .line 81
+    .line 83
     new-instance p2, Lcom/bumptech/glide/load/data/BufferedOutputStream;
 
     iget-object v6, p0, Lcom/bumptech/glide/load/resource/bitmap/BitmapEncoder;->arrayPool:Lcom/bumptech/glide/load/engine/bitmap_recycle/ArrayPool;
@@ -231,12 +231,12 @@
     :cond_0
     move-object v6, v7
 
-    .line 83
+    .line 85
     :goto_0
     :try_start_3
     invoke-virtual {p1, v1, v4, v6}, Landroid/graphics/Bitmap;->compress(Landroid/graphics/Bitmap$CompressFormat;ILjava/io/OutputStream;)Z
 
-    .line 84
+    .line 86
     invoke-virtual {v6}, Ljava/io/OutputStream;->close()V
     :try_end_3
     .catch Ljava/io/IOException; {:try_start_3 .. :try_end_3} :catch_1
@@ -244,7 +244,7 @@
 
     const/4 v5, 0x1
 
-    .line 93
+    .line 95
     :goto_1
     :try_start_4
     invoke-virtual {v6}, Ljava/io/OutputStream;->close()V
@@ -279,7 +279,7 @@
     :goto_2
     const/4 v4, 0x3
 
-    .line 87
+    .line 89
     :try_start_5
     invoke-static {v0, v4}, Landroid/util/Log;->isLoggable(Ljava/lang/String;I)Z
 
@@ -289,7 +289,7 @@
 
     const-string v4, "Failed to encode Bitmap"
 
-    .line 88
+    .line 90
     invoke-static {v0, v4, p2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
     :try_end_5
     .catchall {:try_start_5 .. :try_end_5} :catchall_1
@@ -304,7 +304,7 @@
     :goto_3
     const/4 p2, 0x2
 
-    .line 100
+    .line 102
     :try_start_6
     invoke-static {v0, p2}, Landroid/util/Log;->isLoggable(Ljava/lang/String;I)Z
 
@@ -312,7 +312,7 @@
 
     if-eqz p2, :cond_3
 
-    .line 101
+    .line 103
     new-instance p2, Ljava/lang/StringBuilder;
 
     invoke-direct {p2}, Ljava/lang/StringBuilder;-><init>()V
@@ -327,7 +327,7 @@
 
     invoke-virtual {p2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 106
+    .line 108
     invoke-static {p1}, Lcom/bumptech/glide/util/Util;->getBitmapByteSize(Landroid/graphics/Bitmap;)I
 
     move-result v1
@@ -338,7 +338,7 @@
 
     invoke-virtual {p2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 108
+    .line 110
     invoke-static {v2, v3}, Lcom/bumptech/glide/util/LogTime;->getElapsedMillis(J)D
 
     move-result-wide v1
@@ -351,7 +351,7 @@
 
     sget-object v1, Lcom/bumptech/glide/load/resource/bitmap/BitmapEncoder;->COMPRESSION_FORMAT:Lcom/bumptech/glide/load/Option;
 
-    .line 110
+    .line 112
     invoke-virtual {p3, v1}, Lcom/bumptech/glide/load/Options;->get(Lcom/bumptech/glide/load/Option;)Ljava/lang/Object;
 
     move-result-object p3
@@ -362,7 +362,7 @@
 
     invoke-virtual {p2, p3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 112
+    .line 114
     invoke-virtual {p1}, Landroid/graphics/Bitmap;->hasAlpha()Z
 
     move-result p1
@@ -373,12 +373,12 @@
 
     move-result-object p1
 
-    .line 101
+    .line 103
     invoke-static {v0, p1}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
     :try_end_6
     .catchall {:try_start_6 .. :try_end_6} :catchall_2
 
-    .line 116
+    .line 118
     :cond_3
     invoke-static {}, Lcom/bumptech/glide/util/pool/GlideTrace;->endSection()V
 
@@ -387,14 +387,14 @@
     :goto_4
     if-eqz v6, :cond_4
 
-    .line 93
+    .line 95
     :try_start_7
     invoke-virtual {v6}, Ljava/io/OutputStream;->close()V
     :try_end_7
     .catch Ljava/io/IOException; {:try_start_7 .. :try_end_7} :catch_3
     .catchall {:try_start_7 .. :try_end_7} :catchall_2
 
-    .line 96
+    .line 100
     :catch_3
     :cond_4
     :try_start_8
@@ -405,9 +405,10 @@
     :catchall_2
     move-exception p1
 
-    .line 116
+    .line 118
     invoke-static {}, Lcom/bumptech/glide/util/pool/GlideTrace;->endSection()V
 
+    .line 119
     throw p1
 .end method
 
@@ -427,7 +428,7 @@
 .method public getEncodeStrategy(Lcom/bumptech/glide/load/Options;)Lcom/bumptech/glide/load/EncodeStrategy;
     .locals 0
 
-    .line 134
+    .line 136
     sget-object p1, Lcom/bumptech/glide/load/EncodeStrategy;->TRANSFORMED:Lcom/bumptech/glide/load/EncodeStrategy;
 
     return-object p1

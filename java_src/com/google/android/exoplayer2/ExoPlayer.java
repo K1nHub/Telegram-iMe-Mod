@@ -635,7 +635,7 @@ public interface ExoPlayer extends Player {
             this.useLazyPreparation = true;
             this.seekParameters = SeekParameters.DEFAULT;
             this.seekBackIncrementMs = 5000L;
-            this.seekForwardIncrementMs = C0468C.DEFAULT_SEEK_FORWARD_INCREMENT_MS;
+            this.seekForwardIncrementMs = C0482C.DEFAULT_SEEK_FORWARD_INCREMENT_MS;
             this.livePlaybackSpeedControl = new DefaultLivePlaybackSpeedControl.Builder().build();
             this.clock = Clock.DEFAULT;
             this.releaseTimeoutMs = 500L;

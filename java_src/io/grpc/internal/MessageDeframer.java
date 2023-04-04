@@ -194,7 +194,7 @@ public class MessageDeframer implements Closeable, Deframer {
                 if (this.stopDelivery || this.pendingDeliveries <= 0 || !readRequiredBytes()) {
                     break;
                 }
-                int i = C24541.$SwitchMap$io$grpc$internal$MessageDeframer$State[this.state.ordinal()];
+                int i = C25301.$SwitchMap$io$grpc$internal$MessageDeframer$State[this.state.ordinal()];
                 if (i == 1) {
                     processHeader();
                 } else if (i == 2) {
@@ -219,7 +219,7 @@ public class MessageDeframer implements Closeable, Deframer {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: io.grpc.internal.MessageDeframer$1 */
     /* loaded from: classes4.dex */
-    public static /* synthetic */ class C24541 {
+    public static /* synthetic */ class C25301 {
         static final /* synthetic */ int[] $SwitchMap$io$grpc$internal$MessageDeframer$State;
 
         static {
@@ -471,7 +471,7 @@ public class MessageDeframer implements Closeable, Deframer {
     public static class SingleMessageProducer implements StreamListener.MessageProducer {
         private InputStream message;
 
-        /* synthetic */ SingleMessageProducer(InputStream inputStream, C24541 c24541) {
+        /* synthetic */ SingleMessageProducer(InputStream inputStream, C25301 c25301) {
             this(inputStream);
         }
 

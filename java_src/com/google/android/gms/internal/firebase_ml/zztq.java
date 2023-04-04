@@ -14,7 +14,7 @@ public final class zztq extends zzts {
         this.limit = zztnVar.size();
     }
 
-    @Override // java.util.Iterator, p034j$.util.Iterator
+    @Override // java.util.Iterator, p035j$.util.Iterator
     public final boolean hasNext() {
         return this.position < this.limit;
     }

@@ -1,7 +1,7 @@
 package com.google.android.exoplayer2.extractor.mp4;
 
 import android.util.Pair;
-import com.google.android.exoplayer2.C0468C;
+import com.google.android.exoplayer2.C0482C;
 import com.google.android.exoplayer2.Format;
 import com.google.android.exoplayer2.ParserException;
 import com.google.android.exoplayer2.drm.DrmInitData;
@@ -163,8 +163,8 @@ public final class AtomParsers {
             return null;
         }
         TkhdData parseTkhd = parseTkhd(((Atom.LeafAtom) Assertions.checkNotNull(containerAtom.getLeafAtomOfType(Atom.TYPE_tkhd))).data);
-        long j3 = C0468C.TIME_UNSET;
-        if (j == C0468C.TIME_UNSET) {
+        long j3 = C0482C.TIME_UNSET;
+        if (j == C0482C.TIME_UNSET) {
             leafAtom2 = leafAtom;
             j2 = parseTkhd.duration;
         } else {
@@ -172,7 +172,7 @@ public final class AtomParsers {
             j2 = j;
         }
         long parseMvhd = parseMvhd(leafAtom2.data);
-        if (j2 != C0468C.TIME_UNSET) {
+        if (j2 != C0482C.TIME_UNSET) {
             j3 = Util.scaleLargeTimestamp(j2, 1000000L, parseMvhd);
         }
         long j4 = j3;
@@ -302,7 +302,7 @@ public final class AtomParsers {
                 i3++;
             }
         }
-        long j = C0468C.TIME_UNSET;
+        long j = C0482C.TIME_UNSET;
         if (z) {
             parsableByteArray.skipBytes(i);
         } else {
@@ -817,7 +817,7 @@ public final class AtomParsers {
             }
             i3 += readInt;
         }
-        if (C0468C.CENC_TYPE_cenc.equals(str) || C0468C.CENC_TYPE_cbc1.equals(str) || C0468C.CENC_TYPE_cens.equals(str) || C0468C.CENC_TYPE_cbcs.equals(str)) {
+        if (C0482C.CENC_TYPE_cenc.equals(str) || C0482C.CENC_TYPE_cbc1.equals(str) || C0482C.CENC_TYPE_cens.equals(str) || C0482C.CENC_TYPE_cbcs.equals(str)) {
             ExtractorUtil.checkContainerInput(num != null, "frma atom is mandatory");
             ExtractorUtil.checkContainerInput(i4 != -1, "schi atom is mandatory");
             TrackEncryptionBox parseSchiFromParent = parseSchiFromParent(parsableByteArray, i4, i5, str);

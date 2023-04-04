@@ -37,6 +37,11 @@ public final class DefaultImageHeaderParser implements ImageHeaderParser {
         return getOrientation(new StreamReader((InputStream) Preconditions.checkNotNull(inputStream)), (ArrayPool) Preconditions.checkNotNull(arrayPool));
     }
 
+    @Override // com.bumptech.glide.load.ImageHeaderParser
+    public int getOrientation(ByteBuffer byteBuffer, ArrayPool arrayPool) throws IOException {
+        return getOrientation(new ByteBufferReader((ByteBuffer) Preconditions.checkNotNull(byteBuffer)), (ArrayPool) Preconditions.checkNotNull(arrayPool));
+    }
+
     private ImageHeaderParser.ImageType getType(Reader reader) throws IOException {
         try {
             int uInt16 = reader.getUInt16();
@@ -56,7 +61,7 @@ public final class DefaultImageHeaderParser implements ImageHeaderParser {
                     return ImageHeaderParser.ImageType.PNG;
                 }
             } else if (uInt82 != 1380533830) {
-                return ImageHeaderParser.ImageType.UNKNOWN;
+                return sniffAvif(reader, uInt82);
             } else {
                 reader.skip(4L);
                 if (((reader.getUInt16() << 16) | reader.getUInt16()) != 1464156752) {
@@ -67,19 +72,54 @@ public final class DefaultImageHeaderParser implements ImageHeaderParser {
                     return ImageHeaderParser.ImageType.UNKNOWN;
                 }
                 int i = uInt162 & 255;
-                if (i == 88) {
-                    reader.skip(4L);
-                    return (reader.getUInt8() & 16) != 0 ? ImageHeaderParser.ImageType.WEBP_A : ImageHeaderParser.ImageType.WEBP;
-                } else if (i == 76) {
-                    reader.skip(4L);
-                    return (reader.getUInt8() & 8) != 0 ? ImageHeaderParser.ImageType.WEBP_A : ImageHeaderParser.ImageType.WEBP;
-                } else {
+                if (i != 88) {
+                    if (i == 76) {
+                        reader.skip(4L);
+                        return (reader.getUInt8() & 8) != 0 ? ImageHeaderParser.ImageType.WEBP_A : ImageHeaderParser.ImageType.WEBP;
+                    }
                     return ImageHeaderParser.ImageType.WEBP;
                 }
+                reader.skip(4L);
+                short uInt83 = reader.getUInt8();
+                if ((uInt83 & 2) != 0) {
+                    return ImageHeaderParser.ImageType.ANIMATED_WEBP;
+                }
+                if ((uInt83 & 16) != 0) {
+                    return ImageHeaderParser.ImageType.WEBP_A;
+                }
+                return ImageHeaderParser.ImageType.WEBP;
             }
         } catch (Reader.EndOfFileException unused2) {
             return ImageHeaderParser.ImageType.UNKNOWN;
         }
+    }
+
+    private ImageHeaderParser.ImageType sniffAvif(Reader reader, int i) throws IOException {
+        if (((reader.getUInt16() << 16) | reader.getUInt16()) != 1718909296) {
+            return ImageHeaderParser.ImageType.UNKNOWN;
+        }
+        int uInt16 = (reader.getUInt16() << 16) | reader.getUInt16();
+        if (uInt16 == 1635150195) {
+            return ImageHeaderParser.ImageType.ANIMATED_AVIF;
+        }
+        int i2 = 0;
+        boolean z = uInt16 == 1635150182;
+        reader.skip(4L);
+        int i3 = i - 16;
+        if (i3 % 4 == 0) {
+            while (i2 < 5 && i3 > 0) {
+                int uInt162 = (reader.getUInt16() << 16) | reader.getUInt16();
+                if (uInt162 == 1635150195) {
+                    return ImageHeaderParser.ImageType.ANIMATED_AVIF;
+                }
+                if (uInt162 == 1635150182) {
+                    z = true;
+                }
+                i2++;
+                i3 -= 4;
+            }
+        }
+        return z ? ImageHeaderParser.ImageType.AVIF : ImageHeaderParser.ImageType.UNKNOWN;
     }
 
     private int getOrientation(Reader reader, ArrayPool arrayPool) throws IOException {

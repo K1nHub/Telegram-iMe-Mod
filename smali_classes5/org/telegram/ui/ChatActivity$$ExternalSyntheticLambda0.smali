@@ -53,7 +53,7 @@
 
     move-object v5, p1
 
-    invoke-static/range {v0 .. v5}, Lorg/telegram/ui/ChatActivity;->$r8$lambda$Se9H3PvNkzeWkLkJ9vhHwppDzuU(Landroid/widget/HorizontalScrollView;FFLorg/telegram/ui/Components/ReactionTabHolderView;Lorg/telegram/ui/Components/ReactionTabHolderView;Landroid/animation/ValueAnimator;)V
+    invoke-static/range {v0 .. v5}, Lorg/telegram/ui/ChatActivity;->$r8$lambda$PIFKEp9lpaZIJPU2Wd0JbzN2U8Y(Landroid/widget/HorizontalScrollView;FFLorg/telegram/ui/Components/ReactionTabHolderView;Lorg/telegram/ui/Components/ReactionTabHolderView;Landroid/animation/ValueAnimator;)V
 
     return-void
 .end method

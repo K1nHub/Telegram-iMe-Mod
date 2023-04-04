@@ -28,7 +28,7 @@
 .method protected setResource(Landroid/graphics/Bitmap;)V
     .locals 1
 
-    .line 33
+    .line 35
     iget-object v0, p0, Lcom/bumptech/glide/request/target/ViewTarget;->view:Landroid/view/View;
 
     check-cast v0, Landroid/widget/ImageView;

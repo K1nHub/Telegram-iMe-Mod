@@ -16,7 +16,7 @@ public final class LocalViewChanges {
         ImmutableSortedSet immutableSortedSet = new ImmutableSortedSet(new ArrayList(), DocumentKey.comparator());
         ImmutableSortedSet immutableSortedSet2 = new ImmutableSortedSet(new ArrayList(), DocumentKey.comparator());
         for (DocumentViewChange documentViewChange : viewSnapshot.getChanges()) {
-            int i2 = C10081.f172x33862af7[documentViewChange.getType().ordinal()];
+            int i2 = C10221.f172x33862af7[documentViewChange.getType().ordinal()];
             if (i2 == 1) {
                 immutableSortedSet = immutableSortedSet.insert(documentViewChange.getDocument().getKey());
             } else if (i2 == 2) {
@@ -28,7 +28,7 @@ public final class LocalViewChanges {
 
     /* renamed from: com.google.firebase.firestore.local.LocalViewChanges$1 */
     /* loaded from: classes3.dex */
-    static /* synthetic */ class C10081 {
+    static /* synthetic */ class C10221 {
 
         /* renamed from: $SwitchMap$com$google$firebase$firestore$core$DocumentViewChange$Type */
         static final /* synthetic */ int[] f172x33862af7;

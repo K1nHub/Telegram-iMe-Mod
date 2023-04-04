@@ -14,7 +14,7 @@ public final /* synthetic */ class ProfileActivity$8$$ExternalSyntheticLambda1 i
     @Override // java.util.Comparator
     public final int compare(Object obj, Object obj2) {
         int lambda$$1;
-        lambda$$1 = ProfileActivity.C63468.lambda$$1((View) obj, (View) obj2);
+        lambda$$1 = ProfileActivity.C63698.lambda$$1((View) obj, (View) obj2);
         return lambda$$1;
     }
 }

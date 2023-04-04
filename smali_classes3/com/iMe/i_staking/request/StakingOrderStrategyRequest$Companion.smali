@@ -34,7 +34,7 @@
 
 
 # virtual methods
-.method public final createFromOrderType(Lcom/smedialink/storage/domain/model/wallet/staking/StakingOrderType;)Lcom/iMe/i_staking/request/StakingOrderStrategyRequest;
+.method public final createFromOrderType(Lcom/iMe/storage/domain/model/wallet/staking/StakingOrderType;)Lcom/iMe/i_staking/request/StakingOrderStrategyRequest;
     .locals 2
 
     const-string v0, "orderType"
@@ -42,7 +42,7 @@
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 11
-    sget-object v0, Lcom/smedialink/storage/domain/model/wallet/staking/StakingOrderType;->DEFAULT:Lcom/smedialink/storage/domain/model/wallet/staking/StakingOrderType;
+    sget-object v0, Lcom/iMe/storage/domain/model/wallet/staking/StakingOrderType;->DEFAULT:Lcom/iMe/storage/domain/model/wallet/staking/StakingOrderType;
 
     if-ne p1, v0, :cond_0
 

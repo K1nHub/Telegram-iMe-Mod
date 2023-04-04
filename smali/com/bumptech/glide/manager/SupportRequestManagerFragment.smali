@@ -28,8 +28,6 @@
 
 .field private requestManager:Lcom/bumptech/glide/RequestManager;
 
-.field private final requestManagerTreeNode:Lcom/bumptech/glide/manager/RequestManagerTreeNode;
-
 .field private rootRequestManagerFragment:Lcom/bumptech/glide/manager/SupportRequestManagerFragment;
 
 
@@ -57,8 +55,6 @@
     new-instance v0, Lcom/bumptech/glide/manager/SupportRequestManagerFragment$SupportFragmentRequestManagerTreeNode;
 
     invoke-direct {v0, p0}, Lcom/bumptech/glide/manager/SupportRequestManagerFragment$SupportFragmentRequestManagerTreeNode;-><init>(Lcom/bumptech/glide/manager/SupportRequestManagerFragment;)V
-
-    iput-object v0, p0, Lcom/bumptech/glide/manager/SupportRequestManagerFragment;->requestManagerTreeNode:Lcom/bumptech/glide/manager/RequestManagerTreeNode;
 
     .line 32
     new-instance v0, Ljava/util/HashSet;
@@ -358,15 +354,6 @@
     return-object v0
 .end method
 
-.method public getRequestManagerTreeNode()Lcom/bumptech/glide/manager/RequestManagerTreeNode;
-    .locals 1
-
-    .line 74
-    iget-object v0, p0, Lcom/bumptech/glide/manager/SupportRequestManagerFragment;->requestManagerTreeNode:Lcom/bumptech/glide/manager/RequestManagerTreeNode;
-
-    return-object v0
-.end method
-
 .method public onAttach(Landroid/content/Context;)V
     .locals 3
 
@@ -531,15 +518,6 @@
 
     :cond_2
     :goto_0
-    return-void
-.end method
-
-.method public setRequestManager(Lcom/bumptech/glide/RequestManager;)V
-    .locals 0
-
-    .line 54
-    iput-object p1, p0, Lcom/bumptech/glide/manager/SupportRequestManagerFragment;->requestManager:Lcom/bumptech/glide/RequestManager;
-
     return-void
 .end method
 

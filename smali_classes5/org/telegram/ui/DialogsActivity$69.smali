@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lorg/telegram/ui/DialogsActivity;->lambda$onSendLongClick$131(Landroid/app/Activity;Landroid/view/View;)V
+    value = Lorg/telegram/ui/DialogsActivity;->lambda$onSendLongClick$132(Landroid/app/Activity;Landroid/view/View;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -25,7 +25,7 @@
 .method constructor <init>(Lorg/telegram/ui/DialogsActivity;)V
     .locals 0
 
-    .line 14005
+    .line 14066
     iput-object p1, p0, Lorg/telegram/ui/DialogsActivity$69;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,12 +38,12 @@
 .method public didSelectDate(ZILjava/lang/String;)V
     .locals 6
 
-    .line 14013
+    .line 14074
     iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$69;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     iput p2, p1, Lorg/telegram/ui/DialogsActivity;->scheduleDate:I
 
-    .line 14014
+    .line 14075
     invoke-static {p1}, Lorg/telegram/ui/DialogsActivity;->access$32000(Lorg/telegram/ui/DialogsActivity;)Lorg/telegram/ui/DialogsActivity$DialogsActivityDelegate;
 
     move-result-object p1
@@ -64,7 +64,7 @@
 
     goto :goto_1
 
-    .line 14017
+    .line 14078
     :cond_0
     new-instance v2, Ljava/util/ArrayList;
 
@@ -74,7 +74,7 @@
 
     move p2, p1
 
-    .line 14018
+    .line 14079
     :goto_0
     iget-object p3, p0, Lorg/telegram/ui/DialogsActivity$69;->this$0:Lorg/telegram/ui/DialogsActivity;
 
@@ -88,7 +88,7 @@
 
     if-ge p2, p3, :cond_1
 
-    .line 14019
+    .line 14080
     iget-object p3, p0, Lorg/telegram/ui/DialogsActivity$69;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-static {p3}, Lorg/telegram/ui/DialogsActivity;->access$900(Lorg/telegram/ui/DialogsActivity;)Ljava/util/ArrayList;
@@ -115,7 +115,7 @@
 
     goto :goto_0
 
-    .line 14021
+    .line 14082
     :cond_1
     iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$69;->this$0:Lorg/telegram/ui/DialogsActivity;
 
@@ -155,7 +155,7 @@
         }
     .end annotation
 
-    .line 14008
+    .line 14069
     iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$69;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/DialogsActivity;->access$900(Lorg/telegram/ui/DialogsActivity;)Ljava/util/ArrayList;

@@ -69,7 +69,7 @@
     .line 54
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const-string v0, "transportExceptionHandler"
+    const-string/jumbo v0, "transportExceptionHandler"
 
     .line 56
     invoke-static {p1, v0}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;

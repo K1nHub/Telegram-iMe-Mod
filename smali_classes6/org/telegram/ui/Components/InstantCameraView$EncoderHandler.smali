@@ -30,10 +30,10 @@
 .method public constructor <init>(Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;)V
     .locals 1
 
-    .line 1652
+    .line 1656
     invoke-direct {p0}, Landroid/os/Handler;-><init>()V
 
-    .line 1653
+    .line 1657
     new-instance v0, Ljava/lang/ref/WeakReference;
 
     invoke-direct {v0, p1}, Ljava/lang/ref/WeakReference;-><init>(Ljava/lang/Object;)V
@@ -48,7 +48,7 @@
 .method public exit()V
     .locals 1
 
-    .line 1701
+    .line 1705
     invoke-static {}, Landroid/os/Looper;->myLooper()Landroid/os/Looper;
 
     move-result-object v0
@@ -61,10 +61,10 @@
 .method public handleMessage(Landroid/os/Message;)V
     .locals 8
 
-    .line 1658
+    .line 1662
     iget v0, p1, Landroid/os/Message;->what:I
 
-    .line 1661
+    .line 1665
     iget-object v1, p0, Lorg/telegram/ui/Components/InstantCameraView$EncoderHandler;->mWeakEncoder:Ljava/lang/ref/WeakReference;
 
     invoke-virtual {v1}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
@@ -94,7 +94,7 @@
 
     goto :goto_0
 
-    .line 1694
+    .line 1698
     :cond_1
     iget-object p1, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
@@ -104,7 +104,7 @@
 
     goto :goto_0
 
-    .line 1688
+    .line 1692
     :cond_2
     iget v0, p1, Landroid/os/Message;->arg1:I
 
@@ -124,17 +124,17 @@
 
     or-long/2addr v2, v4
 
-    .line 1689
+    .line 1693
     iget-object p1, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     check-cast p1, Ljava/lang/Integer;
 
-    .line 1690
+    .line 1694
     invoke-static {v1, v2, v3, p1}, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->access$3100(Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;JLjava/lang/Integer;)V
 
     goto :goto_0
 
-    .line 1681
+    .line 1685
     :cond_3
     sget-boolean v0, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
 
@@ -142,10 +142,10 @@
 
     const-string v0, "stop encoder"
 
-    .line 1682
+    .line 1686
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/String;)V
 
-    .line 1684
+    .line 1688
     :cond_4
     iget p1, p1, Landroid/os/Message;->arg1:I
 
@@ -153,7 +153,7 @@
 
     goto :goto_0
 
-    .line 1669
+    .line 1673
     :cond_5
     :try_start_0
     sget-boolean p1, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
@@ -162,10 +162,10 @@
 
     const-string p1, "start encoder"
 
-    .line 1670
+    .line 1674
     invoke-static {p1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/String;)V
 
-    .line 1672
+    .line 1676
     :cond_6
     invoke-static {v1}, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->access$2900(Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;)V
     :try_end_0
@@ -176,15 +176,15 @@
     :catch_0
     move-exception p1
 
-    .line 1674
+    .line 1678
     invoke-static {p1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     const/4 p1, 0x0
 
-    .line 1675
+    .line 1679
     invoke-static {v1, p1}, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->access$3000(Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;I)V
 
-    .line 1676
+    .line 1680
     invoke-static {}, Landroid/os/Looper;->myLooper()Landroid/os/Looper;
 
     move-result-object p1

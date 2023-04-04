@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lorg/telegram/ui/Components/PasscodeView;-><init>(Landroid/content/Context;Lorg/fork/enums/LockedSection;Landroid/util/AttributeSet;)V
+    value = Lorg/telegram/ui/Components/PasscodeView;-><init>(Landroid/content/Context;Lcom/iMe/fork/enums/LockedSection;Landroid/util/AttributeSet;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;

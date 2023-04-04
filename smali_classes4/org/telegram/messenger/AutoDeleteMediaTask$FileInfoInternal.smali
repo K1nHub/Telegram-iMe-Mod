@@ -22,10 +22,10 @@
 .method private constructor <init>(Ljava/io/File;)V
     .locals 2
 
-    .line 228
+    .line 231
     invoke-direct {p0, p1}, Lorg/telegram/messenger/CacheByChatsController$KeepMediaFile;-><init>(Ljava/io/File;)V
 
-    .line 229
+    .line 232
     invoke-virtual {p1}, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
 
     move-result-object p1
@@ -42,7 +42,7 @@
 .method synthetic constructor <init>(Ljava/io/File;Lorg/telegram/messenger/AutoDeleteMediaTask$1;)V
     .locals 0
 
-    .line 224
+    .line 227
     invoke-direct {p0, p1}, Lorg/telegram/messenger/AutoDeleteMediaTask$FileInfoInternal;-><init>(Ljava/io/File;)V
 
     return-void

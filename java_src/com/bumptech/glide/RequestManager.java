@@ -71,6 +71,7 @@ public class RequestManager implements ComponentCallbacks2, LifecycleListener {
         this.context = context;
         ConnectivityMonitor build = connectivityMonitorFactory.build(context.getApplicationContext(), new RequestManagerConnectivityListener(requestTracker));
         this.connectivityMonitor = build;
+        glide.registerRequestManager(this);
         if (Util.isOnBackgroundThread()) {
             Util.postOnUiThread(runnable);
         } else {
@@ -79,7 +80,6 @@ public class RequestManager implements ComponentCallbacks2, LifecycleListener {
         lifecycle.addListener(build);
         this.defaultRequestListeners = new CopyOnWriteArrayList<>(glide.getGlideContext().getDefaultRequestListeners());
         setRequestOptions(glide.getGlideContext().getDefaultRequestOptions());
-        glide.registerRequestManager(this);
     }
 
     protected synchronized void setRequestOptions(RequestOptions requestOptions) {

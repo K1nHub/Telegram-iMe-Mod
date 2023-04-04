@@ -51,12 +51,12 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.C3301R;
+import org.telegram.messenger.C3316R;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.Utilities;
 import org.telegram.p048ui.ActionBar.BottomSheet;
-import org.telegram.p048ui.ActionBar.C3366ActionBar;
+import org.telegram.p048ui.ActionBar.C3381ActionBar;
 import org.telegram.p048ui.ActionBar.Theme;
 import org.telegram.p048ui.ActionBar.ThemeDescription;
 import org.telegram.p048ui.Cells.TextColorThemeCell;
@@ -154,7 +154,7 @@ public class ThemeEditorView {
                 addView(view, LayoutHelper.createFrame(-1, 36, 51, 14, 11, 14, 0));
                 ImageView imageView = new ImageView(context);
                 imageView.setScaleType(ImageView.ScaleType.CENTER);
-                imageView.setImageResource(C3301R.C3303drawable.smiles_inputsearch);
+                imageView.setImageResource(C3316R.C3318drawable.smiles_inputsearch);
                 imageView.setColorFilter(new PorterDuffColorFilter(-6182737, PorterDuff.Mode.MULTIPLY));
                 addView(imageView, LayoutHelper.createFrame(36, 36, 51, 16, 11, 0, 0));
                 ImageView imageView2 = new ImageView(context);
@@ -199,7 +199,7 @@ public class ThemeEditorView {
                 this.searchEditText.setLines(1);
                 this.searchEditText.setSingleLine(true);
                 this.searchEditText.setImeOptions(268435459);
-                this.searchEditText.setHint(LocaleController.getString("Search", C3301R.string.Search));
+                this.searchEditText.setHint(LocaleController.getString("Search", C3316R.string.Search));
                 this.searchEditText.setCursorColor(-11491093);
                 this.searchEditText.setCursorSize(AndroidUtilities.m50dp(20));
                 this.searchEditText.setCursorWidth(1.5f);
@@ -228,11 +228,11 @@ public class ThemeEditorView {
                         String obj = SearchField.this.searchEditText.getText().toString();
                         if (obj.length() != 0) {
                             if (EditorAlert.this.searchEmptyView != null) {
-                                EditorAlert.this.searchEmptyView.setText(LocaleController.getString("NoResult", C3301R.string.NoResult));
+                                EditorAlert.this.searchEmptyView.setText(LocaleController.getString("NoResult", C3316R.string.NoResult));
                             }
                         } else if (EditorAlert.this.listView.getAdapter() != EditorAlert.this.listAdapter) {
                             int currentTop = EditorAlert.this.getCurrentTop();
-                            EditorAlert.this.searchEmptyView.setText(LocaleController.getString("NoChats", C3301R.string.NoChats));
+                            EditorAlert.this.searchEmptyView.setText(LocaleController.getString("NoChats", C3316R.string.NoChats));
                             EditorAlert.this.searchEmptyView.showTextView();
                             EditorAlert.this.listView.setAdapter(EditorAlert.this.listAdapter);
                             EditorAlert.this.listAdapter.notifyDataSetChanged();
@@ -317,7 +317,7 @@ public class ThemeEditorView {
                 this.decelerateInterpolator = new DecelerateInterpolator();
                 setWillNotDraw(false);
                 this.circlePaint = new Paint(1);
-                this.circleDrawable = context.getResources().getDrawable(C3301R.C3303drawable.knob_shadow).mutate();
+                this.circleDrawable = context.getResources().getDrawable(C3316R.C3318drawable.knob_shadow).mutate();
                 Paint paint = new Paint();
                 this.colorWheelPaint = paint;
                 paint.setAntiAlias(true);
@@ -382,10 +382,10 @@ public class ThemeEditorView {
                                 Method dump skipped, instructions count: 258
                                 To view this dump add '--comments-level debug' option
                             */
-                            throw new UnsupportedOperationException("Method not decompiled: org.telegram.p048ui.Components.ThemeEditorView.EditorAlert.ColorPicker.C52711.afterTextChanged(android.text.Editable):void");
+                            throw new UnsupportedOperationException("Method not decompiled: org.telegram.p048ui.Components.ThemeEditorView.EditorAlert.ColorPicker.C52921.afterTextChanged(android.text.Editable):void");
                         }
                     });
-                    this.colorEditText[i].setOnEditorActionListener(C5275x6ea38e02.INSTANCE);
+                    this.colorEditText[i].setOnEditorActionListener(C5296x6ea38e02.INSTANCE);
                     i++;
                 }
             }
@@ -579,7 +579,7 @@ public class ThemeEditorView {
             super(context, true);
             this.shadow = new View[2];
             this.shadowAnimation = new AnimatorSet[2];
-            this.shadowDrawable = context.getResources().getDrawable(C3301R.C3303drawable.sheet_shadow_round).mutate();
+            this.shadowDrawable = context.getResources().getDrawable(C3316R.C3318drawable.sheet_shadow_round).mutate();
             FrameLayout frameLayout = new FrameLayout(context, ThemeEditorView.this) { // from class: org.telegram.ui.Components.ThemeEditorView.EditorAlert.1
                 private boolean ignoreLayout = false;
                 private RectF rect1 = new RectF();
@@ -752,7 +752,7 @@ public class ThemeEditorView {
             this.searchEmptyView = emptyTextProgressView;
             emptyTextProgressView.setShowAtCenter(true);
             this.searchEmptyView.showTextView();
-            this.searchEmptyView.setText(LocaleController.getString("NoResult", C3301R.string.NoResult));
+            this.searchEmptyView.setText(LocaleController.getString("NoResult", C3316R.string.NoResult));
             this.listView.setEmptyView(this.searchEmptyView);
             this.containerView.addView(this.searchEmptyView, LayoutHelper.createFrame(-1, -1, 51, 0, 52, 0, 0));
             FrameLayout.LayoutParams layoutParams = new FrameLayout.LayoutParams(-1, AndroidUtilities.getShadowHeight(), 51);
@@ -782,7 +782,7 @@ public class ThemeEditorView {
             textView.setGravity(17);
             textView.setBackgroundDrawable(Theme.createSelectorDrawable(788529152, 0));
             textView.setPadding(AndroidUtilities.m50dp(18), 0, AndroidUtilities.m50dp(18), 0);
-            textView.setText(LocaleController.getString("CloseEditor", C3301R.string.CloseEditor).toUpperCase());
+            textView.setText(LocaleController.getString("CloseEditor", C3316R.string.CloseEditor).toUpperCase());
             textView.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
             this.bottomSaveLayout.addView(textView, LayoutHelper.createFrame(-2, -1, 51));
             textView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.ThemeEditorView$EditorAlert$$ExternalSyntheticLambda1
@@ -797,7 +797,7 @@ public class ThemeEditorView {
             textView2.setGravity(17);
             textView2.setBackgroundDrawable(Theme.createSelectorDrawable(788529152, 0));
             textView2.setPadding(AndroidUtilities.m50dp(18), 0, AndroidUtilities.m50dp(18), 0);
-            textView2.setText(LocaleController.getString("SaveTheme", C3301R.string.SaveTheme).toUpperCase());
+            textView2.setText(LocaleController.getString("SaveTheme", C3316R.string.SaveTheme).toUpperCase());
             textView2.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
             this.bottomSaveLayout.addView(textView2, LayoutHelper.createFrame(-2, -1, 53));
             textView2.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.ThemeEditorView$EditorAlert$$ExternalSyntheticLambda3
@@ -817,7 +817,7 @@ public class ThemeEditorView {
             textView3.setGravity(17);
             textView3.setBackgroundDrawable(Theme.createSelectorDrawable(788529152, 0));
             textView3.setPadding(AndroidUtilities.m50dp(18), 0, AndroidUtilities.m50dp(18), 0);
-            textView3.setText(LocaleController.getString("Cancel", C3301R.string.Cancel).toUpperCase());
+            textView3.setText(LocaleController.getString("Cancel", C3316R.string.Cancel).toUpperCase());
             textView3.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
             this.bottomLayout.addView(textView3, LayoutHelper.createFrame(-2, -1, 51));
             textView3.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.ThemeEditorView$EditorAlert$$ExternalSyntheticLambda4
@@ -835,7 +835,7 @@ public class ThemeEditorView {
             textView4.setGravity(17);
             textView4.setBackgroundDrawable(Theme.createSelectorDrawable(788529152, 0));
             textView4.setPadding(AndroidUtilities.m50dp(18), 0, AndroidUtilities.m50dp(18), 0);
-            textView4.setText(LocaleController.getString("Default", C3301R.string.Default).toUpperCase());
+            textView4.setText(LocaleController.getString("Default", C3316R.string.Default).toUpperCase());
             textView4.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
             linearLayout.addView(textView4, LayoutHelper.createFrame(-2, -1, 51));
             textView4.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.ThemeEditorView$EditorAlert$$ExternalSyntheticLambda0
@@ -850,7 +850,7 @@ public class ThemeEditorView {
             textView5.setGravity(17);
             textView5.setBackgroundDrawable(Theme.createSelectorDrawable(788529152, 0));
             textView5.setPadding(AndroidUtilities.m50dp(18), 0, AndroidUtilities.m50dp(18), 0);
-            textView5.setText(LocaleController.getString("Save", C3301R.string.Save).toUpperCase());
+            textView5.setText(LocaleController.getString("Save", C3316R.string.Save).toUpperCase());
             textView5.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
             linearLayout.addView(textView5, LayoutHelper.createFrame(-2, -1, 51));
             textView5.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.ThemeEditorView$EditorAlert$$ExternalSyntheticLambda2
@@ -1398,7 +1398,7 @@ public class ThemeEditorView {
             Instance.destroy();
         }
         this.themeInfo = themeInfo;
-        this.windowView = new C52611(activity);
+        this.windowView = new C52821(activity);
         this.windowManager = (WindowManager) activity.getSystemService("window");
         SharedPreferences sharedPreferences = ApplicationLoader.applicationContext.getSharedPreferences("themeconfig", 0);
         this.preferences = sharedPreferences;
@@ -1449,7 +1449,7 @@ public class ThemeEditorView {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: org.telegram.ui.Components.ThemeEditorView$1 */
     /* loaded from: classes6.dex */
-    public class C52611 extends FrameLayout {
+    public class C52821 extends FrameLayout {
         private boolean dragging;
         private float startX;
         private float startY;
@@ -1463,7 +1463,7 @@ public class ThemeEditorView {
             return true;
         }
 
-        C52611(Context context) {
+        C52821(Context context) {
             super(context);
         }
 
@@ -1482,7 +1482,7 @@ public class ThemeEditorView {
                 Method dump skipped, instructions count: 567
                 To view this dump add '--comments-level debug' option
             */
-            throw new UnsupportedOperationException("Method not decompiled: org.telegram.p048ui.Components.ThemeEditorView.C52611.onTouchEvent(android.view.MotionEvent):boolean");
+            throw new UnsupportedOperationException("Method not decompiled: org.telegram.p048ui.Components.ThemeEditorView.C52821.onTouchEvent(android.view.MotionEvent):boolean");
         }
 
         /* JADX INFO: Access modifiers changed from: private */
@@ -1493,7 +1493,7 @@ public class ThemeEditorView {
     }
 
     private void showWithAnimation() {
-        this.windowView.setBackgroundResource(C3301R.C3303drawable.theme_picker);
+        this.windowView.setBackgroundResource(C3316R.C3318drawable.theme_picker);
         AnimatorSet animatorSet = new AnimatorSet();
         animatorSet.playTogether(ObjectAnimator.ofFloat(this.windowView, View.ALPHA, BitmapDescriptorFactory.HUE_RED, 1.0f), ObjectAnimator.ofFloat(this.windowView, View.SCALE_X, BitmapDescriptorFactory.HUE_RED, 1.0f), ObjectAnimator.ofFloat(this.windowView, View.SCALE_Y, BitmapDescriptorFactory.HUE_RED, 1.0f));
         animatorSet.setInterpolator(this.decelerateInterpolator);
@@ -1508,7 +1508,7 @@ public class ThemeEditorView {
             i3 = AndroidUtilities.displaySize.x;
         } else {
             i3 = AndroidUtilities.displaySize.y - i2;
-            i2 = C3366ActionBar.getCurrentActionBarHeight();
+            i2 = C3381ActionBar.getCurrentActionBarHeight();
         }
         int i4 = i3 - i2;
         if (i == 0) {
@@ -1518,7 +1518,7 @@ public class ThemeEditorView {
         } else {
             round = Math.round((i4 - AndroidUtilities.m50dp(20)) * f) + AndroidUtilities.m50dp(10);
         }
-        return !z ? round + C3366ActionBar.getCurrentActionBarHeight() : round;
+        return !z ? round + C3381ActionBar.getCurrentActionBarHeight() : round;
     }
 
     /* JADX INFO: Access modifiers changed from: private */

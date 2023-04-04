@@ -52,15 +52,15 @@
     .line 781
     iget-object v0, p0, Lorg/telegram/ui/ContactsActivity$5;->this$0:Lorg/telegram/ui/ContactsActivity;
 
-    invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getForkCommonController()Lorg/fork/controller/ForkCommonController;
+    invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getForkCommonController()Lcom/iMe/fork/controller/ForkCommonController;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lorg/fork/controller/ForkCommonController;->getSelectedContactsFilter()Lcom/smedialink/model/contacts/ContactsFilter;
+    invoke-virtual {v0}, Lcom/iMe/fork/controller/ForkCommonController;->getSelectedContactsFilter()Lcom/iMe/model/contacts/ContactsFilter;
 
     move-result-object v0
 
-    invoke-virtual {p0, v0}, Lorg/telegram/ui/Adapters/ContactsAdapter;->setFilterModel(Lcom/smedialink/model/contacts/ContactsFilter;)V
+    invoke-virtual {p0, v0}, Lorg/telegram/ui/Adapters/ContactsAdapter;->setFilterModel(Lcom/iMe/model/contacts/ContactsFilter;)V
 
     .line 782
     invoke-virtual {p0}, Lorg/telegram/ui/Adapters/ContactsAdapter;->reCreateDelegates()V

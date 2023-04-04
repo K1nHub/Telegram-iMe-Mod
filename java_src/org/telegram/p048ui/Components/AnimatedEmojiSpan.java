@@ -54,7 +54,7 @@ public class AnimatedEmojiSpan extends ReplacementSpan {
     }
 
     public AnimatedEmojiSpan(TLRPC$Document tLRPC$Document, Paint.FontMetricsInt fontMetricsInt) {
-        this(tLRPC$Document.f1508id, 1.2f, fontMetricsInt);
+        this(tLRPC$Document.f1510id, 1.2f, fontMetricsInt);
         this.document = tLRPC$Document;
     }
 
@@ -93,7 +93,7 @@ public class AnimatedEmojiSpan extends ReplacementSpan {
 
     public long getDocumentId() {
         TLRPC$Document tLRPC$Document = this.document;
-        return tLRPC$Document != null ? tLRPC$Document.f1508id : this.documentId;
+        return tLRPC$Document != null ? tLRPC$Document.f1510id : this.documentId;
     }
 
     public void replaceFontMetrics(Paint.FontMetricsInt fontMetricsInt) {

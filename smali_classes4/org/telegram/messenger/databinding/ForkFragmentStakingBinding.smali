@@ -9,11 +9,11 @@
 # instance fields
 .field private final rootView:Landroidx/swiperefreshlayout/widget/SwipeRefreshLayout;
 
-.field public final stakingPager:Lorg/fork/ui/view/CollapsableHeaderTabbedViewPager;
+.field public final stakingPager:Lcom/iMe/fork/ui/view/CollapsableHeaderTabbedViewPager;
 
 
 # direct methods
-.method private constructor <init>(Landroidx/swiperefreshlayout/widget/SwipeRefreshLayout;Lorg/fork/ui/view/CollapsableHeaderTabbedViewPager;)V
+.method private constructor <init>(Landroidx/swiperefreshlayout/widget/SwipeRefreshLayout;Lcom/iMe/fork/ui/view/CollapsableHeaderTabbedViewPager;)V
     .locals 0
 
     .line 26
@@ -23,7 +23,7 @@
     iput-object p1, p0, Lorg/telegram/messenger/databinding/ForkFragmentStakingBinding;->rootView:Landroidx/swiperefreshlayout/widget/SwipeRefreshLayout;
 
     .line 28
-    iput-object p2, p0, Lorg/telegram/messenger/databinding/ForkFragmentStakingBinding;->stakingPager:Lorg/fork/ui/view/CollapsableHeaderTabbedViewPager;
+    iput-object p2, p0, Lorg/telegram/messenger/databinding/ForkFragmentStakingBinding;->stakingPager:Lcom/iMe/fork/ui/view/CollapsableHeaderTabbedViewPager;
 
     return-void
 .end method
@@ -39,7 +39,7 @@
 
     move-result-object v1
 
-    check-cast v1, Lorg/fork/ui/view/CollapsableHeaderTabbedViewPager;
+    check-cast v1, Lcom/iMe/fork/ui/view/CollapsableHeaderTabbedViewPager;
 
     if-eqz v1, :cond_0
 
@@ -48,7 +48,7 @@
 
     check-cast p0, Landroidx/swiperefreshlayout/widget/SwipeRefreshLayout;
 
-    invoke-direct {v0, p0, v1}, Lorg/telegram/messenger/databinding/ForkFragmentStakingBinding;-><init>(Landroidx/swiperefreshlayout/widget/SwipeRefreshLayout;Lorg/fork/ui/view/CollapsableHeaderTabbedViewPager;)V
+    invoke-direct {v0, p0, v1}, Lorg/telegram/messenger/databinding/ForkFragmentStakingBinding;-><init>(Landroidx/swiperefreshlayout/widget/SwipeRefreshLayout;Lcom/iMe/fork/ui/view/CollapsableHeaderTabbedViewPager;)V
 
     return-object v0
 

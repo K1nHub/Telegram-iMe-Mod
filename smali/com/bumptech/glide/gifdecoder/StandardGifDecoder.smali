@@ -1210,6 +1210,7 @@
 
     goto :goto_0
 
+    .line 846
     :cond_0
     iget-object v0, p0, Lcom/bumptech/glide/gifdecoder/StandardGifDecoder;->bitmapConfig:Landroid/graphics/Bitmap$Config;
 

@@ -85,10 +85,10 @@ public class CameraView extends FrameLayout implements TextureView.SurfaceTextur
     private int clipTop;
 
     /* renamed from: cx */
-    private int f1481cx;
+    private int f1483cx;
 
     /* renamed from: cy */
-    private int f1482cy;
+    private int f1484cy;
     private CameraViewDelegate delegate;
     boolean firstFrameRendered;
     ValueAnimator flipAnimator;
@@ -666,8 +666,8 @@ public class CameraView extends FrameLayout implements TextureView.SurfaceTextur
             this.focusProgress = BitmapDescriptorFactory.HUE_RED;
             this.innerAlpha = 1.0f;
             this.outerAlpha = 1.0f;
-            this.f1481cx = i;
-            this.f1482cy = i2;
+            this.f1483cx = i;
+            this.f1484cy = i2;
             this.lastDrawTime = System.currentTimeMillis();
             invalidate();
         }
@@ -724,8 +724,8 @@ public class CameraView extends FrameLayout implements TextureView.SurfaceTextur
             this.innerPaint.setAlpha((int) (this.interpolator.getInterpolation(this.innerAlpha) * 127.0f));
             float interpolation = this.interpolator.getInterpolation(this.focusProgress);
             float f = m50dp;
-            canvas.drawCircle(this.f1481cx, this.f1482cy, ((1.0f - interpolation) * f) + f, this.outerPaint);
-            canvas.drawCircle(this.f1481cx, this.f1482cy, f * interpolation, this.innerPaint);
+            canvas.drawCircle(this.f1483cx, this.f1484cy, ((1.0f - interpolation) * f) + f, this.outerPaint);
+            canvas.drawCircle(this.f1483cx, this.f1484cy, f * interpolation, this.innerPaint);
             float f2 = this.focusProgress;
             if (f2 < 1.0f) {
                 float f3 = f2 + (((float) j2) / 200.0f);
@@ -1401,7 +1401,7 @@ public class CameraView extends FrameLayout implements TextureView.SurfaceTextur
                         Method dump skipped, instructions count: 262
                         To view this dump add '--comments-level debug' option
                     */
-                    throw new UnsupportedOperationException("Method not decompiled: org.telegram.messenger.camera.CameraView.VideoRecorder.RunnableC33281.run():void");
+                    throw new UnsupportedOperationException("Method not decompiled: org.telegram.messenger.camera.CameraView.VideoRecorder.RunnableC33431.run():void");
                 }
             };
         }

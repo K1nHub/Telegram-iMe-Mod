@@ -24,6 +24,9 @@
 .method public abstract didFinishLoadingFile(Lorg/telegram/messenger/FileLoadOperation;Ljava/io/File;)V
 .end method
 
+.method public abstract didPreFinishLoading(Lorg/telegram/messenger/FileLoadOperation;Ljava/io/File;)V
+.end method
+
 .method public abstract hasAnotherRefOnFile(Ljava/lang/String;)Z
 .end method
 

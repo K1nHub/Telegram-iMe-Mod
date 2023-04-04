@@ -37,7 +37,7 @@ import org.telegram.tgnet.TLRPC$TL_messages_translateResult;
 import org.telegram.tgnet.TLRPC$TL_messages_translateText;
 import org.telegram.tgnet.TLRPC$TL_textWithEntities;
 import org.telegram.tgnet.TLRPC$UserFull;
-import p034j$.util.Comparator;
+import p035j$.util.Comparator;
 /* loaded from: classes4.dex */
 public class TranslateController extends BaseController {
     private static final int GROUPING_TRANSLATIONS_TIMEOUT = 200;
@@ -69,7 +69,7 @@ public class TranslateController extends BaseController {
         public String ownDisplayName;
 
         /* renamed from: q */
-        public String f1475q;
+        public String f1477q;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -304,7 +304,7 @@ public class TranslateController extends BaseController {
                     str2 = "";
                 }
                 sb.append(str2);
-                language.f1475q = sb.toString().toLowerCase();
+                language.f1477q = sb.toString().toLowerCase();
                 arrayList.add(language);
             }
         }
@@ -392,7 +392,7 @@ public class TranslateController extends BaseController {
                     language.displayName = TranslateAlert2.capitalFirst(TranslateAlert2.languageName(language.code));
                     language.ownDisplayName = TranslateAlert2.capitalFirst(TranslateAlert2.systemLanguageName(language.code, true));
                     if (language.displayName != null) {
-                        language.f1475q = (language.displayName + " " + language.ownDisplayName).toLowerCase();
+                        language.f1477q = (language.displayName + " " + language.ownDisplayName).toLowerCase();
                         arrayList.add(language);
                     }
                 }
@@ -877,7 +877,7 @@ public class TranslateController extends BaseController {
         TLRPC$TL_messages_translateText tLRPC$TL_messages_translateText = new TLRPC$TL_messages_translateText();
         tLRPC$TL_messages_translateText.flags |= 1;
         tLRPC$TL_messages_translateText.peer = getMessagesController().getInputPeer(j);
-        tLRPC$TL_messages_translateText.f1610id = pendingTranslation.messageIds;
+        tLRPC$TL_messages_translateText.f1612id = pendingTranslation.messageIds;
         tLRPC$TL_messages_translateText.to_lang = pendingTranslation.language;
         int sendRequest = getConnectionsManager().sendRequest(tLRPC$TL_messages_translateText, new RequestDelegate() { // from class: org.telegram.messenger.TranslateController$$ExternalSyntheticLambda17
             @Override // org.telegram.tgnet.RequestDelegate
@@ -918,7 +918,7 @@ public class TranslateController extends BaseController {
             }
         } else if (tLRPC$TL_error != null && "TO_LANG_INVALID".equals(tLRPC$TL_error.text)) {
             toggleTranslatingDialog(j, false);
-            NotificationCenter.getGlobalInstance().postNotificationName(NotificationCenter.showBulletin, 1, LocaleController.getString("TranslationFailedAlert2", C3301R.string.TranslationFailedAlert2));
+            NotificationCenter.getGlobalInstance().postNotificationName(NotificationCenter.showBulletin, 1, LocaleController.getString("TranslationFailedAlert2", C3316R.string.TranslationFailedAlert2));
         } else {
             for (int i2 = 0; i2 < arrayList2.size(); i2++) {
                 arrayList2.get(i2).run(null, pendingTranslation.language);

@@ -136,7 +136,7 @@
     return-object p1
 
     :cond_1
-    const-string v2, "unsupported"
+    const-string/jumbo v2, "unsupported"
 
     .line 96
     invoke-static {v0, v2}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z

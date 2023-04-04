@@ -7,7 +7,7 @@
 
 
 # instance fields
-.field public final buttonAction:Lcom/smedialink/ui/custom/BigActionButton;
+.field public final buttonAction:Lcom/iMe/ui/custom/BigActionButton;
 
 .field public final buttonApproveInfo:Landroidx/appcompat/widget/AppCompatTextView;
 
@@ -17,7 +17,7 @@
 
 
 # direct methods
-.method private constructor <init>(Landroidx/appcompat/widget/LinearLayoutCompat;Lcom/smedialink/ui/custom/BigActionButton;Landroidx/appcompat/widget/AppCompatTextView;Landroidx/appcompat/widget/AppCompatTextView;)V
+.method private constructor <init>(Landroidx/appcompat/widget/LinearLayoutCompat;Lcom/iMe/ui/custom/BigActionButton;Landroidx/appcompat/widget/AppCompatTextView;Landroidx/appcompat/widget/AppCompatTextView;)V
     .locals 0
 
     .line 34
@@ -27,7 +27,7 @@
     iput-object p1, p0, Lorg/telegram/messenger/databinding/ForkContentStakingTransactionActionsBinding;->rootView:Landroidx/appcompat/widget/LinearLayoutCompat;
 
     .line 36
-    iput-object p2, p0, Lorg/telegram/messenger/databinding/ForkContentStakingTransactionActionsBinding;->buttonAction:Lcom/smedialink/ui/custom/BigActionButton;
+    iput-object p2, p0, Lorg/telegram/messenger/databinding/ForkContentStakingTransactionActionsBinding;->buttonAction:Lcom/iMe/ui/custom/BigActionButton;
 
     .line 37
     iput-object p3, p0, Lorg/telegram/messenger/databinding/ForkContentStakingTransactionActionsBinding;->buttonApproveInfo:Landroidx/appcompat/widget/AppCompatTextView;
@@ -49,7 +49,7 @@
 
     move-result-object v1
 
-    check-cast v1, Lcom/smedialink/ui/custom/BigActionButton;
+    check-cast v1, Lcom/iMe/ui/custom/BigActionButton;
 
     if-eqz v1, :cond_0
 
@@ -82,7 +82,7 @@
 
     check-cast p0, Landroidx/appcompat/widget/LinearLayoutCompat;
 
-    invoke-direct {v0, p0, v1, v2, v3}, Lorg/telegram/messenger/databinding/ForkContentStakingTransactionActionsBinding;-><init>(Landroidx/appcompat/widget/LinearLayoutCompat;Lcom/smedialink/ui/custom/BigActionButton;Landroidx/appcompat/widget/AppCompatTextView;Landroidx/appcompat/widget/AppCompatTextView;)V
+    invoke-direct {v0, p0, v1, v2, v3}, Lorg/telegram/messenger/databinding/ForkContentStakingTransactionActionsBinding;-><init>(Landroidx/appcompat/widget/LinearLayoutCompat;Lcom/iMe/ui/custom/BigActionButton;Landroidx/appcompat/widget/AppCompatTextView;Landroidx/appcompat/widget/AppCompatTextView;)V
 
     return-object v0
 

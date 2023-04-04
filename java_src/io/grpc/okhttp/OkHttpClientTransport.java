@@ -285,7 +285,7 @@ public class OkHttpClientTransport implements ConnectionClientTransport, Excepti
     }
 
     private void startStream(OkHttpClientStream okHttpClientStream) {
-        Preconditions.checkState(okHttpClientStream.m696id() == -1, "StreamId already assigned");
+        Preconditions.checkState(okHttpClientStream.m691id() == -1, "StreamId already assigned");
         this.streams.put(Integer.valueOf(this.nextStreamId), okHttpClientStream);
         setInUse(okHttpClientStream);
         okHttpClientStream.transportState().start(this.nextStreamId);

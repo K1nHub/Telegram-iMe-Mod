@@ -24,7 +24,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/MediaActivity;Landroid/content/Context;Landroid/widget/FrameLayout;)V
     .locals 0
 
-    .line 137
+    .line 136
     iput-object p1, p0, Lorg/telegram/ui/Components/MediaActivity$2;->this$0:Lorg/telegram/ui/Components/MediaActivity;
 
     iput-object p3, p0, Lorg/telegram/ui/Components/MediaActivity$2;->val$avatarContainer:Landroid/widget/FrameLayout;
@@ -39,7 +39,7 @@
 .method public dispatchTouchEvent(Landroid/view/MotionEvent;)Z
     .locals 1
 
-    .line 163
+    .line 162
     iget-object v0, p0, Lorg/telegram/ui/Components/MediaActivity$2;->this$0:Lorg/telegram/ui/Components/MediaActivity;
 
     iget-object v0, v0, Lorg/telegram/ui/Components/MediaActivity;->sharedMediaLayout:Lorg/telegram/ui/Components/SharedMediaLayout;
@@ -52,7 +52,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 164
+    .line 163
     iget-object v0, p0, Lorg/telegram/ui/Components/MediaActivity$2;->this$0:Lorg/telegram/ui/Components/MediaActivity;
 
     iget-object v0, v0, Lorg/telegram/ui/Components/MediaActivity;->sharedMediaLayout:Lorg/telegram/ui/Components/SharedMediaLayout;
@@ -63,7 +63,7 @@
 
     return p1
 
-    .line 166
+    .line 165
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Components/MediaActivity$2;->this$0:Lorg/telegram/ui/Components/MediaActivity;
 
@@ -81,7 +81,7 @@
 
     return p1
 
-    .line 169
+    .line 168
     :cond_1
     invoke-super {p0, p1}, Landroid/widget/FrameLayout;->dispatchTouchEvent(Landroid/view/MotionEvent;)Z
 
@@ -93,7 +93,7 @@
 .method protected drawList(Landroid/graphics/Canvas;Z)V
     .locals 0
 
-    .line 174
+    .line 173
     iget-object p2, p0, Lorg/telegram/ui/Components/MediaActivity$2;->this$0:Lorg/telegram/ui/Components/MediaActivity;
 
     iget-object p2, p2, Lorg/telegram/ui/Components/MediaActivity;->sharedMediaLayout:Lorg/telegram/ui/Components/SharedMediaLayout;
@@ -106,7 +106,7 @@
 .method protected onMeasure(II)V
     .locals 4
 
-    .line 141
+    .line 140
     iget-object v0, p0, Lorg/telegram/ui/Components/MediaActivity$2;->this$0:Lorg/telegram/ui/Components/MediaActivity;
 
     iget-object v0, v0, Lorg/telegram/ui/Components/MediaActivity;->sharedMediaLayout:Lorg/telegram/ui/Components/SharedMediaLayout;
@@ -117,7 +117,7 @@
 
     check-cast v0, Landroid/widget/FrameLayout$LayoutParams;
 
-    .line 142
+    .line 141
     invoke-static {}, Lorg/telegram/ui/ActionBar/ActionBar;->getCurrentActionBarHeight()I
 
     move-result v1
@@ -148,7 +148,7 @@
 
     iput v1, v0, Landroid/widget/FrameLayout$LayoutParams;->topMargin:I
 
-    .line 144
+    .line 143
     iget-object v0, p0, Lorg/telegram/ui/Components/MediaActivity$2;->val$avatarContainer:Landroid/widget/FrameLayout;
 
     invoke-virtual {v0}, Landroid/widget/FrameLayout;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
@@ -157,7 +157,7 @@
 
     check-cast v0, Landroid/widget/FrameLayout$LayoutParams;
 
-    .line 145
+    .line 144
     iget-object v1, p0, Lorg/telegram/ui/Components/MediaActivity$2;->this$0:Lorg/telegram/ui/Components/MediaActivity;
 
     invoke-static {v1}, Lorg/telegram/ui/Components/MediaActivity;->access$100(Lorg/telegram/ui/Components/MediaActivity;)Lorg/telegram/ui/ActionBar/ActionBar;
@@ -175,14 +175,14 @@
     :cond_1
     iput v3, v0, Landroid/widget/FrameLayout$LayoutParams;->topMargin:I
 
-    .line 146
+    .line 145
     invoke-static {}, Lorg/telegram/ui/ActionBar/ActionBar;->getCurrentActionBarHeight()I
 
     move-result v1
 
     iput v1, v0, Landroid/widget/FrameLayout$LayoutParams;->height:I
 
-    .line 148
+    .line 147
     invoke-static {}, Lorg/telegram/ui/ActionBar/ActionBar;->getCurrentActionBarHeight()I
 
     move-result v0
@@ -233,7 +233,7 @@
 
     add-int/2addr v0, v2
 
-    .line 149
+    .line 148
     iget-object v2, p0, Lorg/telegram/ui/Components/MediaActivity$2;->this$0:Lorg/telegram/ui/Components/MediaActivity;
 
     invoke-static {v2}, Lorg/telegram/ui/Components/MediaActivity;->access$200(Lorg/telegram/ui/Components/MediaActivity;)Lorg/telegram/ui/ActionBar/SimpleTextView;
@@ -246,10 +246,10 @@
 
     check-cast v2, Landroid/widget/FrameLayout$LayoutParams;
 
-    .line 150
+    .line 149
     iput v0, v2, Landroid/widget/FrameLayout$LayoutParams;->topMargin:I
 
-    .line 152
+    .line 151
     invoke-static {}, Lorg/telegram/ui/ActionBar/ActionBar;->getCurrentActionBarHeight()I
 
     move-result v0
@@ -282,7 +282,7 @@
 
     sub-int/2addr v0, v2
 
-    .line 153
+    .line 152
     iget-object v2, p0, Lorg/telegram/ui/Components/MediaActivity$2;->this$0:Lorg/telegram/ui/Components/MediaActivity;
 
     iget-object v2, v2, Lorg/telegram/ui/Components/MediaActivity;->mediaCounterTextView:Lorg/telegram/ui/Components/AudioPlayerAlert$ClippingTextViewSwitcher;
@@ -293,10 +293,10 @@
 
     check-cast v2, Landroid/widget/FrameLayout$LayoutParams;
 
-    .line 154
+    .line 153
     iput v0, v2, Landroid/widget/FrameLayout$LayoutParams;->topMargin:I
 
-    .line 156
+    .line 155
     iget-object v0, p0, Lorg/telegram/ui/Components/MediaActivity$2;->this$0:Lorg/telegram/ui/Components/MediaActivity;
 
     iget-object v0, v0, Lorg/telegram/ui/Components/MediaActivity;->avatarImageView:Lorg/telegram/ui/ProfileActivity$AvatarImageView;
@@ -307,7 +307,7 @@
 
     check-cast v0, Landroid/widget/FrameLayout$LayoutParams;
 
-    .line 157
+    .line 156
     invoke-static {}, Lorg/telegram/ui/ActionBar/ActionBar;->getCurrentActionBarHeight()I
 
     move-result v2
@@ -324,7 +324,7 @@
 
     iput v2, v0, Landroid/widget/FrameLayout$LayoutParams;->topMargin:I
 
-    .line 158
+    .line 157
     invoke-super {p0, p1, p2}, Landroid/widget/FrameLayout;->onMeasure(II)V
 
     return-void

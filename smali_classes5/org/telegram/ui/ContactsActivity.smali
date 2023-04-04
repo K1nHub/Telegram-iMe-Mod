@@ -1,11 +1,11 @@
 .class public Lorg/telegram/ui/ContactsActivity;
-.super Lcom/smedialink/ui/base/mvp/JavaMvpFragment;
+.super Lcom/iMe/ui/base/mvp/JavaMvpFragment;
 .source "ContactsActivity.java"
 
 # interfaces
 .implements Lorg/telegram/messenger/NotificationCenter$NotificationCenterDelegate;
-.implements Lcom/smedialink/ui/contacts/ContactsView;
-.implements Lcom/smedialink/ui/wallet/actions/send/recipient/WalletSendRecipientView;
+.implements Lcom/iMe/ui/contacts/ContactsView;
+.implements Lcom/iMe/ui/wallet/actions/send/recipient/WalletSendRecipientView;
 
 
 # annotations
@@ -93,7 +93,7 @@
 
 .field private needPhonebook:Z
 
-.field private networkType:Lcom/smedialink/storage/domain/model/crypto/NetworkType;
+.field private networkType:Lcom/iMe/storage/domain/model/crypto/NetworkType;
 
 .field private onlyUsers:Z
 
@@ -101,7 +101,7 @@
 
 .field private permissionRequestTime:J
 
-.field public presenter:Lcom/smedialink/ui/contacts/ContactsPresenter;
+.field public presenter:Lcom/iMe/ui/contacts/ContactsPresenter;
     .annotation runtime Lmoxy/presenter/InjectPresenter;
     .end annotation
 .end field
@@ -118,7 +118,7 @@
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lkotlin/Lazy<",
-            "Lcom/smedialink/storage/domain/utils/system/ResourceManager;",
+            "Lcom/iMe/storage/domain/utils/system/ResourceManager;",
             ">;"
         }
     .end annotation
@@ -142,15 +142,15 @@
 
 .field private sortItem:Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
 
-.field public transferRecipientPresenter:Lcom/smedialink/ui/wallet/actions/send/recipient/WalletSendRecipientPresenter;
+.field public transferRecipientPresenter:Lcom/iMe/ui/wallet/actions/send/recipient/WalletSendRecipientPresenter;
     .annotation runtime Lmoxy/presenter/InjectPresenter;
     .end annotation
 .end field
 
-.field private userWithCryptoAddressDelegate:Lorg/fork/utils/Callbacks$Callback2;
+.field private userWithCryptoAddressDelegate:Lcom/iMe/fork/utils/Callbacks$Callback2;
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "Lorg/fork/utils/Callbacks$Callback2<",
+            "Lcom/iMe/fork/utils/Callbacks$Callback2<",
             "Lorg/telegram/tgnet/TLRPC$User;",
             "Ljava/lang/String;",
             ">;"
@@ -208,34 +208,18 @@
     return-void
 .end method
 
+.method public static synthetic $r8$lambda$JeUWesf6IkVwX5toQtam0yevzWw(Lorg/telegram/ui/ContactsActivity;Lcom/iMe/fork/enums/ContactsActionType;)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Lorg/telegram/ui/ContactsActivity;->lambda$showMembersActionConfirmationAlert$5(Lcom/iMe/fork/enums/ContactsActionType;)V
+
+    return-void
+.end method
+
 .method public static synthetic $r8$lambda$JnDmwViDFOWWsMftSn-75lQqEnc(Lorg/telegram/ui/ContactsActivity;Lorg/telegram/tgnet/TLRPC$User;Landroid/widget/EditText;Landroid/content/DialogInterface;I)V
     .locals 0
 
     invoke-direct {p0, p1, p2, p3, p4}, Lorg/telegram/ui/ContactsActivity;->lambda$didSelectResult$13(Lorg/telegram/tgnet/TLRPC$User;Landroid/widget/EditText;Landroid/content/DialogInterface;I)V
-
-    return-void
-.end method
-
-.method public static synthetic $r8$lambda$OkmeJICBV36x7isTRAzrACME7XM(Lorg/telegram/ui/ContactsActivity;)V
-    .locals 0
-
-    invoke-direct {p0}, Lorg/telegram/ui/ContactsActivity;->lambda$createView$7()V
-
-    return-void
-.end method
-
-.method public static synthetic $r8$lambda$S4lS0Uf8gzueF9iHAE62vHO5Xxs(Ljava/lang/Runnable;Ljava/lang/Boolean;)V
-    .locals 0
-
-    invoke-static {p0, p1}, Lorg/telegram/ui/ContactsActivity;->lambda$openDeleteContactsDialog$2(Ljava/lang/Runnable;Ljava/lang/Boolean;)V
-
-    return-void
-.end method
-
-.method public static synthetic $r8$lambda$TXhmmIPYBuxtOsdpnGA1GEXxhEs(Lorg/telegram/ui/ContactsActivity;Lorg/fork/enums/ContactsActionType;Ljava/lang/Boolean;)V
-    .locals 0
-
-    invoke-direct {p0, p1, p2}, Lorg/telegram/ui/ContactsActivity;->lambda$showMembersActionConfirmationAlert$6(Lorg/fork/enums/ContactsActionType;Ljava/lang/Boolean;)V
 
     return-void
 .end method
@@ -250,10 +234,18 @@
     return-object p0
 .end method
 
-.method public static synthetic $r8$lambda$VeC5H9fpQumz9jq4WH3ZiYesb3s(Lorg/telegram/ui/ContactsActivity;Lorg/fork/enums/ContactsActionType;)V
+.method public static synthetic $r8$lambda$Uem_jfa1QH7UfedvIypia6vOC80(Lorg/telegram/ui/ContactsActivity;Lcom/iMe/fork/enums/ContactsActionType;Ljava/lang/Boolean;)V
     .locals 0
 
-    invoke-direct {p0, p1}, Lorg/telegram/ui/ContactsActivity;->lambda$showMembersActionConfirmationAlert$5(Lorg/fork/enums/ContactsActionType;)V
+    invoke-direct {p0, p1, p2}, Lorg/telegram/ui/ContactsActivity;->lambda$showMembersActionConfirmationAlert$6(Lcom/iMe/fork/enums/ContactsActionType;Ljava/lang/Boolean;)V
+
+    return-void
+.end method
+
+.method public static synthetic $r8$lambda$YBfvP5kBa_LuFa9B9Krx97-NI1U(Lorg/telegram/ui/ContactsActivity;)V
+    .locals 0
+
+    invoke-direct {p0}, Lorg/telegram/ui/ContactsActivity;->lambda$createView$7()V
 
     return-void
 .end method
@@ -262,6 +254,14 @@
     .locals 0
 
     invoke-direct {p0, p1, p2, p3}, Lorg/telegram/ui/ContactsActivity;->lambda$createView$10(ILandroid/view/View;I)V
+
+    return-void
+.end method
+
+.method public static synthetic $r8$lambda$aqghIhBx0HjUbX3iMz-bY8bqTFU(Ljava/lang/Runnable;Ljava/lang/Boolean;)V
+    .locals 0
+
+    invoke-static {p0, p1}, Lorg/telegram/ui/ContactsActivity;->lambda$openDeleteContactsDialog$2(Ljava/lang/Runnable;Ljava/lang/Boolean;)V
 
     return-void
 .end method
@@ -292,6 +292,14 @@
     return p0
 .end method
 
+.method public static synthetic $r8$lambda$qHAcpQAWkvHZfrkoZsB6YykqYiw(Lorg/telegram/ui/ContactsActivity;[Lcom/iMe/model/contacts/ContactsFilter;Lorg/telegram/ui/ActionBar/AlertDialog$Builder;Landroid/view/View;)V
+    .locals 0
+
+    invoke-direct {p0, p1, p2, p3}, Lorg/telegram/ui/ContactsActivity;->lambda$openFilterBottomSheet$3([Lcom/iMe/model/contacts/ContactsFilter;Lorg/telegram/ui/ActionBar/AlertDialog$Builder;Landroid/view/View;)V
+
+    return-void
+.end method
+
 .method public static synthetic $r8$lambda$t22lj9FgvrTFfE4IEV84GY1ykcY(Lorg/telegram/ui/ContactsActivity;Lorg/telegram/tgnet/TLRPC$User;Ljava/lang/String;Landroid/content/DialogInterface;I)V
     .locals 0
 
@@ -304,14 +312,6 @@
     .locals 0
 
     invoke-direct {p0, p1}, Lorg/telegram/ui/ContactsActivity;->lambda$askForPermissons$15(I)V
-
-    return-void
-.end method
-
-.method public static synthetic $r8$lambda$xLh5xfBWcPmvPStygmK0xjOKK8c(Lorg/telegram/ui/ContactsActivity;[Lcom/smedialink/model/contacts/ContactsFilter;Lorg/telegram/ui/ActionBar/AlertDialog$Builder;Landroid/view/View;)V
-    .locals 0
-
-    invoke-direct {p0, p1, p2, p3}, Lorg/telegram/ui/ContactsActivity;->lambda$openFilterBottomSheet$3([Lcom/smedialink/model/contacts/ContactsFilter;Lorg/telegram/ui/ActionBar/AlertDialog$Builder;Landroid/view/View;)V
 
     return-void
 .end method
@@ -353,10 +353,10 @@
     .locals 1
 
     .line 548
-    invoke-direct {p0, p1}, Lcom/smedialink/ui/base/mvp/JavaMvpFragment;-><init>(Landroid/os/Bundle;)V
+    invoke-direct {p0, p1}, Lcom/iMe/ui/base/mvp/JavaMvpFragment;-><init>(Landroid/os/Bundle;)V
 
     .line 144
-    const-class p1, Lcom/smedialink/storage/domain/utils/system/ResourceManager;
+    const-class p1, Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
     invoke-static {p1}, Lorg/koin/java/KoinJavaComponent;->inject(Ljava/lang/Class;)Lkotlin/Lazy;
 
@@ -963,7 +963,7 @@
     invoke-virtual {v0, v1, v2}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
     .line 353
-    sget v1, Lcom/smedialink/common/IdFabric$Menu;->DELETE:I
+    sget v1, Lcom/iMe/common/IdFabric$Menu;->DELETE:I
 
     sget v2, Lorg/telegram/messenger/R$drawable;->msg_delete:I
 
@@ -991,12 +991,12 @@
     invoke-direct {v0, v1}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
     .line 426
-    invoke-static {}, Lorg/fork/enums/ContactsActionType;->getTextsArray()[Ljava/lang/String;
+    invoke-static {}, Lcom/iMe/fork/enums/ContactsActionType;->getTextsArray()[Ljava/lang/String;
 
     move-result-object v1
 
     .line 427
-    invoke-static {}, Lorg/fork/enums/ContactsActionType;->getIconsArray()[I
+    invoke-static {}, Lcom/iMe/fork/enums/ContactsActionType;->getIconsArray()[I
 
     move-result-object v2
 
@@ -1741,11 +1741,11 @@
     .locals 0
 
     .line 428
-    invoke-static {p2}, Lorg/fork/enums/ContactsActionType;->getByPosition(I)Lorg/fork/enums/ContactsActionType;
+    invoke-static {p2}, Lcom/iMe/fork/enums/ContactsActionType;->getByPosition(I)Lcom/iMe/fork/enums/ContactsActionType;
 
     move-result-object p1
 
-    invoke-direct {p0, p1}, Lorg/telegram/ui/ContactsActivity;->showMembersActionConfirmationAlert(Lorg/fork/enums/ContactsActionType;)V
+    invoke-direct {p0, p1}, Lorg/telegram/ui/ContactsActivity;->showMembersActionConfirmationAlert(Lcom/iMe/fork/enums/ContactsActionType;)V
 
     return-void
 .end method
@@ -2046,7 +2046,7 @@
 
     .line 922
     :cond_a
-    instance-of p2, p2, Lcom/smedialink/ui/contacts/view/TextCellWithRightImage;
+    instance-of p2, p2, Lcom/iMe/ui/contacts/view/TextCellWithRightImage;
 
     if-eqz p2, :cond_b
 
@@ -4326,7 +4326,7 @@
     return-void
 .end method
 
-.method private synthetic lambda$openFilterBottomSheet$3([Lcom/smedialink/model/contacts/ContactsFilter;Lorg/telegram/ui/ActionBar/AlertDialog$Builder;Landroid/view/View;)V
+.method private synthetic lambda$openFilterBottomSheet$3([Lcom/iMe/model/contacts/ContactsFilter;Lorg/telegram/ui/ActionBar/AlertDialog$Builder;Landroid/view/View;)V
     .locals 1
 
     .line 407
@@ -4337,7 +4337,7 @@
     check-cast p3, Ljava/lang/Integer;
 
     .line 408
-    invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getForkCommonController()Lorg/fork/controller/ForkCommonController;
+    invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getForkCommonController()Lcom/iMe/fork/controller/ForkCommonController;
 
     move-result-object v0
 
@@ -4347,14 +4347,14 @@
 
     aget-object p1, p1, p3
 
-    invoke-virtual {v0, p1}, Lorg/fork/controller/ForkCommonController;->setSelectedContactsFilter(Lcom/smedialink/model/contacts/ContactsFilter;)V
+    invoke-virtual {v0, p1}, Lcom/iMe/fork/controller/ForkCommonController;->setSelectedContactsFilter(Lcom/iMe/model/contacts/ContactsFilter;)V
 
     .line 409
-    invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getForkCommonController()Lorg/fork/controller/ForkCommonController;
+    invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getForkCommonController()Lcom/iMe/fork/controller/ForkCommonController;
 
     move-result-object p1
 
-    invoke-virtual {p1}, Lorg/fork/controller/ForkCommonController;->saveConfig()V
+    invoke-virtual {p1}, Lcom/iMe/fork/controller/ForkCommonController;->saveConfig()V
 
     .line 411
     iget-object p1, p0, Lorg/telegram/ui/ContactsActivity;->listViewAdapter:Lorg/telegram/ui/Adapters/ContactsAdapter;
@@ -4362,15 +4362,15 @@
     if-eqz p1, :cond_0
 
     .line 412
-    invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getForkCommonController()Lorg/fork/controller/ForkCommonController;
+    invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getForkCommonController()Lcom/iMe/fork/controller/ForkCommonController;
 
     move-result-object p3
 
-    invoke-virtual {p3}, Lorg/fork/controller/ForkCommonController;->getSelectedContactsFilter()Lcom/smedialink/model/contacts/ContactsFilter;
+    invoke-virtual {p3}, Lcom/iMe/fork/controller/ForkCommonController;->getSelectedContactsFilter()Lcom/iMe/model/contacts/ContactsFilter;
 
     move-result-object p3
 
-    invoke-virtual {p1, p3}, Lorg/telegram/ui/Adapters/ContactsAdapter;->setFilterModel(Lcom/smedialink/model/contacts/ContactsFilter;)V
+    invoke-virtual {p1, p3}, Lorg/telegram/ui/Adapters/ContactsAdapter;->setFilterModel(Lcom/iMe/model/contacts/ContactsFilter;)V
 
     .line 413
     iget-object p1, p0, Lorg/telegram/ui/ContactsActivity;->listViewAdapter:Lorg/telegram/ui/Adapters/ContactsAdapter;
@@ -4401,7 +4401,7 @@
     new-array v0, v0, [Ljava/lang/Object;
 
     .line 153
-    iget-object v1, p0, Lorg/telegram/ui/ContactsActivity;->networkType:Lcom/smedialink/storage/domain/model/crypto/NetworkType;
+    iget-object v1, p0, Lorg/telegram/ui/ContactsActivity;->networkType:Lcom/iMe/storage/domain/model/crypto/NetworkType;
 
     const/4 v2, 0x0
 
@@ -4414,16 +4414,16 @@
     return-object v0
 .end method
 
-.method private synthetic lambda$showMembersActionConfirmationAlert$5(Lorg/fork/enums/ContactsActionType;)V
+.method private synthetic lambda$showMembersActionConfirmationAlert$5(Lcom/iMe/fork/enums/ContactsActionType;)V
     .locals 0
 
     .line 436
-    invoke-direct {p0, p1}, Lorg/telegram/ui/ContactsActivity;->startContactsProcessingService(Lorg/fork/enums/ContactsActionType;)V
+    invoke-direct {p0, p1}, Lorg/telegram/ui/ContactsActivity;->startContactsProcessingService(Lcom/iMe/fork/enums/ContactsActionType;)V
 
     return-void
 .end method
 
-.method private synthetic lambda$showMembersActionConfirmationAlert$6(Lorg/fork/enums/ContactsActionType;Ljava/lang/Boolean;)V
+.method private synthetic lambda$showMembersActionConfirmationAlert$6(Lcom/iMe/fork/enums/ContactsActionType;Ljava/lang/Boolean;)V
     .locals 0
 
     .line 448
@@ -4434,7 +4434,7 @@
     if-eqz p2, :cond_0
 
     .line 449
-    invoke-direct {p0, p1}, Lorg/telegram/ui/ContactsActivity;->startContactsProcessingService(Lorg/fork/enums/ContactsActionType;)V
+    invoke-direct {p0, p1}, Lorg/telegram/ui/ContactsActivity;->startContactsProcessingService(Lcom/iMe/fork/enums/ContactsActionType;)V
 
     :cond_0
     return-void
@@ -4492,13 +4492,13 @@
 
     move-result-object v7
 
-    new-instance v8, Lorg/telegram/ui/ContactsActivity$$ExternalSyntheticLambda12;
+    new-instance v8, Lorg/telegram/ui/ContactsActivity$$ExternalSyntheticLambda9;
 
-    invoke-direct {v8, p1}, Lorg/telegram/ui/ContactsActivity$$ExternalSyntheticLambda12;-><init>(Ljava/lang/Runnable;)V
+    invoke-direct {v8, p1}, Lorg/telegram/ui/ContactsActivity$$ExternalSyntheticLambda9;-><init>(Ljava/lang/Runnable;)V
 
     move-object v1, p0
 
-    invoke-static/range {v1 .. v8}, Lorg/telegram/ui/Components/AlertsCreator;->showConfirmationDialog(Lorg/telegram/ui/ActionBar/BaseFragment;Landroid/content/Context;Ljava/lang/String;Ljava/lang/CharSequence;Ljava/lang/String;ZLorg/telegram/ui/ActionBar/Theme$ResourcesProvider;Lorg/fork/utils/Callbacks$Callback1;)Lorg/telegram/ui/ActionBar/AlertDialog;
+    invoke-static/range {v1 .. v8}, Lorg/telegram/ui/Components/AlertsCreator;->showConfirmationDialog(Lorg/telegram/ui/ActionBar/BaseFragment;Landroid/content/Context;Ljava/lang/String;Ljava/lang/CharSequence;Ljava/lang/String;ZLorg/telegram/ui/ActionBar/Theme$ResourcesProvider;Lcom/iMe/fork/utils/Callbacks$Callback1;)Lorg/telegram/ui/ActionBar/AlertDialog;
 
     return-void
 .end method
@@ -4535,7 +4535,7 @@
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setTitle(Ljava/lang/CharSequence;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
     .line 393
-    invoke-static {}, Lcom/smedialink/model/contacts/ContactsFilter;->values()[Lcom/smedialink/model/contacts/ContactsFilter;
+    invoke-static {}, Lcom/iMe/model/contacts/ContactsFilter;->values()[Lcom/iMe/model/contacts/ContactsFilter;
 
     move-result-object v1
 
@@ -4613,7 +4613,7 @@
     .line 404
     aget-object v7, v1, v5
 
-    invoke-virtual {v7}, Lcom/smedialink/model/contacts/ContactsFilter;->getTitle()I
+    invoke-virtual {v7}, Lcom/iMe/model/contacts/ContactsFilter;->getTitle()I
 
     move-result v7
 
@@ -4621,11 +4621,11 @@
 
     move-result-object v7
 
-    invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getForkCommonController()Lorg/fork/controller/ForkCommonController;
+    invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getForkCommonController()Lcom/iMe/fork/controller/ForkCommonController;
 
     move-result-object v8
 
-    invoke-virtual {v8}, Lorg/fork/controller/ForkCommonController;->getSelectedContactsFilter()Lcom/smedialink/model/contacts/ContactsFilter;
+    invoke-virtual {v8}, Lcom/iMe/fork/controller/ForkCommonController;->getSelectedContactsFilter()Lcom/iMe/model/contacts/ContactsFilter;
 
     move-result-object v8
 
@@ -4649,7 +4649,7 @@
     .line 406
     new-instance v7, Lorg/telegram/ui/ContactsActivity$$ExternalSyntheticLambda8;
 
-    invoke-direct {v7, p0, v1, v0}, Lorg/telegram/ui/ContactsActivity$$ExternalSyntheticLambda8;-><init>(Lorg/telegram/ui/ContactsActivity;[Lcom/smedialink/model/contacts/ContactsFilter;Lorg/telegram/ui/ActionBar/AlertDialog$Builder;)V
+    invoke-direct {v7, p0, v1, v0}, Lorg/telegram/ui/ContactsActivity$$ExternalSyntheticLambda8;-><init>(Lorg/telegram/ui/ContactsActivity;[Lcom/iMe/model/contacts/ContactsFilter;Lorg/telegram/ui/ActionBar/AlertDialog$Builder;)V
 
     invoke-virtual {v6, v7}, Landroid/widget/FrameLayout;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
@@ -4737,10 +4737,10 @@
     iget-wide v0, v0, Lorg/telegram/tgnet/TLRPC$User;->id:J
 
     .line 310
-    iget-object v2, p0, Lorg/telegram/ui/ContactsActivity;->presenter:Lcom/smedialink/ui/contacts/ContactsPresenter;
+    iget-object v2, p0, Lorg/telegram/ui/ContactsActivity;->presenter:Lcom/iMe/ui/contacts/ContactsPresenter;
 
     .line 311
-    invoke-virtual {v2, v0, v1}, Lcom/smedialink/ui/contacts/ContactsPresenter;->indexOfSelectedId(J)I
+    invoke-virtual {v2, v0, v1}, Lcom/iMe/ui/contacts/ContactsPresenter;->indexOfSelectedId(J)I
 
     move-result v2
 
@@ -4760,9 +4760,9 @@
     invoke-virtual {p1, v2, v3}, Lorg/telegram/ui/Cells/UserCell;->setChecked(ZZ)V
 
     .line 315
-    iget-object p1, p0, Lorg/telegram/ui/ContactsActivity;->presenter:Lcom/smedialink/ui/contacts/ContactsPresenter;
+    iget-object p1, p0, Lorg/telegram/ui/ContactsActivity;->presenter:Lcom/iMe/ui/contacts/ContactsPresenter;
 
-    invoke-virtual {p1, v0, v1}, Lcom/smedialink/ui/contacts/ContactsPresenter;->addOrRemoveSelectedContact(J)V
+    invoke-virtual {p1, v0, v1}, Lcom/iMe/ui/contacts/ContactsPresenter;->addOrRemoveSelectedContact(J)V
 
     return-void
 .end method
@@ -4859,18 +4859,18 @@
     return-void
 .end method
 
-.method private showMembersActionConfirmationAlert(Lorg/fork/enums/ContactsActionType;)V
+.method private showMembersActionConfirmationAlert(Lcom/iMe/fork/enums/ContactsActionType;)V
     .locals 9
 
     .line 434
-    sget-object v0, Lorg/fork/enums/ContactsActionType;->DELETE:Lorg/fork/enums/ContactsActionType;
+    sget-object v0, Lcom/iMe/fork/enums/ContactsActionType;->DELETE:Lcom/iMe/fork/enums/ContactsActionType;
 
     if-ne p1, v0, :cond_0
 
     .line 435
-    new-instance v0, Lorg/telegram/ui/ContactsActivity$$ExternalSyntheticLambda10;
+    new-instance v0, Lorg/telegram/ui/ContactsActivity$$ExternalSyntheticLambda13;
 
-    invoke-direct {v0, p0, p1}, Lorg/telegram/ui/ContactsActivity$$ExternalSyntheticLambda10;-><init>(Lorg/telegram/ui/ContactsActivity;Lorg/fork/enums/ContactsActionType;)V
+    invoke-direct {v0, p0, p1}, Lorg/telegram/ui/ContactsActivity$$ExternalSyntheticLambda13;-><init>(Lorg/telegram/ui/ContactsActivity;Lcom/iMe/fork/enums/ContactsActionType;)V
 
     invoke-direct {p0, v0}, Lorg/telegram/ui/ContactsActivity;->openDeleteContactsDialog(Ljava/lang/Runnable;)V
 
@@ -4878,7 +4878,7 @@
 
     .line 438
     :cond_0
-    sget-object v0, Lorg/fork/enums/ContactsActionType;->UNBLOCK:Lorg/fork/enums/ContactsActionType;
+    sget-object v0, Lcom/iMe/fork/enums/ContactsActionType;->UNBLOCK:Lcom/iMe/fork/enums/ContactsActionType;
 
     if-ne p1, v0, :cond_1
 
@@ -4909,25 +4909,25 @@
 
     const/4 v7, 0x0
 
-    new-instance v8, Lorg/telegram/ui/ContactsActivity$$ExternalSyntheticLambda13;
+    new-instance v8, Lorg/telegram/ui/ContactsActivity$$ExternalSyntheticLambda10;
 
-    invoke-direct {v8, p0, p1}, Lorg/telegram/ui/ContactsActivity$$ExternalSyntheticLambda13;-><init>(Lorg/telegram/ui/ContactsActivity;Lorg/fork/enums/ContactsActionType;)V
+    invoke-direct {v8, p0, p1}, Lorg/telegram/ui/ContactsActivity$$ExternalSyntheticLambda10;-><init>(Lorg/telegram/ui/ContactsActivity;Lcom/iMe/fork/enums/ContactsActionType;)V
 
     move-object v1, p0
 
     .line 439
-    invoke-static/range {v1 .. v8}, Lorg/telegram/ui/Components/AlertsCreator;->showConfirmationDialog(Lorg/telegram/ui/ActionBar/BaseFragment;Landroid/content/Context;Ljava/lang/String;Ljava/lang/CharSequence;Ljava/lang/String;ZLorg/telegram/ui/ActionBar/Theme$ResourcesProvider;Lorg/fork/utils/Callbacks$Callback1;)Lorg/telegram/ui/ActionBar/AlertDialog;
+    invoke-static/range {v1 .. v8}, Lorg/telegram/ui/Components/AlertsCreator;->showConfirmationDialog(Lorg/telegram/ui/ActionBar/BaseFragment;Landroid/content/Context;Ljava/lang/String;Ljava/lang/CharSequence;Ljava/lang/String;ZLorg/telegram/ui/ActionBar/Theme$ResourcesProvider;Lcom/iMe/fork/utils/Callbacks$Callback1;)Lorg/telegram/ui/ActionBar/AlertDialog;
 
     :cond_1
     :goto_0
     return-void
 .end method
 
-.method private startContactsProcessingService(Lorg/fork/enums/ContactsActionType;)V
+.method private startContactsProcessingService(Lcom/iMe/fork/enums/ContactsActionType;)V
     .locals 6
 
     .line 457
-    const-class v0, Lcom/smedialink/services/FilteredContactsProcessingService;
+    const-class v0, Lcom/iMe/services/FilteredContactsProcessingService;
 
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->isServiceRunning(Ljava/lang/Class;)Z
 
@@ -4942,24 +4942,24 @@
 
     move-result-object p1
 
-    invoke-virtual {p0, p1}, Lcom/smedialink/ui/base/mvp/MvpFragment;->showToast(Ljava/lang/String;)V
+    invoke-virtual {p0, p1}, Lcom/iMe/ui/base/mvp/MvpFragment;->showToast(Ljava/lang/String;)V
 
     goto :goto_1
 
     .line 460
     :cond_0
-    invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getForkCommonController()Lorg/fork/controller/ForkCommonController;
+    invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getForkCommonController()Lcom/iMe/fork/controller/ForkCommonController;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lorg/fork/controller/ForkCommonController;->getSelectedContactsFilter()Lcom/smedialink/model/contacts/ContactsFilter;
+    invoke-virtual {v0}, Lcom/iMe/fork/controller/ForkCommonController;->getSelectedContactsFilter()Lcom/iMe/model/contacts/ContactsFilter;
 
     move-result-object v0
 
     .line 461
     iget-object v1, p0, Lorg/telegram/ui/ContactsActivity;->listViewAdapter:Lorg/telegram/ui/Adapters/ContactsAdapter;
 
-    invoke-virtual {v1, v0}, Lorg/telegram/ui/Adapters/ContactsAdapter;->getFilteredContacts(Lcom/smedialink/model/contacts/ContactsFilter;)Ljava/util/ArrayList;
+    invoke-virtual {v1, v0}, Lorg/telegram/ui/Adapters/ContactsAdapter;->getFilteredContacts(Lcom/iMe/model/contacts/ContactsFilter;)Ljava/util/ArrayList;
 
     move-result-object v1
 
@@ -5001,7 +5001,7 @@
 
     sget-object v3, Lorg/telegram/messenger/ApplicationLoader;->applicationContext:Landroid/content/Context;
 
-    const-class v4, Lcom/smedialink/services/FilteredContactsProcessingService;
+    const-class v4, Lcom/iMe/services/FilteredContactsProcessingService;
 
     invoke-direct {v1, v3, v4}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
 
@@ -5087,9 +5087,9 @@
     .locals 1
 
     .line 279
-    iget-object v0, p0, Lorg/telegram/ui/ContactsActivity;->transferRecipientPresenter:Lcom/smedialink/ui/wallet/actions/send/recipient/WalletSendRecipientPresenter;
+    iget-object v0, p0, Lorg/telegram/ui/ContactsActivity;->transferRecipientPresenter:Lcom/iMe/ui/wallet/actions/send/recipient/WalletSendRecipientPresenter;
 
-    invoke-virtual {v0, p1, p2}, Lcom/smedialink/ui/wallet/actions/send/recipient/WalletSendRecipientPresenter;->validateRecipient(Ljava/lang/String;Z)V
+    invoke-virtual {v0, p1, p2}, Lcom/iMe/ui/wallet/actions/send/recipient/WalletSendRecipientPresenter;->validateRecipient(Ljava/lang/String;Z)V
 
     return-void
 .end method
@@ -5213,7 +5213,7 @@
     move-object/from16 v12, p1
 
     .line 623
-    invoke-super/range {p0 .. p1}, Lcom/smedialink/ui/base/mvp/MvpFragment;->createView(Landroid/content/Context;)Landroid/view/View;
+    invoke-super/range {p0 .. p1}, Lcom/iMe/ui/base/mvp/MvpFragment;->createView(Landroid/content/Context;)Landroid/view/View;
 
     const/4 v13, 0x0
 
@@ -5433,7 +5433,7 @@
     if-eqz v1, :cond_6
 
     .line 749
-    sget v1, Lcom/smedialink/common/IdFabric$Menu;->CONTACTS_PRIVACY_SETTINGS:I
+    sget v1, Lcom/iMe/common/IdFabric$Menu;->CONTACTS_PRIVACY_SETTINGS:I
 
     sget v2, Lorg/telegram/messenger/R$drawable;->fork_filter_icon_chat_admin:I
 
@@ -5614,13 +5614,13 @@
     if-eqz v0, :cond_a
 
     .line 800
-    iget-object v0, v11, Lorg/telegram/ui/ContactsActivity;->transferRecipientPresenter:Lcom/smedialink/ui/wallet/actions/send/recipient/WalletSendRecipientPresenter;
+    iget-object v0, v11, Lorg/telegram/ui/ContactsActivity;->transferRecipientPresenter:Lcom/iMe/ui/wallet/actions/send/recipient/WalletSendRecipientPresenter;
 
-    invoke-virtual {v0}, Lcom/smedialink/ui/wallet/actions/send/recipient/WalletSendRecipientPresenter;->getCurrentNetworkType()Lcom/smedialink/storage/domain/model/crypto/NetworkType;
+    invoke-virtual {v0}, Lcom/iMe/ui/wallet/actions/send/recipient/WalletSendRecipientPresenter;->getCurrentNetworkType()Lcom/iMe/storage/domain/model/crypto/NetworkType;
 
     move-result-object v0
 
-    invoke-virtual {v15, v0}, Lorg/telegram/ui/Adapters/ContactsAdapter;->setNetworkType(Lcom/smedialink/storage/domain/model/crypto/NetworkType;)V
+    invoke-virtual {v15, v0}, Lorg/telegram/ui/Adapters/ContactsAdapter;->setNetworkType(Lcom/iMe/storage/domain/model/crypto/NetworkType;)V
 
     .line 801
     iget-object v0, v11, Lorg/telegram/ui/ContactsActivity;->listViewAdapter:Lorg/telegram/ui/Adapters/ContactsAdapter;
@@ -5632,11 +5632,11 @@
     .line 802
     iget-object v0, v11, Lorg/telegram/ui/ContactsActivity;->listViewAdapter:Lorg/telegram/ui/Adapters/ContactsAdapter;
 
-    new-instance v1, Lorg/telegram/ui/ContactsActivity$$ExternalSyntheticLambda14;
+    new-instance v1, Lorg/telegram/ui/ContactsActivity$$ExternalSyntheticLambda11;
 
-    invoke-direct {v1, v11}, Lorg/telegram/ui/ContactsActivity$$ExternalSyntheticLambda14;-><init>(Lorg/telegram/ui/ContactsActivity;)V
+    invoke-direct {v1, v11}, Lorg/telegram/ui/ContactsActivity$$ExternalSyntheticLambda11;-><init>(Lorg/telegram/ui/ContactsActivity;)V
 
-    invoke-virtual {v0, v1}, Lorg/telegram/ui/Adapters/ContactsAdapter;->setQrCodeAction(Lorg/fork/utils/Callbacks$Callback;)V
+    invoke-virtual {v0, v1}, Lorg/telegram/ui/Adapters/ContactsAdapter;->setQrCodeAction(Lcom/iMe/fork/utils/Callbacks$Callback;)V
 
     goto :goto_6
 
@@ -5647,22 +5647,22 @@
     if-eqz v0, :cond_b
 
     .line 804
-    invoke-virtual/range {p0 .. p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getForkCommonController()Lorg/fork/controller/ForkCommonController;
+    invoke-virtual/range {p0 .. p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getForkCommonController()Lcom/iMe/fork/controller/ForkCommonController;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lorg/fork/controller/ForkCommonController;->getSelectedContactsFilter()Lcom/smedialink/model/contacts/ContactsFilter;
+    invoke-virtual {v0}, Lcom/iMe/fork/controller/ForkCommonController;->getSelectedContactsFilter()Lcom/iMe/model/contacts/ContactsFilter;
 
     move-result-object v0
 
-    invoke-virtual {v15, v0}, Lorg/telegram/ui/Adapters/ContactsAdapter;->setFilterModel(Lcom/smedialink/model/contacts/ContactsFilter;)V
+    invoke-virtual {v15, v0}, Lorg/telegram/ui/Adapters/ContactsAdapter;->setFilterModel(Lcom/iMe/model/contacts/ContactsFilter;)V
 
     .line 805
     iget-object v0, v11, Lorg/telegram/ui/ContactsActivity;->listViewAdapter:Lorg/telegram/ui/Adapters/ContactsAdapter;
 
-    iget-object v1, v11, Lorg/telegram/ui/ContactsActivity;->presenter:Lcom/smedialink/ui/contacts/ContactsPresenter;
+    iget-object v1, v11, Lorg/telegram/ui/ContactsActivity;->presenter:Lcom/iMe/ui/contacts/ContactsPresenter;
 
-    invoke-virtual {v1}, Lcom/smedialink/ui/contacts/ContactsPresenter;->getSelectedContacts()Landroidx/collection/LongSparseArray;
+    invoke-virtual {v1}, Lcom/iMe/ui/contacts/ContactsPresenter;->getSelectedContacts()Landroidx/collection/LongSparseArray;
 
     move-result-object v1
 
@@ -6358,7 +6358,7 @@
 
     aget-object p1, p3, v1
 
-    instance-of p1, p1, Lcom/smedialink/model/contacts/ContactsFilter;
+    instance-of p1, p1, Lcom/iMe/model/contacts/ContactsFilter;
 
     if-eqz p1, :cond_3
 
@@ -6372,10 +6372,10 @@
     :cond_1
     aget-object p1, p3, v1
 
-    check-cast p1, Lcom/smedialink/model/contacts/ContactsFilter;
+    check-cast p1, Lcom/iMe/model/contacts/ContactsFilter;
 
     .line 1434
-    sget-object p2, Lcom/smedialink/model/contacts/ContactsFilter;->BLOCKED:Lcom/smedialink/model/contacts/ContactsFilter;
+    sget-object p2, Lcom/iMe/model/contacts/ContactsFilter;->BLOCKED:Lcom/iMe/model/contacts/ContactsFilter;
 
     if-ne p1, p2, :cond_2
 
@@ -6386,9 +6386,9 @@
 
     .line 1437
     :cond_2
-    sget-object p1, Lorg/fork/enums/ContactsActionType;->DELETE:Lorg/fork/enums/ContactsActionType;
+    sget-object p1, Lcom/iMe/fork/enums/ContactsActionType;->DELETE:Lcom/iMe/fork/enums/ContactsActionType;
 
-    invoke-direct {p0, p1}, Lorg/telegram/ui/ContactsActivity;->showMembersActionConfirmationAlert(Lorg/fork/enums/ContactsActionType;)V
+    invoke-direct {p0, p1}, Lorg/telegram/ui/ContactsActivity;->showMembersActionConfirmationAlert(Lcom/iMe/fork/enums/ContactsActionType;)V
 
     goto/16 :goto_1
 
@@ -7565,9 +7565,9 @@
     if-eqz v0, :cond_0
 
     .line 178
-    iget-object v0, p0, Lorg/telegram/ui/ContactsActivity;->presenter:Lcom/smedialink/ui/contacts/ContactsPresenter;
+    iget-object v0, p0, Lorg/telegram/ui/ContactsActivity;->presenter:Lcom/iMe/ui/contacts/ContactsPresenter;
 
-    invoke-virtual {v0}, Lcom/smedialink/ui/contacts/ContactsPresenter;->closeActionMode()V
+    invoke-virtual {v0}, Lcom/iMe/ui/contacts/ContactsPresenter;->closeActionMode()V
 
     const/4 v0, 0x0
 
@@ -7893,9 +7893,9 @@
     invoke-virtual {v0, p2}, Landroid/animation/AnimatorSet;->playTogether([Landroid/animation/Animator;)V
 
     .line 1598
-    new-instance p2, Lorg/telegram/ui/ContactsActivity$$ExternalSyntheticLambda9;
+    new-instance p2, Lorg/telegram/ui/ContactsActivity$$ExternalSyntheticLambda12;
 
-    invoke-direct {p2, p0, v0, p1, v4}, Lorg/telegram/ui/ContactsActivity$$ExternalSyntheticLambda9;-><init>(Lorg/telegram/ui/ContactsActivity;Landroid/animation/AnimatorSet;ZLandroid/view/View;)V
+    invoke-direct {p2, p0, v0, p1, v4}, Lorg/telegram/ui/ContactsActivity$$ExternalSyntheticLambda12;-><init>(Lorg/telegram/ui/ContactsActivity;Landroid/animation/AnimatorSet;ZLandroid/view/View;)V
 
     const-wide/16 v1, 0x32
 
@@ -8098,11 +8098,11 @@
     if-nez v2, :cond_0
 
     .line 568
-    invoke-static {v0}, Lcom/smedialink/storage/domain/model/crypto/NetworkType;->map(Ljava/lang/String;)Lcom/smedialink/storage/domain/model/crypto/NetworkType;
+    invoke-static {v0}, Lcom/iMe/storage/domain/model/crypto/NetworkType;->map(Ljava/lang/String;)Lcom/iMe/storage/domain/model/crypto/NetworkType;
 
     move-result-object v0
 
-    iput-object v0, p0, Lorg/telegram/ui/ContactsActivity;->networkType:Lcom/smedialink/storage/domain/model/crypto/NetworkType;
+    iput-object v0, p0, Lorg/telegram/ui/ContactsActivity;->networkType:Lcom/iMe/storage/domain/model/crypto/NetworkType;
 
     .line 571
     :cond_0
@@ -8304,7 +8304,7 @@
     .locals 2
 
     .line 602
-    invoke-super {p0}, Lcom/smedialink/ui/base/mvp/MvpFragment;->onFragmentDestroy()V
+    invoke-super {p0}, Lcom/iMe/ui/base/mvp/MvpFragment;->onFragmentDestroy()V
 
     .line 603
     iget v0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->currentAccount:I
@@ -8391,7 +8391,7 @@
     .locals 1
 
     .line 1416
-    invoke-super {p0}, Lcom/smedialink/ui/base/mvp/MvpFragment;->onPause()V
+    invoke-super {p0}, Lcom/iMe/ui/base/mvp/MvpFragment;->onPause()V
 
     .line 1417
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
@@ -8409,7 +8409,7 @@
     .locals 1
 
     .line 236
-    iget-object p3, p0, Lorg/telegram/ui/ContactsActivity;->userWithCryptoAddressDelegate:Lorg/fork/utils/Callbacks$Callback2;
+    iget-object p3, p0, Lorg/telegram/ui/ContactsActivity;->userWithCryptoAddressDelegate:Lcom/iMe/fork/utils/Callbacks$Callback2;
 
     if-eqz p3, :cond_1
 
@@ -8423,9 +8423,9 @@
     if-eqz p3, :cond_0
 
     .line 238
-    iget-object p1, p0, Lorg/telegram/ui/ContactsActivity;->userWithCryptoAddressDelegate:Lorg/fork/utils/Callbacks$Callback2;
+    iget-object p1, p0, Lorg/telegram/ui/ContactsActivity;->userWithCryptoAddressDelegate:Lcom/iMe/fork/utils/Callbacks$Callback2;
 
-    invoke-interface {p1, v0, p2}, Lorg/fork/utils/Callbacks$Callback2;->invoke(Ljava/lang/Object;Ljava/lang/Object;)V
+    invoke-interface {p1, v0, p2}, Lcom/iMe/fork/utils/Callbacks$Callback2;->invoke(Ljava/lang/Object;Ljava/lang/Object;)V
 
     goto :goto_0
 
@@ -8444,9 +8444,9 @@
     move-result-object p1
 
     .line 241
-    iget-object p3, p0, Lorg/telegram/ui/ContactsActivity;->userWithCryptoAddressDelegate:Lorg/fork/utils/Callbacks$Callback2;
+    iget-object p3, p0, Lorg/telegram/ui/ContactsActivity;->userWithCryptoAddressDelegate:Lcom/iMe/fork/utils/Callbacks$Callback2;
 
-    invoke-interface {p3, p1, p2}, Lorg/fork/utils/Callbacks$Callback2;->invoke(Ljava/lang/Object;Ljava/lang/Object;)V
+    invoke-interface {p3, p1, p2}, Lcom/iMe/fork/utils/Callbacks$Callback2;->invoke(Ljava/lang/Object;Ljava/lang/Object;)V
 
     .line 243
     :goto_0
@@ -8455,7 +8455,7 @@
     if-eqz p1, :cond_1
 
     .line 244
-    iput-object v0, p0, Lorg/telegram/ui/ContactsActivity;->userWithCryptoAddressDelegate:Lorg/fork/utils/Callbacks$Callback2;
+    iput-object v0, p0, Lorg/telegram/ui/ContactsActivity;->userWithCryptoAddressDelegate:Lcom/iMe/fork/utils/Callbacks$Callback2;
 
     .line 247
     :cond_1
@@ -8703,7 +8703,7 @@
     .locals 3
 
     .line 1278
-    invoke-super {p0}, Lcom/smedialink/ui/base/mvp/MvpFragment;->onResume()V
+    invoke-super {p0}, Lcom/iMe/ui/base/mvp/MvpFragment;->onResume()V
 
     .line 1279
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
@@ -8893,34 +8893,34 @@
     return-void
 .end method
 
-.method providePresenter()Lcom/smedialink/ui/contacts/ContactsPresenter;
+.method providePresenter()Lcom/iMe/ui/contacts/ContactsPresenter;
     .locals 1
     .annotation runtime Lmoxy/presenter/ProvidePresenter;
     .end annotation
 
     .line 148
-    const-class v0, Lcom/smedialink/ui/contacts/ContactsPresenter;
+    const-class v0, Lcom/iMe/ui/contacts/ContactsPresenter;
 
     invoke-static {v0}, Lorg/koin/java/KoinJavaComponent;->get(Ljava/lang/Class;)Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Lcom/smedialink/ui/contacts/ContactsPresenter;
+    check-cast v0, Lcom/iMe/ui/contacts/ContactsPresenter;
 
     return-object v0
 .end method
 
-.method provideTransferRecipientPresenter()Lcom/smedialink/ui/wallet/actions/send/recipient/WalletSendRecipientPresenter;
+.method provideTransferRecipientPresenter()Lcom/iMe/ui/wallet/actions/send/recipient/WalletSendRecipientPresenter;
     .locals 3
     .annotation runtime Lmoxy/presenter/ProvidePresenter;
     .end annotation
 
     .line 153
-    const-class v0, Lcom/smedialink/ui/wallet/actions/send/recipient/WalletSendRecipientPresenter;
+    const-class v0, Lcom/iMe/ui/wallet/actions/send/recipient/WalletSendRecipientPresenter;
 
-    new-instance v1, Lorg/telegram/ui/ContactsActivity$$ExternalSyntheticLambda11;
+    new-instance v1, Lorg/telegram/ui/ContactsActivity$$ExternalSyntheticLambda14;
 
-    invoke-direct {v1, p0}, Lorg/telegram/ui/ContactsActivity$$ExternalSyntheticLambda11;-><init>(Lorg/telegram/ui/ContactsActivity;)V
+    invoke-direct {v1, p0}, Lorg/telegram/ui/ContactsActivity$$ExternalSyntheticLambda14;-><init>(Lorg/telegram/ui/ContactsActivity;)V
 
     const/4 v2, 0x0
 
@@ -8928,7 +8928,7 @@
 
     move-result-object v0
 
-    check-cast v0, Lcom/smedialink/ui/wallet/actions/send/recipient/WalletSendRecipientPresenter;
+    check-cast v0, Lcom/iMe/ui/wallet/actions/send/recipient/WalletSendRecipientPresenter;
 
     return-object v0
 .end method
@@ -8951,12 +8951,12 @@
     return-void
 .end method
 
-.method public setUserWithCryptoAddressDelegate(Lorg/fork/utils/Callbacks$Callback2;)V
+.method public setUserWithCryptoAddressDelegate(Lcom/iMe/fork/utils/Callbacks$Callback2;)V
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Lorg/fork/utils/Callbacks$Callback2<",
+            "Lcom/iMe/fork/utils/Callbacks$Callback2<",
             "Lorg/telegram/tgnet/TLRPC$User;",
             "Ljava/lang/String;",
             ">;)V"
@@ -8964,7 +8964,7 @@
     .end annotation
 
     .line 283
-    iput-object p1, p0, Lorg/telegram/ui/ContactsActivity;->userWithCryptoAddressDelegate:Lorg/fork/utils/Callbacks$Callback2;
+    iput-object p1, p0, Lorg/telegram/ui/ContactsActivity;->userWithCryptoAddressDelegate:Lcom/iMe/fork/utils/Callbacks$Callback2;
 
     return-void
 .end method
@@ -8975,12 +8975,12 @@
     const/4 v0, 0x0
 
     .line 259
-    invoke-static {p0, p1, p2, p3, v0}, Lcom/smedialink/utils/dialogs/DialogsFactoryKt;->showErrorAlert(Lorg/telegram/ui/ActionBar/BaseFragment;Ljava/lang/CharSequence;Ljava/lang/CharSequence;Ljava/lang/CharSequence;Lorg/fork/utils/Callbacks$Callback;)Landroid/app/Dialog;
+    invoke-static {p0, p1, p2, p3, v0}, Lcom/iMe/utils/dialogs/DialogsFactoryKt;->showErrorAlert(Lorg/telegram/ui/ActionBar/BaseFragment;Ljava/lang/CharSequence;Ljava/lang/CharSequence;Ljava/lang/CharSequence;Lcom/iMe/fork/utils/Callbacks$Callback;)Landroid/app/Dialog;
 
     return-void
 .end method
 
-.method public showRequestPermissionDialog(Ljava/lang/String;Lcom/smedialink/model/dialog/DialogModel;Lorg/fork/utils/Callbacks$Callback;)V
+.method public showRequestPermissionDialog(Ljava/lang/String;Lcom/iMe/model/dialog/DialogModel;Lcom/iMe/fork/utils/Callbacks$Callback;)V
     .locals 1
 
     .line 254
@@ -8990,7 +8990,7 @@
 
     const/4 v0, 0x0
 
-    invoke-static {p1, p2, p3, v0}, Lcom/smedialink/utils/dialogs/DialogUtils;->createDialog(Landroid/content/Context;Lcom/smedialink/model/dialog/DialogModel;Lorg/fork/utils/Callbacks$Callback;Lorg/fork/utils/Callbacks$Callback;)Lorg/telegram/ui/ActionBar/AlertDialog;
+    invoke-static {p1, p2, p3, v0}, Lcom/iMe/utils/dialogs/DialogUtils;->createDialog(Landroid/content/Context;Lcom/iMe/model/dialog/DialogModel;Lcom/iMe/fork/utils/Callbacks$Callback;Lcom/iMe/fork/utils/Callbacks$Callback;)Lorg/telegram/ui/ActionBar/AlertDialog;
 
     move-result-object p1
 
@@ -8999,7 +8999,7 @@
     return-void
 .end method
 
-.method public showRequestPermissionSuccessDialog(Ljava/lang/String;Ljava/lang/String;Lorg/fork/utils/Callbacks$Callback;)V
+.method public showRequestPermissionSuccessDialog(Ljava/lang/String;Ljava/lang/String;Lcom/iMe/fork/utils/Callbacks$Callback;)V
     .locals 2
 
     .line 264
@@ -9009,15 +9009,15 @@
 
     move-result-object v0
 
-    check-cast v0, Lcom/smedialink/storage/domain/utils/system/ResourceManager;
+    check-cast v0, Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
     sget v1, Lorg/telegram/messenger/R$string;->common_ok:I
 
-    invoke-interface {v0, v1}, Lcom/smedialink/storage/domain/utils/system/ResourceManager;->getString(I)Ljava/lang/String;
+    invoke-interface {v0, v1}, Lcom/iMe/storage/domain/utils/system/ResourceManager;->getString(I)Ljava/lang/String;
 
     move-result-object v0
 
-    invoke-static {p0, p1, p2, v0, p3}, Lcom/smedialink/utils/dialogs/DialogsFactoryKt;->showSuccessAlert(Lorg/telegram/ui/ActionBar/BaseFragment;Ljava/lang/CharSequence;Ljava/lang/CharSequence;Ljava/lang/CharSequence;Lorg/fork/utils/Callbacks$Callback;)Landroid/app/Dialog;
+    invoke-static {p0, p1, p2, v0, p3}, Lcom/iMe/utils/dialogs/DialogsFactoryKt;->showSuccessAlert(Lorg/telegram/ui/ActionBar/BaseFragment;Ljava/lang/CharSequence;Ljava/lang/CharSequence;Ljava/lang/CharSequence;Lcom/iMe/fork/utils/Callbacks$Callback;)Landroid/app/Dialog;
 
     return-void
 .end method

@@ -49,7 +49,7 @@ public class Registry {
         this.dataRewinderRegistry = new DataRewinderRegistry();
         this.transcoderRegistry = new TranscoderRegistry();
         this.imageHeaderParserRegistry = new ImageHeaderParserRegistry();
-        setResourceDecoderBucketPriorityList(Arrays.asList("Gif", "Bitmap", "BitmapDrawable"));
+        setResourceDecoderBucketPriorityList(Arrays.asList("Animation", "Bitmap", "BitmapDrawable"));
     }
 
     public <Data> Registry append(Class<Data> cls, Encoder<Data> encoder) {

@@ -30,7 +30,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 46
+    .line 47
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -51,7 +51,7 @@
         }
     .end annotation
 
-    .line 52
+    .line 53
     new-instance v0, Lcom/bumptech/glide/load/data/ParcelFileDescriptorRewinder;
 
     invoke-direct {v0, p1}, Lcom/bumptech/glide/load/data/ParcelFileDescriptorRewinder;-><init>(Landroid/os/ParcelFileDescriptor;)V
@@ -62,7 +62,7 @@
 .method public bridge synthetic build(Ljava/lang/Object;)Lcom/bumptech/glide/load/data/DataRewinder;
     .locals 0
 
-    .line 45
+    .line 46
     check-cast p1, Landroid/os/ParcelFileDescriptor;
 
     invoke-virtual {p0, p1}, Lcom/bumptech/glide/load/data/ParcelFileDescriptorRewinder$Factory;->build(Landroid/os/ParcelFileDescriptor;)Lcom/bumptech/glide/load/data/DataRewinder;
@@ -83,7 +83,7 @@
         }
     .end annotation
 
-    .line 58
+    .line 59
     const-class v0, Landroid/os/ParcelFileDescriptor;
 
     return-object v0

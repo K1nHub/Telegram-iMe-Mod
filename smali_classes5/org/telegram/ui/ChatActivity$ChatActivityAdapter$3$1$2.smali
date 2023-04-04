@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/ChatActivity$ChatActivityAdapter$3$1;)V
     .locals 0
 
-    .line 31870
+    .line 31772
     iput-object p1, p0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter$3$1$2;->this$3:Lorg/telegram/ui/ChatActivity$ChatActivityAdapter$3$1;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
@@ -35,7 +35,7 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 1
 
-    .line 31873
+    .line 31775
     iget-object p1, p0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter$3$1$2;->this$3:Lorg/telegram/ui/ChatActivity$ChatActivityAdapter$3$1;
 
     iget-object p1, p1, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter$3$1;->this$2:Lorg/telegram/ui/ChatActivity$ChatActivityAdapter$3;
@@ -50,7 +50,7 @@
 
     if-eqz p1, :cond_0
 
-    .line 31874
+    .line 31776
     iget-object p1, p0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter$3$1$2;->this$3:Lorg/telegram/ui/ChatActivity$ChatActivityAdapter$3$1;
 
     iget-object p1, p1, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter$3$1;->this$2:Lorg/telegram/ui/ChatActivity$ChatActivityAdapter$3;
@@ -67,7 +67,7 @@
 
     invoke-virtual {p1, v0}, Lorg/telegram/ui/Components/InstantCameraView;->setIsMessageTransition(Z)V
 
-    .line 31875
+    .line 31777
     iget-object p1, p0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter$3$1$2;->this$3:Lorg/telegram/ui/ChatActivity$ChatActivityAdapter$3$1;
 
     iget-object p1, p1, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter$3$1;->this$2:Lorg/telegram/ui/ChatActivity$ChatActivityAdapter$3;
@@ -84,7 +84,7 @@
 
     invoke-virtual {p1, v0}, Lorg/telegram/ui/Components/InstantCameraView;->hideCamera(Z)V
 
-    .line 31876
+    .line 31778
     iget-object p1, p0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter$3$1$2;->this$3:Lorg/telegram/ui/ChatActivity$ChatActivityAdapter$3$1;
 
     iget-object p1, p1, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter$3$1;->this$2:Lorg/telegram/ui/ChatActivity$ChatActivityAdapter$3;

@@ -22,7 +22,7 @@ import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3301R;
+import org.telegram.messenger.C3316R;
 import org.telegram.messenger.Emoji;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessageObject;
@@ -48,7 +48,7 @@ import org.telegram.tgnet.TLRPC$TL_messages_messageReactionsList;
 import org.telegram.tgnet.TLRPC$TL_peerUser;
 import org.telegram.tgnet.TLRPC$TL_reactionCustomEmoji;
 import org.telegram.tgnet.TLRPC$User;
-import p034j$.util.Comparator;
+import p035j$.util.Comparator;
 /* renamed from: org.telegram.ui.Components.ReactedUsersListView */
 /* loaded from: classes6.dex */
 public class ReactedUsersListView extends FrameLayout {
@@ -237,7 +237,7 @@ public class ReactedUsersListView extends FrameLayout {
                             break;
                         }
                         TLRPC$MessagePeerReaction tLRPC$MessagePeerReaction = this.userReactions.get(i);
-                        if (tLRPC$MessagePeerReaction != null && tLRPC$MessagePeerReaction.date <= 0 && tLRPC$MessagePeerReaction.peer_id.user_id == tLRPC$User.f1640id) {
+                        if (tLRPC$MessagePeerReaction != null && tLRPC$MessagePeerReaction.date <= 0 && tLRPC$MessagePeerReaction.peer_id.user_id == tLRPC$User.f1642id) {
                             tLRPC$MessagePeerReaction.date = userSeen.date;
                             tLRPC$MessagePeerReaction.dateIsSeen = true;
                             break;
@@ -249,12 +249,12 @@ public class ReactedUsersListView extends FrameLayout {
         }
         ArrayList arrayList = new ArrayList(list.size());
         for (ReactedHeaderView.UserSeen userSeen2 : list) {
-            if (this.peerReactionMap.get(userSeen2.user.f1640id) == null) {
+            if (this.peerReactionMap.get(userSeen2.user.f1642id) == null) {
                 TLRPC$TL_messagePeerReaction tLRPC$TL_messagePeerReaction = new TLRPC$TL_messagePeerReaction();
                 tLRPC$TL_messagePeerReaction.reaction = null;
                 TLRPC$TL_peerUser tLRPC$TL_peerUser = new TLRPC$TL_peerUser();
                 tLRPC$TL_messagePeerReaction.peer_id = tLRPC$TL_peerUser;
-                tLRPC$TL_peerUser.user_id = userSeen2.user.f1640id;
+                tLRPC$TL_peerUser.user_id = userSeen2.user.f1642id;
                 tLRPC$TL_messagePeerReaction.date = userSeen2.date;
                 tLRPC$TL_messagePeerReaction.dateIsSeen = true;
                 ArrayList<TLRPC$MessagePeerReaction> arrayList2 = new ArrayList<>();
@@ -295,7 +295,7 @@ public class ReactedUsersListView extends FrameLayout {
         MessagesController messagesController = MessagesController.getInstance(this.currentAccount);
         TLRPC$TL_messages_getMessageReactionsList tLRPC$TL_messages_getMessageReactionsList = new TLRPC$TL_messages_getMessageReactionsList();
         tLRPC$TL_messages_getMessageReactionsList.peer = messagesController.getInputPeer(this.message.getDialogId());
-        tLRPC$TL_messages_getMessageReactionsList.f1591id = this.message.getId();
+        tLRPC$TL_messages_getMessageReactionsList.f1593id = this.message.getId();
         tLRPC$TL_messages_getMessageReactionsList.limit = getLoadCount();
         TLRPC$Reaction tLRPC$Reaction = this.filter;
         tLRPC$TL_messages_getMessageReactionsList.reaction = tLRPC$Reaction;
@@ -426,9 +426,9 @@ public class ReactedUsersListView extends FrameLayout {
         HashSet hashSet = new HashSet();
         for (int i = 0; i < this.customReactionsEmoji.size(); i++) {
             TLRPC$InputStickerSet inputStickerSet = MessageObject.getInputStickerSet(AnimatedEmojiDrawable.findDocument(this.currentAccount, this.customReactionsEmoji.get(i).documentId));
-            if (inputStickerSet != null && !hashSet.contains(Long.valueOf(inputStickerSet.f1523id))) {
+            if (inputStickerSet != null && !hashSet.contains(Long.valueOf(inputStickerSet.f1525id))) {
                 arrayList.add(inputStickerSet);
-                hashSet.add(Long.valueOf(inputStickerSet.f1523id));
+                hashSet.add(Long.valueOf(inputStickerSet.f1525id));
             }
         }
         if (MessagesController.getInstance(this.currentAccount).premiumLocked) {
@@ -475,8 +475,8 @@ public class ReactedUsersListView extends FrameLayout {
         AnimatedEmojiDrawable.SwapAnimatedEmojiDrawable rightDrawable;
         SimpleTextView subtitleView;
         SimpleTextView titleView;
-        private static final MessageSeenCheckDrawable seenDrawable = new MessageSeenCheckDrawable(C3301R.C3303drawable.msg_mini_checks, "windowBackgroundWhiteGrayText");
-        private static final MessageSeenCheckDrawable reactDrawable = new MessageSeenCheckDrawable(C3301R.C3303drawable.msg_reactions, "windowBackgroundWhiteGrayText", 16, 16, 5.66f);
+        private static final MessageSeenCheckDrawable seenDrawable = new MessageSeenCheckDrawable(C3316R.C3318drawable.msg_mini_checks, "windowBackgroundWhiteGrayText");
+        private static final MessageSeenCheckDrawable reactDrawable = new MessageSeenCheckDrawable(C3316R.C3318drawable.msg_reactions, "windowBackgroundWhiteGrayText", 16, 16, 5.66f);
 
         ReactedUserHolderView(int i, Context context) {
             super(context);

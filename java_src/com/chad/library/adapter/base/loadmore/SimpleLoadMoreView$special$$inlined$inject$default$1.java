@@ -1,6 +1,6 @@
 package com.chad.library.adapter.base.loadmore;
 
-import com.smedialink.storage.domain.utils.system.ResourceManager;
+import com.iMe.storage.domain.utils.system.ResourceManager;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.Lambda;
 import kotlin.jvm.internal.Reflection;
@@ -24,7 +24,7 @@ public final class SimpleLoadMoreView$special$$inlined$inject$default$1 extends 
         this.$parameters = function0;
     }
 
-    /* JADX WARN: Type inference failed for: r0v2, types: [com.smedialink.storage.domain.utils.system.ResourceManager, java.lang.Object] */
+    /* JADX WARN: Type inference failed for: r0v2, types: [com.iMe.storage.domain.utils.system.ResourceManager, java.lang.Object] */
     @Override // kotlin.jvm.functions.Function0
     public final ResourceManager invoke() {
         Scope rootScope;

@@ -29,8 +29,8 @@ public class TranscoderRegistry {
             return arrayList;
         }
         for (Entry<?, ?> entry : this.transcoders) {
-            if (entry.handles(cls, cls2)) {
-                arrayList.add(cls2);
+            if (entry.handles(cls, cls2) && !arrayList.contains(entry.toClass)) {
+                arrayList.add(entry.toClass);
             }
         }
         return arrayList;
@@ -39,8 +39,8 @@ public class TranscoderRegistry {
     /* JADX INFO: Access modifiers changed from: private */
     /* loaded from: classes.dex */
     public static final class Entry<Z, R> {
-        private final Class<Z> fromClass;
-        private final Class<R> toClass;
+        final Class<Z> fromClass;
+        final Class<R> toClass;
         final ResourceTranscoder<Z, R> transcoder;
 
         Entry(Class<Z> cls, Class<R> cls2, ResourceTranscoder<Z, R> resourceTranscoder) {

@@ -4,7 +4,7 @@ import android.content.Context;
 import android.opengl.EGLContext;
 import android.opengl.EGLDisplay;
 import android.view.Surface;
-import com.google.android.exoplayer2.C0468C;
+import com.google.android.exoplayer2.C0482C;
 import com.google.android.exoplayer2.effect.GlTextureProcessor;
 import com.google.android.exoplayer2.util.Assertions;
 import com.google.android.exoplayer2.util.DebugViewProvider;
@@ -155,7 +155,7 @@ public final class GlEffectsFrameProcessor implements FrameProcessor {
         this.inputSurface = new Surface(externalTextureManager.getSurfaceTexture());
         this.finalTextureProcessorWrapper = (FinalMatrixTextureProcessorWrapper) Iterables.getLast(immutableList);
         this.allTextureProcessors = immutableList;
-        this.previousStreamOffsetUs = C0468C.TIME_UNSET;
+        this.previousStreamOffsetUs = C0482C.TIME_UNSET;
     }
 
     @Override // com.google.android.exoplayer2.util.FrameProcessor

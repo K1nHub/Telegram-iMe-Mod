@@ -7,23 +7,23 @@
 
 
 # instance fields
-.field private final rootView:Lorg/fork/ui/view/TabbedViewPager;
+.field private final rootView:Lcom/iMe/fork/ui/view/TabbedViewPager;
 
-.field public final walletHomeViewPager:Lorg/fork/ui/view/TabbedViewPager;
+.field public final walletHomeViewPager:Lcom/iMe/fork/ui/view/TabbedViewPager;
 
 
 # direct methods
-.method private constructor <init>(Lorg/fork/ui/view/TabbedViewPager;Lorg/fork/ui/view/TabbedViewPager;)V
+.method private constructor <init>(Lcom/iMe/fork/ui/view/TabbedViewPager;Lcom/iMe/fork/ui/view/TabbedViewPager;)V
     .locals 0
 
     .line 23
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 24
-    iput-object p1, p0, Lorg/telegram/messenger/databinding/ForkFragmentWalletHomeBinding;->rootView:Lorg/fork/ui/view/TabbedViewPager;
+    iput-object p1, p0, Lorg/telegram/messenger/databinding/ForkFragmentWalletHomeBinding;->rootView:Lcom/iMe/fork/ui/view/TabbedViewPager;
 
     .line 25
-    iput-object p2, p0, Lorg/telegram/messenger/databinding/ForkFragmentWalletHomeBinding;->walletHomeViewPager:Lorg/fork/ui/view/TabbedViewPager;
+    iput-object p2, p0, Lorg/telegram/messenger/databinding/ForkFragmentWalletHomeBinding;->walletHomeViewPager:Lcom/iMe/fork/ui/view/TabbedViewPager;
 
     return-void
 .end method
@@ -37,12 +37,12 @@
     invoke-static {p0, v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
     .line 55
-    check-cast p0, Lorg/fork/ui/view/TabbedViewPager;
+    check-cast p0, Lcom/iMe/fork/ui/view/TabbedViewPager;
 
     .line 57
     new-instance v0, Lorg/telegram/messenger/databinding/ForkFragmentWalletHomeBinding;
 
-    invoke-direct {v0, p0, p0}, Lorg/telegram/messenger/databinding/ForkFragmentWalletHomeBinding;-><init>(Lorg/fork/ui/view/TabbedViewPager;Lorg/fork/ui/view/TabbedViewPager;)V
+    invoke-direct {v0, p0, p0}, Lorg/telegram/messenger/databinding/ForkFragmentWalletHomeBinding;-><init>(Lcom/iMe/fork/ui/view/TabbedViewPager;Lcom/iMe/fork/ui/view/TabbedViewPager;)V
 
     return-object v0
 .end method
@@ -94,18 +94,18 @@
     .locals 1
 
     .line 15
-    invoke-virtual {p0}, Lorg/telegram/messenger/databinding/ForkFragmentWalletHomeBinding;->getRoot()Lorg/fork/ui/view/TabbedViewPager;
+    invoke-virtual {p0}, Lorg/telegram/messenger/databinding/ForkFragmentWalletHomeBinding;->getRoot()Lcom/iMe/fork/ui/view/TabbedViewPager;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method public getRoot()Lorg/fork/ui/view/TabbedViewPager;
+.method public getRoot()Lcom/iMe/fork/ui/view/TabbedViewPager;
     .locals 1
 
     .line 31
-    iget-object v0, p0, Lorg/telegram/messenger/databinding/ForkFragmentWalletHomeBinding;->rootView:Lorg/fork/ui/view/TabbedViewPager;
+    iget-object v0, p0, Lorg/telegram/messenger/databinding/ForkFragmentWalletHomeBinding;->rootView:Lcom/iMe/fork/ui/view/TabbedViewPager;
 
     return-object v0
 .end method

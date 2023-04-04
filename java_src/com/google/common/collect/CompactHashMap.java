@@ -3,7 +3,7 @@ package com.google.common.collect;
 import com.google.common.base.Objects;
 import com.google.common.base.Preconditions;
 import com.google.common.primitives.Ints;
-import com.smedialink.common.IdFabric$RequestCode;
+import com.iMe.common.IdFabric$RequestCode;
 import java.io.Serializable;
 import java.util.AbstractCollection;
 import java.util.AbstractMap;
@@ -16,8 +16,8 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.NoSuchElementException;
 import java.util.Set;
-import p034j$.util.Iterator;
-import p034j$.util.function.Consumer;
+import p035j$.util.Iterator;
+import p035j$.util.function.Consumer;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: classes3.dex */
 public class CompactHashMap<K, V> extends AbstractMap<K, V> implements Serializable {
@@ -356,12 +356,12 @@ public class CompactHashMap<K, V> extends AbstractMap<K, V> implements Serializa
     }
 
     /* loaded from: classes3.dex */
-    private abstract class Itr<T> implements Iterator<T>, p034j$.util.Iterator {
+    private abstract class Itr<T> implements Iterator<T>, p035j$.util.Iterator {
         int currentIndex;
         int expectedMetadata;
         int indexToRemove;
 
-        @Override // p034j$.util.Iterator
+        @Override // p035j$.util.Iterator
         public /* synthetic */ void forEachRemaining(Consumer consumer) {
             Iterator.CC.$default$forEachRemaining(this, consumer);
         }
@@ -374,12 +374,12 @@ public class CompactHashMap<K, V> extends AbstractMap<K, V> implements Serializa
             this.indexToRemove = -1;
         }
 
-        @Override // java.util.Iterator, p034j$.util.Iterator
+        @Override // java.util.Iterator, p035j$.util.Iterator
         public boolean hasNext() {
             return this.currentIndex >= 0;
         }
 
-        @Override // java.util.Iterator, p034j$.util.Iterator
+        @Override // java.util.Iterator, p035j$.util.Iterator
         public T next() {
             checkForConcurrentModification();
             if (!hasNext()) {
@@ -392,7 +392,7 @@ public class CompactHashMap<K, V> extends AbstractMap<K, V> implements Serializa
             return output;
         }
 
-        @Override // java.util.Iterator, p034j$.util.Iterator
+        @Override // java.util.Iterator, p035j$.util.Iterator
         public void remove() {
             checkForConcurrentModification();
             CollectPreconditions.checkRemove(this.indexToRemove >= 0);

@@ -1,7 +1,7 @@
 package com.google.android.gms.measurement.internal;
 
 import android.content.Context;
-import com.google.android.exoplayer2.C0468C;
+import com.google.android.exoplayer2.C0482C;
 import com.google.android.exoplayer2.audio.AacUtil;
 import com.google.android.gms.common.util.VisibleForTesting;
 import java.util.ArrayList;
@@ -116,7 +116,7 @@ public final class zzdy {
         zzw = zza("measurement.alarm_manager.minimum_interval", 60000L, 60000L, zzbb.zza);
         zzx = zza("measurement.upload.stale_data_deletion_interval", 86400000L, 86400000L, zzbc.zza);
         zzy = zza("measurement.upload.refresh_blacklisted_config_interval", 604800000L, 604800000L, zzbd.zza);
-        Long valueOf2 = Long.valueOf((long) C0468C.DEFAULT_SEEK_FORWARD_INCREMENT_MS);
+        Long valueOf2 = Long.valueOf((long) C0482C.DEFAULT_SEEK_FORWARD_INCREMENT_MS);
         zzz = zza("measurement.upload.initial_upload_delay_time", valueOf2, valueOf2, zzbe.zza);
         zzA = zza("measurement.upload.retry_time", 1800000L, 1800000L, zzbf.zza);
         zzB = zza("measurement.upload.retry_count", 6, 6, zzbh.zza);

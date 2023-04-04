@@ -207,9 +207,9 @@
     add-int/2addr v1, v2
 
     .line 266
-    sget-object v2, Lorg/telegram/messenger/SharedConfig;->selectedFilterTabWidthMode:Lorg/fork/enums/FilterTabWidthMode;
+    sget-object v2, Lorg/telegram/messenger/SharedConfig;->selectedFilterTabWidthMode:Lcom/iMe/fork/enums/FilterTabWidthMode;
 
-    invoke-virtual {v2}, Lorg/fork/enums/FilterTabWidthMode;->getMarginIconAndCount()I
+    invoke-virtual {v2}, Lcom/iMe/fork/enums/FilterTabWidthMode;->getMarginIconAndCount()I
 
     move-result v2
 
@@ -232,9 +232,9 @@
     if-eqz v1, :cond_6
 
     .line 270
-    sget-object v1, Lorg/telegram/messenger/SharedConfig;->selectedFilterTabWidthMode:Lorg/fork/enums/FilterTabWidthMode;
+    sget-object v1, Lorg/telegram/messenger/SharedConfig;->selectedFilterTabWidthMode:Lcom/iMe/fork/enums/FilterTabWidthMode;
 
-    sget-object v2, Lorg/fork/enums/FilterTabWidthMode;->MINIMUM:Lorg/fork/enums/FilterTabWidthMode;
+    sget-object v2, Lcom/iMe/fork/enums/FilterTabWidthMode;->MINIMUM:Lcom/iMe/fork/enums/FilterTabWidthMode;
 
     if-ne v1, v2, :cond_5
 

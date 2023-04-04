@@ -33,7 +33,7 @@
 
     iget v1, p0, Lorg/telegram/messenger/LocaleController$$ExternalSyntheticLambda3;->f$1:I
 
-    invoke-static {v0, v1}, Lorg/telegram/messenger/LocaleController;->$r8$lambda$B481J0LvqHwkK0VY5_iodoanmP8(Lorg/telegram/messenger/LocaleController;I)V
+    invoke-static {v0, v1}, Lorg/telegram/messenger/LocaleController;->$r8$lambda$V4dVpXuZ2cos0pMpvopE17UFHls(Lorg/telegram/messenger/LocaleController;I)V
 
     return-void
 .end method

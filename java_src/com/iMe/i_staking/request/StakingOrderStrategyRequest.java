@@ -1,6 +1,6 @@
 package com.iMe.i_staking.request;
 
-import com.smedialink.storage.domain.model.wallet.staking.StakingOrderType;
+import com.iMe.storage.domain.model.wallet.staking.StakingOrderType;
 import java.util.Locale;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;

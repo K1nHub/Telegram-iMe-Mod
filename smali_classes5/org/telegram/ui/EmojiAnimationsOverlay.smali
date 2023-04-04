@@ -1004,11 +1004,11 @@
     .line 521
     iget v8, v0, Lorg/telegram/ui/EmojiAnimationsOverlay;->currentAccount:I
 
-    invoke-static {v8}, Lorg/fork/controller/ForkCommonController;->getInstance(I)Lorg/fork/controller/ForkCommonController;
+    invoke-static {v8}, Lcom/iMe/fork/controller/ForkCommonController;->getInstance(I)Lcom/iMe/fork/controller/ForkCommonController;
 
     move-result-object v8
 
-    invoke-virtual {v8}, Lorg/fork/controller/ForkCommonController;->isPremiumAnimateStickers()Z
+    invoke-virtual {v8}, Lcom/iMe/fork/controller/ForkCommonController;->isPremiumAnimateStickers()Z
 
     move-result v8
 
@@ -1571,11 +1571,11 @@
 
     iget v10, v0, Lorg/telegram/ui/EmojiAnimationsOverlay;->currentAccount:I
 
-    invoke-static {v10}, Lorg/fork/controller/ForkCommonController;->getInstance(I)Lorg/fork/controller/ForkCommonController;
+    invoke-static {v10}, Lcom/iMe/fork/controller/ForkCommonController;->getInstance(I)Lcom/iMe/fork/controller/ForkCommonController;
 
     move-result-object v10
 
-    invoke-virtual {v10}, Lorg/fork/controller/ForkCommonController;->isPremiumAnimateStickers()Z
+    invoke-virtual {v10}, Lcom/iMe/fork/controller/ForkCommonController;->isPremiumAnimateStickers()Z
 
     move-result v10
 
@@ -4022,11 +4022,11 @@
     .line 346
     iget v2, p0, Lorg/telegram/ui/EmojiAnimationsOverlay;->currentAccount:I
 
-    invoke-static {v2}, Lorg/fork/controller/ForkCommonController;->getInstance(I)Lorg/fork/controller/ForkCommonController;
+    invoke-static {v2}, Lcom/iMe/fork/controller/ForkCommonController;->getInstance(I)Lcom/iMe/fork/controller/ForkCommonController;
 
     move-result-object v2
 
-    invoke-virtual {v2}, Lorg/fork/controller/ForkCommonController;->isPremiumAnimateStickers()Z
+    invoke-virtual {v2}, Lcom/iMe/fork/controller/ForkCommonController;->isPremiumAnimateStickers()Z
 
     move-result v2
 
@@ -4080,11 +4080,11 @@
     :cond_2
     iget v2, p0, Lorg/telegram/ui/EmojiAnimationsOverlay;->currentAccount:I
 
-    invoke-static {v2}, Lorg/fork/controller/ForkCommonController;->getInstance(I)Lorg/fork/controller/ForkCommonController;
+    invoke-static {v2}, Lcom/iMe/fork/controller/ForkCommonController;->getInstance(I)Lcom/iMe/fork/controller/ForkCommonController;
 
     move-result-object v2
 
-    invoke-virtual {v2}, Lorg/fork/controller/ForkCommonController;->isPremiumAnimateStickers()Z
+    invoke-virtual {v2}, Lcom/iMe/fork/controller/ForkCommonController;->isPremiumAnimateStickers()Z
 
     move-result v2
 

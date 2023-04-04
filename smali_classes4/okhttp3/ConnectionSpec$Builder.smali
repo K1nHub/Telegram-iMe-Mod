@@ -299,7 +299,7 @@
 .method public final varargs tlsVersions([Ljava/lang/String;)Lokhttp3/ConnectionSpec$Builder;
     .locals 2
 
-    const-string v0, "tlsVersions"
+    const-string/jumbo v0, "tlsVersions"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -374,7 +374,7 @@
 .method public final varargs tlsVersions([Lokhttp3/TlsVersion;)Lokhttp3/ConnectionSpec$Builder;
     .locals 5
 
-    const-string v0, "tlsVersions"
+    const-string/jumbo v0, "tlsVersions"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 

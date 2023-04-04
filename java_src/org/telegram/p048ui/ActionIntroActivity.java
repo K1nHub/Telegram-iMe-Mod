@@ -22,40 +22,40 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.core.graphics.ColorUtils;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
-import com.smedialink.model.common.ScreenType;
-import com.smedialink.model.wallet.crypto.create.CreateWalletScreenType;
-import com.smedialink.model.wallet.crypto.pin.EnterPinCodeScreenType;
-import com.smedialink.model.wallet.home.BannerSlide;
-import com.smedialink.navigation.wallet.coordinator.PinCodeCoordinator;
-import com.smedialink.p031ui.wallet.crypto.create.CreateWalletFragment;
-import com.smedialink.p031ui.wallet.staking.StakingFragment;
-import com.smedialink.p031ui.wallet.swap.WalletSwapProtocolsFragment;
-import com.smedialink.p031ui.wallet.swap.process.WalletSwapProcessFragment;
-import com.smedialink.storage.domain.manager.crypto.CryptoAccessManager;
-import com.smedialink.storage.domain.model.crypto.BlockchainType;
-import com.smedialink.storage.domain.model.crypto.NetworkType;
-import com.smedialink.storage.domain.model.crypto.Wallet;
-import com.smedialink.storage.domain.model.wallet.GatePair;
-import com.smedialink.storage.domain.model.wallet.swap.SwapProtocol;
-import com.smedialink.storage.domain.model.wallet.token.TokenCode;
-import com.smedialink.storage.domain.storage.CryptoPreferenceHelper;
-import com.smedialink.storage.domain.utils.extentions.CryptoExtKt;
-import com.smedialink.storage.domain.utils.system.ResourceManager;
-import com.smedialink.utils.dialogs.DialogsFactoryKt;
-import com.smedialink.utils.extentions.common.ContextExtKt;
-import com.smedialink.utils.helper.wallet.WalletHelper;
+import com.iMe.fork.enums.LockedSection;
+import com.iMe.fork.p025ui.fragment.MusicActivity;
+import com.iMe.fork.utils.Callbacks$Callback;
+import com.iMe.fork.utils.Callbacks$Callback1;
+import com.iMe.model.common.ScreenType;
+import com.iMe.model.wallet.crypto.create.CreateWalletScreenType;
+import com.iMe.model.wallet.crypto.pin.EnterPinCodeScreenType;
+import com.iMe.model.wallet.home.BannerSlide;
+import com.iMe.navigation.wallet.coordinator.PinCodeCoordinator;
+import com.iMe.p032ui.wallet.crypto.create.CreateWalletFragment;
+import com.iMe.p032ui.wallet.staking.StakingFragment;
+import com.iMe.p032ui.wallet.swap.WalletSwapProtocolsFragment;
+import com.iMe.p032ui.wallet.swap.process.WalletSwapProcessFragment;
+import com.iMe.storage.domain.manager.crypto.CryptoAccessManager;
+import com.iMe.storage.domain.model.crypto.BlockchainType;
+import com.iMe.storage.domain.model.crypto.NetworkType;
+import com.iMe.storage.domain.model.crypto.Wallet;
+import com.iMe.storage.domain.model.wallet.GatePair;
+import com.iMe.storage.domain.model.wallet.swap.SwapProtocol;
+import com.iMe.storage.domain.model.wallet.token.TokenCode;
+import com.iMe.storage.domain.storage.CryptoPreferenceHelper;
+import com.iMe.storage.domain.utils.extentions.CryptoExtKt;
+import com.iMe.storage.domain.utils.system.ResourceManager;
+import com.iMe.utils.dialogs.DialogsFactoryKt;
+import com.iMe.utils.extentions.common.ContextExtKt;
+import com.iMe.utils.helper.wallet.WalletHelper;
 import java.util.ArrayList;
 import java.util.List;
 import kotlin.Lazy;
-import org.fork.enums.LockedSection;
-import org.fork.p046ui.fragment.MusicActivity;
-import org.fork.utils.Callbacks$Callback;
-import org.fork.utils.Callbacks$Callback1;
 import org.koin.java.KoinJavaComponent;
-import org.telegram.PhoneFormat.C3218PhoneFormat;
+import org.telegram.PhoneFormat.C3233PhoneFormat;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.C3301R;
+import org.telegram.messenger.C3316R;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.LocaleController;
@@ -66,7 +66,7 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.browser.Browser;
 import org.telegram.p048ui.ActionBar.AlertDialog;
 import org.telegram.p048ui.ActionBar.BaseFragment;
-import org.telegram.p048ui.ActionBar.C3366ActionBar;
+import org.telegram.p048ui.ActionBar.C3381ActionBar;
 import org.telegram.p048ui.ActionBar.Theme;
 import org.telegram.p048ui.ActionBar.ThemeDescription;
 import org.telegram.p048ui.CameraScanActivity;
@@ -123,7 +123,7 @@ public class ActionIntroActivity extends BaseFragment implements LocationControl
     }
 
     public void showNotAvailableToast() {
-        ContextExtKt.toast(LocaleController.getInternalString(C3301R.string.wallet_feature_not_available));
+        ContextExtKt.toast(LocaleController.getInternalString(C3316R.string.wallet_feature_not_available));
     }
 
     public boolean isForkIntro() {
@@ -133,7 +133,7 @@ public class ActionIntroActivity extends BaseFragment implements LocationControl
 
     private void showChooseGatePairDialog() {
         AlertDialog.Builder builder = new AlertDialog.Builder(getParentActivity());
-        builder.setTitle(this.resourceManager.getValue().getString(C3301R.string.wallet_gate_select_pair_title));
+        builder.setTitle(this.resourceManager.getValue().getString(C3316R.string.wallet_gate_select_pair_title));
         builder.setItems(GatePair.getTitlesAsArray(this.resourceManager.getValue()), new DialogInterface.OnClickListener() { // from class: org.telegram.ui.ActionIntroActivity$$ExternalSyntheticLambda1
             @Override // android.content.DialogInterface.OnClickListener
             public final void onClick(DialogInterface dialogInterface, int i) {
@@ -178,17 +178,17 @@ public class ActionIntroActivity extends BaseFragment implements LocationControl
         int i;
         int i2;
         super.createView(context);
-        C3366ActionBar c3366ActionBar = this.actionBar;
+        C3381ActionBar c3381ActionBar = this.actionBar;
         int i3 = 0;
-        if (c3366ActionBar != null) {
-            c3366ActionBar.setBackgroundColor(Theme.getColor("windowBackgroundWhite"));
-            this.actionBar.setBackButtonImage(C3301R.C3303drawable.ic_ab_back);
+        if (c3381ActionBar != null) {
+            c3381ActionBar.setBackgroundColor(Theme.getColor("windowBackgroundWhite"));
+            this.actionBar.setBackButtonImage(C3316R.C3318drawable.ic_ab_back);
             this.actionBar.setItemsColor(Theme.getColor("windowBackgroundWhiteGrayText2"), false);
             this.actionBar.setItemsBackgroundColor(Theme.getColor("actionBarWhiteSelector"), false);
             this.actionBar.setCastShadows(false);
             this.actionBar.setAddToContainer(false);
-            this.actionBar.setActionBarMenuOnItemClick(new C3366ActionBar.ActionBarMenuOnItemClick() { // from class: org.telegram.ui.ActionIntroActivity.1
-                @Override // org.telegram.p048ui.ActionBar.C3366ActionBar.ActionBarMenuOnItemClick
+            this.actionBar.setActionBarMenuOnItemClick(new C3381ActionBar.ActionBarMenuOnItemClick() { // from class: org.telegram.ui.ActionIntroActivity.1
+                @Override // org.telegram.p048ui.ActionBar.C3381ActionBar.ActionBarMenuOnItemClick
                 public void onItemClick(int i4) {
                     if (i4 == -1) {
                         ActionIntroActivity.this.finishFragment();
@@ -689,9 +689,9 @@ public class ActionIntroActivity extends BaseFragment implements LocationControl
         viewGroup.setBackgroundColor(Theme.getColor("windowBackgroundWhite"));
         ViewGroup viewGroup2 = (ViewGroup) this.fragmentView;
         viewGroup2.setOnTouchListener(ActionIntroActivity$$ExternalSyntheticLambda7.INSTANCE);
-        C3366ActionBar c3366ActionBar2 = this.actionBar;
-        if (c3366ActionBar2 != null) {
-            viewGroup2.addView(c3366ActionBar2);
+        C3381ActionBar c3381ActionBar2 = this.actionBar;
+        if (c3381ActionBar2 != null) {
+            viewGroup2.addView(c3381ActionBar2);
         }
         RLottieImageView rLottieImageView = new RLottieImageView(context);
         this.imageView = rLottieImageView;
@@ -769,7 +769,7 @@ public class ActionIntroActivity extends BaseFragment implements LocationControl
                 if (i9 == 0) {
                     this.desctiptionLines[i12].setLinkTextColor(Theme.getColor("windowBackgroundWhiteLinkText"));
                     this.desctiptionLines[i12].setHighlightColor(Theme.getColor("windowBackgroundWhiteLinkSelection"));
-                    String string = LocaleController.getString("AuthAnotherClientInfo1", C3301R.string.AuthAnotherClientInfo1);
+                    String string = LocaleController.getString("AuthAnotherClientInfo1", C3316R.string.AuthAnotherClientInfo1);
                     SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(string);
                     int indexOf = string.indexOf(42);
                     int lastIndexOf = string.lastIndexOf(42);
@@ -777,13 +777,13 @@ public class ActionIntroActivity extends BaseFragment implements LocationControl
                         this.desctiptionLines[i12].setMovementMethod(new AndroidUtilities.LinkMovementMethodMy());
                         spannableStringBuilder.replace(lastIndexOf, lastIndexOf + 1, (CharSequence) "");
                         spannableStringBuilder.replace(indexOf, indexOf + 1, (CharSequence) "");
-                        spannableStringBuilder.setSpan(new URLSpanNoUnderline(LocaleController.getString("AuthAnotherClientDownloadClientUrl", C3301R.string.AuthAnotherClientDownloadClientUrl)), indexOf, lastIndexOf - 1, 33);
+                        spannableStringBuilder.setSpan(new URLSpanNoUnderline(LocaleController.getString("AuthAnotherClientDownloadClientUrl", C3316R.string.AuthAnotherClientDownloadClientUrl)), indexOf, lastIndexOf - 1, 33);
                     }
                     this.desctiptionLines[i12].setText(spannableStringBuilder);
                 } else if (i9 == i4) {
-                    this.desctiptionLines[i12].setText(LocaleController.getString("AuthAnotherClientInfo2", C3301R.string.AuthAnotherClientInfo2));
+                    this.desctiptionLines[i12].setText(LocaleController.getString("AuthAnotherClientInfo2", C3316R.string.AuthAnotherClientInfo2));
                 } else {
-                    this.desctiptionLines[i12].setText(LocaleController.getString("AuthAnotherClientInfo3", C3301R.string.AuthAnotherClientInfo3));
+                    this.desctiptionLines[i12].setText(LocaleController.getString("AuthAnotherClientInfo3", C3316R.string.AuthAnotherClientInfo3));
                 }
                 if (LocaleController.isRTL) {
                     i2 = 5;
@@ -860,52 +860,52 @@ public class ActionIntroActivity extends BaseFragment implements LocationControl
             this.imageView.setScaleType(ImageView.ScaleType.FIT_CENTER);
             int i14 = this.currentType;
             if (i14 == 100 || i14 == 110) {
-                this.imageView.setImageResource(C3301R.C3303drawable.fork_cloud_albums_intro);
-                this.titleTextView.setText(LocaleController.getInternalString(C3301R.string.cloud_albums_intro_title));
-                this.descriptionText.setText(LocaleController.getInternalString(C3301R.string.cloud_albums_intro_subtitle));
-                this.buttonTextView.setText(this.currentType == 100 ? LocaleController.getString("Continue", C3301R.string.Continue) : LocaleController.getInternalString(C3301R.string.cloud_albums_intro_button));
+                this.imageView.setImageResource(C3316R.C3318drawable.fork_cloud_albums_intro);
+                this.titleTextView.setText(LocaleController.getInternalString(C3316R.string.cloud_albums_intro_title));
+                this.descriptionText.setText(LocaleController.getInternalString(C3316R.string.cloud_albums_intro_subtitle));
+                this.buttonTextView.setText(this.currentType == 100 ? LocaleController.getString("Continue", C3316R.string.Continue) : LocaleController.getInternalString(C3316R.string.cloud_albums_intro_button));
             } else if (i14 == 101) {
-                this.imageView.setImageResource(C3301R.C3303drawable.fork_music_intro);
-                this.titleTextView.setText(LocaleController.getString("AttachMusic", C3301R.string.AttachMusic));
-                this.descriptionText.setText(LocaleController.getInternalString(C3301R.string.music_intro_subtitle));
-                this.buttonTextView.setText(LocaleController.getString("Continue", C3301R.string.Continue));
+                this.imageView.setImageResource(C3316R.C3318drawable.fork_music_intro);
+                this.titleTextView.setText(LocaleController.getString("AttachMusic", C3316R.string.AttachMusic));
+                this.descriptionText.setText(LocaleController.getInternalString(C3316R.string.music_intro_subtitle));
+                this.buttonTextView.setText(LocaleController.getString("Continue", C3316R.string.Continue));
             } else if (i14 == 103) {
                 this.imageView.setAutoRepeat(true);
-                this.imageView.setAnimation(C3301R.C3306raw.fork_swap, ImageReceiver.DEFAULT_CROSSFADE_DURATION, ImageReceiver.DEFAULT_CROSSFADE_DURATION);
+                this.imageView.setAnimation(C3316R.C3321raw.fork_swap, ImageReceiver.DEFAULT_CROSSFADE_DURATION, ImageReceiver.DEFAULT_CROSSFADE_DURATION);
                 this.imageView.playAnimation();
-                this.titleTextView.setText(LocaleController.getInternalString(C3301R.string.wallet_banner_slide_swap_title));
-                this.descriptionText.setText(LocaleController.getInternalString(C3301R.string.wallet_banner_slide_swap_long_description));
-                this.buttonTextView.setText(LocaleController.getInternalString(C3301R.string.wallet_swap_process_button_exchange));
+                this.titleTextView.setText(LocaleController.getInternalString(C3316R.string.wallet_banner_slide_swap_title));
+                this.descriptionText.setText(LocaleController.getInternalString(C3316R.string.wallet_banner_slide_swap_long_description));
+                this.buttonTextView.setText(LocaleController.getInternalString(C3316R.string.wallet_swap_process_button_exchange));
             } else if (i14 == 104) {
-                this.imageView.setImageResource(C3301R.C3303drawable.fork_img_intro_channels);
-                this.titleTextView.setText(LocaleController.getInternalString(C3301R.string.wallet_internal_point_channels_catalog_title));
-                this.descriptionText.setText(LocaleController.getInternalString(C3301R.string.wallet_internal_point_channels_catalog_subtitle));
-                this.buttonTextView.setText(LocaleController.getInternalString(C3301R.string.wallet_feature_in_developing));
+                this.imageView.setImageResource(C3316R.C3318drawable.fork_img_intro_channels);
+                this.titleTextView.setText(LocaleController.getInternalString(C3316R.string.wallet_internal_point_channels_catalog_title));
+                this.descriptionText.setText(LocaleController.getInternalString(C3316R.string.wallet_internal_point_channels_catalog_subtitle));
+                this.buttonTextView.setText(LocaleController.getInternalString(C3316R.string.wallet_feature_in_developing));
             } else if (i14 == 105) {
-                this.imageView.setImageResource(C3301R.C3303drawable.fork_img_intro_bot);
-                this.titleTextView.setText(LocaleController.getInternalString(C3301R.string.wallet_internal_point_neurobots_store_title));
-                this.descriptionText.setText(LocaleController.getInternalString(C3301R.string.wallet_internal_point_neurobots_store_subtitle));
-                this.buttonTextView.setText(LocaleController.getInternalString(C3301R.string.wallet_feature_in_developing));
+                this.imageView.setImageResource(C3316R.C3318drawable.fork_img_intro_bot);
+                this.titleTextView.setText(LocaleController.getInternalString(C3316R.string.wallet_internal_point_neurobots_store_title));
+                this.descriptionText.setText(LocaleController.getInternalString(C3316R.string.wallet_internal_point_neurobots_store_subtitle));
+                this.buttonTextView.setText(LocaleController.getInternalString(C3316R.string.wallet_feature_in_developing));
             } else if (i14 == 107) {
-                this.imageView.setImageResource(C3301R.C3303drawable.fork_img_intro_premium);
-                this.titleTextView.setText(LocaleController.getInternalString(C3301R.string.wallet_internal_point_premium_account_title));
-                this.descriptionText.setText(LocaleController.getInternalString(C3301R.string.wallet_internal_point_premium_account_subtitle));
-                this.buttonTextView.setText(LocaleController.getInternalString(C3301R.string.wallet_feature_in_developing));
+                this.imageView.setImageResource(C3316R.C3318drawable.fork_img_intro_premium);
+                this.titleTextView.setText(LocaleController.getInternalString(C3316R.string.wallet_internal_point_premium_account_title));
+                this.descriptionText.setText(LocaleController.getInternalString(C3316R.string.wallet_internal_point_premium_account_subtitle));
+                this.buttonTextView.setText(LocaleController.getInternalString(C3316R.string.wallet_feature_in_developing));
             } else if (i14 == 106) {
-                this.imageView.setImageResource(C3301R.C3303drawable.fork_img_intro_ads);
-                this.titleTextView.setText(LocaleController.getInternalString(C3301R.string.wallet_internal_point_ads_title));
-                this.descriptionText.setText(LocaleController.getInternalString(C3301R.string.wallet_internal_point_ads_subtitle));
-                this.buttonTextView.setText(LocaleController.getInternalString(C3301R.string.wallet_feature_in_developing));
+                this.imageView.setImageResource(C3316R.C3318drawable.fork_img_intro_ads);
+                this.titleTextView.setText(LocaleController.getInternalString(C3316R.string.wallet_internal_point_ads_title));
+                this.descriptionText.setText(LocaleController.getInternalString(C3316R.string.wallet_internal_point_ads_subtitle));
+                this.buttonTextView.setText(LocaleController.getInternalString(C3316R.string.wallet_feature_in_developing));
             } else if (i14 == 109) {
                 this.colors = new int[8];
                 updateColors();
                 this.imageView.setAutoRepeat(true);
-                this.imageView.setAnimation(C3301R.C3306raw.fork_binance_pay_scan, 334, 334, this.colors);
+                this.imageView.setAnimation(C3316R.C3321raw.fork_binance_pay_scan, 334, 334, this.colors);
                 this.imageView.setScaleType(ImageView.ScaleType.CENTER);
                 this.imageView.playAnimation();
-                this.titleTextView.setText(LocaleController.getInternalString(C3301R.string.wallet_binance_pay_intro_scan_title));
-                this.descriptionText.setText(LocaleController.getInternalString(C3301R.string.wallet_binance_pay_intro_scan_description));
-                this.buttonTextView.setText(LocaleController.getString("AuthAnotherClientScan", C3301R.string.AuthAnotherClientScan));
+                this.titleTextView.setText(LocaleController.getInternalString(C3316R.string.wallet_binance_pay_intro_scan_title));
+                this.descriptionText.setText(LocaleController.getInternalString(C3316R.string.wallet_binance_pay_intro_scan_description));
+                this.buttonTextView.setText(LocaleController.getString("AuthAnotherClientScan", C3316R.string.AuthAnotherClientScan));
             } else if (i14 == 108 && this.bannerSlide != null) {
                 this.imageView.setAutoRepeat(true);
                 this.imageView.setAnimation(this.bannerSlide.getAnimatedIcon(), ImageReceiver.DEFAULT_CROSSFADE_DURATION, ImageReceiver.DEFAULT_CROSSFADE_DURATION);
@@ -918,10 +918,10 @@ public class ActionIntroActivity extends BaseFragment implements LocationControl
             switch (this.currentType) {
                 case 0:
                     this.imageView.setScaleType(ImageView.ScaleType.FIT_CENTER);
-                    this.imageView.setAnimation(C3301R.C3306raw.channel_create, 200, 200);
-                    this.titleTextView.setText(LocaleController.getString("ChannelAlertTitle", C3301R.string.ChannelAlertTitle));
-                    this.descriptionText.setText(LocaleController.getString("ChannelAlertText", C3301R.string.ChannelAlertText));
-                    this.buttonTextView.setText(LocaleController.getString("ChannelAlertCreate2", C3301R.string.ChannelAlertCreate2));
+                    this.imageView.setAnimation(C3316R.C3321raw.channel_create, 200, 200);
+                    this.titleTextView.setText(LocaleController.getString("ChannelAlertTitle", C3316R.string.ChannelAlertTitle));
+                    this.descriptionText.setText(LocaleController.getString("ChannelAlertText", C3316R.string.ChannelAlertText));
+                    this.buttonTextView.setText(LocaleController.getString("ChannelAlertCreate2", C3316R.string.ChannelAlertCreate2));
                     this.imageView.playAnimation();
                     this.flickerButton = true;
                     break;
@@ -929,28 +929,28 @@ public class ActionIntroActivity extends BaseFragment implements LocationControl
                     this.imageView.setBackgroundDrawable(Theme.createCircleDrawable(AndroidUtilities.m50dp(100), Theme.getColor("chats_archiveBackground")));
                     this.imageView.setImageDrawable(new ShareLocationDrawable(context, 3));
                     this.imageView.setScaleType(ImageView.ScaleType.CENTER);
-                    this.titleTextView.setText(LocaleController.getString("PeopleNearby", C3301R.string.PeopleNearby));
-                    this.descriptionText.setText(LocaleController.getString("PeopleNearbyAccessInfo", C3301R.string.PeopleNearbyAccessInfo));
-                    this.buttonTextView.setText(LocaleController.getString("PeopleNearbyAllowAccess", C3301R.string.PeopleNearbyAllowAccess));
+                    this.titleTextView.setText(LocaleController.getString("PeopleNearby", C3316R.string.PeopleNearby));
+                    this.descriptionText.setText(LocaleController.getString("PeopleNearbyAccessInfo", C3316R.string.PeopleNearbyAccessInfo));
+                    this.buttonTextView.setText(LocaleController.getString("PeopleNearbyAllowAccess", C3316R.string.PeopleNearbyAllowAccess));
                     this.flickerButton = true;
                     break;
                 case 2:
                     this.subtitleTextView.setVisibility(0);
                     this.descriptionText2.setVisibility(0);
-                    this.imageView.setImageResource(Theme.getCurrentTheme().isDark() ? C3301R.C3303drawable.groupsintro2 : C3301R.C3303drawable.groupsintro);
+                    this.imageView.setImageResource(Theme.getCurrentTheme().isDark() ? C3316R.C3318drawable.groupsintro2 : C3316R.C3318drawable.groupsintro);
                     this.imageView.setScaleType(ImageView.ScaleType.CENTER);
                     TextView textView7 = this.subtitleTextView;
                     String str2 = this.currentGroupCreateDisplayAddress;
                     textView7.setText(str2 != null ? str2 : "");
-                    this.titleTextView.setText(LocaleController.getString("NearbyCreateGroup", C3301R.string.NearbyCreateGroup));
-                    this.descriptionText.setText(LocaleController.getString("NearbyCreateGroupInfo", C3301R.string.NearbyCreateGroupInfo));
-                    this.descriptionText2.setText(LocaleController.getString("NearbyCreateGroupInfo2", C3301R.string.NearbyCreateGroupInfo2));
-                    this.buttonTextView.setText(LocaleController.getString("NearbyStartGroup", C3301R.string.NearbyStartGroup));
+                    this.titleTextView.setText(LocaleController.getString("NearbyCreateGroup", C3316R.string.NearbyCreateGroup));
+                    this.descriptionText.setText(LocaleController.getString("NearbyCreateGroupInfo", C3316R.string.NearbyCreateGroupInfo));
+                    this.descriptionText2.setText(LocaleController.getString("NearbyCreateGroupInfo2", C3316R.string.NearbyCreateGroupInfo2));
+                    this.buttonTextView.setText(LocaleController.getString("NearbyStartGroup", C3316R.string.NearbyStartGroup));
                     break;
                 case 3:
                     this.subtitleTextView.setVisibility(0);
                     this.imageView.setScaleType(ImageView.ScaleType.FIT_CENTER);
-                    this.imageView.setAnimation(C3301R.C3306raw.utyan_change_number, 200, 200);
+                    this.imageView.setAnimation(C3316R.C3321raw.utyan_change_number, 200, 200);
                     this.imageView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.ActionIntroActivity$$ExternalSyntheticLambda4
                         @Override // android.view.View.OnClickListener
                         public final void onClick(View view) {
@@ -963,7 +963,7 @@ public class ActionIntroActivity extends BaseFragment implements LocationControl
                         user = userConfig.getCurrentUser();
                     }
                     if (user != null) {
-                        this.subtitleTextView.setText(LocaleController.formatString("PhoneNumberKeepButton", C3301R.string.PhoneNumberKeepButton, C3218PhoneFormat.getInstance().format("+" + user.phone)));
+                        this.subtitleTextView.setText(LocaleController.formatString("PhoneNumberKeepButton", C3316R.string.PhoneNumberKeepButton, C3233PhoneFormat.getInstance().format("+" + user.phone)));
                     }
                     this.subtitleTextView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.ActionIntroActivity$$ExternalSyntheticLambda5
                         @Override // android.view.View.OnClickListener
@@ -972,9 +972,9 @@ public class ActionIntroActivity extends BaseFragment implements LocationControl
                         }
                     });
                     TextView textView8 = this.titleTextView;
-                    int i15 = C3301R.string.PhoneNumberChange2;
+                    int i15 = C3316R.string.PhoneNumberChange2;
                     textView8.setText(LocaleController.getString("PhoneNumberChange2", i15));
-                    this.descriptionText.setText(AndroidUtilities.replaceTags(LocaleController.getString("PhoneNumberHelp", C3301R.string.PhoneNumberHelp)));
+                    this.descriptionText.setText(AndroidUtilities.replaceTags(LocaleController.getString("PhoneNumberHelp", C3316R.string.PhoneNumberHelp)));
                     this.buttonTextView.setText(LocaleController.getString("PhoneNumberChange2", i15));
                     this.imageView.playAnimation();
                     this.flickerButton = true;
@@ -983,22 +983,22 @@ public class ActionIntroActivity extends BaseFragment implements LocationControl
                     this.imageView.setBackgroundDrawable(Theme.createCircleDrawable(AndroidUtilities.m50dp(100), Theme.getColor("chats_archiveBackground")));
                     this.imageView.setImageDrawable(new ShareLocationDrawable(context, 3));
                     this.imageView.setScaleType(ImageView.ScaleType.CENTER);
-                    this.titleTextView.setText(LocaleController.getString("PeopleNearby", C3301R.string.PeopleNearby));
-                    this.descriptionText.setText(LocaleController.getString("PeopleNearbyGpsInfo", C3301R.string.PeopleNearbyGpsInfo));
-                    this.buttonTextView.setText(LocaleController.getString("PeopleNearbyGps", C3301R.string.PeopleNearbyGps));
+                    this.titleTextView.setText(LocaleController.getString("PeopleNearby", C3316R.string.PeopleNearby));
+                    this.descriptionText.setText(LocaleController.getString("PeopleNearbyGpsInfo", C3316R.string.PeopleNearbyGpsInfo));
+                    this.buttonTextView.setText(LocaleController.getString("PeopleNearbyGps", C3316R.string.PeopleNearbyGps));
                     break;
                 case 5:
                     this.colors = new int[8];
                     updateColors();
-                    this.imageView.setAnimation(C3301R.C3306raw.qr_login, 334, 334, this.colors);
+                    this.imageView.setAnimation(C3316R.C3321raw.qr_login, 334, 334, this.colors);
                     this.imageView.setScaleType(ImageView.ScaleType.CENTER);
-                    this.titleTextView.setText(LocaleController.getString("AuthAnotherClient", C3301R.string.AuthAnotherClient));
-                    this.buttonTextView.setText(LocaleController.getString("AuthAnotherClientScan", C3301R.string.AuthAnotherClientScan));
+                    this.titleTextView.setText(LocaleController.getString("AuthAnotherClient", C3316R.string.AuthAnotherClient));
+                    this.buttonTextView.setText(LocaleController.getString("AuthAnotherClientScan", C3316R.string.AuthAnotherClientScan));
                     this.imageView.playAnimation();
                     break;
                 case 6:
                     this.imageView.setScaleType(ImageView.ScaleType.FIT_CENTER);
-                    this.imageView.setAnimation(C3301R.C3306raw.utyan_passcode, 200, 200);
+                    this.imageView.setAnimation(C3316R.C3321raw.utyan_passcode, 200, 200);
                     this.imageView.setFocusable(false);
                     this.imageView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.ActionIntroActivity$$ExternalSyntheticLambda6
                         @Override // android.view.View.OnClickListener
@@ -1006,9 +1006,9 @@ public class ActionIntroActivity extends BaseFragment implements LocationControl
                             ActionIntroActivity.this.lambda$createView$6(view);
                         }
                     });
-                    this.titleTextView.setText(LocaleController.getString("Passcode", C3301R.string.Passcode));
-                    this.descriptionText.setText(LocaleController.getString("ChangePasscodeInfoShort", C3301R.string.ChangePasscodeInfoShort));
-                    this.buttonTextView.setText(LocaleController.getString("EnablePasscode", C3301R.string.EnablePasscode));
+                    this.titleTextView.setText(LocaleController.getString("Passcode", C3316R.string.Passcode));
+                    this.descriptionText.setText(LocaleController.getString("ChangePasscodeInfoShort", C3316R.string.ChangePasscodeInfoShort));
+                    this.buttonTextView.setText(LocaleController.getString("EnablePasscode", C3316R.string.EnablePasscode));
                     this.imageView.playAnimation();
                     this.flickerButton = true;
                     break;
@@ -1032,8 +1032,8 @@ public class ActionIntroActivity extends BaseFragment implements LocationControl
             if (this.currentType == 100) {
                 presentFragment(DialogsActivity.newInstanceInAlbumsMode(), true);
             } else {
-                presentFragment(ChannelCreateActivity.newInstanceInAlbumMode(new Callbacks$Callback1() { // from class: org.telegram.ui.ActionIntroActivity$$ExternalSyntheticLambda9
-                    @Override // org.fork.utils.Callbacks$Callback1
+                presentFragment(ChannelCreateActivity.newInstanceInAlbumMode(new Callbacks$Callback1() { // from class: org.telegram.ui.ActionIntroActivity$$ExternalSyntheticLambda8
+                    @Override // com.iMe.fork.utils.Callbacks$Callback1
                     public final void invoke(Object obj) {
                         ActionIntroActivity.this.lambda$createView$2((Long) obj);
                     }
@@ -1064,9 +1064,9 @@ public class ActionIntroActivity extends BaseFragment implements LocationControl
         } else if (i == 108) {
             BannerSlide bannerSlide = this.bannerSlide;
             if (bannerSlide != null) {
-                switch (C34725.$SwitchMap$com$smedialink$model$wallet$home$BannerSlide[bannerSlide.ordinal()]) {
+                switch (C34875.$SwitchMap$com$iMe$model$wallet$home$BannerSlide[bannerSlide.ordinal()]) {
                     case 1:
-                        Browser.openUrl(getParentActivity(), LocaleController.getInternalString(C3301R.string.common_wallet_faq_url));
+                        Browser.openUrl(getParentActivity(), LocaleController.getInternalString(C3316R.string.common_wallet_faq_url));
                         finishFragment();
                         return;
                     case 2:
@@ -1095,13 +1095,13 @@ public class ActionIntroActivity extends BaseFragment implements LocationControl
                         showChooseGatePairDialog();
                         return;
                     case 7:
-                        WalletHelper.runWithCheckIsCryptoWalletCreated(this, new Callbacks$Callback() { // from class: org.telegram.ui.ActionIntroActivity$$ExternalSyntheticLambda10
-                            @Override // org.fork.utils.Callbacks$Callback
+                        WalletHelper.runWithCheckIsCryptoWalletCreated(this, new Callbacks$Callback() { // from class: org.telegram.ui.ActionIntroActivity$$ExternalSyntheticLambda9
+                            @Override // com.iMe.fork.utils.Callbacks$Callback
                             public final void invoke() {
                                 ActionIntroActivity.this.finishFragment();
                             }
-                        }, this.cryptoPreferenceHelper.getValue().getCurrentBlockchainType(), new Callbacks$Callback() { // from class: org.telegram.ui.ActionIntroActivity$$ExternalSyntheticLambda11
-                            @Override // org.fork.utils.Callbacks$Callback
+                        }, this.cryptoPreferenceHelper.getValue().getCurrentBlockchainType(), new Callbacks$Callback() { // from class: org.telegram.ui.ActionIntroActivity$$ExternalSyntheticLambda10
+                            @Override // com.iMe.fork.utils.Callbacks$Callback
                             public final void invoke() {
                                 ActionIntroActivity.this.lambda$createView$3();
                             }
@@ -1114,7 +1114,7 @@ public class ActionIntroActivity extends BaseFragment implements LocationControl
                         finishFragment();
                         return;
                     case 10:
-                        Browser.openUrl(getParentActivity(), LocaleController.getInternalString(C3301R.string.common_ascendeex_url));
+                        Browser.openUrl(getParentActivity(), LocaleController.getInternalString(C3316R.string.common_ascendeex_url));
                         finishFragment();
                         return;
                     case 11:
@@ -1124,19 +1124,19 @@ public class ActionIntroActivity extends BaseFragment implements LocationControl
                             finishFragment();
                             return;
                         }
-                        showDialog(DialogsFactoryKt.createWalletCreatedRequiredDialog(this, blockchainType, new Callbacks$Callback() { // from class: org.telegram.ui.ActionIntroActivity$$ExternalSyntheticLambda10
-                            @Override // org.fork.utils.Callbacks$Callback
+                        showDialog(DialogsFactoryKt.createWalletCreatedRequiredDialog(this, blockchainType, new Callbacks$Callback() { // from class: org.telegram.ui.ActionIntroActivity$$ExternalSyntheticLambda9
+                            @Override // com.iMe.fork.utils.Callbacks$Callback
                             public final void invoke() {
                                 ActionIntroActivity.this.finishFragment();
                             }
                         }));
                         return;
                     case 12:
-                        Browser.openUrl(getParentActivity(), LocaleController.getInternalString(C3301R.string.wallet_banner_slide_binance_pay_faq_action_link));
+                        Browser.openUrl(getParentActivity(), LocaleController.getInternalString(C3316R.string.wallet_banner_slide_binance_pay_faq_action_link));
                         finishFragment();
                         return;
                     case 13:
-                        Browser.openUrl(getParentActivity(), LocaleController.getInternalString(C3301R.string.wallet_banner_slide_binance_pay_marketplace_action_link));
+                        Browser.openUrl(getParentActivity(), LocaleController.getInternalString(C3316R.string.wallet_banner_slide_binance_pay_marketplace_action_link));
                         finishFragment();
                         return;
                     default:
@@ -1166,15 +1166,15 @@ public class ActionIntroActivity extends BaseFragment implements LocationControl
                     return;
                 case 3:
                     AlertDialog.Builder builder = new AlertDialog.Builder(getParentActivity());
-                    builder.setTitle(LocaleController.getString("PhoneNumberChangeTitle", C3301R.string.PhoneNumberChangeTitle));
-                    builder.setMessage(LocaleController.getString("PhoneNumberAlert", C3301R.string.PhoneNumberAlert));
-                    builder.setPositiveButton(LocaleController.getString("Change", C3301R.string.Change), new DialogInterface.OnClickListener() { // from class: org.telegram.ui.ActionIntroActivity$$ExternalSyntheticLambda0
+                    builder.setTitle(LocaleController.getString("PhoneNumberChangeTitle", C3316R.string.PhoneNumberChangeTitle));
+                    builder.setMessage(LocaleController.getString("PhoneNumberAlert", C3316R.string.PhoneNumberAlert));
+                    builder.setPositiveButton(LocaleController.getString("Change", C3316R.string.Change), new DialogInterface.OnClickListener() { // from class: org.telegram.ui.ActionIntroActivity$$ExternalSyntheticLambda0
                         @Override // android.content.DialogInterface.OnClickListener
                         public final void onClick(DialogInterface dialogInterface, int i2) {
                             ActionIntroActivity.this.lambda$createView$4(dialogInterface, i2);
                         }
                     });
-                    builder.setNegativeButton(LocaleController.getString("Cancel", C3301R.string.Cancel), null);
+                    builder.setNegativeButton(LocaleController.getString("Cancel", C3316R.string.Cancel), null);
                     showDialog(builder.create());
                     return;
                 case 4:
@@ -1213,62 +1213,62 @@ public class ActionIntroActivity extends BaseFragment implements LocationControl
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: org.telegram.ui.ActionIntroActivity$5 */
     /* loaded from: classes5.dex */
-    public static /* synthetic */ class C34725 {
-        static final /* synthetic */ int[] $SwitchMap$com$smedialink$model$wallet$home$BannerSlide;
+    public static /* synthetic */ class C34875 {
+        static final /* synthetic */ int[] $SwitchMap$com$iMe$model$wallet$home$BannerSlide;
 
         static {
             int[] iArr = new int[BannerSlide.values().length];
-            $SwitchMap$com$smedialink$model$wallet$home$BannerSlide = iArr;
+            $SwitchMap$com$iMe$model$wallet$home$BannerSlide = iArr;
             try {
                 iArr[BannerSlide.FAQ.ordinal()] = 1;
             } catch (NoSuchFieldError unused) {
             }
             try {
-                $SwitchMap$com$smedialink$model$wallet$home$BannerSlide[BannerSlide.SWAP.ordinal()] = 2;
+                $SwitchMap$com$iMe$model$wallet$home$BannerSlide[BannerSlide.SWAP.ordinal()] = 2;
             } catch (NoSuchFieldError unused2) {
             }
             try {
-                $SwitchMap$com$smedialink$model$wallet$home$BannerSlide[BannerSlide.NON_CUSTODIAL.ordinal()] = 3;
+                $SwitchMap$com$iMe$model$wallet$home$BannerSlide[BannerSlide.NON_CUSTODIAL.ordinal()] = 3;
             } catch (NoSuchFieldError unused3) {
             }
             try {
-                $SwitchMap$com$smedialink$model$wallet$home$BannerSlide[BannerSlide.SAFE.ordinal()] = 4;
+                $SwitchMap$com$iMe$model$wallet$home$BannerSlide[BannerSlide.SAFE.ordinal()] = 4;
             } catch (NoSuchFieldError unused4) {
             }
             try {
-                $SwitchMap$com$smedialink$model$wallet$home$BannerSlide[BannerSlide.MULTI_NETWORKS.ordinal()] = 5;
+                $SwitchMap$com$iMe$model$wallet$home$BannerSlide[BannerSlide.MULTI_NETWORKS.ordinal()] = 5;
             } catch (NoSuchFieldError unused5) {
             }
             try {
-                $SwitchMap$com$smedialink$model$wallet$home$BannerSlide[BannerSlide.GATE.ordinal()] = 6;
+                $SwitchMap$com$iMe$model$wallet$home$BannerSlide[BannerSlide.GATE.ordinal()] = 6;
             } catch (NoSuchFieldError unused6) {
             }
             try {
-                $SwitchMap$com$smedialink$model$wallet$home$BannerSlide[BannerSlide.CRYPTO_TRANSFERS.ordinal()] = 7;
+                $SwitchMap$com$iMe$model$wallet$home$BannerSlide[BannerSlide.CRYPTO_TRANSFERS.ordinal()] = 7;
             } catch (NoSuchFieldError unused7) {
             }
             try {
-                $SwitchMap$com$smedialink$model$wallet$home$BannerSlide[BannerSlide.BINANCE_PAY_INFORMATION.ordinal()] = 8;
+                $SwitchMap$com$iMe$model$wallet$home$BannerSlide[BannerSlide.BINANCE_PAY_INFORMATION.ordinal()] = 8;
             } catch (NoSuchFieldError unused8) {
             }
             try {
-                $SwitchMap$com$smedialink$model$wallet$home$BannerSlide[BannerSlide.BINANCE_PAY_OPERATION_WITHOUT_FEE.ordinal()] = 9;
+                $SwitchMap$com$iMe$model$wallet$home$BannerSlide[BannerSlide.BINANCE_PAY_OPERATION_WITHOUT_FEE.ordinal()] = 9;
             } catch (NoSuchFieldError unused9) {
             }
             try {
-                $SwitchMap$com$smedialink$model$wallet$home$BannerSlide[BannerSlide.ASCENDEEX.ordinal()] = 10;
+                $SwitchMap$com$iMe$model$wallet$home$BannerSlide[BannerSlide.ASCENDEEX.ordinal()] = 10;
             } catch (NoSuchFieldError unused10) {
             }
             try {
-                $SwitchMap$com$smedialink$model$wallet$home$BannerSlide[BannerSlide.STAKING.ordinal()] = 11;
+                $SwitchMap$com$iMe$model$wallet$home$BannerSlide[BannerSlide.STAKING.ordinal()] = 11;
             } catch (NoSuchFieldError unused11) {
             }
             try {
-                $SwitchMap$com$smedialink$model$wallet$home$BannerSlide[BannerSlide.BINANCE_PAY_FAQ.ordinal()] = 12;
+                $SwitchMap$com$iMe$model$wallet$home$BannerSlide[BannerSlide.BINANCE_PAY_FAQ.ordinal()] = 12;
             } catch (NoSuchFieldError unused12) {
             }
             try {
-                $SwitchMap$com$smedialink$model$wallet$home$BannerSlide[BannerSlide.BINANCE_PAY_MARKETPLACE.ordinal()] = 13;
+                $SwitchMap$com$iMe$model$wallet$home$BannerSlide[BannerSlide.BINANCE_PAY_MARKETPLACE.ordinal()] = 13;
             } catch (NoSuchFieldError unused13) {
             }
         }
@@ -1387,7 +1387,7 @@ public class ActionIntroActivity extends BaseFragment implements LocationControl
             if (iArr[0] != 0) {
                 showDialog(AlertsCreator.createLocationRequiredDialog(getParentActivity(), false));
             } else {
-                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.ActionIntroActivity$$ExternalSyntheticLambda8
+                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.ActionIntroActivity$$ExternalSyntheticLambda11
                     @Override // java.lang.Runnable
                     public final void run() {
                         ActionIntroActivity.this.lambda$onRequestPermissionsResultFragment$9();
@@ -1398,12 +1398,12 @@ public class ActionIntroActivity extends BaseFragment implements LocationControl
             if (iArr.length > 0 && iArr[0] == 0) {
                 processOpenQrReader();
             } else {
-                new AlertDialog.Builder(getParentActivity()).setMessage(AndroidUtilities.replaceTags(LocaleController.getString("QRCodePermissionNoCameraWithHint", C3301R.string.QRCodePermissionNoCameraWithHint))).setPositiveButton(LocaleController.getString("PermissionOpenSettings", C3301R.string.PermissionOpenSettings), new DialogInterface.OnClickListener() { // from class: org.telegram.ui.ActionIntroActivity$$ExternalSyntheticLambda2
+                new AlertDialog.Builder(getParentActivity()).setMessage(AndroidUtilities.replaceTags(LocaleController.getString("QRCodePermissionNoCameraWithHint", C3316R.string.QRCodePermissionNoCameraWithHint))).setPositiveButton(LocaleController.getString("PermissionOpenSettings", C3316R.string.PermissionOpenSettings), new DialogInterface.OnClickListener() { // from class: org.telegram.ui.ActionIntroActivity$$ExternalSyntheticLambda2
                     @Override // android.content.DialogInterface.OnClickListener
                     public final void onClick(DialogInterface dialogInterface, int i2) {
                         ActionIntroActivity.this.lambda$onRequestPermissionsResultFragment$10(dialogInterface, i2);
                     }
-                }).setNegativeButton(LocaleController.getString("ContactsPermissionAlertNotNow", C3301R.string.ContactsPermissionAlertNotNow), null).setTopAnimation(C3301R.C3306raw.permission_request_camera, 72, false, Theme.getColor("dialogTopBackground")).show();
+                }).setNegativeButton(LocaleController.getString("ContactsPermissionAlertNotNow", C3316R.string.ContactsPermissionAlertNotNow), null).setTopAnimation(C3316R.C3321raw.permission_request_camera, 72, false, Theme.getColor("dialogTopBackground")).show();
             }
         }
     }

@@ -17,7 +17,7 @@ public final class ContinuationKt {
         createCoroutineUnintercepted = IntrinsicsKt__IntrinsicsJvmKt.createCoroutineUnintercepted(function1, completion);
         intercepted = IntrinsicsKt__IntrinsicsJvmKt.intercepted(createCoroutineUnintercepted);
         Result.Companion companion = Result.Companion;
-        intercepted.resumeWith(Result.m1479constructorimpl(Unit.INSTANCE));
+        intercepted.resumeWith(Result.m1571constructorimpl(Unit.INSTANCE));
     }
 
     public static final <R, T> void startCoroutine(Function2<? super R, ? super Continuation<? super T>, ? extends Object> function2, R r, Continuation<? super T> completion) {
@@ -28,6 +28,6 @@ public final class ContinuationKt {
         createCoroutineUnintercepted = IntrinsicsKt__IntrinsicsJvmKt.createCoroutineUnintercepted(function2, r, completion);
         intercepted = IntrinsicsKt__IntrinsicsJvmKt.intercepted(createCoroutineUnintercepted);
         Result.Companion companion = Result.Companion;
-        intercepted.resumeWith(Result.m1479constructorimpl(Unit.INSTANCE));
+        intercepted.resumeWith(Result.m1571constructorimpl(Unit.INSTANCE));
     }
 }

@@ -257,7 +257,7 @@
     :cond_2
     iget v1, v0, Lorg/telegram/ui/Components/TransformableLoginButtonView;->transformType:I
 
-    sget v5, Lcom/smedialink/common/IdFabric$CustomType;->TRANSFORMABLE_LOGIN_BUTTON_SEARCH:I
+    sget v5, Lcom/iMe/common/IdFabric$CustomType;->TRANSFORMABLE_LOGIN_BUTTON_SEARCH:I
 
     const/4 v6, 0x2
 

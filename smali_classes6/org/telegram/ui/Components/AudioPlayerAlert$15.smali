@@ -24,7 +24,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/AudioPlayerAlert;Landroid/content/Context;)V
     .locals 0
 
-    .line 1193
+    .line 1194
     iput-object p1, p0, Lorg/telegram/ui/Components/AudioPlayerAlert$15;->this$0:Lorg/telegram/ui/Components/AudioPlayerAlert;
 
     invoke-direct {p0, p2}, Lorg/telegram/ui/Components/RecyclerListView;-><init>(Landroid/content/Context;)V
@@ -37,7 +37,7 @@
 .method protected allowSelectChildAtPosition(FF)Z
     .locals 1
 
-    .line 1219
+    .line 1220
     iget-object p1, p0, Lorg/telegram/ui/Components/AudioPlayerAlert$15;->this$0:Lorg/telegram/ui/Components/AudioPlayerAlert;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/AudioPlayerAlert;->access$600(Lorg/telegram/ui/Components/AudioPlayerAlert;)Landroid/widget/FrameLayout;
@@ -80,10 +80,10 @@
 .method protected onLayout(ZIIII)V
     .locals 10
 
-    .line 1199
+    .line 1200
     invoke-super/range {p0 .. p5}, Lorg/telegram/ui/Components/RecyclerListView;->onLayout(ZIIII)V
 
-    .line 1201
+    .line 1202
     iget-object p1, p0, Lorg/telegram/ui/Components/AudioPlayerAlert$15;->this$0:Lorg/telegram/ui/Components/AudioPlayerAlert;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/AudioPlayerAlert;->access$3800(Lorg/telegram/ui/Components/AudioPlayerAlert;)I
@@ -110,10 +110,10 @@
 
     if-nez p1, :cond_0
 
-    .line 1202
+    .line 1203
     iput-boolean v1, p0, Lorg/telegram/ui/Components/AudioPlayerAlert$15;->ignoreLayout:Z
 
-    .line 1203
+    .line 1204
     iget-object p1, p0, Lorg/telegram/ui/Components/AudioPlayerAlert$15;->this$0:Lorg/telegram/ui/Components/AudioPlayerAlert;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/AudioPlayerAlert;->access$3900(Lorg/telegram/ui/Components/AudioPlayerAlert;)Landroidx/recyclerview/widget/LinearLayoutManager;
@@ -158,20 +158,20 @@
 
     move v9, p5
 
-    .line 1204
+    .line 1205
     invoke-super/range {v4 .. v9}, Lorg/telegram/ui/Components/RecyclerListView;->onLayout(ZIIII)V
 
-    .line 1205
+    .line 1206
     iput-boolean v2, p0, Lorg/telegram/ui/Components/AudioPlayerAlert$15;->ignoreLayout:Z
 
-    .line 1206
+    .line 1207
     iget-object p1, p0, Lorg/telegram/ui/Components/AudioPlayerAlert$15;->this$0:Lorg/telegram/ui/Components/AudioPlayerAlert;
 
     invoke-static {p1, v0}, Lorg/telegram/ui/Components/AudioPlayerAlert;->access$3802(Lorg/telegram/ui/Components/AudioPlayerAlert;I)I
 
     goto :goto_0
 
-    .line 1207
+    .line 1208
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/Components/AudioPlayerAlert$15;->this$0:Lorg/telegram/ui/Components/AudioPlayerAlert;
 
@@ -181,15 +181,15 @@
 
     if-eqz p1, :cond_2
 
-    .line 1208
+    .line 1209
     iget-object p1, p0, Lorg/telegram/ui/Components/AudioPlayerAlert$15;->this$0:Lorg/telegram/ui/Components/AudioPlayerAlert;
 
     invoke-static {p1, v2}, Lorg/telegram/ui/Components/AudioPlayerAlert;->access$5902(Lorg/telegram/ui/Components/AudioPlayerAlert;Z)Z
 
-    .line 1209
+    .line 1210
     iput-boolean v1, p0, Lorg/telegram/ui/Components/AudioPlayerAlert$15;->ignoreLayout:Z
 
-    .line 1210
+    .line 1211
     iget-object p1, p0, Lorg/telegram/ui/Components/AudioPlayerAlert$15;->this$0:Lorg/telegram/ui/Components/AudioPlayerAlert;
 
     invoke-static {p1, v1}, Lorg/telegram/ui/Components/AudioPlayerAlert;->access$6000(Lorg/telegram/ui/Components/AudioPlayerAlert;Z)Z
@@ -210,10 +210,10 @@
 
     move v8, p5
 
-    .line 1211
+    .line 1212
     invoke-super/range {v3 .. v8}, Lorg/telegram/ui/Components/RecyclerListView;->onLayout(ZIIII)V
 
-    .line 1213
+    .line 1214
     :cond_1
     iput-boolean v2, p0, Lorg/telegram/ui/Components/AudioPlayerAlert$15;->ignoreLayout:Z
 
@@ -225,14 +225,14 @@
 .method public requestLayout()V
     .locals 1
 
-    .line 1224
+    .line 1225
     iget-boolean v0, p0, Lorg/telegram/ui/Components/AudioPlayerAlert$15;->ignoreLayout:Z
 
     if-eqz v0, :cond_0
 
     return-void
 
-    .line 1227
+    .line 1228
     :cond_0
     invoke-super {p0}, Lorg/telegram/ui/Components/RecyclerListView;->requestLayout()V
 

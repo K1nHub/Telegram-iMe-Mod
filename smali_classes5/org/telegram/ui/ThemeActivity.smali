@@ -250,14 +250,6 @@
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$KU1lHq9h9Gnk3ehs0pchDw5vO-Q(Lorg/telegram/ui/Cells/TextCheckCell;)V
-    .locals 0
-
-    invoke-static {p0}, Lorg/telegram/ui/ThemeActivity;->lambda$createView$2(Lorg/telegram/ui/Cells/TextCheckCell;)V
-
-    return-void
-.end method
-
 .method public static synthetic $r8$lambda$LXEqEdZJWSy7YCTFuTU7L9nxdUo(Lorg/telegram/ui/ThemeActivity;)V
     .locals 0
 
@@ -320,6 +312,14 @@
     .locals 0
 
     invoke-direct {p0, p1, p2, p3}, Lorg/telegram/ui/ThemeActivity;->lambda$createView$6(ILandroid/content/DialogInterface;I)V
+
+    return-void
+.end method
+
+.method public static synthetic $r8$lambda$w4DzAFlypEcK5AUvfRDPkiPdGZY(Lorg/telegram/ui/Cells/TextCheckCell;)V
+    .locals 0
+
+    invoke-static {p0}, Lorg/telegram/ui/ThemeActivity;->lambda$createView$2(Lorg/telegram/ui/Cells/TextCheckCell;)V
 
     return-void
 .end method
@@ -3212,11 +3212,11 @@
     invoke-static {v2}, Lorg/telegram/messenger/SharedConfig;->setVibrationEnabled(Z)V
 
     .line 1060
-    new-instance v2, Lorg/telegram/ui/ThemeActivity$$ExternalSyntheticLambda11;
+    new-instance v2, Lorg/telegram/ui/ThemeActivity$$ExternalSyntheticLambda8;
 
-    invoke-direct {v2, v1}, Lorg/telegram/ui/ThemeActivity$$ExternalSyntheticLambda11;-><init>(Lorg/telegram/ui/Cells/TextCheckCell;)V
+    invoke-direct {v2, v1}, Lorg/telegram/ui/ThemeActivity$$ExternalSyntheticLambda8;-><init>(Lorg/telegram/ui/Cells/TextCheckCell;)V
 
-    invoke-static {v0, v2}, Lorg/telegram/ui/Components/AlertsCreator;->showRestartDialog(Lorg/telegram/ui/ActionBar/BaseFragment;Lorg/fork/utils/Callbacks$Callback;)V
+    invoke-static {v0, v2}, Lorg/telegram/ui/Components/AlertsCreator;->showRestartDialog(Lorg/telegram/ui/ActionBar/BaseFragment;Lcom/iMe/fork/utils/Callbacks$Callback;)V
 
     goto :goto_9
 
@@ -3618,9 +3618,9 @@
     .line 1504
     :catch_0
     :cond_0
-    new-instance v1, Lorg/telegram/ui/ThemeActivity$$ExternalSyntheticLambda9;
+    new-instance v1, Lorg/telegram/ui/ThemeActivity$$ExternalSyntheticLambda10;
 
-    invoke-direct {v1, p0, v0}, Lorg/telegram/ui/ThemeActivity$$ExternalSyntheticLambda9;-><init>(Lorg/telegram/ui/ThemeActivity;Ljava/lang/String;)V
+    invoke-direct {v1, p0, v0}, Lorg/telegram/ui/ThemeActivity$$ExternalSyntheticLambda10;-><init>(Lorg/telegram/ui/ThemeActivity;Ljava/lang/String;)V
 
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->runOnUIThread(Ljava/lang/Runnable;)V
 
@@ -4450,7 +4450,7 @@
     :cond_3
     iget-object v6, p0, Lorg/telegram/ui/ThemeActivity;->defaultThemes:Ljava/util/ArrayList;
 
-    sget-object v7, Lorg/telegram/ui/ThemeActivity$$ExternalSyntheticLambda10;->INSTANCE:Lorg/telegram/ui/ThemeActivity$$ExternalSyntheticLambda10;
+    sget-object v7, Lorg/telegram/ui/ThemeActivity$$ExternalSyntheticLambda11;->INSTANCE:Lorg/telegram/ui/ThemeActivity$$ExternalSyntheticLambda11;
 
     invoke-static {v6, v7}, Ljava/util/Collections;->sort(Ljava/util/List;Ljava/util/Comparator;)V
 
@@ -5831,9 +5831,9 @@
     .line 1490
     sget-object p1, Lorg/telegram/messenger/Utilities;->globalQueue:Lorg/telegram/messenger/DispatchQueue;
 
-    new-instance v0, Lorg/telegram/ui/ThemeActivity$$ExternalSyntheticLambda8;
+    new-instance v0, Lorg/telegram/ui/ThemeActivity$$ExternalSyntheticLambda9;
 
-    invoke-direct {v0, p0}, Lorg/telegram/ui/ThemeActivity$$ExternalSyntheticLambda8;-><init>(Lorg/telegram/ui/ThemeActivity;)V
+    invoke-direct {v0, p0}, Lorg/telegram/ui/ThemeActivity$$ExternalSyntheticLambda9;-><init>(Lorg/telegram/ui/ThemeActivity;)V
 
     invoke-virtual {p1, v0}, Lorg/telegram/messenger/DispatchQueue;->postRunnable(Ljava/lang/Runnable;)Z
 
@@ -6418,7 +6418,7 @@
 
     move-result-object p1
 
-    invoke-static {p1}, Lcom/smedialink/utils/extentions/common/ContextExtKt;->toast(Ljava/lang/CharSequence;)V
+    invoke-static {p1}, Lcom/iMe/utils/extentions/common/ContextExtKt;->toast(Ljava/lang/CharSequence;)V
 
     .line 841
     sput v0, Lorg/telegram/ui/ActionBar/Theme;->selectedAutoNightType:I

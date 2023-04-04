@@ -40,14 +40,14 @@ import androidx.viewbinding.ViewBinding;
 import com.google.android.exoplayer2.ExoPlayer;
 import com.google.android.exoplayer2.extractor.p016ts.PsExtractor;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
-import com.smedialink.utils.common.ViewBindingAdapterHolder;
+import com.iMe.utils.common.ViewBindingAdapterHolder;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Objects;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3301R;
+import org.telegram.messenger.C3316R;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.NotificationCenter;
@@ -253,6 +253,10 @@ public class RecyclerListView extends RecyclerView {
     /* JADX INFO: Access modifiers changed from: protected */
     public boolean canHighlightChildAt(View view, float f, float f2) {
         return true;
+    }
+
+    public Integer getSelectorColor(int i) {
+        return null;
     }
 
     @Override // android.view.View
@@ -603,7 +607,7 @@ public class RecyclerListView extends RecyclerView {
                 this.letterPaint.setTextSize(AndroidUtilities.m50dp(13));
                 this.letterPaint.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
                 this.paint2.setColor(Theme.getColor("windowBackgroundWhite"));
-                Drawable mutate = ContextCompat.getDrawable(context, C3301R.C3303drawable.calendar_date).mutate();
+                Drawable mutate = ContextCompat.getDrawable(context, C3316R.C3318drawable.calendar_date).mutate();
                 this.fastScrollBackgroundDrawable = mutate;
                 mutate.setColorFilter(new PorterDuffColorFilter(ColorUtils.blendARGB(Theme.getColor("windowBackgroundWhite"), -1, 0.1f), PorterDuff.Mode.MULTIPLY));
             }
@@ -614,7 +618,7 @@ public class RecyclerListView extends RecyclerView {
             updateColors();
             setFocusableInTouchMode(true);
             this.touchSlop = ViewConfiguration.get(context).getScaledTouchSlop();
-            this.fastScrollShadowDrawable = ContextCompat.getDrawable(context, C3301R.C3303drawable.fast_scroll_shadow);
+            this.fastScrollShadowDrawable = ContextCompat.getDrawable(context, C3316R.C3318drawable.fast_scroll_shadow);
         }
 
         /* JADX INFO: Access modifiers changed from: private */
@@ -2126,6 +2130,10 @@ public class RecyclerListView extends RecyclerView {
             this.selectorDrawable.setVisible(false, false);
             this.selectorDrawable.setState(StateSet.NOTHING);
         }
+        Integer selectorColor = getSelectorColor(i);
+        if (selectorColor != null) {
+            setListSelectorColor(selectorColor.intValue());
+        }
         this.selectorDrawable.setBounds(this.selectorRect);
         if (z2 && getVisibility() == 0) {
             this.selectorDrawable.setVisible(true, false);
@@ -2503,10 +2511,10 @@ public class RecyclerListView extends RecyclerView {
         private boolean onFocus;
 
         /* renamed from: x */
-        private float f1801x;
+        private float f1804x;
 
         /* renamed from: y */
-        private float f1802y;
+        private float f1805y;
 
         @Override // android.view.View.OnTouchListener
         public boolean onTouch(View view, MotionEvent motionEvent) {
@@ -2515,14 +2523,14 @@ public class RecyclerListView extends RecyclerView {
                 return false;
             }
             if (motionEvent.getAction() == 0) {
-                this.f1801x = motionEvent.getX();
-                this.f1802y = motionEvent.getY();
+                this.f1804x = motionEvent.getX();
+                this.f1805y = motionEvent.getY();
                 this.onFocus = true;
                 parent.requestDisallowInterceptTouchEvent(true);
             }
             if (motionEvent.getAction() == 2) {
-                float x = this.f1801x - motionEvent.getX();
-                float y = this.f1802y - motionEvent.getY();
+                float x = this.f1804x - motionEvent.getX();
+                float y = this.f1805y - motionEvent.getY();
                 float scaledTouchSlop = ViewConfiguration.get(view.getContext()).getScaledTouchSlop();
                 if (this.onFocus && Math.sqrt((x * x) + (y * y)) > scaledTouchSlop) {
                     this.onFocus = false;

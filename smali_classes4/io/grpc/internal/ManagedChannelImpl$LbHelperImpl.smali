@@ -138,7 +138,7 @@
     .line 1145
     iget-object v0, p0, Lio/grpc/internal/ManagedChannelImpl$LbHelperImpl;->this$0:Lio/grpc/internal/ManagedChannelImpl;
 
-    const-string v1, "updateBalancingState()"
+    const-string/jumbo v1, "updateBalancingState()"
 
     invoke-static {v0, v1}, Lio/grpc/internal/ManagedChannelImpl;->access$4200(Lio/grpc/internal/ManagedChannelImpl;Ljava/lang/String;)V
 

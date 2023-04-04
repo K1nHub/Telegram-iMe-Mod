@@ -1,12 +1,12 @@
 package com.iMe.i_staking.mapper;
 
 import com.iMe.i_staking.response.StakingDetailedMetadataResponse;
-import com.smedialink.storage.domain.model.crypto.NetworkType;
-import com.smedialink.storage.domain.model.crypto.level.AccountLevel;
-import com.smedialink.storage.domain.model.staking.StakingDetailedMetadata;
-import com.smedialink.storage.domain.model.staking.StakingDetailedStats;
-import com.smedialink.storage.domain.model.staking.StakingRules;
-import com.smedialink.storage.domain.model.staking.StakingToken;
+import com.iMe.storage.domain.model.crypto.NetworkType;
+import com.iMe.storage.domain.model.crypto.level.AccountLevel;
+import com.iMe.storage.domain.model.staking.StakingDetailedMetadata;
+import com.iMe.storage.domain.model.staking.StakingDetailedStats;
+import com.iMe.storage.domain.model.staking.StakingRules;
+import com.iMe.storage.domain.model.staking.StakingToken;
 import java.math.BigDecimal;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: StakingDetailedMetadataMapper.kt */

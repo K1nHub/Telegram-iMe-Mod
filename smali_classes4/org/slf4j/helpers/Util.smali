@@ -240,7 +240,7 @@
     return p0
 
     :cond_0
-    const-string v0, "true"
+    const-string/jumbo v0, "true"
 
     .line 57
     invoke-virtual {p0, v0}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z

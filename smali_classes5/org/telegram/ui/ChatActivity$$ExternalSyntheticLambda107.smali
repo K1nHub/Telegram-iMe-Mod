@@ -14,11 +14,11 @@
 
 .field public final synthetic f$3:Ljava/lang/CharSequence;
 
-.field public final synthetic f$4:[Ljava/lang/Runnable;
+.field public final synthetic f$4:Lorg/telegram/ui/Cells/BotHelpCell;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/ChatActivity;Ljava/lang/String;Ljava/lang/String;Ljava/lang/CharSequence;[Ljava/lang/Runnable;)V
+.method public synthetic constructor <init>(Lorg/telegram/ui/ChatActivity;Ljava/lang/String;Ljava/lang/String;Ljava/lang/CharSequence;Lorg/telegram/ui/Cells/BotHelpCell;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -31,7 +31,7 @@
 
     iput-object p4, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda107;->f$3:Ljava/lang/CharSequence;
 
-    iput-object p5, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda107;->f$4:[Ljava/lang/Runnable;
+    iput-object p5, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda107;->f$4:Lorg/telegram/ui/Cells/BotHelpCell;
 
     return-void
 .end method
@@ -49,11 +49,11 @@
 
     iget-object v3, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda107;->f$3:Ljava/lang/CharSequence;
 
-    iget-object v4, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda107;->f$4:[Ljava/lang/Runnable;
+    iget-object v4, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda107;->f$4:Lorg/telegram/ui/Cells/BotHelpCell;
 
     move-object v5, p1
 
-    invoke-static/range {v0 .. v5}, Lorg/telegram/ui/ChatActivity;->$r8$lambda$R1s2F3d25tB0xIkvGEpXxxQnP9U(Lorg/telegram/ui/ChatActivity;Ljava/lang/String;Ljava/lang/String;Ljava/lang/CharSequence;[Ljava/lang/Runnable;Landroid/view/View;)V
+    invoke-static/range {v0 .. v5}, Lorg/telegram/ui/ChatActivity;->$r8$lambda$x3SDhNCUmES6itsklCF9cd5fEJY(Lorg/telegram/ui/ChatActivity;Ljava/lang/String;Ljava/lang/String;Ljava/lang/CharSequence;Lorg/telegram/ui/Cells/BotHelpCell;Landroid/view/View;)V
 
     return-void
 .end method

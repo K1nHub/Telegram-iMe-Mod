@@ -27,7 +27,7 @@
 .method constructor <init>(Lorg/telegram/ui/StickersActivity;I)V
     .locals 0
 
-    .line 870
+    .line 869
     iput-object p1, p0, Lorg/telegram/ui/StickersActivity$8;->this$0:Lorg/telegram/ui/StickersActivity;
 
     iput p2, p0, Lorg/telegram/ui/StickersActivity$8;->val$startRow:I
@@ -42,7 +42,7 @@
 .method public onChanged(IILjava/lang/Object;)V
     .locals 1
 
-    .line 890
+    .line 889
     iget-object p3, p0, Lorg/telegram/ui/StickersActivity$8;->this$0:Lorg/telegram/ui/StickersActivity;
 
     invoke-static {p3}, Lorg/telegram/ui/StickersActivity;->access$000(Lorg/telegram/ui/StickersActivity;)Lorg/telegram/ui/StickersActivity$ListAdapter;
@@ -61,7 +61,7 @@
 .method public onInserted(II)V
     .locals 2
 
-    .line 873
+    .line 872
     iget-object v0, p0, Lorg/telegram/ui/StickersActivity$8;->this$0:Lorg/telegram/ui/StickersActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/StickersActivity;->access$000(Lorg/telegram/ui/StickersActivity;)Lorg/telegram/ui/StickersActivity$ListAdapter;
@@ -80,7 +80,7 @@
 .method public onMoved(II)V
     .locals 2
 
-    .line 883
+    .line 882
     iget-object v0, p0, Lorg/telegram/ui/StickersActivity$8;->this$0:Lorg/telegram/ui/StickersActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/StickersActivity;->access$1200(Lorg/telegram/ui/StickersActivity;)I
@@ -91,7 +91,7 @@
 
     if-ne v0, v1, :cond_0
 
-    .line 884
+    .line 883
     iget-object v0, p0, Lorg/telegram/ui/StickersActivity$8;->this$0:Lorg/telegram/ui/StickersActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/StickersActivity;->access$000(Lorg/telegram/ui/StickersActivity;)Lorg/telegram/ui/StickersActivity$ListAdapter;
@@ -113,7 +113,7 @@
 .method public onRemoved(II)V
     .locals 2
 
-    .line 878
+    .line 877
     iget-object v0, p0, Lorg/telegram/ui/StickersActivity$8;->this$0:Lorg/telegram/ui/StickersActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/StickersActivity;->access$000(Lorg/telegram/ui/StickersActivity;)Lorg/telegram/ui/StickersActivity$ListAdapter;

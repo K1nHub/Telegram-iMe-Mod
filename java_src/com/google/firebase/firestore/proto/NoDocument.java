@@ -43,7 +43,7 @@ public final class NoDocument extends GeneratedMessageLite<NoDocument, Builder> 
 
     /* loaded from: classes3.dex */
     public static final class Builder extends GeneratedMessageLite.Builder<NoDocument, Builder> implements MessageLiteOrBuilder {
-        /* synthetic */ Builder(C10141 c10141) {
+        /* synthetic */ Builder(C10281 c10281) {
             this();
         }
 
@@ -66,7 +66,7 @@ public final class NoDocument extends GeneratedMessageLite<NoDocument, Builder> 
 
     /* renamed from: com.google.firebase.firestore.proto.NoDocument$1 */
     /* loaded from: classes3.dex */
-    static /* synthetic */ class C10141 {
+    static /* synthetic */ class C10281 {
 
         /* renamed from: $SwitchMap$com$google$protobuf$GeneratedMessageLite$MethodToInvoke */
         static final /* synthetic */ int[] f182xa1df5c61;
@@ -107,7 +107,7 @@ public final class NoDocument extends GeneratedMessageLite<NoDocument, Builder> 
 
     @Override // com.google.protobuf.GeneratedMessageLite
     protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke methodToInvoke, Object obj, Object obj2) {
-        switch (C10141.f182xa1df5c61[methodToInvoke.ordinal()]) {
+        switch (C10281.f182xa1df5c61[methodToInvoke.ordinal()]) {
             case 1:
                 return new NoDocument();
             case 2:

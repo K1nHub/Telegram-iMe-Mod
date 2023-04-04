@@ -151,6 +151,7 @@
     .line 66
     invoke-virtual {p1}, Lcom/bumptech/glide/load/resource/bitmap/RecyclableBufferedInputStream;->release()V
 
+    .line 68
     :cond_2
     throw p2
 .end method

@@ -159,7 +159,7 @@
     .line 569
     iget-boolean v0, p0, Lio/grpc/internal/InternalSubchannel$TransportListener;->shutdownInitiated:Z
 
-    const-string v1, "transportShutdown() must be called before transportTerminated()."
+    const-string/jumbo v1, "transportShutdown() must be called before transportTerminated()."
 
     invoke-static {v0, v1}, Lcom/google/common/base/Preconditions;->checkState(ZLjava/lang/Object;)V
 

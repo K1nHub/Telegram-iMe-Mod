@@ -22,10 +22,10 @@
 .method constructor <init>([BI)V
     .locals 1
 
-    .line 395
+    .line 454
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 396
+    .line 455
     invoke-static {p1}, Ljava/nio/ByteBuffer;->wrap([B)Ljava/nio/ByteBuffer;
 
     move-result-object p1
@@ -50,7 +50,7 @@
 .method private isAvailable(II)Z
     .locals 1
 
-    .line 416
+    .line 475
     iget-object v0, p0, Lcom/bumptech/glide/load/resource/bitmap/DefaultImageHeaderParser$RandomAccessReader;->data:Ljava/nio/ByteBuffer;
 
     invoke-virtual {v0}, Ljava/nio/ByteBuffer;->remaining()I
@@ -79,7 +79,7 @@
 
     const/4 v0, 0x2
 
-    .line 412
+    .line 471
     invoke-direct {p0, p1, v0}, Lcom/bumptech/glide/load/resource/bitmap/DefaultImageHeaderParser$RandomAccessReader;->isAvailable(II)Z
 
     move-result v0
@@ -106,7 +106,7 @@
 
     const/4 v0, 0x4
 
-    .line 408
+    .line 467
     invoke-direct {p0, p1, v0}, Lcom/bumptech/glide/load/resource/bitmap/DefaultImageHeaderParser$RandomAccessReader;->isAvailable(II)Z
 
     move-result v0
@@ -131,7 +131,7 @@
 .method length()I
     .locals 1
 
-    .line 404
+    .line 463
     iget-object v0, p0, Lcom/bumptech/glide/load/resource/bitmap/DefaultImageHeaderParser$RandomAccessReader;->data:Ljava/nio/ByteBuffer;
 
     invoke-virtual {v0}, Ljava/nio/ByteBuffer;->remaining()I
@@ -144,7 +144,7 @@
 .method order(Ljava/nio/ByteOrder;)V
     .locals 1
 
-    .line 400
+    .line 459
     iget-object v0, p0, Lcom/bumptech/glide/load/resource/bitmap/DefaultImageHeaderParser$RandomAccessReader;->data:Ljava/nio/ByteBuffer;
 
     invoke-virtual {v0, p1}, Ljava/nio/ByteBuffer;->order(Ljava/nio/ByteOrder;)Ljava/nio/ByteBuffer;

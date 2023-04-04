@@ -501,11 +501,11 @@
     .line 344
     iget v2, v0, Lorg/telegram/ui/Cells/ProfileSearchCell;->currentAccount:I
 
-    invoke-static {v2}, Lorg/fork/controller/ForkCommonController;->getInstance(I)Lorg/fork/controller/ForkCommonController;
+    invoke-static {v2}, Lcom/iMe/fork/controller/ForkCommonController;->getInstance(I)Lcom/iMe/fork/controller/ForkCommonController;
 
     move-result-object v2
 
-    invoke-virtual {v2}, Lorg/fork/controller/ForkCommonController;->isShowPremiumBadgeEnabled()Z
+    invoke-virtual {v2}, Lcom/iMe/fork/controller/ForkCommonController;->isShowPremiumBadgeEnabled()Z
 
     move-result v2
 
@@ -514,11 +514,11 @@
     .line 345
     iget v2, v0, Lorg/telegram/ui/Cells/ProfileSearchCell;->currentAccount:I
 
-    invoke-static {v2}, Lorg/fork/controller/ForkCommonController;->getInstance(I)Lorg/fork/controller/ForkCommonController;
+    invoke-static {v2}, Lcom/iMe/fork/controller/ForkCommonController;->getInstance(I)Lcom/iMe/fork/controller/ForkCommonController;
 
     move-result-object v2
 
-    invoke-virtual {v2}, Lorg/fork/controller/ForkCommonController;->isShowPremiumStatusEnabled()Z
+    invoke-virtual {v2}, Lcom/iMe/fork/controller/ForkCommonController;->isShowPremiumStatusEnabled()Z
 
     move-result v2
 

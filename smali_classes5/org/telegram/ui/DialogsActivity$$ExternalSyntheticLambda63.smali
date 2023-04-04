@@ -2,32 +2,34 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Lcom/iMe/fork/utils/Callbacks$Callback1;
 
 
 # instance fields
-.field public final synthetic f$0:Lorg/telegram/ui/Cells/DialogsHintCell;
+.field public final synthetic f$0:Lorg/telegram/ui/DialogsActivity;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/Cells/DialogsHintCell;)V
+.method public synthetic constructor <init>(Lorg/telegram/ui/DialogsActivity;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda63;->f$0:Lorg/telegram/ui/Cells/DialogsHintCell;
+    iput-object p1, p0, Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda63;->f$0:Lorg/telegram/ui/DialogsActivity;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final run()V
+.method public final invoke(Ljava/lang/Object;)V
     .locals 1
 
-    iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda63;->f$0:Lorg/telegram/ui/Cells/DialogsHintCell;
+    iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda63;->f$0:Lorg/telegram/ui/DialogsActivity;
 
-    invoke-virtual {v0}, Lorg/telegram/ui/Cells/DialogsHintCell;->updateColors()V
+    check-cast p1, Ljava/lang/Long;
+
+    invoke-static {v0, p1}, Lorg/telegram/ui/DialogsActivity;->$r8$lambda$kmbza_B20rzQbldKu2AkHRLJHtI(Lorg/telegram/ui/DialogsActivity;Ljava/lang/Long;)V
 
     return-void
 .end method

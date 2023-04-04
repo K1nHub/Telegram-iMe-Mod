@@ -15,7 +15,7 @@
 
 
 # direct methods
-.method private constructor <init>(Landroidx/constraintlayout/widget/ConstraintLayout;Landroidx/constraintlayout/widget/ConstraintLayout;Landroidx/appcompat/widget/AppCompatTextView;Lcom/smedialink/ui/custom/backup/BackupWordView;Lcom/smedialink/ui/custom/backup/BackupWordView;Lcom/smedialink/ui/custom/backup/BackupWordView;)V
+.method private constructor <init>(Landroidx/constraintlayout/widget/ConstraintLayout;Landroidx/constraintlayout/widget/ConstraintLayout;Landroidx/appcompat/widget/AppCompatTextView;Lcom/iMe/ui/custom/backup/BackupWordView;Lcom/iMe/ui/custom/backup/BackupWordView;Lcom/iMe/ui/custom/backup/BackupWordView;)V
     .locals 0
 
     .line 41
@@ -74,7 +74,7 @@
 
     move-object v6, v1
 
-    check-cast v6, Lcom/smedialink/ui/custom/backup/BackupWordView;
+    check-cast v6, Lcom/iMe/ui/custom/backup/BackupWordView;
 
     if-eqz v6, :cond_0
 
@@ -88,7 +88,7 @@
 
     move-object v7, v1
 
-    check-cast v7, Lcom/smedialink/ui/custom/backup/BackupWordView;
+    check-cast v7, Lcom/iMe/ui/custom/backup/BackupWordView;
 
     if-eqz v7, :cond_0
 
@@ -102,7 +102,7 @@
 
     move-object v8, v1
 
-    check-cast v8, Lcom/smedialink/ui/custom/backup/BackupWordView;
+    check-cast v8, Lcom/iMe/ui/custom/backup/BackupWordView;
 
     if-eqz v8, :cond_0
 
@@ -115,7 +115,7 @@
 
     move-object v2, v0
 
-    invoke-direct/range {v2 .. v8}, Lorg/telegram/messenger/databinding/ForkContentWordSwitcherBinding;-><init>(Landroidx/constraintlayout/widget/ConstraintLayout;Landroidx/constraintlayout/widget/ConstraintLayout;Landroidx/appcompat/widget/AppCompatTextView;Lcom/smedialink/ui/custom/backup/BackupWordView;Lcom/smedialink/ui/custom/backup/BackupWordView;Lcom/smedialink/ui/custom/backup/BackupWordView;)V
+    invoke-direct/range {v2 .. v8}, Lorg/telegram/messenger/databinding/ForkContentWordSwitcherBinding;-><init>(Landroidx/constraintlayout/widget/ConstraintLayout;Landroidx/constraintlayout/widget/ConstraintLayout;Landroidx/appcompat/widget/AppCompatTextView;Lcom/iMe/ui/custom/backup/BackupWordView;Lcom/iMe/ui/custom/backup/BackupWordView;Lcom/iMe/ui/custom/backup/BackupWordView;)V
 
     return-object v0
 

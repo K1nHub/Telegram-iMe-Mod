@@ -1,5 +1,5 @@
 package com.ihsanbal.logging;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public enum Level {
     NONE,
     BASIC,

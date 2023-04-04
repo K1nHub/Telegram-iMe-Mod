@@ -8,7 +8,7 @@ import android.text.style.ForegroundColorSpan;
 import android.text.style.StrikethroughSpan;
 import android.text.style.StyleSpan;
 import android.text.style.UnderlineSpan;
-import com.google.android.exoplayer2.C0468C;
+import com.google.android.exoplayer2.C0482C;
 import com.google.android.exoplayer2.text.Cue;
 import com.google.android.exoplayer2.text.SimpleSubtitleDecoder;
 import com.google.android.exoplayer2.text.Subtitle;
@@ -204,12 +204,12 @@ public final class SsaDecoder extends SimpleSubtitleDecoder {
             return;
         }
         long parseTimecodeUs = parseTimecodeUs(split[ssaDialogueFormat.startTimeIndex]);
-        if (parseTimecodeUs == C0468C.TIME_UNSET) {
+        if (parseTimecodeUs == C0482C.TIME_UNSET) {
             Log.m806w(TAG, "Skipping invalid timing: " + str);
             return;
         }
         long parseTimecodeUs2 = parseTimecodeUs(split[ssaDialogueFormat.endTimeIndex]);
-        if (parseTimecodeUs2 == C0468C.TIME_UNSET) {
+        if (parseTimecodeUs2 == C0482C.TIME_UNSET) {
             Log.m806w(TAG, "Skipping invalid timing: " + str);
             return;
         }
@@ -225,7 +225,7 @@ public final class SsaDecoder extends SimpleSubtitleDecoder {
 
     private static long parseTimecodeUs(String str) {
         Matcher matcher = SSA_TIMECODE_PATTERN.matcher(str.trim());
-        return !matcher.matches() ? C0468C.TIME_UNSET : (Long.parseLong((String) Util.castNonNull(matcher.group(1))) * 60 * 60 * 1000000) + (Long.parseLong((String) Util.castNonNull(matcher.group(2))) * 60 * 1000000) + (Long.parseLong((String) Util.castNonNull(matcher.group(3))) * 1000000) + (Long.parseLong((String) Util.castNonNull(matcher.group(4))) * 10000);
+        return !matcher.matches() ? C0482C.TIME_UNSET : (Long.parseLong((String) Util.castNonNull(matcher.group(1))) * 60 * 60 * 1000000) + (Long.parseLong((String) Util.castNonNull(matcher.group(2))) * 60 * 1000000) + (Long.parseLong((String) Util.castNonNull(matcher.group(3))) * 1000000) + (Long.parseLong((String) Util.castNonNull(matcher.group(4))) * 10000);
     }
 
     private static Cue createCue(String str, SsaStyle ssaStyle, SsaStyle.Overrides overrides, float f, float f2) {

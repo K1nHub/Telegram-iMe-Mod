@@ -17,7 +17,7 @@ public final class Sets {
 
     /* renamed from: com.google.common.collect.Sets$1 */
     /* loaded from: classes3.dex */
-    class C09121 extends SetView<Object> {
+    class C09261 extends SetView<Object> {
     }
 
     /* loaded from: classes3.dex */
@@ -47,7 +47,7 @@ public final class Sets {
 
     /* loaded from: classes3.dex */
     public static abstract class SetView<E> extends AbstractSet<E> {
-        /* synthetic */ SetView(C09121 c09121) {
+        /* synthetic */ SetView(C09261 c09261) {
             this();
         }
 

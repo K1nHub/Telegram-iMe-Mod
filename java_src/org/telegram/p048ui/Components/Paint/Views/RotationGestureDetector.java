@@ -7,17 +7,17 @@ public class RotationGestureDetector {
     private float angle;
 
     /* renamed from: fX */
-    private float f1741fX;
+    private float f1744fX;
 
     /* renamed from: fY */
-    private float f1742fY;
+    private float f1745fY;
     private OnRotationGestureListener mListener;
 
     /* renamed from: sX */
-    private float f1743sX;
+    private float f1746sX;
 
     /* renamed from: sY */
-    private float f1744sY;
+    private float f1747sY;
     private float startAngle;
 
     /* renamed from: org.telegram.ui.Components.Paint.Views.RotationGestureDetector$OnRotationGestureListener */
@@ -52,7 +52,7 @@ public class RotationGestureDetector {
                 if (actionMasked == 2) {
                     float x = motionEvent.getX(0);
                     float y = motionEvent.getY(0);
-                    this.angle = angleBetweenLines(this.f1741fX, this.f1742fY, this.f1743sX, this.f1744sY, motionEvent.getX(1), motionEvent.getY(1), x, y);
+                    this.angle = angleBetweenLines(this.f1744fX, this.f1745fY, this.f1746sX, this.f1747sY, motionEvent.getX(1), motionEvent.getY(1), x, y);
                     if (this.mListener != null) {
                         if (Float.isNaN(this.startAngle)) {
                             this.startAngle = this.angle;
@@ -77,10 +77,10 @@ public class RotationGestureDetector {
             this.startAngle = Float.NaN;
             return true;
         }
-        this.f1743sX = motionEvent.getX(0);
-        this.f1744sY = motionEvent.getY(0);
-        this.f1741fX = motionEvent.getX(1);
-        this.f1742fY = motionEvent.getY(1);
+        this.f1746sX = motionEvent.getX(0);
+        this.f1747sY = motionEvent.getY(0);
+        this.f1744fX = motionEvent.getX(1);
+        this.f1745fY = motionEvent.getY(1);
         return true;
     }
 

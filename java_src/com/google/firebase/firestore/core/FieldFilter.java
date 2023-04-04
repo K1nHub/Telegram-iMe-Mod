@@ -68,7 +68,7 @@ public class FieldFilter extends Filter {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.google.firebase.firestore.core.FieldFilter$1 */
     /* loaded from: classes3.dex */
-    public static /* synthetic */ class C10021 {
+    public static /* synthetic */ class C10161 {
         static final /* synthetic */ int[] $SwitchMap$com$google$firebase$firestore$core$Filter$Operator;
 
         static {
@@ -103,7 +103,7 @@ public class FieldFilter extends Filter {
 
     /* JADX INFO: Access modifiers changed from: protected */
     public boolean matchesComparison(int i) {
-        switch (C10021.$SwitchMap$com$google$firebase$firestore$core$Filter$Operator[this.operator.ordinal()]) {
+        switch (C10161.$SwitchMap$com$google$firebase$firestore$core$Filter$Operator[this.operator.ordinal()]) {
             case 1:
                 return i < 0;
             case 2:

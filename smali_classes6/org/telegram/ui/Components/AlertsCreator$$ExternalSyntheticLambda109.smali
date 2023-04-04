@@ -2,56 +2,34 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Lcom/iMe/fork/utils/Callbacks$Callback1;
 
 
 # instance fields
-.field public final synthetic f$0:Landroid/content/SharedPreferences;
-
-.field public final synthetic f$1:Lorg/telegram/tgnet/TLRPC$TL_help_support;
-
-.field public final synthetic f$2:Lorg/telegram/ui/ActionBar/AlertDialog;
-
-.field public final synthetic f$3:I
-
-.field public final synthetic f$4:Lorg/telegram/ui/ActionBar/BaseFragment;
+.field public final synthetic f$0:Lorg/telegram/ui/Components/AlertsCreator$ScheduleDatePickerDelegate;
 
 
 # direct methods
-.method public synthetic constructor <init>(Landroid/content/SharedPreferences;Lorg/telegram/tgnet/TLRPC$TL_help_support;Lorg/telegram/ui/ActionBar/AlertDialog;ILorg/telegram/ui/ActionBar/BaseFragment;)V
+.method public synthetic constructor <init>(Lorg/telegram/ui/Components/AlertsCreator$ScheduleDatePickerDelegate;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda109;->f$0:Landroid/content/SharedPreferences;
-
-    iput-object p2, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda109;->f$1:Lorg/telegram/tgnet/TLRPC$TL_help_support;
-
-    iput-object p3, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda109;->f$2:Lorg/telegram/ui/ActionBar/AlertDialog;
-
-    iput p4, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda109;->f$3:I
-
-    iput-object p5, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda109;->f$4:Lorg/telegram/ui/ActionBar/BaseFragment;
+    iput-object p1, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda109;->f$0:Lorg/telegram/ui/Components/AlertsCreator$ScheduleDatePickerDelegate;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final run()V
-    .locals 5
+.method public final invoke(Ljava/lang/Object;)V
+    .locals 1
 
-    iget-object v0, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda109;->f$0:Landroid/content/SharedPreferences;
+    iget-object v0, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda109;->f$0:Lorg/telegram/ui/Components/AlertsCreator$ScheduleDatePickerDelegate;
 
-    iget-object v1, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda109;->f$1:Lorg/telegram/tgnet/TLRPC$TL_help_support;
+    check-cast p1, Ljava/lang/String;
 
-    iget-object v2, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda109;->f$2:Lorg/telegram/ui/ActionBar/AlertDialog;
-
-    iget v3, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda109;->f$3:I
-
-    iget-object v4, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda109;->f$4:Lorg/telegram/ui/ActionBar/BaseFragment;
-
-    invoke-static {v0, v1, v2, v3, v4}, Lorg/telegram/ui/Components/AlertsCreator;->$r8$lambda$qvcfswz7lXSf9STtlCeKfgbgfZg(Landroid/content/SharedPreferences;Lorg/telegram/tgnet/TLRPC$TL_help_support;Lorg/telegram/ui/ActionBar/AlertDialog;ILorg/telegram/ui/ActionBar/BaseFragment;)V
+    invoke-static {v0, p1}, Lorg/telegram/ui/Components/AlertsCreator;->$r8$lambda$9RcUf4NKwKtd0Mi8fiqZyVGUUEA(Lorg/telegram/ui/Components/AlertsCreator$ScheduleDatePickerDelegate;Ljava/lang/String;)V
 
     return-void
 .end method

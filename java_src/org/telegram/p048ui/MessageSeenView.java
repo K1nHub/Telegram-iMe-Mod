@@ -20,7 +20,7 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import java.util.ArrayList;
 import java.util.HashMap;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3301R;
+import org.telegram.messenger.C3316R;
 import org.telegram.messenger.ChatObject;
 import org.telegram.messenger.ContactsController;
 import org.telegram.messenger.ImageLocation;
@@ -102,7 +102,7 @@ public class MessageSeenView extends FrameLayout {
         ImageView imageView = new ImageView(context);
         this.iconView = imageView;
         addView(imageView, LayoutHelper.createFrame(24, 24, 19, 11, 0, 0, 0));
-        Drawable mutate = ContextCompat.getDrawable(context, this.isVoice ? C3301R.C3303drawable.msg_played : C3301R.C3303drawable.msg_seen).mutate();
+        Drawable mutate = ContextCompat.getDrawable(context, this.isVoice ? C3316R.C3318drawable.msg_played : C3316R.C3318drawable.msg_seen).mutate();
         mutate.setColorFilter(new PorterDuffColorFilter(Theme.getColor("actionBarDefaultSubmenuItemIcon"), PorterDuff.Mode.MULTIPLY));
         this.iconView.setImageDrawable(mutate);
         this.avatarsImageView.setAlpha(BitmapDescriptorFactory.HUE_RED);
@@ -171,7 +171,7 @@ public class MessageSeenView extends FrameLayout {
                 tLRPC$TL_channels_getParticipants.limit = MessagesController.getInstance(i).chatReadMarkSizeThreshold;
                 tLRPC$TL_channels_getParticipants.offset = 0;
                 tLRPC$TL_channels_getParticipants.filter = new TLRPC$TL_channelParticipantsRecent();
-                tLRPC$TL_channels_getParticipants.channel = MessagesController.getInstance(i).getInputChannel(tLRPC$Chat.f1500id);
+                tLRPC$TL_channels_getParticipants.channel = MessagesController.getInstance(i).getInputChannel(tLRPC$Chat.f1502id);
                 ConnectionsManager.getInstance(i).sendRequest(tLRPC$TL_channels_getParticipants, new RequestDelegate() { // from class: org.telegram.ui.MessageSeenView$$ExternalSyntheticLambda4
                     @Override // org.telegram.tgnet.RequestDelegate
                     public final void run(TLObject tLObject2, TLRPC$TL_error tLRPC$TL_error2) {
@@ -181,7 +181,7 @@ public class MessageSeenView extends FrameLayout {
                 return;
             } else {
                 TLRPC$TL_messages_getFullChat tLRPC$TL_messages_getFullChat = new TLRPC$TL_messages_getFullChat();
-                tLRPC$TL_messages_getFullChat.chat_id = tLRPC$Chat.f1500id;
+                tLRPC$TL_messages_getFullChat.chat_id = tLRPC$Chat.f1502id;
                 ConnectionsManager.getInstance(i).sendRequest(tLRPC$TL_messages_getFullChat, new RequestDelegate() { // from class: org.telegram.ui.MessageSeenView$$ExternalSyntheticLambda3
                     @Override // org.telegram.tgnet.RequestDelegate
                     public final void run(TLObject tLObject2, TLRPC$TL_error tLRPC$TL_error2) {
@@ -211,7 +211,7 @@ public class MessageSeenView extends FrameLayout {
             for (int i2 = 0; i2 < tLRPC$TL_channels_channelParticipants.users.size(); i2++) {
                 TLRPC$User tLRPC$User = tLRPC$TL_channels_channelParticipants.users.get(i2);
                 MessagesController.getInstance(i).putUser(tLRPC$User, false);
-                hashMap.put(Long.valueOf(tLRPC$User.f1640id), tLRPC$User);
+                hashMap.put(Long.valueOf(tLRPC$User.f1642id), tLRPC$User);
             }
             for (int i3 = 0; i3 < arrayList.size(); i3++) {
                 Pair pair = (Pair) arrayList.get(i3);
@@ -240,7 +240,7 @@ public class MessageSeenView extends FrameLayout {
             for (int i2 = 0; i2 < tLRPC$TL_messages_chatFull.users.size(); i2++) {
                 TLRPC$User tLRPC$User = tLRPC$TL_messages_chatFull.users.get(i2);
                 MessagesController.getInstance(i).putUser(tLRPC$User, false);
-                hashMap.put(Long.valueOf(tLRPC$User.f1640id), tLRPC$User);
+                hashMap.put(Long.valueOf(tLRPC$User.f1642id), tLRPC$User);
             }
             for (int i3 = 0; i3 < arrayList.size(); i3++) {
                 Pair pair = (Pair) arrayList.get(i3);
@@ -304,7 +304,7 @@ public class MessageSeenView extends FrameLayout {
         if (this.peerIds.size() == 1 && this.users.get(0) != null) {
             this.titleView.setText(ContactsController.formatName(this.users.get(0).first_name, this.users.get(0).last_name));
         } else if (this.peerIds.size() == 0) {
-            this.titleView.setText(LocaleController.getString("NobodyViewed", C3301R.string.NobodyViewed));
+            this.titleView.setText(LocaleController.getString("NobodyViewed", C3316R.string.NobodyViewed));
         } else {
             this.titleView.setText(LocaleController.formatPluralString(this.isVoice ? "MessagePlayed" : "MessageSeen", this.peerIds.size(), new Object[0]));
         }
@@ -373,7 +373,7 @@ public class MessageSeenView extends FrameLayout {
     /* renamed from: org.telegram.ui.MessageSeenView$UserCell */
     /* loaded from: classes5.dex */
     private static class UserCell extends FrameLayout implements NotificationCenter.NotificationCenterDelegate {
-        private static MessageSeenCheckDrawable seenDrawable = new MessageSeenCheckDrawable(C3301R.C3303drawable.msg_mini_checks, "windowBackgroundWhiteGrayText");
+        private static MessageSeenCheckDrawable seenDrawable = new MessageSeenCheckDrawable(C3316R.C3318drawable.msg_mini_checks, "windowBackgroundWhiteGrayText");
         AvatarDrawable avatarDrawable;
         BackupImageView avatarImageView;
         private int currentAccount;
@@ -436,7 +436,7 @@ public class MessageSeenView extends FrameLayout {
         @Override // android.view.View
         public void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
             super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
-            String formatString = LocaleController.formatString("AccDescrPersonHasSeen", C3301R.string.AccDescrPersonHasSeen, this.nameView.getText());
+            String formatString = LocaleController.formatString("AccDescrPersonHasSeen", C3316R.string.AccDescrPersonHasSeen, this.nameView.getText());
             if (this.readView.getVisibility() == 0) {
                 formatString = formatString + " " + ((Object) this.readView.getText());
             }
@@ -448,7 +448,7 @@ public class MessageSeenView extends FrameLayout {
             if (i == NotificationCenter.userEmojiStatusUpdated) {
                 TLRPC$User tLRPC$User = (TLRPC$User) objArr[0];
                 TLRPC$User tLRPC$User2 = this.user;
-                if (tLRPC$User2 == null || tLRPC$User == null || tLRPC$User2.f1640id != tLRPC$User.f1640id) {
+                if (tLRPC$User2 == null || tLRPC$User == null || tLRPC$User2.f1642id != tLRPC$User.f1642id) {
                     return;
                 }
                 this.user = tLRPC$User;

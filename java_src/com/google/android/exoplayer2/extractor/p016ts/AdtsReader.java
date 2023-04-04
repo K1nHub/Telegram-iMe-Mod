@@ -1,6 +1,6 @@
 package com.google.android.exoplayer2.extractor.p016ts;
 
-import com.google.android.exoplayer2.C0468C;
+import com.google.android.exoplayer2.C0482C;
 import com.google.android.exoplayer2.Format;
 import com.google.android.exoplayer2.ParserException;
 import com.google.android.exoplayer2.audio.AacUtil;
@@ -76,15 +76,15 @@ public final class AdtsReader implements ElementaryStreamReader {
         setFindingSampleState();
         this.firstFrameVersion = -1;
         this.firstFrameSampleRateIndex = -1;
-        this.sampleDurationUs = C0468C.TIME_UNSET;
-        this.timeUs = C0468C.TIME_UNSET;
+        this.sampleDurationUs = C0482C.TIME_UNSET;
+        this.timeUs = C0482C.TIME_UNSET;
         this.exposeId3 = z;
         this.language = str;
     }
 
     @Override // com.google.android.exoplayer2.extractor.p016ts.ElementaryStreamReader
     public void seek() {
-        this.timeUs = C0468C.TIME_UNSET;
+        this.timeUs = C0482C.TIME_UNSET;
         resetSync();
     }
 
@@ -107,7 +107,7 @@ public final class AdtsReader implements ElementaryStreamReader {
 
     @Override // com.google.android.exoplayer2.extractor.p016ts.ElementaryStreamReader
     public void packetStarted(long j, int i) {
-        if (j != C0468C.TIME_UNSET) {
+        if (j != C0482C.TIME_UNSET) {
             this.timeUs = j;
         }
     }
@@ -352,7 +352,7 @@ public final class AdtsReader implements ElementaryStreamReader {
         int i2 = this.sampleSize;
         if (i == i2) {
             long j = this.timeUs;
-            if (j != C0468C.TIME_UNSET) {
+            if (j != C0482C.TIME_UNSET) {
                 this.currentOutput.sampleMetadata(j, 1, i2, 0, null);
                 this.timeUs += this.currentSampleDuration;
             }

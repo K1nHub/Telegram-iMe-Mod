@@ -143,7 +143,7 @@
 
     const/4 v1, 0x5
 
-    const-string v2, "unable to load android socket classes"
+    const-string/jumbo v2, "unable to load android socket classes"
 
     invoke-virtual {v0, v2, v1, p1}, Lokhttp3/internal/platform/Platform;->log(Ljava/lang/String;ILjava/lang/Throwable;)V
 

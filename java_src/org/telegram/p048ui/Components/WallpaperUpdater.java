@@ -13,7 +13,7 @@ import java.io.FileOutputStream;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.C3301R;
+import org.telegram.messenger.C3316R;
 import org.telegram.messenger.FileLoader;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.ImageLoader;
@@ -53,13 +53,13 @@ public class WallpaperUpdater {
         CharSequence[] charSequenceArr;
         int[] iArr;
         BottomSheet.Builder builder = new BottomSheet.Builder(this.parentActivity);
-        builder.setTitle(LocaleController.getString("ChoosePhoto", C3301R.string.ChoosePhoto), true);
+        builder.setTitle(LocaleController.getString("ChoosePhoto", C3316R.string.ChoosePhoto), true);
         if (z) {
-            charSequenceArr = new CharSequence[]{LocaleController.getString("ChooseTakePhoto", C3301R.string.ChooseTakePhoto), LocaleController.getString("SelectFromGallery", C3301R.string.SelectFromGallery), LocaleController.getString("SelectColor", C3301R.string.SelectColor), LocaleController.getString("Default", C3301R.string.Default)};
+            charSequenceArr = new CharSequence[]{LocaleController.getString("ChooseTakePhoto", C3316R.string.ChooseTakePhoto), LocaleController.getString("SelectFromGallery", C3316R.string.SelectFromGallery), LocaleController.getString("SelectColor", C3316R.string.SelectColor), LocaleController.getString("Default", C3316R.string.Default)};
             iArr = null;
         } else {
-            charSequenceArr = new CharSequence[]{LocaleController.getString("ChooseTakePhoto", C3301R.string.ChooseTakePhoto), LocaleController.getString("SelectFromGallery", C3301R.string.SelectFromGallery)};
-            iArr = new int[]{C3301R.C3303drawable.msg_camera, C3301R.C3303drawable.msg_photos};
+            charSequenceArr = new CharSequence[]{LocaleController.getString("ChooseTakePhoto", C3316R.string.ChooseTakePhoto), LocaleController.getString("SelectFromGallery", C3316R.string.SelectFromGallery)};
+            iArr = new int[]{C3316R.C3318drawable.msg_camera, C3316R.C3318drawable.msg_photos};
         }
         builder.setItems(charSequenceArr, iArr, new DialogInterface.OnClickListener() { // from class: org.telegram.ui.Components.WallpaperUpdater$$ExternalSyntheticLambda0
             @Override // android.content.DialogInterface.OnClickListener

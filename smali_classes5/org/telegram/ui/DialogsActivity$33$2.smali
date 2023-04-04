@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lorg/telegram/ui/DialogsActivity$33;->didSelectTab(Lcom/smedialink/ui/topics/TopicView;)Z
+    value = Lorg/telegram/ui/DialogsActivity$33;->didSelectTab(Lcom/iMe/ui/topics/TopicView;)Z
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/DialogsActivity$33;Landroid/content/Context;Landroid/util/AttributeSet;IILandroid/widget/LinearLayout;)V
     .locals 0
 
-    .line 6617
+    .line 6632
     iput-object p6, p0, Lorg/telegram/ui/DialogsActivity$33$2;->val$linearLayout:Landroid/widget/LinearLayout;
 
     invoke-direct {p0, p2, p3, p4, p5}, Landroid/widget/ScrollView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;II)V
@@ -35,10 +35,10 @@
 .method protected onMeasure(II)V
     .locals 0
 
-    .line 6620
+    .line 6635
     invoke-super {p0, p1, p2}, Landroid/widget/ScrollView;->onMeasure(II)V
 
-    .line 6621
+    .line 6636
     iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$33$2;->val$linearLayout:Landroid/widget/LinearLayout;
 
     invoke-virtual {p1}, Landroid/widget/LinearLayout;->getMeasuredWidth()I

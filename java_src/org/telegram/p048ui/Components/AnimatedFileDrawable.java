@@ -148,8 +148,8 @@ public class AnimatedFileDrawable extends BitmapDrawable implements Animatable, 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: org.telegram.ui.Components.AnimatedFileDrawable$2 */
     /* loaded from: classes6.dex */
-    public class RunnableC40462 implements Runnable {
-        RunnableC40462() {
+    public class RunnableC40672 implements Runnable {
+        RunnableC40672() {
         }
 
         @Override // java.lang.Runnable
@@ -174,7 +174,7 @@ public class AnimatedFileDrawable extends BitmapDrawable implements Animatable, 
             Runnable runnable = new Runnable() { // from class: org.telegram.ui.Components.AnimatedFileDrawable$2$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    AnimatedFileDrawable.RunnableC40462.this.lambda$run$1();
+                    AnimatedFileDrawable.RunnableC40672.this.lambda$run$1();
                 }
             };
             animatedFileDrawable3.cacheGenRunnable = runnable;
@@ -187,7 +187,7 @@ public class AnimatedFileDrawable extends BitmapDrawable implements Animatable, 
             AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.AnimatedFileDrawable$2$$ExternalSyntheticLambda1
                 @Override // java.lang.Runnable
                 public final void run() {
-                    AnimatedFileDrawable.RunnableC40462.this.lambda$run$0();
+                    AnimatedFileDrawable.RunnableC40672.this.lambda$run$0();
                 }
             });
         }

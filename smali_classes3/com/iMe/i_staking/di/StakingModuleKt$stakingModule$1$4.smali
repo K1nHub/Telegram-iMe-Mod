@@ -76,7 +76,7 @@
     new-instance p2, Lcom/iMe/i_staking/datasource/StakingDataSourceImpl;
 
     .line 131
-    const-class v0, Lcom/smedialink/storage/domain/manager/crypto/CryptoAccessManager;
+    const-class v0, Lcom/iMe/storage/domain/manager/crypto/CryptoAccessManager;
 
     invoke-static {v0}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
 
@@ -88,9 +88,9 @@
 
     move-result-object v0
 
-    check-cast v0, Lcom/smedialink/storage/domain/manager/crypto/CryptoAccessManager;
+    check-cast v0, Lcom/iMe/storage/domain/manager/crypto/CryptoAccessManager;
 
-    const-class v2, Lcom/smedialink/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler;
+    const-class v2, Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler;
 
     invoke-static {v2}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
 
@@ -100,7 +100,7 @@
 
     move-result-object v2
 
-    check-cast v2, Lcom/smedialink/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler;
+    check-cast v2, Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler;
 
     const-class v3, Lcom/iMe/i_staking/StakingApi;
 
@@ -115,7 +115,7 @@
     check-cast p1, Lcom/iMe/i_staking/StakingApi;
 
     .line 37
-    invoke-direct {p2, v0, v2, p1}, Lcom/iMe/i_staking/datasource/StakingDataSourceImpl;-><init>(Lcom/smedialink/storage/domain/manager/crypto/CryptoAccessManager;Lcom/smedialink/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler;Lcom/iMe/i_staking/StakingApi;)V
+    invoke-direct {p2, v0, v2, p1}, Lcom/iMe/i_staking/datasource/StakingDataSourceImpl;-><init>(Lcom/iMe/storage/domain/manager/crypto/CryptoAccessManager;Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler;Lcom/iMe/i_staking/StakingApi;)V
 
     return-object p2
 .end method

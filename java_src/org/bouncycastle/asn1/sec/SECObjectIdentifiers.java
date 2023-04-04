@@ -2,7 +2,7 @@ package org.bouncycastle.asn1.sec;
 
 import com.google.android.exoplayer2.metadata.icy.IcyHeaders;
 import org.bouncycastle.asn1.ASN1ObjectIdentifier;
-import org.bouncycastle.asn1.p041x9.X9ObjectIdentifiers;
+import org.bouncycastle.asn1.p042x9.X9ObjectIdentifiers;
 /* loaded from: classes4.dex */
 public interface SECObjectIdentifiers {
     public static final ASN1ObjectIdentifier ellipticCurve;

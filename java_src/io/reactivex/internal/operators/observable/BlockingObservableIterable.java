@@ -13,8 +13,8 @@ import java.util.concurrent.atomic.AtomicReference;
 import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
-import p034j$.util.Iterator;
-import p034j$.util.function.Consumer;
+import p035j$.util.Iterator;
+import p035j$.util.function.Consumer;
 /* loaded from: classes4.dex */
 public final class BlockingObservableIterable<T> implements Iterable<T> {
     final int bufferSize;
@@ -33,14 +33,14 @@ public final class BlockingObservableIterable<T> implements Iterable<T> {
     }
 
     /* loaded from: classes4.dex */
-    static final class BlockingObservableIterator<T> extends AtomicReference<Disposable> implements Observer<T>, Iterator<T>, Disposable, p034j$.util.Iterator {
+    static final class BlockingObservableIterator<T> extends AtomicReference<Disposable> implements Observer<T>, Iterator<T>, Disposable, p035j$.util.Iterator {
         final Condition condition;
         volatile boolean done;
         Throwable error;
         final Lock lock;
         final SpscLinkedArrayQueue<T> queue;
 
-        @Override // p034j$.util.Iterator
+        @Override // p035j$.util.Iterator
         public /* synthetic */ void forEachRemaining(Consumer consumer) {
             Iterator.CC.$default$forEachRemaining(this, consumer);
         }
@@ -52,7 +52,7 @@ public final class BlockingObservableIterable<T> implements Iterable<T> {
             this.condition = reentrantLock.newCondition();
         }
 
-        @Override // java.util.Iterator, p034j$.util.Iterator
+        @Override // java.util.Iterator, p035j$.util.Iterator
         public boolean hasNext() {
             while (true) {
                 boolean z = this.done;
@@ -84,7 +84,7 @@ public final class BlockingObservableIterable<T> implements Iterable<T> {
             }
         }
 
-        @Override // java.util.Iterator, p034j$.util.Iterator
+        @Override // java.util.Iterator, p035j$.util.Iterator
         public T next() {
             if (hasNext()) {
                 return this.queue.poll();
@@ -125,7 +125,7 @@ public final class BlockingObservableIterable<T> implements Iterable<T> {
             }
         }
 
-        @Override // java.util.Iterator, p034j$.util.Iterator
+        @Override // java.util.Iterator, p035j$.util.Iterator
         public void remove() {
             throw new UnsupportedOperationException("remove");
         }

@@ -20,7 +20,7 @@ public final class Module {
     private HashSet<SingleInstanceFactory<?>> eagerInstances;
 
     /* renamed from: id */
-    private final String f1420id;
+    private final String f1422id;
     private final List<Module> includedModules;
     private final HashMap<String, InstanceFactory<?>> mappings;
     private final HashSet<Qualifier> scopes;
@@ -31,7 +31,7 @@ public final class Module {
 
     public Module(boolean z) {
         this._createdAtStart = z;
-        this.f1420id = KoinPlatformTools.INSTANCE.generateId();
+        this.f1422id = KoinPlatformTools.INSTANCE.generateId();
         this.eagerInstances = new HashSet<>();
         this.mappings = new HashMap<>();
         this.scopes = new HashSet<>();
@@ -93,10 +93,10 @@ public final class Module {
         if (this == obj) {
             return true;
         }
-        return obj != null && Intrinsics.areEqual(Reflection.getOrCreateKotlinClass(Module.class), Reflection.getOrCreateKotlinClass(obj.getClass())) && Intrinsics.areEqual(this.f1420id, ((Module) obj).f1420id);
+        return obj != null && Intrinsics.areEqual(Reflection.getOrCreateKotlinClass(Module.class), Reflection.getOrCreateKotlinClass(obj.getClass())) && Intrinsics.areEqual(this.f1422id, ((Module) obj).f1422id);
     }
 
     public int hashCode() {
-        return this.f1420id.hashCode();
+        return this.f1422id.hashCode();
     }
 }

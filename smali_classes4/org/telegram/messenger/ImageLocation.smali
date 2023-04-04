@@ -1144,11 +1144,11 @@
 
     if-eqz v3, :cond_b
 
-    invoke-static {v1}, Lorg/fork/controller/ForkCommonController;->getInstance(I)Lorg/fork/controller/ForkCommonController;
+    invoke-static {v1}, Lcom/iMe/fork/controller/ForkCommonController;->getInstance(I)Lcom/iMe/fork/controller/ForkCommonController;
 
     move-result-object v3
 
-    invoke-virtual {v3}, Lorg/fork/controller/ForkCommonController;->isPremiumAnimateAvatars()Z
+    invoke-virtual {v3}, Lcom/iMe/fork/controller/ForkCommonController;->isPremiumAnimateAvatars()Z
 
     move-result v3
 

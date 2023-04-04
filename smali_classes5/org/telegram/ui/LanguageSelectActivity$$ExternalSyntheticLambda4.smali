@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lorg/telegram/ui/LanguageSelectActivity$$ExternalSyntheticLambda4;->f$0:Lorg/telegram/ui/LanguageSelectActivity;
 
-    invoke-static {v0}, Lorg/telegram/ui/LanguageSelectActivity;->$r8$lambda$WKSfdg7gSOAh51LtKCmUmbBHxxU(Lorg/telegram/ui/LanguageSelectActivity;)V
+    invoke-static {v0}, Lorg/telegram/ui/LanguageSelectActivity;->$r8$lambda$ttzKQswdW5FpY3Bi2fwVi4kHJG8(Lorg/telegram/ui/LanguageSelectActivity;)V
 
     return-void
 .end method

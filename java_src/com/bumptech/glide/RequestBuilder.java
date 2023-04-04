@@ -18,6 +18,7 @@ import com.bumptech.glide.util.Preconditions;
 import com.bumptech.glide.util.Util;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 import java.util.concurrent.Executor;
 /* loaded from: classes.dex */
 public class RequestBuilder<TranscodeType> extends BaseRequestOptions<RequestBuilder<TranscodeType>> {
@@ -152,7 +153,7 @@ public class RequestBuilder<TranscodeType> extends BaseRequestOptions<RequestBui
         Util.assertMainThread();
         Preconditions.checkNotNull(imageView);
         if (!isTransformationSet() && isTransformationAllowed() && imageView.getScaleType() != null) {
-            switch (C03921.$SwitchMap$android$widget$ImageView$ScaleType[imageView.getScaleType().ordinal()]) {
+            switch (C03931.$SwitchMap$android$widget$ImageView$ScaleType[imageView.getScaleType().ordinal()]) {
                 case 1:
                     requestBuilder = mo883clone().optionalCenterCrop();
                     break;
@@ -177,7 +178,7 @@ public class RequestBuilder<TranscodeType> extends BaseRequestOptions<RequestBui
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.bumptech.glide.RequestBuilder$1 */
     /* loaded from: classes.dex */
-    public static /* synthetic */ class C03921 {
+    public static /* synthetic */ class C03931 {
         static final /* synthetic */ int[] $SwitchMap$android$widget$ImageView$ScaleType;
         static final /* synthetic */ int[] $SwitchMap$com$bumptech$glide$Priority;
 
@@ -238,7 +239,7 @@ public class RequestBuilder<TranscodeType> extends BaseRequestOptions<RequestBui
     }
 
     private Priority getThumbnailPriority(Priority priority) {
-        int i = C03921.$SwitchMap$com$bumptech$glide$Priority[priority.ordinal()];
+        int i = C03931.$SwitchMap$com$bumptech$glide$Priority[priority.ordinal()];
         if (i != 1) {
             if (i != 2) {
                 if (i == 3 || i == 4) {
@@ -323,5 +324,19 @@ public class RequestBuilder<TranscodeType> extends BaseRequestOptions<RequestBui
         Context context = this.context;
         GlideContext glideContext = this.glideContext;
         return SingleRequest.obtain(context, glideContext, obj, this.model, this.transcodeClass, baseRequestOptions, i, i2, priority, target, requestListener, this.requestListeners, requestCoordinator, glideContext.getEngine(), transitionOptions.getTransitionFactory(), executor);
+    }
+
+    @Override // com.bumptech.glide.request.BaseRequestOptions
+    public boolean equals(Object obj) {
+        if (obj instanceof RequestBuilder) {
+            RequestBuilder requestBuilder = (RequestBuilder) obj;
+            return super.equals(requestBuilder) && Objects.equals(this.transcodeClass, requestBuilder.transcodeClass) && this.transitionOptions.equals(requestBuilder.transitionOptions) && Objects.equals(this.model, requestBuilder.model) && Objects.equals(this.requestListeners, requestBuilder.requestListeners) && Objects.equals(this.thumbnailBuilder, requestBuilder.thumbnailBuilder) && Objects.equals(this.errorBuilder, requestBuilder.errorBuilder) && Objects.equals(this.thumbSizeMultiplier, requestBuilder.thumbSizeMultiplier) && this.isDefaultTransitionOptionsSet == requestBuilder.isDefaultTransitionOptionsSet && this.isModelSet == requestBuilder.isModelSet;
+        }
+        return false;
+    }
+
+    @Override // com.bumptech.glide.request.BaseRequestOptions
+    public int hashCode() {
+        return Util.hashCode(this.isModelSet, Util.hashCode(this.isDefaultTransitionOptionsSet, Util.hashCode(this.thumbSizeMultiplier, Util.hashCode(this.errorBuilder, Util.hashCode(this.thumbnailBuilder, Util.hashCode(this.requestListeners, Util.hashCode(this.model, Util.hashCode(this.transitionOptions, Util.hashCode(this.transcodeClass, super.hashCode())))))))));
     }
 }

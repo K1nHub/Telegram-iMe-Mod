@@ -2,42 +2,38 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lorg/telegram/ui/DialogsActivity$DialogsActivityDelegate;
+.implements Lorg/telegram/ui/Components/RecyclerListView$OnItemClickListener;
 
 
-# static fields
-.field public static final synthetic INSTANCE:Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda140;
+# instance fields
+.field public final synthetic f$0:Lorg/telegram/ui/DialogsActivity;
+
+.field public final synthetic f$1:Lorg/telegram/ui/DialogsActivity$ViewPage;
 
 
 # direct methods
-.method static synthetic constructor <clinit>()V
-    .locals 1
-
-    new-instance v0, Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda140;
-
-    invoke-direct {v0}, Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda140;-><init>()V
-
-    sput-object v0, Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda140;->INSTANCE:Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda140;
-
-    return-void
-.end method
-
-.method private synthetic constructor <init>()V
+.method public synthetic constructor <init>(Lorg/telegram/ui/DialogsActivity;Lorg/telegram/ui/DialogsActivity$ViewPage;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda140;->f$0:Lorg/telegram/ui/DialogsActivity;
+
+    iput-object p2, p0, Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda140;->f$1:Lorg/telegram/ui/DialogsActivity$ViewPage;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final didSelectDialogs(Lorg/telegram/ui/DialogsActivity;Ljava/util/ArrayList;Ljava/lang/CharSequence;ZLorg/telegram/ui/TopicsFragment;)Z
-    .locals 0
+.method public final onItemClick(Landroid/view/View;I)V
+    .locals 2
 
-    invoke-static {p1, p2, p3, p4, p5}, Lorg/telegram/ui/DialogsActivity;->$r8$lambda$ikfaK2RIqYVJiQOVLiP1Ifgulmw(Lorg/telegram/ui/DialogsActivity;Ljava/util/ArrayList;Ljava/lang/CharSequence;ZLorg/telegram/ui/TopicsFragment;)Z
+    iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda140;->f$0:Lorg/telegram/ui/DialogsActivity;
 
-    move-result p1
+    iget-object v1, p0, Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda140;->f$1:Lorg/telegram/ui/DialogsActivity$ViewPage;
 
-    return p1
+    invoke-static {v0, v1, p1, p2}, Lorg/telegram/ui/DialogsActivity;->$r8$lambda$LBX6RCIuTWHLwIlCsBt69Dxt8-o(Lorg/telegram/ui/DialogsActivity;Lorg/telegram/ui/DialogsActivity$ViewPage;Landroid/view/View;I)V
+
+    return-void
 .end method

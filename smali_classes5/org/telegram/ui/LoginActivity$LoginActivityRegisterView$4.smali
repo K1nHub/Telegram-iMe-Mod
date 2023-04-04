@@ -55,19 +55,19 @@
 .method constructor <init>(Lorg/telegram/ui/LoginActivity$LoginActivityRegisterView;Lorg/telegram/ui/LoginActivity;)V
     .locals 0
 
-    .line 7681
+    .line 7683
     iput-object p1, p0, Lorg/telegram/ui/LoginActivity$LoginActivityRegisterView$4;->this$1:Lorg/telegram/ui/LoginActivity$LoginActivityRegisterView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 7682
+    .line 7684
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide p1
 
     iput-wide p1, p0, Lorg/telegram/ui/LoginActivity$LoginActivityRegisterView$4;->lastRun:J
 
-    .line 7684
+    .line 7686
     new-instance p1, Lorg/telegram/ui/LoginActivity$LoginActivityRegisterView$4$$ExternalSyntheticLambda2;
 
     invoke-direct {p1, p0}, Lorg/telegram/ui/LoginActivity$LoginActivityRegisterView$4$$ExternalSyntheticLambda2;-><init>(Lorg/telegram/ui/LoginActivity$LoginActivityRegisterView$4;)V
@@ -80,7 +80,7 @@
 .method private synthetic lambda$$0()V
     .locals 2
 
-    .line 7690
+    .line 7692
     iget-object v0, p0, Lorg/telegram/ui/LoginActivity$LoginActivityRegisterView$4;->this$1:Lorg/telegram/ui/LoginActivity$LoginActivityRegisterView;
 
     invoke-static {v0}, Lorg/telegram/ui/LoginActivity$LoginActivityRegisterView;->access$16700(Lorg/telegram/ui/LoginActivity$LoginActivityRegisterView;)Lorg/telegram/ui/Components/RLottieDrawable;
@@ -91,7 +91,7 @@
 
     invoke-virtual {v0, v1, v1}, Lorg/telegram/ui/Components/RLottieDrawable;->setCurrentFrame(IZ)V
 
-    .line 7691
+    .line 7693
     iget-object v0, p0, Lorg/telegram/ui/LoginActivity$LoginActivityRegisterView$4;->this$1:Lorg/telegram/ui/LoginActivity$LoginActivityRegisterView;
 
     invoke-static {v0}, Lorg/telegram/ui/LoginActivity$LoginActivityRegisterView;->access$16600(Lorg/telegram/ui/LoginActivity$LoginActivityRegisterView;)Lorg/telegram/ui/Components/RLottieImageView;
@@ -112,7 +112,7 @@
 .method private synthetic lambda$$1()V
     .locals 1
 
-    .line 7689
+    .line 7691
     new-instance v0, Lorg/telegram/ui/LoginActivity$LoginActivityRegisterView$4$$ExternalSyntheticLambda0;
 
     invoke-direct {v0, p0}, Lorg/telegram/ui/LoginActivity$LoginActivityRegisterView$4$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/LoginActivity$LoginActivityRegisterView$4;)V
@@ -125,12 +125,12 @@
 .method private synthetic lambda$$2()V
     .locals 4
 
-    .line 7685
+    .line 7687
     iget-boolean v0, p0, Lorg/telegram/ui/LoginActivity$LoginActivityRegisterView$4;->isAttached:Z
 
     if-eqz v0, :cond_1
 
-    .line 7686
+    .line 7688
     iget-object v0, p0, Lorg/telegram/ui/LoginActivity$LoginActivityRegisterView$4;->this$1:Lorg/telegram/ui/LoginActivity$LoginActivityRegisterView;
 
     invoke-static {v0}, Lorg/telegram/ui/LoginActivity$LoginActivityRegisterView;->access$16400(Lorg/telegram/ui/LoginActivity$LoginActivityRegisterView;)Z
@@ -153,7 +153,7 @@
 
     if-ltz v0, :cond_0
 
-    .line 7687
+    .line 7689
     iget-object v0, p0, Lorg/telegram/ui/LoginActivity$LoginActivityRegisterView$4;->this$1:Lorg/telegram/ui/LoginActivity$LoginActivityRegisterView;
 
     invoke-static {v0}, Lorg/telegram/ui/LoginActivity$LoginActivityRegisterView;->access$16600(Lorg/telegram/ui/LoginActivity$LoginActivityRegisterView;)Lorg/telegram/ui/Components/RLottieImageView;
@@ -168,7 +168,7 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/RLottieImageView;->setAnimation(Lorg/telegram/ui/Components/RLottieDrawable;)V
 
-    .line 7688
+    .line 7690
     iget-object v0, p0, Lorg/telegram/ui/LoginActivity$LoginActivityRegisterView$4;->this$1:Lorg/telegram/ui/LoginActivity$LoginActivityRegisterView;
 
     invoke-static {v0}, Lorg/telegram/ui/LoginActivity$LoginActivityRegisterView;->access$16500(Lorg/telegram/ui/LoginActivity$LoginActivityRegisterView;)Lorg/telegram/ui/Components/RLottieDrawable;
@@ -179,7 +179,7 @@
 
     invoke-virtual {v0, v1, v1}, Lorg/telegram/ui/Components/RLottieDrawable;->setCurrentFrame(IZ)V
 
-    .line 7689
+    .line 7691
     iget-object v0, p0, Lorg/telegram/ui/LoginActivity$LoginActivityRegisterView$4;->this$1:Lorg/telegram/ui/LoginActivity$LoginActivityRegisterView;
 
     invoke-static {v0}, Lorg/telegram/ui/LoginActivity$LoginActivityRegisterView;->access$16500(Lorg/telegram/ui/LoginActivity$LoginActivityRegisterView;)Lorg/telegram/ui/Components/RLottieDrawable;
@@ -192,7 +192,7 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/RLottieDrawable;->setOnAnimationEndListener(Ljava/lang/Runnable;)V
 
-    .line 7693
+    .line 7695
     iget-object v0, p0, Lorg/telegram/ui/LoginActivity$LoginActivityRegisterView$4;->this$1:Lorg/telegram/ui/LoginActivity$LoginActivityRegisterView;
 
     invoke-static {v0}, Lorg/telegram/ui/LoginActivity$LoginActivityRegisterView;->access$16600(Lorg/telegram/ui/LoginActivity$LoginActivityRegisterView;)Lorg/telegram/ui/Components/RLottieImageView;
@@ -201,14 +201,14 @@
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/RLottieImageView;->playAnimation()V
 
-    .line 7694
+    .line 7696
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v0
 
     iput-wide v0, p0, Lorg/telegram/ui/LoginActivity$LoginActivityRegisterView$4;->lastRun:J
 
-    .line 7697
+    .line 7699
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/LoginActivity$LoginActivityRegisterView$4;->this$1:Lorg/telegram/ui/LoginActivity$LoginActivityRegisterView;
 
@@ -233,10 +233,10 @@
 
     const/4 v0, 0x1
 
-    .line 7703
+    .line 7705
     iput-boolean v0, p0, Lorg/telegram/ui/LoginActivity$LoginActivityRegisterView$4;->isAttached:Z
 
-    .line 7704
+    .line 7706
     iget-object v0, p0, Lorg/telegram/ui/LoginActivity$LoginActivityRegisterView$4;->cameraWaitCallback:Ljava/lang/Runnable;
 
     invoke-virtual {p1, v0}, Landroid/view/View;->post(Ljava/lang/Runnable;)Z
@@ -249,10 +249,10 @@
 
     const/4 v0, 0x0
 
-    .line 7709
+    .line 7711
     iput-boolean v0, p0, Lorg/telegram/ui/LoginActivity$LoginActivityRegisterView$4;->isAttached:Z
 
-    .line 7710
+    .line 7712
     iget-object v0, p0, Lorg/telegram/ui/LoginActivity$LoginActivityRegisterView$4;->cameraWaitCallback:Ljava/lang/Runnable;
 
     invoke-virtual {p1, v0}, Landroid/view/View;->removeCallbacks(Ljava/lang/Runnable;)Z

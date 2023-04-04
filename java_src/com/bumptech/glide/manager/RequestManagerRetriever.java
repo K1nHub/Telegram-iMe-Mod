@@ -3,6 +3,7 @@ package com.bumptech.glide.manager;
 import android.app.Activity;
 import android.app.Application;
 import android.app.FragmentManager;
+import android.app.FragmentTransaction;
 import android.content.Context;
 import android.content.ContextWrapper;
 import android.os.Build;
@@ -37,6 +38,7 @@ public class RequestManagerRetriever implements Handler.Callback {
     private final RequestManagerFactory factory;
     private final FrameWaiter frameWaiter;
     private final Handler handler;
+    private final LifecycleRequestManagerRetriever lifecycleRequestManagerRetriever;
     final Map<FragmentManager, RequestManagerFragment> pendingRequestManagerFragments = new HashMap();
     final Map<androidx.fragment.app.FragmentManager, SupportRequestManagerFragment> pendingSupportRequestManagerFragments = new HashMap();
     private final ArrayMap<View, Fragment> tempViewToSupportFragment = new ArrayMap<>();
@@ -49,8 +51,10 @@ public class RequestManagerRetriever implements Handler.Callback {
     }
 
     public RequestManagerRetriever(RequestManagerFactory requestManagerFactory, GlideExperiments glideExperiments) {
-        this.factory = requestManagerFactory == null ? DEFAULT_FACTORY : requestManagerFactory;
+        requestManagerFactory = requestManagerFactory == null ? DEFAULT_FACTORY : requestManagerFactory;
+        this.factory = requestManagerFactory;
         this.handler = new Handler(Looper.getMainLooper(), this);
+        this.lifecycleRequestManagerRetriever = new LifecycleRequestManagerRetriever(requestManagerFactory);
         this.frameWaiter = buildFrameWaiter(glideExperiments);
     }
 
@@ -102,7 +106,8 @@ public class RequestManagerRetriever implements Handler.Callback {
         }
         assertNotDestroyed(fragmentActivity);
         this.frameWaiter.registerSelf(fragmentActivity);
-        return supportFragmentGet(fragmentActivity, fragmentActivity.getSupportFragmentManager(), null, isActivityVisible(fragmentActivity));
+        boolean isActivityVisible = isActivityVisible(fragmentActivity);
+        return this.lifecycleRequestManagerRetriever.getOrCreate(fragmentActivity, Glide.get(fragmentActivity.getApplicationContext()), fragmentActivity.getLifecycle(), fragmentActivity.getSupportFragmentManager(), isActivityVisible);
     }
 
     public RequestManager get(Fragment fragment) {
@@ -113,9 +118,12 @@ public class RequestManagerRetriever implements Handler.Callback {
         if (fragment.getActivity() != null) {
             this.frameWaiter.registerSelf(fragment.getActivity());
         }
-        return supportFragmentGet(fragment.getContext(), fragment.getChildFragmentManager(), fragment, fragment.isVisible());
+        androidx.fragment.app.FragmentManager childFragmentManager = fragment.getChildFragmentManager();
+        Context context = fragment.getContext();
+        return this.lifecycleRequestManagerRetriever.getOrCreate(context, Glide.get(context.getApplicationContext()), fragment.getLifecycle(), childFragmentManager, fragment.isVisible());
     }
 
+    @Deprecated
     public RequestManager get(Activity activity) {
         if (Util.isOnBackgroundThread()) {
             return get(activity.getApplicationContext());
@@ -262,16 +270,15 @@ public class RequestManagerRetriever implements Handler.Callback {
     }
 
     private RequestManagerFragment getRequestManagerFragment(FragmentManager fragmentManager, android.app.Fragment fragment) {
-        RequestManagerFragment requestManagerFragment = (RequestManagerFragment) fragmentManager.findFragmentByTag("com.bumptech.glide.manager");
+        RequestManagerFragment requestManagerFragment = this.pendingRequestManagerFragments.get(fragmentManager);
         if (requestManagerFragment == null) {
-            RequestManagerFragment requestManagerFragment2 = this.pendingRequestManagerFragments.get(fragmentManager);
+            RequestManagerFragment requestManagerFragment2 = (RequestManagerFragment) fragmentManager.findFragmentByTag("com.bumptech.glide.manager");
             if (requestManagerFragment2 == null) {
-                RequestManagerFragment requestManagerFragment3 = new RequestManagerFragment();
-                requestManagerFragment3.setParentFragmentHint(fragment);
-                this.pendingRequestManagerFragments.put(fragmentManager, requestManagerFragment3);
-                fragmentManager.beginTransaction().add(requestManagerFragment3, "com.bumptech.glide.manager").commitAllowingStateLoss();
+                requestManagerFragment2 = new RequestManagerFragment();
+                requestManagerFragment2.setParentFragmentHint(fragment);
+                this.pendingRequestManagerFragments.put(fragmentManager, requestManagerFragment2);
+                fragmentManager.beginTransaction().add(requestManagerFragment2, "com.bumptech.glide.manager").commitAllowingStateLoss();
                 this.handler.obtainMessage(1, fragmentManager).sendToTarget();
-                return requestManagerFragment3;
             }
             return requestManagerFragment2;
         }
@@ -303,63 +310,120 @@ public class RequestManagerRetriever implements Handler.Callback {
     }
 
     private SupportRequestManagerFragment getSupportRequestManagerFragment(androidx.fragment.app.FragmentManager fragmentManager, Fragment fragment) {
-        SupportRequestManagerFragment supportRequestManagerFragment = (SupportRequestManagerFragment) fragmentManager.findFragmentByTag("com.bumptech.glide.manager");
+        SupportRequestManagerFragment supportRequestManagerFragment = this.pendingSupportRequestManagerFragments.get(fragmentManager);
         if (supportRequestManagerFragment == null) {
-            SupportRequestManagerFragment supportRequestManagerFragment2 = this.pendingSupportRequestManagerFragments.get(fragmentManager);
+            SupportRequestManagerFragment supportRequestManagerFragment2 = (SupportRequestManagerFragment) fragmentManager.findFragmentByTag("com.bumptech.glide.manager");
             if (supportRequestManagerFragment2 == null) {
-                SupportRequestManagerFragment supportRequestManagerFragment3 = new SupportRequestManagerFragment();
-                supportRequestManagerFragment3.setParentFragmentHint(fragment);
-                this.pendingSupportRequestManagerFragments.put(fragmentManager, supportRequestManagerFragment3);
-                fragmentManager.beginTransaction().add(supportRequestManagerFragment3, "com.bumptech.glide.manager").commitAllowingStateLoss();
+                supportRequestManagerFragment2 = new SupportRequestManagerFragment();
+                supportRequestManagerFragment2.setParentFragmentHint(fragment);
+                this.pendingSupportRequestManagerFragments.put(fragmentManager, supportRequestManagerFragment2);
+                fragmentManager.beginTransaction().add(supportRequestManagerFragment2, "com.bumptech.glide.manager").commitAllowingStateLoss();
                 this.handler.obtainMessage(2, fragmentManager).sendToTarget();
-                return supportRequestManagerFragment3;
             }
             return supportRequestManagerFragment2;
         }
         return supportRequestManagerFragment;
     }
 
-    private RequestManager supportFragmentGet(Context context, androidx.fragment.app.FragmentManager fragmentManager, Fragment fragment, boolean z) {
-        SupportRequestManagerFragment supportRequestManagerFragment = getSupportRequestManagerFragment(fragmentManager, fragment);
-        RequestManager requestManager = supportRequestManagerFragment.getRequestManager();
-        if (requestManager == null) {
-            requestManager = this.factory.build(Glide.get(context), supportRequestManagerFragment.getGlideLifecycle(), supportRequestManagerFragment.getRequestManagerTreeNode(), context);
-            if (z) {
-                requestManager.onStart();
-            }
-            supportRequestManagerFragment.setRequestManager(requestManager);
+    private boolean verifyOurFragmentWasAddedOrCantBeAdded(FragmentManager fragmentManager, boolean z) {
+        RequestManagerFragment requestManagerFragment = this.pendingRequestManagerFragments.get(fragmentManager);
+        RequestManagerFragment requestManagerFragment2 = (RequestManagerFragment) fragmentManager.findFragmentByTag("com.bumptech.glide.manager");
+        if (requestManagerFragment2 == requestManagerFragment) {
+            return true;
         }
-        return requestManager;
+        if (requestManagerFragment2 != null && requestManagerFragment2.getRequestManager() != null) {
+            throw new IllegalStateException("We've added two fragments with requests! Old: " + requestManagerFragment2 + " New: " + requestManagerFragment);
+        } else if (z || fragmentManager.isDestroyed()) {
+            if (Log.isLoggable("RMRetriever", 5)) {
+                if (fragmentManager.isDestroyed()) {
+                    Log.w("RMRetriever", "Parent was destroyed before our Fragment could be added");
+                } else {
+                    Log.w("RMRetriever", "Tried adding Fragment twice and failed twice, giving up!");
+                }
+            }
+            requestManagerFragment.getGlideLifecycle().onDestroy();
+            return true;
+        } else {
+            FragmentTransaction add = fragmentManager.beginTransaction().add(requestManagerFragment, "com.bumptech.glide.manager");
+            if (requestManagerFragment2 != null) {
+                add.remove(requestManagerFragment2);
+            }
+            add.commitAllowingStateLoss();
+            this.handler.obtainMessage(1, 1, 0, fragmentManager).sendToTarget();
+            if (Log.isLoggable("RMRetriever", 3)) {
+                Log.d("RMRetriever", "We failed to add our Fragment the first time around, trying again...");
+            }
+            return false;
+        }
+    }
+
+    private boolean verifyOurSupportFragmentWasAddedOrCantBeAdded(androidx.fragment.app.FragmentManager fragmentManager, boolean z) {
+        SupportRequestManagerFragment supportRequestManagerFragment = this.pendingSupportRequestManagerFragments.get(fragmentManager);
+        SupportRequestManagerFragment supportRequestManagerFragment2 = (SupportRequestManagerFragment) fragmentManager.findFragmentByTag("com.bumptech.glide.manager");
+        if (supportRequestManagerFragment2 == supportRequestManagerFragment) {
+            return true;
+        }
+        if (supportRequestManagerFragment2 != null && supportRequestManagerFragment2.getRequestManager() != null) {
+            throw new IllegalStateException("We've added two fragments with requests! Old: " + supportRequestManagerFragment2 + " New: " + supportRequestManagerFragment);
+        } else if (z || fragmentManager.isDestroyed()) {
+            if (fragmentManager.isDestroyed()) {
+                if (Log.isLoggable("RMRetriever", 5)) {
+                    Log.w("RMRetriever", "Parent was destroyed before our Fragment could be added, all requests for the destroyed parent are cancelled");
+                }
+            } else if (Log.isLoggable("RMRetriever", 6)) {
+                Log.e("RMRetriever", "ERROR: Tried adding Fragment twice and failed twice, giving up and cancelling all associated requests! This probably means you're starting loads in a unit test with an Activity that you haven't created and never create. If you're using Robolectric, create the Activity as part of your test setup");
+            }
+            supportRequestManagerFragment.getGlideLifecycle().onDestroy();
+            return true;
+        } else {
+            androidx.fragment.app.FragmentTransaction add = fragmentManager.beginTransaction().add(supportRequestManagerFragment, "com.bumptech.glide.manager");
+            if (supportRequestManagerFragment2 != null) {
+                add.remove(supportRequestManagerFragment2);
+            }
+            add.commitNowAllowingStateLoss();
+            this.handler.obtainMessage(2, 1, 0, fragmentManager).sendToTarget();
+            if (Log.isLoggable("RMRetriever", 3)) {
+                Log.d("RMRetriever", "We failed to add our Fragment the first time around, trying again...");
+            }
+            return false;
+        }
     }
 
     @Override // android.os.Handler.Callback
     public boolean handleMessage(Message message) {
-        Object obj;
-        Object remove;
-        Object obj2;
+        FragmentManager fragmentManager;
+        FragmentManager fragmentManager2;
+        boolean z = false;
+        boolean z2 = true;
+        boolean z3 = message.arg1 == 1;
         int i = message.what;
-        Object obj3 = null;
-        boolean z = true;
-        if (i == 1) {
-            obj = (FragmentManager) message.obj;
-            remove = this.pendingRequestManagerFragments.remove(obj);
-        } else if (i == 2) {
-            obj = (androidx.fragment.app.FragmentManager) message.obj;
-            remove = this.pendingSupportRequestManagerFragments.remove(obj);
-        } else {
-            z = false;
-            obj2 = null;
-            if (z && obj3 == null && Log.isLoggable("RMRetriever", 5)) {
-                Log.w("RMRetriever", "Failed to remove expected request manager fragment, manager: " + obj2);
+        Object obj = null;
+        if (i != 1) {
+            if (i != 2) {
+                z2 = false;
+            } else {
+                androidx.fragment.app.FragmentManager fragmentManager3 = (androidx.fragment.app.FragmentManager) message.obj;
+                if (verifyOurSupportFragmentWasAddedOrCantBeAdded(fragmentManager3, z3)) {
+                    obj = this.pendingSupportRequestManagerFragments.remove(fragmentManager3);
+                    fragmentManager = fragmentManager3;
+                    z = true;
+                    fragmentManager2 = fragmentManager;
+                }
             }
-            return z;
+            fragmentManager2 = null;
+        } else {
+            FragmentManager fragmentManager4 = (FragmentManager) message.obj;
+            if (verifyOurFragmentWasAddedOrCantBeAdded(fragmentManager4, z3)) {
+                obj = this.pendingRequestManagerFragments.remove(fragmentManager4);
+                fragmentManager = fragmentManager4;
+                z = true;
+                fragmentManager2 = fragmentManager;
+            }
+            fragmentManager2 = null;
         }
-        Object obj4 = obj;
-        obj3 = remove;
-        obj2 = obj4;
-        if (z) {
-            Log.w("RMRetriever", "Failed to remove expected request manager fragment, manager: " + obj2);
+        if (Log.isLoggable("RMRetriever", 5) && z && obj == null) {
+            Log.w("RMRetriever", "Failed to remove expected request manager fragment, manager: " + fragmentManager2);
         }
-        return z;
+        return z2;
     }
 }

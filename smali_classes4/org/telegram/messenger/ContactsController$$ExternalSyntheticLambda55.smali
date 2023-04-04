@@ -2,34 +2,46 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lorg/fork/utils/Callbacks$Callback1;
+.implements Ljava/util/Comparator;
 
 
-# instance fields
-.field public final synthetic f$0:Lorg/telegram/ui/ActionBar/BaseFragment;
+# static fields
+.field public static final synthetic INSTANCE:Lorg/telegram/messenger/ContactsController$$ExternalSyntheticLambda55;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/ActionBar/BaseFragment;)V
+.method static synthetic constructor <clinit>()V
+    .locals 1
+
+    new-instance v0, Lorg/telegram/messenger/ContactsController$$ExternalSyntheticLambda55;
+
+    invoke-direct {v0}, Lorg/telegram/messenger/ContactsController$$ExternalSyntheticLambda55;-><init>()V
+
+    sput-object v0, Lorg/telegram/messenger/ContactsController$$ExternalSyntheticLambda55;->INSTANCE:Lorg/telegram/messenger/ContactsController$$ExternalSyntheticLambda55;
+
+    return-void
+.end method
+
+.method private synthetic constructor <init>()V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lorg/telegram/messenger/ContactsController$$ExternalSyntheticLambda55;->f$0:Lorg/telegram/ui/ActionBar/BaseFragment;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;)V
-    .locals 1
+.method public final compare(Ljava/lang/Object;Ljava/lang/Object;)I
+    .locals 0
 
-    iget-object v0, p0, Lorg/telegram/messenger/ContactsController$$ExternalSyntheticLambda55;->f$0:Lorg/telegram/ui/ActionBar/BaseFragment;
+    check-cast p1, Lorg/telegram/tgnet/TLRPC$TL_contact;
 
-    check-cast p1, Ljava/lang/Long;
+    check-cast p2, Lorg/telegram/tgnet/TLRPC$TL_contact;
 
-    invoke-static {v0, p1}, Lorg/telegram/messenger/ContactsController;->$r8$lambda$_sGd5JqaD6YuSCMMLVfCMA29xVM(Lorg/telegram/ui/ActionBar/BaseFragment;Ljava/lang/Long;)V
+    invoke-static {p1, p2}, Lorg/telegram/messenger/ContactsController;->$r8$lambda$RcV6d7nd-mBpLwpDvPDKrG8VRFg(Lorg/telegram/tgnet/TLRPC$TL_contact;Lorg/telegram/tgnet/TLRPC$TL_contact;)I
 
-    return-void
+    move-result p1
+
+    return p1
 .end method

@@ -16,7 +16,7 @@ public final class ParcelFileDescriptorRewinder implements DataRewinder<ParcelFi
     }
 
     public static boolean isSupported() {
-        return Build.VERSION.SDK_INT >= 21;
+        return Build.VERSION.SDK_INT >= 21 && !"robolectric".equals(Build.FINGERPRINT);
     }
 
     public ParcelFileDescriptorRewinder(ParcelFileDescriptor parcelFileDescriptor) {

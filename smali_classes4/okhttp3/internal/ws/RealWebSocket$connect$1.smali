@@ -143,7 +143,7 @@
 
     const/16 v2, 0x3f2
 
-    const-string v3, "unexpected Sec-WebSocket-Extensions in response header"
+    const-string/jumbo v3, "unexpected Sec-WebSocket-Extensions in response header"
 
     invoke-virtual {v1, v2, v3}, Lokhttp3/internal/ws/RealWebSocket;->close(ILjava/lang/String;)Z
     :try_end_1

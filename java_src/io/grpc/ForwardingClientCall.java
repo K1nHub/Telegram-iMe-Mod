@@ -1,7 +1,7 @@
 package io.grpc;
 
 import io.grpc.ClientCall;
-/* loaded from: classes.dex */
+/* loaded from: classes4.dex */
 public abstract class ForwardingClientCall<ReqT, RespT> extends PartialForwardingClientCall<ReqT, RespT> {
     /* JADX WARN: Multi-variable type inference failed */
     @Override // io.grpc.ClientCall

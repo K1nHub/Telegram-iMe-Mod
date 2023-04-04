@@ -39,9 +39,9 @@
     move-result-wide p1
 
     .line 101
-    sget-object v0, Lorg/telegram/messenger/ApplicationLoader;->smartBotsManager:Lcom/smedialink/bots/usecase/AiBotsManager;
+    sget-object v0, Lorg/telegram/messenger/ApplicationLoader;->smartBotsManager:Lcom/iMe/bots/usecase/AiBotsManager;
 
-    invoke-virtual {v0, p1, p2}, Lcom/smedialink/bots/usecase/AiBotsManager;->handleDownloadCompletion(J)V
+    invoke-virtual {v0, p1, p2}, Lcom/iMe/bots/usecase/AiBotsManager;->handleDownloadCompletion(J)V
 
     return-void
 .end method

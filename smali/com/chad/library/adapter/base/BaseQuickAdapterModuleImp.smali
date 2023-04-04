@@ -3,9 +3,14 @@
 .source "BaseQuickAdapter.kt"
 
 
-# annotations
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Lcom/chad/library/adapter/base/BaseQuickAdapterModuleImp$DefaultImpls;
-    }
-.end annotation
+# virtual methods
+.method public abstract addLoadMoreModule(Lcom/chad/library/adapter/base/BaseQuickAdapter;)Lcom/chad/library/adapter/base/module/BaseLoadMoreModule;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lcom/chad/library/adapter/base/BaseQuickAdapter<",
+            "**>;)",
+            "Lcom/chad/library/adapter/base/module/BaseLoadMoreModule;"
+        }
+    .end annotation
+.end method

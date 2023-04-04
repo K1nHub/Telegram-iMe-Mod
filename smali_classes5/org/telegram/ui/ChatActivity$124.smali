@@ -1,5 +1,5 @@
 .class Lorg/telegram/ui/ChatActivity$124;
-.super Lorg/telegram/ui/Components/ChatScrimPopupContainerLayout;
+.super Landroid/widget/TextView;
 .source "ChatActivity.java"
 
 
@@ -14,78 +14,91 @@
 .end annotation
 
 
-# instance fields
-.field final synthetic this$0:Lorg/telegram/ui/ChatActivity;
-
-
 # direct methods
 .method constructor <init>(Lorg/telegram/ui/ChatActivity;Landroid/content/Context;)V
     .locals 0
 
-    .line 28070
-    iput-object p1, p0, Lorg/telegram/ui/ChatActivity$124;->this$0:Lorg/telegram/ui/ChatActivity;
-
-    invoke-direct {p0, p2}, Lorg/telegram/ui/Components/ChatScrimPopupContainerLayout;-><init>(Landroid/content/Context;)V
+    .line 27734
+    invoke-direct {p0, p2}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public dispatchKeyEvent(Landroid/view/KeyEvent;)Z
-    .locals 2
+.method protected onMeasure(II)V
+    .locals 3
 
-    .line 28073
-    invoke-virtual {p1}, Landroid/view/KeyEvent;->getKeyCode()I
-
-    move-result v0
-
-    const/4 v1, 0x4
-
-    if-ne v0, v1, :cond_0
-
-    invoke-virtual {p1}, Landroid/view/KeyEvent;->getRepeatCount()I
+    .line 27737
+    invoke-static {p1}, Landroid/view/View$MeasureSpec;->getMode(I)I
 
     move-result v0
 
-    if-nez v0, :cond_0
+    const/high16 v1, -0x80000000
 
-    .line 28074
-    iget-object v0, p0, Lorg/telegram/ui/ChatActivity$124;->this$0:Lorg/telegram/ui/ChatActivity;
+    if-ne v0, v1, :cond_1
 
-    invoke-virtual {v0}, Lorg/telegram/ui/ChatActivity;->closeMenu()V
+    invoke-virtual {p0}, Landroid/widget/TextView;->getLayout()Landroid/text/Layout;
 
-    .line 28076
+    move-result-object v0
+
+    if-eqz v0, :cond_1
+
+    .line 27738
+    invoke-virtual {p0}, Landroid/widget/TextView;->getLayout()Landroid/text/Layout;
+
+    move-result-object p1
+
+    const/4 v0, 0x0
+
+    move v1, v0
+
+    .line 27740
+    :goto_0
+    invoke-virtual {p1}, Landroid/text/Layout;->getLineCount()I
+
+    move-result v2
+
+    if-ge v0, v2, :cond_0
+
+    .line 27741
+    invoke-virtual {p1, v0}, Landroid/text/Layout;->getLineWidth(I)F
+
+    move-result v2
+
+    float-to-int v2, v2
+
+    invoke-static {v1, v2}, Ljava/lang/Math;->max(II)I
+
+    move-result v1
+
+    add-int/lit8 v0, v0, 0x1
+
+    goto :goto_0
+
+    .line 27743
     :cond_0
-    invoke-super {p0, p1}, Landroid/widget/LinearLayout;->dispatchKeyEvent(Landroid/view/KeyEvent;)Z
+    invoke-virtual {p0}, Landroid/widget/TextView;->getPaddingLeft()I
 
     move-result p1
 
-    return p1
-.end method
+    add-int/2addr p1, v1
 
-.method public dispatchTouchEvent(Landroid/view/MotionEvent;)Z
-    .locals 1
-
-    .line 28081
-    invoke-super {p0, p1}, Landroid/widget/LinearLayout;->dispatchTouchEvent(Landroid/view/MotionEvent;)Z
+    invoke-virtual {p0}, Landroid/widget/TextView;->getPaddingRight()I
 
     move-result v0
 
-    .line 28082
-    invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
+    add-int/2addr p1, v0
+
+    const/high16 v0, 0x40000000    # 2.0f
+
+    invoke-static {p1, v0}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
 
     move-result p1
 
-    if-nez p1, :cond_0
+    .line 27745
+    :cond_1
+    invoke-super {p0, p1, p2}, Landroid/widget/TextView;->onMeasure(II)V
 
-    if-nez v0, :cond_0
-
-    .line 28083
-    iget-object p1, p0, Lorg/telegram/ui/ChatActivity$124;->this$0:Lorg/telegram/ui/ChatActivity;
-
-    invoke-virtual {p1}, Lorg/telegram/ui/ChatActivity;->closeMenu()V
-
-    :cond_0
-    return v0
+    return-void
 .end method

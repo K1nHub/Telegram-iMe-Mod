@@ -1,7 +1,7 @@
 package com.iMe.i_staking.mapper;
 
 import com.iMe.i_staking.response.StakingApprovalInfoResponse;
-import com.smedialink.storage.domain.model.staking.StakingApprovalInfo;
+import com.iMe.storage.domain.model.staking.StakingApprovalInfo;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: StakingApprovalInfoMapper.kt */
 /* loaded from: classes3.dex */

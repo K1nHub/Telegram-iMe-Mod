@@ -52,14 +52,22 @@
 
 .field private final logLevel:I
 
-.field private final registry:Lcom/bumptech/glide/Registry;
+.field private final registry:Lcom/bumptech/glide/util/GlideSuppliers$GlideSupplier;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Lcom/bumptech/glide/util/GlideSuppliers$GlideSupplier<",
+            "Lcom/bumptech/glide/Registry;",
+            ">;"
+        }
+    .end annotation
+.end field
 
 
 # direct methods
 .method static constructor <clinit>()V
     .locals 1
 
-    .line 28
+    .line 30
     new-instance v0, Lcom/bumptech/glide/GenericTransitionOptions;
 
     invoke-direct {v0}, Lcom/bumptech/glide/GenericTransitionOptions;-><init>()V
@@ -69,14 +77,16 @@
     return-void
 .end method
 
-.method public constructor <init>(Landroid/content/Context;Lcom/bumptech/glide/load/engine/bitmap_recycle/ArrayPool;Lcom/bumptech/glide/Registry;Lcom/bumptech/glide/request/target/ImageViewTargetFactory;Lcom/bumptech/glide/Glide$RequestOptionsFactory;Ljava/util/Map;Ljava/util/List;Lcom/bumptech/glide/load/engine/Engine;Lcom/bumptech/glide/GlideExperiments;I)V
+.method public constructor <init>(Landroid/content/Context;Lcom/bumptech/glide/load/engine/bitmap_recycle/ArrayPool;Lcom/bumptech/glide/util/GlideSuppliers$GlideSupplier;Lcom/bumptech/glide/request/target/ImageViewTargetFactory;Lcom/bumptech/glide/Glide$RequestOptionsFactory;Ljava/util/Map;Ljava/util/List;Lcom/bumptech/glide/load/engine/Engine;Lcom/bumptech/glide/GlideExperiments;I)V
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Landroid/content/Context;",
             "Lcom/bumptech/glide/load/engine/bitmap_recycle/ArrayPool;",
+            "Lcom/bumptech/glide/util/GlideSuppliers$GlideSupplier<",
             "Lcom/bumptech/glide/Registry;",
+            ">;",
             "Lcom/bumptech/glide/request/target/ImageViewTargetFactory;",
             "Lcom/bumptech/glide/Glide$RequestOptionsFactory;",
             "Ljava/util/Map<",
@@ -94,39 +104,43 @@
         }
     .end annotation
 
-    .line 56
+    .line 58
     invoke-virtual {p1}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
 
     move-result-object p1
 
     invoke-direct {p0, p1}, Landroid/content/ContextWrapper;-><init>(Landroid/content/Context;)V
 
-    .line 57
+    .line 59
     iput-object p2, p0, Lcom/bumptech/glide/GlideContext;->arrayPool:Lcom/bumptech/glide/load/engine/bitmap_recycle/ArrayPool;
 
-    .line 58
-    iput-object p3, p0, Lcom/bumptech/glide/GlideContext;->registry:Lcom/bumptech/glide/Registry;
-
-    .line 59
+    .line 60
     iput-object p4, p0, Lcom/bumptech/glide/GlideContext;->imageViewTargetFactory:Lcom/bumptech/glide/request/target/ImageViewTargetFactory;
 
-    .line 60
+    .line 61
     iput-object p5, p0, Lcom/bumptech/glide/GlideContext;->defaultRequestOptionsFactory:Lcom/bumptech/glide/Glide$RequestOptionsFactory;
 
-    .line 61
+    .line 62
     iput-object p7, p0, Lcom/bumptech/glide/GlideContext;->defaultRequestListeners:Ljava/util/List;
 
-    .line 62
+    .line 63
     iput-object p6, p0, Lcom/bumptech/glide/GlideContext;->defaultTransitionOptions:Ljava/util/Map;
 
-    .line 63
+    .line 64
     iput-object p8, p0, Lcom/bumptech/glide/GlideContext;->engine:Lcom/bumptech/glide/load/engine/Engine;
 
-    .line 64
+    .line 65
     iput-object p9, p0, Lcom/bumptech/glide/GlideContext;->experiments:Lcom/bumptech/glide/GlideExperiments;
 
-    .line 65
+    .line 66
     iput p10, p0, Lcom/bumptech/glide/GlideContext;->logLevel:I
+
+    .line 68
+    invoke-static {p3}, Lcom/bumptech/glide/util/GlideSuppliers;->memorize(Lcom/bumptech/glide/util/GlideSuppliers$GlideSupplier;)Lcom/bumptech/glide/util/GlideSuppliers$GlideSupplier;
+
+    move-result-object p1
+
+    iput-object p1, p0, Lcom/bumptech/glide/GlideContext;->registry:Lcom/bumptech/glide/util/GlideSuppliers$GlideSupplier;
 
     return-void
 .end method
@@ -149,7 +163,7 @@
         }
     .end annotation
 
-    .line 100
+    .line 103
     iget-object v0, p0, Lcom/bumptech/glide/GlideContext;->imageViewTargetFactory:Lcom/bumptech/glide/request/target/ImageViewTargetFactory;
 
     invoke-virtual {v0, p1, p2}, Lcom/bumptech/glide/request/target/ImageViewTargetFactory;->buildTarget(Landroid/widget/ImageView;Ljava/lang/Class;)Lcom/bumptech/glide/request/target/ViewTarget;
@@ -162,7 +176,7 @@
 .method public getArrayPool()Lcom/bumptech/glide/load/engine/bitmap_recycle/ArrayPool;
     .locals 1
 
-    .line 119
+    .line 122
     iget-object v0, p0, Lcom/bumptech/glide/GlideContext;->arrayPool:Lcom/bumptech/glide/load/engine/bitmap_recycle/ArrayPool;
 
     return-object v0
@@ -180,7 +194,7 @@
         }
     .end annotation
 
-    .line 69
+    .line 72
     iget-object v0, p0, Lcom/bumptech/glide/GlideContext;->defaultRequestListeners:Ljava/util/List;
 
     return-object v0
@@ -191,13 +205,13 @@
 
     monitor-enter p0
 
-    .line 73
+    .line 76
     :try_start_0
     iget-object v0, p0, Lcom/bumptech/glide/GlideContext;->defaultRequestOptions:Lcom/bumptech/glide/request/RequestOptions;
 
     if-nez v0, :cond_0
 
-    .line 74
+    .line 77
     iget-object v0, p0, Lcom/bumptech/glide/GlideContext;->defaultRequestOptionsFactory:Lcom/bumptech/glide/Glide$RequestOptionsFactory;
 
     invoke-interface {v0}, Lcom/bumptech/glide/Glide$RequestOptionsFactory;->build()Lcom/bumptech/glide/request/RequestOptions;
@@ -212,7 +226,7 @@
 
     iput-object v0, p0, Lcom/bumptech/glide/GlideContext;->defaultRequestOptions:Lcom/bumptech/glide/request/RequestOptions;
 
-    .line 77
+    .line 80
     :cond_0
     iget-object v0, p0, Lcom/bumptech/glide/GlideContext;->defaultRequestOptions:Lcom/bumptech/glide/request/RequestOptions;
     :try_end_0
@@ -244,7 +258,7 @@
         }
     .end annotation
 
-    .line 83
+    .line 86
     iget-object v0, p0, Lcom/bumptech/glide/GlideContext;->defaultTransitionOptions:Ljava/util/Map;
 
     invoke-interface {v0, p1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -255,7 +269,7 @@
 
     if-nez v0, :cond_1
 
-    .line 85
+    .line 88
     iget-object v1, p0, Lcom/bumptech/glide/GlideContext;->defaultTransitionOptions:Ljava/util/Map;
 
     invoke-interface {v1}, Ljava/util/Map;->entrySet()Ljava/util/Set;
@@ -280,7 +294,7 @@
 
     check-cast v2, Ljava/util/Map$Entry;
 
-    .line 86
+    .line 89
     invoke-interface {v2}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
     move-result-object v3
@@ -293,7 +307,7 @@
 
     if-eqz v3, :cond_0
 
-    .line 87
+    .line 90
     invoke-interface {v2}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
     move-result-object v0
@@ -305,7 +319,7 @@
     :cond_1
     if-nez v0, :cond_2
 
-    .line 92
+    .line 95
     sget-object v0, Lcom/bumptech/glide/GlideContext;->DEFAULT_TRANSITION_OPTIONS:Lcom/bumptech/glide/TransitionOptions;
 
     :cond_2
@@ -315,7 +329,7 @@
 .method public getEngine()Lcom/bumptech/glide/load/engine/Engine;
     .locals 1
 
-    .line 105
+    .line 108
     iget-object v0, p0, Lcom/bumptech/glide/GlideContext;->engine:Lcom/bumptech/glide/load/engine/Engine;
 
     return-object v0
@@ -324,7 +338,7 @@
 .method public getExperiments()Lcom/bumptech/glide/GlideExperiments;
     .locals 1
 
-    .line 123
+    .line 126
     iget-object v0, p0, Lcom/bumptech/glide/GlideContext;->experiments:Lcom/bumptech/glide/GlideExperiments;
 
     return-object v0
@@ -333,7 +347,7 @@
 .method public getLogLevel()I
     .locals 1
 
-    .line 114
+    .line 117
     iget v0, p0, Lcom/bumptech/glide/GlideContext;->logLevel:I
 
     return v0
@@ -342,8 +356,14 @@
 .method public getRegistry()Lcom/bumptech/glide/Registry;
     .locals 1
 
-    .line 110
-    iget-object v0, p0, Lcom/bumptech/glide/GlideContext;->registry:Lcom/bumptech/glide/Registry;
+    .line 113
+    iget-object v0, p0, Lcom/bumptech/glide/GlideContext;->registry:Lcom/bumptech/glide/util/GlideSuppliers$GlideSupplier;
+
+    invoke-interface {v0}, Lcom/bumptech/glide/util/GlideSuppliers$GlideSupplier;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/bumptech/glide/Registry;
 
     return-object v0
 .end method

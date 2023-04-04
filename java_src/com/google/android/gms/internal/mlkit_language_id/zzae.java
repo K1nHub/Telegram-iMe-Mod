@@ -3,5 +3,5 @@ package com.google.android.gms.internal.mlkit_language_id;
 import com.google.android.gms.internal.mlkit_language_id.zzy;
 /* compiled from: com.google.mlkit:language-id@@16.1.1 */
 /* loaded from: classes.dex */
-final class zzae implements zzes<zzy.C6856zzy.zzb.EnumC6857zzb> {
+final class zzae implements zzes<zzy.C6880zzy.zzb.EnumC6881zzb> {
 }

@@ -2,13 +2,12 @@ package org.telegram.messenger;
 
 import com.google.android.exoplayer2.source.ProgressiveMediaSource;
 import java.util.ArrayList;
-import java.util.Objects;
 import org.telegram.tgnet.ConnectionsManager;
 /* loaded from: classes4.dex */
 public class FileLoaderPriorityQueue {
     private final int maxActiveOperationsCount;
     String name;
-    ArrayList<FileLoadOperation> allOperations = new ArrayList<>();
+    private ArrayList<FileLoadOperation> allOperations = new ArrayList<>();
     private int PRIORITY_VALUE_MAX = ProgressiveMediaSource.DEFAULT_LOADING_CHECK_INTERVAL_BYTES;
     private int PRIORITY_VALUE_NORMAL = 65536;
     private int PRIORITY_VALUE_LOW = 0;
@@ -26,7 +25,7 @@ public class FileLoaderPriorityQueue {
         int i = 0;
         int i2 = 0;
         while (i2 < this.allOperations.size()) {
-            if (this.allOperations.get(i2) == fileLoadOperation || Objects.equals(this.allOperations.get(i2).getFileName(), fileLoadOperation.getFileName())) {
+            if (this.allOperations.get(i2) == fileLoadOperation) {
                 this.allOperations.remove(i2);
                 i2--;
             }
@@ -50,27 +49,28 @@ public class FileLoaderPriorityQueue {
     }
 
     public void cancel(FileLoadOperation fileLoadOperation) {
-        if (fileLoadOperation == null) {
-            return;
+        if (fileLoadOperation != null && this.allOperations.remove(fileLoadOperation)) {
+            fileLoadOperation.cancel();
         }
-        this.allOperations.remove(fileLoadOperation);
-        fileLoadOperation.cancel();
     }
 
     public void checkLoadingOperations() {
+        int i = this.maxActiveOperationsCount;
         boolean z = false;
-        int i = 0;
-        for (int i2 = 0; i2 < this.allOperations.size(); i2++) {
-            FileLoadOperation fileLoadOperation = this.allOperations.get(i2);
-            if (i2 > 0 && !z && i > this.PRIORITY_VALUE_LOW && fileLoadOperation.getPriority() == this.PRIORITY_VALUE_LOW) {
+        int i2 = 0;
+        for (int i3 = 0; i3 < this.allOperations.size(); i3++) {
+            FileLoadOperation fileLoadOperation = this.allOperations.get(i3);
+            if (i3 > 0 && !z && i2 > this.PRIORITY_VALUE_LOW && fileLoadOperation.getPriority() == this.PRIORITY_VALUE_LOW) {
                 z = true;
             }
-            if (!z && i2 < this.maxActiveOperationsCount) {
+            if (fileLoadOperation.preFinished) {
+                i++;
+            } else if (!z && i3 < i) {
                 fileLoadOperation.start();
             } else if (fileLoadOperation.wasStarted()) {
                 fileLoadOperation.pause();
             }
-            i = fileLoadOperation.getPriority();
+            i2 = fileLoadOperation.getPriority();
         }
     }
 
@@ -83,5 +83,13 @@ public class FileLoaderPriorityQueue {
             fileLoadOperation.cancel();
         }
         this.allOperations.remove(fileLoadOperation);
+    }
+
+    public int getCount() {
+        return this.allOperations.size();
+    }
+
+    public int getPosition(FileLoadOperation fileLoadOperation) {
+        return this.allOperations.indexOf(fileLoadOperation);
     }
 }

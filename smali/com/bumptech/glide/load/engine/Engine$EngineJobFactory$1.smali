@@ -34,7 +34,7 @@
 .method constructor <init>(Lcom/bumptech/glide/load/engine/Engine$EngineJobFactory;)V
     .locals 0
 
-    .line 546
+    .line 550
     iput-object p1, p0, Lcom/bumptech/glide/load/engine/Engine$EngineJobFactory$1;->this$0:Lcom/bumptech/glide/load/engine/Engine$EngineJobFactory;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -54,7 +54,7 @@
         }
     .end annotation
 
-    .line 549
+    .line 553
     new-instance v8, Lcom/bumptech/glide/load/engine/EngineJob;
 
     iget-object v0, p0, Lcom/bumptech/glide/load/engine/Engine$EngineJobFactory$1;->this$0:Lcom/bumptech/glide/load/engine/Engine$EngineJobFactory;
@@ -83,7 +83,7 @@
 .method public bridge synthetic create()Ljava/lang/Object;
     .locals 1
 
-    .line 546
+    .line 550
     invoke-virtual {p0}, Lcom/bumptech/glide/load/engine/Engine$EngineJobFactory$1;->create()Lcom/bumptech/glide/load/engine/EngineJob;
 
     move-result-object v0

@@ -25,7 +25,7 @@ import java.util.Objects;
 import java.util.Timer;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.C3301R;
+import org.telegram.messenger.C3316R;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessagesController;
@@ -34,7 +34,7 @@ import org.telegram.messenger.TranslateController;
 import org.telegram.messenger.Utilities;
 import org.telegram.p048ui.ActionBar.ActionBarMenuItem;
 import org.telegram.p048ui.ActionBar.BaseFragment;
-import org.telegram.p048ui.ActionBar.C3366ActionBar;
+import org.telegram.p048ui.ActionBar.C3381ActionBar;
 import org.telegram.p048ui.ActionBar.Theme;
 import org.telegram.p048ui.ActionBar.ThemeDescription;
 import org.telegram.p048ui.Cells.HeaderCell;
@@ -45,8 +45,8 @@ import org.telegram.p048ui.Components.EmptyTextProgressView;
 import org.telegram.p048ui.Components.LayoutHelper;
 import org.telegram.p048ui.Components.RecyclerListView;
 import org.telegram.p048ui.Components.TranslateAlert2;
-import p034j$.util.Collection$EL;
-import p034j$.util.function.Predicate;
+import p035j$.util.Collection$EL;
+import p035j$.util.function.Predicate;
 /* renamed from: org.telegram.ui.RestrictedLanguagesSelectActivity */
 /* loaded from: classes5.dex */
 public class RestrictedLanguagesSelectActivity extends BaseFragment implements NotificationCenter.NotificationCenterDelegate {
@@ -120,18 +120,18 @@ public class RestrictedLanguagesSelectActivity extends BaseFragment implements N
 
     @Override // org.telegram.p048ui.ActionBar.BaseFragment
     public View createView(Context context) {
-        this.actionBar.setBackButtonImage(C3301R.C3303drawable.ic_ab_back);
+        this.actionBar.setBackButtonImage(C3316R.C3318drawable.ic_ab_back);
         this.actionBar.setAllowOverlayTitle(true);
-        this.actionBar.setTitle(LocaleController.getString("DoNotTranslate", C3301R.string.DoNotTranslate));
-        this.actionBar.setActionBarMenuOnItemClick(new C3366ActionBar.ActionBarMenuOnItemClick() { // from class: org.telegram.ui.RestrictedLanguagesSelectActivity.1
-            @Override // org.telegram.p048ui.ActionBar.C3366ActionBar.ActionBarMenuOnItemClick
+        this.actionBar.setTitle(LocaleController.getString("DoNotTranslate", C3316R.string.DoNotTranslate));
+        this.actionBar.setActionBarMenuOnItemClick(new C3381ActionBar.ActionBarMenuOnItemClick() { // from class: org.telegram.ui.RestrictedLanguagesSelectActivity.1
+            @Override // org.telegram.p048ui.ActionBar.C3381ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i) {
                 if (i == -1) {
                     RestrictedLanguagesSelectActivity.this.finishFragment();
                 }
             }
         });
-        this.actionBar.createMenu().addItem(0, C3301R.C3303drawable.ic_ab_search).setIsSearchField(true).setActionBarMenuItemSearchListener(new ActionBarMenuItem.ActionBarMenuItemSearchListener() { // from class: org.telegram.ui.RestrictedLanguagesSelectActivity.2
+        this.actionBar.createMenu().addItem(0, C3316R.C3318drawable.ic_ab_search).setIsSearchField(true).setActionBarMenuItemSearchListener(new ActionBarMenuItem.ActionBarMenuItemSearchListener() { // from class: org.telegram.ui.RestrictedLanguagesSelectActivity.2
             @Override // org.telegram.p048ui.ActionBar.ActionBarMenuItem.ActionBarMenuItemSearchListener
             public void onSearchExpand() {
                 RestrictedLanguagesSelectActivity.this.searching = true;
@@ -167,7 +167,7 @@ public class RestrictedLanguagesSelectActivity extends BaseFragment implements N
                     RestrictedLanguagesSelectActivity.this.listView.setAdapter(RestrictedLanguagesSelectActivity.this.listAdapter);
                 }
             }
-        }).setSearchFieldHint(LocaleController.getString("Search", C3301R.string.Search));
+        }).setSearchFieldHint(LocaleController.getString("Search", C3316R.string.Search));
         this.listAdapter = new ListAdapter(context, false);
         this.searchListViewAdapter = new ListAdapter(context, true);
         FrameLayout frameLayout = new FrameLayout(context);
@@ -176,7 +176,7 @@ public class RestrictedLanguagesSelectActivity extends BaseFragment implements N
         FrameLayout frameLayout2 = (FrameLayout) this.fragmentView;
         EmptyTextProgressView emptyTextProgressView = new EmptyTextProgressView(context);
         this.emptyView = emptyTextProgressView;
-        emptyTextProgressView.setText(LocaleController.getString("NoResult", C3301R.string.NoResult));
+        emptyTextProgressView.setText(LocaleController.getString("NoResult", C3316R.string.NoResult));
         this.emptyView.showTextView();
         this.emptyView.setShowAtCenter(true);
         frameLayout2.addView(this.emptyView, LayoutHelper.createFrame(-1, -1));
@@ -231,23 +231,23 @@ public class RestrictedLanguagesSelectActivity extends BaseFragment implements N
         final String str = language.code;
         if (this.selectedLanguages.contains(str)) {
             Collection$EL.removeIf(this.selectedLanguages, new Predicate() { // from class: org.telegram.ui.RestrictedLanguagesSelectActivity$$ExternalSyntheticLambda0
-                @Override // p034j$.util.function.Predicate
+                @Override // p035j$.util.function.Predicate
                 public /* synthetic */ Predicate and(Predicate predicate) {
                     return Objects.requireNonNull(predicate);
                 }
 
-                @Override // p034j$.util.function.Predicate
+                @Override // p035j$.util.function.Predicate
                 public /* synthetic */ Predicate negate() {
                     return Predicate.CC.$default$negate(this);
                 }
 
-                @Override // p034j$.util.function.Predicate
+                @Override // p035j$.util.function.Predicate
                 /* renamed from: or */
                 public /* synthetic */ Predicate mo21or(Predicate predicate) {
                     return Objects.requireNonNull(predicate);
                 }
 
-                @Override // p034j$.util.function.Predicate
+                @Override // p035j$.util.function.Predicate
                 public final boolean test(Object obj) {
                     boolean lambda$createView$0;
                     lambda$createView$0 = RestrictedLanguagesSelectActivity.lambda$createView$0(str, (String) obj);
@@ -330,7 +330,7 @@ public class RestrictedLanguagesSelectActivity extends BaseFragment implements N
             String upperCase = str2.toUpperCase();
             language3.displayName = upperCase;
             language3.ownDisplayName = upperCase;
-            language3.f1475q = language3.code.toLowerCase();
+            language3.f1477q = language3.code.toLowerCase();
             arrayList.add(language3);
         }
         this.separatorRow = 0;
@@ -380,9 +380,9 @@ public class RestrictedLanguagesSelectActivity extends BaseFragment implements N
         }
         for (int i = 0; i < this.allLanguages.size(); i++) {
             TranslateController.Language language = this.allLanguages.get(i);
-            if (language.f1475q.startsWith(lowerCase)) {
+            if (language.f1477q.startsWith(lowerCase)) {
                 this.searchResult.add(0, language);
-            } else if (language.f1475q.contains(lowerCase)) {
+            } else if (language.f1477q.contains(lowerCase)) {
                 this.searchResult.add(language);
             }
         }
@@ -429,7 +429,7 @@ public class RestrictedLanguagesSelectActivity extends BaseFragment implements N
             } else if (i == 2) {
                 HeaderCell headerCell = new HeaderCell(this.mContext);
                 headerCell.setBackgroundColor(Theme.getColor("windowBackgroundWhite"));
-                headerCell.setText(LocaleController.getString("ChooseLanguages", C3301R.string.ChooseLanguages));
+                headerCell.setText(LocaleController.getString("ChooseLanguages", C3316R.string.ChooseLanguages));
                 textCheckbox2Cell = headerCell;
             } else {
                 view = new ShadowSectionCell(this.mContext);
@@ -465,7 +465,7 @@ public class RestrictedLanguagesSelectActivity extends BaseFragment implements N
                 android.view.View r6 = r6.itemView
                 org.telegram.ui.Cells.ShadowSectionCell r6 = (org.telegram.p048ui.Cells.ShadowSectionCell) r6
                 android.content.Context r7 = r5.mContext
-                int r0 = org.telegram.messenger.C3301R.C3303drawable.greydivider
+                int r0 = org.telegram.messenger.C3316R.C3318drawable.greydivider
                 java.lang.String r1 = "windowBackgroundGrayShadow"
                 android.graphics.drawable.Drawable r7 = org.telegram.p048ui.ActionBar.Theme.getThemedDrawable(r7, r0, r1)
                 r6.setBackgroundDrawable(r7)

@@ -27,7 +27,7 @@
 .method constructor <init>(Lorg/telegram/ui/LoginActivity$LoginActivityNewPasswordView;Lorg/telegram/ui/LoginActivity;Z)V
     .locals 0
 
-    .line 7189
+    .line 7191
     iput-object p1, p0, Lorg/telegram/ui/LoginActivity$LoginActivityNewPasswordView$1;->this$1:Lorg/telegram/ui/LoginActivity$LoginActivityNewPasswordView;
 
     iput-boolean p3, p0, Lorg/telegram/ui/LoginActivity$LoginActivityNewPasswordView$1;->val$showPasswordButton:Z
@@ -42,12 +42,12 @@
 .method public afterTextChanged(Landroid/text/Editable;)V
     .locals 4
 
-    .line 7198
+    .line 7200
     iget-boolean v0, p0, Lorg/telegram/ui/LoginActivity$LoginActivityNewPasswordView$1;->val$showPasswordButton:Z
 
     if-eqz v0, :cond_2
 
-    .line 7199
+    .line 7201
     iget-object v0, p0, Lorg/telegram/ui/LoginActivity$LoginActivityNewPasswordView$1;->this$1:Lorg/telegram/ui/LoginActivity$LoginActivityNewPasswordView;
 
     invoke-static {v0}, Lorg/telegram/ui/LoginActivity$LoginActivityNewPasswordView;->access$15600(Lorg/telegram/ui/LoginActivity$LoginActivityNewPasswordView;)Landroid/widget/ImageView;
@@ -70,7 +70,7 @@
 
     if-nez v0, :cond_1
 
-    .line 7200
+    .line 7202
     iget-object p1, p0, Lorg/telegram/ui/LoginActivity$LoginActivityNewPasswordView$1;->this$1:Lorg/telegram/ui/LoginActivity$LoginActivityNewPasswordView;
 
     invoke-static {p1}, Lorg/telegram/ui/LoginActivity$LoginActivityNewPasswordView;->access$15700(Lorg/telegram/ui/LoginActivity$LoginActivityNewPasswordView;)Z
@@ -79,7 +79,7 @@
 
     if-eqz p1, :cond_0
 
-    .line 7201
+    .line 7203
     iget-object p1, p0, Lorg/telegram/ui/LoginActivity$LoginActivityNewPasswordView$1;->this$1:Lorg/telegram/ui/LoginActivity$LoginActivityNewPasswordView;
 
     invoke-static {p1}, Lorg/telegram/ui/LoginActivity$LoginActivityNewPasswordView;->access$15600(Lorg/telegram/ui/LoginActivity$LoginActivityNewPasswordView;)Landroid/widget/ImageView;
@@ -88,7 +88,7 @@
 
     invoke-virtual {p1}, Landroid/widget/ImageView;->callOnClick()Z
 
-    .line 7203
+    .line 7205
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/LoginActivity$LoginActivityNewPasswordView$1;->this$1:Lorg/telegram/ui/LoginActivity$LoginActivityNewPasswordView;
 
@@ -100,7 +100,7 @@
 
     goto :goto_0
 
-    .line 7204
+    .line 7206
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/LoginActivity$LoginActivityNewPasswordView$1;->this$1:Lorg/telegram/ui/LoginActivity$LoginActivityNewPasswordView;
 
@@ -122,7 +122,7 @@
 
     if-eqz p1, :cond_2
 
-    .line 7205
+    .line 7207
     iget-object p1, p0, Lorg/telegram/ui/LoginActivity$LoginActivityNewPasswordView$1;->this$1:Lorg/telegram/ui/LoginActivity$LoginActivityNewPasswordView;
 
     invoke-static {p1}, Lorg/telegram/ui/LoginActivity$LoginActivityNewPasswordView;->access$15600(Lorg/telegram/ui/LoginActivity$LoginActivityNewPasswordView;)Landroid/widget/ImageView;

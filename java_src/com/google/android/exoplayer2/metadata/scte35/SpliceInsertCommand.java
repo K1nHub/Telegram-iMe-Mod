@@ -2,7 +2,7 @@ package com.google.android.exoplayer2.metadata.scte35;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import com.google.android.exoplayer2.C0468C;
+import com.google.android.exoplayer2.C0482C;
 import com.google.android.exoplayer2.util.ParsableByteArray;
 import com.google.android.exoplayer2.util.TimestampAdjuster;
 import java.util.ArrayList;
@@ -95,9 +95,9 @@ public final class SpliceInsertCommand extends SpliceCommand {
             list = emptyList;
             z = false;
             z2 = false;
-            j2 = C0468C.TIME_UNSET;
+            j2 = C0482C.TIME_UNSET;
             z3 = false;
-            j3 = C0468C.TIME_UNSET;
+            j3 = C0482C.TIME_UNSET;
             i = 0;
             i2 = 0;
             i3 = 0;
@@ -108,13 +108,13 @@ public final class SpliceInsertCommand extends SpliceCommand {
             boolean z8 = (readUnsignedByte & 64) != 0;
             boolean z9 = (readUnsignedByte & 32) != 0;
             boolean z10 = (readUnsignedByte & 16) != 0;
-            long parseSpliceTime = (!z8 || z10) ? C0468C.TIME_UNSET : TimeSignalCommand.parseSpliceTime(parsableByteArray, j);
+            long parseSpliceTime = (!z8 || z10) ? C0482C.TIME_UNSET : TimeSignalCommand.parseSpliceTime(parsableByteArray, j);
             if (!z8) {
                 int readUnsignedByte2 = parsableByteArray.readUnsignedByte();
                 ArrayList arrayList = new ArrayList(readUnsignedByte2);
                 for (int i4 = 0; i4 < readUnsignedByte2; i4++) {
                     int readUnsignedByte3 = parsableByteArray.readUnsignedByte();
-                    long parseSpliceTime2 = !z10 ? TimeSignalCommand.parseSpliceTime(parsableByteArray, j) : C0468C.TIME_UNSET;
+                    long parseSpliceTime2 = !z10 ? TimeSignalCommand.parseSpliceTime(parsableByteArray, j) : C0482C.TIME_UNSET;
                     arrayList.add(new ComponentSplice(readUnsignedByte3, parseSpliceTime2, timestampAdjuster.adjustTsTimestamp(parseSpliceTime2)));
                 }
                 emptyList = arrayList;
@@ -126,7 +126,7 @@ public final class SpliceInsertCommand extends SpliceCommand {
                 z5 = z11;
             } else {
                 z5 = false;
-                j4 = C0468C.TIME_UNSET;
+                j4 = C0482C.TIME_UNSET;
             }
             i = parsableByteArray.readUnsignedShort();
             z4 = z8;

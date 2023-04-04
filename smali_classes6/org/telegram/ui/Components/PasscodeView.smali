@@ -56,7 +56,7 @@
 
 .field private final currentAccount:I
 
-.field private currentLockedSection:Lorg/fork/enums/LockedSection;
+.field private currentLockedSection:Lcom/iMe/fork/enums/LockedSection;
 
 .field private delegate:Lorg/telegram/ui/Components/PasscodeView$PasscodeViewDelegate;
 
@@ -140,7 +140,7 @@
 
 .field private retryTextView:Landroid/widget/TextView;
 
-.field private sectionPasscodeData:Lorg/fork/controller/LockedSectionsController$SectionPasscodeData;
+.field private sectionPasscodeData:Lcom/iMe/fork/controller/LockedSectionsController$SectionPasscodeData;
 
 .field private selfCancelled:Z
 
@@ -369,7 +369,7 @@
     const/4 v0, 0x0
 
     .line 121
-    invoke-direct {p0, p1, v0, v0}, Lorg/telegram/ui/Components/PasscodeView;-><init>(Landroid/content/Context;Lorg/fork/enums/LockedSection;Landroid/util/AttributeSet;)V
+    invoke-direct {p0, p1, v0, v0}, Lorg/telegram/ui/Components/PasscodeView;-><init>(Landroid/content/Context;Lcom/iMe/fork/enums/LockedSection;Landroid/util/AttributeSet;)V
 
     return-void
 .end method
@@ -380,23 +380,23 @@
     const/4 v0, 0x0
 
     .line 131
-    invoke-direct {p0, p1, v0, p2}, Lorg/telegram/ui/Components/PasscodeView;-><init>(Landroid/content/Context;Lorg/fork/enums/LockedSection;Landroid/util/AttributeSet;)V
+    invoke-direct {p0, p1, v0, p2}, Lorg/telegram/ui/Components/PasscodeView;-><init>(Landroid/content/Context;Lcom/iMe/fork/enums/LockedSection;Landroid/util/AttributeSet;)V
 
     return-void
 .end method
 
-.method public constructor <init>(Landroid/content/Context;Lorg/fork/enums/LockedSection;)V
+.method public constructor <init>(Landroid/content/Context;Lcom/iMe/fork/enums/LockedSection;)V
     .locals 1
 
     const/4 v0, 0x0
 
     .line 126
-    invoke-direct {p0, p1, p2, v0}, Lorg/telegram/ui/Components/PasscodeView;-><init>(Landroid/content/Context;Lorg/fork/enums/LockedSection;Landroid/util/AttributeSet;)V
+    invoke-direct {p0, p1, p2, v0}, Lorg/telegram/ui/Components/PasscodeView;-><init>(Landroid/content/Context;Lcom/iMe/fork/enums/LockedSection;Landroid/util/AttributeSet;)V
 
     return-void
 .end method
 
-.method public constructor <init>(Landroid/content/Context;Lorg/fork/enums/LockedSection;Landroid/util/AttributeSet;)V
+.method public constructor <init>(Landroid/content/Context;Lcom/iMe/fork/enums/LockedSection;Landroid/util/AttributeSet;)V
     .locals 22
 
     move-object/from16 v0, p0
@@ -416,10 +416,10 @@
     const/4 v3, 0x0
 
     .line 114
-    iput-object v3, v0, Lorg/telegram/ui/Components/PasscodeView;->currentLockedSection:Lorg/fork/enums/LockedSection;
+    iput-object v3, v0, Lorg/telegram/ui/Components/PasscodeView;->currentLockedSection:Lcom/iMe/fork/enums/LockedSection;
 
     .line 115
-    iput-object v3, v0, Lorg/telegram/ui/Components/PasscodeView;->sectionPasscodeData:Lorg/fork/controller/LockedSectionsController$SectionPasscodeData;
+    iput-object v3, v0, Lorg/telegram/ui/Components/PasscodeView;->sectionPasscodeData:Lcom/iMe/fork/controller/LockedSectionsController$SectionPasscodeData;
 
     .line 117
     iput-object v3, v0, Lorg/telegram/ui/Components/PasscodeView;->walletDelegate:Lorg/telegram/ui/Components/PasscodeView$WalletDelegate;
@@ -489,7 +489,7 @@
     move-object/from16 v7, p2
 
     .line 601
-    invoke-virtual {v0, v7}, Lorg/telegram/ui/Components/PasscodeView;->setCurrentLockedSection(Lorg/fork/enums/LockedSection;)V
+    invoke-virtual {v0, v7}, Lorg/telegram/ui/Components/PasscodeView;->setCurrentLockedSection(Lcom/iMe/fork/enums/LockedSection;)V
 
     .line 604
     invoke-virtual {v0, v4}, Landroid/widget/FrameLayout;->setWillNotDraw(Z)V
@@ -1544,11 +1544,11 @@
     return-object p0
 .end method
 
-.method static synthetic access$1100(Lorg/telegram/ui/Components/PasscodeView;Lorg/fork/enums/PasscodeType;)Z
+.method static synthetic access$1100(Lorg/telegram/ui/Components/PasscodeView;Lcom/iMe/fork/enums/PasscodeType;)Z
     .locals 0
 
     .line 88
-    invoke-direct {p0, p1}, Lorg/telegram/ui/Components/PasscodeView;->isCurrentPasscodeType(Lorg/fork/enums/PasscodeType;)Z
+    invoke-direct {p0, p1}, Lorg/telegram/ui/Components/PasscodeView;->isCurrentPasscodeType(Lcom/iMe/fork/enums/PasscodeType;)Z
 
     move-result p0
 
@@ -1921,7 +1921,7 @@
 
     if-nez v0, :cond_2
 
-    iget-object v0, v1, Lorg/telegram/ui/Components/PasscodeView;->currentLockedSection:Lorg/fork/enums/LockedSection;
+    iget-object v0, v1, Lorg/telegram/ui/Components/PasscodeView;->currentLockedSection:Lcom/iMe/fork/enums/LockedSection;
 
     if-eqz v0, :cond_6
 
@@ -2363,7 +2363,7 @@
 
     if-eqz v0, :cond_0
 
-    iget-object v0, p0, Lorg/telegram/ui/Components/PasscodeView;->sectionPasscodeData:Lorg/fork/controller/LockedSectionsController$SectionPasscodeData;
+    iget-object v0, p0, Lorg/telegram/ui/Components/PasscodeView;->sectionPasscodeData:Lcom/iMe/fork/controller/LockedSectionsController$SectionPasscodeData;
 
     if-nez v0, :cond_0
 
@@ -2372,11 +2372,11 @@
     if-eqz v0, :cond_2
 
     :cond_0
-    iget-object v0, p0, Lorg/telegram/ui/Components/PasscodeView;->sectionPasscodeData:Lorg/fork/controller/LockedSectionsController$SectionPasscodeData;
+    iget-object v0, p0, Lorg/telegram/ui/Components/PasscodeView;->sectionPasscodeData:Lcom/iMe/fork/controller/LockedSectionsController$SectionPasscodeData;
 
     if-eqz v0, :cond_1
 
-    invoke-virtual {v0}, Lorg/fork/controller/LockedSectionsController$SectionPasscodeData;->getUseFingerprint()Z
+    invoke-virtual {v0}, Lcom/iMe/fork/controller/LockedSectionsController$SectionPasscodeData;->getUseFingerprint()Z
 
     move-result v0
 
@@ -2486,9 +2486,9 @@
 
     .line 1486
     :goto_0
-    sget-object v0, Lorg/fork/enums/PasscodeType;->PASSWORD:Lorg/fork/enums/PasscodeType;
+    sget-object v0, Lcom/iMe/fork/enums/PasscodeType;->PASSWORD:Lcom/iMe/fork/enums/PasscodeType;
 
-    invoke-direct {p0, v0}, Lorg/telegram/ui/Components/PasscodeView;->isCurrentPasscodeType(Lorg/fork/enums/PasscodeType;)Z
+    invoke-direct {p0, v0}, Lorg/telegram/ui/Components/PasscodeView;->isCurrentPasscodeType(Lcom/iMe/fork/enums/PasscodeType;)Z
 
     move-result v0
 
@@ -2547,14 +2547,14 @@
     move-result-wide v0
 
     .line 1205
-    iget-object v2, p0, Lorg/telegram/ui/Components/PasscodeView;->sectionPasscodeData:Lorg/fork/controller/LockedSectionsController$SectionPasscodeData;
+    iget-object v2, p0, Lorg/telegram/ui/Components/PasscodeView;->sectionPasscodeData:Lcom/iMe/fork/controller/LockedSectionsController$SectionPasscodeData;
 
     const-wide/16 v3, 0x0
 
     if-eqz v2, :cond_1
 
     .line 1206
-    invoke-virtual {v2}, Lorg/fork/controller/LockedSectionsController$SectionPasscodeData;->getLastUptimeMillis()J
+    invoke-virtual {v2}, Lcom/iMe/fork/controller/LockedSectionsController$SectionPasscodeData;->getLastUptimeMillis()J
 
     move-result-wide v5
 
@@ -2563,14 +2563,14 @@
     if-lez v2, :cond_0
 
     .line 1207
-    iget-object v2, p0, Lorg/telegram/ui/Components/PasscodeView;->sectionPasscodeData:Lorg/fork/controller/LockedSectionsController$SectionPasscodeData;
+    iget-object v2, p0, Lorg/telegram/ui/Components/PasscodeView;->sectionPasscodeData:Lcom/iMe/fork/controller/LockedSectionsController$SectionPasscodeData;
 
-    invoke-virtual {v2, v0, v1}, Lorg/fork/controller/LockedSectionsController$SectionPasscodeData;->reducePasscodeRetryTime(J)V
+    invoke-virtual {v2, v0, v1}, Lcom/iMe/fork/controller/LockedSectionsController$SectionPasscodeData;->reducePasscodeRetryTime(J)V
 
     .line 1208
-    iget-object v2, p0, Lorg/telegram/ui/Components/PasscodeView;->sectionPasscodeData:Lorg/fork/controller/LockedSectionsController$SectionPasscodeData;
+    iget-object v2, p0, Lorg/telegram/ui/Components/PasscodeView;->sectionPasscodeData:Lcom/iMe/fork/controller/LockedSectionsController$SectionPasscodeData;
 
-    invoke-virtual {v2}, Lorg/fork/controller/LockedSectionsController$SectionPasscodeData;->getPasscodeRetryInMs()J
+    invoke-virtual {v2}, Lcom/iMe/fork/controller/LockedSectionsController$SectionPasscodeData;->getPasscodeRetryInMs()J
 
     move-result-wide v5
 
@@ -2579,26 +2579,26 @@
     if-gez v2, :cond_0
 
     .line 1209
-    iget-object v2, p0, Lorg/telegram/ui/Components/PasscodeView;->sectionPasscodeData:Lorg/fork/controller/LockedSectionsController$SectionPasscodeData;
+    iget-object v2, p0, Lorg/telegram/ui/Components/PasscodeView;->sectionPasscodeData:Lcom/iMe/fork/controller/LockedSectionsController$SectionPasscodeData;
 
-    invoke-virtual {v2, v3, v4}, Lorg/fork/controller/LockedSectionsController$SectionPasscodeData;->setPasscodeRetryInMs(J)V
+    invoke-virtual {v2, v3, v4}, Lcom/iMe/fork/controller/LockedSectionsController$SectionPasscodeData;->setPasscodeRetryInMs(J)V
 
     .line 1212
     :cond_0
-    iget-object v2, p0, Lorg/telegram/ui/Components/PasscodeView;->sectionPasscodeData:Lorg/fork/controller/LockedSectionsController$SectionPasscodeData;
+    iget-object v2, p0, Lorg/telegram/ui/Components/PasscodeView;->sectionPasscodeData:Lcom/iMe/fork/controller/LockedSectionsController$SectionPasscodeData;
 
-    invoke-virtual {v2, v0, v1}, Lorg/fork/controller/LockedSectionsController$SectionPasscodeData;->setLastUptimeMillis(J)V
+    invoke-virtual {v2, v0, v1}, Lcom/iMe/fork/controller/LockedSectionsController$SectionPasscodeData;->setLastUptimeMillis(J)V
 
     .line 1213
-    invoke-direct {p0}, Lorg/telegram/ui/Components/PasscodeView;->getLockedSectionsController()Lorg/fork/controller/LockedSectionsController;
+    invoke-direct {p0}, Lorg/telegram/ui/Components/PasscodeView;->getLockedSectionsController()Lcom/iMe/fork/controller/LockedSectionsController;
 
     move-result-object v2
 
-    iget-object v5, p0, Lorg/telegram/ui/Components/PasscodeView;->currentLockedSection:Lorg/fork/enums/LockedSection;
+    iget-object v5, p0, Lorg/telegram/ui/Components/PasscodeView;->currentLockedSection:Lcom/iMe/fork/enums/LockedSection;
 
-    iget-object v6, p0, Lorg/telegram/ui/Components/PasscodeView;->sectionPasscodeData:Lorg/fork/controller/LockedSectionsController$SectionPasscodeData;
+    iget-object v6, p0, Lorg/telegram/ui/Components/PasscodeView;->sectionPasscodeData:Lcom/iMe/fork/controller/LockedSectionsController$SectionPasscodeData;
 
-    invoke-virtual {v2, v5, v6}, Lorg/fork/controller/LockedSectionsController;->setSectionsPasscodeData(Lorg/fork/enums/LockedSection;Lorg/fork/controller/LockedSectionsController$SectionPasscodeData;)V
+    invoke-virtual {v2, v5, v6}, Lcom/iMe/fork/controller/LockedSectionsController;->setSectionsPasscodeData(Lcom/iMe/fork/enums/LockedSection;Lcom/iMe/fork/controller/LockedSectionsController$SectionPasscodeData;)V
 
     goto :goto_0
 
@@ -2631,7 +2631,7 @@
     .line 1222
     :cond_2
     :goto_0
-    iget-object v2, p0, Lorg/telegram/ui/Components/PasscodeView;->sectionPasscodeData:Lorg/fork/controller/LockedSectionsController$SectionPasscodeData;
+    iget-object v2, p0, Lorg/telegram/ui/Components/PasscodeView;->sectionPasscodeData:Lcom/iMe/fork/controller/LockedSectionsController$SectionPasscodeData;
 
     if-nez v2, :cond_3
 
@@ -2656,16 +2656,16 @@
 
     if-lez v0, :cond_5
 
-    iget-object v0, p0, Lorg/telegram/ui/Components/PasscodeView;->sectionPasscodeData:Lorg/fork/controller/LockedSectionsController$SectionPasscodeData;
+    iget-object v0, p0, Lorg/telegram/ui/Components/PasscodeView;->sectionPasscodeData:Lcom/iMe/fork/controller/LockedSectionsController$SectionPasscodeData;
 
     if-eqz v0, :cond_6
 
     :cond_5
-    iget-object v0, p0, Lorg/telegram/ui/Components/PasscodeView;->sectionPasscodeData:Lorg/fork/controller/LockedSectionsController$SectionPasscodeData;
+    iget-object v0, p0, Lorg/telegram/ui/Components/PasscodeView;->sectionPasscodeData:Lcom/iMe/fork/controller/LockedSectionsController$SectionPasscodeData;
 
     if-eqz v0, :cond_b
 
-    invoke-virtual {v0}, Lorg/fork/controller/LockedSectionsController$SectionPasscodeData;->getPasscodeRetryInMs()J
+    invoke-virtual {v0}, Lcom/iMe/fork/controller/LockedSectionsController$SectionPasscodeData;->getPasscodeRetryInMs()J
 
     move-result-wide v5
 
@@ -2675,7 +2675,7 @@
 
     .line 1228
     :cond_6
-    iget-object v0, p0, Lorg/telegram/ui/Components/PasscodeView;->sectionPasscodeData:Lorg/fork/controller/LockedSectionsController$SectionPasscodeData;
+    iget-object v0, p0, Lorg/telegram/ui/Components/PasscodeView;->sectionPasscodeData:Lcom/iMe/fork/controller/LockedSectionsController$SectionPasscodeData;
 
     const-wide v3, 0x408f400000000000L    # 1000.0
 
@@ -2683,7 +2683,7 @@
 
     if-eqz v0, :cond_7
 
-    invoke-virtual {v0}, Lorg/fork/controller/LockedSectionsController$SectionPasscodeData;->getPasscodeRetryInMs()J
+    invoke-virtual {v0}, Lcom/iMe/fork/controller/LockedSectionsController$SectionPasscodeData;->getPasscodeRetryInMs()J
 
     move-result-wide v6
 
@@ -2821,9 +2821,9 @@
     invoke-virtual {v0, v2}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
     .line 1248
-    sget-object v0, Lorg/fork/enums/PasscodeType;->PIN:Lorg/fork/enums/PasscodeType;
+    sget-object v0, Lcom/iMe/fork/enums/PasscodeType;->PIN:Lcom/iMe/fork/enums/PasscodeType;
 
-    invoke-direct {p0, v0}, Lorg/telegram/ui/Components/PasscodeView;->isCurrentPasscodeType(Lorg/fork/enums/PasscodeType;)Z
+    invoke-direct {p0, v0}, Lorg/telegram/ui/Components/PasscodeView;->isCurrentPasscodeType(Lcom/iMe/fork/enums/PasscodeType;)Z
 
     move-result v0
 
@@ -2838,9 +2838,9 @@
 
     .line 1250
     :cond_c
-    sget-object v0, Lorg/fork/enums/PasscodeType;->PASSWORD:Lorg/fork/enums/PasscodeType;
+    sget-object v0, Lcom/iMe/fork/enums/PasscodeType;->PASSWORD:Lcom/iMe/fork/enums/PasscodeType;
 
-    invoke-direct {p0, v0}, Lorg/telegram/ui/Components/PasscodeView;->isCurrentPasscodeType(Lorg/fork/enums/PasscodeType;)Z
+    invoke-direct {p0, v0}, Lorg/telegram/ui/Components/PasscodeView;->isCurrentPasscodeType(Lcom/iMe/fork/enums/PasscodeType;)Z
 
     move-result v0
 
@@ -2856,55 +2856,55 @@
     return-void
 .end method
 
-.method private getLockedSectionsController()Lorg/fork/controller/LockedSectionsController;
+.method private getLockedSectionsController()Lcom/iMe/fork/controller/LockedSectionsController;
     .locals 1
 
     .line 179
     iget v0, p0, Lorg/telegram/ui/Components/PasscodeView;->currentAccount:I
 
-    invoke-static {v0}, Lorg/fork/controller/LockedSectionsController;->getInstance(I)Lorg/fork/controller/LockedSectionsController;
+    invoke-static {v0}, Lcom/iMe/fork/controller/LockedSectionsController;->getInstance(I)Lcom/iMe/fork/controller/LockedSectionsController;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method private getWalletFingerprintController()Lorg/fork/controller/WalletFingerprintController;
+.method private getWalletFingerprintController()Lcom/iMe/fork/controller/WalletFingerprintController;
     .locals 1
 
     .line 183
     iget v0, p0, Lorg/telegram/ui/Components/PasscodeView;->currentAccount:I
 
-    invoke-static {v0}, Lorg/fork/controller/WalletFingerprintController;->getInstance(I)Lorg/fork/controller/WalletFingerprintController;
+    invoke-static {v0}, Lcom/iMe/fork/controller/WalletFingerprintController;->getInstance(I)Lcom/iMe/fork/controller/WalletFingerprintController;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method private isCurrentPasscodeType(Lorg/fork/enums/PasscodeType;)Z
+.method private isCurrentPasscodeType(Lcom/iMe/fork/enums/PasscodeType;)Z
     .locals 2
 
     .line 187
-    iget-object v0, p0, Lorg/telegram/ui/Components/PasscodeView;->sectionPasscodeData:Lorg/fork/controller/LockedSectionsController$SectionPasscodeData;
+    iget-object v0, p0, Lorg/telegram/ui/Components/PasscodeView;->sectionPasscodeData:Lcom/iMe/fork/controller/LockedSectionsController$SectionPasscodeData;
 
     if-nez v0, :cond_0
 
     sget v0, Lorg/telegram/messenger/SharedConfig;->passcodeType:I
 
-    invoke-virtual {p1}, Lorg/fork/enums/PasscodeType;->getId()I
+    invoke-virtual {p1}, Lcom/iMe/fork/enums/PasscodeType;->getId()I
 
     move-result v1
 
     if-eq v0, v1, :cond_1
 
     :cond_0
-    iget-object v0, p0, Lorg/telegram/ui/Components/PasscodeView;->sectionPasscodeData:Lorg/fork/controller/LockedSectionsController$SectionPasscodeData;
+    iget-object v0, p0, Lorg/telegram/ui/Components/PasscodeView;->sectionPasscodeData:Lcom/iMe/fork/controller/LockedSectionsController$SectionPasscodeData;
 
     if-eqz v0, :cond_2
 
     .line 188
-    invoke-virtual {v0}, Lorg/fork/controller/LockedSectionsController$SectionPasscodeData;->getPasscodeType()Lorg/fork/enums/PasscodeType;
+    invoke-virtual {v0}, Lcom/iMe/fork/controller/LockedSectionsController$SectionPasscodeData;->getPasscodeType()Lcom/iMe/fork/enums/PasscodeType;
 
     move-result-object v0
 
@@ -2916,7 +2916,7 @@
     if-eqz v0, :cond_3
 
     :cond_2
-    sget-object v0, Lorg/fork/enums/PasscodeType;->PIN:Lorg/fork/enums/PasscodeType;
+    sget-object v0, Lcom/iMe/fork/enums/PasscodeType;->PIN:Lcom/iMe/fork/enums/PasscodeType;
 
     if-ne p1, v0, :cond_4
 
@@ -2940,7 +2940,7 @@
     .locals 2
 
     .line 193
-    invoke-direct {p0}, Lorg/telegram/ui/Components/PasscodeView;->getWalletFingerprintController()Lorg/fork/controller/WalletFingerprintController;
+    invoke-direct {p0}, Lorg/telegram/ui/Components/PasscodeView;->getWalletFingerprintController()Lcom/iMe/fork/controller/WalletFingerprintController;
 
     move-result-object v0
 
@@ -2949,13 +2949,13 @@
 
     if-eqz v1, :cond_0
 
-    invoke-virtual {v0}, Lorg/fork/controller/WalletFingerprintController;->isWalletFingerprintUnlockEnabled()Z
+    invoke-virtual {v0}, Lcom/iMe/fork/controller/WalletFingerprintController;->isWalletFingerprintUnlockEnabled()Z
 
     move-result v1
 
     if-eqz v1, :cond_0
 
-    invoke-virtual {v0}, Lorg/fork/controller/WalletFingerprintController;->getWalletPinCodeEncrypted()Ljava/lang/String;
+    invoke-virtual {v0}, Lcom/iMe/fork/controller/WalletFingerprintController;->getWalletPinCodeEncrypted()Ljava/lang/String;
 
     move-result-object v0
 
@@ -3812,15 +3812,15 @@
     invoke-static {}, Lorg/telegram/messenger/FingerprintController;->deleteInvalidKey()V
 
     .line 1074
-    invoke-direct {p0}, Lorg/telegram/ui/Components/PasscodeView;->getWalletFingerprintController()Lorg/fork/controller/WalletFingerprintController;
+    invoke-direct {p0}, Lorg/telegram/ui/Components/PasscodeView;->getWalletFingerprintController()Lcom/iMe/fork/controller/WalletFingerprintController;
 
     move-result-object p1
 
     .line 1075
-    invoke-virtual {p1, v2}, Lorg/fork/controller/WalletFingerprintController;->setWalletPinCodeEncrypted(Ljava/lang/String;)V
+    invoke-virtual {p1, v2}, Lcom/iMe/fork/controller/WalletFingerprintController;->setWalletPinCodeEncrypted(Ljava/lang/String;)V
 
     .line 1076
-    invoke-virtual {p1}, Lorg/fork/controller/WalletFingerprintController;->saveConfig()V
+    invoke-virtual {p1}, Lcom/iMe/fork/controller/WalletFingerprintController;->saveConfig()V
 
     .line 1078
     :cond_0
@@ -3838,7 +3838,7 @@
 
     .line 1081
     :cond_1
-    invoke-direct {p0}, Lorg/telegram/ui/Components/PasscodeView;->getLockedSectionsController()Lorg/fork/controller/LockedSectionsController;
+    invoke-direct {p0}, Lorg/telegram/ui/Components/PasscodeView;->getLockedSectionsController()Lcom/iMe/fork/controller/LockedSectionsController;
 
     move-result-object v0
 
@@ -3853,16 +3853,16 @@
 
     if-lez p1, :cond_2
 
-    iget-object p1, p0, Lorg/telegram/ui/Components/PasscodeView;->sectionPasscodeData:Lorg/fork/controller/LockedSectionsController$SectionPasscodeData;
+    iget-object p1, p0, Lorg/telegram/ui/Components/PasscodeView;->sectionPasscodeData:Lcom/iMe/fork/controller/LockedSectionsController$SectionPasscodeData;
 
     if-eqz p1, :cond_3
 
     :cond_2
-    iget-object p1, p0, Lorg/telegram/ui/Components/PasscodeView;->sectionPasscodeData:Lorg/fork/controller/LockedSectionsController$SectionPasscodeData;
+    iget-object p1, p0, Lorg/telegram/ui/Components/PasscodeView;->sectionPasscodeData:Lcom/iMe/fork/controller/LockedSectionsController$SectionPasscodeData;
 
     if-eqz p1, :cond_4
 
-    invoke-virtual {p1}, Lorg/fork/controller/LockedSectionsController$SectionPasscodeData;->getPasscodeRetryInMs()J
+    invoke-virtual {p1}, Lcom/iMe/fork/controller/LockedSectionsController$SectionPasscodeData;->getPasscodeRetryInMs()J
 
     move-result-wide v3
 
@@ -3875,9 +3875,9 @@
 
     .line 1088
     :cond_4
-    sget-object p1, Lorg/fork/enums/PasscodeType;->PIN:Lorg/fork/enums/PasscodeType;
+    sget-object p1, Lcom/iMe/fork/enums/PasscodeType;->PIN:Lcom/iMe/fork/enums/PasscodeType;
 
-    invoke-direct {p0, p1}, Lorg/telegram/ui/Components/PasscodeView;->isCurrentPasscodeType(Lorg/fork/enums/PasscodeType;)Z
+    invoke-direct {p0, p1}, Lorg/telegram/ui/Components/PasscodeView;->isCurrentPasscodeType(Lcom/iMe/fork/enums/PasscodeType;)Z
 
     move-result p1
 
@@ -3894,9 +3894,9 @@
 
     .line 1090
     :cond_5
-    sget-object p1, Lorg/fork/enums/PasscodeType;->PASSWORD:Lorg/fork/enums/PasscodeType;
+    sget-object p1, Lcom/iMe/fork/enums/PasscodeType;->PASSWORD:Lcom/iMe/fork/enums/PasscodeType;
 
-    invoke-direct {p0, p1}, Lorg/telegram/ui/Components/PasscodeView;->isCurrentPasscodeType(Lorg/fork/enums/PasscodeType;)Z
+    invoke-direct {p0, p1}, Lorg/telegram/ui/Components/PasscodeView;->isCurrentPasscodeType(Lcom/iMe/fork/enums/PasscodeType;)Z
 
     move-result p1
 
@@ -3933,39 +3933,39 @@
 
     .line 1098
     :cond_7
-    iget-object v3, p0, Lorg/telegram/ui/Components/PasscodeView;->sectionPasscodeData:Lorg/fork/controller/LockedSectionsController$SectionPasscodeData;
+    iget-object v3, p0, Lorg/telegram/ui/Components/PasscodeView;->sectionPasscodeData:Lcom/iMe/fork/controller/LockedSectionsController$SectionPasscodeData;
 
     const/4 v4, 0x1
 
     if-eqz v3, :cond_a
 
     .line 1099
-    iget-object v3, p0, Lorg/telegram/ui/Components/PasscodeView;->currentLockedSection:Lorg/fork/enums/LockedSection;
+    iget-object v3, p0, Lorg/telegram/ui/Components/PasscodeView;->currentLockedSection:Lcom/iMe/fork/enums/LockedSection;
 
-    invoke-virtual {v0, v3, p1}, Lorg/fork/controller/LockedSectionsController;->checkSectionPasscode(Lorg/fork/enums/LockedSection;Ljava/lang/String;)Z
+    invoke-virtual {v0, v3, p1}, Lcom/iMe/fork/controller/LockedSectionsController;->checkSectionPasscode(Lcom/iMe/fork/enums/LockedSection;Ljava/lang/String;)Z
 
     move-result p1
 
     if-nez p1, :cond_e
 
     .line 1100
-    iget-object p1, p0, Lorg/telegram/ui/Components/PasscodeView;->currentLockedSection:Lorg/fork/enums/LockedSection;
+    iget-object p1, p0, Lorg/telegram/ui/Components/PasscodeView;->currentLockedSection:Lcom/iMe/fork/enums/LockedSection;
 
-    invoke-virtual {v0, p1}, Lorg/fork/controller/LockedSectionsController;->increaseBadPasscodeTries(Lorg/fork/enums/LockedSection;)V
+    invoke-virtual {v0, p1}, Lcom/iMe/fork/controller/LockedSectionsController;->increaseBadPasscodeTries(Lcom/iMe/fork/enums/LockedSection;)V
 
     .line 1101
-    iget-object p1, p0, Lorg/telegram/ui/Components/PasscodeView;->currentLockedSection:Lorg/fork/enums/LockedSection;
+    iget-object p1, p0, Lorg/telegram/ui/Components/PasscodeView;->currentLockedSection:Lcom/iMe/fork/enums/LockedSection;
 
-    invoke-virtual {v0, p1}, Lorg/fork/controller/LockedSectionsController;->getSectionsPasscodeData(Lorg/fork/enums/LockedSection;)Lorg/fork/controller/LockedSectionsController$SectionPasscodeData;
+    invoke-virtual {v0, p1}, Lcom/iMe/fork/controller/LockedSectionsController;->getSectionsPasscodeData(Lcom/iMe/fork/enums/LockedSection;)Lcom/iMe/fork/controller/LockedSectionsController$SectionPasscodeData;
 
     move-result-object p1
 
-    iput-object p1, p0, Lorg/telegram/ui/Components/PasscodeView;->sectionPasscodeData:Lorg/fork/controller/LockedSectionsController$SectionPasscodeData;
+    iput-object p1, p0, Lorg/telegram/ui/Components/PasscodeView;->sectionPasscodeData:Lcom/iMe/fork/controller/LockedSectionsController$SectionPasscodeData;
 
     if-eqz p1, :cond_8
 
     .line 1102
-    invoke-virtual {p1}, Lorg/fork/controller/LockedSectionsController$SectionPasscodeData;->getPasscodeRetryInMs()J
+    invoke-virtual {p1}, Lcom/iMe/fork/controller/LockedSectionsController$SectionPasscodeData;->getPasscodeRetryInMs()J
 
     move-result-wide v0
 
@@ -4081,26 +4081,26 @@
 
     .line 1136
     :cond_e
-    iget-object p1, p0, Lorg/telegram/ui/Components/PasscodeView;->sectionPasscodeData:Lorg/fork/controller/LockedSectionsController$SectionPasscodeData;
+    iget-object p1, p0, Lorg/telegram/ui/Components/PasscodeView;->sectionPasscodeData:Lcom/iMe/fork/controller/LockedSectionsController$SectionPasscodeData;
 
     const/4 v2, 0x0
 
     if-eqz p1, :cond_f
 
     .line 1137
-    invoke-virtual {p1, v2}, Lorg/fork/controller/LockedSectionsController$SectionPasscodeData;->setBadPasscodeTries(I)V
+    invoke-virtual {p1, v2}, Lcom/iMe/fork/controller/LockedSectionsController$SectionPasscodeData;->setBadPasscodeTries(I)V
 
     .line 1138
-    iget-object p1, p0, Lorg/telegram/ui/Components/PasscodeView;->sectionPasscodeData:Lorg/fork/controller/LockedSectionsController$SectionPasscodeData;
+    iget-object p1, p0, Lorg/telegram/ui/Components/PasscodeView;->sectionPasscodeData:Lcom/iMe/fork/controller/LockedSectionsController$SectionPasscodeData;
 
-    invoke-virtual {p1, v2}, Lorg/fork/controller/LockedSectionsController$SectionPasscodeData;->setSectionLocked(Z)V
+    invoke-virtual {p1, v2}, Lcom/iMe/fork/controller/LockedSectionsController$SectionPasscodeData;->setSectionLocked(Z)V
 
     .line 1139
-    iget-object p1, p0, Lorg/telegram/ui/Components/PasscodeView;->currentLockedSection:Lorg/fork/enums/LockedSection;
+    iget-object p1, p0, Lorg/telegram/ui/Components/PasscodeView;->currentLockedSection:Lcom/iMe/fork/enums/LockedSection;
 
-    iget-object v3, p0, Lorg/telegram/ui/Components/PasscodeView;->sectionPasscodeData:Lorg/fork/controller/LockedSectionsController$SectionPasscodeData;
+    iget-object v3, p0, Lorg/telegram/ui/Components/PasscodeView;->sectionPasscodeData:Lcom/iMe/fork/controller/LockedSectionsController$SectionPasscodeData;
 
-    invoke-virtual {v0, p1, v3}, Lorg/fork/controller/LockedSectionsController;->setSectionsPasscodeData(Lorg/fork/enums/LockedSection;Lorg/fork/controller/LockedSectionsController$SectionPasscodeData;)V
+    invoke-virtual {v0, p1, v3}, Lcom/iMe/fork/controller/LockedSectionsController;->setSectionsPasscodeData(Lcom/iMe/fork/enums/LockedSection;Lcom/iMe/fork/controller/LockedSectionsController$SectionPasscodeData;)V
 
     goto :goto_1
 
@@ -4141,7 +4141,7 @@
 
     .line 1150
     :cond_10
-    iget-object p1, p0, Lorg/telegram/ui/Components/PasscodeView;->sectionPasscodeData:Lorg/fork/controller/LockedSectionsController$SectionPasscodeData;
+    iget-object p1, p0, Lorg/telegram/ui/Components/PasscodeView;->sectionPasscodeData:Lcom/iMe/fork/controller/LockedSectionsController$SectionPasscodeData;
 
     if-nez p1, :cond_11
 
@@ -4387,11 +4387,11 @@
     return-void
 .end method
 
-.method public getCurrentLockedSection()Lorg/fork/enums/LockedSection;
+.method public getCurrentLockedSection()Lcom/iMe/fork/enums/LockedSection;
     .locals 1
 
     .line 142
-    iget-object v0, p0, Lorg/telegram/ui/Components/PasscodeView;->currentLockedSection:Lorg/fork/enums/LockedSection;
+    iget-object v0, p0, Lorg/telegram/ui/Components/PasscodeView;->currentLockedSection:Lcom/iMe/fork/enums/LockedSection;
 
     return-object v0
 .end method
@@ -4492,9 +4492,9 @@
     iput v1, p0, Lorg/telegram/ui/Components/PasscodeView;->keyboardHeight:I
 
     .line 1862
-    sget-object v0, Lorg/fork/enums/PasscodeType;->PASSWORD:Lorg/fork/enums/PasscodeType;
+    sget-object v0, Lcom/iMe/fork/enums/PasscodeType;->PASSWORD:Lcom/iMe/fork/enums/PasscodeType;
 
-    invoke-direct {p0, v0}, Lorg/telegram/ui/Components/PasscodeView;->isCurrentPasscodeType(Lorg/fork/enums/PasscodeType;)Z
+    invoke-direct {p0, v0}, Lorg/telegram/ui/Components/PasscodeView;->isCurrentPasscodeType(Lcom/iMe/fork/enums/PasscodeType;)Z
 
     move-result v0
 
@@ -4741,9 +4741,9 @@
     .line 1752
     iget-object v5, p0, Lorg/telegram/ui/Components/PasscodeView;->imageView:Lorg/telegram/ui/Components/RLottieImageView;
 
-    sget-object v10, Lorg/fork/enums/PasscodeType;->PIN:Lorg/fork/enums/PasscodeType;
+    sget-object v10, Lcom/iMe/fork/enums/PasscodeType;->PIN:Lcom/iMe/fork/enums/PasscodeType;
 
-    invoke-direct {p0, v10}, Lorg/telegram/ui/Components/PasscodeView;->isCurrentPasscodeType(Lorg/fork/enums/PasscodeType;)Z
+    invoke-direct {p0, v10}, Lorg/telegram/ui/Components/PasscodeView;->isCurrentPasscodeType(Lcom/iMe/fork/enums/PasscodeType;)Z
 
     move-result v11
 
@@ -4781,7 +4781,7 @@
     check-cast v5, Landroid/widget/FrameLayout$LayoutParams;
 
     .line 1755
-    invoke-direct {p0, v10}, Lorg/telegram/ui/Components/PasscodeView;->isCurrentPasscodeType(Lorg/fork/enums/PasscodeType;)Z
+    invoke-direct {p0, v10}, Lorg/telegram/ui/Components/PasscodeView;->isCurrentPasscodeType(Lcom/iMe/fork/enums/PasscodeType;)Z
 
     move-result v6
 
@@ -4815,7 +4815,7 @@
 
     div-int/2addr v6, v9
 
-    invoke-direct {p0, v10}, Lorg/telegram/ui/Components/PasscodeView;->isCurrentPasscodeType(Lorg/fork/enums/PasscodeType;)Z
+    invoke-direct {p0, v10}, Lorg/telegram/ui/Components/PasscodeView;->isCurrentPasscodeType(Lcom/iMe/fork/enums/PasscodeType;)Z
 
     move-result v7
 
@@ -5002,9 +5002,9 @@
     .line 1782
     div-int/lit8 v6, v1, 0x3
 
-    sget-object v7, Lorg/fork/enums/PasscodeType;->PIN:Lorg/fork/enums/PasscodeType;
+    sget-object v7, Lcom/iMe/fork/enums/PasscodeType;->PIN:Lcom/iMe/fork/enums/PasscodeType;
 
-    invoke-direct {p0, v7}, Lorg/telegram/ui/Components/PasscodeView;->isCurrentPasscodeType(Lorg/fork/enums/PasscodeType;)Z
+    invoke-direct {p0, v7}, Lorg/telegram/ui/Components/PasscodeView;->isCurrentPasscodeType(Lcom/iMe/fork/enums/PasscodeType;)Z
 
     move-result v10
 
@@ -5098,7 +5098,7 @@
 
     add-int/2addr v1, v2
 
-    invoke-direct {p0, v7}, Lorg/telegram/ui/Components/PasscodeView;->isCurrentPasscodeType(Lorg/fork/enums/PasscodeType;)Z
+    invoke-direct {p0, v7}, Lorg/telegram/ui/Components/PasscodeView;->isCurrentPasscodeType(Lcom/iMe/fork/enums/PasscodeType;)Z
 
     move-result v2
 
@@ -5542,9 +5542,9 @@
     if-eqz v0, :cond_2
 
     .line 1268
-    sget-object v0, Lorg/fork/enums/PasscodeType;->PASSWORD:Lorg/fork/enums/PasscodeType;
+    sget-object v0, Lcom/iMe/fork/enums/PasscodeType;->PASSWORD:Lcom/iMe/fork/enums/PasscodeType;
 
-    invoke-direct {p0, v0}, Lorg/telegram/ui/Components/PasscodeView;->isCurrentPasscodeType(Lorg/fork/enums/PasscodeType;)Z
+    invoke-direct {p0, v0}, Lorg/telegram/ui/Components/PasscodeView;->isCurrentPasscodeType(Lcom/iMe/fork/enums/PasscodeType;)Z
 
     move-result v0
 
@@ -5625,9 +5625,9 @@
     check-cast v2, Landroid/app/Activity;
 
     .line 1498
-    sget-object v3, Lorg/fork/enums/PasscodeType;->PASSWORD:Lorg/fork/enums/PasscodeType;
+    sget-object v3, Lcom/iMe/fork/enums/PasscodeType;->PASSWORD:Lcom/iMe/fork/enums/PasscodeType;
 
-    invoke-direct {v0, v3}, Lorg/telegram/ui/Components/PasscodeView;->isCurrentPasscodeType(Lorg/fork/enums/PasscodeType;)Z
+    invoke-direct {v0, v3}, Lorg/telegram/ui/Components/PasscodeView;->isCurrentPasscodeType(Lcom/iMe/fork/enums/PasscodeType;)Z
 
     move-result v4
 
@@ -5991,14 +5991,14 @@
 
     .line 1563
     :cond_e
-    iget-object v4, v0, Lorg/telegram/ui/Components/PasscodeView;->currentLockedSection:Lorg/fork/enums/LockedSection;
+    iget-object v4, v0, Lorg/telegram/ui/Components/PasscodeView;->currentLockedSection:Lcom/iMe/fork/enums/LockedSection;
 
     if-eqz v4, :cond_10
 
     .line 1564
     iget-object v5, v0, Lorg/telegram/ui/Components/PasscodeView;->passcodeTextView:Landroid/widget/TextView;
 
-    sget-object v6, Lorg/fork/enums/LockedSection;->ARCHIVE:Lorg/fork/enums/LockedSection;
+    sget-object v6, Lcom/iMe/fork/enums/LockedSection;->ARCHIVE:Lcom/iMe/fork/enums/LockedSection;
 
     if-ne v4, v6, :cond_f
 
@@ -6034,9 +6034,9 @@
 
     .line 1568
     :goto_5
-    sget-object v4, Lorg/fork/enums/PasscodeType;->PIN:Lorg/fork/enums/PasscodeType;
+    sget-object v4, Lcom/iMe/fork/enums/PasscodeType;->PIN:Lcom/iMe/fork/enums/PasscodeType;
 
-    invoke-direct {v0, v4}, Lorg/telegram/ui/Components/PasscodeView;->isCurrentPasscodeType(Lorg/fork/enums/PasscodeType;)Z
+    invoke-direct {v0, v4}, Lorg/telegram/ui/Components/PasscodeView;->isCurrentPasscodeType(Lcom/iMe/fork/enums/PasscodeType;)Z
 
     move-result v4
 
@@ -6083,7 +6083,7 @@
 
     .line 1576
     :cond_12
-    invoke-direct {v0, v3}, Lorg/telegram/ui/Components/PasscodeView;->isCurrentPasscodeType(Lorg/fork/enums/PasscodeType;)Z
+    invoke-direct {v0, v3}, Lorg/telegram/ui/Components/PasscodeView;->isCurrentPasscodeType(Lcom/iMe/fork/enums/PasscodeType;)Z
 
     move-result v3
 
@@ -6271,24 +6271,24 @@
     return-void
 .end method
 
-.method public setCurrentLockedSection(Lorg/fork/enums/LockedSection;)V
+.method public setCurrentLockedSection(Lcom/iMe/fork/enums/LockedSection;)V
     .locals 1
 
     .line 137
-    iput-object p1, p0, Lorg/telegram/ui/Components/PasscodeView;->currentLockedSection:Lorg/fork/enums/LockedSection;
+    iput-object p1, p0, Lorg/telegram/ui/Components/PasscodeView;->currentLockedSection:Lcom/iMe/fork/enums/LockedSection;
 
     .line 138
-    invoke-direct {p0}, Lorg/telegram/ui/Components/PasscodeView;->getLockedSectionsController()Lorg/fork/controller/LockedSectionsController;
+    invoke-direct {p0}, Lorg/telegram/ui/Components/PasscodeView;->getLockedSectionsController()Lcom/iMe/fork/controller/LockedSectionsController;
 
     move-result-object p1
 
-    iget-object v0, p0, Lorg/telegram/ui/Components/PasscodeView;->currentLockedSection:Lorg/fork/enums/LockedSection;
+    iget-object v0, p0, Lorg/telegram/ui/Components/PasscodeView;->currentLockedSection:Lcom/iMe/fork/enums/LockedSection;
 
-    invoke-virtual {p1, v0}, Lorg/fork/controller/LockedSectionsController;->getSectionsPasscodeData(Lorg/fork/enums/LockedSection;)Lorg/fork/controller/LockedSectionsController$SectionPasscodeData;
+    invoke-virtual {p1, v0}, Lcom/iMe/fork/controller/LockedSectionsController;->getSectionsPasscodeData(Lcom/iMe/fork/enums/LockedSection;)Lcom/iMe/fork/controller/LockedSectionsController$SectionPasscodeData;
 
     move-result-object p1
 
-    iput-object p1, p0, Lorg/telegram/ui/Components/PasscodeView;->sectionPasscodeData:Lorg/fork/controller/LockedSectionsController$SectionPasscodeData;
+    iput-object p1, p0, Lorg/telegram/ui/Components/PasscodeView;->sectionPasscodeData:Lcom/iMe/fork/controller/LockedSectionsController$SectionPasscodeData;
 
     return-void
 .end method

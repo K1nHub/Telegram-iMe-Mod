@@ -3,8 +3,8 @@ package kotlin.collections;
 import java.util.ListIterator;
 import java.util.NoSuchElementException;
 import kotlin.jvm.internal.markers.KMappedMarker;
-import p034j$.util.Iterator;
-import p034j$.util.function.Consumer;
+import p035j$.util.Iterator;
+import p035j$.util.function.Consumer;
 /* compiled from: Collections.kt */
 /* loaded from: classes4.dex */
 public final class EmptyIterator implements ListIterator, KMappedMarker, Iterator {
@@ -15,12 +15,12 @@ public final class EmptyIterator implements ListIterator, KMappedMarker, Iterato
         throw new UnsupportedOperationException("Operation is not supported for read-only collection");
     }
 
-    @Override // p034j$.util.Iterator
+    @Override // p035j$.util.Iterator
     public /* synthetic */ void forEachRemaining(Consumer consumer) {
         Iterator.CC.$default$forEachRemaining(this, consumer);
     }
 
-    @Override // java.util.ListIterator, java.util.Iterator, p034j$.util.Iterator
+    @Override // java.util.ListIterator, java.util.Iterator, p035j$.util.Iterator
     public boolean hasNext() {
         return false;
     }
@@ -40,7 +40,7 @@ public final class EmptyIterator implements ListIterator, KMappedMarker, Iterato
         return -1;
     }
 
-    @Override // java.util.ListIterator, java.util.Iterator, p034j$.util.Iterator
+    @Override // java.util.ListIterator, java.util.Iterator, p035j$.util.Iterator
     public void remove() {
         throw new UnsupportedOperationException("Operation is not supported for read-only collection");
     }
@@ -53,7 +53,7 @@ public final class EmptyIterator implements ListIterator, KMappedMarker, Iterato
     private EmptyIterator() {
     }
 
-    @Override // java.util.ListIterator, java.util.Iterator, p034j$.util.Iterator
+    @Override // java.util.ListIterator, java.util.Iterator, p035j$.util.Iterator
     public Void next() {
         throw new NoSuchElementException();
     }

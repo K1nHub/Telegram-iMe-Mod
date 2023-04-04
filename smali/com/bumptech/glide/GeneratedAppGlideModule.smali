@@ -7,7 +7,7 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 15
+    .line 16
     invoke-direct {p0}, Lcom/bumptech/glide/module/AppGlideModule;-><init>()V
 
     return-void
@@ -15,7 +15,8 @@
 
 
 # virtual methods
-.method abstract getExcludedModuleClasses()Ljava/util/Set;
+.method getExcludedModuleClasses()Ljava/util/Set;
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -24,6 +25,13 @@
             "*>;>;"
         }
     .end annotation
+
+    .line 20
+    new-instance v0, Ljava/util/HashSet;
+
+    invoke-direct {v0}, Ljava/util/HashSet;-><init>()V
+
+    return-object v0
 .end method
 
 .method getRequestManagerFactory()Lcom/bumptech/glide/manager/RequestManagerRetriever$RequestManagerFactory;

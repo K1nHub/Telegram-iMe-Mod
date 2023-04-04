@@ -1,6 +1,7 @@
 package com.bumptech.glide.load.resource.bitmap;
 
 import android.graphics.Bitmap;
+import android.os.Build;
 import android.os.ParcelFileDescriptor;
 import com.bumptech.glide.load.Options;
 import com.bumptech.glide.load.ResourceDecoder;
@@ -16,7 +17,12 @@ public final class ParcelFileDescriptorBitmapDecoder implements ResourceDecoder<
 
     @Override // com.bumptech.glide.load.ResourceDecoder
     public boolean handles(ParcelFileDescriptor parcelFileDescriptor, Options options) {
-        return this.downsampler.handles(parcelFileDescriptor);
+        return isSafeToTryDecoding(parcelFileDescriptor) && this.downsampler.handles(parcelFileDescriptor);
+    }
+
+    private boolean isSafeToTryDecoding(ParcelFileDescriptor parcelFileDescriptor) {
+        String str = Build.MANUFACTURER;
+        return !("HUAWEI".equalsIgnoreCase(str) || "HONOR".equalsIgnoreCase(str)) || parcelFileDescriptor.getStatSize() <= 536870912;
     }
 
     @Override // com.bumptech.glide.load.ResourceDecoder

@@ -416,14 +416,6 @@
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$J16IIzllQPWFKFiL-6g2yHbyrwU(Lorg/telegram/ui/Components/SharedMediaLayout;J)V
-    .locals 0
-
-    invoke-direct {p0, p1, p2}, Lorg/telegram/ui/Components/SharedMediaLayout;->lambda$forwardCloud$0(J)V
-
-    return-void
-.end method
-
 .method public static synthetic $r8$lambda$JdFmi3cmYHly9g4n05EFk3_XQTo(Lorg/telegram/ui/Components/SharedMediaLayout;Lorg/telegram/tgnet/TLRPC$TL_error;IILorg/telegram/tgnet/TLObject;)V
     .locals 0
 
@@ -528,6 +520,14 @@
     .locals 0
 
     invoke-direct {p0, p1, p2, p3, p4}, Lorg/telegram/ui/Components/SharedMediaLayout;->lambda$loadFastScrollData$19(IILorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
+
+    return-void
+.end method
+
+.method public static synthetic $r8$lambda$oJJc0JDOt6EVxJ7o-bqbTe61EWI(Lorg/telegram/ui/Components/SharedMediaLayout;J)V
+    .locals 0
+
+    invoke-direct {p0, p1, p2}, Lorg/telegram/ui/Components/SharedMediaLayout;->lambda$forwardCloud$0(J)V
 
     return-void
 .end method
@@ -663,9 +663,9 @@
     iput-object v3, v0, Lorg/telegram/ui/Components/SharedMediaLayout;->audioCache:Ljava/util/ArrayList;
 
     .line 584
-    new-instance v3, Lorg/telegram/ui/Components/SharedMediaLayout$$ExternalSyntheticLambda11;
+    new-instance v3, Lorg/telegram/ui/Components/SharedMediaLayout$$ExternalSyntheticLambda12;
 
-    invoke-direct {v3, v0}, Lorg/telegram/ui/Components/SharedMediaLayout$$ExternalSyntheticLambda11;-><init>(Lorg/telegram/ui/Components/SharedMediaLayout;)V
+    invoke-direct {v3, v0}, Lorg/telegram/ui/Components/SharedMediaLayout$$ExternalSyntheticLambda12;-><init>(Lorg/telegram/ui/Components/SharedMediaLayout;)V
 
     iput-object v3, v0, Lorg/telegram/ui/Components/SharedMediaLayout;->hideFloatingDateRunnable:Ljava/lang/Runnable;
 
@@ -789,11 +789,11 @@
     move-wide/from16 v11, v18
 
     :goto_0
-    invoke-virtual/range {p9 .. p9}, Lorg/telegram/ui/ActionBar/BaseFragment;->getMusicController()Lorg/fork/controller/MusicController;
+    invoke-virtual/range {p9 .. p9}, Lorg/telegram/ui/ActionBar/BaseFragment;->getMusicController()Lcom/iMe/fork/controller/MusicController;
 
     move-result-object v8
 
-    invoke-virtual {v8, v1, v2}, Lorg/fork/controller/MusicController;->getPlaylistForDialog(J)Ljava/util/ArrayList;
+    invoke-virtual {v8, v1, v2}, Lcom/iMe/fork/controller/MusicController;->getPlaylistForDialog(J)Ljava/util/ArrayList;
 
     move-result-object v16
 
@@ -1236,7 +1236,7 @@
 
     if-eqz v13, :cond_c
 
-    sget v13, Lcom/smedialink/common/IdFabric$ViewTypes;->SHARED_AUDIO_CELL_MUSIC:I
+    sget v13, Lcom/iMe/common/IdFabric$ViewTypes;->SHARED_AUDIO_CELL_MUSIC:I
 
     goto :goto_9
 
@@ -2361,7 +2361,7 @@
     .line 1816
     new-instance v1, Lorg/telegram/ui/Components/SharedMediaLayout$SharedDocumentsAdapter;
 
-    sget v2, Lcom/smedialink/common/IdFabric$CustomType;->MEDIA_TAB_PLAYLIST:I
+    sget v2, Lcom/iMe/common/IdFabric$CustomType;->MEDIA_TAB_PLAYLIST:I
 
     invoke-direct {v1, v0, v7, v2}, Lorg/telegram/ui/Components/SharedMediaLayout$SharedDocumentsAdapter;-><init>(Lorg/telegram/ui/Components/SharedMediaLayout;Landroid/content/Context;I)V
 
@@ -4818,7 +4818,7 @@
 
     move-result v3
 
-    sget v4, Lcom/smedialink/common/IdFabric$CustomType;->MEDIA_TAB_PLAYLIST:I
+    sget v4, Lcom/iMe/common/IdFabric$CustomType;->MEDIA_TAB_PLAYLIST:I
 
     if-ne v3, v4, :cond_0
 
@@ -5121,9 +5121,9 @@
 
     .line 3221
     :cond_9
-    new-instance v1, Lorg/telegram/ui/Components/SharedMediaLayout$$ExternalSyntheticLambda13;
+    new-instance v1, Lorg/telegram/ui/Components/SharedMediaLayout$$ExternalSyntheticLambda14;
 
-    invoke-direct {v1, v0, v8, v2}, Lorg/telegram/ui/Components/SharedMediaLayout$$ExternalSyntheticLambda13;-><init>(Lorg/telegram/ui/Components/SharedMediaLayout;ILorg/telegram/ui/Components/RecyclerListView;)V
+    invoke-direct {v1, v0, v8, v2}, Lorg/telegram/ui/Components/SharedMediaLayout$$ExternalSyntheticLambda14;-><init>(Lorg/telegram/ui/Components/SharedMediaLayout;ILorg/telegram/ui/Components/RecyclerListView;)V
 
     iput-object v1, v0, Lorg/telegram/ui/Components/SharedMediaLayout;->jumpToRunnable:Ljava/lang/Runnable;
 
@@ -5985,7 +5985,7 @@
     if-eq p1, p0, :cond_c
 
     .line 5848
-    sget p0, Lcom/smedialink/common/IdFabric$CustomType;->MEDIA_TAB_PLAYLIST:I
+    sget p0, Lcom/iMe/common/IdFabric$CustomType;->MEDIA_TAB_PLAYLIST:I
 
     if-ne p1, p0, :cond_8
 
@@ -6124,7 +6124,7 @@
 
     .line 5853
     :cond_d
-    sget p0, Lcom/smedialink/common/IdFabric$CustomType;->MEDIA_TAB_PLAYLIST:I
+    sget p0, Lcom/iMe/common/IdFabric$CustomType;->MEDIA_TAB_PLAYLIST:I
 
     if-ne p1, p0, :cond_e
 
@@ -6933,9 +6933,9 @@
     .locals 4
 
     .line 198
-    new-instance v0, Lorg/telegram/ui/Components/SharedMediaLayout$$ExternalSyntheticLambda17;
+    new-instance v0, Lorg/telegram/ui/Components/SharedMediaLayout$$ExternalSyntheticLambda10;
 
-    invoke-direct {v0, p0}, Lorg/telegram/ui/Components/SharedMediaLayout$$ExternalSyntheticLambda17;-><init>(Lorg/telegram/ui/Components/SharedMediaLayout;)V
+    invoke-direct {v0, p0}, Lorg/telegram/ui/Components/SharedMediaLayout$$ExternalSyntheticLambda10;-><init>(Lorg/telegram/ui/Components/SharedMediaLayout;)V
 
     .line 202
     sget-boolean v1, Lorg/telegram/messenger/SharedConfig;->isCloudAlbumsEnabled:Z
@@ -6945,11 +6945,11 @@
     .line 203
     iget-object v1, p0, Lorg/telegram/ui/Components/SharedMediaLayout;->profileActivity:Lorg/telegram/ui/ActionBar/BaseFragment;
 
-    new-instance v2, Lorg/fork/ui/dialog/ForwardCloudBottomSheet;
+    new-instance v2, Lcom/iMe/fork/ui/dialog/ForwardCloudBottomSheet;
 
     iget-object v3, p0, Lorg/telegram/ui/Components/SharedMediaLayout;->profileActivity:Lorg/telegram/ui/ActionBar/BaseFragment;
 
-    invoke-direct {v2, v3, v0}, Lorg/fork/ui/dialog/ForwardCloudBottomSheet;-><init>(Lorg/telegram/ui/ActionBar/BaseFragment;Lorg/fork/ui/dialog/ForwardCloudBottomSheet$Delegate;)V
+    invoke-direct {v2, v3, v0}, Lcom/iMe/fork/ui/dialog/ForwardCloudBottomSheet;-><init>(Lorg/telegram/ui/ActionBar/BaseFragment;Lcom/iMe/fork/ui/dialog/ForwardCloudBottomSheet$Delegate;)V
 
     invoke-virtual {v1, v2}, Lorg/telegram/ui/ActionBar/BaseFragment;->showDialog(Landroid/app/Dialog;)Landroid/app/Dialog;
 
@@ -6967,7 +6967,7 @@
 
     move-result-wide v1
 
-    invoke-interface {v0, v1, v2}, Lorg/fork/ui/dialog/ForwardCloudBottomSheet$Delegate;->didSelectCloudDialog(J)V
+    invoke-interface {v0, v1, v2}, Lcom/iMe/fork/ui/dialog/ForwardCloudBottomSheet$Delegate;->didSelectCloudDialog(J)V
 
     :goto_0
     return-void
@@ -7837,7 +7837,7 @@
 
     iget-object p1, p1, Lorg/telegram/ui/Components/SharedMediaLayout$SharedMediaData;->fastScrollPeriods:Ljava/util/ArrayList;
 
-    sget-object v0, Lorg/telegram/ui/Components/SharedMediaLayout$$ExternalSyntheticLambda16;->INSTANCE:Lorg/telegram/ui/Components/SharedMediaLayout$$ExternalSyntheticLambda16;
+    sget-object v0, Lorg/telegram/ui/Components/SharedMediaLayout$$ExternalSyntheticLambda17;->INSTANCE:Lorg/telegram/ui/Components/SharedMediaLayout$$ExternalSyntheticLambda17;
 
     invoke-static {p1, v0}, Ljava/util/Collections;->sort(Ljava/util/List;Ljava/util/Comparator;)V
 
@@ -7927,7 +7927,7 @@
 
     move-result-object v0
 
-    new-instance v7, Lorg/telegram/ui/Components/SharedMediaLayout$$ExternalSyntheticLambda15;
+    new-instance v7, Lorg/telegram/ui/Components/SharedMediaLayout$$ExternalSyntheticLambda16;
 
     move-object v1, v7
 
@@ -7941,7 +7941,7 @@
 
     move-object v6, p4
 
-    invoke-direct/range {v1 .. v6}, Lorg/telegram/ui/Components/SharedMediaLayout$$ExternalSyntheticLambda15;-><init>(Lorg/telegram/ui/Components/SharedMediaLayout;Lorg/telegram/tgnet/TLRPC$TL_error;IILorg/telegram/tgnet/TLObject;)V
+    invoke-direct/range {v1 .. v6}, Lorg/telegram/ui/Components/SharedMediaLayout$$ExternalSyntheticLambda16;-><init>(Lorg/telegram/ui/Components/SharedMediaLayout;Lorg/telegram/tgnet/TLRPC$TL_error;IILorg/telegram/tgnet/TLObject;)V
 
     invoke-virtual {v0, v7}, Lorg/telegram/messenger/NotificationCenter;->doOnIdle(Ljava/lang/Runnable;)V
 
@@ -7952,7 +7952,7 @@
     .locals 7
 
     .line 3449
-    new-instance v6, Lorg/telegram/ui/Components/SharedMediaLayout$$ExternalSyntheticLambda14;
+    new-instance v6, Lorg/telegram/ui/Components/SharedMediaLayout$$ExternalSyntheticLambda15;
 
     move-object v0, v6
 
@@ -7966,7 +7966,7 @@
 
     move-object v5, p3
 
-    invoke-direct/range {v0 .. v5}, Lorg/telegram/ui/Components/SharedMediaLayout$$ExternalSyntheticLambda14;-><init>(Lorg/telegram/ui/Components/SharedMediaLayout;Lorg/telegram/tgnet/TLRPC$TL_error;IILorg/telegram/tgnet/TLObject;)V
+    invoke-direct/range {v0 .. v5}, Lorg/telegram/ui/Components/SharedMediaLayout$$ExternalSyntheticLambda15;-><init>(Lorg/telegram/ui/Components/SharedMediaLayout;Lorg/telegram/tgnet/TLRPC$TL_error;IILorg/telegram/tgnet/TLObject;)V
 
     invoke-static {v6}, Lorg/telegram/messenger/AndroidUtilities;->runOnUIThread(Ljava/lang/Runnable;)V
 
@@ -8346,7 +8346,7 @@
 
     move-result v0
 
-    sget v1, Lcom/smedialink/common/IdFabric$CustomType;->MEDIA_TAB_PLAYLIST:I
+    sget v1, Lcom/iMe/common/IdFabric$CustomType;->MEDIA_TAB_PLAYLIST:I
 
     if-ne v0, v1, :cond_b
 
@@ -8706,7 +8706,7 @@
 
     move-result p3
 
-    sget v0, Lcom/smedialink/common/IdFabric$CustomType;->MEDIA_TAB_PLAYLIST:I
+    sget v0, Lcom/iMe/common/IdFabric$CustomType;->MEDIA_TAB_PLAYLIST:I
 
     if-ne p3, v0, :cond_b
 
@@ -8854,7 +8854,7 @@
     .locals 1
 
     .line 1773
-    sget v0, Lcom/smedialink/common/IdFabric$Menu;->TOGGLE_MUSIC_PLAYLIST:I
+    sget v0, Lcom/iMe/common/IdFabric$Menu;->TOGGLE_MUSIC_PLAYLIST:I
 
     invoke-virtual {p0, p1, v0}, Lorg/telegram/ui/Components/SharedMediaLayout;->onActionBarItemClick(Landroid/view/View;I)V
 
@@ -8876,7 +8876,7 @@
     .locals 1
 
     .line 1792
-    sget v0, Lcom/smedialink/common/IdFabric$Menu;->MESSAGE_FORWARD_CLOUD:I
+    sget v0, Lcom/iMe/common/IdFabric$Menu;->MESSAGE_FORWARD_CLOUD:I
 
     invoke-virtual {p0, p1, v0}, Lorg/telegram/ui/Components/SharedMediaLayout;->onActionBarItemClick(Landroid/view/View;I)V
 
@@ -9945,7 +9945,7 @@
 
     if-eqz v5, :cond_8
 
-    sget v5, Lcom/smedialink/common/IdFabric$CustomType;->MEDIA_TAB_PLAYLIST:I
+    sget v5, Lcom/iMe/common/IdFabric$CustomType;->MEDIA_TAB_PLAYLIST:I
 
     if-eq v3, v5, :cond_8
 
@@ -10047,7 +10047,7 @@
 
     if-eqz v5, :cond_8
 
-    sget v5, Lcom/smedialink/common/IdFabric$CustomType;->MEDIA_TAB_PLAYLIST:I
+    sget v5, Lcom/iMe/common/IdFabric$CustomType;->MEDIA_TAB_PLAYLIST:I
 
     if-eq v3, v5, :cond_8
 
@@ -10122,7 +10122,7 @@
     if-eqz v5, :cond_e
 
     .line 5238
-    sget v9, Lcom/smedialink/common/IdFabric$CustomType;->MEDIA_TAB_PLAYLIST:I
+    sget v9, Lcom/iMe/common/IdFabric$CustomType;->MEDIA_TAB_PLAYLIST:I
 
     if-ne v3, v9, :cond_a
 
@@ -10500,7 +10500,7 @@
     if-eq v3, v4, :cond_2c
 
     .line 5274
-    sget v4, Lcom/smedialink/common/IdFabric$CustomType;->MEDIA_TAB_PLAYLIST:I
+    sget v4, Lcom/iMe/common/IdFabric$CustomType;->MEDIA_TAB_PLAYLIST:I
 
     if-ne v3, v4, :cond_1f
 
@@ -10983,7 +10983,7 @@
 
     move-result v0
 
-    sget v4, Lcom/smedialink/common/IdFabric$CustomType;->MEDIA_TAB_PLAYLIST:I
+    sget v4, Lcom/iMe/common/IdFabric$CustomType;->MEDIA_TAB_PLAYLIST:I
 
     if-ne v0, v4, :cond_3
 
@@ -11385,7 +11385,7 @@
 
     if-eq v0, v2, :cond_3
 
-    sget v1, Lcom/smedialink/common/IdFabric$CustomType;->MEDIA_TAB_PLAYLIST:I
+    sget v1, Lcom/iMe/common/IdFabric$CustomType;->MEDIA_TAB_PLAYLIST:I
 
     if-eq v0, v1, :cond_3
 
@@ -12676,9 +12676,9 @@
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->invalidate()V
 
     .line 3500
-    new-instance p2, Lorg/telegram/ui/Components/SharedMediaLayout$$ExternalSyntheticLambda10;
+    new-instance p2, Lorg/telegram/ui/Components/SharedMediaLayout$$ExternalSyntheticLambda11;
 
-    invoke-direct {p2, p0, p1}, Lorg/telegram/ui/Components/SharedMediaLayout$$ExternalSyntheticLambda10;-><init>(Lorg/telegram/ui/Components/SharedMediaLayout$MediaPage;Lorg/telegram/ui/Components/SharedMediaFastScrollTooltip;)V
+    invoke-direct {p2, p0, p1}, Lorg/telegram/ui/Components/SharedMediaLayout$$ExternalSyntheticLambda11;-><init>(Lorg/telegram/ui/Components/SharedMediaLayout$MediaPage;Lorg/telegram/ui/Components/SharedMediaFastScrollTooltip;)V
 
     iput-object p2, p0, Lorg/telegram/ui/Components/SharedMediaLayout$MediaPage;->fastScrollHideHintRunnable:Ljava/lang/Runnable;
 
@@ -13363,7 +13363,7 @@
 
     move-result v4
 
-    sget v8, Lcom/smedialink/common/IdFabric$CustomType;->MEDIA_TAB_PLAYLIST:I
+    sget v8, Lcom/iMe/common/IdFabric$CustomType;->MEDIA_TAB_PLAYLIST:I
 
     if-ne v4, v8, :cond_3
 
@@ -13604,7 +13604,7 @@
 
     move-result v2
 
-    sget v4, Lcom/smedialink/common/IdFabric$CustomType;->MEDIA_TAB_PLAYLIST:I
+    sget v4, Lcom/iMe/common/IdFabric$CustomType;->MEDIA_TAB_PLAYLIST:I
 
     if-ne v2, v4, :cond_a
 
@@ -13826,7 +13826,7 @@
 
     move-result v4
 
-    sget v15, Lcom/smedialink/common/IdFabric$CustomType;->MEDIA_TAB_PLAYLIST:I
+    sget v15, Lcom/iMe/common/IdFabric$CustomType;->MEDIA_TAB_PLAYLIST:I
 
     if-ne v4, v15, :cond_14
 
@@ -15753,7 +15753,7 @@
 
     iget-object v0, p0, Lorg/telegram/ui/Components/SharedMediaLayout;->scrollSlidingTextTabStrip:Lorg/telegram/ui/Components/SharedMediaLayout$ScrollSlidingTextTabStripInner;
 
-    sget v2, Lcom/smedialink/common/IdFabric$CustomType;->MEDIA_TAB_PLAYLIST:I
+    sget v2, Lcom/iMe/common/IdFabric$CustomType;->MEDIA_TAB_PLAYLIST:I
 
     invoke-virtual {v0, v2}, Lorg/telegram/ui/Components/ScrollSlidingTextTabStrip;->hasTab(I)Z
 
@@ -15873,7 +15873,7 @@
     if-gez p1, :cond_21
 
     .line 4868
-    sget v0, Lcom/smedialink/common/IdFabric$CustomType;->MEDIA_TAB_PLAYLIST:I
+    sget v0, Lcom/iMe/common/IdFabric$CustomType;->MEDIA_TAB_PLAYLIST:I
 
     if-ne p1, v0, :cond_22
 
@@ -17189,7 +17189,7 @@
 
     .line 4157
     :goto_2
-    sget v2, Lcom/smedialink/common/IdFabric$CustomType;->MEDIA_TAB_PLAYLIST:I
+    sget v2, Lcom/iMe/common/IdFabric$CustomType;->MEDIA_TAB_PLAYLIST:I
 
     if-ne v10, v2, :cond_8
 
@@ -18197,13 +18197,13 @@
     if-eqz v1, :cond_39
 
     .line 4341
-    invoke-static/range {p2 .. p2}, Lorg/fork/controller/MusicController;->getInstance(I)Lorg/fork/controller/MusicController;
+    invoke-static/range {p2 .. p2}, Lcom/iMe/fork/controller/MusicController;->getInstance(I)Lcom/iMe/fork/controller/MusicController;
 
     move-result-object v1
 
     iget-wide v5, v0, Lorg/telegram/ui/Components/SharedMediaLayout;->dialog_id:J
 
-    invoke-virtual {v1, v5, v6, v2}, Lorg/fork/controller/MusicController;->removePlaylistMessage(JLjava/util/List;)V
+    invoke-virtual {v1, v5, v6, v2}, Lcom/iMe/fork/controller/MusicController;->removePlaylistMessage(JLjava/util/List;)V
 
     :cond_39
     if-eqz v7, :cond_42
@@ -18464,7 +18464,7 @@
 
     move-result v1
 
-    sget v2, Lcom/smedialink/common/IdFabric$CustomType;->MEDIA_TAB_PLAYLIST:I
+    sget v2, Lcom/iMe/common/IdFabric$CustomType;->MEDIA_TAB_PLAYLIST:I
 
     if-ne v1, v2, :cond_4a
 
@@ -22409,7 +22409,7 @@
     move/from16 v2, p2
 
     .line 3533
-    sget v3, Lcom/smedialink/common/IdFabric$Menu;->TOGGLE_MUSIC_PLAYLIST:I
+    sget v3, Lcom/iMe/common/IdFabric$Menu;->TOGGLE_MUSIC_PLAYLIST:I
 
     const/4 v4, 0x0
 
@@ -22501,13 +22501,13 @@
     .line 3547
     iget-object v1, v0, Lorg/telegram/ui/Components/SharedMediaLayout;->profileActivity:Lorg/telegram/ui/ActionBar/BaseFragment;
 
-    invoke-virtual {v1}, Lorg/telegram/ui/ActionBar/BaseFragment;->getMusicController()Lorg/fork/controller/MusicController;
+    invoke-virtual {v1}, Lorg/telegram/ui/ActionBar/BaseFragment;->getMusicController()Lcom/iMe/fork/controller/MusicController;
 
     move-result-object v1
 
     iget-wide v3, v0, Lorg/telegram/ui/Components/SharedMediaLayout;->dialog_id:J
 
-    invoke-virtual {v1, v3, v4, v2}, Lorg/fork/controller/MusicController;->addPlaylistMessage(JLjava/util/List;)V
+    invoke-virtual {v1, v3, v4, v2}, Lcom/iMe/fork/controller/MusicController;->addPlaylistMessage(JLjava/util/List;)V
 
     goto :goto_2
 
@@ -22520,13 +22520,13 @@
     .line 3549
     iget-object v2, v0, Lorg/telegram/ui/Components/SharedMediaLayout;->profileActivity:Lorg/telegram/ui/ActionBar/BaseFragment;
 
-    invoke-virtual {v2}, Lorg/telegram/ui/ActionBar/BaseFragment;->getMusicController()Lorg/fork/controller/MusicController;
+    invoke-virtual {v2}, Lorg/telegram/ui/ActionBar/BaseFragment;->getMusicController()Lcom/iMe/fork/controller/MusicController;
 
     move-result-object v2
 
     iget-wide v3, v0, Lorg/telegram/ui/Components/SharedMediaLayout;->dialog_id:J
 
-    invoke-virtual {v2, v3, v4, v1}, Lorg/fork/controller/MusicController;->removePlaylistMessage(JLjava/util/List;)V
+    invoke-virtual {v2, v3, v4, v1}, Lcom/iMe/fork/controller/MusicController;->removePlaylistMessage(JLjava/util/List;)V
 
     .line 3551
     :cond_4
@@ -22557,7 +22557,7 @@
 
     move-result v1
 
-    sget v2, Lcom/smedialink/common/IdFabric$CustomType;->MEDIA_TAB_PLAYLIST:I
+    sget v2, Lcom/iMe/common/IdFabric$CustomType;->MEDIA_TAB_PLAYLIST:I
 
     if-ne v1, v2, :cond_8
 
@@ -22621,13 +22621,13 @@
     .line 3564
     iget-object v2, v0, Lorg/telegram/ui/Components/SharedMediaLayout;->profileActivity:Lorg/telegram/ui/ActionBar/BaseFragment;
 
-    invoke-virtual {v2}, Lorg/telegram/ui/ActionBar/BaseFragment;->getMusicController()Lorg/fork/controller/MusicController;
+    invoke-virtual {v2}, Lorg/telegram/ui/ActionBar/BaseFragment;->getMusicController()Lcom/iMe/fork/controller/MusicController;
 
     move-result-object v2
 
     iget-wide v3, v0, Lorg/telegram/ui/Components/SharedMediaLayout;->dialog_id:J
 
-    invoke-virtual {v2, v3, v4, v1}, Lorg/fork/controller/MusicController;->removePlaylistMessage(JLjava/util/List;)V
+    invoke-virtual {v2, v3, v4, v1}, Lcom/iMe/fork/controller/MusicController;->removePlaylistMessage(JLjava/util/List;)V
 
     return-void
 
@@ -22751,9 +22751,9 @@
 
     const/4 v14, 0x1
 
-    new-instance v15, Lorg/telegram/ui/Components/SharedMediaLayout$$ExternalSyntheticLambda12;
+    new-instance v15, Lorg/telegram/ui/Components/SharedMediaLayout$$ExternalSyntheticLambda13;
 
-    invoke-direct {v15, v0}, Lorg/telegram/ui/Components/SharedMediaLayout$$ExternalSyntheticLambda12;-><init>(Lorg/telegram/ui/Components/SharedMediaLayout;)V
+    invoke-direct {v15, v0}, Lorg/telegram/ui/Components/SharedMediaLayout$$ExternalSyntheticLambda13;-><init>(Lorg/telegram/ui/Components/SharedMediaLayout;)V
 
     const/16 v16, 0x0
 
@@ -22771,7 +22771,7 @@
     if-eq v2, v3, :cond_13
 
     .line 3584
-    sget v3, Lcom/smedialink/common/IdFabric$Menu;->MESSAGE_FORWARD_CLOUD:I
+    sget v3, Lcom/iMe/common/IdFabric$Menu;->MESSAGE_FORWARD_CLOUD:I
 
     if-ne v2, v3, :cond_c
 
@@ -23091,7 +23091,7 @@
 
     .line 3604
     :cond_18
-    sget v1, Lcom/smedialink/common/IdFabric$Menu;->MESSAGE_FORWARD_CLOUD:I
+    sget v1, Lcom/iMe/common/IdFabric$Menu;->MESSAGE_FORWARD_CLOUD:I
 
     if-ne v2, v1, :cond_19
 
@@ -24995,7 +24995,7 @@
     return-void
 .end method
 
-.method public setMembersMenuVisible(ZLcom/smedialink/model/group/GroupMembersFilter;)V
+.method public setMembersMenuVisible(ZLcom/iMe/model/group/GroupMembersFilter;)V
     .locals 7
 
     .line 167
@@ -25024,7 +25024,7 @@
 
     move-result-object p1
 
-    sget-object v4, Lcom/smedialink/model/group/GroupMembersFilter;->BLOCKED:Lcom/smedialink/model/group/GroupMembersFilter;
+    sget-object v4, Lcom/iMe/model/group/GroupMembersFilter;->BLOCKED:Lcom/iMe/model/group/GroupMembersFilter;
 
     if-ne p2, v4, :cond_1
 

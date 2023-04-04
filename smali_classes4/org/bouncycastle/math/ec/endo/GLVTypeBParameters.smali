@@ -26,11 +26,11 @@
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const-string p2, "v1"
+    const-string/jumbo p2, "v1"
 
     invoke-static {p3, p2}, Lorg/bouncycastle/math/ec/endo/GLVTypeBParameters;->checkVector([Ljava/math/BigInteger;Ljava/lang/String;)V
 
-    const-string p2, "v2"
+    const-string/jumbo p2, "v2"
 
     invoke-static {p4, p2}, Lorg/bouncycastle/math/ec/endo/GLVTypeBParameters;->checkVector([Ljava/math/BigInteger;Ljava/lang/String;)V
 

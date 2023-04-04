@@ -5,27 +5,25 @@
 .implements Lorg/telegram/tgnet/RequestDelegate;
 
 
-# static fields
-.field public static final synthetic INSTANCE:Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda311;
+# instance fields
+.field public final synthetic f$0:Lorg/telegram/ui/ChatActivity;
+
+.field public final synthetic f$1:[Lorg/telegram/ui/ActionBar/AlertDialog;
+
+.field public final synthetic f$2:Lorg/telegram/tgnet/TLRPC$TL_messages_editMessage;
 
 
 # direct methods
-.method static synthetic constructor <clinit>()V
-    .locals 1
-
-    new-instance v0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda311;
-
-    invoke-direct {v0}, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda311;-><init>()V
-
-    sput-object v0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda311;->INSTANCE:Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda311;
-
-    return-void
-.end method
-
-.method private synthetic constructor <init>()V
+.method public synthetic constructor <init>(Lorg/telegram/ui/ChatActivity;[Lorg/telegram/ui/ActionBar/AlertDialog;Lorg/telegram/tgnet/TLRPC$TL_messages_editMessage;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda311;->f$0:Lorg/telegram/ui/ChatActivity;
+
+    iput-object p2, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda311;->f$1:[Lorg/telegram/ui/ActionBar/AlertDialog;
+
+    iput-object p3, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda311;->f$2:Lorg/telegram/tgnet/TLRPC$TL_messages_editMessage;
 
     return-void
 .end method
@@ -33,9 +31,15 @@
 
 # virtual methods
 .method public final run(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
-    .locals 0
+    .locals 3
 
-    invoke-static {p1, p2}, Lorg/telegram/ui/ChatActivity;->$r8$lambda$U9cA0cbgroiEaCqdaqsvvEbnlck(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
+    iget-object v0, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda311;->f$0:Lorg/telegram/ui/ChatActivity;
+
+    iget-object v1, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda311;->f$1:[Lorg/telegram/ui/ActionBar/AlertDialog;
+
+    iget-object v2, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda311;->f$2:Lorg/telegram/tgnet/TLRPC$TL_messages_editMessage;
+
+    invoke-static {v0, v1, v2, p1, p2}, Lorg/telegram/ui/ChatActivity;->$r8$lambda$BK6ut7KFcGGArdLzeKAspi7EmEs(Lorg/telegram/ui/ChatActivity;[Lorg/telegram/ui/ActionBar/AlertDialog;Lorg/telegram/tgnet/TLRPC$TL_messages_editMessage;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
 
     return-void
 .end method

@@ -1,14 +1,14 @@
 package com.trustwallet.walletconnect.models.binance;
 
 import com.google.android.exoplayer2.text.ttml.TtmlNode;
-import com.iMe.i_staking.request.StakingApprovalPrepareRequest$$ExternalSyntheticBackport0;
+import com.iMe.bots.data.model.database.BotsDbModel$$ExternalSyntheticBackport0;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: WCBinanceTradeOrder.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class WCBinanceTradeOrder extends WCBinanceOrder<Message> {
 
     /* compiled from: WCBinanceTradeOrder.kt */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public enum MessageKey {
         ID(TtmlNode.ATTR_ID),
         ORDER_TYPE("ordertype"),
@@ -31,11 +31,11 @@ public final class WCBinanceTradeOrder extends WCBinanceOrder<Message> {
     }
 
     /* compiled from: WCBinanceTradeOrder.kt */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Message {
 
         /* renamed from: id */
-        private final String f388id;
+        private final String f393id;
         private final int orderType;
         private final long price;
         private final long quantity;
@@ -50,24 +50,24 @@ public final class WCBinanceTradeOrder extends WCBinanceOrder<Message> {
             }
             if (obj instanceof Message) {
                 Message message = (Message) obj;
-                return Intrinsics.areEqual(this.f388id, message.f388id) && this.orderType == message.orderType && this.price == message.price && this.quantity == message.quantity && Intrinsics.areEqual(this.sender, message.sender) && this.side == message.side && Intrinsics.areEqual(this.symbol, message.symbol) && this.timeInforce == message.timeInforce;
+                return Intrinsics.areEqual(this.f393id, message.f393id) && this.orderType == message.orderType && this.price == message.price && this.quantity == message.quantity && Intrinsics.areEqual(this.sender, message.sender) && this.side == message.side && Intrinsics.areEqual(this.symbol, message.symbol) && this.timeInforce == message.timeInforce;
             }
             return false;
         }
 
         public int hashCode() {
-            return (((((((((((((this.f388id.hashCode() * 31) + this.orderType) * 31) + StakingApprovalPrepareRequest$$ExternalSyntheticBackport0.m716m(this.price)) * 31) + StakingApprovalPrepareRequest$$ExternalSyntheticBackport0.m716m(this.quantity)) * 31) + this.sender.hashCode()) * 31) + this.side) * 31) + this.symbol.hashCode()) * 31) + this.timeInforce;
+            return (((((((((((((this.f393id.hashCode() * 31) + this.orderType) * 31) + BotsDbModel$$ExternalSyntheticBackport0.m716m(this.price)) * 31) + BotsDbModel$$ExternalSyntheticBackport0.m716m(this.quantity)) * 31) + this.sender.hashCode()) * 31) + this.side) * 31) + this.symbol.hashCode()) * 31) + this.timeInforce;
         }
 
         public String toString() {
-            return "Message(id=" + this.f388id + ", orderType=" + this.orderType + ", price=" + this.price + ", quantity=" + this.quantity + ", sender=" + this.sender + ", side=" + this.side + ", symbol=" + this.symbol + ", timeInforce=" + this.timeInforce + ')';
+            return "Message(id=" + this.f393id + ", orderType=" + this.orderType + ", price=" + this.price + ", quantity=" + this.quantity + ", sender=" + this.sender + ", side=" + this.side + ", symbol=" + this.symbol + ", timeInforce=" + this.timeInforce + ')';
         }
 
         public Message(String id, int i, long j, long j2, String sender, int i2, String symbol, int i3) {
             Intrinsics.checkNotNullParameter(id, "id");
             Intrinsics.checkNotNullParameter(sender, "sender");
             Intrinsics.checkNotNullParameter(symbol, "symbol");
-            this.f388id = id;
+            this.f393id = id;
             this.orderType = i;
             this.price = j;
             this.quantity = j2;
@@ -78,7 +78,7 @@ public final class WCBinanceTradeOrder extends WCBinanceOrder<Message> {
         }
 
         public final String getId() {
-            return this.f388id;
+            return this.f393id;
         }
 
         public final int getOrderType() {

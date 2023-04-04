@@ -15,15 +15,15 @@ import org.telegram.messenger.AndroidUtilities;
 public class SearchStateDrawable extends Drawable {
 
     /* renamed from: cx */
-    private float f1805cx;
+    private float f1808cx;
 
     /* renamed from: cy */
-    private float f1806cy;
+    private float f1809cy;
     private Runnable delaySetProgress;
     private int fromState;
 
     /* renamed from: mn */
-    private float f1807mn;
+    private float f1810mn;
     private Paint paint;
     private boolean progressStartedWithOverTo;
     private boolean wereNotWaitingForProgressToEnd;
@@ -161,9 +161,9 @@ public class SearchStateDrawable extends Drawable {
         int i;
         float f6;
         Rect bounds = getBounds();
-        this.f1807mn = Math.min(bounds.width(), bounds.height());
-        this.f1805cx = bounds.centerX();
-        this.f1806cy = bounds.centerY();
+        this.f1810mn = Math.min(bounds.width(), bounds.height());
+        this.f1808cx = bounds.centerX();
+        this.f1809cy = bounds.centerY();
         int i2 = this.alpha;
         if (i2 < 255) {
             canvas.saveLayerAlpha(bounds.left, bounds.top, bounds.right, bounds.bottom, i2, 31);
@@ -185,7 +185,7 @@ public class SearchStateDrawable extends Drawable {
         }
         if (i6 > 0 || f9 > BitmapDescriptorFactory.HUE_RED) {
             canvas.save();
-            canvas.rotate(f8 * 45.0f, this.f1805cx, this.f1806cy);
+            canvas.rotate(f8 * 45.0f, this.f1808cx, this.f1809cy);
             f2 = 0.75f;
             f3 = 0.5f;
             f4 = 0.2409f;
@@ -205,7 +205,7 @@ public class SearchStateDrawable extends Drawable {
         if (f9 > f6) {
             float lerp = this.fromState == i ? AndroidUtilities.lerp(m24x(f2), m24x(f4), f9) : m24x(f4);
             canvas.save();
-            canvas.rotate(f8 * 45.0f, this.f1805cx, this.f1806cy);
+            canvas.rotate(f8 * 45.0f, this.f1808cx, this.f1809cy);
             drawLines(canvas, lerp + (m24x(0.2452f) * f9), AndroidUtilities.lerp(m23y(f3), m23y(0.25f), f9), lerp, m23y(f3), lerp + (m24x(0.2452f) * f9), AndroidUtilities.lerp(m23y(f3), m23y(f2), f9));
             canvas.restore();
         }
@@ -279,17 +279,17 @@ public class SearchStateDrawable extends Drawable {
 
     /* renamed from: x */
     private float m24x(float f) {
-        return this.f1805cx - (this.f1807mn * (0.5f - f));
+        return this.f1808cx - (this.f1810mn * (0.5f - f));
     }
 
     /* renamed from: y */
     private float m23y(float f) {
-        return this.f1806cy - (this.f1807mn * (0.5f - f));
+        return this.f1809cy - (this.f1810mn * (0.5f - f));
     }
 
     /* renamed from: w */
     private float m25w(float f) {
-        return this.f1807mn * f;
+        return this.f1810mn * f;
     }
 
     @Override // android.graphics.drawable.Drawable

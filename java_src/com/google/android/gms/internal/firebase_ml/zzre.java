@@ -195,7 +195,7 @@ public final class zzre implements Closeable {
     /* JADX WARN: Removed duplicated region for block: B:193:0x025a A[RETURN] */
     /* JADX WARN: Removed duplicated region for block: B:194:0x025b  */
     /* JADX WARN: Type inference failed for: r2v3 */
-    /* JADX WARN: Type inference failed for: r2v4, types: [boolean, int] */
+    /* JADX WARN: Type inference failed for: r2v4, types: [int, boolean] */
     /* JADX WARN: Type inference failed for: r2v6 */
     /*
         Code decompiled incorrectly, please refer to instructions dump.

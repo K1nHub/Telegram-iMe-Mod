@@ -2,32 +2,44 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lorg/fork/utils/Callbacks$Callback;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
 .field public final synthetic f$0:Lorg/telegram/ui/ChatActivity;
 
+.field public final synthetic f$1:[Lorg/telegram/ui/ActionBar/AlertDialog;
+
+.field public final synthetic f$2:I
+
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/ChatActivity;)V
+.method public synthetic constructor <init>(Lorg/telegram/ui/ChatActivity;[Lorg/telegram/ui/ActionBar/AlertDialog;I)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda274;->f$0:Lorg/telegram/ui/ChatActivity;
 
+    iput-object p2, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda274;->f$1:[Lorg/telegram/ui/ActionBar/AlertDialog;
+
+    iput p3, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda274;->f$2:I
+
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke()V
-    .locals 1
+.method public final run()V
+    .locals 3
 
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda274;->f$0:Lorg/telegram/ui/ChatActivity;
 
-    invoke-static {v0}, Lorg/telegram/ui/ChatActivity;->$r8$lambda$_dc8dYEA_Jb29IAXbO6lj8AqdhE(Lorg/telegram/ui/ChatActivity;)V
+    iget-object v1, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda274;->f$1:[Lorg/telegram/ui/ActionBar/AlertDialog;
+
+    iget v2, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda274;->f$2:I
+
+    invoke-static {v0, v1, v2}, Lorg/telegram/ui/ChatActivity;->$r8$lambda$fhB73xolj5ABLh_C6hfKrJviL4Q(Lorg/telegram/ui/ChatActivity;[Lorg/telegram/ui/ActionBar/AlertDialog;I)V
 
     return-void
 .end method

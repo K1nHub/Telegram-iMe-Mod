@@ -24,10 +24,10 @@
 
     const/4 p1, 0x1
 
-    .line 3880
+    .line 3884
     invoke-direct {p0, p2, p1}, Lorg/telegram/ui/Components/ListView/AdapterWithDiffUtils$Item;-><init>(IZ)V
 
-    .line 3881
+    .line 3885
     iput-object p3, p0, Lorg/telegram/ui/TopicsFragment$Item;->topic:Lorg/telegram/tgnet/TLRPC$TL_forumTopic;
 
     return-void
@@ -49,7 +49,7 @@
 
     if-eqz p1, :cond_3
 
-    .line 3887
+    .line 3891
     const-class v2, Lorg/telegram/ui/TopicsFragment$Item;
 
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
@@ -60,11 +60,11 @@
 
     goto :goto_1
 
-    .line 3888
+    .line 3892
     :cond_1
     check-cast p1, Lorg/telegram/ui/TopicsFragment$Item;
 
-    .line 3889
+    .line 3893
     iget v2, p0, Lorg/telegram/ui/Components/ListView/AdapterWithDiffUtils$Item;->viewType:I
 
     iget v3, p1, Lorg/telegram/ui/Components/ListView/AdapterWithDiffUtils$Item;->viewType:I
@@ -73,7 +73,7 @@
 
     if-nez v2, :cond_3
 
-    .line 3890
+    .line 3894
     iget-object v2, p0, Lorg/telegram/ui/TopicsFragment$Item;->topic:Lorg/telegram/tgnet/TLRPC$TL_forumTopic;
 
     iget v2, v2, Lorg/telegram/tgnet/TLRPC$TL_forumTopic;->id:I

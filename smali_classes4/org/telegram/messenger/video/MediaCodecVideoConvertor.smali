@@ -1764,7 +1764,7 @@
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v4, "unexpected result from encoder.dequeueOutputBuffer: "
+    const-string/jumbo v4, "unexpected result from encoder.dequeueOutputBuffer: "
 
     invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -6263,7 +6263,7 @@
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v4, "unexpected result from decoder.dequeueOutputBuffer: "
+    const-string/jumbo v4, "unexpected result from decoder.dequeueOutputBuffer: "
 
     invoke-virtual {v2, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -6450,7 +6450,7 @@
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v4, "unexpected result from encoder.dequeueOutputBuffer: "
+    const-string/jumbo v4, "unexpected result from encoder.dequeueOutputBuffer: "
 
     invoke-virtual {v2, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 

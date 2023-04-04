@@ -72,7 +72,7 @@ public class ReactionsEffectOverlay {
     /* JADX WARN: Type inference failed for: r15v13 */
     /* JADX WARN: Type inference failed for: r15v14 */
     /* JADX WARN: Type inference failed for: r15v4 */
-    /* JADX WARN: Type inference failed for: r15v5, types: [boolean, int] */
+    /* JADX WARN: Type inference failed for: r15v5, types: [int, boolean] */
     /* JADX WARN: Type inference failed for: r15v6 */
     /* JADX WARN: Type inference failed for: r15v7 */
     /*
@@ -90,7 +90,7 @@ public class ReactionsEffectOverlay {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: org.telegram.ui.Components.Reactions.ReactionsEffectOverlay$1 */
     /* loaded from: classes6.dex */
-    public class C50001 extends FrameLayout {
+    public class C50211 extends FrameLayout {
         final /* synthetic */ int val$animationType;
         final /* synthetic */ ChatMessageCell val$cell;
         final /* synthetic */ ChatActivity val$chatActivity;
@@ -103,7 +103,7 @@ public class ReactionsEffectOverlay {
         final /* synthetic */ ReactionsLayoutInBubble.VisibleReaction val$visibleReaction;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        C50001(Context context, BaseFragment baseFragment, ChatMessageCell chatMessageCell, ChatActivity chatActivity, int i, int i2, boolean z, float f, float f2, float f3, ReactionsLayoutInBubble.VisibleReaction visibleReaction) {
+        C50211(Context context, BaseFragment baseFragment, ChatMessageCell chatMessageCell, ChatActivity chatActivity, int i, int i2, boolean z, float f, float f2, float f3, ReactionsLayoutInBubble.VisibleReaction visibleReaction) {
             super(context);
             this.val$fragment = baseFragment;
             this.val$cell = chatMessageCell;
@@ -135,7 +135,7 @@ public class ReactionsEffectOverlay {
                 Method dump skipped, instructions count: 1456
                 To view this dump add '--comments-level debug' option
             */
-            throw new UnsupportedOperationException("Method not decompiled: org.telegram.p048ui.Components.Reactions.ReactionsEffectOverlay.C50001.dispatchDraw(android.graphics.Canvas):void");
+            throw new UnsupportedOperationException("Method not decompiled: org.telegram.p048ui.Components.Reactions.ReactionsEffectOverlay.C50211.dispatchDraw(android.graphics.Canvas):void");
         }
 
         /* JADX INFO: Access modifiers changed from: private */
@@ -507,7 +507,7 @@ public class ReactionsEffectOverlay {
         private AvatarParticle(ReactionsEffectOverlay reactionsEffectOverlay) {
         }
 
-        /* synthetic */ AvatarParticle(ReactionsEffectOverlay reactionsEffectOverlay, C50001 c50001) {
+        /* synthetic */ AvatarParticle(ReactionsEffectOverlay reactionsEffectOverlay, C50211 c50211) {
             this(reactionsEffectOverlay);
         }
     }

@@ -179,6 +179,7 @@
 
     invoke-interface {p1}, Landroid/database/Cursor;->close()V
 
+    .line 70
     throw p2
 
     .line 73

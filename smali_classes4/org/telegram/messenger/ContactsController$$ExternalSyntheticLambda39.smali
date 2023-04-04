@@ -8,22 +8,42 @@
 # instance fields
 .field public final synthetic f$0:Lorg/telegram/messenger/ContactsController;
 
-.field public final synthetic f$1:Lorg/telegram/tgnet/TLRPC$TL_error;
+.field public final synthetic f$1:Ljava/util/HashMap;
 
-.field public final synthetic f$2:Lorg/telegram/tgnet/TLObject;
+.field public final synthetic f$2:Z
+
+.field public final synthetic f$3:Z
+
+.field public final synthetic f$4:Z
+
+.field public final synthetic f$5:Z
+
+.field public final synthetic f$6:Z
+
+.field public final synthetic f$7:Z
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/messenger/ContactsController;Lorg/telegram/tgnet/TLRPC$TL_error;Lorg/telegram/tgnet/TLObject;)V
+.method public synthetic constructor <init>(Lorg/telegram/messenger/ContactsController;Ljava/util/HashMap;ZZZZZZ)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/messenger/ContactsController$$ExternalSyntheticLambda39;->f$0:Lorg/telegram/messenger/ContactsController;
 
-    iput-object p2, p0, Lorg/telegram/messenger/ContactsController$$ExternalSyntheticLambda39;->f$1:Lorg/telegram/tgnet/TLRPC$TL_error;
+    iput-object p2, p0, Lorg/telegram/messenger/ContactsController$$ExternalSyntheticLambda39;->f$1:Ljava/util/HashMap;
 
-    iput-object p3, p0, Lorg/telegram/messenger/ContactsController$$ExternalSyntheticLambda39;->f$2:Lorg/telegram/tgnet/TLObject;
+    iput-boolean p3, p0, Lorg/telegram/messenger/ContactsController$$ExternalSyntheticLambda39;->f$2:Z
+
+    iput-boolean p4, p0, Lorg/telegram/messenger/ContactsController$$ExternalSyntheticLambda39;->f$3:Z
+
+    iput-boolean p5, p0, Lorg/telegram/messenger/ContactsController$$ExternalSyntheticLambda39;->f$4:Z
+
+    iput-boolean p6, p0, Lorg/telegram/messenger/ContactsController$$ExternalSyntheticLambda39;->f$5:Z
+
+    iput-boolean p7, p0, Lorg/telegram/messenger/ContactsController$$ExternalSyntheticLambda39;->f$6:Z
+
+    iput-boolean p8, p0, Lorg/telegram/messenger/ContactsController$$ExternalSyntheticLambda39;->f$7:Z
 
     return-void
 .end method
@@ -31,15 +51,25 @@
 
 # virtual methods
 .method public final run()V
-    .locals 3
+    .locals 8
 
     iget-object v0, p0, Lorg/telegram/messenger/ContactsController$$ExternalSyntheticLambda39;->f$0:Lorg/telegram/messenger/ContactsController;
 
-    iget-object v1, p0, Lorg/telegram/messenger/ContactsController$$ExternalSyntheticLambda39;->f$1:Lorg/telegram/tgnet/TLRPC$TL_error;
+    iget-object v1, p0, Lorg/telegram/messenger/ContactsController$$ExternalSyntheticLambda39;->f$1:Ljava/util/HashMap;
 
-    iget-object v2, p0, Lorg/telegram/messenger/ContactsController$$ExternalSyntheticLambda39;->f$2:Lorg/telegram/tgnet/TLObject;
+    iget-boolean v2, p0, Lorg/telegram/messenger/ContactsController$$ExternalSyntheticLambda39;->f$2:Z
 
-    invoke-static {v0, v1, v2}, Lorg/telegram/messenger/ContactsController;->$r8$lambda$hqW_70BIZbP4TT2LLRMJfjurqps(Lorg/telegram/messenger/ContactsController;Lorg/telegram/tgnet/TLRPC$TL_error;Lorg/telegram/tgnet/TLObject;)V
+    iget-boolean v3, p0, Lorg/telegram/messenger/ContactsController$$ExternalSyntheticLambda39;->f$3:Z
+
+    iget-boolean v4, p0, Lorg/telegram/messenger/ContactsController$$ExternalSyntheticLambda39;->f$4:Z
+
+    iget-boolean v5, p0, Lorg/telegram/messenger/ContactsController$$ExternalSyntheticLambda39;->f$5:Z
+
+    iget-boolean v6, p0, Lorg/telegram/messenger/ContactsController$$ExternalSyntheticLambda39;->f$6:Z
+
+    iget-boolean v7, p0, Lorg/telegram/messenger/ContactsController$$ExternalSyntheticLambda39;->f$7:Z
+
+    invoke-static/range {v0 .. v7}, Lorg/telegram/messenger/ContactsController;->$r8$lambda$jyKb-gmr8qVpi2vTt-xcRWAOBjU(Lorg/telegram/messenger/ContactsController;Ljava/util/HashMap;ZZZZZZ)V
 
     return-void
 .end method

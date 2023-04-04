@@ -24,7 +24,7 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.zxing.common.detector.MathUtils;
 import java.util.Arrays;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3301R;
+import org.telegram.messenger.C3316R;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.LiteMode;
 import org.telegram.messenger.SvgHelper;
@@ -94,9 +94,9 @@ public class CacheChart extends View {
     }
 
     static {
-        int i = C3301R.C3306raw.cache_videos;
-        int i2 = C3301R.C3306raw.cache_other;
-        DEFAULT_PARTICLES = new int[]{C3301R.C3306raw.cache_photos, i, C3301R.C3306raw.cache_documents, C3301R.C3306raw.cache_music, i, C3301R.C3306raw.cache_stickers, C3301R.C3306raw.cache_profile_photos, i2, i2};
+        int i = C3316R.C3321raw.cache_videos;
+        int i2 = C3316R.C3321raw.cache_other;
+        DEFAULT_PARTICLES = new int[]{C3316R.C3321raw.cache_photos, i, C3316R.C3321raw.cache_documents, C3316R.C3321raw.cache_music, i, C3316R.C3321raw.cache_stickers, C3316R.C3321raw.cache_profile_photos, i2, i2};
         particlesStart = -1L;
     }
 
@@ -919,9 +919,9 @@ public class CacheChart extends View {
                 drawable.distributionAlgorithm = false;
                 drawable.excludeRadius = AndroidUtilities.m50dp(80);
                 StarParticlesView.Drawable drawable2 = this.completeDrawable;
-                drawable2.f1787k3 = 0.85f;
-                drawable2.f1786k2 = 0.85f;
-                drawable2.f1785k1 = 0.85f;
+                drawable2.f1790k3 = 0.85f;
+                drawable2.f1789k2 = 0.85f;
+                drawable2.f1788k1 = 0.85f;
                 drawable2.init();
                 z = true;
             } else {

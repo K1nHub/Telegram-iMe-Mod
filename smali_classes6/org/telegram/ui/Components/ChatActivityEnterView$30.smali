@@ -39,7 +39,7 @@
     .locals 2
 
     .line 4078
-    instance-of p2, p1, Lorg/fork/ui/view/TemplateCell;
+    instance-of p2, p1, Lcom/iMe/fork/ui/view/TemplateCell;
 
     const/4 v0, 0x1
 
@@ -52,13 +52,13 @@
 
     move-result-object p2
 
-    check-cast p1, Lorg/fork/ui/view/TemplateCell;
+    check-cast p1, Lcom/iMe/fork/ui/view/TemplateCell;
 
-    invoke-virtual {p1}, Lorg/fork/ui/view/TemplateCell;->getTemplate()Lcom/smedialink/storage/domain/model/templates/TemplateModel;
+    invoke-virtual {p1}, Lcom/iMe/fork/ui/view/TemplateCell;->getTemplate()Lcom/iMe/storage/domain/model/templates/TemplateModel;
 
     move-result-object p1
 
-    invoke-interface {p2, p1, v0}, Lorg/telegram/ui/Components/BotCommandsMenuView$BotCommandsAdapter$TemplatesDelegate;->didPressSendMessage(Lcom/smedialink/storage/domain/model/templates/TemplateModel;Z)V
+    invoke-interface {p2, p1, v0}, Lorg/telegram/ui/Components/BotCommandsMenuView$BotCommandsAdapter$TemplatesDelegate;->didPressSendMessage(Lcom/iMe/storage/domain/model/templates/TemplateModel;Z)V
 
     return v0
 

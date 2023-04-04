@@ -682,7 +682,7 @@
     .line 171
     iget-object v0, p0, Lorg/telegram/ui/Components/QRCodeBottomSheet;->optionsButton:Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
 
-    sget v1, Lcom/smedialink/common/IdFabric$Menu;->COPY:I
+    sget v1, Lcom/iMe/common/IdFabric$Menu;->COPY:I
 
     sget v2, Lorg/telegram/messenger/R$drawable;->msg_copy:I
 
@@ -776,7 +776,7 @@
     :cond_1
     iget-object p1, p1, Lorg/telegram/tgnet/TLRPC$TL_error;->text:Ljava/lang/String;
 
-    invoke-static {p1}, Lcom/smedialink/utils/extentions/common/ContextExtKt;->toast(Ljava/lang/CharSequence;)V
+    invoke-static {p1}, Lcom/iMe/utils/extentions/common/ContextExtKt;->toast(Ljava/lang/CharSequence;)V
 
     :goto_0
     return-void
@@ -992,7 +992,7 @@
     .locals 2
 
     .line 173
-    sget v0, Lcom/smedialink/common/IdFabric$Menu;->COPY:I
+    sget v0, Lcom/iMe/common/IdFabric$Menu;->COPY:I
 
     if-ne p1, v0, :cond_0
 
@@ -1007,7 +1007,7 @@
 
     move-result-object v0
 
-    invoke-static {p1, v0}, Lcom/smedialink/utils/extentions/common/ContextExtKt;->copyToClipboard(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {p1, v0}, Lcom/iMe/utils/extentions/common/ContextExtKt;->copyToClipboard(Ljava/lang/String;Ljava/lang/String;)V
 
     :cond_0
     return-void
@@ -1625,7 +1625,7 @@
     return-void
 .end method
 
-.method public setupWalletTypeReceive(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;Lcom/smedialink/storage/domain/model/crypto/BlockchainType;)V
+.method public setupWalletTypeReceive(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lcom/iMe/storage/domain/model/wallet/token/TokenCode;Lcom/iMe/storage/domain/model/crypto/BlockchainType;)V
     .locals 0
 
     .line 94

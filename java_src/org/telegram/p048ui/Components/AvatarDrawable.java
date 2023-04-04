@@ -18,7 +18,7 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.C3301R;
+import org.telegram.messenger.C3316R;
 import org.telegram.messenger.Emoji;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.UserObject;
@@ -102,7 +102,7 @@ public class AvatarDrawable extends Drawable {
     public AvatarDrawable(TLRPC$User tLRPC$User, boolean z) {
         this();
         if (tLRPC$User != null) {
-            setInfo(tLRPC$User.f1640id, tLRPC$User.first_name, tLRPC$User.last_name, null);
+            setInfo(tLRPC$User.f1642id, tLRPC$User.first_name, tLRPC$User.last_name, null);
             this.drawDeleted = UserObject.isDeleted(tLRPC$User);
         }
     }
@@ -110,7 +110,7 @@ public class AvatarDrawable extends Drawable {
     public AvatarDrawable(TLRPC$Chat tLRPC$Chat, boolean z) {
         this();
         if (tLRPC$Chat != null) {
-            setInfo(tLRPC$Chat.f1500id, tLRPC$Chat.title, null, null);
+            setInfo(tLRPC$Chat.f1502id, tLRPC$Chat.title, null, null);
         }
     }
 
@@ -144,7 +144,7 @@ public class AvatarDrawable extends Drawable {
 
     public void setInfo(TLRPC$User tLRPC$User) {
         if (tLRPC$User != null) {
-            setInfo(tLRPC$User.f1640id, tLRPC$User.first_name, tLRPC$User.last_name, null);
+            setInfo(tLRPC$User.f1642id, tLRPC$User.first_name, tLRPC$User.last_name, null);
             this.drawDeleted = UserObject.isDeleted(tLRPC$User);
         }
     }
@@ -236,7 +236,7 @@ public class AvatarDrawable extends Drawable {
 
     public void setInfo(TLRPC$Chat tLRPC$Chat) {
         if (tLRPC$Chat != null) {
-            setInfo(tLRPC$Chat.f1500id, tLRPC$Chat.title, null, null);
+            setInfo(tLRPC$Chat.f1502id, tLRPC$Chat.title, null, null);
         }
     }
 
@@ -396,12 +396,12 @@ public class AvatarDrawable extends Drawable {
             canvas.restore();
         } else if (i2 != 0) {
             if (i2 == 101) {
-                drawable = AppCompatResources.getDrawable(ApplicationLoader.applicationContext, C3301R.C3303drawable.fork_templates_filled);
+                drawable = AppCompatResources.getDrawable(ApplicationLoader.applicationContext, C3316R.C3318drawable.fork_templates_filled);
                 if (drawable != null) {
                     drawable.setBounds(0, 0, width, width);
                 }
             } else if (i2 == 100) {
-                drawable = AppCompatResources.getDrawable(ApplicationLoader.applicationContext, C3301R.C3303drawable.fork_filter_icon_lock_filled);
+                drawable = AppCompatResources.getDrawable(ApplicationLoader.applicationContext, C3316R.C3318drawable.fork_filter_icon_lock_filled);
                 if (drawable != null) {
                     drawable.setBounds(0, 0, width, width);
                 }

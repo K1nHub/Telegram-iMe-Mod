@@ -2,34 +2,44 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lorg/fork/utils/Callbacks$Callback1;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field public final synthetic f$0:Lorg/fork/utils/Callbacks$Callback1;
+.field public final synthetic f$0:Lorg/telegram/ui/ManageLinksActivity;
+
+.field public final synthetic f$1:Lorg/telegram/tgnet/TLRPC$TL_error;
+
+.field public final synthetic f$2:Lorg/telegram/tgnet/TLObject;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/fork/utils/Callbacks$Callback1;)V
+.method public synthetic constructor <init>(Lorg/telegram/ui/ManageLinksActivity;Lorg/telegram/tgnet/TLRPC$TL_error;Lorg/telegram/tgnet/TLObject;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lorg/telegram/ui/ManageLinksActivity$$ExternalSyntheticLambda22;->f$0:Lorg/fork/utils/Callbacks$Callback1;
+    iput-object p1, p0, Lorg/telegram/ui/ManageLinksActivity$$ExternalSyntheticLambda22;->f$0:Lorg/telegram/ui/ManageLinksActivity;
+
+    iput-object p2, p0, Lorg/telegram/ui/ManageLinksActivity$$ExternalSyntheticLambda22;->f$1:Lorg/telegram/tgnet/TLRPC$TL_error;
+
+    iput-object p3, p0, Lorg/telegram/ui/ManageLinksActivity$$ExternalSyntheticLambda22;->f$2:Lorg/telegram/tgnet/TLObject;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;)V
-    .locals 1
+.method public final run()V
+    .locals 3
 
-    iget-object v0, p0, Lorg/telegram/ui/ManageLinksActivity$$ExternalSyntheticLambda22;->f$0:Lorg/fork/utils/Callbacks$Callback1;
+    iget-object v0, p0, Lorg/telegram/ui/ManageLinksActivity$$ExternalSyntheticLambda22;->f$0:Lorg/telegram/ui/ManageLinksActivity;
 
-    check-cast p1, Lcom/smedialink/storage/domain/model/crypto/NetworkType;
+    iget-object v1, p0, Lorg/telegram/ui/ManageLinksActivity$$ExternalSyntheticLambda22;->f$1:Lorg/telegram/tgnet/TLRPC$TL_error;
 
-    invoke-static {v0, p1}, Lorg/telegram/ui/ManageLinksActivity;->$r8$lambda$TcbZZYbFe-Qaw8hi0RYnwokxgCQ(Lorg/fork/utils/Callbacks$Callback1;Lcom/smedialink/storage/domain/model/crypto/NetworkType;)V
+    iget-object v2, p0, Lorg/telegram/ui/ManageLinksActivity$$ExternalSyntheticLambda22;->f$2:Lorg/telegram/tgnet/TLObject;
+
+    invoke-static {v0, v1, v2}, Lorg/telegram/ui/ManageLinksActivity;->$r8$lambda$54JrMx510s1WxW4s5EIJLP9NSWo(Lorg/telegram/ui/ManageLinksActivity;Lorg/telegram/tgnet/TLRPC$TL_error;Lorg/telegram/tgnet/TLObject;)V
 
     return-void
 .end method

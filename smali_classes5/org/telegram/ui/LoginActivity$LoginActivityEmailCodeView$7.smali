@@ -25,7 +25,7 @@
 .method constructor <init>(Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;)V
     .locals 0
 
-    .line 6419
+    .line 6417
     iput-object p1, p0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView$7;->this$1:Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -44,7 +44,7 @@
 .method public beforeTextChanged(Ljava/lang/CharSequence;III)V
     .locals 0
 
-    .line 6422
+    .line 6420
     iget-object p1, p0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView$7;->this$1:Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;
 
     invoke-static {p1}, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->access$14400(Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;)Z
@@ -53,7 +53,7 @@
 
     if-eqz p1, :cond_0
 
-    .line 6423
+    .line 6421
     iget-object p1, p0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView$7;->this$1:Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;
 
     invoke-static {p1}, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->access$14500(Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;)Ljava/lang/Runnable;
@@ -62,7 +62,7 @@
 
     invoke-virtual {p1, p2}, Landroid/widget/LinearLayout;->removeCallbacks(Ljava/lang/Runnable;)Z
 
-    .line 6424
+    .line 6422
     iget-object p1, p0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView$7;->this$1:Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;
 
     invoke-static {p1}, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->access$14500(Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;)Ljava/lang/Runnable;

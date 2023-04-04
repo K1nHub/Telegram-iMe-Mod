@@ -35,11 +35,11 @@
 .method public final compare(Ljava/lang/Object;Ljava/lang/Object;)I
     .locals 0
 
-    check-cast p1, Lorg/telegram/ui/CacheControlActivity$ItemInner;
+    check-cast p1, Lorg/telegram/ui/CacheControlActivity$DialogFileEntities;
 
-    check-cast p2, Lorg/telegram/ui/CacheControlActivity$ItemInner;
+    check-cast p2, Lorg/telegram/ui/CacheControlActivity$DialogFileEntities;
 
-    invoke-static {p1, p2}, Lorg/telegram/ui/CacheControlActivity;->$r8$lambda$vxzvKT2G1lROIBn6AY0pq--K5eM(Lorg/telegram/ui/CacheControlActivity$ItemInner;Lorg/telegram/ui/CacheControlActivity$ItemInner;)I
+    invoke-static {p1, p2}, Lorg/telegram/ui/CacheControlActivity;->$r8$lambda$-GdIJJygK_lmViOL0UmzgYwAi3U(Lorg/telegram/ui/CacheControlActivity$DialogFileEntities;Lorg/telegram/ui/CacheControlActivity$DialogFileEntities;)I
 
     move-result p1
 

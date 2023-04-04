@@ -1985,9 +1985,9 @@
     .line 957
     iget-object v0, v7, Lorg/telegram/ui/Components/ForwardingPreviewView;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
-    iget-object v1, v1, Lorg/telegram/messenger/ForwardingMessagesParams;->template:Lcom/smedialink/storage/domain/model/templates/TemplateModel;
+    iget-object v1, v1, Lorg/telegram/messenger/ForwardingMessagesParams;->template:Lcom/iMe/storage/domain/model/templates/TemplateModel;
 
-    invoke-virtual {v1}, Lcom/smedialink/storage/domain/model/templates/TemplateModel;->getName()Ljava/lang/String;
+    invoke-virtual {v1}, Lcom/iMe/storage/domain/model/templates/TemplateModel;->getName()Ljava/lang/String;
 
     move-result-object v1
 

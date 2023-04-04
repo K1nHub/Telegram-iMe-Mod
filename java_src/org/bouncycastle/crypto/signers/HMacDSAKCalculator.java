@@ -12,32 +12,32 @@ public class HMacDSAKCalculator implements DSAKCalculator {
     private static final BigInteger ZERO = BigInteger.valueOf(0);
 
     /* renamed from: K */
-    private final byte[] f1305K;
+    private final byte[] f1310K;
 
     /* renamed from: V */
-    private final byte[] f1306V;
+    private final byte[] f1311V;
     private final HMac hMac;
 
     /* renamed from: n */
-    private BigInteger f1307n;
+    private BigInteger f1312n;
 
     public HMacDSAKCalculator(Digest digest) {
         HMac hMac = new HMac(digest);
         this.hMac = hMac;
-        this.f1306V = new byte[hMac.getMacSize()];
-        this.f1305K = new byte[hMac.getMacSize()];
+        this.f1311V = new byte[hMac.getMacSize()];
+        this.f1310K = new byte[hMac.getMacSize()];
     }
 
     private BigInteger bitsToInt(byte[] bArr) {
         BigInteger bigInteger = new BigInteger(1, bArr);
-        return bArr.length * 8 > this.f1307n.bitLength() ? bigInteger.shiftRight((bArr.length * 8) - this.f1307n.bitLength()) : bigInteger;
+        return bArr.length * 8 > this.f1312n.bitLength() ? bigInteger.shiftRight((bArr.length * 8) - this.f1312n.bitLength()) : bigInteger;
     }
 
     @Override // org.bouncycastle.crypto.signers.DSAKCalculator
     public void init(BigInteger bigInteger, BigInteger bigInteger2, byte[] bArr) {
-        this.f1307n = bigInteger;
-        Arrays.fill(this.f1306V, (byte) 1);
-        Arrays.fill(this.f1305K, (byte) 0);
+        this.f1312n = bigInteger;
+        Arrays.fill(this.f1311V, (byte) 1);
+        Arrays.fill(this.f1310K, (byte) 0);
         int bitLength = (bigInteger.bitLength() + 7) / 8;
         byte[] bArr2 = new byte[bitLength];
         byte[] asUnsignedByteArray = BigIntegers.asUnsignedByteArray(bigInteger2);
@@ -50,31 +50,31 @@ public class HMacDSAKCalculator implements DSAKCalculator {
         }
         byte[] asUnsignedByteArray2 = BigIntegers.asUnsignedByteArray(bitsToInt);
         System.arraycopy(asUnsignedByteArray2, 0, bArr3, bitLength2 - asUnsignedByteArray2.length, asUnsignedByteArray2.length);
-        this.hMac.init(new KeyParameter(this.f1305K));
+        this.hMac.init(new KeyParameter(this.f1310K));
         HMac hMac = this.hMac;
-        byte[] bArr4 = this.f1306V;
+        byte[] bArr4 = this.f1311V;
         hMac.update(bArr4, 0, bArr4.length);
         this.hMac.update((byte) 0);
         this.hMac.update(bArr2, 0, bitLength);
         this.hMac.update(bArr3, 0, bitLength2);
-        this.hMac.doFinal(this.f1305K, 0);
-        this.hMac.init(new KeyParameter(this.f1305K));
+        this.hMac.doFinal(this.f1310K, 0);
+        this.hMac.init(new KeyParameter(this.f1310K));
         HMac hMac2 = this.hMac;
-        byte[] bArr5 = this.f1306V;
+        byte[] bArr5 = this.f1311V;
         hMac2.update(bArr5, 0, bArr5.length);
-        this.hMac.doFinal(this.f1306V, 0);
+        this.hMac.doFinal(this.f1311V, 0);
         HMac hMac3 = this.hMac;
-        byte[] bArr6 = this.f1306V;
+        byte[] bArr6 = this.f1311V;
         hMac3.update(bArr6, 0, bArr6.length);
         this.hMac.update((byte) 1);
         this.hMac.update(bArr2, 0, bitLength);
         this.hMac.update(bArr3, 0, bitLength2);
-        this.hMac.doFinal(this.f1305K, 0);
-        this.hMac.init(new KeyParameter(this.f1305K));
+        this.hMac.doFinal(this.f1310K, 0);
+        this.hMac.init(new KeyParameter(this.f1310K));
         HMac hMac4 = this.hMac;
-        byte[] bArr7 = this.f1306V;
+        byte[] bArr7 = this.f1311V;
         hMac4.update(bArr7, 0, bArr7.length);
-        this.hMac.doFinal(this.f1306V, 0);
+        this.hMac.doFinal(this.f1311V, 0);
     }
 
     @Override // org.bouncycastle.crypto.signers.DSAKCalculator
@@ -89,33 +89,33 @@ public class HMacDSAKCalculator implements DSAKCalculator {
 
     @Override // org.bouncycastle.crypto.signers.DSAKCalculator
     public BigInteger nextK() {
-        int bitLength = (this.f1307n.bitLength() + 7) / 8;
+        int bitLength = (this.f1312n.bitLength() + 7) / 8;
         byte[] bArr = new byte[bitLength];
         while (true) {
             int i = 0;
             while (i < bitLength) {
                 HMac hMac = this.hMac;
-                byte[] bArr2 = this.f1306V;
+                byte[] bArr2 = this.f1311V;
                 hMac.update(bArr2, 0, bArr2.length);
-                this.hMac.doFinal(this.f1306V, 0);
-                int min = Math.min(bitLength - i, this.f1306V.length);
-                System.arraycopy(this.f1306V, 0, bArr, i, min);
+                this.hMac.doFinal(this.f1311V, 0);
+                int min = Math.min(bitLength - i, this.f1311V.length);
+                System.arraycopy(this.f1311V, 0, bArr, i, min);
                 i += min;
             }
             BigInteger bitsToInt = bitsToInt(bArr);
-            if (bitsToInt.compareTo(ZERO) > 0 && bitsToInt.compareTo(this.f1307n) < 0) {
+            if (bitsToInt.compareTo(ZERO) > 0 && bitsToInt.compareTo(this.f1312n) < 0) {
                 return bitsToInt;
             }
             HMac hMac2 = this.hMac;
-            byte[] bArr3 = this.f1306V;
+            byte[] bArr3 = this.f1311V;
             hMac2.update(bArr3, 0, bArr3.length);
             this.hMac.update((byte) 0);
-            this.hMac.doFinal(this.f1305K, 0);
-            this.hMac.init(new KeyParameter(this.f1305K));
+            this.hMac.doFinal(this.f1310K, 0);
+            this.hMac.init(new KeyParameter(this.f1310K));
             HMac hMac3 = this.hMac;
-            byte[] bArr4 = this.f1306V;
+            byte[] bArr4 = this.f1311V;
             hMac3.update(bArr4, 0, bArr4.length);
-            this.hMac.doFinal(this.f1306V, 0);
+            this.hMac.doFinal(this.f1311V, 0);
         }
     }
 }

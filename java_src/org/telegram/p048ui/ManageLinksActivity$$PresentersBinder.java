@@ -1,10 +1,10 @@
 package org.telegram.p048ui;
 
-import com.smedialink.p031ui.wallet.actions.send.amount.WalletSendAmountPresenter;
-import com.smedialink.p031ui.wallet.donations.WalletDonationsPresenter;
-import com.smedialink.p031ui.wallet.home.p032v2.tabs.binancepay.receive.WalletReceiveBinancePayPresenter;
-import com.smedialink.p031ui.wallet.staking.calculator.StakingCalculatorPresenter;
-import com.smedialink.p031ui.wallet.staking.transaction.StakingTransactionPresenter;
+import com.iMe.p032ui.wallet.actions.send.amount.WalletSendAmountPresenter;
+import com.iMe.p032ui.wallet.donations.WalletDonationsPresenter;
+import com.iMe.p032ui.wallet.home.p033v2.tabs.binancepay.receive.WalletReceiveBinancePayPresenter;
+import com.iMe.p032ui.wallet.staking.calculator.StakingCalculatorPresenter;
+import com.iMe.p032ui.wallet.staking.transaction.StakingTransactionPresenter;
 import java.util.ArrayList;
 import java.util.List;
 import moxy.MvpPresenter;

@@ -7,7 +7,7 @@ public final class XMSSParameters {
     private final int height;
 
     /* renamed from: k */
-    private final int f1409k;
+    private final int f1414k;
     private final WOTSPlus wotsPlus;
 
     public XMSSParameters(int i, Digest digest) {
@@ -18,7 +18,7 @@ public final class XMSSParameters {
         WOTSPlus wOTSPlus = new WOTSPlus(new WOTSPlusParameters(digest));
         this.wotsPlus = wOTSPlus;
         this.height = i;
-        this.f1409k = determineMinK();
+        this.f1414k = determineMinK();
         DefaultXMSSOid.lookup(getDigest().getAlgorithmName(), getDigestSize(), getWinternitzParameter(), wOTSPlus.getParams().getLen(), i);
     }
 
@@ -51,7 +51,7 @@ public final class XMSSParameters {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public int getK() {
-        return this.f1409k;
+        return this.f1414k;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */

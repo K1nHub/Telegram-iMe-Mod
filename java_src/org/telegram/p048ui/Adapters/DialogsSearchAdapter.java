@@ -19,7 +19,7 @@ import org.telegram.SQLite.SQLiteCursor;
 import org.telegram.SQLite.SQLiteDatabase;
 import org.telegram.SQLite.SQLitePreparedStatement;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3301R;
+import org.telegram.messenger.C3316R;
 import org.telegram.messenger.ChatObject;
 import org.telegram.messenger.ContactsController;
 import org.telegram.messenger.DialogObject;
@@ -65,7 +65,7 @@ import org.telegram.tgnet.TLRPC$TL_messages_searchGlobal;
 import org.telegram.tgnet.TLRPC$TL_topPeer;
 import org.telegram.tgnet.TLRPC$User;
 import org.telegram.tgnet.TLRPC$messages_Messages;
-import p034j$.util.concurrent.ConcurrentHashMap;
+import p035j$.util.concurrent.ConcurrentHashMap;
 /* renamed from: org.telegram.ui.Adapters.DialogsSearchAdapter */
 /* loaded from: classes5.dex */
 public class DialogsSearchAdapter extends RecyclerListView.SelectionAdapter {
@@ -377,7 +377,7 @@ public class DialogsSearchAdapter extends RecyclerListView.SelectionAdapter {
             long searchForumDialogId = this.delegate.getSearchForumDialogId();
             final TLRPC$TL_messages_search tLRPC$TL_messages_search = new TLRPC$TL_messages_search();
             tLRPC$TL_messages_search.limit = 20;
-            tLRPC$TL_messages_search.f1605q = str;
+            tLRPC$TL_messages_search.f1607q = str;
             tLRPC$TL_messages_search.filter = new TLRPC$TL_inputMessagesFilterEmpty();
             tLRPC$TL_messages_search.peer = MessagesController.getInstance(this.currentAccount).getInputPeer(searchForumDialogId);
             if (str.equals(this.lastMessagesSearchString) && !this.searchForumResultMessages.isEmpty()) {
@@ -404,11 +404,11 @@ public class DialogsSearchAdapter extends RecyclerListView.SelectionAdapter {
             LongSparseArray longSparseArray2 = new LongSparseArray();
             for (int i3 = 0; i3 < tLRPC$messages_Messages.chats.size(); i3++) {
                 TLRPC$Chat tLRPC$Chat = tLRPC$messages_Messages.chats.get(i3);
-                longSparseArray.put(tLRPC$Chat.f1500id, tLRPC$Chat);
+                longSparseArray.put(tLRPC$Chat.f1502id, tLRPC$Chat);
             }
             for (int i4 = 0; i4 < tLRPC$messages_Messages.users.size(); i4++) {
                 TLRPC$User tLRPC$User = tLRPC$messages_Messages.users.get(i4);
-                longSparseArray2.put(tLRPC$User.f1640id, tLRPC$User);
+                longSparseArray2.put(tLRPC$User.f1642id, tLRPC$User);
             }
             for (int i5 = 0; i5 < tLRPC$messages_Messages.messages.size(); i5++) {
                 MessageObject messageObject = new MessageObject(this.currentAccount, tLRPC$messages_Messages.messages.get(i5), (LongSparseArray<TLRPC$User>) longSparseArray2, (LongSparseArray<TLRPC$Chat>) longSparseArray, false, true);
@@ -440,7 +440,7 @@ public class DialogsSearchAdapter extends RecyclerListView.SelectionAdapter {
                 for (int i3 = 0; i3 < tLRPC$messages_Messages.messages.size(); i3++) {
                     TLRPC$Message tLRPC$Message = tLRPC$messages_Messages.messages.get(i3);
                     int i4 = MessagesController.getInstance(this.currentAccount).deletedHistory.get(MessageObject.getDialogId(tLRPC$Message));
-                    if (i4 == 0 || tLRPC$Message.f1524id > i4) {
+                    if (i4 == 0 || tLRPC$Message.f1526id > i4) {
                         this.searchForumResultMessages.add((MessageObject) arrayList.get(i3));
                     }
                 }
@@ -520,7 +520,7 @@ public class DialogsSearchAdapter extends RecyclerListView.SelectionAdapter {
             }
             final TLRPC$TL_messages_searchGlobal tLRPC$TL_messages_searchGlobal = new TLRPC$TL_messages_searchGlobal();
             tLRPC$TL_messages_searchGlobal.limit = 20;
-            tLRPC$TL_messages_searchGlobal.f1606q = str;
+            tLRPC$TL_messages_searchGlobal.f1608q = str;
             tLRPC$TL_messages_searchGlobal.filter = new TLRPC$TL_inputMessagesFilterEmpty();
             tLRPC$TL_messages_searchGlobal.flags |= 1;
             tLRPC$TL_messages_searchGlobal.folder_id = this.folderId;
@@ -556,11 +556,11 @@ public class DialogsSearchAdapter extends RecyclerListView.SelectionAdapter {
             LongSparseArray longSparseArray2 = new LongSparseArray();
             for (int i3 = 0; i3 < tLRPC$messages_Messages.chats.size(); i3++) {
                 TLRPC$Chat tLRPC$Chat = tLRPC$messages_Messages.chats.get(i3);
-                longSparseArray.put(tLRPC$Chat.f1500id, tLRPC$Chat);
+                longSparseArray.put(tLRPC$Chat.f1502id, tLRPC$Chat);
             }
             for (int i4 = 0; i4 < tLRPC$messages_Messages.users.size(); i4++) {
                 TLRPC$User tLRPC$User = tLRPC$messages_Messages.users.get(i4);
-                longSparseArray2.put(tLRPC$User.f1640id, tLRPC$User);
+                longSparseArray2.put(tLRPC$User.f1642id, tLRPC$User);
             }
             for (int i5 = 0; i5 < tLRPC$messages_Messages.messages.size(); i5++) {
                 MessageObject messageObject = new MessageObject(this.currentAccount, tLRPC$messages_Messages.messages.get(i5), (LongSparseArray<TLRPC$User>) longSparseArray2, (LongSparseArray<TLRPC$Chat>) longSparseArray, false, true);
@@ -593,7 +593,7 @@ public class DialogsSearchAdapter extends RecyclerListView.SelectionAdapter {
                 for (int i3 = 0; i3 < tLRPC$messages_Messages.messages.size(); i3++) {
                     TLRPC$Message tLRPC$Message = tLRPC$messages_Messages.messages.get(i3);
                     int i4 = MessagesController.getInstance(this.currentAccount).deletedHistory.get(MessageObject.getDialogId(tLRPC$Message));
-                    if (i4 == 0 || tLRPC$Message.f1524id > i4) {
+                    if (i4 == 0 || tLRPC$Message.f1526id > i4) {
                         MessageObject messageObject = (MessageObject) arrayList.get(i3);
                         if (!this.searchForumResultMessages.isEmpty()) {
                             int i5 = 0;
@@ -620,7 +620,7 @@ public class DialogsSearchAdapter extends RecyclerListView.SelectionAdapter {
                             num = Integer.valueOf(MessagesStorage.getInstance(this.currentAccount).getDialogReadMax(tLRPC$Message.out, dialogId));
                             concurrentHashMap.put(Long.valueOf(dialogId), num);
                         }
-                        tLRPC$Message.unread = num.intValue() < tLRPC$Message.f1524id;
+                        tLRPC$Message.unread = num.intValue() < tLRPC$Message.f1526id;
                     }
                 }
                 this.searchWas = true;
@@ -737,7 +737,7 @@ public class DialogsSearchAdapter extends RecyclerListView.SelectionAdapter {
                 ArrayList<TLRPC$EncryptedChat> arrayList6 = new ArrayList<>();
                 MessagesStorage.getInstance(i).getEncryptedChatsInternal(TextUtils.join(",", arrayList3), arrayList6, arrayList);
                 for (int i3 = 0; i3 < arrayList6.size(); i3++) {
-                    RecentSearchObject recentSearchObject2 = (RecentSearchObject) longSparseArray.get(DialogObject.makeEncryptedDialogId(arrayList6.get(i3).f1512id));
+                    RecentSearchObject recentSearchObject2 = (RecentSearchObject) longSparseArray.get(DialogObject.makeEncryptedDialogId(arrayList6.get(i3).f1514id));
                     if (recentSearchObject2 != null) {
                         recentSearchObject2.object = arrayList6.get(i3);
                     }
@@ -748,7 +748,7 @@ public class DialogsSearchAdapter extends RecyclerListView.SelectionAdapter {
                 MessagesStorage.getInstance(i).getChatsInternal(TextUtils.join(",", arrayList2), arrayList7);
                 for (int i4 = 0; i4 < arrayList7.size(); i4++) {
                     TLRPC$Chat tLRPC$Chat = arrayList7.get(i4);
-                    long j2 = -tLRPC$Chat.f1500id;
+                    long j2 = -tLRPC$Chat.f1502id;
                     if (tLRPC$Chat.migrated_to != null) {
                         RecentSearchObject recentSearchObject3 = (RecentSearchObject) longSparseArray.get(j2);
                         longSparseArray.remove(j2);
@@ -767,7 +767,7 @@ public class DialogsSearchAdapter extends RecyclerListView.SelectionAdapter {
                 MessagesStorage.getInstance(i).getUsersInternal(TextUtils.join(",", arrayList), arrayList5);
                 for (int i5 = 0; i5 < arrayList5.size(); i5++) {
                     TLRPC$User tLRPC$User = arrayList5.get(i5);
-                    RecentSearchObject recentSearchObject5 = (RecentSearchObject) longSparseArray.get(tLRPC$User.f1640id);
+                    RecentSearchObject recentSearchObject5 = (RecentSearchObject) longSparseArray.get(tLRPC$User.f1642id);
                     if (recentSearchObject5 != null) {
                         recentSearchObject5.object = tLRPC$User;
                     }
@@ -958,7 +958,7 @@ public class DialogsSearchAdapter extends RecyclerListView.SelectionAdapter {
         updateSearchResults(arrayList, arrayList2, arrayList3, arrayList4, i);
         FiltersView.fillTipDates(str, this.localTipDates);
         this.localTipArchive = false;
-        if (str.length() >= 3 && (LocaleController.getString("ArchiveSearchFilter", C3301R.string.ArchiveSearchFilter).toLowerCase().startsWith(str) || "archive".startsWith(str2))) {
+        if (str.length() >= 3 && (LocaleController.getString("ArchiveSearchFilter", C3316R.string.ArchiveSearchFilter).toLowerCase().startsWith(str) || "archive".startsWith(str2))) {
             this.localTipArchive = true;
         }
         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Adapters.DialogsSearchAdapter$$ExternalSyntheticLambda7
@@ -1008,11 +1008,11 @@ public class DialogsSearchAdapter extends RecyclerListView.SelectionAdapter {
             if (obj instanceof TLRPC$User) {
                 TLRPC$User tLRPC$User = (TLRPC$User) obj;
                 MessagesController.getInstance(this.currentAccount).putUser(tLRPC$User, true);
-                j = tLRPC$User.f1640id;
+                j = tLRPC$User.f1642id;
             } else if (obj instanceof TLRPC$Chat) {
                 TLRPC$Chat tLRPC$Chat = (TLRPC$Chat) obj;
                 MessagesController.getInstance(this.currentAccount).putChat(tLRPC$Chat, true);
-                j = -tLRPC$Chat.f1500id;
+                j = -tLRPC$Chat.f1502id;
             } else {
                 if (obj instanceof TLRPC$EncryptedChat) {
                     MessagesController.getInstance(this.currentAccount).putEncryptedChat((TLRPC$EncryptedChat) obj, true);
@@ -1060,7 +1060,7 @@ public class DialogsSearchAdapter extends RecyclerListView.SelectionAdapter {
     public /* synthetic */ void lambda$updateSearchResults$13(long j, Object obj, int i) {
         if (i != -1) {
             TLRPC$TL_dialog tLRPC$TL_dialog = new TLRPC$TL_dialog();
-            tLRPC$TL_dialog.f1506id = j;
+            tLRPC$TL_dialog.f1508id = j;
             if (i != 0) {
                 tLRPC$TL_dialog.folder_id = i;
             }
@@ -1336,11 +1336,11 @@ public class DialogsSearchAdapter extends RecyclerListView.SelectionAdapter {
             if (i > i4 && (i2 = (i - 1) - i4) < arrayList.size()) {
                 TLObject tLObject = arrayList.get(i2).object;
                 if (tLObject instanceof TLRPC$User) {
-                    chat = MessagesController.getInstance(this.currentAccount).getUser(Long.valueOf(((TLRPC$User) tLObject).f1640id));
+                    chat = MessagesController.getInstance(this.currentAccount).getUser(Long.valueOf(((TLRPC$User) tLObject).f1642id));
                     if (chat == null) {
                         return tLObject;
                     }
-                } else if (!(tLObject instanceof TLRPC$Chat) || (chat = MessagesController.getInstance(this.currentAccount).getChat(Long.valueOf(((TLRPC$Chat) tLObject).f1500id))) == null) {
+                } else if (!(tLObject instanceof TLRPC$Chat) || (chat = MessagesController.getInstance(this.currentAccount).getChat(Long.valueOf(((TLRPC$Chat) tLObject).f1502id))) == null) {
                     return tLObject;
                 }
                 return chat;
@@ -1652,10 +1652,10 @@ public class DialogsSearchAdapter extends RecyclerListView.SelectionAdapter {
         boolean z = !this.phoneCollapsed;
         this.phoneCollapsed = z;
         if (z) {
-            i = C3301R.string.ShowMore;
+            i = C3316R.string.ShowMore;
             str = "ShowMore";
         } else {
-            i = C3301R.string.ShowLess;
+            i = C3316R.string.ShowLess;
             str = "ShowLess";
         }
         graySectionCell.setRightText(LocaleController.getString(str, i));
@@ -1682,10 +1682,10 @@ public class DialogsSearchAdapter extends RecyclerListView.SelectionAdapter {
         boolean z2 = !this.globalSearchCollapsed;
         this.globalSearchCollapsed = z2;
         if (z2) {
-            i2 = C3301R.string.ShowMore;
+            i2 = C3316R.string.ShowMore;
             str = "ShowMore";
         } else {
-            i2 = C3301R.string.ShowLess;
+            i2 = C3316R.string.ShowLess;
             str = "ShowLess";
         }
         graySectionCell.setRightText(LocaleController.getString(str, i2), this.globalSearchCollapsed);

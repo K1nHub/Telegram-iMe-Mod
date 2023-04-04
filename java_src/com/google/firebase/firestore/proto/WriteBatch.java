@@ -59,7 +59,7 @@ public final class WriteBatch extends GeneratedMessageLite<WriteBatch, Builder> 
 
     /* loaded from: classes3.dex */
     public static final class Builder extends GeneratedMessageLite.Builder<WriteBatch, Builder> implements MessageLiteOrBuilder {
-        /* synthetic */ Builder(C10171 c10171) {
+        /* synthetic */ Builder(C10311 c10311) {
             this();
         }
 
@@ -70,7 +70,7 @@ public final class WriteBatch extends GeneratedMessageLite<WriteBatch, Builder> 
 
     /* renamed from: com.google.firebase.firestore.proto.WriteBatch$1 */
     /* loaded from: classes3.dex */
-    static /* synthetic */ class C10171 {
+    static /* synthetic */ class C10311 {
 
         /* renamed from: $SwitchMap$com$google$protobuf$GeneratedMessageLite$MethodToInvoke */
         static final /* synthetic */ int[] f185xa1df5c61;
@@ -111,7 +111,7 @@ public final class WriteBatch extends GeneratedMessageLite<WriteBatch, Builder> 
 
     @Override // com.google.protobuf.GeneratedMessageLite
     protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke methodToInvoke, Object obj, Object obj2) {
-        switch (C10171.f185xa1df5c61[methodToInvoke.ordinal()]) {
+        switch (C10311.f185xa1df5c61[methodToInvoke.ordinal()]) {
             case 1:
                 return new WriteBatch();
             case 2:

@@ -5,7 +5,7 @@ import com.otaliastudios.gif.internal.Logger;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.InputStream;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class FilePathDataSource extends DefaultDataSource {
     private String path;
 

@@ -1,7 +1,7 @@
 package com.otaliastudios.gif.transcode;
 
 import android.media.MediaFormat;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public interface Transcoder {
     boolean isFinished();
 

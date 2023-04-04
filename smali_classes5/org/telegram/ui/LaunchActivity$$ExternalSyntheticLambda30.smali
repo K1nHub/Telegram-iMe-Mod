@@ -6,16 +6,16 @@
 
 
 # instance fields
-.field public final synthetic f$0:Ljava/lang/Runnable;
+.field public final synthetic f$0:I
 
 
 # direct methods
-.method public synthetic constructor <init>(Ljava/lang/Runnable;)V
+.method public synthetic constructor <init>(I)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda30;->f$0:Ljava/lang/Runnable;
+    iput p1, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda30;->f$0:I
 
     return-void
 .end method
@@ -25,9 +25,9 @@
 .method public final run()V
     .locals 1
 
-    iget-object v0, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda30;->f$0:Ljava/lang/Runnable;
+    iget v0, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda30;->f$0:I
 
-    invoke-static {v0}, Lorg/telegram/ui/LaunchActivity;->$r8$lambda$BiLBacbBs220tku-O2gB8j17MTo(Ljava/lang/Runnable;)V
+    invoke-static {v0}, Lorg/telegram/ui/LaunchActivity;->$r8$lambda$wYP_79F142R2jmXo_Dl4skEhBr8(I)V
 
     return-void
 .end method

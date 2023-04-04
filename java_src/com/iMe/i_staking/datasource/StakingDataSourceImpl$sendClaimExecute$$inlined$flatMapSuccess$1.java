@@ -3,10 +3,10 @@ package com.iMe.i_staking.datasource;
 import com.iMe.i_staking.StakingApi;
 import com.iMe.i_staking.request.StakingTokenActionExecuteRequest;
 import com.iMe.i_staking.response.StakingOperationResponse;
-import com.smedialink.storage.data.network.handlers.impl.FirebaseFunctionsErrorHandler;
-import com.smedialink.storage.data.network.model.response.base.ApiBaseResponse;
-import com.smedialink.storage.domain.model.Result;
-import com.smedialink.storage.domain.model.staking.StakingOperation;
+import com.iMe.storage.data.network.handlers.impl.FirebaseFunctionsErrorHandler;
+import com.iMe.storage.data.network.model.response.base.ApiBaseResponse;
+import com.iMe.storage.domain.model.Result;
+import com.iMe.storage.domain.model.staking.StakingOperation;
 import io.reactivex.Observable;
 import io.reactivex.ObservableSource;
 import kotlin.jvm.functions.Function1;
@@ -33,7 +33,7 @@ public final class StakingDataSourceImpl$sendClaimExecute$$inlined$flatMapSucces
         if (!(result instanceof Result.Success)) {
             if (result instanceof Result.Error) {
                 Result error$default = Result.Companion.error$default(Result.Companion, ((Result.Error) result).getError(), null, 2, null);
-                Intrinsics.checkNotNull(error$default, "null cannot be cast to non-null type R of com.smedialink.storage.domain.utils.extentions.ObservableExtKt.flatMapSuccess");
+                Intrinsics.checkNotNull(error$default, "null cannot be cast to non-null type R of com.iMe.storage.domain.utils.extentions.ObservableExtKt.flatMapSuccess");
                 return Observable.just(error$default);
             }
             return Observable.empty();
@@ -46,7 +46,7 @@ public final class StakingDataSourceImpl$sendClaimExecute$$inlined$flatMapSucces
         }
         Observable<ApiBaseResponse<StakingOperationResponse>> sendClaimExecute = stakingApi.sendClaimExecute(new StakingTokenActionExecuteRequest(str, data));
         firebaseFunctionsErrorHandler = this.this$0.firebaseErrorHandler;
-        ObservableSource map = sendClaimExecute.map(new C1236xdf81e200(new C1231xc11af0c0(firebaseFunctionsErrorHandler)));
+        ObservableSource map = sendClaimExecute.map(new C1500xdf81e200(new C1495xc11af0c0(firebaseFunctionsErrorHandler)));
         Intrinsics.checkNotNullExpressionValue(map, "errorHandler: FirebaseFu…response).toError()\n    }");
         return map;
     }

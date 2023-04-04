@@ -48,9 +48,9 @@
     if-eqz v0, :cond_2
 
     .line 1084
-    sget-object v0, Lorg/telegram/messenger/SharedConfig;->selectedVideoVoiceCamera:Lorg/fork/enums/VideoVoiceCamera;
+    sget-object v0, Lorg/telegram/messenger/SharedConfig;->selectedVideoVoiceCamera:Lcom/iMe/fork/enums/VideoVoiceCamera;
 
-    sget-object v1, Lorg/fork/enums/VideoVoiceCamera;->ASK:Lorg/fork/enums/VideoVoiceCamera;
+    sget-object v1, Lcom/iMe/fork/enums/VideoVoiceCamera;->ASK:Lcom/iMe/fork/enums/VideoVoiceCamera;
 
     if-ne v0, v1, :cond_0
 
@@ -63,9 +63,9 @@
 
     .line 1086
     :cond_0
-    sget-object v0, Lorg/telegram/messenger/SharedConfig;->selectedVideoVoiceCamera:Lorg/fork/enums/VideoVoiceCamera;
+    sget-object v0, Lorg/telegram/messenger/SharedConfig;->selectedVideoVoiceCamera:Lcom/iMe/fork/enums/VideoVoiceCamera;
 
-    sget-object v1, Lorg/fork/enums/VideoVoiceCamera;->BACK:Lorg/fork/enums/VideoVoiceCamera;
+    sget-object v1, Lcom/iMe/fork/enums/VideoVoiceCamera;->BACK:Lcom/iMe/fork/enums/VideoVoiceCamera;
 
     const/4 v2, 0x1
 

@@ -359,6 +359,16 @@
     return v0
 .end method
 
+.method public bridge synthetic getKoin()Lorg/koin/core/Koin;
+    .locals 1
+
+    invoke-static {p0}, Lcom/iMe/ui/base/mvp/view/ICustomMvpView$-CC;->$default$getKoin(Lcom/iMe/ui/base/mvp/view/ICustomMvpView;)Lorg/koin/core/Koin;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
 .method public getListTopPadding()I
     .locals 1
 
@@ -370,6 +380,23 @@
     move-result v0
 
     return v0
+.end method
+
+.method public bridge synthetic getMvpDelegate()Lmoxy/MvpDelegate;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Lmoxy/MvpDelegate<",
+            "TT;>;"
+        }
+    .end annotation
+
+    invoke-static {p0}, Lcom/iMe/ui/base/mvp/view/ICustomMvpView$-CC;->$default$getMvpDelegate(Lcom/iMe/ui/base/mvp/view/ICustomMvpView;)Lmoxy/MvpDelegate;
+
+    move-result-object v0
+
+    return-object v0
 .end method
 
 .method public onPreMeasure(II)V

@@ -18,7 +18,7 @@
 .method constructor <init>(Lorg/telegram/ui/Cells/DrawerProfileCell;Landroid/content/Context;)V
     .locals 0
 
-    .line 308
+    .line 307
     invoke-direct {p0, p2}, Lorg/telegram/ui/Components/RLottieImageView;-><init>(Landroid/content/Context;)V
 
     return-void
@@ -29,17 +29,17 @@
 .method public onInitializeAccessibilityNodeInfo(Landroid/view/accessibility/AccessibilityNodeInfo;)V
     .locals 2
 
-    .line 311
+    .line 310
     invoke-super {p0, p1}, Landroid/widget/ImageView;->onInitializeAccessibilityNodeInfo(Landroid/view/accessibility/AccessibilityNodeInfo;)V
 
-    .line 312
+    .line 311
     invoke-static {}, Lorg/telegram/ui/ActionBar/Theme;->isCurrentThemeDark()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 313
+    .line 312
     sget v0, Lorg/telegram/messenger/R$string;->AccDescrSwitchToDayTheme:I
 
     const-string v1, "AccDescrSwitchToDayTheme"
@@ -52,7 +52,7 @@
 
     goto :goto_0
 
-    .line 315
+    .line 314
     :cond_0
     sget v0, Lorg/telegram/messenger/R$string;->AccDescrSwitchToNightTheme:I
 

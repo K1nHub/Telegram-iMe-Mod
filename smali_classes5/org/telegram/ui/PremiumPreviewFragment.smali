@@ -2290,21 +2290,21 @@
     if-ne p1, p2, :cond_0
 
     .line 579
-    invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getForkCommonController()Lorg/fork/controller/ForkCommonController;
+    invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getForkCommonController()Lcom/iMe/fork/controller/ForkCommonController;
 
     move-result-object p1
 
-    invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getForkCommonController()Lorg/fork/controller/ForkCommonController;
+    invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getForkCommonController()Lcom/iMe/fork/controller/ForkCommonController;
 
     move-result-object p2
 
-    invoke-virtual {p2}, Lorg/fork/controller/ForkCommonController;->isPremiumAnimateStickers()Z
+    invoke-virtual {p2}, Lcom/iMe/fork/controller/ForkCommonController;->isPremiumAnimateStickers()Z
 
     move-result p2
 
     xor-int/2addr p2, v1
 
-    invoke-virtual {p1, p2}, Lorg/fork/controller/ForkCommonController;->setPremiumAnimateStickers(Z)V
+    invoke-virtual {p1, p2}, Lcom/iMe/fork/controller/ForkCommonController;->setPremiumAnimateStickers(Z)V
 
     goto :goto_0
 
@@ -2314,21 +2314,21 @@
     if-ne p1, p2, :cond_1
 
     .line 581
-    invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getForkCommonController()Lorg/fork/controller/ForkCommonController;
+    invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getForkCommonController()Lcom/iMe/fork/controller/ForkCommonController;
 
     move-result-object p1
 
-    invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getForkCommonController()Lorg/fork/controller/ForkCommonController;
+    invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getForkCommonController()Lcom/iMe/fork/controller/ForkCommonController;
 
     move-result-object p2
 
-    invoke-virtual {p2}, Lorg/fork/controller/ForkCommonController;->isShowPremiumBadgeEnabled()Z
+    invoke-virtual {p2}, Lcom/iMe/fork/controller/ForkCommonController;->isShowPremiumBadgeEnabled()Z
 
     move-result p2
 
     xor-int/2addr p2, v1
 
-    invoke-virtual {p1, p2}, Lorg/fork/controller/ForkCommonController;->setShowPremiumBadgeEnabled(Z)V
+    invoke-virtual {p1, p2}, Lcom/iMe/fork/controller/ForkCommonController;->setShowPremiumBadgeEnabled(Z)V
 
     goto :goto_0
 
@@ -2338,21 +2338,21 @@
     if-ne p1, p2, :cond_2
 
     .line 583
-    invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getForkCommonController()Lorg/fork/controller/ForkCommonController;
+    invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getForkCommonController()Lcom/iMe/fork/controller/ForkCommonController;
 
     move-result-object p1
 
-    invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getForkCommonController()Lorg/fork/controller/ForkCommonController;
+    invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getForkCommonController()Lcom/iMe/fork/controller/ForkCommonController;
 
     move-result-object p2
 
-    invoke-virtual {p2}, Lorg/fork/controller/ForkCommonController;->isPremiumAnimateAvatars()Z
+    invoke-virtual {p2}, Lcom/iMe/fork/controller/ForkCommonController;->isPremiumAnimateAvatars()Z
 
     move-result p2
 
     xor-int/2addr p2, v1
 
-    invoke-virtual {p1, p2}, Lorg/fork/controller/ForkCommonController;->setPremiumAnimateAvatars(Z)V
+    invoke-virtual {p1, p2}, Lcom/iMe/fork/controller/ForkCommonController;->setPremiumAnimateAvatars(Z)V
 
     goto :goto_0
 
@@ -2362,30 +2362,30 @@
     if-ne p1, p2, :cond_3
 
     .line 585
-    invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getForkCommonController()Lorg/fork/controller/ForkCommonController;
+    invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getForkCommonController()Lcom/iMe/fork/controller/ForkCommonController;
 
     move-result-object p1
 
-    invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getForkCommonController()Lorg/fork/controller/ForkCommonController;
+    invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getForkCommonController()Lcom/iMe/fork/controller/ForkCommonController;
 
     move-result-object p2
 
-    invoke-virtual {p2}, Lorg/fork/controller/ForkCommonController;->isShowPremiumStatusEnabled()Z
+    invoke-virtual {p2}, Lcom/iMe/fork/controller/ForkCommonController;->isShowPremiumStatusEnabled()Z
 
     move-result p2
 
     xor-int/2addr p2, v1
 
-    invoke-virtual {p1, p2}, Lorg/fork/controller/ForkCommonController;->setShowPremiumStatusEnabled(Z)V
+    invoke-virtual {p1, p2}, Lcom/iMe/fork/controller/ForkCommonController;->setShowPremiumStatusEnabled(Z)V
 
     .line 587
     :cond_3
     :goto_0
-    invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getForkCommonController()Lorg/fork/controller/ForkCommonController;
+    invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getForkCommonController()Lcom/iMe/fork/controller/ForkCommonController;
 
     move-result-object p1
 
-    invoke-virtual {p1}, Lorg/fork/controller/ForkCommonController;->saveConfig()V
+    invoke-virtual {p1}, Lcom/iMe/fork/controller/ForkCommonController;->saveConfig()V
 
     .line 588
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getNotificationCenter()Lorg/telegram/messenger/NotificationCenter;
@@ -4635,7 +4635,7 @@
 
     move-result-object v1
 
-    sget v2, Lcom/smedialink/common/IdFabric$Menu;->SETTINGS:I
+    sget v2, Lcom/iMe/common/IdFabric$Menu;->SETTINGS:I
 
     sget v3, Lorg/telegram/messenger/R$drawable;->fork_settings_filled:I
 

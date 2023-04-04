@@ -24,10 +24,10 @@
 .method private constructor <init>(Lorg/telegram/ui/TopicsFragment$MessagesSearchContainer;I)V
     .locals 0
 
-    .line 3262
+    .line 3265
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 3263
+    .line 3266
     iput p2, p0, Lorg/telegram/ui/TopicsFragment$MessagesSearchContainer$Item;->type:I
 
     return-void
@@ -36,7 +36,7 @@
 .method synthetic constructor <init>(Lorg/telegram/ui/TopicsFragment$MessagesSearchContainer;ILorg/telegram/ui/TopicsFragment$1;)V
     .locals 0
 
-    .line 3258
+    .line 3261
     invoke-direct {p0, p1, p2}, Lorg/telegram/ui/TopicsFragment$MessagesSearchContainer$Item;-><init>(Lorg/telegram/ui/TopicsFragment$MessagesSearchContainer;I)V
 
     return-void
@@ -45,7 +45,7 @@
 .method static synthetic access$8100(Lorg/telegram/ui/TopicsFragment$MessagesSearchContainer$Item;)I
     .locals 0
 
-    .line 3258
+    .line 3261
     iget p0, p0, Lorg/telegram/ui/TopicsFragment$MessagesSearchContainer$Item;->type:I
 
     return p0

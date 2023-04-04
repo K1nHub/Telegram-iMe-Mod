@@ -2,44 +2,40 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Lcom/iMe/fork/utils/Callbacks$Callback1;
 
 
 # instance fields
-.field public final synthetic f$0:I
+.field public final synthetic f$0:Lorg/telegram/ui/ActionBar/AlertDialog;
 
-.field public final synthetic f$1:Lorg/telegram/tgnet/TLRPC$Chat;
-
-.field public final synthetic f$2:Ljava/util/ArrayList;
+.field public final synthetic f$1:Lorg/telegram/ui/ActionBar/BaseFragment;
 
 
 # direct methods
-.method public synthetic constructor <init>(ILorg/telegram/tgnet/TLRPC$Chat;Ljava/util/ArrayList;)V
+.method public synthetic constructor <init>(Lorg/telegram/ui/ActionBar/AlertDialog;Lorg/telegram/ui/ActionBar/BaseFragment;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput p1, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda108;->f$0:I
+    iput-object p1, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda108;->f$0:Lorg/telegram/ui/ActionBar/AlertDialog;
 
-    iput-object p2, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda108;->f$1:Lorg/telegram/tgnet/TLRPC$Chat;
-
-    iput-object p3, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda108;->f$2:Ljava/util/ArrayList;
+    iput-object p2, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda108;->f$1:Lorg/telegram/ui/ActionBar/BaseFragment;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final run()V
-    .locals 3
+.method public final invoke(Ljava/lang/Object;)V
+    .locals 2
 
-    iget v0, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda108;->f$0:I
+    iget-object v0, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda108;->f$0:Lorg/telegram/ui/ActionBar/AlertDialog;
 
-    iget-object v1, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda108;->f$1:Lorg/telegram/tgnet/TLRPC$Chat;
+    iget-object v1, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda108;->f$1:Lorg/telegram/ui/ActionBar/BaseFragment;
 
-    iget-object v2, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda108;->f$2:Ljava/util/ArrayList;
+    check-cast p1, Ljava/lang/Boolean;
 
-    invoke-static {v0, v1, v2}, Lorg/telegram/ui/Components/AlertsCreator;->$r8$lambda$zcvUnUOT1OHXOM4Fim2ARMw-rbc(ILorg/telegram/tgnet/TLRPC$Chat;Ljava/util/ArrayList;)V
+    invoke-static {v0, v1, p1}, Lorg/telegram/ui/Components/AlertsCreator;->$r8$lambda$gmMb5E6WE2PqPfyIqwDeMXPm2iE(Lorg/telegram/ui/ActionBar/AlertDialog;Lorg/telegram/ui/ActionBar/BaseFragment;Ljava/lang/Boolean;)V
 
     return-void
 .end method

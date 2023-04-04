@@ -2,7 +2,9 @@ package com.bumptech.glide.load.resource.bitmap;
 
 import android.content.res.AssetFileDescriptor;
 import android.graphics.Bitmap;
+import android.graphics.Matrix;
 import android.media.MediaDataSource;
+import android.media.MediaExtractor;
 import android.media.MediaMetadataRetriever;
 import android.os.Build;
 import android.os.ParcelFileDescriptor;
@@ -12,14 +14,18 @@ import com.bumptech.glide.load.Options;
 import com.bumptech.glide.load.ResourceDecoder;
 import com.bumptech.glide.load.engine.Resource;
 import com.bumptech.glide.load.engine.bitmap_recycle.BitmapPool;
+import com.google.android.exoplayer2.util.MimeTypes;
 import java.io.IOException;
 import java.nio.ByteBuffer;
 import java.security.MessageDigest;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
 /* loaded from: classes.dex */
 public class VideoDecoder<T> implements ResourceDecoder<T, Bitmap> {
     private final BitmapPool bitmapPool;
     private final MediaMetadataRetrieverFactory factory;
-    private final MediaMetadataRetrieverInitializer<T> initializer;
+    private final MediaInitializer<T> initializer;
     public static final Option<Long> TARGET_FRAME = Option.disk("com.bumptech.glide.load.resource.bitmap.VideoBitmapDecode.TargetFrame", -1L, new Option.CacheKeyUpdater<Long>() { // from class: com.bumptech.glide.load.resource.bitmap.VideoDecoder.1
         private final ByteBuffer buffer = ByteBuffer.allocate(8);
 
@@ -48,11 +54,14 @@ public class VideoDecoder<T> implements ResourceDecoder<T, Bitmap> {
         }
     });
     private static final MediaMetadataRetrieverFactory DEFAULT_FACTORY = new MediaMetadataRetrieverFactory();
+    private static final List<String> PIXEL_T_BUILD_ID_PREFIXES_REQUIRING_HDR_180_ROTATION_FIX = Collections.unmodifiableList(Arrays.asList("TP1A", "TD1A.220804.031"));
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: classes.dex */
-    public interface MediaMetadataRetrieverInitializer<T> {
-        void initialize(MediaMetadataRetriever mediaMetadataRetriever, T t);
+    public interface MediaInitializer<T> {
+        void initializeExtractor(MediaExtractor mediaExtractor, T t) throws IOException;
+
+        void initializeRetriever(MediaMetadataRetriever mediaMetadataRetriever, T t);
     }
 
     @Override // com.bumptech.glide.load.ResourceDecoder
@@ -72,13 +81,13 @@ public class VideoDecoder<T> implements ResourceDecoder<T, Bitmap> {
         return new VideoDecoder(bitmapPool, new ByteBufferInitializer());
     }
 
-    VideoDecoder(BitmapPool bitmapPool, MediaMetadataRetrieverInitializer<T> mediaMetadataRetrieverInitializer) {
-        this(bitmapPool, mediaMetadataRetrieverInitializer, DEFAULT_FACTORY);
+    VideoDecoder(BitmapPool bitmapPool, MediaInitializer<T> mediaInitializer) {
+        this(bitmapPool, mediaInitializer, DEFAULT_FACTORY);
     }
 
-    VideoDecoder(BitmapPool bitmapPool, MediaMetadataRetrieverInitializer<T> mediaMetadataRetrieverInitializer, MediaMetadataRetrieverFactory mediaMetadataRetrieverFactory) {
+    VideoDecoder(BitmapPool bitmapPool, MediaInitializer<T> mediaInitializer, MediaMetadataRetrieverFactory mediaMetadataRetrieverFactory) {
         this.bitmapPool = bitmapPool;
-        this.initializer = mediaMetadataRetrieverInitializer;
+        this.initializer = mediaInitializer;
         this.factory = mediaMetadataRetrieverFactory;
     }
 
@@ -99,25 +108,84 @@ public class VideoDecoder<T> implements ResourceDecoder<T, Bitmap> {
         DownsampleStrategy downsampleStrategy2 = downsampleStrategy;
         MediaMetadataRetriever build = this.factory.build();
         try {
-            this.initializer.initialize(build, t);
-            Bitmap decodeFrame = decodeFrame(build, longValue, num.intValue(), i, i2, downsampleStrategy2);
-            build.release();
-            return BitmapResource.obtain(decodeFrame, this.bitmapPool);
-        } catch (Throwable th) {
-            build.release();
-            throw th;
+            this.initializer.initializeRetriever(build, t);
+            return BitmapResource.obtain(decodeFrame(t, build, longValue, num.intValue(), i, i2, downsampleStrategy2), this.bitmapPool);
+        } finally {
+            if (Build.VERSION.SDK_INT >= 29) {
+                build.close();
+            } else {
+                build.release();
+            }
         }
     }
 
-    private static Bitmap decodeFrame(MediaMetadataRetriever mediaMetadataRetriever, long j, int i, int i2, int i3, DownsampleStrategy downsampleStrategy) {
-        Bitmap decodeScaledFrame = (Build.VERSION.SDK_INT < 27 || i2 == Integer.MIN_VALUE || i3 == Integer.MIN_VALUE || downsampleStrategy == DownsampleStrategy.NONE) ? null : decodeScaledFrame(mediaMetadataRetriever, j, i, i2, i3, downsampleStrategy);
-        if (decodeScaledFrame == null) {
-            decodeScaledFrame = decodeOriginalFrame(mediaMetadataRetriever, j, i);
+    private Bitmap decodeFrame(T t, MediaMetadataRetriever mediaMetadataRetriever, long j, int i, int i2, int i3, DownsampleStrategy downsampleStrategy) {
+        if (isUnsupportedFormat(t, mediaMetadataRetriever)) {
+            throw new IllegalStateException("Cannot decode VP8 video on CrOS.");
         }
-        if (decodeScaledFrame != null) {
-            return decodeScaledFrame;
+        Bitmap bitmap = null;
+        if (Build.VERSION.SDK_INT >= 27 && i2 != Integer.MIN_VALUE && i3 != Integer.MIN_VALUE && downsampleStrategy != DownsampleStrategy.NONE) {
+            bitmap = decodeScaledFrame(mediaMetadataRetriever, j, i, i2, i3, downsampleStrategy);
+        }
+        if (bitmap == null) {
+            bitmap = decodeOriginalFrame(mediaMetadataRetriever, j, i);
+        }
+        Bitmap correctHdr180DegVideoFrameOrientation = correctHdr180DegVideoFrameOrientation(mediaMetadataRetriever, bitmap);
+        if (correctHdr180DegVideoFrameOrientation != null) {
+            return correctHdr180DegVideoFrameOrientation;
         }
         throw new VideoDecoderException();
+    }
+
+    private static Bitmap correctHdr180DegVideoFrameOrientation(MediaMetadataRetriever mediaMetadataRetriever, Bitmap bitmap) {
+        if (isHdr180RotationFixRequired()) {
+            boolean z = false;
+            try {
+                if (isHDR(mediaMetadataRetriever)) {
+                    if (Math.abs(Integer.parseInt(mediaMetadataRetriever.extractMetadata(24))) == 180) {
+                        z = true;
+                    }
+                }
+            } catch (NumberFormatException unused) {
+                if (Log.isLoggable("VideoDecoder", 3)) {
+                    Log.d("VideoDecoder", "Exception trying to extract HDR transfer function or rotation");
+                }
+            }
+            if (z) {
+                if (Log.isLoggable("VideoDecoder", 3)) {
+                    Log.d("VideoDecoder", "Applying HDR 180 deg thumbnail correction");
+                }
+                Matrix matrix = new Matrix();
+                matrix.postRotate(180.0f, bitmap.getWidth() / 2.0f, bitmap.getHeight() / 2.0f);
+                return Bitmap.createBitmap(bitmap, 0, 0, bitmap.getWidth(), bitmap.getHeight(), matrix, true);
+            }
+            return bitmap;
+        }
+        return bitmap;
+    }
+
+    private static boolean isHDR(MediaMetadataRetriever mediaMetadataRetriever) throws NumberFormatException {
+        String extractMetadata = mediaMetadataRetriever.extractMetadata(36);
+        String extractMetadata2 = mediaMetadataRetriever.extractMetadata(35);
+        int parseInt = Integer.parseInt(extractMetadata);
+        return (parseInt == 7 || parseInt == 6) && Integer.parseInt(extractMetadata2) == 6;
+    }
+
+    static boolean isHdr180RotationFixRequired() {
+        if (Build.MODEL.startsWith("Pixel") && Build.VERSION.SDK_INT == 33) {
+            return isTBuildRequiringRotationFix();
+        }
+        int i = Build.VERSION.SDK_INT;
+        return i >= 30 && i < 33;
+    }
+
+    private static boolean isTBuildRequiringRotationFix() {
+        for (String str : PIXEL_T_BUILD_ID_PREFIXES_REQUIRING_HDR_180_ROTATION_FIX) {
+            if (Build.ID.startsWith(str)) {
+                return true;
+            }
+        }
+        return false;
     }
 
     private static Bitmap decodeScaledFrame(MediaMetadataRetriever mediaMetadataRetriever, long j, int i, int i2, int i3, DownsampleStrategy downsampleStrategy) {
@@ -144,6 +212,50 @@ public class VideoDecoder<T> implements ResourceDecoder<T, Bitmap> {
         return mediaMetadataRetriever.getFrameAtTime(j, i);
     }
 
+    private boolean isUnsupportedFormat(T t, MediaMetadataRetriever mediaMetadataRetriever) {
+        if (Build.VERSION.SDK_INT < 16) {
+            return false;
+        }
+        String str = Build.DEVICE;
+        if (str != null && str.matches(".+_cheets|cheets_.+")) {
+            MediaExtractor mediaExtractor = null;
+            try {
+            } catch (Throwable th) {
+                th = th;
+            }
+            if (MimeTypes.VIDEO_WEBM.equals(mediaMetadataRetriever.extractMetadata(12))) {
+                MediaExtractor mediaExtractor2 = new MediaExtractor();
+                try {
+                    this.initializer.initializeExtractor(mediaExtractor2, t);
+                    int trackCount = mediaExtractor2.getTrackCount();
+                    for (int i = 0; i < trackCount; i++) {
+                        if (MimeTypes.VIDEO_VP8.equals(mediaExtractor2.getTrackFormat(i).getString("mime"))) {
+                            mediaExtractor2.release();
+                            return true;
+                        }
+                    }
+                    mediaExtractor2.release();
+                } catch (Throwable th2) {
+                    th = th2;
+                    mediaExtractor = mediaExtractor2;
+                    try {
+                        if (Log.isLoggable("VideoDecoder", 3)) {
+                            Log.d("VideoDecoder", "Exception trying to extract track info for a webm video on CrOS.", th);
+                        }
+                        return false;
+                    } finally {
+                        if (mediaExtractor != null) {
+                            mediaExtractor.release();
+                        }
+                    }
+                }
+                return false;
+            }
+            return false;
+        }
+        return false;
+    }
+
     /* loaded from: classes.dex */
     static class MediaMetadataRetrieverFactory {
         MediaMetadataRetrieverFactory() {
@@ -154,39 +266,55 @@ public class VideoDecoder<T> implements ResourceDecoder<T, Bitmap> {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
     /* loaded from: classes.dex */
-    public static final class AssetFileDescriptorInitializer implements MediaMetadataRetrieverInitializer<AssetFileDescriptor> {
+    private static final class AssetFileDescriptorInitializer implements MediaInitializer<AssetFileDescriptor> {
         private AssetFileDescriptorInitializer() {
         }
 
-        @Override // com.bumptech.glide.load.resource.bitmap.VideoDecoder.MediaMetadataRetrieverInitializer
-        public void initialize(MediaMetadataRetriever mediaMetadataRetriever, AssetFileDescriptor assetFileDescriptor) {
+        @Override // com.bumptech.glide.load.resource.bitmap.VideoDecoder.MediaInitializer
+        public void initializeRetriever(MediaMetadataRetriever mediaMetadataRetriever, AssetFileDescriptor assetFileDescriptor) {
             mediaMetadataRetriever.setDataSource(assetFileDescriptor.getFileDescriptor(), assetFileDescriptor.getStartOffset(), assetFileDescriptor.getLength());
+        }
+
+        @Override // com.bumptech.glide.load.resource.bitmap.VideoDecoder.MediaInitializer
+        public void initializeExtractor(MediaExtractor mediaExtractor, AssetFileDescriptor assetFileDescriptor) throws IOException {
+            mediaExtractor.setDataSource(assetFileDescriptor.getFileDescriptor(), assetFileDescriptor.getStartOffset(), assetFileDescriptor.getLength());
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: classes.dex */
-    public static final class ParcelFileDescriptorInitializer implements MediaMetadataRetrieverInitializer<ParcelFileDescriptor> {
+    static final class ParcelFileDescriptorInitializer implements MediaInitializer<ParcelFileDescriptor> {
         ParcelFileDescriptorInitializer() {
         }
 
-        @Override // com.bumptech.glide.load.resource.bitmap.VideoDecoder.MediaMetadataRetrieverInitializer
-        public void initialize(MediaMetadataRetriever mediaMetadataRetriever, ParcelFileDescriptor parcelFileDescriptor) {
+        @Override // com.bumptech.glide.load.resource.bitmap.VideoDecoder.MediaInitializer
+        public void initializeRetriever(MediaMetadataRetriever mediaMetadataRetriever, ParcelFileDescriptor parcelFileDescriptor) {
             mediaMetadataRetriever.setDataSource(parcelFileDescriptor.getFileDescriptor());
+        }
+
+        @Override // com.bumptech.glide.load.resource.bitmap.VideoDecoder.MediaInitializer
+        public void initializeExtractor(MediaExtractor mediaExtractor, ParcelFileDescriptor parcelFileDescriptor) throws IOException {
+            mediaExtractor.setDataSource(parcelFileDescriptor.getFileDescriptor());
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: classes.dex */
-    public static final class ByteBufferInitializer implements MediaMetadataRetrieverInitializer<ByteBuffer> {
+    static final class ByteBufferInitializer implements MediaInitializer<ByteBuffer> {
         ByteBufferInitializer() {
         }
 
-        @Override // com.bumptech.glide.load.resource.bitmap.VideoDecoder.MediaMetadataRetrieverInitializer
-        public void initialize(MediaMetadataRetriever mediaMetadataRetriever, final ByteBuffer byteBuffer) {
-            mediaMetadataRetriever.setDataSource(new MediaDataSource(this) { // from class: com.bumptech.glide.load.resource.bitmap.VideoDecoder.ByteBufferInitializer.1
+        @Override // com.bumptech.glide.load.resource.bitmap.VideoDecoder.MediaInitializer
+        public void initializeRetriever(MediaMetadataRetriever mediaMetadataRetriever, ByteBuffer byteBuffer) {
+            mediaMetadataRetriever.setDataSource(getMediaDataSource(byteBuffer));
+        }
+
+        @Override // com.bumptech.glide.load.resource.bitmap.VideoDecoder.MediaInitializer
+        public void initializeExtractor(MediaExtractor mediaExtractor, ByteBuffer byteBuffer) throws IOException {
+            mediaExtractor.setDataSource(getMediaDataSource(byteBuffer));
+        }
+
+        private MediaDataSource getMediaDataSource(final ByteBuffer byteBuffer) {
+            return new MediaDataSource(this) { // from class: com.bumptech.glide.load.resource.bitmap.VideoDecoder.ByteBufferInitializer.1
                 @Override // java.io.Closeable, java.lang.AutoCloseable
                 public void close() {
                 }
@@ -206,7 +334,7 @@ public class VideoDecoder<T> implements ResourceDecoder<T, Bitmap> {
                 public long getSize() {
                     return byteBuffer.limit();
                 }
-            });
+            };
         }
     }
 

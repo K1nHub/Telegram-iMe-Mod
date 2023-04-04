@@ -15,22 +15,21 @@ import android.widget.TextView;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-import com.smedialink.common.IdFabric$CustomType;
+import com.iMe.common.IdFabric$CustomType;
+import com.iMe.fork.utils.Callbacks$Callback1;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
-import org.fork.utils.Callbacks$Callback1;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3301R;
+import org.telegram.messenger.C3316R;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.Utilities;
 import org.telegram.p048ui.ActionBar.ActionBarMenuItem;
 import org.telegram.p048ui.ActionBar.AlertDialog;
 import org.telegram.p048ui.ActionBar.BaseFragment;
-import org.telegram.p048ui.ActionBar.C3366ActionBar;
+import org.telegram.p048ui.ActionBar.C3381ActionBar;
 import org.telegram.p048ui.ActionBar.Theme;
 import org.telegram.p048ui.ActionBar.ThemeDescription;
 import org.telegram.p048ui.Cells.HeaderCell;
@@ -48,7 +47,6 @@ import org.telegram.tgnet.ConnectionsManager;
 /* renamed from: org.telegram.ui.LanguageSelectActivity */
 /* loaded from: classes5.dex */
 public class LanguageSelectActivity extends BaseFragment implements NotificationCenter.NotificationCenterDelegate {
-    private static boolean patching = false;
     private ArrayList<LocaleController.LocaleInfo> catalogLanguages;
     private int customScreenType;
     private EmptyTextProgressView emptyView;
@@ -108,22 +106,22 @@ public class LanguageSelectActivity extends BaseFragment implements Notification
 
     @Override // org.telegram.p048ui.ActionBar.BaseFragment
     public View createView(Context context) {
-        this.actionBar.setBackButtonImage(C3301R.C3303drawable.ic_ab_back);
+        this.actionBar.setBackButtonImage(C3316R.C3318drawable.ic_ab_back);
         this.actionBar.setAllowOverlayTitle(true);
         if (isCatalogType()) {
-            this.actionBar.setTitle(LocaleController.getInternalString(C3301R.string.language_select_startup));
+            this.actionBar.setTitle(LocaleController.getInternalString(C3316R.string.language_select_startup));
         } else {
-            this.actionBar.setTitle(LocaleController.getString("Language", C3301R.string.Language));
+            this.actionBar.setTitle(LocaleController.getString("Language", C3316R.string.Language));
         }
-        this.actionBar.setActionBarMenuOnItemClick(new C3366ActionBar.ActionBarMenuOnItemClick() { // from class: org.telegram.ui.LanguageSelectActivity.1
-            @Override // org.telegram.p048ui.ActionBar.C3366ActionBar.ActionBarMenuOnItemClick
+        this.actionBar.setActionBarMenuOnItemClick(new C3381ActionBar.ActionBarMenuOnItemClick() { // from class: org.telegram.ui.LanguageSelectActivity.1
+            @Override // org.telegram.p048ui.ActionBar.C3381ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i) {
                 if (i == -1) {
                     LanguageSelectActivity.this.finishFragment();
                 }
             }
         });
-        ActionBarMenuItem actionBarMenuItemSearchListener = this.actionBar.createMenu().addItem(0, C3301R.C3303drawable.ic_ab_search).setIsSearchField(true).setActionBarMenuItemSearchListener(new ActionBarMenuItem.ActionBarMenuItemSearchListener() { // from class: org.telegram.ui.LanguageSelectActivity.2
+        ActionBarMenuItem actionBarMenuItemSearchListener = this.actionBar.createMenu().addItem(0, C3316R.C3318drawable.ic_ab_search).setIsSearchField(true).setActionBarMenuItemSearchListener(new ActionBarMenuItem.ActionBarMenuItemSearchListener() { // from class: org.telegram.ui.LanguageSelectActivity.2
             @Override // org.telegram.p048ui.ActionBar.ActionBarMenuItem.ActionBarMenuItemSearchListener
             public void onSearchExpand() {
                 LanguageSelectActivity.this.searching = true;
@@ -161,7 +159,7 @@ public class LanguageSelectActivity extends BaseFragment implements Notification
             }
         });
         this.searchItem = actionBarMenuItemSearchListener;
-        actionBarMenuItemSearchListener.setSearchFieldHint(LocaleController.getString("Search", C3301R.string.Search));
+        actionBarMenuItemSearchListener.setSearchFieldHint(LocaleController.getString("Search", C3316R.string.Search));
         this.listAdapter = new ListAdapter(context, false);
         this.searchListViewAdapter = new ListAdapter(context, true);
         FrameLayout frameLayout = new FrameLayout(context);
@@ -170,7 +168,7 @@ public class LanguageSelectActivity extends BaseFragment implements Notification
         FrameLayout frameLayout2 = (FrameLayout) this.fragmentView;
         EmptyTextProgressView emptyTextProgressView = new EmptyTextProgressView(context);
         this.emptyView = emptyTextProgressView;
-        emptyTextProgressView.setText(LocaleController.getString("NoResult", C3301R.string.NoResult));
+        emptyTextProgressView.setText(LocaleController.getString("NoResult", C3316R.string.NoResult));
         this.emptyView.showTextView();
         this.emptyView.setShowAtCenter(true);
         frameLayout2.addView(this.emptyView, LayoutHelper.createFrame(-1, -1));
@@ -204,13 +202,13 @@ public class LanguageSelectActivity extends BaseFragment implements Notification
         defaultItemAnimator.setInterpolator(CubicBezierInterpolator.EASE_OUT_QUINT);
         this.listView.setItemAnimator(defaultItemAnimator);
         frameLayout2.addView(this.listView, LayoutHelper.createFrame(-1, -1));
-        this.listView.setOnItemClickListener(new RecyclerListView.OnItemClickListener() { // from class: org.telegram.ui.LanguageSelectActivity$$ExternalSyntheticLambda11
+        this.listView.setOnItemClickListener(new RecyclerListView.OnItemClickListener() { // from class: org.telegram.ui.LanguageSelectActivity$$ExternalSyntheticLambda10
             @Override // org.telegram.p048ui.Components.RecyclerListView.OnItemClickListener
             public final void onItemClick(View view, int i) {
                 LanguageSelectActivity.this.lambda$createView$4(view, i);
             }
         });
-        this.listView.setOnItemLongClickListener(new RecyclerListView.OnItemLongClickListener() { // from class: org.telegram.ui.LanguageSelectActivity$$ExternalSyntheticLambda12
+        this.listView.setOnItemLongClickListener(new RecyclerListView.OnItemLongClickListener() { // from class: org.telegram.ui.LanguageSelectActivity$$ExternalSyntheticLambda11
             @Override // org.telegram.p048ui.Components.RecyclerListView.OnItemLongClickListener
             public final boolean onItemClick(View view, int i) {
                 boolean lambda$createView$6;
@@ -252,7 +250,7 @@ public class LanguageSelectActivity extends BaseFragment implements Notification
         if (z) {
             return;
         }
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.LanguageSelectActivity$$ExternalSyntheticLambda5
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.LanguageSelectActivity$$ExternalSyntheticLambda4
             @Override // java.lang.Runnable
             public final void run() {
                 LanguageSelectActivity.this.lambda$createView$0();
@@ -298,15 +296,15 @@ public class LanguageSelectActivity extends BaseFragment implements Notification
                     }
                     if (localeInfo != null && localeInfo.pathToFile != null && (!localeInfo.isRemote() || localeInfo.serverIndex == Integer.MAX_VALUE)) {
                         AlertDialog.Builder builder = new AlertDialog.Builder(getParentActivity());
-                        builder.setTitle(LocaleController.getString("DeleteLocalizationTitle", C3301R.string.DeleteLocalizationTitle));
-                        builder.setMessage(AndroidUtilities.replaceTags(LocaleController.formatString("DeleteLocalizationText", C3301R.string.DeleteLocalizationText, localeInfo.name)));
-                        builder.setPositiveButton(LocaleController.getString("Delete", C3301R.string.Delete), new DialogInterface.OnClickListener() { // from class: org.telegram.ui.LanguageSelectActivity$$ExternalSyntheticLambda1
+                        builder.setTitle(LocaleController.getString("DeleteLocalizationTitle", C3316R.string.DeleteLocalizationTitle));
+                        builder.setMessage(AndroidUtilities.replaceTags(LocaleController.formatString("DeleteLocalizationText", C3316R.string.DeleteLocalizationText, localeInfo.name)));
+                        builder.setPositiveButton(LocaleController.getString("Delete", C3316R.string.Delete), new DialogInterface.OnClickListener() { // from class: org.telegram.ui.LanguageSelectActivity$$ExternalSyntheticLambda1
                             @Override // android.content.DialogInterface.OnClickListener
                             public final void onClick(DialogInterface dialogInterface, int i2) {
                                 LanguageSelectActivity.this.lambda$createView$5(localeInfo, dialogInterface, i2);
                             }
                         });
-                        builder.setNegativeButton(LocaleController.getString("Cancel", C3301R.string.Cancel), null);
+                        builder.setNegativeButton(LocaleController.getString("Cancel", C3316R.string.Cancel), null);
                         AlertDialog create = builder.create();
                         showDialog(create);
                         TextView textView = (TextView) create.getButton(-1);
@@ -368,7 +366,7 @@ public class LanguageSelectActivity extends BaseFragment implements Notification
             return;
         }
         final LocaleController.LocaleInfo currentLocaleInfo = LocaleController.getInstance().getCurrentLocaleInfo();
-        Comparator comparator = new Comparator() { // from class: org.telegram.ui.LanguageSelectActivity$$ExternalSyntheticLambda9
+        Comparator comparator = new Comparator() { // from class: org.telegram.ui.LanguageSelectActivity$$ExternalSyntheticLambda8
             @Override // java.util.Comparator
             public final int compare(Object obj, Object obj2) {
                 int lambda$fillLanguages$8;
@@ -414,24 +412,7 @@ public class LanguageSelectActivity extends BaseFragment implements Notification
     @Override // org.telegram.p048ui.ActionBar.BaseFragment
     public void onBecomeFullyVisible() {
         super.onBecomeFullyVisible();
-        boolean z = false;
-        if (getMessagesController().checkResetLangpack > 0 && !MessagesController.getGlobalMainSettings().getBoolean("langpack_patched", false) && !patching) {
-            z = true;
-        }
-        if (z) {
-            patching = true;
-            LocaleController.getInstance().reloadCurrentRemoteLocale(this.currentAccount, null, true, new Runnable() { // from class: org.telegram.ui.LanguageSelectActivity$$ExternalSyntheticLambda3
-                @Override // java.lang.Runnable
-                public final void run() {
-                    LanguageSelectActivity.this.lambda$onBecomeFullyVisible$10();
-                }
-            });
-        }
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onBecomeFullyVisible$10() {
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.LanguageSelectActivity$$ExternalSyntheticLambda4
+        LocaleController.getInstance().checkForcePatchLangpack(this.currentAccount, new Runnable() { // from class: org.telegram.ui.LanguageSelectActivity$$ExternalSyntheticLambda3
             @Override // java.lang.Runnable
             public final void run() {
                 LanguageSelectActivity.this.lambda$onBecomeFullyVisible$9();
@@ -441,7 +422,9 @@ public class LanguageSelectActivity extends BaseFragment implements Notification
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$onBecomeFullyVisible$9() {
-        MessagesController.getGlobalMainSettings().edit().putBoolean("langpack_patched", true).apply();
+        if (this.isPaused) {
+            return;
+        }
         updateLanguage();
     }
 
@@ -469,7 +452,7 @@ public class LanguageSelectActivity extends BaseFragment implements Notification
 
     private void updateLanguage() {
         if (this.actionBar != null) {
-            String string = LocaleController.getString("Language", C3301R.string.Language);
+            String string = LocaleController.getString("Language", C3316R.string.Language);
             if (!TextUtils.equals(this.actionBar.getTitle(), string)) {
                 this.actionBar.setTitleAnimated(string, true, 350L, CubicBezierInterpolator.EASE_OUT_QUINT);
             }
@@ -481,16 +464,16 @@ public class LanguageSelectActivity extends BaseFragment implements Notification
     }
 
     private void processSearch(final String str) {
-        Utilities.searchQueue.postRunnable(new Runnable() { // from class: org.telegram.ui.LanguageSelectActivity$$ExternalSyntheticLambda6
+        Utilities.searchQueue.postRunnable(new Runnable() { // from class: org.telegram.ui.LanguageSelectActivity$$ExternalSyntheticLambda5
             @Override // java.lang.Runnable
             public final void run() {
-                LanguageSelectActivity.this.lambda$processSearch$11(str);
+                LanguageSelectActivity.this.lambda$processSearch$10(str);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$processSearch$11(String str) {
+    public /* synthetic */ void lambda$processSearch$10(String str) {
         if (str.trim().toLowerCase().length() == 0) {
             updateSearchResults(new ArrayList<>());
             return;
@@ -515,16 +498,16 @@ public class LanguageSelectActivity extends BaseFragment implements Notification
     }
 
     private void updateSearchResults(final ArrayList<LocaleController.LocaleInfo> arrayList) {
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.LanguageSelectActivity$$ExternalSyntheticLambda7
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.LanguageSelectActivity$$ExternalSyntheticLambda6
             @Override // java.lang.Runnable
             public final void run() {
-                LanguageSelectActivity.this.lambda$updateSearchResults$12(arrayList);
+                LanguageSelectActivity.this.lambda$updateSearchResults$11(arrayList);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$updateSearchResults$12(ArrayList arrayList) {
+    public /* synthetic */ void lambda$updateSearchResults$11(ArrayList arrayList) {
         this.searchResult = arrayList;
         this.searchListViewAdapter.notifyDataSetChanged();
     }

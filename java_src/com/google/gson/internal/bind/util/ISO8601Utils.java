@@ -1,7 +1,7 @@
 package com.google.gson.internal.bind.util;
 
 import java.util.TimeZone;
-import p034j$.util.DesugarTimeZone;
+import p035j$.util.DesugarTimeZone;
 /* loaded from: classes3.dex */
 public class ISO8601Utils {
     private static final TimeZone TIMEZONE_UTC = DesugarTimeZone.getTimeZone("UTC");

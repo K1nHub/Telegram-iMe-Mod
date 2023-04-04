@@ -134,7 +134,7 @@
 
     iput-object p1, p0, Lio/grpc/internal/MessageDeframer;->statsTraceCtx:Lio/grpc/internal/StatsTraceContext;
 
-    const-string p1, "transportTracer"
+    const-string/jumbo p1, "transportTracer"
 
     .line 127
     invoke-static {p5, p1}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;

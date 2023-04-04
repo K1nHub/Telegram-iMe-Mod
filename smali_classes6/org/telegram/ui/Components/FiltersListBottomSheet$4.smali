@@ -24,7 +24,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/FiltersListBottomSheet;Z)V
     .locals 0
 
-    .line 292
+    .line 290
     iput-object p1, p0, Lorg/telegram/ui/Components/FiltersListBottomSheet$4;->this$0:Lorg/telegram/ui/Components/FiltersListBottomSheet;
 
     iput-boolean p2, p0, Lorg/telegram/ui/Components/FiltersListBottomSheet$4;->val$show:Z
@@ -39,7 +39,7 @@
 .method public onAnimationCancel(Landroid/animation/Animator;)V
     .locals 1
 
-    .line 305
+    .line 303
     iget-object v0, p0, Lorg/telegram/ui/Components/FiltersListBottomSheet$4;->this$0:Lorg/telegram/ui/Components/FiltersListBottomSheet;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/FiltersListBottomSheet;->access$2500(Lorg/telegram/ui/Components/FiltersListBottomSheet;)Landroid/animation/AnimatorSet;
@@ -60,7 +60,7 @@
 
     if-eqz p1, :cond_0
 
-    .line 306
+    .line 304
     iget-object p1, p0, Lorg/telegram/ui/Components/FiltersListBottomSheet$4;->this$0:Lorg/telegram/ui/Components/FiltersListBottomSheet;
 
     const/4 v0, 0x0
@@ -74,7 +74,7 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 1
 
-    .line 295
+    .line 293
     iget-object v0, p0, Lorg/telegram/ui/Components/FiltersListBottomSheet$4;->this$0:Lorg/telegram/ui/Components/FiltersListBottomSheet;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/FiltersListBottomSheet;->access$2500(Lorg/telegram/ui/Components/FiltersListBottomSheet;)Landroid/animation/AnimatorSet;
@@ -95,12 +95,12 @@
 
     if-eqz p1, :cond_1
 
-    .line 296
+    .line 294
     iget-boolean p1, p0, Lorg/telegram/ui/Components/FiltersListBottomSheet$4;->val$show:Z
 
     if-nez p1, :cond_0
 
-    .line 297
+    .line 295
     iget-object p1, p0, Lorg/telegram/ui/Components/FiltersListBottomSheet$4;->this$0:Lorg/telegram/ui/Components/FiltersListBottomSheet;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/FiltersListBottomSheet;->access$2600(Lorg/telegram/ui/Components/FiltersListBottomSheet;)Landroid/view/View;
@@ -111,7 +111,7 @@
 
     invoke-virtual {p1, v0}, Landroid/view/View;->setVisibility(I)V
 
-    .line 299
+    .line 297
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/Components/FiltersListBottomSheet$4;->this$0:Lorg/telegram/ui/Components/FiltersListBottomSheet;
 

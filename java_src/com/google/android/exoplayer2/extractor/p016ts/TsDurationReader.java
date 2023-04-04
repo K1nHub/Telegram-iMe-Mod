@@ -1,6 +1,6 @@
 package com.google.android.exoplayer2.extractor.p016ts;
 
-import com.google.android.exoplayer2.C0468C;
+import com.google.android.exoplayer2.C0482C;
 import com.google.android.exoplayer2.extractor.ExtractorInput;
 import com.google.android.exoplayer2.extractor.PositionHolder;
 import com.google.android.exoplayer2.util.Log;
@@ -18,9 +18,9 @@ public final class TsDurationReader {
     private boolean isLastPcrValueRead;
     private final int timestampSearchBytes;
     private final TimestampAdjuster pcrTimestampAdjuster = new TimestampAdjuster(0);
-    private long firstPcrValue = C0468C.TIME_UNSET;
-    private long lastPcrValue = C0468C.TIME_UNSET;
-    private long durationUs = C0468C.TIME_UNSET;
+    private long firstPcrValue = C0482C.TIME_UNSET;
+    private long lastPcrValue = C0482C.TIME_UNSET;
+    private long durationUs = C0482C.TIME_UNSET;
     private final ParsableByteArray packetBuffer = new ParsableByteArray();
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -39,21 +39,21 @@ public final class TsDurationReader {
         if (!this.isLastPcrValueRead) {
             return readLastPcrValue(extractorInput, positionHolder, i);
         }
-        if (this.lastPcrValue == C0468C.TIME_UNSET) {
+        if (this.lastPcrValue == C0482C.TIME_UNSET) {
             return finishReadDuration(extractorInput);
         }
         if (!this.isFirstPcrValueRead) {
             return readFirstPcrValue(extractorInput, positionHolder, i);
         }
         long j = this.firstPcrValue;
-        if (j == C0468C.TIME_UNSET) {
+        if (j == C0482C.TIME_UNSET) {
             return finishReadDuration(extractorInput);
         }
         long adjustTsTimestamp = this.pcrTimestampAdjuster.adjustTsTimestamp(this.lastPcrValue) - this.pcrTimestampAdjuster.adjustTsTimestamp(j);
         this.durationUs = adjustTsTimestamp;
         if (adjustTsTimestamp < 0) {
             Log.m806w(TAG, "Invalid duration: " + this.durationUs + ". Using TIME_UNSET instead.");
-            this.durationUs = C0468C.TIME_UNSET;
+            this.durationUs = C0482C.TIME_UNSET;
         }
         return finishReadDuration(extractorInput);
     }
@@ -93,12 +93,12 @@ public final class TsDurationReader {
         for (int position = parsableByteArray.getPosition(); position < limit; position++) {
             if (parsableByteArray.getData()[position] == 71) {
                 long readPcrFromPacket = TsUtil.readPcrFromPacket(parsableByteArray, position, i);
-                if (readPcrFromPacket != C0468C.TIME_UNSET) {
+                if (readPcrFromPacket != C0482C.TIME_UNSET) {
                     return readPcrFromPacket;
                 }
             }
         }
-        return C0468C.TIME_UNSET;
+        return C0482C.TIME_UNSET;
     }
 
     private int readLastPcrValue(ExtractorInput extractorInput, PositionHolder positionHolder, int i) throws IOException {
@@ -123,11 +123,11 @@ public final class TsDurationReader {
         for (int i2 = limit - 188; i2 >= position; i2--) {
             if (TsUtil.isStartOfTsPacket(parsableByteArray.getData(), position, limit, i2)) {
                 long readPcrFromPacket = TsUtil.readPcrFromPacket(parsableByteArray, i2, i);
-                if (readPcrFromPacket != C0468C.TIME_UNSET) {
+                if (readPcrFromPacket != C0482C.TIME_UNSET) {
                     return readPcrFromPacket;
                 }
             }
         }
-        return C0468C.TIME_UNSET;
+        return C0482C.TIME_UNSET;
     }
 }

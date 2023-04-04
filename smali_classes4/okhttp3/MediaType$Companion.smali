@@ -71,7 +71,7 @@
 
     move-result-object v3
 
-    const-string v4, "typeSubtype.group(1)"
+    const-string/jumbo v4, "typeSubtype.group(1)"
 
     invoke-static {v3, v4}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -100,7 +100,7 @@
 
     move-result-object v8
 
-    const-string v10, "typeSubtype.group(2)"
+    const-string/jumbo v10, "typeSubtype.group(2)"
 
     invoke-static {v8, v10}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 

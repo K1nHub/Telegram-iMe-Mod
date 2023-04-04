@@ -76,7 +76,7 @@ public class AvatarsDrawable {
         for (int i = 0; i < 3; i++) {
             DrawingState[] drawingStateArr2 = this.currentStates;
             drawingStateArr[i] = drawingStateArr2[i];
-            if (drawingStateArr2[i].f1684id != this.animatingStates[i].f1684id) {
+            if (drawingStateArr2[i].f1687id != this.animatingStates[i].f1687id) {
                 z4 = true;
             } else {
                 this.currentStates[i].lastSpeakTime = this.animatingStates[i].lastSpeakTime;
@@ -92,7 +92,7 @@ public class AvatarsDrawable {
                 if (i3 >= 3) {
                     z3 = false;
                     break;
-                } else if (this.currentStates[i3].f1684id == this.animatingStates[i2].f1684id) {
+                } else if (this.currentStates[i3].f1687id == this.animatingStates[i2].f1687id) {
                     drawingStateArr[i3] = null;
                     if (i2 == i3) {
                         this.animatingStates[i2].animationType = -1;
@@ -240,7 +240,7 @@ public class AvatarsDrawable {
         private AvatarDrawable avatarDrawable;
 
         /* renamed from: id */
-        private long f1684id;
+        private long f1687id;
         private ImageReceiver imageReceiver;
         private long lastSpeakTime;
         private long lastUpdateTime;
@@ -290,7 +290,7 @@ public class AvatarsDrawable {
     public void setObject(int i, int i2, TLObject tLObject) {
         TLRPC$Chat tLRPC$Chat;
         TLRPC$Chat chat;
-        this.animatingStates[i].f1684id = 0L;
+        this.animatingStates[i].f1687id = 0L;
         DrawingState[] drawingStateArr = this.animatingStates;
         TLRPC$User tLRPC$User = null;
         drawingStateArr[i].participant = null;
@@ -324,7 +324,7 @@ public class AvatarsDrawable {
             } else {
                 this.animatingStates[i].lastSpeakTime = tLRPC$TL_groupCallParticipant.active_date;
             }
-            this.animatingStates[i].f1684id = peerId;
+            this.animatingStates[i].f1687id = peerId;
             tLRPC$Chat = chat;
         } else if (tLObject instanceof TLRPC$User) {
             TLRPC$User tLRPC$User2 = (TLRPC$User) tLObject;
@@ -336,7 +336,7 @@ public class AvatarsDrawable {
                 this.animatingStates[i].avatarDrawable.setAvatarType(1);
                 this.animatingStates[i].avatarDrawable.setScaleSize(0.6f);
             }
-            this.animatingStates[i].f1684id = tLRPC$User2.f1640id;
+            this.animatingStates[i].f1687id = tLRPC$User2.f1642id;
             tLRPC$User = tLRPC$User2;
             tLRPC$Chat = null;
         } else {
@@ -344,7 +344,7 @@ public class AvatarsDrawable {
             this.animatingStates[i].avatarDrawable.setAvatarType(0);
             this.animatingStates[i].avatarDrawable.setScaleSize(1.0f);
             this.animatingStates[i].avatarDrawable.setInfo(tLRPC$Chat);
-            this.animatingStates[i].f1684id = -tLRPC$Chat.f1500id;
+            this.animatingStates[i].f1687id = -tLRPC$Chat.f1502id;
         }
         if (tLRPC$User == null) {
             this.animatingStates[i].imageReceiver.setForUserOrChat(tLRPC$Chat, this.animatingStates[i].avatarDrawable);
@@ -369,7 +369,7 @@ public class AvatarsDrawable {
     /* JADX WARN: Removed duplicated region for block: B:224:0x04eb  */
     /* JADX WARN: Removed duplicated region for block: B:226:0x04f0  */
     /* JADX WARN: Removed duplicated region for block: B:242:0x04f3 A[SYNTHETIC] */
-    /* JADX WARN: Type inference failed for: r9v2, types: [boolean, int] */
+    /* JADX WARN: Type inference failed for: r9v2, types: [int, boolean] */
     /* JADX WARN: Type inference failed for: r9v34 */
     /* JADX WARN: Type inference failed for: r9v35 */
     /*

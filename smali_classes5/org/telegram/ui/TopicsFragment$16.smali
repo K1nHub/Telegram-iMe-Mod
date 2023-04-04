@@ -33,7 +33,7 @@
 .method constructor <init>(Lorg/telegram/ui/TopicsFragment;)V
     .locals 0
 
-    .line 1195
+    .line 1198
     iput-object p1, p0, Lorg/telegram/ui/TopicsFragment$16;->this$0:Lorg/telegram/ui/TopicsFragment;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -46,14 +46,14 @@
 
     if-nez p1, :cond_0
 
-    .line 1201
+    .line 1204
     iget-object p1, p0, Lorg/telegram/ui/TopicsFragment$16;->this$0:Lorg/telegram/ui/TopicsFragment;
 
     invoke-static {p1}, Lorg/telegram/ui/TopicsFragment;->access$3800(Lorg/telegram/ui/TopicsFragment;)V
 
     goto :goto_0
 
-    .line 1203
+    .line 1206
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/TopicsFragment$16;->this$0:Lorg/telegram/ui/TopicsFragment;
 
@@ -68,7 +68,7 @@
 .method public onClick(Landroid/view/View;)V
     .locals 11
 
-    .line 1198
+    .line 1201
     iget-object p1, p0, Lorg/telegram/ui/TopicsFragment$16;->this$0:Lorg/telegram/ui/TopicsFragment;
 
     invoke-static {p1}, Lorg/telegram/ui/TopicsFragment;->access$3600(Lorg/telegram/ui/TopicsFragment;)I
@@ -79,7 +79,7 @@
 
     if-ne p1, v0, :cond_0
 
-    .line 1199
+    .line 1202
     iget-object v1, p0, Lorg/telegram/ui/TopicsFragment$16;->this$0:Lorg/telegram/ui/TopicsFragment;
 
     iget-wide v2, v1, Lorg/telegram/ui/TopicsFragment;->chatId:J
@@ -106,17 +106,17 @@
 
     iget-object p1, p0, Lorg/telegram/ui/TopicsFragment$16;->this$0:Lorg/telegram/ui/TopicsFragment;
 
-    .line 1205
+    .line 1208
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/BaseFragment;->getResourceProvider()Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
     move-result-object v10
 
-    .line 1199
+    .line 1202
     invoke-static/range {v1 .. v10}, Lorg/telegram/ui/Components/AlertsCreator;->showBlockReportSpamAlert(Lorg/telegram/ui/ActionBar/BaseFragment;JLorg/telegram/tgnet/TLRPC$User;Lorg/telegram/tgnet/TLRPC$Chat;Lorg/telegram/tgnet/TLRPC$EncryptedChat;ZLorg/telegram/tgnet/TLRPC$ChatFull;Lorg/telegram/messenger/MessagesStorage$IntCallback;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
     goto :goto_0
 
-    .line 1207
+    .line 1210
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/TopicsFragment$16;->this$0:Lorg/telegram/ui/TopicsFragment;
 

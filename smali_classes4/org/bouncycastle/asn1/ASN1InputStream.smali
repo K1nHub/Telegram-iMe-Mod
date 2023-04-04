@@ -109,7 +109,7 @@
 
     invoke-direct {p2}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v0, "unknown tag "
+    const-string/jumbo v0, "unknown tag "
 
     invoke-virtual {p2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -342,6 +342,8 @@
     move-result-object p0
 
     return-object p0
+
+    nop
 
     :pswitch_data_0
     .packed-switch 0x1
@@ -809,7 +811,7 @@
 
     invoke-direct {p3}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v0, "unknown tag "
+    const-string/jumbo v0, "unknown tag "
 
     invoke-virtual {p3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -955,7 +957,7 @@
     :cond_0
     new-instance v0, Ljava/io/IOException;
 
-    const-string v1, "unexpected end-of-contents marker"
+    const-string/jumbo v1, "unexpected end-of-contents marker"
 
     invoke-direct {v0, v1}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
 
@@ -1059,7 +1061,7 @@
     :cond_5
     new-instance v0, Ljava/io/IOException;
 
-    const-string v1, "unknown BER object encountered"
+    const-string/jumbo v1, "unknown BER object encountered"
 
     invoke-direct {v0, v1}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
 

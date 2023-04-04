@@ -1,12 +1,14 @@
 package com.otaliastudios.opengl.draw;
 
 import com.otaliastudios.opengl.core.Egloo;
-import com.otaliastudios.opengl.viewport.GlViewportAware;
+import com.otaliastudios.opengl.core.GlViewportAware;
+import com.otaliastudios.opengl.internal.MiscKt;
 import java.nio.FloatBuffer;
 /* compiled from: GlDrawable.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public abstract class GlDrawable extends GlViewportAware {
-    private final float[] modelMatrix = (float[]) Egloo.getIDENTITY_MATRIX().clone();
+    private final float[] modelMatrix = MiscKt.matrixClone(Egloo.IDENTITY_MATRIX);
+    private int vertexArrayVersion;
 
     public abstract void draw();
 
@@ -23,6 +25,10 @@ public abstract class GlDrawable extends GlViewportAware {
     }
 
     public int getVertexCount() {
-        return getVertexArray().capacity() / getCoordsPerVertex();
+        return getVertexArray().limit() / getCoordsPerVertex();
+    }
+
+    public final int getVertexArrayVersion() {
+        return this.vertexArrayVersion;
     }
 }

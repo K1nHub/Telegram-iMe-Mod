@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/Reactions/ChatSelectionReactionMenuOverlay;)V
     .locals 0
 
-    .line 59
+    .line 62
     iput-object p1, p0, Lorg/telegram/ui/Components/Reactions/ChatSelectionReactionMenuOverlay$1;->this$0:Lorg/telegram/ui/Components/Reactions/ChatSelectionReactionMenuOverlay;
 
     invoke-direct {p0}, Landroidx/recyclerview/widget/RecyclerView$OnScrollListener;-><init>()V
@@ -35,7 +35,7 @@
 .method public onScrolled(Landroidx/recyclerview/widget/RecyclerView;II)V
     .locals 0
 
-    .line 62
+    .line 65
     iget-object p1, p0, Lorg/telegram/ui/Components/Reactions/ChatSelectionReactionMenuOverlay$1;->this$0:Lorg/telegram/ui/Components/Reactions/ChatSelectionReactionMenuOverlay;
 
     invoke-virtual {p1}, Lorg/telegram/ui/Components/Reactions/ChatSelectionReactionMenuOverlay;->invalidatePosition()V

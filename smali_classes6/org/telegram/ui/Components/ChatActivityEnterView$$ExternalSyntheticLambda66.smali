@@ -2,34 +2,40 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lorg/fork/utils/Callbacks$Callback1;
+.implements Ljava/lang/Runnable;
 
 
-# instance fields
-.field public final synthetic f$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
+# static fields
+.field public static final synthetic INSTANCE:Lorg/telegram/ui/Components/ChatActivityEnterView$$ExternalSyntheticLambda66;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/Components/ChatActivityEnterView;)V
+.method static synthetic constructor <clinit>()V
+    .locals 1
+
+    new-instance v0, Lorg/telegram/ui/Components/ChatActivityEnterView$$ExternalSyntheticLambda66;
+
+    invoke-direct {v0}, Lorg/telegram/ui/Components/ChatActivityEnterView$$ExternalSyntheticLambda66;-><init>()V
+
+    sput-object v0, Lorg/telegram/ui/Components/ChatActivityEnterView$$ExternalSyntheticLambda66;->INSTANCE:Lorg/telegram/ui/Components/ChatActivityEnterView$$ExternalSyntheticLambda66;
+
+    return-void
+.end method
+
+.method private synthetic constructor <init>()V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$$ExternalSyntheticLambda66;->f$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;)V
-    .locals 1
+.method public final run()V
+    .locals 0
 
-    iget-object v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$$ExternalSyntheticLambda66;->f$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
-
-    check-cast p1, Ljava/lang/String;
-
-    invoke-static {v0, p1}, Lorg/telegram/ui/Components/ChatActivityEnterView;->$r8$lambda$K1sGt9UGNgTN4O8y_RqQKJLfO9M(Lorg/telegram/ui/Components/ChatActivityEnterView;Ljava/lang/String;)V
+    invoke-static {}, Lorg/telegram/ui/Components/ChatActivityEnterView;->$r8$lambda$YxyoUS6-R40fvV5aiVPpX_2zeyM()V
 
     return-void
 .end method

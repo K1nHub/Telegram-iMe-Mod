@@ -36,7 +36,7 @@
     .locals 1
 
     .line 633
-    sget v0, Lcom/smedialink/common/IdFabric$Menu;->SETTINGS:I
+    sget v0, Lcom/iMe/common/IdFabric$Menu;->SETTINGS:I
 
     if-ne p1, v0, :cond_0
 

@@ -251,5 +251,6 @@
 
     invoke-interface {v0}, Ljava/util/concurrent/locks/Lock;->unlock()V
 
+    .line 86
     throw p0
 .end method

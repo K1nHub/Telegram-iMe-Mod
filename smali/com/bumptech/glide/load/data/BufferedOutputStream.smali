@@ -160,6 +160,7 @@
 
     invoke-virtual {v1}, Ljava/io/OutputStream;->close()V
 
+    .line 91
     throw v0
 .end method
 

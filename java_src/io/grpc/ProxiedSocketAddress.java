@@ -1,6 +1,6 @@
 package io.grpc;
 
 import java.net.SocketAddress;
-/* loaded from: classes.dex */
+/* loaded from: classes4.dex */
 public abstract class ProxiedSocketAddress extends SocketAddress {
 }
